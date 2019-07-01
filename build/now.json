@@ -3,6 +3,6 @@
   "name": "juniorguru",
   "alias": "juniorguru.now.sh",
   "builds": [
-    { "src": "*.html", "use": "@now/static" }
+    { "src": "*.html", "use": "@now/html-minifier" }
   ]
 }

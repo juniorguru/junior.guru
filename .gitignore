@@ -8,7 +8,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
@@ -103,5 +102,5 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# now.sh
-!build/now.json
+# build
+build/*.html
