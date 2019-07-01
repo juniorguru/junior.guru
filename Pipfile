@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[scripts]
+test = "pytest"
+build = "bash scripts/build.sh"
+serve = "bash scripts/serve.sh"
+deploy = "bash scripts/deploy.sh"
+
+[packages]
+jinja2 = "*"
+
+[dev-packages]
+pytest = "*"
+
+[requires]
+python_version = "3.7"
