@@ -1,0 +1,79 @@
+version: 2.1
+
+
+executors:
+  python:
+    docker:
+      - image: circleci/python:3.7
+    working_directory: ~/project
+  python-node:
+    docker:
+      - image: circleci/python:3.7-node
+    working_directory: ~/project
+
+
+jobs:
+  install_and_test:
+    executor: python
+    steps:
+      - checkout
+      - run:
+          name: install dependencies
+          command: pipenv install --dev
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - .local/share/virtualenvs
+              - project
+      - run:
+          name: run tests
+          command: pipenv run test -v
+
+  build:
+    executor: python
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: pipenv run build
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/build
+
+  deploy:
+    executor: python-node
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run:
+          name: install 'now'
+          command: sudo npm install --global --unsafe-perm now
+      - run:
+          name: deploy
+          command: |
+            [[ "$CIRCLE_BRANCH" == "master" ]] && export NOW_TARGET="production"
+            pipenv run deploy  # needs $NOW_TOKEN
+
+
+workflows:
+  version: 2
+
+  default_workflow: &default_workflow
+    jobs:
+      - install_and_test
+      - build:
+          requires:
+            - install_and_test
+      - deploy:
+          requires:
+            - build
+
+  nightly_workflow:
+    <<: *default_workflow
+    triggers:
+      - schedule:
+          cron: "0 5 * * *"
+          filters:
+            branches:
+              only:
+                - master
