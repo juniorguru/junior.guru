@@ -1,4 +1,4 @@
 #!/bin/bash
 
 set -e
-python juniorguru/index.py
+python juniorguru/index/build.py
