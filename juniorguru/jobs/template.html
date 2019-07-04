@@ -8,10 +8,10 @@
   </head>
   <body>
     <!-- page content -->
-    Ahoj {{ name }}!
-
-    <hr>
-
-    See <a href="jobs.html">jobs</a>
+    <ul>
+    {% for job in jobs %}
+        <li>{{ job }}</li>
+    {% endfor %}
+    </ul>
   </body>
 </html>

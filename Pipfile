@@ -11,6 +11,8 @@ deploy = "bash scripts/deploy.sh"
 
 [packages]
 jinja2 = "*"
+gspread = "*"
+oauth2client = "*"
 
 [dev-packages]
 pytest = "*"

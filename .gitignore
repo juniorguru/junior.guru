@@ -102,5 +102,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+# configuration
+google_service_account.json
+
 # build
 build/*.html
