@@ -7,7 +7,11 @@ from oauth2client.service_account import ServiceAccountCredentials
 from jinja2 import Template
 
 
-google_service_account_path = Path(__file__).parent / 'google_service_account.json'
+SRC_DIR = Path(__file__).parent
+BUILD_DIR = Path(__file__).parent.parent.parent / 'build'
+
+
+google_service_account_path = SRC_DIR / 'google_service_account.json'
 google_service_account_json = os.getenv('GOOGLE_SERVICE_ACCOUNT') or google_service_account_path.read_text()
 google_service_account = json.loads(google_service_account_json)
 google_scope = ['https://spreadsheets.google.com/feeds',
@@ -24,8 +28,9 @@ jobs = [row[0] for row in table]
 data = dict(name='Honza', jobs=jobs)
 
 
-template_path = Path(__file__).parent / 'template.html'
+template_path = SRC_DIR / 'template.html'
 template = Template(template_path.read_text())
 
-html_path = Path(__file__).parent.parent.parent / 'build' / 'jobs.html'
+(BUILD_DIR / 'jobs').mkdir()
+html_path = BUILD_DIR / 'jobs' / 'index.html'
 html_path.write_text(template.render(**data))
