@@ -13,6 +13,7 @@ deploy = "bash scripts/deploy.sh"
 jinja2 = "*"
 gspread = "*"
 oauth2client = "*"
+arrow = "*"
 
 [dev-packages]
 pytest = "*"
