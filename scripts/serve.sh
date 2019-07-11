@@ -2,4 +2,4 @@
 
 set -e
 cd build
-python -m http.server 8000 --bind 0.0.0.0
+python -m http.server 8000 --bind 127.0.0.1

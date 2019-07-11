@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="cs">
-  <head>
-    <meta charset="utf-8">
-    <title>junior.guru</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <!-- <script src="script.js"></script> -->
-  </head>
-  <body>
-    <!-- page content -->
-    <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Post a job</a>
+{% extends base_template %}
+{% block body %}
 
-    <hr>
+<h1>Jobs</h1>
+<a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Post a job</a>
+<hr>
+<ul>
+{% for job in jobs %}
+    <li>{{ job }}</li>
+{% endfor %}
+</ul>
+<hr>
+Go to <a href="/">index</a>
 
-    <ul>
-    {% for job in jobs %}
-        <li>{{ job }}</li>
-    {% endfor %}
-    </ul>
-
-    <hr>
-
-    Go to <a href="/">index</a>
-  </body>
-</html>
+{% endblock %}
