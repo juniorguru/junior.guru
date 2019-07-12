@@ -1,15 +1,12 @@
 {% extends base_template %}
-{% block body %}
+{% block content %}
 
 <h1>Jobs</h1>
-<a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Post a job</a>
-<hr>
+<p><a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Post a job</a></p>
 <ul>
 {% for job in jobs %}
     <li>{{ job }}</li>
 {% endfor %}
 </ul>
-<hr>
-Go to <a href="/">index</a>
 
 {% endblock %}

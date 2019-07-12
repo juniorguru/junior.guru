@@ -1,11 +1,13 @@
 from pathlib import Path
 
+import arrow
 from jinja2 import Template
 
 
 BASE_URL = 'https://junior.guru'
 PACKAGE_DIR = Path(__file__).parent
-BUILD_DIR = PACKAGE_DIR.parent / 'build'
+PROJECT_DIR = PACKAGE_DIR.parent
+BUILD_DIR = PROJECT_DIR / 'build'
 
 
 def render_template(url_path, template_path, data):
@@ -18,6 +20,7 @@ def render_template(url_path, template_path, data):
     data['url'] = get_url(BASE_URL, url_path)
     data['url_path'] = url_path
     data['html_path'] = str(html_path.relative_to(BUILD_DIR))
+    data['updated_at'] = arrow.utcnow()
 
     html_path.write_text(template.render(**data))
 

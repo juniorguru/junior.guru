@@ -1,16 +1,56 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" data-updated="{{ updated_at.to('Europe/Prague') }}">
   <head>
     <meta charset="utf-8">
     <link rel="canonical" href="{{ url }}">
-    <title>junior.guru</title>
+    <title>{% block title %}junior.guru{% endblock %}</title>
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1316071-22"></script>
+    <script>
+      if (window.location.hostname === 'junior.guru') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-1316071-22');
+      }
+    </script>
+
+    <meta name="description" content="{% block description %}...{% endblock %}">
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <!-- <script src="script.js"></script> -->
   </head>
   <body>
-    {% block body %}{% endblock %}
-
+    {% block body %}
+      <header>
+        <strong>
+          <a href="/">junior.guru</a>
+        </strong>
+        <ol>
+          <li>
+            <a href="/learn/">Learn</a>
+          </li>
+          <li>
+            <a href="/practice/">Practice</a>
+          </li>
+          <li>
+            <a href="/jobs/">Jobs</a>
+          </li>
+        </ol>
+      </header>
+      <hr>
+      {% block content %}{% endblock %}
+      <hr>
+      <footer>
+        <p>
+          <strong>junior.guru</strong> provozuje
+          <a href="http://honzajavorek.cz">Honza Javorek</a>,
+          IČO <a href="http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0">74279858</a>
+        </p>
+        <p>
+          Pište na <a href="mailto:mail&#64;honzajavorek.cz">mail&#64;<!---->honzajavorek.cz</a>,
+          tweetujte na <a href="https://twitter.com/honzajavorek/">@honzajavorek</a>
+        </p>
+      </footer>
+    {% endblock %}
     <script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
   </body>
 </html>
