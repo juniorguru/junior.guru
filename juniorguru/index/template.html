@@ -1,7 +1,20 @@
 {% extends base_template %}
 {% block content %}
 
-<h1>Index</h1>
-Ahoj {{ name }}!
+<h1>junior.guru</h1>
+<p>
+    {{ self.tagline() }}
+</p>
+<p>
+    Průměrný plat programátorů je 50&nbsp;000 Kč<sup><a href="#footnote1">1</a></sup>
+    a běžně mají pružnou pracovní dobu nebo možnost práce na dálku &ndash; lze
+    tedy bydlet v Ostravě a pobírat pražský plat. Programátorů není dost a poptávka
+    stále stoupá, VŠ diplom nebývá vyžadován. Jestli v roce 2019 existuje
+    rychlovýtah k lepší životní úrovni, je to IT.
+</p>
+
+<hr>
+
+<sup id="footnote1">1</sup> Zdroj: <a href="https://www.platy.cz/platy/informacni-technologie/programator?search=1">platy.cz</a>
 
 {% endblock %}

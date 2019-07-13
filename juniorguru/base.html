@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <link rel="canonical" href="{{ url }}">
-    <title>{% block title %}junior.guru{% endblock %}</title>
+    <title>{% block tagline -%}
+      Jak se naučit programovat a získat svou první práci v IT
+    {%- endblock %}{% block title %}{% endblock %}</title>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1316071-22"></script>
     <script>
@@ -15,7 +17,7 @@
       }
     </script>
 
-    <meta name="description" content="{% block description %}...{% endblock %}">
+    <meta name="description" content="{% block description %}{% endblock %}">
     <!-- <link rel="stylesheet" href="style.css"> -->
   </head>
   <body>
@@ -25,15 +27,9 @@
           <a href="/">junior.guru</a>
         </strong>
         <ol>
-          <li>
-            <a href="/learn/">Learn</a>
-          </li>
-          <li>
-            <a href="/practice/">Practice</a>
-          </li>
-          <li>
-            <a href="/jobs/">Jobs</a>
-          </li>
+          <li><a href="/learn/">Nauč se základy</a></li>
+          <li><a href="/practice/">Získej praxi</a></li>
+          <li><a href="/jobs/">Najdi práci</a></li>
         </ol>
       </header>
       <hr>
@@ -45,7 +41,7 @@
           <a href="http://honzajavorek.cz">Honza Javorek</a>,
           IČO <a href="http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0">74279858</a>
         </p>
-        <p>
+        <p id="contact">
           Pište na <a href="mailto:mail&#64;honzajavorek.cz">mail&#64;<!---->honzajavorek.cz</a>,
           tweetujte na <a href="https://twitter.com/honzajavorek/">@honzajavorek</a>
         </p>

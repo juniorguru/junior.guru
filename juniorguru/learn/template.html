@@ -1,7 +1,280 @@
 {% extends base_template %}
+{% block title %}: Nauč se základy{% endblock %}
+
+{% block description -%}
+Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kterých výukových materiálů investovat svůj čas? Zde najdeš pečlivě nachystané jen to, co pro tebe bude do úplného startu nejlepší a nejefektivnější.
+{%- endblock %}
+
 {% block content %}
 
-<h1>Learn</h1>
-Ahoj {{ name }}!
+<h1>Nauč se základy programování</h1>
+<p class="lead">
+    {{ self.description() }} Až vše projdeš, můžeš začít <a href="/practice/">získávat praxi</a>.
+</p>
+
+<h2 id="what">Co je programování?</h2>
+(Programovat znamená umět počítačům říkat, jak za mě mají dělat
+    nudné, opakující se úkony. To se hodí doma i v práci, ale především
+    to umožňuje programováním se živit.)
+- Potřebuji vyřešit nějaký problém a nechce se mi ho řešit ručně
+- Vymyslím recept, podle kterého by ten problém mohl počítač vyřešit za mě
+- Napíšu recept do souboru jako obyčejný text, v nějakém "jazyce", kterému počítač rozumí
+- Spustím recept počítačem
+- Zjistím, že jsem to vymyslel blbě a mám tam chybu, počítač slepě následuje můj chybně vymyšlený recept a nedělá přesně to co jsem původně chtěl
+- Opravuju recept a spouštím ho počítačem, nejde mi to opravit, přemýšlím, piju kafe, vařím čaj, ze zoufalství se točím na židli...
+- Po třech hodinách spustím recept počítačem a ono to funguje. Hurá, naprogramoval jsem něco!
+
+Co to neni
+
+- VĚDA. Ani matika, ani fyzika, většinou ani žádná jiná věda
+- Servis. Spravování tiskáren v kanclu, nastavování mejlových schránek
+- Magie. Létání, mizení lidí, hádání srdcového esa
+
+<h2 id="why">Proč se to učit?</h2>
+- Nudné, opakující se věci za mě udělá počítač - Nevyžehlí a nevypere za mě, ale třeba místo abych 500⨉ udělal Ctrl+C a Ctrl+V, můžu si to naprogramovat.
+- Celkem brzo můžu dostat dobrou práci - Programátorů je nedostatek, jsou dobře placení, mají pružnou pracovní dobu, pracují na dálku, ...
+- Vstup do světa počítačů - I když nakonec programovat nebudu, budu mít blíž i k oborům, kde jenom nečumím do divných písmenek na černým pozadí. Třeba internetový marketing, psaní dokumentací, strukturování informací na webových stránkách, a tak.
+- Taky psali na ídnes že přicházejí miliony zlých robotů, co berou lidem práci a za chvíli už všechno budou dělat počítače. A že budou inteligentní ledničky s Fejsbůkem. Roboti nevím, asi mysleli appky na ajfouny, ale stejně bude lepší, když budu ty věci programovat, než když aby mě chytrá lednička předběhla na pohovoru.
+
+<h2 id="requirements">Co budu potřebovat?</h2>
+- Svůj vlastní počítač
+- Nějaké ty internety
+- Odhodlání
+- Rozumět (aspon psané) angličtině
+- Zvědavost
+- Překonávat všelijaké předsudky
+
+co nemusim mit
+- Pubertu
+- Talent
+- Péro
+- Matematický mozek
+- Vysokoškolské tituly
+
+<!--
+    testimonials: diky programovani mohu cestovat po celem svete (mrozek)
+    testimonials: diky programovani mohu pracovat a vychovavat deti (mamka nejaka)
+-->
+
+<h3 id="university">Musím mít VŠ?</h3>
+vs
+==
+
+- Rozhled, zkušenosti, souvislosti, vědomosti do hloubky
+- Teoretické znalosti, které jsou potřeba při těch fakt složitých věcech
+- Tituly (potěší rodiče, babičky a tak)
+
+můžu jít do vědy, můžu programovat auta, vyhledávání na Googlu, můžu pomáhat doktorům, naučit počítače rozumět obrazu a řeči...
+
+samouk
+======
+
+můžu dělat všechno ostatní, třeba webovky nebo mobilní appky. Což je pořád docela dost dobrý!
+
+<!--
+    testimonials: vs jsem nikdy nedokoncil a nevadilo mi to (???)
+-->
+
+<h3 id="math">Matematika?</h3>
+Mnoho lidí si myslí, že k programování je potřeba matematika.
+Není to ale pravda. Většinou si vystačíš se základy matematiky
+
+<!--
+    testimonials: z matematiky jsem mel ctyrky a nikdy me nebavila (HJ)
+-->
+
+<h3 id="other-field">Znalosti z jiného oboru?</h3>
+výhoda! fusion, vyhodne se da kombinovat
+
+<!--
+    testimonials: naucil jsem se programovat a zrychlilo to mou praci (david zihala)
+-->
+
+<h3 id="ladies">Můžou programovat i holky?</h3>
+- yes
+
+<!--
+    testimonials: naucila jsem se programovat a zmenilo mi to karieru (pavla frankova?)
+-->
+
+<h2 id="learn">Jak se naučit programovat?</h2>
+<ul>
+    <li>materiály</li> https://naucse.python.cz/
+    <li>kniha</li> http://diveintopython3.py.cz/
+    <li>online kurz</li> https://engeto.com/cs/katalog/python-1-uvod-do-programovani, https://www.codecademy.com/learn/learn-python-3, https://www.coursera.org/learn/python
+    <li>procvicovani</li> https://www.umimeprogramovat.cz/
+    <li>lidi</li> https://pyvo.cz/, https://www.facebook.com/groups/pyonieri/
+</ul>
+
+<h3 id="learn-ladies">Dámy mají přednost</h3>
+- proč, statistiky
+<ul>
+    <li>PyLadies</li> https://pyladies.cz/
+    <li>Czechitas</li> https://www.czechitas.cz/
+    <li>Django Girls</li> https://djangogirls.org/
+    <li>Rails Girls</li> http://railsgirls.com/
+</ul>
+
+<h3 id="python">Proč Python?</h3>
+<p>
+    Ať už budeš nakonec dělat cokoliv, začít s <a href="https://python.cz/">Pythonem</a> je skvělý tah. Je to nejvhodnější první jazyk.
+</p>
+<ul>
+    <li>
+        Je to dnes jeden z nejpoužívanějších a nejoblíbenějších jazyků vůbec.
+
+        <ul>
+            <li>
+                <a href="https://meterpreter.org/python-will-become-the-official-programming-language-for-french-high-schools/">
+                    InfoTech News: Oficiální jazyk pro výuku ve Francii
+                </a>
+            </li>
+            <li>
+                <a href="https://www.economist.com/graphic-detail/2018/07/26/python-is-becoming-the-worlds-most-popular-coding-language">
+                    The Economist: Stává se nejoblíbenějším jazykem na světě
+                </a>
+            </li>
+            <li>
+                <a href="https://insights.stackoverflow.com/survey/2019">
+                    StackOverflow: Jazyk s nejrychleji rostoucí popularitou a druhý nejmilovanější
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/watch?v=cKzP61Gjf00">
+                    Vývoj dat ze StackOverflow: Během 10 let se stal nejoblíbenějším jazykem
+                </a>
+            </li>
+            <li>
+                <a href="https://www.jetbrains.com/research/devecosystem-2018/">
+                    JetBrains: Třetí jazyk, který lidé mají jako hlavní. První, který se nejvíc učí
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zdnet.com/article/programming-languages-python-predicted-to-overtake-c-and-java-in-next-4-years/">
+                    ZDNet: Odhaduje se, že do několika let bude nejpoužívanější na světě
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        Dobře se učí. Neobsahuje příliš mnoho divných značek, vypadá spíš jako anglická věta.
+    </li>
+    <li>
+        Má přátelskou komunitu lidí, kteří píšou materiály pro začátečníky a pořádají nejrůznější akce.
+    </li>
+    <li>
+        Dobře hledá pomoc při řešení problémů během učení, a to i v češtině.
+    </li>
+    <li>
+        Je univerzální: tvorba webu, správa serverů, datová analýza, automatizace, vědecké výpočty, &hellip;
+    </li>
+    <li>
+        Existuje pro něj <a href="http://python.cz/prace">mnoho nabídek práce</a>.
+    </li>
+</ul>
+<p class="note">
+    Co když ale bude nakonec v pracovním inzerátu Java? Důležité je především umět programovat &ndash; jiný jazyk nebo technologie se dá vždy doučit. Některé firmy přeučení i nabízejí.
+</p>
+
+<h2 id="english">Jak si zlepšit angličtinu?</h2>
+<p>
+    Mnohem více než <a href="#math">matematika</a> je při programování potřeba
+    angličtina. Materiály pro úplné začátečníky existují i v češtině, ale potom už se bez schopnosti alespoň číst anglický text obejít nelze.
+</p>
+<ul>
+    <li>
+        <a href="https://www.helpforenglish.cz">
+            <h4>Help for English</h4>
+            <ul>
+                <li><small>materiály</small></li>
+            </ul>
+        </a>
+        <p>
+            Bezplatné kvalitní matariály, testy, cvičení.
+        </p>
+    </li>
+    <li>
+        <a href="https://www.youtube.com/user/BBSobotka">
+            <h4>Broňa</h4>
+            <ul>
+                <li><small>YouTube</small></li>
+            </ul>
+        </a>
+        <p>
+            Video každé úterý. Trochu střelený, ale <a href="https://video.aktualne.cz/dvtv/nadseny-ucitel-anglictiny-jazyk-se-nauci-kazdy-lide-ale-maji/r~f94af27a9e4c11e9970a0cc47ab5f122/">nadšený</a>!
+        </p>
+    </li>
+    <li>
+        <a href="https://www.onlinejazyky.cz">
+            <h4>ONLINE jazyky</h4>
+            <ul>
+                <li><small>online kurz</small></li>
+            </ul>
+        </a>
+        <p>
+            Kurzy pro každou úroveň. 20 min denně.
+        </p>
+    </li>
+    <li>
+        <a href="https://www.speakconfidentenglish.com">
+            <h4>Speak Confident English</h4>
+            <ul>
+                <li><small>online kurz</small></li>
+                <li><small>mentoring</small></li>
+            </ul>
+        </a>
+        <p>
+            I nesmělí a introvertní mohou mluvit plynně.
+        </p>
+    </li>
+    <li>
+        <a href="https://cs.duolingo.com/">
+            <h4>Duolingo</h4>
+            <ul>
+                <li><small>online kurz</small></li>
+                <li><small>mobilní appka</small></li>
+            </ul>
+        </a>
+        <p>
+            Uč se hrou v mobilu, 5 min denně, kdykoliv, kdekoliv.
+        </p>
+    </li>
+    <li>
+        <a href="https://www.umimeanglicky.cz/">
+            <h4>Umíme anglicky</h4>
+            <ul>
+                <li><small>procvičování</small></li>
+            </ul>
+        </a>
+        <p>
+            Systém učení skrze cvičení a opakování, <a href="https://www.umimeto.org/podlozeno-vyzkumem">podložený výzkumy</a>.
+        </p>
+    </li>
+    <li>
+        <a href="https://www.meetup.com/PragueEnglishMeeting/">
+            <h4>Prague English Meeting</h4>
+            <ul>
+                <li><small>setkání</small></li>
+            </ul>
+        </a>
+        <p>
+            Snaž se mluvit s reálnými lidmi. Začni klidně „rukama nohama“<br>
+            <small>Nejbližší setkání hledej na
+            <a href="https://www.facebook.com/search/events/?q=english">FB</a>,
+            <a href="https://www.meetup.com/find/events/language/">meetup.com</a>,
+            <a href="http://www.foreigners.cz/meetup">foreigners.cz</a>,
+            <a href="https://www.couchsurfing.com/events/search?placeid=ChIJQ4Ld14-UC0cRb1jb03UcZvg&search_query=Czechia">couchsurfing.com</a>
+            </small>
+        </p>
+    </li>
+</ul>
+<p class="note">
+    Učební materiály v seznamu jsou vybírány s ohledem na jejich přívětivost,
+    efektivnost, a vhodnost pro samouky. Za umístění v seznamu se nedá zaplatit.
+</p>
+
+<hr>
+
+Umíš základy? <a href="/practice/">Získej praxi!</a>
 
 {% endblock %}
