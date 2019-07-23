@@ -1,9 +1,11 @@
 from pathlib import Path
 
+import arrow
+
 from juniorguru.templating import render_template
 
 
-data = dict(name='Honza')
+data = dict(year=arrow.utcnow().year)
 
 
 template_path = Path(__file__).parent / 'template.html'
