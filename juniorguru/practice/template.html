@@ -1,10 +1,117 @@
 {% extends base_template %}
 {% block title %}: Získej praxi{% endblock %}
+
+{% block description -%}
+Znáš základy? Tvým úkolem jsou nyní dvě věci. Dál si rozšiřovat znalosti a především získat alespoň minimální praxi.
+{%- endblock %}
+
 {% block content %}
 
-<h1>Practice</h1>
+<h1>Získej praxi v programování</h1>
+<p class="lead">
+  {{ self.description() }} Teprve potom si můžeš začít <a href="/jobs/">hledat svou první práci v IT</a>.
+</p>
+<ul>
+  <li><a href="#exercise">Jak procvičovat programování?</a></li>
+</ul>
 
+
+<!--
+mentoring:
+pyladies remote https://remote.pyladies.com/
+pyworking sessions https://pyworking.cz/
+mentoring hub preparation
+  become mentor https://github.com/honzajavorek/become-mentor
+  ucime python https://www.facebook.com/groups/ucimepython/
+pyonieri https://www.facebook.com/groups/pyonieri/
+
+
+internships:
+navod na staze, automation, ...
+brigády na léto
+akce firem pro zacatecniky
+  https://pythonweekend.cz/
+  https://blog.seznam.cz/stitek/vyvojari/
+
+
+OSS:
+https://opensource.guide/
+jak prispivat https://opensource.guide/how-to-contribute/
+https://www.firsttimersonly.com/
+https://opensource.com/education/16/1/how-students-get-started-open-source
+https://github.com/lenadroid/awesome-oss-mentors
+https://beeware.org/contributing/how/first-time/
+https://www.codementor.io/srijancse/how-to-contribute-to-open-source-projects-obdckoat3
+
+exercises:
 https://checkio.org/
 https://www.codewars.com/?language=python
+https://exercism.io/
+
+
+knihy? https://learncodethehardway.org/
+https://en.wikipedia.org/wiki/The_Pragmatic_Programmer
+https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/dp/0135957052
+
+hackatony
+http://www.otevrenadata.cz/hackathon/
+https://hackprague.com/hackathon2019/
+https://www.hackathon.com/city/czech-republic/praha
+https://medium.com/@misasebestova/m%C5%AFj-prvn%C3%AD-datov%C3%BD-hackathon-6f753a4730cf
+
+coding dojos
+24 christmas
+workshopy
+pyworking workshops https://pyworking.cz/
+project euler https://projecteuler.net/
+
+
+konference - inspiration
+open source - inspirace, hledat reseni, cteni kodu
+https://www.python.org/events/
+
+
+bash, command line, linux:
+https://linuxjourney.com/
+https://wizardzines.com/
+https://github.com/jlevy/the-art-of-command-line
+
+ekosystém jazyka - https://docs.python-guide.org/
+https://realpython.com/
+https://twitter.com/python_tip
+https://twitter.com/TheBeginnerDev
+
+Git, API, vývoj webu, datová analýza, SQL, R
+https://www.sedlakovi.org/kurzy/
+https://coreskill.tech/
+engeto
+czechitas - https://www.czechitas.cz/cs/co-delame/prace-v-it
+https://brohrer.github.io/blog.html - learn XYZ vpravo dole
+
+https://guides.github.com/features/mastering-markdown/
+
+https://guides.github.com/introduction/git-handbook/
+https://github.com/Gazler/githug
+-->
+
+<h2 id="exercise">Jak procvičovat programování?</h2>
+<ul>
+  <li>
+    <a href="https://www.umimeprogramovat.cz">
+      <h3>Umíme programovat</h3>
+      <ul>
+        <li><small>procvičování</small></li>
+      </ul>
+    </a>
+    <p>
+      Systém učení skrze cvičení a opakování, <a href="https://www.umimeto.org/podlozeno-vyzkumem">podložený výzkumy</a>.
+    </p>
+  </li>
+</ul>
+{% include note_template %}
+
+<hr>
+
+Máš praxi? <a href="/jobs/">Najdi si práci!</a>
 
 {% endblock %}
