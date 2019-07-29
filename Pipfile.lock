@@ -18,11 +18,11 @@
     "default": {
         "arrow": {
             "hashes": [
-                "sha256:03404b624e89ac5e4fc19c52045fa0f3203419fd4dd64f6e8958c522580a574a",
-                "sha256:41be7ea4c53c2cf57bf30f2d614f60c411160133f7a0a8c49111c30fb7e725b5"
+                "sha256:20055cd5dd03314c62544138a227ba24fb040b949e7cf785da611d3d4b11d31c",
+                "sha256:33eb1599b93466daa5aba34a70b2507dbe2ce37a5b4cf23608ff2b7d52846132"
             ],
             "index": "pypi",
-            "version": "==0.14.2"
+            "version": "==0.14.3"
         },
         "certifi": {
             "hashes": [
@@ -48,10 +48,10 @@
         },
         "httplib2": {
             "hashes": [
-                "sha256:158fbd0ffbba536829d664bf3f32c4f45df41f8f791663665162dfaf21ffd075",
-                "sha256:d1146939d270f1f1eb8cbf8f5aa72ff37d897faccca448582bb1e180aeb4c6b2"
+                "sha256:6901c8c0ffcf721f9ce270ad86da37bc2b4d32b8802d4a9cec38274898a64044",
+                "sha256:cf6f9d5876d796539ec922a2c9b9a7cad9bfd90f04badcdc3bcfa537168052c3"
             ],
-            "version": "==0.13.0"
+            "version": "==0.13.1"
         },
         "idna": {
             "hashes": [
@@ -176,10 +176,10 @@
         },
         "importlib-metadata": {
             "hashes": [
-                "sha256:6dfd58dfe281e8d240937776065dd3624ad5469c835248219bd16cf2e12dbeb7",
-                "sha256:cb6ee23b46173539939964df59d3d72c3e0c1b5d54b84f1d8a7e912fe43612db"
+                "sha256:23d3d873e008a513952355379d93cbcab874c58f4f034ff657c7a87422fa64e8",
+                "sha256:80d2de76188eabfbfcf27e6a37342c2827801e59c4cc14b0371c56fed43820e3"
             ],
-            "version": "==0.18"
+            "version": "==0.19"
         },
         "more-itertools": {
             "hashes": [
@@ -211,10 +211,10 @@
         },
         "pyparsing": {
             "hashes": [
-                "sha256:1873c03321fc118f4e9746baf201ff990ceb915f433f23b395f5580d1840cb2a",
-                "sha256:9b6323ef4ab914af344ba97510e966d64ba91055d6b9afa6b30799340e89cc03"
+                "sha256:43c5486cefefa536c9aab528881c992328f020eefe4f6d06332449c365218580",
+                "sha256:d6c5ffe9d0305b9b977f7a642d36b9370954d1da7ada4c62393382cbadad4265"
             ],
-            "version": "==2.4.0"
+            "version": "==2.4.1.1"
         },
         "pytest": {
             "hashes": [
