@@ -4,11 +4,13 @@
 
 According to [spectrum.chat/zeit](https://spectrum.chat/zeit/now/redirection-email-domain~b5e1b613-ae92-42f9-bc49-e8c824a8a7f2?m=MTUzNDE5OTg3MzMwMw==):
 
-1.  Fill the form at [ImprovMX](https://improvmx.com/)
-1.  ```
+1.  Run following:
+
+    ```
     $ now dns add junior.guru '@' MX mx1.improvmx.com 10
     $ now dns add junior.guru '@' MX mx2.improvmx.com 20
     ```
+1.  Fill the form at [ImprovMX](https://improvmx.com/)
 1.  Setup and verify the address in [MailChimp](https://mailchimp.com/)
 
 ## Setting up Google Drive credentials
