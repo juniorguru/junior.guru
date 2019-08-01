@@ -9,36 +9,102 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 
 <h1>Získej praxi v programování</h1>
 <p class="lead">
-  {{ self.description() }} Teprve potom si můžeš začít <a href="/jobs/">hledat svou první práci v IT</a>.
+  Znáš <a href="/learn/">základy</a>?
+  Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti.
+  Teprve potom si můžeš začít <a href="/jobs/">hledat svou první práci v IT</a>.
 </p>
 <ul>
-  <li><a href="#exercise">Jak procvičovat programování?</a></li>
+  <li><a href="#exercises">Procvičuj</a></li>
+  <li><a href="#projects">Najdi si projekt</a></li>
+  <li><a href="#help">Kde najdeš pomoc?</a></li>
+  <li><a href="#skills">Rozšiřuj si znalosti</a></li>
+  <li><a href="#events">Najdi inspiraci, poznej lidi</a></li>
 </ul>
 
+<h2 id="exercises">Procvičuj</h2>
+<ul>
+  <li>
+    <a href="https://exercism.io/">
+      <h3>Exercism</h3>
+    </a>
+    <p>
+      Řešíš malé úkoly, dostáváš zpětnou vazbu od mentora, učíš se z řešení druhých.
+    </p>
+  </li>
+  <li>
+    <a href="https://www.codewars.com/">
+      <h3>Codewars</h3>
+    </a>
+    <p>
+      Přímo v prohlížeči řešíš malé úkoly, učíš se z řešení druhých.
+    </p>
+  </li>
+  <li>
+    <a href="https://checkio.org/">
+      <h3>CheckiO</h3>
+    </a>
+    <p>
+      Hra v prohlížeči, kde řešíš úkoly pomocí programování, učíš se od druhých.
+    </p>
+  </li>
+  <li>
+    <a href="https://www.umimeprogramovat.cz">
+      <h3>Umíme programovat</h3>
+    </a>
+    <p>
+      Systém učení skrze cvičení a opakování, <a href="https://www.umimeto.org/podlozeno-vyzkumem">podložený výzkumy</a>.
+    </p>
+  </li>
+  <li>
+    <a href="https://projecteuler.net/">
+      <h3>Project Euler</h3>
+      <ul>
+          <li><small>pro odvážnější</small></li>
+      </ul>
+    </a>
+    <p>
+      Řešíš matematické úkoly pomocí programování.
+    </p>
+  </li>
+</ul>
+{% include note_template %}
 
+<h2 id="projects">Najdi si projekt</h2>
+<p>
+  Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit.
+  Říká se tomu <a href="https://cs.wikipedia.org/wiki/Projektov%C3%A9_u%C4%8Den%C3%AD">projektové učení</a>.
+  Nejlepší je vymyslet si něco vlastního a řešení procházet s <a href="#mentor">mentorem</a>.
+  Inspirace na projekt se nejlépe hledá přímo okolo tebe:
+</p>
+<ul>
+  <li>
+    jednoduchá hra, např. piškvorky, <a href="https://cs.wikipedia.org/wiki/Had_(po%C4%8D%C3%ADta%C4%8Dov%C3%A1_hra)">had</a>
+  </li>
+  <li>
+    automatizace něčeho, co teď na počítači musíš dělat ručně (mrkni na <a href="https://automatetheboringstuff.com">tuto knihu</a>)
+  </li>
+  <li>
+    program na procvičování příkladů nebo slovíček pro děti do školy
+  </li>
+</ul>
 <!--
-exercises: [gallery]
-  https://checkio.org/
-  https://www.codewars.com/?language=python
-  https://exercism.io/
-  https://projecteuler.net/
+  dalsi zpusob jak najit projekt jsou hackathony nebo open source
 
-vysvetlit project-based learning
-  - proc?
-  - kde najdu inspiraci? day-to-day stuff, automation, mentoring, hackatony, OSS
+  urcite dej svuj projekt na github - naucis se pracovat s gitem, githubem,
+  a bude se ti to hodit jako ukazka kodu pri hledani prace
+-->
 
-mentoring: [gallery]
-  pyladies remote https://remote.pyladies.com/
-  pyworking sessions https://pyworking.cz/
-  pyonieri https://www.facebook.com/groups/pyonieri/
-  OSS https://github.com/lenadroid/awesome-oss-mentors
-
+<h3 id="hackathons">Hackathony</h2>
+<!--
 hackatony [gallery + text]
   https://kodujprocesko.osf.cz/
   https://hackprague.com
   https://www.hackathon.com/city/czech-republic/praha
   https://medium.com/@misasebestova/m%C5%AFj-prvn%C3%AD-datov%C3%BD-hackathon-6f753a4730cf
+-->
 
+<h3 id="opensource">Open Source</h2>
+<!--
 OSS: [gallery + text]
   open source - inspirace, hledat reseni, cteni kodu
   https://cesko.digital/
@@ -48,13 +114,42 @@ OSS: [gallery + text]
   https://www.codementor.io/srijancse/how-to-contribute-to-open-source-projects-obdckoat3
   https://beeware.org/contributing/how/first-time/
   https://github.com/lenadroid/awesome-oss-mentors
+-->
 
-naber inspiraci na konferencich
-  proc jsou duleziti lidi a inspirace a energie, nejsem v tom sam, beginner-friendly events
-  https://www.python.org/events/ - https://cz.pycon.org/, https://2019.pycon.sk/
-  https://www.writethedocs.org/conf/
+<h2 id="help">Kde najdeš pomoc?</h2>
+<p>
+  Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout
+  na týdny a úplně ti zkazit radost z učení. Neboj se ptát online nebo si najít mentora.
+</p>
 
-dalsi vzdelavani
+<h3 id="questions">Kde se ptát?</h3>
+<!--
+  Stack Overflow https://stackoverflow.com/
+  Reddit https://www.reddit.com/r/learnprogramming/
+
+  Reddit Python https://www.reddit.com/r/learnpython/
+  pyonieri https://www.facebook.com/groups/pyonieri/
+-->
+
+<h3 id="mentors">Mentor</h3>
+<p>
+  Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to být
+  vyloženě mistr v oboru, stačí když bude v programování alespoň o něco
+  zkušenější než ty. A klidně může stačit, když se uvidíte jednu hodinu týdně.
+</p>
+<!--
+kdyz si nekoho vytipujes, posli jim https://github.com/honzajavorek/become-mentor/blob/master/cs.md
+
+mentoring: [gallery]
+  ucime python https://www.facebook.com/groups/ucimepython/
+  pyworking sessions https://pyworking.cz/
+  pyladies remote https://remote.pyladies.com/
+  OSS https://github.com/lenadroid/awesome-oss-mentors
+-->
+
+<h2 id="skills">Rozšiřuj si znalosti</h2>
+<!--
+dalsi vzdelavani, skillz
   kurzy:
     coursera, udemy, udacity, edx.org, codecademy
 
@@ -62,25 +157,17 @@ dalsi vzdelavani
     https://pyworking.cz/
     https://www.czechitas.cz/cs/kalendar-akci
     https://engeto.cz/workshopy/
-
-  https://github.com/honzajavorek/junior.guru/issues/3
 -->
 
-<h2 id="exercise">Jak procvičovat programování?</h2>
-<ul>
-  <li>
-    <a href="https://www.umimeprogramovat.cz">
-      <h3>Umíme programovat</h3>
-      <ul>
-        <li><small>procvičování</small></li>
-      </ul>
-    </a>
-    <p>
-      Systém učení skrze cvičení a opakování, <a href="https://www.umimeto.org/podlozeno-vyzkumem">podložený výzkumy</a>.
-    </p>
-  </li>
-</ul>
-{% include note_template %}
+<h2 id="events">Najdi inspiraci, poznej lidi</h2>
+<!--
+naber inspiraci, potkej lidi na konferencich, nabije te to energii
+  proc jsou duleziti lidi a inspirace a energie, nejsem v tom sam, beginner-friendly events
+  https://www.python.org/events/ - https://cz.pycon.org/, https://2019.pycon.sk/
+  https://www.writethedocs.org/conf/
+
+meetupy
+-->
 
 <hr>
 
