@@ -31,18 +31,7 @@
 
         <p class="job-requirements">
         {% for requirement in job.requirements %}
-          <!--
-            TODO translation
-
-            mainstream programming language
-            databases
-            data analysis
-            servers and operations
-            web backend
-            web frontend
-            mobile apps development
-          -->
-          <span class="job-requirement">{{ requirement }}</span>
+          <span class="job-requirement">{{ requirement|job_requirement }}</span>
         {% endfor %}
         </p>
 
@@ -50,18 +39,13 @@
         <div class="job-description">{{ job.description }}</div>
       </details>
       <p class="job-type">
-        <!--
-          TODO translation
-
-          full-time, part-time, paid-internship, unpaid-internship, volunteering
-        -->
-        <small>{{ job.job_type }}</small>
+        <small>{{ job.job_type|job_type }}</small>
       </p>
       <p class="job-location">
         <small>{{ job.location }}</small>
       </p>
-      <p class="job-apply"> <!-- TODO email -->
-        <a href="mailto:{{ job.email }}">Piš na <span class="job-contact">{{ job.email }}</span></a>
+      <p class="job-apply">
+        {{ job.email|email_link('Piš na {email}') }}
       </p>
     </li>
 {% endfor %}

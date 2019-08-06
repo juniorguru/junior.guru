@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import arrow
-from jinja2 import Template
+from jinja2 import Environment, Markup
 
 
 BASE_URL = 'https://junior.guru'
@@ -10,14 +10,18 @@ PROJECT_DIR = PACKAGE_DIR.parent
 BUILD_DIR = PROJECT_DIR / 'build'
 
 
-def render_template(url_path, template_path, data):
-    template = Template(template_path.read_text())
+def render_template(url_path, template_path, data, filters=None):
+    env = Environment()
+    env.filters['email_link'] = email_link
+    env.filters.update(filters or {})
+
+    template = env.from_string(template_path.read_text())
 
     html_path = get_html_path(BUILD_DIR, url_path)
     html_path.parent.mkdir(parents=True, exist_ok=True)
 
-    data['base_template'] = Template((PACKAGE_DIR / 'base.html').read_text())
-    data['list_note_template'] = Template((PACKAGE_DIR / 'list_note.html').read_text())
+    data['base_template'] = env.from_string((PACKAGE_DIR / 'base.html').read_text())
+    data['list_note_template'] = env.from_string((PACKAGE_DIR / 'list_note.html').read_text())
     data['url'] = get_url(BASE_URL, url_path)
     data['url_path'] = url_path
     data['html_path'] = str(html_path.relative_to(BUILD_DIR))
@@ -35,3 +39,9 @@ def get_html_path(build_dir, url_path):
     if not html_path.suffix:
         return html_path / 'index.html'
     return html_path
+
+
+def email_link(email, text_template='{email}'):
+    user, server = email.split('@')
+    text = text_template.format(email=f'{user}&#64;<!---->{server}')
+    return Markup(f'<a href="mailto:{user}&#64;{server}">{text}</a>')

@@ -8,6 +8,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 from juniorguru.jobs.sheets import coerce_record
 from juniorguru.templating import render_template
+from juniorguru.jobs.template_filters import job_requirement, job_type
 
 
 JOBS_PACKAGE_DIR = Path(__file__).parent
@@ -29,4 +30,8 @@ selected_jobs = sorted(filter(itemgetter('is_approved'), jobs), key=itemgetter('
 data = dict(name='Honza', jobs=selected_jobs)
 
 template_path = JOBS_PACKAGE_DIR / 'template.html'
-render_template('/jobs/', template_path, data)
+template_filters = dict(
+    job_requirement=job_requirement,
+    job_type=job_type,
+)
+render_template('/jobs/', template_path, data, filters=template_filters)

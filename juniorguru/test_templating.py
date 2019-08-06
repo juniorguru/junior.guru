@@ -22,3 +22,14 @@ def test_get_url(url_path, url):
 ])
 def test_get_html_path(url_path, html_path):
     assert str(templating.get_html_path('/tmp/build', url_path)) == html_path
+
+
+def test_email_link():
+    markup = str(templating.email_link('xyz@example.com'))
+    assert markup == '<a href="mailto:xyz&#64;example.com">xyz&#64;<!---->example.com</a>'
+
+
+def test_email_link_using_text_template():
+    text_template = 'gargamel {email} smurf'
+    markup = str(templating.email_link('xyz@example.com', text_template))
+    assert markup == '<a href="mailto:xyz&#64;example.com">gargamel xyz&#64;<!---->example.com smurf</a>'
