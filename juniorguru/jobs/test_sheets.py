@@ -51,8 +51,8 @@ def test_coerce_boolean(value, expected):
 
 
 @pytest.mark.parametrize('value,expected', [
-    (None, set()),
-    ('mainstream programming language, web frontend', {'mainstream programming language', 'web frontend'})
+    (None, []),
+    ('web frontend, mainstream programming language', ['mainstream programming language', 'web frontend'])
 ])
 def test_coerce_set(value, expected):
     assert sheets.coerce_set(value) == expected
@@ -69,7 +69,7 @@ def test_coerce_record():
         'Email Address': 'mail@honzajavorek.cz',
         'Location': 'Prague',
         'Description': None,
-        'The applicant should ideally know basics of...': 'mainstream programming language, web frontend',
+        'The applicant should ideally know basics of...': 'web frontend, mainstream programming language',
         'Approved': None
     }) == {
         'timestamp': datetime(2019, 7, 6, 20, 24, 3),
@@ -81,6 +81,6 @@ def test_coerce_record():
         'email': 'mail@honzajavorek.cz',
         'location': 'Prague',
         'description': None,
-        'requirements': {'mainstream programming language', 'web frontend'},
+        'requirements': ['mainstream programming language', 'web frontend'],
         'is_approved': False
     }

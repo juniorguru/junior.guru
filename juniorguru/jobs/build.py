@@ -25,7 +25,7 @@ doc = gspread.authorize(credentials).open_by_key(doc_key)
 records = doc.worksheet('jobs').get_all_records(default_blank=None)
 
 jobs = map(coerce_record, records)
-selected_jobs = sorted(filter(itemgetter('is_approved'), jobs), key=itemgetter('timestamp'))
+selected_jobs = sorted(filter(itemgetter('is_approved'), jobs), key=itemgetter('timestamp'), reverse=True)
 data = dict(name='Honza', jobs=selected_jobs)
 
 template_path = JOBS_PACKAGE_DIR / 'template.html'

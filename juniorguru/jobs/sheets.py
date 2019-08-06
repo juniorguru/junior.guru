@@ -49,8 +49,8 @@ def coerce_timestamp(value):
 
 def coerce_set(value):
     if value:
-        return set([item.strip() for item in value.split(',')])
-    return set()
+        return sorted(set([item.strip() for item in value.split(',')]))
+    return []
 
 
 def coerce_boolean(value):

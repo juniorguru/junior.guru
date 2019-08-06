@@ -1,54 +1,77 @@
 {% extends base_template %}
-{% block title %}: Najdi práci{% endblock %}
+{% block title %}: Najdi první práci v IT{% endblock %}
+
+{% block description -%}
+
+{%- endblock %}
+
 {% block content %}
 
-<h1>Jobs</h1>
-
-<p>
-    <a href="http://eepurl.com/gyG8Bb">Pracovní nabídky do emailu</a>
+<h1>Najdi první práci v IT</h1>
+<p class="lead">
+  {{ self.description() }}
+</p>
+<p class="join-newsletter">
+  <a href="http://eepurl.com/gyG8Bb" target="_blank">Nabídky do emailu</a>
 </p>
 
-<hr>
+<p class="post-job">
+  <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Přidej nabídku &ndash; 0 Kč</a><br>
+  Do konce tohoto měsíce je přidávání nabídek zdarma!
+</p>
 
-<!--
-https://gist.github.com/mpavlase/c40a51d2c2663638614cdf7c3df7fb09
-https://www.czechitas.cz/cs/co-delame/prace-v-it
-notes from Olga
-testimonials od lidi, kteri si takto praci nasli
-
-internships:
-  navod na staze, automation, ...
-  brigády na léto
-  akce firem pro zacatecniky
-    https://pythonweekend.cz/
-    https://blog.seznam.cz/stitek/vyvojari/
--->
-
-<!--
-    Popsat kdo je junior a jaké jsou levely, co kdo dokáže v jaké fázi výuky,
-    jaký je potřeba k němu mít přístup, co má hledat, apod. Popsat to pro ty
-    juniory i pro ty firmy. Na toto téma mít články, které pak mohou být vydány
-    nebo odpřednášeny i jinde. Levely znalostí se dají vnutit lidem jako zajeté
-    termíny (viz kolonizátoři a správci), a mít to podchyceno ve formuláři
-    na zadání inzerátu. Potom budou moct junioři filtrovat nabídky podle toho,
-    jak moc toho umí.
--->
-
-<!-- JobsDev CZ partnership? -->
-
-<!-- Nejdřív by existovala buď jen stránka nebo jen mailinglist a bylo by to zadarmo, ale s tím, že by bylo jasně zvýrazněno, že to je jen akce do zaběhnutí portálu. -->
-
-<p><a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Post a job</a></p>
-<ul>
+<ul class="jobs">
 {% for job in jobs %}
-    <li>{{ job }}</li>
+    <li class="job"> <!-- TODO permalink (= timestamp + company domain name) -->
+      <h2 class="job-company">
+        <small><a href="{{ job.company_link }}">{{ job.company_name }}</a></small>
+      </h2>
+      <details>
+        <summary><h3 class="job-title">{{ job.title }}</h3></summary>
+
+        <p class="job-requirements">
+        {% for requirement in job.requirements %}
+          <!--
+            TODO translation
+
+            mainstream programming language
+            databases
+            data analysis
+            servers and operations
+            web backend
+            web frontend
+            mobile apps development
+          -->
+          <span class="job-requirement">{{ requirement }}</span>
+        {% endfor %}
+        </p>
+
+        <!-- TODO markdown -->
+        <div class="job-description">{{ job.description }}</div>
+      </details>
+      <p class="job-type">
+        <!--
+          TODO translation
+
+          full-time, part-time, paid-internship, unpaid-internship, volunteering
+        -->
+        <small>{{ job.job_type }}</small>
+      </p>
+      <p class="job-location">
+        <small>{{ job.location }}</small>
+      </p>
+      <p class="job-apply"> <!-- TODO email -->
+        <a href="mailto:{{ job.email }}">Piš na <span class="job-contact">{{ job.email }}</span></a>
+      </p>
+    </li>
 {% endfor %}
+    <li class="post-job">
+      <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Přidej nabídku &ndash; 0 Kč</a><br>
+      Do konce tohoto měsíce je přidávání nabídek zdarma!
+    </li>
 </ul>
-
-<hr>
-
-<p>
-    <a href="http://eepurl.com/gyG8Bb">Pracovní nabídky do emailu</a>
+<p class="join-newsletter">
+    <a href="http://eepurl.com/gyG8Bb" target="_blank">Nabídky do emailu</a>
 </p>
 
 {% endblock %}
