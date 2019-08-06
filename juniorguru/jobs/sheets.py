@@ -1,4 +1,6 @@
 import re
+import hashlib
+from urllib.parse import urlparse
 
 import arrow
 
@@ -29,6 +31,7 @@ def coerce(mapping, record):
             if key_re.search(record_key):
                 job[key_name] = key_coerce(record_value)
 
+    job['id'] = create_id(job['timestamp'], job['company_link'])
     return job
 
 
@@ -55,3 +58,9 @@ def coerce_set(value):
 
 def coerce_boolean(value):
     return bool(value.strip()) if value else False
+
+
+def create_id(timestamp, company_link):
+    parse_result = urlparse(company_link)
+    seed = f'{timestamp:%Y-%m-%dT%H:%M:%S} {parse_result.netloc}'
+    return hashlib.sha224(seed.encode()).hexdigest()

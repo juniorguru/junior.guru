@@ -1,3 +1,4 @@
+import hashlib
 from datetime import datetime
 
 import pytest
@@ -58,6 +59,11 @@ def test_coerce_set(value, expected):
     assert sheets.coerce_set(value) == expected
 
 
+def test_create_id():
+    id_ = sheets.create_id(datetime(2019, 7, 6, 20, 24, 3), 'https://www.example.com/foo/bar.html')
+    assert id_ == hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest()
+
+
 def test_coerce_record():
     assert sheets.coerce_record({
         'Timestamp': '7/6/2019 20:24:03',
@@ -65,20 +71,21 @@ def test_coerce_record():
         'Job type': 'paid internship',
         'Title': 'Frontend Ninja',
         'Are you an employment agency?': 'no',
-        'Company website link': 'http://honzajavorek.cz',
-        'Email Address': 'mail@honzajavorek.cz',
+        'Company website link': 'https://www.example.com',
+        'Email Address': 'jobs@example.com',
         'Location': 'Prague',
         'Description': None,
         'The applicant should ideally know basics of...': 'web frontend, mainstream programming language',
         'Approved': None
     }) == {
+        'id': hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest(),
         'timestamp': datetime(2019, 7, 6, 20, 24, 3),
         'company_name': 'Honza Ltd.',
         'job_type': 'paid internship',
         'title': 'Frontend Ninja',
         'is_agency': False,
-        'company_link': 'http://honzajavorek.cz',
-        'email': 'mail@honzajavorek.cz',
+        'company_link': 'https://www.example.com',
+        'email': 'jobs@example.com',
         'location': 'Prague',
         'description': None,
         'requirements': ['mainstream programming language', 'web frontend'],

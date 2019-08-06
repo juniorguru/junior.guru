@@ -22,7 +22,7 @@
 
 <ul class="jobs">
 {% for job in jobs %}
-    <li class="job"> <!-- TODO permalink (= timestamp + company domain name) -->
+    <li class="job" id="job-{{ job.id }}">
       <h2 class="job-company">
         <small><a href="{{ job.company_link }}">{{ job.company_name }}</a></small>
       </h2>
