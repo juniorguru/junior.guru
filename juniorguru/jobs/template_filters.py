@@ -10,7 +10,7 @@ REQUIREMENTS_MAPPING = {
 }
 
 
-def job_requirement(requirement):
+def job_requirement_filter(requirement):
     try:
         return REQUIREMENTS_MAPPING[requirement]
     except KeyError:
@@ -26,7 +26,7 @@ TYPES_MAPPING = {
 }
 
 
-def job_type(type_):
+def job_type_filter(type_):
     try:
         return TYPES_MAPPING[type_]
     except KeyError:

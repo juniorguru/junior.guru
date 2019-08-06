@@ -28,15 +28,12 @@
       </h2>
       <details>
         <summary><h3 class="job-title">{{ job.title }}</h3></summary>
-
         <p class="job-requirements">
         {% for requirement in job.requirements %}
           <span class="job-requirement">{{ requirement|job_requirement }}</span>
         {% endfor %}
         </p>
-
-        <!-- TODO markdown -->
-        <div class="job-description">{{ job.description }}</div>
+        <div class="job-description">{{ job.description|markdown }}</div>
       </details>
       <p class="job-type">
         <small>{{ job.job_type|job_type }}</small>

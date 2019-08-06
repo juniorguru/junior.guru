@@ -24,12 +24,17 @@ def test_get_html_path(url_path, html_path):
     assert str(templating.get_html_path('/tmp/build', url_path)) == html_path
 
 
-def test_email_link():
-    markup = str(templating.email_link('xyz@example.com'))
+def test_email_link_filter():
+    markup = str(templating.email_link_filter('xyz@example.com'))
     assert markup == '<a href="mailto:xyz&#64;example.com">xyz&#64;<!---->example.com</a>'
 
 
-def test_email_link_using_text_template():
+def test_email_link_filter_using_text_template():
     text_template = 'gargamel {email} smurf'
-    markup = str(templating.email_link('xyz@example.com', text_template))
+    markup = str(templating.email_link_filter('xyz@example.com', text_template))
     assert markup == '<a href="mailto:xyz&#64;example.com">gargamel xyz&#64;<!---->example.com smurf</a>'
+
+
+def test_markdown_filter():
+    markup = str(templating.markdown_filter('call me **maybe**  \ncall me Honza'))
+    assert markup == '<p>call me <strong>maybe</strong><br>\ncall me Honza</p>'

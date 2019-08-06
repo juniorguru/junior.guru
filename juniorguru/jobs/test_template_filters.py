@@ -14,8 +14,8 @@ from juniorguru.jobs import template_filters
     ('mobile apps', 'mobilní aplikace'),
     ('gargamel', 'gargamel'),
 ])
-def test_job_requirement(requirement, expected):
-    assert template_filters.job_requirement(requirement) == expected
+def test_job_requirement_filter(requirement, expected):
+    assert template_filters.job_requirement_filter(requirement) == expected
 
 
 @pytest.mark.parametrize('type_,expected', [
@@ -26,5 +26,5 @@ def test_job_requirement(requirement, expected):
     ('volunteering', 'dobrovolnictví'),
     ('gargamel', 'gargamel'),
 ])
-def test_job_type(type_, expected):
-    assert template_filters.job_type(type_) == expected
+def test_job_type_filter(type_, expected):
+    assert template_filters.job_type_filter(type_) == expected

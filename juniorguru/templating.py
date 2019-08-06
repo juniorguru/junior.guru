@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import arrow
+from markdown import markdown
 from jinja2 import Environment, Markup
 
 
@@ -12,7 +13,8 @@ BUILD_DIR = PROJECT_DIR / 'build'
 
 def render_template(url_path, template_path, data, filters=None):
     env = Environment()
-    env.filters['email_link'] = email_link
+    env.filters['email_link'] = email_link_filter
+    env.filters['markdown'] = markdown_filter
     env.filters.update(filters or {})
 
     template = env.from_string(template_path.read_text())
@@ -41,7 +43,11 @@ def get_html_path(build_dir, url_path):
     return html_path
 
 
-def email_link(email, text_template='{email}'):
+def email_link_filter(email, text_template='{email}'):
     user, server = email.split('@')
     text = text_template.format(email=f'{user}&#64;<!---->{server}')
     return Markup(f'<a href="mailto:{user}&#64;{server}">{text}</a>')
+
+
+def markdown_filter(markdown_text):
+    return Markup(markdown(markdown_text, output_format='html5'))
