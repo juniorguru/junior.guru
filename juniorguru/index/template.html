@@ -1,10 +1,20 @@
 {% extends base_template %}
-{% block content %}
 
-<h1>junior.guru</h1>
-<p class="tagline">
-  Nauč se programovat a získej svou první práci v IT
-</p>
+{% block description -%}
+Nauč se programovat a získej svou první práci v IT
+{%- endblock %}
+
+{% block header %}
+<header>
+  <h1>junior.guru</h1>
+  <p class="tagline">
+    Nauč se programovat a získej svou první práci v IT
+  </p>
+</header>
+<hr>
+{% endblock %}
+
+{% block content %}
 <ol>
   <li>
     <a href="/learn/">
@@ -42,6 +52,8 @@
   <small><a href="/learn/#why">Proč se učit programovat?</a></small>
 </p>
 
+<hr>
+
 <h2>Nabídky práce do emailu</h2>
 <p>
   Měj přehled o aktuálních nabídkách práce pro juniory.
@@ -59,5 +71,4 @@
   <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Přidat nabídku &mdash; 0 Kč</a><br>
   Do <strong>konce tohoto měsíce</strong> je přidávání nabídek práce <strong>zdarma</strong>!
 </p>
-
 {% endblock %}

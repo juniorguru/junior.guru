@@ -22,6 +22,7 @@
   </head>
   <body>
     {% block body %}
+      {% block header %}
       <header>
         <strong>
           <a href="/">junior.guru</a>
@@ -33,6 +34,7 @@
         </ol>
       </header>
       <hr>
+      {% endblock %}
       {% block content %}{% endblock %}
       <hr>
       <footer>
