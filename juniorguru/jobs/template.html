@@ -1,22 +1,23 @@
 {% extends base_template %}
-{% block title %}: Najdi první práci v IT{% endblock %}
+{% block title %}: Najdi práci{% endblock %}
 
 {% block description -%}
-
+Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovním trhu.
 {%- endblock %}
 
 {% block content %}
 
 <h1>Najdi první práci v IT</h1>
 <p class="lead">
-  {{ self.description() }}
+  Znáš <a href="/learn/">základy</a> a máš <a href="/practice/">praxi</a>?
+  Nastal okamžik začít zkoušet své štestí na pracovním trhu.
 </p>
 <p class="join-newsletter">
   <a href="http://eepurl.com/gyG8Bb" target="_blank">Nabídky do emailu</a>
 </p>
 
 <p class="post-job">
-  <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Přidej nabídku &ndash; 0 Kč</a><br>
+  <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Přidat nabídku &ndash; 0 Kč</a><br>
   Do <strong>konce tohoto měsíce</strong> je přidávání nabídek práce <strong>zdarma</strong>!
 </p>
 
@@ -47,7 +48,7 @@
     </li>
 {% endfor %}
     <li class="post-job">
-      <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Přidej nabídku &ndash; 0 Kč</a><br>
+      <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Přidat nabídku &ndash; 0 Kč</a><br>
       Do <strong>konce tohoto měsíce</strong> je přidávání nabídek práce <strong>zdarma</strong>!
     </li>
 </ul>
