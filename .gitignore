@@ -106,4 +106,4 @@ venv.bak/
 google_service_account.json
 
 # build
-build/**/*.html
+/public

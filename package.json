@@ -1,0 +1,6 @@
+{
+  "name": "juniorguru",
+  "scripts": {
+    "build": "scripts/build.sh"
+  }
+}
