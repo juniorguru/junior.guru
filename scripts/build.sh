@@ -5,6 +5,8 @@ for dir in juniorguru/pages/*/
 do
     dir=${dir%*/}  # remove the trailing '/'
     page=${dir##*/}  # everything after the final '/'
-    python -m "juniorguru.pages.$page" && echo "Page $page done" || exit 1
+    if [ ${page:0:1} != "_" ]; then  # because __pycache__
+        python -m "juniorguru.pages.$page" && echo "Page $page done" || exit 1
+    fi
 done
 npx rollup --config && echo "JavaScript done" || exit 1

@@ -70,4 +70,5 @@ venv.bak/
 google_service_account.json
 
 # Build
-/public
+/build/
+!/build/now.json

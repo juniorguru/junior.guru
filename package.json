@@ -1,8 +1,5 @@
 {
   "name": "juniorguru",
-  "scripts": {
-    "build": "scripts/build.sh"
-  },
   "dependencies": {
     "instant.page": "1.2.2"
   },
