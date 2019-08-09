@@ -7,3 +7,4 @@ do
     page=${dir##*/}  # everything after the final '/'
     python -m "juniorguru.pages.$page" && echo "Page $page done" || exit 1
 done
+npx rollup --config && echo "JavaScript done" || exit 1
