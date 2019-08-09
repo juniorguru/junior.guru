@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.jobs import template_filters
+from juniorguru.pages.jobs import templating
 
 
 @pytest.mark.parametrize('requirement,expected', [
@@ -15,7 +15,7 @@ from juniorguru.jobs import template_filters
     ('gargamel', 'gargamel'),
 ])
 def test_job_requirement_filter(requirement, expected):
-    assert template_filters.job_requirement_filter(requirement) == expected
+    assert templating.job_requirement_filter(requirement) == expected
 
 
 @pytest.mark.parametrize('type_,expected', [
@@ -27,4 +27,4 @@ def test_job_requirement_filter(requirement, expected):
     ('gargamel', 'gargamel'),
 ])
 def test_job_type_filter(type_, expected):
-    assert template_filters.job_type_filter(type_) == expected
+    assert templating.job_type_filter(type_) == expected

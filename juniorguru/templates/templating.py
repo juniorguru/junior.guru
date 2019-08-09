@@ -7,7 +7,7 @@ from jinja2 import Environment, Markup
 
 BASE_URL = 'https://junior.guru'
 PACKAGE_DIR = Path(__file__).parent
-PROJECT_DIR = PACKAGE_DIR.parent
+PROJECT_DIR = PACKAGE_DIR.parent.parent
 BUILD_DIR = PROJECT_DIR / 'build'
 
 

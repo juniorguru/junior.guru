@@ -2,7 +2,7 @@ from pathlib import Path
 
 import arrow
 
-from juniorguru.templating import render_template
+from juniorguru.templates import render_template
 
 
 data = dict(year=arrow.utcnow().year)

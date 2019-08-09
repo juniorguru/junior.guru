@@ -6,9 +6,9 @@ from operator import itemgetter
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-from juniorguru.jobs.sheets import coerce_record
-from juniorguru.templating import render_template
-from juniorguru.jobs.template_filters import job_requirement_filter, job_type_filter
+from juniorguru.templates import render_template
+from juniorguru.pages.jobs.sheets import coerce_record
+from juniorguru.pages.jobs.templating import job_requirement_filter, job_type_filter
 
 
 JOBS_PACKAGE_DIR = Path(__file__).parent
