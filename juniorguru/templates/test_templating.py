@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru import templating
+from juniorguru.templates import templating
 
 
 @pytest.mark.parametrize('url_path,url', [
