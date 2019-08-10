@@ -5,7 +5,7 @@ name = "pypi"
 
 [scripts]
 test = "pytest"
-build = "bash scripts/build.sh"
+build = "python scripts/build.py"
 serve = "now dev build"
 deploy = "bash scripts/deploy.sh"
 
