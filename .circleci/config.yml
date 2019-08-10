@@ -2,10 +2,6 @@ version: 2.1
 
 
 executors:
-  python:
-    docker:
-      - image: circleci/python:3.7
-    working_directory: ~/project
   python-node:
     docker:
       - image: circleci/python:3.7-node
@@ -14,23 +10,24 @@ executors:
 
 jobs:
   install_and_test:
-    executor: python
+    executor: python-node
     steps:
       - checkout
       - run:
           name: install dependencies
-          command: pipenv install --dev
+          command: pipenv install --dev && npm install
       - persist_to_workspace:
           root: "~"
           paths:
               - .local/share/virtualenvs
+              - project/node_modules
               - project
       - run:
           name: run tests
           command: pipenv run test -v
 
   build:
-    executor: python
+    executor: python-node
     steps:
       - attach_workspace:
           at: "~"

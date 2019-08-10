@@ -1,0 +1,15 @@
+{
+  "name": "juniorguru",
+  "dependencies": {
+    "instant.page": "1.2.2"
+  },
+  "devDependencies": {
+    "csso": "3.5.1",
+    "csso-cli": "2.0.2",
+    "html-minifier": "4.0.0",
+    "imagemin-cli": "5.0.0",
+    "rollup": "1.19.4",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "terser": "4.1.3"
+  }
+}
