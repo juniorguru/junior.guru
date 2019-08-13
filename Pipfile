@@ -6,6 +6,7 @@ name = "pypi"
 [scripts]
 test = "pytest"
 build = "python scripts/build.py"
+watch = "python scripts/watch.py"
 serve = "now dev build"
 deploy = "bash scripts/deploy.sh"
 
@@ -18,6 +19,7 @@ markdown = "*"
 
 [dev-packages]
 pytest = "*"
+watchdog = "*"
 
 [requires]
 python_version = "3.7"

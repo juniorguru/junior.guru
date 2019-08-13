@@ -8,6 +8,7 @@
     "csso-cli": "2.0.2",
     "html-minifier": "4.0.0",
     "imagemin-cli": "5.0.0",
+    "node-sass": "4.12.0",
     "rollup": "1.19.4",
     "rollup-plugin-node-resolve": "5.2.0",
     "terser": "4.1.4"

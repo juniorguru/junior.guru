@@ -3,8 +3,8 @@ from subprocess import run, PIPE
 
 
 PROJECT_DIR = Path(__file__).parent.parent
-BUILD_DIR = PROJECT_DIR / 'build'
 PAGES_DIR = PROJECT_DIR / 'juniorguru' / 'pages'
+BUILD_DIR = PROJECT_DIR / 'build'
 
 
 print('Resetting the build directory')
@@ -21,6 +21,10 @@ for page in pages:
 
 print('Building JS')
 run(['npx', 'rollup', '--config'], check=True)
+
+print('Building CSS')
+scss_path = str(PROJECT_DIR / 'juniorguru/css/main.scss')
+run(['npx', 'node-sass', scss_path, str(BUILD_DIR / 'bundle.css')], check=True)
 
 print('Minifying HTML')
 html_minifier = ['npx', 'html-minifier', '--minify-css=true', '--minify-js=true',
