@@ -1,3 +1,4 @@
+import sys
 import time
 from pathlib import Path
 from subprocess import run
@@ -12,7 +13,7 @@ PACKAGE_DIR = PROJECT_DIR / 'juniorguru'
 
 def build():
     start = time.time()
-    run(['pipenv', 'run', 'build'])
+    run(['pipenv', 'run', 'build'] + sys.argv[1:])
     seconds = int(time.time() - start)
     print(f'\nReady in {seconds}s')
 
