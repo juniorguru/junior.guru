@@ -1,4 +1,5 @@
 import sys
+import shutil
 from pathlib import Path
 from subprocess import run, PIPE
 
@@ -9,12 +10,12 @@ BUILD_DIR = PROJECT_DIR / 'build'
 
 
 ALL_TARGETS = {'html', 'css', 'js'}
-targets = frozenset(sys.argv[1:])
+targets = frozenset(sys.argv[1:]) or ALL_TARGETS
 
 
 if targets == ALL_TARGETS:
     print('Resetting the build directory')
-    run(['rm', '-r', BUILD_DIR], check=True)
+    shutil.rmtree(BUILD_DIR)
     run(['git', 'checkout', BUILD_DIR], check=True)
 
 if 'html' in targets:
@@ -34,6 +35,11 @@ if 'css' in targets:
     print('Building CSS')
     scss_path = str(PROJECT_DIR / 'juniorguru/css/main.scss')
     run(['npx', 'node-sass', scss_path, str(BUILD_DIR / 'bundle.css')], check=True)
+
+print('Copying images')
+images_dir = BUILD_DIR / 'images'
+shutil.rmtree(images_dir, ignore_errors=True)
+shutil.copytree(PROJECT_DIR / 'juniorguru/images', images_dir)
 
 if targets == ALL_TARGETS:
     print('Minifying HTML')
@@ -62,3 +68,6 @@ if targets == ALL_TARGETS:
         for image_path in BUILD_DIR.glob(f'**/*.{image}'):
             proc = run(['npx', 'imagemin', str(image_path)], check=True, stdout=PIPE)
             image_path.write_bytes(proc.stdout)
+
+    for image_path in BUILD_DIR.glob(f'**/*.svg'):
+        run(['npx', 'svgo', str(image_path)], check=True)
