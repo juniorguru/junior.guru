@@ -24,12 +24,12 @@ h4, h3, h2, h1, html, body {
 
 small {
   font-size: 1.6rem;
-	// line-height: ($line-height-base / 28) rem;
+	// line-height: ($line-height-base / 28);
 }
 
 body, h4 {
   font-size: 2rem;
-  line-height: ($line-height-base / 10) rem;
+  line-height: ($line-height-base / 10) * 1rem;
 }
 
 p, h4 {
@@ -38,19 +38,19 @@ p, h4 {
 
 h3 {
   font-size: 2.5rem;
-  line-height: ($line-height-base / 25) rem;
+  line-height: ($line-height-base / 25);
   margin-bottom: 1.3rem;
 }
 
 h2 {
   font-size: 3.2rem;
-  line-height: ($line-height-base / 32) rem;
+  line-height: ($line-height-base / 32);
   margin-bottom: 2.1rem;
 }
 
 h1 {
   font-size: 4.1rem;
-  line-height: ($line-height-base / 41) rem;
+  line-height: ($line-height-base / 41);
   margin-bottom: 3.4rem;
 }
 
@@ -76,7 +76,7 @@ body.page-index {
   header {
     text-align: center;
     padding: 0.5rem 0;
-    background: rgb(255, 250, 114);
+    background: #fffa72;
 
     h1 {
       display: block;
@@ -125,6 +125,7 @@ body.page-index {
         border-right: none;
         position: relative;
         overflow: visible;
+        text-decoration: none;
       }
 
       a:before, a:after {
@@ -159,8 +160,13 @@ body.page-index {
     }
 
     h2::before {
-      display: inline;
-      margin-right: 0.8rem;
+      display: block;
+      font-size: 4.1rem;
+      padding: 0.3rem 1.5rem;
+      background: #fffa72;
+      position: absolute;
+      top: 0;
+      right: 0;
     }
 
     li:nth-child(1) h2::before { content: "1"; }
