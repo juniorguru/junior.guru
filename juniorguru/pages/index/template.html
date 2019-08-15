@@ -4,71 +4,79 @@
 Nauč se programovat a získej svou první práci v IT
 {%- endblock %}
 
+{% block body_attrs %} class="page-index"{% endblock %}
+
 {% block header %}
-<header class="lead">
+<header>
   <h1>junior.guru</h1>
   <p class="tagline">
-    Nauč se programovat a získej svou první práci v IT
+    Nauč&nbsp;se programovat a&nbsp;získej svou první práci&nbsp;v&nbsp;IT
   </p>
 </header>
 <hr>
 {% endblock %}
 
-{% block content %}
-<ol>
-  <li>
-    <a href="/learn/">
-      <h2>Nauč se základy</h2>
-      <p>
-        Ručně vybrané nejlepší a nejefektivnější výukové materiály do startu
-        pro samouky.
-      </p>
-    </a>
-  </li>
-  <li>
-    <a href="/practice/">
-      <h2>Získej praxi</h2>
-      <p>
-        Znáš základy? Získej alespoň minimální praxi, najdi mentora, dál
-        si rozšiřuj znalosti.
-      </p>
-    </a>
-  </li>
-  <li>
-    <a href="/jobs/">
-      <h2>Najdi práci</h2>
-      <p>
-        Znáš základy a máš praxi? Nastal okamžik zkusit své štestí
-        na pracovním trhu.
-      </p>
-    </a>
-  </li>
-</ol>
-
-<p>
-  <a href="/learn/">Začni hned teď!</a>
-</p>
-<p>
-  <small><a href="/learn/#why">Proč se učit programovat?</a></small>
-</p>
+{% block main %}
+<nav>
+  <ol>
+    <li>
+      <a href="/learn/">
+        <h2>Nauč se základy</h2>
+        <p>
+          Ručně vybrané nejlepší a nejefektivnější výukové materiály do startu
+          pro samouky.
+        </p>
+      </a>
+    </li>
+    <li>
+      <a href="/practice/">
+        <h2>Získej praxi</h2>
+        <p>
+          Znáš základy? Získej alespoň minimální praxi, najdi mentora, dál
+          si rozšiřuj znalosti.
+        </p>
+      </a>
+    </li>
+    <li>
+      <a href="/jobs/">
+        <h2>Najdi práci</h2>
+        <p>
+          Znáš základy a máš praxi? Nastal okamžik zkusit své štestí
+          na pracovním trhu.
+        </p>
+      </a>
+    </li>
+  </ol>
+  <p>
+    <a href="/learn/">Začni hned teď!</a>
+  </p>
+  <p>
+    <small><a href="/learn/#why">Proč se učit programovat?</a></small>
+  </p>
+</nav>
 
 <hr>
 
-<h2>Nabídky práce do emailu</h2>
-<p>
-  Měj přehled o aktuálních nabídkách práce pro juniory.
-</p>
-<p>
-  <a href="http://eepurl.com/gyG8Bb" target="_blank">Mám zájem</a>
-</p>
-
-<h2>Pro firmy</h2>
-<p>
-  Inzerujte práci pro juniory tam, kde junioři začínají &mdash; ať už je to
-  plný úvazek, částečný úvazek, stáž, nebo dobrovolnictví.
-</p>
-<p>
-  <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Přidat nabídku &mdash; 0 Kč</a><br>
-  Do <strong>konce tohoto měsíce</strong> je přidávání nabídek práce <strong>zdarma</strong>!
-</p>
+<aside>
+  <section>
+    <h2>Nabídky práce do emailu</h2>
+    <p>
+      Měj přehled o aktuálních nabídkách práce pro juniory.
+    </p>
+    <p>
+      <a href="http://eepurl.com/gyG8Bb" target="_blank">Mám zájem</a>
+    </p>
+  </section>
+  <section>
+    <h2>Pro firmy</h2>
+    <p>
+      Inzerujte práci pro juniory tam, kde junioři začínají &mdash; ať už je to
+      plný úvazek, částečný úvazek, stáž, nebo dobrovolnictví.
+    </p>
+    <p>
+      <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Přidat nabídku &mdash; 0 Kč</a><br>
+      Do <strong>konce tohoto měsíce</strong> je přidávání nabídek práce <strong>zdarma</strong>!
+    </p>
+  </section>
+</aside>
 {% endblock %}

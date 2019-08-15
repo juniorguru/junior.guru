@@ -20,32 +20,35 @@
     <meta name="description" content="{% block description %}{% endblock %}">
     <link rel="stylesheet" href="/bundle.css">
   </head>
-  <body>
+  <body{% block body_attrs %} class="page"{% endblock %}>
     {% block body %}
       {% block header %}
       <header>
         <strong>
           <a href="/">junior.guru</a>
         </strong>
-        <ol>
-          <li><a href="/learn/">Nauč se základy</a></li>
-          <li><a href="/practice/">Získej praxi</a></li>
-          <li><a href="/jobs/">Najdi práci</a></li>
-        </ol>
+        <nav>
+          <ol>
+            <li><a href="/learn/">Nauč se základy</a></li>
+            <li><a href="/practice/">Získej praxi</a></li>
+            <li><a href="/jobs/">Najdi práci</a></li>
+          </ol>
+        </nav>
       </header>
       <hr>
       {% endblock %}
-      {% block content %}{% endblock %}
+      <main>
+        {% block main %}{% endblock %}
+      </main>
       <hr>
       <footer>
-        <p>
+        <address>
           Stránky <strong>junior.guru</strong> lidem radí, jak se naučit programovat.
           Provozuje je <a href="http://honzajavorek.cz">Honza Javorek</a>.
-        </p>
-        <p id="contact">
+
           Pište na {{ 'ahoj@junior.guru'|email_link }},
           tweetujte na <a href="https://twitter.com/honzajavorek/">@honzajavorek</a>
-        </p>
+        </address>
         <p>
           <a href="/privacy/">Zpracování osobních údajů</a>
         </p>
