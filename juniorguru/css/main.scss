@@ -102,7 +102,8 @@ nav ol, nav li {
 }
 
 body > * {
-  padding: $whitespace;
+  padding-left: $whitespace;
+  padding-right: $whitespace;
 }
 
 main {
@@ -118,15 +119,17 @@ body.page-index {
   }
 
   header {
-    text-align: center;
-    padding: 0.5rem 0;
+    padding: 0;
+    padding-top: $whitespace-2;
+    margin-bottom: $whitespace-2;
     background: $yellow;
 
     h1 {
+      text-align: center;
       display: block;
       box-sizing: border-box;
       margin: 0;
-      height: 8rem;
+      height: 12rem;
       background-image: url('/images/logo.svg');
       background-size: contain;
       background-repeat: no-repeat;
@@ -138,9 +141,13 @@ body.page-index {
   }
 
   .tagline {
-    padding: $whitespace;
+    background: $black;
+    color: $white;
+    font-weight: 300;
+    @include font-2;
+    padding: $whitespace $whitespace-2 $whitespace-2 $whitespace-2;
     margin: 0;
-    text-transform: uppercase;
+    margin-top: $whitespace-2;
   }
 
   nav {
@@ -285,8 +292,10 @@ a {
     color: $white;
     text-decoration: none;
     @include font-2;
+    font-weight: 300;
     background: $black;
     padding: $whitespace $whitespace-2;
+    padding-top: $whitespace - 0.1rem;
 
     &:hover, &:focus, &:active {
       background: $blue;
