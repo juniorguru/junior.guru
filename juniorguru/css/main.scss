@@ -4,17 +4,55 @@
 $font-base: 20;
 $line-height-base: 34;
 
+$line-height-0: ($line-height-base / 28);
+$line-height: ($line-height-base / 10) * 1rem;
+$line-height-2: ($line-height-base / 25);
+$line-height-3: ($line-height-base / 32);
+$line-height-4: ($line-height-base / 41);
+
+@mixin font-0 { font-size: 1.6rem; line-height: $line-height-0 }
+@mixin font { font-size: 2rem; line-height: $line-height; }
+@mixin font-2 { font-size: 2.5rem; line-height: $line-height-2; }
+@mixin font-3 { font-size: 3.2rem; line-height: $line-height-3; }
+@mixin font-4 { font-size: 4.1rem; line-height: $line-height-4; }
+
+$black-number: "222222";
+$blue-number: "1755d1";
+
+$white: #ffffff;
+$black: unquote("##{$black-number}");
+$yellow: #fffa72;
+$blue: unquote("##{$blue-number}");
+
+$grid-breakpoint: 900px;
+$grid-block-size: 28rem;
+
+$main-width: 73rem;
+$main-wide-width: 103rem;;
+
+$dots-black: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23#{$black-number}' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+$dots-blue: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23#{$blue-number}' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+
+$whitespace-0: 0.8rem;
+$whitespace: 1.3rem;
+$whitespace-2: 2.1rem;
+$whitespace-3: 3.4rem;
+
+@mixin hyphens { -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
+@mixin skew($n) { transform: skew($n); -o-transform: skew($n); -moz-transform: skew($n); -webkit-transform: skew($n); }
+
+
 html {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 62.5%; // = 10px, rem base
 }
 
 html, body {
-  background: #fff;
+  background: $white;
 }
 
 html, a {
-  color: #222;
+  color: $black;
 }
 
 h4, h3, h2, h1, html, body {
@@ -23,43 +61,38 @@ h4, h3, h2, h1, html, body {
 }
 
 small {
-  font-size: 1.6rem;
-	// line-height: ($line-height-base / 28);
+  @include font-0;
 }
 
 body, h4 {
-  font-size: 2rem;
-  line-height: ($line-height-base / 10) * 1rem;
+  @include font;
 }
 
 p {
-  margin-top: 0.8rem;
+  margin-top: $whitespace-0;
 }
 
 p, h4 {
-  margin-bottom: 0.8rem;
+  margin-bottom: $whitespace-0;
 }
 
 h3 {
-  font-size: 2.5rem;
-  line-height: ($line-height-base / 25);
-  margin-bottom: 1.3rem;
+  @include font-2;
+  margin-bottom: $whitespace;
 }
 
 h2 {
-  font-size: 3.2rem;
-  line-height: ($line-height-base / 32);
-  margin-bottom: 2.1rem;
+  @include font-3;
+  margin-bottom: $whitespace-2;
 }
 
 h1 {
-  font-size: 4.1rem;
-  line-height: ($line-height-base / 41);
-  margin-bottom: 3.4rem;
+  @include font-4;
+  margin-bottom: $whitespace-3;
 }
 
 section, ul, ol {
-  margin-bottom: 3.4rem;
+  margin-bottom: $whitespace-3;
 }
 
 nav ol, nav li {
@@ -69,29 +102,29 @@ nav ol, nav li {
 }
 
 li {
-  margin-bottom: 1.3rem;
+  margin-bottom: $whitespace;
 }
 
 body > * {
-  padding: 1.3rem;
+  padding: $whitespace;
 }
 
 main {
-  max-width: 73rem;
+  max-width: $main-width;
   margin: auto;
 }
 
 body.page-index {
   @supports (display: grid) {
     main {
-      max-width: 103rem;
+      max-width: $main-wide-width;
     }
   }
 
   header {
     text-align: center;
     padding: 0.5rem 0;
-    background: #fffa72;
+    background: $yellow;
 
     h1 {
       display: block;
@@ -109,19 +142,19 @@ body.page-index {
   }
 
   .tagline {
-    padding: 1.3rem;
+    padding: $whitespace;
     margin: 0;
     text-transform: uppercase;
   }
 
   nav {
     ol {
-      @media screen and (min-width: 900px) {
+      @media screen and (min-width: $grid-breakpoint) {
         @supports (display: grid) {
           & {
             display: grid;
-            grid-gap: 1.3rem;
-            grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+            grid-gap: $whitespace;
+            grid-template-columns: repeat(auto-fit, minmax($grid-block-size, 1fr));
           }
         }
       }
@@ -129,11 +162,14 @@ body.page-index {
 
     li {
       overflow: hidden;
-      margin-bottom: 1.3rem;
+      margin: auto;
+      margin-bottom: $whitespace;
+      max-width: 65rem;
 
-      @media screen and (min-width: 900px) {
+      @media screen and (min-width: $grid-breakpoint) {
         @supports (display: grid) {
           & {
+            max-width: auto;
             margin: 0;
           }
         }
@@ -142,11 +178,10 @@ body.page-index {
       a {
         display: block;
         box-sizing: border-box;
-        padding: 1.3rem;
-        padding-right: 2.6rem;
+        padding: $whitespace;
+        padding-right: 5.5rem;
         height: 100%;
-        background: #eee;
-        // border: 1px dashed #222;
+        background: $dots-black;
         border-right: none;
         position: relative;
         overflow: visible;
@@ -157,8 +192,7 @@ body.page-index {
         content: "";
         display: block;
         box-sizing: border-box;
-        background: #fff;
-        // border-left: dashed 1px #222;
+        background: $white;
         width: 50%;
         height: 100%;
         position: absolute;
@@ -166,33 +200,41 @@ body.page-index {
       }
 
       a:before {
-        // border-top: solid 1px #fff;
         top: -1.5px;
-        transform: skew(15deg);
-        -o-transform: skew(15deg);
-        -moz-transform: skew(15deg);
-        -webkit-transform: skew(15deg);
+        @include skew(15deg);
       }
 
       a:after {
-        // border-bottom: solid 1px #fff;
         bottom: -1.5px;
-        transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -webkit-transform: skew(-15deg);
+        @include skew(-15deg);
+      }
+
+      a:hover, a:focus, a:active {
+        background: $dots-blue;
+
+        * {
+          color: $blue;
+        }
+
+        h2::before {
+          color: $white;
+          background: $blue;
+        }
       }
     }
 
     h2 {
-      padding-right: 5.3rem;
+      display: inline-block;
+      background: $white;
+      padding: 0.3rem 0.5rem;
+      @include font-2;
+      margin-bottom: $whitespace;
     }
 
     h2::before {
       display: block;
-      font-size: 4.1rem;
       padding: 0.3rem 1.5rem;
-      background: #fffa72;
+      background: $yellow;
       position: absolute;
       top: 0;
       right: 0;
@@ -201,20 +243,28 @@ body.page-index {
     li:nth-child(1) h2::before { content: "1"; }
     li:nth-child(2) h2::before { content: "2"; }
     li:nth-child(3) h2::before { content: "3"; }
+
+    p {
+      box-sizing: border-box;
+      background: $white;
+      padding: 0.3rem 0.5rem;
+      @include font-0;
+      line-height: $line-height;
+      @include hyphens;
+    }
   }
 
   aside {
     @supports (display: grid) {
       & {
         display: grid;
-        grid-gap: 1.3rem;
-        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+        grid-gap: $whitespace;
+        grid-template-columns: repeat(auto-fit, minmax($grid-block-size, 1fr));
       }
     }
 
     section {
-      margin-bottom: 1.3rem;
-      background: #eee;
+      margin-bottom: $whitespace;
 
       @supports (display: grid) {
         & {
@@ -225,6 +275,10 @@ body.page-index {
   }
 }
 
-.note {
-  color: #555;
+section {
+  h2 {
+    display: inline-block;
+    background-color: $yellow;
+    padding: 0.3rem 0.5rem;
+  }
 }
