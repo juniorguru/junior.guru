@@ -32,6 +32,10 @@ body, h4 {
   line-height: ($line-height-base / 10) * 1rem;
 }
 
+p {
+  margin-top: 0.8rem;
+}
+
 p, h4 {
   margin-bottom: 0.8rem;
 }
@@ -72,7 +76,18 @@ body > * {
   padding: 1.3rem;
 }
 
+main {
+  max-width: 73rem;
+  margin: auto;
+}
+
 body.page-index {
+  @supports (display: grid) {
+    main {
+      max-width: 103rem;
+    }
+  }
+
   header {
     text-align: center;
     padding: 0.5rem 0;
@@ -101,24 +116,34 @@ body.page-index {
 
   nav {
     ol {
-      display: grid;
-      grid-gap: 1.3rem;
-
-      @media (min-width: 900px) {
-        & {
-          grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+      @media screen and (min-width: 900px) {
+        @supports (display: grid) {
+          & {
+            display: grid;
+            grid-gap: 1.3rem;
+            grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+          }
         }
       }
     }
 
     li {
       overflow: hidden;
+      margin-bottom: 1.3rem;
+
+      @media screen and (min-width: 900px) {
+        @supports (display: grid) {
+          & {
+            margin: 0;
+          }
+        }
+      }
 
       a {
         display: block;
         box-sizing: border-box;
         padding: 1.3rem;
-        padding-right: 3.4rem;
+        padding-right: 2.6rem;
         height: 100%;
         background: #eee;
         // border: 1px dashed #222;
@@ -159,6 +184,10 @@ body.page-index {
       }
     }
 
+    h2 {
+      padding-right: 5.3rem;
+    }
+
     h2::before {
       display: block;
       font-size: 4.1rem;
@@ -175,13 +204,23 @@ body.page-index {
   }
 
   aside {
-    display: grid;
-    grid-gap: 1.3rem;
-    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    @supports (display: grid) {
+      & {
+        display: grid;
+        grid-gap: 1.3rem;
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+      }
+    }
 
     section {
-      margin: 0;
+      margin-bottom: 1.3rem;
       background: #eee;
+
+      @supports (display: grid) {
+        & {
+          margin: 0;
+        }
+      }
     }
   }
 }
@@ -189,7 +228,3 @@ body.page-index {
 .note {
   color: #555;
 }
-
-hr {
-  display: none
-};
