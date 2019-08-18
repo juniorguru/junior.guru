@@ -1,1 +1,5 @@
-import 'instant.page'
+import './hash';
+import './details';
+import './permalinks';
+
+import 'instant.page';
