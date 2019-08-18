@@ -98,6 +98,10 @@ section, ul, ol {
   margin-bottom: $whitespace-3;
 }
 
+li {
+  list-style-type: square;
+}
+
 nav ol, nav li {
   list-style-type: none;
   margin: 0;
@@ -129,7 +133,7 @@ main > header {
   }
 }
 
-section {
+section, details {
   h2 {
     display: inline-block;
     background-color: $yellow;
@@ -174,7 +178,7 @@ body > header + hr {
   @include font-0;
 }
 
-.list-note {
+.note-list {
   text-align: center;
 }
 
