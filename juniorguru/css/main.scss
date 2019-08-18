@@ -4,7 +4,7 @@
 $font-base: 20;
 $line-height-base: 34;
 
-$line-height-0: ($line-height-base / 28);
+$line-height-0: ($line-height-base / 18);
 $line-height: ($line-height-base / 10) * 1rem;
 $line-height-2: ($line-height-base / 25);
 $line-height-3: ($line-height-base / 32);
@@ -16,7 +16,7 @@ $line-height-4: ($line-height-base / 41);
 @mixin font-3 { font-size: 3.2rem; line-height: $line-height-3; }
 @mixin font-4 { font-size: 4.1rem; line-height: $line-height-4; }
 
-$black-number: "222222";
+$black-number: "343434";
 $blue-number: "1755d1";
 
 $white: #ffffff;
@@ -27,9 +27,6 @@ $blue: unquote("##{$blue-number}");
 $grid-breakpoint: 900px;
 $grid-block-size: 28rem;
 
-$main-width: 73rem;
-$main-wide-width: 103rem;;
-
 $dots-black: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23#{$black-number}' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 $dots-blue: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23#{$blue-number}' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 
@@ -39,7 +36,13 @@ $whitespace-2: 2.1rem;
 $whitespace-3: 3.4rem;
 
 @mixin hyphens { -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
+
 @mixin skew($n) { transform: skew($n); -o-transform: skew($n); -moz-transform: skew($n); -webkit-transform: skew($n); }
+
+@mixin page-width {
+  & { max-width: 73rem; margin-left: auto; margin-right: auto; }
+  @supports (display: grid) { & { max-width: 103rem; } }
+}
 
 
 html {
@@ -107,17 +110,10 @@ body > * {
 }
 
 main {
-  max-width: $main-width;
-  margin: auto;
+  @include page-width;
 }
 
 body.page-index {
-  @supports (display: grid) {
-    main {
-      max-width: $main-wide-width;
-    }
-  }
-
   header {
     padding: 0;
     padding-top: $whitespace-2;
@@ -145,9 +141,20 @@ body.page-index {
     color: $white;
     font-weight: 300;
     @include font-2;
-    padding: $whitespace $whitespace-2 $whitespace-2 $whitespace-2;
     margin: 0;
     margin-top: $whitespace-2;
+
+    @media screen and (min-width: 650px) {
+      & {
+        text-align: center;
+      }
+    }
+
+    p {
+      margin: 0;
+      @include page-width;
+      padding: $whitespace $whitespace-2;
+    }
   }
 
   nav {
@@ -309,14 +316,37 @@ a {
 }
 
 footer {
-  background: $black;
-  color: $white;
+  border-top: 2px dotted $black;
+  margin-top: $whitespace-2;
+  padding: $whitespace-2 $whitespace;
+  @include font-0;
 
-  a {
-    color: $white;
+  &, a {
+    font-weight: 300;
   }
 
   address {
-    font-style: normal;
+    display: flex;
+    flex-wrap: wrap;
   }
+
+  a:hover, a:focus, a:active {
+    color: $black;
+  }
+
+  address, p {
+    font-style: normal;
+    @include page-width;
+    margin-bottom: $whitespace;
+  }
+
+  @media screen and (min-width: 650px) {
+      address {
+        justify-content: center;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
 }
