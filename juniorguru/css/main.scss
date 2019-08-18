@@ -10,7 +10,7 @@ $line-height-2: ($line-height-base / 25);
 $line-height-3: ($line-height-base / 32);
 $line-height-4: ($line-height-base / 41);
 
-@mixin font-0 { font-size: 1.6rem; line-height: $line-height-0 }
+@mixin font-0 { font-size: 1.6rem; line-height: $line-height-0; font-weight: 300; }
 @mixin font { font-size: 2rem; line-height: $line-height; }
 @mixin font-2 { font-size: 2.5rem; line-height: $line-height-2; }
 @mixin font-3 { font-size: 3.2rem; line-height: $line-height-3; }
@@ -114,10 +114,21 @@ main {
 }
 
 body.page-index {
+  main {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  nav, aside {
+    @include page-width;
+    padding-left: $whitespace;
+    padding-right: $whitespace;
+  }
+
   header {
     padding: 0;
     padding-top: $whitespace-2;
-    margin-bottom: $whitespace-2;
+    margin-bottom: $whitespace-3;
     background: $yellow;
 
     h1 {
@@ -268,7 +279,7 @@ body.page-index {
     @supports (display: grid) {
       & {
         display: grid;
-        grid-gap: $whitespace;
+        grid-gap: $whitespace-3 $whitespace-2;
         grid-template-columns: repeat(auto-fit, minmax($grid-block-size, 1fr));
       }
     }
@@ -282,6 +293,11 @@ body.page-index {
         }
       }
     }
+
+    .call-to-action, .note {
+      text-align: left;
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -294,6 +310,10 @@ section {
 }
 
 a {
+  &:hover, &:focus, &:active {
+    color: $blue;
+  }
+
   &.button {
     display: inline-block;
     color: $white;
@@ -305,33 +325,47 @@ a {
     padding-top: $whitespace - 0.1rem;
 
     &:hover, &:focus, &:active {
+      color: $white;
       background: $blue;
     }
   }
 }
 
+hr {
+  border: none;
+  height: 2px;
+  background: $dots-black;
+  margin: $whitespace-3 0;
+}
+
+header + hr {
+  display: none;
+}
+
+.note {
+  @include font-0;
+}
+
+.list-note {
+  text-align: center;
+}
+
 .call-to-action {
   text-align: center;
-  margin: $whitespace-2 0;
+  margin: $whitespace-2 0 $whitespace-3 0;
 }
 
 footer {
-  border-top: 2px dotted $black;
-  margin-top: $whitespace-2;
-  padding: $whitespace-2 $whitespace;
-  @include font-0;
+  padding: 0 $whitespace;
+  padding-bottom: $whitespace-3;
 
   &, a {
-    font-weight: 300;
+    @include font-0;
   }
 
   address {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  a:hover, a:focus, a:active {
-    color: $black;
   }
 
   address, p {
