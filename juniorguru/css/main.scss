@@ -113,6 +113,106 @@ main {
   @include page-width;
 }
 
+main > header {
+  background: $dots-black;
+  padding: $whitespace;
+
+  h1 {
+    display: inline-block;
+    background-color: $white;
+    padding: 1rem 0.5rem;
+  }
+
+  p {
+    background: $white;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+section {
+  h2 {
+    display: inline-block;
+    background-color: $yellow;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+a {
+  &:hover, &:focus, &:active {
+    color: $blue;
+  }
+
+  &.button {
+    display: inline-block;
+    color: $white;
+    text-decoration: none;
+    @include font-2;
+    font-weight: 300;
+    background: $black;
+    padding: $whitespace $whitespace-2;
+    padding-top: $whitespace - 0.1rem;
+
+    &:hover, &:focus, &:active {
+      color: $white;
+      background: $blue;
+    }
+  }
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background: $dots-black;
+  margin: $whitespace-3 0;
+}
+
+body > header + hr {
+  display: none;
+}
+
+.note {
+  @include font-0;
+}
+
+.list-note {
+  text-align: center;
+}
+
+.call-to-action {
+  text-align: center;
+  margin: $whitespace-2 0 $whitespace-3 0;
+}
+
+footer {
+  padding: 0 $whitespace;
+  padding-bottom: $whitespace-3;
+
+  &, a {
+    @include font-0;
+  }
+
+  address {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  address, p {
+    font-style: normal;
+    @include page-width;
+    margin-bottom: $whitespace;
+  }
+
+  @media screen and (min-width: 650px) {
+      address {
+        justify-content: center;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+}
+
 body.page-index {
   main {
     max-width: 100%;
@@ -125,7 +225,7 @@ body.page-index {
     padding-right: $whitespace;
   }
 
-  header {
+  & > header {
     padding: 0;
     padding-top: $whitespace-2;
     margin-bottom: $whitespace-3;
@@ -299,88 +399,4 @@ body.page-index {
       margin-bottom: 0;
     }
   }
-}
-
-section {
-  h2 {
-    display: inline-block;
-    background-color: $yellow;
-    padding: 0.3rem 0.5rem;
-  }
-}
-
-a {
-  &:hover, &:focus, &:active {
-    color: $blue;
-  }
-
-  &.button {
-    display: inline-block;
-    color: $white;
-    text-decoration: none;
-    @include font-2;
-    font-weight: 300;
-    background: $black;
-    padding: $whitespace $whitespace-2;
-    padding-top: $whitespace - 0.1rem;
-
-    &:hover, &:focus, &:active {
-      color: $white;
-      background: $blue;
-    }
-  }
-}
-
-hr {
-  border: none;
-  height: 2px;
-  background: $dots-black;
-  margin: $whitespace-3 0;
-}
-
-header + hr {
-  display: none;
-}
-
-.note {
-  @include font-0;
-}
-
-.list-note {
-  text-align: center;
-}
-
-.call-to-action {
-  text-align: center;
-  margin: $whitespace-2 0 $whitespace-3 0;
-}
-
-footer {
-  padding: 0 $whitespace;
-  padding-bottom: $whitespace-3;
-
-  &, a {
-    @include font-0;
-  }
-
-  address {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  address, p {
-    font-style: normal;
-    @include page-width;
-    margin-bottom: $whitespace;
-  }
-
-  @media screen and (min-width: 650px) {
-      address {
-        justify-content: center;
-      }
-
-      p {
-        text-align: center;
-      }
-    }
 }
