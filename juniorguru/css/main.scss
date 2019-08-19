@@ -141,6 +141,41 @@ section, details {
   }
 }
 
+details > summary {
+  display: inline-block;
+  cursor: pointer;
+  list-style-type: none;
+  &::-webkit-details-marker { display: none; }
+
+  &::after {
+    display: block;
+    float: right;
+    box-sizing: border-box;
+    min-width: $whitespace-3;
+    text-align: center;
+    padding: 0.3rem 0.5rem;
+    content: "▸";
+    background: $black;
+    color: $white;
+  }
+}
+
+details > summary:hover,
+details > summary:focus,
+details > summary:active,
+details[open] > summary {
+  h2 {
+    background-color: $blue;
+    color: $white;
+  }
+
+  &::after {
+    content: "▾";
+    background-color: $blue;
+    color: $white;
+  }
+}
+
 a {
   &:hover, &:focus, &:active {
     color: $blue;
