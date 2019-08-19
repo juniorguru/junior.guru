@@ -1,4 +1,4 @@
-function onHash() {
+function onHashChange() {
   if (!window.location.hash) return;
 
   var hash = window.location.hash.replace(/^#/, '');
@@ -17,5 +17,5 @@ function onHash() {
   }
 }
 
-window.addEventListener('hashchange', onHash);
-document.addEventListener('DOMContentLoaded', onHash);
+window.addEventListener('hashchange', onHashChange);
+document.addEventListener('DOMContentLoaded', onHashChange);
