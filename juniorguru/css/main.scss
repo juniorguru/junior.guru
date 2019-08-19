@@ -145,7 +145,7 @@ details > summary {
   display: inline-block;
   cursor: pointer;
   list-style-type: none;
-  &::-webkit-details-marker { display: none; }
+  &::-webkit-details-marker, &::before { display: none; }
 
   &::after {
     display: block;
