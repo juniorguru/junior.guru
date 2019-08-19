@@ -15,7 +15,10 @@ targets = frozenset(sys.argv[1:]) or ALL_TARGETS
 
 if targets == ALL_TARGETS:
     print('Resetting the build directory')
-    shutil.rmtree(BUILD_DIR)
+    items = (
+        shutil.rmtree(str(item)) for item in BUILD_DIR.iterdir()
+        if item.name != 'now.json'
+    )
     run(['git', 'checkout', BUILD_DIR], check=True)
 
 if 'html' in targets:
