@@ -16,7 +16,7 @@ $line-height-4: ($line-height-base / 41);
 @mixin font-3 { font-size: 3.2rem; line-height: $line-height-3; }
 @mixin font-4 { font-size: 4.1rem; line-height: $line-height-4; }
 
-$black-number: "343434";
+$black-number: "343434"; // when changing, change it also in logo.svg
 $blue-number: "1755d1";
 
 $white: #ffffff;
@@ -35,6 +35,7 @@ $whitespace: 1.3rem;
 $whitespace-2: 2.1rem;
 $whitespace-3: 3.4rem;
 
+
 @mixin hyphens { -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
 
 @mixin skew($n) { transform: skew($n); -o-transform: skew($n); -moz-transform: skew($n); -webkit-transform: skew($n); }
@@ -42,6 +43,36 @@ $whitespace-3: 3.4rem;
 @mixin page-width {
   & { max-width: 73rem; margin-left: auto; margin-right: auto; }
   @supports (display: grid) { & { max-width: 103rem; } }
+}
+
+@mixin arrow {
+  & {
+    box-sizing: border-box;
+    border-right: none;
+    position: relative;
+    overflow: visible;
+  }
+
+  &:before, &:after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    background: $white;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: -50%;
+  }
+
+  &:before {
+    top: -1.5px;
+    @include skew(15deg);
+  }
+
+  &:after {
+    bottom: -1.5px;
+    @include skew(-15deg);
+  }
 }
 
 
@@ -138,6 +169,7 @@ section, details {
     display: inline-block;
     background-color: $yellow;
     padding: 0.3rem 0.5rem;
+    position: relative;
   }
 }
 
@@ -146,6 +178,10 @@ details > summary {
   cursor: pointer;
   list-style-type: none;
   &::-webkit-details-marker, &::before { display: none; }
+
+  h2 {
+    padding-right: $whitespace;
+  }
 
   &::after {
     display: block;
@@ -220,6 +256,18 @@ body > header + hr {
 .call-to-action {
   text-align: center;
   margin: $whitespace-2 0 $whitespace-3 0;
+
+  &.next .button {
+    display: inline-block;
+    background: $black;
+    padding-right: $whitespace-3;
+    margin-top: $whitespace-3;
+    @include arrow;
+
+    &:hover, &:focus, &:active {
+      background: $blue;
+    }
+  }
 }
 
 footer {
@@ -337,36 +385,12 @@ body.page-index {
 
       a {
         display: block;
-        box-sizing: border-box;
         padding: $whitespace;
         padding-right: 5.5rem;
-        height: 100%;
         background: $dots-black;
-        border-right: none;
-        position: relative;
-        overflow: visible;
-        text-decoration: none;
-      }
-
-      a:before, a:after {
-        content: "";
-        display: block;
-        box-sizing: border-box;
-        background: $white;
-        width: 50%;
         height: 100%;
-        position: absolute;
-        right: -50%;
-      }
-
-      a:before {
-        top: -1.5px;
-        @include skew(15deg);
-      }
-
-      a:after {
-        bottom: -1.5px;
-        @include skew(-15deg);
+        text-decoration: none;
+        @include arrow;
       }
 
       a:hover, a:focus, a:active {
