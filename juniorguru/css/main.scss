@@ -129,7 +129,7 @@ section, ul, ol {
   margin-bottom: $whitespace-3;
 }
 
-li {
+ul li {
   list-style-type: square;
 }
 
@@ -165,6 +165,8 @@ main > header {
 }
 
 section, details {
+  margin-bottom: $whitespace-3;
+
   h2 {
     display: inline-block;
     background-color: $yellow;
@@ -249,6 +251,77 @@ body > header + hr {
   @include font-0;
 }
 
+ul.list {
+  padding: 0;
+  margin: 0;
+
+  @media screen and (min-width: $grid-breakpoint) {
+    @supports (display: grid) {
+      & {
+        display: grid;
+        grid-gap: $whitespace;
+        grid-template-columns: repeat(auto-fit, minmax($grid-block-size, 1fr));
+      }
+    }
+  }
+
+  & > li {
+    list-style-type: none;
+    margin: 0 auto;
+    margin-bottom: $whitespace;
+    max-width: 65rem;
+
+    @media screen and (min-width: $grid-breakpoint) {
+      @supports (display: grid) {
+        & {
+          max-width: auto;
+          margin: 0;
+        }
+      }
+    }
+
+    &:hover, &:focus, &:active {
+      & > a {
+        color: $blue;
+      }
+
+      & > a ul li {
+        background: $blue;
+      }
+    }
+
+    & > a {
+      display: block;
+      text-decoration: none;
+      position: relative;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      ul {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      ul, ul li {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul li {
+        list-style-type: none;
+        display: inline;
+        background: $black;
+        color: $white;
+        padding: 0 0.5rem 0.3rem 0.5rem;
+      }
+    }
+  }
+}
+
 .note-list {
   text-align: center;
 }
@@ -257,15 +330,19 @@ body > header + hr {
   text-align: center;
   margin: $whitespace-2 0 $whitespace-3 0;
 
-  &.next .button {
-    display: inline-block;
-    background: $black;
-    padding-right: $whitespace-3;
-    margin-top: $whitespace-3;
-    @include arrow;
+  &.next {
+    overflow: hidden;
 
-    &:hover, &:focus, &:active {
-      background: $blue;
+    .button {
+      display: inline-block;
+      background: $black;
+      padding-right: $whitespace-3;
+      margin-top: $whitespace-3;
+      @include arrow;
+
+      &:hover, &:focus, &:active {
+        background: $blue;
+      }
     }
   }
 }
