@@ -6,6 +6,7 @@ name = "pypi"
 [scripts]
 test = "pytest"
 build = "python scripts/build.py"
+build-screenshots = "python scripts/build_screenshots.py"
 watch = "python scripts/watch.py"
 serve = "now dev build"
 deploy = "bash scripts/deploy.sh"
