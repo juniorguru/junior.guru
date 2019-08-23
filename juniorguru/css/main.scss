@@ -260,6 +260,7 @@ ul.list {
       & {
         display: grid;
         grid-gap: $whitespace;
+        grid-row-gap: $whitespace-2;
         grid-template-columns: repeat(auto-fit, minmax($grid-block-size, 1fr));
       }
     }
@@ -268,7 +269,7 @@ ul.list {
   & > li {
     list-style-type: none;
     margin: 0 auto;
-    margin-bottom: $whitespace;
+    margin-bottom: $whitespace-2;
     max-width: 65rem;
 
     @media screen and (min-width: $grid-breakpoint) {
@@ -280,45 +281,84 @@ ul.list {
       }
     }
 
-    &:hover, &:focus, &:active {
-      & > a {
-        color: $blue;
-      }
+    h3, p {
+      display: inline-block;
+      background: $white;
+      margin-left: $whitespace;
+      margin-right: $whitespace;
+      padding: 0.3rem 0.5rem;
+    }
 
-      & > a ul li {
-        background: $blue;
-      }
+    h3 {
+      margin-top: $whitespace;
+    }
+
+    p {
+      margin-bottom: $whitespace;
     }
 
     & > a {
       display: block;
       text-decoration: none;
       position: relative;
+      background: $dots-black;
 
-      img {
-        display: block;
-        width: 100%;
+
+    }
+
+    &:hover, &:focus, &:active {
+      background: $dots-blue;
+      color: $blue;
+
+      a {
+        background: none;
+        color: $blue;
       }
 
-      ul {
-        position: absolute;
-        top: 0;
-        right: 0;
+      & > a img {
+        filter: grayscale(0%);
+        opacity: 0.7;
       }
 
-      ul, ul li {
-        margin: 0;
-        padding: 0;
-      }
-
-      ul li {
-        list-style-type: none;
-        display: inline;
-        background: $black;
-        color: $white;
-        padding: 0 0.5rem 0.3rem 0.5rem;
+      & > a ul li small {
+        background: $blue;
       }
     }
+  }
+}
+
+.list-labels {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  &, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    display: block;
+    text-align: right;
+  }
+
+  small {
+    display: inline;
+    background: $black;
+    color: $white;
+    padding: 0.4rem 1rem 0.5rem 1rem;
+  }
+}
+
+.list-image {
+  box-shadow: inset 0 0 $whitespace-2 rgba(190, 190, 190, 0.8);
+
+  img {
+    display: block;
+    width: 100%;
+    filter: grayscale(50%);
+    opacity: 0.6;
   }
 }
 
