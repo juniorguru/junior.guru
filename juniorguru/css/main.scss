@@ -303,26 +303,24 @@ ul.list {
       position: relative;
       background: $dots-black;
 
+      &:hover, &:focus, &:active {
+        background: none;
+        color: $blue;
 
+        img {
+          filter: grayscale(0%);
+          opacity: 0.7;
+        }
+
+        ul li small {
+          background: $blue;
+        }
+      }
     }
 
     &:hover, &:focus, &:active {
       background: $dots-blue;
       color: $blue;
-
-      a {
-        background: none;
-        color: $blue;
-      }
-
-      & > a img {
-        filter: grayscale(0%);
-        opacity: 0.7;
-      }
-
-      & > a ul li small {
-        background: $blue;
-      }
     }
   }
 }
@@ -387,6 +385,93 @@ ul.list {
   }
 }
 
+body > header {
+  padding: 0;
+  margin-bottom: $whitespace-3;
+  background: $yellow;
+
+  nav {
+    @include page-width;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 $whitespace;
+  }
+
+  .logo {
+    display: block;
+    box-sizing: border-box;
+    background-image: url('/images/logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: 110%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  ol {
+    display: flex;
+    @include font-2;
+    overflow: hidden;
+
+    li {
+      margin-left: $whitespace-0;
+      padding-top: $whitespace-0;
+    }
+
+    a {
+      box-sizing: border-box;
+      display: block;
+      background: $black;
+      color: $white;
+      text-decoration: none;
+      padding: $whitespace $whitespace-2;
+    }
+
+    a::before {
+      box-sizing: border-box;
+      display: block;
+      float: left;
+      text-align: center;
+      margin-right: $whitespace;
+      font-weight: bold;
+    }
+
+    li:nth-child(1) a::before { content: "1"; }
+    li:nth-child(2) a::before { content: "2"; }
+    li:nth-child(3) a::before { content: "3"; }
+  }
+
+  @media screen and (max-width: 810px) {
+    ol a::before {
+      float: none;
+      margin: 0 0.3rem;
+    }
+
+    ol a span {
+      display: none;
+    }
+  }
+}
+
+body > header ol a:hover,
+body > header ol a:focus,
+body > header ol a:active {
+  &, &::before {
+    background: $blue;
+    color: $white;
+  }
+}
+
+body.page-learn > header li:nth-child(1) a,
+body.page-practice > header li:nth-child(2) a,
+body.page-jobs > header li:nth-child(3) a {
+  &, &::before {
+    background: $white;
+    color: $blue;
+  }
+}
+
 footer {
   padding: 0 $whitespace;
   padding-bottom: $whitespace-3;
@@ -407,14 +492,14 @@ footer {
   }
 
   @media screen and (min-width: 650px) {
-      address {
-        justify-content: center;
-      }
-
-      p {
-        text-align: center;
-      }
+    address {
+      justify-content: center;
     }
+
+    p {
+      text-align: center;
+    }
+  }
 }
 
 body.page-index {
@@ -436,7 +521,6 @@ body.page-index {
     background: $yellow;
 
     h1 {
-      text-align: center;
       display: block;
       box-sizing: border-box;
       margin: 0;
