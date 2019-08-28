@@ -324,6 +324,12 @@ ul.list {
 
     p {
       margin-bottom: $whitespace;
+
+      small {
+        margin-top: 0.5rem;
+        display: inline-block;
+        font-size: 1.5rem;
+      }
     }
 
     & > a {
@@ -331,25 +337,28 @@ ul.list {
       text-decoration: none;
       position: relative;
       background: $dots-black;
+    }
 
-      &:hover, &:focus, &:active {
-        background: none;
-        color: $blue;
+    & > a:hover, & > a:focus, & > a:active,
+    &:hover > a, &:focus > a, &:active > a {
+      background: none;
+      color: $blue;
 
-        img {
-          filter: grayscale(0%);
-          opacity: 0.7;
-        }
+      img {
+        filter: grayscale(0%);
+        opacity: 0.7;
+      }
 
-        ul li small {
-          background: $blue;
-        }
+      ul li small {
+        background: $blue;
       }
     }
 
     &:hover, &:focus, &:active {
       background: $dots-blue;
       color: $blue;
+
+      a { color: $blue; }
     }
   }
 }
