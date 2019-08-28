@@ -23,6 +23,7 @@ $white: #ffffff;
 $black: unquote("##{$black-number}");
 $yellow: #fffa72;
 $blue: unquote("##{$blue-number}");
+$grey: #ababab;
 
 $grid-breakpoint: 900px;
 $grid-block-size: 28rem;
@@ -149,22 +150,48 @@ main {
 }
 
 main > header {
-  background: $dots-black;
-  padding: $whitespace;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: $whitespace-3 * 3;
+  margin-bottom: $whitespace-3 * 2;
 
   h1 {
-    display: inline-block;
-    background-color: $white;
-    padding: 1rem 0.5rem;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: $whitespace-3 * 2;
   }
 
   p {
-    background: $white;
-    padding: 0.3rem 0.5rem;
+    @include font-2;
+  }
+
+  ul {
+    margin-top: $whitespace-3 * 2;
+    text-align: center;
+    background: $dots-black;
+    padding: $whitespace;
+
+    &, li {
+      list-style-type: none;
+    }
+
+    li {
+      display: inline;
+      background: $white;
+      padding: 0.3rem 0.8rem;
+      white-space: nowrap;
+      margin: 0 $whitespace-0;
+      line-height: $line-height-0;
+    }
+
+    a {
+      text-decoration: none;
+    }
   }
 }
 
-section, details {
+main > section, main > details {
   margin-bottom: $whitespace-3;
 
   h2 {
@@ -175,42 +202,44 @@ section, details {
   }
 }
 
-details > summary {
-  display: inline-block;
-  cursor: pointer;
-  list-style-type: none;
-  &::-webkit-details-marker, &::before { display: none; }
+main > details {
+  & > summary {
+    display: inline-block;
+    cursor: pointer;
+    list-style-type: none;
+    &::-webkit-details-marker, &::before { display: none; }
 
-  h2 {
-    padding-right: $whitespace;
+    h2 {
+      padding-right: $whitespace;
+    }
+
+    &::after {
+      display: block;
+      float: right;
+      box-sizing: border-box;
+      min-width: $whitespace-3;
+      text-align: center;
+      padding: 0.3rem 0.5rem;
+      content: "▸";
+      background: $black;
+      color: $white;
+    }
   }
 
-  &::after {
-    display: block;
-    float: right;
-    box-sizing: border-box;
-    min-width: $whitespace-3;
-    text-align: center;
-    padding: 0.3rem 0.5rem;
-    content: "▸";
-    background: $black;
-    color: $white;
-  }
-}
+  & > summary:hover,
+  & > summary:focus,
+  & > summary:active,
+  &[open] > summary {
+    h2 {
+      background-color: $blue;
+      color: $white;
+    }
 
-details > summary:hover,
-details > summary:focus,
-details > summary:active,
-details[open] > summary {
-  h2 {
-    background-color: $blue;
-    color: $white;
-  }
-
-  &::after {
-    content: "▾";
-    background-color: $blue;
-    color: $white;
+    &::after {
+      content: "▾";
+      background-color: $blue;
+      color: $white;
+    }
   }
 }
 
@@ -360,8 +389,19 @@ ul.list {
   }
 }
 
-.note-list {
+.list-note {
+  @include font-0;
+  margin: $whitespace-2 0;
   text-align: center;
+  color: $grey;
+
+  a {
+    color: $grey;
+  }
+
+  a:hover, a:focus, a:active {
+    color: $blue;
+  }
 }
 
 .call-to-action {
@@ -442,6 +482,10 @@ body > header {
   }
 
   @media screen and (max-width: 810px) {
+    .logo img {
+      height: 4rem;
+    }
+
     ol a::before {
       float: none;
       margin: 0 0.3rem;
