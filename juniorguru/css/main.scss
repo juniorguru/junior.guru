@@ -180,12 +180,12 @@ main > header {
       display: inline;
       background: $white;
       padding: 0.3rem 0.8rem;
-      white-space: nowrap;
       margin: 0 $whitespace-0;
       line-height: $line-height-0;
     }
 
     a {
+      white-space: nowrap;
       text-decoration: none;
     }
   }
@@ -701,6 +701,9 @@ body.page-index {
 
     .call-to-action, .note {
       text-align: left;
+    }
+
+    .companies .call-to-action, .note {
       margin-bottom: 0;
     }
   }
