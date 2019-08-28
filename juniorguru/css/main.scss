@@ -399,17 +399,16 @@ body > header {
 
   .logo {
     display: block;
-    box-sizing: border-box;
-    background-image: url('/images/logo.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-indent: 110%;
-    white-space: nowrap;
-    overflow: hidden;
+    align-self: center;
+
+    img {
+      display: block;
+      height: 5.5rem;
+    }
   }
 
   ol {
+    align-self: flex-end;
     display: flex;
     @include font-2;
     overflow: hidden;
@@ -520,18 +519,16 @@ body.page-index {
     margin-bottom: $whitespace-3;
     background: $yellow;
 
-    h1 {
+    .logo {
       display: block;
-      box-sizing: border-box;
       margin: 0;
-      height: 12rem;
-      background-image: url('/images/logo.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      text-indent: 110%;
-      white-space: nowrap;
-      overflow: hidden;
+      text-align: center;
+
+      img {
+        display: block;
+        margin: 0 auto;
+        height: 12rem;
+      }
     }
   }
 
