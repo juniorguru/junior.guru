@@ -189,14 +189,6 @@ main > header {
       white-space: nowrap;
       text-decoration: none;
     }
-
-    &::after {
-      content: "⬇";
-      position: absolute;
-      right: -1.5 * $whitespace;
-      bottom: $whitespace;
-      font-size: 4rem;
-    }
   }
 }
 
@@ -284,7 +276,7 @@ hr {
   border: none;
   height: 2px;
   background: $dots-black;
-  margin: $whitespace-3 0;
+  margin: (2 * $whitespace-3) 0;
 }
 
 body > header + hr {
@@ -370,7 +362,7 @@ ul.list {
     @media screen and (min-width: $grid-breakpoint) {
       @supports (display: grid) {
         & {
-          max-width: auto;
+          max-width: none;
           margin: 0;
         }
       }
@@ -475,7 +467,7 @@ ul.list {
 
 .list-note {
   margin: $whitespace-2 0;
-  text-align: center;
+  text-align: left;
   color: $grey;
 
   a {
@@ -682,6 +674,8 @@ body.page-index {
 
   nav {
     ol {
+      margin: $whitespace-3 0;
+
       @media screen and (min-width: $grid-breakpoint) {
         @supports (display: grid) {
           & {
@@ -702,7 +696,7 @@ body.page-index {
       @media screen and (min-width: $grid-breakpoint) {
         @supports (display: grid) {
           & {
-            max-width: auto;
+            max-width: none;
             margin: 0;
           }
         }
