@@ -329,11 +329,11 @@ figure.quote {
 }
 
 html[lang="cs"] figure::after {
-  content: "“";
+  content: "“"; // https://www.zoul.cz/uvozovky/
 }
 
 html[lang="en"] figure::after {
-  content: "”";
+  content: "”"; // https://www.zoul.cz/uvozovky/
 }
 
 ul.list {
@@ -446,11 +446,20 @@ ul.list {
 .list-image {
   box-shadow: inset 0 0 $whitespace-2 rgba(190, 190, 190, 0.8);
 
+  // https://www.codecaptain.io/blog/web-development/responsive-images-and-preventing-page-reflow/474
+  height: 0;
+  padding-top: 56.25%; // images are 640x360, which means 36/64 = 0.5625
+  position: relative;
+
   img {
     display: block;
-    width: 100%;
-    filter: grayscale(50%);
     opacity: 0.6;
+    filter: grayscale(50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
