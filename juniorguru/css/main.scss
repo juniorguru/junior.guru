@@ -23,7 +23,7 @@ $white: #ffffff;
 $black: unquote("##{$black-number}");
 $yellow: #fffa72;
 $blue: unquote("##{$blue-number}");
-$grey: #ababab;
+$gray: #ababab;
 
 $grid-breakpoint: 900px;
 $grid-block-size: 28rem;
@@ -456,7 +456,7 @@ ul.list {
   img {
     display: block;
     opacity: 0.6;
-    filter: grayscale(50%);
+    filter: grayscale(100%);
     position: absolute;
     top: 0;
     left: 0;
@@ -468,10 +468,10 @@ ul.list {
 .list-note {
   margin: $whitespace-2 0;
   text-align: left;
-  color: $grey;
+  color: $gray;
 
   a {
-    color: $grey;
+    color: $gray;
   }
 
   a:hover, a:focus, a:active {
