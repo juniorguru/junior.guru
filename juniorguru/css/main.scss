@@ -170,6 +170,8 @@ main > header {
     text-align: center;
     background: $dots-black;
     padding: $whitespace;
+    position: relative;
+    box-sizing: border-box;
 
     &, li {
       list-style-type: none;
@@ -186,6 +188,14 @@ main > header {
     a {
       white-space: nowrap;
       text-decoration: none;
+    }
+
+    &::after {
+      content: "⬇";
+      position: absolute;
+      right: -1.5 * $whitespace;
+      bottom: $whitespace;
+      font-size: 4rem;
     }
   }
 }
