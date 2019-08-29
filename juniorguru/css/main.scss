@@ -280,6 +280,57 @@ body > header + hr {
   @include font-0;
 }
 
+.side-note {
+  border: $black 1px dotted;
+  padding: $whitespace-2;
+  margin: $whitespace-3 0;
+}
+
+figure.quote {
+  background: $dots-blue;
+  color: $blue;
+  margin: $whitespace-3 0;
+  padding: $whitespace;
+  position: relative;
+
+  blockquote, figcaption {
+    background: $white;
+    padding: $whitespace-2;
+  }
+
+  blockquote {
+    @include font-2;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  &::after {
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 15rem;
+  }
+
+  figcaption {
+    padding-top: 0;
+  }
+
+  figcaption::before {
+    content: "—";
+  }
+}
+
+html[lang="cs"] figure::after {
+  content: "“";
+}
+
+html[lang="en"] figure::after {
+  content: "”";
+}
+
 ul.list {
   padding: 0;
   margin: 0;
@@ -399,7 +450,6 @@ ul.list {
 }
 
 .list-note {
-  @include font-0;
   margin: $whitespace-2 0;
   text-align: center;
   color: $grey;
