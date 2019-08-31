@@ -128,6 +128,10 @@ h1 {
 
 ul, ol {
   margin-bottom: $whitespace-3;
+
+  ul, ol {
+    margin-top: $whitespace-3;
+  }
 }
 
 ul li {
@@ -498,6 +502,7 @@ ul.list {
       padding-right: $whitespace-3;
       margin-top: $whitespace-3;
       @include arrow;
+      overflow: hidden !important;
 
       &:hover, &:focus, &:active {
         background: $blue;

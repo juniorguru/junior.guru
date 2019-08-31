@@ -43,6 +43,7 @@ print('Copying images')
 images_dir = BUILD_DIR / 'images'
 shutil.rmtree(images_dir, ignore_errors=True)
 shutil.copytree(PROJECT_DIR / 'juniorguru/images', images_dir)
+shutil.move(str(images_dir / 'favicon.ico'), BUILD_DIR)
 
 if targets == ALL_TARGETS:
     print('Minifying HTML')

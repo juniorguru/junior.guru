@@ -6,6 +6,7 @@
     { "src": "**/*.html", "use": "@now/static" },
     { "src": "bundle.css", "use": "@now/static" },
     { "src": "bundle.js", "use": "@now/static" },
-    { "src": "images/**/*", "use": "@now/static" }
+    { "src": "images/**/*", "use": "@now/static" },
+    { "src": "favicon.ico", "use": "@now/static" }
   ]
 }
