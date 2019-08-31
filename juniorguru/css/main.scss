@@ -287,10 +287,16 @@ body > header + hr {
   @include font-0;
 }
 
-.side-note {
-  border: $black 1px dotted;
-  padding: $whitespace-2;
+div.side-note {
+  background: $dots-black;
+  padding: $whitespace;
   margin: $whitespace-3 0;
+
+  p {
+    padding: $whitespace ($whitespace + 0.3rem);
+    margin: 0;
+    background: $white;
+  }
 }
 
 figure.quote {
