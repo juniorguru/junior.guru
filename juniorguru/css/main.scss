@@ -201,26 +201,25 @@ main > header, main > section, main > details {
 }
 
 main > section, main > details {
-  h2 {
-    display: inline-block;
-    background-color: $yellow;
-    padding: 0.3rem 0.5rem;
-    position: relative;
-  }
-
   h3 {
     margin-top: $whitespace-3;
   }
 }
 
-main > details {
+main > section h2, details summary h2, details summary h3 {
+  display: inline-block;
+  background-color: $yellow;
+  padding: 0.3rem 0.5rem;
+}
+
+details {
   & > summary {
     display: inline-block;
     cursor: pointer;
     list-style-type: none;
     &::-webkit-details-marker, &::before { display: none; }
 
-    h2::after {
+    h2::after, h3::after {
       display: inline;
       content: "▸";
       margin-left: $whitespace;
@@ -231,12 +230,12 @@ main > details {
   & > summary:focus,
   & > summary:active,
   &[open] > summary {
-    h2 {
+    h2, h3 {
       background-color: $blue;
       color: $white;
     }
 
-    h2::after {
+    h2::after, h3::after {
       content: "▾";
       background-color: $blue;
       color: $white;
@@ -479,9 +478,85 @@ ul.list {
   }
 }
 
+ul.jobs {
+  list-style-type: none;
+  background: $dots-black;
+  margin: (2 * $whitespace-3) 0;
+  padding: $whitespace;
+
+  & > li {
+    list-style-type: none;
+    padding: 0;
+    padding-top: $whitespace;
+    margin: 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  .job {
+    position: relative;
+  }
+
+  li > .job, li > .call-to-action {
+    padding: $whitespace ($whitespace + 0.3rem);
+    margin: 0;
+    background: $white;
+  }
+
+  .job-company {
+    display: inline;
+    margin: 0;
+    @include font-0;
+
+    a {
+      display: inline-block;
+      padding: 0.3rem 0.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .job-attributes {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: $whitespace;
+    top: $whitespace;
+    @include font-0;
+  }
+
+  .job-description {
+    padding-bottom: $whitespace-3;
+  }
+
+  .job-apply {
+    position: absolute;
+    right: $whitespace;
+    bottom: $whitespace;
+    padding: 0;
+    margin: 0;
+
+    .button {
+      margin: 0;
+    }
+  }
+
+  .button {
+    @include font-0;
+    padding: $whitespace-0 $whitespace;
+    padding-top: $whitespace-0 - 0.1rem;
+  }
+}
+
 .call-to-action {
   text-align: center;
   margin: $whitespace-2 0 $whitespace-3 0;
+
+  .announcement {
+    @include font-2;
+    margin-bottom: $whitespace-2;
+  }
 
   &.next {
     overflow: hidden;

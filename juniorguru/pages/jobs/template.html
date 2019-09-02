@@ -16,18 +16,26 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
   </p>
 </header>
 
-<p class="join-newsletter">
-  <a href="http://eepurl.com/gyG8Bb" target="_blank">Práce do emailu</a>
-</p>
-
-<p class="post-job">
-  <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Přidat nabídku &mdash; 0 Kč</a><br>
-  Do <strong>konce tohoto měsíce</strong> je přidávání nabídek práce <strong>zdarma</strong>!
+<p class="call-to-action">
+  <a href="http://eepurl.com/gyG8Bb" target="_blank" class="button">Práce do emailu</a>
 </p>
 
 <ul class="jobs">
+{% if jobs|length > 1 %}
+  <li>
+    <div class="call-to-action">
+      <p>
+        <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank" class="button">Přidat nabídku &mdash;&nbsp;0&nbsp;Kč</a>
+      </p>
+      <p class="note">
+        Do <strong>konce tohoto měsíce</strong> je přidávání nabídek práce <strong>zdarma</strong>!
+      </p>
+    </div>
+  </li>
+{% endif %}
 {% for job in jobs %}
-    <li class="job" id="job-{{ job.id }}">
+  <li>
+    <article class="job" id="job-{{ job.id }}">
       <h2 class="job-company">
         <small><a href="{{ job.company_link }}">{{ job.company_name }}</a></small>
       </h2>
@@ -40,24 +48,38 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
         </p>
         <div class="job-description">{{ job.description|markdown }}</div>
       </details>
-      <p class="job-type">
-        <small>{{ job.job_type|job_type }}</small>
-      </p>
-      <p class="job-location">
-        <small>{{ job.location }}</small>
+      <p class="job-attributes">
+        <span class="job-type">{{ job.job_type|job_type }}</span><!--
+        -->&nbsp;&mdash;&nbsp;<!--
+        --><span class="job-location">{{ job.location }}</span>
       </p>
       <p class="job-apply">
-        {{ job.email|email_link('Piš na {email}') }}
+        {{ job.email|email_link('Piš na {email}', classes=['button']) }}
       </p>
-    </li>
+    </article>
+  </li>
 {% endfor %}
-    <li class="post-job">
-      <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank">Přidat nabídku &mdash; 0 Kč</a><br>
-      Do <strong>konce tohoto měsíce</strong> je přidávání nabídek práce <strong>zdarma</strong>!
-    </li>
+  <li>
+    <div class="call-to-action">
+      {% if jobs|length < 1 %}
+        <p class="announcement">
+          Nabídky práce se připravují
+        </p>
+      {% endif %}
+      <p>
+        <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank" class="button">Přidat nabídku &mdash;&nbsp;0&nbsp;Kč</a>
+      </p>
+      <p class="note">
+        Do <strong>konce tohoto měsíce</strong> je přidávání nabídek práce <strong>zdarma</strong>!
+      </p>
+    </div>
+  </li>
 </ul>
-<p class="join-newsletter">
-    <a href="http://eepurl.com/gyG8Bb" target="_blank">Práce do emailu</a>
-</p>
+
+{% if jobs|length > 1 %}
+  <p class="call-to-action">
+      <a href="http://eepurl.com/gyG8Bb" target="_blank" class="button">Práce do emailu</a>
+  </p>
+{% endif %}
 
 {% endblock %}

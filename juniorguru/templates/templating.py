@@ -43,10 +43,14 @@ def get_html_path(build_dir, url_path):
     return html_path
 
 
-def email_link_filter(email, text_template='{email}'):
+def email_link_filter(email, text_template='{email}', classes=None):
     user, server = email.split('@')
     text = text_template.format(email=f'{user}&#64;<!---->{server}')
-    return Markup(f'<a href="mailto:{user}&#64;{server}">{text}</a>')
+    classes = ' '.join(classes or [])
+    class_attr = f' class="{classes}"' if classes else ''
+    return Markup(
+        f'<a href="mailto:{user}&#64;{server}"{class_attr}>{text}</a>'
+    )
 
 
 def markdown_filter(markdown_text):
