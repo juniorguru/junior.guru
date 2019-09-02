@@ -220,20 +220,10 @@ main > details {
     list-style-type: none;
     &::-webkit-details-marker, &::before { display: none; }
 
-    h2 {
-      padding-right: $whitespace;
-    }
-
-    &::after {
-      display: block;
-      float: right;
-      box-sizing: border-box;
-      min-width: $whitespace-3;
-      text-align: center;
-      padding: 0.3rem 0.5rem;
+    h2::after {
+      display: inline;
       content: "▸";
-      background: $black;
-      color: $white;
+      margin-left: $whitespace;
     }
   }
 
@@ -246,7 +236,7 @@ main > details {
       color: $white;
     }
 
-    &::after {
+    h2::after {
       content: "▾";
       background-color: $blue;
       color: $white;
