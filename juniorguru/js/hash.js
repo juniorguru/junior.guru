@@ -2,7 +2,7 @@ function onHashChange() {
   if (!window.location.hash) return;
 
   const hash = window.location.hash.replace(/^#/, '');
-  const element = document.getElementById(hash);
+  let element = document.getElementById(hash);
 
   while (element instanceof HTMLElement) {
     const tagName = element.tagName.toLowerCase();

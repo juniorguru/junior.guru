@@ -201,18 +201,18 @@ main > header, main > section, main > details {
 }
 
 main > section, main > details {
+  h2 {
+    display: inline-block;
+    background-color: $yellow;
+    padding: 0.3rem 0.5rem;
+  }
+
   h3 {
     margin-top: $whitespace-3;
   }
 }
 
-main > section h2, details summary h2, details summary h3 {
-  display: inline-block;
-  background-color: $yellow;
-  padding: 0.3rem 0.5rem;
-}
-
-details {
+main > details {
   & > summary {
     display: inline-block;
     cursor: pointer;
@@ -247,21 +247,21 @@ a {
   &:hover, &:focus, &:active {
     color: $blue;
   }
+}
 
-  &.button {
-    display: inline-block;
+.button, a.button {
+  display: inline-block;
+  color: $white;
+  text-decoration: none;
+  @include font-2;
+  font-weight: 300;
+  background: $black;
+  padding: $whitespace $whitespace-2;
+  padding-top: $whitespace - 0.1rem;
+
+  &:hover, &:focus, &:active {
     color: $white;
-    text-decoration: none;
-    @include font-2;
-    font-weight: 300;
-    background: $black;
-    padding: $whitespace $whitespace-2;
-    padding-top: $whitespace - 0.1rem;
-
-    &:hover, &:focus, &:active {
-      color: $white;
-      background: $blue;
-    }
+    background: $blue;
   }
 }
 
@@ -480,72 +480,143 @@ ul.list {
 
 ul.jobs {
   list-style-type: none;
-  background: $dots-black;
   margin: (2 * $whitespace-3) 0;
-  padding: $whitespace;
+  padding: 0;
 
   & > li {
     list-style-type: none;
     padding: 0;
-    padding-top: $whitespace;
     margin: 0;
-
-    &:first-child {
-      padding-top: 0;
-    }
+    margin-bottom: $whitespace;
   }
+}
 
-  .job {
-    position: relative;
-  }
+ul.jobs li.job-add {
+  padding: $whitespace;
+  background: $dots-black;
 
-  li > .job, li > .call-to-action {
-    padding: $whitespace ($whitespace + 0.3rem);
-    margin: 0;
+  .call-to-action {
     background: $white;
-  }
-
-  .job-company {
-    display: inline;
-    margin: 0;
-    @include font-0;
-
-    a {
-      display: inline-block;
-      padding: 0.3rem 0.5rem;
-      font-weight: bold;
-    }
-  }
-
-  .job-attributes {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    right: $whitespace;
-    top: $whitespace;
-    @include font-0;
-  }
-
-  .job-description {
-    padding-bottom: $whitespace-3;
-  }
-
-  .job-apply {
-    position: absolute;
-    right: $whitespace;
-    bottom: $whitespace;
-    padding: 0;
-    margin: 0;
-
-    .button {
-      margin: 0;
-    }
+    padding: $whitespace;
+    max-width: 30rem;
+    margin: 0 auto;
   }
 
   .button {
     @include font-0;
     padding: $whitespace-0 $whitespace;
     padding-top: $whitespace-0 - 0.1rem;
+  }
+}
+
+ul.jobs li.job {
+  padding: $whitespace;
+  background: $dots-black;
+  position: relative;
+
+  &:hover, &:focus, &:active, &.job-open {
+    background: $dots-blue;
+
+    .job-title, .job-company, .job-company a {
+      color: $blue;
+    }
+
+    .button {
+      background: $blue;
+    }
+  }
+
+  &.job-open {
+    padding: $whitespace;
+
+    summary {
+      padding-bottom: 0;
+    }
+
+    summary .button {
+      display: none;
+    }
+  }
+
+  details {
+    background: $white;
+
+    summary {
+      cursor: pointer;
+      list-style-type: none;
+      &::-webkit-details-marker, &::before { display: none; }
+      padding: $whitespace;
+      padding-top: $whitespace + 1rem;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.job-title {
+  margin: 1.7rem 0 1.8rem 0;
+}
+
+.job-company {
+  position: absolute;
+  top: $whitespace * 2;
+  left: $whitespace * 2;
+  display: inline;
+  margin: 0;
+  @include font-0;
+
+  a {
+    font-weight: bold;
+  }
+}
+
+.job-attributes {
+  text-align: center;
+  @include font-0;
+}
+
+.job-requirements {
+  padding: 0 $whitespace;
+  margin: $whitespace 0;
+  text-align: center;
+  @include font-0;
+
+  span {
+    display: inline-block;
+    border: 1px solid $black;
+    margin: 0.3rem 0.3rem;
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+.job-description {
+  padding: $whitespace $whitespace-2;
+}
+
+.job-apply.call-to-action {
+  padding: 0 $whitespace $whitespace-3 $whitespace;
+  margin: 0;
+
+  .button {
+    margin: 0;
+    padding: $whitespace-0 $whitespace-3;
+
+    small {
+      display: block;
+      margin-bottom: -1rem;
+      @include font-0;
+    }
+  }
+}
+
+.job summary .job-apply.call-to-action {
+  padding: 0;
+
+  .button {
+    @include font-0;
+    padding: $whitespace-0 $whitespace-2;
   }
 }
 

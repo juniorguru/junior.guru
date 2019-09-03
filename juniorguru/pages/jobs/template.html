@@ -22,7 +22,7 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
 
 <ul class="jobs">
 {% if jobs|length > 1 %}
-  <li>
+  <li class="job-add">
     <div class="call-to-action">
       <p>
         <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank" class="button">Přidat nabídku &mdash;&nbsp;0&nbsp;Kč</a>
@@ -34,32 +34,35 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
   </li>
 {% endif %}
 {% for job in jobs %}
-  <li>
-    <article class="job" id="job-{{ job.id }}">
-      <h2 class="job-company">
-        <small><a href="{{ job.company_link }}">{{ job.company_name }}</a></small>
-      </h2>
-      <details>
-        <summary><h3 class="job-title">{{ job.title }}</h3></summary>
-        <p class="job-requirements">
-        {% for requirement in job.requirements %}
-          <span class="job-requirement">{{ requirement|job_requirement }}</span>
-        {% endfor %}
-        </p>
-        <div class="job-description">{{ job.description|markdown }}</div>
-      </details>
+  <li class="job" id="job-{{ job.id }}">
+    <h2 class="job-company">
+      <small><a href="{{ job.company_link }}">{{ job.company_name }}</a></small>
+    </h2>
+    <details>
+      <summary>
+        <h3 class="job-title">{{ job.title }}</h3>
+        <p class="call-to-action job-apply">
+          <span class="button">Mám zájem</span>
+        <p>
+      </summary>
       <p class="job-attributes">
         <span class="job-type">{{ job.job_type|job_type }}</span><!--
         -->&nbsp;&mdash;&nbsp;<!--
         --><span class="job-location">{{ job.location }}</span>
       </p>
-      <p class="job-apply">
-        {{ job.email|email_link('Piš na {email}', classes=['button']) }}
+      <p class="job-requirements">
+        {% for requirement in job.requirements %}
+          <span class="job-requirement">{{ requirement|job_requirement }}</span>&#32;
+        {% endfor %}
       </p>
-    </article>
+      <div class="job-description">{{ job.description|markdown }}</div>
+      <p class="job-apply call-to-action">
+        {{ job.email|email_link('<small>Napiš na</small> {email}', classes=['button']) }}
+      </p>
+    </details>
   </li>
 {% endfor %}
-  <li>
+  <li class="job-add">
     <div class="call-to-action">
       {% if jobs|length < 1 %}
         <p class="announcement">
