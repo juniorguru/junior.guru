@@ -41,10 +41,11 @@ if 'css' in targets:
 
 print('Copying images')
 images_dir = BUILD_DIR / 'images'
+favicon_path = BUILD_DIR / 'favicon.ico'
 shutil.rmtree(images_dir, ignore_errors=True)
-(BUILD_DIR / 'favicon.ico').unlink()
+shutil.rmtree(favicon_path, ignore_errors=True)
 shutil.copytree(PROJECT_DIR / 'juniorguru/images', images_dir)
-shutil.move(str(images_dir / 'favicon.ico'), BUILD_DIR)
+shutil.move(str(images_dir / 'favicon.ico'), favicon_path)
 
 if targets == ALL_TARGETS:
     print('Minifying HTML')
