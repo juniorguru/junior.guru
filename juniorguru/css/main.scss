@@ -637,6 +637,10 @@ body > header {
       height: 4rem;
     }
 
+    ol a {
+      padding: $whitespace-0 ($whitespace + 0.3rem);
+    }
+
     ol a::before {
       float: none;
       margin: 0 0.3rem;
