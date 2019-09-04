@@ -493,13 +493,12 @@ ul.jobs {
 
 ul.jobs li.job-add {
   padding: $whitespace;
-  background: $dots-black;
+  background: $yellow;
 
   .call-to-action {
     background: $white;
+    margin: 0;
     padding: $whitespace;
-    max-width: 30rem;
-    margin: 0 auto;
   }
 
   .button {
@@ -556,7 +555,9 @@ ul.jobs li.job {
 }
 
 .job-title {
-  margin: 1.7rem 0 1.8rem 0;
+  margin: 0;
+  padding: 0;
+  padding-top: 1.7rem;
 }
 
 .job-company {
@@ -607,6 +608,13 @@ ul.jobs li.job {
       display: block;
       margin-bottom: -1rem;
       @include font-0;
+    }
+  }
+
+  @media screen and (max-width: 810px) {
+    & {
+      margin-top: $whitespace;
+      margin-left: auto;
     }
   }
 }

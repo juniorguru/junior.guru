@@ -21,7 +21,7 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
 </p>
 
 <ul class="jobs">
-{% if jobs|length > 1 %}
+{% if jobs|length >= 5 %}
   <li class="job-add">
     <div class="call-to-action">
       <p>
@@ -43,7 +43,7 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
         <h3 class="job-title">{{ job.title }}</h3>
         <p class="call-to-action job-apply">
           <span class="button">Mám zájem</span>
-        <p>
+        </p>
       </summary>
       <p class="job-attributes">
         <span class="job-type">{{ job.job_type|job_type }}</span><!--
@@ -79,7 +79,7 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
   </li>
 </ul>
 
-{% if jobs|length > 1 %}
+{% if jobs|length >= 5 %}
   <p class="call-to-action">
       <a href="http://eepurl.com/gyG8Bb" target="_blank" class="button">Práce do emailu</a>
   </p>
