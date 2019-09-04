@@ -24,6 +24,7 @@ def render_template(url_path, template_path, data, filters=None):
 
     data['base_template'] = env.from_string((PACKAGE_DIR / 'base.html').read_text())
     data['list_note_template'] = env.from_string((PACKAGE_DIR / 'list_note.html').read_text())
+    data['base_url'] = get_url(BASE_URL, '/')
     data['url'] = get_url(BASE_URL, url_path)
     data['url_path'] = url_path
     data['html_path'] = str(html_path.relative_to(BUILD_DIR))
