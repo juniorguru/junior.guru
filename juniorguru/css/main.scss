@@ -167,6 +167,12 @@ main > header {
 
   p {
     @include font-2;
+
+    img {
+      height: 8rem;
+      margin: 0 0 $whitespace $whitespace;
+      float: right;
+    }
   }
 
   ul {
@@ -832,7 +838,7 @@ body.page-index {
   }
 
   nav {
-    ol {
+    .chicken, ol {
       margin: $whitespace-3 0;
 
       @media screen and (min-width: $grid-breakpoint) {
@@ -846,8 +852,20 @@ body.page-index {
       }
     }
 
-    li {
-      overflow: hidden;
+    .chicken {
+      display: none;
+      margin: 0;
+
+      @media screen and (min-width: $grid-breakpoint) {
+        @supports (display: grid) {
+          & {
+            display: grid;
+          }
+        }
+      }
+    }
+
+    .chick, li {
       margin: auto;
       margin-bottom: $whitespace;
       max-width: 65rem;
@@ -860,6 +878,16 @@ body.page-index {
           }
         }
       }
+    }
+
+    .chick img {
+      display: block;
+      height: 10rem;
+      margin: 0 auto;
+    }
+
+    li {
+      overflow: hidden;
 
       a {
         display: block;
