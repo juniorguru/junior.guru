@@ -167,11 +167,16 @@ main > header {
 
   p {
     @include font-2;
+    box-sizing: border-box;
+    padding-right: 15rem;
+    min-height: 15rem;
+    position: relative;
 
     img {
-      height: 8rem;
-      margin: 0 0 $whitespace $whitespace;
-      float: right;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 15rem;
     }
   }
 
@@ -280,6 +285,17 @@ hr {
 
 body > header + hr {
   display: none;
+}
+
+.cartoon {
+  float: right;
+  width: 20rem;
+  margin: $whitespace;
+  margin-left: $whitespace-2;
+}
+
+.cartoon[src*="pylady"] {
+  width: 15rem;
 }
 
 .note {
@@ -969,6 +985,18 @@ body.page-index {
 
     .companies .call-to-action, .note {
       margin-bottom: 0;
+    }
+
+    .cartoon {
+      display: none;
+    }
+
+    @media screen and (min-width: $grid-breakpoint) {
+      .cartoon {
+        display: block;
+        width: 10rem;
+        margin-top: 0;
+      }
     }
   }
 }
