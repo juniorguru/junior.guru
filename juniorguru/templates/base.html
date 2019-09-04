@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="cs" data-updated-at="{{ updated_at.to('Europe/Prague') }}" data-url-path="{{ url_path }}">
-  <head>
+  <head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
     <meta charset="utf-8">
     <link rel="canonical" href="{{ url }}">
     <title>
@@ -20,6 +20,11 @@
     <meta name="description" content="{% block description %}{% endblock %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/bundle.css">
+
+    <meta property="og:title" content="Jak se naučit programovat a získat svou první práci v IT{% block title %}{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url }}">
+    <meta property="og:image" content="/images/og-image.png">
   </head>
   <body{% block body_attrs %} class="page"{% endblock %}>
     {% block body %}
