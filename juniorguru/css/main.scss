@@ -167,15 +167,11 @@ main > header {
 
   p {
     @include font-2;
-    box-sizing: border-box;
-    padding-right: 15rem;
-    min-height: 15rem;
-    position: relative;
+    min-height: 16rem;
 
     img {
-      position: absolute;
-      top: 0;
-      right: 0;
+      float: right;
+      margin: $whitespace;
       height: 15rem;
     }
   }
@@ -288,14 +284,21 @@ body > header + hr {
 }
 
 .cartoon {
-  float: right;
+  display: block;
+  margin: $whitespace auto;
   width: 20rem;
-  margin: $whitespace;
-  margin-left: $whitespace-2;
 }
 
 .cartoon[src*="pylady"] {
   width: 15rem;
+}
+
+@media screen and (min-width: $grid-breakpoint) {
+  .cartoon {
+    float: right;
+    margin: $whitespace;
+    margin-left: $whitespace-2;
+  }
 }
 
 .note {
