@@ -11,7 +11,7 @@
     "imagemin-cli": "5.0.0",
     "node-sass": "4.12.0",
     "pageres-cli": "5.0.0",
-    "rollup": "1.21.0",
+    "rollup": "1.21.1",
     "rollup-plugin-node-resolve": "5.2.0",
     "svgo": "1.3.0",
     "terser": "4.3.0"
