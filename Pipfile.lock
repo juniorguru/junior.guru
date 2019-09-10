@@ -18,11 +18,11 @@
     "default": {
         "arrow": {
             "hashes": [
-                "sha256:704f5403299fe092c69479e0a2516a434003e82d37439a9e47c31285faf3947b",
-                "sha256:9b92a8e151e168b742a36b622deadf860d1686af8c5bbe46eca8da04b10fe92f"
+                "sha256:7954440e7621629a3e4c30dfd2038362d153e1e2b50424c7a6f10e1cdf211a7b",
+                "sha256:c65ea9214403c77b09bd676cba3dcf1e0a396f5dfb316b811bb7f7e10d99e955"
             ],
             "index": "pypi",
-            "version": "==0.15.0"
+            "version": "==0.15.1"
         },
         "certifi": {
             "hashes": [
@@ -191,11 +191,11 @@
         },
         "importlib-metadata": {
             "hashes": [
-                "sha256:9ff1b1c5a354142de080b8a4e9803e5d0d59283c93aed808617c787d16768375",
-                "sha256:b7143592e374e50584564794fcb8aaf00a23025f9db866627f89a21491847a8d"
+                "sha256:0c505102757e7fa28b9f0958d8bc81301159dea16e2649858c92edc158b78a83",
+                "sha256:9a9f75ce32e78170905888acbf2376a81d3f21ecb3bb4867050413411d3ca7a9"
             ],
             "markers": "python_version < '3.8'",
-            "version": "==0.20"
+            "version": "==0.21"
         },
         "more-itertools": {
             "hashes": [
