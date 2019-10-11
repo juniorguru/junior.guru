@@ -2,7 +2,7 @@
   "name": "juniorguru",
   "dependencies": {
     "details-element-polyfill": "2.4.0",
-    "instant.page": "2.0.0"
+    "instant.page": "2.0.1"
   },
   "devDependencies": {
     "csso": "3.5.1",
