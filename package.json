@@ -6,7 +6,7 @@
   },
   "devDependencies": {
     "csso": "4.0.1",
-    "csso-cli": "2.0.2",
+    "csso-cli": "3.0.0",
     "html-minifier": "4.0.0",
     "imagemin-cli": "5.0.0",
     "node-sass": "4.12.0",
