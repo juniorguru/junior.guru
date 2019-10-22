@@ -5,7 +5,7 @@
     "instant.page": "2.0.1"
   },
   "devDependencies": {
-    "csso": "4.0.0",
+    "csso": "4.0.1",
     "csso-cli": "2.0.2",
     "html-minifier": "4.0.0",
     "imagemin-cli": "5.0.0",
