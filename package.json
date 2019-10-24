@@ -9,7 +9,7 @@
     "csso-cli": "3.0.0",
     "html-minifier": "4.0.0",
     "imagemin-cli": "5.0.0",
-    "node-sass": "4.12.0",
+    "node-sass": "4.13.0",
     "pageres-cli": "5.0.0",
     "rollup": "1.25.2",
     "rollup-plugin-node-resolve": "5.2.0",
