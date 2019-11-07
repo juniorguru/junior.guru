@@ -68,6 +68,9 @@ workflows:
       - build:
           requires:
             - install_and_test
+      - validate-links:
+          requires:
+            - build
       - deploy:
           requires:
             - build
