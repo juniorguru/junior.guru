@@ -22,7 +22,8 @@ markdown = "*"
 [dev-packages]
 pytest = "*"
 watchdog = "*"
-pylinkvalidator = "*"
+aiohttp = "*"
+aiofiles = "*"
 
 [requires]
 python_version = "3.7"
