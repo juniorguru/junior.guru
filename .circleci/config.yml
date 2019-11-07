@@ -48,12 +48,12 @@ jobs:
           paths:
               - project/build
 
-  validate-links:
+  check-links:
     executor: python-node
     steps:
       - attach_workspace:
           at: "~"
-      - run: pipenv run validate-links
+      - run: pipenv run check-links
 
   deploy:
     executor: python-node
@@ -82,7 +82,7 @@ workflows:
       - build:
           requires:
             - install
-      - validate-links:
+      - check-links:
           requires:
             - build
       - deploy:
