@@ -9,7 +9,7 @@ USER_AGENT = (
 )
 EXCLUDE = [
     # BLC_UNKNOWN for no obvious reason, probably crawling protection
-    'https://www.hackathon.com/city/czech-republic/praha',
+    'hackathon.com',
 ]
 PROJECT_DIR = Path(__file__).parent.parent
 BUILD_DIR = PROJECT_DIR / 'build'
