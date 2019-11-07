@@ -16,7 +16,7 @@ sys.exit(run([
     '--verbose',
     '--follow',
     '--recursive',
-    '--get',
+    '--get',  # because some sites return strange codes in response to HEAD :(
     f'--user-agent={USER_AGENT}',
     BUILD_DIR,
 ]).returncode)
