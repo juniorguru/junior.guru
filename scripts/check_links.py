@@ -7,16 +7,26 @@ USER_AGENT = (
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:70.0) '
     'Gecko/20100101 Firefox/70.0'
 )
-BUILD_DIR = Path(__file__).parent.parent / 'build'
+EXCLUDE = [
+    # BLC_UNKNOWN for no obvious reason, probably crawling protection
+    'https://www.hackathon.com/city/czech-republic/praha',
+]
+PROJECT_DIR = Path(__file__).parent.parent
+BUILD_DIR = PROJECT_DIR / 'build'
 
 
-sys.exit(run([
-    'npx',
-    'blcl',
+command = ['npx', 'blcl']
+options = [
     '--verbose',
     '--follow',
     '--recursive',
     '--get',  # because some sites return strange codes in response to HEAD :(
     f'--user-agent={USER_AGENT}',
-    BUILD_DIR,
-]).returncode)
+]
+
+
+for url in EXCLUDE:
+    options.append(f'--exclude={url}')
+
+
+sys.exit(run(command + options + [BUILD_DIR]).returncode)
