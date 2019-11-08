@@ -48,6 +48,13 @@ jobs:
           paths:
               - project/build
 
+  check-anchors:
+    executor: python-node
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: pipenv run check-anchors
+
   check-links:
     executor: python-node
     steps:
@@ -82,13 +89,16 @@ workflows:
       - build:
           requires:
             - install
+      - check-anchors:
+          requires:
+            - build
       - check-links:
           requires:
             - build
       - deploy:
           requires:
             - test
-            - build
+            - check-anchors
 
   nightly_workflow:
     <<: *default_workflow

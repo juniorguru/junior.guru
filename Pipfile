@@ -8,6 +8,7 @@ test = "pytest"
 build = "python scripts/build.py"
 build-screenshots = "python scripts/build_screenshots.py"
 check-links = "python scripts/check_links.py"
+check-anchors = "python scripts/check_anchors.py"
 watch = "python scripts/watch.py"
 serve = "now dev build"
 deploy = "bash scripts/deploy.sh"
@@ -22,8 +23,7 @@ markdown = "*"
 [dev-packages]
 pytest = "*"
 watchdog = "*"
-aiohttp = "*"
-aiofiles = "*"
+lxml = "*"
 
 [requires]
 python_version = "3.7"
