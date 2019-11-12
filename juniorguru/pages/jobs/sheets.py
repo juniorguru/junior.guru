@@ -11,7 +11,6 @@ def coerce_record(record):
         r'^company name$': ('company_name', coerce_text),
         r'^job type$': ('job_type', coerce_text),
         r'^title$': ('title', coerce_text),
-        r'employment agency': ('is_agency', coerce_boolean_words),
         r'^company website link$': ('company_link', coerce_text),
         r'^email address$': ('email', coerce_text),
         r'^location$': ('location', coerce_text),
