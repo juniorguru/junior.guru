@@ -10,6 +10,9 @@ USER_AGENT = (
 EXCLUDE = [
     # BLC_UNKNOWN for no obvious reason, probably crawling protection
     'hackathon.com',
+
+    # HTTP_404 returned to both curl and browser if user isn't logged in
+    'facebook.com/search/events/?q=english',
 ]
 PROJECT_DIR = Path(__file__).parent.parent
 BUILD_DIR = PROJECT_DIR / 'build'
