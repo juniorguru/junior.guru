@@ -3,6 +3,6 @@
   "name": "juniorguru",
   "alias": ["junior.guru", "juniorguru.now.sh"],
   "builds": [
-    { "src": "*", "use": "@now/static" }
+    { "src": "**/*", "use": "@now/static" }
   ]
 }
