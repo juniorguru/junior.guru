@@ -46,7 +46,7 @@ jobs:
       - persist_to_workspace:
           root: "~"
           paths:
-              - project/data
+              - project/juniorguru/data
 
   build:
     executor: python-node
