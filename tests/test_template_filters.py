@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru import template_filters
+from juniorguru.web import template_filters
 
 
 def test_email_link():

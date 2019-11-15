@@ -74,8 +74,8 @@ google_service_account.json
 !/build/now.json
 
 # Fetched data
-/data/*
+/juniorguru/data/*
 
-# Statics
-/juniorguru/static/*
-!/juniorguru/static/src
+# Web statics
+/juniorguru/web/static/*
+!/juniorguru/web/static/src

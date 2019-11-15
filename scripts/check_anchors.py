@@ -6,8 +6,7 @@ from pathlib import Path
 from lxml import html
 
 
-PROJECT_DIR = Path(__file__).parent.parent
-BUILD_DIR = PROJECT_DIR / 'build'
+BUILD_DIR = Path(__file__).parent.parent / 'build'
 
 
 links = []

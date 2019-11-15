@@ -3,7 +3,7 @@ from datetime import datetime
 
 import pytest
 
-from juniorguru import sheets
+from juniorguru.fetch import sheets
 
 
 @pytest.mark.parametrize('value,expected', [

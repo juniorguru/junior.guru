@@ -19,8 +19,42 @@ sass.compiler = require('node-sass');
 const isLocalDevelopment = process.argv[2] === 'serve';
 
 
+async function buildJS() {
+  const bundle = await rollup({
+    input: './juniorguru/web/static/src/js/main.js',
+    plugins: [resolve(), terser()],
+  });
+  return bundle.write({
+    file: './juniorguru/web/static/bundle.js',
+    format: 'iife',
+    sourceMap: isLocalDevelopment,
+  });
+}
+
+function buildCSS() {
+  return gulp.src('./juniorguru/web/static/src/css/*.*ss')
+    .pipe(gulpIf(isLocalDevelopment, sourcemaps.init()))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(csso())
+    .pipe(gulpIf(isLocalDevelopment, sourcemaps.write()))
+    .pipe(concat('bundle.css'))
+    .pipe(gulp.dest('./juniorguru/web/static/'));
+}
+
+function buildImages() {
+  return gulp.src([
+      './juniorguru/web/static/src/images/**/*.png',
+      './juniorguru/web/static/src/images/**/*.jpg',
+      './juniorguru/web/static/src/images/**/*.gif',
+      './juniorguru/web/static/src/images/**/*.svg',
+    ])
+    .pipe(changed('./juniorguru/web/static/images/'))
+    .pipe(gulpIf(!isLocalDevelopment, imagemin({ verbose: true })))
+    .pipe(gulp.dest('./juniorguru/web/static/images/'))
+}
+
 function freezeFlask() {
-  return spawn('pipenv', ['run', 'freeze']);
+  return spawn('pipenv', ['run', 'freeze'], { stdio: 'inherit' });
 }
 
 function minifyHTML() {
@@ -42,7 +76,7 @@ function minifyHTML() {
 }
 
 function copyFavicon() {
-  return gulp.src('./juniorguru/static/src/images/favicon.ico')
+  return gulp.src('./juniorguru/web/static/src/images/favicon.ico')
     .pipe(gulp.dest('./build/'))
 }
 
@@ -51,93 +85,35 @@ const buildWeb = gulp.series(
   gulp.parallel(minifyHTML, copyFavicon),
 )
 
-function watchWeb() {
-  return gulp.watch([
-    './juniorguru/**/*.html',
-    './juniorguru/**/*.py',
-    './juniorguru/**/*.json',
-    './data/**/*',
+async function watchWeb() {
+  gulp.watch('./juniorguru/web/static/src/js/', buildJS);
+  gulp.watch('./juniorguru/web/static/src/css/', buildCSS);
+  gulp.watch('./juniorguru/web/static/src/images/', buildImages);
+  gulp.watch([
+    './juniorguru/web/**/*.html',
+    './juniorguru/web/**/*.py',
+    './juniorguru/web/static/bundle.*',
+    './juniorguru/web/static/images/',
+    './juniorguru/data/',
   ], buildWeb);
 }
 
-function serveWeb(callback) {
+async function serveWeb() {
   connect.server({ root: './build/', port: 5000, livereload: true });
   gulp.watch('./build/').on('change', (path) =>
     gulp.src(path, { read: false }).pipe(connect.reload())
   );
-  callback();
-}
-
-async function buildJS() {
-  const bundle = await rollup({
-    input: './juniorguru/static/src/js/main.js',
-    plugins: [resolve(), terser()],
-  });
-  return bundle.write({
-    file: './juniorguru/static/bundle.js',
-    format: 'iife',
-    sourceMap: isLocalDevelopment,
-  });
-}
-
-function watchJS() {
-  return gulp.watch('./juniorguru/static/src/js/*.js', buildJS);
-}
-
-function buildCSS() {
-  return gulp.src('./juniorguru/static/src/css/*.*css')
-    .pipe(gulpIf(isLocalDevelopment, sourcemaps.init()))
-    .pipe(sass().on('error', sass.logError))
-    .pipe(csso())
-    .pipe(gulpIf(isLocalDevelopment, sourcemaps.write()))
-    .pipe(concat('bundle.css'))
-    .pipe(gulp.dest('./juniorguru/static/'));
-}
-
-function watchCSS() {
-  return gulp.watch('./juniorguru/static/src/css/*.*css', buildCSS);
-}
-
-function buildImages() {
-  return gulp.src([
-      './juniorguru/static/src/images/**/*.png',
-      './juniorguru/static/src/images/**/*.jpg',
-      './juniorguru/static/src/images/**/*.gif',
-      './juniorguru/static/src/images/**/*.svg',
-    ])
-    .pipe(changed('./juniorguru/static/images/'))
-    .pipe(gulpIf(!isLocalDevelopment, imagemin({ verbose: true })))
-    .pipe(gulp.dest('./juniorguru/static/images/'))
-}
-
-function watchImages() {
-  return gulp.watch([
-    './juniorguru/static/src/images/**/*.png',
-    './juniorguru/static/src/images/**/*.jpg',
-    './juniorguru/static/src/images/**/*.gif',
-    './juniorguru/static/src/images/**/*.svg',
-  ], buildImages);
 }
 
 
 const build = gulp.series(
-  gulp.parallel(
-    buildJS,
-    buildCSS,
-    buildImages,
-  ),
+  gulp.parallel(buildJS, buildCSS, buildImages),
   buildWeb,
 );
 
 const serve = gulp.series(
   build,
-  gulp.parallel(
-    watchJS,
-    watchCSS,
-    watchImages,
-    watchWeb,
-    serveWeb,
-  )
+  gulp.parallel(watchWeb, serveWeb),
 );
 
 

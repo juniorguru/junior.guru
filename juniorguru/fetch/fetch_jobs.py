@@ -8,7 +8,7 @@ from operator import itemgetter
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-from juniorguru.sheets import coerce_record
+from .sheets import coerce_record
 
 
 google_service_account_path = Path(__file__).parent / 'google_service_account.json'

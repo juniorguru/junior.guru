@@ -2,7 +2,7 @@ from pathlib import Path
 from markdown import markdown
 from jinja2 import Markup
 
-from juniorguru.app import app
+from . import app
 
 
 @app.template_filter()
