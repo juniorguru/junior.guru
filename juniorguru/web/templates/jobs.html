@@ -1,4 +1,4 @@
-{% extends base_template %}
+{% extends 'base.html' %}
 {% block title %}: Najdi práci{% endblock %}
 
 {% block description -%}
@@ -11,8 +11,8 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
 <header>
   <h1>Najdi první práci v IT</h1>
   <p>
-    <img src="/images/chick3.svg">
-    Znáš <a href="/learn/">základy</a> a máš <a href="/practice/">praxi</a>?
+    <img src="{{ url_for('static', filename='images/chick3.svg') }}">
+    Znáš <a href="{{ url_for('learn') }}">základy</a> a máš <a href="{{ url_for('practice') }}">praxi</a>?
     Nastal okamžik začít zkoušet své štestí na pracovním trhu.
   </p>
 </header>
@@ -56,7 +56,7 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
           <span class="job-requirement">{{ requirement|job_requirement }}</span>&#32;
         {% endfor %}
       </p>
-      <div class="job-description">{{ job.description|markdown }}</div>
+      <div class="job-description">{{ job.description|md }}</div>
       <p class="job-apply call-to-action">
         {{ job.email|email_link('<small>Napiš na</small> {email}', classes=['button']) }}
       </p>

@@ -13,7 +13,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+/lib/
 lib64/
 parts/
 sdist/
@@ -72,3 +72,10 @@ google_service_account.json
 # Build
 /build/
 !/build/now.json
+
+# Fetched data
+/juniorguru/data/*
+
+# Web statics
+/juniorguru/web/static/*
+!/juniorguru/web/static/src

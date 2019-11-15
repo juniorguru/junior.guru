@@ -3,10 +3,6 @@
   "name": "juniorguru",
   "alias": ["junior.guru", "juniorguru.now.sh"],
   "builds": [
-    { "src": "**/*.html", "use": "@now/static" },
-    { "src": "bundle.css", "use": "@now/static" },
-    { "src": "bundle.js", "use": "@now/static" },
-    { "src": "images/**/*", "use": "@now/static" },
-    { "src": "favicon.ico", "use": "@now/static" }
+    { "src": "**/*", "use": "@now/static" }
   ]
 }

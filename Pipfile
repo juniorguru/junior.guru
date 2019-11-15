@@ -5,12 +5,13 @@ name = "pypi"
 
 [scripts]
 test = "pytest"
-build = "python scripts/build.py"
+fetch = "python -m juniorguru.fetch"
+freeze = "python -m juniorguru.web"
+build = "npx gulp build"
 build-screenshots = "python scripts/build_screenshots.py"
 check-links = "python scripts/check_links.py"
 check-anchors = "python scripts/check_anchors.py"
-watch = "python scripts/watch.py"
-serve = "now dev build"
+serve = "npx gulp serve"
 deploy = "bash scripts/deploy.sh"
 
 [packages]
@@ -19,10 +20,11 @@ gspread = "*"
 oauth2client = "*"
 arrow = "*"
 markdown = "*"
+flask = "*"
+frozen-flask = "*"
 
 [dev-packages]
 pytest = "*"
-watchdog = "*"
 lxml = "*"
 
 [requires]
