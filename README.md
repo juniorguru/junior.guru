@@ -4,11 +4,6 @@
 
 This README is missing a lot of information. Honza didn't have time yet to add a proper, nice README. The file currently only includes documentation of the hard parts of the development process, which would be easy to forget and difficult to learn again.
 
-## Get Gulp working
-
-- `npm install esm gulp --save-dev`
-- `touch gulpfile.esm.js` - JS imports will work
-
 ## Setting up email address
 
 According to [spectrum.chat/zeit](https://spectrum.chat/zeit/now/redirection-email-domain~b5e1b613-ae92-42f9-bc49-e8c824a8a7f2?m=MTUzNDE5OTg3MzMwMw==):
