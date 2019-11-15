@@ -3,7 +3,7 @@ from datetime import datetime
 
 import pytest
 
-from juniorguru.pages.jobs import sheets
+from juniorguru import sheets
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -70,7 +70,6 @@ def test_coerce_record():
         'Company name': 'Honza Ltd.',
         'Job type': 'paid internship',
         'Title': 'Frontend Ninja',
-        'Are you an employment agency?': 'no',
         'Company website link': 'https://www.example.com',
         'Email Address': 'jobs@example.com',
         'Location': 'Prague',
@@ -83,7 +82,6 @@ def test_coerce_record():
         'company_name': 'Honza Ltd.',
         'job_type': 'paid internship',
         'title': 'Frontend Ninja',
-        'is_agency': False,
         'company_link': 'https://www.example.com',
         'email': 'jobs@example.com',
         'location': 'Prague',

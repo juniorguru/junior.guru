@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="cs" data-updated-at="{{ updated_at.to('Europe/Prague') }}" data-url-path="{{ url_path }}">
+<html lang="cs" data-updated-at="{{ updated_at.to('Europe/Prague') }}">
   <head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
     <meta charset="utf-8">
-    <link rel="canonical" href="{{ url }}">
+    <link rel="canonical" href="{{ request.url }}">
     <title>
       Jak se naučit programovat a získat svou první práci v IT{% block title %}{% endblock %}
     </title>
@@ -19,34 +19,34 @@
 
     <meta name="description" content="{% block description %}{% endblock %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/bundle.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bundle.css') }}">
 
     <meta property="og:title" content="Jak se naučit programovat a získat svou první práci v IT{{ self.title() }}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url }}">
-    <meta property="og:image" content="{{ base_url }}/images/og-image.png">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:image" content="{{ url_for('static', filename='images/og-image.png') }}">
   </head>
   <body{% block body_attrs %} class="page"{% endblock %}>
     {% block body %}
       {% block header %}
       <header>
         <nav>
-          <a class="logo" href="/">
-            <img src="/images/logo.svg" alt="junior.guru">
+          <a class="logo" href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
           </a>
           <ol>
             <li>
-              <a href="/learn/">
+              <a href="{{ url_for('learn') }}">
                 <span>Nauč se základy</span>
               </a>
             </li>
             <li>
-              <a href="/practice/">
+              <a href="{{ url_for('practice') }}">
                 <span>Získej praxi</span>
               </a>
             </li>
             <li>
-              <a href="/jobs/">
+              <a href="{{ url_for('jobs') }}">
                 <span>Najdi práci</span>
               </a>
             </li>
@@ -70,10 +70,10 @@
           Pracovní nabídky zadané ve spolupráci s nimi nebudou nikdy zpoplatněny.
         </p>
         <p>
-          <a href="/privacy/">Zpracování osobních údajů</a>
+          <a href="{{ url_for('privacy') }}">Zpracování osobních údajů</a>
         </p>
       </footer>
     {% endblock %}
-    <script defer src="/bundle.js"></script>
+    <script defer src="{{ url_for('static', filename='bundle.js') }}"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-{% extends base_template %}
+{% extends 'base.html' %}
 {% block title %}: Nauč se základy{% endblock %}
 
 {% block description -%}
@@ -11,8 +11,8 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
 <header>
   <h1>Nauč se základy programování</h1>
   <p>
-    <img src="/images/chick1.svg">
-    {{ self.description() }} Až tím projdeš, můžeš začít <a href="/practice/">získávat praxi</a>.
+    <img src="{{ url_for('static', filename='images/chick1.svg') }}">
+    {{ self.description() }} Až tím projdeš, můžeš začít <a href="{{ url_for('practice') }}">získávat praxi</a>.
   </p>
   <ul>
     <li><a href="#what">Co je programování?</a></li>&#32;
@@ -29,7 +29,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
 <details id="what">
   <summary><h2>Co je programování?</h2></summary>
   <p>
-    <img class="cartoon" src="/images/debugging.svg">
+    <img class="cartoon" src="{{ url_for('static', filename='images/debugging.svg') }}">
     Programovat znamená umět počítačům říkat, jak za nás mají dělat
     nudné, opakující se úkony. Začíná to na tom, že mohou počítat
     čísla z tabulek nebo odesílat emaily, a končí samořídícimi auty.
@@ -56,7 +56,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
   <summary><h2>Proč se to učit?</h2></summary>
   <ul>
     <li>
-      <img class="cartoon" src="/images/starting-with-tech.svg">
+      <img class="cartoon" src="{{ url_for('static', filename='images/starting-with-tech.svg') }}">
       <a href="https://www.czso.cz/documents/10180/95632581/063009-18.pdf/0f4ba681-c6b3-4226-b81e-6634cac046fb?version=1.2">Průměrný plat programátorů je 50&nbsp;000 Kč</a>
       a běžně mají pružnou pracovní dobu nebo možnost práce na dálku &mdash; lze
       tedy bydlet v Ostravě a pobírat pražský plat. <a href="https://www.czso.cz/csu/czso/na-trhu-je-nedostatek-ict-odborniku">Programátorů
@@ -168,7 +168,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
       VŠ je rozhled, souvislosti, vědomosti do hloubky.
       Pokud chceš, aby tvé programy řídily auta, létaly do vesmíru nebo pomáhaly
       doktorům, budeš to mít snazší s VŠ. Běžní zaměstnavatelé ale ocení
-      <a href="/practice/">praxi</a> víc než titul a webovky nebo mobilní appky
+      <a href="{{ url_for('practice') }}">praxi</a> víc než titul a webovky nebo mobilní appky
       udělá samouk stejně dobře jako absolvent.
 
       <!--
@@ -197,7 +197,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://naucse.python.cz">
         <div class="list-image">
-          <img src="/images/screenshots/naucse.python.cz.png">
+          <img src="{{ url_for('static', filename='images/screenshots/naucse.python.cz.png') }}">
         </div>
         <h3>Nauč se Python!</h3>
         <ul class="list-labels">
@@ -211,7 +211,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://engeto.com/cs/katalog/python-1-uvod-do-programovani">
         <div class="list-image">
-          <img src="/images/screenshots/engeto.com!cs!katalog!python-1-uvod-do-programovani.png">
+          <img src="{{ url_for('static', filename='images/screenshots/engeto.com!cs!katalog!python-1-uvod-do-programovani.png') }}">
         </div>
         <h3>Engeto</h3>
         <ul class="list-labels">
@@ -225,7 +225,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://www.coursera.org/learn/python">
         <div class="list-image">
-          <img src="/images/screenshots/coursera.org!learn!python.png">
+          <img src="{{ url_for('static', filename='images/screenshots/coursera.org!learn!python.png') }}">
         </div>
         <h3>Coursera</h3>
         <ul class="list-labels">
@@ -240,7 +240,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://www.codecademy.com/learn/learn-python-3">
         <div class="list-image">
-          <img src="/images/screenshots/codecademy.com!learn!learn-python-3.png">
+          <img src="{{ url_for('static', filename='images/screenshots/codecademy.com!learn!learn-python-3.png') }}">
         </div>
         <h3>Codecademy</h3>
         <ul class="list-labels">
@@ -255,7 +255,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://www.umimeprogramovat.cz">
         <div class="list-image">
-          <img src="/images/screenshots/umimeprogramovat.cz.png">
+          <img src="{{ url_for('static', filename='images/screenshots/umimeprogramovat.cz.png') }}">
         </div>
         <h3>Umíme programovat</h3>
         <ul class="list-labels">
@@ -269,7 +269,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="http://diveintopython3.py.cz">
         <div class="list-image">
-          <img src="/images/screenshots/diveintopython3.py.cz.png">
+          <img src="{{ url_for('static', filename='images/screenshots/diveintopython3.py.cz.png') }}">
         </div>
         <h3>Ponořme se do&nbsp;Pythonu&nbsp;3</h3>
         <ul class="list-labels">
@@ -283,7 +283,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://automatetheboringstuff.com">
         <div class="list-image">
-          <img src="/images/screenshots/automatetheboringstuff.com.png">
+          <img src="{{ url_for('static', filename='images/screenshots/automatetheboringstuff.com.png') }}">
         </div>
         <h3>Automate the Boring Stuff with Python</h3>
         <ul class="list-labels">
@@ -296,7 +296,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
       </p>
     </li>
   </ul>
-  {% include list_note_template %}
+  {% include 'list_note.html' %}
 </section>
 
 <section id="learn-ladies">
@@ -311,7 +311,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://pyladies.cz">
         <div class="list-image">
-          <img src="/images/screenshots/pyladies.cz.png">
+          <img src="{{ url_for('static', filename='images/screenshots/pyladies.cz.png') }}">
         </div>
         <h3>PyLadies</h3>
       </a>
@@ -323,7 +323,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://www.czechitas.cz">
         <div class="list-image">
-          <img src="/images/screenshots/czechitas.cz.png">
+          <img src="{{ url_for('static', filename='images/screenshots/czechitas.cz.png') }}">
         </div>
         <h3>Czechitas</h3>
       </a>
@@ -335,7 +335,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://djangogirls.org/">
         <div class="list-image">
-          <img src="/images/screenshots/djangogirls.org.png">
+          <img src="{{ url_for('static', filename='images/screenshots/djangogirls.org.png') }}">
         </div>
         <h3>Django Girls</h3>
       </a>
@@ -348,7 +348,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="http://railsgirls.com/">
         <div class="list-image">
-          <img src="/images/screenshots/railsgirls.com.png">
+          <img src="{{ url_for('static', filename='images/screenshots/railsgirls.com.png') }}">
         </div>
         <h3>Rails Girls</h3>
       </a>
@@ -364,7 +364,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
 <details id="python">
   <summary><h2>Proč Python?</h2></summary>
   <p>
-    <img class="cartoon" src="/images/pylady.svg">
+    <img class="cartoon" src="{{ url_for('static', filename='images/pylady.svg') }}">
     Ať už budeš nakonec dělat cokoliv, začít s <a href="https://python.cz">Pythonem</a> je skvělý tah. Je to nejvhodnější první jazyk.
   </p>
   <ul>
@@ -440,7 +440,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://pyvo.cz">
         <div class="list-image">
-          <img src="/images/screenshots/pyvo.cz.png">
+          <img src="{{ url_for('static', filename='images/screenshots/pyvo.cz.png') }}">
         </div>
         <h3>Pyvo</h3>
         <ul class="list-labels">
@@ -454,7 +454,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://www.facebook.com/groups/pyonieri/">
         <div class="list-image">
-          <img src="/images/screenshots/facebook.com!groups!pyonieri.png">
+          <img src="{{ url_for('static', filename='images/screenshots/facebook.com!groups!pyonieri.png') }}">
         </div>
         <h3>Pyonýři</h3>
         <ul class="list-labels">
@@ -478,7 +478,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://www.helpforenglish.cz">
         <div class="list-image">
-          <img src="/images/screenshots/helpforenglish.cz.png">
+          <img src="{{ url_for('static', filename='images/screenshots/helpforenglish.cz.png') }}">
         </div>
         <h3>Help for English</h3>
         <ul class="list-labels">
@@ -494,7 +494,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://www.youtube.com/user/BBSobotka">
         <div class="list-image">
-          <img src="/images/screenshots/youtube.com!user!BBSobotka.png">
+          <img src="{{ url_for('static', filename='images/screenshots/youtube.com!user!BBSobotka.png') }}">
         </div>
         <h3>Broňa</h3>
         <ul class="list-labels">
@@ -508,7 +508,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://www.onlinejazyky.cz">
         <div class="list-image">
-          <img src="/images/screenshots/onlinejazyky.cz.png">
+          <img src="{{ url_for('static', filename='images/screenshots/onlinejazyky.cz.png') }}">
         </div>
         <h3>ONLINE jazyky</h3>
         <ul class="list-labels">
@@ -522,7 +522,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://www.speakconfidentenglish.com">
         <div class="list-image">
-          <img src="/images/screenshots/speakconfidentenglish.com.png">
+          <img src="{{ url_for('static', filename='images/screenshots/speakconfidentenglish.com.png') }}">
         </div>
         <h3>Speak Confident English</h3>
         <ul class="list-labels">
@@ -537,7 +537,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://cs.duolingo.com/">
         <div class="list-image">
-          <img src="/images/screenshots/cs.duolingo.com.png">
+          <img src="{{ url_for('static', filename='images/screenshots/cs.duolingo.com.png') }}">
         </div>
         <h3>Duolingo</h3>
         <ul class="list-labels">
@@ -552,7 +552,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://www.umimeanglicky.cz">
         <div class="list-image">
-          <img src="/images/screenshots/umimeanglicky.cz.png">
+          <img src="{{ url_for('static', filename='images/screenshots/umimeanglicky.cz.png') }}">
         </div>
         <h3>Umíme anglicky</h3>
         <ul class="list-labels">
@@ -566,7 +566,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li>
       <a href="https://www.meetup.com/PragueEnglishMeeting/">
         <div class="list-image">
-          <img src="/images/screenshots/meetup.com!PragueEnglishMeeting.png">
+          <img src="{{ url_for('static', filename='images/screenshots/meetup.com!PragueEnglishMeeting.png') }}">
         </div>
         <h3>Prague English Meeting</h3>
         <ul class="list-labels">
@@ -584,11 +584,11 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
       </p>
     </li>
   </ul>
-  {% include list_note_template %}
+  {% include 'list_note.html' %}
 </section>
 
 <p class="call-to-action next">
-  <a href="/practice/" class="button">Umíš&nbsp;základy? Získej&nbsp;praxi!</a>
+  <a href="{{ url_for('practice') }}" class="button">Umíš&nbsp;základy? Získej&nbsp;praxi!</a>
 </p>
 
 {% endblock %}

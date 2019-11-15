@@ -1,4 +1,4 @@
-{% extends base_template %}
+{% extends 'base.html' %}
 
 {% block description -%}
 Nauč se programovat a získej svou první práci v IT
@@ -9,7 +9,7 @@ Nauč se programovat a získej svou první práci v IT
 {% block header %}
 <header>
   <h1 class="logo">
-    <img src="/images/logo.svg" alt="junior.guru">
+    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
   </h1>
   <div class="tagline">
     <p>
@@ -24,13 +24,13 @@ Nauč se programovat a získej svou první práci v IT
 {% block main %}
 <nav>
   <div class="chicken">
-    <div class="chick"><img src="/images/chick1.svg"></div>
-    <div class="chick"><img src="/images/chick2.svg"></div>
-    <div class="chick"><img src="/images/chick3.svg"></div>
+    <div class="chick"><img src="{{ url_for('static', filename='images/chick1.svg') }}"></div>
+    <div class="chick"><img src="{{ url_for('static', filename='images/chick2.svg') }}"></div>
+    <div class="chick"><img src="{{ url_for('static', filename='images/chick3.svg') }}"></div>
   </div>
   <ol>
     <li>
-      <a href="/learn/">
+      <a href="{{ url_for('learn') }}">
         <h2>Nauč se základy</h2>
         <p>
           Ručně vybrané, nej&shy;e&shy;fek&shy;ti&shy;vněj&shy;ší
@@ -39,7 +39,7 @@ Nauč se programovat a získej svou první práci v IT
       </a>
     </li>
     <li>
-      <a href="/practice/">
+      <a href="{{ url_for('practice') }}">
         <h2>Získej praxi</h2>
         <p>
           Znáš základy? Získej a&shy;les&shy;poň mi&shy;ni&shy;mál&shy;ní
@@ -49,7 +49,7 @@ Nauč se programovat a získej svou první práci v IT
       </a>
     </li>
     <li>
-      <a href="/jobs/">
+      <a href="{{ url_for('jobs') }}">
         <h2>Najdi práci</h2>
         <p>
           Znáš základy a máš praxi? Nastal okam&shy;žik zkusit své štestí
@@ -60,10 +60,10 @@ Nauč se programovat a získej svou první práci v IT
   </ol>
   <section class="call-to-action">
     <p>
-      <a href="/learn/" class="button">Začni teď hned!</a>
+      <a href="{{ url_for('learn') }}" class="button">Začni teď hned!</a>
     </p>
     <p class="note">
-      <a href="/learn/#why">Proč se učit programovat?</a>
+      <a href="{{ url_for('learn') }}#why">Proč se učit programovat?</a>
     </p>
   </section>
 </nav>
@@ -79,7 +79,7 @@ Nauč se programovat a získej svou první práci v IT
         <a href="http://eepurl.com/gyG8Bb" target="_blank" class="button">
           Práce do emailu
         </a>
-        <img class="cartoon" src="/images/mail.svg">
+        <img class="cartoon" src="{{ url_for('static', filename='images/mail.svg') }}">
       </p>
     </div>
     <p>Diskutuj materiály a pracovní nabídky na Facebooku:</p>
@@ -88,7 +88,7 @@ Nauč se programovat a získej svou první práci v IT
         <a href="https://www.facebook.com/groups/junior.guru" target="_blank" class="button">
           Hurá do skupiny
         </a>
-        <img class="cartoon" src="/images/f-logo.svg">
+        <img class="cartoon" src="{{ url_for('static', filename='images/f-logo.svg') }}">
       </p>
     </div>
   </section>
@@ -103,7 +103,7 @@ Nauč se programovat a získej svou první práci v IT
         <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank" class="button">
           Přidat nabídku &mdash;&nbsp;0&nbsp;Kč
         </a>
-        <img class="cartoon" src="/images/posts.svg">
+        <img class="cartoon" src="{{ url_for('static', filename='images/posts.svg') }}">
       </p>
       <p class="note">
         Do <strong>konce tohoto roku</strong> je přidávání nabídek práce <strong>zdarma</strong>!

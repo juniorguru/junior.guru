@@ -37,6 +37,17 @@ jobs:
           at: "~"
       - run: pipenv run test -v
 
+  fetch:
+    executor: python-node
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: pipenv run fetch
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/data
+
   build:
     executor: python-node
     steps:
@@ -86,9 +97,12 @@ workflows:
       - test:
           requires:
             - install
-      - build:
+      - fetch:
           requires:
             - install
+      - build:
+          requires:
+            - fetch
       - check-anchors:
           requires:
             - build
@@ -98,6 +112,7 @@ workflows:
       - deploy:
           requires:
             - test
+            - build
             - check-anchors
 
   nightly_workflow:
