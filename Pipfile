@@ -7,11 +7,11 @@ name = "pypi"
 test = "pytest"
 fetch = "python -m juniorguru.fetch_jobs"
 freeze = "python -m juniorguru.app"
-build = "gulp build"
+build = "npx gulp build"
 build-screenshots = "python scripts/build_screenshots.py"
 check-links = "python scripts/check_links.py"
 check-anchors = "python scripts/check_anchors.py"
-serve = "gulp serve"
+serve = "npx gulp serve"
 deploy = "bash scripts/deploy.sh"
 
 [packages]
