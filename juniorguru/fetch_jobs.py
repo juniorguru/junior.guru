@@ -26,5 +26,6 @@ jobs = map(coerce_record, records)
 # todo unittest
 selected_jobs = sorted(filter(itemgetter('is_approved'), jobs), key=itemgetter('timestamp'), reverse=True)
 
-data_path = Path(__file__).parent / '..' / 'data' / 'jobs.pickle'
-data_path.write_bytes(pickle.dumps(selected_jobs))
+data_path = Path(__file__).parent / '..' / 'data'
+data_path.mkdir(parents=True, exist_ok=True)
+data_path.joinpath('jobs.pickle').write_bytes(pickle.dumps(selected_jobs))
