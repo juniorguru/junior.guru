@@ -583,6 +583,7 @@ ul.jobs li.job {
   margin: 0;
   padding: 0;
   padding-top: 1.7rem;
+  padding-right: $whitespace;
 }
 
 .job-company {
@@ -624,6 +625,8 @@ ul.jobs li.job {
 .job-apply.call-to-action {
   padding: 0 $whitespace $whitespace-3 $whitespace;
   margin: 0;
+  margin-top: $whitespace;
+  margin-left: auto;
 
   .button {
     margin: 0;
@@ -633,13 +636,6 @@ ul.jobs li.job {
       display: block;
       margin-bottom: -1rem;
       @include font-0;
-    }
-  }
-
-  @media screen and (max-width: 810px) {
-    & {
-      margin-top: $whitespace;
-      margin-left: auto;
     }
   }
 }
