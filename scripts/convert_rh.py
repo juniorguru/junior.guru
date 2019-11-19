@@ -39,11 +39,4 @@ md = pandoc.stdout.decode('utf-8').strip()
 md = re.sub(r'\n[\xa0 ]+\n', '\n\n', md)
 md = re.sub(r'\n{2,}', '\n\n', md)
 
-assert not re.search(r'^={3,}$', md, flags=re.M)
-assert not re.search(r'^#{1,} ', md, flags=re.M)
-
-def repl(match):
-    return '=' * len(match.group(0))
-md = re.sub(r'^\-{3,}$', repl, md, flags=re.M)
-
 print(md)
