@@ -1,6 +1,8 @@
 from pathlib import Path
-from markdown import markdown
+
 from jinja2 import Markup
+from markdown import markdown
+from markdown.extensions.toc import TocExtension
 
 from . import app
 
@@ -17,8 +19,14 @@ def email_link(email, text_template='{email}', classes=None):
 
 
 @app.template_filter()
-def md(markdown_text):
-    return Markup(markdown(markdown_text, output_format='html5'))
+def md(markdown_text, heading_level_base=1, heading_slug='heading'):
+    toc = TocExtension(marker='',
+                       baselevel=heading_level_base,
+                       slugify=lambda value, separator: heading_slug)
+    markup = markdown(markdown_text,
+                      output_format='html5',
+                      extensions=[toc])
+    return Markup(markup)
 
 
 REQUIREMENTS_MAPPING = {

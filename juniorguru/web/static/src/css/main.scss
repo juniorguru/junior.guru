@@ -620,6 +620,18 @@ ul.jobs li.job {
 
 .job-description {
   padding: $whitespace $whitespace-2;
+
+  ul, ol {
+    margin: $whitespace 0;
+  }
+
+  h4 {
+    margin-top: $whitespace-2;
+  }
+
+  & > *:first-child {
+    margin-top: 0;
+  }
 }
 
 .job-apply.call-to-action {

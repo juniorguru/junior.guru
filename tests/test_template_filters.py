@@ -1,3 +1,5 @@
+from textwrap import dedent
+
 import pytest
 
 from juniorguru.web import template_filters
@@ -17,6 +19,32 @@ def test_email_link_using_text_template():
 def test_md():
     markup = str(template_filters.md('call me **maybe**  \ncall me Honza'))
     assert markup == '<p>call me <strong>maybe</strong><br>\ncall me Honza</p>'
+
+
+def test_md_heading_level_base():
+    markup = str(template_filters.md(dedent('''
+        # Heading 1
+        ## Heading 2
+        Paragraph text
+    '''), heading_level_base=4)).strip()
+    assert markup == dedent('''
+        <h4 id="heading">Heading 1</h4>
+        <h5 id="heading_1">Heading 2</h5>
+        <p>Paragraph text</p>
+    ''').strip()
+
+
+def test_md_heading_slug():
+    markup = str(template_filters.md(dedent('''
+        # Heading 1
+        ## Heading 2
+        Paragraph text
+    '''), heading_slug='abcd')).strip()
+    assert markup == dedent('''
+        <h1 id="abcd">Heading 1</h1>
+        <h2 id="abcd_1">Heading 2</h2>
+        <p>Paragraph text</p>
+    ''').strip()
 
 
 @pytest.mark.parametrize('requirement,expected', [
