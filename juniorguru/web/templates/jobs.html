@@ -56,7 +56,7 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
           <span class="job-requirement">{{ requirement|job_requirement }}</span>&#32;
         {% endfor %}
       </p>
-      <div class="job-description">{{ job.description|md }}</div>
+      <div class="job-description">{{ job.description|md(3, 'job-' + job.id + '-heading') }}</div>
       <p class="job-apply call-to-action">
         {{ job.email|email_link('<small>Napiš na</small> {email}', classes=['button']) }}
       </p>

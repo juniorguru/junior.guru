@@ -26,6 +26,7 @@ frozen-flask = "*"
 [dev-packages]
 pytest = "*"
 lxml = "*"
+cssselect = "*"
 
 [requires]
 python_version = "3.7"
