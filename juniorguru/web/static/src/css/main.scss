@@ -175,11 +175,25 @@ main > header {
       height: 15rem;
     }
   }
+}
+
+.toc {
+  margin-top: $whitespace-3 * 1.5;
+
+  h2 {
+    @include font;
+    font-weight: normal;
+    margin: 0;
+    background: $black;
+    color: $white;
+    padding: 0 0.8rem;
+    display: inline-block;
+  }
 
   ul {
-    margin-top: $whitespace-3 * 2;
-    text-align: center;
+    margin: 0;
     background: $dots-black;
+    text-align: center;
     padding: $whitespace;
     position: relative;
     box-sizing: border-box;
