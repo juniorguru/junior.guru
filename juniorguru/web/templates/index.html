@@ -68,6 +68,22 @@ Nauč se programovat a získej svou první práci v IT
   </section>
 </nav>
 <hr>
+<section class="jobs call-to-action">
+  <h2>
+    <small>Pouhých {{ since.days }} dní od spuštění je zde</small>
+
+    <strong class="no-wrap">{{ jobs_count }} nabídek</strong>
+    <span class="no-wrap">práce</span>
+    <span class="no-wrap">pro juniory</span>
+    <span class="no-wrap">
+      od <strong>{{ companies_count }} firem</strong>
+    </span>
+  </h2>
+  <p>
+    <a href="{{ url_for('jobs') }}" class="button">Procházet nabídky</a>
+  </p>
+</section>
+<hr>
 <aside>
   <section class="juniors">
     <h2>Pro juniory</h2>

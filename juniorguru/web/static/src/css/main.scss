@@ -971,6 +971,31 @@ body.page-index {
     li:nth-child(3) h2::before { content: "3"; }
   }
 
+  .jobs {
+    padding: 0 $whitespace;
+
+    h2 {
+      background: none;
+      @include font-4;
+      line-height: 1.25;
+    }
+
+    h2 small {
+      display: block;
+      margin: 0 0 ($whitespace / 1.5) 0;
+    }
+
+    h2 strong {
+      padding: ($whitespace-0 / 4) ($whitespace / 1.5);
+      background: $yellow;
+      color: $black;
+    }
+
+    h2 .no-wrap {
+      white-space: nowrap;
+    }
+  }
+
   aside {
     @supports (display: grid) {
       & {
@@ -988,6 +1013,12 @@ body.page-index {
           margin: 0;
         }
       }
+    }
+
+    h2 {
+      display: inline-block;
+      background-color: $yellow;
+      padding: 0.3rem 0.5rem;
     }
 
     .call-to-action, .note {
