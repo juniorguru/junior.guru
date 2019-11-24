@@ -1,5 +1,6 @@
 import pickle
 from pathlib import Path
+from datetime import datetime
 
 import arrow
 from flask import Flask, render_template
@@ -11,7 +12,16 @@ app.config['DATA_DIR'] = Path(app.root_path) / '..' / 'data'
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    jobs_data_path = app.config['DATA_DIR'].joinpath('jobs.pickle')
+    jobs = pickle.loads(jobs_data_path.read_bytes())
+
+    companies_count = len(set([job['company_link'] for job in jobs]))
+    since = (datetime.now() - datetime(2019, 10, 10))
+
+    return render_template('index.html',
+                           jobs_count=len(jobs),
+                           companies_count=companies_count,
+                           since=since)
 
 
 @app.route('/learn/')
