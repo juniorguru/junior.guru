@@ -22,6 +22,7 @@ arrow = "*"
 markdown = "*"
 flask = "*"
 frozen-flask = "*"
+pillow = "*"
 
 [dev-packages]
 pytest = "*"
