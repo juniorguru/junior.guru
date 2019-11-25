@@ -100,26 +100,27 @@ def edit_screenshot(path):
 
 
 def edit_screenshot_override(path):
-    name = path.name
-
     image = Image.open(path)
-    save = image.format != 'JPEG'  # convert PNGs to JPEG
-    if image.mode != 'RGB':  # to be able to write JPEG, convert from RGBA
-        image = image.convert('RGB')
-        save = True
+
+    if image.format == 'PNG':
+        path_png, path = path, path.with_suffix('.jpg')
+        print(f'[png to jpg] {path_png.name} ( → {path.name})')
+        image = image.convert('RGB')  # from RGBA
+        image.save(path, 'JPEG')
+        path_png.unlink()
+    elif image.format != 'JPEG':
+        raise RuntimeError(f'Unexpected image format: {image.format}')
+
     if image.width > WIDTH or image.height > HEIGHT:
         # We want to support converting drop-in images made as whole-page
         # manual Firefox screenshots, thus we cannot use 'thumbnail'. Instead,
         # we resize by aspect ratio (ar) and then crop to the desired height.
-        print(f"[thumbnail] {name} ( → JPEG, {WIDTH}x{HEIGHT})")
+        print(f"[thumbnail] {path.name} ( → {WIDTH}x{HEIGHT})")
         height_ar = (image.height * WIDTH) // image.width
         image = image.resize((WIDTH, height_ar), Image.BICUBIC)
         image = image.crop((0, 0, WIDTH, HEIGHT))
-        save = True
-    if save:
-        image.save(path.with_suffix('.jpg'), 'JPEG')
-    if path.suffix.lower() != '.jpg':
-        path.unlink()
+        image.save(path)
+
     image.close()
 
 
