@@ -111,13 +111,15 @@ def edit_screenshot_override(path):
         # We want to support converting drop-in images made as whole-page
         # manual Firefox screenshots, thus we cannot use 'thumbnail'. Instead,
         # we resize by aspect ratio (ar) and then crop to the desired height.
-        print(f"[thumbnail] {name} ( → {WIDTH}x{HEIGHT})")
+        print(f"[thumbnail] {name} ( → JPEG, {WIDTH}x{HEIGHT})")
         height_ar = (image.height * WIDTH) // image.width
         image = image.resize((WIDTH, height_ar), Image.BICUBIC)
         image = image.crop((0, 0, WIDTH, HEIGHT))
         save = True
     if save:
-        image.save(path, 'JPEG')
+        image.save(path.with_suffix('.jpg'), 'JPEG')
+    if path.suffix.lower() != '.jpg':
+        path.unlink()
     image.close()
 
 
