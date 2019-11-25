@@ -6,6 +6,7 @@
   },
   "devDependencies": {
     "broken-link-checker-local": "0.2.1",
+    "del": "5.1.0",
     "gulp": "4.0.2",
     "gulp-changed": "4.0.2",
     "gulp-concat": "2.6.1",
@@ -14,6 +15,7 @@
     "gulp-html-minifier": "0.1.8",
     "gulp-if": "3.0.0",
     "gulp-imagemin": "6.2.0",
+    "gulp-rename": "1.4.0",
     "gulp-sass": "4.0.2",
     "gulp-sourcemaps": "2.6.5",
     "imagemin-cli": "5.0.0",
