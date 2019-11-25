@@ -125,11 +125,11 @@ if __name__ == '__main__':
     print('[build] screenshots')
     SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    # urls = parse_urls(URLS_TXT.read_text())
-    # urls_batches = generate_batches(urls, PAGERES_BATCH_SIZE)
-    # Pool(PAGERES_WORKERS).map(create_screenshot, urls_batches)
-    #
-    # Pool().map(edit_screenshot, SCREENSHOTS_DIR.glob('*.jpg'))
+    urls = parse_urls(URLS_TXT.read_text())
+    urls_batches = generate_batches(urls, PAGERES_BATCH_SIZE)
+    Pool(PAGERES_WORKERS).map(create_screenshot, urls_batches)
+
+    Pool().map(edit_screenshot, SCREENSHOTS_DIR.glob('*.jpg'))
 
     print('[build] screenshots overrides')
     SCREENSHOTS_OVERRIDES_DIR.mkdir(parents=True, exist_ok=True)
