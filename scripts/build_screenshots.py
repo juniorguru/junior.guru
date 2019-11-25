@@ -1,23 +1,26 @@
+import sys
 import shutil
 from pathlib import Path
-from itertools import islice
-from subprocess import run, PIPE, CalledProcessError
+from multiprocessing import Pool
+from itertools import chain
+from subprocess import run, PIPE, CalledProcessError, Popen, DEVNULL
+
+from PIL import Image
 
 
 PROJECT_DIR = Path(__file__).parent.parent
-LINKS_TXT = PROJECT_DIR / 'juniorguru' / 'links.txt'
+IMAGES_DIR = PROJECT_DIR / 'juniorguru' / 'web' / 'static' / 'src' / 'images'
 
-IMAGES_DIR = PROJECT_DIR / 'juniorguru' / 'images'
+URLS_TXT = PROJECT_DIR / 'juniorguru' / 'screenshots-urls.txt'
 SCREENSHOTS_DIR = IMAGES_DIR / 'screenshots'
 SCREENSHOTS_OVERRIDES_DIR = IMAGES_DIR / 'screenshots-overrides'
-
-BATCH_SIZE = 5
 
 HIDDEN_ELEMENTS = [
     '[data-cookiebanner]',  # facebook.com
     '.fbPageBanner',  # facebook.com
     '[class*="popupThin"]',  # codecademy.com
     '#pageprompt',  # edx.org
+    '#page-prompt',  # edx.org
     '[id*="cookie-law"]',  # engeto.cz
     '[data-cookie-path]',  # google.com
     'ir-modal',  # udacity.com
@@ -38,8 +41,10 @@ HIDDEN_ELEMENTS = [
     '[aria-describedby="cookieconsent:desc"]',
 ]
 
-
-options = [
+PAGERES_BATCH_SIZE = 3
+PAGERES_WORKERS = 3
+PAGERES_OPTIONS = [
+    '--format=jpg',
     '--verbose',
     '--overwrite',
     '--crop',
@@ -47,30 +52,90 @@ options = [
     '--delay=2',
     '--css=' + ', '.join(HIDDEN_ELEMENTS) + ' { display: none !important; }',
 ]
-links = (
-    link for link in (
-        line.strip().rstrip('/') for line
-        in LINKS_TXT.read_text().splitlines()
-    )
-    if link
-)
+
+WIDTH = 640
+HEIGHT = 360
 
 
-screenshots_dirs = [SCREENSHOTS_DIR, SCREENSHOTS_OVERRIDES_DIR]
+def parse_urls(text):
+    urls = (line.strip().rstrip('/') for line in text.strip().splitlines())
+    return list(set(urls))
 
-for screenshots_dir in screenshots_dirs:
-    screenshots_dirs.mkdir(parents=True, exist_ok=True)
 
-for links_batch in iter(lambda: list(islice(links, BATCH_SIZE)), []):
-    pageres = ['npx', 'pageres'] + links_batch + options
+def generate_batches(iterable, batch_size):
+    for i in range(0, len(iterable), batch_size):
+        yield iterable[i:i + batch_size]
+
+
+def create_screenshot(urls):
+    urls = list(urls)
+    pageres = ['npx', 'pageres'] + urls + PAGERES_OPTIONS
     try:
-        run(pageres, check=True, cwd=SCREENSHOTS_DIR)
+        print(f"[pageres] {len(urls)} URLs")
+        run(pageres, check=True, cwd=SCREENSHOTS_DIR, stdout=DEVNULL)
     except CalledProcessError:
-        run(pageres, check=True, cwd=SCREENSHOTS_DIR)  # dummy retry
+        print(f"[pageres] RETRY {len(urls)} URLs")
+        run(pageres, check=True, cwd=SCREENSHOTS_DIR, stdout=DEVNULL)
 
-for screenshots_dir in screenshots_dirs:
-    run(['mogrify', '-resize', '640x480', '*.png'], check=True, cwd=screenshots_dir)
 
-    for image_path in screenshots_dir.glob('*.png'):
-        proc = run(['npx', 'imagemin', str(image_path)], check=True, stdout=PIPE)
-        image_path.write_bytes(proc.stdout)
+def edit_screenshot(path):
+    name = path.name
+
+    image = Image.open(path)
+    if image.width > WIDTH or image.height > HEIGHT:
+        print(f"[thumbnail] {name} ( → {WIDTH}x{HEIGHT})")
+        image.thumbnail((WIDTH, HEIGHT))
+        image.save(path, 'JPEG')
+    image.close()
+
+    print(f'[imagemin] {name}')
+    imagemin = ['npx', 'imagemin', str(path)]
+    proc = run(imagemin, check=True, stdout=PIPE)
+    path.write_bytes(proc.stdout)
+
+    if '#' in path.name:
+        fixed_name = path.name.replace('#', '!')
+        print(f'[rename] {name} ( → {fixed_name})')
+        path.rename(path.with_name(fixed_name))
+
+
+def edit_screenshot_override(path):
+    image = Image.open(path)
+
+    if image.format == 'PNG':
+        path_png, path = path, path.with_suffix('.jpg')
+        print(f'[png to jpg] {path_png.name} ( → {path.name})')
+        image = image.convert('RGB')  # from RGBA
+        image.save(path, 'JPEG')
+        path_png.unlink()
+    elif image.format != 'JPEG':
+        raise RuntimeError(f'Unexpected image format: {image.format}')
+
+    if image.width > WIDTH or image.height > HEIGHT:
+        # We want to support converting drop-in images made as whole-page
+        # manual Firefox screenshots, thus we cannot use 'thumbnail'. Instead,
+        # we resize by aspect ratio (ar) and then crop to the desired height.
+        print(f"[thumbnail] {path.name} ( → {WIDTH}x{HEIGHT})")
+        height_ar = (image.height * WIDTH) // image.width
+        image = image.resize((WIDTH, height_ar), Image.BICUBIC)
+        image = image.crop((0, 0, WIDTH, HEIGHT))
+        image.save(path)
+
+    image.close()
+
+
+if __name__ == '__main__':
+    print('[build] screenshots')
+    SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    urls = parse_urls(URLS_TXT.read_text())
+    urls_batches = generate_batches(urls, PAGERES_BATCH_SIZE)
+    Pool(PAGERES_WORKERS).map(create_screenshot, urls_batches)
+
+    Pool().map(edit_screenshot, SCREENSHOTS_DIR.glob('*.jpg'))
+
+    print('[build] screenshots overrides')
+    SCREENSHOTS_OVERRIDES_DIR.mkdir(parents=True, exist_ok=True)
+    paths = chain(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'),
+                  SCREENSHOTS_OVERRIDES_DIR.glob('*.png'))
+    Pool().map(edit_screenshot_override, paths)
