@@ -54,3 +54,5 @@ https://pyworking.cz
 https://cz.pycon.org
 https://2019.pycon.sk
 https://www.writethedocs.org/conf/
+https://www.facebook.com/groups/hackathony.cz/
+https://docs.google.com/presentation/d/1reYrzFy3E3LS-jNzQecLbkf6Qq7iIEjWvXCyvbw389E/
