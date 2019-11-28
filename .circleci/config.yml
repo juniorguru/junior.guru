@@ -72,15 +72,15 @@ jobs:
       - attach_workspace:
           at: "~"
       - run: |
-        # Internet is flaky... retrying 3 times to be sure the problem
-        # is consistent - see https://unix.stackexchange.com/a/82602/43016
-        n=0
-        until [ $n -ge 3 ]
-        do
-          pipenv run check-links && break
-          n=$[$n+1]
-          sleep 5
-        done
+          # Internet is flaky... retrying 3 times to be sure the problem
+          # is consistent - see https://unix.stackexchange.com/a/82602/43016
+          n=0
+          until [ $n -ge 3 ]
+          do
+            pipenv run check-links && break
+            n=$[$n+1]
+            sleep 5
+          done
 
   deploy:
     executor: python-node
