@@ -34,13 +34,17 @@ jobs:
               - project/node_modules
               - project
 
-  security-scan:
+  security-scan:  # needs $SNYK_TOKEN from https://app.snyk.io/account/
     executor: python-node
     steps:
       - attach_workspace:
           at: "~"
       - snyk/scan:
           monitor-on-build: true
+          target-file: package.json
+      - snyk/scan:
+          monitor-on-build: true
+          target-file: Pipfile
 
   test:
     executor: python-node
