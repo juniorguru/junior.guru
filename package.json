@@ -23,6 +23,7 @@
     "pageres-cli": "5.0.0",
     "rollup": "1.27.8",
     "rollup-plugin-node-resolve": "5.2.0",
-    "rollup-plugin-terser": "5.1.2"
+    "rollup-plugin-terser": "5.1.2",
+    "snyk": "1.256.0"
   }
 }

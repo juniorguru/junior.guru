@@ -40,9 +40,13 @@ jobs:
       - attach_workspace:
           at: "~"
       - snyk/scan:
+          organization: honzajavorek
+          project: junior.guru
           monitor-on-build: true
           target-file: package.json
       - snyk/scan:
+          organization: honzajavorek
+          project: junior.guru
           monitor-on-build: true
           target-file: Pipfile
 
