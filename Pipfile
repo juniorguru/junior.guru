@@ -23,6 +23,7 @@ markdown = "*"
 flask = "*"
 frozen-flask = "*"
 pillow = "*"
+peewee = "*"
 
 [dev-packages]
 pytest = "*"
