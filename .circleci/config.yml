@@ -39,7 +39,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - snyk/scan
+      - snyk/scan:
           monitor-on-build: true
 
   test:
