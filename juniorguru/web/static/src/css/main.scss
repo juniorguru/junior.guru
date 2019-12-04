@@ -789,7 +789,8 @@ body > header ol a:active {
 
 body.page-learn > header li:nth-child(1) a,
 body.page-practice > header li:nth-child(2) a,
-body.page-jobs > header li:nth-child(3) a {
+body.page-jobs > header li:nth-child(3) a,
+body.page-job > header li:nth-child(3) a {
   &, &::before {
     background: $white;
     color: $blue;
