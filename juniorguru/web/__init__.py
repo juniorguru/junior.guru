@@ -1,44 +1,57 @@
-import pickle
-from pathlib import Path
 from datetime import datetime
 
 import arrow
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
+
+from ..models import db, Job
+from .thumbnail import thumbnail
 
 
 app = Flask(__name__)
-app.config['DATA_DIR'] = Path(app.root_path) / '..' / 'data'
 
 
 @app.route('/')
 def index():
-    jobs_data_path = app.config['DATA_DIR'].joinpath('jobs.pickle')
-    jobs = pickle.loads(jobs_data_path.read_bytes())
-
-    companies_count = len(set([job['company_link'] for job in jobs]))
-    since = (datetime.now() - datetime(2019, 10, 10))
-
+    with db:
+        jobs_count = Job.count()
+        companies_count = Job.companies_count()
     return render_template('index.html',
-                           jobs_count=len(jobs),
+                           jobs_count=jobs_count,
                            companies_count=companies_count,
-                           since=since)
+                           since=datetime.now() - datetime(2019, 10, 10))
 
 
 @app.route('/learn/')
 def learn():
-    return render_template('learn.html', year=arrow.utcnow().year)
+    return render_template('learn.html',
+                           year=arrow.utcnow().year,
+                           thumbnail=thumbnail(title='Jak se začít učit programovat'))
 
 
 @app.route('/practice/')
 def practice():
-    return render_template('practice.html')
+    return render_template('practice.html',
+                           thumbnail=thumbnail(title='Jak získat praxi v\u00a0programování'))
 
 
 @app.route('/jobs/')
 def jobs():
-    jobs_data_path = app.config['DATA_DIR'].joinpath('jobs.pickle')
-    jobs = pickle.loads(jobs_data_path.read_bytes())
-    return render_template('jobs.html', jobs=jobs)
+    with db:
+        jobs = Job.listing()
+    return render_template('jobs.html',
+                           jobs=jobs,
+                           thumbnail=thumbnail(title='Práce pro začínající programátory'))
+
+
+@app.route('/jobs/<job_id>/')
+def job(job_id):
+    with db:
+        job = Job.get_by_id(job_id) or abort(404)
+    return render_template('job.html',
+                           job=job,
+                           thumbnail=thumbnail(job_title=job.title,
+                                               job_company=job.company_name,
+                                               job_location=job.location))
 
 
 @app.route('/privacy/')
@@ -47,8 +60,9 @@ def privacy():
 
 
 @app.context_processor
-def inject_updated_at():
-    return dict(updated_at=arrow.utcnow())
+def inject_defaults():
+    return dict(updated_at=arrow.utcnow(),
+                thumbnail=thumbnail())
 
 
 from . import template_filters  # noqa

@@ -6,15 +6,15 @@ orbs:
 
 
 executors:
-  python-node:
+  python-js:
     docker:
-      - image: circleci/python:3.7-node
+      - image: circleci/python:3.7-node-browsers
     working_directory: ~/project
 
 
 jobs:
   install:
-    executor: python-node
+    executor: python-js
     steps:
       - checkout
       - restore_cache:
@@ -35,7 +35,7 @@ jobs:
               - project
 
   security-scan:  # needs $SNYK_TOKEN from https://app.snyk.io/account/
-    executor: python-node
+    executor: python-js
     steps:
       - attach_workspace:
           at: "~"
@@ -51,14 +51,14 @@ jobs:
           target-file: Pipfile
 
   test:
-    executor: python-node
+    executor: python-js
     steps:
       - attach_workspace:
           at: "~"
       - run: pipenv run test -v
 
   fetch:
-    executor: python-node
+    executor: python-js
     steps:
       - attach_workspace:
           at: "~"
@@ -69,7 +69,7 @@ jobs:
               - project/juniorguru/data
 
   build:
-    executor: python-node
+    executor: python-js
     steps:
       - attach_workspace:
           at: "~"
@@ -80,14 +80,14 @@ jobs:
               - project/build
 
   check-anchors:
-    executor: python-node
+    executor: python-js
     steps:
       - attach_workspace:
           at: "~"
       - run: pipenv run check-anchors
 
   check-links:
-    executor: python-node
+    executor: python-js
     steps:
       - attach_workspace:
           at: "~"
@@ -103,7 +103,7 @@ jobs:
           done
 
   deploy:
-    executor: python-node
+    executor: python-js
     steps:
       - attach_workspace:
           at: "~"

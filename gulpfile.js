@@ -41,8 +41,8 @@ async function buildJS() {
   });
 }
 
-function buildCSS() {
-  return gulp.src('juniorguru/web/static/src/css/*.*ss')
+function buildMainCSS() {
+  return gulp.src('juniorguru/web/static/src/css/main.scss')
     .pipe(gulpIf(isLocalDevelopment, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
     .pipe(csso())
@@ -50,6 +50,18 @@ function buildCSS() {
     .pipe(concat('bundle.css'))
     .pipe(gulp.dest('juniorguru/web/static/'));
 }
+
+function buildThumbnailCSS() {
+  return gulp.src('juniorguru/web/static/src/css/thumbnail.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(csso())
+    .pipe(sourcemaps.write())
+    .pipe(concat('thumbnail.css'))
+    .pipe(gulp.dest('juniorguru/web/static/'));
+}
+
+const buildCSS = gulp.parallel(buildMainCSS, buildThumbnailCSS);
 
 function buildImages() {
   return gulp.src([
@@ -117,7 +129,8 @@ async function watchWeb() {
   gulp.watch([
     'juniorguru/web/**/*.html',
     'juniorguru/web/**/*.py',
-    'juniorguru/web/static/bundle.*',
+    'juniorguru/web/static/*.js',
+    'juniorguru/web/static/*.css',
     'juniorguru/web/static/images/',
     'juniorguru/data/',
   ], buildWeb);

@@ -4,15 +4,27 @@ from pathlib import Path
 import flask_frozen
 
 from . import app
+from ..models import db, Job
 
 
-app.config['SERVER_NAME'] = 'junior.guru'
-app.config['FREEZER_DESTINATION'] = Path(app.root_path) / '..' / '..' / 'build'
-app.config['FREEZER_BASE_URL'] = 'https://junior.guru'
-app.config['FREEZER_STATIC_IGNORE'] = ['src']
-app.config['FREEZER_DESTINATION_IGNORE'] = ['now.json']
+def generate_job_ids():
+    with db:
+        yield from (('job', {'job_id': job.id}) for job in Job.listing())
 
-warnings.filterwarnings('error', category=flask_frozen.FrozenFlaskWarning)
 
-freezer = flask_frozen.Freezer(app)
-freezer.freeze()
+def main():
+    app.config['SERVER_NAME'] = 'junior.guru'
+    app.config['FREEZER_DESTINATION'] = Path(app.root_path) / '..' / '..' / 'build'
+    app.config['FREEZER_BASE_URL'] = 'https://junior.guru'
+    app.config['FREEZER_STATIC_IGNORE'] = ['src']
+    app.config['FREEZER_DESTINATION_IGNORE'] = ['now.json']
+
+    warnings.filterwarnings('error', category=flask_frozen.FrozenFlaskWarning)
+
+    freezer = flask_frozen.Freezer(app)
+    freezer.register_generator(generate_job_ids)
+    freezer.freeze()
+
+
+if __name__ == '__main__':
+    main()

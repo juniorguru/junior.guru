@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}: Najdi práci{% endblock %}
+
+{% block description -%}
+Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovním trhu.
+{%- endblock %}
+
+{% block body_attrs %} class="page-job"{% endblock %}
+
+{% block main %}
+Nabídka práce! {{ job.id }}
+{% endblock %}
