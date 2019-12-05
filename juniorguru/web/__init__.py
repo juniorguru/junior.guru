@@ -4,6 +4,7 @@ import arrow
 from flask import Flask, render_template, abort
 
 from ..models import db, Job
+from .thumbnail import thumbnail
 
 
 app = Flask(__name__)
