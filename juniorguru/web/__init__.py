@@ -18,21 +18,20 @@ def index():
     return render_template('index.html',
                            jobs_count=jobs_count,
                            companies_count=companies_count,
-                           since=datetime.now() - datetime(2019, 10, 10),
-                           thumbnail=thumbnail())
+                           since=datetime.now() - datetime(2019, 10, 10))
 
 
 @app.route('/learn/')
 def learn():
     return render_template('learn.html',
                            year=arrow.utcnow().year,
-                           thumbnail=thumbnail())
+                           thumbnail=thumbnail(title='Jak se začít učit programovat'))
 
 
 @app.route('/practice/')
 def practice():
     return render_template('practice.html',
-                           thumbnail=thumbnail())
+                           thumbnail=thumbnail(title='Jak získat praxi v\u00a0programování'))
 
 
 @app.route('/jobs/')
@@ -41,7 +40,7 @@ def jobs():
         jobs = Job.listing()
     return render_template('jobs.html',
                            jobs=jobs,
-                           thumbnail=thumbnail())
+                           thumbnail=thumbnail(title='Práce pro začínající programátory'))
 
 
 @app.route('/jobs/<job_id>/')
@@ -50,13 +49,14 @@ def job(job_id):
         job = Job.get_by_id(job_id) or abort(404)
     return render_template('job.html',
                            job=job,
-                           thumbnail=thumbnail())
+                           thumbnail=thumbnail(job_title=job.title,
+                                               job_company=job.company_name,
+                                               job_location=job.location))
 
 
 @app.route('/privacy/')
 def privacy():
-    return render_template('privacy.html',
-                           thumbnail=thumbnail())
+    return render_template('privacy.html')
 
 
 @app.context_processor

@@ -4,7 +4,27 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ url_for_static('thumbnail.css') }}">
   </head>
-  <body class="thumbnail">
-    <img src="{{ url_for_static('images/logo.svg') }}">
-  </body>
+  {% if job_title and job_company and job_location %}
+    <body class="thumbnail-job">
+      <h1>Nabídka práce pro začínající programátory</h1>
+      <h2>
+        <strong class="job-company">{{ job_company }}</strong>
+        <small class="job-location">{{ job_location }}</small>
+      </h2>
+      <p class="job-title">{{ job_title }}</p>
+    </body>
+  {% elif title %}
+    <body class="thumbnail-title">
+      <img src="{{ url_for_static('images/logo.svg') }}">
+      <h1>
+        {% if above_title %}<small>{{ above_title }}<small>{% endif %}
+        <strong>{{ title }}</strong>
+        {% if below_title %}<small>{{ below_title }}<small>{% endif %}
+      </h1>
+    </body>
+  {% else %}
+    <body class="thumbnail">
+      <img src="{{ url_for_static('images/logo.svg') }}">
+    </body>
+  {% endif %}
 </html>
