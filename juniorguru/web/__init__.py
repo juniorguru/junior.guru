@@ -18,41 +18,51 @@ def index():
     return render_template('index.html',
                            jobs_count=jobs_count,
                            companies_count=companies_count,
-                           since=datetime.now() - datetime(2019, 10, 10))
+                           since=datetime.now() - datetime(2019, 10, 10),
+                           thumbnail=thumbnail())
 
 
 @app.route('/learn/')
 def learn():
-    return render_template('learn.html', year=arrow.utcnow().year)
+    return render_template('learn.html',
+                           year=arrow.utcnow().year,
+                           thumbnail=thumbnail())
 
 
 @app.route('/practice/')
 def practice():
-    return render_template('practice.html')
+    return render_template('practice.html',
+                           thumbnail=thumbnail())
 
 
 @app.route('/jobs/')
 def jobs():
     with db:
         jobs = Job.listing()
-    return render_template('jobs.html', jobs=jobs)
+    return render_template('jobs.html',
+                           jobs=jobs,
+                           thumbnail=thumbnail())
 
 
 @app.route('/jobs/<job_id>/')
 def job(job_id):
     with db:
         job = Job.get_by_id(job_id) or abort(404)
-    return render_template('job.html', job=job)
+    return render_template('job.html',
+                           job=job,
+                           thumbnail=thumbnail())
 
 
 @app.route('/privacy/')
 def privacy():
-    return render_template('privacy.html')
+    return render_template('privacy.html',
+                           thumbnail=thumbnail())
 
 
 @app.context_processor
-def inject_updated_at():
-    return dict(updated_at=arrow.utcnow())
+def inject_defaults():
+    return dict(updated_at=arrow.utcnow(),
+                thumbnail=thumbnail())
 
 
 from . import template_filters  # noqa

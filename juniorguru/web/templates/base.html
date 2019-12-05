@@ -24,7 +24,7 @@
     <meta property="og:title" content="Jak se naučit programovat a získat svou první práci v IT{{ self.title() }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request.url }}">
-    <meta property="og:image" content="{{ url_for('static', filename='images/og-image.png') }}">
+    <meta property="og:image" content="{{ url_for('static', filename=thumbnail) }}">
   </head>
   <body{% block body_attrs %} class="page"{% endblock %}>
     {% block body %}

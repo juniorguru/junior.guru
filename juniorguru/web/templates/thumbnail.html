@@ -1,7 +1,10 @@
-<html style="margin: 0; padding: 0; height: 100%;">
-    <body style="margin: 0; padding: 0; height: 100%;">
-        <div style="background: yellow; height: 100%;">
-            <p style="color: red;">Ahoj {{ name }}!</p>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for_static('thumbnail.css') }}">
+  </head>
+  <body class="thumbnail">
+    <img src="{{ url_for_static('images/logo.svg') }}">
+  </body>
 </html>

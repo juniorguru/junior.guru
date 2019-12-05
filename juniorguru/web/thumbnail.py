@@ -9,10 +9,30 @@ from subprocess import run, DEVNULL
 from jinja2 import Template
 
 
+STATIC_DIR = Path(__file__).parent / 'static'
+THUMBNAILS_DIR = STATIC_DIR / 'images' / 'thumbnails'
+
+
+def thumbnail(**context):
+    THUMBNAILS_DIR.mkdir(exist_ok=True, parents=True)
+
+    hash = sha256(pickle.dumps(context)).hexdigest()
+    thumbnail_path = THUMBNAILS_DIR / f'{hash}.png'
+
+    if not thumbnail_path.exists():
+        thumbnail_bytes = render(url_for_static=url_for_static, **context)
+        thumbnail_path.write_bytes(thumbnail_bytes)
+    return thumbnail_path.relative_to(STATIC_DIR)
+
+
+def url_for_static(filename):
+    path = STATIC_DIR / filename
+    return f'file://{path.resolve()}'
+
+
 def render(**context):
-    path = Path(__file__).parent / 'templates' / 'thumbnail.html'
-    template = Template(path.read_text())
-    html = template.render(**context)
+    template_path = Path(__file__).parent / 'templates' / 'thumbnail.html'
+    html = Template(template_path.read_text()).render(**context)
 
     with tempfile.NamedTemporaryFile(suffix='.html', delete=False) as f:
         f.write(html.encode('utf-8'))
@@ -29,15 +49,3 @@ def render(**context):
             return thumbnail_path.read_bytes()
     finally:
         os.unlink(f.name)
-
-
-def thumbnail(**context):
-    static_dir = Path(__file__).parent / 'static'
-    images_dir = static_dir / 'images' / 'thumbnails'
-    images_dir.mkdir(exist_ok=True, parents=True)
-
-    hash = sha256(pickle.dumps(context)).hexdigest()
-    thumbnail_path = images_dir / f'{hash}.png'
-    if not thumbnail_path.exists():
-        thumbnail_path.write_bytes(render(**context))
-    return thumbnail_path.relative_to(static_dir)
