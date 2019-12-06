@@ -149,10 +149,10 @@
         },
         "peewee": {
             "hashes": [
-                "sha256:d6d54b0b12b8558cdd53d6aa6b5baa40e8378d28c7f7a23b20be104199656edd"
+                "sha256:9492af4d1f8e18a7fa0e930960315b38931286ea0f1659bbd5503456cffdacde"
             ],
             "index": "pypi",
-            "version": "==3.13.0"
+            "version": "==3.13.1"
         },
         "pillow": {
             "hashes": [
@@ -305,10 +305,10 @@
         },
         "more-itertools": {
             "hashes": [
-                "sha256:57cc732766f26ddc424a4ed76d837677777a03f557c7ebeecb7e2be2888ce702",
-                "sha256:a293dbdad9d4d22e1e70832b8dcab72aac20805f0fa0575aec27cab8841e09ff"
+                "sha256:b84b238cce0d9adad5ed87e745778d20a3f8487d0f0cb8b8a586816c7496458d",
+                "sha256:c833ef592a0324bcc6a60e48440da07645063c453880c9477ceb22490aec1564"
             ],
-            "version": "==8.0.1"
+            "version": "==8.0.2"
         },
         "packaging": {
             "hashes": [
