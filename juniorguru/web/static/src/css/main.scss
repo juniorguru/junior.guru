@@ -488,32 +488,14 @@ ul.jobs li.job {
     }
   }
 
-  &.job-open {
-    padding: $whitespace;
-
-    summary {
-      padding-bottom: 0;
-    }
-
-    summary .button {
-      display: none;
-    }
-  }
-
-  details {
+  .job-summary {
     background: $white;
-
-    summary {
-      cursor: pointer;
-      list-style-type: none;
-      &::-webkit-details-marker, &::before { display: none; }
-      padding: $whitespace;
-      padding-top: $whitespace + 1rem;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      align-items: center;
-    }
+    padding: $whitespace;
+    padding-top: $whitespace + 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -542,6 +524,7 @@ ul.jobs li.job {
   @include font-0;
 }
 
+/*
 .job-requirements {
   padding: 0 $whitespace;
   margin: $whitespace 0;
@@ -589,8 +572,9 @@ ul.jobs li.job {
     }
   }
 }
+*/
 
-.job summary .job-apply.call-to-action {
+.job-summary .job-apply.call-to-action {
   padding: 0;
 
   .button {

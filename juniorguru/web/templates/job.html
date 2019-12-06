@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}: Najdi práci{% endblock %}
+{% block title %}Najdi práci — {% endblock %}
 
 {% block description -%}
 Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovním trhu.
@@ -10,3 +10,20 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
 {% block main %}
 Nabídka práce! {{ job.id }}
 {% endblock %}
+
+{#
+<p class="job-attributes">
+  <span class="job-type">{{ job.job_type|job_type }}</span><!--
+  -->&nbsp;&mdash;&nbsp;<!--
+  --><span class="job-location">{{ job.location }}</span>
+</p>
+<p class="job-requirements">
+  {% for requirement in job.requirements %}
+    <span class="job-requirement">{{ requirement|job_requirement }}</span>&#32;
+  {% endfor %}
+</p>
+<div class="job-description">{{ job.description|md(3, 'job-' + job.id + '-heading') }}</div>
+<p class="job-apply call-to-action">
+  {{ job.email|email_link('<small>Napiš na</small> {email}', classes=['button']) }}
+</p>
+#}

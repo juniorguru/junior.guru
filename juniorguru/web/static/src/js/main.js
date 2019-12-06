@@ -1,5 +1,5 @@
 import './hash';
 import './details';
-import './jobs';
+// import './jobs';
 
 import 'instant.page';

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}: Najdi práci{% endblock %}
+{% block title %}Práce pro začínající programátory{% endblock %}
 
 {% block description -%}
 Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovním trhu.
@@ -39,28 +39,12 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
     <h2 class="job-company">
       <small><a href="{{ job.company_link }}">{{ job.company_name }}</a></small>
     </h2>
-    <details>
-      <summary>
-        <h3 class="job-title">{{ job.title }}</h3>
-        <p class="call-to-action job-apply">
-          <span class="button">Mám zájem</span>
-        </p>
-      </summary>
-      <p class="job-attributes">
-        <span class="job-type">{{ job.job_type|job_type }}</span><!--
-        -->&nbsp;&mdash;&nbsp;<!--
-        --><span class="job-location">{{ job.location }}</span>
+    <div class="job-summary">
+      <h3 class="job-title">{{ job.title }}</h3>
+      <p class="call-to-action job-apply">
+        <a href="{{ url_for('job', job_id=job.id) }}" class="button">Mám zájem</a>
       </p>
-      <p class="job-requirements">
-        {% for requirement in job.requirements %}
-          <span class="job-requirement">{{ requirement|job_requirement }}</span>&#32;
-        {% endfor %}
-      </p>
-      <div class="job-description">{{ job.description|md(3, 'job-' + job.id + '-heading') }}</div>
-      <p class="job-apply call-to-action">
-        {{ job.email|email_link('<small>Napiš na</small> {email}', classes=['button']) }}
-      </p>
-    </details>
+    </div>
   </li>
 {% endfor %}
   <li class="job-add">
