@@ -66,7 +66,8 @@ def job_type(type_):
 
 @app.template_filter()
 def ago(dt, now=None):
-    days = (datetime.now() - dt).days
+    now = now or datetime.now()
+    days = (now - dt).days
     try:
         return ('dnes', 'včera', 'předevčírem')[days]
     except IndexError:
