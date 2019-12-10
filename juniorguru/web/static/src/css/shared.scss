@@ -11,7 +11,7 @@ $line-height-0: ($line-height-base / 18);
 $line-height: ($line-height-base / 10) * 1rem;
 $line-height-2: ($line-height-base / 25);
 $line-height-3: ($line-height-base / 32);
-$line-height-4: ($line-height-base / 41);
+$line-height-4: 1;
 
 @mixin font-0 { font-size: 1.6rem; line-height: $line-height-0; font-weight: 300; }
 @mixin font { font-size: 2rem; line-height: $line-height; }

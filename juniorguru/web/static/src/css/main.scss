@@ -231,18 +231,24 @@ body > header + hr {
   display: block;
   margin: $whitespace auto;
   width: 20rem;
+
+  @media screen and (min-width: $grid-breakpoint) {
+    & {
+      float: right;
+      margin: $whitespace;
+      margin-left: $whitespace-2;
+    }
+  }
 }
 
 .cartoon[src*="pylady"] {
   width: 15rem;
 }
 
-@media screen and (min-width: $grid-breakpoint) {
-  .cartoon {
-    float: right;
-    margin: $whitespace;
-    margin-left: $whitespace-2;
-  }
+.cartoon-center {
+  float: none;
+  margin: 0 auto $whitespace auto;
+  width: 15rem;
 }
 
 .note {
@@ -460,31 +466,10 @@ ul.jobs {
   }
 }
 
-ul.jobs li.job-add {
-  padding: $whitespace;
-  background: $yellow;
-
-  .call-to-action {
-    background: $white;
-    margin: 0;
-    padding: $whitespace;
-  }
-
-  .button {
-    @include font-0;
-    padding: $whitespace-0 $whitespace;
-    padding-top: $whitespace-0 - 0.1rem;
-  }
-}
-
 .job {
   header {
     text-align: center;
     margin-bottom: 2 * $whitespace-3;
-
-    h1 {
-      line-height: 0.9;
-    }
 
     p {
       min-height: 0;
@@ -701,19 +686,6 @@ footer {
   }
 }
 
-body.page-job {
-  main {
-    max-width: 100%;
-    padding: 0;
-  }
-
-  main > article, main > section {
-    @include page-width;
-    padding-left: $whitespace;
-    padding-right: $whitespace;
-  }
-}
-
 body.page-index {
   main {
     max-width: 100%;
@@ -917,5 +889,24 @@ body.page-index {
         margin-top: 0;
       }
     }
+  }
+}
+
+body.page-jobs, body.page-job {
+  main {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  main > header,
+  main > article,
+  main > section {
+    padding-left: $whitespace;
+    padding-right: $whitespace;
+  }
+
+  main > article,
+  main > section {
+    @include page-width;
   }
 }
