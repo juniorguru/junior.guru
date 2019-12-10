@@ -482,6 +482,10 @@ ul.jobs {
     text-decoration: none;
   }
 
+  a.active {
+    color: $blue;
+  }
+
   h3 {
     display: block;
     background: none;
@@ -496,7 +500,7 @@ ul.jobs {
   border-left: $whitespace solid $yellow;
   padding-left: $whitespace;
 
-  a:hover &, a:focus &, a:active & {
+  a:hover &, a:focus &, a:active &, a.active & {
     border-color: $blue;
   }
 }
