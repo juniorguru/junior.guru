@@ -38,8 +38,12 @@ def practice():
 def jobs():
     with db:
         jobs = Job.listing()
+        jobs_count = Job.count()
+        companies_count = Job.companies_count()
     return render_template('jobs.html',
                            jobs=jobs,
+                           jobs_count=jobs_count,
+                           companies_count=companies_count,
                            thumbnail=thumbnail(title='Práce pro začínající programátory'))
 
 

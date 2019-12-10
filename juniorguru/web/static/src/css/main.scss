@@ -247,8 +247,8 @@ body > header + hr {
 
 .cartoon-center {
   float: none;
-  margin: 0 auto $whitespace auto;
-  width: 15rem;
+  margin: $whitespace auto;
+  width: 10rem;
 }
 
 .note {
@@ -454,6 +454,7 @@ ul.list {
 }
 
 ul.jobs {
+  box-sizing: border-box;
   list-style-type: none;
   margin: (2 * $whitespace-3) 0;
   padding: 0;
@@ -462,8 +463,38 @@ ul.jobs {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    margin-bottom: $whitespace;
+    border-top: 1px solid $gray-light;
   }
+
+  & > li:first-child {
+    border-top: none;
+  }
+}
+
+.job-summary {
+  a {
+    display: inline-block;
+    padding: $whitespace-3;
+    padding-left: 0;
+  }
+
+  a, a:hover, a:focus, a:active {
+    text-decoration: none;
+  }
+
+  h3 {
+    display: block;
+    background: none;
+    padding: 0;
+    margin: 0;
+    @include font-2;
+    text-decoration: underline;
+  }
+}
+
+.job-summary-details {
+  padding: 0;
+  margin: 0;
 }
 
 .job {
