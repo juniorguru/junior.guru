@@ -36,14 +36,16 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
   {% for job in jobs %}
     <li class="job-summary" id="job-{{ job.id }}">
       <a href="{{ url_for('job', job_id=job.id) }}">
-        <h3>{{ job.title }}</h3>
-        <small class="job-summary-details">
-          {{ job.company_name }}
-          &mdash;
-          {{ job.location }}
-          &mdash;
-          {{ job.job_type|job_type }}
-        </small>
+        <div class="job-summary-wrapper">
+          <h3>{{ job.title }}</h3>
+          <small class="job-summary-details">
+            {{ job.company_name }}
+            &mdash;
+            {{ job.location }}
+            &mdash;
+            {{ job.job_type|job_type }}
+          </small>
+        </div>
       </a>
     </li>
   {% endfor %}
