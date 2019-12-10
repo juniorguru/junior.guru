@@ -1,4 +1,5 @@
 from textwrap import dedent
+from datetime import datetime
 
 import pytest
 
@@ -22,21 +23,8 @@ def test_md_heading_level_base():
         Paragraph text
     '''), heading_level_base=4)).strip()
     assert markup == dedent('''
-        <h4 id="heading">Heading 1</h4>
-        <h5 id="heading_1">Heading 2</h5>
-        <p>Paragraph text</p>
-    ''').strip()
-
-
-def test_md_heading_slug():
-    markup = str(template_filters.md(dedent('''
-        # Heading 1
-        ## Heading 2
-        Paragraph text
-    '''), heading_slug='abcd')).strip()
-    assert markup == dedent('''
-        <h1 id="abcd">Heading 1</h1>
-        <h2 id="abcd_1">Heading 2</h2>
+        <h4 id="heading-1">Heading 1</h4>
+        <h5 id="heading-2">Heading 2</h5>
         <p>Paragraph text</p>
     ''').strip()
 
