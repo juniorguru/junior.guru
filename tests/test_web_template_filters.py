@@ -54,3 +54,16 @@ def test_job_requirement(requirement, expected):
 ])
 def test_job_type(type_, expected):
     assert template_filters.job_type(type_) == expected
+
+
+@pytest.mark.parametrize('dt,expected', [
+    (datetime(2019, 12, 10, 16, 20, 42), 'dnes'),
+    (datetime(2019, 12, 9, 16, 20, 42), 'včera'),
+    (datetime(2019, 12, 8, 16, 20, 42), 'předevčírem'),
+    (datetime(2019, 12, 7, 16, 20, 42), 'před 3 dny'),
+    (datetime(2019, 11, 30, 16, 20, 42), 'před 10 dny'),
+    (datetime(2019, 10, 31, 16, 20, 42), 'před 40 dny'),
+])
+def test_ago(dt, expected):
+    now = datetime(2019, 12, 10, 16, 20, 42)
+    assert template_filters.ago(dt, now=now) == expected

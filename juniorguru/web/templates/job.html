@@ -19,6 +19,11 @@ Pracovní nabídka pro začínající programátory: ‚{{ job.title }}‘ &mdas
       &mdash;
       {{ job.job_type|job_type }}
     </p>
+    <!-- TODO https://github.com/honzajavorek/junior.guru/issues/161
+    <p class="job-since">
+      <small>zadáno {{ job.timestamp|ago }}</small>
+    </p>
+    -->
   </header>
 
   {{ job.description|md }}

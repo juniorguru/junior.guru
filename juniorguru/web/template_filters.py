@@ -1,4 +1,5 @@
 from pathlib import Path
+from datetime import datetime
 
 from jinja2 import Markup
 from markdown import markdown
@@ -61,3 +62,12 @@ def job_type(type_):
         return TYPES_MAPPING[type_]
     except KeyError:
         return type_
+
+
+@app.template_filter()
+def ago(dt, now=None):
+    days = (datetime.now() - dt).days
+    try:
+        return ('dnes', 'včera', 'předevčírem')[days]
+    except IndexError:
+        return f'před {days} dny'
