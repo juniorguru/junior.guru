@@ -24,7 +24,13 @@
     <meta property="og:title" content="{{ self.title() }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request.url }}">
-    <meta property="og:image" content="{{ url_for('static', filename=thumbnail) }}">
+    <meta property="og:image" content="{{ url_for('static', filename=thumbnail, _external=True) }}">
+
+    <meta name="twitter:card" content="photo">
+    <meta name="twitter:image" content="{{ url_for('static', filename=thumbnail, _external=True) }}">
+    <meta name="twitter:creator" content="@honzajavorek">
+    <meta name="twitter:image:width" content="1200">
+    <meta name="twitter:image:height" content="630">
   </head>
   <body{% block body_attrs %} class="page"{% endblock %}>
     {% block body %}
