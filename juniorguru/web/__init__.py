@@ -47,8 +47,12 @@ def jobs():
 def job(job_id):
     with db:
         job = Job.get_by_id(job_id) or abort(404)
+        jobs_count = Job.count()
+        companies_count = Job.companies_count()
     return render_template('job.html',
                            job=job,
+                           jobs_count=jobs_count,
+                           companies_count=companies_count,
                            thumbnail=thumbnail(job_title=job.title,
                                                job_company=job.company_name,
                                                job_location=job.location))

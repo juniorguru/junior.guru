@@ -10,12 +10,11 @@ def coerce_record(record):
         r'^timestamp$': ('timestamp', coerce_timestamp),
         r'^company name$': ('company_name', coerce_text),
         r'^job type$': ('job_type', coerce_text),
-        r'^title$': ('title', coerce_text),
+        r'^job title$': ('title', coerce_text),
         r'^company website link$': ('company_link', coerce_text),
         r'^email address$': ('email', coerce_text),
-        r'^location$': ('location', coerce_text),
-        r'^description$': ('description', coerce_text),
-        r'know basics of': ('requirements', coerce_set),
+        r'^job location$': ('location', coerce_text),
+        r'^job description$': ('description', coerce_text),
         r'^approved$': ('is_approved', coerce_boolean),
     }, record)
 
@@ -47,12 +46,6 @@ def coerce_boolean_words(value):
 def coerce_timestamp(value):
     if value:
         return arrow.get(value.strip(), 'M/D/YYYY HH:mm:ss').naive
-
-
-def coerce_set(value):
-    if value:
-        return sorted(set([item.strip() for item in value.split(',')]))
-    return []
 
 
 def coerce_boolean(value):

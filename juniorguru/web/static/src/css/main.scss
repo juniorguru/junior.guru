@@ -77,7 +77,7 @@ main {
   @include page-width;
 }
 
-main > header {
+main > header, .job > header {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
@@ -204,6 +204,12 @@ a {
   padding: $whitespace $whitespace-2;
   padding-top: $whitespace - 0.1rem;
 
+  a, a:hover, a:focus, a:active {
+    color: $white;
+  }
+}
+
+a.button {
   &:hover, &:focus, &:active {
     color: $white;
     background: $blue;
@@ -471,115 +477,75 @@ ul.jobs li.job-add {
   }
 }
 
-ul.jobs li.job {
-  padding: $whitespace;
-  background: $dots-black;
-  position: relative;
+.job {
+  header {
+    text-align: center;
+    margin-bottom: 2 * $whitespace-3;
 
-  &:hover, &:focus, &:active, &.job-open {
-    background: $dots-blue;
-
-    .job-title, .job-company, .job-company a {
-      color: $blue;
+    h1 {
+      line-height: 0.9;
     }
+
+    p {
+      min-height: 0;
+      height: auto;
+    }
+  }
+
+  h2 {
+    display: inline-block;
+    background-color: $yellow;
+    margin-top: $whitespace-3;
+    padding: 0.3rem 0.5rem;
+  }
+
+  ul + h2, ol + h2 {
+    margin-top: 0.8rem;
+  }
+
+  .call-to-action {
+    margin-top: 3 * $whitespace-2;
+    padding: 0;
 
     .button {
-      background: $blue;
+      padding-left: $whitespace-3;
+      padding-right: $whitespace-3;
+      @include font;
+
+      small {
+        @include font-0;
+      }
+    }
+
+    @media screen and (min-width: 600px) {
+      .button { @include font-2; }
+      .button small { @include font; }
     }
   }
-
-  .job-summary {
-    background: $white;
-    padding: $whitespace;
-    padding-top: $whitespace + 1rem;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
 }
 
-.job-title {
-  margin: 0;
-  padding: 0;
-  padding-top: 1.7rem;
-  padding-right: $whitespace;
-}
-
-.job-company {
-  position: absolute;
-  top: $whitespace * 2;
-  left: $whitespace * 2;
-  display: inline;
-  margin: 0;
-  @include font-0;
-
-  a {
-    font-weight: bold;
-  }
-}
-
-.job-attributes {
-  text-align: center;
-  @include font-0;
-}
-
-/*
-.job-requirements {
+.jobs-teaser {
   padding: 0 $whitespace;
-  margin: $whitespace 0;
-  text-align: center;
-  @include font-0;
 
-  span {
-    display: inline-block;
-    border: 1px solid $black;
-    margin: 0.3rem 0.3rem;
-    padding: 0 1rem 0 1rem;
-  }
-}
-
-.job-description {
-  padding: $whitespace $whitespace-2;
-
-  ul, ol {
-    margin: $whitespace 0;
+  h2 {
+    background: none;
+    @include font-4;
+    line-height: 1.25;
   }
 
-  h4 {
-    margin-top: $whitespace-2;
+  h2 small {
+    display: block;
+    margin: 0 0 ($whitespace / 1.5) 0;
   }
 
-  & > *:first-child {
-    margin-top: 0;
+  h2 strong {
+    padding: ($whitespace-0 / 4) ($whitespace / 1.5);
+    background: $yellow;
+    color: $black;
   }
-}
 
-.job-apply.call-to-action {
-  padding: 0 $whitespace $whitespace-3 $whitespace;
-  margin: 0;
-  margin-top: $whitespace;
-  margin-left: auto;
-
-  .button {
-    margin: 0;
-    padding: $whitespace-0 $whitespace-3;
-
-    small {
-      display: block;
-      margin-bottom: -1rem;
-      @include font-0;
-    }
-  }
-}
-*/
-
-.job-summary .job-apply.call-to-action {
-  padding: 0;
-
-  .button {
-    @include font-0;
-    padding: $whitespace-0 $whitespace-2;
+  h2 .no-wrap {
+    white-space: nowrap;
   }
 }
 
@@ -732,6 +698,19 @@ footer {
     p {
       text-align: center;
     }
+  }
+}
+
+body.page-job {
+  main {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  main > article, main > section {
+    @include page-width;
+    padding-left: $whitespace;
+    padding-right: $whitespace;
   }
 }
 
@@ -892,31 +871,6 @@ body.page-index {
     li:nth-child(1) h2::before { content: "1"; }
     li:nth-child(2) h2::before { content: "2"; }
     li:nth-child(3) h2::before { content: "3"; }
-  }
-
-  .jobs {
-    padding: 0 $whitespace;
-
-    h2 {
-      background: none;
-      @include font-4;
-      line-height: 1.25;
-    }
-
-    h2 small {
-      display: block;
-      margin: 0 0 ($whitespace / 1.5) 0;
-    }
-
-    h2 strong {
-      padding: ($whitespace-0 / 4) ($whitespace / 1.5);
-      background: $yellow;
-      color: $black;
-    }
-
-    h2 .no-wrap {
-      white-space: nowrap;
-    }
   }
 
   aside {

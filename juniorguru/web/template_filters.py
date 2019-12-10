@@ -8,24 +8,19 @@ from . import app
 
 
 @app.template_filter()
-def email_link(email, text_template='{email}', classes=None):
+def email_link(email):
     user, server = email.split('@')
-    text = text_template.format(email=f'{user}&#64;<!---->{server}')
-    classes = ' '.join(classes or [])
-    class_attr = f' class="{classes}"' if classes else ''
     return Markup(
-        f'<a href="mailto:{user}&#64;{server}"{class_attr}>{text}</a>'
+        f'<a href="mailto:{user}&#64;{server}">'
+        f'{user}&#64;<!---->{server}'
+        '</a>'
     )
 
 
 @app.template_filter()
-def md(markdown_text, heading_level_base=1, heading_slug='heading'):
-    toc = TocExtension(marker='',
-                       baselevel=heading_level_base,
-                       slugify=lambda value, separator: heading_slug)
-    markup = markdown(markdown_text,
-                      output_format='html5',
-                      extensions=[toc])
+def md(markdown_text, heading_level_base=1):
+    toc = TocExtension(marker='', baselevel=heading_level_base)
+    markup = markdown(markdown_text, output_format='html5', extensions=[toc])
     return Markup(markup)
 
 
@@ -35,6 +30,7 @@ REQUIREMENTS_MAPPING = {
     'data analysis': 'datová analýza',
     'servers and operations': 'správa serverů',
     'Linux and command line': 'Linux a příkazová řádka',
+    'Linux': 'Linux a příkazová řádka',
     'web backend': 'webový backend',
     'web frontend': 'webový frontend',
     'mobile apps development': 'mobilní aplikace',

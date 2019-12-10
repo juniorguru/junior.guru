@@ -1,29 +1,48 @@
 {% extends 'base.html' %}
-{% block title %}Najdi práci — {% endblock %}
+{% block title %}{{ job.title }} &mdash; {{ job.company_name }} &mdash; {{ job.location }}{% endblock %}
 
 {% block description -%}
-Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovním trhu.
+Pracovní nabídka pro začínající programátory: ‚{{ job.title }}‘ &mdash; {{ job.company_name }}, {{ job.location }}, {{ job.job_type|job_type }}.
 {%- endblock %}
 
 {% block body_attrs %} class="page-job"{% endblock %}
 
 {% block main %}
-Nabídka práce! {{ job.id }}
-{% endblock %}
+<article class="job">
+  <header>
+    <h1>{{ job.title }}</h1>
 
-{#
-<p class="job-attributes">
-  <span class="job-type">{{ job.job_type|job_type }}</span><!--
-  -->&nbsp;&mdash;&nbsp;<!--
-  --><span class="job-location">{{ job.location }}</span>
-</p>
-<p class="job-requirements">
-  {% for requirement in job.requirements %}
-    <span class="job-requirement">{{ requirement|job_requirement }}</span>&#32;
-  {% endfor %}
-</p>
-<div class="job-description">{{ job.description|md(3, 'job-' + job.id + '-heading') }}</div>
-<p class="job-apply call-to-action">
-  {{ job.email|email_link('<small>Napiš na</small> {email}', classes=['button']) }}
-</p>
-#}
+    <p class="job-attributes">
+      <a href="{{ job.company_link }}">{{ job.company_name }}</a>
+      &mdash;
+      {{ job.location }}
+      &mdash;
+      {{ job.job_type|job_type }}
+    </p>
+  </header>
+
+  {{ job.description|md }}
+
+  <div class="call-to-action">
+    <p class="button">
+      Máš zájem? Napiš na<br><small>{{ job.email|email_link }}</small>
+    </p>
+  </div>
+</article>
+<hr>
+<section class="jobs-teaser call-to-action">
+  <h2>
+    <small>Nic pro tebe? Nevadí! Je tady dalších</small>
+
+    <strong class="no-wrap">{{ jobs_count }} nabídek</strong>
+    <span class="no-wrap">práce</span>
+    <span class="no-wrap">pro juniory</span>
+    <span class="no-wrap">
+      od <strong>{{ companies_count }} firem</strong>
+    </span>
+  </h2>
+  <p>
+    <a href="{{ url_for('jobs') }}" class="button">Procházet nabídky</a>
+  </p>
+</section>
+{% endblock %}
