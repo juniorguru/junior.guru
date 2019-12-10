@@ -51,14 +51,6 @@ def test_coerce_boolean(value, expected):
     assert sheets.coerce_boolean(value) == expected
 
 
-@pytest.mark.parametrize('value,expected', [
-    (None, []),
-    ('web frontend, mainstream programming language', ['mainstream programming language', 'web frontend'])
-])
-def test_coerce_set(value, expected):
-    assert sheets.coerce_set(value) == expected
-
-
 def test_create_id():
     id_ = sheets.create_id(datetime(2019, 7, 6, 20, 24, 3), 'https://www.example.com/foo/bar.html')
     assert id_ == hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest()
@@ -67,25 +59,23 @@ def test_create_id():
 def test_coerce_record():
     assert sheets.coerce_record({
         'Timestamp': '7/6/2019 20:24:03',
-        'Company name': 'Honza Ltd.',
-        'Job type': 'paid internship',
-        'Title': 'Frontend Ninja',
-        'Company website link': 'https://www.example.com',
         'Email Address': 'jobs@example.com',
-        'Location': 'Prague',
-        'Description': None,
-        'The applicant should ideally know basics of...': 'web frontend, mainstream programming language',
-        'Approved': None
+        'Company name': 'Honza Ltd.',
+        'Company website link': 'https://www.example.com',
+        'Job type': 'paid internship',
+        'Job title': 'Frontend Ninja',
+        'Job description': None,
+        'Job location': 'Prague',
+        'Approved': None,
     }) == {
         'id': hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest(),
         'timestamp': datetime(2019, 7, 6, 20, 24, 3),
+        'email': 'jobs@example.com',
         'company_name': 'Honza Ltd.',
+        'company_link': 'https://www.example.com',
         'job_type': 'paid internship',
         'title': 'Frontend Ninja',
-        'company_link': 'https://www.example.com',
-        'email': 'jobs@example.com',
-        'location': 'Prague',
         'description': None,
-        'requirements': ['mainstream programming language', 'web frontend'],
+        'location': 'Prague',
         'is_approved': False
     }

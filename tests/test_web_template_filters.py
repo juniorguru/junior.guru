@@ -1,4 +1,5 @@
 from textwrap import dedent
+from datetime import datetime
 
 import pytest
 
@@ -8,12 +9,6 @@ from juniorguru.web import template_filters
 def test_email_link():
     markup = str(template_filters.email_link('xyz@example.com'))
     assert markup == '<a href="mailto:xyz&#64;example.com">xyz&#64;<!---->example.com</a>'
-
-
-def test_email_link_using_text_template():
-    text_template = 'gargamel {email} smurf'
-    markup = str(template_filters.email_link('xyz@example.com', text_template))
-    assert markup == '<a href="mailto:xyz&#64;example.com">gargamel xyz&#64;<!---->example.com smurf</a>'
 
 
 def test_md():
@@ -28,21 +23,8 @@ def test_md_heading_level_base():
         Paragraph text
     '''), heading_level_base=4)).strip()
     assert markup == dedent('''
-        <h4 id="heading">Heading 1</h4>
-        <h5 id="heading_1">Heading 2</h5>
-        <p>Paragraph text</p>
-    ''').strip()
-
-
-def test_md_heading_slug():
-    markup = str(template_filters.md(dedent('''
-        # Heading 1
-        ## Heading 2
-        Paragraph text
-    '''), heading_slug='abcd')).strip()
-    assert markup == dedent('''
-        <h1 id="abcd">Heading 1</h1>
-        <h2 id="abcd_1">Heading 2</h2>
+        <h4 id="heading-1">Heading 1</h4>
+        <h5 id="heading-2">Heading 2</h5>
         <p>Paragraph text</p>
     ''').strip()
 
@@ -72,3 +54,16 @@ def test_job_requirement(requirement, expected):
 ])
 def test_job_type(type_, expected):
     assert template_filters.job_type(type_) == expected
+
+
+@pytest.mark.parametrize('dt,expected', [
+    (datetime(2019, 12, 10, 16, 20, 42), 'dnes'),
+    (datetime(2019, 12, 9, 16, 20, 42), 'včera'),
+    (datetime(2019, 12, 8, 16, 20, 42), 'předevčírem'),
+    (datetime(2019, 12, 7, 16, 20, 42), 'před 3 dny'),
+    (datetime(2019, 11, 30, 16, 20, 42), 'před 10 dny'),
+    (datetime(2019, 10, 31, 16, 20, 42), 'před 40 dny'),
+])
+def test_ago(dt, expected):
+    now = datetime(2019, 12, 10, 16, 20, 42)
+    assert template_filters.ago(dt, now=now) == expected

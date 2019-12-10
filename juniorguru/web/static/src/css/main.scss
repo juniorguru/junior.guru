@@ -77,7 +77,7 @@ main {
   @include page-width;
 }
 
-main > header {
+main > header, .job > header {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
@@ -204,6 +204,12 @@ a {
   padding: $whitespace $whitespace-2;
   padding-top: $whitespace - 0.1rem;
 
+  a, a:hover, a:focus, a:active {
+    color: $white;
+  }
+}
+
+a.button {
   &:hover, &:focus, &:active {
     color: $white;
     background: $blue;
@@ -225,18 +231,24 @@ body > header + hr {
   display: block;
   margin: $whitespace auto;
   width: 20rem;
+
+  @media screen and (min-width: $grid-breakpoint) {
+    & {
+      float: right;
+      margin: $whitespace;
+      margin-left: $whitespace-2;
+    }
+  }
 }
 
 .cartoon[src*="pylady"] {
   width: 15rem;
 }
 
-@media screen and (min-width: $grid-breakpoint) {
-  .cartoon {
-    float: right;
-    margin: $whitespace;
-    margin-left: $whitespace-2;
-  }
+.cartoon-center {
+  float: none;
+  margin: $whitespace auto;
+  width: 10rem;
 }
 
 .note {
@@ -442,6 +454,7 @@ ul.list {
 }
 
 ul.jobs {
+  box-sizing: border-box;
   list-style-type: none;
   margin: (2 * $whitespace-3) 0;
   padding: 0;
@@ -450,152 +463,114 @@ ul.jobs {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    margin-bottom: $whitespace;
+    border-top: 1px solid $gray-light;
+  }
+
+  & > li:first-child {
+    border-top: none;
   }
 }
 
-ul.jobs li.job-add {
-  padding: $whitespace;
-  background: $yellow;
+.job-summary {
+  a {
+    display: inline-block;
+    padding: $whitespace-3;
+    padding-left: 0;
+  }
+
+  a, a:hover, a:focus, a:active {
+    text-decoration: none;
+  }
+
+  h3 {
+    display: block;
+    background: none;
+    padding: 0;
+    margin: 0;
+    @include font-2;
+    text-decoration: underline;
+  }
+}
+
+.job-summary-wrapper {
+  border-left: $whitespace solid $yellow;
+  padding-left: $whitespace;
+
+  a:hover &, a:focus &, a:active & {
+    border-color: $blue;
+  }
+}
+
+.job-summary-details {
+  padding: 0;
+  margin: 0;
+}
+
+.job {
+  header {
+    text-align: center;
+    margin-bottom: 2 * $whitespace-3;
+
+    p {
+      min-height: 0;
+      height: auto;
+    }
+  }
+
+  h2 {
+    display: inline-block;
+    background-color: $yellow;
+    margin-top: $whitespace-3;
+    padding: 0.3rem 0.5rem;
+  }
+
+  ul + h2, ol + h2 {
+    margin-top: 0.8rem;
+  }
 
   .call-to-action {
-    background: $white;
-    margin: 0;
-    padding: $whitespace;
-  }
-
-  .button {
-    @include font-0;
-    padding: $whitespace-0 $whitespace;
-    padding-top: $whitespace-0 - 0.1rem;
-  }
-}
-
-ul.jobs li.job {
-  padding: $whitespace;
-  background: $dots-black;
-  position: relative;
-
-  &:hover, &:focus, &:active, &.job-open {
-    background: $dots-blue;
-
-    .job-title, .job-company, .job-company a {
-      color: $blue;
-    }
+    margin-top: 3 * $whitespace-2;
+    padding: 0;
 
     .button {
-      background: $blue;
-    }
-  }
+      padding-left: $whitespace-3;
+      padding-right: $whitespace-3;
+      @include font;
 
-  &.job-open {
-    padding: $whitespace;
-
-    summary {
-      padding-bottom: 0;
+      small {
+        @include font-0;
+      }
     }
 
-    summary .button {
-      display: none;
-    }
-  }
-
-  details {
-    background: $white;
-
-    summary {
-      cursor: pointer;
-      list-style-type: none;
-      &::-webkit-details-marker, &::before { display: none; }
-      padding: $whitespace;
-      padding-top: $whitespace + 1rem;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      align-items: center;
+    @media screen and (min-width: 600px) {
+      .button { @include font-2; }
+      .button small { @include font; }
     }
   }
 }
 
-.job-title {
-  margin: 0;
-  padding: 0;
-  padding-top: 1.7rem;
-  padding-right: $whitespace;
-}
-
-.job-company {
-  position: absolute;
-  top: $whitespace * 2;
-  left: $whitespace * 2;
-  display: inline;
-  margin: 0;
-  @include font-0;
-
-  a {
-    font-weight: bold;
-  }
-}
-
-.job-attributes {
-  text-align: center;
-  @include font-0;
-}
-
-.job-requirements {
+.jobs-teaser {
   padding: 0 $whitespace;
-  margin: $whitespace 0;
-  text-align: center;
-  @include font-0;
 
-  span {
-    display: inline-block;
-    border: 1px solid $black;
-    margin: 0.3rem 0.3rem;
-    padding: 0 1rem 0 1rem;
-  }
-}
-
-.job-description {
-  padding: $whitespace $whitespace-2;
-
-  ul, ol {
-    margin: $whitespace 0;
+  h2 {
+    background: none;
+    @include font-4;
+    line-height: 1.25;
   }
 
-  h4 {
-    margin-top: $whitespace-2;
+  h2 small {
+    display: block;
+    margin: 0 0 ($whitespace / 1.5) 0;
   }
 
-  & > *:first-child {
-    margin-top: 0;
+  h2 strong {
+    padding: ($whitespace-0 / 4) ($whitespace / 1.5);
+    background: $yellow;
+    color: $black;
   }
-}
 
-.job-apply.call-to-action {
-  padding: 0 $whitespace $whitespace-3 $whitespace;
-  margin: 0;
-  margin-top: $whitespace;
-  margin-left: auto;
-
-  .button {
-    margin: 0;
-    padding: $whitespace-0 $whitespace-3;
-
-    small {
-      display: block;
-      margin-bottom: -1rem;
-      @include font-0;
-    }
-  }
-}
-
-.job summary .job-apply.call-to-action {
-  padding: 0;
-
-  .button {
-    @include font-0;
-    padding: $whitespace-0 $whitespace-2;
+  h2 .no-wrap {
+    white-space: nowrap;
   }
 }
 
@@ -910,31 +885,6 @@ body.page-index {
     li:nth-child(3) h2::before { content: "3"; }
   }
 
-  .jobs {
-    padding: 0 $whitespace;
-
-    h2 {
-      background: none;
-      @include font-4;
-      line-height: 1.25;
-    }
-
-    h2 small {
-      display: block;
-      margin: 0 0 ($whitespace / 1.5) 0;
-    }
-
-    h2 strong {
-      padding: ($whitespace-0 / 4) ($whitespace / 1.5);
-      background: $yellow;
-      color: $black;
-    }
-
-    h2 .no-wrap {
-      white-space: nowrap;
-    }
-  }
-
   aside {
     @supports (display: grid) {
       & {
@@ -979,5 +929,24 @@ body.page-index {
         margin-top: 0;
       }
     }
+  }
+}
+
+body.page-jobs, body.page-job {
+  main {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  main > header,
+  main > article,
+  main > section {
+    padding-left: $whitespace;
+    padding-right: $whitespace;
+  }
+
+  main > article,
+  main > section {
+    @include page-width;
   }
 }

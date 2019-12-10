@@ -27,21 +27,8 @@ def create_job(id, **kwargs):
         email=kwargs.get('email', 'recruiter@example.com'),
         location=kwargs.get('location', 'Brno, Czech Republic'),
         description=kwargs.get('description', '**Really long** description.'),
-        requirements=kwargs.get('requirements', {'web frontend'}),
         is_approved=kwargs.get('is_approved', True),
     )
-
-
-def test_supports_sets(db):
-    create_job('xyz', requirements={'a', 'b', 'c'})
-    job = Job.get_by_id('xyz')
-
-    assert job.requirements == {'a', 'b', 'c'}
-
-
-def test_blows_up_for_set_value_with_semicolon(db):
-    with pytest.raises(AssertionError):
-        create_job('xyz', requirements={'a;x;y', 'b', 'c'})
 
 
 def test_listing_returns_only_approved_jobs(db):

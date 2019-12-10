@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="canonical" href="{{ request.url }}">
     <title>
-      Jak se naučit programovat a získat svou první práci v IT{% block title %}{% endblock %}
+      {% block title %}Jak se naučit programovat a získat svou první práci v IT{% endblock %}
     </title>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1316071-22"></script>
@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='bundle.css') }}">
 
-    <meta property="og:title" content="Jak se naučit programovat a získat svou první práci v IT{{ self.title() }}">
+    <meta property="og:title" content="{{ self.title() }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request.url }}">
     <meta property="og:image" content="{{ url_for('static', filename=thumbnail) }}">

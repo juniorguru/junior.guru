@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}: Najdi práci{% endblock %}
+{% block title %}Práce pro začínající programátory{% endblock %}
 
 {% block description -%}
 Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovním trhu.
@@ -9,81 +9,64 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
 
 {% block main %}
 <header>
-  <h1>Najdi první práci v IT</h1>
+  <h1>Najdi svou první práci v IT</h1>
   <p>
     <img src="{{ url_for('static', filename='images/chick3.svg') }}">
     Znáš <a href="{{ url_for('learn') }}">základy</a> a máš <a href="{{ url_for('practice') }}">praxi</a>?
     Nastal okamžik začít zkoušet své štestí na pracovním trhu.
+    Projdi si {{ jobs_count }}&nbsp;aktuálních nabídek práce od&nbsp;{{ companies_count }}&nbsp;firem,
+    všechny přímo pro juniory, tedy začínající programátory.
   </p>
 </header>
 
-<p class="call-to-action">
-  <a href="http://eepurl.com/gyG8Bb" target="_blank" class="button">Práce do emailu</a>
-</p>
-
-<ul class="jobs">
-{% if jobs|length >= 5 %}
-  <li class="job-add">
-    <div class="call-to-action">
+<hr>
+<section>
+  <div class="call-to-action">
       <p>
-        <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank" class="button">Přidat nabídku &mdash;&nbsp;0&nbsp;Kč</a>
+        <img class="cartoon cartoon-center" src="{{ url_for('static', filename='images/mail.svg') }}">
       </p>
-      <p class="note">
-        Do <strong>konce tohoto roku</strong> je přidávání nabídek práce <strong>zdarma</strong>!
-      </p>
-    </div>
-  </li>
-{% endif %}
-{% for job in jobs %}
-  <li class="job" id="job-{{ job.id }}">
-    <h2 class="job-company">
-      <small><a href="{{ job.company_link }}">{{ job.company_name }}</a></small>
-    </h2>
-    <details>
-      <summary>
-        <h3 class="job-title">{{ job.title }}</h3>
-        <p class="call-to-action job-apply">
-          <span class="button">Mám zájem</span>
-        </p>
-      </summary>
-      <p class="job-attributes">
-        <span class="job-type">{{ job.job_type|job_type }}</span><!--
-        -->&nbsp;&mdash;&nbsp;<!--
-        --><span class="job-location">{{ job.location }}</span>
-      </p>
-      <p class="job-requirements">
-        {% for requirement in job.requirements %}
-          <span class="job-requirement">{{ requirement|job_requirement }}</span>&#32;
-        {% endfor %}
-      </p>
-      <div class="job-description">{{ job.description|md(3, 'job-' + job.id + '-heading') }}</div>
-      <p class="job-apply call-to-action">
-        {{ job.email|email_link('<small>Napiš na</small> {email}', classes=['button']) }}
-      </p>
-    </details>
-  </li>
-{% endfor %}
-  <li class="job-add">
-    <div class="call-to-action">
-      {% if jobs|length < 1 %}
-        <p class="announcement">
-          Nabídky práce se připravují
-        </p>
-      {% endif %}
-      <p>
-        <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank" class="button">Přidat nabídku &mdash;&nbsp;0&nbsp;Kč</a>
-      </p>
-      <p class="note">
-        Do <strong>konce tohoto roku</strong> je přidávání nabídek práce <strong>zdarma</strong>!
-      </p>
-    </div>
-  </li>
-</ul>
+      <p class="note">Nech si zasílat nabídky práce na e-mail</p>
+      <a href="http://eepurl.com/gyG8Bb" target="_blank" class="button">Přihlásit se k odběru</a>
+  </div>
+</section>
 
-{% if jobs|length >= 5 %}
-  <p class="call-to-action">
-      <a href="http://eepurl.com/gyG8Bb" target="_blank" class="button">Práce do emailu</a>
+<hr>
+<section>
+  <ul class="jobs">
+  {% for job in jobs %}
+    <li class="job-summary" id="job-{{ job.id }}">
+      <a href="{{ url_for('job', job_id=job.id) }}">
+        <div class="job-summary-wrapper">
+          <h3>{{ job.title }}</h3>
+          <small class="job-summary-details">
+            {{ job.company_name }}
+            &mdash;
+            {{ job.location }}
+            &mdash;
+            {{ job.job_type|job_type }}
+          </small>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+
+<hr>
+<section class="jobs-teaser call-to-action">
+  <p>
+    <img class="cartoon cartoon-center" src="{{ url_for('static', filename='images/posts.svg') }}">
   </p>
-{% endif %}
-
+  <h2>
+    Hledejte juniory tam, kde začínají
+  </h2>
+  <p>
+    <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank" class="button">
+      Přidat nabídku &mdash;&nbsp;0&nbsp;Kč
+    </a>
+  </p>
+  <p class="note">
+    Do <strong>konce tohoto roku</strong> je přidávání nabídek práce <strong>zdarma</strong>!
+  </p>
+</section>
 {% endblock %}
