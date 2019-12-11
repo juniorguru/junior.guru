@@ -47,6 +47,13 @@ def jobs():
                            thumbnail=thumbnail(title='Práce pro začínající programátory'))
 
 
+@app.route('/jobs-newsletter.html')
+def jobs_newsletter():
+    with db:
+        jobs = Job.newsletter_listing()
+    return render_template('jobs_newsletter.html', jobs=jobs)
+
+
 @app.route('/jobs/<job_id>/')
 def job(job_id):
     with db:

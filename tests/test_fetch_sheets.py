@@ -67,6 +67,7 @@ def test_coerce_record():
         'Job description': None,
         'Job location': 'Prague',
         'Approved': None,
+        'Sent': '11/11/2019',
     }) == {
         'id': hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest(),
         'timestamp': datetime(2019, 7, 6, 20, 24, 3),
@@ -77,5 +78,6 @@ def test_coerce_record():
         'title': 'Frontend Ninja',
         'description': None,
         'location': 'Prague',
-        'is_approved': False
+        'is_approved': False,
+        'is_sent': True,
     }

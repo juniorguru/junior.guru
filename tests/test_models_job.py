@@ -28,6 +28,7 @@ def create_job(id, **kwargs):
         location=kwargs.get('location', 'Brno, Czech Republic'),
         description=kwargs.get('description', '**Really long** description.'),
         is_approved=kwargs.get('is_approved', True),
+        is_sent=kwargs.get('is_sent', False),
     )
 
 
@@ -45,6 +46,30 @@ def test_listing_sorts_by_timestamp_desc(db):
     job3 = create_job('3', timestamp=datetime(2014, 7, 6, 20, 24, 3))
 
     assert list(Job.listing()) == [job2, job3, job1]
+
+
+def test_newsletter_listing_returns_only_approved_jobs(db):
+    job1 = create_job('1', is_approved=True)
+    job2 = create_job('2', is_approved=False)
+    job3 = create_job('3', is_approved=True)
+
+    assert set(Job.newsletter_listing()) == {job1, job3}
+
+
+def test_newsletter_listing_returns_only_jobs_not_sent(db):
+    job1 = create_job('1', is_sent=True)
+    job2 = create_job('2', is_sent=False)
+    job3 = create_job('3', is_sent=True)
+
+    assert set(Job.newsletter_listing()) == {job2}
+
+
+def test_newsletter_listing_sorts_by_timestamp_asc(db):
+    job1 = create_job('1', timestamp=datetime(2010, 7, 6, 20, 24, 3))
+    job2 = create_job('2', timestamp=datetime(2019, 7, 6, 20, 24, 3))
+    job3 = create_job('3', timestamp=datetime(2014, 7, 6, 20, 24, 3))
+
+    assert list(Job.newsletter_listing()) == [job1, job3, job2]
 
 
 def test_count_takes_only_approved_jobs(db):
