@@ -2,7 +2,7 @@
 {% block title %}Jak se začít učit programovat{% endblock %}
 
 {% block description -%}
-Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kterých výukových materiálů investovat svůj čas? Zde najdeš pečlivě nachystané jen to, co pro tebe bude do úplného startu nejlepší a nejefektivnější.
+Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kterých výukových materiálů investovat? Zde najdeš pečlivě nachystané jen to, co pro tebe bude do úplného startu nejlepší a nejefektivnější.
 {%- endblock %}
 
 {% block body_attrs %} class="page-learn"{% endblock %}
@@ -21,17 +21,17 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
       <li><a href="#what">Co je programování?</a></li>&#32;
       <li><a href="#why">Proč se to učit?</a></li>&#32;
       <li><a href="#requirements">Co budeš potřebovat?</a></li>&#32;
-      <li><a href="#learn">Jak se naučit programovat?</a></li>&#32;
-      <li><a href="#learn-ladies">Dámy mají přednost</a></li>&#32;
       <li><a href="#python">Proč Python?</a></li>&#32;
+      <li><a href="#learn">Jak začít?</a></li>&#32;
+      <li><a href="#learn-ladies">Dámy mají přednost</a></li>&#32;
       <li><a href="#help">Kde najdeš pomoc?</a></li>&#32;
       <li><a href="#english">Jak si zlepšit angličtinu?</a></li>&#32;
     </ul>
   </div>
 </header>
 
-<details id="what">
-  <summary><h2>Co je programování?</h2></summary>
+<section id="what">
+  <h2>Co je programování?</h2>
   <p>
     <img class="cartoon" src="{{ url_for('static', filename='images/debugging.svg') }}">
     Programovat znamená umět počítačům říkat, jak za nás mají dělat
@@ -54,10 +54,10 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li><strong>Servis</strong> &mdash; Spravování tiskáren v kanclu, nastavování emailových schránek.</li>
     <li><strong>Magie</strong> &mdash; Je to spíš činnost jako umět vyrobit stůl nebo uvařit dobré jídlo.</li>
   </ul>
-</details>
+</section>
 
-<details id="why">
-  <summary><h2>Proč se to učit?</h2></summary>
+<section id="why">
+  <h2>Proč se to učit?</h2>
   <ul>
     <li>
       <img class="cartoon" src="{{ url_for('static', filename='images/starting-with-tech.svg') }}">
@@ -104,10 +104,10 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
       testimonials: diky programovani mohu cestovat po celem svete (mrozek)
       testimonials: diky programovani mohu pracovat a vychovavat deti (mamka nejaka)
   -->
-</details>
+</section>
 
-<details id="requirements">
-  <summary><h2>Co budeš potřebovat?</h2></summary>
+<section id="requirements">
+  <h2>Co budeš potřebovat?</h2>
   <ul>
     <li>Vlastní počítač,</li>
     <li>internet,</li>
@@ -130,7 +130,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
     <li id="talent">
       <strong>Talent</strong> &mdash;
       Programování je především řemeslo. Dnes se navíc odehrává
-      v týmu, kde se píle a komunikace vyplácí víc než genialita.
+      v týmu, kde se píle a komunikace vyplácí víc než jednostranná genialita.
 
       <!--
           testimonials: fakt se mi na zacatku nezdalo, ze mam talent na programovani (pylady)
@@ -193,10 +193,87 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
       -->
     </li>
   </ul>
-</details>
+</section>
+
+<section id="python">
+  <h2>Proč Python?</h2>
+  <p>
+    <img class="cartoon" src="{{ url_for('static', filename='images/pylady.svg') }}">
+    Ať už budeš nakonec dělat cokoliv, začít s programovacím jazykem <a href="https://python.cz">Python</a> je skvělý tah. Je to nejvhodnější první jazyk.
+  </p>
+  <ul>
+    <li>
+      Dobře se učí. Neobsahuje příliš mnoho divných značek, vypadá spíš jako anglická věta.
+    </li>
+    <li>
+      Má přátelskou komunitu lidí, kteří píšou materiály pro začátečníky a pořádají nejrůznější akce.
+    </li>
+    <li>
+      Dobře se hledá pomoc při řešení problémů během učení, a to i v češtině.
+    </li>
+    <li>
+      Je to dnes jeden z nejpoužívanějších a nejoblíbenějších jazyků vůbec.
+      <ul>
+        <li>
+          <a href="https://meterpreter.org/python-will-become-the-official-programming-language-for-french-high-schools/">
+            InfoTech News: Oficiální jazyk pro výuku ve Francii
+          </a>
+        </li>
+        <li>
+          <a href="https://www.economist.com/graphic-detail/2018/07/26/python-is-becoming-the-worlds-most-popular-coding-language">
+            The Economist: Stává se nejoblíbenějším jazykem na světě
+          </a>
+        </li>
+        <li>
+          <a href="https://insights.stackoverflow.com/survey/2019">
+            StackOverflow: Jazyk s nejrychleji rostoucí popularitou a druhý nejmilovanější
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=cKzP61Gjf00">
+            Vývoj dat ze StackOverflow: Během 10 let se stal nejoblíbenějším jazykem
+          </a>
+        </li>
+        <li>
+          <a href="https://www.jetbrains.com/research/devecosystem-2018/">
+            JetBrains: Třetí jazyk, který lidé mají jako hlavní. První, který se nejvíc učí
+          </a>
+        </li>
+        <li>
+          <a href="https://www.zdnet.com/article/programming-languages-python-predicted-to-overtake-c-and-java-in-next-4-years/">
+            ZDNet: Odhaduje se, že do několika let bude nejpoužívanější na světě
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      Je univerzální: tvorba webu, servery, datová analýza, automatizace, vědecké výpočty, &hellip;
+    </li>
+    <li>
+      Existuje pro něj <a href="http://python.cz/prace">mnoho nabídek práce</a>.
+    </li>
+  </ul>
+  <p>
+    Co když ale bude nakonec v pracovním inzerátu Java? Důležité je především umět programovat &mdash; jiný jazyk nebo technologie se dá vždy doučit. Některé firmy přeučení i nabízejí.
+  </p>
+  <figure class="quote">
+    <blockquote>
+      Píšou mi lidi, že se chtějí naučit programovat. Posílám je na kurzy Pythonu.
+    </blockquote>
+    <figcaption>
+      Jakub Mrozek, propagátor jazyka JavaScript
+    </figcaption>
+  </figure>
+</section>
 
 <section id="learn">
-  <h2>Jak se naučit programovat?</h2>
+  <h2>Jak začít?</h2>
+  <p>
+    Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplatí
+    investovat. Tyto materiály prošly pečlivým a přísným
+    výběrem. Jsou to ty nejlepší dostupné. Podle toho, jestli ti více vyhovuje
+    spíš kurz nebo kniha, si vyber jeden z následujících materiálů, a začni!
+  </p>
   <ul class="list">
     <li>
       <a href="https://naucse.python.cz">
@@ -365,94 +442,31 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
   </ul>
 </section>
 
-<details id="python">
-  <summary><h2>Proč Python?</h2></summary>
-  <p>
-    <img class="cartoon" src="{{ url_for('static', filename='images/pylady.svg') }}">
-    Ať už budeš nakonec dělat cokoliv, začít s <a href="https://python.cz">Pythonem</a> je skvělý tah. Je to nejvhodnější první jazyk.
-  </p>
-  <ul>
-    <li>
-      Je to dnes jeden z nejpoužívanějších a nejoblíbenějších jazyků vůbec.
-      <ul>
-        <li>
-          <a href="https://meterpreter.org/python-will-become-the-official-programming-language-for-french-high-schools/">
-            InfoTech News: Oficiální jazyk pro výuku ve Francii
-          </a>
-        </li>
-        <li>
-          <a href="https://www.economist.com/graphic-detail/2018/07/26/python-is-becoming-the-worlds-most-popular-coding-language">
-            The Economist: Stává se nejoblíbenějším jazykem na světě
-          </a>
-        </li>
-        <li>
-          <a href="https://insights.stackoverflow.com/survey/2019">
-            StackOverflow: Jazyk s nejrychleji rostoucí popularitou a druhý nejmilovanější
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/watch?v=cKzP61Gjf00">
-            Vývoj dat ze StackOverflow: Během 10 let se stal nejoblíbenějším jazykem
-          </a>
-        </li>
-        <li>
-          <a href="https://www.jetbrains.com/research/devecosystem-2018/">
-            JetBrains: Třetí jazyk, který lidé mají jako hlavní. První, který se nejvíc učí
-          </a>
-        </li>
-        <li>
-          <a href="https://www.zdnet.com/article/programming-languages-python-predicted-to-overtake-c-and-java-in-next-4-years/">
-            ZDNet: Odhaduje se, že do několika let bude nejpoužívanější na světě
-          </a>
-        </li>
-      </ul>
-    </li>
-    <li>
-      Dobře se učí. Neobsahuje příliš mnoho divných značek, vypadá spíš jako anglická věta.
-    </li>
-    <li>
-      Má přátelskou komunitu lidí, kteří píšou materiály pro začátečníky a pořádají nejrůznější akce.
-    </li>
-    <li>
-      Dobře se hledá pomoc při řešení problémů během učení, a to i v češtině.
-    </li>
-    <li>
-      Je univerzální: tvorba webu, servery, datová analýza, automatizace, vědecké výpočty, &hellip;
-    </li>
-    <li>
-      Existuje pro něj <a href="http://python.cz/prace">mnoho nabídek práce</a>.
-    </li>
-  </ul>
-  <div class="note side-note">
-    <p>
-      Co když ale bude nakonec v pracovním inzerátu Java? Důležité je především umět programovat &mdash; jiný jazyk nebo technologie se dá vždy doučit. Některé firmy přeučení i nabízejí.
-    </p>
-  </div>
-  <figure class="quote">
-    <blockquote>
-      Píšou mi lidi, že se chtějí naučit programovat. Posílám je na kurzy Pythonu.
-    </blockquote>
-    <figcaption>
-      Jakub Mrozek, propagátor jazyka JavaScript
-    </figcaption>
-  </figure>
-</details>
-
 <section id="help">
   <h2>Kde najdeš pomoc?</h2>
+  <p>
+    Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout
+    na týdny a úplně ti zkazit radost z učení.
+    Neboj se ptát online, radit se s lidmi na <a href="{{ url_for('practice') }}#events">akcích</a>,
+    nebo si najít <a href="{{ url_for('practice') }}#mentors">mentora</a>.
+  </p>
+
+  <h3 id="questions">Kde a jak se ptát?</h3>
+  <p>
+    Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. <strong>Žádná otázka není
+    hloupá, může však být hloupě položená.</strong> Než se někde začneš ptát, přečti si <a href="http://www.catb.org/~esr/faqs/smart-questions.html">nejslavnější návod na internetu o psaní dotazů</a>,
+    nebo alespoň <a href="https://stackoverflow.com/help/how-to-ask">tento krátký návod od Stack Overflow</a>.
+  </p>
   <ul class="list">
     <li>
-      <a href="https://pyvo.cz">
+      <a href="https://stackoverflow.com">
         <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/pyvo.cz.jpg') }}">
+          <img src="{{ url_for('static', filename='images/screenshots/stackoverflow.com.jpg') }}">
         </div>
-        <h3>Pyvo</h3>
-        <ul class="list-labels">
-          <li><small>setkání</small></li>
-        </ul>
+        <h3>Stack Overflow</h3>
       </a>
       <p>
-        Poznej komunitu ve svém okolí. Pomohou, budou tě motivovat.
+        Ptej se na celosvětově největším webu s otázkami a odpovědmi ohledně programování.
       </p>
     </li>
     <li>
@@ -466,7 +480,35 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
         </ul>
       </a>
       <p>
-        Poznej českou a slovenskou komunitu. Pomohou a poradí.
+        Ptej se české a slovenské Python komunity.
+      </p>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/r/learnpython/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/reddit.com!r!learnpython.jpg') }}">
+        </div>
+        <h3>r/learnpython</h3>
+        <ul class="list-labels">
+          <li><small>Reddit</small></li>
+        </ul>
+      </a>
+      <p>
+        Pokládej dotazy do subredditu pro začátečníky s Pythonem.
+      </p>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/r/learnprogramming/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/reddit.com!r!learnprogramming.jpg') }}">
+        </div>
+        <h3>r/learnprogramming</h3>
+        <ul class="list-labels">
+          <li><small>Reddit</small></li>
+        </ul>
+      </a>
+      <p>
+        Pokládej dotazy do subredditu pro začátečníky s programováním.
       </p>
     </li>
   </ul>
@@ -506,7 +548,7 @@ Chceš se naučit programovat, ale nemáš chuť složitě se rozhodovat do kter
         </ul>
       </a>
       <p>
-        Video každé úterý. Trochu střelený, ale <a href="https://video.aktualne.cz/dvtv/nadseny-ucitel-anglictiny-jazyk-se-nauci-kazdy-lide-ale-maji/r~f94af27a9e4c11e9970a0cc47ab5f122/">nadšený</a>!
+        Video každé úterý. Možná trochu střelený, ale <a href="https://video.aktualne.cz/dvtv/nadseny-ucitel-anglictiny-jazyk-se-nauci-kazdy-lide-ale-maji/r~f94af27a9e4c11e9970a0cc47ab5f122/">nadšený</a>!
       </p>
     </li>
     <li>

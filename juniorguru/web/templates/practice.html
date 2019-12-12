@@ -22,7 +22,9 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
     <ul>
       <li><a href="#exercises">Procvičuj</a></li>&#32;
       <li><a href="#projects">Najdi si projekt</a></li>&#32;
-      <li><a href="#help">Kde najdeš pomoc?</a></li>&#32;
+      <li><a href="#mentors">Najdi si mentora</a></li>&#32;
+      <li><a href="#hackathons">Zkus „hackathon“</a></li>&#32;
+      <li><a href="#opensource">Zkus „Open Source“</a></li>&#32;
       <li><a href="#skills">Rozšiřuj si znalosti</a></li>&#32;
       <li><a href="#events">Najdi inspiraci, poznej lidi</a></li>&#32;
     </ul>
@@ -117,18 +119,96 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
     Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit
     <a href="#hackathons">hackathon</a> nebo <a href="#opensource">Open Source</a>.
   </p>
-  <div class="note side-note">
-    <p>
-      Dávej své pokusy a projekty na <a href="https://github.com/">GitHub</a>.
-      Čím více, tím lépe. Nejen že se naučíš lépe ovládat <a href="https://naucse.python.cz/course/pyladies/git/collaboration/">Git</a>
-      a GitHub, ale hlavně budeš moci svůj kód ukázat. Třeba když budeš potřebovat <a href="#help">pomoc na dálku</a>,
-      nebo až si budeš <a href="{{ url_for('jobs') }}">hledat práci</a>. Neboj se mít svůj kód veřejně
-      a ukazovat ho druhým! Tato obava je zbytečnou překážkou ve tvém rozjezdu.
-      Programování je o <a href="https://naucse.python.cz/course/pyladies/git/collaboration/">spolupráci</a>.
-    </p>
-  </div>
 
-  <h3 id="hackathons">Hackathony</h3>
+  <h3>Osvoj si GitHub</h3>
+  <p>
+    Dávej své pokusy a projekty na <a href="https://github.com/">GitHub</a>.
+    Čím více, tím lépe. Nejen že se naučíš lépe ovládat <a href="https://naucse.python.cz/course/pyladies/git/collaboration/">Git</a>
+    a GitHub, ale hlavně budeš moci svůj kód ukázat. Třeba když budeš potřebovat <a href="{{ url_for('learn') }}#help">pomoc na dálku</a>,
+    nebo až si budeš <a href="{{ url_for('jobs') }}">hledat práci</a>. Neboj se mít svůj kód veřejně
+    a ukazovat ho druhým! Tato obava je zbytečnou překážkou ve tvém rozjezdu.
+    Programování je o <a href="https://naucse.python.cz/course/pyladies/git/collaboration/">spolupráci</a>.
+  </p>
+</section>
+
+<section id="mentors">
+  <h2>Najdi si mentora</h2>
+  <p>
+    Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to být
+    vyloženě mistr v oboru, stačí když bude v programování alespoň o něco
+    zkušenější než ty. A klidně může stačit, když se uvidíte jednu hodinu týdně
+    přes <a href="https://www.skype.com/cs/">Skype</a>. Pokud znáš někoho,
+    kdo by mohl být tvým mentorem, ale nemá s tím praktické zkušenosti,
+    projděte spolu <a href="https://github.com/honzajavorek/become-mentor/blob/master/cs.md">tuto přednášku</a>
+    a prostě to zkuste!
+  </p>
+  <ul class="list">
+    <li>
+      <a href="https://mentors.codingcoach.io/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/mentors.codingcoach.io.jpg') }}">
+        </div>
+        <h3>Coding Coach</h3>
+      </a>
+      <p>
+        Přehled mentorů z celého světa včetně Česka &mdash; jen si vybrat!
+      </p>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/groups/ucimepython/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/facebook.com!groups!ucimepython.jpg') }}">
+        </div>
+        <h3>Učíme Python</h3>
+        <ul class="list-labels">
+          <li><small>Facebook</small></li>
+        </ul>
+      </a>
+      <p>
+        Poptej mentora ve skupině pro lidi se zájmem vyučovat Python.
+      </p>
+    </li>
+    <li>
+      <a href="https://pyworking.cz/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/pyworking.cz.jpg') }}">
+        </div>
+        <h3>PyWorking Sessions</h3>
+        <ul class="list-labels">
+          <li><small>setkání</small></li>
+        </ul>
+      </a>
+      <p>
+        Zastav se na pravidelná setkání začátečníků, kde jsou i koučové.
+      </p>
+    </li>
+    <li>
+      <a href="https://gismentors.cz/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/gismentors.cz.jpg') }}">
+        </div>
+        <h3>GISMentors</h3>
+      </a>
+      <p>
+        Kontaktuj mentory vyučující jak si programováním pomoci v geografii.
+      </p>
+    </li>
+    <li>
+      <a href="https://github.com/lenadroid/awesome-oss-mentors#readme">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/github.com!lenadroid!awesome-oss-mentors!readme.jpg') }}">
+        </div>
+        <h3>Awesome OSS Mentors</h3>
+      </a>
+      <p>
+        Kontaktuj někoho z těch, kdo se sami nabízí zaučovat nováčky na OSS projektech.
+      </p>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="hackathons">Zkus „hackathon“</h2>
   <p>
     <a href="https://cs.wikipedia.org/wiki/Hackathon">Hackathon</a> je akce, kde se sejdou
     lidi se zájmem o nějaké téma, utvoří smíšené týmy (zkušení i začínající programátoři,
@@ -211,8 +291,10 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       absolvetnka kurzu PyLadies a účastnice hackhatonu Sreality.cz
     </figcaption>
   </figure>
+</section>
 
-  <h3 id="opensource">Open Source</h3>
+<section>
+  <h2 id="opensource">Zkus „Open Source“</h2>
   <p>
     <img class="cartoon" src="{{ url_for('static', filename='images/gh-logo.svg') }}">
     <a href="https://cs.wikipedia.org/wiki/Otev%C5%99en%C3%BD_software">Open Source Software</a> (OSS) jsou projekty s kódem, na který se může kdokoliv podívat,
@@ -220,6 +302,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
     nebo <a href="https://cs.wikipedia.org/wiki/LibreOffice">LibreOffice</a>.
     Pokud si dáš svůj projekt na <a href="https://github.com/">GitHub</a>, kde jeho kód mohou
     číst další lidé, máš taky takový maličký Open Source.
+    I tyto webové stránky <a href="https://github.com/honzajavorek/junior.guru">jsou Open Source</a>.
   </p>
   <p>
     Existují tisíce Open Source projektů uveřejněných pro dobro všech, některé více
@@ -227,10 +310,22 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
     Je to obrovský fenomén a když se do něj člověk zapojí, může získat mnoho
     zkušeností, cenných kontaktů i nových přátel.
   </p>
+
+  <h3>Open Source jako inspirace</h3>
   <p>
-    Začátky s Open Source ale nejsou
+    Do Open Source nemusíš hned přispívat. Ze začátku se můžeš hodně naučit
+    i pouhým pozorováním, čtením cizího kódu, hledáním inspirace. Můžeš se
+    např. podívat, <a href="https://github.com/search?l=Python&q=tic-tac-toe">jak jiní lidé naprogramovali
+    piškvorky v Pythonu</a>.
+  </p>
+
+  <h3>Jak začít?</h3>
+  <p>
+    Začátky s Open Source nejsou
     přímočaré. Většinou na něm lidé pracují ve volném čase. Nováčci jsou
     vítáni, ale jen málo projektů má sílu aktivně nabízet <a href="#mentors">mentorování</a>.
+    Nejsnazší cesta vede přes různé programy a stáže,
+    jako např. <a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a>.
   </p>
   <ul class="list">
     <li>
@@ -347,162 +442,6 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
     </li>
   </ul>
   {% include 'list_note.html' %}
-  <div class="note side-note">
-    <p>
-      Do Open Source nemusíš hned přispívat. Ze začátku se můžeš hodně naučit
-      i pouhým pozorováním, čtením cizího kódu, hledáním inspirace. Můžeš se
-      např. podívat, <a href="https://github.com/search?l=Python&q=tic-tac-toe">jak jiní lidé naprogramovali
-      piškvorky v Pythonu</a>.
-    </p>
-  </div>
-</section>
-
-<section id="help">
-  <h2>Kde najdeš pomoc?</h2>
-  <p>
-    Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout
-    na týdny a úplně ti zkazit radost z učení. Neboj se ptát online nebo si najít <a href="#mentors">mentora</a>.
-  </p>
-
-  <h3 id="questions">Kde se ptát?</h3>
-  <p>
-    Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. Žádná otázka není
-    hloupá, ale může být hloupě položená. Než se někde začneš ptát, přečti si <a href="http://www.catb.org/~esr/faqs/smart-questions.html">nejslavnější návod na internetu o psaní dotazů</a>,
-    nebo alespoň <a href="https://stackoverflow.com/help/how-to-ask">tento krátký návod od Stack Overflow</a>.
-  </p>
-  <ul class="list">
-    <li>
-      <a href="https://stackoverflow.com">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/stackoverflow.com.jpg') }}">
-        </div>
-        <h3>Stack Overflow</h3>
-      </a>
-      <p>
-        Ptej se na celosvětově největším webu s otázkami a odpovědmi ohledně programování.
-      </p>
-    </li>
-    <li>
-      <a href="https://www.facebook.com/groups/pyonieri/">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/facebook.com!groups!pyonieri.jpg') }}">
-        </div>
-        <h3>Pyonýři</h3>
-        <ul class="list-labels">
-          <li><small>Facebook</small></li>
-        </ul>
-      </a>
-      <p>
-        Ptej se české a slovenské Python komunity.
-      </p>
-    </li>
-    <li>
-      <a href="https://www.reddit.com/r/learnpython/">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/reddit.com!r!learnpython.jpg') }}">
-        </div>
-        <h3>r/learnpython</h3>
-        <ul class="list-labels">
-          <li><small>Reddit</small></li>
-        </ul>
-      </a>
-      <p>
-        Pokládej dotazy do subredditu pro začátečníky s Pythonem.
-      </p>
-    </li>
-    <li>
-      <a href="https://www.reddit.com/r/learnprogramming/">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/reddit.com!r!learnprogramming.jpg') }}">
-        </div>
-        <h3>r/learnprogramming</h3>
-        <ul class="list-labels">
-          <li><small>Reddit</small></li>
-        </ul>
-      </a>
-      <p>
-        Pokládej dotazy do subredditu pro začátečníky s programováním.
-      </p>
-    </li>
-  </ul>
-
-  <h3 id="mentors">Mentor</h3>
-  <p>
-    Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to být
-    vyloženě mistr v oboru, stačí když bude v programování alespoň o něco
-    zkušenější než ty. A klidně může stačit, když se uvidíte jednu hodinu týdně
-    přes <a href="https://www.skype.com/cs/">Skype</a>.
-  </p>
-  <ul class="list">
-    <li>
-      <a href="https://mentors.codingcoach.io/">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/mentors.codingcoach.io.jpg') }}">
-        </div>
-        <h3>Coding Coach</h3>
-      </a>
-      <p>
-        Přehled mentorů z celého světa včetně Česka &mdash; jen si vybrat!
-      </p>
-    </li>
-    <li>
-      <a href="https://www.facebook.com/groups/ucimepython/">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/facebook.com!groups!ucimepython.jpg') }}">
-        </div>
-        <h3>Učíme Python</h3>
-        <ul class="list-labels">
-          <li><small>Facebook</small></li>
-        </ul>
-      </a>
-      <p>
-        Poptej mentora ve skupině pro lidi se zájmem vyučovat Python.
-      </p>
-    </li>
-    <li>
-      <a href="https://pyworking.cz/">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/pyworking.cz.jpg') }}">
-        </div>
-        <h3>PyWorking Sessions</h3>
-        <ul class="list-labels">
-          <li><small>setkání</small></li>
-        </ul>
-      </a>
-      <p>
-        Zastav se na pravidelná setkání začátečníků, kde jsou i koučové.
-      </p>
-    </li>
-    <li>
-      <a href="https://gismentors.cz/">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/gismentors.cz.jpg') }}">
-        </div>
-        <h3>GISMentors</h3>
-      </a>
-      <p>
-        Kontaktuj mentory vyučující jak si programováním pomoci v geografii.
-      </p>
-    </li>
-    <li>
-      <a href="https://github.com/lenadroid/awesome-oss-mentors#readme">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/github.com!lenadroid!awesome-oss-mentors!readme.jpg') }}">
-        </div>
-        <h3>Awesome OSS Mentors</h3>
-      </a>
-      <p>
-        Kontaktuj někoho z těch, kdo se sami nabízí zaučovat nováčky na OSS projektech.
-      </p>
-    </li>
-  </ul>
-  <div class="note side-note">
-    <p>
-      Pokud znáš někoho, kdo by mohl být tvým mentorem, ale nemá s tím praktické zkušenosti,
-      projděte spolu <a href="https://github.com/honzajavorek/become-mentor/blob/master/cs.md">tuto přednášku</a>
-      a prostě to zkuste!
-    </p>
-  </div>
 </section>
 
 <section id="skills">
@@ -517,6 +456,38 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
     Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to je
     a k čemu se to používá. Pokud o tom uslyšíš poněkolikáté, zkus si najít víc
     a pochopit základy.
+  </p>
+
+  <h3 id="workshops">Kde hledat workshopy?</h3>
+  <ul class="list">
+    <li>
+      <a href="https://www.czechitas.cz/cs/kalendar-akci">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/czechitas.cz!cs!kalendar-akci.jpg') }}">
+        </div>
+        <h3>Czechitas</h3>
+      </a>
+    </li>
+    <li>
+      <a href="https://engeto.cz/workshopy">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/engeto.cz!workshopy.jpg') }}">
+        </div>
+        <h3>Engeto</h3>
+      </a>
+    </li>
+    <li>
+      <a href="https://pyworking.cz">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/pyworking.cz.jpg') }}">
+        </div>
+        <h3>PyWorking</h3>
+      </a>
+    </li>
+  </ul>
+  <p class="note list-note">
+    Tento seznam je v abecedním pořadí. Pokud víš o dalším webu s workshopy,
+    piš na {{ 'ahoj@junior.guru'|email_link }}.
   </p>
 
   <h3 id="courses">Kde hledat kurzy?</h3>
@@ -582,41 +553,6 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
     Tento seznam je v abecedním pořadí. Pokud víš o dalším webu s kurzy,
     piš na {{ 'ahoj@junior.guru'|email_link }}.
   </p>
-
-  <h3 id="workshops">Kde hledat workshopy?</h3>
-  <ul class="list">
-    <li>
-      <a href="https://www.czechitas.cz/cs/kalendar-akci">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/czechitas.cz!cs!kalendar-akci.jpg') }}">
-        </div>
-        <h3>Czechitas</h3>
-        <ul class="list-labels">
-          <li><small>ženy</small></li>
-        </ul>
-      </a>
-    </li>
-    <li>
-      <a href="https://engeto.cz/workshopy">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/engeto.cz!workshopy.jpg') }}">
-        </div>
-        <h3>Engeto</h3>
-      </a>
-    </li>
-    <li>
-      <a href="https://pyworking.cz">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/pyworking.cz.jpg') }}">
-        </div>
-        <h3>PyWorking</h3>
-      </a>
-    </li>
-  </ul>
-  <p class="note list-note">
-    Tento seznam je v abecedním pořadí. Pokud víš o dalším webu s workshopy,
-    piš na {{ 'ahoj@junior.guru'|email_link }}.
-  </p>
 </section>
 
 <section id="events">
@@ -641,6 +577,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       </a>
       <p>
         Poznej komunitu Python programátorů ve svém okolí.
+        Pomohou, budou tě motivovat.
       </p>
     </li>
     <li>
@@ -686,20 +623,22 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       </p>
     </li>
   </ul>
+
+  <h3>Nebudu mimo mísu?</h3>
   <p>
     Všechny výše uvedené akce jsou vhodné i pro začátečníky a účastní se jich
     významné procento žen. Náplní těchto akcí jsou odborné přednášky pro různé
     úrovně znalostí a networking &mdash; povídání si s lidmi. Vždy se odehrávají
     v neformálním, pohodovém prostředí.
   </p>
-  <div class="note side-note">
-    <p>
-      Na konference je potřeba si koupit lístek. Výše zmíněné konference mají velmi
-      dostupné lístky se slevami (např. pro studenty), ale i tak je možné, že je
-      mimo tvé finanční možnosti se účastnit. Pro takový případ konference poskytují
-      „Financial Aid“ &mdash; finanční pomoc s lístkem, ubytováním nebo cestou.
-    </p>
-  </div>
+
+  <h3>Kde na to vzít?</h3>
+  <p>
+    Na konference je potřeba si koupit lístek. Výše zmíněné konference mají velmi
+    dostupné lístky se slevami (např. pro studenty), ale i tak je možné, že je
+    mimo tvé finanční možnosti se účastnit. Pro takový případ konference poskytují
+    „Financial Aid“ &mdash; finanční pomoc s lístkem, ubytováním nebo cestou.
+  </p>
 </section>
 
 <p class="call-to-action next">
