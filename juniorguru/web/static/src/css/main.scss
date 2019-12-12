@@ -141,11 +141,11 @@ main > header, .job > header {
   }
 }
 
-main > header, main > section, main > details {
+main > header, main > section {
   margin-bottom: $whitespace-3 * 2;
 }
 
-main > section, main > details {
+main > section {
   h2 {
     display: inline-block;
     background-color: $yellow;
@@ -154,37 +154,6 @@ main > section, main > details {
 
   h3 {
     margin-top: $whitespace-3;
-  }
-}
-
-main > details {
-  & > summary {
-    display: inline-block;
-    cursor: pointer;
-    list-style-type: none;
-    &::-webkit-details-marker, &::before { display: none; }
-
-    h2::after, h3::after {
-      display: inline;
-      content: "▸";
-      margin-left: $whitespace;
-    }
-  }
-
-  & > summary:hover,
-  & > summary:focus,
-  & > summary:active,
-  &[open] > summary {
-    h2, h3 {
-      background-color: $blue;
-      color: $white;
-    }
-
-    h2::after, h3::after {
-      content: "▾";
-      background-color: $blue;
-      color: $white;
-    }
   }
 }
 
@@ -253,18 +222,6 @@ body > header + hr {
 
 .note {
   @include font-0;
-}
-
-div.side-note {
-  background: $dots-black;
-  padding: $whitespace;
-  margin: $whitespace-3 0;
-
-  p {
-    padding: $whitespace ($whitespace + 0.3rem);
-    margin: 0;
-    background: $white;
-  }
 }
 
 figure.quote {

@@ -47,8 +47,8 @@ def test_job_requirement(requirement, expected):
 @pytest.mark.parametrize('type_,expected', [
     ('full-time', 'plný úvazek'),
     ('part-time', 'částečný úvazek'),
-    ('paid-internship', 'placená stáž'),
-    ('unpaid-internship', 'neplacená stáž'),
+    ('paid internship', 'placená stáž'),
+    ('unpaid internship', 'neplacená stáž'),
     ('volunteering', 'dobrovolnictví'),
     ('gargamel', 'gargamel'),
 ])
