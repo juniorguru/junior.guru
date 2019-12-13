@@ -8,9 +8,8 @@ from juniorguru.fetch import sheets
 
 @pytest.mark.parametrize('value,expected', [
     (None, None),
-    ('7/6/2019 20:24:03', datetime(2019, 7, 6, 20, 24, 3)),
-    ('8/30/2019 20:24:03', datetime(2019, 8, 30, 20, 24, 3)),
-    ('11/11/2019 20:24:03', datetime(2019, 11, 11, 20, 24, 3)),
+    ('12/13/2019 9:17:57', datetime(2019, 12, 13, 9, 17, 57)),
+    ('8/6/2019 14:08:49', datetime(2019, 8, 6, 14, 8, 49)),
 ])
 def test_coerce_timestamp(value, expected):
     assert sheets.coerce_timestamp(value) == expected

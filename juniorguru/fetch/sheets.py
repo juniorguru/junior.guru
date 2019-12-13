@@ -46,7 +46,7 @@ def coerce_boolean_words(value):
 
 def coerce_timestamp(value):
     if value:
-        return arrow.get(value.strip(), 'M/D/YYYY HH:mm:ss').naive
+        return arrow.get(value.strip(), 'M/D/YYYY H:m:s').naive
 
 
 def coerce_boolean(value):
