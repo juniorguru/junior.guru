@@ -2,7 +2,7 @@
 {% block title %}{{ job.title }} &mdash; {{ job.company_name }} &mdash; {{ job.location }}{% endblock %}
 
 {% block description -%}
-Pracovní nabídka pro začínající programátory: ‚{{ job.title }}‘ &mdash; {{ job.company_name }}, {{ job.location }}, {{ job.job_type|job_type }}.
+Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}, {{ job.job_type|job_type }}.
 {%- endblock %}
 
 {% block body_attrs %} class="page-job"{% endblock %}
