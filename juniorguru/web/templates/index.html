@@ -130,22 +130,22 @@ Nauč se programovat a získej svou první práci v IT
   </section>
 </aside>
 
-{% if articles|length %}
+{% if stories|length %}
 <hr>
-<section class="articles" id="articles">
-  <h2>
+<section class="stories" id="stories">
+  <h2 id="articles"><!-- preventing breaking old links to #articles -->
     Inspirativní příběhy
   </h2>
   <ul class="items">
-  {% for article in articles %}
+  {% for story in stories %}
     <li class="item-summary">
-      <a href="{{ article.url }}">
+      <a href="{{ story.url }}">
         <div class="item-summary-wrapper">
-          <h3>{{ article.title }}</h3>
+          <h3>{{ story.title }}</h3>
           <small class="item-summary-details">
-            {{ article.publisher }}
+            {{ story.publisher }}
             &mdash;
-            {{ article.date.month }}/{{ article.date.year }}
+            {{ story.date.month }}/{{ story.date.year }}
           </small>
         </div>
       </a>

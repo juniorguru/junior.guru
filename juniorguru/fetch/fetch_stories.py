@@ -2,7 +2,7 @@ from pathlib import Path
 
 from strictyaml import load, Map, Datetime, Url, Str, Seq
 
-from ..models import db, Article
+from ..models import db, Story
 
 
 schema = Seq(
@@ -15,15 +15,15 @@ schema = Seq(
 
 
 def main():
-    path = Path(__file__).parent.parent / 'data' / 'articles.yml'
+    path = Path(__file__).parent.parent / 'data' / 'stories.yml'
     records = [record.data for record in load(path.read_text(), schema)]
 
     with db:
-        Article.drop_table()
-        Article.create_table()
+        Story.drop_table()
+        Story.create_table()
 
         for record in records:
-            Article.create(**record)
+            Story.create(**record)
 
 
 if __name__ == '__main__':

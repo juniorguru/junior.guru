@@ -3,7 +3,7 @@ from datetime import datetime
 import arrow
 from flask import Flask, render_template, abort
 
-from ..models import db, Job, Article
+from ..models import db, Job, Story
 from .thumbnail import thumbnail
 
 
@@ -19,7 +19,7 @@ def index():
                            jobs_count=jobs_count,
                            companies_count=companies_count,
                            since=datetime.now() - datetime(2019, 10, 10),
-                           articles=Article.listing())
+                           stories=Story.listing())
 
 
 @app.route('/learn/')
