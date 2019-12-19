@@ -696,7 +696,7 @@ body.page-index {
     padding: 0;
   }
 
-  nav, aside, .articles {
+  nav, aside, .stories {
     @include page-width;
     padding-left: $whitespace;
     padding-right: $whitespace;
