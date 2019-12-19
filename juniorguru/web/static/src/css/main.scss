@@ -409,10 +409,10 @@ ul.list {
   }
 }
 
-ul.jobs {
+ul.items {
   box-sizing: border-box;
   list-style-type: none;
-  margin: (2 * $whitespace-3) 0;
+  margin: $whitespace-3 0;
   padding: 0;
 
   & > li {
@@ -427,7 +427,7 @@ ul.jobs {
   }
 }
 
-.job-summary {
+.item-summary {
   a {
     display: inline-block;
     padding: $whitespace-3;
@@ -452,7 +452,7 @@ ul.jobs {
   }
 }
 
-.job-summary-wrapper {
+.item-summary-wrapper {
   border-left: $whitespace solid $yellow;
   padding-left: $whitespace;
 
@@ -461,7 +461,7 @@ ul.jobs {
   }
 }
 
-.job-summary-details {
+.item-summary-details {
   padding: 0;
   margin: 0;
 }
@@ -532,41 +532,6 @@ ul.jobs {
   h2 .no-wrap {
     white-space: nowrap;
   }
-}
-
-.articles {
-  @include page-width;
-  padding-left: $whitespace;
-  padding-right: $whitespace;
-
-  ul, li, h3, p {
-    padding: 0;
-    margin: 0;
-  }
-
-  ul, li {
-    list-style-type: none;
-  }
-
-  li {
-    border-top: 1px solid $gray-light;
-    margin: 0;
-    padding: $whitespace-3;
-    padding-left: 0;
-  }
-
-  li:first-child {
-    border-top: none;
-  }
-
-  small {
-    display: block;
-  }
-}
-
-.article-wrapper {
-  border-left: $whitespace solid $yellow;
-  padding-left: $whitespace;
 }
 
 .call-to-action {
@@ -731,7 +696,7 @@ body.page-index {
     padding: 0;
   }
 
-  nav, aside {
+  nav, aside, .articles {
     @include page-width;
     padding-left: $whitespace;
     padding-right: $whitespace;

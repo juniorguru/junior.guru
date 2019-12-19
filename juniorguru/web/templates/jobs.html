@@ -32,13 +32,13 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
 
 <hr>
 <section>
-  <ul class="jobs">
+  <ul class="items">
   {% for job in jobs %}
-    <li class="job-summary" id="job-{{ job.id }}">
+    <li class="item-summary" id="job-{{ job.id }}">
       <a href="{{ url_for('job', job_id=job.id) }}">
-        <div class="job-summary-wrapper">
+        <div class="item-summary-wrapper">
           <h3>{{ job.title }}</h3>
-          <small class="job-summary-details">
+          <small class="item-summary-details">
             {{ job.company_name }}
             &mdash;
             {{ job.location }}

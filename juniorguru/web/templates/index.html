@@ -136,13 +136,19 @@ Nauč se programovat a získej svou první práci v IT
   <h2>
     Inspirativní příběhy
   </h2>
-  <ul>
+  <ul class="items">
   {% for article in articles %}
-    <li class="article">
-      <div class="article-wrapper">
-        <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
-        <p><small>{{ article.publisher }} &mdash; {{ article.date.month }}/{{ article.date.year }}</small></p>
-      </div>
+    <li class="item-summary">
+      <a href="{{ article.url }}">
+        <div class="item-summary-wrapper">
+          <h3>{{ article.title }}</h3>
+          <small class="item-summary-details">
+            {{ article.publisher }}
+            &mdash;
+            {{ article.date.month }}/{{ article.date.year }}
+          </small>
+        </div>
+      </a>
     </li>
   {% endfor %}
   </ul>
