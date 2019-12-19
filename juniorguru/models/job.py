@@ -18,15 +18,15 @@ class Job(BaseModel):
 
     @classmethod
     def listing(cls):
-        return Job.select() \
-            .where(Job.is_approved == True) \
-            .order_by(Job.timestamp.desc())
+        return cls.select() \
+            .where(cls.is_approved == True) \
+            .order_by(cls.timestamp.desc())
 
     @classmethod
     def newsletter_listing(cls):
-        return Job.select() \
-            .where(Job.is_approved == True, Job.is_sent == False) \
-            .order_by(Job.timestamp)
+        return cls.select() \
+            .where(cls.is_approved == True, cls.is_sent == False) \
+            .order_by(cls.timestamp)
 
     @classmethod
     def count(cls):
