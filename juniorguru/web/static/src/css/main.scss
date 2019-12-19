@@ -10,8 +10,12 @@ html, body {
 }
 
 
-html, a {
+html {
   color: $black;
+}
+
+a {
+  @include color-links($black, $blue);
 }
 
 h4, h3, h2, h1, html, body {
@@ -137,6 +141,7 @@ main > header, .job > header {
     a {
       white-space: nowrap;
       text-decoration: none;
+      @include color-links($black, $blue);
     }
   }
 }
@@ -154,12 +159,6 @@ main > section {
 
   h3 {
     margin-top: $whitespace-3;
-  }
-}
-
-a {
-  &:hover, &:focus, &:active {
-    color: $blue;
   }
 }
 
@@ -328,6 +327,10 @@ ul.list {
       background: $dots-black;
     }
 
+    a {
+      color: $black;
+    }
+
     & > a:hover, & > a:focus, & > a:active,
     &:hover > a, &:focus > a, &:active > a {
       background: none;
@@ -402,11 +405,7 @@ ul.list {
   color: $gray;
 
   a {
-    color: $gray;
-  }
-
-  a:hover, a:focus, a:active {
-    color: $blue;
+    @include color-links($gray, $blue);
   }
 }
 
@@ -535,6 +534,41 @@ ul.jobs {
   }
 }
 
+.articles {
+  @include page-width;
+  padding-left: $whitespace;
+  padding-right: $whitespace;
+
+  ul, li, h3, p {
+    padding: 0;
+    margin: 0;
+  }
+
+  ul, li {
+    list-style-type: none;
+  }
+
+  li {
+    border-top: 1px solid $gray-light;
+    margin: 0;
+    padding: $whitespace-3;
+    padding-left: 0;
+  }
+
+  li:first-child {
+    border-top: none;
+  }
+
+  small {
+    display: block;
+  }
+}
+
+.article-wrapper {
+  border-left: $whitespace solid $yellow;
+  padding-left: $whitespace;
+}
+
 .call-to-action {
   text-align: center;
   margin: $whitespace-2 0 $whitespace-3 0;
@@ -660,6 +694,10 @@ body.page-job > header li:nth-child(3) a {
 footer {
   padding: 0 $whitespace;
   padding-bottom: $whitespace-3;
+
+  a {
+    @include color-links($black, $blue);
+  }
 
   &, a {
     @include font-0;

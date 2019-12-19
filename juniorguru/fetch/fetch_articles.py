@@ -10,7 +10,6 @@ schema = Seq(
         'url': Url(),
         'date': Datetime(),
         'title': Str(),
-        'description': Str(),
     })
 )
 

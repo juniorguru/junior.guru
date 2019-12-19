@@ -1,29 +1,23 @@
 - url: https://medium.com/@misasebestova/m%C5%AFj-prvn%C3%AD-datov%C3%BD-hackathon-6f753a4730cf
   date: 2018-12-02
-  title: Můj první datový hackathon
-  description: Michaela „zapudila strach“ a přihlásila se na datový hackathon pro začátečníky
+  title: „Zapudila strach“ a přihlásila se na datový hackathon pro začátečníky
 
 - url: https://www.flowee.cz/floweecity/smart-cities/7077-vyplati-se-z-vestibulu-bezet-na-metro-reknou-vam-to-tabule-i-stavajici-aplikace
   date: 2019-09-08
-  title: Dopravní podnik se chystá osadit prvních pět vestibulů metra chytrými tabulemi, které vám řeknou, kdy vám přijede souprava. Aplikace Metroji už to umí, ale vychytává mouchy. Co to takhle spojit?
-  description: Student práv se naučil programovat a vytvořil aplikaci, která lidem pomáhá stihnout metro
+  title: Student práv vytvořil aplikaci, pomáhá lidem stihnout metro
 
 - url: https://www.czechcrunch.cz/2019/10/z-nemocnice-do-globalniho-technologickeho-startupu-jak-se-z-mlade-zdravotni-sestry-stala-uspesna-vyvojarka
   date: 2019-10-30
-  title: Z nemocnice do globálního technologického startupu. Jak se z mladé zdravotní sestry stala úspěšná vývojářka
-  description: Příběh zdravotní sestry z Děčína, která dnes pracuje jako vývojářka
+  title: Zdravotní sestra z Děčína dnes pracuje jako vývojářka
 
 - url: https://artalk.cz/2019/04/30/andreas-gajdosik-casto-slychavam-otazku-co-je-na-tom-za-umeni/
   date: 2019-04-30
-  title: "Andreas Gajdošík: Často slýchávám otázku „Co je na tom za umění?“"
-  description: Programování může být způsob, jak dělat umění.
+  title: Prestižní ocenění pro umělce, který spojuje umění a programování
 
 - url: https://www.imysleni.cz/clanky/rozhovor/220-ivana-brabcova-doktorka-ktera-porada-kurzy-v-pythonu
   date: 2019-10-23
-  title: Ivana Brabcová - doktorka, která pořádá kurzy v Pythonu
-  description: Programování se může hodit i doktorce.
+  title: Doktorka díky programování lépe diagnostikuje rakovinu
 
 - url: https://blog.python.cz/ja-python-a-rosti
   date: 2017-01-22
-  title: Já, Python a Roští
-  description: Pouť od mimo jiné skladníka k programátorovi
+  title: Stal se z (mimo jiné) skladníka programátorem
