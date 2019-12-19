@@ -57,26 +57,16 @@ jobs:
           at: "~"
       - run: pipenv run test -v
 
-  fetch:
+  fetch-build:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: pipenv run fetch
+      - run: pipenv run fetch && pipenv run build
       - persist_to_workspace:
           root: "~"
           paths:
               - project/juniorguru/data
-
-  build:
-    executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run: pipenv run build
-      - persist_to_workspace:
-          root: "~"
-          paths:
               - project/build
 
   check-anchors:
@@ -129,22 +119,19 @@ workflows:
       - test:
           requires:
             - install
-      - fetch:
+      - fetch-build:
           requires:
             - install
-      - build:
-          requires:
-            - fetch
       - check-anchors:
           requires:
-            - build
+            - fetch-build
       - check-links:
           requires:
-            - build
+            - fetch-build
       - deploy:
           requires:
             - test
-            - build
+            - fetch-build
             - check-anchors
 
   nightly_workflow:

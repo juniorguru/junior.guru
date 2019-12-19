@@ -79,3 +79,11 @@ $whitespace-3: 3.4rem;
     @include skew(-15deg);
   }
 }
+
+@mixin color-links($color, $color-hover) {
+  color: $color;
+
+  &:hover, &:focus, &:active {
+    color: $color-hover;
+  }
+}

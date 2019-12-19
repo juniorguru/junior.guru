@@ -67,6 +67,7 @@ Nauč se programovat a získej svou první práci v IT
     </p>
   </section>
 </nav>
+
 <hr>
 <section class="jobs-teaser call-to-action">
   <h2>
@@ -83,6 +84,7 @@ Nauč se programovat a získej svou první práci v IT
     <a href="{{ url_for('jobs') }}" class="button">Procházet nabídky</a>
   </p>
 </section>
+
 <hr>
 <aside>
   <section class="juniors">
@@ -127,4 +129,29 @@ Nauč se programovat a získej svou první práci v IT
     </div>
   </section>
 </aside>
+
+{% if articles|length %}
+<hr>
+<section class="articles" id="articles">
+  <h2>
+    Inspirativní příběhy
+  </h2>
+  <ul class="items">
+  {% for article in articles %}
+    <li class="item-summary">
+      <a href="{{ article.url }}">
+        <div class="item-summary-wrapper">
+          <h3>{{ article.title }}</h3>
+          <small class="item-summary-details">
+            {{ article.publisher }}
+            &mdash;
+            {{ article.date.month }}/{{ article.date.year }}
+          </small>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+{% endif %}
 {% endblock %}

@@ -10,8 +10,12 @@ html, body {
 }
 
 
-html, a {
+html {
   color: $black;
+}
+
+a {
+  @include color-links($black, $blue);
 }
 
 h4, h3, h2, h1, html, body {
@@ -137,6 +141,7 @@ main > header, .job > header {
     a {
       white-space: nowrap;
       text-decoration: none;
+      @include color-links($black, $blue);
     }
   }
 }
@@ -154,12 +159,6 @@ main > section {
 
   h3 {
     margin-top: $whitespace-3;
-  }
-}
-
-a {
-  &:hover, &:focus, &:active {
-    color: $blue;
   }
 }
 
@@ -328,6 +327,10 @@ ul.list {
       background: $dots-black;
     }
 
+    a {
+      color: $black;
+    }
+
     & > a:hover, & > a:focus, & > a:active,
     &:hover > a, &:focus > a, &:active > a {
       background: none;
@@ -402,18 +405,14 @@ ul.list {
   color: $gray;
 
   a {
-    color: $gray;
-  }
-
-  a:hover, a:focus, a:active {
-    color: $blue;
+    @include color-links($gray, $blue);
   }
 }
 
-ul.jobs {
+ul.items {
   box-sizing: border-box;
   list-style-type: none;
-  margin: (2 * $whitespace-3) 0;
+  margin: $whitespace-3 0;
   padding: 0;
 
   & > li {
@@ -428,7 +427,7 @@ ul.jobs {
   }
 }
 
-.job-summary {
+.item-summary {
   a {
     display: inline-block;
     padding: $whitespace-3;
@@ -453,7 +452,7 @@ ul.jobs {
   }
 }
 
-.job-summary-wrapper {
+.item-summary-wrapper {
   border-left: $whitespace solid $yellow;
   padding-left: $whitespace;
 
@@ -462,7 +461,7 @@ ul.jobs {
   }
 }
 
-.job-summary-details {
+.item-summary-details {
   padding: 0;
   margin: 0;
 }
@@ -661,6 +660,10 @@ footer {
   padding: 0 $whitespace;
   padding-bottom: $whitespace-3;
 
+  a {
+    @include color-links($black, $blue);
+  }
+
   &, a {
     @include font-0;
   }
@@ -693,7 +696,7 @@ body.page-index {
     padding: 0;
   }
 
-  nav, aside {
+  nav, aside, .articles {
     @include page-width;
     padding-left: $whitespace;
     padding-right: $whitespace;
