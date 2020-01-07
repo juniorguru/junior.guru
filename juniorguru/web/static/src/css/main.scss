@@ -894,6 +894,17 @@ body.page-index {
       }
     }
   }
+
+  @media screen and (min-width: 700px) {
+    .stories ul {
+      column-count: 2;
+      column-gap: 2.1rem;
+    }
+
+    .stories li {
+      border: none;
+    }
+  }
 }
 
 body.page-jobs, body.page-job {
