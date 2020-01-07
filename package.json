@@ -1,5 +1,8 @@
 {
   "name": "juniorguru",
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "instant.page": "3.0.0"
   },
