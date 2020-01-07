@@ -532,6 +532,15 @@ ul.items {
   h2 .no-wrap {
     white-space: nowrap;
   }
+
+  .advice {
+    margin-top: $whitespace-3;
+
+    strong {
+      padding: ($whitespace-0 / 4) ($whitespace / 1.5);
+      background: $yellow;
+    }
+  }
 }
 
 .call-to-action {
@@ -889,19 +898,19 @@ body.page-index {
     @media screen and (min-width: $grid-breakpoint) {
       .cartoon {
         display: block;
-        width: 10rem;
+        width: 8rem;
         margin-top: 0;
       }
     }
   }
 
   @media screen and (min-width: 700px) {
-    .stories ul {
+    .stories ul.items {
       column-count: 2;
       column-gap: 2.1rem;
     }
 
-    .stories li {
+    .stories ul.items li {
       border: none;
     }
   }
