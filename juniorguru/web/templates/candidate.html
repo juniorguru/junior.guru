@@ -1,0 +1,334 @@
+{% extends 'base.html' %}
+{% block title %}Jak se připravit na hledání první práce v IT{% endblock %}
+
+{% block description -%}
+Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro to, aby tě někde přijali?
+{%- endblock %}
+
+{% block body_attrs %} class="page-candidate"{% endblock %}
+
+{% block main %}
+<header>
+  <h1>Jak se připravit na hledání práce</h1>
+  <p>
+    <img src="{{ url_for('static', filename='images/chick3.svg') }}">
+    Znáš <a href="{{ url_for('learn') }}">základy</a> a máš <a href="{{ url_for('practice') }}">praxi</a>?
+    {{ self.description() }}
+  </p>
+
+  <div class="toc">
+    <h2>Obsah</h2>
+    <ul>
+      <li><a href="#when">Kdy mohu začít hledat?</a></li>&#32;
+    </ul>
+  </div>
+</header>
+
+<section id="when">
+  <h2>Kdy mohu začít hledat?</h2>
+</section>
+
+<!--
+## Kdy mohu začít hledat?
+
+### Jaké potřebuji minimální znalosti k získání první práce?
+
+git a linux bash
+
+Kurz je dobrý a pravděpodobně nutný start, ale větší školou jsou reálné kodérské projekty.
+
+Uměl jsem HTML, CSS, Python, trochu JS trochu C, trochu SQL.
+
+konverze z Pythonu na JavaScript docela jde - jazyky jsou přenositelné
+
+neučte se nic dalšího (myšleno kopec dalších technologií, které aktuálně nevyužijete),
+udělejte si svůj vlastní projekt - hned po PyLadies (lepší vědět aspoň něco lehce do hloubky,
+než vlastně nic hodně do šířky), z pohovoru zjistete co se ucit dal
+
+jaké minimální znalosti jsou potřebné k získání juniorské práce
+Jaké ještě měli projekty svoje, a jesli po vas chtěli nějaký vstupní projekt
+Jake jste uměli při hledání práce technologie
+Mluvil jsem se spoustou lidí, kteří programování učí, a odpověď byla taková, že se stačí naučit základy. Dokonce jsem se setkal s názorem, že stačí jenom chtít a být zapálený pro věc. Tak jsem se naučil základy Pythonu, OOP, HTML/CSS a nyní začínám studovat Django.
+Nicméně sám mám pocit, že z programování toho umím ještě celkem málo na to, abych se připojil k nějakému fungujícímu týmu.
+Udělej nějaký showcase projekt, dej ho na github a jsi ready to go...
+Zkušenosti získáte aktivně na projektech. Ne tím, že se nejprve něco nabichlujete.
+
+Me osobne prijde, ze nejlepsi zpusob jak "se to naucit" je najit si problem(y) ktery te tizi, a zkusit s tim neco udelat. Zacnes od drobnosti (ano, na zacatku je tezky zjistit, co je drobnost, ale to je soucast procesu uceni se) typu "rucne neco opakovane pisu do excelu, tak si na to udelam program", nebo "hraju onlinovku a zajima me jak optimalne utracet zdroje a posilat vojacky do bitvy" (hmm, existuje vubec jeste fenomen veic jako Duna online a tak? Citim se starej), pak si zkusis napsat treba jednoduchou skakacku, nebo neco co ti pomuze ucenim se treba ciziho jazyka. Zjistis ze existuje neco jako sit a internet, tak si zkusis k ty skakacce treba pripsat druhyho hrace ovladanyho po siti...
+
+A prvni "prace jako programator" - muzu ti rict jen za sebe, ocima velkyho korporatu. Me vicemene vubec nezajima (OK do urcite miry, zakladni znalosti algoritmizace jsou zasadni) kdo co vystudoval, ale predevsim to jak premysli, a jaky ma svoje vlastni projekty. Pokud za mnou prijde cerstvej inzenyr, s tim ze nema nic nez skolni projekty a diplomku, tak je pro me min zajimavej, nez stredoskolak co muze ukazat nejaky svoje vlastni veci. Na tom totiz (opet muj osobni bias) nejlip poznam co je zac. A nemusi to byt nic super specialniho, jeden z mych skvelych kolegu v praci k nam prisel s tim ze psal dokumentaci (coz je prekvapive narocna technicka prace, i kdyz to tak nezni) a jediny co naprogramoval byly nejaky skriptiky co mu pomahaly ve skole s udrzovanim dochazky a hodnoceni.
+
+"jak dlouho" se bohuzel neda rict, "co" jsou za me osobne projekty pro vlastni potrebu, ktery graduji ve slozitosti/narocnosti.
+
+```
+Ahoj,sice v IT ještě nepracuji, ale dovolím si napsat :-) Je mi 32 a jsem na rodičovské, již 5 let doma, jinak jsem pracovala jako účetní. Ve 30 jsem se rozhodla změnit kariéru a začala chodit na kurzy Pyladies a Czechitas. Hrozně mě to baví a nejradši bych u počítače strávila 24h denně. Nejvíc umím python, začátečnický kurz, pak pokročilejší knihovny, a roční projekt kdy jsme deskovku zpracovali jako pc hru. Ale stále jsem totální začátečník, mám nějaké malé základy SQL, HTML, práce s GIT, pak 3měsíční kurz C#. A s těmito znalostmi/neznalostmi jsem si teď začala hledat práci. Tak jsem zvědavá jak to půjde, vidím to na QA Engineer jako první možnou práci, dokonce na linkedinu přišla i nějaká nabídka aniž bych aktivně sháněla, což povzbudí :-D Prostě jestli tě to baví, uč se uč, čas nepočítej, začít se dá v každém věku :-
+```
+
+https://www.benfrederickson.com/github-wont-help-with-hiring/
+
+
+### Jak dlouho trvá tyto minimální znalosti nabýt?
+
+Půl rok intenzivního učení a mezitím asi dva měsíce intenzivní hledání práce.
+
+"jak dlouho" se bohuzel neda rict, "co" jsou za me osobne projekty pro vlastni potrebu, ktery graduji ve slozitosti/narocnosti.
+
+Jak dlouho jste se učily doma (h/den)a za jak dlouho jste dostali praci (měsíců)
+
+Ta druha pulka je hrozne individualni, a IMO se ani tak nemeri na cas, jako na mnozstvi (nejlepe ruznych) projektu napric spektrem od statickyho webisku, pres Algoritmy 101 (ono se to nezda, ale je dobry vedet ze existuje neco jako slozitost, treba :D), zpracovani dat, po 3d renderovaci engine nebo interpret/kompilator nejakyho jednoduchyho jazyka (a to jsme ani nesahli napriklad na hardware).
+
+
+## Co po mě budou firmy chtít?
+
+https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html
+
+hledaji lidi inspirovane, chteji videt ze tu praci FAKT CHCES, je to vic nez 100% match ve znalostech
+
+attitude je vic nez hard skills
+motivovany clovek, ktery to prinese i k nim do tymu
+
+
+### Co přesně znamená "junior"?
+
+Ono většinou to odmítnutí není „tebou“. Často si firmy pod junior představujou někoho samostatnýho, kdo toho jen umí míň a dýl mu to trvá, což většinou není někdo, kdo hledá první práci v oboru.
+
+nekdy chteji vic seniorni lidi - zeptat se na staz
+nekdy se zmeni podminky firmam pod rukama a i kdyz hledali juniora, najednou chteji vic seniornejsi osobu - zeptat se na staz (vetsinou nejdou nikde vyhledat verejne)
+
+### Potřebuji VŠ?
+
+Jaké ještě měli predchozi zkušenosti (prace,koníček)
+
+
+### Záleží na věku?
+
+Kolik Vam bylo když jste zaceli programovat
+
+
+### Které firmy z nedostatku programátorů berou každého, kdo má zájem?
+
+Ahoj, zajímalo by mě, kdo jsou ty firmy, které z nedostatku programátorů berou každého, kdo má jen zájem.
+nikomu moc nechce zaučovat juniora, a chtějí alespoň rok praxe
+
+### Proč pozice pro juniory vypisují hlavně velké firmy?
+
+je super pracovat v malé firmě, protože tvůj hlas je slyšet
+
+
+## Jaký typ práce mám očekávat?
+
+...
+
+### Jaký plat mám očekávat?
+
+jakou hodinovku mohu očekávat (na IČ)?
+
+https://blog.smitio.com/clanek-mzdy-v-it-podle-smitia
+
+Buď sebevědomá, ale měj pokoru. Jsi junior a ne hotovy programátor. Budeš se muset ještě hodně učit. Mas na to dostat práci, ale sklon hlavu a příjmi menší plat nebo méně atraktivni práci než vysloužili programátoři - zacinas!
+
+
+### Mohu jako junior pracovat externě nebo na dálku?
+
+Neni to uplne k otazce ale doporucuju ti jit normalne do kanclu a mit ty "schopnejsi" lidi okolo sebe nez delat externe, IMO ti to da vice nez neco bastlit doma a pak jednou za tyden dostat cocku po skypu nad code review :D Ale jinak pokud zvladnes napsat nejakou CRUD aplikaci a neni to vylozene bastl tak bych se nebal nekde uchazet o misto, zbytek pochytis praxi :))
+
+mohu potvdit, jako junior delam z domu aje to copruz, delam to tak ze pak delam hodne nadcasu kde se to snazim dobehnout, aby to nevypadalo ze delam tak pomalu... na zacatku je dobre bejt v kolektivu. popravde ale v praci kde delam stejne neni kolektiv takze si stejne nevyberu, sem li sam v kanclu nebo doma. CRUD uz zvladnu v pohode ale trvalo to... jinak fandim a drzim palce.
+
+Spravny cas, hledat praci jako externi programator, je tehdy, kdy umis samostatne resit ulohy, ktere ti budou zadane. Mit cloveka, ktery se v technologii neorientuje, a mit ho jeste externe, je peklo.
+
+
+### Jak fungují stáže?
+
+Ahoj, chtěl jsem se zeptat jestli někdo nedělá stáže ve firmách pro úplné začátečníky kteří by chtěli získat trochu praxe a podívat se jak to vlastně v takových firmách chodí. Jsem z Brna a vím že něco podobného tu bylo nedávno pro Prahu. Díky za tipy.
+
+```
+Já teda nevím, ale myslím si tohle: stáže vyloženě skoro nikdo nevypisuje, protože pak na ty inzeráty bude psát hromada jantarů a kdo se s tím má babrat. HR oddělení má na práci hromadu jiných věcí, a senioři/team leadeři taky nemají moc čas tohle řešit. Ale často se stává, že se někdo nějak objeví (už jsem viděl stážisty a stážistky nalezené/dohozené přes bratrance, klienty, na plesu, při blablacar spolujízdě) a když si pak někdo konkrétní v té firmě řekně "proč ne, tenhle člověk vypadá inteligentně, jsem tomu ochoten věnovat trochu energie", tak se to dá dohromady.
+
+Je dobře, že se ptáš i tu na FB, vlastně to je začátek přesně té aktivity, kterou ti tu radím :) Jen jsem chtěl napsat něco k tomu, že lidi hledají takovéto stáže a nemůžou je moc najít (googlením).
+
+V Praze na Pyvu je někdy vyloženě "pracovní burza" - lidi, co hledají nebo nabízí práci si stoupnou, představí a odprezentují se (krátce). Teď nevím, jestli to dokonce od Brna není opsané?
+
+Pokud studuješ VŠ, tak bývají nástěnky, poradenská centra, job veletrhy, webové stránky studentských spolků, webové stránky nebo i offline prezentace výzkumných pracovních skupin, v neposlední řadě spolužáci, cvičící, přednášející...
+```
+
+Markéta Mužíková Koukej se po internshipech. Bohuzel to neni 100 %, ale jsou takovy, kdy hledaj klidne nekoho bez praxe, s tim, ze te zacvici a po nejaky dobe se rozhodnou, jestli te vezmou (vetsinou jo, kdyz do tebe investovali cas a nejsi uplne marnej). Takhle jsme to meli my, ale pak nas koupila firma, co dela polovodice a nevi (a nenechaj si poradit), jak to chodi v software firmach, takze po lidech chtej titul z IT🙄A praxi. A to delame mainframe, kde nikdo moc nepracuje a pracovat nechce...
+
+nekdy se zmeni podminky firmam pod rukama a i kdyz hledali juniora, najednou chteji vic seniornejsi osobu - zeptat se na staz (vetsinou nejdou nikde vyhledat verejne)
+
+networking!
+
+staz - zkusis, naucis se, praxe, brigada na leto
+
+navod na staze, automation, ...
+brigády na léto
+
+akce firem pro zacatecniky
+    https://pythonweekend.cz/
+    https://blog.seznam.cz/stitek/vyvojari/
+
+
+## Vyplatí se začít jako QA, tester(ka), technická podpora, apod.?
+
+posilit tech background pres podobne prace (tech support, QA)
+
+Nesahám hned po práci developera, protože jsem si vědom, že k tomu mi chybí dost znalostí a zkušeností, ale práce testera mě zajímá, protože jsem se dočetl a doslechl, že je to správnej entry level pro začínající programátory.
+
+Pokud už nešli dělat po škole (kde je to 50:50 jestli s IT něco měla nebo neměla společnýho) vývojáře, tak cesta tester > developer je určitě možná, ale spíš méně obvyklá, lidi mimo IT šli rovnou dělat vývojáře. Aspoň ti, co tu jsou a odpověděli.
+
+nastoupila jsem jako tester. Je možné, že se časem potkám s automatickými testy přes Python, což by bylo skvělé, protože Python zas až tak rozšířený v komerčních firmách není.
+
+Určitě se vrhnout směrem na automatizované testy, na ně se hledá spousta lidí, zkusit si něco naprogramovat v knihovně Selenium, trochu se podívat, jak se dělají webové stránky, aby člověk rozuměl tomu, jak se odchytávají prvky na stránce.... vyplatí se naučit cokoliv navíc
+
+```
+Vím o tom, sledoval jsem to. Já nevím jestli se ale můžu považovat za developera, když jsem si v procesu učení naprogramoval tictactoe nebo hangmana - spíš ne, takže pozice tester mi v tomto směru přišla jako dobrá cesta, kde ten přerod v developera je možná pomalej, ale stále tam je.
+
+Dalším plusem pak je, že se budu pohybovat v prostředí, kde developeři pracují a budu s nimi komunikovat (možná si to idealizuju?).
+
+Největším smyslem by samozřejmě bylo vytvoření si projektu, který by mi pomáhal prohlubovbat znalosti prog. jazyka, ale momentálně jsem v situaci, kdy si hledám práci a tester je pro mě osobně entry level jako pro člověka, který nemá background v IT ale v kultuře.
+
+---
+
+Neříkám, že to není cesta, ale zároveň říkám, že jestli nechceš fakt dělat testera, tak zkus najít vývojářskou práci rovnou.
+
+Prostě většina vývojářů přes testera fakt neprošla a dokonce ne ani přes školu, na IT zaměřenou…
+
+Nevím odkud si, ale stav se na Pyvu, pokud můžeš a probereš to s těma lidma z IT.
+```
+
+co je fajn na QA? Hledat chyby druhých lidí je super
+testování NENÍ entrypoint pro vývoj
+QA potřebují jiný skillset, než vývojář
+čím horší je charakter člověka na QA, tím lepší pro výsledný projekt
+
+
+## Vyplatí se začít v operations, SRE, nebo jako automation engineer?
+
+Já bych doporučila na začátek zkusit práci automation inženýra. Jsou to většinou jednodušší, menší projekty, na kterých se dají pobírat zkušenosti a pak bych až zkusila programátorskou pozici 🙂
+
+
+## Jak se mám připravit na hledání práce?
+
+Máš nějakou představu o oboru, ve kterém bys chtěl dělat? Web, data, hry, ops, ...?
+
+zorientovat se, IT svet je velky, mit prehled co presne z toho sveta chtit delat, kde ziskat prehled?
+
+zkouset to, chodit co nejvic, ucit se v prubehu
+posilit tech background pres podobne prace (tech support, QA)
+
+pripravit si seznam konkretni veci, ktere jsou pro tebe dulezite, a ten si odskrtavat u kazde nabidky, nehledat naslepo "neco", nenechat se zviklat a hledat, vydrzet i kdyz mesic shanim a neni to
+
+vedet co chci, nezapominat na checklist a na sebe
+
+Buď sebevědomá, ale měj pokoru. Jsi junior a ne hotovy programátor. Budeš se muset ještě hodně učit. Mas na to dostat práci, ale sklon hlavu a příjmi menší plat nebo méně atraktivni práci než vysloužili programátoři - zacinas!
+
+https://yangshun.github.io/tech-interview-handbook/
+
+https://welearncode.com/career-advice/
+https://twitter.com/ASpittel/status/1214979863683174400
+
+nebojte se chodit na pohovory, i když na to nemáte
+když je v inzerátu něco, co chceš dělat, i dkyž to neumíš, stejně tam běž
+neboj se říci si o feedback z pohovoru
+nepodceňujte se, v inzerátech je ideál, abyste zjistili, co se na té pozici skutečně chce
+budte drze, fakt
+* muž potřebuje ~60% znalostí, aby se odhodlal jít na pohovor
+* žena potřebuje ~115% znalostí, aby se odhodlala jít na pohovor
+* zahoďte předsudky, že tohle žena nemůže udělat
+* i PyLadies nekdy stačí k tomu to jít někam zkusit
+
+
+### Otázky
+
+https://dev.to/macmacky/70-javascript-interview-questions-5gfi?utm_campaign=Juniors%20in%20Tech&utm_medium=email&utm_source=Revue%20newsletter
+
+brat si vsude notysek a zapisovat si veci, ktere nevim a doma se na ne po kazdem pohovoru podivat, learn from interviews
+
+priprav si svoje otázky https://github.com/viraptor/reverse-interview
+
+https://twitter.com/ASpittel/status/1214979863683174400
+
+říkej pravdu a dosteneš se tam, kde chceš
+
+
+### Životopis
+
+linkedin
+
+https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html
+
+
+### Projekt
+
+https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html
+
+Nikdo dnes neodpovídá na inzerát bytu, když nemá fotky.
+
+dat neco na github, uplne cokoliv, priklady z codewars, nemusi to byt vazny projekt, ukazky kodu, oni si aspon udelaji predstavu co te maji naucit, treba projekt z #project na /practice/
+
+udělejte si vlastní projekt, "hele, tohle jsem udělala" - dělá dobrý dojem na pohovoru
+
+kecat dokáže každý "rád se učím", aspoň něco ukázat vlastního, že nekecá naprázdno
+
+
+### Projev aktivitu
+
+There are meetups and conferences where you can give presentations as a junior. That’s a fast way to impress some folks and pick up referrals. My first non-internship job was got that way at Ohio LinuxFest.
+
+Open Source (docs, triaging, ...)
+
+organizing meetups, courses, conferences, ... coaching at pyladies, czechitas, ...
+
+Muj citat o tom, ze jsem se naucil python tim, ze jsem zalozil pyvo v brne
+
+### Tým
+
+diversity
+red flags
+bude se o me nekdo starat? venovat se mi? <-- strasne dulezity
+lunch round - setkani s tymem, jak si sednete, kultura prijemna pro novacka?
+
+když ti nesedne kolektiv, neboj se to zkusit jinde
+
+
+## Jak zvládnout odmítnutí?
+
+10+ pohovoru bezne
+10+ pohovoru nebo pokusu (screening nebo 3-4. kolo), 1.5 mesice hledani prace na fulltime
+
+ne neznamena spatne, ale ze existuje jina cesta, treba i lepsi - kdyz se nedari, obratit to ve svuj prospech (nedostala do pyladies, tak zalozila svoje)
+
+nebrat to jako odmitani, jde i o me, nejsme kompatibilni, bylo by z toho jen mrzeni, setrime si cas, nejen firma se rozhoduje ale i ty, nemuzes brat prvni nabidku muze to byt ztrata casu, nerozhodovat se ve stresu
+
+brat to optimisticky, ucim se tim, neni to FAIL, je to nejaky stav mezi tebou a konkretni firmou
+
+brat si vsude notysek a zapisovat si veci, ktere nevim a doma se na ne po kazdem pohovoru podivat, learn from interviews
+
+
+## Kde mám hledat?
+
+job boardy
+
+Go to meetups, meet people, tell them that you're looking. If they have openings, they'll let you know and refer you. Complete strangers have referred me to jobs either out of the goodness of their heart or for the referral bonus. Everyone knows that referrals are the ONLY way in these days, so talk to people and be personable.
+
+I would hear this type of thing a lot when I was an instructor at a bootcamp. I would say, "Ok, but how many meetups have you been to or other social events? And when you're there, do you just talk to other bootcamp alumns the whole time?"
+
+Networking is how you get jobs
+
+junior.guru
+
+
+### Recruiters
+
+muzes to zkusit, ale pravdepodobne ti recruiter spis uskodi nez pomuze, aspon v ceskem prostredi - je tam provize a firme se musi vyplatit provizi zaplatit - junior ma hodnotu nula dokud se z nej neco nevyklube, naopak se do nej musi investovat, takze junior pres recruitera muze mit i mensi sanci nez kdyz napise do firmy sam bez prostrednika
+
+Doporucovat personalky jako 3queens nebo BIG
+
+
+dalsi zdroje: https://opracivit.czechitas.cz/, engeto
+-->
+
+<p class="call-to-action next">
+  <a href="{{ url_for('jobs') }}" class="button">Hurá na nabídky práce!</a>
+</p>
+
+{% endblock %}
+

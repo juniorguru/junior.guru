@@ -35,6 +35,12 @@ def practice():
                            thumbnail=thumbnail(title='Jak získat praxi v\u00a0programování'))
 
 
+@app.route('/candidate/')
+def candidate():
+    return render_template('candidate.html',
+                           thumbnail=thumbnail(title='Jak najít první práci v IT'))
+
+
 @app.route('/jobs/')
 def jobs():
     with db:
