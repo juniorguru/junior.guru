@@ -50,6 +50,7 @@ def job_requirement(requirement):
 TYPES_MAPPING = {
     'full-time': 'plný úvazek',
     'part-time': 'částečný úvazek',
+    'internship': 'stáž',
     'paid internship': 'placená stáž',
     'unpaid internship': 'neplacená stáž',
     'volunteering': 'dobrovolnictví',

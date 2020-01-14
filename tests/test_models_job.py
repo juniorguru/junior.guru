@@ -21,7 +21,7 @@ def create_job(id, **kwargs):
         id=str(id),
         timestamp=kwargs.get('timestamp', datetime(2019, 7, 6, 20, 24, 3)),
         company_name=kwargs.get('company_name', 'Honza Ltd.'),
-        job_type=kwargs.get('job_type', 'paid internship'),
+        job_type=kwargs.get('job_type', 'internship'),
         title=kwargs.get('title', 'Junior Software Engineer'),
         company_link=kwargs.get('company_link', 'https://example.com'),
         email=kwargs.get('email', 'recruiter@example.com'),
