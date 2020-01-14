@@ -25,7 +25,6 @@ def index():
 @app.route('/learn/')
 def learn():
     return render_template('learn.html',
-                           year=arrow.utcnow().year,
                            thumbnail=thumbnail(title='Jak se začít učit programovat'))
 
 
@@ -83,7 +82,9 @@ def privacy():
 
 @app.context_processor
 def inject_defaults():
-    return dict(updated_at=arrow.utcnow(),
+    now = arrow.utcnow()
+    return dict(year=now.year,
+                updated_at=now,
                 thumbnail=thumbnail())
 
 

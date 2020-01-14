@@ -667,8 +667,7 @@ body.page-job > header li:nth-child(3) a {
 }
 
 footer {
-  padding: 0 $whitespace;
-  padding-bottom: $whitespace-3;
+  padding: 0;
 
   a {
     @include color-links($black, $blue);
@@ -697,6 +696,54 @@ footer {
     p {
       text-align: center;
     }
+  }
+}
+
+.address-wrapper {
+  padding: 0 $whitespace;
+}
+
+.author {
+  background: $black;
+  margin-top: 2 * $whitespace-3;
+  text-align: left;
+  color: $white;
+  @include font-0;
+
+  a {
+    @include color-links($white, $white);
+  }
+}
+
+.author-wrapper {
+  @include page-width;
+  padding: $whitespace-3 $whitespace;
+}
+
+.author img {
+  display: block;
+  margin-right: $whitespace;
+  margin-top: $whitespace / 2;
+  float: left;
+  width: 3 * $whitespace-3;
+  min-width: 3 * $whitespace-3;
+}
+
+.author p {
+  margin: 0;
+  min-width: 0;
+  text-align: left;
+}
+
+@media screen and (min-width: 650px) {
+  .author-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .author img {
+    float: none;
   }
 }
 
