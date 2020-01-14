@@ -78,7 +78,7 @@ def test_coerce_record():
         'title': 'Frontend Ninja',
         'description': None,
         'location': 'Prague',
-        'job_link': 'https://jobs.example.com/1245/',
+        'link': 'https://jobs.example.com/1245/',
         'is_approved': False,
         'is_sent': True,
     }

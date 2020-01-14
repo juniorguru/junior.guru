@@ -29,9 +29,15 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
   {{ job.description|md }}
 
   <div class="call-to-action">
-    <p class="button">
-      Máš zájem? Napiš na<br><small>{{ job.email|email_link }}</small>
-    </p>
+    {% if job.link %}
+      <a class="button" href="{{ job.link }}">
+        Mám zájem!
+      </a>
+    {% else %}
+      <p class="button">
+        Máš zájem? Napiš na<br><small>{{ job.email|email_link }}</small>
+      </p>
+    {% endif %}
   </div>
 </article>
 
