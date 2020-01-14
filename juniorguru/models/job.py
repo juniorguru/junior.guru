@@ -13,6 +13,7 @@ class Job(BaseModel):
     email = CharField()
     job_type = CharField()
     description = CharField()
+    job_link = CharField(null=True)
     is_approved = BooleanField(default=False)
     is_sent = BooleanField(default=False)
 

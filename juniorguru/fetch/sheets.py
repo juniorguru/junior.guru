@@ -15,6 +15,7 @@ def coerce_record(record):
         r'^email address$': ('email', coerce_text),
         r'^job location$': ('location', coerce_text),
         r'^job description$': ('description', coerce_text),
+        r'^job link$': ('job_link', coerce_text),
         r'^approved$': ('is_approved', coerce_boolean),
         r'^sent$': ('is_sent', coerce_boolean),
     }, record)

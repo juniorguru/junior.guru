@@ -65,6 +65,7 @@ def test_coerce_record():
         'Job title': 'Frontend Ninja',
         'Job description': None,
         'Job location': 'Prague',
+        'Job link': 'https://jobs.example.com/1245/',
         'Approved': None,
         'Sent': '11/11/2019',
     }) == {
@@ -77,6 +78,7 @@ def test_coerce_record():
         'title': 'Frontend Ninja',
         'description': None,
         'location': 'Prague',
+        'job_link': 'https://jobs.example.com/1245/',
         'is_approved': False,
         'is_sent': True,
     }
