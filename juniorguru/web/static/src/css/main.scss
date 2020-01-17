@@ -772,6 +772,7 @@ ul.donate,
 
 .donate-option {
   display: flex;
+  align-items: flex-start; // safari bug https://stackoverflow.com/q/57516373/325365
   flex-wrap: wrap;
   justify-content: center;
 }
