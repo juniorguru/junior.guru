@@ -100,7 +100,7 @@ main > header, .job > header {
     img {
       float: right;
       margin: $whitespace;
-      height: 15rem;
+      height: 4 * $whitespace-3;
     }
   }
 }
@@ -509,7 +509,7 @@ ul.items {
   }
 }
 
-.jobs-teaser {
+.teaser {
   padding: 0 $whitespace;
 
   h2 {
@@ -735,6 +735,12 @@ footer {
   text-align: left;
 }
 
+.author-donate img {
+  float: right;
+  width: 4 * $whitespace-3;
+  margin: 0 0 $whitespace $whitespace;
+}
+
 @media screen and (min-width: 650px) {
   .author-wrapper {
     display: flex;
@@ -744,6 +750,70 @@ footer {
 
   .author img {
     float: none;
+  }
+}
+
+.donate img {
+  width: 3 * $whitespace-3;
+  min-width: 3 * $whitespace-3;
+}
+
+ul.donate,
+.donate li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.donate li {
+  margin-top: $whitespace-3;
+}
+
+.donate-option {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+a.donate-option {
+  text-decoration: none;
+
+  h3 {
+    text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .donate li {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .donate-option {
+    flex-wrap: nowrap;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .donate img {
+    align-self: center;
+  }
+
+  .donate-description {
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 20 * $whitespace-3;
+    padding-left: $whitespace-2;
+  }
+
+  .donate-description h3 {
+    margin-top: 0;
+  }
+
+  .donate-description p:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -964,7 +1034,7 @@ body.page-index {
   }
 }
 
-body.page-jobs, body.page-job {
+body.page-jobs, body.page-job, body.page-donate {
   main {
     max-width: 100%;
     padding: 0;

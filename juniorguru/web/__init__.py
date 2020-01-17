@@ -75,6 +75,11 @@ def job(job_id):
                                                job_location=job.location))
 
 
+@app.route('/donate/')
+def donate():
+    return render_template('donate.html')
+
+
 @app.route('/privacy/')
 def privacy():
     return render_template('privacy.html')
