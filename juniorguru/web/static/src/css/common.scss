@@ -817,6 +817,19 @@ a.donate-option {
   }
 }
 
+.warning {
+  border: $whitespace $black solid;
+  padding: $whitespace $whitespace-2;
+
+  .call-to-action {
+    margin-bottom: $whitespace;
+  }
+
+  .cartoon {
+    width: 10rem;
+  }
+}
+
 body.page-jobs, body.page-job, body.page-donate {
   main {
     max-width: 100%;
