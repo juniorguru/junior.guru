@@ -1,0 +1,216 @@
+body.page-index {
+  main {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  nav, aside, .stories {
+    @include page-width;
+    padding-left: $whitespace;
+    padding-right: $whitespace;
+  }
+
+  & > header {
+    padding: 0;
+    padding-top: $whitespace-2;
+    margin-bottom: $whitespace-3;
+    background: $yellow;
+
+    .logo {
+      display: block;
+      margin: 0;
+      text-align: center;
+
+      img {
+        display: block;
+        margin: 0 auto;
+        height: 12rem;
+      }
+    }
+  }
+
+  .tagline {
+    background: $black;
+    color: $white;
+    font-weight: 300;
+    @include font-2;
+    margin: 0;
+    margin-top: $whitespace-2;
+
+    @media screen and (min-width: 650px) {
+      & {
+        text-align: center;
+      }
+    }
+
+    p {
+      margin: 0;
+      @include page-width;
+      padding: $whitespace $whitespace-2;
+    }
+  }
+
+  nav {
+    .chicken, ol {
+      margin: $whitespace-3 0;
+
+      @media screen and (min-width: $grid-breakpoint) {
+        @supports (display: grid) {
+          & {
+            display: grid;
+            grid-gap: $whitespace;
+            grid-template-columns: repeat(auto-fit, minmax($grid-block-size, 1fr));
+          }
+        }
+      }
+    }
+
+    .chicken {
+      display: none;
+      margin: 0;
+
+      @media screen and (min-width: $grid-breakpoint) {
+        @supports (display: grid) {
+          & {
+            display: grid;
+          }
+        }
+      }
+    }
+
+    .chick, li {
+      margin: auto;
+      margin-bottom: $whitespace;
+      max-width: 65rem;
+
+      @media screen and (min-width: $grid-breakpoint) {
+        @supports (display: grid) {
+          & {
+            max-width: none;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .chick img {
+      display: block;
+      height: 10rem;
+      margin: 0 auto;
+    }
+
+    li {
+      overflow: hidden;
+
+      a {
+        display: block;
+        padding: $whitespace;
+        padding-right: 5.5rem;
+        background: $dots-black;
+        height: 100%;
+        text-decoration: none;
+        @include arrow;
+      }
+
+      a:hover, a:focus, a:active {
+        background: $dots-blue;
+
+        * {
+          color: $blue;
+        }
+
+        h2::before {
+          color: $white;
+          background: $blue;
+        }
+      }
+
+      p {
+        box-sizing: border-box;
+        background: $white;
+        padding: 0.3rem 0.5rem;
+        @include font-0;
+        line-height: $line-height;
+        @include hyphens;
+      }
+    }
+
+    h2 {
+      display: inline-block;
+      background: $white;
+      padding: 0.3rem 0.5rem;
+      @include font-2;
+      margin-bottom: $whitespace;
+    }
+
+    h2::before {
+      display: block;
+      padding: 0.3rem 1.5rem;
+      background: $yellow;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    li:nth-child(1) h2::before { content: "1"; }
+    li:nth-child(2) h2::before { content: "2"; }
+    li:nth-child(3) h2::before { content: "3"; }
+  }
+
+  aside {
+    @supports (display: grid) {
+      & {
+        display: grid;
+        grid-gap: $whitespace-3 $whitespace-2;
+        grid-template-columns: repeat(auto-fit, minmax($grid-block-size, 1fr));
+      }
+    }
+
+    section {
+      margin-bottom: $whitespace;
+
+      @supports (display: grid) {
+        & {
+          margin: 0;
+        }
+      }
+    }
+
+    h2 {
+      display: inline-block;
+      background-color: $yellow;
+      padding: 0.3rem 0.5rem;
+    }
+
+    .call-to-action, .note {
+      text-align: left;
+    }
+
+    .companies .call-to-action, .note {
+      margin-bottom: 0;
+    }
+
+    .cartoon {
+      display: none;
+    }
+
+    @media screen and (min-width: $grid-breakpoint) {
+      .cartoon {
+        display: block;
+        width: 8rem;
+        margin-top: 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .stories ul.items {
+      column-count: 2;
+      column-gap: 2.1rem;
+    }
+
+    .stories ul.items li {
+      border: none;
+    }
+  }
+}
