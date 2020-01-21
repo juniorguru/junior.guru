@@ -1,0 +1,66 @@
+- title: Coding Bootcamp Praha
+  url: https://www.codingbootcamp.cz/
+  length: 12
+  locations: [Praha]
+
+- title: Green Fox Academy
+  url: https://www.greenfoxacademy.cz/
+  length: 12
+  locations: [Praha]
+
+- title: OAK’S LAB Academy
+  url: https://oakslab.academy/
+  length: 9
+  locations: [Praha]
+
+- title: CoreSkill
+  url: https://coreskill.tech/
+  length: 12
+  locations: [Praha]
+
+- title: Czechitas Digitální akademie
+  url: https://www.czechitas.cz/cs/co-delame/digitalni-akademie
+  locations: [Praha, Brno, Ostrava]
+
+- title: PrimaKurzy
+  url: https://www.primakurzy.cz/
+  locations: [Praha, Brno]
+  unemployment_agency_refund: yes
+
+- title: Nicom
+  url: https://www.nicom.cz/tvorba_webovych_stranek_-nicom_tvorba_webovych_stranek_rekvalifikace-918542832-121534689-skoleni-rekvalifikacni-kurzy/
+  locations: [Praha, Brno, Ostrava]
+  unemployment_agency_refund: yes
+
+- title: WebACAD
+  url: https://www.webacad.cz/
+  locations: [Praha]
+
+- title: Engeto
+  url: https://engeto.cz/
+  length: 12
+  locations: [Brno, Praha]
+
+- title: Inventi
+  url: https://www.inventi.cz/academies
+  locations: [Praha]
+
+- title: Počítačové kurzy na VŠB
+  url: http://kurzy.vsb.cz/
+  locations: [Praha]
+
+- title: CGI Java Bootcamp
+  url: https://www.cgi.com/ceska-republika/cs/JAVAbootcamp
+  locations: [Praha]
+
+- title: CN University
+  url: https://www.cnjobs.dk/university
+  locations: [Praha, Zlín, Bratislava]
+
+- title: IT-absolvent
+  url: http://it-absolvent.cz/
+  locations: [Brno]
+
+- title: Akademie STEP
+  url: https://praha.itstep.org/education-adults
+  locations: [Praha, Ostrava]
