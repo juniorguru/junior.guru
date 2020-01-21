@@ -169,6 +169,7 @@ main > section {
   background: $black;
   padding: $whitespace $whitespace-2;
   padding-top: $whitespace - 0.1rem;
+  cursor: pointer;
 
   a, a:hover, a:focus, a:active {
     color: $white;
