@@ -10,6 +10,7 @@ class Story(BaseModel):
     url = CharField()
     date = DateTimeField(index=True)
     title = CharField()
+    image_path = CharField()
 
     @property
     def publisher(self):

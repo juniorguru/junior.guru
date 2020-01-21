@@ -10,6 +10,7 @@ schema = Seq(
         'url': Url(),
         'date': Datetime(),
         'title': Str(),
+        'image_path': Str(),
     })
 )
 

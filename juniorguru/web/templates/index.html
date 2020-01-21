@@ -143,6 +143,7 @@ Nauč se programovat a získej svou první práci v IT
             {{ story.date.month }}/{{ story.date.year }}
           </small>
         </div>
+        <img src="{{ url_for('static', filename=story.image_path) }}">
       </a>
     </li>
   {% endfor %}
