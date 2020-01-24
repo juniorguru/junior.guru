@@ -6,22 +6,23 @@
 {% block main %}
 
 <header>
-  <h1>junior.guru tě potřebuje</h1>
+  <h1>Pomohly ti tyto stránky? Pošli LOVE!</h1>
   <p>
     <img src="{{ url_for('static', filename='images/heart.svg') }}">
-    Tyto stránky pomáhají lidem se změnou kariéry, s cestou za lepším
-    životem. Informace na nich jsou volně dostupné, aby mohly pomoci co nejvíce
-    lidem. Přispějte na provoz stránek &mdash; aby mohly být vylepšovány,
-    aby mohly být stále aktuální, aby existovaly co nejdéle!
+    Ukázal ti tento web cestu k programování? K lepší práci?
+    Poděkuj <a href="#about">autorovi</a>
+    dobrovolným <a href="#donate-options">příspěvkem</a>. Veškerý obsah je zde volně dostupný,
+    aby pomohl co nejvíce lidem. Příspěvky zajistí, že tyto stránky
+    mohou být vylepšovány a budou dál existovat.
   </p>
 </header>
 
 <hr>
-<section class="teaser call-to-action">
+<section class="teaser call-to-action" id="donate-options">
   <h2>Přispěj</h2>
   <p class="note">
     K příspěvkům mohu na žádost vystavit doklad.
-    Příspěvky si <strong>nemůžete</strong> odečíst z daní jako dar.
+    Příspěvky <strong>nelze</strong> odečíst z daní jako dar.
   </p>
 
   <ul class="donate">
@@ -31,7 +32,7 @@
         <h3>Převod na účet</h3>
         <p>
           Nejlepší způsob! Číslo účtu je <strong>2501717332/2010</strong>.
-          Dodržujte prosím variabilní symbol <a href="https://cs.wikipedia.org/wiki/42_(odpov%C4%9B%C4%8F)">444222</a>.
+          Dodržujte prosím <strong>variabilní symbol 444222</strong>.
         </p>
       </div>
     </li>
@@ -40,11 +41,16 @@
         <img alt="PayPal logo" src="{{ url_for('static', filename='images/donate-paypal.svg') }}">
         <div class="donate-description">
           <h3>Platební karta (PayPal)</h3>
-          <p>
-            Velkou část si shrábne PayPal, ale lepší než nic!
-            Funguje jakákoliv platební karta.
-            Jednorázově i pravidelně.
-          </p>
+          <div class="donate-description-button-wrapper">
+            <p>
+              Část si shrábne PayPal, ale lepší než nic!
+              Funguje jakákoliv platební karta.
+              Jednorázově i pravidelně.
+            </p>
+            <p>
+              <span class="button">Přispět</span>
+            </p>
+          </div>
         </div>
       </a>
     </li>
@@ -52,51 +58,63 @@
 </section>
 <hr>
 
-<section>
-  <h2>Přispěj na co?</h2>
-  <p>
-    Přispěj pokud chceš, aby byl menší nedostatek IT specialistů na trhu.
-    Přispěj pokud chceš, aby měl každý Luďan z Mostu, každá puberťačka,
-    každý <a href="https://cz.pycon.org/2018/programme/detail/talk/21/">vědec</a>
-    nebo každá matka na rodičovské po ruce návod jak začít s programováním.
-    Přispěj pokud chceš, aby tato stránka dál existovala a v budoucnu pomohla
-    jiným stejně, jako pomohla tobě.
-  </p>
-</section>
-
-<section>
+<section id="about">
   <h2>O autorovi</h2>
   <p class="author-donate">
     <img alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}">
 
-    Jsem <a href="http://honzajavorek.cz">Honza Javorek</a> a provozuji tento web.
+    Jmenuji se <a href="http://honzajavorek.cz">Honza Javorek</a> a tvořím tento web.
     Přes {{ year - 2011 }}&nbsp;let se dobrovolnicky podílím na srazech, kurzech, workshopech a
-    konferencích české <a href="https://python.cz/">Python</a> komunity.
-    Dlouhodobě se věnuji začátečníkům.
-    Napsal jsem <a href="https://www.zdrojak.cz/clanky/kolonizatori-spravci-kolonii/">článek o kolonizátorech</a>
-    a vytvořil <a href="https://cojeapi.cz/">cojeapi.cz</a>,
-    úvod do API pro začátečníky. Nejsem „guru“, ale dal jsem si hodně práce,
-    abych vám mohl s kariérou v IT poradit co nejlépe.
+    konferencích české <a href="https://python.cz/">Python</a> komunity. Dlouhodobě se věnuji začátečníkům.
+    Napsal jsem <a href="https://www.zdrojak.cz/clanky/kolonizatori-spravci-kolonii/">článek o dvou programátorských povahách</a>
+    a vytvořil <a href="https://cojeapi.cz/">úvod do API pro začátečníky</a>. Nejsem „guru“, ale dal jsem si hodně práce,
+    abych vám mohl s kariérou v IT poradit co nejlépe. Snažím se žít z toho, co tady firmy utratí
+    za <a href="{{ url_for('jobs') }}">nabídky práce</a>, a z dobrovolných příspěvků.
   </p>
+</section>
+
+<section>
+  <h2>Na co přispíváš</h2>
+  <ul>
+    <li>
+      Aby měl každý Luďan z Mostu, každá puberťačka,
+      každý <a href="https://cz.pycon.org/2018/programme/detail/talk/21/">vědec</a>
+      nebo každá matka na rodičovské po ruce návod, jak začít s programováním.
+    </li>
+    <li>
+      Aby byl na trhu menší nedostatek IT specialistů, protože tato stránka
+      přesvědčí více firem, že místo nekonečného hledání drahých seniorů
+      mají více investovat do zaučování lidí.
+    </li>
+    <li>
+      Aby bylo více žen v IT, protože jim tato stránka ukáže cestu jak se naučit
+      programovat a vytvoří půdu pro to, aby si snadněji našly první práci.
+    </li>
+    <li>
+      Aby tato stránka dál existovala a v budoucnu pomohla jiným stejně,
+      jako pomohla tobě.
+    </li>
+  </ul>
 </section>
 
 <section>
   <h2>Kolik stojí zadarmo</h2>
   <p>
-    Projekty, které vytvářím, jsou zadarmo a mají <a href="https://cs.wikipedia.org/wiki/Otev%C5%99en%C3%BD_software">otevřený kód</a>.
+    Věci, které vytvářím, jsou zadarmo a mají <a href="https://cs.wikipedia.org/wiki/Otev%C5%99en%C3%BD_software">otevřený kód</a>.
     Texty, za kterými jsou desítky hodin práce, jsou každému volně dostupné.
-    Snažím se žít z dobrovolných příspěvků a z toho, co tady firmy utratí
-    za <a href="{{ url_for('jobs') }}">nabídky práce</a>.
+    Zpoplatňovat je nechci, aby měl příležitost naučit se programovat opravdu každý.
+    Finanční příspěvky jsou způsob, jak mohu obsah nechat zdarma
+    pro všechny a zároveň dát lidem možnost mi poděkovat, pokud jsem jim pomohl.
   </p>
   <p>
     <strong>Výhodou</strong> je, že si můžeš všechno hezky přečíst tady na webu.
-    Můžeš to poslat k přečtení kamarádce. Může si to přečíst každý <a href="https://www.tedxprague.cz/videa/z-hornika-programatorem">horník z Ostravy</a>.
+    Můžeš to poslat k přečtení kamarádce. Může si to projít každý <a href="https://www.tedxprague.cz/videa/z-hornika-programatorem">horník z Ostravy</a>.
     Není to uzavřené v nějaké placené knize. Máš to pěkně v mobilu. Nevyskakují tady na tebe reklamy.
     Kurzy nebo knihy mohu doporučovat podle vlastního průzkumu a svědomí,
     nemusím doporučovat něčí produkt jen proto, že mi potom pošle peníze.
   </p>
   <p>
-    <strong>Nevýhodou</strong> je, že pokud si tím nevydělám,
+    <strong>Nevýhodou</strong> je, že pokud si nevydělám,
     nebudu mít čas se tomu věnovat. Místo abych sem přidával další rady,
     aktualizoval obsah a vymýšlel způsoby, jak ještě mohu začátečníkům pomoci,
     budu muset pracovat na věcech, které mě uživí. Z tohoto webu se stane jen
@@ -104,9 +122,9 @@
     to tady zastarávat. Nový obsah nejspíš přibývat vůbec nebude.
   </p>
   <p>
-    Pomáhat začátečníkům mě baví a myslím si, že tak teď můžu nejefektivněji
-    využít všechno co umím, a že tak můžu nejlépe přispět k tomu, aby byl svět
-    kolem mě lepší. Byla by škoda, kdybych s tím musel přestat.
+    Pomáhat začátečníkům mě baví a myslím si, že tak teď mohu nejefektivněji
+    využít všechno, co umím. Že tak mohu nejlépe přispět k tomu, aby byl svět
+    kolem mě lepší. Díky každému, kdo mi umožní v tom pokračovat.
   </p>
 </section>
 

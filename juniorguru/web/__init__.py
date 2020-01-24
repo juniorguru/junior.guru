@@ -77,7 +77,8 @@ def job(job_id):
 
 @app.route('/donate/')
 def donate():
-    return render_template('donate.html')
+    return render_template('donate.html',
+                           thumbnail=thumbnail(title='Pošli LOVE'))
 
 
 @app.route('/privacy/')
