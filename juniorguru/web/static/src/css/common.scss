@@ -229,6 +229,10 @@ figure.quote {
   padding: $whitespace;
   position: relative;
 
+  a {
+    @include color-links($blue, $blue);
+  }
+
   blockquote, figcaption {
     background: $white;
     padding: $whitespace-2;
