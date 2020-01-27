@@ -81,6 +81,12 @@ def donate():
                            thumbnail=thumbnail(title='Pošli LOVE'))
 
 
+@app.route('/thanks/')
+def thanks():
+    return render_template('thanks.html',
+                           thumbnail=thumbnail(title='Díky!'))
+
+
 @app.route('/privacy/')
 def privacy():
     return render_template('privacy.html')
