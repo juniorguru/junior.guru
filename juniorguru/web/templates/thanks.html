@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Přispěj na provoz junior.guru{% endblock %}
+
+{% block body_attrs %} class="page-donate"{% endblock %}
+
+{% block main %}
+
+<header>
+  <h1>Díky!</h1>
+</header>
+
+<section class="call-to-action">
+  <p>
+    <img class="cartoon cartoon-center" src="{{ url_for('static', filename='images/heart.svg') }}">
+  </p>
+</section>
+
+<section class="call-to-action">
+  <p>
+    <a href="{{ url_for('index') }}" class="button">
+      Na úvodní stránku
+    </a>
+  </p>
+</section>
+{% endblock %}
+
+{% block author %}{% endblock %}
