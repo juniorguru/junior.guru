@@ -37,7 +37,7 @@ def practice():
 @app.route('/candidate/')
 def candidate():
     return render_template('candidate.html',
-                           thumbnail=thumbnail(title='Jak najít první práci v IT'))
+                           thumbnail=thumbnail(title='Hledání první práce v\u00a0IT'))
 
 
 @app.route('/jobs/')
