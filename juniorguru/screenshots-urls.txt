@@ -1,3 +1,5 @@
+https://pycon.cz
+https://pycon.sk
 https://naucse.python.cz
 https://engeto.com/cs/katalog/python-1-uvod-do-programovani
 https://www.coursera.org/learn/python
@@ -50,8 +52,6 @@ https://udacity.com
 https://www.czechitas.cz/cs/kalendar-akci
 https://engeto.cz/workshopy
 https://pyworking.cz
-https://cz.pycon.org
-https://2019.pycon.sk
 https://www.writethedocs.org/conf/
 https://www.facebook.com/groups/hackathony.cz/
 https://docs.google.com/presentation/d/1reYrzFy3E3LS-jNzQecLbkf6Qq7iIEjWvXCyvbw389E/
