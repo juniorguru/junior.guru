@@ -406,18 +406,11 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 <section id="tactics">
   <h2>Taktika při pohovorech</h2>
 <!--
-Máš nějakou představu o oboru, ve kterém bys chtěl dělat? Web, data, hry, ops, ...?
-
-zorientovat se, IT svet je velky, mit prehled co presne z toho sveta chtit delat, kde ziskat prehled?
-
 zkouset to, chodit co nejvic, ucit se v prubehu
-posilit tech background pres podobne prace (tech support, QA)
 
 pripravit si seznam konkretni veci, ktere jsou pro tebe dulezite, a ten si odskrtavat u kazde nabidky, nehledat naslepo "neco", nenechat se zviklat a hledat, vydrzet i kdyz mesic shanim a neni to
 
 vedet co chci, nezapominat na checklist a na sebe
-
-Buď sebevědomá, ale měj pokoru. Jsi junior a ne hotovy programátor. Budeš se muset ještě hodně učit. Mas na to dostat práci, ale sklon hlavu a příjmi menší plat nebo méně atraktivni práci než vysloužili programátoři - zacinas!
 
 https://yangshun.github.io/tech-interview-handbook/
 
@@ -434,18 +427,123 @@ budte drze, fakt
 * zahoďte předsudky, že tohle žena nemůže udělat
 * i PyLadies nekdy stačí k tomu to jít někam zkusit
 -->
-  <h3>Otázky na pohovoru</h3>
+
+  <figure class="quote">
+    <blockquote>
+      Mysli i na sebe. Pokud při pohovoru musíš přeskočit milion překážek, možná je to signál, že tak bude vypadat i práce pro tu firmu.
+    </blockquote>
+    <figcaption>
+      Ali Spittel, <a href="https://welearncode.com/">We Learn Code</a> & <a href="https://www.ladybug.dev/">Ladybug Podcast</a>
+    </figcaption>
+  </figure>
+
+  <h3>Otázky na tebe</h3>
+  <p>
+    Na pohovoru ti budou pokládat otázky a také se očekává, že <a href="#reverse-interview">nějaké otázky budeš mít ty</a>. Začněme těmi, které můžeš dostat:
+  </p>
+  <ul>
+    <li>
+      <strong>Otázky ohledně chování.</strong>
+      „Kdo tě nejvíce ovlivnil ve tvé kariéře?“ <a href="https://www.pathrise.com/guides/45-behavioral-interview-questions/">Další příklady</a>.
+    </li>
+    <li>
+      <strong>Technické otázky.</strong>
+      „Představ si, že nic nevím o <a href="https://reactjs.org/">Reactu</a>.
+      Vysvětli mi, co to je.“
+      Nebo: „Co je <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">float</a> v CSS?“
+    </li>
+    <li>
+      <strong><a href="#puzzles">Hádanky u tabule</a></strong>, programování na místě,
+      hádanky a výzvy, jako jsou např. na <a href="https://www.hackerrank.com/">HackerRank</a>.
+    </li>
+    <li>
+      <strong>Úkoly na doma.</strong>
+      Úkol zpracováváš mimo pohovor a máš na něj kolik času potřebuješ.
+    </li>
+    <li>
+      <strong>Párové programování.</strong>
+      Spolu s někým z firmy řešíte zadaný problém.
+    </li>
+  </ul>
+  <p>
+    Na otázky se můžeš <strong>připravit</strong>. Podle toho, na jakou pozici se hlásíš, můžeš
+    na internetu najít seznamy typických otázek. Hledej třeba „<a href="https://www.google.cz/search?q=interview%20questions%20python">interview questions python</a>“. Nebo „<a href="https://www.google.cz/search?q=behavioral%20interview%20questions">behavioral interview questions</a>“.
+  </p>
+  <p>
+    Během pohovoru <strong>ukaž, jak přemýšlíš</strong>. Vysvětli, jakým způsobem se propracováváš
+    k odpovědi, kresli diagramy, piš kód, vysvětluj díry ve tvém přístupu.
+    Ptej se, pokud ti něco není jasné.
+  </p>
+  <p>
+    Ber si všude s sebou notes na poznámky a <strong>zapisuj si všechno, co nevíš. Doma se na to po každém pohovoru podívej.</strong> Nemusíš se hned učit všechno, co kde kdo zmínil, ale zjisti si aspoň, co ty věci jsou, na co se používají, pro jaké profese je nutnost s nimi umět. <strong>Uč se z pohovorů.</strong>
+  </p>
+  <p>
+    Pokud se tě někdo zeptá na <a href="https://www.djangoproject.com/">Django</a> a ty nevíš co to je, <strong>odpověz upřímně!</strong> Nelži a nesnaž se to zamaskovat, pro
+    tazatele bude snadné tě prokouknout a zařadí si tě jako nepoctivého člověka. Raději řekni „Nevím, ale chci se to naučit“. Nebo: „Mám jeden projekt ve <a href="https://flask.palletsprojects.com/">Flasku</a>, což je taky webový framework v Pythonu, tak snad by nebylo tak těžké do toho proniknout“.
+  </p>
+
+  <figure class="quote">
+    <blockquote>
+      Říkej pravdu a dostaneš se tam, kam chceš.
+    </blockquote>
+    <figcaption>
+      Olga Fomicheva, organizátorka a absolventka začátečnického kurzu <a href="https://pyladies.cz">PyLadies</a>
+    </figcaption>
+  </figure>
+
+  <p class="note">
+    Rady v této podkapitole volně vychází ze <a href="https://twitter.com/ASpittel/status/1214979863683174400">série tipů, které tweetovala Ali Spittel</a> a z osobních doporučení od Olgy Fomichevy. Velké díky!
+  </p>
+
+  <h3 id="puzzles">Úlohy na algoritmizaci</h3>
+  <p>
+    Na pohovorech se můžeš až příliš často setkat s hádankami u tabule, <em>challenges</em>, <em>puzzles</em>, otázkami na algoritmizaci,
+    na <a href="https://cs.wikipedia.org/wiki/Asymptotick%C3%A1_slo%C5%BEitost">složitost</a>, na řazení, procházení stromů
+    a podobné kraviny. <strong>Přitom v drtivé většině případů nikdo nic takového ve své práci běžně nepotřebuje.</strong> Většina programátorů stejně jako ty použije na řazení vestavěnou funkci <a href="https://docs.python.org/3/howto/sorting.html">sort()</a> &mdash; a je to. I ti, kteří se vše podrobně
+    dřív učili na VŠ a skládali z toho zkoušky, většinu z toho dávno zapomněli &mdash; protože to nepoužívají. Nanejvýš s tím machrují na společném obědě.
+  </p>
+  <p>
+    <strong>Bohužel pro tebe je ale testování takovýchto znalostí na pohovorech stále velmi populární.</strong> Stejně jako někdo vyučuje dějepis tak, že nutí děti nazpamět si pamatovat každé datum, v IT zase lidé nesmyslně lpí na tom, aby každý znal princip <a href="https://en.wikipedia.org/wiki/Quicksort">Quicksortu</a>.
+    Přijmi to jako smutný fakt a připrav se. Ono se ti to samozřejmě neztratí, <strong>nejsou to zbytečnosti</strong>. Je dobré znát kontext, vědět jak věci fungují, umět psát efektivnější programy. Jen by bylo lepší to mít možnost objevovat postupně,
+    až když to budeš potřebovat, a ne se to muset učit nazpaměť kvůli pohovorům.
+  </p>
+  <!-- hackerrank -->
 <!--
-https://dev.to/macmacky/70-javascript-interview-questions-5gfi?utm_campaign=Juniors%20in%20Tech&utm_medium=email&utm_source=Revue%20newsletter
+I see a lot of questions about how to study for the algorithmic challenges that tend to come up in whiteboarding. Here's my advice:
 
-brat si vsude notysek a zapisovat si veci, ktere nevim a doma se na ne po kazdem pohovoru podivat, learn from interviews
+First, to learn more about what data structures and algorithms are out there and what they're for...
 
-priprav si svoje otázky https://github.com/viraptor/reverse-interview
+<p lang="en" dir="ltr">I love <a href="https://twitter.com/vaidehijoshi?ref_src=twsrc%5Etfw">@vaidehijoshi</a>&#39;s BaseCS material which exists in so many formats now!<br><br>Blog posts: <a href="https://t.co/XqEfHI83Q2">https://t.co/XqEfHI83Q2</a><br>Podcasts: <a href="https://t.co/pJbzAfNmTN">https://t.co/pJbzAfNmTN</a><br>Videos: <a href="https://t.co/rt4QAiPASA">https://t.co/rt4QAiPASA</a></p>
 
-https://twitter.com/ASpittel/status/1214979863683174400
+"Cracking the Coding Interview"
+The problems in Cracking the Coding Interview are great too -- if you're starting out, translating the solutions given in Java to another language could be a great start.
 
-říkej pravdu a dosteneš se tam, kde chceš
+https://github.com/aspittel/coding-cheat-sheets
+Taking notes allows you to have content in a format that works really well for you that you can come back to, plus writing it down cements the knowledge. These were originally handwritten notes that I typed up after the fact.
+
+From there do a bunch of code challenges to practice. I used to do one every morning as I was waking up to warm my brain up.
+
+I love https://codewars.com and @hackerrank
+for beginner - intermediate levels.
+https://projecteuler.net is great for super mathematical problems.
+If you're more advanced, I *love* the CodeJam problems: https://codingcompetitions.withgoogle.com/codejam
+and #AdventOfCode https://adventofcode.com.
 -->
+  <p class="note">
+    Rady v této podkapitole volně vychází ze <a href="https://twitter.com/ASpittel/status/1214979863683174400">série tipů, které tweetovala Ali Spittel</a>. Velké díky!
+  </p>
+
+  <h3 id="reverse-interview">Tvoje otázky</h3>
+  <p>
+    Připrav si dotazy, které budeš mít ty ohledně firmy a nabízené pozice. Nastupuješ jako začátečník a budeš potřebovat, aby ti někdo stále pomáhal. <strong>Zeptej se, jestli ve firmě budeš mít přidělené lidi, kteří se ti budou věnovat</strong> a za kterými budeš moci chodit pro rady <strong>bez pocitu, že je zdržuješ od důležité práce</strong>. Kromě toho existuje spousta dalších otázek, na které se můžeš zeptat &mdash; mrkni na seznam <a href="https://github.com/viraptor/reverse-interview">Reverse interview</a>.
+  </p>
+  <p>
+    Celkově je dobré se <strong>soustředit i na sebe</strong>. Jsi začátečník, ale
+    na pohovoru dostáváš rozpačité odpovědi na to, jestli se ti někdo bude věnovat?
+    Vidíš už na pohovoru přebujelá ega, machrování, manipulativní otázky?
+    Nejednají s tebou s respektem? Zaznamenáváš už při pohovoru sexistické narážky? Až nastoupíš, nebude to lepší! Všechno toto jsou tzv. <em>red flags</em>, signály, že <strong>firma, do které se snažíš dostat, není tak úplně v pořádku</strong> a nejspíš nestojí za to s ní ztrácet čas. Pohovor funguje na obě strany &mdash; testuješ si i ty firmu, nejen ona tebe.
+  </p>
+
   <h3>Životopis</h3>
 <!--
 linkedin
