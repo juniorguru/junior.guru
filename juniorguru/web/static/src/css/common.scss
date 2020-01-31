@@ -70,7 +70,7 @@ nav ol, nav li {
   padding: 0;
 }
 
-body > * {
+.body-container > * {
   padding-left: $whitespace;
   padding-right: $whitespace;
 }
@@ -190,7 +190,7 @@ hr {
   margin: (2 * $whitespace-3) 0;
 }
 
-body > header + hr {
+.body-container > header + hr {
   display: none;
 }
 
@@ -220,6 +220,10 @@ body > header + hr {
 
 .note {
   @include font-0;
+}
+
+.hidden {
+  display: none;
 }
 
 figure.quote {
@@ -573,7 +577,7 @@ ul.items {
   }
 }
 
-body > header {
+.body-container > header {
   padding: 0;
   background: $yellow;
 
@@ -648,20 +652,19 @@ body > header {
   }
 }
 
-body > header ol a:hover,
-body > header ol a:focus,
-body > header ol a:active {
+.body-container > header ol a:hover,
+.body-container > header ol a:focus,
+.body-container > header ol a:active {
   &, &::before {
     background: $blue;
     color: $white;
   }
 }
 
-body.page-learn > header li:nth-child(1) a,
-body.page-practice > header li:nth-child(2) a,
-// body.page-candidate > header li:nth-child(3) a,
-body.page-jobs > header li:nth-child(3) a,
-body.page-job > header li:nth-child(3) a {
+.page-learn .body-container > header li:nth-child(1) a,
+.page-practice .body-container > header li:nth-child(2) a,
+.page-jobs .body-container > header li:nth-child(3) a,
+.page-job .body-container > header li:nth-child(3) a {
   &, &::before {
     background: $white;
     color: $blue;
@@ -669,7 +672,7 @@ body.page-job > header li:nth-child(3) a {
 }
 
 footer {
-  padding: 0;
+  .body-container > & { padding: 0; }
 
   a {
     @include color-links($black, $blue);
