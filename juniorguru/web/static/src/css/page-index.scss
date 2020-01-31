@@ -10,7 +10,7 @@ body.page-index {
     padding-right: $whitespace;
   }
 
-  & > header {
+  .body-container > header {
     padding: 0;
     padding-top: $whitespace-2;
     margin-bottom: $whitespace-3;

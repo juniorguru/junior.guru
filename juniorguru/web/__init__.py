@@ -36,7 +36,12 @@ def practice():
 
 @app.route('/candidate/')
 def candidate():
+    with db:
+        jobs_count = Job.count()
+        companies_count = Job.companies_count()
     return render_template('candidate.html',
+                           jobs_count=jobs_count,
+                           companies_count=companies_count,
                            thumbnail=thumbnail(title='Hledání první práce v\u00a0IT'))
 
 
