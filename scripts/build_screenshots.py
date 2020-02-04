@@ -30,6 +30,7 @@ HIDDEN_ELEMENTS = [
     'ytd-popup-container',  # youtube.com
     '[data-purpose*="smart-bar"]',  # udemy.com
     '[data-before-content*="advertisement"]',  # reddit.com
+    '.butterBar',  # medium.com
     '.intercom-app',
     '[id*="gdpr-consent"]',
     '[id*="consent-banner"]',
