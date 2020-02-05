@@ -60,3 +60,8 @@ https://www.codementor.io/
 https://medium.com/basecs
 https://missing.csail.mit.edu/
 https://www.hackerrank.com
+http://www.crackingthecodinginterview.com/
+https://yangshun.github.io/tech-interview-handbook/
+https://prace.rovnou.cz/
+https://github.com/viraptor/reverse-interview#readme
+https://trello.com/b/igarGHRw/

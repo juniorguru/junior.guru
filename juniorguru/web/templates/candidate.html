@@ -409,37 +409,57 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 
 <section id="tactics">
   <h2>Taktika při pohovorech</h2>
-<!--
-zkouset to, chodit co nejvic, ucit se v prubehu
+  <p>
+    Jak bylo už zmíněno, <a href="#ready">nečekej příliš dlouho</a>. Zkoušej to, i když si myslíš, že na to nemáš. Uč se v průběhu na základě toho, co zjistíš na pohovorech. Speciálně pokud jsi žena, buď až „drzá“.
+    <strong>Muži jdou na pohovor
+    i pokud mají pocit, že mají polovinu znalostí. Žena se často neodváží, dokud
+    nevěří, že má 120&nbsp;% požadovaného.</strong>
+  </p>
+  <p>
+    Nepodceňuj se, v inzerátech
+    je ideál, který ti má spíše ukázat kam ta pozice směřuje.
+    Mnohdy ani sama firma nemá úplně jasno v tom, koho přesně chce,
+    a rozhoduje se až o konkrétních lidech. <strong>Jestliže je v inzerátu něco,
+    co toužíš jednou dělat, zkus to i přesto, že to ještě neumíš.</strong>
+  </p>
 
-pripravit si seznam konkretni veci, ktere jsou pro tebe dulezite, a ten si odskrtavat u kazde nabidky, nehledat naslepo "neco", nenechat se zviklat a hledat, vydrzet i kdyz mesic shanim a neni to
-
-vedet co chci, nezapominat na checklist a na sebe
-
-https://yangshun.github.io/tech-interview-handbook/
-
-https://welearncode.com/career-advice/
-https://twitter.com/ASpittel/status/1214979863683174400
-
-nebojte se chodit na pohovory, i když na to nemáte
-když je v inzerátu něco, co chceš dělat, i dkyž to neumíš, stejně tam běž
-neboj se říci si o feedback z pohovoru
-nepodceňujte se, v inzerátech je ideál, abyste zjistili, co se na té pozici skutečně chce
-budte drze, fakt
-* muž potřebuje ~60% znalostí, aby se odhodlal jít na pohovor
-* žena potřebuje ~115% znalostí, aby se odhodlala jít na pohovor
-* zahoďte předsudky, že tohle žena nemůže udělat
-* i PyLadies nekdy stačí k tomu to jít někam zkusit
--->
-
-  <figure class="quote">
-    <blockquote>
-      Mysli i na sebe. Pokud při pohovoru musíš přeskočit milion překážek, možná je to signál, že tak bude vypadat i práce pro tu firmu.
-    </blockquote>
-    <figcaption>
-      Ali Spittel, <a href="https://welearncode.com/">We Learn Code</a> & <a href="https://www.ladybug.dev/">Ladybug Podcast</a>
-    </figcaption>
-  </figure>
+  <h3 id="handbooks">Související příručky</h3>
+  <ul class="list">
+    <li>
+      <a href="https://yangshun.github.io/tech-interview-handbook/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/yangshun.github.io!tech-interview-handbook.jpg') }}">
+        </div>
+        <h3>Tech Interview Handbook</h3>
+      </a>
+      <p>
+        Přečti si jak na CV, pohovory, algoritmy.
+      </p>
+    </li>
+    <li>
+      <a href="https://prace.rovnou.cz/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/prace.rovnou.cz.jpg') }}">
+        </div>
+        <h3>Shánění práce na internetu</h3>
+      </a>
+      <p>
+        Projdi si českou příručku základů
+        hledání práce na internetu.
+      </p>
+    </li>
+    <li>
+      <a href="http://www.crackingthecodinginterview.com/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/crackingthecodinginterview.com.jpg') }}">
+        </div>
+        <h3>Cracking the Coding Interview</h3>
+      </a>
+      <p>
+        Slavná kniha plná <a href="#puzzles">úloh, které můžeš dostat na pohovoru</a>.
+      </p>
+    </li>
+  </ul>
 
   <h3>Otázky na tebe</h3>
   <p>
@@ -447,7 +467,7 @@ budte drze, fakt
   </p>
   <ul>
     <li>
-      <strong>Otázky ohledně chování.</strong>
+      <strong>Behaviorální otázky.</strong>
       „Kdo tě nejvíce ovlivnil ve tvé kariéře?“ <a href="https://www.pathrise.com/guides/45-behavioral-interview-questions/">Další příklady</a>.
     </li>
     <li>
@@ -457,8 +477,8 @@ budte drze, fakt
       Nebo: „Co je <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">float</a> v CSS?“
     </li>
     <li>
-      <strong><a href="#puzzles">Hádanky u tabule</a></strong>, programování na místě,
-      hádanky a výzvy, jako jsou např. na <a href="https://www.hackerrank.com/">HackerRank</a>.
+      <strong><a href="#puzzles">Úlohy u tabule</a></strong>, programování na místě,
+      hádanky. Viz např. <a href="https://www.hackerrank.com/">HackerRank</a>.
     </li>
     <li>
       <strong>Úkoly na doma.</strong>
@@ -483,7 +503,7 @@ budte drze, fakt
   </p>
   <p>
     Pokud se tě někdo zeptá na <a href="https://www.djangoproject.com/">Django</a> a ty nevíš co to je, <strong>odpověz upřímně!</strong> Nelži a nesnaž se to zamaskovat, pro
-    tazatele bude snadné tě prokouknout a zařadí si tě jako nepoctivého člověka. Raději řekni „Nevím, ale chci se to naučit“. Nebo: „Mám jeden projekt ve <a href="https://flask.palletsprojects.com/">Flasku</a>, což je taky webový framework v Pythonu, tak snad by nebylo tak těžké do toho proniknout“.
+    tazatele bude snadné tě prokouknout a zařadí si tě jako nepoctivého člověka. Raději řekni „Nevím, ale chci se to naučit“. Nebo: „Mám jeden projekt ve <a href="https://flask.palletsprojects.com/">Flasku</a>, což je taky webový framework v Pythonu, tak snad by nebylo tak těžké, proniknout do toho“.
   </p>
 
   <figure class="quote">
@@ -501,7 +521,7 @@ budte drze, fakt
 
   <h3 id="puzzles">Úlohy na algoritmizaci</h3>
   <p>
-    Na pohovorech se můžeš až příliš často setkat s hádankami u tabule, <em>challenges</em>, <em>puzzles</em>, otázkami na algoritmizaci,
+    Na pohovorech se můžeš až příliš často setkat s úlohami u tabule, <em>challenges</em>, <em>puzzles</em>, otázkami na algoritmizaci,
     na <a href="https://cs.wikipedia.org/wiki/Asymptotick%C3%A1_slo%C5%BEitost">složitost</a>, na řazení, procházení stromů
     a podobné kraviny. <strong>Přitom v drtivé většině případů nikdo nic takového ve své práci běžně nepotřebuje.</strong> Většina programátorů stejně jako ty použije na řazení vestavěnou funkci <a href="https://docs.python.org/3/howto/sorting.html">sort()</a> &mdash; a je to. I ti, kteří se vše podrobně
     dřív učili na VŠ a skládali z toho zkoušky, většinu z toho dávno zapomněli &mdash; protože to nepoužívají. Nanejvýš s tím machrují na společném obědě.
@@ -519,9 +539,8 @@ budte drze, fakt
       <strong>Projdi si základy</strong> algoritmizace a práce s datovými strukturami. Začni třeba s <a href="{{ url_for('practice') }}#basics">BaseCS</a>. Algoritmy se nejlépe vysvětlují na videu, takže je <a href="https://www.youtube.com/results?search_query=quicksort">hledej na YouTube</a>.
     </li>
     <li>
-      <strong>Řeš úlohy</strong> na <a href="{{ url_for('practice') }}#exercises">webech jako Codewars nebo HackerRank</a>. Procvičíš si algoritmizaci a datové struktury na reálných problémech. Můžeš zkusit
-      i knihu <a href="http://www.crackingthecodinginterview.com/">Cracking the Coding Interview</a>. Nezabývá se ničím jiným, než řešením úloh, které můžeš
-      dostat na pohovoru.
+      <strong>Řeš úlohy</strong> na <a href="{{ url_for('practice') }}#exercises">webech jako Codewars nebo HackerRank</a>. Procvičíš si algoritmizaci a datové struktury na reálných problémech. Projdi si
+      <a href="#handbooks">příručky, které se zabývají řešením úloh z pohovorů</a>.
     </li>
     <li>
       <strong>Dělej si poznámky</strong>. Díky nim se budeš moci k nabytým
@@ -542,23 +561,97 @@ budte drze, fakt
     Rady v této podkapitole volně vychází ze <a href="https://twitter.com/ASpittel/status/1214979863683174400">série tipů, které tweetovala Ali Spittel</a>. Velké díky!
   </p>
 
+  <h3>Tvoje požadavky</h3>
+  <p>
+    Pokud hledáš ve velkém městě, kde je nabídek více, připrav si
+    <strong>seznam konkrétních
+    věcí, které jsou pro tebe důležité</strong>. Ten si u každé nabídky odškrtávej.
+    Nehledej naslepo „něco“. Ze svých požadavků neslevuj, raději obejdi více pohovorů.
+    Může to být třeba že chceš na programátorskou pozici
+    (<a href="#entry-tech">ne testování</a>), že chceš příjemný kolektiv,
+    že chceš prostředí, kde nebude problém se učit nebo zajet na konferenci.
+  </p>
+  <!--
+    Prioritize what you value
+
+    Success looks incredibly different to everyone. Some people enjoy recognition, others want to make tons of money, others want really good work life balance. What's most important to you will not be the same as the person next to you. Don't compare yourself to anyone else, and don't hold yourself to anyone's standards. Your priorities are valid. Find work places that align with your values and priorities.
+
+    Write down your goals and your non-negotiables
+
+    What do you want in the future? What's important to you? Is it a certain salary? Or work life balance? Or a certain title? What times do you work best? What culture is best for you? These things may evolve over time, but having them on paper means you can come back and revisit over time. Then you can focus on doing things that get you closer to your goals. Also, remind yourself of those non-negotiables when you get an offer so you can make sure you're going to be in a situation to succeed.
+  -->
+
   <h3 id="reverse-interview">Tvoje otázky</h3>
   <p>
-    Připrav si dotazy, které budeš mít ty ohledně firmy a nabízené pozice. Nastupuješ jako začátečník a budeš potřebovat, aby ti někdo stále pomáhal. <strong>Zeptej se, jestli ve firmě budeš mít přidělené lidi, kteří se ti budou věnovat</strong> a za kterými budeš moci chodit pro rady <strong>bez pocitu, že je zdržuješ od důležité práce</strong>. Kromě toho existuje spousta dalších otázek, na které se můžeš zeptat &mdash; mrkni na seznam <a href="https://github.com/viraptor/reverse-interview">Reverse interview</a>.
+    Připrav si dotazy, které budeš mít ty ohledně firmy a nabízené pozice. Nastupuješ jako začátečník a budeš potřebovat, aby ti někdo stále pomáhal. <strong>Zeptej se, jestli ve firmě budeš mít přidělené lidi, kteří se ti budou věnovat</strong> a za kterými budeš moci chodit pro rady <strong>bez pocitu, že je zdržuješ od důležité práce</strong>. Kromě toho existuje spousta dalších otázek, na které se můžeš zeptat:
   </p>
+
+  <ul class="list">
+    <li>
+      <a href="https://github.com/viraptor/reverse-interview#readme">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/github.com!viraptor!reverse-interview!readme.jpg') }}">
+        </div>
+        <h3>Reverse interview</h3>
+      </a>
+      <p>
+        Inspiruj se dlouhým seznamem otázek, které můžeš položit.
+      </p>
+    </li>
+    <li>
+      <a href="https://trello.com/b/igarGHRw/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/trello.com!b!igarGHRw.jpg') }}">
+        </div>
+        <h3>How to do job interview right</h3>
+      </a>
+      <p>
+        Prostuduj nástěnku plnou tipů jak se připravit a na co se ptát.
+      </p>
+    </li>
+  </ul>
+
   <p>
-    Celkově je dobré se <strong>soustředit i na sebe</strong>. Jsi začátečník, ale
+    Celkově je dobré se <strong>soustředit i na sebe</strong>. Jsi juniorní, ale
     na pohovoru dostáváš rozpačité odpovědi na to, jestli se ti někdo bude věnovat?
     Vidíš už na pohovoru přebujelá ega, machrování, manipulativní otázky?
-    Nejednají s tebou s respektem? Zaznamenáváš už při pohovoru sexistické narážky? Až nastoupíš, nebude to lepší! Všechno toto jsou tzv. <em>red flags</em>, signály, že <strong>firma, do které se snažíš dostat, není tak úplně v pořádku</strong> a nejspíš nestojí za to s ní ztrácet čas. Pohovor funguje na obě strany &mdash; testuješ si i ty firmu, nejen ona tebe.
+    Nejednají s tebou s respektem? Zaznamenáváš už při pohovoru sexistické narážky?
+    Působí firma neorganizovaně? Musíš projít přes desetikolový pohovor se spoustou úloh před tabulí? Až nastoupíš, nebude to lepší! Všechno toto jsou tzv. <em>red flags</em>, signály, že <strong>firma, do které se snažíš dostat, není tak úplně v pořádku</strong> a nejspíš nestojí za to s ní ztrácet čas. Pohovor funguje na obě strany &mdash; testuješ si i ty firmu, nejen ona tebe.
   </p>
+  <figure class="quote">
+    <blockquote>
+      Mysli i na sebe. Pokud při pohovoru musíš přeskočit milion překážek, možná je to signál, že tak bude vypadat i práce pro tu firmu.
+    </blockquote>
+    <figcaption>
+      Ali Spittel, <a href="https://welearncode.com/">We Learn Code</a> & <a href="https://www.ladybug.dev/">Ladybug Podcast</a>
+    </figcaption>
+  </figure>
 
   <h3>Životopis</h3>
 <!--
 linkedin
 
 https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html
+
+Make a portfolio that stands out
+
+Portfolios show your abilities and interests as well as your creativity. As someone who has done a lot of hiring, if someone has a portfolio site, I focus on looking through that way more than a resume. It doesn't have to have a bunch of side projects or anything like that -- just spin up a landing page with a bio, some experience, and links to other places on the web -- or your resume. It's a more dynamic way to show what you're about and what you're interested in. I still keep mine updated even though I'm not looking for a job, but I use it mostly for speaking opportunities, which are also helpful for your career!
+
+Make a portfolio that stands out
+
+Your portfolio is key to communicating who you are and what you've done. They are super helpful if you're looking for your first job, so you can show off the projects you've built and what you're interested in. If you're looking for speaking opportunities or to advance in your career, they're great for that -- it's what I use mine for now. Plus, they're a fun creative outlet. Do something fun if you can, it will stand out more. If you're looking to make one, here's more of my advice!
 -->
+  <h3>Nepodceňuj zkušenosti získané mimo IT</h3>
+  <p>
+<!--
+Don't undervalue your non-tech experiences
+
+You have experiences outside of tech that are valuable, contribute to who you are, and can contribute to a company as well. Your customer service skills translate to client management, your teaching experience makes you a better mentor, your previous career in the insurance industry will give you subject matter expertise to help make the product better. I can keep going!
+
+Don't undervalue your previous experience, sell it. If you can find a job that hybridizes your interests or previous career and code, you'll be a huge step ahead. Your non-programming skills are incredibly important, don't ignore them.
+-->
+  </p>
+
   <h3>Projekt</h3>
 <!--
 https://www.benfrederickson.com/github-wont-help-with-hiring/
@@ -581,7 +674,45 @@ Open Source (docs, triaging, ...)
 organizing meetups, courses, conferences, ... coaching at pyladies, czechitas, ...
 
 Muj citat o tom, ze jsem se naucil python tim, ze jsem zalozil pyvo v brne
+
+---
+
+Teach
+
+The best way to really learn something is to teach it to someone else. You have to know something in-depth to explain it well -- it's much harder than you may think. Plus teaching can help you meet other developers and display your own knowledge! It's a win win!
+
+---
+
+Get involved in the community
+
+If there's one thing that I wish I had done earlier in my career, its getting involved in the tech community. I started coding in a computer science classroom where I didn't feel like I belonged, but getting involved in the wider industry through blogging, attending meetups, and social media has made me feel so much more included. In addition, it can help with establishing a "brand" and demonstrate your knowledge. Not to mention how much it can help others.
+
+I wrote a lot more extensively on how to get involved with the tech community here.
+
+---
+
+Make friendships in the industry when you're not looking for a job
+
+Getting referred for jobs makes it much easier to get in the door at companies. I have gotten almost all of my jobs through people I know. Online applications when you don't have a reference are usually a lottery -- there are tons of applicants and filtering them is incredibly difficult. It's really important to network and use your connections to find jobs.
+
+Along the same lines, it is much better to make mutual relationships that are not just about a certain position, the person will be more likely to vouch for you, not to mention the other benefits of genuine friendships! One-sided relationships aren’t likely to be long lasting and overly rewarding. Both parties should be engaged and benefit from the relationship.
+
+Go to meetups, go to industry events, interact on social media, and build a network before you're looking for a job so that network will be there to support you once you're ready.
+
+Plus you'll have new friends -- some of my closest ones are from this industry now.
 -->
+
+  <h3>Zapisuj si úspěchy</h3>
+<!--
+Track your wins
+
+Similar to tracking your knowledge, track your wins. First, if you're having a bout of impostor syndrome, you can come back to them and think of all the awesome things you've done. And you can compare your current wins to your old ones -- you've probably come pretty far.
+
+I keep a document cool things I've done at work, side projects, speaking and writing gigs, positive feedback on my job performance, nice letters from students, screen shots of nice comments on my blog posts, etc.
+
+On the other hand, when you're negotiating at a new job or for an internal raise or promotion, it will come in handy to have a list of the things that make you a great candidate.
+-->
+
   <h3>Tým</h3>
 <!--
 diversity
@@ -590,9 +721,38 @@ bude se o me nekdo starat? venovat se mi? <-- strasne dulezity
 lunch round - setkani s tymem, jak si sednete, kultura prijemna pro novacka?
 
 když ti nesedne kolektiv, neboj se to zkusit jinde
+
+
+Find employers who want you to succeed
+
+Good management that prioritizes your interests and goals is so important for creating a career where you're growing and thriving. Management makes or breaks roles. Find a manager, and a team, who is looking out for you and wants you to succeed. It will lead to a more functional team and to an environment where you're probably happier.
 -->
+
+  <h3>Vyjednávání</h3>
+<!--
+Negotiate
+
+Negotiate everything you can. Job offers, content creation, work hours, remote days, job duties, benefits, compensation, etc. can all be negotiated. Use your wins to give you confidence and as a tangible list of accomplishments. The format I normally use is:
+
+    Thanking them for the initial offer, telling them I'm excited about it
+    Telling them what I want to negotiate
+    Listing my "wins" that lead to me getting what I am negotiating for
+    How I plan to help the company in the future
+    Sign off
+
+It has worked really well for me.
+
+---
+
+Don't tell prospective employers how much you make
+
+On a related note, you may get asked in interviews how much money you currently make. Don't answer this question, in fact it's illegal in a lot of states. You can spin and answer it with "Here's the number I'm looking for in my next position." instead. If they push, tell them you don't answer that question.
+-->
+
   <h3>Jak zvládnout odmítnutí</h3>
 <!--
+Neboj se říct si po pohovoru o zpětnou vazbu.
+
 10+ pohovoru bezne
 10+ pohovoru nebo pokusu (screening nebo 3-4. kolo), 1.5 mesice hledani prace na fulltime
 
@@ -603,12 +763,39 @@ nebrat to jako odmitani, jde i o me, nejsme kompatibilni, bylo by z toho jen mrz
 brat to optimisticky, ucim se tim, neni to FAIL, je to nejaky stav mezi tebou a konkretni firmou
 
 brat si vsude notysek a zapisovat si veci, ktere nevim a doma se na ne po kazdem pohovoru podivat, learn from interviews
+
+nekdy firmy nedaji zadnou informaci, v nekterych zemich je to primo v zakone,
+nekde se proste kryjou aby se vyhnuli zalobam
+-->
+
+  <h3>Netoleruj špatné podmínky</h3>
+<!--
+Don't tolerate bullshit
+
+The tech industry can be really toxic, especially for people who are members of underrepresented groups. Know that people treating you poorly isn't your fault. The job search process can suck, but it is worth it to try and move in order to get out of a work situation where you're being treated poorly. Changing things internally is really hard, and most companies you want to work for aren't going to judge you for a short stint somewhere. Your mental health and safety is more important than loyalty to a company that isn't showing that back to you. Do what you need to do to get out, if at all possible, and don't let people minimize your experiences.
+
+I know that this is easier said than done, and finding a new job is hard. If you're in this position please reach out to me and I'll do what I can to help. Or just be a person to vent to.
 -->
 </section>
 
 <section id="seeking">
   <h2>Kde hledat</h2>
   <h3>Recruiteři</h3>
+  <h3>Profily</h3>
+<!--
+Searching page
+
+I've seen a few people create "searching" pages when they're looking for new roles that feature their requirements and interests in a new position. Almost like a job description but from the perspective of the employee instead of the employer. I haven't done this myself yet, but if I do a job search at some point I definitely will.
+
+nabizeni se na pyonyrech, pyvech, apod.
+profily na jobs apod.
+-->
+  <h3>Oslovování firem</h3>
+<!--
+Just because there aren't jobs listed doesn't mean they don't exist
+
+Just because the perfect job for you doesn't exist on a company's website doesn't mean it doesn't exist. I got my first tech job through cold emailing a startup asking if they had internships
+-->
   <h3 id="networking">Networking</h3>
 <!--
 Je dobře, že se ptáš i tu na FB, vlastně to je začátek přesně té aktivity, kterou ti tu radím :) Jen jsem chtěl napsat něco k tomu, že lidi hledají takovéto stáže a nemůžou je moc najít (googlením).
@@ -619,7 +806,11 @@ V Praze na Pyvu je někdy vyloženě "pracovní burza" - lidi, co hledají nebo 
   <p>
     Přímo na těchto stránkách je aktuálně <strong><a href="{{ url_for('jobs') }}">{{ jobs_count }} nabídek práce pro juniory</a></strong> od {{ companies_count }} firem.
   </p>
+<!--
+Online applications can be a black hole
 
+Online application portals are notoriously hard to break through. I remember hiring for a single position that had hundreds of online applications. Getting through that process without a connection is incredibly difficult -- possible, but difficult. I would advise trying to make connections or working with recruiters so that you can move to the front of the line.
+-->
 
 <!--
 job boardy

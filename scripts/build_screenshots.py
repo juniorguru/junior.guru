@@ -31,6 +31,7 @@ HIDDEN_ELEMENTS = [
     '[data-purpose*="smart-bar"]',  # udemy.com
     '[data-before-content*="advertisement"]',  # reddit.com
     '.butterBar',  # medium.com
+    '#banners',  # trello.com
     '.intercom-app',
     '[id*="gdpr-consent"]',
     '[id*="consent-banner"]',
