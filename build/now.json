@@ -1,6 +1,4 @@
 {
-  "version": 2,
-  "alias": ["junior.guru", "juniorguru.now.sh"],
   "builds": [
     { "src": "**/*", "use": "@now/static" }
   ]
