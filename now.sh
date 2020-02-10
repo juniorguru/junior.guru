@@ -1,13 +1,18 @@
 #!/bin/bash
+
+# Get Python 3.7
+if [[ ! -d ~/.pyenv ]]; then
+  curl https://pyenv.run | bash
+fi
+[[ -f ~/.bashrc ]] && source ~/.bashrc
+[[ -f ~/.bash_profile ]] && source ~/.bash_profile
+
 set -e
+pyenv install 3.7.5 --skip-existing
 
 # Installation
 npm install
-
 pip install pipenv
-curl https://pyenv.run | bash
-source ~/.bashrc
-pyenv install 3.7.5
 pipenv install --dev --python="$(pyenv prefix 3.7.5)/bin/python"
 
 # Build
