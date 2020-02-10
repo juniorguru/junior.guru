@@ -6,6 +6,7 @@ npm install
 
 pip install pipenv
 curl https://pyenv.run | bash
+source ~/.bashrc
 pyenv install 3.7.5
 pipenv install --dev --python="$(pyenv prefix 3.6.6)/bin/python"
 
