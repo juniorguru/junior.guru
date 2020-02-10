@@ -2,9 +2,10 @@
 
 # Get Python 3.7
 if [[ ! -d ~/.pyenv ]]; then
-  yum install libffi-devel pyenv
-#   curl https://pyenv.run | bash
-#   export PATH="/zeit/.pyenv/bin:$PATH"
+  yum install -y libffi-devel
+  curl https://pyenv.run | bash
+  echo $HOME
+  export PATH="/zeit/.pyenv/bin:$PATH"
 fi
 
 set -e
