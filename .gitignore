@@ -81,3 +81,4 @@ google_service_account.json
 
 # Now
 .now
+.env.build
