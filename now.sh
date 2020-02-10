@@ -3,9 +3,8 @@
 # Get Python 3.7
 if [[ ! -d ~/.pyenv ]]; then
   curl https://pyenv.run | bash
+  export PATH="/zeit/.pyenv/bin:$PATH"
 fi
-[[ -f ~/.bashrc ]] && source ~/.bashrc
-[[ -f ~/.bash_profile ]] && source ~/.bash_profile
 
 set -e
 pyenv install 3.7.5 --skip-existing
