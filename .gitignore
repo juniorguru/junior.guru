@@ -79,4 +79,5 @@ google_service_account.json
 /juniorguru/web/static/*
 !/juniorguru/web/static/src
 
+# Now
 .now
