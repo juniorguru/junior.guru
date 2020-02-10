@@ -3,7 +3,7 @@ set -e
 
 # Installation
 npm install
-pip install --user pipenv
+pip install setuptools pipenv
 pipenv install --dev --three
 
 # Build
