@@ -3,8 +3,11 @@ set -e
 
 # Installation
 npm install
-pip install setuptools pipenv
-pipenv install --dev --three
+
+pip install pipenv
+curl https://pyenv.run | bash
+pyenv install 3.7.5
+pipenv install --dev --python="$(pyenv prefix 3.6.6)/bin/python"
 
 # Build
 pipenv run fetch  # needs $GOOGLE_SERVICE_ACCOUNT
