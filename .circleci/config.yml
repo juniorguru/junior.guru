@@ -62,12 +62,12 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - run: pipenv run fetch && pipenv run build
+      - run: pipenv run fetch && pipenv run build  # needs $GOOGLE_SERVICE_ACCOUNT
       - persist_to_workspace:
           root: "~"
           paths:
               - project/juniorguru/data
-              - project/build
+              - project/public
 
   check-anchors:
     executor: python-js
@@ -92,20 +92,6 @@ jobs:
             sleep 5
           done
 
-  deploy:
-    executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run:
-          name: install 'now'
-          command: sudo npm install --global --unsafe-perm now
-      - run:
-          name: deploy
-          command: |
-            [[ "$CIRCLE_BRANCH" == "master" ]] && export NOW_TARGET="production"
-            pipenv run deploy  # needs $NOW_TOKEN
-
 
 workflows:
   version: 2
@@ -128,11 +114,6 @@ workflows:
       - check-links:
           requires:
             - fetch-build
-      - deploy:
-          requires:
-            - test
-            - fetch-build
-            - check-anchors
 
   nightly_workflow:
     <<: *default_workflow

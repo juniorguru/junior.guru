@@ -1,0 +1,7 @@
+{
+  "build": {
+    "env": {
+      "GOOGLE_SERVICE_ACCOUNT": "@google_service_account"
+    }
+  }
+}

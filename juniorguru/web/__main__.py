@@ -14,10 +14,9 @@ def generate_job_ids():
 
 def main():
     app.config['SERVER_NAME'] = 'junior.guru'
-    app.config['FREEZER_DESTINATION'] = Path(app.root_path) / '..' / '..' / 'build'
+    app.config['FREEZER_DESTINATION'] = Path(app.root_path) / '..' / '..' / 'public'
     app.config['FREEZER_BASE_URL'] = 'https://junior.guru'
     app.config['FREEZER_STATIC_IGNORE'] = ['src']
-    app.config['FREEZER_DESTINATION_IGNORE'] = ['now.json']
 
     warnings.filterwarnings('error', category=flask_frozen.FrozenFlaskWarning)
 

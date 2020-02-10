@@ -70,8 +70,7 @@ venv.bak/
 google_service_account.json
 
 # Build
-/build/
-!/build/now.json
+/public/
 
 # Fetched data
 /juniorguru/data/*.db
@@ -79,3 +78,5 @@ google_service_account.json
 # Web statics
 /juniorguru/web/static/*
 !/juniorguru/web/static/src
+
+.now

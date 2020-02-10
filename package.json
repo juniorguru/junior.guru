@@ -3,6 +3,9 @@
   "engines": {
     "node": "12.x"
   },
+  "scripts": {
+    "now-build": "bash now.sh"
+  },
   "dependencies": {
     "instant.page": "3.0.0"
   },
