@@ -4,7 +4,7 @@
     "node": "12.x"
   },
   "scripts": {
-    "build": "echo 'build'"
+    "build": "python3 scripts/now_build.py"
   },
   "dependencies": {
     "instant.page": "3.0.0"
