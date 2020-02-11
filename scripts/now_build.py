@@ -6,7 +6,7 @@ from itertools import groupby
 from subprocess import run
 
 
-POLLING_WAIT_S = 10
+POLLING_WAIT_S = 15
 POLLING_TIMEOUT_S = 600  # 10min
 POLLING_END_CONTEXT = 'ci/circleci: release'
 
@@ -29,7 +29,7 @@ def now_github_build():
 
     t = time.time()
     while True:
-        print('Checking statues...')
+        print('Checking statues...', flush=True)
         response = requests.get('https://api.github.com'
                                 f'/repos/{org}/{repo}/commits/{sha}/statuses')
         response.raise_for_status()
@@ -40,14 +40,14 @@ def now_github_build():
             print(f"\t{context} - {state}")
 
         if statuses.get(POLLING_END_CONTEXT) == 'success':
-            print('Done!')
+            print('Done!', flush=True)
             break
 
         if time.time() - t > POLLING_TIMEOUT_S:
-            print('Timeout!')
+            print('Timeout!', flush=True)
             sys.exit(1)
 
-        print(f'Waiting {POLLING_WAIT_S} more seconds...', end='\n\n')
+        print(f'Waiting {POLLING_WAIT_S} more seconds...', end='\n\n', flush=True)
         time.sleep(POLLING_WAIT_S)
 
 
