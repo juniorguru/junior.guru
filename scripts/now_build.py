@@ -24,23 +24,27 @@ GITHUB_ORG = os.getenv('NOW_GITHUB_COMMIT_ORG')
 GITHUB_REPO = os.getenv('NOW_GITHUB_COMMIT_REPO')
 GITHUB_SHA = os.getenv('NOW_GITHUB_COMMIT_SHA')
 
+# https://circleci.com/docs/2.0/artifacts/#downloading-all-artifacts-for-a-build-on-circleci
 CIRCLECI_TOKEN = os.getenv('CIRCLECI_TOKEN')
 
 
 def now_github_build():
+    statuses_url = ('https://api.github.com'
+                    f'/repos/{GITHUB_ORG}/{GITHUB_REPO}/commits/{GITHUB_SHA}/statuses')
+    release_url = None
+
     t = time.time()
     while True:
         print('Checking statues...', flush=True)
-        url = ('https://api.github.com'
-               f'/repos/{GITHUB_ORG}/{GITHUB_REPO}/commits/{GITHUB_SHA}/statuses')
-        data = json.loads(request.urlopen(url).read())
-        statuses = dict(aggregate_statuses(data))
+        data = json.loads(request.urlopen(statuses_url).read())
 
         print('Statuses:')
-        for context, state in statuses.items():
+        for context, state, url in aggregate_statuses(data):
             print(f"\t{context} - {state}")
+            if context == POLLING_END_CONTEXT and state == 'success':
+                release_url = url
 
-        if statuses.get(POLLING_END_CONTEXT) == 'success':
+        if release_url:
             print('Done!', flush=True)
             break
 
@@ -51,12 +55,27 @@ def now_github_build():
         print(f'Waiting {POLLING_WAIT_S} more seconds...', end='\n\n', flush=True)
         time.sleep(POLLING_WAIT_S)
 
+    print('Downloading artifact...')
+    release_url = release_url.split('?')[0]  # https://circleci.com/gh/honzajavorek/junior.guru/3558
+    release_url = release_url.replace('https://circleci.com/', 'https://circleci.com/api/v1.1/project/')
+    release_url += f'/artifacts?circle-token={CIRCLECI_TOKEN}'
+
+    req = request.Request(url=release_url,
+                          headers={'Accept': 'application/json'})
+    artifacts = json.loads(request.urlopen(req).read())
+    request.urlretrieve(artifacts[0]['url'], 'public.tar.gz')
+
+    print('Unpacking artifact...')
+    os.makedirs('public', exist_ok=True)
+    run(['tar', '-xvzf', 'public.tar.gz'])  # TODO https://askubuntu.com/a/1076825
+
 
 def aggregate_statuses(statuses):
     all_statuses = sorted(statuses, key=itemgetter('context'))
     for context, context_statuses in groupby(all_statuses, key=itemgetter('context')):
         sorted_context_statuses = sorted(context_statuses, key=itemgetter('updated_at'), reverse=True)
-        yield (context, statuses[0]['state'])
+        last_status = sorted_context_statuses[0]
+        yield (context, last_status['state'], last_status['target_url'])
 
 
 def now_build():
