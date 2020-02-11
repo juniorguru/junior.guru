@@ -88,7 +88,7 @@ function freezeFlask() {
 }
 
 function minifyHTML() {
-  return gulp.src('build/**/*.html')
+  return gulp.src('public/**/*.html')
     .pipe(htmlmin({
       minifyCSS: true,
       minifyJS: true,
@@ -102,12 +102,12 @@ function minifyHTML() {
       collapseBooleanAttributes: true,
       caseSensitive: true,
     }))
-    .pipe(gulp.dest('build/'));
+    .pipe(gulp.dest('public/'));
 }
 
 function copyFavicon() {
   return gulp.src('juniorguru/web/static/src/images/favicon.ico')
-    .pipe(gulp.dest('build/'))
+    .pipe(gulp.dest('public/'))
 }
 
 const buildWeb = gulp.series(
@@ -137,8 +137,8 @@ async function watchWeb() {
 }
 
 async function serveWeb() {
-  connect.server({ root: 'build/', port: 5000, livereload: true });
-  gulp.watch('build/').on('change', (path) =>
+  connect.server({ root: 'public/', port: 5000, livereload: true });
+  gulp.watch('public/').on('change', (path) =>
     gulp.src(path, { read: false }).pipe(connect.reload())
   );
 }

@@ -3,6 +3,9 @@
   "engines": {
     "node": "12.x"
   },
+  "scripts": {
+    "build": "python3 scripts/now_build.py"
+  },
   "dependencies": {
     "instant.page": "3.0.0"
   },

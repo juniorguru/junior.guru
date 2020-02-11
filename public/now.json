@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "build": {
+    "env": {
+      "CIRCLECI_TOKEN": "@circleci_token"
+    }
+  }
+}

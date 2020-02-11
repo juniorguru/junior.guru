@@ -6,14 +6,14 @@ from pathlib import Path
 from lxml import html
 
 
-BUILD_DIR = Path(__file__).parent.parent / 'build'
+PUBLIC_DIR = Path(__file__).parent.parent / 'public'
 
 
 links = []
 ids = set()
 
-for path in BUILD_DIR.glob('**/*.html'):
-    doc_name = f'/{path.relative_to(BUILD_DIR)}'
+for path in PUBLIC_DIR.glob('**/*.html'):
+    doc_name = f'/{path.relative_to(PUBLIC_DIR)}'
     doc_name = doc_name[:-10] if doc_name.endswith('index.html') else doc_name
 
     html_tree = html.fromstring(path.read_text())

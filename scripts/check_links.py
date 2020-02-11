@@ -15,7 +15,7 @@ EXCLUDE = [
     'facebook.com/search/events/?q=english',
 ]
 PROJECT_DIR = Path(__file__).parent.parent
-BUILD_DIR = PROJECT_DIR / 'build'
+PUBLIC_DIR = PROJECT_DIR / 'public'
 
 
 command = ['npx', 'blcl']
@@ -32,4 +32,4 @@ for url in EXCLUDE:
     options.append(f'--exclude={url}')
 
 
-sys.exit(run(command + options + [BUILD_DIR]).returncode)
+sys.exit(run(command + options + [PUBLIC_DIR]).returncode)
