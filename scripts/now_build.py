@@ -1,39 +1,40 @@
 import os
 import sys
 import time
+import json
 from operator import itemgetter
 from itertools import groupby
 from subprocess import run
+from urllib import request
 
 
 POLLING_WAIT_S = 15
 POLLING_TIMEOUT_S = 600  # 10min
 POLLING_END_CONTEXT = 'ci/circleci: release'
 
+# NOW_GITHUB_COMMIT_ORG=honzajavorek
+# NOW_GITHUB_COMMIT_REPO=junior.guru
+# NOW_GITHUB_REPO=junior.guru
+# NOW_GITHUB_COMMIT_AUTHOR_NAME=Honza Javorek
+# NOW_GITHUB_COMMIT_AUTHOR_LOGIN=honzajavorek
+# NOW_GITHUB_ORG=honzajavorek
+# NOW_GITHUB_COMMIT_SHA=56b0469f3a381099644b41016e32e60e24377d5f
+# NOW_GITHUB_COMMIT_REF=honzajavorek/fix-now
+GITHUB_ORG = os.getenv('NOW_GITHUB_COMMIT_ORG')
+GITHUB_REPO = os.getenv('NOW_GITHUB_COMMIT_REPO')
+GITHUB_SHA = os.getenv('NOW_GITHUB_COMMIT_SHA')
+
+CIRCLECI_TOKEN = os.getenv('CIRCLECI_TOKEN')
+
 
 def now_github_build():
-    run(['pip', 'install', 'requests<3'])
-    import requests
-
-    # NOW_GITHUB_COMMIT_ORG=honzajavorek
-    # NOW_GITHUB_COMMIT_REPO=junior.guru
-    # NOW_GITHUB_REPO=junior.guru
-    # NOW_GITHUB_COMMIT_AUTHOR_NAME=Honza Javorek
-    # NOW_GITHUB_COMMIT_AUTHOR_LOGIN=honzajavorek
-    # NOW_GITHUB_ORG=honzajavorek
-    # NOW_GITHUB_COMMIT_SHA=56b0469f3a381099644b41016e32e60e24377d5f
-    # NOW_GITHUB_COMMIT_REF=honzajavorek/fix-now
-    org = os.getenv('NOW_GITHUB_COMMIT_ORG')
-    repo = os.getenv('NOW_GITHUB_COMMIT_REPO')
-    sha = os.getenv('NOW_GITHUB_COMMIT_SHA')
-
     t = time.time()
     while True:
         print('Checking statues...', flush=True)
-        response = requests.get('https://api.github.com'
-                                f'/repos/{org}/{repo}/commits/{sha}/statuses')
-        response.raise_for_status()
-        statuses = dict(aggregate_statuses(response.json()))
+        url = ('https://api.github.com'
+               f'/repos/{GITHUB_ORG}/{GITHUB_REPO}/commits/{GITHUB_SHA}/statuses')
+        data = json.loads(request.urlopen(url).read())
+        statuses = dict(aggregate_statuses(data))
 
         print('Statuses:')
         for context, state in statuses.items():

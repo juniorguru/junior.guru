@@ -25,3 +25,9 @@ According to [spectrum.chat/zeit](https://spectrum.chat/zeit/now/redirection-ema
 1.  Run `cat juniorguru/fetch/google_service_account.json | pbcopy` to copy the JSON into your clipboard (macOS)
 1.  Go to CircleCI project settings, page Environment Variables
 1.  Add `GOOGLE_SERVICE_ACCOUNT` variable and paste the JSON from your clipboard as a value
+
+## Setting up deployment
+
+1.  Get a [CircleCI personal API token](https://circleci.com/docs/2.0/managing-api-tokens/#creating-a-personal-api-token)
+1.  Run `now secrets add circleci_token <token>`.
+1.  Run `echo 'CIRCLECI_TOKEN=' > .env.build` so `now dev` works. You don't need to put the actual value there, because the token isn't used locally.
