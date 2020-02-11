@@ -12,7 +12,6 @@ build-screenshots = "python scripts/build_screenshots.py"
 check-links = "python scripts/check_links.py"
 check-anchors = "python scripts/check_anchors.py"
 serve = "npx gulp serve"
-deploy = "bash scripts/deploy.sh"
 
 [packages]
 jinja2 = "*"

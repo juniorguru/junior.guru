@@ -57,12 +57,12 @@ jobs:
           at: "~"
       - run: pipenv run test -v
 
-  fetch-build:
+  fetch-build:  # needs $GOOGLE_SERVICE_ACCOUNT
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: pipenv run fetch && pipenv run build  # needs $GOOGLE_SERVICE_ACCOUNT
+      - run: pipenv run fetch && pipenv run build
       - persist_to_workspace:
           root: "~"
           paths:
@@ -92,6 +92,15 @@ jobs:
             sleep 5
           done
 
+  release:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: tar -cvf public.tar ./public
+      - store_artifacts:
+          path: ./public.tar
+
 
 workflows:
   version: 2
@@ -114,6 +123,11 @@ workflows:
       - check-links:
           requires:
             - fetch-build
+      - release:
+          requires:
+            - test
+            - fetch-build
+            - check-anchors
 
   nightly_workflow:
     <<: *default_workflow

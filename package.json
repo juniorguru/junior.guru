@@ -4,7 +4,7 @@
     "node": "12.x"
   },
   "scripts": {
-    "build": "bash now.sh"
+    "build": "echo 'build'"
   },
   "dependencies": {
     "instant.page": "3.0.0"
