@@ -71,6 +71,7 @@ google_service_account.json
 
 # Build
 /public/
+!/public/now.json
 
 # Fetched data
 /juniorguru/data/*.db
