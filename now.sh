@@ -15,6 +15,10 @@ npm install
 pip install pipenv
 pipenv install --dev --python="$(pyenv prefix 3.7.5)/bin/python"
 
+# Figure out things
+env
+ldd chrome | grep not
+
 # Build
 pipenv run fetch  # needs $GOOGLE_SERVICE_ACCOUNT
 pipenv run build
