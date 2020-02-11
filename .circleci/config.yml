@@ -68,6 +68,9 @@ jobs:
           paths:
               - project/juniorguru/data
               - project/public
+      - run: tar -cvzf public.tar.gz ./public
+      - store_artifacts:
+          path: ./public.tar.gz
 
   check-anchors:
     executor: python-js
@@ -92,15 +95,6 @@ jobs:
             sleep 5
           done
 
-  release:
-    executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run: tar -cvzf public.tar.gz ./public
-      - store_artifacts:
-          path: ./public.tar.gz
-
 
 workflows:
   version: 2
@@ -123,11 +117,6 @@ workflows:
       - check-links:
           requires:
             - fetch-build
-      - release:
-          requires:
-            - test
-            - fetch-build
-            - check-anchors
 
   nightly_workflow:
     <<: *default_workflow

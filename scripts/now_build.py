@@ -10,7 +10,7 @@ from urllib import request
 
 POLLING_WAIT_S = 15
 POLLING_TIMEOUT_S = 600  # 10min
-POLLING_END_CONTEXT = 'ci/circleci: release'
+POLLING_END_CONTEXT = 'ci/circleci: fetch-build'
 
 # NOW_GITHUB_COMMIT_ORG=honzajavorek
 # NOW_GITHUB_COMMIT_REPO=junior.guru
@@ -35,7 +35,7 @@ def now_github_build():
 
     t = time.time()
     while True:
-        print('Checking statues...', flush=True)
+        print(f"Checking the '{POLLING_END_CONTEXT}' status...", flush=True)
         data = json.loads(request.urlopen(statuses_url).read())
 
         print('Statuses:')
