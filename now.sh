@@ -2,10 +2,9 @@
 
 # Get Python 3.7
 if [[ ! -d ~/.pyenv ]]; then
-  yum install -y libffi-devel
+  yum install -y libffi-devel sqlite-devel
   curl https://pyenv.run | bash
-  echo $HOME
-  export PATH="/zeit/.pyenv/bin:$PATH"
+  export PATH="/$HOME/.pyenv/bin:$PATH"
 fi
 
 set -e
