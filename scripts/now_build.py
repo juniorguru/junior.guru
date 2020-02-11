@@ -24,9 +24,6 @@ GITHUB_ORG = os.getenv('NOW_GITHUB_COMMIT_ORG')
 GITHUB_REPO = os.getenv('NOW_GITHUB_COMMIT_REPO')
 GITHUB_SHA = os.getenv('NOW_GITHUB_COMMIT_SHA')
 
-# https://circleci.com/docs/2.0/artifacts/#downloading-all-artifacts-for-a-build-on-circleci
-CIRCLECI_TOKEN = os.getenv('CIRCLECI_TOKEN')
-
 
 def now_github_build():
     statuses_url = ('https://api.github.com'
@@ -58,7 +55,7 @@ def now_github_build():
     print('Downloading artifact...')
     release_url = release_url.split('?')[0]  # https://circleci.com/gh/honzajavorek/junior.guru/3558
     release_url = release_url.replace('https://circleci.com/', 'https://circleci.com/api/v1.1/project/')
-    release_url += f'/artifacts?circle-token={CIRCLECI_TOKEN}'
+    release_url += '/artifacts'
 
     req = request.Request(url=release_url,
                           headers={'Accept': 'application/json'})
