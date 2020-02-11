@@ -97,9 +97,9 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - run: tar -cvf public.tar ./public
+      - run: tar -cvzf public.tar.gz ./public
       - store_artifacts:
-          path: ./public.tar
+          path: ./public.tar.gz
 
 
 workflows:
