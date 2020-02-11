@@ -144,8 +144,11 @@ async function serveWeb() {
 }
 
 
-const build = gulp.series(
+const clean = gulp.series(
   cleanStatic,
+);
+
+const build = gulp.series(
   gulp.parallel(buildJS, buildCSS, buildImages, copyScreenshots),
   buildWeb,
 );
@@ -156,4 +159,4 @@ const serve = gulp.series(
 );
 
 
-module.exports = { default: build, build, serve };
+module.exports = { clean, default: build, build, serve };
