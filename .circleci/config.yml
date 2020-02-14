@@ -139,12 +139,15 @@ workflows:
       - security-scan:
           requires:
             - install
-      - deploy:
+      - fetch-build:
           requires:
             - install
+      - deploy:
+          requires:
+            - fetch-build
       - check-links:
           requires:
-            - deploy
+            - fetch-build
     triggers:
       - schedule:
           cron: "0 10 * * *"

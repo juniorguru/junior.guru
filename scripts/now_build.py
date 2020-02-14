@@ -67,13 +67,20 @@ def aggregate_statuses(statuses):
         yield (context, last_status['state'], last_status['target_url'])
 
 
-def now_build():
+def now_dev_build():
     run(['pipenv', 'run', 'fetch'])
     run(['pipenv', 'run', 'build'])
 
 
 if __name__ == '__main__':
+    # runs inside Now
     if os.getenv('NOW_GITHUB_DEPLOYMENT'):
         now_github_build()
+
+    # runs inside CI, 'public' directory is already built
+    elif os.getenv('CI'):
+        pass
+
+    # runs locally
     else:
-        now_build()
+        now_dev_build()
