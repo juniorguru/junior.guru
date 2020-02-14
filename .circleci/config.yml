@@ -150,7 +150,7 @@ workflows:
             - fetch-build
     triggers:
       - schedule:
-          cron: "35 10 * * *"
+          cron: "0 4 * * *"
           filters:
             branches:
               only:
