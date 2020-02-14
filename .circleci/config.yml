@@ -146,7 +146,7 @@ workflows:
             - deploy
     triggers:
       - schedule:
-          cron: "2 10 * * *"
+          cron: "30 10 * * *"
           filters:
             branches:
               only:
