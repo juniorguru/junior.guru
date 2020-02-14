@@ -91,8 +91,8 @@ jobs:
               now --prod -t "$NOW_TOKEN"
             else
               echo "Looks like the build has been triggered by GitHub (there are no previous 'deploy' jobs for this commit). Skipping duplicate deploy with ZEIT Now CLI."
+              echo "$CIRCLE_SHA1" > .deploy
             fi
-      - run: echo "$CIRCLE_SHA1" > .deploy
       - save_cache:
           key: deploy-{{ .Revision }}
           paths:
