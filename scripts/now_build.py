@@ -73,14 +73,15 @@ def now_dev_build():
 
 
 if __name__ == '__main__':
-    # runs inside Now
+    # triggered by GitHub, runs inside Now
     if os.getenv('NOW_GITHUB_DEPLOYMENT'):
         now_github_build()
 
-    # runs inside CI, 'public' directory is already built
-    elif os.getenv('CI'):
+    # triggered by CI nightly build, runs inside Now, the 'public' directory
+    # should be already populated from the CI build
+    elif os.getenv('NOW_BUILDER'):
         pass
 
-    # runs locally
+    # triggered manually, runs locally
     else:
         now_dev_build()
