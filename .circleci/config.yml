@@ -131,9 +131,6 @@ workflows:
       - check-anchors:
           requires:
             - fetch-build
-      - check-links:
-          requires:
-            - fetch-build
 
   nightly_workflow:
     jobs:
