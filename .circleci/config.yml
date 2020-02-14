@@ -34,7 +34,8 @@ jobs:
               - project/node_modules
               - project
 
-  security-scan:  # needs $SNYK_TOKEN from https://app.snyk.io/account/
+  # needs $SNYK_TOKEN from https://app.snyk.io/account/
+  security-scan:
     executor: python-js
     steps:
       - attach_workspace:
@@ -57,7 +58,8 @@ jobs:
           at: "~"
       - run: pipenv run test -v
 
-  fetch-build:  # needs $GOOGLE_SERVICE_ACCOUNT
+  # needs $GOOGLE_SERVICE_ACCOUNT
+  fetch-build:
     executor: python-js
     steps:
       - attach_workspace:
@@ -72,7 +74,9 @@ jobs:
       - store_artifacts:
           path: ./public.tar.gz
 
-  deploy:  # needs $GOOGLE_SERVICE_ACCOUNT and $NOW_TOKEN, runs fetch & build
+  # needs $GOOGLE_SERVICE_ACCOUNT, $NOW_TOKEN, $NOW_ORG_ID, $NOW_PROJECT_ID
+  # runs fetch & build
+  deploy:
     executor: python-js
     steps:
       - attach_workspace:
@@ -82,10 +86,7 @@ jobs:
           command: sudo npm install --global --unsafe-perm now
       - run:
           name: deploy
-          command: |
-            export NOW_ORG_ID="honzajavorek"
-            export NOW_PROJECT_ID="honzajavorek.cz"
-            now --prod -t "$NOW_TOKEN"
+          command: now --prod -t "$NOW_TOKEN"
       - persist_to_workspace:
           root: "~"
           paths:
