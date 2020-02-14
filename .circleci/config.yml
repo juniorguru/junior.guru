@@ -74,8 +74,7 @@ jobs:
       - store_artifacts:
           path: ./public.tar.gz
 
-  # needs $GOOGLE_SERVICE_ACCOUNT, $NOW_TOKEN, $NOW_ORG_ID, $NOW_PROJECT_ID
-  # runs fetch & build
+  # needs $NOW_TOKEN, $NOW_ORG_ID, $NOW_PROJECT_ID
   deploy:
     executor: python-js
     steps:
@@ -132,6 +131,16 @@ workflows:
       - check-anchors:
           requires:
             - fetch-build
+      - deploy:
+          # This makes sure retries of 'master' builds still deploy,
+          # even though they were not initiated by a GitHub push. Might
+          # cause double deploy for builds initiated by GitHub push, but
+          # Now should recognize they're the same.
+          requires:
+            - fetch-build
+          branches:
+            only:
+              - master
 
   nightly_workflow:
     jobs:
