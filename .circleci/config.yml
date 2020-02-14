@@ -72,6 +72,26 @@ jobs:
       - store_artifacts:
           path: ./public.tar.gz
 
+  deploy:  # needs $GOOGLE_SERVICE_ACCOUNT and $NOW_TOKEN, runs fetch & build
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run:
+          name: install 'now'
+          command: sudo npm install --global --unsafe-perm now
+      - run:
+          name: deploy
+          command: |
+            export NOW_ORG_ID="honzajavorek"
+            export NOW_PROJECT_ID="honzajavorek.cz"
+            now --prod -t "$NOW_TOKEN"
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/juniorguru/data
+              - project/public
+
   check-anchors:
     executor: python-js
     steps:
@@ -99,12 +119,9 @@ jobs:
 workflows:
   version: 2
 
-  default_workflow: &default_workflow
+  default_workflow:
     jobs:
       - install
-      - security-scan:
-          requires:
-            - install
       - test:
           requires:
             - install
@@ -119,7 +136,17 @@ workflows:
             - fetch-build
 
   nightly_workflow:
-    <<: *default_workflow
+    jobs:
+      - install
+      - security-scan:
+          requires:
+            - install
+      - deploy:
+          requires:
+            - install
+      - check-links:
+          requires:
+            - deploy
     triggers:
       - schedule:
           cron: "*/5 * * * *"
