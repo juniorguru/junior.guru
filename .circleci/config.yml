@@ -81,22 +81,20 @@ jobs:
       - attach_workspace:
           at: "~"
       - restore_cache:
-          key: deploy-{{ checksum ".deploy" }}
-      - run:
-          name: install 'now'
-          command: sudo npm install --global --unsafe-perm now
+          key: deploy-{{ .Revision }}
       - run:
           name: deploy
           command: |
             if [[ -f .deploy ]]; then
               echo "Looks like the build has been triggered by CircleCI (nightly, retries). Deploying with ZEIT Now CLI."
+              sudo npm install --global --unsafe-perm now
               now --prod -t "$NOW_TOKEN"
             else
               echo "Looks like the build has been triggered by GitHub (there are no previous 'deploy' jobs for this commit). Skipping duplicate deploy with ZEIT Now CLI."
             fi
       - run: echo "$CIRCLE_SHA1" > .deploy
       - save_cache:
-          key: deploy-{{ checksum ".deploy" }}
+          key: deploy-{{ .Revision }}
           paths:
             - .deploy
 
