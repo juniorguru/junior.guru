@@ -91,6 +91,9 @@ jobs:
           paths:
               - project/juniorguru/data
               - project/public
+    branches:
+      only:
+        - master
 
   check-anchors:
     executor: python-js
@@ -131,16 +134,13 @@ workflows:
       - check-anchors:
           requires:
             - fetch-build
+      # This makes sure retries of 'master' builds still deploy,
+      # even though they were not initiated by a GitHub push. Might
+      # cause double deploy for builds initiated by GitHub push, but
+      # Now should recognize they're the same.
       - deploy:
-          # This makes sure retries of 'master' builds still deploy,
-          # even though they were not initiated by a GitHub push. Might
-          # cause double deploy for builds initiated by GitHub push, but
-          # Now should recognize they're the same.
           requires:
             - fetch-build
-          branches:
-            only:
-              - master
 
   nightly_workflow:
     jobs:
