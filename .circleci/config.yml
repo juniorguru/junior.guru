@@ -149,7 +149,7 @@ workflows:
             - deploy
     triggers:
       - schedule:
-          cron: "0 5 * * *"
+          cron: "2 10 * * *"
           filters:
             branches:
               only:
