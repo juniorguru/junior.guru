@@ -891,33 +891,24 @@ profily na jobs apod.
     Jedním z nejefektivnějších způsobů, jak si v malé ČR sehnat dobrou práci, je <strong>networking, tedy setkávání s lidmi a získávání kontaktů</strong>. Staň se <a href="#proactive">aktivním členem programátorské komunity</a> a zajímavé nabídky práce po čase přijdou samy. Choď na <a href="{{ url_for('practice') }}#events">srazy a konference</a>, seznamuj se s lidmi, představuj se. Jsou to místa, kde lidé zhusta mění a získávají práci &mdash; i proto se na nich vyskytují <a href="#recruiters">recruiteři velkých firem</a>. Můžeš zkusit i veletrhy práce, které jsou na toto přímo zaměřené (např. <a href="https://www.jobsdev.cz/">JobsDev</a>). <strong>Velké akce lze pojmout systematicky</strong> &mdash; vytiskni si 50 vizitek s nápisem „sháním stáž“ a jdi je rozdat mezi lidi. Představuj se, vysvětli co umíš a co hledáš, prodej se. <strong>Malé akce jako srazy ber jako způsob jak najít nové kamarády</strong> v oboru a pracovním příležitostem tam nech spíš volný průběh.
   </p>
   <p>
+    Networking je také způsob, jak od lidí dostat doporučení. Něteří lidé jsou schopní tě ve své firmě doporučit i po pěti minutách rozhovoru, ať už protože mají dobré srdce, protože na ně zapůsobíš, nebo protože chtějí dostat <em>referral bonus</em> (odměna za doporučení nového zaměstnance, kterou některé firmy nabízejí).
+  </p>
+  <p>
     Česká komunita programátorů je malá a existuje na malém prostoru &mdash; z Plzně do Ostravy je to pár hodin vlakem. To znamená, že <strong>všichni se znají a je snadné se setkávat</strong>. Díky tomu je u nás networking velmi důležitou složkou budování kariéry. Pro ilustraci, na webu <a href="https://www.glassdoor.com/">Glassdoor</a> si můžeš přečíst hodnocení firem napsané bývalými nebo současnými zaměstnanci. Zatímco na obřím americkém trhu stránka slaví úspěch, u nás příliš pozornosti nevzbuzuje. Lidé si totiž takové věci spíš řeknou u piva.
   </p>
 
   <h3>Nástěnky</h3>
   <p>
-    Přímo na těchto stránkách je aktuálně <strong><a href="{{ url_for('jobs') }}">{{ jobs_count }} nabídek práce pro juniory</a></strong> od {{ companies_count }} firem.
+    „Nástěnky“ (anglicky <em>job board</em>) s pracovními nabídkami jsou nejvíce přímočarý způsob, jak hledat práci.
+    Přímo na těchto stránkách je nástěnka, kde je aktuálně <strong><a href="{{ url_for('jobs') }}">{{ jobs_count }} nabídek práce pro juniory</a></strong> od {{ companies_count }} firem.
   </p>
-<!--
-Online applications can be a black hole
-
-Online application portals are notoriously hard to break through. I remember hiring for a single position that had hundreds of online applications. Getting through that process without a connection is incredibly difficult -- possible, but difficult. I would advise trying to make connections or working with recruiters so that you can move to the front of the line.
-
-job boardy
-
-Go to meetups, meet people, tell them that you're looking. If they have openings, they'll let you know and refer you. Complete strangers have referred me to jobs either out of the goodness of their heart or for the referral bonus. Everyone knows that referrals are the ONLY way in these days, so talk to people and be personable.
-
-I would hear this type of thing a lot when I was an instructor at a bootcamp. I would say, "Ok, but how many meetups have you been to or other social events? And when you're there, do you just talk to other bootcamp alumns the whole time?"
-
-Networking is how you get jobs
-
-junior.guru
--->
+  <p class="call-to-action next">
+    <a href="{{ url_for('jobs') }}" class="button">Nabídky práce!</a>
+  </p>
+  <p>
+    Nevýhodou nástěnek je, že si je může přečíst každý a <strong>vystavuješ se tak větší konkurenci na pohovoru</strong>. Na americkém trhu na inzerát odpoví i stovky uchazečů a je velmi obtížné mezi nimi vyniknout. <strong>V Česku tento problém tak žhavý není</strong>, čísla uchazečů jsou zřídkakdy v desítkách. Prakticky každý se časem někde prosadí.
+  </p>
 </section>
-
-<p class="call-to-action next">
-  <a href="{{ url_for('jobs') }}" class="button">Nabídky práce!</a>
-</p>
 {% endblock %}
 
 
