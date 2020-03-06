@@ -66,3 +66,4 @@ https://prace.rovnou.cz/
 https://github.com/viraptor/reverse-interview#readme
 https://trello.com/b/igarGHRw/
 https://www.codetriage.com/
+https://www.meetup.com/
