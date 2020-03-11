@@ -17,6 +17,34 @@ function onLoad() {
     section.classList.add('more-collapsed');
     section.appendChild(p);
   });
+  handleHash();
+}
+
+function handleHash() {
+  if (
+    !window.location.hash ||
+    !document.querySelector('.more-collapsed ' + window.location.hash)
+  ) {
+    return;
+  }
+
+  const id = ('' + window.location.hash).replace(/^#/, '');
+  const element = document.getElementById(id);
+
+  let el = element;
+  while (el) {
+    console.log(el);
+    if (el.className.match('more-collapsed')) {
+      const button = el.querySelector('.more-action-area .button');
+      console.log(button);
+      button.dispatchEvent(new MouseEvent('click'));
+      break;
+    }
+    el = el.parentElement;
+  }
+
+  element.scrollIntoView();
 }
 
 document.addEventListener('DOMContentLoaded', onLoad);
+document.addEventListener('hashchange', handleHash);
