@@ -4,7 +4,7 @@
   position: relative;
 }
 
-@media screen and (max-width: 900px) {  /* $grid-breakpoint */
+@media screen and (max-width: $grid-breakpoint) {
   .more-collapsed .cartoon {
     display: none;
   }
