@@ -1,0 +1,46 @@
+$line-height-tooltip: ($line-height-base / 15);
+@mixin font-tooltip { font-size: 1.3rem; line-height: $line-height-tooltip; font-weight: 300; }
+
+main section a[href^="#"] {
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+
+  &::before,
+  &::after {
+    visibility: hidden;
+  }
+
+  &::before {
+    position: absolute;
+    top: 110%;
+    left: 5%;
+    margin-top: 5px;
+    padding: 0 $whitespace-0;
+    background-color: $blue;
+    color: $white;
+    content: "skok na jinou část této stránky";
+    @include font-tooltip;
+    white-space: nowrap;
+  }
+
+  &::after {
+    position: absolute;
+    top: 110%;
+    left: 5%;
+    margin-left: 5px;
+    width: 0;
+    border-bottom: 5px solid $blue;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+  }
+
+  &:hover, &:focus, &:active {
+    &::before, &::after {
+      visibility: visible;
+    }
+  }
+}
