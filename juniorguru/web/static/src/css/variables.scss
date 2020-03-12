@@ -46,6 +46,7 @@ $whitespace-3: 3.4rem;
 @mixin skew($n) { transform: skew($n); -o-transform: skew($n); -moz-transform: skew($n); -webkit-transform: skew($n); }
 
 @mixin page-width {
+  overflow-x: hidden;
   & { max-width: 73rem; margin-left: auto; margin-right: auto; }
   @supports (display: grid) { & { max-width: 103rem; } }
 }
