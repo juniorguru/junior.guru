@@ -3,11 +3,12 @@ $line-height-tooltip: ($line-height-base / 15);
 
 main section a[href^="#"] {
   position: relative;
-  z-index: 2;
+  z-index: 10;
   overflow: visible;
 
   &::before,
   &::after {
+    z-index: 20;
     visibility: hidden;
   }
 
@@ -39,8 +40,18 @@ main section a[href^="#"] {
   }
 
   &:hover, &:focus, &:active {
+    z-index: 15;
+
     &::before, &::after {
       visibility: visible;
+    }
+  }
+}
+
+main section .list a[href^="#"] {
+  &:hover, &:focus, &:active {
+    &::before, &::after {
+      display: none;
     }
   }
 }
