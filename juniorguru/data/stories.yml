@@ -1,3 +1,28 @@
+- url: https://medium.com/socialbakers-engineering/my-precarious-path-to-programming-in-prague-103929145233
+  date: 2019-04-17
+  title: Bývalý voják se přestěhoval z USA do ČR a živí se programováním
+  image_path: images/stories/tim-usa.jpg
+
+- url: https://cz.pycon.org/2018/programme/detail/talk/2/
+  date: 2018-06-02
+  title: Změnila kariéru ve 40, díky bootcampu a online kurzům
+  image_path: images/stories/magda-bootcamp.jpg
+
+- url: https://imysleni.cz/clanky/novinka/208-z-baletky-programatorkou-chatbot-sestnactilete-divky-z-havlickova-brodu-usetri-lekarum-praci
+  date: 2019-05-15
+  title: Baletka vytvořila robota, který za lékaře odpovídá na dotazy
+  image_path: images/stories/maria-baletka.jpg
+
+- url: https://imysleni.cz/clanky/rozhovor/209-biolozka-radka-symonova-hi-my-native-language-is-python
+  date: 2019-08-07
+  title: Bioložka by se bez programování už neobešla
+  image_path: images/stories/radka-biolozka.jpg
+
+- url: https://youtu.be/d_SgNk52nBo?t=1032
+  date: 2018-06-01
+  title: Díky sto řádkům kódu udělá měsíce genetického výzkumu za 5 minut
+  image_path: images/stories/david-genetika.jpg
+
 - url: https://ivet1987.wz.cz/blog/
   date: 2020-02-24
   title: Začala na rodičovské, dnes pracuje v IT
