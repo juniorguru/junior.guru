@@ -47,4 +47,4 @@ function handleHash() {
 }
 
 document.addEventListener('DOMContentLoaded', onLoad);
-document.addEventListener('hashchange', handleHash);
+window.addEventListener('hashchange', handleHash);
