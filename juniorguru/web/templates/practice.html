@@ -20,6 +20,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   <div class="toc">
     <h2>Obsah</h2>
     <ul>
+      <li><a href="#english">Neflákej angličtinu</a></li>&#32;
       <li><a href="#exercises">Procvičuj</a></li>&#32;
       <li><a href="#projects">Najdi si projekt</a></li>&#32;
       <li><a href="#mentors">Najdi si mentora</a></li>&#32;
@@ -31,23 +32,35 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </div>
 </header>
 
-<section class="warning">
+<section id="english">
+  <h2>Neflákej angličtinu</h2>
   <p>
-    <strong>Upozornění:</strong>
-    Neobejdeš se bez angličtiny. Je to klíč ke dveřím do celého světa.
-    Vybíráš ze dvou českých mentorů, ze tří českých online kurzů?
-    S angličtinou vybíráš ze stovek mentorů a desítek kurzů.
-    Nedostatečná angličtina je v IT jako bolavý zub.
-    Chvíli s ním vydržíš, ale když to nezačneš řešit včas, budeš později hodně litovat.
+    <strong>Bez angličtiny se neobejdeš.</strong> Je to klíč ke dveřím do celého světa. Vybíráš ze dvou českých mentorů, ze tří českých online kurzů? S angličtinou vybíráš ze stovek mentorů a desítek kurzů. <strong>Nedostatečná angličtina je v IT jako bolavý zub.</strong> Chvíli s ním vydržíš, ale když to nezačneš řešit včas, budeš hodně litovat. Nauč se ji aspoň pasivně &mdash; pokud zvládáš číst anglický text, pochopit v něm zadání a učit se z něj nové věci, pro start to stačí.
   </p>
-  <div class="call-to-action">
-    <p>
-      <a class="button" href="{{ url_for('learn') }}#english">Tipy na angličtinu</a>
-    </p>
-    <p class="note">
-      <a target="_blank" href="https://www.youtube.com/watch?v=Xt7QIgzyxLk">Praktický návod jak opravdu začít od Broni</a>
-    </p>
-  </div>
+  <ul class="list">
+    <li>
+      <a href="https://www.youtube.com/watch?v=Xt7QIgzyxLk">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/youtube.com!watch!v=Xt7QIgzyxLk.jpg') }}">
+        </div>
+        <h3>Jak se opravdu naučit anglicky</h3>
+      </a>
+      <p>
+        Praktický návod jak <strong>opravdu</strong> začít od <a href="https://www.youtube.com/user/BBSobotka">Broni</a>.
+      </p>
+    </li>
+    <li>
+      <a href="{{ url_for('learn') }}#english">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/junior.guru!learn!english.jpg') }}">
+        </div>
+        <h3>Jak si zlepšit angličtinu?</h3>
+      </a>
+      <p>
+        Nauč se anglicky podle <a href="{{ url_for('learn') }}#english">tipů na junior.guru</a>.
+      </p>
+    </li>
+  </ul>
 </section>
 
 <section id="exercises">

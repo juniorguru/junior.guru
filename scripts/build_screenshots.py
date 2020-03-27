@@ -60,8 +60,15 @@ WIDTH = 640
 HEIGHT = 360
 
 
+def parse_url(line):
+    url = line.strip().rstrip('/')
+    if url.startswith('https://junior.guru/'):
+        return url.replace('https://junior.guru/', 'http://localhost:5000/')
+    return url
+
+
 def parse_urls(text):
-    urls = (line.strip().rstrip('/') for line in text.strip().splitlines())
+    urls = (parse_url(line) for line in text.strip().splitlines())
     return list(set(urls))
 
 
@@ -96,10 +103,14 @@ def edit_screenshot(path):
     proc = run(imagemin, check=True, stdout=PIPE)
     path.write_bytes(proc.stdout)
 
-    if '#' in path.name:
-        fixed_name = path.name.replace('#', '!')
-        print(f'[rename] {name} ( → {fixed_name})')
-        path.rename(path.with_name(fixed_name))
+    original_name = name
+    if '#' in name:
+        name = name.replace('#', '!')
+    if name.startswith('localhost!5000'):
+        name = name.replace('localhost!5000', 'junior.guru')
+    if original_name != name:
+        print(f'[rename] {original_name} ( → {name})')
+        path.rename(path.with_name(name))
 
 
 def edit_screenshot_override(path):
