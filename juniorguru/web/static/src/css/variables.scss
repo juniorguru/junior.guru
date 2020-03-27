@@ -19,13 +19,15 @@ $line-height-4: 1;
 @mixin font-3 { font-size: 3.2rem; line-height: $line-height-3; }
 @mixin font-4 { font-size: 4.1rem; line-height: $line-height-4; }
 
-$black-number: "343434"; // when changing, change it also in logo.svg
+// when changing, change it also in logo.svg
+$black: #343434;
+$black-number: "343434";
+
+$blue: #1755d1;
 $blue-number: "1755d1";
 
 $white: #ffffff;
-$black: unquote("##{$black-number}");
 $yellow: #fffa72;
-$blue: unquote("##{$blue-number}");
 $gray: #ababab;
 $gray-light: #ededed;
 
