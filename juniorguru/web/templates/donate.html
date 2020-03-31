@@ -26,25 +26,48 @@
   </p>
 
   <ul class="donate">
-    <li class="donate-option">
-      <img alt="Platební QR kód" src="{{ url_for('static', filename='images/donate-qr.png') }}">
-      <div class="donate-description">
-        <h3>Převod na účet</h3>
-        <p>
-          Nejlepší způsob! Číslo účtu je <strong>2501717332/2010</strong>.
-          Dodržujte prosím <strong>variabilní symbol 444222</strong>.
-        </p>
-      </div>
+    <li>
+      <a class="donate-option" href="https://www.patreon.com/honzajavorek">
+        <div class="donate-image donate-image-patreon"></div>
+        <div class="donate-description">
+          <h3>Patreon</h3>
+          <div class="donate-description-button-wrapper">
+            <p>
+              Přispívej <strong>pravidelně</strong>
+              a&nbsp;vyber si&nbsp;za&nbsp;to&nbsp;<strong>odměnu</strong>.
+            </p>
+            <p>
+              <span class="button">Přispět</span>
+            </p>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a class="donate-option" href="https://github.com/sponsors/honzajavorek">
+        <div class="donate-image donate-image-github"></div>
+        <div class="donate-description">
+          <h3>GitHub Sponsors</h3>
+          <div class="donate-description-button-wrapper">
+            <p>
+              Přispívej <strong>pravidelně</strong>
+              a&nbsp;vyber si&nbsp;za&nbsp;to&nbsp;<strong>odměnu</strong>.
+            </p>
+            <p>
+              <span class="button">Přispět</span>
+            </p>
+          </div>
+        </div>
+      </a>
     </li>
     <li>
       <a class="donate-option" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YPWT2RH77RXYY&amp;source=url">
-        <img alt="PayPal logo" src="{{ url_for('static', filename='images/donate-paypal.svg') }}">
+        <div class="donate-image donate-image-paypal"></div>
         <div class="donate-description">
-          <h3>Platební karta (PayPal)</h3>
+          <h3>Platební karta, PayPal</h3>
           <div class="donate-description-button-wrapper">
             <p>
-              Část si shrábne PayPal, ale lepší než nic!
-              Funguje <strong>ja&shy;ká&shy;ko&shy;liv platební karta</strong>.
+              Ja&shy;ká&shy;ko&shy;liv platební karta.
               Jed&shy;no&shy;rá&shy;zo&shy;vě i <strong>pravidelně</strong>.
             </p>
             <p>
@@ -53,6 +76,16 @@
           </div>
         </div>
       </a>
+    </li>
+    <li class="donate-option">
+      <img class="donate-image" alt="Platební QR kód" src="{{ url_for('static', filename='images/donate-qr.png') }}">
+      <div class="donate-description">
+        <h3>Převod na účet</h3>
+        <p>
+          Číslo účtu <strong>2501717332/2010</strong>.
+          Dodržuj prosím variabilní symbol <strong>444222</strong>.
+        </p>
+      </div>
     </li>
   </ul>
 </section>
@@ -68,7 +101,7 @@
     konferencích české <a href="https://python.cz/">Python</a> komunity. Dlouhodobě se věnuji začátečníkům.
     Napsal jsem <a href="https://www.zdrojak.cz/clanky/kolonizatori-spravci-kolonii/">článek o dvou programátorských povahách</a>
     a vytvořil <a href="https://cojeapi.cz/">úvod do API pro začátečníky</a>. Nejsem „guru“, ale dal jsem si hodně práce,
-    abych vám mohl s kariérou v IT poradit co nejlépe. Snažím se žít z toho, co tady firmy utratí
+    abych ti mohl s kariérou v IT poradit co nejlépe. Snažím se žít z toho, co tady firmy utratí
     za <a href="{{ url_for('jobs') }}">nabídky práce</a>, a z dobrovolných příspěvků.
   </p>
 </section>

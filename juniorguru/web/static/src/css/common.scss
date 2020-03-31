@@ -814,9 +814,26 @@ footer {
   margin: 0 0 $whitespace $whitespace;
 }
 
-.donate img {
+.donate-image {
   width: 3 * $whitespace-3;
   min-width: 3 * $whitespace-3;
+  min-height: 3 * $whitespace-3;
+}
+
+.donate-image-patreon {
+  background: url('./images/donate/patreon.svg') center no-repeat;
+}
+
+.donate-image-github {
+  background: url('./images/donate/github.svg') center no-repeat;
+}
+
+.donate-image-paypal {
+  background: url('./images/donate/card.svg') center no-repeat;
+}
+
+div.donate-image {
+  background-size: contain;
 }
 
 ul.donate,
@@ -856,10 +873,22 @@ a.donate-option {
     margin-left: $whitespace-2;
   }
 
-  &:hover .button,
-  &:focus .button,
-  &:active .button {
-    background: $blue;
+  &:hover, &:focus, &:active {
+    .button {
+      background: $blue;
+    }
+
+    .donate-image-patreon {
+      background-image: url('./images/donate/patreon-blue.svg');
+    }
+
+    .donate-image-github {
+      background-image: url('./images/donate/github-blue.svg');
+    }
+
+    .donate-image-paypal {
+      background-image: url('./images/donate/card-blue.svg');
+    }
   }
 }
 
@@ -882,7 +911,7 @@ a.donate-option {
     align-items: center;
   }
 
-  .donate img {
+  .donate-image {
     align-self: center;
   }
 

@@ -1,7 +1,9 @@
 from datetime import datetime
+from pathlib import Path
 
 import arrow
 from flask import Flask, render_template, abort
+from markdown import markdown
 
 from ..models import db, Job, Story
 from .thumbnail import thumbnail
@@ -58,13 +60,6 @@ def jobs():
                            thumbnail=thumbnail(title='Práce pro začínající programátory'))
 
 
-@app.route('/jobs-newsletter.html')
-def jobs_newsletter():
-    with db:
-        jobs = Job.newsletter_listing()
-    return render_template('jobs_newsletter.html', jobs=jobs)
-
-
 @app.route('/jobs/<job_id>/')
 def job(job_id):
     with db:
@@ -95,6 +90,24 @@ def thanks():
 @app.route('/privacy/')
 def privacy():
     return render_template('privacy.html')
+
+
+@app.route('/admin/newsletter/')
+def admin_newsletter():
+    with db:
+        jobs = Job.newsletter_listing()
+    return render_template('admin_newsletter.html', jobs=jobs)
+
+
+@app.route('/admin/donate/')
+def admin_donate():
+    donate_text_path = Path(__file__).parent.parent / 'data' / 'donate.md'
+    donate_text = donate_text_path.read_text()
+    markup = markdown(donate_text, output_format='html5')
+    donate_html = markup
+    return render_template('admin_donate.html',
+                           donate_text=donate_text,
+                           donate_html=donate_html)
 
 
 @app.context_processor
