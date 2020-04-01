@@ -63,11 +63,11 @@
         },
         "gspread": {
             "hashes": [
-                "sha256:b7501ee8769030258f9cd9174d28a5e9b92242cd7ffc00141efb3115eaad2d3e",
-                "sha256:cf4283f7f4291a73aca359852013997a1010ecf989331528b6c20469e97995da"
+                "sha256:404d5b2ca7c39777f70a00a1c98ebac6b3ad15c655cc5e522f0ba2919b85fb56",
+                "sha256:655e9f6cb83842ce3403755dac6826ecd75b14133986c5091b77142ce588eb8b"
             ],
             "index": "pypi",
-            "version": "==3.3.0"
+            "version": "==3.3.1"
         },
         "httplib2": {
             "hashes": [
@@ -277,10 +277,10 @@
         },
         "werkzeug": {
             "hashes": [
-                "sha256:169ba8a33788476292d04186ab33b01d6add475033dfc07215e6d219cc077096",
-                "sha256:6dc65cf9091cf750012f56f2cad759fa9e879f511b5ff8685e456b4e3bf90d16"
+                "sha256:2de2a5db0baeae7b2d2664949077c2ac63fbd16d98da0ff71837f7d1dea3fd43",
+                "sha256:6c80b1e5ad3665290ea39320b91e1be1e0d5f60652b964a3070216de83d2e47c"
             ],
-            "version": "==1.0.0"
+            "version": "==1.0.1"
         }
     },
     "develop": {
