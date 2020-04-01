@@ -1,5 +1,3 @@
-from datetime import datetime
-
 import arrow
 from flask import Flask, render_template, abort
 
@@ -18,7 +16,15 @@ def index():
     return render_template('index.html',
                            jobs_count=jobs_count,
                            companies_count=companies_count,
-                           since=datetime.now() - datetime(2019, 10, 10),
+                           stories=Story.listing())
+
+
+@app.route('/beta/')
+def beta_index():
+    with db:
+        jobs_count = Job.count()
+    return render_template('beta_index.html',
+                           jobs_count=jobs_count,
                            stories=Story.listing())
 
 
