@@ -68,6 +68,7 @@ def test_coerce_record():
         'Job link': 'https://jobs.example.com/1245/',
         'Approved': None,
         'Sent': '11/11/2019',
+        'Expired': '12/12/2019',
     }) == {
         'id': hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest(),
         'timestamp': datetime(2019, 7, 6, 20, 24, 3),
@@ -81,4 +82,5 @@ def test_coerce_record():
         'link': 'https://jobs.example.com/1245/',
         'is_approved': False,
         'is_sent': True,
+        'is_expired': True,
     }

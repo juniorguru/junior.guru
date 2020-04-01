@@ -16,17 +16,21 @@ class Job(BaseModel):
     link = CharField(null=True)
     is_approved = BooleanField(default=False)
     is_sent = BooleanField(default=False)
+    is_expired = BooleanField(default=False)
 
     @classmethod
     def listing(cls):
         return cls.select() \
-            .where(cls.is_approved == True) \
+            .where(cls.is_approved == True,
+                   cls.is_expired == False) \
             .order_by(cls.timestamp.desc())
 
     @classmethod
     def newsletter_listing(cls):
         return cls.select() \
-            .where(cls.is_approved == True, cls.is_sent == False) \
+            .where(cls.is_approved == True,
+                   cls.is_expired == False,
+                   cls.is_sent == False) \
             .order_by(cls.timestamp)
 
     @classmethod
