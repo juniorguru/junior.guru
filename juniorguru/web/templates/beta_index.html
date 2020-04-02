@@ -35,37 +35,39 @@
 <hr class="hidden">
 
 <section class="how-it-works" id="how-it-works">
-<h2>Jak to funguje</h2>
-<ol>
-  <li>
-    <a href="{{ url_for('learn') }}">
-      <h3>Nauč se základy</h3>
-      <p>
-        Ručně vybrané, nej&shy;e&shy;fek&shy;ti&shy;vněj&shy;ší
-        vý&shy;uko&shy;vé ma&shy;te&shy;ri&shy;á&shy;ly do startu pro samouky.
-      </p>
-    </a>
-  </li>
-  <li>
-    <a href="{{ url_for('practice') }}">
-      <h3>Získej praxi</h3>
-      <p>
-        Znáš základy? Získej a&shy;les&shy;poň mi&shy;ni&shy;mál&shy;ní
-        praxi, najdi men&shy;to&shy;ra, dál si roz&shy;ši&shy;řuj
-        zna&shy;los&shy;ti.
-      </p>
-    </a>
-  </li>
-  <li>
-    <a href="{{ url_for('jobs') }}">
-      <h3>Najdi práci</h3>
-      <p>
-        Znáš základy a máš praxi? Nastal okam&shy;žik zkusit své štestí
-        na pra&shy;cov&shy;ním trhu.
-      </p>
-    </a>
-  </li>
-</ol>
+  <div class="heading-container">
+    <h2>Jak to funguje</h2>
+  </div>
+  <ol>
+    <li>
+      <a href="{{ url_for('learn') }}">
+        <h3>Nauč se základy</h3>
+        <p>
+          Ručně vybrané, nej&shy;e&shy;fek&shy;ti&shy;vněj&shy;ší
+          vý&shy;uko&shy;vé ma&shy;te&shy;ri&shy;á&shy;ly do startu pro samouky.
+        </p>
+      </a>
+    </li>
+    <li>
+      <a href="{{ url_for('practice') }}">
+        <h3>Získej praxi</h3>
+        <p>
+          Znáš základy? Získej a&shy;les&shy;poň mi&shy;ni&shy;mál&shy;ní
+          praxi, najdi men&shy;to&shy;ra, dál si roz&shy;ši&shy;řuj
+          zna&shy;los&shy;ti.
+        </p>
+      </a>
+    </li>
+    <li>
+      <a href="{{ url_for('jobs') }}">
+        <h3>Najdi práci</h3>
+        <p>
+          Znáš základy a máš praxi? Nastal okam&shy;žik zkusit své štestí
+          na pra&shy;cov&shy;ním trhu.
+        </p>
+      </a>
+    </li>
+  </ol>
 </section>
 <hr class="hidden">
 
@@ -79,7 +81,9 @@
 <hr class="hidden">
 
 <section class="stories" id="stories">
-  <h2>Příběhy lidí jako ty</h2>
+  <div class="heading-container">
+    <h2>Příběhy lidí jako ty</h2>
+  </div>
   <ul class="items">
   {% for story in stories %}
     <li class="item-summary">

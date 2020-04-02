@@ -26,6 +26,10 @@ body.page-index-beta {
   .body-container > header ol {
     display: none;
   }
+
+  .heading-container {
+    text-align: center;
+  }
 }
 
 body.page-index-beta { // TODO remove later
@@ -84,6 +88,10 @@ body.page-index-beta { // TODO remove later
   @include page-width($padding: $whitespace);
   margin-top: 2 * $whitespace-3;
 
+  h2 {
+    text-align: center;
+  }
+
   ol, li {
     margin: 0;
     padding: 0;
@@ -138,7 +146,7 @@ body.page-index-beta { // TODO remove later
   padding: ($whitespace-3 * 2);
 
   h2 {
-    @include font-4;
+    @include font-3;
     padding: 0;
     margin: 0;
     margin-bottom: $whitespace;
