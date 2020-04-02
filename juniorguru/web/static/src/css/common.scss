@@ -209,26 +209,23 @@ main > section {
   font-weight: 300;
   padding: $whitespace $whitespace-2;
   padding-top: $whitespace - 0.1rem;
+  cursor: pointer;
 }
 
 .button {
   color: $white;
   background: $black;
+
+  &:hover, &:focus, &:active {
+    background: $blue;
+  }
 }
 
-.button a, a.button {
+.button, .button a {
   color: $white;
 
   &:hover, &:focus, &:active {
     color: $white;
-  }
-}
-
-a.button {
-  cursor: pointer;
-
-  &:hover, &:focus, &:active {
-    background: $blue;
   }
 }
 
@@ -586,6 +583,14 @@ ul.items {
 
       small {
         @include font-0;
+      }
+    }
+
+    p.button {
+      cursor: text;
+
+      &:hover, &:focus, &:active {
+        background: $black;
       }
     }
 

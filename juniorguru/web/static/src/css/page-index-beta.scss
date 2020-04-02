@@ -14,23 +14,17 @@ body.page-index-beta {
     display: none;
   }
 
+  .body-container > header .logo img {
+    height: 10rem;
+    margin: ($whitespace / 2) 0 ($whitespace / 2) 0;
+  }
+
+  .body-container > header > nav {
+    justify-content: center;
+  }
+
   .body-container > header ol {
-    align-self: center;
-
-    li {
-      padding-top: 0;
-    }
-
-    a {
-      @include font-0;
-      padding: $whitespace-0 $whitespace;
-      text-decoration: underline;
-    }
-
-    a, a::before {
-      background: transparent;
-      color: $black;
-    }
+    display: none;
   }
 }
 
@@ -47,13 +41,32 @@ body.page-index-beta { // TODO remove later
 
   h2 {
     margin: 0;
+    padding: 0;
     background: 0;
     @include font-4;
   }
 
   .billboard-wrapper {
     @include page-width;
-    padding: (3 * $whitespace-3) $whitespace;
+    padding: (2 * $whitespace-3) $whitespace;
+  }
+
+  h2, p, .button, .button-secondary {
+    margin-bottom: $whitespace;
+  }
+
+  .button {
+    margin-top: $whitespace-3;
+  }
+
+  .button, .button-secondary {
+    display: block;
+
+    @media screen and (min-width: 650px) {
+      display: inline-block;
+      margin: 0;
+      margin-right: $whitespace;
+    }
   }
 }
 
