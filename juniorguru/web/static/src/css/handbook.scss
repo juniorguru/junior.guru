@@ -10,9 +10,10 @@
 }
 
 .handbook .body-container {
-  background: linear-gradient(to bottom,
-    rgba(255, 255, 255, 0.3) 0,
-    rgb(255, 255, 255) 60rem
+  background: linear-gradient(
+    to bottom,
+    rgba($white, 0.3) 0,
+    $white 60rem
   );
 }
 

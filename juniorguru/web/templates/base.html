@@ -85,13 +85,15 @@
           {% block author %}
           <div class="author" id="honza">
             <div class="author-wrapper">
-              <img class="author-photo" alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}">
-              <p>
+              <p class="author-text-outer">
+                <img class="author-photo" alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}">
+                <span class="author-text-inner">
                 Ahoj! Jmenuji se <a href="{{ url_for('donate') }}#about">Honza Javorek</a> a jsem autor těchto stránek.
                 Ukázal ti tento web cestu k&nbsp;programování? K&nbsp;lepší práci?
                 Můžeš mi <a href="{{ url_for('donate') }}">poděkovat dobrovolným příspěvkem</a>.
                 Veškerý obsah zde nechávám volně přístupný, aby pomohl co nejvíce lidem.
                 Příspěvky zajistí, že tyto stránky budu moci vylepšovat a dál provozovat.
+                </span>
               </p>
               <div class="call-to-action">
                 <a href="{{ url_for('donate') }}" class="button button-inverted">

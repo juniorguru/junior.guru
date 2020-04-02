@@ -8,6 +8,12 @@ body.page-index-beta {
     display: block;
     margin: 0;
     background-color: $yellow;
+
+    @media screen and (min-width: 650px) {
+      & {
+        display: none;
+      }
+    }
   }
 
   .hidden {
@@ -36,21 +42,32 @@ body.page-index-beta { // TODO remove later
 
 .billboard {
   margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   h2 {
     margin: 0;
+    margin-bottom: $whitespace / 2;
     padding: 0;
     background: 0;
     @include font-4;
+    line-height: 1.2;
   }
 
-  .billboard-wrapper {
+  .billboard-content {
     @include page-width;
     padding: (2 * $whitespace-3) $whitespace;
   }
 
-  h2, p, .button, .button-secondary {
-    margin-bottom: $whitespace;
+  @media screen and (min-width: 650px) {
+    .billboard-content-limiter {
+      width: 57rem;
+    }
+  }
+
+  p, .button, .button-secondary {
+    margin-bottom: $whitespace-2;
   }
 
   .button {
@@ -61,22 +78,60 @@ body.page-index-beta { // TODO remove later
     display: block;
 
     @media screen and (min-width: 650px) {
-      display: inline-block;
-      margin: 0;
-      margin-right: $whitespace;
+      & {
+        display: inline-block;
+        margin: 0;
+        margin-right: $whitespace;
+      }
     }
   }
 }
 
 .billboard-learn {
-  background: $yellow;
+  background-color: $yellow;
   color: $black;
+
+  @media screen and (min-width: 650px) {
+    & {
+      background-image: url('./images/billboard-learn.jpg');
+    }
+
+    .billboard-content-limiter {
+      margin-right: auto;
+    }
+  }
+
+  .billboard-wrapper {
+    background-image: linear-gradient(
+      to left,
+      rgba($yellow, 0.5) 30%,
+      rgba($yellow, 0.9) 60%
+    );
+  }
 }
 
 .billboard-jobs {
-  background: $black;
+  background-color: $black;
   color: $white;
-  text-align: right;
+
+  @media screen and (min-width: 650px) {
+    & {
+      text-align: right;
+      background-image: url('./images/billboard-jobs.jpg');
+    }
+
+    .billboard-content-limiter {
+      margin-left: auto;
+    }
+  }
+
+  .billboard-wrapper {
+    background-image: linear-gradient(
+      to right,
+      rgba($black, 0.5) 30%,
+      rgba($black, 0.9) 60%
+    );
+  }
 
   p a {
     color: $yellow;
@@ -100,6 +155,19 @@ body.page-index-beta { // TODO remove later
 
   ol {
     display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 850px) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  li {
+    margin-bottom: $whitespace;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   a {
@@ -193,13 +261,22 @@ body.page-index-beta { // TODO remove later
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 700px) {
+      flex-wrap: nowrap;
+    }
   }
 
   .item-summary img {
     display: block;
     width: 9rem;
     min-width: 9rem;
-    margin-left: 1rem;
+    margin: $whitespace 0 0 auto;
+
+    @media screen and (min-width: 700px) {
+      margin: 0 0 0 $whitespace;
+    }
   }
 }
 

@@ -820,7 +820,7 @@ footer {
   min-width: 3 * $whitespace-3;
 }
 
-.author p {
+.author-text-outer {
   margin: 0;
   min-width: 0;
   text-align: left;
@@ -844,6 +844,21 @@ footer {
 
   .author-photo {
     float: none;
+    margin-right: 0;
+  }
+
+  .author-text-outer {
+    display: flex;
+  }
+
+  .author-text-inner {
+    display: block;
+    padding: 0 $whitespace;
+  }
+
+  .author .call-to-action {
+    margin: 0;
+    align-self: center;
   }
 
   .author .button {
@@ -1026,7 +1041,11 @@ a.donate-option {
     height: 100%;
     display: block;
     padding: $whitespace-2;
-    background: linear-gradient(90deg, rgba($black, 0.3) 30%, rgba($black, 0.7) 90%);
+    background: linear-gradient(
+      90deg,
+      rgba($black, 0.3) 30%,
+      rgba($black, 0.7) 90%
+    );
     @include color-links($white, $white);
     text-shadow: 2px 2px 1px rgba($black, 1);
     text-decoration: none;
