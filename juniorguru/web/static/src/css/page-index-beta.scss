@@ -30,7 +30,7 @@ body.page-index-beta {
 
 body.page-index-beta { // TODO remove later
 
-.stories {
+.stories, .how-it-works, .join {
   @include page-width;
   padding-left: $whitespace;
   padding-right: $whitespace;
@@ -83,6 +83,56 @@ body.page-index-beta { // TODO remove later
   p a {
     color: $yellow;
     @include color-links($white, $white);
+  }
+}
+
+.how-it-works {
+  margin-top: 2 * $whitespace-3;
+
+  ol, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  ol {
+    display: flex;
+  }
+
+  a {
+    display: block;
+    position: relative;
+    padding-left: $whitespace-3 + $whitespace;
+    padding-right: (2 * $whitespace);
+    text-decoration: none;
+  }
+
+  a::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $whitespace-3;
+    background: $black;
+    color: $white;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  a:hover, a:focus, a:active, a.active {
+    &::before {
+      background-color: $blue;
+    }
+  }
+
+  li:nth-child(1) a::before { content: "1"; }
+  li:nth-child(2) a::before { content: "2"; }
+  li:nth-child(3) a::before { content: "3"; }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    text-decoration: underline;
   }
 }
 
