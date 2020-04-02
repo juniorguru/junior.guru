@@ -202,4 +202,33 @@ body.page-index {
       }
     }
   }
+
+  .stories, .stories .items {
+    margin-bottom: 0;
+  }
+
+  .stories .item-summary a {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .stories .item-summary img {
+    display: block;
+    width: 9rem;
+    min-width: 9rem;
+    margin-left: 1rem;
+  }
+
+  @media screen and (min-width: 700px) {
+    .stories ul.items {
+      column-count: 2;
+      column-gap: 2.1rem;
+    }
+
+    .stories ul.items li {
+      border: none;
+    }
+  }
+
 }

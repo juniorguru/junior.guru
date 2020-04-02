@@ -202,26 +202,65 @@ main > section {
   }
 }
 
-.button, a.button {
+.button, .button-secondary {
   display: inline-block;
-  color: $white;
   text-decoration: none;
   @include font-2;
   font-weight: 300;
-  background: $black;
   padding: $whitespace $whitespace-2;
   padding-top: $whitespace - 0.1rem;
-  cursor: pointer;
+}
 
-  a, a:hover, a:focus, a:active {
+.button {
+  color: $white;
+  background: $black;
+}
+
+.button a, a.button {
+  color: $white;
+
+  &:hover, &:focus, &:active {
     color: $white;
   }
 }
 
 a.button {
+  cursor: pointer;
+
+  &:hover, &:focus, &:active {
+    background: $blue;
+  }
+}
+
+.button.button-inverted, a.button.button-inverted {
+  color: $black;
+  background: $yellow;
+}
+
+a.button.button-inverted {
   &:hover, &:focus, &:active {
     color: $white;
     background: $blue;
+  }
+}
+
+a.button-secondary {
+  color: $black;
+  background: transparent;
+  font-weight: 300;
+  border: 0.2rem $black solid;
+  padding: ($whitespace - 0.2rem) ($whitespace-2 - 0.2rem);
+}
+
+a.button-secondary.button-inverted {
+  color: $yellow;
+  border-color: $yellow;
+}
+
+a.button-secondary, a.button-secondary.button-inverted {
+  &:hover, &:focus, &:active {
+    border-width: 0.3rem;
+    padding: ($whitespace - 0.3rem) ($whitespace-2 - 0.3rem);
   }
 }
 
@@ -757,7 +796,7 @@ footer {
   color: $white;
   @include font-0;
 
-  a {
+  p a {
     @include color-links($white, $white);
   }
 }
@@ -788,8 +827,6 @@ footer {
 }
 
 .author .button {
-  background: $yellow;
-  color: $black;
   margin: 0 auto;
 }
 

@@ -4,9 +4,78 @@ body.page-index-beta {
     padding: 0;
   }
 
-  section {
-    @include page-width;
-    padding-left: $whitespace;
-    padding-right: $whitespace;
+  .hidden {
+    display: none;
   }
 }
+
+body.page-index-beta { // TODO remove later
+
+.stories {
+  @include page-width;
+  padding-left: $whitespace;
+  padding-right: $whitespace;
+}
+
+.billboard {
+  margin: 0;
+
+  h2 {
+    margin: 0;
+    background: 0;
+    @include font-4;
+  }
+
+  .billboard-wrapper {
+    @include page-width;
+    padding: (3 * $whitespace-3) $whitespace;
+  }
+}
+
+.billboard-learn {
+  background: $yellow;
+  color: $black;
+}
+
+.billboard-jobs {
+  background: $black;
+  color: $white;
+  text-align: right;
+
+  p a {
+    color: $yellow;
+    @include color-links($white, $white);
+  }
+}
+
+.stories {
+  &, .items {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 700px) {
+    .items {
+      column-count: 2;
+      column-gap: 2.1rem;
+    }
+
+    .items li {
+      border: none;
+    }
+  }
+
+  .item-summary a {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .item-summary img {
+    display: block;
+    width: 9rem;
+    min-width: 9rem;
+    margin-left: 1rem;
+  }
+}
+
+} // TODO remove later

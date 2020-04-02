@@ -9,22 +9,26 @@
 {% endblock %}
 
 {% block main %}
-<section>
-<h2>Návod jak se i ty můžeš naučit programovat</h2>
-<p>Programování není jen pro ajťáky! Pomáhá vědcům, úředníkům nebo novinářům &mdash; a práci může usnadnit i tobě. Základy zvládneš za několik týdnů.</p>
-<button>Začni hned teď</button>
-<button>Proč se učit programovat</button>
+<section class="billboard billboard-learn">
+  <div class="billboard-wrapper">
+    <h2>Návod jak se i ty můžeš naučit programovat</h2>
+    <p>Programování není jen pro ajťáky! Pomáhá vědcům, úředníkům nebo novinářům &mdash; a práci může usnadnit i tobě. Základy zvládneš za několik týdnů.</p>
+    <a href="{{ url_for('learn') }}#learn" class="button">Začni hned teď</a>
+    <a href="{{ url_for('learn') }}#why" class="button-secondary">Proč se učit programovat?</a>
+  </div>
 </section>
-<hr>
+<hr class="hidden">
 
-<section>
-<h2>Návod jak si i ty můžeš najít dobrou práci v IT</h2>
-<p>Programátorů je dlouhodobě nedostatek. Samouk přitom může jejich běžnou práci zvládnout stejně dobře jako absolvent VŠ. Vydej se na cestu k lepší životní úrovni.</p>
-<button>Nabídky práce</button>
-<button>Odebírat nabídky do e-mailu</button>
-<p><small>Pro firmy: <a href="{{ url_for('jobs') }}#add">Inzerujte na junior.guru</a> &mdash; od 0 Kč!</small></p>
+<section class="billboard billboard-jobs">
+  <div class="billboard-wrapper">
+    <h2>Návod jak si i ty můžeš najít dobrou práci v IT</h2>
+    <p>Programátorů je dlouhodobě nedostatek. Samouk přitom může jejich běžnou práci zvládnout stejně dobře jako absolvent VŠ. Vydej se na cestu za lepší životní úrovní.</p>
+    <a href="{{ url_for('jobs') }}" class="button button-inverted">Procházet nabídky práce</a>
+    <a href="http://eepurl.com/gyG8Bb" target="_blank" class="button-secondary button-inverted">Nabídky do e-mailu</a>
+    <p class="note"><a href="{{ url_for('jobs') }}#add">Inzerujte na junior.guru</a> &mdash; <strong>od 0 Kč!</strong></p>
+  </div>
 </section>
-<hr>
+<hr class="hidden">
 
 <section>
 <h2>Jak to funguje</h2>
