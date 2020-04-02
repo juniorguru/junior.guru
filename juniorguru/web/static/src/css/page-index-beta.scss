@@ -4,8 +4,33 @@ body.page-index-beta {
     padding: 0;
   }
 
+  .divider {
+    display: block;
+    margin: 0;
+    background-color: $yellow;
+  }
+
   .hidden {
     display: none;
+  }
+
+  .body-container > header ol {
+    align-self: center;
+
+    li {
+      padding-top: 0;
+    }
+
+    a {
+      @include font-0;
+      padding: $whitespace-0 $whitespace;
+      text-decoration: underline;
+    }
+
+    a, a::before {
+      background: transparent;
+      color: $black;
+    }
   }
 }
 

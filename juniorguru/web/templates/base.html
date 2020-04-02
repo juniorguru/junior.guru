@@ -65,7 +65,7 @@
         </nav>
       </header>
       {% endblock %}
-      <hr>
+      {% block divider %}<hr>{% endblock %}
       <main>
         {% block main %}{% endblock %}
       </main>
@@ -76,13 +76,7 @@
             <address>
               <span>Pište na {{ 'ahoj@junior.guru'|email_link }},&nbsp;</span>
               <span>tweetujte na <a href="https://twitter.com/honzajavorek/">@honzajavorek</a>,&nbsp;</span>
-              <span>zdrojáky jsou na <a href="https://github.com/honzajavorek/junior.guru">honzajavorek/junior.guru</a>.&nbsp;</span>
-              <span>Foto
-                <a href="https://unsplash.com/@konkarampelas">Kon Karampelas</a>,
-                <a href="https://unsplash.com/@nikarthur">Nik MacMillan</a>,
-                <a href="https://unsplash.com/@suehughes">sue hughes</a>,
-                <a href="https://unsplash.com/@jtylernix">Tyler Nix</a>.
-              </span>
+              <span>zdrojáky jsou na <a href="https://github.com/honzajavorek/junior.guru">honzajavorek/junior.guru</a>.</span>
             </address>
             <p>
               <a href="{{ url_for('privacy') }}">Zpracování osobních údajů</a>

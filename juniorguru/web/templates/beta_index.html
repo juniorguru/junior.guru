@@ -8,6 +8,10 @@
 </h1>
 {% endblock %}
 
+{% block divider %}
+<hr class="divider">
+{% endblock %}
+
 {% block main %}
 <section class="billboard billboard-learn">
   <div class="billboard-wrapper">
@@ -35,7 +39,7 @@
 <ol>
   <li>
     <a href="{{ url_for('learn') }}">
-      <h2>Nauč se základy</h2>
+      <h3>Nauč se základy</h3>
       <p>
         Ručně vybrané, nej&shy;e&shy;fek&shy;ti&shy;vněj&shy;ší
         vý&shy;uko&shy;vé ma&shy;te&shy;ri&shy;á&shy;ly do startu pro samouky.
@@ -44,7 +48,7 @@
   </li>
   <li>
     <a href="{{ url_for('practice') }}">
-      <h2>Získej praxi</h2>
+      <h3>Získej praxi</h3>
       <p>
         Znáš základy? Získej a&shy;les&shy;poň mi&shy;ni&shy;mál&shy;ní
         praxi, najdi men&shy;to&shy;ra, dál si roz&shy;ši&shy;řuj
@@ -54,7 +58,7 @@
   </li>
   <li>
     <a href="{{ url_for('jobs') }}">
-      <h2>Najdi práci</h2>
+      <h3>Najdi práci</h3>
       <p>
         Znáš základy a máš praxi? Nastal okam&shy;žik zkusit své štestí
         na pra&shy;cov&shy;ním trhu.
