@@ -4,12 +4,15 @@ html {
 }
 
 html, body {
-  background: $white;
+  background: $black;
 }
-
 
 html {
   color: $black;
+}
+
+.body-container {
+  background: $white;
 }
 
 a {
