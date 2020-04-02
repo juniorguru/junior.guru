@@ -30,12 +30,6 @@ body.page-index-beta {
 
 body.page-index-beta { // TODO remove later
 
-.stories, .how-it-works, .join {
-  @include page-width;
-  padding-left: $whitespace;
-  padding-right: $whitespace;
-}
-
 .billboard {
   margin: 0;
 
@@ -87,6 +81,7 @@ body.page-index-beta { // TODO remove later
 }
 
 .how-it-works {
+  @include page-width($padding: $whitespace);
   margin-top: 2 * $whitespace-3;
 
   ol, li {
@@ -136,7 +131,41 @@ body.page-index-beta { // TODO remove later
   }
 }
 
+.join {
+  background: $black;
+  color: $white;
+  text-align: center;
+  padding: ($whitespace-3 * 2);
+
+  h2 {
+    @include font-4;
+    padding: 0;
+    margin: 0;
+    margin-bottom: $whitespace;
+    background: none;
+  }
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  a {
+    @include color-links($white, $white);
+  }
+}
+
 .stories {
+  @include page-width($padding: $whitespace);
+
   &, .items {
     margin-bottom: 0;
   }
