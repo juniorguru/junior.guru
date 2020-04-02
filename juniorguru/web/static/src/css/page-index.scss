@@ -202,15 +202,4 @@ body.page-index {
       }
     }
   }
-
-  @media screen and (min-width: 700px) {
-    .stories ul.items {
-      column-count: 2;
-      column-gap: 2.1rem;
-    }
-
-    .stories ul.items li {
-      border: none;
-    }
-  }
 }

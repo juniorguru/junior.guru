@@ -38,9 +38,13 @@
       {% block header %}
       <header>
         <nav>
+          {% block logo %}
           <a class="logo" href="{{ url_for('index') }}">
-            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
+            {% block logo_image %}
+              <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
+            {% endblock %}
           </a>
+          {% endblock %}
           <ol>
             <li>
               <a href="{{ url_for('learn') }}">

@@ -1,7 +1,14 @@
-<h1 id="beta">junior.guru</h1>
-<p>TODO menu</p>
-<hr>
+{% extends 'base.html' %}
 
+{% block body_attrs %} class="page-index-beta"{% endblock %}
+
+{% block logo %}
+<h1 class="logo">
+  {{ self.logo_image() }}
+</h1>
+{% endblock %}
+
+{% block main %}
 <section>
 <h2>Návod jak se i ty můžeš naučit programovat</h2>
 <p>Programování není jen pro ajťáky! Pomáhá vědcům, úředníkům nebo novinářům &mdash; a práci může usnadnit i tobě. Základy zvládneš za několik týdnů.</p>
@@ -15,28 +22,7 @@
 <p>Programátorů je dlouhodobě nedostatek. Samouk přitom může jejich běžnou práci zvládnout stejně dobře jako absolvent VŠ. Vydej se na cestu k lepší životní úrovni.</p>
 <button>Nabídky práce</button>
 <button>Odebírat nabídky do e-mailu</button>
-<p><small>Pro firmy: <a href="#beta">Inzerujte na junior.guru</a> &mdash; od 0 Kč!</small></p>
-</section>
-<hr>
-
-<section>
-<h2>Zmínky o junior.guru</h2>
-<ul>
-    <li>#HolkyzMarketingu</li>
-    <li>Czechitas</li>
-    <li>PyLadies</li>
-    <li>KaranTéma Hospodářských Novin</li>
-    <li>Lupa.cz</li>
-    <li>Zdrojak.cz</li>
-    <li>Rychlofky.cz</li>
-    <li>Deník N</li>
-    <li>prace.rovnou.cz</li>
-    <li>DigiKoalice</li>
-    <li>Kafemlejnek.TV</li>
-    <li>Marie Claire</li>
-</ul>
-<blockquote>TODO: junior quote</blockquote>
-<blockquote>TODO: company quote</blockquote>
+<p><small>Pro firmy: <a href="{{ url_for('jobs') }}#add">Inzerujte na junior.guru</a> &mdash; od 0 Kč!</small></p>
 </section>
 <hr>
 
@@ -78,32 +64,30 @@
 <section>
   <h2>Buď v obraze</h2>
   <ul>
-    <li><a href="#beta">Facebooková skupina</a></li>
-    <li><a href="#beta">Nabídky práce do e-mailu</a></li>
+    <li><a href="https://www.facebook.com/groups/junior.guru">Facebooková skupina</a></li>
+    <li><a href="http://eepurl.com/gyG8Bb">Nabídky práce do e-mailu</a></li>
   </ul>
 </section>
 <hr>
 
-<section>
-  <h2>Inspirativní příběhy</h2>
-  <ul>
+<section class="stories" id="stories">
+  <h2>Příběhy lidí jako ty</h2>
+  <ul class="items">
   {% for story in stories %}
-    <li>
+    <li class="item-summary">
       <a href="{{ story.url }}">
-        <h3>{{ story.title }}</h3>
-        <small>
-          {{ story.publisher }}
-          &mdash;
-          {{ story.date.month }}/{{ story.date.year }}
-        </small>
+        <div class="item-summary-wrapper">
+          <h3>{{ story.title }}</h3>
+          <small class="item-summary-details">
+            {{ story.publisher }}
+            &mdash;
+            {{ story.date.month }}/{{ story.date.year }}
+          </small>
+        </div>
         <img src="{{ url_for('static', filename=story.image_path) }}" width="100">
       </a>
     </li>
   {% endfor %}
   </ul>
 </section>
-<hr>
-
-<p>
-  TODO patička
-</p>
+{% endblock %}

@@ -1,0 +1,12 @@
+body.page-index-beta {
+  main {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  section {
+    @include page-width;
+    padding-left: $whitespace;
+    padding-right: $whitespace;
+  }
+}
