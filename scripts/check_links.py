@@ -1,4 +1,5 @@
 import sys
+import time
 from subprocess import run
 from pathlib import Path
 
@@ -32,4 +33,20 @@ for url in EXCLUDE:
     options.append(f'--exclude={url}')
 
 
-sys.exit(run(command + options + [PUBLIC_DIR]).returncode)
+# Internet is flaky... retrying 3 times makes us sure the problem is consistent
+attempts = 1
+if '--retry' in sys.argv:
+    attempts = 3
+
+
+failed = 1
+for attempt in range(attempts):
+    print()
+    print(f'Attempt #{attempt + 1}')
+    print('=' * 79)
+    failed = run(command + options + [PUBLIC_DIR]).returncode
+    if failed:
+        time.sleep(5)
+    else:
+        break
+sys.exit(failed)
