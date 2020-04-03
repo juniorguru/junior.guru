@@ -1,37 +1,57 @@
 {% extends 'base.html' %}
 
-{% block description -%}
-Nauč se programovat a získej svou první práci v IT
-{%- endblock %}
-
 {% block body_attrs %} class="page-index"{% endblock %}
 
-{% block header %}
-<header>
-  <h1 class="logo">
-    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
-  </h1>
-  <div class="tagline">
-    <p>
-      Nauč&nbsp;se programovat
-      a&nbsp;získej svou první
-      práci&nbsp;v&nbsp;IT
-    </p>
-  </div>
-</header>
+{% block logo %}
+<h1 class="logo">
+  {{ self.logo_image() }}
+</h1>
 {% endblock %}
 
+{% block divider %}<hr class="divider">{% endblock %}
+
 {% block main %}
-<nav>
-  <div class="chicken">
-    <div class="chick"><img src="{{ url_for('static', filename='images/chick1.svg') }}"></div>
-    <div class="chick"><img src="{{ url_for('static', filename='images/chick2.svg') }}"></div>
-    <div class="chick"><img src="{{ url_for('static', filename='images/chick3.svg') }}"></div>
+<section class="billboard billboard-learn">
+  <div class="billboard-wrapper">
+    <div class="billboard-content">
+      <div class="billboard-content-limiter">
+        <h2>I&nbsp;ty&nbsp;se&nbsp;můžeš naučit programovat</h2>
+        <p>Programování není jen pro&nbsp;ajťáky! Pomáhá vědcům, úředníkům nebo&nbsp;novinářům &mdash;&nbsp;a&nbsp;práci může usnadnit i&nbsp;tobě. Základy zvládneš za&nbsp;několik týdnů. Začni hned teď!</p>
+        <div class="billboard-buttons">
+          <a href="{{ url_for('learn') }}" class="button">Návod zdarma</a>
+          <a href="{{ url_for('learn') }}#why" class="button-secondary">Proč se to učit?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="hidden">
+
+<section class="billboard billboard-jobs">
+  <div class="billboard-wrapper">
+    <div class="billboard-content">
+      <div class="billboard-content-limiter">
+        <h2>I&nbsp;ty&nbsp;si&nbsp;můžeš najít dobrou práci&nbsp;v&nbsp;IT</h2>
+        <p>Programátorů je&nbsp;dlouhodobě nedostatek. Samouk přitom může jejich běžnou práci zvládnout stejně dobře jako absolvent&nbsp;VŠ. Vydej se&nbsp;na&nbsp;cestu za&nbsp;lepší životní úrovní.</p>
+        <div class="billboard-buttons">
+          <a href="{{ url_for('jobs') }}" class="button button-inverted">Aktuální nabídky práce</a>
+          <a href="http://eepurl.com/gyG8Bb" target="_blank" class="button-secondary button-inverted">Nabídky do e-mailu</a>
+        </div>
+        <p class="note"><a href="{{ url_for('jobs') }}#add">Inzerujte na junior.guru</a> &mdash; <strong>od 0 Kč!</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="hidden">
+
+<section class="how-it-works" id="how-it-works">
+  <div class="heading-container">
+    <h2>Jak to&nbsp;funguje?</h2>
   </div>
   <ol>
     <li>
       <a href="{{ url_for('learn') }}">
-        <h2>Nauč se základy</h2>
+        <h3>Nauč se&nbsp;základy</h3>
         <p>
           Ručně vybrané, nej&shy;e&shy;fek&shy;ti&shy;vněj&shy;ší
           vý&shy;uko&shy;vé ma&shy;te&shy;ri&shy;á&shy;ly do startu pro samouky.
@@ -40,7 +60,7 @@ Nauč se programovat a získej svou první práci v IT
     </li>
     <li>
       <a href="{{ url_for('practice') }}">
-        <h2>Získej praxi</h2>
+        <h3>Získej praxi</h3>
         <p>
           Znáš základy? Získej a&shy;les&shy;poň mi&shy;ni&shy;mál&shy;ní
           praxi, najdi men&shy;to&shy;ra, dál si roz&shy;ši&shy;řuj
@@ -50,7 +70,7 @@ Nauč se programovat a získej svou první práci v IT
     </li>
     <li>
       <a href="{{ url_for('jobs') }}">
-        <h2>Najdi práci</h2>
+        <h3>Najdi práci</h3>
         <p>
           Znáš základy a máš praxi? Nastal okam&shy;žik zkusit své štestí
           na pra&shy;cov&shy;ním trhu.
@@ -58,77 +78,22 @@ Nauč se programovat a získej svou první práci v IT
       </a>
     </li>
   </ol>
-  <section class="call-to-action">
-    <p>
-      <a href="{{ url_for('learn') }}#learn" class="button">Začni teď hned!</a>
-    </p>
-    <p class="note">
-      <a href="{{ url_for('learn') }}#why">Proč se učit programovat?</a>
-    </p>
-  </section>
-</nav>
-
-<hr>
-<section class="teaser call-to-action">
-  <h2>
-    <strong class="no-wrap">{{ jobs_count }} nabídek</strong>
-    <span class="no-wrap">práce</span>
-    <span class="no-wrap">pro juniory</span>
-    <span class="no-wrap">
-      od <strong>{{ companies_count }} firem</strong>
-    </span>
-  </h2>
-  <p>
-    <a href="{{ url_for('jobs') }}" class="button">Procházet nabídky</a>
-  </p>
 </section>
+<hr class="hidden">
 
-<hr>
-<aside>
-  <section class="juniors">
-    <h2>Hledáš první práci v&nbsp;IT?</h2>
-    <p>Nech si na e-mail zasílat nabídky práce pro začátečníky</p>
-    <div class="call-to-action">
-      <p>
-        <a href="http://eepurl.com/gyG8Bb" target="_blank" class="button">
-          Přihlásit se k odběru
-        </a>
-        <img class="cartoon" src="{{ url_for('static', filename='images/mail.svg') }}">
-      </p>
-    </div>
-    <p>Diskutuj o materiálech, pracovních nabídkách, motivaci</p>
-    <div class="call-to-action">
-      <p>
-        <a href="https://www.facebook.com/groups/junior.guru" target="_blank" class="button">
-          Facebooková skupina
-        </a>
-        <img class="cartoon" src="{{ url_for('static', filename='images/f-logo.svg') }}">
-      </p>
-    </div>
-  </section>
-  <section class="companies">
-    <h2>Hledá vaše firma juniory?</h2>
-    <p>
-      Přidejte do <a href="{{ url_for('jobs') }}">seznamu nabídek práce pro juniory</a>
-      cokoliv od dobrovolnictví po plný úvazek. <strong>Cenu za inzerát si volíte sami!</strong>
-    </p>
-    <div class="call-to-action">
-      <p>
-        <a href="{{ url_for('jobs') }}#add" class="button">
-          Přidat nabídku
-        </a>
-        <img class="cartoon" src="{{ url_for('static', filename='images/posts.svg') }}">
-      </p>
-    </div>
-  </section>
-</aside>
+<section class="join" id="join">
+  <h2>Buď&nbsp;v&nbsp;obraze</h2>
+  <ul>
+    <li class="join-newsletter"><a href="http://eepurl.com/gyG8Bb" target="_blank">Nabídky práce do e-mailu</a></li>
+    <li class="join-f"><a href="https://www.facebook.com/groups/junior.guru" target="_blank">Facebooková skupina</a></li>
+  </ul>
+</section>
+<hr class="hidden">
 
-{% if stories|length %}
-<hr>
 <section class="stories" id="stories">
-  <h2 id="articles"><!-- preventing breaking old links to #articles -->
-    Inspirativní příběhy
-  </h2>
+  <div class="heading-container">
+    <h2>Příběhy lidí jako&nbsp;ty</h2>
+  </div>
   <ul class="items">
   {% for story in stories %}
     <li class="item-summary">
@@ -141,11 +106,10 @@ Nauč se programovat a získej svou první práci v IT
             {{ story.date.month }}/{{ story.date.year }}
           </small>
         </div>
-        <img src="{{ url_for('static', filename=story.image_path) }}">
+        <img src="{{ url_for('static', filename=story.image_path) }}" width="100">
       </a>
     </li>
   {% endfor %}
   </ul>
 </section>
-{% endif %}
 {% endblock %}

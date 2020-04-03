@@ -1,234 +1,317 @@
-body.page-index {
+body.page-index-beta {
   main {
     max-width: 100%;
     padding: 0;
   }
 
-  nav, aside, .stories {
-    @include page-width;
-    padding-left: $whitespace;
-    padding-right: $whitespace;
+  .divider {
+    display: block;
+    margin: 0;
+    background-color: $yellow;
   }
 
-  .body-container > header {
+  .hidden {
+    display: none;
+  }
+
+  .body-container > header .logo img {
+    height: 10rem;
+    margin: ($whitespace / 2) 0 ($whitespace / 2) 0;
+  }
+
+  .body-container > header > nav {
+    justify-content: center;
+  }
+
+  .body-container > header ol {
+    display: none;
+  }
+
+  .heading-container {
+    text-align: center;
+  }
+}
+
+.billboard {
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  h2 {
+    margin: 0;
+    margin-bottom: $whitespace / 2;
     padding: 0;
-    padding-top: $whitespace-2;
-    margin-bottom: $whitespace-3;
-    background: $yellow;
+    background: 0;
+    @include font-4;
+    line-height: 1.2;
+  }
 
-    .logo {
-      display: block;
-      margin: 0;
-      text-align: center;
+  .billboard-content {
+    @include page-width;
+    padding: (2 * $whitespace-3) $whitespace;
+  }
 
-      img {
-        display: block;
-        margin: 0 auto;
-        height: 12rem;
-      }
+  @media screen and (min-width: 650px) {
+    .billboard-content-limiter {
+      width: 60rem;
+    }
+
+    .billboard-buttons {
+      white-space: nowrap;
     }
   }
 
-  .tagline {
-    background: $black;
-    color: $white;
-    font-weight: 300;
-    @include font-2;
-    margin: 0;
-    margin-top: $whitespace-2;
+  p, .button, .button-secondary {
+    margin-bottom: $whitespace-2;
+  }
+
+  .button {
+    margin-top: $whitespace-3;
 
     @media screen and (min-width: 650px) {
       & {
-        text-align: center;
+        margin-right: $whitespace;
       }
-    }
-
-    p {
-      margin: 0;
-      @include page-width;
-      padding: $whitespace $whitespace-2;
     }
   }
 
-  nav {
-    .chicken, ol {
-      margin: $whitespace-3 0;
+  .button, .button-secondary {
+    display: block;
 
-      @media screen and (min-width: $grid-breakpoint) {
-        @supports (display: grid) {
-          & {
-            display: grid;
-            grid-gap: $whitespace;
-            grid-template-columns: repeat(auto-fit, minmax($grid-block-size, 1fr));
-          }
-        }
-      }
-    }
-
-    .chicken {
-      display: none;
-      margin: 0;
-
-      @media screen and (min-width: $grid-breakpoint) {
-        @supports (display: grid) {
-          & {
-            display: grid;
-          }
-        }
-      }
-    }
-
-    .chick, li {
-      margin: auto;
-      margin-bottom: $whitespace;
-      max-width: 65rem;
-
-      @media screen and (min-width: $grid-breakpoint) {
-        @supports (display: grid) {
-          & {
-            max-width: none;
-            margin: 0;
-          }
-        }
-      }
-    }
-
-    .chick img {
-      display: block;
-      height: 10rem;
-      margin: 0 auto;
-    }
-
-    li {
-      overflow: hidden;
-
-      a {
-        display: block;
-        padding: $whitespace;
-        padding-right: 5.5rem;
-        background: $dots-black;
-        height: 100%;
-        text-decoration: none;
-        @include arrow;
-      }
-
-      a:hover, a:focus, a:active {
-        background: $dots-blue;
-
-        * {
-          color: $blue;
-        }
-
-        h2::before {
-          color: $white;
-          background: $blue;
-        }
-      }
-
-      p {
-        box-sizing: border-box;
-        background: $white;
-        padding: 0.3rem 0.5rem;
-        @include font-0;
-        line-height: $line-height;
-        @include hyphens;
-      }
-    }
-
-    h2 {
-      display: inline-block;
-      background: $white;
-      padding: 0.3rem 0.5rem;
-      @include font-2;
-      margin-bottom: $whitespace;
-    }
-
-    h2::before {
-      display: block;
-      padding: 0.3rem 1.5rem;
-      background: $yellow;
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-
-    li:nth-child(1) h2::before { content: "1"; }
-    li:nth-child(2) h2::before { content: "2"; }
-    li:nth-child(3) h2::before { content: "3"; }
-  }
-
-  aside {
-    @supports (display: grid) {
+    @media screen and (min-width: 650px) {
       & {
-        display: grid;
-        grid-gap: $whitespace-3 $whitespace-2;
-        grid-template-columns: repeat(auto-fit, minmax($grid-block-size, 1fr));
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
       }
     }
+  }
+}
 
-    section {
-      margin-bottom: $whitespace;
+.billboard-learn {
+  background-color: $yellow;
+  background-image: url('./images/billboard-learn.jpg');
+  background-position: right 35% center;
+  color: $black;
 
-      @supports (display: grid) {
-        & {
-          margin: 0;
-        }
-      }
+  @media screen and (min-width: 650px) {
+    & {
+      background-position: center;
     }
 
-    h2 {
-      display: inline-block;
-      background-color: $yellow;
-      padding: 0.3rem 0.5rem;
+    .billboard-content-limiter {
+      margin-right: auto;
+    }
+  }
+
+  .billboard-wrapper {
+    background-image: linear-gradient(
+      to left,
+      rgba($yellow, 0.5) 30%,
+      rgba($yellow, 0.9) 60%
+    );
+  }
+}
+
+.billboard-jobs {
+  background-color: $black;
+  background-image: url('./images/billboard-jobs.jpg');
+  color: $white;
+
+  @media screen and (min-width: 650px) {
+    & {
+      text-align: right;
     }
 
-    .call-to-action, .note {
-      text-align: left;
+    .billboard-content-limiter {
+      margin-left: auto;
     }
+  }
 
-    .companies .call-to-action, .note {
+  .billboard-wrapper {
+    background-image: linear-gradient(
+      to right,
+      rgba($black, 0.5) 30%,
+      rgba($black, 0.9) 60%
+    );
+  }
+
+  p a {
+    color: $yellow;
+    @include color-links($white, $white);
+  }
+}
+
+.how-it-works {
+  @include page-width($padding: $whitespace);
+  margin-top: 2 * $whitespace-3;
+
+  h2 {
+    text-align: center;
+  }
+
+  ol, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 850px) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  li::before {
+    content: "";
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto (4 * $whitespace-3);
+    padding-top: 4 * $whitespace-3;
+    margin-bottom: 2 * $whitespace;
+  }
+
+  li {
+    margin-top: $whitespace-3;
+    margin-bottom: $whitespace;
+
+    &:last-child {
       margin-bottom: 0;
     }
+  }
 
-    .cartoon {
-      display: none;
-    }
+  li:nth-child(1)::before { background-image: url('./images/chick1.svg'); }
+  li:nth-child(2)::before { background-image: url('./images/chick2.svg'); }
+  li:nth-child(3)::before { background-image: url('./images/chick3.svg'); }
 
-    @media screen and (min-width: $grid-breakpoint) {
-      .cartoon {
-        display: block;
-        width: 8rem;
-        margin-top: 0;
-      }
+  a {
+    display: block;
+    position: relative;
+    padding-left: $whitespace-3 + $whitespace;
+    padding-right: $whitespace;
+    text-decoration: none;
+  }
+
+  a::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $whitespace-3;
+    background: $black;
+    color: $white;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  a:hover, a:focus, a:active, a.active {
+    &::before {
+      background-color: $blue;
     }
   }
 
-  .stories, .stories .items {
+  li:nth-child(1) a::before { content: "1"; }
+  li:nth-child(2) a::before { content: "2"; }
+  li:nth-child(3) a::before { content: "3"; }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    text-decoration: underline;
+  }
+}
+
+.join {
+  background: $black;
+  color: $white;
+  text-align: center;
+  padding: ($whitespace-3 * 2);
+
+  h2 {
+    @include font-4;
+    padding: 0;
+    margin: 0;
+    background: none;
+  }
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  ul {
+    @include page-width;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  li {
+    display: block;
+    margin-top: $whitespace-3;
+  }
+
+  li::before {
+    content: "";
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 2 * $whitespace-3;
+    padding-top: 2 * $whitespace-3;
+  }
+
+  .join-f::before { background-image: url('./images/f-logo-i.svg'); }
+  .join-newsletter::before { background-image: url('./images/mail-i.svg'); }
+
+  a {
+    display: block;
+    @include color-links($white, $white);
+  }
+}
+
+.stories {
+  @include page-width($padding: $whitespace);
+
+  &, .items {
     margin-bottom: 0;
   }
 
-  .stories .item-summary a {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-
-  .stories .item-summary img {
-    display: block;
-    width: 9rem;
-    min-width: 9rem;
-    margin-left: 1rem;
-  }
-
   @media screen and (min-width: 700px) {
-    .stories ul.items {
+    .items {
       column-count: 2;
       column-gap: 2.1rem;
     }
 
-    .stories ul.items li {
+    .items li {
       border: none;
     }
   }
 
+  .item-summary a {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 700px) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .item-summary img {
+    display: block;
+    width: 9rem;
+    min-width: 9rem;
+    margin: $whitespace 0 0 auto;
+
+    @media screen and (min-width: 700px) {
+      margin: 0 0 0 $whitespace;
+    }
+  }
 }
