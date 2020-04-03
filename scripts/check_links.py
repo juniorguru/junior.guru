@@ -42,7 +42,7 @@ if '--retry' in sys.argv:
 failed = 1
 for attempt in range(attempts):
     print()
-    print(f'Attempt #{attempt + 1}')
+    print(f'Attempt #{attempt + 1} of {attempts}')
     print('=' * 79)
     failed = run(command + options + [PUBLIC_DIR]).returncode
     if failed:
