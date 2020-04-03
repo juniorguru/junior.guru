@@ -56,7 +56,11 @@ body.page-index-beta { // TODO remove later
 
   @media screen and (min-width: 650px) {
     .billboard-content-limiter {
-      width: 57rem;
+      width: 60rem;
+    }
+
+    .billboard-buttons {
+      white-space: nowrap;
     }
   }
 
@@ -66,6 +70,12 @@ body.page-index-beta { // TODO remove later
 
   .button {
     margin-top: $whitespace-3;
+
+    @media screen and (min-width: 650px) {
+      & {
+        margin-right: $whitespace;
+      }
+    }
   }
 
   .button, .button-secondary {
@@ -74,8 +84,8 @@ body.page-index-beta { // TODO remove later
     @media screen and (min-width: 650px) {
       & {
         display: inline-block;
-        margin: 0;
-        margin-right: $whitespace;
+        margin-top: 0;
+        margin-bottom: 0;
       }
     }
   }
@@ -238,7 +248,7 @@ body.page-index-beta { // TODO remove later
   }
 
   ul {
-    width: 100%;
+    @include page-width;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
