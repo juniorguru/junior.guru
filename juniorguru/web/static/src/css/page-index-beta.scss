@@ -89,11 +89,13 @@ body.page-index-beta { // TODO remove later
 
 .billboard-learn {
   background-color: $yellow;
+  background-image: url('./images/billboard-learn.jpg');
+  background-position: right 35% center;
   color: $black;
 
   @media screen and (min-width: 650px) {
     & {
-      background-image: url('./images/billboard-learn.jpg');
+      background-position: center;
     }
 
     .billboard-content-limiter {
@@ -112,12 +114,12 @@ body.page-index-beta { // TODO remove later
 
 .billboard-jobs {
   background-color: $black;
+  background-image: url('./images/billboard-jobs.jpg');
   color: $white;
 
   @media screen and (min-width: 650px) {
     & {
       text-align: right;
-      background-image: url('./images/billboard-jobs.jpg');
     }
 
     .billboard-content-limiter {
