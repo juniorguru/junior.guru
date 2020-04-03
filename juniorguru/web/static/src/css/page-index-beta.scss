@@ -158,13 +158,28 @@ body.page-index-beta { // TODO remove later
     }
   }
 
+  li::before {
+    content: "";
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto (4 * $whitespace-3);
+    padding-top: 4 * $whitespace-3;
+    margin-bottom: 2 * $whitespace;
+  }
+
   li {
+    margin-top: $whitespace-3;
     margin-bottom: $whitespace;
 
     &:last-child {
       margin-bottom: 0;
     }
   }
+
+  li:nth-child(1)::before { background-image: url('./images/chick1.svg'); }
+  li:nth-child(2)::before { background-image: url('./images/chick2.svg'); }
+  li:nth-child(3)::before { background-image: url('./images/chick3.svg'); }
 
   a {
     display: block;
@@ -243,17 +258,12 @@ body.page-index-beta { // TODO remove later
     padding-top: 2 * $whitespace-3;
   }
 
+  .join-f::before { background-image: url('./images/f-logo-i.svg'); }
+  .join-newsletter::before { background-image: url('./images/mail-i.svg'); }
+
   a {
     display: block;
     @include color-links($white, $white);
-  }
-
-  .join-f::before {
-    background-image: url('./images/f-logo-i.svg');
-  }
-
-  .join-newsletter::before {
-    background-image: url('./images/mail-i.svg');
   }
 }
 
