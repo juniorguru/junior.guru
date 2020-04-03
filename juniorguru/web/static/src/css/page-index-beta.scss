@@ -8,12 +8,6 @@ body.page-index-beta {
     display: block;
     margin: 0;
     background-color: $yellow;
-
-    @media screen and (min-width: 650px) {
-      & {
-        display: none;
-      }
-    }
   }
 
   .hidden {
@@ -216,10 +210,9 @@ body.page-index-beta { // TODO remove later
   padding: ($whitespace-3 * 2);
 
   h2 {
-    @include font-3;
+    @include font-4;
     padding: 0;
     margin: 0;
-    margin-bottom: $whitespace;
     background: none;
   }
 
@@ -236,8 +229,31 @@ body.page-index-beta { // TODO remove later
     justify-content: space-evenly;
   }
 
+  li {
+    display: block;
+    margin-top: $whitespace-3;
+  }
+
+  li::before {
+    content: "";
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 2 * $whitespace-3;
+    padding-top: 2 * $whitespace-3;
+  }
+
   a {
+    display: block;
     @include color-links($white, $white);
+  }
+
+  .join-f::before {
+    background-image: url('./images/f-logo-i.svg');
+  }
+
+  .join-newsletter::before {
+    background-image: url('./images/mail-i.svg');
   }
 }
 
