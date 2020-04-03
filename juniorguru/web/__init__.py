@@ -12,7 +12,7 @@ app = Flask(__name__)
 def index():
     with db:
         jobs_count = Job.count()
-    return render_template('beta_index.html',
+    return render_template('index.html',
                            jobs_count=jobs_count,
                            stories=Story.listing())
 
