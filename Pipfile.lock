@@ -77,11 +77,11 @@
         },
         "gspread": {
             "hashes": [
-                "sha256:b12e9ee3a804817da5fdb7320a36101ff94da76695d264b0803b64dd27a50e43",
-                "sha256:eb2a0b52a2f8c83e53be2b81ca73ebbe8beb7cc6626e47c1be3192973d7b5cf7"
+                "sha256:2218acafd452dcb9ae059cbb987c6e763daabcfc5dfc879136468980a2868e70",
+                "sha256:3e3b2e50c1c0aa033e00b0e0a8a0148e4508cb482d0201251985c95ccc5dd962"
             ],
             "index": "pypi",
-            "version": "==3.4.0"
+            "version": "==3.4.1"
         },
         "httplib2": {
             "hashes": [
