@@ -24,6 +24,13 @@
             "index": "pypi",
             "version": "==0.15.5"
         },
+        "cachetools": {
+            "hashes": [
+                "sha256:9a52dd97a85f257f4e4127f15818e71a0c7899f121b34591fcc1173ea79a0198",
+                "sha256:b304586d357c43221856be51d73387f93e2a961598a9b6b6670664746f3b6c6c"
+            ],
+            "version": "==4.0.0"
+        },
         "certifi": {
             "hashes": [
                 "sha256:017c25db2a153ce562900032d5bc68e9f191e44e9a0f762f373977de9df1fbb3",
@@ -61,13 +68,20 @@
             "index": "pypi",
             "version": "==0.15"
         },
+        "google-auth": {
+            "hashes": [
+                "sha256:a5ee4c40fef77ea756cf2f1c0adcf475ecb53af6700cf9c133354cdc9b267148",
+                "sha256:cab6c707e6ee20e567e348168a5c69dc6480384f777a9e5159f4299ad177dcc0"
+            ],
+            "version": "==1.13.1"
+        },
         "gspread": {
             "hashes": [
-                "sha256:404d5b2ca7c39777f70a00a1c98ebac6b3ad15c655cc5e522f0ba2919b85fb56",
-                "sha256:655e9f6cb83842ce3403755dac6826ecd75b14133986c5091b77142ce588eb8b"
+                "sha256:b12e9ee3a804817da5fdb7320a36101ff94da76695d264b0803b64dd27a50e43",
+                "sha256:eb2a0b52a2f8c83e53be2b81ca73ebbe8beb7cc6626e47c1be3192973d7b5cf7"
             ],
             "index": "pypi",
-            "version": "==3.3.1"
+            "version": "==3.4.0"
         },
         "httplib2": {
             "hashes": [
