@@ -150,6 +150,33 @@ body.page-index {
   }
 }
 
+.billboard-jobs-note {
+  &::before {
+    content: "";
+    display: block;
+    height: $whitespace / 2;
+    background: repeating-linear-gradient(
+      -45deg,
+      $black,
+      $black ($whitespace * 2),
+      $yellow ($whitespace * 2),
+      $yellow ($whitespace * 4)
+    );
+  }
+
+  p {
+    color: $white;
+    margin: 0;
+    @include page-width;
+    padding: $whitespace;
+    text-align: center;
+  }
+
+  a {
+    @include color-links($white, $white);
+  }
+}
+
 .how-it-works {
   @include page-width($padding: $whitespace);
   margin-top: 2 * $whitespace-3;
