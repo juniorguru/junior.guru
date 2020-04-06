@@ -14,8 +14,15 @@ body.page-index {
     display: none;
   }
 
+  .logo-heading {
+    padding: 0;
+    margin: 0;
+  }
+
   .body-container > header .logo img {
     height: 10rem;
+    line-height: 9rem;
+    vertical-align: center;
     margin: ($whitespace / 2) 0 ($whitespace / 2) 0;
   }
 

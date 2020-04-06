@@ -40,9 +40,7 @@
         <nav>
           {% block logo %}
           <a class="logo" href="{{ url_for('index') }}">
-            {% block logo_image %}
               <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
-            {% endblock %}
           </a>
           {% endblock %}
           <ol>
