@@ -29,7 +29,7 @@ function onLoad() {
   const links = Array.from(document.getElementsByTagName('a'));
   links.forEach(function (link) {
     if (isExternalLink(link.href)) {
-      link.addEventListener('mouseup', function (event) {
+      link.addEventListener('mousedown', function (event) {
         onExternalLinkClick(link.href);
       });
     }
