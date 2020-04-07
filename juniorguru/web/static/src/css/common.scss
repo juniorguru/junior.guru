@@ -326,7 +326,7 @@ figure.quote {
     @include font-2;
     font-weight: bold;
     margin: 0;
-    padding: ($whitespace-2 / 2) $whitespace-2 0 $whitespace-2;
+    padding: ($whitespace-2 / 2) $whitespace-3 0 $whitespace-2;
     text-transform: uppercase;
   }
 
@@ -343,7 +343,7 @@ figure.quote {
   }
 
   figcaption::before {
-    content: "—";
+    content: "— ";
   }
 }
 
