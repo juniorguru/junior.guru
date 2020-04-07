@@ -150,7 +150,7 @@ body.page-index {
   }
 }
 
-.billboard-jobs-note {
+.billboard-note {
   &::before {
     content: "";
     display: block;
@@ -165,15 +165,20 @@ body.page-index {
   }
 
   p {
-    color: $white;
     margin: 0;
     @include page-width;
     padding: $whitespace;
     text-align: center;
   }
 
-  a {
-    @include color-links($white, $white);
+  .billboard-learn & {
+    p { color: $black; }
+    a { @include color-links($black, $black); }
+  }
+
+  .billboard-jobs & {
+    p { color: $white; }
+    a { @include color-links($white, $white); }
   }
 }
 
