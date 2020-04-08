@@ -6,6 +6,9 @@
 <h1 class="logo-heading">
   {{ super() }}
 </h1>
+<p class="claim">
+  Průvodce programováním pro&nbsp;samouky
+</p>
 {% endblock %}
 
 {% block divider %}<hr class="divider">{% endblock %}
@@ -57,9 +60,7 @@
 <hr class="hidden">
 
 <section class="how-it-works" id="how-it-works">
-  <div class="heading-container">
-    <h2>Jak to&nbsp;funguje?</h2>
-  </div>
+  <h2>Jak to funguje?</h2>
   <ol>
     <li>
       <a href="{{ url_for('learn') }}">
@@ -103,9 +104,7 @@
 <hr class="hidden">
 
 <section class="stories" id="stories">
-  <div class="heading-container">
-    <h2>Příběhy lidí jako&nbsp;ty</h2>
-  </div>
+  <h2>Příběhy lidí jako&nbsp;ty</h2>
   <ul class="items">
   {% for story in stories %}
     <li class="item-summary">

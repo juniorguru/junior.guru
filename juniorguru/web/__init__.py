@@ -22,6 +22,7 @@ def index():
 @app.route('/learn/')
 def learn():
     return render_template('learn.html',
+                           stories_count=len(Story.listing()),
                            thumbnail=thumbnail(title='Jak se začít učit programovat'))
 
 
