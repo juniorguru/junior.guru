@@ -795,11 +795,11 @@ footer {
 
 .address-wrapper {
   padding: 0 $whitespace;
+  padding-bottom: 2 * $whitespace-3;
 }
 
 .author {
   background: $black;
-  margin-top: 2 * $whitespace-3;
   text-align: left;
   color: $white;
   @include font-0;

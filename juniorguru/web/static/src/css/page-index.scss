@@ -4,6 +4,14 @@ body.page-index {
     padding: 0;
   }
 
+  main > section > h2 {
+    background: none;
+    padding: 0;
+    display: block;
+    margin-bottom: $whitespace-3;
+    text-align: center;
+  }
+
   .divider {
     display: block;
     margin: 0;
@@ -14,28 +22,55 @@ body.page-index {
     display: none;
   }
 
+  .body-container > header {
+    nav {
+      align-items: center;
+      flex-direction: column;
+      padding-bottom: ($whitespace / 4);
+
+      @media screen and (min-width: 550px) {
+        & {
+          flex-direction: row;
+        }
+      }
+    }
+
+    .logo img {
+      $logo-height: 10rem;
+      height: $logo-height;
+      line-height: $logo-height - 1rem;
+      vertical-align: center;
+    }
+
+    ol {
+      display: none;
+    }
+  }
+
   .logo-heading {
     padding: 0;
     margin: 0;
   }
 
-  .body-container > header .logo img {
-    height: 10rem;
-    line-height: 9rem;
-    vertical-align: center;
-    margin: ($whitespace / 2) 0 ($whitespace / 2) 0;
-  }
-
-  .body-container > header > nav {
-    justify-content: center;
-  }
-
-  .body-container > header ol {
-    display: none;
-  }
-
-  .heading-container {
+  .claim {
     text-align: center;
+    padding: 0;
+    margin: 0;
+    @include font-0;
+
+    @media screen and (min-width: 550px) {
+      & {
+        text-align: right;
+        padding-left: 2 * $whitespace;
+        @include font;
+      }
+    }
+
+    @media screen and (min-width: 650px) {
+      & {
+        @include font-2;
+      }
+    }
   }
 }
 
@@ -272,10 +307,7 @@ body.page-index {
   padding: ($whitespace-3 * 2);
 
   h2 {
-    @include font-4;
-    padding: 0;
-    margin: 0;
-    background: none;
+    margin: 0 !important;
   }
 
   ul, li {
