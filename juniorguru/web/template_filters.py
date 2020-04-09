@@ -47,22 +47,29 @@ def job_requirement(requirement):
         return requirement
 
 
-TYPES_MAPPING = {
+EMPLOYMENT_TYPES_MAPPING = {
     'full-time': 'plný úvazek',
     'part-time': 'částečný úvazek',
-    'internship': 'stáž',
     'paid internship': 'placená stáž',
     'unpaid internship': 'neplacená stáž',
+    'internship': 'stáž',
     'volunteering': 'dobrovolnictví',
 }
 
 
 @app.template_filter()
-def job_type(type_):
+def employment_type(type_):
     try:
-        return TYPES_MAPPING[type_]
+        return EMPLOYMENT_TYPES_MAPPING[type_]
     except KeyError:
         return type_
+
+
+@app.template_filter()
+def employment_types(types, sep=', '):
+    if not types:
+        raise ValueError('Employment types must not be empty')
+    return sep.join(employment_type(type_) for type_ in types)
 
 
 @app.template_filter()

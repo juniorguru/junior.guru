@@ -1,9 +1,19 @@
 from datetime import datetime
 
 import pytest
+import random
 from peewee import SqliteDatabase
 
 from juniorguru.models import Job
+
+
+def shuffled(sorted_iterable):
+    value = sorted_iterable[:]
+    while True:
+        random.shuffle(value)
+        if value != sorted_iterable:
+            break
+    return value
 
 
 @pytest.fixture
@@ -21,7 +31,7 @@ def create_job(id, **kwargs):
         id=str(id),
         timestamp=kwargs.get('timestamp', datetime(2019, 7, 6, 20, 24, 3)),
         company_name=kwargs.get('company_name', 'Honza Ltd.'),
-        job_type=kwargs.get('job_type', 'internship'),
+        employment_types=kwargs.get('employment_types', frozenset(['internship'])),
         title=kwargs.get('title', 'Junior Software Engineer'),
         company_link=kwargs.get('company_link', 'https://example.com'),
         email=kwargs.get('email', 'recruiter@example.com'),
@@ -31,6 +41,44 @@ def create_job(id, **kwargs):
         is_sent=kwargs.get('is_sent', False),
         is_expired=kwargs.get('is_expired', False),
     )
+
+
+def test_employment_types_are_unique_sorted_lists(db):
+    job = create_job('1', employment_types=['part-time', 'full-time', 'part-time'])
+
+    assert Job.get_by_id('1').employment_types == ['full-time', 'part-time']
+
+
+def test_employment_types_sorts_from_the_most_to_the_least_serious(db):
+    sorted_value = [
+        'full-time',
+        'part-time',
+        'paid internship',
+        'unpaid internship',
+        'internship',
+        'volunteering',
+    ]
+    job = create_job('1', employment_types=shuffled(sorted_value))
+
+    assert Job.get_by_id('1').employment_types == sorted_value
+
+
+def test_employment_types_sorts_extra_types_last_alphabetically(db):
+    job = create_job('1', employment_types=[
+        'ahoj',
+        'full-time',
+        'bob',
+        'part-time',
+        'foo',
+    ])
+
+    assert Job.get_by_id('1').employment_types == [
+        'full-time',
+        'part-time',
+        'ahoj',
+        'bob',
+        'foo',
+    ]
 
 
 def test_listing_returns_only_approved_jobs(db):

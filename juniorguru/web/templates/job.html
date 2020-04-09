@@ -2,7 +2,7 @@
 {% block title %}{{ job.title }} &mdash; {{ job.company_name }} &mdash; {{ job.location }}{% endblock %}
 
 {% block description -%}
-Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}, {{ job.job_type|job_type }}.
+Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}, {{ job.employment_types|employment_types(' / ') }}.
 {%- endblock %}
 
 {% block body_attrs %} class="page-job"{% endblock %}
@@ -17,7 +17,7 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
       &mdash;
       {{ job.location }}
       &mdash;
-      {{ job.job_type|job_type }}
+      {{ job.employment_types|employment_types }}
     </p>
     <!-- TODO https://github.com/honzajavorek/junior.guru/issues/161
     <p class="job-since">

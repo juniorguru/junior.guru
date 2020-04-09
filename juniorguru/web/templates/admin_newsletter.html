@@ -13,7 +13,11 @@
                 <strong>{{ job.title }}</strong>
             </a>
         </h2>
-        {{ job.company_name }} &mdash; {{ job.location }} &mdash; {{ job.job_type|job_type }}
+        {{ job.company_name }}
+        &mdash;
+        {{ job.location }}
+        &mdash;
+        {{ job.employment_types|employment_types }}
     {% endfor %}
   </body>
 </html>

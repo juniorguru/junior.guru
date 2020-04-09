@@ -9,7 +9,7 @@ def coerce_record(record):
     return coerce({
         r'^timestamp$': ('timestamp', coerce_timestamp),
         r'^company name$': ('company_name', coerce_text),
-        r'^job type$': ('job_type', coerce_text),
+        r'^employment type$': ('employment_types', coerce_set),
         r'^job title$': ('title', coerce_text),
         r'^company website link$': ('company_link', coerce_text),
         r'^email address$': ('email', coerce_text),
@@ -53,6 +53,13 @@ def coerce_timestamp(value):
 
 def coerce_boolean(value):
     return bool(value.strip()) if value else False
+
+
+def coerce_set(value):
+    if value:
+        items = (item.strip() for item in value.split(','))
+        return frozenset(filter(None, items))
+    return frozenset()
 
 
 def create_id(timestamp, company_link):

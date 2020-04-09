@@ -50,6 +50,17 @@ def test_coerce_boolean(value, expected):
     assert sheets.coerce_boolean(value) == expected
 
 
+@pytest.mark.parametrize('value,expected', [
+    (None, frozenset()),
+    ('', frozenset()),
+    (', ,', frozenset()),
+    ('web frontend, bash', frozenset(['bash', 'web frontend'])),
+    ('internship', frozenset(['internship'])),
+])
+def test_coerce_set(value, expected):
+    assert sheets.coerce_set(value) == expected
+
+
 def test_create_id():
     id_ = sheets.create_id(datetime(2019, 7, 6, 20, 24, 3), 'https://www.example.com/foo/bar.html')
     assert id_ == hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest()
@@ -61,7 +72,7 @@ def test_coerce_record():
         'Email Address': 'jobs@example.com',
         'Company name': 'Honza Ltd.',
         'Company website link': 'https://www.example.com',
-        'Job type': 'internship',
+        'Employment type': 'internship, full-time',
         'Job title': 'Frontend Ninja',
         'Job description': None,
         'Job location': 'Prague',
@@ -75,7 +86,7 @@ def test_coerce_record():
         'email': 'jobs@example.com',
         'company_name': 'Honza Ltd.',
         'company_link': 'https://www.example.com',
-        'job_type': 'internship',
+        'employment_types': frozenset(['internship', 'full-time']),
         'title': 'Frontend Ninja',
         'description': None,
         'location': 'Prague',

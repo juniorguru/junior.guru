@@ -53,8 +53,29 @@ def test_job_requirement(requirement, expected):
     ('volunteering', 'dobrovolnictví'),
     ('gargamel', 'gargamel'),
 ])
-def test_job_type(type_, expected):
-    assert template_filters.job_type(type_) == expected
+def test_employment_type(type_, expected):
+    assert template_filters.employment_type(type_) == expected
+
+
+@pytest.mark.parametrize('types,expected', [
+    (['part-time'], 'částečný úvazek'),
+    (['part-time', 'gargamel', 'volunteering'], 'částečný úvazek, gargamel, dobrovolnictví'),
+])
+def test_employment_types(types, expected):
+    assert template_filters.employment_types(types) == expected
+
+
+def test_employment_types_empty():
+    with pytest.raises(ValueError):
+        template_filters.employment_types([])
+
+
+@pytest.mark.parametrize('types,sep,expected', [
+    (['part-time'], '/', 'částečný úvazek'),
+    (['part-time', 'gargamel'], '/', 'částečný úvazek/gargamel'),
+])
+def test_employment_types_custom_separator(types, sep, expected):
+    assert template_filters.employment_types(types, sep) == expected
 
 
 @pytest.mark.parametrize('dt,expected', [
