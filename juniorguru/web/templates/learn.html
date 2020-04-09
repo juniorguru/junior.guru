@@ -476,6 +476,64 @@ Chceš se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro 
       </p>
     </li>
     <li>
+      <a href="https://admissions.udacity.com/apply/learn_with_udacity">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/admissions.udacity.com!apply!learn_with_udacity.jpg') }}">
+        </div>
+        <h3>Impact Discount</h3>
+        <ul class="list-labels">
+            <li><small>sleva 30&nbsp;%</small></li>
+        </ul>
+      </a>
+      <p>
+        Výukové programy od <a href="https://www.udacity.com/">Udacity</a> jsou levnější. Slevový kód přijde e-mailem po registraci.
+      </p>
+    </li>
+    {% if updated_at.month <= 4 and updated_at.day <= 13 %}
+    <li>
+      <a href="https://www.udemy.com/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/udemy.com.jpg') }}">
+        </div>
+        <h3>Learn for tomorrow</h3>
+        <ul class="list-labels">
+            <li><small>slevy až 90%</small></li>
+        </ul>
+      </a>
+      <p>
+        Do <strong>13.4.</strong> jsou zlevněné kurzy na <a href="https://www.udemy.com/">Udemy</a>.
+      </p>
+    </li>
+    {% endif %}
+    <li>
+      <a href="https://www.learn2code.cz/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/learn2code.cz.jpg') }}">
+        </div>
+        <h3>JSEMDOMA</h3>
+        <ul class="list-labels">
+            <li><small>sleva 25%</small></li>
+        </ul>
+      </a>
+      <p>
+        Online kurzy <a href="https://www.learn2code.cz/">Learn2Code</a> v akci. Slevový kód: <strong>JSEMDOMA</strong>
+      </p>
+    </li>
+    <li>
+      <a href="https://engeto.com/cs/katalog/python-1-uvod-do-programovani">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/engeto.com!cs!katalog!python-1-uvod-do-programovani.jpg') }}">
+        </div>
+        <h3>Python #1: Úvod do programování</h3>
+        <ul class="list-labels">
+            <li><small>zdarma</small></li>
+        </ul>
+      </a>
+      <p>
+        Úvod do programování od <a href="https://engeto.com/">Engeto</a> je nyní zcela zdarma.
+      </p>
+    </li>
+    <li>
       <a href="http://www.beeit.cz/Kurz/Stan-se-programatorem-v-C-online">
         <div class="list-image">
           <img src="{{ url_for('static', filename='images/screenshots/beeit.cz!Kurz!Stan-se-programatorem-v-C-online.jpg') }}">
