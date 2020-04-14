@@ -489,22 +489,6 @@ Chceš se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro 
         Výukové programy od <a href="https://www.udacity.com/">Udacity</a> jsou levnější. Slevový kód přijde e-mailem po registraci.
       </p>
     </li>
-    {% if updated_at.month <= 4 and updated_at.day <= 13 %}
-    <li>
-      <a href="https://www.udemy.com/">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/udemy.com.jpg') }}">
-        </div>
-        <h3>Learn for tomorrow</h3>
-        <ul class="list-labels">
-            <li><small>slevy až 90%</small></li>
-        </ul>
-      </a>
-      <p>
-        Do <strong>13.4.</strong> jsou zlevněné kurzy na <a href="https://www.udemy.com/">Udemy</a>.
-      </p>
-    </li>
-    {% endif %}
     <li>
       <a href="https://www.learn2code.cz/">
         <div class="list-image">
