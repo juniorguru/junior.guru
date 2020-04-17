@@ -58,6 +58,16 @@ jobs:
           at: "~"
       - run: pipenv run test -v
 
+  scrapers:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: pipenv run scrape
+      - run: tar -cvzf jobs.tar.gz ./jobs
+      - store_artifacts:
+          path: ./jobs.tar.gz
+
   # needs $GOOGLE_SERVICE_ACCOUNT
   fetch-build:
     executor: python-js
@@ -120,6 +130,9 @@ workflows:
     jobs:
       - install
       - test:
+          requires:
+            - install
+      - scrapers:
           requires:
             - install
       - fetch-build:
