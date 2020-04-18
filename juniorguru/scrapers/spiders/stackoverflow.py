@@ -7,11 +7,17 @@ import scrapy
 class StackoverflowSpider(scrapy.Spider):
     name = 'stackoverflow'
     start_urls = [
-        'https://stackoverflow.com/jobs'
-        '?mxs=Junior&sort=p&l=Seč%2C+Czechia&d=350&u=Km'
+        'https://stackoverflow.com/jobs?mxs=Junior&sort=p&l=Seč%2C+Czechia&d=350&u=Km'
     ]
 
     def parse(self, response):
+        """
+        Takes care of the jobs listing.
+
+        @url https://stackoverflow.com/jobs?mxs=Junior&sort=p&l=Seč%2C+Czechia&d=350&u=Km
+        @returns items 0 0
+        @returns requests 2
+        """
         links = response.css('.-job h2 a')
         yield from response.follow_all(links, callback=self.parse_job)
 
