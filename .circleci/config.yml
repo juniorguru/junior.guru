@@ -122,6 +122,13 @@ jobs:
           at: "~"
       - run: pipenv run check-links --retry
 
+  check-scrapers:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: pipenv run check-scrapers
+
 
 workflows:
   version: 2
@@ -130,6 +137,9 @@ workflows:
     jobs:
       - install
       - test:
+          requires:
+            - install
+      - check-scrapers:
           requires:
             - install
       - scrapers:
@@ -157,6 +167,9 @@ workflows:
     jobs:
       - install
       - security-scan:
+          requires:
+            - install
+      - check-scrapers:
           requires:
             - install
       - fetch-build:

@@ -19,6 +19,14 @@ class StackoverflowSpider(scrapy.Spider):
         yield from response.follow_all(links, callback=self.parse)
 
     def parse_job(self, response):
+        """
+        Takes care of a single job posting.
+
+        @url https://stackoverflow.com/jobs/372528/senior-python-developer-zms-zalando-se
+        @returns items 1 1
+        @returns requests 0 0
+        @scrapes title link company_name company_link location_raw employment_types timestamp description_raw
+        """
         yield {
             'title': response.css('h1 a::text').get(),
             'link': response.url,
