@@ -52,7 +52,8 @@ def now_github_build():
     req = request.Request(url=release_url,
                           headers={'Accept': 'application/json'})
     artifacts = json.loads(request.urlopen(req).read())
-    request.urlretrieve(artifacts[0]['url'], 'public.tar.gz')
+    artifact = next(filter(lambda a: 'public' in a.get('path', ''), artifacts))
+    request.urlretrieve(artifact['url'], 'public.tar.gz')
 
     print('Unpacking artifact...')
     os.makedirs('public', exist_ok=True)
