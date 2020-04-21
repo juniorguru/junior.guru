@@ -58,16 +58,6 @@ jobs:
           at: "~"
       - run: pipenv run test -v
 
-  scrapers:
-    executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run: pipenv run scrape
-      - run: tar -cvzf jobs.tar.gz ./jobs
-      - store_artifacts:
-          path: ./jobs.tar.gz
-
   # needs $GOOGLE_SERVICE_ACCOUNT
   fetch-build:
     executor: python-js
@@ -80,8 +70,10 @@ jobs:
           paths:
               - project/juniorguru/data
               - project/public
+      - run: tar -cvzf data-backup.tar.gz ./juniorguru/data
       - run: tar -cvzf public.tar.gz ./public
       - store_artifacts:
+          path: ./data-backup.tar.gz
           path: ./public.tar.gz
 
   # needs $NOW_TOKEN, $NOW_ORG_ID, $NOW_PROJECT_ID
@@ -130,9 +122,6 @@ workflows:
     jobs:
       - install
       - test:
-          requires:
-            - install
-      - scrapers:
           requires:
             - install
       - fetch-build:

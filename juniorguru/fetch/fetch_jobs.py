@@ -1,6 +1,7 @@
 import os
 import json
 import datetime
+import subprocess
 from pathlib import Path
 from operator import itemgetter
 
@@ -29,6 +30,8 @@ def main():
 
         for record in records:
             Job.create(**coerce_record(record))
+
+    subprocess.run(['scrapy', 'crawl', 'stackoverflow', '-o', 'juniorguru/data/jobs/jobs.json'], check=True)
 
 
 if __name__ == '__main__':

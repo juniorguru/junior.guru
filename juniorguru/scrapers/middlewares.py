@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 
 class SaveDataMiddleware(object):
-    output_dir = './jobs'
+    output_dir = 'juniorguru/data/jobs/'
 
     def process_response(self, request, response, spider):
         try:
