@@ -64,7 +64,14 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
+      - run: 'date +"%Y-%m-%d" > .today'
+      - restore_cache:
+          key: scrapy-{{ checksum ".today" }}
       - run: pipenv run fetch && pipenv run build
+      - save_cache:
+          key: scrapy-{{ checksum ".today" }}
+          paths:
+            - .scrapy
       - persist_to_workspace:
           root: "~"
           paths:
