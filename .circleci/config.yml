@@ -70,10 +70,11 @@ jobs:
           paths:
               - project/juniorguru/data
               - project/public
-      - run: tar -cvzf data-backup.tar.gz ./juniorguru/data
+      - run: tar -cvzf backup.tar.gz ./juniorguru/data
+      - store_artifacts:
+          path: ./backup.tar.gz
       - run: tar -cvzf public.tar.gz ./public
       - store_artifacts:
-          path: ./data-backup.tar.gz
           path: ./public.tar.gz
 
   # needs $NOW_TOKEN, $NOW_ORG_ID, $NOW_PROJECT_ID
