@@ -41,10 +41,11 @@ class Job(BaseModel):
     location = CharField()
     company_name = CharField()
     company_link = CharField()
-    email = CharField()
+    email = CharField(null=True)  # required for JG, null for external
     employment_types = EmploymentTypeField()
-    description = CharField()
+    description = CharField(null=True)  # required for JG, null for external
     link = CharField(null=True)
+    source = CharField(null=True)  # null for JG, required for external
     is_approved = BooleanField(default=False)
     is_sent = BooleanField(default=False)
     is_expired = BooleanField(default=False)
@@ -65,9 +66,15 @@ class Job(BaseModel):
             .order_by(cls.posted_at)
 
     @classmethod
+    def scrapers_listing(cls):
+        return cls.select() \
+            .where(cls.source != None) \
+            .order_by(cls.posted_at.desc())
+
+    @classmethod
     def count(cls):
         return cls.listing().count()
 
     @classmethod
     def companies_count(cls):
-        return len(set([job.company_link for job in cls.listing()]))
+        return len(frozenset([job.company_link for job in cls.listing()]))

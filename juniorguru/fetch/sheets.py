@@ -63,6 +63,6 @@ def coerce_set(value):
 
 
 def create_id(posted_at, company_link):
-    parse_result = urlparse(company_link)
-    seed = f'{posted_at:%Y-%m-%dT%H:%M:%S} {parse_result.netloc}'
+    url_parts = urlparse(company_link)
+    seed = f'{posted_at:%Y-%m-%dT%H:%M:%S} {url_parts.netloc}'
     return hashlib.sha224(seed.encode()).hexdigest()

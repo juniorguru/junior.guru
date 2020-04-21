@@ -31,7 +31,7 @@ def main():
         for record in records:
             Job.create(**coerce_record(record))
 
-    subprocess.run(['scrapy', 'crawl', 'stackoverflow', '-o', 'juniorguru/data/jobs/jobs.json'], check=True)
+    subprocess.run(['scrapy', 'crawl', 'stackoverflow'], check=True)
 
 
 if __name__ == '__main__':
