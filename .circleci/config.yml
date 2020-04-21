@@ -17,7 +17,7 @@ jobs:
     executor: python-js
     steps:
       - checkout
-      - restore_cache:
+      - restore_cache:  # caches npm deps based on whether the deps declaration has changed
           key: deps-{{ checksum "Pipfile.lock" }}-{{ checksum "package-lock.json" }}
       - run:
           name: install dependencies
@@ -64,15 +64,25 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
+      - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
+      - restore_cache:  # caches all HTTP communication of the scrapers for one day
+          key: scrapy-{{ checksum ".today" }}
       - run: pipenv run fetch && pipenv run build
+      - save_cache:
+          key: scrapy-{{ checksum ".today" }}
+          paths:
+            - .scrapy
       - persist_to_workspace:
           root: "~"
           paths:
               - project/juniorguru/data
               - project/public
+      - run: tar -cvzf backup.tar.gz ./juniorguru/data
+      - store_artifacts:
+          path: ./backup.tar.gz  # all data gets backed up as a CI artifact
       - run: tar -cvzf public.tar.gz ./public
       - store_artifacts:
-          path: ./public.tar.gz
+          path: ./public.tar.gz  # the generated HTML is made available for download (used in the deploy job)
 
   # needs $NOW_TOKEN, $NOW_ORG_ID, $NOW_PROJECT_ID
   deploy:
@@ -80,7 +90,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - restore_cache:
+      - restore_cache:  # caches a dummy file .deploy which lets the subsequent code to recognize whether the git ref has been already deployed to Now or not
           key: deploy-{{ .Revision }}
       - run:
           name: deploy
@@ -132,7 +142,7 @@ workflows:
           # This makes sure retries of 'master' builds still deploy,
           # even though they were not initiated by a GitHub push. Might
           # cause double deploy for builds initiated by GitHub push, but
-          # Now should recognize they're the same.
+          # the deploy job recognizes they're to be skipped.
           filters:
             branches:
               only:

@@ -7,7 +7,7 @@ import arrow
 
 def coerce_record(record):
     return coerce({
-        r'^timestamp$': ('timestamp', coerce_timestamp),
+        r'^timestamp$': ('posted_at', coerce_datetime),
         r'^company name$': ('company_name', coerce_text),
         r'^employment type$': ('employment_types', coerce_set),
         r'^job title$': ('title', coerce_text),
@@ -32,7 +32,7 @@ def coerce(mapping, record):
             if key_re.search(record_key):
                 job[key_name] = key_coerce(record_value)
 
-    job['id'] = create_id(job['timestamp'], job['company_link'])
+    job['id'] = create_id(job['posted_at'], job['company_link'])
     return job
 
 
@@ -46,7 +46,7 @@ def coerce_boolean_words(value):
         return dict(yes=True, no=False).get(value.strip())
 
 
-def coerce_timestamp(value):
+def coerce_datetime(value):
     if value:
         return arrow.get(value.strip(), 'M/D/YYYY H:m:s').naive
 
@@ -62,7 +62,7 @@ def coerce_set(value):
     return frozenset()
 
 
-def create_id(timestamp, company_link):
-    parse_result = urlparse(company_link)
-    seed = f'{timestamp:%Y-%m-%dT%H:%M:%S} {parse_result.netloc}'
+def create_id(posted_at, company_link):
+    url_parts = urlparse(company_link)
+    seed = f'{posted_at:%Y-%m-%dT%H:%M:%S} {url_parts.netloc}'
     return hashlib.sha224(seed.encode()).hexdigest()

@@ -24,6 +24,7 @@ frozen-flask = "*"
 pillow = "*"
 peewee = "*"
 strictyaml = "*"
+scrapy = "*"
 
 [dev-packages]
 pytest = "*"

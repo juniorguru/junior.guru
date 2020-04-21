@@ -1,4 +1,5 @@
 import arrow
+from playhouse.shortcuts import model_to_dict
 from flask import Flask, render_template, abort
 
 from ..models import db, Job, Story
@@ -93,6 +94,13 @@ def admin_newsletter():
     with db:
         jobs = Job.newsletter_listing()
     return render_template('admin_newsletter.html', jobs=jobs)
+
+
+@app.route('/admin/scrapers/')
+def admin_scrapers():
+    with db:
+        jobs = [model_to_dict(job) for job in Job.scrapers_listing()]
+    return render_template('admin_scrapers.html', jobs=jobs)
 
 
 @app.context_processor

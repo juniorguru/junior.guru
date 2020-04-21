@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cs" data-updated-at="{{ updated_at.to('Europe/Prague') }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+  </head>
+  <body>
+    <h1>Nabídky práce</h1>
+    {% for job in jobs %}
+        <hr>
+        <h2>
+            <a href="{{ job.link }}" target="_blank">
+                <strong>{{ job.title }}</strong>
+            </a>
+        </h2>
+        <p>
+            <a href="{{ job.company_link }}" target="_blank">{{ job.company_name }}</a>
+            &mdash;
+            {{ job.location }}
+            &mdash;
+            {{ job.employment_types|employment_types }}
+            &mdash;
+            {{ job.posted_at|ago }}
+        </p>
+        <details>
+            <summary>Data</summary>
+            <pre>{{ job|pprint }}</pre>
+        </details>
+    {% endfor %}
+  </body>
+</html>
