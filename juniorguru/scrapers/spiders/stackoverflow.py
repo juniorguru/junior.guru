@@ -2,9 +2,14 @@ import re
 from datetime import datetime, timedelta
 
 import scrapy
+from scrapy.loader import ItemLoader
+from scrapy.loader.processors import MapCompose, TakeFirst, Identity
+
+from ..items import Job
+from ..processors import absolute_url
 
 
-class StackoverflowSpider(scrapy.Spider):
+class Spider(scrapy.Spider):
     name = 'stackoverflow'
     start_urls = [
         'https://stackoverflow.com/jobs?mxs=Junior&sort=p&l=Seč%2C+Czechia&d=350&u=Km'
@@ -33,28 +38,37 @@ class StackoverflowSpider(scrapy.Spider):
         @returns requests 0 0
         @scrapes title link company_name company_link location_raw employment_types timestamp description_raw
         """
-        yield {
-            'title': response.css('h1 a::text').get(),
-            'link': response.url,
-            'company_name': response.css('h1 ~ div a::text').get(),
-            'company_link': response.urljoin(response.css('h1 ~ div a::attr(href)').get()),
-            'location_raw': parse_location_raw(response.css('h1 ~ div a ~ span::text').get()),
-            'employment_types': [response.xpath("//span[contains(., 'Job type:')]/following-sibling::span/text()").get()],  # Full-time, Internship, Contract
-            'timestamp': parse_timestamp(response.xpath("//div[contains(./text(), 'Posted')]/text()").get()),
-            'description_raw': response.xpath("//section[contains(.//h2/text(), 'Job description')]").get(),
-        }
+        loader = Loader(item=Job(), response=response)
+        loader.add_css('title', 'h1 a::text')
+        loader.add_value('link', response.url)
+        loader.add_css('company_name', 'h1 ~ div a::text')
+        loader.add_css('company_link', 'h1 ~ div a::attr(href)')
+        loader.add_css('location_raw', 'h1 ~ div a ~ span::text')
+        loader.add_xpath('employment_types', "//span[contains(., 'Job type:')]/following-sibling::span/text()")  # Full-time, Internship, Contract
+        loader.add_xpath('timestamp', "//div[contains(./text(), 'Posted')]/text()")
+        loader.add_xpath('description_raw', "//section[contains(.//h2/text(), 'Job description')]")
+        yield loader.load_item()
 
 
-def parse_location_raw(text):
+def clean_location_raw(text):
     return re.sub(r'^–\s*', '', re.sub(r'[\n\r]+', ' ', text.strip()))
 
 
-def parse_timestamp(text):
+def parse_relative_time(text, now=None):
+    now = now or datetime.utcnow()
     if 'hour' in text:
-        return datetime.utcnow()
+        return now
     if 'yesterday' in text:
-        return datetime.utcnow() - timedelta(days=1)
+        return now - timedelta(days=1)
     if 'day' in text:
         days_ago = int(re.search(r'\d+', text).group(0))
-        return datetime.utcnow() - timedelta(days=days_ago)
+        return now - timedelta(days=days_ago)
     raise ValueError(text)
+
+
+class Loader(ItemLoader):
+    default_output_processor = TakeFirst()
+    company_link_in = MapCompose(absolute_url)
+    employment_types_out = Identity()
+    location_raw_in = MapCompose(clean_location_raw)
+    timestamp_in = MapCompose(parse_relative_time)

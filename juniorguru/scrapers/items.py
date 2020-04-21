@@ -1,14 +1,12 @@
-# -*- coding: utf-8 -*-
-
-# Define here the models for your scraped items
-#
-# See documentation in:
-# https://docs.scrapy.org/en/latest/topics/items.html
-
-import scrapy
+from scrapy import Item, Field
 
 
-class JobsItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class Job(Item):
+    title = Field()
+    link = Field()
+    company_name = Field()
+    company_link = Field()
+    location_raw = Field()
+    employment_types = Field()
+    timestamp = Field()
+    description_raw = Field()
