@@ -16,13 +16,6 @@ class Spider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        """
-        Takes care of the jobs listing.
-
-        @url https://stackoverflow.com/jobs?mxs=Junior&sort=p&l=Seč%2C+Czechia&d=350&u=Km
-        @returns items 0 0
-        @returns requests 2
-        """
         links = response.css('.-job h2 a')
         yield from response.follow_all(links, callback=self.parse_job)
 
@@ -30,14 +23,6 @@ class Spider(scrapy.Spider):
         yield from response.follow_all(links, callback=self.parse)
 
     def parse_job(self, response):
-        """
-        Takes care of a single job posting.
-
-        @url https://stackoverflow.com/jobs/372528/senior-python-developer-zms-zalando-se
-        @returns items 1 1
-        @returns requests 0 0
-        @scrapes title link company_name company_link location_raw employment_types timestamp description_raw
-        """
         loader = Loader(item=Job(), response=response)
         loader.add_css('title', 'h1 a::text')
         loader.add_value('link', response.url)
