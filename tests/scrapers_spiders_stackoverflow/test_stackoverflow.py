@@ -32,7 +32,7 @@ def test_spider_parse_job():
 
     assert list(job.keys()) == [
         'title', 'link', 'company_name', 'company_link', 'location_raw',
-        'employment_types', 'timestamp', 'description_raw'
+        'employment_types', 'posted_at', 'description_raw'
     ]
     assert job['title'] == 'Solution Engineer (M/F/X)'
     assert job['link'] == 'https://example.com/example/'
@@ -40,7 +40,7 @@ def test_spider_parse_job():
     assert job['company_link'] == 'https://example.com/jobs/companies/quajoo-gmbh'
     assert job['location_raw'] == 'Leipzig, Deutschland'
     assert job['employment_types'] == ['Full-time']
-    assert job['timestamp'].date() == date.today() - timedelta(days=27)
+    assert job['posted_at'].date() == date.today() - timedelta(days=27)
     assert 'what QUAJOO offers you:</strong>' in job['description_raw']
 
 

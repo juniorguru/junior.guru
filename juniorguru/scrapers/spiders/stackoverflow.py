@@ -30,7 +30,7 @@ class Spider(scrapy.Spider):
         loader.add_css('company_link', 'h1 ~ div a::attr(href)')
         loader.add_css('location_raw', 'h1 ~ div a ~ span::text')
         loader.add_xpath('employment_types', "//span[contains(., 'Job type:')]/following-sibling::span/text()")  # Full-time, Internship, Contract
-        loader.add_xpath('timestamp', "//div[contains(./text(), 'Posted')]/text()")
+        loader.add_xpath('posted_at', "//div[contains(./text(), 'Posted')]/text()")
         loader.add_xpath('description_raw', "//section[contains(.//h2/text(), 'Job description')]")
         yield loader.load_item()
 
@@ -56,4 +56,4 @@ class Loader(ItemLoader):
     company_link_in = MapCompose(absolute_url)
     employment_types_out = Identity()
     location_raw_in = MapCompose(clean_location_raw)
-    timestamp_in = MapCompose(parse_relative_time)
+    posted_at_in = MapCompose(parse_relative_time)

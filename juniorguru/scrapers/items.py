@@ -8,5 +8,5 @@ class Job(Item):
     company_link = Field()
     location_raw = Field()
     employment_types = Field()
-    timestamp = Field()
+    posted_at = Field()
     description_raw = Field()

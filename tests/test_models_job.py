@@ -29,7 +29,7 @@ def db():
 def create_job(id, **kwargs):
     return Job.create(
         id=str(id),
-        timestamp=kwargs.get('timestamp', datetime(2019, 7, 6, 20, 24, 3)),
+        posted_at=kwargs.get('posted_at', datetime(2019, 7, 6, 20, 24, 3)),
         company_name=kwargs.get('company_name', 'Honza Ltd.'),
         employment_types=kwargs.get('employment_types', frozenset(['internship'])),
         title=kwargs.get('title', 'Junior Software Engineer'),
@@ -97,10 +97,10 @@ def test_listing_returns_only_not_expired_jobs(db):
     assert set(Job.listing()) == {job1, job3}
 
 
-def test_listing_sorts_by_timestamp_desc(db):
-    job1 = create_job('1', timestamp=datetime(2010, 7, 6, 20, 24, 3))
-    job2 = create_job('2', timestamp=datetime(2019, 7, 6, 20, 24, 3))
-    job3 = create_job('3', timestamp=datetime(2014, 7, 6, 20, 24, 3))
+def test_listing_sorts_by_posted_at_desc(db):
+    job1 = create_job('1', posted_at=datetime(2010, 7, 6, 20, 24, 3))
+    job2 = create_job('2', posted_at=datetime(2019, 7, 6, 20, 24, 3))
+    job3 = create_job('3', posted_at=datetime(2014, 7, 6, 20, 24, 3))
 
     assert list(Job.listing()) == [job2, job3, job1]
 
@@ -121,10 +121,10 @@ def test_newsletter_listing_returns_only_jobs_not_sent(db):
     assert set(Job.newsletter_listing()) == {job2}
 
 
-def test_newsletter_listing_sorts_by_timestamp_asc(db):
-    job1 = create_job('1', timestamp=datetime(2010, 7, 6, 20, 24, 3))
-    job2 = create_job('2', timestamp=datetime(2019, 7, 6, 20, 24, 3))
-    job3 = create_job('3', timestamp=datetime(2014, 7, 6, 20, 24, 3))
+def test_newsletter_listing_sorts_by_posted_at_asc(db):
+    job1 = create_job('1', posted_at=datetime(2010, 7, 6, 20, 24, 3))
+    job2 = create_job('2', posted_at=datetime(2019, 7, 6, 20, 24, 3))
+    job3 = create_job('3', posted_at=datetime(2014, 7, 6, 20, 24, 3))
 
     assert list(Job.newsletter_listing()) == [job1, job3, job2]
 

@@ -36,7 +36,7 @@ class EmploymentTypeField(UniqueSortedListField):
 
 class Job(BaseModel):
     id = CharField(primary_key=True)
-    timestamp = DateTimeField(index=True)
+    posted_at = DateTimeField(index=True)
     title = CharField()
     location = CharField()
     company_name = CharField()
@@ -54,7 +54,7 @@ class Job(BaseModel):
         return cls.select() \
             .where(cls.is_approved == True,
                    cls.is_expired == False) \
-            .order_by(cls.timestamp.desc())
+            .order_by(cls.posted_at.desc())
 
     @classmethod
     def newsletter_listing(cls):
@@ -62,7 +62,7 @@ class Job(BaseModel):
             .where(cls.is_approved == True,
                    cls.is_expired == False,
                    cls.is_sent == False) \
-            .order_by(cls.timestamp)
+            .order_by(cls.posted_at)
 
     @classmethod
     def count(cls):

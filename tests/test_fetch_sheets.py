@@ -11,8 +11,8 @@ from juniorguru.fetch import sheets
     ('12/13/2019 9:17:57', datetime(2019, 12, 13, 9, 17, 57)),
     ('8/6/2019 14:08:49', datetime(2019, 8, 6, 14, 8, 49)),
 ])
-def test_coerce_timestamp(value, expected):
-    assert sheets.coerce_timestamp(value) == expected
+def test_coerce_datetime(value, expected):
+    assert sheets.coerce_datetime(value) == expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -82,7 +82,7 @@ def test_coerce_record():
         'Expired': '12/12/2019',
     }) == {
         'id': hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest(),
-        'timestamp': datetime(2019, 7, 6, 20, 24, 3),
+        'posted_at': datetime(2019, 7, 6, 20, 24, 3),
         'email': 'jobs@example.com',
         'company_name': 'Honza Ltd.',
         'company_link': 'https://www.example.com',
