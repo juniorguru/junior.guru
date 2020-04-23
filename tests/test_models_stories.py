@@ -7,7 +7,7 @@ from juniorguru.models import Story
 
 
 @pytest.fixture
-def db():
+def db_connection():
     db = SqliteDatabase(':memory:')
     with db:
         Story.bind(db)
@@ -25,7 +25,7 @@ def create_story(**kwargs):
     )
 
 
-def test_listing_sorts_by_date_desc(db):
+def test_listing_sorts_by_date_desc(db_connection):
     story1 = create_story(date=datetime(2010, 7, 6, 20, 24, 3))
     story2 = create_story(date=datetime(2019, 7, 6, 20, 24, 3))
     story3 = create_story(date=datetime(2014, 7, 6, 20, 24, 3))
@@ -38,5 +38,5 @@ def test_listing_sorts_by_date_desc(db):
     ('http://www.example.com/foo-bar?moo=1#hell=o', 'example.com'),
     ('https://www.exAMPLE.com/', 'example.com'),
 ))
-def test_publisher(db, url, expected):
+def test_publisher(db_connection, url, expected):
     assert create_story(url=url).publisher == expected

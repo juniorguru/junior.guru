@@ -17,7 +17,7 @@ def shuffled(sorted_iterable):
 
 
 @pytest.fixture
-def db():
+def db_connection():
     db = SqliteDatabase(':memory:')
     with db:
         Job.bind(db)
@@ -43,13 +43,13 @@ def create_job(id, **kwargs):
     )
 
 
-def test_employment_types_are_unique_sorted_lists(db):
+def test_employment_types_are_unique_sorted_lists(db_connection):
     job = create_job('1', employment_types=['part-time', 'full-time', 'part-time'])
 
     assert Job.get_by_id('1').employment_types == ['full-time', 'part-time']
 
 
-def test_employment_types_sorts_from_the_most_to_the_least_serious(db):
+def test_employment_types_sorts_from_the_most_to_the_least_serious(db_connection):
     sorted_value = [
         'full-time',
         'part-time',
@@ -63,7 +63,7 @@ def test_employment_types_sorts_from_the_most_to_the_least_serious(db):
     assert Job.get_by_id('1').employment_types == sorted_value
 
 
-def test_employment_types_sorts_extra_types_last_alphabetically(db):
+def test_employment_types_sorts_extra_types_last_alphabetically(db_connection):
     job = create_job('1', employment_types=[
         'ahoj',
         'full-time',
@@ -81,7 +81,7 @@ def test_employment_types_sorts_extra_types_last_alphabetically(db):
     ]
 
 
-def test_listing_returns_only_approved_jobs(db):
+def test_listing_returns_only_approved_jobs(db_connection):
     job1 = create_job('1', is_approved=True)
     job2 = create_job('2', is_approved=False)
     job3 = create_job('3', is_approved=True)
@@ -89,7 +89,7 @@ def test_listing_returns_only_approved_jobs(db):
     assert set(Job.listing()) == {job1, job3}
 
 
-def test_listing_returns_only_not_expired_jobs(db):
+def test_listing_returns_only_not_expired_jobs(db_connection):
     job1 = create_job('1', is_expired=False)
     job2 = create_job('2', is_expired=True)
     job3 = create_job('3', is_expired=False)
@@ -97,7 +97,7 @@ def test_listing_returns_only_not_expired_jobs(db):
     assert set(Job.listing()) == {job1, job3}
 
 
-def test_listing_sorts_by_posted_at_desc(db):
+def test_listing_sorts_by_posted_at_desc(db_connection):
     job1 = create_job('1', posted_at=datetime(2010, 7, 6, 20, 24, 3))
     job2 = create_job('2', posted_at=datetime(2019, 7, 6, 20, 24, 3))
     job3 = create_job('3', posted_at=datetime(2014, 7, 6, 20, 24, 3))
@@ -105,7 +105,7 @@ def test_listing_sorts_by_posted_at_desc(db):
     assert list(Job.listing()) == [job2, job3, job1]
 
 
-def test_newsletter_listing_returns_only_approved_jobs(db):
+def test_newsletter_listing_returns_only_approved_jobs(db_connection):
     job1 = create_job('1', is_approved=True)
     job2 = create_job('2', is_approved=False)
     job3 = create_job('3', is_approved=True)
@@ -113,7 +113,7 @@ def test_newsletter_listing_returns_only_approved_jobs(db):
     assert set(Job.newsletter_listing()) == {job1, job3}
 
 
-def test_newsletter_listing_returns_only_jobs_not_sent(db):
+def test_newsletter_listing_returns_only_jobs_not_sent(db_connection):
     job1 = create_job('1', is_sent=True)
     job2 = create_job('2', is_sent=False)
     job3 = create_job('3', is_sent=True)
@@ -121,7 +121,7 @@ def test_newsletter_listing_returns_only_jobs_not_sent(db):
     assert set(Job.newsletter_listing()) == {job2}
 
 
-def test_newsletter_listing_sorts_by_posted_at_asc(db):
+def test_newsletter_listing_sorts_by_posted_at_asc(db_connection):
     job1 = create_job('1', posted_at=datetime(2010, 7, 6, 20, 24, 3))
     job2 = create_job('2', posted_at=datetime(2019, 7, 6, 20, 24, 3))
     job3 = create_job('3', posted_at=datetime(2014, 7, 6, 20, 24, 3))
@@ -129,7 +129,7 @@ def test_newsletter_listing_sorts_by_posted_at_asc(db):
     assert list(Job.newsletter_listing()) == [job1, job3, job2]
 
 
-def test_count_takes_only_approved_jobs(db):
+def test_count_takes_only_approved_jobs(db_connection):
     create_job('1', is_approved=True)
     create_job('2', is_approved=False)
     create_job('3', is_approved=True)
@@ -137,7 +137,7 @@ def test_count_takes_only_approved_jobs(db):
     assert Job.count() == 2
 
 
-def test_companies_count_takes_only_approved_jobs(db):
+def test_companies_count_takes_only_approved_jobs(db_connection):
     create_job('1', company_link='https://abc.example.com', is_approved=True)
     create_job('2', company_link='https://abc.example.com', is_approved=False)
     create_job('3', company_link='https://xyz.example.com', is_approved=True)
