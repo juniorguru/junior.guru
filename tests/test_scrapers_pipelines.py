@@ -33,6 +33,40 @@ def spider():
     return DummySpider()
 
 
+@pytest.mark.parametrize('title,expected', [
+    ('Full Stack Software Engineer: Ruby on Rails (m/f/d)',
+     'Full Stack Software Engineer: Ruby on Rails'),
+    ('Full Stack Software Engineer: Java / Python (m/f/d)',
+     'Full Stack Software Engineer: Java / Python'),
+    ('Quantitative Java Developer (m/f/d) for Financial Markets',
+     'Quantitative Java Developer for Financial Markets'),
+    ('Search Engine Backend Engineer (m/f)',
+     'Search Engine Backend Engineer'),
+    ('Computer scientist - Software Architectures for Traffic Systems (f/m/d)',
+     'Computer scientist - Software Architectures for Traffic Systems'),
+    ('JAVA BPM SOFTWARE DEVELOPER (M/F)',
+     'JAVA BPM SOFTWARE DEVELOPER'),
+    ('Frontend Engineer (m/f/div)',
+     'Frontend Engineer'),
+    ('Junior Fullstack Developer (m/w/d)',
+     'Junior Fullstack Developer'),
+    ('Java Developer (m/w)',
+     'Java Developer'),
+    ('Software Engineer Ruby/Go (f/m/*)',
+     'Software Engineer Ruby/Go'),
+    ('C/Ada Software Developer & Tester Aviation (m/f/d )(Ref.-Nr.: 2020)',
+     'C/Ada Software Developer & Tester Aviation (Ref.-Nr.: 2020)'),
+    ('Solution Engineer (M/F/X)',
+     'Solution Engineer'),
+])
+def test_german_gender_cleaner(item, spider, title, expected):
+    item['title'] = title
+    pipeline = pipelines.GermanGenderCleaner()
+    item = pipeline.process_item(item, spider)
+
+    assert item['title'] == expected
+
+
 @pytest.mark.parametrize('description_raw,expected_lang', [
     ('''<p>Baví nás e-commerce a proto jsme se před rokem pustili do tvorby
      aplikací pro <a href="https://www.shopify.com/">Shopify.com</a>.
@@ -50,8 +84,8 @@ def spider():
 ])
 def test_language_filter(item, spider, description_raw, expected_lang):
     item['description_raw'] = description_raw
-    language_filter = pipelines.LanguageFilter()
-    item = language_filter.process_item(item, spider)
+    pipeline = pipelines.LanguageFilter()
+    item = pipeline.process_item(item, spider)
 
     assert item['lang'] == expected_lang
 
@@ -65,10 +99,10 @@ def test_language_filter(item, spider, description_raw, expected_lang):
 ])
 def test_language_filter_drops(item, spider, description_raw):
     item['description_raw'] = description_raw
-    language_filter = pipelines.LanguageFilter()
+    pipeline = pipelines.LanguageFilter()
 
     with pytest.raises(DropItem):
-        language_filter.process_item(item, spider)
+        pipeline.process_item(item, spider)
 
 
 @pytest.fixture
@@ -88,10 +122,10 @@ def db():
 
 
 def test_database(item, spider, db):
-    database = pipelines.Database(db=db, job_cls=Job)
-    database.open_spider(spider)
-    database.process_item(item, spider)
-    database.close_spider(spider)
+    pipeline = pipelines.Database(db=db, job_cls=Job)
+    pipeline.open_spider(spider)
+    pipeline.process_item(item, spider)
+    pipeline.close_spider(spider)
     with db:
         job = Job.select()[0]
 

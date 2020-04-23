@@ -1,9 +1,30 @@
+import re
 import hashlib
 
 import langdetect
 from scrapy.exceptions import DropItem
 
 from .. import models
+
+
+class GermanGenderCleaner():
+    gender_re = re.compile(r'''
+        \s*                     # trailing spaces
+        \(                      # opening parenthesis
+            \s*[mfw]\s*         # letter m, f, or w (with trailing spaces)
+            /                   # slash
+            \s*[mfw]\s*         # letter m, f, or w (with trailing spaces)
+            (                   # optionally:
+                /               # slash
+                \s*[^\)]+\s*    # anything but closing bracket, one or more (with trailing spaces)
+            )?
+        \)                      # closing parenthesis
+        \s*                     # trailing spaces
+    ''', re.VERBOSE | re.IGNORECASE)
+
+    def process_item(self, item, spider):
+        item['title'] = self.gender_re.sub(' ', item['title']).strip()
+        return item
 
 
 class LanguageFilter():
