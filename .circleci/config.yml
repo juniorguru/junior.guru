@@ -1,10 +1,6 @@
 version: 2.1
 
 
-orbs:
-  snyk: snyk/snyk@0.0.9
-
-
 executors:
   python-js:
     docker:
@@ -33,23 +29,6 @@ jobs:
               - .local/share/virtualenvs
               - project/node_modules
               - project
-
-  # needs $SNYK_TOKEN from https://app.snyk.io/account/
-  security-scan:
-    executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - snyk/scan:
-          organization: honzajavorek
-          project: junior.guru
-          monitor-on-build: true
-          target-file: package.json
-      - snyk/scan:
-          organization: honzajavorek
-          project: junior.guru
-          monitor-on-build: true
-          target-file: Pipfile
 
   test:
     executor: python-js
@@ -153,9 +132,6 @@ workflows:
   nightly_workflow:
     jobs:
       - install
-      - security-scan:
-          requires:
-            - install
       - fetch-build:
           requires:
             - install
