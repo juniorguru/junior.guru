@@ -1,6 +1,20 @@
 import hashlib
 
+import langdetect
+from scrapy.exceptions import DropItem
+
 from .. import models
+
+
+class LanguageFilter():
+    relevant_langs = ['cs', 'sk', 'en']
+
+    def process_item(self, item, spider):
+        lang = langdetect.detect(item['description_raw'])
+        if lang not in self.relevant_langs:
+            raise DropItem(f"Language detected as '{lang}' (relevant: {', '.join(self.relevant_langs)})")
+        item['lang'] = lang
+        return item
 
 
 class Database():

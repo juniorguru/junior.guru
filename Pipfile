@@ -25,6 +25,7 @@ pillow = "*"
 peewee = "*"
 strictyaml = "*"
 scrapy = "*"
+langdetect = "*"
 
 [dev-packages]
 pytest = "*"

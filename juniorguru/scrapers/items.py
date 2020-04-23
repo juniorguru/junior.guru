@@ -9,4 +9,5 @@ class Job(Item):
     company_link = Field()
     employment_types = Field()
     description_raw = Field()
+    lang = Field()
     link = Field()

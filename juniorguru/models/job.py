@@ -44,6 +44,7 @@ class Job(BaseModel):
     email = CharField(null=True)  # required for JG, null for external
     employment_types = EmploymentTypeField()
     description = CharField(null=True)  # required for JG, null for external
+    lang = CharField(null=True)
     link = CharField(null=True)
     source = CharField(null=True)  # null for JG, required for external
     is_approved = BooleanField(default=False)
