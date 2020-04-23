@@ -19,6 +19,7 @@ class EmploymentTypeField(UniqueSortedListField):
     known_types_sorted = [
         'full-time',
         'part-time',
+        'contract',
         'paid internship',
         'unpaid internship',
         'internship',

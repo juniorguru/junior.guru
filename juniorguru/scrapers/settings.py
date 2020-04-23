@@ -67,6 +67,7 @@ DOWNLOADER_MIDDLEWARES = {
 ITEM_PIPELINES = {
    'juniorguru.scrapers.pipelines.LanguageFilter': 500,
    'juniorguru.scrapers.pipelines.GermanGenderCleaner': 600,
+   'juniorguru.scrapers.pipelines.EmploymentTypesCleaner': 700,
    'juniorguru.scrapers.pipelines.Database': 1000,
 }
 

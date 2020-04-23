@@ -33,6 +33,33 @@ def spider():
     return DummySpider()
 
 
+@pytest.mark.parametrize('employment_types,expected', [
+    # common sense
+    (['fulltime'], ['full-time']),
+    (['full time'], ['full-time']),
+    (['parttime'], ['part-time']),
+    (['part time'], ['part-time']),
+
+    # StackOverflow
+    (['Full-time'], ['full-time']),
+    (['Internship'], ['internship']),
+    (['Contract'], ['contract']),
+
+    # processing an unknown employment type
+    (['Full-Time', 'Gargamel'], ['full-time', 'gargamel']),
+    (['Gargamel'], ['gargamel']),
+
+    # processing duplicates
+    (['Full-Time', 'Gargamel', 'full time'], ['full-time', 'gargamel']),
+])
+def test_employment_types_cleaner(item, spider, employment_types, expected):
+    item['employment_types'] = employment_types
+    pipeline = pipelines.EmploymentTypesCleaner()
+    item = pipeline.process_item(item, spider)
+
+    assert item['employment_types'] == expected
+
+
 @pytest.mark.parametrize('title,expected', [
     ('Full Stack Software Engineer: Ruby on Rails (m/f/d)',
      'Full Stack Software Engineer: Ruby on Rails'),

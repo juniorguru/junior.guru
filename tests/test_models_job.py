@@ -53,6 +53,7 @@ def test_employment_types_sorts_from_the_most_to_the_least_serious(db_connection
     sorted_value = [
         'full-time',
         'part-time',
+        'contract',
         'paid internship',
         'unpaid internship',
         'internship',
