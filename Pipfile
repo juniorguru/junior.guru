@@ -11,6 +11,7 @@ build = "npx gulp build"
 build-screenshots = "python scripts/build_screenshots.py"
 check-links = "python scripts/check_links.py"
 check-anchors = "python scripts/check_anchors.py"
+check-scrapers = "python scripts/check_scrapers.py"
 serve = "npx gulp serve"
 
 [packages]
