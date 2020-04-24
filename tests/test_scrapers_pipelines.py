@@ -64,7 +64,7 @@ def test_employment_types_cleaner(item, spider, employment_types, expected):
     pipeline = pipelines.EmploymentTypesCleaner()
     item = pipeline.process_item(item, spider)
 
-    assert item['employment_types'] == expected
+    assert sorted(item['employment_types']) == sorted(expected)
 
 
 @pytest.mark.parametrize('title,expected', [
