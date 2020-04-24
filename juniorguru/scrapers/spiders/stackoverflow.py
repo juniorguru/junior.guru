@@ -5,8 +5,7 @@ from scrapy import Spider
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import MapCompose, TakeFirst, Identity
 
-from ..items import Job
-from ..processors import absolute_url
+from ..items import Job, absolute_url
 
 
 class Spider(Spider):
