@@ -1,0 +1,27 @@
+{% extends 'admin_base.html' %}
+{% block body %}
+<h1>Chyby ({{ errors|length }})</h1>
+{% if load_error %}
+  <p>Nepodařilo se načíst zdrojový soubor: {{ load_error }}</p>
+{% elif not errors %}
+  <p>Nenastaly žádné chyby.</p>
+{% else %}
+  {% for error in errors %}
+    <hr>
+    <h2>[{{ error.spider }} {{ error.signal }}] {{ error.message }}</h2>
+    <p>
+      <a href="{{ error.url }}" target="_blank">Zdrojové URL</a>
+      &mdash;
+      <a href="file://{{ monitoring_export_dir / error.html_path }}" target="_blank">HTML</a>
+    </p>
+    <details style="margin: 1rem 0;">
+      <summary>Trace</summary>
+      <pre>{{ error.trace }}</pre>
+    </details>
+    <details style="margin: 1rem 0;">
+      <summary>Data</summary>
+      <pre>{{ error|pprint }}</pre>
+    </details>
+  {% endfor %}
+{% endif %}
+{% endblock %}

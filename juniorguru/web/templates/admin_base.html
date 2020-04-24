@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cs" data-updated-at="{{ updated_at.to('Europe/Prague') }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1316071-22"></script>
+    <script>
+      if (window.location.hostname === 'junior.guru') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-1316071-22');
+      }
+    </script>
+  </head>
+  <body>
+    <p>
+    {% for name, endpoint in admin_menu.items() %}
+      <a href="{{ url_for(endpoint) }}">{{ name }}</a>
+      {% if not loop.last %} &mdash; {% endif %}
+    {% endfor %}
+    </p>
+    <hr>
+    {% block body %}{% endblock %}
+    <hr>
+    <p>
+      Toto je přísně tajná administrační část webu <a href="{{ url_for('index') }}">junior.guru</a>.
+      Pokud nejsi administrátor, nemáš tady co dělat!
+    </p>
+  </body>
+</html>

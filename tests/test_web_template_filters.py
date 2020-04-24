@@ -79,6 +79,14 @@ def test_employment_types_custom_separator(types, sep, expected):
     assert template_filters.employment_types(types, sep) == expected
 
 
+@pytest.mark.parametrize('dt_str,expected', [
+    ('2020-04-21 12:01:48', datetime(2020, 4, 21, 12, 1, 48)),
+    ('2020-04-21T12:01:48', datetime(2020, 4, 21, 12, 1, 48)),
+])
+def test_to_datetime(dt_str, expected):
+    assert template_filters.to_datetime(dt_str) == expected
+
+
 @pytest.mark.parametrize('dt,expected', [
     (datetime(2019, 12, 10, 16, 20, 42), 'dnes'),
     (datetime(2019, 12, 9, 16, 20, 42), 'včera'),

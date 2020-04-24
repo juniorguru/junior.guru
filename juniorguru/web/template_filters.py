@@ -74,6 +74,11 @@ def employment_types(types, sep=', '):
 
 
 @app.template_filter()
+def to_datetime(dt_str):
+    return datetime.fromisoformat(dt_str)
+
+
+@app.template_filter()
 def ago(dt, now=None):
     now = now or datetime.now()
     days = (now - dt).days

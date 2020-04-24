@@ -68,7 +68,7 @@ class Job(BaseModel):
             .order_by(cls.posted_at)
 
     @classmethod
-    def scrapers_listing(cls):
+    def scraped_listing(cls):
         return cls.select() \
             .where(cls.source != None) \
             .order_by(cls.posted_at.desc())

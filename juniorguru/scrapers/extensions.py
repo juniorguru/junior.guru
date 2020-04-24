@@ -55,23 +55,23 @@ class ErrorMonitoring(BaseMonitoring):
         return ext
 
     def item_error(self, item, response, spider, failure):
-        item = dict(error_message=f'{failure.type.__name__}: {failure.getErrorMessage()}',
-                    error_trace=failure.getTraceback(),
-                    error_html=self.backup_html(response),
-                    error_signal='item',
-                    error_url=response.url,
-                    error_spider=spider.name,
-                    **item)
-        self.exporter.export_item(item)
+        error = dict(message=f'{failure.type.__name__}: {failure.getErrorMessage()}',
+                     trace=failure.getTraceback(),
+                     html_path=self.backup_html(response),
+                     signal='item',
+                     url=response.url,
+                     spider=spider.name,
+                     item=item)
+        self.exporter.export_item(error)
 
     def spider_error(self, failure, response, spider):
-        item = dict(error_message=f'{failure.type.__name__}: {failure.getErrorMessage()}',
-                    error_trace=failure.getTraceback(),
-                    error_html=self.backup_html(response),
-                    error_signal='spider',
-                    error_url=response.url,
-                    error_spider=spider.name)
-        self.exporter.export_item(item)
+        error = dict(message=f'{failure.type.__name__}: {failure.getErrorMessage()}',
+                     trace=failure.getTraceback(),
+                     html_path=self.backup_html(response),
+                     signal='spider',
+                     url=response.url,
+                     spider=spider.name)
+        self.exporter.export_item(error)
 
 
 class DropMonitoring(BaseMonitoring):
@@ -86,11 +86,11 @@ class DropMonitoring(BaseMonitoring):
         return ext
 
     def item_dropped(self, item, response, exception, spider):
-        item = dict(drop_type=exception.__class__.__name__,
-                    drop_reason=str(exception),
-                    drop_html=self.backup_html(response),
-                    **item)
-        self.exporter.export_item(item)
+        drop = dict(type=exception.__class__.__name__,
+                    reason=str(exception),
+                    html_path=self.backup_html(response),
+                    item=item)
+        self.exporter.export_item(drop)
 
 
 class ItemMonitoring(BaseMonitoring):
@@ -105,6 +105,5 @@ class ItemMonitoring(BaseMonitoring):
         return ext
 
     def item_scraped(self, item, response, spider):
-        item = dict(html=self.backup_html(response),
-                    **item)
+        item = dict(html_path=self.backup_html(response), **item)
         self.exporter.export_item(item)

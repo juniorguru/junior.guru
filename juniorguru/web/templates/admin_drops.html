@@ -1,0 +1,36 @@
+{% extends 'admin_base.html' %}
+{% block body %}
+<h1>Zahozené nabídky ({{ drops|length }})</h1>
+{% if load_error %}
+  <p>Nepodařilo se načíst zdrojový soubor: {{ load_error }}</p>
+{% elif not drops %}
+  <p>Nebylo nic zahozeno.</p>
+{% else %}
+  {% for drop in drops %}
+    <hr>
+    <h2>
+      {{ drop.type }}: {{ drop.reason }}
+    </h2>
+    <p>
+      <a href="{{ drop.url }}" target="_blank">Zdrojové URL</a>
+      &mdash;
+      <a href="file://{{ monitoring_export_dir / drop.html_path }}" target="_blank">HTML</a>
+    </p>
+    <h3>{{ drop.item.title }}</h3>
+    <p>
+      <a href="{{ drop.item.company_link }}" target="_blank">{{ drop.item.company_name }}</a>
+      &mdash;
+      {{ drop.item.location }}
+      &mdash;
+      {{ drop.item.employment_types|employment_types }}
+      &mdash;
+      {{ drop.item.posted_at|to_datetime|ago }}
+    </p>
+    <textarea rows="20" cols="100" style="width: 90%;">{{ drop.item.description_raw }}</textarea>
+    <details style="margin: 1rem 0;">
+      <summary>Data</summary>
+      <pre>{{ drop|pprint }}</pre>
+    </details>
+  {% endfor %}
+{% endif %}
+{% endblock %}
