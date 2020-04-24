@@ -139,7 +139,7 @@ def edit_screenshot_override(path):
 
 
 if __name__ == '__main__':
-    print('[build] screenshots')
+    print('[main] screenshots')
     SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
 
     urls = parse_urls(URLS_TXT.read_text())
@@ -148,7 +148,7 @@ if __name__ == '__main__':
 
     Pool().map(edit_screenshot, SCREENSHOTS_DIR.glob('*.jpg'))
 
-    print('[build] screenshots overrides')
+    print('[main] screenshots overrides')
     SCREENSHOTS_OVERRIDES_DIR.mkdir(parents=True, exist_ok=True)
     paths = chain(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'),
                   SCREENSHOTS_OVERRIDES_DIR.glob('*.png'))
