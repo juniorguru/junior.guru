@@ -8,6 +8,10 @@ from scrapy.exceptions import DropItem
 from .. import models
 
 
+class BannedWordInTitle(DropItem):
+    pass
+
+
 class JuniorTitleFilter():
     banned_words = ['senior', 'practiced']
     puctuation_trans_table = str.maketrans('', '', string.punctuation)
@@ -17,7 +21,7 @@ class JuniorTitleFilter():
                  for word in item['title'].split())
         for word in words:
             if word in self.banned_words:
-                raise DropItem(f"The title contains a banned word: '{word}'")
+                raise BannedWordInTitle(f"The title contains a banned word: '{word}'")
         return item
 
 
@@ -58,13 +62,17 @@ class GermanGenderCleaner():
         return item
 
 
+class IrrelevantLanguage(DropItem):
+    pass
+
+
 class LanguageFilter():
     relevant_langs = ['cs', 'sk', 'en']
 
     def process_item(self, item, spider):
         lang = langdetect.detect(item['description_raw'])
         if lang not in self.relevant_langs:
-            raise DropItem(f"Language detected as '{lang}' (relevant: {', '.join(self.relevant_langs)})")
+            raise IrrelevantLanguage(f"Language detected as '{lang}' (relevant: {', '.join(self.relevant_langs)})")
         item['lang'] = lang
         return item
 

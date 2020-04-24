@@ -4,7 +4,6 @@ from tempfile import NamedTemporaryFile
 
 import pytest
 from scrapy import Spider
-from scrapy.exceptions import DropItem
 from peewee import SqliteDatabase
 
 from juniorguru.scrapers import pipelines
@@ -41,7 +40,7 @@ def test_junior_title_filter(item, spider, title):
     item['title'] = title
     pipeline = pipelines.JuniorTitleFilter()
 
-    with pytest.raises(DropItem):
+    with pytest.raises(pipelines.BannedWordInTitle):
         pipeline.process_item(item, spider)
 
 
@@ -135,12 +134,15 @@ def test_language_filter(item, spider, description_raw, expected_lang):
     Installation und Konfiguration der Linux- und Cloud-basierten
     Big-Data-Lösungen verantwortlich. Ebenfalls zu deinen Aufgaben gehören
     die Bewertung bestehender Big-Data-Systeme und die''',
+    '''<div class="f1header">Na tym stanowisku będziesz odpowiedzialna/-y za:
+    </div><ul><li>przeprowadzanie testów manualnych i automatycznych</li><li>
+    raportowanie błędów</li>''',
 ])
 def test_language_filter_drops(item, spider, description_raw):
     item['description_raw'] = description_raw
     pipeline = pipelines.LanguageFilter()
 
-    with pytest.raises(DropItem):
+    with pytest.raises(pipelines.IrrelevantLanguage):
         pipeline.process_item(item, spider)
 
 

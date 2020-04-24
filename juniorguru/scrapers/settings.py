@@ -59,7 +59,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 EXTENSIONS = {
-   'juniorguru.scrapers.extensions.Monitoring': 100,
+   'juniorguru.scrapers.extensions.ErrorMonitoring': 100,
+   'juniorguru.scrapers.extensions.DropMonitoring': 200,
 }
 
 # Configure item pipelines
