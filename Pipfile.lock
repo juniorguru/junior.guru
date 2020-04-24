@@ -329,10 +329,10 @@
         },
         "peewee": {
             "hashes": [
-                "sha256:85f6696b6691a315646047e0b19e9a28258b35612b7121bc4eb1b61ff53c760a"
+                "sha256:1269a9736865512bd4056298003aab190957afe07d2616cf22eaf56cb6398369"
             ],
             "index": "pypi",
-            "version": "==3.13.2"
+            "version": "==3.13.3"
         },
         "pillow": {
             "hashes": [
