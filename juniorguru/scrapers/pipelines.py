@@ -7,6 +7,11 @@ from scrapy.exceptions import DropItem
 from .. import models
 
 
+class JuniorFilter():
+    def process_item(self, item, spider):
+        return item
+
+
 class EmploymentTypesCleaner():
     clean_re = re.compile(r'[\-\s]+')
     types_mapping = {

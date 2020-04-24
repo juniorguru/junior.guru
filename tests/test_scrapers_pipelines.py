@@ -33,6 +33,13 @@ def spider():
     return DummySpider()
 
 
+def test_junior_filter(item, spider):
+    pipeline = pipelines.EmploymentTypesCleaner()
+    item = pipeline.process_item(item, spider)
+
+    assert item == item
+
+
 @pytest.mark.parametrize('employment_types,expected', [
     # common sense
     (['fulltime'], ['full-time']),

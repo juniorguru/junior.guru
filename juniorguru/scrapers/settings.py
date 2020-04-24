@@ -65,9 +65,10 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'juniorguru.scrapers.pipelines.LanguageFilter': 500,
-   'juniorguru.scrapers.pipelines.GermanGenderCleaner': 600,
-   'juniorguru.scrapers.pipelines.EmploymentTypesCleaner': 700,
+   'juniorguru.scrapers.pipelines.LanguageFilter': 100,
+   'juniorguru.scrapers.pipelines.JuniorFilter': 200,
+   'juniorguru.scrapers.pipelines.GermanGenderCleaner': 300,
+   'juniorguru.scrapers.pipelines.EmploymentTypesCleaner': 400,
    'juniorguru.scrapers.pipelines.Database': 1000,
 }
 
