@@ -33,11 +33,16 @@ def spider():
     return DummySpider()
 
 
-def test_junior_filter(item, spider):
-    pipeline = pipelines.EmploymentTypesCleaner()
-    item = pipeline.process_item(item, spider)
+@pytest.mark.parametrize('title', [
+    '(Senior) Python Developer Backend – Billing / Product',
+    'practiced .NET Developer',
+])
+def test_junior_title_filter(item, spider, title):
+    item['title'] = title
+    pipeline = pipelines.JuniorTitleFilter()
 
-    assert item == item
+    with pytest.raises(DropItem):
+        pipeline.process_item(item, spider)
 
 
 @pytest.mark.parametrize('employment_types,expected', [
