@@ -12,9 +12,11 @@
       {{ drop.type }}: {{ drop.reason }}
     </h2>
     <p>
-      <a href="{{ drop.url }}" target="_blank">Zdrojové URL</a>
-      &mdash;
-      <a href="file://{{ monitoring_export_dir / drop.html_path }}" target="_blank">HTML</a>
+      <small>
+        <a href="{{ drop.url }}" target="_blank">Zdrojové URL</a>
+        &mdash;
+        <a href="{{ url_for('admin_debug', path=drop.html_path) }}" target="_blank">HTML</a>
+      </small>
     </p>
     <h3>{{ drop.item.title }}</h3>
     <p>

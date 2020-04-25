@@ -3,11 +3,21 @@ import json
 from pathlib import Path
 
 from playhouse.shortcuts import model_to_dict
-from flask import render_template
+from flask import render_template, send_from_directory
 
 from . import app
 from ..models import db, Job
 from juniorguru.scrapers.settings import MONITORING_EXPORT_DIR
+
+
+ADMIN_MENU = {
+    'Záložky': 'admin',
+    'Newsletter': 'admin_newsletter',
+    'Stažené nabídky v DB': 'admin_scraped_jobs',
+    'Stažené nabídky': 'admin_scraped_items',
+    'Zahozené nabídky': 'admin_drops',
+    'Chyby': 'admin_errors',
+}
 
 
 def load_scrapers_monitoring(export_dir, basename):
@@ -72,14 +82,12 @@ def admin_errors():
                            errors=sorted(errors, key=sort_key, reverse=True))
 
 
+@app.route('/admin/debug/<path:path>.txt')
+def admin_debug(path):
+    debug_dir = Path(MONITORING_EXPORT_DIR).absolute()
+    return send_from_directory(debug_dir, path, mimetype='text/plain')
+
+
 @app.context_processor
 def inject_admin():
-    return dict(monitoring_export_dir=Path(MONITORING_EXPORT_DIR).absolute(),
-                admin_menu={
-                    'Záložky': 'admin',
-                    'Newsletter': 'admin_newsletter',
-                    'Stažené nabídky v DB': 'admin_scraped_jobs',
-                    'Stažené nabídky': 'admin_scraped_items',
-                    'Zahozené nabídky': 'admin_drops',
-                    'Chyby': 'admin_errors',
-                })
+    return dict(admin_menu=ADMIN_MENU)

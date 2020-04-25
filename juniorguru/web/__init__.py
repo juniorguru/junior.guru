@@ -1,5 +1,5 @@
 import arrow
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, url_for, Response
 
 from ..models import db, Job, Story
 from .thumbnail import thumbnail
@@ -86,6 +86,12 @@ def thanks():
 @app.route('/privacy/')
 def privacy():
     return render_template('privacy.html')
+
+
+@app.route('/robots.txt')
+def robots():
+    return Response(f"User-agent: *\nDisallow: {url_for('admin')}\n",
+                    mimetype='text/plain')
 
 
 @app.context_processor

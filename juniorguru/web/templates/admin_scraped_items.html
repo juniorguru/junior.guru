@@ -22,6 +22,11 @@
       &mdash;
       {{ item.posted_at|to_datetime|ago }}
     </p>
+    <p>
+      <small>
+        <a href="{{ url_for('admin_debug', path=item.html_path) }}" target="_blank">HTML</a>
+      </small>
+    </p>
     <details>
       <summary>Data</summary>
       <pre>{{ item|pprint }}</pre>

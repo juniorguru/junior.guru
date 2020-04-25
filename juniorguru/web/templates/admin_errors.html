@@ -10,9 +10,11 @@
     <hr>
     <h2>[{{ error.spider }} {{ error.signal }}] {{ error.message }}</h2>
     <p>
-      <a href="{{ error.url }}" target="_blank">Zdrojové URL</a>
-      &mdash;
-      <a href="file://{{ monitoring_export_dir / error.html_path }}" target="_blank">HTML</a>
+      <small>
+        <a href="{{ error.url }}" target="_blank">Zdrojové URL</a>
+        &mdash;
+        <a href="{{ url_for('admin_debug', path=error.html_path) }}" target="_blank">HTML</a>
+      </small>
     </p>
     <details style="margin: 1rem 0;">
       <summary>Trace</summary>
