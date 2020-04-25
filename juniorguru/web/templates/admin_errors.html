@@ -8,9 +8,15 @@
 {% else %}
   {% for error in errors %}
     <hr>
-    <h2>[{{ error.spider }} {{ error.signal }}] {{ error.message }}</h2>
+    <h2 id="{{ error.debug_id }}">
+      [{{ error.spider }} {{ error.signal }}] {{ error.message }}
+    </h2>
     <p>
       <small>
+        <code>{{ error.debug_id }}</code>
+        &mdash;
+        <a href="#{{ error.debug_id }}">Permalink</a>
+        &mdash;
         <a href="{{ error.url }}" target="_blank">Zdrojové URL</a>
         &mdash;
         <a href="{{ url_for('admin_debug', path=error.html_path) }}" target="_blank">HTML</a>

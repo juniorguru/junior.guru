@@ -8,11 +8,15 @@
 {% else %}
   {% for drop in drops %}
     <hr>
-    <h2>
+    <h2 id="{{ drop.debug_id }}">
       {{ drop.type }}: {{ drop.reason }}
     </h2>
     <p>
       <small>
+        <code>{{ drop.debug_id }}</code>
+        &mdash;
+        <a href="#{{ drop.debug_id }}">Permalink</a>
+        &mdash;
         <a href="{{ drop.url }}" target="_blank">Zdrojové URL</a>
         &mdash;
         <a href="{{ url_for('admin_debug', path=drop.html_path) }}" target="_blank">HTML</a>

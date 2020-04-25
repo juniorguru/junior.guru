@@ -26,6 +26,9 @@ class BaseMonitoring():
         self.exporter.finish_exporting()
         self.file.close()
 
+    def get_debug_id(self, url):
+        return hashlib.sha224(url.encode()).hexdigest()
+
     def backup_html(self, response):
         url = response.url
         try:
@@ -36,7 +39,7 @@ class BaseMonitoring():
 
         path = self.export_dir / self.export_name / urlparse(url).hostname
         path.mkdir(parents=True, exist_ok=True)
-        path = path / f'{hashlib.sha224(url.encode()).hexdigest()}.html'
+        path = path / f'{self.get_debug_id(url)}.html'
         path.write_text(response_text)
         logger.debug(f"Backed up '{url}' as '{path.absolute()}'")
         return str(path.relative_to(self.export_dir))
@@ -55,7 +58,9 @@ class ErrorMonitoring(BaseMonitoring):
         return ext
 
     def item_error(self, item, response, spider, failure):
-        error = dict(message=f'{failure.type.__name__}: {failure.getErrorMessage()}',
+        debug_id = self.get_debug_id(response.url)
+        error = dict(debug_id=debug_id,
+                     message=f'{failure.type.__name__}: {failure.getErrorMessage()}',
                      trace=failure.getTraceback(),
                      html_path=self.backup_html(response),
                      signal='item',
@@ -65,7 +70,9 @@ class ErrorMonitoring(BaseMonitoring):
         self.exporter.export_item(error)
 
     def spider_error(self, failure, response, spider):
-        error = dict(message=f'{failure.type.__name__}: {failure.getErrorMessage()}',
+        debug_id = self.get_debug_id(response.url)
+        error = dict(debug_id=debug_id,
+                     message=f'{failure.type.__name__}: {failure.getErrorMessage()}',
                      trace=failure.getTraceback(),
                      html_path=self.backup_html(response),
                      signal='spider',
@@ -86,7 +93,9 @@ class DropMonitoring(BaseMonitoring):
         return ext
 
     def item_dropped(self, item, response, exception, spider):
-        drop = dict(type=exception.__class__.__name__,
+        debug_id = self.get_debug_id(response.url)
+        drop = dict(debug_id=debug_id,
+                    type=exception.__class__.__name__,
                     reason=str(exception),
                     html_path=self.backup_html(response),
                     item=item)
@@ -105,5 +114,8 @@ class ItemMonitoring(BaseMonitoring):
         return ext
 
     def item_scraped(self, item, response, spider):
-        item = dict(html_path=self.backup_html(response), **item)
+        debug_id = self.get_debug_id(response.url)
+        item = dict(debug_id=debug_id,
+                    html_path=self.backup_html(response),
+                    **item)
         self.exporter.export_item(item)

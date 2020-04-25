@@ -8,7 +8,7 @@
 {% else %}
   {% for item in items %}
     <hr>
-    <h2>
+    <h2 id="{{ item.debug_id }}">
       <a href="{{ item.link }}" target="_blank">
         <strong>{{ item.title }}</strong>
       </a>
@@ -24,6 +24,10 @@
     </p>
     <p>
       <small>
+        <code>{{ item.debug_id }}</code>
+        &mdash;
+        <a href="#{{ item.debug_id }}">Permalink</a>
+        &mdash;
         <a href="{{ url_for('admin_debug', path=item.html_path) }}" target="_blank">HTML</a>
       </small>
     </p>
