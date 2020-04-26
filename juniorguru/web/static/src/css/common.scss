@@ -959,6 +959,28 @@ a.donate-option {
   align-items: center;
 }
 
+.donate-interview {
+  text-align: center;
+
+  & > a {
+    display: block;
+    margin: $whitespace-3 auto $whitespace auto;
+    width: 100%;
+    max-width: 80rem;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  span {
+    @include font-0;
+    display: block;
+    margin: $whitespace auto;
+  }
+}
+
 @media screen and (min-width: 700px) {
   .donate li {
     max-width: 600px;
