@@ -26,12 +26,14 @@
         </div>
       </div>
     </div>
+    {% if updated_at.month <= 6 %}
     <div class="billboard-note">
       <p>
         <strong>Některé firmy nabízí po dobu pandemie COVID-19 kurzy zdarma.</strong> Omrkni
         <a href="{{ url_for('learn') }}#covid19-learn">slevy během koronaviru</a>.
       </p>
     </div>
+    {% endif %}
   </div>
 </section>
 <hr class="hidden">

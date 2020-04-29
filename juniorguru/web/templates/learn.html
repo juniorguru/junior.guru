@@ -24,7 +24,7 @@ Chceš se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro 
       <li><a href="#requirements">Co budeš potřebovat?</a></li>&#32;
       <li><a href="#python">Proč Python?</a></li>&#32;
       <li><a href="#learn">Jak začít?</a></li>&#32;
-      <li><a href="#covid19-learn">Slevy během koronaviru</a></li>&#32;
+      {% if updated_at.month <= 6 %}<li><a href="#covid19-learn">Slevy během koronaviru</a></li>&#32;{% endif %}
       <li><a href="#ladies">Dámy mají přednost</a></li>&#32;
       <li><a href="#help">Kde najdeš pomoc?</a></li>&#32;
       <li><a href="#english">Jak si zlepšit angličtinu?</a></li>&#32;
@@ -172,7 +172,7 @@ Chceš se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro 
 
   <h3>Karanténa jako příprava na budoucnost</h3>
   <p>
-    Popularizátor technologií Petr Mára <a href="https://www.youtube.com/watch?v=_EVmdsHChAs">doporučuje</a> <strong>připravovat se teď na dobu po viru, vylepšovat dovednosti, učit se nové věci.</strong> <a href="https://www.youtube.com/watch?v=KntMhCNcDMc">Také radí</a> vsadit na dovednost, kterou lidé budou potřebovat za půl roku, a hlavně si ze současné krize neudělat „dovolenou“. Objevují se <a href="#covid19-learn">slevy online kurzů programování</a> a spousta materiálů je přístupná zdarma už dávno. Pokud sedíš doma a máš možnost se něčemu v této chvíli věnovat, je to <strong>skvělá příležitost učit se programování</strong>.
+    Popularizátor technologií Petr Mára <a href="https://www.youtube.com/watch?v=_EVmdsHChAs">doporučuje</a> <strong>připravovat se teď na dobu po viru, vylepšovat dovednosti, učit se nové věci.</strong> <a href="https://www.youtube.com/watch?v=KntMhCNcDMc">Také radí</a> vsadit na dovednost, kterou lidé budou potřebovat za půl roku, a hlavně si ze současné krize neudělat „dovolenou“.{% if updated_at.month <= 6 %} Objevují se <a href="#covid19-learn">slevy online kurzů programování</a> a spousta materiálů je přístupná zdarma už dávno.{% endif %} Pokud sedíš doma a máš možnost se něčemu v této chvíli věnovat, je to <strong>skvělá příležitost učit se programování</strong>.
   </p>
   <p>
     I kdyby totiž na kariéru v IT nedošlo, programování už dnes využije i <a href="{{ url_for('index') }}#stories">spousta jiných profesí</a>, např. vědci nebo novináři. Média jsou plná grafů ukazujících průběh pandemie, ale tyto grafy musel z dat někdo sestavit a data správně interpretovat. I úředník může automatizovaně zpracovat excelové tabulky a udělat tak práci za tři lidi. <strong>Ve světě po krizi začnou být ještě cennější lidé, kteří mají nejen znalost svého oboru, ale mají blízko i k IT.</strong> Ať už je to doktorka, která umí programovat, nebo učitel, jenž látku vysvětlí na videu.
@@ -471,6 +471,7 @@ Chceš se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro 
   {% include 'list_note.html' %}
 </section>
 
+{% if updated_at.month <= 6 %}
 <section id="covid19-learn">
   <h2>Slevy během koronaviru</h2>
   <p>
@@ -478,6 +479,7 @@ Chceš se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro 
     <strong>{{ updated_at.to('Europe/Prague').day }}.&nbsp;{{ updated_at.to('Europe/Prague').month }}.</strong>
   </p>
   <ul class="list">
+    {% if updated_at.month <= 4 %}
     <li>
       <a href="https://www.pluralsight.com/offer/2020/free-april-month">
         <div class="list-image">
@@ -492,6 +494,7 @@ Chceš se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro 
         Všechny online kurzy od <a href="https://www.pluralsight.com/">Pluralsight</a> jsou v dubnu zdarma.
       </p>
     </li>
+    {% endif %}
     <li>
       <a href="https://admissions.udacity.com/apply/learn_with_udacity">
         <div class="list-image">
@@ -534,6 +537,7 @@ Chceš se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro 
         Úvod do programování od <a href="https://engeto.com/">Engeto</a> je nyní zcela zdarma.
       </p>
     </li>
+    {% if updated_at.month <= 4 %}
     <li>
       <a href="https://www.greenfoxacademy.cz/stayathome-coding-camp">
         <div class="list-image">
@@ -548,6 +552,7 @@ Chceš se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro 
         Online kurz programování od <a href="https://www.greenfoxacademy.cz/">Green Fox Academy</a>.
       </p>
     </li>
+    {% endif %}
     <li>
       <a href="https://engeto.com/study-it-online">
         <div class="list-image">
@@ -568,6 +573,7 @@ Chceš se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro 
     piš na {{ 'ahoj@junior.guru'|email_link }}.
   </p>
 </section>
+{% endif %}
 
 <section id="ladies">
   <h2>Dámy mají přednost</h2>
