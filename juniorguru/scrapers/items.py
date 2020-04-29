@@ -11,7 +11,14 @@ class Job(Item):
     description_raw = Field()
     lang = Field()
     link = Field()
+    experience_levels = Field()
 
 
 def absolute_url(url, loader_context):
     return loader_context['response'].urljoin(url)
+
+
+def split(string, by=','):
+    if string:
+        return list(filter(None, map(str.strip, string.split(by))))
+    return []
