@@ -1,14 +1,14 @@
 import re
 from datetime import datetime, timedelta
 
-from scrapy import Spider
+from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import MapCompose, TakeFirst, Identity
 
 from ..items import Job, absolute_url, split
 
 
-class Spider(Spider):
+class Spider(BaseSpider):
     name = 'stackoverflow'
     start_urls = [
         'https://stackoverflow.com/jobs?mxs=Junior&sort=p&l=Seč%2C+Czechia&d=350&u=Km'
