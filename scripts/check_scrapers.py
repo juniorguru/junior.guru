@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 
-path = Path('juniorguru/data/jobs/errors.json')
+path = Path('juniorguru/data/jobs/errors.jsonl')
 try:
     contents = path.read_text()
     errors = json.loads(contents)
