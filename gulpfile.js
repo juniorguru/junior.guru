@@ -8,6 +8,7 @@ const rename = require('gulp-rename');
 const changed = require('gulp-changed');
 const sourcemaps = require('gulp-sourcemaps');
 const htmlmin = require('gulp-html-minifier');
+const resizer = require('gulp-images-resizer');
 const connect = require('gulp-connect');
 const { rollup } = require('rollup');
 const resolve = require('rollup-plugin-node-resolve');
@@ -69,9 +70,19 @@ function buildImages() {
       'juniorguru/web/static/src/images/**/*.jpg',
       'juniorguru/web/static/src/images/**/*.gif',
       'juniorguru/web/static/src/images/**/*.svg',
-      '!juniorguru/web/static/src/images/screenshots*/**/*'
+      '!juniorguru/web/static/src/images/screenshots*/**/*',
+      '!juniorguru/web/static/src/images/stories/**/*'
     ])
     .pipe(changed('juniorguru/web/static/images/'))
+    .pipe(gulpIf(!isLocalDevelopment, imagemin({ verbose: true })))
+    .pipe(gulp.dest('juniorguru/web/static/images/'))
+}
+
+function buildStories() {
+  return gulp.src('juniorguru/web/static/src/images/stories/**/*')
+    .pipe(rename({ dirname: 'stories' }))
+    .pipe(changed('juniorguru/web/static/images/'))
+    .pipe(resizer({ width: 150, height: 150 }))
     .pipe(gulpIf(!isLocalDevelopment, imagemin({ verbose: true })))
     .pipe(gulp.dest('juniorguru/web/static/images/'))
 }
@@ -122,6 +133,7 @@ async function watchWeb() {
     'juniorguru/web/static/src/images/screenshots/',
     'juniorguru/web/static/src/images/screenshots-overrides/',
   ], copyScreenshots);
+  gulp.watch(['juniorguru/web/static/src/images/stories/'], buildStories);
   gulp.watch([
     'juniorguru/web/static/src/images/',
     '!juniorguru/web/static/src/images/screenshots*/**/*',
@@ -149,7 +161,7 @@ const clean = gulp.series(
 );
 
 const build = gulp.series(
-  gulp.parallel(buildJS, buildCSS, buildImages, copyScreenshots),
+  gulp.parallel(buildJS, buildCSS, buildImages, buildStories, copyScreenshots),
   buildWeb,
 );
 
