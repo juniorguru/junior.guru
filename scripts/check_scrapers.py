@@ -5,8 +5,8 @@ from pathlib import Path
 
 path = Path('juniorguru/data/jobs/errors.jsonl')
 try:
-    contents = path.read_text()
-    errors = json.loads(contents)
+    lines = path.read_text().splitlines()
+    errors = [json.loads(line) for line in lines]
 except IOError:
     print(f"File '{path}' doesn't exist!", file=sys.stderr)
     sys.exit(1)
