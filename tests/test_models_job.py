@@ -37,6 +37,7 @@ def create_job(id, **kwargs):
         email=kwargs.get('email', 'recruiter@example.com'),
         location=kwargs.get('location', 'Brno, Czech Republic'),
         description=kwargs.get('description', '**Really long** description.'),
+        source=kwargs.get('source', 'juniorguru'),
         is_approved=kwargs.get('is_approved', True),
         is_sent=kwargs.get('is_sent', False),
         is_expired=kwargs.get('is_expired', False),
