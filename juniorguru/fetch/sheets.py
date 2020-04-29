@@ -33,6 +33,7 @@ def coerce(mapping, record):
                 job[key_name] = key_coerce(record_value)
 
     job['id'] = create_id(job['posted_at'], job['company_link'])
+    job['source'] = 'juniorguru'
     return job
 
 

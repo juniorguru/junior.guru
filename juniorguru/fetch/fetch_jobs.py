@@ -1,7 +1,9 @@
 import os
 import json
+import shutil
 import datetime
 import subprocess
+from multiprocessing import Pool
 from pathlib import Path
 from operator import itemgetter
 
@@ -10,6 +12,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 from .sheets import coerce_record
 from ..models import db, Job
+from ..scrapers.settings import MONITORING_EXPORT_DIR
 
 
 def main():
@@ -31,7 +34,15 @@ def main():
         for record in records:
             Job.create(**coerce_record(record))
 
-    subprocess.run(['scrapy', 'crawl', 'stackoverflow'], check=True)
+    shutil.rmtree(MONITORING_EXPORT_DIR)
+    Pool(1).map(run_spider, [
+        'stackoverflow',
+        'startupjobs',
+    ])
+
+
+def run_spider(spider_name):
+    return subprocess.run(['scrapy', 'crawl', spider_name], check=True)
 
 
 if __name__ == '__main__':

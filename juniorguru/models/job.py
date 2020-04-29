@@ -47,17 +47,14 @@ class Job(BaseModel):
     description = CharField(null=True)  # required for JG, null for external
     lang = CharField(null=True)
     link = CharField(null=True)
-    source = CharField(null=True)  # null for JG, required for external
+    source = CharField()
     is_approved = BooleanField(default=False)
     is_sent = BooleanField(default=False)
     is_expired = BooleanField(default=False)
 
     @classmethod
     def listing(cls):
-        return cls.select() \
-            .where(cls.is_approved == True,
-                   cls.is_expired == False) \
-            .order_by(cls.posted_at.desc())
+        return cls.juniorguru_listing()
 
     @classmethod
     def newsletter_listing(cls):
@@ -68,9 +65,17 @@ class Job(BaseModel):
             .order_by(cls.posted_at)
 
     @classmethod
+    def juniorguru_listing(cls):
+        return cls.select() \
+            .where(cls.source == 'juniorguru',
+                   cls.is_approved == True,
+                   cls.is_expired == False) \
+            .order_by(cls.posted_at.desc())
+
+    @classmethod
     def scraped_listing(cls):
         return cls.select() \
-            .where(cls.source != None) \
+            .where(cls.source != 'juniorguru') \
             .order_by(cls.posted_at.desc())
 
     @classmethod

@@ -28,7 +28,7 @@ def test_spider_parse():
     assert job['company_link'] == 'https://www.startupjobs.cz/startup/cloudinfrastack?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
     assert job['location'] == 'Praha, Česko'
     assert job['employment_types'] == ['Part-time', 'Full-time']
-    # TODO assert job['posted_at'].date() == date.today() - timedelta(days=27)
+    # TODO assert job['posted_at'].date() == date.today()
     assert '<p>Ahoj, baví tě Linux?' in job['description_raw']
 
 

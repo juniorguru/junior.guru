@@ -23,7 +23,7 @@ ADMIN_MENU = {
 def load_scrapers_monitoring(export_dir, basename):
     path = Path(export_dir) / basename
     try:
-        return None, json.loads(path.read_text())
+        return None, [json.loads(l) for l in path.read_text().splitlines()]
     except (IOError, json.JSONDecodeError) as load_error:
         return load_error, []
 
@@ -50,7 +50,7 @@ def admin_scraped_jobs():
 @app.route('/admin/scraped-items/')
 def admin_scraped_items():
     load_error, items = load_scrapers_monitoring(MONITORING_EXPORT_DIR,
-                                                 'items.json')
+                                                 'items.jsonl')
     items = sorted(items, key=lambda d: d['posted_at'], reverse=True)
     return render_template('admin_scraped_items.html',
                            load_error=load_error,
@@ -60,7 +60,7 @@ def admin_scraped_items():
 @app.route('/admin/dropped-items/')
 def admin_drops():
     load_error, drops = load_scrapers_monitoring(MONITORING_EXPORT_DIR,
-                                                 'drops.json')
+                                                 'drops.jsonl')
     drops = sorted(drops, key=lambda d: d['item']['posted_at'], reverse=True)
     return render_template('admin_drops.html',
                            load_error=load_error,
@@ -70,7 +70,7 @@ def admin_drops():
 @app.route('/admin/errors/')
 def admin_errors():
     load_error, errors = load_scrapers_monitoring(MONITORING_EXPORT_DIR,
-                                                 'errors.json')
+                                                 'errors.jsonl')
     def sort_key(error):
         try:
             return error['item']['posted_at']

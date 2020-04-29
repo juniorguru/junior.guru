@@ -1,5 +1,5 @@
 import re
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
@@ -24,7 +24,7 @@ class Spider(BaseSpider):
             offer_loader.add_xpath('company_link', './/startupURL/text()')
             offer_loader.add_xpath('location', './/city/text()')
             offer_loader.add_xpath('employment_types', './/jobtype/text()')
-            offer_loader.add_value('posted_at', 'TODO')
+            offer_loader.add_value('posted_at', datetime.utcnow())  # TODO
             offer_loader.add_xpath('description_raw', './/description/text()')
             yield loader.load_item()
 
@@ -38,4 +38,4 @@ class Loader(ItemLoader):
     default_output_processor = TakeFirst()
     employment_types_in = Compose(MapCompose(str.strip), drop_remote)
     employment_types_out = Identity()
-    # posted_at_in = TODO
+    posted_at_in = Identity()  # TODO

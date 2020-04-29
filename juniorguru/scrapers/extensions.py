@@ -4,7 +4,7 @@ import hashlib
 from urllib.parse import urlparse
 
 from scrapy import signals
-from scrapy.exporters import JsonItemExporter
+from scrapy.exporters import JsonLinesItemExporter
 
 
 logger = logging.getLogger(__name__)
@@ -14,12 +14,12 @@ class BaseMonitoring():
     def __init__(self, export_dir):
         assert self.export_name, f'{self.__class__.__name__}.export_name must be set'
         self.export_dir = Path(export_dir)
-        self.export_path = self.export_dir / f'{self.export_name}.json'
+        self.export_path = self.export_dir / f'{self.export_name}.jsonl'
 
     def engine_started(self):
         self.export_path.parent.mkdir(parents=True, exist_ok=True)
-        self.file = self.export_path.open(mode='wb')
-        self.exporter = JsonItemExporter(self.file, ensure_ascii=False, indent=2)
+        self.file = self.export_path.open(mode='ab')
+        self.exporter = JsonLinesItemExporter(self.file, ensure_ascii=False, indent=2)
         self.exporter.start_exporting()
 
     def engine_stopped(self):

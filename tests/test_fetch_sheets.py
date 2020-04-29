@@ -94,4 +94,5 @@ def test_coerce_record():
         'is_approved': False,
         'is_sent': True,
         'is_expired': True,
+        'source': 'juniorguru',
     }
