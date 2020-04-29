@@ -34,7 +34,7 @@ def main():
         for record in records:
             Job.create(**coerce_record(record))
 
-    shutil.rmtree(MONITORING_EXPORT_DIR)
+    shutil.rmtree(MONITORING_EXPORT_DIR, ignore_errors=True)
     Pool(1).map(run_spider, [
         'stackoverflow',
         'startupjobs',
