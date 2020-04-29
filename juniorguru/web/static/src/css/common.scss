@@ -821,6 +821,7 @@ footer {
   float: left;
   width: 3 * $whitespace-3;
   min-width: 3 * $whitespace-3;
+  align-self: flex-start;
 }
 
 .author-text-outer {
