@@ -1101,6 +1101,6 @@ body.page-jobs, body.page-job, body.page-donate {
 
   main > article,
   main > section {
-    @include page-width;
+    @include page-width($padding: 1rem);
   }
 }
