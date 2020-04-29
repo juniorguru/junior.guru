@@ -954,6 +954,10 @@ a.donate-option {
   }
 }
 
+.donate-description {
+  width: 100%;
+}
+
 .donate-description-button-wrapper {
   display: flex;
   justify-content: space-between;
@@ -984,7 +988,7 @@ a.donate-option {
 
 @media screen and (min-width: 700px) {
   .donate li {
-    max-width: 600px;
+    max-width: 65rem;
     margin-left: auto;
     margin-right: auto;
   }
