@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from peewee import DateTimeField, CharField, BooleanField
 
 from .base import BaseModel, JSONField
@@ -53,7 +51,6 @@ class Job(BaseModel):
     is_approved = BooleanField(default=False)
     is_sent = BooleanField(default=False)
     is_expired = BooleanField(default=False)
-    created_at = DateTimeField(default=datetime.utcnow)
     response_url = CharField(null=True)  # required for scraped, null for JG
     response_backup_path = CharField(null=True)
     item = JSONField(null=True)  # required for scraped, null for JG
@@ -96,14 +93,13 @@ class Job(BaseModel):
 class JobDropped(BaseModel):
     type = CharField()
     reason = CharField()
-    created_at = DateTimeField(default=datetime.utcnow)
     response_url = CharField()
     response_backup_path = CharField(null=True)
     item = JSONField()
 
     @classmethod
     def admin_listing(cls):
-        return cls.select().order_by(cls.created_at)
+        return cls.select()
 
 
 class JobError(BaseModel):
@@ -111,11 +107,10 @@ class JobError(BaseModel):
     trace = CharField()
     signal = CharField(choices=(('item', None), ('spider', None)))
     spider = CharField()
-    created_at = DateTimeField(default=datetime.utcnow)
     response_url = CharField()
     response_backup_path = CharField(null=True)
     item = JSONField(null=True)
 
     @classmethod
     def admin_listing(cls):
-        return cls.select().order_by(cls.message, cls.created_at)
+        return cls.select().order_by(cls.message)
