@@ -164,9 +164,7 @@ def db():
 
 def test_database(item, spider, db):
     pipeline = pipelines.Database(db=db, job_cls=Job)
-    pipeline.open_spider(spider)
     pipeline.process_item(item, spider)
-    pipeline.close_spider(spider)
     with db:
         job = Job.select()[0]
 

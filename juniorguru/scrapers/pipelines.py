@@ -87,17 +87,12 @@ class Database():
     def from_crawler(cls, crawler):
         return cls(stats=crawler.stats)
 
-    def open_spider(self, spider):
-        self.db.connect()
-
     def process_item(self, item, spider):
-        self.job_cls.create(**prepare_job_data(item, spider.name))
+        with self.db:
+            self.job_cls.create(**prepare_job_data(item, spider.name))
         if self.stats:
             self.stats.inc_value('item_saved_count')
         return item
-
-    def close_spider(self, spider):
-        self.db.close()
 
 
 def prepare_job_data(item, spider_name):
