@@ -74,7 +74,7 @@ google_service_account.json
 
 # Fetched data
 /juniorguru/data/*.db
-/juniorguru/data/jobs/
+/juniorguru/data/responses/
 
 # Data backup
 backup.tar.gz

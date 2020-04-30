@@ -1,20 +1,21 @@
 import sys
-import json
 from pathlib import Path
 
+from peewee import SqliteDatabase, Model
 
-path = Path('juniorguru/data/jobs/errors.jsonl')
-try:
-    lines = path.read_text().splitlines()
-    errors = [json.loads(line) for line in lines]
-except IOError:
-    print(f"File '{path}' doesn't exist!", file=sys.stderr)
-    sys.exit(1)
-except json.JSONDecodeError:
-    print(f"File '{path}' doesn't parse as JSON!", file=sys.stderr)
-    sys.exit(1)
 
-if errors:
-    print(f"File '{path}' contains errors!", file=sys.stderr)
+db_file = Path(__file__).parent.parent / 'juniorguru' / 'data' / 'data.db'
+db = SqliteDatabase(db_file)
+
+
+class JobError(Model):
+    class Meta:
+        database = db
+
+
+with db:
+    errors_count = JobError.select().count()
+if errors_count:
+    print(f'Found {errors_count} errors!', file=sys.stderr)
     sys.exit(1)
 print('OK', file=sys.stderr)

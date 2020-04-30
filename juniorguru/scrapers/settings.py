@@ -52,16 +52,14 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-# DOWNLOADER_MIDDLEWARES = {
-#    'juniorguru.scrapers.middlewares.BackupHtml': 543,
-# }
+DOWNLOADER_MIDDLEWARES = {
+   'juniorguru.scrapers.monitoring.BackupResponseMiddleware': 543,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 EXTENSIONS = {
-   'juniorguru.scrapers.extensions.ErrorMonitoring': 100,
-   'juniorguru.scrapers.extensions.DropMonitoring': 200,
-   'juniorguru.scrapers.extensions.ItemMonitoring': 300,
+   'juniorguru.scrapers.monitoring.MonitoringExtension': 100,
 }
 
 # Configure item pipelines
@@ -94,7 +92,3 @@ HTTPCACHE_EXPIRATION_SECS = 0
 HTTPCACHE_DIR = 'http_cache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-
-# Directory where to put monitoring exports
-# See juniorguru/scrapers/extensions.py
-MONITORING_EXPORT_DIR = 'juniorguru/data/jobs'

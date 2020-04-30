@@ -1,3 +1,3 @@
 from .base import db
-from .job import Job
+from .job import Job, JobError, JobDropped
 from .story import Story

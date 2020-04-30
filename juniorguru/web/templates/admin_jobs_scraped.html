@@ -1,12 +1,12 @@
 {% extends 'admin_base.html' %}
 {% block body %}
-<h1>Stažené nabídky v DB ({{ jobs|length }})</h1>
+<h1>Stažené nabídky ({{ jobs|length }})</h1>
 {% if not jobs %}
     <p>Do databáze nebylo nic staženo.</p>
 {% else %}
   {% for job in jobs %}
     <hr>
-    <h2>
+    <h2 id="{{ job.id }}">
       <a href="{{ job.link }}" target="_blank">
         <strong>{{ job.title }}</strong>
       </a>
@@ -19,6 +19,17 @@
       {{ job.employment_types|employment_types }}
       &mdash;
       {{ job.posted_at|ago }}
+    </p>
+    <p>
+      <small>
+        <code>{{ job.id }}</code>
+        &mdash;
+        <a href="#{{ job.id }}">#id</a>
+        &mdash;
+        <a href="{{ job.response_url }}" target="_blank">Zdrojové URL</a>
+        &mdash;
+        <a href="{{ url_for('admin_responses_backup', path=job.response_backup_path) }}" target="_blank">HTTP odpověď</a>
+      </small>
     </p>
     <details style="margin: 1rem 0;">
       <summary>Data</summary>

@@ -1,6 +1,8 @@
+from datetime import datetime
+
 from peewee import DateTimeField, CharField, BooleanField
 
-from .base import BaseModel
+from .base import BaseModel, JSONField
 
 
 class UniqueSortedListField(CharField):
@@ -42,15 +44,19 @@ class Job(BaseModel):
     location = CharField()
     company_name = CharField()
     company_link = CharField()
-    email = CharField(null=True)  # required for JG, null for external
+    email = CharField(null=True)  # required for JG, null for scraped
     employment_types = EmploymentTypeField()
-    description = CharField(null=True)  # required for JG, null for external
-    lang = CharField(null=True)
-    link = CharField(null=True)
+    description = CharField(null=True)  # required for JG, null for scraped
+    lang = CharField(null=True)  # required for scraped, null for JG
+    link = CharField(null=True)  # required for scraped
     source = CharField()
     is_approved = BooleanField(default=False)
     is_sent = BooleanField(default=False)
     is_expired = BooleanField(default=False)
+    created_at = DateTimeField(default=datetime.utcnow)
+    response_url = CharField(null=True)  # required for scraped, null for JG
+    response_backup_path = CharField(null=True)
+    item = JSONField(null=True)  # required for scraped, null for JG
 
     @classmethod
     def listing(cls):
@@ -85,3 +91,31 @@ class Job(BaseModel):
     @classmethod
     def companies_count(cls):
         return len(frozenset([job.company_link for job in cls.listing()]))
+
+
+class JobDropped(BaseModel):
+    type = CharField()
+    reason = CharField()
+    created_at = DateTimeField(default=datetime.utcnow)
+    response_url = CharField()
+    response_backup_path = CharField(null=True)
+    item = JSONField()
+
+    @classmethod
+    def admin_listing(cls):
+        return cls.select().order_by(cls.created_at)
+
+
+class JobError(BaseModel):
+    message = CharField()
+    trace = CharField()
+    signal = CharField(choices=(('item', None), ('spider', None)))
+    spider = CharField()
+    created_at = DateTimeField(default=datetime.utcnow)
+    response_url = CharField()
+    response_backup_path = CharField(null=True)
+    item = JSONField(null=True)
+
+    @classmethod
+    def admin_listing(cls):
+        return cls.select().order_by(cls.message, cls.created_at)

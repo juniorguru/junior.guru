@@ -11,8 +11,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 from .sheets import coerce_record
-from ..models import db, Job
-from ..scrapers.settings import MONITORING_EXPORT_DIR
+from ..models import db, Job, JobError, JobDropped
 
 
 def main():
@@ -28,13 +27,13 @@ def main():
     records = doc.worksheet('jobs').get_all_records(default_blank=None)
 
     with db:
-        Job.drop_table()
-        Job.create_table()
+        for model in [Job, JobError, JobDropped]:
+            model.drop_table()
+            model.create_table()
 
         for record in records:
             Job.create(**coerce_record(record))
 
-    shutil.rmtree(MONITORING_EXPORT_DIR, ignore_errors=True)
     Pool(1).map(run_spider, [
         'stackoverflow',
         'startupjobs',

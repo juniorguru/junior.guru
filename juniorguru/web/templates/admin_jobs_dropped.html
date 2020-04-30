@@ -1,0 +1,42 @@
+{% extends 'admin_base.html' %}
+{% block body %}
+<h1>Zahozené nabídky ({{ jobs_dropped|length }})</h1>
+{% if load_error %}
+  <p>Nepodařilo se načíst zdrojový soubor: {{ load_error }}</p>
+{% elif not jobs_dropped %}
+  <p>Nebylo nic zahozeno.</p>
+{% else %}
+  {% for job_dropped in jobs_dropped %}
+    <hr>
+    <h2 id="{{ job_dropped.id }}">
+      {{ job_dropped.type }}: {{ job_dropped.reason }}
+    </h2>
+    <p>
+      <small>
+        <code>{{ job_dropped.id }}</code>
+        &mdash;
+        <a href="#{{ job_dropped.id }}">#</a>
+        &mdash;
+        <a href="{{ job_dropped.response_url }}" target="_blank">Zdrojové URL</a>
+        &mdash;
+        <a href="{{ url_for('admin_responses_backup', path=job_dropped.response_backup_path) }}" target="_blank">HTTP odpověď</a>
+      </small>
+    </p>
+    <h3>{{ job_dropped.item.title }}</h3>
+    <p>
+      <a href="{{ job_dropped.item.company_link }}" target="_blank">{{ job_dropped.item.company_name }}</a>
+      &mdash;
+      {{ job_dropped.item.location }}
+      &mdash;
+      {{ job_dropped.item.employment_types|employment_types }}
+      &mdash;
+      {{ job_dropped.item.posted_at|to_datetime|ago }}
+    </p>
+    <textarea rows="20" cols="100" style="width: 90%;">{{ job_dropped.item.description_raw }}</textarea>
+    <details style="margin: 1rem 0;">
+      <summary>Data</summary>
+      <pre>{{ job_dropped|pprint }}</pre>
+    </details>
+  {% endfor %}
+{% endif %}
+{% endblock %}

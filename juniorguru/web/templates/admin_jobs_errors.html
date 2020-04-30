@@ -1,0 +1,33 @@
+{% extends 'admin_base.html' %}
+{% block body %}
+<h1>Chyby při stahování ({{ jobs_errors|length }})</h1>
+{% if not jobs_errors %}
+  <p>Nenastaly žádné chyby.</p>
+{% else %}
+  {% for job_error in jobs_errors %}
+    <hr>
+    <h2 id="{{ job_error.id }}">
+      [{{ job_error.spider }} {{ job_error.signal }}] {{ job_error.message }}
+    </h2>
+    <p>
+      <small>
+        <code>{{ job_error.id }}</code>
+        &mdash;
+        <a href="#{{ job_error.id }}">#</a>
+        &mdash;
+        <a href="{{ job_error.response_url }}" target="_blank">Zdrojové URL</a>
+        &mdash;
+        <a href="{{ url_for('admin_responses_backup', path=job_error.response_backup_path) }}" target="_blank">HTTP odpověď</a>
+      </small>
+    </p>
+    <details style="margin: 1rem 0;">
+      <summary>Trace</summary>
+      <pre>{{ job_error.trace }}</pre>
+    </details>
+    <details style="margin: 1rem 0;">
+      <summary>Data</summary>
+      <pre>{{ job_error|pprint }}</pre>
+    </details>
+  {% endfor %}
+{% endif %}
+{% endblock %}

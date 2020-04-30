@@ -5,7 +5,7 @@ import hashlib
 import langdetect
 from scrapy.exceptions import DropItem
 
-from .. import models
+from ..models import db as default_db, Job
 
 
 class BannedWordInTitle(DropItem):
@@ -78,9 +78,9 @@ class LanguageFilter():
 
 
 class Database():
-    def __init__(self, db=None, job_cls=None, stats=None):
-        self.db = db or models.db
-        self.job_cls = job_cls or models.Job
+    def __init__(self, db=None, model=None, stats=None):
+        self.db = db or default_db
+        self.model = model or Job
         self.stats = stats
 
     @classmethod
@@ -89,16 +89,20 @@ class Database():
 
     def process_item(self, item, spider):
         with self.db:
-            self.job_cls.create(**prepare_job_data(item, spider.name))
+            self.model.create(**prepare_job_data(item, spider.name))
         if self.stats:
             self.stats.inc_value('item_saved_count')
         return item
 
 
+def item_to_job_id(item):
+    return hashlib.sha224(item['link'].encode()).hexdigest()
+
+
 def prepare_job_data(item, spider_name):
     return dict(
         **item,
-        id=hashlib.sha224(item['link'].encode()).hexdigest(),
+        id=item_to_job_id(item),
         source=spider_name,
         # is_approved=True,
     )
