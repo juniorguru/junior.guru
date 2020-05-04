@@ -36,8 +36,8 @@ def main():
 
     Pool(1).map(run_spider, [
         'linkedin',
-        # 'stackoverflow',
-        # 'startupjobs',
+        'stackoverflow',
+        'startupjobs',
     ])
 
 
