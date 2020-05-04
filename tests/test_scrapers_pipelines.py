@@ -56,6 +56,9 @@ def test_junior_title_filter(item, spider, title):
     (['Internship'], ['internship']),
     (['Contract'], ['contract']),
 
+    # StartupJobs
+    (['external collaboration'], ['contract']),
+
     # processing an unknown employment type
     (['Full-Time', 'Gargamel'], ['full-time', 'gargamel']),
     (['Gargamel'], ['gargamel']),
