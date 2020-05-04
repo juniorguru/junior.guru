@@ -27,8 +27,10 @@
         <a href="#{{ job.id }}">#id</a>
         &mdash;
         <a href="{{ job.response_url }}" target="_blank">Zdrojové URL</a>
-        &mdash;
-        <a href="{{ url_for('admin_responses_backup', path=job.response_backup_path) }}" target="_blank">HTTP odpověď</a>
+        {% if job.response_backup_path %}
+          &mdash;
+          <a href="{{ url_for('admin_responses_backup', path=job.response_backup_path) }}" target="_blank">HTTP odpověď</a>
+        {% endif %}
       </small>
     </p>
     <details style="margin: 1rem 0;">

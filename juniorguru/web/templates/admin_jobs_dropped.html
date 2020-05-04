@@ -18,8 +18,10 @@
         <a href="#{{ job_dropped.id }}">#</a>
         &mdash;
         <a href="{{ job_dropped.response_url }}" target="_blank">Zdrojové URL</a>
-        &mdash;
-        <a href="{{ url_for('admin_responses_backup', path=job_dropped.response_backup_path) }}" target="_blank">HTTP odpověď</a>
+        {% if job_dropped.response_backup_path %}
+          &mdash;
+          <a href="{{ url_for('admin_responses_backup', path=job_dropped.response_backup_path) }}" target="_blank">HTTP odpověď</a>
+        {% endif %}
       </small>
     </p>
     <h3>{{ job_dropped.item.title }}</h3>
