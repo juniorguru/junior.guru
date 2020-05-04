@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'juniorguru.scrapers.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'jobs (+http://www.yourdomain.com)'
+USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
