@@ -8,23 +8,6 @@ from scrapy.exceptions import DropItem
 from ..models import db as default_db, Job
 
 
-class BannedWordInTitle(DropItem):
-    pass
-
-
-class JuniorTitleFilter():
-    banned_words = ['senior', 'practiced']
-    puctuation_trans_table = str.maketrans('', '', string.punctuation)
-
-    def process_item(self, item, spider):
-        words = (word.lower().translate(self.puctuation_trans_table)
-                 for word in item['title'].split())
-        for word in words:
-            if word in self.banned_words:
-                raise BannedWordInTitle(f"The title contains a banned word: '{word}'")
-        return item
-
-
 class EmploymentTypesCleaner():
     clean_re = re.compile(r'[\-\s]+')
     types_mapping = {
