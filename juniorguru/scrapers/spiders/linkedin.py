@@ -27,12 +27,8 @@ class Spider(BaseSpider):
         'start': '0',  # pagination - offset
     }
     url_base = 'https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search'
-    start_urls = [
-        # f'https://www.linkedin.com/jobs/search?{urlencode(search_params)}'
-        f'{url_base}?{urlencode(search_params)}'
-    ]
+    start_urls = [f'{url_base}?{urlencode(search_params)}']
     results_per_request = 25
-    # more_url_base = 'https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search'
 
     def parse(self, response):
         links = response.css('a[href*="linkedin.com/jobs/view/"]::attr(href)')
