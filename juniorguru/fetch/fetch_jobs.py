@@ -35,8 +35,9 @@ def main():
             Job.create(**coerce_record(record))
 
     Pool(1).map(run_spider, [
-        'stackoverflow',
-        'startupjobs',
+        'linkedin',
+        # 'stackoverflow',
+        # 'startupjobs',
     ])
 
 

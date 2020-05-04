@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'juniorguru.scrapers.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'jobs (+http://www.yourdomain.com)'
+USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -66,7 +66,6 @@ EXTENSIONS = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'juniorguru.scrapers.pipelines.LanguageFilter': 100,
-   'juniorguru.scrapers.pipelines.JuniorTitleFilter': 200,
    'juniorguru.scrapers.pipelines.GermanGenderCleaner': 300,
    'juniorguru.scrapers.pipelines.EmploymentTypesCleaner': 400,
    'juniorguru.scrapers.pipelines.Database': 1000,

@@ -1,11 +1,10 @@
 import re
-from datetime import datetime, timedelta
 
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import MapCompose, TakeFirst, Identity
 
-from ..items import Job, absolute_url, split
+from ..items import Job, absolute_url, split, parse_relative_time
 
 
 class Spider(BaseSpider):
@@ -37,18 +36,6 @@ class Spider(BaseSpider):
 
 def clean_location(text):
     return re.sub(r'^–\s*', '', re.sub(r'[\n\r]+', ' ', text.strip()))
-
-
-def parse_relative_time(text, now=None):
-    now = now or datetime.utcnow()
-    if 'hour' in text:
-        return now
-    if 'yesterday' in text:
-        return now - timedelta(days=1)
-    if 'day' in text:
-        days_ago = int(re.search(r'\d+', text).group(0))
-        return now - timedelta(days=days_ago)
-    raise ValueError(text)
 
 
 class Loader(ItemLoader):

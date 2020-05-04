@@ -32,18 +32,6 @@ def spider():
     return DummySpider()
 
 
-@pytest.mark.parametrize('title', [
-    '(Senior) Python Developer Backend – Billing / Product',
-    'practiced .NET Developer',
-])
-def test_junior_title_filter(item, spider, title):
-    item['title'] = title
-    pipeline = pipelines.JuniorTitleFilter()
-
-    with pytest.raises(pipelines.BannedWordInTitle):
-        pipeline.process_item(item, spider)
-
-
 @pytest.mark.parametrize('employment_types,expected', [
     # common sense
     (['fulltime'], ['full-time']),
@@ -55,6 +43,9 @@ def test_junior_title_filter(item, spider, title):
     (['Full-time'], ['full-time']),
     (['Internship'], ['internship']),
     (['Contract'], ['contract']),
+
+    # StartupJobs
+    (['external collaboration'], ['contract']),
 
     # processing an unknown employment type
     (['Full-Time', 'Gargamel'], ['full-time', 'gargamel']),

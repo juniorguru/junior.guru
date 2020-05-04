@@ -8,35 +8,21 @@ from scrapy.exceptions import DropItem
 from ..models import db as default_db, Job
 
 
-class BannedWordInTitle(DropItem):
-    pass
-
-
-class JuniorTitleFilter():
-    banned_words = ['senior', 'practiced']
-    puctuation_trans_table = str.maketrans('', '', string.punctuation)
-
-    def process_item(self, item, spider):
-        words = (word.lower().translate(self.puctuation_trans_table)
-                 for word in item['title'].split())
-        for word in words:
-            if word in self.banned_words:
-                raise BannedWordInTitle(f"The title contains a banned word: '{word}'")
-        return item
-
-
 class EmploymentTypesCleaner():
     clean_re = re.compile(r'[\-\s]+')
     types_mapping = {
         'fulltime': 'full-time',
+        'full time': 'full-time',
         'parttime': 'part-time',
+        'part time': 'part-time',
         'contract': 'contract',
+        'external collaboration': 'contract',
         'internship': 'internship',
     }
 
     def process_item(self, item, spider):
         types = (t.lower() for t in item['employment_types'])
-        types = (self.types_mapping.get(self.clean_re.sub('', t), t)
+        types = (self.types_mapping.get(self.clean_re.sub(' ', t), t)
                  for t in types)
         item['employment_types'] = list(frozenset(types))
         return item
