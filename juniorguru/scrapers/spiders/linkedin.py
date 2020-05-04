@@ -3,10 +3,10 @@ from datetime import datetime, timedelta
 from urllib.parse import urlencode, urlparse, parse_qs, urlunparse
 
 from scrapy import Spider as BaseSpider, Request
-from scrapy.loader import ItemLoader
-from scrapy.loader.processors import MapCompose, TakeFirst, Identity
+# from scrapy.loader import ItemLoader
+# from scrapy.loader.processors import MapCompose, TakeFirst, Identity
 
-from ..items import Job, absolute_url, split
+from ..items import Job
 
 
 class Spider(BaseSpider):
@@ -26,20 +26,19 @@ class Spider(BaseSpider):
         'pageNum': '0',  # pagination - page number
         'start': '0',  # pagination - offset
     }
-    url_base = 'https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search'
-    start_urls = [f'{url_base}?{urlencode(search_params)}']
+    start_urls = [
+        ('https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/'
+         f'search?{urlencode(search_params)}')
+    ]
     results_per_request = 25
 
     def parse(self, response):
-        links = response.css('a[href*="linkedin.com/jobs/view/"]::attr(href)')
-        links = [strip_params(link, ['position']) for link in links]
+        links = response.css('a[href*="linkedin.com/jobs/view/"]::attr(href)').getall()
+        links = [strip_params(link, ['position', 'pageNum']) for link in links]
         yield from response.follow_all(links, callback=self.parse_job)
 
         if len(links) >= self.results_per_request:
-            start_value = int(parse_qs(urlparse(response.url).query)['start'][0])
-            search_params = dict(self.search_params)
-            search_params['start'] = str(start_value + self.results_per_request)
-            url = f'{self.url_base}?{urlencode(search_params)}'
+            url = increment_param(response.url, 'start', self.results_per_request)
             yield Request(url, callback=self.parse)
 
     def parse_job(self, response):
@@ -62,5 +61,14 @@ def strip_params(url, param_names):
     params = {name: value for name, value
               in parse_qs(parts.query).items()
               if name not in param_names}
+    query = urlencode(params, doseq=True)
+    return urlunparse(parts._replace(query=query))
+
+
+def increment_param(url, param_name, inc=1):
+    parts = urlparse(url)
+    params = parse_qs(parts.query)
+    params.setdefault(param_name, ['0'])
+    params[param_name] = str(int(params[param_name][0]) + inc)
     query = urlencode(params, doseq=True)
     return urlunparse(parts._replace(query=query))

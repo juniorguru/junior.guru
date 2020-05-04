@@ -12,3 +12,19 @@ from juniorguru.scrapers.spiders import linkedin
 ])
 def test_strip_params(url, param_names, expected):
     assert linkedin.strip_params(url, param_names) == expected
+
+
+@pytest.mark.parametrize('url,param_name,expected', [
+    ('https://example.com', 'b', 'https://example.com?b=1'),
+    ('https://example.com?a=1&b=2&c=3', 'b', 'https://example.com?a=1&b=3&c=3'),
+])
+def test_increment_param(url, param_name, expected):
+    assert linkedin.increment_param(url, param_name) == expected
+
+
+@pytest.mark.parametrize('url,param_name,inc,expected', [
+    ('https://example.com', 'b', 25, 'https://example.com?b=25'),
+    ('https://example.com?a=1&b=2&c=3', 'b', 25, 'https://example.com?a=1&b=27&c=3'),
+])
+def test_increment_param_inc(url, param_name, inc, expected):
+    assert linkedin.increment_param(url, param_name, inc) == expected
