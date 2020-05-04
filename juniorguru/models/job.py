@@ -41,7 +41,7 @@ class Job(BaseModel):
     title = CharField()
     location = CharField()
     company_name = CharField()
-    company_link = CharField()
+    company_link = CharField(null=True)  # required for JG
     email = CharField(null=True)  # required for JG, null for scraped
     employment_types = EmploymentTypeField()
     description = CharField(null=True)  # required for JG, null for scraped

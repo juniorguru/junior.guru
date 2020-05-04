@@ -3,10 +3,10 @@ from datetime import datetime, timedelta
 from urllib.parse import urlencode, urlparse, parse_qs, urlunparse
 
 from scrapy import Spider as BaseSpider, Request
-# from scrapy.loader import ItemLoader
-# from scrapy.loader.processors import MapCompose, TakeFirst, Identity
+from scrapy.loader import ItemLoader
+from scrapy.loader.processors import MapCompose, TakeFirst, Identity
 
-from ..items import Job
+from ..items import Job, parse_relative_time, split
 
 
 class Spider(BaseSpider):
@@ -42,18 +42,16 @@ class Spider(BaseSpider):
             yield Request(url, callback=self.parse)
 
     def parse_job(self, response):
-        print(response.url)
-        # loader = Loader(item=Job(), response=response)
-        # loader.add_css('title', 'h1 a::text')
-        # loader.add_value('link', response.url)
-        # loader.add_css('company_name', 'h1 ~ div a::text')
-        # loader.add_css('company_link', 'h1 ~ div a::attr(href)')
-        # loader.add_css('location', 'h1 ~ div a ~ span::text')
-        # loader.add_xpath('employment_types', "//span[contains(., 'Job type:')]/following-sibling::span/text()")
-        # loader.add_xpath('experience_levels', "//span[contains(., 'Experience level:')]/following-sibling::span/text()")
-        # loader.add_xpath('posted_at', "//div[contains(./text(), 'Posted')]/text()")
-        # loader.add_xpath('description_raw', "//section[contains(.//h2/text(), 'Job description')]")
-        # yield loader.load_item()
+        loader = Loader(item=Job(), response=response)
+        loader.add_css('title', 'h1::text')
+        loader.add_value('link', response.url)
+        loader.add_css('company_name', 'h1 ~ h3 > span::text')
+        loader.add_css('location', 'h1 ~ h3 > span:nth-of-type(2)::text')
+        loader.add_xpath('employment_types', "//h3[contains(., 'Employment type')]/following-sibling::span/text()")
+        loader.add_xpath('experience_levels', "//h3[contains(., 'Seniority level')]/following-sibling::span/text()")
+        loader.add_css('posted_at', 'h1 ~ h3:nth-of-type(2) span::text')
+        loader.add_css('description_raw', '.description')
+        yield loader.load_item()
 
 
 def strip_params(url, param_names):
@@ -72,3 +70,12 @@ def increment_param(url, param_name, inc=1):
     params[param_name] = str(int(params[param_name][0]) + inc)
     query = urlencode(params, doseq=True)
     return urlunparse(parts._replace(query=query))
+
+
+class Loader(ItemLoader):
+    default_output_processor = TakeFirst()
+    employment_types_in = MapCompose(str.lower, split)
+    employment_types_out = Identity()
+    posted_at_in = MapCompose(parse_relative_time)
+    experience_levels_in = MapCompose(str.lower, split)
+    experience_levels_out = Identity()

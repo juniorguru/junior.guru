@@ -1,5 +1,5 @@
 from pathlib import Path
-from datetime import date, datetime, timedelta
+from datetime import date, timedelta
 
 import pytest
 from scrapy.http import HtmlResponse
@@ -50,19 +50,3 @@ def test_clean_location():
     assert stackoverflow.clean_location('''
         \r\n                    –\r\nLeipzig, Deutschland
     ''') == 'Leipzig, Deutschland'
-
-
-@pytest.mark.parametrize('time,expected', [
-    (' Posted 13 days ago', date(2020, 4, 7)),
-    (' Posted 4 hours ago', date(2020, 4, 20)),
-    (' Posted < 1 hour ago', date(2020, 4, 20)),
-    (' Posted yesterday', date(2020, 4, 19)),
-])
-def test_parse_relative_time(time, expected):
-    now = datetime(2020, 4, 20, 20, 1, 45)
-    assert stackoverflow.parse_relative_time(time, now=now).date() == expected
-
-
-def test_parse_relative_time_raises_on_uncrecognized_value():
-    with pytest.raises(ValueError):
-        stackoverflow.parse_relative_time('gargamel')
