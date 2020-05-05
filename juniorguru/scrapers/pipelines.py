@@ -83,6 +83,7 @@ class Database():
 
 
 def item_to_job_id(item):
+    # TODO there can be 2 items with 1 link due to location duplication
     return hashlib.sha224(item['link'].encode()).hexdigest()
 
 
