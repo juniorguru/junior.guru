@@ -12,7 +12,11 @@
       </a>
     </h2>
     <p>
-      <a href="{{ job.company_link }}" target="_blank">{{ job.company_name }}</a>
+      {% if job.company_link %}
+        <a href="{{ job.company_link }}" target="_blank">{{ job.company_name }}</a>
+      {% else %}
+        {{ job.company_name }}
+      {% endif %}
       &mdash;
       {{ job.location }}
       &mdash;
