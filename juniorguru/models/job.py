@@ -99,7 +99,7 @@ class JobDropped(BaseModel):
 
     @classmethod
     def admin_listing(cls):
-        return cls.select()
+        return cls.select().order_by(cls.type, cls.reason)
 
 
 class JobError(BaseModel):
