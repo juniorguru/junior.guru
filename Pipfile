@@ -27,6 +27,7 @@ peewee = "*"
 strictyaml = "*"
 scrapy = "*"
 langdetect = "*"
+w3lib = "*"
 
 [dev-packages]
 pytest = "*"
