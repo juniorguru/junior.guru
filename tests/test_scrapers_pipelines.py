@@ -1,3 +1,4 @@
+import re
 from datetime import datetime
 from pathlib import Path
 from tempfile import NamedTemporaryFile
@@ -96,21 +97,21 @@ def test_german_gender_cleaner(item, spider, title, expected):
     assert item['title'] == expected
 
 
-@pytest.mark.parametrize('description_raw,expected_lang', [
-    ('''<p>Baví nás e-commerce a proto jsme se před rokem pustili do tvorby
-     aplikací pro <a href="https://www.shopify.com/">Shopify.com</a>.
-     Provozujeme více aplikací, např. Candyrack, zaměřené na performance
-     marketing a dnes je využívají stovky e-shopů z celého světa.</p>''',
-     'cs'),
-    ('''V súčasnosti hľadáme inžiniera zameraného na cloud, pre spoločnosť
-     špecializujúcou sa na poisťovníctvo na svojom trhu na Slovensku,
-     spoločnosť pôsobí okrem Slovenska vo viacerých krajinách sveta.''',
-     'sk'),
-    ('''Help companies that use the Prague-based AI startup
-     <strong>Rossum</strong> get started (...to stop wasting time on manual
-     data entry when dealing with business documents).''',
-     'en'),
-])
+def generate_language_filter_params(fixtures_dir):
+    for path in (Path(__file__).parent / fixtures_dir).rglob('*.html'):
+        match = re.search(r'''
+            ^(?P<id>                # test case ID for better readability
+                (?P<lang>\w{2})     # expected language code
+                ([^\.]+)?           # optional part describing the test case
+            )\.html$                # file extension
+        ''', path.name, re.VERBOSE)
+        yield pytest.param(path.read_text(),  # description_raw
+                           match.group('lang'),  # expected_lang
+                           id=match.group('id'))  # ID for better readability
+
+
+@pytest.mark.parametrize('description_raw,expected_lang',
+                         generate_language_filter_params('fixtures_lang'))
 def test_language_filter(item, spider, description_raw, expected_lang):
     item['description_raw'] = description_raw
     pipeline = pipelines.LanguageFilter()
@@ -119,21 +120,13 @@ def test_language_filter(item, spider, description_raw, expected_lang):
     assert item['lang'] == expected_lang
 
 
-@pytest.mark.parametrize('description_raw', [
-    '''<p><strong>Was dich\xa0bei uns erwartet:\xa0</strong></p>\r\n<p>Als
-    Big Data Systems Engineer bist du bei unseren Kunden für die Konzeption,
-    Installation und Konfiguration der Linux- und Cloud-basierten
-    Big-Data-Lösungen verantwortlich. Ebenfalls zu deinen Aufgaben gehören
-    die Bewertung bestehender Big-Data-Systeme und die''',
-    '''<div class="f1header">Na tym stanowisku będziesz odpowiedzialna/-y za:
-    </div><ul><li>przeprowadzanie testów manualnych i automatycznych</li><li>
-    raportowanie błędów</li>''',
-])
-def test_language_filter_drops(item, spider, description_raw):
+@pytest.mark.parametrize('description_raw,expected_lang',
+                         generate_language_filter_params('fixtures_lang_raises'))
+def test_language_filter_drops(item, spider, description_raw, expected_lang):
     item['description_raw'] = description_raw
     pipeline = pipelines.LanguageFilter()
 
-    with pytest.raises(pipelines.IrrelevantLanguage):
+    with pytest.raises(pipelines.IrrelevantLanguage, match=expected_lang):
         pipeline.process_item(item, spider)
 
 
