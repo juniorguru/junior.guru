@@ -40,6 +40,33 @@ def test_spider_parse_job_types():
     assert job['employment_types'] == ['Full-time', 'External collaboration']
 
 
+def test_spider_parse_cities():
+    response = XmlResponse('https://example.com/example/',
+                            body=Path(FIXTURES_DIR / 'feed_cities.xml').read_bytes())
+    jobs = list(startupjobs.Spider().parse(response))
+
+    assert len(jobs) == 2
+
+    assert job[0]['city'] == 'Praha, Česko'
+    assert job[1]['city'] == 'Olomouc, Česko'
+    assert job[0]['url'] == job[1]['url']
+
+    job[0]['title'] = 'Modified'  # testing whether the job objects are copies
+
+    assert job[1]['title'] == 'Server / Cloud / DevOps Admin'
+
+
+def test_spider_parse_cities_job_objects_are_copies():
+    response = XmlResponse('https://example.com/example/',
+                            body=Path(FIXTURES_DIR / 'feed_cities.xml').read_bytes())
+    jobs = list(startupjobs.Spider().parse(response))
+    job[0]['title'] = 'Modified'
+
+    assert job[0]['url'] == job[1]['url']
+    assert job[0]['title'] == 'Modified'
+    assert job[1]['title'] == 'Server / Cloud / DevOps Admin'
+
+
 def test_spider_parse_remote():
     response = XmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'feed_remote.xml').read_bytes())
