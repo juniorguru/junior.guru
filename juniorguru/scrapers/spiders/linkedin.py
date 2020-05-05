@@ -52,7 +52,7 @@ class Spider(BaseSpider):
         loader.add_xpath('employment_types', "//h3[contains(., 'Employment type')]/following-sibling::span/text()")
         loader.add_xpath('experience_levels', "//h3[contains(., 'Seniority level')]/following-sibling::span/text()")
         loader.add_css('posted_at', 'h1 ~ h3:nth-of-type(2) span::text')
-        loader.add_css('description_raw', '.description')
+        loader.add_css('description_raw', '.description__text')
         yield loader.load_item()
 
 

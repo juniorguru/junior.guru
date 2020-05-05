@@ -61,6 +61,15 @@ def test_spider_parse_job():
     assert '<li>3 Sick days ročně' in job['description_raw']
 
 
+def test_spider_parse_job_description_doesnt_include_criteria_list():
+    response = HtmlResponse('https://example.com/example/',
+                            body=Path(FIXTURES_DIR / 'job.html').read_bytes())
+    job = next(linkedin.Spider().parse_job(response))
+
+    assert 'Employment type' not in job['description_raw']
+    assert 'Information Technology and Services' not in job['description_raw']
+
+
 def test_spider_parse_job_no_company_link():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job_no_company_link.html').read_bytes())
