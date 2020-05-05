@@ -39,7 +39,7 @@ def parse_relative_time(text, now=None):
     if 'week' in text:
         weeks_ago = int(re.search(r'\d+', text).group(0))
         return now - timedelta(weeks=weeks_ago)
-    if 'hour' in text:
+    if 'minute' in text or 'hour' in text:
         return now
     if 'yesterday' in text:
         return now - timedelta(days=1)

@@ -20,11 +20,15 @@ def test_split_by():
 
 
 @pytest.mark.parametrize('time,expected', [
+    # StackOverflow
     (' Posted 13 days ago', date(2020, 4, 7)),
     (' Posted 4 hours ago', date(2020, 4, 20)),
     (' Posted < 1 hour ago', date(2020, 4, 20)),
     (' Posted yesterday', date(2020, 4, 19)),
+
+    # LinkedIn
     ('3 weeks ago', date(2020, 3, 30)),
+    ('28 minutes ago', date(2020, 4, 20)),
 ])
 def test_parse_relative_time(time, expected):
     now = datetime(2020, 4, 20, 20, 1, 45)
