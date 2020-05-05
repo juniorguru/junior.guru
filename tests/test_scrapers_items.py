@@ -34,3 +34,12 @@ def test_parse_relative_time(time, expected):
 def test_parse_relative_time_raises_on_uncrecognized_value():
     with pytest.raises(ValueError):
         items.parse_relative_time('gargamel')
+
+
+@pytest.mark.parametrize('iterable,expected', [
+    ([], None),
+    ([1], 1),
+    ([1, 2], 1),
+])
+def test_first(iterable, expected):
+    assert items.first(iterable) == expected

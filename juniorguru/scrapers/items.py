@@ -27,6 +27,13 @@ def split(string, by=','):
     return []
 
 
+def first(iterable):
+    try:
+        return iterable[0]
+    except IndexError:
+        return None
+
+
 def parse_relative_time(text, now=None):
     now = now or datetime.utcnow()
     if 'week' in text:

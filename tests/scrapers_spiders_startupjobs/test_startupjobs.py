@@ -34,7 +34,7 @@ def test_spider_parse():
 
 def test_spider_parse_job_types():
     response = XmlResponse('https://example.com/example/',
-                            body=Path(FIXTURES_DIR / 'feed-job-types.xml').read_bytes())
+                            body=Path(FIXTURES_DIR / 'feed_job_types.xml').read_bytes())
     job = next(startupjobs.Spider().parse(response))
 
     assert job['employment_types'] == ['Full-time', 'External collaboration']
@@ -42,7 +42,7 @@ def test_spider_parse_job_types():
 
 def test_spider_parse_remote():
     response = XmlResponse('https://example.com/example/',
-                            body=Path(FIXTURES_DIR / 'feed-remote.xml').read_bytes())
+                            body=Path(FIXTURES_DIR / 'feed_remote.xml').read_bytes())
     job = next(startupjobs.Spider().parse(response))
 
     assert job['employment_types'] == ['Part-time', 'External collaboration']

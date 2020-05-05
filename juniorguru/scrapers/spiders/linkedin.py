@@ -4,9 +4,9 @@ from urllib.parse import urlencode, urlparse, parse_qs, urlunparse
 
 from scrapy import Spider as BaseSpider, Request
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import MapCompose, TakeFirst, Identity
+from scrapy.loader.processors import MapCompose, TakeFirst, Identity, Compose
 
-from ..items import Job, parse_relative_time, split
+from ..items import Job, parse_relative_time, split, first
 
 
 class Spider(BaseSpider):
@@ -45,7 +45,9 @@ class Spider(BaseSpider):
         loader = Loader(item=Job(), response=response)
         loader.add_css('title', 'h1::text')
         loader.add_value('link', response.url)
-        loader.add_css('company_name', 'h1 ~ h3 > span::text')
+        loader.add_css('company_name', 'h1 ~ h3 a::text')
+        loader.add_css('company_name', 'h1 ~ h3 span::text')
+        loader.add_css('company_link', 'h1 ~ h3 a::attr(href)')
         loader.add_css('location', 'h1 ~ h3 > span:nth-of-type(2)::text')
         loader.add_xpath('employment_types', "//h3[contains(., 'Employment type')]/following-sibling::span/text()")
         loader.add_xpath('experience_levels', "//h3[contains(., 'Seniority level')]/following-sibling::span/text()")
@@ -76,6 +78,6 @@ class Loader(ItemLoader):
     default_output_processor = TakeFirst()
     employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()
-    posted_at_in = MapCompose(parse_relative_time)
+    posted_at_in = Compose(first, parse_relative_time)
     experience_levels_in = MapCompose(str.lower, split)
     experience_levels_out = Identity()
