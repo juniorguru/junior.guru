@@ -28,10 +28,11 @@ strictyaml = "*"
 scrapy = "*"
 langdetect = "*"
 w3lib = "*"
+lxml = "*"
+cssselect = "*"
 
 [dev-packages]
 pytest = "*"
-lxml = "*"
 cssselect = "*"
 isort = {extras = ["pipfile"],version = "*"}
 
