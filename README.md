@@ -25,3 +25,7 @@ According to [spectrum.chat/zeit](https://spectrum.chat/zeit/now/redirection-ema
 1.  Run `cat juniorguru/fetch/google_service_account.json | pbcopy` to copy the JSON into your clipboard (macOS)
 1.  Go to CircleCI project settings, page Environment Variables
 1.  Add `GOOGLE_SERVICE_ACCOUNT` variable and paste the JSON from your clipboard as a value
+
+## Git hooks
+
+- [isort](https://github.com/timothycrosley/isort/#git-hook)
