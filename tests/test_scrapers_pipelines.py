@@ -64,6 +64,7 @@ def test_employment_types_cleaner(item, spider, employment_types, expected):
 
 
 @pytest.mark.parametrize('title,expected', [
+    # German
     ('Full Stack Software Engineer: Ruby on Rails (m/f/d)',
      'Full Stack Software Engineer: Ruby on Rails'),
     ('Full Stack Software Engineer: Java / Python (m/f/d)',
@@ -88,10 +89,22 @@ def test_employment_types_cleaner(item, spider, employment_types, expected):
      'C/Ada Software Developer & Tester Aviation (Ref.-Nr.: 2020)'),
     ('Solution Engineer (M/F/X)',
      'Solution Engineer'),
+    ('UI Frontend Engineer | React JS Developer f/m/x',
+     'UI Frontend Engineer | React JS Developer'),
+    ('Junior iOS Engineer (Swift) (m|f|x)',
+     'Junior iOS Engineer (Swift)'),
+
+    # French
+    ('Internship: JAVA DEVELOPER - H/F',
+     'Internship: JAVA DEVELOPER'),
+
+    # Czech
+    ('GOlang / PHP backend programátor cloudových služeb (m/ž)',
+     'GOlang / PHP backend programátor cloudových služeb'),
 ])
 def test_german_gender_cleaner(item, spider, title, expected):
     item['title'] = title
-    pipeline = pipelines.GermanGenderCleaner()
+    pipeline = pipelines.GenderCleaner()
     item = pipeline.process_item(item, spider)
 
     assert item['title'] == expected

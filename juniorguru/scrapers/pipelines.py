@@ -29,23 +29,39 @@ class EmploymentTypesCleaner():
         return item
 
 
-class GermanGenderCleaner():
-    gender_re = re.compile(r'''
-        \s*                     # trailing spaces
-        \(                      # opening parenthesis
-            \s*[mfw]\s*         # letter m, f, or w (with trailing spaces)
-            /                   # slash
-            \s*[mfw]\s*         # letter m, f, or w (with trailing spaces)
-            (                   # optionally:
-                /               # slash
-                \s*[^\)]+\s*    # anything but closing bracket, one or more (with trailing spaces)
+class GenderCleaner():
+    gender_res = [
+        # in parentheses, e.g. (f/m/*)
+        re.compile(r'''
+            \s*                     # trailing spaces
+            \(                      # opening parenthesis
+                \s*[mfwžh]\s*       # woman/man letter (with spaces)
+                [/\|]               # slash or pipe
+                \s*[mfwžh]\s*       # woman/man letter (with spaces)
+                (                   # optionally:
+                    [/\|]           # slash or pipe
+                    \s*[^\)]+\s*    # anything but closing bracket (with spaces)
+                )?
+            \)                      # closing parenthesis
+            \s*                     # trailing spaces
+        ''', re.VERBOSE | re.IGNORECASE),
+
+        # no parentheses, e.g. f/m/x
+        re.compile(r'''
+            (\-\s*)?        # optional leading dash
+            [mfwžh]\s*      # woman/man letter (with spaces)
+            [/\|]           # slash or pipe
+            \s*[mfwžh]\s*   # woman/man letter (with spaces)
+            (               # optionally:
+                [/\|]       # slash or pipe
+                \s*\w+      # anything but space or end
             )?
-        \)                      # closing parenthesis
-        \s*                     # trailing spaces
-    ''', re.VERBOSE | re.IGNORECASE)
+        ''', re.VERBOSE | re.IGNORECASE),
+    ]
 
     def process_item(self, item, spider):
-        item['title'] = self.gender_re.sub(' ', item['title']).strip()
+        for gender_re in self.gender_res:
+            item['title'] = gender_re.sub(' ', item['title']).strip()
         return item
 
 
