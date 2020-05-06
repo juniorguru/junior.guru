@@ -38,6 +38,10 @@
       </small>
     </p>
     <details style="margin: 1rem 0;">
+      <summary>Description</summary>
+      <textarea rows="20" cols="100" style="width: 90%;">{{ job.item.description_raw }}</textarea>
+    </details>
+    <details style="margin: 1rem 0;">
       <summary>Data</summary>
       <pre>{{ job|pprint }}</pre>
     </details>
