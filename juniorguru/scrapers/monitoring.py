@@ -1,6 +1,7 @@
 import hashlib
 import logging
 import re
+import time
 from functools import wraps
 from pathlib import Path
 from urllib.parse import urlparse
@@ -32,43 +33,44 @@ class BackupResponseMiddleware():
         return response
 
 
-def postpone_failed_operations(method):
-    """
-    SQLite isn't suited well for too many concurrent writes, so under heavy
-    load of parallel spiders it can randomly refuse operations. This decorator
-    notes down such failed operations and when the spider is done (and
-    the load to the db is supposedly lower), they're retried until successful.
-    """
+def retry_when_db_locked(method):
     @wraps(method)
     def wrapper(ext, *args, **kwargs):
         kwargs.pop('signal')
         kwargs.pop('sender')
-        try:
-            return method(ext, *args, **kwargs)
-        except OperationalError as error:
-            logger.debug(f"OperationalError: {error}, postponing '{method.__name__}'")
-            ext.postponed_operations.append((method, args, kwargs))
-            if ext.stats:
-                ext.stats.inc_value('monitoring/postponed_operations')
+        last_error = None
+        for i in range(3):
+            try:
+                return method(ext, *args, **kwargs)
+            except OperationalError as error:
+                if str(error) == 'database is locked':
+                    logger.debug(f"Monitoring operation '{method.__name__}' failed! ({error}, attempt: {i + 1})")
+                    last_error = error
+                    ext.stats.inc_value('monitoring/db_locked_retries')
+                    time.sleep(0.5)
+                else:
+                    ext.stats.inc_value('monitoring/uncaught_errors')
+                    raise
+        ext.stats.inc_value('monitoring/uncaught_errors')
+        raise last_error
     return wrapper
 
 
 class MonitoringExtension():
-    def __init__(self, stats=None):
+    def __init__(self, stats):
         self.stats = stats
         self.postponed_operations = []
 
     @classmethod
     def from_crawler(cls, crawler):
-        ext = cls(stats=crawler.stats)
+        ext = cls(crawler.stats)
         crawler.signals.connect(ext.spider_error, signal=signals.spider_error)
         crawler.signals.connect(ext.item_error, signal=signals.item_error)
         crawler.signals.connect(ext.item_dropped, signal=signals.item_dropped)
         crawler.signals.connect(ext.item_scraped, signal=signals.item_scraped)
-        crawler.signals.connect(ext.spider_closed, signal=signals.spider_closed)
         return ext
 
-    @postpone_failed_operations
+    @retry_when_db_locked
     def spider_error(self, failure, response, spider):
         with db:
             JobError.create(message=get_failure_message(failure),
@@ -77,10 +79,9 @@ class MonitoringExtension():
                             spider=spider.name,
                             response_url=response.url,
                             response_backup_path=get_response_backup_path(response.url))
-        if self.stats:
-            self.stats.inc_value('monitoring/job_error_saved')
+        self.stats.inc_value('monitoring/job_error_saved')
 
-    @postpone_failed_operations
+    @retry_when_db_locked
     def item_error(self, item, response, spider, failure):
         with db:
             JobError.create(message=get_failure_message(failure),
@@ -90,10 +91,9 @@ class MonitoringExtension():
                             response_url=response.url,
                             response_backup_path=get_response_backup_path(response.url),
                             item=item)
-        if self.stats:
-            self.stats.inc_value('monitoring/job_error_saved')
+        self.stats.inc_value('monitoring/job_error_saved')
 
-    @postpone_failed_operations
+    @retry_when_db_locked
     def item_dropped(self, item, response, exception, spider):
         with db:
             JobDropped.create(type=exception.__class__.__name__,
@@ -101,10 +101,9 @@ class MonitoringExtension():
                               response_url=response.url,
                               response_backup_path=get_response_backup_path(response.url),
                               item=item)
-        if self.stats:
-            self.stats.inc_value('monitoring/job_dropped_saved')
+        self.stats.inc_value('monitoring/job_dropped_saved')
 
-    @postpone_failed_operations
+    @retry_when_db_locked
     def item_scraped(self, item, response, spider):
         with db:
             job = Job.get_by_id(item_to_job_id(item))
@@ -113,28 +112,7 @@ class MonitoringExtension():
             job.item = item
             job.save()
             logger.debug(f"Updated job '{job.id}' with monitoring data")
-        if self.stats:
-            self.stats.inc_value('monitoring/job_saved')
-
-    def spider_closed(self, spider, reason):
-        for method, args, kwargs in self.postponed_operations:
-            error = self.execute_postponed_operation(method, args, kwargs)
-            if error:
-                raise error
-            if self.stats:
-                self.stats.inc_value('monitoring/postponed_operations_executed')
-
-    def execute_postponed_operation(self, method, args, kwargs):
-        last_error = None
-        for i in range(3):
-            logger.debug(f"Executing postponed operation '{method.__name__}' (attempt: {i + 1})")
-            try:
-                method(self, *args, **kwargs)
-                return None
-            except OperationalError as error:
-                logger.debug(f"OperationalError: {error}, retrying…")
-                last_error = error
-        return last_error
+        self.stats.inc_value('monitoring/job_saved')
 
 
 def url_to_backup_path(url):
