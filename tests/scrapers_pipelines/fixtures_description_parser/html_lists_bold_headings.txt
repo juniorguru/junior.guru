@@ -1,0 +1,5 @@
+extensive experience of coding in JavaScript (ES6)
+experience of using React, Redux, AngularJS, Node.js, Serverless, Hapi, or other popular JavaScript frameworks
+experience in using cloud hosting services (AWS, Heroku)
+knowledge of Git, Webpack and Babel
+knowledge of Linux/Unix
