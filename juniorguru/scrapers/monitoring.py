@@ -6,8 +6,8 @@ from urllib.parse import urlparse
 
 from scrapy import signals
 
-from ..models import db, Job, JobDropped, JobError
-from .pipelines.database import item_to_job_id
+from juniorguru.models import db, Job, JobDropped, JobError
+from juniorguru.scrapers.pipelines.database import item_to_job_id
 
 
 logger = logging.getLogger(__name__)

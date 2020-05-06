@@ -1,8 +1,8 @@
 import arrow
 from flask import Flask, render_template, abort, url_for, Response
 
-from ..models import db, Job, Story
-from .thumbnail import thumbnail
+from juniorguru.models import db, Job, Story
+from juniorguru.web.thumbnail import thumbnail
 
 
 app = Flask(__name__)
@@ -102,5 +102,4 @@ def inject_defaults():
                 thumbnail=thumbnail())
 
 
-from . import admin  # noqa
-from . import template_filters  # noqa
+from juniorguru.web import admin, template_filters  # noqa

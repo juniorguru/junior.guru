@@ -5,7 +5,7 @@ from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import MapCompose, TakeFirst, Identity, Compose
 
-from ..items import Job, split
+from juniorguru.scrapers.items import Job, split
 
 
 class Spider(BaseSpider):

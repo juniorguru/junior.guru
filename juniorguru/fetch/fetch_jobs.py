@@ -10,8 +10,8 @@ from operator import itemgetter
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-from .sheets import coerce_record
-from ..models import db, Job, JobError, JobDropped
+from juniorguru.fetch.sheets import coerce_record
+from juniorguru.models import db, Job, JobError, JobDropped
 
 
 def main():

@@ -1,6 +1,6 @@
 from peewee import DateTimeField, CharField, BooleanField
 
-from .base import BaseModel, JSONField
+from juniorguru.models.base import BaseModel, JSONField
 
 
 class UniqueSortedListField(CharField):

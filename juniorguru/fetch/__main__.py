@@ -1,5 +1,5 @@
-from .fetch_jobs import main as fetch_jobs
-from .fetch_stories import main as fetch_stories
+from juniorguru.fetch.fetch_jobs import main as fetch_jobs
+from juniorguru.fetch.fetch_stories import main as fetch_stories
 
 
 def main():

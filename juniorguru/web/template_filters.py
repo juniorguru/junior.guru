@@ -5,7 +5,7 @@ from jinja2 import Markup
 from markdown import markdown
 from markdown.extensions.toc import TocExtension
 
-from . import app
+from juniorguru.web import app
 
 
 @app.template_filter()

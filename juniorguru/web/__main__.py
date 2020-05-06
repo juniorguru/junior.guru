@@ -3,8 +3,8 @@ from pathlib import Path
 
 import flask_frozen
 
-from . import app
-from ..models import db, Job
+from juniorguru.web import app
+from juniorguru.models import db, Job
 
 
 def generate_job_ids():

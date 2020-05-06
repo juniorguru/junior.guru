@@ -2,7 +2,7 @@ from pathlib import Path
 
 from strictyaml import load, Map, Datetime, Url, Str, Seq
 
-from ..models import db, Story
+from juniorguru.models import db, Story
 
 
 schema = Seq(

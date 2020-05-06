@@ -5,9 +5,9 @@ from pathlib import Path
 from playhouse.shortcuts import model_to_dict
 from flask import render_template, send_from_directory
 
-from . import app
-from ..models import db, Job, JobDropped, JobError
-from ..scrapers.monitoring import RESPONSES_BACKUP_DIR
+from juniorguru.web import app
+from juniorguru.models import db, Job, JobDropped, JobError
+from juniorguru.scrapers.monitoring import RESPONSES_BACKUP_DIR
 
 
 ADMIN_MENU = {

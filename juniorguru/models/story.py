@@ -3,7 +3,7 @@ from urllib.parse import urlparse
 
 from peewee import DateTimeField, CharField, BooleanField
 
-from .base import BaseModel
+from juniorguru.models.base import BaseModel
 
 
 class Story(BaseModel):

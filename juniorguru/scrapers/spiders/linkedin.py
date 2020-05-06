@@ -6,7 +6,7 @@ from scrapy import Spider as BaseSpider, Request
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import MapCompose, TakeFirst, Identity, Compose
 
-from ..items import Job, parse_relative_time, split, first
+from juniorguru.scrapers.items import Job, parse_relative_time, split, first
 
 
 class Spider(BaseSpider):
