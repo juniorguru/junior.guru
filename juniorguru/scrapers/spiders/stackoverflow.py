@@ -27,7 +27,7 @@ class Spider(BaseSpider):
         loader.add_value('link', response.url)
         loader.add_css('company_name', 'h1 ~ div a::text')
         loader.add_css('company_link', 'h1 ~ div a::attr(href)')
-        loader.add_css('location', 'h1 ~ div a ~ span::text')
+        loader.add_xpath('location', '//h1/following-sibling::div/*[last()]/text()')
         loader.add_xpath('employment_types', "//span[contains(., 'Job type:')]/following-sibling::span/text()")
         loader.add_xpath('experience_levels', "//span[contains(., 'Experience level:')]/following-sibling::span/text()")
         loader.add_xpath('posted_at', "//div[contains(./text(), 'Posted')]/text()")

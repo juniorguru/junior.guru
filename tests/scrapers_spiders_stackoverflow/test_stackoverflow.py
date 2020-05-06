@@ -46,6 +46,16 @@ def test_spider_parse_job():
     assert 'what QUAJOO offers you:</strong>' in job['description_raw']
 
 
+def test_spider_parse_job_via():
+    response = HtmlResponse('https://example.com/example/',
+                            body=Path(FIXTURES_DIR / 'job_via.html').read_bytes())
+    job = next(stackoverflow.Spider().parse_job(response))
+
+    assert job['company_name'] == 'CBOE Global Markets'
+    assert job['company_link'] == 'https://www.cboe.com/'
+    assert job['location'] == 'London, UK'
+
+
 def test_clean_location():
     assert stackoverflow.clean_location('''
         \r\n                    –\r\nLeipzig, Deutschland
