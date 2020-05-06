@@ -1,5 +1,5 @@
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
 from jinja2 import Markup
 from markdown import markdown

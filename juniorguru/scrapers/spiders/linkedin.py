@@ -1,12 +1,13 @@
 import re
 from datetime import datetime, timedelta
-from urllib.parse import urlencode, urlparse, parse_qs, urlunparse
+from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
 
-from scrapy import Spider as BaseSpider, Request
+from scrapy import Request
+from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import MapCompose, TakeFirst, Identity, Compose
+from scrapy.loader.processors import Compose, Identity, MapCompose, TakeFirst
 
-from juniorguru.scrapers.items import Job, parse_relative_time, split, first
+from juniorguru.scrapers.items import Job, first, parse_relative_time, split
 
 
 class Spider(BaseSpider):

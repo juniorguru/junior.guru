@@ -1,4 +1,4 @@
-from peewee import DateTimeField, CharField, BooleanField
+from peewee import BooleanField, CharField, DateTimeField
 
 from juniorguru.models.base import BaseModel, JSONField
 

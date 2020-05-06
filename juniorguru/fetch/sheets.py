@@ -1,5 +1,5 @@
-import re
 import hashlib
+import re
 from urllib.parse import urlparse
 
 import arrow

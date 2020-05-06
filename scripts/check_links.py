@@ -1,7 +1,7 @@
 import sys
 import time
-from subprocess import run
 from pathlib import Path
+from subprocess import run
 
 
 USER_AGENT = (

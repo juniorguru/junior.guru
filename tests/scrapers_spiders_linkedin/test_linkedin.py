@@ -1,5 +1,5 @@
-from pathlib import Path
 from datetime import date, timedelta
+from pathlib import Path
 
 import pytest
 from scrapy.http import HtmlResponse

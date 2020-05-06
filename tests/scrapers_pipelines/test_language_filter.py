@@ -4,8 +4,8 @@ from pathlib import Path
 import pytest
 from langdetect import DetectorFactory
 
-from juniorguru.scrapers.pipelines.language_filter import (Pipeline,
-                                                           IrrelevantLanguage)
+from juniorguru.scrapers.pipelines.language_filter import (IrrelevantLanguage,
+                                                           Pipeline)
 
 
 DetectorFactory.seed = 0  # prevent non-deterministic language detection

@@ -33,6 +33,7 @@ w3lib = "*"
 pytest = "*"
 lxml = "*"
 cssselect = "*"
+isort = {extras = ["pipfile"],version = "*"}
 
 [requires]
 python_version = "3.7"

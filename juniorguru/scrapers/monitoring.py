@@ -1,12 +1,12 @@
-import re
-import logging
 import hashlib
+import logging
+import re
 from pathlib import Path
 from urllib.parse import urlparse
 
 from scrapy import signals
 
-from juniorguru.models import db, Job, JobDropped, JobError
+from juniorguru.models import Job, JobDropped, JobError, db
 from juniorguru.scrapers.pipelines.database import item_to_job_id
 
 

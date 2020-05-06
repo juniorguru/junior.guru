@@ -1,7 +1,7 @@
+import random
 from datetime import datetime
 
 import pytest
-import random
 from peewee import SqliteDatabase
 
 from juniorguru.models import Job

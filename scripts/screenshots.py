@@ -1,9 +1,9 @@
-import sys
 import shutil
-from pathlib import Path
-from multiprocessing import Pool
+import sys
 from itertools import chain
-from subprocess import run, PIPE, CalledProcessError, Popen, DEVNULL
+from multiprocessing import Pool
+from pathlib import Path
+from subprocess import DEVNULL, PIPE, CalledProcessError, Popen, run
 
 from PIL import Image
 

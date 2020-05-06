@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 import scrapy
-from peewee import SqliteDatabase, Model, CharField, DateTimeField
+from peewee import CharField, DateTimeField, Model, SqliteDatabase
 from playhouse.sqlite_ext import JSONField as BaseJSONField
 
 

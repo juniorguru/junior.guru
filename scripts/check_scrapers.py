@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-from peewee import SqliteDatabase, Model
+from peewee import Model, SqliteDatabase
 
 
 db_file = Path(__file__).parent.parent / 'juniorguru' / 'data' / 'data.db'

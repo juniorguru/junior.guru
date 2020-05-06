@@ -3,7 +3,7 @@ from datetime import datetime
 
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import MapCompose, TakeFirst, Identity, Compose
+from scrapy.loader.processors import Compose, Identity, MapCompose, TakeFirst
 
 from juniorguru.scrapers.items import Job, split
 

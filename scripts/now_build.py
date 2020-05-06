@@ -1,9 +1,9 @@
+import json
 import os
 import sys
 import time
-import json
-from operator import itemgetter
 from itertools import groupby
+from operator import itemgetter
 from subprocess import run
 from urllib import request
 

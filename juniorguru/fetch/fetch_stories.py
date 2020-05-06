@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from strictyaml import load, Map, Datetime, Url, Str, Seq
+from strictyaml import Datetime, Map, Seq, Str, Url, load
 
-from juniorguru.models import db, Story
+from juniorguru.models import Story, db
 
 
 schema = Seq(

@@ -1,6 +1,7 @@
 import hashlib
 
-from juniorguru.models import db as default_db, Job
+from juniorguru.models import Job
+from juniorguru.models import db as default_db
 
 
 class Pipeline():

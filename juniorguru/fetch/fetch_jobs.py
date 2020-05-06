@@ -1,17 +1,17 @@
-import os
-import json
-import shutil
 import datetime
+import json
+import os
+import shutil
 import subprocess
 from multiprocessing import Pool
-from pathlib import Path
 from operator import itemgetter
+from pathlib import Path
 
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 from juniorguru.fetch.sheets import coerce_record
-from juniorguru.models import db, Job, JobError, JobDropped
+from juniorguru.models import Job, JobDropped, JobError, db
 
 
 def main():

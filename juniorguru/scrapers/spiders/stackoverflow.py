@@ -2,9 +2,10 @@ import re
 
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import MapCompose, TakeFirst, Identity
+from scrapy.loader.processors import Identity, MapCompose, TakeFirst
 
-from juniorguru.scrapers.items import Job, absolute_url, split, parse_relative_time
+from juniorguru.scrapers.items import (Job, absolute_url,
+                                       parse_relative_time, split)
 
 
 class Spider(BaseSpider):

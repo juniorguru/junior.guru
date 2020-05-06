@@ -1,13 +1,13 @@
-import re
 import json
+import re
 from pathlib import Path
 
-from playhouse.shortcuts import model_to_dict
 from flask import render_template, send_from_directory
+from playhouse.shortcuts import model_to_dict
 
-from juniorguru.web import app
-from juniorguru.models import db, Job, JobDropped, JobError
+from juniorguru.models import Job, JobDropped, JobError, db
 from juniorguru.scrapers.monitoring import RESPONSES_BACKUP_DIR
+from juniorguru.web import app
 
 
 ADMIN_MENU = {

@@ -1,10 +1,10 @@
-import os
 import io
-import tempfile
+import os
 import pickle
+import tempfile
 from hashlib import sha256
 from pathlib import Path
-from subprocess import run, DEVNULL
+from subprocess import DEVNULL, run
 
 from jinja2 import Template
 

@@ -1,7 +1,7 @@
 import re
 from datetime import datetime, timedelta
 
-from scrapy import Item, Field
+from scrapy import Field, Item
 
 
 class Job(Item):
