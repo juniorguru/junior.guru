@@ -65,10 +65,10 @@ EXTENSIONS = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'juniorguru.scrapers.pipelines.LanguageFilter': 100,
-   'juniorguru.scrapers.pipelines.GenderCleaner': 300,
-   'juniorguru.scrapers.pipelines.EmploymentTypesCleaner': 400,
-   'juniorguru.scrapers.pipelines.Database': 1000,
+   'juniorguru.scrapers.pipelines.language_filter.Pipeline': 100,
+   'juniorguru.scrapers.pipelines.gender_cleaner.Pipeline': 300,
+   'juniorguru.scrapers.pipelines.employment_types_cleaner.Pipeline': 400,
+   'juniorguru.scrapers.pipelines.database.Pipeline': 1000,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
