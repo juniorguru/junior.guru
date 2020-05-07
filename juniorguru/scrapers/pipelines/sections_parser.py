@@ -82,7 +82,6 @@ class Pipeline():
             except ValueError:
                 prefix, line_reminder = parts[0], ''
 
-            print(repr(prefix), self.bullet_re.match(prefix))
             if self.bullet_re.match(prefix) and prefix == previous_prefix:
                 bullets.append(line_reminder)
             else:
