@@ -44,6 +44,7 @@ class Pipeline():
                 break
 
             el = el.getprevious()
+        heading = heading or ''
 
         # pronounce text content of all the list items to be bullets;
         # any tail texts are treated just as list items
