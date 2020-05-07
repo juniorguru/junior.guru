@@ -6,6 +6,8 @@ from w3lib.html import remove_tags
 
 class Pipeline():
     bullet_re = re.compile(r'^(\W{1,2})$')
+    nl_re = re.compile(r'[\n\r]+')
+    ws_re = re.compile(r'\s+')
 
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements
     block_element_names = [
@@ -65,7 +67,7 @@ class Pipeline():
         # as it was so we know where the visual newlines are, then split lines
         html_text = html.tostring(el, encoding=str)
         text = remove_tags(html_text)
-        text = re.sub(r'[\n\r]+', '\n', text.strip())
+        text = self.nl_re.sub('\n', text.strip())
         lines = [line.strip() for line in text.splitlines()]
 
         # iterate over lines, detect bullet characters (line prefix), and
@@ -74,7 +76,7 @@ class Pipeline():
         previous_prefix = None
 
         for i, line in enumerate(lines):
-            parts = re.split(r'\s+', line, maxsplit=1)
+            parts = self.ws_re.split(line, maxsplit=1)
             try:
                 prefix, line_reminder = parts
             except ValueError:
