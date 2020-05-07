@@ -5,6 +5,8 @@ from w3lib.html import remove_tags
 
 
 class Pipeline():
+    bullet_re = re.compile(r'^(\W{1,2})$')
+
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements
     block_element_names = [
         'address', 'article', 'aside', 'blockquote', 'details', 'dialog',
@@ -19,7 +21,7 @@ class Pipeline():
         html_tree = html.fromstring(item['description_raw'])
         sections = [self.parse_list_el(list_el)
                     for list_el in html_tree.cssselect('ul, ol')]
-        print(repr(list(self.parse_textual_lists(html_tree))))
+        sections += list(self.parse_textual_lists(html_tree))
         item['sections'] = sections
         return item
 
@@ -59,42 +61,40 @@ class Pipeline():
             tail_text = newline_el.tail
             newline_el.tail = f'\n{tail_text}' if tail_text else '\n'
 
-        # TODO remove whitespace prior to adding our own???
-
         # serialize the html tree and remove tags, but keep all whitespace
         # as it was so we know where the visual newlines are, then split lines
         html_text = html.tostring(el, encoding=str)
         text = remove_tags(html_text)
         text = re.sub(r'[\n\r]+', '\n', text.strip())
-        lines = text.splitlines()
+        lines = [line.strip() for line in text.splitlines()]
 
         # iterate over lines, detect bullet characters (line prefix), and
         # construct lists with headings
         bullets = []
         previous_prefix = None
 
-        for line in lines:
-            flush = False
-            split = re.split(r'\s+', line, maxsplit=1)
+        for i, line in enumerate(lines):
+            parts = re.split(r'\s+', line, maxsplit=1)
+            try:
+                prefix, line_reminder = parts
+            except ValueError:
+                prefix, line_reminder = parts[0], ''
 
-            if len(split) == 1:  # rogue prefix-only line
-                prefix = split[0]
-                if prefix == previous_prefix:  # next list item: skip
-                    continue
-                else:  # anything but next list item: flush & skip
-                    if len(bullets) >= self.min_bullets:
-                        yield dict(bullets=bullets)
-                    bullets = []
-            else:  # regular line
-                prefix, line_reminder = split
-                if prefix == previous_prefix:  # next list item: add
-                    bullets.append(line_reminder)
-                else:  # anything but next list item: flush & add
-                    if len(bullets) >= self.min_bullets:
-                        yield dict(bullets=bullets)
-                    bullets = [line_reminder]
+            print(repr(prefix), self.bullet_re.match(prefix))
+            if self.bullet_re.match(prefix) and prefix == previous_prefix:
+                bullets.append(line_reminder)
+            else:
+                bullets_count = len(bullets)
+                if bullets_count >= self.min_bullets:
+                    heading_i = i - bullets_count - 1
+                    heading = '' if heading_i < 0 else lines[heading_i]
+                    yield dict(heading=heading, bullets=bullets)
+                bullets = [line_reminder]
 
             previous_prefix = prefix
 
-        if len(bullets) >= self.min_bullets:
-            yield dict(bullets=bullets)
+        bullets_count = len(bullets)
+        if bullets_count >= self.min_bullets:
+            heading_i = len(lines) - bullets_count - 1
+            heading = '' if heading_i < 0 else lines[heading_i]
+            yield dict(heading=heading, bullets=bullets)
