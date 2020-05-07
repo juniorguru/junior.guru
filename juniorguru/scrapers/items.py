@@ -5,16 +5,16 @@ from scrapy import Field, Item
 
 
 class Job(Item):
-    posted_at = Field()
-    title = Field()
-    location = Field()
-    company_name = Field()
+    posted_at = Field(required=True)
+    title = Field(required=True)
+    location = Field(required=True)
+    company_name = Field(required=True)
     company_link = Field()
-    employment_types = Field()
-    description_raw = Field()
-    sections = Field()
+    link = Field(required=True)
+    description_raw = Field(required=True)
     lang = Field()
-    link = Field()
+    sections = Field()
+    employment_types = Field()
     experience_levels = Field()
 
 
