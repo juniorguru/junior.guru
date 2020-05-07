@@ -1,6 +1,6 @@
 import re
-from datetime import datetime
 
+import arrow
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Compose, Identity, MapCompose, TakeFirst
@@ -25,7 +25,7 @@ class Spider(BaseSpider):
                 offer_loader.add_xpath('company_link', './/startupURL/text()')
                 offer_loader.add_value('location', city)
                 offer_loader.add_xpath('employment_types', './/jobtype/text()')
-                offer_loader.add_value('posted_at', datetime.utcnow())  # TODO
+                offer_loader.add_xpath('posted_at', './/lastUpdate//text()')
                 offer_loader.add_xpath('description_raw', './/description/text()')
                 yield loader.load_item()
 
@@ -34,9 +34,13 @@ def drop_remote(types):
     return [type_ for type_ in types if type_.lower() != 'remote']
 
 
+def parse_iso_datetime(value):
+    return arrow.get(value).to('utc').naive
+
+
 class Loader(ItemLoader):
     default_input_processor = MapCompose(str.strip)
     default_output_processor = TakeFirst()
     employment_types_in = Compose(MapCompose(str.strip), drop_remote)
     employment_types_out = Identity()
-    posted_at_in = Identity()  # TODO
+    posted_at_in = MapCompose(parse_iso_datetime)
