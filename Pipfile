@@ -30,11 +30,13 @@ langdetect = "*"
 w3lib = "*"
 lxml = "*"
 cssselect = "*"
+pync = "*"
 
 [dev-packages]
 pytest = "*"
 cssselect = "*"
 isort = {extras = ["pipfile"],version = "*"}
+pync = "*"
 
 [requires]
 python_version = "3.7"

@@ -6,12 +6,19 @@ import subprocess
 from multiprocessing import Pool
 from operator import itemgetter
 from pathlib import Path
+from time import time
 
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 from juniorguru.fetch.sheets import coerce_record
 from juniorguru.models import Job, JobDropped, JobError, db
+
+
+try:
+    import pync
+except (Exception, ImportError):
+    pync = None
 
 
 def main():
@@ -46,4 +53,8 @@ def run_spider(spider_name):
 
 
 if __name__ == '__main__':
+    t0 = time()
     main()
+    t = time() - t0
+    if pync:
+        pync.Notifier.notify(f'{t:.1f}min', title='Fetching jobs finished!')
