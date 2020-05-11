@@ -12,6 +12,7 @@ screenshots = "python scripts/screenshots.py"
 check-links = "python scripts/check_links.py"
 check-anchors = "python scripts/check_anchors.py"
 check-scrapers = "python scripts/check_scrapers.py"
+check-performance = "python scripts/check_performance.py"
 serve = "npx gulp serve"
 
 [packages]
@@ -37,6 +38,7 @@ pytest = "*"
 cssselect = "*"
 isort = {extras = ["pipfile"],version = "*"}
 pync = "*"
+python-slugify = "*"
 
 [requires]
 python_version = "3.7"

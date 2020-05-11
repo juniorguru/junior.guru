@@ -108,6 +108,18 @@ jobs:
           at: "~"
       - run: pipenv run check-scrapers
 
+  check-performance:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: pipenv run check-performance
+      - run:
+          command: tar -cvzf lighthouse.tar.gz ./lighthouse
+          when: always
+      - store_artifacts:
+          path: ./lighthouse.tar.gz  # HTML and JSON reports from lighthouse
+
 
 workflows:
   version: 2
@@ -154,6 +166,9 @@ workflows:
       - check-links:
           requires:
             - fetch-build
+      - check-performance:
+          requires:
+            - deploy
     triggers:
       - schedule:
           cron: "0 4 * * *"

@@ -87,3 +87,6 @@ backup.tar.gz
 .now
 .env.build
 public.tar.gz
+
+# Lighthouse
+/lighthouse/
