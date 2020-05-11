@@ -16,6 +16,7 @@ def notify(fn):
             return fn(*args, **kwargs)
         finally:
             t = time() - t0
+            print('\a', end='', flush=True)
             if pync:
                 fn_name = f'{fn.__module__}.{fn.__name__}()'
                 pync.Notifier.notify(f'{t / 60:.1f}min',
