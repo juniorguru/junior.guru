@@ -121,10 +121,9 @@ function copyFavicon() {
     .pipe(gulp.dest('public/'))
 }
 
-const buildWeb = gulp.series(
-  freezeFlask,
-  gulp.parallel(minifyHTML, copyFavicon),
-)
+const buildWeb = isLocalDevelopment
+  ? gulp.series(freezeFlask)
+  : gulp.series(freezeFlask, gulp.parallel(minifyHTML, copyFavicon));
 
 async function watchWeb() {
   gulp.watch('juniorguru/web/static/src/js/', buildJS);
@@ -150,7 +149,7 @@ async function watchWeb() {
 
 async function serveWeb() {
   connect.server({ root: 'public/', port: 5000, livereload: true });
-  gulp.watch('public/').on('change', (path) =>
+  gulp.watch('public/', { delay: 500 }).on('change', (path) =>
     gulp.src(path, { read: false }).pipe(connect.reload())
   );
 }
