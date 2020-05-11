@@ -38,7 +38,7 @@ async function buildJS() {
   return bundle.write({
     file: 'juniorguru/web/static/bundle.js',
     format: 'iife',
-    sourceMap: isLocalDevelopment,
+    sourcemap: isLocalDevelopment,
   });
 }
 
