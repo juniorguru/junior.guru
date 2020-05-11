@@ -39,6 +39,12 @@
       <summary>Description</summary>
       <textarea rows="20" cols="100" style="width: 90%;">{{ job.item.description_raw }}</textarea>
     </details>
+    {% if job.item.sections %}
+    <details style="margin: 1rem 0;">
+      <summary>Sections</summary>
+      <pre>{{ job.item.sections|pprint }}</pre>
+    </details>
+    {% endif %}
     <details style="margin: 1rem 0;">
       <summary>Data</summary>
       <pre>{{ job|pprint }}</pre>
