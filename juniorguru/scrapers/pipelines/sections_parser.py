@@ -4,6 +4,21 @@ from lxml import html
 from w3lib.html import remove_tags
 
 
+class TextFragment():
+    def __init__(self, content):
+        self.content = content
+
+    def __str__(self):
+        return self.content
+
+    def __repr__(self):
+        if len(self.content) < 10:
+            content = self.content
+        else:
+            content = self.content[:10] + '…'
+        return f"<sections_parser.TextFragment({repr(content)})>"
+
+
 class BaseSection():
     def __init__(self, heading, contents):
         assert self.type, f"{self.__class__.__name__} doesn't have type set"
