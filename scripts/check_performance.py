@@ -1,5 +1,4 @@
 import json
-import os
 import shutil
 import sys
 from multiprocessing import Pool, cpu_count
@@ -66,9 +65,8 @@ def check_url(url):
 shutil.rmtree(LIGHTHOUSE_DIR, ignore_errors=True)
 LIGHTHOUSE_DIR.mkdir(parents=True)
 
-print('Cores:', cpu_count())
-map_ = Pool(2).map if os.getenv('CI') else Pool().map
-checks = list(map_(check_url, get_urls(PUBLIC_DIR)))
+pool_size = min(cpu_count(), 4)  # CircleCI declares 2, but detection reads 36
+checks = Pool(pool_size).map(check_url, get_urls(PUBLIC_DIR))
 print('')
 
 failing = 0
