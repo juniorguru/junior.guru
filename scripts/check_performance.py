@@ -1,4 +1,5 @@
 import json
+import os
 import shutil
 import sys
 from multiprocessing import Pool
@@ -64,7 +65,9 @@ def check_url(url):
 
 shutil.rmtree(LIGHTHOUSE_DIR, ignore_errors=True)
 LIGHTHOUSE_DIR.mkdir(parents=True)
-checks = Pool().map(check_url, get_urls(PUBLIC_DIR))
+
+map_ = map if os.getenv('CI') else Pool().map
+checks = list(map_(check_url, get_urls(PUBLIC_DIR)))
 print('')
 
 failing = 0
