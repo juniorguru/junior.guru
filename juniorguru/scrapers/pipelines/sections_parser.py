@@ -61,9 +61,11 @@ class Pipeline():
 
     def process_item(self, item, spider):
         html_tree = html.fromstring(item['description_raw'])
-        sections = [self.parse_list_el(list_el)
-                    for list_el in html_tree.cssselect('ul, ol')]
-        sections += list(self.parse_textual_lists(html_tree))
+        html_list_sections = [self.parse_list_el(list_el)
+                              for list_el in html_tree.cssselect('ul, ol')]
+        text = self.remove_html_tags(html_tree)
+
+        sections = html_list_sections + list(self.parse_textual_lists(text))
         item['sections'] = [section.to_dict() for section in sections]
         return item
 
@@ -97,7 +99,7 @@ class Pipeline():
 
         return ListSection(heading, list_items)
 
-    def parse_textual_lists(self, el):
+    def remove_html_tags(self, el):
         # iterate over all elements which visually imply newline when rendered
         # in the browser and add the newline explicitly to their tail
         for newline_el in el.cssselect(', '.join(self.newline_element_names)):
@@ -105,14 +107,15 @@ class Pipeline():
             newline_el.tail = f'\n{tail_text}' if tail_text else '\n'
 
         # serialize the html tree and remove tags, but keep all whitespace
-        # as it was so we know where the visual newlines are, then split lines
+        # as it was so we know where the visual newlines are
         html_text = html.tostring(el, encoding=str)
         text = remove_tags(html_text)
-        text = self.nl_re.sub('\n', text.strip())
-        lines = [line.strip() for line in text.splitlines()]
+        return self.nl_re.sub('\n', text.strip())
 
+    def parse_textual_lists(self, text):
         # iterate over lines, detect bullet characters (line prefix), and
         # construct lists with headings
+        lines = [line.strip() for line in text.splitlines()]
         list_items = []
         previous_prefix = None
 
