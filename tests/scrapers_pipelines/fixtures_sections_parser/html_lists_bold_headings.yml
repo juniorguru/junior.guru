@@ -1,10 +1,20 @@
+- type: paragraph
+  contents:
+    - The Position
+    - The Ubiquiti Pilsen office is looking for a Full stack / front - or back-end developer who share our passion for innovation and technology and desire to do something extraordinary.
+    - This position will create innovative software for developing hardware and cooperate with our R&D labs from different countries around the globe.
+    - We expect you to bring your experience, enthusiasm and creativity wherever you go and put them in the work you do.
+    - You should be able to think out of the box when finding solutions to brand new problems and make things work when the solution is not straightforward.
+
 - heading: Responsibilities
-  bullets:
+  type: list
+  contents:
     - work with a team of other developers in agile environment
     - willingness to learn new things on a regular basis
 
 - heading: Knowledge And Experience
-  bullets:
+  type: list
+  contents:
     - extensive experience of coding in JavaScript (ES6)
     - experience of using React, Redux, AngularJS, Node.js, Serverless, Hapi, or other popular JavaScript frameworks
     - experience in using cloud hosting services (AWS, Heroku)
@@ -12,7 +22,8 @@
     - knowledge of Linux/Unix
 
 - heading: Benefits
-  bullets:
+  type: list
+  contents:
     - kitchen packed with food/snacks including a loaded ice cream freezer
     - free lunches (yes, there IS such a thing)
     - flexible working hours
@@ -24,3 +35,7 @@
     - newest web technologies, agile environment, rapid prototyping and experimenting with HW prototypes
     - comfortable office in quiet neighborhood with good parking
     - bunch of nerds and a mountains-moving assistant excited to work with you!
+
+- type: paragraph
+  contents:
+    - Powered by JazzHR

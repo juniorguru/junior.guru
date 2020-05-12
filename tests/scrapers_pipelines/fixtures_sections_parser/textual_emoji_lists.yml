@@ -1,17 +1,19 @@
-- heading: ''
-  bullets:
+- type: list
+  contents:
     - Práce ve vývoji webových aplikací z oblasti Business Intelligence
     - Využití celé řady moderních technologii (Angular, Typescript, NgRx)
 
 - heading: POŽADUJEME
-  bullets:
+  type: list
+  contents:
     - Chceš vyvíjet v Angularu
     - Máš zkušenosti s programováním frontendu v jazyce JavaScript (např. Angular, React, Vue…)
     - Zkušenosti s programováním v jazyce JAVA
     - Zvládneš komunikovat s okolím v angličtině
 
 - heading: NABÍZÍME
-  bullets:
+  type: list
+  contents:
     - 13. plat
     - 25 dní dovolené, dle délky pracovního poměru až 30 dní
     - Příspěvek na stravování ve formě stravenek

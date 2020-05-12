@@ -2,15 +2,16 @@ import json
 from pathlib import Path
 
 import pytest
-from strictyaml import Map, Seq, Str, Url, load
+from strictyaml import Enum, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.scrapers.pipelines.sections_parser import Pipeline
 
 
 schema = Seq(
     Map({
-        'heading': Str(),
-        'bullets': Seq(Str()),
+        Optional('heading'): Str(),
+        'type': Enum(['paragraph', 'list']),
+        'contents': Seq(Str()),
     })
 )
 

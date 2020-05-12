@@ -17,7 +17,7 @@ class Pipeline():
         'li', 'main', 'nav', 'ol', 'p', 'pre', 'section', 'table', 'ul',
     ]
     newline_element_names = block_element_names + ['br']
-    min_bullets = 2
+    min_list_items = 2
 
     def process_item(self, item, spider):
         html_tree = html.fromstring(item['description_raw'])
@@ -46,16 +46,16 @@ class Pipeline():
             el = el.getprevious()
         heading = heading or ''
 
-        # pronounce text content of all the list items to be bullets;
+        # pronounce text content of all the list items to be list items;
         # any tail texts are treated just as list items
-        bullets = []
+        list_items = []
         for li_el in list_el.cssselect('li'):
-            bullets.append(li_el.text_content().strip())
+            list_items.append(li_el.text_content().strip())
             tail_text = li_el.tail.strip() if li_el.tail else ''
             if tail_text:
-                bullets.append(tail_text)
+                list_items.append(tail_text)
 
-        return dict(heading=heading, bullets=bullets)
+        return ListSection(heading, list_items)
 
     def parse_textual_lists(self, el):
         # iterate over all elements which visually imply newline when rendered
@@ -73,7 +73,7 @@ class Pipeline():
 
         # iterate over lines, detect bullet characters (line prefix), and
         # construct lists with headings
-        bullets = []
+        list_items = []
         previous_prefix = None
 
         for i, line in enumerate(lines):
@@ -84,19 +84,30 @@ class Pipeline():
                 prefix, line_reminder = parts[0], ''
 
             if self.bullet_re.match(prefix) and prefix == previous_prefix:
-                bullets.append(line_reminder)
+                list_items.append(line_reminder)
             else:
-                bullets_count = len(bullets)
-                if bullets_count >= self.min_bullets:
-                    heading_i = i - bullets_count - 1
+                list_items_count = len(list_items)
+                if list_items_count >= self.min_list_items:
+                    heading_i = i - list_items_count - 1
                     heading = '' if heading_i < 0 else lines[heading_i]
-                    yield dict(heading=heading, bullets=bullets)
-                bullets = [line_reminder]
+                    yield ListSection(heading, list_items)
+                list_items = [line_reminder]
 
             previous_prefix = prefix
 
-        bullets_count = len(bullets)
-        if bullets_count >= self.min_bullets:
-            heading_i = len(lines) - bullets_count - 1
+        list_items_count = len(list_items)
+        if list_items_count >= self.min_list_items:
+            heading_i = len(lines) - list_items_count - 1
             heading = '' if heading_i < 0 else lines[heading_i]
-            yield dict(heading=heading, bullets=bullets)
+            yield ListSection(heading, list_items)
+
+
+def ParagraphSection(sentences):
+    return dict(type='paragraph', contents=list(sentences))
+
+
+def ListSection(heading, list_items):
+    section = dict(type='list', contents=list(list_items))
+    if heading:
+        section['heading'] = heading
+    return section
