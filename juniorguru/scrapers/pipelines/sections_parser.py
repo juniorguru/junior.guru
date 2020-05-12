@@ -4,6 +4,31 @@ from lxml import html
 from w3lib.html import remove_tags
 
 
+class BaseSection():
+    def __init__(self, heading, contents):
+        assert self.type, f"{self.__class__.__name__} doesn't have type set"
+        assert isinstance(heading, str), 'Heading must be string'
+        self.heading = heading
+        self.contents = list(contents)
+
+    def __repr__(self):
+        return f"<sections_parser.{self.__class__.__name__}(heading={repr(self.heading)})>"
+
+    def to_dict(self):
+        data = dict(type=self.type, contents=self.contents)
+        if self.heading:
+            data['heading'] = self.heading
+        return data
+
+
+class ParagraphSection(BaseSection):
+    type = 'paragraph'
+
+
+class ListSection(BaseSection):
+    type = 'list'
+
+
 class Pipeline():
     bullet_re = re.compile(r'^(\W{1,2})$')
     nl_re = re.compile(r'[\n\r]+')
@@ -24,7 +49,7 @@ class Pipeline():
         sections = [self.parse_list_el(list_el)
                     for list_el in html_tree.cssselect('ul, ol')]
         sections += list(self.parse_textual_lists(html_tree))
-        item['sections'] = sections
+        item['sections'] = [section.to_dict() for section in sections]
         return item
 
     def parse_list_el(self, list_el):
@@ -100,14 +125,3 @@ class Pipeline():
             heading_i = len(lines) - list_items_count - 1
             heading = '' if heading_i < 0 else lines[heading_i]
             yield ListSection(heading, list_items)
-
-
-def ParagraphSection(sentences):
-    return dict(type='paragraph', contents=list(sentences))
-
-
-def ListSection(heading, list_items):
-    section = dict(type='list', contents=list(list_items))
-    if heading:
-        section['heading'] = heading
-    return section
