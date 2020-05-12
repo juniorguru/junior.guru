@@ -150,9 +150,6 @@ workflows:
                 - master
           requires:
             - fetch-build
-      - check-performance:
-          requires:
-            - deploy
 
   nightly_workflow:
     jobs:
