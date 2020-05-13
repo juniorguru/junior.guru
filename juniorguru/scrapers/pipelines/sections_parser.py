@@ -1,7 +1,10 @@
 import re
+import sys
 
 from lxml import html
 
+
+DEBUG = 'pytest' in sys.modules
 
 # https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements
 BLOCK_ELEMENT_NAMES = [
@@ -139,26 +142,28 @@ def parse_sections(description_raw):
     html_tree = html.fromstring(description_raw)
     html_list_sections = [parse_html_list(list_el) for list_el
                           in html_tree.cssselect('ul, ol')]
+    debug_iter('HTML_LIST_SECTIONS', html_list_sections)
 
     # identify text fragments before, between, and after the lists we've
     # been able to parse, get a list of tokens as they go one after another
     text = remove_html_tags(html_tree)
     tokens = split_by_sections(TextFragment(text), html_list_sections)
-    tokens = list(tokens); print('1', tokens)
+    tokens = debug_iter('TOKENS_AFTER_HTML_LISTS', tokens)
 
     # identify textual lists in each text fragment and get a list
     # of tokens as they go one after another
     def split_by_textual_list_sections(text_fragment):
-        textual_list_sections = parse_textual_lists(text_fragment.content)
-        textual_list_sections = list(textual_list_sections); print('split_by_textual_list_sections', repr(text_fragment), textual_list_sections)
-        return split_by_sections(text_fragment, textual_list_sections)
+        sections = parse_textual_lists(text_fragment.content)
+        debug('split_by_textual_list_sections() TEXT_FRAGMENT', repr(text_fragment))
+        sections = debug_iter('split_by_textual_list_sections() SECTIONS', sections)
+        return split_by_sections(text_fragment, sections)
 
     tokens = process_text_fragments(tokens, split_by_textual_list_sections)
-    tokens = list(tokens); print('2', tokens)
+    tokens = debug_iter('TOKENS_AFTER_TEXTUAL_LISTS', tokens)
 
     # turn the remaining text fragments into paragraphs
     tokens = process_text_fragments(tokens, to_paragraph_sections)
-    tokens = list(tokens); print('3', tokens)
+    tokens = debug_iter('TOKENS_AFTER_PARAGRAPHS', tokens)
     return tokens
 
 
@@ -279,7 +284,9 @@ def split_by_sections(text_fragment, sections):
             return split_by_section(text_fragment, section)
 
         tokens = process_text_fragments(tokens, split)
-        tokens = list(tokens); print('split_by_sections', repr(text_fragment), section, tokens)
+        debug('split_by_sections() TEXT_FRAGMENT', repr(text_fragment))
+        debug('split_by_sections() SECTION', section)
+        tokens = debug_iter('split_by_sections() TOKENS', tokens)
     return tokens
 
 
@@ -351,3 +358,15 @@ def shorten_text(text, max_chars=10):
     if len(text) < max_chars:
         return text
     return text[:10] + '…'
+
+
+def debug(label, *args):
+    if DEBUG:
+        print(label, *args, file=sys.stderr)
+
+
+def debug_iter(label, iterable):
+    if DEBUG:
+        iterable = list(iterable)
+        print(label, iterable, file=sys.stderr)
+    return iterable
