@@ -1,0 +1,26 @@
+- type: paragraph
+  contents:
+    - Job description
+    - Warhorse Studios is looking for programmers who do not necessarily have experience in professional game development but have the desire and drive to get involved in this field.
+    - We are open to applications from recent college graduates for a junior position, as well as experienced professionals in the field to become our new senior programmers.
+
+- heading: "Requirements:"
+  type: list
+  contents:
+    - Command of C/C++
+    - Knowledge of OOP
+    - Solid understanding of 3D mathematics
+    - Knowledge of MS Visual Studio (editor, debugger, profiler)
+
+- heading: "Nice to have:"
+  type: list
+  contents:
+    - Knowledge of the Xbox and/or PlayStation consoles
+    - Modern technical knowledge of rendering, audio or other areas applicable to video games
+    - Experience with scripting languages (preferably Lua)
+    - Completed multi-platform title
+
+- type: paragraph
+  contents:
+    - YOUR APPLICATION
+    - If this sounds like something you can do and want to do, shoot us a line along with your CV to jobs@example.com
