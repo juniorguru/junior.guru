@@ -1,0 +1,11 @@
+- heading: Požadavky
+  type: list
+  contents:
+    - VŠ/SŠ v oboru informačních technologií (příležitost i pro absolventy)
+    - Znalost programovacího jazyka (předně Java, Javascript, C++, C také C#, Python)
+
+- heading: Výhodou
+  type: list
+  contents:
+    - Rozvinutá schopnost algoritmizace a objektového návrhu
+    - Znalost OS Linux

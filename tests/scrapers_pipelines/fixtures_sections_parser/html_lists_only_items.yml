@@ -1,0 +1,32 @@
+- type: list
+  contents:
+    - net developer junior Náplň práce
+    - Vývoj webových aplikací v .NET a Javascriptu
+    - Podílení se na zajímavých dlouhodobých projektech
+    - Řešení problému ke spokojenosti zákazníka
+    - Zabývání se funkcionalitou produktu
+    - Spolupráce s vývojáři a dalšími odděleními
+
+- heading: Požadujeme
+  type: list
+  contents:
+    - Školní nebo komerční praxe v .NET
+    - Zkušenost se skriptovacím jazykem Javascript
+    - AJ minimálně na úrovni technické specifikace
+    - Schopnost stanovit priority a psát čitelný kód
+    - Znalost prostředí Typescript výhodou
+
+- heading: Nabízíme
+  type: list
+  contents:
+    - 13. mzda, 5 týdnů dovolené
+    - Příspěvky ve formě Cafeterie
+    - Jazykové a vzdělávací kurzy
+    - Velmi příjemné pracovní prostředí
+    - Možnost kariérního růstu
+    - Stravenky
+    - "Místo výkonu práce: Olomouc"
+
+- type: paragraph
+  contents:
+    - "Region: Olomoucký kraj"

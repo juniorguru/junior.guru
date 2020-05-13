@@ -1,0 +1,11 @@
+- heading: "These are the professional requirements and personal skills we are looking for:"
+  type: list
+  contents:
+    - Solid understanding of OOP principles
+    - Knowledge of HTML / CSS / Javascript
+    - "Ideally also:"
+    - Salesforce/comconfiguration and customization skills OR experience with .NET projects
+    - Apex OR C# Programming
+    - Experience with Unit Testing
+    - "Proficient in English, desirable: german"
+    - A teamplayer by heart
