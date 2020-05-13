@@ -21,7 +21,7 @@ BULLET_PATTERN = r'\W{1,2}'
 
 MULTIPLE_NEWLINES_RE = re.compile(r'\n{2,}')
 WHITESPACE_RE = re.compile(r'\s+')
-SENTENCE_END_RE = re.compile(r'([\?\.\!\:]+ |\n)')
+SENTENCE_END_RE = re.compile(r'([\?\.\!\:\;]+ |\n)')
 BULLET_RE = re.compile(r'^' + BULLET_PATTERN + r'$')
 
 
