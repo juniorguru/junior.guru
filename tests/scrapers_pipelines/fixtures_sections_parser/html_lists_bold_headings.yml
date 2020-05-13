@@ -21,6 +21,18 @@
     - knowledge of Git, Webpack and Babel
     - knowledge of Linux/Unix
 
+- type: paragraph
+  contents:
+    - Main Project
+    - UNMS is next-generation network management system for ISPs (Internet Service Providers).
+    - Current networks usually are both overly complicated and difficult to set up.
+    - You are required to possess extensive knowledge of network design and configuration of routers and switches.
+    - UNMS is here to simplify things, to empower almost anybody to start his own ISP business and to get Internet to 5 billion people still lacking it.
+    - As we speak UNMS is already used by more than 16.000 ISPs and it manages millions of devices world-wide.
+    - "More information and demo can be found on https://unms.com/."
+    - "Technologies used:"
+    - React, Node.js, PostgreSQL, Redis, RabbitMQ, Docker
+
 - heading: Benefits
   type: list
   contents:
