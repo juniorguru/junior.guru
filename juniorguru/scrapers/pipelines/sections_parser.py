@@ -7,7 +7,7 @@ from lxml import html
 DEBUG = 'pytest' in sys.modules
 
 # http://jkorpela.fi/chars/spaces.html
-SPACES_TRANSLATION_TABLE = str.maketrans({
+SPACE_TRANSLATION_TABLE = str.maketrans({
     '\u0020': ' ',  # SPACE
     '\u00a0': ' ',  # NO-BREAK SPACE
     '\u1680': '-',  # OGHAM SPACE MARK
@@ -161,7 +161,7 @@ class ListSection(BaseSection):
 
 
 def parse_sections(description_raw):
-    description_raw = normalize_space_chars(description_raw)
+    description_raw = normalize_space(description_raw)
 
     # detect HTML lists
     html_tree = html.fromstring(description_raw)
@@ -194,7 +194,7 @@ def parse_sections(description_raw):
 
 def parse_html_list(list_el):
     # Warning! Every time there's text extraction from HTML nodes, the text
-    # must go through normalize_space_chars(). The extraction decodes entities
+    # must go through normalize_space(). The extraction decodes entities
     # to unicode chars, which means the text might contain funky space chars.
 
     # get first textual node (either tail or text content) before the list
@@ -202,12 +202,12 @@ def parse_html_list(list_el):
     heading = None
     el = list_el.getprevious()
     while el is not None:
-        tail_text = normalize_space_chars(el.tail.strip() if el.tail else '')
+        tail_text = normalize_space(el.tail if el.tail else '')
         if tail_text:
             heading = tail_text
             break
 
-        text = normalize_space_chars(el.text_content()).strip()
+        text = normalize_space(el.text_content())
         if text:
             heading = text
             break
@@ -219,8 +219,8 @@ def parse_html_list(list_el):
     # any tail texts are treated just as list items
     list_items = []
     for li_el in list_el.cssselect('li'):
-        list_items.append(normalize_space_chars(li_el.text_content()).strip())
-        tail_text = normalize_space_chars(li_el.tail.strip()) if li_el.tail else ''
+        list_items.append(normalize_space(li_el.text_content()))
+        tail_text = normalize_space(li_el.tail) if li_el.tail else ''
         if tail_text:
             list_items.append(tail_text)
 
@@ -285,7 +285,7 @@ def remove_html_tags(el):
     # as it was so we know where the visual line breaks are
     #
     # normalize space characters, because now HTML entities got decoded
-    text = normalize_space_chars(el.text_content())
+    text = normalize_space(el.text_content())
 
     # split the text into blocks at the places of the visual line breaks,
     # and normalize any other white space as single space characters
@@ -388,8 +388,8 @@ def split_sentences(text):
     return [s for s in sentences if s]
 
 
-def normalize_space_chars(text):
-    return text.translate(SPACES_TRANSLATION_TABLE)
+def normalize_space(text):
+    return text.translate(SPACE_TRANSLATION_TABLE).strip()
 
 
 def shorten_text(text, max_chars=10):
