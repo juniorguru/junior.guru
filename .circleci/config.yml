@@ -4,7 +4,7 @@ version: 2.1
 executors:
   python-js:
     docker:
-      - image: circleci/python:3.8-node-browsers
+      - image: circleci/python:3.7-node-browsers
     working_directory: ~/project
 
 
