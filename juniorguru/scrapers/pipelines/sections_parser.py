@@ -203,19 +203,26 @@ def parse_html_list(list_el):
     # get first textual node (either tail or text content) before the list
     # and pronounce it to be the list header
     heading = None
-    el = list_el.getprevious()
-    while el is not None:
-        tail_text = normalize_space(el.tail if el.tail else '')
-        if tail_text:
-            heading = tail_text
-            break
+    for el in list_el.itersiblings(preceding=True):
+        if el.tail:
+            tail_text = normalize_space(el.tail)
+            if tail_text:
+                heading = tail_text
+                break
 
         text = extract_text(el).split('\n')[-1]
         if text:
             heading = text
             break
 
-        el = el.getprevious()
+    if not heading:
+        for el in list_el.iterancestors():
+            if el.text:
+                text = normalize_space(el.text)
+                if text:
+                    heading = text
+                    break
+
     heading = heading or ''
 
     # pronounce text content of all the list items to be list items;
