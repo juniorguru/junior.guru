@@ -202,7 +202,7 @@ def test_split_sentences():
     ]
 
 
-def test_remove_html_tags():
+def test_extract_text():
     el = html.fromstring(dedent('''
         Fronted developer JavaScript, HTML – Praha 3 – HPP/IČO<br>Hledáme
         nového frontend developera.<br><br><strong><u>Co Bys u Nás
@@ -214,7 +214,7 @@ def test_remove_html_tags():
         Požadujeme:Co od tebe očekáváme:<br>
     ''').strip())
 
-    assert sections_parser.remove_html_tags(el) == (
+    assert sections_parser.extract_text(el) == (
         'Fronted developer JavaScript, HTML – Praha 3 – HPP/IČO\n'
         'Hledáme nového frontend developera.\n'
         'Co Bys u Nás Dělal(a)\n'
@@ -222,3 +222,72 @@ def test_remove_html_tags():
         'Dále se rozvíjet a vzdělávat v rámci pozice.\n'
         'Požadujeme:Co od tebe očekáváme:'
     )
+
+
+def test_fix_orphan_html_list_items():
+    el = html.fromstring('''
+        <div>Requirements:
+        <li><strong>PHP</strong></li>
+        <li style="color: red">Java</li>
+        <li>Python</li>
+        Contact us at company@example.com</div>
+    '''.strip())
+    el = sections_parser.fix_orphan_html_list_items(el)
+
+    assert html.tostring(el, encoding=str) == '''
+        <div>Requirements:
+        <ul><li><strong>PHP</strong></li>
+        <li style="color: red">Java</li>
+        <li>Python</li></ul>
+        Contact us at company@example.com</div>
+    '''.strip()
+
+
+def test_flatten_nested_html_lists():
+    el = html.fromstring('''
+        <div>Requirements:
+        <ul>
+            <li><strong>PHP</strong></li>
+            <li style="color: red">
+                Java, also:
+                <li>Python</li>
+                <li>C#</li>!</li>
+            <li>HTML</li>
+        </ul>
+        Contact us at company@example.com</div>
+    '''.strip())
+    el = sections_parser.flatten_nested_html_lists(el)
+
+    assert html.tostring(el, encoding=str) == '''
+        <div>Requirements:
+        <ul>
+            <li><strong>PHP</strong></li>
+            <li style="color: red">
+                Java, also:
+                </li><li>Python</li>
+                <li>C#</li>!
+            <li>HTML</li>
+        </ul>
+        Contact us at company@example.com</div>
+    '''.strip()
+
+
+def test_fix_disconnected_html_lists():
+    el = html.fromstring('''
+        <div>Requirements:
+        <ul><li><strong>PHP</strong></li>
+        <li style="color: red">Java</li></ul>
+        <ul><li>Python</li></ul>
+        <ul><li>C#</li></ul>
+        Contact us at company@example.com
+        <ul><li>Free food!</li></ul></div>
+    '''.strip())
+    el = sections_parser.fix_disconnected_html_lists(el)
+
+    assert html.tostring(el, encoding=str) == '''
+        <div>Requirements:
+        <ul><li><strong>PHP</strong></li>
+        <li style="color: red">Java</li><li>Python</li><li>C#</li></ul>
+        Contact us at company@example.com
+        <ul><li>Free food!</li></ul></div>
+    '''.strip()

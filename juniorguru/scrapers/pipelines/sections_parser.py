@@ -1,5 +1,6 @@
 import re
 import sys
+from itertools import takewhile
 
 from lxml import html
 
@@ -42,16 +43,6 @@ NEWLINE_ELEMENT_NAMES = BLOCK_ELEMENT_NAMES + ['br']
 BULLET_PATTERN = r'\W{1,2}'
 TEXTUAL_LIST_MIN_LIST_ITEMS = 2
 
-HTML_LIST_TAG_RE = re.compile(r'''
-    <                       # HTML tag begin
-        \s*                 # any whitespace, just to be sure
-        (?P<closing>/)?     # slash indicating whether the tag is closing
-        \s*                 # any whitespace, just to be sure
-        (?P<name>ul|ol|li)  # tag name
-        (\s+[^>]+)?         # the rest of the tag
-    >                       # HTML tag end
-    (?P<tail>[^<]+)         # tag "tail", anything until the next <
-''', re.VERBOSE)
 MULTIPLE_NEWLINES_RE = re.compile(r'\n{2,}')
 WHITESPACE_RE = re.compile(r'\s+')
 SENTENCE_END_RE = re.compile(r'([\?\.\!\:\;…]+ |\.\.\. |\n)')
@@ -175,13 +166,19 @@ def parse_sections(description_raw):
 
     # detect HTML lists
     html_tree = html.fromstring(description_raw)
+    debug_el(f'HTML_FROMSTRING', html_tree)
+    for preprocess in [fix_orphan_html_list_items,
+                       fix_disconnected_html_lists,
+                       flatten_nested_html_lists]:
+        html_tree = preprocess(html_tree)
+        debug_el(f'PREPROCESS {preprocess.__name__.upper()}', html_tree)
     html_list_sections = [parse_html_list(list_el) for list_el
                           in html_tree.cssselect('ul, ol')]
     debug_iter('HTML_LIST_SECTIONS', html_list_sections)
 
     # identify text fragments before, between, and after the lists we've
     # been able to parse, get a list of tokens as they go one after another
-    text = remove_html_tags(html_tree)
+    text = extract_text(html_tree)
     tokens = split_by_sections(TextFragment(text), html_list_sections)
     tokens = debug_iter('TOKENS_AFTER_HTML_LISTS', tokens)
 
@@ -203,10 +200,6 @@ def parse_sections(description_raw):
 
 
 def parse_html_list(list_el):
-    # Warning! Every time there's text extraction from HTML nodes, the text
-    # must go through normalize_space(). The extraction decodes entities
-    # to unicode chars, which means the text might contain funky space chars.
-
     # get first textual node (either tail or text content) before the list
     # and pronounce it to be the list header
     heading = None
@@ -217,7 +210,7 @@ def parse_html_list(list_el):
             heading = tail_text
             break
 
-        text = normalize_space(el.text_content())
+        text = extract_text(el).split('\n')[-1]
         if text:
             heading = text
             break
@@ -229,7 +222,7 @@ def parse_html_list(list_el):
     # any tail texts are treated just as list items
     list_items = []
     for li_el in list_el.cssselect('li'):
-        list_items.append(normalize_space(li_el.text_content()))
+        list_items.extend(extract_text(li_el).split('\n'))
         tail_text = normalize_space(li_el.tail) if li_el.tail else ''
         if tail_text:
             list_items.append(tail_text)
@@ -270,11 +263,96 @@ def parse_textual_lists(text):
         yield ListSection(heading, list_items)
 
 
+# HTML pre-processors. They fix ugly HTML soap before any parsing happens.
+
+
+def fix_orphan_html_list_items(el):
+    while True:
+        try:
+            li_el = el.xpath('//li[not(parent::ul) and not(parent::ol)]')[0]
+        except IndexError:
+            break
+        else:
+            parent_el = li_el.getparent()
+            i = parent_el.index(li_el)  # index of the first <li>
+
+            # prepare new children, the first <li> and all subsequent <li>
+            # siblings (anything else than <li> is a stopper)
+            children_els = [li_el]
+            children_els += list(takewhile(is_li_element,
+                                           li_el.itersiblings()))
+
+            # move <li> elements from the parent to the new <ul>
+            ul_el = html.Element('ul')
+            for child_el in children_els:
+                ul_el.append(child_el)
+
+            # move tail text from the last <li> to the new <ul>
+            ul_el.tail = children_els[-1].tail
+            children_els[-1].tail = None
+
+            # put the <ul> at the same index where the first <li> was
+            parent_el.insert(i, ul_el)
+    return el
+
+
+def is_li_element(el):
+    return el.tag == 'li'
+
+
+def fix_disconnected_html_lists(el):
+    while True:
+        stop = True
+        for ul_li in el.xpath('//ul'):
+            tail = (ul_li.tail or '').strip()
+            next_el = ul_li.getnext()
+            if not tail and next_el is not None and next_el.tag == 'ul':
+                stop = False
+
+                # move all children from the next <ul> to the current
+                for child_el in next_el.getchildren():
+                    ul_li.append(child_el)
+
+                # move tail from the next <ul> to the current one
+                ul_li.tail = next_el.tail
+
+                # remove the next <ul>
+                next_el.getparent().remove(next_el)
+        if stop:
+            break
+    return el
+
+
+def flatten_nested_html_lists(el):
+    while True:
+        try:
+            inner_li_el = el.xpath('//li//li')[0]
+        except IndexError:
+            break
+        else:
+            inner_list_el = inner_li_el.getparent()
+            inner_els = [inner_li_el] + list(inner_li_el.itersiblings())
+            outter_li_el = next(inner_li_el.iterancestors(tag='li'))
+
+            # move elements from the inner list to the outter
+            last_el = outter_li_el
+            for inner_el in inner_els:
+                last_el.addnext(inner_el)
+                last_el = inner_el
+
+            # move tail text from the inner list to the last flattened <li>
+            last_el.tail = inner_list_el.tail
+
+            # clean up the inner container list
+            inner_list_el.getparent().remove(inner_list_el)
+    return el
+
+
 # Helper functions! These do not carry the weight of parsing algorithms,
 # they're the supporting crew.
 
 
-def remove_html_tags(el):
+def extract_text(el):
     """
     Removes HTML tags from given HTML node, normalizes whitespace with
     respect to how the HTML would been perceived if rendered, and returns text
@@ -297,46 +375,9 @@ def remove_html_tags(el):
     # normalize space characters, because now HTML entities got decoded
     text = normalize_space(el.text_content())
 
-    # split the text into blocks at the places of the visual line breaks,
-    # and normalize any other white space as single space characters
-    text_blocks = (WHITESPACE_RE.sub(' ', tb).strip() for tb
-                   in MULTIPLE_NEWLINES_RE.split(text))
-
-    # return all non-empty text blocks separated by a single new line
-    return '\n'.join(tb for tb in text_blocks if tb)
-
-
-def fix_broken_html_lists(html_text):
-    current_list = None
-
-    # def repl(match):
-    #     tag, name = match.group(0, 'name')
-    #     begin = not match.group('closing')
-    #     tail = (match.group('tail') or '').strip()
-
-    #     if name in ('ul', 'ol'):
-    #         if begin:
-    #             current_list = name
-    #         else:
-
-    #     elif name == 'li':
-    #         if not current_list:
-    #             return '<ul>' + tag
-    #     else:
-    #         raise RuntimeError(f'Unexpected tag name: {name}')  # never happens
-    #     return tag
-
-    #     if name in ('ul', 'ol'):
-    #         current_list = name
-    #     #     if current_list == name:
-    #     elif name == 'li':
-    #         if not current_list:
-
-    return HTML_LIST_TAG_RE.sub(repl, html_text)
-
-
-def is_html_list_tag(tag_name):
-    return tag_name in ('ul', 'ol')
+    # turn the visual line breaks into new line characters, turn any
+    # other space characters into a single space character
+    return '\n'.join(split_blocks(text))
 
 
 def is_text_fragment(token):
@@ -418,17 +459,25 @@ def to_paragraph_sections(text_fragment):
     yield ParagraphSection('', split_sentences(text_fragment.content))
 
 
+def split_blocks(text):
+    """
+    Split the text into blocks at the places of visual line breaks,
+    and normalize any other white space chars as single space chars
+    """
+    blocks = (WHITESPACE_RE.sub(' ', block).strip()
+              for block in MULTIPLE_NEWLINES_RE.split(text))
+    return [block for block in blocks if block]
+
+
 def split_sentences(text):
     """
     Splits given text into "sentences"
 
     The sentences are just approximate, there is no guarantee on correctness
     and there is no rocket science. The input text is assumed to have
-    the guarantees provided by the remove_html_tags() function.
+    the guarantees provided by the extract_text() function.
     """
-    text = SENTENCE_END_RE.sub(r'\1\n\n', text)
-    sentences = (s.strip() for s in MULTIPLE_NEWLINES_RE.split(text))
-    return [s for s in sentences if s]
+    return split_blocks(SENTENCE_END_RE.sub(r'\1\n\n', text))
 
 
 def normalize_space(text):
@@ -444,6 +493,11 @@ def shorten_text(text, max_chars=10):
 def debug(label, *args):
     if DEBUG:
         print(label, *args, file=sys.stderr)
+
+
+def debug_el(label, el):
+    if DEBUG:
+        print(label, repr(html.tostring(el, encoding=str)), file=sys.stderr)
 
 
 def debug_iter(label, iterable):

@@ -1,6 +1,7 @@
 - type: list
   contents:
-    - net developer junior Náplň práce
+    - net developer junior
+    - Náplň práce
     - Vývoj webových aplikací v .NET a Javascriptu
     - Podílení se na zajímavých dlouhodobých projektech
     - Řešení problému ke spokojenosti zákazníka
@@ -29,4 +30,5 @@
 
 - type: paragraph
   contents:
-    - "Region: Olomoucký kraj"
+    - "Region:"
+    - Olomoucký kraj
