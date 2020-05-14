@@ -39,7 +39,7 @@ def retry_when_db_locked(method):
         kwargs.pop('signal')
         kwargs.pop('sender')
         last_error = None
-        for i in range(3):
+        for i in range(5):
             try:
                 return method(ext, *args, **kwargs)
             except OperationalError as error:
