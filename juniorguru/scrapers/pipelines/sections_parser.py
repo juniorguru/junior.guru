@@ -1,3 +1,4 @@
+import os
 import re
 import sys
 from itertools import takewhile
@@ -5,7 +6,7 @@ from itertools import takewhile
 from lxml import html
 
 
-DEBUG = 'pytest' in sys.modules
+DEBUG = bool(os.getenv('DEBUG_SECTIONS_PARSER'))
 
 # http://jkorpela.fi/chars/spaces.html
 SPACE_TRANSLATION_TABLE = str.maketrans({
@@ -437,10 +438,10 @@ def split_by_sections(text_fragment, sections):
         def split(text_fragment):
             return split_by_section(text_fragment, section)
 
-        tokens = process_text_fragments(tokens, split)
+        tokens = list(process_text_fragments(tokens, split))
         debug('split_by_sections() TEXT_FRAGMENT', repr(text_fragment))
         debug('split_by_sections() SECTION', section)
-        tokens = debug_iter('split_by_sections() TOKENS', tokens)
+        debug_iter('split_by_sections() TOKENS', tokens)
     return tokens
 
 
