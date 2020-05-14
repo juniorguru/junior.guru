@@ -42,6 +42,16 @@ NEWLINE_ELEMENT_NAMES = BLOCK_ELEMENT_NAMES + ['br']
 BULLET_PATTERN = r'\W{1,2}'
 TEXTUAL_LIST_MIN_LIST_ITEMS = 2
 
+HTML_LIST_TAG_RE = re.compile(r'''
+    <                       # HTML tag begin
+        \s*                 # any whitespace, just to be sure
+        (?P<closing>/)?     # slash indicating whether the tag is closing
+        \s*                 # any whitespace, just to be sure
+        (?P<name>ul|ol|li)  # tag name
+        (\s+[^>]+)?         # the rest of the tag
+    >                       # HTML tag end
+    (?P<tail>[^<]+)         # tag "tail", anything until the next <
+''', re.VERBOSE)
 MULTIPLE_NEWLINES_RE = re.compile(r'\n{2,}')
 WHITESPACE_RE = re.compile(r'\s+')
 SENTENCE_END_RE = re.compile(r'([\?\.\!\:\;…]+ |\.\.\. |\n)')
@@ -294,6 +304,39 @@ def remove_html_tags(el):
 
     # return all non-empty text blocks separated by a single new line
     return '\n'.join(tb for tb in text_blocks if tb)
+
+
+def fix_broken_html_lists(html_text):
+    current_list = None
+
+    # def repl(match):
+    #     tag, name = match.group(0, 'name')
+    #     begin = not match.group('closing')
+    #     tail = (match.group('tail') or '').strip()
+
+    #     if name in ('ul', 'ol'):
+    #         if begin:
+    #             current_list = name
+    #         else:
+
+    #     elif name == 'li':
+    #         if not current_list:
+    #             return '<ul>' + tag
+    #     else:
+    #         raise RuntimeError(f'Unexpected tag name: {name}')  # never happens
+    #     return tag
+
+    #     if name in ('ul', 'ol'):
+    #         current_list = name
+    #     #     if current_list == name:
+    #     elif name == 'li':
+    #         if not current_list:
+
+    return HTML_LIST_TAG_RE.sub(repl, html_text)
+
+
+def is_html_list_tag(tag_name):
+    return tag_name in ('ul', 'ol')
 
 
 def is_text_fragment(token):
