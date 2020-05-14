@@ -41,7 +41,7 @@ BLOCK_ELEMENT_NAMES = [
 NEWLINE_ELEMENT_NAMES = BLOCK_ELEMENT_NAMES + ['br']
 
 BULLET_PATTERN = r'\W{1,2}'
-TEXTUAL_LIST_MIN_LIST_ITEMS = 2
+MIN_LIST_ITEMS = 2
 
 MULTIPLE_NEWLINES_RE = re.compile(r'\n{2,}')
 WHITESPACE_RE = re.compile(r'\s+')
@@ -164,22 +164,22 @@ class ListSection(BaseSection):
 def parse_sections(description_raw):
     description_raw = normalize_space(description_raw)
 
-    # detect HTML lists
+    # parse HTML and pre-process it to clean up ugly cases
     html_tree = html.fromstring(description_raw)
-    debug_el(f'HTML_FROMSTRING', html_tree)
     for preprocess in [fix_orphan_html_list_items,
                        fix_disconnected_html_lists,
                        flatten_nested_html_lists]:
         html_tree = preprocess(html_tree)
         debug_el(f'PREPROCESS {preprocess.__name__.upper()}', html_tree)
-    html_list_sections = [parse_html_list(list_el) for list_el
-                          in html_tree.cssselect('ul, ol')]
-    debug_iter('HTML_LIST_SECTIONS', html_list_sections)
+
+    # identify HTML lists
+    sections = parse_html_lists(html_tree)
+    sections = debug_iter('HTML_LIST_SECTIONS', sections)
 
     # identify text fragments before, between, and after the lists we've
     # been able to parse, get a list of tokens as they go one after another
     text = extract_text(html_tree)
-    tokens = split_by_sections(TextFragment(text), html_list_sections)
+    tokens = split_by_sections(TextFragment(text), sections)
     tokens = debug_iter('TOKENS_AFTER_HTML_LISTS', tokens)
 
     # identify textual lists in each text fragment and get a list
@@ -193,45 +193,55 @@ def parse_sections(description_raw):
     tokens = process_text_fragments(tokens, split_by_textual_list_sections)
     tokens = debug_iter('TOKENS_AFTER_TEXTUAL_LISTS', tokens)
 
+    # if still no sections found, try the bold/newline parser as last resort
+    tokens = list(tokens)
+    if len(tokens) == 1:
+        token = tokens[0]
+        if is_text_fragment(token):
+            sections = parse_bold_nl_lists(html_tree, text)
+            tokens = split_by_sections(token, sections)
+            tokens = debug_iter('TOKENS_AFTER_BOLD_NL_LISTS', tokens)
+
     # turn the remaining text fragments into paragraphs
     tokens = process_text_fragments(tokens, to_paragraph_sections)
     tokens = debug_iter('TOKENS_AFTER_PARAGRAPHS', tokens)
     return tokens
 
 
-def parse_html_list(list_el):
-    # get first text before the list and pronounce it to be the list header
-    heading = None
-    for el in list_el.itersiblings(preceding=True):
-        if el.tail:
-            tail_text = normalize_space(el.tail)
-            if tail_text:
-                heading = tail_text
-                break
-
-        text = extract_text(el).split('\n')[-1]
-        if text:
-            heading = text
-            break
-    if not heading:
-        for el in list_el.iterancestors():
-            if el.text:
-                text = normalize_space(el.text)
-                if text:
-                    heading = text
+def parse_html_lists(el):
+    for list_el in el.cssselect('ul, ol'):
+        # get first text before the list and pronounce it to be the list header
+        heading = None
+        for sibling_el in list_el.itersiblings(preceding=True):
+            if sibling_el.tail:
+                tail_text = normalize_space(sibling_el.tail)
+                if tail_text:
+                    heading = tail_text
                     break
-    heading = heading or ''
 
-    # pronounce text content of all the list items to be list items;
-    # any tail texts are treated just as list items
-    list_items = []
-    for li_el in list_el.cssselect('li'):
-        list_items.extend(extract_text(li_el).split('\n'))
-        tail_text = normalize_space(li_el.tail) if li_el.tail else ''
-        if tail_text:
-            list_items.append(tail_text)
+            text = extract_text(sibling_el).split('\n')[-1]
+            if text:
+                heading = text
+                break
+        if not heading:
+            for ancestor_el in list_el.iterancestors():
+                if ancestor_el.text:
+                    text = normalize_space(ancestor_el.text)
+                    if text:
+                        heading = text
+                        break
+        heading = heading or ''
 
-    return ListSection(heading, list_items)
+        # pronounce text content of all the list items to be list items;
+        # any tail texts are treated just as list items
+        list_items = []
+        for li_el in list_el.cssselect('li'):
+            list_items.extend(extract_text(li_el).split('\n'))
+            tail_text = normalize_space(li_el.tail) if li_el.tail else ''
+            if tail_text:
+                list_items.append(tail_text)
+
+        yield ListSection(heading, list_items)
 
 
 def parse_textual_lists(text):
@@ -252,7 +262,7 @@ def parse_textual_lists(text):
             list_items.append(line_reminder)
         else:
             list_items_count = len(list_items)
-            if list_items_count >= TEXTUAL_LIST_MIN_LIST_ITEMS:
+            if list_items_count >= MIN_LIST_ITEMS:
                 heading_i = i - list_items_count - 1
                 heading = '' if heading_i < 0 else lines[heading_i]
                 yield ListSection(heading, list_items)
@@ -261,9 +271,29 @@ def parse_textual_lists(text):
         previous_prefix = prefix
 
     list_items_count = len(list_items)
-    if list_items_count >= TEXTUAL_LIST_MIN_LIST_ITEMS:
+    if list_items_count >= MIN_LIST_ITEMS:
         heading_i = len(lines) - list_items_count - 1
         heading = '' if heading_i < 0 else lines[heading_i]
+        yield ListSection(heading, list_items)
+
+
+def parse_bold_nl_lists(el, text):
+    headings = {extract_text(bold_el) for bold_el
+                in el.cssselect('strong, b, u')}
+
+    heading = None
+    list_items = []
+    for line in text.splitlines():
+        if line in headings:
+            if heading:
+                if len(list_items) >= MIN_LIST_ITEMS:
+                    yield ListSection(heading, list_items)
+                list_items = []
+            heading = line
+        elif heading:
+            list_items.append(line)
+
+    if len(list_items) >= MIN_LIST_ITEMS:
         yield ListSection(heading, list_items)
 
 
@@ -279,24 +309,29 @@ def fix_orphan_html_list_items(el):
         else:
             parent_el = li_el.getparent()
             i = parent_el.index(li_el)  # index of the first <li>
+            subsequent_li_els = list(takewhile(is_li_element,
+                                               li_el.itersiblings()))
+            if subsequent_li_els:
+                # prepare new children, the first <li> and all subsequent <li>
+                # siblings (anything else than <li> is a stopper)
+                children_els = [li_el] + subsequent_li_els
 
-            # prepare new children, the first <li> and all subsequent <li>
-            # siblings (anything else than <li> is a stopper)
-            children_els = [li_el]
-            children_els += list(takewhile(is_li_element,
-                                           li_el.itersiblings()))
+                # move <li> elements from the parent to the new <ul>
+                ul_el = html.Element('ul')
+                for child_el in children_els:
+                    ul_el.append(child_el)
 
-            # move <li> elements from the parent to the new <ul>
-            ul_el = html.Element('ul')
-            for child_el in children_els:
-                ul_el.append(child_el)
+                # move tail text from the last <li> to the new <ul>
+                ul_el.tail = children_els[-1].tail
+                children_els[-1].tail = None
 
-            # move tail text from the last <li> to the new <ul>
-            ul_el.tail = children_els[-1].tail
-            children_els[-1].tail = None
-
-            # put the <ul> at the same index where the first <li> was
-            parent_el.insert(i, ul_el)
+                # put the <ul> at the same index where the first <li> was
+                parent_el.insert(i, ul_el)
+            else:
+                # standalone <li> element, turn it into a <span> with <br>
+                br_el = html.Element('br')
+                li_el.addnext(br_el)
+                li_el.tag = 'span'
     return el
 
 

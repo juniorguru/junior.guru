@@ -243,6 +243,27 @@ def test_fix_orphan_html_list_items():
     '''.strip()
 
 
+def test_fix_orphan_html_list_items_remove_standalone_item():
+    el = html.fromstring('''
+        <div>Requirements:
+        <li><strong>PHP</strong></li>
+        Java<br>Python<br>
+        Contact us at company@example.com
+        <li>Java</li><li>Python</li>
+        </div>
+    '''.strip())
+    el = sections_parser.fix_orphan_html_list_items(el)
+
+    assert html.tostring(el, encoding=str) == '''
+        <div>Requirements:
+        <span><strong>PHP</strong></span><br>
+        Java<br>Python<br>
+        Contact us at company@example.com
+        <ul><li>Java</li><li>Python</li></ul>
+        </div>
+    '''.strip()
+
+
 def test_flatten_nested_html_lists():
     el = html.fromstring('''
         <div>Requirements:
