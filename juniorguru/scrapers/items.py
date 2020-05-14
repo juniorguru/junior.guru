@@ -47,4 +47,7 @@ def parse_relative_time(text, now=None):
     if 'day' in text:
         days_ago = int(re.search(r'\d+', text).group(0))
         return now - timedelta(days=days_ago)
+    if 'month' in text:
+        months_ago = int(re.search(r'\d+', text).group(0))
+        return now - timedelta(days=months_ago * 30)
     raise ValueError(text)

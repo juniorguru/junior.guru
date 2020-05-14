@@ -29,6 +29,8 @@ def test_split_by():
     # LinkedIn
     ('3 weeks ago', date(2020, 3, 30)),
     ('28 minutes ago', date(2020, 4, 20)),
+    ('1 month ago', date(2020, 3, 21)),
+    ('2 months ago', date(2020, 2, 20)),
 ])
 def test_parse_relative_time(time, expected):
     now = datetime(2020, 4, 20, 20, 1, 45)
