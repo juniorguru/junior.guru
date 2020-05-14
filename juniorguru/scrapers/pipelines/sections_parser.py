@@ -200,8 +200,7 @@ def parse_sections(description_raw):
 
 
 def parse_html_list(list_el):
-    # get first textual node (either tail or text content) before the list
-    # and pronounce it to be the list header
+    # get first text before the list and pronounce it to be the list header
     heading = None
     for el in list_el.itersiblings(preceding=True):
         if el.tail:
@@ -214,7 +213,6 @@ def parse_html_list(list_el):
         if text:
             heading = text
             break
-
     if not heading:
         for el in list_el.iterancestors():
             if el.text:
@@ -222,7 +220,6 @@ def parse_html_list(list_el):
                 if text:
                     heading = text
                     break
-
     heading = heading or ''
 
     # pronounce text content of all the list items to be list items;
