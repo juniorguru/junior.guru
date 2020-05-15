@@ -1,14 +1,15 @@
-import json
 from pathlib import Path
 from textwrap import dedent
 
 import pytest
 from lxml import html
-from strictyaml import Enum, Map, Optional, Seq, Str, Url, load
+from strictyaml import Enum, Map, Optional, Seq, Str, Url
 
 from juniorguru.scrapers.pipelines import sections_parser
 from juniorguru.scrapers.pipelines.sections_parser import (ListSection,
                                                            TextFragment)
+from utils import (load_yaml, param_startswith_skip,
+                   param_xfail_missing, startswith_skip)
 
 
 schema = Seq(
@@ -20,25 +21,24 @@ schema = Seq(
 )
 
 
-def generate_sections_parser_params(fixtures_dir):
-    for html_path in (Path(__file__).parent / fixtures_dir).rglob('*.html'):
-        yaml_path = html_path.with_suffix('.yml')
-        if yaml_path.is_file():
-            yaml = load(yaml_path.read_text(), schema)
-            # use json.loads/json.dumps to recursively convert all
-            # ordered dicts to dicts, which significantly improves readability
-            # of the pytest diff
-            expected = json.loads(json.dumps(yaml.data))
-            yield pytest.param(html_path.read_text(), expected,
-                               id=html_path.name)  # better readability
+def generate_params(fixtures_dirname):
+    for html_path in (Path(__file__).parent / fixtures_dirname).rglob('*.html'):
+        if startswith_skip(html_path):
+            yield param_startswith_skip(path)
         else:
-            yield pytest.param('', '',
-                               id=html_path.name,  # better readability
-                               marks=pytest.mark.skip)
+            yml_path = html_path.with_suffix('.yml')
+            if startswith_skip(yml_path):
+                yield param_startswith_skip(path)
+            elif yml_path.is_file():
+                yield pytest.param(html_path.read_text(),
+                                   load_yaml(yml_path.read_text(), schema),
+                                   id=html_path.name)  # better readability
+            else:
+                yield param_xfail_missing(path)
 
 
 @pytest.mark.parametrize('description_raw,expected',
-                         generate_sections_parser_params('fixtures_sections_parser'))
+                         generate_params('fixtures_sections_parser'))
 def test_sections_parser(item, spider, description_raw, expected):
     item['description_raw'] = description_raw
     item = sections_parser.Pipeline().process_item(item, spider)
