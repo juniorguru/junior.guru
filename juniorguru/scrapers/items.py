@@ -14,7 +14,7 @@ class Job(Item):
     description_raw = Field(required=True)
     lang = Field()
     sections = Field()
-    requirements = Field()
+    features = Field()
     employment_types = Field()
     experience_levels = Field()
 

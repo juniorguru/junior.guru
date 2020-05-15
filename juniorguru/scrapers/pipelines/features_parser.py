@@ -101,11 +101,11 @@ TYPICAL_REQUIREMENTS_CONTENTS = {
 
 class Pipeline():
     def process_item(self, item, spider):
-        item['requirements'] = list(parse_requirements(item['sections']))
+        item['features'] = list(parse_features(item['sections']))
         return item
 
 
-def parse_requirements(sections):
+def parse_features(sections):
     all_headers = {section['header'] for section in sections
                    if section.get('header')}
     for section in sections:
