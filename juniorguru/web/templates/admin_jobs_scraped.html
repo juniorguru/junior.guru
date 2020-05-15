@@ -40,9 +40,15 @@
       <pre>{{ job.item.features|pprint }}</pre>
     </details>
     <details>
+      <summary>Contents</summary>
+      <pre>{{ job.item.contents|pprint }}</pre>
+    </details>
+    {#
+    <details>
       <summary>Sections ({{ job.item.sections|length }})</summary>
       <pre>{{ job.item.sections|sections }}</pre>
     </details>
+    #}
     <details>
       <summary>Description</summary>
       <textarea rows="20" cols="100">{{ job.item.description_raw }}</textarea>
