@@ -17,16 +17,16 @@ def test_md():
 
 
 def test_md_heading_level_base():
-    markup = str(template_filters.md(dedent('''
-        # Heading 1
-        ## Heading 2
-        Paragraph text
-    '''), heading_level_base=4)).strip()
-    assert markup == dedent('''
-        <h4 id="heading-1">Heading 1</h4>
-        <h5 id="heading-2">Heading 2</h5>
-        <p>Paragraph text</p>
-    ''').strip()
+    markup = str(template_filters.md((
+        '# Heading 1\n'
+        '## Heading 2\n'
+        'Paragraph text\n'
+    ), heading_level_base=4))
+    assert markup == (
+        '<h4 id="heading-1">Heading 1</h4>\n'
+        '<h5 id="heading-2">Heading 2</h5>\n'
+        '<p>Paragraph text</p>'
+    )
 
 
 @pytest.mark.parametrize('requirement,expected', [
@@ -98,3 +98,83 @@ def test_to_datetime(dt_str, expected):
 def test_ago(dt, expected):
     now = datetime(2019, 12, 10, 16, 20, 42)
     assert template_filters.ago(dt, now=now) == expected
+
+
+@pytest.mark.parametrize('section,expected', [
+    pytest.param(
+        dict(heading='Offer', type='list', contents=['work', 'money']),
+        '\n'.join([
+            '- heading: Offer',
+            '  type: list',
+            '  contents:',
+            '    - work',
+            '    - money',
+        ]),
+        id='list',
+    ),
+    pytest.param(
+        dict(type='list', contents=['work', 'money']),
+        '\n'.join([
+            '- type: list',
+            '  contents:',
+            '    - work',
+            '    - money',
+        ]),
+        id='list_no_heading',
+    ),
+    pytest.param(
+        dict(type='paragraph', contents=['work', 'money']),
+        '\n'.join([
+            '- type: paragraph',
+            '  contents:',
+            '    - work',
+            '    - money',
+        ]),
+        id='paragraph',
+    ),
+    pytest.param(
+        dict(heading='We offer:', type='list', contents=['work', 'money']),
+        '\n'.join([
+            '- heading: "We offer:"',
+            '  type: list',
+            '  contents:',
+            '    - work',
+            '    - money',
+        ]),
+        id='colon_heading',
+    ),
+    pytest.param(
+        dict(type='list', contents=['work', 'must have: hands', 'money']),
+        '\n'.join([
+            '- type: list',
+            '  contents:',
+            '    - work',
+            '    - "must have: hands"',
+            '    - money',
+        ]),
+        id='colon_contents',
+    ),
+])
+def test_sections_paragraph(section, expected):
+    assert template_filters.sections([section]) == expected
+
+
+def test_sections_multiple():
+    sections = [
+        dict(heading='Offer', type='list', contents=['work', 'money']),
+        dict(heading='Must have', type='list', contents=['PHP', 'C#']),
+    ]
+
+    assert template_filters.sections(sections) == '\n'.join([
+        '- heading: Offer',
+        '  type: list',
+        '  contents:',
+        '    - work',
+        '    - money',
+        '',
+        '- heading: Must have',
+        '  type: list',
+        '  contents:',
+        '    - PHP',
+        '    - C#',
+    ])

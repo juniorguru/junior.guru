@@ -86,3 +86,23 @@ def ago(dt, now=None):
         return ('dnes', 'včera', 'předevčírem')[days]
     except IndexError:
         return f'před {days} dny'
+
+
+@app.template_filter()
+def sections(sections):
+    def yaml_str(s):
+        return f'"{s}"' if ':' in s else s
+
+    yaml = ''
+    for section in sections:
+        if section.get('heading'):
+            yaml += ('\n'
+                    f"- heading: {yaml_str(section['heading'])}\n"
+                    f"  type: {section['type']}\n")
+        else:
+            yaml += f"\n- type: {section['type']}\n"
+        yaml += '  contents:\n'
+        for item in section['contents']:
+            yaml += f'    - {yaml_str(item)}\n'
+    return yaml.strip()
+
