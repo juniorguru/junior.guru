@@ -8,7 +8,7 @@ class IrrelevantLanguage(DropItem):
 
 
 class Pipeline():
-    relevant_langs = ['cs', 'sk', 'en']
+    relevant_langs = ['cs', 'en']
 
     def process_item(self, item, spider):
         lang = langdetect.detect(remove_tags(item['description_raw']))
