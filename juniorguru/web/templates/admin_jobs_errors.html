@@ -20,11 +20,11 @@
         <a href="{{ url_for('admin_responses_backup', path=job_error.response_backup_path) }}" target="_blank">HTTP odpověď</a>
       </small>
     </p>
-    <details style="margin: 1rem 0;">
+    <details>
       <summary>Trace</summary>
       <pre>{{ job_error.trace }}</pre>
     </details>
-    <details style="margin: 1rem 0;">
+    <details>
       <summary>Data</summary>
       <pre>{{ job_error|pprint }}</pre>
     </details>

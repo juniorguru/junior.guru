@@ -43,9 +43,9 @@
           &mdash;
           {{ job_dropped.item.posted_at|to_datetime|ago }}
         </p>
-        <textarea rows="20" cols="100" style="width: 90%;">{{ job_dropped.item.description_raw }}</textarea>
+        <textarea rows="20" cols="100">{{ job_dropped.item.description_raw }}</textarea>
       {% endif %}
-      <details style="margin: 1rem 0;">
+      <details>
         <summary>Data</summary>
         <pre>{{ job_dropped|pprint }}</pre>
       </details>
