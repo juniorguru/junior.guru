@@ -479,6 +479,20 @@ Chceš se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro 
     <strong>{{ updated_at.to('Europe/Prague').day }}.&nbsp;{{ updated_at.to('Europe/Prague').month }}.</strong>
   </p>
   <ul class="list">
+    <li>
+      <a href="https://realpython.com/free-courses-march-2020">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/realpython.com.jpg') }}">
+        </div>
+        <h3>Free Real Python Courses</h3>
+        <ul class="list-labels">
+          <li><small>zdarma</small></li>
+        </ul>
+      </a>
+      <p>
+        Kód, který ti dá zdarma přístup do čtyř jinak placených kurzů.
+      </p>
+    </li>
     {% if updated_at.month <= 4 %}
     <li>
       <a href="https://www.pluralsight.com/offer/2020/free-april-month">
