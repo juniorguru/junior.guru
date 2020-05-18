@@ -23,8 +23,10 @@ class Pipeline():
 
 
 def item_to_job_id(item):
-    # TODO there can be 2 items with 1 link due to location duplication
-    return hashlib.sha224(item['link'].encode()).hexdigest()
+    return hashlib.sha224('⚡︎'.join([
+        item['link'],
+        item['location'],
+    ]).encode()).hexdigest()
 
 
 def prepare_job_data(item, spider_name):

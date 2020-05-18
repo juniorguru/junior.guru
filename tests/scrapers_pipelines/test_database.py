@@ -32,3 +32,15 @@ def test_database(item, spider, db):
     assert len(job.id) == 56  # sha224 hex digest length
     assert job.source == 'dummy'  # spider name
     assert job.is_approved is False
+
+
+def test_database_same_link_items(item, spider, db):
+    for location in ['Ostrava', 'Brno', 'Pardubice']:
+        item['location'] = location
+        Pipeline(db=db, model=Job).process_item(item, spider)
+    with db:
+        jobs = Job.select()
+
+    assert len(jobs) == 3
+    assert len({job.id for job in jobs}) == 3
+    assert len({job.location for job in jobs}) == 3
