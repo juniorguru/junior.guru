@@ -1,56 +1,18 @@
 import re
 
-from lxml import html
 
-
-# http://jkorpela.fi/chars/spaces.html
-SPACE_TRANSLATION_TABLE = str.maketrans({
-    '\u0020': ' ',  # SPACE
-    '\u00a0': ' ',  # NO-BREAK SPACE
-    '\u1680': '-',  # OGHAM SPACE MARK
-    '\u180e': ' ',  # MONGOLIAN VOWEL SEPARATOR
-    '\u2000': ' ',  # EN QUAD
-    '\u2001': ' ',  # EM QUAD
-    '\u2002': ' ',  # EN SPACE (nut)
-    '\u2003': ' ',  # EM SPACE (mutton)
-    '\u2004': ' ',  # THREE-PER-EM SPACE (thick space)
-    '\u2005': ' ',  # FOUR-PER-EM SPACE (mid space)
-    '\u2006': ' ',  # SIX-PER-EM SPACE
-    '\u2007': ' ',  # FIGURE SPACE
-    '\u2008': ' ',  # PUNCTUATION SPACE
-    '\u2009': ' ',  # THIN SPACE
-    '\u200a': ' ',  # HAIR SPACE
-    '\u200b': None,  # ZERO WIDTH SPACE
-    '\u202f': ' ',  # NARROW NO-BREAK SPACE
-    '\u205f': ' ',  # MEDIUM MATHEMATICAL SPACE
-    '\u3000': ' ',  # IDEOGRAPHIC SPACE
-    '\ufeff': None,  # ZERO WIDTH NO-BREAK SPACE
-})
-
-# https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements
-BLOCK_ELEMENT_NAMES = [
-    'address', 'article', 'aside', 'blockquote', 'details', 'dialog',
-    'dd', 'div', 'dl', 'dt', 'fieldset', 'figcaption', 'figure', 'footer',
-    'form', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'header', 'hgroup', 'hr',
-    'li', 'main', 'nav', 'ol', 'p', 'pre', 'section', 'table', 'ul',
-]
-NEWLINE_ELEMENT_NAMES = BLOCK_ELEMENT_NAMES + ['br']
-
-MULTIPLE_NEWLINES_RE = re.compile(r'\n{2,}')
-WHITESPACE_RE = re.compile(r'\s+')
-SENTENCE_END_RE = re.compile(r'(?<!\bmin)([\?\.\!\:\;…]+ |\.\.\. |\n)')  # TODO more abbreviations?
+SENIOR_TITLE_RE = re.compile(r'\bsenior\b', re.IGNORECASE)
+JUNIOR_TITLE_RE = re.compile(r'\bjunior\b', re.IGNORECASE)
 
 
 class Pipeline():
     def process_item(self, item, spider):
-        contents = parse_contents(item['description_raw'])
-        item['contents'] = contents
-        item['features'] = list(parse_features(contents, item['lang']))
+        features = []
+        features.extend(parse_from_title(item['title'], item['lang']))
+        features.extend(parse_from_sentences(item['description_sentences'],
+                                             item['lang']))
+        item['features'] = features
         return item
-
-
-def parse_contents(description_raw):
-    return split_sentences(extract_text(description_raw))
 
 
 def compile_rules(rules):
@@ -155,76 +117,31 @@ SUPPRESSING_RULES_CS = compile_rules([
 GLOBALS = globals()
 
 
-def is_supressed(feature_id, content, suppressing_rules):
+def is_supressed(feature_id, sentence, suppressing_rules):
     for feature_id_matcher, rule_re in suppressing_rules:
         is_relevant_rule = (feature_id_matcher == '' or
                             feature_id_matcher == feature_id)
-        if is_relevant_rule and rule_re.search(content):
+        if is_relevant_rule and rule_re.search(sentence):
             return True
     return False
 
 
-def parse_features(contents, lang):
+def parse_from_sentences(sentences, lang):
     lang_suffix = lang.upper()
     feature_defs = GLOBALS[f'FEATURE_DEFS_{lang_suffix}']
     suppressing_rules = GLOBALS[f'SUPPRESSING_RULES_{lang_suffix}']
 
-    for content in contents:
+    for sentence in sentences:
         for feature_id, feature_re in feature_defs:
-            if feature_re.search(content) and not is_supressed(feature_id, content, suppressing_rules):
-                yield (feature_id, content, feature_re.pattern)
+            if feature_re.search(sentence) and not is_supressed(feature_id, sentence, suppressing_rules):
+                yield (feature_id, sentence, feature_re.pattern)
 
 
-def extract_text(html_text):
-    """
-    Removes HTML tags from given HTML, normalizes whitespace with
-    respect to how the HTML would been perceived if rendered, and returns text
+def parse_from_title(title, lang):
+    is_senior_mentioned = SENIOR_TITLE_RE.search(title)
+    is_junior_mentioned = JUNIOR_TITLE_RE.search(title)
 
-    The text returned by this function can be assumed to:
-
-    - Contain no HTML,
-    - have all visual line breaks normalized as a single new line character,
-    - have all other white space normalized as a single space character.
-    """
-    el = html.fromstring(html_text)
-
-    # iterate over all elements which visually imply line break when rendered
-    # in the browser and add the line break explicitly to their tail
-    for newline_el in el.cssselect(', '.join(NEWLINE_ELEMENT_NAMES)):
-        tail_text = newline_el.tail
-        newline_el.tail = f'\n\n{tail_text}' if tail_text else '\n\n'
-
-    # serialize the html tree and remove tags, but keep all whitespace
-    # as it was so we know where the visual line breaks are
-    #
-    # normalize space characters, because now HTML entities got decoded
-    text = normalize_space(el.text_content())
-
-    # turn the visual line breaks into new line characters, turn any
-    # other space characters into a single space character
-    return '\n'.join(split_blocks(text))
-
-
-def normalize_space(text):
-    return text.translate(SPACE_TRANSLATION_TABLE).strip()
-
-
-def split_blocks(text):
-    """
-    Split the text into blocks at the places of visual line breaks,
-    and normalize any other white space chars as single space chars
-    """
-    blocks = (WHITESPACE_RE.sub(' ', block).strip()
-              for block in MULTIPLE_NEWLINES_RE.split(text))
-    return [block for block in blocks if block]
-
-
-def split_sentences(text):
-    """
-    Splits given text into "sentences"
-
-    The sentences are just approximate, there is no guarantee on correctness
-    and there is no rocket science. The input text is assumed to have
-    the guarantees provided by the extract_text() function.
-    """
-    return split_blocks(SENTENCE_END_RE.sub(r'\1\n\n', text))
+    if is_senior_mentioned and not is_junior_mentioned:
+        yield ('EXPLICITLY_SENIOR', title, None)
+    elif is_junior_mentioned:
+        yield ('EXPLICITLY_JUNIOR', title, None)
