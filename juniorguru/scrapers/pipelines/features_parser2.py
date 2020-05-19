@@ -1,8 +1,21 @@
 import re
 
 
-SENIOR_TITLE_RE = re.compile(r'\bsenior\b', re.IGNORECASE)
-JUNIOR_TITLE_RE = re.compile(r'\bjunior\b', re.IGNORECASE)
+SENIOR_TITLE_RE = re.compile(r'''
+\b(
+    senior|
+    seniorní|
+    practiced
+)\b
+''', re.IGNORECASE | re.VERBOSE)
+
+JUNIOR_TITLE_RE = re.compile(r'''
+\b(
+    junior|
+    jnr|
+    juniorní
+)\b
+''', re.IGNORECASE | re.VERBOSE)
 
 
 class Pipeline():
@@ -138,10 +151,12 @@ def parse_from_sentences(sentences, lang):
 
 
 def parse_from_title(title, lang):
-    is_senior_mentioned = SENIOR_TITLE_RE.search(title)
-    is_junior_mentioned = JUNIOR_TITLE_RE.search(title)
+    senior_match = SENIOR_TITLE_RE.search(title)
+    junior_match = JUNIOR_TITLE_RE.search(title)
 
-    if is_senior_mentioned and not is_junior_mentioned:
-        yield ('EXPLICITLY_SENIOR', title, None)
-    elif is_junior_mentioned:
-        yield ('EXPLICITLY_JUNIOR', title, None)
+    if senior_match and not junior_match:
+        yield ('EXPLICITLY_SENIOR', senior_match.group(0),
+               SENIOR_TITLE_RE.pattern)
+    elif junior_match:
+        yield ('EXPLICITLY_JUNIOR', junior_match.group(0),
+               JUNIOR_TITLE_RE.pattern)
