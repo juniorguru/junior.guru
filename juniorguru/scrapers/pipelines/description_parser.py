@@ -88,7 +88,7 @@ def extract_text(html_text):
     # now HTML entities got decoded, so normalize unicode
     # https://twitter.com/python_tip/status/1262725016153661440
     # and then normalize space characters
-    text = normalize_space(unicodedata.normalize(text, 'NFC'))
+    text = normalize_space(unicodedata.normalize('NFC', text))
 
     # turn the visual line breaks into new line characters, turn any
     # other space characters into a single space character

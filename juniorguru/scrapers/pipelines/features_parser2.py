@@ -72,7 +72,7 @@ class Pipeline():
         return item
 
 
-def parse_from_title(title, lang):
+def parse_from_title(title):
     senior_match = SENIOR_TITLE_RE.search(title)
     junior_match = JUNIOR_TITLE_RE.search(title)
 
