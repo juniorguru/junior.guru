@@ -1,4 +1,5 @@
 import re
+import unicodedata
 
 from lxml import html
 
@@ -82,9 +83,12 @@ def extract_text(html_text):
 
     # serialize the html tree and remove tags, but keep all whitespace
     # as it was so we know where the visual line breaks are
-    #
-    # normalize space characters, because now HTML entities got decoded
-    text = normalize_space(el.text_content())
+    text = el.text_content()
+
+    # now HTML entities got decoded, so normalize unicode
+    # https://twitter.com/python_tip/status/1262725016153661440
+    # and then normalize space characters
+    text = normalize_space(unicodedata.normalize(text, 'NFC'))
 
     # turn the visual line breaks into new line characters, turn any
     # other space characters into a single space character
