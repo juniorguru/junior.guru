@@ -22,19 +22,19 @@ def generate_params(fixtures_dirname):
             yield pytest.param(path.read_text(), lang, id=name)
 
 
-@pytest.mark.parametrize('description_raw,expected_lang',
+@pytest.mark.parametrize('description_html,expected_lang',
                          generate_params('fixtures_language_filter'))
-def test_language_filter(item, spider, description_raw, expected_lang):
-    item['description_raw'] = description_raw
+def test_language_filter(item, spider, description_html, expected_lang):
+    item['description_html'] = description_html
     item = Pipeline().process_item(item, spider)
 
     assert item['lang'] == expected_lang
 
 
-@pytest.mark.parametrize('description_raw,expected_lang',
+@pytest.mark.parametrize('description_html,expected_lang',
                          generate_params('fixtures_language_filter_raises'))
-def test_language_filter_drops(item, spider, description_raw, expected_lang):
-    item['description_raw'] = description_raw
+def test_language_filter_drops(item, spider, description_html, expected_lang):
+    item['description_html'] = description_html
 
     with pytest.raises(IrrelevantLanguage, match=expected_lang):
         Pipeline().process_item(item, spider)

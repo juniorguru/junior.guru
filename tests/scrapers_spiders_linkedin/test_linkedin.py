@@ -47,7 +47,7 @@ def test_spider_parse_job():
 
     assert sorted(job.keys()) == sorted([
         'title', 'link', 'company_name', 'company_link', 'location',
-        'employment_types', 'posted_at', 'description_raw',
+        'employment_types', 'posted_at', 'description_html',
         'experience_levels',
     ])
     assert job['title'] == 'Start kariéry jako Junior C++ Programátor/ka'
@@ -58,7 +58,7 @@ def test_spider_parse_job():
     assert job['employment_types'] == ['full-time']
     assert job['experience_levels'] == ['entry level']
     assert job['posted_at'].date() == date.today() - timedelta(weeks=3)
-    assert '<li>3 Sick days ročně' in job['description_raw']
+    assert '<li>3 Sick days ročně' in job['description_html']
 
 
 def test_spider_parse_job_description_doesnt_include_criteria_list():
@@ -66,8 +66,8 @@ def test_spider_parse_job_description_doesnt_include_criteria_list():
                             body=Path(FIXTURES_DIR / 'job.html').read_bytes())
     job = next(linkedin.Spider().parse_job(response))
 
-    assert 'Employment type' not in job['description_raw']
-    assert 'Information Technology and Services' not in job['description_raw']
+    assert 'Employment type' not in job['description_html']
+    assert 'Information Technology and Services' not in job['description_html']
 
 
 def test_spider_parse_job_no_company_link():

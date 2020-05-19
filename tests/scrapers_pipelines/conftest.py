@@ -13,7 +13,7 @@ def item():
         company_name='The Best Company',
         company_link='https://example.com',
         employment_types=['full-time'],
-        description_raw='...',
+        description_html='...',
         link='https://example.com/jobs/123',
     )
 

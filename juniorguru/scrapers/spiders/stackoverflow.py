@@ -31,7 +31,7 @@ class Spider(BaseSpider):
         loader.add_xpath('employment_types', "//span[contains(., 'Job type:')]/following-sibling::span/text()")
         loader.add_xpath('experience_levels', "//span[contains(., 'Experience level:')]/following-sibling::span/text()")
         loader.add_xpath('posted_at', "//div[contains(./text(), 'Posted')]/text()")
-        loader.add_xpath('description_raw', "//section[contains(.//h2/text(), 'Job description')]")
+        loader.add_xpath('description_html', "//section[contains(.//h2/text(), 'Job description')]")
         yield loader.load_item()
 
 

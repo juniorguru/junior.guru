@@ -37,10 +37,10 @@ def generate_params(fixtures_dirname):
                 yield param_xfail_missing(path)
 
 
-@pytest.mark.parametrize('description_raw,expected',
+@pytest.mark.parametrize('description_html,expected',
                          generate_params('fixtures_sections_parser'))
-def test_sections_parser(item, spider, description_raw, expected):
-    item['description_raw'] = description_raw
+def test_sections_parser(item, spider, description_html, expected):
+    item['description_html'] = description_html
     item = sections_parser.Pipeline().process_item(item, spider)
 
     assert item['sections'] == expected

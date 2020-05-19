@@ -53,7 +53,7 @@ BULLET_RE = re.compile(r'^' + BULLET_PATTERN + r'$')
 class Pipeline():
     def process_item(self, item, spider):
         item['sections'] = [section.to_dict() for section
-                            in parse_sections(item['description_raw'])]
+                            in parse_sections(item['description_html'])]
         return item
 
 
@@ -162,11 +162,11 @@ class ListSection(BaseSection):
 # turned into paragraph sections in which "sentences" are the contents.
 
 
-def parse_sections(description_raw):
-    description_raw = normalize_space(description_raw)
+def parse_sections(description_html):
+    description_html = normalize_space(description_html)
 
     # parse HTML and pre-process it to clean up ugly cases
-    html_tree = html.fromstring(description_raw)
+    html_tree = html.fromstring(description_html)
     for preprocess in [fix_orphan_html_list_items,
                        fix_disconnected_html_lists,
                        flatten_nested_html_lists]:

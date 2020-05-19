@@ -43,7 +43,7 @@
           &mdash;
           {{ job_dropped.item.posted_at|to_datetime|ago }}
         </p>
-        <textarea rows="20" cols="100">{{ job_dropped.item.description_raw }}</textarea>
+        <textarea rows="20" cols="100">{{ job_dropped.item.description_html }}</textarea>
       {% endif %}
       <details>
         <summary>Data</summary>

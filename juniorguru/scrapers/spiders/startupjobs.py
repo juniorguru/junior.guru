@@ -26,7 +26,7 @@ class Spider(BaseSpider):
                 offer_loader.add_value('location', city)
                 offer_loader.add_xpath('employment_types', './/jobtype/text()')
                 offer_loader.add_xpath('posted_at', './/lastUpdate//text()')
-                offer_loader.add_xpath('description_raw', './/description/text()')
+                offer_loader.add_xpath('description_html', './/description/text()')
                 yield loader.load_item()
 
 
