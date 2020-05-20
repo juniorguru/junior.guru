@@ -178,10 +178,11 @@
         },
         "httplib2": {
             "hashes": [
-                "sha256:39dd15a333f67bfb70798faa9de8a6e99c819da6ad82b77f9a259a5c7b1225a2",
-                "sha256:6d9722decd2deacd486ef10c5dd5e2f120ca3ba8736842b90509afcdc16488b1"
+                "sha256:4f6988e6399a2546b525a037d56da34aed4d149bbdc0e78523018d5606c26e74",
+                "sha256:b0e1f3ed76c97380fe2485bc47f25235453b40ef33ca5921bb2897e257a49c4c"
             ],
-            "version": "==0.17.3"
+            "index": "pypi",
+            "version": "==0.18.0"
         },
         "hyperlink": {
             "hashes": [
@@ -831,10 +832,10 @@
         },
         "requirementslib": {
             "hashes": [
-                "sha256:52783b0e4f1fe813106166debb2421330e6936f682a0f037ac31a1169f98db36",
-                "sha256:b933bda8510e1f760888dc801696dd3bec7928b6f032e998384d2b2e8a94b069"
+                "sha256:3281c01d3f9fa4094abea4c74ee3ccbf5be5a31fbad27c990b61508fb5d1bd76",
+                "sha256:75ab3aca99480c7c6a27889b6461b5faa9dc27892f0e0a1a93b5b26507e34ad0"
             ],
-            "version": "==1.5.8"
+            "version": "==1.5.9"
         },
         "six": {
             "hashes": [
@@ -873,10 +874,10 @@
         },
         "vistir": {
             "hashes": [
-                "sha256:73f4fd1555f9d04e0eb0f3adcebce19217d2790ce46b318ec132b52799108982",
-                "sha256:e3f20f6b9ed6ccf52d48008e45d581923a687ff48cc792e1c35da64ca76c9ee6"
+                "sha256:a37079cdbd85d31a41cdd18457fe521e15ec08b255811e81aa061fd5f48a20fb",
+                "sha256:eff1d19ef50c703a329ed294e5ec0b0fbb35b96c1b3ee6dcdb266dddbe1e935a"
             ],
-            "version": "==0.5.1"
+            "version": "==0.5.2"
         },
         "wcwidth": {
             "hashes": [
