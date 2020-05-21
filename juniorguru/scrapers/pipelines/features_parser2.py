@@ -213,7 +213,6 @@ def parse_from_sentences(sentences, lang):
 def parse_from_sentence(sentence, lang):
     for rule_id, rule_re in RULES[lang]:
         match = rule_re.search(sentence)
-        print(rule_re.pattern, match)
         if (match and
             not is_supressed(rule_id, sentence, lang)):
             yield (rule_id, sentence, match.group(0))
