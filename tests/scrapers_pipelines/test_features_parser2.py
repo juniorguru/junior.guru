@@ -3,82 +3,509 @@ import pytest
 from juniorguru.scrapers.pipelines.features_parser2 import parse_from_sentence
 
 
-@pytest.mark.parametrize('sentence,expected', [
-    ('10+ experience with architecting', 'YEARS_EXPERIENCE_REQUIRED'),
-    ('10+ experience with architecting', 'ADVANCED_REQUIRED'),
-    ('developer with strong technical background', 'ADVANCED_REQUIRED'),
-    ('We are looking for a seasoned engineer', 'ADVANCED_REQUIRED'),
-    ('engineer with a thorough understanding', 'ADVANCED_REQUIRED'),
-    ('At least 5 years’ experience as an iOS mobile developer.', 'YEARS_EXPERIENCE_REQUIRED'),
-    ('Experience leading a team', 'LEADERSHIP_REQUIRED'),
-    ('Lead a growing team', 'LEADERSHIP_REQUIRED'),
-    ('Czech/Slovak language knowledge/possibly is essential', 'CZECH_REQUIRED'),
-    ('Czech/Slovak language knowledge/possibly is essential', 'SLOVAK_REQUIRED'),
-    ('have Computing Degree', 'DEGREE_REQUIRED'),
-    ('experienced Java developer', 'ADVANCED_REQUIRED'),
-    ('Although team language is Czech - basic English knowledge is required', 'CZECH_REQUIRED'),
-    ('strong Java development background', 'ADVANCED_REQUIRED'),
-    ('execute tasks independently', 'INDEPENDENCE_REQUIRED'),
-    ('with little supervision and under pressure', 'INDEPENDENCE_REQUIRED'),
-    ('Two or more years of hands-on experience', 'YEARS_EXPERIENCE_REQUIRED'),
-    ('You have a degree in Computer Science, Mathematics, Physics or Business Administration.', 'DEGREE_REQUIRED'),
-    ('working experience in (software) development', 'ADVANCED_REQUIRED'),
-    ('Excellent analytical and problem-solving skills', 'ADVANCED_REQUIRED'),
-    ('Able to work with minimal supervision', 'INDEPENDENCE_REQUIRED'),
-    ('Solid technical background', 'ADVANCED_REQUIRED'),
-    ('work independently on given tasks', 'INDEPENDENCE_REQUIRED'),
-    ('Proven commercial experience working with Java', 'ADVANCED_REQUIRED'),
-    ('sound knowledge of HTML', 'ADVANCED_REQUIRED'),
-    ('Strong experience (5+ years) in Java', 'YEARS_EXPERIENCE_REQUIRED'),
-    ('previous experience in C++', 'ADVANCED_REQUIRED'),
-    ('significant technical background', 'ADVANCED_REQUIRED'),
-    ('work autonomously on given tasks', 'INDEPENDENCE_REQUIRED'),
-    ('very solid know-how on how to write C++', 'ADVANCED_REQUIRED'),
-    ('take responsibility for good architecture and software design', 'ADVANCED_REQUIRED'),
-    ('After your studies in mathematics, computer science, engineering, business or comparable studies', 'DEGREE_REQUIRED'),
-    ('you have gained professional experience', 'ADVANCED_REQUIRED'),
-    ('Very good programming skills and practical experience', 'ADVANCED_REQUIRED'),
-    ('Completed technical education (college or university level)', 'DEGREE_REQUIRED'),
-    ('experience in building very complex applications', 'ADVANCED_REQUIRED'),
-    ('Independent working ability', 'INDEPENDENCE_REQUIRED'),
-    ('Bachelor’s degree or higher (min A- average for under-graduate, first class for post-graduate).', 'DEGREE_REQUIRED'),
-    ('Independent, self-directing working style.', 'INDEPENDENCE_REQUIRED'),
-    ('experience as a Technical Leader', 'LEADERSHIP_REQUIRED'),
-    ('leadership skills', 'LEADERSHIP_REQUIRED'),
-    ('Leadership experience', 'LEADERSHIP_REQUIRED'),
+def get_feature_ids(features):
+    return {feature_id for feature_id, match, pattern in features}
+
+
+@pytest.mark.parametrize('sentence', [
+    'have Computing Degree',
+    'You have a degree in Computer Science, Mathematics, Physics or Business Administration.',
+    'After your studies in mathematics, computer science, engineering, business or comparable studies',
+    'Completed technical education (college or university level)',
+    'Bachelor’s degree or higher (min A- average for under-graduate, first class for post-graduate).',
+    'Bachelorâ€™s degree or higher in Computer Science or related field.',
+    'exceptional master\'s degree in computer science or even a doctorate',
+    'Profound completed education in the field of IT/software-development',
+    'Good academic record',
+    'Completed education in computer science',
+    'B.Sc. in computer science or related field',
+    'Technical Engineering Degree',
+    'Completed education in informatics',
+    'B.S. in Computer Science or related area of study (M.S. preferred)',
+    'BS in a technical discipline. MS desirable.',
 ])
-def test_parse_from_sentence_en(sentence, expected):
-    features = list(parse_from_sentence(sentence, 'en'))
-    feature_ids = {feature_id for feature_id, sentence, pattern in features}
-
-    assert expected in feature_ids
+def test_parse_from_sentence_en_tech_degree_required(sentence):
+    assert 'TECH_DEGREE_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
 
 
-@pytest.mark.parametrize('sentence,not_expected', [
-    ('Good english communication skills', 'ADVANCED_REQUIRED'),
-    ('completed training in computer science / electrical engineering', 'DEGREE_REQUIRED'),
-    ('BS or MS in software engineering or equivalent experience', 'DEGREE_REQUIRED'),
+@pytest.mark.parametrize('sentence', [
+    'A completed degree in a suitable field of study',
+    'BS in Computer Science/Engineering or equivalent industry experience.',
+    'BS or MS in software engineering or equivalent experience',
+    'completed training in computer science / electrical engineering',
+    'World-class technical training within Teradata University',
+    'Do you want to combine university and work? Are you doing your PhD?',
+    'You are a high school graduate with a focus on IT or a interested person in programming',
 ])
-def test_parse_from_sentence_en_suppressed(sentence, not_expected):
-    features = list(parse_from_sentence(sentence, 'en'))
-    feature_ids = {feature_id for feature_id, sentence, pattern in features}
-
-    assert not_expected not in feature_ids
+def test_parse_from_sentence_en_tech_degree_required_not(sentence):
+    assert 'TECH_DEGREE_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
 
 
-# TODO
-[
+@pytest.mark.parametrize('sentence', [
+    '10+ experience with architecting',
+    'At least 5 years’ experience as an iOS mobile developer.',
+    'Two or more years of hands-on experience',
+    'Strong experience (5+ years) in Java',
+    'At least five years experience as an iOS mobile developer.',
+    'Must have 3+ years of proven track record as a ServiceNow Admin/Developer',
+    'Multiple years of experience in software development.',
+])
+def test_parse_from_sentence_en_years_experience_required(sentence):
+    assert 'YEARS_EXPERIENCE_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Ability to determine which data could provide value and insights towards improving user experience',
+    'We are willing to offer a higher salary depending on your professional experience and qualification',  # bug/regression
+])
+def test_parse_from_sentence_en_years_experience_required_not(sentence):
+    assert 'YEARS_EXPERIENCE_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    '10+ experience with architecting',
+    'developer with strong technical background',
+    'engineer with a thorough understanding',
+    'strong Java development background',
+    'working experience in (software) development',
+    'Excellent analytical and problem-solving skills',
+    'Solid technical background',
+    'Proven commercial experience working with Java',
+    'sound knowledge of HTML',
+    'previous experience in C++',
+    'significant technical background',
+    'very solid know-how on how to write C++',
+    'take responsibility for good architecture and software design',
+    'you have gained professional experience',
+    'Very good programming skills and practical experience',
+    'experience in building very complex applications',
+    'Required Technical and Professional Expertise',
+    'Excellent SQL know how',
+    'You have HTML 5 superpowers',
+    'experience with React, HTML, CSS, JavaScript, JS, Bootstrap and everything else',
+    'Willingness to take end-to-end ownership on the whole control function',
+    'Manage your own project priorities, deadlines and deliverables',
+    'Proficiency in C# / C++ , object oriented programming, and component oriented architecture.',
+    'Experience as a software engineer in cloud-based software solutions',
+    'with a deeper understanding of ServiceNow development best practices',
+    'Must have hands-on implementation experience of ServiceNow',
+    'Must have hands-on experience with customizations',
+    'Strong coding skills in Python, Java or C++',
+    'Proficient in a scripting language like Bash or Groovy',
+    'Experience of deploying components',
+    'Are you fluent in C++?',
+    'Architecture knowledge, such as DevOps desired',
+    'Extensive experience with Swift as well as software architecture',
+    'Well-versed in HTTP, Web services, RESTful API design principles, scalability and security concerns',
+    'Proficient understanding of code versioning tools, such as Stash/Git',
+    'Superior analytical and problem-solving abilities.',
+    'you consider yourself as a healthy mix between a machine learning expert, a software engineer, a researcher, and a hacker',
+    'Efficiently translate customer business needs into end-to-end technical solutions',
+    'provable relevant industry experience',
+    'Advanced scripting skills including bash and python.',
+    'You have extensive experience in Software Engineering',
+    'You gained profound experience with Spring, REST',
+    'Fluency in Agile and Scrum',
+    'Working proficiency with',
+    'Business analysis and/or requirements engineering experience',
+    'Detailed knowledge of MS SQL Server',
+    'Experience working with a variety of databases',
+    'Extensive knowledge of modern HTML and CSS',
+])
+def test_parse_from_sentence_en_advanced_required(sentence):
+    assert 'ADVANCED_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Good english communication skills',
+    'Practical experience with C# and .NET or other OOP language',
+    'Some experience in software development',
+    'On-the-job training for professional and technical background of our products',
+    'We are willing to offer a higher salary depending on your professional experience and qualification',
+    'Ideally, you already have practical experience in the areas of IT consulting or logistics',
+    'you are also proficient with MS Office and ideally have previous experience with JIRA and Confluence',
+    'Professional growth and development through certified training programs and knowledge sharing',
+    'No prior work experience necessary',
+    'Integration of services to maximize ad revenues and maintain strong user experience.',
+    'Excellent communications skills',
+    'good knowledge of Microsoft Office',
+    'good knowledge of MS Office',
+    'Opportunity to develop solid cross functional network',
+    'chance to develop key soft skills and management',
+    'advantage - practical experience with web frameworks',
+    'We welcome knowledge of ITIL and previous experience in test automation.',
+    'If you are interested, please send us an overview of your skills and previous experience.',
+    'You are experienced with one or the other communication protocol',
+    'These are the professional requirements and personal skills we are looking for:',
+    'So if you like the sound of the above and your CV has some of the aforementioned key skills then why not apply.',
+    'Augmented Analytics automates work of human analysts by developing software intelligence that autonomously produces key business insights',
+])
+def test_parse_from_sentence_en_advanced_required_not(sentence):
+    assert 'ADVANCED_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'We are looking for a seasoned engineer',
+    'experienced Java developer',
+    'As a senior developer your will',
+    'senior developers shall demonstrate very good understanding of C#',
+    'As a senior developer your will focus',
+    'They are now looking for an experienced Senior Java developer to join their collaborative team',
+])
+def test_parse_from_sentence_en_explicitly_senior(sentence):
+    assert 'EXPLICITLY_SENIOR' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Team 8-10 junior-senior',
+    'love working in a diverse team with seniors and juniors.',
+    'we are open to all levels of seniority from junior to team leaders',
+])
+def test_parse_from_sentence_en_explicitly_senior_not(sentence):
+    assert 'EXPLICITLY_SENIOR' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'You are a native German speaker',
+    'In addition to solid German and English skills',
+    'Strong communication skills with good command of German and English',
+    'German language is desired.',
+    'good language skills in German and English',
+    'German spoken and written is indispensable',
+    'You have good German and very good English language skills',
+    'Proficient in English, desirable: german',
+])
+def test_parse_from_sentence_en_german_required(sentence):
+    assert 'GERMAN_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'communication skills in German, speaking and writing, would be a benefit',
+    'demonstrate ability to communicate in English (B1-B2), German language is an advantage',
+    'Language courses (Czech, German)',
+    'Languages: Fluent English (a must), other (German, Russian, Spanish - an advantage)',
+    'Fluent English skills with German as a plus',
+    'English language / german language (nice to have)',
+    'Fluent in English, German is a plus',
+    'German as a plus- B2 level daily communication with a client',
+    'Free German classes with people from all over the world!',
+    'Fluency in German or Russian is a plus; English is required',
+])
+def test_parse_from_sentence_en_german_required_not(sentence):
+    assert 'GERMAN_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Experience leading a team',
+    'Lead a growing team',
+    'experience as a Technical Leader',
+    'leadership skills',
+    'Leadership experience',
+    'Capable of working cross functionally, leading by example',
+    'You lead courses at the customer’s premises',
+    'you will also get the chance to mentor junior developers in the team',
+    'Mentor junior members in the team by relentlessly guarding code quality through pull requests and code reviews',
+    'delegate tasks to others on team',
+    'technical leadership and mentoring skills',
+])
+def test_parse_from_sentence_en_leadership_required(sentence):
+    assert 'LEADERSHIP_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'we are open to all levels of seniority from junior to team leaders',
+    'A leading organisation within the financial services industry are looking for a several Java Developers to join their team.',
+])
+def test_parse_from_sentence_en_leadership_required_not(sentence):
+    assert 'LEADERSHIP_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Czech/Slovak language knowledge/possibly is essential',
+    'Although team language is Czech - basic English knowledge is required',
+    'Fluent English + Czech or Slovak',
+])
+def test_parse_from_sentence_en_czech_required(sentence):
+    assert 'CZECH_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Language courses (Czech, German)',
+    'English on advanced level is mandatory, Czech is optional',
+    'Czech as a plus - B2 level daily communication with the team',
+    'Workshops and meetings with various experts from the Czech market, internal trainings, language courses',
+])
+def test_parse_from_sentence_en_czech_required_not(sentence):
+    assert 'CZECH_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Czech/Slovak language knowledge/possibly is essential',
+    'Fluent English + Czech or Slovak',
+])
+def test_parse_from_sentence_en_slovak_required(sentence):
+    assert 'SLOVAK_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'execute tasks independently',
+    'with little supervision and under pressure',
+    'Able to work with minimal supervision',
+    'work independently on given tasks',
+    'work autonomously on given tasks',
+    'Independent working ability',
+    'Independent, self-directing working style.',
+    'with minimal outside supervision',
+    'Self-motivated and able to operate independently',
+    'Being able to work autonomous and take ownership',
+    'As an engineer, you are self sufficient and well organised',
+    'be self-motivated and comfortable solving problems independently',
+])
+def test_parse_from_sentence_en_independence_preferred(sentence):
+    assert 'INDEPENDENCE_PREFERRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Javascript junior developer',
+    'As a Junior Software Engineer you will have the following responsibilities',
+])
+def test_parse_from_sentence_en_explicitly_junior(sentence):
+    assert 'EXPLICITLY_JUNIOR' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Team 8-10 junior-senior',
+    'love working in a diverse team with seniors and juniors.',
+    'you will also get the chance to mentor junior developers in the team',
+])
+def test_parse_from_sentence_en_explicitly_junior_not(sentence):
+    assert 'EXPLICITLY_JUNIOR' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'It doesn’t matter that you don’t have any experiences.',
+    'you’ll find a challenging entry-level position',
+    'Learn a ton, whether you know a lot, or nothing about system software',
+    'If you are missing some qualifications, but you are motivated.',
+    'No prior work experience necessary',
+    'Would you like to start your career with one of the world market leaders in medical technology',
+    'experience with the development of own or school projects',
+    'development under the guidance of experienced developers',
+    'looking for programmers who do not necessarily have experience in professional game development',
+    'We are open to applications from recent college graduates for a junior position',
+    'It would be awesome, if you have already worked with these two languages but in case you have not, that is also no big deal.',
+    'Doesn’t matter if you don’t know all of them – general overview and right motivation will be enough!',
+    'Work or educational experience in software development',
+])
+def test_parse_from_sentence_en_junior_friendly(sentence):
+    assert 'JUNIOR_FRIENDLY' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'from junior developer candidates we expect willingness to learn',
+    'or a willingness to learn new technologies',
+    'Ability and will to quickly learn new technologies and new products.',
+])
+def test_parse_from_sentence_en_learning_required(sentence):
+    assert 'LEARNING_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
     'AJ minimálně na úrovni technické specifikace',
     'Angličtinu minimálně na úrovni technické specifikace',
+    'AJ alespoň na úrovni porozumění',
+    'Znalost anglického jazyka minimálně na úrovni aktivního písemného projevu a porozumění odbornému textu',
+    'komunikativní znalost AJ',
+    'jazykové znalosti: CZ, EN',
+    'komunikativní znalost anglického nebo německého jazyka',
+    'výborná znalost ČJ/SJ, pokročilá AJ',
+    'domluvíš se anglicky',
+    'komunikativní znalost anglického jazyka a český / slovenský jazyk podmínkou',
+    'Umíte anglicky dostatečně dobře abyste se domluvili.',
+    'technická AJ',
+])
+def test_parse_from_sentence_cs_english_required(sentence):
+    assert 'ENGLISH_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'máš k dispozici plně hrazenou výuku angličtiny a němčiny',
+    'Jazykové kurzy (angličtina, španělština, čínština..)',
+])
+def test_parse_from_sentence_cs_english_required_not(sentence):
+    assert 'ENGLISH_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Ve vývoji ve frontendu/backendu už nejsi úplný zelenáč',
+    'pár projektů máš za sebou',
+    'Dobrá znalost Android SDK.',
+    'Zkušenost s vývojem rozsáhlejších webových aplikací',
+    'zkušenosti s návrhem a vývojem aplikací na platformě Java EE',
+    'týmový hráč s širokým rozhledem v oblasti technologií používaných pro vývoj Java aplikací',
+    'pokročilá znalost jazyka Java, OOP a návrhových vzorů',
+    'Dobrá znalost jazyka C# a zkušenost s vývojem na .NET platformě',
+    'Pokročilá znalost GIT flow a code review.',
+    'výborné znalosti s REST API a přehled o síťových protokolech a knihovnách (Alamofire, Firebase, atp.)',
+    'Alespoň minimální komerční zkušenosti s Javou',
+    'Zkušenosti s vývojem aplikací na platformě AWS v Java, případně Python',
+    'relevantní praxi v daném oboru',
+    'Nebo již máš řadu projektů za sebou a rád se zapojíš do nového týmu, popř.',
+    'máš ambice v blízké době postoupit do role architekta?',
+    'máš za sebou již slušnou řádku zářezů ve vývoji v JavaScriptu a Reactu',
+    'máš schopnost architektonicky strukturovat části aplikace',
+    'výborné znalosti XHTML a CSS2',
+    'praxe s provozováním databází a práce s SQL',
+    'Skvělé algoritmické a technické myšlení',
+    'praxi z vývoje komplexních aplikací v týmech',
+    'Perfektní znalost OOP a PHP7, SQL',
+    'Velmi dobrá znalost HTML5/CSS/JavaScript pro Front-End Development',
+    'spolehlivost a samostatnost při řešení problémů',
+    'dobrá znalost OS Linux včetně konfigurace',
+])
+def test_parse_from_sentence_cs_advanced_required(sentence):
+    assert 'ADVANCED_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Školní nebo komerční praxe v .NET',
+    'Samostatnost, zodpovědnost, čitelný kód',
+    'Praktické zkušenosti s GIT, Maven',
+    'schopnost převzít zodpovědnost',
+    'Mít předchozí zkušenosti s programováním ve Swiftu (mohou být i ze školy).',
+])
+def test_parse_from_sentence_cs_advanced_required_not(sentence):
+    assert 'ADVANCED_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'SŠ/VŠ vzdělání technického zaměření',
+    'Absolvent/ka SŠ nebo VŠ (IT nebo technický obor)',
+    'studium informatiky nebo příbuzného oboru',
+    'VŠ technického směru (ideálně zaměření na tvorbu SW)',
+    'VŠ/SŠ v oboru informačních technologií (příležitost i pro absolventy)',
+    'Je určitě plus, pokud už máš vysokoškolský titul (ideálně s IT zaměřením) nebo jej brzy získáš.',
+])
+def test_parse_from_sentence_cs_tech_degree_required(sentence):
+    assert 'TECH_DEGREE_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
     'Vzdělání:vyšší odborné, SŠ s maturitou, bakalářské, vysokoškolské',
-    'SŠ/VŠ vzdělání technického zaměření'
-    'Znalost problematiky programování webových aplikací (min. 3 roky)'
-]
+    'VŠ/SŠ vzdělání v oblasti elektrotechniky/IT či relevantní praxi v daném oboru',
+    'SŠ, VŠ vzdělání',
+    'SŠ/VŠ vzdělání - obor nerozhoduje, vítáno IT,',
+    'Pozice je vhodná i pro studenty či absolventy střední či vysoké školy.',
+    'Vzdělání: SŠ/VŠ',
+])
+def test_parse_from_sentence_cs_tech_degree_required_not(sentence):
+    assert 'TECH_DEGREE_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
 
 
-# TODO context
-# !!!
-# 7a081488f0f6b53d28c4bc4d8fc2801972bd5e21d9b5756fed9636f5
+@pytest.mark.parametrize('sentence', [
+    'Znalost problematiky programování webových aplikací (min. 3 roky)',
+    'je potřeba mít min rok praktickou zkušenost s Docker',
+    'praxe v oboru 2 roky nebo přesvědčivý projekt',
+])
+def test_parse_from_sentence_cs_years_experience_required(sentence):
+    assert 'YEARS_EXPERIENCE_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
 
-# 'Nice to Have',
-# 'Completed studies in computer science',
+
+@pytest.mark.parametrize('sentence', [
+    'komunikativní znalost anglického nebo německého jazyka',
+])
+def test_parse_from_sentence_cs_german_required(sentence):
+    assert 'GERMAN_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'máš k dispozici plně hrazenou výuku angličtiny a němčiny',
+])
+def test_parse_from_sentence_cs_german_required_not(sentence):
+    assert 'GERMAN_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Samostatnost, zodpovědnost, čitelný kód',
+    'Aktivní a samostatný přístup k práci',
+    'Schopnost pracovat samostatně, přesto mít týmového ducha.',
+    'schopnost pracovat samostatně, ale zároveň týmový duch',
+    'Jsi samostatný/á – vítáš self-management.',
+    'zajímá tě nejenom práce v týmu, ale zvládáš i samostatnou práci',
+    'jsi zodpovědný, samostatný a je na tebe spolehnutí',
+    'Musíte ale umět pracovat do značné míry i samostatně.',
+    'spolehlivost a samostatnost při řešení problémů',
+    'Schopnost sebeřízení, týmové i individuální práce',
+])
+def test_parse_from_sentence_cs_independence_preferred(sentence):
+    assert 'INDEPENDENCE_PREFERRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Zvýšíme výrazně tvojí hodnotu na trhu, naučíme tě pracovat s mnoho DevOps a Cloud technologiemi',
+    'Jsi čerstvý absolvent/ka a rád/a by ses věnoval/a programování?',
+    'Alespoň základní znalost programování v C++ (vše ostatní tě naučíme)',
+    'znalost práce na PC',
+    'nastartujte svou kariéru',
+    'Nabízíme fulltime-job, vhodný i pro absolventy s dostatečnou znalostí.',
+    'Co neumíš, to se naučíš – nehledáme supermana.',
+    'Budeš mít spoustu prostoru se učit.',
+    'Pokud ještě studuješ, umožníme ti skloubit školu s prací',
+    'třeba nemají léta zkušeností, ale chtějí se učit',
+    'máš za sebou již nějaké zkušenosti a projekty v Javě (třeba i ze školy)',
+    'Nemusíš umět nazpaměť odříkat celou iOS dokumentaci',
+    'Nemusíš být zkušeným vývojářem.',
+    'Rádi tě vše naučíme.',
+    'Pozice je vhodná i pro studenty či absolventy střední či vysoké školy.',
+    'Mít předchozí zkušenosti s programováním ve Swiftu (mohou být i ze školy).',
+    'Příležitost pro absolventy, kteří se chtějí hodně naučit',
+    'Znalost programovacího jazyka (předně Java, Javascript, C++, C také C#, Python)',
+    'Ze začátku budeš dostávat menší úkoly, kterými se naučíš nové věci a zároveň nám pomůžeš.',
+])
+def test_parse_from_sentence_cs_junior_friendly(sentence):
+    assert 'JUNIOR_FRIENDLY' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Hledáme juniorního vývojáře, který rozšíří řady našich backenďáků',
+    'Junior Linux Admin (part-time)',
+    'A ačkoli k nám přijdeš jako junior, během chvíle můžeš raketově vyrůst vzhůru',
+    'Na pozici Graduate/Junior Software Developer budete pracovat na vývoji',
+    'A ačkoli k nám přijdeš jako junior, během chvíle můžeš raketově vyrůst vzhůru',
+])
+def test_parse_from_sentence_cs_explicitly_junior(sentence):
+    assert 'EXPLICITLY_JUNIOR' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'As a senior developer your will focus',  # mixed language jobs posting
+    'má seniorní zkušenost s frontendem.',
+])
+def test_parse_from_sentence_cs_explicitly_senior(sentence):
+    assert 'EXPLICITLY_SENIOR' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Předchozí zkušenost s vedením týmu',
+])
+def test_parse_from_sentence_cs_leadership_required(sentence):
+    assert 'LEADERSHIP_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'chuť učit se novým věcem',
+    'ochota a schopnost učit se novým technologiím',
+    'chuť inovovat a stále se učit nové věci',
+    'analytické myšlení, schopnost rychle se učit novým věcem',
+    'Schopnost učit se a získané znalosti dál rozvíjet.',
+    'Chuť se stále učit a pracovat na sobě',
+    'máš zapálení pro práci a chuť na sobě pracovat',
+    'Chuť se učit novým věcem.',
+    'ochotu učit se nové věci',
+    'chuť učit se a pracovat v týmu',
+    'Ochotu učit se novým věcem',
+    'Nejvíc nás ale zajímá tvoje otevřenost a chuť se rozvíjet.',
+    'třeba nemají léta zkušeností, ale chtějí se učit',
+])
+def test_parse_from_sentence_cs_learning_required(sentence):
+    assert 'LEARNING_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
