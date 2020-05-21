@@ -14,26 +14,30 @@ LANG_MAPPING = {
 FOLLOWED_BY_PATTERN = r'[\b\W](.+[\b\W])?'
 
 
-def rule(identifier, pattern, ignorecase=True):
+def rule(identifier, *patterns, ignorecase=True, any_order=False):
     compile_flags = re.IGNORECASE if ignorecase else 0
-    rule_re = re.compile(''.join([
-        '' if pattern[0] == '^' else r'\b',  # implicit word boundary if not ^
-        pattern,
-        '' if pattern[-1] == '$' else r'\b',  # implicit word boundary if not $
-    ]), compile_flags)
-    return (identifier, rule_re)
+    pattern_lists = [([pattern] if isinstance(pattern, str) else list(pattern))
+                     for pattern in patterns]
+    if any_order:
+        permutations = itertools.permutations(pattern_lists)
+    else:
+        permutations = [pattern_lists]
+    for pattern_lists in permutations:
+        for patterns_tuple in itertools.product(*pattern_lists):
+            pattern = FOLLOWED_BY_PATTERN.join(patterns_tuple)
+            rule_re = re.compile(''.join([
+                # implicit boundary if not ^
+                '' if pattern[0] == '^' else r'\b',
+                # pattern itself
+                pattern,
+                # implicit boundary if not $
+                '' if pattern[-1] == '$' else r'\b',
+            ]), compile_flags)
+            yield (identifier, rule_re)
 
 
-def rules(identifier, patterns1, patterns2, **kwargs):
-    patterns = itertools.product(patterns1, patterns2)
-    try:
-        if kwargs.pop('any_order'):
-            patterns = itertools.chain(patterns,
-                                       itertools.product(patterns2, patterns1))
-    except KeyError:
-        pass
-    return [rule(identifier, FOLLOWED_BY_PATTERN.join(patterns), **kwargs)
-            for patterns in patterns]
+def rules(rules):
+    return list(itertools.chain.from_iterable(rules))
 
 
 TECH_DEGREES_EN = [r'ph\.?d\.?', r'm\.?sc?\.?', r'b\.?sc?\.?',
@@ -53,103 +57,89 @@ LANGUAGE_KEYWORDS_EN = [r'language', r'knowledge', r'speak\w+', r'skills?',
                         r'fluen\w+']
 
 
-RULES_EN = (
-    rules('TECH_DEGREE_REQUIRED',
-          TECH_DEGREES_EN + [r'completed\b.*\beducation', r'degree', r'studies'],
-          TECH_DEGREE_FIELDS_EN) +
-    rules('TECH_DEGREE_REQUIRED',
-          TECH_DEGREE_FIELDS_EN,
-          [r'degree', r'education', r'university']) +
-    rules('TECH_DEGREE_REQUIRED',
-          TECH_DEGREES_EN,
-          [r'degree', r'or higher']) +
-    rules('ADVANCED_REQUIRED',
-          ADVANCED_SKILLS_ADJECTIVES_EN,
-          SKILLS_NOUNS_EN) +
-    rules('ADVANCED_REQUIRED',
-          [r'commercial', r'solid', r'work', r'working', r'previous', r'implementation', r'hands-on', r'architect\w+'],
-          [r'experience', r'knowledge']) +
-    rules('ADVANCED_REQUIRED',
-          [r'experience'],
-          [r'architect\w+', r'building', r'consuming', r'deploy\w+']) +
-    rules('EXPLICITLY_SENIOR',
-          [r'seasoned', r'experienced', r'practiced'],
-          [r'engineer', r'developer']) +
-    rules('CZECH_REQUIRED', [r'czech'], LANGUAGE_KEYWORDS_EN, any_order=True) +
-    rules('SLOVAK_REQUIRED', [r'slovak'], LANGUAGE_KEYWORDS_EN, any_order=True) +
-    rules('GERMAN_REQUIRED', [r'german'], LANGUAGE_KEYWORDS_EN, any_order=True)
-) + [
+RULES_EN = rules([
+    rule('TECH_DEGREE_REQUIRED', TECH_DEGREES_EN + [r'degree', r'studies'], TECH_DEGREE_FIELDS_EN),
+    rule('TECH_DEGREE_REQUIRED', r'completed', r'education', TECH_DEGREE_FIELDS_EN),
+    rule('TECH_DEGREE_REQUIRED', TECH_DEGREE_FIELDS_EN, [r'degree', r'education', r'university']),
+    rule('TECH_DEGREE_REQUIRED', TECH_DEGREES_EN, [r'degree', r'or higher']),
     rule('TECH_DEGREE_REQUIRED', r'academic record'),
-    rule('YEARS_EXPERIENCE_REQUIRED', r'[\d\-\+ ]+[^\d]+years?.?[\b ].*\b(experience|track record)'),
+    rule('YEARS_EXPERIENCE_REQUIRED', r'[\d\-\+ ]+[^\d]+years?.?', r'(experience|track record)'),
     rule('YEARS_EXPERIENCE_REQUIRED', r'experience\b.*[\d\-\+ ]+[^\d]+years?.?'),
     rule('YEARS_EXPERIENCE_REQUIRED', r'[\d\+] experience'),
-    rule('YEARS_EXPERIENCE_REQUIRED', r'multi(ple)?\b.*\byears?\b.*\bexperience'),
+    rule('YEARS_EXPERIENCE_REQUIRED', r'multi(ple)?', r'years?', r'experience'),
+    rule('ADVANCED_REQUIRED', ADVANCED_SKILLS_ADJECTIVES_EN, SKILLS_NOUNS_EN),
+    rule('ADVANCED_REQUIRED', r'experience', [r'architect\w+', r'building', r'consuming', r'deploy\w+']),
+    rule('ADVANCED_REQUIRED', [r'commercial', r'solid', r'work', r'working', r'previous', r'implementation', r'hands-on', r'architect\w+'], [r'experience', r'knowledge']),
     rule('ADVANCED_REQUIRED', r'(proficien(cy|t)|fluen(cy|t)|well.?versed) (in|with|\w+ing)'),
-    rule('ADVANCED_REQUIRED', r'responsibility\b.*\bfor\b.*\b(architecture|design)'),
-    rule('ADVANCED_REQUIRED', r'experience\b.*\beverything else'),
-    rule('ADVANCED_REQUIRED', r'experience\b.*\bwith\b.*\bvariety'),
-    rule('ADVANCED_REQUIRED', r'experienced?\b.*\bas\b.*\b(engineer|developer)'),
-    rule('ADVANCED_REQUIRED', r'you\b.*\b(consider yourself|are)\b.*\b(expert|researcher|hacker)'),
+    rule('ADVANCED_REQUIRED', r'responsibility', r'for', r'(architecture|design)'),
+    rule('ADVANCED_REQUIRED', r'experience', r'everything else'),
+    rule('ADVANCED_REQUIRED', r'experience', r'with', r'variety'),
+    rule('ADVANCED_REQUIRED', r'experienced?', r'as', r'(engineer|developer)'),
+    rule('ADVANCED_REQUIRED', r'you', r'(consider yourself|are)', r'(expert|researcher|hacker)'),
     rule('ADVANCED_REQUIRED', r'self-starter'),
-    rule('ADVANCED_REQUIRED', r'take\b.*\b(ownership|responsibility)'),
-    rule('ADVANCED_REQUIRED', r'manage\b.*\bpriorities'),
-    rule('ADVANCED_REQUIRED', r'translate\b.*\bbusiness'),
-    rule('ADVANCED_REQUIRED', r'analysis\b.*\bexperience'),
-    rule('ADVANCED_REQUIRED', r'have\b.*\bsuperpowers?'),
-    rule('ADVANCED_REQUIRED', r'must have\b.*\bexperience'),
+    rule('ADVANCED_REQUIRED', r'take', r'(ownership|responsibility)'),
+    rule('ADVANCED_REQUIRED', r'manage', r'priorities'),
+    rule('ADVANCED_REQUIRED', r'translate', r'business'),
+    rule('ADVANCED_REQUIRED', r'analysis', r'experience'),
+    rule('ADVANCED_REQUIRED', r'have', r'superpowers?'),
+    rule('ADVANCED_REQUIRED', r'must have', r'experience'),
     rule('ADVANCED_REQUIRED', r'previous experience with'),
-    rule('ADVANCED_REQUIRED', r'(provable|relevant)\b.*\bindustry experience'),
-    rule('LEADERSHIP_REQUIRED', r'(leadership|mentoring)\b.*\b(experience|skills)'),
-    rule('LEADERSHIP_REQUIRED', r'experience\b.*\b(leading|leader)'),
-    rule('LEADERSHIP_REQUIRED', r'lead(ing)?\b.*\b(teams?|courses?)'),
-    rule('LEADERSHIP_REQUIRED', r'lead(ing)?\b.*\bby example'),
-    rule('LEADERSHIP_REQUIRED', r'delegat\w+\b.*\bothers'),
-    rule('LEADERSHIP_REQUIRED', r'mentor(ing)?\b.*\bjunio\w+'),
-    rule('INDEPENDENCE_PREFERRED', r'(execute|work(ing)?|operat(e|ing)|solv(e|ing))\b.*\b(independen\w+|autonomou\w+)'),
-    rule('INDEPENDENCE_PREFERRED', r'(independent|autonomous)\b.*\bworking'),
-    rule('INDEPENDENCE_PREFERRED', r'(little|minimal|minimum)\b.*\bsupervision'),
+    rule('ADVANCED_REQUIRED', r'(provable|relevant)', r'industry experience'),
+    rule('LEADERSHIP_REQUIRED', r'(leadership|mentoring)', r'(experience|skills)'),
+    rule('LEADERSHIP_REQUIRED', r'experience', r'(leading|leader)'),
+    rule('LEADERSHIP_REQUIRED', r'lead(ing)?', r'(teams?|courses?)'),
+    rule('LEADERSHIP_REQUIRED', r'lead(ing)?', r'by example'),
+    rule('LEADERSHIP_REQUIRED', r'delegat\w+', r'others'),
+    rule('LEADERSHIP_REQUIRED', r'mentor(ing)?', r'junio\w+'),
+    rule('INDEPENDENCE_PREFERRED', r'(execute|work(ing)?|operat(e|ing)|solv(e|ing))', r'(independen\w+|autonomou\w+)'),
+    rule('INDEPENDENCE_PREFERRED', r'(independent|autonomous)', r'working'),
+    rule('INDEPENDENCE_PREFERRED', r'(little|minimal|minimum)', r'supervision'),
     rule('INDEPENDENCE_PREFERRED', r'self.?sufficient'),
     rule('EXPLICITLY_SENIOR', r'senior'),
+    rule('EXPLICITLY_SENIOR', [r'seasoned', r'experienced', r'practiced'], [r'engineer', r'developer']),
     rule('EXPLICITLY_JUNIOR', r'junior'),
     rule('JUNIOR_FRIENDLY', r'do(es)?(n.?t| not) matter'),
     rule('JUNIOR_FRIENDLY', r'entry.?level'),
     rule('JUNIOR_FRIENDLY', r'learn a (lot|ton)'),
-    rule('JUNIOR_FRIENDLY', r'whether\b.*\byou\b.*\bknow\b.*\bor\b.*\bnot(hing)?'),
-    rule('JUNIOR_FRIENDLY', r'you\b.*\bmissing'),
-    rule('JUNIOR_FRIENDLY', r'start\b.*\bcareer'),
-    rule('JUNIOR_FRIENDLY', r'school\b.*\bprojects?'),
-    rule('JUNIOR_FRIENDLY', r'(under|with)\b.*\b(guidance|support)'),
-    rule('JUNIOR_FRIENDLY', r'not?\b.*\bnecessar(y|ily)'),
-    rule('JUNIOR_FRIENDLY', r'open\b.*\bgraduat\w+'),
-    rule('JUNIOR_FRIENDLY', r'not?\b.*\bbig deal'),
-    rule('JUNIOR_FRIENDLY', r'(educational|school)\b.*\bexperience'),
-    rule('LEARNING_REQUIRED', r'will\w*\b.*\bto\b.*\blearn'),
-]
-SUPPRESSING_RULES_EN = [
+    rule('JUNIOR_FRIENDLY', r'whether', r'you', r'know', r'or', r'not(hing)?'),
+    rule('JUNIOR_FRIENDLY', r'you', r'missing'),
+    rule('JUNIOR_FRIENDLY', r'start', r'career'),
+    rule('JUNIOR_FRIENDLY', r'school', r'projects?'),
+    rule('JUNIOR_FRIENDLY', r'(under|with)', r'(guidance|support)'),
+    rule('JUNIOR_FRIENDLY', r'not?', r'necessar(y|ily)'),
+    rule('JUNIOR_FRIENDLY', r'open', r'graduat\w+'),
+    rule('JUNIOR_FRIENDLY', r'not?', r'big deal'),
+    rule('JUNIOR_FRIENDLY', r'(educational|school)', r'experience'),
+    rule('LEARNING_REQUIRED', r'will\w*', r'to', r'learn'),
+    rule('CZECH_REQUIRED', r'czech', LANGUAGE_KEYWORDS_EN, any_order=True),
+    rule('SLOVAK_REQUIRED', r'slovak', LANGUAGE_KEYWORDS_EN, any_order=True),
+    rule('GERMAN_REQUIRED', r'german', LANGUAGE_KEYWORDS_EN, any_order=True),
+])
+SUPPRESSING_RULES_EN = rules([
     rule('', r'(is|are|would be|as)( an?)? ((big )?plus|benefit|advantage)'),
     rule('', r'we welcome'),
     rule('', r'nice to have'),
     rule('', r'an? advantage'),
     rule('', r'training'),
-    rule('TECH_DEGREE_REQUIRED', r'or\b.*\bequivalent\b.*\bexperience'),
+    rule('TECH_DEGREE_REQUIRED', r'or', r'equivalent', r'experience'),
     rule('ADVANCED_REQUIRED', r'communications? skills'),
     rule('ADVANCED_REQUIRED', r'english'),
     rule('ADVANCED_REQUIRED', r'depend(s|ing) on your'),
     rule('ADVANCED_REQUIRED', r'(ms|microsoft) office'),
-    rule('ADVANCED_REQUIRED', r'not?\b.*\bnecessary'),
+    rule('ADVANCED_REQUIRED', r'not?', r'necessary'),
     rule('ADVANCED_REQUIRED', r'(user|developer) experience'),
-    rule('ADVANCED_REQUIRED', r'if\b.*\binterested'),
+    rule('ADVANCED_REQUIRED', r'if', r'interested'),
     rule('ADVANCED_REQUIRED', r'send us'),
     rule('ADVANCED_REQUIRED', r'apply'),
     rule('ADVANCED_REQUIRED', r'(professional|personal) (requirements|skills)'),
-    rule('ADVANCED_REQUIRED', r'(educational|school)\b.*\bexperience'),
+    rule('ADVANCED_REQUIRED', r'(educational|school)', r'experience'),
     rule('EXPLICITLY_SENIOR', r'junior'),
     rule('EXPLICITLY_JUNIOR', r'(senior|mentor)'),
     rule('CZECH_REQUIRED', r'courses?'),
     rule('SLOVAK_REQUIRED', r'courses?'),
     rule('GERMAN_REQUIRED', r'courses?'),
     rule('LEADERSHIP_REQUIRED', r'(industry|join)'),
-]
+])
 
 
 ADVANCED_SKILLS_ADJECTIVES_CS = [r'pokročil\w+', r'výborn\w+', r'skvěl\w+',
@@ -160,45 +150,44 @@ TECH_DEGREES_CS = [r'vysokoškol\w+', r'vš', r'studi(um|a|i)', r'titul\w*',
 TECH_DEGREE_FIELDS_CS = [r'techn\w+', r'informati\w+', r'it']
 
 
-RULES_CS = (
-    rules('ADVANCED_REQUIRED', ADVANCED_SKILLS_ADJECTIVES_CS, SKILLS_NOUNS_CS) +
-    rules('JUNIOR_FRIENDLY', SKILLS_NOUNS_CS, [r'programovací\w*\b.*\bjazyk\w*']) +
-    rules('LEADERSHIP_REQUIRED', SKILLS_NOUNS_CS, [r'(vedení\w*|vést)\b.*\btým\w*']) +
-    rules('TECH_DEGREE_REQUIRED', TECH_DEGREES_CS, TECH_DEGREE_FIELDS_CS, any_order=True)
-) + [
+RULES_CS = rules([
+    rule('JUNIOR_FRIENDLY', SKILLS_NOUNS_CS, r'programovací\w*', r'jazyk\w*'),
+    rule('LEADERSHIP_REQUIRED', SKILLS_NOUNS_CS, r'(vedení\w*|vést)', r'tým\w*'),
+    rule('TECH_DEGREE_REQUIRED', TECH_DEGREES_CS, TECH_DEGREE_FIELDS_CS, any_order=True),
+    rule('ADVANCED_REQUIRED', ADVANCED_SKILLS_ADJECTIVES_CS, SKILLS_NOUNS_CS),
     rule('YEARS_EXPERIENCE_REQUIRED', r'(a(le)?spoň|minim\w+|min|\d+)[\W]*(rok|let|rok[yůu])'),
     rule('ENGLISH_REQUIRED', r'(angličtin\w+|anglick\w+)'),
     rule('ENGLISH_REQUIRED', r'AJ', ignorecase=False),
     rule('ENGLISH_REQUIRED', r'EN', ignorecase=False),
     rule('GERMAN_REQUIRED', r'NJ', ignorecase=False),
     rule('GERMAN_REQUIRED', r'(němčin\w+|německ\w+)'),
-    rule('ADVANCED_REQUIRED', r'zkušenos\w+\b.*\b(vývíje|vývoj)\w+'),
-    rule('ADVANCED_REQUIRED', r'nejsi\b.*\bzelenáč'),
+    rule('ADVANCED_REQUIRED', r'zkušenos\w+', r'(vývíje|vývoj)\w+'),
+    rule('ADVANCED_REQUIRED', r'nejsi', r'zelenáč'),
     rule('ADVANCED_REQUIRED', r'(rozhled\w*|prax\w+|architekt\w*)'),
-    rule('ADVANCED_REQUIRED', r'máš\b.*\bza sebou'),
-    rule('ADVANCED_REQUIRED', r'samostatn\w+\b.*\břeš\w+\b.*\bproblém\w+'),
+    rule('ADVANCED_REQUIRED', r'máš', r'za sebou'),
+    rule('ADVANCED_REQUIRED', r'samostatn\w+', r'řeš\w+', r'problém\w+'),
     rule('EXPLICITLY_SENIOR', r'(seniorní|senior)'),
     rule('EXPLICITLY_JUNIOR', r'(junior|jnr|juniorní\w*)'),
     rule('INDEPENDENCE_PREFERRED', r'samostatn\w+|individuáln\w+'),
     rule('JUNIOR_FRIENDLY', r'naučí(me|š)'),
-    rule('JUNIOR_FRIENDLY', r'(prostor\w*|příležitost\w*|možnost\w*)\b.*\bučit'),
+    rule('JUNIOR_FRIENDLY', r'(prostor\w*|příležitost\w*|možnost\w*)', r'učit'),
     rule('JUNIOR_FRIENDLY', r'(absolvent\w*|studuješ|ze školy|školní)'),
-    rule('JUNIOR_FRIENDLY', r'a(le)?spoň\b.*\bzákladní'),
-    rule('JUNIOR_FRIENDLY', r'(nem[aá]\w*|nemusí\w*)\b.*\b(zkušen\w*|umět)'),
-    rule('JUNIOR_FRIENDLY', r'práce\b.*\bPC', ignorecase=False),
-    rule('JUNIOR_FRIENDLY', r'\w*start\w*\b.*\bkariér\w+'),
-    rule('LEARNING_REQUIRED', r'(chce\w*|chtěj\w*|chuť|ochot\w+|schopn\w+)\b.*\b(učit|na sobě|rozvíj\w+)'),
-]
-SUPPRESSING_RULES_CS = [
+    rule('JUNIOR_FRIENDLY', r'a(le)?spoň', r'základní'),
+    rule('JUNIOR_FRIENDLY', r'(nem[aá]\w*|nemusí\w*)', r'(zkušen\w*|umět)'),
+    rule('JUNIOR_FRIENDLY', r'práce', r'PC', ignorecase=False),
+    rule('JUNIOR_FRIENDLY', r'\w*start\w*', r'kariér\w+'),
+    rule('LEARNING_REQUIRED', r'(chce\w*|chtěj\w*|chuť|ochot\w+|schopn\w+)', r'(učit|na sobě|rozvíj\w+)'),
+])
+SUPPRESSING_RULES_CS = rules([
     rule('', r'výhodou'),
     rule('EXPLICITLY_SENIOR', r'(junior|jnr|juniorní\w*)'),
     rule('EXPLICITLY_JUNIOR', r'(seniorní|senior)'),
     rule('ENGLISH_REQUIRED', r'(výuk\w|kurz\w*)'),
     rule('GERMAN_REQUIRED', r'(výuk\w|kurz\w*)'),
     rule('ADVANCED_REQUIRED', r'škol\w+'),
-    rule('TECH_DEGREE_REQUIRED', r'(či|nebo)\b.*\bprax\w+'),
+    rule('TECH_DEGREE_REQUIRED', r'(či|nebo)', r'prax\w+'),
     rule('TECH_DEGREE_REQUIRED', r'nerozhoduje'),
-]
+])
 
 
 RULES = {'en': RULES_EN, 'cs': RULES_CS}
@@ -224,7 +213,7 @@ def parse_from_sentences(sentences, lang):
 def parse_from_sentence(sentence, lang):
     for rule_id, rule_re in RULES[lang]:
         match = rule_re.search(sentence)
-        # print(rule_re.pattern, match)
+        print(rule_re.pattern, match)
         if (match and
             not is_supressed(rule_id, sentence, lang)):
             yield (rule_id, sentence, match.group(0))
