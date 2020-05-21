@@ -23,6 +23,7 @@ def get_feature_ids(features):
     'Completed education in informatics',
     'B.S. in Computer Science or related area of study (M.S. preferred)',
     'BS in a technical discipline. MS desirable.',
+    'University degree in Computer Sciences or a comparable education',
 ])
 def test_parse_from_sentence_en_tech_degree_required(sentence):
     assert 'TECH_DEGREE_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
@@ -79,7 +80,6 @@ def test_parse_from_sentence_en_years_experience_required_not(sentence):
     'you have gained professional experience',
     'Very good programming skills and practical experience',
     'experience in building very complex applications',
-    'Required Technical and Professional Expertise',
     'Excellent SQL know how',
     'You have HTML 5 superpowers',
     'experience with React, HTML, CSS, JavaScript, JS, Bootstrap and everything else',
@@ -111,6 +111,7 @@ def test_parse_from_sentence_en_years_experience_required_not(sentence):
     'Detailed knowledge of MS SQL Server',
     'Experience working with a variety of databases',
     'Extensive knowledge of modern HTML and CSS',
+    'Java 8 Development experience within a professional / commercial setting',
 ])
 def test_parse_from_sentence_en_advanced_required(sentence):
     assert 'ADVANCED_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
@@ -139,6 +140,20 @@ def test_parse_from_sentence_en_advanced_required(sentence):
     'These are the professional requirements and personal skills we are looking for:',
     'So if you like the sound of the above and your CV has some of the aforementioned key skills then why not apply.',
     'Augmented Analytics automates work of human analysts by developing software intelligence that autonomously produces key business insights',
+    'Extensive library / knowledge base',
+    'At Ubiq we work on enabling a seamless last mile experience by delivering',
+    'Work alongside machine learning engineers to optimize visualizations and product experience',
+    'You can also take advantage of targeted professional development opportunities',
+    'We take full ownership of our projects - from technical scope',
+    'As a Frontend Engineer at Perseus, you will work with a small team of highly skilled developers delivering experience',
+    'We are hungry craftspeople, we have grit, we are honest, we take ownership',
+    'First professional experience in software development',
+    'with excellent test coverage and world-class processes including great code reviews and cross-team knowledge-sharing.',
+    'You are routinely working with modern technologies and practices on a high quality Swift codebase, allowing you to grow fast and gain experience efficiently.',
+    'You are fluent in at least one programming language.',
+    'This future state platform will seamlessly and uniquely deliver a revolutionized learning experience through innovation, continuous delivery, and architectural integration.',
+    'love working in a diverse team with different backgrounds and different knowledge levels',
+    'Required Technical and Professional Expertise',
 ])
 def test_parse_from_sentence_en_advanced_required_not(sentence):
     assert 'ADVANCED_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
@@ -160,6 +175,9 @@ def test_parse_from_sentence_en_explicitly_senior(sentence):
     'Team 8-10 junior-senior',
     'love working in a diverse team with seniors and juniors.',
     'we are open to all levels of seniority from junior to team leaders',
+    'C# Software Developer - Jnr, Mid and Senior Opportunties Available',
+    'Support, learn, and collaborate with Senior and Lead Developers',
+    'guided by a senior software engineer.',
 ])
 def test_parse_from_sentence_en_explicitly_senior_not(sentence):
     assert 'EXPLICITLY_SENIOR' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
@@ -215,6 +233,7 @@ def test_parse_from_sentence_en_leadership_required(sentence):
 @pytest.mark.parametrize('sentence', [
     'we are open to all levels of seniority from junior to team leaders',
     'A leading organisation within the financial services industry are looking for a several Java Developers to join their team.',
+    'called out appropriately to the developer community, and where they lead to...',
 ])
 def test_parse_from_sentence_en_leadership_required_not(sentence):
     assert 'LEADERSHIP_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
@@ -266,6 +285,14 @@ def test_parse_from_sentence_en_independence_preferred(sentence):
 
 
 @pytest.mark.parametrize('sentence', [
+    "We operate Germany's largest independent payment infrastructure",
+    'Augmented Analytics automates work of human analysts by developing software intelligence that autonomously produces key business insights',
+])
+def test_parse_from_sentence_en_independence_preferred_not(sentence):
+    assert 'INDEPENDENCE_PREFERRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
     'Javascript junior developer',
     'As a Junior Software Engineer you will have the following responsibilities',
 ])
@@ -277,6 +304,7 @@ def test_parse_from_sentence_en_explicitly_junior(sentence):
     'Team 8-10 junior-senior',
     'love working in a diverse team with seniors and juniors.',
     'you will also get the chance to mentor junior developers in the team',
+    'C# Software Developer - Jnr, Mid and Senior Opportunties Available',
 ])
 def test_parse_from_sentence_en_explicitly_junior_not(sentence):
     assert 'EXPLICITLY_JUNIOR' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
@@ -296,9 +324,18 @@ def test_parse_from_sentence_en_explicitly_junior_not(sentence):
     'It would be awesome, if you have already worked with these two languages but in case you have not, that is also no big deal.',
     'Doesn’t matter if you don’t know all of them – general overview and right motivation will be enough!',
     'Work or educational experience in software development',
+    'guided by a senior software engineer.',
+    'You are fluent in at least one programming language.',
 ])
 def test_parse_from_sentence_en_junior_friendly(sentence):
     assert 'JUNIOR_FRIENDLY' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'With just a few clicks, you can apply online and start the sunny side of your career.',
+])
+def test_parse_from_sentence_en_junior_friendly_not(sentence):
+    assert 'JUNIOR_FRIENDLY' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -358,10 +395,12 @@ def test_parse_from_sentence_cs_english_required_not(sentence):
     'praxe s provozováním databází a práce s SQL',
     'Skvělé algoritmické a technické myšlení',
     'praxi z vývoje komplexních aplikací v týmech',
+    'Praxi ve vývoji webových aplikací',
     'Perfektní znalost OOP a PHP7, SQL',
     'Velmi dobrá znalost HTML5/CSS/JavaScript pro Front-End Development',
     'spolehlivost a samostatnost při řešení problémů',
     'dobrá znalost OS Linux včetně konfigurace',
+    'spolupracovat s juniorními kolegy a kvalitně je nasměrovat',
 ])
 def test_parse_from_sentence_cs_advanced_required(sentence):
     assert 'ADVANCED_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
@@ -373,6 +412,19 @@ def test_parse_from_sentence_cs_advanced_required(sentence):
     'Praktické zkušenosti s GIT, Maven',
     'schopnost převzít zodpovědnost',
     'Mít předchozí zkušenosti s programováním ve Swiftu (mohou být i ze školy).',
+    'Praxi v IT oblasti v největší české bance',
+    'Pozice je vhodná jak pro uchazeče s praxí, tak umíme poskytnout podporu i absolventům.',
+    'Vítána zkušenost ve vývoji databázových aplikací pro ERP systémy.',
+    'vítány zkušenosti ve vývoji databázových aplikací',
+    'praxe',
+    'bez komunikativní znalosti angličtiny se neobejdeš, stejně jako s perfektní znalostí češtiny nebo slovenštiny',
+    'ČJ/SJ ovládáš na výborné úrovni, neobejdeš se bez znalosti alespoň technické angličtiny',
+    'Nemusíš mít za sebou dlouholetou praxi',
+    'Pošli nám zprávu a připoj životopis, svůj profil na LinkedInu nebo cokoliv jiného, z čeho poznáme, co máš za sebou',
+    'výborná znalost ČJ/SJ, pokročilá AJ',
+    'ČJ/SJ na výborné úrovni, znalost technické angličtiny nebo němčiny',
+    'Chceš získávat zkušenosti z vývoje aplikací napříč odvětvími',
+    'protože budeš pracovat se Zdeňkem naším architektem',
 ])
 def test_parse_from_sentence_cs_advanced_required_not(sentence):
     assert 'ADVANCED_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
@@ -442,6 +494,13 @@ def test_parse_from_sentence_cs_independence_preferred(sentence):
 
 
 @pytest.mark.parametrize('sentence', [
+    'Smluvní mzdu - individuální ujednání v návaznosti na pracovní zkušenosti a ...',
+])
+def test_parse_from_sentence_cs_independence_preferred_not(sentence):
+    assert 'INDEPENDENCE_PREFERRED' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
     'Zvýšíme výrazně tvojí hodnotu na trhu, naučíme tě pracovat s mnoho DevOps a Cloud technologiemi',
     'Jsi čerstvý absolvent/ka a rád/a by ses věnoval/a programování?',
     'Alespoň základní znalost programování v C++ (vše ostatní tě naučíme)',
@@ -461,9 +520,18 @@ def test_parse_from_sentence_cs_independence_preferred(sentence):
     'Příležitost pro absolventy, kteří se chtějí hodně naučit',
     'Znalost programovacího jazyka (předně Java, Javascript, C++, C také C#, Python)',
     'Ze začátku budeš dostávat menší úkoly, kterými se naučíš nové věci a zároveň nám pomůžeš.',
+    'Vhodné i pro studenty',
+    'Nemusíš mít za sebou dlouholetou praxi',
 ])
 def test_parse_from_sentence_cs_junior_friendly(sentence):
     assert 'JUNIOR_FRIENDLY' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Angličtinu alespoň na základní úrovni',
+])
+def test_parse_from_sentence_cs_junior_friendly_not(sentence):
+    assert 'JUNIOR_FRIENDLY' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
