@@ -444,6 +444,7 @@ def test_parse_from_sentence_cs_english_required_not(sentence):
     'spolupracovat s juniorními kolegy a kvalitně je nasměrovat',
     'Máš solidní background s vývojem škálovatelného produktu a praktickou zkušenost s ukládáním do cache.',
     'přehled o databázích a dalších úložištích (PostgreSQL, MySQL nebo Redis, Elasticsearch)',
+    'zodpovědnost za projekt od plánování, vývoje, realizace až po jeho testování',
 ])
 def test_parse_from_sentence_cs_advanced_required(sentence):
     assert 'ADVANCED_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
@@ -538,6 +539,7 @@ def test_parse_from_sentence_cs_independence_preferred(sentence):
 
 @pytest.mark.parametrize('sentence', [
     'Smluvní mzdu - individuální ujednání v návaznosti na pracovní zkušenosti a ...',
+    'nezáleží, zda u nás chceš pracovat na HPP nebo třeba na živnost – individuálně hledáme řešení',
 ])
 def test_parse_from_sentence_cs_independence_preferred_not(sentence):
     assert 'INDEPENDENCE_PREFERRED' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
@@ -588,9 +590,17 @@ def test_parse_from_sentence_cs_junior_friendly_not(sentence):
     'Na pozici Graduate/Junior Software Developer budete pracovat na vývoji',
     'A ačkoli k nám přijdeš jako junior, během chvíle můžeš raketově vyrůst vzhůru',
     'Padawan pro QA Team – tester',
+    'PHP programátor - Vývojářův učeň (25-45.000 Kč)',
 ])
 def test_parse_from_sentence_cs_explicitly_junior(sentence):
     assert 'EXPLICITLY_JUNIOR' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Pokud hledáte spíše juniornější pozici, podívejte se na naše další inzeráty nebo na web níže.',
+])
+def test_parse_from_sentence_cs_explicitly_junior_not(sentence):
+    assert 'EXPLICITLY_JUNIOR' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [

@@ -105,4 +105,3 @@ def sections(sections):
         for item in section['contents']:
             yaml += f'    - {yaml_str(item)}\n'
     return yaml.strip()
-
