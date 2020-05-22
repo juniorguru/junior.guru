@@ -24,7 +24,7 @@ function onApply(url) {
 
 function onLoad() {
   if (!gtag) return;
-  if (document.body.className != 'page-job') return;
+  if (!document.body.className.match(/\bpage-job\b/)) return;
   const applyButton = document.getElementById('apply');
   if (!applyButton) return;
   applyButton.addEventListener('mousedown', function (event) {
