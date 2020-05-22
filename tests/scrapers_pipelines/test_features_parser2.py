@@ -37,6 +37,7 @@ def test_parse_from_sentence_en_tech_degree_required(sentence):
     'World-class technical training within Teradata University',
     'Do you want to combine university and work? Are you doing your PhD?',
     'You are a high school graduate with a focus on IT or a interested person in programming',
+    'University degree in Computer Science or Economics/Finance or equivalent professional qualification or experience',
 ])
 def test_parse_from_sentence_en_tech_degree_required_not(sentence):
     assert 'TECH_DEGREE_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
@@ -112,6 +113,10 @@ def test_parse_from_sentence_en_years_experience_required_not(sentence):
     'Experience working with a variety of databases',
     'Extensive knowledge of modern HTML and CSS',
     'Java 8 Development experience within a professional / commercial setting',
+    'Notable C# object oriented programming skills, .NET framework knowledge',
+    'intermediate SQL developer - enterprise projects',
+    'medior SQL developer - enterprise projects',
+    'C# or C++developer (intermediate/senior) - Prague',
 ])
 def test_parse_from_sentence_en_advanced_required(sentence):
     assert 'ADVANCED_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
@@ -146,7 +151,7 @@ def test_parse_from_sentence_en_advanced_required(sentence):
     'You can also take advantage of targeted professional development opportunities',
     'We take full ownership of our projects - from technical scope',
     'As a Frontend Engineer at Perseus, you will work with a small team of highly skilled developers delivering experience',
-    'We are hungry craftspeople, we have grit, we are honest, we take ownership',
+    '・ We are hungry craftspeople, we have grit, we are honest, we take ownership',
     'First professional experience in software development',
     'with excellent test coverage and world-class processes including great code reviews and cross-team knowledge-sharing.',
     'You are routinely working with modern technologies and practices on a high quality Swift codebase, allowing you to grow fast and gain experience efficiently.',
@@ -166,6 +171,7 @@ def test_parse_from_sentence_en_advanced_required_not(sentence):
     'senior developers shall demonstrate very good understanding of C#',
     'As a senior developer your will focus',
     'They are now looking for an experienced Senior Java developer to join their collaborative team',
+    'The Specialist Software Engineer will be responsible for the software design, development, and operation of these SaMD.',
 ])
 def test_parse_from_sentence_en_explicitly_senior(sentence):
     assert 'EXPLICITLY_SENIOR' in get_feature_ids(parse_from_sentence(sentence, 'en'))
@@ -295,6 +301,7 @@ def test_parse_from_sentence_en_independence_preferred_not(sentence):
 @pytest.mark.parametrize('sentence', [
     'Javascript junior developer',
     'As a Junior Software Engineer you will have the following responsibilities',
+    'Padawan tester',
 ])
 def test_parse_from_sentence_en_explicitly_junior(sentence):
     assert 'EXPLICITLY_JUNIOR' in get_feature_ids(parse_from_sentence(sentence, 'en'))
@@ -368,6 +375,7 @@ def test_parse_from_sentence_cs_english_required(sentence):
 @pytest.mark.parametrize('sentence', [
     'máš k dispozici plně hrazenou výuku angličtiny a němčiny',
     'Jazykové kurzy (angličtina, španělština, čínština..)',
+    'PHP programátor - GPS sledování, bez AJ (35-55.000 Kč)',
 ])
 def test_parse_from_sentence_cs_english_required_not(sentence):
     assert 'ENGLISH_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
@@ -401,6 +409,8 @@ def test_parse_from_sentence_cs_english_required_not(sentence):
     'spolehlivost a samostatnost při řešení problémů',
     'dobrá znalost OS Linux včetně konfigurace',
     'spolupracovat s juniorními kolegy a kvalitně je nasměrovat',
+    'Máš solidní background s vývojem škálovatelného produktu a praktickou zkušenost s ukládáním do cache.',
+    'přehled o databázích a dalších úložištích (PostgreSQL, MySQL nebo Redis, Elasticsearch)',
 ])
 def test_parse_from_sentence_cs_advanced_required(sentence):
     assert 'ADVANCED_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
@@ -505,6 +515,7 @@ def test_parse_from_sentence_cs_independence_preferred_not(sentence):
     'Jsi čerstvý absolvent/ka a rád/a by ses věnoval/a programování?',
     'Alespoň základní znalost programování v C++ (vše ostatní tě naučíme)',
     'znalost práce na PC',
+    'Práce na PC',
     'nastartujte svou kariéru',
     'Nabízíme fulltime-job, vhodný i pro absolventy s dostatečnou znalostí.',
     'Co neumíš, to se naučíš – nehledáme supermana.',
@@ -522,6 +533,9 @@ def test_parse_from_sentence_cs_independence_preferred_not(sentence):
     'Ze začátku budeš dostávat menší úkoly, kterými se naučíš nové věci a zároveň nám pomůžeš.',
     'Vhodné i pro studenty',
     'Nemusíš mít za sebou dlouholetou praxi',
+    'alespoň jeden hotový projekt',
+    'Pokud máte zkušenosti s jinými jazyky např. C++, C#, Java, podpoříme přeškolení',
+    'Projekťák na zácvik!',
 ])
 def test_parse_from_sentence_cs_junior_friendly(sentence):
     assert 'JUNIOR_FRIENDLY' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
@@ -540,6 +554,7 @@ def test_parse_from_sentence_cs_junior_friendly_not(sentence):
     'A ačkoli k nám přijdeš jako junior, během chvíle můžeš raketově vyrůst vzhůru',
     'Na pozici Graduate/Junior Software Developer budete pracovat na vývoji',
     'A ačkoli k nám přijdeš jako junior, během chvíle můžeš raketově vyrůst vzhůru',
+    'Padawan pro QA Team – tester',
 ])
 def test_parse_from_sentence_cs_explicitly_junior(sentence):
     assert 'EXPLICITLY_JUNIOR' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
@@ -574,6 +589,8 @@ def test_parse_from_sentence_cs_leadership_required(sentence):
     'Ochotu učit se novým věcem',
     'Nejvíc nás ale zajímá tvoje otevřenost a chuť se rozvíjet.',
     'třeba nemají léta zkušeností, ale chtějí se učit',
+    'učit se a neustále aktivně posouvat svoje znalosti potřebné během vývoje',
+    'Učení a rozvoj sebe samého.',
 ])
 def test_parse_from_sentence_cs_learning_required(sentence):
     assert 'LEARNING_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))

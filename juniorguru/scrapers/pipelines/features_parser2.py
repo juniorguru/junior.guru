@@ -48,7 +48,7 @@ ADVANCED_SKILLS_ADJECTIVES_EN = [r'excellent', r'professional', r'strong',
                                  r'very good', r'thorough', r'solid', r'sound',
                                  r'significant', r'deep(er)?', r'extensive',
                                  r'superior', r'advanced', r'profound',
-                                 r'detailed']
+                                 r'detailed', r'notable']
 SKILLS_NOUNS_EN = [r'skills', r'abilities', r'capabilities', r'knowledge',
                    r'experience', r'background', r'understanding', r'expertise',
                    r'know.?how', r'familiarity']
@@ -79,6 +79,7 @@ RULES_EN = rules([
     rule('ADVANCED_REQUIRED', r'experienced?', r'as', r'(engineer|developer)'),
     rule('ADVANCED_REQUIRED', r'you', r'(consider yourself|are)', r'(expert|researcher|hacker)'),
     rule('ADVANCED_REQUIRED', r'self-starter'),
+    rule('ADVANCED_REQUIRED', r'(intermediate|medior)'),
     rule('ADVANCED_REQUIRED', r'take', r'(ownership|responsibility)'),
     rule('ADVANCED_REQUIRED', r'manage', r'priorities'),
     rule('ADVANCED_REQUIRED', r'translate', r'business'),
@@ -98,8 +99,8 @@ RULES_EN = rules([
     rule('INDEPENDENCE_PREFERRED', r'(little|minimal|minimum)', r'supervision'),
     rule('INDEPENDENCE_PREFERRED', r'self.?sufficient'),
     rule('EXPLICITLY_SENIOR', r'senior'),
-    rule('EXPLICITLY_SENIOR', [r'seasoned', r'experienced', r'practiced'], [r'engineer', r'developer']),
-    rule('EXPLICITLY_JUNIOR', r'junior'),
+    rule('EXPLICITLY_SENIOR', [r'seasoned', r'experienced', r'practiced', r'specialist'], [r'engineer', r'developer']),
+    rule('EXPLICITLY_JUNIOR', [r'junior', r'padawan']),
     rule('JUNIOR_FRIENDLY', r'do(es)?(n.?t| not) matter'),
     rule('JUNIOR_FRIENDLY', r'entry.?level'),
     rule('JUNIOR_FRIENDLY', r'learn a (lot|ton)'),
@@ -136,8 +137,8 @@ SUPPRESSING_RULES_EN = rules([
     rule('ADVANCED_REQUIRED', r'not?', r'necessary'),
     rule('ADVANCED_REQUIRED', r'(user|developer|customer) experience'),
     rule('ADVANCED_REQUIRED', r'(knowledge.?(base|sharing))'),
-    rule('ADVANCED_REQUIRED', r'^we'),
-    rule('ADVANCED_REQUIRED', r'^this'),
+    rule('ADVANCED_REQUIRED', r'^\W*we'),
+    rule('ADVANCED_REQUIRED', r'^\W*this'),
     rule('ADVANCED_REQUIRED', r'first'),
     rule('ADVANCED_REQUIRED', r'(professional|personal|technical) (requirements|skills|expertise)'),
     rule('ADVANCED_REQUIRED', r'(educational|school)', r'experience'),
@@ -156,8 +157,9 @@ SUPPRESSING_RULES_EN = rules([
 
 
 ADVANCED_SKILLS_ADJECTIVES_CS = [r'pokročil\w+', r'výborn\w+', r'skvěl\w+',
-                                 r'komerční', r'dobr\w+', r'perfekt\w*']
-SKILLS_NOUNS_CS = [r'znalost\w*', r'zkušenost\w*', r'myšlení']
+                                 r'komerční', r'dobr\w+', r'perfekt\w*',
+                                 r'solidn\w*']
+SKILLS_NOUNS_CS = [r'znalost\w*', r'zkušenost\w*', r'myšlení', r'background']
 TECH_DEGREES_CS = [r'vysokoškol\w+', r'vš', r'studi(um|a|i)', r'titul\w*',
                    r'absolven\w+']
 TECH_DEGREE_FIELDS_CS = [r'techn\w+', r'informati\w+', r'it']
@@ -176,23 +178,27 @@ RULES_CS = rules([
     rule('GERMAN_REQUIRED', r'(němčin\w+|německ\w+)'),
     rule('ADVANCED_REQUIRED', r'zkušenos\w+', r'(vývíje|vývoj)\w+'),
     rule('ADVANCED_REQUIRED', r'nejsi', r'zelenáč'),
-    rule('ADVANCED_REQUIRED', r'(rozhled\w*|architekt\w*)'),
+    rule('ADVANCED_REQUIRED', [r'rozhled(em)?', r'přehled(em)?', r'architekt\w*']),
     rule('ADVANCED_REQUIRED', r'prax\w+', [r've?', r'se?']),
     rule('ADVANCED_REQUIRED', r'máš', r'za sebou'),
     rule('ADVANCED_REQUIRED', r'samostatn\w+', r'řeš\w+', r'problém\w+'),
     rule('ADVANCED_REQUIRED', r'nasměrovat', r'kolegy', any_order=True),
-    rule('EXPLICITLY_SENIOR', r'(seniorní|senior)'),
-    rule('EXPLICITLY_JUNIOR', r'(junior|jnr|juniorní\w*)'),
+    rule('ADVANCED_REQUIRED', r'medior\w*'),
+    rule('EXPLICITLY_SENIOR', r'senior\w*'),
+    rule('EXPLICITLY_JUNIOR', [r'junior\w*', r'jnr', r'padawan\w*']),
     rule('INDEPENDENCE_PREFERRED', r'samostatn\w+|individuáln\w+'),
-    rule('JUNIOR_FRIENDLY', r'[nz]aučí(me|š)'),
+    rule('JUNIOR_FRIENDLY', [r'[nz]aučí(me|š)', r'zaučení', r'přeškolí(me|š)', r'přeškolení', r'přeučí(me|š)', r'přeučení', r'zacvičí(me|š)', r'zácvik']),
     rule('JUNIOR_FRIENDLY', r'(prostor\w*|příležitost\w*|možnost\w*)', r'učit'),
     rule('JUNIOR_FRIENDLY', r'(absolvent\w*|studuješ|ze školy|školní)'),
     rule('JUNIOR_FRIENDLY', r'vhodn\w+', [r'student\w*', r'absolvent\w*']),
     rule('JUNIOR_FRIENDLY', r'a(le)?spoň', r'základní'),
+    rule('JUNIOR_FRIENDLY', r'a(le)?spoň', [r'jeden', r'1'], r'projekt'),
     rule('JUNIOR_FRIENDLY', r'(nem[aá]\w*|nemusí\w*)', r'(zkušen\w*|umět|prax\w+|za sebou)'),
-    rule('JUNIOR_FRIENDLY', r'práce', r'PC', ignorecase=False),
+    rule('JUNIOR_FRIENDLY', r'[Pp]ráce', r'PC', ignorecase=False),
     rule('JUNIOR_FRIENDLY', r'\w*start\w*', r'kariér\w+'),
     rule('LEARNING_REQUIRED', r'(chce\w*|chtěj\w*|chuť|ochot\w+|schopn\w+)', r'(učit|na sobě|rozvíj\w+)'),
+    rule('LEARNING_REQUIRED', r'učit se'),
+    rule('LEARNING_REQUIRED', [r'učení', r'rozv\w+'], r'sebe sam\w+'),
 ])
 SUPPRESSING_RULES_CS = rules([
     rule('', r'výhodou'),
@@ -203,6 +209,7 @@ SUPPRESSING_RULES_CS = rules([
     rule('EXPLICITLY_JUNIOR', r'(seniorní|senior)'),
     rule('EXPLICITLY_JUNIOR', r'(spolu)?prac\w+ se?'),
     rule('ENGLISH_REQUIRED', r'(výuk\w|kurz\w*)'),
+    rule('ENGLISH_REQUIRED', r'[Bb][Ee][Zz]', r'AJ', ignorecase=False),
     rule('GERMAN_REQUIRED', r'(výuk\w|kurz\w*)'),
     rule('ADVANCED_REQUIRED', r'škol\w+'),
     rule('ADVANCED_REQUIRED', r'(chce\w*|chtěj\w*)'),
