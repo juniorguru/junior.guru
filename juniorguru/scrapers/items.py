@@ -5,7 +5,7 @@ from scrapy import Field, Item
 
 
 class Job(Item):
-    # expected to be set by spiders
+    # set by spiders
     posted_at = Field(required=True)
     title = Field(required=True)
     location = Field(required=True)
@@ -16,13 +16,13 @@ class Job(Item):
     employment_types = Field()
     experience_levels = Field()
 
-    # expected to be set by pipelines
+    # set by pipelines
     lang = Field()
     description_text = Field()
     description_sentences = Field()
     description_words = Field()
-    sections = Field()  # might disappear with removal of sections parser
-    features = Field()  # might move up later if displaying features to users
+    sections = Field()  # unused atm, as well as the sections parser
+    features = Field()
     jg_rank = Field()
 
 
