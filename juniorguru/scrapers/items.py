@@ -21,8 +21,9 @@ class Job(Item):
     description_text = Field()
     description_sentences = Field()
     description_words = Field()
-    sections = Field()
+    sections = Field()  # might disappear with removal of sections parser
     features = Field()  # might move up later if displaying features to users
+    jg_rank = Field()
 
 
 def absolute_url(url, loader_context):

@@ -16,11 +16,11 @@ class Pipeline():
         return item
 
 
-def calc_jg_rank(features, lang):
-    return []
+def calc_jg_rank(features):
+    return 0
 
 
-def calc_section_req_grade(section, lang):
+def calc_section_req_grade(section):
     grade = 0
     grade += one_or_zero(section['type'] == 'list') * WEIGHT_IS_REQ_MAYBE
 
@@ -36,7 +36,7 @@ def calc_section_req_grade(section, lang):
     return grade
 
 
-def calc_content_req_grade(content, lang):
+def calc_content_req_grade(content):
     grade = 0
 
     for hint_re in CONTENT_ISNT_REQ[lang]:
