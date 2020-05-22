@@ -19,9 +19,9 @@
       </h2>
       <p>
         <small>
-          <code>{{ job_dropped.id }}</code>
-          &mdash;
           <a href="#{{ job_dropped.id }}">#</a>
+          &mdash;
+          <code>{{ job_dropped.id }}</code>
           &mdash;
           <a href="{{ job_dropped.response_url }}" target="_blank">Zdrojové URL</a>
           &mdash;
@@ -43,7 +43,22 @@
           &mdash;
           {{ job_dropped.item.posted_at|to_datetime|ago }}
         </p>
-        <textarea rows="20" cols="100">{{ job_dropped.item.description_html }}</textarea>
+        {% if job_dropped.item.features %}
+        <details>
+          <summary>Features ({{ job_dropped.item.features|length }})</summary>
+          <pre>{{ job_dropped.item.features|pprint }}</pre>
+        </details>
+        {% endif %}
+        {% if job_dropped.item.sections %}
+        <details>
+          <summary>Sections ({{ job_dropped.item.sections|length }})</summary>
+          <pre>{{ job_dropped.item.sections|sections }}</pre>
+        </details>
+        {% endif %}
+        <details>
+          <summary>Description</summary>
+          <textarea rows="20" cols="100">{{ job_dropped.item.description_html }}</textarea>
+        </details>
       {% endif %}
       <details>
         <summary>Data</summary>
