@@ -1,4 +1,4 @@
-from peewee import BooleanField, CharField, DateTimeField
+from peewee import BooleanField, CharField, DateTimeField, IntegerField
 
 from juniorguru.models.base import BaseModel, JSONField
 
@@ -47,6 +47,7 @@ class Job(BaseModel):
     description = CharField(null=True)  # required for JG, null for scraped
     lang = CharField(null=True)  # required for scraped, null for JG
     link = CharField(null=True)  # required for scraped
+    jg_rank = IntegerField(null=True)  # required for scraped
     source = CharField()
     is_approved = BooleanField(default=False)
     is_sent = BooleanField(default=False)
@@ -79,7 +80,7 @@ class Job(BaseModel):
     def scraped_listing(cls):
         return cls.select() \
             .where(cls.source != 'juniorguru') \
-            .order_by(cls.posted_at.desc())
+            .order_by(cls.jg_rank.desc(), cls.posted_at.desc())
 
     @classmethod
     def count(cls):

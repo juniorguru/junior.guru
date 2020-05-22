@@ -26,7 +26,6 @@ ACCUMULATIVE_FEATURES = {
     'JUNIOR_FRIENDLY',
 }
 FEW_FEATURES_THRESHOLD = 2
-FEW_FEATURES_PENALTY = 0.5
 
 
 class Pipeline():
@@ -37,20 +36,11 @@ class Pipeline():
 
 
 def calc_jg_rank(features):
-    # - zapocitat nejak ze cislo vznika z nula nebo jedne-dvou feautres, /2
-    #   a taky co to je za features, jestli cummulative drobny nebo silny
     features = [f for f in features if f in RELEVANT_FEATURES]
     grades = [WEIGHTS[f] for f in itertools.chain(
         (f for f in features if f in ACCUMULATIVE_FEATURES),
         (f for f in frozenset(features) - ACCUMULATIVE_FEATURES),
     )]
-    grades_count = len(grades)
-    rank = sum(grades)
-
-    # if rank is calculated from more than FEW_FEATURES_THRESHOLD features,
-    # then multiply it by two so that ranks calculated from low numbers
-    # of features effectively get a penalty
-    if grades_count > FEW_FEATURES_THRESHOLD:
-        rank *= int(1 / FEW_FEATURES_PENALTY)
-
-    return rank
+    if len(grades) <= FEW_FEATURES_THRESHOLD:
+        return 0
+    return sum(grades)

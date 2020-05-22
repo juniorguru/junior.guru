@@ -469,6 +469,8 @@ def test_parse_from_sentence_cs_advanced_required(sentence):
     'ČJ/SJ na výborné úrovni, znalost technické angličtiny nebo němčiny',
     'Chceš získávat zkušenosti z vývoje aplikací napříč odvětvími',
     'protože budeš pracovat se Zdeňkem naším architektem',
+    'Není nutné znát programovací jazyky nebo mít přehled v IT',
+    'U nás jsme všichni zodpovědní za to, jak firma funguje',
 ])
 def test_parse_from_sentence_cs_advanced_required_not(sentence):
     assert 'ADVANCED_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
@@ -612,6 +614,13 @@ def test_parse_from_sentence_cs_explicitly_senior(sentence):
 
 
 @pytest.mark.parametrize('sentence', [
+    'Uděláme z tebe seniora😁',
+])
+def test_parse_from_sentence_cs_explicitly_senior_not(sentence):
+    assert 'EXPLICITLY_SENIOR' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
     'Předchozí zkušenost s vedením týmu',
 ])
 def test_parse_from_sentence_cs_leadership_required(sentence):
@@ -634,6 +643,7 @@ def test_parse_from_sentence_cs_leadership_required(sentence):
     'třeba nemají léta zkušeností, ale chtějí se učit',
     'učit se a neustále aktivně posouvat svoje znalosti potřebné během vývoje',
     'Učení a rozvoj sebe samého.',
+    'který se bude chtít postupně rozvíjet',
 ])
 def test_parse_from_sentence_cs_learning_required(sentence):
     assert 'LEARNING_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
