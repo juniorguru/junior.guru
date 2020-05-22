@@ -77,6 +77,13 @@ class Job(BaseModel):
             .order_by(cls.posted_at.desc())
 
     @classmethod
+    def bot_listing(cls):
+        return cls.select() \
+            .where(cls.source != 'juniorguru',
+                   cls.jg_rank > 0) \
+            .order_by(cls.jg_rank.desc(), cls.posted_at.desc())
+
+    @classmethod
     def scraped_listing(cls):
         return cls.select() \
             .where(cls.source != 'juniorguru') \

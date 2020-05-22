@@ -49,10 +49,12 @@ def jobs():
         jobs = Job.listing()
         jobs_count = Job.count()
         companies_count = Job.companies_count()
+        jobs_bot = Job.bot_listing()
     return render_template('jobs.html',
                            jobs=jobs,
                            jobs_count=jobs_count,
                            companies_count=companies_count,
+                           jobs_bot=jobs_bot,
                            thumbnail=thumbnail(title='Práce pro začínající programátory'))
 
 
