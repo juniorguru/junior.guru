@@ -72,7 +72,7 @@ ITEM_PIPELINES = {
    'juniorguru.scrapers.pipelines.language_filter.Pipeline': 400,
    'juniorguru.scrapers.pipelines.description_parser.Pipeline': 500,
    # 'juniorguru.scrapers.pipelines.sections_parser.Pipeline': 500,
-   'juniorguru.scrapers.pipelines.features_parser2.Pipeline': 600,
+   'juniorguru.scrapers.pipelines.features_parser.Pipeline': 600,
    'juniorguru.scrapers.pipelines.jg_rank.Pipeline': 700,
    'juniorguru.scrapers.pipelines.gender_cleaner.Pipeline': 800,
    'juniorguru.scrapers.pipelines.employment_types_cleaner.Pipeline': 900,

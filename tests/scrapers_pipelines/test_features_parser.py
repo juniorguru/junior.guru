@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.scrapers.pipelines.features_parser2 import parse_from_sentence
+from juniorguru.scrapers.pipelines.features_parser import parse_from_sentence
 
 
 def get_feature_ids(features):
