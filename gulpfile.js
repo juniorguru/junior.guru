@@ -126,7 +126,10 @@ const buildWeb = isLocalDevelopment
   : gulp.series(freezeFlask, gulp.parallel(minifyHTML, copyFavicon));
 
 async function watchWeb() {
-  gulp.watch('juniorguru/web/static/src/js/', buildJS);
+  gulp.watch([
+    'package-lock.json',
+    'juniorguru/web/static/src/js/',
+  ], buildJS);
   gulp.watch('juniorguru/web/static/src/css/', buildCSS);
   gulp.watch([
     'juniorguru/web/static/src/images/screenshots/',
