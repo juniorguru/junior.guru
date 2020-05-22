@@ -1,5 +1,11 @@
 import itertools
 
+from scrapy.exceptions import DropItem
+
+
+class NotEntryLevel(DropItem):
+    pass
+
 
 WEIGHTS = {
     'EXPLICITLY_SENIOR': -8,
@@ -27,11 +33,16 @@ ACCUMULATIVE_FEATURES = {
 }
 FEW_FEATURES_THRESHOLD = 2
 
+MIN_JG_RANK = 1
+
 
 class Pipeline():
     def process_item(self, item, spider):
-        item['jg_rank'] = calc_jg_rank([feature['name'] for feature
-                                        in item['features']])
+        jg_rank = calc_jg_rank([feature['name'] for feature
+                                in item['features']])
+        item['jg_rank'] = jg_rank
+        if jg_rank < MIN_JG_RANK:
+            raise NotEntryLevel(f"JG rank is {jg_rank} (minimum: {MIN_JG_RANK})")
         return item
 
 

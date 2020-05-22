@@ -335,6 +335,7 @@ def test_parse_from_sentence_en_independence_preferred_not(sentence):
     'Javascript junior developer',
     'As a Junior Software Engineer you will have the following responsibilities',
     'Padawan tester',
+    'Internship: JAVA DEVELOPER ',
 ])
 def test_parse_from_sentence_en_explicitly_junior(sentence):
     assert 'EXPLICITLY_JUNIOR' in get_rule_ids(parse_from_sentence(sentence, 'en'))
@@ -551,8 +552,6 @@ def test_parse_from_sentence_cs_independence_preferred_not(sentence):
     'Zvýšíme výrazně tvojí hodnotu na trhu, naučíme tě pracovat s mnoho DevOps a Cloud technologiemi',
     'Jsi čerstvý absolvent/ka a rád/a by ses věnoval/a programování?',
     'Alespoň základní znalost programování v C++ (vše ostatní tě naučíme)',
-    'znalost práce na PC',
-    'Práce na PC',
     'nastartujte svou kariéru',
     'Nabízíme fulltime-job, vhodný i pro absolventy s dostatečnou znalostí.',
     'Co neumíš, to se naučíš – nehledáme supermana.',
@@ -593,6 +592,7 @@ def test_parse_from_sentence_cs_junior_friendly_not(sentence):
     'A ačkoli k nám přijdeš jako junior, během chvíle můžeš raketově vyrůst vzhůru',
     'Padawan pro QA Team – tester',
     'PHP programátor - Vývojářův učeň (25-45.000 Kč)',
+    'Internship: JAVA DEVELOPER ',
 ])
 def test_parse_from_sentence_cs_explicitly_junior(sentence):
     assert 'EXPLICITLY_JUNIOR' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
