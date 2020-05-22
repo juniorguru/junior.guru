@@ -231,13 +231,31 @@ SUPPRESSING_RULES = {'en': SUPPRESSING_RULES_EN, 'cs': SUPPRESSING_RULES_CS}
 
 class Pipeline():
     def process_item(self, item, spider):
-        features = []
-        features.append((LANG_MAPPING[item['lang']], None, None))
-        features.extend(parse_from_sentence(item['title'], item['lang']))
-        features.extend(parse_from_sentences(item['description_sentences'],
-                                             item['lang']))
-        item['features'] = features
+        parse_results = deduplicate(itertools.chain(
+            parse_from_sentence(item['title'], item['lang']),
+            parse_from_sentences(item['description_sentences'], item['lang']),
+        ))
+        item['features'] = [
+            dict(name=LANG_MAPPING[item['lang']],
+                 origin='language_filter')
+        ] + [
+            dict(name=rule_id,
+                 origin='features_parser',
+                 sentence=sentence,
+                 patterns=patterns)
+            for rule_id, sentence, patterns in parse_results
+        ]
         return item
+
+
+def deduplicate(parse_results):
+    seen = {}
+    for rule_id, sentence, pattern in parse_results:
+        key = (rule_id, sentence)
+        seen.setdefault(key, [])
+        seen[key].append(pattern)
+    return [(rule_id, sentence, patterns) for (rule_id, sentence), patterns
+            in seen.items()]
 
 
 def parse_from_sentences(sentences, lang):
