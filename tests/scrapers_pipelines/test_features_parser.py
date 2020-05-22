@@ -36,8 +36,8 @@ def test_deduplicate():
     ]
 
 
-def get_feature_ids(features):
-    return {feature_id for feature_id, match, pattern in features}
+def get_rule_ids(parse_results):
+    return {rule_id for rule_id, match, pattern in parse_results}
 
 
 @pytest.mark.parametrize('sentence', [
@@ -59,7 +59,7 @@ def get_feature_ids(features):
     'University degree in Computer Sciences or a comparable education',
 ])
 def test_parse_from_sentence_en_tech_degree_required(sentence):
-    assert 'TECH_DEGREE_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'TECH_DEGREE_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -73,7 +73,7 @@ def test_parse_from_sentence_en_tech_degree_required(sentence):
     'University degree in Computer Science or Economics/Finance or equivalent professional qualification or experience',
 ])
 def test_parse_from_sentence_en_tech_degree_required_not(sentence):
-    assert 'TECH_DEGREE_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'TECH_DEGREE_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -86,7 +86,7 @@ def test_parse_from_sentence_en_tech_degree_required_not(sentence):
     'Multiple years of experience in software development.',
 ])
 def test_parse_from_sentence_en_years_experience_required(sentence):
-    assert 'YEARS_EXPERIENCE_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'YEARS_EXPERIENCE_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -94,7 +94,7 @@ def test_parse_from_sentence_en_years_experience_required(sentence):
     'We are willing to offer a higher salary depending on your professional experience and qualification',  # bug/regression
 ])
 def test_parse_from_sentence_en_years_experience_required_not(sentence):
-    assert 'YEARS_EXPERIENCE_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'YEARS_EXPERIENCE_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -152,7 +152,7 @@ def test_parse_from_sentence_en_years_experience_required_not(sentence):
     'C# or C++developer (intermediate/senior) - Prague',
 ])
 def test_parse_from_sentence_en_advanced_required(sentence):
-    assert 'ADVANCED_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'ADVANCED_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -194,7 +194,7 @@ def test_parse_from_sentence_en_advanced_required(sentence):
     'Required Technical and Professional Expertise',
 ])
 def test_parse_from_sentence_en_advanced_required_not(sentence):
-    assert 'ADVANCED_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'ADVANCED_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -207,7 +207,7 @@ def test_parse_from_sentence_en_advanced_required_not(sentence):
     'The Specialist Software Engineer will be responsible for the software design, development, and operation of these SaMD.',
 ])
 def test_parse_from_sentence_en_explicitly_senior(sentence):
-    assert 'EXPLICITLY_SENIOR' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'EXPLICITLY_SENIOR' in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -219,7 +219,7 @@ def test_parse_from_sentence_en_explicitly_senior(sentence):
     'guided by a senior software engineer.',
 ])
 def test_parse_from_sentence_en_explicitly_senior_not(sentence):
-    assert 'EXPLICITLY_SENIOR' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'EXPLICITLY_SENIOR' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -233,7 +233,7 @@ def test_parse_from_sentence_en_explicitly_senior_not(sentence):
     'Proficient in English, desirable: german',
 ])
 def test_parse_from_sentence_en_german_required(sentence):
-    assert 'GERMAN_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'GERMAN_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -249,7 +249,7 @@ def test_parse_from_sentence_en_german_required(sentence):
     'Fluency in German or Russian is a plus; English is required',
 ])
 def test_parse_from_sentence_en_german_required_not(sentence):
-    assert 'GERMAN_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'GERMAN_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -266,7 +266,7 @@ def test_parse_from_sentence_en_german_required_not(sentence):
     'technical leadership and mentoring skills',
 ])
 def test_parse_from_sentence_en_leadership_required(sentence):
-    assert 'LEADERSHIP_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'LEADERSHIP_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -275,7 +275,7 @@ def test_parse_from_sentence_en_leadership_required(sentence):
     'called out appropriately to the developer community, and where they lead to...',
 ])
 def test_parse_from_sentence_en_leadership_required_not(sentence):
-    assert 'LEADERSHIP_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'LEADERSHIP_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -284,7 +284,7 @@ def test_parse_from_sentence_en_leadership_required_not(sentence):
     'Fluent English + Czech or Slovak',
 ])
 def test_parse_from_sentence_en_czech_required(sentence):
-    assert 'CZECH_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'CZECH_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -294,7 +294,7 @@ def test_parse_from_sentence_en_czech_required(sentence):
     'Workshops and meetings with various experts from the Czech market, internal trainings, language courses',
 ])
 def test_parse_from_sentence_en_czech_required_not(sentence):
-    assert 'CZECH_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'CZECH_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -302,7 +302,7 @@ def test_parse_from_sentence_en_czech_required_not(sentence):
     'Fluent English + Czech or Slovak',
 ])
 def test_parse_from_sentence_en_slovak_required(sentence):
-    assert 'SLOVAK_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'SLOVAK_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -320,7 +320,7 @@ def test_parse_from_sentence_en_slovak_required(sentence):
     'be self-motivated and comfortable solving problems independently',
 ])
 def test_parse_from_sentence_en_independence_preferred(sentence):
-    assert 'INDEPENDENCE_PREFERRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'INDEPENDENCE_PREFERRED' in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -328,7 +328,7 @@ def test_parse_from_sentence_en_independence_preferred(sentence):
     'Augmented Analytics automates work of human analysts by developing software intelligence that autonomously produces key business insights',
 ])
 def test_parse_from_sentence_en_independence_preferred_not(sentence):
-    assert 'INDEPENDENCE_PREFERRED' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'INDEPENDENCE_PREFERRED' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -337,7 +337,7 @@ def test_parse_from_sentence_en_independence_preferred_not(sentence):
     'Padawan tester',
 ])
 def test_parse_from_sentence_en_explicitly_junior(sentence):
-    assert 'EXPLICITLY_JUNIOR' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'EXPLICITLY_JUNIOR' in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -347,7 +347,7 @@ def test_parse_from_sentence_en_explicitly_junior(sentence):
     'C# Software Developer - Jnr, Mid and Senior Opportunties Available',
 ])
 def test_parse_from_sentence_en_explicitly_junior_not(sentence):
-    assert 'EXPLICITLY_JUNIOR' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'EXPLICITLY_JUNIOR' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -368,14 +368,14 @@ def test_parse_from_sentence_en_explicitly_junior_not(sentence):
     'You are fluent in at least one programming language.',
 ])
 def test_parse_from_sentence_en_junior_friendly(sentence):
-    assert 'JUNIOR_FRIENDLY' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'JUNIOR_FRIENDLY' in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
     'With just a few clicks, you can apply online and start the sunny side of your career.',
 ])
 def test_parse_from_sentence_en_junior_friendly_not(sentence):
-    assert 'JUNIOR_FRIENDLY' not in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'JUNIOR_FRIENDLY' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -384,7 +384,7 @@ def test_parse_from_sentence_en_junior_friendly_not(sentence):
     'Ability and will to quickly learn new technologies and new products.',
 ])
 def test_parse_from_sentence_en_learning_required(sentence):
-    assert 'LEARNING_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'en'))
+    assert 'LEARNING_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'en'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -402,7 +402,7 @@ def test_parse_from_sentence_en_learning_required(sentence):
     'technická AJ',
 ])
 def test_parse_from_sentence_cs_english_required(sentence):
-    assert 'ENGLISH_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'ENGLISH_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -411,7 +411,7 @@ def test_parse_from_sentence_cs_english_required(sentence):
     'PHP programátor - GPS sledování, bez AJ (35-55.000 Kč)',
 ])
 def test_parse_from_sentence_cs_english_required_not(sentence):
-    assert 'ENGLISH_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'ENGLISH_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -446,7 +446,7 @@ def test_parse_from_sentence_cs_english_required_not(sentence):
     'přehled o databázích a dalších úložištích (PostgreSQL, MySQL nebo Redis, Elasticsearch)',
 ])
 def test_parse_from_sentence_cs_advanced_required(sentence):
-    assert 'ADVANCED_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'ADVANCED_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -470,7 +470,7 @@ def test_parse_from_sentence_cs_advanced_required(sentence):
     'protože budeš pracovat se Zdeňkem naším architektem',
 ])
 def test_parse_from_sentence_cs_advanced_required_not(sentence):
-    assert 'ADVANCED_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'ADVANCED_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -482,7 +482,7 @@ def test_parse_from_sentence_cs_advanced_required_not(sentence):
     'Je určitě plus, pokud už máš vysokoškolský titul (ideálně s IT zaměřením) nebo jej brzy získáš.',
 ])
 def test_parse_from_sentence_cs_tech_degree_required(sentence):
-    assert 'TECH_DEGREE_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'TECH_DEGREE_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -494,7 +494,7 @@ def test_parse_from_sentence_cs_tech_degree_required(sentence):
     'Vzdělání: SŠ/VŠ',
 ])
 def test_parse_from_sentence_cs_tech_degree_required_not(sentence):
-    assert 'TECH_DEGREE_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'TECH_DEGREE_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -503,21 +503,21 @@ def test_parse_from_sentence_cs_tech_degree_required_not(sentence):
     'praxe v oboru 2 roky nebo přesvědčivý projekt',
 ])
 def test_parse_from_sentence_cs_years_experience_required(sentence):
-    assert 'YEARS_EXPERIENCE_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'YEARS_EXPERIENCE_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
     'komunikativní znalost anglického nebo německého jazyka',
 ])
 def test_parse_from_sentence_cs_german_required(sentence):
-    assert 'GERMAN_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'GERMAN_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
     'máš k dispozici plně hrazenou výuku angličtiny a němčiny',
 ])
 def test_parse_from_sentence_cs_german_required_not(sentence):
-    assert 'GERMAN_REQUIRED' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'GERMAN_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -533,14 +533,14 @@ def test_parse_from_sentence_cs_german_required_not(sentence):
     'Schopnost sebeřízení, týmové i individuální práce',
 ])
 def test_parse_from_sentence_cs_independence_preferred(sentence):
-    assert 'INDEPENDENCE_PREFERRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'INDEPENDENCE_PREFERRED' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
     'Smluvní mzdu - individuální ujednání v návaznosti na pracovní zkušenosti a ...',
 ])
 def test_parse_from_sentence_cs_independence_preferred_not(sentence):
-    assert 'INDEPENDENCE_PREFERRED' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'INDEPENDENCE_PREFERRED' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -571,14 +571,14 @@ def test_parse_from_sentence_cs_independence_preferred_not(sentence):
     'Projekťák na zácvik!',
 ])
 def test_parse_from_sentence_cs_junior_friendly(sentence):
-    assert 'JUNIOR_FRIENDLY' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'JUNIOR_FRIENDLY' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
     'Angličtinu alespoň na základní úrovni',
 ])
 def test_parse_from_sentence_cs_junior_friendly_not(sentence):
-    assert 'JUNIOR_FRIENDLY' not in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'JUNIOR_FRIENDLY' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -590,7 +590,7 @@ def test_parse_from_sentence_cs_junior_friendly_not(sentence):
     'Padawan pro QA Team – tester',
 ])
 def test_parse_from_sentence_cs_explicitly_junior(sentence):
-    assert 'EXPLICITLY_JUNIOR' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'EXPLICITLY_JUNIOR' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -598,14 +598,14 @@ def test_parse_from_sentence_cs_explicitly_junior(sentence):
     'má seniorní zkušenost s frontendem.',
 ])
 def test_parse_from_sentence_cs_explicitly_senior(sentence):
-    assert 'EXPLICITLY_SENIOR' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'EXPLICITLY_SENIOR' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
     'Předchozí zkušenost s vedením týmu',
 ])
 def test_parse_from_sentence_cs_leadership_required(sentence):
-    assert 'LEADERSHIP_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'LEADERSHIP_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -626,4 +626,4 @@ def test_parse_from_sentence_cs_leadership_required(sentence):
     'Učení a rozvoj sebe samého.',
 ])
 def test_parse_from_sentence_cs_learning_required(sentence):
-    assert 'LEARNING_REQUIRED' in get_feature_ids(parse_from_sentence(sentence, 'cs'))
+    assert 'LEARNING_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
