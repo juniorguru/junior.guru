@@ -73,6 +73,12 @@ def job(job_id):
                                                job_location=job.location))
 
 
+@app.route('/hire-juniors/')
+def hire_juniors():
+    return render_template('hire_juniors.html',)
+                           # thumbnail=thumbnail(title=''))
+
+
 @app.route('/donate/')
 def donate():
     return render_template('donate.html',
