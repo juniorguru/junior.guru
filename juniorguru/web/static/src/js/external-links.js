@@ -1,5 +1,6 @@
 function onExternalLinkClick(url) {
   try {
+    console.log('click');
     gtag('event', 'click', {
       'event_category': 'outbound',
       'event_label': url,
