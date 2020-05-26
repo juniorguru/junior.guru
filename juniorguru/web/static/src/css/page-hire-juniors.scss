@@ -1,0 +1,56 @@
+body.page-hire-juniors {
+  main {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  main > header {
+    padding-left: $whitespace;
+    padding-right: $whitespace;
+  }
+}
+
+.numbers {
+  background: $black;
+  color: $white;
+  text-align: center;
+  padding: ($whitespace-3 * 2) 0;
+
+  h2 {
+    background: none;
+    color: $white;
+    margin: $whitespace 0 $whitespace-3 0;
+  }
+
+  ul, li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  li {
+    padding: 0 $whitespace $whitespace 0;
+    width: 100%;
+  }
+
+  strong {
+    @include font-4;
+  }
+
+  strong, small {
+    display: block;
+  }
+
+  @media screen and (min-width: 700px) {
+    li {
+      width: auto;
+    }
+  }
+}
