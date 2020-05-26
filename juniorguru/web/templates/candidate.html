@@ -8,8 +8,11 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 {% block body_attrs %} class="page-candidate handbook"{% endblock %}
 
 {% block main %}
-<p class="red-alert" style="background: red; color: white; font-weight: bold; text-transform: uppercase; padding: 1rem 2rem; margin-bottom: 4rem; text-align: center;">
-  <style>.red-alert a { color: white !important; }</style>
+<style>
+  .red-alert { background: red; color: white; font-weight: bold; text-transform: uppercase; padding: 1rem 2rem; margin-bottom: 4rem; text-align: center; }
+  .red-alert a { color: white !important; }
+</style>
+<p class="red-alert">
   Tato stránka ještě není veřejná, zachovej ji prosím v tajnosti.
   Budu rád, pokud mi na {{ 'ahoj@junior.guru'|email_link }} napíšeš,
   co si o ní myslíš, nebo mi rovnou pošleš osobní doporučení,
