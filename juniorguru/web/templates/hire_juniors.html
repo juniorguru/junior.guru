@@ -9,15 +9,192 @@ TODO
 
 {% block main %}
 <header>
-  <h1>TODO</h1>
+  <h1>Když juniory, tak ty odhodlané!</h1>
   <p>
-    <img src="{{ url_for('static', filename='images/chick3.svg') }}">
-    ...Znáš <a href="{{ url_for('learn') }}">základy</a> a máš <a href="{{ url_for('practice') }}">praxi</a>?
-    Nastal okamžik začít zkoušet své štestí na pracovním trhu.
-    Projdi si {{ jobs_count }}&nbsp;aktuálních nabídek práce od&nbsp;{{ companies_count }}&nbsp;firem,
-    všechny přímo pro juniory, tedy začínající programátory.
+    Hledáte juniorní programátory?
+    <a href="{{ url_for('jobs') }}">Nabídky práce na junior.guru</a> navštěvují především lidé,
+    kteří si svou kariéru v&nbsp;IT rozhodli vydřít. Inzercí zde zvyšujete šanci,
+    že se vám ozvou ti <strong>nejvíce odhodlaní a motivovaní junioři</strong> na českém trhu.
   </p>
 </header>
+
+<section class="why-jg">
+  <div class="numbers">
+    <h2>Proč junior.guru?</h2>
+    <ul>
+      <li><strong>2900+</strong> <small>návštěvníků měsíčně</small></li>
+      <li><strong>8600+</strong> <small>zobrazení měsíčně</small></li>
+      <li><strong>100+</strong> <small>odběratelů newsletteru</small></li>
+    </ul>
+  </div>
+
+  <figure class="quote">
+    <blockquote>
+      Překvapilo mě, kolik vnitřní motivace prokázali uchazeči o naši stáž.
+      junior.guru má kvalitní publikum z komunitních kruhů.
+    </blockquote>
+    <figcaption>
+      Vašek Chalupníček, dtlab
+    </figcaption>
+  </figure>
+
+  <h3>Spolupracujeme</h3>
+  <ul>
+    <li>Česko.Digital</li>
+    <li>DigiKoalice</li>
+    <li>#HolkyzMarketingu</li>
+    <li>PyLadies</li>
+    <li>React Girls</li>
+  </ul>
+
+  <h3>Zmínili junior.guru</h3>
+  <ul>
+    <li>Deník N</li>
+    <li>KaranTéma HN</li>
+    <li>Lupa.cz</li>
+    <li>Marie Claire</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Ceník</h2>
+
+  <h3>Komunitní nabídka</h3>
+  <h4></h4>
+  <ul>
+    <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
+    <li>Inzerát v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75">newsletteru</a></li>
+  </ul>
+  <p>Zdarma</p>
+
+  <h4>Ideální pro</h4>
+  <ul>
+    <li>Dobrovolnictví,</li>
+    <li>brigády,</li>
+    <li>stáže,</li>
+    <li>neziskovky,</li>
+    <li>malé projekty,</li>
+    <li>firmy spolupracující s PyLadies.</li>
+  </ul>
+
+  <h3>Standardní nabídka</h3>
+  <ul>
+    <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
+    <li>Inzerát v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75">newsletteru</a></li>
+  </ul>
+  <p>699 Kč za měsíc <small>konečná cena</small></p>
+
+  <p>
+    <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank" class="button">
+      Přidat nabídku
+    </a>
+  </p>
+</section>
+
+<section>
+  <h2>Profil typického kandidáta</h2>
+  <p>
+    Ač jsou zde studenti VŠ vítáni, projekt se snaží oslovovat především kandidáty
+    z nového, zatím nevyčerpaného zdroje:
+    Lidi bez původního technického vzdělání, kteří se našli v programování
+    a nyní se snaží změnit profesi. Jsou typicky starší než studenti,
+    mají za sebou vzdělání nebo i kariéru v jiném oboru, a nyní udělali krok
+    do neznáma, aby se dostali do IT. Investovali do své výuky a sami se
+    po večerech propracovali k prvním úspěchům, hnáni jen vlastní pílí a vnitřní motivací.
+  </p>
+
+  <h3>Typický kandidát</h3>
+  <ul>
+    <li>Zná běžný programovací jazyk v rozsahu <a href="https://naucse.python.cz/">začátečnického kurzu</a></li>
+    <li>Má na projektech naučenou základní schopnost dostat zadání a rozložit jej na podproblémy.</li>
+    <li>Má vytvořený vlastní projekt nebo jinou praktickou ukázku své práce.</li>
+    <li>Zvládá práci s Gitem, příkazovou řádkou, editorem.</li>
+    <li>Ovládá angličtinu.</li>
+    <li>Má velkou vnitřní motivaci učit se a uspět.</li>
+    <li>Často má předchozí zkušenosti z jiného oboru a jde o všestrannou, komunikativní osobnost.</li>
+    <li>Často jde o absolventku kurzů <a href="https://pyladies.cz/">PyLadies</a> (půlroční intenzivní kurz programování s podporou komunity).</li>
+  </ul>
+
+  <h3>Vaše alternativy</h3>
+  <ul>
+    <li>Hledat zkušenější programátory, kterých je ale nedostatek. Budete je hledat dlouho a draze.</li>
+    <li>Oslovovat studenty. Ti mají kvalitnější teoretické znalosti, ale často menší praxi na projektech.
+      Velké firmy navíc už dávno investují do spolupráce s univerzitami a šikovní studenti jdou často rovnou k nim.</li>
+    <li>Hledat v zahraničí. Západní Evropa je sice přebraná, ale např. na východ od nás je mnoho šikovných
+      lidí. Abyste ovšem mohli najmout programátory ze Srbska nebo Ukrajiny, musí vaše firma být <em>English-first</em>.
+      A vyřídit víza nemusí být nutně problém, ale může to trvat měsíce.</li>
+  </ul>
+
+  <p>
+    <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank" class="button">
+      Přidat nabídku
+    </a>
+  </p>
+
+  <p>
+    (ksicht)
+    Pokud máte jakékoliv otázky, Honza vám je rád zodpoví.
+    {{ 'ahoj@junior.guru'|email_link }}
+  </p>
+</section>
+
+<hr>
+
+<section>
+  <h2>Sponzorujte unikátní příručku pro juniory</h2>
+  <p>
+    Na junior.guru brzy vyjde <strong>ucelený soubor rad pro juniory</strong> v rozsahu 25&nbsp;stran textu. Díky placenému logu vaší firmy v záhlaví stránky bude obsah příručky přístupný zdarma komukoliv. <strong>O text je už nyní mezi juniory velký zájem!</strong>
+  </p>
+
+  <h3>Proč sponzorovat</h3>
+  <ul>
+    <li>Obdobná příručka zatím v češtině neexistuje, přestože ji juniorní kandidáti opravdu potřebují. Jistě si budou pamatovat, že si ji mohli otevřít zdarma právě díky vašemu logu.</li>
+    <li>Příručka zvýší a standardizuje úroveň juniorních kandidátů v ČR.</li>
+    <li>Financováním junior.guru podpoříte příchod nových lidí na trh. V dlouhodobém horizontu zlepšíte výběr a rozmanitost kandidátů v ČR.</li>
+  </ul>
+  <p>
+    Vaše logo v záhlaví příručky s odkazem na vaše stránky pořídíte za <strong>2999 Kč za měsíc</strong> <small>konečná cena</small>. Objednávejte na {{ 'ahoj@junior.guru'|email_link }}
+  </p>
+
+  <h3>Osnova</h3>
+  <ul>
+    <li>Jak dlouho trvá si sehnat první práci v&nbsp;IT</li>
+    <li>Kdy začít hledat</li>
+    <li>Jaké budou požadavky zaměstnavatele</li>
+    <li>Jaká mít očekávání (mzda, možnost práce na dálku)</li>
+    <li>Po jakých pozicích se jako začátečník poohlížet</li>
+    <li>Typy firem podle způsobu práce (produkt, agentura)</li>
+    <li>Typy firem podle velikosti (velká firma, startup)</li>
+    <li>Stáže, dobrovolnictví</li>
+    <li>Příprava na pohovor, životopis</li>
+    <li>Vlastní projekt a první praxe, základy algoritmizace</li>
+    <li>Hledání práce na internetu, recruiting, networking</li>
+    <li>Pohovor, pravdomluvnost, otázky, vyjednávání, odmítnutí</li>
+    <li>Firemní kultura</li>
+    <li>Vlastní aktivita navíc</li>
+  </ul>
+
+  <p>
+    Vaše logo v záhlaví příručky s odkazem na vaše stránky pořídíte za <strong>2999 Kč za měsíc</strong> <small>konečná cena</small>. Objednávejte na {{ 'ahoj@junior.guru'|email_link }}
+  </p>
+
+  <p>
+    (ksicht)
+    Pokud máte jakékoliv otázky, Honza vám je rád zodpoví.
+    {{ 'ahoj@junior.guru'|email_link }}
+  </p>
+</section>
+
+<!--
+<h4>Inzercí na junior.guru děláte trh zdravějším</h4>
+  <p>
+    Financováním tohoto projektu podporujete příchod nových lidí
+    na trh, což v dlouhodobém horizontu povede k většímu výběru kandidátů
+    a jejich rozmanitosti.
+  </p>
+-->
+
+
 {% endblock %}
 
 {% block author %}{% endblock %}
