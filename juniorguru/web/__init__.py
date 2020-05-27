@@ -75,8 +75,8 @@ def job(job_id):
 
 @app.route('/hire-juniors/')
 def hire_juniors():
-    return render_template('hire_juniors.html',)
-                           # thumbnail=thumbnail(title=''))
+    return render_template('hire_juniors.html',
+                           thumbnail=thumbnail(title='Najímejte odhodlané juniory'))
 
 
 @app.route('/donate/')
