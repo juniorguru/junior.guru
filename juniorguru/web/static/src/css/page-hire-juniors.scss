@@ -116,7 +116,7 @@ body.page-hire-juniors {
       @include font-0;
       text-align: center;
       margin-top: ($whitespace-3 * 2);
-      margin-bottom: $whitespace;
+      margin-bottom: $whitespace-2;
     }
 
     .logos {
@@ -162,7 +162,7 @@ body.page-hire-juniors {
         width: auto;
         max-width: 20rem;
         filter: grayscale(100%);
-        opacity: 0.8;
+        opacity: 0.6;
       }
 
       a.logos-item:hover img,
@@ -403,7 +403,7 @@ body.page-hire-juniors {
 
       .sponsor-handbook-toc ul {
         columns: 2;
-        column-gap: $whitespace-3;
+        column-gap: 4 * $whitespace;
       }
     }
 
