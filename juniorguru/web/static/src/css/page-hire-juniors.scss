@@ -5,6 +5,20 @@ body.page-hire-juniors {
     padding-right: 0;
   }
 
+  .body-container > header .navigation {
+    li a::before {
+      content: "";
+      margin: 0;
+    }
+
+    li:nth-child(2) a {
+      &, &::before {
+        background: $white;
+        color: $blue;
+      }
+    }
+  }
+
   main > header {
     padding-left: $whitespace;
     padding-right: $whitespace;

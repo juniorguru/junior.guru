@@ -67,7 +67,7 @@ ul li {
   list-style-type: square;
 }
 
-nav ol, nav li {
+nav ol, nav ul, nav li {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -687,7 +687,7 @@ ul.items {
     }
   }
 
-  ol {
+  .navigation {
     align-self: flex-end;
     display: flex;
     @include font-2;
@@ -726,24 +726,24 @@ ul.items {
       height: 4rem;
     }
 
-    ol a {
+    .navigation a {
       padding: $whitespace-0 ($whitespace + 0.3rem);
     }
 
-    ol a::before {
+    .navigation a::before {
       float: none;
       margin: 0 0.3rem;
     }
 
-    ol a span {
+    .navigation a span {
       display: none;
     }
   }
 }
 
-.body-container > header ol a:hover,
-.body-container > header ol a:focus,
-.body-container > header ol a:active {
+.body-container > header .navigation a:hover,
+.body-container > header .navigation a:focus,
+.body-container > header .navigation a:active {
   &, &::before {
     background: $blue;
     color: $white;

@@ -43,7 +43,8 @@
               <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
           </a>
           {% endblock %}
-          <ol>
+          {% block nav %}
+          <ol class="navigation">
             <li>
               <a href="{{ url_for('learn') }}">
                 <span>Nauč se základy</span>
@@ -60,6 +61,7 @@
               </a>
             </li>
           </ol>
+          {% endblock %}
         </nav>
       </header>
       {% endblock %}
