@@ -18,19 +18,16 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
     všechny přímo pro juniory, tedy začínající programátory.
   </p>
 </header>
-
-<hr>
-<section>
-  <div class="call-to-action">
-      <p>
-        <img class="cartoon cartoon-center" src="{{ url_for('static', filename='images/mail.svg') }}">
-      </p>
-      <p class="note">Nech si zasílat nabídky práce na e-mail</p>
-      <a href="http://eepurl.com/gyG8Bb" target="_blank" class="button">Přihlásit se k odběru</a>
-  </div>
+<section class="teaser call-to-action" id="add">
+  <p>
+    <img class="cartoon cartoon-center" src="{{ url_for('static', filename='images/posts.svg') }}">
+  </p>
+  <p>
+    <a href="{{ url_for('hire_juniors') }}" class="button">
+      Přidat nabídku
+    </a>
+  </p>
 </section>
-
-<hr>
 <section id="jobs">
   <ul class="items">
   {% for job in jobs %}
@@ -85,30 +82,13 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
 </section>
 
 <hr>
-<section class="teaser call-to-action" id="add">
-  <p>
-    <img class="cartoon cartoon-center" src="{{ url_for('static', filename='images/posts.svg') }}">
-  </p>
-  <h2>
-    Inzerujte přímo na místě, kam junioři chodí
-  </h2>
-  <p>
-    <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank" class="button">
-      Přidat nabídku
-    </a>
-  </p>
-  <p class="advice">
-    Zadávejte cokoliv od dobrovolnictví po plný úvazek.<br>
-    <strong>Cenu za inzerát si určujete sami!</strong>
-  </p>
-</section>
-
-<hr>
 <section>
-  <p>
-    Celý tento projekt by nikdy nevznikl bez <a href="https://pyladies.cz">PyLadies CZ</a>.
-    Pracovní nabídky zadané ve spolupráci s nimi nebudou nikdy zpoplatněny.
-    Projekt je členem <a href="https://digikoalice.cz/">České národní koalice pro digitální pracovní místa</a>.
-  </p>
+  <div class="call-to-action">
+      <p>
+        <img class="cartoon cartoon-center" src="{{ url_for('static', filename='images/mail.svg') }}">
+      </p>
+      <p class="note">Nech si zasílat nabídky práce na e-mail</p>
+      <a href="http://eepurl.com/gyG8Bb" target="_blank" class="button">Přihlásit se k odběru</a>
+  </div>
 </section>
 {% endblock %}
