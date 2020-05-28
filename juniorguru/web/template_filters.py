@@ -1,6 +1,7 @@
 from datetime import datetime
 from pathlib import Path
 
+import arrow
 from jinja2 import Markup
 from markdown import markdown
 from markdown.extensions.toc import TocExtension
@@ -80,7 +81,9 @@ def to_datetime(dt_str):
 
 @app.template_filter()
 def ago(dt, now=None):
-    now = now or datetime.now()
+    dt = dt if dt.tzinfo else arrow.get(dt, 'UTC')
+    now = now or datetime.utcnow()
+    now = now if now.tzinfo else arrow.get(now, 'UTC')
     days = (now - dt).days
     try:
         return ('dnes', 'včera', 'předevčírem')[days]

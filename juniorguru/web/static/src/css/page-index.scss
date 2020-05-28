@@ -329,7 +329,7 @@ body.page-index {
     margin-top: $whitespace-3;
   }
 
-  li::before {
+  li a::before {
     content: "";
     display: block;
     background-position: center;
@@ -338,8 +338,8 @@ body.page-index {
     padding-top: 2 * $whitespace-3;
   }
 
-  .join-f::before { background-image: url('./images/f-logo-i.svg'); }
-  .join-newsletter::before { background-image: url('./images/mail-i.svg'); }
+  .join-f a::before { background-image: url('./images/f-logo-i.svg'); }
+  .join-newsletter a::before { background-image: url('./images/mail-i.svg'); }
 
   a {
     display: block;

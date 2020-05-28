@@ -1,28 +1,33 @@
-<section class="engage">
-  <p>
-    Kariéra v&nbsp;IT?
-    <a href="{{ url_for('index') }}">junior.guru</a> je&nbsp;tu pro&nbsp;tebe!
-  </p>
-  <ul>
-    <li>
-      <a href="{{ url_for('jobs') }}">
-        Procházej nabídky&nbsp;práce
-      </a>
-    </li>
-    <li>
-      <a href="http://eepurl.com/gyG8Bb" target="_blank">
-        Dostávej práci do&nbsp;e-mailu
-      </a>
-    </li>
-    <li>
-      <a href="https://www.facebook.com/groups/junior.guru" target="_blank">
-        Přidej&nbsp;se do&nbsp;FB&nbsp;skupiny
-      </a>
-    </li>
-    <li>
-      <a href="{{ url_for('donate') }}">
-        Pošli LOVE
-      </a>
-    </li>
-  </ul>
+<section class="engage" id="engage">
+  <div class="engage-items">
+    <h2>Nepřehlédni</h2>
+    <ul>
+      <li class="engage-jobs">
+        <a href="{{ url_for('jobs') }}">Nabídky&nbsp;práce</a>
+      </li>
+      <li class="engage-newsletter">
+        <a href="http://eepurl.com/gyG8Bb" target="_blank">Práce do&nbsp;e-mailu</a>
+      </li>
+      <li class="engage-f">
+        <a href="https://www.facebook.com/groups/junior.guru" target="_blank">FB&nbsp;skupina</a>
+      </li>
+      <li class="engage-donate">
+        <a href="{{ url_for('donate') }}">LOVE</a>
+      </li>
+    </ul>
+  </div>
+  <div class="engage-handbook">
+    <div class="engage-handbook-content">
+      <h3>Příručka hledání první práce v&nbsp;IT</h3>
+      <p>
+        Jak si sehnat první práci? Jak se připravit na pohovor?
+        Tak přesně o tom brzy na <a href="{{ url_for('index') }}">junior.guru</a>
+        vyjde ucelený soubor rad v rozsahu více než 30 normostran.
+        <strong>Odebírej newsletter</strong> a o vydání se dovíš mezi prvními!
+      </p>
+    </div>
+    <p class="call-to-action">
+      <a class="button" href="http://eepurl.com/gyG8Bb" target="_blank">Hlídat příručku</a>
+    </p>
+  </div>
 </section>

@@ -1,0 +1,101 @@
+.engage {
+  padding: $whitespace;
+  background: $yellow;
+}
+
+.engage-items {
+  h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: block;
+  }
+
+  ul, li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul {
+    padding-top: $whitespace-3 - $whitespace;
+    padding-bottom: $whitespace-3 + $whitespace;
+  }
+
+  li {
+    display: block;
+    margin-top: $whitespace;
+  }
+
+  li a::before {
+    content: "";
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 2 * $whitespace-3;
+    padding-top: 2 * $whitespace-3;
+  }
+
+  .engage-jobs a::before { background-image: url('./images/posts.svg'); }
+  .engage-f a::before { background-image: url('./images/f-logo.svg'); }
+  .engage-newsletter a::before { background-image: url('./images/mail.svg'); }
+  .engage-donate a::before { background-image: url('./images/heart.svg'); }
+
+  li a {
+    text-align: center;
+    display: block;
+    min-width: 2 * $whitespace-3;
+    @include color-links($black, $black);
+  }
+
+  @media screen and (min-width: 700px) {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+@mixin handbook-cartoon($width, $height) {
+  content: "";
+  display: block;
+  float: left;
+  width: $whitespace * $width;
+  height: $whitespace * $height;
+  background: url('./images/handbook.svg') no-repeat;
+  background-size: contain;
+  margin: ($whitespace / 2) $whitespace-2 0 0;
+}
+
+.engage-handbook {
+  h3 {
+    margin-top: 0;
+  }
+
+  .engage-handbook-content > p::before {
+    @include handbook-cartoon($width: 8, $height: 10);
+  }
+
+  .call-to-action {
+    clear: both;
+    margin: $whitespace 0;
+  }
+
+  @media screen and (min-width: 700px) {
+    .engage-handbook-content > p::before {
+      display: none;
+    }
+
+    .engage-handbook-content::before {
+      @include handbook-cartoon($width: 10, $height: 13);
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .engage-handbook-content {
+      padding-left: $whitespace-3 * 2;
+      padding-right: $whitespace-3 * 2;
+    }
+  }
+}

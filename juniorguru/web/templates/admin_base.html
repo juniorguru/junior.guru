@@ -27,6 +27,9 @@
       {% if not loop.last %} &mdash; {% endif %}
     {% endfor %}
     </p>
+    <p>
+      <strong>Aktualizace:</strong> {{ updated_at.to('Europe/Prague')|ago }}, {{ updated_at.to('Europe/Prague') }}
+    </p>
     <hr>
     {% block body %}{% endblock %}
     <hr>
