@@ -41,6 +41,7 @@ def create_job(id, **kwargs):
         is_approved=kwargs.get('is_approved', True),
         is_sent=kwargs.get('is_sent', False),
         is_expired=kwargs.get('is_expired', False),
+        jg_rank=kwargs.get('jg_rank'),
     )
 
 
@@ -112,7 +113,7 @@ def test_newsletter_listing_returns_only_approved_jobs(db_connection):
     job2 = create_job('2', is_approved=False)
     job3 = create_job('3', is_approved=True)
 
-    assert set(Job.newsletter_listing()) == {job1, job3}
+    assert set(Job.newsletter_listing(5)) == {job1, job3}
 
 
 def test_newsletter_listing_returns_only_jobs_not_sent(db_connection):
@@ -120,7 +121,7 @@ def test_newsletter_listing_returns_only_jobs_not_sent(db_connection):
     job2 = create_job('2', is_sent=False)
     job3 = create_job('3', is_sent=True)
 
-    assert set(Job.newsletter_listing()) == {job2}
+    assert set(Job.newsletter_listing(5)) == {job2}
 
 
 def test_newsletter_listing_sorts_by_posted_at_asc(db_connection):
@@ -128,7 +129,35 @@ def test_newsletter_listing_sorts_by_posted_at_asc(db_connection):
     job2 = create_job('2', posted_at=datetime(2019, 7, 6, 20, 24, 3))
     job3 = create_job('3', posted_at=datetime(2014, 7, 6, 20, 24, 3))
 
-    assert list(Job.newsletter_listing()) == [job1, job3, job2]
+    assert list(Job.newsletter_listing(5)) == [job1, job3, job2]
+
+
+def test_newsletter_listing_returns_only_jg_if_enough(db_connection):
+    job1 = create_job('1', source='juniorguru')
+    job2 = create_job('2', source='moo')
+    job3 = create_job('3', source='juniorguru')
+    job4 = create_job('4', source='juniorguru')
+
+    assert list(Job.newsletter_listing(3)) == [job1, job3, job4]
+
+
+def test_newsletter_listing_backfills_with_other_sources(db_connection):
+    job1 = create_job('1', source='moo', jg_rank=5)
+    job2 = create_job('2', source='foo', jg_rank=-5)
+    job3 = create_job('3', source='bar', jg_rank=10)
+    job4 = create_job('4', source='juniorguru')
+    job5 = create_job('5', source='juniorguru')
+
+    assert list(Job.newsletter_listing(5)) == [job4, job5, job3, job1]
+
+
+def test_newsletter_listing_backfills_up_to_min_count(db_connection):
+    job1 = create_job('1', source='moo', jg_rank=5)
+    job2 = create_job('2', source='foo', jg_rank=1)
+    job3 = create_job('3', source='bar', jg_rank=10)
+    job4 = create_job('4', source='juniorguru')
+
+    assert list(Job.newsletter_listing(3)) == [job4, job3, job1]
 
 
 def test_count_takes_only_approved_jobs(db_connection):

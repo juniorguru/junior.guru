@@ -4,9 +4,15 @@
 {% for job in jobs %}
   <hr>
   <h2>
-    <a href="{{ url_for('job', job_id=job.id, _external=True) }}">
-      <strong>{{ job.title }}</strong>
-    </a>
+    {% if job.source == 'juniorguru' %}
+      <a href="{{ url_for('job', job_id=job.id, _external=True) }}">
+        <strong>{{ job.title }}</strong>
+      </a>
+    {% else %}
+      <a href="{{ job.link }}">
+        <strong>{{ job.title }}</strong>
+      </a>
+    {% endif %}
   </h2>
   {{ job.company_name }}
   &mdash;

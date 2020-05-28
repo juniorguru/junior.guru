@@ -1,3 +1,5 @@
+import itertools
+
 from peewee import BooleanField, CharField, DateTimeField, IntegerField
 
 from juniorguru.models.base import BaseModel, JSONField
@@ -61,12 +63,22 @@ class Job(BaseModel):
         return cls.juniorguru_listing()
 
     @classmethod
-    def newsletter_listing(cls):
-        return cls.select() \
-            .where(cls.is_approved == True,
+    def newsletter_listing(cls, min_count):
+        count = 0
+        query = cls.select() \
+            .where(cls.source == 'juniorguru',
+                   cls.is_approved == True,
                    cls.is_expired == False,
                    cls.is_sent == False) \
             .order_by(cls.posted_at)
+        for item in query:
+            yield item
+            count += 1
+
+        backfill_query = cls.select() \
+            .where(cls.source != 'juniorguru', cls.jg_rank > 0) \
+            .order_by(cls.jg_rank.desc(), cls.posted_at.desc())
+        yield from itertools.islice(backfill_query, min_count - count)
 
     @classmethod
     def juniorguru_listing(cls):

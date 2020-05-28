@@ -31,7 +31,7 @@ def admin():
 @app.route('/admin/newsletter/')
 def admin_newsletter():
     with db:
-        jobs = Job.newsletter_listing()
+        jobs = list(Job.newsletter_listing(10))
     return render_template('admin_newsletter.html', jobs=jobs)
 
 
