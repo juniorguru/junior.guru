@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-{% block title %}Jak se začít učit programovat{% endblock %}
+{% block title %}Jak začít programovat? Rozcestník na nejlepší materiály{% endblock %}
 
 {% block description -%}
-Chceš se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe bude do úplného startu nejlepší a nejefektivnější.
+Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe bude do úplného startu nejlepší a nejefektivnější.
 {%- endblock %}
 
 {% block body_attrs %} class="page-learn"{% endblock %}
@@ -11,7 +11,7 @@ Chceš se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro 
 <header>
   <h1>Nauč se základy programování</h1>
   <p>
-    <img src="{{ url_for('static', filename='images/chick1.svg') }}" loading="lazy">
+    <img src="{{ url_for('static', filename='images/chick1.svg') }}">
     {{ self.description() }} Až tím projdeš, můžeš začít <a href="{{ url_for('practice') }}">získávat praxi</a>.
   </p>
 

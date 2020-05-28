@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-{% block title %}Práce pro začínající programátory{% endblock %}
+{% block title %}Práce v IT pro začátečníky{% endblock %}
 
 {% block description -%}
-Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovním trhu.
+Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jobs_count }} aktuálních nabídek práce od {{ companies_count }} firem.
 {%- endblock %}
 
 {% block body_attrs %} class="page-jobs"{% endblock %}
@@ -11,11 +11,11 @@ Znáš základy a máš praxi? Nastal okamžik zkusit své štestí na pracovní
 <header>
   <h1>Najdi svou první práci v&nbsp;IT</h1>
   <p>
-    <img src="{{ url_for('static', filename='images/chick3.svg') }}" loading="lazy">
-    Znáš <a href="{{ url_for('learn') }}">základy</a> a máš <a href="{{ url_for('practice') }}">praxi</a>?
+    <img src="{{ url_for('static', filename='images/chick3.svg') }}">
+    Znáš <a href="{{ url_for('learn') }}">základy</a> a máš <a href="{{ url_for('practice') }}">minimální praxi</a>?
     Nastal okamžik začít zkoušet své štestí na pracovním trhu.
     Projdi si {{ jobs_count }}&nbsp;aktuálních nabídek práce od&nbsp;{{ companies_count }}&nbsp;firem,
-    všechny přímo pro juniory, tedy začínající programátory.
+    všechny přímo pro juniory, tedy začátečníky.
   </p>
 </header>
 <section class="teaser call-to-action" id="add">

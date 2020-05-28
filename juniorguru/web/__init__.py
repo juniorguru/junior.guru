@@ -23,7 +23,7 @@ def index():
 def learn():
     return render_template('learn.html',
                            stories_count=len(Story.listing()),
-                           thumbnail=thumbnail(title='Jak se začít učit programovat'))
+                           thumbnail=thumbnail(title='Jak se naučit programovat'))
 
 
 @app.route('/practice/')
@@ -55,7 +55,7 @@ def jobs():
                            jobs_count=jobs_count,
                            companies_count=companies_count,
                            jobs_bot=jobs_bot,
-                           thumbnail=thumbnail(title='Práce pro začínající programátory'))
+                           thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky'))
 
 
 @app.route('/jobs/<job_id>/')
