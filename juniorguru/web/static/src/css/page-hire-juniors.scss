@@ -347,7 +347,8 @@ body.page-hire-juniors {
     }
 
     .sponsor-handbook-subsection,
-    .sponsor-handbook-toc {
+    .sponsor-handbook-toc,
+    .sponsor-handbook-preview {
       padding: $whitespace;
     }
 
@@ -372,6 +373,44 @@ body.page-hire-juniors {
 
       strong {
         @include font-4;
+      }
+    }
+
+    .sponsor-handbook-preview {
+      ul, li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      li {
+        margin: 0 $whitespace-2 $whitespace-2 0;
+        width: 16.5rem;
+        height: 16.5rem;
+      }
+
+      a {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: zoom-in;
+        border: 1px solid $black;
+      }
+
+      a:hover, a:focus, a:active {
+        border-color: $blue;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
       }
     }
 
@@ -444,6 +483,14 @@ body.page-hire-juniors {
       @media screen and (min-width: 600px) {
         .button { @include font-2; }
         .button small { @include font; }
+      }
+    }
+  }
+
+  main a[href^="#"] {
+    &:hover, &:focus, &:active {
+      &::before, &::after {
+        display: none;
       }
     }
   }
