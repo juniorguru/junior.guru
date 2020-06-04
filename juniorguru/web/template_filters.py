@@ -67,11 +67,32 @@ def employment_type(type_):
         return type_
 
 
+EMPLOYMENT_TYPES_FOLDING = {
+    'paid internship': ('internship', 'unpaid internship'),
+    'internship': ('unpaid internship',),
+    'contract': ('volunteering',),
+    'part-time': ('volunteering',),
+    'full-time': ('volunteering',),
+}
+
+
 @app.template_filter()
 def employment_types(types, sep=', '):
     if not types:
         raise ValueError('Employment types must not be empty')
-    return sep.join(employment_type(type_) for type_ in types)
+
+    types = list(types)
+    for type_, folded_types in EMPLOYMENT_TYPES_FOLDING.items():
+        if type_ in types:
+            for folded_type in folded_types:
+                try:
+                    types.remove(folded_type)
+                except ValueError:
+                    pass
+
+    return sep.join(employment_type(type_) for type_ in types) \
+        .replace('plný úvazek, částečný', 'plný i částečný') \
+        .replace('částečný úvazek, plný', 'plný i částečný')
 
 
 @app.template_filter()

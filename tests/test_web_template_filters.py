@@ -60,9 +60,23 @@ def test_employment_type(type_, expected):
 
 @pytest.mark.parametrize('types,expected', [
     (['part-time'], 'částečný úvazek'),
-    (['part-time', 'gargamel', 'volunteering'], 'částečný úvazek, gargamel, dobrovolnictví'),
+    (['part-time', 'gargamel', 'internship'], 'částečný úvazek, gargamel, stáž'),
 ])
 def test_employment_types(types, expected):
+    assert template_filters.employment_types(types) == expected
+
+
+@pytest.mark.parametrize('types,expected', [
+    (['part-time', 'full-time', 'foo'], 'plný i částečný úvazek, foo'),
+    (['paid internship', 'unpaid internship', 'foo'], 'placená stáž, foo'),
+    (['internship', 'paid internship', 'foo'], 'placená stáž, foo'),
+    (['internship', 'unpaid internship', 'foo'], 'stáž, foo'),
+    (['contract', 'volunteering', 'foo'], 'kontrakt, foo'),
+    (['part-time', 'volunteering', 'foo'], 'částečný úvazek, foo'),
+    (['full-time', 'volunteering', 'foo'], 'plný úvazek, foo'),
+    (['part-time', 'full-time', 'contract', 'volunteering', 'foo'], 'plný i částečný úvazek, kontrakt, foo'),
+])
+def test_employment_types_normalization(types, expected):
     assert template_filters.employment_types(types) == expected
 
 
