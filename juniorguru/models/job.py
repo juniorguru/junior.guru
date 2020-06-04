@@ -77,7 +77,7 @@ class Job(BaseModel):
             .where((cls.source == 'juniorguru') &
                    (cls.approved_at.is_null(False)) &
                    (cls.is_sent == False) &
-                   (cls.expired_at.is_null() | (cls.expired_at >= today))) \
+                   (cls.expired_at.is_null() | (cls.expired_at > today))) \
             .order_by(cls.posted_at)
         for item in query:
             yield item
@@ -94,7 +94,7 @@ class Job(BaseModel):
         return cls.select() \
             .where((cls.source == 'juniorguru') &
                    (cls.approved_at.is_null(False)) &
-                   (cls.expired_at.is_null() | (cls.expired_at >= today))) \
+                   (cls.expired_at.is_null() | (cls.expired_at > today))) \
             .order_by(cls.posted_at.desc())
 
     @classmethod

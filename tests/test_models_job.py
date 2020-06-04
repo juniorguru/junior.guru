@@ -98,7 +98,7 @@ def test_listing_returns_only_not_expired_jobs(db_connection):
     job3 = create_job('3', expired_at=date.today())
     job4 = create_job('4', expired_at=date.today() + timedelta(days=2))
 
-    assert set(Job.listing()) == {job1, job3, job4}
+    assert set(Job.listing()) == {job1, job4}
 
 
 def test_listing_sorts_by_posted_at_desc(db_connection):
@@ -123,7 +123,7 @@ def test_newsletter_listing_returns_only_not_expired_jobs(db_connection):
     job3 = create_job('3', expired_at=date.today())
     job4 = create_job('4', expired_at=date.today() + timedelta(days=2))
 
-    assert set(Job.newsletter_listing(5)) == {job1, job3, job4}
+    assert set(Job.newsletter_listing(5)) == {job1, job4}
 
 
 def test_newsletter_listing_returns_only_jobs_not_sent(db_connection):
