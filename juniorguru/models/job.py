@@ -1,6 +1,8 @@
 import itertools
+from datetime import date
 
-from peewee import BooleanField, CharField, DateTimeField, IntegerField
+from peewee import (BooleanField, CharField, DateField,
+                    DateTimeField, IntegerField)
 
 from juniorguru.models.base import BaseModel, JSONField
 
@@ -44,32 +46,38 @@ class Job(BaseModel):
     location = CharField()
     company_name = CharField()
     company_link = CharField(null=True)  # required for JG
-    email = CharField(null=True)  # required for JG, null for scraped
     employment_types = EmploymentTypeField()
-    description = CharField(null=True)  # required for JG, null for scraped
-    lang = CharField(null=True)  # required for scraped, null for JG
     link = CharField(null=True)  # required for scraped
-    jg_rank = IntegerField(null=True)  # required for scraped
     source = CharField()
-    is_approved = BooleanField(default=False)
+
+    # only set by JG
+    email = CharField(null=True)  # required for JG
+    description = CharField(null=True)  # required for JG
+    approved_at = DateField(null=True)
+    expired_at = DateField(null=True)
     is_sent = BooleanField(default=False)
-    is_expired = BooleanField(default=False)
-    response_url = CharField(null=True)  # required for scraped, null for JG
+
+    # only set by scraped
+    lang = CharField(null=True)  # required for scraped
+    jg_rank = IntegerField(null=True)  # required for scraped
+    response_url = CharField(null=True)  # required for scraped
     response_backup_path = CharField(null=True)
-    item = JSONField(null=True)  # required for scraped, null for JG
+    item = JSONField(null=True)  # required for scraped
 
     @classmethod
     def listing(cls):
         return cls.juniorguru_listing()
 
     @classmethod
-    def newsletter_listing(cls, min_count):
+    def newsletter_listing(cls, min_count, today=None):
+        today = today or date.today()
+
         count = 0
         query = cls.select() \
-            .where(cls.source == 'juniorguru',
-                   cls.is_approved == True,
-                   cls.is_expired == False,
-                   cls.is_sent == False) \
+            .where((cls.source == 'juniorguru') &
+                   (cls.approved_at.is_null(False)) &
+                   (cls.is_sent == False) &
+                   (cls.expired_at.is_null() | (cls.expired_at >= today))) \
             .order_by(cls.posted_at)
         for item in query:
             yield item
@@ -81,11 +89,12 @@ class Job(BaseModel):
         yield from itertools.islice(backfill_query, min_count - count)
 
     @classmethod
-    def juniorguru_listing(cls):
+    def juniorguru_listing(cls, today=None):
+        today = today or date.today()
         return cls.select() \
-            .where(cls.source == 'juniorguru',
-                   cls.is_approved == True,
-                   cls.is_expired == False) \
+            .where((cls.source == 'juniorguru') &
+                   (cls.approved_at.is_null(False)) &
+                   (cls.expired_at.is_null() | (cls.expired_at >= today))) \
             .order_by(cls.posted_at.desc())
 
     @classmethod

@@ -1,5 +1,5 @@
 import random
-from datetime import datetime
+from datetime import date, datetime, timedelta
 
 import pytest
 from peewee import SqliteDatabase
@@ -38,9 +38,9 @@ def create_job(id, **kwargs):
         location=kwargs.get('location', 'Brno, Czech Republic'),
         description=kwargs.get('description', '**Really long** description.'),
         source=kwargs.get('source', 'juniorguru'),
-        is_approved=kwargs.get('is_approved', True),
+        approved_at=kwargs.get('approved_at', date.today()),
         is_sent=kwargs.get('is_sent', False),
-        is_expired=kwargs.get('is_expired', False),
+        expired_at=kwargs.get('expired_at', None),
         jg_rank=kwargs.get('jg_rank'),
     )
 
@@ -85,19 +85,20 @@ def test_employment_types_sorts_extra_types_last_alphabetically(db_connection):
 
 
 def test_listing_returns_only_approved_jobs(db_connection):
-    job1 = create_job('1', is_approved=True)
-    job2 = create_job('2', is_approved=False)
-    job3 = create_job('3', is_approved=True)
+    job1 = create_job('1', approved_at=date(1987, 8, 30))
+    job2 = create_job('2', approved_at=None)
+    job3 = create_job('3', approved_at=date(1987, 8, 30))
 
     assert set(Job.listing()) == {job1, job3}
 
 
 def test_listing_returns_only_not_expired_jobs(db_connection):
-    job1 = create_job('1', is_expired=False)
-    job2 = create_job('2', is_expired=True)
-    job3 = create_job('3', is_expired=False)
+    job1 = create_job('1', expired_at=None)
+    job2 = create_job('2', expired_at=date(1987, 8, 30))
+    job3 = create_job('3', expired_at=date.today())
+    job4 = create_job('4', expired_at=date.today() + timedelta(days=2))
 
-    assert set(Job.listing()) == {job1, job3}
+    assert set(Job.listing()) == {job1, job3, job4}
 
 
 def test_listing_sorts_by_posted_at_desc(db_connection):
@@ -109,11 +110,20 @@ def test_listing_sorts_by_posted_at_desc(db_connection):
 
 
 def test_newsletter_listing_returns_only_approved_jobs(db_connection):
-    job1 = create_job('1', is_approved=True)
-    job2 = create_job('2', is_approved=False)
-    job3 = create_job('3', is_approved=True)
+    job1 = create_job('1', approved_at=date(1987, 8, 30))
+    job2 = create_job('2', approved_at=None)
+    job3 = create_job('3', approved_at=date(1987, 8, 30))
 
     assert set(Job.newsletter_listing(5)) == {job1, job3}
+
+
+def test_newsletter_listing_returns_only_not_expired_jobs(db_connection):
+    job1 = create_job('1', expired_at=None)
+    job2 = create_job('2', expired_at=date(1987, 8, 30))
+    job3 = create_job('3', expired_at=date.today())
+    job4 = create_job('4', expired_at=date.today() + timedelta(days=2))
+
+    assert set(Job.newsletter_listing(5)) == {job1, job3, job4}
 
 
 def test_newsletter_listing_returns_only_jobs_not_sent(db_connection):
@@ -160,19 +170,21 @@ def test_newsletter_listing_backfills_up_to_min_count(db_connection):
     assert list(Job.newsletter_listing(3)) == [job4, job3, job1]
 
 
-def test_count_takes_only_approved_jobs(db_connection):
-    create_job('1', is_approved=True)
-    create_job('2', is_approved=False)
-    create_job('3', is_approved=True)
+def test_count(db_connection):
+    create_job('1', approved_at=date(1987, 8, 30))
+    create_job('2', approved_at=None)
+    create_job('3', approved_at=date(1987, 8, 30))
+    create_job('4', approved_at=date(1987, 8, 30), expired_at=date(1987, 9, 1))
 
     assert Job.count() == 2
 
 
-def test_companies_count_takes_only_approved_jobs(db_connection):
-    create_job('1', company_link='https://abc.example.com', is_approved=True)
-    create_job('2', company_link='https://abc.example.com', is_approved=False)
-    create_job('3', company_link='https://xyz.example.com', is_approved=True)
-    create_job('4', company_link='https://xyz.example.com', is_approved=False)
-    create_job('5', company_link='https://def.example.com', is_approved=False)
+def test_companies_count(db_connection):
+    create_job('1', company_link='https://abc.example.com', approved_at=date(1987, 8, 30))
+    create_job('2', company_link='https://abc.example.com', approved_at=None)
+    create_job('3', company_link='https://xyz.example.com', approved_at=date(1987, 8, 30))
+    create_job('4', company_link='https://xyz.example.com', approved_at=None)
+    create_job('5', company_link='https://def.example.com', approved_at=None)
+    create_job('6', company_link='https://def.example.com', approved_at=date(1987, 8, 30), expired_at=date(1987, 9, 1))
 
     assert Job.companies_count() == 2

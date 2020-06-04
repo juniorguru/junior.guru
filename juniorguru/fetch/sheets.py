@@ -16,9 +16,9 @@ def coerce_record(record):
         r'^job location$': ('location', coerce_text),
         r'^job description$': ('description', coerce_text),
         r'^job link$': ('link', coerce_text),
-        r'^approved$': ('is_approved', coerce_boolean),
+        r'^approved$': ('approved_at', coerce_date),
         r'^sent$': ('is_sent', coerce_boolean),
-        r'^expired$': ('is_expired', coerce_boolean),
+        r'^expired$': ('expired_at', coerce_date),
     }, record)
 
 
@@ -50,6 +50,15 @@ def coerce_boolean_words(value):
 def coerce_datetime(value):
     if value:
         return arrow.get(value.strip(), 'M/D/YYYY H:m:s').naive
+
+
+def coerce_date(value):
+    if value:
+        value = value.strip()
+        try:
+            return arrow.get(value, 'M/D/YYYY H:m:s').date()
+        except ValueError:
+            return arrow.get(value, 'M/D/YYYY').date()
 
 
 def coerce_boolean(value):

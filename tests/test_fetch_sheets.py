@@ -1,5 +1,5 @@
 import hashlib
-from datetime import datetime
+from datetime import date, datetime
 
 import pytest
 
@@ -13,6 +13,16 @@ from juniorguru.fetch import sheets
 ])
 def test_coerce_datetime(value, expected):
     assert sheets.coerce_datetime(value) == expected
+
+
+@pytest.mark.parametrize('value,expected', [
+    (None, None),
+    ('12/13/2019 9:17:57', date(2019, 12, 13)),
+    ('8/6/2019 14:08:49', date(2019, 8, 6)),
+    ('8/6/2019', date(2019, 8, 6)),
+])
+def test_coerce_date(value, expected):
+    assert sheets.coerce_date(value) == expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -91,8 +101,8 @@ def test_coerce_record():
         'description': None,
         'location': 'Prague',
         'link': 'https://jobs.example.com/1245/',
-        'is_approved': False,
+        'approved_at': None,
         'is_sent': True,
-        'is_expired': True,
+        'expired_at': date(2019, 12, 12),
         'source': 'juniorguru',
     }

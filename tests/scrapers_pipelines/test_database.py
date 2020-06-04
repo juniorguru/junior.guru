@@ -31,7 +31,7 @@ def test_database(item, spider, db):
 
     assert len(job.id) == 56  # sha224 hex digest length
     assert job.source == 'dummy'  # spider name
-    assert job.is_approved is False
+    assert job.approved_at is None
 
 
 def test_database_same_link_items(item, spider, db):
