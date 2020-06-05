@@ -1,8 +1,13 @@
-@import 'variables';
-@import 'common';
-@import 'more';
-@import 'tooltips';
-@import 'engage';
-@import 'page-index';
-@import 'page-hire-juniors';
-@import 'handbook';
+// legacy spaghetti code 🍝
+@import 'spaghetti/variables';
+@import 'spaghetti/common';
+@import 'spaghetti/more';
+@import 'spaghetti/tooltips';
+@import 'spaghetti/engage';
+@import 'spaghetti/page-index';
+@import 'spaghetti/page-hire-juniors';
+@import 'spaghetti/handbook';
+
+// bright future ✨ OOCSS, BEM
+@import 'content/checklist.scss';
+@import 'components/pricing.scss';

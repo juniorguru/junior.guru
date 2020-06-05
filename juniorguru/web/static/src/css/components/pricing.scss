@@ -1,0 +1,62 @@
+.pricing {
+  padding-top: ($whitespace-3 * 2);
+}
+
+.pricing__plan {
+  padding: $whitespace-2;
+}
+
+.pricing__plan--standard {
+  background: $yellow;
+}
+
+.pricing__plan-heading {
+  margin-top: 0;
+  text-align: center;
+}
+
+.pricing__plan-note {
+  @include font-0;
+}
+
+.pricing__plan-price {
+  text-align: center;
+  margin: 0;
+}
+
+.pricing__plan-price-amount {
+  @include font-4;
+}
+
+.pricing__plan-price-note {
+  @include font-0;
+}
+
+.pricing__plan-price-amount,
+.pricing__plan-price-note {
+  display: block;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  .pricing__plans {
+    display: flex;
+  }
+
+  .pricing__plan {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pricing__plans--2 .pricing__plan {
+    width: 50%;
+  }
+
+  .pricing__plans--3 .pricing__plan {
+    width: 33.33%;
+  }
+
+  .pricing__plan-price {
+    margin-top: auto;
+  }
+}

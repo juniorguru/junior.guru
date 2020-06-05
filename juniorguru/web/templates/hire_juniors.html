@@ -116,35 +116,34 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
 
 <section class="pricing" id="pricing">
   <h2>Ceník</h2>
-
-  <div class="pricing-plans">
-    <div class="pricing-plan pricing-plan-community">
-      <div class="pricing-plan-content">
-        <h3>Komunitní nabídka</h3>
-        <ul class="checks">
+  <div class="pricing__plans pricing__plans--2">
+    <div class="pricing__plan pricing__plan--cheap">
+      <div class="pricing__plan-content">
+        <h3 class="pricing__plan-heading">Komunitní nabídka</h3>
+        <ul class="checklist">
           <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
           <li>Inzerát v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
         </ul>
-        <p class="pricing-plan-note">
+        <p class="pricing__plan-note">
           <strong>Ideální pro:</strong> Dobrovolnictví, brigády, stáže, neziskovky, malé projekty, firmy spolupracující s <a href="https://pyladies.cz/" target="_blank">PyLadies</a>.
         </p>
       </div>
-      <p class="pricing-plan-price">
-        <strong>0&nbsp;Kč</strong>
-        <small>za&nbsp;měsíc, neplátce DPH</small>
+      <p class="pricing__plan-price">
+        <strong class="pricing__plan-price-amount">0&nbsp;Kč</strong>
+        <small class="pricing__plan-price-note">za&nbsp;měsíc, neplátce DPH</small>
       </p>
     </div>
-    <div class="pricing-plan pricing-plan-standard">
-      <div class="pricing-plan-content">
-        <h3>Standardní nabídka</h3>
-        <ul class="checks">
+    <div class="pricing__plan pricing__plan--standard">
+      <div class="pricing__plan-content">
+        <h3 class="pricing__plan-heading">Standardní nabídka</h3>
+        <ul class="checklist">
           <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
           <li>Inzerát v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
         </ul>
       </div>
-      <p class="pricing-plan-price">
-        <strong>699&nbsp;Kč</strong>
-        <small>za&nbsp;měsíc, neplátce DPH</small>
+      <p class="pricing__plan-price">
+        <strong class="pricing__plan-price-amount">699&nbsp;Kč</strong>
+        <small class="pricing__plan-price-note">za&nbsp;měsíc, neplátce DPH</small>
       </p>
     </div>
   </div>
@@ -164,7 +163,7 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
   <div class="candidate-subsections">
     <div class="candidate-subsection candidate-traits">
       <h3>Typický uchazeč z junior.guru</h3>
-      <ul class="checks">
+      <ul class="checklist">
         <li>Zná <strong>běžný programovací jazyk</strong> v rozsahu <a href="https://naucse.python.cz/">kurzu pro začátečníky</a>.</li>
         <li>Má na projektech naučenou <strong>schopnost dostat zadání a rozložit jej na podproblémy</strong>.</li>
         <li>Má <strong>vlastní projekt</strong> či jinou praktickou ukázku své práce.</li>
@@ -177,7 +176,7 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
     </div>
     <div class="candidate-subsection">
       <h3>Vaše alternativy</h3>
-      <ul class="bullets">
+      <ul class="checklist checklist--unchecked">
         <li>Hledat <strong>zkušenější programátory</strong>, kterých je ale nedostatek. Budete je hledat dlouho a draze.</li>
         <li>Oslovovat <strong>studenty</strong>. Mívají kvalitnější teoretické znalosti, ale menší praxi na projektech.
           Některé velké firmy investují do spolupráce s univerzitami a šikovní studenti jdou často rovnou k nim.</li>
@@ -227,7 +226,7 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
     </p>
 
     <h3>Proč sponzorovat</h3>
-    <ul class="checks">
+    <ul class="checklist">
       <li>Budujete značku vůči příštím kandidátům a představujete se jako místo, kde na juniory myslí, umí to s nimi, a kam je zkrátka radost nastoupit.</li>
       <li>Projevujete společenskou odpovědnost. Díky vašemu příspěvku bude text komukoliv veřejně zdarma přístupný. Příručka přitom dá jasně najevo, že tento v Česku unikátní obsah je zdarma právě díky vám.</li>
       <li>Příručka zvýší a standardizuje úroveň juniorních kandidátů v&nbsp;ČR.</li>
@@ -240,6 +239,40 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
       <small>za měsíc, neplátce DPH</small>
     </p>
   #}
+
+  <div class="pricing pricing__plans pricing__plans--2">
+    <div class="pricing__plan pricing__plan--cheap">
+      <div class="pricing__plan-content">
+        <h3 class="pricing__plan-heading">Komunitní nabídka</h3>
+        <ul class="checklist">
+          <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
+          <li>Inzerát v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
+        </ul>
+        <p class="pricing__plan-note">
+          <strong>Ideální pro:</strong> Dobrovolnictví, brigády, stáže, neziskovky, malé projekty, firmy spolupracující s <a href="https://pyladies.cz/" target="_blank">PyLadies</a>.
+        </p>
+      </div>
+      <p class="pricing__plan-price">
+        <strong class="pricing__plan-price-amount">0&nbsp;Kč</strong>
+        <small class="pricing__plan-price-note">za&nbsp;měsíc, neplátce DPH</small>
+      </p>
+    </div>
+    <div class="pricing__plan pricing__plan--standard">
+      <div class="pricing__plan-content">
+        <h3 class="pricing__plan-heading">Standardní nabídka</h3>
+        <ul class="checklist">
+          <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
+          <li>Inzerát v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
+        </ul>
+      </div>
+      <p class="pricing__plan-price">
+        <strong class="pricing__plan-price-amount">699&nbsp;Kč</strong>
+        <small class="pricing__plan-price-note">za&nbsp;měsíc, neplátce DPH</small>
+      </p>
+    </div>
+  </div>
+
+
   <div class="call-to-action">
     <p class="button">
       Objednávejte na<br><small>{{ 'ahoj@junior.guru'|email_link }}</small>
