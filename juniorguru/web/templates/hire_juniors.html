@@ -114,12 +114,12 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
   </ul>
 </section>
 
-<section class="pricing" id="pricing">
-  <h2>Ceník</h2>
+<section id="pricing" class="pricing">
+  <h2 class="pricing__heading">Ceník nabídek práce</h2>
   <div class="pricing__plans pricing__plans--2">
     <div class="pricing__plan pricing__plan--cheap">
       <div class="pricing__plan-content">
-        <h3 class="pricing__plan-heading">Komunitní nabídka</h3>
+        <h3 class="pricing__plan-heading">Komunita</h3>
         <ul class="checklist">
           <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
           <li>Inzerát v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
@@ -135,7 +135,7 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
     </div>
     <div class="pricing__plan pricing__plan--standard">
       <div class="pricing__plan-content">
-        <h3 class="pricing__plan-heading">Standardní nabídka</h3>
+        <h3 class="pricing__plan-heading">Standard</h3>
         <ul class="checklist">
           <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
           <li>Inzerát v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
@@ -203,7 +203,8 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
   </p>
 </section>
 
-<hr id="sponsor-handbook">
+<!-- keeping #sponsor-handbook for backward compatibility of links -->
+<div id="sponsor-handbook"><hr id="handbook"></div>
 
 <section class="sponsor-handbook">
   <h2>Sponzorujte unikátní příručku!</h2>
@@ -217,12 +218,12 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
 
     <h3>Co dostanete</h3>
     <p>
-      Po dobu placení předplatného bude vaše logo v záhlaví příručky s odkazem na vaše stránky. Každý junior v&nbsp;ČR jej uvidí.
+      Po dobu <a href="#handbook-pricing">předplatného</a> bude vaše logo v záhlaví příručky s odkazem na vaše stránky. Každý junior v&nbsp;ČR jej uvidí.
     </p>
 
     <h3>Zajíc v pytli?</h3>
     <p>
-      Projděte si <a href="#sponsor-handbook-preview">ukázky</a> a <a href="#sponsor-handbook-toc">osnovu</a>, ať víte, do čeho jdete. Firmy, které si sponzorství domluví už před vydáním, mají výhodu. Jejich logo totiž bude na příručce v den jejího uveřejnění, kdy bude nejvyšší jednorázová návštěvnost.
+      Projděte si <a href="#handbook-preview">ukázky</a> a <a href="#handbook-toc">osnovu</a>, ať víte, do čeho jdete. Firmy, které si sponzorství domluví už před vydáním, mají výhodu. Jejich logo totiž bude na příručce v den jejího uveřejnění, kdy bude nejvyšší jednorázová návštěvnost.
     </p>
 
     <h3>Proč sponzorovat</h3>
@@ -240,45 +241,46 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
     </p>
   #}
 
-  <div class="pricing pricing__plans pricing__plans--2">
-    <div class="pricing__plan pricing__plan--cheap">
-      <div class="pricing__plan-content">
-        <h3 class="pricing__plan-heading">Komunitní nabídka</h3>
-        <ul class="checklist">
-          <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
-          <li>Inzerát v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
-        </ul>
-        <p class="pricing__plan-note">
-          <strong>Ideální pro:</strong> Dobrovolnictví, brigády, stáže, neziskovky, malé projekty, firmy spolupracující s <a href="https://pyladies.cz/" target="_blank">PyLadies</a>.
+  <div id="handbook-pricing" class="pricing">
+    <h2 class="pricing__heading">Ceník</h2>
+    <div class="pricing__plans pricing__plans--2">
+      <div class="pricing__plan pricing__plan--cheap">
+        <div class="pricing__plan-content">
+          <h3 class="pricing__plan-heading">Komunitní nabídka</h3>
+          <ul class="checklist">
+            <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
+            <li>Inzerát v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
+          </ul>
+          <p class="pricing__plan-note">
+            <strong>Ideální pro:</strong> Dobrovolnictví, brigády, stáže, neziskovky, malé projekty, firmy spolupracující s <a href="https://pyladies.cz/" target="_blank">PyLadies</a>.
+          </p>
+        </div>
+        <p class="pricing__plan-price">
+          <strong class="pricing__plan-price-amount">0&nbsp;Kč</strong>
+          <small class="pricing__plan-price-note">za&nbsp;měsíc, neplátce DPH</small>
         </p>
       </div>
-      <p class="pricing__plan-price">
-        <strong class="pricing__plan-price-amount">0&nbsp;Kč</strong>
-        <small class="pricing__plan-price-note">za&nbsp;měsíc, neplátce DPH</small>
-      </p>
-    </div>
-    <div class="pricing__plan pricing__plan--standard">
-      <div class="pricing__plan-content">
-        <h3 class="pricing__plan-heading">Standardní nabídka</h3>
-        <ul class="checklist">
-          <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
-          <li>Inzerát v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
-        </ul>
+      <div class="pricing__plan pricing__plan--standard">
+        <div class="pricing__plan-content">
+          <h3 class="pricing__plan-heading">Standardní nabídka</h3>
+          <ul class="checklist">
+            <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
+            <li>Inzerát v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
+          </ul>
+        </div>
+        <p class="pricing__plan-price">
+          <strong class="pricing__plan-price-amount">699&nbsp;Kč</strong>
+          <small class="pricing__plan-price-note">za&nbsp;měsíc, neplátce DPH</small>
+        </p>
       </div>
-      <p class="pricing__plan-price">
-        <strong class="pricing__plan-price-amount">699&nbsp;Kč</strong>
-        <small class="pricing__plan-price-note">za&nbsp;měsíc, neplátce DPH</small>
-      </p>
     </div>
   </div>
-
-
   <div class="call-to-action">
     <p class="button">
       Objednávejte na<br><small>{{ 'ahoj@junior.guru'|email_link }}</small>
     </p>
   </div>
-  <div id="sponsor-handbook-toc" class="sponsor-handbook-toc">
+  <div id="handbook-toc" class="sponsor-handbook-toc">
     <h3>Osnova</h3>
     <ul>
       <li>Jak dlouho trvá si sehnat první práci v&nbsp;IT</li>
@@ -297,7 +299,7 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
       <li>Vlastní aktivita navíc</li>
     </ul>
   </div>
-  <div id="sponsor-handbook-preview" class="sponsor-handbook-preview">
+  <div id="handbook-preview" class="sponsor-handbook-preview">
     <h3>Ukázky</h3>
     <ul>
       <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-01.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-01.png') }}" loading="lazy"></a></li>

@@ -53,10 +53,19 @@ body.page-hire-juniors {
   h2 {
     background: none;
     padding: 0;
-    padding-bottom: $whitespace-2;
+    margin: 0;
+    margin-bottom: $whitespace-2;
     text-align: center;
     display: block;
     @include font-4;
+  }
+
+  .pricing {
+    margin-top: $whitespace-3;  // hotfix
+  }
+
+  .pricing h2 {
+    margin-bottom: $whitespace-3;  // hotfix
   }
 
   h2.hidden {
@@ -255,8 +264,6 @@ body.page-hire-juniors {
   .sponsor-handbook {
     .sponsor-handbook-badge {
       text-align: center;
-      position: relative;
-      bottom: $whitespace-2;
 
       small {
         @include font-0;
@@ -274,7 +281,8 @@ body.page-hire-juniors {
     .sponsor-handbook-content,
     .sponsor-handbook-toc,
     .sponsor-handbook-preview {
-      padding: $whitespace;
+      padding-left: $whitespace;
+      padding-right: $whitespace;
     }
 
     .sponsor-handbook-content {
@@ -284,15 +292,6 @@ body.page-hire-juniors {
         margin: 0 0 $whitespace $whitespace;
       }
     }
-
-    // .sponsor-handbook-aside {
-    //   padding: 0;
-    //   margin-bottom: $whitespace;
-
-    //   img {
-    //     display: none;
-    //   }
-    // }
 
     .sponsor-handbook-price {
       text-align: center;
@@ -348,41 +347,10 @@ body.page-hire-juniors {
     }
 
     @media screen and (min-width: 700px) {
-      // .sponsor-handbook-content {
-      //   display: flex;
-      // }
-
-      // .sponsor-handbook-subsection {
-      //   width: 70%;
-      // }
-
-      // .sponsor-handbook-aside {
-      //   box-sizing: border-box;
-      //   width: 30%;
-      //   align-self: flex-start;
-      //   padding: $whitespace-3 $whitespace-3 $whitespace-3 $whitespace;
-
-      //   img {
-      //     display: block;
-      //     width: 100%;
-      //     margin-bottom: $whitespace-3;
-      //   }
-      // }
-
-      // .sponsor-handbook-price {
-      //   margin: (2 * $whitespace-3) 0;
-      // }
-
       .sponsor-handbook-toc ul {
         columns: 2;
         column-gap: 4 * $whitespace;
       }
-    }
-
-    @media screen and (min-width: 800px) {
-      // .sponsor-handbook-aside {
-      //   padding-right: (2 * $whitespace-3);
-      // }
     }
   }
 
