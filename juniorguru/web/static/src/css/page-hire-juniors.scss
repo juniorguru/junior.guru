@@ -346,20 +346,28 @@ body.page-hire-juniors {
       margin-bottom: 0;
     }
 
-    .sponsor-handbook-subsection,
+    .sponsor-handbook-content,
     .sponsor-handbook-toc,
     .sponsor-handbook-preview {
       padding: $whitespace;
     }
 
-    .sponsor-handbook-aside {
-      padding: 0;
-      margin-bottom: $whitespace;
-
+    .sponsor-handbook-content {
       img {
-        display: none;
+        width: 20rem;
+        float: right;
+        margin: 0 0 $whitespace $whitespace;
       }
     }
+
+    // .sponsor-handbook-aside {
+    //   padding: 0;
+    //   margin-bottom: $whitespace;
+
+    //   img {
+    //     display: none;
+    //   }
+    // }
 
     .sponsor-handbook-price {
       text-align: center;
@@ -400,7 +408,7 @@ body.page-hire-juniors {
         width: 100%;
         height: 100%;
         cursor: zoom-in;
-        border: 2px solid $black;
+        border: ($whitespace / 4) solid $black;
       }
 
       a:hover, a:focus, a:active {
@@ -415,30 +423,30 @@ body.page-hire-juniors {
     }
 
     @media screen and (min-width: 700px) {
-      .sponsor-handbook-content {
-        display: flex;
-      }
+      // .sponsor-handbook-content {
+      //   display: flex;
+      // }
 
-      .sponsor-handbook-subsection {
-        width: 70%;
-      }
+      // .sponsor-handbook-subsection {
+      //   width: 70%;
+      // }
 
-      .sponsor-handbook-aside {
-        box-sizing: border-box;
-        width: 30%;
-        align-self: flex-start;
-        padding: $whitespace-3 $whitespace-3 $whitespace-3 $whitespace;
+      // .sponsor-handbook-aside {
+      //   box-sizing: border-box;
+      //   width: 30%;
+      //   align-self: flex-start;
+      //   padding: $whitespace-3 $whitespace-3 $whitespace-3 $whitespace;
 
-        img {
-          display: block;
-          width: 100%;
-          margin-bottom: $whitespace-3;
-        }
-      }
+      //   img {
+      //     display: block;
+      //     width: 100%;
+      //     margin-bottom: $whitespace-3;
+      //   }
+      // }
 
-      .sponsor-handbook-price {
-        margin: (2 * $whitespace-3) 0;
-      }
+      // .sponsor-handbook-price {
+      //   margin: (2 * $whitespace-3) 0;
+      // }
 
       .sponsor-handbook-toc ul {
         columns: 2;
@@ -447,9 +455,9 @@ body.page-hire-juniors {
     }
 
     @media screen and (min-width: 800px) {
-      .sponsor-handbook-aside {
-        padding-right: (2 * $whitespace-3);
-      }
+      // .sponsor-handbook-aside {
+      //   padding-right: (2 * $whitespace-3);
+      // }
     }
   }
 
