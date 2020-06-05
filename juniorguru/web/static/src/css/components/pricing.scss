@@ -3,26 +3,42 @@
   text-align: center;
 }
 
-.pricing__plan {
-  padding: $whitespace-2;
+.pricing__note {
+  @include font-0;
+  margin: $whitespace 0;
 }
 
-.pricing__plan--standard {
+.pricing__discount {
+  background: $blue;
+  color: $white;
+  padding: ($whitespace / 4) ($whitespace / 2);
+  margin-right: $whitespace / 2;
+}
+
+.pricing__plan {
+  padding: $whitespace-2 $whitespace;
+}
+
+.pricing__plan--highlight {
   background: $yellow;
 }
 
 .pricing__plan-heading {
   margin-top: 0;
   text-align: center;
+  text-transform: uppercase;
 }
 
-.pricing__plan-note {
-  @include font-0;
+.pricing__plan-content {
+  margin-bottom: $whitespace;
+
+  & + * {
+    margin: 0;
+  }
 }
 
 .pricing__plan-price {
   text-align: center;
-  margin: 0;
 }
 
 .pricing__plan-price-amount {
@@ -41,6 +57,7 @@
 @media screen and (min-width: $breakpoint-tablet) {
   .pricing__plans {
     display: flex;
+    margin-bottom: $whitespace-3;
   }
 
   .pricing__plan {
@@ -57,7 +74,7 @@
     width: 33.33%;
   }
 
-  .pricing__plan-price {
-    margin-top: auto;
+  .pricing__plan-content + * {
+    margin-top: auto !important;
   }
 }

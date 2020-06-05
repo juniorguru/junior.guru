@@ -1,0 +1,44 @@
+.button {
+  @include font-2;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 300;
+  padding: $whitespace $whitespace-2;
+  padding-top: $whitespace - 0.1rem;
+  background: $black;
+
+  &, a, a:hover, a:focus, a:active {
+    color: $white;
+  }
+}
+
+a.button {
+  &:hover, &:focus, &:active {
+    background: $blue;
+    color: $white;
+  }
+}
+
+.button--secondary {
+  background: transparent;
+  border: 0.2rem $black solid;
+  padding: ($whitespace - 0.2rem) ($whitespace-2 - 0.2rem);
+
+  &, a, a:hover, a:focus, a:active {
+    color: $black;
+  }
+}
+
+a.button--secondary {
+  &:hover, &:focus, &:active {
+    background: transparent;
+    color: $black;
+    border-width: 0.3rem;
+    padding: ($whitespace - 0.3rem) ($whitespace-2 - 0.3rem);
+  }
+}
+
+.button__note {
+  @include font-0;
+  display: block;
+}

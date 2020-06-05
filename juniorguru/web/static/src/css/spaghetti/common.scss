@@ -205,7 +205,7 @@ main > section {
   }
 }
 
-.button, .button-secondary {
+.legacy-button, .legacy-button-secondary {
   display: inline-block;
   text-decoration: none;
   @include font-2;
@@ -215,7 +215,7 @@ main > section {
   cursor: pointer;
 }
 
-.button {
+.legacy-button {
   color: $white;
   background: $black;
 
@@ -224,7 +224,7 @@ main > section {
   }
 }
 
-.button, .button a {
+.legacy-button, .legacy-button a {
   color: $white;
 
   &:hover, &:focus, &:active {
@@ -232,19 +232,19 @@ main > section {
   }
 }
 
-.button.button-inverted, a.button.button-inverted {
+.legacy-button.legacy-button-inverted, a.legacy-button.legacy-button-inverted {
   color: $black;
   background: $yellow;
 }
 
-a.button.button-inverted {
+a.legacy-button.legacy-button-inverted {
   &:hover, &:focus, &:active {
     color: $white;
     background: $blue;
   }
 }
 
-a.button-secondary {
+a.legacy-button-secondary {
   color: $black;
   background: transparent;
   font-weight: 300;
@@ -252,12 +252,12 @@ a.button-secondary {
   padding: ($whitespace - 0.2rem) ($whitespace-2 - 0.2rem);
 }
 
-a.button-secondary.button-inverted {
+a.legacy-button-secondary.legacy-button-inverted {
   color: $yellow;
   border-color: $yellow;
 }
 
-a.button-secondary, a.button-secondary.button-inverted {
+a.legacy-button-secondary, a.legacy-button-secondary.legacy-button-inverted {
   &:hover, &:focus, &:active {
     border-width: 0.3rem;
     padding: ($whitespace - 0.3rem) ($whitespace-2 - 0.3rem);
@@ -579,7 +579,7 @@ ul.items {
     margin-top: 3 * $whitespace-2;
     padding: 0;
 
-    .button {
+    .legacy-button {
       padding-left: $whitespace-3;
       padding-right: $whitespace-3;
       @include font;
@@ -589,7 +589,7 @@ ul.items {
       }
     }
 
-    p.button {
+    p.legacy-button {
       cursor: text;
 
       &:hover, &:focus, &:active {
@@ -598,8 +598,8 @@ ul.items {
     }
 
     @media screen and (min-width: 600px) {
-      .button { @include font-2; }
-      .button small { @include font; }
+      .legacy-button { @include font-2; }
+      .legacy-button small { @include font; }
     }
   }
 }
@@ -650,7 +650,7 @@ ul.items {
   &.next {
     overflow: hidden;
 
-    .button {
+    .legacy-button {
       display: inline-block;
       background: $black;
       padding-right: $whitespace-3;
@@ -835,7 +835,7 @@ footer {
   margin-top: $whitespace-2;
 }
 
-.author .button {
+.author .legacy-button {
   margin: 0 auto;
 }
 
@@ -865,7 +865,7 @@ footer {
     align-self: center;
   }
 
-  .author .button {
+  .author .legacy-button {
     margin-left: $whitespace;
   }
 }
@@ -928,7 +928,7 @@ a.donate-option {
     margin-bottom: 0;
   }
 
-  .button {
+  .legacy-button {
     @include font;
     padding: ($whitespace / 2) $whitespace;
     float: right;
@@ -936,7 +936,7 @@ a.donate-option {
   }
 
   &:hover, &:focus, &:active {
-    .button {
+    .legacy-button {
       background: $blue;
     }
 

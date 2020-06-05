@@ -271,6 +271,8 @@ body.page-hire-juniors {
         background: $blue;
         color: $white;
         padding: ($whitespace / 2) $whitespace;
+        position: relative;
+        bottom: $whitespace;
       }
     }
 
@@ -280,31 +282,17 @@ body.page-hire-juniors {
 
     .sponsor-handbook-content,
     .sponsor-handbook-toc,
-    .sponsor-handbook-preview {
+    .sponsor-handbook-preview,
+    .pricing > .pricing__note {
       padding-left: $whitespace;
       padding-right: $whitespace;
     }
 
     .sponsor-handbook-content {
       img {
-        width: 20rem;
+        width: 12rem;
         float: right;
         margin: 0 0 $whitespace $whitespace;
-      }
-    }
-
-    .sponsor-handbook-price {
-      text-align: center;
-      padding: $whitespace;
-      margin: 0;
-      background: $yellow;
-
-      span, strong, small {
-        display: block;
-      }
-
-      strong {
-        @include font-4;
       }
     }
 
@@ -332,11 +320,14 @@ body.page-hire-juniors {
         width: 100%;
         height: 100%;
         cursor: zoom-in;
-        border: ($whitespace / 4) solid $black;
+        border: 0.2rem solid $black;
+        padding: 0.1rem;
       }
 
       a:hover, a:focus, a:active {
         border-color: $blue;
+        border-width: 0.3rem;
+        padding: 0;
       }
 
       img {
@@ -351,39 +342,9 @@ body.page-hire-juniors {
         columns: 2;
         column-gap: 4 * $whitespace;
       }
-    }
-  }
 
-  .sponsor-handbook {
-    // quick & dirty: copied from common.scss .job
-    .call-to-action {
-      // margin-top: 3 * $whitespace-2;
-      // padding: 0;
-      padding-top: 0;
-      margin: $whitespace-3 0 (2 * $whitespace-3) 0; // added
-
-      .button {
-        padding-left: $whitespace-3;
-        padding-right: $whitespace-3;
-        @include font;
-
-        small {
-          @include font-0;
-        }
-      }
-
-      p.button {
-        margin: 0; // added
-        cursor: text;
-
-        &:hover, &:focus, &:active {
-          background: $black;
-        }
-      }
-
-      @media screen and (min-width: 600px) {
-        .button { @include font-2; }
-        .button small { @include font; }
+      .sponsor-handbook-content img {
+        width: 20rem;
       }
     }
   }
