@@ -30,7 +30,7 @@ def main():
     scope = ['https://www.googleapis.com/auth/analytics.readonly']
     credentials = ServiceAccountCredentials.from_json_keyfile_dict(sa, scope)
 
-    range_months = get_range_months(6)
+    range_months = get_range_months(4)
 
     analytics = build('analyticsreporting', 'v4', credentials=credentials)
     avg_monthly_users = calc_avg_monthly_values(analytics.reports().batchGet(
