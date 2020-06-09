@@ -4,10 +4,9 @@ import os
 from datetime import date, timedelta
 from pathlib import Path
 
-from apiclient.discovery import build
 from dateutil.relativedelta import relativedelta
-from oauth2client.service_account import ServiceAccountCredentials
 
+from juniorguru.fetch import google
 from juniorguru.models import Metric, db
 
 
@@ -24,39 +23,22 @@ VIEW_ID = '198392474'
 
 
 def main():
-    sa_path = Path(__file__).parent / 'google_service_account.json'
-    sa_json = os.getenv('GOOGLE_SERVICE_ACCOUNT') or sa_path.read_text()
-    sa = json.loads(sa_json)
+    # Google Analytics
     scope = ['https://www.googleapis.com/auth/analytics.readonly']
-    credentials = ServiceAccountCredentials.from_json_keyfile_dict(sa, scope)
+    api = google.get_client('analyticsreporting', 'v4', scope)
 
-    range_months = get_range_months(4)
+    date_range = get_date_range(4)
 
-    analytics = build('analyticsreporting', 'v4', credentials=credentials)
-    avg_monthly_users = calc_avg_monthly_values(analytics.reports().batchGet(
-        body={
-            'reportRequests': [
-                {'viewId': VIEW_ID,
-                 'dateRanges': [
-                     {'startDate': range_months[0].isoformat(),
-                     'endDate': range_months[1].isoformat()}],
-                 'metrics': [{'expression': 'ga:users'}],
-                 'dimensions': [{'name': 'ga:month'}]},
-            ]
-        }
-    ).execute())
-    avg_monthly_pageviews = calc_avg_monthly_values(analytics.reports().batchGet(
-        body={
-            'reportRequests': [
-                {'viewId': VIEW_ID,
-                 'dateRanges': [
-                     {'startDate': range_months[0].isoformat(),
-                     'endDate': range_months[1].isoformat()}],
-                 'metrics': [{'expression': 'ga:pageviews'}],
-                 'dimensions': [{'name': 'ga:month'}]},
-            ]
-        }
-    ).execute())
+    body = prepare_monthly_values_query(VIEW_ID, date_range, 'ga:users')
+    response = api.reports().batchGet(body=body).execute()
+    avg_monthly_users = calc_avg_monthly_values(response)
+
+    body = prepare_monthly_values_query(VIEW_ID, date_range, 'ga:pageviews')
+    response = api.reports().batchGet(body=body).execute()
+    avg_monthly_pageviews = calc_avg_monthly_values(response)
+
+    # MailChimp
+    # TODO
 
     with db:
         Metric.drop_table()
@@ -66,7 +48,7 @@ def main():
         Metric.create(name='avg_monthly_pageviews', value=avg_monthly_pageviews)
 
 
-def get_range_months(months, today=None):
+def get_date_range(months, today=None):
     today = today or date.today()
     last_day_last_month = today.replace(day=1) - timedelta(days=1)
     return (
@@ -79,6 +61,24 @@ def calc_avg_monthly_values(api_response):
     total = int(api_response['reports'][0]['data']['totals'][0]['values'][0])
     months = api_response['reports'][0]['data']['rowCount']
     return int(math.ceil(total / months))
+
+
+def prepare_monthly_values_query(view_id, date_range, metric):
+    return {
+        'reportRequests': [
+            {
+                'viewId': view_id,
+                'dateRanges': [
+                    {
+                        'startDate': date_range[0].isoformat(),
+                        'endDate': date_range[1].isoformat()
+                    }
+                ],
+                'metrics': [{'expression': metric}],
+                'dimensions': [{'name': 'ga:month'}],
+            },
+        ],
+    }
 
 
 if __name__ == '__main__':

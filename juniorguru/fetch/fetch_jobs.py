@@ -8,21 +8,17 @@ from operator import itemgetter
 from pathlib import Path
 
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 
-from juniorguru.fetch import timer
+from juniorguru.fetch import google, timer
 from juniorguru.fetch.sheets import coerce_record
 from juniorguru.models import Job, JobDropped, JobError, db
 
 
 @timer.notify
 def main():
-    sa_path = Path(__file__).parent / 'google_service_account.json'
-    sa_json = os.getenv('GOOGLE_SERVICE_ACCOUNT') or sa_path.read_text()
-    sa = json.loads(sa_json)
     scope = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
-    credentials = ServiceAccountCredentials.from_json_keyfile_dict(sa, scope)
+    credentials = google.get_credentials(scope)
 
     doc_key = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
     doc = gspread.authorize(credentials).open_by_key(doc_key)

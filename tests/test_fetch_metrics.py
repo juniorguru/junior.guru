@@ -10,10 +10,10 @@ from juniorguru.fetch import fetch_metrics
     (date(2020, 6, 9), date(2019, 12, 1), date(2020, 5, 31)),
     (date(2020, 5, 31), date(2019, 11, 1), date(2020, 4, 30)),
 ])
-def test_get_range_months(today, expected_start, expected_end):
-    expected_range = (expected_start, expected_end)
+def test_get_date_range(today, expected_start, expected_end):
+    expected = (expected_start, expected_end)
 
-    assert fetch_metrics.get_range_months(6, today=today) == expected_range
+    assert fetch_metrics.get_date_range(6, today=today) == expected
 
 
 def test_calc_avg_monthly_values():

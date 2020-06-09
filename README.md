@@ -28,6 +28,11 @@ According to [spectrum.chat/zeit](https://spectrum.chat/zeit/now/redirection-ema
 
 The service account's email address needs to be manually invited wherever it should have access. If it should be able to access Google Analytics, go there and invite it as if it was a user.
 
+## Setting up MailChimp credentials
+
+1. Follow [MailChimp's own guide](https://mailchimp.com/help/about-api-keys/) on how to create an API key
+1. Set it as `MAILCHIMP_API_KEY` environment variable for both local devlopment and production
+
 ## Git hooks
 
 - [isort](https://github.com/timothycrosley/isort/#git-hook)

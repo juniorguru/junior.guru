@@ -34,6 +34,7 @@ cssselect = "*"
 pync = "*"
 google-api-python-client = "*"
 python-dateutil = "*"
+requests = "*"
 
 [dev-packages]
 pytest = "*"
