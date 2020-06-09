@@ -1,3 +1,4 @@
+import math
 from datetime import datetime
 from pathlib import Path
 
@@ -129,3 +130,11 @@ def sections(sections):
         for item in section['contents']:
             yaml += f'    - {yaml_str(item)}\n'
     return yaml.strip()
+
+
+@app.template_filter()
+def metric(value):
+    # https://realpython.com/python-rounding/
+    decimals = len(str(value)) - 2
+    multiplier = 10 ** decimals
+    return int(math.floor((value / multiplier) + 0.5) * multiplier)

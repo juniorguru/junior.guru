@@ -192,3 +192,14 @@ def test_sections_multiple():
         '    - PHP',
         '    - C#',
     ])
+
+
+@pytest.mark.parametrize('value,expected', [
+    pytest.param(134, 130, id='hundreds'),
+    pytest.param(2179, 2200, id='thousands'),
+    pytest.param(4270, 4300, id='round up'),
+    pytest.param(4250, 4300, id='round half up'),
+    pytest.param(4240, 4200, id='round down'),
+])
+def test_metric(value, expected):
+    assert template_filters.metric(value) == expected
