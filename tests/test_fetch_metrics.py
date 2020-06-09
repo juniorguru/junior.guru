@@ -16,8 +16,8 @@ def test_get_range_months(today, expected_start, expected_end):
     assert fetch_metrics.get_range_months(6, today=today) == expected_range
 
 
-def test_avg_monthly_users():
-    assert fetch_metrics.calc_avg_monthly_users({
+def test_calc_avg_monthly_values():
+    assert fetch_metrics.calc_avg_monthly_values({
         'reports': [
             {
                 'columnHeader': {

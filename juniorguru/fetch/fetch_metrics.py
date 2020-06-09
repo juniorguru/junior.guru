@@ -11,17 +11,15 @@ from oauth2client.service_account import ServiceAccountCredentials
 from juniorguru.models import Metric, db
 
 
-# The following URLs describe how to work with the Google Analytics Reporting API v4:
+# Useful docs & tools:
+#
 # https://developers.google.com/analytics/devguides/reporting/core/v4/quickstart/service-py
 # https://developers.google.com/analytics/devguides/reporting/core/v4/basics
-#
-# At the time of writing this comment, there is also API v3 and it took
-# immense effort to find those URLs. Of course no doubt the URLs will stop
-# working in about a week or two.
+# https://ga-dev-tools.appspot.com/
 
 
-# Apparently an ID of the project. Per Google's docs I got it from the API
-# itself using the https://ga-dev-tools.appspot.com/account-explorer/
+# ID of the project - got it from the API itself using
+# https://ga-dev-tools.appspot.com/account-explorer/
 VIEW_ID = '198392474'
 
 
@@ -35,7 +33,7 @@ def main():
     range_months = get_range_months(6)
 
     analytics = build('analyticsreporting', 'v4', credentials=credentials)
-    avg_monthly_users = calc_avg_monthly_users(analytics.reports().batchGet(
+    avg_monthly_users = calc_avg_monthly_values(analytics.reports().batchGet(
         body={
             'reportRequests': [
                 {'viewId': VIEW_ID,
@@ -47,12 +45,25 @@ def main():
             ]
         }
     ).execute())
+    avg_monthly_pageviews = calc_avg_monthly_values(analytics.reports().batchGet(
+        body={
+            'reportRequests': [
+                {'viewId': VIEW_ID,
+                 'dateRanges': [
+                     {'startDate': range_months[0].isoformat(),
+                     'endDate': range_months[1].isoformat()}],
+                 'metrics': [{'expression': 'ga:pageviews'}],
+                 'dimensions': [{'name': 'ga:month'}]},
+            ]
+        }
+    ).execute())
 
     with db:
         Metric.drop_table()
         Metric.create_table()
 
         Metric.create(name='avg_monthly_users', value=avg_monthly_users)
+        Metric.create(name='avg_monthly_pageviews', value=avg_monthly_pageviews)
 
 
 def get_range_months(months, today=None):
@@ -64,10 +75,10 @@ def get_range_months(months, today=None):
     )
 
 
-def calc_avg_monthly_users(api_response):
+def calc_avg_monthly_values(api_response):
     total = int(api_response['reports'][0]['data']['totals'][0]['values'][0])
     months = api_response['reports'][0]['data']['rowCount']
-    return math.ceil(total / months)
+    return int(math.ceil(total / months))
 
 
 if __name__ == '__main__':
