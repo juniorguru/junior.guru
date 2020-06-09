@@ -7,6 +7,7 @@ class Metric(BaseModel):
     name = CharField(choices=[
         ('avg_monthly_users', None),
         ('avg_monthly_pageviews', None),
+        ('subscribers', None),
     ])
     value = IntegerField()
 
