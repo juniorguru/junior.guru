@@ -32,6 +32,8 @@ w3lib = "*"
 lxml = "*"
 cssselect = "*"
 pync = "*"
+google-api-python-client = "*"
+python-dateutil = "*"
 
 [dev-packages]
 pytest = "*"

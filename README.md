@@ -26,6 +26,8 @@ According to [spectrum.chat/zeit](https://spectrum.chat/zeit/now/redirection-ema
 1.  Go to CircleCI project settings, page Environment Variables
 1.  Add `GOOGLE_SERVICE_ACCOUNT` variable and paste the JSON from your clipboard as a value
 
+The service account's email address needs to be manually invited wherever it should have access. If it should be able to access Google Analytics, go there and invite it as if it was a user.
+
 ## Git hooks
 
 - [isort](https://github.com/timothycrosley/isort/#git-hook)

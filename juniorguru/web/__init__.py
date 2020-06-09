@@ -1,7 +1,7 @@
 import arrow
 from flask import Flask, Response, abort, render_template, url_for
 
-from juniorguru.models import Job, Story, db
+from juniorguru.models import Job, Metric, Story, db
 from juniorguru.web.thumbnail import thumbnail
 
 
@@ -75,7 +75,10 @@ def job(job_id):
 
 @app.route('/hire-juniors/')
 def hire_juniors():
+    with db:
+        metrics = Metric.as_dict()
     return render_template('hire_juniors.html',
+                           metrics=metrics,
                            thumbnail=thumbnail(title='Najímejte odhodlané juniory'))
 
 
