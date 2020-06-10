@@ -33,13 +33,21 @@ def main():
 
     date_range = get_date_range(4)
 
-    body = prepare_monthly_values_query(GOOGLE_ANALYTICS_VIEW_ID, date_range, 'ga:users')
-    response = api.reports().batchGet(body=body).execute()
-    avg_monthly_users = calc_avg_monthly_values(response)
+    query = prepare_monthly_values_query(GOOGLE_ANALYTICS_VIEW_ID, date_range, 'ga:users')
+    monthly_data = api.reports().batchGet(body=query).execute()
+    avg_monthly_users = calc_avg_monthly_values(monthly_data)
 
-    body = prepare_monthly_values_query(GOOGLE_ANALYTICS_VIEW_ID, date_range, 'ga:pageviews')
-    response = api.reports().batchGet(body=body).execute()
-    avg_monthly_pageviews = calc_avg_monthly_values(response)
+    query = prepare_monthly_values_query(GOOGLE_ANALYTICS_VIEW_ID, date_range, 'ga:pageviews')
+    monthly_data = api.reports().batchGet(body=query).execute()
+    avg_monthly_pageviews = calc_avg_monthly_values(monthly_data)
+
+    query = prepare_events_query(GOOGLE_ANALYTICS_VIEW_ID, date_range, 'apply')
+    events_data = api.reports().batchGet(body=query).execute()
+    apply_clicks = events_data_to_dict(events_data)
+
+    query = prepare_events_query(GOOGLE_ANALYTICS_VIEW_ID, date_range, 'job')
+    events_data = api.reports().batchGet(body=query).execute()
+    job_clicks = events_data_to_dict(events_data)
 
     # MailChimp
     #
@@ -74,9 +82,9 @@ def get_date_range(months, today=None):
     )
 
 
-def calc_avg_monthly_values(api_response):
-    total = int(api_response['reports'][0]['data']['totals'][0]['values'][0])
-    months = api_response['reports'][0]['data']['rowCount']
+def calc_avg_monthly_values(monthly_data):
+    total = int(monthly_data['reports'][0]['data']['totals'][0]['values'][0])
+    months = monthly_data['reports'][0]['data']['rowCount']
     return int(math.ceil(total / months))
 
 
@@ -95,6 +103,42 @@ def prepare_monthly_values_query(view_id, date_range, metric):
                 'dimensions': [{'name': 'ga:month'}],
             },
         ],
+    }
+
+
+def prepare_events_query(view_id, date_range, category):
+    return {
+        'reportRequests': [
+            {
+                'viewId': view_id,
+                'dateRanges': [
+                    {
+                        'startDate': date_range[0].isoformat(),
+                        'endDate': date_range[1].isoformat()
+                    },
+                ],
+                'metrics': [
+                    {'expression': 'ga:uniqueEvents'}
+                ],
+                'dimensionFilterClauses': [{
+                    'filters': [{
+                        'dimensionName': 'ga:eventCategory',
+                        'operator': 'EXACT',
+                        'expressions': [category],
+                    }],
+                }],
+                'dimensions': [
+                    {'name': 'ga:eventLabel'}
+                ],
+            },
+        ],
+    }
+
+
+def events_data_to_dict(events_data):
+    return {
+        row['dimensions'][0]: int(row['metrics'][0]['values'][0])
+        for row in events_data['reports'][0]['data']['rows']
     }
 
 
