@@ -6,7 +6,7 @@ from langdetect import DetectorFactory
 
 from juniorguru.scrapers.pipelines.language_filter import (IrrelevantLanguage,
                                                            Pipeline)
-from utils import param_startswith_skip, startswith_skip
+from testing_utils import param_startswith_skip, startswith_skip
 
 
 DetectorFactory.seed = 0  # prevent non-deterministic language detection

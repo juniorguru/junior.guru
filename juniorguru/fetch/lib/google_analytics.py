@@ -156,7 +156,7 @@ def metric_pageviews_per_external_job(view_id, date_range):
     yield per_url_report_to_dict(report)
 
 
-def metric_apply_per_job(view_id, date_range):
+def metric_applications_per_job(view_id, date_range):
     report = yield {
         'viewId': view_id,
         'dateRanges': [{
@@ -185,15 +185,15 @@ def get_date_range(months, today=None):
     )
 
 
-def calc_avg_monthly_values(monthly_report):
-    total = int(monthly_report['data']['totals'][0]['values'][0])
-    months = monthly_report['data']['rowCount']
+def calc_avg_monthly_values(report):
+    total = int(report['data']['totals'][0]['values'][0])
+    months = report['data']['rowCount']
     return int(math.ceil(total / months))
 
 
-def per_url_report_to_dict(events_report):
+def per_url_report_to_dict(report):
     data = {}
-    for row in events_report['data']['rows']:
+    for row in report['data']['rows']:
         url = strip_params(row['dimensions'][0], 'fbclid')
         value = int(row['metrics'][0]['values'][0])
         data.setdefault(url, 0)

@@ -4,7 +4,7 @@ from datetime import date, datetime, timedelta
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models import Job
+from juniorguru.models import Job, JobMetric
 
 
 def shuffled(sorted_iterable):
@@ -18,12 +18,13 @@ def shuffled(sorted_iterable):
 
 @pytest.fixture
 def db_connection():
+    models = [JobMetric, Job]
     db = SqliteDatabase(':memory:')
     with db:
-        Job.bind(db)
-        Job.create_table()
+        db.bind(models)
+        db.create_tables(models)
         yield db
-        Job.drop_table()
+        db.drop_tables(models)
 
 
 def create_job(id, **kwargs):
@@ -42,6 +43,7 @@ def create_job(id, **kwargs):
         is_sent=kwargs.get('is_sent', False),
         expired_at=kwargs.get('expired_at', None),
         jg_rank=kwargs.get('jg_rank'),
+        link=kwargs.get('link'),
     )
 
 
@@ -188,3 +190,50 @@ def test_companies_count(db_connection):
     create_job('6', company_link='https://def.example.com', approved_at=date(1987, 8, 30), expired_at=date(1987, 9, 1))
 
     assert Job.companies_count() == 2
+
+
+def test_get_by_url(db_connection):
+    job = create_job('1')
+
+    assert Job.get_by_url('https://junior.guru/jobs/1/') == job
+
+
+def test_get_by_url_raises_value_error(db_connection):
+    with pytest.raises(ValueError):
+        Job.get_by_url('https://example.com/jobs/xyz/')
+
+
+def test_get_by_url_raises_does_not_exist_error(db_connection):
+    with pytest.raises(Job.DoesNotExist):
+        Job.get_by_url('https://junior.guru/jobs/1/')
+
+
+def test_get_by_link(db_connection):
+    job = create_job('1', link='https://example.com/1234')
+
+    assert Job.get_by_link('https://example.com/1234') == job
+
+
+def test_get_by_link_raises_does_not_exist_error(db_connection):
+    with pytest.raises(Job.DoesNotExist):
+        Job.get_by_link('https://example.com/1234')
+
+
+def test_metrics(db_connection):
+    job1 = create_job('1')
+    metric1 = JobMetric.create(job=job1, name='users', value=3)
+    metric2 = JobMetric.create(job=job1, name='pageviews', value=6)
+    job2 = create_job('2')
+    metric1 = JobMetric.create(job=job2, name='users', value=1)
+    metric2 = JobMetric.create(job=job2, name='pageviews', value=4)
+
+    assert job1.metrics == {
+        'users': 3,
+        'pageviews': 6,
+        'applications': 0,
+    }
+    assert job2.metrics == {
+        'users': 1,
+        'pageviews': 4,
+        'applications': 0,
+    }

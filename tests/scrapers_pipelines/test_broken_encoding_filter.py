@@ -4,7 +4,7 @@ import pytest
 
 from juniorguru.scrapers.pipelines.broken_encoding_filter import (
     BrokenEncoding, Pipeline)
-from utils import param_startswith_skip, startswith_skip
+from testing_utils import param_startswith_skip, startswith_skip
 
 
 def generate_params(fixtures_dirname):

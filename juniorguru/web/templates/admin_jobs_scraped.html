@@ -38,6 +38,10 @@
       </small>
     </p>
     <details>
+      <summary>Metrics</summary>
+      <pre>{{ job.metrics|pprint }}</pre>
+    </details>
+    <details>
       <summary>Features ({{ job.item.features|length }}) &mdash; JG RANK: {{ job.item.jg_rank }}</summary>
       <pre>{{ job.item.features|pprint }}</pre>
     </details>

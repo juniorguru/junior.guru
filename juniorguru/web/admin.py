@@ -19,8 +19,15 @@ ADMIN_MENU = {
 }
 
 
-def models_to_dicts(models):
-    return list(map(model_to_dict, models))
+def models_to_dicts(objects):
+    return list(map(model_to_dict, objects))
+
+
+def models_to_dicts_with_metrics(objects):
+    return [
+        dict(metrics=obj.metrics, **model_to_dict(obj))
+        for obj in objects
+    ]
 
 
 @app.route('/admin/')
@@ -38,7 +45,7 @@ def admin_newsletter():
 @app.route('/admin/jobs-scraped/')
 def admin_jobs_scraped():
     with db:
-        jobs = models_to_dicts(Job.scraped_listing())
+        jobs = models_to_dicts_with_metrics(Job.scraped_listing())
     return render_template('admin_jobs_scraped.html', jobs=jobs)
 
 

@@ -1,6 +1,3 @@
-import itertools
-from datetime import date
-
 from peewee import (BooleanField, CharField, DateField,
                     DateTimeField, IntegerField)
 
@@ -47,7 +44,7 @@ class Job(BaseModel):
     company_name = CharField()
     company_link = CharField(null=True)  # required for JG
     employment_types = EmploymentTypeField()
-    link = CharField(null=True)  # required for scraped
+    link = CharField(null=True, index=True)  # required for scraped
     source = CharField()
 
     # only set by JG
@@ -64,59 +61,9 @@ class Job(BaseModel):
     response_backup_path = CharField(null=True)
     item = JSONField(null=True)  # required for scraped
 
-    @classmethod
-    def listing(cls):
-        return cls.juniorguru_listing()
-
-    @classmethod
-    def newsletter_listing(cls, min_count, today=None):
-        today = today or date.today()
-
-        count = 0
-        query = cls.select() \
-            .where((cls.source == 'juniorguru') &
-                   (cls.approved_at.is_null(False)) &
-                   (cls.is_sent == False) &
-                   (cls.expired_at.is_null() | (cls.expired_at > today))) \
-            .order_by(cls.posted_at)
-        for item in query:
-            yield item
-            count += 1
-
-        backfill_query = cls.select() \
-            .where(cls.source != 'juniorguru', cls.jg_rank > 0) \
-            .order_by(cls.jg_rank.desc(), cls.posted_at.desc())
-        yield from itertools.islice(backfill_query, min_count - count)
-
-    @classmethod
-    def juniorguru_listing(cls, today=None):
-        today = today or date.today()
-        return cls.select() \
-            .where((cls.source == 'juniorguru') &
-                   (cls.approved_at.is_null(False)) &
-                   (cls.expired_at.is_null() | (cls.expired_at > today))) \
-            .order_by(cls.posted_at.desc())
-
-    @classmethod
-    def bot_listing(cls):
-        return cls.select() \
-            .where(cls.source != 'juniorguru',
-                   cls.jg_rank > 0) \
-            .order_by(cls.jg_rank.desc(), cls.posted_at.desc())
-
-    @classmethod
-    def scraped_listing(cls):
-        return cls.select() \
-            .where(cls.source != 'juniorguru') \
-            .order_by(cls.jg_rank.desc(), cls.posted_at.desc())
-
-    @classmethod
-    def count(cls):
-        return cls.listing().count()
-
-    @classmethod
-    def companies_count(cls):
-        return len(frozenset([job.company_link for job in cls.listing()]))
+    # See job_attrs.py for the rest of the model definition. It's done this
+    # way because of circular dependencies between Job and JobMetric
+    # https://stackoverflow.com/q/62327182/325365
 
 
 class JobDropped(BaseModel):

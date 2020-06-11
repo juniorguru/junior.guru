@@ -8,8 +8,8 @@ from strictyaml import Enum, Map, Optional, Seq, Str, Url
 from juniorguru.scrapers.pipelines import sections_parser
 from juniorguru.scrapers.pipelines.sections_parser import (ListSection,
                                                            TextFragment)
-from utils import (load_yaml, param_startswith_skip,
-                   param_xfail_missing, startswith_skip)
+from testing_utils import (load_yaml, param_startswith_skip,
+                           param_xfail_missing, startswith_skip)
 
 
 schema = Seq(
