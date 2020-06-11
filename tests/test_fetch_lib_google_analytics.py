@@ -46,8 +46,8 @@ def test_calc_avg_monthly_values():
     }) == (13074 / 6)
 
 
-def test_events_report_to_dict():
-    assert google_analytics.events_report_to_dict({
+def test_per_url_report_to_dict():
+    assert google_analytics.per_url_report_to_dict({
         'columnHeader': {
             'dimensions': ['ga:eventLabel'],
             'metricHeader': {
@@ -116,4 +116,50 @@ def test_events_report_to_dict():
         'https://junior.guru/jobs/xyz8/': 6,
         'https://junior.guru/jobs/xyz9/': 4,
         'https://junior.guru/jobs/xyz0/': 2,
+    }
+
+
+def test_per_url_report_to_dict_trims_fbclid():
+    assert google_analytics.per_url_report_to_dict({
+        'columnHeader': {
+            'dimensions': ['ga:eventLabel'],
+            'metricHeader': {
+                'metricHeaderEntries': [
+                    {'name': 'ga:uniqueEvents', 'type': 'INTEGER'}
+                ]
+            }
+        },
+        'data': {
+            'isDataGolden': True,
+            'maximums': [{'values': ['5']}],
+            'minimums': [{'values': ['1']}],
+            'rowCount': 10,
+            'rows': [
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz1/'],
+                    'metrics': [{'values': ['1']}]
+                },
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz1/?fbclid=IwAR0tiKUPuUlwlJQmyrMMJomD3wgmhutiSOIkCREJ_lZYVONmyK68TkXxfSc'],
+                    'metrics': [{'values': ['2']}]
+                },
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz1/?fbclid=IwAR2Dx61q63a5_5Rpnk7-DMme0pIS0tg6iEMx_ia6sJjO5rp2dmk_ExfTjlo'],
+                    'metrics': [{'values': ['2']}]
+                },
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz2/'],
+                    'metrics': [{'values': ['1']}]
+                },
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz3/'],
+                    'metrics': [{'values': ['5']}]
+                },
+            ],
+            'totals': [{'values': ['11']}]
+        }
+    }) == {
+        'https://junior.guru/jobs/xyz1/': 5,
+        'https://junior.guru/jobs/xyz2/': 1,
+        'https://junior.guru/jobs/xyz3/': 5,
     }

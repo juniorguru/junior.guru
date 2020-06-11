@@ -1,6 +1,6 @@
 import re
 from datetime import datetime, timedelta
-from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
+from urllib.parse import urlencode
 
 from scrapy import Request
 from scrapy import Spider as BaseSpider
@@ -8,6 +8,7 @@ from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Compose, Identity, MapCompose, TakeFirst
 
 from juniorguru.scrapers.items import Job, first, parse_relative_time, split
+from juniorguru.url_params import increment_param, strip_params
 
 
 class Spider(BaseSpider):
@@ -55,24 +56,6 @@ class Spider(BaseSpider):
         loader.add_css('posted_at', 'h1 ~ h3:nth-of-type(2) span::text')
         loader.add_css('description_html', '.description__text')
         yield loader.load_item()
-
-
-def strip_params(url, param_names):
-    parts = urlparse(url)
-    params = {name: value for name, value
-              in parse_qs(parts.query).items()
-              if name not in param_names}
-    query = urlencode(params, doseq=True)
-    return urlunparse(parts._replace(query=query))
-
-
-def increment_param(url, param_name, inc=1):
-    parts = urlparse(url)
-    params = parse_qs(parts.query)
-    params.setdefault(param_name, ['0'])
-    params[param_name] = str(int(params[param_name][0]) + inc)
-    query = urlencode(params, doseq=True)
-    return urlunparse(parts._replace(query=query))
 
 
 class Loader(ItemLoader):

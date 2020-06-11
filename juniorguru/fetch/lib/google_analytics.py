@@ -1,9 +1,11 @@
 import math
 from datetime import date, timedelta
+from urllib.parse import urlparse
 
 from dateutil.relativedelta import relativedelta
 
 from juniorguru.fetch.lib.google import get_client
+from juniorguru.url_params import strip_params
 
 
 class GoogleAnalyticsClient():
@@ -41,12 +43,10 @@ class GoogleAnalyticsClient():
 def metric_avg_monthly_users(view_id, date_range):
     report = yield {
         'viewId': view_id,
-        'dateRanges': [
-            {
-                'startDate': date_range[0].isoformat(),
-                'endDate': date_range[1].isoformat(),
-            }
-        ],
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
         'metrics': [{'expression': 'ga:users'}],
         'dimensions': [{'name': 'ga:month'}],
     }
@@ -56,30 +56,75 @@ def metric_avg_monthly_users(view_id, date_range):
 def metric_avg_monthly_pageviews(view_id, date_range):
     report = yield {
         'viewId': view_id,
-        'dateRanges': [
-            {
-                'startDate': date_range[0].isoformat(),
-                'endDate': date_range[1].isoformat(),
-            }
-        ],
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
         'metrics': [{'expression': 'ga:pageviews'}],
         'dimensions': [{'name': 'ga:month'}],
     }
     yield calc_avg_monthly_values(report)
 
 
-def metric_users_per_external_url(view_id, date_range):
+def metric_users_per_job(view_id, date_range):
     report = yield {
         'viewId': view_id,
-        'dateRanges': [
-            {
-                'startDate': date_range[0].isoformat(),
-                'endDate': date_range[1].isoformat(),
-            },
-        ],
-        'metrics': [
-            {'expression': 'ga:uniqueEvents'}
-        ],
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
+        'metrics': [{'expression': 'ga:users'}],
+        'dimensions': [{'name': 'ga:pagePath'}],
+        'dimensionFilterClauses': [{
+            'filters': [{
+                'dimensionName': 'ga:pagePath',
+                'operator': 'REGEXP',
+                'expressions': ['^/jobs/[^/]+/'],
+            }],
+        }],
+        'orderBys': [{
+            'fieldName': 'ga:users',
+            'sortOrder': 'DESCENDING',
+        }]
+    }
+    yield {f'https://junior.guru{url}': value for url, value
+           in per_url_report_to_dict(report).items()}
+
+
+def metric_pageviews_per_job(view_id, date_range):
+    report = yield {
+        'viewId': view_id,
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
+        'metrics': [{'expression': 'ga:pageviews'}],
+        'dimensions': [{'name': 'ga:pagePath'}],
+        'dimensionFilterClauses': [{
+            'filters': [{
+                'dimensionName': 'ga:pagePath',
+                'operator': 'REGEXP',
+                'expressions': ['^/jobs/[^/]+/'],
+            }],
+        }],
+        'orderBys': [{
+            'fieldName': 'ga:pageviews',
+            'sortOrder': 'DESCENDING',
+        }]
+    }
+    yield {f'https://junior.guru{url}': value for url, value
+           in per_url_report_to_dict(report).items()}
+
+
+def metric_users_per_external_job(view_id, date_range):
+    report = yield {
+        'viewId': view_id,
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
+        'metrics': [{'expression': 'ga:uniqueEvents'}],
+        'dimensions': [{'name': 'ga:eventLabel'}],
         'dimensionFilterClauses': [{
             'filters': [{
                 'dimensionName': 'ga:eventCategory',
@@ -87,25 +132,39 @@ def metric_users_per_external_url(view_id, date_range):
                 'expressions': ['job'],
             }],
         }],
-        'dimensions': [
-            {'name': 'ga:eventLabel'}
-        ],
     }
-    yield events_report_to_dict(report)
+    yield per_url_report_to_dict(report)
 
 
-def metric_apply_per_url(view_id, date_range):
+def metric_pageviews_per_external_job(view_id, date_range):
     report = yield {
         'viewId': view_id,
-        'dateRanges': [
-            {
-                'startDate': date_range[0].isoformat(),
-                'endDate': date_range[1].isoformat(),
-            },
-        ],
-        'metrics': [
-            {'expression': 'ga:uniqueEvents'}
-        ],
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
+        'metrics': [{'expression': 'ga:totalEvents'}],
+        'dimensions': [{'name': 'ga:eventLabel'}],
+        'dimensionFilterClauses': [{
+            'filters': [{
+                'dimensionName': 'ga:eventCategory',
+                'operator': 'EXACT',
+                'expressions': ['job'],
+            }],
+        }],
+    }
+    yield per_url_report_to_dict(report)
+
+
+def metric_apply_per_job(view_id, date_range):
+    report = yield {
+        'viewId': view_id,
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
+        'metrics': [{'expression': 'ga:uniqueEvents'}],
+        'dimensions': [{'name': 'ga:eventLabel'}],
         'dimensionFilterClauses': [{
             'filters': [{
                 'dimensionName': 'ga:eventCategory',
@@ -113,11 +172,8 @@ def metric_apply_per_url(view_id, date_range):
                 'expressions': ['apply'],
             }],
         }],
-        'dimensions': [
-            {'name': 'ga:eventLabel'}
-        ],
     }
-    yield events_report_to_dict(report)
+    yield per_url_report_to_dict(report)
 
 
 def get_date_range(months, today=None):
@@ -135,8 +191,11 @@ def calc_avg_monthly_values(monthly_report):
     return int(math.ceil(total / months))
 
 
-def events_report_to_dict(events_report):
-    return {
-        row['dimensions'][0]: int(row['metrics'][0]['values'][0])
-        for row in events_report['data']['rows']
-    }
+def per_url_report_to_dict(events_report):
+    data = {}
+    for row in events_report['data']['rows']:
+        url = strip_params(row['dimensions'][0], 'fbclid')
+        value = int(row['metrics'][0]['values'][0])
+        data.setdefault(url, 0)
+        data[url] += value
+    return data

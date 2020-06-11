@@ -1,11 +1,13 @@
 import os
 
 from juniorguru.fetch.lib.google_analytics import (
-    GoogleAnalyticsClient, get_date_range, metric_apply_per_url,
+    GoogleAnalyticsClient, get_date_range, metric_apply_per_job,
     metric_avg_monthly_pageviews, metric_avg_monthly_users,
-    metric_users_per_external_url)
+    metric_pageviews_per_external_job, metric_pageviews_per_job,
+    metric_users_per_external_job, metric_users_per_job)
 from juniorguru.fetch.lib.mailchimp import (MailChimpClient, get_collection,
-                                            get_link, sum_clicks_per_url)
+                                            get_link,
+                                            sum_clicks_per_external_url)
 from juniorguru.models import Metric, db
 
 
@@ -40,16 +42,21 @@ def fetch_from_google_analytics():
         metric_avg_monthly_pageviews,
     ]))
     metrics.update(api.execute(get_date_range(12), [
-        metric_users_per_external_url,
-        metric_apply_per_url,
+        metric_users_per_job,
+        metric_users_per_external_job,
+        metric_pageviews_per_job,
+        metric_pageviews_per_external_job,
+        metric_apply_per_job,
     ]))
     return metrics
 
 
 def fetch_from_mailchimp():
+    metrics = {}
+
     api = MailChimpClient(MAILCHIMP_API_KEY)
     lists = get_collection(api.get('/lists/', count=1), 'lists')
-    subscribers = lists[0]['stats']['member_count']
+    metrics['subscribers'] = lists[0]['stats']['member_count']
 
     urls_clicked = []
     reports = get_collection(api.get('/reports/', count=1000), 'reports')
@@ -58,15 +65,9 @@ def fetch_from_mailchimp():
         data = api.get(url, count=1000)
         urls_clicked.extend(get_collection(data, 'urls_clicked'))
 
-    users_per_url = sum_clicks_per_url(urls_clicked, 'unique_clicks')
-    pageviews_per_url = sum_clicks_per_url(urls_clicked, 'total_clicks')
-    # TODO filter - only external urls
-
-    return dict(
-        subscribers=subscribers,
-        users_per_url=users_per_url,
-        pageviews_per_url=pageviews_per_url,
-    )
+    metrics['users_per_external_url'] = sum_clicks_per_external_url(urls_clicked, 'unique_clicks')
+    metrics['pageviews_per_external_url'] = sum_clicks_per_external_url(urls_clicked, 'total_clicks')
+    return metrics
 
 
 if __name__ == '__main__':

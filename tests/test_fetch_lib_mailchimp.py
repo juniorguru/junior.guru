@@ -106,3 +106,35 @@ def test_sum_clicks_per_url_filters_zeroes():
     ], 'total_clicks') == {
         'https://junior.guru/jobs/xyz1/': 2,
     }
+
+
+def test_sum_clicks_per_external_url():
+    assert mailchimp.sum_clicks_per_external_url([
+        {
+            'total_clicks': 3,
+            'url': 'https://junior.guru/jobs/xyz1/'
+        },
+        {
+            'total_clicks': 2,
+            'url': 'https://example.com/jobs/abc/'
+        },
+        {
+            'total_clicks': 3,
+            'url': 'https://example.com/jobs/abc1/'
+        },
+    ], 'total_clicks') == {
+        'https://example.com/jobs/abc/': 2,
+        'https://example.com/jobs/abc1/': 3,
+    }
+
+
+@pytest.mark.parametrize('url,expected', [
+    ('https://junior.guru', False),
+    ('http://junior.guru', False),
+    ('https://junior.guru/jobs/xyz1/', False),
+    ('https://example.com', True),
+    ('http://example.com', True),
+    ('https://example.com/jobs/', True),
+])
+def test_is_external_url(url, expected):
+    assert mailchimp.is_external_url(url) is expected

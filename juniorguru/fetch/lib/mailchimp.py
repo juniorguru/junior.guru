@@ -1,3 +1,5 @@
+import re
+
 import requests
 
 
@@ -44,3 +46,13 @@ def sum_clicks_per_url(urls_clicked, metric_name):
         clicks.setdefault(url_clicked['url'], 0)
         clicks[url_clicked['url']] += url_clicked[metric_name]
     return {url: sum for url, sum in clicks.items() if sum > 0}
+
+
+def sum_clicks_per_external_url(*args, **kwargs):
+    return {url: value for url, value in
+            sum_clicks_per_url(*args, **kwargs).items()
+            if is_external_url(url)}
+
+
+def is_external_url(url):
+    return not re.match(r'https?://junior.guru', url)
