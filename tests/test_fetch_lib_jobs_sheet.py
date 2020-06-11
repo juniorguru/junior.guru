@@ -3,7 +3,7 @@ from datetime import date, datetime
 
 import pytest
 
-from juniorguru.fetch import sheets
+from juniorguru.fetch.lib import jobs_sheet
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -12,7 +12,7 @@ from juniorguru.fetch import sheets
     ('8/6/2019 14:08:49', datetime(2019, 8, 6, 14, 8, 49)),
 ])
 def test_coerce_datetime(value, expected):
-    assert sheets.coerce_datetime(value) == expected
+    assert jobs_sheet.coerce_datetime(value) == expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -22,7 +22,7 @@ def test_coerce_datetime(value, expected):
     ('8/6/2019', date(2019, 8, 6)),
 ])
 def test_coerce_date(value, expected):
-    assert sheets.coerce_date(value) == expected
+    assert jobs_sheet.coerce_date(value) == expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -30,7 +30,7 @@ def test_coerce_date(value, expected):
     (' Foo Ltd.   ', 'Foo Ltd.'),
 ])
 def test_coerce_text(value, expected):
-    assert sheets.coerce_text(value) == expected
+    assert jobs_sheet.coerce_text(value) == expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -43,7 +43,7 @@ def test_coerce_text(value, expected):
     ('no', False),
 ])
 def test_coerce_boolean_words(value, expected):
-    assert sheets.coerce_boolean_words(value) == expected
+    assert jobs_sheet.coerce_boolean_words(value) == expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -57,7 +57,7 @@ def test_coerce_boolean_words(value, expected):
     ('no', True),
 ])
 def test_coerce_boolean(value, expected):
-    assert sheets.coerce_boolean(value) == expected
+    assert jobs_sheet.coerce_boolean(value) == expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -68,16 +68,16 @@ def test_coerce_boolean(value, expected):
     ('internship', frozenset(['internship'])),
 ])
 def test_coerce_set(value, expected):
-    assert sheets.coerce_set(value) == expected
+    assert jobs_sheet.coerce_set(value) == expected
 
 
 def test_create_id():
-    id_ = sheets.create_id(datetime(2019, 7, 6, 20, 24, 3), 'https://www.example.com/foo/bar.html')
+    id_ = jobs_sheet.create_id(datetime(2019, 7, 6, 20, 24, 3), 'https://www.example.com/foo/bar.html')
     assert id_ == hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest()
 
 
 def test_coerce_record():
-    assert sheets.coerce_record({
+    assert jobs_sheet.coerce_record({
         'Timestamp': '7/6/2019 20:24:03',
         'Email Address': 'jobs@example.com',
         'Company name': 'Honza Ltd.',
