@@ -7,16 +7,28 @@
 </p>
 <table style="border-collapse: collapse;">
     <tr>
-        <td><b>Pozice:</b></td>
-        <td>{{ title }}</td>
+        <td>
+            <b>Pozice:</b>&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            {{ title }}
+        </td>
     </tr>
     <tr>
-        <td><b>Firma:</b></td>
-        <td>{{ company_name }}</td>
+        <td>
+            <b>Firma:</b>&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            {{ company_name }}
+        </td>
     </tr>
     <tr>
-        <td><b>Odkaz:</b></td>
-        <td><a href="{{ url }}">{{ url }}</a></td>
+        <td>
+            <b>Odkaz:</b>&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            <a href="{{ url }}">{{ url }}</a>
+        </td>
     </tr>
 </table>
 <p>
@@ -24,27 +36,39 @@
 </p>
 <table style="border-collapse: collapse;">
     <tr>
-        <td>Trvání:</td>
-        <td><b>{{ start_days }} dní</b></td>
-        <td><small>inzerát schválen {{ starts_at.day }}.{{ starts_at.month }}.{{ starts_at.year }}</small></td>
+        <td>
+            Trvání:&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            <b>{{ start_days }} dní</b>&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            <small>inzerát schválen {{ starts_at.day }}.{{ starts_at.month }}.{{ starts_at.year }}</small>
+        </td>
     </tr>
     <tr>
-        <td>Zbývá:</td>
-        <td><b>{{ end_days }} dní</b></td>
-        <td><small>inzerát vyprší {{ ends_at.day }}.{{ ends_at.month }}.{{ ends_at.year }}</small></td>
+        <td>
+            Zbývá:&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            <b>{{ end_days }} dní</b>&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            <small>inzerát vyprší {{ ends_at.day }}.{{ ends_at.month }}.{{ ends_at.year }}</small>
+        </td>
     </tr>
     <tr>
-        <td>Byl inzerát v newsletteru?</td>
+        <td>Byl inzerát v newsletteru?&nbsp;&nbsp;&nbsp;</td>
         {%- if newsletter_at -%}
             <td>
-                <b>ANO</b>
+                <b>ANO</b>&nbsp;&nbsp;&nbsp;
             </td>
             <td>
                 <small>odeslán {{ newsletter_at.day }}.{{ newsletter_at.month }}.{{ newsletter_at.year }}, <a href="{{ newsletter_url }}">archiv</a></small>
             </td>
         {%- else -%}
             <td>
-                <b>zatím NE</b>
+                <b>zatím NE</b>&nbsp;&nbsp;&nbsp;
             </td>
             <td>
                 <small><a href="{{ newsletter_url }}">archiv</a></small>
@@ -52,19 +76,37 @@
         {%- endif %}
     </tr>
     <tr>
-        <td>Počet návštěvníků:</td>
-        <td><b>{{ metrics.users }}</b></td>
-        <td>&nbsp;</td>
+        <td>
+            Počet návštěvníků:&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            <b>{{ metrics.users }}</b>&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
     </tr>
     <tr>
-        <td>Počet zobrazení:</td>
-        <td><b>{{ metrics.pageviews }}</b></td>
-        <td>&nbsp;</td>
+        <td>
+            Počet zobrazení:&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            <b>{{ metrics.pageviews }}</b>&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
     </tr>
     <tr>
-        <td>Počet uchazečů:</td>
-        <td><b>{{ metrics.applications }}</b></td>
-        <td><small>kliknutí na tlačítko</small></td>
+        <td>
+            Počet uchazečů:&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            <b>{{ metrics.applications }}</b>&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            <small>kliknutí na tlačítko</small>&nbsp;&nbsp;&nbsp;
+        </td>
     </tr>
 </table>
 <p>
