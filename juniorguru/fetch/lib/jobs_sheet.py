@@ -17,8 +17,8 @@ def coerce_record(record):
         r'^job description$': ('description', coerce_text),
         r'^job link$': ('link', coerce_text),
         r'^approved$': ('approved_at', coerce_date),
-        r'^sent$': ('is_sent', coerce_boolean),
-        r'^expired$': ('expired_at', coerce_date),
+        r'^sent$': ('newsletter_at', coerce_date),
+        r'^expire[ds]$': ('expires_at', coerce_date),
     }, record)
 
 

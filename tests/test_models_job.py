@@ -40,8 +40,8 @@ def create_job(id, **kwargs):
         description=kwargs.get('description', '**Really long** description.'),
         source=kwargs.get('source', 'juniorguru'),
         approved_at=kwargs.get('approved_at', date.today()),
-        is_sent=kwargs.get('is_sent', False),
-        expired_at=kwargs.get('expired_at', None),
+        newsletter_at=kwargs.get('newsletter_at', None),
+        expires_at=kwargs.get('expires_at', None),
         jg_rank=kwargs.get('jg_rank'),
         link=kwargs.get('link'),
     )
@@ -95,10 +95,10 @@ def test_listing_returns_only_approved_jobs(db_connection):
 
 
 def test_listing_returns_only_not_expired_jobs(db_connection):
-    job1 = create_job('1', expired_at=None)
-    job2 = create_job('2', expired_at=date(1987, 8, 30))
-    job3 = create_job('3', expired_at=date.today())
-    job4 = create_job('4', expired_at=date.today() + timedelta(days=2))
+    job1 = create_job('1', expires_at=None)
+    job2 = create_job('2', expires_at=date(1987, 8, 30))
+    job3 = create_job('3', expires_at=date.today())
+    job4 = create_job('4', expires_at=date.today() + timedelta(days=2))
 
     assert set(Job.listing()) == {job1, job4}
 
@@ -120,18 +120,18 @@ def test_newsletter_listing_returns_only_approved_jobs(db_connection):
 
 
 def test_newsletter_listing_returns_only_not_expired_jobs(db_connection):
-    job1 = create_job('1', expired_at=None)
-    job2 = create_job('2', expired_at=date(1987, 8, 30))
-    job3 = create_job('3', expired_at=date.today())
-    job4 = create_job('4', expired_at=date.today() + timedelta(days=2))
+    job1 = create_job('1', expires_at=None)
+    job2 = create_job('2', expires_at=date(1987, 8, 30))
+    job3 = create_job('3', expires_at=date.today())
+    job4 = create_job('4', expires_at=date.today() + timedelta(days=2))
 
     assert set(Job.newsletter_listing(5)) == {job1, job4}
 
 
 def test_newsletter_listing_returns_only_jobs_not_sent(db_connection):
-    job1 = create_job('1', is_sent=True)
-    job2 = create_job('2', is_sent=False)
-    job3 = create_job('3', is_sent=True)
+    job1 = create_job('1', newsletter_at=date.today() - timedelta(days=2))
+    job2 = create_job('2', newsletter_at=None)
+    job3 = create_job('3', newsletter_at=date.today() - timedelta(days=2))
 
     assert set(Job.newsletter_listing(5)) == {job2}
 
@@ -176,7 +176,7 @@ def test_count(db_connection):
     create_job('1', approved_at=date(1987, 8, 30))
     create_job('2', approved_at=None)
     create_job('3', approved_at=date(1987, 8, 30))
-    create_job('4', approved_at=date(1987, 8, 30), expired_at=date(1987, 9, 1))
+    create_job('4', approved_at=date(1987, 8, 30), expires_at=date(1987, 9, 1))
 
     assert Job.count() == 2
 
@@ -187,7 +187,7 @@ def test_companies_count(db_connection):
     create_job('3', company_link='https://xyz.example.com', approved_at=date(1987, 8, 30))
     create_job('4', company_link='https://xyz.example.com', approved_at=None)
     create_job('5', company_link='https://def.example.com', approved_at=None)
-    create_job('6', company_link='https://def.example.com', approved_at=date(1987, 8, 30), expired_at=date(1987, 9, 1))
+    create_job('6', company_link='https://def.example.com', approved_at=date(1987, 8, 30), expires_at=date(1987, 9, 1))
 
     assert Job.companies_count() == 2
 

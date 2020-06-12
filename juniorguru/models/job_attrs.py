@@ -15,7 +15,7 @@ from juniorguru.models.metrics import JOB_METRIC_NAMES, JobMetric
 
 __all__ = ['get_by_url', 'get_by_link', 'listing', 'newsletter_listing',
            'juniorguru_listing', 'bot_listing', 'scraped_listing', 'count',
-           'companies_count', 'metrics']
+           'companies_count', 'metrics', 'effective_approved_at']
 
 
 @classmethod
@@ -43,9 +43,9 @@ def newsletter_listing(cls, min_count, today=None):
     count = 0
     query = cls.select() \
         .where((cls.source == 'juniorguru') &
-                (cls.approved_at.is_null(False)) &
-                (cls.is_sent == False) &
-                (cls.expired_at.is_null() | (cls.expired_at > today))) \
+               cls.approved_at.is_null(False) &
+               cls.newsletter_at.is_null() &
+               (cls.expires_at.is_null() | (cls.expires_at > today))) \
         .order_by(cls.posted_at)
     for item in query:
         yield item
@@ -63,7 +63,7 @@ def juniorguru_listing(cls, today=None):
     return cls.select() \
         .where((cls.source == 'juniorguru') &
                 (cls.approved_at.is_null(False)) &
-                (cls.expired_at.is_null() | (cls.expired_at > today))) \
+                (cls.expires_at.is_null() | (cls.expires_at > today))) \
         .order_by(cls.posted_at.desc())
 
 
@@ -77,8 +77,7 @@ def bot_listing(cls):
 
 @classmethod
 def scraped_listing(cls):
-    return cls.select(cls, JobMetric) \
-        .join(JobMetric) \
+    return cls.select() \
         .where(cls.source != 'juniorguru') \
         .order_by(cls.jg_rank.desc(), cls.posted_at.desc())
 
@@ -99,3 +98,12 @@ def metrics(self):  # _metrics is a JobMetric backref
     for metric in self._metrics:
         result[metric.name] = metric.value
     return result
+
+
+@property
+def effective_approved_at(self):
+    # before 2020-06-04 the approved field was only a boolean, so using
+    # 'posted_at' instead for anything approved that date or before
+    if self.approved_at <= date(2020, 6, 4):
+        return self.posted_at.date()
+    return self.approved_at

@@ -102,7 +102,7 @@ def test_coerce_record():
         'location': 'Prague',
         'link': 'https://jobs.example.com/1245/',
         'approved_at': None,
-        'is_sent': True,
-        'expired_at': date(2019, 12, 12),
+        'newsletter_at': date(2019, 11, 11),
+        'expires_at': date(2019, 12, 12),
         'source': 'juniorguru',
     }
