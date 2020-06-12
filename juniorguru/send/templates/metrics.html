@@ -1,32 +1,39 @@
-Hezký den!
-
-Tento pravidelný, automatický e-mail vám přišel, protože máte inzerát
-na stránce https://junior.guru/jobs/, a to konkrétně tento:
-
-Pozice: {{ title }}
-Firma: {{ company_name }}
-Odkaz: {{ url }}
-
-Jak se mu zatím daří?
-
-Trvání: {{ start_days }} dní (inzerát schválen {{ starts_at.day }}.{{ starts_at.month }}.{{ starts_at.year }})
-Zbývá: {{ end_days }} dní (inzerát vyprší {{ ends_at.day }}.{{ ends_at.month }}.{{ ends_at.year }})
-Byl inzerát v newsletteru?
-{%- if newsletter_at -%}
-    ano (odeslán {{ newsletter_at.day }}.{{ newsletter_at.month }}.{{ newsletter_at.year }}, archiv: {{ newsletter_url }})
-{%- else -%}
-    zatím ne (archiv: {{ newsletter_url }})
-{%- endif %}
-Počet návštěvníků: {{ metrics.users }}
-Počet zobrazení: {{ metrics.pageviews }}
-Počet uchazečů (klik na tlačítko): {{ metrics.applications }}
-
-Upozornění: Statistiky jsou podhodnocené a pouze orientační. Čísla
-pocházejí z nástroje Google Analytics, který mohou internetové
-prohlížeče blokovat. Počet uchazečů je měřen teprve od května 2020.
-
-Chcete-li inzerát změnit, zrušit, prodloužit, nebo máte-li jakýkoliv
-dotaz, jednoduše odpovězte na tento e-mail.
-
-Honza Javorek
-https://junior.guru/
+<p>Hezký den!</p>
+<p>
+    Tento pravidelný, automatický e-mail vám přišel, protože máte inzerát
+    na stránce https://junior.guru/jobs/, a to konkrétně tento:
+</p>
+<p>
+    <b>Pozice:</b> {{ title }}<br>
+    <b>Firma:</b> {{ company_name }}<br>
+    <b>Odkaz:</b> <a href="{{ url }}">{{ url }}</a><br>
+</p>
+<p>
+    Jak se mu zatím daří?
+</p>
+<p>
+    <b>Trvání:</b> {{ start_days }} dní <small>(inzerát schválen {{ starts_at.day }}.{{ starts_at.month }}.{{ starts_at.year }})</small><br>
+    <b>Zbývá:</b> {{ end_days }} dní <small>(inzerát vyprší {{ ends_at.day }}.{{ ends_at.month }}.{{ ends_at.year }})</small><br>
+    <b>Byl inzerát v newsletteru?</b>&nbsp;
+    {%- if newsletter_at -%}
+        ano <small>(odeslán {{ newsletter_at.day }}.{{ newsletter_at.month }}.{{ newsletter_at.year }}, <a href="{{ newsletter_url }}">archiv</a>)</small>
+    {%- else -%}
+        zatím ne <small>(<a href="{{ newsletter_url }}">archiv</a>)</small>
+    {%- endif %}<br>
+    <b>Počet návštěvníků:</b> {{ metrics.users }}<br>
+    <b>Počet zobrazení:</b> {{ metrics.pageviews }}<br>
+    <b>Počet uchazečů:</b> {{ metrics.applications }} <small>(kliknutí na tlačítko)</small><br>
+</p>
+<p>
+    <b>Upozornění!</b> Statistiky jsou podhodnocené a pouze orientační. Čísla
+    pocházejí z nástroje Google Analytics, který mohou internetové
+    prohlížeče blokovat. Počet uchazečů je měřen teprve od května 2020.
+</p>
+<p>
+    Chcete-li inzerát změnit, zrušit, prodloužit, nebo máte-li jakýkoliv
+    dotaz, jednoduše <b>odpovězte na tento e-mail</b>.
+</p>
+<p>
+    Honza Javorek<br>
+    <a href="https://junior.guru/">https://junior.guru</a><br>
+</p>

@@ -32,7 +32,7 @@ def main():
     template_path = Path(__file__).parent / 'templates' / 'metrics.html'
     template = Template(template_path.read_text())
 
-    for job in jobs[:2]:
+    for job in jobs[:2]:  # DEBUG
         send(create_message(today, job, template))
 
 
@@ -50,7 +50,7 @@ def create_message(today, job, template):
                               starts_at=starts_at,
                               start_days=(today - starts_at).days,
                               ends_at=ends_at,
-                              ends_days=(ends_at - today).days,
+                              end_days=(ends_at - today).days,
                               newsletter_at=job.newsletter_at,
                               newsletter_url='https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75')
 
