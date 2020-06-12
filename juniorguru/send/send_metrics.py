@@ -1,10 +1,10 @@
 import json
-import logging
 import os
 from datetime import date, timedelta
+from pathlib import Path
 from pprint import pformat
-from textwrap import dedent
 
+from jinja2 import Template
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import From, Mail, To
 
@@ -29,59 +29,33 @@ def main():
     if jobs_count > SENDGRID_LIMIT:
         log.error(f'Jobs count is too high! {jobs_count} > {SENDGRID_LIMIT}')
 
-    for job in jobs:
-        send(create_message(today, job))
+    template_path = Path(__file__).parent / 'templates' / 'metrics.html'
+    template = Template(template_path.read_text())
+
+    for job in jobs[:2]:
+        send(create_message(today, job, template))
 
 
-def create_message(today, job):
+def create_message(today, job, template):
     from_email = From('metrics@junior.guru', 'junior.guru')
     to_email = To('mail@honzajavorek.cz', job.company_name)  # TODO job.email
+    subject = f'Jak se daří vašemu inzerátu? ({job.title})'
 
     starts_at = job.effective_approved_at
-    start_days = (today - starts_at).days
     ends_at = job.expires_at or (today + timedelta(days=30))
-    end_days = (ends_at - today).days
+    content = template.render(title=job.title,
+                              company_name=job.company_name,
+                              url=f'https://junior.guru/jobs/{job.id}/',
+                              metrics=job.metrics,
+                              starts_at=starts_at,
+                              start_days=(today - starts_at).days,
+                              ends_at=ends_at,
+                              ends_days=(ends_at - today).days,
+                              newsletter_at=job.newsletter_at,
+                              newsletter_url='https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75')
 
-    archive_url = 'https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75'
-    if job.newsletter_at:
-        newsletter = f'ano (odeslán {job.newsletter_at.day}.{job.newsletter_at.month}.{job.newsletter_at.year}, archiv: {archive_url})'
-    else:
-        newsletter = f'zatím ne (archiv: {archive_url})'
-
-    subject = f'Jak se daří vašemu inzerátu? ({job.title})'
-    content = dedent(f'''
-        Hezký den!
-
-        Tento pravidelný, automatický e-mail vám přišel, protože máte inzerát
-        na stránce https://junior.guru/jobs/, a to konkrétně tento:
-
-        Pozice: {job.title}
-        Firma: {job.company_name}
-        Odkaz: https://junior.guru/jobs/{job.id}/
-
-        Jak se mu zatím daří?
-
-        Trvání: {start_days} dní (inzerát schválen {starts_at.day}.{starts_at.month}.{starts_at.year})
-        Zbývá: {end_days} dní (inzerát vyprší {ends_at.day}.{ends_at.month}.{ends_at.year})
-        Byl inzerát v newsletteru? {newsletter}
-        Počet návštěvníků: {job.metrics['users']}
-        Počet zobrazení: {job.metrics['pageviews']}
-        Počet uchazečů (klik na tlačítko): {job.metrics['applications']}
-
-        Upozornění: Statistiky jsou podhodnocené a pouze orientační. Čísla
-        pocházejí z nástroje Google Analytics, který mohou internetové
-        prohlížeče blokovat. Počet uchazečů je měřen teprve od května 2020.
-
-        Chcete-li inzerát změnit, zrušit, prodloužit, nebo máte-li jakýkoliv
-        dotaz, jednoduše odpovězte na tento e-mail.
-
-        Honza Javorek
-        https://junior.guru/
-    ''')
-
-    # TODO html_content
-    return Mail(from_email=from_email, to_emails=to_email, subject=subject,
-                plain_text_content=content)
+    return Mail(from_email=from_email, to_emails=to_email,
+                subject=subject, html_content=content)
 
 
 def send(message):
