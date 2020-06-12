@@ -87,6 +87,16 @@ jobs:
           paths:
             - .deploy
 
+  send:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: |
+          export LOG_LEVEL=debug
+          export SENDGRID_ENABLED=1
+          pipenv run send
+
   check-anchors:
     executor: python-js
     steps:
@@ -158,6 +168,9 @@ workflows:
           requires:
             - install
       - deploy:
+          requires:
+            - fetch-build
+      - send:
           requires:
             - fetch-build
       - check-scrapers:

@@ -32,7 +32,7 @@ def main():
     template_path = Path(__file__).parent / 'templates' / 'metrics.html'
     template = Template(template_path.read_text())
 
-    for job in jobs[:1]:  # DEBUG
+    for job in jobs:
         send(create_message(today, job, template))
 
 
