@@ -33,6 +33,11 @@ The service account's email address needs to be manually invited wherever it sho
 1. Follow [MailChimp's own guide](https://mailchimp.com/help/about-api-keys/) on how to create an API key
 1. Set it as `MAILCHIMP_API_KEY` environment variable for both local devlopment and production
 
+## Setting up SendGrid credentials
+
+1. [Create an API key](https://app.sendgrid.com/settings/api_keys)
+1. Set it as `SENDGRID_API_KEY` environment variable for both local devlopment and production
+
 ## Git hooks
 
 - [isort](https://github.com/timothycrosley/isort/#git-hook)
