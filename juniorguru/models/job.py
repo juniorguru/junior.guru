@@ -1,5 +1,5 @@
 from peewee import (BooleanField, CharField, DateField,
-                    DateTimeField, IntegerField)
+                    DateTimeField, IntegerField, TextField)
 
 from juniorguru.models.base import BaseModel, JSONField
 
@@ -49,7 +49,7 @@ class Job(BaseModel):
 
     # only set by JG
     email = CharField(null=True)  # required for JG
-    description = CharField(null=True)  # required for JG
+    description = TextField(null=True)  # required for JG
     approved_at = DateField(null=True)
     expired_at = DateField(null=True)
     is_sent = BooleanField(default=False)
