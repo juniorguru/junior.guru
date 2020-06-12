@@ -1,29 +1,72 @@
-<p>Hezký den!</p>
+<p>
+    Hezký den!
+</p>
 <p>
     Tento pravidelný, automatický e-mail vám přišel, protože máte inzerát
     na stránce https://junior.guru/jobs/, a to konkrétně tento:
 </p>
-<p>
-    <b>Pozice:</b> {{ title }}<br>
-    <b>Firma:</b> {{ company_name }}<br>
-    <b>Odkaz:</b> <a href="{{ url }}">{{ url }}</a><br>
-</p>
+<table style="border-collapse: collapse;">
+    <tr>
+        <td><b>Pozice:</b></td>
+        <td>{{ title }}</td>
+    </tr>
+    <tr>
+        <td><b>Firma:</b></td>
+        <td>{{ company_name }}</td>
+    </tr>
+    <tr>
+        <td><b>Odkaz:</b></td>
+        <td><a href="{{ url }}">{{ url }}</a></td>
+    </tr>
+</table>
 <p>
     Jak se mu zatím daří?
 </p>
-<p>
-    <b>Trvání:</b> {{ start_days }} dní <small>(inzerát schválen {{ starts_at.day }}.{{ starts_at.month }}.{{ starts_at.year }})</small><br>
-    <b>Zbývá:</b> {{ end_days }} dní <small>(inzerát vyprší {{ ends_at.day }}.{{ ends_at.month }}.{{ ends_at.year }})</small><br>
-    <b>Byl inzerát v newsletteru?</b>&nbsp;
-    {%- if newsletter_at -%}
-        ano <small>(odeslán {{ newsletter_at.day }}.{{ newsletter_at.month }}.{{ newsletter_at.year }}, <a href="{{ newsletter_url }}">archiv</a>)</small>
-    {%- else -%}
-        zatím ne <small>(<a href="{{ newsletter_url }}">archiv</a>)</small>
-    {%- endif %}<br>
-    <b>Počet návštěvníků:</b> {{ metrics.users }}<br>
-    <b>Počet zobrazení:</b> {{ metrics.pageviews }}<br>
-    <b>Počet uchazečů:</b> {{ metrics.applications }} <small>(kliknutí na tlačítko)</small><br>
-</p>
+<table style="border-collapse: collapse;">
+    <tr>
+        <td>Trvání:</td>
+        <td><b>{{ start_days }} dní</b></td>
+        <td><small>inzerát schválen {{ starts_at.day }}.{{ starts_at.month }}.{{ starts_at.year }}</small></td>
+    </tr>
+    <tr>
+        <td>Zbývá:</td>
+        <td><b>{{ end_days }} dní</b></td>
+        <td><small>inzerát vyprší {{ ends_at.day }}.{{ ends_at.month }}.{{ ends_at.year }}</small></td>
+    </tr>
+    <tr>
+        <td>Byl inzerát v newsletteru?</td>
+        {%- if newsletter_at -%}
+            <td>
+                <b>ANO</b>
+            </td>
+            <td>
+                <small>odeslán {{ newsletter_at.day }}.{{ newsletter_at.month }}.{{ newsletter_at.year }}, <a href="{{ newsletter_url }}">archiv</a></small>
+            </td>
+        {%- else -%}
+            <td>
+                <b>zatím NE</b>
+            </td>
+            <td>
+                <small><a href="{{ newsletter_url }}">archiv</a></small>
+            </td>
+        {%- endif %}
+    </tr>
+    <tr>
+        <td>Počet návštěvníků:</td>
+        <td><b>{{ metrics.users }}</b></td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Počet zobrazení:</td>
+        <td><b>{{ metrics.pageviews }}</b></td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Počet uchazečů:</td>
+        <td><b>{{ metrics.applications }}</b></td>
+        <td><small>kliknutí na tlačítko</small></td>
+    </tr>
+</table>
 <p>
     <b>Upozornění!</b> Statistiky jsou podhodnocené a pouze orientační. Čísla
     pocházejí z nástroje Google Analytics, který mohou internetové
