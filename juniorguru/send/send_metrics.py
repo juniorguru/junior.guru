@@ -29,7 +29,7 @@ def main():
     if jobs_count > SENDGRID_LIMIT:
         log.error(f'Jobs count is too high! {jobs_count} > {SENDGRID_LIMIT}')
 
-    for job in jobs[:3]:
+    for job in jobs:
         send(create_message(today, job))
 
 
