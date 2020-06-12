@@ -38,6 +38,12 @@ The service account's email address needs to be manually invited wherever it sho
 1. [Create an API key](https://app.sendgrid.com/settings/api_keys)
 1. Set it as `SENDGRID_API_KEY` environment variable for both local devlopment and production
 
+By default, sending is not enabled. On production or when trying to send e-mails from localhost an environment variable `SENDGRID_ENABLED` needs to be set to something truthy.
+
 ## Git hooks
 
 - [isort](https://github.com/timothycrosley/isort/#git-hook)
+
+## Logging
+
+The environment variable `LOG_LEVEL` affects what gets filtered out. It's set to `info` by default.
