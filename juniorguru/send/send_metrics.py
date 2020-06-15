@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 from datetime import date, timedelta
 from pathlib import Path
 from pprint import pformat
@@ -59,6 +60,7 @@ def create_message(today, job, template):
 
 
 def send(message):
+    status = 0
     log.info('Sending\n' + pformat(message.get()))
     if SENDGRID_ENABLED:
         try:
@@ -69,8 +71,10 @@ def send(message):
             log.debug(f'SendGrid response\n' + pformat(response_info))
         except Exception as e:
             log.exception(f'SendGrid error: {e}')
+            status = 1
     else:
         log.warning('SendGrid not enabled')
+    sys.exit(status)
 
 
 if __name__ == '__main__':
