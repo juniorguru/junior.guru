@@ -97,6 +97,7 @@
             &nbsp;
         </td>
     </tr>
+    {% if metrics.applications %}
     <tr>
         <td>
             Počet uchazečů:&nbsp;&nbsp;&nbsp;
@@ -108,11 +109,15 @@
             <small>kliknutí na&nbsp;tlačítko</small>&nbsp;&nbsp;&nbsp;
         </td>
     </tr>
+    {% endif %}
 </table>
 <p>
     <b>Upozornění!</b> Statistiky jsou podhodnocené a pouze orientační. Čísla
     pocházejí z nástroje Google Analytics, který mohou internetové
-    prohlížeče blokovat. Počet uchazečů je měřen teprve od května 2020.
+    prohlížeče blokovat.
+    {% if metrics.applications %}
+        Počet uchazečů je měřen teprve od května 2020.
+    {% endif %}
 </p>
 <p>
     Chcete-li inzerát změnit, zrušit, prodloužit, nebo máte-li jakýkoliv
