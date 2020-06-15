@@ -1,9 +1,12 @@
+<p style="background: #fffa72; padding: 5px 3px;">
+    <img src="{{ url_logo }}" alt="junior.guru logo" width="150" style="display: block;">
+</p>
 <p>
     Hezký den!
 </p>
 <p>
     Tento pravidelný, automatický e-mail vám přišel, protože máte inzerát
-    na stránce https://junior.guru/jobs/, a to konkrétně tento:
+    na stránce {{ url_jobs }}, a to konkrétně tento:
 </p>
 <table style="border-collapse: collapse;">
     <tr>
@@ -125,5 +128,5 @@
 </p>
 <p>
     Honza Javorek<br>
-    <a href="https://junior.guru/">https://junior.guru</a><br>
+    <a href="{{ url_index }}">{{ url_index }}</a><br>
 </p>
