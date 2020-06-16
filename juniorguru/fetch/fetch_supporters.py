@@ -15,10 +15,8 @@ schema = Seq(
 
 def main():
     path = Path(__file__).parent.parent / 'data' / 'supporters.yml'
-    records = [
-        dict(last_name=record.data['name'].split()[-1], **record.data)
-        for record in load(path.read_text(), schema)
-    ]
+    records = [dict(last_name=record.data['name'].split()[-1], **record.data)
+               for record in load(path.read_text(), schema)]
 
     with db:
         Supporter.drop_table()
