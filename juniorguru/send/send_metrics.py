@@ -54,41 +54,19 @@ def create_template_context(job, global_metrics, today=None):
     ends_at = job.expires_at or (today + timedelta(days=30))
     end_days = (ends_at - today).days
 
-    metrics_days = start_days - 1  # the per job data is up to yesterday
-    metrics = calc_metrics(metrics_days, job.metrics, global_metrics)
-
     return dict(title=job.title,
                 company_name=job.company_name,
                 url=f'https://junior.guru/jobs/{job.id}/',
                 url_jobs='https://junior.guru/jobs/',
                 url_index='https://junior.guru/',
                 url_logo='https://junior.guru/static/images/logo-email.png',
-                metrics=metrics,
+                metrics=job.metrics,
                 starts_at=starts_at,
                 start_days=start_days,
                 ends_at=ends_at,
                 end_days=end_days,
                 newsletter_at=job.newsletter_at,
                 newsletter_url='https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75')
-
-
-def calc_metrics(days, job_metrics, global_metrics):
-    avg_users = days * global_metrics['avg_daily_users_per_job']
-    users_performance = (100 * job_metrics['users']) / avg_users
-
-    avg_pageviews = days * global_metrics['avg_daily_pageviews_per_job']
-    pageviews_performance = (100 * job_metrics['pageviews']) / avg_pageviews
-
-    avg_applications = days * global_metrics['avg_daily_applications_per_job']
-    applications_performance = (100 * job_metrics['applications']) / avg_applications
-
-    return dict(job_metrics,
-                avg_users=avg_users,
-                users_performance=users_performance,
-                avg_pageviews=avg_pageviews,
-                pageviews_performance=pageviews_performance,
-                avg_applications=avg_applications,
-                applications_performance=applications_performance)
 
 
 def send(message):

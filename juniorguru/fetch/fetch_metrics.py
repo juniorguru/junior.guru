@@ -77,13 +77,6 @@ def main():
             except Job.DoesNotExist:
                 pass
 
-        GlobalMetric.create(name='avg_daily_users_per_job',
-                            value=JobMetric.calc_avg_daily_per_job('users'))
-        GlobalMetric.create(name='avg_daily_pageviews_per_job',
-                            value=JobMetric.calc_avg_daily_per_job('pageviews'))
-        GlobalMetric.create(name='avg_daily_applications_per_job',
-                            value=JobMetric.calc_avg_daily_per_job('applications'))
-
 
 def fetch_from_google_analytics():
     api = GoogleAnalyticsClient(GOOGLE_ANALYTICS_VIEW_ID)

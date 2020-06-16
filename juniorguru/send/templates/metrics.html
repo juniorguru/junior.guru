@@ -83,7 +83,7 @@
             Počet návštěvníků:&nbsp;&nbsp;&nbsp;
         </td>
         <td>
-            <b>{{ metrics.users|int }}</b>&nbsp;&nbsp;&nbsp;
+            <b>{{ metrics.users }}</b>&nbsp;&nbsp;&nbsp;
         </td>
         <td>
             &nbsp;
@@ -94,7 +94,7 @@
             Počet zobrazení:&nbsp;&nbsp;&nbsp;
         </td>
         <td>
-            <b>{{ metrics.pageviews|int }}</b>&nbsp;&nbsp;&nbsp;
+            <b>{{ metrics.pageviews }}</b>&nbsp;&nbsp;&nbsp;
         </td>
         <td>
             &nbsp;
@@ -106,41 +106,10 @@
             Počet uchazečů:&nbsp;&nbsp;&nbsp;
         </td>
         <td>
-            <b>{{ metrics.applications|int }}</b>&nbsp;&nbsp;&nbsp;
+            <b>{{ metrics.applications }}</b>&nbsp;&nbsp;&nbsp;
         </td>
         <td>
             <small>kliknutí na&nbsp;tlačítko</small>&nbsp;&nbsp;&nbsp;
-        </td>
-    </tr>
-    {% endif %}
-</table>
-<p>
-    Výkon oproti průměrnému inzerátu na junior.guru:
-</p>
-<table style="border-collapse: collapse;">
-    <tr>
-        <td>
-            Počet návštěvníků:&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <b>{{ metrics.users_performance|int }}&nbsp;%</b>&nbsp;&nbsp;&nbsp;
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Počet zobrazení:&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <b>{{ metrics.pageviews_performance|int }}&nbsp;%</b>&nbsp;&nbsp;&nbsp;
-        </td>
-    </tr>
-    {% if metrics.applications %}
-    <tr>
-        <td>
-            Počet uchazečů:&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <b>{{ metrics.applications_performance|int }}&nbsp;%</b>&nbsp;&nbsp;&nbsp;
         </td>
     </tr>
     {% endif %}
