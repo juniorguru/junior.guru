@@ -1,0 +1,24 @@
+# Supporters paying 10 USD/EUR monthly or more (Patreon, GitHub Sponsors).
+# Eligible to have their name on the donate page with a link of their choice.
+
+- name: Tomáš Ehrlich
+  url: https://tomasehrlich.cz/
+
+- name: Tomáš Jeřábek
+  url: https://www.lekari-bez-hranic.cz/
+
+- name: Ivan Kvasnica
+  url: https://ikvasnica.com/
+
+- name: Pavel Šimerda
+  url: http://simerda.eu/
+
+# - name: Ondřej Šika
+#   url: https://sika.io/
+
+
+# Supporters paying less than 10 USD/EUR monthly (Patreon, GitHub Sponsors).
+# Eligible to have their name on the donate page, without link.
+
+- name: Peter Hozák
+- name: Petr Viktorin

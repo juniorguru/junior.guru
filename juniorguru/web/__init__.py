@@ -1,7 +1,7 @@
 import arrow
 from flask import Flask, Response, abort, render_template, url_for
 
-from juniorguru.models import GlobalMetric, Job, Story, db
+from juniorguru.models import GlobalMetric, Job, Story, Supporter, db
 from juniorguru.web.thumbnail import thumbnail
 
 
@@ -84,7 +84,12 @@ def hire_juniors():
 
 @app.route('/donate/')
 def donate():
+    with db:
+        supporters_names_urls = Supporter.listing_names_urls()
+        supporters_names = Supporter.listing_names()
     return render_template('donate.html',
+                           supporters_names_urls=supporters_names_urls,
+                           supporters_names=supporters_names,
                            thumbnail=thumbnail(title='Pošli LOVE'))
 
 

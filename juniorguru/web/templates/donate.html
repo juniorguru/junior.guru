@@ -93,21 +93,24 @@
 <hr>
 
 <section class="donate-sponsors" id="sponsors">
+  <!-- Data from supporters.yml -->
   <h2>Pravidelní přispěvatelé</h2>
   <p>
-    Přispěvatelé, kteří tento projekt podporují pravidelnou částkou přes <a href="https://github.com/sponsors/honzajavorek">GitHub Sponsors</a>
-    nebo <a href="https://www.patreon.com/honzajavorek">Patreon</a>:
+    Tento seznam je poděkování pravidelným přispěvatelům přes <a href="https://github.com/sponsors/honzajavorek">GitHub Sponsors</a>
+    nebo <a href="https://www.patreon.com/honzajavorek">Patreon</a>. Řazení je abecedně podle příjmení.
   </p>
-  <ul>
-    <li><a href="https://tomasehrlich.cz/">Tomáš Ehrlich</a></li>
-    <li><a href="https://www.lekari-bez-hranic.cz/">Tomáš Jeřábek</a></li>
-    <li><a href="https://ikvasnica.com/">Ivan Kvasnica</a></li>
-    <li><a href="http://simerda.eu/">Pavel Šimerda</a></li>
-    <li>Peter Hozák</li>
-    <li>Ondřej Šika</li>
-    <li>Petr Viktorin</li>
-  </ul>
-  <p class="note">V první řadě jsou sponzoři s odkazem, jinak je seznam abecedně podle příjmení.</p>
+  <h3>Více než 200 Kč měsíčně</h3>
+  <p>
+    {% for supporter in supporters_names_urls %}
+      <a href="{{ supporter.url }}">{{ supporter.name }}</a>{% if not loop.last %}, {% endif %}
+    {% endfor %}
+  </p>
+  <h3>Ostatní</h3>
+  <p>
+    {% for supporter in supporters_names %}
+      {{ supporter.name }}{% if not loop.last %}, {% endif %}
+    {% endfor %}
+  </p>
 </section>
 
 <section id="about">

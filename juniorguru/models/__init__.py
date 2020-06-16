@@ -2,6 +2,7 @@ from juniorguru.models.base import db
 from juniorguru.models.job import Job, JobDropped, JobError
 from juniorguru.models.metrics import GlobalMetric, JobMetric
 from juniorguru.models.story import Story
+from juniorguru.models.supporter import Supporter
 
 
 # This is here because of circular dependencies between Job and JobMetric
