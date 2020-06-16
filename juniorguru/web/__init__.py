@@ -104,6 +104,12 @@ def privacy():
     return render_template('privacy.html')
 
 
+@app.route('/404.html')
+#@app.route('/jobs/404.html')  # debug
+def not_found():
+    return render_template('404.html')
+
+
 @app.route('/robots.txt')
 def robots():
     return Response(f"User-agent: *\nDisallow: {url_for('admin')}\n",

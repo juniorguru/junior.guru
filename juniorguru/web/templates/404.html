@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Stránka neexistuje{% endblock %}
+
+{% block description %}Stránka neexistuje{% endblock %}
+
+{% block body_attrs %} class="page-not-found"{% endblock %}
+
+{% block main %}
+<header>
+  <h1 id="not-found-title">Stránka neexistuje</h1>
+  <p>
+    Ahoj! <a href="{{ url_for('index') }}">junior.guru</a> je průvodce programováním pro&nbsp;samouky.
+    Jsou zde i <a href="{{ url_for('jobs') }}">nabídky práce</a> pro začátečníky.
+    Na&nbsp;<span id="not-found-url"></span><noscript>této adrese</noscript>
+    <span id="not-found-reason-text">ale nic není. Snad by tě mohl zaujmout
+    <a href="{{ url_for('learn') }}">návod jak se naučit programovat</a> nebo nějaká z nabídek práce?</span>
+  </p>
+  <script>
+    document.getElementById('not-found-url').innerHTML = 'adrese <strong>' + window.location.pathname + '</strong>';
+
+    if (window.location.pathname.indexOf('/jobs/') >= 0) {
+      document.getElementById('not-found-title').innerText = 'Pracovní nabídka vypršela';
+      document.getElementById('not-found-reason-text').innerText = 'ale už nic není. Možná by tě zaujala jiná nabídka?';
+    }
+  </script>
+</header>
+<p class="call-to-action next">
+  <a href="{{ url_for('jobs') }}" class="legacy-button">Nabídky práce</a>
+</p>
+{% endblock %}
