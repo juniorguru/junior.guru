@@ -15,7 +15,7 @@ from juniorguru.models.metrics import JOB_METRIC_NAMES, JobMetric
 
 __all__ = ['get_by_url', 'get_by_link', 'listing', 'newsletter_listing',
            'juniorguru_listing', 'bot_listing', 'scraped_listing', 'count',
-           'companies_count', 'metrics', 'effective_approved_at']
+           'companies_count', 'metrics', 'effective_approved_at', 'juniorguru']
 
 
 @classmethod
@@ -60,10 +60,15 @@ def newsletter_listing(cls, min_count, today=None):
 @classmethod
 def juniorguru_listing(cls, today=None):
     today = today or date.today()
+    return cls.juniorguru() \
+        .where(cls.approved_at.is_null(False) &
+               (cls.expires_at.is_null() | (cls.expires_at > today)))
+
+
+@classmethod
+def juniorguru(cls):
     return cls.select() \
-        .where((cls.source == 'juniorguru') &
-                (cls.approved_at.is_null(False)) &
-                (cls.expires_at.is_null() | (cls.expires_at > today))) \
+        .where(cls.source == 'juniorguru') \
         .order_by(cls.posted_at.desc())
 
 
@@ -93,9 +98,9 @@ def companies_count(cls):
 
 
 @property
-def metrics(self):  # _metrics is a JobMetric backref
+def metrics(self):
     result = {name: 0 for name in JOB_METRIC_NAMES}
-    for metric in self._metrics:
+    for metric in self.list_metrics:  # JobMetric backref
         result[metric.name] = metric.value
     return result
 

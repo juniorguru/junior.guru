@@ -200,6 +200,7 @@ def test_sections_multiple():
     pytest.param(4270, 4300, id='round up'),
     pytest.param(4250, 4300, id='round half up'),
     pytest.param(4240, 4200, id='round down'),
+    pytest.param(4240.542, 4200, id='float'),
 ])
 def test_metric(value, expected):
     assert template_filters.metric(value) == expected

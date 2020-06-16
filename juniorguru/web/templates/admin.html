@@ -1,5 +1,16 @@
 {% extends 'admin_base.html' %}
 {% block body %}
+<h1>Čísla</h1>
+<ul>
+    {% for name, value in metrics.items()|sort(0) %}
+        {% if 'daily' in name %}
+            <li>{{ name }}: {{ '{:.2f}'.format(value) }}</li>
+        {% else %}
+            <li>{{ name }}: {{ value|int }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
 <h1>Záložky</h1>
 <ul>
     <li>

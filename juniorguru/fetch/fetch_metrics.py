@@ -1,10 +1,11 @@
 import os
 
 from juniorguru.fetch.lib.google_analytics import (
-    GoogleAnalyticsClient, get_date_range, metric_applications_per_job,
-    metric_avg_monthly_pageviews, metric_avg_monthly_users,
-    metric_pageviews_per_external_job, metric_pageviews_per_job,
-    metric_users_per_external_job, metric_users_per_job)
+    GoogleAnalyticsClient, get_daily_date_range, get_monthly_date_range,
+    metric_applications_per_job, metric_avg_monthly_pageviews,
+    metric_avg_monthly_users, metric_pageviews_per_external_job,
+    metric_pageviews_per_job, metric_users_per_external_job,
+    metric_users_per_job)
 from juniorguru.fetch.lib.mailchimp import (MailChimpClient, get_collection,
                                             get_link,
                                             sum_clicks_per_external_url)
@@ -76,15 +77,22 @@ def main():
             except Job.DoesNotExist:
                 pass
 
+        GlobalMetric.create(name='avg_daily_users_per_job',
+                            value=JobMetric.calc_avg_daily_per_job('users'))
+        GlobalMetric.create(name='avg_daily_pageviews_per_job',
+                            value=JobMetric.calc_avg_daily_per_job('pageviews'))
+        GlobalMetric.create(name='avg_daily_applications_per_job',
+                            value=JobMetric.calc_avg_daily_per_job('applications'))
+
 
 def fetch_from_google_analytics():
     api = GoogleAnalyticsClient(GOOGLE_ANALYTICS_VIEW_ID)
     metrics = {}
-    metrics.update(api.execute(get_date_range(4), [
+    metrics.update(api.execute(get_monthly_date_range(4), [
         metric_avg_monthly_users,
         metric_avg_monthly_pageviews,
     ]))
-    metrics.update(api.execute(get_date_range(12), [
+    metrics.update(api.execute(get_daily_date_range(), [
         metric_users_per_job,
         metric_users_per_external_job,
         metric_pageviews_per_job,

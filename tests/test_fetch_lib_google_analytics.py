@@ -10,10 +10,20 @@ from juniorguru.fetch.lib import google_analytics
     (date(2020, 6, 9), date(2019, 12, 1), date(2020, 5, 31)),
     (date(2020, 5, 31), date(2019, 11, 1), date(2020, 4, 30)),
 ])
-def test_get_date_range(today, expected_start, expected_end):
+def test_get_monthly_date_range(today, expected_start, expected_end):
     expected = (expected_start, expected_end)
 
-    assert google_analytics.get_date_range(6, today=today) == expected
+    assert google_analytics.get_monthly_date_range(6, today=today) == expected
+
+
+@pytest.mark.parametrize('today,expected_start,expected_end', [
+    (date(2020, 6, 9), date(2019, 1, 1), date(2020, 6, 8)),
+    (date(2020, 5, 31), date(2019, 1, 1), date(2020, 5, 30)),
+])
+def test_get_daily_date_range(today, expected_start, expected_end):
+    expected = (expected_start, expected_end)
+
+    assert google_analytics.get_daily_date_range(today=today) == expected
 
 
 def test_calc_avg_monthly_values():

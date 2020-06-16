@@ -135,6 +135,6 @@ def sections(sections):
 @app.template_filter()
 def metric(value):
     # https://realpython.com/python-rounding/
-    decimals = len(str(value)) - 2
+    decimals = len(str(int(value))) - 2
     multiplier = 10 ** decimals
     return int(math.floor((value / multiplier) + 0.5) * multiplier)

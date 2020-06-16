@@ -176,13 +176,18 @@ def metric_applications_per_job(view_id, date_range):
     yield per_url_report_to_dict(report)
 
 
-def get_date_range(months, today=None):
+def get_monthly_date_range(months, today=None):
     today = today or date.today()
     last_day_last_month = today.replace(day=1) - timedelta(days=1)
     return (
         today - relativedelta(day=1, months=months),
         today - relativedelta(day=last_day_last_month.day, months=1)
     )
+
+
+def get_daily_date_range(today=None):
+    return (date(2019, 1, 1),
+            (today or date.today()) - timedelta(days=1))
 
 
 def calc_avg_monthly_values(report):

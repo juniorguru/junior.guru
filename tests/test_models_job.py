@@ -5,6 +5,7 @@ import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.models import Job, JobMetric
+from testing_utils import create_job
 
 
 def shuffled(sorted_iterable):
@@ -25,26 +26,6 @@ def db_connection():
         db.create_tables(models)
         yield db
         db.drop_tables(models)
-
-
-def create_job(id, **kwargs):
-    return Job.create(
-        id=str(id),
-        posted_at=kwargs.get('posted_at', datetime(2019, 7, 6, 20, 24, 3)),
-        company_name=kwargs.get('company_name', 'Honza Ltd.'),
-        employment_types=kwargs.get('employment_types', frozenset(['internship'])),
-        title=kwargs.get('title', 'Junior Software Engineer'),
-        company_link=kwargs.get('company_link', 'https://example.com'),
-        email=kwargs.get('email', 'recruiter@example.com'),
-        location=kwargs.get('location', 'Brno, Czech Republic'),
-        description=kwargs.get('description', '**Really long** description.'),
-        source=kwargs.get('source', 'juniorguru'),
-        approved_at=kwargs.get('approved_at', date.today()),
-        newsletter_at=kwargs.get('newsletter_at', None),
-        expires_at=kwargs.get('expires_at', None),
-        jg_rank=kwargs.get('jg_rank'),
-        link=kwargs.get('link'),
-    )
 
 
 def test_employment_types_are_unique_sorted_lists(db_connection):
