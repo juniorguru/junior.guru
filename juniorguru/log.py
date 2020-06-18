@@ -10,4 +10,4 @@ logging.basicConfig(format='[%(name)s] %(levelname)s: %(message)s',
 
 
 def get_log(name):
-    return logging.getLogger(__name__)
+    return logging.getLogger(name)
