@@ -32,9 +32,18 @@ def main():
     template_path = Path(__file__).parent / 'templates' / 'metrics.html'
     template = Template(template_path.read_text())
 
+    status = 0
     global_metrics = GlobalMetric.as_dict()
     for job in jobs:
-        send(create_message(job, global_metrics, template))
+        try:
+            message = create_message(job, global_metrics, template)
+            log.info('Sending\n' + pformat(message.get()))
+            send(message)
+        except Exception as e:
+            log.exception(f'SendGrid error: {e}')
+            status = 1
+    sys.exit(status)
+
 
 
 def create_message(job, global_metrics, template):
@@ -70,21 +79,14 @@ def create_template_context(job, global_metrics, today=None):
 
 
 def send(message):
-    status = 0
-    log.info('Sending\n' + pformat(message.get()))
     if SENDGRID_ENABLED:
-        try:
-            response = SendGridAPIClient(SENDGRID_API_KEY).send(message)
-            response_info = dict(status_code=response.status_code,
-                                 body=response.body,
-                                 headers=dict(response.headers.items()))
-            log.debug(f'SendGrid response\n' + pformat(response_info))
-        except Exception as e:
-            log.exception(f'SendGrid error: {e}')
-            status = 1
+        response = SendGridAPIClient(SENDGRID_API_KEY).send(message)
+        response_info = dict(status_code=response.status_code,
+                             body=response.body,
+                             headers=dict(response.headers.items()))
+        log.debug(f'SendGrid response\n' + pformat(response_info))
     else:
         log.warning('SendGrid not enabled')
-    sys.exit(status)
 
 
 if __name__ == '__main__':
