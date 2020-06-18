@@ -17,7 +17,11 @@ def shuffled(sorted_iterable):
 
 
 def create_job(id, **kwargs):
-    return Job.create(
+    return Job.create(**prepare_job_data(id, **kwargs))
+
+
+def prepare_job_data(id, **kwargs):
+    return dict(
         id=str(id),
         posted_at=kwargs.get('posted_at', datetime(2019, 7, 6, 20, 24, 3)),
         company_name=kwargs.get('company_name', 'Honza Ltd.'),
@@ -237,3 +241,15 @@ def test_metrics(db_connection):
         'pageviews': 4,
         'applications': 0,
     }
+
+
+@pytest.mark.parametrize('url,expected', [
+    ('https://example.com', 'https://example.com?utm_source=juniorguru&utm_medium=job_board&utm_campaign=juniorguru'),
+    ('https://example.com?param=1', 'https://example.com?param=1&utm_source=juniorguru&utm_medium=job_board&utm_campaign=juniorguru'),
+    ('https://example.com?utm_source=gargamel', 'https://example.com?utm_source=gargamel'),
+])
+def test_link_utm(url, expected):
+    job = Job(**prepare_job_data('1', link=url))
+
+    assert job.link == url
+    assert job.link_utm == expected

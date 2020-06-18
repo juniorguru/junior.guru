@@ -3,6 +3,7 @@ import re
 from datetime import date
 
 from juniorguru.models.metrics import JOB_METRIC_NAMES, JobMetric
+from juniorguru.url_params import set_params
 
 
 # This file exists because of circular dependencies between Job and JobMetric
@@ -15,7 +16,8 @@ from juniorguru.models.metrics import JOB_METRIC_NAMES, JobMetric
 
 __all__ = ['get_by_url', 'get_by_link', 'listing', 'newsletter_listing',
            'juniorguru_listing', 'bot_listing', 'scraped_listing', 'count',
-           'companies_count', 'metrics', 'effective_approved_at', 'juniorguru']
+           'companies_count', 'metrics', 'effective_approved_at', 'juniorguru',
+           'link_utm']
 
 
 @classmethod
@@ -112,3 +114,14 @@ def effective_approved_at(self):
     if self.approved_at <= date(2020, 6, 4):
         return self.posted_at.date()
     return self.approved_at
+
+
+@property
+def link_utm(self):
+    if re.search(r'[\?\&]utm_[a-z]+', self.link):
+        return self.link
+    return set_params(self.link, {
+        'utm_source': 'juniorguru',
+        'utm_medium': 'job_board',
+        'utm_campaign': 'juniorguru',
+    })

@@ -10,6 +10,16 @@ def strip_params(url, param_names):
     return urlunparse(parts._replace(query=query))
 
 
+def set_params(url, params):
+    parts = urlparse(url)
+    url_params = {name: value for name, value
+                  in parse_qs(parts.query).items()}
+    for name, value in params.items():
+        url_params[name] = ['' if value is None else str(value)]
+    query = urlencode(url_params, doseq=True)
+    return urlunparse(parts._replace(query=query))
+
+
 def increment_param(url, param_name, inc=1):
     parts = urlparse(url)
     params = parse_qs(parts.query)
