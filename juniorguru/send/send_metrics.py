@@ -8,12 +8,13 @@ from urllib.parse import quote_plus
 
 from jinja2 import Template
 from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import From, Mail, To
+from sendgrid.helpers.mail import Bcc, From, Mail, To
 
 from juniorguru.log import get_log
 from juniorguru.models import GlobalMetric, Job
 
 
+IS_MONDAY = bool(os.getenv('IS_MONDAY', date.today().weekday() == 0))
 SENDGRID_ENABLED = os.getenv('SENDGRID_ENABLED')
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
 SENDGRID_LIMIT = 100
@@ -25,6 +26,11 @@ log = get_log(__name__)
 def main():
     jobs = Job.juniorguru_listing()
     jobs_count = len(jobs)
+
+    log.info(f'Monday? {IS_MONDAY}')
+    if not IS_MONDAY:
+        log.error(f'Not Monday')
+        sys.exit(0)
 
     log.info(f'Jobs: {jobs_count}')
     if jobs_count > SENDGRID_LIMIT:
@@ -49,11 +55,12 @@ def main():
 
 def create_message(job, global_metrics, template):
     from_email = From('metrics@junior.guru', 'junior.guru')
-    to_email = To('mail@honzajavorek.cz', job.company_name)  # TODO job.email
+    to_email = To(job.email, job.company_name)
+    to_bcc_email = Bcc('ahoj@junior.guru', 'junior.guru')
     subject = f'Jak se daří vašemu inzerátu? ({job.title})'
     content = template.render(**create_template_context(job, global_metrics))
 
-    return Mail(from_email=from_email, to_emails=to_email,
+    return Mail(from_email=from_email, to_emails=[to_email, to_bcc_email],
                 subject=subject, html_content=content)
 
 
