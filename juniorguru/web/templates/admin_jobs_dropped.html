@@ -46,7 +46,20 @@
         {% if job_dropped.item.features %}
         <details>
           <summary>Features ({{ job_dropped.item.features|length }})</summary>
-          <pre>{{ job_dropped.item.features|pprint }}</pre>
+          <table>
+          {% for feature in job_dropped.item.features|sort(attribute='name') %}
+            <tr>
+              <th>{{ feature.name }}</th>
+              <td>
+                {{ feature.sentence }}<br>
+                {% for pattern in feature.patterns|default([]) %}
+                  <small><code>⇢ {{ pattern }}</code></small><br>
+                {% endfor %}
+              </td>
+              <td><small>{{ feature.origin }}</small></td>
+            </tr>
+          {% endfor %}
+          </table>
         </details>
         {% endif %}
         {% if job_dropped.item.sections %}

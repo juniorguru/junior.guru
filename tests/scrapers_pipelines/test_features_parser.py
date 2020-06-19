@@ -422,6 +422,7 @@ def test_parse_from_sentence_cs_english_required(sentence):
     'máš k dispozici plně hrazenou výuku angličtiny a němčiny',
     'Jazykové kurzy (angličtina, španělština, čínština..)',
     'PHP programátor - GPS sledování, bez AJ (35-55.000 Kč)',
+    'C++ Developer | Nekorporát bez EN',
 ])
 def test_parse_from_sentence_cs_english_required_not(sentence):
     assert 'ENGLISH_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
@@ -512,6 +513,7 @@ def test_parse_from_sentence_cs_tech_degree_required(sentence):
     'SŠ/VŠ vzdělání - obor nerozhoduje, vítáno IT,',
     'Pozice je vhodná i pro studenty či absolventy střední či vysoké školy.',
     'Vzdělání: SŠ/VŠ',
+    'Uvítáme i šikovné absolventy, ale rádi bychom v tobě viděli chuť se učit, zapáleností pro technologie.',
 ])
 def test_parse_from_sentence_cs_tech_degree_required_not(sentence):
     assert 'TECH_DEGREE_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))

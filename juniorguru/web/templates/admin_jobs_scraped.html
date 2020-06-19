@@ -43,7 +43,20 @@
     </details>
     <details>
       <summary>Features ({{ job.item.features|length }}) &mdash; JG RANK: {{ job.item.jg_rank }}</summary>
-      <pre>{{ job.item.features|pprint }}</pre>
+      <table>
+      {% for feature in job.item.features|sort(attribute='name') %}
+        <tr>
+          <th>{{ feature.name }}</th>
+          <td>
+            {{ feature.sentence }}<br>
+            {% for pattern in feature.patterns|default([]) %}
+              <small><code>⇢ {{ pattern }}</code></small><br>
+            {% endfor %}
+          </td>
+          <td><small>{{ feature.origin }}</small></td>
+        </tr>
+      {% endfor %}
+      </table>
     </details>
     <details>
       <summary>Sections ({{ job.item.sections|length }})</summary>
