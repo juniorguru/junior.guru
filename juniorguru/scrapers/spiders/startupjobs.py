@@ -1,3 +1,4 @@
+import html
 import re
 
 import arrow
@@ -41,6 +42,8 @@ def parse_iso_datetime(value):
 class Loader(ItemLoader):
     default_input_processor = MapCompose(str.strip)
     default_output_processor = TakeFirst()
+    title_in = MapCompose(html.unescape)
+    company_name_in = MapCompose(html.unescape)
     employment_types_in = Compose(MapCompose(str.strip), drop_remote)
     employment_types_out = Identity()
     posted_at_in = MapCompose(parse_iso_datetime)

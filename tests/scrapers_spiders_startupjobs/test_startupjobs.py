@@ -41,6 +41,15 @@ def test_spider_parse_job_types():
     assert job['employment_types'] == ['Full-time', 'External collaboration']
 
 
+def test_spider_parse_html_entities():
+    response = XmlResponse('https://example.com/example/',
+                            body=Path(FIXTURES_DIR / 'feed_html_entities.xml').read_bytes())
+    job = next(startupjobs.Spider().parse(response))
+
+    assert job['title'] == 'Analytik&programátor Junior'
+    assert job['company_name'] == 'P&J Capital'
+
+
 def test_spider_parse_cities():
     response = XmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'feed_cities.xml').read_bytes())

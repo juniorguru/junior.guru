@@ -84,6 +84,8 @@ def test_parse_from_sentence_en_tech_degree_required_not(sentence):
     'At least five years experience as an iOS mobile developer.',
     'Must have 3+ years of proven track record as a ServiceNow Admin/Developer',
     'Multiple years of experience in software development.',
+    'Several years experience of Java development',
+    'Successfully developed web applications in a professional working environment (minimum 1 year)',
 ])
 def test_parse_from_sentence_en_years_experience_required(sentence):
     assert 'YEARS_EXPERIENCE_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'en'))
@@ -150,6 +152,7 @@ def test_parse_from_sentence_en_years_experience_required_not(sentence):
     'intermediate SQL developer - enterprise projects',
     'medior SQL developer - enterprise projects',
     'C# or C++developer (intermediate/senior) - Prague',
+    'Extended knowledge in React or a similar UI library (e.g., Vue)',
 ])
 def test_parse_from_sentence_en_advanced_required(sentence):
     assert 'ADVANCED_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'en'))
@@ -192,6 +195,9 @@ def test_parse_from_sentence_en_advanced_required(sentence):
     'This future state platform will seamlessly and uniquely deliver a revolutionized learning experience through innovation, continuous delivery, and architectural integration.',
     'love working in a diverse team with different backgrounds and different knowledge levels',
     'Required Technical and Professional Expertise',
+    'Proficiency with Mac OS and Windows operating systems.',
+    'Flat hierarchies strengthen the initiative and the willingness of our employees to take on responsibility independently.',
+    'Solid presentation skills',
 ])
 def test_parse_from_sentence_en_advanced_required_not(sentence):
     assert 'ADVANCED_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
@@ -217,6 +223,7 @@ def test_parse_from_sentence_en_explicitly_senior(sentence):
     'C# Software Developer - Jnr, Mid and Senior Opportunties Available',
     'Support, learn, and collaborate with Senior and Lead Developers',
     'guided by a senior software engineer.',
+    'Excellent communication skills and the ability to work effectively with senior traders and other developers',
 ])
 def test_parse_from_sentence_en_explicitly_senior_not(sentence):
     assert 'EXPLICITLY_SENIOR' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
@@ -231,6 +238,7 @@ def test_parse_from_sentence_en_explicitly_senior_not(sentence):
     'German spoken and written is indispensable',
     'You have good German and very good English language skills',
     'Proficient in English, desirable: german',
+    'Basic communication in German',
 ])
 def test_parse_from_sentence_en_german_required(sentence):
     assert 'GERMAN_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'en'))
@@ -247,6 +255,7 @@ def test_parse_from_sentence_en_german_required(sentence):
     'German as a plus- B2 level daily communication with a client',
     'Free German classes with people from all over the world!',
     'Fluency in German or Russian is a plus; English is required',
+    'Strong verbal and written English skills (English is the working language, German is not required)',
 ])
 def test_parse_from_sentence_en_german_required_not(sentence):
     assert 'GERMAN_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
@@ -273,6 +282,7 @@ def test_parse_from_sentence_en_leadership_required(sentence):
     'we are open to all levels of seniority from junior to team leaders',
     'A leading organisation within the financial services industry are looking for a several Java Developers to join their team.',
     'called out appropriately to the developer community, and where they lead to...',
+    'Mentoring, learning by doing, gaining valuable experience from relevant people',
 ])
 def test_parse_from_sentence_en_leadership_required_not(sentence):
     assert 'LEADERSHIP_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
@@ -326,6 +336,7 @@ def test_parse_from_sentence_en_independence_preferred(sentence):
 @pytest.mark.parametrize('sentence', [
     "We operate Germany's largest independent payment infrastructure",
     'Augmented Analytics automates work of human analysts by developing software intelligence that autonomously produces key business insights',
+    'leading the pace in autonomous driving and novel connected car applications',
 ])
 def test_parse_from_sentence_en_independence_preferred_not(sentence):
     assert 'INDEPENDENCE_PREFERRED' not in get_rule_ids(parse_from_sentence(sentence, 'en'))
@@ -367,6 +378,7 @@ def test_parse_from_sentence_en_explicitly_junior_not(sentence):
     'Work or educational experience in software development',
     'guided by a senior software engineer.',
     'You are fluent in at least one programming language.',
+    'Mentoring, learning by doing, gaining valuable experience from relevant people',
 ])
 def test_parse_from_sentence_en_junior_friendly(sentence):
     assert 'JUNIOR_FRIENDLY' in get_rule_ids(parse_from_sentence(sentence, 'en'))
@@ -472,6 +484,10 @@ def test_parse_from_sentence_cs_advanced_required(sentence):
     'protože budeš pracovat se Zdeňkem naším architektem',
     'Není nutné znát programovací jazyky nebo mít přehled v IT',
     'U nás jsme všichni zodpovědní za to, jak firma funguje',
+    'Práci v malém týmu zodpovědném za návrh',
+    'Získáte přehled o IT trhu',
+    'Podílejte se společně s námi na návrhu architektury a vyzkoušejte si nové technologie.',
+    'Nezáleží nám na zkušenostech a dosavadní praxi, zejména hledáme nadšence, kterého bude práce bavit a bude plnohodnotným členem v týmu.',
 ])
 def test_parse_from_sentence_cs_advanced_required_not(sentence):
     assert 'ADVANCED_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
@@ -505,9 +521,19 @@ def test_parse_from_sentence_cs_tech_degree_required_not(sentence):
     'Znalost problematiky programování webových aplikací (min. 3 roky)',
     'je potřeba mít min rok praktickou zkušenost s Docker',
     'praxe v oboru 2 roky nebo přesvědčivý projekt',
+    'máš za sebou cca 2 roční zkušenosti a projekty v Javě',
 ])
 def test_parse_from_sentence_cs_years_experience_required(sentence):
     assert 'YEARS_EXPERIENCE_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
+
+
+@pytest.mark.parametrize('sentence', [
+    'Jsme stabilní rodinná firma s více než 20 let zkušeností a dlouhodobými projekty',
+    'Máš zájem zapojit se do mladého kolektivu s věkovým průměrem okolo 23 let na pozici programátora?',
+    'Už 10 let pomáháme lidem podnikat',
+])
+def test_parse_from_sentence_cs_years_experience_required_not(sentence):
+    assert 'YEARS_EXPERIENCE_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
 
 
 @pytest.mark.parametrize('sentence', [
@@ -543,6 +569,7 @@ def test_parse_from_sentence_cs_independence_preferred(sentence):
 @pytest.mark.parametrize('sentence', [
     'Smluvní mzdu - individuální ujednání v návaznosti na pracovní zkušenosti a ...',
     'nezáleží, zda u nás chceš pracovat na HPP nebo třeba na živnost – individuálně hledáme řešení',
+    'Mnoho funkcionalit již máme implementováno, ale stále přidáváme nové a nové, které většinou poběží jako samostatné mikroservisy.',
 ])
 def test_parse_from_sentence_cs_independence_preferred_not(sentence):
     assert 'INDEPENDENCE_PREFERRED' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
@@ -572,6 +599,17 @@ def test_parse_from_sentence_cs_independence_preferred_not(sentence):
     'alespoň jeden hotový projekt',
     'Pokud máte zkušenosti s jinými jazyky např. C++, C#, Java, podpoříme přeškolení',
     'Projekťák na zácvik!',
+    'společně se seniorním developerem se budeš podílet na analýze',
+    'vždy k sobě budeš mít někoho, kdo ti pomůže',
+    'Znalost Golang (naučíme pokud neumíš)',
+    'Zlepšování znalostí PHP, Git, HTML, JavaScript a MySQL',
+    'Rozšiřování znalostí práce s Dockerem, Symfony frameworkem',
+    'Pokud některé technologie neznáte, velmi rádi vám pomůžeme se toho co nejvíce naučit.',
+    'máš zkušenosti s React.js (nebo se to dokážeš rychle doučit)',
+    'Nezáleží nám na zkušenostech a dosavadní praxi, zejména hledáme nadšence, kterého bude práce bavit a bude plnohodnotným členem v týmu.',
+    'Vezme si tě na starost jeden z našich zkušených programátorů a bude ti pomáhat.',
+    'Alespoň 2x týdně práce z kanceláře (Praha 8 - Karlín) (nebráníme se ani spolupráci se studenty)',
+    'umí (nebo má chuť se naučit) programovat v Symfony',
 ])
 def test_parse_from_sentence_cs_junior_friendly(sentence):
     assert 'JUNIOR_FRIENDLY' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
@@ -579,6 +617,8 @@ def test_parse_from_sentence_cs_junior_friendly(sentence):
 
 @pytest.mark.parametrize('sentence', [
     'Angličtinu alespoň na základní úrovni',
+    'Stravenky, Sickdays, možnost HomeOffice (po zaučení)',
+    'práce odkudkoliv – jedná se o práci na dálku, po zaučení můžeš mít tedy 100% „home office“ (ze začátku ideální pracovat z ARTINu Praha)',
 ])
 def test_parse_from_sentence_cs_junior_friendly_not(sentence):
     assert 'JUNIOR_FRIENDLY' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
@@ -615,6 +655,9 @@ def test_parse_from_sentence_cs_explicitly_senior(sentence):
 
 @pytest.mark.parametrize('sentence', [
     'Uděláme z tebe seniora😁',
+    'společně se seniorním developerem se budeš podílet na analýze',
+    'Budete TÝM se senior technikem',
+    'Pracovat v tandemu se Senior technikem',
 ])
 def test_parse_from_sentence_cs_explicitly_senior_not(sentence):
     assert 'EXPLICITLY_SENIOR' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
@@ -644,6 +687,7 @@ def test_parse_from_sentence_cs_leadership_required(sentence):
     'učit se a neustále aktivně posouvat svoje znalosti potřebné během vývoje',
     'Učení a rozvoj sebe samého.',
     'který se bude chtít postupně rozvíjet',
+    'Rozvíjet se v programovacích jazycích.',
 ])
 def test_parse_from_sentence_cs_learning_required(sentence):
     assert 'LEARNING_REQUIRED' in get_rule_ids(parse_from_sentence(sentence, 'cs'))

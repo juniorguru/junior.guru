@@ -33,6 +33,8 @@ from juniorguru.scrapers.pipelines.gender_cleaner import Pipeline
      'UI Frontend Engineer | React JS Developer'),
     ('Junior iOS Engineer (Swift) (m|f|x)',
      'Junior iOS Engineer (Swift)'),
+    ('Archer Developer (m/f/diverse)',
+     'Archer Developer'),
 
     # French
     ('Internship: JAVA DEVELOPER - H/F',
