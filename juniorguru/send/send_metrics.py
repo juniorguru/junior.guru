@@ -4,6 +4,7 @@ import sys
 from datetime import date, timedelta
 from pathlib import Path
 from pprint import pformat
+from urllib.parse import quote_plus
 
 from jinja2 import Template
 from sendgrid import SendGridAPIClient
@@ -65,6 +66,7 @@ def create_template_context(job, global_metrics, today=None):
 
     return dict(title=job.title,
                 company_name=job.company_name,
+                company_name_urlencoded=quote_plus(job.company_name),
                 url=f'https://junior.guru/jobs/{job.id}/',
                 url_jobs='https://junior.guru/jobs/',
                 url_index='https://junior.guru/',
