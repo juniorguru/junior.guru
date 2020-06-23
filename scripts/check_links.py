@@ -1,7 +1,8 @@
+import re
 import sys
 import time
 from pathlib import Path
-from subprocess import run
+from subprocess import PIPE, Popen
 
 
 USER_AGENT = (
@@ -9,6 +10,9 @@ USER_AGENT = (
     'Gecko/20100101 Firefox/70.0'
 )
 EXCLUDE = [
+    # local links to images
+    '*static/images/*.png',
+
     # BLC_UNKNOWN for no obvious reason, probably crawling protection
     'hackathon.com',
 
@@ -42,14 +46,34 @@ if '--retry' in sys.argv:
     attempts = 3
 
 
+broken = None
 failed = 1
 for attempt in range(attempts):
     print()
     print(f'Attempt #{attempt + 1} of {attempts}')
     print('=' * 79)
-    failed = run(command + options + [PUBLIC_DIR]).returncode
+    broken = set()
+
+    with Popen(command + options + [PUBLIC_DIR], stdout=PIPE, bufsize=1,
+               universal_newlines=True) as proc:
+        for line in proc.stdout:
+            print(line, end='')
+            if 'BROKEN' in line:
+                match = re.search(r'(http[^ \x1b]+)[^\(]+\(([^\)]+)\)', line)
+                broken.add((match.group(1), match.group(2)))
+
+    failed = proc.returncode
     if failed:
         time.sleep(5)
     else:
         break
+
+
+if broken:
+    # https://github.com/stevenvachon/broken-link-checker/issues/169
+    print()
+    print(f'Broken links')
+    print('=' * 79)
+    for url, reason in broken:
+        print(f'{reason}\t{url}')
 sys.exit(failed)
