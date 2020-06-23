@@ -347,6 +347,7 @@ def test_parse_from_sentence_en_independence_preferred_not(sentence):
     'As a Junior Software Engineer you will have the following responsibilities',
     'Padawan tester',
     'Internship: JAVA DEVELOPER ',
+    'Point Cloud Data Science Intern (Aug/Sept 2020 intake)',
 ])
 def test_parse_from_sentence_en_explicitly_junior(sentence):
     assert 'EXPLICITLY_JUNIOR' in get_rule_ids(parse_from_sentence(sentence, 'en'))

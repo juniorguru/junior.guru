@@ -1,4 +1,5 @@
 import itertools
+from math import floor
 
 from scrapy.exceptions import DropItem
 
@@ -48,10 +49,12 @@ class Pipeline():
 
 def calc_jg_rank(features):
     features = [f for f in features if f in RELEVANT_FEATURES]
-    grades = [WEIGHTS[f] for f in itertools.chain(
+    features = list(itertools.chain(
         (f for f in features if f in ACCUMULATIVE_FEATURES),
         (f for f in frozenset(features) - ACCUMULATIVE_FEATURES),
-    )]
-    if len(grades) <= FEW_FEATURES_THRESHOLD:
+    ))
+    if len(features) <= 1:
         return 0
-    return sum(grades)
+    if len(features) <= FEW_FEATURES_THRESHOLD:
+        return sum([int(WEIGHTS[f] / abs(WEIGHTS[f])) for f in features])
+    return sum([WEIGHTS[f] for f in features])

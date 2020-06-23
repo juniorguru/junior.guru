@@ -1,5 +1,6 @@
-from juniorguru.scrapers.pipelines.jg_rank_filter import (
-    FEW_FEATURES_THRESHOLD, WEIGHTS, calc_jg_rank)
+import pytest
+
+from juniorguru.scrapers.pipelines.jg_rank_filter import WEIGHTS, calc_jg_rank
 
 
 def test_calc_jg_rank_ignores_non_effective_features():
@@ -32,12 +33,42 @@ def test_calc_jg_rank_doesnt_accumulate_some_features():
     ]) == 1 * WEIGHTS['TECH_DEGREE_REQUIRED'] + 2 * WEIGHTS['JUNIOR_FRIENDLY']
 
 
-def test_calc_jg_rank_penalizes_few_features():
-    few_features = FEW_FEATURES_THRESHOLD * ['JUNIOR_FRIENDLY']
+def test_calc_jg_rank_penalizes_few_features_positive():
+    few_features = ['JUNIOR_FRIENDLY', 'JUNIOR_FRIENDLY']
     few_features_rank = calc_jg_rank(few_features)
 
-    enough_features = (FEW_FEATURES_THRESHOLD + 1) * ['JUNIOR_FRIENDLY']
+    enough_features = ['JUNIOR_FRIENDLY', 'JUNIOR_FRIENDLY', 'JUNIOR_FRIENDLY']
+    enough_features_rank = calc_jg_rank(enough_features)
+
+    assert few_features_rank == 2
+    assert enough_features_rank == 3 * WEIGHTS['JUNIOR_FRIENDLY']
+
+
+def test_calc_jg_rank_penalizes_few_features_zero():
+    few_features = ['YEARS_EXPERIENCE_REQUIRED', 'JUNIOR_FRIENDLY']
+    few_features_rank = calc_jg_rank(few_features)
+
+    enough_features = ['YEARS_EXPERIENCE_REQUIRED', 'YEARS_EXPERIENCE_REQUIRED',
+                       'JUNIOR_FRIENDLY']
     enough_features_rank = calc_jg_rank(enough_features)
 
     assert few_features_rank == 0
-    assert enough_features_rank > 0
+    assert enough_features_rank == (2 * WEIGHTS['YEARS_EXPERIENCE_REQUIRED'] +
+                                    WEIGHTS['JUNIOR_FRIENDLY'])
+
+
+def test_calc_jg_rank_penalizes_few_features_negative():
+    few_features = ['YEARS_EXPERIENCE_REQUIRED', 'YEARS_EXPERIENCE_REQUIRED']
+    few_features_rank = calc_jg_rank(few_features)
+
+    enough_features = ['YEARS_EXPERIENCE_REQUIRED', 'YEARS_EXPERIENCE_REQUIRED',
+                       'YEARS_EXPERIENCE_REQUIRED']
+    enough_features_rank = calc_jg_rank(enough_features)
+
+    assert few_features_rank == -2
+    assert enough_features_rank == 3 * WEIGHTS['YEARS_EXPERIENCE_REQUIRED']
+
+
+@pytest.mark.parametrize('features', [[f] for f in WEIGHTS.keys()])
+def test_calc_jg_rank_one_feature_means_zero(features):
+    assert calc_jg_rank(features) == 0
