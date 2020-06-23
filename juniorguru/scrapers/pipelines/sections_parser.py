@@ -6,7 +6,7 @@ from itertools import takewhile
 from lxml import html
 
 
-DEBUG = bool(os.getenv('DEBUG_SECTIONS_PARSER'))
+DEBUG = bool(os.getenv('JG_DEBUG_SECTIONS_PARSER'))
 
 # http://jkorpela.fi/chars/spaces.html
 SPACE_TRANSLATION_TABLE = str.maketrans({

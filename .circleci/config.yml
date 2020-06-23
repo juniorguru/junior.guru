@@ -93,7 +93,7 @@ jobs:
       - attach_workspace:
           at: "~"
       - run: |
-          export LOG_LEVEL=debug
+          export JG_LOG_LEVEL=debug
           export SENDGRID_ENABLED=1
           pipenv run send
 

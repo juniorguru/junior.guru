@@ -1,5 +1,6 @@
 import json
 import os
+import random
 import sys
 from datetime import date, timedelta
 from pathlib import Path
@@ -14,7 +15,7 @@ from juniorguru.log import get_log
 from juniorguru.models import GlobalMetric, Job
 
 
-IS_MONDAY = bool(os.getenv('IS_MONDAY', date.today().weekday() == 0))
+DEBUG = os.getenv('JG_DEBUG_SEND_METRICS', '--debug' in sys.argv)
 SENDGRID_ENABLED = os.getenv('SENDGRID_ENABLED')
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
 SENDGRID_LIMIT = 100
@@ -25,13 +26,21 @@ log = get_log(__name__)
 
 def main():
     jobs = Job.juniorguru_listing()
-    jobs_count = len(jobs)
+    log.info(f'Debug? {DEBUG}')
+    if DEBUG and SENDGRID_ENABLED:
+        jobs = [random.choice(jobs)]
+        log.info(f'Debug mode chose the following job: {jobs[0]}')
 
-    log.info(f'Monday? {IS_MONDAY}')
-    if not IS_MONDAY:
+    is_monday = date.today().weekday() == 0
+    log.info(f'Monday? {is_monday}')
+    if not is_monday:
         log.error(f'Not Monday')
-        sys.exit(0)
+        if DEBUG:
+            log.info(f'Debug mode suppressed early exit')
+        else:
+            sys.exit(0)
 
+    jobs_count = len(jobs)
     log.info(f'Jobs: {jobs_count}')
     if jobs_count > SENDGRID_LIMIT:
         log.error(f'Jobs count is too high! {jobs_count} > {SENDGRID_LIMIT}')
@@ -53,13 +62,19 @@ def main():
 
 
 def create_message(job, template, today=None):
-    from_email = From('metrics@junior.guru', 'junior.guru')
-    to_email = To(job.email, job.company_name)
-    to_bcc_email = Bcc('ahoj@junior.guru', 'junior.guru')
     subject = f'Jak se daří vašemu inzerátu? ({job.title})'
+    from_email = From('metrics@junior.guru', 'junior.guru')
     content = template.render(**create_template_context(job, today))
 
-    return Mail(from_email=from_email, to_emails=[to_email, to_bcc_email],
+    if DEBUG:
+        to_emails = [To('ahoj@junior.guru', job.company_name)]
+        subject = f'[DEBUG] {subject}'
+    else:
+        to_emails = [To(job.email, job.company_name),
+                     Bcc('ahoj@junior.guru', 'junior.guru')]
+        raise Exception('typico')
+
+    return Mail(from_email=from_email, to_emails=to_emails,
                 subject=subject, html_content=content)
 
 

@@ -46,4 +46,4 @@ By default, sending is not enabled. On production or when trying to send e-mails
 
 ## Logging
 
-The environment variable `LOG_LEVEL` affects what gets filtered out. It's set to `info` by default.
+The environment variable `JG_LOG_LEVEL` affects what gets filtered out. It's set to `info` by default.
