@@ -116,3 +116,40 @@ def test_create_message_applications_non_zero_note(job_mock, template):
     assert '<b>5</b>' in html
     assert '<sup>' in html
     assert 'května 2020' in html
+
+
+def test_create_message_expires_soon(job_mock, template):
+    job_mock.expires_at = date(2020, 7, 1)
+    message = create_message(job_mock, template, today=date(2020, 6, 26))
+    html = message.get()['content'][0]['value']
+
+    assert 'prodloužit o dalších 30&nbsp;dní' in html
+    assert 'https://junior.guru/hire-juniors/#pricing' in html
+
+
+def test_create_message_expires_not_soon(job_mock, template):
+    job_mock.expires_at = date(2020, 7, 1)
+    message = create_message(job_mock, template, today=date(2020, 6, 20))
+    html = message.get()['content'][0]['value']
+
+    assert 'prodloužit o dalších 30&nbsp;dní' not in html
+
+
+def test_create_message_expires_soon_community(job_mock, template):
+    job_mock.expires_at = date(2020, 7, 1)
+    job_mock.pricing_plan = 'community'
+    message = create_message(job_mock, template, today=date(2020, 6, 26))
+    html = message.get()['content'][0]['value']
+
+    assert 'komunitní' in html
+    assert 'ZDARMA' in html
+
+
+def test_create_message_expires_soon_community(job_mock, template):
+    job_mock.expires_at = date(2020, 7, 1)
+    job_mock.pricing_plan = 'standard'
+    message = create_message(job_mock, template, today=date(2020, 6, 26))
+    html = message.get()['content'][0]['value']
+
+    assert '690&nbsp;Kč' in html
+    assert 'https://junior.guru/hire-juniors/#handbook-pricing' in html

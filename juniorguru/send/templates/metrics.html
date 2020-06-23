@@ -1,135 +1,151 @@
 <p style="background: #fffa72; padding: 5px 3px;">
-    <img src="{{ url_logo }}" alt="junior.guru logo" width="150" style="display: block;">
+  <img src="{{ url_logo }}" alt="junior.guru logo" width="150" style="display: block;">
 </p>
 <p>
-    Hezký den!
+  Hezký den!
 </p>
 <p>
-    Tento pravidelný, automatický e-mail vám přišel, protože máte inzerát
-    na stránce {{ url_jobs }}, a to konkrétně tento:
-</p>
-<table style="border-collapse: collapse;">
-    <tr>
-        <td>
-            <b>Pozice:</b>&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            {{ title }}
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b>Firma:</b>&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            {{ company_name }}
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b>Odkaz:</b>&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <a href="{{ url }}">{{ url }}</a>
-        </td>
-    </tr>
-</table>
-<p>
-    Jak se mu zatím daří?
+  Tento pravidelný, automatický e-mail vám přišel, protože máte inzerát
+  na stránce {{ url_jobs }}, a to konkrétně tento:
 </p>
 <table style="border-collapse: collapse;">
-    <tr>
-        <td>
-            Trvání:&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <b>{{ start_days }}&nbsp;dní</b>&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <small>inzerát schválen {{ starts_at.day }}.{{ starts_at.month }}.{{ starts_at.year }}</small>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Zbývá:&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <b>{{ end_days }}&nbsp;dní</b>&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <small>inzerát vyprší {{ ends_at.day }}.{{ ends_at.month }}.{{ ends_at.year }}</small>
-        </td>
-    </tr>
-    <tr>
-        <td>Byl inzerát v&nbsp;newsletteru?&nbsp;&nbsp;&nbsp;</td>
-        {%- if newsletter_at -%}
-            <td>
-                <b>ANO</b>&nbsp;&nbsp;&nbsp;
-            </td>
-            <td>
-                <small>odeslán {{ newsletter_at.day }}.{{ newsletter_at.month }}.{{ newsletter_at.year }}, <a href="{{ newsletter_url }}">archiv</a></small>
-            </td>
-        {%- else -%}
-            <td>
-                <b>zatím NE</b>&nbsp;&nbsp;&nbsp;
-            </td>
-            <td>
-                <small><a href="{{ newsletter_url }}">archiv</a></small>
-            </td>
-        {%- endif %}
-    </tr>
-    <tr>
-        <td>
-            Počet návštěvníků:&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <b>{{ metrics.users }}</b>&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            &nbsp;
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Počet zobrazení:&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <b>{{ metrics.pageviews }}</b>&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            &nbsp;
-        </td>
-    </tr>
-    {% if metrics.applications %}
-    <tr>
-        <td>
-            Počet uchazečů{% if show_applications_note %}<sup><small>*</small></sup>{% endif %}:&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <b>{{ metrics.applications }}</b>&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <small>kliknutí na&nbsp;tlačítko</small>&nbsp;&nbsp;&nbsp;
-        </td>
-    </tr>
-    {% endif %}
+  <tr>
+    <td>
+      <b>Pozice:</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      {{ title }}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Firma:</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      {{ company_name }}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Odkaz:</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <a href="{{ url }}">{{ url }}</a>
+    </td>
+  </tr>
 </table>
-{% if show_applications_note %}
 <p>
-    <sup><small>*</small></sup>Počet uchazečů je měřen teprve od května 2020.
+  Jak se mu zatím daří?
+</p>
+<table style="border-collapse: collapse;">
+  <tr>
+    <td>
+      Trvání:&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <b>{{ start_days }}&nbsp;dní</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <small>inzerát schválen {{ starts_at.day }}.{{ starts_at.month }}.{{ starts_at.year }}</small>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Zbývá:&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <b>{{ end_days }}&nbsp;dní</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <small>inzerát vyprší {{ ends_at.day }}.{{ ends_at.month }}.{{ ends_at.year }}</small>
+    </td>
+  </tr>
+  <tr>
+    <td>Byl inzerát v&nbsp;newsletteru?&nbsp;&nbsp;&nbsp;</td>
+    {%- if newsletter_at -%}
+      <td>
+        <b>ANO</b>&nbsp;&nbsp;&nbsp;
+      </td>
+      <td>
+        <small>odeslán {{ newsletter_at.day }}.{{ newsletter_at.month }}.{{ newsletter_at.year }}, <a href="{{ newsletter_url }}">archiv</a></small>
+      </td>
+    {%- else -%}
+      <td>
+        <b>zatím NE</b>&nbsp;&nbsp;&nbsp;
+      </td>
+      <td>
+        <small><a href="{{ newsletter_url }}">archiv</a></small>
+      </td>
+    {%- endif %}
+  </tr>
+  <tr>
+    <td>
+      Počet návštěvníků:&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <b>{{ metrics.users }}</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      &nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Počet zobrazení:&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <b>{{ metrics.pageviews }}</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      &nbsp;
+    </td>
+  </tr>
+{% if metrics.applications %}
+  <tr>
+    <td>
+      Počet uchazečů{% if show_applications_note %}<sup><small>*</small></sup>{% endif %}:&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <b>{{ metrics.applications }}</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <small>kliknutí na&nbsp;tlačítko</small>&nbsp;&nbsp;&nbsp;
+    </td>
+  </tr>
+{% endif %}
+</table>
+<p><small>
+  {% if show_applications_note %}<sup>*</sup>Měřeno teprve od května 2020.{% endif %}
+  Statistiky jsou podhodnocené a pouze orientační. Čísla
+  pocházejí z nástroje Google Analytics, který mohou internetové
+  prohlížeče blokovat.
+</small></p>
+{% if end_days <= 7 %}
+<p><b>
+  Inzerát brzy vyprší!
+  {% if pricing_plan == 'community' %}
+    Byl vložen jako
+    <a href="https://junior.guru/hire-juniors/#pricing">komunitní</a>,
+    můžete jej tedy ZDARMA
+  {% else %}
+    Za&nbsp;<a href="https://junior.guru/hire-juniors/#pricing">690&nbsp;Kč</a>
+    jej můžete
+  {% endif %}
+  prodloužit o dalších 30&nbsp;dní. Stačí, když odpovíte na tento e-mail.
+</b>
+{% if pricing_plan != 'community' %}
+  <br><small>
+    Pokud máte nevyčerpané platby za inzeráty v rámci <a href="https://junior.guru/hire-juniors/#handbook-pricing">balíčku</a>,
+    prodloužení nebo vystavení nového inzerátu se odpočítá z nich.
+  </small>
+{% endif %}
 </p>
 {% endif %}
 <p>
-    <b>Upozornění!</b> Statistiky jsou podhodnocené a pouze orientační. Čísla
-    pocházejí z nástroje Google Analytics, který mohou internetové
-    prohlížeče blokovat.
+  Chcete-li inzerát změnit, zrušit, prodloužit, nebo máte-li jakýkoliv
+  dotaz, jednoduše <b>odpovězte na tento e-mail</b>. Obsadili jste díky junior.guru pozici? Vyplňte prosím
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHTzFHHaE6VKINc8TuBOKXYvTuWVu0UgJpE_NYehWfUjlgFA/viewform?usp=pp_url&entry.681099058={{ company_name_urlencoded }}">formulář na zpětnou vazbu</a>.
 </p>
 <p>
-    Chcete-li inzerát změnit, zrušit, prodloužit, nebo máte-li jakýkoliv
-    dotaz, jednoduše <b>odpovězte na tento e-mail</b>. Obsadili jste díky junior.guru pozici? Vyplňte prosím
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHTzFHHaE6VKINc8TuBOKXYvTuWVu0UgJpE_NYehWfUjlgFA/viewform?usp=pp_url&entry.681099058={{ company_name_urlencoded }}">formulář na zpětnou vazbu</a>.
-</p>
-<p>
-    Honza Javorek<br>
-    <a href="{{ url_index }}">{{ url_index }}</a><br>
+  Za <a href="{{ url_index }}">junior.guru</a>, Honza Javorek
 </p>
