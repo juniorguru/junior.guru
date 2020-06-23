@@ -1,5 +1,6 @@
 import hashlib
 import re
+from datetime import timedelta
 from urllib.parse import urlparse
 
 import arrow
@@ -31,6 +32,11 @@ def coerce(mapping, record):
         for record_key, record_value in record.items():
             if key_re.search(record_key):
                 job[key_name] = key_coerce(record_value)
+
+    if job['approved_at'] and not job['expires_at']:
+        job['expires_at'] = job['approved_at'] + timedelta(days=30)
+    elif not job['approved_at']:
+        job['expires_at'] = None
 
     job['id'] = create_id(job['posted_at'], job['company_link'])
     job['source'] = 'juniorguru'
