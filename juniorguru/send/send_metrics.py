@@ -83,6 +83,8 @@ def create_template_context(job, global_metrics, today=None):
                 start_days=start_days,
                 ends_at=ends_at,
                 end_days=end_days,
+                show_applications_note=(job.metrics['applications'] > 0
+                                        and starts_at < date(2020, 5, 15)),
                 newsletter_at=job.newsletter_at,
                 newsletter_url='https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75')
 
