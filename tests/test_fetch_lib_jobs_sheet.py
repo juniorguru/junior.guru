@@ -18,6 +18,7 @@ def create_record(record=None):
         'Job description': record.get('Job description', None),
         'Job location': record.get('Job location', 'Prague'),
         'Job link': record.get('Job link', 'https://jobs.example.com/1245/'),
+        'Pricing plan': record.get('Pricing plan', '0 CZK — Community'),
         'Approved': record.get('Approved', '10/10/2019'),
         'Sent': record.get('Sent', '11/11/2019'),
         'Expires': record.get('Expires', '12/12/2019'),
@@ -89,6 +90,18 @@ def test_coerce_set(value, expected):
     assert jobs_sheet.coerce_set(value) == expected
 
 
+@pytest.mark.parametrize('value,expected', [
+    ('690 CZK — Standard', 'standard'),
+    ('600 CZK', 'standard'),
+    ('0 CZK', 'community'),
+    ('0 CZK — Community', 'community'),
+    ('', 'community'),
+    (None, 'community'),
+])
+def test_coerce_pricing_plan(value, expected):
+    assert jobs_sheet.coerce_pricing_plan(value) == expected
+
+
 def test_create_id():
     id_ = jobs_sheet.create_id(datetime(2019, 7, 6, 20, 24, 3), 'https://www.example.com/foo/bar.html')
     assert id_ == hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest()
@@ -106,6 +119,7 @@ def test_coerce_record():
         'description': None,
         'location': 'Prague',
         'link': 'https://jobs.example.com/1245/',
+        'pricing_plan': 'community',
         'approved_at': date(2019, 10, 10),
         'newsletter_at': date(2019, 11, 11),
         'expires_at': date(2019, 12, 12),
@@ -128,6 +142,7 @@ def test_coerce_record_expires(approved, expires, expected):
 
 
 @pytest.mark.parametrize('approved,sent,expires,expected', [
+    ('6/23/2020', None, None, date(2020, 7, 23)),
     ('6/23/2020', '6/25/2020', None, date(2020, 7, 23)),
     ('6/23/2020', '6/25/2020', '6/30/2020', date(2020, 6, 30)),
     ('6/23/2020', '7/20/2020', None, date(2020, 7, 27)),

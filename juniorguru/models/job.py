@@ -49,6 +49,10 @@ class Job(BaseModel):
     # only set by JG
     email = CharField(null=True)  # required for JG
     description = TextField(null=True)  # required for JG
+    pricing_plan = CharField(default='community', choices=[
+        ('community', None),
+        ('standard', None),
+    ])
     approved_at = DateField(null=True)
     expires_at = DateField(null=True)
     newsletter_at = DateField(null=True)
