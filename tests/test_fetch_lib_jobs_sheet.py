@@ -117,11 +117,26 @@ def test_coerce_record():
     (None, None, None),
     ('6/23/2020', None, date(2020, 7, 23)),
     ('6/23/2020', '6/30/2020', date(2020, 6, 30)),
-    (None, '6/30/2020', None),
 ])
 def test_coerce_record_expires(approved, expires, expected):
     data = jobs_sheet.coerce_record(create_record({
         'Approved': approved,
+        'Expires': expires,
+    }))
+
+    assert data['expires_at'] == expected
+
+
+@pytest.mark.parametrize('approved,sent,expires,expected', [
+    ('6/23/2020', '6/25/2020', None, date(2020, 7, 23)),
+    ('6/23/2020', '6/25/2020', '6/30/2020', date(2020, 6, 30)),
+    ('6/23/2020', '7/20/2020', None, date(2020, 7, 27)),
+    ('6/23/2020', '7/20/2020', '6/30/2020', date(2020, 6, 30)),
+])
+def test_coerce_record_expires_add_week_after_newsletter(approved, sent, expires, expected):
+    data = jobs_sheet.coerce_record(create_record({
+        'Approved': approved,
+        'Sent': sent,
         'Expires': expires,
     }))
 

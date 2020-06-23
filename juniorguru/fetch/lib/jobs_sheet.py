@@ -34,12 +34,11 @@ def coerce(mapping, record):
                 job[key_name] = key_coerce(record_value)
 
     if job['approved_at'] and not job['expires_at']:
-        job['expires_at'] = job['approved_at'] + timedelta(days=30)
-    elif not job['approved_at']:
-        job['expires_at'] = None
-
+        job['expires_at'] = max(job['approved_at'] + timedelta(days=30),
+                                job['newsletter_at'] + timedelta(days=7))
     job['id'] = create_id(job['posted_at'], job['company_link'])
     job['source'] = 'juniorguru'
+
     return job
 
 
