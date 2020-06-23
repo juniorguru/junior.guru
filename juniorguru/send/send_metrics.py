@@ -40,10 +40,9 @@ def main():
     template = Template(template_path.read_text())
 
     status = 0
-    global_metrics = GlobalMetric.as_dict()
     for job in jobs:
         try:
-            message = create_message(job, global_metrics, template)
+            message = create_message(job, template)
             log.info('Sending\n' + pformat(message.get()))
             send(message)
         except Exception as e:
@@ -53,18 +52,18 @@ def main():
 
 
 
-def create_message(job, global_metrics, template):
+def create_message(job, template, today=None):
     from_email = From('metrics@junior.guru', 'junior.guru')
     to_email = To(job.email, job.company_name)
     to_bcc_email = Bcc('ahoj@junior.guru', 'junior.guru')
     subject = f'Jak se daří vašemu inzerátu? ({job.title})'
-    content = template.render(**create_template_context(job, global_metrics))
+    content = template.render(**create_template_context(job, today))
 
     return Mail(from_email=from_email, to_emails=[to_email, to_bcc_email],
                 subject=subject, html_content=content)
 
 
-def create_template_context(job, global_metrics, today=None):
+def create_template_context(job, today=None):
     today = today or date.today()
     starts_at = job.effective_approved_at
     start_days = (today - starts_at).days

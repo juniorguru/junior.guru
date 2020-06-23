@@ -1,4 +1,5 @@
 import json
+from datetime import date, datetime
 from pathlib import Path
 
 import pytest
@@ -57,3 +58,23 @@ def param_xfail_missing(path, values=2):
     path_relative = path.relative_to(PROJECT_DIR)
     marks = pytest.mark.xfail(f'missing: {path_relative}')
     return pytest.param(*args, id=Path(path).name, marks=marks)
+
+
+def prepare_job_data(id, **kwargs):
+    return dict(
+        id=str(id),
+        posted_at=kwargs.get('posted_at', datetime(2019, 7, 6, 20, 24, 3)),
+        company_name=kwargs.get('company_name', 'Honza Ltd.'),
+        employment_types=kwargs.get('employment_types', frozenset(['internship'])),
+        title=kwargs.get('title', 'Junior Software Engineer'),
+        company_link=kwargs.get('company_link', 'https://example.com'),
+        email=kwargs.get('email', 'recruiter@example.com'),
+        location=kwargs.get('location', 'Brno, Czech Republic'),
+        description=kwargs.get('description', '**Really long** description.'),
+        source=kwargs.get('source', 'juniorguru'),
+        approved_at=kwargs.get('approved_at', date.today()),
+        newsletter_at=kwargs.get('newsletter_at', None),
+        expires_at=kwargs.get('expires_at', None),
+        jg_rank=kwargs.get('jg_rank'),
+        link=kwargs.get('link'),
+    )
