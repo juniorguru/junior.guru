@@ -36,7 +36,7 @@ def template():
 
 def test_create_message_metrics(job_mock, template):
     job_mock.metrics = dict(users=15, pageviews=25, applications=3)
-    message = create_message(job_mock, template, today=date(2020, 6, 23))
+    message = create_message(job_mock, template)
     html = message.get()['content'][0]['value']
 
     assert '<b>15</b>' in html
@@ -45,7 +45,7 @@ def test_create_message_metrics(job_mock, template):
 
 def test_create_message_prefill_form(job_mock, template):
     job_mock.company_name = 'Honza Ltd.'
-    message = create_message(job_mock, template, today=date(2020, 6, 23))
+    message = create_message(job_mock, template)
     html = message.get()['content'][0]['value']
 
     assert '&entry.681099058=Honza+Ltd.' in html
@@ -62,3 +62,57 @@ def test_create_message_start_end(job_mock, template):
     assert 'schválen 1.6.2020' in html
     assert '8&nbsp;dní' in html
     assert 'vyprší 1.7.2020' in html
+
+
+def test_create_message_newsletter_yes(job_mock, template):
+    job_mock.newsletter_at = date(2020, 6, 1)
+    message = create_message(job_mock, template, today=date(2020, 6, 23))
+    html = message.get()['content'][0]['value']
+
+    assert 'odeslán 1.6.2020' in html
+    assert 'ANO' in html
+    assert 'archiv' in html
+    assert 'campaign-archive.com' in html
+
+
+def test_create_message_newsletter_no(job_mock, template):
+    job_mock.newsletter_at = None
+    message = create_message(job_mock, template)
+    html = message.get()['content'][0]['value']
+
+    assert 'odeslán' not in html
+    assert 'zatím NE' in html
+    assert 'archiv' in html
+    assert 'campaign-archive.com' in html
+
+
+def test_create_message_applications_zero(job_mock, template):
+    job_mock.metrics = dict(users=15, pageviews=25, applications=0)
+    message = create_message(job_mock, template, today=date(2020, 6, 23))
+    html = message.get()['content'][0]['value']
+
+    assert 'uchazeč' not in html
+    assert '<sup>' not in html
+
+
+def test_create_message_applications_non_zero(job_mock, template):
+    job_mock.metrics = dict(users=15, pageviews=25, applications=5)
+    message = create_message(job_mock, template, today=date(2020, 6, 23))
+    html = message.get()['content'][0]['value']
+
+    assert 'uchazeč' in html
+    assert '<b>5</b>' in html
+    assert '<sup>' not in html
+    assert 'května 2020' not in html
+
+
+def test_create_message_applications_non_zero_note(job_mock, template):
+    job_mock.effective_approved_at = date(2020, 1, 1)
+    job_mock.metrics = dict(users=15, pageviews=25, applications=5)
+    message = create_message(job_mock, template, today=date(2020, 6, 23))
+    html = message.get()['content'][0]['value']
+
+    assert 'uchazeč' in html
+    assert '<b>5</b>' in html
+    assert '<sup>' in html
+    assert 'května 2020' in html
