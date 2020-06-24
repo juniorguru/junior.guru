@@ -16,10 +16,14 @@ EXCLUDE = [
     # BLC_UNKNOWN for no obvious reason, probably crawling protection
     'hackathon.com',
 
+    # ERRNO_ENOTFOUND for no obvious reason, probably crawling protection
+    # (even works locally 🤷‍♂️)
+    'hackprague.com',
+
     # a few redirects, then HTTP_500 for no obvious reason
     'csob.cz',
 
-    # HTTP_404 returned to both curl and browser if user isn't logged in
+    # HTTP_404 in response to both curl and browser if user isn't logged in
     'facebook.com/search/events/?q=english',
 ]
 PROJECT_DIR = Path(__file__).parent.parent
