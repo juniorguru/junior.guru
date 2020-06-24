@@ -3,12 +3,12 @@ from datetime import datetime, timedelta
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models import GlobalMetric
+from juniorguru.models import Metric
 
 
 @pytest.fixture
 def db_connection():
-    models = [GlobalMetric]
+    models = [Metric]
     db = SqliteDatabase(':memory:')
     with db:
         db.bind(models)
@@ -18,10 +18,10 @@ def db_connection():
 
 
 def test_global_metric_as_dict(db_connection):
-    metric1 = GlobalMetric.create(name='avg_monthly_users', value=1200)
-    metric2 = GlobalMetric.create(name='avg_monthly_pageviews', value=6400)
+    metric1 = Metric.create(name='avg_monthly_users', value=1200)
+    metric2 = Metric.create(name='avg_monthly_pageviews', value=6400)
 
-    assert GlobalMetric.as_dict() == {
+    assert Metric.as_dict() == {
         'avg_monthly_users': 1200,
         'avg_monthly_pageviews': 6400,
     }

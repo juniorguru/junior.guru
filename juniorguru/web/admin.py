@@ -5,7 +5,7 @@ from pathlib import Path
 from flask import render_template, send_from_directory
 from playhouse.shortcuts import model_to_dict
 
-from juniorguru.models import GlobalMetric, Job, JobDropped, JobError, db
+from juniorguru.models import Job, JobDropped, JobError, Metric, db
 from juniorguru.scrapers.monitoring import RESPONSES_BACKUP_DIR
 from juniorguru.web import app
 
@@ -33,7 +33,7 @@ def models_to_dicts_with_metrics(objects):
 @app.route('/admin/')
 def admin():
     with db:
-        metrics = GlobalMetric.as_dict()
+        metrics = Metric.as_dict()
     return render_template('admin.html', metrics=metrics)
 
 

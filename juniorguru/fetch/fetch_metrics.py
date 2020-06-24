@@ -9,7 +9,7 @@ from juniorguru.fetch.lib.google_analytics import (
 from juniorguru.fetch.lib.mailchimp import (MailChimpClient, get_collection,
                                             get_link,
                                             sum_clicks_per_external_url)
-from juniorguru.models import GlobalMetric, Job, JobMetric, db
+from juniorguru.models import Job, JobMetric, Metric, db
 
 
 GOOGLE_ANALYTICS_VIEW_ID = '198392474'  # https://ga-dev-tools.appspot.com/account-explorer/
@@ -21,14 +21,14 @@ def main():
     mailchimp_metrics = fetch_from_mailchimp()
 
     with db:
-        GlobalMetric.drop_table()
-        GlobalMetric.create_table()
+        Metric.drop_table()
+        Metric.create_table()
 
-        GlobalMetric.create(name='avg_monthly_users',
+        Metric.create(name='avg_monthly_users',
                             value=google_analytics_metrics['avg_monthly_users'])
-        GlobalMetric.create(name='avg_monthly_pageviews',
+        Metric.create(name='avg_monthly_pageviews',
                             value=google_analytics_metrics['avg_monthly_pageviews'])
-        GlobalMetric.create(name='subscribers',
+        Metric.create(name='subscribers',
                             value=mailchimp_metrics['subscribers'])
 
         JobMetric.drop_table()

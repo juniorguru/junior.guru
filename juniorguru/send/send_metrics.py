@@ -12,7 +12,7 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Bcc, From, Mail, To
 
 from juniorguru.log import get_log
-from juniorguru.models import GlobalMetric, Job
+from juniorguru.models import Job, Metric
 
 
 DEBUG = os.getenv('JG_DEBUG_SEND_METRICS', '--debug' in sys.argv)
@@ -72,7 +72,6 @@ def create_message(job, template, today=None):
     else:
         to_emails = [To(job.email, job.company_name),
                      Bcc('ahoj@junior.guru', 'junior.guru')]
-        raise Exception('typico')
 
     return Mail(from_email=from_email, to_emails=to_emails,
                 subject=subject, html_content=content)
