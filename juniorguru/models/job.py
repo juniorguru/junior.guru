@@ -15,6 +15,13 @@ JOB_METRIC_NAMES = [
     'applications',
 ]
 
+UTM_RE = re.compile(r'[\?\&]utm_[a-z]+')
+UTM_PARAMS = {
+    'utm_source': 'juniorguru',
+    'utm_medium': 'job_board',
+    'utm_campaign': 'juniorguru',
+}
+
 
 class UniqueSortedListField(CharField):
     def db_value(self, python_value):
@@ -162,14 +169,16 @@ class Job(BaseModel):
         return self.approved_at
 
     @property
+    def company_link_utm(self):
+        if not self.company_link or UTM_RE.search(self.company_link):
+            return self.company_link
+        return set_params(self.company_link, UTM_PARAMS)
+
+    @property
     def link_utm(self):
-        if re.search(r'[\?\&]utm_[a-z]+', self.link):
+        if not self.link or UTM_RE.search(self.link):
             return self.link
-        return set_params(self.link, {
-            'utm_source': 'juniorguru',
-            'utm_medium': 'job_board',
-            'utm_campaign': 'juniorguru',
-        })
+        return set_params(self.link, UTM_PARAMS)
 
 
 class JobDropped(BaseModel):

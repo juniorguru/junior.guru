@@ -224,13 +224,22 @@ def test_metrics(db_connection):
     }
 
 
-@pytest.mark.parametrize('url,expected', [
-    ('https://example.com', 'https://example.com?utm_source=juniorguru&utm_medium=job_board&utm_campaign=juniorguru'),
-    ('https://example.com?param=1', 'https://example.com?param=1&utm_source=juniorguru&utm_medium=job_board&utm_campaign=juniorguru'),
-    ('https://example.com?utm_source=gargamel', 'https://example.com?utm_source=gargamel'),
+@pytest.mark.parametrize('qs,expected', [
+    ('', '?utm_source=juniorguru&utm_medium=job_board&utm_campaign=juniorguru'),
+    ('?param=1', '?param=1&utm_source=juniorguru&utm_medium=job_board&utm_campaign=juniorguru'),
+    ('?utm_source=gargamel', '?utm_source=gargamel'),
 ])
-def test_link_utm(url, expected):
-    job = Job(**prepare_job_data('1', link=url))
+def test_links_utm(qs, expected):
+    job = Job(**prepare_job_data('1',
+                                 company_link=f'example.com{qs}',
+                                 link=f'career.example.com{qs}'))
 
-    assert job.link == url
-    assert job.link_utm == expected
+    assert job.company_link_utm == f'example.com{expected}'
+    assert job.link_utm == f'career.example.com{expected}'
+
+
+def test_links_utm_when_none():
+    job = Job(**prepare_job_data('1', company_link=None, link=None))
+
+    assert job.company_link_utm == None
+    assert job.link_utm == None
