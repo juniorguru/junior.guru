@@ -7,7 +7,7 @@ function onLoad() {
 
     const button = document.createElement('span');
     button.textContent = 'Zobrazit víc';
-    button.classList.add('button');
+    button.classList.add('legacy-button');
     button.addEventListener('click', function (event) {
       section.removeChild(p);
       section.classList.remove('more-collapsed');
