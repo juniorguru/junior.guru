@@ -5,6 +5,22 @@ from juniorguru.models import Job, Metric, Story, Supporter, db
 from juniorguru.web.thumbnail import thumbnail
 
 
+DEFAULT_NAV_TABS = [
+    {'endpoint': 'learn', 'name': 'Nauč se základy', 'name_short': 'Základy'},
+    {'endpoint': 'practice', 'name': 'Získej praxi', 'name_short': 'Praxe'},
+    {'endpoint': 'jobs', 'name': 'Najdi práci', 'name_short': 'Práce'},
+]
+
+
+def create_nav(tabs, active, ordered=False):
+    if active not in [tab['endpoint'] for tab in tabs]:
+        raise ValueError(f"'{active}' is not an endpoint in given navigation")
+    if ordered:
+        tabs = [dict(number=n, **tab) for n, tab in enumerate(tabs, 1)]
+    tabs = [dict(active=(tab['endpoint'] == active), **tab) for tab in tabs]
+    return dict(ordered=ordered, tabs=tabs)
+
+
 app = Flask(__name__)
 
 
@@ -28,7 +44,9 @@ def learn():
 
 @app.route('/practice/')
 def practice():
+    nav = create_nav(DEFAULT_NAV_TABS, active='practice', ordered=True)
     return render_template('practice.html',
+                           nav=nav,
                            thumbnail=thumbnail(title='Jak získat praxi v\u00a0programování'))
 
 

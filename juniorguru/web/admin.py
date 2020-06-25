@@ -10,7 +10,7 @@ from juniorguru.scrapers.monitoring import RESPONSES_BACKUP_DIR
 from juniorguru.web import app
 
 
-ADMIN_MENU = {
+ADMIN_NAV = {
     'Rozcestník': 'admin',
     'Newsletter': 'admin_newsletter',
     'Stažené nabídky': 'admin_jobs_scraped',
@@ -72,4 +72,4 @@ def admin_responses_backup(path):
 
 @app.context_processor
 def inject_admin():
-    return dict(admin_menu=ADMIN_MENU)
+    return dict(admin_nav=ADMIN_NAV)

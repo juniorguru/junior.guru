@@ -26,12 +26,12 @@
   @include font-2;
 }
 
-.header__nav-item {
+.header__nav-tab {
   margin: 0 0 0 $whitespace-0;
   padding: $whitespace-0 0 0 0;
 }
 
-.header__nav-tab {
+.header__nav-tab-control {
   box-sizing: border-box;
   display: block;
   text-decoration: none;
@@ -40,28 +40,28 @@
   padding: $whitespace-0 ($whitespace + 0.3rem);
 }
 
-a.header__nav-tab:hover,
-a.header__nav-tab:focus,
-a.header__nav-tab:active {
+a.header__nav-tab-control:hover,
+a.header__nav-tab-control:focus,
+a.header__nav-tab-control:active {
   & {
     background: $blue;
     color: $white;
   }
 }
 
-.header__nav-tab--active,
-a.header__nav-tab--active:hover,
-a.header__nav-tab--active:focus,
-a.header__nav-tab--active:active {
+.header__nav-tab-control--active,
+a.header__nav-tab-control--active:hover,
+a.header__nav-tab-control--active:focus,
+a.header__nav-tab-control--active:active {
   & {
     background: $white;
     color: $blue;
   }
 }
 
-.header__nav-tab--1::before,
-.header__nav-tab--2::before,
-.header__nav-tab--3::before {
+.header__nav-tab-control--1::before,
+.header__nav-tab-control--2::before,
+.header__nav-tab-control--3::before {
   box-sizing: border-box;
   display: block;
   float: none;
@@ -70,9 +70,9 @@ a.header__nav-tab--active:active {
   font-weight: bold;
 }
 
-.header__nav-tab--1::before { content: "1"; }
-.header__nav-tab--2::before { content: "2"; }
-.header__nav-tab--3::before { content: "3"; }
+.header__nav-tab-control--1::before { content: "1"; }
+.header__nav-tab-control--2::before { content: "2"; }
+.header__nav-tab-control--3::before { content: "3"; }
 
 .header__nav-tab-content {
   display: none;
@@ -91,11 +91,11 @@ a.header__nav-tab--active:active {
     height: 5.5rem;
   }
 
-  .header__nav-tab {
+  .header__nav-tab-control {
     padding: $whitespace $whitespace-2;
   }
 
-  .header__nav-tab::before {
+  .header__nav-tab-control::before {
     float: left;
     margin: 0 $whitespace 0 0;
   }

@@ -24,7 +24,7 @@
   <body>
     <p>
     <a href="{{ url_for('index') }}">JG</a> &mdash;
-    {% for name, endpoint in admin_menu.items() %}
+    {% for name, endpoint in admin_nav.items() %}
       <a href="{{ url_for(endpoint) }}">{{ name }}</a>
       {% if not loop.last %} &mdash; {% endif %}
     {% endfor %}
