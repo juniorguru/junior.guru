@@ -271,10 +271,6 @@ hr {
   margin: (2 * $whitespace-3) 0;
 }
 
-.legacy-header + hr {
-  display: none;
-}
-
 .cartoon {
   display: block;
   margin: $whitespace auto;
@@ -662,101 +658,6 @@ ul.items {
         background: $blue;
       }
     }
-  }
-}
-
-.legacy-header {
-  padding: 0;
-  background: $yellow;
-
-  nav {
-    @include page-width;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 $whitespace;
-  }
-
-  .logo {
-    display: block;
-    align-self: center;
-    margin: 0;
-
-    img {
-      display: block;
-      height: 5.5rem;
-    }
-  }
-
-  .navigation {
-    align-self: flex-end;
-    display: flex;
-    @include font-2;
-    overflow: hidden;
-
-    li {
-      margin-left: $whitespace-0;
-      padding-top: $whitespace-0;
-    }
-
-    a {
-      box-sizing: border-box;
-      display: block;
-      background: $black;
-      color: $white;
-      text-decoration: none;
-      padding: $whitespace $whitespace-2;
-    }
-
-    a::before {
-      box-sizing: border-box;
-      display: block;
-      float: left;
-      text-align: center;
-      margin-right: $whitespace;
-      font-weight: bold;
-    }
-
-    li:nth-child(1) a::before { content: "1"; }
-    li:nth-child(2) a::before { content: "2"; }
-    li:nth-child(3) a::before { content: "3"; }
-  }
-
-  @media screen and (max-width: 810px) {
-    .logo img {
-      height: 4rem;
-    }
-
-    .navigation a {
-      padding: $whitespace-0 ($whitespace + 0.3rem);
-    }
-
-    .navigation a::before {
-      float: none;
-      margin: 0 0.3rem;
-    }
-
-    .navigation a span {
-      display: none;
-    }
-  }
-}
-
-.legacy-header .navigation a:hover,
-.legacy-header .navigation a:focus,
-.legacy-header .navigation a:active {
-  &, &::before {
-    background: $blue;
-    color: $white;
-  }
-}
-
-.page-learn .legacy-header li:nth-child(1) a,
-.page-practice .legacy-header li:nth-child(2) a,
-.page-jobs .legacy-header li:nth-child(3) a,
-.page-job .legacy-header li:nth-child(3) a {
-  &, &::before {
-    background: $white;
-    color: $blue;
   }
 }
 

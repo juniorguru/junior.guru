@@ -20,6 +20,7 @@
   display: block;
   align-self: center;
   margin: 0;
+  padding-left: $whitespace-0;
 }
 
 .header__logo-image {
@@ -50,11 +51,14 @@
   align-self: flex-end;
   display: flex;
   overflow: hidden;
-  @include font-2;
+  @include font-0;
+  line-height: 1;
+  padding-right: $whitespace-0 / 2;
 }
 
 .header__nav-tab {
-  margin: 0 0 0 $whitespace-0;
+  margin: 0;
+  margin-left: $whitespace-0 / 2;
   padding: $whitespace-0 0 0 0;
 }
 
@@ -64,7 +68,7 @@
   text-decoration: none;
   background: $black;
   color: $white;
-  padding: $whitespace-0 ($whitespace + 0.3rem);
+  padding: $whitespace-0 ($whitespace-0 * 1.3);
 }
 
 a.header__nav-tab-control:hover,
@@ -86,23 +90,18 @@ a.header__nav-tab-control--active:active {
   }
 }
 
-.header__nav-tab-control--1::before,
-.header__nav-tab-control--2::before,
-.header__nav-tab-control--3::before {
-  box-sizing: border-box;
-  display: block;
-  float: none;
-  margin: 0 0.3rem;
-  text-align: center;
-  font-weight: bold;
+.header__nav-tab-name,
+.header__nav-tab-name-short {
+  white-space: nowrap;
 }
 
-.header__nav-tab-control--1::before { content: "1"; }
-.header__nav-tab-control--2::before { content: "2"; }
-.header__nav-tab-control--3::before { content: "3"; }
-
-.header__nav-tab-content {
+.header__nav-tab-name {
   display: none;
+}
+
+.header__nav-tab-name-short::before {
+  display: inline;
+  content: attr(data-content);
 }
 
 .header__divider {
@@ -115,9 +114,46 @@ a.header__nav-tab-control--active:active {
   background-color: $yellow;
 }
 
+@media screen and (min-width: 375px) {
+  .header__nav-tab-control--1::before,
+  .header__nav-tab-control--2::before,
+  .header__nav-tab-control--3::before {
+    box-sizing: border-box;
+    display: inline;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .header__nav-tab-control--1::before { content: "1."; }
+  .header__nav-tab-control--2::before { content: "2."; }
+  .header__nav-tab-control--3::before { content: "3."; }
+}
+
+@media screen and (min-width: 400px) {
+  .header__nav {
+    padding-right: $whitespace-0;
+  }
+
+  .header__nav-tab {
+    margin-left: $whitespace-0;
+  }
+
+  .header__nav-tab-control--1::before,
+  .header__nav-tab-control--2::before,
+  .header__nav-tab-control--3::before {
+    margin-right: 0.3rem;
+  }
+}
+
 @media screen and (min-width: 550px) {
   .header--index .header__content {
     flex-direction: row;
+  }
+
+  .header__claim,
+  .header__nav {
+    @include font;
   }
 
   .header__claim {
@@ -125,31 +161,30 @@ a.header__nav-tab-control--active:active {
     font-weight: normal;
     padding-left: 2 * $whitespace;
     padding-right: $whitespace;
-    @include font;
   }
 }
 
 @media screen and (min-width: 650px) {
-  .header__claim {
-    @include font-2;
-  }
-}
-
-@media screen and (min-width: $breakpoint-desktop + 10px) {
   .header__logo-image {
     height: 5.5rem;
   }
 
+  .header__claim,
+  .header__nav {
+    @include font-2;
+  }
+
   .header__nav-tab-control {
-    padding: $whitespace $whitespace-2;
+    padding: $whitespace ($whitespace * 1.25);
   }
+}
 
-  .header__nav-tab-control::before {
-    float: left;
-    margin: 0 $whitespace 0 0;
-  }
-
-  .header__nav-tab-content {
+@media screen and (min-width: $breakpoint-desktop) {
+  .header__nav-tab-name {
     display: inline;
+  }
+
+  .header__nav-tab-name-short::before {
+    display: none;
   }
 }

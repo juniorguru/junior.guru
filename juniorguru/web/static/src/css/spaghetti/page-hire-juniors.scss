@@ -5,42 +5,6 @@ body.page-hire-juniors {
     padding-right: 0;
   }
 
-  .legacy-header .navigation {
-    @include font-0;
-    line-height: 1;
-
-    li a::before {
-      display: none;
-    }
-
-    a {
-      padding: ($whitespace / 2) ($whitespace-2 / 2);
-    }
-
-    a span {
-      display: block;
-    }
-
-    li:nth-child(2) a {
-      &, &::before {
-        background: $white;
-        color: $blue;
-        font-weight: bold;
-      }
-    }
-
-    @media screen and (min-width: 700px) {
-      & {
-        @include font-2;
-        font-weight: normal;
-      }
-
-      a {
-        padding: $whitespace $whitespace-2;
-      }
-    }
-  }
-
   main > header {
     padding-left: $whitespace;
     padding-right: $whitespace;

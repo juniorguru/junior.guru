@@ -12,8 +12,8 @@ DEFAULT_NAV_TABS = [
 ]
 
 HIRE_JUNIORS_NAV_TABS = [
-    {'endpoint': 'jobs', 'name': 'Inzeráty', 'name_short': 'Inzeráty'},
-    {'endpoint': 'hire_juniors', 'name': 'Pro firmy', 'name_short': 'Pro firmy'},
+    {'endpoint': 'jobs', 'name': 'Nabídky práce'},
+    {'endpoint': 'hire_juniors', 'name': 'Pro firmy'},
 ]
 
 
