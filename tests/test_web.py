@@ -3,6 +3,17 @@ import pytest
 from juniorguru.web import create_nav
 
 
+def test_create_nav():
+    tabs = [dict(endpoint='jobs', name='Find Jobs', name_short='Jobs'),
+            dict(endpoint='cats', name='Find Cats', name_short='Cats')]
+
+    assert create_nav(tabs) == dict(
+        ordered=False,
+        tabs=[dict(endpoint='jobs', name='Find Jobs', name_short='Jobs', active=False),
+              dict(endpoint='cats', name='Find Cats', name_short='Cats', active=False)]
+    )
+
+
 def test_create_nav_active():
     tabs = [dict(endpoint='jobs', name='Find Jobs', name_short='Jobs'),
             dict(endpoint='cats', name='Find Cats', name_short='Cats')]

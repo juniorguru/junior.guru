@@ -7,28 +7,6 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 
 {% block body_attrs %} class="page-practice"{% endblock %}
 
-{% block header %}
-<header class="header">
-  <nav class="header__content">
-    <a class="header__logo" href="{{ url_for('index') }}">
-      <img class="header__logo-image" src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
-    </a>
-    <{% if nav.ordered %}ol{% else %}ul{% endif %} class="header__nav">
-      {% for tab in nav.tabs %}
-        <li class="header__nav-tab">
-          <a class="header__nav-tab-control{% if tab.active %} header__nav-tab-control--active{% endif %}{% if tab.number %} header__nav-tab-control--{{ tab.number }}{% endif %}" href="{{ url_for(tab.endpoint) }}">
-            <span class="header__nav-tab-content">
-              {{- tab.name -}}
-            </span>
-          </a>
-        </li>
-      {% endfor %}
-    </{% if nav.ordered %}ol{% else %}ul{% endif %}>
-  </nav>
-</header>
-{% endblock %}
-{% block divider %}<hr class="header__divider">{% endblock %}
-
 {% block main %}
 <header>
   <h1>Získej praxi v programování</h1>

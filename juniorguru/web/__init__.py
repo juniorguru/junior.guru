@@ -11,9 +11,14 @@ DEFAULT_NAV_TABS = [
     {'endpoint': 'jobs', 'name': 'Najdi práci', 'name_short': 'Práce'},
 ]
 
+HIRE_JUNIORS_NAV_TABS = [
+    {'endpoint': 'jobs', 'name': 'Inzeráty', 'name_short': 'Inzeráty'},
+    {'endpoint': 'hire_juniors', 'name': 'Pro firmy', 'name_short': 'Pro firmy'},
+]
 
-def create_nav(tabs, active, ordered=False):
-    if active not in [tab['endpoint'] for tab in tabs]:
+
+def create_nav(tabs, active=None, ordered=False):
+    if active is not None and active not in [tab['endpoint'] for tab in tabs]:
         raise ValueError(f"'{active}' is not an endpoint in given navigation")
     if ordered:
         tabs = [dict(number=n, **tab) for n, tab in enumerate(tabs, 1)]
@@ -30,6 +35,7 @@ def index():
         jobs_count = Job.count()
         companies_count = Job.companies_count()
     return render_template('index.html',
+                           nav=None,
                            jobs_count=jobs_count,
                            companies_count=companies_count,
                            stories=Story.listing())
@@ -38,15 +44,15 @@ def index():
 @app.route('/learn/')
 def learn():
     return render_template('learn.html',
+                           nav=create_nav(DEFAULT_NAV_TABS, 'learn', ordered=True),
                            stories_count=len(Story.listing()),
                            thumbnail=thumbnail(title='Jak se naučit programovat'))
 
 
 @app.route('/practice/')
 def practice():
-    nav = create_nav(DEFAULT_NAV_TABS, active='practice', ordered=True)
     return render_template('practice.html',
-                           nav=nav,
+                           nav=create_nav(DEFAULT_NAV_TABS, 'practice', ordered=True),
                            thumbnail=thumbnail(title='Jak získat praxi v\u00a0programování'))
 
 
@@ -56,6 +62,7 @@ def candidate():
         jobs_count = Job.count()
         companies_count = Job.companies_count()
     return render_template('candidate.html',
+                           nav=create_nav(DEFAULT_NAV_TABS, 'jobs', ordered=True),
                            jobs_count=jobs_count,
                            companies_count=companies_count,
                            thumbnail=thumbnail(title='Příručka hledání první práce v\u00a0IT'))
@@ -69,6 +76,7 @@ def jobs():
         companies_count = Job.companies_count()
         jobs_bot = Job.bot_listing()
     return render_template('jobs.html',
+                           nav=create_nav(DEFAULT_NAV_TABS, 'jobs', ordered=True),
                            jobs=jobs,
                            jobs_count=jobs_count,
                            companies_count=companies_count,
@@ -83,6 +91,7 @@ def job(job_id):
         jobs_count = Job.count()
         companies_count = Job.companies_count()
     return render_template('job.html',
+                           nav=create_nav(DEFAULT_NAV_TABS, 'jobs', ordered=True),
                            job=job,
                            jobs_count=jobs_count,
                            companies_count=companies_count,
@@ -96,6 +105,7 @@ def hire_juniors():
     with db:
         metrics = Metric.as_dict()
     return render_template('hire_juniors.html',
+                           nav=create_nav(HIRE_JUNIORS_NAV_TABS, 'hire_juniors'),
                            metrics=metrics,
                            thumbnail=thumbnail(title='Najímejte odhodlané juniory'))
 
@@ -137,7 +147,8 @@ def robots():
 @app.context_processor
 def inject_defaults():
     now = arrow.utcnow()
-    return dict(year=now.year,
+    return dict(nav=create_nav(DEFAULT_NAV_TABS, ordered=True),
+                year=now.year,
                 updated_at=now,
                 thumbnail=thumbnail())
 

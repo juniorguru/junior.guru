@@ -2,16 +2,16 @@
 
 {% block body_attrs %} class="page-index"{% endblock %}
 
-{% block logo %}
-<h1 class="logo-heading">
+{% block header_modifier %} header--index{% endblock %}
+
+{% block header_content %}
+<h1 class="header__logo-heading">
   {{ super() }}
 </h1>
-<p class="claim">
+<p class="header__claim">
   Průvodce programováním pro&nbsp;samouky
 </p>
 {% endblock %}
-
-{% block divider %}<hr class="divider">{% endblock %}
 
 {% block main %}
 <section class="billboard billboard-learn">

@@ -35,37 +35,31 @@
   <body{% block body_attrs %} class="page"{% endblock %}>
     <div class="body-container">
     {% block body %}
-      {% block header %}
-      <header class="legacy-header">
-        <nav>
-          {% block logo %}
-          <a class="logo" href="{{ url_for('index') }}">
-              <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
-          </a>
-          {% endblock %}
-          {% block nav %}
-          <ol class="navigation">
-            <li>
-              <a href="{{ url_for('learn') }}">
-                <span>Nauč se základy</span>
-              </a>
-            </li>
-            <li>
-              <a href="{{ url_for('practice') }}">
-                <span>Získej praxi</span>
-              </a>
-            </li>
-            <li>
-              <a href="{{ url_for('jobs') }}">
-                <span>Najdi práci</span>
-              </a>
-            </li>
-          </ol>
-          {% endblock %}
-        </nav>
-      </header>
-      {% endblock %}
-      {% block divider %}<hr>{% endblock %}
+      <div class="header{% block header_modifier %}{% endblock %}">
+        <header>
+          <nav class="header__content">
+            {% block header_content %}
+            <a class="header__logo" href="{{ url_for('index') }}">
+              <img class="header__logo-image" src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
+            </a>
+            {% endblock %}
+            {% if nav %}
+              <{% if nav.ordered %}ol{% else %}ul{% endif %} class="header__nav">
+                {% for tab in nav.tabs %}
+                  <li class="header__nav-tab">
+                    <a class="header__nav-tab-control{% if tab.active %} header__nav-tab-control--active{% endif %}{% if tab.number %} header__nav-tab-control--{{ tab.number }}{% endif %}" href="{{ url_for(tab.endpoint) }}">
+                      <span class="header__nav-tab-content">
+                        {{- tab.name -}}
+                      </span>
+                    </a>
+                  </li>
+                {% endfor %}
+              </{% if nav.ordered %}ol{% else %}ul{% endif %}>
+            {% endif %}
+          </nav>
+        </header>
+        <hr class="header__divider">
+      </div>
       <main>
         {% block main %}{% endblock %}
       </main>

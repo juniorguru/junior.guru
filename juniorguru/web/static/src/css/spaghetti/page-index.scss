@@ -12,66 +12,8 @@ body.page-index {
     text-align: center;
   }
 
-  .divider {
-    display: block;
-    margin: 0;
-    background-color: $yellow;
-  }
-
   .hidden {
     display: none;
-  }
-
-  .legacy-header {
-    nav {
-      align-items: center;
-      flex-direction: column;
-      padding-bottom: ($whitespace / 4);
-
-      @media screen and (min-width: 550px) {
-        & {
-          flex-direction: row;
-        }
-      }
-    }
-
-    .logo img {
-      $logo-height: 10rem;
-      height: $logo-height;
-      line-height: $logo-height - 1rem;
-      vertical-align: center;
-    }
-
-    ol {
-      display: none;
-    }
-  }
-
-  .logo-heading {
-    padding: 0;
-    margin: 0;
-  }
-
-  .claim {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    @include font-0;
-
-    @media screen and (min-width: 550px) {
-      & {
-        text-align: right;
-        font-weight: normal;
-        padding-left: 2 * $whitespace;
-        @include font;
-      }
-    }
-
-    @media screen and (min-width: 650px) {
-      & {
-        @include font-2;
-      }
-    }
   }
 }
 
