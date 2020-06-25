@@ -7,6 +7,38 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 
 {% block body_attrs %} class="page-practice"{% endblock %}
 
+{% block header %}
+<header class="header">
+  <nav class="header__content">
+    {% block logo %}
+    <a class="header__logo" href="{{ url_for('index') }}">
+      <img class="header__logo-image" src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
+    </a>
+    {% endblock %}
+    {% block nav %}
+    <ol class="header__nav">
+      <li class="header__nav-item">
+        <a class="header__nav-tab header__nav-tab--1" href="{{ url_for('learn') }}">
+          <span class="header__nav-tab-content">Nauč se základy</span>
+        </a>
+      </li>
+      <li class="header__nav-item">
+        <a class="header__nav-tab header__nav-tab--2 header__nav-tab--active" href="{{ url_for('practice') }}">
+          <span class="header__nav-tab-content">Získej praxi</span>
+        </a>
+      </li>
+      <li class="header__nav-item">
+        <a class="header__nav-tab header__nav-tab--3" href="{{ url_for('jobs') }}">
+          <span class="header__nav-tab-content">Najdi práci</span>
+        </a>
+      </li>
+    </ol>
+    {% endblock %}
+  </nav>
+</header>
+{% endblock %}
+{% block divider %}<hr class="header__divider">{% endblock %}
+
 {% block main %}
 <header>
   <h1>Získej praxi v programování</h1>

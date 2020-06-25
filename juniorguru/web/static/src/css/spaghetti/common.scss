@@ -271,7 +271,7 @@ hr {
   margin: (2 * $whitespace-3) 0;
 }
 
-.body-container > header + hr {
+.legacy-header + hr {
   display: none;
 }
 
@@ -665,7 +665,7 @@ ul.items {
   }
 }
 
-.body-container > header {
+.legacy-header {
   padding: 0;
   background: $yellow;
 
@@ -741,19 +741,19 @@ ul.items {
   }
 }
 
-.body-container > header .navigation a:hover,
-.body-container > header .navigation a:focus,
-.body-container > header .navigation a:active {
+.legacy-header .navigation a:hover,
+.legacy-header .navigation a:focus,
+.legacy-header .navigation a:active {
   &, &::before {
     background: $blue;
     color: $white;
   }
 }
 
-.page-learn .body-container > header li:nth-child(1) a,
-.page-practice .body-container > header li:nth-child(2) a,
-.page-jobs .body-container > header li:nth-child(3) a,
-.page-job .body-container > header li:nth-child(3) a {
+.page-learn .legacy-header li:nth-child(1) a,
+.page-practice .legacy-header li:nth-child(2) a,
+.page-jobs .legacy-header li:nth-child(3) a,
+.page-job .legacy-header li:nth-child(3) a {
   &, &::before {
     background: $white;
     color: $blue;
