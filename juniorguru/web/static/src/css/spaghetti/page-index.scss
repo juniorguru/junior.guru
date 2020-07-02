@@ -47,11 +47,11 @@ body.page-index {
     }
   }
 
-  p, .button, .button-secondary {
+  p, .legacy-button, .legacy-button-secondary {
     margin-bottom: $whitespace-2;
   }
 
-  .button {
+  .legacy-button {
     margin-top: $whitespace-3;
 
     @media screen and (min-width: 650px) {
@@ -61,7 +61,7 @@ body.page-index {
     }
   }
 
-  .button, .button-secondary {
+  .legacy-button, .legacy-button-secondary {
     display: block;
 
     @media screen and (min-width: 650px) {
