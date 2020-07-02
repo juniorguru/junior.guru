@@ -47,12 +47,17 @@
               <{% if nav.ordered %}ol{% else %}ul{% endif %} class="header__nav">
                 {% for tab in nav.tabs %}
                   <li class="header__nav-tab">
+                    {{- '' -}}
                     <a class="header__nav-tab-control{% if tab.active %} header__nav-tab-control--active{% endif %}{% if tab.number %} header__nav-tab-control--{{ tab.number }}{% endif %}" href="{{ url_for(tab.endpoint) }}">
+                      {{- '' -}}
                       <span class="header__nav-tab-name">
                         {{- tab.name -}}
                       </span>
+                      {{- '' -}}
                       <span class="header__nav-tab-name-short" data-content="{{ tab.name_short|default(tab.name) }}"></span>
+                      {{- '' -}}
                     </a>
+                    {{- '' -}}
                   </li>
                 {% endfor %}
               </{% if nav.ordered %}ol{% else %}ul{% endif %}>
