@@ -1,18 +1,30 @@
+$logo-height: 4rem;
+$logo-height-large: 5.5rem;
+$logo-height-index: 10rem;
+
 .header {
   background: $yellow;
   margin: 0;
   padding: 0;
-  // position: sticky;
+  position: sticky;
   top: 0;
   z-index: 1000;
-  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header--index {
   position: relative;
 }
 
-// .header--active {}
+:target::before {
+  display: block;
+  content: " ";
+  height: 2 * $logo-height;
+  margin-top: -2 * $logo-height;
+  width: 1rem;
+  pointer-events: none;
+  // background: violet; // debug
+}
 
 .header__content {
   @include page-width;
@@ -35,13 +47,12 @@
 
 .header__logo-image {
   display: block;
-  height: 4rem;
+  height: $logo-height;
 }
 
 .header--index .header__logo-image {
-  $logo-height: 10rem;
-  height: $logo-height;
-  line-height: $logo-height - 1rem;
+  height: $logo-height-index;
+  line-height: $logo-height-index - 1rem;
   vertical-align: center;
 }
 
@@ -176,7 +187,12 @@ a.header__nav-tab-control--active:active {
 
 @media screen and (min-width: 650px) {
   .header__logo-image {
-    height: 5.5rem;
+    height: $logo-height-large;
+  }
+
+  :target::before {
+    height: 2 * $logo-height-large;
+    margin-top: -2 * $logo-height-large;
   }
 
   .header__claim,

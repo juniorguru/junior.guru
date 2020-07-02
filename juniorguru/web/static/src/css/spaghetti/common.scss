@@ -81,6 +81,7 @@ nav ol, nav ul, nav li {
 main {
   @include page-width;
   padding-top: $whitespace-3 * 3;
+  overflow-x: hidden;
 }
 
 main > header, .job > header {

@@ -35,7 +35,7 @@
   <body{% block body_attrs %} class="page"{% endblock %}>
     <div class="body-container">
     {% block body %}
-      <div class="header{% if nav and nav.tabs|selectattr('active')|list|length %} header--active{% endif %}{% block header_modifier %}{% endblock %}">
+      <div class="header{% block header_modifier %}{% endblock %}">
         <header>
           <nav class="header__content">
             {% block header_content %}
