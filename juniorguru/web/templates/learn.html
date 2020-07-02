@@ -24,7 +24,6 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
       <li><a href="#requirements">Co budeš potřebovat?</a></li>&#32;
       <li><a href="#python">Proč Python?</a></li>&#32;
       <li><a href="#learn">Jak začít?</a></li>&#32;
-      {% if updated_at.month <= 6 %}<li><a href="#covid19-learn">Slevy během koronaviru</a></li>&#32;{% endif %}
       <li><a href="#ladies">Dámy mají přednost</a></li>&#32;
       <li><a href="#help">Kde najdeš pomoc?</a></li>&#32;
       <li><a href="#english">Jak si zlepšit angličtinu?</a></li>&#32;
@@ -456,124 +455,6 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
   </ul>
   {% include 'list_note.html' %}
 </section>
-
-{% if updated_at.month <= 6 %}
-<section id="covid19-learn">
-  <h2>Slevy během koronaviru</h2>
-  <p>
-    Pandemie COVID-19 <a href="#covid19">bude mít svůj dopad i na IT</a>. Jeden z těch příjemnějších důsledků jsou nynější slevy některých společností na jejich online kurzy. Poslední aktualizace seznamu:
-    <strong>{{ updated_at.to('Europe/Prague').day }}.&nbsp;{{ updated_at.to('Europe/Prague').month }}.</strong>
-  </p>
-  <ul class="list">
-    <li>
-      <a href="https://realpython.com/free-courses-march-2020">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/realpython.com.jpg') }}" loading="lazy">
-        </div>
-        <h3>Free Real Python Courses</h3>
-        <ul class="list-labels">
-          <li><small>zdarma</small></li>
-        </ul>
-      </a>
-      <p>
-        Kód, který ti dá zdarma přístup do čtyř jinak placených kurzů.
-      </p>
-    </li>
-    {% if updated_at.month <= 4 %}
-    <li>
-      <a href="https://www.pluralsight.com/offer/2020/free-april-month">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/pluralsight.com!offer!2020!free-april-month.jpg') }}" loading="lazy">
-        </div>
-        <h3>#FREEapril</h3>
-        <ul class="list-labels">
-          <li><small>zdarma</small></li>
-        </ul>
-      </a>
-      <p>
-        Všechny online kurzy od <a href="https://www.pluralsight.com/">Pluralsight</a> jsou v dubnu zdarma.
-      </p>
-    </li>
-    {% endif %}
-    <li>
-      <a href="https://admissions.udacity.com/apply/learn_with_udacity">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/admissions.udacity.com!apply!learn_with_udacity.jpg') }}" loading="lazy">
-        </div>
-        <h3>Impact Discount</h3>
-        <ul class="list-labels">
-            <li><small>sleva 30&nbsp;%</small></li>
-        </ul>
-      </a>
-      <p>
-        Výukové programy od <a href="https://www.udacity.com/">Udacity</a> jsou levnější. Slevový kód přijde e-mailem po registraci.
-      </p>
-    </li>
-    <li>
-      <a href="https://www.learn2code.cz/">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/learn2code.cz.jpg') }}" loading="lazy">
-        </div>
-        <h3>JSEMDOMA</h3>
-        <ul class="list-labels">
-            <li><small>sleva 25%</small></li>
-        </ul>
-      </a>
-      <p>
-        Online kurzy <a href="https://www.learn2code.cz/">Learn2Code</a> v akci. Slevový kód: <strong>JSEMDOMA</strong>
-      </p>
-    </li>
-    <li>
-      <a href="https://engeto.com/cs/katalog/python-1-uvod-do-programovani">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/engeto.com!cs!katalog!python-1-uvod-do-programovani.jpg') }}" loading="lazy">
-        </div>
-        <h3>Python #1: Úvod do programování</h3>
-        <ul class="list-labels">
-            <li><small>zdarma</small></li>
-        </ul>
-      </a>
-      <p>
-        Úvod do programování od <a href="https://engeto.com/">Engeto</a> je nyní zcela zdarma.
-      </p>
-    </li>
-    {% if updated_at.month <= 4 %}
-    <li>
-      <a href="https://www.greenfoxacademy.cz/stayathome-coding-camp">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/greenfoxacademy.cz!stayathome-coding-camp.jpg') }}" loading="lazy">
-        </div>
-        <h3>#StayAtHome Coding Camp</h3>
-        <ul class="list-labels">
-          <li><small>zdarma</small></li>
-        </ul>
-      </a>
-      <p>
-        Online kurz programování od <a href="https://www.greenfoxacademy.cz/">Green Fox Academy</a>.
-      </p>
-    </li>
-    {% endif %}
-    <li>
-      <a href="https://engeto.com/study-it-online">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/engeto.com!study-it-online.jpg') }}" loading="lazy">
-        </div>
-        <h3>Studuj IT. Online.</h3>
-        <ul class="list-labels">
-          <li><small>sleva 1000 Kč</small></li>
-        </ul>
-      </a>
-      <p>
-        Sleva na roční předplatné online kurzů od <a href="https://engeto.com/">Engeto</a>.
-      </p>
-    </li>
-  </ul>
-  <p class="note list-note">
-    Tento seznam je v abecedním pořadí. Pokud víš o další podobné nabídce,
-    piš na {{ 'ahoj@junior.guru'|email_link }}.
-  </p>
-</section>
-{% endif %}
 
 <section id="ladies">
   <h2>Dámy mají přednost</h2>
