@@ -125,9 +125,9 @@ a.header__nav-tab-control--active:active {
     font-weight: bold;
   }
 
-  .header__nav-tab-control--1::before { content: "1."; }
-  .header__nav-tab-control--2::before { content: "2."; }
-  .header__nav-tab-control--3::before { content: "3."; }
+  .header__nav-tab-control--1::before { content: "1"; }
+  .header__nav-tab-control--2::before { content: "2"; }
+  .header__nav-tab-control--3::before { content: "3"; }
 }
 
 @media screen and (min-width: 400px) {
