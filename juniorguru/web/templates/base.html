@@ -35,7 +35,7 @@
   <body class="page{% if subnav_tabs %} page--subnav{% endif %}{% block body_class %}{% endblock %}">
     <div class="body-container">
     {% block body %}
-      <header class="header{% block header_modifier %}{% endblock %}">
+      <header class="header{% if subnav_tabs %} header--subnav{% endif %}{% block header_modifier %}{% endblock %}">
         <div class="header__main">
           <div class="header__main-content">
             {% block header_content %}
