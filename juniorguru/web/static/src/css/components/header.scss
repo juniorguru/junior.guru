@@ -3,13 +3,13 @@ $logo-height-large: 5.5rem;
 $logo-height-index: 10rem;
 
 .header {
-  background: $yellow;
   margin: 0;
   padding: 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: $white;
 }
 
 .header--index {
@@ -26,13 +26,17 @@ $logo-height-index: 10rem;
   // background: violet; // debug
 }
 
-.header__content {
+.header__main {
+  background: $yellow;
+}
+
+.header__main-content {
   @include page-width;
   display: flex;
   justify-content: space-between;
 }
 
-.header--index .header__content {
+.header--index .header__main-content {
   align-items: center;
   flex-direction: column;
   padding-bottom: ($whitespace / 4);
@@ -69,27 +73,28 @@ $logo-height-index: 10rem;
 }
 
 .header__nav-tabs {
+  height: 100%;
   align-self: flex-end;
   display: flex;
-  overflow: hidden;
   @include font-0;
-  line-height: 1;
   padding-right: $whitespace-0 / 2;
 }
 
 .header__nav-tab {
+  height: 100%;
   margin: 0;
-  margin-left: $whitespace-0 / 2;
-  padding: $whitespace-0 0 0 0;
+  padding: 0;
+  line-height: normal;
+  white-space: nowrap;
 }
 
 .header__nav-tab-control {
+  display: flex;
+  align-items: center;
+  height: 100%;
   box-sizing: border-box;
-  display: block;
   text-decoration: none;
-  background: $black;
-  color: $white;
-  padding: $whitespace-0 ($whitespace-0 * 1.3);
+  padding: 0 $whitespace-0;
 }
 
 a.header__nav-tab-control:hover,
@@ -106,14 +111,9 @@ a.header__nav-tab-control--active:hover,
 a.header__nav-tab-control--active:focus,
 a.header__nav-tab-control--active:active {
   & {
-    background: $white;
-    color: $blue;
+    background: $black;
+    color: $white;
   }
-}
-
-.header__nav-tab-name,
-.header__nav-tab-name-short {
-  white-space: nowrap;
 }
 
 .header__nav-tab-name {
@@ -125,59 +125,71 @@ a.header__nav-tab-control--active:active {
   content: attr(data-content);
 }
 
-/*
-.header__nav-tab-control--subnav,
-a.header__nav-tab-control--subnav:hover,
-a.header__nav-tab-control--subnav:focus,
-a.header__nav-tab-control--subnav:active {
-  & {
-    background: $blue;
-    color: $white;
-  }
-}
-
 .header__subnav {
-  background: $blue;
-  color: $white;
+  background: $dots-black;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .header__subnav-tabs {
   @include page-width;
   display: flex;
+  @include font-0;
 }
 
 .header__subnav-tab {
-  padding: $whitespace-0 $whitespace 0 0;
   line-height: normal;
+  display: flex;
+  align-items: center;
+  padding: 0 $whitespace-2 0 0;
+  white-space: nowrap;
+}
+
+.header__subnav-tab:first-child {
+  margin-left: $whitespace-0;
+}
+
+.header__subnav-tab:last-child {
+  margin-right: $whitespace-0;
 }
 
 .header__subnav-tab-control {
+  width: 100%;
   text-decoration: none;
-  background: $black;
-  color: $white;
-  padding: $whitespace-0;
   display: block;
+  box-sizing: border-box;
+  margin: $whitespace-0 0;
+  background: $white;
+}
+
+a.header__subnav-tab-control:hover,
+a.header__subnav-tab-control:focus,
+a.header__subnav-tab-control:active,
+.header__subnav-tab-control--active,
+a.header__subnav-tab-control--active:hover,
+a.header__subnav-tab-control--active:focus,
+a.header__subnav-tab-control--active:active {
+  & {
+    color: $black;
+    margin: 0;
+    padding: ($whitespace-0 - 0.1rem) 0 ($whitespace-0 - 0.2rem) 0;
+    border-bottom: 0.3rem $black solid;
+  }
 }
 
 a.header__subnav-tab-control:hover,
 a.header__subnav-tab-control:focus,
 a.header__subnav-tab-control:active {
   & {
-    background: $white;
     color: $blue;
+    border-color: $blue;
   }
 }
 
-.header__subnav-tab-control--active,
-a.header__subnav-tab-control--active:hover,
-a.header__subnav-tab-control--active:focus,
-a.header__subnav-tab-control--active:active {
-  & {
-    background: $white;
-    color: $blue;
-  }
+.header__subnav-tab-name {
+  display: inline;
+  padding: ($whitespace-0 / 4) ($whitespace-0 / 1.5);
 }
-*/
 
 .header__divider {
   display: none;
@@ -193,9 +205,9 @@ a.header__subnav-tab-control--active:active {
   .header__nav-tab-control--1::before,
   .header__nav-tab-control--2::before,
   .header__nav-tab-control--3::before {
-    box-sizing: border-box;
     display: inline;
     margin: 0;
+    margin-right: $whitespace-0 / 2;
     text-align: center;
     font-weight: bold;
   }
@@ -211,24 +223,24 @@ a.header__subnav-tab-control--active:active {
   }
 
   .header__nav-tab {
-    margin-left: $whitespace-0;
-  }
-
-  .header__nav-tab-control--1::before,
-  .header__nav-tab-control--2::before,
-  .header__nav-tab-control--3::before {
-    margin-right: 0.3rem;
+    margin-left: $whitespace;
   }
 }
 
 @media screen and (min-width: 550px) {
-  .header--index .header__content {
+  .header--index .header__main-content {
     flex-direction: row;
   }
 
   .header__claim,
   .header__nav-tabs {
     @include font;
+  }
+
+  .header__nav-tab-control--1::before,
+  .header__nav-tab-control--2::before,
+  .header__nav-tab-control--3::before {
+    margin-right: $whitespace-0;
   }
 
   .header__claim {
@@ -252,6 +264,10 @@ a.header__subnav-tab-control--active:active {
   .header__claim,
   .header__nav-tabs {
     @include font-2;
+  }
+
+  .header__subnav-tabs {
+    @include font;
   }
 
   .header__nav-tab-control {
