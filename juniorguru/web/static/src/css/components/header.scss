@@ -26,6 +26,11 @@ $logo-height-index: 10rem;
   // background: violet; // debug
 }
 
+.page--subnav :target::before {
+  height: (2 * $logo-height) + 3.5rem;
+  margin-top: (-2 * $logo-height) + 3.5rem;
+}
+
 .header__main {
   background: $yellow;
 }
@@ -259,6 +264,11 @@ a.header__subnav-tab-control:active {
   :target::before {
     height: 2 * $logo-height-large;
     margin-top: -2 * $logo-height-large;
+  }
+
+  .page--subnav :target::before {
+    height: (2 * $logo-height-large) + 4rem;
+    margin-top: (-2 * $logo-height-large) + 4rem;
   }
 
   .header__claim,

@@ -32,7 +32,7 @@
     <meta name="twitter:image" content="{{ url_for('static', filename=thumbnail, _external=True) }}">
     <meta name="twitter:creator" content="@honzajavorek">
   </head>
-  <body class="page{% block body_class %}{% endblock %}">
+  <body class="page{% if subnav_tabs %} page--subnav{% endif %}{% block body_class %}{% endblock %}">
     <div class="body-container">
     {% block body %}
       <header class="header{% block header_modifier %}{% endblock %}">
