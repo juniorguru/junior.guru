@@ -68,7 +68,7 @@ $logo-height-index: 10rem;
   @include font-0;
 }
 
-.header__nav {
+.header__nav-tabs {
   align-self: flex-end;
   display: flex;
   overflow: hidden;
@@ -125,6 +125,60 @@ a.header__nav-tab-control--active:active {
   content: attr(data-content);
 }
 
+/*
+.header__nav-tab-control--subnav,
+a.header__nav-tab-control--subnav:hover,
+a.header__nav-tab-control--subnav:focus,
+a.header__nav-tab-control--subnav:active {
+  & {
+    background: $blue;
+    color: $white;
+  }
+}
+
+.header__subnav {
+  background: $blue;
+  color: $white;
+}
+
+.header__subnav-tabs {
+  @include page-width;
+  display: flex;
+}
+
+.header__subnav-tab {
+  padding: $whitespace-0 $whitespace 0 0;
+  line-height: normal;
+}
+
+.header__subnav-tab-control {
+  text-decoration: none;
+  background: $black;
+  color: $white;
+  padding: $whitespace-0;
+  display: block;
+}
+
+a.header__subnav-tab-control:hover,
+a.header__subnav-tab-control:focus,
+a.header__subnav-tab-control:active {
+  & {
+    background: $white;
+    color: $blue;
+  }
+}
+
+.header__subnav-tab-control--active,
+a.header__subnav-tab-control--active:hover,
+a.header__subnav-tab-control--active:focus,
+a.header__subnav-tab-control--active:active {
+  & {
+    background: $white;
+    color: $blue;
+  }
+}
+*/
+
 .header__divider {
   display: none;
 }
@@ -152,7 +206,7 @@ a.header__nav-tab-control--active:active {
 }
 
 @media screen and (min-width: 400px) {
-  .header__nav {
+  .header__nav-tabs {
     padding-right: $whitespace-0;
   }
 
@@ -173,7 +227,7 @@ a.header__nav-tab-control--active:active {
   }
 
   .header__claim,
-  .header__nav {
+  .header__nav-tabs {
     @include font;
   }
 
@@ -196,7 +250,7 @@ a.header__nav-tab-control--active:active {
   }
 
   .header__claim,
-  .header__nav {
+  .header__nav-tabs {
     @include font-2;
   }
 

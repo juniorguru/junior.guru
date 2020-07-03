@@ -37,32 +37,62 @@
     {% block body %}
       <div class="header{% block header_modifier %}{% endblock %}">
         <header>
-          <nav class="header__content">
+          <div class="header__content">
             {% block header_content %}
             <a class="header__logo" href="{{ url_for('index') }}">
               <img class="header__logo-image" src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
             </a>
             {% endblock %}
-            {% if nav %}
-              <{% if nav.ordered %}ol{% else %}ul{% endif %} class="header__nav">
-                {% for tab in nav.tabs %}
-                  <li class="header__nav-tab">
+            {% if nav_tabs %}
+              <nav class="header__nav">
+                <ol class="header__nav-tabs">
+                  {%- for tab in nav_tabs -%}
+                    <li class="header__nav-tab">
+                      {{- '' -}}
+                      <a class="
+                        header__nav-tab-control
+                        header__nav-tab-control--{{ loop.index }}
+                        {% if tab.endpoint == nav_active %}
+                          {% if subnav_tabs %}
+                            {# header__nav-tab-control--subnav #}
+                            header__nav-tab-control--active
+                          {% else %}
+                            header__nav-tab-control--active
+                          {% endif %}
+                        {% endif %}
+                      " href="{{ url_for(tab.endpoint) }}">
+                        {{- '' -}}
+                        <span class="header__nav-tab-name">
+                          {{- tab.name -}}
+                        </span>
+                        {{- '' -}}
+                        <span class="header__nav-tab-name-short" data-content="{{ tab.name_short|default(tab.name) }}"></span>
+                        {{- '' -}}
+                      </a>
+                      {{- '' -}}
+                    </li>
+                  {%- endfor -%}
+                </ol>
+              </nav>
+            {% endif %}
+          </div>
+          <!--
+          {% if subnav_tabs %}
+            <nav class="header__subnav">
+              <ul class="header__subnav-tabs">
+                {%- for tab in subnav_tabs -%}
+                  <li class="header__subnav-tab">
                     {{- '' -}}
-                    <a class="header__nav-tab-control{% if tab.active %} header__nav-tab-control--active{% endif %}{% if tab.number %} header__nav-tab-control--{{ tab.number }}{% endif %}" href="{{ url_for(tab.endpoint) }}">
-                      {{- '' -}}
-                      <span class="header__nav-tab-name">
-                        {{- tab.name -}}
-                      </span>
-                      {{- '' -}}
-                      <span class="header__nav-tab-name-short" data-content="{{ tab.name_short|default(tab.name) }}"></span>
-                      {{- '' -}}
+                    <a class="header__subnav-tab-control{% if tab.endpoint == subnav_active %} header__subnav-tab-control--active{% endif %}" href="{{ url_for(tab.endpoint) }}">
+                      {{- tab.name -}}
                     </a>
                     {{- '' -}}
                   </li>
-                {% endfor %}
-              </{% if nav.ordered %}ol{% else %}ul{% endif %}>
-            {% endif %}
-          </nav>
+                {%- endfor -%}
+              </ul>
+            </nav>
+          {% endif %}
+          -->
         </header>
         <hr class="header__divider">
       </div>
