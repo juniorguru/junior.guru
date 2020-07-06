@@ -754,11 +754,11 @@
                 "pipfile"
             ],
             "hashes": [
-                "sha256:3fbfad425b0a08a2969c5e1821d88785c210a08656c029c28931a1620f2d0f12",
-                "sha256:4c48d4cd773a6226baaaa176839e6f7ff82ef7c7842f6c54374fe2b14df4024b"
+                "sha256:6ae9cf5414e416954e3421f861cbbfc099b3ace63cb270cc76c6670efd960a0a",
+                "sha256:78661ad751751cb3c181d37302e175a0c644b3714877c073df058c596281d7fd"
             ],
             "index": "pypi",
-            "version": "==5.0.3"
+            "version": "==5.0.4"
         },
         "more-itertools": {
             "hashes": [
