@@ -1,6 +1,3 @@
-import hashlib
-from datetime import date
-
 import pytest
 
 from juniorguru.fetch.lib import mailchimp

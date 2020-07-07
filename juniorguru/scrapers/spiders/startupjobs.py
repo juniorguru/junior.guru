@@ -1,12 +1,11 @@
 import html
-import re
 
 import arrow
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Compose, Identity, MapCompose, TakeFirst
 
-from juniorguru.scrapers.items import Job, split
+from juniorguru.scrapers.items import Job
 
 
 class Spider(BaseSpider):

@@ -1,5 +1,3 @@
-from datetime import datetime, timedelta
-
 import pytest
 from peewee import SqliteDatabase
 
@@ -18,8 +16,8 @@ def db_connection():
 
 
 def test_global_metric_as_dict(db_connection):
-    metric1 = Metric.create(name='avg_monthly_users', value=1200)
-    metric2 = Metric.create(name='avg_monthly_pageviews', value=6400)
+    Metric.create(name='avg_monthly_users', value=1200)
+    Metric.create(name='avg_monthly_pageviews', value=6400)
 
     assert Metric.as_dict() == {
         'avg_monthly_users': 1200,

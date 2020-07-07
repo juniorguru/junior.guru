@@ -1,5 +1,3 @@
-import re
-from datetime import datetime, timedelta
 from urllib.parse import urlencode
 
 from scrapy import Request

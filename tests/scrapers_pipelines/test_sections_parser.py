@@ -3,7 +3,7 @@ from textwrap import dedent
 
 import pytest
 from lxml import html
-from strictyaml import Enum, Map, Optional, Seq, Str, Url
+from strictyaml import Enum, Map, Optional, Seq, Str
 
 from juniorguru.scrapers.pipelines import sections_parser
 from juniorguru.scrapers.pipelines.sections_parser import (ListSection,
@@ -24,17 +24,17 @@ schema = Seq(
 def generate_params(fixtures_dirname):
     for html_path in (Path(__file__).parent / fixtures_dirname).rglob('*.html'):
         if startswith_skip(html_path):
-            yield param_startswith_skip(path)
+            yield param_startswith_skip(html_path)
         else:
             yml_path = html_path.with_suffix('.yml')
             if startswith_skip(yml_path):
-                yield param_startswith_skip(path)
+                yield param_startswith_skip(yml_path)
             elif yml_path.is_file():
                 yield pytest.param(html_path.read_text(),
                                    load_yaml(yml_path.read_text(), schema),
                                    id=html_path.name)  # better readability
             else:
-                yield param_xfail_missing(path)
+                yield param_xfail_missing(yml_path)
 
 
 @pytest.mark.parametrize('description_html,expected',

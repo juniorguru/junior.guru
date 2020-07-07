@@ -1,7 +1,6 @@
 from datetime import date, timedelta
 from pathlib import Path
 
-import pytest
 from scrapy.http import HtmlResponse
 
 from juniorguru.scrapers.spiders import linkedin

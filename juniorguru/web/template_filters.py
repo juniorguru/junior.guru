@@ -1,6 +1,5 @@
 import math
 from datetime import datetime
-from pathlib import Path
 
 import arrow
 from jinja2 import Markup

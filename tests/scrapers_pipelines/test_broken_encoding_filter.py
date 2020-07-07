@@ -17,7 +17,7 @@ def generate_params(fixtures_dirname):
 
 @pytest.mark.parametrize('description_html',
                          generate_params('fixtures_broken_encoding_filter_raises'))
-def test_broken_encoding_filter(item, spider, description_html):
+def test_broken_encoding_filter_raises(item, spider, description_html):
     item['description_html'] = description_html
 
     with pytest.raises(BrokenEncoding):

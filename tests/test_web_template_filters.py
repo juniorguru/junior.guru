@@ -1,5 +1,4 @@
 from datetime import datetime
-from textwrap import dedent
 
 import pytest
 

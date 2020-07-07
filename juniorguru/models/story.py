@@ -1,7 +1,7 @@
 import re
 from urllib.parse import urlparse
 
-from peewee import BooleanField, CharField, DateTimeField
+from peewee import CharField, DateTimeField
 
 from juniorguru.models.base import BaseModel
 

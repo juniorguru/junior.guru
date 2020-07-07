@@ -152,4 +152,4 @@ def inject_defaults():
                 thumbnail=thumbnail())
 
 
-from juniorguru.web import admin, template_filters  # isort:skip
+from juniorguru.web import admin, template_filters  # noqa

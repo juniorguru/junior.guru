@@ -1,4 +1,3 @@
-import json
 import os
 import random
 import sys
@@ -12,7 +11,7 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Bcc, From, Mail, To
 
 from juniorguru.log import get_log
-from juniorguru.models import Job, Metric
+from juniorguru.models import Job
 
 
 DEBUG = os.getenv('JG_DEBUG_SEND_METRICS', '--debug' in sys.argv)
@@ -34,9 +33,9 @@ def main():
     is_monday = date.today().weekday() == 0
     log.info(f'Monday? {is_monday}')
     if not is_monday:
-        log.error(f'Not Monday')
+        log.error('Not Monday')
         if DEBUG:
-            log.info(f'Debug mode suppressed early exit')
+            log.info('Debug mode suppressed early exit')
         else:
             sys.exit(0)
 
@@ -108,7 +107,7 @@ def send(message):
         response_info = dict(status_code=response.status_code,
                              body=response.body,
                              headers=dict(response.headers.items()))
-        log.debug(f'SendGrid response\n' + pformat(response_info))
+        log.debug('SendGrid response\n' + pformat(response_info))
     else:
         log.warning('SendGrid not enabled')
 

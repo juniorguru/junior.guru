@@ -1,5 +1,4 @@
 import itertools
-from math import floor
 
 from scrapy.exceptions import DropItem
 

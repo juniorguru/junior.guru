@@ -1,5 +1,4 @@
 from scrapy.exceptions import DropItem
-from w3lib.html import remove_tags
 
 
 class BrokenEncoding(DropItem):

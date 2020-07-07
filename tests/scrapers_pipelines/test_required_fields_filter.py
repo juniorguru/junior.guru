@@ -12,5 +12,5 @@ def test_required_fields_drops(item, spider):
     del item['posted_at']
     del item['description_html']
 
-    with pytest.raises(MissingRequiredFields, match=f'description_html, posted_at'):
+    with pytest.raises(MissingRequiredFields, match='description_html, posted_at'):
         Pipeline().process_item(item, spider)

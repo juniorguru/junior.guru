@@ -1,4 +1,3 @@
-import hashlib
 from datetime import date
 
 import pytest

@@ -86,7 +86,7 @@ for attempt in range(attempts):
 if broken:
     # https://github.com/stevenvachon/broken-link-checker/issues/169
     print()
-    print(f'Broken links')
+    print('Broken links')
     print('=' * 79)
     for url, reason in broken:
         print(f'{reason}\t{url}')

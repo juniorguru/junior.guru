@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 
 import pytest
@@ -145,7 +145,7 @@ def test_create_message_expires_soon_community(job_mock, template):
     assert 'ZDARMA' in html
 
 
-def test_create_message_expires_soon_community(job_mock, template):
+def test_create_message_expires_soon_standard(job_mock, template):
     job_mock.expires_at = date(2020, 7, 1)
     job_mock.pricing_plan = 'standard'
     message = create_message(job_mock, template, today=date(2020, 6, 26))

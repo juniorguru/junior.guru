@@ -1,11 +1,5 @@
-import datetime
-import json
-import os
-import shutil
 import subprocess
 from multiprocessing import Pool
-from operator import itemgetter
-from pathlib import Path
 
 from juniorguru.fetch.lib import timer
 from juniorguru.fetch.lib.google import download_sheet

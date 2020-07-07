@@ -1,6 +1,5 @@
 import hashlib
 import logging
-import re
 import time
 from functools import wraps
 from pathlib import Path
