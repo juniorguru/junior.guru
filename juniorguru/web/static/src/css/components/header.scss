@@ -148,6 +148,7 @@ a.header__nav-tab-control--active:active {
 .header__subnav-tabs {
   @include page-width;
   display: flex;
+  justify-content: flex-end;
   @include font-0;
 }
 
