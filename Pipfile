@@ -41,7 +41,6 @@ sendgrid = "*"
 [dev-packages]
 pytest = "*"
 cssselect = "*"
-isort = {extras = ["pipfile"],version = "*"}
 pync = "*"
 python-slugify = "*"
 
