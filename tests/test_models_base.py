@@ -2,7 +2,7 @@ from datetime import date, datetime, time
 
 import pytest
 
-import juniorguru.models.base as models_base
+from juniorguru.models import base as models_base
 from juniorguru.scrapers.items import Job
 
 
