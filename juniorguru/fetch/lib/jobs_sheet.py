@@ -1,6 +1,6 @@
 import hashlib
 import re
-from datetime import timedelta
+from datetime import timedelta, datetime
 from urllib.parse import urlparse
 
 import arrow
@@ -67,7 +67,11 @@ def coerce_pricing_plan(value):
 
 def coerce_datetime(value):
     if value:
-        return arrow.get(value.strip(), 'M/D/YYYY H:m:s').naive
+        value = value.strip()
+        try:
+            return arrow.get(value, 'M/D/YYYY H:m:s').naive
+        except ValueError:
+            return arrow.get(datetime.fromisoformat(value)).naive
 
 
 def coerce_date(value):
@@ -76,7 +80,10 @@ def coerce_date(value):
         try:
             return arrow.get(value, 'M/D/YYYY H:m:s').date()
         except ValueError:
-            return arrow.get(value, 'M/D/YYYY').date()
+            try:
+                return arrow.get(value, 'M/D/YYYY').date()
+            except ValueError:
+                return datetime.fromisoformat(value).date()
 
 
 def coerce_boolean(value):

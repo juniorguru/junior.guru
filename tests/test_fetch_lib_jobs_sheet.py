@@ -27,8 +27,14 @@ def create_record(record=None):
 
 @pytest.mark.parametrize('value,expected', [
     (None, None),
+
+    # default Google Sheets format
     ('12/13/2019 9:17:57', datetime(2019, 12, 13, 9, 17, 57)),
     ('8/6/2019 14:08:49', datetime(2019, 8, 6, 14, 8, 49)),
+
+    # my custom setting
+    ('2019-08-06 14:08:49', datetime(2019, 8, 6, 14, 8, 49)),
+    ('2019-08-06 14:08:49+02:00', datetime(2019, 8, 6, 14, 8, 49)),
 ])
 def test_coerce_datetime(value, expected):
     assert jobs_sheet.coerce_datetime(value) == expected
@@ -36,9 +42,15 @@ def test_coerce_datetime(value, expected):
 
 @pytest.mark.parametrize('value,expected', [
     (None, None),
+
+    # default Google Sheets format
     ('12/13/2019 9:17:57', date(2019, 12, 13)),
     ('8/6/2019 14:08:49', date(2019, 8, 6)),
     ('8/6/2019', date(2019, 8, 6)),
+
+    # my custom setting
+    ('2019-08-06 14:08:49', date(2019, 8, 6)),
+    ('2019-08-06', date(2019, 8, 6)),
 ])
 def test_coerce_date(value, expected):
     assert jobs_sheet.coerce_date(value) == expected
