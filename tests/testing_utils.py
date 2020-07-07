@@ -77,4 +77,5 @@ def prepare_job_data(id, **kwargs):
         expires_at=kwargs.get('expires_at', None),
         jg_rank=kwargs.get('jg_rank'),
         link=kwargs.get('link'),
+        pricing_plan=kwargs.get('pricing_plan', 'community'),
     )

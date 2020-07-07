@@ -86,6 +86,7 @@ def create_template_context(job, today=None):
     return dict(title=job.title,
                 company_name=job.company_name,
                 company_name_urlencoded=quote_plus(job.company_name),
+                pricing_plan=job.pricing_plan,
                 url=f'https://junior.guru/jobs/{job.id}/',
                 url_jobs='https://junior.guru/jobs/',
                 url_index='https://junior.guru/',
