@@ -27,76 +27,33 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
     <li><strong>{{ metrics.subscribers|metric }}</strong> <small>odběratelů newsletteru</small></li>
   </ul>
 
-  <figure class="quote">
-    <blockquote>
-      Překvapilo mě, kolik vnitřní mo&shy;ti&shy;va&shy;ce pro&shy;ká&shy;za&shy;li ucha&shy;ze&shy;či o naši stáž.
-      junior.guru má kva&shy;lit&shy;ní pu&shy;bli&shy;kum z ko&shy;mu&shy;ni&shy;tních kruhů.
-    </blockquote>
-    <figcaption>
-      Vašek Chalupníček, dtlab
-    </figcaption>
-  </figure>
-
   <!--
     Use this to crop whitespace from SVGs!
     https://codepen.io/Steve6886/pen/abzzdOG
   -->
-
-  <h3>Spolupracujeme</h3>
-  <ul class="logos">
-    <li>
-      <a class="logos-item" href="https://cesko.digital/" target="_blank" title="Česko.Digital">
-        <img width="150" src="{{ url_for('static', filename='images/logos/ceskodigital.svg') }}" alt="Česko.Digital">
-      </a>
-    </li>
-    <li>
-      <a class="logos-item" href="https://digikoalice.cz/" target="_blank" title="Česká národní koalice pro digitální pracovní místa">
-        <img width="150" src="{{ url_for('static', filename='images/logos/digikoalice.png') }}" alt="DigiKoalice">
-      </a>
-    </li>
-    <li>
-      <a class="logos-item" href="https://holkyzmarketingu.cz/" target="_blank" title="#HolkyzMarketingu">
-        <img width="150" src="{{ url_for('static', filename='images/logos/holkyzmarketingu.png') }}" alt="#HolkyzMarketingu">
-      </a>
-    </li>
-    <li>
-      <a class="logos-item" href="https://pyladies.cz/" target="_blank" title="PyLadies CZ">
-        <img width="150" src="{{ url_for('static', filename='images/logos/pyladies.svg') }}" alt="PyLadies">
-      </a>
-    </li>
-    <li>
-      <a class="logos-item" href="https://pyvec.org/" target="_blank" title="Pyvec">
-        <img width="150" src="{{ url_for('static', filename='images/logos/pyvec.svg') }}" alt="Pyvec">
-      </a>
-    </li>
-    <li>
-      <a class="logos-item" href="https://www.reactgirls.com/" target="_blank" title="Reactgirls">
-        <img width="150" src="{{ url_for('static', filename='images/logos/reactgirls.png') }}" alt="Reactgirls">
-      </a>
-    </li>
-  </ul>
-
-  <h3>Zmínili junior.guru</h3>
-  <ul class="logos">
-    <li class="logos-item">
-      <img width="150" src="{{ url_for('static', filename='images/logos/denikn.svg') }}" alt="Deník N">
-    </li>
-    <li class="logos-item">
-      <img width="150" src="{{ url_for('static', filename='images/logos/hn.svg') }}" alt="KaranTéma HN">
-    </li>
-    <li class="logos-item">
-      <img width="150" src="{{ url_for('static', filename='images/logos/kafemlejnek.png') }}" alt="Kafemlejnek.TV">
-    </li>
-    <li class="logos-item">
-      <img width="150" src="{{ url_for('static', filename='images/logos/lupa.svg') }}" alt="Lupa.cz">
-    </li>
-    <li class="logos-item">
-      <img width="150" src="{{ url_for('static', filename='images/logos/marieclaire.svg') }}" alt="Marie Claire">
-    </li>
-    <li class="logos-item">
-      <img width="150" src="{{ url_for('static', filename='images/logos/zdrojak.svg') }}" alt="Zdroják.cz">
-    </li>
-  </ul>
+  <div class="logos">
+    <h3 class="logos__heading">Zmínili junior.guru</h3>
+    <ul class="logos__items">
+      <li class="logos__item logos__item--without-link">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/denikn.svg') }}" alt="Deník N">
+      </li>
+      <li class="logos__item logos__item--without-link">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/hn.svg') }}" alt="KaranTéma HN">
+      </li>
+      <li class="logos__item logos__item--without-link">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/kafemlejnek.png') }}" alt="Kafemlejnek.TV">
+      </li>
+      <li class="logos__item logos__item--without-link">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/lupa.svg') }}" alt="Lupa.cz">
+      </li>
+      <li class="logos__item logos__item--without-link">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/marieclaire.svg') }}" alt="Marie Claire">
+      </li>
+      <li class="logos__item logos__item--without-link">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/zdrojak.svg') }}" alt="Zdroják.cz">
+      </li>
+    </ul>
+  </div>
 </section>
 
 <section id="pricing" class="pricing">
@@ -175,6 +132,53 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
   <p class="candidate-lead">
     Ač jsou zde studenti VŠ vítáni, junior.guru se snaží oslovovat především <strong>kandidáty z nového, zatím nevyčerpaného zdroje:</strong> Lidi bez původního technického vzdělání, kteří se našli v&nbsp;pro&shy;gra&shy;mo&shy;vá&shy;ní a nyní se snaží změnit profesi. Jsou typicky starší než studenti, mají za sebou vzdělání nebo i kariéru v jiném oboru, a nyní udělali krok do neznáma, aby se dostali do IT. Investovali do své výuky a sami se po ve&shy;če&shy;rech pro&shy;pra&shy;co&shy;va&shy;li k prvním úspě&shy;chům, hnáni <strong>vlastní pílí a vnitřní motivací</strong>.
   </p>
+
+  <figure class="quote">
+    <blockquote>
+      Překvapilo mě, kolik vnitřní mo&shy;ti&shy;va&shy;ce pro&shy;ká&shy;za&shy;li ucha&shy;ze&shy;či o naši stáž.
+      junior.guru má kva&shy;lit&shy;ní pu&shy;bli&shy;kum z ko&shy;mu&shy;ni&shy;tních kruhů.
+    </blockquote>
+    <figcaption>
+      Vašek Chalupníček, dtlab
+    </figcaption>
+  </figure>
+
+  <div class="logos">
+    <h3 class="logos__heading">Spolupracujeme</h3>
+    <ul class="logos__items">
+      <li class="logos__item">
+        <a class="logos__link" href="https://cesko.digital/" target="_blank" title="Česko.Digital">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/ceskodigital.svg') }}" alt="Česko.Digital">
+        </a>
+      </li>
+      <li class="logos__item">
+        <a class="logos__link" href="https://digikoalice.cz/" target="_blank" title="Česká národní koalice pro digitální pracovní místa">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/digikoalice.png') }}" alt="DigiKoalice">
+        </a>
+      </li>
+      <li class="logos__item">
+        <a class="logos__link" href="https://holkyzmarketingu.cz/" target="_blank" title="#HolkyzMarketingu">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/holkyzmarketingu.png') }}" alt="#HolkyzMarketingu">
+        </a>
+      </li>
+      <li class="logos__item">
+        <a class="logos__link" href="https://pyladies.cz/" target="_blank" title="PyLadies CZ">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/pyladies.svg') }}" alt="PyLadies">
+        </a>
+      </li>
+      <li class="logos__item">
+        <a class="logos__link" href="https://pyvec.org/" target="_blank" title="Pyvec">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/pyvec.svg') }}" alt="Pyvec">
+        </a>
+      </li>
+      <li class="logos__item">
+        <a class="logos__link" href="https://www.reactgirls.com/" target="_blank" title="Reactgirls">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/reactgirls.png') }}" alt="Reactgirls">
+        </a>
+      </li>
+    </ul>
+  </div>
+
   <div class="candidate-subsections">
     <div class="candidate-subsection candidate-traits">
       <h3>Typický uchazeč z junior.guru</h3>
@@ -212,7 +216,7 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
       <img alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
       <span class="support-text">
         Pokud máte jakékoliv otázky, Honza vám je rád zodpoví.<br>
-        Pište na&nbsp;{{ 'ahoj@junior.guru'|email_link }}.
+        Pište na&nbsp;{{ 'honza@junior.guru'|email_link }}.
       </span>
     </span>
   </p>
@@ -220,37 +224,22 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
 
 <hr>
 
-<!-- keeping #sponsor-handbook for backward compatibility of links -->
+
 <section id="handbook" class="sponsor-handbook">
-  <h2 id="sponsor-handbook">Sponzorujte unikátní příručku</h2>
+  <!-- keeping for backward compatibility of links -->
+  <span id="sponsor-handbook"><span id="handbook-pricing"></span></span>
+
+  <h2>Sponzorujte unikátní příručku</h2>
   <p class="sponsor-handbook-badge"><small>Připravuje se</small></p>
   <div class="sponsor-handbook-content">
     <img width="200" src="{{ url_for('static', filename='images/handbook.svg') }}">
     <p>
-      Na junior.guru brzy vyjde <strong>ucelený soubor rad pro juniory</strong> v rozsahu více než&nbsp;30&nbsp;normostran. Díky placenému logu vaší firmy v záhlaví stránky bude obsah příručky přístupný zdarma komukoliv. <strong>Text ještě nebyl publikován, ale už nyní je o něj mezi juniory velký zájem!</strong>
+      Na junior.guru brzy vyjde <strong>ucelený soubor rad pro juniory</strong> v rozsahu více než&nbsp;30&nbsp;normostran. Nebude to ebook, ale <strong>živá a stále aktualizovaná webová stránka</strong>. Díky placenému logu vaší firmy v záhlaví stránky bude všem přístupná zdarma. <strong>Text ještě nebyl publikován, ale už nyní je o něj mezi juniory velký zájem!</strong>
       Můžete být mezi prvními, kteří si na příručce zajistí místo.
     </p>
-
-    <h3>Co dostanete</h3>
-    <p>
-      Po dobu <a href="#handbook-pricing">předplatného</a> bude vaše logo v záhlaví příručky s odkazem na vaše stránky. Každý junior v&nbsp;ČR jej uvidí.
-    </p>
-
-    <h3>Zajíc v pytli?</h3>
-    <p>
-      Projděte si <a href="#handbook-preview">ukázky</a> a <a href="#handbook-toc">osnovu</a>, ať víte, do čeho jdete. Firmy, které si sponzorství domluví už před vydáním, mají výhodu. Jejich logo totiž bude na příručce v den jejího uveřejnění, kdy bude nejvyšší jednorázová návštěvnost.
-    </p>
-
-    <h3>Proč sponzorovat</h3>
-    <ul class="checklist">
-      <li>Budujete značku vůči příštím kandidátům a představujete se jako místo, kde na juniory myslí, umí to s nimi, a kam je zkrátka radost nastoupit.</li>
-      <li>Projevujete společenskou odpovědnost. Díky vašemu příspěvku bude text komukoliv veřejně zdarma přístupný. Příručka přitom dá jasně najevo, že tento v Česku unikátní obsah je zdarma právě díky vám.</li>
-      <li>Příručka zvýší a standardizuje úroveň juniorních kandidátů v&nbsp;ČR.</li>
-      <li>Financováním junior.guru podpoříte příchod nových lidí na trh. V&nbsp;dlouhodobém horizontu zlepšíte výběr a rozmanitost kandidátů v&nbsp;ČR.</li>
-    </ul>
   </div>
-  <div id="handbook-pricing" class="pricing">
-    <h2 class="pricing__heading">Sponzorské balíčky</h2>
+
+  <div class="pricing">
     <div class="pricing__plans pricing__plans--3">
       <div class="pricing__plan">
         <div class="pricing__plan-content">
@@ -263,12 +252,6 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
         <p class="pricing__plan-price">
           <strong class="pricing__plan-price-amount">9&nbsp;000&nbsp;Kč</strong>
           <small class="pricing__plan-price-note">neplátce DPH</small>
-        </p>
-        <p class="button-compartment">
-          <strong class="button button--secondary">
-            Napište&nbsp;na
-            <span class="button__note">{{ 'logo@junior.guru'|email_link }}</span>
-          </strong>
         </p>
       </div>
       <div class="pricing__plan pricing__plan--highlight">
@@ -288,12 +271,6 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
             <small class="pricing__plan-price-note">neplátce DPH</small>
           </p>
         </div>
-        <p class="button-compartment">
-          <strong class="button">
-            Napište&nbsp;na
-            <span class="button__note">{{ 'logo@junior.guru'|email_link }}</span>
-          </strong>
-        </p>
       </div>
       <div class="pricing__plan">
         <div class="pricing__plan-content">
@@ -313,15 +290,27 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
             <small class="pricing__plan-price-note">neplátce DPH</small>
           </p>
         </div>
-        <p class="button-compartment">
-          <strong class="button">
-            Napište&nbsp;na
-            <span class="button__note">{{ 'logo@junior.guru'|email_link }}</span>
-          </strong>
-        </p>
       </div>
     </div>
+    <p class="button-compartment">
+      <strong class="button">
+        Máte zájem?&nbsp;Pište&nbsp;na
+        <span class="button__note">{{ 'ahoj@junior.guru'|email_link }}</span>
+      </strong>
+    </p>
   </div>
+
+  <div class="sponsor-handbook-content">
+    <h3>Proč sponzorovat</h3>
+    <ul class="checklist">
+      <li>Budujete značku vůči příštím kandidátům a představujete se jako místo, kde na juniory myslí, umí to s nimi, a kam je zkrátka radost nastoupit.</li>
+      <li>Projevujete společenskou odpovědnost. Díky vašemu příspěvku bude text komukoliv veřejně zdarma přístupný. Příručka přitom dá jasně najevo, že tento v Česku unikátní obsah je zdarma právě díky vám.</li>
+      <li>Příručka zvýší a standardizuje úroveň juniorních kandidátů v&nbsp;ČR.</li>
+      <li>Financováním junior.guru podpoříte příchod nových lidí na trh. V&nbsp;dlouhodobém horizontu zlepšíte výběr a rozmanitost kandidátů v&nbsp;ČR.</li>
+      <li>Firmy, které si sponzorství domluví už před vydáním, mají výhodu. Jejich logo totiž bude na příručce v den jejího uveřejnění, kdy bude nejvyšší jednorázová návštěvnost.</li>
+    </ul>
+  </div>
+
   <div id="handbook-toc" class="sponsor-handbook-toc">
     <h3>Osnova</h3>
     <ul>
@@ -363,7 +352,7 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
       <img alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
       <span class="support-text">
         Pokud máte jakékoliv otázky, Honza vám je rád zodpoví.<br>
-        Pište na&nbsp;{{ 'ahoj@junior.guru'|email_link }}.
+        Pište na&nbsp;{{ 'honza@junior.guru'|email_link }}.
       </span>
     </span>
   </p>
