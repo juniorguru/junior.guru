@@ -100,7 +100,7 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
 </section>
 
 <section id="pricing" class="pricing">
-  <h2 class="pricing__heading">Ceník nabídek práce</h2>
+  <h2 class="pricing__heading">Inzerujte pracovní nabídky</h2>
   <div class="pricing__plans pricing__plans--2">
     <div class="pricing__plan">
       <div class="pricing__plan-content">
@@ -108,19 +108,19 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
         <ul class="checklist">
           <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
           <li>Objeví se v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
-          <li>Platnost inzerátu je <strong>30 dní</strong></li>
+          <li>Platnost inzerátu <strong>30 dní</strong></li>
         </ul>
         <p class="pricing__note">
-          <strong>Ideální pro:</strong> Dobrovolnictví, brigády, stáže, neziskovky, malé projekty, firmy spolupracující s <a href="https://pyladies.cz/" target="_blank">PyLadies</a>.
+          <strong>Pouze:</strong> Dobrovolnictví, brigády, stáže, neziskovky, malé projekty, firmy spolupracující s <a href="https://pyladies.cz/" target="_blank">PyLadies</a>.
         </p>
       </div>
       <p class="pricing__plan-price">
         <strong class="pricing__plan-price-amount">0&nbsp;Kč</strong>
-        <small class="pricing__plan-price-note">neplátce DPH</small>
+        <small class="pricing__plan-price-note">ano, zdarma</small>
       </p>
       <p class="button-compartment">
         <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank" class="button button--secondary">
-          Přidat nabídku
+          Přidat inzerát
         </a>
       </p>
     </div>
@@ -130,37 +130,40 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
         <ul class="checklist">
           <li>Inzerát na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a></li>
           <li>Objeví se v příštím <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
-          <li>Platnost inzerátu je <strong>30 dní</strong></li>
+          <li>Platnost inzerátu <strong>30 dní</strong></li>
         </ul>
       </div>
       <p class="pricing__plan-price">
-        <strong class="pricing__plan-price-amount">690&nbsp;Kč</strong>
+        <strong class="pricing__plan-price-amount">500&nbsp;Kč</strong>
         <small class="pricing__plan-price-note">neplátce DPH</small>
       </p>
       <p class="button-compartment">
         <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank" class="button">
-          Přidat nabídku
+          Přidat inzerát
         </a>
       </p>
     </div>
     <div class="pricing__plan">
       <div class="pricing__plan-content">
-        <h3 class="pricing__plan-heading">Kariérní portál</h3>
+        <h3 class="pricing__plan-heading">Roční paušál</h3>
         <p>
-          Robot bude z vašeho kariérního portálu stahovat
-          všechny juniorní inzeráty a zobrazovat je na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a>.
+          Na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a>
+          budete moci libovolně vystavovat, prodlužovat nebo rušit inzeráty.
         </p>
         <ul class="checklist">
-          <li>Automatické vystavení inzerátu</li>
-          <li>Automatické zrušení inzerátu</li>
-          <li>Inzeráty budou i v <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
+          <li>Nejvýše <strong>3&nbsp;inzeráty současně</strong></li>
+          <li>Nové se objeví v <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank">newsletteru</a></li>
+          <li>Platnost paušálu <strong>365 dní</strong> od&nbsp;prvního inzerátu</li>
         </ul>
       </div>
+      <p class="pricing__plan-price">
+        <strong class="pricing__plan-price-amount">5000&nbsp;Kč</strong>
+        <small class="pricing__plan-price-note">neplátce DPH</small>
+      </p>
       <p class="button-compartment">
-        <strong class="button button--secondary">
-          Objednávejte na
-          <span class="button__note">{{ 'ahoj@junior.guru'|email_link }}</span>
-        </strong>
+        <a href="https://forms.gle/Nr2xhH2p2Cqj21Rq9" target="_blank" class="button">
+          Přidat první inzerát
+        </a>
       </p>
     </div>
   </div>
@@ -168,7 +171,7 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
 
 <hr>
 <section class="candidate">
-  <h2>Profil typic&shy;ké&shy;ho kan&shy;di&shy;dá&shy;ta</h2>
+  <h2>Jaké kan&shy;di&shy;dá&shy;ty najdete</h2>
   <p class="candidate-lead">
     Ač jsou zde studenti VŠ vítáni, junior.guru se snaží oslovovat především <strong>kandidáty z nového, zatím nevyčerpaného zdroje:</strong> Lidi bez původního technického vzdělání, kteří se našli v&nbsp;pro&shy;gra&shy;mo&shy;vá&shy;ní a nyní se snaží změnit profesi. Jsou typicky starší než studenti, mají za sebou vzdělání nebo i kariéru v jiném oboru, a nyní udělali krok do neznáma, aby se dostali do IT. Investovali do své výuky a sami se po ve&shy;če&shy;rech pro&shy;pra&shy;co&shy;va&shy;li k prvním úspě&shy;chům, hnáni <strong>vlastní pílí a vnitřní motivací</strong>.
   </p>
@@ -251,68 +254,74 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
     <div class="pricing__plans pricing__plans--3">
       <div class="pricing__plan">
         <div class="pricing__plan-content">
-          <h3 class="pricing__plan-heading">Na zkoušku</h3>
+          <h3 class="pricing__plan-heading">Logo na&nbsp;3&nbsp;měsíce</h3>
           <ul class="checklist">
-            <li>Logo v záhlaví, s&nbsp;odkazem</li>
-            <li>Logo bude vidět <strong>1&nbsp;měsíc</strong></li>
+            <li>Klikatelné logo v záhlaví příručky</li>
+            <li>Logo bude vidět <strong>90&nbsp;dní</strong></li>
           </ul>
         </div>
         <p class="pricing__plan-price">
-          <strong class="pricing__plan-price-amount">2&nbsp;990&nbsp;Kč</strong>
+          <strong class="pricing__plan-price-amount">9&nbsp;000&nbsp;Kč</strong>
           <small class="pricing__plan-price-note">neplátce DPH</small>
         </p>
-      </div>
-      <div class="pricing__plan">
-        <div class="pricing__plan-content">
-          <h3 class="pricing__plan-heading">Čtvrt&nbsp;roku</h3>
-          <ul class="checklist">
-            <li>Logo v záhlaví, s&nbsp;odkazem</li>
-            <li>Logo bude vidět <strong>3&nbsp;měsíce</strong></li>
-            <li>V&nbsp;ceně <strong>1 platba</strong> za&nbsp;<a href="#pricing">inzerci</a></li>
-          </ul>
-          <h3 class="pricing__note">
-            <strong class="pricing__discount">Sleva 10&nbsp;%</strong> Místo 9&nbsp;660&nbsp;Kč zaplatíte:
-          </h3>
-        </div>
-        <p class="pricing__plan-price">
-          <strong class="pricing__plan-price-amount">8&nbsp;690&nbsp;Kč</strong>
-          <small class="pricing__plan-price-note">neplátce DPH</small>
+        <p class="button-compartment">
+          <strong class="button button--secondary">
+            Ozvěte&nbsp;se&nbsp;na
+            <span class="button__note">{{ 'ahoj@junior.guru'|email_link }}</span>
+          </strong>
         </p>
       </div>
       <div class="pricing__plan pricing__plan--highlight">
         <div class="pricing__plan-content">
-          <h3 class="pricing__plan-heading">Rok</h3>
+          <h3 class="pricing__plan-heading">Logo na&nbsp;rok</h3>
           <ul class="checklist">
-            <li>Logo v záhlaví, s&nbsp;odkazem</li>
-            <li>Logo bude vidět <strong>1&nbsp;rok</strong></li>
-            <li>V&nbsp;ceně <strong>4 platby</strong> za&nbsp;<a href="#pricing">inzerci</a></li>
+            <li>Klikatelné logo v záhlaví příručky</li>
+            <li>Logo bude vidět <strong>365&nbsp;dní</strong></li>
           </ul>
-          <h3 class="pricing__note">
-            <strong class="pricing__discount">Sleva 15&nbsp;%</strong> Místo 38&nbsp;640&nbsp;Kč zaplatíte:
-          </h3>
         </div>
-        <p class="pricing__plan-price">
-          <strong class="pricing__plan-price-amount">32&nbsp;890&nbsp;Kč</strong>
-          <small class="pricing__plan-price-note">neplátce DPH</small>
+        <div class="pricing__plan-price">
+          <h3 class="pricing__note">
+            <strong class="pricing__discount">Sleva 1&nbsp;měsíc</strong> Ušetříte 3&nbsp;000&nbsp;Kč
+          </h3>
+          <p>
+            <strong class="pricing__plan-price-amount">33&nbsp;000&nbsp;Kč</strong>
+            <small class="pricing__plan-price-note">neplátce DPH</small>
+          </p>
+        </div>
+        <p class="button-compartment">
+          <strong class="button">
+            Ozvěte&nbsp;se&nbsp;na
+            <span class="button__note">{{ 'ahoj@junior.guru'|email_link }}</span>
+          </strong>
+        </p>
+      </div>
+      <div class="pricing__plan">
+        <div class="pricing__plan-content">
+          <h3 class="pricing__plan-heading">Logo +&nbsp;paušál</h3>
+          <ul class="checklist">
+            <li>Klikatelné logo v záhlaví příručky</li>
+            <li>Logo bude vidět <strong>365&nbsp;dní</strong></li>
+            <li><a href="#pricing">Roční paušál na inzerci</a> v ceně</li>
+          </ul>
+        </div>
+        <div class="pricing__plan-price">
+          <h3 class="pricing__note">
+            <strong class="pricing__discount">Nejvýhodnější</strong> Ušetříte 5&nbsp;000&nbsp;Kč
+          </h3>
+          <p>
+            <strong class="pricing__plan-price-amount">36&nbsp;000&nbsp;Kč</strong>
+            <small class="pricing__plan-price-note">neplátce DPH</small>
+          </p>
+        </div>
+        <p class="button-compartment">
+          <strong class="button">
+            Ozvěte&nbsp;se&nbsp;na
+            <span class="button__note">{{ 'ahoj@junior.guru'|email_link }}</span>
+          </strong>
         </p>
       </div>
     </div>
-    <p class="pricing__note">
-      Máte-li v ceně 4&nbsp;platby za inzerci, můžete
-      <strong>během vašeho sponzorství</strong> vložit 4&nbsp;pracovní
-      inzeráty,
-      každý s platností 30 dní. Můžete ale také vložit 1&nbsp;inzerát
-      a 3&times; jej prodloužit, nebo 2&nbsp;inzeráty a každý
-      z nich prodloužit 1&times;. Vkládání či prodlužování nad rámec
-      balíčku je zpoplatněno standardně.
-    </p>
   </div>
-  <p class="button-compartment">
-    <strong class="button">
-      Objednávejte na
-      <span class="button__note">{{ 'ahoj@junior.guru'|email_link }}</span>
-    </strong>
-  </p>
   <div id="handbook-toc" class="sponsor-handbook-toc">
     <h3>Osnova</h3>
     <ul>
@@ -349,12 +358,6 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
       <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-12.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-12.png') }}" loading="lazy"></a></li>
     </ul>
   </div>
-  <p class="button-compartment">
-    <strong class="button">
-      Objednávejte na
-      <span class="button__note">{{ 'ahoj@junior.guru'|email_link }}</span>
-    </strong>
-  </p>
   <p class="support">
     <span class="support-content">
       <img alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">

@@ -103,6 +103,7 @@ def test_coerce_set(value, expected):
 
 
 @pytest.mark.parametrize('value,expected', [
+    ('500 CZK — Standard', 'standard'),
     ('690 CZK — Standard', 'standard'),
     ('600 CZK', 'standard'),
     ('0 CZK', 'community'),
