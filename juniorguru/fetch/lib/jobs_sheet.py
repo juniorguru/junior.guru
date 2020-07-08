@@ -60,8 +60,12 @@ def coerce_boolean_words(value):
 
 
 def coerce_pricing_plan(value):
-    if value and not value.strip().lower().startswith('0 czk'):
-        return 'standard'
+    if value:
+        value = value.strip().lower()
+        if 'flat rate' in value:
+            return 'annual_flat_rate'
+        if not value.startswith('0 czk'):
+            return 'standard'
     return 'community'
 
 

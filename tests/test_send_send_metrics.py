@@ -141,7 +141,7 @@ def test_create_message_expires_soon_community(job_mock, template):
     message = create_message(job_mock, template, today=date(2020, 6, 26))
     html = message.get()['content'][0]['value']
 
-    assert 'komunitní' in html
+    assert 'komunit' in html
     assert 'ZDARMA' in html
     assert 'paušál' not in html
     assert 'https://junior.guru/hire-juniors/#pricing' in html
@@ -154,6 +154,18 @@ def test_create_message_expires_soon_standard(job_mock, template):
     html = message.get()['content'][0]['value']
 
     assert '500&nbsp;Kč' in html
+    assert 'paušál' not in html
+    assert 'komunit' not in html
     assert 'https://junior.guru/hire-juniors/#pricing' in html
+
+
+def test_create_message_expires_soon_annual_flat_rate(job_mock, template):
+    job_mock.expires_at = date(2020, 7, 1)
+    job_mock.pricing_plan = 'annual_flat_rate'
+    message = create_message(job_mock, template, today=date(2020, 6, 26))
+    html = message.get()['content'][0]['value']
+
     assert 'paušál' in html
-    assert 'https://junior.guru/hire-juniors/#handbook-pricing' in html
+    assert 'ZDARMA' in html
+    assert 'komunit' not in html
+    assert 'https://junior.guru/hire-juniors/#pricing' in html

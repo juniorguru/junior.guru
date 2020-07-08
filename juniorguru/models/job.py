@@ -72,6 +72,7 @@ class Job(BaseModel):
     pricing_plan = CharField(default='community', choices=[
         ('community', None),
         ('standard', None),
+        ('annual_flat_rate', None),
     ])
     approved_at = DateField(null=True)
     expires_at = DateField(null=True)

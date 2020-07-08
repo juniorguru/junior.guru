@@ -127,19 +127,16 @@
     Byl vložen jako
     <a href="https://junior.guru/hire-juniors/#pricing">komunitní</a>,
     můžete jej tedy ZDARMA
+  {% elif pricing_plan == 'annual_flat_rate' %}
+    Byl vložen v rámci
+    <a href="https://junior.guru/hire-juniors/#pricing">ročního paušálu</a>,
+    můžete jej tedy ZDARMA
   {% else %}
     Za&nbsp;<a href="https://junior.guru/hire-juniors/#pricing">500&nbsp;Kč</a>
     jej můžete
   {% endif %}
   prodloužit o dalších 30&nbsp;dní. Stačí, když odpovíte na tento e-mail.
-</b>
-{% if pricing_plan != 'community' %}
-  <br><small>
-    Pokud máte <a href="https://junior.guru/hire-juniors/#handbook-pricing">paušál</a>,
-    za prodloužení tohoto nebo vystavení nového inzerátu <strong>neplatíte</strong>.
-  </small>
-{% endif %}
-</p>
+</b></p>
 {% endif %}
 <p>
   Chcete-li inzerát změnit, zrušit, prodloužit, nebo máte-li jakýkoliv
