@@ -2,7 +2,7 @@
 {% block title %}Najímejte odhodlané juniory &mdash; ceník pro firmy{% endblock %}
 
 {% block description -%}
-Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vydřít. Na junior.guru se vám na inzerát ozvou ti nejvíce odhodlaní a motivovaní junioři na českém trhu.
+Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vydřít. Podpořte D&I (diversity & inclusion) při náboru ve vaší firmě oslovením i začínajících žen programátorek.
 {%- endblock %}
 
 {% block body_class %} page--hire-juniors{% endblock %}
@@ -11,10 +11,8 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
 <header>
   <h1>Když juniory, tak ty odhodlané!</h1>
   <p>
-    Hledáte juniorní pro&shy;gra&shy;má&shy;to&shy;ry?
-    <a href="{{ url_for('jobs') }}">Nabídky práce na junior.guru</a> navštěvují především lidé,
-    kteří si svou kariéru v&nbsp;IT rozhodli vydřít. Inzercí zde zvy&shy;šu&shy;je&shy;te šanci,
-    že se vám ozvou ti <strong>nejvíce od&shy;hod&shy;la&shy;ní a mo&shy;ti&shy;vo&shy;va&shy;ní junioři</strong> na českém trhu.
+    <a href="{{ url_for('jobs') }}">Nabídky práce na junior.guru</a> navště&shy;vu&shy;jí pře&shy;de&shy;vším ti, kdo si svou kariéru v&nbsp;IT rozhodli vydřít.
+    Na inzerát se vám ozvou <strong>od&shy;hod&shy;la&shy;ní a mo&shy;ti&shy;vo&shy;va&shy;ní junioři</strong>. Navíc máte šanci oslovit <strong>pestrou škálu lidí, včetně žen pro&shy;gra&shy;má&shy;to&shy;rek</strong>.
   </p>
 </header>
 
@@ -27,37 +25,32 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
     <li><strong>{{ metrics.subscribers|metric }}</strong> <small>odběratelů newsletteru</small></li>
   </ul>
 
-  <!--
-    Use this to crop whitespace from SVGs!
-    https://codepen.io/Steve6886/pen/abzzdOG
-  -->
   <div class="logos">
-    <h3 class="logos__heading">Zmínili junior.guru</h3>
     <ul class="logos__items">
       <li class="logos__item logos__item--without-link">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/denikn.svg') }}" alt="Deník N">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/denikn.svg') }}" alt="Deník N" title="Deník N se zmínil o junior.guru">
       </li>
       <li class="logos__item logos__item--without-link">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/hn.svg') }}" alt="KaranTéma HN">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/hn.svg') }}" alt="KaranTéma HN" title="Newsletter KaranTéma HN se zmínil o junior.guru">
       </li>
       <li class="logos__item logos__item--without-link">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/kafemlejnek.png') }}" alt="Kafemlejnek.TV">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/kafemlejnek.png') }}" alt="Kafemlejnek.TV" title="Kafemlejnek.TV měl díl o junior.guru">
       </li>
       <li class="logos__item logos__item--without-link">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/lupa.svg') }}" alt="Lupa.cz">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/lupa.svg') }}" alt="Lupa.cz" title="Lupa.cz se zmínila o junior.guru">
       </li>
       <li class="logos__item logos__item--without-link">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/marieclaire.svg') }}" alt="Marie Claire">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/marieclaire.svg') }}" alt="Marie Claire" title="Časopis Marie Claire se zmínil o junior.guru">
       </li>
       <li class="logos__item logos__item--without-link">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/zdrojak.svg') }}" alt="Zdroják.cz">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/zdrojak.svg') }}" alt="Zdroják.cz" title="Zdroják.cz se zmínil o junior.guru">
       </li>
     </ul>
   </div>
 </section>
 
 <section id="pricing" class="pricing">
-  <h2 class="pricing__heading">Inzerujte pracovní nabídky</h2>
+  <!-- <h2 class="pricing__heading">Inzerujte pracovní nabídky</h2> -->
   <div class="pricing__plans pricing__plans--2">
     <div class="pricing__plan">
       <div class="pricing__plan-content">
@@ -128,23 +121,30 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
 
 <hr>
 <section class="candidate">
-  <h2>Jaké kan&shy;di&shy;dá&shy;ty najdete</h2>
-  <p class="candidate-lead">
-    Ač jsou zde studenti VŠ vítáni, junior.guru se snaží oslovovat především <strong>kandidáty z nového, zatím nevyčerpaného zdroje:</strong> Lidi bez původního technického vzdělání, kteří se našli v&nbsp;pro&shy;gra&shy;mo&shy;vá&shy;ní a nyní se snaží změnit profesi. Jsou typicky starší než studenti, mají za sebou vzdělání nebo i kariéru v jiném oboru, a nyní udělali krok do neznáma, aby se dostali do IT. Investovali do své výuky a sami se po ve&shy;če&shy;rech pro&shy;pra&shy;co&shy;va&shy;li k prvním úspě&shy;chům, hnáni <strong>vlastní pílí a vnitřní motivací</strong>.
-  </p>
+  <div class="candidate-content">
+    <h2>Jaké kan&shy;di&shy;dá&shy;ty zde najdete</h2>
+    <h3>Motivované</h3>
+    <p>
+      Ač jsou zde studenti VŠ vítáni, junior.guru se snaží oslovovat především <strong>kandidáty z nového zdroje:</strong> Lidi bez původního technického vzdělání, kteří se našli v&nbsp;pro&shy;gra&shy;mo&shy;vá&shy;ní a nyní se snaží změnit profesi. Jsou typicky starší než studenti, mají za sebou vzdělání nebo i kariéru v jiném oboru, a nyní udělali krok do neznáma, aby se dostali do IT. Investovali do své výuky a sami se po ve&shy;če&shy;rech pro&shy;pra&shy;co&shy;va&shy;li k prvním úspě&shy;chům, hnáni <strong>vlastní pílí a vnitřní motivací</strong>.
+    </p>
 
-  <figure class="quote">
-    <blockquote>
-      Překvapilo mě, kolik vnitřní mo&shy;ti&shy;va&shy;ce pro&shy;ká&shy;za&shy;li ucha&shy;ze&shy;či o naši stáž.
-      junior.guru má kva&shy;lit&shy;ní pu&shy;bli&shy;kum z ko&shy;mu&shy;ni&shy;tních kruhů.
-    </blockquote>
-    <figcaption>
-      Vašek Chalupníček, dtlab
-    </figcaption>
-  </figure>
+    <figure class="quote">
+      <blockquote>
+        Překvapilo mě, kolik vnitřní mo&shy;ti&shy;va&shy;ce pro&shy;ká&shy;za&shy;li ucha&shy;ze&shy;či o naši stáž.
+        junior.guru má kva&shy;lit&shy;ní pu&shy;bli&shy;kum z ko&shy;mu&shy;ni&shy;tních kruhů.
+      </blockquote>
+      <figcaption>
+        Vašek Chalupníček, dtlab
+      </figcaption>
+    </figure>
+
+    <h3>Rozmanité</h3>
+    <p>
+      Aktuálně je v Českém IT <a href="https://www.ceskovdatech.cz/clanek/128-neni-ajtak-jako-ajtak/">pouze 9,9 % žen</a>, což je méně než v Turecku. To znamená, že <strong>pokud se omezíte jen na hledání zkušenějších programátorů, rozmanitost svého týmu neposílíte.</strong> Díky tomu, jak je junior.guru tvořeno a s jakými komunitami od svého počátku spolupracuje, oslovuje pestrou škálu lidí, včetně mnoha žen programátorek.
+    </p>
+  </div>
 
   <div class="logos">
-    <h3 class="logos__heading">Spolupracujeme</h3>
     <ul class="logos__items">
       <li class="logos__item">
         <a class="logos__link" href="https://cesko.digital/" target="_blank" title="Česko.Digital">
@@ -181,16 +181,16 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
 
   <div class="candidate-subsections">
     <div class="candidate-subsection candidate-traits">
-      <h3>Typický uchazeč z junior.guru</h3>
+      <h3>Uchazeči z junior.guru</h3>
       <ul class="checklist">
-        <li>Zná <strong>běžný programovací jazyk</strong> v rozsahu <a href="https://naucse.python.cz/">kurzu pro začátečníky</a>.</li>
-        <li>Má na projektech naučenou <strong>schopnost dostat zadání a rozložit jej na podproblémy</strong>.</li>
-        <li>Má <strong>vlastní projekt</strong> či jinou praktickou ukázku své práce.</li>
-        <li>Zvládá <strong>editor, Git, příkazovou řádku</strong>.</li>
-        <li>Mívá dobrou <strong>angličtinu</strong>.</li>
-        <li>Mívá velkou <strong>vnitřní motivaci</strong> učit se a uspět.</li>
-        <li>Mívá <strong>předchozí zkušenosti z jiného oboru</strong>, bývá to všestranná, komunikativní osobnost.</li>
-        <li>Mnohdy může nastoupit ihned.</li>
+        <li>Znají <strong>běžný programovací jazyk</strong> v rozsahu <a href="https://naucse.python.cz/">kurzu pro začátečníky</a>.</li>
+        <li>Mají na projektech naučenou <strong>schopnost dostat zadání a rozložit jej na podproblémy</strong>.</li>
+        <li>Mají <strong>vlastní projekt</strong> či jinou praktickou ukázku své práce.</li>
+        <li>Zvládají <strong>editor, Git, příkazovou řádku</strong>.</li>
+        <li>Mívají dobrou <strong>angličtinu</strong>.</li>
+        <li>Mívají velkou <strong>vnitřní motivaci</strong> učit se a uspět.</li>
+        <li>Mívají <strong>předchozí zkušenosti z jiného oboru</strong>, bývá to všestranná, komunikativní osobnost.</li>
+        <li>Mnohdy mohou nastoupit ihned.</li>
       </ul>
     </div>
     <div class="candidate-subsection">
@@ -304,9 +304,9 @@ Hledáte juniory? Najímejte ty, kteří si svou kariéru v&nbsp;IT rozhodli vyd
     <h3>Proč sponzorovat</h3>
     <ul class="checklist">
       <li>Budujete značku vůči příštím kandidátům a představujete se jako místo, kde na juniory myslí, umí to s nimi, a kam je zkrátka radost nastoupit.</li>
-      <li>Projevujete společenskou odpovědnost. Díky vašemu příspěvku bude text komukoliv veřejně zdarma přístupný. Příručka přitom dá jasně najevo, že tento v Česku unikátní obsah je zdarma právě díky vám.</li>
-      <li>Příručka zvýší a standardizuje úroveň juniorních kandidátů v&nbsp;ČR.</li>
-      <li>Financováním junior.guru podpoříte příchod nových lidí na trh. V&nbsp;dlouhodobém horizontu zlepšíte výběr a rozmanitost kandidátů v&nbsp;ČR.</li>
+      <li>Díky vašemu příspěvku bude text komukoliv veřejně zdarma přístupný. Příručka přitom dá jasně najevo, že tento v Česku unikátní obsah je zdarma právě díky vám.</li>
+      <li>Příručka zvýší a standardizuje úroveň juniorních uchazečů v&nbsp;ČR.</li>
+      <li>Financováním junior.guru podpoříte příchod nových lidí na trh. V&nbsp;dlouhodobém horizontu zlepšíte výběr a rozmanitost kandidátů v&nbsp;ČR &mdash; náplň pro vaše aktivity v <abbr title="Diversity &amp; Inclusion">D&I</abbr> nebo <abbr title="Corporate Social Responsibility">CSR</abbr> (společenská odpovědnost).</li>
       <li>Firmy, které si sponzorství domluví už před vydáním, mají výhodu. Jejich logo totiž bude na příručce v den jejího uveřejnění, kdy bude nejvyšší jednorázová návštěvnost.</li>
     </ul>
   </div>

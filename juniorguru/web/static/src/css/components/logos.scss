@@ -1,11 +1,10 @@
+/*
+  Pro Tip: Use this to crop whitespace from SVGs!
+  https://codepen.io/Steve6886/pen/abzzdOG
+*/
+
 .logos {
   margin: $whitespace-3 0;
-}
-
-.logos__heading {
-  @include font-0;
-  text-align: center;
-  margin-bottom: $whitespace-2;
 }
 
 .logos__items,
