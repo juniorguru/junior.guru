@@ -15,6 +15,7 @@ const resolve = require('rollup-plugin-node-resolve');
 const { terser } = require('rollup-plugin-terser');
 const del = require('del');
 const { spawn } = require('child_process');
+const through2 = require('through2');
 
 sass.compiler = require('node-sass');
 
@@ -94,7 +95,18 @@ function copyScreenshots() {
     .pipe(gulp.dest('juniorguru/web/static/images/'))
 }
 
+function buildStatic() {
+  // optimization, gets called when 'freezeFlask' is unnecessary overkill
+  return gulp.src([
+      'juniorguru/web/static/**/*.*',
+      '!juniorguru/web/static/src/**',
+    ])
+    .pipe(changed('public/static/', { hasChanged: changed.compareContents }))
+    .pipe(gulp.dest('public/static/'))
+}
+
 function freezeFlask() {
+  // also does everything 'buildStatic' does
   return spawn('pipenv', ['run', 'freeze'], { stdio: 'inherit' });
 }
 
@@ -141,18 +153,20 @@ async function watchWeb() {
     '!juniorguru/web/static/src/images/screenshots*/**/*',
   ], buildImages);
   gulp.watch([
-    'juniorguru/web/**/*.html',
-    'juniorguru/web/**/*.py',
     'juniorguru/web/static/*.js',
     'juniorguru/web/static/*.css',
     'juniorguru/web/static/images/',
+  ], buildStatic);
+  gulp.watch([
+    'juniorguru/web/**/*.html',
+    'juniorguru/web/**/*.py',
     'juniorguru/data/',
   ], buildWeb);
 }
 
 async function serveWeb() {
   connect.server({ root: 'public/', port: 5000, livereload: true });
-  gulp.watch('public/', { delay: 500 }).on('change', (path) =>
+  gulp.watch('public/', { delay: 50 }).on('change', (path) =>
     gulp.src(path, { read: false }).pipe(connect.reload())
   );
 }
