@@ -1,27 +1,24 @@
-.more-collapsed {
+.more--collapsed {
   height: 30rem;
   overflow: hidden;
   position: relative;
 }
 
-@media screen and (max-width: $grid-breakpoint) {
-  .more-collapsed .cartoon {
-    display: none;
-  }
-}
-
-.more-action-area, .more-action-area .legacy-button {
-  margin: 0;
-}
-
-.more-action-area {
+.more__cover {
   position: absolute;
   top: 0;
   width: 100%;
   height: 30rem;
+  margin: 0;
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 60%);
   display: flex;
   justify-content: center;
   align-items: flex-end;
   z-index: 50;
+}
+
+@media screen and (max-width: $grid-breakpoint) {
+  .more--collapsed .cartoon {
+    display: none;
+  }
 }

@@ -2,26 +2,26 @@ function onLoad() {
   const sections = Array.from(document.getElementsByClassName('more'));
   sections.forEach(function (section) {
     const div = document.createElement('div');
-    div.classList.add('more-wrapper');
+    div.classList.add('more__container');
     Array.from(section.childNodes).forEach(function (child) {
       div.appendChild(child);
     });
     section.appendChild(div);
 
     const p = document.createElement('p');
-    p.classList.add('call-to-action');
-    p.classList.add('more-action-area');
+    p.classList.add('button-compartment');
+    p.classList.add('more__cover');
 
     const button = document.createElement('span');
     button.textContent = 'Zobrazit víc';
-    button.classList.add('legacy-button');
+    button.classList.add('button');
     button.addEventListener('click', function (event) {
       div.removeChild(p);
-      div.classList.remove('more-collapsed');
+      div.classList.remove('more--collapsed');
     });
     p.appendChild(button);
 
-    div.classList.add('more-collapsed');
+    div.classList.add('more--collapsed');
     div.appendChild(p);
   });
   handleHash();
