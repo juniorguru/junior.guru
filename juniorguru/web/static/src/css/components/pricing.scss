@@ -55,6 +55,10 @@
 }
 
 @media screen and (min-width: $breakpoint-tablet) {
+  .pricing__heading--mobile-only {
+    display: none !important;  // forcing through spaghetti
+  }
+
   .pricing__plans {
     display: flex;
     margin-bottom: $whitespace-3;

@@ -17,6 +17,7 @@
 .logos__items {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   justify-content: space-evenly;
 }
 
@@ -44,7 +45,6 @@
 .logos__image {
   display: block;
   max-height: 5rem;
-  width: auto;
   max-width: 20rem;
   filter: grayscale(100%);
   opacity: 0.6;
@@ -63,7 +63,8 @@
 }
 
 @media screen and (min-width: 700px) {
-  .logos__item {
+  .logos__item,
+  .logos__image {
     width: auto;
   }
 }
