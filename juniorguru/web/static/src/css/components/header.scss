@@ -5,12 +5,16 @@ $logo-height-index: 10rem;
 .header {
   margin: 0;
   padding: 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background: $white;
   background: linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 1rem);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header--optional {
+  position: relative;
 }
 
 .header--subnav {
@@ -244,6 +248,10 @@ a.header__subnav-tab-control:active {
 }
 
 @media screen and (min-width: 550px) {
+  .header--optional {
+    position: sticky;
+  }
+
   .header--index .header__main-content {
     flex-direction: row;
   }
