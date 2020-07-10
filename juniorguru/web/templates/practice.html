@@ -7,6 +7,14 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 
 {% block body_class %} page--practice{% endblock %}
 
+{% block toc %}
+<nav class="header__toc">
+  <span id="toc-heading" class="header__toc-heading">
+    Získej praxi v programování
+  </span>
+</nav>
+{% endblock %}
+
 {% block main %}
 <header>
   <h1>Získej praxi v programování</h1>
@@ -17,7 +25,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
     Teprve potom si můžeš začít <a href="{{ url_for('jobs') }}">hledat svou první práci v&nbsp;IT</a>.
   </p>
 
-  <div class="toc">
+  <div class="toc-legacy">
     <h2>Obsah</h2>
     <ul>
       <li><a href="#english">Neflákej angličtinu</a></li>&#32;

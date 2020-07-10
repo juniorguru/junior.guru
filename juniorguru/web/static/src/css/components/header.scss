@@ -5,24 +5,29 @@ $logo-height-index: 10rem;
 .header {
   margin: 0;
   padding: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background: $white;
-  background: linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 1rem);
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.header--optional {
-  position: relative;
+.header__navbar {
+  display: block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: $white;
+  background: linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 1rem);
 }
 
-.header--subnav {
+.header--subnav .header__navbar {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+.header--optional .header__navbar {
+  display: none;
+}
+
 .header--index {
-  position: relative;
+  position: static;
 }
 
 :target::before {
@@ -211,6 +216,10 @@ a.header__subnav-tab-control:active {
   padding: ($whitespace-0 / 4) ($whitespace-0 / 1.5);
 }
 
+.header__toc {
+  display: none;
+}
+
 .header__divider {
   display: none;
 }
@@ -248,8 +257,8 @@ a.header__subnav-tab-control:active {
 }
 
 @media screen and (min-width: 550px) {
-  .header--optional {
-    position: sticky;
+  .header--optional .header__navbar {
+    display: block;
   }
 
   .header--index .header__main-content {

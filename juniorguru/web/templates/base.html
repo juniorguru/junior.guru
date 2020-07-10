@@ -36,65 +36,59 @@
     <div class="body-container">
     {% block body %}
       <header class="header{% if subnav_tabs %} header--subnav{% endif %}{% block header_modifier %}{% endblock %}">
-        <div class="header__main">
-          <div class="header__main-content">
-            {% block header_content %}
-            <a class="header__logo" href="{{ url_for('index') }}">
-              <img class="header__logo-image" src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
-            </a>
-            {% endblock %}
-            {% if nav_tabs %}
-              <nav class="header__nav">
-                <ol class="header__nav-tabs">
-                  {%- for tab in nav_tabs -%}
-                    <li class="header__nav-tab">
-                      {{- '' -}}
-                      <a class="
-                        header__nav-tab-control
-                        header__nav-tab-control--{{ loop.index }}
-                        {% if tab.endpoint == nav_active %}
-                          header__nav-tab-control--active
-                        {% endif %}
-                      " href="{{ url_for(tab.endpoint) }}">
+        <div class="header__navbar">
+          <div class="header__main">
+            <div class="header__main-content">
+              {% block header_content %}
+              <a class="header__logo" href="{{ url_for('index') }}">
+                <img class="header__logo-image" src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
+              </a>
+              {% endblock %}
+              {% if nav_tabs %}
+                <nav class="header__nav">
+                  <ol class="header__nav-tabs">
+                    {%- for tab in nav_tabs -%}
+                      <li class="header__nav-tab">
                         {{- '' -}}
-                        <span class="header__nav-tab-name">
-                          {{- tab.name -}}
-                        </span>
+                        <a class="
+                          header__nav-tab-control
+                          header__nav-tab-control--{{ loop.index }}
+                          {% if tab.endpoint == nav_active %}
+                            header__nav-tab-control--active
+                          {% endif %}
+                        " href="{{ url_for(tab.endpoint) }}">
+                          {{- '' -}}
+                          <span class="header__nav-tab-name">
+                            {{- tab.name -}}
+                          </span>
+                          {{- '' -}}
+                          <span class="header__nav-tab-name-short" data-content="{{ tab.name_short|default(tab.name) }}"></span>
+                          {{- '' -}}
+                        </a>
                         {{- '' -}}
-                        <span class="header__nav-tab-name-short" data-content="{{ tab.name_short|default(tab.name) }}"></span>
-                        {{- '' -}}
-                      </a>
-                      {{- '' -}}
-                    </li>
-                  {%- endfor -%}
-                </ol>
-              </nav>
-            {% endif %}
+                      </li>
+                    {%- endfor -%}
+                  </ol>
+                </nav>
+              {% endif %}
+            </div>
           </div>
-        </div>
-        {% if subnav_tabs %}
-          <nav class="header__subnav">
-            <ul class="header__subnav-tabs">
-              {%- for tab in subnav_tabs -%}
-                <li class="header__subnav-tab">
-                  <a class="header__subnav-tab-control{% if tab.endpoint == subnav_active %} header__subnav-tab-control--active{% endif %}" href="{{ url_for(tab.endpoint) }}">
-                    <span class="header__subnav-tab-name">{{ tab.name }}</span>
-                  </a>
-                </li>
-                <!--
-                {% if loop.index == 1 %}
+          {% if subnav_tabs %}
+            <nav class="header__subnav">
+              <ul class="header__subnav-tabs">
+                {%- for tab in subnav_tabs -%}
                   <li class="header__subnav-tab">
-                    <a class="header__subnav-tab-control" href="{{ url_for('hire_juniors') }}#handbook">
-                      <span class="header__subnav-tab-name">{{ 'Příručka hledání práce' }}</span>
+                    <a class="header__subnav-tab-control{% if tab.endpoint == subnav_active %} header__subnav-tab-control--active{% endif %}" href="{{ url_for(tab.endpoint) }}">
+                      <span class="header__subnav-tab-name">{{ tab.name }}</span>
                     </a>
                   </li>
-                {% endif %}
-                -->
-              {%- endfor -%}
-            </ul>
-          </nav>
-        {% endif %}
-        <hr class="header__divider">
+                {%- endfor -%}
+              </ul>
+            </nav>
+          {% endif %}
+          <hr class="header__divider">
+        </div>
+        {% block toc %}{% endblock %}
       </header>
       <main>
         {% block main %}{% endblock %}
