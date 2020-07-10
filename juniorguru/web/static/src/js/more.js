@@ -15,6 +15,8 @@ function onLoad() {
     const button = document.createElement('span');
     button.textContent = 'Zobrazit víc';
     button.classList.add('button');
+    button.classList.add('button--link');
+    button.classList.add('button--more');
     button.addEventListener('click', function (event) {
       div.removeChild(p);
       div.classList.remove('more--collapsed');
@@ -30,7 +32,7 @@ function onLoad() {
 function handleHash() {
   if (
     !window.location.hash ||
-    !document.querySelector('.more-collapsed ' + window.location.hash)
+    !document.querySelector('.more--collapsed ' + window.location.hash)
   ) {
     return;
   }
@@ -41,8 +43,8 @@ function handleHash() {
   let el = element;
   while (el) {
     // console.log(el);
-    if (el.className.match('more-collapsed')) {
-      const button = el.querySelector('.more-action-area .button');
+    if (el.className.match('more--collapsed')) {
+      const button = el.getElementsByClassName('button--more')[0];
       // console.log(button);
       button.dispatchEvent(new MouseEvent('click'));
       break;

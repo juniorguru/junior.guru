@@ -6,14 +6,18 @@
   padding: $whitespace $whitespace-2;
   padding-top: $whitespace - 0.1rem;
   background: $black;
-  cursor: pointer;
 
   &, a, a:hover, a:focus, a:active {
     color: $white;
   }
 }
 
-.button {
+.button--link {
+  cursor: pointer;
+}
+
+a.button,
+.button--link {
   &:hover, &:focus, &:active {
     background: $blue;
     color: $white;
@@ -30,7 +34,8 @@
   }
 }
 
-a.button--secondary {
+a.button--secondary,
+.button-link.button--secondary {
   &:hover, &:focus, &:active {
     background: transparent;
     color: $black;
