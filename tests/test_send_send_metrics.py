@@ -118,9 +118,16 @@ def test_create_message_applications_non_zero_note(job_mock, template):
     assert 'května 2020' in html
 
 
-def test_create_message_expires_soon(job_mock, template):
+@pytest.mark.parametrize('today', [
+    date(2020, 6, 21),  # 10 days before
+    date(2020, 6, 24),  # week before
+    date(2020, 6, 26),  # random date in the middle
+    date(2020, 6, 30),  # day before
+    date(2020, 7, 1),  # the same day
+])
+def test_create_message_expires_soon(job_mock, template, today):
     job_mock.expires_at = date(2020, 7, 1)
-    message = create_message(job_mock, template, today=date(2020, 6, 26))
+    message = create_message(job_mock, template, today=today)
     html = message.get()['content'][0]['value']
 
     assert 'prodloužit o dalších 30&nbsp;dní' in html
