@@ -7,15 +7,8 @@
       {% block title %}Jak se naučit programovat a získat první práci v IT{% endblock %} | junior.guru
     </title>
 
+    <script defer src="{{ url_for('static', filename='bundle.js') }}"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1316071-22"></script>
-    <script>
-      if (window.location.hostname === 'junior.guru') {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-1316071-22');
-      }
-    </script>
 
     <meta name="description" content="{% block description %}{% endblock %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -131,6 +124,14 @@
       </footer>
     {% endblock %}
     </div>
-    <script defer src="{{ url_for('static', filename='bundle.js') }}"></script>
+
+    <script>
+      if (window.location.hostname === 'junior.guru') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-1316071-22');
+      }
+    </script>
   </body>
 </html>
