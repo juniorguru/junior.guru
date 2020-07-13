@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block description -%}
+Průvodce programováním pro samouky a nabídky práce pro juniory.
+{%- endblock %}
+
 {% block body_class %} page--index{% endblock %}
 
 {% block header_modifier %} header--index{% endblock %}
@@ -38,7 +42,7 @@
         <p>Programátorů je&nbsp;dlouhodobě nedostatek. Samouk přitom může jejich běžnou práci zvládnout stejně dobře jako absolvent&nbsp;VŠ. Projdi si {{ jobs_count }} nabídek od {{ companies_count }} firem &mdash; všechny pro začátečníky!</p>
         <div class="billboard-buttons">
           <a href="{{ url_for('jobs') }}" class="legacy-button legacy-button-inverted">Aktuální nabídky práce</a>
-          <a href="http://eepurl.com/gyG8Bb" target="_blank" class="legacy-button-secondary legacy-button-inverted">Nabídky do e-mailu</a>
+          <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener" class="legacy-button-secondary legacy-button-inverted">Nabídky do e-mailu</a>
         </div>
         <p class="note"><a href="{{ url_for('hire_juniors') }}">Inzerujte na junior.guru</a> &mdash; <strong>od 0 Kč!</strong></p>
       </div>
@@ -91,8 +95,8 @@
 <section class="join" id="join">
   <h2>Buď v&nbsp;obraze</h2>
   <ul>
-    <li class="join-newsletter"><a href="http://eepurl.com/gyG8Bb" target="_blank">Nabídky práce do e-mailu</a></li>
-    <li class="join-f"><a href="https://www.facebook.com/groups/junior.guru" target="_blank">Facebooková skupina</a></li>
+    <li class="join-newsletter"><a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">Nabídky práce do e-mailu</a></li>
+    <li class="join-f"><a href="https://www.facebook.com/groups/junior.guru" target="_blank" rel="noopener">Facebooková skupina</a></li>
   </ul>
 </section>
 <hr class="hidden">
@@ -112,7 +116,7 @@
             {{ story.date.month }}/{{ story.date.year }}
           </small>
         </div>
-        <img src="{{ url_for('static', filename=story.image_path) }}" width="100" loading="lazy">
+        <img src="{{ url_for('static', filename=story.image_path) }}" width="100" loading="lazy" alt="Fotka obličeje">
       </a>
     </li>
   {% endfor %}
