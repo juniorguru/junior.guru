@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 onScroll(function () {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollTop = getScrollTop();
   if (Math.abs(lastScrollTop - scrollTop) <= MIN_SCROLL) return;
   const header = document.getElementsByClassName('header')[0];
 
@@ -17,11 +17,19 @@ onScroll(function () {
   } else { // up
     header.classList.remove('header--optional');
   }
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  const currentScrollTop = getScrollTop();
+  lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
 
-  const currentHeading = getCurrentHeading(header.getBoundingClientRect().bottom);
-  document.getElementById('toc-heading').innerHTML = currentHeading.innerHTML;
+  const toc = document.getElementById('toc-heading');
+  if (toc) {
+    const currentHeading = getCurrentHeading(header.getBoundingClientRect().bottom);
+    toc.innerHTML = currentHeading.innerHTML;
+  }
 });
+
+function getScrollTop() {
+  return window.pageYOffset || document.documentElement.scrollTop;
+}
 
 function getCurrentHeading(topBound) {
   topBound = topBound || 0;
