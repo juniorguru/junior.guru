@@ -5,6 +5,7 @@ $logo-height-index: 10rem;
 .header {
   margin: 0;
   padding: 0;
+  padding-bottom: 4px; // because box-shadow
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -256,7 +257,6 @@ a.header__subnav-tab-control:active {
 }
 
 .header__toc-link {
-  color: $blue;
   font-weight: bold;
 }
 
