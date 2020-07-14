@@ -244,6 +244,13 @@ a.header__subnav-tab-control:active {
   justify-content: space-between;
 }
 
+.header__toc-heading {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  padding-right: $whitespace-0;
+}
+
 .header__toc-link {
   color: $blue;
   font-weight: bold;
