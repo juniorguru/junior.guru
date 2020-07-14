@@ -31,6 +31,10 @@ $logo-height-index: 10rem;
   margin-top: -1 * $logo-height;
 }
 
+.header--subnav.header--optional .header__navbar {
+  margin-top: -1 * ($logo-height + 3.54rem);
+}
+
 .header--index {
   position: static;
 }
