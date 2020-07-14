@@ -9,9 +9,16 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
 
 {% block toc %}
 <nav class="header__toc">
-  <span id="toc-heading" class="header__toc-heading">
-    Nauč se základy programování
-  </span>
+  <div class="header__toc-content">
+    <ul class="header__toc-items">
+      <li id="toc-heading" class="header__toc-item header__toc-heading">
+        Nauč se základy programování
+      </li>
+      <li class="header__toc-item">
+        <a href="#toc" class="header__toc-link">Obsah</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 {% endblock %}
 
@@ -23,7 +30,7 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
     {{ self.description() }} Až tím projdeš, můžeš začít <a href="{{ url_for('practice') }}">získávat praxi</a>.
   </p>
 
-  <div class="toc-legacy">
+  <div id="toc" class="toc-legacy">
     <h2>Obsah</h2>
     <ul>
       <li><a href="#what">Co je programování?</a></li>&#32;

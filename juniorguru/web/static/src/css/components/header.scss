@@ -63,7 +63,7 @@ $logo-height-index: 10rem;
 }
 
 .header__main-content {
-  @include page-width;
+  @include page-width($padding: $whitespace-0);
   display: flex;
   justify-content: space-between;
 }
@@ -78,7 +78,6 @@ $logo-height-index: 10rem;
   display: block;
   align-self: center;
   margin: 0;
-  padding-left: $whitespace-0;
 }
 
 .header__logo-image {
@@ -109,7 +108,6 @@ $logo-height-index: 10rem;
   align-self: flex-end;
   display: flex;
   @include font-0;
-  padding-right: $whitespace-0 / 2;
 }
 
 .header__nav-tab {
@@ -174,7 +172,7 @@ a.header__nav-tab-control--active:active {
   line-height: normal;
   display: flex;
   align-items: center;
-  padding: 0 $whitespace-2 0 0;
+  padding: 0 0 0 $whitespace-2;
   white-space: nowrap;
 }
 
@@ -230,9 +228,25 @@ a.header__subnav-tab-control:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.header__toc-heading {
-  display: block;
-  @include page-width($padding: $whitespace);
+.header__toc-content {
+  @include page-width($padding: $whitespace-0);
+}
+
+.header__toc-items,
+.header__toc-item {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.header__toc-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__toc-link {
+  color: $blue;
+  font-weight: bold;
 }
 
 .header__divider {
@@ -262,10 +276,6 @@ a.header__subnav-tab-control:active {
 }
 
 @media screen and (min-width: 400px) {
-  .header__nav-tabs {
-    padding-right: $whitespace-0;
-  }
-
   .header__nav-tab {
     margin-left: $whitespace;
   }
@@ -300,6 +310,10 @@ a.header__subnav-tab-control:active {
 }
 
 @media screen and (min-width: 650px) {
+  .header__main-content {
+    @include page-width($padding: $whitespace);
+  }
+
   .header__logo-image {
     height: $logo-height-large;
   }
@@ -314,6 +328,10 @@ a.header__subnav-tab-control:active {
     margin-top: (-2 * $logo-height-large) + 4rem;
   }
 
+  .header__subnav-tab:last-child {
+    margin-right: $whitespace;
+  }
+
   .header__claim,
   .header__nav-tabs {
     @include font-2;
@@ -325,6 +343,10 @@ a.header__subnav-tab-control:active {
 
   .header__nav-tab-control {
     padding: $whitespace ($whitespace * 1.25);
+  }
+
+  .header__toc-content {
+    @include page-width($padding: $whitespace);
   }
 }
 
