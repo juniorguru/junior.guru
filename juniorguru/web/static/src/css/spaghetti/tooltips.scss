@@ -1,7 +1,7 @@
 $line-height-tooltip: ($line-height-base / 15);
 @mixin font-tooltip { font-size: 1.3rem; line-height: $line-height-tooltip; font-weight: 300; }
 
-main section a[href^="#"] {
+.main__section a[href^="#"] {
   position: relative;
   z-index: 10;
   overflow: visible;
@@ -48,10 +48,15 @@ main section a[href^="#"] {
   }
 }
 
-main section .list a[href^="#"] {
+/*
+TODO in /candidate/ there are tooltips in .list, which don't look/work well
+
+.list a[href^="#"],
+.tooltips--disabled a[href^="#"] {
   &:hover, &:focus, &:active {
     &::before, &::after {
       display: none;
     }
   }
 }
+*/

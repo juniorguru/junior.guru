@@ -1,3 +1,5 @@
+// TODO fix engage's padding, which is one more level wide than the rest of paragraphs
+
 .engage {
   padding: $whitespace;
   background: $yellow;
@@ -5,10 +7,10 @@
 
 .engage-items {
   h2 {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    display: block !important;
   }
 
   ul, li {

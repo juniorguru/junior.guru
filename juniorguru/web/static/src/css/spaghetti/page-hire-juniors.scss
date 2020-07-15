@@ -1,19 +1,4 @@
 body.page--hire-juniors {
-  main {
-    max-width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  main > header {
-    padding-left: $whitespace;
-    padding-right: $whitespace;
-  }
-
-  main > section {
-    @include page-width;
-  }
-
   h2 {
     background: none;
     padding: 0;
@@ -254,7 +239,7 @@ body.page--hire-juniors {
     }
   }
 
-  main a[href^="#"] {
+  .main a[href^="#"] {
     &:hover, &:focus, &:active {
       &::before, &::after {
         display: none;

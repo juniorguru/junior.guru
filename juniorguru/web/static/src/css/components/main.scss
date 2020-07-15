@@ -1,0 +1,25 @@
+.main {
+  padding-top: $whitespace-3 * 3;
+  overflow-x: hidden;
+}
+
+.main__section {
+  @include page-width($padding: 1rem);
+  margin-bottom: $whitespace-3 * 2;
+}
+
+.main__section > h2 {
+  display: inline-block;
+  background-color: $yellow;
+  padding: 0.3rem 0.5rem;
+}
+
+.main__section > h3 {
+  margin-top: $whitespace-3;
+}
+
+.main__section--wide {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 100%;
+}

@@ -7,7 +7,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 
 {% block body_class %} page--practice{% endblock %}
 
-{% block toc %}
+{% block header_toc %}
 <nav class="header__toc">
   <div class="header__toc-content">
     <ul class="header__toc-items">
@@ -23,10 +23,10 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 {% endblock %}
 
 {% block main %}
-<header>
-  <h1>Získej praxi v programování</h1>
-  <p>
-    <img src="{{ url_for('static', filename='images/chick2.svg') }}">
+<header class="intro">
+  <h1 class="intro__title">Získej praxi v programování</h1>
+  <p class="intro__lead">
+    <img class="intro__illustration" src="{{ url_for('static', filename='images/chick2.svg') }}">
     Znáš <a href="{{ url_for('learn') }}">základy</a>?
     Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti.
     Teprve potom si můžeš začít <a href="{{ url_for('jobs') }}">hledat svou první práci v&nbsp;IT</a>.
@@ -47,7 +47,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </div>
 </header>
 
-<section id="english">
+<section id="english" class="main__section">
   <h2>Neflákej angličtinu</h2>
   <p>
     <strong>Bez angličtiny se neobejdeš.</strong> Je to klíč ke dveřím do celého světa. Vybíráš ze dvou českých mentorů, ze tří českých online kurzů? S angličtinou vybíráš ze stovek mentorů a desítek kurzů. <strong>Nedostatečná angličtina je v&nbsp;IT jako bolavý zub.</strong> Chvíli s ním vydržíš, ale když to nezačneš řešit včas, budeš hodně litovat. Nauč se ji aspoň pasivně &mdash; pokud zvládáš číst anglický text, pochopit v něm zadání a učit se z něj nové věci, pro start to stačí.
@@ -78,7 +78,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </ul>
 </section>
 
-<section id="exercises">
+<section id="exercises" class="main__section">
   <h2>Procvičuj</h2>
   <ul class="list">
     <li>
@@ -155,7 +155,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   {% include 'list_note.html' %}
 </section>
 
-<section id="projects">
+<section id="projects" class="main__section">
   <h2>Najdi si projekt</h2>
   <p>
     Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit.
@@ -190,7 +190,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </p>
 </section>
 
-<section id="mentors">
+<section id="mentors" class="main__section">
   <h2>Najdi si mentora</h2>
   <p>
     Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to být
@@ -279,7 +279,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 
 {% include 'engage.html' %}
 
-<section>
+<section class="main__section">
   <h2 id="hackathons">Zkus „hackathon“</h2>
   <p>
     <a href="https://cs.wikipedia.org/wiki/Hackathon">Hackathon</a> je akce, kde se sejdou
@@ -365,7 +365,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </figure>
 </section>
 
-<section>
+<section class="main__section">
   <h2 id="opensource">Zkus „Open Source“</h2>
   <p>
     <img class="cartoon" src="{{ url_for('static', filename='images/gh-logo.svg') }}" loading="lazy">
@@ -547,7 +547,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </figure>
 </section>
 
-<section id="skills">
+<section id="skills" class="main__section">
   <h2>Rozšiřuj si znalosti</h2>
   <p>
     Umět programovat např. v Pythonu je dobrý základ, ale pro plnohodnotnou práci
@@ -715,7 +715,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 
 {% include 'engage.html' %}
 
-<section id="events">
+<section id="events" class="main__section">
   <h2>Najdi inspiraci, poznej lidi</h2>
   <p>
     Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky nebo

@@ -8,11 +8,11 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
 {% block body_class %} page--job{% endblock %}
 
 {% block main %}
-<article class="job">
-  <header>
-    <h1>{{ job.title }}</h1>
+<article class="main__section job">
+  <header class="intro">
+    <h1 class="intro__title">{{ job.title }}</h1>
 
-    <p class="job-attributes">
+    <p class="intro__lead job-attributes">
       <a href="{{ job.company_link_utm }}">{{ job.company_name }}</a>
       &mdash;
       {{ job.location }}

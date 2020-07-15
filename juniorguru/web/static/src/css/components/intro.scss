@@ -1,0 +1,22 @@
+.intro {
+  max-width: 80rem;
+  padding: 0 $whitespace;
+  margin: 0 auto ($whitespace-3 * 2) auto;
+}
+
+.intro__title {
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: $whitespace-3 * 2;
+}
+
+.intro__lead {
+  @include font-2;
+  min-height: 16rem;
+}
+
+.intro__illustration {
+  float: right;
+  margin: $whitespace;
+  height: 4 * $whitespace-3;
+}

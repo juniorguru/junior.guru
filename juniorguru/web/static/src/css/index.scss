@@ -1,17 +1,21 @@
 // legacy spaghetti code 🍝
 @import 'spaghetti/variables';
 @import 'spaghetti/common';
-@import 'spaghetti/tooltips';
-@import 'spaghetti/engage';
-@import 'spaghetti/page-index';
-@import 'spaghetti/page-hire-juniors';
-@import 'spaghetti/handbook';
 
 // bright future ✨ OOCSS, BEM
+@import 'components/main.scss';
+
+@import 'components/intro.scss';
 @import 'content/checklist.scss';
 @import 'components/header.scss';
 @import 'components/pricing.scss';
 @import 'components/button-compartment.scss';
 @import 'components/button.scss';
 @import 'components/logos.scss';
-@import 'components/more';
+@import 'components/more.scss';
+
+// legacy spaghetti code 🍝
+@import 'spaghetti/page-index';
+@import 'spaghetti/page-hire-juniors';
+@import 'spaghetti/tooltips';
+@import 'spaghetti/engage';

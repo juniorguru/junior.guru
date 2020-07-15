@@ -1,10 +1,9 @@
 body.page--index {
-  main {
-    max-width: 100%;
-    padding: 0;
+  .main {
+    padding-top: 0;
   }
 
-  main > section > h2 {
+  .main__section h2 {
     background: none;
     padding: 0;
     display: block;

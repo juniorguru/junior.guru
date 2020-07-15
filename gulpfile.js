@@ -33,7 +33,7 @@ function cleanStatic() {
 
 async function buildJS() {
   const bundle = await rollup({
-    input: 'juniorguru/web/static/src/js/main.js',
+    input: 'juniorguru/web/static/src/js/index.js',
     plugins: [resolve(), terser()],
   });
   return bundle.write({
@@ -43,8 +43,8 @@ async function buildJS() {
   });
 }
 
-function buildMainCSS() {
-  return gulp.src('juniorguru/web/static/src/css/main.scss')
+function buildIndexCSS() {
+  return gulp.src('juniorguru/web/static/src/css/index.scss')
     .pipe(gulpIf(isLocalDevelopment, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
     .pipe(csso())
@@ -63,7 +63,7 @@ function buildThumbnailCSS() {
     .pipe(gulp.dest('juniorguru/web/static/'));
 }
 
-const buildCSS = gulp.parallel(buildMainCSS, buildThumbnailCSS);
+const buildCSS = gulp.parallel(buildIndexCSS, buildThumbnailCSS);
 
 function buildImages() {
   return gulp.src([

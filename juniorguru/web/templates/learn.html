@@ -7,7 +7,7 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
 
 {% block body_class %} page--learn{% endblock %}
 
-{% block toc %}
+{% block header_toc %}
 <nav class="header__toc">
   <div class="header__toc-content">
     <ul class="header__toc-items">
@@ -23,10 +23,10 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
 {% endblock %}
 
 {% block main %}
-<header>
-  <h1>Nauč se základy programování</h1>
-  <p>
-    <img src="{{ url_for('static', filename='images/chick1.svg') }}">
+<header class="intro">
+  <h1 class="intro__title">Nauč se základy programování</h1>
+  <p class="intro__lead">
+    <img class="intro__illustration" src="{{ url_for('static', filename='images/chick1.svg') }}">
     {{ self.description() }} Až tím projdeš, můžeš začít <a href="{{ url_for('practice') }}">získávat praxi</a>.
   </p>
 
@@ -46,7 +46,7 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
   </div>
 </header>
 
-<section id="what" class="more">
+<section id="what" class="main__section more">
   <h2>Co je programování?</h2>
   <p>
     <img class="cartoon" src="{{ url_for('static', filename='images/debugging.svg') }}" loading="lazy">
@@ -72,7 +72,7 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
   </ul>
 </section>
 
-<section id="why" class="more">
+<section id="why" class="main__section more">
   <h2>Proč se to učit?</h2>
   <ul>
     <li>
@@ -116,7 +116,7 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
   -->
 </section>
 
-<section id="covid19" class="more">
+<section id="covid19" class="main__section more">
   <h2>Co způsobí koronavirus?</h2>
   <h3>1. Zkázu</h3>
   <p>
@@ -187,7 +187,7 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
   </p>
 </section>
 
-<section id="requirements" class="more">
+<section id="requirements" class="main__section more">
   <h2>Co budeš potřebovat?</h2>
   <p>
     Především <strong>počítač a internet</strong> &mdash; na mobilu ani tabletu se programovat prakticky nedá a bez připojení ti nebude moci nikdo online poradit. Kromě toho je ale hlavní <strong>odhodlání a vytrvalost</strong>. Projdi si <a href="{{ url_for('index') }}#stories">{{ stories_count }} příběhů lidí</a>, kteří se programovat naučili a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
@@ -286,7 +286,7 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
   </ul>
 </section>
 
-<section id="python" class="more">
+<section id="python" class="main__section more">
   <h2>Proč Python?</h2>
   <p>
     <img class="cartoon" src="{{ url_for('static', filename='images/pylady.svg') }}" loading="lazy">
@@ -357,7 +357,7 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
   </figure>
 </section>
 
-<section id="learn">
+<section id="learn" class="main__section">
   <h2>Jak začít?</h2>
   <p>
     Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplatí
@@ -471,7 +471,7 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
   {% include 'list_note.html' %}
 </section>
 
-<section id="ladies">
+<section id="ladies" class="main__section">
   <h2>Dámy mají přednost</h2>
   <p>
     Žen je v&nbsp;IT málo &mdash; v Evropských státech je to mezi 10 až 30 %.
@@ -559,7 +559,7 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
 
 {% include 'engage.html' %}
 
-<section id="help">
+<section id="help" class="main__section">
   <h2>Kde najdeš pomoc?</h2>
   <p>
     Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout
@@ -645,7 +645,7 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
   </ul>
 </section>
 
-<section id="english">
+<section id="english" class="main__section">
   <h2>Jak si zlepšit angličtinu?</h2>
   <p>
     Mnohem více než <a href="#math">matematika</a> je při programování potřeba
