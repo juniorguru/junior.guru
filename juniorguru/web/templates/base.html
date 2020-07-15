@@ -25,7 +25,7 @@
     <meta name="twitter:image" content="{{ url_for('static', filename=thumbnail, _external=True) }}">
     <meta name="twitter:creator" content="@honzajavorek">
   </head>
-  <body class="page{% if subnav_tabs %} page--subnav{% endif %}{% block body_class %}{% endblock %}">
+  <body class="body{% if subnav_tabs %} body--subnav{% endif %}{% block body_modifier %}{% endblock %}">
     <div class="body-container">
     {% block body %}
       <header class="header{% if subnav_tabs %} header--subnav{% endif %}{% block header_modifier %}{% endblock %}">
