@@ -5,13 +5,18 @@ $logo-height-index: 10rem;
 .header {
   margin: 0;
   padding: 0;
-  padding-bottom: 4px; // because box-shadow
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1000;
   background: $white;
   background: linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 1rem);
+}
+
+.header__navbar-drawer {
+  overflow-y: hidden;
+  padding-bottom: 5px; // because box-shadow
+  margin-bottom: -5px;
 }
 
 .header__navbar {
@@ -22,10 +27,6 @@ $logo-height-index: 10rem;
 
 .header--subnav .header__navbar {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.header--optional {
-  overflow-y: hidden;
 }
 
 .header--optional .header__navbar {
@@ -293,7 +294,8 @@ a.header__subnav-tab-control:active {
 }
 
 @media screen and (min-width: 550px) {
-  .header--optional .header__navbar {
+  .header--optional .header__navbar,
+  .header--subnav.header--optional .header__navbar {
     margin-top: 0;
   }
 
