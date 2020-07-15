@@ -15,18 +15,12 @@ $logo-height-index: 10rem;
 
 .header__navbar-drawer {
   overflow-y: hidden;
-  padding-bottom: 5px; // because box-shadow
-  margin-bottom: -5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .header__navbar {
   box-sizing: border-box;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 0;
-}
-
-.header--subnav .header__navbar {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .header--optional .header__navbar {
