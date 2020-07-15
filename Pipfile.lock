@@ -163,18 +163,18 @@
         },
         "google-api-python-client": {
             "hashes": [
-                "sha256:220349ce189a85229fc46875d467101318495a4a735c0ff2f165b9bdbc7511a0",
-                "sha256:f8e73dd6433f8218922c952e09adc4fc0dbc360f9959cf427565a16e8d4c5d25"
+                "sha256:51ac5158e5a011c2f5ff78c8a08dec6975efc74221a9714438a75ea26555e04a",
+                "sha256:fa24f07f6124ff2e91ee9b7550e240481bcb31b8f77a75e8d481be1c44a6ff07"
             ],
             "index": "pypi",
-            "version": "==1.9.3"
+            "version": "==1.10.0"
         },
         "google-auth": {
             "hashes": [
-                "sha256:5e3f540b7b0b892000d542cea6b818b837c230e9a4db9337bb2973bcae0fc078",
-                "sha256:d6b390d3bb0969061ffec7e5766c45c1b39e13c302691e35029f1ad1ccd8ca3b"
+                "sha256:b0e4ecc40ed18b8d12141df6af772efa4aba65e7eda470c258581443418ee753",
+                "sha256:eefbb977d026d617e5d33b82b6c266d3be3bb7b44d370b692dded7319121f842"
             ],
-            "version": "==1.18.0"
+            "version": "==1.19.0"
         },
         "google-auth-httplib2": {
             "hashes": [
