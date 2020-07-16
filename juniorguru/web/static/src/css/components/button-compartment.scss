@@ -3,4 +3,9 @@
   margin: 0;
   margin-top: $whitespace-3;
   text-align: center;
+  clear: both;
+}
+
+.button-compartment--consistent-minimal-margin {
+  margin: $whitespace 0;
 }

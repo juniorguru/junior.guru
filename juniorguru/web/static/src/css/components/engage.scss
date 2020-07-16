@@ -1,0 +1,106 @@
+.engage {
+  background: $yellow;
+}
+
+.engage__content {
+  @include page-width($padding: 1rem);
+  padding: $whitespace;
+}
+
+.engage__links-heading {
+  margin: 0;
+  margin-top: $whitespace;
+  padding: 0;
+  text-align: center;
+  display: block;
+}
+
+.engage__items, .engage__item {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.engage__items {
+  padding-top: $whitespace-3 - $whitespace;
+  padding-bottom: $whitespace-3 + $whitespace;
+}
+
+.engage__item {
+  display: block;
+  margin-top: $whitespace;
+}
+
+.engage__item-link::before {
+  content: "";
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 2 * $whitespace-3;
+  padding-top: 2 * $whitespace-3;
+}
+
+.engage__item--jobs .engage__item-link::before {
+  background-image: url('./images/posts.svg');
+}
+
+.engage__item--f .engage__item-link::before {
+  background-image: url('./images/f-logo.svg');
+}
+
+.engage__item--newsletter .engage__item-link::before {
+  background-image: url('./images/mail.svg');
+}
+
+.engage__item--donate .engage__item-link::before {
+  background-image: url('./images/heart.svg');
+}
+
+.engage__item-link {
+  text-align: center;
+  display: block;
+  min-width: 2 * $whitespace-3;
+  @include color-links($black, $black);
+}
+
+@mixin handbook-cartoon($width, $height) {
+  content: "";
+  display: block;
+  float: left;
+  width: $whitespace * $width;
+  height: $whitespace * $height;
+  background: url('./images/handbook.svg') no-repeat;
+  background-size: contain;
+  margin: ($whitespace / 2) $whitespace-2 0 0;
+}
+
+.engage__handbook-heading {
+  margin-top: 0;
+}
+
+.engage__illustration--phones::before {
+  @include handbook-cartoon($width: 8, $height: 10);
+}
+
+@media screen and (min-width: 700px) {
+  .engage__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .engage__illustration--phones::before {
+    display: none;
+  }
+
+  .engage__illustration--desktop::before {
+    @include handbook-cartoon($width: 10, $height: 13);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .engage__illustration--desktop {
+    padding-left: $whitespace-3 * 2;
+    padding-right: $whitespace-3 * 2;
+  }
+}

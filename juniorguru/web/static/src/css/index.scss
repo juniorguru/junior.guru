@@ -3,19 +3,19 @@
 @import 'spaghetti/common';
 
 // bright future ✨ OOCSS, BEM
-@import 'components/main.scss';
+@import 'components/main';
 
-@import 'components/intro.scss';
-@import 'content/checklist.scss';
-@import 'components/header.scss';
-@import 'components/pricing.scss';
-@import 'components/button-compartment.scss';
-@import 'components/button.scss';
-@import 'components/logos.scss';
-@import 'components/more.scss';
+@import 'components/intro';
+@import 'content/checklist';
+@import 'components/header';
+@import 'components/pricing';
+@import 'components/button-compartment';
+@import 'components/button';
+@import 'components/logos';
+@import 'components/more';
+@import 'components/engage';
 
 // legacy spaghetti code 🍝
 @import 'spaghetti/page-index';
 @import 'spaghetti/page-hire-juniors';
 @import 'spaghetti/tooltips';
-@import 'spaghetti/engage';
