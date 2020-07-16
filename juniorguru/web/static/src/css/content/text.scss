@@ -1,7 +1,4 @@
-$line-height-tooltip: ($line-height-base / 15);
-@mixin font-tooltip { font-size: 1.3rem; line-height: $line-height-tooltip; font-weight: 300; }
-
-.main__section a[href^="#"] {
+@mixin tooltip($text) {
   position: relative;
   z-index: 10;
   overflow: visible;
@@ -20,8 +17,10 @@ $line-height-tooltip: ($line-height-base / 15);
     padding: 0 $whitespace-0;
     background-color: $blue;
     color: $white;
-    content: "skok na jinou část této stránky";
-    @include font-tooltip;
+    content: $text;
+    font-size: 1.3rem;
+    line-height: ($line-height-base / 15);
+    font-weight: 300;
     white-space: nowrap;
   }
 
@@ -48,15 +47,32 @@ $line-height-tooltip: ($line-height-base / 15);
   }
 }
 
-/*
-TODO in /candidate/ there are tooltips in .list, which don't look/work well
+.text {
+  h3 {
+    margin-top: $whitespace-3;
+  }
 
-.list a[href^="#"],
-.tooltips--disabled a[href^="#"] {
-  &:hover, &:focus, &:active {
-    &::before, &::after {
-      display: none;
+  a[href^="#"] {
+    @include tooltip("skok na jinou část této stránky");
+    text-decoration-style: dashed;
+  }
+
+  a[href^="/"] {
+    @include tooltip("odkaz jinam na junior.guru");
+    text-decoration-style: dashed;
+  }
+}
+
+.text--tooltips-disabled {
+  a[href^="#"],
+  a[href^="/"] {
+    &:hover,
+    &:focus,
+    &:active {
+      &::before,
+      &::after {
+        display: none;
+      }
     }
   }
 }
-*/

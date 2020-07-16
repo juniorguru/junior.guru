@@ -2,12 +2,15 @@
 @import 'spaghetti/variables';
 @import 'spaghetti/common';
 
-// bright future ✨ OOCSS, BEM
-@import 'components/main';
-
-@import 'components/intro';
+// content (not exactly BEM)
 @import 'content/checklist';
+@import 'content/text';
+
+// BEM components
+@import 'components/main';
+@import 'components/intro';
 @import 'components/header';
+@import 'components/list';
 @import 'components/pricing';
 @import 'components/button-compartment';
 @import 'components/button';
@@ -18,4 +21,3 @@
 // legacy spaghetti code 🍝
 @import 'spaghetti/page-index';
 @import 'spaghetti/page-hire-juniors';
-@import 'spaghetti/tooltips';

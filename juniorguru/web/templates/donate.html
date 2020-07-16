@@ -94,99 +94,106 @@
 <section class="main__section donate-sponsors" id="sponsors">
   <!-- Data from supporters.yml -->
   <h2>Pravidelní přispěvatelé</h2>
-  <p>
-    Tento seznam je poděkování pravidelným přispěvatelům přes <a href="https://github.com/sponsors/honzajavorek">GitHub Sponsors</a>
-    nebo <a href="https://www.patreon.com/honzajavorek">Patreon</a>. Řazení je abecedně podle příjmení.
-  </p>
-  <h3>Více než 200 Kč měsíčně</h3>
-  <p>
-    {% for supporter in supporters_names_urls %}
-      <a href="{{ supporter.url }}">{{ supporter.name }}</a>{% if not loop.last %}, {% endif %}
-    {% endfor %}
-  </p>
-  <h3>Ostatní</h3>
-  <p>
-    {% for supporter in supporters_names %}
-      {{ supporter.name }}{% if not loop.last %}, {% endif %}
-    {% endfor %}
-  </p>
+  <div class="text">
+    <p>
+      Tento seznam je poděkování pravidelným přispěvatelům přes <a href="https://github.com/sponsors/honzajavorek">GitHub Sponsors</a>
+      nebo <a href="https://www.patreon.com/honzajavorek">Patreon</a>. Řazení je abecedně podle příjmení.
+    </p>
+    <h3>Více než 200 Kč měsíčně</h3>
+    <p>
+      {% for supporter in supporters_names_urls %}
+        <a href="{{ supporter.url }}">{{ supporter.name }}</a>{% if not loop.last %}, {% endif %}
+      {% endfor %}
+    </p>
+    <h3>Ostatní</h3>
+    <p>
+      {% for supporter in supporters_names %}
+        {{ supporter.name }}{% if not loop.last %}, {% endif %}
+      {% endfor %}
+    </p>
+  </div>
 </section>
 
 <section class="main__section" id="about">
   <h2>O autorovi</h2>
-  <p class="donate-author">
-    <img alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
+  <div class="text">
+    <p class="donate-author">
+      <img alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
 
-    Jmenuji se <a href="https://honzajavorek.cz">Honza Javorek</a> a vytvářím tohoto průvodce.
-    Přes {{ year - 2011 }}&nbsp;let se&nbsp;do&shy;bro&shy;vol&shy;nicky podílím na srazech, kurzech, workshopech a
-    konferencích české <a href="https://python.cz/">komunity programovacího jazyka Python</a>. Dlouhodobě se věnuji začátečníkům.
-    Napsal jsem <a href="https://www.zdrojak.cz/clanky/kolonizatori-spravci-kolonii/">článek o dvou programátorských povahách</a>
-    a vytvořil <a href="https://cojeapi.cz/">úvod do API pro začátečníky</a>. Nejsem „guru“, ale dal jsem si hodně práce,
-    abych ti mohl s kariérou v&nbsp;IT poradit co nejlépe. Snažím se žít z toho, co tady firmy utratí
-    za <a href="{{ url_for('jobs') }}">nabídky práce</a>, a z dobrovolných příspěvků.
-  </p>
-
-  <p class="donate-interview">
-    <a href="https://kafemlejnek.tv/dil-52-junior-guru/" target="_blank" rel="noopener">
-      <img alt="Náhled videa s rozhovorem pro Kafemlejnek TV" src="{{ url_for('static', filename='images/kafemlejnek.png') }}">
-    </a>
-    <span>Rozhovor pro <a href="https://kafemlejnek.tv/">Kafemlejnek.TV</a> z ledna 2020</span>
-  </p>
+      Jmenuji se <a href="https://honzajavorek.cz">Honza Javorek</a> a vytvářím tohoto průvodce.
+      Přes {{ year - 2011 }}&nbsp;let se&nbsp;do&shy;bro&shy;vol&shy;nicky podílím na srazech, kurzech, workshopech a
+      konferencích české <a href="https://python.cz/">komunity programovacího jazyka Python</a>. Dlouhodobě se věnuji začátečníkům.
+      Napsal jsem <a href="https://www.zdrojak.cz/clanky/kolonizatori-spravci-kolonii/">článek o dvou programátorských povahách</a>
+      a vytvořil <a href="https://cojeapi.cz/">úvod do API pro začátečníky</a>. Nejsem „guru“, ale dal jsem si hodně práce,
+      abych ti mohl s kariérou v&nbsp;IT poradit co nejlépe. Snažím se žít z toho, co tady firmy utratí
+      za <a href="{{ url_for('jobs') }}">nabídky práce</a>, a z dobrovolných příspěvků.
+    </p>
+    <p class="donate-interview">
+      <a href="https://kafemlejnek.tv/dil-52-junior-guru/" target="_blank" rel="noopener">
+        <img alt="Náhled videa s rozhovorem pro Kafemlejnek TV" src="{{ url_for('static', filename='images/kafemlejnek.png') }}">
+      </a>
+      <span>Rozhovor pro <a href="https://kafemlejnek.tv/">Kafemlejnek.TV</a> z ledna 2020</span>
+    </p>
+  </div>
 </section>
 
 <section class="main__section">
   <h2>Na co přispíváš</h2>
-  <ul>
-    <li>
-      Aby každý Luďan z Mostu, každá puberťačka,
-      každý <a href="https://cz.pycon.org/2018/programme/detail/talk/21/">vědec</a>
-      nebo každá matka na rodičovské měli po ruce návod, jak začít s programováním.
-    </li>
-    <li>
-      Aby byl na trhu menší nedostatek IT specialistů, protože tato stránka
-      přesvědčí více firem, že místo nekonečného hledání drahých seniorů
-      mají více investovat do zaučování lidí.
-    </li>
-    <li>
-      Aby bylo více žen v&nbsp;IT, protože jim tato stránka ukáže cestu jak se naučit
-      programovat a vytvoří půdu pro to, aby si snadněji našly první práci.
-    </li>
-    <li>
-      Aby tato stránka dál existovala a v budoucnu pomohla jiným stejně,
-      jako pomohla tobě.
-    </li>
-  </ul>
+  <div class="text">
+    <ul>
+      <li>
+        Aby každý Luďan z Mostu, každá puberťačka,
+        každý <a href="https://cz.pycon.org/2018/programme/detail/talk/21/">vědec</a>
+        nebo každá matka na rodičovské měli po ruce návod, jak začít s programováním.
+      </li>
+      <li>
+        Aby byl na trhu menší nedostatek IT specialistů, protože tato stránka
+        přesvědčí více firem, že místo nekonečného hledání drahých seniorů
+        mají více investovat do zaučování lidí.
+      </li>
+      <li>
+        Aby bylo více žen v&nbsp;IT, protože jim tato stránka ukáže cestu jak se naučit
+        programovat a vytvoří půdu pro to, aby si snadněji našly první práci.
+      </li>
+      <li>
+        Aby tato stránka dál existovala a v budoucnu pomohla jiným stejně,
+        jako pomohla tobě.
+      </li>
+    </ul>
+  </div>
 </section>
 
 <section class="main__section">
   <h2>Kolik stojí zadarmo</h2>
-  <p>
-    Věci, které vytvářím, jsou zadarmo a mají <a href="https://cs.wikipedia.org/wiki/Otev%C5%99en%C3%BD_software">otevřený kód</a>.
-    Texty, za kterými jsou desítky hodin práce, jsou každému volně dostupné.
-    Zpoplatňovat je nechci, aby měl příležitost naučit se programovat opravdu každý.
-    Finanční příspěvky jsou způsob, jak mohu obsah nechat zdarma
-    pro všechny a zároveň dát lidem možnost mi poděkovat, pokud jsem jim pomohl.
-  </p>
-  <p>
-    <strong>Výhodou</strong> je, že si můžeš všechno hezky přečíst tady na webu.
-    Můžeš to poslat k přečtení kamarádce. Může si to projít každý <a href="https://www.tedxprague.cz/videa/z-hornika-programatorem">horník z Ostravy</a>.
-    Není to uzavřené v nějaké placené knize. Máš to pěkně v mobilu. Nevyskakují tady na tebe reklamy.
-    Kurzy nebo knihy mohu doporučovat podle vlastního průzkumu a svědomí,
-    nemusím doporučovat něčí produkt jen proto, že mi potom pošle peníze.
-  </p>
-  <p>
-    <strong>Nevýhodou</strong> je, že pokud si nevydělám,
-    nebudu mít čas se tomu věnovat. Místo abych sem přidával další rady,
-    aktualizoval obsah a vymýšlel způsoby, jak ještě mohu začátečníkům pomoci,
-    budu muset pracovat na věcech, které mě uživí. Z tohoto webu se stane jen
-    hobby. Budu na něj mít čas nanejvýš po večerech, jednou za měsíc. Začne
-    to tady zastarávat. Nový obsah nejspíš přibývat vůbec nebude.
-  </p>
-  <p>
-    Pomáhat začátečníkům mě baví a myslím si, že tak teď mohu nejefektivněji
-    využít všechno, co umím. Že tak mohu nejlépe přispět k tomu, aby byl svět
-    kolem mě lepší. Díky každému, kdo mi umožní v tom pokračovat.
-  </p>
+  <div class="text">
+    <p>
+      Věci, které vytvářím, jsou zadarmo a mají <a href="https://cs.wikipedia.org/wiki/Otev%C5%99en%C3%BD_software">otevřený kód</a>.
+      Texty, za kterými jsou desítky hodin práce, jsou každému volně dostupné.
+      Zpoplatňovat je nechci, aby měl příležitost naučit se programovat opravdu každý.
+      Finanční příspěvky jsou způsob, jak mohu obsah nechat zdarma
+      pro všechny a zároveň dát lidem možnost mi poděkovat, pokud jsem jim pomohl.
+    </p>
+    <p>
+      <strong>Výhodou</strong> je, že si můžeš všechno hezky přečíst tady na webu.
+      Můžeš to poslat k přečtení kamarádce. Může si to projít každý <a href="https://www.tedxprague.cz/videa/z-hornika-programatorem">horník z Ostravy</a>.
+      Není to uzavřené v nějaké placené knize. Máš to pěkně v mobilu. Nevyskakují tady na tebe reklamy.
+      Kurzy nebo knihy mohu doporučovat podle vlastního průzkumu a svědomí,
+      nemusím doporučovat něčí produkt jen proto, že mi potom pošle peníze.
+    </p>
+    <p>
+      <strong>Nevýhodou</strong> je, že pokud si nevydělám,
+      nebudu mít čas se tomu věnovat. Místo abych sem přidával další rady,
+      aktualizoval obsah a vymýšlel způsoby, jak ještě mohu začátečníkům pomoci,
+      budu muset pracovat na věcech, které mě uživí. Z tohoto webu se stane jen
+      hobby. Budu na něj mít čas nanejvýš po večerech, jednou za měsíc. Začne
+      to tady zastarávat. Nový obsah nejspíš přibývat vůbec nebude.
+    </p>
+    <p>
+      Pomáhat začátečníkům mě baví a myslím si, že tak teď mohu nejefektivněji
+      využít všechno, co umím. Že tak mohu nejlépe přispět k tomu, aby byl svět
+      kolem mě lepší. Díky každému, kdo mi umožní v tom pokračovat.
+    </p>
+  </div>
 </section>
 
 <section class="teaser call-to-action">
