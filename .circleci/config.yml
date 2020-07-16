@@ -48,6 +48,12 @@ jobs:
   fetch-build:
     executor: python-js
     steps:
+      - run:
+          name: install fonts
+          command: |
+            echo "deb http://ftp.us.debian.org/debian buster main contrib" | sudo tee -a /etc/apt/sources.list
+            echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+            sudo apt-get update && sudo apt-get install ttf-mscorefonts-installer
       - attach_workspace:
           at: "~"
       - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
