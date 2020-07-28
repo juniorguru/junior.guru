@@ -18,25 +18,20 @@ $logo-height-index: 10rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.header__navbar {
-  box-sizing: border-box;
-  margin-top: 0;
+.header--optional .header__navbar-drawer {
+  display: none;
 }
 
-.header--optional .header__navbar {
-  margin-top: -1 * $logo-height;
-}
-
-.header--subnav.header--optional .header__navbar {
-  margin-top: -1 * ($logo-height + 3.54rem);
+.header--subnav.header--optional .header__navbar-drawer {
+  display: none;
 }
 
 .header--index {
   position: static;
 }
 
-.header--index .header__navbar {
-  margin-top: 0;
+.header--index .header__navbar-drawer {
+  display: block;
 }
 
 :target::before {
@@ -288,9 +283,9 @@ a.header__subnav-tab-control:active {
 }
 
 @media screen and (min-width: 550px) {
-  .header--optional .header__navbar,
-  .header--subnav.header--optional .header__navbar {
-    margin-top: 0;
+  .header--optional .header__navbar-drawer,
+  .header--subnav.header--optional .header__navbar-drawer {
+    display: block;
   }
 
   .header--index .header__main-content {

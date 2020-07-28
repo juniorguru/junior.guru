@@ -1,13 +1,13 @@
-// legacy spaghetti code 🍝
-@import 'spaghetti/variables';
-@import 'spaghetti/common';
+// base
+@import 'spaghetti/variables'; // legacy spaghetti code 🍝
+@import 'base/body';
+@import 'spaghetti/common'; // legacy spaghetti code 🍝
 
 // content (not exactly BEM)
 @import 'content/checklist';
 @import 'content/text';
 
 // BEM components
-@import 'components/body';
 @import 'components/main';
 @import 'components/intro';
 @import 'components/header';
@@ -20,6 +20,6 @@
 @import 'components/engage';
 @import 'components/stories';
 
-// legacy spaghetti code 🍝
+// page-specific legacy spaghetti code 🍝
 @import 'spaghetti/page-index';
 @import 'spaghetti/page-hire-juniors';
