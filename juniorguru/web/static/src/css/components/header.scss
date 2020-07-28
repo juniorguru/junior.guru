@@ -265,7 +265,7 @@ a.header__subnav-tab-control:active {
   background-color: $yellow;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: $breakpoint-larger-phone) {
   .header__nav-tab-control--1::before,
   .header__nav-tab-control--2::before,
   .header__nav-tab-control--3::before {

@@ -102,21 +102,21 @@ Průvodce programováním pro samouky a nabídky práce pro juniory.
 <hr class="hidden">
 
 <section class="main__section stories" id="stories">
-  <h2>Příběhy lidí jako&nbsp;ty</h2>
-  <ul class="items">
+  <h2 class="stories__heading">Příběhy lidí jako&nbsp;ty</h2>
+  <ul class="stories__items">
   <!-- Data from stories.yml -->
   {% for story in stories %}
-    <li class="item-summary">
-      <a href="{{ story.url }}">
-        <div class="item-summary-wrapper">
-          <h3>{{ story.title }}</h3>
-          <small class="item-summary-details">
+    <li class="stories__item">
+      <a class="stories__content" href="{{ story.url }}">
+        <div class="stories__text">
+          <h3 class="stories__title">{{ story.title }}</h3>
+          <small class="stories_details">
             {{ story.publisher }}
             &mdash;
             {{ story.date.month }}/{{ story.date.year }}
           </small>
         </div>
-        <img src="{{ url_for('static', filename=story.image_path) }}" width="100" loading="lazy" alt="Fotka obličeje">
+        <img class="stories__image" src="{{ url_for('static', filename=story.image_path) }}" width="100" loading="lazy" alt="Fotka obličeje">
       </a>
     </li>
   {% endfor %}

@@ -83,7 +83,7 @@ function buildStories() {
   return gulp.src('juniorguru/web/static/src/images/stories/**/*')
     .pipe(rename({ dirname: 'stories' }))
     .pipe(changed('juniorguru/web/static/images/'))
-    .pipe(resizer({ width: 150, height: 150 }))
+    .pipe(resizer({ width: 100, height: 100 }))
     .pipe(gulpIf(!isLocalDevelopment, imagemin({ verbose: true })))
     .pipe(gulp.dest('juniorguru/web/static/images/'))
 }

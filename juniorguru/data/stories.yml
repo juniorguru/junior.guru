@@ -1,6 +1,6 @@
 - url: https://medium.com/socialbakers-engineering/my-precarious-path-to-programming-in-prague-103929145233
   date: 2019-04-17
-  title: Bývalý voják se přestěhoval z USA do ČR a živí se programováním
+  title: Bývalý voják se přestěhoval z USA do ČR, živí se programováním
   image_path: images/stories/tim-usa.jpg
 
 - url: https://cz.pycon.org/2018/programme/detail/talk/2/
@@ -10,7 +10,7 @@
 
 - url: https://imysleni.cz/clanky/novinka/208-z-baletky-programatorkou-chatbot-sestnactilete-divky-z-havlickova-brodu-usetri-lekarum-praci
   date: 2019-05-15
-  title: Baletka vytvořila robota, který za lékaře odpovídá na dotazy
+  title: Baletka vytvořila robota, za lékaře odpovídá na dotazy
   image_path: images/stories/maria-baletka.jpg
 
 - url: https://imysleni.cz/clanky/rozhovor/209-biolozka-radka-symonova-hi-my-native-language-is-python
@@ -70,5 +70,5 @@
 
 - url: http://www.romea.cz/cz/zpravodajstvi/student-marcel-horvath-chtel-bych-pracovat-pro-velkou-it-firmu-napriklad-microsoft
   date: 2019-07-29
-  title: Student se sám naučil programovat, vydal mobilní hru
+  title: Gymnazista se sám naučil programovat, vydal mobilní hru
   image_path: images/stories/marcel-romea.jpg
