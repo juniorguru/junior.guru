@@ -59,12 +59,11 @@ def test_create_message_start_end(job_mock, template):
 
 @pytest.mark.parametrize('expires_at,expected', [
     (date(2020, 7, 1), 'Jak se daří vašemu inzerátu? (Junior Software Engineer)'),
-    # (date(2020, 6, 28), 'Váš inzerát brzy vyprší! (Junior Software Engineer)'),
+    (date(2020, 6, 25), 'Váš inzerát brzy vyprší! (Junior Software Engineer)'),
 ])
 def test_create_message_subject(job_mock, template, expires_at, expected):
-    job_mock.approved_at = date(2020, 6, 1)
     job_mock.expires_at = expires_at
-    message = create_message(job_mock, template, today=date(2020, 6, 23))
+    message = create_message(job_mock, template, today=date(2020, 6, 20))
 
     assert message.get()['subject'] == expected
 

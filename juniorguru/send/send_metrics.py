@@ -61,7 +61,12 @@ def main():
 
 
 def create_message(job, template, today=None):
-    subject = f'Jak se daří vašemu inzerátu? ({job.title})'
+    if job.expires_soon(today):
+        subject = 'Váš inzerát brzy vyprší!'
+    else:
+        subject = 'Jak se daří vašemu inzerátu?'
+    subject = f'{subject} ({job.title})'
+
     from_email = From('metrics@junior.guru', 'junior.guru')
     content = template.render(**create_template_context(job, today))
 
@@ -87,10 +92,10 @@ def create_template_context(job, today=None):
                 url_logo='https://junior.guru/static/images/logo-email.png',
                 metrics=job.metrics,
                 start_at=job.approved_at,
-                start_days=job.days_since_approved(today=today),
+                start_days=job.days_since_approved(today),
                 end_at=job.expires_at,
-                end_days=job.days_until_expires(today=today),
-                expires_soon=job.expires_soon(today=today),
+                end_days=job.days_until_expires(today),
+                expires_soon=job.expires_soon(today),
                 newsletter_at=job.newsletter_at,
                 newsletter_url='https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75')
 
