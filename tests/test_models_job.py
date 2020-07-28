@@ -243,3 +243,29 @@ def test_links_utm_when_none():
 
     assert job.company_link_utm == None
     assert job.link_utm == None
+
+
+def test_days_since_approved():
+    job = Job(**prepare_job_data('1', approved_at=date(1987, 8, 30)))
+
+    assert job.days_since_approved(today=date(1987, 9, 8)) == 9
+
+
+def test_days_until_expires():
+    job = Job(**prepare_job_data('1', expires_at=date(1987, 9, 8)))
+
+    assert job.days_until_expires(today=date(1987, 8, 30)) == 9
+
+
+@pytest.mark.parametrize('today,expected', [
+    pytest.param(date(2020, 6, 20), False, id='not soon'),
+    pytest.param(date(2020, 6, 21), True, id='10 days before'),
+    pytest.param(date(2020, 6, 24), True, id='week before'),
+    pytest.param(date(2020, 6, 26), True, id='random date in the middle'),
+    pytest.param(date(2020, 6, 30), True, id='day before'),
+    pytest.param(date(2020, 7, 1), True, id='the same day'),
+])
+def test_expires_soon(today, expected):
+    job = Job(**prepare_job_data('1', expires_at=date(2020, 7, 1)))
+
+    assert job.expires_soon(today=today) is expected

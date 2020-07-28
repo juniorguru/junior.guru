@@ -162,14 +162,6 @@ class Job(BaseModel):
         return result
 
     @property
-    def effective_approved_at(self):
-        # before 2020-06-04 the approved field was only a boolean, so using
-        # 'posted_at' instead for anything approved that date or before
-        if self.approved_at <= date(2020, 6, 4):
-            return self.posted_at.date()
-        return self.approved_at
-
-    @property
     def company_link_utm(self):
         if not self.company_link or UTM_RE.search(self.company_link):
             return self.company_link
@@ -180,6 +172,18 @@ class Job(BaseModel):
         if not self.link or UTM_RE.search(self.link):
             return self.link
         return set_params(self.link, UTM_PARAMS)
+
+    def days_since_approved(self, today=None):
+        today = today or date.today()
+        return (today - self.approved_at).days
+
+    def days_until_expires(self, today=None):
+        today = today or date.today()
+        return (self.expires_at - today).days
+
+    def expires_soon(self, today=None):
+        today = today or date.today()
+        return self.days_until_expires(today=today) <= 10
 
 
 class JobDropped(BaseModel):

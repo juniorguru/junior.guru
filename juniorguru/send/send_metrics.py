@@ -77,12 +77,6 @@ def create_message(job, template, today=None):
 
 
 def create_template_context(job, today=None):
-    today = today or date.today()
-    starts_at = job.effective_approved_at
-    start_days = (today - starts_at).days
-    ends_at = job.expires_at or (today + timedelta(days=30))
-    end_days = (ends_at - today).days
-
     return dict(title=job.title,
                 company_name=job.company_name,
                 company_name_urlencoded=quote_plus(job.company_name),
@@ -92,12 +86,11 @@ def create_template_context(job, today=None):
                 url_index='https://junior.guru/',
                 url_logo='https://junior.guru/static/images/logo-email.png',
                 metrics=job.metrics,
-                starts_at=starts_at,
-                start_days=start_days,
-                ends_at=ends_at,
-                end_days=end_days,
-                show_applications_note=(job.metrics['applications'] > 0
-                                        and starts_at < date(2020, 5, 15)),
+                start_at=job.approved_at,
+                start_days=job.days_since_approved(today=today),
+                end_at=job.expires_at,
+                end_days=job.days_until_expires(today=today),
+                expires_soon=job.expires_soon(today=today),
                 newsletter_at=job.newsletter_at,
                 newsletter_url='https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75')
 

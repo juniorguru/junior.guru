@@ -1,31 +1,25 @@
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 import pytest
 from jinja2 import Template
+from playhouse.sqlite_ext import JSONField
 
 from juniorguru.models import Job
 from juniorguru.send.send_metrics import create_message
 from testing_utils import prepare_job_data
 
 
-class JobMock():
-    __names = dir(Job())
-
-    def __init__(self, **kwargs):
-        for name, value in kwargs.items():
-            if name in self.__names:
-                setattr(self, name, value)
-            else:
-                raise AttributeError(f"The Job model doesn't have '{name}'")
+class JobMock(Job):
+    metrics = JSONField()
 
 
 @pytest.fixture
 def job_mock():
     data = prepare_job_data('123')
-    return JobMock(effective_approved_at=data['approved_at'],
-                   metrics=dict(users=15, pageviews=25, applications=3),
-                   **data)
+    data['expires_at'] = data['approved_at'] + timedelta(days=30)
+    data['metrics'] = dict(users=15, pageviews=25, applications=3)
+    return JobMock(**data)
 
 
 @pytest.fixture
@@ -53,7 +47,6 @@ def test_create_message_prefill_form(job_mock, template):
 
 def test_create_message_start_end(job_mock, template):
     job_mock.approved_at = date(2020, 6, 1)
-    job_mock.effective_approved_at = date(2020, 6, 1)
     job_mock.expires_at = date(2020, 7, 1)
     message = create_message(job_mock, template, today=date(2020, 6, 23))
     html = message.get()['content'][0]['value']
@@ -62,6 +55,18 @@ def test_create_message_start_end(job_mock, template):
     assert 'schválen 1.6.2020' in html
     assert '8&nbsp;dní' in html
     assert 'vyprší 1.7.2020' in html
+
+
+@pytest.mark.parametrize('expires_at,expected', [
+    (date(2020, 7, 1), 'Jak se daří vašemu inzerátu? (Junior Software Engineer)'),
+    # (date(2020, 6, 28), 'Váš inzerát brzy vyprší! (Junior Software Engineer)'),
+])
+def test_create_message_subject(job_mock, template, expires_at, expected):
+    job_mock.approved_at = date(2020, 6, 1)
+    job_mock.expires_at = expires_at
+    message = create_message(job_mock, template, today=date(2020, 6, 23))
+
+    assert message.get()['subject'] == expected
 
 
 def test_create_message_newsletter_yes(job_mock, template):
@@ -92,7 +97,6 @@ def test_create_message_applications_zero(job_mock, template):
     html = message.get()['content'][0]['value']
 
     assert 'uchazeč' not in html
-    assert '<sup>' not in html
 
 
 def test_create_message_applications_non_zero(job_mock, template):
@@ -102,32 +106,11 @@ def test_create_message_applications_non_zero(job_mock, template):
 
     assert 'uchazeč' in html
     assert '<b>5</b>' in html
-    assert '<sup>' not in html
-    assert 'května 2020' not in html
 
 
-def test_create_message_applications_non_zero_note(job_mock, template):
-    job_mock.effective_approved_at = date(2020, 1, 1)
-    job_mock.metrics = dict(users=15, pageviews=25, applications=5)
-    message = create_message(job_mock, template, today=date(2020, 6, 23))
-    html = message.get()['content'][0]['value']
-
-    assert 'uchazeč' in html
-    assert '<b>5</b>' in html
-    assert '<sup>' in html
-    assert 'května 2020' in html
-
-
-@pytest.mark.parametrize('today', [
-    date(2020, 6, 21),  # 10 days before
-    date(2020, 6, 24),  # week before
-    date(2020, 6, 26),  # random date in the middle
-    date(2020, 6, 30),  # day before
-    date(2020, 7, 1),  # the same day
-])
-def test_create_message_expires_soon(job_mock, template, today):
+def test_create_message_expires_soon(job_mock, template):
     job_mock.expires_at = date(2020, 7, 1)
-    message = create_message(job_mock, template, today=today)
+    message = create_message(job_mock, template, today=date(2020, 6, 24))
     html = message.get()['content'][0]['value']
 
     assert 'prodloužit o dalších 30&nbsp;dní' in html

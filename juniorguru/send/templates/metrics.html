@@ -46,7 +46,7 @@
       <b>{{ start_days }}&nbsp;dní</b>&nbsp;&nbsp;&nbsp;
     </td>
     <td>
-      <small>inzerát schválen {{ starts_at.day }}.{{ starts_at.month }}.{{ starts_at.year }}</small>
+      <small>inzerát schválen {{ start_at.day }}.{{ start_at.month }}.{{ start_at.year }}</small>
     </td>
   </tr>
   <tr>
@@ -57,7 +57,7 @@
       <b>{{ end_days }}&nbsp;dní</b>&nbsp;&nbsp;&nbsp;
     </td>
     <td>
-      <small>inzerát vyprší {{ ends_at.day }}.{{ ends_at.month }}.{{ ends_at.year }}</small>
+      <small>inzerát vyprší {{ end_at.day }}.{{ end_at.month }}.{{ end_at.year }}</small>
     </td>
   </tr>
   <tr>
@@ -103,7 +103,7 @@
 {% if metrics.applications %}
   <tr>
     <td>
-      Počet uchazečů{% if show_applications_note %}<sup><small>*</small></sup>{% endif %}:&nbsp;&nbsp;&nbsp;
+      Počet uchazečů:&nbsp;&nbsp;&nbsp;
     </td>
     <td>
       <b>{{ metrics.applications }}</b>&nbsp;&nbsp;&nbsp;
@@ -115,12 +115,11 @@
 {% endif %}
 </table>
 <p><small>
-  {% if show_applications_note %}<sup>*</sup>Měřeno teprve od května 2020.{% endif %}
   Statistiky jsou podhodnocené a pouze orientační. Čísla
   pocházejí z nástroje Google Analytics, který mohou internetové
   prohlížeče blokovat.
 </small></p>
-{% if end_days <= 10 %}
+{% if expires_soon %}
 <p><b>
   Inzerát brzy vyprší!
   {% if pricing_plan == 'community' %}
