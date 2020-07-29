@@ -1,4 +1,5 @@
 $toc-width-rem: 30;
+$toc-fold-height: 3rem;
 
 .toc__delimiter--vertical {
   position: relative;
@@ -14,19 +15,43 @@ $toc-width-rem: 30;
 
 .toc,
 .toc__content {
+  box-sizing: border-box;
   width: 100%;
   display: none; // TODO FIXME NOT RELEASED YET
 }
 
 .toc {
   position: absolute;
+  top: -1 * $toc-fold-height;
   right: 0;
 }
 
 .toc__content {
   position: fixed;
   z-index: 500;
-  background: rgba($white, 0.6);
+  background: $blue;
+  color: $white;
+  padding: $toc-fold-height $whitespace $whitespace-0 $whitespace;
+}
+
+.toc__heading,
+.toc__items {
+  margin: 0;
+}
+
+.toc__heading {
+  display: none;
+}
+
+.toc__items,
+.toc__items li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc__items a {
+  @include color-links($white, $white);
 }
 
 @media screen and (min-width: (($toc-width-rem * 10px) + 30px)) {
