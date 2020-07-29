@@ -227,36 +227,32 @@ a.header__subnav-tab-control:active {
   padding: ($whitespace-0 / 4) ($whitespace-0 / 1.5);
 }
 
-.header__toc {
+.header__tocbar {
   @include font-0;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.header__toc-content {
+.header__tocbar-content {
   @include page-width($padding: $whitespace-0);
 }
 
-.header__toc-items,
-.header__toc-item {
+.header__tocbar-items,
+.header__tocbar-item {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-.header__toc-items {
+.header__tocbar-items {
   display: flex;
   justify-content: space-between;
 }
 
-.header__toc-heading {
+.header__tocbar-heading {
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
   padding-right: $whitespace-0;
-}
-
-.header__toc-link {
-  font-weight: bold;
 }
 
 .header__divider {
@@ -356,7 +352,7 @@ a.header__subnav-tab-control:active {
     padding: $whitespace ($whitespace * 1.25);
   }
 
-  .header__toc-content {
+  .header__tocbar-content {
     @include page-width($padding: $whitespace);
   }
 }

@@ -8,14 +8,17 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 {% block body_modifier %} body--practice{% endblock %}
 
 {% block header_toc %}
-<nav class="header__toc">
-  <div class="header__toc-content">
-    <ul class="header__toc-items">
-      <li id="toc-heading" class="header__toc-item header__toc-heading">
+<nav class="header__tocbar">
+  <div class="header__tocbar-content">
+    <ul class="header__tocbar-items">
+      <li id="toc-heading" class="header__tocbar-item header__tocbar-heading">
         Získej praxi v programování
       </li>
-      <li class="header__toc-item">
-        <a href="#toc" class="header__toc-link">Obsah</a>
+      <li class="header__tocbar-item">
+        <label class="toc-toggle">
+          <input id="toc-toggle" class="toc-toggle__checkbox" type="checkbox">
+          <span class="toc-toggle__label">Obsah</span>
+        </label>
       </li>
     </ul>
   </div>
@@ -31,7 +34,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
     Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti.
     Teprve potom si můžeš začít <a href="{{ url_for('jobs') }}">hledat svou první práci v&nbsp;IT</a>.
   </p>
-
+{#
   <div id="toc" class="toc-legacy">
     <h2>Obsah</h2>
     <ul>
@@ -45,21 +48,22 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       <li><a href="#events">Najdi inspiraci, poznej lidi</a></li>&#32;
     </ul>
   </div>
+#}
 </header>
 
 <div class="toc__delimiter toc__delimiter--horizontal">
-  <nav class="toc">
+  <nav id="toc" class="toc">
     <div class="toc__content">
       <h2 class="toc__heading">Obsah</h2>
       <ol class="toc__items">
-        <li><a href="#english">Neflákej angličtinu</a></li>
-        <li><a href="#exercises">Procvičuj</a></li>
-        <li><a href="#projects">Najdi si projekt</a></li>
-        <li><a href="#mentors">Najdi si mentora</a></li>
-        <li><a href="#hackathons">Zkus „hackathon“</a></li>
-        <li><a href="#opensource">Zkus „Open Source“</a></li>
-        <li><a href="#skills">Rozšiřuj si znalosti</a></li>
-        <li><a href="#events">Najdi inspiraci, poznej lidi</a></li>
+        <li class="toc__item"><a href="#english">Neflákej angličtinu</a></li>
+        <li class="toc__item"><a href="#exercises">Procvičuj</a></li>
+        <li class="toc__item"><a href="#projects">Najdi si projekt</a></li>
+        <li class="toc__item"><a href="#mentors">Najdi si mentora</a></li>
+        <li class="toc__item"><a href="#hackathons">Zkus „hackathon“</a></li>
+        <li class="toc__item"><a href="#opensource">Zkus „Open Source“</a></li>
+        <li class="toc__item"><a href="#skills">Rozšiřuj si znalosti</a></li>
+        <li class="toc__item"><a href="#events">Najdi inspiraci, poznej lidi</a></li>
       </ol>
     </div>
   </nav>

@@ -8,14 +8,17 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
 {% block body_modifier %} body--learn{% endblock %}
 
 {% block header_toc %}
-<nav class="header__toc">
-  <div class="header__toc-content">
-    <ul class="header__toc-items">
-      <li id="toc-heading" class="header__toc-item header__toc-heading">
+<nav class="header__tocbar">
+  <div class="header__tocbar-content">
+    <ul class="header__tocbar-items">
+      <li id="toc-heading" class="header__tocbar-item header__tocbar-heading">
         Nauč se základy programování
       </li>
-      <li class="header__toc-item">
-        <a href="#toc" class="header__toc-link">Obsah</a>
+      <li class="header__tocbar-item">
+        <label class="toc-toggle">
+          <input id="toc-toggle" class="toc-toggle__checkbox" type="checkbox">
+          <span class="toc-toggle__label">Obsah</span>
+        </label>
       </li>
     </ul>
   </div>
@@ -29,7 +32,7 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
     <img class="intro__illustration" src="{{ url_for('static', filename='images/chick1.svg') }}">
     {{ self.description() }} Až tím projdeš, můžeš začít <a href="{{ url_for('practice') }}">získávat praxi</a>.
   </p>
-
+{#
   <div id="toc" class="toc-legacy">
     <h2>Obsah</h2>
     <ul>
@@ -44,7 +47,27 @@ Jak se naučit programovat? Zde najdeš pečlivě nachystané jen to, co pro teb
       <li><a href="#english">Jak si zlepšit angličtinu?</a></li>&#32;
     </ul>
   </div>
+#}
 </header>
+
+<div class="toc__delimiter toc__delimiter--horizontal">
+  <nav id="toc" class="toc">
+    <div class="toc__content">
+      <h2 class="toc__heading">Obsah</h2>
+      <ol class="toc__items">
+        <li class="toc__item"><a href="#what">Co je programování?</a></li>
+        <li class="toc__item"><a href="#why">Proč se to učit?</a></li>
+        <li class="toc__item"><a href="#covid19">Co způsobí koronavirus?</a></li>
+        <li class="toc__item"><a href="#requirements">Co budeš potřebovat?</a></li>
+        <li class="toc__item"><a href="#python">Proč Python?</a></li>
+        <li class="toc__item"><a href="#learn">Jak začít?</a></li>
+        <li class="toc__item"><a href="#ladies">Dámy mají přednost</a></li>
+        <li class="toc__item"><a href="#help">Kde najdeš pomoc?</a></li>
+        <li class="toc__item"><a href="#english">Jak si zlepšit angličtinu?</a></li>
+      </ol>
+    </div>
+  </nav>
+</div>
 
 <section id="what" class="main__section more">
   <h2 class="main__section-heading">Co je programování?</h2>

@@ -2,9 +2,19 @@ const MIN_SCROLL = 10;
 
 let lastScrollTop = 0;
 let headings = [];
+let tocHeading;
 
 document.addEventListener('DOMContentLoaded', function () {
-  headings = Array.from(document.querySelectorAll('h1, h2'));
+  tocHeading = document.getElementById('toc-heading');
+  headings = [
+    'intro__title',
+    'engage__links-heading',
+    'main__section-heading',
+  ].map(function (className) {
+    return Array.from(document.getElementsByClassName(className));
+  }).reduce(function (acc, arr) {
+    return acc.concat(arr);
+  }, []);
 });
 
 onScroll(function () {
@@ -20,10 +30,19 @@ onScroll(function () {
   const currentScrollTop = getScrollTop();
   lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
 
-  const toc = document.getElementById('toc-heading');
-  if (toc) {
+  if (tocHeading) {
     const currentHeading = getCurrentHeading(header.getBoundingClientRect().bottom);
-    toc.innerHTML = currentHeading.innerHTML;
+    tocHeading.innerHTML = currentHeading.innerHTML;
+
+    const parentId = getParentId(currentHeading);
+    const tocItems = Array.from(document.getElementsByClassName('toc__item'));
+    tocItems.forEach(function (tocItem) {
+      tocItem.classList.remove('toc__item--active');
+      const links = tocItem.getElementsByTagName('a');
+      if (links.length && links[0].href.match('#' + parentId)) {
+        tocItem.classList.add('toc__item--active');
+      }
+    });
   }
 });
 
@@ -32,7 +51,7 @@ function getScrollTop() {
 }
 
 function getCurrentHeading(topBound) {
-  topBound = topBound || 0;
+  topBound = (topBound || 0) + 100;
 
   const tuples = headings.map(function (heading) {
     const position = heading.getBoundingClientRect().bottom;
@@ -45,6 +64,15 @@ function getCurrentHeading(topBound) {
   }).reduce(function (result, tuple) {
     return result[1] > tuple[1] ? result : tuple;
   }, firstTuple)[0];
+}
+
+function getParentId(el) {
+  while (el) {
+    if (el.id) {
+      return el.id;
+    }
+    el = el.parentElement;
+  }
 }
 
 function onScroll(fn) {
