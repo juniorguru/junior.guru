@@ -1,0 +1,37 @@
+$toc-width-rem: 30;
+
+.toc__delimiter--vertical {
+  position: relative;
+}
+
+.toc__delimiter--horizontal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  @include page-width($padding: 1rem);
+}
+
+.toc,
+.toc__content {
+  width: 100%;
+  display: none; // TODO FIXME NOT RELEASED YET
+}
+
+.toc {
+  position: absolute;
+  right: 0;
+}
+
+.toc__content {
+  position: fixed;
+  z-index: 500;
+  background: rgba($white, 0.6);
+}
+
+@media screen and (min-width: (($toc-width-rem * 10px) + 30px)) {
+  .toc,
+  .toc__content {
+    width: $toc-width-rem * 1rem;
+  }
+}

@@ -85,9 +85,11 @@
         </div>
         {% block header_toc %}{% endblock %}
       </header>
-      <main class="main">
-        {% block main %}{% endblock %}
-      </main>
+      <div class="toc__delimiter toc__delimiter--vertical">
+        <main class="main">
+          {% block main %}{% endblock %}
+        </main>
+      </div>
       <hr>
       <footer>
         <div class="footer">

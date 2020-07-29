@@ -9,9 +9,7 @@
 }
 
 .main__section-heading {
-  display: inline-block;
-  background-color: $yellow;
-  padding: 0.3rem 0.5rem;
+  border-bottom: $border-width solid $yellow;
 }
 
 .main__section--wide {

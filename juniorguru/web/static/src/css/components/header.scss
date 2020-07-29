@@ -98,6 +98,15 @@ $logo-height-index: 10rem;
   @include font-0;
 }
 
+.header__nav-tabs,
+.header__nav-tab,
+.header__subnav-tabs,
+.header__subnav-tab {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .header__nav-tabs {
   height: 100%;
   align-self: flex-end;
