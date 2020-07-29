@@ -108,7 +108,6 @@ class Job(BaseModel):
         query = cls.select() \
             .where((cls.source == 'juniorguru') &
                 cls.approved_at.is_null(False) &
-                cls.newsletter_at.is_null() &
                 (cls.expires_at.is_null() | (cls.expires_at > today))) \
             .order_by(cls.posted_at)
         for item in query:
