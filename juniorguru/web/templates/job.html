@@ -5,8 +5,6 @@
 Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}, {{ job.employment_types|employment_types(' / ') }}.
 {%- endblock %}
 
-{% block body_modifier %} body--job{% endblock %}
-
 {% block main %}
 <article class="main__section job">
   <header class="intro">

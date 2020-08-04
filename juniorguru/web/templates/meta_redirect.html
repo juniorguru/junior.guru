@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <link rel="canonical" href="{{ url }}">
+  <meta http-equiv="refresh" content="0; {{ url }}">
+  <script>window.location.replace('{{ url }}');</script>
+  <meta name="robots" content="noindex, follow">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bundle.css') }}">
+{% endblock meta %}
+
+{% block title %}Přesměrování{% endblock %}
+
+{% block main %}
+  <header class="intro intro--standalone intro--without-illustration">
+    <h1 class="intro__title">Přesměrování</h1>
+    <p class="intro__lead">
+      Obsah této stránky byl přesunut na novou adresu: <a href="{{ url }}">{{ url }}</a>
+    </p>
+  </header>
+{% endblock %}
+
+{% block author %}{% endblock %}

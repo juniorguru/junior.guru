@@ -13,11 +13,16 @@ NAV_TABS = [
 
 JOBS_SUBNAV_TABS = [
     {'endpoint': 'jobs', 'name': 'Nabídky práce'},
+    {'endpoint': 'candidate_handbook_teaser', 'name': 'Příručka hledání práce'},
     {'endpoint': 'hire_juniors', 'name': 'Pro firmy'},
 ]
 
 
 app = Flask(__name__)
+
+
+def redirect(url):
+    return render_template('meta_redirect.html', url=url)
 
 
 @app.route('/')
@@ -49,13 +54,30 @@ def practice():
 
 @app.route('/candidate/')
 def candidate():
+    return redirect(url_for('candidate_handbook_teaser', _external=True))
+
+
+@app.route('/candidate-handbook/')
+def candidate_handbook_teaser():
+    with db:
+        metrics = Metric.as_dict()
+    return render_template('candidate_handbook_teaser.html',
+                           nav_active='jobs',
+                           subnav_tabs=JOBS_SUBNAV_TABS,
+                           subnav_active='candidate_handbook_teaser',
+                           metrics=metrics,
+                           thumbnail=thumbnail(title='Příručka hledání první práce v\u00a0IT'))
+
+
+@app.route('/__supercalifragilisticexpialidocious__/')
+def candidate_handbook():
     with db:
         jobs_count = Job.count()
         companies_count = Job.companies_count()
-    return render_template('candidate.html',
-                           nav_active='jobs',
-                           subnav_tabs=JOBS_SUBNAV_TABS,
-                           subnav_active='jobs',
+    return render_template('candidate_handbook.html',
+                           # nav_active='jobs',
+                           # subnav_tabs=JOBS_SUBNAV_TABS,
+                           # subnav_active='candidate_handbook',
                            jobs_count=jobs_count,
                            companies_count=companies_count,
                            thumbnail=thumbnail(title='Příručka hledání první práce v\u00a0IT'))

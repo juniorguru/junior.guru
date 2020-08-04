@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
+
+{% block meta %}
+  {{ super() }}
+  <meta name="robots" content="noindex, follow">
+{% endblock meta %}
+
 {% block title %}Jak se připravit na pohovor a hledat první práci v IT{% endblock %}
 
 {% block description -%}
 Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro to, aby tě někde přijali?
 {%- endblock %}
-
-{% block body_modifier %} body--candidate{% endblock %}
 
 {% block main %}
 <style>

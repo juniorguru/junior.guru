@@ -4,6 +4,10 @@
   margin: 0 auto ($whitespace-3 * 2) auto;
 }
 
+.intro--standalone {
+  margin-bottom: 0;
+}
+
 .intro__title {
   margin-top: 0;
   text-align: center;
@@ -13,6 +17,10 @@
 .intro__lead {
   @include font-2;
   min-height: 16rem;
+}
+
+.intro--without-illustration .intro__lead {
+  min-height: 0;
 }
 
 .intro__illustration {

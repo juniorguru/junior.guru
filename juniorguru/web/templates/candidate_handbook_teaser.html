@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Jak se připravit na pohovor a hledat první práci v IT{% endblock %}
+
+{% block description -%}
+Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro to, aby tě někde přijali?
+{%- endblock %}
+
+{% block main %}
+<header class="intro">
+  <h1 class="intro__title">Příručka hledání první práce v&nbsp;IT</h1>
+  <p class="intro__lead">
+    <img class="intro__illustration" src="{{ url_for('static', filename='images/handbook.svg') }}">
+    Znáš <a href="{{ url_for('learn') }}">základy</a>, máš <a href="{{ url_for('practice') }}">praxi</a> a chystáš se zkusit své štěstí na pracovním trhu?
+    1.&nbsp;9.&nbsp;2020 se tady objeví ucelený soubor rad pro juniory v rozsahu více než&nbsp;30&nbsp;normostran. Nebude to ebook, ale živá a stále aktualizovaná webová stránka.
+  </p>
+</header>
+
+<section class="main__section">
+  <h2 class="main__heading">Buď mezi prvními</h2>
+  <div class="text">
+    <p>
+      {{ metrics.subscribers|metric }} odběratelů <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">nabídek práce a novinek</a> bude mít k textu příručky přístup ještě o něco dříve, než vyjde oficiálně. Pokud chceš být mezi nimi, není nic jednoduššího, než se přihlásit taky. Klidně si prohlédni <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank" rel="noopener">všechny minulé e-maily</a>, ať víš, do čeho jdeš. Můžeš se samozřejmě kdykoliv odhlásit.
+    </p>
+  </div>
+</section>
+
+<section class="main__section">
+  <h2 class="main__heading">Sponzorujte příručku</h2>
+  <div class="text">
+    <p>
+      Díky placenému logu vaší firmy v záhlaví stránky bude příručka všem přístupná zdarma. <a href="{{ url_for('hire_juniors') }}#handbook">Zajistěte místo pro vaše logo na příručce.</a> Firmy, které si sponzorství domluví už před vydáním, mají výhodu &mdash; jejich logo bude na příručce v den vydání, kdy bude nejvyšší jednorázová návštěvnost.
+    </p>
+  </div>
+</section>
+{% endblock %}
