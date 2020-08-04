@@ -104,6 +104,10 @@
   background-image: url('./images/heart-i.svg');
 }
 
+.engage__illustration--heart::before {
+  background-image: url('./images/heart.svg');
+}
+
 .engage__illustration--chick2::before {
   background-image: url('./images/chick2.svg');
 }

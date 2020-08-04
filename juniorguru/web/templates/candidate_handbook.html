@@ -71,6 +71,53 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   </div>
 </section>
 
+<section class="main__section">
+  <h2 class="main__section-heading">Předmluva</h2>
+  <div class="text">
+    <figure class="quote">
+      <blockquote>
+        Nauč se programovat, firmy v&nbsp;IT berou z nedostatku lidí každého, kdo má jen zájem. Do začátku si řekni aspoň o pade.
+      </blockquote>
+      <figcaption>
+        český programátorský folklór
+      </figcaption>
+    </figure>
+    <p>
+      Tyto věty slyšel v ČR asi každý začátečník &mdash; a přitom jde o nesmysly. Ano, senioři mají navrch a firmy jim nadbíhají, junioři si ale oproti tomu musí vše vydřít. Nováčci projdou úvodními kurzy a pak zjistí, že sehnat první práci vůbec není tak snadné. Místo dobrých rad se jim dostane mýtů, takže se na vypsané nabídky hlásí nepřipravení a s nerealistickými očekáváními. A aby toho nebylo málo, přišla {% if year == 2020 %}letos{% else %}v&nbsp;roce 2020{% endif %} ještě pandemie &mdash; a s ní propouštění, opatrnost, vyčkávání s najímáním nových lidí.
+    </p>
+    <p>
+      <strong>Příručka hledání první práce v&nbsp;IT chce situaci změnit.</strong> Ukázat juniorům, jak se kvalitně připravit na hledání své první práce, jak se zorientovat, jak projít pohovorem. Jak vystupovat profesionálně i jako začátečník. A čím více lidí si příručku přečte, tím kultivovanější bude český trh s juniorními kandidáty. Odpovědi na inzeráty budou relevantnější, pozitivní příběhy častější a firmy motivovanější najímat juniory.
+    </p>
+  </div>
+</section>
+
+<section class="main__section engage">
+  <h2 class="engage__heading"></h2>
+  <div class="engage__text">
+    <p>
+
+    </p>
+  </div>
+
+</section>
+
+{# TODO spojit s normalnim engage, tohle bude az druha pulka #}
+
+<section class="main__section main__section--wide engage">
+  <div class="engage__content engage__illustration engage__illustration--desktop engage__illustration--heart">
+    <h2 class="engage__heading">K nezaplacení</h2>
+    <div class="engage__text engage__illustration engage__illustration--phones engage__illustration--heart">
+      <p>
+        Tento text záměrně není prodáván jako e-book, ale je veřejně dostupný na stále aktualizované webové stránce. Jedině tak může pomoci co nejvíce lidem. <strong>Veřejně dostupný ale neznamená zdarma.</strong> Jestli si autor nic nevydělá, tak to tady skončí. Pokud pro tebe má příručka nějakou hodnotu a chceš, aby existovala dál, zaplať za ni prostřednictvím dobrovolného příspěvku.
+      </p>
+    </div>
+    <p class="button-compartment button-compartment--consistent-minimal-margin">
+      <a class="button" href="{{ url_for('donate') }}">Zaplať za&nbsp;příručku</a>
+      <small class="button-compartment__note"><a href="{{ url_for('hire_juniors') }}#handbook">Sponzorujte příručku jako firma</a></small>
+    </p>
+  </div>
+</section>
+
 <section id="how-long" class="main__section">
   <h2 class="main__section-heading">Jak dlouho to trvá</h2>
   <p>
