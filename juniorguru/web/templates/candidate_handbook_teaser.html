@@ -15,11 +15,68 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   </p>
 </header>
 
-<section class="main__section">
-  <h2 class="main__heading">Buď mezi prvními</h2>
+<section class="main__section handbook-preview">
+  <h2 class="main__heading">Na co se můžeš těšit?</h2>
+
   <div class="text">
-    <p>
-      {{ metrics.subscribers|metric }} odběratelů <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">nabídek práce a novinek</a> bude mít k textu příručky přístup ještě o něco dříve, než vyjde oficiálně. Pokud chceš být mezi nimi, není nic jednoduššího, než se přihlásit taky. Klidně si prohlédni <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank" rel="noopener">všechny minulé e-maily</a>, ať víš, do čeho jdeš. Můžeš se samozřejmě kdykoliv odhlásit.
+    <figure class="quote">
+      <blockquote>
+        Příručka je naprosto boží, přečetla jsem ji jedním dechem a nasbírala inspiraci na další "akce", co ještě udělat. Tolik tipů na jednom místě člověk nikde jinde nenajde.
+      </blockquote>
+      <figcaption>
+        Lenka Erbenová, frontendistka, absolventka PyLadies a Czechitas
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="text handbook-preview__toc">
+    <h3>Témata</h3>
+    <ul>
+      <li>Jak dlouho trvá si sehnat první práci v&nbsp;IT</li>
+      <li>Kdy začít hledat</li>
+      <li>Jaké budou požadavky zaměstnavatele</li>
+      <li>Jaká mít očekávání: mzda, práce na dálku</li>
+      <li>Po jakých pozicích se jako začátečník poohlížet</li>
+      <li>Typy firem: produkt, agentura</li>
+      <li>Typy firem podle velikosti: velká firma, startup</li>
+      <li>Stáže, dobrovolnictví</li>
+      <li>Příprava na pohovor, životopis</li>
+      <li>Vlastní projekt a první praxe, základy algoritmizace</li>
+      <li>Hledání práce na internetu, recruiting, networking</li>
+      <li>Pohovor, pravdomluvnost, otázky, odmítnutí</li>
+      <li>Firemní kultura</li>
+      <li>Vlastní aktivita navíc</li>
+    </ul>
+  </div>
+  <div class="text text--tooltips-disabled handbook-preview__screenshots">
+    <h3>Ukázky</h3>
+    <ul>
+      <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-01.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-01.png') }}" loading="lazy"></a></li>
+      <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-02.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-02.png') }}" loading="lazy"></a></li>
+      <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-03.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-03.png') }}" loading="lazy"></a></li>
+      <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-04.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-04.png') }}" loading="lazy"></a></li>
+      <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-05.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-05.png') }}" loading="lazy"></a></li>
+      <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-06.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-06.png') }}" loading="lazy"></a></li>
+      <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-07.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-07.png') }}" loading="lazy"></a></li>
+      <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-08.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-08.png') }}" loading="lazy"></a></li>
+      <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-09.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-09.png') }}" loading="lazy"></a></li>
+      <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-10.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-10.png') }}" loading="lazy"></a></li>
+      <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-11.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-11.png') }}" loading="lazy"></a></li>
+      <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-12.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-12.png') }}" loading="lazy"></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="main__section main__section--wide engage">
+  <div class="engage__content">
+    <h2 class="engage__heading">Buď mezi prvními</h2>
+    <div class="text">
+      <p>
+        {{ metrics.subscribers|metric }} odběratelů <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">nabídek práce a novinek</a> bude mít k textu příručky přístup ještě o něco dříve, než vyjde oficiálně. Pokud chceš být mezi nimi, není nic jednoduššího, než se přihlásit taky. Klidně si prohlédni <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank" rel="noopener">všechny minulé e-maily</a>, ať víš, do čeho jdeš. Můžeš se samozřejmě kdykoliv odhlásit.
+      </p>
+    </div>
+    <p class="button-compartment button-compartment--consistent-minimal-margin">
+      <a class="button" href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">Hlídat příručku</a>
     </p>
   </div>
 </section>
@@ -28,8 +85,11 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   <h2 class="main__heading">Sponzorujte příručku</h2>
   <div class="text">
     <p>
-      Díky placenému logu vaší firmy v záhlaví stránky bude příručka všem přístupná zdarma. <a href="{{ url_for('hire_juniors') }}#handbook">Zajistěte místo pro vaše logo na příručce.</a> Firmy, které si sponzorství domluví už před vydáním, mají výhodu &mdash; jejich logo bude na příručce v den vydání, kdy bude nejvyšší jednorázová návštěvnost.
+      Díky placenému logu vaší firmy v záhlaví stránky bude příručka všem přístupná zdarma. Firmy, které si sponzorství domluví už před vydáním, mají výhodu &mdash; jejich logo bude na příručce v den vydání, kdy bude nejvyšší jednorázová návštěvnost.
     </p>
   </div>
+  <p class="button-compartment button-compartment--consistent-minimal-margin">
+    <a class="button" href="{{ url_for('hire_juniors') }}#handbook" target="_blank" rel="noopener">Více informací</a>
+  </p>
 </section>
 {% endblock %}

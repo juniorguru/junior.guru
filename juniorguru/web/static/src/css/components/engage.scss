@@ -82,6 +82,10 @@
   @include handbook-cartoon($width: 8, $height: 10);
 }
 
+.engage__text a {
+  @include color-links($black, $black);
+}
+
 @media screen and (min-width: 700px) {
   .engage__items {
     display: flex;
