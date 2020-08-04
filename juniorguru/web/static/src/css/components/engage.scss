@@ -1,5 +1,22 @@
+@mixin illustration($width, $height) {
+  content: "";
+  display: block;
+  float: left;
+  width: $whitespace * $width;
+  height: $whitespace * $height;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: ($whitespace / 2) $whitespace-2 0 0;
+}
+
+
 .engage {
   background: $yellow;
+}
+
+.engage--warning {
+  background: #B31B1B;
+  color: $white;
 }
 
 .engage__content {
@@ -63,30 +80,35 @@
   @include color-links($black, $black);
 }
 
-@mixin handbook-cartoon($width, $height) {
-  content: "";
-  display: block;
-  float: left;
-  width: $whitespace * $width;
-  height: $whitespace * $height;
-  background: url('./images/handbook.svg') no-repeat;
-  background-size: contain;
-  margin: ($whitespace / 2) $whitespace-2 0 0;
-}
-
 .engage__handbook-heading {
   margin-top: 0;
 }
 
 .engage__illustration--phones::before {
-  @include handbook-cartoon($width: 8, $height: 10);
+  @include illustration($width: 8, $height: 10);
 }
 
 .engage__text a {
   @include color-links($black, $black);
 }
 
-@media screen and (min-width: 700px) {
+.engage--warning .engage__text a {
+  @include color-links($white, $white);
+}
+
+.engage__illustration--handbook::before {
+  background-image: url('./images/handbook.svg');
+}
+
+.engage__illustration--heart-i::before {
+  background-image: url('./images/heart-i.svg');
+}
+
+.engage__illustration--chick2::before {
+  background-image: url('./images/chick2.svg');
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
   .engage__items {
     display: flex;
     flex-wrap: wrap;
@@ -98,11 +120,11 @@
   }
 
   .engage__illustration--desktop::before {
-    @include handbook-cartoon($width: 10, $height: 13);
+    @include illustration($width: 10, $height: 13);
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: $breakpoint-desktop) {
   .engage__illustration--desktop {
     padding-left: $whitespace-3 * 2;
     padding-right: $whitespace-3 * 2;

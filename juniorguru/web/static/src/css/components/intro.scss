@@ -14,6 +14,13 @@
   margin-bottom: $whitespace-3 * 2;
 }
 
+.intro__title--massive {
+  text-transform: uppercase;
+  border: ($whitespace / 2) solid $black;
+  padding: $whitespace;
+  line-height: normal;
+}
+
 .intro__lead {
   @include font-2;
   min-height: 16rem;
@@ -27,4 +34,12 @@
   float: right;
   margin: $whitespace;
   height: 4 * $whitespace-3;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  .intro__title--massive {
+    padding: $whitespace * 2;
+    margin-left: $whitespace-3 * 3;
+    margin-right: $whitespace-3 * 3;
+  }
 }

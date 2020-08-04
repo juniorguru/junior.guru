@@ -75,9 +75,9 @@ def candidate_handbook():
         jobs_count = Job.count()
         companies_count = Job.companies_count()
     return render_template('candidate_handbook.html',
-                           # nav_active='jobs',
-                           # subnav_tabs=JOBS_SUBNAV_TABS,
-                           # subnav_active='candidate_handbook',
+                           nav_active='jobs',
+                           subnav_tabs=JOBS_SUBNAV_TABS,
+                           subnav_active='candidate_handbook_teaser',
                            jobs_count=jobs_count,
                            companies_count=companies_count,
                            thumbnail=thumbnail(title='Příručka hledání první práce v\u00a0IT'))

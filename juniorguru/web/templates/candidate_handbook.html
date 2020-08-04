@@ -12,28 +12,17 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 {%- endblock %}
 
 {% block main %}
-<style>
-  .red-alert { background: red; color: white; font-weight: bold; text-transform: uppercase; padding: 1rem 2rem; margin-bottom: 4rem; text-align: center; }
-  .red-alert a { color: white !important; }
-</style>
-<p class="red-alert">
-  Tato stránka ještě není veřejná, zachovej ji prosím v tajnosti.
-  Budu rád, pokud mi na {{ 'ahoj@junior.guru'|email_link }} napíšeš,
-  co si o ní myslíš, nebo mi rovnou pošleš osobní doporučení,
-  které budu moci později zveřejnit.
-</p>
-
-<header>
-  <h1>
-    Příručka hledání první práce v&nbsp;IT
-  </h1>
-  <p>
+<header class="intro">
+  <h1 class="intro__title intro__title--massive">Příručka hledání první práce v&nbsp;IT</h1>
+  <p class="intro__lead">
     Znáš <a href="{{ url_for('learn') }}">základy</a> a máš <a href="{{ url_for('practice') }}">praxi</a>?
     {{ self.description() }}
   </p>
+</header>
 
+{#
   <div class="sponsors">
-    <h2>Sponzoři</h2>
+    <h2 class="main__header">Sponzoři</h2>
     <p>Příručka existuje a zůstává aktuální díky podpoře těchto firem:</p>
     <ul>
       {% for index in [0, 1, 2] %}
@@ -47,7 +36,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   </div>
 
   <div class="toc-legacy">
-    <h2>Obsah</h2>
+    <h2 class="main__header">Obsah</h2>
     <ul>
       <li><a href="#how-long">Jak dlouho to trvá</a></li>&#32;
       <li><a href="#ready">Kdy začít hledat</a></li>&#32;
@@ -62,10 +51,28 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
     </ul>
   </div>
 </header>
+#}
 
+<section class="main__section main__section--wide engage engage--warning">
+  <div class="engage__content">
+    <div class="engage__handbook">
+      <div class="engage__illustration engage__illustration--heart-i engage__illustration--desktop">
+        <h2 class="engage__heading">Zachovej prosím stránku v tajnosti</h2>
+        <p class="engage__text engage__illustration engage__illustration--heart-i engage__illustration--phones">
+          Příručka zatím <strong>není veřejná</strong>, oficiálně vyjde až 1.&nbsp;9.&nbsp;2020.
+          Toto je jen náhled, kterým jsem ti umožnil přečíst si ji v předstihu.
+          Zachovej tedy prosím tuto stránku v tajnosti.
+          Budu rád, pokud mi na {{ 'ahoj@junior.guru'|email_link }} napíšeš,
+          co si o příručce myslíš, nebo mi rovnou pošleš osobní doporučení,
+          které budu moci později zveřejnit.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section id="how-long">
-  <h2>Jak dlouho to trvá</h2>
+<section id="how-long" class="main__section">
+  <h2 class="main__header">Jak dlouho to trvá</h2>
   <p>
     Jak dlouho je potřeba se učit programování, než je člověk připraven si začít hledat první práci? A kolik času takové hledání zabere?
     Tyto otázky si klade hodně lidí, ale odpověď na ně neexistuje.
@@ -90,8 +97,8 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 </section>
 
 
-<section id="ready">
-  <h2>Kdy začít hledat</h2>
+<section id="ready" class="main__section">
+  <h2 class="main__header">Kdy začít hledat</h2>
   <p>
     <strong>Kdy je člověk připraven?</strong>
     Na to existuje jednoduchá odpověď: <strong>Nikdy!</strong>
@@ -115,8 +122,8 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   </figure>
 </section>
 
-<section id="requirements">
-  <h2>Co budou chtít</h2>
+<section id="requirements" class="main__section">
+  <h2 class="main__header">Co budou chtít</h2>
   <p>
     Nikdo od tebe nečeká, že budeš oslňovat technickými znalostmi.
     Dej najevo, že tu práci fakt chceš, že jsi <strong>motivovaná osoba</strong>, která má <strong>chuť se učit</strong>, a že do jejich týmu přineseš <strong>nadšení</strong>. Z programátorských veteránů
@@ -239,8 +246,8 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 
 {% include 'engage.html' %}
 
-<section id="expectations">
-  <h2>Jaká mít očekávání</h2>
+<section id="expectations" class="main__section">
+  <h2 class="main__header">Jaká mít očekávání</h2>
 
   <h3>Kde jsou firmy, které berou každého?</h3>
   <p>
@@ -281,8 +288,8 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   </p>
 </section>
 
-<section id="strategy">
-  <h2>Jakou zvolit strategii</h2>
+<section id="strategy" class="main__section">
+  <h2 class="main__header">Jakou zvolit strategii</h2>
 
   <h3>Proč začínat programováním</h3>
   <p>
@@ -545,8 +552,8 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 
 {% include 'engage.html' %}
 
-<section id="preparation">
-  <h2>Příprava</h2>
+<section id="preparation" class="main__section">
+  <h2 class="main__header">Příprava</h2>
   <p>
     Jak bylo už zmíněno, <a href="#ready">nečekej příliš dlouho</a>. Zkoušej to, i když si myslíš, že na to nemáš. Uč se v průběhu na základě toho, co zjistíš na <a href="#interview">pohovorech</a>. Speciálně pokud jsi žena, buď až „drzá“.
     <strong>Muži jdou na pohovor
@@ -716,8 +723,8 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 
 {% include 'engage.html' %}
 
-<section id="seeking">
-  <h2>Kde hledat</h2>
+<section id="seeking" class="main__section">
+  <h2 class="main__header">Kde hledat</h2>
 
   <h3 id="recruiters">Náboráři</h3>
   <p>
@@ -836,8 +843,8 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   </p>
 </section>
 
-<section id="interview">
-  <h2>Pohovor</h2>
+<section id="interview" class="main__section">
+  <h2 class="main__header">Pohovor</h2>
 
   <h3 id="questions">Otázky na tebe</h3>
   <p>
@@ -1047,8 +1054,8 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 
 {% include 'engage.html' %}
 
-<section id="culture">
-  <h2>Firemní kultura</h2>
+<section id="culture" class="main__section">
+  <h2 class="main__header">Firemní kultura</h2>
   <p>
     Programátor génius, který sám na všechno přijde, ale nevychází dobře s lidmi, je dnes minulostí. Pro takové lidi se vžilo označení <em>brilliant jerk</em> a <a href="https://www.google.cz/search?q=brilliant%20jerk">internet je plný článků o tom, proč se jich mají firmy vyvarovat</a>. Programování je už dlouho <strong>týmová práce v níž je ego na překážku</strong>
     a kde je schopnost <strong>komunikace s lidmi stejně důležitá jako technické vědomosti</strong>.
@@ -1103,8 +1110,8 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   </ul>
 </section>
 
-<section id="proactive">
-  <h2>Projev aktivitu</h2>
+<section id="proactive" class="main__section">
+  <h2 class="main__header">Projev aktivitu</h2>
   <p>
     Existuje mnoho způsobů, jak na sebe můžeš upozornit a tím <strong>vystoupit z davu</strong>. Kandidát, který se aktivně snaží něčím přispět do oboru, dává najevo velký zájem a nadšení. Kromě toho si ve firmě mohou říct, že když tě baví např. <a href="#organizing">organizovat akce</a> nebo <a href="#portfolio">psát články</a>, byla by škoda tě mít jen na programování. Nabídnou ti, že tyto činnosti můžeš dělat pro firmu jako součást své pracovní náplně.
   </p>
