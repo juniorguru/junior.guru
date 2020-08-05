@@ -214,10 +214,10 @@
         },
         "hyperlink": {
             "hashes": [
-                "sha256:1383c4c9f25ad812261bf156591e8a46a1a252a4fe5b0cb659fdd0cec66c67ff",
-                "sha256:96507639aba70787b3eef83a63b3159cbd4e7991807ae8ed2536f9c853d5763e"
+                "sha256:47fcc7cd339c6cb2444463ec3277bdcfe142c8b1daf2160bdd52248deec815af",
+                "sha256:c528d405766f15a2c536230de7e160b65a08e20264d8891b3eb03307b0df3c63"
             ],
-            "version": "==20.0.0"
+            "version": "==20.0.1"
         },
         "idna": {
             "hashes": [
@@ -250,10 +250,10 @@
         },
         "itemloaders": {
             "hashes": [
-                "sha256:306b2b151491e9b2eb3ea44bd65b9ab5f1ace37fcd3cb31b71f4a0f72f909a85",
-                "sha256:ef8f237f8fa8328dcd5a04679a5d48a2d0ae43403e665caf32b303c967aa3062"
+                "sha256:7adf0f4b668c784e8a7d872c7650f238a37ee578ba16e05dde2a03b5a2c4cd5a",
+                "sha256:f5b315d24322b6a0d9150c4d74f92f93b1bd5247bc0ce64c2b46de30710df211"
             ],
-            "version": "==1.0.1"
+            "version": "==1.0.2"
         },
         "itsdangerous": {
             "hashes": [
@@ -600,11 +600,11 @@
         },
         "sendgrid": {
             "hashes": [
-                "sha256:9d218bba09c811d8791b7b8116402b2869d7b065c96313e7bb8362fcb880cdae",
-                "sha256:c265d97825a3fd67852d6a8cf1e622691c798edaa50fdd4afa97af00a15615ef"
+                "sha256:0bb53924d3f46e895c19150f4ee8451cebb59eee0aaa1f8f7232f37eac79ca7a",
+                "sha256:50e0061954ead24167a300f104a6c5ea11f1e132e4fdba440f634ed79a1cbef9"
             ],
             "index": "pypi",
-            "version": "==6.4.4"
+            "version": "==6.4.5"
         },
         "service-identity": {
             "hashes": [
@@ -660,13 +660,6 @@
                 "sha256:f3c19e5bd42bbe4bf345704ad7c326c74d3fd7a1b3844987853bef180be638d4"
             ],
             "version": "==20.3.0"
-        },
-        "typing": {
-            "hashes": [
-                "sha256:1187fb9c82fd670d10aa07bbb6cfcfe4bdda42d6fab8d5134f04e8c4d0b71cc9",
-                "sha256:283d868f5071ab9ad873e5e52268d611e851c870a2ba354193026f2dfb29d8b5"
-            ],
-            "version": "==3.7.4.3"
         },
         "uritemplate": {
             "hashes": [
