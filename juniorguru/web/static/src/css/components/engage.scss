@@ -1,15 +1,3 @@
-@mixin illustration($width, $height) {
-  content: "";
-  display: block;
-  float: left;
-  width: $whitespace * $width;
-  height: $whitespace * $height;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin: ($whitespace / 2) $whitespace-2 0 0;
-}
-
-
 .engage {
   background: $yellow;
 }
@@ -22,11 +10,14 @@
 .engage__content {
   @include page-width($padding: 1rem);
   padding: $whitespace;
+  padding-top: $whitespace-2;
 }
 
-.engage__links-heading {
+.engage__heading {
   margin: 0;
-  margin-top: $whitespace;
+}
+
+.engage__heading--centered {
   padding: 0;
   text-align: center;
   display: block;
@@ -80,12 +71,10 @@
   @include color-links($black, $black);
 }
 
-.engage__handbook-heading {
-  margin-top: 0;
-}
-
-.engage__illustration--phones::before {
-  @include illustration($width: 8, $height: 10);
+.engage__illustration {
+  display: block;
+  float: right;
+  margin: 0 0 ($whitespace-0 / 2) $whitespace-0;
 }
 
 .engage__text a {
@@ -96,22 +85,6 @@
   @include color-links($white, $white);
 }
 
-.engage__illustration--handbook::before {
-  background-image: url('./images/handbook.svg');
-}
-
-.engage__illustration--heart-i::before {
-  background-image: url('./images/heart-i.svg');
-}
-
-.engage__illustration--heart::before {
-  background-image: url('./images/heart.svg');
-}
-
-.engage__illustration--chick2::before {
-  background-image: url('./images/chick2.svg');
-}
-
 @media screen and (min-width: $breakpoint-tablet) {
   .engage__items {
     display: flex;
@@ -119,18 +92,22 @@
     justify-content: space-evenly;
   }
 
-  .engage__illustration--phones::before {
-    display: none;
+  .engage__illustrated-block {
+    padding-left: 15rem + $whitespace-2;
+    position: relative;
   }
 
-  .engage__illustration--desktop::before {
-    @include illustration($width: 10, $height: 13);
+  .engage__illustration-container {
+    position: absolute;
+    top: $whitespace-0;
+    left: 0;
+    width: 15rem;
+    display: flex;
+    justify-content: center;
   }
-}
 
-@media screen and (min-width: $breakpoint-desktop) {
-  .engage__illustration--desktop {
-    padding-left: $whitespace-3 * 2;
-    padding-right: $whitespace-3 * 2;
+  .engage__illustration {
+    float: none;
+    margin: 0;
   }
 }

@@ -1,7 +1,7 @@
 <section class="main__section main__section--wide engage">
   <div class="engage__content">
     <div class="engage__links">
-      <h2 class="engage__links-heading">Nepřehlédni</h2>
+      <h2 class="engage__heading engage__heading--centered">Nepřehlédni</h2>
       <ul class="engage__items">
         <li class="engage__item engage__item--jobs">
           <a class="engage__item-link" href="{{ url_for('jobs') }}">Nabídky&nbsp;práce</a>
@@ -17,19 +17,20 @@
         </li>
       </ul>
     </div>
-    <div class="engage__handbook">
-      <div class="engage__illustration engage__illustration--desktop engage__illustration--handbook">
-        <h3 class="engage__handbook-heading">Příručka hledání první práce v&nbsp;IT</h3>
-        <p class="engage__text engage__illustration engage__illustration--phones engage__illustration--handbook">
-          Jak si sehnat první práci? Jak se připravit na pohovor?
-          Tak přesně o tom tady 1.&nbsp;9.&nbsp;2020
-          <a href="{{ url_for('candidate_handbook_teaser') }}">vyjde ucelený soubor rad</a> v rozsahu více než 30 normostran.
-          <strong>Odebírej newsletter</strong> a text příručky budeš mít k dispozici ještě před datem vydání!
-        </p>
+    <div class="engage__illustrated-block">
+      <h3 class="engage__heading">Příručka hledání první práce v&nbsp;IT</h3>
+      <div class="engage__illustration-container">
+        <img class="engage__illustration" width="150" alt="Příručka" src="{{ url_for('static', filename='images/handbook.svg') }}">
       </div>
-      <p class="button-compartment button-compartment--consistent-minimal-margin">
-        <a class="button" href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">Hlídat příručku</a>
+      <p class="engage__text">
+        Jak si sehnat první práci? Jak se připravit na pohovor?
+        Tak přesně o tom tady 1.&nbsp;9.&nbsp;2020
+        <a href="{{ url_for('candidate_handbook_teaser') }}">vyjde ucelený soubor rad</a> v rozsahu více než 30 normostran.
+        <strong>Odebírej newsletter</strong> a text příručky budeš mít k dispozici ještě před datem vydání!
       </p>
     </div>
+    <p class="button-compartment button-compartment--consistent-minimal-margin">
+      <a class="button" href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">Hlídat příručku</a>
+    </p>
   </div>
 </section>

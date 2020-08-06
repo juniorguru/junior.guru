@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   tocHeading = document.getElementById('toc-heading');
   headings = [
     'intro__title',
-    'engage__links-heading',
+    'engage__heading',
     'main__section-heading',
   ].map(function (className) {
     return Array.from(document.getElementsByClassName(className));
