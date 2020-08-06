@@ -53,10 +53,6 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 </header>
 #}
 
-{#
-engage__illustration engage__illustration--heart-i engage__illustration--phones
-#}
-
 <section class="main__section main__section--wide engage engage--warning">
   <div class="engage__content">
     <div class="engage__illustrated-block">
@@ -92,26 +88,6 @@ engage__illustration engage__illustration--heart-i engage__illustration--phones
     </p>
     <p>
       <strong>Příručka hledání první práce v&nbsp;IT chce situaci změnit.</strong> Ukázat juniorům, jak se kvalitně připravit na hledání své první práce, jak se zorientovat, jak projít pohovorem. Jak vystupovat profesionálně i jako začátečník. A čím více lidí si příručku přečte, tím kultivovanější bude český trh s juniorními kandidáty. Odpovědi na inzeráty budou relevantnější, pozitivní příběhy častější a firmy motivovanější najímat juniory.
-    </p>
-  </div>
-</section>
-
-<section class="main__section main__section--wide engage">
-  <div class="engage__content">
-    <div class="engage__illustrated-block">
-      <h2 class="engage__heading">K nezaplacení</h2>
-      <div class="engage__illustration-container">
-        <img class="engage__illustration" width="120" alt="Srdce" src="{{ url_for('static', filename='images/heart.svg') }}">
-      </div>
-      <div class="engage__text">
-        <p>
-          Tento text záměrně není prodáván jako e-book, ale je veřejně dostupný na stále aktualizované webové stránce. Jedině tak může pomoci co nejvíce lidem. <strong>Veřejně dostupný ale neznamená zdarma.</strong> Jestli si autor nic nevydělá, tak to tady skončí. Pokud pro tebe má příručka nějakou hodnotu a chceš, aby existovala dál, zaplať za ni prostřednictvím dobrovolného příspěvku.
-        </p>
-      </div>
-    </div>
-    <p class="button-compartment button-compartment--consistent-minimal-margin">
-      <a class="button" href="{{ url_for('donate') }}">Zaplať za&nbsp;příručku</a>
-      <small class="button-compartment__note"><a href="{{ url_for('hire_juniors') }}#handbook">Sponzorujte příručku jako firma</a></small>
     </p>
   </div>
 </section>
@@ -289,7 +265,7 @@ engage__illustration engage__illustration--heart-i engage__illustration--phones
   </p>
 </section>
 
-{% include 'engage.html' %}
+{% include 'engage_donate.html' %}
 
 <section id="expectations" class="main__section">
   <h2 class="main__section-heading">Jaká mít očekávání</h2>
@@ -595,7 +571,7 @@ engage__illustration engage__illustration--heart-i engage__illustration--phones
   </figure>
 </section>
 
-{% include 'engage.html' %}
+{% include 'engage_donate.html' %}
 
 <section id="preparation" class="main__section">
   <h2 class="main__section-heading">Příprava</h2>
@@ -766,7 +742,7 @@ engage__illustration engage__illustration--heart-i engage__illustration--phones
   </p>
 </section>
 
-{% include 'engage.html' %}
+{% include 'engage_donate.html' %}
 
 <section id="seeking" class="main__section">
   <h2 class="main__section-heading">Kde hledat</h2>
@@ -1097,7 +1073,7 @@ engage__illustration engage__illustration--heart-i engage__illustration--phones
   </p>
 </section>
 
-{% include 'engage.html' %}
+{% include 'engage_donate.html' %}
 
 <section id="culture" class="main__section">
   <h2 class="main__section-heading">Firemní kultura</h2>
