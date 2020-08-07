@@ -56,12 +56,27 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       <ol class="toc__items">
         <li class="toc__item"><a href="#english">Neflákej angličtinu</a></li>
         <li class="toc__item"><a href="#exercises">Procvičuj</a></li>
-        <li class="toc__item"><a href="#projects">Najdi si projekt</a></li>
+        <li class="toc__item"><a href="#projects">Najdi si projekt</a>
+          <ol class="toc__subitems">
+            <li class="toc__subitem"><a href="#projects-github">Osvoj si GitHub</a></li>
+          </ol>
+        </li>
         <li class="toc__item"><a href="#mentors">Najdi si mentora</a></li>
         <li class="toc__item"><a href="#hackathons">Zkus „hackathon“</a></li>
-        <li class="toc__item"><a href="#opensource">Zkus „Open Source“</a></li>
+        <li class="toc__item"><a href="#opensource">Zkus „Open Source“</a>
+          <ol class="toc__subitems">
+            <li class="toc__subitem"><a href="#not-only-coding">Nemusíš jen programovat</a></li>
+            <li class="toc__subitem"><a href="#open-source-inspiration">Open Source jako inspirace</a></li>
+            <li class="toc__subitem"><a href="#how-to-start">Jak začít?</a></li>
+          </ol>
+        </li>
         <li class="toc__item"><a href="#skills">Rozšiřuj si znalosti</a></li>
-        <li class="toc__item"><a href="#events">Najdi inspiraci, poznej lidi</a></li>
+        <li class="toc__item"><a href="#events">Najdi inspiraci, poznej lidi</a>
+          <ol class="toc__subitems">
+            <li class="toc__subitem"><a href="#beginner-friendly">Nebudu mimo mísu?</a></li>
+            <li class="toc__subitem"><a href="#fin-aid">Kde na to vzít?</a></li>
+          </ol>
+        </li>
       </ol>
     </div>
   </nav>
@@ -305,8 +320,8 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 
 {% include 'engage_handbook.html' %}
 
-<section class="main__section">
-  <h2 class="main__section-heading" id="hackathons">Zkus „hackathon“</h2>
+<section class="main__section" id="hackathons">
+  <h2 class="main__section-heading">Zkus „hackathon“</h2>
   <div class="text">
     <p>
       <a href="https://cs.wikipedia.org/wiki/Hackathon">Hackathon</a> je akce, kde se sejdou
@@ -393,8 +408,8 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </figure>
 </section>
 
-<section class="main__section">
-  <h2 class="main__section-heading" id="opensource">Zkus „Open Source“</h2>
+<section class="main__section" id="opensource">
+  <h2 class="main__section-heading">Zkus „Open Source“</h2>
   <div class="text">
     <p>
       <img class="cartoon" src="{{ url_for('static', filename='images/gh-logo.svg') }}" loading="lazy">
@@ -412,7 +427,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       zkušeností, cenných kontaktů i nových přátel.
     </p>
 
-    <h3>Nemusíš jen programovat</h3>
+    <h3 id="not-only-coding">Nemusíš jen programovat</h3>
     <p>
       Open Source není jen o programování. Pokud se zatím necítíš na psaní kódu,
       <a href="https://opensource.guide/how-to-contribute/#what-it-means-to-contribute">je i hodně jiných způsobů,
@@ -420,7 +435,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       Např. psaním dokumentace, psaním článků, navrhováním grafiky nebo „procházením GitHub Issues“ (anglicky <em>triaging</em>, hezky popsáno v článku <a href="https://opensource.com/life/16/8/how-get-bugs-fixed-open-source-software">How to fix a bug in open source software</a>).
     </p>
 
-    <h3>Open Source jako inspirace</h3>
+    <h3 id="open-source-inspiration">Open Source jako inspirace</h3>
     <p>
       Do Open Source nemusíš hned přispívat. Ze začátku se můžeš hodně naučit
       i pouhým pozorováním, čtením cizího kódu, hledáním inspirace. Můžeš se
@@ -428,7 +443,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       piškvorky v Pythonu</a>.
     </p>
 
-    <h3>Jak začít?</h3>
+    <h3 id="how-to-start">Jak začít?</h3>
     <p>
       Začátky s Open Source nejsou
       přímočaré. Většinou na něm lidé pracují ve volném čase. Nováčci jsou
@@ -832,14 +847,14 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </ul>
 
   <div class="text">
-    <h3>Nebudu mimo mísu?</h3>
+    <h3 id="beginner-friendly">Nebudu mimo mísu?</h3>
     <p>
       Výše uvedené akce jsou vhodné i pro začátečníky a účastní se jich
       významné procento žen. Náplní těchto akcí jsou odborné přednášky pro různé
       úrovně znalostí a networking &mdash; povídání si s lidmi. Vždy se odehrávají
       v neformálním, pohodovém prostředí.
     </p>
-    <h3>Kde na to vzít?</h3>
+    <h3 id="fin-aid">Kde na to vzít?</h3>
     <p>
       Na konference je potřeba si koupit lístek. Výše zmíněné konference mají velmi
       dostupné lístky se slevami (např. pro studenty), ale i tak je možné, že je
