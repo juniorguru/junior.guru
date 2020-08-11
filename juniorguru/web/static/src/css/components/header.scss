@@ -1,3 +1,6 @@
+$animation-duration: 1.5s;
+
+$logo-height-small: 3rem;
 $logo-height: 4rem;
 $logo-height-large: 5.5rem;
 $logo-height-index: 10rem;
@@ -13,27 +16,8 @@ $logo-height-index: 10rem;
   background: linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 1rem);
 }
 
-.header__navbar-drawer {
-  overflow-y: hidden;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.header--collapsed .header__navbar-drawer,
-.header--always-collapsed .header__navbar-drawer {
-  display: none;
-}
-
-.header--subnav.header--collapsed .header__navbar-drawer,
-.header--subnav.header--always-collapsed .header__navbar-drawer {
-  display: none;
-}
-
 .header--index {
   position: static;
-}
-
-.header--index .header__navbar-drawer {
-  display: block;
 }
 
 :target::before {
@@ -80,6 +64,11 @@ $logo-height-index: 10rem;
 .header__logo-image {
   display: block;
   height: $logo-height;
+  transition: height $animation-duration;
+}
+
+.header--collapsed .header__logo-image {
+  height: $logo-height-small;
 }
 
 .header--index .header__logo-image {
@@ -100,6 +89,10 @@ $logo-height-index: 10rem;
   @include font-0;
 }
 
+.header__navbar {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
 .header__nav-tabs,
 .header__nav-tab,
 .header__subnav-tabs,
@@ -113,6 +106,11 @@ $logo-height-index: 10rem;
   height: 100%;
   align-self: flex-end;
   display: flex;
+  transition: font-size $animation-duration, line-height $animation-duration;
+}
+
+.header__nav-tabs,
+.header--collapsed .header__nav-tabs {
   @include font-0;
 }
 
@@ -130,6 +128,11 @@ $logo-height-index: 10rem;
   height: 100%;
   box-sizing: border-box;
   text-decoration: none;
+  transition: padding $animation-duration;
+}
+
+.header__nav-tab-control,
+.header--collapsed .header__nav-tab-control {
   padding: 0 $whitespace-0;
 }
 
@@ -171,6 +174,11 @@ a.header__nav-tab-control--active:active {
   @include page-width;
   display: flex;
   justify-content: flex-start;
+  transition: font-size $animation-duration, line-height $animation-duration;
+}
+
+.header__subnav-tabs,
+.header--collapsed .header__subnav-tabs {
   @include font-0;
 }
 
@@ -200,6 +208,10 @@ a.header__nav-tab-control--active:active {
   background: $white;
 }
 
+.header--collapsed .header__subnav-tab-control {
+  margin: 0.2rem 0 0.3rem 0;
+}
+
 a.header__subnav-tab-control:hover,
 a.header__subnav-tab-control:focus,
 a.header__subnav-tab-control:active,
@@ -213,6 +225,11 @@ a.header__subnav-tab-control--active:active {
     margin-top: 0.4rem;
     padding: ($whitespace-0 - 0.4rem) 0 ($whitespace-0 - 0.3rem) 0;
     border-bottom: 0.3rem $black solid;
+  }
+
+  .header--collapsed & {
+    margin: 0.2rem 0 0 0;
+    padding: 0.2rem 0 0.2rem 0;
   }
 }
 
@@ -291,13 +308,6 @@ a.header__subnav-tab-control:active {
 }
 
 @media screen and (min-width: 550px) {
-  .header--collapsed .header__navbar-drawer,
-  .header--always-collapsed .header__navbar-drawer,
-  .header--subnav.header--collapsed .header__navbar-drawer,
-  .header--subnav.header--always-collapsed .header__navbar-drawer {
-    display: block;
-  }
-
   .header--index .header__main-content {
     flex-direction: row;
   }

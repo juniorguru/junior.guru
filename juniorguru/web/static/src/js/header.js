@@ -1,6 +1,5 @@
 const MIN_SCROLL = 10;
 
-let lastScrollTop = 0;
 let headings = [];
 let tocHeading;
 
@@ -32,40 +31,37 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 onScroll(function () {
-  const scrollTop = getScrollTop();
-  if (Math.abs(lastScrollTop - scrollTop) <= MIN_SCROLL) return;
-  const header = document.getElementsByClassName('header')[0];
+  const header = document.getElementsByClassName('header--collapsible')[0];
+  if (!header) { return; }
+  const position = header.getBoundingClientRect().bottom;
 
-  if (scrollTop > lastScrollTop) { // down
-    header.classList.add('header--collapsed');
-  } else { // up
-    header.classList.remove('header--collapsed');
+  const intro = document.getElementsByClassName('intro')[0];
+  if (intro) {
+    if (position > intro.getBoundingClientRect().bottom) {
+      header.classList.add('header--collapsed');
+    } else {
+      header.classList.remove('header--collapsed');
+    }
   }
-  const currentScrollTop = getScrollTop();
-  lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
 
   if (tocHeading) {
-    const currentHeading = getCurrentHeading(header.getBoundingClientRect().bottom);
+    const currentHeading = getCurrentHeading(position);
     tocHeading.innerHTML = currentHeading.innerHTML;
 
-    const parentId = getParentId(currentHeading);
+    const id = getId(currentHeading);
     const tocItems = Array.from(document.getElementsByClassName('toc__item'));
     tocItems.forEach(function (tocItem) {
       tocItem.classList.remove('toc__item--active');
       const links = tocItem.getElementsByTagName('a');
-      if (links.length && links[0].href.match('#' + parentId)) {
+      if (links.length && links[0].href.match('#' + id)) {
         tocItem.classList.add('toc__item--active');
       }
     });
   }
 });
 
-function getScrollTop() {
-  return window.pageYOffset || document.documentElement.scrollTop;
-}
-
-function getCurrentHeading(topBound) {
-  topBound = (topBound || 0) + 100;
+function getCurrentHeading(position) {
+  position = (position || 0) + 100;
 
   const tuples = headings.map(function (heading) {
     const position = heading.getBoundingClientRect().bottom;
@@ -74,13 +70,13 @@ function getCurrentHeading(topBound) {
   const firstTuple = tuples[0]; // first heading
 
   return tuples.filter(function (tuple) {
-    return tuple[1] < topBound;
+    return tuple[1] < position;
   }).reduce(function (result, tuple) {
     return result[1] > tuple[1] ? result : tuple;
   }, firstTuple)[0];
 }
 
-function getParentId(el) {
+function getId(el) {
   while (el) {
     if (el.id) {
       return el.id;
