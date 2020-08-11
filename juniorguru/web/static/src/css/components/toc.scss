@@ -32,9 +32,10 @@ $toc-width-rem: 30;
 .toc__content {
   position: fixed;
   z-index: 1500;
-  background: $black;
-  color: $white;
+  background: rgba($white, 0.9);
+  color: $black;
   padding: $whitespace-0 0 $whitespace 0;
+  border: $border-width solid $blue;
 }
 
 .toc__heading,
@@ -55,23 +56,29 @@ $toc-width-rem: 30;
   margin: 0;
 }
 
-.toc__item--active {
-  background: $blue;
-}
-
-.toc__item--active a {
-  text-decoration: none;
-}
-
 .toc__item a {
   display: block;
   padding: 0 $whitespace;
-  @include color-links($white, $white);
+  @include color-links($black, $blue);
 }
 
 .toc__subitem {
   padding-left: $whitespace-2;
   @include font-0;
+}
+
+.toc__item--active {
+  background: $blue;
+  color: $white;
+}
+
+.toc__item--active a {
+  text-decoration: none;
+  @include color-links($white, $white);
+
+  &:hover, &:focus, &:active {
+    text-decoration: underline;
+  }
 }
 
 @media screen and (min-width: (($toc-width-rem * 10px) + 30px)) {

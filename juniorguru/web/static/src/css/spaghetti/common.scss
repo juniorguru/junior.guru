@@ -50,47 +50,6 @@ ul li {
   list-style-type: square;
 }
 
-.toc-legacy {
-  margin-top: $whitespace-3 * 1.5;
-
-  h2 {
-    @include font;
-    font-weight: normal;
-    margin: 0;
-    background: $black;
-    color: $white;
-    padding: 0 0.8rem;
-    display: inline-block;
-  }
-
-  ul {
-    margin: 0;
-    background: $dots-black;
-    text-align: center;
-    padding: $whitespace;
-    position: relative;
-    box-sizing: border-box;
-
-    &, li {
-      list-style-type: none;
-    }
-
-    li {
-      display: inline;
-      background: $white;
-      padding: 0.3rem 0.8rem;
-      margin: 0 0.3rem;
-      line-height: $line-height-0;
-    }
-
-    a {
-      white-space: nowrap;
-      text-decoration: none;
-      @include color-links($black, $blue);
-    }
-  }
-}
-
 .sponsors {
   h2 {
     display: none;

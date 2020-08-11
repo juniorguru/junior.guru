@@ -4,17 +4,15 @@
   margin: 0;
   color: $black;
   @include font-0;
-  font-weight: bold;
+  font-weight: normal;
   text-decoration: underline;
   cursor: pointer;
-  text-transform: uppercase;
   user-select: none;
 }
 
 .toc-toggle__checkbox:checked ~ .toc-toggle__label {
-  background: $black;
+  background: $blue;
   color: $white;
-  font-weight: normal;
   text-decoration: none;
 }
 
