@@ -1,9 +1,16 @@
-.toc-toggle {
-  display: flex;
-  align-items: center;
+.toc-toggle__label::before {
+  content: " ";
+  display: inline-block;
+  width: 1.3rem;
+  height: 1rem;
+  padding-right: 0.7rem;
+  background: url('./images/menu.svg') left center no-repeat;
+  background-size: contain;
+  cursor: pointer;
 }
 
 .toc-toggle__label {
+  white-space: nowrap;
   display: block;
   padding: 0 $whitespace-0;
   margin: 0;
@@ -13,6 +20,7 @@
   text-decoration: underline;
   cursor: pointer;
   user-select: none;
+  -webkit-user-select: none;
 }
 
 .toc-toggle__checkbox:checked ~ .toc-toggle__label {
@@ -21,28 +29,12 @@
   text-decoration: none;
 }
 
+.toc-toggle__checkbox:checked ~ .toc-toggle__label::before {
+  background-image: url('./images/menu-i.svg');
+}
+
 .toc-toggle__checkbox {
   position: absolute;
   opacity: 0;
   pointer-events: none;
-}
-
-@media screen and (min-width: $breakpoint-larger-phone) {
-  .toc-toggle--unused::before {
-    content: "➙";
-    font-weight: bold;
-    line-height: normal;
-    display: block;
-    animation: pulse 3s infinite;
-    position: relative;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    left: -2rem;
-  }
-  100% {
-    left: 0;
-  }
 }
