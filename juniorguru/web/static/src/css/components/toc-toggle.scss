@@ -1,3 +1,26 @@
+.toc-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.toc-toggle--unused::before {
+  content: "➙";
+  font-weight: bold;
+  line-height: normal;
+  display: block;
+  animation: pulse 3s infinite;
+  position: relative;
+}
+
+@keyframes pulse {
+  0% {
+    left: -2rem;
+  }
+  100% {
+    left: 0;
+  }
+}
+
 .toc-toggle__label {
   display: block;
   padding: 0 $whitespace-0;
