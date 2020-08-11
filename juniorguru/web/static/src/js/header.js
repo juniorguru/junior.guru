@@ -37,9 +37,9 @@ onScroll(function () {
   const header = document.getElementsByClassName('header')[0];
 
   if (scrollTop > lastScrollTop) { // down
-    header.classList.add('header--optional');
+    header.classList.add('header--collapsed');
   } else { // up
-    header.classList.remove('header--optional');
+    header.classList.remove('header--collapsed');
   }
   const currentScrollTop = getScrollTop();
   lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
