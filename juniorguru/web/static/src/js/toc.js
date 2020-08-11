@@ -8,17 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
     checkbox.addEventListener('change', function (event) {
       if (checkbox.checked) {
         toc.classList.add('toc--visible');
-        body.classList.add('body--disabled');
       } else {
         toc.classList.remove('toc--visible');
-        body.classList.remove('body--disabled');
         header.classList.add('header--collapsed');
       }
     });
 
     if (checkbox.checked) {
       toc.classList.add('toc--visible');
-      body.classList.add('body--disabled');
     }
 
     toc.addEventListener('click', function (event) {
