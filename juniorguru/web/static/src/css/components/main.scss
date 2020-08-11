@@ -42,5 +42,6 @@ $target-offset: 2 * $logo-height-large;
 :target .main__section-heading,
 .main__section-heading:target,
 .main__subsection-heading:target {
+  -webkit-animation: target-animation 2s;
   animation: target-animation 2s;
 }

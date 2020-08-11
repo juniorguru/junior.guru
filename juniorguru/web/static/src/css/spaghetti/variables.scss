@@ -103,11 +103,12 @@ $logo-height-index: 10rem;
   }
 }
 
+@-webkit-keyframes target-animation {
+  0% { text-shadow: rgba($black, 0.2) 0 0 0; }
+  100% { text-shadow: rgba($black, 0) 0 0 4rem; }
+}
+
 @keyframes target-animation {
-  0% {
-    text-shadow: rgba($black, 0.2) 0 0 0;
-  }
-  100% {
-    text-shadow: rgba($black, 0) 0 0 4rem;
-  }
+  0% { text-shadow: rgba($black, 0.2) 0 0 0; }
+  100% { text-shadow: rgba($black, 0) 0 0 4rem; }
 }
