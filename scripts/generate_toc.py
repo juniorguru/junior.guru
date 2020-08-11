@@ -44,7 +44,7 @@ def main(path):
     if len(ids) != len(set(ids)):
         raise Exception('There are duplicate IDs!')
 
-    return indent(output, '      ')
+    return indent(output, '    ')
 
 
 if __name__ == '__main__':
