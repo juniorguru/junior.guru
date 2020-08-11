@@ -3,24 +3,6 @@
   align-items: center;
 }
 
-.toc-toggle--unused::before {
-  content: "➙";
-  font-weight: bold;
-  line-height: normal;
-  display: block;
-  animation: pulse 3s infinite;
-  position: relative;
-}
-
-@keyframes pulse {
-  0% {
-    left: -2rem;
-  }
-  100% {
-    left: 0;
-  }
-}
-
 .toc-toggle__label {
   display: block;
   padding: 0 $whitespace-0;
@@ -43,4 +25,24 @@
   position: absolute;
   opacity: 0;
   pointer-events: none;
+}
+
+@media screen and (min-width: $breakpoint-larger-phone) {
+  .toc-toggle--unused::before {
+    content: "➙";
+    font-weight: bold;
+    line-height: normal;
+    display: block;
+    animation: pulse 3s infinite;
+    position: relative;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    left: -2rem;
+  }
+  100% {
+    left: 0;
+  }
 }
