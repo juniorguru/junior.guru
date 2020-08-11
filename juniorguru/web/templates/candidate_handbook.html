@@ -11,6 +11,24 @@
 Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro to, aby tě někde přijali?
 {%- endblock %}
 
+{% block header_toc %}
+<nav class="header__tocbar">
+  <div class="header__tocbar-content">
+    <ul class="header__tocbar-items">
+      <li id="toc-heading" class="header__tocbar-item header__tocbar-heading">
+        Příručka hledání první práce v&nbsp;IT
+      </li>
+      <li class="header__tocbar-item">
+        <label class="toc-toggle">
+          <input id="toc-toggle-checkbox" class="toc-toggle__checkbox" type="checkbox">
+          <span class="toc-toggle__label">Obsah</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
 {% block main %}
 <header class="intro">
   <h1 class="intro__title intro__title--massive">Příručka hledání první práce v&nbsp;IT</h1>
@@ -20,9 +38,94 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   </p>
 </header>
 
+<div class="toc__delimiter toc__delimiter--horizontal">
+  <nav id="toc" class="toc">
+    <div class="toc__content">
+      <h2 class="toc__heading">Obsah</h2>
+      <ol class="toc__items">
+        <li class="toc__item"><a href="#foreword">Předmluva</a></li>
+        <li class="toc__item"><a href="#how-long">Jak dlouho to trvá</a></li>
+        <li class="toc__item"><a href="#ready">Kdy začít hledat</a></li>
+        <li class="toc__item"><a href="#requirements">Co budou chtít</a>
+          <ol class="toc__subitems">
+            <li class="toc__subitem"><a href="#minimum-requirements">Základní minimum</a></li>
+            <li class="toc__subitem"><a href="#junior">Co přesně znamená „junior“</a></li>
+            <li class="toc__subitem"><a href="#university">Je potřeba VŠ?</a></li>
+            <li class="toc__subitem"><a href="#age-gender">Záleží na věku? Pohlaví?</a></li>
+          </ol>
+        </li>
+        <li class="toc__item"><a href="#expectations">Jaká mít očekávání</a>
+          <ol class="toc__subitems">
+            <li class="toc__subitem"><a href="#hungry-market">Kde jsou firmy, které berou každého?</a></li>
+            <li class="toc__subitem"><a href="#why-big-companies">Proč práci nabízí hlavně velké firmy?</a></li>
+            <li class="toc__subitem"><a href="#salary">Kolik si vydělám?</a></li>
+            <li class="toc__subitem"><a href="#remote-work">Najdu práci externě, na dálku?</a></li>
+          </ol>
+        </li>
+        <li class="toc__item"><a href="#strategy">Jakou zvolit strategii</a>
+          <ol class="toc__subitems">
+            <li class="toc__subitem"><a href="#why-start-with-programming">Proč začínat programováním</a></li>
+            <li class="toc__subitem"><a href="#entry-friendly-roles">Existují pozice vhodnější pro začátečníky?</a></li>
+            <li class="toc__subitem"><a href="#entry-tech">Začínání na jiné technické pozici</a></li>
+            <li class="toc__subitem"><a href="#choosing-field">Jakým směrem se vydat?</a></li>
+            <li class="toc__subitem"><a href="#job-types">Na čem programátoři ve firmách pracují?</a></li>
+            <li class="toc__subitem"><a href="#big-companies">Práce pro velkou firmu</a></li>
+            <li class="toc__subitem"><a href="#startups">Práce pro startup</a></li>
+            <li class="toc__subitem"><a href="#internships">Stáže</a></li>
+            <li class="toc__subitem"><a href="#unpaid-internships">Neplacené stáže</a></li>
+            <li class="toc__subitem"><a href="#volunteering">Dobrovolnictví</a></li>
+          </ol>
+        </li>
+        <li class="toc__item"><a href="#preparation">Příprava</a>
+          <ol class="toc__subitems">
+            <li class="toc__subitem"><a href="#handbooks">Související příručky</a></li>
+            <li class="toc__subitem"><a href="#priorities">Tvoje požadavky</a></li>
+            <li class="toc__subitem"><a href="#cv">Životopis</a></li>
+            <li class="toc__subitem"><a href="#non-tech-experience">Zkušenosti získané mimo IT</a></li>
+            <li class="toc__subitem"><a href="#projects">Projekty</a></li>
+            <li class="toc__subitem"><a href="#research">Informace o firmě</a></li>
+            <li class="toc__subitem"><a href="#wins">Zapisuj si úspěchy</a></li>
+          </ol>
+        </li>
+        <li class="toc__item"><a href="#seeking">Kde hledat</a>
+          <ol class="toc__subitems">
+            <li class="toc__subitem"><a href="#recruiters">Náboráři</a></li>
+            <li class="toc__subitem"><a href="#profiles">Profily</a></li>
+            <li class="toc__subitem"><a href="#cold-calling-companies">Oslovování firem</a></li>
+            <li class="toc__subitem"><a href="#company-events">Firemní akce</a></li>
+            <li class="toc__subitem"><a href="#networking">Networking</a></li>
+            <li class="toc__subitem"><a href="#job-boards">Nástěnky</a></li>
+          </ol>
+        </li>
+        <li class="toc__item"><a href="#interview">Pohovor</a>
+          <ol class="toc__subitems">
+            <li class="toc__subitem"><a href="#questions">Otázky na tebe</a></li>
+            <li class="toc__subitem"><a href="#when-you-dont-know">Když nevíš</a></li>
+            <li class="toc__subitem"><a href="#leetcode">Úlohy na algoritmizaci</a></li>
+            <li class="toc__subitem"><a href="#company-info">Povědomí o firmě</a></li>
+            <li class="toc__subitem"><a href="#reverse-interview">Tvoje otázky</a></li>
+            <li class="toc__subitem"><a href="#negotiation">Vyjednávání</a></li>
+            <li class="toc__subitem"><a href="#handling-rejection">Jak zvládnout odmítnutí</a></li>
+          </ol>
+        </li>
+        <li class="toc__item"><a href="#culture">Firemní kultura</a></li>
+        <li class="toc__item"><a href="#proactive">Projev aktivitu</a>
+          <ol class="toc__subitems">
+            <li class="toc__subitem"><a href="#portfolio">Osobní web a blog</a></li>
+            <li class="toc__subitem"><a href="#teaching">Učení</a></li>
+            <li class="toc__subitem"><a href="#giving-talks">Přednášení</a></li>
+            <li class="toc__subitem"><a href="#organizing">Organizování komunitních akcí</a></li>
+            <li class="toc__subitem"><a href="#oss-contributing">Přispívání do Open Source</a></li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+  </nav>
+</div>
+
 {#
   <div class="sponsors">
-    <h2 class="main__section-heading">Sponzoři</h2>
+    <h2>Sponzoři</h2>
     <p>Příručka existuje a zůstává aktuální díky podpoře těchto firem:</p>
     <ul>
       {% for index in [0, 1, 2] %}
@@ -56,7 +159,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   </div>
 </section>
 
-<section class="main__section">
+<section id="foreword" class="main__section">
   <h2 class="main__section-heading">Předmluva</h2>
   <div class="text">
     <figure class="quote">
@@ -90,7 +193,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
     </p>
     <p>
       Raději neplánuj s ohledem na čas. <strong>Jeď si tempo, které můžeš skloubit se zbytkem svého života, a soustřeď se na to,
-      ať umíš <a href="#requirements">základní minimum</a>.</strong> Potom si začni hledat práci.
+      ať umíš <a href="#minimum-requirements">základní minimum</a>.</strong> Potom si začni hledat práci.
     </p>
     <figure class="quote">
       <blockquote>
@@ -115,7 +218,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       Ale tak to nefunguje. Programátoři se totiž nikdy nepřestávají učit.
       Od určité chvíle prostě musíš začít hledat, i když máš pocit, že toho
       ještě umíš strašně málo. Ten pocit se neztratí nikdy, <a href="https://overreacted.io/things-i-dont-know-as-of-2018/">ani dlouho po tom, co
-      už budeš v&nbsp;IT pracovat</a>. <strong>Splň <a href="#requirements">základní minimum</a> a pak si hned začni hledat práci.</strong>
+      už budeš v&nbsp;IT pracovat</a>. <strong>Splň <a href="#minimum-requirements">základní minimum</a> a pak si hned začni hledat práci.</strong>
     </p>
     <figure class="quote">
       <blockquote>
@@ -148,7 +251,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       </figcaption>
     </figure>
 
-    <h3>Základní minimum</h3>
+    <h3 id="minimum-requirements">Základní minimum</h3>
     <ol>
       <li>
         Znalost jakéhokoliv běžného jazyka alespoň
@@ -238,7 +341,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       </figcaption>
     </figure>
 
-    <h3>Záleží na věku? Pohlaví?</h3>
+    <h3 id="age-gender">Záleží na věku? Pohlaví?</h3>
     <p>
       <a href="{{ url_for('learn') }}#requirements">Ne a ne</a>. Programování není balet,
       <a href="https://www.youtube.com/watch?v=dKclZ55d_F0">začít se dá v jakémkoli věku</a>.
@@ -258,7 +361,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 <section id="expectations" class="main__section">
   <h2 class="main__section-heading">Jaká mít očekávání</h2>
   <div class="text">
-    <h3>Kde jsou firmy, které berou každého?</h3>
+    <h3 id="hungry-market">Kde jsou firmy, které berou každého?</h3>
     <p>
       „Nauč se programovat, firmy v&nbsp;IT berou z nedostatku lidí každého, kdo má jen zájem.“
       Toto je bohužel <strong>mýtus</strong>. IT&nbsp;rozhodně je přístupný obor a projít změnou kariéry
@@ -286,7 +389,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       Jedním z vodítek, jak si určit nástupní mzdu, může být i tvé předešlé zaměstnání. Pokud tvá mzda zásadně nepřesahovala 30&nbsp;000&nbsp;Kč, můžeš si ze začátku prostě <strong>říct o totéž, co ti chodilo na účet v minulé práci</strong>. Příjem tvé domácnosti zůstane stejný, ale do budoucna má velkou pravděpodobnost růst.
     </p>
 
-    <h3>Najdu práci externě, na dálku?</h3>
+    <h3 id="remote-work">Najdu práci externě, na dálku?</h3>
     <p>
       Práci na dálku si většinou musíš <strong>vysloužit svou samostatností</strong>. Na začátku kariéry
       se budeš hodně učit, budeš se topit a volat o pomoc, budeš potřebovat někoho, kdo
@@ -301,7 +404,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 <section id="strategy" class="main__section">
   <h2 class="main__section-heading">Jakou zvolit strategii</h2>
   <div class="text">
-    <h3>Proč začínat programováním</h3>
+    <h3 id="why-start-with-programming">Proč začínat programováním</h3>
     <p>
       Programování je nejlepší způsob, jak začít v&nbsp;IT. <strong>Kolem tvorby softwaru se motá spousta dalších profesí, které tě časem mohou zaujmout více, ale teď o nich ještě ani nevíš. Dokud je neuvidíš v praxi, nebudeš si umět jejich práci ani představit, natož se na ni rovnou hlásit.</strong> Programování má oproti tomu jasně zmapovanou cestu, jak se dá začít učit, a lze z něj časem snadno odskočit jinam. I pokud se nakonec najdeš jinde, ten znalostní základ, který si programováním vytvoříš, <a href="{{ url_for('learn') }}#why">se ti nikdy neztratí</a>. Z toho důvodu začni programováním a pak dej volný průchod tomu, kam tě život zavane.
     </p>
@@ -314,9 +417,9 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       </figcaption>
     </figure>
 
-    <h3>Existují pozice vhodnější pro začátečníky?</h3>
+    <h3 id="entry-friendly-roles">Existují pozice vhodnější pro začátečníky?</h3>
     <p>
-      Může to zabrat čas, úsilí, a chce to sebevědomí, ale i se <a href="#requirements">základním minimem</a> lze rovnou najít práci, kde se programuje. V rámci toho určitě existují pozice, kde se nováček uplatní
+      Může to zabrat čas, úsilí, a chce to sebevědomí, ale i se <a href="#minimum-requirements">základním minimem</a> lze rovnou najít práci, kde se programuje. V rámci toho určitě existují pozice, kde se nováček uplatní
       snadněji, ale pozor na <a href="#entry-tech">zdánlivě související technické pozice</a>, kde se ovšem neprogramuje a <strong>nikam tě neposunou, pokud programovat chceš</strong>.
     </p>
     <p>
@@ -333,7 +436,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
     <p>
       Pokud <strong>chceš</strong> dělat technickou podporu nebo testování, protože cítíš, že tě to bude bavit, tak do toho jdi, na tom rozhodně není nic špatného!
       <strong>Pokud ale chceš programovat, tak si rovnou hledej vývojářskou pozici.</strong> Ano, může to zabrat více času, úsilí, a chce to sebevědomí, ale
-      i se <a href="#requirements">základním minimem</a> lze takovou práci najít.
+      i se <a href="#minimum-requirements">základním minimem</a> lze takovou práci najít.
     </p>
     <p>
       Pokud na práci spěcháš, nebo si z jakéhokoliv důvodu opravdu chceš nejdříve zkusit jinou technickou pozici, <strong>snaž se, aby zahrnovala programování</strong>. Např. místo ručního testování hledej pozici na programování automatizovaných testů. Místo administrace sítě hledej programování administračních skriptů. Místo ruční správy serverů (<em>operations</em>, <em>ops</em>) se ujisti, že firma prosazuje opravdové <a href="https://cs.wikipedia.org/wiki/DevOps">DevOps</a>.
@@ -347,7 +450,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       </figcaption>
     </figure>
 
-    <h3>Jakým směrem se vydat?</h3>
+    <h3 id="choosing-field">Jakým směrem se vydat?</h3>
     <p>
       Když nahlédneš do IT, zjistíš, že kolem programování se motá spousta dalších profesí. <strong>Pokud tě nějaký směr láká nebo rovnou baví, zkus zjistit, co k tomu potřebuješ a nauč se základy.</strong> Cítíš v sobě <a href="https://www.martinus.cz/?uItem=606009">manažerské buňky</a>? Rýpeš se v <a href="https://www.raspberrypi.org/">hardwaru</a>? Chceš <a href="https://warhorsestudios.cz/">programovat hry</a>? Máš <a href="https://www.writethedocs.org/">sklony k psaní</a>? Baví tě <a href="https://frontendisti.cz/">vizuální věci</a>? Trápí tě, <a href="http://www.asociaceux.cz/zacinate-s-user-experience">když je software pro lidi komplikovaný</a>? Pro každou z těchto otázek
       existuje odpověď v podobě specializace. Jdi za tím,
@@ -362,7 +465,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
     </p>
     <p>
       No a pokud ti nedá směr ani to, vezmi prostě jakoukoliv práci jako junior
-      vývojářka nebo vývojář, kterou seženeš se <a href="#requirements">základním minimem</a>, a <strong>nech volný průběh tomu, kam tě to zavane</strong>. Možná ti někdo řekl, že máš hledat svou vášeň a dělat to, co tě baví, ale <a href="https://vimeo.com/48041227">ono to ve skutečnosti funguje jinak</a>.
+      vývojářka nebo vývojář, kterou seženeš se <a href="#minimum-requirements">základním minimem</a>, a <strong>nech volný průběh tomu, kam tě to zavane</strong>. Možná ti někdo řekl, že máš hledat svou vášeň a dělat to, co tě baví, ale <a href="https://vimeo.com/48041227">ono to ve skutečnosti funguje jinak</a>.
     </p>
 
     <h3 id="job-types">Na čem programátoři ve firmách pracují?</h3>
@@ -532,13 +635,13 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       </figcaption>
     </figure>
 
-    <h3>Neplacené stáže</h3>
+    <h3 id="unpaid-internships">Neplacené stáže</h3>
     <p>
       Je na tobě si vyhodnotit, zda se ti stáž bez odměny ve tvé situaci vyplatí a zda si to vůbec můžeš dovolit.
       Ač je možné se s neplacenými stážemi setkat běžně u nás i v zahraničí, je to <a href="https://www.e15.cz/the-student-times/neplacene-staze-aneb-jak-nedocenitelna-je-zkusenost-1348117">věc na hranici zákona i etiky</a>. Podle českého práva <a href="https://www.epravo.cz/top/clanky/neplacena-praxe-ve-firmach-studenti-i-zamestnavatele-na-hrane-zakona-100528.html">není neplacená stáž jednoznačně protizákonná</a>, ale <strong>existuje šance, že v případě kontroly ze strany inspektorátu může být taková praxe vyhodnocena jako nelegální práce</strong>.
     </p>
 
-    <h3>Dobrovolnictví</h3>
+    <h3 id="volunteering">Dobrovolnictví</h3>
     <p>
       Jeden ze způsobů, jak přijít k první praxi, je <strong>pomoci nějakému neziskovému
       projektu</strong>. Nemusí to být zrovna <a href="https://www.clovekvtisni.cz/">Člověk v tísni</a>. Třeba přímo ve svém okolí najdeš něco, kde je potřeba programování, ale nejsou prostředky na profesionální programátory a příliš to nespěchá.
@@ -578,43 +681,45 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
     </p>
 
     <h3 id="handbooks">Související příručky</h3>
-    <ul class="list">
-      <li>
-        <a href="https://yangshun.github.io/tech-interview-handbook/">
-          <div class="list-image">
-            <img src="{{ url_for('static', filename='images/screenshots/yangshun.github.io!tech-interview-handbook.jpg') }}" loading="lazy">
-          </div>
-          <h3>Tech Interview Handbook</h3>
-        </a>
-        <p>
-          Přečti si jak na CV, pohovory, algoritmy.
-        </p>
-      </li>
-      <li>
-        <a href="https://prace.rovnou.cz/">
-          <div class="list-image">
-            <img src="{{ url_for('static', filename='images/screenshots/prace.rovnou.cz.jpg') }}" loading="lazy">
-          </div>
-          <h3>Shánění práce na internetu</h3>
-        </a>
-        <p>
-          Projdi si českou příručku základů
-          hledání práce na internetu.
-        </p>
-      </li>
-      <li>
-        <a href="http://www.crackingthecodinginterview.com/">
-          <div class="list-image">
-            <img src="{{ url_for('static', filename='images/screenshots/crackingthecodinginterview.com.jpg') }}" loading="lazy">
-          </div>
-          <h3>Cracking the Coding Interview</h3>
-        </a>
-        <p>
-          Slavná kniha plná <a href="#puzzles">úloh, které můžeš dostat na pohovoru</a>.
-        </p>
-      </li>
-    </ul>
+  </div>
+  <ul class="list">
+    <li>
+      <a href="https://yangshun.github.io/tech-interview-handbook/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/yangshun.github.io!tech-interview-handbook.jpg') }}" loading="lazy">
+        </div>
+        <h3>Tech Interview Handbook</h3>
+      </a>
+      <p>
+        Přečti si jak na CV, pohovory, algoritmy.
+      </p>
+    </li>
+    <li>
+      <a href="https://prace.rovnou.cz/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/prace.rovnou.cz.jpg') }}" loading="lazy">
+        </div>
+        <h3>Shánění práce na internetu</h3>
+      </a>
+      <p>
+        Projdi si českou příručku základů
+        hledání práce na internetu.
+      </p>
+    </li>
+    <li>
+      <a href="http://www.crackingthecodinginterview.com/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/crackingthecodinginterview.com.jpg') }}" loading="lazy">
+        </div>
+        <h3>Cracking the Coding Interview</h3>
+      </a>
+      <p>
+        Slavná kniha plná <a href="#puzzles">úloh, které můžeš dostat na pohovoru</a>.
+      </p>
+    </li>
+  </ul>
 
+  <div class="text">
     <h3 id="priorities">Tvoje požadavky</h3>
     <p>
       Pokud hledáš ve velkém městě, kde je nabídek více, připrav si <strong>seznam konkrétních věcí, které jsou pro tebe důležité</strong>. Ten si u každé nabídky odškrtávej. Může to být třeba že chceš:
@@ -637,7 +742,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       Seznam udělej podle sebe. Netrap se tím, co chtějí ostatní &mdash; každý je v jiné situaci, každého motivuje něco jiného. Tvoje priority <strong>jsou tvoje a jsou důležité</strong>.
     </p>
 
-    <h3>Životopis</h3>
+    <h3 id="cv">Životopis</h3>
     <p>
       Základem v dnešní době je mít <strong>co nejlépe vyplněný <a href="https://linkedin.com/in/honzajavorek">profil na LinkedIn</a></strong>. Většinou stačí poslat odkaz na svůj LinkedIn a krátký průvodní dopis &mdash; není potřeba přikládat ještě zvlášť sepsaný životopis ve Wordu nebo v PDF. Zajímavým doplňkem životopisu může být tvůj <a href="#portfolio">osobní web</a>.
     </p>
@@ -757,7 +862,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       <strong>Samostatně operující recruiteři ti mohou pomoci sehnat práci, a to z tvého pohledu zadarmo</strong>, protože je zaplatí firma. Problém je v tom, že pro firmu je zaměstnání juniora už tak dost velký výdaj. I když je to levné z hlediska mzdy, firma tě musí všechno učit a věnovat se ti. <strong>Jako junior nejsi zrovna atraktivní „balíček“ na trhu a když se k tomu přidá ještě potřeba vyplatit provizi náborářům, dokonce ti to může snížit šance na přijetí.</strong> Firma, která by tě klidně vzala napřímo, tě může odmítnout, pokud tě dohazuje externí recruiter. Zároveň tvá nízká startovní mzda znamená, že recruiteři si nepřijdou na zajímavou odměnu (na rozdíl od toho, kdyby svůj čas věnovali umisťování zkušenějších programátorů s jejich astronomickými mzdami).
     </p>
 
-    <h3>Profily</h3>
+    <h3 id="profiles">Profily</h3>
     <p>
       Kromě procházení nabídek práce <strong>si můžeš vytvořit profil, na základě kterého tě mohou firmy najít samy</strong>. Přesněji, mohou tě najít <a href="#recruiters">recruiteři</a>.
     </p>
@@ -769,7 +874,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       Kromě takovýchto strukturovaných profilů <strong>se můžeš nabízet také volně v programátorské komunitě</strong>. Základem je <a href="#networking">networking</a>, ale lze využít i sílu sociálních sítí. Příspěvky o tom, že hledáš práci, můžeš zveřejnit na místech, kde se sdružují programátoři, např. ve <a href="https://www.facebook.com/groups/pyonieri/">Facebookové skupině o jazyce Python</a>. <strong>Upřímně popiš co umíš a co hledáš.</strong> Konkrétně v případě Facebooku si dej ale pozor na to, že soukromé zprávy od lidí, které nemáš v přátelích, ti spadnou do „žádostí o zprávy“. Můžeš tak minout vážně míněné nabídky práce zaslané jako reakce na tvůj příspěvek.
     </p>
 
-    <h3>Oslovování firem</h3>
+    <h3 id="cold-calling-companies">Oslovování firem</h3>
     <p>
       Nenech se odradit tím, že firma neinzeruje pracovní nabídky nebo že mezi jejími nabídkami nenajdeš něco pro sebe. <strong>Neboj se firmy napřímo oslovovat a ptát se jich, jestli by v nich nebyla příležitost pro <a href="#internships">stáž</a> nebo juniorní pozici.</strong> Někdy je lepší si příležitost vytvořit než na ni pasivně čekat.
     </p>
@@ -791,9 +896,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
     <p>
       Tyto akce najdeš na stránkách jednotlivých firem, nebo i na <a href="https://meetup.com">meetup.com</a>: <a href="https://www.meetup.com/TopMonks-Caffe/">TopMonks Caffè</a>, <a href="https://www.meetup.com/ysoft-th/">Y-Soft: Technology Hour</a>, <a href="https://www.meetup.com/STRV-Meetups/">STRV Meetups</a>…
     </p>
-  </div>
 
-  <div class="text">
     <h3 id="networking">Networking</h3>
     <p>
       Jedním z nejefektivnějších způsobů, jak si v malé ČR sehnat dobrou práci, je <strong>networking, tedy setkávání s lidmi a získávání kontaktů</strong>. Staň se <a href="#proactive">aktivním členem programátorské komunity</a> a zajímavé nabídky práce po čase přijdou samy. Choď na <a href="{{ url_for('practice') }}#events">srazy a konference</a>, seznamuj se s lidmi, představuj se. Jsou to místa, kde lidé zhusta mění a získávají práci &mdash; i proto se na nich vyskytují <a href="#recruiters">recruiteři velkých firem</a>. Můžeš zkusit i veletrhy práce, které jsou na toto přímo zaměřené (např. <a href="https://www.jobsdev.cz/">JobsDev</a>). <strong>Velké akce lze pojmout systematicky</strong> &mdash; vytiskni si 50 vizitek s nápisem „sháním stáž“ a jdi je rozdat mezi lidi. Představuj se, vysvětli co umíš a co hledáš, prodej se. <strong>Malé akce jako srazy ber jako způsob jak najít nové kamarády</strong> v oboru a pracovním příležitostem tam nech spíš volný průběh.
@@ -805,7 +908,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       Česká komunita programátorů je malá a existuje na malém prostoru &mdash; z Plzně do Ostravy je to pár hodin vlakem. <strong>„Všichni se znají“, je snadné se setkávat</strong>. Díky tomu je u nás networking velmi důležitou složkou budování kariéry.
     </p>
 
-    <h3>Nástěnky</h3>
+    <h3 id="job-boards">Nástěnky</h3>
     <p>
       „Nástěnky“ (anglicky <em>job board</em>) s pracovními nabídkami jsou nejpřímočařejší způsob, jak hledat práci.
       Přímo na těchto stránkách je nástěnka, kde je aktuálně <strong><a href="{{ url_for('jobs') }}">{{ jobs_count }} nabídek práce pro juniory</a></strong> od {{ companies_count }} firem.
@@ -861,7 +964,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       Rady v této podkapitole volně vychází ze <a href="https://twitter.com/ASpittel/status/1214979863683174400">série tipů, které tweetovala Ali Spittel</a> a z osobních doporučení od Olgy Fomichevy. Velké díky!
     </p>
 
-    <h3>Když nevíš</h3>
+    <h3 id="when-you-dont-know">Když nevíš</h3>
     <p>
       Během pohovoru <strong>ukaž, jak přemýšlíš</strong>. Vysvětli, jakým způsobem se propracováváš k odpovědi, kresli diagramy, piš kód, vysvětluj díry ve svém přístupu. Ptej se, pokud ti něco není jasné. Situace, kdy mlčíš a přemýšlíš, není příjemná ani tobě, ani ostatním přítomným. Vždy je lepší „přemýšlet nahlas“, ale také prostě říct „nevím“, ideálně spolu s „můžete mi to trochu popsat, ať se mám od čeho odrazit?“.
     </p>
@@ -877,7 +980,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       </figcaption>
     </figure>
 
-    <h3 id="puzzles">Úlohy na algoritmizaci</h3>
+    <h3 id="leetcode">Úlohy na algoritmizaci</h3>
     <p>
       Na pohovorech se můžeš až příliš často setkat s úlohami u tabule, <em>challenges</em>, <em>puzzles</em>, otázkami na algoritmizaci,
       na <a href="https://cs.wikipedia.org/wiki/Asymptotick%C3%A1_slo%C5%BEitost">složitost</a>, na řazení, procházení stromů
@@ -919,7 +1022,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       Rady v této podkapitole volně vychází ze <a href="https://twitter.com/ASpittel/status/1214979863683174400">série tipů, které tweetovala Ali Spittel</a>. Velké díky!
     </p>
 
-    <h3>Povědomí o firmě</h3>
+    <h3 id="company-info">Povědomí o firmě</h3>
     <p>
       Kandidát, který se někam hlásí a ani neví, o co se firma na trhu snaží, nepůsobí moc profesionálně. Je důležité mít <strong>základní povědomí o firmě a tom, co dělá</strong>. To získáš díky <a href="#research">průzkumu před pohovorem</a>. Dále můžeš dostat zvědavé dotazy typu „Jak jste nás našla?“, ale na ty většinou není těžké odpovědět po pravdě.
     </p>
@@ -993,7 +1096,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       Drž se <a href="#priorities">seznamu svých priorit</a> a <strong>nenech se natlačit do něčeho, co nechceš</strong>. Nespokoj se s nižší mzdou, než za jakou by ti bylo příjemné pracovat. <strong>I když začínáš, zasloužíš si adekvátní ohodnocení.</strong> Pokud se firmě líbíš, bude ochotná vyjednávat o mzdě. Jestliže budeš mít příliš nízká očekávání z hlediska mzdy, může to na zaměstnavatele působit zoufale nebo jako znamení velmi nízkého sebevědomí.
     </p>
 
-    <h3>Jak zvládnout odmítnutí</h3>
+    <h3 id="handling-rejection">Jak zvládnout odmítnutí</h3>
     <p>
       Je velmi pravděpodobné, že tě odmítnou na pohovoru, a to <strong>proto, že se to děje úplně každému</strong>. <a href="https://sw-samuraj.cz/2017/09/smutna-zprava-o-stavu-it-trhu/">Ano, i seniorním programátorům</a>. U začátečníků navíc chvíli trvá, než se naladí na aktuální poptávku trhu a na to, jak přesně fungují přijímací pohovory v&nbsp;IT.
       Raději <strong>počítej s tím, že ze začátku to půjde ztuha</strong> a tvé první hledání práce
@@ -1120,7 +1223,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       Příklady osobních stránek s blogem: <a href="https://honzajavorek.cz/">Honza Javorek</a> (autor tohoto průvodce) nebo <a href="https://ivet1987.wz.cz/">Iveta Česalová</a> (absolventka PyLadies). Další inspiraci lze <a href="https://www.google.cz/search?q=best%20(personal%20or%20portfolio)%20websites">snadno najít na internetu</a>.
     </p>
 
-    <h3>Učení</h3>
+    <h3 id="teaching">Učení</h3>
     <p>
       I když se to nezdá, i začátečníci mohou učit! <strong>Nejlepší způsob, jak se něco pořádně naučit, je vysvětlit to někomu jinému.</strong> Učení upevňuje hloubku tvých vlastních znalostí a umožňuje ti setkat se s lidmi z oboru. Můžeš <a href="#portfolio">napsat článek na blog pokaždé, když se naučíš něco nového</a>,
       můžeš <a href="{{ url_for('practice') }}#mentors">nabízet mentoring</a>, můžeš pomáhat na komunitně organizovaných kurzech a workshopech jako jsou ty od <a href="https://pyladies.cz/">PyLadies</a> nebo <a href="https://www.czechitas.cz/">Czechitas</a>.
@@ -1137,7 +1240,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       </figcaption>
     </figure>
 
-    <h3>Přednášení</h3>
+    <h3 id="giving-talks">Přednášení</h3>
     <p>
       Podobně jako učení, přednášení na <a href="{{ url_for('practice') }}#events">srazech a konferencích</a> vypadá jako něco, co je vyhrazeno profesionálům, ale není to tak. <strong>Zmíněné akce jsou komunitní a obvykle podporují přednášky od začátečníků a pro začátečníky.</strong> Neboj se toho! Přijít na pohovor s tím, že máš za sebou přednášku na srazu nebo dokonce konferenci, je naprostá pecka! Pro inspiraci si projdi nějaké přednášky z minulých let konference <a href="https://cz.pycon.org/">PyCon CZ</a>. Nejsou to nutně pokročilá technická témata:
     </p>
@@ -1167,7 +1270,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       </figcaption>
     </figure>
 
-    <h3>Přispívání do Open Source</h3>
+    <h3 id="oss-contributing">Přispívání do Open Source</h3>
     <p>
       V neposlední řadě si lze vybudovat jméno <a href="{{ url_for('practice') }}#opensource">přispíváním do Open Source</a>. I pokud se necítíš na samotné programování, <a href="https://opensource.guide/how-to-contribute/#what-it-means-to-contribute">je i hodně jiných způsobů, jak můžeš přiložit ruku k dílu</a>. Je to skvělá příležitost jak nabrat zkušenosti, vyniknout, získat kontakty mezi lidmi z oboru.
     </p>

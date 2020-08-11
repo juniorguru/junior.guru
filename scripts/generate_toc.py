@@ -12,6 +12,8 @@ from lxml import html
 
 
 def main(path):
+    ids = []
+
     output = '<ol class="toc__items">\n'
     html_tree = html.fromstring(Path(path).read_text())
     for h2 in html_tree.cssselect('.main__section-heading'):
@@ -22,6 +24,7 @@ def main(path):
         if not h2_id:
             raise Exception(f"Section '{h2_text}' doesn't have ID")
         output += f'  <li class="toc__item"><a href="#{h2_id}">{h2_text}</a>'
+        ids.append(h2_id)
 
         h3s = section.cssselect('.text h3')
         if h3s:
@@ -32,10 +35,15 @@ def main(path):
                 if not h3_id:
                     raise Exception(f"Section '{h3_text}' doesn't have ID")
                 output += f'      <li class="toc__subitem"><a href="#{h3_id}">{h3_text}</a></li>\n'
+                ids.append(h3_id)
             output += '    </ol>\n  </li>\n'
         else:
             output += '</li>\n'
     output += '</ol>'
+
+    if len(ids) != len(set(ids)):
+        raise Exception('There are duplicate IDs!')
+
     return indent(output, '      ')
 
 
