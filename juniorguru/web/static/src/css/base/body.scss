@@ -15,3 +15,8 @@ html {
 .body__container {
   background: $white;
 }
+
+.body--disabled {
+  height: 100%;
+  overflow: hidden;
+}

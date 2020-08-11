@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+  const body = document.body;
   const header = document.getElementsByClassName('header')[0];
   const toc = document.getElementById('toc');
   const checkbox = document.getElementById('toc-toggle-checkbox');
@@ -7,17 +8,17 @@ document.addEventListener('DOMContentLoaded', function () {
     checkbox.addEventListener('change', function (event) {
       if (checkbox.checked) {
         toc.classList.add('toc--visible');
-        header.classList.add('header--always-collapsed');
+        body.classList.add('body--disabled');
       } else {
         toc.classList.remove('toc--visible');
+        body.classList.remove('body--disabled');
         header.classList.add('header--collapsed');
-        header.classList.remove('header--always-collapsed');
       }
     });
 
     if (checkbox.checked) {
       toc.classList.add('toc--visible');
-      header.classList.add('header--always-collapsed');
+      body.classList.add('body--disabled');
     }
 
     toc.addEventListener('click', function (event) {
