@@ -49,6 +49,10 @@ $whitespace: 1.3rem;
 $whitespace-2: 2.1rem;
 $whitespace-3: 3.4rem;
 
+$logo-height: 4rem;
+$logo-height-small: 3rem;
+$logo-height-large: 5.5rem;
+$logo-height-index: 10rem;
 
 @mixin hyphens { -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
 
@@ -96,5 +100,14 @@ $whitespace-3: 3.4rem;
 
   &:hover, &:focus, &:active {
     color: $color-hover;
+  }
+}
+
+@keyframes target-animation {
+  0% {
+    text-shadow: rgba($black, 0.2) 0 0 0;
+  }
+  100% {
+    text-shadow: rgba($black, 0) 0 0 4rem;
   }
 }

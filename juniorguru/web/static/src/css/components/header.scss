@@ -1,9 +1,4 @@
-$animation-duration: 1.5s;
-
-$logo-height-small: 3rem;
-$logo-height: 4rem;
-$logo-height-large: 5.5rem;
-$logo-height-index: 10rem;
+$collapse-duration: 1s;
 
 .header {
   margin: 0;
@@ -18,21 +13,6 @@ $logo-height-index: 10rem;
 
 .header--index {
   position: static;
-}
-
-:target::before {
-  display: block;
-  content: " ";
-  height: 2 * $logo-height;
-  margin-top: -2 * $logo-height;
-  width: 1rem;
-  pointer-events: none;
-  // background: violet; // debug
-}
-
-.body--subnav :target::before {
-  height: (2 * $logo-height) + 3.5rem;
-  margin-top: (-2 * $logo-height) + 3.5rem;
 }
 
 .header__main {
@@ -64,7 +44,7 @@ $logo-height-index: 10rem;
 .header__logo-image {
   display: block;
   height: $logo-height;
-  transition: height $animation-duration;
+  transition: height $collapse-duration;
 }
 
 .header--collapsed .header__logo-image {
@@ -106,7 +86,7 @@ $logo-height-index: 10rem;
   height: 100%;
   align-self: flex-end;
   display: flex;
-  transition: font-size $animation-duration, line-height $animation-duration;
+  transition: font-size $collapse-duration, line-height $collapse-duration;
 }
 
 .header__nav-tabs,
@@ -128,7 +108,7 @@ $logo-height-index: 10rem;
   height: 100%;
   box-sizing: border-box;
   text-decoration: none;
-  transition: padding $animation-duration;
+  transition: padding $collapse-duration;
 }
 
 .header__nav-tab-control,
@@ -174,7 +154,7 @@ a.header__nav-tab-control--active:active {
   @include page-width;
   display: flex;
   justify-content: flex-start;
-  transition: font-size $animation-duration, line-height $animation-duration;
+  transition: font-size $collapse-duration, line-height $collapse-duration;
 }
 
 .header__subnav-tabs,
@@ -338,16 +318,6 @@ a.header__subnav-tab-control:active {
 
   .header__logo-image {
     height: $logo-height-large;
-  }
-
-  :target::before {
-    height: 2 * $logo-height-large;
-    margin-top: -2 * $logo-height-large;
-  }
-
-  .body--subnav :target::before {
-    height: (2 * $logo-height-large) + 4rem;
-    margin-top: (-2 * $logo-height-large) + 4rem;
   }
 
   .header__subnav-tab:last-child {

@@ -27,7 +27,7 @@
       <meta name="twitter:creator" content="@honzajavorek">
     {% endblock meta %}
   </head>
-  <body class="body{% if subnav_tabs %} body--subnav{% endif %}{% block body_modifier %}{% endblock %}">
+  <body class="body{% block body_modifier %}{% endblock %}">
     <div class="body__container">
     {% block body %}
       <header class="header{% if subnav_tabs %} header--subnav{% endif %}{% block header_modifier %}{% endblock %}">

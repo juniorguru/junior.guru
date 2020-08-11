@@ -26,7 +26,7 @@ def main(path):
         output += f'  <li class="toc__item"><a href="#{h2_id}">{h2_text}</a>'
         ids.append(h2_id)
 
-        h3s = section.cssselect('.text h3')
+        h3s = section.cssselect('.main__subsection-heading')
         if h3s:
             output += '\n    <ol class="toc__subitems">\n'
             for h3 in h3s:

@@ -47,11 +47,7 @@
   }
 }
 
-.text {
-  h3 {
-    margin-top: $whitespace-3;
-  }
-
+.tooltips {
   a[href^="#"] {
     @include tooltip("skok na jinou část této stránky");
     text-decoration-style: dashed;
@@ -60,19 +56,5 @@
   a[href^="/"] {
     @include tooltip("odkaz jinam na junior.guru");
     text-decoration-style: dashed;
-  }
-}
-
-.text--tooltips-disabled {
-  a[href^="#"],
-  a[href^="/"] {
-    &:hover,
-    &:focus,
-    &:active {
-      &::before,
-      &::after {
-        display: none;
-      }
-    }
   }
 }
