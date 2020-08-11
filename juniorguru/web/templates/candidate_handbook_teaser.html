@@ -49,12 +49,17 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 </section>
 
 <section class="main__section main__section--wide engage">
-  <div class="engage__content engage__illustration engage__illustration--desktop engage__illustration--chick2">
-    <h2 class="engage__heading">Buď mezi prvními</h2>
-    <div class="engage__text engage__illustration engage__illustration--phones engage__illustration--chick2">
-      <p>
-        {{ metrics.subscribers|metric }} odběratelů <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">nabídek práce a novinek</a> bude mít k textu příručky přístup ještě o něco dříve, než vyjde oficiálně. Pokud chceš být mezi nimi, není nic jednoduššího, než se přihlásit taky. Klidně si prohlédni <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank" rel="noopener">všechny minulé e-maily</a>, ať víš, do čeho jdeš. Můžeš se samozřejmě kdykoliv odhlásit.
-      </p>
+  <div class="engage__content">
+    <div class="engage__illustrated-block">
+      <h2 class="engage__heading">Buď mezi prvními</h2>
+      <div class="engage__illustration-container">
+        <img class="engage__illustration" width="120" alt="Vejce" src="{{ url_for('static', filename='images/chick2.svg') }}">
+      </div>
+      <div class="engage__text">
+        <p>
+          {{ metrics.subscribers|metric }} odběratelů <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">nabídek práce a novinek</a> bude mít k textu příručky přístup ještě o něco dříve, než vyjde oficiálně. Pokud chceš být mezi nimi, není nic jednoduššího, než se přihlásit taky. Klidně si prohlédni <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank" rel="noopener">všechny minulé e-maily</a>, ať víš, do čeho jdeš. Můžeš se samozřejmě kdykoliv odhlásit.
+        </p>
+      </div>
     </div>
     <p class="button-compartment button-compartment--consistent-minimal-margin">
       <a class="button" href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">Hlídat příručku</a>
