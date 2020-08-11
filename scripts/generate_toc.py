@@ -1,3 +1,9 @@
+"""
+To generate HTML for the ToC. Usage::
+
+    $ pipenv run python scripts/generate_toc.py juniorguru/web/templates/learn.html | pbcopy
+"""
+
 import sys
 from pathlib import Path
 from textwrap import indent
