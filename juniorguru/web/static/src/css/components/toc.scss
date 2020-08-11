@@ -23,9 +23,7 @@ $toc-width-rem: 30;
 }
 
 .toc__content {
-  background: rgba($white, 0.8);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
+  background: $white;
   padding: 0 0 $whitespace 0;
   border-left: $border-width solid $blue;
   width: 100%;
@@ -45,7 +43,6 @@ $toc-width-rem: 30;
   font-weight: normal;
   background: $white;
   text-align: center;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .toc__items,
@@ -93,6 +90,6 @@ $toc-width-rem: 30;
 
   .toc__heading {
     padding-top: $whitespace-0;
-    padding-bottom: $whitespace-0;
+    padding-bottom: $whitespace;
   }
 }
