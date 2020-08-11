@@ -1,14 +1,3 @@
-function toggleToc(header, toc, checkbox) {
-  if (checkbox.checked) {
-    toc.classList.add('toc--visible');
-    header.classList.add('header--always-collapsed');
-  } else {
-    toc.classList.remove('toc--visible');
-    header.classList.add('header--collapsed');
-    header.classList.remove('header--always-collapsed');
-  }
-}
-
 document.addEventListener('DOMContentLoaded', function () {
   const header = document.getElementsByClassName('header')[0];
   const toc = document.getElementById('toc');
@@ -16,9 +5,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (toc && checkbox) {
     checkbox.addEventListener('change', function (event) {
-      toggleToc(header, toc, checkbox);
+      if (checkbox.checked) {
+        toc.classList.add('toc--visible');
+        header.classList.add('header--always-collapsed');
+      } else {
+        toc.classList.remove('toc--visible');
+        header.classList.add('header--collapsed');
+        header.classList.remove('header--always-collapsed');
+      }
     });
-    toggleToc(header, toc, checkbox);
+
+    if (checkbox.checked) {
+      toc.classList.add('toc--visible');
+      header.classList.add('header--always-collapsed');
+    }
 
     toc.addEventListener('click', function (event) {
       let el = event.target;
