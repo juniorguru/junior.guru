@@ -110,9 +110,8 @@ function getCurrentHeading(headings, position) {
   }).filter(function (tuple) {
     return tuple[1] < position;
   });
-  // console.log(tuples.map(function (t) {
-  //   return t[0].innerHTML + ' (' + parseInt(t[1]) + ')';
-  // }));
+
+  // evaluate results
   if (tuples.length < 1) { return null; }
   if (tuples.length == 1) { return tuples[0][0]; }
 
