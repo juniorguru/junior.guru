@@ -1,17 +1,58 @@
-// document.addEventListener('DOMContentLoaded', function () {
+let header;
+let footer;
 
-// });
+let toc;
+let tocHeading;
+let tocHeadingInitialValue;
+
+let headings = [];
+
+// set variables
+document.addEventListener('DOMContentLoaded', function () {
+  header = document.getElementsByClassName('header')[0];
+  footer = document.getElementsByClassName('footer')[0];
+
+  toc = document.getElementsByClassName('toc__content')[0];
+  tocHeading = document.getElementsByClassName('header__tocbar-heading')[0];
+  tocHeadingInitialValue = tocHeading ? tocHeading.innerHTML : undefined;
+
+  headings = [
+    'engage__heading',
+    'main__section-heading',
+  ].map(function (className) {
+    return Array.from(document.getElementsByClassName(className));
+  }).reduce(function (acc, arr) {
+    return acc.concat(arr);
+  }, []);
+});
 
 onScroll(function () {
-  const toc = document.getElementsByClassName('toc__content')[0];
-  const footer = document.getElementsByClassName('footer')[0];
-  if (!footer || !toc) { return; }
+  // hiding of the ToC if scrolling to the bottom
+  if (footer && toc) {
+    if (toc.getBoundingClientRect().bottom > footer.getBoundingClientRect().top) {
+      toc.classList.add('toc__content--irrelevant');
+    } else {
+      toc.classList.remove('toc__content--irrelevant');
+    }
+  }
 
-  console.log(toc.getBoundingClientRect().bottom, footer.getBoundingClientRect().top);
-  if (toc.getBoundingClientRect().bottom > footer.getBoundingClientRect().top) {
-    toc.classList.add('toc__content--irrelevant');
-  } else {
-    toc.classList.remove('toc__content--irrelevant');
+  // updating current heading
+  if (header) {
+    const position = header.getBoundingClientRect().bottom;
+    if (tocHeading) {
+      const currentHeading = getCurrentHeading(position);
+      tocHeading.innerHTML = currentHeading ? currentHeading.innerHTML : tocHeadingInitialValue;
+
+      // const id = getId(currentHeading);
+      // const tocItems = Array.from(document.getElementsByClassName('toc__item'));
+      // tocItems.forEach(function (tocItem) {
+      //   tocItem.classList.remove('toc__item--active');
+      //   const links = tocItem.getElementsByTagName('a');
+      //   if (links.length && links[0].href.match('#' + id)) {
+      //     tocItem.classList.add('toc__item--active');
+      //   }
+      // });
+    }
   }
 });
 
@@ -30,39 +71,30 @@ function onScroll(fn) {
   }, 250);
 }
 
-/*
-document.addEventListener('DOMContentLoaded', function () {
-  const body = document.body;
-  const header = document.getElementsByClassName('header')[0];
-  const toc = document.getElementById('toc');
-  const checkbox = document.getElementById('toc-toggle-checkbox');
+function getCurrentHeading(position) {
+  position = (position || 0) + 100;
 
-  if (toc && checkbox) {
-    checkbox.addEventListener('change', function (event) {
-      if (checkbox.checked) {
-        toc.classList.add('toc--visible');
-      } else {
-        toc.classList.remove('toc--visible');
-        header.classList.add('header--collapsed');
-      }
-    });
+  // headers preceding the current position
+  const tuples = headings.map(function (heading) {
+    const position = heading.getBoundingClientRect().bottom;
+    return [heading, position];
+  }).filter(function (tuple) {
+    return tuple[1] < position;
+  })
+  if (tuples.length < 1) { return null; }
+  if (tuples.length == 1) { return tuples[0][0]; }
 
-    if (checkbox.checked) {
-      toc.classList.add('toc--visible');
+  // header with the most bottom position
+  return tuples.reduce(function (result, tuple) {
+    return result[1] > tuple[1] ? result : tuple;
+  })[0];
+}
+
+function getId(el) {
+  while (el) {
+    if (el.id) {
+      return el.id;
     }
-
-    toc.addEventListener('click', function (event) {
-      let el = event.target;
-      while (el) {
-        if (el.classList.contains('toc__content')) {
-          event.stopPropagation();
-          return;
-        }
-        el = el.parentElement;
-      }
-      checkbox.checked = false;
-      checkbox.dispatchEvent(new Event('change'));
-    });
+    el = el.parentElement;
   }
-});
-*/
+}

@@ -63,30 +63,7 @@ onScroll(function () {
   }
 });
 
-function getCurrentHeading(position) {
-  position = (position || 0) + 100;
 
-  const tuples = headings.map(function (heading) {
-    const position = heading.getBoundingClientRect().bottom;
-    return [heading, position];
-  })
-  const firstTuple = tuples[0]; // first heading
-
-  return tuples.filter(function (tuple) {
-    return tuple[1] < position;
-  }).reduce(function (result, tuple) {
-    return result[1] > tuple[1] ? result : tuple;
-  }, firstTuple)[0];
-}
-
-function getId(el) {
-  while (el) {
-    if (el.id) {
-      return el.id;
-    }
-    el = el.parentElement;
-  }
-}
 
 function onScroll(fn) {
   let scrolled = false;
