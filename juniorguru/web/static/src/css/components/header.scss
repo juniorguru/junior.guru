@@ -1,5 +1,3 @@
-$collapse-duration: 1s;
-
 .header {
   margin: 0;
   padding: 0;
@@ -45,11 +43,6 @@ $collapse-duration: 1s;
 .header__logo-image {
   display: block;
   height: $logo-height;
-  transition: height $collapse-duration;
-}
-
-.header--collapsed .header__logo-image {
-  height: $logo-height-small;
 }
 
 .header--index .header__logo-image {
@@ -87,11 +80,9 @@ $collapse-duration: 1s;
   height: 100%;
   align-self: flex-end;
   display: flex;
-  transition: font-size $collapse-duration, line-height $collapse-duration;
 }
 
-.header__nav-tabs,
-.header--collapsed .header__nav-tabs {
+.header__nav-tabs {
   @include font-0;
 }
 
@@ -109,11 +100,9 @@ $collapse-duration: 1s;
   height: 100%;
   box-sizing: border-box;
   text-decoration: none;
-  transition: padding $collapse-duration;
 }
 
-.header__nav-tab-control,
-.header--collapsed .header__nav-tab-control {
+.header__nav-tab-control {
   padding: 0 $whitespace-0;
 }
 
@@ -155,11 +144,9 @@ a.header__nav-tab-control--active:active {
   @include page-width;
   display: flex;
   justify-content: flex-start;
-  transition: font-size $collapse-duration, line-height $collapse-duration;
 }
 
-.header__subnav-tabs,
-.header--collapsed .header__subnav-tabs {
+.header__subnav-tabs {
   @include font-0;
 }
 
@@ -189,10 +176,6 @@ a.header__nav-tab-control--active:active {
   background: $white;
 }
 
-.header--collapsed .header__subnav-tab-control {
-  margin: 0.2rem 0 0.3rem 0;
-}
-
 a.header__subnav-tab-control:hover,
 a.header__subnav-tab-control:focus,
 a.header__subnav-tab-control:active,
@@ -200,27 +183,18 @@ a.header__subnav-tab-control:active,
 a.header__subnav-tab-control--active:hover,
 a.header__subnav-tab-control--active:focus,
 a.header__subnav-tab-control--active:active {
-  & {
-    color: $black;
-    margin: 0;
-    margin-top: 0.4rem;
-    padding: ($whitespace-0 - 0.4rem) 0 ($whitespace-0 - 0.3rem) 0;
-    border-bottom: 0.3rem $black solid;
-  }
-
-  .header--collapsed & {
-    margin: 0.2rem 0 0 0;
-    padding: 0.2rem 0 0.2rem 0;
-  }
+  color: $black;
+  margin: 0;
+  margin-top: 0.4rem;
+  padding: ($whitespace-0 - 0.4rem) 0 ($whitespace-0 - 0.3rem) 0;
+  border-bottom: 0.3rem $black solid;
 }
 
 a.header__subnav-tab-control:hover,
 a.header__subnav-tab-control:focus,
 a.header__subnav-tab-control:active {
-  & {
-    color: $blue;
-    border-color: $blue;
-  }
+  color: $blue;
+  border-color: $blue;
 }
 
 .header__subnav-tab-name {
