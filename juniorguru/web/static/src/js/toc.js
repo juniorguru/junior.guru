@@ -55,14 +55,14 @@ function updateToC() {
       }
     }
 
+    Array.from(document.getElementsByClassName('toc__item--active')).forEach(function (item) {
+      item.classList.remove('toc__item--active');
+    });
     const subsectionHeading = getCurrentHeading(subsectionHeadings, position);
     if (toc && subsectionHeading) {
       const id = getId(subsectionHeading);
       const link = document.querySelectorAll('.toc__item a[href="#' + id + '"]')[0];
 
-      Array.from(document.getElementsByClassName('toc__item--active')).forEach(function (item) {
-        item.classList.remove('toc__item--active');
-      });
       const item = getParent(link, 'toc__item');
       if (item) { item.classList.add('toc__item--active'); }
 
