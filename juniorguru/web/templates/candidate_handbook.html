@@ -919,9 +919,11 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
       „Nástěnky“ (anglicky <em>job board</em>) s pracovními nabídkami jsou nejpřímočařejší způsob, jak hledat práci.
       Přímo na těchto stránkách je nástěnka, kde je aktuálně <strong><a href="{{ url_for('jobs') }}">{{ jobs_count }} nabídek práce pro juniory</a></strong> od {{ companies_count }} firem.
     </p>
-    <p class="call-to-action next">
-      <a href="{{ url_for('jobs') }}" class="legacy-button">Nabídky práce!</a>
-    </p>
+  </div>
+  <p class="button-compartment button-compartment--consistent-minimal-margin">
+    <a href="{{ url_for('jobs') }}" class="button">Nabídky práce!</a>
+  </p>
+  <div class="tooltips">
     <p>
       Nevýhodou nástěnek je, že si je může přečíst každý a <strong>vystavuješ se tak větší konkurenci na pohovoru</strong>. Na americkém trhu na inzerát odpoví i stovky uchazečů a je velmi obtížné mezi nimi vyniknout. <strong>V Česku tento problém tak žhavý není</strong>, čísla uchazečů jsou zřídkakdy v desítkách. Prakticky každý se časem někde prosadí.
     </p>
