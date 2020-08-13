@@ -23,7 +23,7 @@ def main(path):
         h2_text = h2.text_content()
         if not h2_id:
             raise Exception(f"Section '{h2_text}' doesn't have ID")
-        output += f'  <li class="toc__item"><a href="#{h2_id}">{h2_text}</a>'
+        output += f'  <li class="toc__item"><a class="toc__link" href="#{h2_id}">{h2_text}</a>'
         ids.append(h2_id)
 
         h3s = section.cssselect('.main__subsection-heading')
@@ -34,7 +34,7 @@ def main(path):
                 h3_text = h3.text_content()
                 if not h3_id:
                     raise Exception(f"Section '{h3_text}' doesn't have ID")
-                output += f'      <li class="toc__subitem"><a href="#{h3_id}">{h3_text}</a></li>\n'
+                output += f'      <li class="toc__subitem"><a class="toc__sublink" href="#{h3_id}">{h3_text}</a></li>\n'
                 ids.append(h3_id)
             output += '    </ol>\n  </li>\n'
         else:

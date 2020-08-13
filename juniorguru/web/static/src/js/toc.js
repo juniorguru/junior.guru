@@ -5,7 +5,8 @@ let toc;
 let tocHeading;
 let tocHeadingInitialValue;
 
-let headings = [];
+let sectionHeadings = [];
+let subsectionHeadings = [];
 
 // set variables
 document.addEventListener('DOMContentLoaded', function () {
@@ -16,14 +17,15 @@ document.addEventListener('DOMContentLoaded', function () {
   tocHeading = document.getElementsByClassName('header__tocbar-heading')[0];
   tocHeadingInitialValue = tocHeading ? tocHeading.innerHTML : undefined;
 
-  headings = [
+  sectionHeadings = findHeadings([
     'engage__heading',
     'main__section-heading',
-  ].map(function (className) {
-    return Array.from(document.getElementsByClassName(className));
-  }).reduce(function (acc, arr) {
-    return acc.concat(arr);
-  }, []);
+  ]);
+  subsectionHeadings = findHeadings([
+    'engage__heading',
+    'main__section-heading',
+    'main__subsection-heading',
+  ]);
 });
 
 onScroll(function () {
@@ -39,19 +41,32 @@ onScroll(function () {
   // updating current heading
   if (header) {
     const position = header.getBoundingClientRect().bottom;
-    if (tocHeading) {
-      const currentHeading = getCurrentHeading(position);
-      tocHeading.innerHTML = currentHeading ? currentHeading.innerHTML : tocHeadingInitialValue;
 
-      // const id = getId(currentHeading);
-      // const tocItems = Array.from(document.getElementsByClassName('toc__item'));
-      // tocItems.forEach(function (tocItem) {
-      //   tocItem.classList.remove('toc__item--active');
-      //   const links = tocItem.getElementsByTagName('a');
-      //   if (links.length && links[0].href.match('#' + id)) {
-      //     tocItem.classList.add('toc__item--active');
-      //   }
-      // });
+    if (tocHeading) {
+      const sectionHeading = getCurrentHeading(sectionHeadings, position);
+      if (sectionHeading) {
+        tocHeading.innerHTML = sectionHeading.innerHTML;
+      } else {
+        tocHeading.innerHTML = tocHeadingInitialValue;
+      }
+    }
+
+    const subsectionHeading = getCurrentHeading(subsectionHeadings, position);
+    if (toc && subsectionHeading) {
+      const id = getId(subsectionHeading);
+      const link = document.querySelectorAll('.toc__item a[href="#' + id + '"]')[0];
+
+      Array.from(document.getElementsByClassName('toc__item--active')).forEach(function (item) {
+        item.classList.remove('toc__item--active');
+      });
+      const item = getParent(link, 'toc__item');
+      if (item) { item.classList.add('toc__item--active'); }
+
+      Array.from(document.getElementsByClassName('toc__subitem--active')).forEach(function (subitem) {
+        subitem.classList.remove('toc__subitem--active');
+      });
+      const subitem = getParent(link, 'toc__subitem');
+      if (subitem) { subitem.classList.add('toc__subitem--active'); }
     }
   }
 });
@@ -71,16 +86,33 @@ function onScroll(fn) {
   }, 250);
 }
 
-function getCurrentHeading(position) {
-  position = (position || 0) + 100;
+function findHeadings(classNames) {
+  return classNames.map(function (className) {
+    return Array.from(document.getElementsByClassName(className));
+  }).reduce(function (acc, arr) {
+    return acc.concat(arr);
+  }, []);
+}
+
+function getCurrentHeading(headings, position) {
+  position = (position || 0) + 120; // should be same as in SCSS' $target-offset
 
   // headers preceding the current position
+  //
+  // (except subheadings inside .more-collapsed, because they can somehow
+  // appear to be positioned somewhere else ¯\_(ツ)_/¯)
   const tuples = headings.map(function (heading) {
     const position = heading.getBoundingClientRect().bottom;
     return [heading, position];
   }).filter(function (tuple) {
+    return (!tuple[0].classList.contains('main__subsection-heading')
+      || !getParent(tuple[0], 'more--collapsed'));
+  }).filter(function (tuple) {
     return tuple[1] < position;
-  })
+  });
+  // console.log(tuples.map(function (t) {
+  //   return t[0].innerHTML + ' (' + parseInt(t[1]) + ')';
+  // }));
   if (tuples.length < 1) { return null; }
   if (tuples.length == 1) { return tuples[0][0]; }
 
@@ -94,6 +126,15 @@ function getId(el) {
   while (el) {
     if (el.id) {
       return el.id;
+    }
+    el = el.parentElement;
+  }
+}
+
+function getParent(el, className) {
+  while (el) {
+    if (el.classList.contains(className)) {
+      return el;
     }
     el = el.parentElement;
   }

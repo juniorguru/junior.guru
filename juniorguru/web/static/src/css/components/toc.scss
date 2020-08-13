@@ -36,6 +36,25 @@
   @include font-0;
 }
 
+.toc__link:active,
+.toc__sublink:active {
+  color: $blue
+}
+
+.toc__item--active .toc__link,
+.toc__subitem--active .toc__sublink {
+  text-decoration: none;
+  &, &:hover, &:focus { color: $blue };
+}
+
+.toc__item--active .toc__link {
+  font-weight: bold;
+}
+
+.toc__subitem--active .toc__sublink {
+  font-weight: normal;
+}
+
 @media screen and (min-width: $breakpoint-tablet) {
   .toc {
     @include page-width;
