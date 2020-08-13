@@ -1,11 +1,30 @@
-$target-offset: 2 * $logo-height-large;
-
 .main {
   padding-top: $whitespace-3 * 3;
-  overflow: hidden;
 }
 
-.main [id]::before {
+.main__section {
+  @include page-width($padding: 1rem);
+  margin-bottom: $whitespace-3 * 2;
+}
+
+.main__section--wide {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 100%;
+}
+
+.main__section-heading {
+  border-bottom: $border-width solid $yellow;
+}
+
+.main__subsection-heading {
+  margin-top: $whitespace-2;
+}
+
+.main__target::before,
+.main__section[id]::before,
+.main__section-heading[id]::before,
+.main__subsection-heading[id]::before {
   display: block;
   content: " ";
   height: 1 * $target-offset;
@@ -15,33 +34,26 @@ $target-offset: 2 * $logo-height-large;
   //background: violet; // debug
 }
 
-.main__section {
-  @include page-width($padding: 1rem);
-  margin-bottom: $whitespace-3 * 2;
-}
-
-.main__section-heading {
-  border-bottom: $border-width solid $yellow;
-}
-
-.main__subsection-heading {
-  margin-top: $whitespace-3;
-}
-
 .main__subsection-heading[id]::before {
   height: $target-offset;
-  margin-top: $whitespace-3 + (-1 * $target-offset);
+  margin-top: $whitespace-2 + (-1 * $target-offset);
 }
 
-.main__section--wide {
-  padding-left: 0;
-  padding-right: 0;
-  max-width: 100%;
-}
-
+:target .main__target-heading,
 :target .main__section-heading,
+.main__target-heading:target,
 .main__section-heading:target,
 .main__subsection-heading:target {
-  -webkit-animation: target-animation 2s;
-  animation: target-animation 2s;
+  -webkit-animation: target-animation 3s;
+  animation: target-animation 3s;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  .main--toc .main__section {
+    padding-left: $toc-width;
+  }
+
+  .main--toc .main__section--wide {
+    padding-left: 0;
+  }
 }

@@ -5,8 +5,9 @@
 Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti.
 {%- endblock %}
 
-{% block header_modifier %} header--collapsible{% endblock %}
+{% block main_modifier %} main--toc{% endblock %}
 
+{#
 {% block header_toc %}
 <nav class="header__tocbar">
   <div class="header__tocbar-content">
@@ -24,6 +25,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </div>
 </nav>
 {% endblock %}
+#}
 
 {% block main %}
 <header class="intro">
@@ -36,9 +38,9 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </p>
 </header>
 
-<nav id="toc" class="toc">
+<nav id="toc" class="toc main__target">
   <div class="toc__content">
-    <h2 class="toc__heading">Obsah</h2>
+    <h2 class="toc__heading main__target-heading">Obsah</h2>
     <ol class="toc__items">
       <li class="toc__item"><a href="#english">Neflákej angličtinu</a></li>
       <li class="toc__item"><a href="#exercises">Procvičuj</a></li>
@@ -849,7 +851,9 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </div>
 </section>
 
-<p class="call-to-action next">
-  <a href="{{ url_for('jobs') }}" class="legacy-button">Máš&nbsp;praxi? Najdi&nbsp;si&nbsp;práci!</a>
-</p>
+<div class="main__section">
+  <p class="call-to-action next">
+    <a href="{{ url_for('jobs') }}" class="legacy-button">Máš&nbsp;praxi? Najdi&nbsp;si&nbsp;práci!</a>
+  </p>
+</div>
 {% endblock %}

@@ -54,15 +54,20 @@ $logo-height-small: 3rem;
 $logo-height-large: 5.5rem;
 $logo-height-index: 10rem;
 
+$target-offset: 2.2 * $logo-height-large;
+$toc-width: 30rem;
+
 @mixin hyphens { -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
 
 @mixin skew($n) { transform: skew($n); -o-transform: skew($n); -moz-transform: skew($n); -webkit-transform: skew($n); }
 
 @mixin page-width($padding: 0) {
+  box-sizing: border-box;
+  max-width: 103rem;
   padding-left: $padding;
   padding-right: $padding;
-  & { max-width: 73rem; margin-left: auto; margin-right: auto; }
-  @supports (display: grid) { & { max-width: 103rem; } }
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @mixin arrow {

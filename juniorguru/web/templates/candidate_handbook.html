@@ -11,17 +11,14 @@
 Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro to, aby tě někde přijali?
 {%- endblock %}
 
-{% block header_modifier %} header--collapsible{% endblock %}
-
 {% block header_toc %}
 <nav class="header__tocbar">
   <div class="header__tocbar-content">
     <ul class="header__tocbar-items">
       <li class="header__tocbar-item">
-        <label class="toc-toggle">
-          <input id="toc-toggle-checkbox" class="toc-toggle__checkbox" type="checkbox">
+        <a class="toc-toggle" href="#toc">
           <span class="toc-toggle__label">Obsah</span>
-        </label>
+        </a>
       </li>
       <li id="toc-heading" class="header__tocbar-item header__tocbar-heading">
         Příručka hledání první práce v&nbsp;IT
@@ -31,18 +28,42 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 </nav>
 {% endblock %}
 
+{% block main_modifier %} main--toc{% endblock %}
+
 {% block main %}
+
 <header class="intro">
   <h1 class="intro__title intro__title--massive">Příručka hledání první práce v&nbsp;IT</h1>
-  <p class="intro__lead">
-    Znáš <a href="{{ url_for('learn') }}">základy</a> a máš <a href="{{ url_for('practice') }}">praxi</a>?
-    {{ self.description() }}
-  </p>
 </header>
 
-<nav id="toc" class="toc">
+{#
+<div style="position: sticky; top: 11rem;">
+  Ahojky tady jsou loga
+</div>
+#}
+
+<section class="main__section main__section--wide engage engage--warning">
+  <div class="engage__content">
+    <div class="engage__illustrated-block">
+      <h2 class="engage__heading">Zachovej prosím stránku v tajnosti</h2>
+      <div class="engage__illustration-container">
+        <img class="engage__illustration" width="120" alt="Vejce" src="{{ url_for('static', filename='images/chick1-i.svg') }}">
+      </div>
+      <p class="engage__text">
+        Příručka zatím <strong>není veřejná</strong>, oficiálně vyjde až 1.&nbsp;9.&nbsp;2020.
+        Toto je jen náhled, kterým jsem ti umožnil přečíst si ji v předstihu.
+        Zachovej tedy prosím tuto stránku v tajnosti.
+        Budu rád, pokud mi na {{ 'ahoj@junior.guru'|email_link }} napíšeš,
+        co si o příručce myslíš, nebo mi rovnou pošleš osobní doporučení,
+        které budu moci později zveřejnit.
+      </p>
+    </div>
+  </div>
+</section>
+
+<nav id="toc" class="toc main__target">
   <div class="toc__content">
-    <h2 class="toc__heading">Obsah</h2>
+    <h2 class="toc__heading main__target-heading">Obsah</h2>
     <ol class="toc__items">
       <li class="toc__item"><a href="#foreword">Předmluva</a></li>
       <li class="toc__item"><a href="#how-long">Jak dlouho to trvá</a></li>
@@ -140,28 +161,13 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 </header>
 #}
 
-<section class="main__section main__section--wide engage engage--warning">
-  <div class="engage__content">
-    <div class="engage__illustrated-block">
-      <h2 class="engage__heading">Zachovej prosím stránku v tajnosti</h2>
-      <div class="engage__illustration-container">
-        <img class="engage__illustration" width="120" alt="Vejce" src="{{ url_for('static', filename='images/chick1-i.svg') }}">
-      </div>
-      <p class="engage__text">
-        Příručka zatím <strong>není veřejná</strong>, oficiálně vyjde až 1.&nbsp;9.&nbsp;2020.
-        Toto je jen náhled, kterým jsem ti umožnil přečíst si ji v předstihu.
-        Zachovej tedy prosím tuto stránku v tajnosti.
-        Budu rád, pokud mi na {{ 'ahoj@junior.guru'|email_link }} napíšeš,
-        co si o příručce myslíš, nebo mi rovnou pošleš osobní doporučení,
-        které budu moci později zveřejnit.
-      </p>
-    </div>
-  </div>
-</section>
-
 <section id="foreword" class="main__section">
   <h2 class="main__section-heading">Předmluva</h2>
   <div class="tooltips">
+    <p>
+      Znáš <a href="{{ url_for('learn') }}">základy</a> a máš <a href="{{ url_for('practice') }}">praxi</a>?
+      {{ self.description() }}
+    </p>
     <figure class="quote">
       <blockquote>
         Nauč se programovat, firmy v&nbsp;IT berou z nedostatku lidí každého, kdo má jen zájem. Do začátku si řekni aspoň o pade.

@@ -1,3 +1,4 @@
+/*
 document.addEventListener('DOMContentLoaded', function () {
   const body = document.body;
   const header = document.getElementsByClassName('header')[0];
@@ -32,3 +33,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+*/

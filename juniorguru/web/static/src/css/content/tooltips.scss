@@ -48,6 +48,10 @@
 }
 
 .tooltips {
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+
   a[href^="#"] {
     @include tooltip("skok na jinou část této stránky");
     text-decoration-style: dashed;

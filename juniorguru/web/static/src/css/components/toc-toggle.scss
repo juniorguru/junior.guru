@@ -22,19 +22,3 @@
   user-select: none;
   -webkit-user-select: none;
 }
-
-.toc-toggle__checkbox:checked ~ .toc-toggle__label {
-  background: $blue;
-  color: $white;
-  text-decoration: none;
-}
-
-.toc-toggle__checkbox:checked ~ .toc-toggle__label::before {
-  background-image: url('./images/menu-i.svg');
-}
-
-.toc-toggle__checkbox {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}

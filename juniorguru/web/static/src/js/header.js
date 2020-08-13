@@ -1,3 +1,4 @@
+/*
 const MIN_SCROLL = 10;
 
 let headings = [];
@@ -99,3 +100,4 @@ function onScroll(fn) {
     }
   }, 250);
 }
+*/
