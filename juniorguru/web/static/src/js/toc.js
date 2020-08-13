@@ -26,9 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
     'main__section-heading',
     'main__subsection-heading',
   ]);
+
+  updateToC();
 });
 
-onScroll(function () {
+onScroll(updateToC);
+
+function updateToC() {
   // hiding of the ToC if scrolling to the bottom
   if (footer && toc) {
     if (toc.getBoundingClientRect().bottom > footer.getBoundingClientRect().top) {
@@ -69,7 +73,7 @@ onScroll(function () {
       if (subitem) { subitem.classList.add('toc__subitem--active'); }
     }
   }
-});
+}
 
 function onScroll(fn) {
   let scrolled = false;
