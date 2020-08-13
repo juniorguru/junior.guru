@@ -1,3 +1,35 @@
+// document.addEventListener('DOMContentLoaded', function () {
+
+// });
+
+onScroll(function () {
+  const toc = document.getElementsByClassName('toc__content')[0];
+  const footer = document.getElementsByClassName('footer')[0];
+  if (!footer || !toc) { return; }
+
+  console.log(toc.getBoundingClientRect().bottom, footer.getBoundingClientRect().top);
+  if (toc.getBoundingClientRect().bottom > footer.getBoundingClientRect().top) {
+    toc.classList.add('toc__content--irrelevant');
+  } else {
+    toc.classList.remove('toc__content--irrelevant');
+  }
+});
+
+function onScroll(fn) {
+  let scrolled = false;
+
+  window.addEventListener('scroll', function (event) {
+    scrolled = true;
+  });
+
+  setInterval(function () {
+    if (scrolled) {
+      fn();
+      scrolled = false;
+    }
+  }, 250);
+}
+
 /*
 document.addEventListener('DOMContentLoaded', function () {
   const body = document.body;

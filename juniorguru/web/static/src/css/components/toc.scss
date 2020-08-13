@@ -8,7 +8,7 @@
 }
 
 .toc__heading {
-  border-bottom: $border-width solid $gray;
+  border-bottom: $border-width solid $gray-light;
 }
 
 .toc__items,
@@ -58,6 +58,12 @@
     overflow-y: scroll;
     margin-top: -1 * $whitespace-0;
     position: relative;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+
+  .toc__content--irrelevant {
+    opacity: 0;
   }
 
   .toc__heading {
