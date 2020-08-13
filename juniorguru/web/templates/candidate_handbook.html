@@ -41,6 +41,22 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   Ahojky tady jsou loga
 </div>
 #}
+{#
+  <div class="sponsors">
+    <h2>Sponzoři</h2>
+    <p>Příručka existuje a zůstává aktuální díky podpoře těchto firem:</p>
+    <ul>
+      {% for index in [0, 1, 2] %}
+      <li>
+        Zde může být <strong>vaše&nbsp;logo</strong>
+        za&nbsp;2990&nbsp;Kč&nbsp;/&nbsp;měsíc
+        <small>Pište&nbsp;na&nbsp;{{ 'ahoj@junior.guru'|email_link }}</small>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</header>
+#}
 
 <section class="main__section main__section--wide engage engage--warning">
   <div class="engage__content">
@@ -143,23 +159,6 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
     </ol>
   </div>
 </nav>
-
-{#
-  <div class="sponsors">
-    <h2>Sponzoři</h2>
-    <p>Příručka existuje a zůstává aktuální díky podpoře těchto firem:</p>
-    <ul>
-      {% for index in [0, 1, 2] %}
-      <li>
-        Zde může být <strong>vaše&nbsp;logo</strong>
-        za&nbsp;2990&nbsp;Kč&nbsp;/&nbsp;měsíc
-        <small>Pište&nbsp;na&nbsp;{{ 'ahoj@junior.guru'|email_link }}</small>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</header>
-#}
 
 <section id="foreword" class="main__section">
   <h2 class="main__section-heading">Předmluva</h2>
