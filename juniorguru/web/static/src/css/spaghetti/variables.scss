@@ -54,8 +54,10 @@ $logo-height-small: 3rem;
 $logo-height-large: 5.5rem;
 $logo-height-index: 10rem;
 
-$target-offset: 12rem; // should be same as offset in toc.js
+$logos-height: 5rem;
 $toc-width: 30rem;
+$target-offset: 12rem; // should be same as offset in toc.js
+$target-offset-logos: $target-offset + $logos-height;
 
 @mixin hyphens { -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
 

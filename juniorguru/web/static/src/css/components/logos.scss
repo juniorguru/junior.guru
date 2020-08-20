@@ -2,6 +2,22 @@
   margin: $whitespace-3 0;
 }
 
+.logos--bar {
+  background: $white;
+  margin-top: 0;
+  margin-bottom: $whitespace-3;
+  z-index: 900;
+}
+
+.logos--bar-sticky {
+  position: sticky;
+  top: 0; // gets set by logos.js
+}
+
+.logos--bar-sticky-detached {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
 .logos__items,
 .logos__item {
   list-style-type: none;
@@ -16,11 +32,19 @@
   justify-content: space-evenly;
 }
 
+.logos--bar .logos__items {
+  flex-wrap: nowrap;
+}
+
 .logos__item {
   box-sizing: border-box;
   width: 100%;
-  height: 5rem;
+  height: $logos-height;
   margin-bottom: $whitespace-2;
+}
+
+.logos--bar .logos__item {
+  margin: 0;
 }
 
 .logos__link {
@@ -31,18 +55,29 @@
 
 .logos__item--without-link,
 .logos__link {
-  padding: 0 $whitespace-2 0 $whitespace-2;
+  padding: 0 $whitespace-2;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.logos--bar .logos__link {
+  padding: 0 $whitespace-0;
+}
+
 .logos__image {
   display: block;
-  max-height: 5rem;
   max-width: 20rem;
+  max-height: $logos-height;
   filter: grayscale(100%);
   opacity: 0.6;
+  object-fit: contain;
+}
+
+.logos--bar .logos__image {
+  max-width: 100%;
+  filter: none;
+  opacity: 1;
 }
 
 .logos__link:hover .logos__image,
@@ -51,15 +86,23 @@
   filter: grayscale(0);
 }
 
-@media screen and (min-width: 370px) {
+@media screen and (min-width: $breakpoint-larger-phone) {
   .logos__item {
     width: 50%;
   }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: $breakpoint-tablet) {
   .logos__item,
   .logos__image {
     width: auto;
+  }
+
+  .logos--bar .logos__link {
+    padding: 0 $whitespace-2;
+  }
+
+  .logos--bar .logos__image {
+    max-height: $logos-height - $whitespace-0;
   }
 }

@@ -1,3 +1,5 @@
+import onScroll from './onScroll';
+
 let header;
 let footer;
 
@@ -73,21 +75,6 @@ function updateToC() {
       if (subitem) { subitem.classList.add('toc__subitem--active'); }
     }
   }
-}
-
-function onScroll(fn) {
-  let scrolled = false;
-
-  window.addEventListener('scroll', function (event) {
-    scrolled = true;
-  });
-
-  setInterval(function () {
-    if (scrolled) {
-      fn();
-      scrolled = false;
-    }
-  }, 250);
 }
 
 function findHeadings(classNames) {

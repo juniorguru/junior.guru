@@ -3,5 +3,6 @@ import './jobs';
 import './more';
 import './external-links';
 import './toc';
+import './logos';
 
 import 'instant.page';

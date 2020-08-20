@@ -59,9 +59,13 @@
   .toc {
     @include page-width;
     position: sticky;
-    top: $target-offset;
     z-index: 500;
     margin-top: $whitespace-0;
+    top: $target-offset;
+  }
+
+  .toc--target-offset-logos {
+    top: $target-offset-logos;
   }
 
   .toc::before {
@@ -79,6 +83,10 @@
     position: relative;
     opacity: 1;
     transition: opacity 0.5s;
+  }
+
+  .toc--target-offset-logos .toc__content {
+    max-height: calc(100vh - #{$target-offset-logos - $whitespace-0});
   }
 
   .toc__content--irrelevant {

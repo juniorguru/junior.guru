@@ -32,11 +32,21 @@
   width: 1rem;
   pointer-events: none;
   //background: violet; // debug
+
+  .main--target-offset-logos & {
+    height: 1 * $target-offset-logos;
+    margin-top: -1 * $target-offset-logos;
+  }
 }
 
 .main__subsection-heading[id]::before {
   height: $target-offset;
   margin-top: $whitespace-2 + (-1 * $target-offset);
+
+  .main--target-offset-logos & {
+    height: $target-offset-logos;
+    margin-top: $whitespace-2 + (-1 * $target-offset-logos);
+  }
 }
 
 :target .main__target-heading,
