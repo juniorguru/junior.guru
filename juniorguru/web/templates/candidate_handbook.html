@@ -36,52 +36,32 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   <h1 class="intro__title intro__title--massive">Příručka hledání první práce v&nbsp;IT</h1>
 </header>
 
+<p class="logos__caption">
+  Příručka existuje a zůstává aktuální díky podpoře <a href="{{ url_for('donate') }}">{{ supporters_count }} přispěvatelů</a> a <a href="{{ url_for('hire_juniors') }}#handbook">sponzorství</a> těchto firem:
+</p>
+
 <aside class="logos logos--bar main__section main__section--wide">
   <ul class="logos__items">
+    <li class="logos__item logos__item--caption">
+      <span class="logos__link">Příručku&nbsp;<a href="{{ url_for('hire_juniors') }}#handbook">sponzorují</a>:</span>
+    </li>
     <li class="logos__item">
-      <a class="logos__link" href="https://cesko.digital/" target="_blank" rel="noopener" title="Česko.Digital sponzoruje tuto příručku">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/ceskodigital.svg') }}" alt="Česko.Digital">
+      <a class="logos__link" data-metrics-utm data-metrics data-metrics-name="handbook-logo" href="https://jobs.redhat.com/" target="_blank" rel="noopener" title="Red Hat podporuje juniory sponzorováním této příručky">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/redhat.svg') }}" alt="Red Hat">
       </a>
     </li>
     <li class="logos__item">
-      <a class="logos__link" href="https://digikoalice.cz/" target="_blank" rel="noopener" title="Česká národní koalice pro digitální pracovní místa sponzoruje tuto příručku">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/digikoalice.png') }}" alt="DigiKoalice">
+      <a class="logos__link" data-metrics-utm data-metrics data-metrics-name="handbook-logo" href="https://opengeolabs.cz/" target="_blank" rel="noopener" title="OpenGeoLabs podporuje juniory sponzorováním této příručky">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/opengeolabs.png') }}" alt="OpenGeoLabs">
       </a>
     </li>
     <li class="logos__item">
-      <a class="logos__link" href="https://holkyzmarketingu.cz/" target="_blank" rel="noopener" title="#HolkyzMarketingu sponzoruje tuto příručku">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/holkyzmarketingu.png') }}" alt="#HolkyzMarketingu">
-      </a>
-    </li>
-    <li class="logos__item">
-      <a class="logos__link" href="https://pyladies.cz/" target="_blank" rel="noopener" title="PyLadies CZ">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/pyladies.svg') }}" alt="PyLadies">
+      <a class="logos__link" data-metrics-utm data-metrics data-metrics-name="handbook-logo" href="https://fakturoid.cz/" target="_blank" rel="noopener" title="Fakturoid podporuje juniory sponzorováním této příručky">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/fakturoid.svg') }}" alt="Fakturoid">
       </a>
     </li>
   </ul>
 </aside>
-
-{#
-<div style="position: sticky; top: 11rem;">
-  Ahojky tady jsou loga
-</div>
-#}
-{#
-  <div class="sponsors">
-    <h2>Sponzoři</h2>
-    <p>Příručka existuje a zůstává aktuální díky podpoře těchto firem:</p>
-    <ul>
-      {% for index in [0, 1, 2] %}
-      <li>
-        Zde může být <strong>vaše&nbsp;logo</strong>
-        za&nbsp;2990&nbsp;Kč&nbsp;/&nbsp;měsíc
-        <small>Pište&nbsp;na&nbsp;{{ 'ahoj@junior.guru'|email_link }}</small>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</header>
-#}
 
 <section class="main__section main__section--wide engage engage--warning">
   <div class="engage__content">

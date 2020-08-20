@@ -5,7 +5,7 @@
 .logos--bar {
   background: $white;
   margin-top: 0;
-  margin-bottom: $whitespace-3;
+  margin-bottom: 2 * $whitespace-3;
   z-index: 900;
 }
 
@@ -41,6 +41,15 @@
   width: 100%;
   height: $logos-height;
   margin-bottom: $whitespace-2;
+}
+
+.logos__item--caption {
+  display: none;
+  @include font-0;
+}
+
+.logos--bar-sticky-detached .logos__item--caption {
+  display: block;
 }
 
 .logos--bar .logos__item {
@@ -86,6 +95,13 @@
   filter: grayscale(0);
 }
 
+.logos__caption {
+  @include page-width($padding: 1rem);
+  text-align: center;
+  margin-bottom: $whitespace-2;
+  @include font-0;
+}
+
 @media screen and (min-width: $breakpoint-larger-phone) {
   .logos__item {
     width: 50%;
@@ -104,5 +120,11 @@
 
   .logos--bar .logos__image {
     max-height: $logos-height - $whitespace-0;
+  }
+}
+
+@media screen and (min-width: $breakpoint-desktop) {
+  .logos--bar .logos__image {
+    max-height: $logos-height - $whitespace;
   }
 }

@@ -9,6 +9,10 @@ class Supporter(BaseModel):
     url = CharField(null=True)
 
     @classmethod
+    def count(cls):
+        return cls.select().count()
+
+    @classmethod
     def listing_names_urls(cls):
         return cls.select() \
             .where(cls.url.is_null(False)) \

@@ -74,12 +74,14 @@ def candidate_handbook():
     with db:
         jobs_count = Job.count()
         companies_count = Job.companies_count()
+        supporters_count = Supporter.count()
     return render_template('candidate_handbook.html',
                            nav_active='jobs',
                            subnav_tabs=JOBS_SUBNAV_TABS,
                            subnav_active='candidate_handbook_teaser',
                            jobs_count=jobs_count,
                            companies_count=companies_count,
+                           supporters_count=supporters_count,
                            thumbnail=thumbnail(title='Příručka hledání první práce v\u00a0IT'))
 
 
