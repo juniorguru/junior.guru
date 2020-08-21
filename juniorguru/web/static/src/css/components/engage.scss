@@ -107,8 +107,10 @@
     top: $whitespace-0;
     left: 0;
     width: 15rem;
+    height: 100%;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
   }
 
   .engage__illustration {
