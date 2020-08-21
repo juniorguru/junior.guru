@@ -101,7 +101,7 @@ $logos-height-large: 1.5 * $logos-height;
 
 .logos--bar .logos__image {
   max-width: 100%;
-  max-height: $logos-height-large;
+  max-height: $logos-height-large - 0.6rem;
   filter: none;
   opacity: 1;
   transition: max-height 0.5s, max-width 0.5s;
@@ -160,7 +160,7 @@ $logos-height-large: 1.5 * $logos-height;
   }
 
   .logos--bar .logos__image {
-    max-height: $logos-height-large;
+    max-height: $logos-height-large - $whitespace;
   }
 
   .logos--bar-sticky-detached .logos__image {
