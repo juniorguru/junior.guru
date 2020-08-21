@@ -1,5 +1,3 @@
-$logos-height-large: 1.5 * $logos-height;
-
 .logos {
   margin: $whitespace-3 0;
 }
@@ -36,7 +34,6 @@ $logos-height-large: 1.5 * $logos-height;
 
 .logos--bar .logos__items {
   flex-wrap: nowrap;
-  justify-content: space-between;
   @include page-width;
 }
 
@@ -45,15 +42,6 @@ $logos-height-large: 1.5 * $logos-height;
   width: 100%;
   height: $logos-height;
   margin-bottom: $whitespace-2;
-}
-
-.logos--bar .logos__item {
-  height: $logos-height-large;
-  transition: height 0.5s, width 0.5s;
-}
-
-.logos--bar-sticky-detached .logos__item {
-  height: $logos-height;
 }
 
 .logos--bar .logos__item {
@@ -101,14 +89,9 @@ $logos-height-large: 1.5 * $logos-height;
 
 .logos--bar .logos__image {
   max-width: 100%;
-  max-height: $logos-height-large - 0.6rem;
+  max-height: $logos-height - 0.6rem;
   filter: none;
   opacity: 1;
-  transition: max-height 0.5s, max-width 0.5s;
-}
-
-.logos--bar-sticky-detached .logos__image {
-  max-height: $logos-height - 0.6rem;
 }
 
 .logos__link:hover .logos__image,
@@ -146,10 +129,6 @@ $logos-height-large: 1.5 * $logos-height;
   }
 
   .logos--bar .logos__image {
-    max-height: $logos-height-large;
-  }
-
-  .logos--bar-sticky-detached .logos__image {
     max-height: $logos-height - $whitespace-0;
   }
 }
@@ -160,10 +139,6 @@ $logos-height-large: 1.5 * $logos-height;
   }
 
   .logos--bar .logos__image {
-    max-height: $logos-height-large - $whitespace;
-  }
-
-  .logos--bar-sticky-detached .logos__image {
     max-height: $logos-height - $whitespace;
   }
 }
