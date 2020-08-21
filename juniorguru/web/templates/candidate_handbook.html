@@ -36,33 +36,32 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   <h1 class="intro__title intro__title--massive">Příručka hledání první práce v&nbsp;IT</h1>
 </header>
 
-<p class="logos__caption">
-  Příručka existuje a zůstává aktuální díky podpoře <a href="{{ url_for('donate') }}">{{ supporters_count }} přispěvatelů</a> a <a href="{{ url_for('hire_juniors') }}#handbook">sponzorství</a> těchto firem:
-</p>
-
 <aside class="logos logos--bar main__section main__section--wide">
   <ul class="logos__items">
     <li class="logos__item logos__item--caption">
-      <span class="logos__link">Příručku&nbsp;<a href="{{ url_for('hire_juniors') }}#handbook">sponzorují</a>:</span>
+      <span class="logos__link">
+        <span>Příručku&#32;<a href="{{ url_for('hire_juniors') }}#handbook">sponzorují</a>:</span>
+      </span>
     </li>
     <li class="logos__item">
-      <a class="logos__link" data-metrics-utm data-metrics data-metrics-name="handbook-logo" href="https://jobs.redhat.com/" target="_blank" rel="noopener" title="Red Hat podporuje juniory sponzorováním této příručky">
+      <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="handbook-logo" href="https://jobs.redhat.com/" target="_blank" rel="noopener" title="Red Hat podporuje juniory sponzorováním této příručky">
         <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/redhat.svg') }}" alt="Red Hat">
       </a>
     </li>
     <li class="logos__item">
-      <a class="logos__link" data-metrics-utm data-metrics data-metrics-name="handbook-logo" href="https://opengeolabs.cz/" target="_blank" rel="noopener" title="OpenGeoLabs podporuje juniory sponzorováním této příručky">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/opengeolabs.png') }}" alt="OpenGeoLabs">
+      <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="handbook-logo" href="https://opengeolabs.cz/" target="_blank" rel="noopener" title="OpenGeoLabs podporuje juniory sponzorováním této příručky">
+        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/opengeolabs.svg') }}" alt="OpenGeoLabs">
       </a>
     </li>
     <li class="logos__item">
-      <a class="logos__link" data-metrics-utm data-metrics data-metrics-name="handbook-logo" href="https://fakturoid.cz/" target="_blank" rel="noopener" title="Fakturoid podporuje juniory sponzorováním této příručky">
+      <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="handbook-logo" href="https://fakturoid.cz/" target="_blank" rel="noopener" title="Fakturoid podporuje juniory sponzorováním této příručky">
         <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/fakturoid.svg') }}" alt="Fakturoid">
       </a>
     </li>
   </ul>
 </aside>
 
+{#
 <section class="main__section main__section--wide engage engage--warning">
   <div class="engage__content">
     <div class="engage__illustrated-block">
@@ -81,12 +80,18 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
     </div>
   </div>
 </section>
+#}
 
 <nav id="toc" class="toc main__target">
   <div class="toc__content">
     <h2 class="toc__heading main__target-heading">Obsah</h2>
     <ol class="toc__items">
-      <li class="toc__item"><a class="toc__link" href="#foreword">Předmluva</a></li>
+      <li class="toc__item"><a class="toc__link" href="#preface">Úvod</a>
+        <ol class="toc__subitems">
+          <li class="toc__subitem"><a class="toc__sublink" href="#thanks">Poděkování</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#foreword">Předmluva</a></li>
+        </ol>
+      </li>
       <li class="toc__item"><a class="toc__link" href="#how-long">Jak dlouho to trvá</a></li>
       <li class="toc__item"><a class="toc__link" href="#ready">Kdy začít hledat</a></li>
       <li class="toc__item"><a class="toc__link" href="#requirements">Co budou chtít</a>
@@ -165,9 +170,17 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   </div>
 </nav>
 
-<section id="foreword" class="main__section">
-  <h2 class="main__section-heading">Předmluva</h2>
+<section id="preface" class="main__section">
+  <h2 class="main__section-heading">Úvod</h2>
   <div class="tooltips">
+    <h3 id="thanks" class="main__subsection-heading">Poděkování</h3>
+    <p>
+      Tato příručka a celý web junior.guru může existovat a zůstávat aktuální jen
+      díky <a href="{{ url_for('donate') }}">podpoře</a> více než {{ supporters_count }}&nbsp;přispěvatelů a <a href="{{ url_for('hire_juniors') }}#handbook">sponzorství firem</a>,
+      jejichž loga tady můžeš vidět.
+    </p>
+
+    <h3 id="foreword" class="main__subsection-heading">Předmluva</h3>
     <p>
       Znáš <a href="{{ url_for('learn') }}">základy</a> a máš <a href="{{ url_for('practice') }}">praxi</a>?
       {{ self.description() }}

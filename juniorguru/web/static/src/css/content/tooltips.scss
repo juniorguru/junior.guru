@@ -53,12 +53,14 @@
   overflow: hidden;
 
   a[href^="#"] {
-    @include tooltip("skok na jinou část této stránky");
+    @include tooltip("skok v rámci stránky");
     text-decoration-style: dashed;
   }
 
+  /*
   a[href^="/"] {
     @include tooltip("odkaz jinam na junior.guru");
     text-decoration-style: dashed;
   }
+  */
 }

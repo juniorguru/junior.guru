@@ -32,10 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
         url.searchParams.set('utm_source', 'juniorguru');
       }
       if (!url.searchParams.has('utm_medium')) {
-        url.searchParams.set('utm_medium', 'job_board');
+        const medium = link.dataset.metricsUtmMedium || 'job_board';
+        url.searchParams.set('utm_medium', medium);
       }
       if (!url.searchParams.has('utm_campaign')) {
-        url.searchParams.set('utm_campaign', 'juniorguru');
+        const campaign = link.dataset.metricsUtmCampaign || 'juniorguru';
+        url.searchParams.set('utm_campaign', campaign);
       }
       link.href = '' + url;
     } catch (error) {
