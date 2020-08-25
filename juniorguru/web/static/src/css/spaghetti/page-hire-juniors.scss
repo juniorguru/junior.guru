@@ -26,42 +26,6 @@ body.body--hire-juniors {
     padding-top: (2 * $whitespace-2);
   }
 
-  .numbers {
-    max-width: 80rem;
-    padding: 0 $whitespace (($whitespace-3 * 2) - $whitespace) 0;
-    margin: auto;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    &, li {
-      list-style-type: none;
-    }
-
-    li {
-      margin: 0;
-      padding: 0;
-      padding-bottom: $whitespace;
-      width: 100%;
-
-      @media screen and (min-width: 700px) {
-        & {
-          width: auto;
-        }
-      }
-    }
-
-    strong {
-      @include font-4;
-      font-size: 6rem;
-    }
-
-    strong, small {
-      display: block;
-    }
-  }
-
   .why {
     padding-left: $whitespace;
     padding-right: $whitespace;

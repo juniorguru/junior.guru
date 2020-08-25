@@ -11,9 +11,17 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
   <p class="intro__lead">
     <img class="intro__illustration" src="{{ url_for('static', filename='images/handbook.svg') }}">
     Chystáš se zkusit své štěstí na pracovním trhu?
-    1.&nbsp;9.&nbsp;2020 se tady objeví ucelený soubor rad pro juniory v rozsahu více než&nbsp;30&nbsp;normostran. Nebude to ebook, ale veřejně dostupná a stále aktualizovaná webová stránka.
+    <strong>1.&nbsp;9.&nbsp;2020</strong> se tady objeví ucelený soubor rad pro juniory v rozsahu více než&nbsp;30&nbsp;normostran. Nebude to ebook, ale veřejně dostupná a stále aktualizovaná webová stránka.
   </p>
 </header>
+
+<section class="main__section">
+  <ul class="numbers">
+    <li><strong>30+</strong> <small>normostran textu</small></li>
+    <li><strong>1. září</strong> <small>datum vydání</small></li>
+    <li><strong>{{ (handbook_release_at - updated_at).days }}</strong> <small>dní do vydání</small></li>
+  </ul>
+</section>
 
 <section class="main__section handbook-preview">
   <div class="tooltips">
@@ -39,30 +47,6 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
     </p>
     <p>
       Čím více lidí si příručku přečte, tím kultivovanější bude český trh s juniorními kandidáty. Odpovědi na inzeráty budou relevantnější, pozitivní příběhy častější a firmy motivovanější najímat juniory.
-    </p>
-  </div>
-  <p class="button-compartment">
-    <a class="button" href="{{ url_for('donate') }}">Přispěj na&nbsp;příručku</a>
-
-    <small class="button-compartment__note"><a href="{{ url_for('hire_juniors') }}#handbook">Sponzorujte příručku jako firma</a></small>
-  </p>
-</section>
-
-<section class="main__section main__section--wide engage">
-  <div class="engage__content">
-    <div class="engage__illustrated-block">
-      <h2 class="engage__heading">Buď mezi prvními</h2>
-      <div class="engage__illustration-container">
-        <img class="engage__illustration" width="120" alt="Vejce" src="{{ url_for('static', filename='images/chick2.svg') }}">
-      </div>
-      <div class="engage__text">
-        <p>
-          {{ metrics.subscribers|metric }} odběratelů <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">nabídek práce a novinek</a> bude mít k textu příručky přístup ještě o něco dříve, než vyjde oficiálně. Pokud chceš být mezi nimi, není nic jednoduššího, než se přihlásit taky. Klidně si prohlédni <a href="https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75" target="_blank" rel="noopener">všechny minulé e-maily</a>, ať víš, do čeho jdeš. Můžeš se samozřejmě kdykoliv odhlásit.
-        </p>
-      </div>
-    </div>
-    <p class="button-compartment button-compartment--consistent-minimal-margin">
-      <a class="button" href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">Hlídat příručku</a>
     </p>
   </div>
 </section>
