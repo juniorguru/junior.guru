@@ -87,8 +87,8 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
     <ol class="toc__items">
       <li class="toc__item"><a class="toc__link" href="#preface">Úvod</a>
         <ol class="toc__subitems">
-          <li class="toc__subitem"><a class="toc__sublink" href="#thanks">Poděkování</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#foreword">Předmluva</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#thanks">Poděkování</a></li>
         </ol>
       </li>
       <li class="toc__item"><a class="toc__link" href="#how-long">Jak dlouho to trvá</a></li>
@@ -165,6 +165,7 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
           <li class="toc__subitem"><a class="toc__sublink" href="#oss-contributing">Přispívání do Open Source</a></li>
         </ol>
       </li>
+      <li class="toc__item"><a class="toc__link" href="#end">Závěrem</a></li>
     </ol>
   </div>
 </nav>
@@ -172,15 +173,8 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
 <section id="preface" class="main__section">
   <h2 class="main__section-heading">Úvod</h2>
   <div class="tooltips">
-    <p class="note">
-      Poslední aktualizace příručky <a href="https://github.com/honzajavorek/junior.guru/commits/master/juniorguru/web/templates/candidate_handbook.html">proběhla {{ last_modified|ago }}</a>.
-    </p>
-
-    <h3 id="thanks" class="main__subsection-heading">Poděkování</h3>
     <p>
-      Tato příručka a celý web junior.guru může existovat a zůstávat aktuální jen
-      díky <a href="{{ url_for('donate') }}">podpoře</a> více než {{ supporters_count }}&nbsp;přispěvatelů a <a href="{{ url_for('hire_juniors') }}#handbook">sponzorství firem</a>,
-      jejichž loga tady můžeš vidět.
+      Ještě než se začteš, jednu věc si musíme ujasnit hned. <strong>Toto není e-book.</strong> Nacházíš se na „živé stránce“, na které <a href="https://github.com/honzajavorek/junior.guru/commits/master/juniorguru/web/templates/candidate_handbook.html">stále probíhají úpravy</a> &mdash; naposledy {{ last_modified|ago }}. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'ahoj@junior.guru'|email_link }}.
     </p>
 
     <h3 id="foreword" class="main__subsection-heading">Předmluva</h3>
@@ -201,6 +195,13 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
     </p>
     <p>
       <strong>Příručka hledání první práce v&nbsp;IT chce situaci změnit.</strong> Ukázat juniorům, jak se kvalitně připravit na hledání své první práce, jak se zorientovat, jak projít pohovorem. Jak vystupovat profesionálně i jako začátečník. A čím více lidí si příručku přečte, tím kultivovanější bude český trh s juniorními kandidáty. Odpovědi na inzeráty budou relevantnější, pozitivní příběhy častější a firmy motivovanější dávat juniorům šanci.
+    </p>
+
+    <h3 id="thanks" class="main__subsection-heading">Poděkování</h3>
+    <p>
+      Tato příručka a celý web junior.guru může existovat a zůstávat aktuální jen
+      díky <a href="{{ url_for('donate') }}">podpoře</a> více než {{ supporters_count }}&nbsp;přispěvatelů a <a href="{{ url_for('hire_juniors') }}#handbook">sponzorství firem</a>,
+      jejichž loga tady můžeš vidět.
     </p>
   </div>
 </section>
@@ -1301,6 +1302,35 @@ Nastal okamžik zkusit své štestí na pracovním trhu. Co můžeš udělat pro
     <h3 class="main__subsection-heading" id="oss-contributing">Přispívání do Open Source</h3>
     <p>
       V neposlední řadě si lze vybudovat jméno <a href="{{ url_for('practice') }}#opensource">přispíváním do Open Source</a>. I pokud se necítíš na samotné programování, <a href="https://opensource.guide/how-to-contribute/#what-it-means-to-contribute">je i hodně jiných způsobů, jak můžeš přiložit ruku k dílu</a>. Je to skvělá příležitost jak nabrat zkušenosti, vyniknout, získat kontakty mezi lidmi z oboru.
+    </p>
+  </div>
+</section>
+
+<section id="end" class="main__section">
+  <h2 class="main__section-heading">Závěrem</h2>
+  <div class="tooltips">
+    <p>
+      Snad neexistuje jiný profesionální obor vyučovaný na vysokých školách, který je stejně přístupný jako IT. Všechno ohledně programování si můžeš nastudovat na internetu a vždy máš po ruce někoho, kdo ti rád poradí. Získat první práci v IT rozhodně není jednoduché, ale jde to, a to i bez titulu. Do chirurgie nebo architektury se takto dostat nelze, i kdyby byl člověk sebevětší nadšenec.
+    </p>
+    <p>
+      Vložená dřina se navíc s největší pravděpodobností dobře zúročí. IT je a bude zárukou dobré a stabilní kariéry v nejisté době. Ať se bude dít cokoliv, technologie budou stále více prostupovat naše životy. Spolu s tím bude potřeba lidi, kteří jim rozumí. IT neexistuje ve vzduchoprázdnu a ostatní obory potřebuje, ale jednotlivec se uplatní napříč hospodářskými odvětvími. Když přestane fungovat prodej letenek, můžeš jít programovat třeba pro banky.
+    </p>
+    <p>
+      Lepší peníze nebo pracovní podmínky jsou legitimní a racionální důvody, proč se chtít do IT dostat, nebudou ale fungovat dobře jako tvá jediná motivace. Nejdál to nakonec dotáhneš, pokud tě prostě baví technologie. Vidina peněz tě nepřenese přes hodiny sezení na židli a psaní závorek do editoru. Potřebuješ radost z fungujícího programu, trpělivost při ladění kódu, zvědavost při prozkoumávání nových knihoven, touhu tvořit. Jinými slovy, nejvíc ti pomůže vášeň. A vášeň je nakonec i to, s čím na pohovoru zaboduješ nejvíc.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        Vášeň není to, co se vám líbí, ale něco, pro co jste ochotni trpět, jen abyste to mohli dál dělat.
+      </blockquote>
+      <figcaption>
+        Jenika McDavitt, autorka <a href="https://psychologyforphotographers.com/how-to-live-your-passion-stop-confusing-hobbies-with-passions">Psychology for Photographers</a>
+      </figcaption>
+    </figure>
+    <p>
+      Tato příručka ti tedy závěrem přeje hlavně dostatek neúnavné vášně. Je to motor pro veškerou dřinu, která tě čeká. Je to eso, které zvládne přebít titul, talent, i štěstí.
+    </p>
+    <p>
+      Nezapomeň, že jsi na „živé stránce“, na které <a href="https://github.com/honzajavorek/junior.guru/commits/master/juniorguru/web/templates/candidate_handbook.html">stále probíhají úpravy</a> &mdash; naposledy {{ last_modified|ago }}. I když máš teď už vše přečtené, za týden tady může přibýt něco nového. A to i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'ahoj@junior.guru'|email_link }}.
     </p>
   </div>
 </section>
