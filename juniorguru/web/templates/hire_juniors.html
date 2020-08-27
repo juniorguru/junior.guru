@@ -93,9 +93,9 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
         </a>
       </p>
     </div>
-    <div class="pricing__plan" id="pricing-annual-flat-rate">
+    <div class="pricing__plan">
       <div class="pricing__plan-content">
-        <h3 class="pricing__plan-heading">Roční paušál</h3>
+        <h3 class="pricing__plan-heading main__target main__target-heading" id="pricing-annual-flat-rate">Roční paušál</h3>
         <p>
           Na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a>
           budete moci libovolně vystavovat, prodlužovat nebo rušit inzeráty.
@@ -231,15 +231,39 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
   <!-- keeping for backward compatibility of links -->
   <span id="sponsor-handbook"><span id="handbook-pricing"></span></span>
 
-  <h2>Sponzorujte unikátní příručku</h2>
-  <!-- <p class="sponsor-handbook-badge"><small>Připravuje se</small></p> -->
+  <h2 class="main__target main__target-heading">Sponzorujte unikátní příručku</h2>
   <div class="sponsor-handbook-content">
-    <img width="200" src="{{ url_for('static', filename='images/handbook.svg') }}">
+    {# <img width="200" src="{{ url_for('static', filename='images/handbook.svg') }}"> #}
     <p>
-      Na junior.guru brzy vyjde <strong>ucelený soubor rad pro juniory</strong> v rozsahu více než&nbsp;30&nbsp;normostran. Nebude to e-book, ale <strong>živá a stále aktualizovaná webová stránka</strong>. Díky placenému logu vaší firmy v záhlaví stránky bude všem přístupná zdarma. <strong>Text ještě nebyl publikován, ale už nyní je o něj mezi juniory velký zájem!</strong>
-      Můžete být mezi prvními, kteří si na příručce zajistí místo.
+      1. září 2020 vyšel na junior.guru <a href="{{ url_for('candidate_handbook') }}">ucelený soubor rad pro juniory</a> v rozsahu více než&nbsp;30&nbsp;normostran. Není to e-book, ale <strong>živá a stále aktualizovaná webová stránka</strong>. Díky placeným logům firem je tento jedinečný obsah všem přístupný zdarma. Příručka má u juniorů skvělé ohlasy:
     </p>
+     <figure class="quote">
+      <blockquote>
+        Příručka je naprosto boží, přečetla jsem ji jedním dechem a nasbírala inspiraci, co ještě udělat. Tolik tipů na jednom místě člověk nikde jinde nenajde.
+      </blockquote>
+      <figcaption>
+        Lenka Erbenová, frontendistka, absolventka PyLadies a Czechitas
+      </figcaption>
+    </figure>
+
+    <h3>Proč sponzorovat</h3>
+    <ul class="checklist">
+      <li>Budujete značku vůči příštím kandidátům a představujete se jako místo, kde na juniory myslí, umí to s nimi, a kam je zkrátka radost nastoupit.</li>
+      <li>Díky vašemu příspěvku bude text komukoliv veřejně zdarma přístupný. Příručka přitom dá jasně najevo, že tento v Česku unikátní obsah je zdarma právě díky vám.</li>
+      <li>Financováním junior.guru podpoříte příchod nových lidí na trh. V&nbsp;dlouhodobém horizontu zlepšíte výběr a rozmanitost kandidátů v&nbsp;ČR &mdash; náplň pro vaše aktivity v <abbr title="Diversity &amp; Inclusion">D&I</abbr> nebo <abbr title="Corporate Social Responsibility">CSR</abbr> (společenská odpovědnost).</li>
+      <li>Příručka zvýší a standardizuje úroveň juniorních uchazečů v&nbsp;ČR.</li>
+    </ul>
   </div>
+
+  <p class="support">
+    <span class="support-content">
+      <img alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
+      <span class="support-text">
+        Pokud máte jakékoliv otázky, Honza vám je rád zodpoví.<br>
+        Pište na&nbsp;{{ 'honza@junior.guru'|email_link }}.
+      </span>
+    </span>
+  </p>
 
   <div class="pricing">
     <div class="pricing__plans pricing__plans--3">
@@ -299,76 +323,6 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
         Máte zájem?&nbsp;Pište&nbsp;na
         <span class="button__note">{{ 'ahoj@junior.guru'|email_link }}</span>
       </strong>
-    </p>
-  </div>
-
-  <div class="more">
-    <div class="tooltips sponsor-handbook-content">
-      <h3>Proč sponzorovat</h3>
-      <ul class="checklist">
-        <li>Budujete značku vůči příštím kandidátům a představujete se jako místo, kde na juniory myslí, umí to s nimi, a kam je zkrátka radost nastoupit.</li>
-        <li>Díky vašemu příspěvku bude text komukoliv veřejně zdarma přístupný. Příručka přitom dá jasně najevo, že tento v Česku unikátní obsah je zdarma právě díky vám.</li>
-        <li>Příručka zvýší a standardizuje úroveň juniorních uchazečů v&nbsp;ČR.</li>
-        <li>Financováním junior.guru podpoříte příchod nových lidí na trh. V&nbsp;dlouhodobém horizontu zlepšíte výběr a rozmanitost kandidátů v&nbsp;ČR &mdash; náplň pro vaše aktivity v <abbr title="Diversity &amp; Inclusion">D&I</abbr> nebo <abbr title="Corporate Social Responsibility">CSR</abbr> (společenská odpovědnost).</li>
-        <li>Firmy, které si sponzorství domluví už před vydáním, mají výhodu. Jejich logo totiž bude na příručce v den jejího uveřejnění, kdy bude nejvyšší jednorázová návštěvnost.</li>
-      </ul>
-    </div>
-
-    <div class="tooltips sponsor-handbook-content">
-      <figure class="quote">
-        <blockquote>
-          Příručka je naprosto boží, přečetla jsem ji jedním dechem a nasbírala inspiraci na další "akce", co ještě udělat. Tolik tipů na jednom místě člověk nikde jinde nenajde.
-        </blockquote>
-        <figcaption>
-          Lenka Erbenová, frontendistka, absolventka PyLadies a Czechitas
-        </figcaption>
-      </figure>
-    </div>
-
-    <div id="handbook-toc" class="tooltips sponsor-handbook-toc">
-      <h3>Osnova</h3>
-      <ul>
-        <li>Jak dlouho trvá si sehnat první práci v&nbsp;IT</li>
-        <li>Kdy začít hledat</li>
-        <li>Jaké budou požadavky zaměstnavatele</li>
-        <li>Jaká mít očekávání: mzda, práce na dálku</li>
-        <li>Po jakých pozicích se jako začátečník poohlížet</li>
-        <li>Typy firem: produkt, agentura</li>
-        <li>Typy firem podle velikosti: velká firma, startup</li>
-        <li>Stáže, dobrovolnictví</li>
-        <li>Příprava na pohovor, životopis</li>
-        <li>Vlastní projekt a první praxe, základy algoritmizace</li>
-        <li>Hledání práce na internetu, recruiting, networking</li>
-        <li>Pohovor, pravdomluvnost, otázky, odmítnutí</li>
-        <li>Firemní kultura</li>
-        <li>Vlastní aktivita navíc</li>
-      </ul>
-    </div>
-    <div id="handbook-preview" class="sponsor-handbook-preview">
-      <h3>Ukázky</h3>
-      <ul>
-        <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-01.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-01.png') }}" loading="lazy"></a></li>
-        <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-02.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-02.png') }}" loading="lazy"></a></li>
-        <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-03.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-03.png') }}" loading="lazy"></a></li>
-        <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-04.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-04.png') }}" loading="lazy"></a></li>
-        <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-05.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-05.png') }}" loading="lazy"></a></li>
-        <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-06.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-06.png') }}" loading="lazy"></a></li>
-        <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-07.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-07.png') }}" loading="lazy"></a></li>
-        <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-08.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-08.png') }}" loading="lazy"></a></li>
-        <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-09.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-09.png') }}" loading="lazy"></a></li>
-        <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-10.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-10.png') }}" loading="lazy"></a></li>
-        <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-11.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-11.png') }}" loading="lazy"></a></li>
-        <li><a href="{{ url_for('static', filename='images/handbook-preview/preview-12.png') }}" target="_blank"><img width="200" src="{{ url_for('static', filename='images/handbook-preview/preview-12.png') }}" loading="lazy"></a></li>
-      </ul>
-    </div>
-    <p class="support">
-      <span class="support-content">
-        <img alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
-        <span class="support-text">
-          Pokud máte jakékoliv otázky, Honza vám je rád zodpoví.<br>
-          Pište na&nbsp;{{ 'honza@junior.guru'|email_link }}.
-        </span>
-      </span>
     </p>
   </div>
 </section>

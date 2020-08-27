@@ -13,7 +13,7 @@ NAV_TABS = [
 
 JOBS_SUBNAV_TABS = [
     {'endpoint': 'jobs', 'name': 'Nabídky práce'},
-    {'endpoint': 'candidate_handbook_teaser', 'name': 'Příručka hledání práce'},
+    {'endpoint': 'candidate_handbook', 'name': 'Příručka hledání práce'},
     {'endpoint': 'hire_juniors', 'name': 'Pro firmy'},
 ]
 
@@ -52,24 +52,7 @@ def practice():
                            thumbnail=thumbnail(title='Jak získat praxi v\u00a0programování'))
 
 
-@app.route('/candidate/')
-def candidate():
-    return redirect(url_for('candidate_handbook_teaser', _external=True))
-
-
 @app.route('/candidate-handbook/')
-def candidate_handbook_teaser():
-    with db:
-        metrics = Metric.as_dict()
-    return render_template('candidate_handbook_teaser.html',
-                           nav_active='jobs',
-                           subnav_tabs=JOBS_SUBNAV_TABS,
-                           subnav_active='candidate_handbook_teaser',
-                           metrics=metrics,
-                           thumbnail=thumbnail(title='Příručka hledání první práce v\u00a0IT'))
-
-
-@app.route('/__supercalifragilisticexpialidocious__/')
 def candidate_handbook():
     with db:
         jobs_count = Job.count()
@@ -79,12 +62,22 @@ def candidate_handbook():
     return render_template('candidate_handbook.html',
                            nav_active='jobs',
                            subnav_tabs=JOBS_SUBNAV_TABS,
-                           subnav_active='candidate_handbook_teaser',
+                           subnav_active='candidate_handbook',
                            jobs_count=jobs_count,
                            companies_count=companies_count,
                            supporters_count=supporters_count,
                            last_modified=last_modified,
                            thumbnail=thumbnail(title='Příručka hledání první práce v\u00a0IT'))
+
+
+@app.route('/candidate/')
+def candidate():
+    return redirect(url_for('candidate_handbook', _external=True))
+
+
+@app.route('/__supercalifragilisticexpialidocious__/')
+def candidate_handbook_teaser():
+    return redirect(url_for('candidate_handbook', _external=True))
 
 
 @app.route('/jobs/')
