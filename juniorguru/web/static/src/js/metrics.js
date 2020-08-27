@@ -11,7 +11,7 @@ function setupMetricsUtm(link) {
       url.searchParams.set('utm_source', 'juniorguru');
     }
     if (!url.searchParams.has('utm_medium')) {
-      const medium = link.dataset.metricsUtmMedium || 'job_board';
+      const medium = link.dataset.metricsUtmMedium || 'content';
       url.searchParams.set('utm_medium', medium);
     }
     if (!url.searchParams.has('utm_campaign')) {

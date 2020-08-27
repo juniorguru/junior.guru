@@ -224,27 +224,6 @@ def test_metrics(db_connection):
     }
 
 
-@pytest.mark.parametrize('qs,expected', [
-    ('', '?utm_source=juniorguru&utm_medium=job_board&utm_campaign=juniorguru'),
-    ('?param=1', '?param=1&utm_source=juniorguru&utm_medium=job_board&utm_campaign=juniorguru'),
-    ('?utm_source=gargamel', '?utm_source=gargamel'),
-])
-def test_links_utm(qs, expected):
-    job = Job(**prepare_job_data('1',
-                                 company_link=f'example.com{qs}',
-                                 link=f'career.example.com{qs}'))
-
-    assert job.company_link_utm == f'example.com{expected}'
-    assert job.link_utm == f'career.example.com{expected}'
-
-
-def test_links_utm_when_none():
-    job = Job(**prepare_job_data('1', company_link=None, link=None))
-
-    assert job.company_link_utm == None
-    assert job.link_utm == None
-
-
 def test_days_since_approved():
     job = Job(**prepare_job_data('1', approved_at=date(1987, 8, 30)))
 
