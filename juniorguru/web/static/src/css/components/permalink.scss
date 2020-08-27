@@ -1,0 +1,10 @@
+.permalink {
+  @include font-0;
+  @include color-links($gray-light, $gray);
+  margin-left: $whitespace-3;
+  text-decoration: none;
+
+  // TODO solve conflict with tooltips.scss and main.scss
+  &::before, &::after { display: none; }
+  text-shadow: none !important;
+}

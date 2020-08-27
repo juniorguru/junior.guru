@@ -42,6 +42,12 @@ document.addEventListener('DOMContentLoaded', function () {
   targetOffset = parseInt(targetOffsetElementStyle.getPropertyValue('height'), 10);
 
   updateToC();
+
+  // add permalinks
+  if (toc) {
+    const permalinkHeadings = document.querySelectorAll('.main__section-heading, .main__subsection-heading');
+    Array.from(permalinkHeadings).forEach(addPermalink);
+  }
 });
 
 onScroll(updateToC);
@@ -87,6 +93,14 @@ function updateToC() {
       if (subitem) { subitem.classList.add('toc__subitem--active'); }
     }
   }
+}
+
+function addPermalink(heading) {
+  const a = document.createElement('a');
+  a.classList.add('toc-permalink');
+  a.textContent = 'odkaz sem';
+  a.href = '#' + getId(heading);
+  heading.appendChild(a);
 }
 
 function findHeadings(classNames) {

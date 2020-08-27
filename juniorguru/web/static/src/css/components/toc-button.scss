@@ -1,4 +1,4 @@
-.toc-toggle__label::before {
+.toc-button__label::before {
   content: " ";
   display: inline-block;
   width: 1.3rem;
@@ -9,7 +9,7 @@
   cursor: pointer;
 }
 
-.toc-toggle__label {
+.toc-button__label {
   white-space: nowrap;
   display: block;
   padding: 0 $whitespace-0;

@@ -17,6 +17,7 @@ $more-height: 45rem;
   justify-content: center;
   align-items: flex-end;
   z-index: 50;
+  cursor: pointer;
 }
 
 @media screen and (max-width: $grid-breakpoint) {

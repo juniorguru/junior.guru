@@ -11,16 +11,16 @@ function onLoad() {
     const p = document.createElement('p');
     p.classList.add('button-compartment');
     p.classList.add('more__cover');
+    p.addEventListener('click', function (event) {
+      div.removeChild(p);
+      div.classList.remove('more--collapsed');
+    });
 
     const button = document.createElement('span');
     button.textContent = 'Zobrazit víc';
     button.classList.add('button');
     button.classList.add('button--link');
     button.classList.add('button--more');
-    button.addEventListener('click', function (event) {
-      div.removeChild(p);
-      div.classList.remove('more--collapsed');
-    });
     p.appendChild(button);
 
     div.classList.add('more--collapsed');
