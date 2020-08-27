@@ -101,4 +101,12 @@
   .toc__sublink {
     text-decoration: none;
   }
+
+  .toc__subitems {
+    display: none;
+  }
+
+  .toc__item--active .toc__subitems {
+    display: block;
+  }
 }
