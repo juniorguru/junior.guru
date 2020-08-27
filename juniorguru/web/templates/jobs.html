@@ -65,7 +65,7 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
   <ul class="items">
   {% for job in jobs_bot %}
     <li class="item-summary" id="job-{{ job.id }}">
-      <a href="{{ job.link }}" target="_blank" rel="noopener nofollow">
+      <a href="{{ job.link }}" data-metrics data-metrics-name="job" data-metrics-no-utm target="_blank" rel="noopener nofollow">
         <div class="item-summary-wrapper">
           <h3>{{ job.title }}</h3>
           <small class="item-summary-details">

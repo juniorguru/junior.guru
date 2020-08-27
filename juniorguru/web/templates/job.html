@@ -28,11 +28,11 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
 
   <div class="call-to-action">
     {% if job.link %}
-      <a id="apply" class="legacy-button" href="{{ job.link_utm }}">
+      <a id="apply" data-metrics-utm data-metrics data-metrics-page-url data-metrics-name="apply" class="legacy-button" href="{{ job.link_utm }}">
         Mám zájem!
       </a>
     {% else %}
-      <p id="apply" class="legacy-button">
+      <p id="apply" data-metrics data-metrics-page-url data-metrics-name="apply" class="legacy-button">
         Máš zájem? Napiš na<br><small>{{ job.email|email_link }}</small>
       </p>
     {% endif %}
