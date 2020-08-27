@@ -61,6 +61,16 @@
 
 @media screen and (min-width: $breakpoint-tablet) {
   .main--toc .main__section {
+    padding-left: $toc-width;
+  }
+
+  .main--toc .main__section--wide {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width: $breakpoint-desktop) {
+  .main--toc .main__section {
     // visually substracting the $whitespace from ToC's right padding
     padding-left: $toc-width + ($whitespace-3 - $whitespace);
   }

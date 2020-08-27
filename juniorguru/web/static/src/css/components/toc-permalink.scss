@@ -1,10 +1,18 @@
 .toc-permalink {
-  @include font-0;
-  @include color-links($gray-light, $gray);
-  margin-left: $whitespace-3;
-  text-decoration: none;
+  display: none;
+}
 
-  // TODO solve conflict with tooltips.scss and main.scss
-  &::before, &::after { display: none; }
-  text-shadow: none !important;
+@media screen and (min-width: $breakpoint-tablet) {
+  .toc-permalink {
+    display: inline;
+    @include font-0;
+    @include color-links($gray-light, $gray);
+    margin-left: $whitespace-2;
+    text-decoration: none;
+    white-space: nowrap;
+
+    // TODO solve conflict with tooltips.scss and main.scss
+    &::before, &::after { display: none; }
+    text-shadow: none !important;
+  }
 }
