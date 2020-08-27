@@ -1,5 +1,7 @@
+$more-height: 45rem;
+
 .more--collapsed {
-  height: 30rem;
+  height: $more-height;
   overflow: hidden;
   position: relative;
 }
@@ -8,7 +10,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  height: 30rem;
+  height: $more-height;
   margin: 0;
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 60%);
   display: flex;
