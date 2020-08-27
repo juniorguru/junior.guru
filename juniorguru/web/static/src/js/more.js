@@ -20,7 +20,7 @@ function onLoad() {
     button.textContent = 'Zobrazit víc';
     button.classList.add('button');
     button.classList.add('button--link');
-    button.classList.add('button--more');
+    button.classList.add('more__button');
     p.appendChild(button);
 
     div.classList.add('more--collapsed');
