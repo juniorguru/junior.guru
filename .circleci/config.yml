@@ -53,7 +53,11 @@ jobs:
           command: |
             echo "deb http://ftp.us.debian.org/debian buster main contrib" | sudo tee -a /etc/apt/sources.list
             echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
-            sudo apt-get update && sudo apt-get install ttf-mscorefonts-installer
+            sudo apt-get update
+            while ! sudo apt-get install ttf-mscorefonts-installer
+            do
+              echo "Fonts installation failed! Retrying..."
+            done
       - attach_workspace:
           at: "~"
       - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
