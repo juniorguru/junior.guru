@@ -10,6 +10,8 @@ let tocHeadingInitialValue;
 let sectionHeadings = [];
 let subsectionHeadings = [];
 
+let targetOffset;
+
 // set variables
 document.addEventListener('DOMContentLoaded', function () {
   header = document.getElementsByClassName('header')[0];
@@ -29,6 +31,16 @@ document.addEventListener('DOMContentLoaded', function () {
     'main__subsection-heading',
   ]);
 
+  const targetOffsetElement = document.querySelector([
+    // this selector be in sync with main.scss
+    '.main__target',
+    '.main__section[id]',
+    '.main__section-heading[id]',
+    '.main__subsection-heading[id]',
+  ].join(', '));
+  const targetOffsetElementStyle = getComputedStyle(targetOffsetElement, '::before');
+  targetOffset = parseInt(targetOffsetElementStyle.getPropertyValue('height'), 10);
+
   updateToC();
 });
 
@@ -46,7 +58,7 @@ function updateToC() {
 
   // updating current heading
   if (header) {
-    const position = header.getBoundingClientRect().bottom;
+    const position = header.getBoundingClientRect().top + targetOffset;
 
     if (tocHeading) {
       const sectionHeading = getCurrentHeading(sectionHeadings, position);
