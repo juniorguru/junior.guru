@@ -96,4 +96,9 @@
   .toc__heading {
     margin: $whitespace-0 0 $whitespace-3 $whitespace;
   }
+
+  .toc__link,
+  .toc__sublink {
+    text-decoration: none;
+  }
 }
