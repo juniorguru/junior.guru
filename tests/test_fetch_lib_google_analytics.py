@@ -172,3 +172,77 @@ def test_per_url_report_to_dict_trims_fbclid():
         'https://junior.guru/jobs/xyz2/': 1,
         'https://junior.guru/jobs/xyz3/': 5,
     }
+
+
+def test_per_url_locations_report_to_dict():
+    assert google_analytics.per_url_locations_report_to_dict({
+        'columnHeader': {
+            'dimensions': ['ga:eventLabel', 'ga:region'],
+            'metricHeader': {
+                'metricHeaderEntries': [
+                    {'name': 'ga:pageviews', 'type': 'INTEGER'}
+                ]
+            }
+        },
+        'data': {
+            'isDataGolden': True,
+            'maximums': [{'values': ['6']}],
+            'minimums': [{'values': ['1']}],
+            'rowCount': 10,
+            'rows': [
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz1/', 'Brno'],
+                    'metrics': [{'values': ['1']}]
+                },
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz1/', 'Praha'],
+                    'metrics': [{'values': ['2']}]
+                },
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz1/', 'Brno'],
+                    'metrics': [{'values': ['2']}]
+                },
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz1/', 'Pardubice'],
+                    'metrics': [{'values': ['1']}]
+                },
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz1/', 'Brno'],
+                    'metrics': [{'values': ['5']}]
+                },
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz2/', 'Ostrava'],
+                    'metrics': [{'values': ['1']}]
+                },
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz2/', 'Ostrava'],
+                    'metrics': [{'values': ['4']}]
+                },
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz2/', 'Praha'],
+                    'metrics': [{'values': ['6']}]
+                },
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz2/', 'Vysočina'],
+                    'metrics': [{'values': ['4']}]
+                },
+                {
+                    'dimensions': ['https://junior.guru/jobs/xyz2/', 'Zlín'],
+                    'metrics': [{'values': ['2']}]
+                }
+            ],
+            'totals': [{'values': ['28']}]
+        }
+    }) == {
+        'https://junior.guru/jobs/xyz1/': {
+            'Brno': 8,
+            'Praha': 2,
+            'Pardubice': 1,
+        },
+        'https://junior.guru/jobs/xyz2/': {
+            'Praha': 6,
+            'Ostrava': 5,
+            'Vysočina': 4,
+            'Zlín': 2,
+        },
+    }
