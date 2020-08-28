@@ -6,7 +6,6 @@ from peewee import (CharField, DateField, DateTimeField,
                     ForeignKeyField, IntegerField, TextField)
 
 from juniorguru.models.base import BaseModel, JSONField
-from juniorguru.url_params import set_params
 
 
 JOB_METRIC_NAMES = [
