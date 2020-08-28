@@ -91,10 +91,12 @@ def fetch_from_google_analytics():
         metric_pageviews_per_job,
         metric_pageviews_per_external_job,
         metric_applications_per_job,
-    ]))
-    # max batch size is 5 metrics
-    metrics.update(api.execute(get_daily_date_range(), [
         metric_locations_per_job,
+        # metric_users_handbook,
+        # metric_users_per_logo,
+        # metric_pageviews_handbook,
+        # metric_pageviews_per_logo,
+        # metric_clicks_per_logo,
     ]))
     return metrics
 

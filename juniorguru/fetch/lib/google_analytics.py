@@ -1,10 +1,14 @@
 import math
+from itertools import islice
 from datetime import date, timedelta
 
 from dateutil.relativedelta import relativedelta
 
 from juniorguru.fetch.lib.google import get_client
 from juniorguru.url_params import strip_params
+
+
+MAX_BATCH_SIZE = 5
 
 
 class GoogleAnalyticsClient():
@@ -22,20 +26,26 @@ class GoogleAnalyticsClient():
 
     def execute(self, date_range, metric_fns):
         # prepare generators
-        metric_fns = [fn(self.view_id, date_range) for fn in metric_fns]
+        metric_fns = (fn(self.view_id, date_range) for fn in metric_fns)
 
-        # let them generate report requests
-        body = {'reportRequests': [next(fn) for fn in metric_fns]}
-
-        # request the API
-        data = self.client.reports().batchGet(body=body).execute()
-
-        # feed the generators with the response, let them generate the metric
+        # only a number of metrics per batch is allowed by the API
         metrics = {}
-        for i, fn in enumerate(metric_fns):
-            name = fn.__name__.replace('metric_', '')
-            value = fn.send(data['reports'][i])
-            metrics[name] = value
+        batch = list(islice(metric_fns, MAX_BATCH_SIZE))
+        while batch:
+            # let them generate report requests
+            body = {'reportRequests': [next(fn) for fn in batch]}
+
+            # request the API
+            data = self.client.reports().batchGet(body=body).execute()
+
+            # feed the generators with the response, let them generate the metric
+            for i, fn in enumerate(batch):
+                name = fn.__name__.replace('metric_', '')
+                value = fn.send(data['reports'][i])
+                metrics[name] = value
+
+            # another batch
+            batch = list(islice(metric_fns, MAX_BATCH_SIZE))
         return metrics
 
 
