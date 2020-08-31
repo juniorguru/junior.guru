@@ -1,10 +1,5 @@
 {% extends 'base.html' %}
 
-{% block meta %}
-  {{ super() }}
-  <meta name="robots" content="noindex, follow">
-{% endblock meta %}
-
 {% block title %}Příručka hledání první práce v IT{% endblock %}
 
 {% block description -%}
@@ -60,26 +55,6 @@ Jak se připravit na pohovor a hledat první práci v IT?
     </li>
   </ul>
 </aside>
-
-<section class="main__section main__section--wide engage engage--warning">
-  <div class="engage__content">
-    <div class="engage__illustrated-block">
-      <h2 class="engage__heading">Zachovej prosím stránku v tajnosti</h2>
-      <div class="engage__illustration-container">
-        <img class="engage__illustration" width="100" alt="Vejce" src="{{ url_for('static', filename='images/chick1-i.svg') }}">
-      </div>
-      <p class="engage__text">
-        Příručka zatím <strong>není veřejná</strong>, oficiálně vyjde až 1.&nbsp;9.&nbsp;2020.
-        Toto je jen náhled, kterým jsem ti umožnil přečíst si ji v předstihu.
-        Odkaz na tuto stránku nesdílej, ale budu rád, pokud mi na {{ 'ahoj@junior.guru'|email_link }} napíšeš,
-        co si o příručce myslíš, nebo mi pošleš osobní doporučení, které mohu zveřejnit.
-        Uděláš mi velkou službu, pokud doporučení napíšeš na sociální sítě s hashtagem #juniorguru,
-        např. "Dostala jsem se v předstihu k příručce… líbí se mi… těším se, až 1.9. vyjde!"
-        Jako odkaz prosím sdílej pouze <a href="{{ url_for('candidate_handbook_teaser') }}">{{ url_for('candidate_handbook_teaser', _external=True) }}</a>.
-      </p>
-    </div>
-  </div>
-</section>
 
 <nav id="toc" class="toc main__target">
   <div class="toc__content">
