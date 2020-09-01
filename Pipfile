@@ -38,6 +38,7 @@ google-api-python-client = "*"
 python-dateutil = "*"
 requests = "*"
 sendgrid = "*"
+czech-sort = "*"
 
 [dev-packages]
 pytest = "*"
