@@ -1,0 +1,39 @@
+.quote {
+  background: $dots-blue;
+  color: $blue;
+  margin: $whitespace-3 0;
+  padding-left: $whitespace;
+  position: relative;
+
+  a {
+    @include color-links($blue, $blue);
+  }
+
+  blockquote, figcaption {
+    background: $white;
+  }
+
+  blockquote {
+    @include font-2;
+    font-weight: bold;
+    margin: 0;
+    padding: ($whitespace-2 / 2) $whitespace-3 0 $whitespace-2;
+    text-transform: uppercase;
+  }
+
+  &::after {
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 15rem;
+  }
+
+  figcaption {
+    padding: 0 $whitespace-2 ($whitespace-2 / 2) $whitespace-2;
+  }
+
+  figcaption::before {
+    content: "— ";
+  }
+}

@@ -6,6 +6,7 @@
 // content (not exactly BEM)
 @import 'content/checklist';
 @import 'content/tooltips';
+@import 'content/quote';
 
 // BEM components
 @import 'components/main';
@@ -22,7 +23,7 @@
 @import 'components/more';
 @import 'components/engage';
 @import 'components/stories';
-@import 'components/handbook-preview';
+@import 'components/testimonials';
 
 // page-specific legacy spaghetti code 🍝
 @import 'spaghetti/page-index';

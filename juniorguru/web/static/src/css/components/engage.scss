@@ -83,10 +83,6 @@
 }
 
 @media screen and (min-width: $breakpoint-tablet) {
-  .engage--toc .engage__content {
-    // padding-left: $toc-width;
-  }
-
   .engage__items {
     display: flex;
     flex-wrap: wrap;
