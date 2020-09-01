@@ -1,36 +1,38 @@
-<section class="main__section main__section--wide engage engage--toc">
-  <div class="engage__content">
-    <div class="engage__links">
-      <h2 class="engage__heading engage__heading--centered">Nepřehlédni</h2>
-      <ul class="engage__items">
-        <li class="engage__item engage__item--jobs">
-          <a class="engage__item-link" href="{{ url_for('jobs') }}">Nabídky&nbsp;práce</a>
-        </li>
-        <li class="engage__item engage__item--newsletter">
-          <a class="engage__item-link" href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">Práce do&nbsp;e-mailu</a>
-        </li>
-        <li class="engage__item engage__item--f">
-          <a class="engage__item-link" href="https://www.facebook.com/groups/junior.guru" target="_blank" rel="noopener">FB&nbsp;skupina</a>
-        </li>
-        <li class="engage__item engage__item--donate">
-          <a class="engage__item-link" href="{{ url_for('donate') }}">LOVE</a>
-        </li>
-      </ul>
-    </div>
-    <div class="engage__illustrated-block">
-      <h2 class="engage__heading">K nezaplacení</h2>
-      <div class="engage__illustration-container">
-        <img class="engage__illustration" width="120" alt="Srdce" src="{{ url_for('static', filename='images/heart.svg') }}">
+<section class="main__section">
+  <div class="engage engage--toc">
+    <div class="engage__content">
+      <div class="engage__links">
+        <h2 class="engage__heading engage__heading--centered">Nepřehlédni</h2>
+        <ul class="engage__items">
+          <li class="engage__item engage__item--jobs">
+            <a class="engage__item-link" href="{{ url_for('jobs') }}">Nabídky&nbsp;práce</a>
+          </li>
+          <li class="engage__item engage__item--newsletter">
+            <a class="engage__item-link" href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">Práce do&nbsp;e-mailu</a>
+          </li>
+          <li class="engage__item engage__item--f">
+            <a class="engage__item-link" href="https://www.facebook.com/groups/junior.guru" target="_blank" rel="noopener">FB&nbsp;skupina</a>
+          </li>
+          <li class="engage__item engage__item--donate">
+            <a class="engage__item-link" href="{{ url_for('donate') }}">LOVE</a>
+          </li>
+        </ul>
       </div>
-      <div class="engage__text">
-        <p>
-          Tento text záměrně není prodáván jako e-book, ale je všem veřejně přístupný na webu. Jedině tak může pomoci co nejvíce lidem. Zaplacený je těmi, kdo si to mohou dovolit. Jestliže ti příručka pomohla a chceš, aby existovala dál, zaplať za ni prosím prostřednictvím dobrovolného příspěvku.
-        </p>
+      <div class="engage__illustrated-block">
+        <h2 class="engage__heading">K nezaplacení</h2>
+        <div class="engage__illustration-container">
+          <img class="engage__illustration" width="120" alt="Srdce" src="{{ url_for('static', filename='images/heart.svg') }}">
+        </div>
+        <div class="engage__text">
+          <p>
+            Tento text záměrně není prodáván jako e-book, ale je všem veřejně přístupný na webu. Jedině tak může pomoci co nejvíce lidem. Zaplacený je těmi, kdo si to mohou dovolit. Jestliže ti příručka pomohla a chceš, aby existovala dál, zaplať za ni prosím prostřednictvím dobrovolného příspěvku.
+          </p>
+        </div>
       </div>
+      <p class="button-compartment button-compartment--consistent-minimal-margin">
+        <a class="button" href="{{ url_for('donate') }}">Jak mohu přispět?</a>
+        <small class="button-compartment__note"><a href="{{ url_for('hire_juniors') }}#handbook">Sponzorujte příručku jako firma</a></small>
+      </p>
     </div>
-    <p class="button-compartment button-compartment--consistent-minimal-margin">
-      <a class="button" href="{{ url_for('donate') }}">Jak mohu přispět?</a>
-      <small class="button-compartment__note"><a href="{{ url_for('hire_juniors') }}#handbook">Sponzorujte příručku jako firma</a></small>
-    </p>
   </div>
 </section>

@@ -1,17 +1,13 @@
 .engage {
-  background: $yellow;
-}
-
-.engage--warning {
-  background: #B31B1B;
-  color: $white;
-  margin: (2 * $whitespace-3) 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background: $dots-black;
 }
 
 .engage__content {
-  @include page-width($padding: 1rem);
   padding: $whitespace;
   padding-top: $whitespace-2;
+  background: rgba($white, 0.8);
 }
 
 .engage__heading {
@@ -88,7 +84,7 @@
 
 @media screen and (min-width: $breakpoint-tablet) {
   .engage--toc .engage__content {
-    padding-left: $toc-width;
+    // padding-left: $toc-width;
   }
 
   .engage__items {
