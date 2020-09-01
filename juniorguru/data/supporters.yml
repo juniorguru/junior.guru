@@ -25,6 +25,9 @@
 - name: Michal Špaček
   url: https://www.michalspacek.cz/
 
+- name: Kate Miháliková
+  url: https://katemihalikova.cz
+
 
 # Supporters paying less than 10 USD/EUR monthly (Patreon, GitHub Sponsors).
 # Eligible to have their name on the donate page, without link.
@@ -32,3 +35,4 @@
 - name: Peter Hozák
 - name: Petr Viktorin
 - name: Vojtěch Tranta
+- name: Martin Homola
