@@ -26,42 +26,42 @@ def models_to_dicts_with_metrics(objects):
     ]
 
 
-@app.route('/admin/')
+@app.route('/a/')
 def admin():
     with db:
         metrics = Metric.as_dict()
     return render_template('admin.html', metrics=metrics)
 
 
-@app.route('/admin/newsletter/')
+@app.route('/a/newsletter/')
 def admin_newsletter():
     with db:
         jobs = list(Job.newsletter_listing(10))
     return render_template('admin_newsletter.html', jobs=jobs)
 
 
-@app.route('/admin/jobs-scraped/')
+@app.route('/a/jobs-scraped/')
 def admin_jobs_scraped():
     with db:
         jobs = models_to_dicts_with_metrics(Job.scraped_listing())
     return render_template('admin_jobs_scraped.html', jobs=jobs)
 
 
-@app.route('/admin/jobs-dropped/')
+@app.route('/a/jobs-dropped/')
 def admin_jobs_dropped():
     with db:
         jobs_dropped = models_to_dicts(JobDropped.admin_listing())
     return render_template('admin_jobs_dropped.html', jobs_dropped=jobs_dropped)
 
 
-@app.route('/admin/jobs-errors/')
+@app.route('/a/jobs-errors/')
 def admin_jobs_errors():
     with db:
         jobs_errors = models_to_dicts(JobError.admin_listing())
     return render_template('admin_jobs_errors.html', jobs_errors=jobs_errors)
 
 
-@app.route('/admin/responses-backup/<path:path>')
+@app.route('/a/responses-backup/<path:path>')
 def admin_responses_backup(path):
     return send_from_directory(RESPONSES_BACKUP_DIR, path, mimetype='text/plain')
 
