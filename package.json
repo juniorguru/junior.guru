@@ -28,7 +28,7 @@
     "lighthouse": "6.3.0",
     "node-sass": "4.14.1",
     "pageres-cli": "5.0.0",
-    "rollup": "2.26.8",
+    "rollup": "2.26.9",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-terser": "7.0.1"
   }
