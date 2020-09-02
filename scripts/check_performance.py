@@ -22,7 +22,7 @@ MIN_SCORES = {
 def get_urls(public_dir):
     return [html_path_to_url(path, public_dir)
             for path in Path(public_dir).rglob('*.html')
-            if '/admin/' not in str(path)]
+            if '/a/' not in str(path)]
 
 
 def html_path_to_url(path, public_dir):
