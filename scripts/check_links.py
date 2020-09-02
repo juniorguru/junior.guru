@@ -1,4 +1,3 @@
-import os
 import re
 import sys
 import time
@@ -6,35 +5,22 @@ from pathlib import Path
 from subprocess import PIPE, Popen
 
 
-CI = bool(os.getenv('CI'))
 USER_AGENT = (
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:70.0) '
     'Gecko/20100101 Firefox/70.0'
 )
-EXCLUDE = [
-    # local links to images
-    '*static/images/*.png',
-
-    # a few redirects, then HTTP_500 for no obvious reason
-    'csob.cz',
-
-    # HTTP_404 in response to both curl and browser if user isn't logged in
-    'facebook.com/search/events/?q=english',
-
-    # BLC_UNKNOWN for no obvious reason, probably crawling protection
-    'hackathon.com',
+EXCLUDE_URLS = [
+    '*static/images/*.png',  # local links to images
+    'facebook.com/search/events/?q=english',  # HTTP_404 in response if user isn't logged in
 ]
-EXCLUDE_CI = [
-    # ERRNO_ENOTFOUND for no obvious reason, probably crawling protection
-    # (even works locally 🤷‍♂️)
-    'hackprague.com',
-
-    # HTTP_429 way too often, https://github.com/stevenvachon/broken-link-checker/issues/198
-    'twitter.com',
-
-    # HTTP_999 way too often (crawling protection, their own code)
-    'cz.linkedin.com',
-]
+EXCLUDE_REASONS = [re.compile(r) for r in [
+    r'^BLC_UNKNOWN$',  # crawling protection?
+    r'^ERRNO_ENOTFOUND$',  # crawling protection? can't even find the domain name
+    r'^HTTP_999$',  # LinkedIn crawling protection
+    r'^HTTP_429$',  # Twitter crawling protection, also https://github.com/stevenvachon/broken-link-checker/issues/198
+    r'^HTTP_5\d\d$',  # server-side problem, can't do anything about that
+    r'HTTP_undefined',  # :notsureif:
+]]
 PROJECT_DIR = Path(__file__).parent.parent
 PUBLIC_DIR = PROJECT_DIR / 'public'
 
@@ -49,8 +35,7 @@ options = [
 ]
 
 
-exclude = EXCLUDE + (EXCLUDE_CI if CI else [])
-for url in exclude:
+for url in EXCLUDE_URLS:
     options.append(f'--exclude={url}')
 
 
@@ -83,11 +68,34 @@ for attempt in range(attempts):
         break
 
 
+# https://github.com/stevenvachon/broken-link-checker/issues/169
 if broken:
-    # https://github.com/stevenvachon/broken-link-checker/issues/169
-    print()
-    print('Broken links')
-    print('=' * 79)
+    warnings = []
+    errors = []
     for url, reason in broken:
-        print(f'{reason}\t{url}')
-sys.exit(failed)
+        relevant_list = None
+        for reason_re in EXCLUDE_REASONS:
+            if reason_re.search(reason):
+                relevant_list = warnings
+                break
+        if relevant_list is None:
+            relevant_list = errors
+        relevant_list.append((url, reason))
+
+    if warnings:
+        print()
+        print('Links not checked')
+        print('=' * 79)
+        for url, reason in warnings:
+            print(f'{reason}\t{url}')
+
+    if errors:
+        print()
+        print('Broken links')
+        print('=' * 79)
+        for url, reason in errors:
+            print(f'{reason}\t{url}')
+
+    sys.exit(1 if errors else 0)
+else:
+    sys.exit(0)
