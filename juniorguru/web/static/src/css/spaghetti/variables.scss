@@ -21,16 +21,16 @@ $line-height-4: 1;
 @mixin font-3 { font-size: 3.2rem; line-height: $line-height-3; }
 @mixin font-4 { font-size: 4.1rem; line-height: $line-height-4; }
 
-// when changing, change it also in SVGs
+// when changing, change it also in SVGs and press.html
 $black: #343434;
 $black-number: "343434";
 
-// when changing, change it also in SVGs
+// when changing, change it also in SVGs and press.html
 $blue: #1755d1;
 $blue-number: "1755d1";
 
 $white: #ffffff;
-$yellow: #fffa72;
+$yellow: #fffa72;  // when changing, change it also in press.html
 $gray: #ababab;
 $gray-light: #ededed;
 

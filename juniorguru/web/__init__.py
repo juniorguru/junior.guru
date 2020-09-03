@@ -150,6 +150,11 @@ def privacy():
     return render_template('privacy.html')
 
 
+@app.route('/press/')
+def press():
+    return render_template('press.html')
+
+
 @app.route('/404.html')
 #@app.route('/jobs/404.html')  # debug
 def not_found():

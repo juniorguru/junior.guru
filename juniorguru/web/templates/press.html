@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}Tisková zpráva, logo{% endblock %}
+
+{% block description -%}
+Tisková zpráva, logo, barvy. Vše co potřebujete pro to, abyste se mohli zmínit o junior.guru.
+{%- endblock %}
+
+{% block main %}
+<header class="intro">
+  <h1 class="intro__title">Pro média</h1>
+</header>
+
+{#
+<section class="main__section">
+  <h2 class="main__section-heading">Tiskové zprávy</h2>
+  <ul>
+    <li>1.9.2020 &mdash; <a href="#" target="_blank" rel="noopener">Rozcestník pro začínající programátory junior.guru vydal příručku hledání první práce v IT</a></li>
+    <li>15.3.2020 &mdash; <a href="#" target="_blank" rel="noopener">Bla bla koronavirus</a></li>
+  </ul>
+</section>
+#}
+
+<section class="main__section">
+  <h2 class="main__section-heading">Název projektu</h2>
+  <p>
+    Oficiální název projektu je <strong>Junior Guru</strong>, stylizovaně <strong>junior.guru</strong>.
+    Slovo junior se v kontextu IT běžně používá k označování pracovních pozic vhodných pro začátečníky.
+  </p>
+</section>
+
+<section class="main__section">
+  <h2 class="main__section-heading">Logo, fotky, ilustrace</h2>
+  <p>
+    Logo ke stažení:
+  </p>
+  <ul>
+    <li>Žluté pozadí: <a href="{{ url_for('static', filename='images/press/logo.svg') }}" target="_blank" rel="noopener">SVG</a>, <a href="{{ url_for('static', filename='images/press/logo.png') }}" target="_blank" rel="noopener">PNG</a></li>
+    <li>Průhledné pozadí: <a href="{{ url_for('static', filename='images/press/logo-transparent.svg') }}" target="_blank" rel="noopener">SVG</a>, <a href="{{ url_for('static', filename='images/press/logo-transparent.png') }}" target="_blank" rel="noopener">PNG</a></li>
+  </ul>
+  <p>
+    Ilustrační fotky:
+  </p>
+  <ul>
+    <li><a href="https://unsplash.com/photos/9KPcwV0pGOM" target="_blank" rel="noopener">I ty se můžeš naučit programovat</a> <small>(foto <a href="https://unsplash.com/@wocintechchat" target="_blank" rel="noopener">#WOCinTech Chat</a>)</small></li>
+    <li><a href="https://unsplash.com/photos/MChSQHxGZrQ" target="_blank" rel="noopener">I ty si můžeš najít dobrou práci v IT</a> <small>(foto <a href="https://unsplash.com/@anniespratt" target="_blank" rel="noopener">Annie Spratt</a>)</small></li>
+    <li><a href="{{ url_for('static', filename='images/press/honza-large.jpg') }}" target="_blank" rel="noopener">Honza Javorek</a> <small>(foto Zuzana Javorková)</small></li>
+    <li><a href="{{ url_for('static', filename='images/honza.jpg') }}" target="_blank" rel="noopener">Honza Javorek, profilovka</a> <small>(foto Zuzana Javorková)</small></li>
+  </ul>
+  <p>
+    Barvy jsou žlutá <strong>#fffa72</strong>, černá <strong>#343434</strong>, modrá <strong>#1755d1</strong>.
+    Fonty jsou <a href="https://www.1001fonts.com/cabin-sketch-font.html" target="_blank" rel="noopener">Cabin Sketch</a> a <a href="https://www.1001fonts.com/love-ya-like-a-sister-font.html" target="_blank" rel="noopener">Love Ya Like A Sister</a>.
+    Maskotem je <a href="{{ url_for('static', filename='images/chick2.svg') }}">líhnoucí se kuře</a>.
+    Ilustrace si Honza kreslí vlastnoručně.
+  </p>
+</section>
+
+<section class="main__section">
+  <h2 class="main__section-heading">Provozovatel</h2>
+  <p>
+    Provozovatelem stránek <strong>junior.guru</strong> je Honza Javorek,
+    IČO: <a href="http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0" target="_blank" rel="noopener">74279858</a>.
+    Kontaktovat jej můžete na {{ 'ahoj@junior.guru'|email_link }} nebo {{ 'mail@honzajavorek.cz'|email_link }}.
+  </p>
+  <p>
+    Více se o něm můžete dovědět v jeho <a href="{{ url_for('donate') }}#about">krátkém medailonku zde</a> nebo na jeho <a href="https://honzajavorek.cz/">osobní webové stránce</a>.
+    Stránky <strong>junior.guru</strong> tvoří jako tzv. „Solo Entrepreneur“, tedy podnikatel na volné noze,
+    jenž nemá ambice rozjíždět firmu, ale chce projekt provozovat sám.
+  </p>
+</section>
+{% endblock %}
+
+{% block author %}{% endblock %}
