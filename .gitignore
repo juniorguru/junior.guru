@@ -83,6 +83,7 @@ backup.tar.gz
 # Web statics
 /juniorguru/web/static/*
 !/juniorguru/web/static/src
+!/juniorguru/web/static/downloads
 
 # Now
 .now
