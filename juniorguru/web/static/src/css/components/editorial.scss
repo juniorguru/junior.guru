@@ -1,0 +1,19 @@
+.editorial {
+  padding: 0 $whitespace;
+  padding-bottom: 2 * $whitespace-3;
+}
+
+.editorial__section {
+  @include page-width;
+  display: flex;
+  flex-wrap: wrap;
+  font-style: normal;
+  margin-bottom: $whitespace;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  .editorial__section {
+    justify-content: center;
+    text-align: center;
+  }
+}

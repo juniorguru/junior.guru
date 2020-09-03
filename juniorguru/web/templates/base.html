@@ -91,15 +91,15 @@
       <hr>
       <footer>
         <div class="footer">
-          <div class="address-wrapper">
-            <address>
-              <span>Pište na {{ 'ahoj@junior.guru'|email_link }},&nbsp;</span>
-              <span>tweetujte na <a href="https://twitter.com/honzajavorek/">@honzajavorek</a>,&nbsp;</span>
-              <span>zdrojáky jsou na <a href="https://github.com/honzajavorek/junior.guru">honzajavorek/junior.guru</a>.</span>
+          <div class="editorial">
+            <address class="editorial__section">
+              <span class="editorial__item">Pište na {{ 'ahoj@junior.guru'|email_link }},&nbsp;</span>
+              <span class="editorial__item">tweetujte na <a href="https://twitter.com/honzajavorek/">@honzajavorek</a>,&nbsp;</span>
+              <span class="editorial__item">zdrojáky jsou na <a href="https://github.com/honzajavorek/junior.guru">honzajavorek/junior.guru</a>.</span>
             </address>
-            <p>
-              <a href="{{ url_for('privacy') }}">Zpracování osobních údajů</a>
-              {# <a href="{{ url_for('press') }}">Pro média</a> #}
+            <p class="editorial__section">
+              <span class="editorial__item"><a href="{{ url_for('privacy') }}">Zpracování osobních údajů</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ url_for('press') }}">Pro média</a></span>
             </p>
           </div>
           {% block author %}

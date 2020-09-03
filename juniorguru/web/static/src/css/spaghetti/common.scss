@@ -518,32 +518,6 @@ footer {
   &, a {
     @include font-0;
   }
-
-  address {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  address, p {
-    font-style: normal;
-    @include page-width;
-    margin-bottom: $whitespace;
-  }
-
-  @media screen and (min-width: 650px) {
-    address {
-      justify-content: center;
-    }
-
-    p {
-      text-align: center;
-    }
-  }
-}
-
-.address-wrapper {
-  padding: 0 $whitespace;
-  padding-bottom: 2 * $whitespace-3;
 }
 
 .author {
