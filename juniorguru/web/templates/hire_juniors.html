@@ -235,7 +235,7 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
   <div class="sponsor-handbook-content">
     {# <img width="200" src="{{ url_for('static', filename='images/handbook.svg') }}"> #}
     <p>
-      1. září 2020 vyšel na junior.guru <a href="{{ url_for('candidate_handbook') }}">ucelený soubor rad pro juniory</a> v rozsahu více než&nbsp;30&nbsp;normostran. Není to e-book, ale <strong>živá a stále aktualizovaná webová stránka</strong>. Díky placeným logům firem je tento jedinečný obsah všem přístupný zdarma. Příručka má skvělé ohlasy:
+      1. září 2020 vyšel na junior.guru <a href="{{ url_for('candidate_handbook') }}">ucelený soubor rad pro juniory</a> v rozsahu více než&nbsp;30&nbsp;normostran. Není to e-book, ale <strong>živá a stále aktualizovaná webová stránka</strong>. Díky placeným firemním logům je tento jedinečný obsah všem přístupný zdarma. Příručka má skvělé ohlasy:
     </p>
 
     <div class="testimonials">
@@ -243,10 +243,40 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
         <li class="testimonials__item">
           <figure class="quote testimonials__item-content">
             <blockquote>
+              Honza Javorek vydal super reálnou “knížku” Příručka o hledání první práce v IT. Budeme ji určitě zmiňovat na kariérních workshopech.
+            </blockquote>
+            <figcaption>
+              Monika Ptáčníková, spoluzakladatelka Czechitas
+            </figcaption>
+          </figure>
+        </li>
+        <li class="testimonials__item">
+          <figure class="quote testimonials__item-content">
+            <blockquote>
+              Ty jo! Skoro se mi chce vrátit zpátky do minulýho tisíciletí a znovu si začít hledat svou první práci v IT… Díky za to, dobrá práce!
+            </blockquote>
+            <figcaption>
+              Michal Špaček, odborník na bezpečnost webových aplikací
+            </figcaption>
+          </figure>
+        </li>
+        <li class="testimonials__item">
+          <figure class="quote testimonials__item-content">
+            <blockquote>
               Příručka je naprosto boží, přečetla jsem ji jedním dechem a nasbírala inspiraci, co ještě udělat. Tolik tipů na jednom místě člověk nikde jinde nenajde.
             </blockquote>
             <figcaption>
               Lenka Erbenová, frontendistka, absolventka PyLadies a Czechitas
+            </figcaption>
+          </figure>
+        </li>
+        <li class="testimonials__item">
+          <figure class="quote testimonials__item-content">
+            <blockquote>
+              Zvažujete přechod do IT? Tohle je super úvod.
+            </blockquote>
+            <figcaption>
+              Jan Cibulka, datový novinář Českého Rozhlasu
             </figcaption>
           </figure>
         </li>
@@ -272,31 +302,7 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
         </li>
       </ul>
     </div>
-
-    <ul class="numbers">
-      <li><strong>{{ metrics.avg_monthly_users_handbook|metric }}</strong> <small>návštěvníků měsíčně</small></li>
-      <li><strong>{{ metrics.avg_monthly_pageviews_handbook|metric }}</strong> <small>zobrazení měsíčně</small></li>
-      {# <li><strong>{{ metrics.subscribers|metric }}</strong> <small>odběratelů newsletteru</small></li> #}
-    </ul>
-
-    <h3>Proč sponzorovat</h3>
-    <ul class="checklist">
-      <li>Budujete značku vůči příštím kandidátům a představujete se jako místo, kde na juniory myslí, umí to s nimi, a kam je zkrátka radost nastoupit.</li>
-      <li>Díky vašemu příspěvku bude text komukoliv veřejně zdarma přístupný. Příručka přitom dá jasně najevo, že tento v Česku unikátní obsah je zdarma právě díky vám.</li>
-      <li>Financováním junior.guru podpoříte příchod nových lidí na trh. V&nbsp;dlouhodobém horizontu zlepšíte výběr a rozmanitost kandidátů v&nbsp;ČR &mdash; náplň pro vaše aktivity v <abbr title="Diversity &amp; Inclusion">D&I</abbr> nebo <abbr title="Corporate Social Responsibility">CSR</abbr> (společenská odpovědnost).</li>
-      <li>Příručka zvýší a standardizuje úroveň juniorních uchazečů v&nbsp;ČR.</li>
-    </ul>
   </div>
-
-  <p class="support">
-    <span class="support-content">
-      <img alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
-      <span class="support-text">
-        Pokud máte jakékoliv otázky, Honza vám je rád zodpoví.<br>
-        Pište na&nbsp;{{ 'honza@junior.guru'|email_link }}.
-      </span>
-    </span>
-  </p>
 
   <div class="pricing">
     <div class="pricing__plans pricing__plans--3">
@@ -358,6 +364,38 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
       </strong>
     </p>
   </div>
+
+  <div class="sponsor-handbook-content">
+    <h3 class="main__subsection-heading">Statistiky</h3>
+    <p>
+      Čísla, která vidíte, jsou <strong>průměrné hodnoty na 1 měsíc počítané z posledních 4 měsíců</strong>. Automaticky se každý den přepočítávají.
+      Údaje jsou podhodnocené a pouze orientační. Pocházejí z nástroje Google Analytics, který mohou uživatelé blokovat.
+    </p>
+    <ul class="numbers numbers--standalone">
+      <li><strong>{{ metrics.avg_monthly_handbook_users|metric }}</strong> <small>návštěvníků příručky</small></li>
+      <li><strong>{{ metrics.avg_monthly_handbook_pageviews|metric }}</strong> <small>zobrazení sponzorských log</small></li>
+      <li><strong>~{{ metrics.avg_monthly_handbook_logo_clicks|metric }}</strong> <small>kliknutí na sponzorská loga</small></li>
+      <li><strong>~{{ metrics.avg_monthly_handbook_conversion|metric }}%</strong> <small>konverze</small></li>
+    </ul>
+
+    <h3 class="main__subsection-heading">Proč sponzorovat</h3>
+    <ul class="checklist">
+      <li>Budujete značku vůči příštím kandidátům a představujete se jako místo, kde na juniory myslí, umí to s nimi, a kam je zkrátka radost nastoupit.</li>
+      <li>Díky vašemu příspěvku bude text komukoliv veřejně zdarma přístupný. Příručka přitom dá jasně najevo, že tento v Česku unikátní obsah je zdarma právě díky vám.</li>
+      <li>Financováním junior.guru podpoříte příchod nových lidí na trh. V&nbsp;dlouhodobém horizontu zlepšíte výběr a rozmanitost kandidátů v&nbsp;ČR &mdash; náplň pro vaše aktivity v <abbr title="Diversity &amp; Inclusion">D&I</abbr> nebo <abbr title="Corporate Social Responsibility">CSR</abbr> (společenská odpovědnost).</li>
+      <li>Příručka zvýší a standardizuje úroveň juniorních uchazečů v&nbsp;ČR.</li>
+    </ul>
+  </div>
+
+  <p class="support">
+    <span class="support-content">
+      <img alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
+      <span class="support-text">
+        Pokud máte jakékoliv otázky, Honza vám je rád zodpoví.<br>
+        Pište na&nbsp;{{ 'honza@junior.guru'|email_link }}.
+      </span>
+    </span>
+  </p>
 </section>
 {% endblock %}
 

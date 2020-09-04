@@ -75,7 +75,7 @@ def metric_avg_monthly_pageviews(view_id, date_range):
     yield calc_avg_monthly_values(report)
 
 
-def metric_avg_monthly_users_handbook(view_id, date_range):
+def metric_avg_monthly_handbook_users(view_id, date_range):
     report = yield {
         'viewId': view_id,
         'dateRanges': [{
@@ -95,7 +95,7 @@ def metric_avg_monthly_users_handbook(view_id, date_range):
     yield calc_avg_monthly_values(report)
 
 
-def metric_avg_monthly_pageviews_handbook(view_id, date_range):
+def metric_avg_monthly_handbook_pageviews(view_id, date_range):
     report = yield {
         'viewId': view_id,
         'dateRanges': [{
@@ -109,6 +109,26 @@ def metric_avg_monthly_pageviews_handbook(view_id, date_range):
                 'dimensionName': 'ga:pagePath',
                 'operator': 'REGEXP',
                 'expressions': ['^/candidate-handbook/'],
+            }],
+        }],
+    }
+    yield calc_avg_monthly_values(report)
+
+
+def metric_avg_monthly_handbook_logo_clicks(view_id, date_range):
+    report = yield {
+        'viewId': view_id,
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
+        'metrics': [{'expression': 'ga:uniqueEvents'}],
+        'dimensions': [{'name': 'ga:date'}],
+        'dimensionFilterClauses': [{
+            'filters': [{
+                'dimensionName': 'ga:eventCategory',
+                'operator': 'EXACT',
+                'expressions': ['handbook-logo'],
             }],
         }],
     }
