@@ -5,8 +5,8 @@ from juniorguru.fetch.lib.google_analytics import (
     metric_applications_per_job, metric_avg_monthly_pageviews,
     metric_avg_monthly_users, metric_pageviews_per_external_job,
     metric_pageviews_per_job, metric_users_per_external_job,
-    metric_users_per_job, metric_locations_per_job, metric_users_handbook,
-    metric_pageviews_handbook)
+    metric_users_per_job, metric_locations_per_job, metric_avg_monthly_users_handbook,
+    metric_avg_monthly_pageviews_handbook)
 from juniorguru.fetch.lib.mailchimp import (MailChimpClient, get_collection,
                                             get_link,
                                             sum_clicks_per_external_url)
@@ -29,6 +29,10 @@ def main():
                             value=google_analytics_metrics['avg_monthly_users'])
         Metric.create(name='avg_monthly_pageviews',
                             value=google_analytics_metrics['avg_monthly_pageviews'])
+        Metric.create(name='avg_monthly_users_handbook',
+                            value=google_analytics_metrics['avg_monthly_users_handbook'])
+        Metric.create(name='avg_monthly_pageviews_handbook',
+                            value=google_analytics_metrics['avg_monthly_pageviews_handbook'])
         Metric.create(name='subscribers',
                             value=mailchimp_metrics['subscribers'])
 
@@ -85,6 +89,8 @@ def fetch_from_google_analytics():
     metrics.update(api.execute(get_daily_date_range(start_months_ago=4), [
         metric_avg_monthly_users,
         metric_avg_monthly_pageviews,
+        metric_avg_monthly_users_handbook,
+        metric_avg_monthly_pageviews_handbook,
     ]))
     metrics.update(api.execute(get_daily_date_range(), [
         metric_users_per_job,
@@ -93,9 +99,7 @@ def fetch_from_google_analytics():
         metric_pageviews_per_external_job,
         metric_applications_per_job,
         metric_locations_per_job,
-        metric_users_handbook,
         # metric_users_per_logo,
-        metric_pageviews_handbook,
         # metric_pageviews_per_logo,
         # metric_clicks_per_logo,
     ]))

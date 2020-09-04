@@ -75,7 +75,7 @@ def metric_avg_monthly_pageviews(view_id, date_range):
     yield calc_avg_monthly_values(report)
 
 
-def metric_users_handbook(view_id, date_range):
+def metric_avg_monthly_users_handbook(view_id, date_range):
     report = yield {
         'viewId': view_id,
         'dateRanges': [{
@@ -95,7 +95,7 @@ def metric_users_handbook(view_id, date_range):
     yield calc_avg_monthly_values(report)
 
 
-def metric_pageviews_handbook(view_id, date_range):
+def metric_avg_monthly_pageviews_handbook(view_id, date_range):
     report = yield {
         'viewId': view_id,
         'dateRanges': [{
