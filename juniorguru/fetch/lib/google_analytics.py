@@ -1,6 +1,6 @@
 import math
 from itertools import islice
-from datetime import date, timedelta
+from datetime import datetime, date, timedelta
 
 from dateutil.relativedelta import relativedelta
 
@@ -71,6 +71,46 @@ def metric_avg_monthly_pageviews(view_id, date_range):
         }],
         'metrics': [{'expression': 'ga:pageviews'}],
         'dimensions': [{'name': 'ga:date'}],
+    }
+    yield calc_avg_monthly_values(report)
+
+
+def metric_users_handbook(view_id, date_range):
+    report = yield {
+        'viewId': view_id,
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
+        'metrics': [{'expression': 'ga:users'}],
+        'dimensions': [{'name': 'ga:date'}],
+        'dimensionFilterClauses': [{
+            'filters': [{
+                'dimensionName': 'ga:pagePath',
+                'operator': 'REGEXP',
+                'expressions': ['^/candidate-handbook/'],
+            }],
+        }],
+    }
+    yield calc_avg_monthly_values(report)
+
+
+def metric_pageviews_handbook(view_id, date_range):
+    report = yield {
+        'viewId': view_id,
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
+        'metrics': [{'expression': 'ga:pageviews'}],
+        'dimensions': [{'name': 'ga:date'}],
+        'dimensionFilterClauses': [{
+            'filters': [{
+                'dimensionName': 'ga:pagePath',
+                'operator': 'REGEXP',
+                'expressions': ['^/candidate-handbook/'],
+            }],
+        }],
     }
     yield calc_avg_monthly_values(report)
 
@@ -228,7 +268,10 @@ def get_daily_date_range(today=None, start_months_ago=None):
 
 def calc_avg_monthly_values(report):
     total = int(report['data']['totals'][0]['values'][0])
-    months = report['data']['rowCount'] / 30
+    dates = [datetime.strptime(row['dimensions'][0], '%Y%m%d')
+             for row in report['data']['rows']]
+    days = (max(dates) - min(dates)).days + 1
+    months = days / 30
     return int(math.ceil(total / months))
 
 

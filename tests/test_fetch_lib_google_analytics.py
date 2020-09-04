@@ -1,4 +1,5 @@
-from datetime import date
+import math
+from datetime import date, timedelta
 
 import pytest
 
@@ -26,6 +27,7 @@ def test_get_daily_date_range_start_months_ago(today, months, expected_start, ex
 
 
 def test_calc_avg_monthly_values():
+    init_date = date(2020, 6, 14)
     assert google_analytics.calc_avg_monthly_values({
         'columnHeader': {
             'dimensions': ['ga:date'],
@@ -36,23 +38,52 @@ def test_calc_avg_monthly_values():
             }
         },
         'data': {
-            'rows': [[
-                {'dimensions': ['20200620'], 'metrics': [{'values': ['1102']}]},
-                {'dimensions': ['20200621'], 'metrics': [{'values': ['1037']}]},
-                {'dimensions': ['20200622'], 'metrics': [{'values': ['4583']}]},
-                {'dimensions': ['20200623'], 'metrics': [{'values': ['3292']}]},
-                {'dimensions': ['20200624'], 'metrics': [{'values': ['1833']}]},
-                {'dimensions': ['20200625'], 'metrics': [{'values': ['1227']}]},
-            ] for _ in range(21)],
-            'totals': [
-                {'values': ['282324']},
+            'rows': [
+                {
+                    'dimensions': [(init_date + timedelta(days=i)).strftime('%Y%m%d')],
+                    'metrics': [{'values': [str(1000 + i)]}],
+                }
+                for i in range(0, 65)
             ],
-            'rowCount': 126,
-            'minimums': [{'values': ['1037']}],
-            'maximums': [{'values': ['4583']}],
+            'totals': [
+                {'values': ['67080']},
+            ],
+            'rowCount': 65,
+            'minimums': [{'values': ['1000']}],
+            'maximums': [{'values': ['1064']}],
             'isDataGolden': True
         }
-    }) == (282324 / (126 / 30))
+    }) == math.ceil(67080 / (65 / 30))
+
+
+def test_calc_avg_monthly_values_sparse_data():
+    init_date = date(2020, 6, 14)
+    assert google_analytics.calc_avg_monthly_values({
+        'columnHeader': {
+            'dimensions': ['ga:date'],
+            'metricHeader': {
+                'metricHeaderEntries': [
+                    {'name': 'ga:users', 'type': 'INTEGER'}
+                ]
+            }
+        },
+        'data': {
+            'rows': [
+                {
+                    'dimensions': [(init_date + timedelta(days=i)).strftime('%Y%m%d')],
+                    'metrics': [{'values': [str(1000 + i)]}],
+                }
+                for i in range(2, 65, 3)
+            ],
+            'totals': [
+                {'values': ['21672']},
+            ],
+            'rowCount': 21,
+            'minimums': [{'values': ['1000']}],
+            'maximums': [{'values': ['1063']}],
+            'isDataGolden': True
+        }
+    }) == math.ceil(21672 / (61 / 30))  # 2020-08-15 - 2020-06-16 = 61 days
 
 
 def test_per_url_report_to_dict():
