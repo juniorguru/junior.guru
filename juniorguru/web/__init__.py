@@ -13,7 +13,7 @@ NAV_TABS = [
 
 JOBS_SUBNAV_TABS = [
     {'endpoint': 'jobs', 'name': 'Nabídky práce'},
-    {'endpoint': 'candidate_handbook', 'name': 'Příručka hledání práce'},
+    {'endpoint': 'candidate_handbook', 'name': 'Příručka o hledání práce'},
     {'endpoint': 'hire_juniors', 'name': 'Pro firmy'},
 ]
 
@@ -67,7 +67,7 @@ def candidate_handbook():
                            companies_count=companies_count,
                            supporters_count=supporters_count,
                            last_modified=last_modified,
-                           thumbnail=thumbnail(title='Příručka hledání první práce v\u00a0IT'))
+                           thumbnail=thumbnail(title='Příručka o\u00a0hledání první práce v\u00a0IT'))
 
 
 @app.route('/candidate/')
