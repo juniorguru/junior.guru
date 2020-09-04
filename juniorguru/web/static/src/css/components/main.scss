@@ -13,6 +13,12 @@
   max-width: 100%;
 }
 
+.main__section--narrow {
+  max-width: 80rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .main__section-heading {
   border-bottom: $border-width solid $yellow;
 }

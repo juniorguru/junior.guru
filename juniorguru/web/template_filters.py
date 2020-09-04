@@ -1,3 +1,4 @@
+import re
 import math
 from datetime import datetime
 
@@ -24,6 +25,11 @@ def md(markdown_text, heading_level_base=1):
     toc = TocExtension(marker='', baselevel=heading_level_base)
     markup = markdown(markdown_text, output_format='html5', extensions=[toc])
     return Markup(markup)
+
+
+@app.template_filter()
+def remove_p(html):
+    return Markup(re.sub(r'</?p[^>]*>', '', html))
 
 
 REQUIREMENTS_MAPPING = {

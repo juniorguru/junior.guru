@@ -1,7 +1,7 @@
 import arrow
 from flask import Flask, Response, abort, render_template, url_for
 
-from juniorguru.models import Job, Metric, Story, Supporter, LastModified, db
+from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, db
 from juniorguru.web.thumbnail import thumbnail
 
 
@@ -152,7 +152,20 @@ def privacy():
 
 @app.route('/press/')
 def press():
-    return render_template('press.html')
+    with db:
+        press_releases = PressRelease.listing()
+    return render_template('press.html',
+                           press_releases=press_releases,
+                           thumbnail=thumbnail(title='Pro média'))
+
+
+@app.route('/press/<id>/')
+def press_release(id):
+    with db:
+        press_release = PressRelease.get_by_id(id)
+    return render_template('press_release.html',
+                           press_release=press_release,
+                           thumbnail=thumbnail(title='Tisková zpráva'))
 
 
 @app.route('/404.html')

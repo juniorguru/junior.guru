@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}{{ press_release.title }} | Tisková zpráva{% endblock %}
+
+{% block description -%}
+  {{ press_release.title }}
+{%- endblock %}
+
+{% block main %}
+<header class="intro">
+  <p class="intro__note">Tisková zpráva</p>
+  <h1 class="intro__title">{{ press_release.title }}</h1>
+  <p class="intro__lead">
+    {{ press_release.date.day }}.&nbsp;{{ press_release.date.month }}.&nbsp;{{ press_release.date.year }}
+    {% if press_release.lead %}
+      &mdash; {{ press_release.lead|md|remove_p }}
+    {% endif %}
+  </p>
+</header>
+
+<section class="main__section main__section--narrow">
+  {{ press_release.text|md }}
+</section>
+
+<hr>
+
+<section class="main__section main__section--narrow">
+  <p>
+    <strong>Junior Guru</strong>, stylizovaně <strong>junior.guru</strong>, je český průvodce programováním pro samouky. Snaží se ukázat lidem, že programování je obecná dovednost, která se může hodit každému, a pomoci těm, kdo se rozhodnou změnit kariéru a začít se programováním živit.
+  </p>
+  <p>
+    Slovo <strong>junior</strong> se v kontextu IT běžně používá k označování pracovních pozic vhodných pro začátečníky.
+  </p>
+  <p>
+    Honza Javorek tvoří Junior Guru jako tzv. <strong>„Solo Entrepreneur“</strong>, tedy podnikatel na volné noze, jenž nemá ambice rozjíždět firmu. Více se o něm můžete dovědět v jeho <a href="{{ url_for('donate') }}#about">krátkém medailonku zde</a> nebo na jeho <a href="https://honzajavorek.cz/">osobní webové stránce</a>.
+  </p>
+  <p>
+    <strong>Kontaktujte</strong> Honzu na {{ 'honza@junior.guru'|email_link }}.
+  </p>
+  <p class="button-compartment">
+    <a href="{{ url_for('press') }}" class="button">Pro média</a>
+  </p>
+</section>
+{% endblock %}
+
+{% block author %}{% endblock %}

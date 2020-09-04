@@ -28,6 +28,11 @@ def test_md_heading_level_base():
     )
 
 
+def test_remove_p():
+    markup = str(template_filters.remove_p('<p>call me <b>maybe</b></p>  \n<p class="hello">call me Honza</p>'))
+    assert markup == 'call me <b>maybe</b>  \ncall me Honza'
+
+
 @pytest.mark.parametrize('requirement,expected', [
     ('mainstream programming language', 'základy programování'),
     ('databases', 'databáze'),

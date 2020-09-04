@@ -2,7 +2,7 @@
 {% block title %}Pro média &mdash; tiskové zprávy, logo{% endblock %}
 
 {% block description -%}
-Tisková zpráva, logo, barvy. Vše co potřebujete pro to, abyste se mohli zmínit o junior.guru.
+Tiskové zprávy, logo, barvy. Vše co potřebujete pro to, abyste se mohli zmínit o junior.guru.
 {%- endblock %}
 
 {% block main %}
@@ -13,17 +13,28 @@ Tisková zpráva, logo, barvy. Vše co potřebujete pro to, abyste se mohli zmí
 <section class="main__section">
   <h2 class="main__section-heading">Tiskové zprávy</h2>
   <ul>
-    <li>3.9.2020 &mdash; <a href="{{ url_for('static', filename='downloads/tiskova-zprava-2020-09-juniorguru-prirucka.pdf') }}" target="_blank" rel="noopener">Příručka hledání první práce v IT</a></li>
-    <li>8.4.2020 &mdash; <a href="{{ url_for('static', filename='downloads/tiskova-zprava-2020-04-juniorguru-zeny.pdf') }}" target="_blank" rel="noopener">Programátorkou se lze stát i při rodičovské</a></li>
-    <li>8.4.2020 &mdash; <a href="{{ url_for('static', filename='downloads/tiskova-zprava-2020-04-juniorguru.pdf') }}" target="_blank" rel="noopener">Cesta z krize: Programování jako dovednost pro každého</a></li>
+    {% for press_release in press_releases %}
+      <li>
+        {{ press_release.date.day }}.&nbsp;{{ press_release.date.month }}.&nbsp;{{ press_release.date.year }}&nbsp;
+        &mdash; <a href="{{ url_for('press_release', id=press_release.id) }}">{{ press_release.title }}</a></li>
+    {% endfor %}
   </ul>
 </section>
 
 <section class="main__section">
-  <h2 class="main__section-heading">Název projektu</h2>
+  <h2 class="main__section-heading">Kontakt</h2>
   <p>
-    Oficiální název projektu je <strong>Junior Guru</strong>, stylizovaně <strong>junior.guru</strong>.
-    Slovo junior se v kontextu IT běžně používá k označování pracovních pozic vhodných pro začátečníky.
+    Pište přímo autorovi projektu: Honza Javorek, {{ 'ahoj@junior.guru'|email_link }}
+  </p>
+</section>
+
+<section class="main__section">
+  <h2 class="main__section-heading">O projektu</h2>
+  <p>
+    <strong>Junior Guru</strong>, stylizovaně <strong>junior.guru</strong>, je český průvodce programováním pro samouky. Snaží se ukázat lidem, že programování je obecná dovednost, která se může hodit každému, a pomoci těm, kdo se rozhodnou změnit kariéru a začít se programováním živit.
+  </p>
+  <p>
+    Slovo <strong>junior</strong> se v kontextu IT běžně používá k označování pracovních pozic vhodných pro začátečníky.
   </p>
 </section>
 
@@ -43,7 +54,7 @@ Tisková zpráva, logo, barvy. Vše co potřebujete pro to, abyste se mohli zmí
     <li><a href="https://unsplash.com/photos/9KPcwV0pGOM" target="_blank" rel="noopener">I ty se můžeš naučit programovat</a> <small>(foto <a href="https://unsplash.com/@wocintechchat" target="_blank" rel="noopener">#WOCinTech Chat</a>)</small></li>
     <li><a href="https://unsplash.com/photos/MChSQHxGZrQ" target="_blank" rel="noopener">I ty si můžeš najít dobrou práci v IT</a> <small>(foto <a href="https://unsplash.com/@anniespratt" target="_blank" rel="noopener">Annie Spratt</a>)</small></li>
     <li><a href="{{ url_for('static', filename='images/press/honza-large.jpg') }}" target="_blank" rel="noopener">Honza Javorek</a> <small>(foto Zuzana Javorková)</small></li>
-    <li><a href="{{ url_for('static', filename='images/honza.jpg') }}" target="_blank" rel="noopener">Honza Javorek, profilovka</a> <small>(foto Zuzana Javorková)</small></li>
+    <li><a href="{{ url_for('static', filename='images/honza.jpg') }}" target="_blank" rel="noopener">Honza Javorek, čtvercová profilovka</a> <small>(foto Zuzana Javorková)</small></li>
   </ul>
   <p>
     Barvy jsou žlutá <strong>#fffa72</strong>, černá <strong>#343434</strong>, modrá <strong>#1755d1</strong>.
@@ -56,14 +67,11 @@ Tisková zpráva, logo, barvy. Vše co potřebujete pro to, abyste se mohli zmí
 <section class="main__section">
   <h2 class="main__section-heading">Provozovatel</h2>
   <p>
-    Provozovatelem stránek <strong>junior.guru</strong> je Honza Javorek,
-    IČO: <a href="http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0" target="_blank" rel="noopener">74279858</a>.
-    Kontaktovat jej můžete na {{ 'ahoj@junior.guru'|email_link }} nebo {{ 'mail@honzajavorek.cz'|email_link }}.
+    Autorem stránek je programátor <strong>Honza Javorek</strong>, jenž se přes {{ year - 2011 }} let dobrovolnicky podílí na pořádání komunitních akcí pro začátečníky v IT a pomáhá i organizacím jako <a href="https://pyladies.cz/">PyLadies</a> nebo <a href="https://www.czechitas.cz/">Czechitas</a>, které se snaží usnadnit vstup do IT ženám. Na podzim roku 2019 opustil tým <a href="https://byznys.ihned.cz/c1-65593630-oracle-kupuje-za-miliardy-korun-cesky-start-up-apiary-zakladatele-ve-firme-zustavaji">úspěšného českého startupu Apiary</a> Jakuba Nešetřila (dnes <a href="https://cesko.digital/">Česko.Digital</a>), aby prostřednictvím Junior Guru začal pomáhat začátečníkům prosadit se v technologických profesích. Junior Guru tvoří jako tzv. „Solo Entrepreneur“, tedy podnikatel na volné noze,
+    jenž nemá ambice rozjíždět firmu. Obsah na stránkách dává volně k dispozici, financování zajišťuje skrze sponzory, <a href="{{ url_for('jobs') }}">nabídky práce</a> a <a href="{{ url_for('donate') }}">dobrovolné příspěvky</a>.
   </p>
   <p>
     Více se o něm můžete dovědět v jeho <a href="{{ url_for('donate') }}#about">krátkém medailonku zde</a> nebo na jeho <a href="https://honzajavorek.cz/">osobní webové stránce</a>.
-    Stránky <strong>junior.guru</strong> tvoří jako tzv. „Solo Entrepreneur“, tedy podnikatel na volné noze,
-    jenž nemá ambice rozjíždět firmu, ale chce projekt provozovat sám.
   </p>
 </section>
 {% endblock %}

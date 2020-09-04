@@ -8,6 +8,11 @@
   margin-bottom: 0;
 }
 
+.intro__note {
+  @include font-0;
+  margin-bottom: $whitespace-2;
+}
+
 .intro__title {
   margin-top: 0;
   text-align: center;
