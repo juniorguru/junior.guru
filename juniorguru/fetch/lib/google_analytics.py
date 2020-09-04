@@ -57,7 +57,7 @@ def metric_avg_monthly_users(view_id, date_range):
             'endDate': date_range[1].isoformat()
         }],
         'metrics': [{'expression': 'ga:users'}],
-        'dimensions': [{'name': 'ga:month'}],
+        'dimensions': [{'name': 'ga:date'}],
     }
     yield calc_avg_monthly_values(report)
 
@@ -70,7 +70,7 @@ def metric_avg_monthly_pageviews(view_id, date_range):
             'endDate': date_range[1].isoformat()
         }],
         'metrics': [{'expression': 'ga:pageviews'}],
-        'dimensions': [{'name': 'ga:month'}],
+        'dimensions': [{'name': 'ga:date'}],
     }
     yield calc_avg_monthly_values(report)
 
@@ -217,23 +217,18 @@ def metric_applications_per_job(view_id, date_range):
     yield per_url_report_to_dict(report)
 
 
-def get_monthly_date_range(months, today=None):
+def get_daily_date_range(today=None, start_months_ago=None):
     today = today or date.today()
-    last_day_last_month = today.replace(day=1) - timedelta(days=1)
-    return (
-        today - relativedelta(day=1, months=months),
-        today - relativedelta(day=last_day_last_month.day, months=1)
-    )
-
-
-def get_daily_date_range(today=None):
-    return (date(2019, 1, 1),
-            (today or date.today()) - timedelta(days=1))
+    if start_months_ago:
+        start_date = today - relativedelta(days=1, months=start_months_ago)
+    else:
+        start_date = date(2019, 1, 1)
+    return (start_date, today - timedelta(days=1))
 
 
 def calc_avg_monthly_values(report):
     total = int(report['data']['totals'][0]['values'][0])
-    months = report['data']['rowCount']
+    months = report['data']['rowCount'] / 30
     return int(math.ceil(total / months))
 
 

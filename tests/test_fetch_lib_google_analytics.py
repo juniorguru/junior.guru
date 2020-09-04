@@ -6,16 +6,6 @@ from juniorguru.fetch.lib import google_analytics
 
 
 @pytest.mark.parametrize('today,expected_start,expected_end', [
-    (date(2020, 6, 9), date(2019, 12, 1), date(2020, 5, 31)),
-    (date(2020, 5, 31), date(2019, 11, 1), date(2020, 4, 30)),
-])
-def test_get_monthly_date_range(today, expected_start, expected_end):
-    expected = (expected_start, expected_end)
-
-    assert google_analytics.get_monthly_date_range(6, today=today) == expected
-
-
-@pytest.mark.parametrize('today,expected_start,expected_end', [
     (date(2020, 6, 9), date(2019, 1, 1), date(2020, 6, 8)),
     (date(2020, 5, 31), date(2019, 1, 1), date(2020, 5, 30)),
 ])
@@ -25,10 +15,20 @@ def test_get_daily_date_range(today, expected_start, expected_end):
     assert google_analytics.get_daily_date_range(today=today) == expected
 
 
+@pytest.mark.parametrize('today,months,expected_start,expected_end', [
+    (date(2020, 6, 9), 6, date(2019, 12, 8), date(2020, 6, 8)),
+])
+def test_get_daily_date_range_start_months_ago(today, months, expected_start, expected_end):
+    expected = (expected_start, expected_end)
+
+    assert google_analytics.get_daily_date_range(today=today,
+                                                 start_months_ago=months) == expected
+
+
 def test_calc_avg_monthly_values():
     assert google_analytics.calc_avg_monthly_values({
         'columnHeader': {
-            'dimensions': ['ga:month'],
+            'dimensions': ['ga:date'],
             'metricHeader': {
                 'metricHeaderEntries': [
                     {'name': 'ga:users', 'type': 'INTEGER'}
@@ -36,23 +36,23 @@ def test_calc_avg_monthly_values():
             }
         },
         'data': {
-            'rows': [
-                {'dimensions': ['01'], 'metrics': [{'values': ['1102']}]},
-                {'dimensions': ['02'], 'metrics': [{'values': ['1037']}]},
-                {'dimensions': ['03'], 'metrics': [{'values': ['4583']}]},
-                {'dimensions': ['04'], 'metrics': [{'values': ['3292']}]},
-                {'dimensions': ['05'], 'metrics': [{'values': ['1833']}]},
-                {'dimensions': ['12'], 'metrics': [{'values': ['1227']}]},
-            ],
+            'rows': [[
+                {'dimensions': ['20200620'], 'metrics': [{'values': ['1102']}]},
+                {'dimensions': ['20200621'], 'metrics': [{'values': ['1037']}]},
+                {'dimensions': ['20200622'], 'metrics': [{'values': ['4583']}]},
+                {'dimensions': ['20200623'], 'metrics': [{'values': ['3292']}]},
+                {'dimensions': ['20200624'], 'metrics': [{'values': ['1833']}]},
+                {'dimensions': ['20200625'], 'metrics': [{'values': ['1227']}]},
+            ] for _ in range(21)],
             'totals': [
-                {'values': ['13074']},
+                {'values': ['282324']},
             ],
-            'rowCount': 6,
+            'rowCount': 126,
             'minimums': [{'values': ['1037']}],
             'maximums': [{'values': ['4583']}],
             'isDataGolden': True
         }
-    }) == (13074 / 6)
+    }) == (282324 / (126 / 30))
 
 
 def test_per_url_report_to_dict():

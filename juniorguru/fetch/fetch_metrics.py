@@ -1,7 +1,7 @@
 import os
 
 from juniorguru.fetch.lib.google_analytics import (
-    GoogleAnalyticsClient, get_daily_date_range, get_monthly_date_range,
+    GoogleAnalyticsClient, get_daily_date_range,
     metric_applications_per_job, metric_avg_monthly_pageviews,
     metric_avg_monthly_users, metric_pageviews_per_external_job,
     metric_pageviews_per_job, metric_users_per_external_job,
@@ -81,7 +81,7 @@ def main():
 def fetch_from_google_analytics():
     api = GoogleAnalyticsClient(GOOGLE_ANALYTICS_VIEW_ID)
     metrics = {}
-    metrics.update(api.execute(get_monthly_date_range(4), [
+    metrics.update(api.execute(get_daily_date_range(start_months_ago=4), [
         metric_avg_monthly_users,
         metric_avg_monthly_pageviews,
     ]))
