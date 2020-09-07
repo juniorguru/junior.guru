@@ -1,21 +1,18 @@
 - id: handbook
-  title: "Průvodce pro začínající programátory Junior Guru vydává příručku o hledání první práce v IT"
-  date: "2020-09-03"
+  title: "Hledáte práci v IT? Junior Guru má pro vás příručku s užitečnými radami"
+  date: "2020-09-07"
   lead: |
-    Programování je obecná dovednost, kterou se může naučit každý a jež může při práci pomáhat např. i novinářům nebo úředníkům. To ukazuje Junior Guru, český průvodce programováním pro samouky. Nyní vydal i [Příručku o hledání první práce v IT](https://junior.guru/candidate-handbook/), která je od 1. září volně přístupná na stránkách [junior.guru](https://junior.guru) a jejíž text bude pravidelně aktualizovaný. Svými tipy a radami může pomoci nejen těm, kteří by se programováním chtěli začít profesionálně živit.
+    Programování je obecná dovednost, kterou se může naučit každý. Při práci může pomáhat i novinářům nebo úředníkům, jak dokazuje Junior Guru, český průvodce programováním pro samouky. Ten nyní vydal Příručku o hledání první práce v IT pro ty, kteří by se programováním chtěli začít profesionálně živit. Je volně přístupná na stránkách junior.guru.
   text: |
-    Záhy po vydání příručky se několik organizací vyjádřilo, že ji budou doporučovat svým absolventům: PyLadies, Czechitas, i brněnský startup ENGETO Academy.
+    „Honza Javorek vydal super reálnou ‚knížku‘ Příručka o hledání první práce v IT. Budeme ji určitě zmiňovat na kariérních workshopech,“ napsala například Monika Ptáčníková, spoluzakladatelka Czechitas. [Příručka](https://junior.guru/candidate-handbook/) si záhy po vydání našla cestu rovnou k několika organizacím, které se věnují začínajícím programátorům, jako jsou PyLadies, Czechitas či brněnský startup ENGETO Academy.
 
-    “Honza Javorek vydal super reálnou “knížku” Příručka o hledání první práce v IT. Budeme ji určitě zmiňovat na kariérních workshopech,” napsala například Monika Ptáčníková, spoluzakladatelka Czechitas.
+    A proč je vznikla nová příručka? „Když někdo projeví zájem o programování, profíci z oboru mu často řeknou, že firmy vezmou z nedostatku lidí každého. Jenže to není pravda. Začátečník má pak nerealistická očekávání a při hledání práce prochází velkým zklamáním. Firmy zase kroutí hlavami, kdo že se jim to hlásí, a jsou méně ochotné otevírat juniorní pozice,“ vysvětluje Honza Javorek.
 
-    “Když někdo projeví zájem o programování, profíci z oboru mu často řeknou, že firmy vezmou z nedostatku lidí každého. Jenže to není pravda. Začátečník má pak nerealistická očekávání a při hledání práce prochází velkým zklamáním. Firmy zase kroutí hlavami, kdo že se jim to hlásí, a jsou méně ochotné otevírat juniorní pozice,” vysvětluje Honza Javorek.
+    „IT je sice oproti jiným vysokoškolsky vyučovaným oborům přístupné. Všechno je možné si nastudovat na internetu a vždy vám někdo ochotně poradí. Získat první práci v IT ale není jednoduché. Jde to i bez titulu, je to však dřina. Příručkou chci ukázat juniorům, jak se v tom orientovat. Jak se kvalitně připravit na hledání práce, jak projít pohovorem, jak vystupovat profesionálně i když jste začátečník. Tím usnadním práci i firmám,“ pokračuje Javorek.
 
-    Pokračuje: “IT je oproti jiným vysokoškolsky vyučovaným oborům rozhodně přístupné. Všechno je možné si nastudovat na internetu a vždy vám někdo ochotně poradí. Získat první práci v IT ale rozhodně není jen tak. Jde to, a to i bez titulu, ale je to dřina. Příručkou chci ukázat juniorům, jak se v tom orientovat. Jak se kvalitně připravit na hledání práce, jak projít pohovorem, jak vystupovat profesionálně i jako začátečník. Tím usnadním práci i firmám,” doplňuje Javorek.
-
-    Přes 9 let se dobrovolnicky podílí na pořádání komunitních akcí pro začátečníky v IT a angažuje se v organizacích jako PyLadies nebo Czechitas, které se snaží usnadnit vstup do IT ženám. Loni na podzim opustil tým [úspěšného českého startupu Apiary](https://byznys.ihned.cz/c1-65593630-oracle-kupuje-za-miliardy-korun-cesky-start-up-apiary-zakladatele-ve-firme-zustavaji) Jakuba Nešetřila (dnes Česko.Digital), aby prostřednictvím Junior Guru začal pomáhat začátečníkům prosadit se v technologických profesích. Obsah na stránkách dává volně k dispozici, financování zajišťuje skrze sponzory a dobrovolné příspěvky.
+    Ten se přes 9 let dobrovolnicky podílí na pořádání komunitních akcí pro začátečníky v IT a angažuje se v organizacích jako PyLadies nebo Czechitas, které se snaží usnadnit vstup do IT ženám. Loni na podzim opustil tým [úspěšného českého startupu Apiary](https://byznys.ihned.cz/c1-65593630-oracle-kupuje-za-miliardy-korun-cesky-start-up-apiary-zakladatele-ve-firme-zustavaji) Jakuba Nešetřila (dnes Česko.Digital), aby prostřednictvím [Junior Guru](https://junior.guru/) začal pomáhat začátečníkům prosadit se v technologických profesích. Obsah na stránkách dává volně k dispozici, financování zajišťuje skrze sponzory a dobrovolné příspěvky.
 
     Mezi prvními firmami, jež se rozhodly příručku sponzorovat, je i nadnárodní společnost Red Hat, která má v Česku kolem 1500 zaměstnanců.
-
 
 - id: women
   title: "Programátorkou se lze stát i při rodičovské"
