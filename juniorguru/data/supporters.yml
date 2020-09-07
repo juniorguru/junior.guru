@@ -31,11 +31,12 @@
 - name: Marek Bartík
   url: https://marekbartik.com
 
+- name: Peter Hozák
+  url: https://peter.hozak.info/
 
 # Supporters paying less than 10 USD/EUR monthly (Patreon, GitHub Sponsors).
 # Eligible to have their name on the donate page, without link.
 
-- name: Peter Hozák
 - name: Petr Viktorin
 - name: Vojtěch Tranta
 - name: Martin Homola
