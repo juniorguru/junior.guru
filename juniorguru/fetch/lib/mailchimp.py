@@ -15,11 +15,11 @@ class MailChimpClient():
     def __init__(self, api_key):
         self.api_key = api_key
 
-    def get(self, url, count=None):
+    def get(self, url, count=1000):
         if not url.startswith('http'):
             url = self.url_base + url
         params = {}
-        if count:
+        if count is not None:
             params['count'] = count
         response = requests.get(url, params=params, auth=('jg', self.api_key))
         response.raise_for_status()

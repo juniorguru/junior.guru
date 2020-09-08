@@ -195,3 +195,9 @@ class JobMetric(BaseModel):
     job = ForeignKeyField(Job, backref='list_metrics')
     name = CharField(choices=[(n, None) for n in JOB_METRIC_NAMES])
     value = IntegerField()
+
+
+class JobNewsletterMention(BaseModel):
+    job = ForeignKeyField(Job, backref='list_newsletter_mentions')
+    sent_at = DateTimeField()
+    link = CharField()
