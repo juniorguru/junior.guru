@@ -39,6 +39,7 @@ python-dateutil = "*"
 requests = "*"
 sendgrid = "*"
 czech-sort = "*"
+itemloaders = "*"
 
 [dev-packages]
 pytest = "*"

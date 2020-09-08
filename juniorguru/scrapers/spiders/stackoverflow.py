@@ -2,7 +2,7 @@ import re
 
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import Identity, MapCompose, TakeFirst
+from itemloaders.processors import Identity, MapCompose, TakeFirst
 
 from juniorguru.scrapers.items import (Job, absolute_url,
                                        parse_relative_time, split)

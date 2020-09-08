@@ -3,7 +3,7 @@ from urllib.parse import urlencode
 from scrapy import Request
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import Compose, Identity, MapCompose, TakeFirst
+from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
 from juniorguru.scrapers.items import Job, first, parse_relative_time, split
 from juniorguru.url_params import increment_param, strip_params

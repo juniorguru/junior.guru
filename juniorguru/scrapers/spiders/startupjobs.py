@@ -3,7 +3,7 @@ import html
 import arrow
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import Compose, Identity, MapCompose, TakeFirst
+from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
 from juniorguru.scrapers.items import Job
 
