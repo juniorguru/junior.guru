@@ -31,6 +31,7 @@ def get_collection(data, collection):
     total_count = data['total_items']
     if count != total_count:
         url = get_link(data, 'self')
+        # https://mailchimp.com/developer/guides/marketing-api-conventions/#query-string-parameters
         raise NotImplementedError(f'Pagination needed: {count}/{total_count}'
                                   f' {collection} ({url})')
     return data[collection]
