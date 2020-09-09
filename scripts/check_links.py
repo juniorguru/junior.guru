@@ -10,7 +10,7 @@ USER_AGENT = (
     'Gecko/20100101 Firefox/70.0'
 )
 EXCLUDE_URLS = [
-    '*static/images/*.png',  # local links to images
+    '*static/images/*.*',  # local links to images
     'facebook.com/search/events/?q=english',  # HTTP_404 in response if user isn't logged in
 ]
 EXCLUDE_REASONS = [re.compile(r) for r in [
