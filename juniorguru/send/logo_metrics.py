@@ -1,10 +1,8 @@
 import os
 import random
 import sys
-from datetime import date
 from pathlib import Path
 from pprint import pformat
-from urllib.parse import quote_plus
 
 from jinja2 import Template
 from sendgrid import SendGridAPIClient
@@ -79,23 +77,17 @@ def create_message(logo, template, today=None):
 
 
 def create_template_context(logo, today=None):
-    return {}
-    # return dict(title=job.title,
-    #             company_name=job.company_name,
-    #             company_name_urlencoded=quote_plus(job.company_name),
-    #             pricing_plan=job.pricing_plan,
-    #             url=f'https://junior.guru/jobs/{job.id}/',
-    #             url_jobs='https://junior.guru/jobs/',
-    #             url_index='https://junior.guru/',
-    #             url_logo='https://junior.guru/static/images/logo-email.png',
-    #             metrics=job.metrics,
-    #             start_at=job.approved_at,
-    #             start_days=job.days_since_approved(today),
-    #             end_at=job.expires_at,
-    #             end_days=job.days_until_expires(today),
-    #             expires_soon=job.expires_soon(today),
-    #             newsletter_mentions=job.newsletter_mentions,
-    #             newsletter_archive_url='https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75')
+    return dict(name=logo.name,
+                url=logo.link,
+                url_handbook='https://junior.guru/candidate-handbook/',
+                url_index='https://junior.guru/',
+                url_logo='https://junior.guru/static/images/logo-email.png',
+                metrics=logo.metrics,
+                start_at=logo.starts_at,
+                start_days=logo.days_since_started(today),
+                end_at=logo.expires_at,
+                end_days=logo.days_until_expires(today),
+                expires_soon=logo.expires_soon(today))
 
 
 def send(message):

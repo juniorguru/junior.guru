@@ -1,0 +1,109 @@
+<p style="background: #fffa72; padding: 5px 3px;">
+  <img src="{{ url_logo }}" alt="junior.guru logo" width="150" style="display: block;">
+</p>
+<p>
+  Hezký den!
+</p>
+<p>
+  Tento pravidelný, automatický e-mail vám přišel, protože máte logo
+  na stránce {{ url_handbook }}:
+</p>
+<table style="border-collapse: collapse;">
+  <tr>
+    <td>
+      <b>Název:</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      {{ name }}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Odkaz:</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <a href="{{ url }}">{{ url }}</a>
+    </td>
+  </tr>
+</table>
+<p>
+  Jak vašemu logu zatím daří?
+</p>
+<table style="border-collapse: collapse;">
+  <tr>
+    <td>
+      Trvání:&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <b>{{ start_days }}&nbsp;dní</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <small>logo zobrazeno od&nbsp;{{ start_at.day }}.{{ start_at.month }}.{{ start_at.year }}</small>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Zbývá:&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <b>{{ end_days }}&nbsp;dní</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <small>sponzorství vyprší {{ end_at.day }}.{{ end_at.month }}.{{ end_at.year }}</small>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Počet návštěvníků:&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <b>{{ metrics.users }}</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      &nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Počet zobrazení:&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <b>{{ metrics.pageviews }}</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      &nbsp;
+    </td>
+  </tr>
+{% if metrics.clicks %}
+  <tr>
+    <td>
+      Počet kliknutí:&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      <b>{{ metrics.clicks }}</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      &nbsp;
+    </td>
+  </tr>
+{% endif %}
+</table>
+<p><small>
+  Statistiky jsou podhodnocené a pouze orientační. Čísla
+  pocházejí z nástroje Google Analytics, který mohou uživatelé blokovat.
+</small></p>
+{% if expires_soon %}
+<p><b>
+  Vaše sponzorství brzy vyprší! Prodlužte jej o 3 měsíce, nebo rovnou o rok.
+  Na webu najdete <a href="https://junior.guru/hire-juniors/#handbook">ceník i dosavadní ohlasy</a>.
+  V případě zájmu stačí, když odpovíte na tento e-mail.
+</b></p>
+{% endif %}
+<p>
+  Chcete-li inzerát změnit, zrušit, prodloužit, nebo máte-li jakýkoliv
+  dotaz, jednoduše <b>odpovězte na tento e-mail</b>.
+</p>
+<p>
+  Za <a href="{{ url_index }}">junior.guru</a>,<br>
+  Honza Javorek
+</p>
