@@ -4,19 +4,11 @@ import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.models import Logo, LogoMetric
+from testing_utils import prepare_logo_data
 
 
-def create_logo(_id, **kwargs):
-    t = date.today()
-    return Logo.create(id=_id,
-                       name=kwargs.get('name', 'Awesome Company'),
-                       filename=kwargs.get('filename', 'awesome-company.svg'),
-                       email=kwargs.get('email', 'recruitment@example.com'),
-                       link=kwargs.get('link', 'https://jobs.example.com'),
-                       link_re=kwargs.get('link_re'),
-                       months=kwargs.get('monhts', 12),
-                       starts_at=kwargs.get('starts_at', t),
-                       expires_at=kwargs.get('expires_at', t + timedelta(days=365)))
+def create_logo(id, **kwargs):
+    return Logo.create(**prepare_logo_data(id, **kwargs))
 
 
 @pytest.fixture
@@ -92,14 +84,14 @@ def test_get_by_url_multiple_match(db_connection):
         Logo.get_by_url('https://example.com/moo/')
 
 
-def test_days_since_started(db_connection):
-    logo = create_logo('1', starts_at=date(1987, 8, 30))
+def test_days_since_started():
+    logo = Logo(**prepare_logo_data('1', starts_at=date(1987, 8, 30)))
 
     assert logo.days_since_started(today=date(1987, 9, 8)) == 9
 
 
-def test_days_until_expires(db_connection):
-    logo = create_logo('1', expires_at=date(1987, 9, 8))
+def test_days_until_expires():
+    logo = Logo(**prepare_logo_data('1', expires_at=date(1987, 9, 8)))
 
     assert logo.days_until_expires(today=date(1987, 8, 30)) == 9
 
@@ -112,14 +104,18 @@ def test_days_until_expires(db_connection):
     pytest.param(date(2020, 6, 30), True, id='day before'),
     pytest.param(date(2020, 7, 1), True, id='the same day'),
 ])
-def test_expires_soon(db_connection, today, expected):
-    logo = create_logo('1', starts_at=date(2020, 1, 1), expires_at=date(2020, 7, 1))
+def test_expires_soon(today, expected):
+    logo = Logo(**prepare_logo_data('1',
+                                    starts_at=date(2020, 1, 1),
+                                    expires_at=date(2020, 7, 1)))
 
     assert logo.expires_soon(today=today) is expected
 
 
-def test_from_values_per_date(db_connection):
-    logo = create_logo('1', starts_at=date(2020, 9, 1), expires_at=date(2020, 10, 1))
+def test_from_values_per_date():
+    logo = Logo(**prepare_logo_data('1',
+                                    starts_at=date(2020, 9, 1),
+                                    expires_at=date(2020, 10, 1)))
     metric = LogoMetric.from_values_per_date(logo, 'users', {
         date(2020, 8, 15): 1000,
         date(2020, 9, 1): 10,

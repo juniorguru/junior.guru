@@ -1,5 +1,5 @@
 import json
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 import pytest
@@ -77,4 +77,19 @@ def prepare_job_data(id, **kwargs):
         jg_rank=kwargs.get('jg_rank'),
         link=kwargs.get('link'),
         pricing_plan=kwargs.get('pricing_plan', 'community'),
+    )
+
+
+def prepare_logo_data(id, **kwargs):
+    today = date.today()
+    return dict(
+        id=id,
+        name=kwargs.get('name', 'Awesome Company'),
+        filename=kwargs.get('filename', 'awesome-company.svg'),
+        email=kwargs.get('email', 'recruitment@example.com'),
+        link=kwargs.get('link', 'https://jobs.example.com'),
+        link_re=kwargs.get('link_re'),
+        months=kwargs.get('monhts', 12),
+        starts_at=kwargs.get('starts_at', today),
+        expires_at=kwargs.get('expires_at', today + timedelta(days=365))
     )
