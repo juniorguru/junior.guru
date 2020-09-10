@@ -14,7 +14,7 @@ from juniorguru.log import get_log
 from juniorguru.models import Job
 
 
-DEBUG = os.getenv('JG_DEBUG_SEND_METRICS', '--debug' in sys.argv)
+DEBUG = os.getenv('DEBUG_SEND_METRICS', '--debug' in sys.argv)
 SENDGRID_ENABLED = os.getenv('SENDGRID_ENABLED')
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
 SENDGRID_LIMIT = 100
@@ -44,7 +44,7 @@ def main():
     if jobs_count > SENDGRID_LIMIT:
         log.error(f'Jobs count is too high! {jobs_count} > {SENDGRID_LIMIT}')
 
-    template_path = Path(__file__).parent / 'templates' / 'metrics.html'
+    template_path = Path(__file__).parent / 'templates' / 'job_metrics.html'
     template = Template(template_path.read_text())
 
     status = 0

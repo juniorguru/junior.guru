@@ -6,7 +6,7 @@ from jinja2 import Template
 from playhouse.sqlite_ext import JSONField
 
 from juniorguru.models import Job, JobNewsletterMention
-from juniorguru.send.send_metrics import create_message
+from juniorguru.send.job_metrics import create_message
 from testing_utils import prepare_job_data
 
 

@@ -1,8 +1,8 @@
-from juniorguru.send.send_metrics import main as send_metrics
+from juniorguru.send.job_metrics import main as send_job_metrics
 
 
 def main():
-    send_metrics()
+    send_job_metrics()
 
 
 if __name__ == '__main__':
