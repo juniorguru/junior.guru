@@ -25,6 +25,7 @@ def coerce_record(record):
         r'^link$': ('link', parse_text),
         r'^link regexp$': ('link_re', parse_text),
         r'^months$': ('months', parse_int),
+        r'^job slots$': ('job_slots', parse_int),
         r'^starts$': ('starts_at', parse_date),
         r'^expires$': ('expires_at', parse_date),
     }, record)

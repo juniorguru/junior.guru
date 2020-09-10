@@ -47,7 +47,7 @@ def coerce_record(record):
         r'^expire[ds]$': ('expires_at', parse_date),
     }, record)
 
-    if job['approved_at'] and not job['expires_at']:
+    if job.get('approved_at') and 'expires_at' not in job:
         job['expires_at'] = job['approved_at'] + timedelta(days=30)
     job['id'] = create_id(job['posted_at'], job['company_link'])
     job['source'] = 'juniorguru'

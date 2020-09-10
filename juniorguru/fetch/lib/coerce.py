@@ -10,7 +10,9 @@ def coerce(mapping, record):
         key_re = re.compile(key_pattern, re.I)
         for record_key, record_value in record.items():
             if key_re.search(record_key):
-                data[key_name] = key_coerce(record_value)
+                value = key_coerce(record_value)
+                if value is not None:
+                    data[key_name] = value
     return data
 
 

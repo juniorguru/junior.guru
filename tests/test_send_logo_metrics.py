@@ -49,7 +49,7 @@ def test_create_message_start_end(logo_mock, template):
 
 
 @pytest.mark.parametrize('expires_at,expected', [
-    (date(2020, 10, 1), 'Jak se daří příručce? (Awesome Company)'),
+    (date(2020, 10, 1), 'Jak se daří vašemu logu na příručce? (Awesome Company)'),
     (date(2020, 6, 25), 'Vaše sponzorství příručky brzy vyprší! (Awesome Company)'),
 ])
 def test_create_message_subject(logo_mock, template, expires_at, expected):
@@ -57,6 +57,25 @@ def test_create_message_subject(logo_mock, template, expires_at, expected):
     message = create_message(logo_mock, template, today=date(2020, 6, 20))
 
     assert message.get()['subject'] == expected
+
+
+def test_create_message_job_slots_zero(logo_mock, template):
+    logo_mock.job_slots = 0
+    message = create_message(logo_mock, template, today=date(2020, 6, 23))
+    html = message.get()['content'][0]['value']
+
+    assert 'paušál' not in html
+    assert 'inzerát' not in html
+
+
+def test_create_message_job_slots_non_zero(logo_mock, template):
+    logo_mock.job_slots = 43
+    message = create_message(logo_mock, template, today=date(2020, 6, 23))
+    html = message.get()['content'][0]['value']
+
+    assert 'paušál' in html
+    assert 'současně inzerátů' in html
+    assert '<b>43</b>' in html
 
 
 def test_create_message_clicks_zero(logo_mock, template):

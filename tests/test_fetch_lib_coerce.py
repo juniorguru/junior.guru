@@ -10,10 +10,12 @@ def test_coerce():
         r'^name$': ('name', coerce.parse_text),
         r'^numbers?$': ('number', coerce.parse_int),
         r'^start(s|ed)$': ('starts_at', coerce.parse_date),
+        r'^count$': ('something', coerce.parse_int),
     }, {
         'Name': '\tHonza   ',
         'Number': '123   ',
         'Started': '2020-08-30',
+        'Count': '',
     }) == {
         'name': 'Honza',
         'number': 123,

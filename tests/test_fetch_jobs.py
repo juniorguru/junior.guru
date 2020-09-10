@@ -53,7 +53,6 @@ def test_coerce_record():
         'company_link': 'https://www.example.com',
         'employment_types': frozenset(['internship', 'full-time']),
         'title': 'Frontend Ninja',
-        'description': None,
         'location': 'Prague',
         'link': 'https://jobs.example.com/1245/',
         'pricing_plan': 'community',
@@ -74,4 +73,4 @@ def test_coerce_record_expires(approved, expires, expected):
         'Expires': expires,
     }))
 
-    assert data['expires_at'] == expected
+    assert data.get('expires_at') == expected

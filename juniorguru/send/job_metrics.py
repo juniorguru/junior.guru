@@ -19,7 +19,7 @@ SENDGRID_ENABLED = os.getenv('SENDGRID_ENABLED')
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
 
 
-log = get_log(__name__)
+log = get_log('job_metrics')
 
 
 def main():

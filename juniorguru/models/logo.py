@@ -22,6 +22,7 @@ class Logo(BaseModel):
     link = CharField()
     link_re = CharField()
     months = IntegerField()
+    job_slots = IntegerField(default=0)
     starts_at = DateField()
     expires_at = DateField()
 

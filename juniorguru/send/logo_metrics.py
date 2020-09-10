@@ -17,7 +17,7 @@ SENDGRID_ENABLED = os.getenv('SENDGRID_ENABLED')
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
 
 
-log = get_log(__name__)
+log = get_log('logo_metrics')
 
 
 def main():
@@ -59,7 +59,7 @@ def create_message(logo, template, today=None):
     if logo.expires_soon(today):
         subject = 'Vaše sponzorství příručky brzy vyprší!'
     else:
-        subject = 'Jak se daří příručce?'
+        subject = 'Jak se daří vašemu logu na příručce?'
     subject = f'{subject} ({logo.name})'
 
     from_email = From('metrics@junior.guru', 'junior.guru')
@@ -78,7 +78,10 @@ def create_message(logo, template, today=None):
 
 def create_template_context(logo, today=None):
     return dict(name=logo.name,
+                months=logo.months,
+                job_slots=logo.job_slots,
                 url=logo.link,
+                url_jobs='https://junior.guru/jobs/',
                 url_handbook='https://junior.guru/candidate-handbook/',
                 url_index='https://junior.guru/',
                 url_logo='https://junior.guru/static/images/logo-email.png',

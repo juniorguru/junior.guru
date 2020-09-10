@@ -27,8 +27,8 @@ def test_coerce_record():
         'name': 'Awesome Company',
         'email': 'recruitment@example.com',
         'link': 'https://example.com/landing-page',
-        'link_re': None,
         'months': 12,
+        'job_slots': 2,
         'starts_at': date(2020, 9, 4),
         'expires_at': date(2021, 9, 4),
     }

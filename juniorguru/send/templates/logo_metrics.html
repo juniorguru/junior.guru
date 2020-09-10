@@ -6,17 +6,9 @@
 </p>
 <p>
   Tento pravidelný, automatický e-mail vám přišel, protože máte logo
-  na stránce {{ url_handbook }}:
+  na <a href="{{ url_handbook }}">Příručce o hledání první práce v IT</a>:
 </p>
 <table style="border-collapse: collapse;">
-  <tr>
-    <td>
-      <b>Název:</b>&nbsp;&nbsp;&nbsp;
-    </td>
-    <td>
-      {{ name }}
-    </td>
-  </tr>
   <tr>
     <td>
       <b>Odkaz:</b>&nbsp;&nbsp;&nbsp;
@@ -25,9 +17,25 @@
       <a href="{{ url }}">{{ url }}</a>
     </td>
   </tr>
+  <tr>
+    <td>
+      <b>Tarif:</b>&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      Logo na&nbsp;{{ months }}&nbsp;měs.{% if job_slots > 0 %}&nbsp;+&nbsp;paušál na inzeráty{% endif %}
+    </td>
+  </tr>
 </table>
+
+{% if job_slots > 0 %}
+<p><small>
+  V rámci svého tarifu můžete na <a href="{{ url_jobs }}">stránce s nabídkami práce</a>
+  libovolně vystavovat, prodlužovat nebo rušit inzeráty. Nejvýše můžete mít současně inzerátů: <b>{{ job_slots }}</b>
+</small></p>
+{% endif %}
+
 <p>
-  Jak vašemu logu zatím daří?
+  Jak se vašemu logu zatím daří?
 </p>
 <table style="border-collapse: collapse;">
   <tr>
@@ -100,7 +108,7 @@
 </b></p>
 {% endif %}
 <p>
-  Chcete-li inzerát změnit, zrušit, prodloužit, nebo máte-li jakýkoliv
+  Chcete-li sponzorství změnit, zrušit, prodloužit, nebo máte-li jakýkoliv
   dotaz, jednoduše <b>odpovězte na tento e-mail</b>.
 </p>
 <p>
