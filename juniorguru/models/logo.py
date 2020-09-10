@@ -46,9 +46,17 @@ class Logo(BaseModel):
             .where(cls.starts_at <= today, cls.expires_at >= today) \
             .order_by(cls.months.desc(), cls.starts_at)
 
-    @property
-    def metrics(self):
-        return {}
+    def days_since_started(self, today=None):
+        today = today or date.today()
+        return (today - self.starts_at).days
+
+    def days_until_expires(self, today=None):
+        today = today or date.today()
+        return (self.expires_at - today).days
+
+    def expires_soon(self, today=None):
+        today = today or date.today()
+        return self.days_until_expires(today=today) <= 35
 
 
 class LogoMetric(BaseModel):

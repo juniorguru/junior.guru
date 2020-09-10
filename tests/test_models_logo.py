@@ -92,8 +92,30 @@ def test_get_by_url_multiple_match(db_connection):
         Logo.get_by_url('https://example.com/moo/')
 
 
-def test_metrics(db_connection):
-    pass
+def test_days_since_started(db_connection):
+    logo = create_logo('1', starts_at=date(1987, 8, 30))
+
+    assert logo.days_since_started(today=date(1987, 9, 8)) == 9
+
+
+def test_days_until_expires(db_connection):
+    logo = create_logo('1', expires_at=date(1987, 9, 8))
+
+    assert logo.days_until_expires(today=date(1987, 8, 30)) == 9
+
+
+@pytest.mark.parametrize('today,expected', [
+    pytest.param(date(2020, 5, 20), False, id='not soon'),
+    pytest.param(date(2020, 5, 26), False, id='36 days before'),
+    pytest.param(date(2020, 5, 27), True, id='35 days before'),
+    pytest.param(date(2020, 6, 1), True, id='30 days before'),
+    pytest.param(date(2020, 6, 30), True, id='day before'),
+    pytest.param(date(2020, 7, 1), True, id='the same day'),
+])
+def test_expires_soon(db_connection, today, expected):
+    logo = create_logo('1', starts_at=date(2020, 1, 1), expires_at=date(2020, 7, 1))
+
+    assert logo.expires_soon(today=today) is expected
 
 
 def test_from_values_per_date(db_connection):

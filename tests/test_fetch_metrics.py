@@ -1,4 +1,4 @@
-from juniorguru.fetch.fetch_metrics import merge_metric_dicts
+from juniorguru.fetch.metrics import merge_metric_dicts
 
 
 def test_merge_metric_dicts():

@@ -25,7 +25,7 @@ def job_mock():
 
 @pytest.fixture
 def template():
-    template_path = Path(__file__).parent.parent / 'juniorguru' / 'send' / 'templates' / 'metrics.html'
+    template_path = Path(__file__).parent.parent / 'juniorguru' / 'send' / 'templates' / 'job_metrics.html'
     return Template(template_path.read_text())
 
 

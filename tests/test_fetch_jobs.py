@@ -3,7 +3,7 @@ from datetime import datetime, date
 
 import pytest
 
-from juniorguru.fetch.fetch_jobs import coerce_record, parse_pricing_plan, create_id
+from juniorguru.fetch.jobs import coerce_record, parse_pricing_plan, create_id
 
 
 def create_record(record=None):
