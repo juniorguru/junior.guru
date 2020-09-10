@@ -277,6 +277,26 @@ def metric_applications_per_job(view_id, date_range):
     yield per_url_report_to_dict(report)
 
 
+def metric_clicks_per_logo(view_id, date_range):
+    report = yield {
+        'viewId': view_id,
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
+        'metrics': [{'expression': 'ga:uniqueEvents'}],
+        'dimensions': [{'name': 'ga:eventLabel'}],
+        'dimensionFilterClauses': [{
+            'filters': [{
+                'dimensionName': 'ga:eventCategory',
+                'operator': 'EXACT',
+                'expressions': ['handbook-logo'],
+            }],
+        }],
+    }
+    yield per_url_report_to_dict(report)
+
+
 def get_daily_date_range(today=None, start_months_ago=None):
     today = today or date.today()
     if start_months_ago:
