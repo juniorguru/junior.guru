@@ -1,9 +1,9 @@
 import hashlib
-from datetime import date, datetime
+from datetime import datetime, date
 
 import pytest
 
-from juniorguru.fetch.lib import jobs_sheet
+from juniorguru.fetch.fetch_jobs import coerce_record, parse_pricing_plan, create_id
 
 
 def create_record(record=None):
@@ -25,83 +25,6 @@ def create_record(record=None):
 
 
 @pytest.mark.parametrize('value,expected', [
-    (None, None),
-
-    # default Google Sheets format
-    ('12/13/2019 9:17:57', datetime(2019, 12, 13, 9, 17, 57)),
-    ('8/6/2019 14:08:49', datetime(2019, 8, 6, 14, 8, 49)),
-
-    # my custom setting
-    ('2019-08-06 14:08:49', datetime(2019, 8, 6, 14, 8, 49)),
-    ('2019-08-06 14:08:49+02:00', datetime(2019, 8, 6, 14, 8, 49)),
-])
-def test_coerce_datetime(value, expected):
-    assert jobs_sheet.coerce_datetime(value) == expected
-
-
-@pytest.mark.parametrize('value,expected', [
-    (None, None),
-
-    # default Google Sheets format
-    ('12/13/2019 9:17:57', date(2019, 12, 13)),
-    ('8/6/2019 14:08:49', date(2019, 8, 6)),
-    ('8/6/2019', date(2019, 8, 6)),
-
-    # my custom setting
-    ('2019-08-06 14:08:49', date(2019, 8, 6)),
-    ('2019-08-06', date(2019, 8, 6)),
-])
-def test_coerce_date(value, expected):
-    assert jobs_sheet.coerce_date(value) == expected
-
-
-@pytest.mark.parametrize('value,expected', [
-    (None, None),
-    (' Foo Ltd.   ', 'Foo Ltd.'),
-])
-def test_coerce_text(value, expected):
-    assert jobs_sheet.coerce_text(value) == expected
-
-
-@pytest.mark.parametrize('value,expected', [
-    (None, None),
-    ('foo', None),
-    ('1', None),
-    ('True', None),
-    ('true', None),
-    ('yes', True),
-    ('no', False),
-])
-def test_coerce_boolean_words(value, expected):
-    assert jobs_sheet.coerce_boolean_words(value) == expected
-
-
-@pytest.mark.parametrize('value,expected', [
-    (None, False),
-    ('', False),
-    ('foo', True),
-    ('1', True),
-    ('True', True),
-    ('true', True),
-    ('yes', True),
-    ('no', True),
-])
-def test_coerce_boolean(value, expected):
-    assert jobs_sheet.coerce_boolean(value) == expected
-
-
-@pytest.mark.parametrize('value,expected', [
-    (None, frozenset()),
-    ('', frozenset()),
-    (', ,', frozenset()),
-    ('web frontend, bash', frozenset(['bash', 'web frontend'])),
-    ('internship', frozenset(['internship'])),
-])
-def test_coerce_set(value, expected):
-    assert jobs_sheet.coerce_set(value) == expected
-
-
-@pytest.mark.parametrize('value,expected', [
     ('5000 CZK — Annual Flat Rate, first posting (Roční paušál, první inzerát)', 'annual_flat_rate'),
     ('0 CZK — Annual Flat Rate (Roční paušál)', 'annual_flat_rate'),
     ('500 CZK — Standard', 'standard'),
@@ -112,17 +35,17 @@ def test_coerce_set(value, expected):
     ('', 'community'),
     (None, 'community'),
 ])
-def test_coerce_pricing_plan(value, expected):
-    assert jobs_sheet.coerce_pricing_plan(value) == expected
+def test_parse_pricing_plan(value, expected):
+    assert parse_pricing_plan(value) == expected
 
 
 def test_create_id():
-    id_ = jobs_sheet.create_id(datetime(2019, 7, 6, 20, 24, 3), 'https://www.example.com/foo/bar.html')
+    id_ = create_id(datetime(2019, 7, 6, 20, 24, 3), 'https://www.example.com/foo/bar.html')
     assert id_ == hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest()
 
 
 def test_coerce_record():
-    assert jobs_sheet.coerce_record(create_record()) == {
+    assert coerce_record(create_record()) == {
         'id': hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest(),
         'posted_at': datetime(2019, 7, 6, 20, 24, 3),
         'email': 'jobs@example.com',
@@ -146,7 +69,7 @@ def test_coerce_record():
     ('6/23/2020', '6/30/2020', date(2020, 6, 30)),
 ])
 def test_coerce_record_expires(approved, expires, expected):
-    data = jobs_sheet.coerce_record(create_record({
+    data = coerce_record(create_record({
         'Approved': approved,
         'Expires': expires,
     }))

@@ -1,4 +1,5 @@
 from juniorguru.fetch.fetch_jobs import main as fetch_jobs
+from juniorguru.fetch.fetch_logos import main as fetch_logos
 from juniorguru.fetch.fetch_metrics import main as fetch_metrics
 from juniorguru.fetch.fetch_stories import main as fetch_stories
 from juniorguru.fetch.fetch_supporters import main as fetch_supporters
@@ -13,11 +14,12 @@ def main():
     fetch_supporters()
     fetch_last_modified()
     fetch_press_releases()
+    fetch_logos()
+    fetch_jobs()
 
     # order-sensitive
-    fetch_jobs()
-    fetch_metrics()
-    fetch_newsletter_mentions()
+    fetch_metrics()  # depends on jobs & logos
+    fetch_newsletter_mentions()  # depends on jobs
 
 
 if __name__ == '__main__':
