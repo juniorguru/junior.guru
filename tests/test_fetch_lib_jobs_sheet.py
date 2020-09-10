@@ -20,7 +20,6 @@ def create_record(record=None):
         'Job link': record.get('Job link', 'https://jobs.example.com/1245/'),
         'Pricing plan': record.get('Pricing plan', '0 CZK — Community'),
         'Approved': record.get('Approved', '10/10/2019'),
-        'Sent': record.get('Sent', '11/11/2019'),
         'Expires': record.get('Expires', '12/12/2019'),
     }
 
