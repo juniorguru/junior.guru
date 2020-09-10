@@ -1,6 +1,4 @@
-import re
 import hashlib
-from urllib.parse import urlparse
 
 from juniorguru.fetch.lib.google import download_sheet
 from juniorguru.fetch.lib.coerce import coerce, parse_text, parse_int, parse_date
@@ -32,8 +30,6 @@ def coerce_record(record):
     }, record)
 
     logo['id'] = hashlib.sha224(logo['name'].encode()).hexdigest()
-    if logo['link_re'] is None:
-        logo['link_re'] = re.escape(urlparse(logo['link']).netloc)
 
     return logo
 

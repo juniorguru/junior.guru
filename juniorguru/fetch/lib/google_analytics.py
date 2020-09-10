@@ -297,6 +297,46 @@ def metric_clicks_per_logo(view_id, date_range):
     yield per_url_report_to_dict(report)
 
 
+def metric_handbook_users_per_date(view_id, date_range):
+    report = yield {
+        'viewId': view_id,
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
+        'metrics': [{'expression': 'ga:users'}],
+        'dimensions': [{'name': 'ga:date'}],
+        'dimensionFilterClauses': [{
+            'filters': [{
+                'dimensionName': 'ga:pagePath',
+                'operator': 'REGEXP',
+                'expressions': ['^/candidate-handbook/'],
+            }],
+        }],
+    }
+    yield per_date_report_to_dict(report)
+
+
+def metric_handbook_pageviews_per_date(view_id, date_range):
+    report = yield {
+        'viewId': view_id,
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
+        'metrics': [{'expression': 'ga:pageviews'}],
+        'dimensions': [{'name': 'ga:date'}],
+        'dimensionFilterClauses': [{
+            'filters': [{
+                'dimensionName': 'ga:pagePath',
+                'operator': 'REGEXP',
+                'expressions': ['^/candidate-handbook/'],
+            }],
+        }],
+    }
+    yield per_date_report_to_dict(report)
+
+
 def get_daily_date_range(today=None, start_months_ago=None):
     today = today or date.today()
     if start_months_ago:
@@ -322,6 +362,16 @@ def per_url_report_to_dict(report):
         value = int(row['metrics'][0]['values'][0])
         data.setdefault(url, 0)
         data[url] += value
+    return data
+
+
+def per_date_report_to_dict(report):
+    data = {}
+    for row in report['data']['rows']:
+        date = datetime.strptime(row['dimensions'][0], '%Y%m%d').date()
+        value = int(row['metrics'][0]['values'][0])
+        data.setdefault(date, 0)
+        data[date] += value
     return data
 
 

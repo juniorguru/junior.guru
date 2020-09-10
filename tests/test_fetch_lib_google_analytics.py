@@ -43,7 +43,7 @@ def test_calc_avg_monthly_values():
                     'dimensions': [(init_date + timedelta(days=i)).strftime('%Y%m%d')],
                     'metrics': [{'values': [str(1000 + i)]}],
                 }
-                for i in range(0, 65)
+                for i in range(65)
             ],
             'totals': [
                 {'values': ['67080']},
@@ -156,6 +156,46 @@ def test_per_url_report_to_dict():
         'https://junior.guru/jobs/xyz8/': 6,
         'https://junior.guru/jobs/xyz9/': 4,
         'https://junior.guru/jobs/xyz0/': 2,
+    }
+
+
+def test_per_date_report_to_dict():
+    init_date = date(2020, 6, 14)
+    assert google_analytics.per_date_report_to_dict({
+        'columnHeader': {
+            'dimensions': ['ga:date'],
+            'metricHeader': {
+                'metricHeaderEntries': [
+                    {'name': 'ga:users', 'type': 'INTEGER'}
+                ]
+            }
+        },
+        'data': {
+            'rows': [
+                {
+                    'dimensions': [(init_date + timedelta(days=i)).strftime('%Y%m%d')],
+                    'metrics': [{'values': [str(1000 + i)]}],
+                }
+                for i in range(9)
+            ],
+            'totals': [
+                {'values': ['9036']},
+            ],
+            'rowCount': 9,
+            'minimums': [{'values': ['1000']}],
+            'maximums': [{'values': ['1008']}],
+            'isDataGolden': True
+        }
+    }) == {
+        date(2020, 6, 14): 1000,
+        date(2020, 6, 15): 1001,
+        date(2020, 6, 16): 1002,
+        date(2020, 6, 17): 1003,
+        date(2020, 6, 18): 1004,
+        date(2020, 6, 19): 1005,
+        date(2020, 6, 20): 1006,
+        date(2020, 6, 21): 1007,
+        date(2020, 6, 22): 1008,
     }
 
 

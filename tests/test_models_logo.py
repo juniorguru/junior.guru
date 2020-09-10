@@ -13,7 +13,7 @@ def create_logo(_id, **kwargs):
                        filename=kwargs.get('filename', 'awesome-company.svg'),
                        email=kwargs.get('email', 'recruitment@example.com'),
                        link=kwargs.get('link', 'https://jobs.example.com'),
-                       link_re=kwargs.get('link_re', r'example\.com'),
+                       link_re=kwargs.get('link_re'),
                        months=kwargs.get('monhts', 12),
                        starts_at=kwargs.get('starts_at', t),
                        expires_at=kwargs.get('expires_at', t + timedelta(days=365)))
@@ -56,3 +56,56 @@ def test_listing_only_active(db_connection):
     logo5 = create_logo('5', starts_at=t - timedelta(days=30), expires_at=t + timedelta(days=30))
 
     assert set(Logo.listing(today=t)) == {logo1, logo2, logo5}
+
+
+def test_get_by_url(db_connection):
+    logo1 = create_logo('1', link='https://abc.example.com')
+    logo2 = create_logo('2', link='https://xyz.example.com')
+
+    assert Logo.get_by_url('https://abc.example.com/something/') == logo1
+    assert Logo.get_by_url('https://xyz.example.com/moo/?utm_medium=foo') == logo2
+
+
+def test_get_by_url_explicit_re(db_connection):
+    logo1 = create_logo('1', link='https://abc.example.com', link_re=r'abc\.example\.com|moo\.example\.com')
+    logo2 = create_logo('2', link='https://xyz.example.com', link_re=r'xyz\.example\.com|utm_medium')
+
+    assert Logo.get_by_url('https://abc.example.com/something/') == logo1
+    assert Logo.get_by_url('https://moo.example.com/everything/?v=123') == logo1
+    assert Logo.get_by_url('https://xyz.example.com/moo/') == logo2
+    assert Logo.get_by_url('https://example.com/moo/?utm_medium=foo') == logo2
+
+
+def test_get_by_url_no_match(db_connection):
+    create_logo('1', link='https://abc.example.com')
+    create_logo('2', link='https://xyz.example.com')
+
+    with pytest.raises(Logo.DoesNotExist):
+        Logo.get_by_url('https://example.com/moo/?utm_medium=foo')
+
+
+def test_get_by_url_multiple_match(db_connection):
+    create_logo('1', link='https://example.com', link_re=r'example\.com')
+    create_logo('2', link='https://example.com/something/', link_re=r'example\.com')
+
+    with pytest.raises(Logo.AmbiguousMatch):
+        Logo.get_by_url('https://example.com/moo/')
+
+
+def test_metrics(db_connection):
+    pass
+
+
+def test_from_values_per_date(db_connection):
+    logo = create_logo('1', starts_at=date(2020, 9, 1), expires_at=date(2020, 10, 1))
+    metric = LogoMetric.from_values_per_date(logo, 'users', {
+        date(2020, 8, 15): 1000,
+        date(2020, 9, 1): 10,
+        date(2020, 9, 15): 20,
+        date(2020, 10, 1): 30,
+        date(2020, 10, 15): 1000,
+    })
+
+    assert metric.logo == logo
+    assert metric.name == 'users'
+    assert metric.value == 10 + 20 + 30

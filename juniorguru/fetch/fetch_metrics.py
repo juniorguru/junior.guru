@@ -7,11 +7,11 @@ from juniorguru.fetch.lib.google_analytics import (
     metric_pageviews_per_job, metric_users_per_external_job,
     metric_users_per_job, metric_locations_per_job, metric_avg_monthly_handbook_users,
     metric_avg_monthly_handbook_pageviews, metric_avg_monthly_handbook_logo_clicks,
-    metric_clicks_per_logo)
+    metric_clicks_per_logo, metric_handbook_users_per_date, metric_handbook_pageviews_per_date)
 from juniorguru.fetch.lib.mailchimp import (MailChimpClient, get_collection,
                                             get_link,
                                             sum_clicks_per_external_url)
-from juniorguru.models import Job, JobMetric, Metric, db
+from juniorguru.models import Job, JobMetric, Metric, Logo, LogoMetric, db
 
 
 GOOGLE_ANALYTICS_VIEW_ID = '198392474'  # https://ga-dev-tools.appspot.com/account-explorer/
@@ -88,6 +88,24 @@ def main():
             except Job.DoesNotExist:
                 pass
 
+        LogoMetric.drop_table()
+        LogoMetric.create_table()
+
+        for url, value in google_analytics_metrics['clicks_per_logo'].items():
+            try:
+                logo = Logo.get_by_url(url)
+                LogoMetric.create(logo=logo, name='clicks', value=value)
+            except Logo.DoesNotExist:
+                pass
+
+        for logo in Logo.listing():
+            values = google_analytics_metrics['handbook_users_per_date']
+            metric = LogoMetric.from_values_per_date(logo, 'users', values)
+            metric.save()
+            values = google_analytics_metrics['handbook_pageviews_per_date']
+            metric = LogoMetric.from_values_per_date(logo, 'pageviews', values)
+            metric.save()
+
 
 def fetch_from_google_analytics():
     api = GoogleAnalyticsClient(GOOGLE_ANALYTICS_VIEW_ID)
@@ -107,6 +125,8 @@ def fetch_from_google_analytics():
         metric_applications_per_job,
         metric_locations_per_job,
         metric_clicks_per_logo,
+        metric_handbook_users_per_date,
+        metric_handbook_pageviews_per_date,
     ]))
     return metrics
 
