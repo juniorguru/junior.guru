@@ -5,13 +5,14 @@ import pytest
 from jinja2 import Template
 from playhouse.sqlite_ext import JSONField
 
-from juniorguru.models import Job
+from juniorguru.models import Job, JobNewsletterMention
 from juniorguru.send.send_metrics import create_message
 from testing_utils import prepare_job_data
 
 
 class JobMock(Job):
     metrics = JSONField()
+    newsletter_mentions = JSONField()
 
 
 @pytest.fixture
@@ -68,24 +69,31 @@ def test_create_message_subject(job_mock, template, expires_at, expected):
     assert message.get()['subject'] == expected
 
 
-def test_create_message_newsletter_yes(job_mock, template):
-    job_mock.newsletter_at = date(2020, 6, 1)
+def test_create_message_newsletter_mentions(job_mock, template):
+    job_mock.newsletter_mentions = [
+        JobNewsletterMention(job=job_mock, sent_at=date(2020, 2, 1), link='https://example.com/newsletter/1'),
+        JobNewsletterMention(job=job_mock, sent_at=date(2020, 4, 1), link='https://example.com/newsletter/3'),
+        JobNewsletterMention(job=job_mock, sent_at=date(2020, 3, 1), link='https://example.com/newsletter/2'),
+    ]
     message = create_message(job_mock, template, today=date(2020, 6, 23))
     html = message.get()['content'][0]['value']
 
-    assert 'odeslán 1.6.2020' in html
     assert 'ANO' in html
+    assert 'odeslán' in html
+    assert '<a href="https://example.com/newsletter/1">1.2.</a>' in html
+    assert '<a href="https://example.com/newsletter/2">1.3.</a>' in html
+    assert '<a href="https://example.com/newsletter/3">1.4.</a>' in html
     assert 'archiv' in html
     assert 'campaign-archive.com' in html
 
 
-def test_create_message_newsletter_no(job_mock, template):
-    job_mock.newsletter_at = None
+def test_create_message_no_newsletter_mentions(job_mock, template):
+    job_mock.newsletter_mentions = []
     message = create_message(job_mock, template)
     html = message.get()['content'][0]['value']
 
-    assert 'odeslán' not in html
     assert 'zatím NE' in html
+    assert 'odeslán' not in html
     assert 'archiv' in html
     assert 'campaign-archive.com' in html
 

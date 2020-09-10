@@ -68,7 +68,6 @@ class Job(BaseModel):
     ])
     approved_at = DateField(null=True)
     expires_at = DateField(null=True)
-    newsletter_at = DateField(null=True)
 
     # only set by scraped
     lang = CharField(null=True)  # required for scraped
@@ -152,6 +151,12 @@ class Job(BaseModel):
             result[metric.name] = metric.value
         return result
 
+    @property
+    def newsletter_mentions(self):
+        return self.list_newsletter_mentions.order_by(  # JobNewsletterMention backref
+            JobNewsletterMention.sent_at.desc()
+        )
+
     def days_since_approved(self, today=None):
         today = today or date.today()
         return (today - self.approved_at).days
@@ -199,5 +204,5 @@ class JobMetric(BaseModel):
 
 class JobNewsletterMention(BaseModel):
     job = ForeignKeyField(Job, backref='list_newsletter_mentions')
-    sent_at = DateTimeField()
+    sent_at = DateField()
     link = CharField()

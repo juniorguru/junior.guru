@@ -113,14 +113,6 @@ def test_newsletter_listing_returns_only_not_expired_jobs(db_connection):
     assert set(Job.newsletter_listing(5)) == {job1, job4}
 
 
-def test_newsletter_listing_returns_sent(db_connection):
-    job1 = create_job('1', newsletter_at=date.today() - timedelta(days=2))
-    job2 = create_job('2', newsletter_at=None)
-    job3 = create_job('3', newsletter_at=date.today() - timedelta(days=2))
-
-    assert set(Job.newsletter_listing(5)) == {job1, job2, job3}
-
-
 def test_newsletter_listing_sorts_by_posted_at_asc(db_connection):
     job1 = create_job('1', posted_at=datetime(2010, 7, 6, 20, 24, 3))
     job2 = create_job('2', posted_at=datetime(2019, 7, 6, 20, 24, 3))

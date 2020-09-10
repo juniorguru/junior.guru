@@ -73,7 +73,6 @@ def prepare_job_data(id, **kwargs):
         description=kwargs.get('description', '**Really long** description.'),
         source=kwargs.get('source', 'juniorguru'),
         approved_at=kwargs.get('approved_at', date.today()),
-        newsletter_at=kwargs.get('newsletter_at', None),
         expires_at=kwargs.get('expires_at', None),
         jg_rank=kwargs.get('jg_rank'),
         link=kwargs.get('link'),

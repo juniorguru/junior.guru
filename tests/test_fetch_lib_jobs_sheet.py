@@ -136,7 +136,6 @@ def test_coerce_record():
         'link': 'https://jobs.example.com/1245/',
         'pricing_plan': 'community',
         'approved_at': date(2019, 10, 10),
-        'newsletter_at': date(2019, 11, 11),
         'expires_at': date(2019, 12, 12),
         'source': 'juniorguru',
     }
@@ -150,23 +149,6 @@ def test_coerce_record():
 def test_coerce_record_expires(approved, expires, expected):
     data = jobs_sheet.coerce_record(create_record({
         'Approved': approved,
-        'Expires': expires,
-    }))
-
-    assert data['expires_at'] == expected
-
-
-@pytest.mark.parametrize('approved,sent,expires,expected', [
-    ('6/23/2020', None, None, date(2020, 7, 23)),
-    ('6/23/2020', '6/25/2020', None, date(2020, 7, 23)),
-    ('6/23/2020', '6/25/2020', '6/30/2020', date(2020, 6, 30)),
-    ('6/23/2020', '7/20/2020', None, date(2020, 7, 27)),
-    ('6/23/2020', '7/20/2020', '6/30/2020', date(2020, 6, 30)),
-])
-def test_coerce_record_expires_add_week_after_newsletter(approved, sent, expires, expected):
-    data = jobs_sheet.coerce_record(create_record({
-        'Approved': approved,
-        'Sent': sent,
         'Expires': expires,
     }))
 

@@ -62,19 +62,22 @@
   </tr>
   <tr>
     <td>Byl inzerát v&nbsp;newsletteru?&nbsp;&nbsp;&nbsp;</td>
-    {%- if newsletter_at -%}
+    {%- if newsletter_mentions -%}
       <td>
         <b>ANO</b>&nbsp;&nbsp;&nbsp;
       </td>
       <td>
-        <small>odeslán {{ newsletter_at.day }}.{{ newsletter_at.month }}.{{ newsletter_at.year }}, <a href="{{ newsletter_url }}">archiv</a></small>
+        <small>odeslán {% for mention in newsletter_mentions %}
+          <a href="{{ mention.link }}">{{ mention.sent_at.day }}.{{ mention.sent_at.month }}.</a>,
+        {% endfor %}
+          <a href="{{ newsletter_archive_url }}">archiv</a></small>
       </td>
     {%- else -%}
       <td>
         <b>zatím NE</b>&nbsp;&nbsp;&nbsp;
       </td>
       <td>
-        <small><a href="{{ newsletter_url }}">archiv</a></small>
+        <small><a href="{{ newsletter_archive_url }}">archiv</a></small>
       </td>
     {%- endif %}
   </tr>

@@ -27,7 +27,7 @@ def main():
                     pass
                 else:
                     JobNewsletterMention.create(job=job,
-                                                sent_at=arrow.get(campaign['send_time']).datetime,
+                                                sent_at=arrow.get(campaign['send_time']).date(),
                                                 link=campaign['long_archive_url'])
 
 

@@ -19,7 +19,6 @@ def coerce_record(record):
         r'^job link$': ('link', coerce_text),
         r'^pricing plan$': ('pricing_plan', coerce_pricing_plan),
         r'^approved$': ('approved_at', coerce_date),
-        r'^sent$': ('newsletter_at', coerce_date),
         r'^expire[ds]$': ('expires_at', coerce_date),
     }, record)
 
@@ -35,18 +34,11 @@ def coerce(mapping, record):
                 job[key_name] = key_coerce(record_value)
 
     if job['approved_at'] and not job['expires_at']:
-        job['expires_at'] = infer_expires_at(job['approved_at'], job['newsletter_at'])
+        job['expires_at'] = job['approved_at'] + timedelta(days=30)
     job['id'] = create_id(job['posted_at'], job['company_link'])
     job['source'] = 'juniorguru'
 
     return job
-
-
-def infer_expires_at(approved_at, newsletter_at=None):
-    expires_at = approved_at + timedelta(days=30)
-    if newsletter_at:
-        return max(expires_at, newsletter_at + timedelta(days=7))
-    return expires_at
 
 
 def coerce_text(value):
