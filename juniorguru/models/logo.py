@@ -5,7 +5,13 @@ from datetime import date
 from peewee import CharField, DateField, IntegerField, ForeignKeyField
 
 from juniorguru.models.base import BaseModel
-from juniorguru.models import Metric
+
+
+LOGO_METRIC_NAMES = [
+    'users',
+    'pageviews',
+    'clicks',
+]
 
 
 class Logo(BaseModel):
@@ -45,6 +51,13 @@ class Logo(BaseModel):
         return cls.select() \
             .where(cls.starts_at <= today, cls.expires_at >= today) \
             .order_by(cls.months.desc(), cls.starts_at)
+
+    @property
+    def metrics(self):
+        result = {name: 0 for name in LOGO_METRIC_NAMES}
+        for metric in self.list_metrics:  # LogoMetric backref
+            result[metric.name] = metric.value
+        return result
 
     def days_since_started(self, today=None):
         today = today or date.today()

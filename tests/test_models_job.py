@@ -203,6 +203,7 @@ def test_metrics(db_connection):
     job2 = create_job('2')
     JobMetric.create(job=job2, name='users', value=1)
     JobMetric.create(job=job2, name='pageviews', value=4)
+    JobMetric.create(job=job2, name='applications', value=2)
 
     assert job1.metrics == {
         'users': 3,
@@ -212,7 +213,7 @@ def test_metrics(db_connection):
     assert job2.metrics == {
         'users': 1,
         'pageviews': 4,
-        'applications': 0,
+        'applications': 2,
     }
 
 

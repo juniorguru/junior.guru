@@ -84,6 +84,27 @@ def test_get_by_url_multiple_match(db_connection):
         Logo.get_by_url('https://example.com/moo/')
 
 
+def test_metrics(db_connection):
+    logo1 = create_logo('1')
+    LogoMetric.create(logo=logo1, name='users', value=3)
+    LogoMetric.create(logo=logo1, name='pageviews', value=6)
+    logo2 = create_logo('2')
+    LogoMetric.create(logo=logo2, name='users', value=1)
+    LogoMetric.create(logo=logo2, name='pageviews', value=4)
+    LogoMetric.create(logo=logo2, name='clicks', value=2)
+
+    assert logo1.metrics == {
+        'users': 3,
+        'pageviews': 6,
+        'clicks': 0,
+    }
+    assert logo2.metrics == {
+        'users': 1,
+        'pageviews': 4,
+        'clicks': 2,
+    }
+
+
 def test_days_since_started():
     logo = Logo(**prepare_logo_data('1', starts_at=date(1987, 8, 30)))
 
