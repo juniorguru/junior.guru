@@ -1,3 +1,5 @@
+from datetime import date
+
 from peewee import CharField, DateField, IntegerField, ForeignKeyField
 
 from juniorguru.models.base import BaseModel
@@ -6,6 +8,7 @@ from juniorguru.models.base import BaseModel
 class Logo(BaseModel):
     id = CharField(primary_key=True)
     name = CharField()
+    filename = CharField()
     email = CharField()
     link = CharField()
     months = IntegerField()
@@ -13,8 +16,11 @@ class Logo(BaseModel):
     expires_at = DateField()
 
     @classmethod
-    def listing(cls):
-        return cls.select().order_by(cls.months.desc(), cls.starts_at)
+    def listing(cls, today=None):
+        today = today or date.today()
+        return cls.select() \
+            .where(cls.starts_at <= today, cls.expires_at >= today) \
+            .order_by(cls.months.desc(), cls.starts_at)
 
 
 class LogoMetric(BaseModel):

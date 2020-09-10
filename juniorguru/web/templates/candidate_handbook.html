@@ -38,26 +38,13 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
         <span>Příručku&#32;<a href="{{ url_for('hire_juniors') }}#handbook">sponzorují</a>:</span>
       </span>
     </li>
-    <li class="logos__item">
-      <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="handbook-logo" href="https://redhat.avature.net/juniorguru" target="_blank" rel="noopener" title="Red Hat podporuje juniory sponzorováním této příručky">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/redhat.svg') }}" alt="Red Hat">
-      </a>
-    </li>
-    <li class="logos__item">
-      <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="handbook-logo" href="https://opengeolabs.cz/" target="_blank" rel="noopener" title="OpenGeoLabs podporuje juniory sponzorováním této příručky">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/opengeolabs.svg') }}" alt="OpenGeoLabs">
-      </a>
-    </li>
-    <li class="logos__item">
-      <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="handbook-logo" href="https://www.fakturoid.cz/" target="_blank" rel="noopener" title="Fakturoid podporuje juniory sponzorováním této příručky">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/fakturoid.svg') }}" alt="Fakturoid">
-      </a>
-    </li>
-    <li class="logos__item">
-      <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="handbook-logo" href="https://getrector.org/" target="_blank" rel="noopener" title="Rector podporuje juniory sponzorováním této příručky">
-        <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/rector.svg') }}" alt="Rector">
-      </a>
-    </li>
+    {% for logo in logos %}
+      <li class="logos__item">
+        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="handbook-logo" href="{{ logo.link }}" target="_blank" rel="noopener" title="{{ logo.name }} podporuje juniory sponzorováním této příručky">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/' + logo.filename) }}" alt="{{ logo.name }}">
+        </a>
+      </li>
+    {% endfor %}
   </ul>
 </aside>
 

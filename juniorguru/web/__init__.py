@@ -1,7 +1,7 @@
 import arrow
 from flask import Flask, Response, abort, render_template, url_for
 
-from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, db
+from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, db
 from juniorguru.web.thumbnail import thumbnail
 
 
@@ -59,6 +59,7 @@ def candidate_handbook():
         companies_count = Job.companies_count()
         supporters_count = Supporter.count()
         last_modified = LastModified.get_value_by_path('candidate_handbook.html')
+        logos = Logo.listing()
     return render_template('candidate_handbook.html',
                            nav_active='jobs',
                            subnav_tabs=JOBS_SUBNAV_TABS,
@@ -67,6 +68,7 @@ def candidate_handbook():
                            companies_count=companies_count,
                            supporters_count=supporters_count,
                            last_modified=last_modified,
+                           logos=logos,
                            thumbnail=thumbnail(title='Příručka o\u00a0hledání první práce v\u00a0IT'))
 
 

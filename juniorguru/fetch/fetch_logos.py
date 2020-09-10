@@ -22,6 +22,7 @@ def main():
 def coerce_record(record):
     logo = coerce({
         r'^name$': ('name', parse_text),
+        r'^filename$': ('filename', parse_text),
         r'^email$': ('email', parse_text),
         r'^link$': ('link', parse_text),
         r'^link regexp$': ('link_re', parse_text),

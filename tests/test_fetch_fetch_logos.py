@@ -7,7 +7,8 @@ from juniorguru.fetch.fetch_logos import coerce_record
 def create_record(record=None):
     record = record or {}
     return {
-        'Name': record.get('Timestamp', 'Awesome Company'),
+        'Name': record.get('Name', 'Awesome Company'),
+        'Filename': record.get('Filename', 'awesome-company.svg'),
         'Email': record.get('Email Address', 'recruitment@example.com'),
         'Link': record.get('Link', 'https://example.com/landing-page'),
         'Link RegExp': record.get('Link RegExp', None),
@@ -22,6 +23,7 @@ def create_record(record=None):
 def test_coerce_record():
     assert coerce_record(create_record()) == {
         'id': hashlib.sha224(b'Awesome Company').hexdigest(),
+        'filename': 'awesome-company.svg',
         'name': 'Awesome Company',
         'email': 'recruitment@example.com',
         'link': 'https://example.com/landing-page',
