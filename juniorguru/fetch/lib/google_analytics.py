@@ -185,38 +185,6 @@ def metric_pageviews_per_job(view_id, date_range):
            in per_url_report_to_dict(report).items()}
 
 
-def metric_locations_per_job(view_id, date_range):
-    report = yield {
-        'viewId': view_id,
-        'dateRanges': [{
-            'startDate': date_range[0].isoformat(),
-            'endDate': date_range[1].isoformat()
-        }],
-        'metrics': [{'expression': 'ga:pageviews'}],
-        'metricFilterClauses': [{
-            'filters': [{
-                'metricName': 'ga:pageviews',
-                'operator': 'GREATER_THAN',
-                'comparisonValue': '10',
-            }],
-        }],
-        'dimensions': [{'name': 'ga:pagePath'}, {'name': 'ga:region'}],
-        'dimensionFilterClauses': [{
-            'filters': [{
-                'dimensionName': 'ga:pagePath',
-                'operator': 'REGEXP',
-                'expressions': ['^/jobs/[^/]+/'],
-            }],
-        }],
-        'orderBys': [{
-            'fieldName': 'ga:pageviews',
-            'sortOrder': 'DESCENDING',
-        }]
-    }
-    yield {f'https://junior.guru{url}': value for url, value
-           in per_url_locations_report_to_dict(report).items()}
-
-
 def metric_users_per_external_job(view_id, date_range):
     report = yield {
         'viewId': view_id,
@@ -372,16 +340,4 @@ def per_date_report_to_dict(report):
         value = int(row['metrics'][0]['values'][0])
         data.setdefault(date, 0)
         data[date] += value
-    return data
-
-
-def per_url_locations_report_to_dict(report):
-    data = {}
-    for row in report['data']['rows']:
-        url = strip_params(row['dimensions'][0], 'fbclid')
-        location = row['dimensions'][1]
-        value = int(row['metrics'][0]['values'][0])
-        data.setdefault(url, {})
-        data[url].setdefault(location, 0)
-        data[url][location] += value
     return data

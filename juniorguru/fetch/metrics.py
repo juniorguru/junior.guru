@@ -5,7 +5,7 @@ from juniorguru.fetch.lib.google_analytics import (
     metric_applications_per_job, metric_avg_monthly_pageviews,
     metric_avg_monthly_users, metric_pageviews_per_external_job,
     metric_pageviews_per_job, metric_users_per_external_job,
-    metric_users_per_job, metric_locations_per_job, metric_avg_monthly_handbook_users,
+    metric_users_per_job, metric_avg_monthly_handbook_users,
     metric_avg_monthly_handbook_pageviews, metric_avg_monthly_handbook_logo_clicks,
     metric_clicks_per_logo, metric_handbook_users_per_date, metric_handbook_pageviews_per_date)
 from juniorguru.fetch.lib.mailchimp import (MailChimpClient, get_collection,
@@ -123,7 +123,6 @@ def fetch_from_google_analytics():
         metric_pageviews_per_job,
         metric_pageviews_per_external_job,
         metric_applications_per_job,
-        metric_locations_per_job,
         metric_clicks_per_logo,
         metric_handbook_users_per_date,
         metric_handbook_pageviews_per_date,
