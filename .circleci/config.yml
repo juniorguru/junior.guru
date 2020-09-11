@@ -16,7 +16,7 @@ jobs:
       - restore_cache:  # caches npm deps based on whether the deps declaration has changed
           key: deps-{{ checksum "Pipfile.lock" }}-{{ checksum "package-lock.json" }}
       - run:
-          name: install dependencies
+          name: Install dependencies
           command: pipenv install --dev && npm install
       - save_cache:
           key: deps-{{ checksum "Pipfile.lock" }}-{{ checksum "package-lock.json" }}
@@ -70,7 +70,7 @@ jobs:
     executor: python-js
     steps:
       - run:
-          name: install fonts
+          name: Install fonts
           command: |
             echo "deb http://ftp.us.debian.org/debian buster main contrib" | sudo tee -a /etc/apt/sources.list
             echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
@@ -99,7 +99,7 @@ jobs:
       - restore_cache:  # caches a dummy file .deploy which lets the subsequent code to recognize whether the git ref has been already deployed to Now or not
           key: deploy-{{ .Revision }}
       - run:
-          name: deploy
+          name: Deploy
           command: |
             if [[ -f .deploy ]]; then
               echo "Looks like the build has been triggered by CircleCI (nightly, retries). Deploying with ZEIT Now CLI."
@@ -161,7 +161,7 @@ jobs:
 workflows:
   version: 2
 
-  default:
+  push:
     jobs:
       - install
       - test:
@@ -176,10 +176,10 @@ workflows:
       - build:
           requires:
             - fetch
-      - check-anchors:
-          requires:
-            - build
       - check-scrapers:
+          requires:
+            - fetch
+      - check-anchors:
           requires:
             - build
       - deploy:
