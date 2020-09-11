@@ -3,6 +3,7 @@ import random
 import sys
 from pathlib import Path
 from pprint import pformat
+from datetime import date
 
 from jinja2 import Template
 from sendgrid import SendGridAPIClient
@@ -27,14 +28,14 @@ def main():
         logos = [random.choice(logos)]
         log.info(f'Debug mode chose the following logo: {logos[0]}')
 
-    # is_monday = date.today().weekday() == 0
-    # log.info(f'Monday? {is_monday}')
-    # if not is_monday:
-    #     log.error('Not Monday')
-    #     if DEBUG:
-    #         log.info('Debug mode suppressed early exit')
-    #     else:
-    #         sys.exit(0)
+    is_first_day_of_month = date.today().day == 1
+    log.info(f'First day of the month? {is_first_day_of_month}')
+    if not is_first_day_of_month:
+        log.error('Not first day of the month')
+        if DEBUG:
+            log.info('Debug mode suppressed early exit')
+        else:
+            sys.exit(0)
 
     logos_count = len(logos)
     log.info(f'Logos: {logos_count}')
