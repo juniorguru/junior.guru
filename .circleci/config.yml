@@ -45,7 +45,28 @@ jobs:
       - run: pipenv run lint
 
   # needs $GOOGLE_SERVICE_ACCOUNT
-  fetch-build:
+  fetch:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
+      - restore_cache:  # caches all HTTP communication of the scrapers for one day
+          key: scrapy-{{ checksum ".today" }}
+      - run: pipenv run fetch
+      - save_cache:
+          key: scrapy-{{ checksum ".today" }}
+          paths:
+            - .scrapy
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/juniorguru/data
+      - run: tar -cvzf backup.tar.gz ./juniorguru/data
+      - store_artifacts:
+          path: ./backup.tar.gz  # all data gets backed up as a CI artifact
+
+  build:
     executor: python-js
     steps:
       - run:
@@ -60,22 +81,11 @@ jobs:
             done
       - attach_workspace:
           at: "~"
-      - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
-      - restore_cache:  # caches all HTTP communication of the scrapers for one day
-          key: scrapy-{{ checksum ".today" }}
-      - run: pipenv run fetch && pipenv run build
-      - save_cache:
-          key: scrapy-{{ checksum ".today" }}
-          paths:
-            - .scrapy
+      - run: pipenv run build
       - persist_to_workspace:
           root: "~"
           paths:
-              - project/juniorguru/data
               - project/public
-      - run: tar -cvzf backup.tar.gz ./juniorguru/data
-      - store_artifacts:
-          path: ./backup.tar.gz  # all data gets backed up as a CI artifact
       - run: tar -cvzf public.tar.gz ./public
       - store_artifacts:
           path: ./public.tar.gz  # the generated HTML is made available for download (used in the deploy job)
@@ -151,7 +161,7 @@ jobs:
 workflows:
   version: 2
 
-  default_workflow:
+  default:
     jobs:
       - install
       - test:
@@ -160,15 +170,18 @@ workflows:
       - lint:
           requires:
             - install
-      - fetch-build:
+      - fetch:
           requires:
             - install
+      - build:
+          requires:
+            - fetch
       - check-anchors:
           requires:
-            - fetch-build
+            - build
       - check-scrapers:
           requires:
-            - fetch-build
+            - build
       - deploy:
           # This makes sure retries of 'master' builds still deploy,
           # even though they were not initiated by a GitHub push. Might
@@ -179,32 +192,49 @@ workflows:
               only:
                 - master
           requires:
-            - fetch-build
+            - build
 
-  nightly_workflow:
+  nightly:
     jobs:
       - install
-      - fetch-build:
+      - fetch:
           requires:
             - install
-      - deploy:
+      - build:
           requires:
-            - fetch-build
-      - send:
-          requires:
-            - fetch-build
+            - fetch
       - check-scrapers:
           requires:
-            - fetch-build
+            - fetch
       - check-links:
           requires:
-            - fetch-build
+            - build
+      - deploy:
+          requires:
+            - build
       - check-performance:
           requires:
             - deploy
     triggers:
       - schedule:
           cron: "0 4 * * *"
+          filters:
+            branches:
+              only:
+                - master
+
+  sending:
+    jobs:
+      - install
+      - fetch:
+          requires:
+            - install
+      - send:
+          requires:
+            - fetch
+    triggers:
+      - schedule:
+          cron: "0 5 * * *"
           filters:
             branches:
               only:
