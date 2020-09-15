@@ -10,7 +10,7 @@ from urllib import request
 
 POLLING_WAIT_S = 20
 POLLING_TIMEOUT_S = 1800  # 30min, needs to contain buffer as the CI build my get stuck waiting in queue
-POLLING_END_CONTEXT = 'ci/circleci: fetch-build'
+POLLING_END_CONTEXT = 'ci/circleci: build'
 
 GITHUB_ORG = os.getenv('NOW_GITHUB_COMMIT_ORG')
 GITHUB_REPO = os.getenv('NOW_GITHUB_COMMIT_REPO')
