@@ -44,7 +44,7 @@ jobs:
           at: "~"
       - run: pipenv run lint
 
-  # needs $GOOGLE_SERVICE_ACCOUNT
+  # needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY
   fetch:
     executor: python-js
     steps:
@@ -114,6 +114,7 @@ jobs:
           paths:
             - .deploy
 
+  # needs $SENDGRID_API_KEY
   send:
     executor: python-js
     steps:
