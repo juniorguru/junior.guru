@@ -8,6 +8,7 @@ from juniorguru.fetch.lib import google_sheets
 
 FIOBANK_API_KEY = os.getenv('FIOBANK_API_KEY')
 CATEGORIES = [
+    lambda t: 'handbook' if 'RED HAT' in t['message'] and t['amount'] >= 8000 else None,
     lambda t: 'tax' if 'ČSSZ' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'tax' if 'VZP' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'marketing' if 'PrintAll' in t['message'] and t['amount'] < 0 else None,
@@ -16,7 +17,6 @@ CATEGORIES = [
     lambda t: 'donations' if not t['variable_symbol'] and t['amount'] > 0 else None,
     lambda t: 'donations' if t['variable_symbol'] == '444222' and t['amount'] > 0 else None,
     lambda t: 'handbook' if t['variable_symbol'] and t['amount'] >= 8000 else None,
-    lambda t: 'handbook' if 'RED HAT' in t['message'] and t['amount'] >= 8000 else None,
     lambda t: 'jobs' if t['variable_symbol'] and t['amount'] > 0 else None,
     lambda t: 'donations' if t['amount'] > 0 else 'overheads',
 ]
