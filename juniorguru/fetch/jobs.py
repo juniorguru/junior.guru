@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 from datetime import timedelta
 
 from juniorguru.fetch.lib import timer
-from juniorguru.fetch.lib.google import download_sheet
+from juniorguru.fetch.lib import google_sheets
 from juniorguru.fetch.lib.coerce import (coerce, parse_datetime, parse_text,
     parse_date, parse_set)
 from juniorguru.models import Job, JobDropped, JobError, db
@@ -14,7 +14,7 @@ from juniorguru.models import Job, JobDropped, JobError, db
 @timer.notify
 def main():
     doc_key = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
-    records = download_sheet(doc_key, 'jobs')
+    records = google_sheets.download(google_sheets.get(doc_key, 'jobs'))
 
     with db:
         for model in [Job, JobError, JobDropped]:

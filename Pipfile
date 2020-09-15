@@ -40,6 +40,7 @@ requests = "*"
 sendgrid = "*"
 czech-sort = "*"
 itemloaders = "*"
+fiobank = "*"
 
 [dev-packages]
 pytest = "*"
