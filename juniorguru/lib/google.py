@@ -6,7 +6,7 @@ from apiclient.discovery import build
 from oauth2client.service_account import ServiceAccountCredentials
 
 
-SERVICE_ACCOUNT_PATH = Path(__file__).parent.parent / 'google_service_account.json'
+SERVICE_ACCOUNT_PATH = Path(__file__).parent.parent.parent / 'google_service_account.json'
 
 
 def get_credentials(scope):
