@@ -1,7 +1,7 @@
 import hashlib
 
-from juniorguru.fetch.lib import google_sheets
-from juniorguru.fetch.lib.coerce import coerce, parse_text, parse_int, parse_date
+from juniorguru.lib import google_sheets
+from juniorguru.lib.coerce import coerce, parse_text, parse_int, parse_date
 from juniorguru.models import Logo, db
 
 

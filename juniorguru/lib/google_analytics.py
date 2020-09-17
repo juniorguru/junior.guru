@@ -4,7 +4,7 @@ from datetime import datetime, date, timedelta
 
 from dateutil.relativedelta import relativedelta
 
-from juniorguru.fetch.lib.google import get_client
+from juniorguru.lib.google import get_client
 from juniorguru.url_params import strip_params
 
 

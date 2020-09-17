@@ -3,7 +3,7 @@ from datetime import date
 
 from fiobank import FioBank
 
-from juniorguru.fetch.lib import google_sheets
+from juniorguru.lib import google_sheets
 
 
 FIOBANK_API_KEY = os.getenv('FIOBANK_API_KEY')

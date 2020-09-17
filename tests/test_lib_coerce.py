@@ -2,7 +2,7 @@ from datetime import date, datetime
 
 import pytest
 
-from juniorguru.fetch.lib import coerce
+from juniorguru.lib import coerce
 
 
 def test_coerce():

@@ -2,7 +2,7 @@ import string
 
 import gspread
 
-from juniorguru.fetch.lib.google import get_credentials
+from juniorguru.lib.google import get_credentials
 
 
 def get(doc_key, sheet_name):

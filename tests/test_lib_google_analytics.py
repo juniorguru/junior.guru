@@ -3,7 +3,7 @@ from datetime import date, timedelta
 
 import pytest
 
-from juniorguru.fetch.lib import google_analytics
+from juniorguru.lib import google_analytics
 
 
 @pytest.mark.parametrize('today,expected_start,expected_end', [

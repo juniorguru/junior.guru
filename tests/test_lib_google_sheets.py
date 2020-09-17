@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.fetch.lib import google_sheets
+from juniorguru.lib import google_sheets
 
 
 def test_records_to_rows():

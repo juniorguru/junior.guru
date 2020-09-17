@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.fetch.lib import mailchimp
+from juniorguru.lib import mailchimp
 
 
 def test_get_collection():

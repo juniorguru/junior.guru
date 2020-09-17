@@ -4,9 +4,9 @@ import hashlib
 from urllib.parse import urlparse
 from datetime import timedelta
 
-from juniorguru.fetch.lib import timer
-from juniorguru.fetch.lib import google_sheets
-from juniorguru.fetch.lib.coerce import (coerce, parse_datetime, parse_text,
+from juniorguru.lib import timer
+from juniorguru.lib import google_sheets
+from juniorguru.lib.coerce import (coerce, parse_datetime, parse_text,
     parse_date, parse_set)
 from juniorguru.models import Job, JobDropped, JobError, db
 

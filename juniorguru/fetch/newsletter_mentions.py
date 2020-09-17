@@ -3,7 +3,7 @@ import os
 
 import arrow
 
-from juniorguru.fetch.lib.mailchimp import (MailChimpClient, get_collection,
+from juniorguru.lib.mailchimp import (MailChimpClient, get_collection,
                                             get_link)
 from juniorguru.models import Job, JobNewsletterMention, db
 
