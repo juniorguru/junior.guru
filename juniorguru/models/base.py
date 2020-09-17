@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from collections.abc import Set
 
 import scrapy
 from peewee import Model, SqliteDatabase
@@ -25,6 +26,8 @@ def json_dumps(value):
     def default(o):
         if isinstance(o, scrapy.Item):
             return dict(o)
+        if isinstance(o, Set):
+            return list(o)
         try:
             return o.isoformat()
         except AttributeError:

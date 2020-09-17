@@ -30,19 +30,18 @@ def coerce_record(record):
         r'^employment type$': ('employment_types', parse_set),
         r'^job title$': ('title', parse_text),
         r'^company website link$': ('company_link', parse_text),
-        r'^email address$': ('email', parse_text),
+        # r'^email address$': ('email', parse_text),
         r'^job location$': ('location', parse_text),
-        r'^job description$': ('description', parse_text),
+        # r'^job description$': ('description', parse_text),
         r'^job link$': ('link', parse_text),
-        r'^pricing plan$': ('pricing_plan', parse_pricing_plan),
-        r'^approved$': ('approved_at', parse_date),
-        r'^expire[ds]$': ('expires_at', parse_date),
+        # r'^pricing plan$': ('pricing_plan', parse_pricing_plan),
+        # r'^approved$': ('approved_at', parse_date),
+        # r'^expire[ds]$': ('expires_at', parse_date),
     }, record)
 
-    if job.get('approved_at') and 'expires_at' not in job:
-        job['expires_at'] = job['approved_at'] + timedelta(days=30)
-    job['id'] = create_id(job['posted_at'], job['company_link'])
-    job['source'] = 'juniorguru'
+    # if job.get('approved_at') and 'expires_at' not in job:
+    #     job['expires_at'] = job['approved_at'] + timedelta(days=30)
+    # job['id'] = create_id(job['posted_at'], job['company_link'])
 
     return job
 
