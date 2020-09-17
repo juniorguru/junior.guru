@@ -7,7 +7,7 @@ let toc;
 
 function activateStickyLogoBar() {
   if (main) {
-    main.classList.add('main--target-offset-logos');
+    main.classList.add('content--target-offset-logos');
   }
   if (header) {
     header.classList.add('header--opaque');

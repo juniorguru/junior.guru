@@ -5,7 +5,7 @@
   {{ press_release.title }}
 {%- endblock %}
 
-{% block main %}
+{% block content %}
 <header class="intro">
   <p class="intro__note">Tisková zpráva</p>
   <h1 class="intro__title">{{ press_release.title }}</h1>
@@ -17,13 +17,13 @@
   </p>
 </header>
 
-<section class="main__section main__section--narrow">
+<section class="content__section content__section--narrow">
   {{ press_release.text|md }}
 </section>
 
 <hr>
 
-<section class="main__section main__section--narrow">
+<section class="content__section content__section--narrow">
   <p>
     <strong>Junior Guru</strong>, stylizovaně <strong>junior.guru</strong>, je český průvodce programováním pro samouky. Snaží se ukázat lidem, že programování je obecná dovednost, která se může hodit každému, a pomoci těm, kdo se rozhodnou změnit kariéru a začít se programováním živit.
   </p>

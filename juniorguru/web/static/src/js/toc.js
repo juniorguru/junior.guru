@@ -23,20 +23,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   sectionHeadings = findHeadings([
     'engage__heading',
-    'main__section-heading',
+    'content__section-heading',
   ]);
   subsectionHeadings = findHeadings([
     'engage__heading',
-    'main__section-heading',
-    'main__subsection-heading',
+    'content__section-heading',
+    'content__subsection-heading',
   ]);
 
   const targetOffsetElement = document.querySelector([
     // this selector be in sync with main.scss
-    '.main__target',
-    '.main__section[id]',
-    '.main__section-heading[id]',
-    '.main__subsection-heading[id]',
+    '.content__target',
+    '.content__section[id]',
+    '.content__section-heading[id]',
+    '.content__subsection-heading[id]',
   ].join(', '));
   const targetOffsetElementStyle = getComputedStyle(targetOffsetElement, '::before');
   targetOffset = parseInt(targetOffsetElementStyle.getPropertyValue('height'), 10);
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // add permalinks
   if (toc) {
-    const permalinkHeadings = document.querySelectorAll('.main__section-heading, .main__subsection-heading');
+    const permalinkHeadings = document.querySelectorAll('.content__section-heading, .content__subsection-heading');
     Array.from(permalinkHeadings).forEach(addPermalink);
   }
 });
@@ -122,7 +122,7 @@ function getCurrentHeading(headings, position) {
     const position = heading.getBoundingClientRect().bottom;
     return [heading, position];
   }).filter(function (tuple) {
-    return (!tuple[0].classList.contains('main__subsection-heading')
+    return (!tuple[0].classList.contains('content__subsection-heading')
       || !getParent(tuple[0], 'more--collapsed'));
   }).filter(function (tuple) {
     return tuple[1] < position;

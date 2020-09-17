@@ -153,7 +153,7 @@ body.body--hire-juniors {
     }
   }
 
-  .main a[href^="#"] {
+  .content a[href^="#"] {
     &:hover, &:focus, &:active {
       &::before, &::after {
         display: none;

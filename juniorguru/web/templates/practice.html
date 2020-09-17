@@ -5,7 +5,7 @@
 Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti.
 {%- endblock %}
 
-{% block main_modifier %} main--toc{% endblock %}
+{% block content_modifier %} content--toc{% endblock %}
 
 {% block header_toc %}
 <nav class="header__tocbar">
@@ -24,7 +24,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 </nav>
 {% endblock %}
 
-{% block main %}
+{% block content %}
 <header class="intro">
   <h1 class="intro__title">Získej praxi v programování</h1>
   <p class="intro__lead">
@@ -35,9 +35,9 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </p>
 </header>
 
-<nav id="toc" class="toc main__target">
+<nav id="toc" class="toc content__target">
   <div class="toc__content">
-    <h2 class="toc__heading main__target-heading">Obsah</h2>
+    <h2 class="toc__heading content__target-heading">Obsah</h2>
     <ol class="toc__items">
       <li class="toc__item"><a class="toc__link" href="#english">Neflákej angličtinu</a></li>
       <li class="toc__item"><a class="toc__link" href="#exercises">Procvičuj</a></li>
@@ -66,8 +66,8 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </div>
 </nav>
 
-<section id="english" class="main__section">
-  <h2 class="main__section-heading">Neflákej angličtinu</h2>
+<section id="english" class="content__section">
+  <h2 class="content__section-heading">Neflákej angličtinu</h2>
   <div class="tooltips">
     <p>
       <strong>Bez angličtiny se neobejdeš.</strong> Je to klíč ke dveřím do celého světa. Vybíráš ze dvou českých mentorů, ze tří českých online kurzů? S angličtinou vybíráš ze stovek mentorů a desítek kurzů. <strong>Nedostatečná angličtina je v&nbsp;IT jako bolavý zub.</strong> Chvíli s ním vydržíš, ale když to nezačneš řešit včas, budeš hodně litovat. Nauč se ji aspoň pasivně &mdash; pokud zvládáš číst anglický text, pochopit v něm zadání a učit se z něj nové věci, pro start to stačí.
@@ -99,8 +99,8 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </ul>
 </section>
 
-<section id="exercises" class="main__section">
-  <h2 class="main__section-heading">Procvičuj</h2>
+<section id="exercises" class="content__section">
+  <h2 class="content__section-heading">Procvičuj</h2>
   <ul class="list">
     <li>
       <a href="https://exercism.io/">
@@ -176,8 +176,8 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   {% include 'list_note.html' %}
 </section>
 
-<section id="projects" class="main__section">
-  <h2 class="main__section-heading">Najdi si projekt</h2>
+<section id="projects" class="content__section">
+  <h2 class="content__section-heading">Najdi si projekt</h2>
   <div class="tooltips">
     <p>
       Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit.
@@ -204,7 +204,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       <a href="#hackathons">hackathon</a> nebo <a href="#opensource">Open Source</a>.
     </p>
 
-    <h3 class="main__subsection-heading" id="projects-github">Osvoj si GitHub</h3>
+    <h3 class="content__subsection-heading" id="projects-github">Osvoj si GitHub</h3>
     <p>
       Dávej své pokusy a projekty na <a href="https://github.com/">GitHub</a>.
       Čím více, tím lépe. Nejen že se naučíš lépe ovládat <a href="https://naucse.python.cz/course/pyladies/git/basics/">Git</a>
@@ -216,8 +216,8 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </div>
 </section>
 
-<section id="mentors" class="main__section">
-  <h2 class="main__section-heading">Najdi si mentora</h2>
+<section id="mentors" class="content__section">
+  <h2 class="content__section-heading">Najdi si mentora</h2>
   <div class="tooltips">
     <p>
       Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to být
@@ -307,8 +307,8 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 
 {% include 'engage.html' %}
 
-<section class="main__section" id="hackathons">
-  <h2 class="main__section-heading">Zkus „hackathon“</h2>
+<section class="content__section" id="hackathons">
+  <h2 class="content__section-heading">Zkus „hackathon“</h2>
   <div class="tooltips">
     <p>
       <a href="https://cs.wikipedia.org/wiki/Hackathon">Hackathon</a> je akce, kde se sejdou
@@ -395,8 +395,8 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </figure>
 </section>
 
-<section class="main__section" id="opensource">
-  <h2 class="main__section-heading">Zkus „Open Source“</h2>
+<section class="content__section" id="opensource">
+  <h2 class="content__section-heading">Zkus „Open Source“</h2>
   <div class="tooltips">
     <p>
       <img class="cartoon" src="{{ url_for('static', filename='images/gh-logo.svg') }}" loading="lazy">
@@ -414,7 +414,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       zkušeností, cenných kontaktů i nových přátel.
     </p>
 
-    <h3 class="main__subsection-heading" id="not-only-coding">Nemusíš jen programovat</h3>
+    <h3 class="content__subsection-heading" id="not-only-coding">Nemusíš jen programovat</h3>
     <p>
       Open Source není jen o programování. Pokud se zatím necítíš na psaní kódu,
       <a href="https://opensource.guide/how-to-contribute/#what-it-means-to-contribute">je i hodně jiných způsobů,
@@ -422,7 +422,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       Např. psaním dokumentace, psaním článků, navrhováním grafiky nebo „procházením GitHub Issues“ (anglicky <em>triaging</em>, hezky popsáno v článku <a href="https://opensource.com/life/16/8/how-get-bugs-fixed-open-source-software">How to fix a bug in open source software</a>).
     </p>
 
-    <h3 class="main__subsection-heading" id="open-source-inspiration">Open Source jako inspirace</h3>
+    <h3 class="content__subsection-heading" id="open-source-inspiration">Open Source jako inspirace</h3>
     <p>
       Do Open Source nemusíš hned přispívat. Ze začátku se můžeš hodně naučit
       i pouhým pozorováním, čtením cizího kódu, hledáním inspirace. Můžeš se
@@ -430,7 +430,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       piškvorky v Pythonu</a>.
     </p>
 
-    <h3 class="main__subsection-heading" id="how-to-start">Jak začít?</h3>
+    <h3 class="content__subsection-heading" id="how-to-start">Jak začít?</h3>
     <p>
       Začátky s Open Source nejsou
       přímočaré. Většinou na něm lidé pracují ve volném čase. Nováčci jsou
@@ -579,8 +579,8 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </figure>
 </section>
 
-<section id="skills" class="main__section">
-  <h2 class="main__section-heading">Rozšiřuj si znalosti</h2>
+<section id="skills" class="content__section">
+  <h2 class="content__section-heading">Rozšiřuj si znalosti</h2>
   <div class="tooltips">
     <p>
       Umět programovat např. v Pythonu je dobrý základ, ale pro plnohodnotnou práci
@@ -748,8 +748,8 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 
 {% include 'engage.html' %}
 
-<section id="events" class="main__section">
-  <h2 class="main__section-heading">Najdi inspiraci, poznej lidi</h2>
+<section id="events" class="content__section">
+  <h2 class="content__section-heading">Najdi inspiraci, poznej lidi</h2>
   <div class="tooltips">
     <p>
       Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky nebo
@@ -834,14 +834,14 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </ul>
 
   <div class="tooltips">
-    <h3 class="main__subsection-heading" id="beginner-friendly">Nebudu mimo mísu?</h3>
+    <h3 class="content__subsection-heading" id="beginner-friendly">Nebudu mimo mísu?</h3>
     <p>
       Výše uvedené akce jsou vhodné i pro začátečníky a účastní se jich
       významné procento žen. Náplní těchto akcí jsou odborné přednášky pro různé
       úrovně znalostí a networking &mdash; povídání si s lidmi. Vždy se odehrávají
       v neformálním, pohodovém prostředí.
     </p>
-    <h3 class="main__subsection-heading" id="fin-aid">Kde na to vzít?</h3>
+    <h3 class="content__subsection-heading" id="fin-aid">Kde na to vzít?</h3>
     <p>
       Na konference je potřeba si koupit lístek. Výše zmíněné konference mají velmi
       dostupné lístky se slevami (např. pro studenty), ale i tak je možné, že je
@@ -851,7 +851,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   </div>
 </section>
 
-<div class="main__section">
+<div class="content__section">
   <p class="call-to-action next">
     <a href="{{ url_for('jobs') }}" class="legacy-button">Máš&nbsp;praxi? Najdi&nbsp;si&nbsp;práci!</a>
   </p>

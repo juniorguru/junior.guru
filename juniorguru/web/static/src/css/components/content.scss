@@ -1,37 +1,37 @@
-.main {
+.content {
   padding-top: $whitespace-3 * 3;
 }
 
-.main__section {
+.content__section {
   @include page-width($padding: 1rem);
   margin-bottom: $whitespace-3 * 2;
 }
 
-.main__section--wide {
+.content__section--wide {
   padding-left: 0;
   padding-right: 0;
   max-width: 100%;
 }
 
-.main__section--narrow {
+.content__section--narrow {
   max-width: 80rem;
   padding-left: 0;
   padding-right: 0;
 }
 
-.main__section-heading {
+.content__section-heading {
   border-bottom: $border-width solid $yellow;
 }
 
-.main__subsection-heading {
+.content__subsection-heading {
   margin-top: $whitespace-2;
 }
 
 // this selector be in sync with toc.js
-.main__target::before,
-.main__section[id]::before,
-.main__section-heading[id]::before,
-.main__subsection-heading[id]::before {
+.content__target::before,
+.content__section[id]::before,
+.content__section-heading[id]::before,
+.content__subsection-heading[id]::before {
   display: block;
   content: " ";
   height: 1 * $target-offset;
@@ -40,48 +40,48 @@
   pointer-events: none;
   //background: violet; // debug
 
-  .main--target-offset-logos & {
+  .content--target-offset-logos & {
     height: 1 * $target-offset-logos;
     margin-top: -1 * $target-offset-logos;
   }
 }
 
-.main__subsection-heading[id]::before {
+.content__subsection-heading[id]::before {
   height: $target-offset;
   margin-top: $whitespace-2 + (-1 * $target-offset);
 
-  .main--target-offset-logos & {
+  .content--target-offset-logos & {
     height: $target-offset-logos;
     margin-top: $whitespace-2 + (-1 * $target-offset-logos);
   }
 }
 
-:target .main__target-heading,
-:target .main__section-heading,
-.main__target-heading:target,
-.main__section-heading:target,
-.main__subsection-heading:target {
+:target .content__target-heading,
+:target .content__section-heading,
+.content__target-heading:target,
+.content__section-heading:target,
+.content__subsection-heading:target {
   -webkit-animation: target-animation 3s;
   animation: target-animation 3s;
 }
 
 @media screen and (min-width: $breakpoint-tablet) {
-  .main--toc .main__section {
+  .content--toc .content__section {
     padding-left: $toc-width;
   }
 
-  .main--toc .main__section--wide {
+  .content--toc .content__section--wide {
     padding-left: 0;
   }
 }
 
 @media screen and (min-width: $breakpoint-desktop) {
-  .main--toc .main__section {
+  .content--toc .content__section {
     // visually substracting the $whitespace from ToC's right padding
     padding-left: $toc-width + ($whitespace-3 - $whitespace);
   }
 
-  .main--toc .main__section--wide {
+  .content--toc .content__section--wide {
     padding-left: 0;
   }
 }

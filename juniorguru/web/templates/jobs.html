@@ -5,7 +5,7 @@
 Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jobs_count }} aktuálních nabídek práce od {{ companies_count }} firem.
 {%- endblock %}
 
-{% block main %}
+{% block content %}
 <header class="intro">
   <h1 class="intro__title">Najdi svou první práci v&nbsp;IT</h1>
   <p class="intro__lead">
@@ -27,7 +27,7 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
     </a>
   </p>
 </section>
-<section id="jobs" class="main__section">
+<section id="jobs" class="content__section">
   <ul class="items">
   {% for job in jobs %}
     <li class="item-summary" id="job-{{ job.id }}">
@@ -49,8 +49,8 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
 </section>
 
 <hr>
-<section id="jobs-bot" class="main__section">
-  <h2 class="main__section-heading">Nabídky odjinud</h2>
+<section id="jobs-bot" class="content__section">
+  <h2 class="content__section-heading">Nabídky odjinud</h2>
   <div class="tooltips">
     <p>
       Každý den se robot ve službách junior.guru rozhlíží po různých místech
@@ -83,7 +83,7 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
 </section>
 
 <hr>
-<section class="main__section">
+<section class="content__section">
   <div class="call-to-action">
       <p>
         <img class="cartoon cartoon-center" src="{{ url_for('static', filename='images/mail.svg') }}">

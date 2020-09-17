@@ -5,13 +5,13 @@
 Tiskové zprávy, logo, barvy. Vše co potřebujete pro to, abyste se mohli zmínit o junior.guru.
 {%- endblock %}
 
-{% block main %}
+{% block content %}
 <header class="intro">
   <h1 class="intro__title">Pro média</h1>
 </header>
 
-<section class="main__section">
-  <h2 class="main__section-heading">Tiskové zprávy</h2>
+<section class="content__section">
+  <h2 class="content__section-heading">Tiskové zprávy</h2>
   <ul>
     {% for press_release in press_releases %}
       <li>
@@ -21,15 +21,15 @@ Tiskové zprávy, logo, barvy. Vše co potřebujete pro to, abyste se mohli zmí
   </ul>
 </section>
 
-<section class="main__section">
-  <h2 class="main__section-heading">Kontakt</h2>
+<section class="content__section">
+  <h2 class="content__section-heading">Kontakt</h2>
   <p>
     Pište přímo autorovi projektu: Honza Javorek, {{ 'ahoj@junior.guru'|email_link }}
   </p>
 </section>
 
-<section class="main__section">
-  <h2 class="main__section-heading">O projektu</h2>
+<section class="content__section">
+  <h2 class="content__section-heading">O projektu</h2>
   <p>
     <strong>Junior Guru</strong>, stylizovaně <strong>junior.guru</strong>, je český průvodce programováním pro samouky. Snaží se ukázat lidem, že programování je obecná dovednost, která se může hodit každému, a pomoci těm, kdo se rozhodnou změnit kariéru a začít se programováním živit.
   </p>
@@ -38,8 +38,8 @@ Tiskové zprávy, logo, barvy. Vše co potřebujete pro to, abyste se mohli zmí
   </p>
 </section>
 
-<section class="main__section">
-  <h2 class="main__section-heading">Logo, fotky, ilustrace</h2>
+<section class="content__section">
+  <h2 class="content__section-heading">Logo, fotky, ilustrace</h2>
   <p>
     Logo ke stažení:
   </p>
@@ -67,8 +67,8 @@ Tiskové zprávy, logo, barvy. Vše co potřebujete pro to, abyste se mohli zmí
   </p>
 </section>
 
-<section class="main__section">
-  <h2 class="main__section-heading">Provozovatel</h2>
+<section class="content__section">
+  <h2 class="content__section-heading">Provozovatel</h2>
   <p>
     Autorem stránek je programátor <strong>Honza Javorek</strong>, jenž se přes {{ year - 2011 }} let dobrovolnicky podílí na pořádání komunitních akcí pro začátečníky v IT a pomáhá i organizacím jako <a href="https://pyladies.cz/">PyLadies</a> nebo <a href="https://www.czechitas.cz/">Czechitas</a>, které se snaží usnadnit vstup do IT ženám. Na podzim roku 2019 opustil tým <a href="https://byznys.ihned.cz/c1-65593630-oracle-kupuje-za-miliardy-korun-cesky-start-up-apiary-zakladatele-ve-firme-zustavaji">úspěšného českého startupu Apiary</a> Jakuba Nešetřila (dnes <a href="https://cesko.digital/">Česko.Digital</a>), aby prostřednictvím Junior Guru začal pomáhat začátečníkům prosadit se v technologických profesích. Junior Guru tvoří jako tzv. „Solo Entrepreneur“, tedy podnikatel na volné noze,
     jenž nemá ambice rozjíždět firmu. Obsah na stránkách dává volně k dispozici, financování zajišťuje skrze sponzory, <a href="{{ url_for('jobs') }}">nabídky práce</a> a <a href="{{ url_for('donate') }}">dobrovolné příspěvky</a>.

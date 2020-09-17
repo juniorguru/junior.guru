@@ -7,7 +7,7 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
 
 {% block body_modifier %} body--hire-juniors{% endblock %}
 
-{% block main %}
+{% block content %}
 <header class="intro">
   <h1 class="intro__title">Když juniory, tak ty odhodlané!</h1>
   <p class="intro__lead">
@@ -16,7 +16,7 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
   </p>
 </header>
 
-<section class="main__section why">
+<section class="content__section why">
   <h2 class="hidden">Proč junior.guru?</h2>
 
   <ul class="numbers">
@@ -57,7 +57,7 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
   </div>
 </section>
 
-<section id="pricing" class="main__section pricing">
+<section id="pricing" class="content__section pricing">
   <h2 class="pricing__heading pricing__heading--mobile-only">Inzerujte pracovní nabídky</h2>
   <div class="pricing__plans pricing__plans--2">
     <div class="pricing__plan">
@@ -103,7 +103,7 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
     </div>
     <div class="pricing__plan">
       <div class="pricing__plan-content">
-        <h3 class="pricing__plan-heading main__target main__target-heading" id="pricing-annual-flat-rate">Roční paušál</h3>
+        <h3 class="pricing__plan-heading content__target content__target-heading" id="pricing-annual-flat-rate">Roční paušál</h3>
         <p>
           Na <a href="{{ url_for('jobs') }}">stránce s nabídkami</a>
           budete moci libovolně vystavovat, prodlužovat nebo rušit inzeráty.
@@ -128,7 +128,7 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
 </section>
 
 <hr>
-<section class="candidate main__section more">
+<section class="candidate content__section more">
   <div class="candidate-content">
     <h2>Jaké kan&shy;di&shy;dá&shy;ty zde najdete</h2>
     <div class="tooltips">
@@ -235,11 +235,11 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
 <hr>
 
 
-<section id="handbook" class="main__section sponsor-handbook">
+<section id="handbook" class="content__section sponsor-handbook">
   <!-- keeping for backward compatibility of links -->
   <span id="sponsor-handbook"><span id="handbook-pricing"></span></span>
 
-  <h2 class="main__target main__target-heading">Sponzorujte unikátní příručku</h2>
+  <h2 class="content__target content__target-heading">Sponzorujte unikátní příručku</h2>
   <div class="sponsor-handbook-content">
     {# <img width="200" src="{{ url_for('static', filename='images/handbook.svg') }}"> #}
     <p>
@@ -384,7 +384,7 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
   </div>
 
   <div class="sponsor-handbook-content">
-    <h3 class="main__subsection-heading">Statistiky</h3>
+    <h3 class="content__subsection-heading">Statistiky</h3>
     <p>
       Čísla, která vidíte, jsou <strong>průměrné hodnoty na 1 měsíc počítané z posledních 4 měsíců</strong>. Automaticky se každý den přepočítávají.
       Údaje jsou podhodnocené a pouze orientační. Pocházejí z nástroje Google Analytics, který mohou uživatelé blokovat.
@@ -396,7 +396,7 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
       <li><strong>~{{ metrics.avg_monthly_handbook_conversion|metric }}%</strong> <small>konverze</small></li>
     </ul>
 
-    <h3 class="main__subsection-heading">Proč sponzorovat</h3>
+    <h3 class="content__subsection-heading">Proč sponzorovat</h3>
     <ul class="checklist">
       <li>Budujete značku vůči příštím kandidátům a představujete se jako místo, kde na juniory myslí, umí to s nimi, a kam je zkrátka radost nastoupit.</li>
       <li>Díky vašemu příspěvku bude text komukoliv veřejně zdarma přístupný. Příručka přitom dá jasně najevo, že tento v Česku unikátní obsah je zdarma právě díky vám.</li>

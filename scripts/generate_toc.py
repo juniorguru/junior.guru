@@ -16,7 +16,7 @@ def main(path):
 
     output = '<ol class="toc__items">\n'
     html_tree = html.fromstring(Path(path).read_text())
-    for h2 in html_tree.cssselect('.main__section-heading'):
+    for h2 in html_tree.cssselect('.content__section-heading'):
         section = [element for element in h2.iterancestors()
                 if element.tag == 'section'][0]
         h2_id = section.get('id')
@@ -26,7 +26,7 @@ def main(path):
         output += f'  <li class="toc__item"><a class="toc__link" href="#{h2_id}">{h2_text}</a>'
         ids.append(h2_id)
 
-        h3s = section.cssselect('.main__subsection-heading')
+        h3s = section.cssselect('.content__subsection-heading')
         if h3s:
             output += '\n    <ol class="toc__subitems">\n'
             for h3 in h3s:
