@@ -8,18 +8,33 @@ from juniorguru.lib import google_sheets
 from juniorguru.lib.coerce import (coerce, parse_datetime, parse_text,
     parse_date, parse_set)
 from juniorguru.scrapers.items import Job
+from juniorguru.scrapers.settings import ITEM_PIPELINES
 
 
 class Spider(BaseSpider):
     name = 'juniorguru'
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            name: priority for name, priority in ITEM_PIPELINES.items()
+            if name not in [
+                'juniorguru.scrapers.pipelines.short_description_filter.Pipeline',
+                'juniorguru.scrapers.pipelines.broken_encoding_filter.Pipeline',
+                'juniorguru.scrapers.pipelines.gender_cleaner.Pipeline',
+            ]
+        }
+    }
+    doc_key = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
+    sheet_name = 'jobs'
 
     # https://stackoverflow.com/q/57060667/325365
     # https://developers.google.com/sheets/api/reference/rest#discovery-document
     start_urls = ['https://sheets.googleapis.com/$discovery/rest?version=v4']
 
     def parse(self, response):
-        doc_key = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
-        for record in google_sheets.download(google_sheets.get(doc_key, 'jobs')):
+        sheet = google_sheets.get(self.doc_key, self.sheet_name)
+        records = google_sheets.download(sheet)
+
+        for record in records:
             yield Job(**coerce_record(record))
 
 
