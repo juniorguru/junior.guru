@@ -10,24 +10,6 @@ def test_email_link():
     assert markup == '<a href="mailto:xyz&#64;example.com">xyz&#64;<!---->example.com</a>'
 
 
-def test_md():
-    markup = str(template_filters.md('call me **maybe**  \ncall me Honza'))
-    assert markup == '<p>call me <strong>maybe</strong><br>\ncall me Honza</p>'
-
-
-def test_md_heading_level_base():
-    markup = str(template_filters.md((
-        '# Heading 1\n'
-        '## Heading 2\n'
-        'Paragraph text\n'
-    ), heading_level_base=4))
-    assert markup == (
-        '<h4 id="heading-1">Heading 1</h4>\n'
-        '<h5 id="heading-2">Heading 2</h5>\n'
-        '<p>Paragraph text</p>'
-    )
-
-
 def test_remove_p():
     markup = str(template_filters.remove_p('<p>call me <b>maybe</b></p>  \n<p class="hello">call me Honza</p>'))
     assert markup == 'call me <b>maybe</b>  \ncall me Honza'

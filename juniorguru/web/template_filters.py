@@ -4,10 +4,9 @@ from datetime import datetime
 
 import arrow
 from jinja2 import Markup
-from markdown import markdown
-from markdown.extensions.toc import TocExtension
 
 from juniorguru.web import app
+from juniorguru.lib.md import md as md_
 
 
 @app.template_filter()
@@ -21,10 +20,8 @@ def email_link(email):
 
 
 @app.template_filter()
-def md(markdown_text, heading_level_base=1):
-    toc = TocExtension(marker='', baselevel=heading_level_base)
-    markup = markdown(markdown_text, output_format='html5', extensions=[toc])
-    return Markup(markup)
+def md(*args, **kwargs):
+    return Markup(md_(*args, **kwargs))
 
 
 @app.template_filter()

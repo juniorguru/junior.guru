@@ -5,6 +5,7 @@ from datetime import timedelta
 from scrapy import Spider as BaseSpider
 
 from juniorguru.lib import google_sheets
+from juniorguru.lib.md import md
 from juniorguru.lib.coerce import (coerce, parse_datetime, parse_text,
     parse_date, parse_set)
 from juniorguru.scrapers.items import Job
@@ -47,7 +48,7 @@ def coerce_record(record):
         r'^company website link$': ('company_link', parse_text),
         # r'^email address$': ('email', parse_text),
         r'^job location$': ('location', parse_text),
-        # r'^job description$': ('description', parse_text),
+        r'^job description$': ('description_html', parse_md),
         r'^job link$': ('link', parse_text),
         # r'^pricing plan$': ('pricing_plan', parse_pricing_plan),
         # r'^approved$': ('approved_at', parse_date),
@@ -59,6 +60,10 @@ def coerce_record(record):
     # job['id'] = create_id(job['posted_at'], job['company_link'])
 
     return job
+
+
+def parse_md(markdown_text):
+    return md(parse_text(markdown_text))
 
 
 def parse_pricing_plan(value):
