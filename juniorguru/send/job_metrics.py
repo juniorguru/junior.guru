@@ -10,7 +10,7 @@ from jinja2 import Template
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Bcc, From, Mail, To
 
-from juniorguru.log import get_log
+from juniorguru.lib.log import get_log
 from juniorguru.models import Job
 
 

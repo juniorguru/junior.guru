@@ -5,7 +5,7 @@ from datetime import datetime, date, timedelta
 from dateutil.relativedelta import relativedelta
 
 from juniorguru.lib.google import get_client
-from juniorguru.url_params import strip_params
+from juniorguru.lib.url_params import strip_params
 
 
 MAX_BATCH_SIZE = 5

@@ -6,7 +6,7 @@ from scrapy.loader import ItemLoader
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
 from juniorguru.scrapers.items import Job, first, parse_relative_time, split
-from juniorguru.url_params import increment_param, strip_params
+from juniorguru.lib.url_params import increment_param, strip_params
 
 
 class Spider(BaseSpider):

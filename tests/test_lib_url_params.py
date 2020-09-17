@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru import url_params
+from juniorguru.lib import url_params
 
 
 @pytest.mark.parametrize('url,param_names,expected', [
