@@ -3,7 +3,7 @@ from datetime import datetime, date
 
 import pytest
 
-from juniorguru.fetch.jobs import coerce_record, parse_pricing_plan, create_id
+from juniorguru.scrapers.spiders import juniorguru
 
 
 def create_record(record=None):
@@ -36,16 +36,16 @@ def create_record(record=None):
     (None, 'community'),
 ])
 def test_parse_pricing_plan(value, expected):
-    assert parse_pricing_plan(value) == expected
+    assert juniorguru.parse_pricing_plan(value) == expected
 
 
 def test_create_id():
-    id_ = create_id(datetime(2019, 7, 6, 20, 24, 3), 'https://www.example.com/foo/bar.html')
+    id_ = juniorguru.create_id(datetime(2019, 7, 6, 20, 24, 3), 'https://www.example.com/foo/bar.html')
     assert id_ == hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest()
 
 
 def test_coerce_record():
-    assert coerce_record(create_record()) == {
+    assert juniorguru.coerce_record(create_record()) == {
         'id': hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest(),
         'posted_at': datetime(2019, 7, 6, 20, 24, 3),
         'email': 'jobs@example.com',
@@ -58,19 +58,12 @@ def test_coerce_record():
         'pricing_plan': 'community',
         'approved_at': date(2019, 10, 10),
         'expires_at': date(2019, 12, 12),
-        'source': 'juniorguru',
     }
 
 
-@pytest.mark.parametrize('approved,expires,expected', [
-    (None, None, None),
-    ('6/23/2020', None, date(2020, 7, 23)),
-    ('6/23/2020', '6/30/2020', date(2020, 6, 30)),
+@pytest.mark.parametrize('value,expected', [
+    (None, None),
+    (' **Foo Ltd.**   ', '<p><strong>Foo Ltd.</strong></p>'),
 ])
-def test_coerce_record_expires(approved, expires, expected):
-    data = coerce_record(create_record({
-        'Approved': approved,
-        'Expires': expires,
-    }))
-
-    assert data.get('expires_at') == expected
+def test_parse_markdown(value, expected):
+    assert juniorguru.parse_markdown(value) == expected

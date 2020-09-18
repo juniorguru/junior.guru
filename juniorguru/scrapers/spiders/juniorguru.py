@@ -1,6 +1,5 @@
 import hashlib
 from urllib.parse import urlparse
-from datetime import timedelta
 
 from scrapy import Spider as BaseSpider
 
@@ -49,8 +48,9 @@ def coerce_record(record):
     return job
 
 
-def parse_markdown(markdown_text):
-    return md(parse_text(markdown_text))
+def parse_markdown(value):
+    if value:
+        return md(value.strip())
 
 
 def parse_pricing_plan(value):
