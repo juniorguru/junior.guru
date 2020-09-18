@@ -41,7 +41,7 @@ def retry_when_db_locked(method):
         kwargs.pop('signal')
         kwargs.pop('sender')
         last_error = None
-        for i in range(5):
+        for i in range(10):
             try:
                 return method(ext, *args, **kwargs)
             except OperationalError as error:
@@ -49,7 +49,7 @@ def retry_when_db_locked(method):
                     logger.debug(f"Monitoring operation '{method.__name__}' failed! ({error}, attempt: {i + 1})")
                     last_error = error
                     ext.stats.inc_value('monitoring/db_locked_retries')
-                    time.sleep(0.5)
+                    time.sleep(0.5 * i)
                 else:
                     ext.stats.inc_value('monitoring/uncaught_errors')
                     raise
