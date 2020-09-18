@@ -21,6 +21,8 @@ class Spider(BaseSpider):
                 'juniorguru.scrapers.pipelines.short_description_filter.Pipeline',
                 'juniorguru.scrapers.pipelines.broken_encoding_filter.Pipeline',
                 'juniorguru.scrapers.pipelines.gender_cleaner.Pipeline',
+                'juniorguru.scrapers.pipelines.language_filter.Pipeline',
+                'juniorguru.scrapers.pipelines.jg_rank_filter.Pipeline',
             ]
         }
     }
@@ -50,7 +52,7 @@ def coerce_record(record):
         r'^company website link$': ('company_link', parse_text),
         r'^email address$': ('email', parse_text),
         r'^job location$': ('location', parse_text),
-        r'^job description$': ('description_html', parse_md),
+        r'^job description$': ('description_html', parse_markdown),
         r'^job link$': ('link', parse_text),
         r'^pricing plan$': ('pricing_plan', parse_pricing_plan),
         r'^approved$': ('approved_at', parse_date),
@@ -64,7 +66,7 @@ def coerce_record(record):
     return job
 
 
-def parse_md(markdown_text):
+def parse_markdown(markdown_text):
     return md(parse_text(markdown_text))
 
 
