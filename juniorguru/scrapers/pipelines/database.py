@@ -1,7 +1,33 @@
 import hashlib
+import logging
+import time
+from functools import wraps
+
+from peewee import OperationalError
 
 from juniorguru.models import Job
 from juniorguru.models import db as default_db
+
+
+logger = logging.getLogger(__name__)
+
+
+def retry_when_db_locked(method):
+    @wraps(method)
+    def wrapper(self, *args, **kwargs):
+        last_error = None
+        for i in range(10):
+            try:
+                return method(self, *args, **kwargs)
+            except OperationalError as error:
+                if str(error) == 'database is locked':
+                    logger.debug(f"Operation '{self.__class__.__name__}.{method.__name__}' failed! ({error}, attempt: {i + 1})")
+                    last_error = error
+                    time.sleep(0.5 * i)
+                else:
+                    raise
+        raise last_error
+    return wrapper
 
 
 class Pipeline():
@@ -14,6 +40,7 @@ class Pipeline():
     def from_crawler(cls, crawler):
         return cls(stats=crawler.stats)
 
+    @retry_when_db_locked
     def process_item(self, item, spider):
         with self.db:
             self.model.create(**prepare_data(item, spider.name))
