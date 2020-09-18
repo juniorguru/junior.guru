@@ -2,8 +2,7 @@ import itertools
 import re
 from datetime import date
 
-from peewee import (CharField, DateField, DateTimeField,
-                    ForeignKeyField, IntegerField, TextField)
+from peewee import CharField, DateField, ForeignKeyField, IntegerField, TextField
 
 from juniorguru.models.base import BaseModel, JSONField
 
