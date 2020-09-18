@@ -2,7 +2,6 @@ import re
 import math
 from datetime import date, datetime
 
-import arrow
 from jinja2 import Markup
 
 from juniorguru.web import app
