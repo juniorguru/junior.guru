@@ -27,7 +27,7 @@ class Job(Item):
 
 
 class JuniorGuruJob(Job):
-    id = Field()
+    id = Field(required=True)
     link = Field()
     email = Field(required=True)
     pricing_plan = Field(required=True)

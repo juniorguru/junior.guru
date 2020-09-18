@@ -77,6 +77,19 @@ ITEM_PIPELINES = {
    'juniorguru.scrapers.pipelines.employment_types_cleaner.Pipeline': 900,
    'juniorguru.scrapers.pipelines.database.Pipeline': 1000,
 }
+JUNIORGURU_ITEM_PIPELINES = {
+   'juniorguru.scrapers.pipelines.validity_filter.Pipeline': 1,
+   **{
+      name: priority for name, priority in ITEM_PIPELINES.items()
+      if name not in [
+            'juniorguru.scrapers.pipelines.short_description_filter.Pipeline',
+            'juniorguru.scrapers.pipelines.broken_encoding_filter.Pipeline',
+            'juniorguru.scrapers.pipelines.gender_cleaner.Pipeline',
+            'juniorguru.scrapers.pipelines.language_filter.Pipeline',
+            'juniorguru.scrapers.pipelines.jg_rank_filter.Pipeline',
+      ]
+   }
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

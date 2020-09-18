@@ -49,32 +49,44 @@ class EmploymentTypeField(UniqueSortedListField):
 
 class Job(BaseModel):
     id = CharField(primary_key=True)
-    posted_at = DateTimeField(index=True)
+    source = CharField(index=True)
+    posted_at = DateField(index=True)
     title = CharField()
     location = CharField()
     company_name = CharField()
-    company_link = CharField(null=True)  # required for JG
+    company_link = CharField(null=True)
     employment_types = EmploymentTypeField()
-    link = CharField(null=True, index=True)  # required for scraped
-    source = CharField()
-
-    # only set by JG
-    email = CharField(null=True)  # required for JG
-    description = TextField(null=True)  # required for JG
+    link = CharField(null=True, index=True)
+    lang = CharField()
+    description_html = TextField()
+    jg_rank = IntegerField(index=True)
     pricing_plan = CharField(default='community', choices=[
         ('community', None),
         ('standard', None),
         ('annual_flat_rate', None),
     ])
-    approved_at = DateField(null=True)
+
+    # source: juniorguru
+    email = CharField(null=True)
     expires_at = DateField(null=True)
 
-    # only set by scraped
-    lang = CharField(null=True)  # required for scraped
-    jg_rank = IntegerField(null=True)  # required for scraped
-    response_url = CharField(null=True)  # required for scraped
+    # diagnostics
+    item = JSONField(null=True)
+    response_url = CharField()
     response_backup_path = CharField(null=True)
-    item = JSONField(null=True)  # required for scraped
+
+    @property
+    def metrics(self):
+        result = {name: 0 for name in JOB_METRIC_NAMES}
+        for metric in self.list_metrics:  # JobMetric backref
+            result[metric.name] = metric.value
+        return result
+
+    @property
+    def newsletter_mentions(self):
+        return self.list_newsletter_mentions.order_by(  # JobNewsletterMention backref
+            JobNewsletterMention.sent_at.desc()
+        )
 
     @classmethod
     def get_by_url(cls, url):
@@ -84,8 +96,8 @@ class Job(BaseModel):
         raise ValueError(url)
 
     @classmethod
-    def get_by_link(cls, url):
-        return cls.get(cls.link == url)
+    def get_by_link(cls, link):
+        return cls.get(cls.link == link)
 
     @classmethod
     def listing(cls):
@@ -143,19 +155,6 @@ class Job(BaseModel):
     @classmethod
     def companies_count(cls):
         return len(frozenset([job.company_link for job in cls.listing()]))
-
-    @property
-    def metrics(self):
-        result = {name: 0 for name in JOB_METRIC_NAMES}
-        for metric in self.list_metrics:  # JobMetric backref
-            result[metric.name] = metric.value
-        return result
-
-    @property
-    def newsletter_mentions(self):
-        return self.list_newsletter_mentions.order_by(  # JobNewsletterMention backref
-            JobNewsletterMention.sent_at.desc()
-        )
 
     def days_since_approved(self, today=None):
         today = today or date.today()

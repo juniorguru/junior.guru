@@ -20,15 +20,18 @@ RESPONSES_BACKUP_DIR = Path('juniorguru/data/responses/').absolute()
 
 class BackupResponseMiddleware():
     def process_response(self, request, response, spider):
-        try:
-            response_text = response.text
-        except AttributeError:
-            logger.debug(f"Unable to backup '{response.url}'")
+        if hasattr(spider, 'override_response_backup_path'):
+            logger.debug(f"Skipping backup of '{response.url}' per spider override")
         else:
-            path = url_to_backup_path(response.url)
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(response_text)
-            logger.debug(f"Backed up '{response.url}' as '{path.absolute()}'")
+            try:
+                response_text = response.text
+            except AttributeError:
+                logger.debug(f"Unable to backup '{response.url}'")
+            else:
+                path = url_to_backup_path(response.url)
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(response_text)
+                logger.debug(f"Backed up '{response.url}' as '{path.absolute()}'")
         return response
 
 
@@ -71,47 +74,61 @@ class MonitoringExtension():
 
     @retry_when_db_locked
     def spider_error(self, failure, response, spider):
+        response_data = get_response_data(spider, response.url)
         with db:
             JobError.create(message=get_failure_message(failure),
                             trace=failure.getTraceback(),
                             signal='spider',
                             spider=spider.name,
-                            response_url=response.url,
-                            response_backup_path=get_response_backup_path(response.url))
+                            **response_data)
         self.stats.inc_value('monitoring/job_error_saved')
 
     @retry_when_db_locked
     def item_error(self, item, response, spider, failure):
+        response_data = get_response_data(spider, response.url)
         with db:
             JobError.create(message=get_failure_message(failure),
                             trace=failure.getTraceback(),
                             signal='item',
                             spider=spider.name,
-                            response_url=response.url,
-                            response_backup_path=get_response_backup_path(response.url),
-                            item=item)
+                            item=item,
+                            **response_data)
         self.stats.inc_value('monitoring/job_error_saved')
 
     @retry_when_db_locked
     def item_dropped(self, item, response, exception, spider):
+        response_data = get_response_data(spider, response.url)
         with db:
             JobDropped.create(type=exception.__class__.__name__,
                               reason=str(exception),
-                              response_url=response.url,
-                              response_backup_path=get_response_backup_path(response.url),
-                              item=item)
+                              item=item,
+                              **response_data)
         self.stats.inc_value('monitoring/job_dropped_saved')
 
     @retry_when_db_locked
     def item_scraped(self, item, response, spider):
+        response_data = get_response_data(spider, response.url)
         with db:
-            job = Job.get_by_id(create_id(item))
-            job.response_url = response.url
-            job.response_backup_path = get_response_backup_path(response.url)
+            job = Job.get_by_id(item.get('id', create_id(item)))
             job.item = item
+            for attr, value in response_data.items():
+                setattr(job, attr, value)
             job.save()
             logger.debug(f"Updated job '{job.id}' with monitoring data")
         self.stats.inc_value('monitoring/job_saved')
+
+
+def get_response_data(spider, response_url):
+    data = {}
+    try:
+        data['response_url'] = spider.override_response_url
+    except AttributeError:
+        data['response_url'] = response_url
+    try:
+        data['response_backup_path'] = spider.override_response_backup_path
+    except AttributeError:
+        data['response_backup_path'] = get_response_backup_path(response_url)
+    return data
 
 
 def url_to_backup_path(url):

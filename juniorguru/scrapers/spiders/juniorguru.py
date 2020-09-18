@@ -9,25 +9,16 @@ from juniorguru.lib.md import md
 from juniorguru.lib.coerce import (coerce, parse_datetime, parse_text,
     parse_date, parse_set)
 from juniorguru.scrapers.items import JuniorGuruJob
-from juniorguru.scrapers.settings import ITEM_PIPELINES
+from juniorguru.scrapers.settings import JUNIORGURU_ITEM_PIPELINES
 
 
 class Spider(BaseSpider):
     name = 'juniorguru'
-    custom_settings = {
-        'ITEM_PIPELINES': {
-            name: priority for name, priority in ITEM_PIPELINES.items()
-            if name not in [
-                'juniorguru.scrapers.pipelines.short_description_filter.Pipeline',
-                'juniorguru.scrapers.pipelines.broken_encoding_filter.Pipeline',
-                'juniorguru.scrapers.pipelines.gender_cleaner.Pipeline',
-                'juniorguru.scrapers.pipelines.language_filter.Pipeline',
-                'juniorguru.scrapers.pipelines.jg_rank_filter.Pipeline',
-            ]
-        }
-    }
+    custom_settings = {'ITEM_PIPELINES': JUNIORGURU_ITEM_PIPELINES}
     doc_key = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
     sheet_name = 'jobs'
+    override_response_url = f'https://docs.google.com/spreadsheets/d/{doc_key}/edit#gid=0'
+    override_response_backup_path = None
 
     # https://stackoverflow.com/q/57060667/325365
     # https://developers.google.com/sheets/api/reference/rest#discovery-document
@@ -35,12 +26,8 @@ class Spider(BaseSpider):
 
     def parse(self, response):
         sheet = google_sheets.get(self.doc_key, self.sheet_name)
-        records = google_sheets.download(sheet)
-
-        for record in records:
-            data = coerce_record(record)
-            if data.get('approved_at'):
-                yield JuniorGuruJob(**data)
+        for record in google_sheets.download(sheet):
+            yield JuniorGuruJob(**coerce_record(record))
 
 
 def coerce_record(record):
@@ -58,11 +45,7 @@ def coerce_record(record):
         r'^approved$': ('approved_at', parse_date),
         r'^expire[ds]$': ('expires_at', parse_date),
     }, record)
-
-    if job.get('approved_at') and 'expires_at' not in job:
-        job['expires_at'] = job['approved_at'] + timedelta(days=30)
     job['id'] = create_id(job['posted_at'], job['company_link'])
-
     return job
 
 
