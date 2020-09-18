@@ -16,20 +16,20 @@ class Pipeline():
 
     def process_item(self, item, spider):
         with self.db:
-            self.model.create(**prepare_job_data(item, spider.name))
+            self.model.create(**prepare_data(item, spider.name))
         if self.stats:
             self.stats.inc_value('item_saved_count')
         return item
 
 
-def item_to_job_id(item):
+def prepare_data(item, spider_name):
+    data = dict(**item, source=spider_name)
+    data.setdefault('id', create_id(item))
+    return data
+
+
+def create_id(item):
     return hashlib.sha224('⚡︎'.join([
         item['link'],
         item['location'],
     ]).encode()).hexdigest()
-
-
-def prepare_job_data(item, spider_name):
-    data = dict(**item, source=spider_name)
-    data.setdefault('id', item_to_job_id(item))
-    return data

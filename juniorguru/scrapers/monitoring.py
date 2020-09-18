@@ -9,7 +9,7 @@ from peewee import OperationalError
 from scrapy import signals
 
 from juniorguru.models import Job, JobDropped, JobError, db
-from juniorguru.scrapers.pipelines.database import item_to_job_id
+from juniorguru.scrapers.pipelines.database import create_id
 
 
 logger = logging.getLogger(__name__)
@@ -105,7 +105,7 @@ class MonitoringExtension():
     @retry_when_db_locked
     def item_scraped(self, item, response, spider):
         with db:
-            job = Job.get_by_id(item_to_job_id(item))
+            job = Job.get_by_id(create_id(item))
             job.response_url = response.url
             job.response_backup_path = get_response_backup_path(response.url)
             job.item = item
