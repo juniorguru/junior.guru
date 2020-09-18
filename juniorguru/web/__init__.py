@@ -88,7 +88,6 @@ def jobs():
         jobs = Job.listing()
         jobs_count = Job.count()
         companies_count = Job.companies_count()
-        jobs_bot = Job.bot_listing()
     return render_template('jobs.html',
                            nav_active='jobs',
                            subnav_tabs=JOBS_SUBNAV_TABS,
@@ -96,7 +95,6 @@ def jobs():
                            jobs=jobs,
                            jobs_count=jobs_count,
                            companies_count=companies_count,
-                           jobs_bot=jobs_bot,
                            thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky'))
 
 
@@ -187,7 +185,7 @@ def inject_defaults():
     now = arrow.utcnow()
     return dict(nav_tabs=NAV_TABS,
                 year=now.year,
-                updated_at=now,
+                now=now,
                 handbook_release_at=arrow.get(2020, 9, 1),
                 thumbnail=thumbnail())
 

@@ -24,7 +24,8 @@ class Pipeline():
 
 def prepare_data(item, spider_name):
     data = dict(**item, source=spider_name)
-    data.setdefault('id', create_id(item))
+    if not data.get('id'):
+        data['id'] = create_id(item)
     return data
 
 

@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 
 import pytest
 
@@ -88,6 +88,7 @@ def test_to_datetime(dt_str, expected):
 
 
 @pytest.mark.parametrize('dt,expected', [
+    (date(2019, 12, 10), 'dnes'),
     (datetime(2019, 12, 10, 16, 20, 42), 'dnes'),
     (datetime(2019, 12, 9, 16, 20, 42), 'včera'),
     (datetime(2019, 12, 8, 16, 20, 42), 'předevčírem'),

@@ -9,9 +9,9 @@ from juniorguru.web import app
 ADMIN_NAV = {
     'Rozcestník': 'admin',
     'Newsletter': 'admin_newsletter',
-    'Stažené nabídky': 'admin_jobs_scraped',
+    'Nabídky': 'admin_jobs',
     'Zahozené nabídky': 'admin_jobs_dropped',
-    'Chyby při stahování': 'admin_jobs_errors',
+    'Chyby v nabídkách': 'admin_jobs_errors',
 }
 
 
@@ -40,11 +40,11 @@ def admin_newsletter():
     return render_template('admin_newsletter.html', jobs=jobs)
 
 
-@app.route('/a/jobs-scraped/')
-def admin_jobs_scraped():
+@app.route('/a/jobs/')
+def admin_jobs():
     with db:
-        jobs = models_to_dicts_with_metrics(Job.scraped_listing())
-    return render_template('admin_jobs_scraped.html', jobs=jobs)
+        jobs = models_to_dicts_with_metrics(Job.admin_listing())
+    return render_template('admin_jobs.html', jobs=jobs)
 
 
 @app.route('/a/jobs-dropped/')

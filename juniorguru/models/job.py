@@ -71,7 +71,7 @@ class Job(BaseModel):
 
     # diagnostics
     item = JSONField(null=True)
-    response_url = CharField()
+    response_url = CharField(null=True)
     response_backup_path = CharField(null=True)
 
     @property

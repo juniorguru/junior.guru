@@ -1,6 +1,6 @@
 {% extends 'admin_base.html' %}
 {% block body %}
-<h1>Chyby při stahování ({{ jobs_errors|length }})</h1>
+<h1>Chyby v nabídkách ({{ jobs_errors|length }})</h1>
 {% if not jobs_errors %}
   <p>Nenastaly žádné chyby.</p>
 {% else %}
@@ -16,8 +16,10 @@
         <a href="#{{ job_error.id }}">#</a>
         &mdash;
         <a href="{{ job_error.response_url }}" target="_blank">Zdrojové URL</a>
-        &mdash;
-        <a href="{{ url_for('admin_responses_backup', path=job_error.response_backup_path) }}" target="_blank">HTTP odpověď</a>
+        {% if job_error.response_backup_path %}
+          &mdash;
+          <a href="{{ url_for('admin_responses_backup', path=job_error.response_backup_path) }}" target="_blank">HTTP odpověď</a>
+        {% endif %}
       </small>
     </p>
     <details>

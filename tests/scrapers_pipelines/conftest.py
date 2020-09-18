@@ -17,7 +17,6 @@ def item():
         link='https://example.com/jobs/123',
         jg_rank=10,
         lang='cs',
-        response_url='https://jobs.example.com/feed.xml',
     )
 
 

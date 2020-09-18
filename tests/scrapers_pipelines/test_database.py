@@ -42,6 +42,16 @@ def test_database_id_prefilled(item, spider, db):
     assert job.id == 'honza42'
 
 
+def test_database_id_prefilled_no_link(item, spider, db):
+    item['id'] = 'honza42'
+    del item['link']
+    Pipeline(db=db, model=Job).process_item(item, spider)
+    with db:
+        job = Job.select()[0]
+
+    assert job.id == 'honza42'
+
+
 def test_database_same_link_items(item, spider, db):
     for location in ['Ostrava', 'Brno', 'Pardubice']:
         item['location'] = location

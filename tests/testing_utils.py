@@ -78,7 +78,6 @@ def prepare_job_data(id, **kwargs):
         lang=kwargs.get('lang', 'en'),
         link=kwargs.get('link'),
         pricing_plan=kwargs.get('pricing_plan', 'community'),
-        response_url=kwargs.get('response_url', 'https://jobs.example.com/feed.xml'),
     )
 
 

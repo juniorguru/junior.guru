@@ -1,6 +1,6 @@
 import re
 import math
-from datetime import datetime
+from datetime import date, datetime
 
 import arrow
 from jinja2 import Markup
@@ -104,11 +104,13 @@ def to_datetime(dt_str):
 
 
 @app.template_filter()
-def ago(dt, now=None):
-    dt = dt if dt.tzinfo else arrow.get(dt, 'UTC')
-    now = now or datetime.utcnow()
-    now = now if now.tzinfo else arrow.get(now, 'UTC')
-    days = (now - dt).days
+def ago(value, now=None):
+    today = now.date() if now else date.today()
+    try:
+        value = value.date()
+    except AttributeError:
+        pass
+    days = (today - value).days
     try:
         return ('dnes', 'včera', 'předevčírem')[days]
     except IndexError:

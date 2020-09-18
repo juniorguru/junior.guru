@@ -31,7 +31,11 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
   <ul class="items">
   {% for job in jobs %}
     <li class="item-summary" id="job-{{ job.id }}">
-      <a href="{{ url_for('job', job_id=job.id) }}">
+      {% if job.source == 'juniorguru' %}
+        <a href="{{ url_for('job', job_id=job.id) }}">
+      {% else %}
+        <a href="{{ job.link }}" data-metrics data-metrics-name="job" data-metrics-no-utm target="_blank" rel="noopener nofollow">
+      {% endif %}
         <div class="item-summary-wrapper">
           <h3>{{ job.title }}</h3>
           <small class="item-summary-details">
@@ -48,39 +52,17 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
   </ul>
 </section>
 
-<hr>
-<section id="jobs-bot" class="content__section">
-  <h2 class="content__section-heading">Nabídky odjinud</h2>
-  <div class="tooltips">
-    <p>
-      Každý den se robot ve službách junior.guru rozhlíží po různých místech
-      na internetu a hledá nabídky práce pro juniory. Ty podle přísných kritérií
-      třídí, a jen ty, které jsou nejvíc přístupné začátečníkům, se dostanou až sem.
-    </p>
-    <p>
-      <strong>Zatím je robot v testovacím provozu</strong>. Pokud najdeš
-      nesrovnalost, napiš prosím na {{ 'ahoj@junior.guru'|email_link }}.
-    </p>
-  </div>
-  <ul class="items">
-  {% for job in jobs_bot %}
-    <li class="item-summary" id="job-{{ job.id }}">
-      <a href="{{ job.link }}" data-metrics data-metrics-name="job" data-metrics-no-utm target="_blank" rel="noopener nofollow">
-        <div class="item-summary-wrapper">
-          <h3>{{ job.title }}</h3>
-          <small class="item-summary-details">
-            {{ job.company_name }}
-            &mdash;
-            {{ job.location }}
-            &mdash;
-            {{ job.employment_types|employment_types }}
-          </small>
-        </div>
-      </a>
-    </li>
-  {% endfor %}
-  </ul>
-</section>
+{#
+  <p>
+    Každý den se robot ve službách junior.guru rozhlíží po různých místech
+    na internetu a hledá nabídky práce pro juniory. Ty podle přísných kritérií
+    třídí, a jen ty, které jsou nejvíc přístupné začátečníkům, se dostanou až sem.
+  </p>
+  <p>
+    <strong>Zatím je robot v testovacím provozu</strong>. Pokud najdeš
+    nesrovnalost, napiš prosím na {{ 'ahoj@junior.guru'|email_link }}.
+  </p>
+#}
 
 <hr>
 <section class="content__section">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs" data-updated-at="{{ updated_at.to('Europe/Prague') }}">
+<html lang="cs" data-updated-at="{{ now.to('Europe/Prague') }}">
   <head>
     <meta charset="utf-8">
     <meta name="robots" content="noindex">
@@ -30,7 +30,7 @@
     {% endfor %}
     </p>
     <p>
-      <strong>Aktualizace:</strong> {{ updated_at.to('Europe/Prague')|ago }}, {{ updated_at.to('Europe/Prague') }}
+      <strong>Aktualizace:</strong> {{ now.to('Europe/Prague')|ago }}, {{ now.to('Europe/Prague') }}
     </p>
     <hr>
     {% block body %}{% endblock %}

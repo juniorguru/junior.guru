@@ -24,8 +24,10 @@
           <code>{{ job_dropped.id }}</code>
           &mdash;
           <a href="{{ job_dropped.response_url }}" target="_blank">Zdrojové URL</a>
-          &mdash;
-          <a href="{{ url_for('admin_responses_backup', path=job_dropped.response_backup_path) }}" target="_blank">HTTP odpověď</a>
+          {% if job_dropped.response_backup_path %}
+            &mdash;
+            <a href="{{ url_for('admin_responses_backup', path=job_dropped.response_backup_path) }}" target="_blank">HTTP odpověď</a>
+          {% endif %}
         </small>
       </p>
       {% if job_dropped.type != 'MissingRequiredFields' %}
