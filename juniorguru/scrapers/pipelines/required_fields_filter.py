@@ -1,6 +1,6 @@
-from scrapy.exceptions import DropItem
+from functools import lru_cache
 
-from juniorguru.scrapers.items import Job
+from scrapy.exceptions import DropItem
 
 
 class MissingRequiredFields(DropItem):
@@ -8,12 +8,16 @@ class MissingRequiredFields(DropItem):
 
 
 class Pipeline():
-    required_fields = {name for name, kwargs in Job.fields.items()
-                       if kwargs.get('required') is True}
-
     def process_item(self, item, spider):
-        missing_fields = self.required_fields - frozenset(item.keys())
+        required_fields = get_required_fields(item.__class__)
+        missing_fields = required_fields - frozenset(item.keys())
         if missing_fields:
             missing_fields = sorted(missing_fields)
             raise MissingRequiredFields(f"Missing: {', '.join(missing_fields)}")
         return item
+
+
+@lru_cache()
+def get_required_fields(cls):
+    return {name for name, kwargs in cls.fields.items()
+            if kwargs.get('required') is True}

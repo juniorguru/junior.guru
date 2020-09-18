@@ -30,9 +30,6 @@ def item_to_job_id(item):
 
 
 def prepare_job_data(item, spider_name):
-    return dict(
-        **item,
-        id=item_to_job_id(item),
-        source=spider_name,
-        # is_approved=True,
-    )
+    data = dict(**item, source=spider_name)
+    data.setdefault('id', item_to_job_id(item))
+    return data

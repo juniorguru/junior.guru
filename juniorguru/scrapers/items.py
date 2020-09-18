@@ -26,6 +26,15 @@ class Job(Item):
     jg_rank = Field()
 
 
+class JuniorGuruJob(Job):
+    id = Field()
+    link = Field()
+    email = Field(required=True)
+    pricing_plan = Field(required=True)
+    approved_at = Field(required=True)
+    expires_at = Field(required=True)
+
+
 def absolute_url(url, loader_context):
     return loader_context['response'].urljoin(url)
 

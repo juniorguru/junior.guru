@@ -8,7 +8,7 @@ from juniorguru.lib import google_sheets
 from juniorguru.lib.md import md
 from juniorguru.lib.coerce import (coerce, parse_datetime, parse_text,
     parse_date, parse_set)
-from juniorguru.scrapers.items import Job
+from juniorguru.scrapers.items import JuniorGuruJob
 from juniorguru.scrapers.settings import ITEM_PIPELINES
 
 
@@ -36,7 +36,9 @@ class Spider(BaseSpider):
         records = google_sheets.download(sheet)
 
         for record in records:
-            yield Job(**coerce_record(record))
+            data = coerce_record(record)
+            if data.get('approved_at'):
+                yield JuniorGuruJob(**data)
 
 
 def coerce_record(record):
@@ -46,18 +48,18 @@ def coerce_record(record):
         r'^employment type$': ('employment_types', parse_set),
         r'^job title$': ('title', parse_text),
         r'^company website link$': ('company_link', parse_text),
-        # r'^email address$': ('email', parse_text),
+        r'^email address$': ('email', parse_text),
         r'^job location$': ('location', parse_text),
         r'^job description$': ('description_html', parse_md),
         r'^job link$': ('link', parse_text),
-        # r'^pricing plan$': ('pricing_plan', parse_pricing_plan),
-        # r'^approved$': ('approved_at', parse_date),
-        # r'^expire[ds]$': ('expires_at', parse_date),
+        r'^pricing plan$': ('pricing_plan', parse_pricing_plan),
+        r'^approved$': ('approved_at', parse_date),
+        r'^expire[ds]$': ('expires_at', parse_date),
     }, record)
 
-    # if job.get('approved_at') and 'expires_at' not in job:
-    #     job['expires_at'] = job['approved_at'] + timedelta(days=30)
-    # job['id'] = create_id(job['posted_at'], job['company_link'])
+    if job.get('approved_at') and 'expires_at' not in job:
+        job['expires_at'] = job['approved_at'] + timedelta(days=30)
+    job['id'] = create_id(job['posted_at'], job['company_link'])
 
     return job
 

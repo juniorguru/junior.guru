@@ -1,16 +1,24 @@
 import pytest
+from scrapy import Field, Item
 
 from juniorguru.scrapers.pipelines.required_fields_filter import (
     MissingRequiredFields, Pipeline)
 
 
-def test_required_fields_filter(item, spider):
+class Something(Item):
+    prop1 = Field()
+    prop2 = Field(required=True)
+    prop3 = Field()
+    prop4 = Field(required=True)
+
+
+def test_required_fields_filter(spider):
+    item = Something(prop1='foo', prop2='moo', prop4='boo')
     Pipeline().process_item(item, spider)
 
 
-def test_required_fields_drops(item, spider):
-    del item['posted_at']
-    del item['description_html']
+def test_required_fields_drops(spider):
+    item = Something()
 
-    with pytest.raises(MissingRequiredFields, match='description_html, posted_at'):
+    with pytest.raises(MissingRequiredFields, match='prop2, prop4'):
         Pipeline().process_item(item, spider)
