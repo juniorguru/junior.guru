@@ -41,7 +41,7 @@ def test_spider_parse_job():
     assert job['location'] == 'Leipzig, Deutschland'
     assert job['employment_types'] == ['Full-time']
     assert job['experience_levels'] == ['junior', 'mid-level']
-    assert job['posted_at'].date() == date.today() - timedelta(days=27)
+    assert job['posted_at'] == date.today() - timedelta(days=27)
     assert 'what QUAJOO offers you:</strong>' in job['description_html']
 
 

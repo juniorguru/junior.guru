@@ -31,7 +31,6 @@ def test_database(item, spider, db):
 
     assert len(job.id) == 56  # sha224 hex digest length
     assert job.source == 'dummy'  # spider name
-    assert job.approved_at is None
 
 
 def test_database_id_prefilled(item, spider, db):

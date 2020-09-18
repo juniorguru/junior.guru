@@ -56,7 +56,7 @@ def test_spider_parse_job():
     assert job['location'] == 'Prague, Czech Republic'
     assert job['employment_types'] == ['full-time']
     assert job['experience_levels'] == ['entry level']
-    assert job['posted_at'].date() == date.today() - timedelta(weeks=3)
+    assert job['posted_at'] == date.today() - timedelta(weeks=3)
     assert '<li>3 Sick days ročně' in job['description_html']
 
 
@@ -84,4 +84,4 @@ def test_spider_parse_job_applicants():
                             body=Path(FIXTURES_DIR / 'job_applicants.html').read_bytes())
     job = next(linkedin.Spider().parse_job(response))
 
-    assert job['posted_at'].date() == date.today() - timedelta(weeks=2)
+    assert job['posted_at'] == date.today() - timedelta(weeks=2)

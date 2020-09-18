@@ -34,8 +34,8 @@ def drop_remote(types):
     return [type_ for type_ in types if type_.lower() != 'remote']
 
 
-def parse_iso_datetime(value):
-    return arrow.get(value).to('utc').naive
+def parse_iso_date(value):
+    return arrow.get(value).date()
 
 
 class Loader(ItemLoader):
@@ -45,4 +45,4 @@ class Loader(ItemLoader):
     company_name_in = MapCompose(html.unescape)
     employment_types_in = Compose(MapCompose(str.strip), drop_remote)
     employment_types_out = Identity()
-    posted_at_in = MapCompose(parse_iso_datetime)
+    posted_at_in = MapCompose(parse_iso_date)

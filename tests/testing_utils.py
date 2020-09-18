@@ -1,5 +1,6 @@
 import json
-from datetime import date, datetime, timedelta
+import random
+from datetime import date, timedelta
 from pathlib import Path
 
 import pytest
@@ -63,20 +64,21 @@ def param_xfail_missing(path, values=2):
 def prepare_job_data(id, **kwargs):
     return dict(
         id=str(id),
-        posted_at=kwargs.get('posted_at', datetime(2019, 7, 6, 20, 24, 3)),
+        posted_at=kwargs.get('posted_at', date(2019, 7, 6)),
         company_name=kwargs.get('company_name', 'Honza Ltd.'),
         employment_types=kwargs.get('employment_types', frozenset(['internship'])),
         title=kwargs.get('title', 'Junior Software Engineer'),
         company_link=kwargs.get('company_link', 'https://example.com'),
         email=kwargs.get('email', 'recruiter@example.com'),
         location=kwargs.get('location', 'Brno, Czech Republic'),
-        description=kwargs.get('description', '**Really long** description.'),
-        source=kwargs.get('source', 'juniorguru'),
-        approved_at=kwargs.get('approved_at', date.today()),
-        expires_at=kwargs.get('expires_at', None),
-        jg_rank=kwargs.get('jg_rank'),
+        description_html=kwargs.get('description', '<p><strong>Useful</strong> description.</p>'),
+        source=kwargs.get('source', random.choice(['juniorguru', 'moo', 'boo', 'foo'])),
+        expires_at=kwargs.get('expires_at', date.today() + timedelta(days=3)),
+        jg_rank=kwargs.get('jg_rank', 10),
+        lang=kwargs.get('lang', 'en'),
         link=kwargs.get('link'),
         pricing_plan=kwargs.get('pricing_plan', 'community'),
+        response_url=kwargs.get('response_url', 'https://jobs.example.com/feed.xml'),
     )
 
 

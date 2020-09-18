@@ -1,5 +1,5 @@
 import re
-from datetime import datetime, timedelta
+from datetime import date, timedelta
 
 from scrapy import Field, Item
 
@@ -52,19 +52,19 @@ def first(iterable):
         return None
 
 
-def parse_relative_time(text, now=None):
-    now = now or datetime.utcnow()
+def parse_relative_time(text, today=None):
+    today = today or date.today()
     if 'week' in text:
         weeks_ago = int(re.search(r'\d+', text).group(0))
-        return now - timedelta(weeks=weeks_ago)
+        return today - timedelta(weeks=weeks_ago)
     if 'minute' in text or 'hour' in text:
-        return now
+        return today
     if 'yesterday' in text:
-        return now - timedelta(days=1)
+        return today - timedelta(days=1)
     if 'day' in text:
         days_ago = int(re.search(r'\d+', text).group(0))
-        return now - timedelta(days=days_ago)
+        return today - timedelta(days=days_ago)
     if 'month' in text:
         months_ago = int(re.search(r'\d+', text).group(0))
-        return now - timedelta(days=months_ago * 30)
+        return today - timedelta(days=months_ago * 30)
     raise ValueError(text)

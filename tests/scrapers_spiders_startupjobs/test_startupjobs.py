@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 
 import pytest
@@ -29,7 +29,7 @@ def test_spider_parse():
     assert job['company_link'] == 'https://www.startupjobs.cz/startup/cloudinfrastack?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
     assert job['location'] == 'Praha, Česko'
     assert job['employment_types'] == ['Part-time', 'Full-time']
-    assert job['posted_at'].date() == date(2020, 5, 5)
+    assert job['posted_at'] == date(2020, 5, 5)
     assert '<p>Ahoj, baví tě Linux?' in job['description_html']
 
 
@@ -96,10 +96,10 @@ def test_drop_remote(types, expected):
 
 
 @pytest.mark.parametrize('value,expected', [
-    ('2020-05-07T16:06:08+02:00', datetime(2020, 5, 7, 14, 6, 8)),
-    ('2020-05-07T16:06:08-02:00', datetime(2020, 5, 7, 18, 6, 8)),
-    ('2020-05-07T16:06:08', datetime(2020, 5, 7, 16, 6, 8)),
-    ('2020-05-07 16:06:08', datetime(2020, 5, 7, 16, 6, 8)),
+    ('2020-05-07T16:06:08+02:00', date(2020, 5, 7)),
+    ('2020-05-07T16:06:08-02:00', date(2020, 5, 7)),
+    ('2020-05-07T16:06:08', date(2020, 5, 7)),
+    ('2020-05-07 16:06:08', date(2020, 5, 7)),
 ])
-def test_parse_iso_datetime(value, expected):
-    assert startupjobs.parse_iso_datetime(value) == expected
+def test_parse_iso_date(value, expected):
+    assert startupjobs.parse_iso_date(value) == expected

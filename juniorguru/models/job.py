@@ -101,51 +101,7 @@ class Job(BaseModel):
 
     @classmethod
     def listing(cls):
-        return cls.juniorguru_listing()
-
-    @classmethod
-    def newsletter_listing(cls, min_count, today=None):
-        today = today or date.today()
-
-        count = 0
-        query = cls.select() \
-            .where((cls.source == 'juniorguru') &
-                cls.approved_at.is_null(False) &
-                (cls.expires_at.is_null() | (cls.expires_at > today))) \
-            .order_by(cls.posted_at)
-        for item in query:
-            yield item
-            count += 1
-
-        backfill_query = cls.select() \
-            .where(cls.source != 'juniorguru', cls.jg_rank > 0) \
-            .order_by(cls.jg_rank.desc(), cls.posted_at.desc())
-        yield from itertools.islice(backfill_query, min_count - count)
-
-    @classmethod
-    def juniorguru_listing(cls, today=None):
-        today = today or date.today()
-        return cls.juniorguru() \
-            .where(cls.approved_at.is_null(False) &
-                (cls.expires_at.is_null() | (cls.expires_at > today)))
-
-    @classmethod
-    def juniorguru(cls):
         return cls.select() \
-            .where(cls.source == 'juniorguru') \
-            .order_by(cls.posted_at.desc())
-
-    @classmethod
-    def bot_listing(cls):
-        return cls.select() \
-            .where(cls.source != 'juniorguru',
-                    cls.jg_rank > 0) \
-            .order_by(cls.jg_rank.desc(), cls.posted_at.desc())
-
-    @classmethod
-    def scraped_listing(cls):
-        return cls.select() \
-            .where(cls.source != 'juniorguru') \
             .order_by(cls.jg_rank.desc(), cls.posted_at.desc())
 
     @classmethod
@@ -156,9 +112,30 @@ class Job(BaseModel):
     def companies_count(cls):
         return len(frozenset([job.company_link for job in cls.listing()]))
 
-    def days_since_approved(self, today=None):
+    @classmethod
+    def juniorguru_listing(cls):
+        return cls.listing().where(cls.source == 'juniorguru')
+
+    @classmethod
+    def newsletter_listing(cls, min_count, today=None):
         today = today or date.today()
-        return (today - self.approved_at).days
+
+        count = 0
+        for item in cls.juniorguru_listing():
+            yield item
+            count += 1
+
+        backfill_query = cls.listing().where(cls.source != 'juniorguru')
+        yield from itertools.islice(backfill_query, min_count - count)
+
+    @classmethod
+    def admin_listing(cls):
+        return cls.select() \
+            .order_by(cls.jg_rank.desc(), cls.posted_at.desc())
+
+    def days_since_posted(self, today=None):
+        today = today or date.today()
+        return (today - self.posted_at).days
 
     def days_until_expires(self, today=None):
         today = today or date.today()

@@ -1,4 +1,4 @@
-from datetime import date, timedelta
+from datetime import date
 from pathlib import Path
 
 import pytest
@@ -18,7 +18,6 @@ class JobMock(Job):
 @pytest.fixture
 def job_mock():
     data = prepare_job_data('123')
-    data['expires_at'] = data['approved_at'] + timedelta(days=30)
     data['metrics'] = dict(users=15, pageviews=25, applications=3)
     return JobMock(**data)
 
@@ -47,7 +46,7 @@ def test_create_message_prefill_form(job_mock, template):
 
 
 def test_create_message_start_end(job_mock, template):
-    job_mock.approved_at = date(2020, 6, 1)
+    job_mock.posted_at = date(2020, 6, 1)
     job_mock.expires_at = date(2020, 7, 1)
     message = create_message(job_mock, template, today=date(2020, 6, 23))
     html = message.get()['content'][0]['value']

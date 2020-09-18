@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import date
 
 import pytest
 
@@ -33,8 +33,7 @@ def test_split_by():
     ('2 months ago', date(2020, 2, 20)),
 ])
 def test_parse_relative_time(time, expected):
-    now = datetime(2020, 4, 20, 20, 1, 45)
-    assert items.parse_relative_time(time, now=now).date() == expected
+    assert items.parse_relative_time(time, today=date(2020, 4, 20)) == expected
 
 
 def test_parse_relative_time_raises_on_uncrecognized_value():

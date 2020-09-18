@@ -1,5 +1,5 @@
 import random
-from datetime import date, datetime, timedelta
+from datetime import date
 
 import pytest
 from peewee import SqliteDatabase
@@ -71,73 +71,81 @@ def test_employment_types_sorts_extra_types_last_alphabetically(db_connection):
     ]
 
 
-def test_listing_returns_only_approved_jobs(db_connection):
-    job1 = create_job('1', approved_at=date(1987, 8, 30))
-    job2 = create_job('2', approved_at=None)  # noqa
-    job3 = create_job('3', approved_at=date(1987, 8, 30))
-
-    assert set(Job.listing()) == {job1, job3}
-
-
-def test_listing_returns_only_not_expired_jobs(db_connection):
-    job1 = create_job('1', expires_at=None)
-    job2 = create_job('2', expires_at=date(1987, 8, 30))  # noqa
-    job3 = create_job('3', expires_at=date.today())  # noqa
-    job4 = create_job('4', expires_at=date.today() + timedelta(days=2))
-
-    assert set(Job.listing()) == {job1, job4}
-
-
-def test_listing_sorts_by_posted_at_desc(db_connection):
-    job1 = create_job('1', posted_at=datetime(2010, 7, 6, 20, 24, 3))
-    job2 = create_job('2', posted_at=datetime(2019, 7, 6, 20, 24, 3))
-    job3 = create_job('3', posted_at=datetime(2014, 7, 6, 20, 24, 3))
+def test_listing_sorts_by_jg_rank_desc(db_connection):
+    job1 = create_job('1', jg_rank=10)
+    job2 = create_job('2', jg_rank=30)
+    job3 = create_job('3', jg_rank=20)
 
     assert list(Job.listing()) == [job2, job3, job1]
 
 
-def test_newsletter_listing_returns_only_approved_jobs(db_connection):
-    job1 = create_job('1', approved_at=date(1987, 8, 30))
-    job2 = create_job('2', approved_at=None)  # noqa
-    job3 = create_job('3', approved_at=date(1987, 8, 30))
+def test_listing_sorts_by_jg_rank_and_posted_at_desc(db_connection):
+    job1 = create_job('1', jg_rank=5, posted_at=date(2010, 7, 3))
+    job2 = create_job('2', jg_rank=5, posted_at=date(2019, 7, 6))
+    job3 = create_job('3', jg_rank=5, posted_at=date(2014, 7, 5))
 
-    assert set(Job.newsletter_listing(5)) == {job1, job3}
-
-
-def test_newsletter_listing_returns_only_not_expired_jobs(db_connection):
-    job1 = create_job('1', expires_at=None)
-    job2 = create_job('2', expires_at=date(1987, 8, 30))  # noqa
-    job3 = create_job('3', expires_at=date.today())  # noqa
-    job4 = create_job('4', expires_at=date.today() + timedelta(days=2))
-
-    assert set(Job.newsletter_listing(5)) == {job1, job4}
+    assert list(Job.listing()) == [job2, job3, job1]
 
 
-def test_newsletter_listing_sorts_by_posted_at_asc(db_connection):
-    job1 = create_job('1', posted_at=datetime(2010, 7, 6, 20, 24, 3))
-    job2 = create_job('2', posted_at=datetime(2019, 7, 6, 20, 24, 3))
-    job3 = create_job('3', posted_at=datetime(2014, 7, 6, 20, 24, 3))
+def test_juniorguru_listing(db_connection):
+    job1 = create_job('1', source='juniorguru', jg_rank=30)
+    job2 = create_job('2', source='moo')  # noqa
+    job3 = create_job('3', source='juniorguru', jg_rank=20)
+    job4 = create_job('4', source='juniorguru', jg_rank=10)
+
+    assert list(Job.juniorguru_listing()) == [job1, job3, job4]
+
+
+def test_juniorguru_listing_sorts_by_jg_rank_and_posted_at_desc(db_connection):
+    job1 = create_job('1', source='juniorguru', jg_rank=5, posted_at=date(2010, 7, 3))
+    job2 = create_job('2', source='juniorguru', jg_rank=5, posted_at=date(2019, 7, 6))
+    job3 = create_job('3', source='juniorguru', jg_rank=5, posted_at=date(2014, 7, 5))
+    job4 = create_job('4', source='moo')  # noqa
+
+    assert list(Job.juniorguru_listing()) == [job2, job3, job1]
+
+
+@pytest.mark.parametrize('source', [
+    'juniorguru',
+    'moo',
+])
+def test_newsletter_listing_sorts_by_jg_rank_desc(db_connection, source):
+    job1 = create_job('1', source=source, jg_rank=30)
+    job2 = create_job('2', source=source, jg_rank=10)
+    job3 = create_job('3', source=source, jg_rank=20)
 
     assert list(Job.newsletter_listing(5)) == [job1, job3, job2]
 
 
-def test_newsletter_listing_returns_only_jg_if_enough(db_connection):
-    job1 = create_job('1', source='juniorguru')
+@pytest.mark.parametrize('source', [
+    'juniorguru',
+    'moo',
+])
+def test_newsletter_listing_sorts_by_jg_rank_and_posted_at_desc(db_connection, source):
+    job1 = create_job('1', source=source, jg_rank=5, posted_at=date(2020, 7, 10))
+    job2 = create_job('2', source=source, jg_rank=5, posted_at=date(2020, 7, 6))
+    job3 = create_job('3', source=source, jg_rank=5, posted_at=date(2020, 7, 8))
+
+    assert list(Job.newsletter_listing(5)) == [job1, job3, job2]
+
+
+def test_newsletter_listing_returns_only_juniorguru_if_enough(db_connection):
+    job1 = create_job('1', source='juniorguru', jg_rank=30)
     job2 = create_job('2', source='moo')  # noqa
-    job3 = create_job('3', source='juniorguru')
-    job4 = create_job('4', source='juniorguru')
+    job3 = create_job('3', source='juniorguru', jg_rank=20)
+    job4 = create_job('4', source='juniorguru', jg_rank=10)
 
     assert list(Job.newsletter_listing(3)) == [job1, job3, job4]
 
 
 def test_newsletter_listing_backfills_with_other_sources(db_connection):
-    job1 = create_job('1', source='moo', jg_rank=5)
-    job2 = create_job('2', source='foo', jg_rank=-5)  # noqa
-    job3 = create_job('3', source='bar', jg_rank=10)
-    job4 = create_job('4', source='juniorguru')
-    job5 = create_job('5', source='juniorguru')
+    job1 = create_job('1', source='moo', jg_rank=20)
+    job2 = create_job('2', source='foo', jg_rank=10)
+    job3 = create_job('3', source='bar', jg_rank=40)
+    job4 = create_job('4', source='juniorguru', jg_rank=30)
+    job5 = create_job('5', source='juniorguru', jg_rank=20)
 
-    assert list(Job.newsletter_listing(5)) == [job4, job5, job3, job1]
+    assert list(Job.newsletter_listing(5)) == [job4, job5, job3, job1, job2]
 
 
 def test_newsletter_listing_backfills_up_to_min_count(db_connection):
@@ -150,23 +158,23 @@ def test_newsletter_listing_backfills_up_to_min_count(db_connection):
 
 
 def test_count(db_connection):
-    create_job('1', approved_at=date(1987, 8, 30))
-    create_job('2', approved_at=None)
-    create_job('3', approved_at=date(1987, 8, 30))
-    create_job('4', approved_at=date(1987, 8, 30), expires_at=date(1987, 9, 1))
+    create_job('1')
+    create_job('2')
+    create_job('3')
+    create_job('4')
 
-    assert Job.count() == 2
+    assert Job.count() == 4
 
 
 def test_companies_count(db_connection):
-    create_job('1', company_link='https://abc.example.com', approved_at=date(1987, 8, 30))
-    create_job('2', company_link='https://abc.example.com', approved_at=None)
-    create_job('3', company_link='https://xyz.example.com', approved_at=date(1987, 8, 30))
-    create_job('4', company_link='https://xyz.example.com', approved_at=None)
-    create_job('5', company_link='https://def.example.com', approved_at=None)
-    create_job('6', company_link='https://def.example.com', approved_at=date(1987, 8, 30), expires_at=date(1987, 9, 1))
+    create_job('1', company_link='https://abc.example.com')
+    create_job('2', company_link='https://abc.example.com')
+    create_job('3', company_link='https://xyz.example.com')
+    create_job('4', company_link='https://xyz.example.com')
+    create_job('5', company_link='https://def.example.com')
+    create_job('6', company_link='https://def.example.com')
 
-    assert Job.companies_count() == 2
+    assert Job.companies_count() == 3
 
 
 def test_get_by_url(db_connection):
@@ -217,10 +225,10 @@ def test_metrics(db_connection):
     }
 
 
-def test_days_since_approved():
-    job = Job(**prepare_job_data('1', approved_at=date(1987, 8, 30)))
+def test_days_since_posted():
+    job = Job(**prepare_job_data('1', posted_at=date(1987, 8, 30)))
 
-    assert job.days_since_approved(today=date(1987, 9, 8)) == 9
+    assert job.days_since_posted(today=date(1987, 9, 8)) == 9
 
 
 def test_days_until_expires():
