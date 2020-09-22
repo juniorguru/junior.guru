@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 from scrapy import signals
 
 from juniorguru.lib.log import get_log
-from juniorguru.models import Job, JobDropped, JobError, db, retry_when_db_locked
+from juniorguru.models import Job, JobDropped, JobError, SpiderMetric, db, retry_when_db_locked
 from juniorguru.scrapers.pipelines.database import create_id
 
 
@@ -13,6 +13,16 @@ log = get_log(__name__)
 
 
 RESPONSES_BACKUP_DIR = Path('juniorguru/data/responses/').absolute()
+RELEVANT_METRICS = (
+    'downloader/request_count',
+    'downloader/response_count',
+    'downloader/response_status_count',
+    'log_count/ERROR',
+    'item_saved_count',
+    'item_dropped_count',
+    'item_dropped_reasons_count',
+    'elapsed_time_seconds',
+)
 
 
 class BackupResponseMiddleware():
@@ -44,6 +54,7 @@ class MonitoringExtension():
         crawler.signals.connect(ext.item_error, signal=signals.item_error)
         crawler.signals.connect(ext.item_dropped, signal=signals.item_dropped)
         crawler.signals.connect(ext.item_scraped, signal=signals.item_scraped)
+        crawler.signals.connect(ext.spider_closed, signal=signals.spider_closed)
         return ext
 
     def spider_error(self, failure, response, spider):
@@ -86,7 +97,7 @@ class MonitoringExtension():
         response_data = get_response_data(spider, response.url)
 
         def operation():
-            job = Job.get_by_id(item.get('id', create_id(item)))
+            job = Job.get_by_id(item.get('id') or create_id(item))
             job.item = item
             for attr, value in response_data.items():
                 setattr(job, attr, value)
@@ -94,6 +105,21 @@ class MonitoringExtension():
             log.debug(f"Updated job '{job.id}' with monitoring data")
             self.stats.inc_value('monitoring/job_saved')
         retry_when_db_locked(db, operation, stats=self.stats)
+
+    def spider_closed(self, spider):
+        for name, value in self.stats.get_stats().items():
+            if name.startswith(RELEVANT_METRICS):
+                try:
+                    value = int(value)
+                except (TypeError, ValueError):
+                    pass
+                else:
+                    def operation():
+                        SpiderMetric.create(name=name,
+                                            spider_name=spider.name,
+                                            value=value)
+                        log.debug(f"Saved '{spider.name}' spider metrics")
+                    retry_when_db_locked(db, operation, stats=self.stats)
 
 
 def get_response_data(spider, response_url):

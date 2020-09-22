@@ -6,8 +6,9 @@ from juniorguru.models.supporter import Supporter
 from juniorguru.models.last_modified import LastModified
 from juniorguru.models.press_release import PressRelease
 from juniorguru.models.logo import Logo, LogoMetric
+from juniorguru.models.spider_metric import SpiderMetric
 
 
 __all__ = [db, Job, JobDropped, JobError, JobMetric, Metric, Story, Supporter,
            LastModified, PressRelease, JobNewsletterMention, Logo, LogoMetric,
-           retry_when_db_locked]
+           retry_when_db_locked, SpiderMetric]

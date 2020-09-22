@@ -42,7 +42,7 @@ def json_dumps(value):
     return json.dumps(value, ensure_ascii=False, default=default)
 
 
-def retry_when_db_locked(db, op, stats=None, retries=10, wait_sec=0.5):
+def retry_when_db_locked(db, op, stats=None, retries=10, wait_sec=0.1):
     last_error = None
     for i in range(retries):
         try:

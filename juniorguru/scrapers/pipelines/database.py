@@ -18,6 +18,7 @@ class Pipeline():
             self.model.create(**prepare_data(item, spider.name))
             if self.stats:
                 self.stats.inc_value('item_saved_count')
+            return item
         return retry_when_db_locked(self.db, operation, stats=self.stats)
 
 

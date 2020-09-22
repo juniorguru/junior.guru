@@ -1,7 +1,7 @@
 from flask import render_template, send_from_directory
 from playhouse.shortcuts import model_to_dict
 
-from juniorguru.models import Job, JobDropped, JobError, Metric, db
+from juniorguru.models import Job, JobDropped, JobError, Metric, db, SpiderMetric
 from juniorguru.scrapers.monitoring import RESPONSES_BACKUP_DIR
 from juniorguru.web import app
 
@@ -57,8 +57,10 @@ def admin_jobs_dropped():
 @app.route('/a/jobs-errors/')
 def admin_jobs_errors():
     with db:
+        spider_metrics = SpiderMetric.as_dict()
         jobs_errors = models_to_dicts(JobError.admin_listing())
-    return render_template('admin_jobs_errors.html', jobs_errors=jobs_errors)
+    return render_template('admin_jobs_errors.html', spider_metrics=spider_metrics,
+                                                     jobs_errors=jobs_errors)
 
 
 @app.route('/a/responses-backup/<path:path>')

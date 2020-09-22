@@ -15,7 +15,7 @@ def db_connection():
         db.drop_tables(models)
 
 
-def test_global_metric_as_dict(db_connection):
+def test_metric_as_dict(db_connection):
     Metric.create(name='avg_monthly_users', value=1200)
     Metric.create(name='avg_monthly_pageviews', value=6400)
 

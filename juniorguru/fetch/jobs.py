@@ -2,13 +2,13 @@ import subprocess
 from multiprocessing import Pool
 
 from juniorguru.lib import timer
-from juniorguru.models import Job, JobDropped, JobError, db
+from juniorguru.models import Job, JobDropped, JobError, SpiderMetric, db
 
 
 @timer.notify
 def main():
     with db:
-        for model in [Job, JobError, JobDropped]:
+        for model in [Job, JobError, JobDropped, SpiderMetric]:
             model.drop_table()
             model.create_table()
 

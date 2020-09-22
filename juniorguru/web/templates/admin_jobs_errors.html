@@ -1,6 +1,21 @@
 {% extends 'admin_base.html' %}
 {% block body %}
 <h1>Chyby v nabídkách ({{ jobs_errors|length }})</h1>
+<table>
+  <tr>
+    <th>&nbsp;</th>
+    {% for name in spider_metrics.values()|first %}
+      <th>{{ name }}</th>
+    {% endfor %}
+  </tr>
+  {% for name, data in spider_metrics.items() %}
+    <tr>
+      <th>{{ name }}</th>
+      {% for value in data.values() %}<td>{{ value }}</td>{% endfor %}
+    </tr>
+  {% endfor %}
+</table>
+<hr>
 {% if not jobs_errors %}
   <p>Nenastaly žádné chyby.</p>
 {% else %}
