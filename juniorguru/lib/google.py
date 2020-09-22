@@ -17,4 +17,5 @@ def get_credentials(scope):
 
 def get_client(api_name, api_version, scope):
     credentials = get_credentials(scope)
-    return build(api_name, api_version, credentials=credentials)
+    return build(api_name, api_version, credentials=credentials,
+                 cache_discovery=False)
