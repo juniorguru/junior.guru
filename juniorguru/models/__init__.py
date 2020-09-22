@@ -1,4 +1,4 @@
-from juniorguru.models.base import db
+from juniorguru.models.base import db, retry_when_db_locked
 from juniorguru.models.job import Job, JobDropped, JobError, JobMetric, JobNewsletterMention
 from juniorguru.models.metric import Metric
 from juniorguru.models.story import Story
@@ -9,4 +9,5 @@ from juniorguru.models.logo import Logo, LogoMetric
 
 
 __all__ = [db, Job, JobDropped, JobError, JobMetric, Metric, Story, Supporter,
-           LastModified, PressRelease, JobNewsletterMention, Logo, LogoMetric]
+           LastModified, PressRelease, JobNewsletterMention, Logo, LogoMetric,
+           retry_when_db_locked]
