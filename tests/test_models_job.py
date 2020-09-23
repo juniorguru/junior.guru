@@ -71,35 +71,35 @@ def test_employment_types_sorts_extra_types_last_alphabetically(db_connection):
     ]
 
 
-def test_listing_sorts_by_jg_rank_desc(db_connection):
-    job1 = create_job('1', jg_rank=10)
-    job2 = create_job('2', jg_rank=30)
-    job3 = create_job('3', jg_rank=20)
+def test_listing_sorts_by_junior_rank_desc(db_connection):
+    job1 = create_job('1', junior_rank=10)
+    job2 = create_job('2', junior_rank=30)
+    job3 = create_job('3', junior_rank=20)
 
     assert list(Job.listing()) == [job2, job3, job1]
 
 
-def test_listing_sorts_by_jg_rank_and_posted_at_desc(db_connection):
-    job1 = create_job('1', jg_rank=5, posted_at=date(2010, 7, 3))
-    job2 = create_job('2', jg_rank=5, posted_at=date(2019, 7, 6))
-    job3 = create_job('3', jg_rank=5, posted_at=date(2014, 7, 5))
+def test_listing_sorts_by_junior_rank_and_posted_at_desc(db_connection):
+    job1 = create_job('1', junior_rank=5, posted_at=date(2010, 7, 3))
+    job2 = create_job('2', junior_rank=5, posted_at=date(2019, 7, 6))
+    job3 = create_job('3', junior_rank=5, posted_at=date(2014, 7, 5))
 
     assert list(Job.listing()) == [job2, job3, job1]
 
 
 def test_juniorguru_listing(db_connection):
-    job1 = create_job('1', source='juniorguru', jg_rank=30)
+    job1 = create_job('1', source='juniorguru', junior_rank=30)
     job2 = create_job('2', source='moo')  # noqa
-    job3 = create_job('3', source='juniorguru', jg_rank=20)
-    job4 = create_job('4', source='juniorguru', jg_rank=10)
+    job3 = create_job('3', source='juniorguru', junior_rank=20)
+    job4 = create_job('4', source='juniorguru', junior_rank=10)
 
     assert list(Job.juniorguru_listing()) == [job1, job3, job4]
 
 
-def test_juniorguru_listing_sorts_by_jg_rank_and_posted_at_desc(db_connection):
-    job1 = create_job('1', source='juniorguru', jg_rank=5, posted_at=date(2010, 7, 3))
-    job2 = create_job('2', source='juniorguru', jg_rank=5, posted_at=date(2019, 7, 6))
-    job3 = create_job('3', source='juniorguru', jg_rank=5, posted_at=date(2014, 7, 5))
+def test_juniorguru_listing_sorts_by_junior_rank_and_posted_at_desc(db_connection):
+    job1 = create_job('1', source='juniorguru', junior_rank=5, posted_at=date(2010, 7, 3))
+    job2 = create_job('2', source='juniorguru', junior_rank=5, posted_at=date(2019, 7, 6))
+    job3 = create_job('3', source='juniorguru', junior_rank=5, posted_at=date(2014, 7, 5))
     job4 = create_job('4', source='moo')  # noqa
 
     assert list(Job.juniorguru_listing()) == [job2, job3, job1]
@@ -109,10 +109,10 @@ def test_juniorguru_listing_sorts_by_jg_rank_and_posted_at_desc(db_connection):
     'juniorguru',
     'moo',
 ])
-def test_newsletter_listing_sorts_by_jg_rank_desc(db_connection, source):
-    job1 = create_job('1', source=source, jg_rank=30)
-    job2 = create_job('2', source=source, jg_rank=10)
-    job3 = create_job('3', source=source, jg_rank=20)
+def test_newsletter_listing_sorts_by_junior_rank_desc(db_connection, source):
+    job1 = create_job('1', source=source, junior_rank=30)
+    job2 = create_job('2', source=source, junior_rank=10)
+    job3 = create_job('3', source=source, junior_rank=20)
 
     assert list(Job.newsletter_listing(5)) == [job1, job3, job2]
 
@@ -121,37 +121,37 @@ def test_newsletter_listing_sorts_by_jg_rank_desc(db_connection, source):
     'juniorguru',
     'moo',
 ])
-def test_newsletter_listing_sorts_by_jg_rank_and_posted_at_desc(db_connection, source):
-    job1 = create_job('1', source=source, jg_rank=5, posted_at=date(2020, 7, 10))
-    job2 = create_job('2', source=source, jg_rank=5, posted_at=date(2020, 7, 6))
-    job3 = create_job('3', source=source, jg_rank=5, posted_at=date(2020, 7, 8))
+def test_newsletter_listing_sorts_by_junior_rank_and_posted_at_desc(db_connection, source):
+    job1 = create_job('1', source=source, junior_rank=5, posted_at=date(2020, 7, 10))
+    job2 = create_job('2', source=source, junior_rank=5, posted_at=date(2020, 7, 6))
+    job3 = create_job('3', source=source, junior_rank=5, posted_at=date(2020, 7, 8))
 
     assert list(Job.newsletter_listing(5)) == [job1, job3, job2]
 
 
 def test_newsletter_listing_returns_only_juniorguru_if_enough(db_connection):
-    job1 = create_job('1', source='juniorguru', jg_rank=30)
+    job1 = create_job('1', source='juniorguru', junior_rank=30)
     job2 = create_job('2', source='moo')  # noqa
-    job3 = create_job('3', source='juniorguru', jg_rank=20)
-    job4 = create_job('4', source='juniorguru', jg_rank=10)
+    job3 = create_job('3', source='juniorguru', junior_rank=20)
+    job4 = create_job('4', source='juniorguru', junior_rank=10)
 
     assert list(Job.newsletter_listing(3)) == [job1, job3, job4]
 
 
 def test_newsletter_listing_backfills_with_other_sources(db_connection):
-    job1 = create_job('1', source='moo', jg_rank=20)
-    job2 = create_job('2', source='foo', jg_rank=10)
-    job3 = create_job('3', source='bar', jg_rank=40)
-    job4 = create_job('4', source='juniorguru', jg_rank=30)
-    job5 = create_job('5', source='juniorguru', jg_rank=20)
+    job1 = create_job('1', source='moo', junior_rank=20)
+    job2 = create_job('2', source='foo', junior_rank=10)
+    job3 = create_job('3', source='bar', junior_rank=40)
+    job4 = create_job('4', source='juniorguru', junior_rank=30)
+    job5 = create_job('5', source='juniorguru', junior_rank=20)
 
     assert list(Job.newsletter_listing(5)) == [job4, job5, job3, job1, job2]
 
 
 def test_newsletter_listing_backfills_up_to_min_count(db_connection):
-    job1 = create_job('1', source='moo', jg_rank=5)
-    job2 = create_job('2', source='foo', jg_rank=1)  # noqa
-    job3 = create_job('3', source='bar', jg_rank=10)
+    job1 = create_job('1', source='moo', junior_rank=5)
+    job2 = create_job('2', source='foo', junior_rank=1)  # noqa
+    job3 = create_job('3', source='bar', junior_rank=10)
     job4 = create_job('4', source='juniorguru')
 
     assert list(Job.newsletter_listing(3)) == [job4, job3, job1]

@@ -15,7 +15,7 @@ def item():
         employment_types=['full-time'],
         description_html='...',
         link='https://example.com/jobs/123',
-        jg_rank=10,
+        junior_rank=10,
         lang='cs',
     )
 

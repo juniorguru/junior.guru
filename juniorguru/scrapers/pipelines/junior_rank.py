@@ -30,13 +30,13 @@ FEW_FEATURES_THRESHOLD = 2
 
 class Pipeline():
     def process_item(self, item, spider):
-        jg_rank = calc_jg_rank([feature['name'] for feature
-                                in item['features']])
-        item['jg_rank'] = jg_rank
+        junior_rank = calc_junior_rank([feature['name'] for feature
+                                        in item['features']])
+        item['junior_rank'] = junior_rank
         return item
 
 
-def calc_jg_rank(features):
+def calc_junior_rank(features):
     features = [f for f in features if f in RELEVANT_FEATURES]
     features = list(itertools.chain(
         (f for f in features if f in ACCUMULATIVE_FEATURES),

@@ -23,7 +23,7 @@ class Job(Item):
     description_words = Field()
     sections = Field()  # unused atm, as well as the sections parser
     features = Field()
-    jg_rank = Field()
+    junior_rank = Field()
 
 
 class JuniorGuruJob(Job):

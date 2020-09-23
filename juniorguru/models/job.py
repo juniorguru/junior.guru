@@ -58,7 +58,7 @@ class Job(BaseModel):
     link = CharField(null=True, index=True)
     lang = CharField()
     description_html = TextField()
-    jg_rank = IntegerField(index=True)
+    junior_rank = IntegerField(index=True)
     pricing_plan = CharField(default='community', choices=[
         ('community', None),
         ('standard', None),
@@ -101,7 +101,7 @@ class Job(BaseModel):
     @classmethod
     def listing(cls):
         return cls.select() \
-            .order_by(cls.jg_rank.desc(), cls.posted_at.desc())
+            .order_by(cls.junior_rank.desc(), cls.posted_at.desc())
 
     @classmethod
     def count(cls):
@@ -130,7 +130,7 @@ class Job(BaseModel):
     @classmethod
     def admin_listing(cls):
         return cls.select() \
-            .order_by(cls.jg_rank.desc(), cls.posted_at.desc())
+            .order_by(cls.junior_rank.desc(), cls.posted_at.desc())
 
     def days_since_posted(self, today=None):
         today = today or date.today()

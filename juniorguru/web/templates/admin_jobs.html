@@ -44,7 +44,7 @@
       <pre>{{ job.metrics|pprint }}</pre>
     </details>
     <details>
-      <summary>Features ({{ job.item.features|length }}) &mdash; JG RANK: {{ job.item.jg_rank }}</summary>
+      <summary>Features ({{ job.item.features|length }}) &mdash; JUNIOR RANK: {{ job.item.junior_rank }}</summary>
       <table>
       {% for feature in job.item.features|sort(attribute='name') %}
         <tr>

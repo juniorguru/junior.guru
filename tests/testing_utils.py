@@ -74,7 +74,7 @@ def prepare_job_data(id, **kwargs):
         description_html=kwargs.get('description', '<p><strong>Useful</strong> description.</p>'),
         source=kwargs.get('source', random.choice(['juniorguru', 'moo', 'boo', 'foo'])),
         expires_at=kwargs.get('expires_at', date.today() + timedelta(days=3)),
-        jg_rank=kwargs.get('jg_rank', 10),
+        junior_rank=kwargs.get('junior_rank', 10),
         lang=kwargs.get('lang', 'en'),
         link=kwargs.get('link'),
         pricing_plan=kwargs.get('pricing_plan', 'community'),
