@@ -41,6 +41,7 @@ sendgrid = "*"
 czech-sort = "*"
 itemloaders = "*"
 fiobank = "*"
+emoji = "*"
 
 [dev-packages]
 pytest = "*"
