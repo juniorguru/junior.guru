@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, timedelta
 
 import pytest
 from scrapy import Spider
@@ -8,6 +8,7 @@ from scrapy import Spider
 def item():
     return dict(
         posted_at=date.today(),
+        expires_at=date.today() + timedelta(days=30),
         title='Junior Python Engineer',
         location='Brno, Czechia',
         company_name='The Best Company',
@@ -16,6 +17,7 @@ def item():
         description_html='...',
         link='https://example.com/jobs/123',
         junior_rank=10,
+        sort_rank=5,
         lang='cs',
     )
 

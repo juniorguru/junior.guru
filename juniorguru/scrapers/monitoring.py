@@ -118,8 +118,8 @@ class MonitoringExtension():
                         SpiderMetric.create(name=name,
                                             spider_name=spider.name,
                                             value=value)
-                        log.debug(f"Saved '{spider.name}' spider metrics")
                     retry_when_db_locked(db, operation, stats=self.stats)
+                    log.debug(f"Saved '{spider.name}' spider metrics")
 
 
 def get_response_data(spider, response_url):

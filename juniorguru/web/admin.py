@@ -43,7 +43,7 @@ def admin_newsletter():
 @app.route('/a/jobs/')
 def admin_jobs():
     with db:
-        jobs = models_to_dicts_with_metrics(Job.admin_listing())
+        jobs = models_to_dicts_with_metrics(Job.listing())
     return render_template('admin_jobs.html', jobs=jobs)
 
 

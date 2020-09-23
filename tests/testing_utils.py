@@ -75,6 +75,7 @@ def prepare_job_data(id, **kwargs):
         source=kwargs.get('source', random.choice(['juniorguru', 'moo', 'boo', 'foo'])),
         expires_at=kwargs.get('expires_at', date.today() + timedelta(days=3)),
         junior_rank=kwargs.get('junior_rank', 10),
+        sort_rank=kwargs.get('sort_rank', 5),
         lang=kwargs.get('lang', 'en'),
         link=kwargs.get('link'),
         pricing_plan=kwargs.get('pricing_plan', 'community'),

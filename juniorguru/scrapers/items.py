@@ -24,6 +24,8 @@ class Job(Item):
     sections = Field()  # unused atm, as well as the sections parser
     features = Field()
     junior_rank = Field()
+    sort_rank = Field()
+    sort_rank_components = Field()
 
 
 class JuniorGuruJob(Job):

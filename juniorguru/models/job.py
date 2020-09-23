@@ -59,6 +59,7 @@ class Job(BaseModel):
     lang = CharField()
     description_html = TextField()
     junior_rank = IntegerField(index=True)
+    sort_rank = IntegerField(index=True)
     pricing_plan = CharField(default='community', choices=[
         ('community', None),
         ('standard', None),
@@ -77,15 +78,14 @@ class Job(BaseModel):
     @property
     def metrics(self):
         result = {name: 0 for name in JOB_METRIC_NAMES}
-        for metric in self.list_metrics:  # JobMetric backref
+        for metric in self.list_metrics:
             result[metric.name] = metric.value
         return result
 
     @property
     def newsletter_mentions(self):
-        return self.list_newsletter_mentions.order_by(  # JobNewsletterMention backref
-            JobNewsletterMention.sent_at.desc()
-        )
+        return self.list_newsletter_mentions \
+            .order_by(JobNewsletterMention.sent_at.desc())
 
     @classmethod
     def get_by_url(cls, url):
@@ -100,8 +100,7 @@ class Job(BaseModel):
 
     @classmethod
     def listing(cls):
-        return cls.select() \
-            .order_by(cls.junior_rank.desc(), cls.posted_at.desc())
+        return cls.select().order_by(cls.sort_rank.desc())
 
     @classmethod
     def count(cls):
@@ -126,11 +125,6 @@ class Job(BaseModel):
 
         backfill_query = cls.listing().where(cls.source != 'juniorguru')
         yield from itertools.islice(backfill_query, min_count - count)
-
-    @classmethod
-    def admin_listing(cls):
-        return cls.select() \
-            .order_by(cls.junior_rank.desc(), cls.posted_at.desc())
 
     def days_since_posted(self, today=None):
         today = today or date.today()
