@@ -490,6 +490,7 @@ def test_parse_from_sentence_cs_advanced_required(sentence):
     'Získáte přehled o IT trhu',
     'Podílejte se společně s námi na návrhu architektury a vyzkoušejte si nové technologie.',
     'Nezáleží nám na zkušenostech a dosavadní praxi, zejména hledáme nadšence, kterého bude práce bavit a bude plnohodnotným členem v týmu.',
+    'Možnost získat praxi v oboru',
 ])
 def test_parse_from_sentence_cs_advanced_required_not(sentence):
     assert 'ADVANCED_REQUIRED' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
@@ -613,6 +614,12 @@ def test_parse_from_sentence_cs_independence_preferred_not(sentence):
     'Vezme si tě na starost jeden z našich zkušených programátorů a bude ti pomáhat.',
     'Alespoň 2x týdně práce z kanceláře (Praha 8 - Karlín) (nebráníme se ani spolupráci se studenty)',
     'umí (nebo má chuť se naučit) programovat v Symfony',
+    'Možnost získat praxi v oboru',
+    'Pomůžeme ti, aby jsi se rychle začlenil do týmu a mohl mít pocit z dobře vykonané práce.',
+    'po tvém nástupu dostaneš přiděleného mentora, který tě zasvětí do fungování vývojové infrastruktury, tvorby aplikací',
+    'V zádech budeš mít vždycky tým zkušenějších administrátorů, kterým budeš moct případné složitější problémy předat.',
+    'Od nich je také možné naučit se spoustu nového a postupně přejímat zajímavější oblasti problémů k řešení',
+    'Mentoring ze strany seniornějších kolegů je samozřejmostí.',
 ])
 def test_parse_from_sentence_cs_junior_friendly(sentence):
     assert 'JUNIOR_FRIENDLY' in get_rule_ids(parse_from_sentence(sentence, 'cs'))
@@ -661,6 +668,7 @@ def test_parse_from_sentence_cs_explicitly_senior(sentence):
     'společně se seniorním developerem se budeš podílet na analýze',
     'Budete TÝM se senior technikem',
     'Pracovat v tandemu se Senior technikem',
+    'Mentoring ze strany seniornějších kolegů je samozřejmostí.',
 ])
 def test_parse_from_sentence_cs_explicitly_senior_not(sentence):
     assert 'EXPLICITLY_SENIOR' not in get_rule_ids(parse_from_sentence(sentence, 'cs'))
