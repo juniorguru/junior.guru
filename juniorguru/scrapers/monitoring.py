@@ -14,6 +14,7 @@ log = get_log(__name__)
 
 RESPONSES_BACKUP_DIR = Path('juniorguru/data/responses/').absolute()
 RELEVANT_METRICS = (
+    'database',
     'downloader/request_count',
     'downloader/response_count',
     'downloader/response_status_count',
