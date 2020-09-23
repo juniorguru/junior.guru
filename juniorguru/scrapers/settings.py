@@ -73,6 +73,8 @@ ITEM_PIPELINES = {
    'juniorguru.scrapers.pipelines.features_parser.Pipeline': 600,
    'juniorguru.scrapers.pipelines.junior_rank.Pipeline': 650,
    'juniorguru.scrapers.pipelines.junior_rank_filter.Pipeline': 700,
+   'juniorguru.scrapers.pipelines.favicon.Pipeline': 720,
+   'scrapy.pipelines.images.ImagesPipeline': 730,
    'juniorguru.scrapers.pipelines.sort_rank.Pipeline': 750,
    'juniorguru.scrapers.pipelines.gender_cleaner.Pipeline': 800,
    'juniorguru.scrapers.pipelines.emoji_cleaner.Pipeline': 850,
@@ -92,6 +94,14 @@ JUNIORGURU_ITEM_PIPELINES = {
       ]
    }
 }
+
+# Media Pipeline
+# See https://docs.scrapy.org/en/latest/topics/media-pipeline.html
+IMAGES_STORE = 'juniorguru/data/images'
+IMAGES_THUMBS = {
+   'small': (100, 100),
+}
+MEDIA_ALLOW_REDIRECTS = True
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

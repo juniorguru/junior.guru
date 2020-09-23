@@ -42,6 +42,7 @@ czech-sort = "*"
 itemloaders = "*"
 fiobank = "*"
 emoji = "*"
+favicon = "*"
 
 [dev-packages]
 pytest = "*"

@@ -120,7 +120,7 @@ class MonitoringExtension():
                                             spider_name=spider.name,
                                             value=value)
                     retry_when_db_locked(db, operation, stats=self.stats)
-                    log.debug(f"Saved '{spider.name}' spider metrics")
+        log.debug(f"Saved '{spider.name}' spider metrics")
 
 
 def get_response_data(spider, response_url):
