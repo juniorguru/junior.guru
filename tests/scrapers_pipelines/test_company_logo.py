@@ -28,17 +28,3 @@ def test_company_logo_convert_image_has_expected_size(temp_dir, logo):
 
     assert image.width == Pipeline.SIZE_PX
     assert image.height == Pipeline.SIZE_PX
-
-
-@pytest.mark.parametrize('x,y', [
-    (x, y) for x, y
-    in zip(range(Pipeline.SIZE_PX), range(Pipeline.SIZE_PX))
-    if (
-        x < Pipeline.PADDING_PX or x > (Pipeline.SIZE_PX - Pipeline.PADDING_PX)
-        and y < Pipeline.PADDING_PX or y > (Pipeline.SIZE_PX - Pipeline.PADDING_PX)
-    )
-])
-def test_company_logo_convert_image_has_padding(temp_dir, logo, x, y):
-    image, buffer = Pipeline(temp_dir).convert_image(logo)
-
-    assert image.getpixel((x, y)) == (255, 255, 255), f'Pixel ({x}, {y}) is not white'

@@ -13,7 +13,6 @@ from scrapy.utils.misc import md5sum
 class Pipeline(ImagesPipeline):
     MAX_SIZE_PX = 1000
     SIZE_PX = 100
-    PADDING_PX = 5
 
     DEFAULT_IMAGES_URLS_FIELD = 'company_logo_urls'
     DEFAULT_IMAGES_RESULT_FIELD = 'company_logos'
@@ -62,11 +61,7 @@ class Pipeline(ImagesPipeline):
         image = ImageOps.pad(image, (side_size, side_size), color=(255, 255, 255))
 
         # resize
-        side_size = self.SIZE_PX - (2 * self.PADDING_PX)
-        image = image.resize((side_size, side_size))
-
-        # add padding
-        image = ImageOps.expand(image, border=self.PADDING_PX, fill=(255, 255, 255))
+        image = image.resize((self.SIZE_PX, self.SIZE_PX))
 
         buffer = BytesIO()
         image.save(buffer, 'PNG', pnginfo=pnginfo)
