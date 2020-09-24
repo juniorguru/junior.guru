@@ -74,10 +74,10 @@ class Pipeline(ImagesPipeline):
     def item_completed(self, results, item, info):
         if results:
             results = sorted(results, key=self.image_original_size, reverse=True)
-            results = [results[0]]
         return super().item_completed(results, item, info)
 
     def image_original_size(self, result):
+        # TODO maybe the images are already sorted? (favicon)
         ok, result = result
         if ok:
             image = Image.open(Path(self.images_dir) / result['path'])
