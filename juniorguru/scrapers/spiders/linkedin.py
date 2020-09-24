@@ -53,8 +53,8 @@ class Spider(BaseSpider):
         loader.add_xpath('experience_levels', "//h3[contains(., 'Seniority level')]/following-sibling::span/text()")
         loader.add_css('posted_at', 'h1 ~ h3:nth-of-type(2) span::text')
         loader.add_css('description_html', '.description__text')
-        loader.add_css('image_urls', 'img.company-logo::attr(src)')
-        loader.add_css('image_urls', 'img.company-logo::attr(data-delayed-url)')
+        loader.add_css('company_logo_urls', 'img.company-logo::attr(src)')
+        loader.add_css('company_logo_urls', 'img.company-logo::attr(data-delayed-url)')
         yield loader.load_item()
 
 
@@ -65,4 +65,4 @@ class Loader(ItemLoader):
     posted_at_in = Compose(first, parse_relative_time)
     experience_levels_in = MapCompose(str.lower, split)
     experience_levels_out = Identity()
-    image_urls_out = Identity()
+    company_logo_urls_out = Identity()

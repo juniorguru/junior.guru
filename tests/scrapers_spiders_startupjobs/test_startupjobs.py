@@ -21,7 +21,7 @@ def test_spider_parse():
 
     assert sorted(job.keys()) == sorted([
         'title', 'link', 'company_name', 'company_link', 'location',
-        'employment_types', 'posted_at', 'description_html', 'image_urls',
+        'employment_types', 'posted_at', 'description_html', 'company_logo_urls',
     ])
     assert job['title'] == 'My hledáme stále! Přidej se k nám do týmu jako junior linux admin'
     assert job['link'] == 'https://www.startupjobs.cz/nabidka/22025/my-hledame-stale-pridej-se-k-nam-do-tymu-jako-junior-linux-admin?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
@@ -30,7 +30,7 @@ def test_spider_parse():
     assert job['location'] == 'Praha, Česko'
     assert job['employment_types'] == ['Part-time', 'Full-time']
     assert job['posted_at'] == date(2020, 5, 5)
-    assert job['image_urls'] == ['https://www.startupjobs.cz/uploads/U56OHNIPVP54cloudinfrastack-fb-logo-180x180-1154411059762.png']
+    assert job['company_logo_urls'] == ['https://www.startupjobs.cz/uploads/U56OHNIPVP54cloudinfrastack-fb-logo-180x180-1154411059762.png']
     assert '<p>Ahoj, baví tě Linux?' in job['description_html']
 
 

@@ -1,3 +1,4 @@
+import sys
 import subprocess
 from multiprocessing import Pool
 
@@ -18,6 +19,7 @@ def main():
         'stackoverflow',
         'startupjobs',
     ])
+    sys.exit()  # prevents oauth2client to unnecessarily refresh tokens
 
 
 def run_spider(spider_name):

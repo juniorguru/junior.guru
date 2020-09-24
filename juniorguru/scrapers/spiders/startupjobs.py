@@ -27,7 +27,7 @@ class Spider(BaseSpider):
                 offer_loader.add_xpath('employment_types', './/jobtype/text()')
                 offer_loader.add_xpath('posted_at', './/lastUpdate//text()')
                 offer_loader.add_xpath('description_html', './/description/text()')
-                offer_loader.add_xpath('image_urls', './/startupLogo/text()')
+                offer_loader.add_xpath('company_logo_urls', './/startupLogo/text()')
                 yield loader.load_item()
 
 
@@ -47,4 +47,4 @@ class Loader(ItemLoader):
     employment_types_in = Compose(MapCompose(str.strip), drop_remote)
     employment_types_out = Identity()
     posted_at_in = MapCompose(parse_iso_date)
-    image_urls_out = Identity()
+    company_logo_urls_out = Identity()

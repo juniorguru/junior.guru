@@ -47,7 +47,7 @@ def test_spider_parse_job():
     assert sorted(job.keys()) == sorted([
         'title', 'link', 'company_name', 'company_link', 'location',
         'employment_types', 'posted_at', 'description_html',
-        'experience_levels', 'image_urls',
+        'experience_levels', 'company_logo_urls',
     ])
     assert job['title'] == 'Start kariéry jako Junior C++ Programátor/ka'
     assert job['link'] == 'https://example.com/example/'
@@ -57,7 +57,7 @@ def test_spider_parse_job():
     assert job['employment_types'] == ['full-time']
     assert job['experience_levels'] == ['entry level']
     assert job['posted_at'] == date.today() - timedelta(weeks=3)
-    assert job['image_urls'] == ['https://media-exp1.licdn.com/dms/image/C4D0BAQFmRT2DGqhaNw/company-logo_100_100/0?e=1596672000&v=beta&t=zodZY8zAy2xDeLfwkVAu7pebKSMMWygkAjdk1hpXAmc']
+    assert job['company_logo_urls'] == ['https://media-exp1.licdn.com/dms/image/C4D0BAQFmRT2DGqhaNw/company-logo_100_100/0?e=1596672000&v=beta&t=zodZY8zAy2xDeLfwkVAu7pebKSMMWygkAjdk1hpXAmc']
     assert '<li>3 Sick days ročně' in job['description_html']
 
 

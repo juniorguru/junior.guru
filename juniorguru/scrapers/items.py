@@ -15,10 +15,10 @@ class Job(Item):
     description_html = Field(required=True)
     employment_types = Field()
     experience_levels = Field()
-    image_urls = Field()
+    company_logo_urls = Field()
 
     # set by pipelines
-    images = Field()
+    company_logos = Field()
     lang = Field()
     description_text = Field()
     description_sentences = Field()

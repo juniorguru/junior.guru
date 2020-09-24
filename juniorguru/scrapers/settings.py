@@ -73,16 +73,16 @@ ITEM_PIPELINES = {
    'juniorguru.scrapers.pipelines.features_parser.Pipeline': 600,
    'juniorguru.scrapers.pipelines.junior_rank.Pipeline': 650,
    'juniorguru.scrapers.pipelines.junior_rank_filter.Pipeline': 700,
-   'juniorguru.scrapers.pipelines.favicon.Pipeline': 720,
-   'scrapy.pipelines.images.ImagesPipeline': 730,
    'juniorguru.scrapers.pipelines.sort_rank.Pipeline': 750,
    'juniorguru.scrapers.pipelines.gender_cleaner.Pipeline': 800,
    'juniorguru.scrapers.pipelines.emoji_cleaner.Pipeline': 850,
    'juniorguru.scrapers.pipelines.employment_types_cleaner.Pipeline': 900,
+   'juniorguru.scrapers.pipelines.company_logo.Pipeline': 995,
    'juniorguru.scrapers.pipelines.database.Pipeline': 1000,
 }
 JUNIORGURU_ITEM_PIPELINES = {
    'juniorguru.scrapers.pipelines.validity_filter.Pipeline': 1,
+   'juniorguru.scrapers.pipelines.favicon.Pipeline': 990,
    **{
       name: priority for name, priority in ITEM_PIPELINES.items()
       if name not in [
@@ -92,16 +92,13 @@ JUNIORGURU_ITEM_PIPELINES = {
             'juniorguru.scrapers.pipelines.language_filter.Pipeline',
             'juniorguru.scrapers.pipelines.junior_rank_filter.Pipeline',
       ]
-   }
+   },
 }
 
 # Media Pipeline
 # See https://docs.scrapy.org/en/latest/topics/media-pipeline.html
-IMAGES_STORE = 'juniorguru/data/images'
-IMAGES_THUMBS = {
-   'small': (100, 100),
-}
 MEDIA_ALLOW_REDIRECTS = True
+IMAGES_STORE = 'juniorguru/data/images'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

@@ -3,11 +3,8 @@ import favicon
 
 class Pipeline():
     def process_item(self, item, spider):
-        if spider.name != 'juniorguru':
-            return item  # TODO temporary
-
-        if not item.get('image_urls'):
-            item['image_urls'] = get_favicons(item.get('company_link'))
+        if not item.get('company_logo_urls'):
+            item['company_logo_urls'] = get_favicons(item.get('company_link'))
         return item
 
 
