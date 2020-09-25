@@ -231,4 +231,4 @@ def test_tags_employment_types(employment_types, expected):
     job = Job(**prepare_job_data('1', employment_types=employment_types))
     tags = set(job.tags())
 
-    assert expected <= tags
+    assert expected == tags
