@@ -26,25 +26,30 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
     </a>
   </p>
 </section>
-<section id="jobs" class="content__section">
-  <ul class="items">
+<section class="content__section">
+  <ul class="jobs">
   {% for job in jobs %}
-    <li class="item-summary" id="job-{{ job.id }}">
+    <li class="jobs__item{% if job.is_highlighted %} jobs__item--highlighted{% endif %}">
       {% if job.source == 'juniorguru' %}
-        <a href="{{ url_for('job', job_id=job.id) }}">
+        <a class="jobs__link" href="{{ url_for('job', job_id=job.id) }}">
       {% else %}
-        <a href="{{ job.link }}" data-metrics data-metrics-name="job" data-metrics-no-utm target="_blank" rel="noopener nofollow">
+        <a class="jobs__link" href="{{ job.link }}" data-metrics data-metrics-name="job" data-metrics-no-utm target="_blank" rel="noopener nofollow">
       {% endif %}
-        <div class="item-summary-wrapper">
-          <h3>{{ job.title }}</h3>
-          <small class="item-summary-details">
-            {{ job.company_name }}
-            &mdash;
-            {{ job.location }}
-            &mdash;
-            {{ job.employment_types|employment_types }}
-          </small>
+        <div class="jobs__content">
+          <div class="jobs__company-logo">
+            {% if job.company_logo_path %}
+              <img width="100" height="100"{% if loop.index > 10 %} loading="lazy"{% endif %} class="jobs__company-logo-image" src="{{ url_for('static', filename=job.company_logo_path) }}" alt="Logo {{ job.company_name }}">
+            {% endif %}
+          </div>
+          <div class="jobs__content-body">
+            <h3 class="jobs__title">{{ job.title|truncate(70) }}</h3>
+            <p class="jobs__company">{{ job.company_name }}</p>
+            <p class="jobs__location">{{ job.location }}</p>
+          </div>
         </div>
+        <ul class="jobs__tags">
+          <li class="jobs__tag">{{ job.employment_types|employment_types }}</li>
+        </ul>
       </a>
     </li>
   {% endfor %}

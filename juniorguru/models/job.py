@@ -54,6 +54,7 @@ class Job(BaseModel):
     location = CharField()
     company_name = CharField()
     company_link = CharField(null=True)
+    company_logo_path = CharField(null=True)
     employment_types = EmploymentTypeField()
     link = CharField(null=True, index=True)
     lang = CharField()
@@ -74,6 +75,10 @@ class Job(BaseModel):
     item = JSONField(null=True)
     response_url = CharField(null=True)
     response_backup_path = CharField(null=True)
+
+    @property
+    def is_highlighted(self):
+        return self.pricing_plan != 'community'
 
     @property
     def metrics(self):

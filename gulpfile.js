@@ -67,6 +67,7 @@ const buildCSS = gulp.parallel(buildIndexCSS, buildThumbnailCSS);
 
 function buildImages() {
   return gulp.src([
+      'juniorguru/data/images/**/*',
       'juniorguru/web/static/src/images/**/*.png',
       'juniorguru/web/static/src/images/**/*.jpg',
       'juniorguru/web/static/src/images/**/*.gif',
@@ -151,6 +152,7 @@ async function watchWeb() {
   gulp.watch([
     'juniorguru/web/static/src/images/',
     '!juniorguru/web/static/src/images/screenshots*/**/*',
+    'juniorguru/data/images/',
   ], buildImages);
   gulp.watch([
     'juniorguru/web/static/*.js',
@@ -161,6 +163,7 @@ async function watchWeb() {
     'juniorguru/web/**/*.html',
     'juniorguru/web/**/*.py',
     'juniorguru/data/',
+    '!juniorguru/data/images/',
   ], buildWeb);
 }
 

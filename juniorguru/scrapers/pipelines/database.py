@@ -23,7 +23,9 @@ class Pipeline():
 
 
 def prepare_data(item, spider_name):
-    data = dict(**item, source=spider_name)
+    data = dict(**item,
+                source=spider_name,
+                company_logo_path=get_company_logo_path(item.get('company_logos')))
     if not data.get('id'):
         data['id'] = create_id(item)
     return data
@@ -34,3 +36,9 @@ def create_id(item):
         item['link'],
         item['location'],
     ]).encode()).hexdigest()
+
+
+def get_company_logo_path(company_logos):
+    if not company_logos:
+        return None
+    return 'images/' + company_logos[0]['path']
