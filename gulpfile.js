@@ -162,6 +162,8 @@ async function watchWeb() {
   gulp.watch([
     'juniorguru/web/**/*.html',
     'juniorguru/web/**/*.py',
+    'juniorguru/models/**/*.py',
+    'juniorguru/lib/**/*.py',
     'juniorguru/data/',
     '!juniorguru/data/images/',
   ], buildWeb);

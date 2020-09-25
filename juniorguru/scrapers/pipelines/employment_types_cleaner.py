@@ -1,21 +1,20 @@
 import re
 
+from juniorguru.models import EMPLOYMENT_TYPES
+
 
 class Pipeline():
     clean_re = re.compile(r'[\-\s]+')
     types_mapping = {
-        'fulltime': 'full-time',
-        'full time': 'full-time',
-        'parttime': 'part-time',
-        'part time': 'part-time',
-        'contract': 'contract',
-        'external collaboration': 'contract',
-        'internship': 'internship',
+        'FULLTIME': 'FULL_TIME',
+        'PARTTIME': 'PART_TIME',
+        'EXTERNAL_COLLABORATION': 'CONTRACT',
     }
 
     def process_item(self, item, spider):
-        types = (t.lower() for t in item['employment_types'])
-        types = (self.types_mapping.get(self.clean_re.sub(' ', t), t)
-                 for t in types)
-        item['employment_types'] = list(frozenset(types))
+        types = (self.clean_re.sub('_', t.upper())
+                 for t in item['employment_types'])
+        types = (self.types_mapping.get(t, t) for t in types)
+        types = (t for t in types if t in EMPLOYMENT_TYPES)
+        item['employment_types'] = list(set(types))
         return item

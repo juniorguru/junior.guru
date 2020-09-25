@@ -2,7 +2,7 @@
 {% block title %}{{ job.title }} &mdash; {{ job.company_name }} &mdash; {{ job.location }}{% endblock %}
 
 {% block description -%}
-Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}, {{ job.employment_types|employment_types(' / ') }}.
+Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}
 {%- endblock %}
 
 {% block content %}
@@ -14,8 +14,10 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
       <a href="{{ job.company_link }}" data-metrics-utm data-metrics-utm-medium="job_board">{{ job.company_name }}</a>
       &mdash;
       {{ job.location }}
+      {# FIXME
       &mdash;
       {{ job.employment_types|employment_types }}
+      #}
     </p>
   </header>
 

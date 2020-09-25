@@ -41,8 +41,6 @@
           &mdash;
           {{ job_dropped.item.location }}
           &mdash;
-          {{ job_dropped.item.employment_types|employment_types }}
-          &mdash;
           {{ job_dropped.item.posted_at|to_datetime|ago }}
         </p>
         {% if job_dropped.item.features %}

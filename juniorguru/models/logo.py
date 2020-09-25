@@ -75,7 +75,7 @@ class Logo(BaseModel):
 
 class LogoMetric(BaseModel):
     logo = ForeignKeyField(Logo, backref='list_metrics')
-    name = CharField()
+    name = CharField(choices=[(name, None) for name in LOGO_METRIC_NAMES])
     value = IntegerField()
 
     @classmethod

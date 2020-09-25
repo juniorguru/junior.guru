@@ -1,4 +1,3 @@
-import random
 from datetime import date
 
 import pytest
@@ -6,15 +5,6 @@ from peewee import SqliteDatabase
 
 from juniorguru.models import Job, JobMetric
 from testing_utils import prepare_job_data
-
-
-def shuffled(sorted_iterable):
-    value = sorted_iterable[:]
-    while True:
-        random.shuffle(value)
-        if value != sorted_iterable:
-            break
-    return value
 
 
 def create_job(id, **kwargs):
@@ -30,45 +20,6 @@ def db_connection():
         db.create_tables(models)
         yield db
         db.drop_tables(models)
-
-
-def test_employment_types_are_unique_sorted_lists(db_connection):
-    create_job('1', employment_types=['part-time', 'full-time', 'part-time'])
-
-    assert Job.get_by_id('1').employment_types == ['full-time', 'part-time']
-
-
-def test_employment_types_sorts_from_the_most_to_the_least_serious(db_connection):
-    sorted_value = [
-        'full-time',
-        'part-time',
-        'contract',
-        'paid internship',
-        'unpaid internship',
-        'internship',
-        'volunteering',
-    ]
-    create_job('1', employment_types=shuffled(sorted_value))
-
-    assert Job.get_by_id('1').employment_types == sorted_value
-
-
-def test_employment_types_sorts_extra_types_last_alphabetically(db_connection):
-    create_job('1', employment_types=[
-        'ahoj',
-        'full-time',
-        'bob',
-        'part-time',
-        'foo',
-    ])
-
-    assert Job.get_by_id('1').employment_types == [
-        'full-time',
-        'part-time',
-        'ahoj',
-        'bob',
-        'foo',
-    ]
 
 
 def test_listing(db_connection):
@@ -231,3 +182,53 @@ def test_is_highlighted(pricing_plan, expected):
     job = Job(**prepare_job_data('1', pricing_plan=pricing_plan))
 
     assert job.is_highlighted is expected
+
+
+@pytest.mark.parametrize('posted_at,expected', [
+    (date(2020, 9, 25), False),
+    (date(2020, 9, 26), True),
+])
+def test_tags_new(posted_at, expected):
+    job = Job(**prepare_job_data('1', posted_at=posted_at))
+    tags = job.tags(today=date(2020, 9, 28))
+
+    assert ('NEW' in tags) is expected
+
+
+@pytest.mark.parametrize('employment_types,expected', [
+    # individual employment types
+    (['FULL_TIME'], set()),
+    (['PART_TIME'], {'PART_TIME'}),
+    (['CONTRACT'], {'CONTRACT'}),
+    (['PAID_INTERNSHIP'], {'INTERNSHIP'}),
+    (['UNPAID_INTERNSHIP'], {'UNPAID_INTERNSHIP'}),
+    (['INTERNSHIP'], {'INTERNSHIP'}),
+    (['VOLUNTEERING'], {'VOLUNTEERING'}),
+
+    # behavior together with full time
+    (['FULL_TIME', 'PART_TIME'], {'ALSO_PART_TIME'}),
+    (['FULL_TIME', 'CONTRACT'], {'ALSO_CONTRACT'}),
+    (['FULL_TIME', 'PAID_INTERNSHIP'], {'ALSO_INTERNSHIP'}),
+    (['FULL_TIME', 'UNPAID_INTERNSHIP'], {'ALSO_INTERNSHIP'}),
+    (['FULL_TIME', 'INTERNSHIP'], {'ALSO_INTERNSHIP'}),
+    (['FULL_TIME', 'VOLUNTEERING'], set()),
+
+    # internship behavior
+    (['PAID_INTERNSHIP', 'UNPAID_INTERNSHIP'], {'INTERNSHIP'}),
+    (['INTERNSHIP', 'PAID_INTERNSHIP'], {'INTERNSHIP'}),
+    (['INTERNSHIP', 'UNPAID_INTERNSHIP'], {'UNPAID_INTERNSHIP'}),
+
+    # volunteering behavior
+    (['VOLUNTEERING', 'FULL_TIME'], set()),
+    (['VOLUNTEERING', 'PART_TIME'], {'PART_TIME'}),
+    (['VOLUNTEERING', 'CONTRACT'], {'CONTRACT'}),
+    (['VOLUNTEERING', 'PAID_INTERNSHIP'], {'INTERNSHIP'}),
+    (['VOLUNTEERING', 'UNPAID_INTERNSHIP'], {'VOLUNTEERING', 'UNPAID_INTERNSHIP'}),
+    (['VOLUNTEERING', 'INTERNSHIP'], {'INTERNSHIP'}),
+    (['VOLUNTEERING'], {'VOLUNTEERING'}),
+])
+def test_tags_employment_types(employment_types, expected):
+    job = Job(**prepare_job_data('1', employment_types=employment_types))
+    tags = set(job.tags())
+
+    assert expected <= tags

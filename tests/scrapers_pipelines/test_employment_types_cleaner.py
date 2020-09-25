@@ -5,25 +5,31 @@ from juniorguru.scrapers.pipelines.employment_types_cleaner import Pipeline
 
 @pytest.mark.parametrize('employment_types,expected', [
     # common sense
-    (['fulltime'], ['full-time']),
-    (['full time'], ['full-time']),
-    (['parttime'], ['part-time']),
-    (['part time'], ['part-time']),
+    (['fulltime'], ['FULL_TIME']),
+    (['full time'], ['FULL_TIME']),
+    (['parttime'], ['PART_TIME']),
+    (['part time'], ['PART_TIME']),
 
     # StackOverflow
-    (['Full-time'], ['full-time']),
-    (['Internship'], ['internship']),
-    (['Contract'], ['contract']),
+    (['Full-time'], ['FULL_TIME']),
+    (['Internship'], ['INTERNSHIP']),
+    (['Contract'], ['CONTRACT']),
 
     # StartupJobs
-    (['external collaboration'], ['contract']),
+    (['external collaboration'], ['CONTRACT']),
 
-    # processing an unknown employment type
-    (['Full-Time', 'Gargamel'], ['full-time', 'gargamel']),
-    (['Gargamel'], ['gargamel']),
+    # junior.guru
+    (['paid internship'], ['PAID_INTERNSHIP']),
+    (['unpaid internship'], ['UNPAID_INTERNSHIP']),
+    (['internship'], ['INTERNSHIP']),
+    (['volunteering'], ['VOLUNTEERING']),
+
+    # removing an unknown employment type
+    (['Full-Time', 'Gargamel'], ['FULL_TIME']),
+    (['Gargamel'], []),
 
     # processing duplicates
-    (['Full-Time', 'Gargamel', 'full time'], ['full-time', 'gargamel']),
+    (['Full-Time', 'Gargamel', 'full time'], ['FULL_TIME']),
 ])
 def test_employment_types_cleaner(item, spider, employment_types, expected):
     item['employment_types'] = employment_types

@@ -63,5 +63,5 @@ def test_company_logo_convert_image_has_expected_size():
     logo = Image.open(FIXTURES_DIR / 'logo.png')
     image, buffer = Pipeline(IMAGES_STORE).convert_image(logo)
 
-    assert image.width == Pipeline.SIZE_PX
-    assert image.height == Pipeline.SIZE_PX
+    assert image.width == Pipeline.size_px
+    assert image.height == Pipeline.size_px

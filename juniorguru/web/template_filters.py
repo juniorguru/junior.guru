@@ -28,73 +28,22 @@ def remove_p(html):
     return Markup(re.sub(r'</?p[^>]*>', '', html))
 
 
-REQUIREMENTS_MAPPING = {
-    'mainstream programming language': 'základy programování',
-    'databases': 'databáze',
-    'data analysis': 'datová analýza',
-    'servers and operations': 'správa serverů',
-    'Linux and command line': 'Linux a příkazová řádka',
-    'Linux': 'Linux a příkazová řádka',
-    'web backend': 'webový backend',
-    'web frontend': 'webový frontend',
-    'mobile apps development': 'mobilní aplikace',
-    'mobile apps': 'mobilní aplikace',
+TAGS_MAPPING = {
+    'NEW': 'nové',
+    'PART_TIME': 'částečný úvazek',
+    'CONTRACT': 'kontrakt',
+    'INTERNSHIP': 'stáž',
+    'UNPAID_INTERNSHIP': 'neplacená stáž',
+    'VOLUNTEERING': 'dobrovolnictví',
+    'ALSO_PART_TIME': 'lze i částečný úvazek',
+    'ALSO_CONTRACT': 'lze i kontrakt',
+    'ALSO_INTERNSHIP': 'lze i stáž',
 }
 
 
 @app.template_filter()
-def job_requirement(requirement):
-    try:
-        return REQUIREMENTS_MAPPING[requirement]
-    except KeyError:
-        return requirement
-
-
-EMPLOYMENT_TYPES_MAPPING = {
-    'full-time': 'plný úvazek',
-    'part-time': 'částečný úvazek',
-    'contract': 'kontrakt',
-    'paid internship': 'placená stáž',
-    'unpaid internship': 'neplacená stáž',
-    'internship': 'stáž',
-    'volunteering': 'dobrovolnictví',
-}
-
-
-@app.template_filter()
-def employment_type(type_):
-    try:
-        return EMPLOYMENT_TYPES_MAPPING[type_]
-    except KeyError:
-        return type_
-
-
-EMPLOYMENT_TYPES_FOLDING = {
-    'paid internship': ('internship', 'unpaid internship'),
-    'internship': ('unpaid internship',),
-    'contract': ('volunteering',),
-    'part-time': ('volunteering',),
-    'full-time': ('volunteering',),
-}
-
-
-@app.template_filter()
-def employment_types(types, sep=', '):
-    if not types:
-        raise ValueError('Employment types must not be empty')
-
-    types = list(types)
-    for type_, folded_types in EMPLOYMENT_TYPES_FOLDING.items():
-        if type_ in types:
-            for folded_type in folded_types:
-                try:
-                    types.remove(folded_type)
-                except ValueError:
-                    pass
-
-    return sep.join(employment_type(type_) for type_ in types) \
-        .replace('plný úvazek, částečný', 'plný i částečný') \
-        .replace('částečný úvazek, plný', 'plný i částečný')
+def tag_label(tag):
+    return TAGS_MAPPING[tag]
 
 
 @app.template_filter()

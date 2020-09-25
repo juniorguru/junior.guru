@@ -9,11 +9,11 @@ from scrapy.utils.misc import md5sum
 
 
 class Pipeline(ImagesPipeline):
-    MAX_SIZE_PX = 1000
-    SIZE_PX = 100
-
     DEFAULT_IMAGES_URLS_FIELD = 'company_logo_urls'
     DEFAULT_IMAGES_RESULT_FIELD = 'company_logos'
+
+    max_size_px = 1000
+    size_px = 100
 
     def __init__(self, store_uri, *args, **kwargs):
         self.images_dir = store_uri
@@ -28,8 +28,8 @@ class Pipeline(ImagesPipeline):
             raise ImageException(f'Image cannot be identified ({request.url})')
 
         width, height = orig_image.size
-        if width > self.MAX_SIZE_PX or height > self.MAX_SIZE_PX:
-            raise ImageException(f'Image too large ({width}x{height} < {self.MAX_SIZE_PX}x{self.MAX_SIZE_PX})')
+        if width > self.max_size_px or height > self.max_size_px:
+            raise ImageException(f'Image too large ({width}x{height} < {self.max_size_px}x{self.max_size_px})')
 
         image, buffer = self.convert_image(orig_image)
         buffer.seek(0)
@@ -59,7 +59,7 @@ class Pipeline(ImagesPipeline):
         image = ImageOps.pad(image, (side_size, side_size), color=(255, 255, 255))
 
         # resize
-        image = image.resize((self.SIZE_PX, self.SIZE_PX))
+        image = image.resize((self.size_px, self.size_px))
 
         buffer = BytesIO()
         image.save(buffer, 'PNG')

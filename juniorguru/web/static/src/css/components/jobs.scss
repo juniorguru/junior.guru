@@ -88,6 +88,20 @@ $company-logo-size: 8rem;
   list-style-type: none;
 }
 
+.jobs__tag {
+  @include font-0;
+  border: 0.2rem solid $gray;
+  display: inline;
+  padding: 0.2rem 0.4rem;
+  margin-right: 0.4rem;
+}
+
+.jobs__link:hover .jobs__tag,
+.jobs__link:focus .jobs__tag,
+.jobs__link:active .jobs__tag {
+  border-color: $blue;
+}
+
 @media screen and (min-width: $breakpoint-tablet) {
   .jobs__content {
     display: flex;
@@ -119,5 +133,10 @@ $company-logo-size: 8rem;
   .jobs__tags {
     padding-left: $whitespace;
     flex-shrink: 0;
+  }
+
+  .jobs__tag {
+    margin-right: 0;
+    margin-left: 0.4rem;
   }
 }

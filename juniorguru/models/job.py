@@ -1,5 +1,6 @@
 import itertools
 import re
+from functools import lru_cache
 from datetime import date
 
 from peewee import CharField, DateField, ForeignKeyField, IntegerField, TextField
@@ -12,38 +13,38 @@ JOB_METRIC_NAMES = [
     'pageviews',
     'applications',
 ]
+JOB_IS_NEW_DAYS = 3
+EMPLOYMENT_TYPES = [
+    'FULL_TIME',
+    'PART_TIME',
+    'CONTRACT',
+    'PAID_INTERNSHIP',
+    'UNPAID_INTERNSHIP',
+    'INTERNSHIP',
+    'VOLUNTEERING',
+]
+EMPLOYMENT_TYPES_RULES = [
+    # internship
+    ({'INTERNSHIP', 'PAID_INTERNSHIP'}, {'INTERNSHIP'}),
+    ({'INTERNSHIP', 'UNPAID_INTERNSHIP'}, {'UNPAID_INTERNSHIP'}),
 
+    # volunteering
+    ({'CONTRACT', 'VOLUNTEERING'}, {'CONTRACT'}),
+    ({'PART_TIME', 'VOLUNTEERING'}, {'PART_TIME'}),
+    ({'FULL_TIME', 'VOLUNTEERING'}, {'FULL_TIME'}),
+    ({'INTERNSHIP', 'VOLUNTEERING'}, {'INTERNSHIP'}),
 
-class UniqueSortedListField(CharField):
-    def db_value(self, python_value):
-        assert all(';' not in item for item in python_value)
-        return ';'.join(self._sort(frozenset(python_value)))
+    # full time
+    ({'FULL_TIME', 'PART_TIME'}, {'FULL_TIME', 'ALSO_PART_TIME'}),
+    ({'FULL_TIME', 'CONTRACT'}, {'FULL_TIME', 'ALSO_CONTRACT'}),
+    ({'FULL_TIME', 'PAID_INTERNSHIP'}, {'FULL_TIME', 'ALSO_INTERNSHIP'}),
+    ({'FULL_TIME', 'UNPAID_INTERNSHIP'}, {'FULL_TIME', 'ALSO_INTERNSHIP'}),
+    ({'FULL_TIME', 'INTERNSHIP'}, {'FULL_TIME', 'ALSO_INTERNSHIP'}),
 
-    def python_value(self, db_value):
-        return db_value.split(';')
-
-    def _sort(self, iterable):
-        return sorted(iterable)
-
-
-class EmploymentTypeField(UniqueSortedListField):
-    known_types_sorted = [
-        'full-time',
-        'part-time',
-        'contract',
-        'paid internship',
-        'unpaid internship',
-        'internship',
-        'volunteering',
-    ]
-
-    def _key(self, item):
-        if item in self.known_types_sorted:
-            return (self.known_types_sorted.index(item), '')
-        return (1000, item)
-
-    def _sort(self, iterable):
-        return sorted(iterable, key=self._key)
+    # paid internship
+    ({'PAID_INTERNSHIP'}, {'INTERNSHIP'}),
+    ({'FULL_TIME'}, set()),
+]
 
 
 class Job(BaseModel):
@@ -55,7 +56,7 @@ class Job(BaseModel):
     company_name = CharField()
     company_link = CharField(null=True)
     company_logo_path = CharField(null=True)
-    employment_types = EmploymentTypeField()
+    employment_types = JSONField(default=lambda: [])
     link = CharField(null=True, index=True)
     lang = CharField()
     description_html = TextField()
@@ -143,6 +144,27 @@ class Job(BaseModel):
         today = today or date.today()
         return self.days_until_expires(today=today) <= 10
 
+    def tags(self, today=None):
+        tags = []
+
+        today = today or date.today()
+        if (today - self.posted_at).days < JOB_IS_NEW_DAYS:
+            tags.append('NEW')
+
+        employment_types = frozenset(self.employment_types)
+        tags.extend(get_employment_types_tags(employment_types))
+
+        return tags
+
+
+@lru_cache()
+def get_employment_types_tags(types):
+    types = set(types)
+    for rule_match, rule_repl in EMPLOYMENT_TYPES_RULES:
+        if rule_match <= types:
+            types = (types - rule_match) | rule_repl
+    return types
+
 
 class JobDropped(BaseModel):
     type = CharField()
@@ -172,7 +194,7 @@ class JobError(BaseModel):
 
 class JobMetric(BaseModel):
     job = ForeignKeyField(Job, backref='list_metrics')
-    name = CharField()
+    name = CharField(choices=[(name, None) for name in JOB_METRIC_NAMES])
     value = IntegerField()
 
 
