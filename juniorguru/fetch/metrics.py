@@ -35,11 +35,6 @@ def main():
         ]
         for name in google_analytics_metric_names:
             Metric.create(name=name, value=google_analytics_metrics[name])
-
-        Metric.create(name='avg_monthly_handbook_conversion', value=(
-            (google_analytics_metrics['avg_monthly_handbook_logo_clicks'] /
-             google_analytics_metrics['avg_monthly_handbook_users']) * 100
-        ))
         Metric.create(name='subscribers', value=mailchimp_metrics['subscribers'])
 
         JobMetric.drop_table()
