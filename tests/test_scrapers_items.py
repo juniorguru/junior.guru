@@ -45,6 +45,7 @@ def test_parse_relative_time_raises_on_uncrecognized_value():
     ([], None),
     ([1], 1),
     ([1, 2], 1),
+    ([None, None, 3], 3),
 ])
 def test_first(iterable, expected):
     assert items.first(iterable) == expected

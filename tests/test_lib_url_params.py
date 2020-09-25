@@ -42,3 +42,9 @@ def test_increment_param(url, param_name, expected):
 ])
 def test_increment_param_inc(url, param_name, inc, expected):
     assert url_params.increment_param(url, param_name, inc) == expected
+
+
+def test_get_param():
+    url = 'https://example.com?redirect=https%3A%2F%2Fjobs%2Eexample%2Ecom'
+
+    assert url_params.get_param(url, 'redirect') == 'https://jobs.example.com'

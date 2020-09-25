@@ -20,6 +20,12 @@ def set_params(url, params):
     return urlunparse(parts._replace(query=query))
 
 
+def get_param(url, param_name):
+    parts = urlparse(url)
+    values = parse_qs(parts.query).get(param_name, [])
+    return values[0] if values else None
+
+
 def increment_param(url, param_name, inc=1):
     parts = urlparse(url)
     params = parse_qs(parts.query)

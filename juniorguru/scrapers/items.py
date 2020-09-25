@@ -50,25 +50,27 @@ def split(string, by=','):
 
 
 def first(iterable):
-    try:
-        return iterable[0]
-    except IndexError:
-        return None
+    for item in iterable:
+        if item is not None:
+            return item
+    return None
 
 
 def parse_relative_time(text, today=None):
     today = today or date.today()
-    if 'week' in text:
+    if 'week' in text or 'týdn' in text:
         weeks_ago = int(re.search(r'\d+', text).group(0))
         return today - timedelta(weeks=weeks_ago)
-    if 'minute' in text or 'hour' in text:
+    if 'minute' in text or 'hour' in text or 'minut' in text or 'hod' in text:
         return today
-    if 'yesterday' in text:
+    if 'today' in text or 'dnes' in text:
+        return today
+    if 'yesterday' in text or 'včera' in text:
         return today - timedelta(days=1)
-    if 'day' in text:
+    if 'day' in text or 'dny' in text:
         days_ago = int(re.search(r'\d+', text).group(0))
         return today - timedelta(days=days_ago)
-    if 'month' in text:
+    if 'month' in text or 'měs' in text:
         months_ago = int(re.search(r'\d+', text).group(0))
         return today - timedelta(days=months_ago * 30)
     raise ValueError(text)

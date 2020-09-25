@@ -6,7 +6,7 @@ from scrapy.loader import ItemLoader
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
 from juniorguru.scrapers.items import Job, first, parse_relative_time, split
-from juniorguru.lib.url_params import increment_param, strip_params
+from juniorguru.lib.url_params import increment_param, strip_params, get_param
 
 
 class Spider(BaseSpider):
@@ -44,6 +44,7 @@ class Spider(BaseSpider):
     def parse_job(self, response):
         loader = Loader(item=Job(), response=response)
         loader.add_css('title', 'h1::text')
+        loader.add_css('link', '.apply-button::attr(href)')
         loader.add_value('link', response.url)
         loader.add_css('company_name', 'h1 ~ h3 a::text')
         loader.add_css('company_name', 'h1 ~ h3 span::text')
@@ -58,8 +59,17 @@ class Spider(BaseSpider):
         yield loader.load_item()
 
 
+def parse_proxied_url(url):
+    proxied_url = get_param(url, 'url')
+    if proxied_url:
+        param_names = ['utm_source', 'utm_medium', 'utm_campaign']
+        return strip_params(proxied_url, param_names)
+    return url
+
+
 class Loader(ItemLoader):
     default_output_processor = TakeFirst()
+    link_in = Compose(first, parse_proxied_url)
     employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()
     posted_at_in = Compose(first, parse_relative_time)
