@@ -1,7 +1,7 @@
 import hashlib
 from io import BytesIO
 
-from PIL import Image, ImageChops, ImageOps
+from PIL import Image, ImageChops, ImageOps, UnidentifiedImageError
 
 from scrapy.pipelines.images import ImagesPipeline, ImageException
 from scrapy.utils.python import to_bytes
@@ -22,7 +22,11 @@ class Pipeline(ImagesPipeline):
     def image_downloaded(self, response, request, info):
         path = self.file_path(request, response=response, info=info)
 
-        orig_image = Image.open(BytesIO(response.body))
+        try:
+            orig_image = Image.open(BytesIO(response.body))
+        except UnidentifiedImageError:
+            raise ImageException(f'Image cannot be identified ({request.url})')
+
         width, height = orig_image.size
         if width > self.MAX_SIZE_PX or height > self.MAX_SIZE_PX:
             raise ImageException(f'Image too large ({width}x{height} < {self.MAX_SIZE_PX}x{self.MAX_SIZE_PX})')

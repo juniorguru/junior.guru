@@ -33,4 +33,3 @@ def run_spider(spider_name):
 
 if __name__ == '__main__':
     main()
-    sys.exit()  # kills oauth2client unnecessarily refreshing tokens

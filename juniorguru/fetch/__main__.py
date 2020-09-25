@@ -1,3 +1,5 @@
+import sys
+
 from juniorguru.fetch.jobs import main as fetch_jobs
 from juniorguru.fetch.logos import main as fetch_logos
 from juniorguru.fetch.metrics import main as fetch_metrics
