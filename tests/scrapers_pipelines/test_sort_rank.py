@@ -20,9 +20,14 @@ def test_calc_sort_rank():
     }) == 22
 
 
-def test_calc_sort_rank_favoritism_juniorguru():
-    assert (sort_rank.calc_favoritism('juniorguru')
-            > sort_rank.calc_favoritism('other'))
+@pytest.mark.parametrize('pricing_plan,expected', [
+    (None, 0),
+    ('community', 0),
+    ('standard', 90),
+    ('annual_flat_rate', 100),
+])
+def test_calc_sort_rank_favoritism_juniorguru(pricing_plan, expected):
+    assert sort_rank.calc_favoritism(pricing_plan) == expected
 
 
 @pytest.mark.parametrize('posted_at,today,expected', [

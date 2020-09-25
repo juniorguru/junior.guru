@@ -16,7 +16,7 @@ class Pipeline():
 
     def process_item(self, item, spider):
         components = {
-            'favoritism': calc_favoritism(spider.name),
+            'favoritism': calc_favoritism(item.get('pricing_plan')),
             'freshness': calc_freshness(item['posted_at'], self.today),
             'juniority': calc_juniority(item['junior_rank']),
         }
@@ -29,8 +29,8 @@ def calc_sort_rank(components, weights):
     return sum([weights[name] * value for name, value in components.items()])
 
 
-def calc_favoritism(spider_name):
-    return 100 if spider_name == 'juniorguru' else 0
+def calc_favoritism(pricing_plan):
+    return dict(standard=90, annual_flat_rate=100).get(pricing_plan, 0)
 
 
 def calc_freshness(posted_at, today):
