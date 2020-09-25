@@ -15,17 +15,17 @@ $company-logo-size: 8rem;
   border-bottom: $border-width solid $gray-light;
 }
 
+.jobs__item:last-child.jobs__item--highlighted {
+  border-color: $yellow;
+}
+
 .jobs__item--highlighted {
   background: rgba($yellow, 0.2);
   border-color: $yellow;
 }
 
 .jobs__item--highlighted + .jobs__item {
-  border-top-color: $yellow;
-}
-
-.jobs__item--highlighted + .jobs__item--highlighted {
-  border-top-color: $yellow;
+  border-color: $yellow;
 }
 
 .jobs__link {
