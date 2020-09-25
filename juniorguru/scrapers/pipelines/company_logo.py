@@ -1,8 +1,6 @@
 import hashlib
 from io import BytesIO
-from pathlib import Path
 
-from PIL.PngImagePlugin import PngInfo
 from PIL import Image, ImageChops, ImageOps
 
 from scrapy.pipelines.images import ImagesPipeline, ImageException
@@ -40,10 +38,6 @@ class Pipeline(ImagesPipeline):
         return checksum
 
     def convert_image(self, image, size=None):
-        pnginfo = PngInfo()
-        pnginfo.add_text('original_width', str(image.width))
-        pnginfo.add_text('original_height', str(image.height))
-
         # transparent to white
         image = image.convert('RGBA')
         background = Image.new('RGBA', image.size, (255, 255, 255))
@@ -64,24 +58,9 @@ class Pipeline(ImagesPipeline):
         image = image.resize((self.SIZE_PX, self.SIZE_PX))
 
         buffer = BytesIO()
-        image.save(buffer, 'PNG', pnginfo=pnginfo)
+        image.save(buffer, 'PNG')
         return image, buffer
 
     def file_path(self, request, **kwargs):
         image_guid = hashlib.sha1(to_bytes(request.url)).hexdigest()
         return f'company-logos/{image_guid}.png'
-
-    def item_completed(self, results, item, info):
-        if results:
-            results = sorted(results, key=self.image_original_size, reverse=True)
-        return super().item_completed(results, item, info)
-
-    def image_original_size(self, result):
-        # TODO maybe the images are already sorted? (favicon)
-        ok, result = result
-        if ok:
-            image = Image.open(Path(self.images_dir) / result['path'])
-            width = int(image.text['original_width'])
-            height = int(image.text['original_height'])
-            return width * height
-        return 0
