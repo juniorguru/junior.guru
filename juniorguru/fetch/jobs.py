@@ -26,10 +26,6 @@ def main():
         'startupjobs',
     ])
 
-    # Prevents oauth2client to unnecessarily refresh tokens when the script
-    # finishes
-    sys.exit()
-
 
 def run_spider(spider_name):
     return subprocess.run(['scrapy', 'crawl', spider_name], check=True)
@@ -37,3 +33,4 @@ def run_spider(spider_name):
 
 if __name__ == '__main__':
     main()
+    sys.exit()  # kills oauth2client unnecessarily refreshing tokens
