@@ -1,13 +1,19 @@
 import sys
 import subprocess
 from multiprocessing import Pool
+from pathlib import Path
 
 from juniorguru.lib import timer
 from juniorguru.models import Job, JobDropped, JobError, SpiderMetric, db
+from juniorguru.scrapers.settings import IMAGES_STORE
 
 
 @timer.notify
 def main():
+    # If the creation of the directory is left to the spiders, they can end
+    # up colliding in making sure it gets created
+    Path(IMAGES_STORE).mkdir(exist_ok=True, parents=True)
+
     with db:
         for model in [Job, JobError, JobDropped, SpiderMetric]:
             model.drop_table()
@@ -19,7 +25,10 @@ def main():
         'stackoverflow',
         'startupjobs',
     ])
-    sys.exit()  # prevents oauth2client to unnecessarily refresh tokens
+
+    # Prevents oauth2client to unnecessarily refresh tokens when the script
+    # finishes
+    sys.exit()
 
 
 def run_spider(spider_name):
