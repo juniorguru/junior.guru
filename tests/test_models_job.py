@@ -220,3 +220,14 @@ def test_expires_soon(today, expected):
     job = Job(**prepare_job_data('1', expires_at=date(2020, 7, 1)))
 
     assert job.expires_soon(today=today) is expected
+
+
+@pytest.mark.parametrize('pricing_plan,expected', [
+    ('community', False),
+    ('standard', True),
+    ('awesome-cool-hyper-super-plan', True),
+])
+def test_is_highlighted(pricing_plan, expected):
+    job = Job(**prepare_job_data('1', pricing_plan=pricing_plan))
+
+    assert job.is_highlighted is expected
