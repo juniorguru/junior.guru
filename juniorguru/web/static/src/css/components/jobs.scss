@@ -90,16 +90,29 @@ $company-logo-size: 8rem;
 
 .jobs__tag {
   @include font-0;
-  border: 0.2rem solid $gray;
+  border: 0.2rem solid $gray-light;
   display: inline;
   padding: 0.2rem 0.4rem;
   margin-right: 0.4rem;
+  white-space: nowrap;
 }
 
-.jobs__link:hover .jobs__tag,
-.jobs__link:focus .jobs__tag,
-.jobs__link:active .jobs__tag {
-  border-color: $blue;
+.jobs__tag--new {
+  color: $white;
+  background: $black;
+  border-color: $black;
+}
+
+.jobs__link:hover,
+.jobs__link:focus,
+.jobs__link:active {
+  .jobs__tag {
+    border-color: $blue;
+  }
+
+  .jobs__tag--new {
+    background: $blue;
+  }
 }
 
 @media screen and (min-width: $breakpoint-tablet) {

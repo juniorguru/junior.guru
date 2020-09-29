@@ -49,7 +49,7 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
         </div>
         <ul class="jobs__tags">
           {% for tag in job.tags() %}
-            <li class="jobs__tag">{{ tag|tag_label }}</li>
+            <li class="jobs__tag jobs__tag--{{ tag|lower|replace('_', '-') }}">{{ tag|tag_label }}</li>
           {% endfor %}
         </ul>
       </a>
