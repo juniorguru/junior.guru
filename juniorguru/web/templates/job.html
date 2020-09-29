@@ -14,10 +14,13 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
       <a href="{{ job.company_link }}" data-metrics-utm data-metrics-utm-medium="job_board">{{ job.company_name }}</a>
       &mdash;
       {{ job.location }}
-      {# FIXME
-      &mdash;
-      {{ job.employment_types|employment_types }}
-      #}
+      {% set tags = job.tags()|reject('eq', 'NEW')|list %}
+      {% if tags %}
+        &mdash;
+        {% for tag in tags %}
+          {{ tag|tag_label }}{% if not loop.last %},{% endif %}
+        {% endfor %}
+      {% endif %}
     </p>
   </header>
 
