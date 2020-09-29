@@ -5,8 +5,8 @@ from datetime import date
 BUMP_PERIOD_DAYS = 30
 WEIGHTS = {
     'favoritism': 1,
-    'freshness': 2,
-    'juniority': 2,
+    'freshness': 1,
+    'juniority': 1,
 }
 
 

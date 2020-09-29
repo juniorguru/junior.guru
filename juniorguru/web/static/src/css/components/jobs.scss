@@ -20,7 +20,7 @@ $company-logo-size: 8rem;
 }
 
 .jobs__item--highlighted {
-  background: rgba($yellow, 0.2);
+  background: $yellow-light;
   border-color: $yellow;
 }
 
