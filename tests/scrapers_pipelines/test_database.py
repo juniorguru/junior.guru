@@ -74,6 +74,15 @@ def test_database_id_prefilled_no_link(item, spider, db):
     assert job.id == 'honza42'
 
 
+def test_database_id_no_location(item, spider, db):
+    item['location'] = None
+    Pipeline(db=db, model=Job).process_item(item, spider)
+    with db:
+        job = Job.select()[0]
+
+    assert len(job.id) == 56  # sha224 hex digest length
+
+
 def test_database_same_link_items(item, spider, db):
     for location in ['Ostrava', 'Brno', 'Pardubice']:
         item['location'] = location

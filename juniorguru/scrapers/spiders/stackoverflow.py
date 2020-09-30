@@ -27,7 +27,9 @@ class Spider(BaseSpider):
         loader.add_value('link', response.url)
         loader.add_css('company_name', 'h1 ~ div a::text')
         loader.add_css('company_link', 'h1 ~ div a::attr(href)')
-        loader.add_xpath('location', '//h1/following-sibling::div/*[last()]/text()')
+        loader.add_xpath('location', "(//h1/following-sibling::div)[1]/*[last()]/text()")
+        loader.add_css('remote', '.-remote')
+        loader.add_value('remote', False)
         loader.add_xpath('employment_types', "//span[contains(., 'Job type:')]/following-sibling::span/text()")
         loader.add_xpath('experience_levels', "//span[contains(., 'Experience level:')]/following-sibling::span/text()")
         loader.add_xpath('posted_at', "//div[contains(./text(), 'Posted')]/text()")
@@ -37,6 +39,8 @@ class Spider(BaseSpider):
 
 
 def clean_location(text):
+    if re.search(r'\bno office\b', text, re.IGNORECASE):
+        return None
     return re.sub(r'^–\s*', '', re.sub(r'[\n\r]+', ' ', text.strip()))
 
 
@@ -49,3 +53,4 @@ class Loader(ItemLoader):
     experience_levels_in = MapCompose(str.lower, split)
     experience_levels_out = Identity()
     company_logo_urls_out = Identity()
+    remote_in = MapCompose(bool)

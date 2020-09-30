@@ -24,6 +24,8 @@ class Spider(BaseSpider):
                 offer_loader.add_xpath('company_name', './/startup/text()')
                 offer_loader.add_xpath('company_link', './/startupURL/text()')
                 offer_loader.add_value('location', city)
+                offer_loader.add_xpath('remote', ".//jobtype[contains(., 'Remote')]/text()")
+                offer_loader.add_value('remote', False)
                 offer_loader.add_xpath('employment_types', './/jobtype/text()')
                 offer_loader.add_xpath('posted_at', './/lastUpdate//text()')
                 offer_loader.add_xpath('description_html', './/description/text()')
@@ -48,3 +50,4 @@ class Loader(ItemLoader):
     employment_types_out = Identity()
     posted_at_in = MapCompose(parse_iso_date)
     company_logo_urls_out = Identity()
+    remote_in = MapCompose(bool)

@@ -3,7 +3,7 @@ import re
 from functools import lru_cache
 from datetime import date
 
-from peewee import CharField, DateField, ForeignKeyField, IntegerField, TextField
+from peewee import CharField, DateField, ForeignKeyField, IntegerField, TextField, BooleanField
 
 from juniorguru.models.base import BaseModel, JSONField
 
@@ -54,10 +54,11 @@ class Job(BaseModel):
     source = CharField(index=True)
     posted_at = DateField(index=True)
     title = CharField()
-    location = CharField()
-    location_city = CharField()
-    location_country_code = CharField()
-    region = CharField()
+    remote = BooleanField(default=False)
+    location = CharField(null=True)
+    location_city = CharField(null=True)
+    location_country_code = CharField(null=True)
+    region = CharField(null=True)
     company_name = CharField()
     company_link = CharField(null=True)
     company_logo_path = CharField(null=True)

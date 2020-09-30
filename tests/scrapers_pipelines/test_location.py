@@ -13,6 +13,15 @@ def test_location(item, spider):
     assert item['location_country_code'] == 'CZ'
 
 
+def test_location_remote(item, spider):
+    item['location'] = None
+    item = Pipeline(geocode=lambda l: {}).process_item(item, spider)
+
+    assert item.get('region') is None
+    assert item.get('location_city') is None
+    assert item.get('location_country_code') is None
+
+
 def test_get_region_country():
     address = dict(county='Województwo Mazowieckie',
                    country='Polska',

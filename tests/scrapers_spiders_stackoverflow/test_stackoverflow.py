@@ -32,7 +32,7 @@ def test_spider_parse_job():
     assert sorted(job.keys()) == sorted([
         'title', 'link', 'company_name', 'company_link', 'location',
         'employment_types', 'posted_at', 'description_html',
-        'experience_levels', 'company_logo_urls',
+        'experience_levels', 'company_logo_urls', 'remote',
     ])
     assert job['title'] == 'Solution Engineer (M/F/X)'
     assert job['link'] == 'https://example.com/example/'
@@ -56,7 +56,22 @@ def test_spider_parse_job_via():
     assert job['location'] == 'London, UK'
 
 
+def test_spider_parse_job_remote():
+    response = HtmlResponse('https://example.com/example/',
+                            body=Path(FIXTURES_DIR / 'job_remote.html').read_bytes())
+    job = next(stackoverflow.Spider().parse_job(response))
+
+    assert job['company_name'] == 'Hummingbot'
+    assert job['company_link'] == 'https://example.com/jobs/companies/hummingbot'
+    assert job['remote'] is True
+    assert job.get('location') is None
+
+
 def test_clean_location():
     assert stackoverflow.clean_location('''
         \r\n                    –\r\nLeipzig, Deutschland
     ''') == 'Leipzig, Deutschland'
+
+
+def test_clean_location_remote():
+    assert stackoverflow.clean_location('No office location') is None

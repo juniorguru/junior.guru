@@ -47,13 +47,14 @@ def test_spider_parse_job():
     assert sorted(job.keys()) == sorted([
         'title', 'link', 'company_name', 'company_link', 'location',
         'employment_types', 'posted_at', 'description_html',
-        'experience_levels', 'company_logo_urls',
+        'experience_levels', 'company_logo_urls', 'remote',
     ])
     assert job['title'] == 'Start kariéry jako Junior C++ Programátor/ka'
     assert job['link'] == 'https://example.com/example/'
     assert job['company_name'] == 'Experis Czech Republic'
     assert job['company_link'] == 'https://cz.linkedin.com/company/experis-czech-republic?trk=public_jobs_topcard_org_name'
     assert job['location'] == 'Prague, Czech Republic'
+    assert job['remote'] is False
     assert job['employment_types'] == ['full-time']
     assert job['experience_levels'] == ['entry level']
     assert job['posted_at'] == date.today() - timedelta(weeks=3)
