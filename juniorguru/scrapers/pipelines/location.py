@@ -43,7 +43,7 @@ class Pipeline():
             if address:
                 try:
                     item['region'] = get_region(address)
-                    item['location_place'] = address['city']
+                    item['location_place'] = get_place(address)
                     item['location_country_code'] = address['country_code'].upper()
                 except KeyError as e:
                     raise KeyError(f"{address!r} doesn't have key {e} ({location})")
