@@ -38,17 +38,20 @@ class Pipeline():
 
     def process_item(self, item, spider):
         if item.get('location'):
-            location = item['location']
-            address = self.geocode(location)
-            if address:
-                try:
-                    item['region'] = get_region(address)
-                    item['location_place'] = get_place(address)
-                    item['location_country_code'] = address['country_code'].upper()
-                except KeyError as e:
-                    raise KeyError(f"{address!r} doesn't have key {e} ({location})")
-                if self.stats:
-                    self.stats.inc_value('item_geocoded_count')
+            try:
+                location = item['location']
+                address = self.geocode(location)
+                if address:
+                    try:
+                        item['region'] = get_region(address)
+                        item['location_place'] = get_place(address)
+                        item['location_country_code'] = address['country_code'].upper()
+                    except KeyError as e:
+                        raise KeyError(f"{address!r} doesn't have key {e} ({location})")
+                    if self.stats:
+                        self.stats.inc_value('item_geocoded_count')
+            except:
+                pass  # HOTFIX
         return item
 
 
