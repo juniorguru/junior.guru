@@ -28,9 +28,7 @@ class Job(Item):
     junior_rank = Field()
     sort_rank = Field()
     sort_rank_components = Field()
-    location_place = Field()
-    location_region = Field()
-    location_country = Field()
+    region = Field()
 
 
 class JuniorGuruJob(Job):

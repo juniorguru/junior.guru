@@ -6,21 +6,71 @@ def rule(pattern, value, ignorecase=True):
     return (re.compile(r'\b' + pattern + r'\b', compile_flags), value)
 
 
-COUNTRIES = dict([
-    rule(r'CZ', 'Česko', ignorecase=False),
-    rule(r'ČR', 'Česko', ignorecase=False),
-    rule(r'Česko', 'Česko'),
-    rule(r'Czechia', 'Česko'),
-    rule(r'Česk\w+ Rep(\.|\w+)', 'Česko'),
-    rule(r'(The )?Czech Rep(\.|\w+)', 'Česko'),
+REGIONS = dict([
+    # https://cs.wikipedia.org/wiki/Seznam_m%C4%9Bst_na_Slovensku
     rule(r'SK', 'Slovensko', ignorecase=False),
     rule(r'SR', 'Slovensko', ignorecase=False),
     rule(r'Slovensko', 'Slovensko'),
     rule(r'Slovakia', 'Slovensko'),
     rule(r'Slovak\w* Rep(\.|\w+)', 'Slovensko'),
     rule(r'(The )?Slovak Rep(\.|\w+)', 'Slovensko'),
-])
-REGIONS = dict([
+    rule(r'Bratislava', 'Slovensko'),
+    rule(r'Košice', 'Slovensko'),
+    rule(r'Prešov', 'Slovensko'),
+    rule(r'Žilina', 'Slovensko'),
+    rule(r'Nitra', 'Slovensko'),
+    rule(r'Banská Bystrica', 'Slovensko'),
+    rule(r'B(\.|\w+) Bystrica', 'Slovensko'),
+    rule(r'Banská B(\.|\w+)', 'Slovensko'),
+    rule(r'Trnava', 'Slovensko'),
+    rule(r'Martin', 'Slovensko'),
+    rule(r'Trenčín', 'Slovensko'),
+    rule(r'Poprad', 'Slovensko'),
+    rule(r'Prievidza', 'Slovensko'),
+
+    # https://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Poland
+    rule(r'PL', 'Polsko', ignorecase=False),
+    rule(r'Polsko', 'Polsko'),
+    rule(r'Poland', 'Polsko'),
+    rule(r'Polska', 'Polsko'),
+    rule(r'Warsaw', 'Polsko'),
+    rule(r'Varšava', 'Polsko'),
+    rule(r'Warszawa', 'Polsko'),
+    rule(r'Krak[óo]w', 'Polsko'),
+    rule(r'Cracow', 'Polsko'),
+    rule(r'Krakov', 'Polsko'),
+    rule(r'Wroc[łl]aw', 'Polsko'),
+    rule(r'Vratislav', 'Polsko'),
+    rule(r'Kato[wv]ic[ey]', 'Polsko'),
+
+    # https://en.wikipedia.org/wiki/List_of_cities_in_Germany_by_population
+    rule(r'DE', 'Německo', ignorecase=False),
+    rule(r'Německo', 'Německo'),
+    rule(r'Germany', 'Německo'),
+    rule(r'Deutsch(\.|\w+)', 'Německo'),
+    rule(r'Berl[ií]n', 'Německo'),
+    rule(r'Leipzig', 'Německo'),
+    rule(r'Lipsko', 'Německo'),
+    rule(r'Dresden', 'Německo'),
+    rule(r'Drážďany', 'Německo'),
+    rule(r'N[uü]rnberg', 'Německo'),
+    rule(r'Nuremberg', 'Německo'),
+    rule(r'Norimberk', 'Německo'),
+    rule(r'M[uü]nchen', 'Německo'),
+    rule(r'Munich', 'Německo'),
+    rule(r'Mnichov', 'Německo'),
+
+    # https://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Austria
+    rule(r'AT', 'Rakousko', ignorecase=False),
+    rule(r'Rakousko', 'Rakousko'),
+    rule(r'Austria', 'Rakousko'),
+    rule(r'[ÖO]sterreich', 'Rakousko'),
+    rule(r'Vienna', 'Rakousko'),
+    rule(r'Vídeň', 'Rakousko'),
+    rule(r'Wien', 'Rakousko'),
+    rule(r'Linz', 'Rakousko'),
+    rule(r'Linec', 'Rakousko'),
+
     # https://cs.wikipedia.org/wiki/Kraje_v_%C4%8Cesku
     # https://en.wikipedia.org/wiki/Regions_of_the_Czech_Republic
     rule(r'(Hlavní město )?Pra(ha|gue)', 'Praha'),
@@ -74,48 +124,16 @@ REGIONS = dict([
 
 
 class Pipeline():
-    default_country = 'Česko'
+    def __init__(self, geocode=None):
+        self.geocode = geocode
 
     def process_item(self, item, spider):
-        country, region = parse_location(item['location'])
-        item['location_country'] = (
-            country or
-            getattr(spider, 'default_country', None) or
-            self.default_country
-        )
-        item['location_region'] = region
+        item['region'] = detect_region(item['location'])
         return item
 
 
-def parse_location(location):
-    parts = [part.strip() for part in location.split(',')]
-
-    country = None
-    region = None
-
-    while parts:
-        part = parts.pop()
-        part_is_country = False
-        if not country:
-            for country_re, c in COUNTRIES.items():
-                if country_re.search(part):
-                    country = c
-                    part_is_country = True
-                    break
-        if not part_is_country and not region:
-            for region_re, r in REGIONS.items():
-                if region_re.search(part):
-                    region = r
-                    break
-        if country and region:
-            break
-
-    return country, region
-
-
-# def match_areas(parts, areas):
-#     for area_re, area in areas.items():
-#         for part in parts:
-#             if area_re.search(part):
-#                 return area, area_re
-#     return None, None
+def detect_region(location):
+    for part in [part.strip() for part in location.split(',')]:
+        for region_re, region in REGIONS.items():
+            if region_re.search(part):
+                return region
