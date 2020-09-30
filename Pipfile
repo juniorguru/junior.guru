@@ -43,7 +43,7 @@ itemloaders = "*"
 fiobank = "*"
 emoji = "*"
 favicon = "*"
-geocoder = "*"
+geopy = "*"
 
 [dev-packages]
 pytest = "*"

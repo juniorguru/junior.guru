@@ -28,6 +28,8 @@ class Job(Item):
     junior_rank = Field()
     sort_rank = Field()
     sort_rank_components = Field()
+    location_city = Field()
+    location_country_code = Field()
     region = Field()
 
 
