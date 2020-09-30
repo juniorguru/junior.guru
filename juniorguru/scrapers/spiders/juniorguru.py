@@ -45,6 +45,7 @@ def coerce_record(record):
         r'^expire[ds]$': ('expires_at', parse_date),
     }, record)
     job['id'] = create_id(job['posted_at'], job['company_link'])
+    job['remote'] = False  # TODO
     return job
 
 
