@@ -19,6 +19,8 @@ def main():
         api = MailChimpClient(MAILCHIMP_API_KEY)
         campaigns = get_collection(api.get('/campaigns/'), 'campaigns')
         for campaign in campaigns:
+            if not campaign.get('send_time'):
+                continue
             data = api.get(get_link(campaign, 'content'), count=1000)
             for url in find_urls(data['html']):
                 try:
