@@ -64,9 +64,13 @@ def geocode_osm(location):
 
 
 def get_place(address):
+    # https://wiki.openstreetmap.org/wiki/Key:place
     return next(filter(None, [
         address.get('city'),
+        address.get('town'),
         address.get('village'),
+        address.get('hamlet'),
+        address.get('isolated_dwelling'),
     ]))
 
 
