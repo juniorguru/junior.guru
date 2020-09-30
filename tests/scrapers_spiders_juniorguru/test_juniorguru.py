@@ -54,6 +54,7 @@ def test_coerce_record():
         'employment_types': frozenset(['internship', 'full-time']),
         'title': 'Frontend Ninja',
         'location': 'Prague',
+        'remote': False,
         'link': 'https://jobs.example.com/1245/',
         'pricing_plan': 'community',
         'approved_at': date(2019, 10, 10),
