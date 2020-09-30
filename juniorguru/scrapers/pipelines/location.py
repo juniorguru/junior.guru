@@ -38,18 +38,33 @@ class Pipeline():
 
     def process_item(self, item, spider):
         if item.get('location'):
-            address = self.geocode(item['location'])
-            item['region'] = get_region(address)
-            item['location_city'] = address['city']
-            item['location_country_code'] = address['country_code'].upper()
-            if self.stats:
-                self.stats.inc_value('item_geocoded_count')
+            location = item['location']
+            address = self.geocode(location)
+            if address:
+                try:
+                    item['region'] = get_region(address)
+                    item['location_place'] = address['city']
+                    item['location_country_code'] = address['country_code'].upper()
+                except KeyError as e:
+                    raise KeyError(f"{address!r} doesn't have key {e} ({location})")
+                if self.stats:
+                    self.stats.inc_value('item_geocoded_count')
         return item
 
 
 def geocode_osm(location):
     geolocator = geopy.geocoders.Nominatim(user_agent=USER_AGENT)
-    return geolocator.geocode(location, addressdetails=True).raw['address']
+    response = geolocator.geocode(location, addressdetails=True)
+    if response:
+        return response.raw['address']
+    return None
+
+
+def get_place(address):
+    return next(filter(None, [
+        address.get('city'),
+        address.get('village'),
+    ]))
 
 
 def get_region(address):
@@ -58,3 +73,10 @@ def get_region(address):
     else:
         region = address['country']
     return REGIONS_MAPPING.get(region, region)
+
+
+if __name__ == "__main__":
+    # python -m juniorguru.scrapers.pipelines.location 'Brno, South Moravia, Czech Republic'
+    import sys
+    from pprint import pprint
+    pprint(geocode_osm(sys.argv[1]))

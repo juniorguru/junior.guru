@@ -56,7 +56,7 @@ class Job(BaseModel):
     title = CharField()
     remote = BooleanField(default=False)
     location = CharField(null=True)
-    location_city = CharField(null=True)
+    location_place = CharField(null=True)
     location_country_code = CharField(null=True)
     region = CharField(null=True)
     company_name = CharField()

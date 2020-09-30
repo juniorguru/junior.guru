@@ -71,7 +71,7 @@ def prepare_job_data(id, **kwargs):
         company_link=kwargs.get('company_link', 'https://example.com'),
         email=kwargs.get('email', 'recruiter@example.com'),
         location=kwargs.get('location', 'Brno, Czech Republic'),
-        location_city=kwargs.get('location_city', 'Brno'),
+        location_place=kwargs.get('location_place', 'Brno'),
         location_country_code=kwargs.get('location_country_code', 'CZ'),
         region=kwargs.get('region', 'Brno'),
         description_html=kwargs.get('description', '<p><strong>Useful</strong> description.</p>'),
