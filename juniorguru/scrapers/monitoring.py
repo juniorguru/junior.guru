@@ -22,6 +22,7 @@ RELEVANT_METRICS = (
     'item_saved_count',
     'item_dropped_count',
     'item_dropped_reasons_count',
+    'item_geocoded_count',
     'elapsed_time_seconds',
 )
 

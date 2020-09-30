@@ -19,8 +19,29 @@ def test_detect_region(location, expected_region):
     assert detect_region(location) == expected_region
 
 
-# def test_region_parser(item, spider):
-#     item['location'] = 'Pardubice, Česko'
-#     item = Pipeline().process_item(item, spider)
+def test_region_parser_detectable(item, spider):
+    item['location'] = 'Praha'
+    item = Pipeline().process_item(item, spider)
 
-#     assert item['location_region'] == 'Pardubice'
+    assert item['region'] == 'Praha'
+
+
+def test_region_parser_detectable_and_geocoding_set(item, spider):
+    item['location'] = 'Praha'
+    item = Pipeline(geocode=lambda l: 'Krakozhia').process_item(item, spider)
+
+    assert item['region'] == 'Praha'
+
+
+def test_region_parser_not_detectable(item, spider):
+    item['location'] = 'Lázně Toušeň'
+    item = Pipeline().process_item(item, spider)
+
+    assert item['region'] is None
+
+
+def test_region_parser_not_detectable_but_geocoding_set(item, spider):
+    item['location'] = 'Lázně Toušeň'
+    item = Pipeline(geocode=lambda l: 'Krakozhia').process_item(item, spider)
+
+    assert item['region'] == 'Krakozhia'

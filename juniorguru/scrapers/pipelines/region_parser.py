@@ -1,5 +1,7 @@
 import re
 
+import geocoder
+
 
 def rule(pattern, value, ignorecase=True):
     compile_flags = re.IGNORECASE if ignorecase else 0
@@ -124,11 +126,21 @@ REGIONS = dict([
 
 
 class Pipeline():
-    def __init__(self, geocode=None):
+    def __init__(self, stats=None, geocode=None):
+        self.stats = stats
         self.geocode = geocode
 
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(stats=crawler.stats, geocode=geocode)
+
     def process_item(self, item, spider):
-        item['region'] = detect_region(item['location'])
+        region = detect_region(item['location'])
+        if not region and self.geocode:
+            region = self.geocode(item['location'])
+            if self.stats:
+                self.stats.inc_value('item_geocoded_count')
+        item['region'] = region
         return item
 
 
@@ -137,3 +149,14 @@ def detect_region(location):
         for region_re, region in REGIONS.items():
             if region_re.search(part):
                 return region
+
+
+def geocode(location):
+    response = geocoder.osm(location).json
+    return response
+
+
+# if __name__ == "__main__":
+#     from pprint import pprint
+#     pprint(geocode('Káranice, Hradec Králové, Czech Republic'))
+#     # geocode('252 30 Řevnice, Česko')
