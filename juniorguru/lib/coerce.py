@@ -32,7 +32,7 @@ def parse_int(value):
 
 def parse_boolean_words(value):
     if value is not None:
-        return dict(yes=True, no=False).get(value.strip())
+        return dict(yes=True, no=False).get(value.strip().lower())
 
 
 def parse_datetime(value):

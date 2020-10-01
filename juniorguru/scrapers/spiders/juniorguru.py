@@ -1,3 +1,4 @@
+import re
 import hashlib
 from urllib.parse import urlparse
 
@@ -6,7 +7,7 @@ from scrapy import Spider as BaseSpider
 from juniorguru.lib import google_sheets
 from juniorguru.lib.md import md
 from juniorguru.lib.coerce import (coerce, parse_datetime, parse_text,
-    parse_date, parse_set)
+    parse_date, parse_set, parse_boolean_words)
 from juniorguru.scrapers.items import JuniorGuruJob
 from juniorguru.scrapers.settings import JUNIORGURU_ITEM_PIPELINES
 
@@ -23,10 +24,15 @@ class Spider(BaseSpider):
     # https://developers.google.com/sheets/api/reference/rest#discovery-document
     start_urls = ['https://sheets.googleapis.com/$discovery/rest?version=v4']
 
-    def parse(self, response):
+    def _get_records(self):
         sheet = google_sheets.get(self.doc_key, self.sheet_name)
-        for record in google_sheets.download(sheet):
-            yield JuniorGuruJob(**coerce_record(record))
+        return google_sheets.download(sheet)
+
+    def parse(self, response):
+        for record in self._get_records():
+            data = coerce_record(record)
+            for data_per_location in split_multiple_locations(data):
+                yield JuniorGuruJob(**data_per_location)
 
 
 def coerce_record(record):
@@ -37,7 +43,8 @@ def coerce_record(record):
         r'^job title$': ('title', parse_text),
         r'^company website link$': ('company_link', parse_text),
         r'^email address$': ('email', parse_text),
-        r'^job location$': ('location', parse_text),
+        r'remote': ('remote', parse_boolean_words),
+        r'location': ('location_raw', parse_text),
         r'^job description$': ('description_html', parse_markdown),
         r'^job link$': ('link', parse_text),
         r'^pricing plan$': ('pricing_plan', parse_pricing_plan),
@@ -45,8 +52,16 @@ def coerce_record(record):
         r'^expire[ds]$': ('expires_at', parse_date),
     }, record)
     job['id'] = create_id(job['posted_at'], job['company_link'])
-    job['remote'] = False  # TODO
     return job
+
+
+def split_multiple_locations(data):
+    location = data.get('location_raw')
+    if location:
+        for sub_location in re.split(r'\snebo\s', location):
+            yield {**data, 'location_raw': sub_location.strip()}
+    else:
+        yield data
 
 
 def parse_markdown(value):

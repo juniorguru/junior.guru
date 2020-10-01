@@ -49,7 +49,7 @@ class Spider(BaseSpider):
         loader.add_css('company_name', 'h1 ~ h3 a::text')
         loader.add_css('company_name', 'h1 ~ h3 span::text')
         loader.add_css('company_link', 'h1 ~ h3 a::attr(href)')
-        loader.add_css('location', 'h1 ~ h3 > span:nth-of-type(2)::text')
+        loader.add_css('location_raw', 'h1 ~ h3 > span:nth-of-type(2)::text')
         loader.add_value('remote', False)
         loader.add_xpath('employment_types', "//h3[contains(., 'Employment type')]/following-sibling::span/text()")
         loader.add_xpath('experience_levels', "//h3[contains(., 'Seniority level')]/following-sibling::span/text()")

@@ -8,7 +8,7 @@ class Job(Item):
     # set by spiders
     posted_at = Field(required=True)
     title = Field(required=True)
-    location = Field()
+    location_raw = Field()
     remote = Field(required=True)
     company_name = Field(required=True)
     company_link = Field()

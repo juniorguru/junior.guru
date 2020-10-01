@@ -232,3 +232,15 @@ def test_tags_employment_types(employment_types, expected):
     tags = set(job.tags())
 
     assert expected == tags
+
+
+@pytest.mark.parametrize('location_raw,remote,expected', [
+    (None, True, 'na dálku'),
+    (None, False, '?'),
+    ('Brno', True, 'Brno, na dálku'),
+    ('Brno', False, 'Brno'),
+])
+def test_location(location_raw, remote, expected):
+    job = Job(**prepare_job_data('1', location_raw=location_raw, remote=remote))
+
+    assert job.location == expected

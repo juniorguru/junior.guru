@@ -80,9 +80,11 @@ def test_coerce_int(value, expected):
     ('true', None),
     ('yes', True),
     ('no', False),
+    ('Yes', True),
+    ('No', False),
 ])
 def test_coerce_boolean_words(value, expected):
-    assert coerce.parse_boolean_words(value) == expected
+    assert coerce.parse_boolean_words(value) is expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -96,7 +98,7 @@ def test_coerce_boolean_words(value, expected):
     ('no', True),
 ])
 def test_coerce_boolean(value, expected):
-    assert coerce.parse_boolean(value) == expected
+    assert coerce.parse_boolean(value) is expected
 
 
 @pytest.mark.parametrize('value,expected', [

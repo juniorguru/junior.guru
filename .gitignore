@@ -74,8 +74,7 @@ google_service_account.json
 
 # Fetched data
 /juniorguru/data/*.db
-/juniorguru/data/*.db-journal
-/juniorguru/data/*.db-shm
+/juniorguru/data/*.db-*
 /juniorguru/data/responses/
 /juniorguru/data/images/
 

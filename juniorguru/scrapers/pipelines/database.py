@@ -34,7 +34,7 @@ def prepare_data(item, spider_name):
 def create_id(item):
     return hashlib.sha224('⚡︎'.join(filter(None, [
         item['link'],
-        item.get('location'),
+        item.get('location_raw'),
     ])).encode()).hexdigest()
 
 

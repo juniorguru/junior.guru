@@ -37,9 +37,9 @@ class Pipeline():
         return cls(stats=crawler.stats)
 
     def process_item(self, item, spider):
-        if item.get('location'):
+        if item.get('location_raw'):
             try:
-                location = item['location']
+                location = item['location_raw']
                 address = self.geocode(location)
                 if address:
                     try:

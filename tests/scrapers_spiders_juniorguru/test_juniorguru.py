@@ -2,6 +2,7 @@ import hashlib
 from datetime import datetime, date
 
 import pytest
+from scrapy.http import HtmlResponse
 
 from juniorguru.scrapers.spiders import juniorguru
 
@@ -16,12 +17,44 @@ def create_record(record=None):
         'Employment type': record.get('Employment type', 'internship, full-time'),
         'Job title': record.get('Job title', 'Frontend Ninja'),
         'Job description': record.get('Job description', None),
-        'Job location': record.get('Job location', 'Prague'),
+        'Remote?': record.get('Remote?', 'No'),
+        'Office location': record.get('Office location', 'Prague'),
         'Job link': record.get('Job link', 'https://jobs.example.com/1245/'),
         'Pricing plan': record.get('Pricing plan', '0 CZK — Community'),
         'Approved': record.get('Approved', '10/10/2019'),
         'Expires': record.get('Expires', '12/12/2019'),
     }
+
+
+def test_spider_parse():
+    class Spider(juniorguru.Spider):
+        def _get_records(self):
+            return [
+                create_record({'Office location': 'Praha'}),
+                create_record({'Office location': 'Brno'}),
+            ]
+
+    response = HtmlResponse('https://example.com/', body=b'...')
+    jobs = list(Spider().parse(response))
+
+    assert len(jobs) == 2
+
+
+def test_spider_parse_multiple_locations():
+    class Spider(juniorguru.Spider):
+        def _get_records(self):
+            return [
+                create_record({'Office location': 'Praha nebo Ostrava'}),
+                create_record({'Office location': 'Brno'}),
+            ]
+
+    response = HtmlResponse('https://example.com/', body=b'...')
+    jobs = list(Spider().parse(response))
+
+    assert len(jobs) == 3
+    assert jobs[0]['location_raw'] == 'Praha'
+    assert jobs[1]['location_raw'] == 'Ostrava'
+    assert jobs[2]['location_raw'] == 'Brno'
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -53,7 +86,7 @@ def test_coerce_record():
         'company_link': 'https://www.example.com',
         'employment_types': frozenset(['internship', 'full-time']),
         'title': 'Frontend Ninja',
-        'location': 'Prague',
+        'location_raw': 'Prague',
         'remote': False,
         'link': 'https://jobs.example.com/1245/',
         'pricing_plan': 'community',

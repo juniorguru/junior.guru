@@ -30,7 +30,7 @@ def test_spider_parse_job():
     job = jobs[0]
 
     assert sorted(job.keys()) == sorted([
-        'title', 'link', 'company_name', 'company_link', 'location',
+        'title', 'link', 'company_name', 'company_link', 'location_raw',
         'employment_types', 'posted_at', 'description_html',
         'experience_levels', 'company_logo_urls', 'remote',
     ])
@@ -38,7 +38,7 @@ def test_spider_parse_job():
     assert job['link'] == 'https://example.com/example/'
     assert job['company_name'] == 'QUAJOO GmbH'
     assert job['company_link'] == 'https://example.com/jobs/companies/quajoo-gmbh'
-    assert job['location'] == 'Leipzig, Deutschland'
+    assert job['location_raw'] == 'Leipzig, Deutschland'
     assert job['employment_types'] == ['Full-time']
     assert job['experience_levels'] == ['junior', 'mid-level']
     assert job['posted_at'] == date.today() - timedelta(days=27)
@@ -53,7 +53,7 @@ def test_spider_parse_job_via():
 
     assert job['company_name'] == 'CBOE Global Markets'
     assert job['company_link'] == 'https://www.cboe.com/'
-    assert job['location'] == 'London, UK'
+    assert job['location_raw'] == 'London, UK'
 
 
 def test_spider_parse_job_remote():
@@ -64,7 +64,7 @@ def test_spider_parse_job_remote():
     assert job['company_name'] == 'Hummingbot'
     assert job['company_link'] == 'https://example.com/jobs/companies/hummingbot'
     assert job['remote'] is True
-    assert job.get('location') is None
+    assert job.get('location_raw') is None
 
 
 def test_clean_location():

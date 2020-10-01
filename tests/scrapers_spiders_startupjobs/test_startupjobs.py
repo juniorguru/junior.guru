@@ -20,7 +20,7 @@ def test_spider_parse():
     job = jobs[0]
 
     assert sorted(job.keys()) == sorted([
-        'title', 'link', 'company_name', 'company_link', 'location',
+        'title', 'link', 'company_name', 'company_link', 'location_raw',
         'employment_types', 'posted_at', 'description_html', 'company_logo_urls',
         'remote',
     ])
@@ -28,7 +28,7 @@ def test_spider_parse():
     assert job['link'] == 'https://www.startupjobs.cz/nabidka/22025/my-hledame-stale-pridej-se-k-nam-do-tymu-jako-junior-linux-admin?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
     assert job['company_name'] == 'Cloudinfrastack'
     assert job['company_link'] == 'https://www.startupjobs.cz/startup/cloudinfrastack?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
-    assert job['location'] == 'Praha, Česko'
+    assert job['location_raw'] == 'Praha, Česko'
     assert job['remote'] is False
     assert job['employment_types'] == ['Part-time', 'Full-time']
     assert job['posted_at'] == date(2020, 5, 5)
@@ -60,8 +60,8 @@ def test_spider_parse_cities():
 
     assert len(jobs) == 2
 
-    assert jobs[0]['location'] == 'Praha, Česko'
-    assert jobs[1]['location'] == 'Olomouc, Česko'
+    assert jobs[0]['location_raw'] == 'Praha, Česko'
+    assert jobs[1]['location_raw'] == 'Olomouc, Česko'
     assert jobs[0]['link'] == jobs[1]['link']
 
     jobs[0]['title'] = 'Modified'  # testing whether the job objects are copies

@@ -75,7 +75,7 @@ def test_database_id_prefilled_no_link(item, spider, db):
 
 
 def test_database_id_no_location(item, spider, db):
-    item['location'] = None
+    item['location_raw'] = None
     Pipeline(db=db, model=Job).process_item(item, spider)
     with db:
         job = Job.select()[0]
@@ -85,7 +85,7 @@ def test_database_id_no_location(item, spider, db):
 
 def test_database_same_link_items(item, spider, db):
     for location in ['Ostrava', 'Brno', 'Pardubice']:
-        item['location'] = location
+        item['location_raw'] = location
         Pipeline(db=db, model=Job).process_item(item, spider)
     with db:
         jobs = Job.select()

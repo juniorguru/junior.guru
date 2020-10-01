@@ -55,7 +55,7 @@ class Job(BaseModel):
     posted_at = DateField(index=True)
     title = CharField()
     remote = BooleanField(default=False)
-    location = CharField(null=True)
+    location_raw = CharField(null=True)
     location_place = CharField(null=True)
     location_country_code = CharField(null=True)
     region = CharField(null=True)
@@ -86,6 +86,16 @@ class Job(BaseModel):
     @property
     def is_highlighted(self):
         return self.pricing_plan != 'community'
+
+    @property
+    def location(self):
+        parts = [self.location_raw]
+        if self.remote:
+            parts.append('na dálku')
+        parts = list(filter(None, parts))
+        if parts:
+            return ', '.join(parts)
+        return '?'
 
     @property
     def metrics(self):

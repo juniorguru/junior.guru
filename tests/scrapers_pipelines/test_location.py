@@ -5,7 +5,7 @@ def test_location_city(item, spider):
     address = dict(city='Řevnice',
                    county='Středočeský kraj',
                    country_code='cz')
-    item['location'] = '252 30 Řevnice, Česko'
+    item['location_raw'] = '252 30 Řevnice, Česko'
     item = Pipeline(geocode=lambda l: address).process_item(item, spider)
 
     assert item['region'] == 'Praha'
@@ -17,7 +17,7 @@ def test_location_village(item, spider):
     address = dict(village='Káranice',
                    county='Královéhradecký kraj',
                    country_code='cz')
-    item['location'] = 'Káranice, Hradec Králové, Czech Republic'
+    item['location_raw'] = 'Káranice, Hradec Králové, Czech Republic'
     item = Pipeline(geocode=lambda l: address).process_item(item, spider)
 
     assert item['region'] == 'Hradec Králové'
@@ -26,7 +26,7 @@ def test_location_village(item, spider):
 
 
 def test_location_remote(item, spider):
-    item['location'] = None
+    item['location_raw'] = None
     item = Pipeline(geocode=lambda l: {}).process_item(item, spider)
 
     assert item.get('region') is None
@@ -35,7 +35,7 @@ def test_location_remote(item, spider):
 
 
 def test_location_no_response(item, spider):
-    item['location'] = '???'
+    item['location_raw'] = '???'
     item = Pipeline(geocode=lambda l: None).process_item(item, spider)
 
     assert item.get('region') is None

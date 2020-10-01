@@ -45,7 +45,7 @@ def test_spider_parse_job():
     job = jobs[0]
 
     assert sorted(job.keys()) == sorted([
-        'title', 'link', 'company_name', 'company_link', 'location',
+        'title', 'link', 'company_name', 'company_link', 'location_raw',
         'employment_types', 'posted_at', 'description_html',
         'experience_levels', 'company_logo_urls', 'remote',
     ])
@@ -53,7 +53,7 @@ def test_spider_parse_job():
     assert job['link'] == 'https://example.com/example/'
     assert job['company_name'] == 'Experis Czech Republic'
     assert job['company_link'] == 'https://cz.linkedin.com/company/experis-czech-republic?trk=public_jobs_topcard_org_name'
-    assert job['location'] == 'Prague, Czech Republic'
+    assert job['location_raw'] == 'Prague, Czech Republic'
     assert job['remote'] is False
     assert job['employment_types'] == ['full-time']
     assert job['experience_levels'] == ['entry level']
@@ -78,7 +78,7 @@ def test_spider_parse_job_no_company_link():
 
     assert job['company_name'] == 'Ubiquiti'
     assert 'company_link' not in job
-    assert job['location'] == 'Pilsen, Plzeň, Czech Republic'
+    assert job['location_raw'] == 'Pilsen, Plzeň, Czech Republic'
 
 
 def test_spider_parse_job_applicants():
