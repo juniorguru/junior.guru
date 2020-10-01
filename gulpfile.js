@@ -164,9 +164,8 @@ async function watchWeb() {
     'juniorguru/web/**/*.py',
     'juniorguru/models/**/*.py',
     'juniorguru/lib/**/*.py',
-    'juniorguru/data/',
-    '!juniorguru/data/images/',
-    '!juniorguru/data/*.db-*',
+    'juniorguru/data/data.db',
+    'juniorguru/data/*.yml',
   ], buildWeb);
 }
 
