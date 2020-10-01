@@ -166,6 +166,7 @@ async function watchWeb() {
     'juniorguru/lib/**/*.py',
     'juniorguru/data/',
     '!juniorguru/data/images/',
+    '!juniorguru/data/*.db-*',
   ], buildWeb);
 }
 
