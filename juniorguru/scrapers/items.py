@@ -9,7 +9,7 @@ class Job(Item):
     posted_at = Field(required=True)
     title = Field(required=True)
     location_raw = Field()
-    remote = Field(required=True)
+    remote = Field()
     company_name = Field(required=True)
     company_link = Field()
     link = Field(required=True)
