@@ -195,6 +195,17 @@ def test_tags_new(posted_at, expected):
     assert ('NEW' in tags) is expected
 
 
+@pytest.mark.parametrize('remote,expected', [
+    (True, True),
+    (False, False),
+])
+def test_tags_remote(remote, expected):
+    job = Job(**prepare_job_data('1', remote=remote))
+    tags = job.tags()
+
+    assert ('REMOTE' in tags) is expected
+
+
 @pytest.mark.parametrize('employment_types,expected', [
     # individual employment types
     (['FULL_TIME'], set()),

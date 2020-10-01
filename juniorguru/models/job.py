@@ -167,6 +167,9 @@ class Job(BaseModel):
         if (today - self.posted_at).days < JOB_IS_NEW_DAYS:
             tags.append('NEW')
 
+        if self.remote:
+            tags.append('REMOTE')
+
         employment_types = frozenset(self.employment_types)
         tags.extend(get_employment_types_tags(employment_types))
 
