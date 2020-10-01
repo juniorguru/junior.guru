@@ -6,7 +6,7 @@ from scrapy.loader import ItemLoader
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
 from juniorguru.scrapers.items import Job, first, parse_relative_time, split
-from juniorguru.lib.url_params import increment_param, strip_params, get_param
+from juniorguru.lib.url_params import increment_param, strip_params, get_param, replace_in_params
 
 
 class Spider(BaseSpider):
@@ -64,7 +64,8 @@ def parse_proxied_url(url):
     proxied_url = get_param(url, 'url')
     if proxied_url:
         param_names = ['utm_source', 'utm_medium', 'utm_campaign']
-        return strip_params(proxied_url, param_names)
+        proxied_url = strip_params(proxied_url, param_names)
+        return replace_in_params(proxied_url, 'linkedin', 'juniorguru')
     return url
 
 

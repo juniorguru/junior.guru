@@ -33,3 +33,12 @@ def increment_param(url, param_name, inc=1):
     params[param_name] = str(int(params[param_name][0]) + inc)
     query = urlencode(params, doseq=True)
     return urlunparse(parts._replace(query=query))
+
+
+def replace_in_params(url, s, repl):
+    parts = urlparse(url)
+    params = parse_qs(parts.query)
+    params = {param_name: [value.replace(s, repl) for value in values]
+              for param_name, values in params.items()}
+    query = urlencode(params, doseq=True)
+    return urlunparse(parts._replace(query=query))

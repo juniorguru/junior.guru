@@ -94,7 +94,7 @@ def test_spider_parse_job_apply_on_company_website():
                             body=Path(FIXTURES_DIR / 'job_apply_on_company_website.html').read_bytes())
     job = next(linkedin.Spider().parse_job(response))
 
-    assert job['link'] == 'https://jobs.gecareers.com/global/en/job/GE11GLOBAL32262/Engineering-Trainee?codes=linkedin'
+    assert job['link'] == 'https://jobs.gecareers.com/global/en/job/GE11GLOBAL32262/Engineering-Trainee?codes=juniorguru'
 
 
 def test_parse_proxied_url():
@@ -104,4 +104,4 @@ def test_parse_proxied_url():
         '&urlHash=AAbh&refId=94017428-1cc1-48ad-bda2-d9ddabeb1c55&trk=public_jobs_apply-link-offsite'
     )
 
-    assert linkedin.parse_proxied_url(url) == 'https://jobs.gecareers.com/global/en/job/GE11GLOBAL32262/Engineering-Trainee?codes=linkedin'
+    assert linkedin.parse_proxied_url(url) == 'https://jobs.gecareers.com/global/en/job/GE11GLOBAL32262/Engineering-Trainee?codes=juniorguru'

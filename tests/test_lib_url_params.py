@@ -48,3 +48,14 @@ def test_get_param():
     url = 'https://example.com?redirect=https%3A%2F%2Fjobs%2Eexample%2Ecom'
 
     assert url_params.get_param(url, 'redirect') == 'https://jobs.example.com'
+
+
+@pytest.mark.parametrize('url,s,repl,expected', [
+    ('https://example.com', 'alice', 'bob', 'https://example.com'),
+    ('https://alice.example.com', 'alice', 'bob', 'https://alice.example.com'),
+    ('https://alice.example.com?foo=bar', 'alice', 'bob', 'https://alice.example.com?foo=bar'),
+    ('https://alice.example.com?foo=bar&moo=alice', 'alice', 'bob', 'https://alice.example.com?foo=bar&moo=bob'),
+    ('https://alice.example.com?foo=bar&moo=alice&alice=hello', 'alice', 'bob', 'https://alice.example.com?foo=bar&moo=bob&alice=hello'),
+])
+def test_replace_in_params(url, s, repl, expected):
+    assert url_params.replace_in_params(url, s, repl) == expected

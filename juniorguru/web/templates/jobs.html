@@ -33,7 +33,7 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
       {% if job.source == 'juniorguru' %}
         <a class="jobs__link" href="{{ url_for('job', job_id=job.id) }}">
       {% else %}
-        <a class="jobs__link" href="{{ job.link }}" data-metrics data-metrics-name="job" data-metrics-no-utm target="_blank" rel="noopener nofollow">
+        <a class="jobs__link" href="{{ job.link }}"{% if 'utm_' not in job.link and 'linkedin.com' not in job.link %} data-metrics-utm data-metrics-utm-medium="job_board"{% endif %} data-metrics data-metrics-name="job" data-metrics-no-utm target="_blank" rel="noopener nofollow">
       {% endif %}
         <div class="jobs__content">
           <div class="jobs__company-logo">
