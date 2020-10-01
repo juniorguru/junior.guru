@@ -14,7 +14,8 @@ log = get_log('db')
 
 
 db_file = Path(__file__).parent / '..' / 'data' / 'data.db'
-db = SqliteDatabase(db_file, check_same_thread=False)
+db = SqliteDatabase(db_file, check_same_thread=False,
+                    pragmas={'journal_mode': 'wal'})
 
 
 class BaseModel(Model):
