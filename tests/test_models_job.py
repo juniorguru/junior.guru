@@ -245,22 +245,23 @@ def test_tags_employment_types(employment_types, expected):
     assert expected == tags
 
 
-@pytest.mark.parametrize('location_raw,location_place,location_country,expected', [
+@pytest.mark.parametrize('location_raw,location_place,region,expected', [
     # missing pieces
     (None, None, None, '?'),
-    ('Brno, Česká republika', None, 'Česko', 'Brno, Česká republika'),
+    ('Brno, Česká republika', None, 'Brno', 'Brno, Česká republika'),
     ('Brno, Česká republika', 'Brno', None, 'Brno, Česká republika'),
     ('Brno, Česká republika', None, None, 'Brno, Česká republika'),
 
-    # CZ vs the rest of the world
-    ('Brno, Česká republika', 'Brno', 'Česko', 'Brno'),
+    # region
+    ('Brno, Česká republika', 'Brno', 'Brno', 'Brno'),
+    ('Káranice, Česká republika', 'Káranice', 'Hradec Králové', 'Káranice, Hradec Králové'),
     ('Berlin, Deutschland', 'Berlin', 'Německo', 'Berlin, Německo'),
 ])
-def test_location(location_raw, location_place, location_country, expected):
+def test_location(location_raw, location_place, region, expected):
     job = Job(**prepare_job_data('1',
                                  location_raw=location_raw,
                                  location_place=location_place,
-                                 location_country=location_country))
+                                 region=region))
 
     assert job.location == expected
 

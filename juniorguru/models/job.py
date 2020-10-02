@@ -89,10 +89,11 @@ class Job(BaseModel):
 
     @property
     def location(self):
-        if self.location_place and self.location_country == 'Česko':
-            parts = [self.location_place]
-        elif self.location_place and self.location_country:
-            parts = [self.location_place, self.location_country]
+        if self.location_place and self.region:
+            if self.location_place == self.region:
+                parts = [self.location_place]
+            else:
+                parts = [self.location_place, self.region]
         else:
             parts = [self.location_raw]
 
