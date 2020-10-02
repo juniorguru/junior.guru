@@ -1,4 +1,5 @@
-from functools import lru_cache
+import re
+from functools import lru_cache, wraps
 
 import requests
 from lxml import etree
@@ -14,6 +15,14 @@ class GeocodeError(Exception):
     pass
 
 
+OPTIMIZATIONS = [
+    (re.compile(pattern), value) for pattern, value in [
+        (r'\bPraha\b', {'place': 'Praha', 'region': 'Praha', 'country': 'Česko'}),
+        (r'\bPrague\b', {'place': 'Praha', 'region': 'Praha', 'country': 'Česko'}),
+        (r'\bBrno\b', {'place': 'Brno', 'region': 'Brno', 'country': 'Česko'}),
+        (r'\bOstrava\b', {'place': 'Ostrava', 'region': 'Ostrava', 'country': 'Česko'}),
+    ]
+]
 REGIONS_MAPPING = {
     # countries
     'Deutschland': 'Německo',
@@ -80,7 +89,17 @@ class Pipeline():
         return item
 
 
-@lru_cache
+def optimize_geocoding(geocode):
+    @wraps(geocode)
+    def wrapper(location_raw):
+        for location_re, value in OPTIMIZATIONS:
+            if location_re.search(location_raw):
+                return value
+        return lru_cache(geocode)(location_raw)
+    return wrapper
+
+
+@optimize_geocoding
 def geocode_mapycz(location_raw):
     try:
         response = requests.get('https://api.mapy.cz/geocode',
