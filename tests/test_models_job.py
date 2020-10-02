@@ -39,6 +39,15 @@ def test_juniorguru_listing(db_connection):
     assert list(Job.juniorguru_listing()) == [job1, job3, job4]
 
 
+def test_region_listing(db_connection):
+    job1 = create_job('1', region='Brno', sort_rank=30)
+    job2 = create_job('2', region='Praha')  # noqa
+    job3 = create_job('3', region='Brno', sort_rank=20)
+    job4 = create_job('4', region='Brno', sort_rank=10)
+
+    assert list(Job.region_listing('Brno')) == [job1, job3, job4]
+
+
 @pytest.mark.parametrize('source', [
     'juniorguru',
     'moo',

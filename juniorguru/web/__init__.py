@@ -17,6 +17,31 @@ JOBS_SUBNAV_TABS = [
     {'endpoint': 'hire_juniors', 'name': 'Pro firmy'},
 ]
 
+REGIONS = {
+    # Prague
+    'praha': ('Praha', 'Praze'),
+
+    # alphabetically
+    'brno': ('Brno', 'v Brně'),
+    'ceske-budejovice': ('České Budějovice', 'v Českých Budějovicích'),
+    'hradec-kralove': ('Hradec Králové', 'v Hradci Králové'),
+    'jihlava': ('Jihlava', 'v Jihlavě'),
+    'karlovy-vary': ('Karlovy Vary', 'v Karlových Varech'),
+    'liberec': ('Liberec', 'v Liberci'),
+    'olomouc': ('Olomouc', 'v Olomouci'),
+    'ostrava': ('Ostrava', 'v Ostravě'),
+    'pardubice': ('Pardubice', 'v Pardubicích'),
+    'plzen': ('Plzeň', 'v Plzni'),
+    'usti-nad-labem': ('Ústí nad Labem', 'v Ústí nad Labem'),
+    'zlin': ('Zlín', 've Zlíně'),
+
+    # countries alphabetically
+    'germany': ('Německo', 'v Německu'),
+    'poland': ('Polsko', 'v Polsku'),
+    'austria': ('Rakousko', 'v Rakousku'),
+    'slovakia': ('Slovensko', 'na Slovensku'),
+}
+
 
 app = Flask(__name__)
 
@@ -84,6 +109,7 @@ def candidate_handbook_teaser():
 
 @app.route('/jobs/')
 def jobs():
+    regions = [(r_id, r_name) for r_id, (r_name, r_name_in) in REGIONS.items()]
     with db:
         jobs = Job.listing()
         jobs_count = Job.count()
@@ -95,7 +121,26 @@ def jobs():
                            jobs=jobs,
                            jobs_count=jobs_count,
                            companies_count=companies_count,
+                           regions=regions,
                            thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky'))
+
+
+@app.route('/jobs/region/<region_id>/')
+def jobs_region(region_id):
+    region_name, region_name_in = REGIONS[region_id]
+    regions = [(r_id, r_name) for r_id, (r_name, r_name_in) in REGIONS.items()]
+    with db:
+        jobs = Job.region_listing(region_name)
+    return render_template('jobs_region.html',
+                           nav_active='jobs',
+                           subnav_tabs=JOBS_SUBNAV_TABS,
+                           subnav_active='jobs',
+                           jobs=jobs,
+                           region_id=region_id,
+                           region_name=region_name,
+                           region_name_in=region_name_in,
+                           regions=regions,
+                           thumbnail=thumbnail(title=f'Práce v\u00a0IT pro začátečníky —\u00a0{region_name}'))
 
 
 @app.route('/jobs/<job_id>/')

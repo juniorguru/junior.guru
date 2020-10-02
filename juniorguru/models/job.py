@@ -144,6 +144,10 @@ class Job(BaseModel):
         return cls.listing().where(cls.source == 'juniorguru')
 
     @classmethod
+    def region_listing(cls, region):
+        return cls.listing().where(cls.region == region)
+
+    @classmethod
     def newsletter_listing(cls, min_count, today=None):
         today = today or date.today()
 
