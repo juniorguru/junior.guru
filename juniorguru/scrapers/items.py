@@ -30,7 +30,6 @@ class Job(Item):
     sort_rank = Field()
     sort_rank_components = Field()
     location_place = Field()
-    location_country = Field()
     region = Field()
 
 

@@ -68,7 +68,6 @@ class Pipeline():
                     try:
                         item['region'] = get_region(address)
                         item['location_place'] = address['place']
-                        item['location_country'] = address['country']
                     except KeyError as e:
                         raise KeyError(f"{address!r} doesn't have key {e}") from e
                     if self.stats:

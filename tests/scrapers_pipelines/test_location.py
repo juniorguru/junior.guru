@@ -12,7 +12,6 @@ def test_location(item, spider):
 
     assert item['region'] == 'Praha'
     assert item['location_place'] == 'Řevnice'
-    assert item['location_country'] == 'Česko'
 
 
 def test_location_remote(item, spider):
@@ -21,7 +20,6 @@ def test_location_remote(item, spider):
 
     assert item.get('region') is None
     assert item.get('location_place') is None
-    assert item.get('location_country') is None
 
 
 def test_location_no_response(item, spider):
@@ -30,7 +28,6 @@ def test_location_no_response(item, spider):
 
     assert item.get('region') is None
     assert item.get('location_place') is None
-    assert item.get('location_country') is None
 
 
 def test_get_region_from_country():
