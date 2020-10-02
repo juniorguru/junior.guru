@@ -90,7 +90,7 @@ $company-logo-size: 8rem;
 
 .jobs__tag {
   @include font-0;
-  border: 0.1rem solid $gray-light;
+  border: 1px solid $gray-light;
   display: inline;
   padding: 0.2rem 0.4rem;
   margin-right: 0.4rem;
