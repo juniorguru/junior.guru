@@ -57,7 +57,7 @@ class Job(BaseModel):
     remote = BooleanField(default=False)
     location_raw = CharField(null=True)
     location_place = CharField(null=True)
-    location_country_code = CharField(null=True)
+    location_country = CharField(null=True)
     region = CharField(null=True)
     company_name = CharField()
     company_link = CharField(null=True)

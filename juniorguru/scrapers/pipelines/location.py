@@ -1,11 +1,22 @@
-import geopy
+from functools import lru_cache
 
+import requests
+from lxml import etree
+
+from juniorguru.lib.log import get_log
 from juniorguru.scrapers.settings import USER_AGENT
+
+
+log = get_log(__name__)
+
+
+class GeocodeError(Exception):
+    pass
 
 
 REGIONS_MAPPING = {
     # countries
-    'Deutchland': 'Německo',
+    'Deutschland': 'Německo',
     'Polska': 'Polsko',
     'Österreich': 'Rakousko',
 
@@ -25,12 +36,23 @@ REGIONS_MAPPING = {
     'Zlínský kraj': 'Zlín',
     'Kraj Vysočina': 'Jihlava',
 }
+ADDRESS_TYPES_MAPPING = {
+    # Mapy.cz
+    'muni': 'place',
+    'regi': 'region',
+    'coun': 'country',
+
+    # OpenStreetMaps
+    'osmm': 'place',
+    'osmr': 'region',
+    'osmc': 'country',
+}
 
 
 class Pipeline():
     def __init__(self, stats=None, geocode=None):
         self.stats = stats
-        self.geocode = geocode or geocode_osm
+        self.geocode = geocode or geocode_mapycz
 
     @classmethod
     def from_crawler(cls, crawler):
@@ -38,52 +60,84 @@ class Pipeline():
 
     def process_item(self, item, spider):
         if item.get('location_raw'):
+            location_raw = item['location_raw']
             try:
-                location = item['location_raw']
-                address = self.geocode(location)
+                log.debug(f"Geocoding '{location_raw}'")
+                address = self.geocode(location_raw)
                 if address:
                     try:
                         item['region'] = get_region(address)
-                        item['location_place'] = get_place(address)
-                        item['location_country_code'] = address['country_code'].upper()
+                        item['location_place'] = address['place']
+                        item['location_country'] = address['country']
                     except KeyError as e:
-                        raise KeyError(f"{address!r} doesn't have key {e} ({location})")
+                        raise KeyError(f"{address!r} doesn't have key {e}") from e
                     if self.stats:
                         self.stats.inc_value('item_geocoded_count')
-            except:
-                pass  # HOTFIX
+            except Exception:
+                info = dict(spider=spider.name,
+                            title=item.get('title'),
+                            company=item.get('company_name'))
+                log.exception(f"Geocoding '{location_raw}' failed, {info!r}")
         return item
 
 
-def geocode_osm(location):
-    geolocator = geopy.geocoders.Nominatim(user_agent=USER_AGENT)
-    response = geolocator.geocode(location, addressdetails=True)
-    if response:
-        return response.raw['address']
-    return None
+@lru_cache
+def geocode_mapycz(location_raw):
+    try:
+        response = requests.get('https://api.mapy.cz/geocode',
+                                params={'query': location_raw},
+                                headers={'User-Agent': USER_AGENT})
+        response.raise_for_status()
 
+        xml = etree.fromstring(response.content)
+        items = xml.xpath('//item')
+        if not items:
+            return None
 
-def get_place(address):
-    # https://wiki.openstreetmap.org/wiki/Key:place
-    return next(filter(None, [
-        address.get('city'),
-        address.get('town'),
-        address.get('village'),
-        address.get('hamlet'),
-        address.get('isolated_dwelling'),
-    ]))
+        item = items[0]
+        title, lat, lng = item.get('title'), item.get('y'), item.get('x')
+    except requests.RequestException as e:
+        raise GeocodeError(f"Unable to geocode '{location_raw}'") from e
+
+    try:
+        response = requests.get('https://api.mapy.cz/rgeocode',
+                                params={'lat': lat, 'lon': lng},
+                                headers={'User-Agent': USER_AGENT})
+        response.raise_for_status()
+
+        xml = etree.fromstring(response.content)
+        items = xml.xpath('//item')
+        if not items:
+            raise ValueError('No items in the reverse geocode response')
+
+        address = {ADDRESS_TYPES_MAPPING[item.attrib['type']]: item.attrib['name']
+                   for item in items if item.attrib['type'] in ADDRESS_TYPES_MAPPING}
+        return address
+    except requests.RequestException as e:
+        raise GeocodeError(f"Unable to geocode '{location_raw}' (unable to reverse geocode '{title}' lat: {lat} lng: {lng})") from e
 
 
 def get_region(address):
-    if address['country_code'].upper() == 'CZ':
-        region = address['county']
+    if address['country'].lower().startswith('česk'):
+        region = address['region']
     else:
         region = address['country']
     return REGIONS_MAPPING.get(region, region)
 
 
-if __name__ == "__main__":
-    # python -m juniorguru.scrapers.pipelines.location 'Brno, South Moravia, Czech Republic'
+if __name__ == '__main__':
+    """
+    Usage:
+
+        python -m juniorguru.scrapers.pipelines.location 'Brno, South Moravia'
+    """
     import sys
     from pprint import pprint
-    pprint(geocode_osm(sys.argv[1]))
+    from collections import namedtuple
+
+    location_raw = sys.argv[1]
+    print('Pipeline().geocode()')
+    pprint(Pipeline().geocode(location_raw))
+    print('---\nPipeline().process_item()')
+    spider = namedtuple('Spider', ['name'])(name='test')
+    pprint(Pipeline().process_item({'location_raw': location_raw}, spider))
