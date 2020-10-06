@@ -125,6 +125,21 @@ def jobs():
                            thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky'))
 
 
+@app.route('/jobs/remote/')
+def jobs_remote():
+    regions = [(r_id, r_name) for r_id, (r_name, r_name_in) in REGIONS.items()]
+    with db:
+        jobs = Job.remote_listing()
+    return render_template('jobs_remote.html',
+                           nav_active='jobs',
+                           subnav_tabs=JOBS_SUBNAV_TABS,
+                           subnav_active='jobs',
+                           jobs=jobs,
+                           remote=True,
+                           regions=regions,
+                           thumbnail=thumbnail(title=f'Práce v\u00a0IT pro začátečníky —\u00a0na\u00a0dálku'))
+
+
 @app.route('/jobs/region/<region_id>/')
 def jobs_region(region_id):
     region_name, region_name_in = REGIONS[region_id]

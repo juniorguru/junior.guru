@@ -148,6 +148,10 @@ class Job(BaseModel):
         return cls.listing().where(cls.region == region)
 
     @classmethod
+    def remote_listing(cls):
+        return cls.listing().where(cls.remote == True)
+
+    @classmethod
     def newsletter_listing(cls, min_count, today=None):
         today = today or date.today()
 

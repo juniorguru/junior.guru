@@ -1,0 +1,18 @@
+{% extends 'jobs.html' %}
+{% block title %}Junior programátor na dálku &mdash; nabídky práce, stáže{% endblock %}
+
+{% block description -%}
+Nabídky práce, stáže a brigády v IT na dálku pro juniory bez komerční praxe.
+{%- endblock %}
+
+{% block intro %}
+<header class="intro">
+  <h1 class="intro__title">První práce v&nbsp;IT na dálku</h1>
+  <p class="intro__lead">
+    <img class="intro__illustration" src="{{ url_for('static', filename='images/chick3.svg') }}">
+    Znáš <a href="{{ url_for('learn') }}">základy</a> a máš <a href="{{ url_for('practice') }}">minimální praxi</a>?
+    Nastal okamžik začít zkoušet své štestí na pracovním trhu.
+    Projdi si aktuální nabídky práce na dálku, všechny přímo pro juniory, tedy začátečníky.
+  </p>
+</header>
+{% endblock %}

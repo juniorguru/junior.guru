@@ -62,7 +62,12 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
   {% elif region_name_in %}
     <p>
       Robot dnes nenašel {{ region_name_in }} žádné nabídky práce pro juniory.
-      Možná něco najdeš <a href="{{ url_for('jobs') }}">jinde</a>.
+      Zkus omrknout <a href="{{ url_for('jobs') }}">ostatní nabídky</a>.
+    </p>
+  {% elif remote %}
+    <p>
+      Robot dnes nenašel žádné nabídky práce na dálku pro juniory.
+      Zkus omrknout <a href="{{ url_for('jobs') }}">ostatní nabídky</a>.
     </p>
   {% else %}
     <p>
@@ -72,7 +77,8 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
     </p>
   {% endif %}
   <p>
-    <a href="{{ url_for('jobs') }}">Kdekoliv</a>,
+    <a href="{{ url_for('jobs') }}">Vše</a>,
+    <a href="{{ url_for('jobs_remote') }}">na&nbsp;dálku</a>,
     {% for r_id, r_name in regions %}
       <a href="{{ url_for('jobs_region', region_id=r_id) }}">
         {{- r_name -}}
