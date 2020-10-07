@@ -1,13 +1,13 @@
 import onScroll from './onScroll';
 
-let main;
+let content;
 let header;
 let logosBar;
 let toc;
 
 function activateStickyLogoBar() {
-  if (main) {
-    main.classList.add('content--target-offset-logos');
+  if (content) {
+    content.classList.add('content--target-offset-logos');
   }
   if (header) {
     header.classList.add('header--opaque');
@@ -32,7 +32,7 @@ function activateLogoBarShadow() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  main = Array.from(document.getElementsByClassName('main'))[0];
+  content = Array.from(document.getElementsByClassName('content'))[0];
   header = Array.from(document.getElementsByClassName('header'))[0];
   logosBar = Array.from(document.getElementsByClassName('logos--bar'))[0];
   toc = Array.from(document.getElementsByClassName('toc'))[0];

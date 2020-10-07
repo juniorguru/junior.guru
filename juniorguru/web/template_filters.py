@@ -90,4 +90,5 @@ def metric(value):
     # https://realpython.com/python-rounding/
     decimals = len(str(int(value))) - 2
     multiplier = 10 ** decimals
-    return int(math.floor((value / multiplier) + 0.5) * multiplier)
+    number = int(math.floor((value / multiplier) + 0.5) * multiplier)
+    return re.sub(r'000$', 'tis', str(number))

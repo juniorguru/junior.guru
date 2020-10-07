@@ -17,30 +17,30 @@ JOBS_SUBNAV_TABS = [
     {'endpoint': 'hire_juniors', 'name': 'Pro firmy'},
 ]
 
-REGIONS = {
-    # Prague
-    'praha': ('Praha', 'Praze'),
+REGIONS = [
+    # tech hubs
+    {'id': 'praha', 'name': 'Praha', 'name_in': 'v Praze', 'type': 'tech_hub'},
+    {'id': 'brno', 'name': 'Brno', 'name_in': 'v Brně', 'type': 'tech_hub'},
+    {'id': 'ostrava', 'name': 'Ostrava', 'name_in': 'v Ostravě', 'type': 'tech_hub'},
 
-    # alphabetically
-    'brno': ('Brno', 'v Brně'),
-    'ceske-budejovice': ('České Budějovice', 'v Českých Budějovicích'),
-    'hradec-kralove': ('Hradec Králové', 'v Hradci Králové'),
-    'jihlava': ('Jihlava', 'v Jihlavě'),
-    'karlovy-vary': ('Karlovy Vary', 'v Karlových Varech'),
-    'liberec': ('Liberec', 'v Liberci'),
-    'olomouc': ('Olomouc', 'v Olomouci'),
-    'ostrava': ('Ostrava', 'v Ostravě'),
-    'pardubice': ('Pardubice', 'v Pardubicích'),
-    'plzen': ('Plzeň', 'v Plzni'),
-    'usti-nad-labem': ('Ústí nad Labem', 'v Ústí nad Labem'),
-    'zlin': ('Zlín', 've Zlíně'),
+    # regions
+    {'id': 'ceske-budejovice', 'name': 'České Budějovice', 'name_in': 'v Českých Budějovicích', 'type': 'region'},
+    {'id': 'hradec-kralove', 'name': 'Hradec Králové', 'name_in': 'v Hradci Králové', 'type': 'region'},
+    {'id': 'jihlava', 'name': 'Jihlava', 'name_in': 'v Jihlavě', 'type': 'region'},
+    {'id': 'karlovy-vary', 'name': 'Karlovy Vary', 'name_in': 'v Karlových Varech', 'type': 'region'},
+    {'id': 'liberec', 'name': 'Liberec', 'name_in': 'v Liberci', 'type': 'region'},
+    {'id': 'olomouc', 'name': 'Olomouc', 'name_in': 'v Olomouci', 'type': 'region'},
+    {'id': 'pardubice', 'name': 'Pardubice', 'name_in': 'v Pardubicích', 'type': 'region'},
+    {'id': 'plzen', 'name': 'Plzeň', 'name_in': 'v Plzni', 'type': 'region'},
+    {'id': 'usti-nad-labem', 'name': 'Ústí nad Labem', 'name_in': 'v Ústí nad Labem', 'type': 'region'},
+    {'id': 'zlin', 'name': 'Zlín', 'name_in': 've Zlíně', 'type': 'region'},
 
-    # countries alphabetically
-    'germany': ('Německo', 'v Německu'),
-    'poland': ('Polsko', 'v Polsku'),
-    'austria': ('Rakousko', 'v Rakousku'),
-    'slovakia': ('Slovensko', 'na Slovensku'),
-}
+    # countries
+    {'id': 'germany', 'name': 'Německo', 'name_in': 'v Německu', 'type': 'country'},
+    {'id': 'poland', 'name': 'Polsko', 'name_in': 'v Polsku', 'type': 'country'},
+    {'id': 'austria', 'name': 'Rakousko', 'name_in': 'v Rakousku', 'type': 'country'},
+    {'id': 'slovakia', 'name': 'Slovensko', 'name_in': 'na Slovensku', 'type': 'country'},
+]
 
 
 app = Flask(__name__)
@@ -53,12 +53,10 @@ def redirect(url):
 @app.route('/')
 def index():
     with db:
-        jobs_count = Job.count()
-        companies_count = Job.companies_count()
+        metrics = Job.aggregate_metrics()
     return render_template('index.html',
                            nav_tabs=None,
-                           jobs_count=jobs_count,
-                           companies_count=companies_count,
+                           metrics=metrics,
                            stories=Story.listing())
 
 
@@ -80,8 +78,7 @@ def practice():
 @app.route('/candidate-handbook/')
 def candidate_handbook():
     with db:
-        jobs_count = Job.count()
-        companies_count = Job.companies_count()
+        metrics = Job.aggregate_metrics()
         supporters_count = Supporter.count()
         last_modified = LastModified.get_value_by_path('candidate_handbook.html')
         logos = Logo.listing()
@@ -89,8 +86,7 @@ def candidate_handbook():
                            nav_active='jobs',
                            subnav_tabs=JOBS_SUBNAV_TABS,
                            subnav_active='candidate_handbook',
-                           jobs_count=jobs_count,
-                           companies_count=companies_count,
+                           metrics=metrics,
                            supporters_count=supporters_count,
                            last_modified=last_modified,
                            logos=logos,
@@ -109,26 +105,23 @@ def candidate_handbook_teaser():
 
 @app.route('/jobs/')
 def jobs():
-    regions = [(r_id, r_name) for r_id, (r_name, r_name_in) in REGIONS.items()]
     with db:
+        metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
         jobs = Job.listing()
-        jobs_count = Job.count()
-        companies_count = Job.companies_count()
     return render_template('jobs.html',
                            nav_active='jobs',
                            subnav_tabs=JOBS_SUBNAV_TABS,
                            subnav_active='jobs',
                            jobs=jobs,
-                           jobs_count=jobs_count,
-                           companies_count=companies_count,
-                           regions=regions,
+                           regions=REGIONS,
+                           metrics=metrics,
                            thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky'))
 
 
 @app.route('/jobs/remote/')
 def jobs_remote():
-    regions = [(r_id, r_name) for r_id, (r_name, r_name_in) in REGIONS.items()]
     with db:
+        metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
         jobs = Job.remote_listing()
     return render_template('jobs_remote.html',
                            nav_active='jobs',
@@ -136,41 +129,39 @@ def jobs_remote():
                            subnav_active='jobs',
                            jobs=jobs,
                            remote=True,
-                           regions=regions,
-                           thumbnail=thumbnail(title=f'Práce v\u00a0IT pro začátečníky —\u00a0na\u00a0dálku'))
+                           regions=REGIONS,
+                           metrics=metrics,
+                           thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky —\u00a0na\u00a0dálku'))
 
 
 @app.route('/jobs/region/<region_id>/')
 def jobs_region(region_id):
-    region_name, region_name_in = REGIONS[region_id]
-    regions = [(r_id, r_name) for r_id, (r_name, r_name_in) in REGIONS.items()]
+    region = [reg for reg in REGIONS if reg['id'] == region_id][0]
     with db:
-        jobs = Job.region_listing(region_name)
+        metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
+        jobs = Job.region_listing(region['name'])
     return render_template('jobs_region.html',
                            nav_active='jobs',
                            subnav_tabs=JOBS_SUBNAV_TABS,
                            subnav_active='jobs',
                            jobs=jobs,
-                           region_id=region_id,
-                           region_name=region_name,
-                           region_name_in=region_name_in,
-                           regions=regions,
-                           thumbnail=thumbnail(title=f'Práce v\u00a0IT pro začátečníky —\u00a0{region_name}'))
+                           region=region,
+                           regions=REGIONS,
+                           metrics=metrics,
+                           thumbnail=thumbnail(title=f"Práce v\u00a0IT pro začátečníky —\u00a0{region['name']}"))
 
 
 @app.route('/jobs/<job_id>/')
 def job(job_id):
     with db:
+        metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
         job = Job.get_by_id(job_id) or abort(404)
-        jobs_count = Job.count()
-        companies_count = Job.companies_count()
     return render_template('job.html',
                            nav_active='jobs',
                            subnav_tabs=JOBS_SUBNAV_TABS,
                            subnav_active='jobs',
                            job=job,
-                           jobs_count=jobs_count,
-                           companies_count=companies_count,
+                           metrics=metrics,
                            thumbnail=thumbnail(job_title=job.title,
                                                job_company=job.company_name,
                                                job_location=job.location))

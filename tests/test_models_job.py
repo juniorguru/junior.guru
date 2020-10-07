@@ -3,7 +3,7 @@ from datetime import date
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models import Job, JobMetric
+from juniorguru.models import Job, JobMetric, JobDropped
 from testing_utils import prepare_job_data
 
 
@@ -13,7 +13,7 @@ def create_job(id, **kwargs):
 
 @pytest.fixture
 def db_connection():
-    models = [JobMetric, Job]
+    models = [JobMetric, Job, JobDropped]
     db = SqliteDatabase(':memory:')
     with db:
         db.bind(models)
@@ -95,26 +95,6 @@ def test_newsletter_listing_backfills_up_to_min_count(db_connection):
     job4 = create_job('4', source='juniorguru')
 
     assert list(Job.newsletter_listing(3)) == [job4, job3, job1]
-
-
-def test_count(db_connection):
-    create_job('1')
-    create_job('2')
-    create_job('3')
-    create_job('4')
-
-    assert Job.count() == 4
-
-
-def test_companies_count(db_connection):
-    create_job('1', company_link='https://abc.example.com')
-    create_job('2', company_link='https://abc.example.com')
-    create_job('3', company_link='https://xyz.example.com')
-    create_job('4', company_link='https://xyz.example.com')
-    create_job('5', company_link='https://def.example.com')
-    create_job('6', company_link='https://def.example.com')
-
-    assert Job.companies_count() == 3
 
 
 def test_get_by_url(db_connection):
@@ -294,3 +274,70 @@ def test_location_with_remote(location_raw, remote, expected):
     job = Job(**prepare_job_data('1', location_raw=location_raw, remote=remote))
 
     assert job.location == expected
+
+
+def test_aggregate_metrics_jobs_count(db_connection):
+    create_job('1')
+    create_job('2')
+    create_job('3')
+
+    assert Job.aggregate_metrics()['jobs_count'] == 3
+
+
+def test_aggregate_metrics_rejected_jobs_count(db_connection):
+    JobDropped.create(type='Expired',
+                      reason='...', response_url='...', item={}, source='...')
+    JobDropped.create(type='NotApproved',
+                      reason='...', response_url='...', item={}, source='...')
+    JobDropped.create(type='IrrelevantLanguage',
+                      reason='...', response_url='...', item={}, source='...')
+
+    assert Job.aggregate_metrics()['rejected_jobs_count'] == 1
+
+
+def test_aggregate_metrics_companies_count(db_connection):
+    create_job('1', company_link='https://example.com/company1')
+    create_job('2', company_link='https://example.com/company2')
+    create_job('3', company_link='https://example.com/company2')
+
+    assert Job.aggregate_metrics()['companies_count'] == 2
+
+
+def test_aggregate_metrics_companies_count_past_jobs(db_connection):
+    JobDropped.create(type='Expired',
+                      item=dict(company_link='https://example.com/company1'),
+                      reason='...', response_url='...', source='...')
+    JobDropped.create(type='NotApproved',
+                      item=dict(company_link='https://example.com/company2'),
+                      reason='...', response_url='...', source='...')
+    JobDropped.create(type='IrrelevantLanguage',
+                      item=dict(company_link='https://example.com/company3'),
+                      reason='...', response_url='...', source='...')
+
+    assert Job.aggregate_metrics()['companies_count'] == 1
+
+
+def test_aggregate_metrics_companies_count_past_jobs_unique(db_connection):
+    JobDropped.create(type='Expired',
+                      item=dict(company_link='https://example.com/company1'),
+                      reason='...', response_url='...', source='...')
+    JobDropped.create(type='Expired',
+                      item=dict(company_link='https://example.com/company1'),
+                      reason='...', response_url='...', source='...')
+
+    assert Job.aggregate_metrics()['companies_count'] == 1
+
+
+def test_aggregate_metrics_companies_count_past_and_present_jobs_unique(db_connection):
+    create_job('1', company_link='https://example.com/company1')
+    create_job('2', company_link='https://example.com/company2')
+    create_job('3', company_link='https://example.com/company2')
+
+    JobDropped.create(type='Expired',
+                      item=dict(company_link='https://example.com/company1'),
+                      reason='...', response_url='...', source='...')
+    JobDropped.create(type='Expired',
+                      item=dict(company_link='https://example.com/company3'),
+                      reason='...', response_url='...', source='...')
+
+    assert Job.aggregate_metrics()['companies_count'] == 3

@@ -48,3 +48,8 @@ a.button--secondary,
   @include font-0;
   display: block;
 }
+
+.button--small {
+  @include font;
+  padding: $whitespace-0 $whitespace;
+}

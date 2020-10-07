@@ -132,12 +132,12 @@ class Job(BaseModel):
         return cls.select().order_by(cls.sort_rank.desc())
 
     @classmethod
-    def count(cls):
-        return cls.listing().count()
-
-    @classmethod
-    def companies_count(cls):
-        return len(frozenset([job.company_link for job in cls.listing()]))
+    def aggregate_metrics(cls):
+        companies_count = len(JobDropped.expired_company_links() |
+                              {job.company_link for job in cls.listing()})
+        return dict(companies_count=companies_count,
+                    jobs_count=cls.listing().count(),
+                    rejected_jobs_count=JobDropped.rejected_count())
 
     @classmethod
     def juniorguru_listing(cls):
@@ -203,6 +203,7 @@ def get_employment_types_tags(types):
 class JobDropped(BaseModel):
     type = CharField()
     reason = CharField()
+    source = CharField()
     response_url = CharField()
     response_backup_path = CharField(null=True)
     item = JSONField()
@@ -211,12 +212,27 @@ class JobDropped(BaseModel):
     def admin_listing(cls):
         return cls.select().order_by(cls.type, cls.reason)
 
+    @classmethod
+    def rejected_count(cls):
+        return cls.select() \
+            .where(cls.type.not_in(['NotApproved', 'Expired'])) \
+            .count()
+
+    @classmethod
+    def sources(cls):
+        return {job_dropped.source for job_dropped in JobDropped.select()}
+
+    @classmethod
+    def expired_company_links(cls):
+        return {job_dropped.item.get('company_link') for job_dropped
+                in cls.select().where(JobDropped.type == 'Expired')}
+
 
 class JobError(BaseModel):
     message = CharField()
     trace = CharField()
     signal = CharField(choices=(('item', None), ('spider', None)))
-    spider = CharField()
+    source = CharField()
     response_url = CharField()
     response_backup_path = CharField(null=True)
     item = JSONField(null=True)

@@ -39,7 +39,7 @@
             {{ job_dropped.item.company_name }}
           {% endif %}
           &mdash;
-          {{ job_dropped.item.location }}
+          {{ job_dropped.item.location_raw }}
           &mdash;
           {{ job_dropped.item.posted_at|to_datetime|ago }}
         </p>

@@ -1,9 +1,79 @@
 {% extends 'base.html' %}
-{% block title %}Práce v IT pro začátečníky{% endblock %}
+{% block title %}Práce v IT pro programátory začátečníky{% endblock %}
 
 {% block description -%}
-Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jobs_count }} aktuálních nabídek práce od {{ companies_count }} firem.
+Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušeností“. Tady najdeš jen nabídky práce, stáže a brigády v oboru IT zaměřené výhradně na začátečníky a juniory bez komerční praxe.
 {%- endblock %}
+
+{% block value_explanation %}
+<section class="content__section value-explanation">
+  <div class="value-explanation__block">
+    <p class="value-explanation__text">
+      S více než <strong>{{ metrics.avg_monthly_users|metric }} návštěvníky měsíčně</strong> je junior.guru významným pracovním portálem pro juniory v Česku.
+      Přímo zde už <a href="{{ url_for('hire_juniors') }}">inzerovalo</a> <strong>{{ metrics.companies_count }} firem</strong>, mimo jiné například:
+    </p>
+    <div class="logos logos--without-margin">
+      <ul class="logos__items">
+        <li class="logos__item logos__item--without-link">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/cznic.svg') }}" alt="CZ.NIC">
+        </li>
+        <li class="logos__item logos__item--without-link">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/csob.svg') }}" alt="ČSOB">
+        </li>
+        <li class="logos__item logos__item--without-link">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/oracle.svg') }}" alt="Oracle">
+        </li>
+        <li class="logos__item logos__item--without-link">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/redhat.svg') }}" alt="Red Hat">
+        </li>
+        <li class="logos__item logos__item--without-link">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/rossum.svg') }}" alt="Rossum">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="value-explanation__block">
+    <p class="value-explanation__text">
+      Kromě toho dnes robot prošel i <strong>{{ metrics.jobs_count + metrics.rejected_jobs_count }} nabídek</strong>
+      z dalších zdrojů. Nechal jen {{ metrics.jobs_count }}, o&nbsp;kterých usoudil, že jsou opravdu pro začátečníky.
+      To nechceš dělat ručně!
+    </p>
+    <div class="logos logos--without-margin">
+      <ul class="logos__items">
+        <li class="logos__item logos__item--without-link">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/li.png') }}" alt="LinkedIn">
+        </li>
+        <li class="logos__item logos__item--without-link">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/stackoverflow.svg') }}" alt="StackOverflow">
+        </li>
+        <li class="logos__item logos__item--without-link">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/startupjobs.svg') }}" alt="StartupJobs">
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block engage_jobs %}
+<section class="content__section">
+  <div class="engage">
+    <div class="engage__content">
+      <ul class="engage__items">
+        <li class="engage__item engage__item--handbook">
+          <a class="engage__item-link" href="{{ url_for('candidate_handbook') }}">Příručka o hledání práce</a>
+        </li>
+        <li class="engage__item engage__item--newsletter">
+          <a class="engage__item-link" href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">Nabídky do e-mailu</a>
+        </li>
+        <li class="engage__item engage__item--jobs">
+          <a class="engage__item-link" href="{{ url_for('hire_juniors') }}">Přidat inzerát</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}
 
 {% block content %}
 {% block intro %}
@@ -12,12 +82,14 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
   <p class="intro__lead">
     <img class="intro__illustration" src="{{ url_for('static', filename='images/chick3.svg') }}">
     Znáš <a href="{{ url_for('learn') }}">základy</a> a máš <a href="{{ url_for('practice') }}">minimální praxi</a>?
-    Nastal okamžik začít zkoušet své štestí na pracovním trhu.
-    Projdi si {{ jobs_count }}&nbsp;aktuálních nabídek práce od&nbsp;{{ companies_count }}&nbsp;firem,
-    všechny přímo pro juniory, tedy začátečníky.
+    Pročti si <a href="{{ url_for('candidate_handbook') }}">příručku o hledání první práce v&nbsp;IT</a>
+    a procházej nabídky práce. Na&nbsp;této stránce najdeš pouze ty pro juniory.
   </p>
 </header>
+{{ self.value_explanation() }}
+{{ self.engage_jobs() }}
 {% endblock %}
+{#
 <section class="teaser call-to-action" id="add">
   <p>
     <img class="cartoon cartoon-center" src="{{ url_for('static', filename='images/posts.svg') }}">
@@ -27,6 +99,53 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
       Přidat inzerát
     </a>
   </p>
+</section>
+#}
+<section class="content__section filters" id="listing">
+  <div class="filters__block">
+    <ul class="filters__list">
+      <li class="filters__item{% if not region and not remote %} filters__item--active{% endif %}">
+        <a class="filters__link" href="{{ url_for('jobs') }}">Všechny nabídky</a>
+      </li>
+      <li class="filters__item{% if remote %} filters__item--active{% endif %}">
+        <a class="filters__link" href="{{ url_for('jobs_remote') }}">Práce na&nbsp;dálku</a>
+      </li>
+    </ul>
+    <h3 class="filters__heading">Technologická centra</h3>
+    <ul class="filters__list">
+    {% for reg in regions|selectattr('type', 'eq', 'tech_hub') %}
+      <li class="filters__item{% if region and region.id == reg.id %} filters__item--active{% endif %}">
+        <a class="filters__link" href="{{ url_for('jobs_region', region_id=reg.id) }}">
+          {{- reg.name -}}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+  <div class="filters__block filters__block--large">
+    <h3 class="filters__heading">Regiony</h3>
+    <ul class="filters__list">
+    {% for reg in regions|selectattr('type', 'eq', 'region') %}
+      <li class="filters__item{% if region and region.id == reg.id %} filters__item--active{% endif %}">
+        <a class="filters__link" href="{{ url_for('jobs_region', region_id=reg.id) }}">
+        {{- reg.name -}}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+  <div class="filters__block">
+    <h3 class="filters__heading">Okolní země</h3>
+    <ul class="filters__list">
+    {% for reg in regions|selectattr('type', 'eq', 'country') %}
+      <li class="filters__item{% if region and region.id == reg.id %} filters__item--active{% endif %}">
+        <a class="filters__link" href="{{ url_for('jobs_region', region_id=reg.id) }}">
+          {{- reg.name -}}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
 </section>
 <section class="content__section">
   {% if jobs %}
@@ -59,52 +178,59 @@ Nabídky práce, stáže a brigády v IT pro juniory bez komerční praxe. {{ jo
       </li>
     {% endfor %}
     </ul>
-  {% elif region_name_in %}
-    <p>
-      Robot dnes nenašel {{ region_name_in }} žádné nabídky práce pro juniory.
-      Zkus omrknout <a href="{{ url_for('jobs') }}">ostatní nabídky</a>.
-    </p>
+    {% if region and jobs|length <= 3 %}
+      <div class="engage">
+        <div class="engage__content">
+          <h2 class="engage__heading engage__heading--centered">Málo nabídek</h2>
+          <p class="engage__single-paragraph">
+            Robot toho dnes {{ region.name_in }} našel dost málo.
+            Zkus omrknout i <a href="{{ url_for('jobs') }}">ostatní nabídky</a>.
+            Nejvíce jich bývá v technologických centrech, jako jsou
+            {% for reg in regions|selectattr('type', 'eq', 'tech_hub') %}
+              {% if loop.last %} nebo {% endif %}<a href="{{ url_for('jobs_region', region_id=reg.id) }}">{{ reg.name }}</a>{% if loop.last %}.{% else %}, {% endif %}
+            {% endfor %}
+          </p>
+        </div>
+      </div>
+    {% endif %}
+  {% elif region %}
+    <div class="engage">
+      <div class="engage__content">
+        <h2 class="engage__heading engage__heading--centered">Žádné nabídky</h2>
+        <p class="engage__single-paragraph">
+          Robot dnes nenašel žádné nabídky práce pro juniory {{ region.name_in }}.
+          Zkus omrknout <a href="{{ url_for('jobs') }}">ostatní nabídky</a>.
+          Nejvíce jich bývá v technologických centrech, jako jsou
+          {% for reg in regions|selectattr('type', 'eq', 'tech_hub') %}
+            {% if loop.last %} nebo {% endif %}<a href="{{ url_for('jobs_region', region_id=reg.id) }}">{{ reg.name }}</a>{% if loop.last %}.{% else %}, {% endif %}
+          {% endfor %}
+        </p>
+      </div>
+    </div>
   {% elif remote %}
-    <p>
-      Robot dnes nenašel žádné nabídky práce na dálku pro juniory.
-      Zkus omrknout <a href="{{ url_for('jobs') }}">ostatní nabídky</a>.
-    </p>
+    <div class="engage">
+      <div class="engage__content">
+        <h2 class="engage__heading engage__heading--centered">Žádné nabídky</h2>
+        <p class="engage__single-paragraph">
+          Robot dnes nenašel žádné nabídky práce na dálku pro juniory.
+          Zkus omrknout <a href="{{ url_for('jobs') }}">ostatní nabídky</a>.
+        </p>
+      </div>
+    </div>
   {% else %}
-    <p>
-      Robot dnes nenašel vůbec žádné nabídky práce pro juniory.
-      To je dost podezřelé a nejspíš se jedná o chybu. Pokud tento stav
-      přetrvává, napiš prosím na {{ 'ahoj@junior.guru'|email_link }}.
-    </p>
+    <div class="engage">
+      <div class="engage__content">
+        <h2 class="engage__heading engage__heading--centered">Žádné nabídky</h2>
+        <p class="engage__single-paragraph">
+          Robot dnes nenašel vůbec žádné nabídky práce pro juniory.
+          To je dost podezřelé a nejspíš se jedná o chybu. Pokud tento stav
+          přetrvává, napiš prosím na {{ 'ahoj@junior.guru'|email_link }}.
+        </p>
+      </div>
+    </div>
   {% endif %}
-  <p>
-    <a href="{{ url_for('jobs') }}">Vše</a>,
-    <a href="{{ url_for('jobs_remote') }}">na&nbsp;dálku</a>,
-    {% for r_id, r_name in regions %}
-      <a href="{{ url_for('jobs_region', region_id=r_id) }}">
-        {{- r_name -}}
-      </a>{% if not loop.last %}, {% endif %}
-    {% endfor %}
-  </p>
 </section>
-{#
-  <p>
-    Každý den se robot ve službách junior.guru rozhlíží po různých místech
-    na internetu a hledá nabídky práce pro juniory. Ty podle přísných kritérií
-    třídí, a jen ty, které jsou nejvíc přístupné začátečníkům, se dostanou až sem.
-  </p>
-  <p>
-    <strong>Zatím je robot v testovacím provozu</strong>. Pokud najdeš
-    nesrovnalost, napiš prosím na {{ 'ahoj@junior.guru'|email_link }}.
-  </p>
-#}
-<hr>
-<section class="content__section">
-  <div class="call-to-action">
-      <p>
-        <img class="cartoon cartoon-center" src="{{ url_for('static', filename='images/mail.svg') }}">
-      </p>
-      <p class="note">Nech si zasílat nabídky práce na e-mail</p>
-      <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener" class="legacy-button">Přihlásit se k odběru</a>
-  </div>
-</section>
+{% block after_jobs %}
+  {{ self.engage_jobs() }}
+{% endblock %}
 {% endblock %}

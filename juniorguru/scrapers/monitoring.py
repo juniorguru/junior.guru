@@ -66,7 +66,7 @@ class MonitoringExtension():
             JobError.create(message=get_failure_message(failure),
                             trace=failure.getTraceback(),
                             signal='spider',
-                            spider=spider.name,
+                            source=spider.name,
                             **response_data)
             self.stats.inc_value('monitoring/job_error_saved')
         retry_when_db_locked(db, operation, stats=self.stats)
@@ -78,7 +78,7 @@ class MonitoringExtension():
             JobError.create(message=get_failure_message(failure),
                             trace=failure.getTraceback(),
                             signal='item',
-                            spider=spider.name,
+                            source=spider.name,
                             item=item,
                             **response_data)
             self.stats.inc_value('monitoring/job_error_saved')
@@ -91,6 +91,7 @@ class MonitoringExtension():
             JobDropped.create(type=exception.__class__.__name__,
                               reason=str(exception),
                               item=item,
+                              source=spider.name,
                               **response_data)
             self.stats.inc_value('monitoring/job_dropped_saved')
         retry_when_db_locked(db, operation, stats=self.stats)

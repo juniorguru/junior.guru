@@ -395,6 +395,9 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
       nebo když si k tobě někdo přisedne a ukáže ti jak a co. <strong>S prací na dálku počítej
       spíš jako s něčím, co si budeš za pár let moci dovolit, ale v začátku by ti to spíš uškodilo.</strong>
     </p>
+    <p>
+      S vývojem <a href="{{ url_for('learn') }}#covid19">situace kolem COVID-19</a> se ale věci rychle mění a nemálo firem začíná částečně nebo i kompletně fungovat na dálku. Práce z domova přestává být vnímána jako občasný benefit, ale stává se pro lidi plnohodnotnou formou spolupráce. Spolu s tím firmy objevují i způsoby, jak na dálku zaučovat nové lidi, čímž odpadá jedna z největších překážek, proč je tento způsob práce nevhodný pro juniory. Objevují se tedy stále častěji i nabídky práce pro juniory, které jsou částečně či zcela „remote“.
+    </p>
   </div>
 </section>
 
@@ -908,7 +911,7 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
     <h3 class="content__subsection-heading" id="job-boards">Nástěnky</h3>
     <p>
       „Nástěnky“ (anglicky <em>job board</em>) s pracovními nabídkami jsou nejpřímočařejší způsob, jak hledat práci.
-      Přímo na těchto stránkách je nástěnka, kde je aktuálně <strong><a href="{{ url_for('jobs') }}">{{ jobs_count }} nabídek práce pro juniory</a></strong> od {{ companies_count }} firem.
+      Přímo na těchto stránkách je nástěnka, kde je aktuálně <a href="{{ url_for('jobs') }}">{{ metrics.jobs_count }} nabídek práce</a>.
     </p>
   </div>
   <p class="button-compartment button-compartment--consistent-minimal-margin">

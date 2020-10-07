@@ -7,7 +7,8 @@ from juniorguru.lib.google_analytics import (
     metric_pageviews_per_job, metric_users_per_external_job,
     metric_users_per_job, metric_avg_monthly_handbook_users,
     metric_avg_monthly_handbook_pageviews, metric_avg_monthly_handbook_logo_clicks,
-    metric_clicks_per_logo, metric_handbook_users_per_date, metric_handbook_pageviews_per_date)
+    metric_clicks_per_logo, metric_handbook_users_per_date, metric_handbook_pageviews_per_date,
+    metric_avg_monthly_jobs_users)
 from juniorguru.lib.mailchimp import (MailChimpClient, get_collection,
                                             get_link,
                                             sum_clicks_per_external_url)
@@ -32,6 +33,7 @@ def main():
             'avg_monthly_handbook_users',
             'avg_monthly_handbook_pageviews',
             'avg_monthly_handbook_logo_clicks',
+            'avg_monthly_jobs_users',
         ]
         for name in google_analytics_metric_names:
             Metric.create(name=name, value=google_analytics_metrics[name])
@@ -111,6 +113,7 @@ def fetch_from_google_analytics():
         metric_avg_monthly_handbook_users,
         metric_avg_monthly_handbook_pageviews,
         metric_avg_monthly_handbook_logo_clicks,
+        metric_avg_monthly_jobs_users,
     ]))
     metrics.update(api.execute(get_daily_date_range(), [
         metric_users_per_job,

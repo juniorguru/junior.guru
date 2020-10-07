@@ -1,0 +1,19 @@
+.value-explanation__block {
+  text-align: center;
+}
+
+.value-explanation__text {
+  @include font-0;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  .value-explanation {
+    display: flex;
+  }
+
+  .value-explanation__block {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0 $whitespace;
+  }
+}

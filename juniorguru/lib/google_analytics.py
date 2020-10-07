@@ -305,6 +305,26 @@ def metric_handbook_pageviews_per_date(view_id, date_range):
     yield per_date_report_to_dict(report)
 
 
+def metric_avg_monthly_jobs_users(view_id, date_range):
+    report = yield {
+        'viewId': view_id,
+        'dateRanges': [{
+            'startDate': date_range[0].isoformat(),
+            'endDate': date_range[1].isoformat()
+        }],
+        'metrics': [{'expression': 'ga:users'}],
+        'dimensions': [{'name': 'ga:date'}],
+        'dimensionFilterClauses': [{
+            'filters': [{
+                'dimensionName': 'ga:pagePath',
+                'operator': 'REGEXP',
+                'expressions': ['^/jobs/'],
+            }],
+        }],
+    }
+    yield calc_avg_monthly_values(report)
+
+
 def get_daily_date_range(today=None, start_months_ago=None):
     today = today or date.today()
     if start_months_ago:
