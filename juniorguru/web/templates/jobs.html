@@ -105,10 +105,10 @@ Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušenost�
   <div class="filters__block">
     <ul class="filters__list">
       <li class="filters__item{% if not region and not remote %} filters__item--active{% endif %}">
-        <a class="filters__link" href="{{ url_for('jobs') }}">Všechny nabídky</a>
+        <a class="filters__link" href="{{ url_for('jobs') }}">Všechny nabídky</a>&nbsp;
       </li>
       <li class="filters__item{% if remote %} filters__item--active{% endif %}">
-        <a class="filters__link" href="{{ url_for('jobs_remote') }}">Práce na&nbsp;dálku</a>
+        <a class="filters__link" href="{{ url_for('jobs_remote') }}">Práce na&nbsp;dálku</a>&nbsp;
       </li>
     </ul>
     <h3 class="filters__heading">Technologická centra</h3>
@@ -117,7 +117,7 @@ Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušenost�
       <li class="filters__item{% if region and region.id == reg.id %} filters__item--active{% endif %}">
         <a class="filters__link" href="{{ url_for('jobs_region', region_id=reg.id) }}">
           {{- reg.name -}}
-        </a>
+        </a>&nbsp;
       </li>
     {% endfor %}
     </ul>
@@ -129,7 +129,7 @@ Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušenost�
       <li class="filters__item{% if region and region.id == reg.id %} filters__item--active{% endif %}">
         <a class="filters__link" href="{{ url_for('jobs_region', region_id=reg.id) }}">
         {{- reg.name -}}
-        </a>
+        </a>&nbsp;
       </li>
     {% endfor %}
     </ul>
@@ -141,7 +141,7 @@ Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušenost�
       <li class="filters__item{% if region and region.id == reg.id %} filters__item--active{% endif %}">
         <a class="filters__link" href="{{ url_for('jobs_region', region_id=reg.id) }}">
           {{- reg.name -}}
-        </a>
+        </a>&nbsp;
       </li>
     {% endfor %}
     </ul>
