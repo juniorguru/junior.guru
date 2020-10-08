@@ -12,6 +12,10 @@ $company-logo-size: 8rem;
   margin-bottom: 2 * $whitespace-3;
 }
 
+.jobs--inline {
+  margin: $whitespace-2 0 0 0;
+}
+
 .jobs__item {
   border-top: $border-width solid $gray-light;
 }
@@ -31,6 +35,10 @@ $company-logo-size: 8rem;
 
 .jobs__item--highlighted + .jobs__item {
   border-color: $yellow;
+}
+
+.jobs--inline .jobs__item {
+  border-color: transparent;
 }
 
 .jobs__link {
@@ -120,6 +128,27 @@ $company-logo-size: 8rem;
   }
 }
 
+.jobs--inline .jobs__content {
+  display: flex;
+}
+
+.jobs--inline .jobs__company-logo {
+  align-self: center;
+  margin-right: $whitespace-2;
+  margin-bottom: 0;
+  float: none;
+  flex-shrink: 0;
+}
+
+.jobs--inline .jobs__link {
+  display: flex;
+  padding: $whitespace;
+}
+
+.jobs--inline .jobs__content {
+  flex-grow: 2;
+}
+
 @media screen and (min-width: $breakpoint-tablet) {
   .jobs__content {
     display: flex;
@@ -132,11 +161,22 @@ $company-logo-size: 8rem;
     margin-right: $whitespace-2;
     margin-bottom: 0;
     float: none;
+    flex-shrink: 0;
+  }
+
+  .jobs--inline .jobs__company-logo {
+    width: $company-logo-size * 0.8;
+    height: $company-logo-size * 0.8;
   }
 
   .jobs__company-logo-image {
     width: $company-logo-size - $border-width;
     height: $company-logo-size - $border-width;
+  }
+
+  .jobs--inline .jobs__company-logo-image {
+    width: ($company-logo-size * 0.8) - $border-width;
+    height: ($company-logo-size * 0.8) - $border-width;
   }
 
   .jobs__link {

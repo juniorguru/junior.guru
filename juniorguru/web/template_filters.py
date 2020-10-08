@@ -1,5 +1,6 @@
 import re
 import math
+import random
 from datetime import date, datetime
 
 from jinja2 import Markup
@@ -92,3 +93,11 @@ def metric(value):
     multiplier = 10 ** decimals
     number = int(math.floor((value / multiplier) + 0.5) * multiplier)
     return re.sub(r'000$', 'tis', str(number))
+
+
+@app.template_filter()
+def sample_jobs(jobs, n=2):
+    choices = [job for job in jobs if job.source == 'juniorguru']
+    if len(choices) < n:
+        choices = list(jobs)
+    return random.sample(choices, n)

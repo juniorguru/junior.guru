@@ -103,12 +103,12 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
       </li>
       <li class="toc__item"><a class="toc__link" href="#seeking">Kde hledat</a>
         <ol class="toc__subitems">
+          <li class="toc__subitem"><a class="toc__sublink" href="#job-boards">Pracovní portály</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#recruiters">Náboráři</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#profiles">Profily</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#cold-calling-companies">Oslovování firem</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#company-events">Firemní akce</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#networking">Networking</a></li>
-          <li class="toc__subitem"><a class="toc__sublink" href="#job-boards">Nástěnky</a></li>
         </ol>
       </li>
       <li class="toc__item"><a class="toc__link" href="#interview">Pohovor</a>
@@ -396,9 +396,47 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
       spíš jako s něčím, co si budeš za pár let moci dovolit, ale v začátku by ti to spíš uškodilo.</strong>
     </p>
     <p>
-      S vývojem <a href="{{ url_for('learn') }}#covid19">situace kolem COVID-19</a> se ale věci rychle mění a nemálo firem začíná částečně nebo i kompletně fungovat na dálku. Práce z domova přestává být vnímána jako občasný benefit, ale stává se pro lidi plnohodnotnou formou spolupráce. Spolu s tím firmy objevují i způsoby, jak na dálku zaučovat nové lidi, čímž odpadá jedna z největších překážek, proč je tento způsob práce nevhodný pro juniory. Objevují se tedy stále častěji i nabídky práce pro juniory, které jsou částečně či zcela „remote“.
+      S vývojem <a href="{{ url_for('learn') }}#covid19">situace kolem COVID-19</a> se ale věci rychle mění a nemálo firem začíná částečně nebo i kompletně fungovat na dálku. Práce z domova přestává být vnímána jako občasný benefit, ale stává se pro lidi plnohodnotnou formou spolupráce. Spolu s tím <strong>firmy objevují i způsoby, jak na dálku zaučovat nové lidi</strong>, čímž odpadá jedna z největších překážek, proč je tento způsob práce nevhodný pro juniory. Lze tedy stále častěji najít i nabídky práce pro juniory, které jsou částečně či zcela „remote“.
     </p>
   </div>
+  {% if jobs_remote %}
+    <div class="content__ad">
+      <h4 class="content__ad-heading">Nabídky práce na dálku</h4>
+      <p>
+        Přímo na junior.guru najdeš <a href="{{ url_for('jobs') }}">nabídky práce výhradně pro juniory</a>. Některé z nich na dálku jsou!
+      </p>
+      <ul class="jobs jobs--inline">
+        {% for job in jobs_remote|sample_jobs(2) %}
+          <li class="jobs__item">
+            {% if job.source == 'juniorguru' %}
+              <a class="jobs__link" href="{{ url_for('job', job_id=job.id) }}">
+            {% else %}
+              <a class="jobs__link" href="{{ url_for('jobs_remote') }}">
+            {% endif %}
+              <div class="jobs__content">
+                <div class="jobs__company-logo">
+                  {% if job.company_logo_path %}
+                    <img width="100" height="100"{% if loop.index > 10 %} loading="lazy"{% endif %} class="jobs__company-logo-image" src="{{ url_for('static', filename=job.company_logo_path) }}" alt="Logo {{ job.company_name }}">
+                  {% endif %}
+                </div>
+                <div class="jobs__content-body">
+                  <h3 class="jobs__title">{{ job.title|truncate(70) }}</h3>
+                  <p class="jobs__company">{{ job.company_name }}</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      {% if jobs_remote|length > 2 %}
+        <p class="button-compartment button-compartment--compact">
+          <a class="button button--secondary button--small" href="{{ url_for('jobs_remote') }}">
+            Další nabídky
+          </a>
+        </p>
+      {% endif %}
+    </div>
+  {% endif %}
 </section>
 
 <section id="strategy" class="content__section">
@@ -841,6 +879,65 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
 <section id="seeking" class="content__section">
   <h2 class="content__section-heading">Kde hledat</h2>
   <div class="tooltips">
+    <h3 class="content__subsection-heading" id="job-boards">Pracovní portály</h3>
+    <p>
+      Pracovní portály (anglicky <em>job board</em>) jsou „nástěnky“ s nabídkami práce. Je to asi <strong>nejpřímočařejší způsob, jak hledat práci</strong>.
+    </p>
+    <p>
+      Jednou z nevýhod je, že nabídky na portálech si může přečíst každý a <strong>vystavuješ se tak větší konkurenci na pohovoru</strong>. Na americkém trhu na inzerát odpoví i stovky uchazečů a je velmi obtížné mezi nimi vyniknout. <strong>V Česku tento problém tak žhavý není</strong>, čísla uchazečů jsou zřídkakdy v desítkách. Prakticky každý se časem někde prosadí.
+    </p>
+    <p>
+      Větší problém je tedy spíš s hledáním nabídek vhodných zrovna pro tebe. Mnohé portály umožňují filtrovat podle místa kanceláře nebo programovacího jazyka, ale s rozřazením nabídek na seniorní a juniorní už je to horší.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        Narazil jsem na pracovní nabídku, která vyžadovala více než 4&nbsp;roky zkušeností s FastAPI. Nemohl bych se přihlásit, protože jsem FastAPI vytvořil jen před 1,5&nbsp;rokem.
+      </blockquote>
+      <figcaption>
+        Sebastián Ramírez, autor FastAPI
+      </figcaption>
+    </figure>
+    <p>
+      Začátečníci většinou na konkrétní technoligii nelpí a rádi se zaučí v čemkoliv, takže filtrování podle programovacích jazyků využijí jen omezeně. Filtr na juniorní nabídky by ocenili, ale je málokde. I tam, kde takový filtr je, nefunguje podle očekávání. Buď vyskočí brigády pro studenty, nebo <strong>výsledky zahrnují spoustu nabídek, které ve skutečnosti vůbec juniorní nejsou</strong>. Např. amatérská analýza dat z LinkedIn <a href="https://www.reddit.com/r/dataisbeautiful/comments/hvtn0i/oc_only_26_of_jobs_marked_entrylevel_are_actually/">odhalila</a>, že jen 26&nbsp;% tamních nabídek práce označených jako <em>entry level</em> je opravdu pro začátečníky. Jistě, <a href="#junior">slovo junior vnímá každý jinak</a>, ale některé nabídky požadují dokonce víc než 12&nbsp;let zkušeností! Tato praxe je předmětem <a href="https://www.youtube.com/watch?v=Ictmhp2uJu8">kritiky</a>, <a href="https://twitter.com/tiangolo/status/1281946592459853830">údivů</a> i <a href="https://twitter.com/nixcraft/status/1294220253224828928">vtipů</a>, ale v dohledné době se asi nezmění.
+    </p>
+  </div>
+  {% if jobs %}
+    <div class="content__ad">
+      <h4 class="content__ad-heading">Nabídky práce na junior.guru</h4>
+      <p>
+        Přímo na junior.guru také najdeš <a href="{{ url_for('jobs') }}">pracovní portál</a>, ale s nabídkami jen a pouze pro juniory. Jiné zde inzerovat ani nelze. Navíc se každý den spouští robot, který se rozhlíží i po nabídkách z dalších zdrojů. Poté je filtruje na základě přísných pravidel a nechá jen ty, o nichž usoudí, že jsou opravdu pro začátečníky:
+      </p>
+      <ul class="jobs jobs--inline">
+        {% for job in jobs|sample_jobs(3) %}
+          <li class="jobs__item">
+            {% if job.source == 'juniorguru' %}
+              <a class="jobs__link" href="{{ url_for('job', job_id=job.id) }}">
+            {% else %}
+              <a class="jobs__link" href="{{ url_for('jobs') }}">
+            {% endif %}
+              <div class="jobs__content">
+                <div class="jobs__company-logo">
+                  {% if job.company_logo_path %}
+                    <img width="100" height="100"{% if loop.index > 10 %} loading="lazy"{% endif %} class="jobs__company-logo-image" src="{{ url_for('static', filename=job.company_logo_path) }}" alt="Logo {{ job.company_name }}">
+                  {% endif %}
+                </div>
+                <div class="jobs__content-body">
+                  <h3 class="jobs__title">{{ job.title|truncate(70) }}</h3>
+                  <p class="jobs__company">{{ job.company_name }}</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      <p class="button-compartment button-compartment--compact">
+        <a class="button button--secondary button--small" href="{{ url_for('jobs') }}">
+          Další nabídky
+        </a>
+      </p>
+    </div>
+  {% endif %}
+  <div class="tooltips">
     <h3 class="content__subsection-heading" id="recruiters">Náboráři</h3>
     <p>
       Existují dva druhy náborářů (anglicky <em>recruiter</em>):
@@ -906,20 +1003,6 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
     </p>
     <p>
       Česká komunita programátorů je malá a existuje na malém prostoru &mdash; z Plzně do Ostravy je to pár hodin vlakem. <strong>„Všichni se znají“, je snadné se setkávat</strong>. Díky tomu je u nás networking velmi důležitou složkou budování kariéry.
-    </p>
-
-    <h3 class="content__subsection-heading" id="job-boards">Nástěnky</h3>
-    <p>
-      „Nástěnky“ (anglicky <em>job board</em>) s pracovními nabídkami jsou nejpřímočařejší způsob, jak hledat práci.
-      Přímo na těchto stránkách je nástěnka, kde je aktuálně <a href="{{ url_for('jobs') }}">{{ metrics.jobs_count }} nabídek práce</a>.
-    </p>
-  </div>
-  <p class="button-compartment button-compartment--consistent-minimal-margin">
-    <a href="{{ url_for('jobs') }}" class="button">Nabídky práce!</a>
-  </p>
-  <div class="tooltips">
-    <p>
-      Nevýhodou nástěnek je, že si je může přečíst každý a <strong>vystavuješ se tak větší konkurenci na pohovoru</strong>. Na americkém trhu na inzerát odpoví i stovky uchazečů a je velmi obtížné mezi nimi vyniknout. <strong>V Česku tento problém tak žhavý není</strong>, čísla uchazečů jsou zřídkakdy v desítkách. Prakticky každý se časem někde prosadí.
     </p>
   </div>
 </section>

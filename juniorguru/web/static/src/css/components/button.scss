@@ -44,12 +44,27 @@ a.button--secondary,
   }
 }
 
+.button--small {
+  @include font;
+  padding: ($whitespace-0 / 2) $whitespace;
+}
+
+.button--small.button--secondary {
+  @include font;
+  padding: (($whitespace-0 / 2) - 0.2rem) ($whitespace - 0.2rem);
+}
+
+a.button--small.button--secondary,
+.button-link.button--small.button--secondary {
+  &:hover, &:focus, &:active {
+    background: transparent;
+    color: $black;
+    border-width: 0.3rem;
+    padding: (($whitespace-0 / 2) - 0.3rem) ($whitespace - 0.3rem);
+  }
+}
+
 .button__note {
   @include font-0;
   display: block;
-}
-
-.button--small {
-  @include font;
-  padding: $whitespace-0 $whitespace;
 }

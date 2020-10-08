@@ -27,6 +27,10 @@
   margin-top: $whitespace-2;
 }
 
+.content__ad {
+  margin: $whitespace-2 0;
+}
+
 // this selector be in sync with toc.js
 .content__target::before,
 .content__section[id]::before,

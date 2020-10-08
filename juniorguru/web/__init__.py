@@ -78,7 +78,8 @@ def practice():
 @app.route('/candidate-handbook/')
 def candidate_handbook():
     with db:
-        metrics = Job.aggregate_metrics()
+        jobs = Job.listing()
+        jobs_remote = Job.remote_listing()
         supporters_count = Supporter.count()
         last_modified = LastModified.get_value_by_path('candidate_handbook.html')
         logos = Logo.listing()
@@ -86,7 +87,8 @@ def candidate_handbook():
                            nav_active='jobs',
                            subnav_tabs=JOBS_SUBNAV_TABS,
                            subnav_active='candidate_handbook',
-                           metrics=metrics,
+                           jobs=jobs,
+                           jobs_remote=jobs_remote,
                            supporters_count=supporters_count,
                            last_modified=last_modified,
                            logos=logos,
