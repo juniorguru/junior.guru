@@ -672,7 +672,45 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
         Petr Messner, profesionální programátor
       </figcaption>
     </figure>
-
+  </div>
+  {% if jobs_internship %}
+    <div class="content__ad">
+      <p>
+        Přímo na junior.guru najdeš <a href="{{ url_for('jobs') }}">nabídky práce výhradně pro juniory</a>. Zrovna dnes jsou mezi nimi i nějaké stáže:
+      </p>
+      <ul class="jobs jobs--inline">
+        {% for job in jobs_internship|sample_jobs(2) %}
+          <li class="jobs__item">
+            {% if job.source == 'juniorguru' %}
+              <a class="jobs__link" href="{{ url_for('job', job_id=job.id) }}">
+            {% else %}
+              <a class="jobs__link" href="{{ url_for('jobs') }}">
+            {% endif %}
+              <div class="jobs__content">
+                <div class="jobs__company-logo">
+                  {% if job.company_logo_path %}
+                    <img width="100" height="100"{% if loop.index > 10 %} loading="lazy"{% endif %} class="jobs__company-logo-image" src="{{ url_for('static', filename=job.company_logo_path) }}" alt="Logo {{ job.company_name }}">
+                  {% endif %}
+                </div>
+                <div class="jobs__content-body">
+                  <h3 class="jobs__title">{{ job.title|truncate(70) }}</h3>
+                  <p class="jobs__company">{{ job.company_name }}</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      {% if jobs_internship|length > 2 %}
+        <p class="button-compartment button-compartment--compact">
+          <a class="button button--secondary button--small" href="{{ url_for('jobs') }}">
+            Další nabídky
+          </a>
+        </p>
+      {% endif %}
+    </div>
+  {% endif %}
+  <div class="tooltips">
     <h3 class="content__subsection-heading" id="unpaid-internships">Neplacené stáže</h3>
     <p>
       Je na tobě si vyhodnotit, zda se ti stáž bez odměny ve tvé situaci vyplatí a zda si to vůbec můžeš dovolit.
@@ -697,6 +735,43 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
       </figcaption>
     </figure>
   </div>
+  {% if jobs_volunteering %}
+    <div class="content__ad">
+      <p>
+        Přímo na junior.guru jsou <a href="{{ url_for('jobs') }}">nabídky práce výhradně pro juniory</a> a občas se mezi nimi objeví i nabídka dobrovolnictví (neziskovky a malé projekty zde mohou inzerovat zdarma). Zrovna dnes tam něco je:
+      </p>
+      <ul class="jobs jobs--inline">
+        {% for job in jobs_volunteering|sample_jobs(2) %}
+          <li class="jobs__item">
+            {% if job.source == 'juniorguru' %}
+              <a class="jobs__link" href="{{ url_for('job', job_id=job.id) }}">
+            {% else %}
+              <a class="jobs__link" href="{{ url_for('jobs') }}">
+            {% endif %}
+              <div class="jobs__content">
+                <div class="jobs__company-logo">
+                  {% if job.company_logo_path %}
+                    <img width="100" height="100"{% if loop.index > 10 %} loading="lazy"{% endif %} class="jobs__company-logo-image" src="{{ url_for('static', filename=job.company_logo_path) }}" alt="Logo {{ job.company_name }}">
+                  {% endif %}
+                </div>
+                <div class="jobs__content-body">
+                  <h3 class="jobs__title">{{ job.title|truncate(70) }}</h3>
+                  <p class="jobs__company">{{ job.company_name }}</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      {% if jobs_volunteering|length > 2 %}
+        <p class="button-compartment button-compartment--compact">
+          <a class="button button--secondary button--small" href="{{ url_for('jobs') }}">
+            Další nabídky
+          </a>
+        </p>
+      {% endif %}
+    </div>
+  {% endif %}
 </section>
 
 {% include 'engage_donate.html' %}

@@ -80,6 +80,8 @@ def candidate_handbook():
     with db:
         jobs = Job.listing()
         jobs_remote = Job.remote_listing()
+        jobs_internship = Job.internship_listing()
+        jobs_volunteering = Job.volunteering_listing()
         supporters_count = Supporter.count()
         last_modified = LastModified.get_value_by_path('candidate_handbook.html')
         logos = Logo.listing()
@@ -89,6 +91,8 @@ def candidate_handbook():
                            subnav_active='candidate_handbook',
                            jobs=jobs,
                            jobs_remote=jobs_remote,
+                           jobs_internship=jobs_internship,
+                           jobs_volunteering=jobs_volunteering,
                            supporters_count=supporters_count,
                            last_modified=last_modified,
                            logos=logos,

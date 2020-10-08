@@ -57,6 +57,15 @@ def test_remote_listing(db_connection):
     assert list(Job.remote_listing()) == [job1, job3, job4]
 
 
+def test_tags_listing(db_connection):
+    job1 = create_job('1', employment_types=['FULL_TIME', 'PART_TIME', 'INTERNSHIP'], sort_rank=30)
+    job2 = create_job('2', employment_types=['FULL_TIME', 'PART_TIME'], sort_rank=20)
+    job3 = create_job('3', employment_types=['PART_TIME', 'PAID_INTERNSHIP'])  # noqa
+    job4 = create_job('4', employment_types=['FULL_TIME', 'PART_TIME', 'UNPAID_INTERNSHIP'], sort_rank=10)
+
+    assert list(Job.tags_listing(['ALSO_INTERNSHIP', 'ALSO_PART_TIME'])) == [job1, job2, job4]
+
+
 @pytest.mark.parametrize('source', [
     'juniorguru',
     'moo',
@@ -338,9 +347,9 @@ def test_aggregate_metrics_companies_count_past_jobs_unique(db_connection):
 
 
 def test_aggregate_metrics_companies_count_past_and_present_jobs_unique(db_connection):
-    create_job('1', company_link='https://example.com/company1')
-    create_job('2', company_link='https://example.com/company2')
-    create_job('3', company_link='https://example.com/company2')
+    create_job('1', company_link='https://example.com/company1', source='juniorguru')
+    create_job('2', company_link='https://example.com/company2', source='juniorguru')
+    create_job('3', company_link='https://example.com/company2', source='juniorguru')
 
     JobDropped.create(type='Expired',
                       item=dict(company_link='https://example.com/company1'),

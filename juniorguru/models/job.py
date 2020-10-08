@@ -156,6 +156,23 @@ class Job(BaseModel):
         return cls.listing().where(cls.remote == True)
 
     @classmethod
+    def tags_listing(cls, tags):
+        tags = set(tags)
+        return [job for job in cls.listing() if tags & set(job.tags())]
+
+    @classmethod
+    def internship_listing(cls):
+        return cls.tags_listing([
+            'INTERNSHIP',
+            'UNPAID_INTERNSHIP',
+            'ALSO_INTERNSHIP',
+        ])
+
+    @classmethod
+    def volunteering_listing(cls):
+        return cls.tags_listing(['VOLUNTEERING'])
+
+    @classmethod
     def newsletter_listing(cls, min_count, today=None):
         today = today or date.today()
 
