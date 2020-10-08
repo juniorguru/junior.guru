@@ -133,10 +133,14 @@ class Job(BaseModel):
 
     @classmethod
     def aggregate_metrics(cls):
+        approved_jobs_count = cls.listing() \
+            .where(cls.source != 'juniorguru') \
+            .count()
         companies_count = len(JobDropped.expired_company_links() |
-                              {job.company_link for job in cls.listing()})
+                              {job.company_link for job in cls.juniorguru_listing()})
         return dict(companies_count=companies_count,
                     jobs_count=cls.listing().count(),
+                    approved_jobs_count=approved_jobs_count,
                     rejected_jobs_count=JobDropped.rejected_count())
 
     @classmethod
@@ -215,7 +219,7 @@ class JobDropped(BaseModel):
     @classmethod
     def rejected_count(cls):
         return cls.select() \
-            .where(cls.type.not_in(['NotApproved', 'Expired'])) \
+            .where(cls.source != 'juniorguru') \
             .count()
 
     @classmethod

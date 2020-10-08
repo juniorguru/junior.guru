@@ -284,21 +284,30 @@ def test_aggregate_metrics_jobs_count(db_connection):
     assert Job.aggregate_metrics()['jobs_count'] == 3
 
 
-def test_aggregate_metrics_rejected_jobs_count(db_connection):
-    JobDropped.create(type='Expired',
-                      reason='...', response_url='...', item={}, source='...')
-    JobDropped.create(type='NotApproved',
-                      reason='...', response_url='...', item={}, source='...')
-    JobDropped.create(type='IrrelevantLanguage',
-                      reason='...', response_url='...', item={}, source='...')
+def test_aggregate_metrics_approved_jobs_count(db_connection):
+    create_job('1', source='juniorguru')
+    create_job('2', source='abc')
+    create_job('3', source='xyz')
 
-    assert Job.aggregate_metrics()['rejected_jobs_count'] == 1
+    assert Job.aggregate_metrics()['approved_jobs_count'] == 2
+
+
+def test_aggregate_metrics_rejected_jobs_count(db_connection):
+    JobDropped.create(source='juniorguru',
+                      type='...', reason='...', response_url='...', item={})
+    JobDropped.create(source='abc',
+                      type='...', reason='...', response_url='...', item={})
+    JobDropped.create(source='xyz',
+                      type='...', reason='...', response_url='...', item={})
+
+    assert Job.aggregate_metrics()['rejected_jobs_count'] == 2
 
 
 def test_aggregate_metrics_companies_count(db_connection):
-    create_job('1', company_link='https://example.com/company1')
-    create_job('2', company_link='https://example.com/company2')
-    create_job('3', company_link='https://example.com/company2')
+    create_job('1', company_link='https://example.com/1', source='juniorguru')
+    create_job('2', company_link='https://example.com/2', source='juniorguru')
+    create_job('3', company_link='https://example.com/2', source='juniorguru')
+    create_job('4', company_link='https://example.com/3', source='xyz')
 
     assert Job.aggregate_metrics()['companies_count'] == 2
 
