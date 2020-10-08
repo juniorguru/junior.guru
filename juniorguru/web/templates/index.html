@@ -42,21 +42,22 @@ Průvodce programováním pro samouky a nabídky práce pro juniory.
         <p>Programátorů je&nbsp;dlouhodobě nedostatek. Samouk přitom může jejich běžnou práci zvládnout stejně dobře jako absolvent&nbsp;VŠ. Projdi si {{ metrics.jobs_count }} nabídek &mdash; všechny pro začátečníky!</p>
         <div class="billboard-buttons">
           <a href="{{ url_for('jobs') }}" class="legacy-button legacy-button-inverted">Aktuální nabídky práce</a>
-          <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener" class="legacy-button-secondary legacy-button-inverted">Nabídky do e-mailu</a>
+          <a href="{{ url_for('candidate_handbook') }}" class="legacy-button-secondary legacy-button-inverted">Příručka o&nbsp;hledání práce</a>
         </div>
         <p class="note"><a href="{{ url_for('hire_juniors') }}">Inzerujte na junior.guru</a> &mdash; <strong>od 0 Kč!</strong></p>
       </div>
     </div>
+    {#
     <div class="billboard-note">
       <p>
-        {#
         <strong>Jak na tom bude IT po pandemii COVID-19?</strong> Přečti si,
         <a href="{{ url_for('learn') }}#covid19">co způsobí koronavirus</a>.
-        #}
+
         1.&nbsp;září tady vyšla <a href="{{ url_for('candidate_handbook') }}">příručka</a>,
         která tě provede hledáním první práce v&nbsp;IT. Než začneš, mrkni na ni!
       </p>
     </div>
+    #}
   </div>
 </section>
 <hr class="hidden">
