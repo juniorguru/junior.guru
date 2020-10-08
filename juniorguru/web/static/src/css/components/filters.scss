@@ -21,6 +21,7 @@
 
 .filters__item {
   display: inline;
+  margin-right: $whitespace-0;
 }
 
 .filters__item--active .filters__link {
@@ -47,6 +48,7 @@
 
   .filters__item {
     display: block;
+    margin-right: 0;
   }
 
   .filters__link {

@@ -98,7 +98,7 @@ $company-logo-size: 8rem;
   border: 1px solid $gray-light;
   display: inline;
   padding: 0.2rem 0.5rem;
-  margin-right: 1rem;
+  margin-right: $whitespace-0 / 2;
   white-space: nowrap;
 }
 
@@ -155,6 +155,6 @@ $company-logo-size: 8rem;
 
   .jobs__tag {
     margin-right: 0;
-    margin-left: 0.4rem;
+    margin-left: $whitespace-0;
   }
 }
