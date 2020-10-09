@@ -1,3 +1,5 @@
+{% from 'macros/job_inline.html' import job_inline_macro %}
+
 {% macro jobs_inline_macro(jobs, n, jobs_link='jobs') %}
   <ul class="jobs jobs--inline">
     {% for job in jobs|sample_jobs(n) %}

@@ -16,7 +16,7 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
     <p class="intro__lead job-attributes">
       <a href="{{ job.company_link }}" data-metrics-utm data-metrics-utm-medium="job_board" itemprop="hiringOrganization">{{ job.company_name }}</a>
       &mdash;
-      <span itemprop="jobLocation" itemscope>{{ job.location }}</span>
+      <span itemprop="jobLocation">{{ job.location }}</span>
       {% set tags = job.tags()|reject('eq', 'NEW')|list %}
       {% if tags %}
         &mdash;

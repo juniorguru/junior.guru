@@ -1,9 +1,11 @@
 {% macro job_inline_macro(job, jobs_link='jobs') %}
-  <li class="jobs__item">
+  <li class="jobs__item" itemscope itemtype="https://schema.org/JobPosting">
+    <meta itemprop="industry" content="Informační technologie">
     {% if job.source == 'juniorguru' %}
-      <a class="jobs__link" href="{{ url_for('job', job_id=job.id) }}">
+      <a class="jobs__link" href="{{ url_for('job', job_id=job.id) }}" itemprop="url">
     {% else %}
       <a class="jobs__link" href="{{ url_for(jobs_link) }}">
+      <link itemprop="url" href="{{ job.link }}">
     {% endif %}
       <div class="jobs__content">
         <div class="jobs__company-logo">
@@ -12,8 +14,8 @@
           {% endif %}
         </div>
         <div class="jobs__content-body">
-          <h3 class="jobs__title">{{ job.title|truncate(70) }}</h3>
-          <p class="jobs__company">{{ job.company_name }}</p>
+          <h3 class="jobs__title" itemprop="title">{{ job.title|truncate(70) }}</h3>
+          <p class="jobs__company" itemprop="hiringOrganization">{{ job.company_name }}</p>
         </div>
       </div>
     </a>
