@@ -13,10 +13,23 @@ jobs:
     executor: python-js
     steps:
       - checkout
+      - run:
+          name: Install fonts
+          command: |
+            echo "deb http://ftp.us.debian.org/debian buster main contrib" | sudo tee -a /etc/apt/sources.list
+            echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+            sudo apt-get update
+            while ! sudo apt-get install ttf-mscorefonts-installer
+            do
+              echo "Fonts installation failed! Retrying..."
+            done
+      - run:
+          name: Install scraping dependencies
+          command: sudo apt-get install tor tor-geoipdb privoxy
       - restore_cache:  # caches npm deps based on whether the deps declaration has changed
           key: deps-{{ checksum "Pipfile.lock" }}-{{ checksum "package-lock.json" }}
       - run:
-          name: Install dependencies
+          name: Install project dependencies
           command: pipenv install --dev && npm install
       - save_cache:
           key: deps-{{ checksum "Pipfile.lock" }}-{{ checksum "package-lock.json" }}
@@ -69,16 +82,6 @@ jobs:
   build:
     executor: python-js
     steps:
-      - run:
-          name: Install fonts
-          command: |
-            echo "deb http://ftp.us.debian.org/debian buster main contrib" | sudo tee -a /etc/apt/sources.list
-            echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
-            sudo apt-get update
-            while ! sudo apt-get install ttf-mscorefonts-installer
-            do
-              echo "Fonts installation failed! Retrying..."
-            done
       - attach_workspace:
           at: "~"
       - run: pipenv run build
