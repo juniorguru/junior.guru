@@ -10,9 +10,6 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
 <article class="content__section job" itemscope itemtype="https://schema.org/JobPosting">
   <meta itemprop="industry" content="Informační technologie">
   <meta itemprop="datePosted" content="{{ job.posted_at.isoformat() }}">
-  <div itemprop="jobLocation" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="address" content="{{ job.location_raw }}">
-  </div>
 
   <header class="intro">
     <h1 class="intro__title" itemprop="title">{{ job.title }}</h1>
@@ -22,7 +19,9 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
         <span itemprop="name">{{ job.company_name }}</span>
       </a>
       &mdash;
-      {{ job.location }}
+      <span itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="address">{{ job.location }}</span>
+      </span>
       {% set tags = job.tags()|reject('eq', 'NEW')|list %}
       {% if tags %}
         &mdash;

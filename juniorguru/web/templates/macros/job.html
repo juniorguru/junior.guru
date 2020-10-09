@@ -2,8 +2,8 @@
   <li class="jobs__item{% if job.is_highlighted %} jobs__item--highlighted{% endif %}" itemscope itemtype="https://schema.org/JobPosting">
     <meta itemprop="industry" content="Informační technologie">
     <meta itemprop="datePosted" content="{{ job.posted_at.isoformat() }}">
-    <div itemprop="jobLocation" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="address" content="{{ job.location_raw }}">
+    <div itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
+      <meta itemprop="address" content="{{ job.location }}">
     </div>
 
     {% if job.source == 'juniorguru' %}
