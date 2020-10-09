@@ -3,9 +3,6 @@
     <meta itemprop="industry" content="Informační technologie">
     <meta itemprop="datePosted" content="{{ job.posted_at.isoformat() }}">
     <meta itemprop="description" content="Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}">
-    <div itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
-      <meta itemprop="address" content="{{ job.location }}">
-    </div>
 
     {% if job.source == 'juniorguru' %}
       <a class="jobs__link" href="{{ url_for('job', job_id=job.id) }}" itemprop="url">
@@ -27,8 +24,8 @@
             <span itemprop="name">{{ job.company_name }}</span>
             <link itemprop="url" href="{{ job.company_link }}">
           </p>
-          <p class="jobs__location" itemprop="jobLocation">
-            {{ job.location }}
+          <p class="jobs__location" itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
+            <span itemprop="address">{{ job.location }}</span>
           </p>
         </div>
       </div>
