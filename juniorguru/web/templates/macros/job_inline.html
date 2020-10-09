@@ -1,6 +1,11 @@
 {% macro job_inline_macro(job, jobs_link='jobs') %}
   <li class="jobs__item" itemscope itemtype="https://schema.org/JobPosting">
     <meta itemprop="industry" content="Informační technologie">
+    <meta itemprop="datePosted" content="{{ job.posted_at.isoformat() }}">
+    <div itemprop="jobLocation" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="address" content="{{ job.location_raw }}">
+    </div>
+
     {% if job.source == 'juniorguru' %}
       <a class="jobs__link" href="{{ url_for('job', job_id=job.id) }}" itemprop="url">
     {% else %}
@@ -14,8 +19,12 @@
           {% endif %}
         </div>
         <div class="jobs__content-body">
-          <h3 class="jobs__title" itemprop="title">{{ job.title|truncate(70) }}</h3>
-          <p class="jobs__company" itemprop="hiringOrganization">{{ job.company_name }}</p>
+          <h3 class="jobs__title" itemprop="title">
+            {{ job.title|truncate(70) }}
+          </h3>
+          <p class="jobs__company" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
+            <span itemprop="name">{{ job.company_name }}</span>
+          </p>
         </div>
       </div>
     </a>
