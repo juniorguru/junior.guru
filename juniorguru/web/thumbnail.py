@@ -30,7 +30,7 @@ def url_for_static(filename):
 
 
 def render(**context):
-    template_path = Path(__file__).parent / 'templates' / '_thumbnail.html'
+    template_path = Path(__file__).parent / 'templates' / 'layouts' / 'thumbnail.html'
     html = Template(template_path.read_text()).render(**context)
 
     with tempfile.NamedTemporaryFile(suffix='.html', delete=False) as f:
