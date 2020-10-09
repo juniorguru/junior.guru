@@ -1,0 +1,21 @@
+{% macro job_inline_macro(job, jobs_link='jobs') %}
+  <li class="jobs__item">
+    {% if job.source == 'juniorguru' %}
+      <a class="jobs__link" href="{{ url_for('job', job_id=job.id) }}">
+    {% else %}
+      <a class="jobs__link" href="{{ url_for(jobs_link) }}">
+    {% endif %}
+      <div class="jobs__content">
+        <div class="jobs__company-logo">
+          {% if job.company_logo_path %}
+            <img width="100" height="100" loading="lazy" class="jobs__company-logo-image" src="{{ url_for('static', filename=job.company_logo_path) }}" alt="Logo {{ job.company_name }}">
+          {% endif %}
+        </div>
+        <div class="jobs__content-body">
+          <h3 class="jobs__title">{{ job.title|truncate(70) }}</h3>
+          <p class="jobs__company">{{ job.company_name }}</p>
+        </div>
+      </div>
+    </a>
+  </li>
+{% endmacro %}
