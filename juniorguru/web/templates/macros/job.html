@@ -2,6 +2,7 @@
   <li class="jobs__item{% if job.is_highlighted %} jobs__item--highlighted{% endif %}" itemscope itemtype="https://schema.org/JobPosting">
     <meta itemprop="industry" content="Informační technologie">
     <meta itemprop="datePosted" content="{{ job.posted_at.isoformat() }}">
+    <meta itemprop="description" content="Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}">
     <div itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
       <meta itemprop="address" content="{{ job.location }}">
     </div>
@@ -24,6 +25,7 @@
           </h3>
           <p class="jobs__company" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
             <span itemprop="name">{{ job.company_name }}</span>
+            <link itemprop="url" href="{{ job.company_link }}">
           </p>
           <p class="jobs__location" itemprop="jobLocation">
             {{ job.location }}
