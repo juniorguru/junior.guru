@@ -35,7 +35,7 @@ def main():
         if DEBUG:
             log.info('Debug mode suppressed early exit')
         else:
-            sys.exit(0)
+            return 0
 
     logos_count = len(logos)
     log.info(f'Logos: {logos_count}')
@@ -52,8 +52,7 @@ def main():
         except Exception as e:
             log.exception(f'SendGrid error: {e}')
             status = 1
-    sys.exit(status)
-
+    return status
 
 
 def create_message(logo, template, today=None):
@@ -106,4 +105,4 @@ def send(message):
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

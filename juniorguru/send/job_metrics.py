@@ -36,7 +36,7 @@ def main():
         if DEBUG:
             log.info('Debug mode suppressed early exit')
         else:
-            sys.exit(0)
+            return 0
 
     jobs_count = len(jobs)
     log.info(f'Jobs: {jobs_count}')
@@ -53,8 +53,7 @@ def main():
         except Exception as e:
             log.exception(f'SendGrid error: {e}')
             status = 1
-    sys.exit(status)
-
+    return status
 
 
 def create_message(job, template, today=None):
@@ -109,4 +108,4 @@ def send(message):
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
