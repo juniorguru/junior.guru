@@ -1,4 +1,5 @@
 {% extends 'layouts/base.html' %}
+{% from 'macros/jobs_inline.html' import jobs_inline_macro %}
 
 {% block title %}Stránka neexistuje{% endblock %}
 
@@ -9,9 +10,9 @@
   <h1 id="not-found-title" class="intro__title">Stránka neexistuje</h1>
   <p class="intro__lead">
     Ahoj! <a href="{{ url_for('index') }}">junior.guru</a> je průvodce programováním pro&nbsp;samouky.
-    Jsou zde i <a href="{{ url_for('jobs') }}">nabídky práce</a> pro začátečníky.
+    Jsou zde i <a href="{{ url_for('jobs') }}">nabídky práce pro začátečníky</a>.
     Na&nbsp;<span id="not-found-url"></span><noscript>této adrese</noscript>&nbsp;<span id="not-found-reason-text">ale nic není. Snad by tě mohl zaujmout
-    <a href="{{ url_for('learn') }}">návod jak se naučit programovat</a> nebo nějaká z nabídek práce?</span>
+    <a href="{{ url_for('learn') }}">návod, jak se naučit programovat</a>. Nebo možná nějaká z nabídek práce?</span>
   </p>
   <script>
     document.getElementById('not-found-url').innerHTML = 'adrese <strong>' + window.location.pathname + '</strong>';
@@ -22,7 +23,7 @@
     }
   </script>
 </header>
-<p class="call-to-action next">
-  <a href="{{ url_for('jobs') }}" class="legacy-button">Nabídky práce</a>
-</p>
+<section class="content__section content__section--narrow">
+  {{ jobs_inline_macro(jobs, 5) }}
+</section>
 {% endblock %}

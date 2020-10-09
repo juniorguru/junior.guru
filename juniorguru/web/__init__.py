@@ -1,5 +1,5 @@
 import arrow
-from flask import Flask, Response, abort, render_template, url_for
+from flask import Flask, Response, render_template, url_for
 
 from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, db
 from juniorguru.web.thumbnail import thumbnail
@@ -161,7 +161,7 @@ def jobs_region(region_id):
 def job(job_id):
     with db:
         metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
-        job = Job.get_by_id(job_id) or abort(404)
+        job = Job.get_by_id(job_id)
     return render_template('job.html',
                            nav_active='jobs',
                            subnav_tabs=JOBS_SUBNAV_TABS,
@@ -226,9 +226,10 @@ def press_release(id):
 
 
 @app.route('/404.html')
-#@app.route('/jobs/404.html')  # debug
 def not_found():
-    return render_template('404.html')
+    with db:
+        jobs = Job.listing()
+    return render_template('404.html', jobs=jobs)
 
 
 @app.route('/robots.txt')
