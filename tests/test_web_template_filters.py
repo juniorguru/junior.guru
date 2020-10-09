@@ -1,3 +1,4 @@
+from collections import namedtuple
 from datetime import datetime, date
 
 import pytest
@@ -128,3 +129,49 @@ def test_sections_multiple():
 ])
 def test_metric(value, expected):
     assert template_filters.metric(value) == expected
+
+
+DummyJob = namedtuple('Job', ['id', 'source'])
+
+
+@pytest.mark.parametrize('jobs,n,expected', [
+    pytest.param(
+        [DummyJob(id=1, source='xyz'), DummyJob(id=2, source='xyz')],
+        4,
+        {DummyJob(id=1, source='xyz'), DummyJob(id=2, source='xyz')},
+        id='len(jobs) < n',
+    ),
+    pytest.param(
+        [DummyJob(id=1, source='xyz'), DummyJob(id=2, source='xyz')],
+        2,
+        {DummyJob(id=1, source='xyz'), DummyJob(id=2, source='xyz')},
+        id='len(jobs) == n',
+    ),
+    pytest.param(
+        [DummyJob(id=1, source='xyz'), DummyJob(id=2, source='juniorguru'), DummyJob(id=3, source='juniorguru')],
+        2,
+        {DummyJob(id=2, source='juniorguru'), DummyJob(id=3, source='juniorguru')},
+        id='preferred jobs have priority',
+    ),
+])
+def test_sample_jobs(jobs, n, expected):
+    assert set(template_filters.sample_jobs(jobs, n)) == expected
+
+
+def test_sample_jobs_not_enough_preferred_jobs():
+    random_called = False
+
+    def random_sample(jobs, n):
+        nonlocal random_called
+        random_called = True
+        return jobs[:n]
+
+    assert set(template_filters.sample_jobs([
+        DummyJob(id=1, source='xyz'),
+        DummyJob(id=2, source='juniorguru'),
+        DummyJob(id=3, source='xyz')
+    ], 2, sample_fn=random_sample)) == {
+        DummyJob(id=1, source='xyz'),
+        DummyJob(id=2, source='juniorguru'),
+    }
+    assert random_called is True

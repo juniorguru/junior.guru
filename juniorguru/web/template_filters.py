@@ -96,8 +96,11 @@ def metric(value):
 
 
 @app.template_filter()
-def sample_jobs(jobs, n=2):
-    choices = [job for job in jobs if job.source == 'juniorguru']
-    if len(choices) < n:
-        choices = list(jobs)
-    return random.sample(choices, n)
+def sample_jobs(jobs, n=2, sample_fn=None):
+    jobs = list(jobs)
+    if len(jobs) <= n:
+        return jobs
+    preferred_jobs = [job for job in jobs if job.source == 'juniorguru']
+    if len(preferred_jobs) >= n:
+        jobs = preferred_jobs
+    return (sample_fn or random.sample)(jobs, n)
