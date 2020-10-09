@@ -1,5 +1,5 @@
 {% extends 'layouts/base.html' %}
-{% from 'macros/job_inline.html' import job_inline_macro %}
+{% from 'macros/jobs_inline.html' import jobs_inline_macro %}
 
 {% block title %}Příručka o hledání první práce v IT{% endblock %}
 
@@ -406,18 +406,7 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
       <p>
         Přímo na junior.guru najdeš <a href="{{ url_for('jobs') }}">nabídky práce výhradně pro juniory</a>. Některé z nich práci na dálku umožňují!
       </p>
-      <ul class="jobs jobs--inline">
-        {% for job in jobs_remote|sample_jobs(2) %}
-          {{ job_inline_macro(job, jobs_link='jobs_remote') }}
-        {% endfor %}
-      </ul>
-      {% if jobs_remote|length > 2 %}
-        <p class="button-compartment button-compartment--compact">
-          <a class="button button--secondary button--small" href="{{ url_for('jobs_remote') }}">
-            Další nabídky
-          </a>
-        </p>
-      {% endif %}
+      {{ jobs_inline_macro(jobs_remote, 2, jobs_link='jobs_remote') }}
     </div>
   {% endif %}
 </section>
@@ -661,18 +650,7 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
       <p>
         Přímo na junior.guru najdeš <a href="{{ url_for('jobs') }}">nabídky práce výhradně pro juniory</a>. Zrovna dnes jsou mezi nimi i nějaké stáže:
       </p>
-      <ul class="jobs jobs--inline">
-        {% for job in jobs_internship|sample_jobs(2) %}
-          {{ job_inline_macro(job) }}
-        {% endfor %}
-      </ul>
-      {% if jobs_internship|length > 2 %}
-        <p class="button-compartment button-compartment--compact">
-          <a class="button button--secondary button--small" href="{{ url_for('jobs') }}">
-            Další nabídky
-          </a>
-        </p>
-      {% endif %}
+      {{ jobs_inline_macro(jobs_internship, 2) }}
     </div>
   {% endif %}
   <div class="tooltips">
@@ -705,18 +683,7 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
       <p>
         Přímo na junior.guru jsou <a href="{{ url_for('jobs') }}">nabídky práce výhradně pro juniory</a> a občas se mezi nimi objeví i nabídka dobrovolnictví (neziskovky a malé projekty zde mohou inzerovat zdarma). Zrovna dnes tam něco je:
       </p>
-      <ul class="jobs jobs--inline">
-        {% for job in jobs_volunteering|sample_jobs(2) %}
-          {{ job_inline_macro(job) }}
-        {% endfor %}
-      </ul>
-      {% if jobs_volunteering|length > 2 %}
-        <p class="button-compartment button-compartment--compact">
-          <a class="button button--secondary button--small" href="{{ url_for('jobs') }}">
-            Další nabídky
-          </a>
-        </p>
-      {% endif %}
+      {{ jobs_inline_macro(jobs_volunteering, 2) }}
     </div>
   {% endif %}
 </section>
@@ -929,16 +896,7 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
       <p>
         Přímo na junior.guru také najdeš <a href="{{ url_for('jobs') }}">pracovní portál</a>, ale s nabídkami jen a pouze pro juniory. Jiné zde inzerovat ani nelze. Navíc se každý den spouští robot, který se rozhlíží i po nabídkách z dalších zdrojů. Poté je filtruje na základě přísných pravidel a nechá jen ty, o nichž usoudí, že jsou opravdu pro začátečníky:
       </p>
-      <ul class="jobs jobs--inline">
-        {% for job in jobs|sample_jobs(3) %}
-          {{ job_inline_macro(job) }}
-        {% endfor %}
-      </ul>
-      <p class="button-compartment button-compartment--compact">
-        <a class="button button--secondary button--small" href="{{ url_for('jobs') }}">
-          Další nabídky
-        </a>
-      </p>
+      {{ jobs_inline_macro(jobs, 3) }}
     </div>
   {% endif %}
   <div class="tooltips">
