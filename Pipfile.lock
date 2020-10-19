@@ -181,11 +181,11 @@
         },
         "fiobank": {
             "hashes": [
-                "sha256:3b1a2fad2bdc4217acd37567d29e784af303f0f7c7cd5bb85dc63adc2c99a5e8",
-                "sha256:4a89c02d0d2f44a87b92ee66fce0af878f2ea11604315e0f2a6fb91c169c5e20"
+                "sha256:6b335210f92be648342ee879a1156e8fb450ff1d059f6e8757c857611a55ef26",
+                "sha256:ecc13d37046bc2f36f50c9ee563e389eedab955c158b6c7293e00d5ee0c39bb3"
             ],
             "index": "pypi",
-            "version": "==1.2.0"
+            "version": "==3.0.0"
         },
         "flask": {
             "hashes": [
