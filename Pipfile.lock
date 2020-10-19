@@ -181,11 +181,11 @@
         },
         "fiobank": {
             "hashes": [
-                "sha256:3b1a2fad2bdc4217acd37567d29e784af303f0f7c7cd5bb85dc63adc2c99a5e8",
-                "sha256:4a89c02d0d2f44a87b92ee66fce0af878f2ea11604315e0f2a6fb91c169c5e20"
+                "sha256:6b335210f92be648342ee879a1156e8fb450ff1d059f6e8757c857611a55ef26",
+                "sha256:ecc13d37046bc2f36f50c9ee563e389eedab955c158b6c7293e00d5ee0c39bb3"
             ],
             "index": "pypi",
-            "version": "==1.2.0"
+            "version": "==3.0.0"
         },
         "flask": {
             "hashes": [
@@ -733,10 +733,10 @@
         },
         "urllib3": {
             "hashes": [
-                "sha256:91056c15fa70756691db97756772bb1eb9678fa585d9184f24534b100dc60f4a",
-                "sha256:e7983572181f5e1522d9c98453462384ee92a0be7fac5f1413a1e35c56cc0461"
+                "sha256:8d7eaa5a82a1cac232164990f04874c594c9453ec55eef02eab885aa02fc17a2",
+                "sha256:f5321fbe4bf3fefa0efd0bfe7fb14e90909eb62a48ccda331726b4319897dd5e"
             ],
-            "version": "==1.25.10"
+            "version": "==1.25.11"
         },
         "w3lib": {
             "hashes": [
