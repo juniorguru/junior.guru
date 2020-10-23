@@ -3,22 +3,19 @@ from urllib.parse import quote_plus
 
 from jinja2 import Template
 
-from juniorguru.lib.emails import create_message
 from juniorguru.models import Job
 
 
-def generate_messages(today, debug=False):
+def generate_messages(today):
     jobs = Job.juniorguru_listing()
 
     template_path = Path(__file__).parent / 'templates' / 'job_metrics.html'
     template = Template(template_path.read_text())
 
-    for job in jobs:
-        message_data = prepare_message_data(job, template, today, debug=debug)
-        yield create_message(**message_data)
+    return (create_message(job, template, today) for job in jobs)
 
 
-def prepare_message_data(job, template, today, debug=False):
+def create_message(job, template, today):
     if job.expires_soon(today):
         subject = 'Váš inzerát brzy vyprší!'
     else:
@@ -26,15 +23,9 @@ def prepare_message_data(job, template, today, debug=False):
     subject = f'{subject} ({job.title})'
 
     from_email = ('junior.guru', 'metrics@junior.guru')
-    bcc_emails = []
+    to_emails = [(job.company_name, job.email)]
+    bcc_emails = [('junior.guru', 'ahoj@junior.guru')]
     content = template.render(**prepare_template_context(job, today))
-
-    if debug:
-        to_emails = [(job.company_name, 'ahoj@junior.guru')]
-        subject = f'[DEBUG] {subject}'
-    else:
-        to_emails = [(job.company_name, job.email)]
-        bcc_emails = [('junior.guru', 'ahoj@junior.guru')]
 
     return dict(from_email=from_email, to_emails=to_emails,
                 bcc_emails=bcc_emails, subject=subject, html_content=content)

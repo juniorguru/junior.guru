@@ -2,22 +2,19 @@ from pathlib import Path
 
 from jinja2 import Template
 
-from juniorguru.lib.emails import create_message
 from juniorguru.models import Logo
 
 
-def generate_messages(today, debug=False):
+def generate_messages(today):
     logos = Logo.listing()
 
     template_path = Path(__file__).parent / 'templates' / 'logo_metrics.html'
     template = Template(template_path.read_text())
 
-    for logo in logos:
-        message_data = prepare_message_data(logo, template, today, debug=debug)
-        yield create_message(**message_data)
+    return (create_message(logo, template, today) for logo in logos)
 
 
-def prepare_message_data(logo, template, today, debug=False):
+def create_message(logo, template, today):
     if logo.expires_soon(today):
         subject = 'Vaše sponzorství příručky brzy vyprší!'
     else:
@@ -25,15 +22,9 @@ def prepare_message_data(logo, template, today, debug=False):
     subject = f'{subject} ({logo.name})'
 
     from_email = ('junior.guru', 'metrics@junior.guru')
-    bcc_emails = []
+    to_emails = [(logo.name, logo.email)]
+    bcc_emails = [('junior.guru', 'ahoj@junior.guru')]
     content = template.render(**prepare_template_context(logo, today))
-
-    if debug:
-        to_emails = [(logo.name, 'ahoj@junior.guru')]
-        subject = f'[DEBUG] {subject}'
-    else:
-        to_emails = [(logo.name, logo.email)]
-        bcc_emails = [('junior.guru', 'ahoj@junior.guru')]
 
     return dict(from_email=from_email, to_emails=to_emails,
                 bcc_emails=bcc_emails, subject=subject, html_content=content)
