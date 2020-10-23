@@ -34,13 +34,20 @@ The service account's email address needs to be manually invited wherever it sho
 1. Follow [MailChimp's own guide](https://mailchimp.com/help/about-api-keys/) on how to create an API key
 1. Set it as `MAILCHIMP_API_KEY` environment variable for both local devlopment and production
 
-## Setting up SendGrid credentials
+## Setting up e-mail credentials
 
-1. [Create an API key](https://app.sendgrid.com/settings/api_keys)
-1. Set it as `SENDGRID_API_KEY` environment variable for both local devlopment and production
+1.  If using Gmail for sending e-mails, [create an app password](https://security.google.com/settings/security/apppasswords).
+1.  Set the following environment variables:
 
-By default, sending is not enabled. On production or when trying to send e-mails from localhost an environment variable `SENDGRID_ENABLED` needs to be set to something truthy.
+    ```bash
+    export SMTP_HOST='smtp.example.com'
+    export SMTP_PORT='587'
+    export SMTP_USERNAME='example@example.com'
+    export SMTP_PASSWORD='abc...xyz'
+    ```
+
+By default, sending is not enabled. On production or when trying to send e-mails from localhost an environment variable `SMTP_ENABLED` needs to be set to something truthy.
 
 ## Logging
 
-The environment variable `JG_LOG_LEVEL` affects what gets filtered out. It's set to `info` by default.
+The environment variable `LOG_LEVEL` affects what gets filtered out. It's set to `info` by default.

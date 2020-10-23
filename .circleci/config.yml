@@ -114,15 +114,15 @@ jobs:
           paths:
             - .deploy
 
-  # needs $SENDGRID_API_KEY
+  # needs $SMTP_* (see readme)
   send:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
       - run: |
-          export JG_LOG_LEVEL=debug
-          export SENDGRID_ENABLED=1
+          export LOG_LEVEL=debug
+          export SMTP_ENABLED=1
           pipenv run send
 
   check-anchors:
