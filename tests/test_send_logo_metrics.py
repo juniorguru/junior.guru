@@ -29,8 +29,8 @@ def template():
 
 def test_create_message_metrics(logo_mock, template):
     logo_mock.metrics = dict(users=15, pageviews=25, clicks=3)
-    message = create_message(logo_mock, template)
-    html = message.get()['content'][0]['value']
+    message = create_message(logo_mock, template, date.today())
+    html = message['html_content']
 
     assert '<b>15</b>' in html
     assert '<b>25</b>' in html
@@ -39,8 +39,8 @@ def test_create_message_metrics(logo_mock, template):
 def test_create_message_start_end(logo_mock, template):
     logo_mock.starts_at = date(2020, 6, 1)
     logo_mock.expires_at = date(2020, 7, 1)
-    message = create_message(logo_mock, template, today=date(2020, 6, 23))
-    html = message.get()['content'][0]['value']
+    message = create_message(logo_mock, template, date(2020, 6, 23))
+    html = message['html_content']
 
     assert '22&nbsp;dní' in html
     assert 'logo zobrazeno od&nbsp;1.6.2020' in html
@@ -54,15 +54,15 @@ def test_create_message_start_end(logo_mock, template):
 ])
 def test_create_message_subject(logo_mock, template, expires_at, expected):
     logo_mock.expires_at = expires_at
-    message = create_message(logo_mock, template, today=date(2020, 6, 20))
+    message = create_message(logo_mock, template, date(2020, 6, 20))
 
-    assert message.get()['subject'] == expected
+    assert message['subject'] == expected
 
 
 def test_create_message_job_slots_zero(logo_mock, template):
     logo_mock.job_slots = 0
-    message = create_message(logo_mock, template, today=date(2020, 6, 23))
-    html = message.get()['content'][0]['value']
+    message = create_message(logo_mock, template, date(2020, 6, 23))
+    html = message['html_content']
 
     assert 'paušál' not in html
     assert 'inzerát' not in html
@@ -70,8 +70,8 @@ def test_create_message_job_slots_zero(logo_mock, template):
 
 def test_create_message_job_slots_non_zero(logo_mock, template):
     logo_mock.job_slots = 43
-    message = create_message(logo_mock, template, today=date(2020, 6, 23))
-    html = message.get()['content'][0]['value']
+    message = create_message(logo_mock, template, date(2020, 6, 23))
+    html = message['html_content']
 
     assert 'paušál' in html
     assert 'současně inzerátů' in html
@@ -80,16 +80,16 @@ def test_create_message_job_slots_non_zero(logo_mock, template):
 
 def test_create_message_clicks_zero(logo_mock, template):
     logo_mock.metrics = dict(users=15, pageviews=25, clicks=0)
-    message = create_message(logo_mock, template, today=date(2020, 6, 23))
-    html = message.get()['content'][0]['value']
+    message = create_message(logo_mock, template, date(2020, 6, 23))
+    html = message['html_content']
 
     assert 'kliknutí' not in html
 
 
 def test_create_message_clicks_non_zero(logo_mock, template):
     logo_mock.metrics = dict(users=15, pageviews=25, clicks=5)
-    message = create_message(logo_mock, template, today=date(2020, 6, 23))
-    html = message.get()['content'][0]['value']
+    message = create_message(logo_mock, template, date(2020, 6, 23))
+    html = message['html_content']
 
     assert 'kliknutí' in html
     assert '<b>5</b>' in html
@@ -97,8 +97,8 @@ def test_create_message_clicks_non_zero(logo_mock, template):
 
 def test_create_message_expires_soon(logo_mock, template):
     logo_mock.expires_at = date(2020, 7, 1)
-    message = create_message(logo_mock, template, today=date(2020, 6, 24))
-    html = message.get()['content'][0]['value']
+    message = create_message(logo_mock, template, date(2020, 6, 24))
+    html = message['html_content']
 
     assert 'Prodlužte' in html
     assert 'https://junior.guru/hire-juniors/#handbook' in html
@@ -106,7 +106,7 @@ def test_create_message_expires_soon(logo_mock, template):
 
 def test_create_message_expires_not_soon(logo_mock, template):
     logo_mock.expires_at = date(2020, 7, 1)
-    message = create_message(logo_mock, template, today=date(2020, 4, 20))
-    html = message.get()['content'][0]['value']
+    message = create_message(logo_mock, template, date(2020, 4, 20))
+    html = message['html_content']
 
     assert 'Prodlužte' not in html

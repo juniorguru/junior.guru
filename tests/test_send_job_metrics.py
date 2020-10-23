@@ -30,8 +30,8 @@ def template():
 
 def test_create_message_metrics(job_mock, template):
     job_mock.metrics = dict(users=15, pageviews=25, applications=3)
-    message = create_message(job_mock, template)
-    html = message.get()['content'][0]['value']
+    message = create_message(job_mock, template, date.today())
+    html = message['html_content']
 
     assert '<b>15</b>' in html
     assert '<b>25</b>' in html
@@ -39,8 +39,8 @@ def test_create_message_metrics(job_mock, template):
 
 def test_create_message_prefill_form(job_mock, template):
     job_mock.company_name = 'Honza Ltd.'
-    message = create_message(job_mock, template)
-    html = message.get()['content'][0]['value']
+    message = create_message(job_mock, template, date.today())
+    html = message['html_content']
 
     assert '&entry.681099058=Honza+Ltd.' in html
 
@@ -48,8 +48,8 @@ def test_create_message_prefill_form(job_mock, template):
 def test_create_message_start_end(job_mock, template):
     job_mock.posted_at = date(2020, 6, 1)
     job_mock.expires_at = date(2020, 7, 1)
-    message = create_message(job_mock, template, today=date(2020, 6, 23))
-    html = message.get()['content'][0]['value']
+    message = create_message(job_mock, template, date(2020, 6, 23))
+    html = message['html_content']
 
     assert '22&nbsp;dní' in html
     assert 'schválen 1.6.2020' in html
@@ -63,9 +63,9 @@ def test_create_message_start_end(job_mock, template):
 ])
 def test_create_message_subject(job_mock, template, expires_at, expected):
     job_mock.expires_at = expires_at
-    message = create_message(job_mock, template, today=date(2020, 6, 20))
+    message = create_message(job_mock, template, date(2020, 6, 20))
 
-    assert message.get()['subject'] == expected
+    assert message['subject'] == expected
 
 
 def test_create_message_newsletter_mentions(job_mock, template):
@@ -74,8 +74,8 @@ def test_create_message_newsletter_mentions(job_mock, template):
         JobNewsletterMention(job=job_mock, sent_at=date(2020, 4, 1), link='https://example.com/newsletter/3'),
         JobNewsletterMention(job=job_mock, sent_at=date(2020, 3, 1), link='https://example.com/newsletter/2'),
     ]
-    message = create_message(job_mock, template, today=date(2020, 6, 23))
-    html = message.get()['content'][0]['value']
+    message = create_message(job_mock, template, date(2020, 6, 23))
+    html = message['html_content']
 
     assert 'ANO' in html
     assert 'odeslán' in html
@@ -88,8 +88,8 @@ def test_create_message_newsletter_mentions(job_mock, template):
 
 def test_create_message_no_newsletter_mentions(job_mock, template):
     job_mock.newsletter_mentions = []
-    message = create_message(job_mock, template)
-    html = message.get()['content'][0]['value']
+    message = create_message(job_mock, template, date.today())
+    html = message['html_content']
 
     assert 'zatím NE' in html
     assert 'odeslán' not in html
@@ -99,16 +99,16 @@ def test_create_message_no_newsletter_mentions(job_mock, template):
 
 def test_create_message_applications_zero(job_mock, template):
     job_mock.metrics = dict(users=15, pageviews=25, applications=0)
-    message = create_message(job_mock, template, today=date(2020, 6, 23))
-    html = message.get()['content'][0]['value']
+    message = create_message(job_mock, template, date(2020, 6, 23))
+    html = message['html_content']
 
     assert 'uchazeč' not in html
 
 
 def test_create_message_applications_non_zero(job_mock, template):
     job_mock.metrics = dict(users=15, pageviews=25, applications=5)
-    message = create_message(job_mock, template, today=date(2020, 6, 23))
-    html = message.get()['content'][0]['value']
+    message = create_message(job_mock, template, date(2020, 6, 23))
+    html = message['html_content']
 
     assert 'uchazeč' in html
     assert '<b>5</b>' in html
@@ -116,8 +116,8 @@ def test_create_message_applications_non_zero(job_mock, template):
 
 def test_create_message_expires_soon(job_mock, template):
     job_mock.expires_at = date(2020, 7, 1)
-    message = create_message(job_mock, template, today=date(2020, 6, 24))
-    html = message.get()['content'][0]['value']
+    message = create_message(job_mock, template, date(2020, 6, 24))
+    html = message['html_content']
 
     assert 'prodloužit o dalších 30&nbsp;dní' in html
     assert 'https://junior.guru/hire-juniors/#pricing' in html
@@ -125,8 +125,8 @@ def test_create_message_expires_soon(job_mock, template):
 
 def test_create_message_expires_not_soon(job_mock, template):
     job_mock.expires_at = date(2020, 7, 1)
-    message = create_message(job_mock, template, today=date(2020, 6, 20))
-    html = message.get()['content'][0]['value']
+    message = create_message(job_mock, template, date(2020, 6, 20))
+    html = message['html_content']
 
     assert 'prodloužit o dalších 30&nbsp;dní' not in html
 
@@ -134,8 +134,8 @@ def test_create_message_expires_not_soon(job_mock, template):
 def test_create_message_expires_soon_community(job_mock, template):
     job_mock.expires_at = date(2020, 7, 1)
     job_mock.pricing_plan = 'community'
-    message = create_message(job_mock, template, today=date(2020, 6, 26))
-    html = message.get()['content'][0]['value']
+    message = create_message(job_mock, template, date(2020, 6, 26))
+    html = message['html_content']
 
     assert 'komunit' in html
     assert 'ZDARMA' in html
@@ -146,8 +146,8 @@ def test_create_message_expires_soon_community(job_mock, template):
 def test_create_message_expires_soon_standard(job_mock, template):
     job_mock.expires_at = date(2020, 7, 1)
     job_mock.pricing_plan = 'standard'
-    message = create_message(job_mock, template, today=date(2020, 6, 26))
-    html = message.get()['content'][0]['value']
+    message = create_message(job_mock, template, date(2020, 6, 26))
+    html = message['html_content']
 
     assert '500&nbsp;Kč' in html
     assert 'paušál' not in html
@@ -158,8 +158,8 @@ def test_create_message_expires_soon_standard(job_mock, template):
 def test_create_message_expires_soon_annual_flat_rate(job_mock, template):
     job_mock.expires_at = date(2020, 7, 1)
     job_mock.pricing_plan = 'annual_flat_rate'
-    message = create_message(job_mock, template, today=date(2020, 6, 26))
-    html = message.get()['content'][0]['value']
+    message = create_message(job_mock, template, date(2020, 6, 26))
+    html = message['html_content']
 
     assert 'paušál' in html
     assert 'ZDARMA' in html
