@@ -34,7 +34,7 @@ The service account's email address needs to be manually invited wherever it sho
 1. Follow [MailChimp's own guide](https://mailchimp.com/help/about-api-keys/) on how to create an API key
 1. Set it as `MAILCHIMP_API_KEY` environment variable for both local devlopment and production
 
-## Setting up e-mail credentials
+## Setting up SMTP credentials
 
 1.  If using Gmail for sending e-mails, [create an app password](https://security.google.com/settings/security/apppasswords).
 1.  Set the following environment variables:
