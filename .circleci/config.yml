@@ -57,7 +57,7 @@ jobs:
               sudo apt-get install tor tor-geoipdb
               touch ./tor.log
               chmod 777 ./tor.log
-              echo "Log debug file $(pwd)/tor.log" >> ./tor.cfg
+              echo "Log info file $(pwd)/tor.log" >> ./tor.cfg
               sudo cp ./tor.cfg /etc/tor/torrc
               sudo service tor start
               pipenv run wait-tor
