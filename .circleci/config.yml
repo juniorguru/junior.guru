@@ -189,17 +189,17 @@ workflows:
       # - check-anchors: DEBUG
       #     requires:
       #       - build
-      - deploy:
-          # This makes sure retries of 'master' builds still deploy,
-          # even though they were not initiated by a GitHub push. Might
-          # cause double deploy for builds initiated by GitHub push, but
-          # the deploy job recognizes they're to be skipped.
-          filters:
-            branches:
-              only:
-                - master
-          requires:
-            - build
+      # - deploy: DEBUG
+      #     # This makes sure retries of 'master' builds still deploy,
+      #     # even though they were not initiated by a GitHub push. Might
+      #     # cause double deploy for builds initiated by GitHub push, but
+      #     # the deploy job recognizes they're to be skipped.
+      #     filters:
+      #       branches:
+      #         only:
+      #           - master
+      #     requires:
+      #       - build
 
   nightly:
     jobs:
