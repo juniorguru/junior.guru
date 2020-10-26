@@ -58,6 +58,7 @@ jobs:
               touch ./tor.log
               echo "Log notice file $(pwd)/tor.log" >> ./tor.cfg
               sudo cp ./tor.cfg /etc/tor/torrc
+              ls -al
               sudo service tor start
       - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
