@@ -13,16 +13,17 @@ jobs:
     executor: python-js
     steps:
       - checkout
-      - run:
-          name: Install fonts
-          command: |
-            echo "deb http://ftp.us.debian.org/debian buster main contrib" | sudo tee -a /etc/apt/sources.list
-            echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
-            sudo apt-get update
-            while ! sudo apt-get install ttf-mscorefonts-installer
-            do
-              echo "Fonts installation failed! Retrying..."
-            done
+      - run: sudo apt-get update
+      # - run:
+      #     name: Install fonts
+      #     command: |
+      #       echo "deb http://ftp.us.debian.org/debian buster main contrib" | sudo tee -a /etc/apt/sources.list
+      #       echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+      #       sudo apt-get update
+      #       while ! sudo apt-get install ttf-mscorefonts-installer
+      #       do
+      #         echo "Fonts installation failed! Retrying..."
+      #       done
       - run:
           name: Install tor
           command: sudo apt-get install tor tor-geoipdb
@@ -67,7 +68,7 @@ jobs:
       - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-{{ checksum ".today" }}
-      - run: dmesg | head -1
+      - run: cat /proc/version
       - run: which tor
       - run: |
           tor -f ./tor.cfg &
