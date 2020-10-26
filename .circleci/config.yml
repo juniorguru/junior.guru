@@ -69,6 +69,7 @@ jobs:
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-{{ checksum ".today" }}
       - run: cat /proc/version
+      - run: sudo apt-get install tor tor-geoipdb
       - run: which tor
       - run: |
           tor -f ./tor.cfg &
