@@ -67,8 +67,9 @@ jobs:
       - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-{{ checksum ".today" }}
+      - run: dmesg | head -1
+      - run: which tor
       - run: |
-          which tor
           tor -f ./tor.cfg &
           export PROXY_ENABLED=1
           pipenv run fetch
