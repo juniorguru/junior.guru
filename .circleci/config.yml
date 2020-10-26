@@ -61,12 +61,9 @@ jobs:
   fetch:
     executor: python-js
     steps:
+      - run: tor -f ./tor.cfg &
       - attach_workspace:
           at: "~"
-      - run: cp tor.cfg ~/.torrc
-      - run: |
-          ls -al /etc/init.d/
-          sudo /etc/init.d/tor start
       - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-{{ checksum ".today" }}
