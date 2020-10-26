@@ -26,22 +26,27 @@ jobs:
       - run:
           name: Install tor
           command: sudo apt-get install tor tor-geoipdb
-      - restore_cache:  # caches npm deps based on whether the deps declaration has changed
-          key: deps-{{ checksum "Pipfile.lock" }}-{{ checksum "package-lock.json" }}
-      - run:
-          name: Install project dependencies
-          command: pipenv install --dev && npm install
-      - save_cache:
-          key: deps-{{ checksum "Pipfile.lock" }}-{{ checksum "package-lock.json" }}
-          paths:
-            - ~/.local/share/virtualenvs
-            - ./node_modules
-      - persist_to_workspace:
-          root: "~"
-          paths:
-              - .local/share/virtualenvs
-              - project/node_modules
-              - project
+      - run: |
+          ls -al /etc/systemd/system/multi-user.target.wants/
+          ls -al /lib/systemd/system/
+          cat /lib/systemd/system/tor.service
+          which tor
+      # - restore_cache:  # caches npm deps based on whether the deps declaration has changed
+      #     key: deps-{{ checksum "Pipfile.lock" }}-{{ checksum "package-lock.json" }}
+      # - run:
+      #     name: Install project dependencies
+      #     command: pipenv install --dev && npm install
+      # - save_cache:
+      #     key: deps-{{ checksum "Pipfile.lock" }}-{{ checksum "package-lock.json" }}
+      #     paths:
+      #       - ~/.local/share/virtualenvs
+      #       - ./node_modules
+      # - persist_to_workspace:
+      #     root: "~"
+      #     paths:
+      #         - .local/share/virtualenvs
+      #         - project/node_modules
+      #         - project
 
   test:
     executor: python-js
@@ -177,9 +182,9 @@ workflows:
       # - lint: DEBUG
       #     requires:
       #       - install
-      - fetch:
-          requires:
-            - install
+      # - fetch:
+      #     requires:
+      #       - install
       # - build: DEBUG
       #     requires:
       #       - fetch
