@@ -17,14 +17,14 @@ class ProxyMiddleware(HttpProxyMiddleware):
     def process_request(self, request, spider):
         if is_proxied_request(spider):
             # TODO new_tor_identity()
-            log.debug(f'Sending proxied request to {request!r}')
+            log.warning(f'Sending proxied request to {request!r}')
             request.meta['proxy'] = 'http://127.0.0.1:8118'
 
     def process_response(self, request, response, spider):
         if response.status == 999:
             log.warning(f'Request {request!r} blocked!')
             if is_proxied_request(spider):
-                log.debug(f'Retrying {request!r} with different identity')
+                log.warning(f'Retrying {request!r} with different identity')
                 new_tor_identity()
                 return request
         return response
