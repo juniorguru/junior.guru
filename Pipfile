@@ -16,6 +16,7 @@ check-anchors = "python scripts/check_anchors.py"
 check-scrapers = "python scripts/check_scrapers.py"
 check-performance = "python scripts/check_performance.py"
 serve = "npx gulp serve"
+wait-tor = "python scripts/wait_tor.py"
 
 [packages]
 jinja2 = "*"
