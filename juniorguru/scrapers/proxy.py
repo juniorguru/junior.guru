@@ -27,13 +27,13 @@ class ProxyMiddleware(HttpProxyMiddleware):
                 log.warning(f'Retrying {request!r} with different identity')
                 new_tor_identity()
                 return request
+            else:
+                log.warning(f'Request {request!r} blocked but oh oh oh not proxied! ENABLE_PROXY={ENABLE_PROXY} spider.proxy={spider.proxy}')
         return response
 
 
 def is_proxied_request(spider):
-    if not ENABLE_PROXY:
-        return False
-    return getattr(spider, 'proxy', False)
+    return getattr(spider, 'proxy', False) if ENABLE_PROXY else False
 
 
 def new_tor_identity():
