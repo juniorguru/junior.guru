@@ -183,9 +183,9 @@ workflows:
       # - lint: DEBUG
       #     requires:
       #       - install
-      # - fetch:
-      #     requires:
-      #       - install
+      - fetch:
+          requires:
+            - install
       # - build: DEBUG
       #     requires:
       #       - fetch
