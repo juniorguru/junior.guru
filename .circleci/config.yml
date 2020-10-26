@@ -72,7 +72,8 @@ jobs:
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-{{ checksum ".today" }}
       - run: |
-          tor -f ./tor.cfg &
+          sudo systemctl start tor
+          sudo systemctl start status
           export PROXY_ENABLED=1
           pipenv run fetch
       - save_cache:
