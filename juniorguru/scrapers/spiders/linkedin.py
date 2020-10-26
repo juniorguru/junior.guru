@@ -11,6 +11,7 @@ from juniorguru.lib.url_params import increment_param, strip_params, get_param, 
 
 class Spider(BaseSpider):
     name = 'linkedin'
+    proxy = True
     custom_settings = {
         'USER_AGENT': ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:75.0) '
                        'Gecko/20100101 Firefox/75.0'),

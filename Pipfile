@@ -42,6 +42,7 @@ itemloaders = "*"
 fiobank = "*"
 emoji = "*"
 favicon = "*"
+stem = "*"
 
 [dev-packages]
 pytest = "*"

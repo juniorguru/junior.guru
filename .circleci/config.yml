@@ -24,8 +24,8 @@ jobs:
               echo "Fonts installation failed! Retrying..."
             done
       - run:
-          name: Install scraping dependencies
-          command: sudo apt-get install tor tor-geoipdb privoxy
+          name: Install tor
+          command: sudo apt-get install tor tor-geoipdb
       - restore_cache:  # caches npm deps based on whether the deps declaration has changed
           key: deps-{{ checksum "Pipfile.lock" }}-{{ checksum "package-lock.json" }}
       - run:
@@ -63,6 +63,8 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
+      - run: cp tor.cfg ~/.torrc
+      - run: sudo service tor start
       - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-{{ checksum ".today" }}

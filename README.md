@@ -55,14 +55,17 @@ Locally:
 ```
 $ brew install tor privoxy
 $ tor -f ./tor.cfg
-$ privoxy --no-daemon ./privoxy.cfg
 ```
 
 Server:
 
 ```
-$
+$ sudo apt-get install tor tor-geoipdb
+$ cp tor.cfg ~/.torrc
+$ sudo service tor start
 ```
+
+Then run `pipenv run fetch`. To turn this off, fetch with `NO_PROXY` set to something truthy.
 
 ## Logging
 
