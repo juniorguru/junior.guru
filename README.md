@@ -48,6 +48,22 @@ The service account's email address needs to be manually invited wherever it sho
 
 By default, sending is not enabled. On production or when trying to send e-mails from localhost an environment variable `SMTP_ENABLED` needs to be set to something truthy.
 
+## Setting up Tor scraping
+
+Locally:
+
+```
+$ brew install tor privoxy
+$ tor -f ./tor.cfg
+$ privoxy --no-daemon ./privoxy.cfg
+```
+
+Server:
+
+```
+$
+```
+
 ## Logging
 
 The environment variable `LOG_LEVEL` affects what gets filtered out. It's set to `info` by default.
