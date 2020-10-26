@@ -60,6 +60,7 @@ jobs:
               echo "Log debug file $(pwd)/tor.log" >> ./tor.cfg
               sudo cp ./tor.cfg /etc/tor/torrc
               sudo service tor start
+              sleep 10
       - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-{{ checksum ".today" }}
