@@ -19,10 +19,10 @@ def main():
             model.create_table()
 
     Pool().map(run_spider, [
-        'juniorguru',
+        # 'juniorguru', DEBUG
         'linkedin',
-        'stackoverflow',
-        'startupjobs',
+        # 'stackoverflow', DEBUG
+        # 'startupjobs', DEBUG
     ])
 
 

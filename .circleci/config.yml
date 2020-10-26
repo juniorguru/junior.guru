@@ -61,13 +61,13 @@ jobs:
   fetch:
     executor: python-js
     steps:
-      - run: tor -f ./tor.cfg &
       - attach_workspace:
           at: "~"
       - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-{{ checksum ".today" }}
       - run: |
+          tor -f ./tor.cfg &
           export PROXY_ENABLED=1
           pipenv run fetch
       - save_cache:
@@ -171,24 +171,24 @@ workflows:
   push:
     jobs:
       - install
-      - test:
-          requires:
-            - install
-      - lint:
-          requires:
-            - install
+      # - test: DEBUG
+      #     requires:
+      #       - install
+      # - lint: DEBUG
+      #     requires:
+      #       - install
       - fetch:
           requires:
             - install
-      - build:
-          requires:
-            - fetch
-      - check-scrapers:
-          requires:
-            - fetch
-      - check-anchors:
-          requires:
-            - build
+      # - build: DEBUG
+      #     requires:
+      #       - fetch
+      # - check-scrapers: DEBUG
+      #     requires:
+      #       - fetch
+      # - check-anchors: DEBUG
+      #     requires:
+      #       - build
       - deploy:
           # This makes sure retries of 'master' builds still deploy,
           # even though they were not initiated by a GitHub push. Might
