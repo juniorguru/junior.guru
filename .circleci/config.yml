@@ -55,6 +55,7 @@ jobs:
           command: |
               sudo apt-get update
               sudo apt-get install tor tor-geoipdb
+              touch ./tor.log
               echo "Log notice file $(pwd)/tor.log" >> ./tor.cfg
               sudo cp ./tor.cfg /etc/tor/torrc
               sudo service tor start

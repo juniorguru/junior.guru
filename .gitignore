@@ -95,3 +95,6 @@ public.tar.gz
 
 # Testing debug artifacts
 /tests/scrapers_pipelines/fixtures_company_logo/logo-converted.png
+
+# Tor
+tor.log
