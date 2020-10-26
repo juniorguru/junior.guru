@@ -26,11 +26,7 @@ jobs:
       - run:
           name: Install tor
           command: sudo apt-get install tor tor-geoipdb
-      - run: |
-          ls -al /etc/systemd/system/multi-user.target.wants/
-          ls -al /lib/systemd/system/
-          cat /lib/systemd/system/tor.service
-          which tor
+      - run: which tor
       # - restore_cache:  # caches npm deps based on whether the deps declaration has changed
       #     key: deps-{{ checksum "Pipfile.lock" }}-{{ checksum "package-lock.json" }}
       # - run:
@@ -72,8 +68,8 @@ jobs:
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-{{ checksum ".today" }}
       - run: |
-          sudo systemctl start tor
-          sudo systemctl start status
+          which tor
+          tor -f ./tor.cfg &
           export PROXY_ENABLED=1
           pipenv run fetch
       - save_cache:
