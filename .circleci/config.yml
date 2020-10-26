@@ -27,7 +27,6 @@ jobs:
       - run:
           name: Install tor
           command: sudo apt-get install tor tor-geoipdb
-      - run: which tor
       # - restore_cache:  # caches npm deps based on whether the deps declaration has changed
       #     key: deps-{{ checksum "Pipfile.lock" }}-{{ checksum "package-lock.json" }}
       # - run:
@@ -38,12 +37,12 @@ jobs:
       #     paths:
       #       - ~/.local/share/virtualenvs
       #       - ./node_modules
-      # - persist_to_workspace:
-      #     root: "~"
-      #     paths:
-      #         - .local/share/virtualenvs
-      #         - project/node_modules
-      #         - project
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - .local/share/virtualenvs
+              - project/node_modules
+              - project
 
   test:
     executor: python-js
@@ -68,8 +67,7 @@ jobs:
       - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-{{ checksum ".today" }}
-      - run: cat /proc/version
-      - run: sudo apt-get install tor tor-geoipdb
+      # - run: sudo apt-get install tor tor-geoipdb
       - run: which tor
       - run: |
           tor -f ./tor.cfg &
