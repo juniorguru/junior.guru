@@ -55,7 +55,7 @@ jobs:
           command: |
               sudo apt-get update
               sudo apt-get install tor tor-geoipdb
-              cp ./tor.cfg ~/.torrc
+              sudo cp ./tor.cfg /etc/tor/torrc
               sudo service tor start
       - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
