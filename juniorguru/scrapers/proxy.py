@@ -7,7 +7,7 @@ from scrapy.downloadermiddlewares.httpproxy import HttpProxyMiddleware
 from juniorguru.lib.log import get_log
 
 
-NO_PROXY = bool(os.getenv('NO_PROXY', os.getenv('no_proxy', False)))
+ENABLE_PROXY = bool(os.getenv('ENABLE_PROXY', False))
 
 
 log = get_log(__name__)
@@ -16,7 +16,7 @@ log = get_log(__name__)
 class ProxyMiddleware(HttpProxyMiddleware):
     def process_request(self, request, spider):
         if is_proxied_request(spider):
-            # new_tor_identity()
+            # TODO new_tor_identity()
             log.debug(f'Sending proxied request to {request!r}')
             request.meta['proxy'] = 'http://127.0.0.1:8118'
 
@@ -31,12 +31,12 @@ class ProxyMiddleware(HttpProxyMiddleware):
 
 
 def is_proxied_request(spider):
-    if NO_PROXY:
+    if not ENABLE_PROXY:
         return False
     return getattr(spider, 'proxy', False)
 
 
 def new_tor_identity():
     with Controller.from_port(port=9051) as controller:
-        # controller.authenticate(password='PASSWORDHERE')
+        # TODO controller.authenticate(password='PASSWORDHERE')
         controller.signal(Signal.NEWNYM)

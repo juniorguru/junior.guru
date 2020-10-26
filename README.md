@@ -50,22 +50,10 @@ By default, sending is not enabled. On production or when trying to send e-mails
 
 ## Setting up Tor scraping
 
-Locally:
-
-```
-$ brew install tor privoxy
-$ tor -f ./tor.cfg
-```
-
-Server:
-
-```
-$ sudo apt-get install tor tor-geoipdb
-$ cp tor.cfg ~/.torrc
-$ sudo service tor start
-```
-
-Then run `pipenv run fetch`. To turn this off, fetch with `NO_PROXY` set to something truthy.
+1. `export ENABLE_PROXY=1`
+1. `brew install tor` or `sudo apt-get install tor tor-geoipdb`
+1. `tor -f ./tor.cfg` or `tor -f ./tor.cfg &` (background process)
+1. `pipenv run fetch`
 
 ## Logging
 
