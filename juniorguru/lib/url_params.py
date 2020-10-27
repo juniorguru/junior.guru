@@ -1,3 +1,4 @@
+import re
 from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
 
 
@@ -35,10 +36,16 @@ def increment_param(url, param_name, inc=1):
     return urlunparse(parts._replace(query=query))
 
 
-def replace_in_params(url, s, repl):
+def replace_in_params(url, s, repl, case_insensitive=False):
     parts = urlparse(url)
     params = parse_qs(parts.query)
-    params = {param_name: [value.replace(s, repl) for value in values]
+
+    if case_insensitive:
+        replace = lambda value: re.sub(re.escape(s), repl, value, flags=re.I)
+    else:
+        replace = lambda value: value.replace(s, repl)
+
+    params = {param_name: [replace(value) for value in values]
               for param_name, values in params.items()}
     query = urlencode(params, doseq=True)
     return urlunparse(parts._replace(query=query))

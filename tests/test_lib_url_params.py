@@ -59,3 +59,13 @@ def test_get_param():
 ])
 def test_replace_in_params(url, s, repl, expected):
     assert url_params.replace_in_params(url, s, repl) == expected
+
+
+@pytest.mark.parametrize('url,case_insensitive,expected', [
+    ('https://alice.example.com?foo=bar&moo=Alice', False, 'https://alice.example.com?foo=bar&moo=Alice'),
+    ('https://alice.example.com?foo=bar&moo=ALICE', False, 'https://alice.example.com?foo=bar&moo=ALICE'),
+    ('https://alice.example.com?foo=bar&moo=Alice', True, 'https://alice.example.com?foo=bar&moo=bob'),
+    ('https://alice.example.com?foo=bar&moo=ALICE', True, 'https://alice.example.com?foo=bar&moo=bob'),
+])
+def test_replace_in_params_case_insensitive(url, case_insensitive, expected):
+    assert url_params.replace_in_params(url, 'alice', 'bob', case_insensitive=case_insensitive) == expected

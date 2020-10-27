@@ -65,7 +65,8 @@ def parse_proxied_url(url):
     if proxied_url:
         param_names = ['utm_source', 'utm_medium', 'utm_campaign']
         proxied_url = strip_params(proxied_url, param_names)
-        return replace_in_params(proxied_url, 'linkedin', 'juniorguru')
+        return replace_in_params(proxied_url, 'linkedin', 'juniorguru',
+                                 case_insensitive=True)
     return url
 
 

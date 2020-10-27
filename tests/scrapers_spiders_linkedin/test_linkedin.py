@@ -100,7 +100,7 @@ def test_spider_parse_job_apply_on_company_website():
 def test_parse_proxied_url():
     url = (
         'https://cz.linkedin.com/jobs/view/externalApply/2006390996'
-        '?url=https%3A%2F%2Fjobs%2Egecareers%2Ecom%2Fglobal%2Fen%2Fjob%2FGE11GLOBAL32262%2FEngineering-Trainee%3Futm_source%3Dlinkedin%26codes%3Dlinkedin%26utm_medium%3Dphenom-feeds'
+        '?url=https%3A%2F%2Fjobs%2Egecareers%2Ecom%2Fglobal%2Fen%2Fjob%2FGE11GLOBAL32262%2FEngineering-Trainee%3Futm_source%3Dlinkedin%26codes%3DLinkedIn%26utm_medium%3Dphenom-feeds'
         '&urlHash=AAbh&refId=94017428-1cc1-48ad-bda2-d9ddabeb1c55&trk=public_jobs_apply-link-offsite'
     )
 
