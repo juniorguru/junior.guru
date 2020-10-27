@@ -19,8 +19,8 @@ def main():
             model.create_table()
 
     Pool().map(run_spider, [
+        # 'linkedin',
         'juniorguru',
-        'linkedin',
         'stackoverflow',
         'startupjobs',
         'remoteok',
