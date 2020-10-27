@@ -19,7 +19,7 @@ class Pipeline(ImagesPipeline):
         self.images_dir = store_uri
         super().__init__(store_uri, *args, **kwargs)
 
-    def image_downloaded(self, response, request, info):
+    def image_downloaded(self, response, request, info, item=None):
         path = self.file_path(request, response=response, info=info)
 
         try:
@@ -65,6 +65,6 @@ class Pipeline(ImagesPipeline):
         image.save(buffer, 'PNG')
         return image, buffer
 
-    def file_path(self, request, **kwargs):
+    def file_path(self, request, response=None, info=None, item=None):
         image_guid = hashlib.sha1(to_bytes(request.url)).hexdigest()
         return f'company-logos/{image_guid}.png'
