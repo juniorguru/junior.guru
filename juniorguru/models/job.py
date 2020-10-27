@@ -230,8 +230,16 @@ class JobDropped(BaseModel):
     item = JSONField()
 
     @classmethod
-    def admin_listing(cls):
-        return cls.select().order_by(cls.type, cls.reason)
+    def admin_listing(cls, types=None):
+        jobs = cls.select()
+        if types:
+            jobs = jobs.where(cls.type.in_(types))
+        return sorted(jobs, key=lambda job: (
+            job.type,
+            'junior' not in job.item.get('title', '').lower(),
+            -1 * job.item.get('junior_rank', -1000),
+            job.reason,
+        ))
 
     @classmethod
     def rejected_count(cls):

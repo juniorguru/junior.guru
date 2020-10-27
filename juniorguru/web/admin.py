@@ -20,10 +20,9 @@ def models_to_dicts(objects):
 
 
 def models_to_dicts_with_metrics(objects):
-    return [
-        dict(metrics=obj.metrics, **model_to_dict(obj))
-        for obj in objects
-    ]
+    return [dict(metrics=obj.metrics,
+                 location=obj.location,
+                 **model_to_dict(obj)) for obj in objects]
 
 
 @app.route('/a/')
@@ -47,14 +46,43 @@ def admin_jobs():
     return render_template('admin_jobs.html', jobs=jobs)
 
 
-@app.route('/a/jobs-dropped/')
+@app.route('/a/jobs/dropped/')
 def admin_jobs_dropped():
     with db:
-        jobs_dropped = models_to_dicts(JobDropped.admin_listing())
-    return render_template('admin_jobs_dropped.html', jobs_dropped=jobs_dropped)
+        jobs_dropped = JobDropped.admin_listing(['NotEntryLevel'])
+    return render_template('admin_jobs_dropped.html',
+                           title='Nejuniorní zahozené nabídky',
+                           jobs_dropped=models_to_dicts(jobs_dropped))
 
 
-@app.route('/a/jobs-errors/')
+@app.route('/a/jobs/dropped/unexpected/')
+def admin_jobs_dropped_unexpected():
+    with db:
+        jobs_dropped = JobDropped.admin_listing(['MissingRequiredFields', 'ShortDescription'])
+    return render_template('admin_jobs_dropped.html',
+                           title='Podezřele zahozené nabídky',
+                           jobs_dropped=models_to_dicts(jobs_dropped))
+
+
+@app.route('/a/jobs/dropped/expected/')
+def admin_jobs_dropped_expected():
+    with db:
+        jobs_dropped = JobDropped.admin_listing(['Expired', 'NotApproved'])
+    return render_template('admin_jobs_dropped.html',
+                           title='Vědomě zahozené nabídky',
+                           jobs_dropped=models_to_dicts(jobs_dropped))
+
+
+@app.route('/a/jobs/dropped/all/')
+def admin_jobs_dropped_all():
+    with db:
+        jobs_dropped = JobDropped.admin_listing()
+    return render_template('admin_jobs_dropped.html',
+                           title='Všechny zahozené nabídky',
+                           jobs_dropped=models_to_dicts(jobs_dropped))
+
+
+@app.route('/a/jobs/errors/')
 def admin_jobs_errors():
     with db:
         spider_metrics = SpiderMetric.as_dict()
