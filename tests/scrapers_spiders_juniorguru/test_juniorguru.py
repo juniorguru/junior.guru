@@ -93,11 +93,3 @@ def test_coerce_record():
         'approved_at': date(2019, 10, 10),
         'expires_at': date(2019, 12, 12),
     }
-
-
-@pytest.mark.parametrize('value,expected', [
-    (None, None),
-    (' **Foo Ltd.**   ', '<p><strong>Foo Ltd.</strong></p>'),
-])
-def test_parse_markdown(value, expected):
-    assert juniorguru.parse_markdown(value) == expected

@@ -49,3 +49,11 @@ def test_parse_relative_date_raises_on_uncrecognized_value():
 ])
 def test_first(iterable, expected):
     assert items.first(iterable) == expected
+
+
+@pytest.mark.parametrize('value,expected', [
+    (None, None),
+    (' **Foo Ltd.**   ', '<p><strong>Foo Ltd.</strong></p>'),
+])
+def test_parse_markdown(value, expected):
+    assert items.parse_markdown(value) == expected

@@ -4,6 +4,8 @@ from datetime import date, timedelta
 import arrow
 from scrapy import Field, Item
 
+from juniorguru.lib.md import md
+
 
 class Job(Item):
     # set by spiders
@@ -50,6 +52,11 @@ def absolute_url(url, loader_context):
 
 def parse_iso_date(value):
     return arrow.get(value).date()
+
+
+def parse_markdown(value):
+    if value:
+        return md(value.strip())
 
 
 def split(string, by=','):

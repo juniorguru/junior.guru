@@ -5,10 +5,9 @@ from urllib.parse import urlparse
 from scrapy import Spider as BaseSpider
 
 from juniorguru.lib import google_sheets
-from juniorguru.lib.md import md
 from juniorguru.lib.coerce import (coerce, parse_datetime, parse_text,
     parse_date, parse_set, parse_boolean_words)
-from juniorguru.scrapers.items import JuniorGuruJob
+from juniorguru.scrapers.items import JuniorGuruJob, parse_markdown
 from juniorguru.scrapers.settings import JUNIORGURU_ITEM_PIPELINES
 
 
@@ -62,11 +61,6 @@ def split_multiple_locations(data):
             yield {**data, 'location_raw': sub_location.strip()}
     else:
         yield data
-
-
-def parse_markdown(value):
-    if value:
-        return md(value.strip())
 
 
 def parse_pricing_plan(value):

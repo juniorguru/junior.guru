@@ -2,7 +2,7 @@ from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Identity, MapCompose, TakeFirst
 
-from juniorguru.scrapers.items import Job, absolute_url, parse_iso_date
+from juniorguru.scrapers.items import Job, absolute_url, parse_iso_date, parse_markdown
 
 
 class Spider(BaseSpider):
@@ -28,7 +28,7 @@ class Spider(BaseSpider):
         loader.add_value('remote_region_raw', json_data['location'])
         loader.add_value('remote', True)
         loader.add_value('posted_at', json_data['date'])
-        loader.add_css('description_html', '*[itemprop="description"]')
+        loader.add_css('description_html', '*[itemprop="description"] .markdown')
         loader.add_value('company_logo_urls', json_data['company_logo'] or None)
         yield loader.load_item()
 
@@ -38,5 +38,6 @@ class Loader(ItemLoader):
     default_output_processor = TakeFirst()
     company_link_in = MapCompose(absolute_url)
     posted_at_in = MapCompose(parse_iso_date)
+    description_html_in = MapCompose(parse_markdown)
     company_logo_urls_out = Identity()
     remote_in = MapCompose(bool)
