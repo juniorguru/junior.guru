@@ -23,6 +23,7 @@ def main():
         'linkedin',
         'stackoverflow',
         'startupjobs',
+        'remoteok',
     ])
 
 
