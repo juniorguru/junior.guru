@@ -8,7 +8,7 @@ from juniorguru.scrapers.items import Job, absolute_url, parse_iso_date
 class Spider(BaseSpider):
     name = 'remoteok'
     start_urls = [
-        'https://remoteok.io/api'
+        'https://remoteok.io/remote-dev-jobs.json',
     ]
 
     def parse(self, response):
