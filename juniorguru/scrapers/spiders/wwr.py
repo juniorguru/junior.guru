@@ -23,6 +23,8 @@ class Spider(BaseSpider):
         loader.add_css('company_name', '.company-card h2 a::text')
         loader.add_css('company_link', '.company-card a::attr(href)')
         loader.add_css('location_raw', '.company-card h2 ~ h3::text')
+        # loader.add_value('employment_types', ...) TODO
+        # loader.add_value('remote_region_raw', ...) TODO
         loader.add_value('remote', True)
         loader.add_css('posted_at', '.content time::attr(datetime)')
         loader.add_css('description_html', '#job-listing-show-container')

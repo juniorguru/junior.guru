@@ -32,6 +32,7 @@ class Job(Item):
     sort_rank_components = Field()
     location_place = Field()
     region = Field()
+    remote_region_raw = Field()
 
 
 class JuniorGuruJob(Job):

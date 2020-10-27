@@ -25,7 +25,7 @@ class Spider(BaseSpider):
         loader.add_value('link', response.url)
         loader.add_value('company_name', json_data['company'])
         loader.add_css('company_link', '*[itemprop="hiringOrganization"]::attr(href)')
-        # loader.add_value('location_raw', json_data['location'])
+        loader.add_value('remote_region_raw', json_data['location'])
         loader.add_value('remote', True)
         loader.add_value('posted_at', json_data['date'])
         loader.add_css('description_html', '*[itemprop="description"]')
