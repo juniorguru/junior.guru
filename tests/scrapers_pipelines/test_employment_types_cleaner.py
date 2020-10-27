@@ -36,3 +36,11 @@ def test_employment_types_cleaner(item, spider, employment_types, expected):
     item = Pipeline().process_item(item, spider)
 
     assert sorted(item['employment_types']) == sorted(expected)
+
+
+def test_employment_types_cleaner_no_employment_types(item, spider):
+    if 'employment_types' in item:
+        del item['employment_types']
+    item = Pipeline().process_item(item, spider)
+
+    assert 'employment_types' not in item

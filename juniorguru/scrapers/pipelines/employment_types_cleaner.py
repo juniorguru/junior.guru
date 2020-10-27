@@ -12,9 +12,10 @@ class Pipeline():
     }
 
     def process_item(self, item, spider):
-        types = (self.clean_re.sub('_', t.upper())
-                 for t in item['employment_types'])
-        types = (self.types_mapping.get(t, t) for t in types)
-        types = (t for t in types if t in EMPLOYMENT_TYPES)
-        item['employment_types'] = list(set(types))
+        if item.get('employment_types'):
+            types = (self.clean_re.sub('_', t.upper())
+                    for t in item['employment_types'])
+            types = (self.types_mapping.get(t, t) for t in types)
+            types = (t for t in types if t in EMPLOYMENT_TYPES)
+            item['employment_types'] = list(set(types))
         return item
