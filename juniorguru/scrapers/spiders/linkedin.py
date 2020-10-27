@@ -5,7 +5,7 @@ from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
-from juniorguru.scrapers.items import Job, first, parse_relative_time, split
+from juniorguru.scrapers.items import Job, first, parse_relative_date, split
 from juniorguru.lib.url_params import increment_param, strip_params, get_param, replace_in_params
 
 
@@ -74,7 +74,7 @@ class Loader(ItemLoader):
     link_in = Compose(first, parse_proxied_url)
     employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()
-    posted_at_in = Compose(first, parse_relative_time)
+    posted_at_in = Compose(first, parse_relative_date)
     experience_levels_in = MapCompose(str.lower, split)
     experience_levels_out = Identity()
     company_logo_urls_out = Identity()

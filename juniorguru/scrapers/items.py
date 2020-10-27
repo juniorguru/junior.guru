@@ -1,6 +1,7 @@
 import re
 from datetime import date, timedelta
 
+import arrow
 from scrapy import Field, Item
 
 
@@ -46,6 +47,10 @@ def absolute_url(url, loader_context):
     return loader_context['response'].urljoin(url)
 
 
+def parse_iso_date(value):
+    return arrow.get(value).date()
+
+
 def split(string, by=','):
     if string:
         return list(filter(None, map(str.strip, string.split(by))))
@@ -59,7 +64,7 @@ def first(iterable):
     return None
 
 
-def parse_relative_time(text, today=None):
+def parse_relative_date(text, today=None):
     today = today or date.today()
     if 'week' in text or 'týdn' in text:
         weeks_ago = int(re.search(r'\d+', text).group(0))

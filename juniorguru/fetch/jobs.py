@@ -24,6 +24,7 @@ def main():
         'stackoverflow',
         'startupjobs',
         'remoteok',
+        'wwr',
     ])
 
 

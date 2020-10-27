@@ -1,9 +1,8 @@
-import arrow
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Identity, MapCompose, TakeFirst
 
-from juniorguru.scrapers.items import Job, absolute_url
+from juniorguru.scrapers.items import Job, absolute_url, parse_iso_date
 
 
 class Spider(BaseSpider):
@@ -31,10 +30,6 @@ class Spider(BaseSpider):
         loader.add_css('description_html', '*[itemprop="description"]')
         loader.add_value('company_logo_urls', json_data['company_logo'] or None)
         yield loader.load_item()
-
-
-def parse_iso_date(value):
-    return arrow.get(value).date()
 
 
 class Loader(ItemLoader):

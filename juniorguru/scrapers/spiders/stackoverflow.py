@@ -5,7 +5,7 @@ from scrapy.loader import ItemLoader
 from itemloaders.processors import Identity, MapCompose, TakeFirst
 
 from juniorguru.scrapers.items import (Job, absolute_url,
-                                       parse_relative_time, split)
+                                       parse_relative_date, split)
 
 
 class Spider(BaseSpider):
@@ -49,7 +49,7 @@ class Loader(ItemLoader):
     company_link_in = MapCompose(absolute_url)
     employment_types_out = Identity()
     location_raw_in = MapCompose(clean_location)
-    posted_at_in = MapCompose(parse_relative_time)
+    posted_at_in = MapCompose(parse_relative_date)
     experience_levels_in = MapCompose(str.lower, split)
     experience_levels_out = Identity()
     company_logo_urls_out = Identity()

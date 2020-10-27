@@ -32,13 +32,13 @@ def test_split_by():
     ('1 month ago', date(2020, 3, 21)),
     ('2 months ago', date(2020, 2, 20)),
 ])
-def test_parse_relative_time(time, expected):
-    assert items.parse_relative_time(time, today=date(2020, 4, 20)) == expected
+def test_parse_relative_date(time, expected):
+    assert items.parse_relative_date(time, today=date(2020, 4, 20)) == expected
 
 
-def test_parse_relative_time_raises_on_uncrecognized_value():
+def test_parse_relative_date_raises_on_uncrecognized_value():
     with pytest.raises(ValueError):
-        items.parse_relative_time('gargamel')
+        items.parse_relative_date('gargamel')
 
 
 @pytest.mark.parametrize('iterable,expected', [

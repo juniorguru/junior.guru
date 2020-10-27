@@ -1,11 +1,10 @@
 import html
 
-import arrow
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
-from juniorguru.scrapers.items import Job
+from juniorguru.scrapers.items import Job, parse_iso_date
 
 
 class Spider(BaseSpider):
@@ -35,10 +34,6 @@ class Spider(BaseSpider):
 
 def drop_remote(types):
     return [type_ for type_ in types if type_.lower() != 'remote']
-
-
-def parse_iso_date(value):
-    return arrow.get(value).date()
 
 
 class Loader(ItemLoader):
