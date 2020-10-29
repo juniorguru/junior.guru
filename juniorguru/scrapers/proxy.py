@@ -75,18 +75,19 @@ class ScrapingProxyMiddleware():
         if not getattr(spider, 'proxy'):
             return
         proxy = self.get_proxy()
-        log.debug(f'Proxying {request!r} via {proxy}')
-        request.meta['proxy'] = proxy
+        if proxy:
+            log.debug(f'Proxying {request!r} via {proxy}')
+            request.meta['proxy'] = proxy
 
     def process_exception(self, request, exception, spider):
-        if not getattr(spider, 'proxy'):
+        if not getattr(spider, 'proxy') or not request.meta.get('proxy'):
             return
         log.debug(f'Got proxy exception {exception!r} for {request!r}')
         if isinstance(exception, TunnelError):
             return self.rotate_proxies(request)
 
     def process_response(self, request, response, spider):
-        if not getattr(spider, 'proxy'):
+        if not getattr(spider, 'proxy') or not request.meta.get('proxy'):
             return response
         if response.status in [999, 504]:
             log.info(f"Got status {response.status} for {request!r} proxied via {request.meta.get('proxy', 'no proxy')}")
