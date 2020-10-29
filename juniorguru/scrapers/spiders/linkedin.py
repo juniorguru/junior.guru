@@ -11,6 +11,8 @@ from juniorguru.lib.url_params import increment_param, strip_params, get_param, 
 
 class Spider(BaseSpider):
     name = 'linkedin'
+    proxy = True
+    download_timeout = 40
     custom_settings = {
         'DEFAULT_REQUEST_HEADERS': {
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',

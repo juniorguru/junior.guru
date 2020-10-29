@@ -51,7 +51,8 @@ ROBOTSTXT_OBEY = True
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'juniorguru.scrapers.monitoring.BackupResponseMiddleware': 543,
+   'juniorguru.scrapers.monitoring.BackupResponseMiddleware': 530,
+   'juniorguru.scrapers.proxy.ScrapingProxyMiddleware': 540,
 }
 
 # Enable or disable extensions
