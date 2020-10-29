@@ -56,7 +56,7 @@ class ScrapingProxyMiddleware():
             raise ValueError('No proxies')
 
     def get_proxy(self):
-        return random.choice(self.proxies[:3])
+        return random.choice(self.proxies[:3]) if self.proxies else None
 
     def rotate_proxies(self, request):
         log.warning('Rotating proxies')
@@ -65,33 +65,31 @@ class ScrapingProxyMiddleware():
             self.proxies.remove(request.meta.get('proxy'))
         except ValueError:
             pass
-        if not self.proxies:
-            log.warning('No proxies left, continuing without proxy')
-            return request.replace(meta=meta,
-                                   dont_filter=True)
-        return request.replace(meta={'proxy': self.get_proxy(), **meta},
-                               dont_filter=True)
+        proxy = self.get_proxy()
+        if proxy:
+            return request.replace(meta={'proxy': proxy, **meta}, dont_filter=True)
+        log.warning('No proxies left, continuing without proxy')
+        return request.replace(meta=meta, dont_filter=True)
 
     def process_request(self, request, spider):
-        if not getattr(spider, 'proxy', False):
+        if not getattr(spider, 'proxy'):
             return
         proxy = self.get_proxy()
         log.debug(f'Proxying {request!r} via {proxy}')
         request.meta['proxy'] = proxy
 
     def process_exception(self, request, exception, spider):
-        if not getattr(spider, 'proxy', False):
+        if not getattr(spider, 'proxy'):
             return
         log.debug(f'Got proxy exception {exception!r} for {request!r}')
         if isinstance(exception, TunnelError):
             return self.rotate_proxies(request)
 
     def process_response(self, request, response, spider):
-        if not getattr(spider, 'proxy', False):
+        if not getattr(spider, 'proxy'):
             return response
         if response.status in [999, 504]:
             log.info(f'Got status {response.status} for {request!r}')
             return self.rotate_proxies(request)
-
         log.debug(f'Got proxied response {response!r} for {request!r}')
         return response
