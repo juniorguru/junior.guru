@@ -42,6 +42,8 @@ itemloaders = "*"
 fiobank = "*"
 emoji = "*"
 favicon = "*"
+feedparser = "*"
+extruct = "*"
 
 [dev-packages]
 pytest = "*"
