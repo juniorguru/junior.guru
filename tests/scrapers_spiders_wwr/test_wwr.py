@@ -53,3 +53,11 @@ def test_spider_parse_job():
     assert job['posted_at'] == date(2020, 10, 20)
     assert job['company_logo_urls'] == ['https://we-work-remotely.imgix.net/logos/0017/2301/logo.gif?ixlib=rails-4.0.0&w=50&h=50&dpr=2&fit=fill&auto=compress']
     assert '<li>Kubernetes Certificates</li>' in job['description_html']
+
+
+def test_spider_parse_job_no_image():
+    response = HtmlResponse('https://example.com/example/',
+                            body=Path(FIXTURES_DIR / 'job_no_image.html').read_bytes())
+    job = next(wwr.Spider().parse_job(response, {}))
+
+    assert job.get('company_logo_urls') is None

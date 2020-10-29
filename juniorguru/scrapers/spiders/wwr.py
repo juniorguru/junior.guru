@@ -42,7 +42,7 @@ class Spider(BaseSpider):
         loader.add_value('title', data['title'])
         loader.add_value('posted_at', data['datePosted'])
         loader.add_value('description_html', html.unescape(data['description']))
-        loader.add_value('company_logo_urls', data['image'])
+        loader.add_value('company_logo_urls', data.get('image'))
         loader.add_value('employment_types', [data['employmentType']])
         loader.add_value('company_name', data['hiringOrganization']['name'])
         loader.add_value('company_link', data['hiringOrganization']['sameAs'])

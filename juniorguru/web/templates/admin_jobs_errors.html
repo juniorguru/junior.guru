@@ -22,7 +22,7 @@
   {% for job_error in jobs_errors %}
     <hr>
     <h2 id="{{ job_error.id }}">
-      [{{ job_error.spider }} {{ job_error.signal }}] {{ job_error.message }}
+      [{{ job_error.source }} {{ job_error.signal }}] {{ job_error.message }}
     </h2>
     <p>
       <small>
