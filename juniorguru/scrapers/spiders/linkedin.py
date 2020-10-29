@@ -21,6 +21,7 @@ class Spider(BaseSpider):
         'USER_AGENT': ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:75.0) '
                        'Gecko/20100101 Firefox/75.0'),
         'ROBOTSTXT_OBEY': False,
+        'DOWNLOAD_DELAY': 1,
     }
 
     search_terms = [
