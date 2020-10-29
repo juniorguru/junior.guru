@@ -69,7 +69,7 @@ class ScrapingProxyMiddleware():
         if proxy:
             return request.replace(meta={'proxy': proxy, **meta}, dont_filter=True)
         log.warning('No proxies left, continuing without proxy')
-        return request.replace(meta=meta, dont_filter=True)
+        return request.replace(meta=meta)
 
     def process_request(self, request, spider):
         if not getattr(spider, 'proxy'):
