@@ -12,25 +12,35 @@ from juniorguru.lib.url_params import increment_param, strip_params, get_param, 
 class Spider(BaseSpider):
     name = 'linkedin'
     custom_settings = {
+        'DEFAULT_REQUEST_HEADERS': {
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'cs,en',
+        },
         'USER_AGENT': ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:75.0) '
                        'Gecko/20100101 Firefox/75.0'),
         'ROBOTSTXT_OBEY': False,
     }
-    search_params = {
-        'keywords': 'Software Engineer',
-        'location': 'Czech Republic',
-        'f_E': '1,2',  # entry level, internship
-        'f_TP': '1,2,3,4',  # past month
-        'redirect': 'false',  # ?
-        'position': '1',  # the job ad position to display as open
-        'pageNum': '0',  # pagination - page number
-        'start': '0',  # pagination - offset
-    }
-    start_urls = [
-        ('https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/'
-         f'search?{urlencode(search_params)}')
+
+    search_terms = [
+        'Software Engineer',
     ]
     results_per_request = 25
+
+    def start_requests(self):
+        base_url = 'https://cz.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?'
+        search_params = {
+            'location': 'Czechia',
+            'f_E': '1,2',  # entry level, internship
+            'f_TP': '1,2,3,4',  # past month
+            'redirect': 'false',  # ?
+            'position': '1',  # the job ad position to display as open
+            'pageNum': '0',  # pagination - page number
+            'start': '0',  # pagination - offset
+        }
+        return (Request(f"{base_url}{urlencode({'keywords': term, **search_params})}",
+                        dont_filter=True,
+                        headers={'Accept-Language': 'cs;q=0.8,en;q=0.6'})
+                for term in self.search_terms)
 
     def parse(self, response):
         links = response.css('a[href*="linkedin.com/jobs/view/"]::attr(href)').getall()
