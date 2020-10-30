@@ -96,7 +96,7 @@ class ScrapingProxyMiddleware():
             return
         proxy = self.get_proxy()
         if proxy:
-            log.debug(f'Proxying {request!r} via {proxy}')
+            log.debug(f"Proxying {request!r} via {proxy} ({request.headers.get('User-Agent')})")
             request.meta['proxy'] = proxy
 
     def process_exception(self, request, exception, spider):
@@ -110,7 +110,7 @@ class ScrapingProxyMiddleware():
         if not getattr(spider, 'proxy', False) or not request.meta.get('proxy'):
             return response
         if response.status in [999, 504]:
-            log.info(f"Got {response!r} proxied via {request.meta.get('proxy', 'no proxy')}")
+            log.info(f"Got {response!r} proxied via {request.meta['proxy']} ({request.headers.get('User-Agent')})")
             return self.rotate_proxies(request)
         log.debug(f'Got proxied response {response!r}')
         return response
