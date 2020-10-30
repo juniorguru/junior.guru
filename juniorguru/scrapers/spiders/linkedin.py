@@ -55,17 +55,16 @@ class Spider(BaseSpider):
 
     def parse_job(self, response):
         loader = Loader(item=Job(), response=response)
-        loader.add_css('title', 'h1::text')
+        loader.add_css('title', 'h2::text')
         loader.add_css('link', '.apply-button::attr(href)')
-        loader.add_value('link', response.url)
-        loader.add_css('company_name', 'h1 ~ h3 a::text')
-        loader.add_css('company_name', 'h1 ~ h3 span::text')
-        loader.add_css('company_link', 'h1 ~ h3 a::attr(href)')
-        loader.add_css('location_raw', 'h1 ~ h3 > span:nth-of-type(2)::text')
+        loader.add_css('link', '.topcard__content-left > a::attr(href)')
+        loader.add_css('company_name', '.topcard__org-name-link::text')
+        loader.add_css('company_link', '.topcard__org-name-link::attr(href)')
+        loader.add_css('location_raw', '.topcard__content-left > h3 > span:nth-of-type(2)::text')
         loader.add_value('remote', False)
         loader.add_xpath('employment_types', "//h3[contains(., 'Employment type')]/following-sibling::span/text()")
         loader.add_xpath('experience_levels', "//h3[contains(., 'Seniority level')]/following-sibling::span/text()")
-        loader.add_css('posted_at', 'h1 ~ h3:nth-of-type(2) span::text')
+        loader.add_css('posted_at', '.topcard__content-left > h3:nth-of-type(2) span::text')
         loader.add_css('description_html', '.description__text')
         loader.add_css('company_logo_urls', 'img.company-logo::attr(src)')
         loader.add_css('company_logo_urls', 'img.company-logo::attr(data-delayed-url)')
@@ -78,7 +77,7 @@ def get_job_id(url):
     return re.search(r'-(\d+)$', urlparse(url).path).group(1)
 
 
-def parse_proxied_url(url):
+def clean_proxied_url(url):
     proxied_url = get_param(url, 'url')
     if proxied_url:
         param_names = ['utm_source', 'utm_medium', 'utm_campaign']
@@ -88,9 +87,16 @@ def parse_proxied_url(url):
     return url
 
 
+def clean_url(url):
+    if url and 'linkedin.com' in url:
+        return strip_params(url, ['refId', 'trk'])
+    return url
+
+
 class Loader(ItemLoader):
     default_output_processor = TakeFirst()
-    link_in = Compose(first, parse_proxied_url)
+    link_in = Compose(first, clean_proxied_url, clean_url)
+    company_link_in = Compose(first, clean_url)
     employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()
     posted_at_in = Compose(first, parse_relative_date)
