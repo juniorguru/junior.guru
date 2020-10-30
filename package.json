@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "instant.page": "3.0.0",
-    "rough-notation": "0.4.0"
+    "rough-notation": "0.5.1"
   },
   "devDependencies": {
     "broken-link-checker-local": "0.2.1",
