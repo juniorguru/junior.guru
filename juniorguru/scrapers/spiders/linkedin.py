@@ -19,8 +19,6 @@ class Spider(BaseSpider):
         'COOKIES_ENABLED': False,
         'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
         'CONCURRENT_REQUESTS_PER_IP': 1,
-        'AUTOTHROTTLE_START_DELAY': 5,
-        'AUTOTHROTTLE_MAX_DELAY': 15,
     }
 
     search_terms = [
