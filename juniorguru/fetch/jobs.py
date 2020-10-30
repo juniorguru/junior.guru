@@ -20,11 +20,12 @@ def main():
 
     Pool().map(run_spider, [
         'linkedin',
-        'juniorguru',
-        'stackoverflow',
-        'startupjobs',
-        'remoteok',
-        'wwr',
+        # TODO temporarily disable to debug linkedin
+        # 'juniorguru',
+        # 'stackoverflow',
+        # 'startupjobs',
+        # 'remoteok',
+        # 'wwr',
     ])
 
 
