@@ -1,4 +1,5 @@
-from urllib.parse import urlencode
+import re
+from urllib.parse import urlencode, urlparse
 
 from scrapy import Request
 from scrapy import Spider as BaseSpider
@@ -44,9 +45,8 @@ class Spider(BaseSpider):
                 for term in self.search_terms)
 
     def parse(self, response):
-        links = response.css('a[href*="linkedin.com/jobs/view/"]::attr(href)').getall()
-        links = [strip_params(link, ['position', 'pageNum', 'trk', 'refId'])
-                 for link in links]
+        links = [f'https://cz.linkedin.com/jobs-guest/jobs/api/jobPosting/{get_job_id(link)}' for link in
+                 response.css('a[href*="linkedin.com/jobs/view/"]::attr(href)').getall()]
         yield from response.follow_all(links, callback=self.parse_job)
 
         if len(links) >= self.results_per_request:
@@ -70,6 +70,12 @@ class Spider(BaseSpider):
         loader.add_css('company_logo_urls', 'img.company-logo::attr(src)')
         loader.add_css('company_logo_urls', 'img.company-logo::attr(data-delayed-url)')
         yield loader.load_item()
+
+
+# https://cz.linkedin.com/jobs/view/junior-software-engineer-at-cimpress-technology-2247016723
+# https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/2247016723
+def get_job_id(url):
+    return re.search(r'-(\d+)$', urlparse(url).path).group(1)
 
 
 def parse_proxied_url(url):
