@@ -107,3 +107,20 @@ def test_clean_proxied_url():
     )
 
     assert linkedin.clean_proxied_url(url) == 'https://jobs.gecareers.com/global/en/job/GE11GLOBAL32262/Engineering-Trainee?codes=juniorguru'
+
+
+def test_get_job_id():
+    url = (
+        'https://cz.linkedin.com/jobs/view/'
+        'junior-software-engineer-at-cimpress-technology-2247016723'
+    )
+
+    assert linkedin.get_job_id(url) == '2247016723'
+
+
+@pytest.mark.parametrize('url,expected', [
+    ('https://uk.linkedin.com/company/adaptavist?trk=public_jobs_topcard_logo', 'https://uk.linkedin.com/company/adaptavist'),
+    ('https://example.com?trk=123', 'https://example.com?trk=123'),
+])
+def test_clean_url(url, expected):
+    assert linkedin.clean_url(url) == expected
