@@ -90,7 +90,7 @@ class ScrapingProxyMiddleware():
         if not getattr(spider, 'proxy', False) or not request.meta.get('proxy'):
             return response
         if response.status in [999, 504]:
-            log.info(f"Got status {response.status} for {request!r} proxied via {request.meta.get('proxy', 'no proxy')}")
+            log.info(f"Got {response!r} proxied via {request.meta.get('proxy', 'no proxy')}")
             return self.rotate_proxies(request)
-        log.debug(f'Got proxied response {response!r} for {request!r}')
+        log.debug(f'Got proxied response {response!r}')
         return response
