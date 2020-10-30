@@ -47,7 +47,8 @@ class Spider(BaseSpider):
 
     def parse(self, response):
         links = response.css('a[href*="linkedin.com/jobs/view/"]::attr(href)').getall()
-        links = [strip_params(link, ['position', 'pageNum']) for link in links]
+        links = [strip_params(link, ['position', 'pageNum', 'trk', 'refId'])
+                 for link in links]
         yield from response.follow_all(links, callback=self.parse_job)
 
         if len(links) >= self.results_per_request:

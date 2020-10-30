@@ -19,6 +19,8 @@ def test_spider_parse():
     assert len(job_requests) == 25
     assert 'position' not in job_requests[0].url
     assert 'pageNum' not in job_requests[0].url
+    assert 'refId' not in job_requests[0].url
+    assert 'trk' not in job_requests[0].url
 
     assert len(more_requests) == 1
     assert 'start=25' in more_requests[0].url
