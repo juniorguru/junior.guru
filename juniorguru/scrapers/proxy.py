@@ -8,6 +8,11 @@ from juniorguru.lib.log import get_log
 log = get_log(__name__)
 
 
+# TODO
+# https://github.com/clarketm/proxy-list
+# https://github.com/imWildCat/scylla
+
+
 # TODO do this in a better way
 # http://free-proxy.cz/cs/proxylist/country/all/https/uptime/level1
 PROXIES = [f'https://{proxy}' for proxy in '''
