@@ -13,7 +13,7 @@ jobs:
     executor: python-js
     steps:
       - checkout
-      - restore_cache:  # caches npm deps based on whether the deps declaration has changed
+      - restore_cache:
           key: deps-{{ checksum "Pipfile.lock" }}-{{ checksum "package-lock.json" }}
       - run:
           name: Install dependencies
