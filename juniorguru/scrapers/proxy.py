@@ -42,7 +42,7 @@ class ScrapingProxyMiddleware():
 
     def rotate_proxies(self, request):
         log.warning(f'Rotating proxies (currently {len(self.proxies)})')
-        time.sleep(10)
+        time.sleep(5)
         meta = {k: v for k, v in request.meta.items() if k != 'proxy'}
         try:
             self.proxies.remove(request.meta.get('proxy'))

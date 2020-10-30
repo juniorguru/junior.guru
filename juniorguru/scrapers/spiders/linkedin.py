@@ -13,14 +13,14 @@ from juniorguru.lib.url_params import increment_param, strip_params, get_param, 
 class Spider(BaseSpider):
     name = 'linkedin'
     proxy = True
-    download_delay = 10
+    download_delay = 5
     custom_settings = {
         'ROBOTSTXT_OBEY': False,
         'COOKIES_ENABLED': False,
         'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
         'CONCURRENT_REQUESTS_PER_IP': 1,
-        'AUTOTHROTTLE_START_DELAY': 10,
-        'AUTOTHROTTLE_MAX_DELAY': 30,
+        'AUTOTHROTTLE_START_DELAY': 5,
+        'AUTOTHROTTLE_MAX_DELAY': 15,
     }
 
     search_terms = [
@@ -71,8 +71,6 @@ class Spider(BaseSpider):
         yield loader.load_item()
 
 
-# https://cz.linkedin.com/jobs/view/junior-software-engineer-at-cimpress-technology-2247016723
-# https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/2247016723
 def get_job_id(url):
     return re.search(r'-(\d+)$', urlparse(url).path).group(1)
 
