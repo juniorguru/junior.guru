@@ -12,15 +12,15 @@ from juniorguru.lib.url_params import increment_param, strip_params, get_param, 
 class Spider(BaseSpider):
     name = 'linkedin'
     proxy = True
-    download_delay = 1
-    download_timeout = 15
+    download_delay = 10
+    download_timeout = 10
     custom_settings = {
         'ROBOTSTXT_OBEY': False,
         'COOKIES_ENABLED': False,
         'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
         'CONCURRENT_REQUESTS_PER_IP': 1,
-        'AUTOTHROTTLE_START_DELAY': 5,
-        'AUTOTHROTTLE_MAX_DELAY': 10,
+        'AUTOTHROTTLE_START_DELAY': 10,
+        'AUTOTHROTTLE_MAX_DELAY': 30,
     }
 
     search_terms = [
