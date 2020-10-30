@@ -15,13 +15,9 @@ class Spider(BaseSpider):
     download_delay = 1
     download_timeout = 40
     custom_settings = {
-        'DEFAULT_REQUEST_HEADERS': {
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-            'Accept-Language': 'cs,en',
-        },
-        'USER_AGENT': ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:75.0) '
-                       'Gecko/20100101 Firefox/75.0'),
         'ROBOTSTXT_OBEY': False,
+        'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+        'CONCURRENT_REQUESTS_PER_IP': 1,
     }
 
     search_terms = [

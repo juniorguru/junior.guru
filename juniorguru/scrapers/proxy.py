@@ -16,52 +16,63 @@ log = get_log(__name__)
 # TODO do this in a better way
 # http://free-proxy.cz/cs/proxylist/country/all/https/uptime/level1
 PROXIES = [f'https://{proxy}' for proxy in '''
-165.22.81.30:45083
+103.87.171.236:32582
+185.248.151.139:80
 175.112.89.171:3128
-43.250.248.254:3838
+82.200.233.4:3128
 100.25.221.97:3128
-140.238.84.65:3128
-188.166.251.91:8086
-180.92.194.235:80
-18.138.49.42:80
-14.143.168.230:8080
-211.239.170.96:80
-103.83.36.123:3838
-205.147.101.141:80
-132.145.146.10:80
+104.131.28.8:80
+14.63.228.217:80
+167.172.109.12:33077
 161.35.122.140:3128
+52.76.232.232:80
+157.245.231.155:80
+211.239.170.96:80
+14.143.168.230:8080
+62.210.69.176:5566
+178.128.127.59:8080
+27.133.235.144:3128
+159.65.189.75:80
+54.254.161.72:8888
+132.145.146.10:80
+144.217.101.245:3129
+103.83.36.124:3838
+132.145.130.198:80
+162.248.243.18:3838
+95.179.159.1:3128
+34.64.114.171:80
+74.126.83.200:80
+103.92.225.98:55443
+13.126.200.204:80
 192.227.108.83:80
-110.78.141.83:54181
-35.214.138.103:3128
-103.21.160.10:35101
-13.244.75.68:80
-137.74.168.93:80
-187.243.255.174:8080
-93.117.72.27:43631
-153.126.160.91:80
-103.106.148.209:30223
-186.86.247.169:39168
-187.62.191.3:61456
-103.30.93.171:8080
-195.234.87.211:53281
-36.91.163.241:42734
-5.141.86.107:55528
-178.47.139.151:35102
-202.166.207.218:56576
-180.183.244.143:80
-117.102.87.138:41757
-125.26.99.185:36525
+129.213.183.152:80
+203.212.70.77:80
+212.200.246.24:80
+3.6.220.71:80
+198.50.163.192:3129
+178.136.2.208:55443
 '''.strip().splitlines()]
 
 
+USER_AGENTS = [
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:81.0) Gecko/20100101 Firefox/81.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:75.0) Gecko/20100101 Firefox/75.0',
+    'Mozilla/5.0 (iPhone; CPU OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/29.0 Mobile/15E148 Safari/605.1.15',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15',
+]
+
+
 class ScrapingProxyMiddleware():
-    def __init__(self, proxies=None):
+    def __init__(self, proxies=None, user_agents=None):
         self.proxies = proxies or PROXIES
-        if not self.proxies:
-            raise ValueError('No proxies')
+        self.user_agents = user_agents or USER_AGENTS
 
     def get_proxy(self):
         return random.choice(self.proxies[:3]) if self.proxies else None
+
+    def rotate_user_agent(self, headers):
+        headers = {n: v for n, v in headers.items() if n.lower() != 'user-agent'}
+        return {'User-Agent': random.choice(self.user_agents), **headers}
 
     def rotate_proxies(self, request):
         log.warning('Rotating proxies')
@@ -72,9 +83,13 @@ class ScrapingProxyMiddleware():
             pass
         proxy = self.get_proxy()
         if proxy:
-            return request.replace(meta={'proxy': proxy, **meta}, dont_filter=True)
+            return request.replace(headers=self.rotate_user_agent(request.headers),
+                                   meta={'proxy': proxy, **meta},
+                                   dont_filter=True)
         log.warning('No proxies left, continuing without proxy')
-        return request.replace(meta=meta)
+        return request.replace(headers=self.rotate_user_agent(request.headers),
+                               meta=meta,
+                               dont_filter=True)
 
     def process_request(self, request, spider):
         if not getattr(spider, 'proxy', False):
