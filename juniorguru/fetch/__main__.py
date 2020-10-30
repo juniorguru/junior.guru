@@ -7,6 +7,7 @@ from juniorguru.fetch.last_modified import main as fetch_last_modified
 from juniorguru.fetch.press_releases import main as fetch_press_releases
 from juniorguru.fetch.newsletter_mentions import main as fetch_newsletter_mentions
 from juniorguru.fetch.transactions import main as fetch_transactions
+from juniorguru.fetch.proxies import main as fetch_proxies
 
 
 def main():
@@ -18,6 +19,7 @@ def main():
     fetch_logos()
     fetch_jobs()
     fetch_transactions()
+    fetch_proxies()
 
     # order-sensitive
     fetch_metrics()  # depends on jobs & logos

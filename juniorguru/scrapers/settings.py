@@ -52,7 +52,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'juniorguru.scrapers.monitoring.BackupResponseMiddleware': 530,
-   'juniorguru.scrapers.proxy.ScrapingProxyMiddleware': 540,
+   'juniorguru.scrapers.proxy.ScrapingProxyMiddleware': 555,
 }
 
 # Enable or disable extensions

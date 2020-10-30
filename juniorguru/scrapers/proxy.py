@@ -1,57 +1,13 @@
+import time
 import random
 
-from scrapy.core.downloader.handlers.http11 import TunnelError
+from scrapy.downloadermiddlewares.retry import RetryMiddleware
 
 from juniorguru.lib.log import get_log
+from juniorguru.models import Proxy, db
 
 
 log = get_log(__name__)
-
-
-# TODO
-# https://github.com/clarketm/proxy-list
-# https://github.com/imWildCat/scylla
-
-
-# TODO do this in a better way
-# http://free-proxy.cz/cs/proxylist/country/all/https/uptime/level1
-PROXIES = [f'https://{proxy}' for proxy in '''
-103.87.171.236:32582
-185.248.151.139:80
-175.112.89.171:3128
-82.200.233.4:3128
-100.25.221.97:3128
-104.131.28.8:80
-14.63.228.217:80
-167.172.109.12:33077
-161.35.122.140:3128
-52.76.232.232:80
-157.245.231.155:80
-211.239.170.96:80
-14.143.168.230:8080
-62.210.69.176:5566
-178.128.127.59:8080
-27.133.235.144:3128
-159.65.189.75:80
-54.254.161.72:8888
-132.145.146.10:80
-144.217.101.245:3129
-103.83.36.124:3838
-132.145.130.198:80
-162.248.243.18:3838
-95.179.159.1:3128
-34.64.114.171:80
-74.126.83.200:80
-103.92.225.98:55443
-13.126.200.204:80
-192.227.108.83:80
-129.213.183.152:80
-203.212.70.77:80
-212.200.246.24:80
-3.6.220.71:80
-198.50.163.192:3129
-178.136.2.208:55443
-'''.strip().splitlines()]
 
 
 USER_AGENTS = [
@@ -63,19 +19,30 @@ USER_AGENTS = [
 
 
 class ScrapingProxyMiddleware():
-    def __init__(self, proxies=None, user_agents=None):
-        self.proxies = proxies or PROXIES
-        self.user_agents = user_agents or USER_AGENTS
+    EXCEPTIONS_TO_RETRY = RetryMiddleware.EXCEPTIONS_TO_RETRY
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        with db:
+            proxies = [f'http://{proxy.address}' for proxy in Proxy.select()]
+        return cls(proxies, crawler.settings)
+
+    def __init__(self, proxies, settings):
+        self.proxies = proxies
 
     def get_proxy(self):
         return random.choice(self.proxies[:3]) if self.proxies else None
 
+    def get_user_agent(self):
+        return random.choice(USER_AGENTS)
+
     def rotate_user_agent(self, headers):
         headers = {n: v for n, v in headers.items() if n.lower() != 'user-agent'}
-        return {'User-Agent': random.choice(self.user_agents), **headers}
+        return {'User-Agent': self.get_user_agent(), **headers}
 
     def rotate_proxies(self, request):
         log.warning('Rotating proxies')
+        time.sleep(10)
         meta = {k: v for k, v in request.meta.items() if k != 'proxy'}
         try:
             self.proxies.remove(request.meta.get('proxy'))
@@ -94,23 +61,27 @@ class ScrapingProxyMiddleware():
     def process_request(self, request, spider):
         if not getattr(spider, 'proxy', False):
             return
+        user_agent = self.get_user_agent()
+        request.headers['User-Agent'] = user_agent
         proxy = self.get_proxy()
         if proxy:
-            log.debug(f"Proxying {request!r} via {proxy} ({request.headers.get('User-Agent')})")
+            log.debug(f"Proxying {request!r} via {proxy} ({user_agent})")
             request.meta['proxy'] = proxy
 
     def process_exception(self, request, exception, spider):
         if not getattr(spider, 'proxy', False) or not request.meta.get('proxy'):
             return
         log.debug(f'Got proxy exception {exception!r} for {request!r}')
-        if isinstance(exception, TunnelError):
+        if isinstance(exception, self.EXCEPTIONS_TO_RETRY):
             return self.rotate_proxies(request)
 
     def process_response(self, request, response, spider):
         if not getattr(spider, 'proxy', False) or not request.meta.get('proxy'):
             return response
-        if response.status in [999, 504]:
-            log.info(f"Got {response!r} proxied via {request.meta['proxy']} ({request.headers.get('User-Agent')})")
+        if response.status in [504, 999]:
+            user_agent = request.headers.get('User-Agent').decode()
+            proxy = request.meta['proxy']
+            log.info(f"Got {response!r} proxied via {proxy} ({user_agent})")
             return self.rotate_proxies(request)
         log.debug(f'Got proxied response {response!r}')
         return response
