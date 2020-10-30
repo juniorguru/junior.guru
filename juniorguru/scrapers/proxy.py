@@ -41,7 +41,7 @@ class ScrapingProxyMiddleware():
         return {'User-Agent': self.get_user_agent(), **headers}
 
     def rotate_proxies(self, request):
-        log.warning('Rotating proxies')
+        log.warning(f'Rotating proxies (currently {len(self.proxies)})')
         time.sleep(10)
         meta = {k: v for k, v in request.meta.items() if k != 'proxy'}
         try:
