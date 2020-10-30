@@ -13,6 +13,7 @@ from juniorguru.lib.url_params import increment_param, strip_params, get_param, 
 class Spider(BaseSpider):
     name = 'linkedin'
     proxy = True
+    download_timeout = 59
     custom_settings = {
         'ROBOTSTXT_OBEY': False,
         'COOKIES_ENABLED': False,
