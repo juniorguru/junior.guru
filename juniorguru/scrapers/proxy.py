@@ -31,7 +31,7 @@ class ScrapingProxyMiddleware():
         self.proxies = proxies
 
     def get_proxy(self):
-        return random.choice(self.proxies[:3]) if self.proxies else None
+        return random.choice(self.proxies) if self.proxies else None
 
     def get_user_agent(self):
         return random.choice(USER_AGENTS)
