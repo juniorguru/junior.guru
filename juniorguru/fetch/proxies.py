@@ -5,12 +5,12 @@ import requests
 from juniorguru.models import Proxy, db
 
 
-# STATUS_URL = 'https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list-status.txt'
-# STATUS_RE = re.compile(r'''
-#     ([\d+\.]+)  # IP address and port
-#     :\s
-#     success  # status
-# ''', re.VERBOSE)
+STATUS_URL = 'https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list-status.txt'
+STATUS_RE = re.compile(r'''
+    ([\d+\.]+)  # IP address and port
+    :\s
+    success  # status
+''', re.VERBOSE)
 
 LIST_URL = 'https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt'
 LIST_RE = re.compile(r'''
@@ -23,13 +23,13 @@ LIST_RE = re.compile(r'''
 
 
 def main():
-    # response = requests.get(STATUS_URL)
-    # response.raise_for_status()
-    # up = []
-    # for line in response.text.strip().splitlines():
-    #     match = STATUS_RE.match(line)
-    #     if match:
-    #         up.append(match.group(1))
+    response = requests.get(STATUS_URL)
+    response.raise_for_status()
+    up = []
+    for line in response.text.strip().splitlines():
+        match = STATUS_RE.match(line)
+        if match:
+            up.append(match.group(1))
 
     response = requests.get(LIST_URL)
     response.raise_for_status()
@@ -37,8 +37,8 @@ def main():
     for line in response.text.strip().splitlines():
         match = LIST_RE.search(line)
         if match:
-            # if match.group(2) in up:
-            addresses.append(match.group(1))
+            if match.group(2) in up:
+                addresses.append(match.group(1))
 
     with db:
         Proxy.drop_table()
