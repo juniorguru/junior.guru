@@ -12,6 +12,7 @@ from juniorguru.lib.url_params import increment_param, strip_params, get_param, 
 class Spider(BaseSpider):
     name = 'linkedin'
     proxy = True
+    download_delay = 1
     download_timeout = 40
     custom_settings = {
         'DEFAULT_REQUEST_HEADERS': {
@@ -21,7 +22,6 @@ class Spider(BaseSpider):
         'USER_AGENT': ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:75.0) '
                        'Gecko/20100101 Firefox/75.0'),
         'ROBOTSTXT_OBEY': False,
-        'DOWNLOAD_DELAY': 1,
     }
 
     search_terms = [
