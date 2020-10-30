@@ -17,11 +17,11 @@ def main():
     fetch_last_modified()
     fetch_press_releases()
     fetch_logos()
-    fetch_jobs()
     fetch_transactions()
     fetch_proxies()
 
     # order-sensitive
+    fetch_jobs()  # depends on proxies
     fetch_metrics()  # depends on jobs & logos
     fetch_newsletter_mentions()  # depends on jobs
 
