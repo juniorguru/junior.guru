@@ -27,7 +27,7 @@
     "gulp-sourcemaps": "2.6.5",
     "imagemin-cli": "6.0.0",
     "lighthouse": "6.4.1",
-    "node-sass": "4.14.1",
+    "node-sass": "5.0.0",
     "pageres-cli": "5.0.0",
     "rollup": "2.32.1",
     "rollup-plugin-node-resolve": "5.2.0",
