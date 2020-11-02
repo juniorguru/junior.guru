@@ -34,14 +34,17 @@ def main():
         Proxy.drop_table()
         Proxy.create_table()
 
+        pool = Pool(15)
         counter = 0
-        for record in Pool(15).imap(test, proxies):
+        for record in pool.imap(test, proxies):
             if record['speed_sec'] < 1000:
                 Proxy.create(**record)
                 counter += 1
             if counter >= 10:
                 log.info('Found enough fast proxies, aborting!')
                 break
+        pool.terminate()
+        pool.join()
 
 
 def test(proxy):
