@@ -34,7 +34,7 @@ def main():
 
 def test(proxy):
     try:
-        response = requests.head('https://httpbin.org/ip',
+        response = requests.head('https://honzajavorek.cz/',
                                  timeout=10,
                                  proxies=dict(http=proxy, https=proxy))
         speed_sec = int(response.elapsed.total_seconds())
