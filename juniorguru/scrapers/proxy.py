@@ -23,14 +23,14 @@ class ScrapingProxyMiddleware():
     @classmethod
     def from_crawler(cls, crawler):
         with db:
-            proxies = [proxy.address for proxy in Proxy.select()]
+            proxies = [proxy.address for proxy in Proxy.listing()]
         return cls(proxies, crawler.settings)
 
     def __init__(self, proxies, settings):
         self.proxies = proxies
 
     def get_proxy(self):
-        return random.choice(self.proxies) if self.proxies else None
+        return random.choice(self.proxies[:5]) if self.proxies else None
 
     def get_user_agent(self):
         return random.choice(USER_AGENTS)
