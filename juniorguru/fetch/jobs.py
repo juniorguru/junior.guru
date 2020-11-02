@@ -20,12 +20,11 @@ def main():
 
     spider_names = [
         'linkedin',
-        # TODO temporarily disable to debug linkedin
-        # 'juniorguru',
-        # 'stackoverflow',
-        # 'startupjobs',
-        # 'remoteok',
-        # 'wwr',
+        'juniorguru',
+        'stackoverflow',
+        'startupjobs',
+        'remoteok',
+        'wwr',
     ]
     Pool().map(run_spider, spider_names)
 
