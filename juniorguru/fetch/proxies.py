@@ -1,4 +1,5 @@
 from multiprocessing import Pool
+import random
 
 import requests
 from lxml import html
@@ -26,6 +27,7 @@ def main():
         values = [(col.text_content() or '').strip() for col in row]
         data = dict(zip(headers, values))
         proxies.append(f"http://{data['IP Address']}:{data['Port']}")
+    random.shuffle(proxies)
 
     with db:
         Proxy.drop_table()
