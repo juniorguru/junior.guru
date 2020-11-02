@@ -37,7 +37,7 @@ def main():
                 Proxy.create(**record)
                 counter += 1
             if counter >= 20:
-                log.debug('Found enough fast proxies, aborting!')
+                log.info('Found enough fast proxies, aborting!')
                 break
 
 
@@ -49,7 +49,7 @@ def test(proxy):
         speed_sec = int(response.elapsed.total_seconds())
     except:
         speed_sec = 1000
-    log.debug(f"Proxy {proxy} speed is {speed_sec}")
+    log.info(f"Proxy {proxy} speed is {speed_sec}")
     return dict(address=proxy, speed_sec=speed_sec)
 
 
