@@ -18,18 +18,26 @@ def main():
             model.drop_table()
             model.create_table()
 
-    Pool().map(run_spider, [
-        # 'linkedin',
+    spider_names = [
+        'linkedin',
         'juniorguru',
         'stackoverflow',
         'startupjobs',
         'remoteok',
         'wwr',
-    ])
+    ]
+    Pool().map(run_spider, spider_names)
 
 
 def run_spider(spider_name):
-    return subprocess.run(['scrapy', 'crawl', spider_name], check=True)
+    proc = subprocess.Popen(['scrapy', 'crawl', spider_name], text=True, bufsize=1,
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    try:
+        for line in proc.stdout:
+            print(f'[jobs/{spider_name}] {line}', end='')
+    except KeyboardInterrupt:
+        proc.kill()
+        proc.communicate()
 
 
 if __name__ == '__main__':

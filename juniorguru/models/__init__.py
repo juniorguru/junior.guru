@@ -7,8 +7,9 @@ from juniorguru.models.last_modified import LastModified
 from juniorguru.models.press_release import PressRelease
 from juniorguru.models.logo import Logo, LogoMetric
 from juniorguru.models.spider_metric import SpiderMetric
+from juniorguru.models.proxy import Proxy
 
 
 __all__ = [db, Job, JobDropped, JobError, JobMetric, Metric, Story, Supporter,
            LastModified, PressRelease, JobNewsletterMention, Logo, LogoMetric,
-           retry_when_db_locked, SpiderMetric, EMPLOYMENT_TYPES]
+           retry_when_db_locked, SpiderMetric, EMPLOYMENT_TYPES, Proxy]
