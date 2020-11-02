@@ -35,7 +35,7 @@ def run_spider(spider_name):
                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     try:
         for line in proc.stdout:
-            print(f'{spider_name} {line}', end='')
+            print(f'[jobs/{spider_name}] {line}', end='')
     except KeyboardInterrupt:
         proc.kill()
         proc.communicate()
