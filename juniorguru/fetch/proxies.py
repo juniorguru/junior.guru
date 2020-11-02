@@ -39,7 +39,7 @@ def main():
             if record['speed_sec'] < 1000:
                 Proxy.create(**record)
                 counter += 1
-            if counter >= 20:
+            if counter >= 10:
                 log.info('Found enough fast proxies, aborting!')
                 break
 
