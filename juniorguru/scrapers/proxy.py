@@ -23,7 +23,7 @@ class ScrapingProxyMiddleware():
     @classmethod
     def from_crawler(cls, crawler):
         with db:
-            proxies = [f'http://{proxy.address}' for proxy in Proxy.select()]
+            proxies = [proxy.address for proxy in Proxy.select()]
         return cls(proxies, crawler.settings)
 
     def __init__(self, proxies, settings):

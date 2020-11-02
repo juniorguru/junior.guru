@@ -21,7 +21,7 @@ def main():
     for row in rows:
         values = [(col.text_content() or '').strip() for col in row]
         data = dict(zip(headers, values))
-        records.append(dict(address=f"{data['IP Address']}:{data['Port']}"))
+        records.append(dict(address=f"http://{data['IP Address']}:{data['Port']}"))
 
     with db:
         Proxy.drop_table()
