@@ -26,7 +26,8 @@ def main():
     for row in rows:
         values = [(col.text_content() or '').strip() for col in row]
         data = dict(zip(headers, values))
-        proxies.append(f"http://{data['IP Address']}:{data['Port']}")
+        if data['IP Address'] and data['Port']:
+            proxies.append(f"http://{data['IP Address']}:{data['Port']}")
     random.shuffle(proxies)
 
     with db:
