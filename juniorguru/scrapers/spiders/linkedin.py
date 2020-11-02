@@ -20,7 +20,8 @@ class Spider(BaseSpider):
     }
 
     search_terms = [
-        'Software Engineer',
+        'Junior Software Engineer',
+        'Junior Developer',
     ]
     results_per_request = 25
 
