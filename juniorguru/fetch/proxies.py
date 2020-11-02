@@ -4,6 +4,10 @@ import requests
 from lxml import html
 
 from juniorguru.models import Proxy, db
+from juniorguru.lib.log import get_log
+
+
+log = get_log('proxies')
 
 
 def main():
@@ -22,14 +26,19 @@ def main():
         values = [(col.text_content() or '').strip() for col in row]
         data = dict(zip(headers, values))
         proxies.append(f"http://{data['IP Address']}:{data['Port']}")
-    records = Pool(15).map(test, proxies)
 
     with db:
         Proxy.drop_table()
         Proxy.create_table()
 
-        for record in records:
-            Proxy.create(**record)
+        counter = 0
+        for record in Pool(15).imap(test, proxies):
+            if record['speed_sec'] < 1000:
+                Proxy.create(**record)
+                counter += 1
+            if counter >= 20:
+                log.debug('Found enough fast proxies, aborting!')
+                break
 
 
 def test(proxy):
@@ -40,6 +49,7 @@ def test(proxy):
         speed_sec = int(response.elapsed.total_seconds())
     except:
         speed_sec = 1000
+    log.debug(f"Proxy {proxy} speed is {speed_sec}")
     return dict(address=proxy, speed_sec=speed_sec)
 
 
