@@ -53,13 +53,13 @@ class Spider(BaseSpider):
     def parse_job(self, response):
         loader = Loader(item=Job(), response=response)
         loader.add_css('title', 'h2::text')
+        loader.add_css('remote', 'h2::text')
         loader.add_css('link', '.apply-button::attr(href)')
         loader.add_css('link', '.topcard__content-left > a::attr(href)')
         loader.add_css('company_name', '.topcard__org-name-link::text')
         loader.add_css('company_name', '.topcard__content-left > h3 > span:nth-of-type(1)::text')
         loader.add_css('company_link', '.topcard__org-name-link::attr(href)')
         loader.add_css('location_raw', '.topcard__content-left > h3 > span:nth-of-type(2)::text')
-        loader.add_value('remote', False)
         loader.add_xpath('employment_types', "//h3[contains(., 'Employment type')]/following-sibling::span/text()")
         loader.add_xpath('experience_levels', "//h3[contains(., 'Seniority level')]/following-sibling::span/text()")
         loader.add_css('posted_at', '.topcard__content-left > h3:nth-of-type(2) span::text')
@@ -89,6 +89,10 @@ def clean_url(url):
     return url
 
 
+def parse_remote(text):
+    return bool(re.search(r'\bremote\b', text, re.IGNORECASE))
+
+
 class Loader(ItemLoader):
     default_output_processor = TakeFirst()
     link_in = Compose(first, clean_proxied_url, clean_url)
@@ -99,4 +103,4 @@ class Loader(ItemLoader):
     experience_levels_in = MapCompose(str.lower, split)
     experience_levels_out = Identity()
     company_logo_urls_out = Identity()
-    remote_in = MapCompose(bool)
+    remote_in = MapCompose(parse_remote)

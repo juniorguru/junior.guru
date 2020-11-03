@@ -123,3 +123,12 @@ def test_get_job_id():
 ])
 def test_clean_url(url, expected):
     assert linkedin.clean_url(url) == expected
+
+
+@pytest.mark.parametrize('text,expected', [
+    ('Junior Software Engineer (C#.NET)', False),
+    ('Remote Web Developer - Prague', True),
+    ('Remote Web Developer', True),
+])
+def test_parse_remote(text, expected):
+    assert linkedin.parse_remote(text) is expected
