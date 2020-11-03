@@ -3,7 +3,7 @@ import shutil
 import sys
 from multiprocessing import Pool, cpu_count
 from pathlib import Path
-from subprocess import run
+from subprocess import run, CalledProcessError
 
 from slugify import slugify
 
@@ -56,28 +56,34 @@ def check_url(url):
                f'--output-path={url_to_report_name(url)}']
     command = ['npx', 'lighthouse', '--quiet', '--chrome-flags=--headless']
     command += outputs + [url]
-    run(command, check=True)
+    for i in range(1, 4):
+        try:
+            run(command, check=True)
+            break
+        except CalledProcessError:
+            print(f'[CHECK] attempt #{i} failed, retrying...')
 
     report = json.loads(Path(url_to_json_report_path(url)).read_text())
     return url, get_scores(report['categories'])
 
 
-shutil.rmtree(LIGHTHOUSE_DIR, ignore_errors=True)
-LIGHTHOUSE_DIR.mkdir(parents=True)
+if __name__ == '__main__':
+    shutil.rmtree(LIGHTHOUSE_DIR, ignore_errors=True)
+    LIGHTHOUSE_DIR.mkdir(parents=True)
 
-pool_size = min(cpu_count(), 4)  # CircleCI declares 2, but detection reads 36
-checks = Pool(pool_size).map(check_url, get_urls(PUBLIC_DIR))
-print('')
+    pool_size = min(cpu_count(), 4)  # CircleCI declares 2, but detection reads 36
+    checks = Pool(pool_size).map(check_url, get_urls(PUBLIC_DIR))
+    print('')
 
-failing = 0
-passing = 0
-for url, scores in checks:
-    for score_id, min_score in MIN_SCORES.items():
-        if scores[score_id] < min_score:
-            print(f'[FAIL] {url} {score_id}: {scores[score_id]} (min: {min_score})')
-            failing += 1
-        else:
-            passing += 1
+    failing = 0
+    passing = 0
+    for url, scores in checks:
+        for score_id, min_score in MIN_SCORES.items():
+            if scores[score_id] < min_score:
+                print(f'[FAIL] {url} {score_id}: {scores[score_id]} (min: {min_score})')
+                failing += 1
+            else:
+                passing += 1
 
-print(f'\nFailing: {failing}\nPassing: {passing}')
-sys.exit(1 if failing else 0)
+    print(f'\nFailing: {failing}\nPassing: {passing}')
+    sys.exit(1 if failing else 0)
