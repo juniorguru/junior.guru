@@ -56,6 +56,7 @@ class Spider(BaseSpider):
         loader.add_css('link', '.apply-button::attr(href)')
         loader.add_css('link', '.topcard__content-left > a::attr(href)')
         loader.add_css('company_name', '.topcard__org-name-link::text')
+        loader.add_css('company_name', '.topcard__content-left > h3 > span:nth-of-type(1)::text')
         loader.add_css('company_link', '.topcard__org-name-link::attr(href)')
         loader.add_css('location_raw', '.topcard__content-left > h3 > span:nth-of-type(2)::text')
         loader.add_value('remote', False)

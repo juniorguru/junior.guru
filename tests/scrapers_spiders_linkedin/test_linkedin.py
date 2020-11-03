@@ -72,15 +72,14 @@ def test_spider_parse_job_description_doesnt_include_criteria_list():
     assert 'Information Technology and Services' not in job['description_html']
 
 
-@pytest.mark.skip('missing a test fixture')
 def test_spider_parse_job_no_company_link():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job_no_company_link.html').read_bytes())
     job = next(linkedin.Spider().parse_job(response))
 
-    assert job['company_name'] == 'Ubiquiti'
+    assert job['company_name'] == 'Grafton Temporary Staffing'
     assert 'company_link' not in job
-    assert job['location_raw'] == 'Pilsen, Plzeň, Czech Republic'
+    assert job['location_raw'] == 'Praha 4'
 
 
 def test_spider_parse_job_applicants():
