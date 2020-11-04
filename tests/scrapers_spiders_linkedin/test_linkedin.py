@@ -66,7 +66,7 @@ def test_spider_parse_job():
 def test_spider_parse_job_description_doesnt_include_criteria_list():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job.html').read_bytes())
-    job = next(linkedin.Spider().parse_job(response))
+    job = next(linkedin.Spider().parse_job(response)).cb_kwargs['item']
 
     assert 'Employment type' not in job['description_html']
     assert 'Information Technology and Services' not in job['description_html']
@@ -75,7 +75,7 @@ def test_spider_parse_job_description_doesnt_include_criteria_list():
 def test_spider_parse_job_no_company_link():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job_no_company_link.html').read_bytes())
-    job = next(linkedin.Spider().parse_job(response))
+    job = next(linkedin.Spider().parse_job(response)).cb_kwargs['item']
 
     assert job['company_name'] == 'Grafton Temporary Staffing'
     assert 'company_link' not in job
@@ -85,7 +85,7 @@ def test_spider_parse_job_no_company_link():
 def test_spider_parse_job_applicants():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job_applicants.html').read_bytes())
-    job = next(linkedin.Spider().parse_job(response))
+    job = next(linkedin.Spider().parse_job(response)).cb_kwargs['item']
 
     assert job['posted_at'] == date.today()
 
@@ -93,7 +93,7 @@ def test_spider_parse_job_applicants():
 def test_spider_parse_job_apply_on_company_website():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job_apply_on_company_website.html').read_bytes())
-    job = next(linkedin.Spider().parse_job(response))
+    job = next(linkedin.Spider().parse_job(response)).cb_kwargs['item']
 
     assert job['link'] == 'https://jobs.cisco.com/jobs/ProjectDetail/Software-Engineer/1304909?source=juniorguru'
 

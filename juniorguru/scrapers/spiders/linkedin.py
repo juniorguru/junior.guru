@@ -66,7 +66,18 @@ class Spider(BaseSpider):
         loader.add_css('description_html', '.description__text')
         loader.add_css('company_logo_urls', 'img.company-logo::attr(src)')
         loader.add_css('company_logo_urls', 'img.company-logo::attr(data-delayed-url)')
-        yield loader.load_item()
+        item = loader.load_item()
+
+        if 'linkedin.com' in item['link']:
+            yield item
+        else:
+            yield response.follow(item['link'],
+                                  callback=self.verify_job,
+                                  cb_kwargs=dict(item=item))
+
+    def verify_job(self, response, item):
+        """Filters out links to broken external links"""
+        yield item
 
 
 def get_job_id(url):
