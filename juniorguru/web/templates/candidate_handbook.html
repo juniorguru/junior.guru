@@ -77,18 +77,17 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
           <li class="toc__subitem"><a class="toc__sublink" href="#remote-work">Najdu práci externě, na dálku?</a></li>
         </ol>
       </li>
-      <li class="toc__item"><a class="toc__link" href="#strategy">Jakou zvolit strategii</a>
+      <li class="toc__item"><a class="toc__link" href="#strategy">Volba strategie</a>
         <ol class="toc__subitems">
           <li class="toc__subitem"><a class="toc__sublink" href="#why-start-with-programming">Proč začínat programováním</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#entry-friendly-roles">Existují pozice vhodnější pro začátečníky?</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#entry-tech">Začínání na jiné technické pozici</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#choosing-field">Jakým směrem se vydat?</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#job-types">Na čem programátoři ve firmách pracují?</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#volunteering">Dobrovolnictví</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#internships">Stáže</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#big-companies">Práce pro velkou firmu</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#startups">Práce pro startup</a></li>
-          <li class="toc__subitem"><a class="toc__sublink" href="#internships">Stáže</a></li>
-          <li class="toc__subitem"><a class="toc__sublink" href="#unpaid-internships">Neplacené stáže</a></li>
-          <li class="toc__subitem"><a class="toc__sublink" href="#volunteering">Dobrovolnictví</a></li>
         </ol>
       </li>
       <li class="toc__item"><a class="toc__link" href="#preparation">Příprava</a>
@@ -412,7 +411,7 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
 </section>
 
 <section id="strategy" class="content__section">
-  <h2 class="content__section-heading">Jakou zvolit strategii</h2>
+  <h2 class="content__section-heading">Volba strategie</h2>
   <div class="tooltips">
     <h3 class="content__subsection-heading" id="why-start-with-programming">Proč začínat programováním</h3>
     <p>
@@ -504,6 +503,78 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
       Při hledání zaměstnání si během <a href="#research">zjišťování informací o nabídkách</a> vždy každou z nich zařaď do jedné z kategorií výše, ať víš co očekávat. Pokud máš na výběr, ujasni si, v jakém režimu by se ti líbilo pracovat.
     </p>
 
+    <h3 class="content__subsection-heading" id="volunteering">Dobrovolnictví</h3>
+    <p>
+      Jeden ze způsobů, jak přijít k první praxi, je <strong>pomoci nějakému neziskovému
+      projektu</strong>. Nemusí to být zrovna <a href="https://www.clovekvtisni.cz/">Člověk v tísni</a>. Třeba přímo ve svém okolí najdeš něco, kde je potřeba programování, ale nejsou prostředky na profesionální programátory a příliš to nespěchá.
+    </p>
+    <p>
+      Nemáš-li nápady, mrkni na <a href="https://pyvec.org/">Pyvec</a>, <a href="https://cesko.digital/">Česko.Digital</a>, <a href="https://www.hlidacstatu.cz/">Hlídač státu</a>, <a href="https://umsemumtam.cz/">Um sem um tam</a>, nebo si <strong>projdi projekty
+      na <a href="https://www.darujme.cz/">Darujme.cz</a> a napiš tomu, kterému by se ti líbilo pomoci</strong>. Ideální je, pokud je za projektem nějaké „IT oddělení“ (možná spíš skupinka nadšenců), kde tě budou zaučovat za to, že jim pomůžeš.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        <a href="https://gamecon.cz/">GameCon</a> naplňoval ideální simulaci firemních podmínek. Neziskový projekt má své výhody – pracujete na něčem, co se reálně použije, projekt můžete řídit, máte k ruce tým kolegů.
+      </blockquote>
+      <figcaption>
+        Michal Havelka, autor článku <a href="https://www.zdrojak.cz/clanky/jak-jsem-se-nestal-front-end-vyvojarem/">Jak jsem se (ne)stal front-end vývojářem</a>
+      </figcaption>
+    </figure>
+  </div>
+  {% if jobs_volunteering %}
+    <div class="content__ad">
+      <p>
+        Přímo na junior.guru jsou <a href="{{ url_for('jobs') }}">nabídky práce výhradně pro juniory</a> a občas se mezi nimi objeví i nabídka dobrovolnictví (neziskovky a malé projekty zde mohou inzerovat zdarma). Zrovna dnes tam něco je:
+      </p>
+      {{ jobs_inline_macro(jobs_volunteering, 2) }}
+    </div>
+  {% endif %}
+  <div class="tooltips">
+    <h3 class="content__subsection-heading" id="internships">Stáže</h3>
+    <p>
+      Některé firmy vypisují stáže (anglicky <em>internship</em>), ale <strong>není jich
+      mnoho</strong>. Často jsou <a href="#university">jen pro studenty VŠ</a>, protože firmu
+      nenapadne, že by se na ně mohl hlásit i někdo jiný. Mnohdy se také podaří
+      naplnit stáže přes známosti nebo partnerství se školami, takže není důvod je veřejně inzerovat.
+    </p>
+    <p>
+      Stáž přitom může být <strong>dobrá příležitost, jak začít bez zkušeností</strong>. Firma tě zaučí
+      do jednoduchých úkolů a po čase se rozhodne, jestli tě chtějí vzít. A často
+      chtějí, když už do tebe investovali nějaký ten čas. I kdyby to nevyšlo,
+      je z toho aspoň praxe, zkušenost, brigáda na léto.
+    </p>
+    <p>
+      Pokud studuješ, máš k dispozici nástěnky, poradenská centra, pracovní veletrhy,
+      webové stránky studentských spolků, webové stránky aj. prezentace výzkumných
+      pracovních skupin, spolužáky, cvičící, přednášející…
+    </p>
+    <p>
+      <strong>Ostatním zbývá <a href="https://cs.wikipedia.org/wiki/Asertivita">asertivita</a>.</strong> Odmítli tě v nějaké firmě, protože hledají někoho zkušenějšího? Zeptej se jich na stáž. Líbí se ti nějaká firma? Napiš jim a zeptej se na stáž. Významnou roli hraje také <a href="#networking">networking</a>.
+      Choď na <a href="{{ url_for('practice') }}#events">srazy a konference</a>, tam se aktivně druž a &mdash; ptej se na stáž.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        Už jsem viděl stáže dohozené přes bratrance, klienty, plesy, spolujízdu. Najednou jsi konkrétní člověk a pokud vypadáš inteligentně,
+        firma si řekne: „Proč ne?“
+      </blockquote>
+      <figcaption>
+        Petr Messner, profesionální programátor
+      </figcaption>
+    </figure>
+  </div>
+  <p id="unpaid-internships">
+    Pozor na <strong>neplacené stáže</strong>. Je na tobě si vyhodnotit, zda se ti stáž bez odměny ve tvé situaci vyplatí a zda si to vůbec můžeš dovolit.
+    Ač je možné se s neplacenými stážemi setkat běžně u nás i v zahraničí, je to <a href="https://www.e15.cz/the-student-times/neplacene-staze-aneb-jak-nedocenitelna-je-zkusenost-1348117">věc na hranici zákona i etiky</a>. Podle českého práva <a href="https://www.epravo.cz/top/clanky/neplacena-praxe-ve-firmach-studenti-i-zamestnavatele-na-hrane-zakona-100528.html">není neplacená stáž jednoznačně protizákonná</a>, ale <strong>existuje šance, že v případě kontroly ze strany inspektorátu může být taková praxe vyhodnocena jako nelegální práce</strong>.
+  </p>
+  {% if jobs_internship %}
+    <div class="content__ad">
+      <p>
+        Přímo na junior.guru najdeš <a href="{{ url_for('jobs') }}">nabídky práce výhradně pro juniory</a>. Zrovna dnes jsou mezi nimi i nějaké stáže:
+      </p>
+      {{ jobs_inline_macro(jobs_internship, 2) }}
+    </div>
+  {% endif %}
+  <div class="tooltips">
     <h3 class="content__subsection-heading" id="big-companies">Práce pro velkou firmu</h3>
     <p>
       Velké firmy a instituce <a href="#why-big-companies">jsou v lepší pozici</a>, aby mohly zaměstnávat začátečníky. Práce pro ně má své <strong>výhody</strong>:
@@ -612,80 +683,7 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
         Dan Luu, autor článku <a href="https://danluu.com/startup-tradeoffs/">Big companies v. startups</a>
       </figcaption>
     </figure>
-
-    <h3 class="content__subsection-heading" id="internships">Stáže</h3>
-    <p>
-      Některé firmy vypisují stáže (anglicky <em>internship</em>), ale <strong>není jich
-      mnoho</strong>. Často jsou <a href="#university">jen pro studenty VŠ</a>, protože firmu
-      nenapadne, že by se na ně mohl hlásit i někdo jiný. Mnohdy se také podaří
-      naplnit stáže přes známosti nebo partnerství se školami, takže není důvod je veřejně inzerovat.
-    </p>
-    <p>
-      Stáž přitom může být <strong>dobrá příležitost, jak začít bez zkušeností</strong>. Firma tě zaučí
-      do jednoduchých úkolů a po čase se rozhodne, jestli tě chtějí vzít. A často
-      chtějí, když už do tebe investovali nějaký ten čas. I kdyby to nevyšlo,
-      je z toho aspoň praxe, zkušenost, brigáda na léto.
-    </p>
-    <p>
-      Pokud studuješ, máš k dispozici nástěnky, poradenská centra, pracovní veletrhy,
-      webové stránky studentských spolků, webové stránky aj. prezentace výzkumných
-      pracovních skupin, spolužáky, cvičící, přednášející…
-    </p>
-    <p>
-      <strong>Ostatním zbývá <a href="https://cs.wikipedia.org/wiki/Asertivita">asertivita</a>.</strong> Odmítli tě v nějaké firmě, protože hledají někoho zkušenějšího? Zeptej se jich na stáž. Líbí se ti nějaká firma? Napiš jim a zeptej se na stáž. Významnou roli hraje také <a href="#networking">networking</a>.
-      Choď na <a href="{{ url_for('practice') }}#events">srazy a konference</a>, tam se aktivně druž a &mdash; ptej se na stáž.
-    </p>
-    <figure class="quote">
-      <blockquote>
-        Už jsem viděl stáže dohozené přes bratrance, klienty, plesy, spolujízdu. Najednou jsi konkrétní člověk a pokud vypadáš inteligentně,
-        firma si řekne: „Proč ne?“
-      </blockquote>
-      <figcaption>
-        Petr Messner, profesionální programátor
-      </figcaption>
-    </figure>
   </div>
-  {% if jobs_internship %}
-    <div class="content__ad">
-      <p>
-        Přímo na junior.guru najdeš <a href="{{ url_for('jobs') }}">nabídky práce výhradně pro juniory</a>. Zrovna dnes jsou mezi nimi i nějaké stáže:
-      </p>
-      {{ jobs_inline_macro(jobs_internship, 2) }}
-    </div>
-  {% endif %}
-  <div class="tooltips">
-    <h3 class="content__subsection-heading" id="unpaid-internships">Neplacené stáže</h3>
-    <p>
-      Je na tobě si vyhodnotit, zda se ti stáž bez odměny ve tvé situaci vyplatí a zda si to vůbec můžeš dovolit.
-      Ač je možné se s neplacenými stážemi setkat běžně u nás i v zahraničí, je to <a href="https://www.e15.cz/the-student-times/neplacene-staze-aneb-jak-nedocenitelna-je-zkusenost-1348117">věc na hranici zákona i etiky</a>. Podle českého práva <a href="https://www.epravo.cz/top/clanky/neplacena-praxe-ve-firmach-studenti-i-zamestnavatele-na-hrane-zakona-100528.html">není neplacená stáž jednoznačně protizákonná</a>, ale <strong>existuje šance, že v případě kontroly ze strany inspektorátu může být taková praxe vyhodnocena jako nelegální práce</strong>.
-    </p>
-
-    <h3 class="content__subsection-heading" id="volunteering">Dobrovolnictví</h3>
-    <p>
-      Jeden ze způsobů, jak přijít k první praxi, je <strong>pomoci nějakému neziskovému
-      projektu</strong>. Nemusí to být zrovna <a href="https://www.clovekvtisni.cz/">Člověk v tísni</a>. Třeba přímo ve svém okolí najdeš něco, kde je potřeba programování, ale nejsou prostředky na profesionální programátory a příliš to nespěchá.
-    </p>
-    <p>
-      Nemáš-li nápady, mrkni na <a href="https://pyvec.org/">Pyvec</a>, <a href="https://cesko.digital/">Česko.Digital</a>, <a href="https://www.hlidacstatu.cz/">Hlídač státu</a>, <a href="https://umsemumtam.cz/">Um sem um tam</a>, nebo si <strong>projdi projekty
-      na <a href="https://www.darujme.cz/">Darujme.cz</a> a napiš tomu, kterému by se ti líbilo pomoci</strong>. Ideální je, pokud je za projektem nějaké „IT oddělení“ (možná spíš skupinka nadšenců), kde tě budou zaučovat za to, že jim pomůžeš.
-    </p>
-    <figure class="quote">
-      <blockquote>
-        <a href="https://gamecon.cz/">GameCon</a> naplňoval ideální simulaci firemních podmínek. Neziskový projekt má své výhody – pracujete na něčem, co se reálně použije, projekt můžete řídit, máte k ruce tým kolegů.
-      </blockquote>
-      <figcaption>
-        Michal Havelka, autor článku <a href="https://www.zdrojak.cz/clanky/jak-jsem-se-nestal-front-end-vyvojarem/">Jak jsem se (ne)stal front-end vývojářem</a>
-      </figcaption>
-    </figure>
-  </div>
-  {% if jobs_volunteering %}
-    <div class="content__ad">
-      <p>
-        Přímo na junior.guru jsou <a href="{{ url_for('jobs') }}">nabídky práce výhradně pro juniory</a> a občas se mezi nimi objeví i nabídka dobrovolnictví (neziskovky a malé projekty zde mohou inzerovat zdarma). Zrovna dnes tam něco je:
-      </p>
-      {{ jobs_inline_macro(jobs_volunteering, 2) }}
-    </div>
-  {% endif %}
 </section>
 
 {% include 'includes/engage_donate.html' %}
