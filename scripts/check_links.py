@@ -15,6 +15,7 @@ EXCLUDE_URLS = [
 ]
 EXCLUDE_REASONS = [re.compile(r) for r in [
     r'^BLC_UNKNOWN$',  # crawling protection?
+    r'^ERRNO_EPROTO$',  # Czech TV website ¯\_(ツ)_/¯
     r'^ERRNO_ENOTFOUND$',  # crawling protection? can't even find the domain name
     r'^HTTP_999$',  # LinkedIn crawling protection
     r'^HTTP_429$',  # Twitter crawling protection, also https://github.com/stevenvachon/broken-link-checker/issues/198
