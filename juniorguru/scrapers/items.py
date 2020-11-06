@@ -83,7 +83,7 @@ def parse_relative_date(text, today=None):
         return today
     if 'yesterday' in text or 'včera' in text:
         return today - timedelta(days=1)
-    if 'day' in text or 'dny' in text:
+    if 'day' in text or 'dny' in text or 'dnem' in text:
         days_ago = int(re.search(r'\d+', text).group(0))
         return today - timedelta(days=days_ago)
     if 'month' in text or 'měs' in text:

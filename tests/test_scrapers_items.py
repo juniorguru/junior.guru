@@ -31,6 +31,8 @@ def test_split_by():
     ('28 minutes ago', date(2020, 4, 20)),
     ('1 month ago', date(2020, 3, 21)),
     ('2 months ago', date(2020, 2, 20)),
+    ('Před 1 dnem', date(2020, 4, 19)),
+    ('Před 2 dny', date(2020, 4, 18)),
 ])
 def test_parse_relative_date(time, expected):
     assert items.parse_relative_date(time, today=date(2020, 4, 20)) == expected
