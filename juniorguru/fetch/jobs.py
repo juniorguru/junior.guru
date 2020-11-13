@@ -19,8 +19,8 @@ def main():
             model.create_table()
 
     spider_names = [
-        'linkedin',
         'juniorguru',
+        'linkedin',
         'stackoverflow',
         'startupjobs',
         'remoteok',

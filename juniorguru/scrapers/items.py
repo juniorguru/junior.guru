@@ -11,7 +11,7 @@ class Job(Item):
     # set by spiders
     posted_at = Field(required=True)
     title = Field(required=True)
-    location_raw = Field()
+    locations_raw = Field()
     remote = Field()
     company_name = Field(required=True)
     company_link = Field()
@@ -32,8 +32,7 @@ class Job(Item):
     junior_rank = Field()
     sort_rank = Field()
     sort_rank_components = Field()
-    location_place = Field()
-    region = Field()
+    locations = Field()
     remote_region_raw = Field()
 
 

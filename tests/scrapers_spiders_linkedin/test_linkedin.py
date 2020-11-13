@@ -45,7 +45,7 @@ def test_spider_parse_job():
     job = jobs[0]
 
     assert sorted(job.keys()) == sorted([
-        'title', 'link', 'company_name', 'company_link', 'location_raw',
+        'title', 'link', 'company_name', 'company_link', 'locations_raw',
         'employment_types', 'posted_at', 'description_html',
         'experience_levels', 'company_logo_urls', 'remote',
     ])
@@ -53,7 +53,7 @@ def test_spider_parse_job():
     assert job['link'] == 'https://ca.linkedin.com/jobs/view/software-engineer-at-adaptavist-2230926500'
     assert job['company_name'] == 'Adaptavist'
     assert job['company_link'] == 'https://uk.linkedin.com/company/adaptavist'
-    assert job['location_raw'] == 'Toronto, Ontario, Canada'
+    assert job['locations_raw'] == ['Toronto, Ontario, Canada']
     assert job['remote'] is False
     assert job['employment_types'] == ['full-time']
     assert job['experience_levels'] == ['entry level']
@@ -79,7 +79,7 @@ def test_spider_parse_job_no_company_link():
 
     assert job['company_name'] == 'Grafton Temporary Staffing'
     assert 'company_link' not in job
-    assert job['location_raw'] == 'Praha 4'
+    assert job['locations_raw'] == ['Praha 4']
 
 
 def test_spider_parse_job_applicants():

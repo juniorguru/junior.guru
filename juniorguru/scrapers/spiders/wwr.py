@@ -46,7 +46,7 @@ class Spider(BaseSpider):
         loader.add_value('employment_types', [data['employmentType']])
         loader.add_value('company_name', data['hiringOrganization']['name'])
         loader.add_value('company_link', data['hiringOrganization']['sameAs'])
-        loader.add_value('location_raw', data['hiringOrganization']['address'])
+        loader.add_value('locations_raw', data['hiringOrganization']['address'])
 
         yield loader.load_item()
 
@@ -76,3 +76,4 @@ class Loader(ItemLoader):
     posted_at_in = MapCompose(parse_date)
     company_logo_urls_out = Identity()
     remote_in = MapCompose(bool)
+    locations_raw_out = Identity()

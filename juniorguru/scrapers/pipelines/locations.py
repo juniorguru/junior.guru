@@ -68,25 +68,29 @@ class Pipeline():
         return cls(stats=crawler.stats)
 
     def process_item(self, item, spider):
-        if item.get('location_raw'):
-            location_raw = item['location_raw']
-            try:
-                log.debug(f"Geocoding '{location_raw}'")
-                address = self.geocode(location_raw)
-                if address:
-                    try:
-                        item['region'] = get_region(address)
-                        item['location_place'] = address['place']
-                    except KeyError as e:
-                        raise KeyError(f"{address!r} doesn't have key {e}") from e
-                    if self.stats:
-                        self.stats.inc_value('item_geocoded_count')
-            except Exception:
-                info = dict(spider=spider.name,
-                            title=item.get('title'),
-                            company=item.get('company_name'))
-                log.exception(f"Geocoding '{location_raw}' failed, {info!r}")
+        location_tuples = [self.parse_location(loc, spider, item)
+                           for loc in item.get('locations_raw', [])]
+        location_tuples = set(filter(None, location_tuples))
+        item['locations'] = [dict(name=name, region=region)
+                             for name, region in location_tuples]
         return item
+
+    def parse_location(self, location_raw, spider, item):
+        try:
+            log.debug(f"Geocoding '{location_raw}'")
+            address = self.geocode(location_raw)
+            if self.stats:
+                self.stats.inc_value('item_geocoded_count')
+            if address:
+                try:
+                    return (address['place'], get_region(address))
+                except KeyError as e:
+                    raise KeyError(f"{address!r} doesn't have key {e}") from e
+        except Exception:
+            info = dict(spider=spider.name,
+                        title=item.get('title'),
+                        company=item.get('company_name'))
+            log.exception(f"Geocoding '{location_raw}' failed, {info!r}")
 
 
 def optimize_geocoding(geocode):
@@ -147,7 +151,7 @@ if __name__ == '__main__':
     """
     Usage:
 
-        python -m juniorguru.scrapers.pipelines.location 'Brno, South Moravia'
+        python -m juniorguru.scrapers.pipelines.locations 'Brno, South Moravia'
     """
     import sys
     from pprint import pprint
@@ -158,4 +162,4 @@ if __name__ == '__main__':
     pprint(Pipeline().geocode(location_raw))
     print('---\nPipeline().process_item()')
     spider = namedtuple('Spider', ['name'])(name='test')
-    pprint(Pipeline().process_item({'location_raw': location_raw}, spider))
+    pprint(Pipeline().process_item({'locations_raw': [location_raw]}, spider))

@@ -40,19 +40,23 @@ def test_juniorguru_listing(db_connection):
 
 
 def test_region_listing(db_connection):
-    job1 = create_job('1', region='Brno', sort_rank=30)
-    job2 = create_job('2', region='Praha')  # noqa
-    job3 = create_job('3', region='Brno', sort_rank=20)
-    job4 = create_job('4', region='Brno', sort_rank=10)
+    job1 = create_job('1', sort_rank=30,
+                      locations=[dict(name='Brno', region='Brno')])
+    job2 = create_job('2',  # noqa
+                      locations=[dict(name='Praha', region='Praha')])
+    job3 = create_job('3', sort_rank=20,
+                      locations=[dict(name='Brno', region='Brno')])
+    job4 = create_job('4', sort_rank=10,
+                      locations=[dict(name='Brno', region='Brno')])
 
     assert list(Job.region_listing('Brno')) == [job1, job3, job4]
 
 
 def test_remote_listing(db_connection):
-    job1 = create_job('1', remote=True, region='Brno', sort_rank=30)
-    job2 = create_job('2', remote=False, region='Praha')  # noqa
-    job3 = create_job('3', remote=True, region='Brno', sort_rank=20)
-    job4 = create_job('4', remote=True, region=None, sort_rank=10)
+    job1 = create_job('1', remote=True, sort_rank=30)
+    job2 = create_job('2', remote=False)  # noqa
+    job3 = create_job('3', remote=True, sort_rank=20)
+    job4 = create_job('4', remote=True, sort_rank=10)
 
     assert list(Job.remote_listing()) == [job1, job3, job4]
 
@@ -66,10 +70,7 @@ def test_tags_listing(db_connection):
     assert list(Job.tags_listing(['ALSO_INTERNSHIP', 'ALSO_PART_TIME'])) == [job1, job2, job4]
 
 
-@pytest.mark.parametrize('source', [
-    'juniorguru',
-    'moo',
-])
+@pytest.mark.parametrize('source', ['juniorguru', 'moo'])
 def test_newsletter_listing_sorts_by_sort_rank_desc(db_connection, source):
     job1 = create_job('1', source=source, sort_rank=30)
     job2 = create_job('2', source=source, sort_rank=10)
@@ -83,8 +84,9 @@ def test_newsletter_listing_returns_only_juniorguru_if_enough(db_connection):
     job2 = create_job('2', source='moo')  # noqa
     job3 = create_job('3', source='juniorguru', sort_rank=20)
     job4 = create_job('4', source='juniorguru', sort_rank=10)
+    job5 = create_job('5', source='juniorguru', sort_rank=5)
 
-    assert list(Job.newsletter_listing(3)) == [job1, job3, job4]
+    assert list(Job.newsletter_listing(3)) == [job1, job3, job4, job5]
 
 
 def test_newsletter_listing_backfills_with_other_sources(db_connection):
@@ -252,35 +254,47 @@ def test_tags_employment_types(employment_types, expected):
     assert expected == tags
 
 
-@pytest.mark.parametrize('location_raw,location_place,region,expected', [
+@pytest.mark.parametrize('locations,expected', [
     # missing pieces
-    (None, None, None, '?'),
-    ('Brno, Česká republika', None, 'Brno', 'Brno, Česká republika'),
-    ('Brno, Česká republika', 'Brno', None, 'Brno, Česká republika'),
-    ('Brno, Česká republika', None, None, 'Brno, Česká republika'),
+    ([], '?'),
+    ([dict(name=None, region=None)], '?'),
+    ([dict(name=None, region='Brno')], 'Brno'),
+    ([dict(name='Brno', region=None)], 'Brno'),
 
     # region
-    ('Brno, Česká republika', 'Brno', 'Brno', 'Brno'),
-    ('Káranice, Česká republika', 'Káranice', 'Hradec Králové', 'Káranice, Hradec Králové'),
-    ('Berlin, Deutschland', 'Berlin', 'Německo', 'Berlin, Německo'),
+    ([dict(name='Brno', region='Brno')], 'Brno'),
+    ([dict(name='Káranice', region='Hradec Králové')], 'Káranice, Hradec Králové'),
+    ([dict(name='Berlin', region='Německo')], 'Berlin, Německo'),
+
+    # multiple
+    ([dict(name='Brno', region='Brno'),
+      dict(name='Káranice', region='Hradec Králové')], 'Brno, Káranice'),
+
+    # too many
+    ([dict(name='Brno', region='Brno'),
+      dict(name='Praha', region='Praha'),
+      dict(name='Káranice', region='Hradec Králové'),
+      dict(name='Berlin', region='Německo')], 'Berlin, Brno…'),
 ])
-def test_location(location_raw, location_place, region, expected):
-    job = Job(**prepare_job_data('1',
-                                 location_raw=location_raw,
-                                 location_place=location_place,
-                                 region=region))
+def test_location(locations, expected):
+    job = Job(**prepare_job_data('1', locations=locations))
 
     assert job.location == expected
 
 
-@pytest.mark.parametrize('location_raw,remote,expected', [
-    (None, True, 'na dálku'),
-    (None, False, '?'),
-    ('Brno', True, 'Brno, na dálku'),
-    ('Brno', False, 'Brno'),
+@pytest.mark.parametrize('locations,remote,expected', [
+    ([], True, 'na dálku'),
+    ([], False, '?'),
+    ([dict(name='Brno', region='Brno')], True, 'Brno, na dálku'),
+    ([dict(name='Brno', region='Brno')], False, 'Brno'),
+    ([dict(name='Brno', region='Brno'),
+      dict(name='Praha', region='Praha')], True, 'Brno, Praha, na dálku'),
+    ([dict(name='Brno', region='Brno'),
+      dict(name='Praha', region='Praha'),
+      dict(name='Liberec', region='Liberec')], True, 'Brno, Liberec a další, na dálku'),
 ])
-def test_location_with_remote(location_raw, remote, expected):
-    job = Job(**prepare_job_data('1', location_raw=location_raw, remote=remote))
+def test_location_with_remote(locations, remote, expected):
+    job = Job(**prepare_job_data('1', locations=locations, remote=remote))
 
     assert job.location == expected
 

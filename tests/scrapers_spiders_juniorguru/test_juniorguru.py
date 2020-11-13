@@ -51,10 +51,9 @@ def test_spider_parse_multiple_locations():
     response = HtmlResponse('https://example.com/', body=b'...')
     jobs = list(Spider().parse(response))
 
-    assert len(jobs) == 3
-    assert jobs[0]['location_raw'] == 'Praha'
-    assert jobs[1]['location_raw'] == 'Ostrava'
-    assert jobs[2]['location_raw'] == 'Brno'
+    assert len(jobs) == 2
+    assert jobs[0]['locations_raw'] == ['Praha', 'Ostrava']
+    assert jobs[1]['locations_raw'] == ['Brno']
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -86,7 +85,7 @@ def test_coerce_record():
         'company_link': 'https://www.example.com',
         'employment_types': frozenset(['internship', 'full-time']),
         'title': 'Frontend Ninja',
-        'location_raw': 'Prague',
+        'locations_raw': ['Prague'],
         'remote': False,
         'link': 'https://jobs.example.com/1245/',
         'pricing_plan': 'community',

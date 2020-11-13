@@ -29,13 +29,11 @@ class Spider(BaseSpider):
 
     def parse(self, response):
         for record in self._get_records():
-            data = coerce_record(record)
-            for data_per_location in split_multiple_locations(data):
-                yield JuniorGuruJob(**data_per_location)
+            yield JuniorGuruJob(**coerce_record(record))
 
 
 def coerce_record(record):
-    job = coerce({
+    data = coerce({
         r'^timestamp$': ('posted_at', parse_datetime),
         r'^company name$': ('company_name', parse_text),
         r'^employment type$': ('employment_types', parse_set),
@@ -43,24 +41,21 @@ def coerce_record(record):
         r'^company website link$': ('company_link', parse_text),
         r'^email address$': ('email', parse_text),
         r'remote': ('remote', parse_boolean_words),
-        r'location': ('location_raw', parse_text),
+        r'location': ('locations_raw', parse_locations),
         r'^job description$': ('description_html', parse_markdown),
         r'^job link$': ('link', parse_text),
         r'^pricing plan$': ('pricing_plan', parse_pricing_plan),
         r'^approved$': ('approved_at', parse_date),
         r'^expire[ds]$': ('expires_at', parse_date),
     }, record)
-    job['id'] = create_id(job['posted_at'], job['company_link'])
-    return job
+    data['id'] = create_id(data['posted_at'], data['company_link'])
+    return data
 
 
-def split_multiple_locations(data):
-    location = data.get('location_raw')
+def parse_locations(location):
     if location:
-        for sub_location in re.split(r'\snebo\s', location):
-            yield {**data, 'location_raw': sub_location.strip()}
-    else:
-        yield data
+        return [loc.strip() for loc in re.split(r'\snebo\s', location)]
+    return []
 
 
 def parse_pricing_plan(value):

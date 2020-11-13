@@ -55,9 +55,7 @@ class Job(BaseModel):
     posted_at = DateField(index=True)
     title = CharField()
     remote = BooleanField(default=False)
-    location_raw = CharField(null=True)
-    location_place = CharField(null=True)
-    region = CharField(null=True)
+    locations = JSONField(default=lambda: [])
     company_name = CharField()
     company_link = CharField(null=True)
     company_logo_path = CharField(null=True)
@@ -88,21 +86,32 @@ class Job(BaseModel):
 
     @property
     def location(self):
-        if self.location_place and self.region:
-            if self.location_place == self.region:
-                parts = [self.location_place]
-            else:
-                parts = [self.location_place, self.region]
+        # TODO refactor, this is terrible
+        if len(self.locations) == 1:
+            location = self.locations[0]
+            name, region = location['name'], location['region']
+            parts = [name] if name == region else [name, region]
+            if self.remote:
+                parts.append('na dálku')
+            parts = list(filter(None, parts))
+            if parts:
+                return ', '.join(parts)
+            return '?'
         else:
-            parts = [self.location_raw]
-
-        if self.remote:
-            parts.append('na dálku')
-
-        parts = list(filter(None, parts))
-        if parts:
-            return ', '.join(parts)
-        return '?'
+            parts = list(sorted(filter(None, [loc['name'] for loc in self.locations])))
+            if len(parts) > 2:
+                parts = parts[:2]
+                if self.remote:
+                    parts[-1] += ' a další'
+                    parts.append('na dálku')
+                    return ', '.join(parts)
+                else:
+                    return ', '.join(parts) + '…'
+            elif parts:
+                return ', '.join(parts + (['na dálku'] if self.remote else []))
+            if self.remote:
+                return 'na dálku'
+            return '?'
 
     @property
     def metrics(self):
@@ -149,7 +158,11 @@ class Job(BaseModel):
 
     @classmethod
     def region_listing(cls, region):
-        return cls.listing().where(cls.region == region)
+        locations = cls.locations.tree().alias('locations')
+        return cls.listing() \
+            .from_(cls, locations) \
+            .where((locations.c.key == 'region') &
+                   (locations.c.value == region))
 
     @classmethod
     def remote_listing(cls):
@@ -182,7 +195,7 @@ class Job(BaseModel):
             count += 1
 
         backfill_query = cls.listing().where(cls.source != 'juniorguru')
-        yield from itertools.islice(backfill_query, min_count - count)
+        yield from itertools.islice(backfill_query, max(min_count - count, 0))
 
     def days_since_posted(self, today=None):
         today = today or date.today()

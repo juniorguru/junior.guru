@@ -15,21 +15,20 @@ class Spider(BaseSpider):
 
     def parse(self, response):
         for n, offer in enumerate(response.xpath('//offer'), start=1):
-            for city in offer.xpath('.//city/text()').getall():
-                loader = Loader(item=Job(), response=response)
-                offer_loader = loader.nested_xpath(f'//offer[{n}]')
-                offer_loader.add_xpath('title', './/position/text()')
-                offer_loader.add_xpath('link', './/url/text()')
-                offer_loader.add_xpath('company_name', './/startup/text()')
-                offer_loader.add_xpath('company_link', './/startupURL/text()')
-                offer_loader.add_value('location_raw', city)
-                offer_loader.add_xpath('remote', ".//jobtype[contains(., 'Remote')]/text()")
-                offer_loader.add_value('remote', False)
-                offer_loader.add_xpath('employment_types', './/jobtype/text()')
-                offer_loader.add_xpath('posted_at', './/lastUpdate//text()')
-                offer_loader.add_xpath('description_html', './/description/text()')
-                offer_loader.add_xpath('company_logo_urls', './/startupLogo/text()')
-                yield loader.load_item()
+            loader = Loader(item=Job(), response=response)
+            offer_loader = loader.nested_xpath(f'//offer[{n}]')
+            offer_loader.add_xpath('title', './/position/text()')
+            offer_loader.add_xpath('link', './/url/text()')
+            offer_loader.add_xpath('company_name', './/startup/text()')
+            offer_loader.add_xpath('company_link', './/startupURL/text()')
+            offer_loader.add_xpath('locations_raw', './/city/text()')
+            offer_loader.add_xpath('remote', ".//jobtype[contains(., 'Remote')]/text()")
+            offer_loader.add_value('remote', False)
+            offer_loader.add_xpath('employment_types', './/jobtype/text()')
+            offer_loader.add_xpath('posted_at', './/lastUpdate//text()')
+            offer_loader.add_xpath('description_html', './/description/text()')
+            offer_loader.add_xpath('company_logo_urls', './/startupLogo/text()')
+            yield loader.load_item()
 
 
 def drop_remote(types):
@@ -46,3 +45,4 @@ class Loader(ItemLoader):
     posted_at_in = MapCompose(parse_iso_date)
     company_logo_urls_out = Identity()
     remote_in = MapCompose(bool)
+    locations_raw_out = Identity()

@@ -32,10 +32,7 @@ def prepare_data(item, spider_name):
 
 
 def create_id(item):
-    return hashlib.sha224('⚡︎'.join(filter(None, [
-        item['link'],
-        item.get('location_raw'),
-    ])).encode()).hexdigest()
+    return hashlib.sha224(item['link'].encode()).hexdigest()
 
 
 def get_company_logo_path(company_logos):

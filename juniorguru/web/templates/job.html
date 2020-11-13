@@ -20,7 +20,11 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
       </a>
       &mdash;
       <span itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
-        <span itemprop="address">{{ job.location }}</span>
+        <span itemprop="address">
+          {% for location in job.locations %}
+            {{ location.name }}{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </span>
       </span>
       {% set tags = job.tags()|reject('eq', 'NEW')|list %}
       {% if tags %}

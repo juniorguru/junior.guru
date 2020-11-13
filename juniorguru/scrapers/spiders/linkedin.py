@@ -59,7 +59,7 @@ class Spider(BaseSpider):
         loader.add_css('company_name', '.topcard__org-name-link::text')
         loader.add_css('company_name', '.topcard__content-left > h3 > span:nth-of-type(1)::text')
         loader.add_css('company_link', '.topcard__org-name-link::attr(href)')
-        loader.add_css('location_raw', '.topcard__content-left > h3 > span:nth-of-type(2)::text')
+        loader.add_css('locations_raw', '.topcard__content-left > h3:nth-of-type(1) > span:nth-of-type(2)::text')
         loader.add_xpath('employment_types', "//h3[contains(., 'Employment type')]/following-sibling::span/text()")
         loader.add_xpath('experience_levels', "//h3[contains(., 'Seniority level')]/following-sibling::span/text()")
         loader.add_css('posted_at', '.topcard__content-left > h3:nth-of-type(2) span::text')
@@ -115,3 +115,4 @@ class Loader(ItemLoader):
     experience_levels_out = Identity()
     company_logo_urls_out = Identity()
     remote_in = MapCompose(parse_remote)
+    locations_raw_out = Identity()

@@ -43,7 +43,7 @@ def test_spider_parse_job():
     assert sorted(job.keys()) == sorted([
         'title', 'link', 'company_name', 'company_link', 'employment_types',
         'posted_at', 'description_html', 'company_logo_urls', 'remote',
-        'location_raw',
+        'locations_raw',
     ])
     assert job['title'] == 'DevOps Engineer, Kubernetes, AWS/GCP'
     assert job['link'] == 'https://example.com/example/'

@@ -24,8 +24,13 @@ def db():
         db_path.unlink()
 
 
-def test_database(item, spider, db):
-    Pipeline(db=db, model=Job).process_item(item, spider)
+@pytest.fixture
+def pipeline(db):
+    return Pipeline(db=db, model=Job)
+
+
+def test_database(db, pipeline, item, spider):
+    pipeline.process_item(item, spider)
     with db:
         job = Job.select()[0]
 
@@ -33,7 +38,7 @@ def test_database(item, spider, db):
     assert job.source == 'dummy'  # spider name
 
 
-def test_database_company_logo_path(item, spider, db):
+def test_database_company_logo_path(db, pipeline, item, spider):
     item['company_logos'] = [
         {
             'checksum': '6b874bd7b996e9323fd2e094be83ca4c',
@@ -48,48 +53,35 @@ def test_database_company_logo_path(item, spider, db):
             'url': 'https://www.startupjobs.cz/uploads/GQ1A8RDZWYUJfavicon155377551420.png'
         },
     ]
-    Pipeline(db=db, model=Job).process_item(item, spider)
+    pipeline.process_item(item, spider)
     with db:
         job = Job.select()[0]
 
     assert job.company_logo_path == 'images/company-logos/d40730d4068db31a09687ebb42f7637e26864a30.png'
 
 
-def test_database_id_prefilled(item, spider, db):
+def test_database_id_prefilled(db, pipeline, item, spider):
     item['id'] = 'honza42'
-    Pipeline(db=db, model=Job).process_item(item, spider)
+    pipeline.process_item(item, spider)
     with db:
         job = Job.select()[0]
 
     assert job.id == 'honza42'
 
 
-def test_database_id_prefilled_no_link(item, spider, db):
+def test_database_id_prefilled_no_link(db, pipeline, item, spider):
     item['id'] = 'honza42'
     del item['link']
-    Pipeline(db=db, model=Job).process_item(item, spider)
+    pipeline.process_item(item, spider)
     with db:
         job = Job.select()[0]
 
     assert job.id == 'honza42'
 
 
-def test_database_id_no_location(item, spider, db):
-    item['location_raw'] = None
-    Pipeline(db=db, model=Job).process_item(item, spider)
+def test_database_id(db, pipeline, item, spider):
+    pipeline.process_item(item, spider)
     with db:
         job = Job.select()[0]
 
     assert len(job.id) == 56  # sha224 hex digest length
-
-
-def test_database_same_link_items(item, spider, db):
-    for location in ['Ostrava', 'Brno', 'Pardubice']:
-        item['location_raw'] = location
-        Pipeline(db=db, model=Job).process_item(item, spider)
-    with db:
-        jobs = Job.select()
-
-    assert len(jobs) == 3
-    assert len({job.id for job in jobs}) == 3
-    assert len({job.location for job in jobs}) == 3
