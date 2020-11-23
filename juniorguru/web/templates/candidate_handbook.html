@@ -88,6 +88,7 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
           <li class="toc__subitem"><a class="toc__sublink" href="#internships">Stáže</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#big-companies">Práce pro velkou firmu</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#startups">Práce pro startup</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#freelancing">Práce na volné noze</a></li>
         </ol>
       </li>
       <li class="toc__item"><a class="toc__link" href="#preparation">Příprava</a>
@@ -119,6 +120,7 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
           <li class="toc__subitem"><a class="toc__sublink" href="#company-info">Povědomí o firmě</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#reverse-interview">Tvoje otázky</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#negotiation">Vyjednávání</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#contracting">Práce „na IČO“</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#handling-rejection">Jak zvládnout odmítnutí</a></li>
         </ol>
       </li>
@@ -388,15 +390,16 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
 
     <h3 class="content__subsection-heading" id="remote-work">Najdu práci externě, na dálku?</h3>
     <p>
-      Práci na dálku si většinou musíš <strong>vysloužit svou samostatností</strong>. Na začátku kariéry
-      se budeš hodně učit, budeš se topit a volat o pomoc, budeš potřebovat někoho, kdo
-      ti ke konkrétním věcem, které firma dělá, vysvětlí kontext. Toto se i v dnešní
-      době dělá na dálku dost nepohodlně. Lepší je, když se můžeš otočit na židli a zeptat,
-      nebo když si k tobě někdo přisedne a ukáže ti jak a co. <strong>S prací na dálku počítej
-      spíš jako s něčím, co si budeš za pár let moci dovolit, ale v začátku by ti to spíš uškodilo.</strong>
+      Před rokem 2020 platilo, že práci na dálku si musíš <strong>vysloužit svou samostatností</strong>. Na začátku kariéry se hodně učíš, topíš se a voláš o pomoc, potřebuješ někoho, kdo ti ke konkrétním věcem, které firma dělá, vysvětlí kontext. Mnoho lidí má za to, že je lepší, když se v takové chvíli můžeš otočit na židli a zeptat se přítomných kolegů.
+    </p>
+    </p>
+      <a href="{{ url_for('learn') }}#covid19">Situace kolem COVID-19</a> ale nakonec nedává firmám příliš na výběr. Práce z domova přestává být vnímána jako občasný benefit, stává se plnohodnotnou formou spolupráce. Spolu s tím <strong>firmy objevují i způsoby, jak na dálku zaučovat nové lidi</strong>, čímž odpadá jedna z největších překážek, proč je tento způsob práce nevhodný pro juniory. Lze tedy stále častěji najít i nabídky práce pro juniory, které jsou částečně či zcela „remote“.
     </p>
     <p>
-      S vývojem <a href="{{ url_for('learn') }}#covid19">situace kolem COVID-19</a> se ale věci rychle mění a nemálo firem začíná částečně nebo i kompletně fungovat na dálku. Práce z domova přestává být vnímána jako občasný benefit, ale stává se pro lidi plnohodnotnou formou spolupráce. Spolu s tím <strong>firmy objevují i způsoby, jak na dálku zaučovat nové lidi</strong>, čímž odpadá jedna z největších překážek, proč je tento způsob práce nevhodný pro juniory. Lze tedy stále častěji najít i nabídky práce pro juniory, které jsou částečně či zcela „remote“.
+      Práce na dálku se během pandemie stala trendem, nejde však o nic vyloženě nového. Souhrnný článek <a href="https://honzajavorek.cz/blog/prace-z-domova/">Práce z domova</a> nebo kniha <a href="https://basecamp.com/books/remote">Remote</a> vyšly skoro před dekádou, ale i tak mohou dodnes sloužit jako aktuální a kvalitní zdroje informací o této problematice. Projdi si alespoň ten článek, ať se dokážeš dobře připravit i na nevýhody, které práce na dálku přináší.
+    </p>
+    <p>
+      Možná znáš pojem <a href="https://honzajavorek.cz/blog/prace-z-domova/#digitalni-nomadi">digitální nomádství</a> a láká tě představa, že ťukáš do notebooku někde na pláži. Na fotkách to vypadá dobře, ale <a href="http://www.svetpatritemcoseneposerou.cz/blog-ikigai-a-japonsky-smysl-zivota.html">realita je složitější</a> &mdash; a nejde jen o displej na přímém slunci nebo písek v klávesnici. Hezký úvod a spoustu dalších odkazů najdeš v článku na <a href="https://travelbible.cz/digitalni-nomadstvi/">Travel Bibli</a>.
     </p>
   </div>
   {% if jobs_remote %}
@@ -491,7 +494,7 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
         <br>Příklady: <a href="https://www.rohlik.cz/">Rohlik.cz</a>, <a href="https://www.hypotecnibanka.cz/">Hypoteční banka</a>, <a href="https://www.skoda-auto.cz/">Škoda Auto</a>, e-shopy…
       </li>
       <li>
-        <strong>Digitální agentury</strong> zpracovávají zakázky pro jiné firmy. Projekty přicházejí a odcházejí, je větší prostor pro stavění nového na zelené louce a pro zkoušení nejnovějších technologií. Zákazník může mít prostřednictvím „projekťáků“ velký vliv na tvou každodenní práci, je zde riziko vyššího stresu pro všechny zúčastněné. Některé firmy také provozují <em><a href="https://www.google.cz/search?q=body%20shopping%20programov%C3%A1n%C3%AD">body shopping</a></em>, tedy že tě agentura přeprodává jako <a href="https://cs.wikipedia.org/wiki/%C5%BDoldn%C3%A9%C5%99">žoldnéře</a>.
+        <strong>Digitální agentury</strong> zpracovávají zakázky pro jiné firmy. Projekty přicházejí a odcházejí, je větší prostor pro stavění nového na zelené louce a pro zkoušení nejnovějších technologií. Zákazník může mít prostřednictvím „projekťáků“ velký vliv na tvou každodenní práci, je zde riziko vyššího stresu pro všechny zúčastněné. Některé firmy také provozují <em><a href="https://www.google.cz/search?q=body%20shopping%20programov%C3%A1n%C3%AD">body shopping</a></em>, tedy že pracuješ „<a href="#contracting">na IČO</a>“ a agentura tě přeprodává jako <a href="https://cs.wikipedia.org/wiki/%C5%BDoldn%C3%A9%C5%99">žoldnéře</a>.
         <br>Příklady: <a href="https://fragaria.cz/">Fragaria</a>, <a href="https://www.strv.com/">STRV</a>, <a href="https://symbio.agency/">Symbio</a>, reklamní agentury…
       </li>
       <li>
@@ -683,7 +686,133 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
         Dan Luu, autor článku <a href="https://danluu.com/startup-tradeoffs/">Big companies v. startups</a>
       </figcaption>
     </figure>
+
+    <h3 class="content__subsection-heading" id="freelancing">Práce na&nbsp;volné noze</h3>
+    <p>
+      Podnikání je z pochopitelných důvodů opomíjenou možností, jak začít v IT. Nejefektivnějším způsobem, jak během prvních 1-2 let nabrat zkušenosti, je jít do klasického zaměstnání ve střední nebo větší firmě. <strong>Ne každému ale něco takového zapadne do jeho životní situace.</strong> Pokud budeš u některé z následujících otázek přikyvovat, stojí za zvážení, zda by pro tebe nebyla živnost vhodnější volbou:
+    </p>
+    <ul>
+      <li>Hledáš jednorázové přivýdělky? Nedaří se ti najít zaměstnání na částečný úvazek? Např. při studiu na VŠ, péči o dítě nebo při jiném zaměstnání?</li>
+      <li>Bydlíš mimo velká města, kde se stálé zaměstnání v IT hledá obtížně? <a href="{{ url_for('jobs_region', region_id='praha') }}">Praha</a> nebo <a href="{{ url_for('jobs_region', region_id='brno') }}">Brno</a> nabízí jiné příležitosti než Šluknovsko či Jesenicko.</li>
+      <li>Nějaké podnikání nebo pokusy o něj už máš za sebou a víš co <a href="https://cs.wikipedia.org/wiki/Osoba_samostatn%C4%9B_v%C3%BDd%C4%9Ble%C4%8Dn%C4%9B_%C4%8Dinn%C3%A1">OSVČ</a> obnáší? Umíš se otáčet, komunikovat, zvládáš samostatnost, samovzdělávání?</li>
+      <li>Netlačí tě finance a nebude vadit, když během prvních měsíců vyděláš např. jen pár tisíc? Máš velký „sociální kapitál“, ze kterého můžeš čerpat zakázky?</li>
+    </ul>
+    <figure class="quote">
+      <blockquote>
+        Uvědomil jsem si, že nejspíš nikdy nebudu mít klasické zaměstnání. V mém okolí není po mých schopnostech poptávka. Práci seženu jedině na dálku, jako kontraktor.
+      </blockquote>
+      <figcaption>
+        Vuyisile Ndlovu, juniorní <a href="https://vuyisile.com/">programátor na&nbsp;volné noze ze Zimbabwe</a>
+      </figcaption>
+    </figure>
+    <p>
+      <a href="#remote-work">Práci na dálku</a> nebo pružnou pracovní dobu dnes firmy nabízejí i jako benefit v rámci běžného zaměstnaneckého poměru. Pokud se ti ovšem takovou práci dlouho nedaří najít a zároveň je to pro tebe jediná možnost, jak začít, může být volná noha způsobem, jak si tyto podmínky zařídit.
+    </p>
+    <p>
+      Než ovšem vyrazíš na živnostenský úřad, je dobré si nejdříve ujasnit, co se prací na&nbsp;volné noze přesně myslí. Na českém IT trhu se jako <a href="https://cs.wikipedia.org/wiki/Osoba_samostatn%C4%9B_v%C3%BDd%C4%9Ble%C4%8Dn%C4%9B_%C4%8Dinn%C3%A1">OSVČ</a> typicky pohybuješ někde mezi těmito dvěma způsoby podnikání:
+    </p>
+    <ul>
+      <li>
+        <strong>Freelancer</strong>, nebo také <a href="https://cs.wikipedia.org/wiki/Nez%C3%A1visl%C3%BD_profesion%C3%A1l">nezávislý profesionál</a>, umí nějakou věc velmi dobře a nechává se na ni najímat od mnoha různých klientů. Ti mohou být dlouhodobí, ale vztah mezi ním a firmou je spíše dodavatelský. Je v podstatě jednočlennou <a href="#job-types">agenturou</a>. Buduje si vlastní značku a reputaci, měl by se snažit být vidět. Může pracovat kdy chce a <a href="#remote-work">odkud chce</a>, ale jako každá svoboda, i tato s sebou nese velkou zodpovědnost. Kromě své profese musí umět být i sám sobě šéfem, asistentem, účetním, marketérem a obchoďákem, nebo by měl vydělat dost na to, aby si alespoň na něco z toho někoho najal. A měl by se naučit i dobře oddělovat pracovní život od soukromého, aby při tom všem brzy <a href="https://cs.wikipedia.org/wiki/Syndrom_vyho%C5%99en%C3%AD">nevyhořel</a>.
+      </li>
+      <li>
+        <strong>Kontraktor</strong> má prakticky jen dlouhodobé klienty a jeho vztah s firmou připomíná vztah zaměstnanecký. Říká se, že „dělá na IČO“. Benefity ani záruky klasického zaměstnaneckého poměru nemá, rizika a náklady si musí připočítat do své sazby. Je to <a href="https://cs.wikipedia.org/wiki/%C5%BDoldn%C3%A9%C5%99">žoldnéř</a>, který si musí umět věci spočítat, našetřit si záložní peníze, uzavírat s firmami oboustranně výhodné dohody. Kromě toho se ale způsob práce kontraktora většinou zásadně neliší od toho, jak svůj den tráví zaměstnanec.
+      </li>
+    </ul>
+    <p>
+      O nástrahách práce „na IČO“ je tady <a href="#contracting">celá další kapitola</a>. Pokud tě láká „freelancing“, rozhodně si ji přečti, ale navíc si projdi i následující tipy:
+    </p>
+    <ul>
+      <li>
+        Než do toho půjdeš naplno, můžeš si „něco jako práci na volné noze“ <strong>nejdříve vyzkoušet</strong>, a to v podobě tzv.&nbsp;<a href="https://www.jakpodnikat.cz/prilezitostna-cinnost.php">příležitostné činnosti</a>.
+      </li>
+      <li>
+        Firmy <a href="https://cs.wikipedia.org/wiki/Outsourcing">outsourcují</a> spoustu úkolů, ale <strong>nebudou je chtít svěřit amatérovi</strong>. Ujasni si, jaké jsou tvé přednosti a jak hodláš klientům kompenzovat své nedostatky (např. nízkou cenou). Vytvoř si <a href="#portfolio">portfolio</a>, kde to firmám „vysvětlíš“. Začni s jednoduchými, jasně zadanými a ohraničenými úkoly, které zvládneš vypracovat. Nesnaž se dělat všechno (např. weby, nebo i frontend jsou příliš široká zaměření). Vyber si směr, kterým se chceš vydat a na který se budeš specializovat (např. <a href="https://www.google.cz/search?q=k%C3%B3dov%C3%A1n%C3%AD%20newsletter%C5%AF">kódování newsletterů</a>). Začni malými krůčky, propracovávej se k větším úkolům a s nimi i k sebedůvěře, která ti pomůže odhadnout, do čeho se zvládneš pustit a kolik si za to máš říct.
+      </li>
+      <li>
+        <strong>Poptávky nepřijdou samy.</strong> Je velká pravděpodobnost, že nikdo zatím ani neví, že vůbec existuješ a něco nabízíš. Zkus si na internetu najít vhodné firmy a napsat jim e-mail s nabídkou svých služeb, účastni se <a href="https://www.facebook.com/navolnenoze/events/">srazů nezávislých profesionálů</a>, procházej různá internetová tržiště s poptávkami. V Česku má jistou tradici forum <a href="https://webtrh.cz/">Webtrh</a>, ale existuje toho spousta (abecedně):
+      <a rel="nofollow" href="https://fiverr.com/">fiverr.com</a>,
+      <a rel="nofollow" href="https://freelance.cz">freelance.cz</a>,
+      <a rel="nofollow" href="https://freelancer.com">freelancer.com</a>,
+      <a rel="nofollow" href="https://guru.com">guru.com</a>,
+      <a rel="nofollow" href="https://navolnenoze.cz">navolnenoze.cz</a>,
+      <a rel="nofollow" href="https://peopleperhour.com">peopleperhour.com</a>,
+      <a rel="nofollow" href="https://topcoder.com">topcoder.com</a>,
+      <a rel="nofollow" href="https://toptal.com">toptal.com</a>,
+      <a rel="nofollow" href="https://upwork.com">upwork.com</a>…
+        Připrav se na to, že musíš každý měsíc platit zálohy na pojištění (minimálně kolem 5&nbsp;000&nbsp;Kč měsíčně), ať už něco vyděláš, nebo ne.
+      </li>
+      <li>
+        <strong>Žádný senior nebude mít v popisu práce se ti věnovat a rozvíjet tě</strong>, pokud budeš vůbec dělat v týmu. Intenzivní samostudium a vypracovávání zakázek budou zřejmě jedinými způsoby, jakými se budeš učit. Pokud na to vyděláš, můžeš si <a href="{{ url_for('practice') }}#mentors">platit mentora</a>. Počítej s tím, že ze začátku budeš moci klientovi účtovat jen zlomek hodin, než kolik jich reálně nad úkolem strávíš. Neboj se ale s nabytými zkušenostmi tento poměr vylepšovat. Chybějící tým kompenzuj v <a href="https://navolnenoze.cz/blog/coworkingy/">coworkingu</a>, účastí v profesní komunitě, na <a href="{{ url_for('practice') }}#events">srazech</a> nebo <a href="{{ url_for('learn') }}#help">online</a>.
+      </li>
+    </ul>
+    <p>
+      Další rady ohledně rozjíždění vlastního podnikání jsou nad rámec této příručky. Následující odkazy by ti nicméně měly ukázat cestu k tomu hlavnímu, co se může do startu hodit. Hodně štěstí!
+    </p>
   </div>
+  <ul class="list">
+    <li>
+      <a href="https://navolnenoze.cz/blog/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/navolnenoze.cz!blog.jpg') }}" loading="lazy">
+        </div>
+        <h3>Blog Na&nbsp;volné noze</h3>
+      </a>
+      <p>
+        Praktické články o všem, co se týká podnikání na&nbsp;volné noze.
+      </p>
+    </li>
+    <li>
+      <a href="https://www.jakpodnikat.cz/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/jakpodnikat.cz.jpg') }}" loading="lazy">
+        </div>
+        <h3>Jak podnikat</h3>
+      </a>
+      <p>
+        Vše o administrativě malého podnikání, lidsky. OSVČ, ŽL, daně.
+      </p>
+    </li>
+    <li>
+      <a href="https://www.nakopni.to/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/nakopni.to.jpg') }}" loading="lazy">
+        </div>
+        <h3>nakopni.to</h3>
+      </a>
+      <p>
+        50% sleva na profi nástroje pro všechny, jejichž IČO je mladší než 1&nbsp;rok.
+      </p>
+    </li>
+    <li>
+      <a href="https://startfreelancing.today/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/startfreelancing.today.jpg') }}" loading="lazy">
+        </div>
+        <h3>Start Freelancing Today</h3>
+        <ul class="list-labels">
+          <li><small>kniha</small></li>
+        </ul>
+      </a>
+      <p>
+        Praktické tipy jak začít. Ochutnávka <a href="https://www.ladybug.dev/episodes/freelancing">zde</a>. Malá a levná kniha.
+      </p>
+    </li>
+    <li>
+      <a href="https://freelanceway.eu/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/freelanceway.eu.jpg') }}" loading="lazy">
+        </div>
+        <h3>Kniha Na&nbsp;volné noze</h3>
+        <ul class="list-labels">
+          <li><small>kniha</small></li>
+        </ul>
+      </a>
+      <p>
+        Bible profesionálů na&nbsp;volné noze. Velká a drahá kniha.
+      </p>
+    </li>
+  </ul>
 </section>
 
 {% include 'includes/engage.html' %}
@@ -1139,6 +1268,59 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
     </ul>
     <p>
       Drž se <a href="#priorities">seznamu svých priorit</a> a <strong>nenech se natlačit do něčeho, co nechceš</strong>. Nespokoj se s nižší mzdou, než za jakou by ti bylo příjemné pracovat. <strong>I když začínáš, zasloužíš si adekvátní ohodnocení.</strong> Pokud se firmě líbíš, bude ochotná vyjednávat o mzdě. Jestliže budeš mít příliš nízká očekávání z hlediska mzdy, může to na zaměstnavatele působit zoufale nebo jako znamení velmi nízkého sebevědomí.
+    </p>
+
+    <h3 class="content__subsection-heading" id="contracting">Práce „na IČO“</h3>
+    <p>
+      Při vyjednávání s firmou může padnout návrh, že budeš pracovat „na IČO“. Některé firmy to po tobě mohou i přímo vyžadovat jako jediný způsob, jakým jsou ochotné tě „zaměstnat“. Myslí se tím, že se místo zaměstnaneckého poměru staneš <a href="https://cs.wikipedia.org/wiki/Osoba_samostatn%C4%9B_v%C3%BDd%C4%9Ble%C4%8Dn%C4%9B_%C4%8Dinn%C3%A1">OSVČ</a> a budeš pro firmu pracovat jako <a href="#freelancing">kontraktor</a>.
+    </p>
+    <p>
+      Přestože jde o balancování na hraně zákona o <a href="https://cs.wikipedia.org/wiki/%C5%A0varc_syst%C3%A9m">švarc systému</a>, v českém IT takto pracuje hodně lidí. <a href="https://2019.stateofeuropeantech.com/chapter/people/article/strong-talent-base/#chart-372-1627">Analýza evropského technologického trhu z roku 2019</a> obsahuje graf, kde ČR, Ukrajina a Polsko jednoznačně vedou v počtu IT odborníků na&nbsp;volné noze. Asi ale tušíme, že důvodem je spíše šedá ekonomika než úžasné podmínky pro <a href="#freelancing">nezávislé profesionály</a>. Proč je práce „na IČO“ v&nbsp;IT tak oblíbená?
+    </p>
+    <ul>
+      <li>Ty i firma odvádíte <strong>méně peněz státu</strong>. Firma neplatí pojištění a tvou „mzdu“ si dá do nákladů. Ty máš při programování náklady minimální, takže snižuješ své odvody využitím <a href="https://www.jakpodnikat.cz/pausal-danovy-vydajovy-auto.php">výdajových paušálů</a>.</li>
+      <li>Mnohým se líbí větší <strong>osobní svoboda</strong>, tedy rozmazání hranice mezi klasickým zaměstnáním a podnikáním. Vyvázání ze zákoníku práce vidí v dobře nastavené spolupráci jako výhodu.</li>
+    </ul>
+    <p>
+      Být živnostníkem má však tyto nevýhody:
+    </p>
+    <ul>
+      <li>Administrativa je na tobě. Pro každou vydělanou částku musíš vydat a poslat fakturu. Jednou za rok podáváš <a href="https://cs.wikipedia.org/wiki/Da%C5%88ov%C3%A9_p%C5%99izn%C3%A1n%C3%AD">daňové přiznání</a>, přehled pro ČSSZ a přehled pro zdravotní pojišťovnu.</li>
+      <li>Při fakturaci do zahraničí nebo obratu nad 80&nbsp;000&nbsp;Kč měsíčně ti hrozí <a href="https://www.jakpodnikat.cz/platce-dph-registrace-povinna.php">povinnost platit DPH</a>. To znamená ze dne na den začít odvádět 21&nbsp;%, mít velké množství byrokracie navíc (daňová přiznání a kontrolní hlášení podáváš každý měsíc) a bát se vysokých pokut za přešlapy.</li>
+      <li>Pokud si při podnikání vytvoříš dluhy, máš povinnost k uhrazení využít i veškerý svůj čistě soukromý majetek (ručíš vším, na rozdíl od&nbsp;s.&nbsp;r.&nbsp;o., tedy <a href="https://cs.wikipedia.org/wiki/Spole%C4%8Dnost_s_ru%C4%8Den%C3%ADm_omezen%C3%BDm">společnosti s ručením omezeným</a>).</li>
+      <li>I pokud by ti každý měsíc na účet chodilo více peněz než průměrnému zaměstnanci, u banky máš jako OSVČ <a href="https://www.chytryhonza.cz/hypoteka-pro-osvc-jak-u-banky-s-zadosti-uspet">výrazně horší pozici pro získání hypotéky</a>.</li>
+      <li>Za léta práce na živnostenský list budeš mít od státu nižší důchod.</li>
+      <li>Balancuješ na hraně <a href="https://cs.wikipedia.org/wiki/%C5%A0varc_syst%C3%A9m">švarc systému</a>. Když si to spolu s firmou nepohlídáte, je vaše činnost nelegální a postih hrozí jak tobě (až 100&nbsp;000&nbsp;Kč), tak firmě (<a href="https://www.podnikatel.cz/specialy/svarcsystem/sankce-a-kontroly/">masivní pokuty, doplacení odvodů</a>). Znamená to také, že oficiálně nemáš nadřízeného, pracuješ na vlastním počítači, voláš z vlastního telefonu.</li>
+      <li>Nemáš ochranu, kterou zaměstnancům dává zákoník práce. Ta jistě není dokonalá, ale jako OSVČ nemáš žádnou. Nejde o stravenky, ale o nárok na odstupné, výpovědní lhůtu, placenou dovolenou nebo nemocenskou. Když nepracuješ, např. z důvodu dlouhé nemoci, tak nemáš příjem. Zároveň každý měsíc stále platíš zálohy na pojištění (minimálně kolem 5&nbsp;000&nbsp;Kč měsíčně).</li>
+      <li>I ti nejlepší mohou být mezi prvními, které firmy „propustí“, když je problém. Ať už jde o krach <a href="#startups">startupu</a> nebo začátek <a href="{{ url_for('learn') }}#covid19">pandemie</a>, když jde do tuhého, firmy neváhají rozloučit se velmi rychle i s celými týmy kontraktorů.</li>
+    </ul>
+    <p>
+      Pracovat „na IČO“ <strong>není nutně nic špatného, ale mělo by to být tvé vlastní rozhodnutí, při kterém zvážíš všechna pro a proti</strong>. Mnozí pracují dlouhé roky jako kontraktoři, aniž by si některé z uvedných nevýhod uvědomovali, čímž si zadělávají na budoucí nepříjemné překvapení. <strong>Proti většině nevýhod se můžeš nějak chránit</strong>, ale musíš o nich vědět a nezanedbat prevenci:
+    </p>
+    <ul>
+      <li>Základní administrativu za tebe udělají aplikace, jako např. <a href="https://www.fakturoid.cz/pro-zivnostniky">Fakturoid</a>, který umí nejen posílat faktury, ale i generovat daňová přiznání a přehledy.</li>
+      <li>Pokud do povinnosti platit DPH spadneš vysokým obratem, nejspíš si můžeš dovolit platit si někoho na účetnictví.</li>
+      <li>Proti různým rizikům, která na tebe jako OSVČ číhají, se můžeš nechat relativně levně připojistit u komerčních pojišťoven. Dobře si promysli pravděpodobnost, že něco nastane, a nastuduj vyjímky, které pojištění nepokrývá. Ochranu, jakou mají od státu zaměstnanci, to sice plně nenahradí, ale lepší než nic.</li>
+      <li>Šetři! Měj záložní peníze na horší časy, na dovolenou, pro případ nemoci či jiných nečekaných výpadků příjmů, odkládej si na důchod.</li>
+      <li>Vyhnout se „znakům závislé práce“ <a href="https://www.podnikatel.cz/clanky/7-znaku-ktere-prokazuji-svarcsystem/">není obtížné</a>. Když si to pohlídáš, žádné pokuty za švarc systém ti nehrozí.</li>
+      <li>Některé chybějící „jistoty“ lze řešit dobře napsanou smlouvou mezi tebou a firmou, která zaručuje podmínky rozumné pro obě strany. Některé si s firmou můžete na dobré slovo slíbit, ale ve smlouvě být nemohou (např. placená dovolená, byl by to znak závislé práce). Především si musíš vše dobře spočítat, všechna rizika vyčíslit a přičíst ke své „čisté“ hodinové sazbě. A to včetně peněz, které vydáš na připojištění, nemocenskou, nebo důchod.</li>
+    </ul>
+    <p>
+      Rozhodně se nikdy nenech do práce „na IČO“ dotlačit firmou. Zákon o <a href="https://cs.wikipedia.org/wiki/%C5%A0varc_syst%C3%A9m">švarc systému</a> totiž neexistuje ani tak proto, aby zabránil menším odvodům státu, ale hlavně aby zabránil tomu, <a href="https://cs.wikipedia.org/wiki/Prekarizace">aby na tobě někdo šetřil, i když ty nechceš</a>.
+    </p>
+    <p>
+      Čím vyšší máš hodnotu na trhu, tím spíš budeš z práce „na IČO“ benefitovat. <strong>Jako junior máš ale hodnotu malou, takže taháš za kratší provaz.</strong> Práci třeba sháníš už delší dobu a zjišťuješ, že si bohužel nemůžeš příliš vybírat. U jedné firmy projdeš pohovorem, ale zaměstnavatel tě nutí pracovat „na IČO“. Argumentuje tím, že zřízení živnosti přece není problém a že si vyděláš víc peněz. Nechceš přijít o jedinečnou příležitost, takže nakonec souhlasíš. Nedobrovolně na sebe jako OSVČ bereš veškerá rizika a je velká pravděpodobnost, že si špatně spočítáš, co vše musíš zahrnout do své sazby. Na rozdíl od dlouholetého profíka nemáš na firmu žádnou páku, nemáš naspořeno a neseženeš si do měsíce jinou práci, pokud tě na hodinu vyhodí. Jsi obětí švarc systému.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        Chtějí, abych byl na IČO. Prý mají účetní, která mi to založí a všechno vyřeší, ale včera o tom šéf už nic nevěděl. Aby nedošlo k podezření ze švarc systému, nemáme placenou dovolenou ani jiné benefity, k práci musím mít vlastní notebook.
+      </blockquote>
+      <figcaption>
+        Honza S., návštěvník junior.guru, o reálné situaci, do které se dostal
+      </figcaption>
+    </figure>
+    <p>
+      Jak už bylo zmíněno výše, <strong>vždy si dobře zvaž, zda se ti nabídka opravdu vyplatí</strong>. Pokud se s firmou nedomluvíš na dostatečně vysoké sazbě, která by vše pokryla, nebo pokud „na IČO“ vůbec jít nechceš, je pro tebe lepší odmítnout a hledat dál. I pokud se ti z dvaceti firem ozvala jedna, nesmíš podlehnout pocitu, že to musíš vzít. Stejně jako u <a href="#culture">mizerné firemní kultury</a>, nestojí to za to.
     </p>
 
     <h3 class="content__subsection-heading" id="handling-rejection">Jak zvládnout odmítnutí</h3>
