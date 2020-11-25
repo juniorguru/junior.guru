@@ -7,7 +7,9 @@ from juniorguru.lib import google_sheets
 
 
 FIOBANK_API_KEY = os.getenv('FIOBANK_API_KEY')
+SIDELINE_JOBS = ['15']
 CATEGORIES = [
+    lambda t: 'sideline' if t['variable_symbol'] in SIDELINE_JOBS else None,
     lambda t: 'handbook' if 'RED HAT' in t['message'] and t['amount'] >= 8000 else None,
     lambda t: 'tax' if 'ČSSZ' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'tax' if 'VZP' in t['message'] and t['amount'] < 0 else None,
