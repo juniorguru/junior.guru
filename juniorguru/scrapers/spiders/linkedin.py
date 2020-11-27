@@ -68,7 +68,7 @@ class Spider(BaseSpider):
         loader.add_css('company_logo_urls', 'img.company-logo::attr(data-delayed-url)')
         item = loader.load_item()
 
-        if 'linkedin.com' in item['link']:
+        if not item.get('link') or 'linkedin.com' in item['link']:
             yield item
         else:
             yield response.follow(item['link'],

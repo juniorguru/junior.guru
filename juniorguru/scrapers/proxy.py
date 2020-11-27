@@ -76,7 +76,7 @@ class ScrapingProxyMiddleware():
     def process_response(self, request, response, spider):
         if not getattr(spider, 'proxy', False) or not request.meta.get('proxy'):
             return response
-        if response.status in [504, 999]:
+        if response.status in [504, 999] or 'mgts.ru' in response.url:
             user_agent = request.headers.get('User-Agent').decode()
             proxy = request.meta['proxy']
             log.info(f"Got {response!r} proxied via {proxy} ({user_agent})")
