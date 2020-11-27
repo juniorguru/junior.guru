@@ -3,13 +3,7 @@ from pathlib import Path
 
 import flask_frozen
 
-from juniorguru.models import Job, db
 from juniorguru.web import app
-
-
-def generate_job_ids():
-    with db:
-        yield from (('job', {'job_id': job.id}) for job in Job.listing())
 
 
 def main():
@@ -22,7 +16,6 @@ def main():
     warnings.filterwarnings('error', category=flask_frozen.FrozenFlaskWarning)
 
     freezer = flask_frozen.Freezer(app)
-    freezer.register_generator(generate_job_ids)
     freezer.freeze()
 
 
