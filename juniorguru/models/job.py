@@ -137,6 +137,10 @@ class Job(BaseModel):
         return cls.get(cls.link == link)
 
     @classmethod
+    def juniorguru_get_by_id(cls, id):
+        return cls.juniorguru_listing().where(cls.id == id).get()
+
+    @classmethod
     def listing(cls):
         return cls.select().order_by(cls.sort_rank.desc())
 

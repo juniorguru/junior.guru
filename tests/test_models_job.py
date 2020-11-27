@@ -135,6 +135,19 @@ def test_get_by_link_raises_does_not_exist_error(db_connection):
         Job.get_by_link('https://example.com/1234')
 
 
+def test_juniorguru_get_by_id(db_connection):
+    job = create_job('1', source='juniorguru')
+
+    assert Job.juniorguru_get_by_id('1') == job
+
+
+def test_juniorguru_get_by_id_raises_dost_not_exist_error(db_connection):
+    create_job('1', source='remoteok')
+
+    with pytest.raises(Job.DoesNotExist):
+        assert Job.juniorguru_get_by_id('1')
+
+
 def test_metrics(db_connection):
     job1 = create_job('1')
     JobMetric.create(job=job1, name='users', value=3)

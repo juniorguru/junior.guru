@@ -161,7 +161,7 @@ def jobs_region(region_id):
 def job(job_id):
     with db:
         metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
-        job = Job.get_by_id(job_id)
+        job = Job.juniorguru_get_by_id(job_id)
     return render_template('job.html',
                            nav_active='jobs',
                            subnav_tabs=JOBS_SUBNAV_TABS,
