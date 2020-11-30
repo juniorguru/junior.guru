@@ -40,6 +40,16 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
     {{ job.description_html|safe }}
   </div>
 
+  <div class="engage">
+    <div class="engage__content">
+      <p class="engage__single-paragraph">
+        <strong>Chceš zvýšit svou šanci?</strong> Přečti si
+        <a href="{{ url_for('candidate_handbook') }}">příručku o&nbsp;hledání práce</a>.
+        Pozornost věnuj hlavně <a href="{{ url_for('candidate_handbook') }}#minimum-requirements">minimálním požadavkům</a>.
+      </p>
+    </div>
+  </div>
+
   <div class="call-to-action" itemprop="applicationContact" itemscope itemtype="https://schema.org/ContactPoint">
     {% if job.link %}
       <a id="apply" data-metrics-utm data-metrics-utm-medium="job_board" data-metrics data-metrics-page-url data-metrics-name="apply" class="legacy-button" href="{{ job.link }}">
