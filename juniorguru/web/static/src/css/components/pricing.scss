@@ -37,23 +37,6 @@
   }
 }
 
-.pricing__plan-price {
-  text-align: center;
-}
-
-.pricing__plan-price-amount {
-  @include font-4;
-}
-
-.pricing__plan-price-note {
-  @include font-0;
-}
-
-.pricing__plan-price-amount,
-.pricing__plan-price-note {
-  display: block;
-}
-
 @media screen and (min-width: $breakpoint-tablet) {
   .pricing__heading--mobile-only {
     display: none !important;  // forcing through spaghetti

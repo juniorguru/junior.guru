@@ -1,0 +1,56 @@
+.checkout {
+  margin-bottom: $whitespace-3 * 4;
+}
+
+.checkout__image-container {
+  text-align: center;
+}
+
+.checkout__image {
+  display: block;
+  max-height: 10 * $whitespace-3;
+  max-width: 100%;
+  margin: auto;
+}
+
+.checkout__form {
+  padding: $whitespace;
+}
+
+.checkout__placeholder {
+  @include font-0;
+  display: none;
+}
+
+.checkout__placeholder {
+  background: $yellow-light;
+  padding: $whitespace;
+  margin: $whitespace 0;
+}
+
+.checkout--active .checkout__control-compartment {
+  display: none;
+}
+
+.checkout--active .checkout__placeholder {
+  display: block;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  .checkout {
+    display: flex;
+    align-items: center;
+    max-width: 95rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .checkout__image-container,
+  .checkout__form {
+    width: 50%;
+  }
+
+  .checkout__form {
+    margin-bottom: $whitespace-3;
+  }
+}

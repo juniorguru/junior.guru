@@ -103,6 +103,7 @@
 .logos__link:focus .logos__image,
 .logos__link:active .logos__image {
   filter: grayscale(0);
+  opacity: 1;
 }
 
 @media screen and (min-width: $breakpoint-larger-phone) {

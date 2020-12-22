@@ -1,0 +1,26 @@
+.price {
+  text-align: center;
+}
+
+.price__amount {
+  @include font-4;
+}
+
+.price__note {
+  @include font-0;
+}
+
+.price__amount,
+.price__note {
+  display: block;
+}
+
+.price__unit {
+  @include font;
+  vertical-align: baseline;
+}
+
+.price__note .price__unit {
+  @include font-0;
+  font-size: 1.2rem;
+}

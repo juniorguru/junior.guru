@@ -9,24 +9,28 @@
 @import 'content/quote';
 
 // BEM components
-@import 'components/content';
-@import 'components/intro';
-@import 'components/editorial';
-@import 'components/toc';
-@import 'components/toc-button';
-@import 'components/toc-permalink';
-@import 'components/header';
-@import 'components/list';
-@import 'components/pricing';
 @import 'components/button-compartment';
 @import 'components/button';
+@import 'components/checkout';
+@import 'components/club-header';
+@import 'components/content';
+@import 'components/editorial';
+@import 'components/engage';
+@import 'components/filters';
+@import 'components/header';
+@import 'components/intro';
+@import 'components/jobs';
+@import 'components/list';
 @import 'components/logos';
 @import 'components/more';
-@import 'components/engage';
+@import 'components/price';
+@import 'components/pricing';
 @import 'components/stories';
+@import 'components/support';
 @import 'components/testimonials';
-@import 'components/jobs';
-@import 'components/filters';
+@import 'components/toc-button';
+@import 'components/toc-permalink';
+@import 'components/toc';
 @import 'components/value-explanation';
 
 // page-specific legacy spaghetti code 🍝

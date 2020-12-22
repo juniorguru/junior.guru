@@ -1,0 +1,92 @@
+/*
+  TODO finish this as a second step, after pivot. First
+  there's gonna be just the selling page and if the club
+  works, let's redesign header and the rest of the site.
+*/
+
+.club-header {
+  background: $yellow;
+}
+
+.club-header__container {
+  @include page-width($padding: $whitespace-0);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.club-header__logo {
+  display: block;
+}
+
+.club-header__logo-image {
+  display: block;
+  height: 2 * $whitespace-3;
+}
+
+.club-header__menu,
+.club-header__menu-item {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.club-header__menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.club-header__menu-item {
+  margin: 0 $whitespace;
+}
+
+.club-header__menu-link {
+  box-sizing: border-box;
+  display: block;
+  padding: 0 $whitespace-0;
+  @include font-0;
+  color: $black;
+  text-decoration: none;
+}
+
+.club-header__menu-item--active .club-header__menu-link,
+.club-header__menu-link:hover,
+.club-header__menu-link:focus,
+.club-header__menu-link:active {
+  text-decoration: underline;
+  // text-decoration-thickness: .2rem;
+  background: none;
+  color: $black;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  .club-header__container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .club-header__menu-link {
+    box-sizing: border-box;
+    display: block;
+    padding: ($whitespace-0 / 4) $whitespace-0;
+    @include font;
+    color: $black;
+    text-decoration: none;
+  }
+
+  .club-header__menu-item--button .club-header__menu-link {
+    color: $white;
+    background: $blue;
+    text-decoration: none;
+    border: $border-width $blue solid;
+    border-left-color: transparent;
+    border-top-color: transparent;
+  }
+
+  .club-header__menu-item--button .club-header__menu-link:hover,
+  .club-header__menu-item--button .club-header__menu-link:focus,
+  .club-header__menu-item--button .club-header__menu-link:active {
+    background: $blue-dark;
+  }
+}

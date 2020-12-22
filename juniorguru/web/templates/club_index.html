@@ -1,0 +1,32 @@
+{% extends 'layouts/base.html' %}
+
+{% block description -%}
+Průvodce programováním pro samouky a nabídky práce pro juniory.
+{%- endblock %}
+
+{% block body_modifier %} body--index{% endblock %}
+
+{% block body %}
+<header class="club-header">
+  <div class="club-header__container">
+    <a class="club-header__logo" href="{{ url_for('index') }}">
+      <img class="club-header__logo-image" src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
+    </a>
+    <ul class="club-header__menu">
+      <li class="club-header__menu-item club-header__menu-item--active">
+        <a class="club-header__menu-link" href="{{ url_for('learn') }}">Příručka</a>
+      </li>
+      <li class="club-header__menu-item">
+        <a class="club-header__menu-link" href="{{ url_for('jobs') }}">Práce</a>
+      </li>
+      <li class="club-header__menu-item club-header__menu-item--button">
+        <a class="club-header__menu-link" href="{{ url_for('club') }}">Klub</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<main class="content">
+</main>
+<footer>
+</footer>
+{% endblock %}

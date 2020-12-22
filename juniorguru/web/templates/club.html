@@ -1,0 +1,86 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Klub pro začátečníky v programování{% endblock %}
+
+{% block description -%}
+Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolníků, mentorů, profesionálů, sponzorů a dalších, které baví sdílet spolu tipy, názory, pomáhat si a podávat juniorům pomocnou ruku při hledání jejich první práce.
+{%- endblock %}
+
+{% block content %}
+<header class="intro">
+  <h1 class="intro__title">Klub, který tě nastartuje</h1>
+  <p class="intro__lead">
+    Jsme komunita začátečníků, dobrovolníků, mentorů, profesionálů, sponzorů a dalších, které baví sdílet spolu tipy, názory, pomáhat si a podávat juniorům pomocnou ruku při hledání jejich první práce.
+  </p>
+</header>
+<section class="content__section">
+  <div class="checkout">
+    <div class="checkout__image-container">
+      <img class="checkout__image" src="{{ url_for('static', filename='images/club.png') }}" alt="Snímek obrazovky, na kterém je klub pro začátečníky">
+    </div>
+    <div class="checkout__form">
+      <p class="price">
+        <strong class="price__amount">109 <sup class="price__unit">Kč/měs</sup></strong>
+        <small class="price__note">nebo 1199 <sup class="price__unit">Kč/rok</sup></small>
+      </p>
+      <p class="checkout__control-compartment button-compartment">
+        <a class="checkout__control button" href="#" data-metrics data-metrics-name="club-button">
+          Přidej se
+        </a>
+      </p>
+      <p class="checkout__placeholder">
+        <strong>Díky za zájem!</strong>
+        Klub je zatím dostupný jen pro pár pokusných králíků.
+        Den, kdy skončí zkušební režim a klub se plně otevře veřejnosti, si můžeš
+        <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">pohlídat e-mailem</a>.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="content__section">
+  <div class="logos">
+    <ul class="logos__items">
+      <li class="logos__item logos__item--caption">
+        <span class="logos__link">
+          <span>S&#32;klubem&#32;<a href="#companies">spolupracují</a>:</span>
+        </span>
+      </li>
+      {% for logo in logos %}
+        <li class="logos__item">
+          <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="{{ logo.link }}" target="_blank" rel="noopener" title="{{ logo.name }} podporuje juniory účastí v klubu">
+            <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/' + logo.filename) }}" alt="{{ logo.name }}">
+          </a>
+        </li>
+      {% endfor %}
+      <li class="logos__item">
+        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="https://coreskill.tech/" target="_blank" rel="noopener" title="CoreSkill podporuje juniory účastí v klubu">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/coreskill.svg') }}" alt="CoreSkill">
+        </a>
+      </li>
+      <li class="logos__item">
+        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="https://www.skoumal.com/" target="_blank" rel="noopener" title="Skoumal podporuje juniory účastí v klubu">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/skoumal.png') }}" alt="Skoumal">
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+<hr>
+<section class="content__section">
+  ...
+</section>
+<hr>
+<section class="content__section">
+  <p class="support">
+    <span class="support__content">
+      <img class="support__image" alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
+      <span class="support__text">
+        Pokud máte jakékoliv otázky, Honza vám je rád zodpoví.<br>
+        Pište na&nbsp;{{ 'ahoj@junior.guru'|email_link }}.
+      </span>
+    </span>
+  </p>
+</section>
+{% endblock %}
+
+{% block author %}{% endblock %}

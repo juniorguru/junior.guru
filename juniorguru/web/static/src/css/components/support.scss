@@ -1,0 +1,34 @@
+.support {
+  text-align: center;
+  padding: $whitespace;
+  margin: 0;
+  margin-top: (2 * $whitespace-2) - $whitespace;
+}
+
+.support__content {
+  margin: 0 auto;
+  display: inline-flex;
+  align-items: center;
+  @include font-0;
+}
+
+.support__image {
+  display: block;
+  height: 7rem;
+  width: auto;
+  margin-right: $whitespace;
+}
+
+.support__text {
+  text-align: left;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  .support__content {
+    @include font;
+  }
+
+  .support__image {
+    height: 8rem;
+  }
+}

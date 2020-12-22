@@ -38,8 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
     '.content__section-heading[id]',
     '.content__subsection-heading[id]',
   ].join(', '));
-  const targetOffsetElementStyle = getComputedStyle(targetOffsetElement, '::before');
-  targetOffset = parseInt(targetOffsetElementStyle.getPropertyValue('height'), 10);
+  if (targetOffsetElement) {
+    const targetOffsetElementStyle = getComputedStyle(targetOffsetElement, '::before');
+    targetOffset = parseInt(targetOffsetElementStyle.getPropertyValue('height'), 10);
+  } else {
+    targetOffset = 0;
+  }
 
   updateToC();
 

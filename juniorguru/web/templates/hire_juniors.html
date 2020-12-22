@@ -61,7 +61,7 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
 
 <section id="pricing" class="content__section pricing">
   <h2 class="pricing__heading pricing__heading--mobile-only">Inzerujte pracovní nabídky</h2>
-  <div class="pricing__plans pricing__plans--2">
+  <div class="pricing__plans pricing__plans--3">
     <div class="pricing__plan">
       <div class="pricing__plan-content">
         <h3 class="pricing__plan-heading">Komunita</h3>
@@ -74,9 +74,9 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
           <strong>Pouze:</strong> Dobrovolnictví, brigády, stáže, neziskovky, malé projekty, firmy spolupracující s <a href="https://pyladies.cz/" target="_blank" rel="noopener">PyLadies</a>.
         </p>
       </div>
-      <p class="pricing__plan-price">
-        <strong class="pricing__plan-price-amount">0&nbsp;Kč</strong>
-        <small class="pricing__plan-price-note">ano, zdarma</small>
+      <p class="price">
+        <strong class="price__amount">0&nbsp;Kč</strong>
+        <small class="price__note">ano, zdarma</small>
       </p>
       <p class="button-compartment">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSZNK30dPAAYmqIGNCs1vBRlf-5b3BFuR8YxgvWxrvY1tIVQ/viewform?usp=pp_url&entry.1851983044=0+CZK+%E2%80%94+Community+(Komunita)" target="_blank" rel="noopener" class="button button--secondary">
@@ -94,9 +94,9 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
           <li>Platnost inzerátu <strong>30 dní</strong></li>
         </ul>
       </div>
-      <p class="pricing__plan-price">
-        <strong class="pricing__plan-price-amount">500&nbsp;Kč</strong>
-        <small class="pricing__plan-price-note">neplátce DPH</small>
+      <p class="price">
+        <strong class="price__amount">500&nbsp;Kč</strong>
+        <small class="price__note">neplátce DPH</small>
       </p>
       <p class="button-compartment">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSZNK30dPAAYmqIGNCs1vBRlf-5b3BFuR8YxgvWxrvY1tIVQ/viewform?usp=pp_url&entry.1851983044=500+CZK+%E2%80%94+Standard" target="_blank" rel="noopener" class="button">
@@ -118,9 +118,9 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
           <li>Platnost paušálu <strong>365 dní</strong> od&nbsp;prvního inzerátu</li>
         </ul>
       </div>
-      <p class="pricing__plan-price">
-        <strong class="pricing__plan-price-amount">5000&nbsp;Kč</strong>
-        <small class="pricing__plan-price-note">neplátce DPH</small>
+      <p class="price">
+        <strong class="price__amount">5000&nbsp;Kč</strong>
+        <small class="price__note">neplátce DPH</small>
       </p>
       <p class="button-compartment">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSZNK30dPAAYmqIGNCs1vBRlf-5b3BFuR8YxgvWxrvY1tIVQ/viewform?usp=pp_url&entry.1851983044=5000+CZK+%E2%80%94+Annual+Flat+Rate,+first+posting+(Ro%C4%8Dn%C3%AD+pau%C5%A1%C3%A1l,+prvn%C3%AD+inzer%C3%A1t)" target="_blank" rel="noopener" class="button">
@@ -226,11 +226,11 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
     </a>
   </p>
   <p class="support">
-    <span class="support-content">
-      <img alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
-      <span class="support-text">
+    <span class="support__content">
+      <img class="support__image" alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
+      <span class="support__text">
         Pokud máte jakékoliv otázky, Honza vám je rád zodpoví.<br>
-        Pište na&nbsp;{{ 'honza@junior.guru'|email_link }}.
+        Pište na&nbsp;{{ 'ahoj@junior.guru'|email_link }}.
       </span>
     </span>
   </p>
@@ -345,9 +345,9 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
             <li>Logo bude vidět <strong>90&nbsp;dní</strong></li>
           </ul>
         </div>
-        <p class="pricing__plan-price">
-          <strong class="pricing__plan-price-amount">9&nbsp;000&nbsp;Kč</strong>
-          <small class="pricing__plan-price-note">neplátce DPH</small>
+        <p class="price">
+          <strong class="price__amount">9&nbsp;000&nbsp;Kč</strong>
+          <small class="price__note">neplátce DPH</small>
         </p>
       </div>
       <div class="pricing__plan pricing__plan--highlight">
@@ -358,13 +358,13 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
             <li>Logo bude vidět <strong>365&nbsp;dní</strong></li>
           </ul>
         </div>
-        <div class="pricing__plan-price">
+        <div class="price">
           <h3 class="pricing__note">
             <strong class="pricing__discount">Sleva 1&nbsp;měsíc</strong> Ušetříte 3&nbsp;000&nbsp;Kč
           </h3>
           <p>
-            <strong class="pricing__plan-price-amount">33&nbsp;000&nbsp;Kč</strong>
-            <small class="pricing__plan-price-note">neplátce DPH</small>
+            <strong class="price__amount">33&nbsp;000&nbsp;Kč</strong>
+            <small class="price__note">neplátce DPH</small>
           </p>
         </div>
       </div>
@@ -377,13 +377,13 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
             <li><a href="#pricing-annual-flat-rate">Roční paušál na inzerci</a> v ceně</li>
           </ul>
         </div>
-        <div class="pricing__plan-price">
+        <div class="price">
           <h3 class="pricing__note">
             <strong class="pricing__discount">Nejvýhodnější</strong> Ušetříte 5&nbsp;000&nbsp;Kč
           </h3>
           <p>
-            <strong class="pricing__plan-price-amount">36&nbsp;000&nbsp;Kč</strong>
-            <small class="pricing__plan-price-note">neplátce DPH</small>
+            <strong class="price__amount">36&nbsp;000&nbsp;Kč</strong>
+            <small class="price__note">neplátce DPH</small>
           </p>
         </div>
       </div>
@@ -418,11 +418,11 @@ Hledáte juniorní programátory? Najímejte ty, kteří si svou kariéru v&nbsp
   </div>
 
   <p class="support">
-    <span class="support-content">
-      <img alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
-      <span class="support-text">
+    <span class="support__content">
+      <img class="support__image" alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
+      <span class="support__text">
         Pokud máte jakékoliv otázky, Honza vám je rád zodpoví.<br>
-        Pište na&nbsp;{{ 'honza@junior.guru'|email_link }}.
+        Pište na&nbsp;{{ 'ahoj@junior.guru'|email_link }}.
       </span>
     </span>
   </p>

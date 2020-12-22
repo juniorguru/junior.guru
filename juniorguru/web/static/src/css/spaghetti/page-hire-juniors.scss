@@ -78,43 +78,6 @@ body.body--hire-juniors {
     }
   }
 
-  .support {
-    text-align: center;
-    padding: $whitespace;
-    padding-top: (2 * $whitespace-2);
-    margin: 0;
-
-    .support-content {
-      margin: 0 auto;
-      display: inline-flex;
-      align-items: center;
-      @include font-0;
-
-      @media screen and (min-width: 700px) {
-        & {
-          @include font;
-        }
-      }
-    }
-
-    img {
-      display: block;
-      height: 7rem;
-      width: auto;
-      margin-right: $whitespace;
-
-      @media screen and (min-width: 700px) {
-        & {
-          height: 8rem;
-        }
-      }
-    }
-
-    .support-content {
-      text-align: left;
-    }
-  }
-
   .sponsor-handbook {
     .pricing {
       margin-top: ($whitespace-3 * 2);
