@@ -44,9 +44,9 @@ function handleHash() {
   while (el) {
     // console.log(el);
     if (el.className.match('more--collapsed')) {
-      const button = el.getElementsByClassName('button--more')[0];
+      const button = el.getElementsByClassName('more__button')[0];
       // console.log(button);
-      button.dispatchEvent(new MouseEvent('click'));
+      button.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
       break;
     }
     el = el.parentElement;

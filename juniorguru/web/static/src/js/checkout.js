@@ -3,16 +3,14 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('document.querySelectorAll() not available, degraded experience');
     return;
   }
-  
-  const checkout = Array.from(document.querySelectorAll('.checkout'))[0];
-  const control = Array.from(document.querySelectorAll('.checkout__control'))[0];
-  
-  if (!checkout || !control) {
-    return;
-  }
 
-  control.addEventListener('click', function (event) {
-    event.preventDefault();
-    checkout.classList.add('checkout--active'); 
+  Array.from(document.querySelectorAll('.checkout')).forEach(function (checkout) {
+    const control = Array.from(checkout.querySelectorAll('.checkout__control'))[0];
+    if (!control) { return; }
+
+    control.addEventListener('click', function (event) {
+      event.preventDefault();
+      checkout.classList.add('checkout--active');
+    });
   });
 });
