@@ -752,10 +752,10 @@
         },
         "strictyaml": {
             "hashes": [
-                "sha256:ea2bb97aacc12fff7df11bd4cb4ae64b1418a0311fbd1611445cc59dc650bdd3"
+                "sha256:55870ca32242c567654032a7b39182268ccf7c298fa0103170f8c8acaa64d274"
             ],
             "index": "pypi",
-            "version": "==1.1.1"
+            "version": "==1.2.0"
         },
         "twisted": {
             "hashes": [
