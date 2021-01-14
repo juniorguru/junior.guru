@@ -44,6 +44,8 @@ emoji = "*"
 favicon = "*"
 feedparser = "*"
 extruct = "*"
+"discord.py" = "*"
+stripe = "*"
 
 [dev-packages]
 pytest = "*"
