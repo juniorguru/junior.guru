@@ -23,3 +23,24 @@
 .checkout--active .checkout__placeholder {
   display: block;
 }
+
+.checkout--error {
+  background: $red-light;
+  color: $red;
+  padding: $whitespace;
+}
+
+.checkout__error {
+  display: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  @include font-0;
+  background: $red;
+  color: $white;
+  margin-bottom: $whitespace-3;
+}
+
+.checkout--error .checkout__error {
+  display: block;
+}

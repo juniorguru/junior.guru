@@ -1,5 +1,10 @@
 {% extends 'layouts/base.html' %}
 
+{% block meta %}
+  {{ super() }}
+  <script async onload="document.dispatchEvent(new Event('StripeLoaded'))" src="https://js.stripe.com/v3"></script>
+{% endblock %}
+
 {% block title %}Klub pro začátečníky v programování{% endblock %}
 
 {% block description -%}
@@ -18,22 +23,25 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
     <div class="hero__image-container">
       <img class="hero__image" src="{{ url_for('static', filename='images/club.png') }}" alt="Snímek obrazovky, na kterém je klub pro začátečníky">
     </div>
-    <div class="hero__info checkout">
-      <p class="price">
-        <strong class="price__amount">109 <sup class="price__unit">Kč/měs</sup></strong>
-        <small class="price__note">nebo 1199 <sup class="price__unit">Kč/rok</sup></small>
-      </p>
-      <p class="checkout__control-compartment button-compartment">
-        <a class="checkout__control button" href="#beta" data-metrics data-metrics-name="club-button">
-          Přidej se
-        </a>
-      </p>
-      <p class="checkout__placeholder">
-        <strong>Díky za zájem!</strong>
-        Klub je zatím dostupný jen pro pár pokusných králíků.
-        Den, kdy skončí zkušební režim a klub se plně otevře veřejnosti, si můžeš
-        <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">pohlídat e-mailem</a>.
-      </p>
+    <div class="hero__info">
+      <div class="checkout checkout--{% if checkout_enabled %}enabled{% else %}placeholder{% endif %}" {% if checkout_stripe_api_key %}data-stripe-api-key="{{ checkout_stripe_api_key }}"{% endif %}>
+        <p class="checkout__error">Platba se nepovedla.</p>
+        <p class="price">
+          <strong class="price__amount">109 <sup class="price__unit">Kč/měs</sup></strong>
+          <small class="price__note">nebo 1199 <sup class="price__unit">Kč/rok</sup></small>
+        </p>
+        <p class="checkout__control-compartment button-compartment">
+          <a class="checkout__control button" href="#beta" data-metrics data-metrics-name="club-button"{% if checkout_price_mo %} data-stripe-price="{{ checkout_price_mo }}"{% endif %}>
+            Přidej se
+          </a>
+        </p>
+        <p class="checkout__placeholder">
+          <strong>Díky za zájem!</strong>
+          Klub je zatím dostupný jen pro pár pokusných králíků.
+          Den, kdy skončí zkušební režim a klub se plně otevře veřejnosti, si můžeš
+          <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">pohlídat e-mailem</a>.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -133,7 +141,8 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
   </ul>
 </section>
 <section class="content__section">
-  <div class="checkout checkout--wide">
+  <div class="checkout checkout--wide checkout--{% if checkout_enabled %}enabled{% else %}placeholder{% endif %}" {% if checkout_stripe_api_key %}data-stripe-api-key="{{ checkout_stripe_api_key }}"{% endif %}>
+    <p class="checkout__error">Platba se nepovedla.</p>
     <p class="price">
       <strong class="price__amount">109 <sup class="price__unit">Kč/měs</sup></strong>
       <small class="price__note">nebo 1199 <sup class="price__unit">Kč/rok</sup></small>
