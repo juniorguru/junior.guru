@@ -1,3 +1,4 @@
+import json
 import html
 import time
 from datetime import datetime
@@ -38,17 +39,19 @@ class Spider(BaseSpider):
         for key, value in feed_data.items():
             loader.add_value(key, value)
 
-        data = extract_job_posting(response.text, response.url)
-        loader.add_value('title', data['title'])
-        loader.add_value('posted_at', data['datePosted'])
-        loader.add_value('description_html', html.unescape(data['description']))
-        loader.add_value('company_logo_urls', data.get('image'))
-        loader.add_value('employment_types', [data['employmentType']])
-        loader.add_value('company_name', data['hiringOrganization']['name'])
-        loader.add_value('company_link', data['hiringOrganization']['sameAs'])
-        loader.add_value('locations_raw', data['hiringOrganization']['address'])
-
-        yield loader.load_item()
+        try:
+            data = extract_job_posting(response.text, response.url)
+            loader.add_value('title', data['title'])
+            loader.add_value('posted_at', data['datePosted'])
+            loader.add_value('description_html', html.unescape(data['description']))
+            loader.add_value('company_logo_urls', data.get('image'))
+            loader.add_value('employment_types', [data['employmentType']])
+            loader.add_value('company_name', data['hiringOrganization']['name'])
+            loader.add_value('company_link', data['hiringOrganization']['sameAs'])
+            loader.add_value('locations_raw', data['hiringOrganization']['address'])
+            yield loader.load_item()
+        except json.JSONDecodeError:
+            pass
 
 
 def parse_struct_time(struct_time):

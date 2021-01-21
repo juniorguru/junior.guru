@@ -1,6 +1,7 @@
 from datetime import date
 from pathlib import Path
 
+import pytest
 from scrapy.http import XmlResponse, HtmlResponse
 
 from juniorguru.scrapers.spiders import wwr
@@ -61,3 +62,11 @@ def test_spider_parse_job_no_image():
     job = next(wwr.Spider().parse_job(response, {}))
 
     assert job.get('company_logo_urls') is None
+
+
+def test_spider_parse_job_json_decode_error_gets_skipped():
+    response = HtmlResponse('https://example.com/example/',
+                            body=Path(FIXTURES_DIR / 'job_json_decode_error.html').read_bytes())
+
+    with pytest.raises(StopIteration):
+        next(wwr.Spider().parse_job(response, {}))
