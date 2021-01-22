@@ -46,6 +46,7 @@ feedparser = "*"
 extruct = "*"
 "discord.py" = "*"
 stripe = "*"
+gql = {extras = ["requests"], version = "*"}
 
 [dev-packages]
 pytest = "*"
@@ -56,3 +57,6 @@ flake8 = "*"
 
 [requires]
 python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
