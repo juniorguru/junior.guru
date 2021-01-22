@@ -15,6 +15,9 @@ def main():
     # for subscription in stripe.Subscription.list().auto_paging_iter():
     #     print(subscription['metadata'])
 
+    # https://memberful.com/help/integrate/advanced/memberful-api/
+    # https://juniorguru.memberful.com/api/graphql/explorer
+
     api_key = os.environ['MEMBERFUL_API_KEY']
     transport = RequestsHTTPTransport(url='https://juniorguru.memberful.com/api/graphql/',
                                       headers={'Authorization': f'Bearer {api_key}'},
