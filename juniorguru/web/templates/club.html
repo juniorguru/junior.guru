@@ -2,7 +2,23 @@
 
 {% block meta %}
   {{ super() }}
-  <script async onload="document.dispatchEvent(new Event('StripeLoaded'))" src="https://js.stripe.com/v3"></script>
+  <script type="text/javascript">
+    window.MemberfulOptions = {site: "https://juniorguru.memberful.com"};
+
+    (function() {
+      var s   = document.createElement('script');
+
+      s.type  = 'text/javascript';
+      s.async = true;
+      s.src   = 'https://d35xxde4fgg0cx.cloudfront.net/assets/embedded.js';
+
+      setup = function() { window.MemberfulEmbedded.setup(); }
+
+      s.addEventListener("load", setup, false);
+
+      ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+    })();
+  </script>
 {% endblock %}
 
 {% block title %}Klub pro začátečníky v programování{% endblock %}
@@ -24,24 +40,47 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
       <img class="hero__image" src="{{ url_for('static', filename='images/club.png') }}" alt="Snímek obrazovky, na kterém je klub pro začátečníky">
     </div>
     <div class="hero__info">
-      <div class="checkout checkout--{% if checkout_enabled %}enabled{% else %}placeholder{% endif %}" {% if checkout_stripe_api_key %}data-stripe-api-key="{{ checkout_stripe_api_key }}"{% endif %}>
-        <p class="checkout__error">Platba se nepovedla.</p>
-        <p class="price">
-          <strong class="price__amount">109 <sup class="price__unit">Kč/měs</sup></strong>
-          <small class="price__note">nebo 1199 <sup class="price__unit">Kč/rok</sup></small>
-        </p>
-        <p class="checkout__control-compartment button-compartment">
-          <a class="checkout__control button" href="#beta" data-metrics data-metrics-name="club-button"{% if checkout_price_mo %} data-stripe-price="{{ checkout_price_mo }}"{% endif %}>
-            Přidej se
+      <h2 class="hero__info-heading">Přidej se</h2>
+      <ul class="plans">
+        <li class="plans__plan">
+          <ul class="plans__benefits">
+            <li class="plans__benefit">Prvních 14 dní zdarma</li>
+            <li class="plans__benefit">Můžeš to kdykoliv zrušit</li>
+          </ul>
+          <a class="button button--nowrap" href="https://juniorguru.memberful.com/checkout?plan=59515" data-metrics data-metrics-name="club-button-monthly">
+            109 Kč <sup class="button__unit">měsíčně
           </a>
-        </p>
-        <p class="checkout__placeholder">
-          <strong>Díky za zájem!</strong>
-          Klub je zatím dostupný jen pro pár pokusných králíků.
-          Den, kdy skončí zkušební režim a klub se plně otevře veřejnosti, si můžeš
-          <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">pohlídat e-mailem</a>.
-        </p>
-      </div>
+        </li>
+        <li class="plans__plan">
+          <ul class="plans__benefits">
+            <li class="plans__benefit">Prvních 14 dní zdarma</li>
+            <li class="plans__benefit">Jeden měsíc ušetříš</li>
+          </ul>
+          <a class="button button--nowrap button--secondary" href="https://juniorguru.memberful.com/checkout?plan=59574" data-metrics data-metrics-name="club-button-yearly">
+            1199 Kč <sup class="button__unit">ročně</sup>
+          </a>
+        </li>
+
+        {#
+          checkout--{% if checkout_enabled %}enabled{% else %}placeholder{% endif %}" {% if checkout_stripe_api_key %}data-stripe-api-key="{{ checkout_stripe_api_key }}"{% endif %}
+          <p class="checkout__error">Platba se nepovedla.</p>
+          <p class="price">
+            <strong class="price__amount">109 <sup class="price__unit">Kč/měs</sup></strong>
+            <small class="price__note">nebo 1199 <sup class="price__unit">Kč/rok</sup></small>
+          </p>
+          <p class="checkout__control-compartment button-compartment">
+            <a class="checkout__control button" href="https://juniorguru.memberful.com/checkout?plan=59515" data-metrics data-metrics-name="club-button-monthly">
+              Přidej se
+            </a>
+          </p>
+          <p class="checkout__placeholder">
+            <strong>Díky za zájem!</strong>
+            Klub je zatím dostupný jen pro pár pokusných králíků.
+            Den, kdy skončí zkušební režim a klub se plně otevře veřejnosti, si můžeš
+            <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">pohlídat e-mailem</a>.
+          </p>
+        #}
+        </ul>
     </div>
   </div>
 </section>
@@ -141,31 +180,7 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
   </ul>
 </section>
 <section class="content__section">
-  <div class="checkout checkout--wide checkout--{% if checkout_enabled %}enabled{% else %}placeholder{% endif %}" {% if checkout_stripe_api_key %}data-stripe-api-key="{{ checkout_stripe_api_key }}"{% endif %}>
-    <p class="checkout__error">Platba se nepovedla.</p>
-    <p class="price">
-      <strong class="price__amount">109 <sup class="price__unit">Kč/měs</sup></strong>
-      <small class="price__note">nebo 1199 <sup class="price__unit">Kč/rok</sup></small>
-    </p>
-    <p class="checkout__control-compartment button-compartment">
-      <a class="checkout__control button" href="#beta" data-metrics data-metrics-name="club-button">
-        Přidej se
-      </a>
-    </p>
-    <p class="checkout__placeholder">
-      <strong>Díky za zájem!</strong>
-      Klub je zatím dostupný jen pro pár pokusných králíků.
-      Den, kdy skončí zkušební režim a klub se plně otevře veřejnosti, si můžeš
-      <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">pohlídat e-mailem</a>.
-    </p>
-  </div>
-</section>
-<section class="content__section">
   <h2 class="content__section-heading">Otázky a odpovědi</h2>
-  <h3 class="content__subsection-heading" id="beta">Je klub už v provozu?</h3>
-  <p>
-    Je a není. Existuje, ale zatím je dostupný jen pro pár pokusných králíků. Den, kdy skončí zkušební režim a klub se plně otevře veřejnosti, si můžeš <a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">pohlídat e-mailem</a>. Spuštění se očekává v průběhu ledna 2021.
-  </p>
   <h3 class="content__subsection-heading" id="juniors-only">Je klub pouze pro začátečníky?</h3>
   <p>
     Vůbec ne. Cílem naopak je, aby jeho skladba byla pestrá. Pomoc a rozvoj začátečníků je to hlavní, k čemu slouží, ale členy klubu jsou už teď i mnozí profíci, mentoři, náboráři a další.
@@ -176,7 +191,7 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
   </p>
   <h3 class="content__subsection-heading" id="companies">Co bude mít z členství v klubu naše firma?</h3>
   <p>
-    Firmy, které s klubem spolupracují, do něj mají především přístup. Mohou <a href="https://cs.wikipedia.org/wiki/Skaut_(sport)">vyhlížet talentované juniory</a>, promovat vůči členům své akce, dávat jim slevy na své produkty, mohou se zapojit do diskuzí a poradit nebo poskytovat pohled z druhé strany. Je na vás, jak to uchopíte a co z toho „vyždímete“. Už jen tím, že svými financemi podpoříte existenci junior.guru a budete zde mít logo, si budujete dobré jméno jak mezi lidmi z nastupující generace vývojářů, tak mezi zainteresovanými profíky. Máte-li o partnerství zájem, napište na {{ 'ahoj@junior.guru'|email_link }}.
+    Firmy, které s klubem spolupracují, do něj mají především přístup. Mohou vyhlížet talentované juniory, promovat vůči členům své akce, dávat jim slevy na své produkty, mohou se zapojit do diskuzí a poradit nebo poskytovat pohled z druhé strany. Je na vás, jak to uchopíte a co z toho „vyždímete“. Už jen tím, že svými financemi podpoříte existenci junior.guru a budete zde mít logo, si budujete dobré jméno jak mezi lidmi z nastupující generace vývojářů, tak mezi zainteresovanými profíky. Máte-li o partnerství zájem, napište na {{ 'ahoj@junior.guru'|email_link }}.
   </p>
   <h3 class="content__subsection-heading" id="discord">Jak to přesně funguje?</h3>
   <p>
@@ -185,6 +200,10 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
   <h3 class="content__subsection-heading" id="money">Proč je to placené?</h3>
   <p>
     Klub neprovozuje žádná firma, ale jednotlivec, <a href="{{ url_for('donate') }}#about">Honza Javorek</a>. Jedna osoba, rodina, nájem, jídlo, a tak dále. Klub musí být placený, protože se chci juniorům věnovat opravdu naplno. Rady, které jsem na junior.guru sesbíral a sepsal, zůstávají nadále zdarma na webu a plánuji je v této podobě dál rozšiřovat. Začátečníci ale potřebují víc než jen sepsané rady. Nejvíc je posune, když v tom všem nejsou sami a může jim někdo pomoci se zapeklitou situací, dát zpětnou vazbu, dodat motivaci. A mě toto všechno hodně baví dělat. Chci pracovat pro juniory, být jejich ambasadorem, průvodcem po nelehké cestě. Stejně jako třeba doktor, nejraději bych pomohl všem, ale musím z něčeho žít. Kdybych nabízel profesionální placené konzultace, mohl by si to dovolit jen málokdo. Díky klubu si ale může kousek toho, co dělám, předplatit skoro každý.
+  </p>
+  <h3 class="content__subsection-heading" id="payments">Jsou údaje o mé platební kartě v bezpečí?</h3>
+  <p>
+    Jasně! K údajům o tvé kartě nemá nikdo z junior.guru přístup, jsou bezpečně uchovány platební bránou <a href="https://stripe.com/">Stripe</a>. Je to světoznámá služba, která má hromadu zabezpečení a certifikátů.
   </p>
   <h3 class="content__subsection-heading" id="difference">Jaký je rozdíl mezi klubem a skupinou na Facebooku?</h3>
   <p>

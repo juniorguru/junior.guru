@@ -15,7 +15,12 @@
 }
 
 .hero__info {
-  padding: $whitespace;
+  box-sizing: border-box;
+  padding: 0 $whitespace;
+}
+
+.hero__info-heading {
+  text-align: center;
 }
 
 @media screen and (min-width: $breakpoint-tablet) {
@@ -30,11 +35,21 @@
 
   .hero__image-container,
   .hero__info {
-    width: 50%;
     margin-bottom: 0;
+  }
+
+  .hero__image-container,
+  .hero__image {
+    min-width: 0;
   }
 
   .hero__info {
     margin-bottom: $whitespace-3;
+  }
+}
+
+@media screen and (min-width: $breakpoint-desktop) {
+  .hero__info {
+    min-width: 50%;
   }
 }

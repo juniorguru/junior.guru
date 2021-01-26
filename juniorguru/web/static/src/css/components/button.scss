@@ -64,7 +64,16 @@ a.button--small.button--secondary,
   }
 }
 
+.button--nowrap {
+  white-space: nowrap;
+}
+
 .button__note {
   @include font-0;
   display: block;
+}
+
+.button__unit {
+  @include font-0;
+  vertical-align: baseline;
 }
