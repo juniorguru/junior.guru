@@ -1,5 +1,3 @@
-import os
-
 import arrow
 from flask import Flask, Response, render_template, url_for
 
