@@ -215,10 +215,11 @@
         },
         "emoji": {
             "hashes": [
-                "sha256:91a0822695cd11142989b1d3c80c9a4fbba5fba296253c7915f32248456386c0"
+                "sha256:153fbf06eb5a111ca2b0c04f6f14ec3be434946a302f7892bf4c30446e050381",
+                "sha256:87c934907deb25e9621b0c48cac2051ad932636ad5946c4de6ba0f5f45a61fcd"
             ],
             "index": "pypi",
-            "version": "==1.0.1"
+            "version": "==1.1.0"
         },
         "extruct": {
             "hashes": [
@@ -270,10 +271,10 @@
         },
         "google-api-core": {
             "hashes": [
-                "sha256:4656345cba9627ab1290eab51300a6397cc50370d99366133df1ae64b744e1eb",
-                "sha256:d967beae8d8acdb88fb2f6f769e2ee0ee813042576a08891bded3b8e234150ae"
+                "sha256:0e152ec37b8481d1be1258d95844a5a7031cd3d83d7c7046d9e9b2d807042440",
+                "sha256:292dd636ed381098d24b7093ccb826b2278a12d886a3fc982084069aa24a8fbb"
             ],
-            "version": "==1.25.0"
+            "version": "==1.25.1"
         },
         "google-api-python-client": {
             "hashes": [
@@ -933,10 +934,10 @@
         },
         "urllib3": {
             "hashes": [
-                "sha256:19188f96923873c92ccb987120ec4acaa12f0461fa9ce5d3d0772bc965a39e08",
-                "sha256:d8ff90d979214d7b4f8ce956e80f4028fc6860e4431f731ea4a8c08f23f99473"
+                "sha256:1b465e494e3e0d8939b50680403e3aedaa2bc434b7d5af64dfd3c958d7f5ae80",
+                "sha256:de3eedaad74a2683334e282005cd8d7f22f4d55fa690a2a1020a416cb0a47e73"
             ],
-            "version": "==1.26.2"
+            "version": "==1.26.3"
         },
         "w3lib": {
             "hashes": [
