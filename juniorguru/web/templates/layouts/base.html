@@ -92,14 +92,14 @@
       <footer>
         <div class="footer">
           <div class="editorial">
-            <address class="editorial__section">
-              <span class="editorial__item">Pište na {{ 'ahoj@junior.guru'|email_link }},&nbsp;</span>
-              <span class="editorial__item">tweetujte na <a href="https://twitter.com/honzajavorek/">@honzajavorek</a>,&nbsp;</span>
-              <span class="editorial__item">zdrojáky jsou na <a href="https://github.com/honzajavorek/junior.guru">honzajavorek/junior.guru</a>.</span>
-            </address>
             <p class="editorial__section">
-              <span class="editorial__item"><a href="{{ url_for('privacy') }}">Zpracování osobních údajů</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ url_for('press') }}">Pro média</a></span>
+              Provozuje&nbsp;<a href="{{ url_for('donate') }}#about">Honza Javorek</a>,&nbsp;<a href="https://twitter.com/honzajavorek/">@honzajavorek</a>
+            </p>
+            <p class="editorial__section">
+              <span class="editorial__item"><a href="{{ url_for('privacy') }}">Kontakt</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ url_for('press') }}">Pro média</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ url_for('privacy') }}">Zpracování osobních údajů</a>{#,&nbsp;#}</span>
+              {#<span class="editorial__item"><a href="{{ url_for('tos') }}">Obchodní podmínky</a></span>#}
             </p>
           </div>
           {% block author %}
