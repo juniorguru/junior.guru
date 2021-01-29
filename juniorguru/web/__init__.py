@@ -231,6 +231,11 @@ def privacy():
     return render_template('privacy.html')
 
 
+@app.route('/tos/')
+def tos():
+    return render_template('tos.html')
+
+
 @app.route('/press/')
 def press():
     with db:
