@@ -236,6 +236,11 @@ def tos():
     return render_template('tos.html')
 
 
+@app.route('/coc/')
+def coc():
+    return render_template('coc.html')
+
+
 @app.route('/press/')
 def press():
     with db:
