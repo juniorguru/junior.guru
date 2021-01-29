@@ -12,15 +12,15 @@ def create_record(record=None):
     return {
         'Timestamp': record.get('Timestamp', '7/6/2019 20:24:03'),
         'Email Address': record.get('Email Address', 'jobs@example.com'),
-        'Company name': record.get('Company name', 'Honza Ltd.'),
-        'Company website link': record.get('Company website link', 'https://www.example.com'),
-        'Employment type': record.get('Employment type', 'internship, full-time'),
-        'Job title': record.get('Job title', 'Frontend Ninja'),
-        'Job description': record.get('Job description', None),
-        'Remote?': record.get('Remote?', 'No'),
-        'Office location': record.get('Office location', 'Prague'),
-        'Job link': record.get('Job link', 'https://jobs.example.com/1245/'),
-        'Pricing plan': record.get('Pricing plan', '0 CZK — Community'),
+        'Název firmy': record.get('Název firmy', 'Honza Ltd.'),
+        'Odkaz na webové stránky firmy': record.get('Odkaz na webové stránky firmy', 'https://www.example.com'),
+        'Pracovní poměr': record.get('Pracovní poměr', 'internship, full-time'),
+        'Nadpis pracovní nabídky': record.get('Nadpis pracovní nabídky', 'Frontend Ninja'),
+        'Text pracovní nabídky': record.get('Text pracovní nabídky', None),
+        'Je práce na dálku?': record.get('Je práce na dálku?', 'No'),
+        'Město, kde se nachází kancelář': record.get('Město, kde se nachází kancelář', 'Prague'),
+        'Externí odkaz na pracovní nabídku': record.get('Externí odkaz na pracovní nabídku', 'https://jobs.example.com/1245/'),
+        'Varianta z ceníku': record.get('Varianta z ceníku', '0 CZK — Community'),
         'Approved': record.get('Approved', '10/10/2019'),
         'Expires': record.get('Expires', '12/12/2019'),
     }
@@ -30,8 +30,8 @@ def test_spider_parse():
     class Spider(juniorguru.Spider):
         def _get_records(self):
             return [
-                create_record({'Office location': 'Praha'}),
-                create_record({'Office location': 'Brno'}),
+                create_record({'Město, kde se nachází kancelář': 'Praha'}),
+                create_record({'Město, kde se nachází kancelář': 'Brno'}),
             ]
 
     response = HtmlResponse('https://example.com/', body=b'...')
@@ -44,8 +44,8 @@ def test_spider_parse_multiple_locations():
     class Spider(juniorguru.Spider):
         def _get_records(self):
             return [
-                create_record({'Office location': 'Praha nebo Ostrava'}),
-                create_record({'Office location': 'Brno'}),
+                create_record({'Město, kde se nachází kancelář': 'Praha nebo Ostrava'}),
+                create_record({'Město, kde se nachází kancelář': 'Brno'}),
             ]
 
     response = HtmlResponse('https://example.com/', body=b'...')

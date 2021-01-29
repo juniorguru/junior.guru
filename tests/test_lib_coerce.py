@@ -82,6 +82,10 @@ def test_coerce_int(value, expected):
     ('no', False),
     ('Yes', True),
     ('No', False),
+    ('Ano', True),
+    ('Ne', False),
+    ('ano', True),
+    ('ne', False),
 ])
 def test_coerce_boolean_words(value, expected):
     assert coerce.parse_boolean_words(value) is expected
@@ -96,6 +100,8 @@ def test_coerce_boolean_words(value, expected):
     ('true', True),
     ('yes', True),
     ('no', True),
+    ('ano', True),
+    ('ne', True),
 ])
 def test_coerce_boolean(value, expected):
     assert coerce.parse_boolean(value) is expected
