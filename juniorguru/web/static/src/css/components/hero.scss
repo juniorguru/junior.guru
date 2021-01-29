@@ -19,8 +19,14 @@
   padding: 0 $whitespace;
 }
 
-.hero__info-heading {
+.hero__info-heading,
+.hero__note {
   text-align: center;
+}
+
+.hero__note {
+  margin-top: $whitespace-3;
+  @include font-0;
 }
 
 @media screen and (min-width: $breakpoint-tablet) {
