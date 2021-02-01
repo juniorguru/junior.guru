@@ -15,7 +15,18 @@
 }
 
 .hero__info {
-  padding: $whitespace;
+  box-sizing: border-box;
+  padding: 0 $whitespace;
+}
+
+.hero__info-heading,
+.hero__note {
+  text-align: center;
+}
+
+.hero__note {
+  margin-top: $whitespace-3;
+  @include font-0;
 }
 
 @media screen and (min-width: $breakpoint-tablet) {
@@ -25,16 +36,26 @@
     max-width: 95rem;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 4 * $whitespace-3;
+    margin-bottom: 2 * $whitespace-3;
   }
 
   .hero__image-container,
   .hero__info {
-    width: 50%;
     margin-bottom: 0;
+  }
+
+  .hero__image-container,
+  .hero__image {
+    min-width: 0;
   }
 
   .hero__info {
     margin-bottom: $whitespace-3;
+  }
+}
+
+@media screen and (min-width: $breakpoint-desktop) {
+  .hero__info {
+    min-width: 50%;
   }
 }

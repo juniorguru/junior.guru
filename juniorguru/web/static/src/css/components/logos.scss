@@ -87,16 +87,17 @@
   display: block;
   max-width: 20rem;
   max-height: $logos-height;
+  object-fit: contain;
+}
+
+.logos--greyscale .logos__image {
   filter: grayscale(100%);
   opacity: 0.6;
-  object-fit: contain;
 }
 
 .logos--bar .logos__image {
   max-width: 100%;
   max-height: $logos-height - 0.6rem;
-  filter: none;
-  opacity: 1;
 }
 
 .logos__link:hover .logos__image,

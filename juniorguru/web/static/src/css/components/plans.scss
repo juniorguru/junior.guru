@@ -1,0 +1,37 @@
+.plans,
+.plans__plan,
+.plans__benefits,
+.plans__benefit {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.plans {
+  text-align: center;
+}
+
+.plans__plan {
+  box-sizing: border-box;
+  min-width: 20rem;
+  margin-top: $whitespace-3;
+}
+
+.plans__benefits {
+  margin-bottom: $whitespace;
+}
+
+.plans__benefit {
+  @include font-0;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  .plans {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .plans__plan {
+    margin-top: 0;
+  }
+}

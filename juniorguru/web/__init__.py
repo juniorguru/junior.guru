@@ -1,5 +1,3 @@
-import os
-
 import arrow
 from flask import Flask, Response, render_template, url_for
 
@@ -76,10 +74,6 @@ def club():
         logos = Logo.listing()
     return render_template('club.html',
                            logos=logos,
-                           checkout_enabled=bool(os.getenv('CHECKOUT_ENABLED')),
-                           checkout_price_mo=os.getenv('STRIPE_PRICE_MO') or None,
-                           checkout_price_yr=os.getenv('STRIPE_PRICE_YR') or None,
-                           checkout_stripe_api_key=os.getenv('STRIPE_PUBLISHABLE_API_KEY') or None,
                            thumbnail=thumbnail(title='Klub, který tě nastartuje'))
 
 
