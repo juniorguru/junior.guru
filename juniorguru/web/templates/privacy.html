@@ -1,74 +1,116 @@
 {% extends 'layouts/base.html' %}
 
-{% block title %}Zpracování osobních údajů na junior.guru{% endblock %}
+{% block title %}Zásady ochrany osobních údajů na junior.guru{% endblock %}
 
 {% block content %}
 <header class="intro">
-  <h1 class="intro__title">Zpracování osobních údajů</h1>
+  <h1 class="intro__title">Zásady ochrany osobních údajů</h1>
 </header>
 
 <section class="content__section">
-  <h2 class="content__section-heading">Správce osobních údajů</h2>
   <p>
-    Správcem osobních údajů je provozovatel služby <strong>junior.guru</strong>, Jan Javorek,
-    IČO: <a href="http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0" target="_blank" rel="noopener">74279858</a>,
-    fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodním rejstříku, s místem podnikání na Koněvova 31/27, 130 00 Praha.
-    Kontaktovat jej můžete na {{ 'honza@junior.guru'|email_link }}.
+    Se zřízením registrace v klientské sekci či odesláním objednávky na mé služby potvrzujete, že jste se seznámili s těmito Zásadami ochrany osobních údajů. V případě, že by nastala v těchto podmínkách změna, zveřejníme ji na našich internetových stránkách a zároveň vám novou verzi zašlu na e-mail, který jste mi poskytli.
   </p>
 </section>
-
 <section class="content__section">
-  <h2 class="content__section-heading">Shromažďované osobní údaje</h2>
-  <h3 class="content__subsection-heading">Anonymizované měření návštěvnosti</h3>
+  <h2 class="content__section-heading">Správce osobních údajů</h2>
   <p>
-    Služba <strong>junior.guru</strong> využívá <a href="https://analytics.google.com">Google Analytics</a>
-    pro měření návštěvnosti. Data obsahují technické parametry, jako je IP adresa,
-    typ prohlížeče, apod. Zpracovávána jsou v anonymizované podobě.
+    Junior Guru, stylizovaně „junior.guru“<br>
+    <strong>Jan Javorek</strong><br>
+    fyzická osoba podnikající dle živnostenského zákona
+nezapsaná v obchodním rejstříku se sídlem Koněvova 31/27, 130 00 Praha<br>
+    IČO: <a href="http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0" target="_blank" rel="noopener">74279858</a>,<br>
+    neplátce DPH,<br>
+    E-mail: {{ 'ahoj@junior.guru'|email_link }}
+  </p>
+</section>
+<section class="content__section">
+  <h2 class="content__section-heading">V textu se dozvíte</h2>
+  <ol>
+    <li>Za jakými účely a jakým způsobem budou vaše osobní údaje zpracovávány,</li>
+    <li>jaké vaše osobní údaje budou zpracovávány,</li>
+    <li>komu mohou být vaše osobní údaje předány – příjemci údajů,</li>
+    <li>po jakou dobu budu vaše osobní údaje zpracovávat,</li>
+    <li>jakým způsobem budou vaše údaje zabezpečeny,</li>
+    <li>jaká máte ve vztahu k ochraně vašich osobních údajů práva.</li>
+  </ol>
+</section>
+<section class="content__section">
+  <h2>1. Účel zpracování osobních údajů</h2>
+  <p>
+    Osobní údaje jsou zpracovávány za účelem poskytování služeb správce podle smlouvy uzavřené s klientem. Jméno, příjmení a e-mailová adresa mohou být vedle toho využity k zasílání obchodních sdělení ze strany poskytovatele. Zpracování osobních údajů klienta za účelem zasílání obchodních sdělení může být kdykoliv odmítnuto. Odmítnutí nemá vliv na jiné vzájemné vztahy. E-mail s příslušnou žádostí (odmítnutím) stačí zaslat na {{ 'ahoj@junior.guru'|email_link }} nebo jinou adresu, ze které bylo obchodní sdělení zasláno.
+  </p>
+</section>
+<section class="content__section">
+  <h2>2. Rozsah zpracování osobních údajů</h2>
+  <p>
+    Když mne kontaktujete (telefonicky, e-mailem nebo prostřednictvím webových stránek), můžete být požádáni o uvedení určitých údajů o vás nebo vaší společnosti. Tyto údaje se mohou lišit podle toho, jaké služby ode mne odebíráte:
+  </p>
+  <h3>a. osobní údaje návštěvníků webu</h3>
+  <p>
+    Jedná se o údaje o akcích uživatelů, které slouží čistě pro statistické účely. Tyto údaje uchovává Google Analytics agregované do souhrnných čísel a není z nich možné identifikovat jednotlivce.
+  </p>
+  <h3>b. osoby odebírající newsletter</h3>
+  <p>
+    U osob odebírajících newsletter je uchováván e-mail, a to prostřednictvím služby Mailchimp. Z odebírání newsletteru se můžete kdykoliv odhlásit.
+  </p>
+  <h3>c. osobní údaje členů digitálního klubu</h3>
+  <p>
+    Jedná se o osobní údaje jednotlivých členů klubu dostupné z Klientské sekce. tj. uživatelské jméno, e-mail, domovská země člena a dále údaje o platební kartě člena. K vašim zadaným osobním údajům má vzhledem k charakteru služeb přístup také platforma Memberful, Discord, Google Sheets. K údajům o platební kartě má přístup pouze služba Stripe, která zajišťuje bezpečnost a realizaci jednotlivých plateb, mě osobně známy nejsou.
+  </p>
+  <h3>d. údaje o společnostech a individuální objednávky</h3>
+  <p>
+    V případě objednávek se specifickými podmínkami (typicky se bude jednat např. o objednání digitálního předplatného pro více osob ze strany společnosti) jsou evidovány potřebné fakturační údaje jako jsou: jméno/název společnosti, adresa bydliště/sídla společnosti, datum narození/IČO, DIČ, číslo účtu kupujícího, e-mailová adresa, případně telefon.
+  </p>
+</section>
+<section class="content__section">
+  <h2>3. Příjemci osobních údajů</h2>
+  <p>
+    Vaše údaje mohou být předány níže vyjmenovaným subjektům. Dbáme na to, aby byly předány vždy
+    pouze ty údaje, které vyžaduje zákon nebo, které jsou v dané situaci potřebné:
+  </p>
+  <ul>
+    <li>Orgány veřejné moci (např. soudy, správní orgány),</li>
+    <li>poskytovatelé údržby informačního systému,</li>
+    <li>služby třetích stran nezbytné pro realizaci služeb, a to Google Analytics, Google Sheets, Mailchimp, Memberful, Discord,</li>
+    <li>služba třetí strany nezbytná pro realizaci bezkontaktních plateb, a to Stripe,</li>
+    <li>služba třetí stany spravující účetnictví, a to Fakturoid.</li>
+</ul>
+</section>
+<section class="content__section">
+  <h2>4. Doba zpracování osobních údajů</h2>
+  <p>
+    Osobní údaje budou zpracovávány podobu existence vaší registrace v Klientské sekci případně trvání odběru newsletteru. V případě odeslání objednávky a uzavření smlouvy na služby, budou zpracovávány po celou dobu platnosti této smlouvy a po jejím skončení po dobu nezbytnou k výkonu práv a povinností vyplývajících ze smluvního vztahu mezi vámi a mnou a podle požadavků daňových předpisů.
+  </p>
+</section>
+<section class="content__section">
+  <h2>5. Zabezpečení vašich osobních údajů</h2>
+  <p>
+    Prohlašuji, že jsem přijal veškerá vhodná technická a organizační opatření k zabezpečení vašich osobních údajů. Přijal jsem opatření k zabezpečení datových úložišť a také úložišť osobních údajů v listinné podobě. Prohlašuji, že k vašim osobním údajům mají přístup pouze mnou pověřené osoby.
+  </p>
+</section>
+<section class="content__section">
+  <h2>6. Vaše práva</h2>
+  <p>
+    <strong>Právo na přístup k osobním údajům</strong> znamená, že máte právo od správce získat informace o tom, zda
+    zpracovává vaše osobní údaje, a pokud ano, o jaké údaje se jedná a jakým způsobem jsou
+    zpracovávány. Máte také právo na to, abychom opravili bez zbytečného odkladu nepřesné osobní
+    údaje, které se vás týkají. Neúplné osobní údaje máte právo kdykoli doplnit.
   </p>
   <p>
-    Data z měření uchovává společnost Google LLC
-    na základě svých
-    <a href="https://policies.google.com/privacy?hl=cs">zásad ochrany osobních údajů</a>.
-    Uživatelský přístup k datům má pouze Jan Javorek.
+    <strong>Právo na výmaz osobních údajů</strong> představuje jinými slovy vyjádřenou povinnost správce zlikvidovat osobní údaje, které o klientovi zpracovává, pokud jsou splněny určité podmínky a klient o to požádá. Klient má právo, aby správce v určitých případech omezil zpracování jeho osobních údajů. Proti zpracování, které je založeno na oprávněných zájmech správce, třetí strany nebo je nezbytné pro splnění úkolu prováděného ve veřejném zájmu nebo při výkonu veřejné moci, má klient právo kdykoli vznést námitku.
   </p>
   <p>
-    Google Analytics pro své fungování vyžadují cookies. Ty nastavuje společnost Google LLC
-    na základě svých
-    <a href="https://policies.google.com/technologies/cookies?hl=cs">pravidel</a>.
-    Jiné cookies služba <strong>junior.guru</strong> nenastavuje. Pokud si návštěvník stránek
-    nepřeje být měřen, může si cookies sám vypnout ve svém prohlížeči.
-  </p>
-
-  <h3 class="content__subsection-heading">Seznam e-mailových adres k rozesílání nabídek práce</h3>
-  <p>
-    Návštěvníci stránek <strong>junior.guru</strong> se mohou dobrovolně přihlásit k odběru
-    e-mailů s pracovními nabídkami. Odběratelé se mohou kdykoliv sami odhlásit
-    a tím jejich e-mailová adresa přestává být uchovávána.
+    <strong>Právo na přenositelnost údajů</strong> vám dává možnost získat osobní údaje, které jste správci poskytl, v běžném a strojově čitelném formátu. Tyto údaje můžete následně předat jinému správci, nebo pokud je to technicky možné, žádat, aby si je správci předali mezi sebou.
   </p>
   <p>
-    Služba <strong>junior.guru</strong> využívá <a href="https://mailchimp.com">Mailchimp</a>
-    pro shromažďování těchto e-mailových adres, rozesílání e-mailů a měření výkonnosti poslaných e-mailů.
-    E-mailové adresy a data z měření uchovává společnost The Rocket Science Group LLC d/b/a Mailchimp
-    na základě svých
-    <a href="https://mailchimp.com/legal/privacy/">zásad ochrany osobních údajů</a>.
-    Uživatelský přístup k datům má pouze Jan Javorek.
-  </p>
-
-  <h3 class="content__subsection-heading">Seznam e-mailových adres u nabídek práce</h3>
-  <p>
-    Návštěvníci stránek <strong>junior.guru</strong> mohou přidat pracovní nabídku. Údaje
-    o pracovní nabídce povinně obsahují e-mailovou adresu. Tato adresa je
-    uveřejněna zájemcům o práci a zároveň slouží službě <strong>junior.guru</strong> jako
-    případný kontakt na autory inzerátu. Se smazáním inzerátu přestává být
-    adresa uchovávána.
+    <strong>Právo kdykoli odvolat souhlas se zpracováním osobních údajů</strong> mají klienti, kteří se zaregistrovali na našich webových stránkách, ale doposud nevyužili našich služeb (neobjednali si u nás žádnou službu).
   </p>
   <p>
-    Služba <strong>junior.guru</strong> využívá <a href="https://docs.google.com/">Google Docs</a>
-    pro shromažďování a uchovávání těchto e-mailových adres.
-    E-mailové adresy uchovává společnost Google LLC
-    na základě svých
-    <a href="https://policies.google.com/privacy?hl=cs">zásad ochrany osobních údajů</a>.
-    Uživatelský přístup k datům má pouze Jan Javorek.
+    <strong>Právo kdykoli odvolat souhlas se zpracováním osobních údajů</strong> se neuplatní u klientů, kteří u nás objednali některou ze služeb, jelikož osobní údaje klienta jsou pak zpracovávány z důvodu plnění smlouvy uzavřené s klientem, nikoli na základě souhlasu se zpracováním. V případě, že bude klient jakkoli nespokojen se zpracováním svých osobních údajů, může podat stížnost na mou e-mailovou adresu, nebo se obrátit na Úřad pro ochranu osobních údajů.
+  </p>
+  <p>
+    Více informací o právech klienta je k dispozici na <a href="https://www.uoou.cz/6-prava-subjektu-udaj/d-27276">internetových stránkách Úřadu pro ochranu osobních údajů</a>.
   </p>
 </section>
 {% endblock %}
