@@ -1,22 +1,35 @@
+import re
 import os
 
 import discord
 
 from juniorguru.lib.log import get_log
+from juniorguru.models import Member, db
 
 
-log = get_log('club_members')
+log = get_log('members')
+
+
+JUNIORGURU_GUILD_NUM = 769966886598737931
 
 
 async def run(client):
-    # channel = client.get_channel(797107515186741248)
-    # await channel.send(client.user.name)
-    from pprint import pprint
-    guild = client.get_guild(769966886598737931)
-    print('MEMBERS')
-    pprint(guild.members)
-    print('INVITES')
-    pprint(await guild.invites())
+    with db:
+        Member.drop_table()
+        Member.create_table()
+
+    for member_data in client.get_guild(JUNIORGURU_GUILD_NUM).members:
+        if not member_data.bot:
+            id = member_data.id
+            log.info(f'Member {id}')
+            avatar_url = str(member_data.avatar_url)
+            Member.create(id=id,
+                          avatar_url=None if is_default_avatar(avatar_url) else avatar_url)
+
+
+def is_default_avatar(url):
+    return bool(re.search(r'/embed/avatars/\d+\.', url))
+
 
 
 def main():
@@ -29,8 +42,8 @@ def main():
         async def on_error(self, event, *args, **kwargs):
             raise
 
-    # oauth permissions: manage guild, create invites
-    intents = discord.Intents(guilds=True, members=True, messages=True, invites=True)
+    # oauth permissions: manage guild
+    intents = discord.Intents(guilds=True, members=True)
     client = Client(intents=intents)
 
     exc = None

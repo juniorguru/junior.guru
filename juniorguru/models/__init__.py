@@ -8,8 +8,9 @@ from juniorguru.models.press_release import PressRelease
 from juniorguru.models.logo import Logo, LogoMetric
 from juniorguru.models.spider_metric import SpiderMetric
 from juniorguru.models.proxy import Proxy
+from juniorguru.models.member import Member
 
 
 __all__ = [db, Job, JobDropped, JobError, JobMetric, Metric, Story, Supporter,
            LastModified, PressRelease, JobNewsletterMention, Logo, LogoMetric,
-           retry_when_db_locked, SpiderMetric, EMPLOYMENT_TYPES, Proxy]
+           retry_when_db_locked, SpiderMetric, EMPLOYMENT_TYPES, Proxy, Member]

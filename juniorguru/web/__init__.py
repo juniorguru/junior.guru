@@ -1,7 +1,7 @@
 import arrow
 from flask import Flask, Response, render_template, url_for
 
-from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, db
+from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, Member, db
 from juniorguru.web.thumbnail import thumbnail
 
 
@@ -71,9 +71,11 @@ def index():
 @app.route('/club/')
 def club():
     with db:
+        members = Member.avatars_listing()
         logos = Logo.listing()
     return render_template('club.html',
                            logos=logos,
+                           members=members,
                            thumbnail=thumbnail(title='Klub, který tě nastartuje'))
 
 

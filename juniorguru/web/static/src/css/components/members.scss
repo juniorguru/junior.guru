@@ -1,0 +1,42 @@
+.members {
+  margin: $whitespace-3 0;
+}
+
+.members__items,
+.members__item {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.members__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.members__item {
+  margin-left: $whitespace-3 * -0.3;
+}
+
+.members__item:first-child {
+  margin-left: 0;
+}
+
+.members__item--count {
+  margin-left: $whitespace;
+  @include font-3;
+  font-weight: bold;
+  align-self: center;
+  box-sizing: border-box;
+  padding-bottom: $whitespace-0;
+  white-space: nowrap;
+}
+
+.members__image {
+  display: block;
+  margin: 0;
+  width: $whitespace-3 * 1.5;
+  border: $border-width solid $white;
+  border-radius: 100%;
+}

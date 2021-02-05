@@ -131,6 +131,37 @@ def test_metric(value, expected):
     assert template_filters.metric(value) == expected
 
 
+@pytest.mark.parametrize('items,n,expected', [
+    pytest.param(
+        ['x'],
+        4,
+        {'x'},
+        id='len(items) < n',
+    ),
+    pytest.param(
+        ['x', 'y'],
+        2,
+        {'x', 'y'},
+        id='len(items) == n',
+    ),
+])
+def test_sample(items, n, expected):
+    assert set(template_filters.sample(items, n)) == expected
+
+
+def test_sample_random():
+    random_called = False
+
+    def random_sample(items, n):
+        nonlocal random_called
+        random_called = True
+        return items[:n]
+
+    assert set(template_filters.sample(['x', 'y', 'z'], 2, sample_fn=random_sample)) == {'x', 'y'}
+    assert random_called is True
+
+
+
 DummyJob = namedtuple('Job', ['id', 'source'])
 
 

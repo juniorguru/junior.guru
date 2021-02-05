@@ -68,6 +68,18 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
   </div>
 </section>
 <section class="content__section">
+  <div class="members">
+    <ul class="members__items">
+      {% for member in members|sample(20) %}
+        <li class="members__item">
+          <img class="members__image" src="{{ member.avatar_url }}" alt="Profilovka člena {{ member.id }}">
+        </li>
+      {% endfor %}
+      <li class="members__item members__item--count">
+        +{{ members|length - 20 }} dalších
+      </li>
+    </ul>
+  </div>
   <div class="logos">
     <ul class="logos__items">
       <li class="logos__item logos__item--caption">

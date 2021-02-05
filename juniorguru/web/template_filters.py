@@ -96,6 +96,14 @@ def metric(value):
 
 
 @app.template_filter()
+def sample(items, n=2, sample_fn=None):
+    items = list(items)
+    if len(items) <= n:
+        return items
+    return (sample_fn or random.sample)(items, n)
+
+
+@app.template_filter()
 def sample_jobs(jobs, n=2, sample_fn=None):
     jobs = list(jobs)
     if len(jobs) <= n:
