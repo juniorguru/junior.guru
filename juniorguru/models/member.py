@@ -8,5 +8,9 @@ class Member(BaseModel):
     avatar_url = CharField(null=True)
 
     @classmethod
+    def count(cls):
+        return cls.select().count()
+
+    @classmethod
     def avatars_listing(cls):
         return cls.select().where(cls.avatar_url.is_null(False))

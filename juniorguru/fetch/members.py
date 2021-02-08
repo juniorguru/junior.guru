@@ -18,7 +18,7 @@ async def run(client):
         Member.drop_table()
         Member.create_table()
 
-    for member_data in client.get_guild(JUNIORGURU_GUILD_NUM).members:
+    async for member_data in client.get_guild(JUNIORGURU_GUILD_NUM).fetch_members(limit=None):
         if not member_data.bot:
             id = member_data.id
             log.info(f'Member {id}')

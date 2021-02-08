@@ -72,10 +72,12 @@ def index():
 def club():
     with db:
         members = Member.avatars_listing()
+        members_total_count = Member.count()
         logos = Logo.listing()
     return render_template('club.html',
                            logos=logos,
                            members=members,
+                           members_total_count=members_total_count,
                            thumbnail=thumbnail(title='Klub, který tě nastartuje'))
 
 
