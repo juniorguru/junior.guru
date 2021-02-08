@@ -2,10 +2,10 @@ import re
 import os
 from urllib.parse import urlparse
 from pathlib import Path
-# from io import BytesIO
+from io import BytesIO
 
 import discord
-# from PIL import Image
+from PIL import Image
 
 from juniorguru.lib.log import get_log
 from juniorguru.models import Member, db
@@ -17,6 +17,7 @@ log = get_log('members')
 JUNIORGURU_GUILD_NUM = 769966886598737931
 IMAGES_PATH = Path(__file__).parent.parent / 'data' / 'images'
 AVATARS_PATH = IMAGES_PATH / 'avatars'
+SIZE_PX = 60
 
 
 async def run(client):
@@ -36,8 +37,12 @@ async def run(client):
             if is_default_avatar(avatar_url):
                 avatar_path = None
             else:
-                image_path = AVATARS_PATH / Path(urlparse(avatar_url).path).name
-                await member.avatar_url.save(image_path)
+                buffer = BytesIO()
+                await member.avatar_url.save(buffer)
+                image = Image.open(buffer)
+                image = image.resize((SIZE_PX, SIZE_PX))
+                image_path = AVATARS_PATH / f'{Path(urlparse(avatar_url).path).stem}.png'
+                image.save(image_path, 'PNG')
                 avatar_path = f'images/avatars/{image_path.name}'
             Member.create(id=id, avatar_path=avatar_path)
 
