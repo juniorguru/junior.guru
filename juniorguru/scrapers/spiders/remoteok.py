@@ -1,4 +1,5 @@
 import re
+from json import JSONDecodeError
 
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
@@ -15,7 +16,14 @@ class Spider(BaseSpider):
     ]
 
     def parse(self, response):
-        for json_data in response.json()[1:]:  # skip legal notice
+        try:
+            json_data_list = response.json()
+        except JSONDecodeError:
+            if re.search(r'\bxdebug-error\b', response.text):
+                return
+            raise
+
+        for json_data in json_data_list[1:]:  # skip legal notice
             url = json_data['url'].replace(json_data['id'], json_data['slug'])
             yield response.follow(url,
                                   callback=self.parse_job,

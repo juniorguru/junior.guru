@@ -18,6 +18,14 @@ def normalize_html(html_string):
 
 def test_spider_parse():
     response = TextResponse('https://example.com/example/',
+                            body=Path(FIXTURES_DIR / 'error.html').read_bytes())
+    requests = list(remoteok.Spider().parse(response))
+
+    assert len(requests) == 0
+
+
+def test_spider_parse_error():
+    response = TextResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'api.json').read_bytes())
     requests = list(remoteok.Spider().parse(response))
 
