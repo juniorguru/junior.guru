@@ -1,7 +1,11 @@
 import re
 import os
+from urllib.parse import urlparse
+from pathlib import Path
+# from io import BytesIO
 
 import discord
+# from PIL import Image
 
 from juniorguru.lib.log import get_log
 from juniorguru.models import Member, db
@@ -11,20 +15,31 @@ log = get_log('members')
 
 
 JUNIORGURU_GUILD_NUM = 769966886598737931
+IMAGES_PATH = Path(__file__).parent.parent / 'data' / 'images'
+AVATARS_PATH = IMAGES_PATH / 'avatars'
 
 
 async def run(client):
+    AVATARS_PATH.mkdir(exist_ok=True)
+    for path in AVATARS_PATH.glob('*'):
+        path.unlink()
+
     with db:
         Member.drop_table()
         Member.create_table()
 
-    async for member_data in client.get_guild(JUNIORGURU_GUILD_NUM).fetch_members(limit=None):
-        if not member_data.bot:
-            id = member_data.id
+    async for member in client.get_guild(JUNIORGURU_GUILD_NUM).fetch_members(limit=None):
+        if not member.bot:
+            id = member.id
             log.info(f'Member {id}')
-            avatar_url = str(member_data.avatar_url)
-            Member.create(id=id,
-                          avatar_url=None if is_default_avatar(avatar_url) else avatar_url)
+            avatar_url = str(member.avatar_url)
+            if is_default_avatar(avatar_url):
+                avatar_path = None
+            else:
+                image_path = AVATARS_PATH / Path(urlparse(avatar_url).path).name
+                await member.avatar_url.save(image_path)
+                avatar_path = f'images/avatars/{image_path.name}'
+            Member.create(id=id, avatar_path=avatar_path)
 
 
 def is_default_avatar(url):

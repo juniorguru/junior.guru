@@ -16,9 +16,9 @@ def db_connection():
 
 
 def test_juniorguru_listing(db_connection):
-    job1 = Member.create(id='1', avatar_url='https://example.com/avatars/1.png')
+    job1 = Member.create(id='1', avatar_path='avatars/1.png')
     job2 = Member.create(id='2')  # noqa
-    job3 = Member.create(id='3', avatar_url='https://example.com/avatars/2.png')
-    job4 = Member.create(id='4', avatar_url='https://example.com/avatars/3.png')
+    job3 = Member.create(id='3', avatar_path='avatars/2.png')
+    job4 = Member.create(id='4', avatar_path='avatars/3.png')
 
     assert list(Member.avatars_listing()) == [job1, job3, job4]
