@@ -21,7 +21,7 @@ SIZE_PX = 60
 
 
 async def run(client):
-    AVATARS_PATH.mkdir(exist_ok=True)
+    AVATARS_PATH.mkdir(exist_ok=True, parents=True)
     for path in AVATARS_PATH.glob('*'):
         path.unlink()
 
