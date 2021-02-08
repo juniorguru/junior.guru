@@ -45,7 +45,6 @@ favicon = "*"
 feedparser = "*"
 extruct = "*"
 "discord.py" = "*"
-stripe = "*"
 gql = {extras = ["requests"], version = "*"}
 
 [dev-packages]
