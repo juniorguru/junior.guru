@@ -120,16 +120,6 @@ def candidate_handbook():
                            thumbnail=thumbnail(title='Příručka o\u00a0hledání první práce v\u00a0IT'))
 
 
-@app.route('/candidate/')
-def candidate():
-    return redirect(url_for('candidate_handbook', _external=True))
-
-
-@app.route('/__supercalifragilisticexpialidocious__/')
-def candidate_handbook_teaser():
-    return redirect(url_for('candidate_handbook', _external=True))
-
-
 @app.route('/jobs/')
 def jobs():
     with db:
