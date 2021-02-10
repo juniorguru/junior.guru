@@ -1,9 +1,10 @@
-import './header';
-import './more';
-import './toc';
-import './logos';
-import './testimonials';
-import './metrics';
 import './annotations';
+import './header';
+import './logos';
+import './membership';
+import './metrics';
+import './more';
+import './testimonials';
+import './toc';
 
 import 'instant.page';

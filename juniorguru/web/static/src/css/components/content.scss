@@ -19,6 +19,10 @@
   padding-right: 0;
 }
 
+.content__section--hidden {
+  display: none;
+}
+
 .content__section-heading {
   border-bottom: $border-width solid $yellow;
 }

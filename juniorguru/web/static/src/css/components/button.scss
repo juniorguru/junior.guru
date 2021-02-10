@@ -68,6 +68,10 @@ a.button--small.button--secondary,
   white-space: nowrap;
 }
 
+.button--horizontally-spaced {
+  margin-right: $whitespace;
+}
+
 .button__note {
   @include font-0;
   display: block;

@@ -81,6 +81,12 @@ def club():
                            thumbnail=thumbnail(title='Klub, který tě nastartuje'))
 
 
+@app.route('/membership/')
+def membership():
+    return render_template('membership.html',
+                           thumbnail=thumbnail(title='Rozcestník pro členy klubu'))
+
+
 @app.route('/learn/')
 def learn():
     return render_template('learn.html',
@@ -205,13 +211,6 @@ def donate():
                            supporters_names_urls=supporters_names_urls,
                            supporters_names=supporters_names,
                            thumbnail=thumbnail(title='Pošli LOVE'))
-
-
-# TODO this probably isn't necessary anymore
-@app.route('/thanks/')
-def thanks():
-    return render_template('thanks.html',
-                           thumbnail=thumbnail(title='Díky!'))
 
 
 @app.route('/privacy/')

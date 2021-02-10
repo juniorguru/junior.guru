@@ -1,0 +1,105 @@
+{% extends 'layouts/base.html' %}
+
+{% block meta %}
+  {{ super() }}
+  <meta name="robots" content="nofollow, nosnippet, noimageindex, noarchive, nocache">
+{% endblock %}
+
+{% block title %}Rozcestník pro členy klubu junior.guru{% endblock %}
+
+{% block description -%}
+bla bla bla
+{%- endblock %}
+
+{% block content %}
+<header class="intro intro--without-illustration">
+  <h1 class="intro__title">Rozcestník pro členy</h1>
+  <p class="intro__lead">
+    Vítej v <a href="{{ url_for('club') }}">klubu</a>! Na této stránce najdeš důležité odkazy a praktické tipy, které by ti měly pomoci se základní orientací.
+  </p>
+</header>
+<section class="content__section content__section--hidden">
+  <div class="engage">
+    <div class="engage__content">
+      <h2 class="engage__heading engage__heading--centered">Jak dokončit registraci?</h2>
+      <p class="engage__single-paragraph">
+        Jsme moc rádi, že se k nám chceš přidat! Během pár minut by ti měla do e-mailu přijít pozvánka na Discord. Pokud e-mail napřijde nebo se na něčem zasekneš, omrkni prosím důležité odkazy níže a piš na {{ 'ahoj@junior.guru'|email_link }}, určitě to vyřešíme.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="content__section">
+  <h2 class="content__section-heading" id="links">Důležité odkazy</h2>
+  <div class="settings">
+    <div class="settings__block">
+      <h3 class="content__subsection-heading">Předplatné</h3>
+      <p>
+        Po registraci na junior.guru se můžeš kdykoliv přihlásit do členské sekce. Tam můžeš měnit typ předplatného, údaje na platební kartě, zadat slevový kupón.
+      </p>
+      <p class="button-compartment button-compartment--row">
+        <a class="button button--horizontally-spaced" href="https://juniorguru.memberful.com/account">Otevřít nastavení</a>
+        <a class="button button--secondary" href="https://juniorguru.memberful.com/auth/sign_out">Odhlásit se</a>
+      </p>
+    </div>
+    <div class="settings__block">
+      <h3 class="content__subsection-heading">Discord</h3>
+      <p>
+        Klubovnu máme na platformě <a href="https://discord.com/">Discord</a>. Pokud už Discord používáš a máš tam účet, stačí jej s junior.guru propojit. V opačném případě si musíš nejprve účet vytvořit. Aby vše správně fungovalo, musí mít tvůj Discord účet ověřenou e-mailovou adresu.
+      </p>
+      <p class="button-compartment button-compartment--row">
+        <a class="button" href="https://juniorguru.memberful.com/account/discord/authorize">Otevřít Discord</a>
+      </p>
+    </div>
+  </div>
+</section>
+<section class="content__section">
+  <h2 class="content__section-heading" id="tips">Praktické tipy</h2>
+  <h3 class="content__subsection-heading">Jak si nastavit jméno?</h3>
+  <p>
+    Je na každém, zda chce být v klubu pod přezdívkou nebo skutečným jménem. Standardně se u každého zobrazuje jen uživatelské jméno, jaké si zvolil při registraci na Discord, a obrázek, pokud nějaký má. Kromě toho si lze pro každý Discord server zvlášť nastavit jméno, které se bude zobrazovat místo uživatelského. Stačí kliknout pravým tlačítkem na svůj řádek v seznamu lidí a vybrat <em>Change Nickname</em>.
+  </p>
+
+  <h3 class="content__subsection-heading">Jak mohu vkládat kód?</h3>
+  <p>
+    Discord zprávy podporují <a href="https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-">základní formátování pomocí značkovacího jazyka Markdown</a>. Pokud chceš do své zprávy vložit kousek kódu, ohranič jej pomocí třech obrácených čárek (tzv. <em>backticks</em>):
+  </p>
+  <pre><code>```
+toto se zobrazí jako kód
+```</code></pre>
+  <p>
+    Pokud chceš kód obarvit, přidej za první tři <em>backticks</em> ještě jazyk:
+  </p>
+  <pre><code>```python
+print('ahoj')
+```</code></pre>
+</section>
+<section class="content__section">
+  <h2 class="content__section-heading" id="channels">Průvodce kanály</h2>
+  <p>
+    Každý kanál má nahoře popisek, který upřesňuje, k čemu slouží. Připravené kanály jsou zatím jako jako takové ty cestičky v parku, které architek navrhl v dobré víře, ale občas je kratší cesta prostě jinudy. Počítá se s tím, že se věci ustálí až podle toho, jak budou lidé klub využívat, co jim přijde praktické a co naopak využívat nebudou.
+  </p>
+
+  <h3 class="content__subsection-heading">Kanál o kanálech</h3>
+  <p>
+    Kanál <strong>#meta</strong> slouží k diskuzi o samotném klubu a Discordu. Klub zatím existuje jen krátce, takže se mnoho věcí teprve vyvíjí a toto je místo, kde se na tom lze podílet.
+  </p>
+  <h3 class="content__subsection-heading">Kanály s omezenou diskuzí</h3>
+  <p>
+    Kanál <strong>#ahoj</strong> slouží výhradně pro představování a <strong>#til</strong> zase pro sdílení toho, co se kdo dnes naučil nového. Tyto kanály nejsou konverzační a diskuze by v nich ideálně neměla probíhat vůbec. Pokud chceš na něco reagovat, vem si to do <strong>#pokec</strong>.
+  </p>
+  <h3 class="content__subsection-heading">Hlasová klubovna a salonek</h3>
+  <p>
+    V hlasových kanálech se můžeš kdykoliv sejít a něco probrat přes mikrofon, bez psaní písmenek. V těchto kanálech se také odehrávají společné akce, přednášky, apod. Pokud se někdo v hlavním kanále příliš zakecá, mohou se zájemci o jiná témata zašít v salonku a rozjet debatu o něčem jiném.
+  </p>
+  <h3 class="content__subsection-heading">Učebny</h3>
+  <p>
+    Pokud s někým řešíš konkrétní problém nebo spolu chcete něco soustředěně probrat, můžete si volně zabrat kteroukoliv z učeben, ať už textových nebo hlasových.
+  </p>
+  <h3 class="content__subsection-heading">Promo kanály</h3>
+  <p>
+    Reklama, promo, slevy, apod. jsou povolené a vítané, ale patří do vyhrazených kanálů v kategorii promo.
+  </p>
+</section>
+{% endblock %}
+
+{% block author %}{% endblock %}

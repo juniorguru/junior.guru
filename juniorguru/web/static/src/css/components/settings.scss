@@ -1,0 +1,12 @@
+@media screen and (min-width: $breakpoint-tablet) {
+  .settings {
+    display: flex;
+  }
+
+  .settings__block {
+    box-sizing: border-box;
+    width: 50%;
+    padding-right: $whitespace-3;
+  }
+}
+
