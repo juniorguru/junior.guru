@@ -8,14 +8,15 @@
 {% block title %}Rozcestník pro členy klubu junior.guru{% endblock %}
 
 {% block description -%}
-bla bla bla
+Důležité odkazy a praktické tipy pro členy klubu junior.guru.
 {%- endblock %}
 
 {% block content %}
-<header class="intro intro--without-illustration">
+<header class="intro">
   <h1 class="intro__title">Rozcestník pro členy</h1>
   <p class="intro__lead">
-    Vítej v <a href="{{ url_for('club') }}">klubu</a>! Na této stránce najdeš důležité odkazy a praktické tipy, které by ti měly pomoci se základní orientací.
+    <img class="intro__illustration" src="{{ url_for('static', filename='images/club-thin.svg') }}">
+    Vítej v&nbsp;<a href="{{ url_for('club') }}">klubu</a>! Na&nbsp;této stránce najdeš důležité odkazy a praktické tipy, které by ti měly pomoci se&nbsp;základní orientací.
   </p>
 </header>
 <section class="content__section content__section--hidden">

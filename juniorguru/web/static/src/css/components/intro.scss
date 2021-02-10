@@ -38,7 +38,7 @@
 .intro__illustration {
   float: right;
   margin: $whitespace;
-  height: 4 * $whitespace-3;
+  height: 3 * $whitespace-3;
 }
 
 @media screen and (min-width: $breakpoint-tablet) {
@@ -46,5 +46,10 @@
     padding: $whitespace * 2;
     margin-left: $whitespace-3 * 3;
     margin-right: $whitespace-3 * 3;
+  }
+
+  .intro__illustration {
+    margin-left: $whitespace-3;
+    height: 4 * $whitespace-3;
   }
 }
