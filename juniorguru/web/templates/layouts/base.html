@@ -47,7 +47,6 @@
                         {{- '' -}}
                         <a class="
                           header__nav-tab-control
-                          header__nav-tab-control--{{ loop.index }}
                           {% if tab.endpoint == nav_active %}
                             header__nav-tab-control--active
                           {% endif %}
@@ -56,8 +55,6 @@
                           <span class="header__nav-tab-name">
                             {{- tab.name -}}
                           </span>
-                          {{- '' -}}
-                          <span class="header__nav-tab-name-short" data-content="{{ tab.name_short|default(tab.name) }}"></span>
                           {{- '' -}}
                         </a>
                         {{- '' -}}
@@ -103,27 +100,7 @@
               <span class="editorial__item"><a href="{{ url_for('coc') }}">Pravidla chování</a></span>
             </p>
           </div>
-          {% block author %}
-          <div class="author" id="honza">
-            <div class="author-wrapper">
-              <p class="author-text-outer">
-                <img class="author-photo" alt="Fotka Honzy Javorka" src="{{ url_for('static', filename='images/honza.jpg') }}" loading="lazy">
-                <span class="author-text-inner">
-                Ahoj! Jmenuji se <a href="{{ url_for('donate') }}#about">Honza Javorek</a> a jsem autor tohoto průvodce.
-                Ukázal ti tento průvodce cestu k&nbsp;programování? K&nbsp;lepší práci?
-                Můžeš mi <a href="{{ url_for('donate') }}">poděkovat dobrovolným příspěvkem</a>.
-                Veškerý obsah zde nechávám volně přístupný, aby pomohl co nejvíce lidem.
-                Příspěvky zajistí, že tyto stránky budu moci vylepšovat a dál provozovat.
-                </span>
-              </p>
-              <div class="call-to-action">
-                <a href="{{ url_for('donate') }}" class="legacy-button legacy-button-inverted">
-                  Přispět
-                </span>
-              </div>
-            </div>
-          </div>
-          {% endblock %}
+          {% block author %}{% endblock %}
         </div>
       </footer>
     {% endblock %}

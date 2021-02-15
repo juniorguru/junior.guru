@@ -6,15 +6,20 @@ from juniorguru.web.thumbnail import thumbnail
 
 
 NAV_TABS = [
-    {'endpoint': 'learn', 'name': 'Nauč se základy', 'name_short': 'Základy'},
-    {'endpoint': 'practice', 'name': 'Získej praxi', 'name_short': 'Praxe'},
-    {'endpoint': 'jobs', 'name': 'Najdi práci', 'name_short': 'Práce'},
+    {'endpoint': 'learn', 'name': 'Příručka'},
+    {'endpoint': 'jobs', 'name': 'Práce'},
+    {'endpoint': 'club', 'name': 'Klub'},
 ]
 
 JOBS_SUBNAV_TABS = [
     {'endpoint': 'jobs', 'name': 'Nabídky práce'},
-    {'endpoint': 'candidate_handbook', 'name': 'Příručka o hledání práce'},
     {'endpoint': 'hire_juniors', 'name': 'Pro firmy'},
+]
+
+HANDBOOK_SUBNAV_TABS = [
+    {'endpoint': 'learn', 'name': 'Nauč se základy'},
+    {'endpoint': 'practice', 'name': 'Získej praxi'},
+    {'endpoint': 'candidate_handbook', 'name': 'Najdi práci'},
 ]
 
 REGIONS = [
@@ -75,6 +80,7 @@ def club():
         members_total_count = Member.count()
         logos = Logo.listing()
     return render_template('club.html',
+                           nav_active='club',
                            logos=logos,
                            members=members,
                            members_total_count=members_total_count,
@@ -84,6 +90,7 @@ def club():
 @app.route('/membership/')
 def membership():
     return render_template('membership.html',
+                           nav_active='club',
                            thumbnail=thumbnail(title='Rozcestník pro členy klubu'))
 
 
@@ -91,6 +98,8 @@ def membership():
 def learn():
     return render_template('learn.html',
                            nav_active='learn',
+                           subnav_tabs=HANDBOOK_SUBNAV_TABS,
+                           subnav_active='learn',
                            stories_count=len(Story.listing()),
                            thumbnail=thumbnail(title='Jak se naučit programovat'))
 
@@ -98,7 +107,9 @@ def learn():
 @app.route('/practice/')
 def practice():
     return render_template('practice.html',
-                           nav_active='practice',
+                           nav_active='learn',
+                           subnav_tabs=HANDBOOK_SUBNAV_TABS,
+                           subnav_active='practice',
                            thumbnail=thumbnail(title='Jak získat praxi v\u00a0programování'))
 
 
@@ -113,8 +124,8 @@ def candidate_handbook():
         last_modified = LastModified.get_value_by_path('candidate_handbook.html')
         logos = Logo.listing()
     return render_template('candidate_handbook.html',
-                           nav_active='jobs',
-                           subnav_tabs=JOBS_SUBNAV_TABS,
+                           nav_active='learn',
+                           subnav_tabs=HANDBOOK_SUBNAV_TABS,
                            subnav_active='candidate_handbook',
                            jobs=jobs,
                            jobs_remote=jobs_remote,

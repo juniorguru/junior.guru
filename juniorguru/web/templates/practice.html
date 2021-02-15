@@ -1,4 +1,4 @@
-{% extends 'layouts/base.html' %}
+{% extends 'layouts/base_handbook.html' %}
 
 {% block title %}Jak získat praxi v programování{% endblock %}
 
@@ -32,7 +32,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
     <img class="intro__illustration" src="{{ url_for('static', filename='images/chick2.svg') }}">
     Znáš <a href="{{ url_for('learn') }}">základy</a>?
     Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti.
-    Teprve potom si můžeš začít <a href="{{ url_for('jobs') }}">hledat svou první práci v&nbsp;IT</a>.
+    Teprve potom si můžeš začít <a href="{{ url_for('candidate_handbook') }}">hledat svou první práci v&nbsp;IT</a>.
   </p>
 </header>
 
@@ -177,7 +177,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       Dávej své pokusy a projekty na <a href="https://github.com/">GitHub</a>.
       Čím více, tím lépe. Nejen že se naučíš lépe ovládat <a href="https://naucse.python.cz/course/pyladies/git/basics/">Git</a>
       a GitHub, ale hlavně budeš moci svůj kód ukázat. Třeba když budeš potřebovat <a href="{{ url_for('learn') }}#help">pomoc na dálku</a>,
-      nebo až si budeš <a href="{{ url_for('jobs') }}">hledat práci</a>. Neboj se mít svůj kód veřejně
+      nebo až si budeš <a href="{{ url_for('candidate_handbook') }}">hledat práci</a>. Neboj se mít svůj kód veřejně
       a ukazovat ho druhým! Tato obava je zbytečnou překážkou ve tvém rozjezdu.
       Programování je o <a href="https://naucse.python.cz/course/pyladies/git/collaboration/">spolupráci</a>.
     </p>
@@ -865,7 +865,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
 
 <div class="content__section">
   <p class="call-to-action next">
-    <a href="{{ url_for('jobs') }}" class="legacy-button">Máš&nbsp;praxi? Najdi&nbsp;si&nbsp;práci!</a>
+    <a href="{{ url_for('candidate_handbook') }}" class="legacy-button">Máš&nbsp;praxi? Najdi&nbsp;si&nbsp;práci!</a>
   </p>
 </div>
 {% endblock %}

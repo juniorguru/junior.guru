@@ -133,11 +133,6 @@ a.header__nav-tab-control--active:active {
   display: none;
 }
 
-.header__nav-tab-name-short::before {
-  display: inline;
-  content: attr(data-content);
-}
-
 .header__subnav {
   background: $dots-black;
   overflow-x: scroll;
@@ -244,22 +239,6 @@ a.header__subnav-tab-control:active {
   background-color: $yellow;
 }
 
-@media screen and (min-width: $breakpoint-larger-phone) {
-  .header__nav-tab-control--1::before,
-  .header__nav-tab-control--2::before,
-  .header__nav-tab-control--3::before {
-    display: inline;
-    margin: 0;
-    margin-right: $whitespace-0 / 2;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  .header__nav-tab-control--1::before { content: "1 "; }
-  .header__nav-tab-control--2::before { content: "2 "; }
-  .header__nav-tab-control--3::before { content: "3 "; }
-}
-
 @media screen and (min-width: 400px) {
   .header__nav-tab {
     margin-left: $whitespace;
@@ -274,12 +253,6 @@ a.header__subnav-tab-control:active {
   .header__claim,
   .header__nav-tabs {
     @include font;
-  }
-
-  .header__nav-tab-control--1::before,
-  .header__nav-tab-control--2::before,
-  .header__nav-tab-control--3::before {
-    margin-right: $whitespace-0;
   }
 
   .header__claim {
@@ -330,9 +303,5 @@ a.header__subnav-tab-control:active {
 @media screen and (min-width: $breakpoint-desktop) {
   .header__nav-tab-name {
     display: inline;
-  }
-
-  .header__nav-tab-name-short::before {
-    display: none;
   }
 }

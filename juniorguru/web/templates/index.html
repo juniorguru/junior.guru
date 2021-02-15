@@ -1,7 +1,7 @@
 {% extends 'layouts/base.html' %}
 
 {% block description -%}
-Průvodce programováním pro samouky a nabídky práce pro juniory.
+Klub pro začátečníky v programování, průvodce programováním pro samouky, nabídky práce pro juniory.
 {%- endblock %}
 
 {% block body_modifier %} body--index{% endblock %}
@@ -13,7 +13,7 @@ Průvodce programováním pro samouky a nabídky práce pro juniory.
   {{ super() }}
 </h1>
 <p class="header__claim">
-  Průvodce programováním pro&nbsp;samouky
+  Klub pro začátečníky v&nbsp;programování
 </p>
 {% endblock %}
 
@@ -84,7 +84,7 @@ Průvodce programováním pro samouky a nabídky práce pro juniory.
       </a>
     </li>
     <li>
-      <a href="{{ url_for('jobs') }}">
+      <a href="{{ url_for('candidate_handbook') }}">
         <h3>Najdi práci</h3>
         <p>
           Znáš základy a máš praxi? Nastal okam&shy;žik zkusit své štestí
@@ -127,5 +127,3 @@ Průvodce programováním pro samouky a nabídky práce pro juniory.
   </ul>
 </section>
 {% endblock %}
-
-{% block author %}{% endblock %}
