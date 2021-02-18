@@ -1,3 +1,5 @@
+import os
+
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Identity, MapCompose, TakeFirst
@@ -10,7 +12,7 @@ class Spider(BaseSpider):
     name = 'dobrysef'
     custom_settings = {
         'DEFAULT_REQUEST_HEADERS': {
-            'Authorization': 'Bearer ...',
+            'Authorization': f"Bearer {os.environ['DOBRYSEF_API_KEY']}",
             **DEFAULT_REQUEST_HEADERS,
         }
     }
@@ -19,7 +21,8 @@ class Spider(BaseSpider):
     ]
 
     def parse(self, response):
-        yield from (self.parse_job(response, json_data) for json_data in response.json())
+        for json_data in response.json():
+            yield self.parse_job(response, json_data)
 
     def parse_job(self, response, json_data):
         description_html = json_data['description_html']
@@ -45,7 +48,7 @@ class Spider(BaseSpider):
         loader.add_value('company_logo_urls', json_data.get('org_logo_url') or None)
         loader.add_value('employment_types', employment_types)
         loader.add_value('locations_raw', json_data['cities'])
-        yield loader.load_item()
+        return loader.load_item()
 
 
 class Loader(ItemLoader):

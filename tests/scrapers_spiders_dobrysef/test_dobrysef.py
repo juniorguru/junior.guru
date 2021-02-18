@@ -21,7 +21,7 @@ def test_spider_parse():
 def test_spider_parse_job():
     response = XmlResponse('https://example.com/example/',
                            body=Path(FIXTURES_DIR / 'jobposts.json').read_bytes())
-    job = list(dobrysef.Spider().parse_job(response, response.json()[2]))[0]
+    job = dobrysef.Spider().parse_job(response, response.json()[2])
 
     assert sorted(job.keys()) == sorted([
         'title', 'link', 'company_name', 'company_link', 'employment_types',
@@ -43,27 +43,27 @@ def test_spider_parse_job():
 def test_spider_parse_job_junior():
     response = XmlResponse('https://example.com/example/',
                            body=Path(FIXTURES_DIR / 'jobposts-junior.json').read_bytes())
-    job = list(dobrysef.Spider().parse_job(response, response.json()[0]))[0]
+    job = dobrysef.Spider().parse_job(response, response.json()[0])
 
     assert 'junior' in job['description_html']
 
 def test_spider_parse_job_multi_cities():
     response = XmlResponse('https://example.com/example/',
                            body=Path(FIXTURES_DIR / 'jobposts-multi-cities.json').read_bytes())
-    job = list(dobrysef.Spider().parse_job(response, response.json()[0]))[0]
+    job = dobrysef.Spider().parse_job(response, response.json()[0])
 
     assert job['locations_raw'] == ['Děčín', 'Havířov']
 
 def test_spider_parse_job_employment_types():
     response = XmlResponse('https://example.com/example/',
                            body=Path(FIXTURES_DIR / 'jobposts-employment-types.json').read_bytes())
-    job = list(dobrysef.Spider().parse_job(response, response.json()[0]))[0]
+    job = dobrysef.Spider().parse_job(response, response.json()[0])
 
     assert job['employment_types'] == ['full time', 'part time']
 
 def test_spider_parse_job_contract():
     response = XmlResponse('https://example.com/example/',
                            body=Path(FIXTURES_DIR / 'jobposts-contract.json').read_bytes())
-    job = list(dobrysef.Spider().parse_job(response, response.json()[0]))[0]
+    job = dobrysef.Spider().parse_job(response, response.json()[0])
 
     assert job['employment_types'] == ['full time', 'part time', 'contract']

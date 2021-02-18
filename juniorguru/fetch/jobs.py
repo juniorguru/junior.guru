@@ -25,6 +25,7 @@ def main():
         'startupjobs',
         'remoteok',
         'wwr',
+        'dobrysef',
     ]
     Pool().map(run_spider, spider_names)
 
