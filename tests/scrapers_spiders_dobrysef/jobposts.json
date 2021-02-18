@@ -1,0 +1,153 @@
+[
+  {
+    "title": "Python Engineer",
+    "url": "https://dobrysef.cz/prace/testasdf-asdf-asdf-t7v4/",
+    "short_code": "t7v4",
+    "description_html": "<h2>Containers</h2><div>Containers are the most basic layout element in Bootstrap and are <strong>required when using our default grid system</strong>. Containers are used to contain, pad, and (sometimes) center the content within them. While containers <em>can</em> be nested, most layouts do not require a nested container.<br><br></div><div>Bootstrap comes with three different containers:<br><br></div><ul><li>.container, which sets a max-width at each responsive breakpoint</li><li>.container-fluid, which is width: 100% at all breakpoints</li><li>.container-{breakpoint}, which is width: 100% until the specified breakpoint</li></ul><div>The table below illustrates how each container’s max-width compares to the original .container and .container-fluidacross each breakpoint.<br><br></div><div>See them in action and compare them in our Grid example.<br><br></div><div><br></div>",
+    "keywords": [
+      "asdf asdf asdf"
+    ],
+    "cities": [
+      "ate"
+    ],
+    "is_full_time": true,
+    "is_part_time": false,
+    "is_remote": false,
+    "is_contract_permanent": true,
+    "is_contract_freelance": false,
+    "is_junior_friendly": false,
+    "date_start": "2021-02-01T20:31:11.072387+01:00",
+    "date_expired": "2021-03-03T20:31:11.072387+01:00",
+    "org_name": "Firma jen na oko",
+    "org_url": "https://dobrysef.cz/firmy/firma-jen-na-oko/",
+    "org_logo_url": "https://dobrysef.cz/media/pub/brand/firma-jen-na-oko-logo.png"
+  },
+  {
+    "title": "testasdf asdf asdf",
+    "url": "https://dobrysef.cz/prace/testasdf-asdf-asdf-368t/",
+    "short_code": "368t",
+    "description_html": "<h2>Containers</h2><div>Containers are the most basic layout element in Bootstrap and are <strong>required when using our default grid system</strong>. Containers are used to contain, pad, and (sometimes) center the content within them. While containers <em>can</em> be nested, most layouts do not require a nested container.<br><br></div><div>Bootstrap comes with three different containers:<br><br></div><ul><li>.container, which sets a max-width at each responsive breakpoint</li><li>.container-fluid, which is width: 100% at all breakpoints</li><li>.container-{breakpoint}, which is width: 100% until the specified breakpoint</li></ul><div>The table below illustrates how each container’s max-width compares to the original .container and .container-fluidacross each breakpoint.<br><br></div><div>See them in action and compare them in our Grid example.<br><br></div><div><br></div>",
+    "keywords": [
+      "asdf asdf asdf"
+    ],
+    "cities": [
+      "ate"
+    ],
+    "is_full_time": true,
+    "is_part_time": false,
+    "is_remote": false,
+    "is_contract_permanent": true,
+    "is_contract_freelance": false,
+    "is_junior_friendly": false,
+    "date_start": "2021-02-01T20:31:10.705720+01:00",
+    "date_expired": "2021-03-03T20:31:10.705720+01:00",
+    "org_name": "Firma jen na oko",
+    "org_url": "https://dobrysef.cz/firmy/firma-jen-na-oko/",
+    "org_logo_url": "https://dobrysef.cz/media/pub/brand/firma-jen-na-oko-logo.png"
+  },
+  {
+    "title": "Datový Architekt",
+    "url": "https://dobrysef.cz/prace/datovy-architekt-eu6p/",
+    "short_code": "eu6p",
+    "description_html": "<div>Do IT týmu hledáme zkušeného člověka, který bude konsolidovat stávající databázové řešení, zajistí jejich optimalizaci, integritu a pomůže nám vytvářet postupy pro údržbu a metody zálohování dat.  <br><br></div><div> Co bude vašim úkolem: <br><br></div><ul><li>Spravovat, navrhovat, analyzovat, implementovat a udržovat složité databázové struktury </li><li>Vyvíjet a implementovat složité skripty pro správu, automatizaci a integraci dat </li><li>Zajišťovat dodržování osvědčených postupů databázového inženýrství v celém prostředí databáze </li><li>Instalovat, konfigurovat a upgradovat software DBMS a související produkty</li><li>Vést databázovou část projektů v případě migrace kritických a složitých databází na nové platformy hardwaru a operačního systému a k vylepšení procesů použít vylepšení DBMS.   </li><li>Připravovat plány testů a sepisovat dokumentaci; zajišťovat, aby byla dokumentace přesná a aktuální </li><li>Mentorovat další správce databáze, kontrolovat a koordinovat jejich práci  </li></ul><div>Co od vás potřebuje:  <br><br></div><ul><li>Velmi dobré znalost relačních databází (především MariaDB, MySQL, Postgresql, Influx, MongoDB)    </li><li>Znalost cloudového prostředí, vývoje webových aplikací a jejich nasazení do cloudu, práce s clustery </li><li>Znalost virtualizace, kontejnerů a nástrojů pro orchestraci (ideálně Docker a Kubernetes) </li><li>Výhodou jsou znalosti nástrojů pro testování zatížení databáze výkonu DBMS </li><li>Výhodou je znalost PHP nebo jiného objektového programovacího jazyka </li><li>Schopnost interpretovat data a poskytovat součinnost BI teamu </li></ul><div>Jak fungujeme:  <br><br></div><ul><li>Budete sedět v kanceláři společně s back-end vývojáři (potkáváme se on-site) </li><li>Občas pracujeme z domova, ale osobní setkání nám sedí mnohem víc </li><li>Kanceláře máme kousek od metra Českomoravská (B) </li><li>Většina z nás pracuje na HPP (doba neurčitá), ale můžeme se domluvit i na IČ </li><li>Připravíme vám notebook s možností výběru operačního systému </li><li>Máme jazykové kurzy přímo v prostorách firmy v pracovní době  </li><li>V kanceláři máme k dispozici občerstvení jako je káva, čaj a ráno ovoce </li><li>Na HPP máme 5 týdnů dovolené  </li><li>Sportovci mají možnost využívat Multisportkartu a stravenky v hodnotě 100 Kč/den plně hrazené zaměstnavatelem</li></ul>",
+    "keywords": [],
+    "cities": [
+      "Praha"
+    ],
+    "is_full_time": true,
+    "is_part_time": false,
+    "is_remote": false,
+    "is_contract_permanent": true,
+    "is_contract_freelance": false,
+    "is_junior_friendly": false,
+    "date_start": "2021-01-30T13:14:01.702605+01:00",
+    "date_expired": "2021-03-01T13:14:01.702605+01:00",
+    "org_name": "Firma jen na oko",
+    "org_url": "https://dobrysef.cz/firmy/firma-jen-na-oko/",
+    "org_logo_url": "https://dobrysef.cz/media/pub/brand/firma-jen-na-oko-logo.png"
+  },
+  {
+    "title": "BAPTISMUS",
+    "url": "https://dobrysef.cz/prace/baptismus-xkns/",
+    "short_code": "xkns",
+    "description_html": "<div><strong><br>Baptisté</strong> jsou křesťané vyznávající víru v Ježíše Krista. Hlásí se k radikálnímu křídlu protestantské reformace.[1] S ostatními protestantskými denominacemi sdílí základní články víry, liší se však svým důrazem na osobní a vědomě vyznanou víru ve křtu (nekřtí nemluvňata) a pojetím církevního sdružování.[2]<br><br></div><div><br>Mají kongregační strukturu – každý místní sbor je samostatný a každý člen sboru se demokraticky podílí na jeho vedení. Jednotlivé sbory jsou většinou sdruženy do národních jednot, do kontinentálních seskupení (např.: Evropská baptistická federace) a Světového svazu baptistů. Název baptisté má svůj původ v řeckém slově <em>baptisein</em> (βαπτίζειν), což znamená “ponoření” neboli křest.<br><br></div>",
+    "keywords": [],
+    "cities": [
+      "Děčín"
+    ],
+    "is_full_time": false,
+    "is_part_time": false,
+    "is_remote": false,
+    "is_contract_permanent": false,
+    "is_contract_freelance": true,
+    "is_junior_friendly": false,
+    "date_start": "2021-01-19T20:30:43.687180+01:00",
+    "date_expired": "2021-02-18T20:30:43.687180+01:00",
+    "org_name": "Mulucaro",
+    "org_url": "https://dobrysef.cz/firmy/mulucaro/",
+    "org_logo_url": "https://dobrysef.cz/media/pub/brand/mulucaro-logo.jpg"
+  },
+  {
+    "title": "Georgie",
+    "url": "https://dobrysef.cz/prace/georgie-83pj/",
+    "short_code": "83pj",
+    "description_html": "<div><strong><br>Georgie</strong> (anglicky <strong>Georgia</strong>  [ˈdʒɔrdʒə]IPA, oficiálně <strong>State of Georgia</strong>) je stát nacházející se na východním pobřeží Spojených států amerických, v Jihoatlantské oblasti jižního regionu USA. Georgie hraničí na severovýchodě s Jižní Karolínou, na severu se Severní Karolínou a Tennessee, na západě s Alabamou a na jihu s Floridou. Východní ohraničení státu tvoří Atlantský oceán.<br><br></div><div><br>Se svou rozlohou 153 909 km² je Georgie 24. největším státem USA, v počtu obyvatel (10,3 milionů) je však osmým nejlidnatějším státem a s hodnotou hustoty zalidnění 69 obyvatel na km² je na osmnáctém místě. Hlavním a největším městem je Atlanta se 460 tisíci obyvateli. Dalšími největšími městy jsou Columbus (200 tisíc obyv.), Augusta (200 tisíc obyv.), Macon (200 tisíc obyv.) a Savannah (150 tisíc obyv.). Georgii patří 161 km pobřeží Atlantského oceánu.[2] Nejvyšším bodem státu je vrchol Brasstown Bald s nadmořskou výškou 1458 m v pohoří Blue Ridge Mountains. Největšími toky jsou řeky Savannah, tvořící hranici s Jižní Karolínou, a Altamaha, které se obě vlévají do Atlantského oceánu, a Chattahoochee.<br><br></div><div><br>Britská kolonie, pojmenovaná po králi Jiřím II., vznikla na území dnešní Georgie v roce 1733. Provincie se roku 1776 stala jedním z původních třinácti zakládajících států USA. Georgie jako čtvrtý stát v pořadí ratifikovala Ústavu Spojených států amerických, k čemuž došlo 2. ledna 1788. Za americké občanské války byla Georgie v letech 1861–1865 součástí Konfederace, k Unii byla opět připojena roku 1870.<br><br></div>",
+    "keywords": [],
+    "cities": [
+      "Havířov"
+    ],
+    "is_full_time": false,
+    "is_part_time": true,
+    "is_remote": true,
+    "is_contract_permanent": true,
+    "is_contract_freelance": false,
+    "is_junior_friendly": false,
+    "date_start": "2021-01-19T20:20:19.966859+01:00",
+    "date_expired": "2021-02-18T20:20:19.966859+01:00",
+    "org_name": "Mulucaro",
+    "org_url": "https://dobrysef.cz/firmy/mulucaro/",
+    "org_logo_url": "https://dobrysef.cz/media/pub/brand/mulucaro-logo.jpg"
+  },
+  {
+    "title": "Teacher, early years/pre",
+    "url": "https://dobrysef.cz/prace/teacher-early-yearspre-sja3/",
+    "short_code": "sja3",
+    "description_html": "<div>Vel accusantium laboriosam. Provident inventore recusandae ut itaque laudantium dignissimos. Praesentium assumenda natus. Nesciunt cumque nemo tempore laudantium est. Tempora alias rem qui aperiam nihil provident. Neque voluptatum possimus impedit. Nisi est consectetur id. Repellendus minima sunt repellat. Labore voluptate sit dolorem ea. Voluptates nobis explicabo atque distinctio. Consequuntur aperiam esse voluptatibus delectus beatae sint cum. Mollitia harum recusandae adipisci suscipit perspiciatis ex ratione. Accusantium deleniti vel voluptatem. Similique ex laboriosam numquam. Harum modi odit voluptatibus qui earum sapiente. Asperiores sapiente aliquam sit rem dolorem. Odit esse ipsum consequatur necessitatibus natus. Mollitia quae recusandae illum voluptas eius. Laboriosam exercitationem iure quos. Culpa cumque sed culpa. Mollitia aliquam commodi optio quam deleniti hic possimus. Deleniti quaerat eum similique eveniet impedit. Nesciunt magnam repudiandae quis possimus dolorum. Est non quaerat sequi hic commodi modi. Ipsam quos officia harum adipisci nobis. Similique exercitationem voluptatum reiciendis. Quas eos vel cum tempore aliquam. Eligendi accusantium odio mollitia. Fugiat exercitationem harum. Praesentium modi beatae.</div>",
+    "keywords": [],
+    "cities": [
+      "Zlín"
+    ],
+    "is_full_time": true,
+    "is_part_time": false,
+    "is_remote": false,
+    "is_contract_permanent": true,
+    "is_contract_freelance": false,
+    "is_junior_friendly": false,
+    "date_start": "2021-01-19T19:43:35.713858+01:00",
+    "date_expired": "2021-02-18T19:43:35.713858+01:00",
+    "org_name": "Mulucaro",
+    "org_url": "https://dobrysef.cz/firmy/mulucaro/",
+    "org_logo_url": "https://dobrysef.cz/media/pub/brand/mulucaro-logo.jpg"
+  },
+  {
+    "title": "Toxicologist",
+    "url": "https://dobrysef.cz/prace/toxicologist-v8p5/",
+    "short_code": "v8p5",
+    "description_html": "<div>Vel accusantium laboriosam. Provident inventore recusandae ut itaque laudantium dignissimos. Praesentium assumenda natus. Nesciunt cumque nemo tempore laudantium est. Tempora alias rem qui aperiam nihil provident. Neque voluptatum possimus impedit. Nisi est consectetur id. Repellendus minima sunt repellat. Labore voluptate sit dolorem ea. Voluptates nobis explicabo atque distinctio. Consequuntur aperiam esse voluptatibus delectus beatae sint cum. Mollitia harum recusandae adipisci suscipit perspiciatis ex ratione. Accusantium deleniti vel voluptatem. Similique ex laboriosam numquam. Harum modi odit voluptatibus qui earum sapiente. Asperiores sapiente aliquam sit rem dolorem. Odit esse ipsum consequatur necessitatibus natus. Mollitia quae recusandae illum voluptas eius. Laboriosam exercitationem iure quos. Culpa cumque sed culpa. Mollitia aliquam commodi optio quam deleniti hic possimus. Deleniti quaerat eum similique eveniet impedit. Nesciunt magnam repudiandae quis possimus dolorum. Est non quaerat sequi hic commodi modi. Ipsam quos officia harum adipisci nobis. Similique exercitationem voluptatum reiciendis. Quas eos vel cum tempore aliquam. Eligendi accusantium odio mollitia. Fugiat exercitationem harum. Praesentium modi beatae.</div>",
+    "keywords": [],
+    "cities": [
+      "Praha"
+    ],
+    "is_full_time": true,
+    "is_part_time": false,
+    "is_remote": true,
+    "is_contract_permanent": true,
+    "is_contract_freelance": false,
+    "is_junior_friendly": false,
+    "date_start": "2021-01-19T19:22:38.246257+01:00",
+    "date_expired": "2021-02-18T19:22:38.246257+01:00",
+    "org_name": "Mulucaro",
+    "org_url": "https://dobrysef.cz/firmy/mulucaro/",
+    "org_logo_url": "https://dobrysef.cz/media/pub/brand/mulucaro-logo.jpg"
+  }
+]

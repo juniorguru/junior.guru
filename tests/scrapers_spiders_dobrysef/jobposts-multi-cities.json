@@ -1,0 +1,22 @@
+[{
+  "title": "Junior Python Engineer",
+  "url": "https://dobrysef.cz/prace/junior-python-engineer-eu6p/",
+  "short_code": "eu6p",
+  "description_html": "<div>Do IT týmu hledáme zkušeného člověka, který bude konsolidovat stávající databázové řešení, zajistí jejich optimalizaci, integritu a pomůže nám vytvářet postupy pro údržbu a metody zálohování dat.  <br><br></div><div> Co bude vašim úkolem: <br><br></div><ul><li>Spravovat, navrhovat, analyzovat, implementovat a udržovat složité databázové struktury </li><li>Vyvíjet a implementovat složité skripty pro správu, automatizaci a integraci dat </li><li>Zajišťovat dodržování osvědčených postupů databázového inženýrství v celém prostředí databáze </li><li>Instalovat, konfigurovat a upgradovat software DBMS a související produkty</li><li>Vést databázovou část projektů v případě migrace kritických a složitých databází na nové platformy hardwaru a operačního systému a k vylepšení procesů použít vylepšení DBMS.   </li><li>Připravovat plány testů a sepisovat dokumentaci; zajišťovat, aby byla dokumentace přesná a aktuální </li><li>Mentorovat další správce databáze, kontrolovat a koordinovat jejich práci  </li></ul><div>Co od vás potřebuje:  <br><br></div><ul><li>Velmi dobré znalost relačních databází (především MariaDB, MySQL, Postgresql, Influx, MongoDB)    </li><li>Znalost cloudového prostředí, vývoje webových aplikací a jejich nasazení do cloudu, práce s clustery </li><li>Znalost virtualizace, kontejnerů a nástrojů pro orchestraci (ideálně Docker a Kubernetes) </li><li>Výhodou jsou znalosti nástrojů pro testování zatížení databáze výkonu DBMS </li><li>Výhodou je znalost PHP nebo jiného objektového programovacího jazyka </li><li>Schopnost interpretovat data a poskytovat součinnost BI teamu </li></ul><div>Jak fungujeme:  <br><br></div><ul><li>Budete sedět v kanceláři společně s back-end vývojáři (potkáváme se on-site) </li><li>Občas pracujeme z domova, ale osobní setkání nám sedí mnohem víc </li><li>Kanceláře máme kousek od metra Českomoravská (B) </li><li>Většina z nás pracuje na HPP (doba neurčitá), ale můžeme se domluvit i na IČ </li><li>Připravíme vám notebook s možností výběru operačního systému </li><li>Máme jazykové kurzy přímo v prostorách firmy v pracovní době  </li><li>V kanceláři máme k dispozici občerstvení jako je káva, čaj a ráno ovoce </li><li>Na HPP máme 5 týdnů dovolené  </li><li>Sportovci mají možnost využívat Multisportkartu a stravenky v hodnotě 100 Kč/den plně hrazené zaměstnavatelem</li></ul>",
+  "keywords": [],
+  "cities": [
+    "Děčín",
+    "Havířov"
+  ],
+  "is_full_time": true,
+  "is_part_time": false,
+  "is_remote": false,
+  "is_contract_permanent": true,
+  "is_contract_freelance": false,
+  "is_junior_friendly": true,
+  "date_start": "2021-01-30T13:14:01.702605+01:00",
+  "date_expired": "2021-03-01T13:14:01.702605+01:00",
+  "org_name": "Firma jen na oko",
+  "org_url": "https://dobrysef.cz/firmy/firma-jen-na-oko/",
+  "org_logo_url": "https://dobrysef.cz/media/pub/brand/firma-jen-na-oko-logo.png"
+}]
