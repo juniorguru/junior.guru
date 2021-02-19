@@ -84,6 +84,7 @@
   height: 100%;
   align-self: flex-end;
   display: flex;
+  align-items: center;
 }
 
 .header__nav-tabs {
@@ -91,7 +92,6 @@
 }
 
 .header__nav-tab {
-  height: 100%;
   margin: 0;
   padding: 0;
   line-height: normal;
@@ -101,31 +101,37 @@
 .header__nav-tab-control {
   display: flex;
   align-items: center;
-  height: 100%;
   box-sizing: border-box;
   text-decoration: none;
+  padding: ($whitespace-0 / 2) $whitespace-0;
+  color: $black;
+
+  &:hover, &:focus, &:active {
+    text-decoration: underline;
+    background: none;
+    color: $black;
+  }
 }
 
-.header__nav-tab-control {
-  padding: 0 $whitespace-0;
-}
+a.header__nav-tab-control--button {
+  background: $black;
+  color: $white;
+  border-radius: 0.3rem;
+  text-decoration: none;
 
-a.header__nav-tab-control:hover,
-a.header__nav-tab-control:focus,
-a.header__nav-tab-control:active {
-  & {
+  &:hover, &:focus, &:active {
+    text-decoration: none;
     background: $blue;
     color: $white;
   }
 }
 
-.header__nav-tab-control--active,
-a.header__nav-tab-control--active:hover,
-a.header__nav-tab-control--active:focus,
-a.header__nav-tab-control--active:active {
-  & {
-    background: $black;
-    color: $white;
+a.header__nav-tab-control--active,
+a.header__nav-tab-control--active.header__nav-tab-control--button {
+  &, &:hover, &:focus, &:active {
+    text-decoration: underline;
+    background: none;
+    color: $black;
   }
 }
 
@@ -282,7 +288,7 @@ a.header__subnav-tab-control:active {
   }
 
   .header__nav-tab-control {
-    padding: $whitespace ($whitespace * 1.25);
+    padding: ($whitespace-0 / 2) $whitespace;
   }
 
   .header__tocbar-content {

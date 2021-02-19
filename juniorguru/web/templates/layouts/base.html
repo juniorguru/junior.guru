@@ -47,6 +47,9 @@
                         {{- '' -}}
                         <a class="
                           header__nav-tab-control
+                          {% if tab.endpoint == 'club' %}
+                            header__nav-tab-control--button
+                          {% endif %}
                           {% if tab.endpoint == nav_active %}
                             header__nav-tab-control--active
                           {% endif %}
