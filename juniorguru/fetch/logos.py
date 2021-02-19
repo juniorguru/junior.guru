@@ -1,7 +1,7 @@
 import hashlib
 
 from juniorguru.lib import google_sheets
-from juniorguru.lib.coerce import coerce, parse_text, parse_int, parse_date
+from juniorguru.lib.coerce import coerce, parse_text, parse_int, parse_date, parse_boolean
 from juniorguru.models import Logo, db
 
 
@@ -28,6 +28,7 @@ def coerce_record(record):
         r'^job slots$': ('job_slots', parse_int),
         r'^starts$': ('starts_at', parse_date),
         r'^expires$': ('expires_at', parse_date),
+        r'^email reports$': ('email_reports', parse_boolean),
     }, record)
 
     logo['id'] = hashlib.sha224(logo['name'].encode()).hexdigest()

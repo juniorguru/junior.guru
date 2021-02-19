@@ -2,7 +2,7 @@ import re
 from urllib.parse import urlparse
 from datetime import date
 
-from peewee import CharField, DateField, IntegerField, ForeignKeyField
+from peewee import CharField, DateField, IntegerField, ForeignKeyField, BooleanField
 
 from juniorguru.models.base import BaseModel
 
@@ -19,6 +19,7 @@ class Logo(BaseModel):
     name = CharField()
     filename = CharField()
     email = CharField()
+    email_reports = BooleanField()
     link = CharField()
     link_re = CharField()
     months = IntegerField()
@@ -52,6 +53,11 @@ class Logo(BaseModel):
         return cls.select() \
             .where(cls.starts_at <= today, cls.expires_at >= today) \
             .order_by(cls.months.desc(), cls.starts_at)
+
+    @classmethod
+    def messages_listing(cls, today=None):
+        return cls.listing(today) \
+            .where(cls.email_reports == True)
 
     @property
     def metrics(self):

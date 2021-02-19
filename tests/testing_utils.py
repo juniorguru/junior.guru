@@ -91,9 +91,10 @@ def prepare_logo_data(id, **kwargs):
         name=kwargs.get('name', 'Awesome Company'),
         filename=kwargs.get('filename', 'awesome-company.svg'),
         email=kwargs.get('email', 'recruitment@example.com'),
+        email_reports=kwargs.get('email_reports', True),
         link=kwargs.get('link', 'https://jobs.example.com'),
         link_re=kwargs.get('link_re'),
         months=kwargs.get('monhts', 12),
         starts_at=kwargs.get('starts_at', today),
-        expires_at=kwargs.get('expires_at', today + timedelta(days=365))
+        expires_at=kwargs.get('expires_at', today + timedelta(days=365)),
     )

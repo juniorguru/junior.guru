@@ -50,6 +50,14 @@ def test_listing_only_active(db_connection):
     assert set(Logo.listing(today=t)) == {logo1, logo2, logo5}
 
 
+def test_messages_listing(db_connection):
+    logo1 = create_logo('1', email_reports=True)
+    logo2 = create_logo('2', email_reports=False)  # noqa
+    logo3 = create_logo('3', email_reports=True)
+
+    assert set(Logo.messages_listing()) == {logo1, logo3}
+
+
 def test_get_by_url(db_connection):
     logo1 = create_logo('1', link='https://abc.example.com')
     logo2 = create_logo('2', link='https://xyz.example.com')

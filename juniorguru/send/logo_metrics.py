@@ -6,7 +6,7 @@ from juniorguru.models import Logo
 
 
 def generate_messages(today):
-    logos = Logo.listing()
+    logos = Logo.messages_listing()
 
     template_path = Path(__file__).parent / 'templates' / 'logo_metrics.html'
     template = Template(template_path.read_text())
