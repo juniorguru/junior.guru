@@ -51,11 +51,7 @@
                             header__nav-tab-control--active
                           {% endif %}
                         " href="{{ url_for(tab.endpoint) }}">
-                          {{- '' -}}
-                          <span class="header__nav-tab-name">
-                            {{- tab.name -}}
-                          </span>
-                          {{- '' -}}
+                          {{- tab.name -}}
                         </a>
                         {{- '' -}}
                       </li>

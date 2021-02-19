@@ -129,10 +129,6 @@ a.header__nav-tab-control--active:active {
   }
 }
 
-.header__nav-tab-name {
-  display: none;
-}
-
 .header__subnav {
   background: $dots-black;
   overflow-x: scroll;
@@ -297,11 +293,5 @@ a.header__subnav-tab-control:active {
 @media screen and (min-width: $breakpoint-tablet) {
   .header__tocbar {
     display: none;
-  }
-}
-
-@media screen and (min-width: $breakpoint-desktop) {
-  .header__nav-tab-name {
-    display: inline;
   }
 }
