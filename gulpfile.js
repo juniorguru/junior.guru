@@ -111,6 +111,10 @@ function freezeFlask() {
   return spawn('pipenv', ['run', 'freeze'], { stdio: 'inherit' });
 }
 
+function buildMkDocs() {
+  return spawn('pipenv', ['run', 'mkdocs'], { stdio: 'inherit' });
+}
+
 function minifyHTML() {
   return gulp.src('public/**/*.html')
     .pipe(htmlmin({
@@ -135,8 +139,8 @@ function copyFavicon() {
 }
 
 const buildWeb = isLocalDevelopment
-  ? gulp.series(freezeFlask)
-  : gulp.series(freezeFlask, gulp.parallel(minifyHTML, copyFavicon));
+  ? gulp.series(freezeFlask, buildMkDocs)
+  : gulp.series(freezeFlask, buildMkDocs, gulp.parallel(minifyHTML, copyFavicon));
 
 async function watchWeb() {
   gulp.watch([
@@ -166,6 +170,7 @@ async function watchWeb() {
     'juniorguru/lib/**/*.py',
     'juniorguru/data/data.db',
     'juniorguru/data/*.yml',
+    'juniorguru/mkdocs_poc/**/*',
   ], buildWeb);
 }
 

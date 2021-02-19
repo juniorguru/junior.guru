@@ -8,6 +8,7 @@ test = "pytest"
 lint = "flake8"
 fetch = "python -m juniorguru.fetch"
 freeze = "python -m juniorguru.web"
+mkdocs = "python -m mkdocs build --config-file=juniorguru/mkdocs_poc/mkdocs.yml --site-dir=../../public/mkdocs"
 build = "npx gulp build"
 send = "python -m juniorguru.send"
 screenshots = "python scripts/screenshots.py"
@@ -46,6 +47,7 @@ feedparser = "*"
 extruct = "*"
 "discord.py" = "*"
 gql = {extras = ["requests"], version = "*"}
+mkdocs = "*"
 
 [dev-packages]
 pytest = "*"
