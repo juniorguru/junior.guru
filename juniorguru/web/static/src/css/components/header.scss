@@ -198,6 +198,11 @@ a.header__subnav-tab-control:active {
   border-color: $blue;
 }
 
+.header__subnav-tab-number {
+  padding-left: $whitespace-0 / 1.5;
+  font-weight: bold;
+}
+
 .header__subnav-tab-name {
   display: inline;
   padding: ($whitespace-0 / 4) ($whitespace-0 / 1.5);

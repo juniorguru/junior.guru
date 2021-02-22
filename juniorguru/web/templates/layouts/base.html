@@ -70,6 +70,9 @@
                 {%- for tab in subnav_tabs -%}
                   <li class="header__subnav-tab">
                     <a class="header__subnav-tab-control{% if tab.endpoint == subnav_active %} header__subnav-tab-control--active{% endif %}" href="{{ url_for(tab.endpoint) }}">
+                      {% if tab.number is defined %}
+                        <span class="header__subnav-tab-number">{{ tab.number }}</span>
+                      {% endif %}
                       <span class="header__subnav-tab-name">{{ tab.name }}</span>
                     </a>
                   </li>
