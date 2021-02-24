@@ -27,7 +27,7 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. P
 
 {% block content %}
 <header class="intro">
-  <h1 class="intro__title">Proč se učit programování?</h1>
+  <h1 class="intro__title">Proč se učit programování</h1>
   <p class="intro__lead">
     <img class="intro__illustration" src="{{ url_for('static', filename='images/chick1.svg') }}">
     K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v&nbsp;IT. Pomáhá vědcům, úředníkům nebo novinářům — a práci může usnadnit i tobě.
@@ -38,26 +38,44 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. P
   <div class="toc__content">
     <h2 class="toc__heading content__target-heading">Obsah</h2>
     <ol class="toc__items">
-      <li class="toc__item"><a class="toc__link" href="#what">Co je programování?</a></li>
-      <li class="toc__item"><a class="toc__link" href="#why">Proč se to učit?</a></li>
-      <li class="toc__item"><a class="toc__link" href="#requirements">Co budeš potřebovat?</a>
+      <li class="toc__item"><a class="toc__link" href="#what">Co je programování</a></li>
+      <li class="toc__item"><a class="toc__link" href="#why">Proč se to učit</a>
         <ol class="toc__subitems">
-          <li class="toc__subitem"><a class="toc__sublink" href="#not-requirements">Co nemusíš mít?</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#coding-advantage">Povědomí o programování jako výhoda</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#coding-tool">Programování jako pomocník</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#coding-career">Programování jako kariéra</a></li>
         </ol>
       </li>
-      <li class="toc__item"><a class="toc__link" href="#covid19">Co způsobí koronavirus?</a>
+      <li class="toc__item"><a class="toc__link" href="#myths">Mýty o programování</a>
+        {#
         <ol class="toc__subitems">
-          <li class="toc__subitem"><a class="toc__sublink" href="#covid19-doom">1. Zkázu</a></li>
-          <li class="toc__subitem"><a class="toc__sublink" href="#covid19-change">2. Změnu</a></li>
-          <li class="toc__subitem"><a class="toc__sublink" href="#covid19-opportunity">3. Příležitosti</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#age">Už je pozdě začít</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#math">Nemáš na to matematický mozek</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#ladies">IT není pro ženy</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#genius">Je to jen pro vousaté geniální asociály</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#university">Potřebuješ vysokou školu</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#jobs">Firmy se o tebe porvou</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#money">Programování je zlatý důl</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#office">Sezení na židli v teple</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#unicorns">Programování je samá pohoda</a></li>
+        </ol>
+        #}
+      </li>
+      <li class="toc__item"><a class="toc__link" href="#nocode">Jde to i „bez kódu“</a>
+        <ol class="toc__subitems">
+          <li class="toc__subitem"><a class="toc__sublink" href="#nocode-websites">Tvorba webu, e-shopu</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#nocode-spreadsheets">Tabulky a dokumenty</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#nocode-automation">Automatizace</a></li>
         </ol>
       </li>
+      <li class="toc__item"><a class="toc__link" href="#kids">Programování pro děti</a></li>
+      <li class="toc__item"><a class="toc__link" href="#cnc">Programování CNC strojů</a></li>
     </ol>
   </div>
 </nav>
 
 <section id="what" class="content__section">
-  <h2 class="content__section-heading">Co je programování?</h2>
+  <h2 class="content__section-heading">Co je programování</h2>
   <div class="tooltips">
     <p>
       <img class="cartoon" src="{{ url_for('static', filename='images/debugging.svg') }}" loading="lazy">
@@ -69,79 +87,156 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. P
     <ol>
       <li>Potřebuješ vyřešit nějaký problém, ale dělat to ručně by bylo zdlouhavé.</li>
       <li>Vymyslíš recept krok za krokem, podle kterého by problém mohl vyřešit počítač za tebe.</li>
-      <li>Napíšeš recept do souboru jako obyčejný text v nějakém „jazyce“, kterému počítač rozumí.</li>
+      <li>Napíšeš recept v nějakém „jazyce“, kterému počítač rozumí.</li>
       <li>Necháš počítač spustit ten recept.</li>
-      <li>Zjistíš, že to máš vymyšlené s chybou, počítač slepě následuje tvůj recept a celé je to špatně.</li>
+      <li>Zjistíš, že to máš vymyšlené s chybou. Počítač slepě následuje tvůj recept a celé je to špatně.</li>
       <li>Opravuješ recept a spouštíš ho stále dokola, nejde ti to, přemýšlíš, vaříš kafe, točíš se na židli.</li>
-      <li>Po třech hodinách spustíš recept a funguje to. Hurá, naprogramováno!</li>
+      <li>Po třech hodinách spustíš recept a konečně to funguje. Hurá, naprogramováno!</li>
     </ol>
     <p>Co programování není?</p>
     <ul>
-      <li><strong>Věda</strong> &mdash; Ani matematika, ani fyzika, a většinou ani žádná jiná věda.</li>
-      <li><strong>Servis</strong> &mdash; Spravování tiskáren v kanclu, nastavování e-mailových schránek.</li>
-      <li><strong>Magie</strong> &mdash; Je to spíš činnost jako umět vyrobit stůl nebo uvařit dobré jídlo.</li>
+      <li><strong>Věda</strong> &mdash; Nemusíš skvěle ovládat ani matematiku, ani fyziku, ani žádný jiný vědní obor.</li>
+      <li><strong>Servis</strong> &mdash; Spravování tiskáren v kanclu nebo nastavování e-mailových schránek.</li>
+      <li><strong>Magie</strong> &mdash; Je to spíš dovednost a zručnost, stejně jako umět vyrobit stůl nebo uvařit dobré jídlo.</li>
     </ul>
   </div>
 </section>
 
 <section id="why" class="content__section">
-  <h2 class="content__section-heading">Proč se to učit?</h2>
+  <h2 class="content__section-heading">Proč se to učit</h2>
   <div class="tooltips">
+    <p>
+      <img class="cartoon" src="{{ url_for('static', filename='images/starting-with-tech.svg') }}" loading="lazy">
+      Je důležité pochopit, že <strong>programování je jen nástroj, stejně jako kladivo nebo vrtačka</strong>. Pokud to umíš s vrtačkou, je ti to samo o sobě celkem k ničemu, dokud nenajdeš úkol, k jehož splnění by ti vrtačka pomohla, např. pověšení obrazu na zeď. S programováním je to stejné. Většinou je to tak, že úkoly přichází od lidí z jiných oborů a programátor je nájemným řemeslníkem, který umí věci skvěle řešit pomocí programování.
+    </p>
+    <p>
+      Stejně jako u vrtání ale není vůbec od věci, pokud se naučí programovat i amatér. Dnes už běžně základní znalost programování pomáhá vědcům, úředníkům nebo novinářům. Základy se totiž dají naučit za několik týdnů, a byť si s nimi zaměstnání v oboru ještě neseženeš, k řešení spousty úkolů perfektně stačí.
+    </p>
+
+    <h3 id="coding-advantage" class="content__subsection-heading">Povědomí o programování jako výhoda</h3>
+    <p>
+      I když nakonec nebudeš vůbec programovat, hodí se rozumět tomu, jak tato práce funguje. Každá firma má dnes IT oddělení a to se mnohem raději baví s lidmi, kteří chápou jak vznikají programy. Můžeš se snadno uplatnit jako prostředník mezi nimi a ostatními. Otevře se ti cesta do dalších oborů, které s počítači souvisí &mdash; např. internetový marketing nebo psaní technických textů, které rovněž umožňují vydělat si dobré peníze a mít pružnou pracovní dobu. Občas se straší v novinách, že <a href="https://denikn.cz/62624/komu-mohou-sebrat-praci-roboti-experti-vybrap-profese-ktere-jsou-nejvice-ohrozene-zmenami/?ref=list">přicházejí miliony zlých robotů, kteří jednou všem vezmou práci</a>. Místo robotů to asi budou spíš mobilní appky, ale jedno je jisté &mdash; technologie budou prostupovat naše životy stále více a bude tím pádem potřeba stále více těch, kteří technologiím rozumí.
+    </p>
+    <p>
+      S příchodem covidu-19 se navíc ocitáme ve světě, ve kterém bude široká veřejnost <a href="https://josefprusa.cz/od-navrhu-k-hromadnemu-3d-tisku-zdravotnickych-stitu-behem-tri-dnu/">vědět co je 3D tiskárna</a>, jak navázat videohovor, sdílet dokumenty, hrát online hry, nebo že lze na dálku učit. <strong>I&nbsp;pokud přestanou omezení, budou lidé tyto vymoženosti používat dál.</strong> Mnohé firmy, školy, domácnosti, ale i části státu procházejí urychlenou „digitální transformací“. Společnosti, které budou potřebovat zefektivnit náklady, se obrátí k automatizaci, přechodu na technologická řešení nebo práci z domova. Stoupne hodnota lidí, kteří zvládnou s technologiemi pracovat. Může to být navíc východisko pro ty, kteří během opatření přicházejí o obživu.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        Čekají nás velké strukturální změny. Cestovní ruch bude zasažen na dlouho. Ukazuje se, že celá řada věcí jde dělat digitálně a online. Celá řada obchodních cest se dá řešit online.
+      </blockquote>
+      <figcaption>
+        Danuše Nerudová, rektorka MENDELU a ekonomka, v <a href="https://plus.rozhlas.cz/uz-nemusime-byt-pouhou-montovnou-cekam-velke-zmeny-i-v-globalnich-dodavatelskych-8180919">rozhovoru pro Český rozhlas</a>
+      </figcaption>
+    </figure>
+    <p>
+      Při programování se také trénuješ v <a href="https://imysleni.cz/informaticke-mysleni/co-je-informaticke-mysleni">informatickém myšlení</a>, což je zcela obecná dovednost nesouvisející nutně přímo s počítačem. Informatické myšlení zlepšuje tvou schopnost řešit složité problémy, a to i v každodenních situacích. To je také důvod, proč se dnes toto myšlení začíná učit i na základních školách.
+    </p>
+
+    <h3 id="coding-tool" class="content__subsection-heading">Programování jako pomocník</h3>
+    <p>
+      Programování není cíl, ale nástroj — jako šroubovák nebo matematika. Dokáže automatizovat nudnou, opakující se práci. Bude se ti proto hodit, ať už děláš v kanceláři nebo koukáš do mikroskopu a počítáš bakteriím nožičky.
+    </p>
+    <p>
+      Doktoři a vědci přicházejí na to, že když výpočty naprogramují, mohou svůj výzkum provést mnohem rychleji. Novináři, kteří umí zpracovávat velká množství dat, díky tomu <a href="https://www.irozhlas.cz/zpravy-tag/datova-zurnalistika">přinášejí zajímavé analýzy</a>. Kromě toho, s příchodem covidu-19 se dostaly složité grafy a datová žurnalistika do každé větší redakce. Prakticky každý, kdo má základy programování, si zase dokáže ušetřit práci s excelovskými tabulkami nebo s uspořádáním velkého množství souborů na disku. Místo toho, aby se někde muselo 500× udělat Ctrl+C a Ctrl+V, můžeš si to naprogramovat.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        Celá farma jede přes počítač. Chladicí boxy i výtopný systém ve fóliovnících jsou naprogramovány na přesnou teplotu, online jede i objednávkový systém, tedy prodej květin.
+      </blockquote>
+      <figcaption>
+        Karolína Hábová z květinové farmy <a href="https://www.loukykvet.cz/">LoukyKvět</a> v <a href="https://forbes.cz/kvetinarstvi-online-mlady-par-farmaru-dela-revoluci-v-prodeji-kvetin/">rozhovoru pro Forbes</a>
+      </figcaption>
+    </figure>
+    <p>
+      Pokud chceš mít programování jako pomocníka, tento web ti na dalších stránkách ukáže, <a href="{{ url_for('learn') }}">kde se můžeš naučit základy</a> nebo <a href="{{ url_for('practice') }}">jak si lze programování procvičovat a dále prohlubovat znalosti</a>.
+    </p>
+
+    <h3 id="coding-career" class="content__subsection-heading">Programování jako kariéra</h3>
+    <p>
+      Průměrná mzda programátorů je 50&nbsp;000 Kč</a> a <a href="https://www.czso.cz/csu/czso/na-trhu-je-nedostatek-ict-odborniku">těch zkušených je dlouhodobě nedostatek</a>. Vysokoškolský diplom po tobě většinou nikdo nevyžaduje, můžeš mít pružnou pracovní dobu, můžeš pracovat na dálku. Jestli v roce {{ year }} existuje výtah k lepší životní úrovni, je to IT. Zkušenějším programátorům navíc nehrozí, že by měli v blízké době problém sehnat si práci, a to i přes ekonomický dopad, který může mít covid-19:
+    </p>
     <ul>
       <li>
-        <img class="cartoon" src="{{ url_for('static', filename='images/starting-with-tech.svg') }}" loading="lazy">
-        <a href="https://www.czso.cz/documents/10180/95632581/063009-18.pdf/0f4ba681-c6b3-4226-b81e-6634cac046fb?version=1.2">Průměrná mzda programátorů je 50&nbsp;000 Kč</a> a mohou mít pružnou pracovní dobu nebo pracovat na dálku. <a href="https://www.czso.cz/csu/czso/na-trhu-je-nedostatek-ict-odborniku">Programátorů dlouhodobě není dost</a>, VŠ diplom nebývá vyžadován. Jestli v roce {{ year }} existuje rychlovýtah k lepší životní úrovni, je to IT.
+        V roce 2018 rostlo IT v Evropě <a href="https://2018.stateofeuropeantech.com/">5× rychleji než vše ostatní</a>. Takto rozjetý vlak se nezastaví, zvlášť když není zasažen přímo a podílí se dokonce na řešení krize.
       </li>
       <li>
-        Občas se straší v novinách, že <a href="https://denikn.cz/62624/komu-mohou-sebrat-praci-roboti-experti-vybrali-profese-ktere-jsou-nejvice-ohrozene-zmenami/?ref=list">přicházejí miliony zlých robotů, kteří jednou
-        všem vezmou práci</a>. Místo robotů to asi budou spíš mobilní appky, ale
-        jedno je jisté &mdash; technologie budou prostupovat naše životy stále
-        více a bude tím pádem potřeba stále více těch, kteří technologiím rozumí.
+        Před krizí <a href="https://www.czso.cz/csu/czso/na-trhu-je-nedostatek-ict-odborniku">měly dvě třetiny IT firem v Česku nedostatek lidí a poptávka stále rostla</a>. I pokud část firem zmizí a bude na trhu více lidí hledajících práci, programátorů bude pořád nedostatek.
       </li>
       <li>
-        Pokud se nechceš programováním živit, stále se to hodí umět, doma
-        i v práci. Místo toho, aby se někde muselo 500× udělat Ctrl+C a Ctrl+V,
-        můžeš si to naprogramovat. Programování není cíl, ale nástroj &mdash; jako
-        šroubovák nebo matematika. Bude se ti hodit ať už děláš v kanceláři nebo
-        koukáš do mikroskopu a počítáš bakteriím nožičky.
-      </li>
-      <li>
-        I když nakonec nebudeš vůbec programovat, hodí se rozumět tomu, jak tato práce
-        funguje. Každá firma má dnes IT oddělení a to se mnohem raději baví s lidmi,
-        kteří chápou jak vznikají programy. Můžeš se snadno uplatnit jako prostředník
-        mezi nimi a ostatními.
-      </li>
-      <li>
-        Otevře se ti cesta do dalších oborů, které s počítači souvisí
-        &mdash; např. internetový marketing nebo <a href="https://www.writethedocs.org/">psaní technických textů</a>,
-        které rovněž umožňují vydělat si dobré peníze a mít pružnou pracovní dobu.
-      </li>
-      <li>
-        Při programování se trénuješ v <a href="https://imysleni.cz/informaticke-mysleni/co-je-informaticke-mysleni">informatickém myšlení</a>,
-        což je zcela obecná dovednost nesouvisející nutně přímo s počítačem.
-        Informatické myšlení zlepšuje tvou schopnost řešit složité problémy,
-        a to i v každodenních situacích.
+        Oproti jiným oborům je u IT minimální pokles poptávky, někde je dokonce i nárůst &mdash; viz např. <a href="https://public.tableau.com/profile/profesia.analytics4840#!/vizhome/ProfesiaReport/Covid?publish=yes">data profesia.sk</a>, největšího slovenského portálu s nabídkami práce.
       </li>
     </ul>
-  </div>
-  <!--
+    <p>
+      IT samozřejmě neexistuje ve vzduchoprázdnu a ostatní obory potřebuje. Vyrábí nástroje a tyto nástroje musí mít kdo používat. <strong>Pro&nbsp;programátory samotné to ale není takový problém.</strong> Když přestane fungovat prodej letenek, mohou jít programovat třeba pro banky.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        Na rozdíl od řady dalších profesí je pro IT odborníky specifické především to, že jsou rozptýleni napříč hospodářskými odvětvími.
+      </blockquote>
+      <figcaption>
+        <a href="https://www.czso.cz/csu/czso/ict-odbornici">Zpráva Českého statistického úřadu</a>
+      </figcaption>
+    </figure>
+    <p>
+      Snad neexistuje jiný profesionální obor vyučovaný na vysokých školách, který je pro samouky stejně přístupný jako IT. Všechno ohledně programování si můžeš nastudovat na internetu a vždy se najde někdo, kdo ti rád poradí. Do chirurgie nebo architektury se takto dostat nelze, i když budeš sebevětší nadšenec. Získat první práci v IT oproti tomu tímto způsobem jde. Není to jednoduché, ale jde to.
+    </p>
+    <p>
+      Je ovšem důležité počítat s tím, že <strong>příprava ti může zabrat i dva roky učení a praktických cvičení, a že bude chvíli trvat, než dosáhneš na nadstandardní výdělky.</strong> Rekvalifikace na programování je velký krok, který vyžaduje hodně času, úsilí a odhodlání. Nováčci často projdou úvodními kurzy a pak zjistí, že sehnat první práci vůbec není tak snadné. Místo dobrých rad se jim dostane mýtů, takže se na vypsané nabídky hlásí nepřipravení a s nerealistickými očekáváními.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        Nauč se programovat, firmy v&nbsp;IT berou z nedostatku lidí každého, kdo má jen zájem. Do začátku si řekni aspoň o pade.
+      </blockquote>
+      <figcaption>
+        český programátorský folklór
+      </figcaption>
+    </figure>
+    <p>
+      Pokud se chceš programováním živit, tento web ti na dalších stránkách ukáže, <a href="{{ url_for('learn') }}">kde se můžeš naučit základy</a>, <a href="{{ url_for('practice') }}">jak získat potřebnou praxi</a> nebo <a href="{{ url_for('candidate_handbook') }}">jak si hledat svou první práci</a>. Kromě toho je tady i <a href="{{ url_for('jobs') }}">stránka s nabídkami práce</a>.
+    </p>
+
+    <!--
       testimonials: diky programovani mohu cestovat po celem svete (mrozek)
-  -->
+    -->
+  </div>
 </section>
 
-<section id="requirements" class="content__section">
-  <h2 class="content__section-heading">Co budeš potřebovat?</h2>
+<section id="myths" class="content__section">
+  <h2 class="content__section-heading" id="myths">Mýty o programování</h2>
+  <p>
+    <em>Tato kapitola je aktuálně v rekonstrukci. O mýtech si mezitím můžeš přečíst v <a href="https://nazory.ihned.cz/c7-66842510-ofofc-cf514314230baa8">tomto článku na Hospodářkách</a>. Zkus se sem vrátit za pár dní.</em>
+  </p>
+
+{#
   <div class="tooltips">
+    <h3 id="age" class="content__subsection-heading">Už je pozdě začít</h3>
+
+    <h3 id="math" class="content__subsection-heading">Nemáš na to matematický mozek</h3>
+
+    <h3 id="ladies" class="content__subsection-heading">IT není pro ženy</h3>
+
+    <h3 id="genius" class="content__subsection-heading">Je to jen pro vousaté geniální asociály</h3>
+
+    <h3 id="university" class="content__subsection-heading">Potřebuješ vysokou školu</h3>
+    <!-- viz klubova diskuze streda -->
+
+    <h3 id="jobs" class="content__subsection-heading">Firmy se o tebe porvou</h3>
+
+    <h3 id="money" class="content__subsection-heading">Programování je zlatý důl</h3>
+
+    <h3 id="office" class="content__subsection-heading">Sezení na židli v teple</h3>
+
+    <h3 id="unicorns" class="content__subsection-heading">Programování je samá pohoda</h3>
+    <!-- viz klubova diskuze utery -->
     <p>
-      Především <strong>počítač a internet</strong> &mdash; na mobilu ani tabletu se programovat prakticky nedá a bez připojení ti nebude moci nikdo online poradit. Kromě toho je ale hlavní <strong>odhodlání a vytrvalost</strong>. Projdi si <a href="{{ url_for('index') }}#stories">{{ stories_count }} příběhů lidí</a>, kteří se programovat naučili a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
+      Možná pro tebe programování není. Ne proto, že na to nemáš, ale prostě proto, že každému vyhovuje něco jiného. Mnoha lidem zní programování jako skvělá práce, ale má i své nevýhody. Ostatně, pokud by všichni programovali, asi by byl tento svět dost smutný.
+
+      https://www.youtube.com/watch?v=IwqN4c2BOFs
+      https://guyrobottv.wordpress.com/2017/03/14/being-a-software-developer-sucks/
+      http://borisovo.cz/programming-sucks-cz.html
     </p>
-    <p>
-      Jakmile se jednou pustíš do programování, nastoupíš do vlaku, jenž už se nikdy nezastaví. Budeš se muset <strong>učit stále nové a nové věci</strong> a to jde ruku v ruce se <strong>zvědavostí</strong>. Materiály a kurzy pro začátečníky najdeš i v češtině, ale brzy zjistíš, že spoléhat se jen na ně je velmi omezující. Pokud budeš <a href="{{ url_for('learn') }}#english">rozumět alespoň psané <strong>angličtině</strong></a>, bude tvá cesta mnohem jednodušší.
-    </p>
-    <p>
-      Budeš také potřebovat <strong>překonávat všelijaké předsudky</strong>. Nenech se odradit, pokud ti budou lidé říkat, že na programování nemáš a že není pro tebe!
-    </p>
-    <h3 class="content__subsection-heading" id="not-requirements">Co nemusíš mít?</h3>
+
+
     <ul>
       <li id="teen">
         <strong>Pubertu</strong> &mdash;
@@ -227,87 +322,181 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. P
       </li>
     </ul>
   </div>
+#}
 </section>
 
-<section id="covid19" class="content__section">
-  <h2 class="content__section-heading">Co způsobí koronavirus?</h2>
-  <div class="tooltips">
-    <h3 class="content__subsection-heading" id="covid19-doom">1. Zkázu</h3>
-    <p>
-      Opatření proti nemoci COVID-19 mají velký dopad na spoustu firem a i celých odvětví, jako např. turismus nebo kultura. Vše, co staví primárně na setkávání lidí, bylo najednou ze dne na den odepsáno, a <strong>ani technologické firmy toho nejsou ušetřeny:</strong> <a href="https://www.czechcrunch.cz/2020/04/slevomat-klesl-na-10-firma-jede-na-pul-uvazcich-vyrabime-si-ranvej-na-cely-rok-ze-ktere-se-pak-odlepime-rika-jeho-sef-vesely/">Slevomat na jaře klesl na 10 % obratu</a>, <a href="https://www.czechcrunch.cz/2020/04/byznys-se-jim-sesypal-listky-na-kulturu-se-promenily-v-prach-goout-se-ale-nevzdava-a-chce-prezit-i-diky-fiktivnimu-festivalu/">GoOut konal fiktivní festival</a>, v <a href="https://www.czechcrunch.cz/2020/04/hotelnictvi-dostalo-ranu-museli-jsme-jednat-i-propoustet-extremne-rychle-ale-uz-jdeme-novym-smerem-rika-valtr-z-mews/">Mews propouštěli</a>. Známá programátorská osobnost, Jacob-Kaplan Moss, ve svém <a href="https://jacobian.org/2020/mar/13/layoffs-are-coming/">článku z 13. března</a> upozorňoval, že se mají lidé v USA připravit na <strong>velká propouštění</strong>, a že začínající programátoři jsou jednou z ohrožených skupin. Bylo to nakonec tak špatné, že vznikl celý web <a href="https://layoffs.fyi/tracker/">Layoffs.fyi</a>, který propouštění sleduje. V ČR sice máme jiný trh a jiné zákony, např. není zde tak snadné propouštět ze dne na den jako v USA, ale jestli je dobrá doba nespoléhat se na optimismus a připravit na nejhorší, je to zřejmě teď. Firmy mohou krachovat nebo omezovat výdaje i dlouho po výjimečném stavu.
-    </p>
-    <figure class="quote">
-      <blockquote>
-        Junioři jsou na propouštění náchylnější, protože neměli čas vybudovat si vztahy a konexe, a protože bývá jejich práce vnímána jako méně důležitá.
-      </blockquote>
-      <figcaption>
-        Jacob-Kaplan Moss, autor článku <a href="https://jacobian.org/2020/mar/13/layoffs-are-coming/">Layoffs are Coming</a>
-      </figcaption>
-    </figure>
+<section id="nocode" class="content__section">
+  <h2 class="content__section-heading">Jde to i „bez kódu“</h2>
+  <p>
+    Na spoustu věcí jsou dnes už hotová řešení, polotovary, služby. Některé dělají vše za tebe („No Code“ služby), jiné můžeš zadarmo stáhnout, nainstalovat, zprovoznit („Open Source“ řešení). Vytvořit dnes od základů obstojný web je práce pro tým profesionálů. Dělá se to zpravidla pouze v případě, kdy má zadavatel speciální požadavky a tedy se mu vyplatí vytvářet něco zcela nového. S největší pravděpodobností <strong>nadstandardní požadavky nemáš a nemá pro tebe smysl se učit programovat</strong> kvůli něčemu, co lze za dvě odpoledne „naklikat“. Používání polotovarů je v IT zcela běžné a dělají to i lidé, kteří by danou věc naprogramovat dokázali:
+  </p>
+  <ul>
+    <li><strong>Je to ekonomičtější.</strong> Není potřeba vymýšlet znovu kolo. Místo stovek hodin práce programátorů se něco jen pokliká, poladí, nastaví, a je to.</li>
+    <li><strong>Lze to lépe udržovat.</strong> Ať už řešení v počátku nastaví kdokoliv, jeho standardizovaná povaha umožňuje, aby se v něm posléze zorientoval i někdo jiný. Zároveň tvůrci polotovaru vydávají stále nové verze, které např. ošetřují bezpečnostní a jiné chyby.</li>
+    <li><strong>Je to kvalitnější.</strong> Neplatí jako u vaření, že polotovar je horší, než vlastní výtvor. V tomto případě šéfkuchaři z celého světa roky ladili a vylepšovali něco, co má lákavou barvu, zdravé přísady a vysoké nutriční hodnoty. Všeho je tam tak akorát, aby to mělo fajn chuť pro většinu lidí. Sebelepší jednotlivec by těžko dosáhl stejného výsledku.</li>
+    <li><strong>Je to bezpečnější.</strong> Tady platí předchozí bod dvojnásobně. V oblasti přihlašování, uchovávání hesel apod. není radno vymýšlet nic na koleně, protože je téměř jistá šance, že jednotlivec nedomyslí všechny hrozby. Polotovary mají toto vyřešené dle oborových standardů a pokud se přece jen najde bezpečnostní díra, tvůrci se ji snaží hned zalepit.</li>
+  </ul>
+  <p>
+    Jestliže se učíš programovat a chceš si to na tvorbě e-shopu jen vyzkoušet, tak v pohodě, klidně si do šuplíku programuj vlastní e-shop. Pokud je ale tvým cílem provozovat použitelný e-shop, neprogramuj si jej, nevynalézej kolo, použij něco hotového. Tento web sice chce lidem ukázat cestu k programování, ale ne za každou cenu, z nesmyslných důvodů.
+  </p>
 
-    <h3 class="content__subsection-heading" id="covid19-change">2. Změnu</h3>
-    <p>
-      Na druhou stranu &mdash; výrobce 3D tiskáren <a href="https://www.prusa3d.com/">Průša</a> začal <a href="https://josefprusa.cz/od-navrhu-k-hromadnemu-3d-tisku-zdravotnickych-stitu-behem-tri-dnu/">tisknout štíty pro zdravotníky</a> a stal se hrdinou Česka. Dobrovolníci z oblasti IT se sdružili do akčních skupin jako <a href="https://www.covid19cz.cz/">Covid19CZ</a> nebo <a href="https://cesko.digital/">Česko.Digital</a>, kde <strong>vyvinuli <a href="https://www.donio.cz/CoroVent">ventilátory</a>, <a href="https://www.donio.cz/CovMask">masky</a>, <a href="https://www.damerousky.cz/">distribuovali roušky</a> a ukazují školám, jak lze <a href="https://www.ucimeonline.cz/">vyučovat online</a></strong>. Nástroje pro online komunikaci a práci z domova, jako jsou <a href="https://zoom.us/">Zoom</a> nebo <a href="https://slack.com/">Slack</a>, zažily na jaře raketový růst. Videohovory jsou najednou běžnou součástí našich dní a jsou jich plná i večerní televizní zpravodajství. Internet nám umožňuje fungovat i přesto, že se nemůžeme setkat. <strong>Mnohé firmy, školy, domácnosti, ale i části státu procházejí urychlenou „digitální transformací“.</strong>
-    </p>
-    <figure class="quote">
-      <blockquote>
-        Naše ekonomika má velký potenciál a krize je velkou příležitostí přehodnotit směřování. ČR už nemusí být jen montovnou. Máme jedinečnou příležitost investovat do šetrných technologií, digitalizace. Pokud budeme rozhodovat chytře, tak nás to může výrazně posunout.
-      </blockquote>
-      <figcaption>
-        Danuše Nerudová, rektorka MENDELU a ekonomka, v <a href="https://plus.rozhlas.cz/uz-nemusime-byt-pouhou-montovnou-cekam-velke-zmeny-i-v-globalnich-dodavatelskych-8180919">rozhovoru pro Český rozhlas</a>
-        <!-- 13:20min -->
-      </figcaption>
-    </figure>
+  <h3 id="nocode-websites" class="content__subsection-heading">Tvorba webu, e-shopu</h3>
+  <p>
+    Jestli chceš psát blog, provozovat e-shop nebo vytvořit webovky pro květinářství kamarádovy tety, nemusíš se nutně učit programovat. Najdi vhodnou No Code platformu nebo se nauč pracovat s nějakým Open Source řešením. Tady jsou tři tipy na ty nejpoužívanější:
+  </p>
+  <ul class="list">
+    <li>
+      <a href="https://wordpress.com/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/wordpress.com.jpg') }}" loading="lazy">
+        </div>
+        <h3>WordPress</h3>
+      </a>
+      <p>
+        Nejpoužívanější hotové řešení na weby. Služba za peníze, ale i Open Source ke stažení.
+      </p>
+    </li>
+    <li>
+      <a href="https://www.wix.com/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/wix.com.jpg') }}" loading="lazy">
+        </div>
+        <h3>Wix</h3>
+      </a>
+      <p>
+        Služba, kde si web vyloženě „naklikáš“. Jednodušší, ale ne tak univerzální jako WP.
+      </p>
+    </li>
+    <li>
+      <a href="https://www.shopify.com/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/shopify.com.jpg') }}" loading="lazy">
+        </div>
+        <h3>Shopify</h3>
+      </a>
+      <p>
+        Celosvětově nejpoužívanější služba pro vytváření vlastního e-shopu.
+      </p>
+    </li>
+  </ul>
+  <p>
+    Hotových řešení je neskutečně mnoho. Tento web je ale o tom, jak se naučit software vyrábět od základů, takže další tipy už budeš muset najít jinde. Zkus se poptat třeba na fóru <a href="https://webtrh.cz/">Webtrh</a>.
+  </p>
 
-    <h3 class="content__subsection-heading" id="covid19-opportunity">3. Příležitosti</h3>
-    <p>
-      Pandemie tedy přináší nejen zkázu, ale i nové příležitosti. Probouzíme se do světa, ve kterém bude široká veřejnost vědět že existuje 3D tiskárna, jak navázat videohovor, sdílet dokumenty, hrát online hry, nebo jak na dálku učit. <strong>I&nbsp;pokud přestanou omezení pohybu, budou lidé tyto vymoženosti používat dál.</strong> Firmy, které budou potřebovat zefektivnit náklady, se obrátí k automatizaci, přechodu na technologická řešení nebo práci z domova. Stoupne hodnota lidí, kteří zvládnou s technologiemi pracovat. Může to být navíc východisko pro lidi, kteří nyní přicházejí o obživu. I když bychom si určitě spíš přáli, aby mohla Radůza dále hrát a zpívat, <a href="https://ct24.ceskatelevize.cz/kultura/3208318-raduza-mozna-vymeni-harmoniku-za-tu-autobusovou-i-dalsi-umelci-si-hledaji-jinou">České Televizi se svěřuje</a>, že zvažuje kurz tvorby webových stránek.
-    </p>
-    <figure class="quote">
-      <blockquote>
-        Čekají nás velké strukturální změny. Cestovní ruch bude zasažen na dlouho. Ukazuje se, že celá řada věcí jde dělat digitálně a online. Celá řada obchodních cest se dá řešit online.
-      </blockquote>
-      <figcaption>
-        Danuše Nerudová, rektorka MENDELU a ekonomka, v <a href="https://plus.rozhlas.cz/uz-nemusime-byt-pouhou-montovnou-cekam-velke-zmeny-i-v-globalnich-dodavatelskych-8180919">rozhovoru pro Český rozhlas</a>
-      </figcaption>
-    </figure>
-    <p>
-      Ano, pozastavilo se najímání, čímž firmy čelily nejistotě. Potom se na mnoha místech propouštělo nebo ještě propouštět bude. <strong>Budou se míchat karty a rozdávat znovu.</strong> Ano, na trhu bude o něco obtížnější sehnat práci, ale nebude to tak strašné:
-    </p>
-    <ul>
-      <li>
-        V roce 2018 rostlo IT v Evropě <a href="https://2018.stateofeuropeantech.com/"><strong>5× rychleji</strong> než vše ostatní</a>. Takto rozjetý vlak se nezastaví, zvlášť když není zasažen přímo a podílí se dokonce na řešení krize.
-      </li>
-      <li>
-        Před krizí <a href="https://www.czso.cz/csu/czso/na-trhu-je-nedostatek-ict-odborniku">měly <strong>dvě třetiny</strong> IT firem v Česku nedostatek lidí a poptávka stále rostla</a>. I pokud část firem zmizí a bude na trhu více lidí hledajících práci, programátorů bude pořád nedostatek.
-      </li>
-      <li>
-        Oproti jiným oborům je u IT propad nejmenší &mdash; např. data <a href="https://www.profesia.sk/">profesia.sk</a>, největšího slovenského portálu s nabídkami práce, <a href="https://public.tableau.com/profile/profesia.analytics4840#!/vizhome/ProfesiaReport/Covid?publish=yes">během nejhorší krize uváděly</a> meziroční <strong>pokles jen 23&nbsp;%, zbytek oborů byl nad 50&nbsp;%</strong>.
-      </li>
-    </ul>
-    <p>
-      Je tedy velmi nepravděpodobné, že najednou programátoři začnou stát fronty na práci. IT samozřejmě neexistuje ve vzduchoprázdnu a ostatní obory potřebuje. Vyrábí nástroje a tyto nástroje musí mít kdo používat. <strong>Pro&nbsp;programátory samotné to ale není takový problém.</strong> Když přestane fungovat prodej letenek, mohou jít programovat třeba pro banky.
-    </p>
-    <figure class="quote">
-      <blockquote>
-        Podle našich odhadů by český trh pojal ještě 20 tisíc programátorů.
-      </blockquote>
-      <figcaption>
-        Jana Večerková z Coding Bootcamp Praha v <a href="https://www.tydenikhrot.cz/clanek/koronavirus-meni-pracovni-trh-jistotu-maji-porad-ajtaci">článku týdeníku Hrot</a>
-      </figcaption>
-    </figure>
-    <figure class="quote">
-      <blockquote>
-        Na rozdíl od řady dalších profesí je pro IT odborníky specifické především to, že jsou rozptýleni napříč hospodářskými odvětvími.
-      </blockquote>
-      <figcaption>
-        <a href="https://www.czso.cz/csu/czso/ict-odbornici">Zpráva Českého statistického úřadu</a>
-      </figcaption>
-    </figure>
-    <p>
-      A i kdyby u tebe nakonec na kariéru v&nbsp;IT nedošlo, programování už dnes využije i <a href="{{ url_for('index') }}#stories">spousta jiných profesí</a>, např. vědci nebo novináři. Média jsou například plná grafů ukazujících průběh pandemie, ale tyto grafy musel z dat někdo sestavit a data správně interpretovat. I úředník může automatizovaně zpracovat excelové tabulky a udělat tak práci za tři lidi. <strong>Ve světě po krizi začnou být ještě cennější lidé, kteří mají nejen znalost svého oboru, ale mají blízko i k IT.</strong> Ať už je to doktorka, která umí programovat, nebo učitel, jenž látku vysvětlí na videu.
-    </p>
-  </div>
+  <h3 id="nocode-spreadsheets" class="content__subsection-heading">Tabulky a dokumenty</h3>
+  <p>
+    Říká se, že <strong>nejrozšířenějším programovacím jazykem na světě jsou vzorečky v Excelu</strong>. Zní to možná jako vtip, ale není to vtip. Možná je zbytečné učit se programovat v něčem jiném, pokud se tvá práce odehrává v tabulkách a odehrávat se v nich ještě dlouho bude. Nauč se pořádně vzorce, makra, funkce. Excel je velmi silný nástroj a jeho dobrá znalost se ti nikdy neztratí. I pokud budeš chtít později přejít k „opravdovému“ programování, znalost maker apod. ti bude sloužit jako základ, na kterém budeš moci stavět.
+  </p>
+  <p>
+    Podobně se dá udělat velká paráda i s <a href="https://www.google.com/script/start/">Google Apps Script</a> a automatizací Google dokumentů, které mají tu výhodu, že jsou online a mohou v sobě snadněji propojovat živá data jinde z internetu (např. aktuální kurzy měn).
+  </p>
+
+  <h3 id="nocode-automation" class="content__subsection-heading">Automatizace</h3>
+  <p>
+    Pokud by se ti hodilo propojit různé internetové služby tak, aby si automaticky podle nějakého scénáře posílaly informace, i na to existují hotové nástroje. Můžeš třeba pokaždé, když se objeví platba na tvém bankovním účtu, uložit zůstatek do tabulky a následně si ještě nechat poslat zprávu na mobil. V mluvě velkých firem se tomu říká <a href="https://cs.wikipedia.org/wiki/Robotick%C3%A1_automatizace_proces%C5%AF">RPA</a> a prý je po tom dnes celkem poptávka.
+  </p>
+  <ul class="list">
+    <li>
+      <a href="https://www.integromat.com/cs">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/integromat.com!cs.png') }}" loading="lazy">
+        </div>
+        <h3>Integromat</h3>
+      </a>
+      <p>
+        Největší platforma, navíc česká, podporuje i místní služby jako Fakturoid nebo Fio Banka.
+      </p>
+    </li>
+    <li>
+      <a href="https://zapier.com/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/zapier.com.jpg') }}" loading="lazy">
+        </div>
+        <h3>Zapier</h3>
+      </a>
+      <p>
+        Druhá nejznámější platforma pro automatizaci.
+      </p>
+    </li>
+    <li>
+      <a href="https://ifttt.com/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/ifttt.com.jpg') }}" loading="lazy">
+        </div>
+        <h3>IFTTT</h3>
+      </a>
+      <p>
+        Alternativa pro ty, kterým nesedí Integromat ani Zapier.
+      </p>
+    </li>
+  </ul>
+</section>
+
+<section id="kids" class="content__section">
+  <h2 class="content__section-heading">Programování pro děti</h2>
+  <p>
+    I když je v názvu tohoto webu slovo <em>junior</em>, není vhodný k tomu, aby se podle něj učily programovat děti. Slovem junior se označují začátečníci na pracovním trhu a tento web ukazuje cestu k programování a kariéře v IT dospělým, případně dospívajícím lidem. Pokud chceš programovat s dětmi, následující odkazy tě nasměrují na stránky, které jsou pro ten účel vhodnější.
+  </p>
+  <p>
+    Programování pro děti, tak jak by se mělo správně dělat, nespočívá v psaní písmenek na černou obrazovku nebo v práci s Wordem. Odehrává se v barevném prostředí, kde jde s dětmi vytvářet zábavné příběhy, hry, animace.
+  </p>
+
+  <ul class="list">
+    <li>
+      <a href="https://code.org/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/code.org.jpg') }}" loading="lazy">
+        </div>
+        <h3>Code.org</h3>
+      </a>
+      <p>
+        Programování, které zvládne každý rodič, kroužek, družina.
+      </p>
+    </li>
+    <li>
+      <a href="https://www.scratchjr.org/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/scratchjr.org.jpg') }}" loading="lazy">
+        </div>
+        <h3>ScratchJr</h3>
+      </a>
+      <p>
+        V mobilu nebo na tabletu, pro nejmenší děti.
+      </p>
+    </li>
+    <li>
+      <a href="https://scratch.mit.edu/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/scratch.mit.edu.jpg') }}" loading="lazy">
+        </div>
+        <h3>Scratch</h3>
+      </a>
+      <p>
+        Vytvoř hru nebo příběh a sdílej je s kamarády.
+      </p>
+    </li>
+  </ul>
+  <p>
+    Pokud tě programování pro děti začně bavit fakt hodně, můžeš se inspirovat u <a href="https://cz.pycon.org/2018/programme/detail/talk/13/">Ivy a Martina</a> nebo u <a href="https://blog.zvestov.cz/software%20development/2018/10/29/jak-jsem-zacal-s-krouzkem-programovani.html">Luboše</a> a zkusit něco zorganizovat i pro děti z okolí. Potom by se ti mohla hodit <a href="https://github.com/xsuchy/programovani_pro_deti/#readme">příručka pro pedagogy a rodiče od Mirka Suchého</a>.
+  </p>
+</section>
+
+<section id="cnc" class="content__section">
+  <h2 class="content__section-heading">Programování CNC strojů</h2>
+  <p>
+    CNC jsou programovatelné průmyslové stroje, které umí frézovat, vrtat, soustružit, řezat, apod. Lidem, kteří těmto strojům umí zadávat úkoly a tvořit na nich výrobky, se říká CNC programátoři. Pracují jak se samotným strojem, tak i s počítačem, tím ale podobnost s klasickým programováním končí. Pro lepší představu o této profesi může sloužit <a href="https://www.youtube.com/watch?v=uiDdWbSY04s">reportáž Jihočeské televize</a>.
+  </p>
+  <figure class="quote">
+    <blockquote>
+      Obor mechanik seřizovač-programátor byl hlavně o mechanik, pak lehce o seřizovač a takřka vůbec o programátor. A když, tak programovat CNC, což není rozhodně totéž jako programovat dejme tomu aplikace pro web.
+    </blockquote>
+    <figcaption>
+      Marek Dlabáček, autor článku <a href="https://blog.python.cz/ja-python-a-rosti">Já, Python a Roští</a>
+    </figcaption>
+  </figure>
+  <p>
+    Tento web se zabývá vytvářením softwaru, tedy programů pro počítače nebo mobily. Pokud toužíš programovat CNC, mrkni se třeba <a href="https://factoryautomation.cz/jak-se-stat-cnc-programatorem-mame-6-tipu/">do magazínu Factory Automation</a>, kde k tomu něco mají. Jestliže chceš tvořit software, jsi tady správně.
+  </p>
 </section>
 
 <div class="content__section">

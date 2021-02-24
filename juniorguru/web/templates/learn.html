@@ -38,18 +38,34 @@ Jak začít programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe b
   <div class="toc__content">
     <h2 class="toc__heading content__target-heading">Obsah</h2>
     <ol class="toc__items">
+      <li class="toc__item"><a class="toc__link" href="#requirements">Co budeš potřebovat</a></li>
       <li class="toc__item"><a class="toc__link" href="#python">Proč Python?</a></li>
-      <li class="toc__item"><a class="toc__link" href="#learn">Jak začít?</a></li>
+      <li class="toc__item"><a class="toc__link" href="#learn">Jak začít</a></li>
       <li class="toc__item"><a class="toc__link" href="#ladies">Dámy mají přednost</a></li>
-      <li class="toc__item"><a class="toc__link" href="#help">Kde najdeš pomoc?</a>
+      <li class="toc__item"><a class="toc__link" href="#help">Kde najdeš pomoc</a>
         <ol class="toc__subitems">
-          <li class="toc__subitem"><a class="toc__sublink" href="#questions">Kde a jak se ptát?</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#questions">Kde a jak se ptát</a></li>
         </ol>
       </li>
-      <li class="toc__item"><a class="toc__link" href="#english">Jak si zlepšit angličtinu?</a></li>
+      <li class="toc__item"><a class="toc__link" href="#english">Jak si zlepšit angličtinu</a></li>
     </ol>
   </div>
 </nav>
+
+<section id="requirements" class="content__section">
+  <h2 class="content__section-heading">Co budeš potřebovat</h2>
+  <div class="tooltips">
+    <p>
+      Především <strong>počítač a internet</strong> &mdash; na mobilu ani tabletu se programovat prakticky nedá a bez připojení ti nebude moci nikdo online poradit. Kromě toho je ale hlavní <strong>odhodlání a vytrvalost</strong>. Projdi si <a href="{{ url_for('index') }}#stories">{{ stories_count }} příběhů lidí</a>, kteří se programovat naučili a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
+    </p>
+    <p>
+      Jakmile se jednou pustíš do programování, nastoupíš do vlaku, jenž už se nikdy nezastaví. Budeš se muset <strong>učit stále nové a nové věci</strong> a to jde ruku v ruce se <strong>zvědavostí</strong>. Materiály a kurzy pro začátečníky najdeš i v češtině, ale brzy zjistíš, že spoléhat se jen na ně je velmi omezující. Pokud budeš <a href="{{ url_for('learn') }}#english">rozumět alespoň psané <strong>angličtině</strong></a>, bude tvá cesta mnohem jednodušší.
+    </p>
+    <p>
+      Budeš také potřebovat <strong>překonávat všelijaké předsudky</strong>. Nenech se odradit, pokud ti budou lidé říkat, že na programování nemáš a že není pro tebe!
+    </p>
+  </div>
+</section>
 
 <section id="python" class="content__section more">
   <h2 class="content__section-heading">Proč Python?</h2>
@@ -125,7 +141,7 @@ Jak začít programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe b
 </section>
 
 <section id="learn" class="content__section">
-  <h2 class="content__section-heading">Jak začít?</h2>
+  <h2 class="content__section-heading">Jak začít</h2>
   <div class="tooltips">
     <p>
       Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplatí
@@ -331,7 +347,7 @@ Jak začít programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe b
 {% include 'includes/engage.html' %}
 
 <section id="help" class="content__section">
-  <h2 class="content__section-heading">Kde najdeš pomoc?</h2>
+  <h2 class="content__section-heading">Kde najdeš pomoc</h2>
   <div class="tooltips">
     <p>
       Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout
@@ -418,7 +434,7 @@ Jak začít programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe b
 </section>
 
 <section id="english" class="content__section">
-  <h2 class="content__section-heading">Jak si zlepšit angličtinu?</h2>
+  <h2 class="content__section-heading">Jak si zlepšit angličtinu</h2>
   <div class="tooltips">
     <p>
       Mnohem více než <a href="{{ url_for('motivation') }}#math">matematika</a> je při programování potřeba
