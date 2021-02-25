@@ -46,7 +46,19 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. P
           <li class="toc__subitem"><a class="toc__sublink" href="#coding-career">Programování jako kariéra</a></li>
         </ol>
       </li>
-      <li class="toc__item"><a class="toc__link" href="#myths">Mýty o programování</a></li>
+      <li class="toc__item"><a class="toc__link" href="#myths">Mýty o programování</a>
+        <ol class="toc__subitems">
+          <li class="toc__subitem"><a class="toc__sublink" href="#age">Už je pozdě začít</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#math">Nemáš na to matematický mozek, chybí ti talent</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#ladies">IT není pro ženy</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#genius">IT je pouze pro geniální asociály</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#university">Potřebuješ vysokou školu</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#jobs">Firmy se o tebe porvou</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#money">Programování je zlatý důl</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#office">Sedíš si v teple na židli</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#unicorns">Je to samá pohoda</a></li>
+        </ol>
+      </li>
       <li class="toc__item"><a class="toc__link" href="#nocode">Jde to i „bez kódu“</a>
         <ol class="toc__subitems">
           <li class="toc__subitem"><a class="toc__sublink" href="#nocode-spreadsheets">Tabulky a dokumenty</a></li>
@@ -189,135 +201,131 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. P
     <p>
       Pokud se chceš programováním živit, tento web ti na dalších stránkách ukáže, <a href="{{ url_for('learn') }}">kde se můžeš naučit základy</a>, <a href="{{ url_for('practice') }}">jak získat potřebnou praxi</a> nebo <a href="{{ url_for('candidate_handbook') }}">jak si hledat svou první práci</a>. Kromě toho je tady i <a href="{{ url_for('jobs') }}">stránka s nabídkami práce</a>.
     </p>
-
-    <!--
-      testimonials: diky programovani mohu cestovat po celem svete (mrozek)
-    -->
   </div>
 </section>
 
 <section id="myths" class="content__section">
   <h2 class="content__section-heading" id="myths">Mýty o programování</h2>
-  <p id="math">
-    <em id="university">Tato kapitola je aktuálně v rekonstrukci. O mýtech si mezitím můžeš přečíst v <a href="https://nazory.ihned.cz/c7-66842510-ofofc-cf514314230baa8">tomto článku na Hospodářkách</a>. Zkus se sem vrátit za pár dní.</em>
+  <p>
+    Některé představy o programování a programátorské profesi nemají moc společného s realitou, ačkoliv je lidé stále opakují. Následující odstavce se snaží věci uvést na pravou míru a zabránit různým falešným obavám nebo naopak nereálným očekáváním.
   </p>
-
-{#
   <div class="tooltips">
-    <h3 id="age" class="content__SNEHULAKsubsection-heading">Už je pozdě začít</h3>
-
-    <h3 id="math" class="content__SNEHULAKsubsection-heading">Nemáš na to matematický mozek</h3>
-
-    <h3 id="ladies" class="content__SNEHULAKsubsection-heading">IT není pro ženy</h3>
-
-    <h3 id="genius" class="content__SNEHULAKsubsection-heading">Je to jen pro vousaté geniální asociály</h3>
-
-    <h3 id="university" class="content__SNEHULAKsubsection-heading">Potřebuješ vysokou školu</h3>
-    <!-- viz klubova diskuze streda -->
-
-    <h3 id="jobs" class="content__SNEHULAKsubsection-heading">Firmy se o tebe porvou</h3>
-
-    <h3 id="money" class="content__SNEHULAKsubsection-heading">Programování je zlatý důl</h3>
-
-    <h3 id="office" class="content__SNEHULAKsubsection-heading">Sezení na židli v teple</h3>
-
-    <h3 id="unicorns" class="content__SNEHULAKsubsection-heading">Programování je samá pohoda</h3>
-    <!-- viz klubova diskuze utery -->
+    <h3 id="age" class="content__subsection-heading">Už je pozdě začít</h3>
     <p>
-      Možná pro tebe programování není. Ne proto, že na to nemáš, ale prostě proto, že každému vyhovuje něco jiného. Mnoha lidem zní programování jako skvělá práce, ale má i své nevýhody. Ostatně, pokud by všichni programovali, asi by byl tento svět dost smutný.
-
-      https://www.youtube.com/watch?v=IwqN4c2BOFs
-      https://guyrobottv.wordpress.com/2017/03/14/being-a-software-developer-sucks/
-      http://borisovo.cz/programming-sucks-cz.html
+      Programování není balet ani hokej, začít se dá opravdu v jakémkoliv věku. Někdo se k programování dostal už v pubertě a pokud je tobě přes třicet, můžeš váhat, jestli má vůbec smysl se o něco pokoušet. Realita je však taková, že těm, kteří začali v patnácti, se už zas tak moc programovat nechce, nebo se na něco specializovali. Jinými slovy, budete soutěžit v jiných ligách a místa je dost pro všechny. Nejspíš se už nestihneš stát programátorskou megahvězdou, byť ani to není zcela vyloučeno, ale normální práci v oboru si v pohodě najdeš.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        S programováním jsem začala ve&nbsp;30,
+        při rodičovské. Hrozně mě to baví, nejradši bych u toho strávila 24h denně.
+        Začít se dá v každém věku.
+      </blockquote>
+      <figcaption>
+        Iveta Česalová, bývalá účetní, absolventka začátečnického kurzu <a href="https://pyladies.cz/">PyLadies</a>
+      </figcaption>
+    </figure>
+    <p>
+      Že na věku nezáleží dokazují i následující příběhy reálných lidí, kteří dokázali v pozdějším věku změnit kariéru a dnes se programováním živí.
     </p>
 
+    <h3 id="math" class="content__subsection-heading">Nemáš na to matematický mozek, chybí ti talent</h3>
+    <p>
+      Častým omylem je představa, že potřebuješ talent na techniku, nebo konkrétně přímo na matematiku. Kromě vysoce specializovaných pozic programátoři při své každodenní práci nic složitého nepočítají. Věda, která za programováním stojí, tedy informatika, má jistě s matematikou mnoho společného, ale v praxi si většinou vystačíte se základy středoškolských počtů a logickým myšlením. Počítání se při programování využívá podobně jako třeba při truhlařině. Je lepší, když si místo zkoušení od oka umíš věci správně změřit a navrhnout.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        Z matematiky jsem míval čtyřky a nikdy mě nebavila. Dodnes si beru
+        kalkulačku i na odečítání.
+      </blockquote>
+      <figcaption>
+        Honza Javorek, profesionální programátor a autor této příručky
+      </figcaption>
+    </figure>
+    <p>
+      Co se týče talentu, programování je spíše řemeslo a více než vrozená genialita ti pomůže píle a trpělivost. Kromě toho, mnohem více než třeba zrovna matematika je potřeba angličtina. Materiály pro úplné začátečníky existují i v češtině, ale potom už se bez schopnosti alespoň číst anglický text obejít nelze. Nedostatečná angličtina je v IT jako bolavý zub. Chvíli vydržíš, ale když to nezačneš včas řešit, budeš pak už jen litovat.
+    </p>
 
-    <ul>
-      <li id="teen">
-        <strong>Pubertu</strong> &mdash;
-        Někdo se naučil programovat v patnácti, někdo ještě dřív.
-        Toto ale není balet, začít se dá v jakémkoli věku.
+    <h3 id="ladies" class="content__subsection-heading">IT není pro ženy</h3>
+    <p>
+      Někoho to možná překvapí, ale k programování není potřeba penis. Neexistuje žádný důvod, proč by žena nemohla být skvělou programátorkou a kdo si to myslí, je ze středověku. Naopak, bez žen bychom <a href="https://cs.wikipedia.org/wiki/Ada_Lovelace">neměli počítače</a>, <a href="https://cs.wikipedia.org/wiki/Margaret_Hamilton">nedostali bychom se na Měsíc</a> a <a href="https://cs.wikipedia.org/wiki/Katie_Boumanov%C3%A1">nevyfotili bychom černou díru</a>.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        Když jsem přišla k programu Apollo, nebyly tam žádné jiné ženy, které by psaly software.
+      </blockquote>
+      <figcaption>
+        Margaret H. Hamilton, programátorka softwaru pro cestu člověka na měsíc
+      </figcaption>
+    </figure>
+    <p>
+      Podle ČSÚ je v Česku zatím žen v IT stále méně než v Turecku, ale na zlepšení se intenzivně pracuje. Aktivity jako <a href="{{ url_for('learn') }}#ladies">PyLadies nebo Czechitas</a> se snaží programování mezi ženami popularizovat a přichystat jim bezpečné prostředí, v němž si z nich nikdo nebude dělat legraci za to, že položily hloupou otázku, nebo je šovinisticky posílat zpátky k plotně. I kultura IT firem se postupně mění a stává se k ženám příjemnější, a to dokonce i v českém rybníčku, kde se lidé běžně děsí slov jako feminismus nebo diverzita.
+    </p>
 
-        <figure class="quote">
-          <blockquote>
-            S programováním jsem začala ve&nbsp;30,
-            při rodičovské. Hrozně mě to baví, nejradši bych u toho strávila 24h denně.
-            Začít se dá v každém věku.
-          </blockquote>
-          <figcaption>
-            Iveta Česalová, bývalá účetní, absolventka začátečnického kurzu <a href="https://pyladies.cz/">PyLadies</a>
-          </figcaption>
-        </figure>
-      </li>
-      <li id="talent">
-        <strong>Talent</strong> &mdash;
-        Programování je především řemeslo. Dnes se navíc odehrává
-        v týmu, kde se píle a komunikace vyplácí víc než jednostranná genialita.
+    <h3 id="genius" class="content__subsection-heading">IT je pouze pro geniální asociály</h3>
+    <p>
+      Když se řekne „ajťák“, lidé si představí brýlatého mladíka s ponožkami v sandálech nebo nějakého hackera v kapuci, který sedí ve sklepě, kde pozoruje změť písmenek. Seriály jako britský <a href="https://www.csfd.cz/film/224203-ajtaci/">IT Crowd</a> nebo americká <a href="https://www.csfd.cz/film/234260-teorie-velkeho-tresku/">Teorie velkého třesku</a> stále posilují různé stereotypy, ale i kdybychom jim chtěli v něčem dát za pravdu, je dobré si uvědomit, že jejich první díly vznikly před {{ year - 2006 }} lety. Ačkoliv si toho někteří lidé stále ještě nevšimli, IT už dávno nevypadá jako na známé <a href="https://www.forum24.cz/jak-dopadli-chlapci-z-brutalni-parby-informatiku-2/">fotce „brutální pařby informatiků“</a>.
+    </p>
+    <p>
+      A nejde jen o to, že si ti kluci z fotky dnes přijdou na hezké peníze a pracují v prestižních firmách, ani o to, že už je v oboru mnohem více žen. Technologie možná dříve patřily k obskurním zálibám, dnes už však prostupují život každého z nás. Spolu s tím je IT přístupnější a otevřenější pestré škále osobností. Pro účely rozboření zažitých představ asi postačí <a href="https://twitter.com/vogueandcode">módní stylistka April Speight</a> nebo <a href="https://twitter.com/RealSexyCyborg">hardwarová kutilka Naomi Wu</a>.
+    </p>
+    <p>
+      Kromě samotného programování poskytuje IT a na něj napojený internetový průmysl i celou řadu dalších pozic, které ani nemusí být nutně technické: internetový marketing, psaní reklamních textů, design aplikací, psaní technické dokumentace, manažerské pozice, správa počítačové sítě a mnohé další.
+    </p>
+    <p>
+      Tito všichni většinou společně pracují v týmech, takže schopnost komunikace má na mnohých pracovištích větší hodnotu než zázračná genialita. Pokud to umíte s lidmi, máte zajímavé zkušenosti z jiného oboru a mezi své koníčky řadíte i jiné věci než počítače, je to dnes spíše výhoda než handicap.
+    </p>
 
-        <!--
-            testimonials: fakt se mi na zacatku nezdalo, ze mam talent na programovani (pylady)
-        -->
-      </li>
-      <li>
-        <strong>Penis</strong> &mdash;
-        Neexistuje žádný důvod, proč by žena nemohla být skvělou programátorkou.
-        Pokud si někdo myslí opak, je ze středověku. Žen je v&nbsp;IT zatím stále málo,
-        ale <a href="{{ url_for('learn') }}#ladies">pracuje se na zlepšení</a>.
+    <h3 id="university" class="content__subsection-heading">Potřebuješ vysokou školu</h3>
+    <p>
+      Pokud máš možnost studovat informatiku na vysoké škole, jdi do toho! Odradit se nech snad jen <a href="http://brm.sk/682/vyser-sa-na-vysoku-skolu">pokud ji už studuješ a trpíš při tom</a>. Vysoká škola ti dá především rozhled, stáže, slevy, kontakty, souvislosti a vědomosti do hloubky, možnost jet na Erasmus. Pokud chceš programovat samořídící auta nebo pomáhat raketám do vesmíru, bude to s vysokou školou rozhodně snazší.
+    </p>
+    <p>
+      To ale většina IT pracovníků nedělá. Běžní zaměstnavatelé po tobě budou chtít vytvářet webové stránky nebo mobilní appky. Ty zhotoví samouk s minimální praxí stejně dobře jako absolvent. Ještě se občas objeví firma, která z požadavku na VŠ titul nesleví, ale většinou se zaměstnavatelé spokojí s tím, pokud chybějící řádek v životopise vyvážíš dostatečnou praxí na projektech, klidně i v podobě domácích cvičení.
+    </p>
+    <p>
+      Nemysli si ale, že když nepotřebuješ titul z VŠ, nebudeš se muset učit. IT je obor, v němž se naopak nikdy učit nepřestaneš. Ani profíci s dvacetiletými zkušenostmi se nemohou přestat vzdělávat v novinkách.
+    </p>
+    <p>
+      Zajímavou variantou je zkusit VŠ studovat, vybírat si zajímavé obory a předměty, ale ve chvíli, kdy už ti to přestane dávat smysl, bez pocitu viny odejít. Také se můžeš učit programovat po vlastní ose a studovat při tom úplně jiný obor, který tě zajímá. Svou budoucí kariéru můžeš pak založit na tom, že budeš rozumět např. sociologii nebo školství a dokážeš je propojit s moderními technologiemi.
+    </p>
 
-        <figure class="quote">
-          <blockquote>
-            Když jsem přišla k programu Apollo, nebyly tam žádné jiné ženy,
-            které by psaly software.
-          </blockquote>
-          <figcaption>
-            Margaret H. Hamilton, programátorka softwaru pro cestu člověka na měsíc
-          </figcaption>
-        </figure>
-      </li>
-      <li id="math">
-        <strong>Matematický mozek</strong> &mdash;
-        Při běžném programování si vystačíš se základy středoškolské
-        matematiky a ani tak to není nic, s čím by se člověk potýkal denně.
+    <h3 id="jobs" class="content__subsection-heading">Firmy se o tebe porvou</h3>
+      Ve firmách existuje velká poptávka po zkušených programátorech, takže se často mohou náboráři přetrhnout, aby je získali do svého týmu. Na základě toho se pak ale šíří mýtus, že si stačí přečíst čtyři kapitoly o nějakém programovacím jazyku a hned dostaneš spoustu nabídek práce. To je velký omyl a přinesl by ti velké zklamání. Junior (tak se v náborářské hantýrce označují začátečnické pozice) si ve skutečnosti musí svou první příležitost pracně shánět.
+    </p>
+    <p>
+      Firmy většinou neumí juniory efektivně zaučovat a raději měsíce hledají zkušenější lidi, byť beznadějně. Ve skutečnosti ti může rekvalifikace do IT zabrat i dva roky učení a praktických cvičení. Nenech se tím odradit, akorát si nastav ta správná očekávání. Získat práci v IT jako začátečník není jednoduché, ale rozhodně to jde, a to i bez titulu.
+    </p>
 
-        <figure class="quote">
-          <blockquote>
-            Z matematiky jsem míval čtyřky a nikdy mě nebavila. Dodnes si beru
-            kalkulačku i na odečítání.
-          </blockquote>
-          <figcaption>
-            Honza Javorek, profesionální programátor a autor této příručky
-          </figcaption>
-        </figure>
-      </li>
-      <li id="university">
-        <strong>Vysokou školu</strong> &mdash;
-        VŠ je rozhled, souvislosti, vědomosti do hloubky.
-        Pokud chceš, aby tvé programy řídily auta, létaly do vesmíru nebo pomáhaly
-        doktorům, budeš to mít snazší s VŠ. Běžní zaměstnavatelé ale ocení
-        <a href="{{ url_for('practice') }}">praxi</a> víc než titul a webovky nebo mobilní appky
-        udělá samouk stejně dobře jako absolvent.
+    <h3 id="money" class="content__subsection-heading">Programování je zlatý důl</h3>
+      Mzdová ohodnocení IT odborníků se už roky umisťují na špici všech tabulek, takže finanční ohodnocení může být pro mnohé velkou motivací pro rekvalifikaci. Tím spíše dnes, kdy lidé kvůli pandemii přicházejí o práci v jiných oborech, ale IT se drží. Programátoři mají co se týče výdělku rozhodně nadstandardní možnosti, ale musíš si uvědomit, že bude chvíli trvat, než se tím odborníkem staneš.
+    </p>
+    <p>
+      Junior je pro firmu náklad, a to především v podobě času ostatních zaměstnanců. Nemůžeš očekávat, že ti hned začne chodit na účet 50 tisíc, nebo dokonce víc. Začátečníci v oboru se ovšem shodují, že když už je někam vzali, byli schopni na vysoké mzdy dosáhnout již poměrně záhy, v řádu jednotek odpracovaných let.
+    </p>
 
-        <!--
-            testimonials: vs jsem nikdy nedokoncil a nevadilo mi to (???)
-        -->
-      </li>
-      <li id="other-field">
-        <strong>Zájem jen o počítače</strong> &mdash;
-        Pokud něčemu už rozumíš, nemusíš se toho vzdát na úkor kariéry v&nbsp;IT.
-        Programování je jen nástroj. Nejlepší je <a href="{{ url_for('index') }}#stories">výhodně si jím pomoci v jiných oborech</a>.
+    <h3 id="office" class="content__subsection-heading">Sedíš si v teple na židli</h3>
+      Pro ty, jejichž zaměstnání je fyzicky vyčerpávající nebo se odehrává venku, může kancelářská práce, jakou je i programování, působit lákavě. Člověk u něj přece celý den sedí na židli a v teple, že? Skutečnost je ovšem složitější. Na programátory neprší a nejsou vyčerpaní fyzicky, ale po celém dni intenzivního přemýšlení a komunikace s kolegy se dostavuje velká únava psychická.
+    </p>
+    <p>
+      Nezřídka dorazíš po práci domů, a byť máš dostatek síly tělesné, z tvého mozku je „zelenina“. Zbytek večera už zvládneš nanejvýš zírat na seriály. Rozhýbání svalů funguje naopak jako způsob relaxace. Ne náhodou se spolu se vzestupem kancelářské práce zaplnily cyklostezky ve městech běžci, a to především v hodinách po konci pracovní doby. Kromě toho brzy zjistíš, že sezení u počítače není úplně nejzdravější způsob trávení dní a musíš vědomě kompenzovat újmu, kterou způsobuje, ať už cvičením nebo kvalitní židlí.
+    </p>
 
-        <!--
-            Pěstuješ květiny? Automatizuj si skleníky a zavlažování.
-            testimonials: jako programator muzu automatizovat farmu (frantisek)
-        -->
-        <!--
-            Vyvíjíš nový lék proti rakovině? Naprogramuj si výpočty.
-            testimonials: naucil jsem se programovat a zrychlilo to mou praci (david zihala)
-        -->
-      </li>
-    </ul>
+    <h3 id="unicorns" class="content__subsection-heading">Je to samá pohoda</h3>
+    <p>
+      Jak už naznačuje předchozí odstavec, programátorská profese má i své nevýhody. Světe div se, je to práce jako každá jiná. Tvoje každodenní spokojenost bude nakonec záviset na konkrétní firmě, projektu, štěstí, šéfech, týmu kolegů a klidně i na tom, co někdo jiný, koho vůbec neznáš, špatně naprogramoval před pěti lety a ty s tím teď musíš pracovat. Budeš bojovat s <a href="http://borisovo.cz/programming-sucks-cz.html">psychickou zátěží</a>, můžeš <a href="https://www.youtube.com/watch?v=IwqN4c2BOFs">zpochybňovat svůj zápal pro věc</a> a časem i <a href="https://cs.wikipedia.org/wiki/Syndrom_vyho%C5%99en%C3%AD">vyhořet</a>.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        Programování není něco, co bych milovala. Ne, že bych jej nenáviděla, akorát to prostě nemiluju.
+      </blockquote>
+      <figcaption>
+        Sidney Buckner, programátorka a autorka videa <a href="https://www.youtube.com/watch?v=IwqN4c2BOFs">I Don't Love Being A Software Engineer</a>
+      </figcaption>
+    </figure>
+    <p>
+      IT ale naštěstí umožňuje mnoho způsobů, jak se uplatnit i jinak, než jen sezením u počítače a na schůzích. Můžeš se časem přesunout k učení a mentorování, psaní technických textů, pořádání komunitních akcí, začít přednášet na konferencích, konzultovat, vést lidi… Možností, jak si programování namíchat něčím jiným nebo jak zcela změnit hlavní zaměření své práce, je v rámci IT nepřeberně.
+    </p>
   </div>
-#}
 </section>
 
 <section id="nocode" class="content__section">
