@@ -11,6 +11,7 @@ schema = Seq(
         'date': Datetime(),
         'title': Str(),
         'image_path': Str(),
+        'tags': Seq(Str()),
     })
 )
 

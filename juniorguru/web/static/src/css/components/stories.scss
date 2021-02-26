@@ -2,6 +2,10 @@
   margin-bottom: -1 * $whitespace-3;
 }
 
+.stories--inline {
+  margin-top: $whitespace-3;
+}
+
 .stories__heading {
   margin-bottom: $whitespace-3 * 2 !important;  // forcing through page-index.scss
 }
@@ -73,8 +77,28 @@
     flex-wrap: wrap;
   }
 
+  .stories--inline .stories__items {
+    display: block;
+  }
+
   .stories__item {
     box-sizing: border-box;
+    width: 50%;
+    padding-right: $whitespace-3;
+  }
+
+  .stories--inline .stories__item {
+    width: auto;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: $breakpoint-desktop + 150px) {
+  .stories--inline .stories__items {
+    display: flex;
+  }
+
+  .stories--inline .stories__item {
     width: 50%;
     padding-right: $whitespace-3;
   }

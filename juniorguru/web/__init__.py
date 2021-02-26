@@ -98,11 +98,13 @@ def membership():
 
 @app.route('/motivation/')
 def motivation():
+    with db:
+        stories_by_tags = Story.tags_mapping()
     return render_template('motivation.html',
                            nav_active='motivation',
                            subnav_tabs=HANDBOOK_SUBNAV_TABS,
                            subnav_active='motivation',
-                           stories_count=len(Story.listing()),
+                           stories_by_tags=stories_by_tags,
                            thumbnail=thumbnail(title='Proč se učit programování'))
 
 

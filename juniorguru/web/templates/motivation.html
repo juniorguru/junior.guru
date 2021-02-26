@@ -157,6 +157,25 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. P
     <p>
       Pokud chceš mít programování jako pomocníka, tento web ti na dalších stránkách ukáže, <a href="{{ url_for('learn') }}">kde se můžeš naučit základy</a> nebo <a href="{{ url_for('practice') }}">jak si lze programování procvičovat a dále prohlubovat znalosti</a>.
     </p>
+    <div class="stories stories--inline">
+      <ul class="stories__items">
+      {% for story in stories_by_tags.synergy|sample(4) %}
+        <li class="stories__item">
+          <a class="stories__content" href="{{ story.url }}">
+            <div class="stories__text">
+              <h3 class="stories__title">{{ story.title }}</h3>
+              <small class="stories_details">
+                {{ story.publisher }}
+                &mdash;
+                {{ story.date.month }}/{{ story.date.year }}
+              </small>
+            </div>
+            <img class="stories__image" src="{{ url_for('static', filename=story.image_path) }}" width="100" loading="lazy" alt="Fotka obličeje">
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
 
     <h3 id="coding-career" class="content__subsection-heading">Programování jako kariéra</h3>
     <p>
@@ -202,6 +221,25 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. P
       Pokud se chceš programováním živit, tento web ti na dalších stránkách ukáže, <a href="{{ url_for('learn') }}">kde se můžeš naučit základy</a>, <a href="{{ url_for('practice') }}">jak získat potřebnou praxi</a> nebo <a href="{{ url_for('candidate_handbook') }}">jak si hledat svou první práci</a>. Kromě toho je tady i <a href="{{ url_for('jobs') }}">stránka s nabídkami práce</a>.
     </p>
   </div>
+  <div class="stories stories--inline">
+    <ul class="stories__items">
+    {% for story in stories_by_tags.careerswitch|sample(4) %}
+      <li class="stories__item">
+        <a class="stories__content" href="{{ story.url }}">
+          <div class="stories__text">
+            <h3 class="stories__title">{{ story.title }}</h3>
+            <small class="stories_details">
+              {{ story.publisher }}
+              &mdash;
+              {{ story.date.month }}/{{ story.date.year }}
+            </small>
+          </div>
+          <img class="stories__image" src="{{ url_for('static', filename=story.image_path) }}" width="100" loading="lazy" alt="Fotka obličeje">
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
 </section>
 
 <section id="myths" class="content__section">
@@ -227,6 +265,25 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. P
     <p>
       Že na věku nezáleží dokazují i následující příběhy reálných lidí, kteří dokázali v pozdějším věku změnit kariéru a dnes se programováním živí.
     </p>
+    <div class="stories stories--inline">
+      <ul class="stories__items">
+      {% for story in stories_by_tags.age|sample(4) %}
+        <li class="stories__item">
+          <a class="stories__content" href="{{ story.url }}">
+            <div class="stories__text">
+              <h3 class="stories__title">{{ story.title }}</h3>
+              <small class="stories_details">
+                {{ story.publisher }}
+                &mdash;
+                {{ story.date.month }}/{{ story.date.year }}
+              </small>
+            </div>
+            <img class="stories__image" src="{{ url_for('static', filename=story.image_path) }}" width="100" loading="lazy" alt="Fotka obličeje">
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
 
     <h3 id="math" class="content__subsection-heading">Nemáš na to matematický mozek, chybí ti talent</h3>
     <p>
@@ -260,6 +317,25 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. P
     <p>
       Podle ČSÚ je v Česku zatím žen v IT stále méně než v Turecku, ale na zlepšení se intenzivně pracuje. Aktivity jako <a href="{{ url_for('learn') }}#ladies">PyLadies nebo Czechitas</a> se snaží programování mezi ženami popularizovat a přichystat jim bezpečné prostředí, v němž si z nich nikdo nebude dělat legraci za to, že položily hloupou otázku, nebo je šovinisticky posílat zpátky k plotně. I kultura IT firem se postupně mění a stává se k ženám příjemnější, a to dokonce i v českém rybníčku, kde se lidé běžně děsí slov jako feminismus nebo diverzita.
     </p>
+    <div class="stories stories--inline">
+      <ul class="stories__items">
+      {% for story in stories_by_tags.women|sample(4) %}
+        <li class="stories__item">
+          <a class="stories__content" href="{{ story.url }}">
+            <div class="stories__text">
+              <h3 class="stories__title">{{ story.title }}</h3>
+              <small class="stories_details">
+                {{ story.publisher }}
+                &mdash;
+                {{ story.date.month }}/{{ story.date.year }}
+              </small>
+            </div>
+            <img class="stories__image" src="{{ url_for('static', filename=story.image_path) }}" width="100" loading="lazy" alt="Fotka obličeje">
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
 
     <h3 id="genius" class="content__subsection-heading">IT je pouze pro geniální asociály</h3>
     <p>
@@ -288,6 +364,25 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. P
     <p>
       Zajímavou variantou je zkusit VŠ studovat, vybírat si zajímavé obory a předměty, ale ve chvíli, kdy už ti to přestane dávat smysl, bez pocitu viny odejít. Také se můžeš učit programovat po vlastní ose a studovat při tom úplně jiný obor, který tě zajímá. Svou budoucí kariéru můžeš pak založit na tom, že budeš rozumět např. sociologii nebo školství a dokážeš je propojit s moderními technologiemi.
     </p>
+    <div class="stories stories--inline">
+      <ul class="stories__items">
+      {% for story in stories_by_tags.student|sample(4) %}
+        <li class="stories__item">
+          <a class="stories__content" href="{{ story.url }}">
+            <div class="stories__text">
+              <h3 class="stories__title">{{ story.title }}</h3>
+              <small class="stories_details">
+                {{ story.publisher }}
+                &mdash;
+                {{ story.date.month }}/{{ story.date.year }}
+              </small>
+            </div>
+            <img class="stories__image" src="{{ url_for('static', filename=story.image_path) }}" width="100" loading="lazy" alt="Fotka obličeje">
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
 
     <h3 id="jobs" class="content__subsection-heading">Firmy se o tebe porvou</h3>
       Ve firmách existuje velká poptávka po zkušených programátorech, takže se často mohou náboráři přetrhnout, aby je získali do svého týmu. Na základě toho se pak ale šíří mýtus, že si stačí přečíst čtyři kapitoly o nějakém programovacím jazyku a hned dostaneš spoustu nabídek práce. To je velký omyl a přinesl by ti velké zklamání. Junior (tak se v náborářské hantýrce označují začátečnické pozice) si ve skutečnosti musí svou první příležitost pracně shánět.

@@ -2,93 +2,144 @@
   date: 2019-04-17
   title: Bývalý voják se přestěhoval z USA do ČR, živí se programováním
   image_path: images/stories/tim-usa.jpg
+  tags:
+    - careerswitch
 
 - url: https://cz.pycon.org/2018/programme/detail/talk/2/
   date: 2018-06-02
   title: Změnila kariéru ve 40, díky bootcampu a online kurzům
   image_path: images/stories/magda-bootcamp.jpg
+  tags:
+    - careerswitch
+    - age
+    - women
 
 - url: https://imysleni.cz/clanky/novinka/208-z-baletky-programatorkou-chatbot-sestnactilete-divky-z-havlickova-brodu-usetri-lekarum-praci
   date: 2019-05-15
   title: Baletka vytvořila robota, za lékaře odpovídá na dotazy
   image_path: images/stories/maria-baletka.jpg
+  tags:
+    - women
+    - student
 
 - url: https://imysleni.cz/clanky/rozhovor/209-biolozka-radka-symonova-hi-my-native-language-is-python
   date: 2019-08-07
   title: Bioložka by se bez programování už neobešla
   image_path: images/stories/radka-biolozka.jpg
+  tags:
+    - synergy
+    - women
 
 - url: https://youtu.be/d_SgNk52nBo?t=1032
   date: 2018-06-01
   title: Díky sto řádkům kódu udělá měsíce genetického výzkumu za 5 minut
   image_path: images/stories/david-genetika.jpg
+  tags:
+    - synergy
 
 - url: https://ivet1987.wz.cz/blog/
   date: 2020-02-24
   title: Začala na rodičovské, dnes pracuje v IT
   image_path: images/stories/iveta-ucetni.jpg
+  tags:
+    - careerswitch
+    - age
+    - women
 
 - url: https://www.zdrojak.cz/clanky/jak-jsem-se-nestal-front-end-vyvojarem/
   date: 2019-11-08
   title: Za dva roky frontend vývojářem
   image_path: images/stories/michal-frontend.jpg
+  tags:
+    - careerswitch
 
 - url: https://www.tedxprague.cz/videa/z-hornika-programatorem
   date: 2018-08-14
   title: Z horníka programátorem
   image_path: images/stories/tomas-hornik.jpg
+  tags:
+    - careerswitch
+    - age
 
 - url: https://medium.com/@misasebestova/m%C5%AFj-prvn%C3%AD-datov%C3%BD-hackathon-6f753a4730cf
   date: 2018-12-02
   title: Překonala strach a přihlásila se na datový hackathon
   image_path: images/stories/misa-hackathon.jpg
+  tags:
+    - women
 
 - url: https://www.flowee.cz/floweecity/smart-cities/7077-vyplati-se-z-vestibulu-bezet-na-metro-reknou-vam-to-tabule-i-stavajici-aplikace
   date: 2019-09-08
   title: Student práv vytvořil mobilní appku na dobíhání metra
   image_path: images/stories/ondra-metro.jpg
+  tags:
+    - student
 
 - url: https://www.czechcrunch.cz/2019/10/z-nemocnice-do-globalniho-technologickeho-startupu-jak-se-z-mlade-zdravotni-sestry-stala-uspesna-vyvojarka
   date: 2019-10-30
   title: Zdravotní sestra z Děčína dnes pracuje jako vývojářka
   image_path: images/stories/veronika-productboard.jpg
+  tags:
+    - careerswitch
+    - women
 
 - url: https://artalk.cz/2019/04/30/andreas-gajdosik-casto-slychavam-otazku-co-je-na-tom-za-umeni/
   date: 2019-04-30
   title: Prestižní ocenění pro umělce, který programuje
   image_path: images/stories/andreas-art.jpg
+  tags:
+    - synergy
 
 - url: https://www.imysleni.cz/clanky/rozhovor/220-ivana-brabcova-doktorka-ktera-porada-kurzy-v-pythonu
   date: 2019-10-23
   title: Doktorka díky programování lépe diagnostikuje rakovinu
   image_path: images/stories/ivca-doktorka.jpg
+  tags:
+    - synergy
+    - women
 
 - url: https://blog.python.cz/ja-python-a-rosti
   date: 2017-01-22
   title: Z (mimo jiné) skladníka programátorem
   image_path: images/stories/marek-rosti.jpg
+  tags:
+    - careerswitch
 
 - url: http://www.romea.cz/cz/zpravodajstvi/student-marcel-horvath-chtel-bych-pracovat-pro-velkou-it-firmu-napriklad-microsoft
   date: 2019-07-29
   title: Gymnazista se sám naučil programovat, vydal mobilní hru
   image_path: images/stories/marcel-romea.jpg
+  tags:
+    - student
 
 - url: https://medium.com/productboard-engineering/making-data-accessible-to-everyone-at-productboard-an-interview-with-p%C3%A1ja-fronkova-7940ecc6aa35
   date: 2020-10-09
   title: Naučila se programovat, pracuje s daty ve startupu
   image_path: images/stories/paja-productboard.jpg
+  tags:
+    - synergy
+    - women
 
 - url: https://blog.python.cz/programatorem-za-365-dni-a-zadarmo-tak-urcite
   date: 2020-10-20
   title: Podnikatel do roka programátorem, sám si vytvořil e-shop
   image_path: images/stories/honza-toptrika.jpg
+  tags:
+    - synergy
+    - careerswitch
 
 - url: https://blog.python.cz/pyladies-to-zacalo-kanadou-to-neskoncilo
   date: 2020-10-26
   title: Studentka dostala prestižní stáž v Kanadě díky programování
   image_path: images/stories/baru-kanada.jpg
+  tags:
+    - synergy
+    - women
+    - student
 
 - url: https://www.podnikatel.cz/clanky/na-kvetinove-farme-vsazeji-na-cerstvost-a-lokalnost-jak-jejich-byznys-funguje/
   date: 2018-10-08
   title: Opustil práci programátora a založil automatizovanou květinovou farmu
   image_path: images/stories/loukykvet.jpg
+  tags:
+    - synergy
