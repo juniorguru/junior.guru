@@ -56,16 +56,15 @@
                 "sha256:fbd3b5e18d34683decc00d9a360179ac1e7a320a5fee10ab8053ffd6deab76e0",
                 "sha256:feb24ff1226beeb056e247cf2e24bba5232519efb5645121c4aea5b6ad74c1f2"
             ],
-            "index": "pypi",
             "version": "==3.7.4"
         },
         "arrow": {
             "hashes": [
-                "sha256:e098abbd9af3665aea81bdd6c869e93af4feb078e98468dd351c383af187aac5",
-                "sha256:ff08d10cda1d36c68657d6ad20d74fbea493d980f8b2d45344e00d6ed2bf6ed4"
+                "sha256:3d9c973acbd30f8a87cb816c4d1ac14fbcd44289c1448e8a8eb802ecc7504fad",
+                "sha256:ca68479d4b674e35179104f53e2bf72a730847bbd301e7c0b3642dd06e669797"
             ],
             "index": "pypi",
-            "version": "==0.17.0"
+            "version": "==1.0.0"
         },
         "async-timeout": {
             "hashes": [
