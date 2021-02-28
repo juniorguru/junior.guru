@@ -60,11 +60,11 @@
         },
         "arrow": {
             "hashes": [
-                "sha256:7909d9fd30d32fa8fd173fdeb3f7125aaf6dedd1a837276fe1d8cea2c0e86d76",
-                "sha256:b1e106a0ab754e540f4aeb08747900830b688adef02d81240e65afc0e781a870"
+                "sha256:5df8e632e9158c48f42f68a742068bcfc1c0181cbe7543e4cda6089bb287a305",
+                "sha256:cb1b7bc3a07eb1c1e98ccc740627460c9891636642bcf03c4097b71d8bc5ca1d"
             ],
             "index": "pypi",
-            "version": "==1.0.1"
+            "version": "==1.0.2"
         },
         "async-timeout": {
             "hashes": [
@@ -894,10 +894,10 @@
         },
         "twisted": {
             "hashes": [
-                "sha256:475dcd4a63658374b957d28dfd9f6c1a310a4210f9de4315a1e4eb82a11d44cb",
-                "sha256:d47fede2c733fd46b3a2b1a92848cc079c1e736d63c0cd13b99019214dfa75a7"
+                "sha256:77544a8945cf69b98d2946689bbe0c75de7d145cdf11f391dd487eae8fc95a12",
+                "sha256:aab38085ea6cda5b378b519a0ec99986874921ee8881318626b0a3414bb2631e"
             ],
-            "version": "==21.2.0rc1"
+            "version": "==21.2.0"
         },
         "typing-extensions": {
             "hashes": [
