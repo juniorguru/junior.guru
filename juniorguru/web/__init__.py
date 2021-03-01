@@ -6,7 +6,7 @@ from juniorguru.web.thumbnail import thumbnail
 
 
 NAV_TABS = [
-    {'endpoint': 'motivation', 'name': 'Příručka'},
+    {'endpoint': 'candidate_handbook', 'name': 'Příručka'},
     {'endpoint': 'jobs', 'name': 'Práce'},
     {'endpoint': 'club', 'name': 'Klub'},
 ]
