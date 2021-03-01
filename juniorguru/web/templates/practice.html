@@ -246,20 +246,6 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       </p>
     </li>
     <li>
-      <a href="https://www.facebook.com/groups/ucimepython/">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/facebook.com!groups!ucimepython.jpg') }}" loading="lazy">
-        </div>
-        <h3>Učíme Python</h3>
-        <ul class="list-labels">
-          <li><small>Facebook</small></li>
-        </ul>
-      </a>
-      <p>
-        Poptej mentora ve skupině pro lidi se zájmem vyučovat Python.
-      </p>
-    </li>
-    <li>
       <a href="https://gismentors.cz/">
         <div class="list-image">
           <img src="{{ url_for('static', filename='images/screenshots/gismentors.cz.jpg') }}" loading="lazy">
@@ -433,14 +419,14 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       </p>
     </li>
     <li>
-      <a href="https://www.codetriage.com/">
+      <a href="https://cesko.digital/">
         <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/codetriage.com.jpg') }}" loading="lazy">
+          <img src="{{ url_for('static', filename='images/screenshots/cesko.digital.jpg') }}" loading="lazy">
         </div>
-        <h3>CodeTriage</h3>
+        <h3>Česko.Digital</h3>
       </a>
       <p>
-        Najdi rozbitou věc, oprav ji, pošli opravu autorům.
+        Přidej se do sdružení dobrovolníků okolo OSS projektů s pozitivním dopadem na Česko.
       </p>
     </li>
     <li>
@@ -455,6 +441,17 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       </a>
       <p>
         Účastni se kurzů nebo školení na OSS související s geografií.
+      </p>
+    </li>
+    <li>
+      <a href="https://www.codetriage.com/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/codetriage.com.jpg') }}" loading="lazy">
+        </div>
+        <h3>CodeTriage</h3>
+      </a>
+      <p>
+        Najdi rozbitou věc, oprav ji, pošli opravu autorům.
       </p>
     </li>
     <li>
@@ -531,17 +528,6 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       </a>
       <p>
         Kontaktuj někoho z těch, kdo se sami nabízí zaučovat nováčky na OSS projektech.
-      </p>
-    </li>
-    <li>
-      <a href="https://cesko.digital/">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/cesko.digital.jpg') }}" loading="lazy">
-        </div>
-        <h3>Česko.Digital</h3>
-      </a>
-      <p>
-        Přidej se do sdružení dobrovolníků okolo OSS projektů s pozitivním dopadem na Česko.
       </p>
     </li>
   </ul>
@@ -731,14 +717,24 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
   <h2 class="content__section-heading">Najdi inspiraci, poznej lidi</h2>
   <div class="tooltips">
     <p>
-      Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky nebo
-      lidmi z nového oboru. Důvodů, proč polevit, může nastat hodně. Proto je dobré
-      pravidelně se setkávat s komunitou začínajících i pokročilých
-      programátorů a nabíjet se tak novou energií a inspirací. Existují dva druhy
-      setkání: místní srazy a celostátní konference.
+      Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky nebo lidmi z nového oboru. Důvodů, proč polevit, může nastat hodně. Proto je dobré pravidelně se setkávat s komunitou začínajících i pokročilých programátorů a nabíjet se tak novou energií a inspirací. Dříve existovaly hlavně dva druhy setkání: místní srazy a celostátní konference. Během covidu-19 bylo mnoho akcí zrušeno, nebo přešlo do online podoby.
     </p>
   </div>
   <ul class="list">
+    <li>
+      <a href="{{ url_for('club') }}">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/junior.guru!club.jpg') }}" loading="lazy">
+        </div>
+        <h3>Klub junior.guru</h3>
+        <ul class="list-labels">
+          <li><small>online komunita</small></li>
+        </ul>
+      </a>
+      <p>
+        Diskutuj v klubu pro začátečníky, kde najdeš pomoc, motivaci, kamarády, práci.
+      </p>
+    </li>
     <li>
       <a href="https://pyvo.cz">
         <div class="list-image">
@@ -750,8 +746,21 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
         </ul>
       </a>
       <p>
-        Poznej Python programátory ve svém okolí.
-        Pomohou, budou tě motivovat.
+        Poznej Python programátory ve svém okolí. Pomohou, budou tě motivovat.
+      </p>
+    </li>
+    <li>
+      <a href="https://www.meetup.com/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/meetup.com.jpg') }}" loading="lazy">
+        </div>
+        <h3>Meetup</h3>
+        <ul class="list-labels">
+          <li><small>srazy</small></li>
+        </ul>
+      </a>
+      <p>
+        Najdi srazy ve svém okolí, poznej různá odvětví&nbsp;IT, potkej lidi.
       </p>
     </li>
     <li>
@@ -794,20 +803,6 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       </a>
       <p>
         Přijeď na konferenci o psaní technické dokumentace.
-      </p>
-    </li>
-    <li>
-      <a href="https://www.meetup.com/">
-        <div class="list-image">
-          <img src="{{ url_for('static', filename='images/screenshots/meetup.com.jpg') }}" loading="lazy">
-        </div>
-        <h3>Meetup</h3>
-        <ul class="list-labels">
-          <li><small>srazy</small></li>
-        </ul>
-      </a>
-      <p>
-        Najdi srazy ve svém okolí, poznej různá odvětví&nbsp;IT, potkej lidi.
       </p>
     </li>
   </ul>

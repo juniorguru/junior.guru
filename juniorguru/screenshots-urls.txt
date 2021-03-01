@@ -40,7 +40,6 @@ https://stackoverflow.com
 https://www.facebook.com/groups/pyonieri/
 https://www.reddit.com/r/learnpython/
 https://www.reddit.com/r/learnprogramming/
-https://www.facebook.com/groups/ucimepython/
 https://gismentors.cz/
 https://github.com/lenadroid/awesome-oss-mentors#readme
 https://www.codecademy.com
@@ -95,3 +94,4 @@ https://www.wix.com/
 https://wordpress.com/
 https://zapier.com/
 https://ifttt.com/
+https://junior.guru/club/
