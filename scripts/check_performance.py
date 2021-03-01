@@ -12,7 +12,7 @@ PUBLIC_DIR = Path(__file__).parent.parent / 'public'
 LIGHTHOUSE_DIR = Path(__file__).parent.parent / 'lighthouse'
 
 MIN_SCORES = {
-    'performance': 75,
+    'performance': 70,
     'accessibility': 60,
     'best-practices': 90,
     'seo': 85,
