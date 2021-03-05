@@ -38,7 +38,17 @@ Jak začít programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe b
   <div class="toc__content">
     <h2 class="toc__heading content__target-heading">Obsah</h2>
     <ol class="toc__items">
-      <li class="toc__item"><a class="toc__link" href="#requirements">Co budeš potřebovat</a></li>
+      <li class="toc__item"><a class="toc__link" href="#requirements">Co budeš potřebovat</a>
+        <ol class="toc__subitems">
+          <li class="toc__subitem"><a class="toc__sublink" href="#equipment">Vybavení, které musíš mít</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#friends">Sežeň si kamarády</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#prerequisities">Co je dobré umět předem</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#price">Kolik to bude stát</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#time">Kolik času potřebuješ</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#learning">Nauč se učit</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#myths">Co nepotřebuješ</a></li>
+        </ol>
+      </li>
       <li class="toc__item"><a class="toc__link" href="#python">Proč Python?</a></li>
       <li class="toc__item"><a class="toc__link" href="#learn">Jak začít</a></li>
       <li class="toc__item"><a class="toc__link" href="#ladies">Dámy mají přednost</a></li>
@@ -55,16 +65,73 @@ Jak začít programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe b
 <section id="requirements" class="content__section">
   <h2 class="content__section-heading">Co budeš potřebovat</h2>
   <div class="tooltips">
+    <h3 id="equipment" class="content__subsection-heading">Vybavení, které musíš mít</h3>
     <p>
-      Především <strong>počítač a internet</strong> &mdash; na mobilu ani tabletu se programovat prakticky nedá a bez připojení ti nebude moci nikdo online poradit. Kromě toho je ale hlavní <strong>odhodlání a vytrvalost</strong>. Projdi si <a href="{{ url_for('index') }}#stories">{{ stories_count }} příběhů lidí</a>, kteří se programovat naučili a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
+      Především budeš potřebovat <strong>počítač a internet</strong>. Na mobilu ani tabletu se programovat prakticky nedá a bez připojení nebudeš mít materiály, ani nenajdeš potřebnou pomoc.
     </p>
     <p>
-      Jakmile se jednou pustíš do programování, nastoupíš do vlaku, jenž už se nikdy nezastaví. Budeš se muset <strong>učit stále nové a nové věci</strong> a to jde ruku v ruce se <strong>zvědavostí</strong>. Materiály a kurzy pro začátečníky najdeš i v češtině, ale brzy zjistíš, že spoléhat se jen na ně je velmi omezující. Pokud budeš <a href="{{ url_for('learn') }}#english">rozumět alespoň psané <strong>angličtině</strong></a>, bude tvá cesta mnohem jednodušší.
+      Ideální je mít svůj vlastní počítač, nad kterým máš plnou kontrolu a na němž je operační systém Linux, Windows nebo macOS. Pokud máš jiný systém, jako Android nebo ChromeOS, možná se ti povede na něm programování rozjet, ale v praxi je k tomu nikdo nepoužívá a budeš mít velký problém sehnat někoho, kdo ti poradí v případě problémů. Na mobilu můžeš některé věci procvičovat, ale je to jako se v appce učit akordy, vzorečky nebo slovíčka &mdash; praktické znalosti tím nezískáš.
+    </p>
+
+    <h3 id="friends" class="content__subsection-heading">Sežeň si kamarády</h3>
+    <p>
+      Říká se, že <strong>navazování mezilidských vztahů</strong> by mělo vyplňovat téměř čtvrtinu času, který trávíš učením (tzv. <a href="https://en.wikipedia.org/wiki/70/20/10_Model_(Learning_and_Development)">model 70-20-10</a>). Navíc budeš potřebovat <strong>velké množství motivace</strong>. Možná si čteš tento text a přijde ti, že jí máš vrchovatě, ale věř tomu, že už zítra jí bude méně a za týden jí bude polovina. Zvláště pokud neděláš prezenční kurz a chystáš se do toho jít jako samouk, nebudeš mít ani žádné termíny, ani lidi kolem sebe, díky kterým se u učení udržíš. Je snadné další lekci odložit, protože se ti to zrovna nehodí, potom ji odložit znova, a tak dále.
     </p>
     <p>
-      Budeš také potřebovat <strong>překonávat všelijaké předsudky</strong>. Nenech se odradit, pokud ti budou lidé říkat, že na programování nemáš a že není pro tebe!
+      Najdi si proto <strong>studijní skupinu</strong>. Ať už do toho půjdeš s kamarádkou nebo místním zájmovým kroužkem, v partě to prostě odsýpá lépe a máš mnohonásobně, opravdu mnohonásobně vyšší šanci na úspěch. Využít můžeš přímo i <a href="{{ url_for('club') }}">zdejší online klub</a>.
+    </p>
+
+    <h3 id="prerequisities" class="content__subsection-heading">Co je dobré umět předem</h3>
+    <p>
+      S programováním můžeš začít úplně v pohodě pouze se <strong>základy ovládání počítače</strong>. Potřebuješ umět vytvořit a najít soubor nebo adresář (složku). Potřebuješ umět nainstalovat nový program.
+    </p>
+    <p>
+      Dále se ti mohou hodit <strong>základy matematiky ze základky</strong>: třeba co je to dělení se zbytkem nebo obsah čtverce. Detaily nejsou potřeba, vzorečky se dají najít na Wikipedii. Spíš potřebuješ vědět, že když máš pokoj tři krát čtyři metry, tak se tyhle čísla dají nějak zkombinovat a zjistíš výměru podlahy.
+    </p>
+    <p>
+      Budeš mít výhodu, pokud budeš <a href="{{ url_for('learn') }}#english"><strong>rozumět alespoň psané angličtině</strong></a>. Materiály a kurzy pro začátečníky najdeš i v češtině, ale brzy zjistíš, že spoléhat se jen na ně je velmi omezující.
+    </p>
+
+    <h3 id="price" class="content__subsection-heading">Kolik to bude stát</h3>
+    <p>
+      Nemusí to stát <strong>žádné peníze</strong>. Ano, existují placené kurzy, placení mentoři, <a href="{{ url_for('club') }}">placené komunity</a>, ale jde to i bez toho. Pokud máš počítač a internet, můžeš se naučit programovat bez jakýchkoliv dalších investic. Některé kurzy dávají své materiály zdarma k dispozici, na problémy můžeš najít řešení v diskuzích na internetu, učební kroužek si můžeš zorganizovat i mezi svými kamarády. Pokud ale nějaké peníze do svého učení investovat můžeš, <strong>mohou tvou cestu usnadnit a urychlit</strong>.
+    </p>
+
+    <h3 id="time" class="content__subsection-heading">Kolik času potřebuješ</h3>
+    <p>
+      Úplně první program vytvoříš v řádu hodin nebo dní, ale pokud chceš mít rozumné základy programování, budeš se tomu potřebovat věnovat <strong>alespoň 3 měsíce po 10 hodinách týdně</strong> (orientační odhad, každý má jiné možnosti, tempo, výdrž…). Je to stejné jako u sportu nebo hry na hudební nástroj: Princip možná pochopíš rychle, ale budeš muset vždy hodně procvičovat, než to budeš umět správně použít v praxi.
+    </p>
+    <p>
+      Co když <strong>nemáš čas</strong>? „Nemám čas“ znamená „nechci si jej vyhradit, jelikož mám důležitější věci, nebo věci, které mě baví víc“. Možná se ti jen líbí představa, že umíš programovat, ale nechce se ti to doopravdy dělat, stejně jako se spoustě lidem líbí představa, že umí hrát na kytaru, ale nemají chuť si po večerech brnkat a cvičit akordy. Je úplně v pořádku dělat důležitější nebo zábavnější věci, akorát je dobré si to přiznat, vědomě to nechat plavat a nevyčítat si to.
+    </p>
+    <p>
+      Možná opravdu chceš, ale máš náročnou práci, chodíš domů po večerech a během volna se sotva stíháš zrelaxovat nebo postarat o rodinu. Bohužel, bez času to nejde. Naučit se při tom všem programovat bude velmi těžké. I takoví se ale našli! <strong>Nevzdávej to a zkus vymyslet, jak by šlo tvůj den uspořádat jinak</strong>, jestli by některé povinnosti nemohli dělat jiní lidé, atd. Někdo se učí o víkendech nebo po večerech, když usnou děti. Někdo má prostoje ve svém zaměstnání, tak se učí během nich.
+    </p>
+    <figure class="quote">
+      <blockquote>
+        Měla jsem dvě děti a k tomu zaměstnání na plný úvazek, ale po večerech jsem stíhala dělat vlastní projekty, nebo se učit do školy. Byl to koníček, takže mi nevadilo u toho trávit volný čas. Akorát seriály musely jít stranou.
+      </blockquote>
+      <figcaption>
+        Vladlena Benešová, bývalá manažerka a podnikatelka, nyní programátorka
+      </figcaption>
+    </figure>
+
+    <h3 id="learning" class="content__subsection-heading">Nauč se učit</h3>
+    <p>
+      Jakmile se jednou pustíš do programování, nastoupíš do vlaku, jenž už se nikdy nezastaví. Technologie se vyvíjejí rychle a tak je programování, možná více než jiné obory, o neustálém učení. Někdo to dovádí do extrému a hltá hned každou novinku, ale ani <strong>běžný programátor nemůže úplně zaspat a často se téměř každý týden naučí něco nového</strong>, třeba i průběžně během práce.
+    </p>
+    <p>
+      Neočekávej, že se programování jednou naučíš a vystačíš si s tím. Neměj ale ani hrůzu z toho, že se učíš programovat dva roky a stále toho ještě spoustu neumíš. <strong>Učí se neustále i ti, kteří mají desítky let zkušeností.</strong> Nemá tedy smysl se tím příliš trápit. Najdi si vlastní tempo a způsob, jakým se dokážeš učit efektivně a jak tě to bude nejvíce bavit. Někdo leží v knihách, jiný si pouští návody na YouTube, další si zase nejraději zkouší věci prakticky. Cokoliv z toho je v pořádku, hlavně pokud ti to sedí.
+    </p>
+
+    <h3 id="myths" class="content__subsection-heading">Co nepotřebuješ</h3>
+    <p>
+      O programování <a href="{{ url_for('motivation') }}#myths">koluje řada mýtů</a>. Třeba že se o něj můžeš zajímat jen pokud jsi geniální na matematiku, že se to musí roky studovat na vysoké škole, že to není pro holky, že už je pro tebe pozdě začít. Jsou to pouze předsudky, nenech se jimi odradit! Raději si projdi <a href="{{ url_for('index') }}#stories">příběhy lidí, kteří se programovat naučili</a> a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
     </p>
   </div>
+  <p class="note list-note">
+    Rady v této kapitole volně vychází i z <a href="https://naucse.python.cz/2021/online-jaro/adm/intro/">úvodní lekce týmového online kurzu Petra Viktorina</a>, se svolením autora. Díky!
+  </p>
 </section>
 
 <section id="python" class="content__section more">
