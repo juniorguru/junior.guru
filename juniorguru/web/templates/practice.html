@@ -41,11 +41,8 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
     <h2 class="toc__heading content__target-heading">Obsah</h2>
     <ol class="toc__items">
       <li class="toc__item"><a class="toc__link" href="#exercises">Procvičuj</a></li>
-      <li class="toc__item"><a class="toc__link" href="#projects">Najdi si projekt</a>
-        <ol class="toc__subitems">
-          <li class="toc__subitem"><a class="toc__sublink" href="#projects-github">Osvoj si GitHub</a></li>
-        </ol>
-      </li>
+      <li class="toc__item"><a class="toc__link" href="#projects">Najdi si projekt</a></li>
+      <li class="toc__item"><a class="toc__link" href="#git-github">Osvoj si Git a GitHub</a></li>
       <li class="toc__item"><a class="toc__link" href="#mentors">Najdi si mentora</a></li>
       <li class="toc__item"><a class="toc__link" href="#hackathons">Zkus „hackathon“</a></li>
       <li class="toc__item"><a class="toc__link" href="#opensource">Zkus „Open Source“</a>
@@ -171,17 +168,67 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit
       <a href="#hackathons">hackathon</a> nebo <a href="#opensource">Open Source</a>.
     </p>
+  </div>
+</section>
 
-    <h3 class="content__subsection-heading" id="projects-github">Osvoj si GitHub</h3>
+<section id="git-github" class="content__section">
+  <h2 class="content__section-heading">Osvoj si Git a GitHub</h2>
+
+  <div class="tooltips">
     <p>
-      Dávej své pokusy a projekty na <a href="https://github.com/">GitHub</a>.
-      Čím více, tím lépe. Nejen že se naučíš lépe ovládat <a href="https://naucse.python.cz/course/pyladies/git/basics/">Git</a>
-      a GitHub, ale hlavně budeš moci svůj kód ukázat. Třeba když budeš potřebovat <a href="{{ url_for('learn') }}#help">pomoc na dálku</a>,
-      nebo až si budeš <a href="{{ url_for('candidate_handbook') }}">hledat práci</a>. Neboj se mít svůj kód veřejně
-      a ukazovat ho druhým! Tato obava je zbytečnou překážkou ve tvém rozjezdu.
-      Programování je o <a href="https://naucse.python.cz/course/pyladies/git/collaboration/">spolupráci</a>.
+      Git je <strong>nástroj, který ti umožňuje sledovat historii změn v kódu, ale kromě toho jej také sdílet s dalšími lidmi</strong>. Je to program, který nainstaluješ do svého počítače a pracuješ s ním v příkazové řádce, nebo jej ovládáš např. prostřednictvím svého editoru. Git se dnes používá skoro v každé firmě. I když jeho výhody nejvíc oceníš při práci ve dvou a více lidech, může ti pomoci i jako jednotlivci: Zálohovat kód svých projektů jinam, synchronizovat jej mezi vlastním počítačem a internetem, na dálku jej někomu ukázat.
+    </p>
+
+    <h3 id="github" class="content__subsection-heading">GitHub</h3>
+    <p>
+      <a href="https://github.com/">GitHub</a> je <strong>úložiště kódu a sociální síť pro programátory</strong>. Kód tam lze poslat pomocí Gitu. GitHub není jediným takovým úložištěm, další jsou např. GitLab nebo BitBucket, ale je nejoblíbenějším pro <a href="#opensource">Open Source</a>, takže tam najdeš nejvíce projektů a lidí.
+    </p>
+
+    <h3 id="showoff" class="content__subsection-heading">Neboj se ukázat kód!</h3>
+    <p>
+      U začátečníků rozhodně platí, že <strong>nemají co schovávat a měli by světu ukázat co nejvíce toho, co dokázali vytvořit, nebo co zkoušeli řešit</strong>. Můžeš tím jenom získat. GitHub je příhodné místo, kam všechny své projekty a pokusy nahrávat. Zároveň je to místo, kde mají své projekty i všichni ostatní a kde lze spolupracovat s lidmi z celého světa.
+    </p>
+    <p>
+      Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic neumíš. Neboj se mít svůj kód veřejně a ukazovat ho druhým! Tato obava je zbytečnou překážkou ve tvém rozjezdu. Programování je o spolupráci a <strong>GitHub je hřiště pro programátory, kde si každý experimentuje na čem chce.</strong> Čím více tam toho máš, tím lépe. Nejen že se naučíš lépe ovládat Git, ale hlavně budeš moci svůj kód ukázat, když budeš potřebovat <a href="{{ url_for('learn') }}#help">pomoc na dálku</a>. Pokud tě někdo straší, že si tvůj GitHub budou procházet náboráři, <a href="{{ url_for('candidate_handbook') }}#projects">nenech se tím zmást, je to trochu jinak</a>.
     </p>
   </div>
+
+  <h3 id="howto-git-github" class="content__subsection-heading">Jak se naučit Git a GitHub</h3>
+  <ul class="list">
+    <li>
+      <a href="https://www.youtube.com/watch?v=0v5K4GvK4Gs">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/youtube.com!watch!v=0v5K4GvK4Gs.jpg') }}" loading="lazy">
+        </div>
+        <h3>Git a GitHub od základov</h3>
+      </a>
+      <p>
+        YouTube kurz Gitu a GitHubu od <a href="http://robweb.sk">yablka</a>.
+      </p>
+    </li>
+    <li>
+      <a href="https://naucse.python.cz/course/pyladies/git/basics/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/naucse.python.cz!course!pyladies!git!basics.jpg') }}" loading="lazy">
+        </div>
+        <h3>Nauč se Python</h3>
+      </a>
+      <p>
+        Nauč se Git z nejznámějších českých materiálů pro Python.
+      </p>
+    </li>
+    <li>
+      <a href="https://missing.csail.mit.edu/2020/version-control/">
+        <div class="list-image">
+          <img src="{{ url_for('static', filename='images/screenshots/missing.csail.mit.edu!2020!version-control.jpg') }}" loading="lazy">
+        </div>
+        <h3>The Missing Semester</h3>
+      </a>
+      <p>
+        Git podle materiálů z americké univerzity MIT.
+      </p>
+    </li>
+  </ul>
 </section>
 
 <section id="mentors" class="content__section">
@@ -368,7 +415,7 @@ Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimáln
       <a href="https://cs.wikipedia.org/wiki/Otev%C5%99en%C3%BD_software">Open Source Software</a> (OSS) jsou projekty s kódem, na který se může kdokoliv podívat,
       a které lze většinou využívat zdarma &mdash; například <a href="https://cs.wikipedia.org/wiki/Linux">Linux</a>
       nebo <a href="https://cs.wikipedia.org/wiki/LibreOffice">LibreOffice</a>.
-      Pokud si dáš svůj projekt na <a href="https://github.com/">GitHub</a>, kde jeho kód mohou
+      Pokud si <a href="#github">dáš svůj projekt na GitHub</a>, kde jeho kód mohou
       číst další lidé, máš taky takový maličký Open Source.
       I tyto webové stránky <a href="https://github.com/honzajavorek/junior.guru">jsou Open Source</a>.
     </p>

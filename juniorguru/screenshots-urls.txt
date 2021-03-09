@@ -69,7 +69,6 @@ https://www.meetup.com/
 https://www.winwinjob.cz/
 https://www.welcometothejungle.com/
 https://www.cocuma.cz/
-https://junior.guru/learn/#english
 https://www.reactgirls.com/
 https://engeto.com/study-it-online
 https://www.greenfoxacademy.cz/stayathome-coding-camp
@@ -95,3 +94,6 @@ https://wordpress.com/
 https://zapier.com/
 https://ifttt.com/
 https://junior.guru/club/
+https://naucse.python.cz/course/pyladies/git/basics/
+https://missing.csail.mit.edu/2020/version-control/
+https://junior.guru/learn/#english

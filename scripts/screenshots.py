@@ -26,6 +26,7 @@ HIDDEN_ELEMENTS = [
     'ir-content .moustache',  # udacity.com
     'ir-moustache',  # udacity.com
     'ytd-popup-container',  # youtube.com
+    'iron-overlay-backdrop',  # youtube.com
     '[data-purpose*="smart-bar"]',  # udemy.com
     '[data-before-content*="advertisement"]',  # reddit.com
     '.butterBar',  # medium.com
