@@ -23,6 +23,12 @@ HANDBOOK_SUBNAV_TABS = [
     {'endpoint': 'candidate_handbook', 'name': 'Hledání práce', 'number': 3},
 ]
 
+CLUB_SUBNAV_TABS = [
+    {'endpoint': 'club', 'name': 'O klubu'},
+    {'endpoint': 'events', 'name': 'Akce'},
+    {'endpoint': 'membership', 'name': 'Pro členy'},
+]
+
 REGIONS = [
     # tech hubs
     {'id': 'praha', 'name': 'Praha', 'name_in': 'v Praze', 'type': 'tech_hub'},
@@ -82,16 +88,29 @@ def club():
         logos = Logo.listing()
     return render_template('club.html',
                            nav_active='club',
+                           subnav_tabs=CLUB_SUBNAV_TABS,
+                           subnav_active='club',
                            logos=logos,
                            members=members,
                            members_total_count=members_total_count,
                            thumbnail=thumbnail(title='Klub, který tě nastartuje'))
 
 
+@app.route('/events/')
+def events():
+    return render_template('events.html',
+                           nav_active='club',
+                           subnav_tabs=CLUB_SUBNAV_TABS,
+                           subnav_active='events',
+                           thumbnail=thumbnail(title='Klubové akce'))
+
+
 @app.route('/membership/')
 def membership():
     return render_template('membership.html',
                            nav_active='club',
+                           subnav_tabs=CLUB_SUBNAV_TABS,
+                           subnav_active='membership',
                            thumbnail=thumbnail(title='Rozcestník pro členy klubu'))
 
 
