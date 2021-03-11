@@ -16,7 +16,7 @@ CATEGORIES = [
     lambda t: 'tax' if 'VZP' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'marketing' if 'PrintAll' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'donations' if 'GITHUB SPONSORS' in t['message'] and t['amount'] > 0 else None,
-    lambda t: 'memberships' if 'SOLUTIONS' in t['message'] and t['amount'] > 0 else None,
+    lambda t: 'memberships' if 'STRIPE' in t['message'] and t['amount'] > 0 else None,
     lambda t: 'donations' if 'PAYPAL' in t['message'] and t['amount'] > 0 else None,
     lambda t: 'donations' if not t['variable_symbol'] and t['amount'] > 0 else None,
     lambda t: 'donations' if t['variable_symbol'] == '444222' and t['amount'] > 0 else None,
