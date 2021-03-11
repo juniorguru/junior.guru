@@ -57,6 +57,7 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
         <ol class="toc__subitems">
           <li class="toc__subitem"><a class="toc__sublink" href="#foreword">Předmluva</a></li>
           <li class="toc__subitem"><a class="toc__sublink" href="#thanks">Poděkování</a></li>
+          <li class="toc__subitem"><a class="toc__sublink" href="#yablko">Doprovodná videa</a></li>
         </ol>
       </li>
       <li class="toc__item"><a class="toc__link" href="#how-long">Jak dlouho to trvá</a></li>
@@ -175,6 +176,46 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
       díky <a href="{{ url_for('donate') }}">podpoře</a> více než {{ supporters_count }}&nbsp;přispěvatelů a <a href="{{ url_for('hire_juniors') }}#handbook">sponzorství firem</a>,
       jejichž loga tady můžeš vidět.
     </p>
+
+    <h3 id="yablko" class="content__subsection-heading">Doprovodná videa</h3>
+    <p>
+      Svérázný slovenský lektor <a href="https://www.youtube.com/channel/UC01guyOZpf40pUopBvdPwsg">yablko</a>, autor kurzů tvorby webu pro začátečníky, natočil sérii videí o hledání práce v&nbsp;IT. Skvěle doplňují tuto příručku, mrkni na ně!
+    </p>
+    <ul class="list">
+      <li>
+        <a href="https://www.youtube.com/watch?v=3-wsqhCK-wU&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_">
+          <div class="list-image">
+            <img src="{{ url_for('static', filename='images/screenshots/youtube.com!watch!v=3-wsqhCK-wU.jpg') }}" loading="lazy">
+          </div>
+          <h3>Kde najdeš první praxi</h3>
+        </a>
+        <p>
+          Jak získat úplně první praktickou zkušenost?
+        </p>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=cEYnF7G7KXI&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_">
+          <div class="list-image">
+            <img src="{{ url_for('static', filename='images/screenshots/youtube.com!watch!v=cEYnF7G7KXI.jpg') }}" loading="lazy">
+          </div>
+          <h3>Pohovor na juniora</h3>
+        </a>
+        <p>
+          Všeobecné praktické rady, které se mohou hodit i mimo IT.
+        </p>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=cN3V5J9Wd8Y&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_">
+          <div class="list-image">
+            <img src="{{ url_for('static', filename='images/screenshots/youtube.com!watch!v=cN3V5J9Wd8Y.jpg') }}" loading="lazy">
+          </div>
+          <h3>Pohovor na programátora</h3>
+        </a>
+        <p>
+          Jak vypadají pohovory konkrétně pro programátory?
+        </p>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -932,8 +973,6 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
       Rady v této podkapitole volně vychází mimo jiné i ze <a href="https://research.redhat.com/blogs_cpt/how-to-hack-your-cv-7-useful-tips-for-students-with-no-work-experience/">článku recruiterky Simony Liptákové</a>. Díky!
     </p>
 
-    <!-- YABLKO jak vystoupit z davu, vyrob CV na miru https://www.youtube.com/watch?v=IyaxCqoqeHo -->
-
     <h3 class="content__subsection-heading" id="non-tech-experience">Zkušenosti získané mimo IT</h3>
     <p>
       Otevřeně přiznej <strong>všechny zkušenosti, které máš.</strong> Že jsi původně zubařka? Pro firmu, která vytváří software pro nemocnice, může být i toto  zajímavá informace. A co si budeme povídat, málokdo viděl tolik <em><a href="https://en.wikipedia.org/wiki/Technical_debt">technical debt</a></em> a <em><a href="https://en.wikipedia.org/wiki/Legacy_code">legacy code</a></em> jako zubaři. Nepodceňuj, co z tvé minulosti může zaměstnavatele zaujmout. Tvoje zkušenosti mimo IT přispívají k tomu, kdo jsi. <strong>Firma může usoudit, že právě díky znalosti jiného oboru můžeš přispět něčím, co ještě nemají</strong>, ať už je to vědecký pohled, lidský přístup, nebo pečlivost účetního. Stalo se i to, že při pohovoru ocenili manažerské dovednosti prokázané při hraní online her (viz <a href="https://www.wired.com/2006/04/learn/">Wired</a>, <a href="https://money.cnn.com/2014/06/19/technology/world-of-warcraft-resume/index.html">CNN</a>). Pokud najdeš <strong>práci, která kombinuje tvoje předchozí zkušenosti a programování</strong>, budeš mít velký náskok před kýmkoliv jiným. Nepodceňuj své předchozí zkušenosti a neignoruj je &mdash; místo toho přemýšlej, jak je můžeš prodat! Ze stejného důvodu může mít smysl zmínit i koníčky.
@@ -1023,8 +1062,6 @@ Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
       {{ jobs_inline_macro(jobs, 3) }}
     </div>
   {% endif %}
-
-  <!-- YABLKO pracovni ponuky su slahnute https://www.youtube.com/watch?v=Ictmhp2uJu8 -->
 
   <div class="tooltips">
     <h3 class="content__subsection-heading" id="recruiters">Náboráři</h3>
