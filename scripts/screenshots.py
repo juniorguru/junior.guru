@@ -1,3 +1,4 @@
+import re
 from itertools import chain
 from multiprocessing import Pool
 from pathlib import Path
@@ -58,6 +59,8 @@ PAGERES_OPTIONS = [
 WIDTH = 640
 HEIGHT = 360
 
+YOUTUBE_URL_RE = re.compile(r'(youtube\.com.+watch\?.*v=|youtu\.be/)(\w+)')
+
 
 def parse_url(line):
     url = line.strip().rstrip('/')
@@ -69,6 +72,18 @@ def parse_url(line):
 def parse_urls(text):
     urls = (parse_url(line) for line in text.strip().splitlines())
     return list(set(urls))
+
+
+def filter_yt_urls(urls):
+    return [url for url in urls if YOUTUBE_URL_RE.search(url)]
+
+
+def parse_yt_id(url):
+    match = YOUTUBE_URL_RE.search(url)
+    try:
+        return match.group(2)
+    except AttributeError:
+        raise ValueError(f"URL {url} doesn't contain YouTube ID")
 
 
 def generate_batches(iterable, batch_size):
