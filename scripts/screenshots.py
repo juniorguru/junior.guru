@@ -60,7 +60,7 @@ PAGERES_OPTIONS = [
 WIDTH = 640
 HEIGHT = 360
 
-YOUTUBE_URL_RE = re.compile(r'(youtube\.com.+watch\?.*v=|youtu\.be/)(\w+)')
+YOUTUBE_URL_RE = re.compile(r'(youtube\.com.+watch\?.*v=|youtu\.be/)([\w\-\_]+)')
 
 
 def parse_url(line):
