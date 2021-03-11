@@ -4,6 +4,7 @@ from multiprocessing import Pool
 from pathlib import Path
 from subprocess import DEVNULL, PIPE, CalledProcessError, run
 
+import requests
 from PIL import Image
 
 
@@ -86,6 +87,13 @@ def parse_yt_id(url):
         raise ValueError(f"URL {url} doesn't contain YouTube ID")
 
 
+def download_yt_cover_image(url):
+    resp = requests.get(f"https://img.youtube.com/vi/{parse_yt_id(url)}/maxresdefault.jpg")
+    resp.raise_for_status()
+    path = SCREENSHOTS_DIR / f"youtube.com!watch!v={parse_yt_id(url)}.jpg"
+    path.write_bytes(resp.content)
+
+
 def generate_batches(iterable, batch_size):
     for i in range(0, len(iterable), batch_size):
         yield iterable[i:i + batch_size]
@@ -153,10 +161,15 @@ def edit_screenshot_override(path):
 
 
 if __name__ == '__main__':
-    print('[main] screenshots')
     SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
-
     urls = parse_urls(URLS_TXT.read_text())
+
+    print('[main] youtube cover images')
+    yt_urls = filter_yt_urls(urls)
+    urls = list(set(urls) - set(yt_urls))
+    Pool().map(download_yt_cover_image, yt_urls)
+
+    print('[main] web page screenshots')
     urls_batches = generate_batches(urls, PAGERES_BATCH_SIZE)
     Pool(PAGERES_WORKERS).map(create_screenshot, urls_batches)
 

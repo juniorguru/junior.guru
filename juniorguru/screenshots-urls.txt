@@ -97,3 +97,5 @@ https://junior.guru/club/
 https://naucse.python.cz/course/pyladies/git/basics/
 https://missing.csail.mit.edu/2020/version-control/
 https://junior.guru/learn/#english
+https://www.youtube.com/watch?v=0v5K4GvK4Gs
+https://www.youtube.com/watch?v=Xt7QIgzyxLk
