@@ -1,10 +1,11 @@
 import asyncio
 import os
+from pathlib import Path
 
 from requests import get
 
 
-DOWNLOAD_DIR = './_downloaded'
+DOWNLOAD_DIR = Path(__file__).parent.parent / 'backups'
 PROJECT_URL = 'https://circleci.com/api/v1.1/project/github/honzajavorek/junior.guru'
 
 
@@ -36,12 +37,12 @@ def fetch_url(build_num):
 
 def download_data(path, url):
     with open(path, 'wb') as f:
-        for chunk in get(url, stream = True).iter_content(chunk_size = 1024*1024*3):
+        for chunk in get(url, stream=True).iter_content(chunk_size=1024*1024*3):
             f.write(chunk)
 
 
 def fetch_artifacts(offset, loop):
-    os.makedirs(DOWNLOAD_DIR, exist_ok = True)
+    os.makedirs(DOWNLOAD_DIR, exist_ok=True)
     res = get(f'{PROJECT_URL}?limit=100&offset={offset}')
     jobs = res.json()
     fetch_and_nightly_jobs = filter(is_fetch_and_nightly, jobs)

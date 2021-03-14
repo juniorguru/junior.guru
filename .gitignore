@@ -80,6 +80,7 @@ google_service_account.json
 
 # Data backup
 backup.tar.gz
+/backups/
 
 # Web statics
 /juniorguru/web/static/*
