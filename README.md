@@ -17,7 +17,7 @@ According to [spectrum.chat/zeit](https://spectrum.chat/zeit/now/redirection-ema
     ```
     $ now dns add junior.guru '@' MX mx1.improvmx.com 10
     $ now dns add junior.guru '@' MX mx2.improvmx.com 20
-    $ now dns add junior.guru '@' TXT 'v=spf1 include:spf.improvmx.com ~all'
+    $ now dns add junior.guru '@' TXT 'v=spf1 include:spf.improvmx.com include:_spf.google.com ~all'
     ```
 1.  Fill the form at [ImprovMX](https://improvmx.com/)
 1.  Setup and verify the address in [MailChimp](https://mailchimp.com/)
