@@ -69,6 +69,7 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. P
       </li>
       <li class="toc__item"><a class="toc__link" href="#kids">Programování pro děti</a></li>
       <li class="toc__item"><a class="toc__link" href="#cnc">Programování CNC strojů</a></li>
+      <li class="toc__item"><a class="toc__link" href="#stories">Všechny motivační příběhy</a></li>
     </ol>
   </div>
 </nav>
@@ -627,6 +628,32 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. P
   <p>
     Tento web se zabývá vytvářením softwaru, tedy programů pro počítače nebo mobily. Pokud toužíš programovat CNC, mrkni se třeba <a href="https://factoryautomation.cz/jak-se-stat-cnc-programatorem-mame-6-tipu/">do magazínu Factory Automation</a>, kde k tomu něco mají. Jestliže chceš tvořit software, jsi tady správně.
   </p>
+</section>
+
+<section id="stories" class="content__section">
+  <h2 class="content__section-heading">Všechny motivační příběhy</h2>
+  <p>
+    Pod některými kapitolami můžeš narazit na motivační příbehy lidí jako ty, kteří se bez předchozí znalosti naučili programovat, nebo si dokonce v IT našli i práci. Tady jsou všechny pohromadě. Pokud víš o dalších, které tu nejsou, napiš prosím na {{ 'ahoj@junior.guru'|email_link }}.
+  </p>
+  <div class="stories stories--inline">
+    <ul class="stories__items">
+    {% for story in stories %}
+      <li class="stories__item">
+        <a class="stories__content" href="{{ story.url }}">
+          <div class="stories__text">
+            <h3 class="stories__title">{{ story.title }}</h3>
+            <small class="stories_details">
+              {{ story.publisher }}
+              &mdash;
+              {{ story.date.month }}/{{ story.date.year }}
+            </small>
+          </div>
+          <img class="stories__image" src="{{ url_for('static', filename=story.image_path) }}" width="100" loading="lazy" alt="Fotka obličeje">
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
 </section>
 
 <div class="content__section">

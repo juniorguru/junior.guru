@@ -66,10 +66,11 @@ def redirect(url):
 def index():
     with db:
         metrics = Job.aggregate_metrics()
+        stories = Story.listing()
     return render_template('index.html',
                            nav_tabs=None,
                            metrics=metrics,
-                           stories=Story.listing())
+                           stories=stories)
 
 
 # TODO finish this as a second step, after pivot. First
@@ -118,22 +119,26 @@ def membership():
 @app.route('/motivation/')
 def motivation():
     with db:
+        stories = Story.listing()
         stories_by_tags = Story.tags_mapping()
     return render_template('motivation.html',
                            nav_active='motivation',
                            subnav_tabs=HANDBOOK_SUBNAV_TABS,
                            subnav_active='motivation',
+                           stories=stories,
                            stories_by_tags=stories_by_tags,
                            thumbnail=thumbnail(title='Proč se učit programování'))
 
 
 @app.route('/learn/')
 def learn():
+    with db:
+        stories_count = len(Story.listing())
     return render_template('learn.html',
                            nav_active='motivation',
                            subnav_tabs=HANDBOOK_SUBNAV_TABS,
                            subnav_active='learn',
-                           stories_count=len(Story.listing()),
+                           stories_count=stories_count,
                            thumbnail=thumbnail(title='Jak se naučit programovat'))
 
 

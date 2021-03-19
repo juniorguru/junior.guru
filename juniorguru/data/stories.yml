@@ -4,6 +4,7 @@
   image_path: images/stories/tim-usa.jpg
   tags:
     - careerswitch
+    - age
 
 - url: https://cz.pycon.org/2018/programme/detail/talk/2/
   date: 2018-06-02
@@ -159,6 +160,7 @@
   tags:
     - women
     - student
+    - age
 
 - url: https://www.czechcrunch.cz/2021/03/programovani-ji-okouzlilo-tereza-vankova-ted-v-reactgirls-pomaha-dalsim-zenam-v-it-a-sama-to-dotahla-az-do-avastu/
   date: 2021-03-16
