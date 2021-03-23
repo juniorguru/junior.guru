@@ -115,16 +115,35 @@ function freezeFlask() {
   });
 }
 
-async function buildMkDocs() {
-  console.log('Overwriting Flask with MkDocs output!');
+
+function buildMkDocsFiles() {
   const proc = spawn('pipenv', ['run', 'mkdocs'], { stdio: 'inherit' });
-  await new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     proc.on('exit', (code) => { resolve(code); });
     proc.on('error', (error) => { reject(error); });
   });
-  console.log('Deleting sitemap.* and /search/');
-  return del(['public/mkdocs/sitemap.*', 'public/mkdocs/search/']);
 }
+
+
+function overwriteWithMkDocs() {
+  return gulp.src([
+    'public/mkdocs/**/*',
+    '!public/mkdocs/sitemap.*',
+    '!public/mkdocs/search',
+    '!public/mkdocs/search/**/*',
+  ])
+    .pipe(gulp.dest('public/'))
+    .pipe(through2.obj((chunk, enc, callback) => {
+      if (chunk.path.match(/\.[\w\.]+$/)) {
+        console.log(' 💥', chunk.path.replace(/^.*\/public\//, ''));
+      }
+      callback(null, chunk);
+    }));
+}
+
+
+const buildMkDocs = gulp.series(buildMkDocsFiles, overwriteWithMkDocs);
+
 
 function minifyHTML() {
   return gulp.src('public/**/*.html')
@@ -181,7 +200,7 @@ async function watchWeb() {
     'juniorguru/lib/**/*.py',
     'juniorguru/data/data.db',
     'juniorguru/data/*.yml',
-    'juniorguru/mkdocs_poc/**/*',
+    'juniorguru/mkdocs/**/*',
   ], buildWeb);
 }
 
