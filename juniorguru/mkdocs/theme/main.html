@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
-  </head>
-  <body>
-    {{ page.content }}
-  </body>
-</html>
+{# extends 'base.html' #}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}{{ page.content }}{% endblock %}
