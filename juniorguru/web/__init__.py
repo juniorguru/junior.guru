@@ -312,7 +312,6 @@ def robots():
 def inject_defaults():
     now = arrow.utcnow()
     return dict(nav_tabs=NAV_TABS,
-                year=now.year,
                 now=now,
                 handbook_release_at=arrow.get(2020, 9, 1),
                 thumbnail=thumbnail())
