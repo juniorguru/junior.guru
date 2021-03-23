@@ -108,11 +108,22 @@ function buildStatic() {
 
 function freezeFlask() {
   // also does everything 'buildStatic' does
-  return spawn('pipenv', ['run', 'freeze'], { stdio: 'inherit' });
+  const proc = spawn('pipenv', ['run', 'freeze'], { stdio: 'inherit' });
+  return new Promise((resolve, reject) => {
+    proc.on('exit', (code) => { resolve(code); });
+    proc.on('error', (error) => { reject(error); });
+  });
 }
 
-function buildMkDocs() {
-  return spawn('pipenv', ['run', 'mkdocs'], { stdio: 'inherit' });
+async function buildMkDocs() {
+  console.log('Overwriting Flask with MkDocs output!');
+  const proc = spawn('pipenv', ['run', 'mkdocs'], { stdio: 'inherit' });
+  await new Promise((resolve, reject) => {
+    proc.on('exit', (code) => { resolve(code); });
+    proc.on('error', (error) => { reject(error); });
+  });
+  console.log('Deleting sitemap.* and /search/');
+  return del(['public/mkdocs/sitemap.*', 'public/mkdocs/search/']);
 }
 
 function minifyHTML() {
