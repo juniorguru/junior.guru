@@ -27,6 +27,8 @@ for path in PUBLIC_DIR.glob('**/*.html'):
             continue
         if href.startswith('#'):
             href = f'{doc_name}{href}'
+        if href.startswith('.'):
+            href = f'/{path.parent.joinpath(href).resolve().relative_to(PUBLIC_DIR.absolute())}'
         links.append((doc_name, href))
 
 broken = False
