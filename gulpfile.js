@@ -27,7 +27,7 @@ function cleanStatic() {
   return del([
     'juniorguru/web/static/**/*',
     '!juniorguru/web/static/src',
-  ])
+  ]);
 }
 
 
@@ -142,7 +142,12 @@ function overwriteWithMkDocs() {
 }
 
 
-const buildMkDocs = gulp.series(buildMkDocsFiles, overwriteWithMkDocs);
+function cleanMkDocsFiles() {
+  return del(['public/mkdocs/']);
+}
+
+
+const buildMkDocs = gulp.series(buildMkDocsFiles, overwriteWithMkDocs, cleanMkDocsFiles);
 
 
 function minifyHTML() {
