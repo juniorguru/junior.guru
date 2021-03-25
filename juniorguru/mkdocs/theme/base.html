@@ -2,28 +2,28 @@
 <html lang="cs" data-updated-at="{{ now.to('Europe/Prague') }}">
   <head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
     <meta charset="utf-8">
-    <link rel="canonical" href="{{ request.url }}">
+    <link rel="canonical" href="{{ page.canonical_url }}">
     <title>
       {% block title %}Jak se naučit programovat a získat první práci v IT{% endblock %}
     </title>
 
     {% block meta %}
-      <script defer src="{{ url_for('static', filename='bundle.js') }}"></script>
+      <script defer src="{{ 'static/bundle.js'|url }}"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1316071-22"></script>
 
       <meta name="description" content="{% block description %}{% endblock %}">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="{{ url_for('static', filename='bundle.css') }}">
+      <link rel="stylesheet" href="{{ 'static/bundle.css'|url }}">
 
       <meta property="og:title" content="{{ self.title() }}">
       <meta property="og:type" content="website">
-      <meta property="og:url" content="{{ request.url }}">
-      <meta property="og:image" content="{{ url_for('static', filename=thumbnail, _external=True) }}">
+      <meta property="og:url" content="{{ page.canonical_url }}">
+      <meta property="og:image" content="{{ ('static/' + thumbnail|string)|url }}">
       <meta property="og:image:width" content="1200">
       <meta property="og:image:height" content="630">
 
       <meta name="twitter:card" content="photo">
-      <meta name="twitter:image" content="{{ url_for('static', filename=thumbnail, _external=True) }}">
+      <meta name="twitter:image" content="{{ ('static/' + thumbnail|string)|url }}">
       <meta name="twitter:creator" content="@honzajavorek">
     {% endblock meta %}
   </head>
@@ -35,8 +35,8 @@
           <div class="header__main">
             <div class="header__main-content">
               {% block header_content %}
-              <a class="header__logo" href="{{ url_for('index') }}">
-                <img class="header__logo-image" src="{{ url_for('static', filename='images/logo.svg') }}" alt="junior.guru">
+              <a class="header__logo" href="{{ '/'|url }}">
+                <img class="header__logo-image" src="{{ 'static/images/logo.svg'|url }}" alt="junior.guru">
               </a>
               {% endblock %}
               {% if nav_tabs %}
@@ -53,7 +53,7 @@
                           {% if tab.endpoint == nav_active %}
                             header__nav-tab-control--active
                           {% endif %}
-                        " href="{{ url_for(tab.endpoint) }}">
+                        " href="{{ (tab.endpoint + '/')|url }}">
                           {{- tab.name -}}
                         </a>
                         {{- '' -}}
@@ -69,7 +69,7 @@
               <ul class="header__subnav-tabs">
                 {%- for tab in subnav_tabs -%}
                   <li class="header__subnav-tab">
-                    <a class="header__subnav-tab-control{% if tab.endpoint == subnav_active %} header__subnav-tab-control--active{% endif %}" href="{{ url_for(tab.endpoint) }}">
+                    <a class="header__subnav-tab-control{% if tab.endpoint == subnav_active %} header__subnav-tab-control--active{% endif %}" href="{{ (tab.endpoint + '/')|url }}">
                       {% if tab.number is defined %}
                         <span class="header__subnav-tab-number">{{ tab.number }}</span>
                       {% endif %}
@@ -92,14 +92,14 @@
         <div class="footer">
           <div class="editorial">
             <p class="editorial__section">
-              Provozuje&nbsp;<a href="{{ url_for('donate') }}#about">Honza Javorek</a>,&nbsp;<a href="https://twitter.com/honzajavorek/">@honzajavorek</a>
+              Provozuje&nbsp;<a href="{{ 'donate/'|url }}#about">Honza Javorek</a>,&nbsp;<a href="https://twitter.com/honzajavorek/">@honzajavorek</a>
             </p>
             <p class="editorial__section">
-              <span class="editorial__item"><a href="{{ url_for('privacy') }}">Kontakt</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ url_for('press') }}">Pro média</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ url_for('privacy') }}">Ochrana osobních údajů</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ url_for('tos') }}">Obchodní podmínky</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ url_for('coc') }}">Pravidla chování</a></span>
+              <span class="editorial__item"><a href="{{ 'privacy/'|url }}">Kontakt</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'press/'|url }}">Pro média</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'privacy/'|url }}">Ochrana osobních údajů</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'tos/'|url }}">Obchodní podmínky</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'coc/'|url }}">Pravidla chování</a></span>
             </p>
           </div>
           {% block author %}{% endblock %}

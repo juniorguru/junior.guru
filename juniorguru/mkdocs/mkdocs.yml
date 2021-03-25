@@ -1,4 +1,5 @@
 site_name: junior.guru
+site_url: https://junior.guru/
 
 theme:
   name: null
@@ -8,3 +9,5 @@ plugins:
   - mkdocs-simple-hooks:
       hooks:
         on_env: "juniorguru.mkdocs.hooks:on_env"
+
+strict: true
