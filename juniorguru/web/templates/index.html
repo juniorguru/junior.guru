@@ -6,27 +6,20 @@ Klub pro začátečníky v programování, průvodce programováním pro samouky
 
 {% block body_modifier %} body--index{% endblock %}
 
-{% block header_modifier %} header--index{% endblock %}
-
-{% block header_content %}
-<h1 class="header__logo-heading">
-  {{ super() }}
-</h1>
-<p class="header__claim">
-  Klub pro začátečníky v&nbsp;programování
-</p>
-{% endblock %}
-
 {% block content %}
 <section class="billboard billboard-learn">
   <div class="billboard-wrapper">
     <div class="billboard-content">
       <div class="billboard-content-limiter">
-        <h2>I&nbsp;ty&nbsp;se&nbsp;můžeš naučit programovat</h2>
-        <p>Programování není jen pro&nbsp;ty, kdo chtějí pracovat v&nbsp;IT. Pomáhá vědcům, úředníkům nebo&nbsp;novinářům &mdash;&nbsp;a&nbsp;práci může usnadnit i&nbsp;tobě. Základy zvládneš za&nbsp;několik týdnů. Začni hned teď!</p>
+        <h2>I&nbsp;ty&nbsp;můžeš programovat</h2>
+        <p>
+          Programování je <strong>příležitost</strong>. Je to tvá výhoda v kanclu, laborce, redakci. Tvá šance během covidu, tvá kariéra po rodičovské.
+        </p>
+        <p>
+          A toto je tvůj <strong>klub</strong>. Najdeš tu informace, motivaci, rady. Kromě toho ale i kámoše, podporu, kontakty a pracovní nabídky.
+        </p>
         <div class="billboard-buttons">
-          <a href="{{ url_for('learn') }}" class="legacy-button">Návod jak začít</a>
-          <a href="{{ url_for('motivation') }}" class="legacy-button-secondary">Proč se to učit?</a>
+          <a href="{{ url_for('club') }}" class="legacy-button">Přidej se</a>
         </div>
       </div>
     </div>
@@ -34,6 +27,7 @@ Klub pro začátečníky v programování, průvodce programováním pro samouky
 </section>
 <hr class="hidden">
 
+{#
 <section class="billboard billboard-jobs">
   <div class="billboard-wrapper">
     <div class="billboard-content">
@@ -47,63 +41,60 @@ Klub pro začátečníky v programování, průvodce programováním pro samouky
         <p class="note"><a href="{{ url_for('hire_juniors') }}">Inzerujte na junior.guru</a> &mdash; <strong>od 0 Kč!</strong></p>
       </div>
     </div>
-    {#
     <div class="billboard-note">
-
       <p>
         Jak na tom bude IT po pandemii COVID-19? Přečti si,
         <a href="{{ url_for('motivation') }}#covid19">co způsobí koronavirus</a>.
         1.&nbsp;září tady vyšla <a href="{{ url_for('candidate_handbook') }}">příručka</a>,
         která tě provede hledáním první práce v&nbsp;IT. Než začneš, mrkni na ni!
-
       </p>
     </div>
-    #}
   </div>
 </section>
 <hr class="hidden">
+#}
 
-<section class="content__section how-it-works" id="how-it-works">
-  <h2>Jak to funguje?</h2>
-  <ol>
-    <li>
-      <a href="{{ url_for('learn') }}">
-        <h3>Nauč se&nbsp;základy</h3>
-        <p>
-          Ručně vybrané, nej&shy;e&shy;fek&shy;ti&shy;vněj&shy;ší
-          vý&shy;uko&shy;vé ma&shy;te&shy;ri&shy;á&shy;ly do startu pro samouky.
-        </p>
-      </a>
-    </li>
-    <li>
-      <a href="{{ url_for('practice') }}">
-        <h3>Získej praxi</h3>
-        <p>
-          Znáš základy? Získej a&shy;les&shy;poň mi&shy;ni&shy;mál&shy;ní
-          praxi, najdi men&shy;to&shy;ra, dál si roz&shy;ši&shy;řuj
-          zna&shy;los&shy;ti.
-        </p>
-      </a>
-    </li>
-    <li>
-      <a href="{{ url_for('candidate_handbook') }}">
-        <h3>Najdi práci</h3>
-        <p>
-          Znáš základy a máš praxi? Nastal okam&shy;žik zkusit své štestí
-          na pra&shy;cov&shy;ním trhu.
-        </p>
-      </a>
-    </li>
-  </ol>
-</section>
-<hr class="hidden">
-
-<section class="content__section content__section--wide join" id="join">
-  <h2>Přidej&nbsp;se</h2>
-  <ul>
-    <li class="join-club"><a href="{{ url_for('club') }}">Klub pro začátečníky</a></li>
-    <li class="join-newsletter"><a href="http://eepurl.com/gyG8Bb" target="_blank" rel="noopener">Nabídky práce do e-mailu</a></li>
-  </ul>
+<section class="content__section content__section--wide how-it-works" id="how-it-works">
+  <div class="how-it-works-content">
+    <h2>Začni s&nbsp;příručkou</h2>
+    <p>
+      Programování není jen pro&nbsp;ty, kdo chtějí pracovat v&nbsp;IT. Pomáhá vědcům, úředníkům nebo&nbsp;novinářům &mdash;&nbsp;a&nbsp;práci může usnadnit i&nbsp;tobě. Základy zvládneš za&nbsp;několik týdnů. Zároveň je&nbsp;dlouhodobě nedostatek programátorů. Samouk přitom může jejich běžnou práci zvládnout stejně dobře jako absolvent&nbsp;VŠ. Projdi si příručku, která tě tím vším provede od začátku až do konce.
+    </p>
+    <ol>
+      <li>
+        <div class="handbook-block">{#
+          <h3>Nauč se&nbsp;základy</h3>
+          <p>
+            Ručně vybrané, nej&shy;e&shy;fek&shy;ti&shy;vněj&shy;ší
+            vý&shy;uko&shy;vé ma&shy;te&shy;ri&shy;á&shy;ly do startu pro samouky.
+          </p>
+        </div>#}
+      </li>
+      <li>
+        <div class="handbook-block">{#
+          <h3>Získej praxi</h3>
+          <p>
+            Znáš základy? Získej a&shy;les&shy;poň mi&shy;ni&shy;mál&shy;ní
+            praxi, najdi men&shy;to&shy;ra, dál si roz&shy;ši&shy;řuj
+            zna&shy;los&shy;ti.
+          </p>
+        </div>#}
+      </li>
+      <li>
+        <div class="handbook-block">{#
+          <h3>Najdi práci</h3>
+          <p>
+            Znáš základy a máš praxi? Nastal okam&shy;žik zkusit své štestí
+            na pra&shy;cov&shy;ním trhu.
+          </p>
+        </div>#}
+      </li>
+    </ol>
+    <p class="button-compartment button-compartment--row">
+      <a class="button button--inverted button--spaced" href="{{ url_for('learn') }}">Návod jak začít</a>
+      <a class="button button--secondary button--inverted button--spaced" href="{{ url_for('motivation') }}">Proč se to učit?</a>
+    </p>
+  </div>
 </section>
 <hr class="hidden">
 

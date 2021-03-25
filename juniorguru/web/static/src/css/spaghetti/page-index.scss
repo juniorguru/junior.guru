@@ -8,7 +8,6 @@ body.body--index {
     padding: 0;
     display: block;
     margin-bottom: $whitespace-3;
-    text-align: center;
   }
 
   .hidden {
@@ -24,7 +23,7 @@ body.body--index {
 
   h2 {
     margin: 0;
-    margin-bottom: $whitespace / 2;
+    margin-bottom: $whitespace-2;
     padding: 0;
     background: 0;
     @include font-4;
@@ -34,6 +33,10 @@ body.body--index {
   .billboard-content {
     @include page-width;
     padding: (2 * $whitespace-3) $whitespace;
+  }
+
+  .billboard-buttons {
+    margin-top: $whitespace-2;
   }
 
   @media screen and (min-width: 650px) {
@@ -46,7 +49,11 @@ body.body--index {
     }
   }
 
-  p, .legacy-button, .legacy-button-secondary {
+  p {
+    margin-bottom: $whitespace-0;
+  }
+
+  .legacy-button, .legacy-button-secondary {
     margin-bottom: $whitespace-2;
   }
 
@@ -160,12 +167,9 @@ body.body--index {
 }
 
 .how-it-works {
-  @include page-width($padding: $whitespace);
-  margin-top: 2 * $whitespace-3;
-
-  h2 {
-    text-align: center;
-  }
+  background: $black;
+  color: $white;
+  padding: (2 * $whitespace-3) 0;
 
   ol, li {
     margin: 0;
@@ -195,95 +199,49 @@ body.body--index {
   li {
     margin-top: $whitespace-3;
     margin-bottom: $whitespace;
+    width: 100%;
 
     &:last-child {
       margin-bottom: 0;
     }
   }
 
-  li:nth-child(1)::before { background-image: url('./images/chick1.svg'); }
-  li:nth-child(2)::before { background-image: url('./images/chick2.svg'); }
-  li:nth-child(3)::before { background-image: url('./images/chick3.svg'); }
+  .how-it-works-content {
+    @include page-width($padding: $whitespace);
+  }
 
-  a {
+  li:nth-child(1)::before { background-image: url('./images/chick1-i.svg'); }
+  li:nth-child(2)::before { background-image: url('./images/chick2-i.svg'); }
+  li:nth-child(3)::before { background-image: url('./images/chick3-i.svg'); }
+
+  .handbook-block {
     display: block;
     position: relative;
     padding-left: $whitespace-3 + $whitespace;
     padding-right: $whitespace;
-    text-decoration: none;
+    color: $white;
   }
 
-  a::before {
+  /*
+  .handbook-block::before {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     width: $whitespace-3;
-    background: $black;
-    color: $white;
+    background: $white;
+    color: $black;
     text-align: center;
     font-weight: bold;
   }
 
-  a:hover, a:focus, a:active, a.active {
-    &::before {
-      background-color: $blue;
-    }
-  }
-
-  li:nth-child(1) a::before { content: "1"; }
-  li:nth-child(2) a::before { content: "2"; }
-  li:nth-child(3) a::before { content: "3"; }
+  li:nth-child(1) .handbook-block::before { content: "1"; }
+  li:nth-child(2) .handbook-block::before { content: "2"; }
+  li:nth-child(3) .handbook-block::before { content: "3"; }
+  */
 
   h3 {
     margin: 0;
     padding: 0;
-    text-decoration: underline;
-  }
-}
-
-.join {
-  background: $black;
-  color: $white;
-  text-align: center;
-  padding: ($whitespace-3 * 2);
-
-  h2 {
-    margin: 0 !important;
-  }
-
-  ul, li {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-
-  ul {
-    @include page-width;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-
-  li {
-    display: block;
-    margin-top: $whitespace-3;
-  }
-
-  li a::before {
-    content: "";
-    display: block;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 2 * $whitespace-3;
-    padding-top: 2 * $whitespace-3;
-  }
-
-  .join-club a::before { background-image: url('./images/club-i.svg'); }
-  .join-newsletter a::before { background-image: url('./images/mail-i.svg'); }
-
-  a {
-    display: block;
-    @include color-links($white, $white);
   }
 }

@@ -44,6 +44,23 @@ a.button--secondary,
   }
 }
 
+.button--inverted {
+  background: $white;
+
+  &, a, a:hover, a:focus, a:active {
+    color: $black;
+  }
+}
+
+.button--secondary.button--inverted {
+  background: transparent;
+  border-color: $white;
+
+  &, a, a:hover, a:focus, a:active {
+    color: $white !important;  // TODO use mixins etc. instead
+  }
+}
+
 .button--small {
   @include font;
   padding: ($whitespace-0 / 2) $whitespace;
@@ -68,8 +85,8 @@ a.button--small.button--secondary,
   white-space: nowrap;
 }
 
-.button--horizontally-spaced {
-  margin-right: $whitespace;
+.button--spaced {
+  margin: $whitespace / 2;
 }
 
 .button__note {

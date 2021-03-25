@@ -11,7 +11,10 @@
 }
 
 .button-compartment--row {
-  text-align: left;
+  // text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .button-compartment__note {

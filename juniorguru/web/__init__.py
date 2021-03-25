@@ -68,7 +68,7 @@ def index():
         metrics = Job.aggregate_metrics()
         stories = Story.listing()
     return render_template('index.html',
-                           nav_tabs=None,
+                           nav_tabs=NAV_TABS,
                            metrics=metrics,
                            stories=stories)
 

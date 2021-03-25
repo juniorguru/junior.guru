@@ -13,11 +13,6 @@
   background: $white;
 }
 
-.header--index {
-  position: relative;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
 .header__main {
   background: $yellow;
 }
@@ -32,12 +27,6 @@
   justify-content: space-between;
 }
 
-.header--index .header__main-content {
-  align-items: center;
-  flex-direction: column;
-  padding-bottom: ($whitespace / 4);
-}
-
 .header__logo {
   display: block;
   align-self: center;
@@ -49,22 +38,9 @@
   height: $logo-height;
 }
 
-.header--index .header__logo-image {
-  height: $logo-height-index;
-  line-height: $logo-height-index - 1rem;
-  vertical-align: center;
-}
-
 .header__logo-heading {
   padding: 0;
   margin: 0;
-}
-
-.header__claim {
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  @include font-0;
 }
 
 .header__navbar {
@@ -240,12 +216,6 @@ a.header__subnav-tab-control:active {
   display: none;
 }
 
-.header--index .header__divider {
-  display: block;
-  margin: 0;
-  background-color: $yellow;
-}
-
 @media screen and (min-width: 400px) {
   .header__nav-tab {
     margin-left: $whitespace;
@@ -253,20 +223,8 @@ a.header__subnav-tab-control:active {
 }
 
 @media screen and (min-width: 550px) {
-  .header--index .header__main-content {
-    flex-direction: row;
-  }
-
-  .header__claim,
   .header__nav-tabs {
     @include font;
-  }
-
-  .header__claim {
-    text-align: right;
-    font-weight: normal;
-    padding-left: 2 * $whitespace;
-    padding-right: $whitespace;
   }
 }
 
@@ -283,7 +241,6 @@ a.header__subnav-tab-control:active {
     margin-right: $whitespace;
   }
 
-  .header__claim,
   .header__nav-tabs {
     @include font-2;
   }
