@@ -48,7 +48,7 @@ extruct = "*"
 "discord.py" = "*"
 gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
-mkdocs-simple-hooks = {editable = true, ref = "patch-1", git = "https://github.com/honzajavorek/mkdocs-simple-hooks.git"}
+mkdocs-simple-hooks = "*"
 
 [dev-packages]
 pytest = "*"
