@@ -113,7 +113,7 @@ a.header__nav-tab-control--active.header__nav-tab-control--button {
 
 .header__subnav {
   background: $dots-black;
-  overflow-x: scroll;
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
