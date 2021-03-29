@@ -67,6 +67,14 @@ def test_spider_parse_job_remote():
     assert job.get('locations_raw') is None
 
 
+def test_spider_parse_job_posted_at_as_li():
+    response = HtmlResponse('https://example.com/example/',
+                            body=Path(FIXTURES_DIR / 'job_posted_at_as_li.html').read_bytes())
+    job = next(stackoverflow.Spider().parse_job(response))
+
+    assert job['posted_at'] == date.today() - timedelta(days=29)
+
+
 def test_clean_location():
     assert stackoverflow.clean_location('''
         \r\n                    –\r\nLeipzig, Deutschland
