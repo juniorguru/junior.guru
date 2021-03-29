@@ -167,9 +167,15 @@ Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušenost�
             {% for reg in regions|selectattr('type', 'eq', 'tech_hub') %}
               {% if loop.last %} nebo {% endif %}<a href="{{ url_for('jobs_region', region_id=reg.id) }}">{{ reg.name }}</a>{% if loop.last %}.{% else %}, {% endif %}
             {% endfor %}
+            V následujícím výpisu najdeš <a href="{{ url_for('jobs_remote') }}">nabídky práce na&nbsp;dálku</a>.
           </p>
         </div>
       </div>
+      <ul class="jobs">
+        {% for job in jobs_remote %}
+          {{ job_macro(job) }}
+        {% endfor %}
+      </ul>
     {% endif %}
   {% elif region %}
     <div class="engage">
@@ -182,9 +188,15 @@ Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušenost�
           {% for reg in regions|selectattr('type', 'eq', 'tech_hub') %}
             {% if loop.last %} nebo {% endif %}<a href="{{ url_for('jobs_region', region_id=reg.id) }}">{{ reg.name }}</a>{% if loop.last %}.{% else %}, {% endif %}
           {% endfor %}
+          V následujícím výpisu najdeš <a href="{{ url_for('jobs_remote') }}">nabídky práce na&nbsp;dálku</a>.
         </p>
       </div>
     </div>
+    <ul class="jobs">
+      {% for job in jobs_remote %}
+        {{ job_macro(job) }}
+      {% endfor %}
+    </ul>
   {% elif remote %}
     <div class="engage">
       <div class="engage__content">

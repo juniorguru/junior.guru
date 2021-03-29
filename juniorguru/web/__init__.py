@@ -212,11 +212,13 @@ def jobs_region(region_id):
     with db:
         metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
         jobs = Job.region_listing(region['name'])
+        jobs_remote = Job.remote_listing()
     return render_template('jobs_region.html',
                            nav_active='jobs',
                            subnav_tabs=JOBS_SUBNAV_TABS,
                            subnav_active='jobs',
                            jobs=jobs,
+                           jobs_remote=jobs_remote,
                            region=region,
                            regions=REGIONS,
                            metrics=metrics,
