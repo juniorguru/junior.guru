@@ -14,9 +14,8 @@ def main():
     Path(IMAGES_STORE).mkdir(exist_ok=True, parents=True)
 
     with db:
-        for model in [Job, JobError, JobDropped, SpiderMetric]:
-            model.drop_table()
-            model.create_table()
+        db.drop_tables([Job, JobError, JobDropped, SpiderMetric])
+        db.create_tables([Job, JobError, JobDropped, SpiderMetric])
 
     spider_names = [
         'juniorguru',

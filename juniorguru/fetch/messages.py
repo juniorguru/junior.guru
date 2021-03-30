@@ -4,13 +4,13 @@ import os
 import discord
 
 from juniorguru.lib.log import get_log
+from juniorguru.models import Message, Keyword, db
 
 
 log = get_log('messages')
 
 
 JUNIORGURU_GUILD_NUM = 769966886598737931
-EXCLUDE_CATEGORIES = ['coreskill']
 KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value in {
     r'pyladies': 'pyladies',
     r'coursera': 'coursera',
@@ -39,16 +39,32 @@ KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value
     r'beeit': 'beeit',
 }.items()}
 IS_RELEVANT_RE = re.compile('|'.join([keyword.pattern for keyword in KEYWORDS.keys()]), re.IGNORECASE)
+EXCLUDE_CATEGORIES_RE = re.compile('|'.join([
+    r'\bcoreskill\b',
+]), re.IGNORECASE)
 
 
 async def run(client):
+    with db:
+        db.drop_tables([Message, Keyword, Message.list_keywords.get_through_model()])
+        db.create_tables([Message, Keyword, Message.list_keywords.get_through_model()])
+
+        for keyword_name in set(KEYWORDS.values()):
+            Keyword.create(name=keyword_name)
+
     for channel in client.get_guild(JUNIORGURU_GUILD_NUM).text_channels:
-        if channel.category and channel.category.name.lower() in EXCLUDE_CATEGORIES:
+        if channel.category and EXCLUDE_CATEGORIES_RE.search(channel.category.name):
             continue
+        log.info(f'#{channel.name}')
         async for message in channel.history(limit=None, after=None).filter(is_relevant):
-            print(repr(channel.name),
-                  repr(sum([reaction.count for reaction in message.reactions])),
-                  repr(message.content))
+            keywords = {keyword for keyword_re, keyword in KEYWORDS.items()
+                        if keyword_re.search(message.content)}
+            obj = Message.create(id=message.id,
+                                 channel_name=channel.name,
+                                 reactions_count=sum([reaction.count for reaction in message.reactions]),
+                                 content=message.content,
+                                 list_keywords=Keyword.select().where(Keyword.name.in_(keywords)))
+            # obj.list_keywords.add(Keyword.select().where(Keyword.name.in_(keywords)))
 
 
 def is_relevant(message):
