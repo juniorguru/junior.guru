@@ -9,7 +9,7 @@ Se zřízením registrace v klientské sekci či odesláním objednávky na mé 
 ## Správce osobních údajů
 
 Junior Guru, stylizovaně „junior.guru“<br>
-Jan Javorek<br>
+**Jan Javorek**<br>
 fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodním rejstříku se sídlem Koněvova 31/27, 130 00 Praha<br>
 IČO: [74279858](http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0),<br>
 neplátce DPH,<br>
@@ -42,7 +42,7 @@ U osob odebírajících [newsletter](https://eepurl.com/gyG8Bb) je uchováván e
 
 ### c. osobní údaje členů digitálního klubu
 
-Jedná se o osobní údaje jednotlivých členů [klubu]({{ url_for('club') }}) dostupné z [klientské sekce](https://juniorguru.memberful.com/account/). tj. uživatelské jméno, e-mail, domovská země člena a dále údaje o platební kartě člena. K vašim zadaným osobním údajům má vzhledem k charakteru služeb přístup také platforma [Memberful](https://memberful.com/), [Discord](https://discord.com/), [Google Sheets](https://www.google.com/sheets/about/). K údajům o platební kartě má přístup pouze služba [Stripe](https://stripe.com), která zajišťuje bezpečnost a realizaci jednotlivých plateb, mě osobně známy nejsou.
+Jedná se o osobní údaje jednotlivých členů [klubu](/club/) dostupné z [klientské sekce](https://juniorguru.memberful.com/account/). tj. uživatelské jméno, e-mail, domovská země člena a dále údaje o platební kartě člena. K vašim zadaným osobním údajům má vzhledem k charakteru služeb přístup také platforma [Memberful](https://memberful.com/), [Discord](https://discord.com/), [Google Sheets](https://www.google.com/sheets/about/). K údajům o platební kartě má přístup pouze služba [Stripe](https://stripe.com), která zajišťuje bezpečnost a realizaci jednotlivých plateb, mě osobně známy nejsou.
 
 ### d. údaje o společnostech a individuální objednávky
 

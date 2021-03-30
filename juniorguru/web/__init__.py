@@ -256,11 +256,6 @@ def donate():
                            thumbnail=thumbnail(title='Pošli LOVE'))
 
 
-@app.route('/privacy/')
-def privacy():
-    return render_template('privacy.html')
-
-
 @app.route('/tos/')
 def tos():
     return render_template('tos.html')

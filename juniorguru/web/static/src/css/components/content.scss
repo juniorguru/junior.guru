@@ -2,8 +2,12 @@
   padding-top: $whitespace-3 * 3;
 }
 
-.content__section {
+.content__section,
+.content--mkdocs {
   @include page-width($padding: 1rem);
+}
+
+.content__section {
   margin-bottom: $whitespace-3 * 2;
 }
 
@@ -23,11 +27,22 @@
   display: none;
 }
 
-.content__section-heading {
+.content--mkdocs h1 {
+  text-align: center;
+  margin-bottom: $whitespace-3 * 2;
+}
+
+.content__section-heading,
+.content--mkdocs h2 {
   border-bottom: $border-width solid $yellow;
 }
 
-.content__subsection-heading {
+.content--mkdocs h2 {
+  margin-top: $whitespace-3 * 2;
+}
+
+.content__subsection-heading,
+.content--mkdocs h3 {
   margin-top: $whitespace-2;
 }
 
