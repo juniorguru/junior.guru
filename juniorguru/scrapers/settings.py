@@ -64,12 +64,13 @@ EXTENSIONS = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+   'juniorguru.scrapers.pipelines.description_parser.Pipeline': 50,  # experimenting with Mila and ML
    'juniorguru.scrapers.pipelines.required_fields_filter.Pipeline': 100,
    'juniorguru.scrapers.pipelines.short_description_filter.Pipeline': 200,
    'juniorguru.scrapers.pipelines.broken_encoding_filter.Pipeline': 300,
    'juniorguru.scrapers.pipelines.language_parser.Pipeline': 350,
    'juniorguru.scrapers.pipelines.language_filter.Pipeline': 400,
-   'juniorguru.scrapers.pipelines.description_parser.Pipeline': 500,
+   # 'juniorguru.scrapers.pipelines.description_parser.Pipeline': 500,
    'juniorguru.scrapers.pipelines.sections_parser.Pipeline': 500,
    'juniorguru.scrapers.pipelines.features_parser.Pipeline': 600,
    'juniorguru.scrapers.pipelines.junior_rank.Pipeline': 650,

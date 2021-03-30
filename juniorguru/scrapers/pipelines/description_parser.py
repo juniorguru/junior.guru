@@ -55,10 +55,11 @@ SENTENCE_END_RE = re.compile(r'''
 
 class Pipeline():
     def process_item(self, item, spider):
-        description_text = extract_text(item['description_html'])
-        item['description_text'] = description_text
-        item['description_sentences'] = split_sentences(description_text)
-        # TODO item['description_words'] = split_words(description_text, item['lang'])
+        if item.get('description_html'):  # this line added for Mila and ML experiements
+            description_text = extract_text(item['description_html'])
+            item['description_text'] = description_text
+            item['description_sentences'] = split_sentences(description_text)
+            # TODO item['description_words'] = split_words(description_text, item['lang'])
         return item
 
 

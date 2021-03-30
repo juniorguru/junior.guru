@@ -88,6 +88,7 @@ class MonitoringExtension():
         response_data = get_response_data(spider, response.url)
 
         def operation():
+            item.setdefault('id', create_id(item))  # added for Mila and ML experiments
             JobDropped.create(type=exception.__class__.__name__,
                               reason=str(exception),
                               item=item,
