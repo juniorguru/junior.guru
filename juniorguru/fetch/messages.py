@@ -59,12 +59,11 @@ async def run(client):
         async for message in channel.history(limit=None, after=None).filter(is_relevant):
             keywords = {keyword for keyword_re, keyword in KEYWORDS.items()
                         if keyword_re.search(message.content)}
-            obj = Message.create(id=message.id,
-                                 channel_name=channel.name,
-                                 reactions_count=sum([reaction.count for reaction in message.reactions]),
-                                 content=message.content,
-                                 list_keywords=Keyword.select().where(Keyword.name.in_(keywords)))
-            # obj.list_keywords.add(Keyword.select().where(Keyword.name.in_(keywords)))
+            Message.create(id=message.id,
+                           channel_name=channel.name,
+                           reactions_count=sum([reaction.count for reaction in message.reactions]),
+                           content=message.content,
+                           list_keywords=Keyword.select().where(Keyword.name.in_(keywords)))
 
 
 def is_relevant(message):
