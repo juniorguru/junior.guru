@@ -21,6 +21,12 @@ According to [spectrum.chat/zeit](https://spectrum.chat/zeit/now/redirection-ema
     ```
 1.  Fill the form at [ImprovMX](https://improvmx.com/)
 1.  Setup and verify the address in [MailChimp](https://mailchimp.com/)
+1.  [Authenticate in MailChimp](https://mailchimp.com/help/verify-a-domain/) and add respective DNS records:
+
+    ```
+    $ now dns add k2._domainkey.junior.guru '@' CNAME 'dkim2.mcsv.net'
+    $ now dns add k3._domainkey.junior.guru '@' CNAME 'dkim3.mcsv.net'
+    ```
 
 ## Setting up Google Drive credentials
 
@@ -51,6 +57,18 @@ The service account's email address needs to be manually invited wherever it sho
     ```
 
 By default, sending is not enabled. On production or when trying to send e-mails from localhost an environment variable `SMTP_ENABLED` needs to be set to something truthy.
+
+## Setting up logo.junior.guru
+
+The [logo.junior.guru](https://logo.junior.guru/) has [it's own repo](https://github.com/honzajavorek/logo.junior.guru/) and runs on GitHub Pages. Set it up in DNS:
+
+```
+$ now dns add logo.junior.guru '@' CNAME 'honzajavorek.github.io'
+```
+
+## Verify Google Search Console
+
+In [Google Search Console](https://support.google.com/webmasters/answer/9008080?hl=en) click verify and set a TXT DNS record.
 
 ## Logging
 
