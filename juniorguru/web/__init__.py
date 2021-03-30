@@ -256,11 +256,6 @@ def donate():
                            thumbnail=thumbnail(title='Pošli LOVE'))
 
 
-@app.route('/tos/')
-def tos():
-    return render_template('tos.html')
-
-
 @app.route('/coc/')
 def coc():
     return render_template('coc.html')
