@@ -73,14 +73,6 @@ def index():
                            stories=stories)
 
 
-# TODO finish this as a second step, after pivot. First
-# there's gonna be just the selling page and if the club
-# works, let's redesign header and the rest of the site.
-#@app.route('/club-index/')
-#def club_index():
-#    return render_template('club_index.html')
-
-
 @app.route('/club/')
 def club():
     with db:
