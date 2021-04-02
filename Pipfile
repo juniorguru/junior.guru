@@ -49,6 +49,7 @@ extruct = "*"
 gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
 mkdocs-simple-hooks = "*"
+aiopath = "*"
 
 [dev-packages]
 pytest = "*"
