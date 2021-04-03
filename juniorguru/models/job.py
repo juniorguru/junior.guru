@@ -64,6 +64,7 @@ class Job(BaseModel):
     lang = CharField()
     description_html = TextField()
     junior_rank = IntegerField(index=True)
+    magic_is_junior = BooleanField(null=True)
     sort_rank = IntegerField(index=True)
     pricing_plan = CharField(default='community', choices=[
         ('community', None),
@@ -239,12 +240,14 @@ def get_employment_types_tags(types):
 
 
 class JobDropped(BaseModel):
+    id = IntegerField(null=True)
     type = CharField()
     reason = CharField()
     source = CharField()
     response_url = CharField()
     response_backup_path = CharField(null=True)
     item = JSONField()
+    magic_is_junior = BooleanField(null=True)
 
     @classmethod
     def admin_listing(cls, types=None):

@@ -10,6 +10,7 @@ from juniorguru.fetch.transactions import main as fetch_transactions
 from juniorguru.fetch.proxies import main as fetch_proxies
 from juniorguru.fetch.members import main as fetch_members
 from juniorguru.fetch.topics import main as fetch_topics
+from juniorguru.lib.magic import do_magic
 
 
 def main():
@@ -28,6 +29,9 @@ def main():
     fetch_jobs()  # depends on proxies
     fetch_metrics()  # depends on jobs & logos
     fetch_newsletter_mentions()  # depends on jobs
+
+    # cast magic
+    do_magic()  # depends on jobs
 
 
 if __name__ == '__main__':
