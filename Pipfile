@@ -50,6 +50,7 @@ gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
 mkdocs-simple-hooks = "*"
 aiopath = "*"
+mkdocs-macros-plugin = "*"
 
 [dev-packages]
 pytest = "*"
