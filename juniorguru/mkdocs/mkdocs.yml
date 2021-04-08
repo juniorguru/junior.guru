@@ -7,8 +7,5 @@ theme:
 
 plugins:
   - macros
-  # - mkdocs-simple-hooks:
-  #     hooks:
-  #       on_env: "juniorguru.mkdocs.hooks:on_env"
 
 strict: true

@@ -48,7 +48,6 @@ extruct = "*"
 "discord.py" = "*"
 gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
-mkdocs-simple-hooks = "*"
 aiopath = "*"
 mkdocs-macros-plugin = "*"
 
