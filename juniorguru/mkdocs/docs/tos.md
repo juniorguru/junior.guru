@@ -2,22 +2,12 @@
 title: Obchodní podmínky junior.guru
 ---
 
-<!--
-
-TODO https://github.com/fralau/mkdocs_macros_plugin
-
 <header class="intro">
   <h1 class="intro__title">Obchodní podmínky</h1>
   <p class="intro__lead">
     Digitální předplatné a podmínky přístupu do diskuzního klubu junior.guru
   </p>
 </header>
-
--->
-
-# Obchodní podmínky
-
-Digitální předplatné a podmínky přístupu do diskuzního klubu junior.guru
 
 Abych vám mohl kvalitně a efektivně poskytovat své služby, nachystal jsem pro vás tyto obchodní podmínky. Umožňují mi určit část obsahu kupních smluv, které by jinak bylo těžké podepisovat s každým kupujícím zvlášť. Přitom platí, že pokud obchodní podmínky stanoví něco jiného než smlouva, má smlouva vždy přednost. Tyto podmínky jsou platné a účinné od **1\. 2. 2021**.
 
