@@ -58,7 +58,7 @@ def admin_jobs_dropped():
 @app.route('/a/jobs/dropped/unexpected/')
 def admin_jobs_dropped_unexpected():
     with db:
-        jobs_dropped = JobDropped.admin_listing(['MissingRequiredFields', 'ShortDescription'])
+        jobs_dropped = JobDropped.admin_listing(['MissingRequiredFields', 'ShortDescription', 'MissingIdentifyingField'])
     return render_template('admin_jobs_dropped.html',
                            title='Podezřele zahozené nabídky',
                            jobs_dropped=models_to_dicts(jobs_dropped))
