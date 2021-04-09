@@ -86,8 +86,10 @@ def admin_jobs_dropped_all():
 def admin_jobs_errors():
     with db:
         spider_metrics = SpiderMetric.as_dict()
+        spider_errors = models_to_dicts(SpiderMetric.select().where(SpiderMetric.name == 'log_count/ERROR'))
         jobs_errors = models_to_dicts(JobError.admin_listing())
     return render_template('admin_jobs_errors.html', spider_metrics=spider_metrics,
+                                                     spider_errors=spider_errors,
                                                      jobs_errors=jobs_errors)
 
 
