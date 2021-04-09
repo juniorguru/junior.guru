@@ -8,6 +8,9 @@ from juniorguru.lib.md import md
 
 
 class Job(Item):
+    # by default set by the first pipeline, but can be overriden in the spider
+    id = Field(required=True)
+
     # set by spiders
     posted_at = Field(required=True)
     title = Field(required=True)
@@ -37,7 +40,6 @@ class Job(Item):
 
 
 class JuniorGuruJob(Job):
-    id = Field(required=True)
     link = Field()
     email = Field(required=True)
     pricing_plan = Field(required=True)

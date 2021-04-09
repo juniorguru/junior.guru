@@ -6,7 +6,6 @@ from scrapy import signals
 
 from juniorguru.lib.log import get_log
 from juniorguru.models import Job, JobDropped, JobError, SpiderMetric, db, retry_when_db_locked
-from juniorguru.scrapers.pipelines.database import create_id
 
 
 log = get_log(__name__)
@@ -88,7 +87,6 @@ class MonitoringExtension():
         response_data = get_response_data(spider, response.url)
 
         def operation():
-            item.setdefault('id', create_id(item))  # added for Mila and ML experiments
             JobDropped.create(type=exception.__class__.__name__,
                               reason=str(exception),
                               item=item,
@@ -101,7 +99,7 @@ class MonitoringExtension():
         response_data = get_response_data(spider, response.url)
 
         def operation():
-            job = Job.get_by_id(item.get('id') or create_id(item))
+            job = Job.get_by_id(item['id'])
             job.item = item
             for attr, value in response_data.items():
                 setattr(job, attr, value)

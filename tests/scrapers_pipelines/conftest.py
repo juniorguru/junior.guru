@@ -7,6 +7,7 @@ from scrapy import Spider
 @pytest.fixture
 def item():
     return dict(
+        id='44df50581c3a0c67657c40a587c22a19e10d414b593fcfaea5b01ae9',
         posted_at=date.today(),
         expires_at=date.today() + timedelta(days=30),
         title='Junior Python Engineer',
