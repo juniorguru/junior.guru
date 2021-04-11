@@ -20,16 +20,16 @@ def read_data_job():
 
 
 def read_data_jobdropped():
-    jobsdropped = JobDropped.select(JobDropped.id, JobDropped.item).where(JobDropped.type == 'NotEntryLevel')
+    jobsdropped = JobDropped.select(JobDropped.id, JobDropped.item).where(JobDropped.type == 'NotEntryLevel').execute()
     df = map_jobs_to_df(jobsdropped)
 
     return jobsdropped, df
 
 
 def map_jobs_to_df(jobs):
-    df = pd.DataFrame({'id': [], 'text': [], 'lang': [], 'link': []})
-    df = df.append(list(map(lambda job: {'id': job.id, 'text': job.item['description_text'], 'lang': job.item['lang'],
-                                         'link': job.item.get('link', '')}, jobs)))
+    df = pd.DataFrame({'text': [], 'lang': [], 'link': []})
+    df = df.append([{'text': job.item['description_text'], 'lang': job.item['lang'],
+                     'link': job.item.get('link', '')} for job in jobs])
 
     return df
 
@@ -63,4 +63,3 @@ def do_magic():
         update_jobs(jobsdropped, predictions_jobsdropped)
 
     # TODO Predict by languages
-    return

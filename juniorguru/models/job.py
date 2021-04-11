@@ -240,7 +240,6 @@ def get_employment_types_tags(types):
 
 
 class JobDropped(BaseModel):
-    id = IntegerField(null=True)
     type = CharField()
     reason = CharField()
     source = CharField()
