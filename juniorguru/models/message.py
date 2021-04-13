@@ -14,10 +14,11 @@ class Keyword(BaseModel):
     name = CharField(primary_key=True)
     list_messages = ManyToManyField(Message, backref='list_keywords')
 
-    @classmethod
-    def messages_count(cls):
-        return cls.list_messages().count()
+    def messages_count(self):
+        return self.list_messages.count()
 
-    @classmethod
-    def messages_listing(cls):
-        return cls.list_messages().order_by(Message.reactions_count.desc())
+    def messages_listing(self):
+        return self.list_messages.order_by(Message.reactions_count.desc())
+
+    def channels_listing(self):
+        return sorted({message.channel_name for message in self.list_messages})

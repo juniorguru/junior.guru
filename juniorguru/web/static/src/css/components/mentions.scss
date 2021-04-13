@@ -1,0 +1,8 @@
+.mentions {
+  max-width: 80rem;
+  padding: 0 $whitespace;
+  margin: 0 auto ($whitespace-3 * 2) auto;
+  @include font-3;
+  font-weight: bold;
+  text-align: center;
+}

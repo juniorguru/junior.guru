@@ -22,6 +22,7 @@ KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value
     r'egghead': 'egghead',
     r'engeto': 'engeto',
     r'czechitas': 'czechitas',
+    r'datov\w+ akademi\w+': 'czechitas',
     r'green ?fox': 'greenfox',
     r'codingbootcamp\.cz': 'codingbootcamppraha',
     r'coding ?boo?tcamp pra(ha|gue)': 'codingbootcamppraha',
