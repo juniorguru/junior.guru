@@ -1,5 +1,6 @@
 ---
 title: Zkušenosti s Czechitas
+topic: Czechitas
 messages_keyword: czechitas
 ---
 

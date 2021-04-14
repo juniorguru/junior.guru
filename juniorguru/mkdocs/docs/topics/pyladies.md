@@ -1,5 +1,6 @@
 ---
 title: Zkušenosti s PyLadies
+topic: PyLadies
 messages_keyword: pyladies
 ---
 
