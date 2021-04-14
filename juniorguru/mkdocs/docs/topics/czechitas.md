@@ -1,11 +1,10 @@
 ---
 title: Zkušenosti s Czechitas
-topic: Czechitas
 messages_keyword: czechitas
 ---
 
 <header class="intro">
-  <h1 class="intro__title">Zjisti vše o Czechitas</h1>
+  <h1 class="intro__title">Recenze na Czechitas</h1>
   <p class="intro__lead">
     Hledáš někoho, kdo má zkušenosti s Czechitas? Má smysl hlásit se na jejich kurzy? Vyplatí se datová akademie?
     <br><br>

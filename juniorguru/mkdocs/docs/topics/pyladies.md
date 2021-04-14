@@ -1,11 +1,10 @@
 ---
 title: Zkušenosti s PyLadies
-topic: PyLadies
 messages_keyword: pyladies
 ---
 
 <header class="intro">
-  <h1 class="intro__title">Zjisti vše o kurzech PyLadies</h1>
+  <h1 class="intro__title">Recenza na kurzy PyLadies</h1>
   <p class="intro__lead">
     Hledáš někoho, kdo má zkušenosti s PyLadies? Jsou jejich materiály kvalitní? Má smysl hlásit se na jejich začátečnický kurz? Jak si poradit s projekty?
     <br><br>

@@ -17,6 +17,7 @@ KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value
     r'coursera': 'coursera',
     r'codea?cademy': 'codecademy',
     r'edx': 'edx',
+    r'cs50': 'cs50',
     r'pluralsight': 'pluralsight',
     r'udacity': 'udacity',
     r'udemy': 'udemy',
