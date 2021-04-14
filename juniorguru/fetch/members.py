@@ -3,6 +3,7 @@ import os
 from urllib.parse import urlparse
 from pathlib import Path
 from io import BytesIO
+import asyncio
 
 import discord
 from PIL import Image
@@ -64,7 +65,7 @@ def main():
 
     # oauth permissions: manage guild
     intents = discord.Intents(guilds=True, members=True)
-    client = Client(intents=intents)
+    client = Client(loop=asyncio.new_event_loop(), intents=intents)
 
     exc = None
     def exc_handler(loop, context):

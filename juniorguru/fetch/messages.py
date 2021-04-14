@@ -1,5 +1,6 @@
 import re
 import os
+import asyncio
 
 import discord
 
@@ -83,7 +84,7 @@ def main():
 
     # oauth permissions: manage guild
     intents = discord.Intents(guilds=True, members=True)
-    client = Client(intents=intents)
+    client = Client(loop=asyncio.new_event_loop(), intents=intents)
 
     exc = None
     def exc_handler(loop, context):
