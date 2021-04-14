@@ -52,8 +52,10 @@
           loc: {{ job_dropped.item.location_raw|default('?') }},
           rmt: {% if job_dropped.item.remote %}👍{% else %}👎{% endif %},
           rmt_reg: {{ job_dropped.item.remote_region_raw|default('?') }}
-          &mdash;
-          {{ job_dropped.item.posted_at|to_datetime|ago }}
+          {% if job_dropped.item.posted_at %}
+            &mdash;
+            {{ job_dropped.item.posted_at|to_datetime|ago }}
+          {% endif %}
         </p>
         {% if job_dropped.item.features %}
         <details>
