@@ -74,11 +74,11 @@
         },
         "aiopath": {
             "hashes": [
-                "sha256:b3a38d5cdf0f03bc9bc44750733d7127299bbe16cfee8c4b652fa67d3b26dad6",
-                "sha256:c64561f4fa9cf06bfe88535b952517eac29cb739a29e3a710d0a709b07f40f89"
+                "sha256:82f4c78c5396dbcec3259992ad311d4144004bf0dec007feea371cd0a892d140",
+                "sha256:909423097433e36ee321da9f8949fba3c478b3d8e4ec4d871cd58a3789d9bc82"
             ],
             "index": "pypi",
-            "version": "==0.5.3"
+            "version": "==0.5.4"
         },
         "arrow": {
             "hashes": [
