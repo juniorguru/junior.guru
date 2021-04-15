@@ -3,12 +3,11 @@ import os
 from urllib.parse import urlparse
 from pathlib import Path
 from io import BytesIO
-import asyncio
 
-import discord
 from PIL import Image
 
 from juniorguru.lib.log import get_log
+from juniorguru.lib import discord_sync
 from juniorguru.models import Member, db
 
 
@@ -21,7 +20,7 @@ AVATARS_PATH = IMAGES_PATH / 'avatars'
 SIZE_PX = 60
 
 
-async def run(client):
+async def task(client):
     AVATARS_PATH.mkdir(exist_ok=True, parents=True)
     for path in AVATARS_PATH.glob('*'):
         path.unlink()
@@ -52,33 +51,8 @@ def is_default_avatar(url):
     return bool(re.search(r'/embed/avatars/\d+\.', url))
 
 
-
 def main():
-    class Client(discord.Client):
-        async def on_ready(self):
-            await self.wait_until_ready()
-            await run(self)
-            await self.close()
-
-        async def on_error(self, event, *args, **kwargs):
-            raise
-
-    # oauth permissions: manage guild
-    intents = discord.Intents(guilds=True, members=True)
-    client = Client(loop=asyncio.new_event_loop(), intents=intents)
-
-    exc = None
-    def exc_handler(loop, context):
-        nonlocal exc
-        exc = context.get('exception')
-        loop.default_exception_handler(context)
-        loop.stop()
-
-    client.loop.set_exception_handler(exc_handler)
-    client.run(os.environ['DISCORD_API_KEY'])
-
-    if exc:
-        raise exc
+    discord_sync.run(task, os.environ['DISCORD_API_KEY'], intents=['guilds', 'members'])
 
 
 if __name__ == '__main__':

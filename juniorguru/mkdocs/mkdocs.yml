@@ -3,9 +3,10 @@ site_url: https://junior.guru/
 
 theme:
   name: null
-  custom_dir: 'theme/'
+  custom_dir: theme/
 
 plugins:
-  - macros
+  - macros:
+      include_dir: juniorguru/mkdocs/components/
 
 strict: true

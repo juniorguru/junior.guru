@@ -1,47 +1,17 @@
 ---
 title: Zkušenosti s PyLadies
-messages_keyword: pyladies
+topic_name: pyladies
 ---
+{% from 'topic.html' import intro, mentions, members_roll with context %}
 
-<header class="intro">
-  <h1 class="intro__title">Recenza na kurzy PyLadies</h1>
-  <p class="intro__lead">
-    Hledáš někoho, kdo má zkušenosti s PyLadies? Jsou jejich materiály kvalitní? Má smysl hlásit se na jejich začátečnický kurz? Jak si poradit s projekty?
-    <br><br>
-    Jsme klub pro úplné začátečníky v programování, kde se přesně takové věci probírají. Dostaneš informace, motivaci, rady. Kromě toho ale i parťáky, podporu, kontakty a pracovní nabídky.
-  </p>
-</header>
+{% call intro('Recenze na PyLadies') %}
+  Hledáš někoho, kdo má zkušenosti s PyLadies? Jsou jejich materiály kvalitní? Má smysl hlásit se na jejich začátečnický kurz? Jak si poradit s projekty?
+{% endcall %}
 
-<p class="mentions">
-  V klubu je {{ messages_count }} zmínek o PyLadies. Poradíme ti!
-</p>
+{{ mentions(topic, 'PyLadies') }}
 
-<!--
-<ul class="numbers">
-  <li data-annotate><strong>{{ messages_count }}</strong> <small>zmínek o PyLadies</small></li>
-  <li><strong>{{ members_total_count }}</strong> <small>členů v klubu</small></li>
-  <li><strong>{{ jobs_count }}</strong> <small>nabídek práce</small></li>
-</ul>
--->
+{{ members_roll(members, members_total_count) }}
 
-<div class="members">
-  <ul class="members__items">
-    {% for member in members|sample(20) %}
-      <li class="members__item">
-        <img width="51" height="51" class="members__image" src="{{ fix_url('../static/' + member.avatar_path) }}" alt="Profilovka člena {{ member.id }}">
-      </li>
-    {% endfor %}
-    <li class="members__item members__item--count">
-      a&nbsp;{{ members_total_count - 20 }}&nbsp;dalších
-    </li>
-  </ul>
-</div>
-
-<p class="button-compartment">
-  <a href="{{ fix_url('../club/') }}" class="button">
-    Přidej se&nbsp;k&nbsp;nám
-  </a>
-</p>
 
 {#
 

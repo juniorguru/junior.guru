@@ -4,7 +4,7 @@ import arrow
 
 from juniorguru.web import NAV_TABS
 from juniorguru.web.thumbnail import thumbnail
-from juniorguru.models import db, Keyword, Member, Job
+from juniorguru.models import db, Topic, Member, Job
 
 
 def define_env(env):
@@ -32,15 +32,12 @@ def on_pre_page_macros(env):
     ))
 
     try:
-        keyword_id = env.page.meta['messages_keyword']
+        topic_name = env.page.meta['topic_name']
     except KeyError:
         pass
     else:
         with db:
-            keyword = Keyword.get_by_id(keyword_id)
-        env.page.meta['messages'] = list(keyword.messages_listing())
-        env.page.meta['messages_count'] = keyword.messages_count()
-        env.page.meta['messages_channels'] = list(keyword.channels_listing())
+            env.page.meta['topic'] = Topic.get_by_id(topic_name)
 
 
-# TODO @on_meta_key('messages_keyword')
+# TODO @on_meta_key('messages_topic')
