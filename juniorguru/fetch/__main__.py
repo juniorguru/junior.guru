@@ -9,7 +9,7 @@ from juniorguru.fetch.newsletter_mentions import main as fetch_newsletter_mentio
 from juniorguru.fetch.transactions import main as fetch_transactions
 from juniorguru.fetch.proxies import main as fetch_proxies
 from juniorguru.fetch.members import main as fetch_members
-from juniorguru.fetch.messages import main as fetch_messages
+from juniorguru.fetch.topics import main as fetch_topics
 
 
 def main():
@@ -22,7 +22,7 @@ def main():
     fetch_transactions()
     fetch_proxies()
     fetch_members()
-    fetch_messages()
+    fetch_topics()
 
     # order-sensitive
     fetch_jobs()  # depends on proxies
