@@ -13,14 +13,27 @@
 {% macro mentions(topic, topic_name) %}
   <p class="mentions">
     {% if topic.mentions_count %}
-      V&nbsp;klubu máme už {{ topic.mentions_count }} zmínek o&nbsp;{{ topic_name }}.
+      V&nbsp;klubu máme
+      {% if topic.mentions_count == 1 %}
+        zatím jen jednu zmínku
+      {% elif topic.mentions_count < 5 %}
+        už {{ topic.mentions_count }} zmínky
+      {% else %}
+        už {{ topic.mentions_count }} zmínek
+      {% endif %}
+      o&nbsp;{{ topic_name }}.
       {% if topic.dedicated_channels_messages_count %}
-        Dokonce je o tom celá místnost, kam jsme napsali {{ topic.dedicated_channels_messages_count }} zpráv.
+        Dokonce máme na&nbsp;toto téma i&nbsp;celou místnost, kam jsme napsali {{ topic.dedicated_channels_messages_count }}&nbsp;zpráv.
+      {% endif %}
+      {% if topic.mentions_count > 1 %}
+        Poradíme&nbsp;ti!
+      {% else %}
+        Pojďme to probrat!
       {% endif %}
     {% else %}
-      V klubu máme o&nbsp;{{ topic_name }} celou místnost, kam jsme už napsali {{ topic.dedicated_channels_messages_count }} zpráv.
+      V klubu máme o&nbsp;{{ topic_name }} celou místnost, kam jsme už napsali {{ topic.dedicated_channels_messages_count }}&nbsp;zpráv.
+      Poradíme&nbsp;ti!
     {% endif %}
-    Poradíme&nbsp;ti!
   </p>
 {% endmacro %}
 

@@ -14,7 +14,7 @@ topic_name: mentoring
 </header>
 
 <p class="mentions">
-  V klubu máme na&nbsp;mentoring hned několik místností, kde jsme si už napsali {{ topic.dedicated_channels_messages_count }} zpráv. Poradíme&nbsp;ti!
+  V klubu máme na&nbsp;mentoring hned několik místností, kde jsme si už napsali {{ topic.dedicated_channels_messages_count }}&nbsp;zpráv. Poradíme&nbsp;ti!
 </p>
 
 {{ members_roll(members, members_total_count) }}
