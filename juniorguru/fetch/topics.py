@@ -35,6 +35,7 @@ KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value
     r'vue': 'vue',
     r'linux\w*': 'linux',
     r'bash\w*': 'linux',
+    r'příkaz\w*': 'linux',
     r'docker\w*': 'docker',
     r's?css': 'css',
     r'git\w*': 'git',
