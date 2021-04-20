@@ -64,6 +64,7 @@ class Job(BaseModel):
     lang = CharField()
     description_html = TextField()
     junior_rank = IntegerField(index=True)
+    magic_is_junior = BooleanField(null=True)
     sort_rank = IntegerField(index=True)
     pricing_plan = CharField(default='community', choices=[
         ('community', None),
@@ -245,6 +246,7 @@ class JobDropped(BaseModel):
     response_url = CharField()
     response_backup_path = CharField(null=True)
     item = JSONField()
+    magic_is_junior = BooleanField(null=True)
 
     @classmethod
     def admin_listing(cls, types=None):
