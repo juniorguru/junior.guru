@@ -60,7 +60,7 @@ class Job(BaseModel):
     company_link = CharField(null=True)
     company_logo_path = CharField(null=True)
     employment_types = JSONField(default=lambda: [])
-    link = CharField(null=True, index=True)
+    link = CharField(index=True)
     lang = CharField()
     description_html = TextField()
     junior_rank = IntegerField(index=True)
@@ -71,6 +71,8 @@ class Job(BaseModel):
         ('standard', None),
         ('annual_flat_rate', None),
     ])
+    upvotes = IntegerField(default=0)
+    downvotes = IntegerField(default=0)
 
     # source: juniorguru
     email = CharField(null=True)
@@ -80,6 +82,10 @@ class Job(BaseModel):
     item = JSONField(null=True)
     response_url = CharField(null=True)
     response_backup_path = CharField(null=True)
+
+    @property
+    def is_juniorguru(self):
+        return self.source == 'juniorguru'
 
     @property
     def is_highlighted(self):

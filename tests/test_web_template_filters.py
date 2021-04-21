@@ -162,26 +162,26 @@ def test_sample_random():
 
 
 
-DummyJob = namedtuple('Job', ['id', 'source'])
+DummyJob = namedtuple('Job', ['id', 'is_juniorguru'])
 
 
 @pytest.mark.parametrize('jobs,n,expected', [
     pytest.param(
-        [DummyJob(id=1, source='xyz'), DummyJob(id=2, source='xyz')],
+        [DummyJob(id=1, is_juniorguru=False), DummyJob(id=2, is_juniorguru=False)],
         4,
-        {DummyJob(id=1, source='xyz'), DummyJob(id=2, source='xyz')},
+        {DummyJob(id=1, is_juniorguru=False), DummyJob(id=2, is_juniorguru=False)},
         id='len(jobs) < n',
     ),
     pytest.param(
-        [DummyJob(id=1, source='xyz'), DummyJob(id=2, source='xyz')],
+        [DummyJob(id=1, is_juniorguru=False), DummyJob(id=2, is_juniorguru=False)],
         2,
-        {DummyJob(id=1, source='xyz'), DummyJob(id=2, source='xyz')},
+        {DummyJob(id=1, is_juniorguru=False), DummyJob(id=2, is_juniorguru=False)},
         id='len(jobs) == n',
     ),
     pytest.param(
-        [DummyJob(id=1, source='xyz'), DummyJob(id=2, source='juniorguru'), DummyJob(id=3, source='juniorguru')],
+        [DummyJob(id=1, is_juniorguru=False), DummyJob(id=2, is_juniorguru=True), DummyJob(id=3, is_juniorguru=True)],
         2,
-        {DummyJob(id=2, source='juniorguru'), DummyJob(id=3, source='juniorguru')},
+        {DummyJob(id=2, is_juniorguru=True), DummyJob(id=3, is_juniorguru=True)},
         id='preferred jobs have priority',
     ),
 ])
@@ -198,11 +198,11 @@ def test_sample_jobs_not_enough_preferred_jobs():
         return jobs[:n]
 
     assert set(template_filters.sample_jobs([
-        DummyJob(id=1, source='xyz'),
-        DummyJob(id=2, source='juniorguru'),
-        DummyJob(id=3, source='xyz')
+        DummyJob(id=1, is_juniorguru=False),
+        DummyJob(id=2, is_juniorguru=True),
+        DummyJob(id=3, is_juniorguru=False)
     ], 2, sample_fn=random_sample)) == {
-        DummyJob(id=1, source='xyz'),
-        DummyJob(id=2, source='juniorguru'),
+        DummyJob(id=1, is_juniorguru=False),
+        DummyJob(id=2, is_juniorguru=True),
     }
     assert random_called is True

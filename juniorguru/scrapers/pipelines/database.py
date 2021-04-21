@@ -13,18 +13,14 @@ class Pipeline():
 
     def process_item(self, item, spider):
         def operation():
-            self.model.create(**prepare_data(item, spider.name))
+            data = dict(**item,
+                        source=spider.name,
+                        company_logo_path=get_company_logo_path(item.get('company_logos')))
+            self.model.create(**data)
             if self.stats:
                 self.stats.inc_value('item_saved_count')
             return item
         return retry_when_db_locked(self.db, operation, stats=self.stats)
-
-
-def prepare_data(item, spider_name):
-    data = dict(**item,
-                source=spider_name,
-                company_logo_path=get_company_logo_path(item.get('company_logos')))
-    return data
 
 
 def get_company_logo_path(company_logos):

@@ -69,16 +69,6 @@ def test_database_id_prefilled(db, pipeline, item, spider):
     assert job.id == 'honza42'
 
 
-def test_database_id_prefilled_no_link(db, pipeline, item, spider):
-    item['id'] = 'honza42'
-    del item['link']
-    pipeline.process_item(item, spider)
-    with db:
-        job = Job.select()[0]
-
-    assert job.id == 'honza42'
-
-
 def test_database_id(db, pipeline, item, spider):
     pipeline.process_item(item, spider)
     with db:

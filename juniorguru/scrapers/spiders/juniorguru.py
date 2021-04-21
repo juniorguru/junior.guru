@@ -49,6 +49,7 @@ def coerce_record(record):
         r'^expire[ds]$': ('expires_at', parse_date),
     }, record)
     data['id'] = create_id(data['posted_at'], data['company_link'])
+    data['link'] = f"https://junior.guru/jobs/{data['id']}/"
     return data
 
 

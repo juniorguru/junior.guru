@@ -7,8 +7,8 @@
       <meta itemprop="address" content="{{ job.location }}">
     </div>
 
-    {% if job.source == 'juniorguru' %}
-      <a class="jobs__link" href="{{ url_for('job', job_id=job.id) }}" itemprop="url">
+    {% if job.job.is_juniorguru %}
+      <a class="jobs__link" href="{{ job.link }}" itemprop="url">
     {% else %}
       <a class="jobs__link" href="{{ url_for(jobs_link) }}">
       <link itemprop="url" href="{{ job.link }}">

@@ -169,6 +169,18 @@ def test_metrics(db_connection):
     }
 
 
+def test_is_juniorguru_true():
+    job = Job(**prepare_job_data('1', source='juniorguru'))
+
+    assert job.is_juniorguru is True
+
+
+def test_is_juniorguru_false():
+    job = Job(**prepare_job_data('1', source='abcxyz'))
+
+    assert job.is_juniorguru is False
+
+
 def test_days_since_posted():
     job = Job(**prepare_job_data('1', posted_at=date(1987, 8, 30)))
 

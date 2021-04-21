@@ -4,8 +4,8 @@
     <meta itemprop="datePosted" content="{{ job.posted_at.isoformat() }}">
     <meta itemprop="description" content="Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}">
 
-    {% if job.source == 'juniorguru' %}
-      <a class="jobs__link" href="{{ url_for('job', job_id=job.id) }}" itemprop="url">
+    {% if job.is_juniorguru %}
+      <a class="jobs__link" href="{{ job.link }}" itemprop="url">
     {% else %}
       <a class="jobs__link" href="{{ job.link }}"{% if 'utm_' not in job.link and 'linkedin.com' not in job.link %} data-metrics-utm data-metrics-utm-medium="job_board"{% endif %} data-metrics data-metrics-name="job" data-metrics-no-utm target="_blank" rel="noopener nofollow">
       <link itemprop="url" href="{{ job.link }}">

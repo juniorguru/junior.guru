@@ -77,8 +77,9 @@ def test_create_id():
 
 
 def test_coerce_record():
+    id_ = hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest()
     assert juniorguru.coerce_record(create_record()) == {
-        'id': hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest(),
+        'id': id_,
         'posted_at': datetime(2019, 7, 6, 20, 24, 3),
         'email': 'jobs@example.com',
         'company_name': 'Honza Ltd.',
@@ -87,7 +88,7 @@ def test_coerce_record():
         'title': 'Frontend Ninja',
         'locations_raw': ['Prague'],
         'remote': False,
-        'link': 'https://jobs.example.com/1245/',
+        'link': f'https://junior.guru/jobs/{id_}/',
         'pricing_plan': 'community',
         'approved_at': date(2019, 10, 10),
         'expires_at': date(2019, 12, 12),
