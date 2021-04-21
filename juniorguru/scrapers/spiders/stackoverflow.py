@@ -12,7 +12,7 @@ class Spider(BaseSpider):
     name = 'stackoverflow'
     proxy = True
     download_timeout = 59
-    download_delay = 0.25
+    download_delay = 1.25
     custom_settings = {
         'COOKIES_ENABLED': False,
     }
