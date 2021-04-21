@@ -26,7 +26,6 @@ https://checkio.org/
 https://www.umimeprogramovat.cz
 https://projecteuler.net/
 https://hackprague.com
-https://engeto.cz/hackathon/
 https://www.hackathon.com/city/czech-republic/praha
 https://opensource.guide/
 https://gismentors.cz/
@@ -45,11 +44,9 @@ https://github.com/lenadroid/awesome-oss-mentors#readme
 https://www.codecademy.com
 https://www.coursera.org
 https://www.edx.org
-https://engeto.cz
 https://egghead.io
 https://udacity.com
 https://www.czechitas.cz/cs/kalendar-akci
-https://engeto.cz/workshopy
 https://pyworking.cz
 https://www.writethedocs.org/conf/
 https://www.facebook.com/groups/hackathony.cz/
@@ -111,3 +108,12 @@ https://reactgirls.com/
 https://reactgirls.com/mentoring
 https://www.fakturoid.cz/almanach/
 https://sdacademy.cz/
+https://www.ajtyvit.sk
+https://www.learn2code.cz/
+http://kurzy.vsb.cz/
+https://www.primakurzy.cz/
+https://www.greenfoxacademy.cz/
+https://www.codingbootcamp.cz/
+https://coreskill.tech/
+
+https://engeto.com

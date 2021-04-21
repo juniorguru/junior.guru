@@ -43,6 +43,7 @@ HIDDEN_ELEMENTS = [
     '[aria-label="cookieconsent"]',
     '[aria-describedby="cookieconsent:desc"]',
     '.chatbot-wrapper',  # cocuma.cz
+    '.cookies-notification',  # learn2code.cz
 ]
 
 PAGERES_BATCH_SIZE = 3
