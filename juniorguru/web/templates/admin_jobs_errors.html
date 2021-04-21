@@ -1,6 +1,6 @@
 {% extends 'admin_base.html' %}
 {% block body %}
-<h1>Chyby v nabídkách ({{ jobs_errors|length }} + {{ spider_errors|length }})</h1>
+<h1>Chyby v nabídkách (nabídek {{ jobs_errors|length }}, pavouků {{ spider_errors|length }})</h1>
 <p>
   Nejdřív metriky z posledního běhu robota. Každý sloupec představuje konkrétní <em>spider</em> obstarávající jeden zdroj nabídek.
 </p>
