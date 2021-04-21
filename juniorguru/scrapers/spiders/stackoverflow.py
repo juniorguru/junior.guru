@@ -14,6 +14,7 @@ class Spider(BaseSpider):
     download_timeout = 59
     download_delay = 1.25
     custom_settings = {
+        'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
         'COOKIES_ENABLED': False,
     }
     start_urls = [
