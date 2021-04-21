@@ -233,6 +233,12 @@ def job(job_id):
                                                job_location=job.location))
 
 
+def generate_job_pages():
+    with db:
+        for job in Job.juniorguru_listing():
+            yield 'job', dict(job_id=job.id)
+
+
 @app.route('/hire-juniors/')
 def hire_juniors():
     with db:

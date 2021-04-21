@@ -3,7 +3,7 @@ from pathlib import Path
 
 import flask_frozen
 
-from juniorguru.web import app
+from juniorguru.web import app, generate_job_pages
 
 
 def main():
@@ -16,6 +16,7 @@ def main():
     warnings.filterwarnings('error', category=flask_frozen.FrozenFlaskWarning)
 
     freezer = flask_frozen.Freezer(app)
+    freezer.register_generator(generate_job_pages)
     freezer.freeze()
 
 
