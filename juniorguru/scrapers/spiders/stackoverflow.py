@@ -11,6 +11,11 @@ from juniorguru.scrapers.items import (Job, absolute_url,
 class Spider(BaseSpider):
     name = 'stackoverflow'
     proxy = True
+    download_timeout = 59
+    download_delay = 0.25
+    custom_settings = {
+        'COOKIES_ENABLED': False,
+    }
     start_urls = [
         'https://stackoverflow.com/jobs?mxs=Junior&sort=p&l=Seč%2C+Czechia&d=350&u=Km',
         'https://stackoverflow.com/jobs?mxs=Junior&sort=p&r=true',
