@@ -13,6 +13,9 @@ CHANNELS_MAPPING = {
     'práce-bot': 834443926655598592,
 }
 
+EMOJI_UPVOTES = ['👍', '❤️']
+EMOJI_DOWNVOTES = ['👎']
+
 
 class ClubClient(discord.Client):
     @property
@@ -59,3 +62,11 @@ def discord_task(task):
         if exc:
             raise exc
     return wrapper
+
+
+def count_upvotes(reactions):
+    return sum([reaction.count for reaction in reactions if reaction.emoji in EMOJI_UPVOTES])
+
+
+def count_downvotes(reactions):
+    return sum([reaction.count for reaction in reactions if reaction.emoji in EMOJI_DOWNVOTES])

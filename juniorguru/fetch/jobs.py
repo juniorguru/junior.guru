@@ -1,4 +1,3 @@
-import os
 import subprocess
 from multiprocessing import Pool
 from pathlib import Path
@@ -10,10 +9,6 @@ from juniorguru.scrapers.settings import IMAGES_STORE
 
 
 log = get_log('jobs')
-
-
-EMOJI_UPVOTES = ['👍', '❤️']
-EMOJI_DOWNVOTES = ['👎']
 
 
 @timer.notify
@@ -53,8 +48,8 @@ async def manage_jobs_channel(client):
                 log.info(f'Job {job.link} exists')
                 seen_links.add(job.link)
                 if message.reactions:
-                    job.upvotes = sum([r.count for r in message.reactions if r.emoji in EMOJI_UPVOTES])
-                    job.downvotes = sum([r.count for r in message.reactions if r.emoji in EMOJI_DOWNVOTES])
+                    job.upvotes = club.count_upvotes(message.reactions)
+                    job.downvotes = club.count_downvotes(message.reactions)
                     with db:
                         job.save()
                     log.info(f'Saved {job.link} reactions')
