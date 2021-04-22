@@ -46,6 +46,11 @@ async def task(client):
                 avatar_path = f'images/avatars/{image_path.name}'
             Member.create(id=id, avatar_path=avatar_path)
 
+        # if member.display_name == 'DanielSrb':
+        #     if not member.dm_channel:
+        #         await member.create_dm()
+        #     await member.dm_channel.send(content='Ahoj Dane, mám tě rád ❤️')
+
 
 def is_default_avatar(url):
     return bool(re.search(r'/embed/avatars/\d+\.', url))
