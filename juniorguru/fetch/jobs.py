@@ -37,7 +37,7 @@ def main():
 
 @club.discord_task
 async def manage_jobs_channel(client):
-    channel = client.fetch_channel('práce-bot')
+    channel = await client.fetch_channel('práce-bot')
 
     jobs = list(Job.listing())
     seen_links = set()
