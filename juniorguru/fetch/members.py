@@ -18,6 +18,7 @@ log = get_log('members')
 IMAGES_PATH = Path(__file__).parent.parent / 'data' / 'images'
 AVATARS_PATH = IMAGES_PATH / 'avatars'
 SIZE_PX = 60
+STATS_PERIOD_DAYS = 30
 
 
 @discord_task
@@ -45,7 +46,7 @@ async def main(client):
             avatar_path = f'images/avatars/{image_path.name}'
         Member.create(id=member.id, avatar_path=avatar_path)
 
-    week_ago = arrow.utcnow().shift(days=-7).naive
+    week_ago = arrow.utcnow().shift(days=-1 * STATS_PERIOD_DAYS).naive
 
     authors = {}
     total_messages_count = Counter()
@@ -68,7 +69,7 @@ async def main(client):
         '**Nejvíc příspěvků za celou dobu existence klubu**\n' +
         ''.join([f"{authors[author_id].mention} {count}\n"
                  for author_id, count in total_messages_count.most_common()[:5]]) +
-        '\n**Nejvíc příspěvků za posledních 7 dní**\n' +
+        f'\n**Nejvíc příspěvků za posledních {STATS_PERIOD_DAYS} dní**\n' +
         ''.join([f"{authors[author_id].mention} {count}\n"
                  for author_id, count in week_messages_count.most_common()[:5]])
     )
