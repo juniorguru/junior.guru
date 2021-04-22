@@ -46,8 +46,7 @@ async def main(client):
             avatar_path = f'images/avatars/{image_path.name}'
         Member.create(id=member.id, avatar_path=avatar_path)
 
-    week_ago = arrow.utcnow().shift(days=-1 * STATS_PERIOD_DAYS).naive
-
+    stats_period_ago = arrow.utcnow().shift(days=-1 * STATS_PERIOD_DAYS).naive
     authors = {}
     total_messages_count = Counter()
     week_messages_count = Counter()
@@ -57,7 +56,7 @@ async def main(client):
         async for message in channel.history(limit=None, after=None):
             authors.setdefault(message.author.id, message.author)
             total_messages_count[message.author.id] += 1
-            if message.created_at > week_ago:
+            if message.created_at > stats_period_ago:
                 week_messages_count[message.author.id] += 1
 
     for author_id in DEFAULT_EXCLUDED_MEMBERS:
