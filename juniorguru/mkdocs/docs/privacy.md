@@ -10,7 +10,7 @@ Se zřízením registrace v klientské sekci či odesláním objednávky na mé 
 
 Junior Guru, stylizovaně „junior.guru“<br>
 **Jan Javorek**<br>
-fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodním rejstříku se sídlem Koněvova 31/27, 130 00 Praha<br>
+fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodním rejstříku se sídlem Lupáčova 375/24, 130 00 Praha<br>
 IČO: [74279858](http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0),<br>
 neplátce DPH,<br>
 E-mail: [ahoj@junior.guru](mailto:ahoj@junior.guru)<br>
