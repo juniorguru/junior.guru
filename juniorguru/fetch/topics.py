@@ -1,7 +1,7 @@
 import re
 
 from juniorguru.lib.log import get_log
-from juniorguru.lib import club
+from juniorguru.lib.club import discord_task, exclude_categories
 from juniorguru.models import Topic, db
 
 
@@ -82,7 +82,7 @@ EXCLUDE_CATEGORIES_RE = re.compile('|'.join([
 ]), re.IGNORECASE)
 
 
-@club.discord_task
+@discord_task
 async def main(client):
     with db:
         Topic.drop_table()
@@ -91,10 +91,7 @@ async def main(client):
     topics = {}
     defaults = dict(mentions_count=0, dedicated_channels_messages_count=0)
 
-    for channel in client.juniorguru_guild.text_channels:
-        if channel.category and EXCLUDE_CATEGORIES_RE.search(channel.category.name):
-            continue
-
+    for channel in exclude_categories(client.juniorguru_guild.text_channels):
         log.info(f'#{channel.name}')
         channel_dedicated_to = None
 

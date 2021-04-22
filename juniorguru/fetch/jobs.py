@@ -3,7 +3,8 @@ from multiprocessing import Pool
 from pathlib import Path
 
 from juniorguru.lib.log import get_log
-from juniorguru.lib import timer, club
+from juniorguru.lib import timer
+from juniorguru.lib.club import discord_task, count_downvotes, count_upvotes
 from juniorguru.models import Job, JobDropped, JobError, SpiderMetric, db
 from juniorguru.scrapers.settings import IMAGES_STORE
 
@@ -35,7 +36,7 @@ def main():
     manage_jobs_channel()
 
 
-@club.discord_task
+@discord_task
 async def manage_jobs_channel(client):
     channel = await client.fetch_channel('práce-bot')
 
@@ -48,8 +49,8 @@ async def manage_jobs_channel(client):
                 log.info(f'Job {job.link} exists')
                 seen_links.add(job.link)
                 if message.reactions:
-                    job.upvotes = club.count_upvotes(message.reactions)
-                    job.downvotes = club.count_downvotes(message.reactions)
+                    job.upvotes = count_upvotes(message.reactions)
+                    job.downvotes = count_downvotes(message.reactions)
                     with db:
                         job.save()
                     log.info(f'Saved {job.link} reactions')
@@ -57,8 +58,7 @@ async def manage_jobs_channel(client):
     new_jobs = [job for job in jobs if job.link not in seen_links]
     log.info(f'Posting {len(new_jobs)} new jobs')
     for job in new_jobs:
-        content = f'**{job.title}**\n{job.company_name} – {job.location}\n{job.link}'
-        await channel.send(content=content)
+        await channel.send(f'**{job.title}**\n{job.company_name} – {job.location}\n{job.link}')
 
 
 def run_spider(spider_name):
