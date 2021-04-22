@@ -1,15 +1,12 @@
 import re
-import os
 
 from juniorguru.lib.log import get_log
-from juniorguru.lib import discord_sync
+from juniorguru.lib import club
 from juniorguru.models import Topic, db
 
 
 log = get_log('topics')
 
-
-JUNIORGURU_GUILD_NUM = 769966886598737931
 
 KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value in {
     r'pyladies|pylady': 'pyladies',
@@ -85,7 +82,8 @@ EXCLUDE_CATEGORIES_RE = re.compile('|'.join([
 ]), re.IGNORECASE)
 
 
-async def task(client):
+@club.discord_task
+async def main(client):
     with db:
         Topic.drop_table()
         Topic.create_table()
@@ -93,7 +91,7 @@ async def task(client):
     topics = {}
     defaults = dict(mentions_count=0, dedicated_channels_messages_count=0)
 
-    for channel in client.get_guild(JUNIORGURU_GUILD_NUM).text_channels:
+    for channel in client.juniorguru_guild.text_channels:
         if channel.category and EXCLUDE_CATEGORIES_RE.search(channel.category.name):
             continue
 
@@ -119,10 +117,6 @@ async def task(client):
     with db:
         for name, data in topics.items():
             Topic.create(**{'name': name, **data})
-
-
-def main():
-    discord_sync.run(task, os.environ['DISCORD_API_KEY'], intents=['guilds', 'members'])
 
 
 if __name__ == '__main__':

@@ -4,16 +4,13 @@ from multiprocessing import Pool
 from pathlib import Path
 
 from juniorguru.lib.log import get_log
-from juniorguru.lib import timer, discord_sync
+from juniorguru.lib import timer, club
 from juniorguru.models import Job, JobDropped, JobError, SpiderMetric, db
 from juniorguru.scrapers.settings import IMAGES_STORE
 
 
 log = get_log('jobs')
 
-
-JUNIORGURU_GUILD_NUM = 769966886598737931
-JOBS_CHANNEL_NUM = 834443926655598592
 
 EMOJI_UPVOTES = ['👍', '❤️']
 EMOJI_DOWNVOTES = ['👎']
@@ -40,11 +37,12 @@ def main():
     ]
     Pool().map(run_spider, spider_names)
 
-    discord_sync.run(discord_task, os.environ['DISCORD_API_KEY'], intents=['guilds', 'members'])
+    manage_jobs_channel()
 
 
-async def discord_task(client):
-    channel = client.get_guild(JUNIORGURU_GUILD_NUM).get_channel(JOBS_CHANNEL_NUM)
+@club.discord_task
+async def manage_jobs_channel(client):
+    channel = client.fetch_channel('práce-bot')
 
     jobs = list(Job.listing())
     seen_links = set()
