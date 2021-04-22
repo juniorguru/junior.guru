@@ -1,3 +1,4 @@
+import re
 import os
 import asyncio
 from functools import wraps
@@ -13,6 +14,10 @@ CHANNELS_MAPPING = {
     'práce-bot': 834443926655598592,
 }
 
+EXCLUDE_CATEGORIES_RE = re.compile('|'.join([
+    r'\bcoreskill\b',
+]), re.IGNORECASE)
+
 EMOJI_UPVOTES = ['👍', '❤️']
 EMOJI_DOWNVOTES = ['👎']
 
@@ -24,6 +29,18 @@ class ClubClient(discord.Client):
 
     async def fetch_channel(self, channel_id):
         return super().fetch_channel(CHANNELS_MAPPING.get(channel_id, channel_id))
+
+    # TODO
+    # async def juniorguru_history(*args, **kwargs):
+    #     kwargs.setdefault('exclude_categories', [r'\bcoreskill\b'])
+    #     exclude_categories = kwargs.pop('exclude_categories')
+    #     if exclude_categories:
+    #         exclude_categories_re = re.compile(r'|'.join(exclude_categories), re.IGNORECASE)
+
+    #     kwargs.setdefault('exclude_channels', [])
+    #     exclude_channels = kwargs.pop('exclude_channels')
+    #     if exclude_channels:
+    #         exclude_channels_re = re.compile(r'|'.join(exclude_channels), re.IGNORECASE)
 
 
 def discord_task(task):

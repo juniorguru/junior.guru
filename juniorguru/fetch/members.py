@@ -30,7 +30,7 @@ async def main(client):
 
     async for member in client.juniorguru_guild.fetch_members(limit=None):
         if not member.bot:
-            log.debug(f'Member {member.display_name} {member.id}')
+            log.info(f'Member {member.display_name} {member.id}')
             avatar_url = str(member.avatar_url)
             if is_default_avatar(avatar_url):
                 avatar_path = None
@@ -43,6 +43,9 @@ async def main(client):
                 image.save(image_path, 'PNG')
                 avatar_path = f'images/avatars/{image_path.name}'
             Member.create(id=member.id, avatar_path=avatar_path)
+
+            async for message in member.history(limit=None, after=None):
+                print(message)
 
         # if member.display_name == 'DanielSrb':
         #     if not member.dm_channel:
