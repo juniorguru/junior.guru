@@ -76,7 +76,7 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
         </li>
       {% endfor %}
       <li class="members__item members__item--count">
-        a&nbsp;{{ members_total_count - 20 }}&nbsp;dalších
+        {{ members_total_count }}&nbsp;členů
       </li>
     </ul>
   </div>
@@ -84,7 +84,7 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
     <ul class="logos__items">
       <li class="logos__item logos__item--caption">
         <span class="logos__link">
-          <span>S&#32;klubem&#32;<a href="#companies">spolupracují</a>:</span>
+          <span><a href="#companies">Firemní&#32;partneři</a>:</span>
         </span>
       </li>
       {% for logo in logos %}
@@ -120,13 +120,42 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
         </a>
       </li>
       <li class="logos__item">
-        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="https://cybermagnolia.com/" target="_blank" rel="noopener" title="CyberMagnolia podporuje juniory účastí v klubu">
+        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="https://engeto.com/" target="_blank" rel="noopener" title="Engeto podporuje juniory účastí v klubu">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/engeto.svg') }}" alt="Engeto">
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="logos">
+    <ul class="logos__items">
+      <li class="logos__item logos__item--caption">
+        <span class="logos__link">
+          <span><a href="#communities">Komunitní&#32;partneři</a>:</span>
+        </span>
+      </li>
+      <li class="logos__item">
+        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership" href="https://cesko.digital/" target="_blank" rel="noopener" title="Česko.Digital podporuje juniory">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/ceskodigital.svg') }}" alt="Česko.Digital">
+        </a>
+      </li>
+      <li class="logos__item">
+        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership" data-metrics data-metrics-name="club-logo" href="https://digikoalice.cz/" target="_blank" rel="noopener" title="Česká národní koalice pro digitální pracovní místa podporuje juniory">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/digikoalice.png') }}" alt="DigiKoalice">
+        </a>
+      </li>
+      <li class="logos__item">
+        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership" data-metrics data-metrics-name="club-logo" href="https://pyladies.cz/" target="_blank" rel="noopener" title="PyLadies CZ podporují juniory">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/pyladies.svg') }}" alt="PyLadies">
+        </a>
+      </li>
+      <li class="logos__item">
+        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership" data-metrics data-metrics-name="club-logo" href="https://cybermagnolia.com/" target="_blank" rel="noopener" title="CyberMagnolia podporuje juniory">
           <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/cybermagnolia.svg') }}" alt="CyberMagnolia">
         </a>
       </li>
       <li class="logos__item">
-        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="https://engeto.com/" target="_blank" rel="noopener" title="Engeto podporuje juniory účastí v klubu">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/engeto.svg') }}" alt="Engeto">
+        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership" data-metrics data-metrics-name="club-logo" href="https://reactgirls.com/" target="_blank" rel="noopener" title="ReactGirls podporují juniory">
+          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/reactgirls.png') }}" alt="ReactGirls">
         </a>
       </li>
     </ul>
@@ -285,10 +314,6 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
   <p>
     Pokud chceš pomáhat začátečníkům, nebo se motáš kolem vzdělávání v IT, bude se ti v klubu fakt líbit. Členství se ale může hodit i leckomu dalšímu. Nezávislí profesionálové mohou členům nabízet svá školení, mentoři spolupráci, organizátoři je mohou zvát na své akce. No a pro někoho může být členství prostě i jen způsobem, jak junior.guru finančně podpořit v tom, co pro začátečníky dělá.
   </p>
-  <h3 class="content__subsection-heading" id="companies">Co bude mít z členství v klubu naše firma?</h3>
-  <p>
-    Firmy, které s klubem spolupracují, do něj mají především přístup. Mohou vyhlížet talentované juniory, promovat vůči členům své akce, dávat jim slevy na své produkty, mohou se zapojit do diskuzí a poradit nebo poskytovat pohled z druhé strany. Je na vás, jak to uchopíte a co z toho „vyždímete“. Už jen tím, že svými financemi podpoříte existenci junior.guru a budete zde mít logo, si budujete dobré jméno jak mezi lidmi z nastupující generace vývojářů, tak mezi zainteresovanými profíky. Máte-li o partnerství zájem, napište na {{ 'ahoj@junior.guru'|email_link }}.
-  </p>
   <h3 class="content__subsection-heading" id="discord">Jak to přesně funguje?</h3>
   <p>
     Dokud platíš měsíční předplatné, jsi členem klubu a máš přístup do klubovny. Pokud ti měsíční placení nevyhovuje, předplatné můžeš se slevou zaplatit na celý rok dopředu. Klubovna má podobu uzavřeného komunitního chatu na službě <a href="https://discord.com/">Discord</a>. Jsou k tomu aplikace na mobil i počítač, ale funguje to i jen tak v prohlížeči. Jako člen se můžeš účastnit dění v klubovně, psát si s ostatními soukromé zprávy, nebo skočit do některé z hlasových místností a probrat něco naživo. Můžeš se tak ve virtuální učebně na jeden klik sejít s mentorem nebo s kamarády a nemusíte řešit, který software na videohovory použijete. Samozřejmě, pokud chceš junior.guru jen finančně podpořit, do klubovny vůbec chodit nemusíš.
@@ -319,6 +344,14 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
   <h3 class="content__subsection-heading" id="handbook">Budou nové rady na junior.guru už pouze pro členy klubu?</h3>
   <p>
     Ne, nic se neruší. Naopak, přidává se! Všechen současný obsah junior.guru zůstává nadále zdarma na webu a stejně jako doposud se bude i rozšiřovat o další kapitoly. Klub je způsob, jak tuto dobročinnost mohu financovat a posunout ji na interaktivnější úroveň. O nových kapitolách je možno v klubu diskutovat, mohu tam sbírat tipy, zpětnou vazbu, vysledovat další zajímavá témata.
+  </p>
+  <h3 class="content__subsection-heading" id="companies">Co bude mít z členství v klubu naše firma?</h3>
+  <p>
+    Firmy, které s klubem spolupracují, do něj mají především přístup. Mohou vyhlížet talentované juniory, promovat vůči členům své aktivity, dávat jim slevy na své produkty, mohou se zapojit do diskuzí a poradit nebo poskytovat pohled z druhé strany. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na vás, jak to uchopíte a co z toho „vyždímete“. Už jen tím, že svými financemi podpoříte existenci junior.guru a budete zde mít logo, si budujete dobré jméno jak mezi lidmi z nastupující generace vývojářů, tak mezi zainteresovanými profíky. Partnerství pro firmy je <strong>od 9&nbsp;900&nbsp;Kč</strong> za rok. Máte-li o něj zájem, napište na {{ 'ahoj@junior.guru'|email_link }}.
+  </p>
+  <h3 class="content__subsection-heading" id="communities">Co znamená, že s klubem spolupracuje nějaká komunita?</h3>
+  <p>
+    Organizátoři komunit, které s klubem spolupracují, do něj mají přístup a mohou v něm promovat svoje aktivity. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na vás, jak to uchopíte a co z toho „vyždímete“. Spolupráce by ale neměla být samoúčelná, měla by vždy vyústit něco, co bude především nějakým způsobem sloužit samotným juniorům. Partnerství pro komunity je domlouváno nepeněžní formou. Logo komunity se zde objevuje zpravidla ve chvíli, kdy jde o dlouhodobější, ne pouze jednorázovou spolupráci. Máte-li o partnerství zájem, napište na {{ 'ahoj@junior.guru'|email_link }}.
   </p>
 </section>
 <hr>
