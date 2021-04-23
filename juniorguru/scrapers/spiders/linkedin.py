@@ -97,6 +97,8 @@ def clean_proxied_url(url):
 def clean_url(url):
     if url and 'linkedin.com' in url:
         return strip_params(url, ['refId', 'trk'])
+    if url and 'talentify.io' in url:
+        return strip_params(url, ['tdd'])
     return url
 
 

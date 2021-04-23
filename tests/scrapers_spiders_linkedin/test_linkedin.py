@@ -120,6 +120,7 @@ def test_get_job_id():
 @pytest.mark.parametrize('url,expected', [
     ('https://uk.linkedin.com/company/adaptavist?trk=public_jobs_topcard_logo', 'https://uk.linkedin.com/company/adaptavist'),
     ('https://example.com?trk=123', 'https://example.com?trk=123'),
+    ('https://pipedrive.talentify.io/job/junior-software-engineer-prague-prague-pipedrive-015b84ef-3956-4a28-877f-0385379d40c2?tdd=dDEsaDM1LGozdXFlZSxlcHJvNjA3ZjBhOTA2ZDVkNjE2OTQ4ODk3OA', 'https://pipedrive.talentify.io/job/junior-software-engineer-prague-prague-pipedrive-015b84ef-3956-4a28-877f-0385379d40c2')
 ])
 def test_clean_url(url, expected):
     assert linkedin.clean_url(url) == expected
