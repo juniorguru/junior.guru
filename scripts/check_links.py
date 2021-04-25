@@ -14,6 +14,7 @@ EXCLUDE_URLS = [
     'facebook.com/search/events/?q=english',  # HTTP_404 in response if user isn't logged in
     'juniorguru.memberful.com',  # HTTP_403, rightfully
     'support.discord.com',  # Discord ¯\_(ツ)_/¯
+    'economist.com',  # crawling protection?
 ]
 EXCLUDE_REASONS = [re.compile(r) for r in [
     r'^BLC_UNKNOWN$',  # crawling protection?
