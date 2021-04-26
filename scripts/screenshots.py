@@ -15,6 +15,8 @@ URLS_TXT = PROJECT_DIR / 'juniorguru' / 'screenshots-urls.txt'
 SCREENSHOTS_DIR = IMAGES_DIR / 'screenshots'
 SCREENSHOTS_OVERRIDES_DIR = IMAGES_DIR / 'screenshots-overrides'
 
+PAGERES_FB_SCRIPT = PROJECT_DIR / 'scripts' / 'screenshot-facebook.js'
+
 HIDDEN_ELEMENTS = [
     '[data-cookiebanner]',  # facebook.com
     '.fbPageBanner',  # facebook.com
@@ -44,6 +46,10 @@ HIDDEN_ELEMENTS = [
     '[aria-describedby="cookieconsent:desc"]',
     '.chatbot-wrapper',  # cocuma.cz
     '.cookies-notification',  # learn2code.cz
+    '.js-consent-banner',  # stackoverflow.com
+    '[style*="Toaster-indicatorColor"]',  # reddit.com
+    '#onetrust-banner-sdk',  # codecademy.com
+    '#axeptio_overlay',  # welcometothejungle.com
 ]
 
 PAGERES_BATCH_SIZE = 3
@@ -62,6 +68,8 @@ WIDTH = 640
 HEIGHT = 360
 
 YOUTUBE_URL_RE = re.compile(r'(youtube\.com.+watch\?.*v=|youtu\.be/)([\w\-\_]+)')
+FACEBOOK_URL_RE = re.compile(r'facebook\.com/')
+ERRONEOUS_DOUBLE_FRAGMENT = re.compile(r'(\#[^\#])\#[^\.]')
 
 
 def parse_url(line):
@@ -78,6 +86,10 @@ def parse_urls(text):
 
 def filter_yt_urls(urls):
     return [url for url in urls if YOUTUBE_URL_RE.search(url)]
+
+
+def filter_fb_urls(urls):
+    return [url for url in urls if FACEBOOK_URL_RE.search(url)]
 
 
 def parse_yt_id(url):
@@ -100,15 +112,24 @@ def generate_batches(iterable, batch_size):
         yield iterable[i:i + batch_size]
 
 
-def create_screenshot(urls):
+def create_screenshots(urls, options=None):
     urls = list(urls)
-    pageres = ['npx', 'pageres'] + urls + PAGERES_OPTIONS
+    pageres = ['npx', 'pageres'] + urls + PAGERES_OPTIONS + (options or [])
     try:
         print(f"[pageres] {len(urls)} URLs")
         run(pageres, check=True, cwd=SCREENSHOTS_DIR, stdout=DEVNULL)
     except CalledProcessError:
-        print(f"[pageres] RETRY {len(urls)} URLs")
+        print(f"[pageres] RETRY {' '.join(urls)}")
         run(pageres, check=True, cwd=SCREENSHOTS_DIR, stdout=DEVNULL)
+
+
+def create_fb_screenshot(url):
+    try:
+        print(f"[pageres] {url}")
+        run(['node', PAGERES_FB_SCRIPT, url], check=True, cwd=SCREENSHOTS_DIR, stdout=DEVNULL)
+    except CalledProcessError:
+        print(f"[pageres] RETRY {url}")
+        run(['node', PAGERES_FB_SCRIPT, url], check=True, cwd=SCREENSHOTS_DIR, stdout=DEVNULL)
 
 
 def edit_screenshot(path):
@@ -127,6 +148,8 @@ def edit_screenshot(path):
     path.write_bytes(proc.stdout)
 
     original_name = name
+    if ERRONEOUS_DOUBLE_FRAGMENT.search(name):
+        name = ERRONEOUS_DOUBLE_FRAGMENT.sub('\1', name)
     if '#' in name:
         name = name.replace('#', '!')
     if name.startswith('localhost!5000'):
@@ -165,14 +188,19 @@ if __name__ == '__main__':
     SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
     urls = parse_urls(URLS_TXT.read_text())
 
-    print('[main] youtube cover images')
+    print('[main] YouTube cover images')
     yt_urls = filter_yt_urls(urls)
     urls = list(set(urls) - set(yt_urls))
     Pool().map(download_yt_cover_image, yt_urls)
 
+    print('[main] Facebook cover images')
+    fb_urls = filter_fb_urls(urls)
+    urls = list(set(urls) - set(fb_urls))
+    Pool(PAGERES_WORKERS).map(create_fb_screenshot, fb_urls)
+
     print('[main] web page screenshots')
     urls_batches = generate_batches(urls, PAGERES_BATCH_SIZE)
-    Pool(PAGERES_WORKERS).map(create_screenshot, urls_batches)
+    Pool(PAGERES_WORKERS).map(create_screenshots, urls_batches)
 
     Pool().map(edit_screenshot, SCREENSHOTS_DIR.glob('*.jpg'))
 
