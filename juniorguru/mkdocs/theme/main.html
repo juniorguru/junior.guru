@@ -1,5 +1,167 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="cs" data-updated-at="{{ page.meta.now.to('Europe/Prague') }}">
+  <head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
+    <meta charset="utf-8">
+    <link rel="canonical" href="{{ page.canonical_url }}">
+    <title>{{ page.meta.title }}</title>
 
-{% block title %}{{ page.title }}{% endblock %}
+    {% block meta %}
+      <script defer src="{{ 'static/bundle.js'|url }}"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1316071-22"></script>
 
-{% block content %}{{ page.content }}{% endblock %}
+      <meta name="description" content="{{ page.meta.description }}">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="{{ 'static/bundle.css'|url }}">
+
+      <meta property="og:title" content="{{ page.meta.title }}">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="{{ page.canonical_url }}">
+      <meta property="og:image" content="{{ ('static/' + thumbnail|string)|url }}">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+
+      <meta name="twitter:card" content="photo">
+      <meta name="twitter:image" content="{{ ('static/' + thumbnail|string)|url }}">
+      <meta name="twitter:creator" content="@honzajavorek">
+    {% endblock meta %}
+  </head>
+  <body class="body{% block body_modifier %}{% endblock %}">
+    <div class="body__container">
+    {% block body %}
+      <header class="header{% if page.meta.subnav_tabs %} header--subnav{% endif %}{% block header_modifier %}{% endblock %}">
+        <div class="header__navbar">
+          <div class="header__main">
+            <div class="header__main-content">
+              {% block header_content %}
+              <a class="header__logo" href="{{ '/'|url }}">
+                <img class="header__logo-image" src="{{ 'static/images/logo.svg'|url }}" alt="junior.guru">
+              </a>
+              {% endblock %}
+              {% if page.meta.nav_tabs %}
+                <nav class="header__nav">
+                  <ol class="header__nav-tabs">
+                    {%- for tab in page.meta.nav_tabs -%}
+                      <li class="header__nav-tab">
+                        {{- '' -}}
+                        <a class="
+                          header__nav-tab-control
+                          {% if tab.endpoint == 'club' %}
+                            header__nav-tab-control--button
+                          {% endif %}
+                          {% if tab.endpoint == page.meta.nav_active %}
+                            header__nav-tab-control--active
+                          {% endif %}
+                        " href="{{ (tab.endpoint + '/')|url }}">
+                          {{- tab.name -}}
+                        </a>
+                        {{- '' -}}
+                      </li>
+                    {%- endfor -%}
+                  </ol>
+                </nav>
+              {% endif %}
+            </div>
+          </div>
+          {% if page.meta.subnav_tabs %}
+            <nav class="header__subnav">
+              <ul class="header__subnav-tabs">
+                {%- for tab in page.meta.subnav_tabs -%}
+                  <li class="header__subnav-tab">
+                    <a class="header__subnav-tab-control{% if tab.endpoint == page.meta.subnav_active %} header__subnav-tab-control--active{% endif %}" href="{{ (tab.endpoint + '/')|url }}">
+                      {% if tab.number is defined %}
+                        <span class="header__subnav-tab-number">{{ tab.number }}</span>
+                      {% endif %}
+                      <span class="header__subnav-tab-name">{{ tab.name }}</span>
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </nav>
+          {% endif %}
+          <hr class="header__divider">
+        </div>
+        {% block header_toc %}{% endblock %}
+      </header>
+      <main class="content content--mkdocs{% block content_modifier %}{% endblock %}">
+        {% block content %}{{ page.content }}{% endblock %}
+      </main>
+      <hr>
+      <footer>
+        <div class="footer">
+          <div class="editorial">
+            <p class="editorial__section">
+              Provozuje&nbsp;<a href="{{ 'donate/'|url }}#about">Honza Javorek</a>,&nbsp;<a href="https://twitter.com/honzajavorek/">@honzajavorek</a>
+            </p>
+            <p class="editorial__section">
+              <span class="editorial__item"><a href="{{ 'privacy/'|url }}">Kontakt</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'press/'|url }}">Pro média</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'privacy/'|url }}">Ochrana osobních údajů</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'tos/'|url }}">Obchodní podmínky</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'coc/'|url }}">Pravidla chování</a></span>
+            </p>
+            <p class="editorial__section">
+              <!--
+              Témata, která řešíme v klubu:&nbsp;{% for page in nav.pages|selectattr('meta.topic', 'defined')|sort(attribute='title') %}
+                <span class="editorial__item"><a href="{{ page.url|url }}">{{ page.meta.topic }}</a>{% if not loop.last %},&nbsp;{% endif %}</span>
+              {% endfor %}
+              -->
+              <!-- TODO THIS IS DUPLICATED ACROSS BOTH BASE.HTML FILES -->
+              <span class="editorial__item">Témata, která řešíme v klubu:&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/100daysofcode/'|url }}">#100daysofcode</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/adventofcode/'|url }}">Advent of Code</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/codingbootcamppraha/'|url }}">Coding Bootcamp Praha</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/cs50/'|url }}">CS50</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/css/'|url }}">CSS</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/czechitas/'|url }}">Czechitas</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/codility/'|url }}">Codility</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/data/'|url }}">data</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/django/'|url }}">Django</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/djangogirls/'|url }}">Django Girls</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/docker/'|url }}">Docker</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/engeto/'|url }}">Engeto</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/flask/'|url }}">Flask</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/git/'|url }}">Git</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/github/'|url }}">GitHub</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/greenfox/'|url }}">Green Fox Academy</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/itnetwork/'|url }}">ITnetwork</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/javascript/'|url }}">JavaScript</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/learn2code/'|url }}">Learn2Code</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/laravel/'|url }}">Laravel</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/linux/'|url }}">Linux</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/mentoring/'|url }}">mentoring</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/nette/'|url }}">Nette</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/oop/'|url }}">OOP</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/opensource/'|url }}">Open Source</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/php/'|url }}">PHP</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/interviews/'|url }}">pohovory</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/primakurzy/'|url }}">PrimaKurzy</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/pyladies/'|url }}">PyLadies</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/python/'|url }}">Python</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/react/'|url }}">React</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/reactgirls/'|url }}">ReactGirls</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/sdacademy/'|url }}">SDAcademy</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/sql/'|url }}">SQL</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/symfony/'|url }}">Symfony</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/testing/'|url }}">testování</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/udemy/'|url }}">Udemy</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/vue/'|url }}">Vue.js</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/vsb/'|url }}">VŠB</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ '/topics/wordpress/'|url }}">WordPress</a></span>
+            </p>
+          </div>
+          {% block author %}{% endblock %}
+        </div>
+      </footer>
+    {% endblock %}
+    </div>
+
+    <script>
+      if (window.location.hostname === 'junior.guru') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-1316071-22');
+      }
+    </script>
+  </body>
+</html>

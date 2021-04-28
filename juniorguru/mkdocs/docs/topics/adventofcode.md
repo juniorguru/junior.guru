@@ -1,6 +1,7 @@
 ---
 title: Diskutuj o Advent of Code
 topic_name: adventofcode
+description: Chystáš se řešit Advent of Code? Hledáš kamarády, se kterými se budeš hecovat a kterým se můžeš pochlubit svým řešením? Chceš jednotlivé dny probrat s někým zkušenějším?
 ---
 {% from 'topic.html' import intro, mentions, members_roll with context %}
 

@@ -1,12 +1,11 @@
 ---
 title: Python mentoring
 topic_name: python
+description: Učíš se Python? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---
 {% from 'topic.html' import intro, mentions, members_roll with context %}
 
-{% call intro('Nech si poradit s Pythonem') %}
-  Učíš se Python? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
-{% endcall %}
+{{ intro('Nech si poradit s Pythonem', description) }}
 
 {{ mentions(topic, 'Pythonu') }}
 

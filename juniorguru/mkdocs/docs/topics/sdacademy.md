@@ -1,12 +1,11 @@
 ---
 title: Zkušenosti se Software Development Academy
 topic_name: sdacademy
+description: Hledáš někoho, kdo má zkušenosti se Software Development Academy? Vyplatí se jejich kurzy?
 ---
 {% from 'topic.html' import intro, mentions, members_roll with context %}
 
-{% call intro('Recenze na SDAcademy') %}
-  Hledáš někoho, kdo má zkušenosti se Software Development Academy? Vyplatí se jejich kurzy?
-{% endcall %}
+{{ intro('Recenze na SDAcademy', description) }}
 
 {{ mentions(topic, 'SDA') }}
 

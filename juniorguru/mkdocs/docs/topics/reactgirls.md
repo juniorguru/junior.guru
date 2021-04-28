@@ -1,12 +1,11 @@
 ---
 title: Zkušenosti s ReactGirls
 topic_name: reactgirls
+description: Hledáš někoho, kdo má zkušenosti s ReactGirls? Má smysl účastnit se jejich akademie? Vyplatí se jimi nabízený mentoring?
 ---
 {% from 'topic.html' import intro, mentions, members_roll with context %}
 
-{% call intro('Recenze na ReactGirls') %}
-  Hledáš někoho, kdo má zkušenosti s ReactGirls? Má smysl účastnit se jejich akademie? Vyplatí se jimi nabízený mentoring?
-{% endcall %}
+{{ intro('Recenze na ReactGirls', description) }}
 
 {{ mentions(topic, 'ReactGirls') }}
 

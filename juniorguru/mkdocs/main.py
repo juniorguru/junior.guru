@@ -24,6 +24,7 @@ def define_env(env):
 
 
 def on_pre_page_macros(env):
+    env.page.meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
     env.page.meta.update(dict(
         now=arrow.utcnow(),
         nav_tabs=NAV_TABS,

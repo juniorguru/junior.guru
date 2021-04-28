@@ -1,12 +1,11 @@
 ---
 title: Zkušenosti s PyLadies
 topic_name: pyladies
+description: Hledáš někoho, kdo má zkušenosti s PyLadies? Jsou jejich materiály kvalitní? Má smysl hlásit se na jejich začátečnický kurz? Jak si poradit s projekty?
 ---
 {% from 'topic.html' import intro, mentions, members_roll with context %}
 
-{% call intro('Recenze na PyLadies') %}
-  Hledáš někoho, kdo má zkušenosti s PyLadies? Jsou jejich materiály kvalitní? Má smysl hlásit se na jejich začátečnický kurz? Jak si poradit s projekty?
-{% endcall %}
+{{ intro('Recenze na PyLadies', description) }}
 
 {{ mentions(topic, 'PyLadies') }}
 

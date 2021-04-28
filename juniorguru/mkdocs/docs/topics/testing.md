@@ -1,12 +1,11 @@
 ---
 title: Mentoring na automatizované testování
 topic_name: testing
+description: Učíš se programovat automatizované testy přes Selenium, Cypress, nebo jinou technologii? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---
 {% from 'topic.html' import intro, mentions, members_roll with context %}
 
-{% call intro('Nech si poradit s testováním') %}
-  Učíš se programovat automatizované testy přes Selenium, Cypress, nebo jinou technologii? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
-{% endcall %}
+{{ intro('Nech si poradit s testováním', description) }}
 
 {{ mentions(topic, 'testování') }}
 

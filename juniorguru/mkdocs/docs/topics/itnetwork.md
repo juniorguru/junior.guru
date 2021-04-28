@@ -1,12 +1,11 @@
 ---
 title: Zkušenosti s ITnetwork
 topic_name: itnetwork
+description: Hledáš někoho, kdo má zkušenosti s kurzy na ITnetwork? Vyplatí se koupit si je? Jsou dostatečně kvalitní a aktuální?
 ---
 {% from 'topic.html' import intro, mentions, members_roll with context %}
 
-{% call intro('Recenze na ITnetwork') %}
-  Hledáš někoho, kdo má zkušenosti s kurzy na ITnetwork? Vyplatí se koupit si je? Jsou dostatečně kvalitní a aktuální?
-{% endcall %}
+{{ intro('Recenze na ITnetwork', description) }}
 
 {{ mentions(topic, 'ITnetwork') }}
 

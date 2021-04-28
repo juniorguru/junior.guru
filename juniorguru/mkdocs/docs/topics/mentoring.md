@@ -1,13 +1,14 @@
 ---
 title: Komunitní mentoring na programování
 topic_name: mentoring
+description: Hledáš někoho, kdo má zkušenosti s programováním a dokáže ti poradit, když se na něčem při učení zasekneš? Někoho, kdo tématu rozumí a umí tě navést na správné postupy?
 ---
 {% from 'topic.html' import intro, mentions, members_roll with context %}
 
 <header class="intro">
   <h1 class="intro__title">Komunitní mentoring</h1>
   <p class="intro__lead">
-    Hledáš někoho, kdo má zkušenosti s programováním a dokáže ti poradit, když se na něčem při učení zasekneš? Někoho, kdo tématu rozumí a umí tě navést na správné postupy?
+    {{ page.meta.description }}
     <br><br>
     Jsme klub pro úplné začátečníky v programování, kde přesně toto najdeš. Navíc dostaneš informace, motivaci, rady, parťáky, podporu, kontakty a pracovní nabídky.
   </p>

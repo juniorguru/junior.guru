@@ -1,12 +1,11 @@
 ---
 title: Zkušenosti s Czechitas
 topic_name: czechitas
+description: Hledáš někoho, kdo má zkušenosti s Czechitas? Má smysl hlásit se na jejich kurzy? Vyplatí se datová akademie?
 ---
 {% from 'topic.html' import intro, mentions, members_roll with context %}
 
-{% call intro('Recenze na Czechitas') %}
-  Hledáš někoho, kdo má zkušenosti s Czechitas? Má smysl hlásit se na jejich kurzy? Vyplatí se datová akademie?
-{% endcall %}
+{{ intro('Recenze na Czechitas', description) }}
 
 {{ mentions(topic, 'Czechitas') }}
 
