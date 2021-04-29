@@ -4,7 +4,7 @@ from pathlib import Path
 
 from juniorguru.lib.log import get_log
 from juniorguru.lib import timer
-from juniorguru.lib.club import discord_task, count_downvotes, count_upvotes
+from juniorguru.lib.club import discord_task, count_downvotes, count_upvotes, DISCORD_SENDING_ENABLED
 from juniorguru.models import Job, JobDropped, JobError, SpiderMetric, db
 from juniorguru.scrapers.settings import IMAGES_STORE
 
@@ -55,10 +55,11 @@ async def manage_jobs_channel(client):
                         job.save()
                     log.info(f'Saved {job.link} reactions')
 
-    new_jobs = [job for job in jobs if job.link not in seen_links]
-    log.info(f'Posting {len(new_jobs)} new jobs')
-    for job in new_jobs:
-        await channel.send(f'**{job.title}**\n{job.company_name} – {job.location}\n{job.link}')
+    if DISCORD_SENDING_ENABLED:
+        new_jobs = [job for job in jobs if job.link not in seen_links]
+        log.info(f'Posting {len(new_jobs)} new jobs')
+        for job in new_jobs:
+            await channel.send(f'**{job.title}**\n{job.company_name} – {job.location}\n{job.link}')
 
 
 def run_spider(spider_name):

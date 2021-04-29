@@ -26,8 +26,8 @@
         už {{ topic.mentions_count }} zmínek
       {% endif %}
       o&nbsp;{{ topic_name }}.
-      {% if topic.dedicated_channels_messages_count %}
-        Dokonce máme na&nbsp;toto téma i&nbsp;celou místnost, kam jsme napsali {{ topic.dedicated_channels_messages_count }}&nbsp;zpráv.
+      {% if topic.topic_channels_messages_count %}
+        Dokonce máme na&nbsp;toto téma i&nbsp;celou místnost, kam jsme napsali {{ topic.topic_channels_messages_count }}&nbsp;zpráv.
       {% endif %}
       {% if topic.mentions_count > 1 %}
         Poradíme&nbsp;ti!
@@ -35,7 +35,7 @@
         Pojďme to probrat!
       {% endif %}
     {% else %}
-      V klubu máme o&nbsp;{{ topic_name }} celou místnost, kam jsme už napsali {{ topic.dedicated_channels_messages_count }}&nbsp;zpráv.
+      V klubu máme o&nbsp;{{ topic_name }} celou místnost, kam jsme už napsali {{ topic.topic_channels_messages_count }}&nbsp;zpráv.
       Poradíme&nbsp;ti!
     {% endif %}
   </p>

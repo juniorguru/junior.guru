@@ -9,12 +9,15 @@ from juniorguru.models import Proxy, db
 from juniorguru.lib.log import get_log
 
 
+PROXIES_ENABLED = bool(int(os.getenv('PROXIES_ENABLED', 0)))
+
+
 log = get_log('proxies')
 
 
 def main():
     proxies = []
-    if os.getenv('PROXIES_ENABLED'):
+    if PROXIES_ENABLED:
         response = requests.get('https://free-proxy-list.net/', headers={
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
             'Accept-Language': 'en-US,en;q=0.8,cs;q=0.6,sk;q=0.4,es;q=0.2',

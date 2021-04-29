@@ -1,8 +1,8 @@
 import re
+from collections import Counter
 
 from juniorguru.lib.log import get_log
-from juniorguru.lib.club import discord_task, exclude_categories
-from juniorguru.models import Topic, db
+from juniorguru.models import Message, Topic, db
 
 
 log = get_log('topics')
@@ -77,43 +77,36 @@ TOPIC_CHANNELS = {re.compile(key): value for key, value in {
     # r'^java$': 'java',
 }.items()}
 
-EXCLUDE_CATEGORIES_RE = re.compile('|'.join([
-    r'\bcoreskill\b',
-]), re.IGNORECASE)
 
-
-@discord_task
-async def main(client):
+def main():
     with db:
         Topic.drop_table()
         Topic.create_table()
 
     topics = {}
-    defaults = dict(mentions_count=0, dedicated_channels_messages_count=0)
+    with db:
+        messages = Message.history_listing()
+    for message in messages:
+        topic_channel_keyword = get_topic_channel_keyword(message.channel_name)
+        if topic_channel_keyword:
+            topics.setdefault(topic_channel_keyword, Counter())
+            topics[topic_channel_keyword]['topic_channels_messages_count'] += 1
 
-    for channel in exclude_categories(client.juniorguru_guild.text_channels):
-        log.info(f'#{channel.name}')
-        channel_dedicated_to = None
-
-        for keyword_re, keyword in TOPIC_CHANNELS.items():
-            if keyword_re.search(channel.name):
-                channel_dedicated_to = keyword
-                break
-
-        async for message in channel.history(limit=None, after=None):
-            if channel_dedicated_to is not None:
-                topics.setdefault(channel_dedicated_to, defaults.copy())
-                topics[channel_dedicated_to]['dedicated_channels_messages_count'] += 1
-
-            for keyword_re, keyword in KEYWORDS.items():
-                if keyword_re.search(message.content):
-                    topics.setdefault(keyword, defaults.copy())
-                    topics[keyword]['mentions_count'] += 1
-
-    # print(topics)
+        for keyword_re, keyword in KEYWORDS.items():
+            if keyword_re.search(message.content):
+                topics.setdefault(keyword, Counter())
+                topics[keyword]['mentions_count'] += 1
     with db:
         for name, data in topics.items():
+            log.info(f"{name} {dict(data)}")
             Topic.create(**{'name': name, **data})
+
+
+def get_topic_channel_keyword(channel_name):
+    for keyword_re, keyword in TOPIC_CHANNELS.items():
+        if keyword_re.search(channel_name):
+            return keyword
+    return None
 
 
 if __name__ == '__main__':

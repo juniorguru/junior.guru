@@ -7,6 +7,7 @@ import discord
 
 
 DISCORD_API_KEY = os.getenv('DISCORD_API_KEY') or None
+DISCORD_SENDING_ENABLED = bool(int(os.getenv('DISCORD_SENDING_ENABLED', 0)))
 JUNIORGURU_GUILD_NUM = 769966886598737931
 
 CHANNELS_MAPPING = {
@@ -47,15 +48,16 @@ def discord_task(task):
     task.
 
     The wrapped function is expected to be async and it gets a Discord client instance
-    as the first and only argument. The resulting function is synchronous and is
-    expected to be called without any arguments.
+    as the first argument. The resulting function is synchronous. Any arguments given
+    to the resulting function get passed down to the wrapped function. Positional
+    arguments follow after the client instance.
     """
     @wraps(task)
-    def wrapper():
+    def wrapper(*args, **kwargs):
         class Client(BaseClient):
             async def on_ready(self):
                 await self.wait_until_ready()
-                await task(self)
+                await task(self, *args, **kwargs)
                 await self.close()
 
             async def on_error(self, event, *args, **kwargs):
