@@ -1,9 +1,14 @@
 from juniorguru.lib.log import get_log
-from juniorguru.lib.club import discord_task, exclude_categories, count_downvotes, count_upvotes, is_default_avatar, get_roles
+from juniorguru.lib.club import discord_task, count_downvotes, count_upvotes, is_default_avatar, get_roles
 from juniorguru.models import Message, MessageAuthor, db
 
 
 log = get_log('messages')
+
+
+EXCLUDE_CATEGORIES = [
+    806097273536512010,  # CoreSkill's internal mentoring channels
+]
 
 
 @discord_task
@@ -13,7 +18,9 @@ async def main(client):
         db.create_tables([Message, MessageAuthor])
 
     authors = {}
-    for channel in exclude_categories(client.juniorguru_guild.text_channels):
+    channels = (channel for channel in client.juniorguru_guild.text_channels
+                if not channel.category or channel.category.id not in EXCLUDE_CATEGORIES)
+    for channel in channels:
         log.info(f'#{channel.name}')
         async for message in channel.history(limit=None, after=None):
             if message.author.id not in authors:

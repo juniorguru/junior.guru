@@ -5,7 +5,7 @@ from io import BytesIO
 from PIL import Image
 
 from juniorguru.lib.log import get_log
-from juniorguru.lib.club import discord_task, exclude_bots, is_default_avatar
+from juniorguru.lib.club import discord_task, is_default_avatar
 from juniorguru.models import Member, db
 
 
@@ -27,7 +27,9 @@ async def main(client):
         Member.drop_table()
         Member.create_table()
 
-    for member in exclude_bots([member async for member in client.juniorguru_guild.fetch_members(limit=None)]):
+    members = [member async for member in client.juniorguru_guild.fetch_members(limit=None)
+               if not member.bot]
+    for member in members:
         log.info(f'Member {member.display_name} {member.id}')
         avatar_url = str(member.avatar_url)
         if is_default_avatar(avatar_url):

@@ -5,114 +5,46 @@ from collections import namedtuple
 from juniorguru.lib import club
 
 
-@pytest.mark.parametrize('value,expected', [
-    (123, 123),
-    ('roboti', 797107515186741248),
-    ('xyz-doesnt-exist', 'xyz-doesnt-exist'),
-])
-def test_translate_channel_id(value, expected):
-    assert club.translate_channel_id(value) == expected
-
-
 DummyReaction = namedtuple('Reaction', ['emoji', 'count'])
+DummyEmoji = namedtuple('Emoji', ['name'])
 
 
 def test_count_upvotes():
-    reactions = [DummyReaction('❤️', 4), DummyReaction('👍', 1), DummyReaction('🐣', 4)]
+    reactions = [DummyReaction(DummyEmoji('plus_one'), 4), DummyReaction('👍', 1), DummyReaction('🐣', 3)]
     assert club.count_upvotes(reactions) == 5
 
 
 def test_count_downvotes():
-    reactions = [DummyReaction('🙁', 4), DummyReaction('👎', 1), DummyReaction('🐣', 4)]
-    assert club.count_downvotes(reactions) == 5
+    reactions = [DummyReaction('🙁', 4), DummyReaction('👎', 1), DummyReaction('🐣', 3)]
+    assert club.count_downvotes(reactions) == 1
 
 
-DummyChannel = namedtuple('Channel', ['name', 'category'], defaults=[None])
-DummyCategory = namedtuple('Category', ['name'])
+@pytest.mark.parametrize('emoji, expected', [
+    ('🆗', '🆗'),
+    ('AHOJ', 'AHOJ'),
+    (DummyEmoji('lolpain'), 'lolpain'),
+    (DummyEmoji('BabyYoda'), 'babyyoda'),
+])
+def test_emoji_name(emoji, expected):
+    assert club.emoji_name(emoji) == expected
 
 
-def test_exclude_categories_defaults():
-    assert list(club.exclude_categories([
-        DummyChannel('channel-without-category'),
-        DummyChannel('channel-with-category', DummyCategory('category')),
-        DummyChannel('channel-inside-coreskill1', DummyCategory('🟨 coreskill 🟨')),
-        DummyChannel('channel-inside-coreskill2', DummyCategory('coreskill')),
-    ])) == [
-        DummyChannel('channel-without-category'),
-        DummyChannel('channel-with-category', DummyCategory('category')),
-    ]
+@pytest.mark.parametrize('url, expected', [
+    ('https://cdn.discordapp.com/avatars/524854651644936192/b807c46b5da690cc3365c1fc50159872.webp?size=1024', False),
+    ('https://cdn.discordapp.com/embed/avatars/4.png', True),
+])
+def test_is_default_avatar(url, expected):
+    assert club.is_default_avatar(url) == expected
 
 
-def test_exclude_categories_explicit():
-    assert list(club.exclude_categories([
-        DummyChannel('channel-without-category'),
-        DummyChannel('channel-with-category-moo', DummyCategory('moo')),
-        DummyChannel('channel-with-category-foo', DummyCategory('foo')),
-        DummyChannel('channel-with-category-bar', DummyCategory('bar')),
-        DummyChannel('channel-inside-coreskill1', DummyCategory('🟨 coreskill 🟨')),
-        DummyChannel('channel-inside-coreskill2', DummyCategory('coreskill')),
-    ], [r'\bfo*\b', r'bar'])) == [
-        DummyChannel('channel-without-category'),
-        DummyChannel('channel-with-category-moo', DummyCategory('moo')),
-        DummyChannel('channel-inside-coreskill1', DummyCategory('🟨 coreskill 🟨')),
-        DummyChannel('channel-inside-coreskill2', DummyCategory('coreskill')),
-    ]
+DummyUser = namedtuple('User', ['id'])
+DummyMember = namedtuple('Member', ['id', 'roles'])
+DummyRole = namedtuple('Role', ['id'])
 
 
-def test_exclude_channels_defaults():
-    assert list(club.exclude_channels([
-        DummyChannel('foo'),
-        DummyChannel('moo'),
-        DummyChannel('roboti'),
-    ])) == [
-        DummyChannel('foo'),
-        DummyChannel('moo'),
-    ]
-
-
-def test_exclude_channels_explicit():
-    assert list(club.exclude_channels([
-        DummyChannel('foo'),
-        DummyChannel('moo'),
-        DummyChannel('bar'),
-        DummyChannel('roboti'),
-    ], [r'\b\wo*\b', r'gargamel'])) == [
-        DummyChannel('bar'),
-        DummyChannel('roboti'),
-    ]
-
-
-DummyUser = namedtuple('User', ['id', 'bot'], defaults=[False])
-
-
-def test_exclude_bots():
-    assert list(club.exclude_bots([
-        DummyUser(1, True),
-        DummyUser(2),
-        DummyUser(3, True),
-    ])) == [
-        DummyUser(2),
-    ]
-
-
-def test_exclude_members_defaults():
-    assert list(club.exclude_members([
-        DummyUser(1),
-        DummyUser(2),
-        DummyUser(668226181769986078),
-    ])) == [
-        DummyUser(1),
-        DummyUser(2),
-    ]
-
-
-def test_exclude_members_explicit():
-    assert list(club.exclude_members([
-        DummyUser(1),
-        DummyUser(2),
-        DummyUser(3),
-        DummyUser(668226181769986078),
-    ], [2, 3])) == [
-        DummyUser(1),
-        DummyUser(668226181769986078),
-    ]
+@pytest.mark.parametrize('member_or_user, expected', [
+    (DummyUser(1), []),
+    (DummyMember(1, [DummyRole(42), DummyRole(38)]), [42, 38]),
+])
+def test_get_roles(member_or_user, expected):
+    assert club.get_roles(member_or_user) == expected

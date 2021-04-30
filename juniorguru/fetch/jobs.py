@@ -12,6 +12,9 @@ from juniorguru.scrapers.settings import IMAGES_STORE
 log = get_log('jobs')
 
 
+JOBS_CHANNEL = 834443926655598592
+
+
 @timer.notify
 def main():
     # If the creation of the directory is left to the spiders, they can end
@@ -38,7 +41,7 @@ def main():
 
 @discord_task
 async def manage_jobs_channel(client):
-    channel = await client.fetch_channel('práce-bot')
+    channel = await client.fetch_channel(JOBS_CHANNEL)
 
     jobs = list(Job.listing())
     seen_links = set()
