@@ -10,10 +10,10 @@ log = get_log('roles')
 
 ROLE_MOST_DISCUSSING = 836929320706113567
 ROLE_MOST_HELPFUL = 836960665578766396
-ROLE_IS_SPEAKER = 836928169092710441
+ROLE_IS_SPEAKER = 836928169092710441  # TODO
 ROLE_HAS_INTRO_AND_AVATAR = 836959652100702248
 ROLE_IS_NEW = 836930259982352435
-ROLE_IS_SPONSOR = 837316268142493736
+ROLE_IS_SPONSOR = 837316268142493736  # TODO
 
 
 def main():
@@ -52,8 +52,16 @@ def main():
 
         # ROLE_HAS_INTRO_AND_AVATAR
         intro_avatar_members_ids = [member.id for member in members if member.has_avatar and member.has_intro]
+        log.info(f"intro_avatar_members: {repr_ids(members, intro_avatar_members_ids)}")
         for member in members:
             record_role_diff(member, intro_avatar_members_ids, ROLE_HAS_INTRO_AND_AVATAR)
+            member.save()
+
+        # ROLE_IS_NEW
+        new_members_ids = [member.id for member in members if member.is_new()]
+        log.info(f"new_members_ids: {repr_ids(members, new_members_ids)}")
+        for member in members:
+            record_role_diff(member, new_members_ids, ROLE_HAS_INTRO_AND_AVATAR)
             member.save()
 
     if DISCORD_MUTATIONS_ENABLED:

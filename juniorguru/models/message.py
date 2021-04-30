@@ -7,7 +7,8 @@ from juniorguru.models.base import BaseModel, JSONField
 
 
 TOP_MEMBERS_PERCENT = 0.05
-RECENT_DAYS_PERIOD = 30
+RECENT_PERIOD_DAYS = 30
+IS_NEW_PERIOD_DAYS = 15
 
 INTRO_CHANNEL = 788823881024405544  # ahoj
 UPVOTES_EXCLUDE_CHANNELS = [
@@ -26,6 +27,7 @@ class MessageAuthor(BaseModel):
     is_member = BooleanField(default=True)
     has_avatar = BooleanField(default=False)
     display_name = CharField()
+    joined_at = DateTimeField(null=True)
 
     roles = JSONField(default=lambda: [])
     roles_add = JSONField(default=lambda: [])
@@ -36,7 +38,7 @@ class MessageAuthor(BaseModel):
     upvotes_count = IntegerField(null=True)
     recent_upvotes_count = IntegerField(null=True)
     has_intro = BooleanField(null=True)
-    # first_seen_at = DateTimeField(null=True)
+    first_seen_at = DateTimeField(null=True)
 
     def calc_messages_count(self):
         self.messages_count = self.list_messages.count()
@@ -60,9 +62,18 @@ class MessageAuthor(BaseModel):
             .count()
         self.has_intro = bool(intro_messages_count)
 
+    def calc_first_seen_at(self):
+        first_message = self.list_messages \
+            .order_by(Message.created_at) \
+            .first()
+        self.first_seen_at = first_message.created_at if first_message else self.joined_at
+
     def list_recent_messages(self, today=None):
-        recent_period_start_at = (today or date.today()) - timedelta(days=RECENT_DAYS_PERIOD)
+        recent_period_start_at = (today or date.today()) - timedelta(days=RECENT_PERIOD_DAYS)
         return self.list_messages.where(Message.created_at >= recent_period_start_at)
+
+    def is_new(self, today=None):
+        return (self.first_seen_at + timedelta(days=IS_NEW_PERIOD_DAYS)).date() >= (today or date.today())
 
     @classmethod
     def count(cls):

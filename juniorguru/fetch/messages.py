@@ -33,6 +33,7 @@ async def main(client):
                                                   is_member=bool(getattr(message.author, 'joined_at', False)),
                                                   has_avatar=not is_default_avatar(str(message.author.avatar_url)),
                                                   display_name=message.author.display_name,
+                                                  joined_at=getattr(message.author, 'joined_at', None),
                                                   roles=get_roles(message.author))
                 authors[message.author.id] = author
             with db:
@@ -60,6 +61,7 @@ async def main(client):
             author.calc_upvotes_count()
             author.calc_recent_upvotes_count()
             author.calc_has_intro()
+            author.calc_first_seen_at()
             author.save()
 
 
