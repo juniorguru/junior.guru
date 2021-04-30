@@ -1,5 +1,5 @@
 from juniorguru.lib.log import get_log
-from juniorguru.lib.club import discord_task, exclude_categories, count_downvotes, count_upvotes
+from juniorguru.lib.club import discord_task, exclude_categories, count_downvotes, count_upvotes, is_default_avatar, get_roles
 from juniorguru.models import Message, MessageAuthor, db
 
 
@@ -21,12 +21,12 @@ async def main(client):
                 # if the author isn't a member of the Discord guild/server anymore. User instances don't
                 # have certain properties, hence the getattr() calls below.
                 with db:
-                    roles = [role.id for role in getattr(message.author, 'roles', [])]
                     author = MessageAuthor.create(id=message.author.id,
                                                   is_bot=message.author.bot,
                                                   is_member=bool(getattr(message.author, 'joined_at', False)),
+                                                  has_avatar=not is_default_avatar(str(message.author.avatar_url)),
                                                   display_name=message.author.display_name,
-                                                  roles=roles)
+                                                  roles=get_roles(message.author))
                 authors[message.author.id] = author
             with db:
                 Message.create(id=message.id,
@@ -47,9 +47,12 @@ async def main(client):
 
     with db:
         for author in authors.values():
-            log.info(f'Calculating stats for {author.display_name}')
+            log.info(f'Calculating aggregate props for {author.display_name}')
             author.calc_messages_count()
             author.calc_recent_messages_count()
+            author.calc_upvotes_count()
+            author.calc_recent_upvotes_count()
+            author.calc_has_intro()
             author.save()
 
 

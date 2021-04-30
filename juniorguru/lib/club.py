@@ -7,7 +7,7 @@ import discord
 
 
 DISCORD_API_KEY = os.getenv('DISCORD_API_KEY') or None
-DISCORD_SENDING_ENABLED = bool(int(os.getenv('DISCORD_SENDING_ENABLED', 0)))
+DISCORD_MUTATIONS_ENABLED = bool(int(os.getenv('DISCORD_MUTATIONS_ENABLED', 0)))
 JUNIORGURU_GUILD_NUM = 769966886598737931
 
 CHANNELS_MAPPING = {
@@ -29,8 +29,10 @@ DEFAULT_EXCLUDED_MEMBERS = [
     797097976571887687,  # kuře
 ]
 
-EMOJI_UPVOTES = ['👍', '❤️']
-EMOJI_DOWNVOTES = ['👎', '🙁']
+EMOJI_UPVOTES = ['👍', '❤️', '😍', '🥰', '💕', '♥️', '💖', '💙', '💗', '💜', '💞', '💓', '💛', '🖤', '💚', '😻', '🧡', '👀',
+                 '💯', '🤩', '😋', '💟', '🤍', '🤎', '💡', '👆', '👏', '🥇', '🏆', '✔️', 'plus_one', '👌', 'babyyoda',
+                 'meowthumbsup', '✅', '🤘', 'this']
+EMOJI_DOWNVOTES = ['👎']
 
 
 class BaseClient(discord.Client):
@@ -86,11 +88,23 @@ def translate_channel_id(channel_id):
 
 
 def count_upvotes(reactions):
-    return sum([reaction.count for reaction in reactions if reaction.emoji in EMOJI_UPVOTES])
+    return sum([reaction.count for reaction in reactions
+                if emoji_name(reaction.emoji) in EMOJI_UPVOTES])
 
 
 def count_downvotes(reactions):
-    return sum([reaction.count for reaction in reactions if reaction.emoji in EMOJI_DOWNVOTES])
+    return sum([reaction.count for reaction in reactions
+                if emoji_name(reaction.emoji) in EMOJI_DOWNVOTES])
+
+
+# '🆗'
+# <PartialEmoji animated=False name='lolpain' id=764265678810382366>
+# <PartialEmoji animated=False name='BabyYoda' id=802415790010794016>
+def emoji_name(emoji):
+    try:
+        return emoji.name.lower()
+    except AttributeError:
+        return str(emoji)
 
 
 def exclude_categories(channels, categories=None):
@@ -121,3 +135,11 @@ def exclude_members(members, members_to_exclude=None):
         raise ValueError('Empty list of members')
     return (member for member in members
             if member.id not in members_to_exclude)
+
+
+def is_default_avatar(url):
+    return bool(re.search(r'/embed/avatars/\d+\.', url))
+
+
+def get_roles(member_or_user):
+    return [int(role.id) for role in getattr(member_or_user, 'roles', [])]

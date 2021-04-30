@@ -55,7 +55,7 @@ jobs:
           key: scrapy-{{ checksum ".today" }}
       - run: |
           export PROXIES_ENABLED=1
-          export DISCORD_SENDING_ENABLED=1
+          export DISCORD_MUTATIONS_ENABLED=1
           pipenv run fetch
       - save_cache:
           key: scrapy-{{ checksum ".today" }}

@@ -1,4 +1,3 @@
-import re
 from urllib.parse import urlparse
 from pathlib import Path
 from io import BytesIO
@@ -6,7 +5,7 @@ from io import BytesIO
 from PIL import Image
 
 from juniorguru.lib.log import get_log
-from juniorguru.lib.club import discord_task, exclude_bots
+from juniorguru.lib.club import discord_task, exclude_bots, is_default_avatar
 from juniorguru.models import Member, db
 
 
@@ -42,10 +41,6 @@ async def main(client):
             image.save(image_path, 'PNG')
             avatar_path = f'images/avatars/{image_path.name}'
         Member.create(id=member.id, avatar_path=avatar_path)
-
-
-def is_default_avatar(url):
-    return bool(re.search(r'/embed/avatars/\d+\.', url))
 
 
 if __name__ == '__main__':
