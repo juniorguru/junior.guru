@@ -30,6 +30,7 @@ def on_pre_page_macros(env):
         nav_tabs=NAV_TABS,
         thumbnail=thumbnail(),
         handbook_release_at=arrow.get(2020, 9, 1),
+        club_launch_at=arrow.get(2021, 2, 1),
     ))
 
     try:

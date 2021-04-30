@@ -304,6 +304,7 @@ def inject_defaults():
     return dict(nav_tabs=NAV_TABS,
                 now=now,
                 handbook_release_at=arrow.get(2020, 9, 1),
+                club_launch_at=arrow.get(2021, 2, 1),
                 thumbnail=thumbnail())
 
 

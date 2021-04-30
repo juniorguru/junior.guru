@@ -76,7 +76,7 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
         </li>
       {% endfor %}
       <li class="members__item members__item--count">
-        {{ members_total_count }}&nbsp;členů
+        {{ members_total_count }}&nbsp;členů za&nbsp;{{ ((now - club_launch_at).days / 30)|round|int }}&nbsp;měsíce provozu
       </li>
     </ul>
   </div>
