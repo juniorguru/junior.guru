@@ -100,6 +100,8 @@ def clean_url(url):
         return strip_params(url, ['refId', 'trk'])
     if url and 'talentify.io' in url:
         return strip_params(url, ['tdd'])
+    if url and 'neuvoo.cz' in url:
+        return strip_params(url, ['puid'])
     return url
 
 
