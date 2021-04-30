@@ -61,7 +61,7 @@ def main():
         new_members_ids = [member.id for member in members if member.is_new()]
         log.info(f"new_members_ids: {repr_ids(members, new_members_ids)}")
         for member in members:
-            record_role_diff(member, new_members_ids, ROLE_HAS_INTRO_AND_AVATAR)
+            record_role_diff(member, new_members_ids, ROLE_IS_NEW)
             member.save()
 
     if DISCORD_MUTATIONS_ENABLED:
