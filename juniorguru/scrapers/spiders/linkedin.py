@@ -14,6 +14,7 @@ class Spider(BaseSpider):
     name = 'linkedin'
     proxy = True
     download_timeout = 59
+    download_delay = 1.25
     custom_settings = {
         'ROBOTSTXT_OBEY': False,
         'COOKIES_ENABLED': False,
