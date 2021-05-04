@@ -19,88 +19,89 @@ ROLE_IS_SPONSOR = 837316268142493736  # TODO
 def main():
     with db:
         members = MessageAuthor.members_listing()
+        changes = []
         top_members_limit = MessageAuthor.top_members_limit()
-        log.info(f'members_count={MessageAuthor.count()}, top_members_limit={top_members_limit}')
+        log.info(f'members_count={len(members)}, top_members_limit={top_members_limit}')
 
         # ROLE_MOST_DISCUSSING
-        messages_count_stats = calc_stats(members, 'messages_count', top_members_limit)
+        messages_count_stats = calc_stats(members, lambda m: m.messages_count(), top_members_limit)
         log.info(f"messages_count {repr_stats(members, messages_count_stats)}")
 
-        recent_messages_count_stats = calc_stats(members, 'recent_messages_count', top_members_limit)
+        recent_messages_count_stats = calc_stats(members, lambda m: m.recent_messages_count(), top_members_limit)
         log.info(f"recent_messages_count {repr_stats(members, recent_messages_count_stats)}")
 
         most_discussing_members_ids = set(messages_count_stats.keys()) | set(recent_messages_count_stats.keys())
         log.info(f"most_discussing_members: {repr_ids(members, most_discussing_members_ids)}")
 
         for member in members:
-            record_role_diff(member, most_discussing_members_ids, ROLE_MOST_DISCUSSING)
-            member.save()
+            changes.extend(evaluate_changes(member.id, member.roles, most_discussing_members_ids, ROLE_MOST_DISCUSSING))
 
         # ROLE_MOST_HELPFUL
-        upvotes_count_stats = calc_stats(members, 'upvotes_count', top_members_limit)
+        upvotes_count_stats = calc_stats(members, lambda m: m.upvotes_count(), top_members_limit)
         log.info(f"upvotes_count {repr_stats(members, upvotes_count_stats)}")
 
-        recent_upvotes_count_stats = calc_stats(members, 'recent_upvotes_count', top_members_limit)
+        recent_upvotes_count_stats = calc_stats(members, lambda m: m.recent_upvotes_count(), top_members_limit)
         log.info(f"recent_upvotes_count {repr_stats(members, recent_upvotes_count_stats)}")
 
         most_helpful_members_ids = set(upvotes_count_stats.keys()) | set(recent_upvotes_count_stats.keys())
         log.info(f"most_helpful_members: {repr_ids(members, most_helpful_members_ids)}")
 
         for member in members:
-            record_role_diff(member, most_helpful_members_ids, ROLE_MOST_HELPFUL)
-            member.save()
+            changes.extend(evaluate_changes(member.id, member.roles, most_helpful_members_ids, ROLE_MOST_HELPFUL))
 
         # ROLE_HAS_INTRO_AND_AVATAR
-        intro_avatar_members_ids = [member.id for member in members if member.has_avatar and member.has_intro]
+        intro_avatar_members_ids = [member.id for member in members if member.has_avatar and member.has_intro()]
         log.info(f"intro_avatar_members: {repr_ids(members, intro_avatar_members_ids)}")
         for member in members:
-            record_role_diff(member, intro_avatar_members_ids, ROLE_HAS_INTRO_AND_AVATAR)
-            member.save()
+            changes.extend(evaluate_changes(member.id, member.roles, intro_avatar_members_ids, ROLE_HAS_INTRO_AND_AVATAR))
 
         # ROLE_IS_NEW
         new_members_ids = [member.id for member in members if member.is_new()]
         log.info(f"new_members_ids: {repr_ids(members, new_members_ids)}")
         for member in members:
-            record_role_diff(member, new_members_ids, ROLE_IS_NEW)
-            member.save()
+            changes.extend(evaluate_changes(member.id, member.roles, new_members_ids, ROLE_IS_NEW))
 
     if DISCORD_MUTATIONS_ENABLED:
-        apply_role_diffs(members)
+        apply_changes(changes)
 
 
 @discord_task
-async def apply_role_diffs(client, members):
+async def apply_changes(client, changes):
     all_discord_roles = {discord_role.id: discord_role
                          for discord_role in await client.juniorguru_guild.fetch_roles()}
-    with db:
-        for db_member in members:
-            discord_member = await client.juniorguru_guild.fetch_member(db_member.id)
-            try:
-                if db_member.roles_add:
-                    discord_roles = [all_discord_roles[role_id] for role_id in db_member.roles_add]
-                    log.info(f'{discord_member.display_name}: adding {repr_roles(discord_roles)}')
-                    await discord_member.add_roles(*discord_roles)
-                if db_member.roles_remove:
-                    discord_roles = [all_discord_roles[role_id] for role_id in db_member.roles_remove]
-                    log.info(f'{discord_member.display_name}: removing {repr_roles(discord_roles)}')
-                    await discord_member.remove_roles(*discord_roles)
-            finally:
-                db_member.roles_add = []
-                db_member.roles_remove = []
-                db_member.roles = get_roles(discord_member)
-                db_member.save()
+
+    changes_by_members = {}
+    for member_id, op, role_id in changes:
+        changes_by_members.setdefault(member_id, dict(add=[], remove=[]))
+        changes_by_members[member_id][op].append(role_id)
+
+    for member_id, changes in changes_by_members.items():
+        discord_member = await client.juniorguru_guild.fetch_member(member_id)
+        if changes['add']:
+            discord_roles = [all_discord_roles[role_id] for role_id in changes['add']]
+            log.info(f'{discord_member.display_name}: adding {repr_roles(discord_roles)}')
+            await discord_member.add_roles(*discord_roles)
+        if changes['remove']:
+            discord_roles = [all_discord_roles[role_id] for role_id in changes['remove']]
+            log.info(f'{discord_member.display_name}: removing {repr_roles(discord_roles)}')
+            await discord_member.remove_roles(*discord_roles)
+        with db:
+            member = MessageAuthor.get_by_id(member_id)
+            member.roles = get_roles(discord_member)
+            member.save()
 
 
-def calc_stats(members, prop, top_members_limit):
-    counter = Counter({member.id: getattr(member, prop) for member in members})
+def calc_stats(members, calc_member_fn, top_members_limit):
+    counter = Counter({member.id: calc_member_fn(member) for member in members})
     return dict(counter.most_common()[:top_members_limit])
 
 
-def record_role_diff(member, members_ids, role_id):
-    if member.id in members_ids and role_id not in member.roles:
-        member.roles_add.append(role_id)
-    if member.id not in members_ids and role_id in member.roles:
-        member.roles_remove.append(role_id)
+def evaluate_changes(member_id, current_roles_ids, role_members_ids, role_id):
+    if member_id in role_members_ids and role_id not in current_roles_ids:
+        return [(member_id, 'add', role_id)]
+    if member_id not in role_members_ids and role_id in current_roles_ids:
+        return [(member_id, 'remove', role_id)]
+    return []
 
 
 def repr_stats(members, stats):

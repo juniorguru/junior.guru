@@ -1,5 +1,5 @@
 from juniorguru.lib.log import get_log
-from juniorguru.lib.club import discord_task, count_downvotes, count_upvotes, is_default_avatar, get_roles
+from juniorguru.lib.club import discord_task, count_upvotes, is_default_avatar, get_roles, is_default_message_type
 from juniorguru.models import Message, MessageAuthor, db
 
 
@@ -31,7 +31,7 @@ async def main(client):
                     author = MessageAuthor.create(id=message.author.id,
                                                   is_bot=message.author.bot,
                                                   is_member=bool(getattr(message.author, 'joined_at', False)),
-                                                  has_avatar=not is_default_avatar(str(message.author.avatar_url)),
+                                                  has_avatar=not is_default_avatar(message.author.avatar_url),
                                                   display_name=message.author.display_name,
                                                   joined_at=getattr(message.author, 'joined_at', None),
                                                   roles=get_roles(message.author))
@@ -40,29 +40,16 @@ async def main(client):
                 Message.create(id=message.id,
                                content=message.content,
                                upvotes=count_upvotes(message.reactions),
-                               downvotes=count_downvotes(message.reactions),
                                created_at=message.created_at,
                                edited_at=message.edited_at,
                                author=authors[message.author.id],
                                channel_id=channel.id,
-                               channel_name=channel.name)
+                               channel_name=channel.name,
+                               is_system=not is_default_message_type(message.type))
 
     with db:
         messages_count = Message.count()
-        authors_count = MessageAuthor.count()
-    assert authors_count == len(authors)
-    log.info(f'Saved {messages_count} messages from {authors_count} authors')
-
-    with db:
-        for author in authors.values():
-            log.info(f'Calculating aggregate props for {author.display_name}')
-            author.calc_messages_count()
-            author.calc_recent_messages_count()
-            author.calc_upvotes_count()
-            author.calc_recent_upvotes_count()
-            author.calc_has_intro()
-            author.calc_first_seen_at()
-            author.save()
+    log.info(f'Saved {messages_count} messages from {len(authors)} authors')
 
 
 if __name__ == '__main__':

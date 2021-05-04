@@ -28,60 +28,46 @@ class MessageAuthor(BaseModel):
     has_avatar = BooleanField(default=False)
     display_name = CharField()
     joined_at = DateTimeField(null=True)
-
     roles = JSONField(default=lambda: [])
-    roles_add = JSONField(default=lambda: [])
-    roles_remove = JSONField(default=lambda: [])
 
-    messages_count = IntegerField(null=True)
-    recent_messages_count = IntegerField(null=True)
-    upvotes_count = IntegerField(null=True)
-    recent_upvotes_count = IntegerField(null=True)
-    has_intro = BooleanField(null=True)
-    first_seen_at = DateTimeField(null=True)
+    def messages_count(self):
+        return self.list_messages.count()
 
-    def calc_messages_count(self):
-        self.messages_count = self.list_messages.count()
+    def recent_messages_count(self, today=None):
+        return self.list_recent_messages(today).count()
 
-    def calc_recent_messages_count(self, today=None):
-        self.recent_messages_count = self.list_recent_messages(today).count()
-
-    def calc_upvotes_count(self):
+    def upvotes_count(self):
         messages = self.list_messages \
             .where(Message.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
-        self.upvotes_count = sum([message.upvotes for message in messages])
+        return sum([message.upvotes for message in messages])
 
-    def calc_recent_upvotes_count(self, today=None):
+    def recent_upvotes_count(self, today=None):
         messages = self.list_recent_messages(today) \
             .where(Message.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
-        self.recent_upvotes_count = sum([message.upvotes for message in messages])
+        return sum([message.upvotes for message in messages])
 
-    def calc_has_intro(self):
-        intro_messages_count = self.list_messages \
-            .where(Message.channel_id == INTRO_CHANNEL) \
-            .count()
-        self.has_intro = bool(intro_messages_count)
+    def has_intro(self):
+        intro_message = self.list_messages \
+            .where(Message.channel_id == INTRO_CHANNEL, Message.is_system != True) \
+            .first()
+        return bool(intro_message)
 
-    def calc_first_seen_at(self):
+    def first_seen_at(self):
         first_message = self.list_messages \
             .order_by(Message.created_at) \
             .first()
-        self.first_seen_at = first_message.created_at if first_message else self.joined_at
+        return first_message.created_at.date() if first_message else self.joined_at
 
     def list_recent_messages(self, today=None):
         recent_period_start_at = (today or date.today()) - timedelta(days=RECENT_PERIOD_DAYS)
         return self.list_messages.where(Message.created_at >= recent_period_start_at)
 
     def is_new(self, today=None):
-        return (self.first_seen_at + timedelta(days=IS_NEW_PERIOD_DAYS)).date() >= (today or date.today())
-
-    @classmethod
-    def count(cls):
-        return cls.select().count()
+        return (self.first_seen_at() + timedelta(days=IS_NEW_PERIOD_DAYS)) >= (today or date.today())
 
     @classmethod
     def top_members_limit(cls):
-        return math.ceil(cls.count() * TOP_MEMBERS_PERCENT)
+        return math.ceil(cls.members_listing().count() * TOP_MEMBERS_PERCENT)
 
     @classmethod
     def members_listing(cls):
@@ -92,18 +78,18 @@ class Message(BaseModel):
     id = IntegerField(primary_key=True)
     content = CharField()
     upvotes = IntegerField(default=0)
-    downvotes = IntegerField(default=0)
     created_at = DateTimeField(index=True)
     author = ForeignKeyField(MessageAuthor, backref='list_messages')
     channel_id = IntegerField()
     channel_name = CharField()
+    is_system = BooleanField(default=False)
 
     @classmethod
     def count(cls):
         return cls.select().count()
 
     @classmethod
-    def history_listing(cls):
+    def listing(cls):
         return cls.select().order_by(cls.created_at)
 
     @classmethod

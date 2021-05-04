@@ -85,7 +85,7 @@ def main():
 
     topics = {}
     with db:
-        messages = Message.history_listing()
+        messages = Message.listing()
     for message in messages:
         topic_channel_keyword = get_topic_channel_keyword(message.channel_name)
         if topic_channel_keyword:

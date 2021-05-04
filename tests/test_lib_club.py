@@ -34,7 +34,18 @@ def test_emoji_name(emoji, expected):
     ('https://cdn.discordapp.com/embed/avatars/4.png', True),
 ])
 def test_is_default_avatar(url, expected):
-    assert club.is_default_avatar(url) == expected
+    assert club.is_default_avatar(url) is expected
+
+
+def test_is_default_avatar_handles_non_string():
+    class NonString:
+        def __init__(self, url):
+            self.url = url
+
+        def __str__(self):
+            return self.url
+
+    assert club.is_default_avatar(NonString('https://cdn.discordapp.com/embed/avatars/4.png')) is True
 
 
 DummyUser = namedtuple('User', ['id'])

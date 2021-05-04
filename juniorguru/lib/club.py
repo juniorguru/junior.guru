@@ -79,7 +79,11 @@ def emoji_name(emoji):
 
 
 def is_default_avatar(url):
-    return bool(re.search(r'/embed/avatars/\d+\.', url))
+    return bool(re.search(r'/embed/avatars/\d+\.', str(url)))
+
+
+def is_default_message_type(message_type):
+    return message_type == discord.MessageType.default
 
 
 def get_roles(member_or_user):
