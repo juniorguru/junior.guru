@@ -26,6 +26,7 @@ class MessageAuthor(BaseModel):
     is_bot = BooleanField(default=False)
     is_member = BooleanField(default=True)
     has_avatar = BooleanField(default=False)
+    mention = CharField()
     display_name = CharField()
     joined_at = DateTimeField(null=True)
     roles = JSONField(default=lambda: [])
@@ -76,6 +77,7 @@ class MessageAuthor(BaseModel):
 
 class Message(BaseModel):
     id = IntegerField(primary_key=True)
+    url = CharField()
     content = CharField()
     upvotes = IntegerField(default=0)
     created_at = DateTimeField(index=True)
@@ -97,3 +99,10 @@ class Message(BaseModel):
         return cls.select() \
             .where(cls.channel_id == channel_id) \
             .order_by(cls.created_at)
+
+    @classmethod
+    def digest_listing(cls, since):
+        return cls.select() \
+            .where(cls.created_at >= since) \
+            .order_by(cls.upvotes.desc()) \
+            .limit(3)

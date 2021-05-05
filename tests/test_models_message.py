@@ -45,7 +45,19 @@ def test_message_listing_sort_from_the_oldest(db_connection):
     message2 = create_message(2, author, created_at=date(2021, 10, 20))
     message3 = create_message(3, author, created_at=date(2021, 10, 5))
 
-    assert Message.listing() == [message1, message2, message3]
+    assert list(Message.listing()) == [message1, message3, message2]
+
+
+def test_message_digest_listing(db_connection):
+    author = create_message_author(1)
+
+    message1 = create_message(1, author, created_at=date(2021, 4, 30), upvotes=30)  # noqa
+    message2 = create_message(2, author, created_at=date(2021, 5, 3), upvotes=5)
+    message3 = create_message(3, author, created_at=date(2021, 5, 4), upvotes=10)
+    message4 = create_message(4, author, created_at=date(2021, 5, 5), upvotes=4)
+    message5 = create_message(5, author, created_at=date(2021, 5, 5), upvotes=3)  # noqa
+
+    assert list(Message.digest_listing(date(2021, 5, 1))) == [message3, message2, message4]
 
 
 def test_message_channel_listing(db_connection):
@@ -56,7 +68,7 @@ def test_message_channel_listing(db_connection):
     create_message(3, author, channel_id=222, created_at=date(2021, 10, 5))
     create_message(4, author, channel_id=222, created_at=date(2021, 10, 20))
 
-    assert Message.channel_listing(333) == [message1, message2]
+    assert list(Message.channel_listing(333)) == [message2, message1]
 
 
 def test_author_members_listing(db_connection):
@@ -65,7 +77,7 @@ def test_author_members_listing(db_connection):
     author3 = create_message_author(3, is_member=False, is_bot=True)  # noqa
     author4 = create_message_author(4, is_member=False, is_bot=False)  # noqa
 
-    MessageAuthor.members_listing() == [author2]
+    assert list(MessageAuthor.members_listing()) == [author2]
 
 
 def test_author_top_members_limit_is_five_percent(db_connection):
@@ -105,7 +117,7 @@ def test_author_list_recent_messages(db_connection):
     message3 = create_message(3, author, created_at=date(2021, 4, 1))
     message4 = create_message(4, author, created_at=date(2021, 4, 15))
 
-    assert author.list_recent_messages(today=date(2021, 5, 1)) == [message3, message4]
+    assert list(author.list_recent_messages(today=date(2021, 5, 1))) == [message3, message4]
 
 
 def test_author_first_seen_at_from_messages(db_connection):
