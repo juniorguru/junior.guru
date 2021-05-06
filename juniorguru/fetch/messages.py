@@ -1,5 +1,5 @@
 import textwrap
-from datetime import date, datetime, timedelta
+from datetime import datetime, timedelta
 
 from discord import Embed
 
