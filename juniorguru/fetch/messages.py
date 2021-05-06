@@ -1,4 +1,7 @@
+import textwrap
 from datetime import date, timedelta
+
+from discord import Embed
 
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import discord_task, count_upvotes, is_default_avatar, get_roles, is_default_message_type, DISCORD_MUTATIONS_ENABLED
@@ -12,6 +15,7 @@ EXCLUDE_CATEGORIES = [
     806097273536512010,  # CoreSkill's internal mentoring channels
 ]
 META_CHANNEL = 797107515186741248 #806215364379148348
+DIGEST_LIMIT = 5
 
 
 @discord_task
@@ -36,7 +40,6 @@ async def main(client):
                                                   is_member=bool(getattr(message.author, 'joined_at', False)),
                                                   has_avatar=not is_default_avatar(message.author.avatar_url),
                                                   display_name=message.author.display_name,
-                                                  mention=message.author.mention,
                                                   joined_at=getattr(message.author, 'joined_at', None),
                                                   roles=get_roles(message.author))
                 authors[message.author.id] = author
@@ -58,21 +61,26 @@ async def main(client):
 
     channel = await client.fetch_channel(META_CHANNEL)
     with db:
-        digest = repr_digest(Message.digest_listing(date.today() - timedelta(weeks=1)))
-    log.info(f'Sending digest: {repr(digest)}')
+        messages = Message.digest_listing(date.today() - timedelta(weeks=1), limit=DIGEST_LIMIT)
+
+    for n, message in enumerate(messages, start=1):
+        log.info(f"Digest #{n}: {message.upvotes} votes for {message.author.display_name} in #{message.channel_name}, {message.url}")
     if DISCORD_MUTATIONS_ENABLED:
-        await channel.send(digest)
-
-
-def repr_digest(messages):
-    messages = list(messages)
-    return '\n'.join([
-        "🔥 Nejpopulárnější příspěvky za uplynulý týden 🔥",
-        "",
-        f"🥇 {messages[0].author.mention} {messages[0].url}",
-        f"🥈 {messages[1].author.mention} {messages[1].url}",
-        f"🥉 {messages[2].author.mention} {messages[2].url}",
-    ])
+        content = [
+            f"🔥 **{DIGEST_LIMIT} nej příspěvků za uplynulý týden**",
+            "",
+            "Pokud je něco zajímavé nebo ti to pomohlo, dej tomu palec 👍, srdíčko ❤️, očička 👀 apod. Oceníš autory a pomůžeš tomu, aby se příspěvek mohl objevit i tady. Někomu, kdo nemá čas procházet všechno, co se v klubu napíše, se může tento přehled hodit.",
+        ]
+        embed_description = []
+        for message in messages:
+            embed_description.extend([
+                f"{message.upvotes}× láska pro <@{message.author.id}> v <#{message.channel_id}>:",
+                f"> {textwrap.shorten(message.content, 200, placeholder='…')}",
+                f"[Hop na příspěvek]({message.url})",
+                "",
+            ])
+        await channel.send(content="\n".join(content),
+                           embed=Embed(description="\n".join(embed_description)))
 
 
 if __name__ == '__main__':

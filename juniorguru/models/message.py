@@ -18,6 +18,7 @@ UPVOTES_EXCLUDE_CHANNELS = [
     797040163325870092,  # offtopic
     788822884948770847,  # moderátoři
     797107515186741248,  # roboti
+    806215364379148348,  # meta
 ]
 
 
@@ -26,7 +27,6 @@ class MessageAuthor(BaseModel):
     is_bot = BooleanField(default=False)
     is_member = BooleanField(default=True)
     has_avatar = BooleanField(default=False)
-    mention = CharField()
     display_name = CharField()
     joined_at = DateTimeField(null=True)
     roles = JSONField(default=lambda: [])
@@ -101,8 +101,9 @@ class Message(BaseModel):
             .order_by(cls.created_at)
 
     @classmethod
-    def digest_listing(cls, since):
+    def digest_listing(cls, since, limit=5):
         return cls.select() \
-            .where(cls.created_at >= since) \
+            .where(cls.created_at >= since,
+                   Message.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS)) \
             .order_by(cls.upvotes.desc()) \
-            .limit(3)
+            .limit(limit)
