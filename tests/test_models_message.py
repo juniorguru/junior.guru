@@ -8,16 +8,18 @@ from juniorguru.models.message import INTRO_CHANNEL
 # from testing_utils import prepare_logo_data
 
 
-def create_message_author(id, **kwargs):
-    return MessageAuthor.create(id=id,
+def create_message_author(id_, **kwargs):
+    return MessageAuthor.create(id=id_,
                                 is_member=kwargs.get('is_member', True),
                                 is_bot=kwargs.get('is_bot', False),
                                 display_name=kwargs.get('display_name', 'Kuře Žluté'),
+                                mention=kwargs.get('mention', f'<@{id_}>'),
                                 joined_at=kwargs.get('joined_at', date.today() - timedelta(days=3)))
 
 
-def create_message(id, author, **kwargs):
-    return Message.create(id=id,
+def create_message(id_, author, **kwargs):
+    return Message.create(id=id_,
+                          url=f'https://example.com/messages/{id_}',
                           author=author,
                           content=kwargs.get('content', 'hello'),
                           upvotes=kwargs.get('upvotes', 0),
