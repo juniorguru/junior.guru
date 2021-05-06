@@ -101,9 +101,9 @@ class Message(BaseModel):
             .order_by(cls.created_at)
 
     @classmethod
-    def digest_listing(cls, since, limit=5):
+    def digest_listing(cls, since_dt, limit=5):
         return cls.select() \
-            .where(cls.created_at >= since,
+            .where(cls.created_at >= since_dt,
                    Message.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS)) \
             .order_by(cls.upvotes.desc()) \
             .limit(limit)
