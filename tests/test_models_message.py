@@ -58,9 +58,18 @@ def test_message_digest_listing(db_connection):
     message3 = create_message(3, author, created_at=date(2021, 5, 4), upvotes=10)
     message4 = create_message(4, author, created_at=date(2021, 5, 5), upvotes=4)
     message5 = create_message(5, author, created_at=date(2021, 5, 5), upvotes=3)  # noqa
-    message6 = create_message(6, author, created_at=date(2021, 5, 5), upvotes=20, channel_id=INTRO_CHANNEL)  # noqa
 
     assert list(Message.digest_listing(date(2021, 5, 1), limit=3)) == [message3, message2, message4]
+
+
+def test_message_digest_listing_ignores_certain_channels(db_connection):
+    author = create_message_author(1)
+
+    message1 = create_message(1, author, upvotes=5)
+    message2 = create_message(2, author, upvotes=10)
+    message3 = create_message(3, author, upvotes=20, channel_id=INTRO_CHANNEL)  # noqa
+
+    assert set(Message.digest_listing(date(2021, 5, 1), limit=3)) == {message1, message2}
 
 
 def test_message_channel_listing(db_connection):
