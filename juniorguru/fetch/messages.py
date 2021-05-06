@@ -67,7 +67,7 @@ async def main(client):
 def repr_digest(messages):
     messages = list(messages)
     return '\n'.join([
-        "🔥 **Nejpopulárnější příspěvky za uplynulý týden** 🔥",
+        "🔥 Nejpopulárnější příspěvky za uplynulý týden 🔥",
         "",
         f"🥇 {messages[0].author.mention} {messages[0].url}",
         f"🥈 {messages[1].author.mention} {messages[1].url}",
