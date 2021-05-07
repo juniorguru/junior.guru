@@ -11,9 +11,10 @@ from juniorguru.models.proxy import Proxy
 from juniorguru.models.member import Member
 from juniorguru.models.topic import Topic
 from juniorguru.models.message import Message, MessageAuthor
+from juniorguru.models.event import Event, EventSpeaking
 
 
 __all__ = [db, Job, JobDropped, JobError, JobMetric, Metric, Story, Supporter,
            LastModified, PressRelease, JobNewsletterMention, Logo, LogoMetric,
            retry_when_db_locked, SpiderMetric, EMPLOYMENT_TYPES, Proxy, Member,
-           Topic, Message, MessageAuthor]
+           Topic, Message, MessageAuthor, Event, EventSpeaking]

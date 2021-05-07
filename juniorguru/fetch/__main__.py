@@ -9,6 +9,7 @@ from juniorguru.fetch.newsletter_mentions import main as fetch_newsletter_mentio
 from juniorguru.fetch.transactions import main as fetch_transactions
 from juniorguru.fetch.proxies import main as fetch_proxies
 from juniorguru.fetch.members import main as fetch_members
+from juniorguru.fetch.events import main as fetch_events
 from juniorguru.fetch.messages import main as fetch_messages
 from juniorguru.fetch.topics import main as fetch_topics
 from juniorguru.fetch.roles import main as fetch_roles
@@ -28,10 +29,11 @@ def main():
     fetch_messages()
 
     # order-sensitive
+    fetch_events()  # depends on messages
     fetch_topics()  # depends on messages
-    fetch_roles()  # depends on messages
+    fetch_roles()  # depends on messages, events
     fetch_jobs()  # depends on proxies
-    fetch_metrics()  # depends on jobs & logos
+    fetch_metrics()  # depends on jobs, logos
     fetch_newsletter_mentions()  # depends on jobs
 
     # cast magic
