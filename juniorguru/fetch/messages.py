@@ -42,6 +42,7 @@ async def main(client):
                                                   is_member=bool(getattr(message.author, 'joined_at', False)),
                                                   has_avatar=not is_default_avatar(message.author.avatar_url),
                                                   display_name=message.author.display_name,
+                                                  mention=message.author.mention,
                                                   joined_at=getattr(message.author, 'joined_at', None),
                                                   roles=get_roles(message.author))
                 authors[message.author.id] = author
@@ -55,6 +56,7 @@ async def main(client):
                                author=authors[message.author.id],
                                channel_id=channel.id,
                                channel_name=channel.name,
+                               channel_mention=channel.mention,
                                is_system=not is_default_message_type(message.type))
 
     with db:
@@ -86,12 +88,12 @@ async def main(client):
         content = [
             f"🔥 **{DIGEST_LIMIT} nej příspěvků za uplynulý týden (od {since_dt.day}.{since_dt.month}.)**",
             "",
-            "Pokud je něco zajímavé nebo ti to pomohlo, dej tomu palec 👍, srdíčko ❤️, očička 👀 apod. Oceníš autory a pomůžeš tomu, aby se příspěvek mohl objevit i tady. Někomu, kdo nemá čas procházet všechno, co se v klubu napíše, se může tento přehled hodit.",
+            "Pokud je něco zajímavé nebo ti to pomohlo, dej tomu palec 👍, srdíčko ❤️, očička 👀, apod. Oceníš autory a pomůžeš tomu, aby se příspěvek mohl objevit i tady. Někomu, kdo nemá čas procházet všechno, co se v klubu napíše, se může tento přehled hodit.",
         ]
         embed_description = []
         for message in messages:
             embed_description += [
-                f"{message.upvotes}× láska pro <@{message.author.id}> v <#{message.channel_id}>:",
+                f"{message.upvotes}× láska pro {message.author.mention} v {message.channel_mention}:",
                 f"> {textwrap.shorten(message.content, 200, placeholder='…')}",
                 f"[Hop na příspěvek]({message.url})",
                 "",

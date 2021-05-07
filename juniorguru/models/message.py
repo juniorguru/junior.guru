@@ -28,6 +28,7 @@ class MessageAuthor(BaseModel):
     is_member = BooleanField(default=True)
     has_avatar = BooleanField(default=False)
     display_name = CharField()
+    mention = CharField()
     joined_at = DateTimeField(null=True)
     roles = JSONField(default=lambda: [])
 
@@ -84,6 +85,7 @@ class Message(BaseModel):
     author = ForeignKeyField(MessageAuthor, backref='list_messages')
     channel_id = IntegerField()
     channel_name = CharField()
+    channel_mention = CharField()
     is_system = BooleanField(default=False)
 
     @classmethod

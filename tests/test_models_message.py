@@ -26,6 +26,7 @@ def create_message(id_, author, **kwargs):
                           created_at=kwargs.get('created_at', date.today() - timedelta(days=3)),
                           channel_id=kwargs.get('channel_id', 123),
                           channel_name=kwargs.get('channel_name', 'random-discussions'),
+                          channel_mention=kwargs.get('channel_mention', '<#random-discussions>'),
                           is_system=kwargs.get('is_system', False))
 
 
