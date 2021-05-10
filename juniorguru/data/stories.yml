@@ -177,3 +177,26 @@
   image_path: images/stories/pavel-bankovnictvi.jpg
   tags:
     - careerswitch
+
+- url: https://developers.mews.com/meet-the-mewsdevs-daria/
+  date: 2019-11-27
+  title: Ze Sibiře přijela do Prahy studovat chemii, teď pracuje jako programátorka
+  image_path: images/stories/daria-sibir.jpg
+  tags:
+    - careerswitch
+    - women
+
+- url: https://developers.mews.com/marketa-linguist-who-found-love-in-sql-and-portugal/
+  date: 2020-05-05
+  title: Lingvistka, lektorka angličtiny, vedoucí obchodu s oděvy. Dnes datová analytička
+  image_path: images/stories/marketa-lingvistka.jpg
+  tags:
+    - careerswitch
+    - women
+
+- url: https://developers.mews.com/a-different-kind-of-magic-mike/
+  date: 2020-08-06
+  title: Pracoval v hostelu, spal v pokoji pro 20 lidí. Dnes testuje software, který tam používal
+  image_path: images/stories/mike-hostel.jpg
+  tags:
+    - careerswitch
