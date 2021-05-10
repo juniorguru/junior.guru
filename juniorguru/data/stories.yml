@@ -40,7 +40,7 @@
 
 - url: https://ivet1987.wz.cz/blog/
   date: 2020-02-24
-  title: Začala na rodičovské, dnes pracuje v IT
+  title: Účetní se na rodičovské začala učit programovat, dnes pracuje v IT
   image_path: images/stories/iveta-ucetni.jpg
   tags:
     - careerswitch
@@ -49,7 +49,7 @@
 
 - url: https://www.zdrojak.cz/clanky/jak-jsem-se-nestal-front-end-vyvojarem/
   date: 2019-11-08
-  title: Za dva roky frontend vývojářem
+  title: Za dva roky (nejen) frontend vývojářem
   image_path: images/stories/michal-frontend.jpg
   tags:
     - careerswitch
@@ -173,14 +173,14 @@
 
 - url: https://itnoob.cz/
   date: 2021-03-26
-  title: Opustil bankovnictví, po 5 měsících studia našel v Olomouci práci jako programátor
+  title: Opustil bankovnictví, po půl roce studia našel v Olomouci práci v IT
   image_path: images/stories/pavel-bankovnictvi.jpg
   tags:
     - careerswitch
 
 - url: https://developers.mews.com/meet-the-mewsdevs-daria/
   date: 2019-11-27
-  title: Ze Sibiře přijela do Prahy studovat chemii, teď pracuje jako programátorka
+  title: Ze Sibiře přijela do Prahy studovat chemii, místo toho je programátorkou
   image_path: images/stories/daria-sibir.jpg
   tags:
     - careerswitch
@@ -196,7 +196,7 @@
 
 - url: https://developers.mews.com/a-different-kind-of-magic-mike/
   date: 2020-08-06
-  title: Pracoval v hostelu, spal v pokoji pro 20 lidí. Dnes testuje software, který tam používal
+  title: Pracoval v hostelu, spal v pokoji pro 20 lidí. Testuje software, který tam používal
   image_path: images/stories/mike-hostel.jpg
   tags:
     - careerswitch
