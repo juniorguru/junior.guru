@@ -12,7 +12,7 @@ class Spider(BaseSpider):
     name = 'remoteok'
     custom_settings = {'DOWNLOAD_DELAY': 1}
     start_urls = [
-        'https://remoteok.io/remote-dev-jobs.json',
+        'https://remoteok.io/remote-dev-jobs.json?api=1',
     ]
 
     def parse(self, response):
