@@ -38,7 +38,6 @@ def main():
     Pool().map(run_spider, spider_names)
 
     manage_jobs_channel()
-    manage_jobs_voting_channel()  # experimenting with Mila and ML
 
 
 @discord_task
@@ -68,7 +67,7 @@ async def manage_jobs_channel(client):
 
 
 @discord_task
-async def manage_jobs_voting_channel(client):
+async def manage_jobs_voting_channel(client):  # experimenting with Mila and ML
     channel = await client.fetch_channel(JOBS_VOTING_CHANNEL)
     seen_links = set()
 

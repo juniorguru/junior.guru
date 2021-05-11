@@ -1,4 +1,4 @@
-from juniorguru.fetch.jobs import main as fetch_jobs
+from juniorguru.fetch.jobs import main as fetch_jobs, manage_jobs_voting_channel
 from juniorguru.fetch.logos import main as fetch_logos
 from juniorguru.fetch.metrics import main as fetch_metrics
 from juniorguru.fetch.stories import main as fetch_stories
@@ -38,6 +38,7 @@ def main():
 
     # cast magic
     do_magic()  # depends on jobs
+    manage_jobs_voting_channel()  # depends on magic
 
 
 if __name__ == '__main__':
