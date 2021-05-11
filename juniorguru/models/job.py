@@ -253,6 +253,8 @@ class JobDropped(BaseModel):
     response_backup_path = CharField(null=True)
     item = JSONField()
     magic_is_junior = BooleanField(null=True)
+    upvotes = IntegerField(default=0)
+    downvotes = IntegerField(default=0)
 
     @classmethod
     def admin_listing(cls, types=None):
