@@ -1,7 +1,7 @@
 import textwrap
 from datetime import datetime, timedelta
 
-from discord import Embed
+from discord import Embed, ChannelType
 
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import discord_task, count_upvotes, is_default_avatar, get_roles, is_default_message_type, DISCORD_MUTATIONS_ENABLED
@@ -11,9 +11,6 @@ from juniorguru.models import Message, MessageAuthor, db
 log = get_log('messages')
 
 
-EXCLUDE_CATEGORIES = [
-    806097273536512010,  # CoreSkill's internal mentoring channels
-]
 DIGEST_BOT_ID = 797097976571887687
 DIGEST_CHANNEL = 789046675247333397
 DIGEST_LIMIT = 5
@@ -27,9 +24,9 @@ async def main(client):
         db.create_tables([Message, MessageAuthor])
 
     authors = {}
-    channels = (channel for channel in client.juniorguru_guild.text_channels
-                if not channel.category or channel.category.id not in EXCLUDE_CATEGORIES)
-    for channel in channels:
+    relevant_channels = (channel for channel in client.juniorguru_guild.text_channels
+                         if channel.permissions_for(client.juniorguru_guild.me).read_messages)
+    for channel in relevant_channels:
         log.info(f'#{channel.name}')
         async for message in channel.history(limit=None, after=None):
             if message.author.id not in authors:
