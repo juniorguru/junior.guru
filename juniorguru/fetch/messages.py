@@ -1,7 +1,7 @@
 import textwrap
 from datetime import datetime, timedelta
 
-from discord import Embed, ChannelType
+from discord import Embed
 
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import discord_task, count_upvotes, is_default_avatar, get_roles, is_default_message_type, DISCORD_MUTATIONS_ENABLED
