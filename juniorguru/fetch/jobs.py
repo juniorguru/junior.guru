@@ -110,7 +110,7 @@ async def manage_jobs_voting_channel(client):  # experimenting with Mila and ML
         new_jobs_dropped = [job_dropped for job_dropped in jobs_dropped if job_dropped.item['link'] not in seen_links]
         log.info(f'Posting {len(new_jobs_dropped)} new dropped jobs')
         for job_dropped in new_jobs_dropped:
-            await channel.send(f"**{job_dropped.item['title']}**\n{job_dropped.item['company_name']} – {job_dropped.item['locations_raw']}\n{job_dropped.item['link']}")
+            await channel.send(f"**{job_dropped.item['title']}**\n{job_dropped.item['company_name']} – {', '.join(job_dropped.item['locations_raw'])}\n{job_dropped.item['link']}")
 
 
 def run_spider(spider_name):
