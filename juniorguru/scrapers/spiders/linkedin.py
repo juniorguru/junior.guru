@@ -102,6 +102,8 @@ def clean_url(url):
         return strip_params(url, ['tdd'])
     if url and 'neuvoo.cz' in url:
         return strip_params(url, ['puid'])
+    if url and 'lever.co' in url:
+        return re.sub(r'/apply$', '/', url)
     return url
 
 
