@@ -1,5 +1,5 @@
 - title: První klubový sraz
-  date: 2021-02-11
+  date: "2021-02-11"
   time: "18:30"
   description: |
     Začneme několika _lightning talks_, pokud se někdo přihlásí. Pak bude volná debata podobně jako když se lidi sejdou v hospodě.
@@ -13,7 +13,7 @@
     - 797088930758524959
 
 - title: "#Junioring 101 - How Not To Go Bonkers At The Start"
-  date: 2021-03-16
+  date: "2021-03-16"
   description: |
     Máš svou první práci v IT? Výborně! Ale co teď? Jak být užitečným členem týmu, jak se dál vzdělávat a jak se z toho všeho nezbláznit? Přednáška bude v angličtině.
   bio: |
@@ -29,7 +29,7 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/822066882298642462
 
 - title: Jamstack
-  date: 2021-03-31
+  date: "2021-03-31"
   description: |
     Co jsou „staticky generované stránky“? Co je Jamstack a jak ti může pomoci tvořit webovky? Jak se orientovat v existujících řešeních a jak si můžeš na Jamstacku vytvořit třeba vlastní blog?
   bio: |
@@ -45,7 +45,7 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/826872579427794955
 
 - title: Designování vysněné práce
-  date: 2021-04-13
+  date: "2021-04-13"
   description: |
     **Přednášku jsme kvůli zdravotní nesnázi přesunuli z 13. 4. na 27. 4.**
 
@@ -63,7 +63,7 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/836906198426320906
 
 - title: "AMA: Jiří Psotka"
-  date: 2021-05-05
+  date: "2021-05-05"
   description: |
     AMA znamená _ask me anything_. Příklady otázek, které jsme řešili:
 
@@ -88,10 +88,10 @@
     - https://www.instagram.com/dog2y/
   speakers:
     - 382474361300451328
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/839582722480799795
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/842104677943869440
 
 - title: Život HTTP požadavku
-  date: 2021-05-18
+  date: "2021-05-18"
   description: |
     Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce, jelikož je to voda, ve které jejich výtvor přímo plave. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu. V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
   bio: |
