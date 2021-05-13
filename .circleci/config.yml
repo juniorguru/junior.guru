@@ -92,15 +92,6 @@ jobs:
       - store_artifacts:
           path: ./public.tar.gz  # the generated HTML is made available for download (used in the deploy job)
 
-  send-idempotent:
-    executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run: |
-          export DISCORD_MUTATIONS_ENABLED=1
-          pipenv run send-idempotent
-
   # needs $NOW_TOKEN, $NOW_ORG_ID, $NOW_PROJECT_ID
   deploy:
     executor: python-js
@@ -185,9 +176,6 @@ workflows:
       - sync:
           requires:
             - install
-      - send-idempotent:
-          requires:
-            - sync
       - build:
           requires:
             - sync
