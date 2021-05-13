@@ -10,7 +10,7 @@ PROJECT_URL = 'https://circleci.com/api/v1.1/project/github/honzajavorek/junior.
 
 
 def is_sync_job(job):
-    return job.get('workflows', {}).get('job_name', '') == 'sync'
+    return job.get('workflows', {}).get('job_name', '') in ('sync', 'fetch')
 
 
 def is_nightly_job(job):
@@ -24,6 +24,7 @@ def is_sync_and_nightly(job):
 def fetch_url(build_num):
     try:
         res = get(f'{PROJECT_URL}/{build_num}/artifacts')
+        res.raise_for_status()
         artifacts = list(filter(lambda artifact: artifact.get('path', '') == 'backup.tar.gz', res.json()))
         # only one artifact should be there
         artifact = artifacts[0] if len(artifacts) > 0 else {}
@@ -31,8 +32,7 @@ def fetch_url(build_num):
         return artifact.get('url', None)
     except Exception as e:
         # something has failed, but no big deal
-        print (e)
-        pass
+        print(e)
 
 
 def download_data(path, url):
@@ -44,6 +44,7 @@ def download_data(path, url):
 def fetch_artifacts(offset, loop):
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
     res = get(f'{PROJECT_URL}?limit=100&offset={offset}')
+    res.raise_for_status()
     jobs = res.json()
     sync_and_nightly_jobs = filter(is_sync_and_nightly, jobs)
     build_nums = filter(lambda x: x is not None, map(lambda job: job.get('build_num', None), sync_and_nightly_jobs))
