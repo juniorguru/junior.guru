@@ -30,19 +30,14 @@ jobs:
               - project/node_modules
               - project
 
-  test:
+  lint-and-test:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: pipenv run test -v
-
-  lint:
-    executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run: pipenv run lint
+      - run: |
+          pipenv run lint
+          pipenv run test -v
 
   # needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY
   sync:
@@ -167,10 +162,7 @@ workflows:
   push:
     jobs:
       - install
-      - test:
-          requires:
-            - install
-      - lint:
+      - lint-and-test:
           requires:
             - install
       - sync:
