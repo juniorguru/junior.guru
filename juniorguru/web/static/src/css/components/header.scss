@@ -5,16 +5,16 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: $white;
+  background: var(--color-white);
   background: linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 1rem);
 }
 
 .header--opaque {
-  background: $white;
+  background: var(--color-white);
 }
 
 .header__main {
-  background: $yellow;
+  background: var(--color-yellow);
 }
 
 .header--subnav .header__main {
@@ -80,25 +80,25 @@
   box-sizing: border-box;
   text-decoration: none;
   padding: ($whitespace-0 / 2) $whitespace-0;
-  color: $black;
+  color: var(--color-black);
 
   &:hover, &:focus, &:active {
     text-decoration: underline;
     background: none;
-    color: $black;
+    color: var(--color-black);
   }
 }
 
 a.header__nav-tab-control--button {
-  background: $black;
-  color: $white;
+  background: var(--color-black);
+  color: var(--color-white);
   border-radius: 0.3rem;
   text-decoration: none;
 
   &:hover, &:focus, &:active {
     text-decoration: none;
-    background: $blue;
-    color: $white;
+    background: var(--color-blue);
+    color: var(--color-white);
   }
 }
 
@@ -107,7 +107,7 @@ a.header__nav-tab-control--active.header__nav-tab-control--button {
   &, &:hover, &:focus, &:active {
     text-decoration: underline;
     background: none;
-    color: $black;
+    color: var(--color-black);
   }
 }
 
@@ -150,7 +150,7 @@ a.header__nav-tab-control--active.header__nav-tab-control--button {
   display: block;
   box-sizing: border-box;
   margin: $whitespace-0 0;
-  background: $white;
+  background: var(--color-white);
 }
 
 a.header__subnav-tab-control:hover,
@@ -160,18 +160,18 @@ a.header__subnav-tab-control:active,
 a.header__subnav-tab-control--active:hover,
 a.header__subnav-tab-control--active:focus,
 a.header__subnav-tab-control--active:active {
-  color: $black;
+  color: var(--color-black);
   margin: 0;
   margin-top: 0.4rem;
   padding: ($whitespace-0 - 0.4rem) 0 ($whitespace-0 - 0.3rem) 0;
-  border-bottom: 0.3rem $black solid;
+  border-bottom: 0.3rem var(--color-black) solid;
 }
 
 a.header__subnav-tab-control:hover,
 a.header__subnav-tab-control:focus,
 a.header__subnav-tab-control:active {
-  color: $blue;
-  border-color: $blue;
+  color: var(--color-blue);
+  border-color: var(--color-blue);
 }
 
 .header__subnav-tab-number {

@@ -1,8 +1,14 @@
+from pathlib import Path
+
 import arrow
 from flask import Flask, Response, render_template, url_for
 
+from juniorguru.lib import template_filters
+from juniorguru.lib.images import html_to_png_path
 from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, Member, db
-from juniorguru.web.thumbnail import thumbnail
+
+
+THUMBNAILS_DIR = Path(__file__).parent / 'static' / 'images' / 'thumbnails'
 
 
 NAV_TABS = [
@@ -60,6 +66,26 @@ app = Flask(__name__)
 
 def redirect(url):
     return render_template('meta_redirect.html', url=url)
+
+
+def thumbnail(**context):
+    png_path = html_to_png_path('thumbnail.html', context, THUMBNAILS_DIR)
+    return f'images/thumbnails/{png_path.name}'
+
+
+for template_filter in [
+    template_filters.email_link,
+    template_filters.md,
+    template_filters.remove_p,
+    template_filters.tag_label,
+    template_filters.to_datetime,
+    template_filters.ago,
+    template_filters.sections,
+    template_filters.metric,
+    template_filters.sample,
+    template_filters.sample_jobs,
+]:
+    app.template_filter()(template_filter)
 
 
 @app.route('/')
@@ -308,4 +334,4 @@ def inject_defaults():
                 thumbnail=thumbnail())
 
 
-from juniorguru.web import admin, template_filters  # noqa
+from juniorguru.web import admin  # noqa

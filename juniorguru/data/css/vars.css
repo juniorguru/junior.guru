@@ -1,0 +1,16 @@
+:root {
+  --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* if changing, edit also $dots-black, SVGs and https://logo.junior.guru/ */
+  --color-black: #343434;
+
+  /* if changing, edit also $dots-blue, SVGs, annotations.js, and https://logo.junior.guru/ */
+  --color-blue: #1755d1;
+
+  /* if changing, edit also https://logo.junior.guru/ */
+  --color-yellow: #fffa72;
+  --color-yellow-light: #fffee3;
+
+  --color-white: #ffffff;
+  --color-gray: #ababab;
+}

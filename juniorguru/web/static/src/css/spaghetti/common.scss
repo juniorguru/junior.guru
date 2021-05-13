@@ -1,5 +1,5 @@
 a {
-  @include color-links($black, $blue);
+  @include color-links(var(--color-black), var(--color-blue));
 }
 
 h4, h3, h2, h1, html, body {
@@ -81,14 +81,14 @@ ul li {
     box-sizing: border-box;
     padding: $whitespace;
     width: 25rem;
-    border: 1px dotted $gray;
-    color: $gray;
+    border: 1px dotted var(--color-gray);
+    color: var(--color-gray);
     line-height: 1.3;
     margin: 0 $whitespace-0 $whitespace $whitespace-0;
   }
 
   li a {
-    @include color-links($gray, $blue);
+    @include color-links(var(--color-gray), var(--color-blue));
   }
 }
 
@@ -103,45 +103,45 @@ ul li {
 }
 
 .legacy-button {
-  color: $white;
-  background: $black;
+  color: var(--color-white);
+  background: var(--color-black);
 
   &:hover, &:focus, &:active {
-    background: $blue;
+    background: var(--color-blue);
   }
 }
 
 .legacy-button, .legacy-button a {
-  color: $white;
+  color: var(--color-white);
 
   &:hover, &:focus, &:active {
-    color: $white;
+    color: var(--color-white);
   }
 }
 
 .legacy-button.legacy-button-inverted, a.legacy-button.legacy-button-inverted {
-  color: $black;
-  background: $yellow;
+  color: var(--color-black);
+  background: var(--color-yellow);
 }
 
 a.legacy-button.legacy-button-inverted {
   &:hover, &:focus, &:active {
-    color: $white;
-    background: $blue;
+    color: var(--color-white);
+    background: var(--color-blue);
   }
 }
 
 a.legacy-button-secondary {
-  color: $black;
+  color: var(--color-black);
   background: transparent;
   font-weight: 300;
-  border: 0.2rem $black solid;
+  border: 0.2rem var(--color-black) solid;
   padding: ($whitespace - 0.2rem) ($whitespace-2 - 0.2rem);
 }
 
 a.legacy-button-secondary.legacy-button-inverted {
-  color: $yellow;
-  border-color: $yellow;
+  color: var(--color-yellow);
+  border-color: var(--color-yellow);
 }
 
 a.legacy-button-secondary, a.legacy-button-secondary.legacy-button-inverted {
@@ -230,7 +230,7 @@ ul.list {
 
     h3, p {
       display: inline-block;
-      background: $white;
+      background: var(--color-white);
       margin-left: $whitespace;
       margin-right: $whitespace;
       padding: 0.3rem 0.5rem;
@@ -258,13 +258,13 @@ ul.list {
     }
 
     a {
-      color: $black;
+      color: var(--color-black);
     }
 
     & > a:hover, & > a:focus, & > a:active,
     &:hover > a, &:focus > a, &:active > a {
       background: none;
-      color: $blue;
+      color: var(--color-blue);
 
       img {
         filter: grayscale(0%);
@@ -272,15 +272,15 @@ ul.list {
       }
 
       ul li small {
-        background: $blue;
+        background: var(--color-blue);
       }
     }
 
     &:hover, &:focus, &:active {
       background: $dots-blue;
-      color: $blue;
+      color: var(--color-blue);
 
-      a { color: $blue; }
+      a { color: var(--color-blue); }
     }
   }
 }
@@ -303,8 +303,8 @@ ul.list {
 
   small {
     display: inline;
-    background: $black;
-    color: $white;
+    background: var(--color-black);
+    color: var(--color-white);
     padding: 0.4rem 1rem 0.5rem 1rem;
   }
 }
@@ -332,10 +332,10 @@ ul.list {
 .list-note {
   margin: $whitespace-2 0;
   text-align: left;
-  color: $gray;
+  color: var(--color-gray);
 
   a {
-    @include color-links($gray, $blue);
+    @include color-links(var(--color-gray), var(--color-blue));
   }
 }
 
@@ -349,7 +349,7 @@ ul.items {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    border-top: 1px solid $gray-light;
+    border-top: 1px solid var(--color-yellow-light);
   }
 
   & > li:first-child {
@@ -369,7 +369,7 @@ ul.items {
   }
 
   a.active {
-    color: $blue;
+    color: var(--color-blue);
   }
 
   h3 {
@@ -383,11 +383,11 @@ ul.items {
 }
 
 .item-summary-wrapper {
-  border-left: $whitespace solid $yellow;
+  border-left: $whitespace solid var(--color-yellow);
   padding-left: $whitespace;
 
   a:hover &, a:focus &, a:active &, a.active & {
-    border-color: $blue;
+    border-color: var(--color-blue);
   }
 }
 
@@ -409,7 +409,7 @@ ul.items {
 
   h2 {
     display: inline-block;
-    background-color: $yellow;
+    background-color: var(--color-yellow);
     margin-top: $whitespace-3;
     padding: 0.3rem 0.5rem;
   }
@@ -436,7 +436,7 @@ ul.items {
       cursor: text;
 
       &:hover, &:focus, &:active {
-        background: $black;
+        background: var(--color-black);
       }
     }
 
@@ -467,8 +467,8 @@ ul.items {
 
   h2 strong {
     padding: ($whitespace-0 / 4) ($whitespace / 1.5);
-    background: $yellow;
-    color: $black;
+    background: var(--color-yellow);
+    color: var(--color-black);
   }
 
   h2 .no-wrap {
@@ -480,7 +480,7 @@ ul.items {
 
     strong {
       padding: ($whitespace-0 / 4) ($whitespace / 1.5);
-      background: $yellow;
+      background: var(--color-yellow);
     }
   }
 }
@@ -499,14 +499,14 @@ ul.items {
 
     .legacy-button {
       display: inline-block;
-      background: $black;
+      background: var(--color-black);
       padding-right: $whitespace-3;
       margin-top: $whitespace-3;
       @include arrow;
       overflow: hidden !important;
 
       &:hover, &:focus, &:active {
-        background: $blue;
+        background: var(--color-blue);
       }
     }
   }
@@ -516,7 +516,7 @@ footer {
   .body__container > & { padding: 0; }
 
   a {
-    @include color-links($black, $blue);
+    @include color-links(var(--color-black), var(--color-blue));
   }
 
   &, a {
@@ -525,13 +525,13 @@ footer {
 }
 
 .author {
-  background: $black;
+  background: var(--color-black);
   text-align: left;
-  color: $white;
+  color: var(--color-white);
   @include font-0;
 
   p a {
-    @include color-links($white, $white);
+    @include color-links(var(--color-white), var(--color-white));
   }
 }
 
@@ -663,7 +663,7 @@ a.donate-option {
 
   &:hover, &:focus, &:active {
     .legacy-button {
-      background: $blue;
+      background: var(--color-blue);
     }
 
     .donate-image-patreon {

@@ -36,6 +36,6 @@
   display: block;
   margin: 0;
   width: $whitespace-3 * 1.5;
-  border: $border-width solid $white;
+  border: $border-width solid var(--color-white);
   border-radius: 100%;
 }

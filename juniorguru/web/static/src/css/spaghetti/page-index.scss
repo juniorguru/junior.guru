@@ -81,10 +81,10 @@ body.body--index {
 }
 
 .billboard-learn {
-  background-color: $yellow;
+  background-color: var(--color-yellow);
   background-image: url('./images/billboard-learn.jpg');
   background-position: right 35% center;
-  color: $black;
+  color: var(--color-black);
 
   @media screen and (min-width: 650px) {
     & {
@@ -99,16 +99,16 @@ body.body--index {
   .billboard-wrapper {
     background-image: linear-gradient(
       to left,
-      rgba($yellow, 0.5) 30%,
-      rgba($yellow, 0.9) 60%
+      rgba(var(--color-yellow), 0.5) 30%,
+      rgba(var(--color-yellow), 0.9) 60%
     );
   }
 }
 
 .billboard-jobs {
-  background-color: $black;
+  background-color: var(--color-black);
   background-image: url('./images/billboard-jobs.jpg');
-  color: $white;
+  color: var(--color-white);
 
   @media screen and (min-width: 650px) {
     & {
@@ -123,14 +123,14 @@ body.body--index {
   .billboard-wrapper {
     background-image: linear-gradient(
       to right,
-      rgba($black, 0.5) 30%,
-      rgba($black, 0.9) 60%
+      rgba(var(--color-black), 0.5) 30%,
+      rgba(var(--color-black), 0.9) 60%
     );
   }
 
   p a {
-    color: $yellow;
-    @include color-links($white, $white);
+    color: var(--color-yellow);
+    @include color-links(var(--color-white), var(--color-white));
   }
 }
 
@@ -141,10 +141,10 @@ body.body--index {
     height: $whitespace / 2;
     background: repeating-linear-gradient(
       -45deg,
-      $black,
-      $black ($whitespace * 2),
-      $yellow ($whitespace * 2),
-      $yellow ($whitespace * 4)
+      var(--color-black),
+      var(--color-black) ($whitespace * 2),
+      var(--color-yellow) ($whitespace * 2),
+      var(--color-yellow) ($whitespace * 4)
     );
   }
 
@@ -156,19 +156,19 @@ body.body--index {
   }
 
   .billboard-learn & {
-    p { color: $black; }
-    a { @include color-links($black, $black); }
+    p { color: var(--color-black); }
+    a { @include color-links(var(--color-black), var(--color-black)); }
   }
 
   .billboard-jobs & {
-    p { color: $white; }
-    a { @include color-links($white, $white); }
+    p { color: var(--color-white); }
+    a { @include color-links(var(--color-white), var(--color-white)); }
   }
 }
 
 .how-it-works {
-  background: $black;
-  color: $white;
+  background: var(--color-black);
+  color: var(--color-white);
   padding: (2 * $whitespace-3) 0;
 
   ol, li {
@@ -219,7 +219,7 @@ body.body--index {
     position: relative;
     padding-left: $whitespace-3 + $whitespace;
     padding-right: $whitespace;
-    color: $white;
+    color: var(--color-white);
   }
 
   /*
@@ -229,8 +229,8 @@ body.body--index {
     top: 0;
     left: 0;
     width: $whitespace-3;
-    background: $white;
-    color: $black;
+    background: var(--color-white);
+    color: var(--color-black);
     text-align: center;
     font-weight: bold;
   }

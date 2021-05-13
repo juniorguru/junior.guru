@@ -1,9 +1,10 @@
 from collections import namedtuple
 from datetime import datetime, date
 
+import arrow
 import pytest
 
-from juniorguru.web import template_filters
+from juniorguru.lib import template_filters
 
 
 def test_email_link():
@@ -36,6 +37,23 @@ def test_to_datetime(dt_str, expected):
 def test_ago(dt, expected):
     now = datetime(2019, 12, 10, 16, 20, 42)
     assert template_filters.ago(dt, now=now) == expected
+
+
+@pytest.mark.parametrize('dt,expected', [
+    (datetime(2020, 4, 21, 12, 1, 48), '14:01'),
+    (arrow.get(datetime(2020, 4, 21, 20, 30, 00), 'UTC'), '22:30'),
+    (datetime(2020, 4, 21, 5, 0, 48), '7:00'),
+])
+def test_local_time(dt, expected):
+    assert template_filters.local_time(dt) == expected
+
+
+@pytest.mark.parametrize('dt,expected', [
+    (datetime(2020, 4, 21, 12, 1, 48), 'úterý'),
+    (date(2020, 4, 21), 'úterý'),
+])
+def test_weekday(dt, expected):
+    assert template_filters.weekday(dt) == expected
 
 
 @pytest.mark.parametrize('section,expected', [

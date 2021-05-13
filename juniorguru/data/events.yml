@@ -80,6 +80,8 @@
     -   Jak bys popsal potřebnou úroveň angličtiny?
     -   O jakou mzdu si mám říct jako junior?
     -   Jaký je poměr v týmech mezi seniory a juniory, jakou pozornost může junior očekávat, když nastoupí?
+  poster_description: |
+    AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Jirka je seniorní recruiter v Red Hatu, který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase spoluorganizuje brněnský sraz Python programátorů a věnuje se DJingu.
   bio: |
     Jirka Psotka je seniorní recruiter v [Red Hatu](https://jobs.redhat.com/), který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase jako dobrovolník spoluorganizuje brněnský sraz Python programátorů [Pyvo](https://pyvo.cz/brno-pyvo/) a věnuje se [DJingu](https://www.facebook.com/Hazement/). Doma má nekonečnou [sbírku vinylů](https://hearthis.at/krmelec-prostor/dj-hotdogg/).
   bio_links:
@@ -94,6 +96,10 @@
   date: "2021-05-18"
   description: |
     Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce, jelikož je to voda, ve které jejich výtvor přímo plave. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu. V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
+  poster_description: |
+    Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce, jelikož je to voda, ve které jejich výtvor přímo plave. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu.
+
+    V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
   bio: |
     Vilibald Wanča je seniorní architekt v Oracle s 20letými zkušenostmi v oboru. Baví ho vymýšlet, jak udělat věci jednoduše, ale přitom zároveň dostatečně robustně, efektivně a výkonně. Málokdo ví o jeho kořenech v žižkovském podsvětí nebo angažmá na dubové scéně. Sedm let na ČRo Wave moderoval své [Dubové okénko Prince Wilibalda](https://hledani.rozhlas.cz/iRadio/?query=Dubov%C3%A9+ok%C3%A9nko+Prince+Wilibalda&reader=&stanice%5B%5D=%C4%8CRo+Radio+Wave&porad%5B%5D=Sc%C3%A9na+s+Jakubem+Joh%C3%A1nkem).
   bio_links:

@@ -25,7 +25,7 @@
 }
 
 .filters__item--active .filters__link {
-  color: $blue;
+  color: var(--color-blue);
   font-weight: bold;
 }
 

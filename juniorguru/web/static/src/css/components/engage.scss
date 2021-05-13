@@ -7,7 +7,7 @@
 .engage__content {
   padding: $whitespace;
   padding-top: $whitespace-2;
-  background: rgba($white, 0.8);
+  background: rgba(var(--color-white), 0.8);
 }
 
 .engage__heading {
@@ -80,7 +80,7 @@
   min-width: 2 * $whitespace-3;
   max-width: 8 * $whitespace-3;
   margin: 0 auto;
-  @include color-links($black, $black);
+  @include color-links(var(--color-black), var(--color-black));
 }
 
 .engage__illustration {
@@ -90,11 +90,11 @@
 }
 
 .engage__text a {
-  @include color-links($black, $black);
+  @include color-links(var(--color-black), var(--color-black));
 }
 
 .engage--warning .engage__text a {
-  @include color-links($white, $white);
+  @include color-links(var(--color-white), var(--color-white));
 }
 
 @media screen and (min-width: $breakpoint-tablet) {

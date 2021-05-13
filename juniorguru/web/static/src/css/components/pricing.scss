@@ -9,8 +9,8 @@
 }
 
 .pricing__discount {
-  background: $blue;
-  color: $white;
+  background: var(--color-blue);
+  color: var(--color-white);
   padding: ($whitespace / 4) ($whitespace / 2);
   margin-right: $whitespace / 2;
 }
@@ -20,7 +20,7 @@
 }
 
 .pricing__plan--highlight {
-  background: $yellow;
+  background: var(--color-yellow);
 }
 
 .pricing__plan-heading {

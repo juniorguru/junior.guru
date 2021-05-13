@@ -21,7 +21,7 @@ $more-height: 45rem;
 }
 
 .more__cover:hover .more__button {
-  background: $blue;
+  background: var(--color-blue);
 }
 
 @media screen and (max-width: $grid-breakpoint) {

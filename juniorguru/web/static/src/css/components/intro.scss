@@ -21,7 +21,7 @@
 
 .intro__title--massive {
   text-transform: uppercase;
-  border: ($whitespace / 2) solid $black;
+  border: ($whitespace / 2) solid var(--color-black);
   padding: $whitespace;
   line-height: normal;
 }

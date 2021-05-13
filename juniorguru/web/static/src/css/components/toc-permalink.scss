@@ -6,7 +6,7 @@
   .toc-permalink {
     display: inline;
     @include font-0;
-    @include color-links($gray-light, $gray);
+    @include color-links(var(--color-yellow-light), var(--color-gray));
     margin-left: $whitespace-2;
     text-decoration: none;
     white-space: nowrap;

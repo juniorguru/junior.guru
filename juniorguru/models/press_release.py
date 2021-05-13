@@ -1,4 +1,4 @@
-from peewee import CharField, DateTimeField, TextField
+from peewee import CharField, DateField, TextField
 
 from juniorguru.models.base import BaseModel
 
@@ -6,7 +6,7 @@ from juniorguru.models.base import BaseModel
 class PressRelease(BaseModel):
     id = CharField(primary_key=True)
     title = CharField()
-    date = DateTimeField()
+    date = DateField()
     lead = TextField(null=True)
     text = TextField()
 

@@ -51,7 +51,7 @@
   &:focus,
   &:active {
     .stories__image {
-      border-color: $blue;
+      border-color: var(--color-blue);
     }
   }
 }

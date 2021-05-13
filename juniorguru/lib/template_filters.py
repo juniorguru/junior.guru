@@ -3,13 +3,12 @@ import math
 import random
 from datetime import date, datetime
 
+import arrow
 from jinja2 import Markup
 
-from juniorguru.web import app
 from juniorguru.lib.md import md as md_
 
 
-@app.template_filter()
 def email_link(email):
     user, server = email.split('@')
     return Markup(
@@ -19,12 +18,10 @@ def email_link(email):
     )
 
 
-@app.template_filter()
 def md(*args, **kwargs):
     return Markup(md_(*args, **kwargs))
 
 
-@app.template_filter()
 def remove_p(html):
     return Markup(re.sub(r'</?p[^>]*>', '', html))
 
@@ -43,17 +40,22 @@ TAGS_MAPPING = {
 }
 
 
-@app.template_filter()
 def tag_label(tag):
     return TAGS_MAPPING[tag]
 
 
-@app.template_filter()
 def to_datetime(dt_str):
     return datetime.fromisoformat(dt_str)
 
 
-@app.template_filter()
+def local_time(dt):
+    return arrow.get(dt).to('Europe/Prague').format('H:mm')
+
+
+def weekday(dt):
+    return ['neděle', 'pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota'][int(dt.strftime('%w'))]
+
+
 def ago(value, now=None):
     today = now.date() if now else date.today()
     try:
@@ -67,7 +69,6 @@ def ago(value, now=None):
         return f'před {days} dny'
 
 
-@app.template_filter()
 def sections(sections):
     def yaml_str(s):
         return f'"{s}"' if ':' in s else s
@@ -86,7 +87,6 @@ def sections(sections):
     return yaml.strip()
 
 
-@app.template_filter()
 def metric(value):
     # https://realpython.com/python-rounding/
     decimals = len(str(int(value))) - 2
@@ -95,7 +95,6 @@ def metric(value):
     return re.sub(r'000$', 'tis', str(number))
 
 
-@app.template_filter()
 def sample(items, n=2, sample_fn=None):
     items = list(items)
     if len(items) <= n:
@@ -103,7 +102,6 @@ def sample(items, n=2, sample_fn=None):
     return (sample_fn or random.sample)(items, n)
 
 
-@app.template_filter()
 def sample_jobs(jobs, n=2, sample_fn=None):
     jobs = list(jobs)
     if len(jobs) <= n:

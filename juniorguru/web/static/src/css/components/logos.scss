@@ -3,7 +3,7 @@
 }
 
 .logos--bar {
-  background: $white;
+  background: var(--color-white);
   margin-top: 0;
   z-index: 900;
   margin: $whitespace-3 0 (2 * $whitespace-3) 0;

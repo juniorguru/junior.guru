@@ -17,24 +17,24 @@ $company-logo-size: 8rem;
 }
 
 .jobs__item {
-  border-top: $border-width solid $gray-light;
+  border-top: $border-width solid var(--color-yellow-light);
 }
 
 .jobs__item:last-child {
-  border-bottom: $border-width solid $gray-light;
+  border-bottom: $border-width solid var(--color-yellow-light);
 }
 
 .jobs__item:last-child.jobs__item--highlighted {
-  border-color: $yellow;
+  border-color: var(--color-yellow);
 }
 
 .jobs__item--highlighted {
-  background: $yellow-light;
-  border-color: $yellow;
+  background: var(--color-yellow)-light;
+  border-color: var(--color-yellow);
 }
 
 .jobs__item--highlighted + .jobs__item {
-  border-color: $yellow;
+  border-color: var(--color-yellow);
 }
 
 .jobs--inline .jobs__item {
@@ -49,10 +49,10 @@ $company-logo-size: 8rem;
 }
 
 .jobs__company-logo {
-  border: $border-width solid $gray-light;
+  border: $border-width solid var(--color-yellow-light);
   width: $company-logo-size * 0.8;
   height: $company-logo-size * 0.8;
-  background: $white;
+  background: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +64,7 @@ $company-logo-size: 8rem;
 .jobs__link:hover .jobs__company-logo,
 .jobs__link:focus .jobs__company-logo,
 .jobs__link:active .jobs__company-logo {
-  border-color: $blue;
+  border-color: var(--color-blue);
 }
 
 .jobs__company-logo-image {
@@ -103,7 +103,7 @@ $company-logo-size: 8rem;
 
 .jobs__tag {
   @include font-0;
-  border: 1px solid $gray-light;
+  border: 1px solid var(--color-yellow-light);
   display: inline;
   padding: 0.2rem 0.5rem;
   margin-right: $whitespace-0 / 2;
@@ -111,20 +111,20 @@ $company-logo-size: 8rem;
 }
 
 .jobs__tag--new {
-  color: $white;
-  background: $black;
-  border-color: $black;
+  color: var(--color-white);
+  background: var(--color-black);
+  border-color: var(--color-black);
 }
 
 .jobs__link:hover,
 .jobs__link:focus,
 .jobs__link:active {
   .jobs__tag {
-    border-color: $blue;
+    border-color: var(--color-blue);
   }
 
   .jobs__tag--new {
-    background: $blue;
+    background: var(--color-blue);
   }
 }
 

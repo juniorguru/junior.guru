@@ -76,7 +76,8 @@ google_service_account.json
 /juniorguru/data/*.db
 /juniorguru/data/*.db-*
 /juniorguru/data/responses/
-/juniorguru/data/images/
+/juniorguru/data/images/*
+!/juniorguru/data/images/logo.svg
 
 # Data backup
 backup.tar.gz

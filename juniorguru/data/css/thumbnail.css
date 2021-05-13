@@ -1,0 +1,99 @@
+@import 'vars.css';
+
+html {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail img {
+  display: block;
+  width: 60%;
+  margin-bottom: 3%;
+}
+
+.thumbnail-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail-title img {
+  flex: 1;
+  width: 10%; /* minimal width */
+  margin: 0;
+  padding: 5%;
+  padding-right: 3%;
+  display: block;
+  border-right: 5px solid var(--color-black);
+}
+
+.thumbnail-title h1 {
+  flex: 1;
+  margin: 0;
+  padding: 5%;
+  text-align: left;
+}
+
+.thumbnail-title small {
+  display: block;
+  font-size: 50px;
+}
+
+.thumbnail-title strong {
+  display: block;
+  font-weight: bold;
+  font-size: 80px;
+}
+
+.thumbnail-job {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.thumbnail-job h1 {
+  text-transform: uppercase;
+  background: var(--color-black);
+  color: var(--color-white);
+  margin: 0;
+  padding: 2% 3%;
+  font-size: 40px;
+}
+
+.thumbnail-job h2 {
+  margin: 0;
+  padding: 8% 3% 3% 3%;
+}
+
+.thumbnail-job .job-company {
+  display: block;
+  font-weight: bold;
+  font-size: 80px;
+  white-space: nowrap;
+}
+
+.thumbnail-job .job-location {
+  display: block;
+  font-size: 50px;
+}
+
+.thumbnail-job .job-title {
+  font-size: 50px;
+  margin: 0;
+  padding: 0 5%;
+}

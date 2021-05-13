@@ -1,7 +1,10 @@
+// CSS custom props shared across the 'web' and 'sync' packages
+@import '../../../../data/css/vars.css';
+
 // base
-@import 'spaghetti/variables'; // legacy spaghetti code 🍝
+@import 'spaghetti/variables'; // legacy spaghetti code ??
 @import 'base/body';
-@import 'spaghetti/common'; // legacy spaghetti code 🍝
+@import 'spaghetti/common'; // legacy spaghetti code ??
 
 // content (not exactly BEM)
 @import 'content/checklist';
@@ -37,6 +40,6 @@
 @import 'components/toc';
 @import 'components/value-explanation';
 
-// page-specific legacy spaghetti code 🍝
+// page-specific legacy spaghetti code ??
 @import 'spaghetti/page-index';
 @import 'spaghetti/page-hire-juniors';

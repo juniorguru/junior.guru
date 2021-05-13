@@ -8,7 +8,7 @@
 }
 
 .toc__heading {
-  border-bottom: $border-width solid $gray-light;
+  border-bottom: $border-width solid var(--color-yellow-light);
 }
 
 .toc__items,
@@ -28,7 +28,7 @@
 .toc__item a {
   display: block;
   padding: 0 $whitespace;
-  @include color-links($black, $blue);
+  @include color-links(var(--color-black), var(--color-blue));
 }
 
 .toc__subitem {
@@ -38,13 +38,13 @@
 
 .toc__link:active,
 .toc__sublink:active {
-  color: $blue
+  color: var(--color-blue)
 }
 
 .toc__item--active .toc__link,
 .toc__subitem--active .toc__sublink {
   text-decoration: none;
-  &, &:hover, &:focus { color: $blue };
+  &, &:hover, &:focus { color: var(--color-blue) };
 }
 
 .toc__item--active .toc__link {
@@ -75,7 +75,7 @@
   .toc__content {
     float: left;
     width: $toc-width - $whitespace;
-    background: rgba($white, 0.8);
+    background: rgba(var(--color-white), 0.8);
     padding: 0 $whitespace 0 0;
     max-height: calc(100vh - #{$target-offset - $whitespace-0});
     overflow-y: scroll;

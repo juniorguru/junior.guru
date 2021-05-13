@@ -1,16 +1,16 @@
 .quote {
   background: $dots-blue;
-  color: $blue;
+  color: var(--color-blue);
   margin: $whitespace-3 0;
   padding-left: $whitespace;
   position: relative;
 
   a {
-    @include color-links($blue, $blue);
+    @include color-links(var(--color-blue), var(--color-blue));
   }
 
   blockquote, figcaption {
-    background: $white;
+    background: var(--color-white);
   }
 
   blockquote {

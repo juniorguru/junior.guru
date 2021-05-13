@@ -34,7 +34,7 @@
 
 .content__section-heading,
 .content--mkdocs h2 {
-  border-bottom: $border-width solid $yellow;
+  border-bottom: $border-width solid var(--color-yellow);
 }
 
 .content--mkdocs h2 {

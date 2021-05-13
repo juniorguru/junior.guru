@@ -50,16 +50,15 @@ def main():
     manage_jobs_voting_channel()  # depends on magic
 
 
-if __name__ == '__main__':
-    try:
-        module_name = f'juniorguru.sync.{sys.argv[1]}'
-    except IndexError:
-        # Standard `pipenv run sync`, i.e. `pipenv run python -m juniorguru.sync`
-        main()
-    else:
-        # For debugging purposes, one can run `pipenv run sync stories`,
-        # which is a shortcut for `pipenv run python -m juniorguru.sync.stories`
-        log.info(f"Running only: {module_name}")
-        module = importlib.import_module(module_name)
-        timer.notify(module.main)()
-    log.info('Synchronization done!')
+try:
+    module_name = f'juniorguru.sync.{sys.argv[1]}'
+except IndexError:
+    # Standard `pipenv run sync`, i.e. `pipenv run python -m juniorguru.sync`
+    main()
+else:
+    # For debugging purposes, one can run `pipenv run sync stories`,
+    # which is a shortcut for `pipenv run python -m juniorguru.sync.stories`
+    log.info(f"Running only: {module_name}")
+    module = importlib.import_module(module_name)
+    timer.notify(module.main)()
+log.info('Synchronization done!')

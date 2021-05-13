@@ -49,7 +49,7 @@
           <th>{{ feature.name }}</th>
           <td>
             {{ feature.sentence }}<br>
-            {% for pattern in feature.patterns|default([]) %}
+            {% for pattern in feature.patterns|default([], true) %}
               <small><code>⇢ {{ pattern }}</code></small><br>
             {% endfor %}
           </td>

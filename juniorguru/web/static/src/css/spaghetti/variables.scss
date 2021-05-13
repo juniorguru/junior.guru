@@ -1,4 +1,3 @@
-$font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-size: 62.5%; // = 10px, rem base
 
 // See:
@@ -21,23 +20,6 @@ $line-height-4: 1;
 @mixin font-3 { font-size: 3.2rem; line-height: $line-height-3; }
 @mixin font-4 { font-size: 4.1rem; line-height: $line-height-4; }
 
-// when changing, change it also in SVGs and press.html
-$black: #343434;
-$black-number: "343434";
-
-// when changing, change it also in SVGs, annotations.js, and press.html
-$blue: #1755d1;
-$blue-number: "1755d1";
-$blue-dark: #1447ae;
-
-$white: #ffffff;
-$yellow: #fffa72;  // when changing, change it also in press.html
-$yellow-light: #fffee3;
-$gray: #ababab;
-$gray-light: #ededed;
-$red: #721c24;
-$red-light: #f8d7da;
-
 $grid-breakpoint: 900px;
 $grid-block-size: 28rem;
 
@@ -45,8 +27,8 @@ $breakpoint-desktop: 805px;
 $breakpoint-tablet: 700px;
 $breakpoint-larger-phone: 375px;
 
-$dots-black: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23#{$black-number}' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-$dots-blue: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23#{$blue-number}' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+$dots-black: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23343434' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+$dots-blue: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%231755d1' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 
 $whitespace-0: 0.8rem;
 $whitespace: 1.3rem;
@@ -88,7 +70,7 @@ $target-offset-logos: $target-offset + $logos-height;
     content: "";
     display: block;
     box-sizing: border-box;
-    background: $white;
+    background: var(--color-white);
     width: 50%;
     height: 100%;
     position: absolute;
@@ -115,11 +97,11 @@ $target-offset-logos: $target-offset + $logos-height;
 }
 
 @-webkit-keyframes target-animation {
-  0% { text-shadow: rgba($black, 0.2) 0 0 0; }
-  100% { text-shadow: rgba($black, 0) 0 0 4rem; }
+  0% { text-shadow: rgba(var(--color-black), 0.2) 0 0 0; }
+  100% { text-shadow: rgba(var(--color-black), 0) 0 0 4rem; }
 }
 
 @keyframes target-animation {
-  0% { text-shadow: rgba($black, 0.2) 0 0 0; }
-  100% { text-shadow: rgba($black, 0) 0 0 4rem; }
+  0% { text-shadow: rgba(var(--color-black), 0.2) 0 0 0; }
+  100% { text-shadow: rgba(var(--color-black), 0) 0 0 4rem; }
 }

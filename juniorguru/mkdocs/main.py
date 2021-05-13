@@ -2,8 +2,7 @@ import random
 
 import arrow
 
-from juniorguru.web import NAV_TABS
-from juniorguru.web.thumbnail import thumbnail
+from juniorguru.web import NAV_TABS, thumbnail
 from juniorguru.models import db, Topic, Member, Job
 
 

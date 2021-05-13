@@ -43,7 +43,7 @@ async function buildJS() {
   });
 }
 
-function buildIndexCSS() {
+function buildCSS() {
   return gulp.src('juniorguru/web/static/src/css/index.scss')
     .pipe(gulpIf(isLocalDevelopment, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
@@ -52,18 +52,6 @@ function buildIndexCSS() {
     .pipe(concat('bundle.css'))
     .pipe(gulp.dest('juniorguru/web/static/'));
 }
-
-function buildThumbnailCSS() {
-  return gulp.src('juniorguru/web/static/src/css/thumbnail.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(csso())
-    .pipe(sourcemaps.write())
-    .pipe(concat('thumbnail.css'))
-    .pipe(gulp.dest('juniorguru/web/static/'));
-}
-
-const buildCSS = gulp.parallel(buildIndexCSS, buildThumbnailCSS);
 
 function buildImages() {
   return gulp.src([
