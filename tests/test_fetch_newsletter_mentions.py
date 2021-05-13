@@ -1,4 +1,4 @@
-from juniorguru.fetch.newsletter_mentions import find_urls
+from juniorguru.sync.newsletter_mentions import find_urls
 
 
 def test_find_urls():

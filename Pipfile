@@ -6,7 +6,7 @@ name = "pypi"
 [scripts]
 test = "pytest"
 lint = "flake8"
-fetch = "python -m juniorguru.fetch"
+sync = "python -m juniorguru.sync"
 freeze = "python -m juniorguru.web"
 mkdocs = "python -m mkdocs build --config-file=juniorguru/mkdocs/mkdocs.yml --site-dir=../../public/mkdocs --strict"
 build = "npx gulp build"

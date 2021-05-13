@@ -1,6 +1,6 @@
 from collections import namedtuple
 
-from juniorguru.fetch.roles import repr_roles, repr_ids, repr_stats, calc_stats, evaluate_changes
+from juniorguru.sync.roles import repr_roles, repr_ids, repr_stats, calc_stats, evaluate_changes
 
 
 DummyRole = namedtuple('Role', ['name'])

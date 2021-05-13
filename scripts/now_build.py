@@ -69,7 +69,7 @@ def aggregate_statuses(statuses):
 
 
 def now_dev_build():
-    run(['pipenv', 'run', 'fetch'])
+    run(['pipenv', 'run', 'sync'])
     run(['pipenv', 'run', 'build'])
 
 

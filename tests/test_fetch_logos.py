@@ -1,7 +1,7 @@
 import hashlib
 from datetime import date
 
-from juniorguru.fetch.logos import coerce_record
+from juniorguru.sync.logos import coerce_record
 
 
 def create_record(record=None):

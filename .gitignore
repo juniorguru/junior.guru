@@ -72,7 +72,7 @@ google_service_account.json
 # Build
 /public/
 
-# Fetched data
+# Synced data
 /juniorguru/data/*.db
 /juniorguru/data/*.db-*
 /juniorguru/data/responses/

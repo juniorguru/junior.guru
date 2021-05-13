@@ -45,7 +45,7 @@ jobs:
       - run: pipenv run lint
 
   # needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY
-  fetch:
+  sync:
     executor: python-js
     steps:
       - attach_workspace:
@@ -55,8 +55,7 @@ jobs:
           key: scrapy-{{ checksum ".today" }}
       - run: |
           export PROXIES_ENABLED=1
-          export DISCORD_MUTATIONS_ENABLED=1
-          pipenv run fetch
+          pipenv run sync
       - save_cache:
           key: scrapy-{{ checksum ".today" }}
           paths:
@@ -92,6 +91,15 @@ jobs:
       - run: tar -cvzf public.tar.gz ./public
       - store_artifacts:
           path: ./public.tar.gz  # the generated HTML is made available for download (used in the deploy job)
+
+  send-idempotent:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: |
+          export DISCORD_MUTATIONS_ENABLED=1
+          pipenv run send-idempotent
 
   # needs $NOW_TOKEN, $NOW_ORG_ID, $NOW_PROJECT_ID
   deploy:
@@ -174,15 +182,18 @@ workflows:
       - lint:
           requires:
             - install
-      - fetch:
+      - sync:
           requires:
             - install
+      - send-idempotent:
+          requires:
+            - sync
       - build:
           requires:
-            - fetch
+            - sync
       - check-scrapers:
           requires:
-            - fetch
+            - sync
       - check-anchors:
           requires:
             - build
@@ -201,15 +212,15 @@ workflows:
   nightly:
     jobs:
       - install
-      - fetch:
+      - sync:
           requires:
             - install
       - build:
           requires:
-            - fetch
+            - sync
       - check-scrapers:
           requires:
-            - fetch
+            - sync
       - check-links:
           requires:
             - build
@@ -230,12 +241,12 @@ workflows:
   sending:
     jobs:
       - install
-      - fetch:
+      - sync:
           requires:
             - install
       - send:
           requires:
-            - fetch
+            - sync
     triggers:
       - schedule:
           cron: "0 5 * * *"

@@ -9,29 +9,29 @@ DOWNLOAD_DIR = Path(__file__).parent.parent / 'backups'
 PROJECT_URL = 'https://circleci.com/api/v1.1/project/github/honzajavorek/junior.guru'
 
 
-def is_fetch_job(job):
-    return job.get('workflows', {}).get('job_name', '') == 'fetch'
+def is_sync_job(job):
+    return job.get('workflows', {}).get('job_name', '') == 'sync'
 
 
 def is_nightly_job(job):
     return job.get('workflows', {}).get('workflow_name', '') == 'nightly'
 
 
-def is_fetch_and_nightly(job):
-    return is_fetch_job(job) and is_nightly_job(job)
+def is_sync_and_nightly(job):
+    return is_sync_job(job) and is_nightly_job(job)
 
 
 def fetch_url(build_num):
     try:
         res = get(f'{PROJECT_URL}/{build_num}/artifacts')
-        artifacts = list(filter(lambda artifact: artifact.get('path', '') == 'backup.tar.gz', res.json())) 
+        artifacts = list(filter(lambda artifact: artifact.get('path', '') == 'backup.tar.gz', res.json()))
         # only one artifact should be there
         artifact = artifacts[0] if len(artifacts) > 0 else {}
 
         return artifact.get('url', None)
     except Exception as e:
         # something has failed, but no big deal
-        print (e);
+        print (e)
         pass
 
 
@@ -45,14 +45,14 @@ def fetch_artifacts(offset, loop):
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
     res = get(f'{PROJECT_URL}?limit=100&offset={offset}')
     jobs = res.json()
-    fetch_and_nightly_jobs = filter(is_fetch_and_nightly, jobs)
-    build_nums = filter(lambda x: x is not None, map(lambda job: job.get('build_num', None), fetch_and_nightly_jobs))
+    sync_and_nightly_jobs = filter(is_sync_and_nightly, jobs)
+    build_nums = filter(lambda x: x is not None, map(lambda job: job.get('build_num', None), sync_and_nightly_jobs))
     appended = False
     for build_num in build_nums:
         url = fetch_url(build_num)
         if url is None:
             continue
-        print(f'Downloading {url}');
+        print(f'Downloading {url}')
         # Schedule downloading in the event loop
         loop.run_in_executor(None, download_data, f'{DOWNLOAD_DIR}/{build_num}_backup.tar.gz', url)
         appended = True
