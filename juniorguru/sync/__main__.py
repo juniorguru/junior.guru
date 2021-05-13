@@ -2,6 +2,7 @@ import sys
 import importlib
 
 from juniorguru.lib.log import get_log
+from juniorguru.lib import timer
 from juniorguru.sync.jobs import main as sync_jobs, manage_jobs_voting_channel
 from juniorguru.sync.logos import main as sync_logos
 from juniorguru.sync.metrics import main as sync_metrics
@@ -23,6 +24,7 @@ from juniorguru.lib.magic import do_magic
 log = get_log('sync')
 
 
+@timer.notify
 def main():
     # order-insensitive
     sync_stories()
@@ -59,5 +61,5 @@ if __name__ == '__main__':
         # which is a shortcut for `pipenv run python -m juniorguru.sync.stories`
         log.info(f"Running only: {module_name}")
         module = importlib.import_module(module_name)
-        module.main()
+        timer.notify(module.main)()
     log.info('Synchronization done!')

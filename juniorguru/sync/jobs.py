@@ -3,7 +3,6 @@ from multiprocessing import Pool
 from pathlib import Path
 
 from juniorguru.lib.log import get_log
-from juniorguru.lib import timer
 from juniorguru.lib.club import discord_task, count_downvotes, count_upvotes, DISCORD_MUTATIONS_ENABLED
 from juniorguru.models import Job, JobDropped, JobError, SpiderMetric, db
 from juniorguru.scrapers.settings import IMAGES_STORE
@@ -16,7 +15,6 @@ JOBS_CHANNEL = 834443926655598592
 JOBS_VOTING_CHANNEL = 841680291675242546
 
 
-@timer.notify
 def main():
     # If the creation of the directory is left to the spiders, they can end
     # up colliding in making sure it gets created
