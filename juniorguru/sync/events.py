@@ -90,8 +90,6 @@ def main():
             save_as_ig_square(image_path)
 
 
-
-
 def load_record(record):
     start_at = arrow.get(*map(int, str(record.pop('date').date()).split('-')),
                          *map(int, record.pop('time').split(':')),
