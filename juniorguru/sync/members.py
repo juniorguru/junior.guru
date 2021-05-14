@@ -12,7 +12,7 @@ from juniorguru.models import Member, db
 log = get_log('members')
 
 
-IMAGES_PATH = Path(__file__).parent.parent / 'data' / 'images'
+IMAGES_PATH = Path(__file__).parent.parent / 'images'
 AVATARS_PATH = IMAGES_PATH / 'avatars'
 SIZE_PX = 60
 

@@ -1,4 +1,4 @@
-@import 'vars.css';
+@import '../data/vars.css';
 
 html {
   box-sizing: border-box;

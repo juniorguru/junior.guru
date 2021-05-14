@@ -14,6 +14,7 @@ log = get_log('events')
 
 
 DATA_DIR = Path(__file__).parent.parent / 'data'
+IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
 
 schema = Seq(
@@ -24,7 +25,9 @@ schema = Seq(
         'description': Str(),
         Optional('poster_description'): Str(),
         Optional('bio'): Str(),
+        Optional('bio_title'): Str(),
         Optional('bio_links'): Seq(Str()),
+        Optional('org_logo'): Str(),
         'speakers': Seq(Int()),
         Optional('recording_url'): Url(),
     })
@@ -50,12 +53,12 @@ def main():
                 EventSpeaking.create(speaker=speaker_id, event=event)
 
             log.info(f"Rendering poster for '{record['title']}'")
-            png_path = html_to_png_path('poster.html', model_to_dict(event), DATA_DIR / 'images' / 'posters', filters={
+            png_path = html_to_png_path('poster.html', model_to_dict(event), IMAGES_DIR / 'posters', filters={
                 'md': md,
                 'local_time': local_time,
                 'weekday': weekday,
             })
-            event.poster_path = png_path.relative_to(DATA_DIR)
+            event.poster_path = png_path.relative_to(IMAGES_DIR)
             event.save()
 
             # TODO for now commented out to speed up debugging, but works

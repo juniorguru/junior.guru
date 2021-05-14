@@ -12,21 +12,25 @@
     - 652142810291765248
     - 797088930758524959
 
+
 - title: "#Junioring 101 - How Not To Go Bonkers At The Start"
   date: "2021-03-16"
   description: |
     Máš svou první práci v IT? Výborně! Ale co teď? Jak být užitečným členem týmu, jak se dál vzdělávat a jak se z toho všeho nezbláznit? Přednáška bude v angličtině.
   bio: |
     Daria Grudzien is a Site Reliability Engineer and a [CyberMagnolia community](https://cybermagnolia.com/) founder. She has switched career from a businesswoman to an engineer and now she’s mentoring other juniors starting their career. In her work she’s helping developers deploy code to production faster and brings visibility to production systems. She’s passionate about the topic of oncall training and making sure that all engineers carrying the pager feel confident. Check out also [interview with Daria](https://cybermagnolia.com/blog/daria-grudzien-interview/) or her [blog post on a similar topic](https://dariagrudzien.com/posts/the-one-about-managing-self-as-a-junior/)!
+  bio_title: Spoluzakladatelka CyberMagnolia, ex-Apiary SRE
   bio_links:
     - https://dariagrudzien.com/
     - https://www.linkedin.com/in/dariagru/
     - https://github.com/dariagrudzien
     - https://twitter.com/dariagrudzien
     - https://www.instagram.com/gruontheroad/
+  org_logo: cybermagnolia.svg
   speakers:
     - 789165121771536404
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/822066882298642462
+
 
 - title: Jamstack
   date: "2021-03-31"
@@ -34,15 +38,18 @@
     Co jsou „staticky generované stránky“? Co je Jamstack a jak ti může pomoci tvořit webovky? Jak se orientovat v existujících řešeních a jak si můžeš na Jamstacku vytvořit třeba vlastní blog?
   bio: |
     Láďa Prskavec je programátor, školitel a organizátor srazů. Jeho oblíbenými jazyky jsou Node.js, Ruby a Go. Dříve pracoval v LMC a Apiary, dnes je seniorním manažerem SRE v Oracle.
+  bio_title: Senior Developer Manager v Oracle, SRE, školitel, organizátor srazů
   bio_links:
     - https://www.prskavec.net/
     - https://twitter.com/abtris
     - https://github.com/abtris
     - https://www.linkedin.com/in/ladislavprskavec/
     - https://www.instagram.com/abtris/
+  org_logo: oracle.svg
   speakers:
     - 779257315782164490
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/826872579427794955
+
 
 - title: Designování vysněné práce
   date: "2021-04-13"
@@ -52,15 +59,18 @@
     Jak se z lektorky angličtiny stane frontendistka? První část přednášky je o těžkých rozhodnutích, motivaci, překážkách a pomoci na cestě k vysněné práci. V druhé se podíváme na související obory s vývojem webů a aplikací, včetně user experience.
   bio: |
     Adina Foxová je tlumočnice mezi designem a frontendem. Na volné noze vylepšuje staré a designuje nové weby a aplikace, v kódu se pak hlavně stará o architekturu stylů v React aplikacích. Má vášeň pro design systémy, zajímavé problémy a dinosaury. Už čtvrtým rokem staví s firmou Leveris kompletní bankovní platformu. Ve volném čase moderuje události v IT a její nejoblíbenější místo je Lucerna, když se koná WebExpo.
+  bio_title: Tlumočnice mezi designem a frontendem na volné noze, UXD tým v Leveris
   bio_links:
     - https://adinafoxova.cz/
     - https://twitter.com/adinafxv
     - https://github.com/adinafxv
     - https://www.linkedin.com/in/adina-foxova/
     - https://www.instagram.com/adinafxv/
+  org_logo: adinafxv.svg
   speakers:
     - 658628731337965586
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/836906198426320906
+
 
 - title: "AMA: Jiří Psotka"
   date: "2021-05-05"
@@ -84,13 +94,16 @@
     AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Jirka je seniorní recruiter v Red Hatu, který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase spoluorganizuje brněnský sraz Python programátorů a věnuje se DJingu.
   bio: |
     Jirka Psotka je seniorní recruiter v [Red Hatu](https://jobs.redhat.com/), který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase jako dobrovolník spoluorganizuje brněnský sraz Python programátorů [Pyvo](https://pyvo.cz/brno-pyvo/) a věnuje se [DJingu](https://www.facebook.com/Hazement/). Doma má nekonečnou [sbírku vinylů](https://hearthis.at/krmelec-prostor/dj-hotdogg/).
+  bio_title: Senior Recruiter v Red Hat
   bio_links:
     - https://twitter.com/jiripsotka/
     - https://www.linkedin.com/in/jiripsotka/
     - https://www.instagram.com/dog2y/
+  org_logo: redhat.svg
   speakers:
     - 382474361300451328
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/842104677943869440
+
 
 - title: Život HTTP požadavku
   date: "2021-05-18"
@@ -102,8 +115,10 @@
     V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
   bio: |
     Vilibald Wanča je seniorní architekt v Oracle s 20letými zkušenostmi v oboru. Baví ho vymýšlet, jak udělat věci jednoduše, ale přitom zároveň dostatečně robustně, efektivně a výkonně. Málokdo ví o jeho kořenech v žižkovském podsvětí nebo angažmá na dubové scéně. Sedm let na ČRo Wave moderoval své [Dubové okénko Prince Wilibalda](https://hledani.rozhlas.cz/iRadio/?query=Dubov%C3%A9+ok%C3%A9nko+Prince+Wilibalda&reader=&stanice%5B%5D=%C4%8CRo+Radio+Wave&porad%5B%5D=Sc%C3%A9na+s+Jakubem+Joh%C3%A1nkem).
+  bio_title: Architekt v Oracle, Princ Wilibald na ČRo Wave
   bio_links:
     - https://www.linkedin.com/in/wvi/
     - https://github.com/w-vi
+  org_logo: oracle.svg
   speakers:
     - 817453228283133982

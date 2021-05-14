@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ data_dir }}/css/thumbnail.css">
+    <link rel="stylesheet" href="{{ templates_dir }}/thumbnail.css">
   </head>
   {% if job_title and job_company and job_location %}
     <body class="thumbnail-job">
@@ -15,7 +15,7 @@
     </body>
   {% elif title %}
     <body class="thumbnail-title">
-      <img src="{{ data_dir }}/images/logo.svg">
+      <img src="{{ images_dir }}/logo.svg">
       <h1>
         {% if above_title %}<small>{{ above_title }}<small>{% endif %}
         <strong>{{ title }}</strong>
@@ -24,7 +24,7 @@
     </body>
   {% else %}
     <body class="thumbnail">
-      <img src="{{ data_dir }}/images/logo.svg">
+      <img src="{{ images_dir }}/logo.svg">
     </body>
   {% endif %}
 </html>

@@ -13,9 +13,9 @@ from jinja2 import Environment, FileSystemLoader
 IMAGE_WIDTH = 1200
 IMAGE_HEIGHT = 630
 
-DATA_DIR = Path(__file__).parent.parent / 'data'
-TEMPLATES_DIR = DATA_DIR / 'templates'
-DISABLE_IMAGE_CACHE = bool(int(os.getenv('DISABLE_IMAGE_CACHE', 0)))
+IMAGES_DIR = Path(__file__).parent.parent / 'images'
+TEMPLATES_DIR = Path(__file__).parent.parent / 'image_templates'
+OVERWRITE_HTML_IMAGES = bool(int(os.getenv('OVERWRITE_HTML_IMAGES', 0)))
 
 
 def html_to_png_path(template_name, context, output_dir, filters=None):
@@ -25,7 +25,7 @@ def html_to_png_path(template_name, context, output_dir, filters=None):
     hash = sha256(pickle.dumps(context)).hexdigest()
     image_path = output_dir / f'{hash}.png'
 
-    if DISABLE_IMAGE_CACHE or not image_path.exists():
+    if OVERWRITE_HTML_IMAGES or not image_path.exists():
         image_bytes = template_to_png_bytes(template_name, context, filters)
         image_path.write_bytes(image_bytes)
     return image_path
@@ -46,7 +46,7 @@ def template_to_png_bytes(template_name, context, filters=None):
     environment = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
     environment.filters.update(filters or {})
     template = environment.get_template(template_name)
-    html = template.render(templates_dir=TEMPLATES_DIR, data_dir=DATA_DIR, **context)
+    html = template.render(templates_dir=TEMPLATES_DIR, images_dir=IMAGES_DIR, **context)
 
     with tempfile.NamedTemporaryFile(suffix='.html', delete=False) as f:
         f.write(html.encode('utf-8'))

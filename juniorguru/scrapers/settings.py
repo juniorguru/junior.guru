@@ -102,7 +102,7 @@ JUNIORGURU_ITEM_PIPELINES = {
 # Media Pipeline
 # See https://docs.scrapy.org/en/latest/topics/media-pipeline.html
 MEDIA_ALLOW_REDIRECTS = True
-IMAGES_STORE = 'juniorguru/data/images'
+IMAGES_STORE = 'juniorguru/images'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

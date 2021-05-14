@@ -55,7 +55,7 @@ function buildCSS() {
 
 function buildImages() {
   return gulp.src([
-      'juniorguru/data/images/**/*',
+      'juniorguru/images/**/*',
       'juniorguru/web/static/src/images/**/*.png',
       'juniorguru/web/static/src/images/**/*.jpg',
       'juniorguru/web/static/src/images/**/*.gif',
