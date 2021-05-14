@@ -60,6 +60,7 @@ jobs:
           root: "~"
           paths:
               - project/juniorguru/data
+              - project/juniorguru/images
       - run: tar -cvzf backup.tar.gz ./juniorguru/data
       - store_artifacts:
           path: ./backup.tar.gz  # all data gets backed up as a CI artifact
