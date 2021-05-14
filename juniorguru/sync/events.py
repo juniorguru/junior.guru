@@ -5,7 +5,7 @@ from playhouse.shortcuts import model_to_dict
 from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, load
 
 from juniorguru.models import Event, EventSpeaking, db
-from juniorguru.lib.images import render_image_file#, save_as_ig_square
+from juniorguru.lib.images import render_image_file, downsize_square_photo#, save_as_ig_square
 from juniorguru.lib.log import get_log
 from juniorguru.lib.template_filters import local_time, md, weekday
 
@@ -49,8 +49,17 @@ def main():
             event = Event.create(**record)
 
             for speaker_id in speakers_ids:
+                try:
+                    avatar_path = next((IMAGES_DIR / 'speakers').glob(f"{speaker_id}.*"))
+                except StopIteration:
+                    log.info(f"Didn't find speaker avatar for {speaker_id}")
+                    avatar_path = None
+                else:
+                    log.info(f"Downsizing speaker avatar for {speaker_id}")
+                    avatar_path = downsize_square_photo(avatar_path, 500)
+
                 log.info(f"Marking member {speaker_id} as a speaker")
-                EventSpeaking.create(speaker=speaker_id, event=event)
+                EventSpeaking.create(speaker=speaker_id, event=event, avatar_path=avatar_path)
 
             log.info(f"Rendering poster for '{record['title']}'")
             image_path = render_image_file('poster.html', model_to_dict(event), IMAGES_DIR / 'posters', filters={

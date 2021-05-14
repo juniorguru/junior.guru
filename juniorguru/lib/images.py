@@ -33,12 +33,25 @@ def render_image_file(template_name, context, output_dir, filters=None):
 
 def save_as_ig_square(path):
     with Image.open(path) as image:
-        side_size = max(image.width, image.height)
-        image = ImageOps.pad(image, (side_size, side_size), color=(0, 0, 0))
+        side_px = max(image.width, image.height)
+        image = ImageOps.pad(image, (side_px, side_px), color=(0, 0, 0))
+        path = path.with_name(f"{path.stem}-ig{path.suffix}")
+        image.save(path, 'PNG')
+        return path
 
-        ig_path = path.with_name(f"{path.stem}-ig{path.suffix}")
-        with ig_path.open(mode='wb') as f:
-            image.save(f, 'PNG')
+
+def downsize_square_photo(path, side_px):
+    with Image.open(path) as image:
+        if image.width != image.height:
+            raise ValueError(f"Image {path} must be square, but is {image.width}x{image.height}")
+        if image.width < side_px:
+            return
+
+        image = image.resize((side_px, side_px))
+        path.unlink()
+        path = path.with_suffix('.jpg')
+        image.save(path, 'JPEG')
+        return path
 
 
 def render_template(template_name, context, filters=None):

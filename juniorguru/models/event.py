@@ -24,3 +24,4 @@ class Event(BaseModel):
 class EventSpeaking(BaseModel):
     speaker = ForeignKeyField(MessageAuthor, backref='list_speaking')
     event = ForeignKeyField(Event, backref='list_speaking')
+    avatar_path = CharField(null=True)
