@@ -99,8 +99,8 @@ body.body--index {
   .billboard-wrapper {
     background-image: linear-gradient(
       to left,
-      rgba(var(--color-yellow), 0.5) 30%,
-      rgba(var(--color-yellow), 0.9) 60%
+      rgba(var(--color-yellow-r), var(--color-yellow-g), var(--color-yellow-b), 0.5) 30%,
+      rgba(var(--color-yellow-r), var(--color-yellow-g), var(--color-yellow-b), 0.9) 60%
     );
   }
 }
@@ -123,8 +123,8 @@ body.body--index {
   .billboard-wrapper {
     background-image: linear-gradient(
       to right,
-      rgba(var(--color-black), 0.5) 30%,
-      rgba(var(--color-black), 0.9) 60%
+      rgba(var(--color-black-r), var(--color-black-g), var(--color-black-b), 0.5) 30%,
+      rgba(var(--color-black-r), var(--color-black-g), var(--color-black-b), 0.9) 60%
     );
   }
 
@@ -139,13 +139,14 @@ body.body--index {
     content: "";
     display: block;
     height: $whitespace / 2;
-    background: repeating-linear-gradient(
-      -45deg,
-      var(--color-black),
-      var(--color-black) ($whitespace * 2),
-      var(--color-yellow) ($whitespace * 2),
-      var(--color-yellow) ($whitespace * 4)
-    );
+    // TODO, THIS PROBABLY DOESNT WORK NOW:
+    // background: repeating-linear-gradient(
+    //   -45deg,
+    //   var(--color-black),
+    //   var(--color-black) ($whitespace * 2),
+    //   var(--color-yellow) ($whitespace * 2),
+    //   var(--color-yellow) ($whitespace * 4)
+    // );
   }
 
   p {
