@@ -56,10 +56,7 @@ function buildCSS() {
 function buildImages() {
   return gulp.src([
       'juniorguru/images/**/*',
-      'juniorguru/web/static/src/images/**/*.png',
-      'juniorguru/web/static/src/images/**/*.jpg',
-      'juniorguru/web/static/src/images/**/*.gif',
-      'juniorguru/web/static/src/images/**/*.svg',
+      'juniorguru/web/static/src/images/**/*',
       '!juniorguru/web/static/src/images/screenshots*/**/*',
       '!juniorguru/web/static/src/images/stories/**/*'
     ])
@@ -177,9 +174,10 @@ async function watchWeb() {
   ], copyScreenshots);
   gulp.watch(['juniorguru/web/static/src/images/stories/'], buildStories);
   gulp.watch([
+    'juniorguru/images/',
     'juniorguru/web/static/src/images/',
     '!juniorguru/web/static/src/images/screenshots*/**/*',
-    'juniorguru/data/images/',
+    '!juniorguru/web/static/src/images/stories/**/*'
   ], buildImages);
   gulp.watch([
     'juniorguru/web/static/*.js',
