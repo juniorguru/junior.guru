@@ -1,13 +1,19 @@
+import os
 from pathlib import Path
 
 import arrow
 from flask import Flask, Response, render_template, url_for
 
+from juniorguru.lib.log import get_log
 from juniorguru.lib import template_filters
 from juniorguru.lib.images import render_image_file
 from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, Member, db
 
 
+log = get_log('web')
+
+
+FLUSH_THUMBNAILS = bool(int(os.getenv('FLUSH_THUMBNAILS', 0)))
 THUMBNAILS_DIR = Path(__file__).parent / 'static' / 'images' / 'thumbnails'
 
 
@@ -62,6 +68,12 @@ REGIONS = [
 
 
 app = Flask(__name__)
+
+
+if FLUSH_THUMBNAILS:
+    log.warning("Removing all existing thumbnails, FLUSH_THUMBNAILS is set")
+    for thumbnail_path in THUMBNAILS_DIR.glob('*.png'):
+        thumbnail_path.unlink()
 
 
 def redirect(url):

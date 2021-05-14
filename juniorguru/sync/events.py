@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 import arrow
@@ -13,8 +14,10 @@ from juniorguru.lib.template_filters import local_time, md, weekday
 log = get_log('events')
 
 
+FLUSH_POSTERS = bool(int(os.getenv('FLUSH_POSTERS', 0)))
 DATA_DIR = Path(__file__).parent.parent / 'data'
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
+POSTERS_DIR = IMAGES_DIR / 'posters'
 
 
 schema = Seq(
@@ -27,7 +30,7 @@ schema = Seq(
         Optional('bio'): Str(),
         Optional('bio_title'): Str(),
         Optional('bio_links'): Seq(Str()),
-        Optional('org_logo'): Str(),
+        Optional('logo_path'): Str(),
         'speakers': Seq(Int()),
         Optional('recording_url'): Url(),
     })
@@ -36,15 +39,20 @@ schema = Seq(
 
 def main():
     path = DATA_DIR / 'events.yml'
-    records = [load_record(record.data) for record
-               in load(path.read_text(), schema)]
+    records = [load_record(record.data) for record in load(path.read_text(), schema)]
+
+    if FLUSH_POSTERS:
+        log.warning("Removing all existing posters, FLUSH_POSTERS is set")
+        for poster_path in POSTERS_DIR.glob('*.png'):
+            poster_path.unlink()
 
     with db:
         db.drop_tables([Event, EventSpeaking])
         db.create_tables([Event, EventSpeaking])
 
         for record in records:
-            log.info(f"Creating '{record['title']}'")
+            name = record['title']
+            log.info(f"Creating '{name}'")
             speakers_ids = record.pop('speakers', [])
             event = Event.create(**record)
 
@@ -61,8 +69,14 @@ def main():
                 log.info(f"Marking member {speaker_id} as a speaker")
                 EventSpeaking.create(speaker=speaker_id, event=event, avatar_path=avatar_path)
 
-            log.info(f"Rendering poster for '{record['title']}'")
-            image_path = render_image_file('poster.html', model_to_dict(event), IMAGES_DIR / 'posters', filters={
+            if event.logo_path:
+                log.info(f"Checking '{event.logo_path}'")
+                image_path = IMAGES_DIR / event.logo_path
+                if not image_path.exists():
+                    raise ValueError(f"Event '{name}' references '{image_path}', but it doesn't exist")
+
+            log.info(f"Rendering poster for '{name}'")
+            image_path = render_image_file('poster.html', model_to_dict(event), POSTERS_DIR, filters={
                 'md': md,
                 'local_time': local_time,
                 'weekday': weekday,
@@ -71,7 +85,7 @@ def main():
             event.save()
 
             # TODO for now commented out to speed up debugging, but works
-            # log.info(f"Rendering Instagram poster for '{record['title']}'")
+            # log.info(f"Rendering Instagram poster for '{name}'")
             # save_as_ig_square(image_path)
 
 

@@ -26,7 +26,7 @@
     - https://github.com/dariagrudzien
     - https://twitter.com/dariagrudzien
     - https://www.instagram.com/gruontheroad/
-  org_logo: cybermagnolia.svg
+  logo_path: logos/cybermagnolia.svg
   speakers:
     - 789165121771536404
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/822066882298642462
@@ -45,7 +45,7 @@
     - https://github.com/abtris
     - https://www.linkedin.com/in/ladislavprskavec/
     - https://www.instagram.com/abtris/
-  org_logo: oracle.svg
+  logo_path: logos/oracle.svg
   speakers:
     - 779257315782164490
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/826872579427794955
@@ -66,7 +66,7 @@
     - https://github.com/adinafxv
     - https://www.linkedin.com/in/adina-foxova/
     - https://www.instagram.com/adinafxv/
-  org_logo: leveris.png
+  logo_path: logos/leveris.png
   speakers:
     - 658628731337965586
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/836906198426320906
@@ -99,7 +99,7 @@
     - https://twitter.com/jiripsotka/
     - https://www.linkedin.com/in/jiripsotka/
     - https://www.instagram.com/dog2y/
-  org_logo: redhat.svg
+  logo_path: logos/redhat.svg
   speakers:
     - 382474361300451328
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/842104677943869440
@@ -119,6 +119,6 @@
   bio_links:
     - https://www.linkedin.com/in/wvi/
     - https://github.com/w-vi
-  org_logo: oracle.svg
+  logo_path: logos/oracle.svg
   speakers:
     - 817453228283133982

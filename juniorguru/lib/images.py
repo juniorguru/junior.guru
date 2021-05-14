@@ -15,7 +15,6 @@ IMAGE_HEIGHT = 630
 
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 TEMPLATES_DIR = Path(__file__).parent.parent / 'image_templates'
-OVERWRITE_HTML_IMAGES = bool(int(os.getenv('OVERWRITE_HTML_IMAGES', 0)))
 
 
 def render_image_file(template_name, context, output_dir, filters=None):
@@ -25,7 +24,7 @@ def render_image_file(template_name, context, output_dir, filters=None):
     hash = sha256(pickle.dumps(context)).hexdigest()
     image_path = output_dir / f'{hash}.png'
 
-    if OVERWRITE_HTML_IMAGES or not image_path.exists():
+    if not image_path.exists():
         image_bytes = render_template(template_name, context, filters)
         image_path.write_bytes(image_bytes)
     return image_path
@@ -44,7 +43,7 @@ def downsize_square_photo(path, side_px):
     with Image.open(path) as image:
         if image.width != image.height:
             raise ValueError(f"Image {path} must be square, but is {image.width}x{image.height}")
-        if image.width < side_px:
+        if image.width <= side_px:
             return
 
         image = image.resize((side_px, side_px))
