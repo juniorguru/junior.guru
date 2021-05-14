@@ -66,10 +66,10 @@ async def main(client):
     log.info(f"Past digest messages count: {len(past_digest_messages)}")
     week_ago_dt = datetime.utcnow() - timedelta(weeks=1)
     if past_digest_messages:
-        last_digest_dt = past_digest_messages[-1].created_at
-        log.info(f"Last digest on {last_digest_dt}")
-        if last_digest_dt.date() > week_ago_dt.date():
-            log.info(f"Aborting, {last_digest_dt.date()} (last digest) > {week_ago_dt.date()} (week ago)")
+        since_dt = past_digest_messages[-1].created_at
+        log.info(f"Last digest on {since_dt}")
+        if since_dt.date() > week_ago_dt.date():
+            log.info(f"Aborting, {since_dt.date()} (last digest) > {week_ago_dt.date()} (week ago)")
             return  # abort
     else:
         since_dt = week_ago_dt
