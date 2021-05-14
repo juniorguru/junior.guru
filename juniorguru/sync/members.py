@@ -20,7 +20,7 @@ SIZE_PX = 60
 @discord_task
 async def main(client):
     AVATARS_PATH.mkdir(exist_ok=True, parents=True)
-    for path in AVATARS_PATH.glob('*'):
+    for path in AVATARS_PATH.glob('*.png'):
         path.unlink()
 
     with db:
