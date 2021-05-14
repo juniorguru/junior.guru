@@ -44,7 +44,7 @@ def downsize_square_photo(path, side_px):
         if image.width != image.height:
             raise ValueError(f"Image {path} must be square, but is {image.width}x{image.height}")
         if image.width <= side_px:
-            return
+            return path
 
         image = image.resize((side_px, side_px))
         path.unlink()

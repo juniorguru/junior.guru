@@ -6,7 +6,7 @@ from playhouse.shortcuts import model_to_dict
 from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, load
 
 from juniorguru.models import Event, EventSpeaking, db
-from juniorguru.lib.images import render_image_file, downsize_square_photo#, save_as_ig_square
+from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_ig_square
 from juniorguru.lib.log import get_log
 from juniorguru.lib.template_filters import local_time, md, weekday
 
@@ -64,10 +64,11 @@ def main():
                     avatar_path = None
                 else:
                     log.info(f"Downsizing speaker avatar for {speaker_id}")
-                    avatar_path = downsize_square_photo(avatar_path, 500)
+                    avatar_path = downsize_square_photo(avatar_path, 500).relative_to(IMAGES_DIR)
 
                 log.info(f"Marking member {speaker_id} as a speaker")
-                EventSpeaking.create(speaker=speaker_id, event=event, avatar_path=avatar_path)
+                EventSpeaking.create(speaker=speaker_id, event=event,
+                                     avatar_path=avatar_path)
 
             if event.logo_path:
                 log.info(f"Checking '{event.logo_path}'")
@@ -76,7 +77,8 @@ def main():
                     raise ValueError(f"Event '{name}' references '{image_path}', but it doesn't exist")
 
             log.info(f"Rendering poster for '{name}'")
-            image_path = render_image_file('poster.html', model_to_dict(event), POSTERS_DIR, filters={
+            context = dict(event=model_to_dict(event, extra_attrs=['first_avatar_path']))
+            image_path = render_image_file('poster.html', context, POSTERS_DIR, filters={
                 'md': md,
                 'local_time': local_time,
                 'weekday': weekday,
@@ -84,9 +86,8 @@ def main():
             event.poster_path = image_path.relative_to(IMAGES_DIR)
             event.save()
 
-            # TODO for now commented out to speed up debugging, but works
-            # log.info(f"Rendering Instagram poster for '{name}'")
-            # save_as_ig_square(image_path)
+            log.info(f"Rendering Instagram poster for '{name}'")
+            save_as_ig_square(image_path)
 
 
 

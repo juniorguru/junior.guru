@@ -5,12 +5,20 @@
     <link rel="stylesheet" href="{{ templates_dir }}/poster.css">
   </head>
   <body>
-    <h1>{{ title }}</h1>
+    <h1>{{ event.title }}</h1>
     <p>
-      {{ start_at|weekday|capitalize }} {{ start_at.day }}. {{ start_at.month }}., {{ start_at|local_time }}
+      {{ event.start_at|weekday|capitalize }} {{ event.start_at.day }}. {{ event.start_at.month }}., {{ event.start_at|local_time }}
     </p>
     <p>
-      {{ poster_description|default(description, true)|md }}
+      {{ event.poster_description|default(event.description, true)|md }}
+    </p>
+    {% if event.first_avatar_path %}
+    <p>
+      <img src="{{ images_dir }}/{{ event.first_avatar_path }}">
+    </p>
+    {% endif %}
+    <p>
+      <img src="{{ images_dir }}/{{ event.logo_path }}">
     </p>
     <p>
       <img src="{{ images_dir }}/logo.svg">

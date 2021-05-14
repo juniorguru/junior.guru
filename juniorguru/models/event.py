@@ -15,6 +15,13 @@ class Event(BaseModel):
     poster_path = CharField(null=True)
     logo_path = CharField(null=True)
 
+    @property
+    def first_avatar_path(self):
+        try:
+            return [speaking.avatar_path for speaking in self.list_speaking][0]
+        except IndexError:
+            return None
+
     @classmethod
     def list_speaking_members(cls):
         return MessageAuthor.select() \
