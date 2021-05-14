@@ -62,6 +62,8 @@ async def manage_jobs_channel(client):
         log.info(f'Posting {len(new_jobs)} new jobs')
         for job in new_jobs:
             await channel.send(f'**{job.title}**\n{job.company_name} – {job.location}\n{job.link}')
+    else:
+        log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
 
 @discord_task
@@ -109,6 +111,8 @@ async def manage_jobs_voting_channel(client):  # experimenting with Mila and ML
         log.info(f'Posting {len(new_jobs_dropped)} new dropped jobs')
         for job_dropped in new_jobs_dropped:
             await channel.send(f"**{job_dropped.item['title']}**\n{job_dropped.item['company_name']} – {', '.join(job_dropped.item['locations_raw'])}\n{job_dropped.item['link']}")
+    else:
+        log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
 
 def run_spider(spider_name):

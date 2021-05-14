@@ -71,6 +71,8 @@ async def main(client):
         if since_dt.date() > week_ago_dt.date():
             log.info(f"Aborting, {since_dt.date()} (last digest) > {week_ago_dt.date()} (week ago)")
             return  # abort
+        else:
+            log.info(f"About to create digest, {since_dt.date()} (last digest) <= {week_ago_dt.date()} (week ago)")
     else:
         since_dt = week_ago_dt
         log.info(f"Last digest not found, analyzing since {week_ago_dt}")
@@ -97,6 +99,8 @@ async def main(client):
             ]
         await channel.send(content="\n".join(content),
                            embed=Embed(description="\n".join(embed_description)))
+    else:
+        log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
 
 if __name__ == '__main__':

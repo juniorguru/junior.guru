@@ -69,6 +69,8 @@ def main():
 
     if DISCORD_MUTATIONS_ENABLED:
         apply_changes(changes)
+    else:
+        log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
 
 @discord_task
