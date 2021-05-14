@@ -18,7 +18,7 @@ TEMPLATES_DIR = Path(__file__).parent.parent / 'image_templates'
 OVERWRITE_HTML_IMAGES = bool(int(os.getenv('OVERWRITE_HTML_IMAGES', 0)))
 
 
-def html_to_png_path(template_name, context, output_dir, filters=None):
+def render_image_file(template_name, context, output_dir, filters=None):
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok=True, parents=True)
 
@@ -26,23 +26,22 @@ def html_to_png_path(template_name, context, output_dir, filters=None):
     image_path = output_dir / f'{hash}.png'
 
     if OVERWRITE_HTML_IMAGES or not image_path.exists():
-        image_bytes = template_to_png_bytes(template_name, context, filters)
+        image_bytes = render_template(template_name, context, filters)
         image_path.write_bytes(image_bytes)
     return image_path
 
 
-def save_png_as_square(png_path):
-    # make it a square
-    with Image.open(png_path) as image:
+def save_as_ig_square(path):
+    with Image.open(path) as image:
         side_size = max(image.width, image.height)
         image = ImageOps.pad(image, (side_size, side_size), color=(0, 0, 0))
 
-        png_square_path = png_path.with_name(f"{png_path.stem}-square{png_path.suffix}")
-        with png_square_path.open(mode='wb') as f:
+        ig_path = path.with_name(f"{path.stem}-ig{path.suffix}")
+        with ig_path.open(mode='wb') as f:
             image.save(f, 'PNG')
 
 
-def template_to_png_bytes(template_name, context, filters=None):
+def render_template(template_name, context, filters=None):
     environment = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
     environment.filters.update(filters or {})
     template = environment.get_template(template_name)

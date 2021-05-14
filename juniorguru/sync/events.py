@@ -5,7 +5,7 @@ from playhouse.shortcuts import model_to_dict
 from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, load
 
 from juniorguru.models import Event, EventSpeaking, db
-from juniorguru.lib.images import html_to_png_path#, save_png_as_square
+from juniorguru.lib.images import render_image_file#, save_as_ig_square
 from juniorguru.lib.log import get_log
 from juniorguru.lib.template_filters import local_time, md, weekday
 
@@ -53,17 +53,17 @@ def main():
                 EventSpeaking.create(speaker=speaker_id, event=event)
 
             log.info(f"Rendering poster for '{record['title']}'")
-            png_path = html_to_png_path('poster.html', model_to_dict(event), IMAGES_DIR / 'posters', filters={
+            image_path = render_image_file('poster.html', model_to_dict(event), IMAGES_DIR / 'posters', filters={
                 'md': md,
                 'local_time': local_time,
                 'weekday': weekday,
             })
-            event.poster_path = png_path.relative_to(IMAGES_DIR)
+            event.poster_path = image_path.relative_to(IMAGES_DIR)
             event.save()
 
             # TODO for now commented out to speed up debugging, but works
-            # log.info(f"Rendering square poster for '{record['title']}'")
-            # save_png_as_square(png_path)
+            # log.info(f"Rendering Instagram poster for '{record['title']}'")
+            # save_as_ig_square(image_path)
 
 
 

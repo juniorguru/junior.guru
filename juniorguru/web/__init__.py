@@ -4,7 +4,7 @@ import arrow
 from flask import Flask, Response, render_template, url_for
 
 from juniorguru.lib import template_filters
-from juniorguru.lib.images import html_to_png_path
+from juniorguru.lib.images import render_image_file
 from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, Member, db
 
 
@@ -69,8 +69,8 @@ def redirect(url):
 
 
 def thumbnail(**context):
-    png_path = html_to_png_path('thumbnail.html', context, THUMBNAILS_DIR)
-    return f'images/thumbnails/{png_path.name}'
+    image_path = render_image_file('thumbnail.html', context, THUMBNAILS_DIR)
+    return f'images/thumbnails/{image_path.name}'
 
 
 for template_filter in [
