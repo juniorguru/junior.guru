@@ -19,6 +19,9 @@ DATA_DIR = Path(__file__).parent.parent / 'data'
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 POSTERS_DIR = IMAGES_DIR / 'posters'
 
+ANNOUNCEMENTS_CHANNEL = 797107515186741248 # 789046675247333397
+EVENTS_CHAT_CHANNEL = 797107515186741248 # 821411678167367691
+
 
 schema = Seq(
     Map({

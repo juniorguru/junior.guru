@@ -1,3 +1,5 @@
+from datetime import date
+
 from peewee import CharField, DateTimeField, ForeignKeyField, TextField
 
 from juniorguru.models.base import BaseModel, JSONField
@@ -18,15 +20,30 @@ class Event(BaseModel):
     @property
     def first_avatar_path(self):
         try:
-            return [speaking.avatar_path for speaking in self.list_speaking][0]
-        except IndexError:
+            return next(filter(None, [speaking.avatar_path for speaking in self.list_speaking]))
+        except StopIteration:
             return None
+
+    @classmethod
+    def next(cls, today=None):
+        today = today or date.today()
+        return cls.select() \
+            .where(cls.start_at >= today) \
+            .order_by(cls.start_at) \
+            .first()
 
     @classmethod
     def list_speaking_members(cls):
         return MessageAuthor.select() \
             .where(MessageAuthor.is_member == True) \
             .join(EventSpeaking)
+
+    @classmethod
+    def archive_listing(cls, today=None):
+        today = today or date.today()
+        return cls.select() \
+            .where(cls.start_at < today) \
+            .order_by(cls.start_at.desc())
 
 
 class EventSpeaking(BaseModel):
