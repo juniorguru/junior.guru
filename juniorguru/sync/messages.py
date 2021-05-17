@@ -11,7 +11,6 @@ from juniorguru.models import Message, MessageAuthor, db
 log = get_log('messages')
 
 
-DIGEST_BOT_ID = 797097976571887687
 DIGEST_CHANNEL = 789046675247333397
 DIGEST_LIMIT = 5
 
@@ -61,12 +60,11 @@ async def main(client):
     log.info(f'Saved {messages_count} messages from {len(authors)} authors')
 
     # DIGEST
-    past_digest_messages = [message for message in Message.channel_listing(DIGEST_CHANNEL)
-                            if message.author.id == DIGEST_BOT_ID and message.content.startswith('🔥')]
-    log.info(f"Past digest messages count: {len(past_digest_messages)}")
     week_ago_dt = datetime.utcnow() - timedelta(weeks=1)
-    if past_digest_messages:
-        since_dt = past_digest_messages[-1].created_at
+    with db:
+        last_digest_message = Message.last_bot_message(DIGEST_CHANNEL, '🔥')
+    if last_digest_message:
+        since_dt = last_digest_message.created_at
         log.info(f"Last digest on {since_dt}")
         if since_dt.date() > week_ago_dt.date():
             log.info(f"Aborting, {since_dt.date()} (last digest) > {week_ago_dt.date()} (week ago)")

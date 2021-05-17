@@ -1,5 +1,6 @@
 from datetime import date
 
+import arrow
 from peewee import CharField, DateTimeField, ForeignKeyField, TextField
 
 from juniorguru.models.base import BaseModel, JSONField
@@ -16,6 +17,16 @@ class Event(BaseModel):
     recording_url = CharField(null=True)
     poster_path = CharField(null=True)
     logo_path = CharField(null=True)
+
+    @property
+    def start_at_prg(self):
+        return arrow.get(self.start_at).to('Europe/Prague').naive
+
+    @property
+    def url(self):
+        dt_string = self.start_at_prg.isoformat()
+        dt_string = dt_string.replace(':', '-')
+        return f"https://junior.guru/events/#{dt_string}"
 
     @property
     def first_avatar_path(self):

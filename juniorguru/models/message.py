@@ -10,6 +10,7 @@ TOP_MEMBERS_PERCENT = 0.05
 RECENT_PERIOD_DAYS = 30
 IS_NEW_PERIOD_DAYS = 15
 
+JUNIORGURU_BOT = 797097976571887687
 INTRO_CHANNEL = 788823881024405544  # ahoj
 UPVOTES_EXCLUDE_CHANNELS = [
     INTRO_CHANNEL,
@@ -109,3 +110,15 @@ class Message(BaseModel):
                    Message.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS)) \
             .order_by(cls.upvotes.desc()) \
             .limit(limit)
+
+    @classmethod
+    def last_bot_message(cls, channel_id, startswith_emoji, contains_text=None):
+        query = cls.select() \
+            .join(MessageAuthor) \
+            .where(MessageAuthor.id == JUNIORGURU_BOT,
+                   cls.channel_id == channel_id,
+                   cls.content.startswith(startswith_emoji)) \
+            .order_by(cls.created_at.desc())
+        if contains_text:
+            query = query.where(cls.content.contains(contains_text))
+        return query.first()

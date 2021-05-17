@@ -8,7 +8,7 @@ import discord
 
 DISCORD_API_KEY = os.getenv('DISCORD_API_KEY') or None
 DISCORD_MUTATIONS_ENABLED = bool(int(os.getenv('DISCORD_MUTATIONS_ENABLED', 0)))
-JUNIORGURU_GUILD_NUM = 769966886598737931
+JUNIORGURU_GUILD = 769966886598737931
 
 EMOJI_UPVOTES = ['👍', '❤️', '😍', '🥰', '💕', '♥️', '💖', '💙', '💗', '💜', '💞', '💓', '💛', '🖤', '💚', '😻', '🧡', '👀',
                  '💯', '🤩', '😋', '💟', '🤍', '🤎', '💡', '👆', '👏', '🥇', '🏆', '✔️', 'plus_one', '👌', 'babyyoda',
@@ -19,7 +19,7 @@ EMOJI_DOWNVOTES = ['👎']
 class BaseClient(discord.Client):
     @property
     def juniorguru_guild(self):
-        return self.get_guild(JUNIORGURU_GUILD_NUM)
+        return self.get_guild(JUNIORGURU_GUILD)
 
 
 def discord_task(task):

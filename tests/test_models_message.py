@@ -1,11 +1,10 @@
-from datetime import date, timedelta
+from datetime import datetime, date, timedelta
 
 import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.models import Message, MessageAuthor
-from juniorguru.models.message import INTRO_CHANNEL
-# from testing_utils import prepare_logo_data
+from juniorguru.models.message import INTRO_CHANNEL, JUNIORGURU_BOT
 
 
 def create_message_author(id_, **kwargs):
@@ -14,7 +13,7 @@ def create_message_author(id_, **kwargs):
                                 is_bot=kwargs.get('is_bot', False),
                                 display_name=kwargs.get('display_name', 'Kuře Žluté'),
                                 mention=kwargs.get('mention', f'<@{id_}>'),
-                                joined_at=kwargs.get('joined_at', date.today() - timedelta(days=3)))
+                                joined_at=kwargs.get('joined_at', datetime.now() - timedelta(days=3)))
 
 
 def create_message(id_, author, **kwargs):
@@ -23,7 +22,7 @@ def create_message(id_, author, **kwargs):
                           author=author,
                           content=kwargs.get('content', 'hello'),
                           upvotes=kwargs.get('upvotes', 0),
-                          created_at=kwargs.get('created_at', date.today() - timedelta(days=3)),
+                          created_at=kwargs.get('created_at', datetime.now() - timedelta(days=3)),
                           channel_id=kwargs.get('channel_id', 123),
                           channel_name=kwargs.get('channel_name', 'random-discussions'),
                           channel_mention=kwargs.get('channel_mention', '<#random-discussions>'),
@@ -41,12 +40,17 @@ def db_connection():
         db.drop_tables(models)
 
 
+@pytest.fixture
+def juniorguru_bot():
+    return create_message_author(JUNIORGURU_BOT)
+
+
 def test_message_listing_sort_from_the_oldest(db_connection):
     author = create_message_author(1)
 
-    message1 = create_message(1, author, created_at=date(2021, 10, 1))
-    message2 = create_message(2, author, created_at=date(2021, 10, 20))
-    message3 = create_message(3, author, created_at=date(2021, 10, 5))
+    message1 = create_message(1, author, created_at=datetime(2021, 10, 1))
+    message2 = create_message(2, author, created_at=datetime(2021, 10, 20))
+    message3 = create_message(3, author, created_at=datetime(2021, 10, 5))
 
     assert list(Message.listing()) == [message1, message3, message2]
 
@@ -54,11 +58,11 @@ def test_message_listing_sort_from_the_oldest(db_connection):
 def test_message_digest_listing(db_connection):
     author = create_message_author(1)
 
-    message1 = create_message(1, author, created_at=date(2021, 4, 30), upvotes=30)  # noqa
-    message2 = create_message(2, author, created_at=date(2021, 5, 3), upvotes=5)
-    message3 = create_message(3, author, created_at=date(2021, 5, 4), upvotes=10)
-    message4 = create_message(4, author, created_at=date(2021, 5, 5), upvotes=4)
-    message5 = create_message(5, author, created_at=date(2021, 5, 5), upvotes=3)  # noqa
+    message1 = create_message(1, author, created_at=datetime(2021, 4, 30), upvotes=30)  # noqa
+    message2 = create_message(2, author, created_at=datetime(2021, 5, 3), upvotes=5)
+    message3 = create_message(3, author, created_at=datetime(2021, 5, 4), upvotes=10)
+    message4 = create_message(4, author, created_at=datetime(2021, 5, 5), upvotes=4)
+    message5 = create_message(5, author, created_at=datetime(2021, 5, 5), upvotes=3)  # noqa
 
     assert list(Message.digest_listing(date(2021, 5, 1), limit=3)) == [message3, message2, message4]
 
@@ -76,10 +80,10 @@ def test_message_digest_listing_ignores_certain_channels(db_connection):
 def test_message_channel_listing(db_connection):
     author = create_message_author(1)
 
-    message1 = create_message(1, author, channel_id=333, created_at=date(2021, 10, 10))
-    message2 = create_message(2, author, channel_id=333, created_at=date(2021, 10, 1))
-    create_message(3, author, channel_id=222, created_at=date(2021, 10, 5))
-    create_message(4, author, channel_id=222, created_at=date(2021, 10, 20))
+    message1 = create_message(1, author, channel_id=333, created_at=datetime(2021, 10, 10))
+    message2 = create_message(2, author, channel_id=333, created_at=datetime(2021, 10, 1))
+    create_message(3, author, channel_id=222, created_at=datetime(2021, 10, 5))
+    create_message(4, author, channel_id=222, created_at=datetime(2021, 10, 20))
 
     assert list(Message.channel_listing(333)) == [message2, message1]
 
@@ -125,10 +129,10 @@ def test_author_top_members_limit_rounds_up(db_connection):
 def test_author_list_recent_messages(db_connection):
     author = create_message_author(1)
 
-    message1 = create_message(1, author, created_at=date(2021, 3, 15))  # noqa
-    message2 = create_message(2, author, created_at=date(2021, 3, 31))  # noqa
-    message3 = create_message(3, author, created_at=date(2021, 4, 1))
-    message4 = create_message(4, author, created_at=date(2021, 4, 15))
+    message1 = create_message(1, author, created_at=datetime(2021, 3, 15))  # noqa
+    message2 = create_message(2, author, created_at=datetime(2021, 3, 31))  # noqa
+    message3 = create_message(3, author, created_at=datetime(2021, 4, 1))
+    message4 = create_message(4, author, created_at=datetime(2021, 4, 15))
 
     assert list(author.list_recent_messages(today=date(2021, 5, 1))) == [message3, message4]
 
@@ -136,10 +140,10 @@ def test_author_list_recent_messages(db_connection):
 def test_author_first_seen_at_from_messages(db_connection):
     author = create_message_author(1, joined_at=date(2021, 4, 1))
 
-    create_message(1, author, created_at=date(2021, 3, 15))
-    create_message(2, author, created_at=date(2021, 3, 31))
-    create_message(3, author, created_at=date(2021, 4, 1))
-    create_message(4, author, created_at=date(2021, 4, 15))
+    create_message(1, author, created_at=datetime(2021, 3, 15))
+    create_message(2, author, created_at=datetime(2021, 3, 31))
+    create_message(3, author, created_at=datetime(2021, 4, 1))
+    create_message(4, author, created_at=datetime(2021, 4, 15))
 
     assert author.first_seen_at() == date(2021, 3, 15)
 
@@ -200,9 +204,9 @@ def test_author_messages_count(db_connection):
 def test_author_recent_messages_count(db_connection):
     author = create_message_author(1)
 
-    create_message(1, author, created_at=date(2021, 2, 15))
-    create_message(2, author, created_at=date(2021, 3, 10))
-    create_message(3, author, created_at=date(2021, 3, 15))
+    create_message(1, author, created_at=datetime(2021, 2, 15))
+    create_message(2, author, created_at=datetime(2021, 3, 10))
+    create_message(3, author, created_at=datetime(2021, 3, 15))
 
     assert author.recent_messages_count(today=date(2021, 4, 1)) == 2
 
@@ -230,9 +234,9 @@ def test_author_upvotes_count_skips_some_channels(db_connection):
 def test_author_recent_upvotes_count(db_connection):
     author = create_message_author(1)
 
-    create_message(1, author, upvotes=1, created_at=date(2021, 2, 15))
-    create_message(2, author, upvotes=4, created_at=date(2021, 3, 10))
-    create_message(3, author, upvotes=10, created_at=date(2021, 3, 15))
+    create_message(1, author, upvotes=1, created_at=datetime(2021, 2, 15))
+    create_message(2, author, upvotes=4, created_at=datetime(2021, 3, 10))
+    create_message(3, author, upvotes=10, created_at=datetime(2021, 3, 15))
 
     assert author.recent_upvotes_count(today=date(2021, 4, 1)) == 14
 
@@ -240,8 +244,45 @@ def test_author_recent_upvotes_count(db_connection):
 def test_author_recent_upvotes_count_skips_some_channels(db_connection):
     author = create_message_author(1)
 
-    create_message(1, author, upvotes=1, created_at=date(2021, 2, 15))
-    create_message(2, author, upvotes=4, created_at=date(2021, 3, 10))
-    create_message(3, author, upvotes=10, created_at=date(2021, 3, 15), channel_id=INTRO_CHANNEL)
+    create_message(1, author, upvotes=1, created_at=datetime(2021, 2, 15))
+    create_message(2, author, upvotes=4, created_at=datetime(2021, 3, 10))
+    create_message(3, author, upvotes=10, created_at=datetime(2021, 3, 15), channel_id=INTRO_CHANNEL)
 
     assert author.recent_upvotes_count(today=date(2021, 4, 1)) == 4
+
+
+def test_last_bot_message_filters_by_channel_id(db_connection, juniorguru_bot):
+    message1 = create_message(1, juniorguru_bot, content='🔥 abc', channel_id=123)
+    message2 = create_message(2, juniorguru_bot, content='🔥 abc', channel_id=456)  # noqa
+
+    assert Message.last_bot_message(123, '🔥') == message1
+
+
+def test_last_bot_message_chooses_bot_message(db_connection, juniorguru_bot):
+    message1 = create_message(1, create_message_author(1), content='🔥 abc', channel_id=123)  # noqa
+    message2 = create_message(2, juniorguru_bot, content='🔥 def', channel_id=123)
+    message3 = create_message(3, create_message_author(2), content='🔥 ghe', channel_id=123)  # noqa
+
+    assert Message.last_bot_message(123, '🔥') == message2
+
+
+def test_last_bot_message_chooses_last_message(db_connection, juniorguru_bot):
+    message1 = create_message(1, juniorguru_bot, content='🔥 abc', channel_id=123)  # noqa
+    message2 = create_message(2, juniorguru_bot, content='🔥 def', channel_id=123)
+
+    assert Message.last_bot_message(123, '🔥') == message2
+
+
+def test_last_bot_message_filters_by_emoji(db_connection, juniorguru_bot):
+    message1 = create_message(1, juniorguru_bot, content='🔥 abc', channel_id=123)
+    message2 = create_message(2, juniorguru_bot, content='def', channel_id=123)  # noqa
+
+    assert Message.last_bot_message(123, '🔥') == message1
+
+
+def test_last_bot_message_filters_by_emoji_and_text(db_connection, juniorguru_bot):
+    message1 = create_message(1, juniorguru_bot, content='🔥 abc', channel_id=123)
+    message2 = create_message(2, juniorguru_bot, content='def', channel_id=123)  # noqa
+    message3 = create_message(3, juniorguru_bot, content='🔥 ghi', channel_id=123)  # noqa
+
+    assert Message.last_bot_message(123, '🔥', 'ab') == message1
