@@ -26,7 +26,7 @@ def create_message(id_, author, **kwargs):
                           channel_id=kwargs.get('channel_id', 123),
                           channel_name=kwargs.get('channel_name', 'random-discussions'),
                           channel_mention=kwargs.get('channel_mention', '<#random-discussions>'),
-                          is_system=kwargs.get('is_system', False))
+                          type=kwargs.get('type', 'default'))
 
 
 @pytest.fixture
@@ -186,7 +186,8 @@ def test_author_has_intro_true(db_connection):
 def test_author_has_intro_skips_system_message(db_connection):
     author = create_message_author(1)
     create_message(1, author, channel_id=222)
-    create_message(2, author, channel_id=INTRO_CHANNEL, is_system=True)
+    create_message(2, author, channel_id=INTRO_CHANNEL, type='new_member')
+    create_message(3, author, channel_id=INTRO_CHANNEL, type='premium_guild_subscription')
 
     assert author.has_intro() is False
 

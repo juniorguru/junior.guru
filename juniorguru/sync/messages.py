@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from discord import Embed
 
 from juniorguru.lib.log import get_log
-from juniorguru.lib.club import discord_task, count_upvotes, is_default_avatar, get_roles, is_default_message_type, DISCORD_MUTATIONS_ENABLED
+from juniorguru.lib.club import discord_task, count_upvotes, is_default_avatar, get_roles, DISCORD_MUTATIONS_ENABLED
 from juniorguru.models import Message, MessageAuthor, db
 
 
@@ -12,6 +12,7 @@ log = get_log('messages')
 
 
 DIGEST_CHANNEL = 789046675247333397
+SYSTEM_MESSAGES_CHANNEL = 788823881024405544
 DIGEST_LIMIT = 5
 
 
@@ -53,11 +54,23 @@ async def main(client):
                                channel_id=channel.id,
                                channel_name=channel.name,
                                channel_mention=channel.mention,
-                               is_system=not is_default_message_type(message.type))
+                               type=message.type.name)
 
     with db:
         messages_count = Message.count()
     log.info(f'Saved {messages_count} messages from {len(authors)} authors')
+
+    # RETURNING MEMBERS
+    system_messages_channel = await client.fetch_channel(SYSTEM_MESSAGES_CHANNEL)
+    for message in Message.channel_listing(SYSTEM_MESSAGES_CHANNEL):
+        if message.type == 'new_member' and message.author.first_seen_at() < message.created_at.date():
+            log.info(f'It looks like {message.author.display_name} has returned')
+            discord_message = await system_messages_channel.fetch_message(message.id)
+            if DISCORD_MUTATIONS_ENABLED:
+                await discord_message.add_reaction('👋')
+                await discord_message.add_reaction('🔄')
+            else:
+                log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
     # DIGEST
     week_ago_dt = datetime.utcnow() - timedelta(weeks=1)

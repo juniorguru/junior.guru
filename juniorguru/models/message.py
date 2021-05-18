@@ -51,7 +51,7 @@ class MessageAuthor(BaseModel):
 
     def has_intro(self):
         intro_message = self.list_messages \
-            .where(Message.channel_id == INTRO_CHANNEL, Message.is_system != True) \
+            .where(Message.channel_id == INTRO_CHANNEL, Message.type == 'default') \
             .first()
         return bool(intro_message)
 
@@ -87,7 +87,7 @@ class Message(BaseModel):
     channel_id = IntegerField()
     channel_name = CharField()
     channel_mention = CharField()
-    is_system = BooleanField(default=False)
+    type = CharField(default='default')
 
     @classmethod
     def count(cls):
