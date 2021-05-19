@@ -109,6 +109,9 @@ async def post_next_event_messages(client):
     events_chat_channel = await client.fetch_channel(EVENTS_CHAT_CHANNEL)
 
     event = Event.next()
+    if not event:
+        log.info("The next event is not announced yet")
+        return
     speakers = ', '.join([speaking.speaker.mention for speaking in event.list_speaking])
 
     log.info("About to post a message 7 days prior to the event")
