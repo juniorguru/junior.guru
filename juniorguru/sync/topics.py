@@ -62,8 +62,9 @@ KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value
     r'open[ \-]?sourc\w+': 'opensource',
     r'green ?fox( academy| akademi[ei])?': 'greenfox',
     r'gfa': 'greenfox',
-    # r'c(\#|sharp\w*)': 'csharp',
-    # r'jav(a|ou|ista|istka|isti|istky|e|ě)': 'java',
+    r'unicorn\w*': 'unicorn',
+    r'c(\#|sharp\w*)': 'csharp',
+    r'jav(a|ou|ista|istka|isti|istky|e|ě)': 'java',
     # r'kotlin\w+': 'kotlin',
     # r'android\w+': 'android',
 }.items()}
