@@ -190,6 +190,7 @@ workflows:
                 - master
           requires:
             - build
+            - lint-and-test
 
   nightly:
     jobs:
