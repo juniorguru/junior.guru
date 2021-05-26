@@ -19,7 +19,8 @@ UPVOTES_EXCLUDE_CHANNELS = [
     797040163325870092,  # offtopic
     788822884948770847,  # moderátoři
     797107515186741248,  # roboti
-    806215364379148348,  # meta
+    806215364379148348,  # nápady-klub
+    847048522691641345,  # nápady-emoji
 ]
 
 
@@ -119,6 +120,12 @@ class ClubMessage(BaseModel):
                    ClubMessage.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS)) \
             .order_by(cls.upvotes_count.desc()) \
             .limit(limit)
+
+    @classmethod
+    def pins_listing(cls):
+        return cls.select() \
+            .where(cls.pins_count > 0) \
+            .order_by(cls.created_at)
 
     @classmethod
     def last_bot_message(cls, channel_id, startswith_emoji, contains_text=None):

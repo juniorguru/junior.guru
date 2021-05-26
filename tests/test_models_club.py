@@ -23,6 +23,7 @@ def create_message(id_, author, **kwargs):
                               author=author,
                               content=kwargs.get('content', 'hello'),
                               upvotes_count=kwargs.get('upvotes_count', 0),
+                              pins_count=kwargs.get('pins_count', 0),
                               created_at=kwargs.get('created_at', datetime.now() - timedelta(days=3)),
                               channel_id=kwargs.get('channel_id', 123),
                               channel_name=kwargs.get('channel_name', 'random-discussions'),
@@ -54,6 +55,16 @@ def test_message_listing_sort_from_the_oldest(db_connection):
     message3 = create_message(3, author, created_at=datetime(2021, 10, 5))
 
     assert list(ClubMessage.listing()) == [message1, message3, message2]
+
+
+def test_message_pins_listing(db_connection):
+    author = create_user(1)
+
+    message1 = create_message(1, author, created_at=datetime(2021, 4, 30), pins_count=0)  # noqa
+    message2 = create_message(2, author, created_at=datetime(2021, 5, 4), pins_count=5)
+    message3 = create_message(3, author, created_at=datetime(2021, 5, 3), pins_count=10)
+
+    assert list(ClubMessage.pins_listing()) == [message3, message2]
 
 
 def test_message_digest_listing(db_connection):
