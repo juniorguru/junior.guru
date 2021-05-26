@@ -15,6 +15,7 @@ EMOJI_UPVOTES = ['👍', '❤️', '😍', '🥰', '💕', '♥️', '💖', '�
                  'meowthumbsup', '✅', '🤘', 'this', 'dk', '🙇‍♂️', '🙇', '🙇‍♀️', 'kgsnice', 'successkid', 'white_check_mark',
                  'notbad']
 EMOJI_DOWNVOTES = ['👎']
+EMOJI_PINS = ['📌']
 
 
 class BaseClient(discord.Client):
@@ -70,6 +71,11 @@ def count_upvotes(reactions):
 def count_downvotes(reactions):
     return sum([reaction.count for reaction in reactions
                 if emoji_name(reaction.emoji) in EMOJI_DOWNVOTES])
+
+
+def count_pins(reactions):
+    return sum([reaction.count for reaction in reactions
+                if emoji_name(reaction.emoji) in EMOJI_PINS])
 
 
 def emoji_name(emoji):

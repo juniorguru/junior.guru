@@ -71,8 +71,8 @@ class Job(BaseModel):
         ('standard', None),
         ('annual_flat_rate', None),
     ])
-    upvotes = IntegerField(default=0)
-    downvotes = IntegerField(default=0)
+    upvotes_count = IntegerField(default=0)
+    downvotes_count = IntegerField(default=0)
 
     # source: juniorguru
     email = CharField(null=True)
@@ -253,8 +253,8 @@ class JobDropped(BaseModel):
     response_backup_path = CharField(null=True)
     item = JSONField()
     magic_is_junior = BooleanField(null=True)
-    upvotes = IntegerField(default=0)
-    downvotes = IntegerField(default=0)
+    upvotes_count = IntegerField(default=0)
+    downvotes_count = IntegerField(default=0)
 
     @classmethod
     def admin_listing(cls, types=None):

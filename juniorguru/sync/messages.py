@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from discord import Embed
 
 from juniorguru.lib.log import get_log
-from juniorguru.lib.club import discord_task, count_upvotes, is_default_avatar, get_roles, DISCORD_MUTATIONS_ENABLED
+from juniorguru.lib.club import discord_task, count_upvotes, is_default_avatar, get_roles, DISCORD_MUTATIONS_ENABLED, count_pins
 from juniorguru.models import Message, MessageAuthor, db
 
 
@@ -47,7 +47,8 @@ async def main(client):
                 Message.create(id=message.id,
                                url=message.jump_url,
                                content=message.content,
-                               upvotes=count_upvotes(message.reactions),
+                               upvotes_count=count_upvotes(message.reactions),
+                               pins_count=count_pins(message.reactions),
                                created_at=message.created_at,
                                edited_at=message.edited_at,
                                author=authors[message.author.id],
@@ -93,7 +94,7 @@ async def main(client):
         messages = Message.digest_listing(since_dt, limit=DIGEST_LIMIT)
 
     for n, message in enumerate(messages, start=1):
-        log.info(f"Digest #{n}: {message.upvotes} votes for {message.author.display_name} in #{message.channel_name}, {message.url}")
+        log.info(f"Digest #{n}: {message.upvotes_count} votes for {message.author.display_name} in #{message.channel_name}, {message.url}")
     if DISCORD_MUTATIONS_ENABLED:
         content = [
             f"🔥 **{DIGEST_LIMIT} nej příspěvků za uplynulý týden (od {since_dt.day}.{since_dt.month}.)**",
@@ -103,7 +104,7 @@ async def main(client):
         embed_description = []
         for message in messages:
             embed_description += [
-                f"{message.upvotes}× láska pro {message.author.mention} v {message.channel_mention}:",
+                f"{message.upvotes_count}× láska pro {message.author.mention} v {message.channel_mention}:",
                 f"> {textwrap.shorten(message.content, 200, placeholder='…')}",
                 f"[Hop na příspěvek]({message.url})",
                 "",

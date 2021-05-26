@@ -51,8 +51,8 @@ async def manage_jobs_channel(client):
                 log.info(f'Job {job.link} exists')
                 seen_links.add(job.link)
                 if message.reactions:
-                    job.upvotes = count_upvotes(message.reactions)
-                    job.downvotes = count_downvotes(message.reactions)
+                    job.upvotes_count = count_upvotes(message.reactions)
+                    job.downvotes_count = count_downvotes(message.reactions)
                     with db:
                         job.save()
                     log.info(f'Saved {job.link} reactions')
@@ -80,8 +80,8 @@ async def manage_jobs_voting_channel(client):  # experimenting with Mila and ML
                 log.info(f'Job {link} exists')
                 seen_links.add(link)
                 if message.reactions:
-                    job.upvotes += count_upvotes(message.reactions)
-                    job.downvotes += count_downvotes(message.reactions)
+                    job.upvotes_count += count_upvotes(message.reactions)
+                    job.downvotes_count += count_downvotes(message.reactions)
                     with db:
                         job.save()
                     log.info(f'Saved {link} reactions')
@@ -95,8 +95,8 @@ async def manage_jobs_voting_channel(client):  # experimenting with Mila and ML
                 log.info(f'Job {link} exists')
                 seen_links.add(link)
                 if message.reactions:
-                    job_dropped.upvotes += count_upvotes(message.reactions)
-                    job_dropped.downvotes += count_downvotes(message.reactions)
+                    job_dropped.upvotes_count += count_upvotes(message.reactions)
+                    job_dropped.downvotes_count += count_downvotes(message.reactions)
                     with db:
                         job_dropped.save()
                     log.info(f'Saved {link} reactions')

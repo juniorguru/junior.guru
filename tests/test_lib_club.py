@@ -19,6 +19,11 @@ def test_count_downvotes():
     assert club.count_downvotes(reactions) == 1
 
 
+def test_count_pins():
+    reactions = [DummyReaction(DummyEmoji('plus_one'), 4), DummyReaction('📌', 3), DummyReaction('🐣', 3)]
+    assert club.count_pins(reactions) == 3
+
+
 @pytest.mark.parametrize('emoji, expected', [
     ('🆗', '🆗'),
     ('AHOJ', 'AHOJ'),

@@ -1,10 +1,11 @@
 from collections import namedtuple
+from operator import attrgetter
 
 from juniorguru.sync.roles import repr_roles, repr_ids, repr_stats, calc_stats, evaluate_changes
 
 
 DummyRole = namedtuple('Role', ['name'])
-DummyMember = namedtuple('Member', ['id', 'display_name', 'upvotes'], defaults=[True])
+DummyMember = namedtuple('Member', ['id', 'display_name', 'upvotes_count'], defaults=[0])
 
 
 def test_repr_roles():
@@ -37,7 +38,7 @@ def test_calc_stats():
                DummyMember(2, 'Honza', 1),
                DummyMember(3, 'Ondřej', 5)]
 
-    assert calc_stats(members, lambda member: member.upvotes, 1) == {1: 20}
+    assert calc_stats(members, attrgetter('upvotes_count'), 1) == {1: 20}
 
 
 def test_calc_stats_higher_top_limit():
@@ -45,7 +46,7 @@ def test_calc_stats_higher_top_limit():
                DummyMember(2, 'Honza', 1),
                DummyMember(3, 'Ondřej', 5)]
 
-    assert calc_stats(members, lambda member: member.upvotes, 2) == {1: 20, 3: 5}
+    assert calc_stats(members, attrgetter('upvotes_count'), 2) == {1: 20, 3: 5}
 
 
 def test_evaluate_changes_member_should_have_this_role_and_already_has():

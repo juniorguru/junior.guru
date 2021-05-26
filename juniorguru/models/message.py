@@ -42,12 +42,12 @@ class MessageAuthor(BaseModel):
     def upvotes_count(self):
         messages = self.list_messages \
             .where(Message.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
-        return sum([message.upvotes for message in messages])
+        return sum([message.upvotes_count for message in messages])
 
     def recent_upvotes_count(self, today=None):
         messages = self.list_recent_messages(today) \
             .where(Message.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
-        return sum([message.upvotes for message in messages])
+        return sum([message.upvotes_count for message in messages])
 
     def has_intro(self):
         intro_message = self.list_messages \
@@ -81,7 +81,8 @@ class Message(BaseModel):
     id = IntegerField(primary_key=True)
     url = CharField()
     content = CharField()
-    upvotes = IntegerField(default=0)
+    upvotes_count = IntegerField(default=0)
+    pins_count = IntegerField(default=0)
     created_at = DateTimeField(index=True)
     author = ForeignKeyField(MessageAuthor, backref='list_messages')
     channel_id = IntegerField()
@@ -108,7 +109,7 @@ class Message(BaseModel):
         return cls.select() \
             .where(cls.created_at >= since_dt,
                    Message.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS)) \
-            .order_by(cls.upvotes.desc()) \
+            .order_by(cls.upvotes_count.desc()) \
             .limit(limit)
 
     @classmethod
