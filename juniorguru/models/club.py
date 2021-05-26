@@ -27,7 +27,7 @@ class ClubUser(BaseModel):
     id = IntegerField(primary_key=True)
     is_bot = BooleanField(default=False)
     is_member = BooleanField(default=True)
-    has_avatar = BooleanField(default=False)
+    avatar_path = CharField(null=True)
     display_name = CharField()
     mention = CharField()
     joined_at = DateTimeField(null=True)
@@ -69,12 +69,20 @@ class ClubUser(BaseModel):
         return (self.first_seen_at() + timedelta(days=IS_NEW_PERIOD_DAYS)) >= (today or date.today())
 
     @classmethod
+    def members_count(cls):
+        return cls.members_listing().count()
+
+    @classmethod
     def top_members_limit(cls):
-        return math.ceil(cls.members_listing().count() * TOP_MEMBERS_PERCENT)
+        return math.ceil(cls.members_count() * TOP_MEMBERS_PERCENT)
 
     @classmethod
     def members_listing(cls):
         return cls.select().where(cls.is_bot == False, cls.is_member == True)
+
+    @classmethod
+    def avatars_listing(cls):
+        return cls.members_listing().where(cls.avatar_path.is_null(False))
 
 
 class ClubMessage(BaseModel):

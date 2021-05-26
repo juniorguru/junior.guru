@@ -1,6 +1,10 @@
+from pathlib import Path
+from urllib.parse import urlparse
 import textwrap
 from datetime import datetime, timedelta
+from io import BytesIO
 
+from PIL import Image
 from discord import Embed
 
 from juniorguru.lib.log import get_log
@@ -8,17 +12,25 @@ from juniorguru.lib.club import discord_task, count_upvotes, is_default_avatar, 
 from juniorguru.models import ClubMessage, ClubUser, db
 
 
-log = get_log('messages')
+log = get_log('club_content')
 
 
 DIGEST_CHANNEL = 789046675247333397
 SYSTEM_MESSAGES_CHANNEL = 788823881024405544
 DIGEST_LIMIT = 5
 
+IMAGES_PATH = Path(__file__).parent.parent / 'images'
+AVATARS_PATH = IMAGES_PATH / 'avatars'
+AVATAR_SIZE_PX = 60
+
 
 @discord_task
 async def main(client):
-    # MESSAGES AND AUTHORS
+    # MESSAGES AND USERS
+    AVATARS_PATH.mkdir(exist_ok=True, parents=True)
+    for path in AVATARS_PATH.glob('*.png'):
+        path.unlink()
+
     with db:
         db.drop_tables([ClubMessage, ClubUser])
         db.create_tables([ClubMessage, ClubUser])
@@ -27,39 +39,58 @@ async def main(client):
     relevant_channels = (channel for channel in client.juniorguru_guild.text_channels
                          if channel.permissions_for(client.juniorguru_guild.me).read_messages)
     for channel in relevant_channels:
-        log.info(f'#{channel.name}')
+        log.info(f'Channel #{channel.name}')
         async for message in channel.history(limit=None, after=None):
             if message.author.id not in authors:
                 # The message.author can be an instance of Member, but it can also be an instance of User,
                 # if the author isn't a member of the Discord guild/server anymore. User instances don't
                 # have certain properties, hence the getattr() calls below.
                 with db:
+                    log.info(f"User '{message.author.display_name}' #{message.author.id}")
                     author = ClubUser.create(id=message.author.id,
-                                                  is_bot=message.author.bot,
-                                                  is_member=bool(getattr(message.author, 'joined_at', False)),
-                                                  has_avatar=not is_default_avatar(message.author.avatar_url),
-                                                  display_name=message.author.display_name,
-                                                  mention=message.author.mention,
-                                                  joined_at=getattr(message.author, 'joined_at', None),
-                                                  roles=get_roles(message.author))
+                                             is_bot=message.author.bot,
+                                             is_member=bool(getattr(message.author, 'joined_at', False)),
+                                             avatar_path=download_avatar(message.author.avatar_url),
+                                             display_name=message.author.display_name,
+                                             mention=message.author.mention,
+                                             joined_at=getattr(message.author, 'joined_at', None),
+                                             roles=get_roles(message.author))
                 authors[message.author.id] = author
             with db:
                 ClubMessage.create(id=message.id,
-                               url=message.jump_url,
-                               content=message.content,
-                               upvotes_count=count_upvotes(message.reactions),
-                               pins_count=count_pins(message.reactions),
-                               created_at=message.created_at,
-                               edited_at=message.edited_at,
-                               author=authors[message.author.id],
-                               channel_id=channel.id,
-                               channel_name=channel.name,
-                               channel_mention=channel.mention,
-                               type=message.type.name)
+                                   url=message.jump_url,
+                                   content=message.content,
+                                   upvotes_count=count_upvotes(message.reactions),
+                                   pins_count=count_pins(message.reactions),
+                                   created_at=message.created_at,
+                                   edited_at=message.edited_at,
+                                   author=authors[message.author.id],
+                                   channel_id=channel.id,
+                                   channel_name=channel.name,
+                                   channel_mention=channel.mention,
+                                   type=message.type.name)
+
+    # REMAINING MEMBERS (DID NOT AUTHOR A SINGLE MESSAGE)
+    log.info('Looking for remaining members, if any')
+    remaining_members = [member async for member in client.juniorguru_guild.fetch_members(limit=None)
+                         if member.id not in authors]
+    for member in remaining_members:
+        with db:
+            log.info(f"Member '{member.display_name}' #{member.id}")
+            ClubUser.create(id=member.id,
+                            is_bot=member.bot,
+                            is_member=True,
+                            avatar_path=download_avatar(member.avatar_url),
+                            display_name=member.display_name,
+                            mention=member.mention,
+                            joined_at=member.joined_at,
+                            roles=get_roles(member))
 
     with db:
         messages_count = ClubMessage.count()
+        members_count = ClubUser.members_count()
     log.info(f'Saved {messages_count} messages from {len(authors)} authors')
+    log.info(f'Saved {members_count} members')
 
     # RETURNING MEMBERS
     system_messages_channel = await client.fetch_channel(SYSTEM_MESSAGES_CHANNEL)
@@ -113,6 +144,20 @@ async def main(client):
                            embed=Embed(description="\n".join(embed_description)))
     else:
         log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
+
+
+async def download_avatar(discord_user):
+    avatar_url = str(discord_user.avatar_url)
+    if is_default_avatar(avatar_url):
+        return None
+    else:
+        buffer = BytesIO()
+        await discord_user.avatar_url.save(buffer)
+        image = Image.open(buffer)
+        image = image.resize((AVATAR_SIZE_PX, AVATAR_SIZE_PX))
+        image_path = AVATARS_PATH / f'{Path(urlparse(avatar_url).path).stem}.png'
+        image.save(image_path, 'PNG')
+        return f'images/avatars/{image_path.name}'
 
 
 if __name__ == '__main__':

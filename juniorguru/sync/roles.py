@@ -50,7 +50,7 @@ def main():
             changes.extend(evaluate_changes(member.id, member.roles, most_helpful_members_ids, ROLE_MOST_HELPFUL))
 
         # ROLE_HAS_INTRO_AND_AVATAR
-        intro_avatar_members_ids = [member.id for member in members if member.has_avatar and member.has_intro()]
+        intro_avatar_members_ids = [member.id for member in members if member.avatar_path and member.has_intro()]
         log.info(f"intro_avatar_members: {repr_ids(members, intro_avatar_members_ids)}")
         for member in members:
             changes.extend(evaluate_changes(member.id, member.roles, intro_avatar_members_ids, ROLE_HAS_INTRO_AND_AVATAR))

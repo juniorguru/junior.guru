@@ -3,14 +3,14 @@ import random
 import arrow
 
 from juniorguru.web import NAV_TABS, thumbnail
-from juniorguru.models import db, Topic, Member, Job
+from juniorguru.models import db, Topic, ClubUser, Job
 
 
 def define_env(env):
     with db:
         env.variables.update(dict(
-            members=Member.avatars_listing(),
-            members_total_count=Member.count(),
+            members=ClubUser.avatars_listing(),
+            members_total_count=ClubUser.members_count(),
             jobs_count=Job.aggregate_metrics()['jobs_count'],
         ))
 

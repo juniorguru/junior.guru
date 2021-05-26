@@ -1,3 +1,4 @@
+from juniorguru.models.club import ClubUser
 import os
 from pathlib import Path
 
@@ -7,7 +8,7 @@ from flask import Flask, Response, render_template, url_for
 from juniorguru.lib.log import get_log
 from juniorguru.lib import template_filters
 from juniorguru.lib.images import render_image_file
-from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, Member, db
+from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, db
 
 
 log = get_log('web')
@@ -114,8 +115,8 @@ def index():
 @app.route('/club/')
 def club():
     with db:
-        members = Member.avatars_listing()
-        members_total_count = Member.count()
+        members = ClubUser.avatars_listing()
+        members_total_count = ClubUser.members_count()
         logos = Logo.listing()
     return render_template('club.html',
                            nav_active='club',

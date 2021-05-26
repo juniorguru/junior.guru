@@ -13,9 +13,8 @@ from juniorguru.sync.press_releases import main as sync_press_releases
 from juniorguru.sync.newsletter_mentions import main as sync_newsletter_mentions
 from juniorguru.sync.transactions import main as sync_transactions
 from juniorguru.sync.proxies import main as sync_proxies
-from juniorguru.sync.members import main as sync_members
 from juniorguru.sync.events import main as sync_events
-from juniorguru.sync.messages import main as sync_messages
+from juniorguru.sync.club_content import main as sync_club_content
 from juniorguru.sync.topics import main as sync_topics
 from juniorguru.sync.roles import main as sync_roles
 from juniorguru.lib.magic import do_magic
@@ -34,20 +33,19 @@ def main():
     sync_logos()
     sync_transactions()
     sync_proxies()
-    sync_members()
-    sync_messages()
+    sync_club_content()
 
     # order-sensitive
-    sync_events()  # depends on messages
-    sync_topics()  # depends on messages
-    sync_roles()  # depends on messages, events
+    sync_events()  # depends on club_content
+    sync_topics()  # depends on club_content
+    sync_roles()  # depends on club_content, events
     sync_jobs()  # depends on proxies
     sync_metrics()  # depends on jobs, logos
     sync_newsletter_mentions()  # depends on jobs
 
     # cast magic
     do_magic()  # depends on jobs
-    manage_jobs_voting_channel()  # depends on magic
+    manage_jobs_voting_channel()  # depends on jobs, magic
 
 
 try:
