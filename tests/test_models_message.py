@@ -3,35 +3,35 @@ from datetime import datetime, date, timedelta
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models import Message, MessageAuthor
-from juniorguru.models.message import INTRO_CHANNEL, JUNIORGURU_BOT
+from juniorguru.models import ClubMessage, ClubUser
+from juniorguru.models.club import INTRO_CHANNEL, JUNIORGURU_BOT
 
 
 def create_message_author(id_, **kwargs):
-    return MessageAuthor.create(id=id_,
-                                is_member=kwargs.get('is_member', True),
-                                is_bot=kwargs.get('is_bot', False),
-                                display_name=kwargs.get('display_name', 'Kuře Žluté'),
-                                mention=kwargs.get('mention', f'<@{id_}>'),
-                                joined_at=kwargs.get('joined_at', datetime.now() - timedelta(days=3)))
+    return ClubUser.create(id=id_,
+                           is_member=kwargs.get('is_member', True),
+                           is_bot=kwargs.get('is_bot', False),
+                           display_name=kwargs.get('display_name', 'Kuře Žluté'),
+                           mention=kwargs.get('mention', f'<@{id_}>'),
+                           joined_at=kwargs.get('joined_at', datetime.now() - timedelta(days=3)))
 
 
 def create_message(id_, author, **kwargs):
-    return Message.create(id=id_,
-                          url=f'https://example.com/messages/{id_}',
-                          author=author,
-                          content=kwargs.get('content', 'hello'),
-                          upvotes_count=kwargs.get('upvotes_count', 0),
-                          created_at=kwargs.get('created_at', datetime.now() - timedelta(days=3)),
-                          channel_id=kwargs.get('channel_id', 123),
-                          channel_name=kwargs.get('channel_name', 'random-discussions'),
-                          channel_mention=kwargs.get('channel_mention', '<#random-discussions>'),
-                          type=kwargs.get('type', 'default'))
+    return ClubMessage.create(id=id_,
+                              url=f'https://example.com/messages/{id_}',
+                              author=author,
+                              content=kwargs.get('content', 'hello'),
+                              upvotes_count=kwargs.get('upvotes_count', 0),
+                              created_at=kwargs.get('created_at', datetime.now() - timedelta(days=3)),
+                              channel_id=kwargs.get('channel_id', 123),
+                              channel_name=kwargs.get('channel_name', 'random-discussions'),
+                              channel_mention=kwargs.get('channel_mention', '<#random-discussions>'),
+                              type=kwargs.get('type', 'default'))
 
 
 @pytest.fixture
 def db_connection():
-    models = [MessageAuthor, Message]
+    models = [ClubUser, ClubMessage]
     db = SqliteDatabase(':memory:')
     with db:
         db.bind(models)
@@ -52,7 +52,7 @@ def test_message_listing_sort_from_the_oldest(db_connection):
     message2 = create_message(2, author, created_at=datetime(2021, 10, 20))
     message3 = create_message(3, author, created_at=datetime(2021, 10, 5))
 
-    assert list(Message.listing()) == [message1, message3, message2]
+    assert list(ClubMessage.listing()) == [message1, message3, message2]
 
 
 def test_message_digest_listing(db_connection):
@@ -64,7 +64,7 @@ def test_message_digest_listing(db_connection):
     message4 = create_message(4, author, created_at=datetime(2021, 5, 5), upvotes_count=4)
     message5 = create_message(5, author, created_at=datetime(2021, 5, 5), upvotes_count=3)  # noqa
 
-    assert list(Message.digest_listing(date(2021, 5, 1), limit=3)) == [message3, message2, message4]
+    assert list(ClubMessage.digest_listing(date(2021, 5, 1), limit=3)) == [message3, message2, message4]
 
 
 def test_message_digest_listing_ignores_certain_channels(db_connection):
@@ -74,7 +74,7 @@ def test_message_digest_listing_ignores_certain_channels(db_connection):
     message2 = create_message(2, author, upvotes_count=10)
     message3 = create_message(3, author, upvotes_count=20, channel_id=INTRO_CHANNEL)  # noqa
 
-    assert set(Message.digest_listing(date(2021, 5, 1), limit=3)) == {message1, message2}
+    assert set(ClubMessage.digest_listing(date(2021, 5, 1), limit=3)) == {message1, message2}
 
 
 def test_message_channel_listing(db_connection):
@@ -85,7 +85,7 @@ def test_message_channel_listing(db_connection):
     create_message(3, author, channel_id=222, created_at=datetime(2021, 10, 5))
     create_message(4, author, channel_id=222, created_at=datetime(2021, 10, 20))
 
-    assert list(Message.channel_listing(333)) == [message2, message1]
+    assert list(ClubMessage.channel_listing(333)) == [message2, message1]
 
 
 def test_author_members_listing(db_connection):
@@ -94,28 +94,28 @@ def test_author_members_listing(db_connection):
     author3 = create_message_author(3, is_member=False, is_bot=True)  # noqa
     author4 = create_message_author(4, is_member=False, is_bot=False)  # noqa
 
-    assert list(MessageAuthor.members_listing()) == [author2]
+    assert list(ClubUser.members_listing()) == [author2]
 
 
 def test_author_top_members_limit_is_five_percent(db_connection):
     for id_ in range(100):
         create_message_author(id_)
 
-    MessageAuthor.top_members_limit() == 5
+    ClubUser.top_members_limit() == 5
 
 
 def test_author_top_members_limit_doesnt_count_past_members(db_connection):
     for id_ in range(200):
         create_message_author(id_, is_member=id_ < 100)
 
-    MessageAuthor.top_members_limit() == 5
+    ClubUser.top_members_limit() == 5
 
 
 def test_author_top_members_limit_doesnt_count_bots(db_connection):
     for id_ in range(200):
         create_message_author(id_, is_bot=id_ < 100)
 
-    MessageAuthor.top_members_limit() == 5
+    ClubUser.top_members_limit() == 5
 
 
 def test_author_top_members_limit_rounds_up(db_connection):
@@ -123,7 +123,7 @@ def test_author_top_members_limit_rounds_up(db_connection):
     create_message_author(2)
     create_message_author(3)
 
-    MessageAuthor.top_members_limit() == 1
+    ClubUser.top_members_limit() == 1
 
 
 def test_author_list_recent_messages(db_connection):
@@ -256,7 +256,7 @@ def test_last_bot_message_filters_by_channel_id(db_connection, juniorguru_bot):
     message1 = create_message(1, juniorguru_bot, content='🔥 abc', channel_id=123)
     message2 = create_message(2, juniorguru_bot, content='🔥 abc', channel_id=456)  # noqa
 
-    assert Message.last_bot_message(123, '🔥') == message1
+    assert ClubMessage.last_bot_message(123, '🔥') == message1
 
 
 def test_last_bot_message_chooses_bot_message(db_connection, juniorguru_bot):
@@ -264,21 +264,21 @@ def test_last_bot_message_chooses_bot_message(db_connection, juniorguru_bot):
     message2 = create_message(2, juniorguru_bot, content='🔥 def', channel_id=123)
     message3 = create_message(3, create_message_author(2), content='🔥 ghe', channel_id=123)  # noqa
 
-    assert Message.last_bot_message(123, '🔥') == message2
+    assert ClubMessage.last_bot_message(123, '🔥') == message2
 
 
 def test_last_bot_message_chooses_last_message(db_connection, juniorguru_bot):
     message1 = create_message(1, juniorguru_bot, content='🔥 abc', channel_id=123)  # noqa
     message2 = create_message(2, juniorguru_bot, content='🔥 def', channel_id=123)
 
-    assert Message.last_bot_message(123, '🔥') == message2
+    assert ClubMessage.last_bot_message(123, '🔥') == message2
 
 
 def test_last_bot_message_filters_by_emoji(db_connection, juniorguru_bot):
     message1 = create_message(1, juniorguru_bot, content='🔥 abc', channel_id=123)
     message2 = create_message(2, juniorguru_bot, content='def', channel_id=123)  # noqa
 
-    assert Message.last_bot_message(123, '🔥') == message1
+    assert ClubMessage.last_bot_message(123, '🔥') == message1
 
 
 def test_last_bot_message_filters_by_emoji_and_text(db_connection, juniorguru_bot):
@@ -286,4 +286,4 @@ def test_last_bot_message_filters_by_emoji_and_text(db_connection, juniorguru_bo
     message2 = create_message(2, juniorguru_bot, content='def', channel_id=123)  # noqa
     message3 = create_message(3, juniorguru_bot, content='🔥 ghi', channel_id=123)  # noqa
 
-    assert Message.last_bot_message(123, '🔥', 'ab') == message1
+    assert ClubMessage.last_bot_message(123, '🔥', 'ab') == message1

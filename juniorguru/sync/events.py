@@ -6,7 +6,7 @@ import arrow
 from playhouse.shortcuts import model_to_dict
 from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, load
 
-from juniorguru.models import Event, EventSpeaking, Message, db
+from juniorguru.models import Event, EventSpeaking, ClubMessage, db
 from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_ig_square
 from juniorguru.lib.log import get_log
 from juniorguru.lib.md import strip_links
@@ -117,7 +117,7 @@ async def post_next_event_messages(client):
     log.info("About to post a message 7 days prior to the event")
     if event.start_at.date() - timedelta(days=7) == date.today():
         with db:
-            message = Message.last_bot_message(ANNOUNCEMENTS_CHANNEL, '🗓', event.url)
+            message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '🗓', event.url)
         if message:
             log.info(f'Looks like the message already exists: {message.url}')
         else:
@@ -130,7 +130,7 @@ async def post_next_event_messages(client):
     log.info("About to post a message 1 day prior to the event")
     if event.start_at.date() - timedelta(days=1) == date.today():
         with db:
-            message = Message.last_bot_message(ANNOUNCEMENTS_CHANNEL, '🤩', event.url)
+            message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '🤩', event.url)
         if message:
             log.info(f'Looks like the message already exists: {message.url}')
         else:
@@ -143,7 +143,7 @@ async def post_next_event_messages(client):
     log.info("About to post a message on the day when the event is")
     if event.start_at.date() == date.today():
         with db:
-            message = Message.last_bot_message(ANNOUNCEMENTS_CHANNEL, '⏰', event.url)
+            message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '⏰', event.url)
         if message:
             log.info(f'Looks like the message already exists: {message.url}')
         else:
@@ -156,7 +156,7 @@ async def post_next_event_messages(client):
     log.info("About to post a message to event chat on the day when the event is")
     if event.start_at.date() == date.today():
         with db:
-            message = Message.last_bot_message(EVENTS_CHAT_CHANNEL, '👋', event.url)
+            message = ClubMessage.last_bot_message(EVENTS_CHAT_CHANNEL, '👋', event.url)
         if message:
             log.info(f'Looks like the message already exists: {message.url}')
         else:

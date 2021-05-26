@@ -2,7 +2,7 @@ from collections import Counter
 
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED, get_roles
-from juniorguru.models import MessageAuthor, Event, db
+from juniorguru.models import ClubUser, Event, db
 
 
 log = get_log('roles')
@@ -18,9 +18,9 @@ ROLE_IS_SPONSOR = 837316268142493736  # TODO
 
 def main():
     with db:
-        members = MessageAuthor.members_listing()
+        members = ClubUser.members_listing()
         changes = []
-        top_members_limit = MessageAuthor.top_members_limit()
+        top_members_limit = ClubUser.top_members_limit()
         log.info(f'members_count={len(members)}, top_members_limit={top_members_limit}')
 
         # ROLE_MOST_DISCUSSING
@@ -94,7 +94,7 @@ async def apply_changes(client, changes):
             log.info(f'{discord_member.display_name}: removing {repr_roles(discord_roles)}')
             await discord_member.remove_roles(*discord_roles)
         with db:
-            member = MessageAuthor.get_by_id(member_id)
+            member = ClubUser.get_by_id(member_id)
             member.roles = get_roles(discord_member)
             member.save()
 

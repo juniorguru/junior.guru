@@ -4,7 +4,7 @@ import arrow
 from peewee import CharField, DateTimeField, ForeignKeyField, TextField
 
 from juniorguru.models.base import BaseModel, JSONField
-from juniorguru.models import MessageAuthor
+from juniorguru.models import ClubUser
 
 
 class Event(BaseModel):
@@ -45,8 +45,8 @@ class Event(BaseModel):
 
     @classmethod
     def list_speaking_members(cls):
-        return MessageAuthor.select() \
-            .where(MessageAuthor.is_member == True) \
+        return ClubUser.select() \
+            .where(ClubUser.is_member == True) \
             .join(EventSpeaking)
 
     @classmethod
@@ -58,6 +58,6 @@ class Event(BaseModel):
 
 
 class EventSpeaking(BaseModel):
-    speaker = ForeignKeyField(MessageAuthor, backref='list_speaking')
+    speaker = ForeignKeyField(ClubUser, backref='list_speaking')
     event = ForeignKeyField(Event, backref='list_speaking')
     avatar_path = CharField(null=True)

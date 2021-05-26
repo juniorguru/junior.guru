@@ -2,7 +2,7 @@ import re
 from collections import Counter
 
 from juniorguru.lib.log import get_log
-from juniorguru.models import Message, Topic, db
+from juniorguru.models import ClubMessage, Topic, db
 
 
 log = get_log('topics')
@@ -87,7 +87,7 @@ def main():
 
     topics = {}
     with db:
-        messages = Message.listing()
+        messages = ClubMessage.listing()
     for message in messages:
         topic_channel_keyword = get_topic_channel_keyword(message.channel_name)
         if topic_channel_keyword:

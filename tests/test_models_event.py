@@ -3,11 +3,11 @@ from datetime import datetime, date
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models import Event, EventSpeaking, MessageAuthor
+from juniorguru.models import Event, EventSpeaking, ClubUser
 
 
 def create_member(id):
-    return MessageAuthor.create(id=id,
+    return ClubUser.create(id=id,
                                 display_name=f"Jane Doe {id}",
                                 mention=f"<#{id}>")
 
@@ -22,7 +22,7 @@ def create_event(id, **kwargs):
 
 @pytest.fixture
 def db_connection():
-    models = [Event, EventSpeaking, MessageAuthor]
+    models = [Event, EventSpeaking, ClubUser]
     db = SqliteDatabase(':memory:')
     with db:
         db.bind(models)

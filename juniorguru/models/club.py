@@ -23,7 +23,7 @@ UPVOTES_EXCLUDE_CHANNELS = [
 ]
 
 
-class MessageAuthor(BaseModel):
+class ClubUser(BaseModel):
     id = IntegerField(primary_key=True)
     is_bot = BooleanField(default=False)
     is_member = BooleanField(default=True)
@@ -41,29 +41,29 @@ class MessageAuthor(BaseModel):
 
     def upvotes_count(self):
         messages = self.list_messages \
-            .where(Message.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
+            .where(ClubMessage.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
         return sum([message.upvotes_count for message in messages])
 
     def recent_upvotes_count(self, today=None):
         messages = self.list_recent_messages(today) \
-            .where(Message.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
+            .where(ClubMessage.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
         return sum([message.upvotes_count for message in messages])
 
     def has_intro(self):
         intro_message = self.list_messages \
-            .where(Message.channel_id == INTRO_CHANNEL, Message.type == 'default') \
+            .where(ClubMessage.channel_id == INTRO_CHANNEL, ClubMessage.type == 'default') \
             .first()
         return bool(intro_message)
 
     def first_seen_at(self):
         first_message = self.list_messages \
-            .order_by(Message.created_at) \
+            .order_by(ClubMessage.created_at) \
             .first()
         return first_message.created_at.date() if first_message else self.joined_at
 
     def list_recent_messages(self, today=None):
         recent_period_start_at = (today or date.today()) - timedelta(days=RECENT_PERIOD_DAYS)
-        return self.list_messages.where(Message.created_at >= recent_period_start_at)
+        return self.list_messages.where(ClubMessage.created_at >= recent_period_start_at)
 
     def is_new(self, today=None):
         return (self.first_seen_at() + timedelta(days=IS_NEW_PERIOD_DAYS)) >= (today or date.today())
@@ -77,14 +77,14 @@ class MessageAuthor(BaseModel):
         return cls.select().where(cls.is_bot == False, cls.is_member == True)
 
 
-class Message(BaseModel):
+class ClubMessage(BaseModel):
     id = IntegerField(primary_key=True)
     url = CharField()
     content = CharField()
     upvotes_count = IntegerField(default=0)
     pins_count = IntegerField(default=0)
     created_at = DateTimeField(index=True)
-    author = ForeignKeyField(MessageAuthor, backref='list_messages')
+    author = ForeignKeyField(ClubUser, backref='list_messages')
     channel_id = IntegerField()
     channel_name = CharField()
     channel_mention = CharField()
@@ -108,15 +108,15 @@ class Message(BaseModel):
     def digest_listing(cls, since_dt, limit=5):
         return cls.select() \
             .where(cls.created_at >= since_dt,
-                   Message.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS)) \
+                   ClubMessage.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS)) \
             .order_by(cls.upvotes_count.desc()) \
             .limit(limit)
 
     @classmethod
     def last_bot_message(cls, channel_id, startswith_emoji, contains_text=None):
         query = cls.select() \
-            .join(MessageAuthor) \
-            .where(MessageAuthor.id == JUNIORGURU_BOT,
+            .join(ClubUser) \
+            .where(ClubUser.id == JUNIORGURU_BOT,
                    cls.channel_id == channel_id,
                    cls.content.startswith(startswith_emoji)) \
             .order_by(cls.created_at.desc())

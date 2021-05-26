@@ -5,7 +5,7 @@ from discord import Embed
 
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import discord_task, count_upvotes, is_default_avatar, get_roles, DISCORD_MUTATIONS_ENABLED, count_pins
-from juniorguru.models import Message, MessageAuthor, db
+from juniorguru.models import ClubMessage, ClubUser, db
 
 
 log = get_log('messages')
@@ -20,8 +20,8 @@ DIGEST_LIMIT = 5
 async def main(client):
     # MESSAGES AND AUTHORS
     with db:
-        db.drop_tables([Message, MessageAuthor])
-        db.create_tables([Message, MessageAuthor])
+        db.drop_tables([ClubMessage, ClubUser])
+        db.create_tables([ClubMessage, ClubUser])
 
     authors = {}
     relevant_channels = (channel for channel in client.juniorguru_guild.text_channels
@@ -34,7 +34,7 @@ async def main(client):
                 # if the author isn't a member of the Discord guild/server anymore. User instances don't
                 # have certain properties, hence the getattr() calls below.
                 with db:
-                    author = MessageAuthor.create(id=message.author.id,
+                    author = ClubUser.create(id=message.author.id,
                                                   is_bot=message.author.bot,
                                                   is_member=bool(getattr(message.author, 'joined_at', False)),
                                                   has_avatar=not is_default_avatar(message.author.avatar_url),
@@ -44,7 +44,7 @@ async def main(client):
                                                   roles=get_roles(message.author))
                 authors[message.author.id] = author
             with db:
-                Message.create(id=message.id,
+                ClubMessage.create(id=message.id,
                                url=message.jump_url,
                                content=message.content,
                                upvotes_count=count_upvotes(message.reactions),
@@ -58,12 +58,12 @@ async def main(client):
                                type=message.type.name)
 
     with db:
-        messages_count = Message.count()
+        messages_count = ClubMessage.count()
     log.info(f'Saved {messages_count} messages from {len(authors)} authors')
 
     # RETURNING MEMBERS
     system_messages_channel = await client.fetch_channel(SYSTEM_MESSAGES_CHANNEL)
-    for message in Message.channel_listing(SYSTEM_MESSAGES_CHANNEL):
+    for message in ClubMessage.channel_listing(SYSTEM_MESSAGES_CHANNEL):
         if message.type == 'new_member' and message.author.first_seen_at() < message.created_at.date():
             log.info(f'It looks like {message.author.display_name} has returned')
             discord_message = await system_messages_channel.fetch_message(message.id)
@@ -76,7 +76,7 @@ async def main(client):
     # DIGEST
     week_ago_dt = datetime.utcnow() - timedelta(weeks=1)
     with db:
-        last_digest_message = Message.last_bot_message(DIGEST_CHANNEL, '🔥')
+        last_digest_message = ClubMessage.last_bot_message(DIGEST_CHANNEL, '🔥')
     if last_digest_message:
         since_dt = last_digest_message.created_at
         log.info(f"Last digest on {since_dt}")
@@ -91,7 +91,7 @@ async def main(client):
 
     channel = await client.fetch_channel(DIGEST_CHANNEL)
     with db:
-        messages = Message.digest_listing(since_dt, limit=DIGEST_LIMIT)
+        messages = ClubMessage.digest_listing(since_dt, limit=DIGEST_LIMIT)
 
     for n, message in enumerate(messages, start=1):
         log.info(f"Digest #{n}: {message.upvotes_count} votes for {message.author.display_name} in #{message.channel_name}, {message.url}")
