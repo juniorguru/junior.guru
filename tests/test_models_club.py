@@ -148,7 +148,7 @@ def test_author_list_recent_messages(db_connection):
 
 
 def test_author_first_seen_on_from_messages(db_connection):
-    author = create_user(1, joined_at=date(2021, 4, 1))
+    author = create_user(1, joined_at=datetime(2021, 4, 1))
 
     create_message(1, author, created_at=datetime(2021, 3, 15))
     create_message(2, author, created_at=datetime(2021, 3, 31))
@@ -159,7 +159,7 @@ def test_author_first_seen_on_from_messages(db_connection):
 
 
 def test_author_first_seen_on_from_joined_at(db_connection):
-    author = create_user(1, joined_at=date(2021, 4, 1))
+    author = create_user(1, joined_at=datetime(2021, 4, 1))
 
     assert author.first_seen_on() == date(2021, 4, 1)
 
@@ -172,7 +172,7 @@ def test_author_first_seen_on_from_joined_at(db_connection):
     (date(2021, 4, 20), False),
 ])
 def test_author_is_new(db_connection, today, expected):
-    author = create_user(1, joined_at=date(2021, 4, 1))
+    author = create_user(1, joined_at=datetime(2021, 4, 1))
 
     assert author.is_new(today=today) is expected
 
