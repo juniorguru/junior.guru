@@ -147,7 +147,7 @@ def test_author_list_recent_messages(db_connection):
     assert list(author.list_recent_messages(today=date(2021, 5, 1))) == [message3, message4]
 
 
-def test_author_first_seen_at_from_messages(db_connection):
+def test_author_first_seen_on_from_messages(db_connection):
     author = create_user(1, joined_at=date(2021, 4, 1))
 
     create_message(1, author, created_at=datetime(2021, 3, 15))
@@ -155,13 +155,13 @@ def test_author_first_seen_at_from_messages(db_connection):
     create_message(3, author, created_at=datetime(2021, 4, 1))
     create_message(4, author, created_at=datetime(2021, 4, 15))
 
-    assert author.first_seen_at() == date(2021, 3, 15)
+    assert author.first_seen_on() == date(2021, 3, 15)
 
 
-def test_author_first_seen_at_from_joined_at(db_connection):
+def test_author_first_seen_on_from_joined_at(db_connection):
     author = create_user(1, joined_at=date(2021, 4, 1))
 
-    assert author.first_seen_at() == date(2021, 4, 1)
+    assert author.first_seen_on() == date(2021, 4, 1)
 
 
 @pytest.mark.parametrize('today, expected', [

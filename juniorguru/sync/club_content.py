@@ -1,14 +1,10 @@
-from pathlib import Path
-from urllib.parse import urlparse
 import textwrap
 from datetime import datetime, timedelta
-from io import BytesIO
 
-from PIL import Image
 from discord import Embed
 
 from juniorguru.lib.log import get_log
-from juniorguru.lib.club import discord_task, count_upvotes, is_default_avatar, get_roles, DISCORD_MUTATIONS_ENABLED, count_pins
+from juniorguru.lib.club import discord_task, count_upvotes, get_roles, DISCORD_MUTATIONS_ENABLED, count_pins
 from juniorguru.models import ClubMessage, ClubUser, db
 
 
@@ -19,18 +15,10 @@ DIGEST_CHANNEL = 789046675247333397
 SYSTEM_MESSAGES_CHANNEL = 788823881024405544
 DIGEST_LIMIT = 5
 
-IMAGES_PATH = Path(__file__).parent.parent / 'images'
-AVATARS_PATH = IMAGES_PATH / 'avatars'
-AVATAR_SIZE_PX = 60
-
 
 @discord_task
 async def main(client):
     # MESSAGES AND USERS
-    AVATARS_PATH.mkdir(exist_ok=True, parents=True)
-    for path in AVATARS_PATH.glob('*.png'):
-        path.unlink()
-
     with db:
         db.drop_tables([ClubMessage, ClubUser])
         db.create_tables([ClubMessage, ClubUser])
@@ -50,7 +38,6 @@ async def main(client):
                     author = ClubUser.create(id=message.author.id,
                                              is_bot=message.author.bot,
                                              is_member=bool(getattr(message.author, 'joined_at', False)),
-                                             avatar_path=download_avatar(message.author.avatar_url),
                                              display_name=message.author.display_name,
                                              mention=message.author.mention,
                                              joined_at=getattr(message.author, 'joined_at', None),
@@ -80,7 +67,6 @@ async def main(client):
             ClubUser.create(id=member.id,
                             is_bot=member.bot,
                             is_member=True,
-                            avatar_path=download_avatar(member.avatar_url),
                             display_name=member.display_name,
                             mention=member.mention,
                             joined_at=member.joined_at,
@@ -95,7 +81,7 @@ async def main(client):
     # RETURNING MEMBERS
     system_messages_channel = await client.fetch_channel(SYSTEM_MESSAGES_CHANNEL)
     for message in ClubMessage.channel_listing(SYSTEM_MESSAGES_CHANNEL):
-        if message.type == 'new_member' and message.author.first_seen_at() < message.created_at.date():
+        if message.type == 'new_member' and message.author.first_seen_on() < message.created_at.date():
             log.info(f'It looks like {message.author.display_name} has returned')
             discord_message = await system_messages_channel.fetch_message(message.id)
             if DISCORD_MUTATIONS_ENABLED:
@@ -144,20 +130,6 @@ async def main(client):
                            embed=Embed(description="\n".join(embed_description)))
     else:
         log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
-
-
-async def download_avatar(discord_user):
-    avatar_url = str(discord_user.avatar_url)
-    if is_default_avatar(avatar_url):
-        return None
-    else:
-        buffer = BytesIO()
-        await discord_user.avatar_url.save(buffer)
-        image = Image.open(buffer)
-        image = image.resize((AVATAR_SIZE_PX, AVATAR_SIZE_PX))
-        image_path = AVATARS_PATH / f'{Path(urlparse(avatar_url).path).stem}.png'
-        image.save(image_path, 'PNG')
-        return f'images/avatars/{image_path.name}'
 
 
 if __name__ == '__main__':

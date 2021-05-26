@@ -55,18 +55,18 @@ class ClubUser(BaseModel):
             .first()
         return bool(intro_message)
 
-    def first_seen_at(self):
+    def first_seen_on(self):
         first_message = self.list_messages \
             .order_by(ClubMessage.created_at) \
             .first()
-        return first_message.created_at.date() if first_message else self.joined_at
+        return first_message.created_at.date() if first_message else self.joined_at.date()
 
     def list_recent_messages(self, today=None):
         recent_period_start_at = (today or date.today()) - timedelta(days=RECENT_PERIOD_DAYS)
         return self.list_messages.where(ClubMessage.created_at >= recent_period_start_at)
 
     def is_new(self, today=None):
-        return (self.first_seen_at() + timedelta(days=IS_NEW_PERIOD_DAYS)) >= (today or date.today())
+        return (self.first_seen_on() + timedelta(days=IS_NEW_PERIOD_DAYS)) >= (today or date.today())
 
     @classmethod
     def members_count(cls):

@@ -17,6 +17,7 @@ from juniorguru.sync.events import main as sync_events
 from juniorguru.sync.club_content import main as sync_club_content
 from juniorguru.sync.topics import main as sync_topics
 from juniorguru.sync.roles import main as sync_roles
+from juniorguru.sync.avatars import main as sync_avatars
 from juniorguru.lib.magic import do_magic
 
 
@@ -36,9 +37,10 @@ def main():
     sync_club_content()
 
     # order-sensitive
+    sync_avatars()  # depends on club_content
     sync_events()  # depends on club_content
     sync_topics()  # depends on club_content
-    sync_roles()  # depends on club_content, events
+    sync_roles()  # depends on club_content, events, avatars
     sync_jobs()  # depends on proxies
     sync_metrics()  # depends on jobs, logos
     sync_newsletter_mentions()  # depends on jobs
@@ -49,7 +51,7 @@ def main():
 
 
 try:
-    module_name = f'juniorguru.sync.{sys.argv[1]}'
+    module_name = f'juniorguru.sync.{sys.argv[1]}'.replace('-', '_')
 except IndexError:
     # Standard `pipenv run sync`, i.e. `pipenv run python -m juniorguru.sync`
     main()
