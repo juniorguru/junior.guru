@@ -1,24 +1,13 @@
-import textwrap
-from datetime import datetime, timedelta
-
-from discord import Embed
-
 from juniorguru.lib.log import get_log
-from juniorguru.lib.club import discord_task, count_upvotes, get_roles, DISCORD_MUTATIONS_ENABLED, count_pins
+from juniorguru.lib.club import discord_task, count_upvotes, get_roles, count_pins
 from juniorguru.models import ClubMessage, ClubUser, db
 
 
 log = get_log('club_content')
 
 
-DIGEST_CHANNEL = 789046675247333397
-SYSTEM_MESSAGES_CHANNEL = 788823881024405544
-DIGEST_LIMIT = 5
-
-
 @discord_task
 async def main(client):
-    # MESSAGES AND USERS
     with db:
         db.drop_tables([ClubMessage, ClubUser])
         db.create_tables([ClubMessage, ClubUser])
@@ -57,7 +46,7 @@ async def main(client):
                                    channel_mention=channel.mention,
                                    type=message.type.name)
 
-    # REMAINING MEMBERS (DID NOT AUTHOR A SINGLE MESSAGE)
+    # remaining members (did not author a single message)
     log.info('Looking for remaining members, if any')
     remaining_members = [member async for member in client.juniorguru_guild.fetch_members(limit=None)
                          if member.id not in authors]
@@ -77,59 +66,6 @@ async def main(client):
         members_count = ClubUser.members_count()
     log.info(f'Saved {messages_count} messages from {len(authors)} authors')
     log.info(f'Saved {members_count} members')
-
-    # RETURNING MEMBERS
-    system_messages_channel = await client.fetch_channel(SYSTEM_MESSAGES_CHANNEL)
-    for message in ClubMessage.channel_listing(SYSTEM_MESSAGES_CHANNEL):
-        if message.type == 'new_member' and message.author.first_seen_on() < message.created_at.date():
-            log.info(f'It looks like {message.author.display_name} has returned')
-            discord_message = await system_messages_channel.fetch_message(message.id)
-            if DISCORD_MUTATIONS_ENABLED:
-                await discord_message.add_reaction('👋')
-                await discord_message.add_reaction('🔄')
-            else:
-                log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
-
-    # DIGEST
-    week_ago_dt = datetime.utcnow() - timedelta(weeks=1)
-    with db:
-        last_digest_message = ClubMessage.last_bot_message(DIGEST_CHANNEL, '🔥')
-    if last_digest_message:
-        since_dt = last_digest_message.created_at
-        log.info(f"Last digest on {since_dt}")
-        if since_dt.date() > week_ago_dt.date():
-            log.info(f"Aborting, {since_dt.date()} (last digest) > {week_ago_dt.date()} (week ago)")
-            return  # abort
-        else:
-            log.info(f"About to create digest, {since_dt.date()} (last digest) <= {week_ago_dt.date()} (week ago)")
-    else:
-        since_dt = week_ago_dt
-        log.info(f"Last digest not found, analyzing since {week_ago_dt}")
-
-    channel = await client.fetch_channel(DIGEST_CHANNEL)
-    with db:
-        messages = ClubMessage.digest_listing(since_dt, limit=DIGEST_LIMIT)
-
-    for n, message in enumerate(messages, start=1):
-        log.info(f"Digest #{n}: {message.upvotes_count} votes for {message.author.display_name} in #{message.channel_name}, {message.url}")
-    if DISCORD_MUTATIONS_ENABLED:
-        content = [
-            f"🔥 **{DIGEST_LIMIT} nej příspěvků za uplynulý týden (od {since_dt.day}.{since_dt.month}.)**",
-            "",
-            "Pokud je něco zajímavé nebo ti to pomohlo, dej tomu palec 👍, srdíčko ❤️, očička 👀, apod. Oceníš autory a pomůžeš tomu, aby se příspěvek mohl objevit i tady. Někomu, kdo nemá čas procházet všechno, co se v klubu napíše, se může tento přehled hodit.",
-        ]
-        embed_description = []
-        for message in messages:
-            embed_description += [
-                f"{message.upvotes_count}× láska pro {message.author.mention} v {message.channel_mention}:",
-                f"> {textwrap.shorten(message.content, 200, placeholder='…')}",
-                f"[Hop na příspěvek]({message.url})",
-                "",
-            ]
-        await channel.send(content="\n".join(content),
-                           embed=Embed(description="\n".join(embed_description)))
-    else:
-        log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
 
 if __name__ == '__main__':

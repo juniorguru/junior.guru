@@ -18,6 +18,8 @@ from juniorguru.sync.club_content import main as sync_club_content
 from juniorguru.sync.topics import main as sync_topics
 from juniorguru.sync.roles import main as sync_roles
 from juniorguru.sync.avatars import main as sync_avatars
+from juniorguru.sync.returning_members import main as sync_returning_members
+from juniorguru.sync.digest import main as sync_digest
 from juniorguru.lib.magic import do_magic
 
 
@@ -40,6 +42,8 @@ def main():
     sync_avatars()  # depends on club_content
     sync_events()  # depends on club_content
     sync_topics()  # depends on club_content
+    sync_digest()  # depends on club_content
+    sync_returning_members()  # depends on club_content
     sync_roles()  # depends on club_content, events, avatars
     sync_jobs()  # depends on proxies
     sync_metrics()  # depends on jobs, logos
