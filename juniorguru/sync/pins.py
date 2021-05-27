@@ -44,7 +44,7 @@ async def main(client):
                 f"[Hop na příspěvek]({pin_reaction.message.url})",
                 "",
             ]
-            await channel.send(content="\n".join(content),
+            await channel.send(content=content,
                                embed=Embed(description="\n".join(embed_description)))
         else:
             log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
