@@ -20,6 +20,7 @@ from juniorguru.sync.roles import main as sync_roles
 from juniorguru.sync.avatars import main as sync_avatars
 from juniorguru.sync.returning_members import main as sync_returning_members
 from juniorguru.sync.digest import main as sync_digest
+from juniorguru.sync.pins import main as sync_pins
 from juniorguru.lib.magic import do_magic
 
 
@@ -39,6 +40,7 @@ def main():
     sync_club_content()
 
     # order-sensitive
+    sync_pins()  # depends on club_content
     sync_avatars()  # depends on club_content
     sync_events()  # depends on club_content
     sync_topics()  # depends on club_content
