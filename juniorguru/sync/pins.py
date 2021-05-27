@@ -18,6 +18,7 @@ async def main(client):
                                     in ClubPinReaction.listing()
                                     if pin_reaction.user.is_member]
 
+    log.info(f'Found {len(pin_reactions_by_members)} pin reactions by people who are currently members')
     for pin_reaction in pin_reactions_by_members:
         member = await client.juniorguru_guild.fetch_member(pin_reaction.user.id)
 
