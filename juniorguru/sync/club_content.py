@@ -52,6 +52,7 @@ async def main(client):
                         for user in [user async for user in reaction.users()]:
                             users.add(user)
                 for user in users:
+                    log.info(f"Message {message.jump_url} is pinned by user '{user.display_name}' #{user.id}")
                     ClubPinReaction.create(user=user.id, message=message.id)
 
     # remaining members (did not author a single message)
