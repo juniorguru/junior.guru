@@ -1,6 +1,6 @@
 from juniorguru.lib.log import get_log
-from juniorguru.lib.club import discord_task, count_upvotes, get_roles, count_pins
-from juniorguru.models import ClubMessage, ClubUser, db
+from juniorguru.lib.club import EMOJI_PINS, discord_task, count_upvotes, emoji_name, get_roles, count_pins
+from juniorguru.models import ClubMessage, ClubUser, ClubPinReaction, db
 
 
 log = get_log('club_content')
@@ -9,8 +9,8 @@ log = get_log('club_content')
 @discord_task
 async def main(client):
     with db:
-        db.drop_tables([ClubMessage, ClubUser])
-        db.create_tables([ClubMessage, ClubUser])
+        db.drop_tables([ClubMessage, ClubUser, ClubPinReaction])
+        db.create_tables([ClubMessage, ClubUser, ClubPinReaction])
 
     authors = {}
     relevant_channels = (channel for channel in client.juniorguru_guild.text_channels
@@ -37,7 +37,7 @@ async def main(client):
                                    url=message.jump_url,
                                    content=message.content,
                                    upvotes_count=count_upvotes(message.reactions),
-                                   pins_count=count_pins(message.reactions),
+                                   pin_reactions_count=count_pins(message.reactions),
                                    created_at=message.created_at,
                                    edited_at=message.edited_at,
                                    author=authors[message.author.id],
@@ -45,6 +45,14 @@ async def main(client):
                                    channel_name=channel.name,
                                    channel_mention=channel.mention,
                                    type=message.type.name)
+
+                users = set()
+                for reaction in message.reactions:
+                    if emoji_name(reaction.emoji) in EMOJI_PINS:
+                        for user in [user async for user in reaction.users()]:
+                            users.add(user)
+                for user in users:
+                    ClubPinReaction.create(user=user.id, message=message.id)
 
     # remaining members (did not author a single message)
     log.info('Looking for remaining members, if any')

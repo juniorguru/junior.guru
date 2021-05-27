@@ -91,13 +91,14 @@ class ClubMessage(BaseModel):
     url = CharField()
     content = CharField()
     upvotes_count = IntegerField(default=0)
-    pins_count = IntegerField(default=0)
+    pin_reactions_count = IntegerField(default=0)
     created_at = DateTimeField(index=True)
     author = ForeignKeyField(ClubUser, backref='list_messages')
     channel_id = IntegerField()
     channel_name = CharField()
     channel_mention = CharField()
     type = CharField(default='default')
+    is_pinned = BooleanField(default=False)
 
     @classmethod
     def count(cls):
@@ -122,9 +123,9 @@ class ClubMessage(BaseModel):
             .limit(limit)
 
     @classmethod
-    def pins_listing(cls):
+    def pinned_by_reactions_listing(cls, min_pins=1):
         return cls.select() \
-            .where(cls.pins_count > 0) \
+            .where(cls.pin_reactions_count >= min_pins) \
             .order_by(cls.created_at)
 
     @classmethod
@@ -138,3 +139,12 @@ class ClubMessage(BaseModel):
         if contains_text:
             query = query.where(cls.content.contains(contains_text))
         return query.first()
+
+
+class ClubPinReaction(BaseModel):
+    user = ForeignKeyField(ClubUser, backref='list_pins')
+    message = ForeignKeyField(ClubMessage, backref='list_pins')
+
+    @classmethod
+    def listing(cls):
+        return cls.select()

@@ -7,7 +7,7 @@ from pathlib import Path
 # I consider the directory to be just a drawer of random tools, related to the juniorguru
 # app only very casually). Perhaps it's gonna change one day, but today is not that day.
 sys.path.append(str(Path(__file__).parent.parent))
-from juniorguru.lib.club import discord_task
+from juniorguru.lib.club import discord_task, emoji_name
 
 
 @discord_task
@@ -26,8 +26,7 @@ async def main(client, message_url, winners_count):
     users = set()
     for reaction in message.reactions:
         async for user in reaction.users():
-            emoji_name = reaction.emoji.name if hasattr(reaction.emoji, 'name') else reaction.emoji
-            print(f'User {user.display_name} reacted with: {emoji_name}')
+            print(f'User {user.display_name} reacted with: {emoji_name(reaction.emoji)}')
             users.add(user)
     print(f'{len(users)} users reacted')
     for i in range(5):
