@@ -10,6 +10,9 @@ from juniorguru.scrapers.items import Job, first, parse_relative_date, split
 from juniorguru.lib.url_params import increment_param, strip_params, get_param, replace_in_params
 
 
+UTM_PARAM_NAMES = ['utm_source', 'utm_medium', 'utm_campaign']
+
+
 class Spider(BaseSpider):
     name = 'linkedin'
     proxy = True
@@ -92,10 +95,8 @@ def get_job_id(url):
 def clean_proxied_url(url):
     proxied_url = get_param(url, 'url')
     if proxied_url:
-        param_names = ['utm_source', 'utm_medium', 'utm_campaign']
-        proxied_url = strip_params(proxied_url, param_names)
-        return replace_in_params(proxied_url, 'linkedin', 'juniorguru',
-                                 case_insensitive=True)
+        proxied_url = strip_params(proxied_url, UTM_PARAM_NAMES)
+        return replace_in_params(proxied_url, 'linkedin', 'juniorguru', case_insensitive=True)
     return url
 
 
@@ -108,6 +109,8 @@ def clean_url(url):
         return strip_params(url, ['puid'])
     if url and 'lever.co' in url:
         return re.sub(r'/apply$', '/', url)
+    url = strip_params(url, UTM_PARAM_NAMES)
+    url = replace_in_params(url, 'linkedin', 'juniorguru', case_insensitive=True)
     return url
 
 

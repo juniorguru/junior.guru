@@ -123,6 +123,7 @@ def test_get_job_id():
     ('https://pipedrive.talentify.io/job/junior-software-engineer-prague-prague-pipedrive-015b84ef-3956-4a28-877f-0385379d40c2?tdd=dDEsaDM1LGozdXFlZSxlcHJvNjA3ZjBhOTA2ZDVkNjE2OTQ4ODk3OA', 'https://pipedrive.talentify.io/job/junior-software-engineer-prague-prague-pipedrive-015b84ef-3956-4a28-877f-0385379d40c2'),
     ('https://neuvoo.cz/job.php?id=b5f15b6eeadc&source=juniorguru&puid=aadegddb8adaeddfeddb9ade7ddafadbaadbfadf3aeccacdfec3ddcg3e', 'https://neuvoo.cz/job.php?id=b5f15b6eeadc&source=juniorguru'),
     ('https://jobs.lever.co/pipedrive/015b84ef-3956-4a28-877f-0385379d40c2/apply', 'https://jobs.lever.co/pipedrive/015b84ef-3956-4a28-877f-0385379d40c2/'),
+    ('https://erstegroup-careers.com/csas/job/Hlavn%C3%AD-m%C4%9Bsto-Praha-Tester-EOM/667861301/?locale=cs_CZ&utm_campaign=lilimitedlistings&utm_source=lilimitedlistings&applySourceOverride=Linkedin%20Limited%20Listings', 'https://erstegroup-careers.com/csas/job/Hlavn%C3%AD-m%C4%9Bsto-Praha-Tester-EOM/667861301/?locale=cs_CZ&applySourceOverride=juniorguru+Limited+Listings'),
 ])
 def test_clean_url(url, expected):
     assert linkedin.clean_url(url) == expected
