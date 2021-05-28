@@ -78,8 +78,12 @@ class ClubUser(BaseModel):
         return math.ceil(cls.members_count() * TOP_MEMBERS_PERCENT)
 
     @classmethod
+    def listing(cls):
+        return cls.select()
+
+    @classmethod
     def members_listing(cls):
-        return cls.select().where(cls.is_bot == False, cls.is_member == True)
+        return cls.listing().where(cls.is_bot == False, cls.is_member == True)
 
     @classmethod
     def avatars_listing(cls):
