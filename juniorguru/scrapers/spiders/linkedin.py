@@ -81,6 +81,7 @@ class Spider(BaseSpider):
 
     def verify_job(self, response, item):
         """Filters out links to broken external links"""
+        item['link'] = response.url  # skips redirects, if any
         yield item
 
 
