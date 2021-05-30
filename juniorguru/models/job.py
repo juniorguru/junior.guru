@@ -65,6 +65,7 @@ class Job(BaseModel):
     description_html = TextField()
     junior_rank = IntegerField(index=True)
     magic_is_junior = BooleanField(null=True)
+    magic_is_junior_lang = BooleanField(null=True)
     sort_rank = IntegerField(index=True)
     pricing_plan = CharField(default='community', choices=[
         ('community', None),
@@ -254,6 +255,7 @@ class JobDropped(BaseModel):
     response_backup_path = CharField(null=True)
     item = JSONField()
     magic_is_junior = BooleanField(null=True)
+    magic_is_junior_lang = BooleanField(null=True)
     upvotes_count = IntegerField(default=0)
     downvotes_count = IntegerField(default=0)
 
