@@ -140,10 +140,10 @@
         },
         "certifi": {
             "hashes": [
-                "sha256:1a4995114262bffbc2413b159f2a1a480c969de6e6eb13ee966d470af86af59c",
-                "sha256:719a74fb9e33b9bd44cc7f3a8d94bc35e4049deebe19ba7d8e108280cfd59830"
+                "sha256:2bbf76fd432960138b3ef6dda3dde0544f27cbf8546c458e60baf371917ba9ee",
+                "sha256:50b1e4f8446b06f41be7dd6338db18e0990601dce795c2b1686458aa7e8fa7d8"
             ],
-            "version": "==2020.12.5"
+            "version": "==2021.5.30"
         },
         "cffi": {
             "hashes": [
@@ -658,10 +658,10 @@
         },
         "mkdocs-material": {
             "hashes": [
-                "sha256:d2663b7a0a6ecd435eeb6c2686cd6a1a4e3bb6b6f021464d88a9894d8533e288",
-                "sha256:dc4849948695e22b3385518f6237e88164a201a013c6ca8257734a2df3d0c7c6"
+                "sha256:01566c460990dad54d6ec935553b9c5c8e4e753ac3e30ba0945ceeff4ad164ac",
+                "sha256:b3f1aaea3e79e3c3b30babe0238915cf4ad4c4560d404bb0ac3298ee2ce004a3"
             ],
-            "version": "==7.1.5"
+            "version": "==7.1.6"
         },
         "mkdocs-material-extensions": {
             "hashes": [
@@ -1101,10 +1101,10 @@
         },
         "ruamel.yaml": {
             "hashes": [
-                "sha256:44bc6b54fddd45e4bc0619059196679f9e8b79c027f4131bb072e6a22f4d5e28",
-                "sha256:ac79fb25f5476e8e9ed1c53b8a2286d2c3f5dde49eb37dbcee5c7eb6a8415a22"
+                "sha256:97f71cdda0e7d2cdeba67812a90a160b23290095a1625d8d14e831f783a7bab6",
+                "sha256:b41919284c5387b949c1956145917e14060a0f74f1adc9a00c6bd6194f16e615"
             ],
-            "version": "==0.17.4"
+            "version": "==0.17.5"
         },
         "ruamel.yaml.clib": {
             "hashes": [
@@ -1251,10 +1251,10 @@
         },
         "strictyaml": {
             "hashes": [
-                "sha256:9f4e5814f96e17e82044a7dbbb8a0976048f2841b073e8114c2a2c025e7f81b9"
+                "sha256:c2e15134b4e36c4ae5eb24ebfa15d52d3fdd703be7e5b2428ee332455e800b9c"
             ],
             "index": "pypi",
-            "version": "==1.4.0"
+            "version": "==1.4.1"
         },
         "termcolor": {
             "hashes": [
