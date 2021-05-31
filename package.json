@@ -28,7 +28,7 @@
     "imagemin-cli": "6.0.0",
     "lighthouse": "7.5.0",
     "node-sass": "6.0.0",
-    "pageres": "6.2.1",
+    "pageres": "6.2.2",
     "pageres-cli": "6.0.0",
     "rollup": "2.50.5",
     "rollup-plugin-node-resolve": "5.2.0",
