@@ -5,11 +5,10 @@ thumbnail_title: Obchodní podmínky
 
 {% from 'macros.html' import lead %}
 
-
 # Obchodní podmínky
 
 {% call lead() %}
-Tyto obchodní podmínky pokrývají digitální předplatné a podmínky přístupu do diskuzního klubu junior.guru. Jsou platné a účinné od **1\. 6. 2021**. Umožňují mi určit část obsahu kupních smluv, které by jinak bylo těžké podepisovat s každým kupujícím zvlášť. Přitom platí, že pokud obchodní podmínky stanoví něco jiného než smlouva, má smlouva vždy přednost.
+Tyto obchodní podmínky pokrývají digitální předplatné a podmínky přístupu do diskuzního klubu junior.guru. Jsou platné a účinné od **1\. 3. 2022**. Umožňují mi určit část obsahu kupních smluv, které by jinak bylo těžké podepisovat s každým kupujícím zvlášť. Přitom platí, že pokud obchodní podmínky stanoví něco jiného než smlouva, má smlouva vždy přednost.
 {% endcall %}
 
 ## Poskytovatel služeb
@@ -118,11 +117,7 @@ E-mail: [honza@junior.guru](mailto:honza@junior.guru)<br>
 
 **4.10.** V případě úhrady služeb pomocí voucheru, budou údaje o kupujícím sdělena Společnosti, která voucher poskytla. Kupující tuto skutečnost bere na vědomí a úhradou předplatného pomocí voucheru s ní souhlasí. Data jsou společnosti sdělována z důvodu, aby mohla zkontrolovat, že nedošlo ke zneužití voucheru, a že výhody z něj vyplývající, čerpá oprávněná osoba.
 
-<!--
-TODO
-
-**4.11.** V odůvodněných případech osobám, které o to projeví zájem, a prokáží sociální nebo finanční znevýhodnění, poskytuji bezplatné členství. O bezplatné členství je možné zažádat prostřednictvím ___________________________. K žádosti je třeba doplnit kontaktní údaje a motivační dopis.
--->
+**4.11.** V odůvodněných případech osobám, které o to projeví zájem, a prokáží sociální nebo finanční znevýhodnění, poskytuji bezplatné členství. O bezplatné členství je možné zažádat prostřednictvím formuláře „Stipendium“ dostupného z [junior.guru/club](club.md). K žádosti je třeba doplnit kontaktní údaje a motivační dopis.
 
 ## 5\. Realizace služeb
 
