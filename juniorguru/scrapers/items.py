@@ -40,6 +40,7 @@ class Job(Item):
 
 
 class JuniorGuruJob(Job):
+    external_link = Field()
     email = Field(required=True)
     pricing_plan = Field(required=True)
     approved_at = Field(required=True)

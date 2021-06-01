@@ -75,6 +75,7 @@ class Job(BaseModel):
     downvotes_count = IntegerField(default=0)
 
     # source: juniorguru
+    external_link = CharField(null=True)
     email = CharField(null=True)
     expires_at = DateField(null=True)
 

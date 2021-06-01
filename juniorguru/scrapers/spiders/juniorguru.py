@@ -43,7 +43,7 @@ def coerce_record(record):
         r'^je práce na dálku\?$': ('remote', parse_boolean_words),
         r'^město, kde se nachází kancelář$': ('locations_raw', parse_locations),
         r'^text pracovní nabídky$': ('description_html', parse_markdown),
-        r'^externí odkaz na pracovní nabídku$': ('link', parse_text),
+        r'^externí odkaz na pracovní nabídku$': ('external_link', parse_text),
         r'^varianta z ceníku$': ('pricing_plan', parse_pricing_plan),
         r'^approved$': ('approved_at', parse_date),
         r'^expire[ds]$': ('expires_at', parse_date),
