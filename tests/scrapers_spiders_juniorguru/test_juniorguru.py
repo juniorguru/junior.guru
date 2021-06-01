@@ -92,4 +92,5 @@ def test_coerce_record():
         'pricing_plan': 'community',
         'approved_at': date(2019, 10, 10),
         'expires_at': date(2019, 12, 12),
+        'external_link': 'https://jobs.example.com/1245/',
     }
