@@ -23,13 +23,6 @@
             ],
             "version": "==3.5.0"
         },
-        "aiofiles": {
-            "hashes": [
-                "sha256:bd3019af67f83b739f8e4053c6c0512a7f545b9a8d91aaeab55e6e0f9d123c27",
-                "sha256:e0281b157d3d5d59d803e3f4557dcc9a3dff28a4dd4829a9ff478adae50ca092"
-            ],
-            "version": "==0.6.0"
-        },
         "aiohttp": {
             "hashes": [
                 "sha256:02f46fc0e3c5ac58b80d4d56eb0a7c7d97fcef69ace9326289fb9f1955e65cfe",
@@ -74,11 +67,18 @@
         },
         "aiopath": {
             "hashes": [
-                "sha256:759430e63b180e684a529ae23d804a1003e14e41f64f46196ffe2da444be455b",
-                "sha256:daa794df01ca9b62b0df021ebff603059e7f7589d045a24cf6a29f2abff4e08b"
+                "sha256:0e13efd2a4abd25d55fcb1d6db7b3bc691a57126be1b25feab2e06d7453aa53e",
+                "sha256:bfdba4c761719894c1276c499af48109e7acff535778a0cda92c785f079e4526"
             ],
             "index": "pypi",
-            "version": "==0.5.6"
+            "version": "==0.5.7"
+        },
+        "anyio": {
+            "hashes": [
+                "sha256:43e20711a9d003d858d694c12356dc44ab82c03ccc5290313c3392fa349dad0e",
+                "sha256:5e335cef65fbd1a422bbfbb4722e8e9a9fadbd8c06d5afe9cd614d12023f6e5a"
+            ],
+            "version": "==3.1.0"
         },
         "arrow": {
             "hashes": [
@@ -760,10 +760,10 @@
         },
         "oauthlib": {
             "hashes": [
-                "sha256:bee41cc35fcca6e988463cacc3bcb8a96224f470ca547e697b604cc697b2f889",
-                "sha256:df884cd6cbe20e32633f1db1072e9356f53638e4361bef4e8b03c9127c9328ea"
+                "sha256:42bf6354c2ed8c6acb54d971fce6f88193d97297e18602a3a886603f9d7730cc",
+                "sha256:8f0215fcc533dd8dd1bee6f4c412d4f0cd7297307d43ac61666389e3bc3198a3"
             ],
-            "version": "==3.1.0"
+            "version": "==3.1.1"
         },
         "packaging": {
             "hashes": [
@@ -1240,6 +1240,13 @@
                 "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
             ],
             "version": "==1.16.0"
+        },
+        "sniffio": {
+            "hashes": [
+                "sha256:471b71698eac1c2112a40ce2752bb2f4a4814c22a54a3eed3676bc0f5ca9f663",
+                "sha256:c4666eecec1d3f50960c6bdf61ab7bc350648da6c126e3cf6898d8cd4ddcd3de"
+            ],
+            "version": "==1.2.0"
         },
         "soupsieve": {
             "hashes": [
