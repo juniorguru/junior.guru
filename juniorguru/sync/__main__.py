@@ -22,6 +22,7 @@ from juniorguru.sync.returning_members import main as sync_returning_members
 from juniorguru.sync.digest import main as sync_digest
 from juniorguru.sync.pins import main as sync_pins
 from juniorguru.sync.subscriptions import main as sync_subscriptions
+from juniorguru.sync.companies import main as sync_companies
 from juniorguru.lib.magic import do_magic
 
 
@@ -36,6 +37,7 @@ def main():
     sync_last_modified()
     sync_press_releases()
     sync_logos()
+    sync_companies()  # might depend on subscriptions one day?
     sync_transactions()
     sync_proxies()
     sync_club_content()

@@ -8,7 +8,7 @@ from flask import Flask, Response, render_template, url_for
 from juniorguru.lib.log import get_log
 from juniorguru.lib import template_filters
 from juniorguru.lib.images import render_image_file
-from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, db
+from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, Company, db
 
 
 log = get_log('web')
@@ -117,12 +117,12 @@ def club():
     with db:
         members = ClubUser.avatars_listing()
         members_total_count = ClubUser.members_count()
-        logos = Logo.listing()
+        companies = Company.listing()
     return render_template('club.html',
                            nav_active='club',
                            subnav_tabs=CLUB_SUBNAV_TABS,
                            subnav_active='club',
-                           logos=logos,
+                           companies=companies,
                            members=members,
                            members_total_count=members_total_count,
                            thumbnail=thumbnail(title='Klub, který tě nastartuje'))

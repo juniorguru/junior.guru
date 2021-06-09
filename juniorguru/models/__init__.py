@@ -11,9 +11,11 @@ from juniorguru.models.proxy import Proxy
 from juniorguru.models.topic import Topic
 from juniorguru.models.club import ClubMessage, ClubUser, ClubPinReaction
 from juniorguru.models.event import Event, EventSpeaking
+from juniorguru.models.company import Company
 
 
 __all__ = [db, Job, JobDropped, JobError, JobMetric, Metric, Story, Supporter,
            LastModified, PressRelease, JobNewsletterMention, Logo, LogoMetric,
            retry_when_db_locked, SpiderMetric, EMPLOYMENT_TYPES, Proxy,
-           Topic, ClubMessage, ClubUser, ClubPinReaction, Event, EventSpeaking]
+           Topic, ClubMessage, ClubUser, ClubPinReaction, Event, EventSpeaking,
+           Company]

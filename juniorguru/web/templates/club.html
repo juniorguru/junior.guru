@@ -87,48 +87,13 @@ Přidej se na junior.guru Discord! Jsme komunita začátečníků, dobrovolník�
           <span><a href="#companies">Firemní&#32;partneři</a>:</span>
         </span>
       </li>
-      {% for logo in logos %}
+      {% for company in companies %}
         <li class="logos__item">
-          <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="{{ logo.link }}" target="_blank" rel="noopener" title="{{ logo.name }} podporuje juniory účastí v klubu">
-            <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/' + logo.filename) }}" alt="{{ logo.name }}">
+          <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="{{ company.link }}" target="_blank" rel="noopener" title="Firma {{ company.name }} svou účastí v klubu podporuje juniory">
+            <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/' + company.filename) }}" alt="{{ company.name }}">
           </a>
         </li>
       {% endfor %}
-      <li class="logos__item">
-        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="https://coreskill.tech/" target="_blank" rel="noopener" title="CoreSkill podporuje juniory účastí v klubu">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/coreskill.svg') }}" alt="CoreSkill">
-        </a>
-      </li>
-      <li class="logos__item">
-        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="https://www.skoumal.com/" target="_blank" rel="noopener" title="Skoumal podporuje juniory účastí v klubu">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/skoumal.png') }}" alt="Skoumal">
-        </a>
-      </li>
-      <li class="logos__item">
-        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="https://creatiweb.cz/" target="_blank" rel="noopener" title="Creatiweb podporuje juniory účastí v klubu">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/creatiweb.svg') }}" alt="Creatiweb">
-        </a>
-      </li>
-      <li class="logos__item">
-        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="https://lynt.cz/" target="_blank" rel="noopener" title="Lynt services podporuje juniory účastí v klubu">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/lynt.svg') }}" alt="Lynt services">
-        </a>
-      </li>
-      <li class="logos__item">
-        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="https://inuits.eu/" target="_blank" rel="noopener" title="Inuits podporují juniory účastí v klubu">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/inuits.svg') }}" alt="Inuits">
-        </a>
-      </li>
-      <li class="logos__item">
-        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="https://engeto.com/" target="_blank" rel="noopener" title="Engeto podporuje juniory účastí v klubu">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/engeto.svg') }}" alt="Engeto">
-        </a>
-      </li>
-      <li class="logos__item">
-        <a class="logos__link" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship" data-metrics data-metrics-name="club-logo" href="https://www.mews.com/" target="_blank" rel="noopener" title="Mews podporují juniory účastí v klubu">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/mews.svg') }}" alt="Mews">
-        </a>
-      </li>
     </ul>
   </div>
   <div class="logos">
