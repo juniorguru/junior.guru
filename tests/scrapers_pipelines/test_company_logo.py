@@ -16,14 +16,6 @@ def _debug(image):
     image.save(FIXTURES_DIR / 'logo-converted.png', 'PNG')
 
 
-def create_dummy_image(width, height):
-    buffer = BytesIO()
-    image = Image.new('RGB', (width, height), (255, 255, 255))
-    image.save(buffer, 'PNG')
-    buffer.seek(0)
-    return buffer.read()
-
-
 @pytest.fixture
 def req():
     class Request():
@@ -53,24 +45,17 @@ def test_company_logo_image_downloaded_unidentifiable(res, req, info):
 
 
 @pytest.mark.parametrize('width, height', [
-    (1024, 1024),
-    (600, 600),
-    (32, 32),
-])
-def test_company_logo_image_downloaded_good_size(res, req, info, width, height):
-    res.body = create_dummy_image(width, height)
-
-    assert Pipeline(IMAGES_STORE).image_downloaded(res, req, info)
-
-
-@pytest.mark.parametrize('width, height', [
     (1024, 600),
     (600, 1024),
 ])
-def test_company_logo_image_downloaded_bad_size(res, req, info, width, height):
-    res.body = create_dummy_image(width, height)
+def test_company_logo_image_downloaded_too_large(res, req, info, width, height):
+    buffer = BytesIO()
+    image = Image.new('RGB', (width, height), (255, 255, 255))
+    image.save(buffer, 'PNG')
+    buffer.seek(0)
+    res.body = buffer.read()
 
-    with pytest.raises(ImageException, match='square'):
+    with pytest.raises(ImageException, match='too large'):
         Pipeline(IMAGES_STORE).image_downloaded(res, req, info)
 
 
