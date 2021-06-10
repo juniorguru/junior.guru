@@ -21,11 +21,15 @@ class Pipeline(ImagesPipeline):
         super().__init__(store_uri, *args, **kwargs)
 
     def item_completed(self, results, item, info):
+        item = super().item_completed(results, item, info)
         for company_logo in item.get(self.DEFAULT_IMAGES_RESULT_FIELD, []):
-            width, height = self.orig_sizes.pop(company_logo['path'])  # TODO
+            try:
+                width, height = self.orig_sizes.pop(company_logo['path'])  # TODO
+            except:
+                pass
             item['company_logo_path'] = 'images/' + company_logo['path']
             break
-        return super().item_completed(results, item, info)
+        return item
 
     def image_downloaded(self, response, request, info, item=None):
         path = self.file_path(request, response=response, info=info)
