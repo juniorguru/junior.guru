@@ -26,16 +26,16 @@ def main():
 
     spider_names = [
         'juniorguru',
-        # 'linkedin',
-        # 'stackoverflow',
-        # 'startupjobs',
-        # 'remoteok',
-        # 'wwr',
-        # 'dobrysef',
+        'linkedin',
+        'stackoverflow',
+        'startupjobs',
+        'remoteok',
+        'wwr',
+        'dobrysef',
     ]
     Pool().map(run_spider, spider_names)
 
-    # manage_jobs_channel()
+    manage_jobs_channel()
 
 
 @discord_task
