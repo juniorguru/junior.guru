@@ -12,7 +12,6 @@ class Pipeline(ImagesPipeline):
     DEFAULT_IMAGES_URLS_FIELD = 'company_logo_urls'
     DEFAULT_IMAGES_RESULT_FIELD = 'company_logos'
 
-    max_size_px = 1000
     size_px = 100
 
     def __init__(self, store_uri, *args, **kwargs):
@@ -28,8 +27,8 @@ class Pipeline(ImagesPipeline):
             raise ImageException(f'Image cannot be identified ({request.url})')
 
         width, height = orig_image.size
-        if width > self.max_size_px or height > self.max_size_px:
-            raise ImageException(f'Image too large ({width}x{height} < {self.max_size_px}x{self.max_size_px})')
+        if width != height:
+            raise ImageException(f'Image is not square ({width}x{height})')
 
         image, buffer = self.convert_image(orig_image)
         buffer.seek(0)
