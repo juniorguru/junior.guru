@@ -52,6 +52,7 @@ aiopath = "*"
 mkdocs-macros-plugin = "*"
 scikit-learn = "*"
 pandas = "*"
+piexif = "*"
 
 [dev-packages]
 pytest = "*"
