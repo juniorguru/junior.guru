@@ -10,6 +10,10 @@ class Pipeline():
 
 def get_favicons(link):
     try:
-        return [icon.url for icon in favicon.get(link)]
+        return unique(icon.url for icon in favicon.get(link))
     except:
         return []
+
+
+def unique(iterable):
+    return list(frozenset(filter(None, iterable)))
