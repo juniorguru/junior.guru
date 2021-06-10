@@ -13,17 +13,9 @@ class Pipeline():
 
     def process_item(self, item, spider):
         def operation():
-            data = dict(**item,
-                        source=spider.name,
-                        company_logo_path=get_company_logo_path(item.get('company_logos')))
+            data = dict(**item, source=spider.name)
             self.model.create(**data)
             if self.stats:
                 self.stats.inc_value('item_saved_count')
             return item
         return retry_when_db_locked(self.db, operation, stats=self.stats)
-
-
-def get_company_logo_path(company_logos):
-    if not company_logos:
-        return None
-    return 'images/' + company_logos[0]['path']

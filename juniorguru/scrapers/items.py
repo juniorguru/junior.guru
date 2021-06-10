@@ -26,6 +26,7 @@ class Job(Item):
 
     # set by pipelines
     company_logos = Field()
+    company_logo_path = Field()
     lang = Field()
     description_text = Field()
     description_sentences = Field()

@@ -17,7 +17,15 @@ class Pipeline(ImagesPipeline):
 
     def __init__(self, store_uri, *args, **kwargs):
         self.images_dir = store_uri
+        self.orig_sizes = {}
         super().__init__(store_uri, *args, **kwargs)
+
+    def item_completed(self, results, item, info):
+        for company_logo in item.get(self.DEFAULT_IMAGES_RESULT_FIELD, []):
+            width, height = self.orig_sizes.pop(company_logo['path'])  # TODO
+            item['company_logo_path'] = 'images/' + company_logo['path']
+            break
+        return super().item_completed(results, item, info)
 
     def image_downloaded(self, response, request, info, item=None):
         path = self.file_path(request, response=response, info=info)
@@ -30,6 +38,7 @@ class Pipeline(ImagesPipeline):
         width, height = orig_image.size
         if width > self.max_size_px or height > self.max_size_px:
             raise ImageException(f'Image too large ({width}x{height} < {self.max_size_px}x{self.max_size_px})')
+        self.orig_sizes[path] = (width, height)
 
         image, buffer = self.convert_image(orig_image)
         buffer.seek(0)
