@@ -56,8 +56,6 @@ def test_company_logo_image_downloaded_unidentifiable(res, req, info):
     (1024, 1024),
     (600, 600),
     (32, 32),
-    (30, 32),
-    (31, 32),
 ])
 def test_company_logo_image_downloaded_good_size(res, req, info, width, height):
     res.body = create_dummy_image(width, height)

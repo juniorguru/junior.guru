@@ -13,7 +13,6 @@ class Pipeline(ImagesPipeline):
     DEFAULT_IMAGES_RESULT_FIELD = 'company_logos'
 
     size_px = 100
-    allowed_square_deviation_px = 2
 
     def __init__(self, store_uri, *args, **kwargs):
         self.images_dir = store_uri
@@ -28,7 +27,7 @@ class Pipeline(ImagesPipeline):
             raise ImageException(f'Image cannot be identified ({request.url})')
 
         width, height = orig_image.size
-        if abs(width - height) > self.allowed_square_deviation_px:
+        if width != height:
             raise ImageException(f'Image is not square ({width}x{height})')
 
         image, buffer = self.convert_image(orig_image)
