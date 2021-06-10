@@ -3,9 +3,9 @@ from io import BytesIO
 
 import pytest
 from PIL import Image
-from scrapy.pipelines.images import ImageException
+from scrapy.pipelines.images import ImageException, ImagesPipeline
 
-from juniorguru.scrapers.pipelines.company_logo import Pipeline
+from juniorguru.scrapers.pipelines.company_logo import Pipeline, load_orig_size, select_company_logo
 
 
 FIXTURES_DIR = Path(__file__).parent / 'fixtures_company_logo'
@@ -17,7 +17,10 @@ def _debug(image):
 
 @pytest.fixture
 def pipeline():
-    return Pipeline(str(FIXTURES_DIR))
+    item_completed = ImagesPipeline.item_completed
+    ImagesPipeline.item_completed = lambda self, results, item, info: item
+    yield Pipeline(str(FIXTURES_DIR))
+    ImagesPipeline.item_completed = item_completed
 
 
 @pytest.fixture
@@ -71,25 +74,61 @@ def test_company_logo_convert_image_has_expected_size(pipeline):
     assert image.height == Pipeline.size_px
 
 
-def test_get_company_logo_path_chooses_first_if_all_same_size(pipeline, item, info):
-    pipeline.orig_sizes.update({
-        'company-logos/d40730d4068db31a09687ebb42f7637e26864a30.png': (40, 40),
-        'company-logos/d1eed8447fb59dc9587dd97148a109a3cca77ed8.png': (40, 40),
-    })
+def test_load_orig_size():
+    assert load_orig_size(FIXTURES_DIR / 'logo-orig140x75.png') == (140, 75)
+
+
+def test_select_company_logo_selects_the_first_by_default():
+    company_logos = [dict(path='1.png'),
+                     dict(path='2.png')]
+    orig_sizes = [(300, 300),
+                  (300, 300)]
+
+    assert select_company_logo(company_logos, orig_sizes, 100) == dict(path='1.png')
+
+
+def test_select_company_logo_selects_larger():
+    company_logos = [dict(path='1.png'),
+                     dict(path='2.png')]
+    orig_sizes = [(300, 300),
+                  (500, 500)]
+
+    assert select_company_logo(company_logos, orig_sizes, 100) == dict(path='2.png')
+
+
+def test_select_company_logo_selects_square_even_if_smaller():
+    company_logos = [dict(path='1.png'),
+                     dict(path='2.png')]
+    orig_sizes = [(300, 300),
+                  (400, 500)]
+
+    assert select_company_logo(company_logos, orig_sizes, 100) == dict(path='1.png')
+
+
+def test_select_company_logo_selects_larger_non_square_if_images_are_small():
+    company_logos = [dict(path='1.png'),
+                     dict(path='2.png')]
+    orig_sizes = [(30, 30),
+                  (40, 50)]
+
+    assert select_company_logo(company_logos, orig_sizes, 100) == dict(path='2.png')
+
+
+def test_item_completed_sets_company_logo(pipeline, item, info):
     item['company_logos'] = [
         {
             'checksum': '6b874bd7b996e9323fd2e094be83ca4c',
-            'path': 'company-logos/d40730d4068db31a09687ebb42f7637e26864a30.png',
+            'path': 'logo-orig16x16.png',
             'status': 'uptodate',
             'url': 'https://www.startupjobs.cz/uploads/d6e95f8c946b72f36783aa0a0238341b.png'
         },
         {
             'checksum': 'f3e2f82d7d8b24367f0a2c24b3d1aea3',
-            'path': 'company-logos/d1eed8447fb59dc9587dd97148a109a3cca77ed8.png',
+            'path': 'logo-orig180x180.png',
             'status': 'uptodate',
             'url': 'https://www.startupjobs.cz/uploads/GQ1A8RDZWYUJfavicon155377551420.png'
         },
     ]
     item = pipeline.item_completed([], item, info)
 
-    assert item['company_logo_path'] == 'images/company-logos/d40730d4068db31a09687ebb42f7637e26864a30.png'
+    assert item['company_logo_path'] == 'images/logo-orig180x180.png'

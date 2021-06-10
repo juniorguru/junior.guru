@@ -15,7 +15,6 @@ class Pipeline(ImagesPipeline):
     DEFAULT_IMAGES_RESULT_FIELD = 'company_logos'
 
     max_size_px = 1000
-    min_square_size_px = 100
     size_px = 100
 
     def __init__(self, store_uri, *args, **kwargs):
@@ -25,31 +24,21 @@ class Pipeline(ImagesPipeline):
     def item_completed(self, results, item, info):
         item = super().item_completed(results, item, info)
 
-        def sort_key(key_value):
-            orig_width, orig_height = key_value[1]
-            orig_area = orig_width * orig_height
-            if orig_width < self.min_square_size_px or orig_height < self.min_square_size_px:
-                return (0, -1 * orig_area)
-            similarity_to_square = abs(orig_width - orig_height)  # 0 means it is square
-            return (similarity_to_square, -1 * orig_area)
-
-        paths = [tuple_[0] for tuple_ in sorted([
-            (company_logo['path'], self.get_orig_size(company_logo['path']))
-            for company_logo
-            in item.get(self.DEFAULT_IMAGES_RESULT_FIELD, [])
-        ], key=sort_key)]
-
-        if paths:
-            item['company_logo_path'] = f"images/{paths[0]}"
+        # Loading information about original width and height for each of the images
+        # from their EXIF meta data, then selecting the best suited.
+        #
+        # Why is this saved in EXIF? Because the ImagesPipeline caches images. If it
+        # figures out that the image for given URL is already on disk, it won't run
+        # most of the things here. Also, the data in the database are flushed
+        # with every sync. And so on. Been there. Done that. Saving it to EXIF
+        # is the best method, which survives all the pitfalls, trust me!
+        company_logos = item.get(self.DEFAULT_IMAGES_RESULT_FIELD, [])
+        orig_sizes = [load_orig_size(Path(self.images_dir) / company_logo['path'])
+                      for company_logo in company_logos]
+        company_logo = select_company_logo(company_logos, orig_sizes, self.size_px)
+        if company_logo:
+            item['company_logo_path'] = f"images/{company_logo['path']}"
         return item
-
-    def get_orig_size(self, path):
-        image = Image.open(Path(self.images_dir) / path)
-        exif = piexif.load(image.info['exif'])
-        try:
-            return exif['0th'][piexif.ImageIFD.XResolution][0], exif['0th'][piexif.ImageIFD.YResolution][0]
-        except (IndexError, KeyError):
-            return 0, 0
 
     def image_downloaded(self, response, request, info, item=None):
         path = self.file_path(request, response=response, info=info)
@@ -95,19 +84,57 @@ class Pipeline(ImagesPipeline):
         # resize
         image = image.resize((self.size_px, self.size_px))
 
-        # meta data
-        exif = piexif.dump({
-            '0th': {
-                piexif.ImageIFD.Make: 'junior.guru',
-                piexif.ImageIFD.XResolution: (orig_width, 1),
-                piexif.ImageIFD.YResolution: (orig_height, 1),
-            }
-        })
-
+        # save, put information about the original width and height to EXIF
         buffer = BytesIO()
-        image.save(buffer, 'PNG', exif=exif)
+        image.save(buffer, 'PNG', exif=create_orig_size_exif(orig_width, orig_height))
         return image, buffer
 
     def file_path(self, request, response=None, info=None, item=None):
         image_guid = hashlib.sha1(to_bytes(request.url)).hexdigest()
         return f'company-logos/{image_guid}.png'
+
+
+def create_orig_size_exif(width, height):
+    return piexif.dump({
+        '0th': {
+            piexif.ImageIFD.Make: 'junior.guru',
+            piexif.ImageIFD.XResolution: (width, 1),
+            piexif.ImageIFD.YResolution: (height, 1),
+        }
+    })
+
+
+def load_orig_size(path):
+    image = Image.open(path)
+    exif = piexif.load(image.info['exif'])
+    try:
+        width = exif['0th'][piexif.ImageIFD.XResolution][0]
+        height = exif['0th'][piexif.ImageIFD.YResolution][0]
+        return width, height
+    except (IndexError, KeyError):
+        return 0, 0
+
+
+def select_company_logo(company_logos, orig_sizes, size_px):
+    def sort_key(company_logo__orig_size):
+        # Deconstruct given tuple to the original width and height of the image.
+        width, height = company_logo__orig_size[1]
+
+        # Multiplied by -1 to ensure descending sort, i.e. larger is better.
+        area = -1 * width * height
+
+        # For small images, the shape doesn't matter. All will be compared
+        # as if they were perfect squares.
+        if width < size_px or height < size_px:
+            similarity_to_square = 0
+        else:
+            similarity_to_square = abs(width - height)  # closer to zero, more like square
+
+        return (similarity_to_square, area)
+
+    zipped_sorted_list = sorted(zip(company_logos, orig_sizes), key=sort_key)
+    try:
+        company_logo__orig_size = zipped_sorted_list[0]
+    except IndexError:
+        return None
+    return company_logo__orig_size[0]
