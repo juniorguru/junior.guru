@@ -50,7 +50,7 @@ def main():
     sync_digest()  # depends on club_content
     sync_returning_members()  # depends on club_content
     sync_subscriptions()  # depends on club_content
-    sync_roles()  # depends on club_content, events, avatars
+    sync_roles()  # depends on club_content, events, avatars, subscriptions
     sync_jobs()  # depends on proxies
     sync_metrics()  # depends on jobs, logos
     sync_newsletter_mentions()  # depends on jobs

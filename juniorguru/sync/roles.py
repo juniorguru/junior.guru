@@ -1,4 +1,5 @@
 from collections import Counter
+from juniorguru.models.company import Company
 
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED, get_roles
@@ -13,7 +14,7 @@ ROLE_MOST_HELPFUL = 836960665578766396
 ROLE_IS_SPEAKER = 836928169092710441
 ROLE_HAS_INTRO_AND_AVATAR = 836959652100702248
 ROLE_IS_NEW = 836930259982352435
-ROLE_IS_SPONSOR = 837316268142493736  # TODO
+ROLE_IS_SPONSOR = 837316268142493736
 
 
 def main():
@@ -66,6 +67,13 @@ def main():
         log.info(f"speaking_members_ids: {repr_ids(members, speaking_members_ids)}")
         for member in members:
             changes.extend(evaluate_changes(member.id, member.roles, speaking_members_ids, ROLE_IS_SPEAKER))
+
+        # ROLE_IS_SPONSOR
+        coupons = list(filter(None, (company.coupon for company in Company.listing())))
+        sponsoring_members_ids = [member.id for member in members if member.coupon in coupons]
+        log.info(f"sponsoring_members_ids: {repr_ids(members, sponsoring_members_ids)}")
+        for member in members:
+            changes.extend(evaluate_changes(member.id, member.roles, sponsoring_members_ids, ROLE_IS_SPONSOR))
 
     if DISCORD_MUTATIONS_ENABLED:
         apply_changes(changes)

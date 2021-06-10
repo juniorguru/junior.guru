@@ -81,6 +81,7 @@ def main():
                 except ClubUser.DoesNotExist:
                     pass
 
+            coupon = get_active_coupon(node)
             records.append({
                 'Name': node['member']['fullName'],
                 'Discord Name': user.display_name if user else None,
@@ -91,11 +92,15 @@ def main():
                 'Memberful Active?': node['active'],
                 'Memberful Since': arrow.get(node['createdAt']).date().isoformat(),
                 'Memberful End': arrow.get(node['expiresAt']).date().isoformat(),
-                'Memberful Coupon': get_active_coupon(node),
+                'Memberful Coupon': coupon,
                 'Discord Member?': user.is_member if user else False,
                 'Discord Since': user.first_seen_on().isoformat() if user else None,
                 'Memberful Past Due?': node['pastDue'],
             })
+
+            if user:
+                user.coupon = coupon
+                user.save()
 
         if result['subscriptions']['pageInfo']['hasNextPage']:
             cursor = result['subscriptions']['pageInfo']['endCursor']
