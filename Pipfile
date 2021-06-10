@@ -59,6 +59,7 @@ cssselect = "*"
 pync = "*"
 python-slugify = "*"
 flake8 = "*"
+responses = "*"
 
 [requires]
 python_version = "3.8"
