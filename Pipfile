@@ -15,6 +15,7 @@ screenshots = "python scripts/screenshots.py"
 check-links = "python scripts/check_links.py"
 check-anchors = "python scripts/check_anchors.py"
 check-scrapers = "python scripts/check_scrapers.py"
+train-models = "python scripts/train.py"
 check-performance = "python scripts/check_performance.py"
 serve = "npx gulp serve"
 
@@ -50,7 +51,7 @@ gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
 aiopath = "*"
 mkdocs-macros-plugin = "*"
-scikit-learn = "*"
+scikit-learn = "==0.24.1"
 pandas = "*"
 piexif = "*"
 
