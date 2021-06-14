@@ -65,6 +65,23 @@ jobs:
       - store_artifacts:
           path: ./backup.tar.gz  # all data gets backed up as a CI artifact
 
+  train:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - restore_cache:
+          key: models-
+      - run: |
+          pipenv run train
+      - save_cache:
+          key: models-
+          paths:
+            - project/juniorguru/data/ml
+      - run: tar -cvzf models.tar.gz ./juniorguru/data/ml
+      - store_artifacts:
+          path: ./models.tar.gz  # all data gets backed up as a CI artifact
+
   build:
     executor: python-js
     steps:
@@ -199,6 +216,9 @@ workflows:
           requires:
             - install
       - build:
+          requires:
+            - sync
+      - train:
           requires:
             - sync
       - check-scrapers:
