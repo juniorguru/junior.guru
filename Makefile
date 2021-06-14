@@ -34,5 +34,8 @@ check-scrapers:
 check-performance:
 	poetry run python scripts/check_performance.py
 
+train-models:
+	poetry run python scripts/train.py
+
 serve:
 	npx gulp serve

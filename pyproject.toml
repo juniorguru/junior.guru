@@ -40,7 +40,7 @@ extruct = "*"
 gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
 aiopath = "*"
-scikit-learn = "*"
+scikit-learn = "0.24.1"  # scikit data aren't compatible across versions :(
 pandas = "*"
 piexif = "*"
 markupsafe = "*"
