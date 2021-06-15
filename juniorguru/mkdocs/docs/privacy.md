@@ -52,6 +52,10 @@ V případě, že zákazník zvolí úhradu předplatného pomocí voucheru, dá
 
 V případě objednávek se specifickými podmínkami (typicky se bude jednat např. o objednání digitálního předplatného pro více osob ze strany společnosti) jsou evidovány potřebné fakturační údaje jako jsou: jméno/název společnosti, adresa bydliště/sídla společnosti, datum narození/IČO, DIČ, číslo účtu kupujícího, e-mailová adresa, případně telefon.
 
+### f. žádosti o bezplatné členství
+
+Osobám, které o to projeví zájem, a prokáží sociální nebo finanční znevýhodnění, poskytuji v odůvodněných případech bezplatné členství. Součástí žádosti o bezplatné členství je motivační dopis. Tento motivační dopis je uchováván a může být v anonymizované formě zveřejněn dárcům dotujícím bezplatná členství.
+
 ## 3\. Příjemci osobních údajů
 
 Vaše údaje mohou být předány níže vyjmenovaným subjektům. Dbáme na to, aby byly předány vždy pouze ty údaje, které vyžaduje zákon nebo, které jsou v dané situaci potřebné:

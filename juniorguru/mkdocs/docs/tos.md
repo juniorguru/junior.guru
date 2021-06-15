@@ -116,6 +116,12 @@ E-mail: [ahoj@junior.guru](mailto:ahoj@junior.guru)<br>
 
 **4.10.** V případě úhrady služeb pomocí voucheru, budou údaje o kupujícím sdělena Společnosti, která voucher poskytla. Kupující tuto skutečnost bere na vědomí a úhradou předplatného pomocí voucheru s ní souhlasí. Data jsou společnosti sdělována z důvodu, aby mohla zkontrolovat, že nedošlo ke zneužití voucheru, a že výhody z něj vyplývající, čerpá oprávněná osoba.
 
+<!--
+TODO
+
+**4.11.** V odůvodněných případech osobám, které o to projeví zájem, a prokáží sociální nebo finanční znevýhodnění, poskytuji bezplatné členství. O bezplatné členství je možné zažádat prostřednictvím ___________________________. K žádosti je třeba doplnit kontaktní údaje a motivační dopis.
+-->
+
 ## 5\. Realizace služeb
 
 **5.1.** Digitální předplatné je zajišťováno formou zpřístupnění diskuzního klubu zákazníkovi. Zpřístupnění digitálního předplatného je zajištěno prostřednictvím přístupových údajů k uživatelskému účtu, konkrétně uživatelského jména (loginu) a hesla a následnou registrací či přihlášením do služby Discord.
