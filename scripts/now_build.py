@@ -69,8 +69,8 @@ def aggregate_statuses(statuses):
 
 
 def now_dev_build():
-    run(['pipenv', 'run', 'sync'])
-    run(['pipenv', 'run', 'build'])
+    run(['make', 'sync'])
+    run(['make', 'build'])
 
 
 if __name__ == '__main__':

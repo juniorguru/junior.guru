@@ -36,8 +36,8 @@ jobs:
       - attach_workspace:
           at: "~"
       - run: |
-          pipenv run lint
-          pipenv run test -v
+          make lint
+          make test TESTOPTS=-v
 
   # needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY
   sync:
@@ -51,7 +51,7 @@ jobs:
       - run: |
           export PROXIES_ENABLED=1
           export DISCORD_MUTATIONS_ENABLED=1
-          pipenv run sync
+          make sync
       - save_cache:
           key: scrapy-{{ checksum ".today" }}
           paths:
@@ -80,7 +80,7 @@ jobs:
             done
       - attach_workspace:
           at: "~"
-      - run: pipenv run build
+      - run: make build
       - persist_to_workspace:
           root: "~"
           paths:
@@ -122,35 +122,35 @@ jobs:
       - run: |
           export LOG_LEVEL=debug
           export SMTP_ENABLED=1
-          pipenv run send
+          make send
 
   check-anchors:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: pipenv run check-anchors
+      - run: make check-anchors
 
   check-links:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: pipenv run check-links --retry
+      - run: make check-links --retry
 
   check-scrapers:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: pipenv run check-scrapers
+      - run: make check-scrapers
 
   check-performance:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: pipenv run check-performance
+      - run: make check-performance
       - run:
           command: tar -cvzf lighthouse.tar.gz ./lighthouse
           when: always
