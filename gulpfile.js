@@ -52,7 +52,7 @@ function buildCSS() {
 }
 
 function minifyCSS() {
-  return gulp.src('juniorguru/web/static/bundle.css')
+  return gulp.src('public/static/*.css')
   .pipe(gulpIf(isLocalDevelopment, sourcemaps.init()))
     .pipe(purgecss({
       content: ['public/**/*.html', 'public/**/*.js'],
@@ -62,7 +62,7 @@ function minifyCSS() {
     }))
     .pipe(csso())
     .pipe(gulpIf(isLocalDevelopment, sourcemaps.write()))
-    .pipe(gulp.dest('juniorguru/web/static/'));
+    .pipe(gulp.dest('public/static/'));
 }
 
 function buildImages() {
