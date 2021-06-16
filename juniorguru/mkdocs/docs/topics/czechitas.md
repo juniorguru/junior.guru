@@ -1,5 +1,6 @@
 ---
 title: Zkušenosti s Czechitas
+template: main_legacy.html
 topic_name: czechitas
 description: Hledáš někoho, kdo má zkušenosti s Czechitas? Má smysl hlásit se na jejich kurzy? Vyplatí se datová akademie?
 ---

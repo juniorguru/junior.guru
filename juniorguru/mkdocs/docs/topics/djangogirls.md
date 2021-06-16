@@ -1,5 +1,6 @@
 ---
 title: Zkušenosti s Django Girls
+template: main_legacy.html
 topic_name: djangogirls
 description: Hledáš někoho, kdo má zkušenosti s Django Girls? Má smysl účastnit se jejich workshopů? Učíš se podle jejich návodů a hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš?
 ---

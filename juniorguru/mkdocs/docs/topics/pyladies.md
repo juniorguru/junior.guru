@@ -1,5 +1,6 @@
 ---
 title: Zkušenosti s PyLadies
+template: main_legacy.html
 topic_name: pyladies
 description: Hledáš někoho, kdo má zkušenosti s PyLadies? Jsou jejich materiály kvalitní? Má smysl hlásit se na jejich začátečnický kurz? Jak si poradit s projekty?
 ---

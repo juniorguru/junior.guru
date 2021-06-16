@@ -1,5 +1,6 @@
 ---
 title: React mentoring
+template: main_legacy.html
 topic_name: react
 description: Učíš se React? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---

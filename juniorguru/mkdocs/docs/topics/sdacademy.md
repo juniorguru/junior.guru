@@ -1,5 +1,6 @@
 ---
 title: Zkušenosti se Software Development Academy
+template: main_legacy.html
 topic_name: sdacademy
 description: Hledáš někoho, kdo má zkušenosti se Software Development Academy? Vyplatí se jejich kurzy?
 ---

@@ -1,5 +1,6 @@
 ---
 title: Zásady ochrany osobních údajů na junior.guru
+template: main_legacy.html
 ---
 
 # Zásady ochrany osobních údajů

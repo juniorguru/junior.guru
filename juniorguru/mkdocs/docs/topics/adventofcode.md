@@ -1,5 +1,6 @@
 ---
 title: Diskutuj o Advent of Code
+template: main_legacy.html
 topic_name: adventofcode
 description: Chystáš se řešit Advent of Code? Hledáš kamarády, se kterými se budeš hecovat a kterým se můžeš pochlubit svým řešením? Chceš jednotlivé dny probrat s někým zkušenějším?
 ---

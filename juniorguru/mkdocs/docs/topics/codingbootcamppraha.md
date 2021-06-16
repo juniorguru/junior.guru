@@ -1,5 +1,6 @@
 ---
 title: Zkušenosti s Coding Bootcamp Praha
+template: main_legacy.html
 topic_name: codingbootcamppraha
 description: Hledáš někoho, kdo má zkušenosti s Coding Bootcamp Praha? Má smysl hlásit se na jejich kurzy? Vyplatí se ti učit se programování na kurzu typu bootcamp? Když neprojdeš jejich přijímacím řízením, znamená to, že se nehodíš do IT? Jak funguje záruka pracovního umístění?
 ---

@@ -1,5 +1,6 @@
 ---
 title: Zkušenosti s PrimaKurzy
+template: main_legacy.html
 topic_name: primakurzy
 description: Hledáš někoho, kdo má zkušenosti s PrimaKurzy? Vyplatí se jít na jejich akreditované IT kurzy?
 ---

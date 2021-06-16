@@ -1,5 +1,6 @@
 ---
 title: WordPress mentoring
+template: main_legacy.html
 topic_name: wordpress
 description: Učíš se WordPress? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---

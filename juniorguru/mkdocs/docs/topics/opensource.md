@@ -1,5 +1,6 @@
 ---
 title: Open Source mentoring
+template: main_legacy.html
 topic_name: opensource
 description: Nevyznáš se v Open Source? Hledáš někoho zkušenějšího, kdo ti poradí a pomůže se zorientovat? Jak někam přispět, kde najít projekt, jak používat GitHub? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---

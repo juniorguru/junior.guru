@@ -1,5 +1,6 @@
 ---
 title: Obchodní podmínky junior.guru
+template: main_legacy.html
 ---
 
 <header class="intro">

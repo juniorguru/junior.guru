@@ -1,5 +1,6 @@
 ---
 title: Zkušenosti s ITnetwork
+template: main_legacy.html
 topic_name: itnetwork
 description: Hledáš někoho, kdo má zkušenosti s kurzy na ITnetwork? Vyplatí se koupit si je? Jsou dostatečně kvalitní a aktuální?
 ---

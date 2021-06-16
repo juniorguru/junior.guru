@@ -1,5 +1,6 @@
 ---
 title: Mentoring na práci s daty
+template: main_legacy.html
 topic_name: data
 description: Učíš se pracovat s daty pomocí Pandas, SQL, Excelu? Zápasíš s jazyky Python, R, nebo dokonce Julia? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---

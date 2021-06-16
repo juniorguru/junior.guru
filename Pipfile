@@ -5,7 +5,7 @@ name = "pypi"
 
 [scripts]
 test = "pytest"
-lint = "flake8 && npx stylelint 'juniorguru/web/static/src/css/**/*.scss'"
+lint = "flake8 && npx stylelint 'juniorguru/web/static/src/css-mkdocs/**/*.scss'"
 sync = "python -m juniorguru.sync"
 freeze = "python -m juniorguru.web"
 mkdocs = "python -m mkdocs build --config-file=juniorguru/mkdocs/mkdocs.yml --site-dir=../../public/mkdocs --strict"

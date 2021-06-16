@@ -1,5 +1,6 @@
 ---
 title: Zkušenosti s Engeto
+template: main_legacy.html
 topic_name: engeto
 description: Hledáš někoho, kdo má zkušenosti s Engeto Academy? Má smysl hlásit se na jejich kurzy? Vyplatí se Engeto Pro?
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Diskutuj o #100daysofcode"
+template: main_legacy.html
 topic_name: 100daysofcode
 description: "Chystáš se pracovat na #100daysofcode? Hledáš kamarády, se kterými se budeš hecovat a kterým se můžeš pochlubit svým řešením? Chceš jednotlivé výtvory probrat s někým zkušenějším?"
 ---

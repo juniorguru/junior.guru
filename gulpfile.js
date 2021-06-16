@@ -42,12 +42,23 @@ async function buildJS() {
   });
 }
 
-function buildCSS() {
+const buildCSS = gulp.parallel(buildFlaskCSS, buildMkDocsCSS)
+
+function buildFlaskCSS() {
   return gulp.src('juniorguru/web/static/src/css/index.scss')
     .pipe(gulpIf(isLocalDevelopment, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
     .pipe(gulpIf(isLocalDevelopment, sourcemaps.write()))
     .pipe(concat('bundle.css'))
+    .pipe(gulp.dest('juniorguru/web/static/'));
+}
+
+function buildMkDocsCSS() {
+  return gulp.src('juniorguru/web/static/src/css-mkdocs/index.scss')
+    .pipe(gulpIf(isLocalDevelopment, sourcemaps.init()))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulpIf(isLocalDevelopment, sourcemaps.write()))
+    .pipe(concat('bundle-mkdocs.css'))
     .pipe(gulp.dest('juniorguru/web/static/'));
 }
 

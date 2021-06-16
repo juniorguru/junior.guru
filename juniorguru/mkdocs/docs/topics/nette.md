@@ -1,5 +1,6 @@
 ---
 title: Nette mentoring
+template: main_legacy.html
 topic_name: nette
 description: Učíš se Nette? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---
