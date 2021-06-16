@@ -1,2 +1,11 @@
 {% extends 'main_legacy.html' %}
+
+
 {% block stylesheet %}<link rel="stylesheet" href="{{ 'static/bundle-mkdocs.css'|url }}">{% endblock %}
+
+
+{% block body %}
+<body>
+  {% block content %}{{ page.content }}{% endblock %}
+</body>
+{% endblock %}

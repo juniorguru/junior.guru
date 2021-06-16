@@ -25,9 +25,9 @@
       <meta name="twitter:creator" content="@honzajavorek">
     {% endblock meta %}
   </head>
-  <body class="body{% block body_modifier %}{% endblock %}">
+  {% block body %}
+  <body class="body">
     <div class="body__container">
-    {% block body %}
       <header class="header{% if page.meta.subnav_tabs %} header--subnav{% endif %}{% block header_modifier %}{% endblock %}">
         <div class="header__navbar">
           <div class="header__main">
@@ -152,7 +152,6 @@
           {% block author %}{% endblock %}
         </div>
       </footer>
-    {% endblock %}
     </div>
 
     <script>
@@ -164,4 +163,5 @@
       }
     </script>
   </body>
+  {% endblock %}
 </html>
