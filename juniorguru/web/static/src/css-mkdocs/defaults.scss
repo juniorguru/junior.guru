@@ -1,3 +1,12 @@
-$primary: #1755d1;
-$secondary: #343434;
-$body-color: #343434;
+$jg-yellow: #fffa72;
+$jg-blue: #1755d1;
+$jg-dark: #343434;
+$jg-black: #000;
+
+$primary: $jg-blue;
+$secondary: $jg-dark;
+$body-color: $jg-dark;
+
+$nav-link-color: $jg-dark;
+$nav-link-hover-color: $jg-black;
+$nav-pills-link-active-bg: $jg-dark;
