@@ -16,7 +16,6 @@ const resolve = require('rollup-plugin-node-resolve');
 const { terser } = require('rollup-plugin-terser');
 const del = require('del');
 const { spawn } = require('child_process');
-const through2 = require('through2');
 
 
 const isLocalDevelopment = process.argv[2] === 'serve';
@@ -140,13 +139,7 @@ function overwriteWithMkDocs() {
     '!public/mkdocs/search',
     '!public/mkdocs/search/**/*',
   ])
-    .pipe(gulp.dest('public/'))
-    .pipe(through2.obj((chunk, enc, callback) => {
-      if (chunk.path.match(/\.[\w\.]+$/)) {
-        console.log(' 💥', chunk.path.replace(/^.*\/public\//, ''));
-      }
-      callback(null, chunk);
-    }));
+    .pipe(gulp.dest('public/'));
 }
 
 
