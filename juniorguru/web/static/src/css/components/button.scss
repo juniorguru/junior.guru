@@ -1,10 +1,14 @@
+@use "sass:math";
+
+@use "../spaghetti/variables";
+
 .button {
-  @include font-2;
+  @include variables.font-2;
   display: inline-block;
   text-decoration: none;
   font-weight: 300;
-  padding: $whitespace $whitespace-2;
-  padding-top: $whitespace - 0.1rem;
+  padding: variables.$whitespace variables.$whitespace-2;
+  padding-top: variables.$whitespace - 0.1rem;
   background: var(--color-black);
 
   &, a, a:hover, a:focus, a:active {
@@ -27,7 +31,7 @@ a.button,
 .button--secondary {
   background: transparent;
   border: 0.2rem var(--color-black) solid;
-  padding: ($whitespace - 0.2rem) ($whitespace-2 - 0.2rem);
+  padding: (variables.$whitespace - 0.2rem) (variables.$whitespace-2 - 0.2rem);
 
   &, a, a:hover, a:focus, a:active {
     color: var(--color-black);
@@ -40,7 +44,7 @@ a.button--secondary,
     background: transparent;
     color: var(--color-black);
     border-width: 0.3rem;
-    padding: ($whitespace - 0.3rem) ($whitespace-2 - 0.3rem);
+    padding: (variables.$whitespace - 0.3rem) (variables.$whitespace-2 - 0.3rem);
   }
 }
 
@@ -62,13 +66,13 @@ a.button--secondary,
 }
 
 .button--small {
-  @include font;
-  padding: ($whitespace-0 / 2) $whitespace;
+  @include variables.font;
+  padding: math.div(variables.$whitespace-0, 2) variables.$whitespace;
 }
 
 .button--small.button--secondary {
-  @include font;
-  padding: (($whitespace-0 / 2) - 0.2rem) ($whitespace - 0.2rem);
+  @include variables.font;
+  padding: (math.div(variables.$whitespace-0, 2) - 0.2rem) (variables.$whitespace - 0.2rem);
 }
 
 a.button--small.button--secondary,
@@ -77,7 +81,7 @@ a.button--small.button--secondary,
     background: transparent;
     color: var(--color-black);
     border-width: 0.3rem;
-    padding: (($whitespace-0 / 2) - 0.3rem) ($whitespace - 0.3rem);
+    padding: (math.div(variables.$whitespace-0, 2) - 0.3rem) (variables.$whitespace - 0.3rem);
   }
 }
 
@@ -86,15 +90,15 @@ a.button--small.button--secondary,
 }
 
 .button--spaced {
-  margin: $whitespace / 2;
+  margin: math.div(variables.$whitespace, 2);
 }
 
 .button__note {
-  @include font-0;
+  @include variables.font-0;
   display: block;
 }
 
 .button__unit {
-  @include font-0;
+  @include variables.font-0;
   vertical-align: baseline;
 }

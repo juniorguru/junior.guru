@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $font-size: 62.5%; // = 10px, rem base
 
 // See:
@@ -8,10 +10,10 @@ $line-height-base: 34;
 
 $border-width: 0.2rem;
 
-$line-height-0: ($line-height-base / 18);
-$line-height: ($line-height-base / 10) * 1rem;
-$line-height-2: ($line-height-base / 25);
-$line-height-3: ($line-height-base / 32);
+$line-height-0: math.div($line-height-base, 18);
+$line-height: math.div($line-height-base, 10) * 1rem;
+$line-height-2: math.div($line-height-base, 25);
+$line-height-3: math.div($line-height-base, 32);
 $line-height-4: 1;
 
 @mixin font-0 { font-size: 1.6rem; line-height: $line-height-0; font-weight: 300; }

@@ -1,3 +1,5 @@
+@use "../spaghetti/variables";
+
 .features,
 .feature {
   list-style-type: none;
@@ -8,13 +10,13 @@
 .features {
   display: flex;
   flex-wrap: wrap;
-  margin: (2 * $whitespace-3) 0;
+  margin: (2 * variables.$whitespace-3) 0;
 }
 
 .feature {
   width: 100%;
   box-sizing: border-box;
-  padding: $whitespace;
+  padding: variables.$whitespace;
 }
 
 .feature--ribbon {
@@ -23,11 +25,11 @@
 }
 
 .feature__heading {
-  @include font;
+  @include variables.font;
 }
 
 .feature__description {
-  @include font-0;
+  @include variables.font-0;
 }
 
 .feature__ribbon {
@@ -40,7 +42,7 @@
   right: 0;
   transform: translateX(30%) translateY(0%) rotate(45deg);
   transform-origin: top left;
-  @include font-0;
+  @include variables.font-0;
   font-size: 1.3rem;
   text-transform: uppercase;
 }
@@ -68,13 +70,13 @@
   width: 100%;
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .feature {
     width: 50%;
   }
 }
 
-@media screen and (min-width: $breakpoint-desktop) {
+@media screen and (min-width: variables.$breakpoint-desktop) {
   .feature {
     width: 33.33%;
   }

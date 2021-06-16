@@ -1,13 +1,15 @@
+@use "../spaghetti/variables";
+
 .toc-permalink {
   display: none;
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .toc-permalink {
     display: inline;
-    @include font-0;
-    @include color-links(var(--color-yellow-light), var(--color-gray));
-    margin-left: $whitespace-2;
+    @include variables.font-0;
+    @include variables.color-links(var(--color-yellow-light), var(--color-gray));
+    margin-left: variables.$whitespace-2;
     text-decoration: none;
     white-space: nowrap;
 

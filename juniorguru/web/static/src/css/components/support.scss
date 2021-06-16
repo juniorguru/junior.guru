@@ -1,31 +1,33 @@
+@use "../spaghetti/variables";
+
 .support {
   text-align: center;
-  padding: $whitespace;
+  padding: variables.$whitespace;
   margin: 0;
-  margin-top: (2 * $whitespace-2) - $whitespace;
+  margin-top: (2 * variables.$whitespace-2) - variables.$whitespace;
 }
 
 .support__content {
   margin: 0 auto;
   display: inline-flex;
   align-items: center;
-  @include font-0;
+  @include variables.font-0;
 }
 
 .support__image {
   display: block;
   height: 7rem;
   width: auto;
-  margin-right: $whitespace;
+  margin-right: variables.$whitespace;
 }
 
 .support__text {
   text-align: left;
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .support__content {
-    @include font;
+    @include variables.font;
   }
 
   .support__image {

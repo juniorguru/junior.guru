@@ -1,5 +1,7 @@
+@use "../spaghetti/variables";
+
 .members {
-  margin: $whitespace-3 0;
+  margin: variables.$whitespace-3 0;
 }
 
 .members__items,
@@ -16,7 +18,7 @@
 }
 
 .members__item {
-  margin-left: $whitespace-3 * -0.3;
+  margin-left: variables.$whitespace-3 * -0.3;
 }
 
 .members__item:first-child {
@@ -24,18 +26,18 @@
 }
 
 .members__item--count {
-  margin-left: $whitespace;
-  @include font-3;
+  margin-left: variables.$whitespace;
+  @include variables.font-3;
   font-weight: bold;
   align-self: center;
   box-sizing: border-box;
-  padding-bottom: $whitespace-0;
+  padding-bottom: variables.$whitespace-0;
 }
 
 .members__image {
   display: block;
   margin: 0;
-  width: $whitespace-3 * 1.5;
-  border: $border-width solid var(--color-white);
+  width: variables.$whitespace-3 * 1.5;
+  border: variables.$border-width solid var(--color-white);
   border-radius: 100%;
 }

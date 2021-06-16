@@ -1,12 +1,14 @@
+@use "../spaghetti/variables";
+
 .value-explanation__block {
   text-align: center;
 }
 
 .value-explanation__text {
-  @include font-0;
+  @include variables.font-0;
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .value-explanation {
     display: flex;
   }
@@ -14,6 +16,6 @@
   .value-explanation__block {
     box-sizing: border-box;
     width: 50%;
-    padding: 0 $whitespace;
+    padding: 0 variables.$whitespace;
   }
 }

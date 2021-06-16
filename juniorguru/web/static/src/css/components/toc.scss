@@ -1,14 +1,16 @@
+@use "../spaghetti/variables";
+
 .toc,
 .toc__content {
   box-sizing: border-box;
 }
 
 .toc {
-  @include page-width($padding: 1rem);
+  @include variables.page-width($padding: 1rem);
 }
 
 .toc__heading {
-  border-bottom: $border-width solid var(--color-yellow-light);
+  border-bottom: variables.$border-width solid var(--color-yellow-light);
 }
 
 .toc__items,
@@ -21,19 +23,19 @@
 }
 
 .toc__items {
-  padding-bottom: $whitespace-3;
+  padding-bottom: variables.$whitespace-3;
   margin: 0;
 }
 
 .toc__item a {
   display: block;
-  padding: 0 $whitespace;
-  @include color-links(var(--color-black), var(--color-blue));
+  padding: 0 variables.$whitespace;
+  @include variables.color-links(var(--color-black), var(--color-blue));
 }
 
 .toc__subitem {
-  padding-left: $whitespace-2;
-  @include font-0;
+  padding-left: variables.$whitespace-2;
+  @include variables.font-0;
 }
 
 .toc__link:active,
@@ -55,17 +57,17 @@
   font-weight: normal;
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .toc {
-    @include page-width;
+    @include variables.page-width;
     position: sticky;
     z-index: 500;
-    margin-top: $whitespace-0;
-    top: $target-offset;
+    margin-top: variables.$whitespace-0;
+    top: variables.$target-offset;
   }
 
   .toc--target-offset-logos {
-    top: $target-offset-logos;
+    top: variables.$target-offset-logos;
   }
 
   .toc::before {
@@ -74,19 +76,19 @@
 
   .toc__content {
     float: left;
-    width: $toc-width - $whitespace;
+    width: variables.$toc-width - variables.$whitespace;
     background: rgba(var(--color-white), 0.8);
-    padding: 0 $whitespace 0 0;
-    max-height: calc(100vh - #{$target-offset - $whitespace-0});
+    padding: 0 variables.$whitespace 0 0;
+    max-height: calc(100vh - #{variables.$target-offset - variables.$whitespace-0});
     overflow-y: scroll;
-    margin-top: -1 * $whitespace-0;
+    margin-top: -1 * variables.$whitespace-0;
     position: relative;
     opacity: 1;
     transition: opacity 0.5s;
   }
 
   .toc--target-offset-logos .toc__content {
-    max-height: calc(100vh - #{$target-offset-logos - $whitespace-0});
+    max-height: calc(100vh - #{variables.$target-offset-logos - variables.$whitespace-0});
   }
 
   .toc__content--irrelevant {
@@ -94,7 +96,7 @@
   }
 
   .toc__heading {
-    margin: $whitespace-0 0 $whitespace-3 $whitespace;
+    margin: variables.$whitespace-0 0 variables.$whitespace-3 variables.$whitespace;
   }
 
   .toc__link,

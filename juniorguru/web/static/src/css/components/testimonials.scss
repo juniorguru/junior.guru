@@ -1,3 +1,7 @@
+@use "sass:math";
+
+@use "../spaghetti/variables";
+
 .testimonials__items,
 .testimonials__item,
 .testimonials__labels,
@@ -10,21 +14,21 @@
 .testimonials__labels {
   display: flex;
   justify-content: center;
-  margin: $whitespace-2 0;
+  margin: variables.$whitespace-2 0;
 }
 
 .testimonials__label {
   display: block;
-  @include font-0;
+  @include variables.font-0;
   color: var(--color-blue);
-  width: $whitespace-2;
-  height: $whitespace-2;
-  line-height: $whitespace-2;
+  width: variables.$whitespace-2;
+  height: variables.$whitespace-2;
+  line-height: variables.$whitespace-2;
   text-align: center;
   overflow: hidden;
   border-radius: 100%;
   border: 2px var(--color-blue) solid;
-  margin: 0 $whitespace-0 / 2;
+  margin: 0 math.div(variables.$whitespace-0, 2);
   cursor: pointer;
   -webkit-touch-callout: none;
   -webkit-user-select: none;

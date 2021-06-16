@@ -1,45 +1,45 @@
 // CSS custom props shared across the 'web' and 'sync' packages
-@import '../../../../data/vars';
+@use '../../../../data/vars';
 
 // base
-@import 'spaghetti/variables'; // legacy spaghetti code ??
-@import 'base/body';
-@import 'spaghetti/common'; // legacy spaghetti code ??
+@use 'spaghetti/variables'; // legacy spaghetti code ??
+@use 'base/body';
+@use 'spaghetti/common'; // legacy spaghetti code ??
 
 // content (not exactly BEM)
-@import 'content/checklist';
-@import 'content/tooltips';
-@import 'content/quote';
+@use 'content/checklist';
+@use 'content/tooltips';
+@use 'content/quote';
 
 // BEM components
-@import 'components/button-compartment';
-@import 'components/button';
-@import 'components/content';
-@import 'components/editorial';
-@import 'components/engage';
-@import 'components/features';
-@import 'components/filters';
-@import 'components/header';
-@import 'components/hero';
-@import 'components/intro';
-@import 'components/jobs';
-@import 'components/list';
-@import 'components/logos';
-@import 'components/members';
-@import 'components/mentions';
-@import 'components/more';
-@import 'components/plans';
-@import 'components/price';
-@import 'components/pricing';
-@import 'components/settings';
-@import 'components/stories';
-@import 'components/support';
-@import 'components/testimonials';
-@import 'components/toc-button';
-@import 'components/toc-permalink';
-@import 'components/toc';
-@import 'components/value-explanation';
+@use 'components/button-compartment';
+@use 'components/button';
+@use 'components/content';
+@use 'components/editorial';
+@use 'components/engage';
+@use 'components/features';
+@use 'components/filters';
+@use 'components/header';
+@use 'components/hero';
+@use 'components/intro';
+@use 'components/jobs';
+@use 'components/list';
+@use 'components/logos';
+@use 'components/members';
+@use 'components/mentions';
+@use 'components/more';
+@use 'components/plans';
+@use 'components/price';
+@use 'components/pricing';
+@use 'components/settings';
+@use 'components/stories';
+@use 'components/support';
+@use 'components/testimonials';
+@use 'components/toc-button';
+@use 'components/toc-permalink';
+@use 'components/toc';
+@use 'components/value-explanation';
 
 // page-specific legacy spaghetti code ??
-@import 'spaghetti/page-index';
-@import 'spaghetti/page-hire-juniors';
+@use 'spaghetti/page-index';
+@use 'spaghetti/page-hire-juniors';

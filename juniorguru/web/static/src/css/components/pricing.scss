@@ -1,22 +1,26 @@
+@use "sass:math";
+
+@use "../spaghetti/variables";
+
 .pricing__heading {
-  margin-bottom: $whitespace-3;
+  margin-bottom: variables.$whitespace-3;
   text-align: center;
 }
 
 .pricing__note {
-  @include font-0;
-  margin: $whitespace 0;
+  @include variables.font-0;
+  margin: variables.$whitespace 0;
 }
 
 .pricing__discount {
   background: var(--color-blue);
   color: var(--color-white);
-  padding: ($whitespace / 4) ($whitespace / 2);
-  margin-right: $whitespace / 2;
+  padding: math.div(variables.$whitespace, 4) math.div(variables.$whitespace, 2);
+  margin-right: math.div(variables.$whitespace, 2);
 }
 
 .pricing__plan {
-  padding: $whitespace-2 $whitespace;
+  padding: variables.$whitespace-2 variables.$whitespace;
 }
 
 .pricing__plan--highlight {
@@ -30,21 +34,21 @@
 }
 
 .pricing__plan-content {
-  margin-bottom: $whitespace;
+  margin-bottom: variables.$whitespace;
 
   & + * {
     margin: 0;
   }
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .pricing__heading--mobile-only {
     display: none !important;  // forcing through spaghetti
   }
 
   .pricing__plans {
     display: flex;
-    margin-bottom: $whitespace-3;
+    margin-bottom: variables.$whitespace-3;
   }
 
   .pricing__plan {

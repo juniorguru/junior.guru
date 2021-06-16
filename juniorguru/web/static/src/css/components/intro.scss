@@ -1,7 +1,11 @@
+@use "sass:math";
+
+@use "../spaghetti/variables";
+
 .intro {
   max-width: 80rem;
-  padding: 0 $whitespace;
-  margin: 0 auto ($whitespace-3 * 2) auto;
+  padding: 0 variables.$whitespace;
+  margin: 0 auto (variables.$whitespace-3 * 2) auto;
 }
 
 .intro--standalone {
@@ -9,25 +13,25 @@
 }
 
 .intro__note {
-  @include font-0;
-  margin-bottom: $whitespace-2;
+  @include variables.font-0;
+  margin-bottom: variables.$whitespace-2;
 }
 
 .intro__title {
   margin-top: 0;
   text-align: center;
-  margin-bottom: $whitespace-3 * 2;
+  margin-bottom: variables.$whitespace-3 * 2;
 }
 
 .intro__title--massive {
   text-transform: uppercase;
-  border: ($whitespace / 2) solid var(--color-black);
-  padding: $whitespace;
+  border: math.div(variables.$whitespace, 2) solid var(--color-black);
+  padding: variables.$whitespace;
   line-height: normal;
 }
 
 .intro__lead {
-  @include font-2;
+  @include variables.font-2;
   min-height: 16rem;
 }
 
@@ -37,19 +41,19 @@
 
 .intro__illustration {
   float: right;
-  margin: $whitespace;
-  height: 3 * $whitespace-3;
+  margin: variables.$whitespace;
+  height: 3 * variables.$whitespace-3;
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .intro__title--massive {
-    padding: $whitespace * 2;
-    margin-left: $whitespace-3 * 3;
-    margin-right: $whitespace-3 * 3;
+    padding: variables.$whitespace * 2;
+    margin-left: variables.$whitespace-3 * 3;
+    margin-right: variables.$whitespace-3 * 3;
   }
 
   .intro__illustration {
-    margin-left: $whitespace-3;
-    height: 4 * $whitespace-3;
+    margin-left: variables.$whitespace-3;
+    height: 4 * variables.$whitespace-3;
   }
 }

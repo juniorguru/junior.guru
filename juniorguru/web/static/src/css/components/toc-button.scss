@@ -1,3 +1,5 @@
+@use "../spaghetti/variables";
+
 .toc-button__label::before {
   content: " ";
   display: inline-block;
@@ -12,10 +14,10 @@
 .toc-button__label {
   white-space: nowrap;
   display: block;
-  padding: 0 $whitespace-0;
+  padding: 0 variables.$whitespace-0;
   margin: 0;
   color: var(--color-black);
-  @include font-0;
+  @include variables.font-0;
   font-weight: normal;
   text-decoration: underline;
   cursor: pointer;

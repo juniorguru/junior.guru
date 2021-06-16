@@ -1,5 +1,7 @@
+@use "../spaghetti/variables";
+
 ul.checklist {
-  margin: $whitespace-2 0;
+  margin: variables.$whitespace-2 0;
 
   &, li {
     list-style-type: none;

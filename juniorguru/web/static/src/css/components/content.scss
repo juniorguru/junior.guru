@@ -1,14 +1,16 @@
+@use "../spaghetti/variables";
+
 .content {
-  padding-top: $whitespace-3 * 3;
+  padding-top: variables.$whitespace-3 * 3;
 }
 
 .content__section,
 .content--mkdocs {
-  @include page-width($padding: 1rem);
+  @include variables.page-width($padding: 1rem);
 }
 
 .content__section {
-  margin-bottom: $whitespace-3 * 2;
+  margin-bottom: variables.$whitespace-3 * 2;
 }
 
 .content__section--wide {
@@ -29,25 +31,25 @@
 
 .content--mkdocs h1 {
   text-align: center;
-  margin-bottom: $whitespace-3 * 2;
+  margin-bottom: variables.$whitespace-3 * 2;
 }
 
 .content__section-heading,
 .content--mkdocs h2 {
-  border-bottom: $border-width solid var(--color-yellow);
+  border-bottom: variables.$border-width solid var(--color-yellow);
 }
 
 .content--mkdocs h2 {
-  margin-top: $whitespace-3 * 2;
+  margin-top: variables.$whitespace-3 * 2;
 }
 
 .content__subsection-heading,
 .content--mkdocs h3 {
-  margin-top: $whitespace-2;
+  margin-top: variables.$whitespace-2;
 }
 
 .content__ad {
-  margin: $whitespace-2 0;
+  margin: variables.$whitespace-2 0;
 }
 
 // this selector be in sync with toc.js
@@ -57,25 +59,25 @@
 .content__subsection-heading[id]::before {
   display: block;
   content: " ";
-  height: 1 * $target-offset;
-  margin-top: -1 * $target-offset;
+  height: 1 * variables.$target-offset;
+  margin-top: -1 * variables.$target-offset;
   width: 1rem;
   pointer-events: none;
   //background: violet; // debug
 
   .content--target-offset-logos & {
-    height: 1 * $target-offset-logos;
-    margin-top: -1 * $target-offset-logos;
+    height: 1 * variables.$target-offset-logos;
+    margin-top: -1 * variables.$target-offset-logos;
   }
 }
 
 .content__subsection-heading[id]::before {
-  height: $target-offset;
-  margin-top: $whitespace-2 + (-1 * $target-offset);
+  height: variables.$target-offset;
+  margin-top: variables.$whitespace-2 + (-1 * variables.$target-offset);
 
   .content--target-offset-logos & {
-    height: $target-offset-logos;
-    margin-top: $whitespace-2 + (-1 * $target-offset-logos);
+    height: variables.$target-offset-logos;
+    margin-top: variables.$whitespace-2 + (-1 * variables.$target-offset-logos);
   }
 }
 
@@ -88,9 +90,9 @@
   animation: target-animation 3s;
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .content--toc .content__section {
-    padding-left: $toc-width;
+    padding-left: variables.$toc-width;
   }
 
   .content--toc .content__section--wide {
@@ -98,10 +100,10 @@
   }
 }
 
-@media screen and (min-width: $breakpoint-desktop) {
+@media screen and (min-width: variables.$breakpoint-desktop) {
   .content--toc .content__section {
     // visually substracting the $whitespace from ToC's right padding
-    padding-left: $toc-width + ($whitespace-3 - $whitespace);
+    padding-left: variables.$toc-width + (variables.$whitespace-3 - variables.$whitespace);
   }
 
   .content--toc .content__section--wide {

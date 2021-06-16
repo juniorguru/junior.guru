@@ -1,3 +1,7 @@
+@use "sass:math";
+
+@use "../spaghetti/variables";
+
 @mixin tooltip($text) {
   position: relative;
   z-index: 10;
@@ -14,12 +18,12 @@
     top: 110%;
     left: 5%;
     margin-top: 5px;
-    padding: 0 $whitespace-0;
+    padding: 0 variables.$whitespace-0;
     background-color: var(--color-blue);
     color: var(--color-white);
     content: $text;
     font-size: 1.3rem;
-    line-height: ($line-height-base / 15);
+    line-height: math.div(variables.$line-height-base, 15);
     font-weight: 300;
     white-space: nowrap;
   }

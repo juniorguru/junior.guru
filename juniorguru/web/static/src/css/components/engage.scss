@@ -1,12 +1,16 @@
+@use "sass:math";
+
+@use "../spaghetti/variables";
+
 .engage {
   padding-top: 2px;
   padding-bottom: 2px;
-  background: $dots-black;
+  background: variables.$dots-black;
 }
 
 .engage__content {
-  padding: $whitespace;
-  padding-top: $whitespace-2;
+  padding: variables.$whitespace;
+  padding-top: variables.$whitespace-2;
   background: rgba(var(--color-white), 0.8);
 }
 
@@ -22,11 +26,11 @@
 
 .engage__single-paragraph {
   margin: 0;
-  margin-bottom: $whitespace-2 - $whitespace;
+  margin-bottom: variables.$whitespace-2 - variables.$whitespace;
 }
 
 .engage__heading + .engage__single-paragraph {
-  margin-top: $whitespace-2;
+  margin-top: variables.$whitespace-2;
 }
 
 .engage__items, .engage__item {
@@ -36,13 +40,13 @@
 }
 
 .engage__items {
-  padding-top: $whitespace-3 - $whitespace;
-  padding-bottom: $whitespace-3 + $whitespace;
+  padding-top: variables.$whitespace-3 - variables.$whitespace;
+  padding-bottom: variables.$whitespace-3 + variables.$whitespace;
 }
 
 .engage__item {
   display: block;
-  margin-top: $whitespace;
+  margin-top: variables.$whitespace;
 }
 
 .engage__item-link::before {
@@ -50,8 +54,8 @@
   display: block;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 2 * $whitespace-3;
-  padding-top: 2 * $whitespace-3;
+  background-size: 2 * variables.$whitespace-3;
+  padding-top: 2 * variables.$whitespace-3;
 }
 
 .engage__item--jobs .engage__item-link::before {
@@ -77,27 +81,27 @@
 .engage__item-link {
   text-align: center;
   display: block;
-  min-width: 2 * $whitespace-3;
-  max-width: 8 * $whitespace-3;
+  min-width: 2 * variables.$whitespace-3;
+  max-width: 8 * variables.$whitespace-3;
   margin: 0 auto;
-  @include color-links(var(--color-black), var(--color-black));
+  @include variables.color-links(var(--color-black), var(--color-black));
 }
 
 .engage__illustration {
   display: block;
   float: right;
-  margin: 0 0 ($whitespace-0 / 2) $whitespace-0;
+  margin: 0 0 math.div(variables.$whitespace-0, 2) variables.$whitespace-0;
 }
 
 .engage__text a {
-  @include color-links(var(--color-black), var(--color-black));
+  @include variables.color-links(var(--color-black), var(--color-black));
 }
 
 .engage--warning .engage__text a {
-  @include color-links(var(--color-white), var(--color-white));
+  @include variables.color-links(var(--color-white), var(--color-white));
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .engage__items {
     display: flex;
     flex-wrap: wrap;
@@ -105,13 +109,13 @@
   }
 
   .engage__illustrated-block {
-    padding-left: 15rem + $whitespace-2;
+    padding-left: 15rem + variables.$whitespace-2;
     position: relative;
   }
 
   .engage__illustration-container {
     position: absolute;
-    top: $whitespace-0;
+    top: variables.$whitespace-0;
     left: 0;
     width: 15rem;
     height: 100%;

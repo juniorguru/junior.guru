@@ -1,3 +1,7 @@
+@use "sass:math";
+
+@use "../spaghetti/variables";
+
 $company-logo-size: 8rem;
 
 .jobs,
@@ -8,20 +12,20 @@ $company-logo-size: 8rem;
 }
 
 .jobs {
-  margin-top: 2 * $whitespace-3;
-  margin-bottom: 2 * $whitespace-3;
+  margin-top: 2 * variables.$whitespace-3;
+  margin-bottom: 2 * variables.$whitespace-3;
 }
 
 .jobs--inline {
-  margin: $whitespace-2 0 0 0;
+  margin: variables.$whitespace-2 0 0 0;
 }
 
 .jobs__item {
-  border-top: $border-width solid var(--color-yellow-light);
+  border-top: variables.$border-width solid var(--color-yellow-light);
 }
 
 .jobs__item:last-child {
-  border-bottom: $border-width solid var(--color-yellow-light);
+  border-bottom: variables.$border-width solid var(--color-yellow-light);
 }
 
 .jobs__item:last-child.jobs__item--highlighted {
@@ -43,21 +47,21 @@ $company-logo-size: 8rem;
 
 .jobs__link {
   box-sizing: border-box;
-  padding: $whitespace;
+  padding: variables.$whitespace;
   text-decoration: none;
   display: block;
 }
 
 .jobs__company-logo {
-  border: $border-width solid var(--color-yellow-light);
+  border: variables.$border-width solid var(--color-yellow-light);
   width: $company-logo-size * 0.8;
   height: $company-logo-size * 0.8;
   background: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: $whitespace;
-  margin-bottom: $whitespace-0;
+  margin-right: variables.$whitespace;
+  margin-bottom: variables.$whitespace-0;
   float: left;
 }
 
@@ -68,14 +72,14 @@ $company-logo-size: 8rem;
 }
 
 .jobs__company-logo-image {
-  width: ($company-logo-size * 0.8) - $border-width;
-  height: ($company-logo-size * 0.8) - $border-width;
+  width: ($company-logo-size * 0.8) - variables.$border-width;
+  height: ($company-logo-size * 0.8) - variables.$border-width;
 }
 
 .jobs__title,
 .jobs__company,
 .jobs__location {
-  @include font;
+  @include variables.font;
   margin: 0;
 }
 
@@ -83,7 +87,7 @@ $company-logo-size: 8rem;
   text-decoration: underline;
   word-break: break-word;
   line-height: normal;
-  margin-bottom: $whitespace-0;
+  margin-bottom: variables.$whitespace-0;
 }
 
 .jobs__company {
@@ -91,7 +95,7 @@ $company-logo-size: 8rem;
 }
 
 .jobs__location {
-  @include font-0;
+  @include variables.font-0;
 }
 
 .jobs__tags,
@@ -102,11 +106,11 @@ $company-logo-size: 8rem;
 }
 
 .jobs__tag {
-  @include font-0;
+  @include variables.font-0;
   border: 1px solid var(--color-yellow-light);
   display: inline;
   padding: 0.2rem 0.5rem;
-  margin-right: $whitespace-0 / 2;
+  margin-right: math.div(variables.$whitespace-0, 2);
   white-space: nowrap;
 }
 
@@ -134,7 +138,7 @@ $company-logo-size: 8rem;
 
 .jobs--inline .jobs__company-logo {
   align-self: center;
-  margin-right: $whitespace-2;
+  margin-right: variables.$whitespace-2;
   margin-bottom: 0;
   float: none;
   flex-shrink: 0;
@@ -142,14 +146,14 @@ $company-logo-size: 8rem;
 
 .jobs--inline .jobs__link {
   display: flex;
-  padding: $whitespace;
+  padding: variables.$whitespace;
 }
 
 .jobs--inline .jobs__content {
   flex-grow: 2;
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .jobs__content {
     display: flex;
   }
@@ -158,7 +162,7 @@ $company-logo-size: 8rem;
     width: $company-logo-size;
     height: $company-logo-size;
     align-self: center;
-    margin-right: $whitespace-2;
+    margin-right: variables.$whitespace-2;
     margin-bottom: 0;
     float: none;
     flex-shrink: 0;
@@ -170,18 +174,18 @@ $company-logo-size: 8rem;
   }
 
   .jobs__company-logo-image {
-    width: $company-logo-size - $border-width;
-    height: $company-logo-size - $border-width;
+    width: $company-logo-size - variables.$border-width;
+    height: $company-logo-size - variables.$border-width;
   }
 
   .jobs--inline .jobs__company-logo-image {
-    width: ($company-logo-size * 0.8) - $border-width;
-    height: ($company-logo-size * 0.8) - $border-width;
+    width: ($company-logo-size * 0.8) - variables.$border-width;
+    height: ($company-logo-size * 0.8) - variables.$border-width;
   }
 
   .jobs__link {
     display: flex;
-    padding: $whitespace $whitespace-2;
+    padding: variables.$whitespace variables.$whitespace-2;
   }
 
   .jobs__content {
@@ -189,12 +193,12 @@ $company-logo-size: 8rem;
   }
 
   .jobs__tags {
-    padding-left: $whitespace;
+    padding-left: variables.$whitespace;
     flex-shrink: 0;
   }
 
   .jobs__tag {
     margin-right: 0;
-    margin-left: $whitespace-0;
+    margin-left: variables.$whitespace-0;
   }
 }

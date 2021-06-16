@@ -1,13 +1,15 @@
+@use "../spaghetti/variables";
+
 .button-compartment {
   padding: 0;
   margin: 0;
-  margin-top: $whitespace-3;
+  margin-top: variables.$whitespace-3;
   text-align: center;
   clear: both;
 }
 
 .button-compartment--compact {
-  margin: $whitespace 0;
+  margin: variables.$whitespace 0;
 }
 
 .button-compartment--row {
@@ -19,5 +21,5 @@
 
 .button-compartment__note {
   display: block;
-  margin-top: $whitespace-0;
+  margin-top: variables.$whitespace-0;
 }

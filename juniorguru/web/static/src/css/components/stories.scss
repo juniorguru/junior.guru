@@ -1,13 +1,15 @@
+@use "../spaghetti/variables";
+
 .stories {
-  margin-bottom: -1 * $whitespace-3;
+  margin-bottom: -1 * variables.$whitespace-3;
 }
 
 .stories--inline {
-  margin-top: $whitespace-3;
+  margin-top: variables.$whitespace-3;
 }
 
 .stories__heading {
-  margin-bottom: $whitespace-3 * 2 !important;  // forcing through page-index.scss
+  margin-bottom: variables.$whitespace-3 * 2 !important;  // forcing through page-index.scss
 }
 
 .stories__items,
@@ -26,13 +28,13 @@
 }
 
 .stories__text {
-  padding-left: $whitespace;
-  padding-right: $whitespace;
-  margin-bottom: $whitespace-3;
+  padding-left: variables.$whitespace;
+  padding-right: variables.$whitespace;
+  margin-bottom: variables.$whitespace-3;
 }
 
 .stories__title {
-  @include font;
+  @include variables.font;
   margin: 0;
   text-decoration: underline;
 }
@@ -42,8 +44,8 @@
   width: 6rem;
   height: 6rem;
   flex-shrink: 0;
-  border: $border-width solid transparent;
-  margin-bottom: $whitespace-3;
+  border: variables.$border-width solid transparent;
+  margin-bottom: variables.$whitespace-3;
 }
 
 .stories__content {
@@ -56,13 +58,13 @@
   }
 }
 
-@media screen and (min-width: $breakpoint-larger-phone) {
+@media screen and (min-width: variables.$breakpoint-larger-phone) {
   .stories__content {
     flex-direction: row-reverse;
   }
 
   .stories__title {
-    @include font-2;
+    @include variables.font-2;
   }
 
   .stories__image {
@@ -71,7 +73,7 @@
   }
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .stories__items {
     display: flex;
     flex-wrap: wrap;
@@ -84,7 +86,7 @@
   .stories__item {
     box-sizing: border-box;
     width: 50%;
-    padding-right: $whitespace-3;
+    padding-right: variables.$whitespace-3;
   }
 
   .stories--inline .stories__item {
@@ -93,13 +95,13 @@
   }
 }
 
-@media screen and (min-width: $breakpoint-desktop + 150px) {
+@media screen and (min-width: variables.$breakpoint-desktop + 150px) {
   .stories--inline .stories__items {
     display: flex;
   }
 
   .stories--inline .stories__item {
     width: 50%;
-    padding-right: $whitespace-3;
+    padding-right: variables.$whitespace-3;
   }
 }

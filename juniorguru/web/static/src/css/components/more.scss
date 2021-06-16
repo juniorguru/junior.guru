@@ -1,3 +1,5 @@
+@use "../spaghetti/variables";
+
 $more-height: 45rem;
 
 .more--collapsed {
@@ -24,7 +26,7 @@ $more-height: 45rem;
   background: var(--color-blue);
 }
 
-@media screen and (max-width: $grid-breakpoint) {
+@media screen and (max-width: variables.$grid-breakpoint) {
   .more--collapsed .cartoon {
     display: none;
   }

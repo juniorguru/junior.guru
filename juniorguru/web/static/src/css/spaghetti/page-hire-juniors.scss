@@ -1,20 +1,24 @@
+@use "sass:math";
+
+@use "variables";
+
 body.body--hire-juniors {
   h2 {
     background: none;
     padding: 0;
     margin: 0;
-    margin-bottom: $whitespace-3;
+    margin-bottom: variables.$whitespace-3;
     text-align: center;
     display: block;
-    @include font-4;
+    @include variables.font-4;
   }
 
   .pricing {
-    margin-top: $whitespace-3;  // hotfix
+    margin-top: variables.$whitespace-3;  // hotfix
   }
 
   .pricing h2 {
-    margin-bottom: $whitespace-3;  // hotfix
+    margin-bottom: variables.$whitespace-3;  // hotfix
   }
 
   h2.hidden {
@@ -23,21 +27,21 @@ body.body--hire-juniors {
 
   .call-to-action {
     margin: 0;
-    padding-top: (2 * $whitespace-2);
+    padding-top: (2 * variables.$whitespace-2);
   }
 
   .why {
-    padding-left: $whitespace;
-    padding-right: $whitespace;
+    padding-left: variables.$whitespace;
+    padding-right: variables.$whitespace;
 
     figure {
       margin-top: 0;
-      margin-bottom: ($whitespace-3 * 2);
+      margin-bottom: (variables.$whitespace-3 * 2);
     }
   }
 
   .candidate-content {
-    padding: $whitespace;
+    padding: variables.$whitespace;
   }
 
   .candidate-subsections {
@@ -48,8 +52,8 @@ body.body--hire-juniors {
     }
 
     .candidate-subsection {
-      padding: $whitespace-2;
-      margin-top: $whitespace-2;
+      padding: variables.$whitespace-2;
+      margin-top: variables.$whitespace-2;
 
       @media screen and (min-width: 700px) {
         & {
@@ -60,7 +64,7 @@ body.body--hire-juniors {
 
       h3 {
         margin-top: 0;
-        margin-bottom: $whitespace-2;
+        margin-bottom: variables.$whitespace-2;
         text-align: center;
       }
 
@@ -69,7 +73,7 @@ body.body--hire-juniors {
       }
 
       li {
-        margin-top: $whitespace / 3;
+        margin-top: math.div(variables.$whitespace, 3);
       }
     }
 
@@ -80,20 +84,20 @@ body.body--hire-juniors {
 
   .sponsor-handbook {
     .pricing {
-      margin-top: ($whitespace-3 * 2);
+      margin-top: (variables.$whitespace-3 * 2);
     }
 
     .sponsor-handbook-badge {
       text-align: center;
 
       small {
-        @include font-0;
+        @include variables.font-0;
         white-space: nowrap;
         background: var(--color-blue);
         color: var(--color-white);
-        padding: ($whitespace / 2) $whitespace;
+        padding: math.div(variables.$whitespace, 2) variables.$whitespace;
         position: relative;
-        bottom: $whitespace;
+        bottom: variables.$whitespace;
       }
     }
 
@@ -103,15 +107,15 @@ body.body--hire-juniors {
 
     .sponsor-handbook-content,
     .pricing > .pricing__note {
-      padding-left: $whitespace;
-      padding-right: $whitespace;
+      padding-left: variables.$whitespace;
+      padding-right: variables.$whitespace;
     }
 
     .sponsor-handbook-content {
       img {
         width: 12rem;
         float: right;
-        margin: 0 0 $whitespace $whitespace;
+        margin: 0 0 variables.$whitespace variables.$whitespace;
       }
     }
   }

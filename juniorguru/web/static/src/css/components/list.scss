@@ -1,3 +1,5 @@
+@use "../spaghetti/variables";
+
 .list__heading {
-  margin-top: $whitespace-3;
+  margin-top: variables.$whitespace-3;
 }

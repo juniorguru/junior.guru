@@ -1,17 +1,19 @@
+@use "../spaghetti/variables";
+
 .editorial {
-  padding: 0 $whitespace;
-  padding-bottom: 2 * $whitespace-3;
+  padding: 0 variables.$whitespace;
+  padding-bottom: 2 * variables.$whitespace-3;
 }
 
 .editorial__section {
-  @include page-width;
+  @include variables.page-width;
   display: flex;
   flex-wrap: wrap;
   font-style: normal;
-  margin-bottom: $whitespace;
+  margin-bottom: variables.$whitespace;
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .editorial__section {
     justify-content: center;
     text-align: center;

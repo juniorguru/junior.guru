@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
-const sass = require('gulp-sass');
+const sass = require('gulp-dart-sass');
 const csso = require('gulp-csso');
 const imagemin = require('gulp-imagemin');
 const gulpIf = require('gulp-if');
@@ -16,8 +16,6 @@ const { terser } = require('rollup-plugin-terser');
 const del = require('del');
 const { spawn } = require('child_process');
 const through2 = require('through2');
-
-sass.compiler = require('node-sass');
 
 
 const isLocalDevelopment = process.argv[2] === 'serve';

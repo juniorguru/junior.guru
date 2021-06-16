@@ -1,12 +1,14 @@
+@use "../spaghetti/variables";
+
 .logos {
-  margin: $whitespace-3 0;
+  margin: variables.$whitespace-3 0;
 }
 
 .logos--bar {
   background: var(--color-white);
   margin-top: 0;
   z-index: 900;
-  margin: $whitespace-3 0 (2 * $whitespace-3) 0;
+  margin: variables.$whitespace-3 0 (2 * variables.$whitespace-3) 0;
 }
 
 .logos--bar-sticky {
@@ -39,14 +41,14 @@
 
 .logos--bar .logos__items {
   flex-wrap: nowrap;
-  @include page-width;
+  @include variables.page-width;
 }
 
 .logos__item {
   box-sizing: border-box;
   width: 100%;
-  height: $logos-height;
-  margin-bottom: $whitespace-2;
+  height: variables.$logos-height;
+  margin-bottom: variables.$whitespace-2;
 }
 
 .logos--bar .logos__item {
@@ -65,14 +67,14 @@
 
 .logos__item--without-link,
 .logos__link {
-  padding: 0 $whitespace-2;
+  padding: 0 variables.$whitespace-2;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .logos--bar .logos__link {
-  padding: 0 $whitespace-0;
+  padding: 0 variables.$whitespace-0;
 }
 
 .logos__item--caption .logos__link {
@@ -86,7 +88,7 @@
 .logos__image {
   display: block;
   max-width: 20rem;
-  max-height: $logos-height;
+  max-height: variables.$logos-height;
   object-fit: contain;
 }
 
@@ -97,7 +99,7 @@
 
 .logos--bar .logos__image {
   max-width: 100%;
-  max-height: $logos-height - 0.6rem;
+  max-height: variables.$logos-height - 0.6rem;
 }
 
 .logos__link:hover .logos__image,
@@ -107,7 +109,7 @@
   opacity: 1;
 }
 
-@media screen and (min-width: $breakpoint-larger-phone) {
+@media screen and (min-width: variables.$breakpoint-larger-phone) {
   .logos__item {
     width: 50%;
   }
@@ -117,9 +119,9 @@
   }
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .logos--bar {
-    margin: (3 * $whitespace-3) 0 (4 * $whitespace-3) 0;
+    margin: (3 * variables.$whitespace-3) 0 (4 * variables.$whitespace-3) 0;
   }
 
   .logos__item,
@@ -128,7 +130,7 @@
   }
 
   .logos--bar .logos__link {
-    padding: 0 $whitespace-2;
+    padding: 0 variables.$whitespace-2;
   }
 
   .logos__item--caption .logos__link {
@@ -136,16 +138,16 @@
   }
 
   .logos--bar .logos__image {
-    max-height: $logos-height - $whitespace-0;
+    max-height: variables.$logos-height - variables.$whitespace-0;
   }
 }
 
-@media screen and (min-width: $breakpoint-desktop) {
+@media screen and (min-width: variables.$breakpoint-desktop) {
   .logos__item--caption .logos__link {
     font-size: 1.6rem;
   }
 
   .logos--bar .logos__image {
-    max-height: $logos-height - $whitespace;
+    max-height: variables.$logos-height - variables.$whitespace;
   }
 }

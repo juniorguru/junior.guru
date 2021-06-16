@@ -1,13 +1,15 @@
+@use "../spaghetti/variables";
+
 .price {
   text-align: center;
 }
 
 .price__amount {
-  @include font-4;
+  @include variables.font-4;
 }
 
 .price__note {
-  @include font-0;
+  @include variables.font-0;
 }
 
 .price__amount,
@@ -16,11 +18,11 @@
 }
 
 .price__unit {
-  @include font;
+  @include variables.font;
   vertical-align: baseline;
 }
 
 .price__note .price__unit {
-  @include font-0;
+  @include variables.font-0;
   font-size: 1.2rem;
 }

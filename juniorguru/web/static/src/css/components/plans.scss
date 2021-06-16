@@ -1,3 +1,5 @@
+@use "../spaghetti/variables";
+
 .plans,
 .plans__plan,
 .plans__benefits,
@@ -14,18 +16,18 @@
 .plans__plan {
   box-sizing: border-box;
   min-width: 20rem;
-  margin-top: $whitespace-3;
+  margin-top: variables.$whitespace-3;
 }
 
 .plans__benefits {
-  margin-bottom: $whitespace;
+  margin-bottom: variables.$whitespace;
 }
 
 .plans__benefit {
-  @include font-0;
+  @include variables.font-0;
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: variables.$breakpoint-tablet) {
   .plans {
     display: flex;
     justify-content: space-around;
