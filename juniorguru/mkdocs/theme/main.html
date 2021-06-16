@@ -9,7 +9,7 @@
       <script defer src="{{ 'static/bundle.js'|url }}"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1316071-22"></script>
 
-      <meta name="description" content="{{ page.meta.description }}">
+      {% if page.meta.description %}<meta name="description" content="{{ page.meta.description }}">{% endif %}
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="{{ 'static/bundle.css'|url }}">
 
