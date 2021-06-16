@@ -10,6 +10,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const htmlmin = require('gulp-html-minifier');
 const resizer = require('gulp-images-resizer');
 const connect = require('gulp-connect');
+const purgecss = require('gulp-purgecss');
 const { rollup } = require('rollup');
 const resolve = require('rollup-plugin-node-resolve');
 const { terser } = require('rollup-plugin-terser');
@@ -45,9 +46,22 @@ function buildCSS() {
   return gulp.src('juniorguru/web/static/src/css/index.scss')
     .pipe(gulpIf(isLocalDevelopment, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
-    .pipe(csso())
     .pipe(gulpIf(isLocalDevelopment, sourcemaps.write()))
     .pipe(concat('bundle.css'))
+    .pipe(gulp.dest('juniorguru/web/static/'));
+}
+
+function minifyCSS() {
+  return gulp.src('juniorguru/web/static/bundle.css')
+  .pipe(gulpIf(isLocalDevelopment, sourcemaps.init()))
+    .pipe(purgecss({
+      content: ['public/**/*.html', 'public/**/*.js'],
+      fontFace: true,
+      keyframes: true,
+      variables: true,
+    }))
+    .pipe(csso())
+    .pipe(gulpIf(isLocalDevelopment, sourcemaps.write()))
     .pipe(gulp.dest('juniorguru/web/static/'));
 }
 
@@ -157,8 +171,8 @@ function copyFavicon() {
 }
 
 const buildWeb = isLocalDevelopment
-  ? gulp.series(freezeFlask, buildMkDocs)
-  : gulp.series(freezeFlask, buildMkDocs, gulp.parallel(minifyHTML, copyFavicon));
+  ? gulp.series(freezeFlask, buildMkDocs, minifyCSS)
+  : gulp.series(freezeFlask, buildMkDocs, minifyCSS, gulp.parallel(minifyHTML, copyFavicon));
 
 async function watchWeb() {
   gulp.watch([
