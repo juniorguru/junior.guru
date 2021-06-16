@@ -183,12 +183,17 @@ async function watchWeb() {
     'package-lock.json',
     'juniorguru/web/static/src/js/',
   ], buildJS);
-  gulp.watch('juniorguru/web/static/src/css/', buildCSS);
+  gulp.watch([
+    'juniorguru/web/static/src/css/',
+    'juniorguru/web/static/src/css-mkdocs/',
+  ], buildCSS);
   gulp.watch([
     'juniorguru/web/static/src/images/screenshots/',
     'juniorguru/web/static/src/images/screenshots-overrides/',
   ], copyScreenshots);
-  gulp.watch(['juniorguru/web/static/src/images/stories/'], buildStories);
+  gulp.watch([
+    'juniorguru/web/static/src/images/stories/'
+  ], buildStories);
   gulp.watch([
     'juniorguru/images/',
     'juniorguru/web/static/src/images/',
