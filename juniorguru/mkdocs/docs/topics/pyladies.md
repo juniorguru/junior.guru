@@ -3,13 +3,13 @@ title: Zkušenosti s PyLadies
 topic_name: pyladies
 description: Hledáš někoho, kdo má zkušenosti s PyLadies? Jsou jejich materiály kvalitní? Má smysl hlásit se na jejich začátečnický kurz? Jak si poradit s projekty?
 ---
-{% from 'topic.html' import intro, mentions, members_roll with context %}
+{% from 'topic.html' import intro, mentions, members_roll %}
 
 {{ intro('Recenze na PyLadies', description) }}
 
 {{ mentions(topic, 'PyLadies') }}
 
-{{ members_roll(members, members_total_count) }}
+{{ members_roll(members, members_total_count, club_elapsed_months) }}
 
 
 {#
@@ -33,8 +33,8 @@ PyLadies v Česku fungují zhruba od roku 2012 a mají zcela neformální, dobro
 ----------
 
 <p class="button-compartment button-compartment--row">
-  <a class="button button--spaced" href="{{ fix_url('../learn/') }}">Jak začít programovat?</a>
-  <!-- <a class="button button--secondary button--spaced" href="{{ fix_url('../jobs/') }}">Sežeň&nbsp;práci</a> -->
+  <a class="button button--spaced" href="learn/">Jak začít programovat?</a>
+  <!-- <a class="button button--secondary button--spaced" href="jobs/">Sežeň&nbsp;práci</a> -->
 </p>
 
 #}

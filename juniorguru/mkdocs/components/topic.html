@@ -42,21 +42,21 @@
 {% endmacro %}
 
 
-{% macro members_roll(members, members_total_count) %}
+{% macro members_roll(members, members_total_count, club_elapsed_months) %}
 <div class="members">
   <ul class="members__items">
     {% for member in members|sample(20) %}
       <li class="members__item">
-        <img width="51" height="51" class="members__image" src="{{ fix_url('../static/' + member.avatar_path) }}" alt="Profilovka člena {{ member.id }}">
+        <img width="51" height="51" class="members__image" src="{{ ('static/' + member.avatar_path)|url }}" alt="Profilovka člena {{ member.id }}">
       </li>
     {% endfor %}
     <li class="members__item members__item--count">
-      {{ members_total_count }}&nbsp;členů za&nbsp;{{ ((now - club_launch_at).days / 30)|round|int }}&nbsp;měsíce provozu
+      {{ members_total_count }}&nbsp;členů za&nbsp;{{ club_elapsed_months }}&nbsp;měsíce provozu
     </li>
   </ul>
 </div>
 <p class="button-compartment">
-  <a href="{{ fix_url('../club/') }}" class="button">
+  <a href="{{ 'club/'|url }}" class="button">
     Přidej se&nbsp;k&nbsp;nám
   </a>
 </p>
