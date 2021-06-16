@@ -6,6 +6,28 @@
 
 {% block body %}
 <body>
+  <nav class="navbar navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ '/'|url }}">
+        <!--<img src="{{ 'static/images/logo.svg'|url }}" alt="junior.guru" width="124" height="55">-->
+        junior.guru
+      </a>
+      {% if page.meta.nav_tabs %}
+      <ul class="nav nav-pills">
+        {% for tab in page.meta.nav_tabs %}
+        <li class="nav-item">
+          {% if tab.endpoint == page.meta.nav_active %}
+            <a class="nav-link active" aria-current="page" href="{{ (tab.endpoint + '/')|url }}">{{ tab.name }}</a>
+          {% else %}
+          <a class="nav-link" href="{{ (tab.endpoint + '/')|url }}">{{ tab.name }}</a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </nav>
+
   {% block content %}{{ page.content }}{% endblock %}
 </body>
 {% endblock %}

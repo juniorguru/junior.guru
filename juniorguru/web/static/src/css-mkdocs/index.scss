@@ -3,11 +3,7 @@
 
 
 // custom defaults
-@import "../../../../data/vars";
-
-$primary: #1755d1;
-$secondary: #343434;
-$body-color: #343434;
+@import "./defaults";
 
 
 // Bootstrap: remainder of configuration
@@ -49,4 +45,5 @@ $body-color: #343434;
 @import "../../../../../node_modules/bootstrap/scss/offcanvas";
 
 
-// custom components
+// custom overrides
+@import "./overrides";
