@@ -136,7 +136,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - run: make check-links --retry
+      - run: make check-links CHECKOPTS=--retry
 
   check-scrapers:
     executor: python-js

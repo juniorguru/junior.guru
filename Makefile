@@ -23,7 +23,7 @@ screenshots:
 	pipenv run python scripts/screenshots.py
 
 check-links:
-	pipenv run python scripts/check_links.py
+	pipenv run python scripts/check_links.py $(CHECKOPTS)
 
 check-anchors:
 	pipenv run python scripts/check_anchors.py
