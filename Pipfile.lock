@@ -649,25 +649,11 @@
         },
         "mkdocs-macros-plugin": {
             "hashes": [
-                "sha256:def642db46bb42f2d7e532954dba4c5c0574079366927847da16e784b7986a9d",
-                "sha256:e0302836397c787505a7b1666cb41b9f4b34d894f816f040e4d738839e76cc73"
+                "sha256:106aeb1ff3ba580e4884aec225ec6891ed8c93d083056088f8e66f3309fcd579",
+                "sha256:43b7ea0259e2e18a7fe52b73a548c5ea38bb99bc9ab37d026cbdd42e45769c65"
             ],
             "index": "pypi",
-            "version": "==0.5.5"
-        },
-        "mkdocs-material": {
-            "hashes": [
-                "sha256:08eaf9f77c6d026706397bae2c50d202cfe3a81ef984027b671b4acd365dfc5b",
-                "sha256:e555c66ece5eab7023c4733270dc7627280e707e5082dab278d6a7a4881d2435"
-            ],
-            "version": "==7.1.8"
-        },
-        "mkdocs-material-extensions": {
-            "hashes": [
-                "sha256:6947fb7f5e4291e3c61405bad3539d81e0b3cd62ae0d66ced018128af509c68f",
-                "sha256:d90c807a88348aa6d1805657ec5c0b2d8d609c110e62b9dce4daf7fa981fa338"
-            ],
-            "version": "==1.0.1"
+            "version": "==0.5.12"
         },
         "multidict": {
             "hashes": [
@@ -920,20 +906,6 @@
             ],
             "markers": "platform_python_implementation == 'CPython'",
             "version": "==2.0.5"
-        },
-        "pygments": {
-            "hashes": [
-                "sha256:a18f47b506a429f6f4b9df81bb02beab9ca21d0a5fee38ed15aef65f0545519f",
-                "sha256:d66e804411278594d764fc69ec36ec13d9ae9147193a1740cd34d272ca383b8e"
-            ],
-            "version": "==2.9.0"
-        },
-        "pymdown-extensions": {
-            "hashes": [
-                "sha256:141452d8ed61165518f2c923454bf054866b85cf466feedb0eb68f04acdc2560",
-                "sha256:b6daa94aad9e1310f9c64c8b1f01e4ce82937ab7eb53bfc92876a97aca02a6f4"
-            ],
-            "version": "==8.2"
         },
         "pync": {
             "hashes": [
