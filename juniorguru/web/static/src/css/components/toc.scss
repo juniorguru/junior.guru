@@ -10,7 +10,7 @@
 }
 
 .toc__heading {
-  border-bottom: variables.$border-width solid var(--color-yellow-light);
+  border-bottom: variables.$border-width solid variables.$jg-yellow-light;
 }
 
 .toc__items,
@@ -30,7 +30,7 @@
 .toc__item a {
   display: block;
   padding: 0 variables.$whitespace;
-  @include variables.color-links(var(--color-black), var(--color-blue));
+  @include variables.color-links(variables.$jg-black, variables.$jg-blue);
 }
 
 .toc__subitem {
@@ -40,13 +40,13 @@
 
 .toc__link:active,
 .toc__sublink:active {
-  color: var(--color-blue)
+  color: variables.$jg-blue
 }
 
 .toc__item--active .toc__link,
 .toc__subitem--active .toc__sublink {
   text-decoration: none;
-  &, &:hover, &:focus { color: var(--color-blue) };
+  &, &:hover, &:focus { color: variables.$jg-blue };
 }
 
 .toc__item--active .toc__link {
@@ -77,7 +77,7 @@
   .toc__content {
     float: left;
     width: variables.$toc-width - variables.$whitespace;
-    background: rgba(var(--color-white), 0.8);
+    background: rgba(variables.$jg-white, 0.8);
     padding: 0 variables.$whitespace 0 0;
     max-height: calc(100vh - #{variables.$target-offset - variables.$whitespace-0});
     overflow-y: scroll;

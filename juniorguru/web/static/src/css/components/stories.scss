@@ -53,7 +53,7 @@
   &:focus,
   &:active {
     .stories__image {
-      border-color: var(--color-blue);
+      border-color: variables.$jg-blue;
     }
   }
 }

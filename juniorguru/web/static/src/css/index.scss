@@ -1,10 +1,7 @@
-// CSS custom props shared across the 'web' and 'sync' packages
-@use "../../../../data/vars";
-
 // base
-@use "spaghetti/variables"; // legacy spaghetti code ??
+@use "spaghetti/variables"; // legacy spaghetti code
 @use "base/body";
-@use "spaghetti/common"; // legacy spaghetti code ??
+@use "spaghetti/common"; // legacy spaghetti code
 
 // content (not exactly BEM)
 @use "content/checklist";
@@ -40,6 +37,6 @@
 @use "components/toc";
 @use "components/value-explanation";
 
-// page-specific legacy spaghetti code ??
+// page-specific legacy spaghetti code
 @use "spaghetti/page-index";
 @use "spaghetti/page-hire-juniors";

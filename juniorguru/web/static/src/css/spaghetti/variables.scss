@@ -1,5 +1,15 @@
 @use "sass:math";
 
+$jg-white: #fff;
+$jg-yellow: #fffa72;
+$jg-yellow-light: #fffee3;
+$jg-blue: #1755d1;
+$jg-gray: #ababab;
+$jg-gray-light: #eee;
+$jg-dark: #343434;
+$jg-black: #000;
+
+$font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-size: 62.5%; // = 10px, rem base
 
 // See:
@@ -29,7 +39,7 @@ $breakpoint-desktop: 805px;
 $breakpoint-tablet: 700px;
 $breakpoint-larger-phone: 375px;
 
-$dots-black: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23343434' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+$dots-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23343434' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 $dots-blue: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%231755d1' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 
 $whitespace-0: 0.8rem;
@@ -72,7 +82,7 @@ $target-offset-logos: $target-offset + $logos-height;
     content: "";
     display: block;
     box-sizing: border-box;
-    background: var(--color-white);
+    background: $jg-white;
     width: 50%;
     height: 100%;
     position: absolute;
@@ -99,11 +109,11 @@ $target-offset-logos: $target-offset + $logos-height;
 }
 
 @-webkit-keyframes target-animation {
-  0% { text-shadow: rgba(var(--color-black), 0.2) 0 0 0; }
-  100% { text-shadow: rgba(var(--color-black), 0) 0 0 4rem; }
+  0% { text-shadow: rgba($jg-black, 0.2) 0 0 0; }
+  100% { text-shadow: rgba($jg-black, 0) 0 0 4rem; }
 }
 
 @keyframes target-animation {
-  0% { text-shadow: rgba(var(--color-black), 0.2) 0 0 0; }
-  100% { text-shadow: rgba(var(--color-black), 0) 0 0 4rem; }
+  0% { text-shadow: rgba($jg-black, 0.2) 0 0 0; }
+  100% { text-shadow: rgba($jg-black, 0) 0 0 4rem; }
 }

@@ -5,7 +5,7 @@
 }
 
 .logos--bar {
-  background: var(--color-white);
+  background: variables.$jg-white;
   margin-top: 0;
   z-index: 900;
   margin: variables.$whitespace-3 0 (2 * variables.$whitespace-3) 0;

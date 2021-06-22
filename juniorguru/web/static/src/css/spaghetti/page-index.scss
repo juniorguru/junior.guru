@@ -85,10 +85,10 @@ body.body--index {
 }
 
 .billboard-learn {
-  background-color: var(--color-yellow);
+  background-color: variables.$jg-yellow;
   background-image: url('./images/billboard-learn.jpg');
   background-position: right 35% center;
-  color: var(--color-black);
+  color: variables.$jg-black;
 
   @media screen and (min-width: 650px) {
     & {
@@ -103,16 +103,16 @@ body.body--index {
   .billboard-wrapper {
     background-image: linear-gradient(
       to left,
-      rgba(var(--color-yellow-r), var(--color-yellow-g), var(--color-yellow-b), 0.5) 30%,
-      rgba(var(--color-yellow-r), var(--color-yellow-g), var(--color-yellow-b), 0.9) 60%
+      rgba(variables.$jg-yellow, 0.5) 30%,
+      rgba(variables.$jg-yellow, 0.9) 60%
     );
   }
 }
 
 .billboard-jobs {
-  background-color: var(--color-black);
+  background-color: variables.$jg-black;
   background-image: url('./images/billboard-jobs.jpg');
-  color: var(--color-white);
+  color: variables.$jg-white;
 
   @media screen and (min-width: 650px) {
     & {
@@ -127,14 +127,14 @@ body.body--index {
   .billboard-wrapper {
     background-image: linear-gradient(
       to right,
-      rgba(var(--color-black-r), var(--color-black-g), var(--color-black-b), 0.5) 30%,
-      rgba(var(--color-black-r), var(--color-black-g), var(--color-black-b), 0.9) 60%
+      rgba(variables.$jg-dark, 0.5) 30%,
+      rgba(variables.$jg-dark, 0.9) 60%
     );
   }
 
   p a {
-    color: var(--color-yellow);
-    @include variables.color-links(var(--color-white), var(--color-white));
+    color: variables.$jg-yellow;
+    @include variables.color-links(variables.$jg-white, variables.$jg-white);
   }
 }
 
@@ -146,10 +146,10 @@ body.body--index {
     // TODO, THIS PROBABLY DOESNT WORK NOW:
     // background: repeating-linear-gradient(
     //   -45deg,
-    //   var(--color-black),
-    //   var(--color-black) (variables.$whitespace * 2),
-    //   var(--color-yellow) (variables.$whitespace * 2),
-    //   var(--color-yellow) (variables.$whitespace * 4)
+    //   variables.$jg-black,
+    //   variables.$jg-black (variables.$whitespace * 2),
+    //   variables.$jg-yellow (variables.$whitespace * 2),
+    //   variables.$jg-yellow (variables.$whitespace * 4)
     // );
   }
 
@@ -161,19 +161,19 @@ body.body--index {
   }
 
   .billboard-learn & {
-    p { color: var(--color-black); }
-    a { @include variables.color-links(var(--color-black), var(--color-black)); }
+    p { color: variables.$jg-black; }
+    a { @include variables.color-links(variables.$jg-black, variables.$jg-black); }
   }
 
   .billboard-jobs & {
-    p { color: var(--color-white); }
-    a { @include variables.color-links(var(--color-white), var(--color-white)); }
+    p { color: variables.$jg-white; }
+    a { @include variables.color-links(variables.$jg-white, variables.$jg-white); }
   }
 }
 
 .how-it-works {
-  background: var(--color-black);
-  color: var(--color-white);
+  background: variables.$jg-black;
+  color: variables.$jg-white;
   padding: (2 * variables.$whitespace-3) 0;
 
   ol, li {
@@ -224,7 +224,7 @@ body.body--index {
     position: relative;
     padding-left: variables.$whitespace-3 + variables.$whitespace;
     padding-right: variables.$whitespace;
-    color: var(--color-white);
+    color: variables.$jg-white;
   }
 
   /*
@@ -234,8 +234,8 @@ body.body--index {
     top: 0;
     left: 0;
     width: $whitespace-3;
-    background: var(--color-white);
-    color: var(--color-black);
+    background: variables.$jg-white;
+    color: variables.$jg-black;
     text-align: center;
     font-weight: bold;
   }

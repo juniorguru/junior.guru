@@ -25,7 +25,7 @@
 
 .intro__title--massive {
   text-transform: uppercase;
-  border: math.div(variables.$whitespace, 2) solid var(--color-black);
+  border: math.div(variables.$whitespace, 2) solid variables.$jg-black;
   padding: variables.$whitespace;
   line-height: normal;
 }

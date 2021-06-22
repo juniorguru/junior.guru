@@ -1,8 +1,22 @@
+/*
+  JUNIOR.GURU BRAND
+
+  If changing, see tests/test_css_py
+  and https://logo.junior.guru/
+*/
+$jg-white: #fff;
 $jg-yellow: #fffa72;
+$jg-yellow-light: #fffee3;
 $jg-blue: #1755d1;
+$jg-gray: #ababab;
+$jg-gray-light: #eee;
 $jg-dark: #343434;
 $jg-black: #000;
 
+
+/*
+  CHANGING BOOTSTRAP DEFAULTS
+*/
 $primary: $jg-blue;
 $secondary: $jg-dark;
 $body-color: $jg-dark;

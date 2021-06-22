@@ -1,18 +1,26 @@
-// Bootstrap: base configuration
+/*
+  BOOTSTRAP: BASE CONFIGURATION
+*/
 @import "../../../../../node_modules/bootstrap/scss/functions";
 
 
-// custom defaults
+/*
+  CUSTOM DEFAULTS
+*/
 @import "./defaults";
 
 
-// Bootstrap: remainder of configuration
+/*
+  BOOTSTRAP: REMAINDER OF CONFIGURATION
+*/
 @import "../../../../../node_modules/bootstrap/scss/variables";
 @import "../../../../../node_modules/bootstrap/scss/mixins";
 @import "../../../../../node_modules/bootstrap/scss/utilities";
 
 
-// Bootstrap: layout and components
+/*
+  BOOTSTRAP: LAYOUT AND COMPONENTS
+*/
 @import "../../../../../node_modules/bootstrap/scss/root";
 @import "../../../../../node_modules/bootstrap/scss/reboot";
 @import "../../../../../node_modules/bootstrap/scss/type";
@@ -45,5 +53,7 @@
 @import "../../../../../node_modules/bootstrap/scss/offcanvas";
 
 
-// custom overrides
+/*
+  CUSTOM OVERRIDES
+*/
 @import "./overrides";

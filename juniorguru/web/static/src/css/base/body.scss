@@ -1,19 +1,19 @@
 @use "../spaghetti/variables";
 
 html {
-  font-family: var(--font-family);
+  font-family: variables.$font-family;
   font-size: variables.$font-size;
 }
 
 html, body {
-  background: var(--color-black);
+  background: variables.$jg-black;
   scroll-behavior: smooth;
 }
 
 html {
-  color: var(--color-black);
+  color: variables.$jg-black;
 }
 
 .body__container {
-  background: var(--color-white);
+  background: variables.$jg-white;
 }

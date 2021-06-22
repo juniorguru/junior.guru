@@ -21,24 +21,24 @@ $company-logo-size: 8rem;
 }
 
 .jobs__item {
-  border-top: variables.$border-width solid var(--color-yellow-light);
+  border-top: variables.$border-width solid variables.$jg-yellow-light;
 }
 
 .jobs__item:last-child {
-  border-bottom: variables.$border-width solid var(--color-yellow-light);
+  border-bottom: variables.$border-width solid variables.$jg-yellow-light;
 }
 
 .jobs__item:last-child.jobs__item--highlighted {
-  border-color: var(--color-yellow);
+  border-color: variables.$jg-yellow;
 }
 
 .jobs__item--highlighted {
-  background: var(--color-yellow-light);
-  border-color: var(--color-yellow);
+  background: variables.$jg-yellow-light;
+  border-color: variables.$jg-yellow;
 }
 
 .jobs__item--highlighted + .jobs__item {
-  border-color: var(--color-yellow);
+  border-color: variables.$jg-yellow;
 }
 
 .jobs--inline .jobs__item {
@@ -53,10 +53,10 @@ $company-logo-size: 8rem;
 }
 
 .jobs__company-logo {
-  border: variables.$border-width solid var(--color-yellow-light);
+  border: variables.$border-width solid variables.$jg-yellow-light;
   width: $company-logo-size * 0.8;
   height: $company-logo-size * 0.8;
-  background: var(--color-white);
+  background: variables.$jg-white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,7 +68,7 @@ $company-logo-size: 8rem;
 .jobs__link:hover .jobs__company-logo,
 .jobs__link:focus .jobs__company-logo,
 .jobs__link:active .jobs__company-logo {
-  border-color: var(--color-blue);
+  border-color: variables.$jg-blue;
 }
 
 .jobs__company-logo-image {
@@ -107,7 +107,7 @@ $company-logo-size: 8rem;
 
 .jobs__tag {
   @include variables.font-0;
-  border: 1px solid var(--color-yellow-light);
+  border: 1px solid variables.$jg-yellow-light;
   display: inline;
   padding: 0.2rem 0.5rem;
   margin-right: math.div(variables.$whitespace-0, 2);
@@ -115,20 +115,20 @@ $company-logo-size: 8rem;
 }
 
 .jobs__tag--new {
-  color: var(--color-white);
-  background: var(--color-black);
-  border-color: var(--color-black);
+  color: variables.$jg-white;
+  background: variables.$jg-black;
+  border-color: variables.$jg-black;
 }
 
 .jobs__link:hover,
 .jobs__link:focus,
 .jobs__link:active {
   .jobs__tag {
-    border-color: var(--color-blue);
+    border-color: variables.$jg-blue;
   }
 
   .jobs__tag--new {
-    background: var(--color-blue);
+    background: variables.$jg-blue;
   }
 }
 

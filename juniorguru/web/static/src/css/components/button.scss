@@ -9,10 +9,10 @@
   font-weight: 300;
   padding: variables.$whitespace variables.$whitespace-2;
   padding-top: variables.$whitespace - 0.1rem;
-  background: var(--color-black);
+  background: variables.$jg-black;
 
   &, a, a:hover, a:focus, a:active {
-    color: var(--color-white);
+    color: variables.$jg-white;
   }
 }
 
@@ -23,18 +23,18 @@
 a.button,
 .button--link {
   &:hover, &:focus, &:active {
-    background: var(--color-blue);
-    color: var(--color-white);
+    background: variables.$jg-blue;
+    color: variables.$jg-white;
   }
 }
 
 .button--secondary {
   background: transparent;
-  border: 0.2rem var(--color-black) solid;
+  border: 0.2rem variables.$jg-black solid;
   padding: (variables.$whitespace - 0.2rem) (variables.$whitespace-2 - 0.2rem);
 
   &, a, a:hover, a:focus, a:active {
-    color: var(--color-black);
+    color: variables.$jg-black;
   }
 }
 
@@ -42,26 +42,26 @@ a.button--secondary,
 .button-link.button--secondary {
   &:hover, &:focus, &:active {
     background: transparent;
-    color: var(--color-black);
+    color: variables.$jg-black;
     border-width: 0.3rem;
     padding: (variables.$whitespace - 0.3rem) (variables.$whitespace-2 - 0.3rem);
   }
 }
 
 .button--inverted {
-  background: var(--color-white);
+  background: variables.$jg-white;
 
   &, a, a:hover, a:focus, a:active {
-    color: var(--color-black);
+    color: variables.$jg-black;
   }
 }
 
 .button--secondary.button--inverted {
   background: transparent;
-  border-color: var(--color-white);
+  border-color: variables.$jg-white;
 
   &, a, a:hover, a:focus, a:active {
-    color: var(--color-white) !important;  // TODO use mixins etc. instead
+    color: variables.$jg-white !important;  // TODO use mixins etc. instead
   }
 }
 
@@ -79,7 +79,7 @@ a.button--small.button--secondary,
 .button-link.button--small.button--secondary {
   &:hover, &:focus, &:active {
     background: transparent;
-    color: var(--color-black);
+    color: variables.$jg-black;
     border-width: 0.3rem;
     padding: (math.div(variables.$whitespace-0, 2) - 0.3rem) (variables.$whitespace - 0.3rem);
   }

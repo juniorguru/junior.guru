@@ -78,7 +78,7 @@ body.body--hire-juniors {
     }
 
     .candidate-traits {
-      background: var(--color-yellow);
+      background: variables.$jg-yellow;
     }
   }
 
@@ -93,8 +93,8 @@ body.body--hire-juniors {
       small {
         @include variables.font-0;
         white-space: nowrap;
-        background: var(--color-blue);
-        color: var(--color-white);
+        background: variables.$jg-blue;
+        color: variables.$jg-white;
         padding: math.div(variables.$whitespace, 2) variables.$whitespace;
         position: relative;
         bottom: variables.$whitespace;

@@ -4,17 +4,17 @@
 
 .quote {
   background: variables.$dots-blue;
-  color: var(--color-blue);
+  color: variables.$jg-blue;
   margin: variables.$whitespace-3 0;
   padding-left: variables.$whitespace;
   position: relative;
 
   a {
-    @include variables.color-links(var(--color-blue), var(--color-blue));
+    @include variables.color-links(variables.$jg-blue, variables.$jg-blue);
   }
 
   blockquote, figcaption {
-    background: var(--color-white);
+    background: variables.$jg-white;
   }
 
   blockquote {

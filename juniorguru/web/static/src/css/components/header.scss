@@ -9,16 +9,16 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--color-white);
+  background: variables.$jg-white;
   background: linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 1rem);
 }
 
 .header--opaque {
-  background: var(--color-white);
+  background: variables.$jg-white;
 }
 
 .header__main {
-  background: var(--color-yellow);
+  background: variables.$jg-yellow;
 }
 
 .header--subnav .header__main {
@@ -84,25 +84,25 @@
   box-sizing: border-box;
   text-decoration: none;
   padding: math.div(variables.$whitespace-0, 2) variables.$whitespace-0;
-  color: var(--color-black);
+  color: variables.$jg-black;
 
   &:hover, &:focus, &:active {
     text-decoration: underline;
     background: none;
-    color: var(--color-black);
+    color: variables.$jg-black;
   }
 }
 
 a.header__nav-tab-control--button {
-  background: var(--color-black);
-  color: var(--color-white);
+  background: variables.$jg-black;
+  color: variables.$jg-white;
   border-radius: 0.3rem;
   text-decoration: none;
 
   &:hover, &:focus, &:active {
     text-decoration: none;
-    background: var(--color-blue);
-    color: var(--color-white);
+    background: variables.$jg-blue;
+    color: variables.$jg-white;
   }
 }
 
@@ -111,12 +111,12 @@ a.header__nav-tab-control--active.header__nav-tab-control--button {
   &, &:hover, &:focus, &:active {
     text-decoration: underline;
     background: none;
-    color: var(--color-black);
+    color: variables.$jg-black;
   }
 }
 
 .header__subnav {
-  background: variables.$dots-black;
+  background: variables.$dots-dark;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -154,7 +154,7 @@ a.header__nav-tab-control--active.header__nav-tab-control--button {
   display: block;
   box-sizing: border-box;
   margin: variables.$whitespace-0 0;
-  background: var(--color-white);
+  background: variables.$jg-white;
 }
 
 a.header__subnav-tab-control:hover,
@@ -164,18 +164,18 @@ a.header__subnav-tab-control:active,
 a.header__subnav-tab-control--active:hover,
 a.header__subnav-tab-control--active:focus,
 a.header__subnav-tab-control--active:active {
-  color: var(--color-black);
+  color: variables.$jg-black;
   margin: 0;
   margin-top: 0.4rem;
   padding: (variables.$whitespace-0 - 0.4rem) 0 (variables.$whitespace-0 - 0.3rem) 0;
-  border-bottom: 0.3rem var(--color-black) solid;
+  border-bottom: 0.3rem variables.$jg-black solid;
 }
 
 a.header__subnav-tab-control:hover,
 a.header__subnav-tab-control:focus,
 a.header__subnav-tab-control:active {
-  color: var(--color-blue);
-  border-color: var(--color-blue);
+  color: variables.$jg-blue;
+  border-color: variables.$jg-blue;
 }
 
 .header__subnav-tab-number {

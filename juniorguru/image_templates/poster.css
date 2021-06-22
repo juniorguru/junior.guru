@@ -1,8 +1,8 @@
-@import '../data/vars.css';
+@import './variables.css';
 
 
 html, body {
   background: var(--color-yellow);
   font-family: var(--font-family);
-  color: var(--color-black);
+  color: var(--color-dark);
 }

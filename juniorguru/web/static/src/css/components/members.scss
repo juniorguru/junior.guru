@@ -38,6 +38,6 @@
   display: block;
   margin: 0;
   width: variables.$whitespace-3 * 1.5;
-  border: variables.$border-width solid var(--color-white);
+  border: variables.$border-width solid variables.$jg-white;
   border-radius: 100%;
 }

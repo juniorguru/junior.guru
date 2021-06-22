@@ -20,14 +20,14 @@
 .testimonials__label {
   display: block;
   @include variables.font-0;
-  color: var(--color-blue);
+  color: variables.$jg-blue;
   width: variables.$whitespace-2;
   height: variables.$whitespace-2;
   line-height: variables.$whitespace-2;
   text-align: center;
   overflow: hidden;
   border-radius: 100%;
-  border: 2px var(--color-blue) solid;
+  border: 2px variables.$jg-blue solid;
   margin: 0 math.div(variables.$whitespace-0, 2);
   cursor: pointer;
   -webkit-touch-callout: none;
@@ -36,8 +36,8 @@
 }
 
 .testimonials__label--active {
-  background: var(--color-blue);
-  color: var(--color-white);
+  background: variables.$jg-blue;
+  color: variables.$jg-white;
 }
 
 .testimonials__item--inactive {

@@ -23,7 +23,7 @@ $more-height: 45rem;
 }
 
 .more__cover:hover .more__button {
-  background: var(--color-blue);
+  background: variables.$jg-blue;
 }
 
 @media screen and (max-width: variables.$grid-breakpoint) {

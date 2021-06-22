@@ -3,7 +3,7 @@
 @use "variables";
 
 a {
-  @include variables.color-links(var(--color-black), var(--color-blue));
+  @include variables.color-links(variables.$jg-black, variables.$jg-blue);
 }
 
 h4, h3, h2, h1, html, body {
@@ -85,14 +85,14 @@ ul li {
     box-sizing: border-box;
     padding: variables.$whitespace;
     width: 25rem;
-    border: 1px dotted var(--color-gray);
-    color: var(--color-gray);
+    border: 1px dotted variables.$jg-gray;
+    color: variables.$jg-gray;
     line-height: 1.3;
     margin: 0 variables.$whitespace-0 variables.$whitespace variables.$whitespace-0;
   }
 
   li a {
-    @include variables.color-links(var(--color-gray), var(--color-blue));
+    @include variables.color-links(variables.$jg-gray, variables.$jg-blue);
   }
 }
 
@@ -107,45 +107,45 @@ ul li {
 }
 
 .legacy-button {
-  color: var(--color-white);
-  background: var(--color-black);
+  color: variables.$jg-white;
+  background: variables.$jg-black;
 
   &:hover, &:focus, &:active {
-    background: var(--color-blue);
+    background: variables.$jg-blue;
   }
 }
 
 .legacy-button, .legacy-button a {
-  color: var(--color-white);
+  color: variables.$jg-white;
 
   &:hover, &:focus, &:active {
-    color: var(--color-white);
+    color: variables.$jg-white;
   }
 }
 
 .legacy-button.legacy-button-inverted, a.legacy-button.legacy-button-inverted {
-  color: var(--color-black);
-  background: var(--color-yellow);
+  color: variables.$jg-black;
+  background: variables.$jg-yellow;
 }
 
 a.legacy-button.legacy-button-inverted {
   &:hover, &:focus, &:active {
-    color: var(--color-white);
-    background: var(--color-blue);
+    color: variables.$jg-white;
+    background: variables.$jg-blue;
   }
 }
 
 a.legacy-button-secondary {
-  color: var(--color-black);
+  color: variables.$jg-black;
   background: transparent;
   font-weight: 300;
-  border: 0.2rem var(--color-black) solid;
+  border: 0.2rem variables.$jg-black solid;
   padding: (variables.$whitespace - 0.2rem) (variables.$whitespace-2 - 0.2rem);
 }
 
 a.legacy-button-secondary.legacy-button-inverted {
-  color: var(--color-yellow);
-  border-color: var(--color-yellow);
+  color: variables.$jg-yellow;
+  border-color: variables.$jg-yellow;
 }
 
 a.legacy-button-secondary, a.legacy-button-secondary.legacy-button-inverted {
@@ -158,7 +158,7 @@ a.legacy-button-secondary, a.legacy-button-secondary.legacy-button-inverted {
 hr {
   border: none;
   height: 2px;
-  background: variables.$dots-black;
+  background: variables.$dots-dark;
   margin: (2 * variables.$whitespace-3) 0;
 }
 
@@ -234,7 +234,7 @@ ul.list {
 
     h3, p {
       display: inline-block;
-      background: var(--color-white);
+      background: variables.$jg-white;
       margin-left: variables.$whitespace;
       margin-right: variables.$whitespace;
       padding: 0.3rem 0.5rem;
@@ -258,17 +258,17 @@ ul.list {
       display: block;
       text-decoration: none;
       position: relative;
-      background: variables.$dots-black;
+      background: variables.$dots-dark;
     }
 
     a {
-      color: var(--color-black);
+      color: variables.$jg-black;
     }
 
     & > a:hover, & > a:focus, & > a:active,
     &:hover > a, &:focus > a, &:active > a {
       background: none;
-      color: var(--color-blue);
+      color: variables.$jg-blue;
 
       img {
         filter: grayscale(0%);
@@ -276,15 +276,15 @@ ul.list {
       }
 
       ul li small {
-        background: var(--color-blue);
+        background: variables.$jg-blue;
       }
     }
 
     &:hover, &:focus, &:active {
       background: variables.$dots-blue;
-      color: var(--color-blue);
+      color: variables.$jg-blue;
 
-      a { color: var(--color-blue); }
+      a { color: variables.$jg-blue; }
     }
   }
 }
@@ -307,8 +307,8 @@ ul.list {
 
   small {
     display: inline;
-    background: var(--color-black);
-    color: var(--color-white);
+    background: variables.$jg-black;
+    color: variables.$jg-white;
     padding: 0.4rem 1rem 0.5rem 1rem;
   }
 }
@@ -336,10 +336,10 @@ ul.list {
 .list-note {
   margin: variables.$whitespace-2 0;
   text-align: left;
-  color: var(--color-gray);
+  color: variables.$jg-gray;
 
   a {
-    @include variables.color-links(var(--color-gray), var(--color-blue));
+    @include variables.color-links(variables.$jg-gray, variables.$jg-blue);
   }
 }
 
@@ -353,7 +353,7 @@ ul.items {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    border-top: 1px solid var(--color-yellow-light);
+    border-top: 1px solid variables.$jg-yellow-light;
   }
 
   & > li:first-child {
@@ -373,7 +373,7 @@ ul.items {
   }
 
   a.active {
-    color: var(--color-blue);
+    color: variables.$jg-blue;
   }
 
   h3 {
@@ -387,11 +387,11 @@ ul.items {
 }
 
 .item-summary-wrapper {
-  border-left: variables.$whitespace solid var(--color-yellow);
+  border-left: variables.$whitespace solid variables.$jg-yellow;
   padding-left: variables.$whitespace;
 
   a:hover &, a:focus &, a:active &, a.active & {
-    border-color: var(--color-blue);
+    border-color: variables.$jg-blue;
   }
 }
 
@@ -413,7 +413,7 @@ ul.items {
 
   h2 {
     display: inline-block;
-    background-color: var(--color-yellow);
+    background-color: variables.$jg-yellow;
     margin-top: variables.$whitespace-3;
     padding: 0.3rem 0.5rem;
   }
@@ -440,7 +440,7 @@ ul.items {
       cursor: text;
 
       &:hover, &:focus, &:active {
-        background: var(--color-black);
+        background: variables.$jg-black;
       }
     }
 
@@ -471,8 +471,8 @@ ul.items {
 
   h2 strong {
     padding: math.div(variables.$whitespace-0, 4) math.div(variables.$whitespace, 1.5);
-    background: var(--color-yellow);
-    color: var(--color-black);
+    background: variables.$jg-yellow;
+    color: variables.$jg-black;
   }
 
   h2 .no-wrap {
@@ -484,7 +484,7 @@ ul.items {
 
     strong {
       padding: math.div(variables.$whitespace-0, 4) math.div(variables.$whitespace, 1.5);
-      background: var(--color-yellow);
+      background: variables.$jg-yellow;
     }
   }
 }
@@ -503,14 +503,14 @@ ul.items {
 
     .legacy-button {
       display: inline-block;
-      background: var(--color-black);
+      background: variables.$jg-black;
       padding-right: variables.$whitespace-3;
       margin-top: variables.$whitespace-3;
       @include variables.arrow;
       overflow: hidden !important;
 
       &:hover, &:focus, &:active {
-        background: var(--color-blue);
+        background: variables.$jg-blue;
       }
     }
   }
@@ -520,7 +520,7 @@ footer {
   .body__container > & { padding: 0; }
 
   a {
-    @include variables.color-links(var(--color-black), var(--color-blue));
+    @include variables.color-links(variables.$jg-black, variables.$jg-blue);
   }
 
   &, a {
@@ -529,13 +529,13 @@ footer {
 }
 
 .author {
-  background: var(--color-black);
+  background: variables.$jg-black;
   text-align: left;
-  color: var(--color-white);
+  color: variables.$jg-white;
   @include variables.font-0;
 
   p a {
-    @include variables.color-links(var(--color-white), var(--color-white));
+    @include variables.color-links(variables.$jg-white, variables.$jg-white);
   }
 }
 
@@ -667,7 +667,7 @@ a.donate-option {
 
   &:hover, &:focus, &:active {
     .legacy-button {
-      background: var(--color-blue);
+      background: variables.$jg-blue;
     }
 
     .donate-image-patreon {
