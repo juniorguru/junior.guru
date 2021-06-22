@@ -10,12 +10,12 @@ DISCORD_API_KEY = os.getenv('DISCORD_API_KEY') or None
 DISCORD_MUTATIONS_ENABLED = bool(int(os.getenv('DISCORD_MUTATIONS_ENABLED', 0)))
 JUNIORGURU_GUILD = 769966886598737931
 
+EMOJI_PINS = ['📌']
 EMOJI_UPVOTES = ['👍', '❤️', '😍', '🥰', '💕', '♥️', '💖', '💙', '💗', '💜', '💞', '💓', '💛', '🖤', '💚', '😻', '🧡', '👀',
                  '💯', '🤩', '😋', '💟', '🤍', '🤎', '💡', '👆', '👏', '🥇', '🏆', '✔️', 'plus_one', '👌', 'babyyoda',
                  'meowthumbsup', '✅', '🤘', 'this', 'dk', '🙇‍♂️', '🙇', '🙇‍♀️', 'kgsnice', 'successkid', 'white_check_mark',
-                 'notbad']
+                 'notbad'] + EMOJI_PINS
 EMOJI_DOWNVOTES = ['👎']
-EMOJI_PINS = ['📌']
 
 
 class BaseClient(discord.Client):
