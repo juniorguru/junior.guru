@@ -4,7 +4,7 @@ import random
 from datetime import date, datetime
 
 import arrow
-from jinja2 import Markup
+from markupsafe import Markup
 
 from juniorguru.lib.md import md as md_
 

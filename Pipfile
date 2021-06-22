@@ -38,6 +38,7 @@ mkdocs-macros-plugin = "*"
 scikit-learn = "*"
 pandas = "*"
 piexif = "*"
+markupsafe = "*"
 
 [dev-packages]
 pytest = "*"
