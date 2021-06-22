@@ -57,7 +57,8 @@ async def main(client):
         log.info(f"Message {message.url} {'PINNED' if message.is_pinned else 'NOT PINNED'}")
         if not message.is_pinned:
             log.info(f"Pinning {message.url}")
-            discord_message = await client.fetch_channel(message.channel_id).fetch_message(message.id)
+            channel = await client.fetch_channel(message.channel_id)
+            discord_message = await channel.fetch_message(message.id)
             await discord_message.pin(reason=f"The message has {message.pin_reactions_count} pin reactions, minimum is {top_members_limit}")
 
 
