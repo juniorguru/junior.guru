@@ -18,10 +18,9 @@
     "default": {
         "aiofile": {
             "hashes": [
-                "sha256:5e7287a33b498bfa418aac1caa0be7b2ad32ec49680ec22f537335d95002de0a",
-                "sha256:cc9fb394e8c0ad1d2b9014a9b4bdaa3535f098c5881bd3ba220350b198c12727"
+                "sha256:7680bc9ef71cede0c73591d7870a227e6417845da322006e542762165329d1e0"
             ],
-            "version": "==3.5.0"
+            "version": "==3.5.1"
         },
         "aiohttp": {
             "hashes": [
@@ -67,18 +66,18 @@
         },
         "aiopath": {
             "hashes": [
-                "sha256:0e13efd2a4abd25d55fcb1d6db7b3bc691a57126be1b25feab2e06d7453aa53e",
-                "sha256:bfdba4c761719894c1276c499af48109e7acff535778a0cda92c785f079e4526"
+                "sha256:8c4071814563acb98b26f6ce9c526e960164bbb03d7426b4b72eb3eb4744731d",
+                "sha256:9d45cfacb01a0de619c5ff1b69ccbd9d4721fb58ee5a8b7bab163976fef42d1f"
             ],
             "index": "pypi",
-            "version": "==0.5.7"
+            "version": "==0.5.8"
         },
         "anyio": {
             "hashes": [
-                "sha256:43e20711a9d003d858d694c12356dc44ab82c03ccc5290313c3392fa349dad0e",
-                "sha256:5e335cef65fbd1a422bbfbb4722e8e9a9fadbd8c06d5afe9cd614d12023f6e5a"
+                "sha256:41c4be842c284222b197a625d76a7ab85adf9d52788f563172fe180c2744b6c1",
+                "sha256:89e19b1498c8a6f12277e0bd2949597e445aa1b14361fbab2c36943639ef5190"
             ],
-            "version": "==3.1.0"
+            "version": "==3.2.0"
         },
         "arrow": {
             "hashes": [
