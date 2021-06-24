@@ -27,7 +27,7 @@ def find_fill(svg_text):
 
 @pytest.fixture
 def source_of_truth():
-    path = PACKAGE_DIR / 'web' / 'static' / 'src' / 'css-mkdocs' / 'defaults.scss'
+    path = PACKAGE_DIR / 'web' / 'static' / 'src' / 'css-mkdocs' / '_defaults.scss'
     return {match.group(1): match.group(2) for match
             in parse(path.read_text(), SCSS_VARIABLE_RE)
             if match.group(1).startswith('$jg-')}
