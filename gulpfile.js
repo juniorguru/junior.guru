@@ -41,7 +41,13 @@ async function buildJS() {
   });
 }
 
-const buildCSS = gulp.parallel(buildFlaskCSS, buildMkDocsCSS)
+const buildCSS = gulp.parallel(buildFlaskCSS, copyIconFont, buildMkDocsCSS)
+
+function copyIconFont() {
+  return gulp.src('node_modules/bootstrap-icons/font/fonts/*.*')
+    .pipe(rename({ dirname: 'fonts' }))
+    .pipe(gulp.dest('juniorguru/web/static/'))
+}
 
 function buildFlaskCSS() {
   return gulp.src('juniorguru/web/static/src/css/index.scss')
