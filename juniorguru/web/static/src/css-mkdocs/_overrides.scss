@@ -1,0 +1,22 @@
+/*
+  OVERRIDING BOOTSTRAP
+*/
+
+.navbar-light {
+  background-color: $jg-yellow;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active,
+.nav-link.active {
+  text-decoration: underline;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}

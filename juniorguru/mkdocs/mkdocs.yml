@@ -1,6 +1,11 @@
 site_name: junior.guru
 site_url: https://junior.guru/
 
+nav:
+  - Příručka: 'motivation/'
+  - Práce: 'jobs/'
+  - Klub: 'club/'  #'club.md'
+
 theme:
   name: null
   custom_dir: theme/
@@ -9,4 +14,6 @@ plugins:
   - macros:
       include_dir: juniorguru/mkdocs/components/
 
-strict: true
+# Removed 'strict' from mkdocs, because it gives warnings if linking non-existing targets. Once the Flask
+# app is gone, 'strict' should return.
+#strict: true

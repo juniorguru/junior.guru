@@ -1,0 +1,43 @@
+/*
+  EXTENDING BOOTSTRAP
+*/
+
+
+.navbar-container {
+  @extend .container-xxl;
+}
+
+.navbar-buttons {
+  @extend .order-md-last;
+}
+
+.nav-foldable {
+  width: 100vw;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-left: -1 * $container-padding-x;
+  margin-right: -1 * $container-padding-x;
+  position: relative;
+  top: $navbar-padding-y;
+  // box-shadow: inset 0 2rem 2rem -2rem rgba($jg-black, .1);
+  border-top: 1px solid rgba($jg-black, 0.1);
+
+  @include media-breakpoint-up(md) {
+    width: auto;
+    justify-content: left;
+    margin-left: 0;
+    margin-right: auto;
+    position: static;
+    top: 0;
+    // box-shadow: none;
+    border-top: none;
+  }
+}
+
+.main {
+  @extend .container-xxl;
+}
+
+.footer {
+  @extend .container-xxl;
+}

@@ -6,29 +6,41 @@
 
 {% block body %}
 <body>
-  <nav class="navbar navbar-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="{{ '/'|url }}">
-        <!--<img src="{{ 'static/images/logo.svg'|url }}" alt="junior.guru" width="124" height="55">-->
-        junior.guru
+  <header class="navbar navbar-light navbar-foldable">
+    <nav class="navbar-container">
+      <a class="navbar-brand " href="{{ '/'|url }}">
+        <img src="{{ 'static/images/logo.svg'|url }}" alt="junior.guru" width="90" height="40">
       </a>
-      {% if page.meta.nav_tabs %}
-      <ul class="nav nav-pills">
-        {% for tab in page.meta.nav_tabs %}
+      <div class="navbar-buttons">
+        <a class="btn btn-outline-primary" href="{{ 'hire-juniors/'|url }}">Pro&nbsp;firmy</a>
+        {% if page.url not in ['club/', 'club2/'] %}
+          <a class="btn btn-primary" href="{{ 'club2/'|url }}">Přidej&nbsp;se</a>
+        {% endif %}
+      </div>
+      {% if nav %}
+      <ul class="nav nav-foldable">
+        {% for tab in nav %}
         <li class="nav-item">
-          {%- if tab.endpoint == page.meta.nav_active -%}
-            <a class="nav-link active" aria-current="page" href="{{ (tab.endpoint + '/')|url }}">{{ tab.name }}</a>
+          {%- if 'club2' in page.url and 'club' in tab.url -%}
+            <a class="nav-link active" aria-current="page" href="{{ page.url|url }}">{{ tab.title }}</a>
+          {%- elif tab.active -%}
+            <a class="nav-link active" aria-current="page" href="{{ tab.url|url }}">{{ tab.title }}</a>
           {%- else -%}
-            <a class="nav-link" href="{{ (tab.endpoint + '/')|url }}">{{ tab.name }}</a>
+            <a class="nav-link" href="{{ tab.url|url }}">{{ tab.title }}</a>
           {%- endif -%}
         </li>
         {% endfor %}
-        <a class="nav-link active" aria-current="page" href="{{ ('club2/')|url }}">Klub</a>
       </ul>
       {% endif %}
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  {% block content %}{{ page.content }}{% endblock %}
+  <main class="main">
+    {% block content %}{{ page.content }}{% endblock %}
+  </main>
+
+  <footer class="footer">
+
+  </footer>
 </body>
 {% endblock %}

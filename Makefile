@@ -11,7 +11,7 @@ freeze:
 	pipenv run python -m juniorguru.web
 
 mkdocs:
-	pipenv run python -m mkdocs build --config-file=juniorguru/mkdocs/mkdocs.yml --site-dir=../../public/mkdocs --strict
+	pipenv run python -m mkdocs build --config-file=juniorguru/mkdocs/mkdocs.yml --site-dir=../../public/mkdocs
 
 build:
 	npx gulp build

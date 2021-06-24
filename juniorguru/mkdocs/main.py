@@ -3,7 +3,7 @@ import random
 import arrow
 import mkdocs_macros
 
-from juniorguru.web import NAV_TABS, thumbnail
+from juniorguru.web import thumbnail
 from juniorguru.models import db, Topic, ClubUser
 
 
@@ -33,7 +33,6 @@ def on_pre_page_macros(env):
     env.page.meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
     env.page.meta.update(dict(
         now=now,
-        nav_tabs=NAV_TABS,
         thumbnail=thumbnail(),
         handbook_release_at=arrow.get(2020, 9, 1),
         club_launch_at=club_launch_at,
