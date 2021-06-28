@@ -2,6 +2,7 @@
 title: Zkušenosti se Software Development Academy
 template: main_legacy.html
 topic_name: sdacademy
+topic_link_text: SDAcademy
 description: Hledáš někoho, kdo má zkušenosti se Software Development Academy? Vyplatí se jejich kurzy?
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}

@@ -2,6 +2,7 @@
 title: Symfony mentoring
 template: main_legacy.html
 topic_name: symfony
+topic_link_text: Symfony
 description: Učíš se Symfony? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}

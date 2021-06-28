@@ -2,6 +2,7 @@
 title: Mentoring na automatizované testování
 template: main_legacy.html
 topic_name: testing
+topic_link_text: automatizované testování
 description: Učíš se programovat automatizované testy přes Selenium, Cypress, nebo jinou technologii? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}

@@ -39,6 +39,7 @@ scikit-learn = "*"
 pandas = "*"
 piexif = "*"
 markupsafe = "*"
+mkdocs-simple-hooks = "*"
 
 [dev-packages]
 pytest = "*"

@@ -2,6 +2,7 @@
 title: Zkušenosti s ReactGirls
 template: main_legacy.html
 topic_name: reactgirls
+topic_link_text: ReactGirls
 description: Hledáš někoho, kdo má zkušenosti s ReactGirls? Má smysl účastnit se jejich akademie? Vyplatí se jimi nabízený mentoring?
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}

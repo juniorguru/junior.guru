@@ -2,6 +2,7 @@
 title: Flask mentoring
 template: main_legacy.html
 topic_name: flask
+topic_link_text: Flask
 description: Učíš se Flask? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
