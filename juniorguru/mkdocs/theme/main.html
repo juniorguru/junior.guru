@@ -96,8 +96,12 @@
         Tento web má <a href="https://github.com/honzajavorek/junior.guru">otevřený zdrojový kód</a> a obsah je pod <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs">CC licencí</a>. Projekt tvořím jako tzv. „solo entrepreneur“, tedy podnikatel na volné noze, jenž nemá ambice rozjíždět firmu. Své úspěchy a selhání otevřeně popisuji v každotýdenních poznámkách na <a href="https://honzajavorek.cz/blog/">osobním blogu</a>. Živí mě předplatitelé v <a href="{{ 'club2/'|url }}">klubu</a>. Cílem je vydělat si tak akorát, aby se žilo dobře mojí rodině.
       </p>
       <p>
-        <strong>Aktuálně vydělávám 19&nbsp;620&nbsp;Kč čistého měsíčně</strong><br>
-        Zaokrouhleno: 52 % firemní členství, 28 % individuální členství, 19 % dary, 2 % nabídky práce
+        <strong>Můj aktuální čistý zisk je {{ metrics.profit_per_month }}&nbsp;Kč měsíčně</strong><br>
+        Zdroje příjmů:
+        {% for name, value_pct in metrics_inc_breakdown %}
+          {{ value_pct }}&nbsp;% {{ name }}
+          {%- if not loop.last %}, {% endif %}
+        {% endfor %}
       </p>
       <p>
         <a class="btn btn-lg btn-primary" href="{{ 'club2/'|url }}">Podpoř mě členstvím</a>

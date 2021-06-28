@@ -18,6 +18,10 @@ def download(sheet):
     return sheet.get_all_records(default_blank=None)
 
 
+def download_raw(sheet):
+    return sheet.get_all_values()
+
+
 def upload(sheet, records):
     current_rows = sheet.get_all_values()
     if current_rows:

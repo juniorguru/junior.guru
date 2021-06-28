@@ -15,7 +15,7 @@ plugins:
       include_dir: juniorguru/mkdocs/components/
   - mkdocs-simple-hooks:
       hooks:
-        on_page_context: 'juniorguru.mkdocs.hooks:build_nav'
+        on_page_context: 'juniorguru.mkdocs.hooks:on_page_context'
 
 # Removed 'strict' from mkdocs, because it gives warnings if linking non-existing targets. Once the Flask
 # app is gone, 'strict' should return.

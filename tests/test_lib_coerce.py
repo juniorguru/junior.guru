@@ -74,6 +74,25 @@ def test_coerce_int(value, expected):
 
 @pytest.mark.parametrize('value,expected', [
     (None, None),
+    (' 30,458.86 Kč   ', 30458.86),
+    (30458.86, 30458.86),
+])
+def test_coerce_currency(value, expected):
+    assert coerce.parse_currency(value) == expected
+
+
+@pytest.mark.parametrize('value,expected', [
+    (None, None),
+    (' 17.88%   ', 17.88),
+    (' 17.88  %   ', 17.88),
+    (17.88, 17.88),
+])
+def test_coerce_ptc(value, expected):
+    assert coerce.parse_ptc(value) == expected
+
+
+@pytest.mark.parametrize('value,expected', [
+    (None, None),
     ('foo', None),
     ('1', None),
     ('True', None),
