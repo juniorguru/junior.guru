@@ -1,29 +1,18 @@
 from pathlib import Path
-from operator import attrgetter, itemgetter
 
 import jinja2
-import arrow
+
 from mkdocs.utils.filters import tojson
 from mkdocs.utils import normalize_url, get_relative_url
 
-from juniorguru.models import with_db, Metric, Topic, ClubUser
 from juniorguru.lib import template_filters
-from juniorguru.web import thumbnail
-
-
-METRICS_INC_NAMES = {
-    'inc_donations_pct': 'dobrovolné příspěvky',
-    'inc_jobs_pct': 'inzerce nabídek práce',
-    'inc_memberships_pct': 'individuální členství',
-    'inc_partnerships_pct': 'firemní členství',
-}
+from juniorguru.mkdocs import context as context_hooks
 
 
 class MarkdownTemplateError(Exception):
     pass
 
 
-@with_db
 def on_page_markdown(markdown, page, config, files):
     """Renders Markdown as if it was a Jinja2 template.
 
@@ -49,21 +38,9 @@ def on_page_markdown(markdown, page, config, files):
     ))
 
     # setup the md's template context
-    now = arrow.utcnow()
-    club_launch_at = arrow.get(2021, 2, 1)
-    context = dict(now=now,
-                   page=page,
-                   club_elapsed_months=int(round((now - club_launch_at).days / 30)),
-                   members=ClubUser.avatars_listing(),
-                   members_total_count=ClubUser.members_count())
-
-    # TODO @on_meta_key('topic_name')
-    try:
-        topic_name = context['page'].meta['topic_name']
-    except KeyError:
-        pass
-    else:
-        context['topic'] = Topic.get_by_id(topic_name)
+    context = {}
+    context_hooks.on_shared_context(context, page, config)
+    context_hooks.on_markdown_context(context, page, config)
 
     # render md as if it was jinja2
     try:
@@ -81,22 +58,7 @@ def on_env(env, config, files):
     })
 
 
-@with_db
 def on_page_context(context, page, config, nav):
     """Enhances the theme's template context."""
-    context['page'].meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
-
-    context['now'] = arrow.utcnow()
-    context['thumbnail'] = thumbnail()
-    context['nav_topics'] = sorted([
-        file.page for file in context['pages']
-        if file.url.startswith('topics/')
-    ], key=attrgetter('url'))
-
-    metrics = Metric.as_dict()
-    context['metrics'] = metrics
-    context['metrics_inc_breakdown'] = sorted((
-        (METRICS_INC_NAMES[name], value) for name, value
-        in metrics.items()
-        if name.startswith('inc_') and name.endswith('_pct')
-    ), key=itemgetter(1), reverse=True)
+    context_hooks.on_shared_context(context, page, config)
+    context_hooks.on_theme_context(context, page, config)
