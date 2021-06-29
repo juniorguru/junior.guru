@@ -6,7 +6,7 @@ import arrow
 from mkdocs.utils.filters import tojson
 from mkdocs.utils import normalize_url, get_relative_url
 
-from juniorguru.models import Metric, Topic, ClubUser
+from juniorguru.models import with_db, Metric, Topic, ClubUser
 from juniorguru.lib import template_filters
 from juniorguru.web import thumbnail
 
@@ -23,14 +23,13 @@ class MarkdownTemplateError(Exception):
     pass
 
 
+@with_db
 def on_page_markdown(markdown, page, config, files):
     """Renders Markdown as if it was a Jinja2 template.
 
     Inspired by https://github.com/fralau/mkdocs_macros_plugin
     """
     macros_dir = Path(config['docs_dir']).parent / 'macros'
-
-    # mirrors https://github.com/mkdocs/mkdocs/blob/59f7c0f4d21c5cbb0ed29e739533aadbd201b3c3/mkdocs/theme.py#L109
     loader = jinja2.FileSystemLoader(macros_dir)
     env = jinja2.Environment(loader=loader, auto_reload=False)
 
@@ -82,12 +81,13 @@ def on_env(env, config, files):
     })
 
 
+@with_db
 def on_page_context(context, page, config, nav):
     """Enhances the theme's template context."""
-    context['now'] = arrow.utcnow()
     context['page'].meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
-    context['thumbnail'] = thumbnail()
 
+    context['now'] = arrow.utcnow()
+    context['thumbnail'] = thumbnail()
     context['nav_topics'] = sorted([
         file.page for file in context['pages']
         if file.url.startswith('topics/')

@@ -2,6 +2,7 @@ import time
 import json
 from pathlib import Path
 from collections.abc import Set
+from functools import wraps
 
 import scrapy
 from peewee import Model, SqliteDatabase, OperationalError
@@ -63,3 +64,11 @@ def retry_when_db_locked(db, op, stats=None, retries=10, wait_sec=0.1):
     if stats:
         stats.inc_value('database/uncaught_errors')
     raise last_error
+
+
+def with_db(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        with db:
+            return fn(*args, **kwargs)
+    return wrapper
