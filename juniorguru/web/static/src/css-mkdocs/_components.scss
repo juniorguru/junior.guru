@@ -43,12 +43,44 @@
 }
 
 .comparison {
-  table { @extend .table; }
-  th, td { text-align: center; }
-  i { display: block; }
+  table {
+    @extend .table;
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  table th,
+  table td {
+    text-align: center;
+  }
+
+  table th:nth-child(2),
+  table td:nth-child(2) {
+    background: $jg-yellow-light;
+  }
+
+  i {
+    display: block;
+  }
 
   @include media-breakpoint-up(sm) {
-    th, td { text-align: left; }
-    i { display: inline-block; }
+    table th,
+    table td {
+      text-align: left;
+      padding: ($table-cell-padding-y * 2) $table-cell-padding-x;
+    }
+
+    i {
+      display: inline-block;
+      margin-right: .3rem;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    table th,
+    table td {
+      padding: ($table-cell-padding-y * 2) ($table-cell-padding-x * 2);
+    }
   }
 }

@@ -48,8 +48,8 @@ Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně cho
 
 
 <div class="comparison" markdown="1">
-{% set check = 'check-circle'|icon('text-success') %}
-{% set cross = 'x-square'|icon('text-danger') %}
+{% set check = 'check-circle-fill'|icon('text-success') %}
+{% set cross = 'x-square-fill'|icon('text-danger') %}
 
 | Osobní mentor                       | Klub junior.guru                      | Veřejné skupiny                      |
 |-------------------------------------|---------------------------------------|--------------------------------------|
