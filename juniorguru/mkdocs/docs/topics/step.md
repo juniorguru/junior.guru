@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s počítačovou akademií ST
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na STEP', description) }}
+{{ intro('Recenze na STEP IT Academy', description) }}
 
 {{ mentions(topic, 'STEP') }}
 
