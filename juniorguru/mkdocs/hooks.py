@@ -22,27 +22,19 @@ def on_page_markdown(markdown, page, config, files):
     loader = jinja2.FileSystemLoader(macros_dir)
     env = jinja2.Environment(loader=loader, auto_reload=False)
 
-    # prepare the url filter
     def url(value):
         return normalize_url(value, page=page, base=get_relative_url('.', page.url))
 
-    # attach filters and tests
-    env.filters.update(dict(
-        # MkDocs builtin
-        tojson=tojson,
-        url=url,
+    filters_names = config['template_filters']['shared'] + config['template_filters']['markdown']
+    filters = {name: getattr(template_filters, name) for name in filters_names}
+    filters['tojson'] = tojson
+    filters['url'] = url
+    env.filters.update(filters)
 
-        # custom
-        email_link=template_filters.email_link,
-        sample=template_filters.sample,
-    ))
-
-    # setup the md's template context
     context = {}
     context_hooks.on_shared_context(context, page, config)
     context_hooks.on_markdown_context(context, page, config)
 
-    # render md as if it was jinja2
     try:
         template = env.from_string(markdown)
         return template.render(**context)
@@ -51,14 +43,11 @@ def on_page_markdown(markdown, page, config, files):
 
 
 def on_env(env, config, files):
-    """Enhances the theme's Jinja2 environment."""
-    # attach additional filters and tests
-    env.filters.update({
-        'email_link': template_filters.email_link,
-    })
+    filters_names = config['template_filters']['shared'] + config['template_filters']['theme']
+    filters = {name: getattr(template_filters, name) for name in filters_names}
+    env.filters.update(filters)
 
 
 def on_page_context(context, page, config, nav):
-    """Enhances the theme's template context."""
     context_hooks.on_shared_context(context, page, config)
     context_hooks.on_theme_context(context, page, config)
