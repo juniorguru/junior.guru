@@ -39,7 +39,51 @@
 }
 
 .footer {
+  background-color: $jg-dark;
+  color: $jg-white;
+}
+
+.footer-section {
   @extend .container-xxl;
+  padding-top: map-get($spacers, 4);
+  padding-bottom: map-get($spacers, 4);
+
+  a {
+    color: $jg-white;
+  }
+}
+
+.footer-construction-stripe {
+  background-color: $jg-yellow;
+  color: $jg-dark;
+}
+
+.footer-logo {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.footer-topics-wrapper {
+  background-color: lighten($jg-dark, 5%);
+  color: $jg-white;
+
+  p,
+  a {
+    color: darken($jg-white, 30%);
+  }
+}
+
+.footer-topics {
+  padding-top: map-get($spacers, 5);
+  padding-bottom: map-get($spacers, 5);
+}
+
+.address {
+  .row {
+    padding-left: 0;
+    list-style-type: none;
+  }
 }
 
 .comparison {
