@@ -6,6 +6,14 @@ nav:
   - Práce: 'jobs/'
   - Klub: 'club/'  #'club.md'
 
+markdown_extensions:
+  - toc:
+      permalink: '#'
+      permalink_title: 'Odkaz přímo na tuto sekci'
+  - tables
+  - fenced_code
+  - md_in_html
+
 theme:
   name: null
   custom_dir: theme/
@@ -24,6 +32,7 @@ plugins:
 template_filters:
   shared:
       - email_link
+      - icon
   markdown:
       - sample
   theme: []

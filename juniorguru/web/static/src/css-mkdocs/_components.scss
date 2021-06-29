@@ -41,3 +41,14 @@
 .footer {
   @extend .container-xxl;
 }
+
+.comparison {
+  table { @extend .table; }
+  th, td { text-align: center; }
+  i { display: block; }
+
+  @include media-breakpoint-up(sm) {
+    th, td { text-align: left; }
+    i { display: inline-block; }
+  }
+}

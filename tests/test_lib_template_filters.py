@@ -224,3 +224,13 @@ def test_sample_jobs_not_enough_preferred_jobs():
         DummyJob(id=2, is_juniorguru=True),
     }
     assert random_called is True
+
+
+def test_icon():
+    assert str(template_filters.icon('check-square')) == '<i class="bi bi-check-square"></i>'
+
+
+def test_icon_with_classes():
+    markup = str(template_filters.icon('check-square', 'text-success bi'))
+
+    assert markup == '<i class="bi bi-check-square text-success"></i>'

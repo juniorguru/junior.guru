@@ -110,3 +110,14 @@ def sample_jobs(jobs, n=2, sample_fn=None):
     if len(preferred_jobs) >= n:
         jobs = preferred_jobs
     return (sample_fn or random.sample)(jobs, n)
+
+
+def icon(name, classes=None):
+    if classes:
+        classes = set(filter(None, [cls.strip() for cls in classes.split(' ')]))
+    else:
+        classes = set()
+    classes.add('bi')
+    classes.add(f'bi-{name}')
+    class_list = ' '.join(sorted(classes))
+    return Markup(f'<i class="{class_list}"></i>')

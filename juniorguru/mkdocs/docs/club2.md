@@ -10,7 +10,7 @@ Jsme tvoje online parta začátečníků, kteří to myslí vážně, a profesio
 - Přidej se
 - Pro firmy
 
-180 členů za 4 měsíce provozu<br>
+{{ members_total_count }} členů za {{ club_elapsed_months }} měsíců provozu<br>
 Firemní partneři:<br>
 Komunitní partneři:<br>
 
@@ -46,32 +46,22 @@ Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně cho
 
 „Ty diskuse jsou úžasné. Když to lidi zaplatí, tak je to úplně jiné. Extrémně kultivované, srozumitelné, každý příspěvek dává smysl.“ -- Jakub
 
-### Osobní mentor
 
-- Exkluzivní kvalita
-- Drahé
-- Osobní vztah
-- Odborník na plný úvazek
-- Radí odborník
-- Obtížně dostupné
+<div class="comparison" markdown="1">
+{% set check = 'check-circle'|icon('text-success') %}
+{% set cross = 'x-square'|icon('text-danger') %}
 
-### Klub junior.guru
+| Osobní mentor                       | Klub junior.guru                      | Veřejné skupiny                      |
+|-------------------------------------|---------------------------------------|--------------------------------------|
+| {{ check }} exkluzivní kvalita      | {{ check }} dostatečná kvalita        | {{ cross }} kvantita                 |
+| {{ cross }} drahé                   | {{ check }} dostupné                  | {{ check }} zdarma                   |
+| {{ check }} osobní vztah            | {{ check }} komunita                  | {{ cross }} anonymita                |
+| {{ check }} odborník na plný úvazek | {{ check }} správce na plný úvazek    | {{ cross }} správce dobro&shy;volník |
+| {{ check }} radí odborník           | {{ check }} radí angažovaní odborníci | {{ cross }} radí ko&shy;lemjdoucí    |
+| {{ cross }} obtížně dostupné        | {{ check }} dostupné                  | {{ check }} všudy&shy;přítomné       |
 
-- Dostatečná kvalita
-- Dostupné
-- Komunita
-- Správce na plný úvazek
-- Radí angažovaní odborníci
-- Dostupné
+</div>
 
-### Veřejné skupiny
-
-- Kvantita
-- Zdarma
-- Anonymita
-- Správce dobrovolník
-- Radí kolemjdoucí
-- Všudypřítomné
 
 Neztrácej čas čtením rozcházejících se rad od desítek kolemjdoucích, pro které je jejich ego důležitější než tvoje dobro. Neztrácej čas s hulvátskými a sexistickými komentáři.
 
