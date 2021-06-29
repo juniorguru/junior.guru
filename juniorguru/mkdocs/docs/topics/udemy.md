@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s Udemy? Má smysl hlásit se
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na Udemy', description) }}
+{{ intro('Recenze na Udemy', page.meta.description) }}
 
 {{ mentions(topic, 'Udemy') }}
 

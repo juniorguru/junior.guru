@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s Learn2Code? Má smysl hlás
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na Learn2Code', description) }}
+{{ intro('Recenze na Learn2Code', page.meta.description) }}
 
 {{ mentions(topic, 'Learn2Code') }}
 

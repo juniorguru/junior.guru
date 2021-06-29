@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s PyLadies? Jsou jejich mater
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na PyLadies', description) }}
+{{ intro('Recenze na PyLadies', page.meta.description) }}
 
 {{ mentions(topic, 'PyLadies') }}
 

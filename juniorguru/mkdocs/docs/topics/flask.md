@@ -7,7 +7,7 @@ description: Učíš se Flask? Hledáš někoho zkušenějšího, kdo ti poradí
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s Flaskem', description) }}
+{{ intro('Nech si poradit s Flaskem', page.meta.description) }}
 
 {{ mentions(topic, 'Flasku') }}
 

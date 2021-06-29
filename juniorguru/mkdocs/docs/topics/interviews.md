@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s pohovory na IT pozice? Co m
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Jak na pohovory?', description) }}
+{{ intro('Jak na pohovory?', page.meta.description) }}
 
 {{ mentions(topic, 'pohovorech') }}
 

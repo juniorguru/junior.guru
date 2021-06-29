@@ -7,7 +7,7 @@ description: Učíš se C#? Hledáš někoho zkušenějšího, kdo ti poradí, k
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s C#', description) }}
+{{ intro('Nech si poradit s C#', page.meta.description) }}
 
 {{ mentions(topic, 'C#') }}
 

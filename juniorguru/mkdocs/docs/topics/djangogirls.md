@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s Django Girls? Má smysl ú�
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na Django Girls', description) }}
+{{ intro('Recenze na Django Girls', page.meta.description) }}
 
 {{ mentions(topic, 'Django Girls') }}
 

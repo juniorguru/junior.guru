@@ -7,7 +7,7 @@ description: Učíš se Vue.js? Hledáš někoho zkušenějšího, kdo ti porad�
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s Vue.js', description) }}
+{{ intro('Nech si poradit s Vue.js', page.meta.description) }}
 
 {{ mentions(topic, 'Vue.js') }}
 

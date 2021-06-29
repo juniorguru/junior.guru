@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s Czechitas? Má smysl hlási
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na Czechitas', description) }}
+{{ intro('Recenze na Czechitas', page.meta.description) }}
 
 {{ mentions(topic, 'Czechitas') }}
 

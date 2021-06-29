@@ -7,7 +7,7 @@ description: Učíš se Laravel? Hledáš někoho zkušenějšího, kdo ti porad
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s Laravelem', description) }}
+{{ intro('Nech si poradit s Laravelem', page.meta.description) }}
 
 {{ mentions(topic, 'Laravelu') }}
 

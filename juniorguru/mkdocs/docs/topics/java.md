@@ -7,7 +7,7 @@ description: Učíš se Javu? Hledáš někoho zkušenějšího, kdo ti poradí,
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s Javou', description) }}
+{{ intro('Nech si poradit s Javou', page.meta.description) }}
 
 {{ mentions(topic, 'Javě') }}
 

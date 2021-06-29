@@ -7,7 +7,7 @@ description: Učíš se Python? Hledáš někoho zkušenějšího, kdo ti porad�
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s Pythonem', description) }}
+{{ intro('Nech si poradit s Pythonem', page.meta.description) }}
 
 {{ mentions(topic, 'Pythonu') }}
 

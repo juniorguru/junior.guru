@@ -7,7 +7,7 @@ description: Učíš se Nette? Hledáš někoho zkušenějšího, kdo ti poradí
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s Nette', description) }}
+{{ intro('Nech si poradit s Nette', page.meta.description) }}
 
 {{ mentions(topic, 'Nette') }}
 

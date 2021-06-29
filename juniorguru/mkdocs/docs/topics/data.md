@@ -7,7 +7,7 @@ description: Učíš se pracovat s daty pomocí Pandas, SQL, Excelu? Zápasíš 
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit jak na data', description) }}
+{{ intro('Nech si poradit jak na data', page.meta.description) }}
 
 {{ mentions(topic, 'datech') }}
 

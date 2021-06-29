@@ -7,7 +7,7 @@ description: Učíš se React? Hledáš někoho zkušenějšího, kdo ti poradí
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s Reactem', description) }}
+{{ intro('Nech si poradit s Reactem', page.meta.description) }}
 
 {{ mentions(topic, 'Reactu') }}
 

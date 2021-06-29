@@ -7,7 +7,7 @@ description: Učíš se MySQL, SQLite, PostgreSQL? Hledáš někoho zkušenějš
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s SQL', description) }}
+{{ intro('Nech si poradit s SQL', page.meta.description) }}
 
 {{ mentions(topic, 'SQL') }}
 

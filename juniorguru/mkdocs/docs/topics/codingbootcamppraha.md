@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s Coding Bootcamp Praha? Má 
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na Coding Bootcamp Praha', description) }}
+{{ intro('Recenze na Coding Bootcamp Praha', page.meta.description) }}
 
 {{ mentions(topic, 'Coding Bootcampu Praha') }}
 

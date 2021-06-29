@@ -7,7 +7,7 @@ description: Učíš se Django? Hledáš někoho zkušenějšího, kdo ti porad�
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s Djangem', description) }}
+{{ intro('Nech si poradit s Djangem', page.meta.description) }}
 
 {{ mentions(topic, 'Djangu') }}
 

@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s kurzy na ITnetwork? Vyplat�
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na ITnetwork', description) }}
+{{ intro('Recenze na ITnetwork', page.meta.description) }}
 
 {{ mentions(topic, 'ITnetwork') }}
 

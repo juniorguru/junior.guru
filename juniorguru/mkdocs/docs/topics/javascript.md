@@ -7,7 +7,7 @@ description: Učíš se JavaScript? Hledáš někoho zkušenějšího, kdo ti po
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s JavaScriptem', description) }}
+{{ intro('Nech si poradit s JavaScriptem', page.meta.description) }}
 
 {{ mentions(topic, 'JavaScriptu') }}
 

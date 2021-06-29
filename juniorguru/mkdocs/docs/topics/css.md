@@ -7,7 +7,7 @@ description: Učíš se CSS? Hledáš někoho zkušenějšího, kdo ti poradí, 
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s CSS', description) }}
+{{ intro('Nech si poradit s CSS', page.meta.description) }}
 
 {{ mentions(topic, 'CSS') }}
 

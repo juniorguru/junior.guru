@@ -7,7 +7,7 @@ description: Učíš se WordPress? Hledáš někoho zkušenějšího, kdo ti por
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s WordPressem', description) }}
+{{ intro('Nech si poradit s WordPressem', page.meta.description) }}
 
 {{ mentions(topic, 'WordPressu') }}
 

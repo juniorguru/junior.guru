@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti se Software Development Acade
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na SDAcademy', description) }}
+{{ intro('Recenze na SDAcademy', page.meta.description) }}
 
 {{ mentions(topic, 'SDA') }}
 

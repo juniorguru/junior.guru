@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s Engeto Academy? Má smysl h
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na Engeto', description) }}
+{{ intro('Recenze na Engeto', page.meta.description) }}
 
 {{ mentions(topic, 'Engetu') }}
 

@@ -7,7 +7,7 @@ description: Učíš se PHP? Hledáš někoho zkušenějšího, kdo ti poradí, 
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s PHP', description) }}
+{{ intro('Nech si poradit s PHP', page.meta.description) }}
 
 {{ mentions(topic, 'PHP') }}
 

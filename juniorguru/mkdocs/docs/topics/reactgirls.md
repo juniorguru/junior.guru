@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s ReactGirls? Má smysl úča
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na ReactGirls', description) }}
+{{ intro('Recenze na ReactGirls', page.meta.description) }}
 
 {{ mentions(topic, 'ReactGirls') }}
 

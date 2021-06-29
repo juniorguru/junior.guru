@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s rekvalifikačními počíta
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na rekvalifikační kurzy VŠB', description) }}
+{{ intro('Recenze na rekvalifikační kurzy VŠB', page.meta.description) }}
 
 {{ mentions(topic, 'VŠB') }}
 

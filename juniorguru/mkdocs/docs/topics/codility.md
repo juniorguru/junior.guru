@@ -7,7 +7,7 @@ description: Snažíš se najít si práci v IT a chtějí po tobě řešit test
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Jak na Codility test?', description) }}
+{{ intro('Jak na Codility test?', page.meta.description) }}
 
 {{ mentions(topic, 'Codility') }}
 

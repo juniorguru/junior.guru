@@ -7,7 +7,7 @@ description: Učíš se Git? Hledáš někoho zkušenějšího, kdo ti poradí, 
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s Gitem', description) }}
+{{ intro('Nech si poradit s Gitem', page.meta.description) }}
 
 {{ mentions(topic, 'Gitu') }}
 

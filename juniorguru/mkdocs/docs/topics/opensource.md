@@ -7,7 +7,7 @@ description: Nevyznáš se v open source? Hledáš někoho zkušenějšího, kdo
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s open source', description) }}
+{{ intro('Nech si poradit s open source', page.meta.description) }}
 
 {{ mentions(topic, 'open source') }}
 

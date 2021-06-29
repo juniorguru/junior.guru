@@ -7,7 +7,7 @@ description: Učíš se Symfony? Hledáš někoho zkušenějšího, kdo ti porad
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit se Symfony', description) }}
+{{ intro('Nech si poradit se Symfony', page.meta.description) }}
 
 {{ mentions(topic, 'Symfony') }}
 

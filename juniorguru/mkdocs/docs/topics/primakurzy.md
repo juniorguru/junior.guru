@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s PrimaKurzy? Vyplatí se jí
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na PrimaKurzy', description) }}
+{{ intro('Recenze na PrimaKurzy', page.meta.description) }}
 
 {{ mentions(topic, 'PrimaKurzy') }}
 

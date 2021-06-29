@@ -7,7 +7,7 @@ description: Učíš se Linux, příkazovou řádku v terminálu, Bash? Hledáš
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s Linuxem', description) }}
+{{ intro('Nech si poradit s Linuxem', page.meta.description) }}
 
 {{ mentions(topic, 'Linuxu') }}
 

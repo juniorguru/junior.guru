@@ -7,7 +7,7 @@ description: Učíš se objektově orientované programování? Hledáš někoho
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s OOP', description) }}
+{{ intro('Nech si poradit s OOP', page.meta.description) }}
 
 {{ mentions(topic, 'OOP') }}
 

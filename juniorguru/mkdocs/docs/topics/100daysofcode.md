@@ -7,7 +7,7 @@ description: "Chystáš se pracovat na #100daysofcode? Hledáš kamarády, se kt
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Řešit #100daysofcode sám je nuda', description) }}
+{{ intro('Řešit #100daysofcode sám je nuda', page.meta.description) }}
 
 {{ mentions(topic, '#100daysofcode') }}
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs" data-updated-at="{{ page.meta.now.to('Europe/Prague') }}">
+<html lang="cs" data-updated-at="{{ now.to('Europe/Prague') }}">
   <head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
     <meta charset="utf-8">
     <link rel="canonical" href="{{ page.canonical_url }}">
@@ -28,7 +28,7 @@
   {% block body %}
   <body class="body">
     <div class="body__container">
-      <header class="header{% if page.meta.subnav_tabs %} header--subnav{% endif %}{% block header_modifier %}{% endblock %}">
+      <header class="header{% block header_modifier %}{% endblock %}">
         <div class="header__navbar">
           <div class="header__main">
             <div class="header__main-content">
@@ -62,22 +62,6 @@
               {% endif %}
             </div>
           </div>
-          {% if page.meta.subnav_tabs %}
-            <nav class="header__subnav">
-              <ul class="header__subnav-tabs">
-                {%- for tab in page.meta.subnav_tabs -%}
-                  <li class="header__subnav-tab">
-                    <a class="header__subnav-tab-control{% if tab.endpoint == page.meta.subnav_active %} header__subnav-tab-control--active{% endif %}" href="{{ (tab.endpoint + '/')|url }}">
-                      {% if tab.number is defined %}
-                        <span class="header__subnav-tab-number">{{ tab.number }}</span>
-                      {% endif %}
-                      <span class="header__subnav-tab-name">{{ tab.name }}</span>
-                    </a>
-                  </li>
-                {%- endfor -%}
-              </ul>
-            </nav>
-          {% endif %}
           <hr class="header__divider">
         </div>
         {% block header_toc %}{% endblock %}
@@ -107,46 +91,46 @@
               -->
               <!-- TODO THIS IS DUPLICATED ACROSS BOTH BASE.HTML FILES -->
               <span class="editorial__item">Témata, která řešíme v klubu:&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/100daysofcode/'|url }}">#100daysofcode</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/adventofcode/'|url }}">Advent of Code</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/codingbootcamppraha/'|url }}">Coding Bootcamp Praha</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/cs50/'|url }}">CS50</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/css/'|url }}">CSS</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/czechitas/'|url }}">Czechitas</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/codility/'|url }}">Codility</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/data/'|url }}">data</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/django/'|url }}">Django</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/djangogirls/'|url }}">Django Girls</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/docker/'|url }}">Docker</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/engeto/'|url }}">Engeto</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/flask/'|url }}">Flask</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/git/'|url }}">Git</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/github/'|url }}">GitHub</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/greenfox/'|url }}">Green Fox Academy</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/itnetwork/'|url }}">ITnetwork</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/javascript/'|url }}">JavaScript</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/learn2code/'|url }}">Learn2Code</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/laravel/'|url }}">Laravel</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/linux/'|url }}">Linux</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/mentoring/'|url }}">mentoring</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/nette/'|url }}">Nette</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/oop/'|url }}">OOP</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/opensource/'|url }}">Open Source</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/php/'|url }}">PHP</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/interviews/'|url }}">pohovory</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/primakurzy/'|url }}">PrimaKurzy</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/pyladies/'|url }}">PyLadies</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/python/'|url }}">Python</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/react/'|url }}">React</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/reactgirls/'|url }}">ReactGirls</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/sdacademy/'|url }}">SDAcademy</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/sql/'|url }}">SQL</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/symfony/'|url }}">Symfony</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/testing/'|url }}">testování</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/udemy/'|url }}">Udemy</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/vue/'|url }}">Vue.js</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/vsb/'|url }}">VŠB</a>,&nbsp;</span>
-              <span class="editorial__item"><a href="{{ '/topics/wordpress/'|url }}">WordPress</a></span>
+              <span class="editorial__item"><a href="{{ 'topics/100daysofcode/'|url }}">#100daysofcode</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/adventofcode/'|url }}">Advent of Code</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/codingbootcamppraha/'|url }}">Coding Bootcamp Praha</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/cs50/'|url }}">CS50</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/css/'|url }}">CSS</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/czechitas/'|url }}">Czechitas</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/codility/'|url }}">Codility</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/data/'|url }}">data</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/django/'|url }}">Django</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/djangogirls/'|url }}">Django Girls</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/docker/'|url }}">Docker</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/engeto/'|url }}">Engeto</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/flask/'|url }}">Flask</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/git/'|url }}">Git</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/github/'|url }}">GitHub</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/greenfox/'|url }}">Green Fox Academy</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/itnetwork/'|url }}">ITnetwork</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/javascript/'|url }}">JavaScript</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/learn2code/'|url }}">Learn2Code</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/laravel/'|url }}">Laravel</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/linux/'|url }}">Linux</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/mentoring/'|url }}">mentoring</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/nette/'|url }}">Nette</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/oop/'|url }}">OOP</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/opensource/'|url }}">Open Source</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/php/'|url }}">PHP</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/interviews/'|url }}">pohovory</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/primakurzy/'|url }}">PrimaKurzy</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/pyladies/'|url }}">PyLadies</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/python/'|url }}">Python</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/react/'|url }}">React</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/reactgirls/'|url }}">ReactGirls</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/sdacademy/'|url }}">SDAcademy</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/sql/'|url }}">SQL</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/symfony/'|url }}">Symfony</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/testing/'|url }}">testování</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/udemy/'|url }}">Udemy</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/vue/'|url }}">Vue.js</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/vsb/'|url }}">VŠB</a>,&nbsp;</span>
+              <span class="editorial__item"><a href="{{ 'topics/wordpress/'|url }}">WordPress</a></span>
             </p>
           </div>
           {% block author %}{% endblock %}

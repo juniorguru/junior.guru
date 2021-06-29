@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s Unicorn University? Má smy
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na Unicorn University', description) }}
+{{ intro('Recenze na Unicorn University', page.meta.description) }}
 
 {{ mentions(topic, 'Unicornu') }}
 

@@ -7,7 +7,7 @@ description: Hledáš někoho, kdo má zkušenosti s Green Fox Academy? Má smys
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Recenze na Green Fox Academy', description) }}
+{{ intro('Recenze na Green Fox Academy', page.meta.description) }}
 
 {{ mentions(topic, 'Green Foxu') }}
 

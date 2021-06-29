@@ -7,7 +7,7 @@ description: Učíš se Docker? Hledáš někoho zkušenějšího, kdo ti porad�
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s Dockerem', description) }}
+{{ intro('Nech si poradit s Dockerem', page.meta.description) }}
 
 {{ mentions(topic, 'Dockeru') }}
 

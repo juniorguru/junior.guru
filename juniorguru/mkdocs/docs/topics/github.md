@@ -7,7 +7,7 @@ description: Nevyznáš se na GitHubu? Hledáš někoho zkušenějšího, kdo ti
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s GitHubem', description) }}
+{{ intro('Nech si poradit s GitHubem', page.meta.description) }}
 
 {{ mentions(topic, 'GitHubu') }}
 

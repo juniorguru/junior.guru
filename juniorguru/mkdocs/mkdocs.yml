@@ -11,11 +11,10 @@ theme:
   custom_dir: theme/
 
 plugins:
-  - macros:
-      include_dir: juniorguru/mkdocs/components/
   - mkdocs-simple-hooks:
       hooks:
         on_page_context: 'juniorguru.mkdocs.hooks:on_page_context'
+        on_page_markdown: 'juniorguru.mkdocs.hooks:on_page_markdown'
 
 # Removed 'strict' from mkdocs, because it gives warnings if linking non-existing targets. Once the Flask
 # app is gone, 'strict' should return.

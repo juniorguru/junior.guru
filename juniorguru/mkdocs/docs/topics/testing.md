@@ -7,7 +7,7 @@ description: Učíš se programovat automatizované testy přes Selenium, Cypres
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 
-{{ intro('Nech si poradit s testováním', description) }}
+{{ intro('Nech si poradit s testováním', page.meta.description) }}
 
 {{ mentions(topic, 'testování') }}
 
