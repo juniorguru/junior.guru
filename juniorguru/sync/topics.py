@@ -63,6 +63,7 @@ KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value
     r'green ?fox( academy| akademi[ei])?': 'greenfox',
     r'gfa': 'greenfox',
     r'unicorn\w*': 'unicorn',
+    r'(it\s*)?step(\.org)?': 'step',
     r'c(\#|sharp\w*)': 'csharp',
     r'jav(a|ou|ista|istka|isti|istky|e|ě)': 'java',
     # r'kotlin\w+': 'kotlin',
