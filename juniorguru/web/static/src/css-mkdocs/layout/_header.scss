@@ -1,0 +1,49 @@
+.navbar-light {
+  background-color: $jg-yellow;
+}
+
+.navbar-container {
+  @extend .container-xxl;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active,
+.nav-link.active {
+  text-decoration: underline;
+}
+
+.nav-link.active {
+  font-weight: 700;
+}
+
+.navbar-buttons {
+  @extend .order-md-last;
+}
+
+.nav-foldable {
+  position: relative;
+  top: $navbar-padding-y;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: 100vw;
+  margin-right: -1 * $container-padding-x;
+  margin-left: -1 * $container-padding-x;
+  // box-shadow: inset 0 2rem 2rem -2rem rgba($jg-black, .1);
+  border-top: 1px solid rgba($jg-black, .1);
+
+  @include media-breakpoint-up(md) {
+    position: static;
+    top: 0;
+    justify-content: left;
+    width: auto;
+    margin-right: auto;
+    margin-left: 0;
+    // box-shadow: none;
+    border-top: none;
+  }
+}

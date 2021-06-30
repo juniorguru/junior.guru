@@ -1,0 +1,52 @@
+.footer {
+  color: $jg-white;
+  background-color: $jg-dark;
+}
+
+.footer-section {
+  @extend .container-xxl;
+  padding-top: map-get($spacers, 4);
+  padding-bottom: map-get($spacers, 4);
+
+  a {
+    color: $jg-white;
+  }
+}
+
+.footer-construction-wrapper {
+  color: $jg-dark;
+  background-color: $jg-yellow;
+}
+
+.footer-address-list {
+  @extend .row;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.footer-address-item {
+  @extend .col-md-3;
+  @extend .col-sm-6;
+}
+
+.footer-address-logo {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+
+.footer-topics-wrapper {
+  color: $jg-white;
+  background-color: lighten($jg-dark, 5%);
+
+  p,
+  a {
+    color: darken($jg-white, 30%);
+  }
+}
+
+.footer-topics {
+  padding-top: map-get($spacers, 5);
+  padding-bottom: map-get($spacers, 5);
+}

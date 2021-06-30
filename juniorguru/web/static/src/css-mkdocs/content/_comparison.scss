@@ -1,0 +1,42 @@
+.comparison {
+  table {
+    @extend .table;
+    max-width: 60rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  table th,
+  table td {
+    text-align: center;
+  }
+
+  table th:nth-child(2),
+  table td:nth-child(2) {
+    background: $jg-yellow-light;
+  }
+
+  i {
+    display: block;
+  }
+
+  @include media-breakpoint-up(sm) {
+    table th,
+    table td {
+      padding: ($table-cell-padding-y * 2) $table-cell-padding-x;
+      text-align: left;
+    }
+
+    i {
+      display: inline-block;
+      margin-right: .3rem;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    table th,
+    table td {
+      padding: ($table-cell-padding-y * 2) ($table-cell-padding-x * 2);
+    }
+  }
+}

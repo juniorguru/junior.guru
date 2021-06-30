@@ -6,7 +6,7 @@
 
 
 /*
-  CUSTOM DEFAULTS
+  CUSTOM: DEFAULTS
 */
 
 @import "./defaults";
@@ -66,20 +66,22 @@
 
 
 /*
-  BOOTSTRAP ICONS
+  BOOTSTRAP: ICONS
 */
 @import "../../../../../node_modules/bootstrap-icons/font/bootstrap-icons";
 
 
 /*
-  CUSTOM OVERRIDES
+  CUSTOM: LAYOUT
 */
 
-@import "./overrides";
+@import "./layout/header";
+@import "./layout/main";
+@import "./layout/footer";
 
 
 /*
-  CUSTOM COMPONENTS
+  CUSTOM: CONTENT
 */
 
-@import "./components";
+@import "./content/comparison";
