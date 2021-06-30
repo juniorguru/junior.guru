@@ -3,7 +3,7 @@
 @use "variables";
 
 a {
-  @include variables.color-links(variables.$jg-black, variables.$jg-blue);
+  @include variables.color-links(variables.$jg-dark, variables.$jg-blue);
 }
 
 h4, h3, h2, h1, html, body {
@@ -108,7 +108,7 @@ ul li {
 
 .legacy-button {
   color: variables.$jg-white;
-  background: variables.$jg-black;
+  background: variables.$jg-dark;
 
   &:hover, &:focus, &:active {
     background: variables.$jg-blue;
@@ -124,7 +124,7 @@ ul li {
 }
 
 .legacy-button.legacy-button-inverted, a.legacy-button.legacy-button-inverted {
-  color: variables.$jg-black;
+  color: variables.$jg-dark;
   background: variables.$jg-yellow;
 }
 
@@ -136,10 +136,10 @@ a.legacy-button.legacy-button-inverted {
 }
 
 a.legacy-button-secondary {
-  color: variables.$jg-black;
+  color: variables.$jg-dark;
   background: transparent;
   font-weight: 300;
-  border: 0.2rem variables.$jg-black solid;
+  border: 0.2rem variables.$jg-dark solid;
   padding: (variables.$whitespace - 0.2rem) (variables.$whitespace-2 - 0.2rem);
 }
 
@@ -262,7 +262,7 @@ ul.list {
     }
 
     a {
-      color: variables.$jg-black;
+      color: variables.$jg-dark;
     }
 
     & > a:hover, & > a:focus, & > a:active,
@@ -307,7 +307,7 @@ ul.list {
 
   small {
     display: inline;
-    background: variables.$jg-black;
+    background: variables.$jg-dark;
     color: variables.$jg-white;
     padding: 0.4rem 1rem 0.5rem 1rem;
   }
@@ -440,7 +440,7 @@ ul.items {
       cursor: text;
 
       &:hover, &:focus, &:active {
-        background: variables.$jg-black;
+        background: variables.$jg-dark;
       }
     }
 
@@ -472,7 +472,7 @@ ul.items {
   h2 strong {
     padding: math.div(variables.$whitespace-0, 4) math.div(variables.$whitespace, 1.5);
     background: variables.$jg-yellow;
-    color: variables.$jg-black;
+    color: variables.$jg-dark;
   }
 
   h2 .no-wrap {
@@ -503,7 +503,7 @@ ul.items {
 
     .legacy-button {
       display: inline-block;
-      background: variables.$jg-black;
+      background: variables.$jg-dark;
       padding-right: variables.$whitespace-3;
       margin-top: variables.$whitespace-3;
       @include variables.arrow;
@@ -520,7 +520,7 @@ footer {
   .body__container > & { padding: 0; }
 
   a {
-    @include variables.color-links(variables.$jg-black, variables.$jg-blue);
+    @include variables.color-links(variables.$jg-dark, variables.$jg-blue);
   }
 
   &, a {
@@ -529,7 +529,7 @@ footer {
 }
 
 .author {
-  background: variables.$jg-black;
+  background: variables.$jg-dark;
   text-align: left;
   color: variables.$jg-white;
   @include variables.font-0;

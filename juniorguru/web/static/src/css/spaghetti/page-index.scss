@@ -88,7 +88,7 @@ body.body--index {
   background-color: variables.$jg-yellow;
   background-image: url('./images/billboard-learn.jpg');
   background-position: right 35% center;
-  color: variables.$jg-black;
+  color: variables.$jg-dark;
 
   @media screen and (min-width: 650px) {
     & {
@@ -110,7 +110,7 @@ body.body--index {
 }
 
 .billboard-jobs {
-  background-color: variables.$jg-black;
+  background-color: variables.$jg-dark;
   background-image: url('./images/billboard-jobs.jpg');
   color: variables.$jg-white;
 
@@ -146,8 +146,8 @@ body.body--index {
     // TODO, THIS PROBABLY DOESNT WORK NOW:
     // background: repeating-linear-gradient(
     //   -45deg,
-    //   variables.$jg-black,
-    //   variables.$jg-black (variables.$whitespace * 2),
+    //   variables.$jg-dark,
+    //   variables.$jg-dark (variables.$whitespace * 2),
     //   variables.$jg-yellow (variables.$whitespace * 2),
     //   variables.$jg-yellow (variables.$whitespace * 4)
     // );
@@ -161,8 +161,8 @@ body.body--index {
   }
 
   .billboard-learn & {
-    p { color: variables.$jg-black; }
-    a { @include variables.color-links(variables.$jg-black, variables.$jg-black); }
+    p { color: variables.$jg-dark; }
+    a { @include variables.color-links(variables.$jg-dark, variables.$jg-dark); }
   }
 
   .billboard-jobs & {
@@ -172,7 +172,7 @@ body.body--index {
 }
 
 .how-it-works {
-  background: variables.$jg-black;
+  background: variables.$jg-dark;
   color: variables.$jg-white;
   padding: (2 * variables.$whitespace-3) 0;
 
@@ -235,7 +235,7 @@ body.body--index {
     left: 0;
     width: $whitespace-3;
     background: variables.$jg-white;
-    color: variables.$jg-black;
+    color: variables.$jg-dark;
     text-align: center;
     font-weight: bold;
   }

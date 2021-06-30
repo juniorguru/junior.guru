@@ -109,11 +109,11 @@ $target-offset-logos: $target-offset + $logos-height;
 }
 
 @-webkit-keyframes target-animation {
-  0% { text-shadow: rgba($jg-black, 0.2) 0 0 0; }
-  100% { text-shadow: rgba($jg-black, 0) 0 0 4rem; }
+  0% { text-shadow: rgba($jg-dark, 0.2) 0 0 0; }
+  100% { text-shadow: rgba($jg-dark, 0) 0 0 4rem; }
 }
 
 @keyframes target-animation {
-  0% { text-shadow: rgba($jg-black, 0.2) 0 0 0; }
-  100% { text-shadow: rgba($jg-black, 0) 0 0 4rem; }
+  0% { text-shadow: rgba($jg-dark, 0.2) 0 0 0; }
+  100% { text-shadow: rgba($jg-dark, 0) 0 0 4rem; }
 }
