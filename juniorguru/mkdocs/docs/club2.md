@@ -5,7 +5,7 @@ description: Přidej se na junior.guru Discord! Jsme tvoje online parta začáte
 
 # Klub tě nastartuje
 
-Jsme tvoje online parta začátečníků, kteří to myslí vážně, a profesionálů s chutí pomáhat. V klubu svoje programování nebo hledání práce posuneš o 1 % každý den.
+Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážně, a profesionálové s chutí pomáhat. V klubu svoje programování nebo hledání práce posuneš o 1 % každý den.
 
 - Přidej se
 - Pro firmy
