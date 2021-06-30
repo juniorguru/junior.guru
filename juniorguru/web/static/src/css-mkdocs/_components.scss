@@ -58,10 +58,21 @@
   background-color: $jg-yellow;
 }
 
-.footer-logo {
+.footer-address-logo {
   width: 100%;
   max-width: 200px;
   height: auto;
+}
+
+.footer-address-list {
+  @extend .row;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.footer-address-item {
+  @extend .col-md-3;
+  @extend .col-sm-6;
 }
 
 .footer-topics-wrapper {
@@ -77,13 +88,6 @@
 .footer-topics {
   padding-top: map-get($spacers, 5);
   padding-bottom: map-get($spacers, 5);
-}
-
-.address {
-  .row {
-    padding-left: 0;
-    list-style-type: none;
-  }
 }
 
 .comparison {
