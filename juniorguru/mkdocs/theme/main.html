@@ -45,66 +45,66 @@
 
   <footer class="footer">
     <div class="footer-construction-wrapper">
-      <section class="footer-section footer-construction">
+      <div class="footer-section footer-construction">
         <i class="bi bi-exclamation-triangle-fill"></i>
         <strong>Rekonstrukce:</strong>
         Celé junior.guru by jednou mělo mít nový vzhled podobný této stránce. Zatím to tak ale není, změny probíhají postupně a část webu má stále ještě starý design. Odpusť prosím zhoršenou orientaci, než bude vše hotovo.
-      </section>
+      </div>
     </div>
-    <section class="footer-section footer-address">
-      <h2 class="visually-hidden">Kontakt</h2>
-      <address class="container">
+    <div class="footer-address-wrapper">
+      <address class="footer-section footer-address">
+        <h3 class="visually-hidden">Kontakt</h3>
         <ul class="footer-address-list">
           <li class="footer-address-item">
             <img class="footer-address-logo" src="{{ 'static/images/logo-i.svg'|url }}" alt="Logo junior.guru" width="90" height="40">
           </li>
           <li class="footer-address-item">
-            <h3>Junior Guru</h3>
+            <h4>Junior Guru</h4>
             stylizovaně „junior.guru“<br>
-            <a href="https://logo.junior.guru/">logo a barvy</a>
+            <a href="https://logo.junior.guru/" target="_blank" rel="noopener">logo a barvy</a>
           </li>
           <li class="footer-address-item">
-            <h3>Jan Javorek</h3>
+            <h4>Jan Javorek</h4>
             OSVČ, neplátce DPH<br>
-            IČO: <a href="http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0">74279858</a><br>
+            IČO: <a href="http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0" target="_blank" rel="noopener">74279858</a><br>
             Lupáčova 375/24<br>
             130 00 Praha
           </li>
-          <li class="footer-address-item">
-            <h3>{{ 'ahoj@junior.guru'|email_link }}</h3>
-            <ul>
-              <li>
-                <a href="https://www.linkedin.com/company/juniorguru/">
+          <li class="footer-address-item footer-links">
+            <h4 class="footer-links-email">{{ 'ahoj@junior.guru'|email_link }}</h4>
+            <ul class="footer-links-icons footer-icons-list">
+              <li class="footer-icons-item">
+                <a href="https://www.linkedin.com/company/juniorguru/" target="_blank" rel="noopener">
                   <i class="bi bi-linkedin" role="img" aria-label="LinkedIn"></i>
                 </a>
               </li>
-              <li>
-                <a href="https://www.instagram.com/juniordotguru/">
+              <li class="footer-icons-item">
+                <a href="https://www.instagram.com/juniordotguru/" target="_blank" rel="noopener">
                   <i class="bi bi-instagram" role="img" aria-label="Instagram"></i>
                 </a>
               </li>
-              <li>
-                <a href="https://facebook.com/juniordotguru">
+              <li class="footer-icons-item">
+                <a href="https://facebook.com/juniordotguru" target="_blank" rel="noopener">
                   <i class="bi bi-facebook" role="img" aria-label="Facebook"></i>
                 </a>
               </li>
-              <li>
-                <a href="https://twitter.com/honzajavorek/">
+              <li class="footer-icons-item">
+                <a href="https://twitter.com/honzajavorek/" target="_blank" rel="noopener">
                   <i class="bi bi-twitter" role="img" aria-label="Twitter"></i>
                 </a>
               </li>
-              <li>
+              <li class="footer-icons-item">
                 <a href="{{ 'club2/'|url }}">
                   <i class="bi bi-discord" role="img" aria-label="Discord"></i>
                 </a>
               </li>
-              <li>
-                <a href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">
+              <li class="footer-icons-item">
+                <a href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA" target="_blank" rel="noopener">
                   <i class="bi bi-youtube" role="img" aria-label="YouTube"></i>
                 </a>
               </li>
-              <li>
-                <a href="https://github.com/honzajavorek/junior.guru">
+              <li class="footer-icons-item">
+                <a href="https://github.com/honzajavorek/junior.guru" target="_blank" rel="noopener">
                   <i class="bi bi-github" role="img" aria-label="GitHub"></i>
                 </a>
               </li>
@@ -112,8 +112,8 @@
           </li>
         </ul>
       </address>
-    </section>
-    <section class="footer-section footer-about">
+    </div>
+    <div class="footer-section footer-about">
       <h3>Kdo to provozuje? Na čem vydělává?</h3>
       <img src="{{ 'static/images/honza.jpg'|url }}" alt="Foto Honzy Javorka" width="100" height="100">
       <p>
@@ -137,7 +137,7 @@
         <a class="btn btn-lg btn-primary" href="{{ 'club2/'|url }}">Podpoř mě členstvím</a>
         <a class="btn btn-lg btn-outline-light" href="{{ 'hire-juniors/'|url }}">Pro firmy</a>
       </p>
-    </section>
+    </div>
     <div class="footer-topics-wrapper">
       <nav class="footer-section footer-topics">
         <h3>Témata, která řešíme v klubu</h3>
@@ -152,10 +152,18 @@
     <nav class="footer-section footer-rules">
       <h3 class="visually-hidden">Pravidla</h3>
       <ul class="footer-rules-list">
-        <li class="footer-rules-item"><a href="{{ 'privacy/'|url }}">Ochrana osobních údajů</a></li>
-        <li class="footer-rules-item"><a href="{{ 'coc/'|url }}">Pravidla chování</a></li>
-        <li class="footer-rules-item"><a href="{{ 'tos/'|url }}">Obchodní podmínky</a></li>
-        <li class="footer-rules-item"><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs">Licence obsahu (CC BY-SA)</a></li>
+        <li class="footer-rules-item">
+          <a href="{{ 'privacy/'|url }}">Ochrana osobních údajů</a>
+        </li>
+        <li class="footer-rules-item">
+          <a href="{{ 'coc/'|url }}">Pravidla chování</a>
+        </li>
+        <li class="footer-rules-item">
+          <a href="{{ 'tos/'|url }}">Obchodní podmínky</a>
+        </li>
+        <li class="footer-rules-item">
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">Licence obsahu (CC BY-SA)</a>
+        </li>
       </ul>
     </nav>
   </footer>
