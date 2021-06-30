@@ -1,22 +1,32 @@
 .footer {
   color: $jg-white;
   background-color: $jg-dark;
-}
-
-.footer-section {
-  @extend .container-xxl;
-  padding-top: map-get($spacers, 4);
-  padding-bottom: map-get($spacers, 4);
 
   a {
     color: $jg-white;
   }
 }
 
+.footer-section {
+  @extend .container-xxl;
+  padding-top: map-get($spacers, 4);
+  padding-bottom: map-get($spacers, 4);
+}
+
+
+/*
+  FOOTER: CONSTRUCTION
+*/
+
 .footer-construction-wrapper {
   color: $jg-dark;
   background-color: $jg-yellow;
 }
+
+
+/*
+  FOOTER: ADDRESS
+*/
 
 .footer-address-list {
   @extend .row;
@@ -36,6 +46,10 @@
 }
 
 
+/*
+  FOOTER: TOPICS
+*/
+
 .footer-topics-wrapper {
   color: $jg-white;
   background-color: lighten($jg-dark, 5%);
@@ -49,4 +63,28 @@
 .footer-topics {
   padding-top: map-get($spacers, 5);
   padding-bottom: map-get($spacers, 5);
+}
+
+
+/*
+  FOOTER: RULES
+*/
+
+.footer-rules-wrapper {
+
+}
+
+.footer-rules-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-rules-item {
+  padding-right: map-get($spacers, 2);
+  padding-left: map-get($spacers, 2);
+  white-space: nowrap;
 }

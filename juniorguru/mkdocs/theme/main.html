@@ -149,15 +149,17 @@
         </p>
       </nav>
     </div>
-    <nav class="footer-section footer-rules">
-      <h3 class="visually-hidden">Pravidla</h3>
-      <ul class="footer-rules-list">
-        <li class="footer-rules-item"><a href="{{ 'privacy/'|url }}">Ochrana osobních údajů</a></li>
-        <li class="footer-rules-item"><a href="{{ 'coc/'|url }}">Pravidla chování</a></li>
-        <li class="footer-rules-item"><a href="{{ 'tos/'|url }}">Obchodní podmínky</a></li>
-        <li class="footer-rules-item"><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs">Licence obsahu (CC BY-SA)</a></li>
-      </ul>
-    </nav>
+    <div class="footer-rules-wrapper">
+      <nav class="footer-section footer-rules">
+        <h3 class="visually-hidden">Pravidla</h3>
+        <ul class="footer-rules-list">
+          <li class="footer-rules-item"><a href="{{ 'privacy/'|url }}">Ochrana osobních údajů</a></li>
+          <li class="footer-rules-item"><a href="{{ 'coc/'|url }}">Pravidla chování</a></li>
+          <li class="footer-rules-item"><a href="{{ 'tos/'|url }}">Obchodní podmínky</a></li>
+          <li class="footer-rules-item"><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs">Licence obsahu (CC BY-SA)</a></li>
+        </ul>
+      </nav>
+    </div>
   </footer>
 </body>
 {% endblock %}
