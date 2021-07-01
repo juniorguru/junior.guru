@@ -1,0 +1,31 @@
+.blockquote-figure {
+  padding: map-get($spacers, 1) map-get($spacers, 3);
+  border: 1px solid $jg-gray-light;
+  border-left: (map-get($border-widths, 5) * 1.5) solid $jg-blue;
+  border-radius: $border-radius;
+}
+
+.blockquote {
+  color: $jg-blue;
+}
+
+.blockquote p:first-child::before {
+  content: "„";
+}
+
+.blockquote p:first-child::after {
+  content: "“";
+}
+
+.blockquote-footer {
+  margin-bottom: 0;
+}
+
+.blockquotes-2 {
+  @extend .row;
+}
+
+
+.blockquotes-2 .blockquote-wrapper {
+  @extend .col-md-6;
+}

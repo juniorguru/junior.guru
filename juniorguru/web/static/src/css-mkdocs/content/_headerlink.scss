@@ -1,0 +1,7 @@
+.visually-hidden-headerlinks .headerlink {
+  @extend .visually-hidden;
+}
+
+h1 .headerlink {
+  @extend .visually-hidden;
+}

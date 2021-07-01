@@ -2,6 +2,7 @@
 title: Klub tě nastartuje
 description: Přidej se na junior.guru Discord! Jsme tvoje online parta začátečníků, kteří to myslí vážně, a profesionálů s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
+{% from 'content.html' import blockquote %}
 
 # Klub tě nastartuje
 
@@ -16,9 +17,11 @@ Komunitní partneři:<br>
 
 ## Co je klub?
 
-„Jemně popostrkující a nějakou činnost vyvolávající a podněcující síla, kterou jsem potřebovala. Nacpat se sem byl moc dobrej napád.“ -- Radka
+<div class="blockquotes-2" markdown="1">
+{{ blockquote('Jemně popostrkující a nějakou činnost vyvolávající a podněcující síla, kterou jsem potřebovala. Nacpat se sem byl moc dobrej napád.', 'Radka') }}
 
-„Jako kluka z vesnice mě na programování vždy štvalo, že jsem na to byl hrozně moc sám. Jsem opravdu vděčný za tuto komunitu.“ -- Lukáš
+{{ blockquote('Jako kluka z vesnice mě na programování vždy štvalo, že jsem na to byl hrozně moc sám. Jsem opravdu vděčný za tuto komunitu.', 'Lukáš') }}
+</div>
 
 Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně chodíš a kde najdeš podporu, nápady, kamarády, tipy na složitější akordy a kde možná potkáš někoho, s kým založíš kapelu. Nejsme kurz, jsme online komunita. Kroužek. Discord. Skaut pro programátory. Ženeme tě vpřed, ale zároveň u nás najdeš rady a podporu, když ti něco nejde.
 
@@ -42,10 +45,11 @@ Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně cho
 
 ## Proč platit?
 
-„Je dost problém najít komunitu, která je fakt o nějaký vzájemný pomoci a výměně informací, než o honění ega. Tady je to krásná výjimka. Jsem fakt ráda, že toho můžu být součástí.“ -- Hanka
+<div class="blockquotes-2" markdown="1">
+{{ blockquote('Je problém najít komunitu, která je fakt o nějaký vzájemný pomoci a výměně informací, ne o honění ega. Tady je to krásná výjimka. Jsem fakt ráda, že toho můžu být součástí.', 'Hanka') }}
 
-„Ty diskuse jsou úžasné. Když to lidi zaplatí, tak je to úplně jiné. Extrémně kultivované, srozumitelné, každý příspěvek dává smysl.“ -- Jakub
-
+{{ blockquote('Ty diskuse jsou úžasné. Když to lidi zaplatí, tak je to úplně jiné. Extrémně kultivované, srozumitelné, každý příspěvek dává smysl.', 'Jakub') }}
+</div>
 
 <div class="comparison" markdown="1">
 {% set check = 'check-circle-fill'|icon('text-success') %}
@@ -59,9 +63,7 @@ Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně cho
 | {{ check }} odborník na plný úvazek | {{ check }} správce na plný úvazek    | {{ cross }} správce dobro&shy;volník |
 | {{ check }} radí odborník           | {{ check }} radí angažovaní odborníci | {{ cross }} radí ko&shy;lemjdoucí    |
 | {{ cross }} obtížně dostupné        | {{ check }} dostupné                  | {{ check }} všudy&shy;přítomné       |
-
 </div>
-
 
 Neztrácej čas čtením rozcházejících se rad od desítek kolemjdoucích, pro které je jejich ego důležitější než tvoje dobro. Neztrácej čas s hulvátskými a sexistickými komentáři.
 

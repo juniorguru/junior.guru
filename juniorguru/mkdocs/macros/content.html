@@ -1,0 +1,16 @@
+{% macro blockquote(quote, caption) %}
+  <div class="blockquote-wrapper">
+    <figure class="blockquote-figure">
+      <blockquote class="blockquote">
+        <p>{{ quote }}</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        {% if caption %}
+          {{ caption }}
+        {% else %}
+          {{ caller() }}
+        {% endif %}
+      </figcaption>
+    </figure>
+  </div>
+{% endmacro %}
