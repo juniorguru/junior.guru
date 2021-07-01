@@ -1,12 +1,22 @@
-.blockquote-figure {
+.blockquote-container {
+  margin-top: map-get($spacers, 3);
+  margin-bottom: map-get($spacers, 3);
+}
+
+.blockquote-content {
   padding: map-get($spacers, 1) map-get($spacers, 3);
-  border: 1px solid $jg-gray-light;
   border-left: (map-get($border-widths, 5) * 1.5) solid $jg-blue;
   border-radius: $border-radius;
 }
 
 .blockquote {
+  @extend .font-monospace;
+  font-size: map-get($font-sizes, 6);
   color: $jg-blue;
+
+  @include media-breakpoint-up(md) {
+    font-size: map-get($font-sizes, 5);
+  }
 }
 
 .blockquote p:first-child::before {
@@ -21,11 +31,28 @@
   margin-bottom: 0;
 }
 
+.blockquote-avatar {
+  display: block;
+  float: left;
+  width: map-get($spacers, 5);
+  height: auto;
+  filter: grayscale(1) contrast(1.3);
+  border-radius: 100%;
+}
+
+.blockquote-container.avatar .blockquote,
+.blockquote-container.avatar .blockquote-footer {
+  padding-left: map-get($spacers, 5) + map-get($spacers, 3);
+}
+
 .blockquotes-2 {
   @extend .row;
 }
 
-
-.blockquotes-2 .blockquote-wrapper {
+.blockquotes-2 .blockquote-container {
   @extend .col-md-6;
+}
+
+.blockquotes-2 .blockquote {
+  font-size: map-get($font-sizes, 6);
 }

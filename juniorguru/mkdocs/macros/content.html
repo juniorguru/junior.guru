@@ -1,6 +1,25 @@
 {% macro blockquote(quote, caption) %}
-  <div class="blockquote-wrapper">
-    <figure class="blockquote-figure">
+  <div class="blockquote-container">
+    <figure class="blockquote-content">
+      <blockquote class="blockquote">
+        <p>{{ quote }}</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        {% if caption %}
+          {{ caption }}
+        {% else %}
+          {{ caller() }}
+        {% endif %}
+      </figcaption>
+    </figure>
+  </div>
+{% endmacro %}
+
+
+{% macro blockquote_avatar(quote, avatar_filename, avatar_alt, caption) %}
+  <div class="blockquote-container avatar">
+    <figure class="blockquote-content">
+      <img width="50" height="50" class="blockquote-avatar" src="{{ ('static/images/avatars_quotes/' + avatar_filename)|url }}" alt="{{ avatar_alt }}">
       <blockquote class="blockquote">
         <p>{{ quote }}</p>
       </blockquote>

@@ -1,4 +1,6 @@
 .comparison {
+  margin-bottom: map-get($spacers, 5);
+
   table {
     @extend .table;
     max-width: 60rem;

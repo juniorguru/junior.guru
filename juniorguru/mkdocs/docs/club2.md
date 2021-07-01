@@ -2,7 +2,7 @@
 title: Klub tě nastartuje
 description: Přidej se na junior.guru Discord! Jsme tvoje online parta začátečníků, kteří to myslí vážně, a profesionálů s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
-{% from 'content.html' import blockquote %}
+{% from 'content.html' import blockquote_avatar %}
 
 # Klub tě nastartuje
 
@@ -17,10 +17,10 @@ Komunitní partneři:<br>
 
 ## Co je klub?
 
-<div class="blockquotes-2" markdown="1">
-{{ blockquote('Jemně popostrkující a nějakou činnost vyvolávající a podněcující síla, kterou jsem potřebovala. Nacpat se sem byl moc dobrej napád.', 'Radka') }}
+<div class="blockquotes-2">
+{{ blockquote_avatar('Jemně popostrkující a nějakou činnost vyvolávající a podněcující síla, kterou jsem potřebovala. Nacpat se sem byl moc dobrej napád.', 'radka.png', 'Radka', 'Radka') }}
 
-{{ blockquote('Jako kluka z vesnice mě na programování vždy štvalo, že jsem na to byl hrozně moc sám. Jsem opravdu vděčný za tuto komunitu.', 'Lukáš') }}
+{{ blockquote_avatar('Jako kluka z vesnice mě na programování vždy štvalo, že jsem na to byl hrozně moc sám. Jsem opravdu vděčný za tuto komunitu.', 'lukas.png', 'Lukáš', 'Lukáš') }}
 </div>
 
 Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně chodíš a kde najdeš podporu, nápady, kamarády, tipy na složitější akordy a kde možná potkáš někoho, s kým založíš kapelu. Nejsme kurz, jsme online komunita. Kroužek. Discord. Skaut pro programátory. Ženeme tě vpřed, ale zároveň u nás najdeš rady a podporu, když ti něco nejde.
@@ -45,10 +45,10 @@ Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně cho
 
 ## Proč platit?
 
-<div class="blockquotes-2" markdown="1">
-{{ blockquote('Je problém najít komunitu, která je fakt o nějaký vzájemný pomoci a výměně informací, ne o honění ega. Tady je to krásná výjimka. Jsem fakt ráda, že toho můžu být součástí.', 'Hanka') }}
+<div class="blockquotes-2">
+{{ blockquote_avatar('Ty diskuze jsou úžasné. Když to lidi zaplatí, tak je to úplně jiné. Extrémně kultivované, srozumitelné, každý příspěvek dává smysl.', 'jakub.png', 'Jakub', 'Jakub') }}
 
-{{ blockquote('Ty diskuse jsou úžasné. Když to lidi zaplatí, tak je to úplně jiné. Extrémně kultivované, srozumitelné, každý příspěvek dává smysl.', 'Jakub') }}
+{{ blockquote_avatar('Je problém najít komunitu, která je o vzájemný pomoci a výměně informací, ne o honění ega. Tady je to krásná výjimka. Jsem ráda, že toho můžu být součástí.', 'hanka.png', 'Hanka', 'Hanka') }}
 </div>
 
 <div class="comparison" markdown="1">
