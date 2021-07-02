@@ -13,6 +13,19 @@
   padding-bottom: map-get($spacers, 4);
 }
 
+.footer-heading {
+  @extend .fs-4;
+  @extend .font-monospace;
+  @extend .text-uppercase;
+}
+
+.footer-subheading {
+  @extend .small;
+  @extend .font-monospace;
+  @extend .text-uppercase;
+  color: darken($jg-white, 30%);
+}
+
 
 /*
   FOOTER: CONSTRUCTION
@@ -34,8 +47,6 @@
 
 .footer-address {
   @extend .container-fluid;
-  padding-top: map-get($spacers, 5);
-  padding-bottom: map-get($spacers, 5);
   margin-bottom: 0;
 }
 
@@ -95,6 +106,7 @@
 .footer-links-email,
 .footer-links-icons {
   @extend .fs-4;
+  margin-bottom: 0;
 }
 
 .footer-icons-list {
@@ -113,9 +125,27 @@
   FOOTER: ABOUT
 */
 
-.footer-about {
-  padding-top: map-get($spacers, 5);
-  padding-bottom: map-get($spacers, 5);
+// .footer-about {
+// }
+
+
+/*
+  FOOTER: FINANCES
+*/
+
+.footer-finances-number {
+  @extend .h3;
+  @extend .lh-1;
+  margin-bottom: map-get($spacers, 4);
+}
+
+.footer-finances-list {
+  @extend .list-unstyled;
+}
+
+.footer-finances-value {
+  display: inline-block;
+  min-width: 3em;
 }
 
 
@@ -141,6 +171,11 @@
 /*
   FOOTER: RULES
 */
+
+.footer-rules a {
+  @extend .small;
+  color: darken($jg-white, 30%);
+}
 
 .footer-rules-list {
   display: flex;

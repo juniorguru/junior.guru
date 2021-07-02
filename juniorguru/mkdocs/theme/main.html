@@ -59,19 +59,22 @@
             <img class="footer-address-logo" src="{{ 'static/images/logo-i.svg'|url }}" alt="Logo junior.guru" width="90" height="40">
           </li>
           <li class="footer-address-item">
-            <h4>Junior Guru</h4>
+            <h4 class="footer-subheading">Projekt</h4>
+            Junior Guru<br>
             stylizovaně „junior.guru“<br>
             <a href="https://logo.junior.guru/" target="_blank" rel="noopener">logo a barvy</a>
           </li>
           <li class="footer-address-item">
-            <h4>Jan Javorek</h4>
+            <h4 class="footer-subheading">Provozovatel</h4>
+            Jan Javorek<br>
             OSVČ, neplátce DPH<br>
             IČO: <a href="http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0" target="_blank" rel="noopener">74279858</a><br>
             Lupáčova 375/24<br>
             130 00 Praha
           </li>
           <li class="footer-address-item footer-links">
-            <h4 class="footer-links-email">{{ 'ahoj@junior.guru'|email_link }}</h4>
+            <h4 class="footer-subheading">Kontakt a sociální sítě</h4>
+            <p class="footer-links-email">{{ 'ahoj@junior.guru'|email_link }}</p>
             <ul class="footer-links-icons footer-icons-list">
               <li class="footer-icons-item">
                 <a href="https://www.linkedin.com/company/juniorguru/" target="_blank" rel="noopener">
@@ -114,7 +117,7 @@
       </address>
     </div>
     <div class="footer-section footer-about">
-      <h3>Kdo to provozuje? Na čem vydělává?</h3>
+      <h3 class="footer-heading">Kdo to provozuje? Na čem vydělává?</h3>
       <img src="{{ 'static/images/honza.jpg'|url }}" alt="Foto Honzy Javorka" width="100" height="100">
       <p>
         Jmenuji se Honza Javorek a býval jsem obyčejný programátor. Jenže jsem se díky dobrovolným aktivitám dostal k pomáhání začátečníkům, a to mě hodně bavilo. Časem mi přišlo, že chybí jedno místo, kde by byly všechny pracovní nabídky pro juniory, nezávislé informace a základní praktické rady. Proto jsem odešel z korporátu a založil tento projekt.
@@ -123,16 +126,22 @@
         Chci začátečníkům zpříjemnit cestu k jejich první práci v IT a dodat jim kultivovanou podpůrnou komunitu, kde budou vítáni a mezi svými. Chci nezávisle informovat o vzdělávacích agenturách a propojovat juniory s firmami, kam by mohli nastoupit. Chci, aby každý Luďan z Mostu, každá puberťačka, každý vědec nebo každá matka na rodičovské měli po ruce návod, jak začít s programováním.
       </p>
       <p>
-        Tento web má <a href="https://github.com/honzajavorek/junior.guru">otevřený zdrojový kód</a> a obsah je pod <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs">CC licencí</a>. Projekt tvořím jako tzv. „solo entrepreneur“, tedy podnikatel na volné noze, jenž nemá ambice rozjíždět firmu. Své úspěchy a selhání otevřeně popisuji v každotýdenních poznámkách na <a href="https://honzajavorek.cz/blog/">osobním blogu</a>. Živí mě předplatitelé v <a href="{{ 'club2/'|url }}">klubu</a>. Cílem je vydělat si tak akorát, aby se žilo dobře mojí rodině.
+        Tento web má <a href="https://github.com/honzajavorek/junior.guru">otevřený zdrojový kód</a> a obsah je pod <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs">CC licencí</a>. Ilustrace si kreslím sám. Projekt tvořím jako tzv. „solo entrepreneur“, tedy podnikatel na volné noze, jenž nemá ambice rozjíždět firmu. Své úspěchy a selhání otevřeně popisuji v každotýdenních poznámkách na <a href="https://honzajavorek.cz/blog/">osobním blogu</a>. Živí mě předplatitelé v <a href="{{ 'club2/'|url }}">klubu</a>. Cílem je vydělat si tak akorát, aby se žilo dobře mojí rodině.
       </p>
-      <p>
-        <strong>Můj aktuální čistý zisk je {{ metrics.profit_per_month }}&nbsp;Kč měsíčně</strong><br>
-        Zdroje příjmů:
-        {% for name, value_pct in metrics_inc_breakdown %}
-          {{ value_pct }}&nbsp;% {{ name }}
-          {%- if not loop.last %}, {% endif %}
-        {% endfor %}
-      </p>
+      <div>
+        <h4 class="footer-subheading">Můj aktuální čistý zisk</h4>
+        <p class="footer-finances-number">{{ metrics.profit_per_month }}&nbsp;Kč měsíčně</p>
+
+        <h4 class="footer-subheading">Zdroje příjmů</h4>
+        <ul class="footer-finances-list">
+          {% for name, value_pct in metrics_inc_breakdown %}
+            <li>
+              <strong class="footer-finances-value">{{ value_pct }} %</strong>
+              {{ name }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
       <p>
         <a class="btn btn-lg btn-primary" href="{{ 'club2/'|url }}">Podpoř mě členstvím</a>
         <a class="btn btn-lg btn-outline-light" href="{{ 'hire-juniors/'|url }}">Pro firmy</a>
@@ -140,7 +149,7 @@
     </div>
     <div class="footer-topics-container">
       <nav class="footer-section footer-topics">
-        <h3>Témata, která řešíme v klubu</h3>
+        <h3 class="footer-heading">Témata, která řešíme v klubu</h3>
         <p>
           {% for page in nav_topics %}
             <a href="{{ page.url|url }}">{{ page.meta.topic_link_text }}</a>
