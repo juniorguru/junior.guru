@@ -21,7 +21,6 @@
     "gulp-connect": "5.7.0",
     "gulp-csso": "4.0.1",
     "gulp-dart-sass": "1.0.2",
-    "gulp-html-minifier": "0.1.8",
     "gulp-if": "3.0.0",
     "gulp-imagemin": "7.1.0",
     "gulp-images-resizer": "0.0.8",

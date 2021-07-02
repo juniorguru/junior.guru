@@ -7,7 +7,6 @@ const gulpIf = require('gulp-if');
 const rename = require('gulp-rename');
 const changed = require('gulp-changed');
 const sourcemaps = require('gulp-sourcemaps');
-const htmlmin = require('gulp-html-minifier');
 const resizer = require('gulp-images-resizer');
 const connect = require('gulp-connect');
 const purgecss = require('gulp-purgecss');
@@ -157,24 +156,6 @@ function cleanMkDocsFiles() {
 const buildMkDocs = gulp.series(buildMkDocsFiles, overwriteWithMkDocs, cleanMkDocsFiles);
 
 
-function minifyHTML() {
-  return gulp.src('public/**/*.html')
-    .pipe(htmlmin({
-      minifyCSS: true,
-      minifyJS: true,
-      removeComments: true,
-      removeAttributeQuotes: true,
-      removeEmptyAttributes: true,
-      removeOptionalTags: true,
-      removeRedundantAttributes: true,
-      useShortDoctype: true,
-      collapseWhitespace: true,
-      collapseBooleanAttributes: true,
-      caseSensitive: true,
-    }))
-    .pipe(gulp.dest('public/'));
-}
-
 function copyFavicon() {
   return gulp.src('juniorguru/web/static/src/images/favicon.ico')
     .pipe(gulp.dest('public/'))
@@ -182,7 +163,7 @@ function copyFavicon() {
 
 const buildWeb = isLocalDevelopment
   ? gulp.series(freezeFlask, buildMkDocs, minifyCSS)
-  : gulp.series(freezeFlask, buildMkDocs, minifyCSS, gulp.parallel(minifyHTML, copyFavicon));
+  : gulp.series(freezeFlask, buildMkDocs, minifyCSS, copyFavicon);
 
 async function watchWeb() {
   gulp.watch([
