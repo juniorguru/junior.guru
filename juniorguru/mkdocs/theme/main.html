@@ -156,6 +156,22 @@
     </div>
     <div class="footer-nav-container">
       <nav class="footer-section footer-nav">
+        <h3 class="footer-heading">Příručka</h3>
+        <p>
+          <a href="{{ 'motivation/'|url }}">Motivace</a>,
+          <a href="{{ 'learn/'|url }}">Základy</a>,
+          <a href="{{ 'practice/'|url }}">První praxe</a>,
+          <a href="{{ 'candidate-handbook/'|url }}">Hledání práce</a>
+        </p>
+
+        <h3 class="footer-heading">Pracovní nabídky</h3>
+        <p>
+          <a href="{{ 'jobs/remote/'|url }}">Junior programátor na dálku</a>,
+          <a href="{{ 'jobs/praha/'|url }}">Junior programátor Praha</a>,
+          <a href="{{ 'jobs/brno/'|url }}">Junior programátor Brno</a>,
+          <a href="{{ 'jobs/ostrava/'|url }}">Junior programátor Ostrava</a>
+        </p>
+
         <h3 class="footer-heading">Témata, která řešíme v klubu</h3>
         <p>
           {% for topic in nav_topics %}

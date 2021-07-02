@@ -141,10 +141,16 @@
 
 .footer-about-text {
   @extend .col-lg-9;
+  padding-bottom: map-get($spacers, 3) * 2;
 
   @include media-breakpoint-up(lg) {
     padding-right: map-get($spacers, 5);
+    margin-bottom: 0;
   }
+}
+
+.footer-about-text p:last-child {
+  margin-bottom: 0;
 }
 
 .footer-about-finances {
@@ -233,6 +239,10 @@
 .footer-nav {
   padding-top: map-get($spacers, 5);
   padding-bottom: map-get($spacers, 5);
+
+  p {
+    margin-bottom: map-get($spacers, 5);
+  }
 }
 
 
