@@ -9,8 +9,6 @@
 
 .footer-section {
   @extend .container-xxl;
-  padding-top: map-get($spacers, 4);
-  padding-bottom: map-get($spacers, 4);
 }
 
 .footer-heading {
@@ -36,6 +34,11 @@
   background-color: $jg-yellow;
 }
 
+.footer-construction {
+  padding-top: map-get($spacers, 3);
+  padding-bottom: map-get($spacers, 3);
+}
+
 
 /*
   FOOTER: ADDRESS
@@ -47,15 +50,16 @@
 
 .footer-address {
   @extend .container-fluid;
+  padding-top: map-get($spacers, 5);
+  padding-bottom: map-get($spacers, 5);
   margin-bottom: 0;
 }
 
 .footer-address-list {
+  @extend .list-unstyled;
   @extend .row;
   @extend .g-0;
-  padding-left: 0;
   margin-bottom: 0;
-  list-style-type: none;
 }
 
 .footer-address-item {
@@ -125,8 +129,52 @@
   FOOTER: ABOUT
 */
 
-// .footer-about {
-// }
+.footer-about {
+  padding-top: map-get($spacers, 5);
+  padding-bottom: map-get($spacers, 5);
+}
+
+.footer-about-content {
+  @extend .row;
+  @extend .g-0;
+}
+
+.footer-about-text {
+  @extend .col-lg-9;
+
+  @include media-breakpoint-up(lg) {
+    padding-right: map-get($spacers, 5);
+  }
+}
+
+.footer-about-finances {
+  @extend .col-lg-3;
+}
+
+.footer-about-avatar {
+  float: right;
+  width: 100%;
+  max-width: 6rem;
+  height: auto;
+  margin-top: map-get($spacers, 2);
+  margin-bottom: map-get($spacers, 2);
+  margin-left: map-get($spacers, 2);
+  shape-outside: circle(50%);
+  clip-path: circle(50%);
+  border-radius: 100%;
+
+  @include media-breakpoint-up(md) {
+    max-width: 8rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: 10rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-left: map-get($spacers, 4);
+  }
+}
 
 
 /*
@@ -136,16 +184,36 @@
 .footer-finances-number {
   @extend .h3;
   @extend .lh-1;
-  margin-bottom: map-get($spacers, 4);
+  margin-bottom: map-get($spacers, 3) * 2;
 }
 
 .footer-finances-list {
   @extend .list-unstyled;
+  margin-bottom: map-get($spacers, 3) * 2;
 }
 
 .footer-finances-value {
   display: inline-block;
   min-width: 3em;
+}
+
+.footer-finances-actions {
+  display: inline-block;
+}
+
+.footer-finances-button {
+  display: block;
+  margin-bottom: map-get($spacers, 2);
+}
+
+.footer-finances-link {
+  @extend .small;
+  display: block;
+  text-align: center;
+}
+
+.footer-finances-link a {
+  color: darken($jg-white, 30%);
 }
 
 
@@ -171,6 +239,11 @@
 /*
   FOOTER: RULES
 */
+
+.footer-rules {
+  padding-top: map-get($spacers, 3);
+  padding-bottom: map-get($spacers, 3);
+}
 
 .footer-rules a {
   @extend .small;
