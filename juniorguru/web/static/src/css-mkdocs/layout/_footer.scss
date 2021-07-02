@@ -218,10 +218,10 @@
 
 
 /*
-  FOOTER: TOPICS
+  FOOTER: NAVIGATION
 */
 
-.footer-topics-container {
+.footer-nav-container {
   background-color: lighten($jg-dark, 5%);
 
   p,
@@ -230,7 +230,7 @@
   }
 }
 
-.footer-topics {
+.footer-nav {
   padding-top: map-get($spacers, 5);
   padding-bottom: map-get($spacers, 5);
 }
