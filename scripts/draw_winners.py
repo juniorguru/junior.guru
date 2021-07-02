@@ -29,7 +29,7 @@ async def main(client, message_url, winners_count):
             print(f'User {user.display_name} reacted with: {emoji_name(reaction.emoji)}')
             users.add(user)
     print(f'{len(users)} users reacted')
-    for i in range(5):
+    for i in range(1, 6):
         print('The winners are…')
         time.sleep(1 * i)
     for user in random.sample(users, winners_count):
