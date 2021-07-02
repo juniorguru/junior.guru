@@ -41,6 +41,8 @@ Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně cho
 - Komunita, síť kontaktů
 - Přístup i z mobilu
 
+(linkedin skupina, slevy na konference apod.)
+
 (TODO poslední 2-3 akce v klubu)
 
 ## Proč platit?
