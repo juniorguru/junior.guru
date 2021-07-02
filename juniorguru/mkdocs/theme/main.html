@@ -19,14 +19,14 @@
       </div>
       {% if nav %}
       <ul class="nav nav-foldable">
-        {% for page in nav %}
+        {% for tab in nav %}
         <li class="nav-item">
-          {%- if 'club2' in page.url and 'club' in page.url -%}
-            <a class="nav-link active" aria-current="page" href="{{ page.url|url }}">{{ page.title }}</a>
-          {%- elif page.active -%}
-            <a class="nav-link active" aria-current="page" href="{{ page.url|url }}">{{ page.title }}</a>
+          {%- if 'club2' in page.url and 'club' in tab.url -%}
+            <a class="nav-link active" aria-current="page" href="{{ tab.url|url }}">{{ tab.title }}</a>
+          {%- elif tab.active -%}
+            <a class="nav-link active" aria-current="page" href="{{ tab.url|url }}">{{ tab.title }}</a>
           {%- else -%}
-            <a class="nav-link" href="{{ page.url|url }}">{{ page.title }}</a>
+            <a class="nav-link" href="{{ tab.url|url }}">{{ tab.title }}</a>
           {%- endif -%}
         </li>
         {% endfor %}
@@ -158,8 +158,8 @@
       <nav class="footer-section footer-topics">
         <h3 class="footer-heading">Témata, která řešíme v klubu</h3>
         <p>
-          {% for page in nav_topics %}
-            <a href="{{ page.url|url }}">{{ page.meta.topic_link_text }}</a>
+          {% for topic in nav_topics %}
+            <a href="{{ topic.url|url }}">{{ topic.meta.topic_link_text }}</a>
             {%- if not loop.last %}, {% endif %}
           {% endfor %}
         </p>
