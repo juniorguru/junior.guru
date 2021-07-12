@@ -5,6 +5,7 @@ import arrow
 from gql import Client as Memberful, gql
 from gql.transport.requests import RequestsHTTPTransport
 
+from juniorguru.lib.timer import measure
 from juniorguru.lib.log import get_log
 from juniorguru.lib import google_sheets
 from juniorguru.models import ClubUser
@@ -17,6 +18,7 @@ MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
 
+@measure('subscriptions')
 def main():
     log.info('Getting data from Memberful')
     # https://memberful.com/help/integrate/advanced/memberful-api/

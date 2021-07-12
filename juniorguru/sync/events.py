@@ -6,6 +6,7 @@ import arrow
 from playhouse.shortcuts import model_to_dict
 from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, load
 
+from juniorguru.lib.timer import measure
 from juniorguru.models import Event, EventSpeaking, ClubMessage, db
 from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_ig_square
 from juniorguru.lib.log import get_log
@@ -43,6 +44,7 @@ schema = Seq(
 )
 
 
+@measure('events')
 def main():
     path = DATA_DIR / 'events.yml'
     records = [load_record(record.data) for record in load(path.read_text(), schema)]

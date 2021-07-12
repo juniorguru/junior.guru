@@ -1,3 +1,4 @@
+from juniorguru.lib.timer import measure
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import EMOJI_PINS, discord_task, count_upvotes, emoji_name, get_roles, count_pins
 from juniorguru.models import ClubMessage, ClubUser, ClubPinReaction, db
@@ -6,6 +7,7 @@ from juniorguru.models import ClubMessage, ClubUser, ClubPinReaction, db
 log = get_log('club_content')
 
 
+@measure('club_content')
 @discord_task
 async def main(client):
     with db:

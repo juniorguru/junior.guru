@@ -1,3 +1,4 @@
+from juniorguru.lib.timer import measure
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED
 from juniorguru.models import ClubMessage
@@ -9,6 +10,7 @@ log = get_log('returning_members')
 SYSTEM_MESSAGES_CHANNEL = 788823881024405544
 
 
+@measure('returning_members')
 @discord_task
 async def main(client):
     system_messages_channel = await client.fetch_channel(SYSTEM_MESSAGES_CHANNEL)

@@ -2,6 +2,7 @@ import textwrap
 
 from discord import Embed
 
+from juniorguru.lib.timer import measure
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED
 from juniorguru.models import ClubPinReaction, ClubUser, ClubMessage, db
@@ -10,6 +11,7 @@ from juniorguru.models import ClubPinReaction, ClubUser, ClubMessage, db
 log = get_log('pins')
 
 
+@measure('pins')
 @discord_task
 async def main(client):
     with db:

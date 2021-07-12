@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 
 from discord import Embed
 
+from juniorguru.lib.timer import measure
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED
 from juniorguru.models import ClubMessage, db
@@ -15,6 +16,7 @@ DIGEST_CHANNEL = 789046675247333397
 DIGEST_LIMIT = 5
 
 
+@measure('digest')
 @discord_task
 async def main(client):
     week_ago_dt = datetime.utcnow() - timedelta(weeks=1)

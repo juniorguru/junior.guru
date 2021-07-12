@@ -1,6 +1,7 @@
 import math
 import os
 
+from juniorguru.lib.timer import measure
 from juniorguru.lib.google_analytics import (
     GoogleAnalyticsClient, get_daily_date_range,
     metric_applications_per_job, metric_avg_monthly_pageviews,
@@ -23,6 +24,7 @@ MAILCHIMP_API_KEY = os.getenv('MAILCHIMP_API_KEY')
 FINANCES_DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
 
+@measure('metrics')
 def main():
     google_analytics_metrics = fetch_from_google_analytics()
     google_sheets_metrics = fetch_from_google_sheets()

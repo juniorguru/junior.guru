@@ -2,6 +2,7 @@ from pathlib import Path
 
 from strictyaml import Datetime, Map, Seq, Str, Url, load
 
+from juniorguru.lib.timer import measure
 from juniorguru.models import Story, db
 
 
@@ -16,6 +17,7 @@ schema = Seq(
 )
 
 
+@measure('stories')
 def main():
     path = Path(__file__).parent.parent / 'data' / 'stories.yml'
     records = [record.data for record in load(path.read_text(), schema)]

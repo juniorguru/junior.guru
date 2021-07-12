@@ -1,6 +1,7 @@
 from collections import Counter
 from juniorguru.models.company import Company
 
+from juniorguru.lib.timer import measure
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED, get_roles
 from juniorguru.models import ClubUser, Event, db
@@ -17,6 +18,7 @@ ROLE_IS_NEW = 836930259982352435
 ROLE_IS_SPONSOR = 837316268142493736
 
 
+@measure('roles')
 def main():
     with db:
         members = ClubUser.members_listing()

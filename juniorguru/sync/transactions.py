@@ -3,6 +3,7 @@ from datetime import date
 
 from fiobank import FioBank
 
+from juniorguru.lib.timer import measure
 from juniorguru.lib import google_sheets
 
 
@@ -28,6 +29,7 @@ CATEGORIES = [
 ]
 
 
+@measure('transactions')
 def main():
     doc_key = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 

@@ -4,6 +4,7 @@ from io import BytesIO
 
 from PIL import Image
 
+from juniorguru.lib.timer import measure
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import discord_task, is_default_avatar
 from juniorguru.models import ClubUser, db
@@ -17,6 +18,7 @@ AVATARS_PATH = IMAGES_PATH / 'avatars'
 AVATAR_SIZE_PX = 60
 
 
+@measure('avatars')
 @discord_task
 async def main(client):
     AVATARS_PATH.mkdir(exist_ok=True, parents=True)

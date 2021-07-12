@@ -2,6 +2,7 @@ from subprocess import run, PIPE
 
 import arrow
 
+from juniorguru.lib.timer import measure
 from juniorguru.models import LastModified, db
 
 
@@ -10,6 +11,7 @@ FILES = [
 ]
 
 
+@measure('last_modified')
 def main():
     entries = []
     for path in FILES:

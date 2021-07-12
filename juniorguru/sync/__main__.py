@@ -30,6 +30,7 @@ log = get_log('sync')
 
 
 @timer.notify
+@timer.measure('sync')
 def main():
     # order-insensitive
     sync_stories()

@@ -2,6 +2,7 @@ from pathlib import Path
 
 from strictyaml import Map, Optional, Seq, Str, Url, load
 
+from juniorguru.lib.timer import measure
 from juniorguru.models import Supporter, db
 
 
@@ -13,6 +14,7 @@ schema = Seq(
 )
 
 
+@measure('supporters')
 def main():
     path = Path(__file__).parent.parent / 'data' / 'supporters.yml'
     records = [dict(last_name=record.data['name'].split()[-1], **record.data)

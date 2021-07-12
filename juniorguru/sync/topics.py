@@ -1,6 +1,7 @@
 import re
 from collections import Counter
 
+from juniorguru.lib.timer import measure
 from juniorguru.lib.log import get_log
 from juniorguru.models import ClubMessage, Topic, db
 
@@ -81,6 +82,7 @@ TOPIC_CHANNELS = {re.compile(key): value for key, value in {
 }.items()}
 
 
+@measure('topics')
 def main():
     with db:
         Topic.drop_table()

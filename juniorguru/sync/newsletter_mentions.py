@@ -3,6 +3,7 @@ import os
 
 import arrow
 
+from juniorguru.lib.timer import measure
 from juniorguru.lib.mailchimp import (MailChimpClient, get_collection,
                                             get_link)
 from juniorguru.models import Job, JobNewsletterMention, db
@@ -11,6 +12,7 @@ from juniorguru.models import Job, JobNewsletterMention, db
 MAILCHIMP_API_KEY = os.getenv('MAILCHIMP_API_KEY')
 
 
+@measure('newsletter_mentions')
 def main():
     with db:
         JobNewsletterMention.drop_table()

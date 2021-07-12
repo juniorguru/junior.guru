@@ -5,6 +5,7 @@ import random
 import requests
 from lxml import html
 
+from juniorguru.lib.timer import measure
 from juniorguru.models import Proxy, db
 from juniorguru.lib.log import get_log
 
@@ -15,6 +16,7 @@ PROXIES_ENABLED = bool(int(os.getenv('PROXIES_ENABLED', 0)))
 log = get_log('proxies')
 
 
+@measure('proxies')
 def main():
     proxies = []
     if PROXIES_ENABLED:

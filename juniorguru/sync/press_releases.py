@@ -2,6 +2,7 @@ from pathlib import Path
 
 from strictyaml import Map, Optional, Seq, Str, Datetime, load
 
+from juniorguru.lib.timer import measure
 from juniorguru.models import PressRelease, db
 
 
@@ -16,6 +17,7 @@ schema = Seq(
 )
 
 
+@measure('press_releases')
 def main():
     path = Path(__file__).parent.parent / 'data' / 'press_releases.yml'
     records = load(path.read_text(), schema).data

@@ -1,10 +1,12 @@
 import hashlib
 
+from juniorguru.lib.timer import measure
 from juniorguru.lib import google_sheets
 from juniorguru.lib.coerce import coerce, parse_text, parse_int, parse_date, parse_boolean
 from juniorguru.models import Logo, db
 
 
+@measure('logos')
 def main():
     doc_key = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
     records = google_sheets.download(google_sheets.get(doc_key, 'logos'))
