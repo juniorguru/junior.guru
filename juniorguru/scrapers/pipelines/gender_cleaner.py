@@ -7,9 +7,9 @@ class Pipeline():
         re.compile(r'''
             \s*                     # trailing spaces
             \(                      # opening parenthesis
-                \s*[mfwžh]\s*       # woman/man letter (with spaces)
+                \s*[mfwžhd]\s*      # woman/man letter (with spaces)
                 [/\|]               # slash or pipe
-                \s*[mfwžh]\s*       # woman/man letter (with spaces)
+                \s*[mfwžhd]\s*      # woman/man letter (with spaces)
                 (                   # optionally:
                     [/\|]           # slash or pipe
                     \s*[^\)]+\s*    # anything but closing bracket (with spaces)
@@ -21,9 +21,9 @@ class Pipeline():
         # no parentheses, e.g. f/m/x
         re.compile(r'''
             (\-\s*)?        # optional leading dash
-            [mfwžh]\s*      # woman/man letter (with spaces)
+            [mfwžhd]\s*     # woman/man letter (with spaces)
             [/\|]           # slash or pipe
-            \s*[mfwžh]\s*   # woman/man letter (with spaces)
+            \s*[mfwžhd]\s*  # woman/man letter (with spaces)
             (               # optionally:
                 [/\|]       # slash or pipe
                 \s*\w+      # anything but space or end
