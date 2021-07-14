@@ -113,12 +113,11 @@ jobs:
               echo "$CIRCLE_SHA1" > .deploy
             fi
       - gh-pages/deploy:
-          build-dir: public
-          commit-message: "🐣 junior.guru from ${commit_hash} [ci skip]"
+          build-dir: "public"
           git-email: "kure@junior.guru"
           git-user: "Kuře"
           ssh-fingerprints: "08:6a:72:ad:4b:7f:fb:d3:49:fa:33:b5:90:e1:86:9c"
-          tmp-dir: .deploy-tmp
+          tmp-dir: "".deploy-tmp"
           workspace-root: "~/project"
       - save_cache:
           key: deploy-{{ .Revision }}
