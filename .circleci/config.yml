@@ -25,12 +25,12 @@ jobs:
       - save_cache:
           key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
           paths:
-            - ~/.local/share/virtualenvs
+            - ~/.cache/pypoetry/virtualenvs
             - ./node_modules
       - persist_to_workspace:
           root: "~"
           paths:
-              - .local/share/virtualenvs
+              - .cache/pypoetry/virtualenvs
               - project/node_modules
               - project
 
