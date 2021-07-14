@@ -37,7 +37,7 @@ favicon = "*"
 feedparser = "*"
 extruct = "*"
 "discord.py" = "*"
-gql = {extras = ["requests"], version = "*", allow-prereleases = true}
+gql = {extras = ["requests"], version = "^3.0.0*", allow-prereleases = true}
 mkdocs = "*"
 aiopath = "*"
 scikit-learn = "*"
