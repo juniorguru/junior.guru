@@ -101,9 +101,6 @@ jobs:
   # needs $NOW_TOKEN, $NOW_ORG_ID, $NOW_PROJECT_ID
   deploy:
     executor: python-js
-    add_ssh_keys:
-      fingerprints:
-        - "08:6a:72:ad:4b:7f:fb:d3:49:fa:33:b5:90:e1:86:9c"
     steps:
       - attach_workspace:
           at: "~"
@@ -122,6 +119,9 @@ jobs:
             fi
       # - run: mkdir -p ~/.ssh
       # - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - add_ssh_keys:
+          fingerprints:
+            - "08:6a:72:ad:4b:7f:fb:d3:49:fa:33:b5:90:e1:86:9c"
       - gh-pages/deploy:
           build-dir: "public"
           git-email: "kure@junior.guru"
