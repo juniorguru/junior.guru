@@ -101,6 +101,9 @@ jobs:
   # needs $NOW_TOKEN, $NOW_ORG_ID, $NOW_PROJECT_ID
   deploy:
     executor: python-js
+    add_ssh_keys:
+      fingerprints:
+        - "08:6a:72:ad:4b:7f:fb:d3:49:fa:33:b5:90:e1:86:9c"
     steps:
       - attach_workspace:
           at: "~"
@@ -117,8 +120,8 @@ jobs:
               echo "Looks like the build has been triggered by GitHub (there are no previous 'deploy' jobs for this commit). Skipping duplicate deploy with ZEIT Now CLI."
               echo "$CIRCLE_SHA1" > .deploy
             fi
-      - run: mkdir -p ~/.ssh
-      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
+      # - run: mkdir -p ~/.ssh
+      # - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - gh-pages/deploy:
           build-dir: "public"
           git-email: "kure@junior.guru"
