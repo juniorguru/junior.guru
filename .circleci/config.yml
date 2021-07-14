@@ -117,6 +117,8 @@ jobs:
               echo "Looks like the build has been triggered by GitHub (there are no previous 'deploy' jobs for this commit). Skipping duplicate deploy with ZEIT Now CLI."
               echo "$CIRCLE_SHA1" > .deploy
             fi
+      - run: mkdir -p ~/.ssh
+      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - gh-pages/deploy:
           build-dir: "public"
           git-email: "kure@junior.guru"
