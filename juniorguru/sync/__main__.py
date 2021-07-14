@@ -64,12 +64,12 @@ def main():
 try:
     module_name = f'juniorguru.sync.{sys.argv[1]}'.replace('-', '_')
 except IndexError:
-    # Standard `make sync`, i.e. `pipenv run python -m juniorguru.sync`
+    # Standard `make sync`, i.e. `poetry run python -m juniorguru.sync`
     main()
 else:
     # For debugging purposes, one can run `make sync SYNC=stories`,
-    # which is a shortcut for `pipenv run python -m juniorguru.sync stories`,
-    # which is a shortcut for `pipenv run python -m juniorguru.sync.stories`
+    # which is a shortcut for `poetry run python -m juniorguru.sync stories`,
+    # which is a shortcut for `poetry run python -m juniorguru.sync.stories`
     log.info(f"Running only: {module_name}")
     module = importlib.import_module(module_name)
     timer.notify(module.main)()

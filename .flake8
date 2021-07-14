@@ -1,7 +1,4 @@
-[tool:pytest]
-python_files = test_*.py *_test.py test.py
-testpaths = .
-addopts = --ff --ignore=node_modules
+# Why not in pyproject.toml? Because flake8 is ✨ special ✨ https://github.com/PyCQA/flake8/issues/234
 
 [flake8]
 exclude = node_modules, venv

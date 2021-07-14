@@ -1,0 +1,63 @@
+[tool.poetry]
+name = "juniorguru"
+version = "0.0.0"
+description = "Learn to code and get your first job in tech 🐣"
+authors = ["Honza Javorek <mail@honzajavorek.cz>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://junior.guru/"
+repository = "https://github.com/honzajavorek/junior.guru/"
+
+[tool.poetry.dependencies]
+python = "3.8.*"
+jinja2 = "*"
+gspread = "*"
+oauth2client = "*"
+arrow = "*"
+markdown = "*"
+flask = "*"
+frozen-flask = "*"
+pillow = "*"
+peewee = "*"
+strictyaml = "*"
+scrapy = "*"
+langdetect = "*"
+w3lib = "*"
+lxml = "*"
+cssselect = "*"
+pync = "*"
+google-api-python-client = "*"
+python-dateutil = "*"
+requests = "*"
+czech-sort = "*"
+itemloaders = "*"
+fiobank = "*"
+emoji = "*"
+favicon = "*"
+feedparser = "*"
+extruct = "*"
+"discord.py" = "*"
+gql = {extras = ["requests"], version = "*", allow-prereleases = true}
+mkdocs = "*"
+aiopath = "*"
+scikit-learn = "*"
+pandas = "*"
+piexif = "*"
+markupsafe = "*"
+mkdocs-simple-hooks = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+cssselect = "*"
+pync = "*"
+python-slugify = "*"
+flake8 = "*"
+
+[tool.pytest.ini_options]
+python_files = "test_*.py *_test.py test.py"
+testpaths = "."
+addopts = "--ff --ignore=node_modules"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
