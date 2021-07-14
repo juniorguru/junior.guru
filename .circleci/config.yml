@@ -8,6 +8,10 @@ executors:
     working_directory: ~/project
 
 
+orbs:
+  gh-pages: sugarshin/gh-pages@0.0.6
+
+
 jobs:
   install:
     executor: python-js
@@ -108,6 +112,14 @@ jobs:
               echo "Looks like the build has been triggered by GitHub (there are no previous 'deploy' jobs for this commit). Skipping duplicate deploy with ZEIT Now CLI."
               echo "$CIRCLE_SHA1" > .deploy
             fi
+      - gh-pages/deploy:
+          build-dir: public
+          commit-message: "🐣 junior.guru from ${commit_hash} [ci skip]"
+          git-email: "kure@junior.guru"
+          git-user: "Kuře"
+          ssh-fingerprints: "08:6a:72:ad:4b:7f:fb:d3:49:fa:33:b5:90:e1:86:9c"
+          tmp-dir: .deploy-tmp
+          workspace-root: "~/project"
       - save_cache:
           key: deploy-{{ .Revision }}
           paths:
