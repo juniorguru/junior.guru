@@ -9,14 +9,6 @@ updates:
   open-pull-requests-limit: 10
   labels:
   - dependencies
-  ignore:
-  - dependency-name: aiopath
-    versions:
-    - 0.5.1
-  - dependency-name: google-api-python-client
-    versions:
-    - 2.0.0
-    - 2.0.1
 - package-ecosystem: npm
   directory: "/"
   schedule:
@@ -26,7 +18,3 @@ updates:
   open-pull-requests-limit: 10
   labels:
   - dependencies
-  ignore:
-  - dependency-name: instant.page
-    versions:
-    - "> 5.0.1, < 6"
