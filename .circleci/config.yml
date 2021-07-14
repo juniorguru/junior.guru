@@ -120,6 +120,7 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "08:6a:72:ad:4b:7f:fb:d3:49:fa:33:b5:90:e1:86:9c"
+      - run: mkdir -p ~/.ssh
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - gh-pages/deploy:
           build-dir: "public"
