@@ -18,3 +18,7 @@ updates:
   open-pull-requests-limit: 10
   labels:
   - dependencies
+  ignore:
+  - dependency-name: instant.page
+    versions:
+    - "> 5.0.1, < 6"
