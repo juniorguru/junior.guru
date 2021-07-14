@@ -180,14 +180,14 @@ workflows:
           requires:
             - build
       - deploy:
-          # This makes sure retries of 'master' builds still deploy,
+          # This makes sure retries of 'main' builds still deploy,
           # even though they were not initiated by a GitHub push. Might
           # cause double deploy for builds initiated by GitHub push, but
           # the deploy job recognizes they're to be skipped.
           filters:
             branches:
               only:
-                - master
+                - main
           requires:
             - build
             - lint-and-test
@@ -219,7 +219,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
 
   sending:
     jobs:
@@ -236,4 +236,4 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
