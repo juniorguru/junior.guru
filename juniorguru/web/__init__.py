@@ -337,6 +337,16 @@ def robots():
                     mimetype='text/plain')
 
 
+@app.route('/.nojekyll')
+def nojekyll():
+    return Response('', mimetype='text/plain')
+
+
+@app.route('/CNAME')
+def cname():
+    return Response('junior.guru\n', mimetype='text/plain')
+
+
 @app.context_processor
 def inject_defaults():
     now = arrow.utcnow()
