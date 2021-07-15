@@ -339,7 +339,7 @@ def robots():
 
 @app.route('/.nojekyll')
 def nojekyll():
-    return Response('', mimetype='text/plain')
+    return Response('', mimetype='application/octet-stream')
 
 
 @app.route('/CNAME')
