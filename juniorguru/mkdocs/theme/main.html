@@ -37,7 +37,7 @@
 
   <hr class="visually-hidden">
 
-  <main class="main{% if not page.meta.headerlinks %} visually-hidden-headerlinks{% endif %}">
+  <main class="main{% if page.meta.main_class %} {{ page.meta.main_class }}{% endif %}{% if not page.meta.headerlinks %} visually-hidden-headerlinks{% endif %}">
     {% block content %}{{ page.content }}{% endblock %}
   </main>
 

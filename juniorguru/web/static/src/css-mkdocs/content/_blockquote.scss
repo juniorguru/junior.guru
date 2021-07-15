@@ -1,6 +1,5 @@
 .blockquote-container {
-  margin-top: map-get($spacers, 3);
-  margin-bottom: map-get($spacers, 3);
+  margin: (map-get($spacers, 3) * 2) 0;
 }
 
 .blockquote-content {
@@ -75,10 +74,25 @@
 
 .blockquotes-2 {
   @extend .row;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .blockquotes-2 .blockquote-container {
   @extend .col-md-6;
+  margin-top: 0;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+}
+
+.blockquotes-2 .blockquote-container:last-child {
+  margin-bottom: 0;
+}
+
+.blockquotes-2 .blockquote-container figure {
+  margin-bottom: 0;
 }
 
 .blockquotes-2 .blockquote {

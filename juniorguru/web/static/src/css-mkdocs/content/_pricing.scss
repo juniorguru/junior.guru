@@ -1,0 +1,29 @@
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pricing-block {
+  padding: map-get($spacers, 3);
+  padding-top: 0;
+
+  @include media-breakpoint-up(md) {
+    width: calc(100% / 3);
+    text-align: center;
+  }
+}
+
+.pricing-benefits {
+  @extend .list-unstyled;
+  font-size: $font-size-sm;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-base;
+  }
+}
+
+.pricing-button {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+}
