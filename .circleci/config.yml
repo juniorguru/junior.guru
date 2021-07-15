@@ -126,6 +126,7 @@ jobs:
           build-dir: "public"
           git-email: "kure@junior.guru"
           git-user: "Kuře"
+          commit-message: 'Artifacts of ${commit_hash} [skip ci]'
           ssh-fingerprints: "7b:0b:2c:9f:fb:18:db:35:8e:f4:3d:49:73:37:ee:c4"
           tmp-dir: ".deploy-tmp"
           workspace-root: "~/project"
