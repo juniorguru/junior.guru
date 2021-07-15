@@ -342,9 +342,9 @@ def nojekyll():
     return Response('', mimetype='application/octet-stream')
 
 
-@app.route('/CNAME')
-def cname():
-    return Response('junior.guru\n', mimetype='application/octet-stream')
+# @app.route('/CNAME')
+# def cname():
+#     return Response('junior.guru\n', mimetype='application/octet-stream')
 
 
 @app.context_processor
