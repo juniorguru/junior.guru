@@ -1,0 +1,43 @@
+$icons-space-half: calc(#{map-get($spacers, 3)} / 2);
+$icons-space: map-get($spacers, 3);
+$icons-space-double: map-get($spacers, 3) * 2;
+
+.icons {
+  margin: $icons-space-double 0;
+}
+
+.icons-list {
+  @extend .list-unstyled;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.icons-item {
+  width: 10em;
+  padding: $icons-space-double $icons-space-half;
+  padding-top: 0;
+  font-size: $font-size-sm;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-base;
+  }
+}
+
+.icons-item i {
+  @extend .fs-1;
+  display: block;
+}
+
+.icons-small-link {
+  display: block;
+  font-size: $font-size-sm;
+}
+
+.icons-small-link,
+.icons-small-link:hover,
+.icons-small-link:focus,
+.icons-small-link:active {
+  color: $gray-600;
+}

@@ -33,3 +33,18 @@
     </figure>
   </div>
 {% endmacro %}
+
+
+{% macro blockquote_toxic(quote, name, source_name, url) %}
+  <div class="blockquote-container toxic icon">
+    <figure class="blockquote-content">
+      <i class="bi bi-x-circle blockquote-icon"></i>
+      <blockquote class="blockquote" cite="{{ url }}">
+        <p>{{ quote }}</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        {{ name }}, <cite><a href="{{ url }}" target="_blank" rel="noopener">{{ source_name }}</a></cite>
+      </figcaption>
+    </figure>
+  </div>
+{% endmacro %}

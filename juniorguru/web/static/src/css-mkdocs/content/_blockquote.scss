@@ -9,6 +9,10 @@
   border-radius: $border-radius;
 }
 
+.toxic .blockquote-content {
+  border-color: $jg-dark;
+}
+
 .blockquote {
   @extend .font-monospace;
   font-size: map-get($font-sizes, 6);
@@ -17,6 +21,10 @@
   @include media-breakpoint-up(md) {
     font-size: map-get($font-sizes, 5);
   }
+}
+
+.toxic .blockquote {
+  color: $jg-dark;
 }
 
 .blockquote p:first-child::before {
@@ -31,6 +39,14 @@
   margin-bottom: 0;
 }
 
+.blockquote-footer a {
+  color: $blockquote-footer-color;
+}
+
+.blockquote-footer cite {
+  font-style: normal;
+}
+
 .blockquote-avatar {
   display: block;
   float: left;
@@ -42,6 +58,18 @@
 
 .blockquote-container.avatar .blockquote,
 .blockquote-container.avatar .blockquote-footer {
+  padding-left: map-get($spacers, 5) + map-get($spacers, 3);
+}
+
+.blockquote-icon {
+  display: block;
+  float: left;
+  font-size: map-get($spacers, 5);
+  line-height: 100%;
+}
+
+.blockquote-container.icon .blockquote,
+.blockquote-container.icon .blockquote-footer {
   padding-left: map-get($spacers, 5) + map-get($spacers, 3);
 }
 
