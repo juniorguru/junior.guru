@@ -18,17 +18,15 @@ Komunitní partneři:<br>
 
 ## Co je klub?
 
-<div class="blockquotes-2 main-section">
+<div class="blockquotes-2">
 {{ blockquote_avatar('Jemně popostrkující a nějakou činnost vyvolávající a podněcující síla, kterou jsem potřebovala. Nacpat se sem byl moc dobrej napád.', 'radka.png', 'Radka', 'Radka') }}
 
 {{ blockquote_avatar('Jako kluka z vesnice mě na programování vždy štvalo, že jsem na to byl hrozně moc sám. Jsem opravdu vděčný za tuto komunitu.', 'lukas.png', 'Lukáš', 'Lukáš') }}
 </div>
 
-<div class="main-section" markdown="1">
 Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně chodíš a kde najdeš podporu, nápady, kamarády, tipy na složitější akordy a kde možná potkáš někoho, s kým založíš kapelu. Nejsme kurz, jsme online komunita. Kroužek. Discord. Skaut pro programátory. Ženeme tě vpřed, ale zároveň u nás najdeš rady a podporu, když ti něco nejde.
-</div>
 
-<div class="icons main-section">
+<div class="icons">
     <ul class="icons-list">
         <li class="icons-item">
             <i class="bi bi-play-btn"></i>
@@ -87,13 +85,13 @@ Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně cho
 
 ## Proč platit?
 
-<div class="blockquotes-2 main-section">
+<div class="blockquotes-2">
 {{ blockquote_avatar('Ty diskuze jsou úžasné. Když to lidi zaplatí, tak je to úplně jiné. Extrémně kultivované, srozumitelné, každý příspěvek dává smysl.', 'jakub.png', 'Jakub', 'Jakub') }}
 
 {{ blockquote_avatar('Je problém najít komunitu, která je o vzájemný pomoci a výměně informací, ne o honění ega. Tady je to krásná výjimka. Jsem ráda, že toho můžu být součástí.', 'hanka.png', 'Hanka', 'Hanka') }}
 </div>
 
-<div class="comparison main-section" markdown="1">
+<div class="comparison" markdown="1">
 {% set check = 'check-circle-fill'|icon('text-success') %}
 {% set cross = 'x-square-fill'|icon('text-danger') %}
 
@@ -109,15 +107,13 @@ Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně cho
 
 ### Neztrácej čas záplavou názorů
 
-<div class="main-section" markdown="1">
 Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství, opakují [nejrůznější mýty](/motivation/#myths), doporučují staré postupy, nebo vycházejí z toho, že co vyhovovalo jednomu, zákonitě platí i pro druhého. Je běžné, že na jednoduchou otázku dostaneš desítky rozcházejících se a mnohdy i zcela nevhodných odpovědí.
 
 V klubu vycházíme z konkrétní cesty, jak postupovat, která se osvědčila na mnoha začátečnících. Zároveň se snažíme radit objektivně a brát ohled na tvou situaci. Poskytneme ti různé pohledy, ale zároveň jasný směr. Místo abychom tě utopili v možnostech, pomůžeme ti rozhodnout se.
-</div>
 
 ### Neztrácej čas s hulváty a sexisty
 
-<div class="blockquotes-2 main-section">
+<div class="blockquotes-2">
 {{
     blockquote_toxic(
         'Loni jsem provedl upgrade PŘÍTELKYNĚ 1.0 na verzi MANŽELKA 1.0…',
@@ -136,9 +132,7 @@ V klubu vycházíme z konkrétní cesty, jak postupovat, která se osvědčila n
 }}
 </div>
 
-<div class="main-section" markdown="1">
 V klubu neexistují hloupé otázky a nemáme potřebu někoho stírat. Mezi členy je mnoho žen a uslintané vtipy u nás nikoho nezajímají. Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. Případné excesy se řídí [pravidly chování](/coc/).
-</div>
 
 ## Vyzkoušej to zdarma
 

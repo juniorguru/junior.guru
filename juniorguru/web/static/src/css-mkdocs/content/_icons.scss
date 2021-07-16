@@ -1,22 +1,16 @@
-$icons-space-half: calc(#{map-get($spacers, 3)} / 2);
-$icons-space: map-get($spacers, 3);
-$icons-space-double: map-get($spacers, 3) * 2;
-
-.icons {
-  margin: $icons-space-double 0;
-}
-
 .icons-list {
   @extend .list-unstyled;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-bottom: 0;
 }
 
 .icons-item {
   width: 10em;
-  padding: $icons-space-double $icons-space-half;
-  padding-top: 0;
+  padding-right: calc(#{$spacer} / 2);
+  padding-left: calc(#{$spacer} / 2);
+  margin-bottom: $spacer;
   font-size: $font-size-sm;
   text-align: center;
 

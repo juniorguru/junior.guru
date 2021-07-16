@@ -7,28 +7,28 @@
   }
 }
 
-.main-marketing > h1,
-.main-marketing > h2,
-.main-marketing > h3 {
-  text-align: center;
-}
+// .main-marketing > h1,
+// .main-marketing > h2,
+// .main-marketing > h3 {
+//   text-align: center;
+// }
 
-.main-marketing > h1 {
-  @extend .display-4;
-}
+// .main-marketing > h1 {
+//   @extend .display-4;
+// }
 
-.main-marketing > h2 {
-  @extend .display-5;
-  margin-top: map-get($spacers, 5);
-  margin-bottom: map-get($spacers, 3) * 2;
-}
+// .main-marketing > h2 {
+//   @extend .display-5;
+//   margin-top: map-get($spacers, 5);
+//   margin-bottom: map-get($spacers, 3) * 2;
+// }
 
-.main-marketing > h3 {
-  @extend .display-6;
-  margin-top: map-get($spacers, 5);
-  margin-bottom: map-get($spacers, 3) * 2;
-}
+// .main-marketing > h3 {
+//   @extend .display-6;
+//   margin-top: map-get($spacers, 5);
+//   margin-bottom: map-get($spacers, 3) * 2;
+// }
 
-.main-marketing > .main-section {
-  margin: (map-get($spacers, 3) * 2) 0;
-}
+// .main-marketing > .main-section {
+//   margin: (map-get($spacers, 3) * 2) 0;
+// }

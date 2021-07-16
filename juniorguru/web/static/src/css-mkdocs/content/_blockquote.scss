@@ -1,5 +1,6 @@
 .blockquote-container {
-  margin: (map-get($spacers, 3) * 2) 0;
+  margin: 0;
+  margin-bottom: $spacer;
 }
 
 .blockquote-content {
@@ -83,12 +84,8 @@
   margin-top: 0;
 
   @include media-breakpoint-up(md) {
-    margin-bottom: 0;
+    margin-bottom: $spacer;
   }
-}
-
-.blockquotes-2 .blockquote-container:last-child {
-  margin-bottom: 0;
 }
 
 .blockquotes-2 .blockquote-container figure {

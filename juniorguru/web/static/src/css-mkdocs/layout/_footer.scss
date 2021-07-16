@@ -1,3 +1,9 @@
+$footer-spacer-sm: map-get($spacers, 2);
+$footer-spacer: $spacer;
+$footer-spacer-md: $spacer * 2;
+$footer-spacer-lg: map-get($spacers, 5);
+
+
 .footer {
   color: $jg-white;
   background-color: $jg-dark;
@@ -35,8 +41,8 @@
 }
 
 .footer-construction {
-  padding-top: map-get($spacers, 3);
-  padding-bottom: map-get($spacers, 3);
+  padding-top: $footer-spacer;
+  padding-bottom: $footer-spacer;
 }
 
 
@@ -50,8 +56,8 @@
 
 .footer-address {
   @extend .container-fluid;
-  padding-top: map-get($spacers, 5);
-  padding-bottom: map-get($spacers, 5);
+  padding-top: $footer-spacer-lg;
+  padding-bottom: $footer-spacer-lg;
   margin-bottom: 0;
 }
 
@@ -65,8 +71,8 @@
 .footer-address-item {
   @extend .col-sm-6;
   @extend .col-lg-3;
-  padding-top: map-get($spacers, 3);
-  padding-bottom: map-get($spacers, 3);
+  padding-top: $footer-spacer;
+  padding-bottom: $footer-spacer;
 
   @include media-breakpoint-up(lg) {
     padding-top: 0;
@@ -121,7 +127,7 @@
 }
 
 .footer-icons-item {
-  margin-right: map-get($spacers, 2);
+  margin-right: $footer-spacer-sm;
 }
 
 
@@ -130,8 +136,8 @@
 */
 
 .footer-about {
-  padding-top: map-get($spacers, 5);
-  padding-bottom: map-get($spacers, 5);
+  padding-top: $footer-spacer-lg;
+  padding-bottom: $footer-spacer-lg;
 }
 
 .footer-about-content {
@@ -141,10 +147,10 @@
 
 .footer-about-text {
   @extend .col-lg-9;
-  padding-bottom: map-get($spacers, 3) * 2;
+  padding-bottom: $footer-spacer-md;
 
   @include media-breakpoint-up(lg) {
-    padding-right: map-get($spacers, 5);
+    padding-right: $footer-spacer-lg;
     margin-bottom: 0;
   }
 }
@@ -162,9 +168,9 @@
   width: 100%;
   max-width: 6rem;
   height: auto;
-  margin-top: map-get($spacers, 2);
-  margin-bottom: map-get($spacers, 2);
-  margin-left: map-get($spacers, 2);
+  margin-top: $footer-spacer-sm;
+  margin-bottom: $footer-spacer-sm;
+  margin-left: $footer-spacer-sm;
   shape-outside: circle(50%);
   clip-path: circle(50%);
   border-radius: 100%;
@@ -190,12 +196,12 @@
 .footer-finances-number {
   @extend .h3;
   @extend .lh-1;
-  margin-bottom: map-get($spacers, 3) * 2;
+  margin-bottom: $footer-spacer-md;
 }
 
 .footer-finances-list {
   @extend .list-unstyled;
-  margin-bottom: map-get($spacers, 3) * 2;
+  margin-bottom: $footer-spacer-md;
 }
 
 .footer-finances-value {
@@ -209,7 +215,7 @@
 
 .footer-finances-button {
   display: block;
-  margin-bottom: map-get($spacers, 2);
+  margin-bottom: $footer-spacer-sm;
 }
 
 .footer-finances-link {
@@ -237,11 +243,11 @@
 }
 
 .footer-nav {
-  padding-top: map-get($spacers, 5);
-  padding-bottom: map-get($spacers, 5);
+  padding-top: $footer-spacer-lg;
+  padding-bottom: $footer-spacer-lg;
 
   p {
-    margin-bottom: map-get($spacers, 5);
+    margin-bottom: $footer-spacer-lg;
   }
 }
 
@@ -251,8 +257,8 @@
 */
 
 .footer-rules {
-  padding-top: map-get($spacers, 3);
-  padding-bottom: map-get($spacers, 3);
+  padding-top: $footer-spacer;
+  padding-bottom: $footer-spacer;
 }
 
 .footer-rules a {
@@ -270,7 +276,7 @@
 }
 
 .footer-rules-item {
-  padding-right: map-get($spacers, 2);
-  padding-left: map-get($spacers, 2);
+  padding-right: $footer-spacer-sm;
+  padding-left: $footer-spacer-sm;
   white-space: nowrap;
 }
