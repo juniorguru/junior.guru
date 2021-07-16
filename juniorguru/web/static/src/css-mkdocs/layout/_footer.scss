@@ -1,8 +1,6 @@
 $footer-spacer-sm: map-get($spacers, 2);
 $footer-spacer: $spacer;
 $footer-spacer-md: $spacer * 2;
-$footer-spacer-lg: map-get($spacers, 5);
-
 
 .footer {
   color: $jg-white;
@@ -56,8 +54,8 @@ $footer-spacer-lg: map-get($spacers, 5);
 
 .footer-address {
   @extend .container-fluid;
-  padding-top: $footer-spacer-lg;
-  padding-bottom: $footer-spacer-lg;
+  padding-top: $footer-spacer-md;
+  padding-bottom: $footer-spacer-md;
   margin-bottom: 0;
 }
 
@@ -136,8 +134,8 @@ $footer-spacer-lg: map-get($spacers, 5);
 */
 
 .footer-about {
-  padding-top: $footer-spacer-lg;
-  padding-bottom: $footer-spacer-lg;
+  padding-top: $footer-spacer-md;
+  padding-bottom: $footer-spacer-md;
 }
 
 .footer-about-content {
@@ -150,7 +148,8 @@ $footer-spacer-lg: map-get($spacers, 5);
   padding-bottom: $footer-spacer-md;
 
   @include media-breakpoint-up(lg) {
-    padding-right: $footer-spacer-lg;
+    padding-right: $footer-spacer-md;
+    padding-bottom: 0;
     margin-bottom: 0;
   }
 }
@@ -211,6 +210,7 @@ $footer-spacer-lg: map-get($spacers, 5);
 
 .footer-finances-actions {
   display: inline-block;
+  margin-bottom: 0;
 }
 
 .footer-finances-button {
@@ -243,12 +243,16 @@ $footer-spacer-lg: map-get($spacers, 5);
 }
 
 .footer-nav {
-  padding-top: $footer-spacer-lg;
-  padding-bottom: $footer-spacer-lg;
+  padding-top: $footer-spacer-md;
+  padding-bottom: $footer-spacer-md;
 
   p {
-    margin-bottom: $footer-spacer-lg;
+    margin-bottom: $footer-spacer-md;
   }
+}
+
+.footer-nav > *:last-child {
+  margin-bottom: 0;
 }
 
 

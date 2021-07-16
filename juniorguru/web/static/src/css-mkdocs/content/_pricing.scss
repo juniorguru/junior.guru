@@ -4,7 +4,7 @@
 }
 
 .pricing-block {
-  padding: map-get($spacers, 3);
+  padding: $spacer;
   padding-top: 0;
 
   @include media-breakpoint-up(md) {

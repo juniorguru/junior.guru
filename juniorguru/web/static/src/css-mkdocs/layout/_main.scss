@@ -1,10 +1,10 @@
 .main {
   @extend .container-lg;
-  padding-bottom: map-get($spacers, 5);
+  // padding-bottom: map-get($spacers, 5);
 
-  h1 {
-    margin-top: map-get($spacers, 5);
-  }
+  // h1 {
+  //   margin-top: map-get($spacers, 5);
+  // }
 }
 
 // .main-marketing > h1,
