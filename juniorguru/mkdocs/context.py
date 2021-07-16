@@ -2,7 +2,7 @@ from operator import attrgetter, itemgetter
 
 import arrow
 
-from juniorguru.models import with_db, Metric, Topic, ClubUser
+from juniorguru.models import with_db, Metric, Topic, ClubUser, Company, Event
 from juniorguru.web import thumbnail
 
 
@@ -21,6 +21,12 @@ def on_markdown_context(context, page, config):
     context['club_elapsed_months'] = int(round((context['now'] - CLUB_LAUNCH_AT).days / 30))
     context['members'] = ClubUser.avatars_listing()
     context['members_total_count'] = ClubUser.members_count()
+    context['companies'] = Company.listing()
+    context['events'] = Event.listing()
+
+    # TODO
+    # if 'thumbnail_title' in page.meta:
+    #     context['thumbnail'] = thumbnail(title=page.meta['thumbnail_title'])
 
     if 'topic_name' in page.meta:
         topic_name = page.meta['topic_name']
@@ -38,8 +44,8 @@ METRICS_INC_NAMES = {
 @with_db
 def on_theme_context(context, page, config):
     context['page'].meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
+    context['page'].meta.setdefault('thumbnail', thumbnail())
 
-    context['thumbnail'] = thumbnail()
     context['nav_topics'] = sorted([
         file.page for file in context['pages']
         if file.url.startswith('topics/')

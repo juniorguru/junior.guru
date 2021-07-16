@@ -1,22 +1,50 @@
 .comparison {
   margin-bottom: $spacer;
 
+  table,
+  td,
+  th {
+    border-spacing: 0;
+    border: none;
+    border-width: 0;
+  }
+
   table {
-    @extend .table;
-    max-width: 60rem;
-    margin-right: auto;
-    margin-bottom: 0;
-    margin-left: auto;
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: separate;
   }
 
-  table th,
-  table td {
+  th,
+  td {
+    padding: $table-cell-padding-y $table-cell-padding-x-sm;
+    font-size: $font-size-sm;
     text-align: center;
+    vertical-align: top;
+    border-color: $jg-gray-light;
+    border-style: solid;
+    border-bottom-width: 1px;
   }
 
-  table th:nth-child(2),
-  table td:nth-child(2) {
+  th {
+    vertical-align: middle;
+    border-bottom-color: $jg-dark;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
     background: $jg-yellow-light;
+    border: 1px solid $jg-yellow;
+    border-top-width: 0;
+  }
+
+  th:nth-child(2) {
+    border-top-width: 1px;
+    border-radius: $border-radius-lg $border-radius-lg 0 0;
+  }
+
+  tr:last-child td:nth-child(2) {
+    border-radius: 0 0 $border-radius-lg $border-radius-lg;
   }
 
   i {
@@ -24,8 +52,8 @@
   }
 
   @include media-breakpoint-up(sm) {
-    table th,
-    table td {
+    th,
+    td {
       padding: ($table-cell-padding-y * 1.5) $table-cell-padding-x;
       text-align: left;
     }
@@ -37,9 +65,20 @@
   }
 
   @include media-breakpoint-up(md) {
-    table th,
-    table td {
-      padding: ($table-cell-padding-y * 1.5) ($table-cell-padding-x * 1.5);
+    table {
+      width: auto;
+    }
+
+    th,
+    td {
+      padding: ($table-cell-padding-y * 1.5) ($table-cell-padding-x * 2);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    th,
+    td {
+      padding: ($table-cell-padding-y * 1.5) ($table-cell-padding-x * 3);
     }
   }
 }

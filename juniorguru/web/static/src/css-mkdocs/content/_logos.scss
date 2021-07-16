@@ -1,0 +1,54 @@
+.logos {
+  @extend .list-unstyled;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 0;
+}
+
+.logos.grayscale .logos-image {
+  filter: grayscale(100%);
+  opacity: .5;
+}
+
+.logos.grayscale a:hover .logos-image,
+.logos.grayscale a:focus .logos-image,
+.logos.grayscale a:active .logos-image {
+  filter: none;
+  opacity: 1;
+}
+
+.logos-item {
+  display: flex;
+  align-items: center;
+  margin: 0 map-get($spacers, 2) $spacer map-get($spacers, 2);
+
+  @include media-breakpoint-up(sm) {
+    margin: 0 $spacer $spacer $spacer;
+  }
+}
+
+.logos-caption {
+  @extend .small;
+  white-space: nowrap;
+}
+
+.logos-caption,
+.logos-caption a,
+.logos-caption a:hover,
+.logos-caption a:focus,
+.logos-caption a:active {
+  color: $jg-gray;
+}
+
+.logos-image {
+  width: auto;
+  max-width: 6rem;
+  height: auto;
+  max-height: 3rem;
+
+  @include media-breakpoint-up(sm) {
+    max-width: 8rem;
+    max-height: 4rem;
+  }
+}

@@ -1,20 +1,54 @@
 ---
 title: Klub tě nastartuje
+thumbnail_title: Klub tě nastartuje
 main_class: main-marketing
 description: Přidej se na junior.guru Discord! Jsme tvoje online parta začátečníků, kteří to myslí vážně, a profesionálů s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
-{% from 'content.html' import blockquote_avatar, blockquote_toxic %}
+{% from 'content.html' import blockquote_avatar, blockquote_toxic, logo %}
 
 # Klub tě nastartuje
 
 Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážně, a profesionálové s chutí pomáhat. V klubu svoje programování nebo hledání práce posuneš o 1 % každý den.
 
-- Přidej se
-- Pro firmy
+- {{ club_elapsed_months }} měsíců existence
+- {{ members_total_count }} členů
+- {{ companies|length }} firemních členů
+- {{ events|length }} klubových akcí
 
-{{ members_total_count }} členů za {{ club_elapsed_months }} měsíců provozu<br>
-Firemní partneři:<br>
-Komunitní partneři:<br>
+<a class="btn btn-primary" href="">Přidej se</a>
+<a class="btn btn-outline-primary" href="#companies">Pro firmy</a>
+
+<div class="members">
+    <ul class="members-list">
+        {% for member in members|sample(50) %}
+        <li class="members-item">
+            <img width="50" height="50" class="members-image" src="{{ ('static/' + member.avatar_path)|url }}" alt="Profilovka člena {{ member.id }}">
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<ul class="logos">
+    <li class="logos-item logos-caption">
+        <a href="#companies">Firemní partneři</a>:
+    </li>
+    {% for company in companies %}
+        {{ logo(company.name, company.filename, company.link) }}
+    {% endfor %}
+</ul>
+<ul class="logos grayscale">
+    <li class="logos-item logos-caption">
+        <a href="#communities">Komunitní partneři</a>:
+    </li>
+    {{ logo('Česko.Digital', 'ceskodigital.svg', 'https://cesko.digital/') }}
+    {{ logo('DigiKoalice', 'digikoalice.svg', 'https://digikoalice.cz/') }}
+    {{ logo('Frontendisti', 'frontendisti.svg', 'https://frontendisti.cz/') }}
+    {{ logo('PyLadies', 'pyladies.svg', 'https://pyladies.cz/') }}
+    {{ logo('Pyvec', 'pyvec.svg', 'https://pyvec.org/') }}
+    {{ logo('CyberMagnolia', 'cybermagnolia.svg', 'https://cybermagnolia.com/') }}
+    {{ logo('ReactGirls', 'reactgirls.svg', 'https://reactgirls.com/') }}
+    {{ logo('yablko', 'yablko.svg', 'http://robweb.sk/') }}
+</ul>
 
 ## Co je klub?
 
@@ -95,14 +129,14 @@ Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně cho
 {% set check = 'check-circle-fill'|icon('text-success') %}
 {% set cross = 'x-square-fill'|icon('text-danger') %}
 
-| Osobní mentor                       | Klub junior.guru                      | Veřejné skupiny                      |
-|-------------------------------------|---------------------------------------|--------------------------------------|
-| {{ check }} exkluzivní kvalita      | {{ check }} dostatečná kvalita        | {{ cross }} kvantita                 |
-| {{ cross }} drahé                   | {{ check }} dostupné                  | {{ check }} zdarma                   |
-| {{ check }} osobní vztah            | {{ check }} komunita                  | {{ cross }} anonymita                |
-| {{ check }} odborník na plný úvazek | {{ check }} správce na plný úvazek    | {{ cross }} správce dobro&shy;volník |
-| {{ check }} radí odborník           | {{ check }} radí angažovaní odborníci | {{ cross }} radí ko&shy;lemjdoucí    |
-| {{ cross }} obtížně dostupné        | {{ check }} dostupné                  | {{ check }} všudy&shy;přítomné       |
+| Osobní mentor                       | Klub junior.guru                                | Veřejné skupiny                      |
+|-------------------------------------|-------------------------------------------------|--------------------------------------|
+| {{ check }} exkluzivní kvalita      | {{ check }} dostatečná kvalita                  | {{ cross }} kvantita                 |
+| {{ cross }} drahé                   | {{ check }} dostupné                            | {{ check }} zdarma                   |
+| {{ check }} osobní vztah            | {{ check }} komunita                            | {{ cross }} anonymita                |
+| {{ check }} odborník na plný úvazek | {{ check }} správce na plný úvazek              | {{ cross }} správce dobro&shy;volník |
+| {{ check }} radí odborník           | {{ check }} radí anga&shy;žo&shy;vaní odborníci | {{ cross }} radí ko&shy;lemjdoucí    |
+| {{ cross }} obtížně dostupné        | {{ check }} dostupné                            | {{ check }} všudy&shy;přítomné       |
 </div>
 
 ### Neztrácej čas záplavou názorů

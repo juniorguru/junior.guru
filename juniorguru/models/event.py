@@ -50,6 +50,11 @@ class Event(BaseModel):
             .join(EventSpeaking)
 
     @classmethod
+    def listing(cls):
+        return cls.select() \
+            .order_by(cls.start_at.desc())
+
+    @classmethod
     def archive_listing(cls, today=None):
         today = today or date.today()
         return cls.select() \

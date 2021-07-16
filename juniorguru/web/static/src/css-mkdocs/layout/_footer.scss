@@ -25,7 +25,7 @@ $footer-spacer-md: $spacer * 2;
   @extend .small;
   @extend .font-monospace;
   @extend .text-uppercase;
-  color: darken($jg-white, 30%);
+  color: $jg-gray-dark;
 }
 
 
@@ -218,14 +218,8 @@ $footer-spacer-md: $spacer * 2;
   margin-bottom: $footer-spacer-sm;
 }
 
-.footer-finances-link {
-  @extend .small;
-  display: block;
-  text-align: center;
-}
-
 .footer-finances-link a {
-  color: darken($jg-white, 30%);
+  color: $jg-gray-dark;
 }
 
 
@@ -238,7 +232,7 @@ $footer-spacer-md: $spacer * 2;
 
   p,
   a {
-    color: darken($jg-white, 30%);
+    color: $jg-gray-dark;
   }
 }
 
@@ -267,7 +261,7 @@ $footer-spacer-md: $spacer * 2;
 
 .footer-rules a {
   @extend .small;
-  color: darken($jg-white, 30%);
+  color: $jg-gray-dark;
 }
 
 .footer-rules-list {

@@ -48,3 +48,22 @@
     </figure>
   </div>
 {% endmacro %}
+
+
+{% macro logo(name, filename, url=None) %}
+  <li class="logos-item">
+    <a class="logos-link"
+      title="{{ name }}"
+      {% if url %}
+        data-metrics-utm
+        data-metrics-utm-medium="logo"
+        data-metrics-utm-campaign="partnership"
+        href="{{ url }}"
+        target="_blank"
+        rel="noopener"
+      {% endif %}
+    >
+      <img class="logos-image" width="150" src="{{ ('static/images/logos/' + filename)|url }}" alt="{{ name }}">
+    </a>
+  </li>
+{% endmacro %}

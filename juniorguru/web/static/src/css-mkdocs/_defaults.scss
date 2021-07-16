@@ -9,8 +9,9 @@ $jg-white: #fff;
 $jg-yellow: #fffa72;
 $jg-yellow-light: #fffee3;
 $jg-blue: #1755d1;
-$jg-gray: #ababab;
-$jg-gray-light: #eee;
+$jg-gray: #6c757d;  // equals to $gray-600, the most used gray in Bootstrap
+$jg-gray-light: darken($jg-white, 20%);
+$jg-gray-dark: darken($jg-white, 30%);
 $jg-dark: #343434;
 $jg-black: #000;
 

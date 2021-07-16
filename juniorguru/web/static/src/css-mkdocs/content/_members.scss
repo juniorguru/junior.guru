@@ -1,0 +1,23 @@
+$member-image-size: 3rem;
+$member-shift: $member-image-size - ($member-image-size * .8);
+
+.members-list {
+  @extend .list-unstyled;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: $member-shift;
+  margin-bottom: $spacer;
+}
+
+.members-item {
+  margin-left: -1 * $member-shift;
+}
+
+.members-image {
+  width: $member-image-size;
+  height: $member-image-size;
+  background: $jg-white;
+  border: 1px $jg-white solid;
+  border-radius: 100%;
+}
