@@ -202,3 +202,13 @@ V klubu neexistují hloupé otázky a nemáme potřebu někoho stírat. Mezi čl
 
     Klub spolupracuje s Engeto Academy a Software Development Academy. Někteří jejich absolventi mohou dostat tři měsíce členství v klubu zdarma. Pokud u nich studuješ, kontaktuj je a ověř si, zda to náhodou není tvůj případ.
 #}
+
+## FAQ
+
+### Firmy {: #companies }
+
+TBD
+
+### Komunity {: #communities }
+
+TBD
