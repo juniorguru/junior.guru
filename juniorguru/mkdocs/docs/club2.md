@@ -20,7 +20,7 @@ Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážn
 </div>
 
 <a class="btn btn-primary" href="#pricing">Přidej se</a>
-<a class="btn btn-outline-primary" href="#companies">Pro firmy</a>
+<a class="btn btn-outline-primary" href="{{ 'hire-juniors/'|url }}">Pro firmy</a>
 
 <div class="members">
     <ul class="members-list">
@@ -34,7 +34,7 @@ Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážn
 
 <ul class="logos">
     <li class="logos-item logos-caption">
-        <a href="#companies">Firemní partneři</a>:
+        <a href="{{ 'hire-juniors/'|url }}">Firemní partneři</a>:
     </li>
     {% for company in companies %}
         {{ logo(company.name, company.filename, company.link) }}
@@ -223,10 +223,6 @@ V klubu neexistují hloupé otázky a nemáme potřebu někoho stírat. Mezi čl
 <section markdown="1">
 
 ## FAQ
-
-### Firmy {: #companies }
-
-TBD
 
 ### Komunity {: #communities }
 
