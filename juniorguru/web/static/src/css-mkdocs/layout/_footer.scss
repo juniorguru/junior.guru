@@ -1,3 +1,4 @@
+$footer-gray-text: darken($jg-white, 30%);
 $footer-spacer-sm: map-get($spacers, 2);
 $footer-spacer: $spacer;
 $footer-spacer-md: $spacer * 2;
@@ -25,7 +26,7 @@ $footer-spacer-md: $spacer * 2;
   @extend .small;
   @extend .font-monospace;
   @extend .text-uppercase;
-  color: $jg-gray-dark;
+  color: $footer-gray-text;
 }
 
 
@@ -219,7 +220,7 @@ $footer-spacer-md: $spacer * 2;
 }
 
 .footer-finances-link a {
-  color: $jg-gray-dark;
+  color: $footer-gray-text;
 }
 
 
@@ -232,7 +233,7 @@ $footer-spacer-md: $spacer * 2;
 
   p,
   a {
-    color: $jg-gray-dark;
+    color: $footer-gray-text;
   }
 }
 
@@ -261,7 +262,7 @@ $footer-spacer-md: $spacer * 2;
 
 .footer-rules a {
   @extend .small;
-  color: $jg-gray-dark;
+  color: $footer-gray-text;
 }
 
 .footer-rules-list {

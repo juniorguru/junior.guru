@@ -21,11 +21,11 @@ $company-logo-size: 8rem;
 }
 
 .jobs__item {
-  border-top: variables.$border-width solid variables.$jg-yellow-light;
+  border-top: variables.$border-width solid variables.$jg-yellow-light-legacy;
 }
 
 .jobs__item:last-child {
-  border-bottom: variables.$border-width solid variables.$jg-yellow-light;
+  border-bottom: variables.$border-width solid variables.$jg-yellow-light-legacy;
 }
 
 .jobs__item:last-child.jobs__item--highlighted {
@@ -33,7 +33,7 @@ $company-logo-size: 8rem;
 }
 
 .jobs__item--highlighted {
-  background: variables.$jg-yellow-light;
+  background: variables.$jg-yellow-light-legacy;
   border-color: variables.$jg-yellow;
 }
 
@@ -53,7 +53,7 @@ $company-logo-size: 8rem;
 }
 
 .jobs__company-logo {
-  border: variables.$border-width solid variables.$jg-yellow-light;
+  border: variables.$border-width solid variables.$jg-yellow-light-legacy;
   width: $company-logo-size * 0.8;
   height: $company-logo-size * 0.8;
   background: variables.$jg-white;
@@ -107,7 +107,7 @@ $company-logo-size: 8rem;
 
 .jobs__tag {
   @include variables.font-0;
-  border: 1px solid variables.$jg-yellow-light;
+  border: 1px solid variables.$jg-yellow-light-legacy;
   display: inline;
   padding: 0.2rem 0.5rem;
   margin-right: math.div(variables.$whitespace-0, 2);

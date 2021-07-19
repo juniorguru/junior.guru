@@ -7,13 +7,17 @@
 
 $jg-white: #fff;
 $jg-yellow: #fffa72;
-$jg-yellow-light: #fffee3;
+$jg-yellow-light: lighten($jg-yellow, 22.2%);
 $jg-blue: #1755d1;
+$jg-blue-light: lighten($jg-blue, 52.2%);
 $jg-gray: #6c757d;  // equals to $gray-600, the most used gray in Bootstrap
-$jg-gray-light: darken($jg-white, 20%);
-$jg-gray-dark: darken($jg-white, 30%);
+$jg-gray-light: lighten($jg-gray, 45%);
+$jg-gray-white: lighten($jg-gray, 50%);
 $jg-dark: #343434;
 $jg-black: #000;
+
+$jg-yellow-light-legacy: #fffee3;  // equals to lighten($jg-yellow, 22.2%)
+$jg-gray-light-legacy: darken($jg-white, 20%);
 
 
 /*

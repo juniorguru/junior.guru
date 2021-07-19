@@ -8,7 +8,7 @@
   .toc-permalink {
     display: inline;
     @include variables.font-0;
-    @include variables.color-links(variables.$jg-gray-light, variables.$jg-gray);
+    @include variables.color-links(variables.$jg-gray-light-legacy, variables.$jg-gray);
     margin-left: variables.$whitespace-2;
     text-decoration: none;
     white-space: nowrap;

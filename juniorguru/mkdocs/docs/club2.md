@@ -1,7 +1,7 @@
 ---
 title: Klub tě nastartuje
 thumbnail_title: Klub tě nastartuje
-main_class: main-wide
+main_class: main-sections
 description: Přidej se na junior.guru Discord! Jsme tvoje online parta začátečníků, kteří to myslí vážně, a profesionálů s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
 {% from 'content.html' import blockquote_avatar, blockquote_toxic, logo %}
@@ -124,6 +124,7 @@ Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně cho
 #}
 
 </section>
+<div class="section-background gray-white without-border-bottom" markdown="1">
 <section markdown="1">
 
 ## Proč platit?
@@ -178,6 +179,8 @@ V klubu vycházíme z konkrétní cesty, jak postupovat, která se osvědčila n
 V klubu neexistují hloupé otázky a nemáme potřebu někoho stírat. Mezi členy je mnoho žen a uslintané vtipy u nás nikoho nezajímají. Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. Případné excesy se řídí [pravidly chování](/coc/).
 
 </section>
+</div>
+<div class="section-background yellow-light">
 <section id="pricing">
     <div class="pricing-container">
         <h2>Vyzkoušej to zdarma!</h2>
@@ -209,6 +212,8 @@ V klubu neexistují hloupé otázky a nemáme potřebu někoho stírat. Mezi čl
         </div>
     </div>
 </section>
+</div>
+
 {#
     TODO
 

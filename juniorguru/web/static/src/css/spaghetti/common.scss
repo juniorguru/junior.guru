@@ -355,7 +355,7 @@ ul.items {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    border-top: 1px solid variables.$jg-yellow-light;
+    border-top: 1px solid variables.$jg-yellow-light-legacy;
   }
 
   & > li:first-child {

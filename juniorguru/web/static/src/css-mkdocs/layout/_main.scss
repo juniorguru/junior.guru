@@ -1,13 +1,55 @@
-.main-wide {
+.main-single {
+  @extend .container-lg;
+}
+
+.main-sections {
   @extend .container-fluid;
   padding-right: 0;
   padding-left: 0;
 
   section {
     @extend .container-lg;
+    padding-top: map-get($spacers, 5) - $spacer;
+    padding-bottom: map-get($spacers, 5) - $spacer;
   }
 }
 
-.main-standard {
-  @extend .container-lg;
+.section-background {
+  padding-top: $spacer;
+  padding-bottom: $spacer;
+  border-style: solid;
+}
+
+.section-background.dark {
+  color: $jg-white;
+  background: $jg-dark;
+}
+
+.section-background.blue {
+  color: $jg-white;
+  background: $jg-blue;
+}
+
+.section-background.blue-light {
+  background: $jg-blue-light;
+}
+
+.section-background.yellow {
+  background: $jg-yellow;
+}
+
+.section-background.yellow-light {
+  background: $jg-yellow-light;
+  border-color: $jg-yellow;
+  border-width: 1px 0;
+}
+
+.section-background.gray-white {
+  background: $jg-gray-white;
+  border-color: $jg-gray-light;
+  border-width: 1px 0;
+}
+
+.section-background.without-border-bottom {
+  border-bottom: 0;
 }
