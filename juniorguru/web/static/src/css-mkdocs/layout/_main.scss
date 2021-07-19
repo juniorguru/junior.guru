@@ -1,3 +1,5 @@
+$section-spacer-base: map-get($spacers, 5);
+
 .main-single {
   @extend .container-lg;
 }
@@ -9,8 +11,8 @@
 
   section {
     @extend .container-lg;
-    padding-top: map-get($spacers, 5) - $spacer;
-    padding-bottom: map-get($spacers, 5) - $spacer;
+    padding-top: $section-spacer-base - $spacer;
+    padding-bottom: $section-spacer-base - $spacer;
   }
 }
 
@@ -50,6 +52,11 @@
   border-width: 1px 0;
 }
 
-.section-background.without-border-bottom {
-  border-bottom: 0;
+.margin-standout {
+  margin-top: $section-spacer-base;
+  margin-bottom: $section-spacer-base;
+}
+
+.margin-standout:last-child {
+  margin-bottom: 0;
 }
