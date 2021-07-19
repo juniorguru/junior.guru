@@ -1,21 +1,25 @@
 ---
 title: Klub tě nastartuje
 thumbnail_title: Klub tě nastartuje
-main_class: main-marketing
+main_class: main-wide
 description: Přidej se na junior.guru Discord! Jsme tvoje online parta začátečníků, kteří to myslí vážně, a profesionálů s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
 {% from 'content.html' import blockquote_avatar, blockquote_toxic, logo %}
 
 # Klub tě nastartuje
 
+<div class="lead" markdown="1">
 Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážně, a profesionálové s chutí pomáhat. V klubu svoje programování nebo hledání práce posuneš o 1 % každý den.
+</div>
 
-- {{ club_elapsed_months }} měsíců existence
-- {{ members_total_count }} členů
-- {{ companies|length }} firemních členů
-- {{ events|length }} klubových akcí
+<div class="numbers" markdown="1">
+- **{{ members_total_count }}** členů
+- **{{ companies|length }}** firemních členů
+- **{{ events|length }}** klubových akcí
+- **{{ club_elapsed_months }}** měsíců provozu
+</div>
 
-<a class="btn btn-primary" href="">Přidej se</a>
+<a class="btn btn-primary" href="#pricing">Přidej se</a>
 <a class="btn btn-outline-primary" href="#companies">Pro firmy</a>
 
 <div class="members">
@@ -49,6 +53,8 @@ Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážn
     {{ logo('ReactGirls', 'reactgirls.svg', 'https://reactgirls.com/') }}
     {{ logo('yablko', 'yablko.svg', 'http://robweb.sk/') }}
 </ul>
+
+<section markdown="1">
 
 ## Co je klub?
 
@@ -117,6 +123,9 @@ Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně cho
     TODO poslední 2-3 akce v klubu
 #}
 
+</section>
+<section markdown="1">
+
 ## Proč platit?
 
 <div class="blockquotes-2">
@@ -168,40 +177,45 @@ V klubu vycházíme z konkrétní cesty, jak postupovat, která se osvědčila n
 
 V klubu neexistují hloupé otázky a nemáme potřebu někoho stírat. Mezi členy je mnoho žen a uslintané vtipy u nás nikoho nezajímají. Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. Případné excesy se řídí [pravidly chování](/coc/).
 
-## Vyzkoušej to zdarma
-
-<div class="pricing">
-    <div class="pricing-block">
-        <h3 class="pricing-heading">Ročně</h3>
-        <ul class="pricing-benefits">
-            <li class="pricing-benefits-item">Prvních 14 dní zdarma</li>
-            <li class="pricing-benefits-item">Jeden měsíc ušetříš</li>
-        </ul>
-        <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=59574">1199 Kč ročně</a>
+</section>
+<section id="pricing">
+    <div class="pricing-container">
+        <h2>Vyzkoušej to zdarma!</h2>
+        <div class="pricing">
+            <div class="pricing-block">
+                <h3 class="pricing-heading">Ročně</h3>
+                <ul class="pricing-benefits">
+                    <li class="pricing-benefits-item">Prvních 14 dní zdarma</li>
+                    <li class="pricing-benefits-item">Jeden měsíc ušetříš</li>
+                </ul>
+                <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=59574">1199 Kč ročně</a>
+            </div>
+            <div class="pricing-block">
+                <h3 class="pricing-heading">Měsíčně</h3>
+                <ul class="pricing-benefits">
+                    <li class="pricing-benefits-item">Prvních 14 dní zdarma</li>
+                    <li class="pricing-benefits-item">Můžeš to kdykoliv zrušit</li>
+                </ul>
+                <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=59515">109 Kč měsíčně</a>
+            </div>
+            <div class="pricing-block">
+                <h3 class="pricing-heading">Stipendium</h3>
+                <ul class="pricing-benefits">
+                    <li class="pricing-benefits-item">Podpora pro znevýhodněné</li>
+                    <li class="pricing-benefits-item">Vyplň formulář a uvidíš</li>
+                </ul>
+                <strong class="pricing-button disabled">Připravuje se</strong>
+            </div>
+        </div>
     </div>
-    <div class="pricing-block">
-        <h3 class="pricing-heading">Měsíčně</h3>
-        <ul class="pricing-benefits">
-            <li class="pricing-benefits-item">Prvních 14 dní zdarma</li>
-            <li class="pricing-benefits-item">Můžeš to kdykoliv zrušit</li>
-        </ul>
-        <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=59515">109 Kč měsíčně</a>
-    </div>
-    <div class="pricing-block">
-        <h3 class="pricing-heading">Stipendium</h3>
-        <ul class="pricing-benefits">
-            <li class="pricing-benefits-item">Podpora pro znevýhodněné</li>
-            <li class="pricing-benefits-item">Vyplň formulář a uvidíš</li>
-        </ul>
-        <strong class="pricing-button disabled">Připravuje se</strong>
-    </div>
-</div>
-
+</section>
 {#
     TODO
 
     Klub spolupracuje s Engeto Academy a Software Development Academy. Někteří jejich absolventi mohou dostat tři měsíce členství v klubu zdarma. Pokud u nich studuješ, kontaktuj je a ověř si, zda to náhodou není tvůj případ.
 #}
+
+<section markdown="1">
 
 ## FAQ
 
@@ -212,3 +226,5 @@ TBD
 ### Komunity {: #communities }
 
 TBD
+
+</section>

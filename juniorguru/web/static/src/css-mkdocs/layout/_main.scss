@@ -1,34 +1,13 @@
-.main {
-  @extend .container-lg;
-  // padding-bottom: map-get($spacers, 5);
+.main-wide {
+  @extend .container-fluid;
+  padding-right: 0;
+  padding-left: 0;
 
-  // h1 {
-  //   margin-top: map-get($spacers, 5);
-  // }
+  section {
+    @extend .container-lg;
+  }
 }
 
-// .main-marketing > h1,
-// .main-marketing > h2,
-// .main-marketing > h3 {
-//   text-align: center;
-// }
-
-// .main-marketing > h1 {
-//   @extend .display-4;
-// }
-
-// .main-marketing > h2 {
-//   @extend .display-5;
-//   margin-top: map-get($spacers, 5);
-//   margin-bottom: map-get($spacers, 3) * 2;
-// }
-
-// .main-marketing > h3 {
-//   @extend .display-6;
-//   margin-top: map-get($spacers, 5);
-//   margin-bottom: map-get($spacers, 3) * 2;
-// }
-
-// .main-marketing > .main-section {
-//   margin: (map-get($spacers, 3) * 2) 0;
-// }
+.main-standard {
+  @extend .container-lg;
+}
