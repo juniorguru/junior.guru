@@ -5,23 +5,50 @@
     <link rel="stylesheet" href="{{ templates_dir }}/poster.css">
   </head>
   <body>
-    <h1>{{ event.title }}</h1>
-    <p>
-      {{ event.start_at|weekday|capitalize }} {{ event.start_at.day }}. {{ event.start_at.month }}., {{ event.start_at|local_time }}
-    </p>
-    <p>
-      {{ event.poster_description|default(event.description, true)|md }}
-    </p>
-    {% if event.first_avatar_path %}
-    <p>
-      <img src="{{ images_dir }}/{{ event.first_avatar_path }}">
-    </p>
-    {% endif %}
-    <p>
-      <img src="{{ images_dir }}/{{ event.logo_path }}">
-    </p>
-    <p>
-      <img src="{{ images_dir }}/logo-legacy.svg">
-    </p>
+    <div class="bio">
+      {% if event.avatar_path %}
+        <div class="bio-avatars bio-avatars-1">
+          <img class="bio-avatar" src="{{ images_dir }}/{{ event.avatar_path }}">
+        </div>
+      {% else %}
+        <div class="bio-avatars bio-avatars-{{ event.list_speaking|length }}">
+          {% for speaking in event.list_speaking %}
+            <img class="bio-avatar" src="{{ images_dir }}/{{ speaking.avatar_path }}">
+          {% endfor %}
+        </div>
+      {% endif %}
+      <h2 class="bio-name">{{ event.bio_name }}</h2>
+      {% if event.bio_title %}
+        <p class="bio-title">{{ event.bio_title }}</p>
+      {% endif %}
+      {% if event.logo_path %}
+      <div class="bio-logo">
+        <img class="bio-logo-image" src="{{ images_dir }}/{{ event.logo_path }}">
+      </div>
+      {% endif %}
+    </div>
+    <div class="main">
+      <div class="talk">
+        <h1 class="talk-title">{{ event.title }}</h1>
+        <div class="talk-description">
+          {{ event.poster_description|default(event.description, true)|md }}
+        </div>
+      </div>
+      <div class="teaser">
+        <p class="teaser-text">
+          {{ event.start_at|weekday|capitalize }} <strong>{{ event.start_at.day }}. {{ event.start_at.month }}. {{ event.start_at.year }}</strong>, začátek v <strong>{{ event.start_at|local_time }}</strong>
+          <br>
+          Online pro členy <strong>junior.guru/club</strong>
+        </p>
+      </div>
+      <div class="about">
+        <div>
+          <img class="about-logo" src="{{ images_dir }}/logo.svg">
+        </div>
+        <p class="about-text">
+          Klub na <strong>junior.guru/club</strong> je sice placený, ale první dva týdny jsou zdarma. Klidně si zřiď členství jen kvůli akci, nám to nevadí. Akce probíhá online přes <strong>Discord</strong> a pořizuje se z ní záznam. Členové klubu mají přístup k záznamům všech proběhlých akcí, které najdeš na <strong>junior.guru/events</strong>
+        </p>
+      </div>
+    </div>
   </body>
 </html>

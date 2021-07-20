@@ -3,7 +3,6 @@ from pathlib import Path
 from datetime import date, timedelta
 
 import arrow
-from playhouse.shortcuts import model_to_dict
 from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, load
 
 from juniorguru.lib.timer import measure
@@ -34,8 +33,10 @@ schema = Seq(
         Optional('time', default='18:00'): Str(),
         'description': Str(),
         Optional('poster_description'): Str(),
-        Optional('bio'): Str(),
+        Optional('avatar_path'): Str(),
+        'bio_name': Str(),
         Optional('bio_title'): Str(),
+        'bio': Str(),
         Optional('bio_links'): Seq(Str()),
         Optional('logo_path'): Str(),
         'speakers': Seq(Int()),
@@ -86,8 +87,7 @@ def main():
                     raise ValueError(f"Event '{name}' references '{image_path}', but it doesn't exist")
 
             log.info(f"Rendering poster for '{name}'")
-            context = dict(event=model_to_dict(event, extra_attrs=['first_avatar_path']))
-            image_path = render_image_file('poster.html', context, POSTERS_DIR, filters={
+            image_path = render_image_file('poster.html', dict(event=event), POSTERS_DIR, filters={
                 'md': md,
                 'local_time': local_time,
                 'weekday': weekday,

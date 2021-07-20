@@ -2,11 +2,17 @@
   date: "2021-02-11"
   time: "18:30"
   description: |
-    Začneme několika _lightning talks_, pokud se někdo přihlásí. Pak bude volná debata podobně jako když se lidi sejdou v hospodě.
+    Začneme s _lightning talks_. Přihlášené příspěvky:
 
     -   Honza Javorek – Co a jak s GitHub profilem
     -   Daniel Srb – Jak si přepočítat hodinovku jako OSVČ na mzdu zaměstnance a opačně
     -   Karolina Surma - OSM + uMap + GitHub a špetka Bashe = dynamická mapa do každé domácnosti
+
+    Pak bude volná debata podobně, jako když se lidi sejdou v hospodě
+  avatar_path: icon.svg
+  bio_name: Honza Javorek, Daniel Srb, Karolina Surma
+  bio: |
+    Kdokoliv z účastníků srazu si může přihlásit _lightning talk_ a dostane prostor.
   speakers:
     - 668226181769986078
     - 652142810291765248
@@ -17,9 +23,10 @@
   date: "2021-03-16"
   description: |
     Máš svou první práci v IT? Výborně! Ale co teď? Jak být užitečným členem týmu, jak se dál vzdělávat a jak se z toho všeho nezbláznit? Přednáška bude v angličtině.
+  bio_name: Daria Grudzien
+  bio_title: Spoluzakladatelka CyberMagnolia, ex-Apiary SRE
   bio: |
     Daria Grudzien is a Site Reliability Engineer and a [CyberMagnolia community](https://cybermagnolia.com/) founder. She has switched career from a businesswoman to an engineer and now she’s mentoring other juniors starting their career. In her work she’s helping developers deploy code to production faster and brings visibility to production systems. She’s passionate about the topic of oncall training and making sure that all engineers carrying the pager feel confident. Check out also [interview with Daria](https://cybermagnolia.com/blog/daria-grudzien-interview/) or her [blog post on a similar topic](https://dariagrudzien.com/posts/the-one-about-managing-self-as-a-junior/)!
-  bio_title: Spoluzakladatelka CyberMagnolia, ex-Apiary SRE
   bio_links:
     - https://dariagrudzien.com/
     - https://www.linkedin.com/in/dariagru/
@@ -36,9 +43,10 @@
   date: "2021-03-31"
   description: |
     Co jsou „staticky generované stránky“? Co je Jamstack a jak ti může pomoci tvořit webovky? Jak se orientovat v existujících řešeních a jak si můžeš na Jamstacku vytvořit třeba vlastní blog?
+  bio_name: Ladislav Prskavec
+  bio_title: Senior Developer Manager v Oracle, SRE, školitel, organizátor srazů
   bio: |
     Láďa Prskavec je programátor, školitel a organizátor srazů. Jeho oblíbenými jazyky jsou Node.js, Ruby a Go. Dříve pracoval v LMC a Apiary, dnes je seniorním manažerem SRE v Oracle.
-  bio_title: Senior Developer Manager v Oracle, SRE, školitel, organizátor srazů
   bio_links:
     - https://www.prskavec.net/
     - https://twitter.com/abtris
@@ -54,19 +62,18 @@
 - title: Designování vysněné práce
   date: "2021-04-13"
   description: |
-    **Přednášku jsme kvůli zdravotní nesnázi přesunuli z 13. 4. na 27. 4.**
-
     Jak se z lektorky angličtiny stane frontendistka? První část přednášky je o těžkých rozhodnutích, motivaci, překážkách a pomoci na cestě k vysněné práci. V druhé se podíváme na související obory s vývojem webů a aplikací, včetně user experience.
+  bio_name: Adina Foxová
+  bio_title: Tlumočnice mezi designem a frontendem na volné noze, UXD tým v Leveris
   bio: |
     Adina Foxová je tlumočnice mezi designem a frontendem. Na volné noze vylepšuje staré a designuje nové weby a aplikace, v kódu se pak hlavně stará o architekturu stylů v React aplikacích. Má vášeň pro design systémy, zajímavé problémy a dinosaury. Už čtvrtým rokem staví s firmou Leveris kompletní bankovní platformu. Ve volném čase moderuje události v IT a její nejoblíbenější místo je Lucerna, když se koná WebExpo.
-  bio_title: Tlumočnice mezi designem a frontendem na volné noze, UXD tým v Leveris
   bio_links:
     - https://adinafoxova.cz/
     - https://twitter.com/adinafxv
     - https://github.com/adinafxv
     - https://www.linkedin.com/in/adina-foxova/
     - https://www.instagram.com/adinafxv/
-  logo_path: logos/leveris.png
+  logo_path: logos/adinafoxova.svg
   speakers:
     - 658628731337965586
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/836906198426320906
@@ -92,9 +99,10 @@
     -   Jaký je poměr v týmech mezi seniory a juniory, jakou pozornost může junior očekávat, když nastoupí?
   poster_description: |
     AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Jirka je seniorní recruiter v Red Hatu, který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase spoluorganizuje brněnský sraz Python programátorů a věnuje se DJingu.
+  bio_name: Jiří Psotka
+  bio_title: Senior Recruiter v Red Hat
   bio: |
     Jirka Psotka je seniorní recruiter v [Red Hatu](https://jobs.redhat.com/), který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase jako dobrovolník spoluorganizuje brněnský sraz Python programátorů [Pyvo](https://pyvo.cz/brno-pyvo/) a věnuje se [DJingu](https://www.facebook.com/Hazement/). Doma má nekonečnou [sbírku vinylů](https://hearthis.at/krmelec-prostor/dj-hotdogg/).
-  bio_title: Senior Recruiter v Red Hat
   bio_links:
     - https://twitter.com/jiripsotka/
     - https://www.linkedin.com/in/jiripsotka/
@@ -110,12 +118,11 @@
   description: |
     Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce, jelikož je to voda, ve které jejich výtvor přímo plave. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu. V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
   poster_description: |
-    Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce, jelikož je to voda, ve které jejich výtvor přímo plave. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu.
-
-    V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
+    Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu. V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
+  bio_name: Vilibald Wanča
+  bio_title: Architekt v Oracle, Princ Wilibald na ČRo Wave
   bio: |
     Vilibald Wanča je seniorní architekt v Oracle s 20letými zkušenostmi v oboru. Baví ho vymýšlet, jak udělat věci jednoduše, ale přitom zároveň dostatečně robustně, efektivně a výkonně. Málokdo ví o jeho kořenech v žižkovském podsvětí nebo angažmá na dubové scéně. Sedm let na ČRo Wave moderoval své [Dubové okénko Prince Wilibalda](https://hledani.rozhlas.cz/iRadio/?query=Dubov%C3%A9+ok%C3%A9nko+Prince+Wilibalda&reader=&stanice%5B%5D=%C4%8CRo+Radio+Wave&porad%5B%5D=Sc%C3%A9na+s+Jakubem+Joh%C3%A1nkem).
-  bio_title: Architekt v Oracle, Princ Wilibald na ČRo Wave
   bio_links:
     - https://www.linkedin.com/in/wvi/
     - https://github.com/w-vi
@@ -125,13 +132,14 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/844488172364890123
 
 
-- title: Proč a jak být techickým redaktorem?
+- title: Proč a jak být technickým redaktorem?
   date: "2021-07-27"
   description: |
-    Technical writer je zajímavá a žádaná práce, málo kdo ale ví o co v ní běží nebo že vůbec taková kariérní cesta existuje. Přijďte si  poslechnout jak se z absolventky obecné lingvistiky stala techwriterka. Povím vám s čím se běžně v práci potýkám, co mě na tom baví, co mě nebaví, jaké dovednosti se mi hodí a tipy na to jak se stát technical writerem.
+    Technical writer je zajímavá a žádaná práce, málo kdo ale ví o co v ní běží nebo že vůbec taková kariérní cesta existuje. Přijď si poslechnout, jak se z absolventky obecné lingvistiky stala tech writerka. Nora Kořánová ti poví, s čím se běžně v práci potýká, co ji na tom baví, nebaví a jaké dovednosti se jí hodí. Nebudou chybět ani tipy na to, jak se technical writerem stát.
+  bio_name: Nora Kořánová
+  bio_title: Technical Writer v SUSE, na rodičovské
   bio: |
     Nora Kořánová je technická redaktorka v SUSE, toho času na rodičovské. Jako absolventka obecné lingivstiky se do IT dostala i díky PyLadies a v oboru pracuje od roku 2016. Na konferenci Write the Docs 2018 měla lightning talk o [české houbové obsesi](https://www.youtube.com/watch?v=AMkSSIvyu3s). Jednou by si chtěla založit farmu s aspoň jednou kozou, kde by tkala koberce.
-  bio_title: Technical Writer v SUSE, na rodičovské
   bio_links:
     - https://www.linkedin.com/in/nkoranova/
     - https://github.com/nkoranova
