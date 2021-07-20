@@ -31,13 +31,6 @@ class Event(BaseModel):
         dt_string = dt_string.replace(':', '-')
         return f"https://junior.guru/events/#{dt_string}"
 
-    @property
-    def first_avatar_path(self):
-        try:
-            return next(filter(None, [speaking.avatar_path for speaking in self.list_speaking]))
-        except StopIteration:
-            return None
-
     @classmethod
     def next(cls, today=None):
         today = today or date.today()

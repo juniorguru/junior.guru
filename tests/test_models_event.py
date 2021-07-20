@@ -84,34 +84,6 @@ def test_list_speaking_members(db_connection):
     assert set(Event.list_speaking_members()) == {member1, member2, member3}
 
 
-def test_first_avatar_path(db_connection):
-    event = create_event(1)
-    member1 = create_member(1)
-    member2 = create_member(2)
-    member3 = create_member(3)
-    EventSpeaking.create(event=event, speaker=member1)
-    EventSpeaking.create(event=event, speaker=member2, avatar_path='path/to/avatar.jpg')
-    EventSpeaking.create(event=event, speaker=member3)
-
-    assert event.first_avatar_path == 'path/to/avatar.jpg'
-
-
-def test_first_avatar_path_no_value(db_connection):
-    event = create_event(1)
-    member1 = create_member(1)
-    member2 = create_member(2)
-    EventSpeaking.create(event=event, speaker=member1)
-    EventSpeaking.create(event=event, speaker=member2)
-
-    assert event.first_avatar_path is None
-
-
-def test_first_avatar_path_no_speakers(db_connection):
-    event = create_event(1)
-
-    assert event.first_avatar_path is None
-
-
 def test_url(db_connection):
     event = create_event(1, start_at=datetime(2021, 5, 17, 16, 30, 00))
 
