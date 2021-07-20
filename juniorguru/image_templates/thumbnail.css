@@ -1,4 +1,4 @@
-@import './variables.css';
+@import "./variables.css";
 
 
 html {
@@ -8,11 +8,11 @@ html {
 
 html,
 body {
-  margin: 0;
-  padding: 0;
   height: 100%;
-  background: var(--color-yellow);
+  padding: 0;
+  margin: 0;
   color: var(--color-dark);
+  background: var(--color-yellow);
 }
 
 .thumbnail {
@@ -34,19 +34,19 @@ body {
 }
 
 .thumbnail-title img {
+  display: block;
   flex: 1;
   width: 10%; /* minimal width */
-  margin: 0;
   padding: 5%;
   padding-right: 3%;
-  display: block;
+  margin: 0;
   border-right: 5px solid var(--color-dark);
 }
 
 .thumbnail-title h1 {
   flex: 1;
-  margin: 0;
   padding: 5%;
+  margin: 0;
   text-align: left;
 }
 
@@ -57,34 +57,34 @@ body {
 
 .thumbnail-title strong {
   display: block;
-  font-weight: bold;
   font-size: 80px;
+  font-weight: 700;
 }
 
 .thumbnail-job {
-  margin: 0;
   padding: 0;
+  margin: 0;
   text-align: center;
 }
 
 .thumbnail-job h1 {
+  padding: 2% 3%;
+  margin: 0;
+  font-size: 40px;
+  color: var(--color-white);
   text-transform: uppercase;
   background: var(--color-dark);
-  color: var(--color-white);
-  margin: 0;
-  padding: 2% 3%;
-  font-size: 40px;
 }
 
 .thumbnail-job h2 {
+  padding: 8% 3% 3%;
   margin: 0;
-  padding: 8% 3% 3% 3%;
 }
 
 .thumbnail-job .job-company {
   display: block;
-  font-weight: bold;
   font-size: 80px;
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -94,7 +94,7 @@ body {
 }
 
 .thumbnail-job .job-title {
-  font-size: 50px;
-  margin: 0;
   padding: 0 5%;
+  margin: 0;
+  font-size: 50px;
 }
