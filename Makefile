@@ -2,7 +2,7 @@ test:
 	poetry run pytest $(TESTOPTS)
 
 lint:
-	poetry run flake8 && npx stylelint 'juniorguru/web/static/src/css-mkdocs/**/*.scss'
+	poetry run flake8 && npx stylelint 'juniorguru/web/static/src/css-mkdocs/**/*.scss' 'juniorguru/image_templates/*.css'
 
 sync:
 	poetry run python -m juniorguru.sync $(SYNC)
