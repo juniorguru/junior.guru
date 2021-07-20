@@ -125,23 +125,20 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/844488172364890123
 
 
-# - title: TBD
-#   date: "2021-07-27"
-#   description: |
-#     TBD
-#   poster_description: |
-#     TBD
-#   bio: |
-#     TBD
-#   bio_title: TBD
-#   bio_links:
-#     - https://www.linkedin.com/in/nkoranova/
-#     - https://github.com/nkoranova
-#     - https://www.instagram.com/norka.vokurka/
-#   logo_path: logos/TBD.svg
-#   speakers:
-#     - TBD
-#   recording_url: TBD
+- title: Proč a jak být techickým redaktorem?
+  date: "2021-07-27"
+  description: |
+    Technical writer je zajímavá a žádaná práce, málo kdo ale ví o co v ní běží nebo že vůbec taková kariérní cesta existuje. Přijďte si  poslechnout jak se z absolventky obecné lingvistiky stala techwriterka. Povím vám s čím se běžně v práci potýkám, co mě na tom baví, co mě nebaví, jaké dovednosti se mi hodí a tipy na to jak se stát technical writerem.
+  bio: |
+    Nora Kořánová je technická redaktorka v SUSE, toho času na rodičovské. Jako absolventka obecné lingivstiky se do IT dostala i díky PyLadies a v oboru pracuje od roku 2016. Na konferenci Write the Docs 2018 měla lightning talk o [české houbové obsesi](https://www.youtube.com/watch?v=AMkSSIvyu3s). Jednou by si chtěla založit farmu s aspoň jednou kozou, kde by tkala koberce.
+  bio_title: Technical Writer v SUSE, na rodičovské
+  bio_links:
+    - https://www.linkedin.com/in/nkoranova/
+    - https://github.com/nkoranova
+    - https://www.instagram.com/norka.vokurka/
+  logo_path: logos/suse.svg
+  speakers:
+    - 501682297930645504
 
 
 # - title: TBD
