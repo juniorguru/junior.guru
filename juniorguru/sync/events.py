@@ -22,6 +22,9 @@ DATA_DIR = Path(__file__).parent.parent / 'data'
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 POSTERS_DIR = IMAGES_DIR / 'posters'
 
+YOUTUBE_THUMBNAIL_WIDTH = 1280
+YOUTUBE_THUMBNAIL_HEIGHT = 720
+
 ANNOUNCEMENTS_CHANNEL = 789046675247333397
 EVENTS_CHAT_CHANNEL = 821411678167367691
 
@@ -87,11 +90,10 @@ def main():
                     raise ValueError(f"Event '{name}' references '{image_path}', but it doesn't exist")
 
             log.info(f"Rendering poster for '{name}'")
-            image_path = render_image_file('poster.html', dict(event=event), POSTERS_DIR, filters={
-                'md': md,
-                'local_time': local_time,
-                'weekday': weekday,
-            })
+            tpl_context = dict(event=event)
+            tpl_filters = dict(md=md, local_time=local_time, weekday=weekday)
+            image_path = render_image_file(YOUTUBE_THUMBNAIL_WIDTH, YOUTUBE_THUMBNAIL_HEIGHT,
+                                           'poster.html', tpl_context, POSTERS_DIR, filters=tpl_filters)
             event.poster_path = image_path.relative_to(IMAGES_DIR)
             event.save()
 

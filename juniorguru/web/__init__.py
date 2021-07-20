@@ -16,6 +16,8 @@ log = get_log('web')
 
 FLUSH_THUMBNAILS = bool(int(os.getenv('FLUSH_THUMBNAILS', 0)))
 THUMBNAILS_DIR = Path(__file__).parent / 'static' / 'images' / 'thumbnails'
+THUMBNAIL_WIDTH = 1200
+THUMBNAIL_HEIGHT = 630
 
 
 NAV_TABS = [
@@ -82,7 +84,8 @@ def redirect(url):
 
 
 def thumbnail(**context):
-    image_path = render_image_file('thumbnail.html', context, THUMBNAILS_DIR)
+    image_path = render_image_file(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT,
+                                   'thumbnail.html', context, THUMBNAILS_DIR)
     return f'images/thumbnails/{image_path.name}'
 
 
