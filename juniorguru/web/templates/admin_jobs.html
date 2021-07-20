@@ -58,10 +58,12 @@
       {% endfor %}
       </table>
     </details>
+    {% if job.item.sections %}
     <details>
       <summary>Sections ({{ job.item.sections|length }})</summary>
       <pre>{{ job.item.sections|sections }}</pre>
     </details>
+    {% endif %}
     <details>
       <summary>Description</summary>
       <textarea rows="20" cols="100">{{ job.item.description_html }}</textarea>

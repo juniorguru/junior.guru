@@ -72,7 +72,7 @@ ITEM_PIPELINES = {
    'juniorguru.scrapers.pipelines.language_parser.Pipeline': 350,
    'juniorguru.scrapers.pipelines.language_filter.Pipeline': 400,
    # 'juniorguru.scrapers.pipelines.description_parser.Pipeline': 500,
-   'juniorguru.scrapers.pipelines.sections_parser.Pipeline': 500,
+   # 'juniorguru.scrapers.pipelines.sections_parser.Pipeline': 500,  https://app.circleci.com/pipelines/github/honzajavorek/junior.guru/3047/workflows/033dc5ea-e097-4d73-abea-fcaf7610460b/jobs/19368
    'juniorguru.scrapers.pipelines.features_parser.Pipeline': 600,
    'juniorguru.scrapers.pipelines.junior_rank.Pipeline': 650,
    'juniorguru.scrapers.pipelines.junior_rank_filter.Pipeline': 700,
