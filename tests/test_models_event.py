@@ -8,14 +8,16 @@ from juniorguru.models import Event, EventSpeaking, ClubUser
 
 def create_member(id):
     return ClubUser.create(id=id,
-                                display_name=f"Jane Doe {id}",
-                                mention=f"<#{id}>")
+                           display_name=f"Jane Doe {id}",
+                           mention=f"<#{id}>")
 
 
 def create_event(id, **kwargs):
     return Event.create(id=id, **{
         'title': f"Event #{id}",
         'description': 'Markdown **description** of the _event_.',
+        'bio_name': 'Jane Doe',
+        'bio': 'Jane Doe is so anonymous that we do not really know anything about her.',
         'start_at': datetime.now(),
     **kwargs})
 
