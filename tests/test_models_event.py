@@ -39,7 +39,16 @@ def test_archive_listing(db_connection):
     event3 = create_event(3, start_at=datetime(2021, 5, 3))  # noqa
     event4 = create_event(4, start_at=datetime(2021, 3, 15))
 
-    assert Event.archive_listing(today=date(2021, 5, 2)) == [event2, event1, event4]
+    assert list(Event.archive_listing(today=date(2021, 5, 2))) == [event2, event1, event4]
+
+
+def test_planned_listing(db_connection):
+    event1 = create_event(1, start_at=datetime(2021, 4, 15))  # noqa
+    event2 = create_event(2, start_at=datetime(2021, 6, 1))
+    event3 = create_event(3, start_at=datetime(2021, 5, 3))
+    event4 = create_event(4, start_at=datetime(2021, 3, 15))  # noqa
+
+    assert list(Event.planned_listing(today=date(2021, 5, 2))) == [event3, event2]
 
 
 def test_next(db_connection):
@@ -88,3 +97,9 @@ def test_url(db_connection):
     event = create_event(1, start_at=datetime(2021, 5, 17, 16, 30, 00))
 
     assert event.url == 'https://junior.guru/events/#2021-05-17T18-30-00'
+
+
+def test_slug(db_connection):
+    event = create_event(1, start_at=datetime(2021, 5, 17, 16, 30, 00))
+
+    assert event.slug == '2021-05-17T18-30-00'

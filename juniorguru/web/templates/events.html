@@ -15,100 +15,32 @@ Přednášky a další akce pro členy klubu junior.guru. Seznam akcí proběhl�
 </header>
 <section class="content__section" id="planned">
   <h2 class="content__section-heading">Plánované</h2>
-  <h3 class="content__subsection-heading" id="2021-07-27T18-00-00">Proč a jak být technickým redaktorem?</h3>
-  <p class="note">
-    <strong>27.&nbsp;7.&nbsp;2021, 18:00 online v klubovně</strong>
-  </p>
-  <p>
-    Technical writer je zajímavá a žádaná práce, málo kdo ale ví o co v ní běží nebo že vůbec taková kariérní cesta existuje. Přijď si poslechnout, jak se z absolventky obecné lingvistiky stala tech writerka. Nora Kořánová ti poví, s čím se běžně v práci potýká, co ji na tom baví, nebaví a jaké dovednosti se jí hodí. Nebudou chybět ani tipy na to, jak se technical writerem stát.
-  </p>
-  <p>
-    Nora Kořánová je technická redaktorka v SUSE. Jako absolventka obecné lingivstiky se do IT dostala i díky PyLadies a v oboru pracuje od roku 2016. Na konferenci Write the Docs 2018 měla lightning talk o <a href="https://www.youtube.com/watch?v=AMkSSIvyu3s">české houbové obsesi</a>. Jednou by si chtěla založit farmu s aspoň jednou kozou, kde by tkala koberce.
-  </p>
-  <!-- <p>Příští akce ještě nebyla oznámena.</p> -->
+  {% if events_planned|length %}
+    {% for event in events_planned %}
+      <h3 class="content__subsection-heading" id="{{ event.slug }}">{{ event.title }}</h3>
+      <p class="note">
+        <strong>{{ event.start_at_prg.day }}.&nbsp;{{ event.start_at_prg.month }}.&nbsp;{{ event.start_at_prg.year }},
+        {{ event.start_at|local_time }} online v klubovně</strong>
+      </p>
+      {{ event.description|md }}
+      {{ event.bio|md }}
+    {% endfor %}
+  {% else %}
+    <p>Příští akce ještě nebyly oznámeny.</p>
+  {% endif %}
 </section>
 <section class="content__section" id="archive">
   <h2 class="content__section-heading">Archiv</h2>
-  <h3 class="content__subsection-heading" id="2021-05-18T18-00-00">Život HTTP požadavku</h3>
-  <p class="note">
-    <strong>18.&nbsp;5.&nbsp;2021, 18:00 online v klubovně</strong>, <a href="https://discord.com/channels/769966886598737931/789046675247333397/844488172364890123">záznam</a>
-  </p>
-  <p>
-    Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce, jelikož je to voda, ve které jejich výtvor přímo plave. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu. V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
-  </p>
-  <p>
-    Vilibald Wanča je seniorní architekt v Oracle s 20letými zkušenostmi v oboru. Baví ho vymýšlet, jak udělat věci jednoduše, ale přitom zároveň dostatečně robustně, efektivně a výkonně. Málokdo ví o jeho kořenech v žižkovském podsvětí nebo angažmá na dubové scéně. Sedm let na ČRo Wave moderoval své <a href="https://hledani.rozhlas.cz/iRadio/?query=Dubov%C3%A9+ok%C3%A9nko+Prince+Wilibalda&reader=&stanice%5B%5D=%C4%8CRo+Radio+Wave&porad%5B%5D=Sc%C3%A9na+s+Jakubem+Joh%C3%A1nkem">Dubové okénko Prince Wilibalda</a>.
-  </p>
-  <h3 class="content__subsection-heading" id="2021-05-05T18-00-00">AMA: Jiří Psotka</h3>
-  <p class="note">
-    <strong>5.&nbsp;5.&nbsp;2021, 18:00 online v klubovně</strong>, <a href="https://discord.com/channels/769966886598737931/789046675247333397/839582722480799795">záznam</a>
-  </p>
-  <p>
-    AMA znamená <em>ask me anything</em>. Příklady otázek, které jsme řešili:
-  </p>
-  <ul>
-    <li>Je lepší začít hodně dole s nějakou stáží a podobně, nebo raději mít nastudováno a zkusit naskočit co nejvýš?</li>
-    <li>Kolik bylo let nejmladšímu juniorovi bez praxe, kterého jsi přijímal, a naopak kolik bylo let nejstaršímu?</li>
-    <li>Jak to máte s juniory na full remote? Jsem z druhého konce republiky.</li>
-    <li>Očekáváš nějakou zkušenost s open source?</li>
-    <li>Co bývá v prvních měsících pro nově nastupující juniory nejtěžší? A co pro ty, co je zaškolují a věnují se jim?</li>
-    <li>Uvádět do životopisu netechnické vzdělání nebo neuvádět žádné?</li>
-    <li>Co děláte v případě, když si kandidát řekne o míň peněz?</li>
-    <li>Jaké je typické zvýšení mzdy juniora a kdy?</li>
-    <li>Proč firmy nezaměstnávají zaměstnance na zkrácené úvazky?</li>
-    <li>Když procházíš CV, co bys určil jako takový jeden největší nebo tři největší nešvary, které ti brání efektivně se jimi probrat a vyhodnotit kandidáta?</li>
-    <li>Jak bys popsal potřebnou úroveň angličtiny?</li>
-    <li>O jakou mzdu si mám říct jako junior?</li>
-    <li>Jaký je poměr v týmech mezi seniory a juniory, jakou pozornost může junior očekávat, když nastoupí?</li>
-  </ul>
-  <p>
-    <a href="https://www.linkedin.com/in/jiripsotka/">Jirka Psotka</a> je seniorní recruiter v <a href="https://jobs.redhat.com/">Red Hatu</a>, který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase jako dobrovolník spoluorganizuje brněnský sraz Python programátorů <a href="https://pyvo.cz/brno-pyvo/">Pyvo</a> a věnuje se <a href="https://www.facebook.com/Hazement/">DJingu</a>. Doma má nekonečnou <a href="https://hearthis.at/krmelec-prostor/dj-hotdogg/">sbírku vinylů</a>.
-  </p>
-  <h3 class="content__subsection-heading" id="2021-04-13T18-00-00">Designování vysněné práce</h3>
-  <p class="note">
-    <strong>27.&nbsp;4.&nbsp;2021, 18:00 online v klubovně</strong>, <a href="https://discord.com/channels/769966886598737931/789046675247333397/836906198426320906">záznam</a>
-  </p>
-  <p><strong>Přednášku jsme kvůli zdravotní nesnázi přesunuli z 13.&nbsp;4. na 27.&nbsp;4.</strong></p>
-  <p>
-    Jak se z lektorky angličtiny stane frontendistka? První část přednášky je o těžkých rozhodnutích, motivaci, překážkách a pomoci na cestě k vysněné práci. V druhé se podíváme na související obory s vývojem webů a aplikací, včetně user experience.
-  </p>
-  <p>
-    <a href="https://adinafoxova.cz/">Adina Foxová</a> je tlumočnice mezi designem a frontendem. Na volné noze vylepšuje staré a designuje nové weby a aplikace, v kódu se pak hlavně stará o architekturu stylů v React aplikacích. Má vášeň pro design systémy, zajímavé problémy a dinosaury. Už čtvrtým rokem staví s firmou Leveris kompletní bankovní platformu. Ve volném čase moderuje události v IT a její nejoblíbenější místo je Lucerna, když se koná WebExpo.
-  </p>
-  <h3 class="content__subsection-heading" id="2021-03-31T18-00-00">Jamstack</h3>
-  <p class="note">
-    <strong>31.&nbsp;3.&nbsp;2021, 18:00 online v klubovně</strong>, <a href="https://discord.com/channels/769966886598737931/789046675247333397/826872579427794955">záznam</a>
-  </p>
-  <p>
-    Co jsou „staticky generované stránky“? Co je Jamstack a jak ti může pomoci tvořit webovky? Jak se orientovat v existujících řešeních a jak si můžeš na Jamstacku vytvořit třeba vlastní blog?
-  </p>
-  <p>
-    <a href="https://www.prskavec.net/">Láďa Prskavec</a> je programátor, školitel a organizátor srazů. Jeho oblíbenými jazyky jsou Node.js, Ruby a Go. Dříve pracoval v LMC a Apiary, dnes je seniorním manažerem SRE v Oracle.
-  </p>
-
-  <h3 class="content__subsection-heading" id="2021-03-16T18-00-00">#Junioring 101 - How Not To Go Bonkers At The Start</h3>
-  <p class="note">
-    <strong>16.&nbsp;3.&nbsp;2021, 18:00 online v klubovně</strong>, <a href="https://discord.com/channels/769966886598737931/789046675247333397/822066882298642462">záznam</a>
-  </p>
-  <p>
-    Máš svou první práci v IT? Výborně! Ale co teď? Jak být užitečným členem týmu, jak se dál vzdělávat a jak se z toho všeho nezbláznit? Přednáška bude v angličtině.
-  </p>
-  <p>
-    <a href="https://cybermagnolia.com/blog/daria-grudzien-interview/">Daria Grudzien</a> is a Site Reliability Engineer and a <a href="https://cybermagnolia.com/">CyberMagnolia community</a> founder. She has switched career from a businesswoman to an engineer and now she’s mentoring other juniors starting their career. In her work she’s helping developers deploy code to production faster and brings visibility to production systems. She’s passionate about the topic of oncall training and making sure that all engineers carrying the pager feel confident. Check out also <a href="https://cybermagnolia.com/blog/daria-grudzien-interview/">interview with Daria</a> or her <a href="https://dariagrudzien.com/posts/the-one-about-managing-self-as-a-junior/">blog post on a similar topic</a>!
-  </p>
-
-  <h3 class="content__subsection-heading" id="2021-02-11T18-30-00">První klubový sraz</h3>
-  <p class="note">
-    <strong>11.&nbsp;2.&nbsp;2021, 18:30 online v klubovně</strong>
-  </p>
-  <p>
-    Začneme několika <em>lightning talks</em>, pokud se někdo přihlásí. Pak bude volná debata podobně jako když se lidi sejdou v hospodě.
-  </p>
-  <ul>
-    <li>Honza Javorek – Co a jak s GitHub profilem</li>
-    <li>Daniel Srb – Jak si přepočítat hodinovku jako OSVČ na mzdu zaměstnance a opačně</li>
-    <li>Karolina Surma - OSM + uMap + GitHub a špetka Bashe = dynamická mapa do každé domácnosti</li>
-  </ul>
+  {% for event in events_archive %}
+    <h3 class="content__subsection-heading" id="{{ event.slug }}">{{ event.title }}</h3>
+    <p class="note">
+      <strong>{{ event.start_at_prg.day }}.&nbsp;{{ event.start_at_prg.month }}.&nbsp;{{ event.start_at_prg.year }},
+      {{ event.start_at|local_time }} online v klubovně</strong>{% if event.recording_url %},
+      <a href="{{ event.recording_url }}">záznam</a>{% endif %}
+    </p>
+    {{ event.description|md }}
+    {{ event.bio|md }}
+  {% endfor %}
 </section>
 <section class="content__section" id="info">
   <h2 class="content__section-heading">Jak to funguje?</h2>

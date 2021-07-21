@@ -26,10 +26,12 @@ class Event(BaseModel):
         return arrow.get(self.start_at).to('Europe/Prague').naive
 
     @property
+    def slug(self):
+        return self.start_at_prg.isoformat().replace(':', '-')
+
+    @property
     def url(self):
-        dt_string = self.start_at_prg.isoformat()
-        dt_string = dt_string.replace(':', '-')
-        return f"https://junior.guru/events/#{dt_string}"
+        return f"https://junior.guru/events/#{self.slug}"
 
     @classmethod
     def next(cls, today=None):
@@ -56,6 +58,13 @@ class Event(BaseModel):
         return cls.select() \
             .where(cls.start_at < today) \
             .order_by(cls.start_at.desc())
+
+    @classmethod
+    def planned_listing(cls, today=None):
+        today = today or date.today()
+        return cls.select() \
+            .where(cls.start_at >= today) \
+            .order_by(cls.start_at)
 
 
 class EventSpeaking(BaseModel):

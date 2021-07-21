@@ -8,7 +8,7 @@ from flask import Flask, Response, render_template, url_for
 from juniorguru.lib.log import get_log
 from juniorguru.lib import template_filters
 from juniorguru.lib.images import render_image_file
-from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, Company, db
+from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, Company, Event, db
 
 
 log = get_log('web')
@@ -100,6 +100,7 @@ for template_filter in [
     template_filters.metric,
     template_filters.sample,
     template_filters.sample_jobs,
+    template_filters.local_time,
 ]:
     app.template_filter()(template_filter)
 
@@ -133,11 +134,21 @@ def club():
 
 @app.route('/events/')
 def events():
+    with db:
+        event_next = Event.next()
+        events_planned = Event.planned_listing()
+        events_archive = Event.archive_listing()
+    if event_next:
+        thumbnail_path = f'images/{event_next.poster_path}'
+    else:
+        thumbnail_path = thumbnail(title='Klubové akce')
     return render_template('events.html',
                            nav_active='club',
                            subnav_tabs=CLUB_SUBNAV_TABS,
                            subnav_active='events',
-                           thumbnail=thumbnail(title='Klubové akce'))
+                           events_planned=events_planned,
+                           events_archive=events_archive,
+                           thumbnail=thumbnail_path)
 
 
 @app.route('/membership/')
