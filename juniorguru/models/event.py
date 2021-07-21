@@ -19,6 +19,7 @@ class Event(BaseModel):
     bio_links = JSONField(default=lambda: [])
     recording_url = CharField(null=True)
     poster_path = CharField(null=True)
+    poster_ig_path = CharField(null=True)
     logo_path = CharField(null=True)
 
     @property

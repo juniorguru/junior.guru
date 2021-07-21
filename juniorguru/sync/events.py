@@ -95,10 +95,10 @@ def main():
             image_path = render_image_file(YOUTUBE_THUMBNAIL_WIDTH, YOUTUBE_THUMBNAIL_HEIGHT,
                                            'poster.html', tpl_context, POSTERS_DIR, filters=tpl_filters)
             event.poster_path = image_path.relative_to(IMAGES_DIR)
-            event.save()
 
             log.info(f"Rendering Instagram poster for '{name}'")
-            save_as_ig_square(image_path)
+            event.poster_ig_path = save_as_ig_square(image_path).relative_to(IMAGES_DIR)
+            event.save()
 
         # discord messages
         if DISCORD_MUTATIONS_ENABLED:
