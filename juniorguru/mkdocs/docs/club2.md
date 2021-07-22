@@ -4,19 +4,21 @@ thumbnail_title: Klub tě nastartuje
 main_class: main-sections
 description: Přidej se na junior.guru Discord! Jsme tvoje online parta začátečníků, kteří to myslí vážně, a profesionálů s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
-{% from 'content.html' import blockquote_avatar, blockquote_toxic, logo %}
+{% from 'content.html' import markdown, blockquote_avatar, blockquote_toxic, logo, lead %}
 
 # Klub tě nastartuje
 
-<div class="lead" markdown="1">
+{% call lead() %}
 Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážně, a profesionálové s chutí pomáhat. V klubu svoje programování nebo hledání práce posuneš o 1 % každý den.
-</div>
+{% endcall %}
 
-<div class="numbers" markdown="1">
+<div class="numbers">
+{% call markdown() %}
 - **{{ members_total_count }}** členů
 - **{{ companies|length }}** firemních členů
 - **{{ events|length }}** klubových akcí
 - **{{ club_elapsed_months }}** měsíců provozu
+{% endcall %}
 </div>
 
 <a class="btn btn-primary" href="#pricing">Přidej se</a>
@@ -57,57 +59,57 @@ Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážn
 <section>
 
 <h2>Co je klub?</h2>
-<div class="lead" markdown="1">
+{% call lead() %}
 Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně chodíš a kde najdeš podporu, nápady, kamarády, tipy na složitější akordy a kde možná potkáš někoho, s kým založíš kapelu. Nejsme kurz, jsme online komunita. Kroužek. Discord. Skaut pro programátory. Ženeme tě vpřed, ale zároveň u nás najdeš rady a podporu, když ti něco nejde.
-</div>
-<div class="margin-standout" markdown="1"><div class="icons">
+{% endcall %}
+<div class="margin-standout"><div class="icons">
     <ul class="icons-list">
         <li class="icons-item">
-            <i class="bi bi-play-btn"></i>
+            {{ 'play-btn'|icon }}
             Online klubové akce
         </li>
         <li class="icons-item">
-            <i class="bi bi-clock-history"></i>
+            {{ 'clock-history'|icon }}
             Archiv záznamů akcí
         </li>
         <li class="icons-item">
-            <i class="bi bi-list-check"></i>
+            {{ 'list-check'|icon }}
             Pracovní nabídky
         </li>
         <li class="icons-item">
-            <i class="bi bi-compass"></i>
+            {{ 'compass'|icon }}
             Kariérní konzultace
         </li>
         <li class="icons-item">
-            <i class="bi bi-person-check"></i>
+            {{ 'person-check'|icon }}
             Zpětná vazba na&nbsp;CV
         </li>
         <li class="icons-item">
-            <i class="bi bi-code-slash"></i>
+            {{ 'code-slash'|icon }}
             Zpětná vazba na&nbsp;kód
         </li>
         <li class="icons-item">
-            <i class="bi bi-chat-dots"></i>
+            {{ 'chat-dots'|icon }}
             Recenze a&nbsp;zkušenosti
         </li>
         <li class="icons-item">
-            <i class="bi bi-heart"></i>
+            {{ 'heart'|icon }}
             Podpora a&nbsp;pochopení
         </li>
         <li class="icons-item">
-            <i class="bi bi-person-plus"></i>
+            {{ 'person-plus'|icon }}
             Komunita, síť&nbsp;kontaktů
         </li>
         <li class="icons-item">
-            <i class="bi bi-lightbulb"></i>
+            {{ 'lightbulb'|icon }}
             Mentoring od&nbsp;profíků
         </li>
         <li class="icons-item">
-            <i class="bi bi-patch-plus"></i>
+            {{ 'patch-plus'|icon }}
             Slevy a&nbsp;soutěže
         </li>
         <li class="icons-item">
-            <i class="bi bi-hand-thumbs-up"></i>
+            {{ 'hand-thumbs-up'|icon }}
             Podporuješ junior.guru
         </li>
     </ul>
@@ -128,13 +130,14 @@ Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně cho
 
 <h2>Neztrácej čas záplavou názorů</h2>
 
-<div class="lead" markdown="1">
+{% call lead() %}
 Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství, opakují [nejrůznější mýty](/motivation/#myths), doporučují staré postupy, nebo vycházejí z toho, že co vyhovovalo jednomu, zákonitě platí i pro druhého. Je běžné, že na jednoduchou otázku dostaneš desítky rozcházejících se a mnohdy i zcela nevhodných odpovědí.
 
 V klubu vycházíme z konkrétní cesty jak postupovat, která se osvědčila na mnoha začátečnících. Zároveň se snažíme radit objektivně a brát ohled na tvou situaci. Poskytneme ti různé pohledy, ale zároveň jasný směr. Místo abychom tě utopili v možnostech, pomůžeme ti rozhodnout se.
-</div>
+{% endcall %}
 
-<div class="margin-standout"><div class="comparison" markdown="1">
+<div class="margin-standout"><div class="comparison">
+{% call markdown() %}
 {% set check = 'check-circle-fill'|icon('text-success') %}
 {% set cross = 'x-square-fill'|icon('text-danger') %}
 
@@ -146,15 +149,16 @@ V klubu vycházíme z konkrétní cesty jak postupovat, která se osvědčila na
 | {{ check }} odborník na plný úvazek | {{ check }} správce na plný úvazek              | {{ cross }} správce dobro&shy;volník |
 | {{ check }} radí odborník           | {{ check }} radí anga&shy;žo&shy;vaní odborníci | {{ cross }} radí ko&shy;lemjdoucí    |
 | {{ cross }} obtížně dostupné        | {{ check }} dostupné                            | {{ check }} všudy&shy;přítomné       |
+{% endcall %}
 </div></div>
 
 </section></div>
 <section>
 
 <h2>Neztrácej čas s hulváty a sexisty</h2>
-<div class="lead" markdown="1">
+{% call lead() %}
 V klubu neexistují hloupé otázky a nemáme potřebu někoho stírat. Mezi členy je mnoho žen a uslintané vtipy u nás nikoho nezajímají. Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. Případné excesy se řídí [pravidly chování](/coc/).
-</div>
+{% endcall %}
 <div class="blockquotes-2">
 {{
     blockquote_toxic(
@@ -213,7 +217,8 @@ V klubu neexistují hloupé otázky a nemáme potřebu někoho stírat. Mezi čl
 #}
 
 </section></div>
-<section markdown="1">
+<section>
+{% call markdown() %}
 
 ## Otázky a odpovědi
 
@@ -221,4 +226,5 @@ V klubu neexistují hloupé otázky a nemáme potřebu někoho stírat. Mezi čl
 
 TBD
 
+{% endcall %}
 </section>

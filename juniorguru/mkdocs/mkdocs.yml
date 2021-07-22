@@ -12,7 +12,6 @@ markdown_extensions:
       permalink_title: 'Odkaz přímo na tuto sekci'
   - tables
   - fenced_code
-  - md_in_html
   - attr_list
 
 theme:

@@ -15,9 +15,10 @@ LINK_RE = re.compile(r'''
 ''', re.VERBOSE)
 
 
-def md(markdown_text, heading_level_base=1):
-    toc = TocExtension(marker='', baselevel=heading_level_base)
-    return markdown(markdown_text, output_format='html5', extensions=[toc])
+def md(markdown_text):
+    return markdown(markdown_text,
+                    output_format='html5',
+                    extensions=[TocExtension(marker='', baselevel=1)])
 
 
 def strip_links(markdown_text):

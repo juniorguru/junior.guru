@@ -1,3 +1,15 @@
+{% macro markdown() %}
+    {{ caller()|md }}
+{% endmacro %}
+
+
+{% macro lead() %}
+  <div class="lead">
+    {{ caller()|md }}
+  </div>
+{% endmacro %}
+
+
 {% macro blockquote(quote, caption) %}
   <div class="blockquote-container">
     <figure class="blockquote-content">
