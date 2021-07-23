@@ -48,12 +48,21 @@ def downsize_square_photo(path, side_px):
 
 
 def replace_with_jpg(path):
+    modified = False
     with Image.open(path) as image:
-        path.unlink()
-        path = path.with_suffix('.jpg')
-        image = image.convert('RGB')
-        image.save(path, 'JPEG')
-        return path
+        if image.mode != 'RGB':
+            modified = True
+            image = image.convert('RGB')
+
+        path_jpg = path.with_suffix('.jpg')
+        if path != path_jpg:
+            modified = True
+            path.unlink()
+            path = path_jpg
+
+        if modified:
+            image.save(path, 'JPEG')
+    return path
 
 
 def render_template(width, height, template_name, context, filters=None):
