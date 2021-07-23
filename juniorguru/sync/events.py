@@ -130,7 +130,7 @@ async def post_next_event_messages(client):
             content = f"🗓 Už **za týden** bude v klubu „{event.title}” s {speakers}! {event.url}"
             await announcements_channel.send(content)
     else:
-        log.info("It's not 1 day prior to the event")
+        log.info("It's not 7 days prior to the event")
 
     log.info("About to post a message 1 day prior to the event")
     if event.start_at.date() - timedelta(days=1) == date.today():

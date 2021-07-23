@@ -12,25 +12,45 @@
 #
 #
 #- title: Jak se stát někým a dělat věci  # NÁZEV PŘEDNÁŠKY
-#  date: "0000-00-00"  # DATUM PŘEDNÁŠKY
-#  time: "00:00"  # VÝCHOZÍ JE 18:00, TAKŽE VE VĚTŠINĚ PŘÍPADŮ PROSTĚ JEN ODEBER CELÝ TENTO ŘÁDEK
-#  description: |  # LÁKADLO NA PŘEDNÁŠKU, MŮŽEŠ POUŽÍT MARKDOWN
-#    Kdo by se nechtěl někým stát a dělat věci? Jana Nováková je na věci expertka a ukáže ti, jak se věci dělají a jak se stát tím, kým se stát chceš. Budeš žasnout, kolik věcí potom můžeš dělat!
-#  poster_description: |  # TEXT LÁKADLA PRO PLAKÁTEK, POKUD JE POTŘEBA JINÉ (TŘEBA KRATŠÍ, VĚTŠINOU TO ALE POTŘEBA NENÍ)
-#    Jana Nováková je expertka na věci a ukáže ti, jak se věci dělají a jak se stát tím, kým se stát chceš.
-#  bio_name: Jana Nováková  # TVOJE JMÉNO
-#  bio_title: API designerka ve Velkém Korporátku, organizátorka Srazu Technologie  # TVOJE ROLE
-#  bio: |  # TADY MŮŽEŠ POUŽÍT MARKDOWN, KLIDNĚ ODKAŽ NA SVOJE VĚCI
-#    Jana Nováková je nadšená API designerka ve Velkém Korporátku. [Maluje](https://example.com), ráda jezdí na kole a peče si vlastní chleba. Na hlídání kvásku si vytvořila [budík postavený na RapsberryPi](https://example.com).
-#  bio_links:  # ODKAZY NA TVOJE PROFILY A OSOBNÍ WEB, BLOG
+#  date: "0000-00-00"                     # DATUM PŘEDNÁŠKY
+#  time: "00:00"                          # VÝCHOZÍ JE 18:00, TAKŽE VE VĚTŠINĚ PŘÍPADŮ PROSTĚ JEN ODEBER CELÝ TENTO ŘÁDEK
+#  description: |                         # LÁKADLO NA PŘEDNÁŠKU, MŮŽEŠ POUŽÍT MARKDOWN
+#    Kdo by se nechtěl někým stát a dělat věci? Jana Nováková je
+#    na věci expertka a ukáže ti, jak se věci dělají a jak se stát
+#    tím, kým se stát chceš. Budeš žasnout, kolik věcí potom můžeš dělat!
+#  poster_description: |                  # TEXT LÁKADLA PRO PLAKÁTEK, POKUD JE POTŘEBA JINÉ (TŘEBA KRATŠÍ, VĚTŠINOU TO ALE POTŘEBA NENÍ)
+#    Jana Nováková je expertka na věci a ukáže ti, jak se věci
+#    dělají a jak se stát tím, kým se stát chceš.
+#  bio_name: Jana Nováková                # TVOJE JMÉNO
+#  bio_title: |                           # TVOJE ROLE
+#    API designerka ve Velkém Korporátku,
+#    organizátorka Srazu Technologie
+#  bio: |                                 # TADY MŮŽEŠ POUŽÍT MARKDOWN, KLIDNĚ ODKAŽ NA SVOJE VĚCI
+#    Jana Nováková je nadšená API designerka ve Velkém Korporátku.
+#    [Maluje](https://example.com), ráda jezdí na kole a peče si
+#    vlastní chleba. Na hlídání kvásku si vytvořila
+#    [budík postavený na RapsberryPi](https://example.com).
+#  bio_links:                             # ODKAZY NA TVOJE PROFILY A OSOBNÍ WEB, BLOG
 #    - https://examplejanedoe.example.com
 #    - https://www.linkedin.com/in/examplejanedoe/
 #    - https://github.com/examplejanedoe
 #    - https://www.instagram.com/examplejanedoe/
-#  logo_path: logos/example.svg  # NENÍ POVINNÉ (NEBO DOPLNÍ HONZA)
+#  logo_path: logos/example.svg           # NENÍ POVINNÉ (NEBO DOPLNÍ HONZA)
 #  speakers:
-#    - 000000000000000000  # ID TVÉHO DISCORD ÚČTU (KDYŽTAK DOPLNÍ HONZA)
-#  recording_url: https://example.com  # ODKAZ NA ZÁZNAM PŘEDNÁŠKY, DOPLNÍ HONZA
+#    - 000000000000000000                 # ID TVÉHO DISCORD ÚČTU (KDYŽTAK DOPLNÍ HONZA)
+#  recording_url: https://example.com     # ODKAZ NA ZÁZNAM PŘEDNÁŠKY, DOPLNÍ HONZA
+#
+#
+# Nakonec ještě dva tipy:
+#
+# 1. Lze používat Unicode pevné mezery (na macOS se napíšou option + mezerník) k prevenci
+#    nevhodného rozdělení slov na dva řádky. To se hodí v 90 % případů pro 'bio_title',
+#    které je potřeba na plakátku zalomit do sloupce.
+# 2. Bude potřeba ještě fotka, nebo pokud se nerad(a) fotíš, tak alespoň nějaký avatar, obrázek.
+#    Ten je potřeba přidat do složky 'juniorguru/images/speakers' tak, že název souboru
+#    je stejný, jako tvoje ID na Discordu. Přípona a formát jsou jedno. No a pak je potřeba
+#    ještě spustit 'make sync SYNC=events', takže… takže je vlastně lepší to neřešit a poslat
+#    prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
 # - title: TBD
