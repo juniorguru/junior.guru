@@ -13,6 +13,7 @@
   }
 
   strong {
-    @extend .display-5;
+    @extend .fs-1;
+    font-weight: 500;
   }
 }

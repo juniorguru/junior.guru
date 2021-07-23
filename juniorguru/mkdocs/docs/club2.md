@@ -10,7 +10,7 @@ description: Přidej se na junior.guru Discord! Jsme tvoje online parta začáte
 <h1>Klub tě nastartuje</h1>
 
 {% call lead() %}
-Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážně, a profesionálové s chutí pomáhat. V klubu svoje programování nebo hledání práce posuneš o 1 % každý den.
+Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. V klubu svoje programování nebo hledání práce <span data-annotate>posuneš o 1 % každý den</span>.
 {% endcall %}
 
 <a class="masthead-button primary" href="#pricing">Přidej se</a>
