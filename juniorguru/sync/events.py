@@ -7,7 +7,7 @@ from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, load
 
 from juniorguru.lib.timer import measure
 from juniorguru.models import Event, EventSpeaking, ClubMessage, db
-from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_ig_square
+from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_ig_square, replace_with_jpg
 from juniorguru.lib.log import get_log
 from juniorguru.lib.md import strip_links
 from juniorguru.lib.template_filters import local_time, md, weekday
@@ -77,7 +77,8 @@ def main():
                     avatar_path = None
                 else:
                     log.info(f"Downsizing speaker avatar for {speaker_id}")
-                    avatar_path = downsize_square_photo(avatar_path, 500).relative_to(IMAGES_DIR)
+                    avatar_path = replace_with_jpg(downsize_square_photo(avatar_path, 500))
+                    avatar_path = avatar_path.relative_to(IMAGES_DIR)
 
                 log.info(f"Marking member {speaker_id} as a speaker")
                 EventSpeaking.create(speaker=speaker_id, event=event,

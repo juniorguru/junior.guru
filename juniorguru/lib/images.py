@@ -41,12 +41,17 @@ def downsize_square_photo(path, side_px):
     with Image.open(path) as image:
         if image.width != image.height:
             raise ValueError(f"Image {path} must be square, but is {image.width}x{image.height}")
-        if image.width <= side_px:
-            return path
+        if image.width > side_px:
+            image = image.resize((side_px, side_px))
+            image.save(path, image.format)
+        return path
 
-        image = image.resize((side_px, side_px))
+
+def replace_with_jpg(path):
+    with Image.open(path) as image:
         path.unlink()
         path = path.with_suffix('.jpg')
+        image = image.convert('RGB')
         image.save(path, 'JPEG')
         return path
 
