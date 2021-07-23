@@ -25,7 +25,7 @@
 #  bio_title: |                           # TVOJE ROLE
 #    API designerka ve Velkém Korporátku,
 #    organizátorka Srazu Technologie
-#  bio: |                                 # TADY MŮŽEŠ POUŽÍT MARKDOWN, KLIDNĚ ODKAŽ NA SVOJE VĚCI
+#  bio: |                                 # O TOBĚ. TADY MŮŽEŠ POUŽÍT MARKDOWN, KLIDNĚ ODKAŽ NA SVOJE VĚCI
 #    Jana Nováková je nadšená API designerka ve Velkém Korporátku.
 #    [Maluje](https://example.com), ráda jezdí na kole a peče si
 #    vlastní chleba. Na hlídání kvásku si vytvořila
@@ -35,7 +35,7 @@
 #    - https://www.linkedin.com/in/examplejanedoe/
 #    - https://github.com/examplejanedoe
 #    - https://www.instagram.com/examplejanedoe/
-#  logo_path: logos/example.svg           # NENÍ POVINNÉ (NEBO DOPLNÍ HONZA)
+#  logo_path: logos/example.svg           # LOGO FIRMY, KDE PRACUJEŠ. NENÍ POVINNÉ (NEBO DOPLNÍ HONZA)
 #  speakers:
 #    - 000000000000000000                 # ID TVÉHO DISCORD ÚČTU (KDYŽTAK DOPLNÍ HONZA)
 #  recording_url: https://example.com     # ODKAZ NA ZÁZNAM PŘEDNÁŠKY, DOPLNÍ HONZA
@@ -83,7 +83,7 @@
 
     Začneme od začátku a postupně se zaměříme na datové typy Pythonu: seznamy
     a slovníky.
-    Ale nebojte, v Javascriptu, C# nebo třeba Ruby fungují základní principy
+    Ale nebojte, v JavaScriptu, C# nebo třeba Ruby fungují základní principy
     odobně.
   bio_name: Petr Viktorin
   bio_title: Senior Software Engineer, Red Hat
