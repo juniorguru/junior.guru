@@ -14,13 +14,15 @@ IMAGES_DIR = Path(__file__).parent.parent / 'images'
 TEMPLATES_DIR = Path(__file__).parent.parent / 'image_templates'
 
 
-def render_image_file(width, height, template_name, context, output_dir, filters=None):
+def render_image_file(width, height, template_name, context, output_dir, filters=None, suffix=None):
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok=True, parents=True)
 
     cache_key = (width, height, context)
     hash = sha256(pickle.dumps(cache_key)).hexdigest()
-    image_path = output_dir / f'{hash}.png'
+
+    image_name = f'{hash}-{suffix}.png' if suffix else f'{hash}.png'
+    image_path = output_dir / image_name
 
     if not image_path.exists():
         image_bytes = render_template(width, height, template_name, context, filters)
@@ -29,12 +31,16 @@ def render_image_file(width, height, template_name, context, output_dir, filters
 
 
 def save_as_ig_square(path):
-    with Image.open(path) as image:
-        side_px = max(image.width, image.height)
-        image = ImageOps.pad(image, (side_px, side_px), color=(0, 0, 0))
-        path = path.with_name(f"{path.stem}-ig{path.suffix}")
-        image.save(path, 'PNG')
-        return path
+    cache_key = str(path.relative_to(IMAGES_DIR))
+    hash = sha256(cache_key.encode('utf-8')).hexdigest()
+    image_path = path.with_name(f"{hash}-ig{path.suffix}")
+
+    if not image_path.exists():
+        with Image.open(path) as image:
+            side_px = max(image.width, image.height)
+            image = ImageOps.pad(image, (side_px, side_px), color=(0, 0, 0))
+            image.save(image_path, 'PNG')
+    return image_path
 
 
 def downsize_square_photo(path, side_px):

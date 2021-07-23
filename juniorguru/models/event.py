@@ -20,6 +20,7 @@ class Event(BaseModel):
     recording_url = CharField(null=True)
     poster_path = CharField(null=True)
     poster_ig_path = CharField(null=True)
+    poster_yt_path = CharField(null=True)
     logo_path = CharField(null=True)
 
     @property

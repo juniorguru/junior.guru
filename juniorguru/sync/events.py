@@ -22,6 +22,9 @@ DATA_DIR = Path(__file__).parent.parent / 'data'
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 POSTERS_DIR = IMAGES_DIR / 'posters'
 
+WEB_THUMBNAIL_WIDTH = 1280
+WEB_THUMBNAIL_HEIGHT = 672
+
 YOUTUBE_THUMBNAIL_WIDTH = 1280
 YOUTUBE_THUMBNAIL_HEIGHT = 720
 
@@ -90,15 +93,20 @@ def main():
                 if not image_path.exists():
                     raise ValueError(f"Event '{name}' references '{image_path}', but it doesn't exist")
 
-            log.info(f"Rendering poster for '{name}'")
+            log.info(f"Rendering images for '{name}'")
             tpl_context = dict(event=event)
             tpl_filters = dict(md=md, local_time=local_time, weekday=weekday)
-            image_path = render_image_file(YOUTUBE_THUMBNAIL_WIDTH, YOUTUBE_THUMBNAIL_HEIGHT,
-                                           'poster.html', tpl_context, POSTERS_DIR, filters=tpl_filters)
+            image_path = render_image_file(WEB_THUMBNAIL_WIDTH, WEB_THUMBNAIL_HEIGHT,
+                                           'poster.html', tpl_context, POSTERS_DIR,
+                                           filters=tpl_filters)
             event.poster_path = image_path.relative_to(IMAGES_DIR)
-
-            log.info(f"Rendering Instagram poster for '{name}'")
+            image_path = render_image_file(YOUTUBE_THUMBNAIL_WIDTH, YOUTUBE_THUMBNAIL_HEIGHT,
+                                           'poster.html', tpl_context, POSTERS_DIR,
+                                           filters=tpl_filters, suffix='yt')
+            event.poster_yt_path = image_path.relative_to(IMAGES_DIR)
             event.poster_ig_path = save_as_ig_square(image_path).relative_to(IMAGES_DIR)
+
+            log.info(f"Saving '{name}'")
             event.save()
 
         # discord messages
