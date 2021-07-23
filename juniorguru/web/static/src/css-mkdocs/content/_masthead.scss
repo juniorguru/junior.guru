@@ -1,0 +1,35 @@
+.masthead {
+  margin-bottom: $spacer;
+  background: $jg-yellow;
+  border-top: 1px solid rgba($jg-black, .1);
+}
+
+.masthead::after {
+  display: block;
+  height: map-get($spacers, 5);
+  margin-top: $spacer;
+  content: "";
+  background-image: url("./images/eggshell.svg");
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  background-size: auto map-get($spacers, 5);
+}
+
+.masthead-content {
+  @extend .container-lg;
+  padding-top: map-get($spacers, 5);
+}
+
+.masthead-button {
+  @extend .btn;
+  @extend .btn-lg;
+  margin-right: map-get($spacers, 2);
+}
+
+.masthead-button.primary {
+  @extend .btn-primary;
+}
+
+.masthead-button.secondary {
+  @extend .btn-outline-primary;
+}
