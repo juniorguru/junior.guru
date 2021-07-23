@@ -1,12 +1,13 @@
 ---
 title: Klub tě nastartuje
 thumbnail_title: Klub tě nastartuje
-main_class: main-sections
+main_class: main-header main-sections
 description: Přidej se na junior.guru Discord! Jsme tvoje online parta začátečníků, kteří to myslí vážně, a profesionálů s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
 {% from 'content.html' import markdown, blockquote_avatar, blockquote_toxic, logo, lead %}
 
-# Klub tě nastartuje
+<header>
+<h1>Klub tě nastartuje</h1>
 
 {% call lead() %}
 Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážně, a profesionálové s chutí pomáhat. V klubu svoje programování nebo hledání práce posuneš o 1 % každý den.
@@ -23,6 +24,7 @@ Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážn
 
 <a class="btn btn-primary" href="#pricing">Přidej se</a>
 <a class="btn btn-outline-primary" href="{{ 'hire-juniors/'|url }}">Pro firmy</a>
+</header>
 
 <div class="members">
     <ul class="members-list">

@@ -1,6 +1,6 @@
 $section-spacer-base: map-get($spacers, 5);
 
-.main-single {
+.main-simple {
   @extend .container-lg;
 }
 
@@ -52,6 +52,7 @@ $section-spacer-base: map-get($spacers, 5);
   border-width: 1px 0;
 }
 
+// TODO BEGIN
 .margin-standout {
   margin-top: $section-spacer-base;
   margin-bottom: $section-spacer-base;
@@ -59,4 +60,17 @@ $section-spacer-base: map-get($spacers, 5);
 
 .margin-standout:last-child {
   margin-bottom: 0;
+}
+// TODO END
+
+.main-header {
+  @extend .container-fluid;
+  padding-right: 0;
+  padding-left: 0;
+
+  header {
+    background: $jg-yellow;
+    border-bottom: 32px solid transparent;
+    border-image: url("./images/eggshell.svg") 32 round round;
+  }
 }

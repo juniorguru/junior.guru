@@ -44,7 +44,7 @@ METRICS_INC_NAMES = {
 @with_db
 def on_theme_context(context, page, config):
     context['page'].meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
-    context['page'].meta.setdefault('main_class', 'main-single')
+    context['page'].meta.setdefault('main_class', 'main-simple')
     context['page'].meta.setdefault('thumbnail', thumbnail())
 
     context['nav_topics'] = sorted([
