@@ -103,7 +103,10 @@ def test_svg_images_exist():
 
 @pytest.mark.parametrize('path', [
     pytest.param(path, id=str(path)) for path in SVG_IMAGES_WEB
-    if path.stem.endswith('-i')
+    if (
+        path.stem.endswith('-i') or
+        path.name == 'eggshell.svg'
+    )
 ])
 def test_white_svg_images(path, source_of_truth):
     color = source_of_truth['$jg-white']
@@ -123,7 +126,11 @@ def test_blue_svg_images(path, source_of_truth):
 
 @pytest.mark.parametrize('path', [
     pytest.param(path, id=str(path)) for path in SVG_IMAGES_WEB
-    if not (path.stem.endswith('-i') or path.stem.endswith('-blue'))
+    if not (
+        path.stem.endswith('-i') or
+        path.name == 'eggshell.svg' or
+        path.stem.endswith('-blue')
+    )
 ])
 def test_dark_svg_images(path, source_of_truth):
     color = source_of_truth['$jg-dark']
