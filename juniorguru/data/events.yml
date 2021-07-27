@@ -78,13 +78,21 @@
     Jedna za věcí které se dozvíte spíše na škole než z praktických kurzů
     je to, jak jsou informace uloženy v paměti počítače.
     Kde jsou vlastně ty jedničky a nuly, o kterých celé IT je?
-    A jak s pomocí těch jedniček a nul zapsat číslo, text, seznam, slovník
+    A jak s pomocí nich zapsat číslo, text, seznam, slovník
     nebo třeba barvu?
 
     Začneme od začátku a postupně se zaměříme na datové typy Pythonu: seznamy
     a slovníky.
     Ale nebojte, v JavaScriptu, C# nebo třeba Ruby fungují základní principy
     odobně.
+  poster_description: |
+    Jedna za věcí které se dozvíte spíše na škole než z praktických kurzů
+    je to, jak jsou informace uloženy v paměti počítače.
+    Kde jsou vlastně ty jedničky a nuly, o kterých celé IT je?
+    A jak s pomocí nich zapsat číslo, text, seznam, slovník
+    nebo třeba barvu? Začneme od začátku a postupně se zaměříme na datové
+    typy Pythonu: seznamy a slovníky. Ale nebojte, v jiných jazycích
+    fungují základní principy odobně.
   bio_name: Petr Viktorin
   bio_title: Senior Software Engineer, Red Hat
   bio: |
@@ -212,7 +220,7 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/826872579427794955
 
 
-- title: "#Junioring 101 - How Not To Go Bonkers At The Start"
+- title: "#Junioring 101 - How Not To Go Bonkers At The Start"
   date: "2021-03-16"
   description: |
     Máš svou první práci v IT? Výborně! Ale co teď? Jak být užitečným členem týmu, jak se dál vzdělávat a jak se z toho všeho nezbláznit? Přednáška bude v angličtině.
