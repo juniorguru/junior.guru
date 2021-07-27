@@ -282,7 +282,7 @@ dev = ["pytest", "coverage", "coveralls"]
 
 [[package]]
 name = "extruct"
-version = "0.12.0"
+version = "0.13.0"
 description = "Extract embedded metadata from HTML markup"
 category = "main"
 optional = false
@@ -1787,8 +1787,8 @@ emoji = [
     {file = "emoji-1.4.1.tar.gz", hash = "sha256:6b539615c0b31b4274e10db949672c9cd1e6d3d8eb835ef421d11db3f46066d8"},
 ]
 extruct = [
-    {file = "extruct-0.12.0-py2.py3-none-any.whl", hash = "sha256:42c6c9f50b00aa6c17b5c26b5f1b3a337ebc27b427fafc3714f34ce3bbb16c2f"},
-    {file = "extruct-0.12.0.tar.gz", hash = "sha256:d4a68bb79d1b85ff36d603a42c2666888bb480191a399a659d9daaf735358276"},
+    {file = "extruct-0.13.0-py2.py3-none-any.whl", hash = "sha256:fe19b9aefdb4dfbf828c2b082b81a363a03a44c7591c2d6b62ca225cb8f8c0be"},
+    {file = "extruct-0.13.0.tar.gz", hash = "sha256:50a5b5bac4c5e19ecf682bf63a28fde0b1bb57433df7057371f60b58c94a2c64"},
 ]
 favicon = [
     {file = "favicon-0.7.0-py2.py3-none-any.whl", hash = "sha256:7fec0617c73dcb8521ea788e1d38cdc7226c7cb8e28c81e11625d85fa1534880"},
