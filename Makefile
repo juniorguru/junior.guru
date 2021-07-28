@@ -34,7 +34,7 @@ check-scrapers:
 check-performance:
 	poetry run python scripts/check_performance.py
 
-train-models:
+train:
 	poetry run python scripts/train.py
 
 serve:
