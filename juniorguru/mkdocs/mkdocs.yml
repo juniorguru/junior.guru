@@ -35,6 +35,7 @@ template_filters:
       - icon
   markdown:
       - sample
+      - metric
   theme: []
 
 # Removed 'strict', because it gives warnings if linking non-existing targets. Once the Flask

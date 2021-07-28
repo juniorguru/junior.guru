@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         type: 'underline',
         color: '#1755d1',
         animationDuration: 1600,
+        multiline: true,
       });
       if (observer) {
         element.dataset.annotateId = id;

@@ -1,29 +1,51 @@
+$masthead-eggshell-height: map-get($spacers, 5);
+
 .masthead {
+  position: relative;
   margin-bottom: $spacer;
+  overflow: hidden;
   background: $jg-yellow;
   border-top: 1px solid rgba($jg-black, .1);
 }
 
 .masthead::after {
+  position: absolute;
+  bottom: 0;
   display: block;
-  height: map-get($spacers, 5);
-  margin-top: $spacer;
+  width: 100%;
+  height: $masthead-eggshell-height;
   content: "";
   background-image: url("./images/eggshell.svg");
   background-repeat: repeat-x;
   background-position: bottom center;
-  background-size: auto map-get($spacers, 5);
+  background-size: auto $masthead-eggshell-height;
+}
+
+.masthead-container {
+  @extend .container-lg;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 
 .masthead-content {
-  @extend .container-lg;
-  padding-top: map-get($spacers, 5);
+  margin-top: map-get($spacers, 5);
+  margin-bottom: map-get($spacers, 5);
+
+  @include media-breakpoint-up(md) {
+    flex-basis: 50%;
+    flex-shrink: 1;
+    flex-grow: 0;
+  }
 }
 
 .masthead-button {
   @extend .btn;
   @extend .btn-lg;
   margin-right: map-get($spacers, 2);
+  margin-bottom: $spacer;
 }
 
 .masthead-button.primary {
@@ -32,4 +54,51 @@
 
 .masthead-button.secondary {
   @extend .btn-outline-primary;
+}
+
+.masthead-numbers {
+  ul {
+    @extend .list-unstyled;
+    display: flex;
+  }
+
+  li {
+    @extend .small;
+    display: flex;
+    flex-direction: column;
+    margin-right: map-get($spacers, 5);
+  }
+
+  strong {
+    @extend .fs-1;
+    // @extend .font-monospace;
+    font-weight: 400;
+    line-height: 1;
+  }
+}
+
+.masthead p,
+.masthead ul {
+  margin-bottom: map-get($spacers, 4);
+}
+
+.masthead-illustration {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  margin-left: auto;
+
+  @include media-breakpoint-up(md) {
+    flex-basis: 50%;
+    flex-shrink: 1;
+    flex-grow: 0;
+    margin-top: map-get($spacers, 5) + $spacer;
+    margin-left: map-get($spacers, 5);
+  }
+}
+
+.masthead-illustration-image {
+  display: block;
+  width: 100%;
+  height: auto;
 }

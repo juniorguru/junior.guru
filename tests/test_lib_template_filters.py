@@ -138,12 +138,12 @@ def test_sections_multiple():
 
 @pytest.mark.parametrize('value,expected', [
     pytest.param(134, '130', id='hundreds'),
-    pytest.param(2179, '2200', id='thousands'),
-    pytest.param(21790, '22tis', id='tens thousands'),
-    pytest.param(4270, '4300', id='round up'),
-    pytest.param(4250, '4300', id='round half up'),
-    pytest.param(4240, '4200', id='round down'),
-    pytest.param(4240.542, '4200', id='float'),
+    pytest.param(2179, '2.200', id='thousands'),
+    pytest.param(21790, '22.000', id='tens thousands'),
+    pytest.param(4270, '4.300', id='round up'),
+    pytest.param(4250, '4.300', id='round half up'),
+    pytest.param(4240, '4.200', id='round down'),
+    pytest.param(4240.542, '4.200', id='float'),
 ])
 def test_metric(value, expected):
     assert template_filters.metric(value) == expected

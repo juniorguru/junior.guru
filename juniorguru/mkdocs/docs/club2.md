@@ -6,56 +6,67 @@ description: Přidej se na junior.guru Discord! Jsme tvoje online parta začáte
 ---
 {% from 'content.html' import markdown, blockquote_avatar, blockquote_toxic, logo, lead %}
 
-<header class="masthead"><div class="masthead-content">
+<header class="masthead"><div class="masthead-container">
+<div class="masthead-content">
 <h1>Klub tě nastartuje</h1>
 
 {% call lead() %}
 Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. V klubu svoje programování nebo hledání práce <span data-annotate>posuneš o 1 % každý den</span>.
 {% endcall %}
 
-<a class="masthead-button primary" href="#pricing">Přidej se</a>
-<a class="masthead-button secondary" href="{{ 'hire-juniors/'|url }}">Pro firmy</a>
-</div></header>
-
-<div class="numbers">
+<div class="masthead-numbers">
 {% call markdown() %}
+- **{{ messages_count|metric }}** příspěvků
 - **{{ members_total_count }}** členů
-- **{{ companies|length }}** firemních členů
-- **{{ events|length }}** klubových akcí
-- **{{ club_elapsed_months }}** měsíců provozu
+- **{{ companies|length }}** firem
+- **{{ events|length }}** akcí
 {% endcall %}
 </div>
 
-<div class="members">
-    <ul class="members-list">
-        {% for member in members|sample(50) %}
-        <li class="members-item">
-            <img width="50" height="50" class="members-image" src="{{ ('static/' + member.avatar_path)|url }}" alt="Profilovka člena {{ member.id }}">
-        </li>
-        {% endfor %}
-    </ul>
+<a class="masthead-button primary" href="#pricing">Přidej se</a>
+<a class="masthead-button secondary" href="{{ 'hire-juniors/'|url }}">Pro firmy</a>
 </div>
-
-<ul class="logos">
-    <li class="logos-item logos-caption">
-        <a href="{{ 'hire-juniors/'|url }}">Firemní partneři</a>:
-    </li>
-    {% for company in companies %}
-        {{ logo(company.name, company.filename, company.link) }}
+<div class="masthead-illustration illustration-club">
+  <img class="masthead-illustration-image" src="{{ 'static/images/illustration-club.svg'|url }}">
+  <div class="illustration-club-members">
+    {% for member in members|sample(7) %}
+      <img width="50" height="50" src="{{ ('static/' + member.avatar_path)|url }}">
     {% endfor %}
+  </div>
+</div>
+</div></header>
+
+{#
+<div class="members">
+  <ul class="members-list">
+    {% for member in members|sample(20) %}
+    <li class="members-item">
+      <img width="50" height="50" class="members-image" src="{{ ('static/' + member.avatar_path)|url }}" alt="Profilovka člena {{ member.id }}">
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+#}
+<ul class="logos">
+  <li class="logos-item logos-caption">
+    <a href="{{ 'hire-juniors/'|url }}">Firemní partneři</a>:
+  </li>
+  {% for company in companies %}
+    {{ logo(company.name, company.filename, company.link) }}
+  {% endfor %}
 </ul>
 <ul class="logos grayscale">
-    <li class="logos-item logos-caption">
-        <a href="#communities">Komunitní partneři</a>:
-    </li>
-    {{ logo('Česko.Digital', 'ceskodigital.svg', 'https://cesko.digital/') }}
-    {{ logo('DigiKoalice', 'digikoalice.svg', 'https://digikoalice.cz/') }}
-    {{ logo('Frontendisti', 'frontendisti.svg', 'https://frontendisti.cz/') }}
-    {{ logo('PyLadies', 'pyladies.svg', 'https://pyladies.cz/') }}
-    {{ logo('Pyvec', 'pyvec.svg', 'https://pyvec.org/') }}
-    {{ logo('CyberMagnolia', 'cybermagnolia.svg', 'https://cybermagnolia.com/') }}
-    {{ logo('ReactGirls', 'reactgirls.svg', 'https://reactgirls.com/') }}
-    {{ logo('yablko', 'yablko.svg', 'http://robweb.sk/') }}
+  <li class="logos-item logos-caption">
+    <a href="#communities">Komunitní partneři</a>:
+  </li>
+  {{ logo('Česko.Digital', 'ceskodigital.svg', 'https://cesko.digital/') }}
+  {{ logo('DigiKoalice', 'digikoalice.svg', 'https://digikoalice.cz/') }}
+  {{ logo('Frontendisti', 'frontendisti.svg', 'https://frontendisti.cz/') }}
+  {{ logo('PyLadies', 'pyladies.svg', 'https://pyladies.cz/') }}
+  {{ logo('Pyvec', 'pyvec.svg', 'https://pyvec.org/') }}
+  {{ logo('CyberMagnolia', 'cybermagnolia.svg', 'https://cybermagnolia.com/') }}
+  {{ logo('ReactGirls', 'reactgirls.svg', 'https://reactgirls.com/') }}
+  {{ logo('yablko', 'yablko.svg', 'http://robweb.sk/') }}
 </ul>
 
 <section>
@@ -65,60 +76,60 @@ Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážn
 Kdyby šlo o hudbu, tak nejsme kytarová škola, ale místo, kam pravidelně chodíš a kde najdeš podporu, nápady, kamarády, tipy na složitější akordy a kde možná potkáš někoho, s kým založíš kapelu. Nejsme kurz, jsme online komunita. Kroužek. Discord. Skaut pro programátory. Ženeme tě vpřed, ale zároveň u nás najdeš rady a podporu, když ti něco nejde.
 {% endcall %}
 <div class="margin-standout"><div class="icons">
-    <ul class="icons-list">
-        <li class="icons-item">
-            {{ 'play-btn'|icon }}
-            Online klubové akce
-        </li>
-        <li class="icons-item">
-            {{ 'clock-history'|icon }}
-            Archiv záznamů akcí
-        </li>
-        <li class="icons-item">
-            {{ 'list-check'|icon }}
-            Pracovní nabídky
-        </li>
-        <li class="icons-item">
-            {{ 'compass'|icon }}
-            Kariérní konzultace
-        </li>
-        <li class="icons-item">
-            {{ 'person-check'|icon }}
-            Zpětná vazba na&nbsp;CV
-        </li>
-        <li class="icons-item">
-            {{ 'code-slash'|icon }}
-            Zpětná vazba na&nbsp;kód
-        </li>
-        <li class="icons-item">
-            {{ 'chat-dots'|icon }}
-            Recenze a&nbsp;zkušenosti
-        </li>
-        <li class="icons-item">
-            {{ 'heart'|icon }}
-            Podpora a&nbsp;pochopení
-        </li>
-        <li class="icons-item">
-            {{ 'person-plus'|icon }}
-            Komunita, síť&nbsp;kontaktů
-        </li>
-        <li class="icons-item">
-            {{ 'lightbulb'|icon }}
-            Mentoring od&nbsp;profíků
-        </li>
-        <li class="icons-item">
-            {{ 'patch-plus'|icon }}
-            Slevy a&nbsp;soutěže
-        </li>
-        <li class="icons-item">
-            {{ 'hand-thumbs-up'|icon }}
-            Podporuješ junior.guru
-        </li>
-    </ul>
+  <ul class="icons-list">
+    <li class="icons-item">
+      {{ 'play-btn'|icon }}
+      Online klubové akce
+    </li>
+    <li class="icons-item">
+      {{ 'clock-history'|icon }}
+      Archiv záznamů akcí
+    </li>
+    <li class="icons-item">
+      {{ 'list-check'|icon }}
+      Pracovní nabídky
+    </li>
+    <li class="icons-item">
+      {{ 'compass'|icon }}
+      Kariérní konzultace
+    </li>
+    <li class="icons-item">
+      {{ 'person-check'|icon }}
+      Zpětná vazba na&nbsp;CV
+    </li>
+    <li class="icons-item">
+      {{ 'code-slash'|icon }}
+      Zpětná vazba na&nbsp;kód
+    </li>
+    <li class="icons-item">
+      {{ 'chat-dots'|icon }}
+      Recenze a&nbsp;zkušenosti
+    </li>
+    <li class="icons-item">
+      {{ 'heart'|icon }}
+      Podpora a&nbsp;pochopení
+    </li>
+    <li class="icons-item">
+      {{ 'person-plus'|icon }}
+      Komunita, síť&nbsp;kontaktů
+    </li>
+    <li class="icons-item">
+      {{ 'lightbulb'|icon }}
+      Mentoring od&nbsp;profíků
+    </li>
+    <li class="icons-item">
+      {{ 'patch-plus'|icon }}
+      Slevy a&nbsp;soutěže
+    </li>
+    <li class="icons-item">
+      {{ 'hand-thumbs-up'|icon }}
+      Podporuješ junior.guru
+    </li>
+  </ul>
 </div></div>
 
 {#
-    TODO poslední 2-3 akce v klubu
+  TODO poslední 2-3 akce v klubu
 #}
 
 <div class="blockquotes-2">
@@ -163,20 +174,20 @@ V klubu neexistují hloupé otázky a nemáme potřebu někoho stírat. Mezi čl
 {% endcall %}
 <div class="blockquotes-2">
 {{
-    blockquote_toxic(
-        'Loni jsem provedl upgrade PŘÍTELKYNĚ 1.0 na verzi MANŽELKA 1.0…',
-        'Tomáš Marek',
-        'FB skupina Programátoři začátečníci',
-        'https://www.facebook.com/groups/144621756262987/posts/832213487503807/'
-    )
+  blockquote_toxic(
+    'Loni jsem provedl upgrade PŘÍTELKYNĚ 1.0 na verzi MANŽELKA 1.0…',
+    'Tomáš Marek',
+    'FB skupina Programátoři začátečníci',
+    'https://www.facebook.com/groups/144621756262987/posts/832213487503807/'
+  )
 }}
 {{
-    blockquote_toxic(
-        'Možná by jsi měl držet hubu p*** když se tě nikdo na nic neptá č*****',
-        'Darken Joe Svoboda',
-        'FB skupina Programátoři',
-        'https://www.facebook.com/groups/193575630828729/posts/1740414872811456'
-    )
+  blockquote_toxic(
+    'Možná by jsi měl držet hubu p*** když se tě nikdo na nic neptá č*****',
+    'Darken Joe Svoboda',
+    'FB skupina Programátoři',
+    'https://www.facebook.com/groups/193575630828729/posts/1740414872811456'
+  )
 }}
 </div>
 
@@ -184,33 +195,33 @@ V klubu neexistují hloupé otázky a nemáme potřebu někoho stírat. Mezi čl
 <div id="pricing" class="section-background yellow-light"><section>
 
 <div class="pricing-container">
-    <h2>Vyzkoušej to zdarma!</h2>
-    <div class="pricing">
-        <div class="pricing-block">
-            <h3 class="pricing-heading">Ročně</h3>
-            <ul class="pricing-benefits">
-                <li class="pricing-benefits-item">Prvních 14 dní zdarma</li>
-                <li class="pricing-benefits-item">Jeden měsíc ušetříš</li>
-            </ul>
-            <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=59574">1199 Kč ročně</a>
-        </div>
-        <div class="pricing-block">
-            <h3 class="pricing-heading">Měsíčně</h3>
-            <ul class="pricing-benefits">
-                <li class="pricing-benefits-item">Prvních 14 dní zdarma</li>
-                <li class="pricing-benefits-item">Můžeš to kdykoliv zrušit</li>
-            </ul>
-            <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=59515">109 Kč měsíčně</a>
-        </div>
-        <div class="pricing-block">
-            <h3 class="pricing-heading">Stipendium</h3>
-            <ul class="pricing-benefits">
-                <li class="pricing-benefits-item">Podpora pro znevýhodněné</li>
-                <li class="pricing-benefits-item">Vyplň formulář a uvidíš</li>
-            </ul>
-            <strong class="pricing-button disabled">Připravuje se</strong>
-        </div>
+  <h2>Vyzkoušej to zdarma!</h2>
+  <div class="pricing">
+    <div class="pricing-block">
+      <h3 class="pricing-heading">Ročně</h3>
+      <ul class="pricing-benefits">
+        <li class="pricing-benefits-item">Prvních 14 dní zdarma</li>
+        <li class="pricing-benefits-item">Jeden měsíc ušetříš</li>
+      </ul>
+      <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=59574">1199 Kč ročně</a>
     </div>
+    <div class="pricing-block">
+      <h3 class="pricing-heading">Měsíčně</h3>
+      <ul class="pricing-benefits">
+        <li class="pricing-benefits-item">Prvních 14 dní zdarma</li>
+        <li class="pricing-benefits-item">Můžeš to kdykoliv zrušit</li>
+      </ul>
+      <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=59515">109 Kč měsíčně</a>
+    </div>
+    <div class="pricing-block">
+      <h3 class="pricing-heading">Stipendium</h3>
+      <ul class="pricing-benefits">
+        <li class="pricing-benefits-item">Podpora pro znevýhodněné</li>
+        <li class="pricing-benefits-item">Vyplň formulář a uvidíš</li>
+      </ul>
+      <strong class="pricing-button disabled">Připravuje se</strong>
+    </div>
+  </div>
 </div>
 {#
     TODO

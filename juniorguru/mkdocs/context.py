@@ -1,3 +1,4 @@
+from juniorguru.models.club import ClubMessage
 from operator import attrgetter, itemgetter
 
 import arrow
@@ -21,6 +22,7 @@ def on_markdown_context(context, page, config):
     context['club_elapsed_months'] = int(round((context['now'] - CLUB_LAUNCH_AT).days / 30))
     context['members'] = ClubUser.avatars_listing()
     context['members_total_count'] = ClubUser.members_count()
+    context['messages_count'] = ClubMessage.count()
     context['companies'] = Company.listing()
     context['events'] = Event.listing()
 
