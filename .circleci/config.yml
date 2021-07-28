@@ -80,11 +80,11 @@ jobs:
       - attach_workspace:
           at: "~"
       - restore_cache:
-          key: models-
+          key: models
       - run: |
           pipenv run train
       - save_cache:
-          key: models-
+          key: models
           paths:
             - project/juniorguru/data/ml
       - run: tar -cvzf models.tar.gz ./juniorguru/data/ml
