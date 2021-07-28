@@ -28,15 +28,16 @@ Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážn
 </div>
 <div class="masthead-illustration illustration-club">
   <img class="masthead-illustration-image" src="{{ 'static/images/illustration-club.svg'|url }}">
+  {#
   <div class="illustration-club-members">
     {% for member in members|sample(7) %}
       <img width="50" height="50" src="{{ ('static/' + member.avatar_path)|url }}">
     {% endfor %}
   </div>
+  #}
 </div>
 </div></header>
 
-{#
 <div class="members">
   <ul class="members-list">
     {% for member in members|sample(20) %}
@@ -46,7 +47,6 @@ Jsme tvoje online programovací parta. Začátečníci, kteří to myslí vážn
     {% endfor %}
   </ul>
 </div>
-#}
 <ul class="logos">
   <li class="logos-item logos-caption">
     <a href="{{ 'hire-juniors/'|url }}">Firemní partneři</a>:
