@@ -6,7 +6,6 @@ import pandas as pd
 from pathlib import Path
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
-from scipy.sparse import csr_matrix, hstack
 
 # see https://github.com/honzajavorek/junior.guru/blob/master/scripts/draw_winners.py#L6
 sys.path.append(str(Path(__file__).parent.parent))
