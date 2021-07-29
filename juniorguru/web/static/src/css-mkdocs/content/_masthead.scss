@@ -40,6 +40,7 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
     flex-basis: 50%;
     flex-shrink: 1;
     flex-grow: 0;
+    margin-right: map-get($spacers, 5);
   }
 }
 
@@ -98,8 +99,7 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
     flex-basis: 50%;
     flex-shrink: 1;
     flex-grow: 0;
-    margin-top: map-get($spacers, 2);
-    margin-left: map-get($spacers, 5);
+    margin-top: $spacer;
   }
 }
 
