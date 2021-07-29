@@ -92,7 +92,11 @@ def metric(value):
     decimals = len(str(int(value))) - 2
     multiplier = 10 ** decimals
     number = int(math.floor((value / multiplier) + 0.5) * multiplier)
-    return re.sub(r'(\d)(\d{3})$', r'\1.\2', str(number))
+    return thousands(str(number))
+
+
+def thousands(value):
+    return re.sub(r'(\d)(\d{3})$', r'\1.\2', str(value))
 
 
 def sample(items, n=2, sample_fn=None):

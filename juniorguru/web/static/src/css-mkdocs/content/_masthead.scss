@@ -1,4 +1,6 @@
 $masthead-eggshell-height: map-get($spacers, 5);
+$masthead-member-size: 3rem;
+$masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
 
 .masthead {
   position: relative;
@@ -41,10 +43,14 @@ $masthead-eggshell-height: map-get($spacers, 5);
   }
 }
 
+.masthead-content .lead strong {
+  font-weight: $lead-font-weight;
+}
+
 .masthead-button {
   @extend .btn;
   @extend .btn-lg;
-  margin-right: map-get($spacers, 2);
+  margin-right: $spacer;
   margin-bottom: $spacer;
 }
 
@@ -97,8 +103,18 @@ $masthead-eggshell-height: map-get($spacers, 5);
   }
 }
 
-.masthead-illustration-image {
-  display: block;
-  width: 100%;
-  height: auto;
+.masthead-members {
+  display: inline-flex;
+  padding-left: $masthead-member-shift;
+  margin-bottom: $spacer;
+  vertical-align: middle;
+}
+
+.masthead-members img {
+  display: inline-block;
+  width: $masthead-member-size;
+  height: $masthead-member-size;
+  margin-left: -1 * $member-shift;
+  background: $jg-white;
+  border-radius: 100%;
 }

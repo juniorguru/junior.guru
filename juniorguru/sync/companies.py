@@ -23,6 +23,7 @@ def coerce_record(record):
         r'^email$': ('email', parse_text),
         r'^filename$': ('filename', parse_text),
         r'^handbook$': ('is_sponsoring_handbook', parse_boolean),
+        r'^sponsored coupon$': ('has_students', parse_boolean),
         r'^link$': ('link', parse_text),
         r'^coupon$': ('coupon', parse_text),
         r'^starts$': ('starts_at', parse_date),

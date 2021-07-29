@@ -9,6 +9,7 @@ class Company(BaseModel):
     name = CharField()
     filename = CharField()
     is_sponsoring_handbook = BooleanField(default=False)
+    has_students = BooleanField(default=False)
     link = CharField()
     coupon = CharField(null=True)
     starts_at = DateField(null=True)
@@ -27,3 +28,8 @@ class Company(BaseModel):
         today = today or date.today()
         return cls.listing() \
             .where(cls.is_sponsoring_handbook == True)
+
+    @classmethod
+    def students_listing(cls):
+        return cls.listing() \
+            .where(cls.has_students == True)

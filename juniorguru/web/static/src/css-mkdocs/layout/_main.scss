@@ -16,12 +16,6 @@ $section-spacer-base: map-get($spacers, 5);
   }
 }
 
-.section-background {
-  padding-top: $spacer;
-  padding-bottom: $spacer;
-  border-style: solid;
-}
-
 .section-background.dark {
   color: $jg-white;
   background: $jg-dark;
@@ -42,23 +36,17 @@ $section-spacer-base: map-get($spacers, 5);
 
 .section-background.yellow-light {
   background: $jg-yellow-light;
-  border-color: $jg-yellow;
-  border-width: 1px 0;
 }
 
 .section-background.gray-white {
   background: $jg-gray-white;
-  border-color: $jg-gray-light;
-  border-width: 1px 0;
 }
 
-// TODO BEGIN
-.margin-standout {
+.standout {
   margin-top: $section-spacer-base;
   margin-bottom: $section-spacer-base;
 }
 
-.margin-standout:last-child {
+.standout:last-child {
   margin-bottom: 0;
 }
-// TODO END

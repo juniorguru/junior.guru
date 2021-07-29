@@ -4,7 +4,7 @@ import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.models import ClubMessage, ClubUser
-from juniorguru.models.club import INTRO_CHANNEL, JUNIORGURU_BOT, AVATARS_PREFERRED_ROLES
+from juniorguru.models.club import INTRO_CHANNEL, JUNIORGURU_BOT
 
 
 def create_user(id_, **kwargs):
@@ -130,11 +130,10 @@ def test_author_top_members_limit_rounds_up(db_connection):
 
 
 def test_avatars_listing(db_connection):
-    user1 = create_user(1, avatar_path='avatars/1.png', roles=[AVATARS_PREFERRED_ROLES[1]])
+    user1 = create_user(1, avatar_path='avatars/1.png')
     user2 = create_user(2)  # noqa
-    user3 = create_user(3, avatar_path='avatars/2.png', roles=[AVATARS_PREFERRED_ROLES[1], AVATARS_PREFERRED_ROLES[2]])
-    user4 = create_user(4, avatar_path='avatars/3.png', roles=[AVATARS_PREFERRED_ROLES[1]])
-    user5 = create_user(5, avatar_path='avatars/4.png')  # noqa
+    user3 = create_user(3, avatar_path='avatars/2.png')
+    user4 = create_user(4, avatar_path='avatars/3.png')
 
     assert list(ClubUser.avatars_listing()) == [user1, user3, user4]
 

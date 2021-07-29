@@ -24,6 +24,7 @@ def on_markdown_context(context, page, config):
     context['members_total_count'] = ClubUser.members_count()
     context['messages_count'] = ClubMessage.count()
     context['companies'] = Company.listing()
+    context['companies_students'] = Company.students_listing()
     context['events'] = Event.listing()
 
     # TODO

@@ -4,42 +4,52 @@
   table,
   td,
   th {
-    border-spacing: 0;
     border: none;
-    border-width: 0;
   }
 
   table {
     width: 100%;
     margin: 0 auto;
-    border-collapse: separate;
   }
 
   th,
   td {
-    padding: $table-cell-padding-y $table-cell-padding-x-sm;
-    font-size: $font-size-sm;
     text-align: center;
     vertical-align: top;
-    border-color: $jg-gray-light;
-    border-style: solid;
-    border-bottom-width: 1px;
+  }
+
+  td {
+    padding: ($spacer * .5) ($spacer * .5);
+    font-size: $font-size-sm;
   }
 
   th {
-    vertical-align: middle;
-    border-bottom-color: $jg-dark;
+    padding: ($spacer * .5);
+    font-size: $h5-font-size;
+    font-weight: $headings-font-weight;
+    line-height: 1;
+  }
+
+  tr:last-child td {
+    padding-bottom: $spacer;
+  }
+
+  th:nth-child(1),
+  td:nth-child(1) {
+    padding-left: 0;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    padding-right: 0;
   }
 
   th:nth-child(2),
   td:nth-child(2) {
-    background: $jg-yellow-light-legacy;
-    border: 1px solid $jg-yellow;
-    border-top-width: 0;
+    background: $jg-yellow;
   }
 
   th:nth-child(2) {
-    border-top-width: 1px;
     border-radius: $border-radius-lg $border-radius-lg 0 0;
   }
 
@@ -52,15 +62,15 @@
   }
 
   @include media-breakpoint-up(sm) {
-    th,
     td {
-      padding: ($table-cell-padding-y * 1.5) $table-cell-padding-x;
-      text-align: left;
+      padding-right: $spacer;
+      padding-left: $spacer;
     }
 
-    i {
-      display: inline-block;
-      margin-right: .3rem;
+    th {
+      padding: $spacer;
+      padding-bottom: ($spacer * .5);
+      font-size: $h4-font-size;
     }
   }
 
@@ -71,14 +81,11 @@
 
     th,
     td {
-      padding: ($table-cell-padding-y * 1.5) ($table-cell-padding-x * 2);
+      min-width: 15rem;
     }
-  }
 
-  @include media-breakpoint-up(lg) {
-    th,
-    td {
-      padding: ($table-cell-padding-y * 1.5) ($table-cell-padding-x * 3);
+    th {
+      font-size: $h3-font-size;
     }
   }
 }

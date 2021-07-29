@@ -1,0 +1,19 @@
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($jg-dark, .2);
+  }
+  70% {
+    box-shadow: 0 0 0 map-get($spacers, 4) rgba($jg-dark, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba($jg-dark, 0);
+  }
+}
+
+.pulse {
+  animation: pulse 3s infinite;
+}
+
+.pulse-hover:hover {
+  animation: pulse 3s infinite;
+}

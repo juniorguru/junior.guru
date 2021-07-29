@@ -12,7 +12,7 @@
         <img src="{{ 'static/images/logo.svg'|url }}" alt="Logo junior.guru" width="90" height="40">
       </a>
       <div class="navbar-buttons">
-        <a class="btn btn-outline-primary" href="{{ 'hire-juniors/'|url }}">Pro firmy</a>
+        <a class="btn btn-outline-primary" href="https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/edit?usp=sharing" target="_blank" rel="noopener">Pro firmy</a>
         {% if page.url not in ['club/', 'club2/'] %}
           <a class="btn btn-primary" href="{{ 'club2/'|url }}">Přidej se</a>
         {% endif %}
@@ -37,7 +37,7 @@
 
   <hr class="visually-hidden">
 
-  <main class="main {{ page.meta.main_class }}{% if not page.meta.headerlinks %} visually-hidden-headerlinks{% endif %}">
+  <main class="main {{ page.meta.main_class }}">
     {% block content %}{{ page.content }}{% endblock %}
   </main>
 
@@ -105,12 +105,14 @@
                   <i class="bi bi-youtube" role="img" aria-label="YouTube"></i>
                 </a>
               </li>
+              {#
               <li class="footer-icons-item">
                 <a href="https://www.strava.com/clubs/959284" target="_blank" rel="noopener">
                   <!-- https://github.com/twbs/icons/issues/942 -->
                   <i class="bi bi-compass-fill" role="img" aria-label="Strava"></i>
                 </a>
               </li>
+              #}
               <li class="footer-icons-item">
                 <a href="https://github.com/honzajavorek/junior.guru" target="_blank" rel="noopener">
                   <i class="bi bi-github" role="img" aria-label="GitHub"></i>
@@ -138,7 +140,7 @@
         </div>
         <div class="footer-about-finances">
           <h4 class="footer-subheading">Můj aktuální čistý zisk</h4>
-          <p class="footer-finances-number">{{ metrics.profit_per_month }}&nbsp;Kč měsíčně</p>
+          <p class="footer-finances-number">{{ metrics.profit_per_month|thousands }}&nbsp;Kč měsíčně</p>
 
           <h4 class="footer-subheading">Zdroje příjmů</h4>
           <ul class="footer-finances-list">

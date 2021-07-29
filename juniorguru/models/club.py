@@ -23,8 +23,6 @@ UPVOTES_EXCLUDE_CHANNELS = [
     847048522691641345,  # nápady-emoji
 ]
 
-AVATARS_PREFERRED_ROLES = [836929320706113567, 836960665578766396, 836928169092710441]
-
 
 class ClubUser(BaseModel):
     id = IntegerField(primary_key=True)
@@ -90,11 +88,7 @@ class ClubUser(BaseModel):
 
     @classmethod
     def avatars_listing(cls):
-        roles = cls.roles.children().alias('roles')
-        return cls.members_listing() \
-            .from_(cls, roles) \
-            .distinct() \
-            .where(cls.avatar_path.is_null(False), roles.c.value.in_(AVATARS_PREFERRED_ROLES))
+        return cls.members_listing().where(cls.avatar_path.is_null(False))
 
 
 class ClubMessage(BaseModel):

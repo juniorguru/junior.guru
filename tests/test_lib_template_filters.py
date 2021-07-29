@@ -149,6 +149,15 @@ def test_metric(value, expected):
     assert template_filters.metric(value) == expected
 
 
+@pytest.mark.parametrize('value,expected', [
+    pytest.param(134, '134', id='hundreds'),
+    pytest.param(2179, '2.179', id='thousands'),
+    pytest.param(21790, '21.790', id='tens thousands'),
+])
+def test_thousands(value, expected):
+    assert template_filters.thousands(value) == expected
+
+
 @pytest.mark.parametrize('items,n,expected', [
     pytest.param(
         ['x'],

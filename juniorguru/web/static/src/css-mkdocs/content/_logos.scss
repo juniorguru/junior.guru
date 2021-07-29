@@ -34,11 +34,14 @@
 }
 
 .logos-caption,
-.logos-caption a,
+.logos-caption a {
+  color: $jg-gray;
+}
+
 .logos-caption a:hover,
 .logos-caption a:focus,
 .logos-caption a:active {
-  color: $jg-gray;
+  color: $link-color;
 }
 
 .logos-image {

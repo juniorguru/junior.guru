@@ -1,11 +1,3 @@
-.pricing-container {
-  // padding-top: $spacer;
-  // margin-bottom: $spacer;
-  // text-align: center;
-  // border: 1px $jg-dark solid;
-  // border-radius: $border-radius;
-}
-
 .pricing {
   display: flex;
   flex-direction: column;
@@ -21,24 +13,16 @@
 
 .pricing-block {
   min-width: 15rem;
+  padding: $spacer;
   margin-bottom: $spacer;
   text-align: center;
   white-space: nowrap;
   background: $jg-white;
-  border: 1px solid $jg-yellow;
   border-radius: $border-radius-lg;
 
   @include media-breakpoint-up(md) {
-    padding: $spacer;
     margin-bottom: 0;
   }
-}
-
-.pricing-block:nth-child(2) {
-  padding: $spacer;
-  color: $jg-white;
-  background: $jg-blue;
-  border: none;
 }
 
 .pricing-heading {
@@ -58,13 +42,4 @@
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-lg;
-}
-
-.pricing-block:nth-child(2) .pricing-button {
-  @extend .btn-outline-light;
-}
-
-.pricing-block:nth-child(2) .pricing-button:hover,
-.pricing-block:nth-child(2) .pricing-button:active {
-  color: $jg-blue;
 }

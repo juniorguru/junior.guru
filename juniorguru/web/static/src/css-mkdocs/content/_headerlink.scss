@@ -1,3 +1,16 @@
+.headerlink {
+  @extend .small;
+  margin-left: $spacer;
+  color: $jg-gray-light;
+  text-decoration: none;
+}
+
+.headerlink:hover,
+.headerlink:focus,
+.headerlink:active {
+  color: $link-color;
+}
+
 .visually-hidden-headerlinks .headerlink {
   @extend .visually-hidden;
 }

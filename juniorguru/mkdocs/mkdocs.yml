@@ -36,7 +36,9 @@ template_filters:
   markdown:
       - sample
       - metric
-  theme: []
+      - thousands
+  theme:
+      - thousands
 
 # Removed 'strict', because it gives warnings if linking non-existing targets. Once the Flask
 # app is gone, 'strict' should return to be enabled.
