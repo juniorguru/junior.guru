@@ -33,12 +33,11 @@ template_filters:
   shared:
       - email_link
       - icon
+      - thousands
   markdown:
       - sample
       - metric
-      - thousands
-  theme:
-      - thousands
+  theme: []
 
 # Removed 'strict', because it gives warnings if linking non-existing targets. Once the Flask
 # app is gone, 'strict' should return to be enabled.

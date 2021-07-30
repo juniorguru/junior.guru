@@ -8,7 +8,7 @@
 .headerlink:hover,
 .headerlink:focus,
 .headerlink:active {
-  color: $link-color;
+  color: $primary;
 }
 
 .visually-hidden-headerlinks .headerlink {
@@ -17,4 +17,14 @@
 
 h1 .headerlink {
   @extend .visually-hidden;
+}
+
+h2:target,
+h3:target,
+h4:target {
+  color: $primary;
+
+  .headerlink {
+    color: $primary;
+  }
 }
