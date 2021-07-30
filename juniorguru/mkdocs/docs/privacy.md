@@ -43,7 +43,7 @@ U osob odebírajících [newsletter](https://eepurl.com/gyG8Bb) je uchováván e
 
 ### c. osobní údaje členů digitálního klubu
 
-Jedná se o osobní údaje jednotlivých členů [klubu](/club/) dostupné z [klientské sekce](https://juniorguru.memberful.com/account/). tj. uživatelské jméno, e-mail, domovská země člena a dále údaje o platební kartě člena. K vašim zadaným osobním údajům má vzhledem k charakteru služeb přístup také platforma [Memberful](https://memberful.com/), [Discord](https://discord.com/), [Google Sheets](https://www.google.com/sheets/about/). K údajům o platební kartě má přístup pouze služba [Stripe](https://stripe.com), která zajišťuje bezpečnost a realizaci jednotlivých plateb, mě osobně známy nejsou.
+Jedná se o osobní údaje jednotlivých členů [klubu](club.md) dostupné z [klientské sekce](https://juniorguru.memberful.com/account/). tj. uživatelské jméno, e-mail, domovská země člena a dále údaje o platební kartě člena. K vašim zadaným osobním údajům má vzhledem k charakteru služeb přístup také platforma [Memberful](https://memberful.com/), [Discord](https://discord.com/), [Google Sheets](https://www.google.com/sheets/about/). K údajům o platební kartě má přístup pouze služba [Stripe](https://stripe.com), která zajišťuje bezpečnost a realizaci jednotlivých plateb, mě osobně známy nejsou.
 
 ### d. údaje zákazníků, hradících služby pomocí voucheru
 

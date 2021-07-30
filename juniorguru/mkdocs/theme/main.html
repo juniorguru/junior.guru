@@ -13,17 +13,15 @@
       </a>
       <div class="navbar-buttons">
         <a class="btn btn-outline-primary" href="https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/edit?usp=sharing" target="_blank" rel="noopener">Pro firmy</a>
-        {% if page.url not in ['club/', 'club2/'] %}
-          <a class="btn btn-primary" href="{{ 'club2/'|url }}">Přidej se</a>
+        {% if page.url != 'club/' %}
+          <a class="btn btn-primary" href="{{ 'club.md'|url }}">Přidej se</a>
         {% endif %}
       </div>
       {% if nav %}
       <ul class="nav nav-foldable">
         {% for tab in nav %}
         <li class="nav-item">
-          {%- if 'club2' in page.url and 'club' in tab.url -%}
-            <a class="nav-link active" aria-current="page" href="{{ tab.url|url }}">{{ tab.title }}</a>
-          {%- elif tab.active -%}
+          {%- if tab.active -%}
             <a class="nav-link active" aria-current="page" href="{{ tab.url|url }}">{{ tab.title }}</a>
           {%- else -%}
             <a class="nav-link" href="{{ tab.url|url }}">{{ tab.title }}</a>
@@ -96,7 +94,7 @@
                 </a>
               </li>
               <li class="footer-icons-item">
-                <a href="{{ 'club2/'|url }}">
+                <a href="{{ 'club.md'|url }}">
                   <i class="bi bi-discord" role="img" aria-label="Discord"></i>
                 </a>
               </li>
@@ -153,7 +151,7 @@
           </ul>
           <p class="footer-finances-actions">
             <span class="footer-finances-button">
-              <a class="btn btn-lg btn-primary" href="{{ 'club2/'|url }}">Podpoř mě členstvím</a>
+              <a class="btn btn-lg btn-primary" href="{{ 'club.md'|url }}">Podpoř mě členstvím</a>
             </span>
           </p>
         </div>

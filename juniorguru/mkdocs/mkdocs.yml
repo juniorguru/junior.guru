@@ -4,7 +4,7 @@ site_url: https://junior.guru/
 nav:
   - Příručka: 'motivation/'
   - Práce: 'jobs/'
-  - Klub: 'club/'  #'club.md'
+  - Klub: 'club.md'
 
 markdown_extensions:
   - toc:
