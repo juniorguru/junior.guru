@@ -53,6 +53,22 @@
 #    prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+# - title: "AMA: Frontendoví lektoři"
+#   date: "2021-09-14"
+#   description: |
+#     TBD
+#   bio_name: Daniel Srb, Kate Miháliková
+#   bio_title: Lektoři CoreSkill
+#   bio: |
+#     TBD
+#   bio_links:
+#     - TBD
+#   logo_path: logos/coreskill.svg
+#   speakers:
+#     - 652142810291765248
+#     - 488415538117214220
+
+
 - title: Od recruitingu cez Lambda School až do globálneho startupu
   date: "2021-08-17"
   description: |
