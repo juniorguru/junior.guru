@@ -19,7 +19,7 @@
       </div>
       {% if nav %}
       <ul class="nav nav-foldable">
-        {% for tab in nav %}
+        {% for tab in (nav|list)[:3] %}
         <li class="nav-item">
           {%- if tab.active -%}
             <a class="nav-link active" aria-current="page" href="{{ tab.url|url }}">{{ tab.title }}</a>
@@ -191,7 +191,7 @@
           <a href="{{ pages|document_url('privacy.md')|url }}">Ochrana osobních údajů</a>
         </li>
         <li class="footer-rules-item">
-          <a href="{{ 'coc/'|url }}">Pravidla chování</a>
+          <a href="{{ pages|document_url('coc.md')|url }}">Pravidla chování</a>
         </li>
         <li class="footer-rules-item">
           <a href="{{ pages|document_url('tos.md')|url }}">Obchodní podmínky</a>

@@ -47,7 +47,7 @@
               {% if nav %}
                 <nav class="header__nav">
                   <ol class="header__nav-tabs">
-                    {%- for tab in nav -%}
+                    {%- for tab in (nav|list)[:3] -%}
                       <li class="header__nav-tab">
                         {{- '' -}}
                         <a class="

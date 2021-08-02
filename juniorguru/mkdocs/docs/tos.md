@@ -195,5 +195,5 @@ TODO
 
 {% call see_also() %}
 - [Zásady ochrany osobních údajů](privacy.md)
-- [Pravidla chování](/coc/)
+- [Pravidla chování](coc.md)
 {% endcall %}

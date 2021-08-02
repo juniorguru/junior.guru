@@ -85,5 +85,5 @@ Více informací o právech klienta je k dispozici na [internetových stránkác
 
 {% call see_also() %}
 - [Obchodní podmínky](tos.md)
-- [Pravidla chování](/coc/)
+- [Pravidla chování](coc.md)
 {% endcall %}

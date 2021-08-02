@@ -137,7 +137,7 @@ Potkáš u nás stejné začátečníky, jako jsi ty. Každý s jiným životní
 <div class="section-background gray-white"><section>
 <h2>Neztrácej čas s hulváty a sexisty</h2>
 {% call lead() %}
-Nemáme potřebu někoho stírat. **Hloupé otázky neexistují** a uslintané vtipy nikoho nezajímají. Mezi členy jsou ženy, muži, staří, mladí. **Respektujeme se**, pomáháme si, jsme k sobě laskaví a profesionální. Případné úlety se řídí [pravidly chování](/coc/).
+Nemáme potřebu někoho stírat. **Hloupé otázky neexistují** a uslintané vtipy nikoho nezajímají. Mezi členy jsou ženy, muži, staří, mladí. **Respektujeme se**, pomáháme si, jsme k sobě laskaví a profesionální. Případné úlety se řídí [pravidly chování](coc.md).
 {% endcall %}
 <div class="blockquotes-2 standout">
 {{ blockquote_avatar('Ty diskuze jsou úžasné. Když to lidi zaplatí, tak je to úplně jiné. Extrémně kultivované, srozumitelné, každý příspěvek dává smysl.', 'jakub.png', 'Jakub', 'Jakub') }}
@@ -261,7 +261,7 @@ Jsou mezi námi nejen junioři na všech úrovních znalostí, ale i mnozí seni
 
 #### Co mám z členství v klubu jako senior(ka)?  {: #seniori }
 
-Zatímco čekáš na poště, můžeš někoho posunout o kousek blíž vysněné kariéře v IT. Stačí ti „poflakovat“ se na Discordu, pokud máš zrovna čas. Když vidíš příležitost někomu pomoci, zkusíš pomoci. Někdy to může být debugovací seance na hodinu, někdy dva krátké příspěvky, někdy jedno emoji s palcem nahoru. Nemusíš mít učitelské nadání, stačí [když ti ego nebrání v laskavosti a respektu k druhým](/coc/). Navíc finančně přispíváš na provoz a rozšiřování [otevřených](https://github.com/honzajavorek/junior.guru/) materiálů pro začátečníky, ve kterých nejde o senzační titulky, ale o upřímné a dobře míněné rady.
+Zatímco čekáš na poště, můžeš někoho posunout o kousek blíž vysněné kariéře v IT. Stačí ti „poflakovat“ se na Discordu, pokud máš zrovna čas. Když vidíš příležitost někomu pomoci, zkusíš pomoci. Někdy to může být debugovací seance na hodinu, někdy dva krátké příspěvky, někdy jedno emoji s palcem nahoru. Nemusíš mít učitelské nadání, stačí [když ti ego nebrání v laskavosti a respektu k druhým](coc.md). Navíc finančně přispíváš na provoz a rozšiřování [otevřených](https://github.com/honzajavorek/junior.guru/) materiálů pro začátečníky, ve kterých nejde o senzační titulky, ale o upřímné a dobře míněné rady.
 
 #### Co mám z členství v klubu jako profesionál(ka) na volné noze?
 
@@ -291,7 +291,7 @@ Online skupina nikdy nebude mít úroveň srovnatelnou s profesionálním indivi
 
 #### Jak se klub liší od skupin na Facebooku?
 
-V klubu se koncentrují lidé, kteří „to myslí vážně“, ať už jde o pomoc druhým, nebo vlastní rozvoj. Je to komornější, kultivované místo s [pravidly chování](/coc/), kde nehrozí, že se někdo bude vysmívat tvému dotazu. Na rozdíl od dobrovolníků spravujících facebookové skupiny, klub má správce na plný úvazek, autora junior.guru [Honzu Javorka](#honza). Ten moderuje, odpovídá, zve přednášející, vítá nové členy, otevírá nová témata a vylepšuje možnosti klubu.
+V klubu se koncentrují lidé, kteří „to myslí vážně“, ať už jde o pomoc druhým, nebo vlastní rozvoj. Je to komornější, kultivované místo s [pravidly chování](coc.md), kde nehrozí, že se někdo bude vysmívat tvému dotazu. Na rozdíl od dobrovolníků spravujících facebookové skupiny, klub má správce na plný úvazek, autora junior.guru [Honzu Javorka](#honza). Ten moderuje, odpovídá, zve přednášející, vítá nové členy, otevírá nová témata a vylepšuje možnosti klubu.
 
 ### {{ 'chat-right'|icon('text-primary me-1') }} Discord
 
