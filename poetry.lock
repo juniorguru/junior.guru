@@ -531,11 +531,11 @@ test = ["six (==1.14.0)", "pyannotate (==1.2.0)", "pytest (==4.6.10)", "pytest-d
 
 [[package]]
 name = "gspread"
-version = "3.7.0"
+version = "4.0.0"
 description = "Google Spreadsheets Python API"
 category = "main"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+python-versions = ">=3.4, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [package.dependencies]
 google-auth = ">=1.12.0"
@@ -1851,8 +1851,8 @@ graphql-core = [
     {file = "graphql_core-2.3.2-py2.py3-none-any.whl", hash = "sha256:44c9bac4514e5e30c5a595fac8e3c76c1975cae14db215e8174c7fe995825bad"},
 ]
 gspread = [
-    {file = "gspread-3.7.0-py3-none-any.whl", hash = "sha256:056ceb9fb4f439c15ec39d84c91653c6435f775a1c8afc8fe7f909f8393821fb"},
-    {file = "gspread-3.7.0.tar.gz", hash = "sha256:4bda4ab8c5edb9e41cf4ae40d4d5fb30447522b4e43608e05c01351ab1b96912"},
+    {file = "gspread-4.0.0-py3-none-any.whl", hash = "sha256:8409f93f40eb6dd9a5fed50eba90a9f90027ce9c7882b14424e70fd9bd1a4b7e"},
+    {file = "gspread-4.0.0.tar.gz", hash = "sha256:b557a4aea9d6aa74cd411123df2f35dcde43c1faf085333efb0ede7c9f8c545d"},
 ]
 h2 = [
     {file = "h2-3.2.0-py2.py3-none-any.whl", hash = "sha256:61e0f6601fa709f35cdb730863b4e5ec7ad449792add80d1410d4174ed139af5"},
