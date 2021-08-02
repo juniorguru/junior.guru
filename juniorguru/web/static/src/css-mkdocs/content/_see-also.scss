@@ -1,0 +1,20 @@
+.see-also {
+  border-top: .2rem solid $body-color;
+}
+
+.see-also ul {
+  @extend .list-inline;
+  margin-bottom: 0;
+}
+
+.see-also li {
+  display: inline;
+}
+
+.see-also li::after {
+  content: ", ";
+}
+
+.see-also li:last-child::after {
+  display: none;
+}

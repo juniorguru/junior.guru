@@ -24,8 +24,10 @@ $jg-gray-light-legacy: darken($jg-white, 20%);
   CHANGING BOOTSTRAP DEFAULTS
 */
 
-$primary: $jg-blue;
-$secondary: $jg-dark;
+$blue: $jg-blue;
+$dark: $jg-dark;
+$light: $jg-gray-light;
+$secondary: $jg-gray;
 $body-color: $jg-dark;
 
 $nav-link-color: $jg-dark;

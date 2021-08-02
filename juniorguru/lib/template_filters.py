@@ -125,3 +125,11 @@ def icon(name, classes=None):
     classes.add(f'bi-{name}')
     class_list = ' '.join(sorted(classes))
     return Markup(f'<i class="{class_list}"></i>')
+
+
+def document_url(files, src_path):
+    for file in files:
+        if file.src_path == src_path:
+            return file.url
+    src_paths = ', '.join([f.src_path for f in files])
+    raise ValueError(f"Could not find '{src_path}' in given MkDocs files: {src_paths}")

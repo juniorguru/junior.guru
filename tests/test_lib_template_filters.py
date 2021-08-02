@@ -3,6 +3,7 @@ from datetime import datetime, date
 
 import arrow
 import pytest
+from mkdocs.structure.files import File
 
 from juniorguru.lib import template_filters
 
@@ -243,3 +244,11 @@ def test_icon_with_classes():
     markup = str(template_filters.icon('check-square', 'text-success bi'))
 
     assert markup == '<i class="bi bi-check-square text-success"></i>'
+
+
+def test_document_url():
+    assert template_filters.document_url([
+        File('privacy.md', 'juniorguru/mkdocs/docs', 'public/mkdocs', True),
+        File('club.md', 'juniorguru/mkdocs/docs', 'public/mkdocs', True),
+        File('topics/csharp.md', 'juniorguru/mkdocs/docs', 'public/mkdocs', True),
+    ], 'club.md') == 'club/'

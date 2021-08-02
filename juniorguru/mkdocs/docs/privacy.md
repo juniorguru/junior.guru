@@ -1,18 +1,23 @@
 ---
 title: Zásady ochrany osobních údajů na junior.guru
-template: main_legacy.html
 ---
+
+{% from 'content.html' import lead, see_also %}
+
 
 # Zásady ochrany osobních údajů
 
-Se zřízením registrace v klientské sekci či odesláním objednávky na mé služby potvrzujete, že jste se seznámili s těmito Zásadami ochrany osobních údajů. V případě, že by nastala v těchto podmínkách změna, zveřejním ji na internetových stránkách Junior Guru a zároveň vám novou verzi zašlu na e-mail, který jste mi poskytli.
+{% call lead() %}
+Se zřízením registrace v klientské sekci či odesláním objednávky na mé služby potvrzujete, že jste se seznámili s těmito Zásadami ochrany osobních údajů. V případě, že by nastala v těchto podmínkách změna, zveřejním ji zde a zároveň vám novou verzi zašlu na e-mail, který jste mi poskytli.
+{% endcall %}
 
 ## Správce osobních údajů
 
 Junior Guru, stylizovaně „junior.guru“<br>
 **Jan Javorek**<br>
-fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodním rejstříku se sídlem Lupáčova 375/24, 130 00 Praha<br>
-IČO: [74279858](http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0),<br>
+fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodním rejstříku<br>
+se sídlem Lupáčova 375/24, 130 00 Praha<br>
+IČO: [74279858](https://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0),<br>
 neplátce DPH,<br>
 E-mail: [ahoj@junior.guru](mailto:ahoj@junior.guru)<br>
 
@@ -33,29 +38,17 @@ Osobní údaje jsou zpracovávány za účelem poskytování služeb správce po
 
 Když mne kontaktujete (telefonicky, e-mailem nebo prostřednictvím webových stránek), můžete být požádáni o uvedení určitých údajů o vás nebo vaší společnosti. Tyto údaje se mohou lišit podle toho, jaké služby ode mne odebíráte:
 
-### a. osobní údaje návštěvníků webu
+**a. osobní údaje návštěvníků webu.** Jedná se o údaje o akcích uživatelů, které slouží čistě pro statistické účely. Tyto údaje uchovává [Google Analytics](https://analytics.google.com/analytics/) agregované do souhrnných čísel a není z nich možné identifikovat jednotlivce.
 
-Jedná se o údaje o akcích uživatelů, které slouží čistě pro statistické účely. Tyto údaje uchovává [Google Analytics](https://analytics.google.com/analytics/) agregované do souhrnných čísel a není z nich možné identifikovat jednotlivce.
+**b. osoby odebírající newsletter.** U osob odebírajících [newsletter](https://eepurl.com/gyG8Bb) je uchováván e-mail, a to prostřednictvím služby [Mailchimp](https://mailchimp.com/). Z odebírání newsletteru se můžete kdykoliv odhlásit.
 
-### b. osoby odebírající newsletter
+**c. osobní údaje členů digitálního klubu.** Jedná se o osobní údaje jednotlivých členů [klubu](club.md) dostupné z [klientské sekce](https://juniorguru.memberful.com/account/). tj. uživatelské jméno, e-mail, domovská země člena a dále údaje o platební kartě člena. K vašim zadaným osobním údajům má vzhledem k charakteru služeb přístup také platforma [Memberful](https://memberful.com/), [Discord](https://discord.com/), [Google Sheets](https://www.google.com/sheets/about/). K údajům o platební kartě má přístup pouze služba [Stripe](https://stripe.com), která zajišťuje bezpečnost a realizaci jednotlivých plateb, mě osobně známy nejsou.
 
-U osob odebírajících [newsletter](https://eepurl.com/gyG8Bb) je uchováván e-mail, a to prostřednictvím služby [Mailchimp](https://mailchimp.com/). Z odebírání newsletteru se můžete kdykoliv odhlásit.
+**d. údaje zákazníků, hradících služby pomocí voucheru.** V případě, že zákazník zvolí úhradu předplatného pomocí voucheru, dává tím souhlas k tomu, aby informace o jeho osobě, konkrétně o jméně, příjmení a e-mailové adrese, byly sděleny té společnosti, která voucher zprostředkovala. Tyto údaje slouží pouze ke kontrole ze strany společnosti, že nedošlo ke zneužití voucheru, a že výhody z něj vyplývající, čerpá oprávněná osoba.
 
-### c. osobní údaje členů digitálního klubu
+**e. údaje o společnostech a individuální objednávky.** V případě objednávek se specifickými podmínkami (typicky se bude jednat např. o objednání digitálního předplatného pro více osob ze strany společnosti) jsou evidovány potřebné fakturační údaje jako jsou: jméno/název společnosti, adresa bydliště/sídla společnosti, datum narození/IČO, DIČ, číslo účtu kupujícího, e-mailová adresa, případně telefon.
 
-Jedná se o osobní údaje jednotlivých členů [klubu](club.md) dostupné z [klientské sekce](https://juniorguru.memberful.com/account/). tj. uživatelské jméno, e-mail, domovská země člena a dále údaje o platební kartě člena. K vašim zadaným osobním údajům má vzhledem k charakteru služeb přístup také platforma [Memberful](https://memberful.com/), [Discord](https://discord.com/), [Google Sheets](https://www.google.com/sheets/about/). K údajům o platební kartě má přístup pouze služba [Stripe](https://stripe.com), která zajišťuje bezpečnost a realizaci jednotlivých plateb, mě osobně známy nejsou.
-
-### d. údaje zákazníků, hradících služby pomocí voucheru
-
-V případě, že zákazník zvolí úhradu předplatného pomocí voucheru, dává tím souhlas k tomu, aby informace o jeho osobě, konkrétně o jméně, příjmení a e-mailové adrese, byly sděleny té společnosti, která voucher zprostředkovala. Tyto údaje slouží pouze ke kontrole ze strany společnosti, že nedošlo ke zneužití voucheru, a že výhody z něj vyplývající, čerpá oprávněná osoba.
-
-### e. údaje o společnostech a individuální objednávky
-
-V případě objednávek se specifickými podmínkami (typicky se bude jednat např. o objednání digitálního předplatného pro více osob ze strany společnosti) jsou evidovány potřebné fakturační údaje jako jsou: jméno/název společnosti, adresa bydliště/sídla společnosti, datum narození/IČO, DIČ, číslo účtu kupujícího, e-mailová adresa, případně telefon.
-
-### f. žádosti o bezplatné členství
-
-Osobám, které o to projeví zájem, a prokáží sociální nebo finanční znevýhodnění, poskytuji v odůvodněných případech bezplatné členství. Součástí žádosti o bezplatné členství je motivační dopis. Tento motivační dopis je uchováván a může být v anonymizované formě zveřejněn dárcům dotujícím bezplatná členství.
+**f. žádosti o bezplatné členství.** Osobám, které o to projeví zájem, a prokáží sociální nebo finanční znevýhodnění, poskytuji v odůvodněných případech bezplatné členství. Součástí žádosti o bezplatné členství je motivační dopis. Tento motivační dopis je uchováván a může být v anonymizované formě zveřejněn dárcům dotujícím bezplatná členství.
 
 ## 3\. Příjemci osobních údajů
 
@@ -88,3 +81,9 @@ Prohlašuji, že jsem přijal veškerá vhodná technická a organizační opat�
 **Právo kdykoli odvolat souhlas se zpracováním osobních údajů** se neuplatní u klientů, kteří u nás objednali některou ze služeb, jelikož osobní údaje klienta jsou pak zpracovávány z důvodu plnění smlouvy uzavřené s klientem, nikoli na základě souhlasu se zpracováním. V případě, že bude klient jakkoli nespokojen se zpracováním svých osobních údajů, může podat stížnost na mou e-mailovou adresu, nebo se obrátit na Úřad pro ochranu osobních údajů.
 
 Více informací o právech klienta je k dispozici na [internetových stránkách Úřadu pro ochranu osobních údajů](https://www.uoou.cz/6-prava-subjektu-udaj/d-27276).
+
+
+{% call see_also() %}
+- [Obchodní podmínky](tos.md)
+- [Pravidla chování](/coc/)
+{% endcall %}

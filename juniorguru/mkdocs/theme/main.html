@@ -14,7 +14,7 @@
       <div class="navbar-buttons">
         <a class="btn btn-outline-primary" href="https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/edit?usp=sharing" target="_blank" rel="noopener">Pro firmy</a>
         {% if page.url != 'club/' %}
-          <a class="btn btn-primary" href="{{ 'club.md'|url }}">Přidej se</a>
+          <a class="btn btn-primary" href="{{ pages|document_url('club.md')|url }}">Přidej se</a>
         {% endif %}
       </div>
       {% if nav %}
@@ -65,7 +65,7 @@
             <h3 class="footer-subheading">Provozovatel</h3>
             Jan Javorek<br>
             OSVČ, neplátce DPH<br>
-            IČO: <a href="http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0" target="_blank" rel="noopener">74279858</a><br>
+            IČO: <a href="https://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0" target="_blank" rel="noopener">74279858</a><br>
             Lupáčova 375/24<br>
             130 00 Praha
           </li>
@@ -94,7 +94,7 @@
                 </a>
               </li>
               <li class="footer-icons-item">
-                <a href="{{ 'club.md'|url }}">
+                <a href="{{ pages|document_url('club.md')|url }}">
                   <i class="bi bi-discord" role="img" aria-label="Discord"></i>
                 </a>
               </li>
@@ -151,7 +151,7 @@
           </ul>
           <p class="footer-finances-actions">
             <span class="footer-finances-button">
-              <a class="btn btn-lg btn-primary" href="{{ 'club.md'|url }}">Podpoř mě členstvím</a>
+              <a class="btn btn-lg btn-primary" href="{{ pages|document_url('club.md')|url }}">Podpoř mě členstvím</a>
             </span>
           </p>
         </div>
@@ -188,13 +188,13 @@
       <h3 class="visually-hidden">Pravidla</h3>
       <ul class="footer-rules-list">
         <li class="footer-rules-item">
-          <a href="{{ 'privacy/'|url }}">Ochrana osobních údajů</a>
+          <a href="{{ pages|document_url('privacy.md')|url }}">Ochrana osobních údajů</a>
         </li>
         <li class="footer-rules-item">
           <a href="{{ 'coc/'|url }}">Pravidla chování</a>
         </li>
         <li class="footer-rules-item">
-          <a href="{{ 'tos/'|url }}">Obchodní podmínky</a>
+          <a href="{{ pages|document_url('tos.md')|url }}">Obchodní podmínky</a>
         </li>
         <li class="footer-rules-item">
           <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">Licence obsahu (CC BY-SA)</a>

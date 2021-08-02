@@ -1,23 +1,23 @@
 ---
 title: Obchodní podmínky junior.guru
-template: main_legacy.html
 ---
 
-<header class="intro">
-  <h1 class="intro__title">Obchodní podmínky</h1>
-  <p class="intro__lead">
-    Digitální předplatné a podmínky přístupu do diskuzního klubu junior.guru
-  </p>
-</header>
+{% from 'content.html' import lead, see_also %}
 
-Abych vám mohl kvalitně a efektivně poskytovat své služby, nachystal jsem pro vás tyto obchodní podmínky. Umožňují mi určit část obsahu kupních smluv, které by jinak bylo těžké podepisovat s každým kupujícím zvlášť. Přitom platí, že pokud obchodní podmínky stanoví něco jiného než smlouva, má smlouva vždy přednost. Tyto podmínky jsou platné a účinné od **1\. 6. 2021**.
+
+# Obchodní podmínky
+
+{% call lead() %}
+Tyto obchodní podmínky pokrývají digitální předplatné a podmínky přístupu do diskuzního klubu junior.guru. Jsou platné a účinné od **1\. 6. 2021**. Umožňují mi určit část obsahu kupních smluv, které by jinak bylo těžké podepisovat s každým kupujícím zvlášť. Přitom platí, že pokud obchodní podmínky stanoví něco jiného než smlouva, má smlouva vždy přednost.
+{% endcall %}
 
 ## Poskytovatel služeb
 
 Junior Guru, stylizovaně „junior.guru“<br>
 **Jan Javorek**<br>
-fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodním rejstříku se sídlem Lupáčova 375/24, 130 00 Praha<br>
-IČO: [74279858](http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0),<br>
+fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodním rejstříku<br>
+se sídlem Lupáčova 375/24, 130 00 Praha<br>
+IČO: [74279858](https://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0),<br>
 neplátce DPH,<br>
 E-mail: [ahoj@junior.guru](mailto:ahoj@junior.guru)<br>
 
@@ -191,3 +191,9 @@ TODO
 **11.4.** Jsem oprávněn k prodeji služeb na základě živnostenského oprávnění. Živnostenskou kontrolu provádí v rámci své působnosti příslušný živnostenský úřad. Dozor nad oblastí ochrany osobních údajů vykonává Úřad pro ochranu osobních údajů. Česká obchodní inspekce vykonává ve vymezeném rozsahu mimo jiné dozor nad dodržováním zákona č. 634/1992 Sb., o ochraně spotřebitele, ve znění pozdějších předpisů.
 
 **11.5.** Vztahy a případné spory, které vzniknou na základě smluv a nebude možné je vyřešit mimosoudně, budou řešeny výhradně podle práva České republiky s výjimkou mezinárodních smluv a budou řešeny příslušnými soudy České republiky.
+
+
+{% call see_also() %}
+- [Zásady ochrany osobních údajů](privacy.md)
+- [Pravidla chování](/coc/)
+{% endcall %}

@@ -10,14 +10,15 @@ from juniorguru.web import thumbnail
 CLUB_LAUNCH_AT = arrow.get(2021, 2, 1)
 
 
-def on_shared_context(context, page, config):
+def on_shared_context(context, page, config, files):
     context['now'] = arrow.utcnow()
 
 
 @with_db
-def on_markdown_context(context, page, config):
+def on_markdown_context(context, page, config, files):
     context['page'] = page
     context['config'] = config
+    context['pages'] = files
 
     context['club_elapsed_months'] = int(round((context['now'] - CLUB_LAUNCH_AT).days / 30))
     context['members'] = ClubUser.avatars_listing()
@@ -45,14 +46,14 @@ METRICS_INC_NAMES = {
 
 
 @with_db
-def on_theme_context(context, page, config):
+def on_theme_context(context, page, config, files):
     context['page'].meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
     context['page'].meta.setdefault('main_class', 'main-simple')
     context['page'].meta.setdefault('thumbnail', thumbnail())
 
     context['nav_topics'] = sorted([
-        file.page for file in context['pages']
-        if file.url.startswith('topics/')
+        file.page for file in files
+        if file.src_path.startswith('topics/')
     ], key=attrgetter('url'))
 
     metrics = Metric.as_dict()

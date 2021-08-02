@@ -1,7 +1,43 @@
-$section-spacer-base: map-get($spacers, 5);
+$main-spacer: map-get($spacers, 5);
+$main-spacer-double: 2 * $main-spacer;
+$eggshell-chick-width: 4.3rem;
 
 .main-simple {
   @extend .container-lg;
+  max-width: 720px;
+  padding-top: $main-spacer;
+  padding-bottom: $main-spacer-double;
+}
+
+.main-simple h1 {
+  padding-bottom: map-get($spacers, 1);
+  margin-bottom: $main-spacer;
+  border-bottom: .2rem solid $body-color;
+}
+
+.main-simple .lead {
+  margin-bottom: $main-spacer;
+}
+
+// .main-simple h1 {  TODO
+//   padding-right: $eggshell-chick-width + map-get($spacers, 1);
+//   padding-bottom: $spacer + map-get($spacers, 1);
+//   margin-bottom: $main-spacer;
+//   // text-align: center; 
+//   // border-bottom: 2px solid $secondary;
+
+//   background-image: url("./images/eggshell.svg"), url("./images/eggshell-chick.svg");
+//   background-repeat: repeat-x, no-repeat;
+//   background-position: bottom center, right bottom $spacer;
+//   background-size: auto $spacer, auto $h1-font-size;
+// }
+
+.main-simple h2 {
+  margin-top: $main-spacer;
+}
+
+.main-simple *:last-child {
+  margin-bottom: 0;
 }
 
 .main-sections {
@@ -11,8 +47,8 @@ $section-spacer-base: map-get($spacers, 5);
 
   section {
     @extend .container-lg;
-    padding-top: $section-spacer-base - $spacer;
-    padding-bottom: $section-spacer-base - $spacer;
+    padding-top: $main-spacer - $spacer;
+    padding-bottom: $main-spacer - $spacer;
   }
 }
 
@@ -42,11 +78,19 @@ $section-spacer-base: map-get($spacers, 5);
   background: $jg-gray-white;
 }
 
-.standout {
-  margin-top: $section-spacer-base;
-  margin-bottom: $section-spacer-base;
+.standout-bottom {
+  margin-bottom: $main-spacer;
 }
 
-.standout:last-child {
+.standout-bottom:last-child {
   margin-bottom: 0;
+}
+
+.standout-top {
+  margin-top: $main-spacer;
+}
+
+.standout {
+  @extend .standout-top;
+  @extend .standout-bottom;
 }

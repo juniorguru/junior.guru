@@ -30,8 +30,8 @@ def on_page_markdown(markdown, page, config, files):
     env.filters.update(filters)
 
     context = {}
-    context_hooks.on_shared_context(context, page, config)
-    context_hooks.on_markdown_context(context, page, config)
+    context_hooks.on_shared_context(context, page, config, files)
+    context_hooks.on_markdown_context(context, page, config, files)
 
     try:
         template = env.from_string(markdown)
@@ -47,8 +47,8 @@ def on_env(env, config, files):
 
 
 def on_page_context(context, page, config, nav):
-    context_hooks.on_shared_context(context, page, config)
-    context_hooks.on_theme_context(context, page, config)
+    context_hooks.on_shared_context(context, page, config, context['pages'])
+    context_hooks.on_theme_context(context, page, config, context['pages'])
 
 
 def create_url_filter(page):

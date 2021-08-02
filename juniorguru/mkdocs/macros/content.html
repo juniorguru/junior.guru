@@ -10,6 +10,14 @@
 {% endmacro %}
 
 
+{% macro see_also() %}
+  <div class="see-also standout-top">
+    <h2>Související</h2>
+    {{ caller()|md }}
+  </div>
+{% endmacro %}
+
+
 {% macro blockquote(quote, caption) %}
   <div class="blockquote-container">
     <figure class="blockquote-content">

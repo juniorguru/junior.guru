@@ -10,7 +10,7 @@ $blockquote-image-width: map-get($spacers, 5);
 
 .blockquote-content {
   padding: map-get($spacers, 1) $spacer;
-  border-left: $blockquote-border-width solid $jg-blue;
+  border-left: $blockquote-border-width solid $primary;
   border-radius: $border-radius;
 }
 
@@ -21,7 +21,7 @@ $blockquote-image-width: map-get($spacers, 5);
 .blockquote {
   @extend .font-monospace;
   font-size: $blockquote-font-size;
-  color: $jg-blue;
+  color: $primary;
 
   @include media-breakpoint-up(md) {
     font-size: $blockquote-font-size-md;
