@@ -69,12 +69,29 @@
 #     - 488415538117214220
 
 
+# - title: TBD (databáze)
+#   date: "2021-08-31"
+#   description: |
+#     TBD
+#   bio_name: Jan Smitka
+#   bio_title: Vedoucí vývoje, Lynt
+#   bio: |
+#     Jan Smitka vede vývoj ve společnosti Lynt. Má přes 15 let zkušeností s vývojem komplexních aplikací, od analýzy přes řízení vývoje až po nasazení a provoz. Ve volném čase si rád zahraje [Divinity](https://divinity.game/).
+#   bio_links:
+#     - https://twitter.com/jansmitka
+#     - https://www.linkedin.com/in/jansmitka/
+#     - https://github.com/jsmitka
+#   logo_path: logos/lynt.svg
+#   speakers:
+#     - 821709585588551701
+
+
 - title: Od recruitingu cez Lambda School až do globálneho startupu
   date: "2021-08-17"
   description: |
     Je mnoho ciest ako sa dostať k programovaniu. Vo svojej prednáške by som vám rada porozprávala o tej svojej, ktorá viedla od práce recruiterky v Bratislave cez Lambda School až do globálneho technologického startupu Grafana Labs, s posledným investičným kolom v hodnote 50 miliónov dolárov. Veľmi rada s vami zazdieľam to, čo sa mi podarilo a osvedčilo a naopak, čo som urobila zle a čo by som dnes urobila úplne inak.
   bio_name: Ivana Hučková
-  bio_title: Software Engineer v Grafana Labs
+  bio_title: Software Engineer, Grafana Labs
   bio: |
     Ivana Hučková je programátorka v [Grafana Labs](https://grafana.com/). Ivana sa pred 3 rokmi rozhodla zmeniť kariéru a absolvovala 7-mesačný online kurz programovania [Lambda School](https://lambdaschool.com/). Po skončení Lambdy nastúpila ako Software Engineer do Grafany, kde pracuje na vývoji open-source softvéru. Vo svojom voľnom čase sa rada venuje stavaniu menších IoT monitorovacích systémov, napríklad na monitorovanie jej avokáda, sviečok alebo kvásku.
   bio_links:
@@ -130,7 +147,7 @@
   description: |
     Technical writer je zajímavá a žádaná práce, málo kdo ale ví o co v ní běží nebo že vůbec taková kariérní cesta existuje. Přijď si poslechnout, jak se z absolventky obecné lingvistiky stala tech writerka. Nora Kořánová ti poví, s čím se běžně v práci potýká, co ji na tom baví, nebaví a jaké dovednosti se jí hodí. Nebudou chybět ani tipy na to, jak se technical writerem stát.
   bio_name: Nora Kořánová
-  bio_title: Technical Writer v SUSE
+  bio_title: Technical Writer, SUSE
   bio: |
     Nora Kořánová je technická redaktorka v SUSE. Jako absolventka obecné lingivstiky se do IT dostala i díky PyLadies a v oboru pracuje od roku 2016. Na konferenci Write the Docs 2018 měla lightning talk o [české houbové obsesi](https://www.youtube.com/watch?v=AMkSSIvyu3s). Jednou by si chtěla založit farmu s aspoň jednou kozou, kde by tkala koberce.
   bio_links:
@@ -183,7 +200,7 @@
   poster_description: |
     AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Jirka je seniorní recruiter v Red Hatu, který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase spoluorganizuje brněnský sraz Python programátorů a věnuje se DJingu.
   bio_name: Jiří Psotka
-  bio_title: Senior Recruiter v Red Hat
+  bio_title: Senior Recruiter, Red Hat
   bio: |
     Jirka Psotka je seniorní recruiter v [Red Hatu](https://jobs.redhat.com/), který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase jako dobrovolník spoluorganizuje brněnský sraz Python programátorů [Pyvo](https://pyvo.cz/brno-pyvo/) a věnuje se [DJingu](https://www.facebook.com/Hazement/). Doma má nekonečnou [sbírku vinylů](https://hearthis.at/krmelec-prostor/dj-hotdogg/).
   bio_links:
