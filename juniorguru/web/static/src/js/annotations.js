@@ -1,6 +1,19 @@
 import { annotate } from 'rough-notation';
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  Array.from(document.querySelectorAll('.masthead .lead strong'))
+    .forEach(function (element) {
+      const annotation = annotate(element, {
+        type: 'underline',
+        color: '#1755d1',
+        animationDuration: 1600,
+      });
+      annotation.show();
+    })
+});
+
+
 const observer = IntersectionObserver
   ? new IntersectionObserver(handleIntersection, { threshold: [1] })
   : null;
@@ -25,40 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       return { id: id, annotation: annotation };
     });
-  annotations = annotations.concat(Array.from(document.querySelectorAll('*[data-annotate-underline], .masthead .lead strong'))
-    .map(function (element, i) {
-      const id = i.toString();
-      const annotation = annotate(element, {
-        type: 'underline',
-        color: '#1755d1',
-        animationDuration: 1600,
-        multiline: true,
-      });
-      if (observer) {
-        element.dataset.annotateId = id;
-        observer.observe(element);
-      } else {
-        annotation.show();
-      }
-      return { id: id, annotation: annotation };
-    }));
-  annotations = annotations.concat(Array.from(document.querySelectorAll('*[data-annotate-highlight]'))
-    .map(function (element, i) {
-      const id = i.toString();
-      const annotation = annotate(element, {
-        type: 'highlight',
-        color: '#fffa72',
-        animationDuration: 1600,
-        multiline: true,
-      });
-      if (observer) {
-        element.dataset.annotateId = id;
-        observer.observe(element);
-      } else {
-        annotation.show();
-      }
-      return { id: id, annotation: annotation };
-    }));
 });
 
 
