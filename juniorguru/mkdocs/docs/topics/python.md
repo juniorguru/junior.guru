@@ -11,4 +11,4 @@ description: Učíš se Python? Hledáš někoho zkušenějšího, kdo ti porad�
 
 {{ mentions(topic, 'Pythonu') }}
 
-{{ members_roll(members, members_total_count, club_elapsed_months) }}
+{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}

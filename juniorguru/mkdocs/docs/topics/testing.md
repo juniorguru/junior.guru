@@ -11,4 +11,4 @@ description: Učíš se programovat automatizované testy přes Selenium, Cypres
 
 {{ mentions(topic, 'testování') }}
 
-{{ members_roll(members, members_total_count, club_elapsed_months) }}
+{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}

@@ -11,4 +11,4 @@ description: Učíš se PHP? Hledáš někoho zkušenějšího, kdo ti poradí, 
 
 {{ mentions(topic, 'PHP') }}
 
-{{ members_roll(members, members_total_count, club_elapsed_months) }}
+{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}

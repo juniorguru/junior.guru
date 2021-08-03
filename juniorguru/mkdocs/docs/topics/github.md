@@ -11,4 +11,4 @@ description: Nevyznáš se na GitHubu? Hledáš někoho zkušenějšího, kdo ti
 
 {{ mentions(topic, 'GitHubu') }}
 
-{{ members_roll(members, members_total_count, club_elapsed_months) }}
+{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}

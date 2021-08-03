@@ -42,7 +42,7 @@
 {% endmacro %}
 
 
-{% macro members_roll(members, members_total_count, club_elapsed_months) %}
+{% macro members_roll(pages, members, members_total_count, club_elapsed_months) %}
 <div class="members">
   <ul class="members__items">
     {% for member in members|sample(20) %}
@@ -56,7 +56,7 @@
   </ul>
 </div>
 <p class="button-compartment">
-  <a href="{{ 'club.md'|url }}" class="button">
+  <a href="{{ pages|document_url('club.md')|url }}" class="button">
     Přidej se&nbsp;k&nbsp;nám
   </a>
 </p>

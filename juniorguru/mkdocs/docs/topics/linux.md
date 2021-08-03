@@ -11,4 +11,4 @@ description: Učíš se Linux, příkazovou řádku v terminálu, Bash? Hledáš
 
 {{ mentions(topic, 'Linuxu') }}
 
-{{ members_roll(members, members_total_count, club_elapsed_months) }}
+{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}

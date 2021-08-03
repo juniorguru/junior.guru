@@ -13,4 +13,4 @@ description: Chystáš se řešit Advent of Code? Hledáš kamarády, se kterým
 
 {{ mentions(topic, 'Advent of Code') }}
 
-{{ members_roll(members, members_total_count, club_elapsed_months) }}
+{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}

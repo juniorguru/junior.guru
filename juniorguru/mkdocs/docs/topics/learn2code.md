@@ -11,4 +11,4 @@ description: Hledáš někoho, kdo má zkušenosti s Learn2Code? Má smysl hlás
 
 {{ mentions(topic, 'Learn2Code') }}
 
-{{ members_roll(members, members_total_count, club_elapsed_months) }}
+{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}

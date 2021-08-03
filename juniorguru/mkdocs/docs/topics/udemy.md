@@ -11,4 +11,4 @@ description: Hledáš někoho, kdo má zkušenosti s Udemy? Má smysl hlásit se
 
 {{ mentions(topic, 'Udemy') }}
 
-{{ members_roll(members, members_total_count, club_elapsed_months) }}
+{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}

@@ -20,4 +20,4 @@ description: Hledáš někoho, kdo má zkušenosti s programováním a dokáže 
   V klubu máme na&nbsp;mentoring hned několik místností, kde jsme si už napsali {{ topic.topic_channels_messages_count }}&nbsp;zpráv. Poradíme&nbsp;ti!
 </p>
 
-{{ members_roll(members, members_total_count, club_elapsed_months) }}
+{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}

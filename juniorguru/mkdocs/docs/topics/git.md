@@ -11,4 +11,4 @@ description: Učíš se Git? Hledáš někoho zkušenějšího, kdo ti poradí, 
 
 {{ mentions(topic, 'Gitu') }}
 
-{{ members_roll(members, members_total_count, club_elapsed_months) }}
+{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}

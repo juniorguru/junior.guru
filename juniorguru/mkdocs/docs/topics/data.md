@@ -11,4 +11,4 @@ description: Učíš se pracovat s daty pomocí Pandas, SQL, Excelu? Zápasíš 
 
 {{ mentions(topic, 'datech') }}
 
-{{ members_roll(members, members_total_count, club_elapsed_months) }}
+{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}

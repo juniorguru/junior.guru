@@ -11,4 +11,4 @@ description: Učíš se JavaScript? Hledáš někoho zkušenějšího, kdo ti po
 
 {{ mentions(topic, 'JavaScriptu') }}
 
-{{ members_roll(members, members_total_count, club_elapsed_months) }}
+{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}

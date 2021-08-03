@@ -11,4 +11,4 @@ description: Hledáš někoho, kdo má zkušenosti s Czechitas? Má smysl hlási
 
 {{ mentions(topic, 'Czechitas') }}
 
-{{ members_roll(members, members_total_count, club_elapsed_months) }}
+{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}
