@@ -1,3 +1,6 @@
+{% from 'shared.html' import img %}
+
+
 {% macro markdown() %}
     {{ caller()|md }}
 {% endmacro %}
@@ -36,10 +39,10 @@
 {% endmacro %}
 
 
-{% macro blockquote_avatar(quote, avatar_filename, avatar_alt, caption) %}
+{% macro blockquote_avatar(quote, avatar_filename, avatar_alt, caption, lazy=True) %}
   <div class="blockquote-container avatar">
     <figure class="blockquote-content">
-      <img width="50" height="50" class="blockquote-avatar" src="{{ ('static/images/avatars_quotes/' + avatar_filename)|url }}" alt="{{ avatar_alt }}">
+      {{ img('static/images/avatars_quotes/' + avatar_filename, avatar_alt, 50, 50, class='blockquote-avatar', lazy=lazy) }}
       <blockquote class="blockquote">
         <p>{{ quote }}</p>
       </blockquote>
@@ -70,13 +73,15 @@
 {% endmacro %}
 
 
-{% macro logo(name, filename, url=None) %}
+{% macro logo(name, filename, url=None, lazy=False) %}
   <li class="logos-item" title="{{ name }}">
     {% if url %}
     <a href="{{ url }}" target="_blank" rel="noopener"
-       data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership">
+      data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership">
     {% endif %}
-    <img class="logos-image" width="150" src="{{ ('static/images/logos/' + filename)|url }}" alt="{{ name }}">
+
+    {{ img('static/images/logos/' + filename, name, 130, 60, class='logos-image', lazy=lazy) }}
+
     {% if url %}
     </a>
     {% endif %}

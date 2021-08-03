@@ -1,9 +1,10 @@
-from juniorguru.models.club import ClubMessage
+import re
+from pathlib import Path
 from operator import attrgetter, itemgetter
 
 import arrow
 
-from juniorguru.models import with_db, Metric, Topic, ClubUser, Company, Event
+from juniorguru.models import with_db, Metric, Topic, ClubUser, Company, Event, ClubMessage
 from juniorguru.web import thumbnail
 
 
@@ -63,3 +64,6 @@ def on_theme_context(context, page, config, files):
         in metrics.items()
         if name.startswith('inc_') and name.endswith('_pct')
     ), key=itemgetter(1), reverse=True)
+
+    css_path = Path(__file__).parent.parent / 'web' / 'static' / 'bundle-mkdocs.css'
+    context['bootstrap_icons_file'] = re.search(r'bootstrap-icons.woff2\?\w+', css_path.read_text()).group(0)

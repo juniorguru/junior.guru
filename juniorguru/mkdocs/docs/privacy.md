@@ -2,7 +2,7 @@
 title: Zásady ochrany osobních údajů na junior.guru
 ---
 
-{% from 'content.html' import lead, see_also %}
+{% from 'markdown.html' import lead, see_also %}
 
 
 # Zásady ochrany osobních údajů

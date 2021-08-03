@@ -5,7 +5,8 @@ main_class: main-sections
 description: Přidej se na junior.guru Discord! Jsme tvoje online programovací parta, skupina, fórum. Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
 
-{% from 'content.html' import markdown, blockquote_avatar, blockquote_toxic, logo, lead %}
+{% from 'shared.html' import img %}
+{% from 'markdown.html' import markdown, blockquote_avatar, blockquote_toxic, logo, lead %}
 
 
 <header class="masthead"><div class="masthead-container">
@@ -28,12 +29,12 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 <a class="masthead-button primary" href="#cenik">Přidej se</a>
 <span class="masthead-members">
   {% for member in members|sample(8) %}
-    <img width="50" height="50" src="{{ ('static/' + member.avatar_path)|url }}" alt="Profilovka člena {{ member.id }}">
+    {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
   {% endfor %}
 </span>
 
 </div>
-<img width="400" height="400" class="masthead-illustration" src="{{ 'static/images/illustration-club.svg'|url }}">
+{{ img('static/images/illustration-club.svg', 'Ilustrace', 400, 400, class='masthead-illustration') }}
 </div></header>
 
 

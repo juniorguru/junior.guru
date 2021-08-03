@@ -1,4 +1,5 @@
 {% extends 'main_legacy.html' %}
+{% from 'shared.html' import img with context %}
 
 
 {% block stylesheet %}<link rel="stylesheet" href="{{ 'static/bundle-mkdocs.css'|url }}">{% endblock %}
@@ -9,7 +10,7 @@
   <header class="navbar navbar-light">
     <nav class="navbar-container">
       <a class="navbar-brand " href="{{ '/'|url }}">
-        <img src="{{ 'static/images/logo.svg'|url }}" alt="Logo junior.guru" width="90" height="40">
+        {{ img('static/images/logo.svg', 'Logo junior.guru', 90, 40, lazy=False) }}
       </a>
       <div class="navbar-buttons">
         <a class="btn btn-outline-primary" href="https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/edit?usp=sharing" target="_blank" rel="noopener">Pro firmy</a>
@@ -53,7 +54,7 @@
       <address class="footer-section footer-address">
         <ul class="footer-address-list">
           <li class="footer-address-item">
-            <img class="footer-address-logo" src="{{ 'static/images/logo-i.svg'|url }}" alt="Logo junior.guru" width="90" height="40">
+            {{ img('static/images/logo-i.svg', 'Logo junior.guru', 90, 40, class='footer-address-logo') }}
           </li>
           <li class="footer-address-item">
             <h3 class="footer-subheading">Projekt</h3>
@@ -125,7 +126,7 @@
       <h3 class="footer-heading">Kdo to provozuje? Na čem vydělává?</h3>
       <div class="footer-about-content">
         <div class="footer-about-text">
-          <img class="footer-about-avatar" src="{{ 'static/images/honza.jpg'|url }}" alt="Honza Javorek" width="100" height="100">
+          {{ img('static/images/honza.jpg', 'Honza Javorek', 100, 100, class='footer-about-avatar') }}
           <p>
             Jmenuji se Honza Javorek a býval jsem obyčejný programátor. Jenže jsem se díky dobrovolným aktivitám dostal k pomáhání začátečníkům, a to mě hodně bavilo. Časem mi přišlo, že chybí jedno místo, kde by byly všechny pracovní nabídky pro juniory, nezávislé informace a základní praktické rady. Proto jsem odešel z korporátu a založil tento projekt.
           </p>

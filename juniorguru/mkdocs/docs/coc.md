@@ -2,7 +2,7 @@
 title: Pravidla chování na junior.guru
 ---
 
-{% from 'content.html' import lead, see_also %}
+{% from 'markdown.html' import lead, see_also %}
 
 
 # Pravidla chování

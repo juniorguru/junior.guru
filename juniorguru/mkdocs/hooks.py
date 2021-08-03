@@ -40,6 +40,11 @@ def on_page_markdown(markdown, page, config, files):
         raise MarkdownTemplateError(page)
 
 
+def on_pre_build(config):
+    macros_dir = Path(config['docs_dir']).parent / 'macros'
+    config['theme'].dirs.append(macros_dir)
+
+
 def on_env(env, config, files):
     filters_names = config['template_filters']['shared'] + config['template_filters']['theme']
     filters = {name: getattr(template_filters, name) for name in filters_names}
