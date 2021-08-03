@@ -16,7 +16,7 @@ def on_shared_context(context, page, config, files):
 
 
 @with_db
-def on_markdown_context(context, page, config, files):
+def on_docs_context(context, page, config, files):
     context['page'] = page
     context['config'] = config
     context['pages'] = files

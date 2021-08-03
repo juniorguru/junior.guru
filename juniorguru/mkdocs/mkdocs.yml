@@ -89,7 +89,7 @@ template_filters:
       - email_link
       - icon
       - thousands
-  markdown:
+  docs:
       - sample
       - metric
   theme: []

@@ -2,7 +2,7 @@
 title: Obchodní podmínky junior.guru
 ---
 
-{% from 'markdown.html' import lead, see_also %}
+{% from 'docs.html' import lead, see_also %}
 
 
 # Obchodní podmínky

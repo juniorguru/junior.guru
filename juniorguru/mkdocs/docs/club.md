@@ -6,7 +6,7 @@ description: Přidej se na junior.guru Discord! Jsme tvoje online programovací 
 ---
 
 {% from 'shared.html' import img %}
-{% from 'markdown.html' import markdown, blockquote_avatar, blockquote_toxic, logo, lead %}
+{% from 'docs.html' import markdown, blockquote_avatar, blockquote_toxic, logo, lead %}
 
 
 <header class="masthead"><div class="masthead-container">

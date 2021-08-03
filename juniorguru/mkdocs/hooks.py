@@ -22,7 +22,7 @@ def on_page_markdown(markdown, page, config, files):
     loader = jinja2.FileSystemLoader(macros_dir)
     env = jinja2.Environment(loader=loader, auto_reload=False)
 
-    filters_names = config['template_filters']['shared'] + config['template_filters']['markdown']
+    filters_names = config['template_filters']['shared'] + config['template_filters']['docs']
     filters = {name: getattr(template_filters, name) for name in filters_names}
     filters['tojson'] = tojson
     filters['url'] = create_url_filter(page)
@@ -31,7 +31,7 @@ def on_page_markdown(markdown, page, config, files):
 
     context = {}
     context_hooks.on_shared_context(context, page, config, files)
-    context_hooks.on_markdown_context(context, page, config, files)
+    context_hooks.on_docs_context(context, page, config, files)
 
     try:
         template = env.from_string(markdown)
