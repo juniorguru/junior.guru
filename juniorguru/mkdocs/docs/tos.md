@@ -193,7 +193,4 @@ TODO
 **11.5.** Vztahy a případné spory, které vzniknou na základě smluv a nebude možné je vyřešit mimosoudně, budou řešeny výhradně podle práva České republiky s výjimkou mezinárodních smluv a budou řešeny příslušnými soudy České republiky.
 
 
-{% call see_also() %}
-- [Zásady ochrany osobních údajů](privacy.md)
-- [Pravidla chování](coc.md)
-{% endcall %}
+{{ see_also(page) }}

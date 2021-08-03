@@ -127,7 +127,7 @@ def icon(name, classes=None):
     return Markup(f'<i class="{class_list}"></i>')
 
 
-def document_url(files, src_path):
+def docs_url(files, src_path):
     for file in files:
         if file.src_path == src_path:
             return file.url

@@ -83,7 +83,4 @@ Prohlašuji, že jsem přijal veškerá vhodná technická a organizační opat�
 Více informací o právech klienta je k dispozici na [internetových stránkách Úřadu pro ochranu osobních údajů](https://www.uoou.cz/6-prava-subjektu-udaj/d-27276).
 
 
-{% call see_also() %}
-- [Obchodní podmínky](tos.md)
-- [Pravidla chování](coc.md)
-{% endcall %}
+{{ see_also(page) }}

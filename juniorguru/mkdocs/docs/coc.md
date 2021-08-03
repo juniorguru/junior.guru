@@ -83,9 +83,4 @@ Následně přijde reakce. Ta může zahrnovat:
 *   požadavek na veřejnou omluvu.
 
 
-
-
-{% call see_also() %}
-- [Obchodní podmínky](tos.md)
-- [Zásady ochrany osobních údajů](privacy.md)
-{% endcall %}
+{{ see_also(page) }}

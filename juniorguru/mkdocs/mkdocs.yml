@@ -1,83 +1,91 @@
 site_name: junior.guru
 site_url: https://junior.guru/
 
+
 nav:
-  - Příručka: 'motivation/'
-  - Práce: 'jobs/'
-  - Klub: 'club.md'
-  # - main:
-  #     - Příručka: 'motivation/'
-  #     - Práce: 'jobs/'
-  #     - Klub: 'club.md'
-  # - topics:
-  #     - topics/100daysofcode.md
-  #     - topics/adventofcode.md
-  #     - topics/codility.md
-  #     - topics/codingbootcamppraha.md
-  #     - topics/cs50.md
-  #     - topics/csharp.md
-  #     - topics/css.md
-  #     - topics/czechitas.md
-  #     - topics/data.md
-  #     - topics/django.md
-  #     - topics/djangogirls.md
-  #     - topics/docker.md
-  #     - topics/engeto.md
-  #     - topics/flask.md
-  #     - topics/git.md
-  #     - topics/github.md
-  #     - topics/greenfox.md
-  #     - topics/interviews.md
-  #     - topics/itnetwork.md
-  #     - topics/java.md
-  #     - topics/javascript.md
-  #     - topics/laravel.md
-  #     - topics/learn2code.md
-  #     - topics/linux.md
-  #     - topics/mentoring.md
-  #     - topics/nette.md
-  #     - topics/oop.md
-  #     - topics/opensource.md
-  #     - topics/php.md
-  #     - topics/primakurzy.md
-  #     - topics/pyladies.md
-  #     - topics/python.md
-  #     - topics/react.md
-  #     - topics/reactgirls.md
-  #     - topics/sdacademy.md
-  #     - topics/sql.md
-  #     - topics/step.md
-  #     - topics/symfony.md
-  #     - topics/testing.md
-  #     - topics/udemy.md
-  #     - topics/unicorn.md
-  #     - topics/vsb.md
-  #     - topics/vue.md
-  #     - topics/wordpress.md
-  # - rules:
-  #     - privacy.md
-  #     - tos.md
-  #     - coc.md
+  - Příručka:
+      - Motivace: motivation/
+      - Základy: learn/
+      - První praxe: practice/
+      - Hledání práce: candidate-handbook/
+  - Práce: jobs/
+  - Klub: club.md
+
+  - Témata:
+      - topics/100daysofcode.md
+      - topics/adventofcode.md
+      - topics/codility.md
+      - topics/codingbootcamppraha.md
+      - topics/cs50.md
+      - topics/csharp.md
+      - topics/css.md
+      - topics/czechitas.md
+      - topics/data.md
+      - topics/django.md
+      - topics/djangogirls.md
+      - topics/docker.md
+      - topics/engeto.md
+      - topics/flask.md
+      - topics/git.md
+      - topics/github.md
+      - topics/greenfox.md
+      - topics/interviews.md
+      - topics/itnetwork.md
+      - topics/java.md
+      - topics/javascript.md
+      - topics/laravel.md
+      - topics/learn2code.md
+      - topics/linux.md
+      - topics/mentoring.md
+      - topics/nette.md
+      - topics/oop.md
+      - topics/opensource.md
+      - topics/php.md
+      - topics/primakurzy.md
+      - topics/pyladies.md
+      - topics/python.md
+      - topics/react.md
+      - topics/reactgirls.md
+      - topics/sdacademy.md
+      - topics/sql.md
+      - topics/step.md
+      - topics/symfony.md
+      - topics/testing.md
+      - topics/udemy.md
+      - topics/unicorn.md
+      - topics/vsb.md
+      - topics/vue.md
+      - topics/wordpress.md
+
+  - Pravidla:
+      - Pravidla chování: coc.md
+      - Ochrana osobních údajů: privacy.md
+      - Obchodní podmínky: tos.md
+      - Licence obsahu (CC BY-SA): https://creativecommons.org/licenses/by-sa/4.0/deed.cs
+
 
 markdown_extensions:
   - toc:
       permalink: '#'
-      permalink_title: 'Odkaz přímo na tuto sekci'
+      permalink_title: Odkaz přímo na tuto sekci
   - tables
   - fenced_code
   - attr_list
+
 
 theme:
   name: null
   custom_dir: theme/
 
+
 plugins:
   - mkdocs-simple-hooks:
       hooks:
-        on_pre_build: 'juniorguru.mkdocs.hooks:on_pre_build'
-        on_page_markdown: 'juniorguru.mkdocs.hooks:on_page_markdown'
-        on_env: 'juniorguru.mkdocs.hooks:on_env'
-        on_page_context: 'juniorguru.mkdocs.hooks:on_page_context'
+        on_pre_build: juniorguru.mkdocs.hooks:on_pre_build
+        on_page_markdown: juniorguru.mkdocs.hooks:on_page_markdown
+        on_env: juniorguru.mkdocs.hooks:on_env
+        on_page_context: juniorguru.mkdocs.hooks:on_page_context
+
 
 # Specifies which filters from juniorguru.lib.template_filters
 # will be available in which Jinja2 templates.
@@ -85,7 +93,7 @@ plugins:
 # (Entirely custom config, which is processed in hooks.py)
 template_filters:
   shared:
-      - document_url
+      - docs_url
       - email_link
       - icon
       - thousands
@@ -93,6 +101,7 @@ template_filters:
       - sample
       - metric
   theme: []
+
 
 # Removed 'strict', because it gives warnings if linking non-existing targets. Once the Flask
 # app is gone, 'strict' should return to be enabled.

@@ -13,10 +13,18 @@
 {% endmacro %}
 
 
-{% macro see_also() %}
+{% macro see_also(page) %}
   <div class="see-also standout-top">
     <h2>Související</h2>
-    {{ caller()|md }}
+    <ul>
+      {% for nav_item in page.parent.children %}
+        {% if nav_item != page %}
+          <li><a href="{{ nav_item.url|url }}"{% if nav_item.is_link %} target="_blank" rel="noopener"{% endif %}>
+            {{- nav_item.title -}}
+          </a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
   </div>
 {% endmacro %}
 

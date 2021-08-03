@@ -15,17 +15,17 @@
       <div class="navbar-buttons">
         <a class="btn btn-outline-primary" href="https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/edit?usp=sharing" target="_blank" rel="noopener">Pro firmy</a>
         {% if page.url != 'club/' %}
-          <a class="btn btn-primary" href="{{ pages|document_url('club.md')|url }}">Přidej se</a>
+          <a class="btn btn-primary" href="{{ pages|docs_url('club.md')|url }}">Přidej se</a>
         {% endif %}
       </div>
       {% if nav %}
       <ul class="nav nav-foldable">
-        {% for tab in (nav|list)[:3] %}
+        {% for nav_item in (nav|list)[:3] %}
         <li class="nav-item">
-          {%- if tab.active -%}
-            <a class="nav-link active" aria-current="page" href="{{ tab.url|url }}">{{ tab.title }}</a>
+          {%- if nav_item.active -%}
+            <a class="nav-link active" aria-current="page" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
           {%- else -%}
-            <a class="nav-link" href="{{ tab.url|url }}">{{ tab.title }}</a>
+            <a class="nav-link" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
           {%- endif -%}
         </li>
         {% endfor %}
@@ -95,7 +95,7 @@
                 </a>
               </li>
               <li class="footer-icons-item">
-                <a href="{{ pages|document_url('club.md')|url }}">
+                <a href="{{ pages|docs_url('club.md')|url }}">
                   <i class="bi bi-discord" role="img" aria-label="Discord"></i>
                 </a>
               </li>
@@ -152,7 +152,7 @@
           </ul>
           <p class="footer-finances-actions">
             <span class="footer-finances-button">
-              <a class="btn btn-lg btn-primary" href="{{ pages|document_url('club.md')|url }}">Podpoř mě členstvím</a>
+              <a class="btn btn-lg btn-primary" href="{{ pages|docs_url('club.md')|url }}">Podpoř mě členstvím</a>
             </span>
           </p>
         </div>
@@ -162,10 +162,10 @@
       <nav class="footer-section footer-nav">
         <h3 class="footer-heading">Příručka</h3>
         <p>
-          <a href="{{ 'motivation/'|url }}">Motivace</a>,
-          <a href="{{ 'learn/'|url }}">Základy</a>,
-          <a href="{{ 'practice/'|url }}">První praxe</a>,
-          <a href="{{ 'candidate-handbook/'|url }}">Hledání práce</a>
+          {% for nav_item in (nav|selectattr('title', 'equalto', 'Příručka')|list)[0].children %}
+            <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+            {%- if not loop.last %}, {% endif %}
+          {% endfor %}
         </p>
 
         <h3 class="footer-heading">Pracovní nabídky</h3>
@@ -178,8 +178,8 @@
 
         <h3 class="footer-heading">Témata, která řešíme v klubu</h3>
         <p>
-          {% for topic in nav_topics %}
-            <a href="{{ topic.url|url }}">{{ topic.meta.topic_link_text }}</a>
+          {% for nav_item in (nav|selectattr('title', 'equalto', 'Témata')|list)[0].children %}
+            <a href="{{ nav_item.url|url }}">{{ nav_item.meta.topic_link_text }}</a>
             {%- if not loop.last %}, {% endif %}
           {% endfor %}
         </p>
@@ -188,18 +188,11 @@
     <nav class="footer-section footer-rules">
       <h3 class="visually-hidden">Pravidla</h3>
       <ul class="footer-rules-list">
-        <li class="footer-rules-item">
-          <a href="{{ pages|document_url('privacy.md')|url }}">Ochrana osobních údajů</a>
-        </li>
-        <li class="footer-rules-item">
-          <a href="{{ pages|document_url('coc.md')|url }}">Pravidla chování</a>
-        </li>
-        <li class="footer-rules-item">
-          <a href="{{ pages|document_url('tos.md')|url }}">Obchodní podmínky</a>
-        </li>
-        <li class="footer-rules-item">
-          <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">Licence obsahu (CC BY-SA)</a>
-        </li>
+        {% for nav_item in (nav|selectattr('title', 'equalto', 'Pravidla')|list)[0].children %}
+          <li class="footer-rules-item">
+            <a href="{{ nav_item.url|url }}"{% if nav_item.is_link %} target="_blank" rel="noopener"{% endif %}>{{ nav_item.title }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </nav>
   </footer>
