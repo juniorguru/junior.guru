@@ -18,14 +18,12 @@
 
       <link rel="dns-prefetch" href="https://www.google-analytics.com">
       <link rel="preconnect" href="https://res.cloudinary.com">
+
+      {% block stylesheet %}<link rel="stylesheet" href="{{ 'static/bundle.css'|url }}">{% endblock %}
       <link rel="preload" href="https://www.googletagmanager.com/gtm.js?id=UA-1316071-22" as="script">
       <link rel="preload" href="{{ ('static/fonts/' + bootstrap_icons_file)|url }}" as="font" type="font/woff2" crossorigin="anonymous">
-
       <script defer src="{{ 'static/bundle.js'|url }}"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1316071-22"></script>
-
-      {% if page.meta.description %}<meta name="description" content="{{ page.meta.description }}">{% endif %}
-      {% block stylesheet %}<link rel="stylesheet" href="{{ 'static/bundle.css'|url }}">{% endblock %}
 
       <meta property="og:title" content="{{ page.meta.title }}">
       <meta property="og:type" content="website">
@@ -38,6 +36,8 @@
       <meta name="twitter:card" content="photo">
       <meta name="twitter:image" content="{{ ('static/' + page.meta.thumbnail|string)|url }}">
       <meta name="twitter:creator" content="@honzajavorek">
+
+      {% if page.meta.description %}<meta name="description" content="{{ page.meta.description }}">{% endif %}
     {% endblock meta %}
   </head>
   {% block body %}
