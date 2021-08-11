@@ -72,7 +72,7 @@
  - title: Relační databáze efektivně
    date: "2021-08-31"
    description: |
-     S relačními databázemi se setkává téměř každý vývojář, ale ne každý vývojář je dokáže efektivně využít. V přednášce si představáme, jak jsou data v relačních databázích uložena, jak databáze vykonávají naše dotazy a jak jim v jejich vykonávání pomoci. Ukážeme si i nástroje pro ladění dotazů v MySQL a PostgreSQL a celou řadu praktických tipů.
+     S relačními databázemi se setkává téměř každý vývojář, ale ne každý vývojář je dokáže efektivně využít. V přednášce si představíme, jak jsou data v relačních databázích uložena, jak databáze vykonávají naše dotazy a jak jim v jejich vykonávání pomoci. Ukážeme si i nástroje pro ladění dotazů v MySQL a PostgreSQL a celou řadu praktických tipů.
    bio_name: Jan Smitka
    bio_title: Hlavní vývojář, Lynt
    bio: |
