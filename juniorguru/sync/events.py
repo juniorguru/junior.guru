@@ -128,7 +128,7 @@ async def post_next_event_messages(client):
     speakers = ', '.join([speaking.speaker.mention for speaking in event.list_speaking])
 
     log.info("About to post a message 7 days prior to the event")
-    if event.start_at.date() - timedelta(days=7) == date.today():
+    if event.start_at.date() - timedelta(days=7) >= date.today():
         with db:
             message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '🗓', event.url)
         if message:
