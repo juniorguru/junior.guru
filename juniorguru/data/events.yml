@@ -108,31 +108,15 @@
 - title: Jak jsou datové struktury uloženy v paměti
   date: "2021-08-10"
   description: |
-    Jedna za věcí které se dozvíte spíše na škole než z praktických kurzů
-    je to, jak jsou informace uloženy v paměti počítače.
-    Kde jsou vlastně ty jedničky a nuly, o kterých celé IT je?
-    A jak s pomocí nich zapsat číslo, text, seznam, slovník
-    nebo třeba barvu?
+    Jedna za věcí které se dozvíte spíše na škole než z praktických kurzů je to, jak jsou informace uloženy v paměti počítače. Kde jsou vlastně ty jedničky a nuly, o kterých celé IT je? A jak s pomocí nich zapsat číslo, text, seznam, slovník nebo třeba barvu?
 
-    Začneme od začátku a postupně se zaměříme na datové typy Pythonu: seznamy
-    a slovníky.
-    Ale nebojte, v JavaScriptu, C# nebo třeba Ruby fungují základní principy
-    odobně.
+    Začneme od začátku a postupně se zaměříme na datové typy Pythonu: seznamy a slovníky. Ale nebojte, v JavaScriptu, C# nebo třeba Ruby fungují základní principy odobně.
   poster_description: |
-    Jedna za věcí které se dozvíte spíše na škole než z praktických kurzů
-    je to, jak jsou informace uloženy v paměti počítače.
-    Kde jsou vlastně ty jedničky a nuly, o kterých celé IT je?
-    A jak s pomocí nich zapsat číslo, text, seznam, slovník
-    nebo třeba barvu? Začneme od začátku a postupně se zaměříme na datové
-    typy Pythonu: seznamy a slovníky. Ale nebojte, v jiných jazycích
-    fungují základní principy odobně.
+    Jedna za věcí které se dozvíte spíše na škole než z praktických kurzů je to, jak jsou informace uloženy v paměti počítače. Kde jsou vlastně ty jedničky a nuly, o kterých celé IT je? A jak s pomocí nich zapsat číslo, text, seznam, slovník nebo třeba barvu? Začneme od začátku a postupně se zaměříme na datové typy Pythonu: seznamy a slovníky. Ale nebojte, v jiných jazycích fungují základní principy odobně.
   bio_name: Petr Viktorin
   bio_title: Senior Software Engineer, Red Hat
   bio: |
-    Petr Viktorin v [Red Hatu](https://jobs.redhat.com/) přispívá do vývoje
-    jazyka Python a jeho integraci do linuxových systémů.
-    Kromě toho Python učí a stará se o materiály
-    na [naucse.python.cz](https://naucse.python.cz/).
+    Petr Viktorin v [Red Hatu](https://jobs.redhat.com/) přispívá do vývoje jazyka Python a jeho integraci do linuxových systémů. Kromě toho Python učí a stará se o materiály na [naucse.python.cz](https://naucse.python.cz/).
   bio_links:
     - https://encukou.cz/
     - https://github.com/encukou
@@ -140,6 +124,7 @@
   logo_path: logos/redhat.svg
   speakers:
     - 733309153275019326
+  recording_url: https://www.youtube.com/watch?v=1-Bwa7yp0C4
 
 
 - title: Proč a jak být technickým redaktorem?
