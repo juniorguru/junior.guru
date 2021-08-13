@@ -77,20 +77,3 @@ $eggshell-chick-width: 4.3rem;
 .section-background.gray-white {
   background: $jg-gray-white;
 }
-
-.standout-bottom {
-  margin-bottom: $main-spacer;
-}
-
-.standout-bottom:last-child {
-  margin-bottom: 0;
-}
-
-.standout-top {
-  margin-top: $main-spacer;
-}
-
-.standout {
-  @extend .standout-top;
-  @extend .standout-bottom;
-}

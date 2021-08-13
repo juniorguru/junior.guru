@@ -81,6 +81,7 @@ $blockquote-image-width: map-get($spacers, 5);
 .blockquotes-2 {
   @extend .row;
   margin-right: 0;
+  margin-bottom: $spacer;
   margin-left: 0;
 }
 
@@ -89,7 +90,7 @@ $blockquote-image-width: map-get($spacers, 5);
   margin-top: 0;
 
   @include media-breakpoint-up(md) {
-    margin-bottom: $spacer;
+    margin-bottom: 0;
   }
 }
 

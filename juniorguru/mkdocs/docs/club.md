@@ -136,29 +136,32 @@ Potkáš u nás stejné začátečníky, jako jsi ty. Každý s jiným životní
 
 
 <div class="section-background gray-white"><section>
-<h2>Neztrácej čas s hulváty a sexisty</h2>
+<h2>Ptej se bez obav</h2>
 {% call lead() %}
-Nemáme potřebu někoho stírat. **Hloupé otázky neexistují** a uslintané vtipy nikoho nezajímají. Mezi členy jsou ženy, muži, staří, mladí. **Respektujeme se**, pomáháme si, jsme k sobě laskaví a profesionální. Případné úlety se řídí [pravidly chování](coc.md).
+Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloupé otázky neexistují,** nemáme potřebu někoho stírat. **Uslintané vtipy nikoho nezajímají,** mezi členy jsou ženy, muži, staří, mladí.
 {% endcall %}
 <div class="blockquotes-2 standout">
 {{ blockquote_avatar('Ty diskuze jsou úžasné. Když to lidi zaplatí, tak je to úplně jiné. Extrémně kultivované, srozumitelné, každý příspěvek dává smysl.', 'jakub.png', 'Jakub', 'Jakub') }}
 
 {{ blockquote_avatar('Je problém najít komunitu, která je o vzájemný pomoci a výměně informací, ne o honění ega. Tady je to krásná výjimka. Jsem ráda, že toho můžu být součástí.', 'hanka.png', 'Hanka', 'Hanka') }}
 </div>
+{% call lead() %}
+Šetři čas a energii. Posouvej se vpřed bez zakopávání o nezralé názory, hulváty, sexisty a přebujelá ega. Případné úlety se u nás řídí [pravidly chování](coc.md).
+{% endcall %}
 <div class="blockquotes-2 standout">
 {{
   blockquote_toxic(
-    'Loni jsem provedl upgrade PŘÍTELKYNĚ 1.0 na verzi MANŽELKA 1.0…',
-    'Tomáš M.',
-    'FB skupina Programátoři začátečníci',
-    'https://www.facebook.com/groups/144621756262987/posts/832213487503807/'
+    'Asistentky? Nene, my máme asistenty, na tuhle pozici se holka nemůže dostat. Neuměla by otvírat pivo a zahřívat playstation',
+    'Vojtěch P.',
+    'skupina Programátoři začátečníci na FB',
+    'https://www.facebook.com/groups/144621756262987/posts/840617993330023/?comment_id=841544619904027'
   )
 }}
 {{
   blockquote_toxic(
     'Možná by jsi měl držet hubu p*** když se tě nikdo na nic neptá č*****',
     'Darken Joe S.',
-    'FB skupina Programátoři',
+    'skupina Programátoři na FB',
     'https://www.facebook.com/groups/193575630828729/posts/1740414872811456'
   )
 }}

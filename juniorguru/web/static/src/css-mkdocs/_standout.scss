@@ -1,0 +1,16 @@
+.standout-bottom {
+  margin-bottom: $main-spacer;
+}
+
+.standout-bottom:last-child {
+  margin-bottom: 0;
+}
+
+.standout-top {
+  margin-top: $main-spacer;
+}
+
+.standout {
+  @extend .standout-top;
+  @extend .standout-bottom;
+}
