@@ -7,7 +7,12 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
   margin-bottom: $spacer;
   overflow: hidden;
   background: $jg-yellow;
-  border-top: 1px solid rgba($jg-black, .1);
+  background-image: linear-gradient(310deg, $jg-yellow-gradient 0%, $jg-yellow 50%);
+  border-top: 1px solid $jg-yellow-dark;
+
+  @include media-breakpoint-up(md) {
+    background-image: linear-gradient(20deg, $jg-yellow-gradient 0%, $jg-yellow 50%);
+  }
 }
 
 .masthead::after {
@@ -34,14 +39,19 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
 
 .masthead-content {
   margin-top: map-get($spacers, 5);
-  margin-bottom: map-get($spacers, 5);
 
   @include media-breakpoint-up(md) {
     flex-basis: 50%;
     flex-shrink: 1;
     flex-grow: 0;
     margin-right: map-get($spacers, 5);
+    margin-bottom: map-get($spacers, 5);
   }
+}
+
+.masthead-content .lead p,
+.masthead-content .masthead-numbers {
+  margin-bottom: map-get($spacers, 4);
 }
 
 .masthead-content .lead strong {
@@ -67,13 +77,21 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
   ul {
     @extend .list-unstyled;
     display: flex;
+    justify-content: space-between;
+
+    @include media-breakpoint-up(sm) {
+      justify-content: flex-start;
+    }
   }
 
   li {
     @extend .small;
     display: flex;
     flex-direction: column;
-    margin-right: map-get($spacers, 5);
+
+    @include media-breakpoint-up(sm) {
+      margin-right: map-get($spacers, 5);
+    }
   }
 
   strong {
@@ -83,15 +101,11 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
   }
 }
 
-.masthead p,
-.masthead ul {
-  margin-bottom: map-get($spacers, 4);
-}
-
 .masthead-illustration {
   display: block;
   width: 100%;
   max-width: 25rem;
+  height: auto;
   margin-bottom: $masthead-eggshell-height;
   margin-left: auto;
 
@@ -107,6 +121,7 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
   display: inline-flex;
   padding-left: $masthead-member-shift;
   margin-bottom: $spacer;
+  overflow: hidden;
   vertical-align: middle;
 }
 
@@ -117,4 +132,12 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
   margin-left: -1 * $member-shift;
   background: $jg-white;
   border-radius: 100%;
+}
+
+.masthead-members img:last-child {
+  visibility: hidden;
+
+  @include media-breakpoint-up(sm) {
+    visibility: visible;
+  }
 }

@@ -34,7 +34,7 @@
   width: 100vw;
   margin-right: -1 * $container-padding-x;
   margin-left: -1 * $container-padding-x;
-  border-top: 1px solid rgba($jg-black, .1);
+  border-top: 1px solid $jg-yellow-dark;
 
   @include media-breakpoint-up(md) {
     position: static;
