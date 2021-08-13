@@ -149,7 +149,7 @@ Nemáme potřebu někoho stírat. **Hloupé otázky neexistují** a uslintané v
 {{
   blockquote_toxic(
     'Loni jsem provedl upgrade PŘÍTELKYNĚ 1.0 na verzi MANŽELKA 1.0…',
-    'Tomáš Marek',
+    'Tomáš M.',
     'FB skupina Programátoři začátečníci',
     'https://www.facebook.com/groups/144621756262987/posts/832213487503807/'
   )
@@ -157,7 +157,7 @@ Nemáme potřebu někoho stírat. **Hloupé otázky neexistují** a uslintané v
 {{
   blockquote_toxic(
     'Možná by jsi měl držet hubu p*** když se tě nikdo na nic neptá č*****',
-    'Darken Joe Svoboda',
+    'Darken Joe S.',
     'FB skupina Programátoři',
     'https://www.facebook.com/groups/193575630828729/posts/1740414872811456'
   )
