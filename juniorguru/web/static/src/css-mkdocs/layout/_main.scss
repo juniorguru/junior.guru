@@ -36,6 +36,13 @@ $eggshell-chick-width: 4.3rem;
   margin-top: $main-spacer;
 }
 
+.main-h2-icons h2 .bi {
+  @extend .fs-3;
+  margin-right: map-get($spacers, 1);
+  line-height: $headings-line-height;
+  color: $primary;
+}
+
 .main-simple *:last-child {
   margin-bottom: 0;
 }

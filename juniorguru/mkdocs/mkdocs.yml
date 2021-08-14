@@ -58,6 +58,7 @@ nav:
       - topics/wordpress.md
 
   - Pravidla:
+      - Otázky a odpovědi: faq.md
       - Pravidla chování: coc.md
       - Ochrana osobních údajů: privacy.md
       - Obchodní podmínky: tos.md
