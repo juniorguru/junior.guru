@@ -3,6 +3,8 @@ $blockquote-font-size: map-get($font-sizes, 6);
 $blockquote-font-size-md: map-get($font-sizes, 5);
 $blockquote-image-width: map-get($spacers, 5);
 
+$blockquote-toxic-color: $danger;
+
 .blockquote-container {
   margin: 0;
   margin-bottom: $spacer;
@@ -15,7 +17,7 @@ $blockquote-image-width: map-get($spacers, 5);
 }
 
 .toxic .blockquote-content {
-  border-color: $jg-dark;
+  border-color: $blockquote-toxic-color;
 }
 
 .blockquote {
@@ -29,7 +31,7 @@ $blockquote-image-width: map-get($spacers, 5);
 }
 
 .toxic .blockquote {
-  color: $jg-dark;
+  color: $blockquote-toxic-color;
 }
 
 .blockquote p:first-child::before {
@@ -71,6 +73,10 @@ $blockquote-image-width: map-get($spacers, 5);
   float: left;
   font-size: $blockquote-image-width;
   line-height: 100%;
+}
+
+.toxic .blockquote-icon {
+  color: $blockquote-toxic-color;
 }
 
 .blockquote-container.icon .blockquote,

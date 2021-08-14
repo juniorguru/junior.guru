@@ -66,6 +66,8 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 <section>
 <h2>Získej parťáky, mentory, kamarády</h2>
 {% call lead() %}
+Začátečníci potřebují víc než [příručku](/learn/). Nejvíc je posune, **když v tom všem nejsou sami**. Když jim někdo může pomoci se zapeklitou situací, dát zpětnou vazbu, dodat motivaci.
+
 Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme [přednášky](/events/), ale nejsme škola, neděláme kurzy. Sdílíme si tipy a postřehy. Podporujeme se a radíme, když někomu něco nejde. Někteří díky klubu seženou práci. Dáváme si zpětnou vazbu. Společně se radujeme z úspěchů. Můžeš se aktivně zapojit, nebo vše jen potichu sledovat.
 
 Potkáš u nás stejné začátečníky, jako jsi ty. Každý s jiným životním příběhem, ale s velmi podobnými dotazy a problémy. O klub se stará **Honza Javorek, autor junior.guru**, okolo se však „poflakuje“ i řada dalších **profíků s chutí pomáhat**.
@@ -170,9 +172,9 @@ Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloup
 
 
 <section>
-<h2>Neztrácej čas záplavou názorů</h2>
+<h2>Nech si radit od těch, kteří ti rozumí</h2>
 {% call lead() %}
-Odborníci, kteří vstoupili do klubu, to udělali ze zájmu o juniory a **s chutí pomáhat**. Vycházíme z [konkrétní cesty jak postupovat](/learn/), která se **osvědčila mnohým začátečníkům**. Zároveň se snažíme radit objektivně a brát ohled na tvou situaci. Poskytneme ti různé pohledy, ale zároveň **jasný směr**. Místo abychom tě utopili v možnostech, pomůžeme ti rozhodnout se.
+Vycházíme z [postupu](/learn/), který je založen na reálných zkušenostech a **osvědčil se mnohým začátečníkům**. Snažíme se však radit objektivně a brát ohled i na tvou konkrétní situaci. Než abychom tě utopili v možnostech, **pomůžeme ti s rozhodováním**. Poskytneme ti sice různé pohledy, ale taky **jasný směr**. Profíci, kteří šli do klubu, to udělali ze zájmu o juniory a **s chutí pomáhat**, nejsou to náhodní kolemjdoucí.
 {% endcall %}
 
 <div class="standout"><div class="comparison">
@@ -180,19 +182,19 @@ Odborníci, kteří vstoupili do klubu, to udělali ze zájmu o juniory a **s ch
 {% set check = 'check-circle-fill'|icon('text-success') %}
 {% set cross = 'x-square-fill'|icon('text-danger') %}
 
-| Veřejné skupiny                      | Klub junior.guru                                | Osobní mentor                  |
-|--------------------------------------|-------------------------------------------------|--------------------------------|
-| {{ cross }} kvantita                 | {{ check }} dostatečná kvalita                  | {{ check }} exkluzivní kvalita |
-| {{ check }} zdarma                   | {{ check }} dostupné                            | {{ cross }} drahé              |
-| {{ cross }} ko&shy;lemjdoucí         | {{ check }} komunita                            | {{ check }} osobní vztah       |
-| {{ cross }} radí kdokoliv            | {{ check }} radí anga&shy;žo&shy;vaní odborníci | {{ check }} radí odborník      |
-| {{ cross }} správce dobro&shy;volník | {{ check }} správce na plný úvazek              | {{ check }} na plný úvazek     |
-| {{ check }} všudy&shy;přítomné       | {{ check }} dostupné                            | {{ cross }} obtížně dostupné   |
+| Veřejné skupiny                      | Klub junior.guru                              | Osobní mentor                  |
+|--------------------------------------|-----------------------------------------------|--------------------------------|
+| {{ cross }} kvantita                 | {{ check }} dostatečná kvalita                | {{ check }} exkluzivní kvalita |
+| {{ check }} zdarma                   | {{ check }} dostupné                          | {{ cross }} drahé              |
+| {{ cross }} ko&shy;lemjdoucí         | {{ check }} komunita                          | {{ check }} osobní vztah       |
+| {{ cross }} radí kdokoliv            | {{ check }} radí anga&shy;žo&shy;vaní profíci | {{ check }} radí odborník      |
+| {{ cross }} správce dobro&shy;volník | {{ check }} správce na plný úvazek            | {{ check }} na plný úvazek     |
+| {{ check }} všudy&shy;přítomné       | {{ check }} dostupné                          | {{ cross }} obtížně dostupné   |
 {% endcall %}
 </div></div>
 
 {% call lead() %}
-Rady „kolemjdoucích“ ve veřejných skupinách jsou náchylné k fanouškovství, opakují [nejrůznější mýty](/motivation/#myths), doporučují staré postupy. Vycházejí z toho, že když něco vyhovovalo jednomu, zákonitě musí i druhému. Na jednoduchou otázku běžně dostaneš **desítky rozcházejících se odpovědí**, mnohdy zcela nevhodných.
+Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství, opakují [nejrůznější mýty](/motivation/#myths), doporučují staré postupy. Vycházejí z toho, že když něco vyhovovalo jednomu, zákonitě musí i druhému. Na jednoduchou otázku běžně dostaneš **desítky rozcházejících se odpovědí**, mnohdy zcela nevhodných.
 {% endcall %}
 </section>
 
