@@ -395,7 +395,7 @@ Na junior.guru byly původně pouze [rady](/motivation/) a [pracovní nabídky](
 
 #### Budou nové rady na junior.guru už pouze pro členy klubu?
 
-Všechen obsah junior.guru zůstává zdarma na webu a rozhodně je v plánu jeho rozšiřování a vylepšování. Klub je způsob, jak tuto dobročinnost financovat a posunout ji na interaktivnější úroveň. [Honza Javorek](#honza), autor všech textů na junior.guru, v klubu diskutuje o nových kapitolách do příručky, sbírá tam tipy na témata, získává zpětnou vazbu. Díky klubu má každodenní kontakt s juniory a jejich radostmi i strastmi. Díky těmto synergiím může být veřejná část junior.guru lepší, než kdy mohla být bez klubu.
+Všechen obsah junior.guru zůstává zdarma na webu a rozhodně je v plánu jeho rozšiřování a vylepšování. Klub je způsob, jak tuto dobročinnost financovat a posunout ji na interaktivnější úroveň. [Honza Javorek](#honza), autor všech textů na junior.guru, v klubu diskutuje o nových kapitolách do příručky, sbírá tam tipy na témata, získává zpětnou vazbu. Má tedy každodenní kontakt s juniory a jejich radostmi i strastmi. Díky těmto synergiím může být veřejná část junior.guru lepší, než kdy mohla být bez klubu.
 {% endcall %}
 </section>
 
