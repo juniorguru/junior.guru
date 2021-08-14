@@ -137,7 +137,7 @@ Potkáš u nás stejné začátečníky, jako jsi ty. Každý s jiným životní
 </section>
 
 
-<div class="section-background gray-white"><section>
+<div class="section-background blue-light"><section>
 <h2>Ptej se bez obav</h2>
 {% call lead() %}
 Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloupé otázky neexistují,** nemáme potřebu někoho stírat. **Uslintané vtipy nikoho nezajímají,** mezi členy jsou ženy, muži, staří, mladí.
