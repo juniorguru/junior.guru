@@ -97,11 +97,6 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
     </li>
   </ul>
 </div></div>
-
-{#
-  TODO poslední 2-3 akce v klubu
-#}
-
 <div class="blockquotes-2">
 {{ blockquote_avatar('Jemně popostrkující a nějakou činnost vyvolávající a podněcující síla, kterou jsem potřebovala. Nacpat se sem byl moc dobrej napád.', 'radka.png', 'Radka', 'Radka') }}
 
@@ -254,12 +249,23 @@ Pokud se vzděláváš u {% for company in companies_students -%}
 
 <section>
 <h2>Otázky?</h2>
-
 {% call lead() %}
-Vrtá ti hlavou, jak přesně klub funguje? Prolétni si otázky a odpovědi. Pokud tam něco nebude, neváhej a piš na {{ 'ahoj@junior.guru'|email_link }}.
+Vrtá ti hlavou, jak přesně klub funguje? Prolétni si **otázky a odpovědi**. Pokud tam něco nenajdeš, neváhej a piš!
 {% endcall %}
-
-<div class="text-center">
-  <a class="btn btn-outline-primary btn-lg" href="{{ pages|docs_url('faq.md')|url }}">Otázky a odpovědi</a>
-</div>
+<div class="standout"><div class="icons">
+  <ul class="icons-list">
+    <li class="icons-item">
+      <a href="{{ pages|docs_url('faq.md')|url }}">
+        {{ 'question-circle'|icon }}
+        Otázky a odpovědi
+      </a>
+    </li>
+    <li class="icons-item">
+      <a href="mailto:ahoj&#64;junior.guru">
+        {{ 'envelope'|icon }}
+        ahoj&#64;<!---->junior.guru
+      </a>
+    </li>
+  </ul>
+</div></div>
 </section>
