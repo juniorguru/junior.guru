@@ -244,6 +244,10 @@ Pokud se vzděláváš u {% for company in companies_students -%}
     <strong class="pricing-button disabled">Připravuje se</strong>
   </div>
 </div>
+
+{% call markdown() %}
+[Obchodní podmínky](tos.md) jsou napsané lidsky, klidně si je projdi. Je to smlouva, kterou mezi sebou budeme mít. Odkazuje se na [pravidla chování](coc.md), tak na ně taky mrkni, ať znáš mantinely a víš kam pro pomoc. [Zásady ochrany osobních údajů](privacy.md) popisují, jaká data o tobě Honza má a jak s nimi zachází.
+{% endcall %}
 </section></div>
 
 
