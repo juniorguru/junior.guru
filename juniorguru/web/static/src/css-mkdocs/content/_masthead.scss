@@ -106,6 +106,7 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
   width: 100%;
   max-width: 25rem;
   height: auto;
+  margin-top: map-get($spacers, 5);
   margin-bottom: $masthead-eggshell-height;
   margin-left: auto;
 
