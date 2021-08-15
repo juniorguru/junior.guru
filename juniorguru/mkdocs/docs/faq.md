@@ -9,7 +9,7 @@ main_class: main-simple main-h2-icons
 # Otázky a odpovědi
 
 {% call lead() %}
-Vrtá ti hlavou, jak na junior.guru něco funguje? Prolétni si tuhle stránku, třeba tady najdeš odpovědi. Pokud ne, neváhej a piš na {{ 'ahoj@junior.guru'|email_link }}.
+Vrtá ti hlavou, jak přesně něco na junior.guru funguje? Prolétni si tuhle stránku, třeba tady najdeš odpovědi. Pokud ne, neváhej a piš na {{ 'ahoj@junior.guru'|email_link }}.
 {% endcall %}
 
 ## {{ 'person-plus'|icon }} Členství v klubu

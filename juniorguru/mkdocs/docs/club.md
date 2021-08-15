@@ -254,22 +254,11 @@ Pokud se vzděláváš u {% for company in companies_students -%}
 <section>
 <h2>Otázky?</h2>
 {% call lead() %}
-Vrtá ti hlavou, jak přesně klub funguje? Prolétni si **otázky a odpovědi**. Pokud tam něco nenajdeš, neváhej a piš!
+Vrtá ti hlavou, jak přesně to celé funguje? Máš nějaké problémy s registrací nebo s Discordem? Zajímají tě veškeré detaily ohledně placení? Vypršela ti platnost karty? Prolétni si **otázky a odpovědi**.
 {% endcall %}
-<div class="standout"><div class="icons">
-  <ul class="icons-list">
-    <li class="icons-item">
-      <a href="{{ pages|docs_url('faq.md')|url }}">
-        {{ 'question-circle'|icon }}
-        Otázky a odpovědi
-      </a>
-    </li>
-    <li class="icons-item">
-      <a href="mailto:ahoj&#64;junior.guru">
-        {{ 'envelope'|icon }}
-        ahoj&#64;<!---->junior.guru
-      </a>
-    </li>
-  </ul>
-</div></div>
+<div class="standout text-center">
+  <a class="btn btn-lg btn-outline-primary" href="{{ pages|docs_url('faq.md')|url }}">
+    Chci odpovědi!
+  </a>
+</div>
 </section>
