@@ -39,38 +39,11 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 
 
 <section>
-<ul class="logos">
-  <li class="logos-item logos-caption">
-    <a href="https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/edit?usp=sharing" target="_blank" rel="noopener">Firemní partneři</a>:
-  </li>
-  {% for company in companies %}
-    {{ logo(company.name, company.filename, company.link) }}
-  {% endfor %}
-</ul>
-<ul class="logos grayscale standout">
-  <li class="logos-item logos-caption">
-    <a href="{{ pages|docs_url('faq.md')|url }}#komunity">Komunitní partneři</a>:
-  </li>
-  {{ logo('Česko.Digital', 'ceskodigital.svg', 'https://cesko.digital/') }}
-  {{ logo('DigiKoalice', 'digikoalice.svg', 'https://digikoalice.cz/') }}
-  {{ logo('Frontendisti', 'frontendisti.svg', 'https://frontendisti.cz/') }}
-  {{ logo('PyLadies', 'pyladies.svg', 'https://pyladies.cz/') }}
-  {{ logo('Pyvec', 'pyvec.svg', 'https://pyvec.org/') }}
-  {{ logo('CyberMagnolia', 'cybermagnolia.svg', 'https://cybermagnolia.com/') }}
-  {{ logo('ReactGirls', 'reactgirls.svg', 'https://reactgirls.com/') }}
-  {{ logo('yablko', 'yablko.svg', 'http://robweb.sk/') }}
-</ul>
-</section>
-
-
-<section>
 <h2>Získej parťáky, mentory, kamarády</h2>
 {% call lead() %}
 Začátečníci potřebují víc než [příručku](/learn/). Nejvíc je posune, **když v tom všem nejsou sami**. Když jim někdo může pomoci se zapeklitou situací, dát zpětnou vazbu, dodat motivaci.
 
-Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme [přednášky](/events/), ale nejsme škola, neděláme kurzy. Sdílíme si tipy a postřehy. Podporujeme se a radíme, když někomu něco nejde. Někteří díky klubu seženou práci. Dáváme si zpětnou vazbu. Společně se radujeme z úspěchů. Můžeš se aktivně zapojit, nebo vše jen potichu sledovat.
-
-Potkáš u nás stejné začátečníky, jako jsi ty. Každý s jiným životním příběhem, ale s velmi podobnými dotazy a problémy. O klub se stará **Honza Javorek, autor junior.guru**, okolo se však „poflakuje“ i řada dalších **profíků s chutí pomáhat**.
+Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme přednášky, ale nejsme škola, neděláme kurzy. Sdílíme si tipy a postřehy. Podporujeme se a radíme, když někomu něco nejde. Někteří díky klubu seženou práci. Dáváme si zpětnou vazbu. Společně se radujeme z úspěchů. Můžeš se aktivně zapojit, nebo vše jen potichu sledovat.
 {% endcall %}
 <div class="standout"><div class="icons">
   <ul class="icons-list">
@@ -138,6 +111,45 @@ Potkáš u nás stejné začátečníky, jako jsi ty. Každý s jiným životní
 
 
 <div class="section-background blue-light"><section>
+<h2>Užívej si přednášky pro začátečníky</h2>
+{% call lead() %}
+Jednou za čas máme na Discordu večerní akci. Je to **online a zhruba na hodinku**, takže můžeš zůstat v bačkorách a stihneš potom díl seriálu, uspat děti, nebo oboje. Můžeš pokládat dotazy, nebo si to jen pustit do uší při vaření večeře. **Záznamy minulých akcí** máš na YouTube. A to nejlepší nakonec: Téma i pojetí je vždy **vyloženě pro začátečníky**! Žádná záplava odborných termitů, které ti nikdo nevysvětlil.
+{% endcall %}
+</section></div>
+
+
+<section>
+<h2>Propoj se s lidmi z oboru</h2>
+{% call lead() %}
+O klub se stará **Honza Javorek, autor junior.guru**. Okolo se však „poflakuje“ i řada dalších **profíků s chutí pomáhat**. S **firmami**, které klub podporují, podnikáme různé aktivity, například mentoring nebo propojování juniorů s jejich recruitery. Partnerství s **programátorskými komunitami** ti zase rozšíří možnosti zapojit se i jinde, dovědět se o zajímavých akcích, případně na ně získat slevu. S lidmi ze všech těchto organizací se můžeš v klubu potkat a propojit.
+
+Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý s jiným životním příběhem, ale s velmi podobnými dotazy a problémy.
+{% endcall %}
+<ul class="logos standout">
+  <li class="logos-item logos-caption">
+    <a href="https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/edit?usp=sharing" target="_blank" rel="noopener">Firemní partneři</a>:
+  </li>
+  {% for company in companies %}
+    {{ logo(company.name, company.filename, company.link) }}
+  {% endfor %}
+</ul>
+<ul class="logos grayscale standout">
+  <li class="logos-item logos-caption">
+    <a href="{{ pages|docs_url('faq.md')|url }}#komunity">Komunitní partneři</a>:
+  </li>
+  {{ logo('Česko.Digital', 'ceskodigital.svg', 'https://cesko.digital/') }}
+  {{ logo('DigiKoalice', 'digikoalice.svg', 'https://digikoalice.cz/') }}
+  {{ logo('Frontendisti', 'frontendisti.svg', 'https://frontendisti.cz/') }}
+  {{ logo('PyLadies', 'pyladies.svg', 'https://pyladies.cz/') }}
+  {{ logo('Pyvec', 'pyvec.svg', 'https://pyvec.org/') }}
+  {{ logo('CyberMagnolia', 'cybermagnolia.svg', 'https://cybermagnolia.com/') }}
+  {{ logo('ReactGirls', 'reactgirls.svg', 'https://reactgirls.com/') }}
+  {{ logo('yablko', 'yablko.svg', 'http://robweb.sk/') }}
+</ul>
+</section>
+
+
+<div class="section-background blue-light"><section>
 <h2>Ptej se bez obav</h2>
 {% call lead() %}
 Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloupé otázky neexistují,** nemáme potřebu někoho stírat. **Uslintané vtipy nikoho nezajímají,** mezi členy jsou ženy, muži, staří, mladí.
@@ -172,7 +184,7 @@ Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloup
 
 
 <section>
-<h2>Nech si radit od těch, kteří ti rozumí</h2>
+<h2>Nech si radit od profíků</h2>
 {% call lead() %}
 Vycházíme z [postupu](/learn/), který je založen na reálných zkušenostech a **osvědčil se mnohým začátečníkům**. Snažíme se však radit objektivně a brát ohled i na tvou konkrétní situaci. Než abychom tě utopili v možnostech, **pomůžeme ti s rozhodováním**. Poskytneme ti sice různé pohledy, ale taky **jasný směr**. Profíci, kteří šli do klubu, to udělali ze zájmu o juniory a **s chutí pomáhat**, nejsou to náhodní kolemjdoucí.
 {% endcall %}
