@@ -49,7 +49,7 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 </ul>
 <ul class="logos grayscale standout">
   <li class="logos-item logos-caption">
-    <a href="#komunity">Komunitní partneři</a>:
+    <a href="{{ pages|docs_url('faq.md')|url }}#komunity">Komunitní partneři</a>:
   </li>
   {{ logo('Česko.Digital', 'ceskodigital.svg', 'https://cesko.digital/') }}
   {{ logo('DigiKoalice', 'digikoalice.svg', 'https://digikoalice.cz/') }}
