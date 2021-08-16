@@ -99,6 +99,10 @@
 
 {% macro event_circle(event) %}
   <li class="event-circles-item">
+    {% if event.is_public %}
+      <a href="{{ event.recording_url }}" target="_blank" rel="noopener" class="event-circles-link">
+    {% endif %}
+
     {% if event.avatar_path %}
       {{ img('static/images/' + event.avatar_path, event.bio_name, 100, 100) }}
     {% else %}
@@ -106,7 +110,13 @@
         {{ img('static/images/' + speaking.avatar_path, event.bio_name, 100, 100) }}
       {% endfor %}
     {% endif %}
+
     <h3>{{ event.bio_name }}</h3>
-    <p>{{ event.title }}</p>
+
+    {% if event.is_public %}</a>{% endif %}
+
+    <p>
+      {{ event.title }}
+    </p>
   </li>
 {% endmacro %}

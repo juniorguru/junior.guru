@@ -32,15 +32,22 @@ $event-circle-width-md: map-get($spacers, 5) * 1.5;
   margin-bottom: 0;
 }
 
-.event-circles-item img {
+.event-circles-item img,
+.event-circles-link::before {
+  display: block;
   width: $event-circle-width-sm;
-  height: auto;
-  margin-bottom: map-get($spacers, 2);
+  height: $event-circle-width-sm;
   border-radius: 100%;
 
   @include media-breakpoint-up(md) {
     width: $event-circle-width-md;
+    height: $event-circle-width-md;
   }
+}
+
+.event-circles-item img {
+  margin: 0 auto;
+  margin-bottom: map-get($spacers, 2);
 }
 
 .event-circles-item h3 {
@@ -53,4 +60,33 @@ $event-circle-width-md: map-get($spacers, 5) * 1.5;
 
 .event-circles-item p {
   margin: 0;
+}
+
+.event-circles-link {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  text-decoration: none;
+}
+
+.event-circles-link::before {
+  position: absolute;
+  top: 0;
+  left: center;
+  content: "";
+  background-color: rgba($link-color, .8);
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' class='bi bi-play' viewBox='0 0 16 16'><path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: left 55% top 50%;
+  background-size: 50%;
+}
+
+.event-circles-link:hover::before {
+  background-color: rgba($link-hover-color, .8);
+}
+
+.event-circles-link h3 {
+  text-decoration: underline;
 }
