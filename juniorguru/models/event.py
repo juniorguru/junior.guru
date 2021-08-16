@@ -35,6 +35,10 @@ class Event(BaseModel):
     def url(self):
         return f"https://junior.guru/events/#{self.slug}"
 
+    @property
+    def is_public(self):
+        return 'youtu' in (self.recording_url or '')
+
     @classmethod
     def next(cls, today=None):
         today = today or date.today()

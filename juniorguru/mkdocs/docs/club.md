@@ -6,7 +6,7 @@ description: Přidej se na junior.guru Discord! Jsme tvoje online programovací 
 ---
 
 {% from 'shared.html' import img %}
-{% from 'docs.html' import markdown, blockquote_avatar, blockquote_toxic, logo, lead %}
+{% from 'docs.html' import markdown, blockquote_avatar, blockquote_toxic, logo, lead, event_circle %}
 
 
 <header class="masthead"><div class="masthead-container">
@@ -110,6 +110,15 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
 {% call lead() %}
 Jednou za čas máme na Discordu večerní akci. Je to **online a zhruba na hodinku**, takže můžeš zůstat v bačkorách a stihneš potom díl seriálu, uspat děti, nebo oboje. Můžeš pokládat dotazy, nebo si to jen pustit do uší při vaření večeře. **Záznamy minulých akcí** máš na YouTube. A to nejlepší nakonec: Téma i pojetí je vždy **vyloženě pro začátečníky**! Žádná záplava odborných termitů, které ti nikdo nevysvětlil.
 {% endcall %}
+
+<ul class="event-circles standout-top">
+{% for event in events|selectattr('recording_url')|selectattr('is_public', 'true')|sample(1) %}
+  {{ event_circle(event) }}
+{% endfor %}
+{% for event in events|selectattr('recording_url')|selectattr('is_public', 'false')|sample(5) %}
+  {{ event_circle(event) }}
+{% endfor %}
+</ul>
 </section></div>
 
 

@@ -13,22 +13,6 @@
 {% endmacro %}
 
 
-{% macro see_also(page) %}
-  <div class="see-also standout-top">
-    <h2>Související</h2>
-    <ul>
-      {% for nav_item in page.parent.children %}
-        {% if nav_item != page %}
-          <li><a href="{{ nav_item.url|url }}"{% if nav_item.is_link %} target="_blank" rel="noopener"{% endif %}>
-            {{- nav_item.title -}}
-          </a></li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </div>
-{% endmacro %}
-
-
 {% macro blockquote(quote, caption) %}
   <div class="blockquote-container">
     <figure class="blockquote-content">
@@ -93,5 +77,36 @@
     {% if url %}
     </a>
     {% endif %}
+  </li>
+{% endmacro %}
+
+
+{% macro see_also(page) %}
+  <div class="see-also standout-top">
+    <h2>Související</h2>
+    <ul>
+      {% for nav_item in page.parent.children %}
+        {% if nav_item != page %}
+          <li><a href="{{ nav_item.url|url }}"{% if nav_item.is_link %} target="_blank" rel="noopener"{% endif %}>
+            {{- nav_item.title -}}
+          </a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}
+
+
+{% macro event_circle(event) %}
+  <li class="event-circles-item">
+    {% if event.avatar_path %}
+      {{ img('static/images/' + event.avatar_path, event.bio_name, 100, 100) }}
+    {% else %}
+      {% for speaking in event.list_speaking %}
+        {{ img('static/images/' + speaking.avatar_path, event.bio_name, 100, 100) }}
+      {% endfor %}
+    {% endif %}
+    <h3>{{ event.bio_name }}</h3>
+    <p>{{ event.title }}</p>
   </li>
 {% endmacro %}
