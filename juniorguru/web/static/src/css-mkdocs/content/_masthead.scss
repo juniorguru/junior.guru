@@ -7,12 +7,7 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
   margin-bottom: $spacer;
   overflow: hidden;
   background: $jg-yellow;
-  background-image: linear-gradient(310deg, $jg-yellow-gradient 0%, $jg-yellow 50%);
   border-top: 1px solid $jg-yellow-dark;
-
-  @include media-breakpoint-up(md) {
-    background-image: linear-gradient(20deg, $jg-yellow-gradient 0%, $jg-yellow 50%);
-  }
 }
 
 .masthead::after {
