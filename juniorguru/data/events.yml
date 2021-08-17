@@ -103,6 +103,7 @@
   logo_path: logos/grafana.svg
   speakers:
     - 561313047390715904
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/877260218650751056
 
 
 - title: Jak jsou datové struktury uloženy v paměti
