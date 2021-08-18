@@ -28,7 +28,7 @@ def main():
         })
         response.raise_for_status()
         html_tree = html.fromstring(response.text)
-        rows = iter(html_tree.cssselect('#proxylisttable tr'))
+        rows = iter(html_tree.cssselect('.table-striped tr'))
         headers = [col.text_content() for col in next(rows)]
         for row in rows:
             values = [(col.text_content() or '').strip() for col in row]
