@@ -37,12 +37,12 @@ async def main(client):
         content = ":teacher: Nezapomeň, že kromě tohoto kanálu máš také možnost si rezervovat čas u mentorů z firem."
         embed_description = (
             'Kamarádi z **[Mews](https://www.mews.com/en/careers)** ti nabízí tyto konzultace: '
-            '<@289482229975875584> na frontend, '
-            '<@672433063690633216> na HR a komunity, '
-            '<@689498517995126847> na datovou analýzu, '
-            '<@854681167018459146> na cokoliv kolem IT, '
-            '<@868083628419199026> na backend, '
-            '<@869504117154934824> na QA a testování.\n'
+            '<@!289482229975875584> na frontend, '
+            '<@!672433063690633216> na HR a komunity, '
+            '<@!689498517995126847> na datovou analýzu, '
+            '<@!854681167018459146> na cokoliv kolem IT, '
+            '<@!868083628419199026> na backend, '
+            '<@!869504117154934824> na QA a testování.\n'
             '➡️ [Rezervuj v kalendáři](https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/)'
         )
         await channel.send(content=content, embed=Embed(description=embed_description))
