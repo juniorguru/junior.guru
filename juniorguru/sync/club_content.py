@@ -20,6 +20,9 @@ async def main(client):
     for channel in relevant_channels:
         log.info(f'Channel #{channel.name}')
         async for message in channel.history(limit=None, after=None):
+            if not hasattr(message.type, 'name'):
+                log.warning('Found thread! Skipping')
+                continue
             if message.author.id not in authors:
                 # The message.author can be an instance of Member, but it can also be an instance of User,
                 # if the author isn't a member of the Discord guild/server anymore. User instances don't
