@@ -11,7 +11,7 @@ from juniorguru.models import ClubMessage, db
 log = get_log('mentoring')
 
 
-MENTORING_CHANNEL = 797107515186741248
+MENTORING_CHANNEL = 878937534464417822
 
 
 @measure('mentoring')
