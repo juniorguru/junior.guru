@@ -23,6 +23,7 @@ from juniorguru.sync.digest import main as sync_digest
 from juniorguru.sync.pins import main as sync_pins
 from juniorguru.sync.subscriptions import main as sync_subscriptions
 from juniorguru.sync.companies import main as sync_companies
+from juniorguru.sync.mentoring import main as sync_mentoring
 from juniorguru.lib.magic import do_magic
 
 
@@ -44,6 +45,7 @@ def main():
     sync_club_content()
 
     # order-sensitive
+    sync_mentoring()  # depends on club_content
     sync_pins()  # depends on club_content
     sync_avatars()  # depends on club_content
     sync_events()  # depends on club_content
