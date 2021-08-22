@@ -53,16 +53,24 @@
 #    prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
-# - title: "AMA: Frontendoví lektoři"
-#   date: "2021-09-14"
+# - title: "AMA: Mentoři na frontend"
+#   date: "2021-09-29"
 #   description: |
-#     TBD
+#     AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Dan a Kate mentorují frontend v CoreSkillu. HTML, CSS, JavaScript, fonty, rychlost načítání, obrázky a nakonec i velké filozofické otázky, jako například _mobile first_, nebo _se středníky nebo bez nich_?! Na vlastní nebezpečí se můžete zeptat i na jQuery.
 #   bio_name: Daniel Srb, Kate Miháliková
-#   bio_title: Lektoři CoreSkill
+#   bio_title: vývojáři a mentoři, CoreSkill
 #   bio: |
-#     TBD
+#     Dan Srb je vývojář se zaměřením na HTML, CSS a návrh uživatelských rozhraní. Jezdí na skládačce a má rád kafe. Kate Miháliková je vývojářka se zaměřením na JavaScript. Hraje si ráda s Arduinem a na první dobrou rozezná jména pokémonů od buzzwordů a názvů technologií.
 #   bio_links:
-#     - TBD
+#     - https://coreskill.tech/
+#     - https://github.com/katemihalikova
+#     - https://katemihalikova.cz/
+#     - https://twitter.com/KateMihalikova
+#     - https://www.linkedin.com/profile/view?id=327737590
+#     - https://github.com/benabraham
+#     - https://twitter.com/benabraham
+#     - https://www.linkedin.com/in/danielsrb/
+#     - https://www.instagram.com/srbdan/
 #   logo_path: logos/coreskill.svg
 #   speakers:
 #     - 652142810291765248
@@ -165,7 +173,7 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/844488172364890123
 
 
-- title: "AMA: Jiří Psotka"
+- title: "AMA: Recruiter se zaměřením na juniory"
   date: "2021-05-05"
   description: |
     AMA znamená _ask me anything_. Příklady otázek, které jsme řešili:
