@@ -10,8 +10,8 @@ THUMBNAIL_WIDTH = 1200
 THUMBNAIL_HEIGHT = 630
 
 
-def thumbnail(title, description):
-    context = dict(title=title, description=description)
+def thumbnail(title, badge=None):
+    context = dict(title=title, badge=badge)
     image_path = render_image_file(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT,
                                    'thumbnail.html', context, THUMBNAILS_DIR)
     return f'images/thumbnails/{image_path.name}'

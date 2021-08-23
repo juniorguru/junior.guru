@@ -1,6 +1,6 @@
 ---
-title: Otázky a odpovědi ohledně junior.guru
-description: Vrtá ti hlavou, jak přesně něco na junior.guru funguje? Prolétni si tuto stránku, třeba tady najdeš odpovědi.
+title: Otázky a odpovědi ohledně junior.guru
+thumbnail_title: Otázky a odpovědi
 main_class: main-simple main-h2-icons
 ---
 

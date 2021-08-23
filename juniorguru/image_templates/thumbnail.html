@@ -6,8 +6,10 @@
   </head>
   <body class="thumbnail">
     <main>
-      <h1>{{ title }}</h1>
-      <p>{{ description }}</p>
+      <h1>
+        {{ title }}
+        {% if badge %}<strong>{{ badge }}</strong>{% endif %}
+      </h1>
     </main>
     <aside>
       <img src="{{ images_dir }}/chick2.svg">

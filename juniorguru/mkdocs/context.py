@@ -22,7 +22,7 @@ def on_docs_context(context, page, config, files):
     context['pages'] = files
 
     context['thumbnail'] = thumbnail(page.meta.get('thumbnail_title', page.meta['title']),
-                                     page.meta['description'])
+                                     badge=page.meta.get('thumbnail_badge'))
 
     context['club_elapsed_months'] = int(round((context['now'] - CLUB_LAUNCH_AT).days / 30))
     context['members'] = ClubUser.avatars_listing()

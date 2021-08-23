@@ -36,23 +36,37 @@ body {
 }
 
 .thumbnail main {
+  display: flex;
   flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
   width: 70%;
   padding: 5%;
+  padding-bottom: 8%;
+  border-left: 2rem solid var(--color-blue);
 }
 
 .thumbnail main h1 {
-  padding-bottom: 1.2rem;
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
   margin: 0;
-  margin-bottom: 4rem;
-  font-size: 4rem;
-  font-weight: 400;
-  border-bottom: .5rem solid var(--color-blue);
+  font-size: 5rem;
+  font-weight: 500;
 }
 
-.thumbnail main p {
-  font-size: 2rem;
+.thumbnail main strong {
+  position: absolute;
+  right: 0;
+  bottom: 90%;
+  display: block;
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  font-weight: 500;
   line-height: 1.5;
+  color: var(--color-white);
+  background: var(--color-blue);
+  border-radius: 50rem;
 }
 
 .thumbnail aside {
@@ -80,11 +94,16 @@ body {
 
 /* Legacy Thumbnails */
 
+.thumbnail-legacy,
+.thumbnail-legacy-job,
+.thumbnail-legacy-title {
+  background: var(--color-yellow);
+}
+
 .thumbnail-legacy {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-yellow);
 }
 
 .thumbnail-legacy img {

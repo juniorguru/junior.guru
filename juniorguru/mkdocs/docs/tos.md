@@ -1,6 +1,6 @@
 ---
 title: Obchodní podmínky junior.guru
-description: Obchodní podmínky pokrývají digitální předplatné a podmínky přístupu do klubu junior.guru. Je to smlouva, kterou spolu uzavíráme, tak si je pořádně pročti.
+thumbnail_title: Obchodní podmínky
 ---
 
 {% from 'docs.html' import lead, see_also %}

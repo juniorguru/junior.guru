@@ -1,6 +1,6 @@
 ---
-title: Zásady ochrany osobních údajů na junior.guru
-description: Všechno ohledně zpracovávání osobních údajů. O jaké osobní údaje se jedná, proč je zpracovávám, jakým způsobem, komu je předávám, a tak dále.
+title: Zásady ochrany osobních údajů na junior.guru
+thumbnail_title: Zásady ochrany osobních údajů
 ---
 
 {% from 'docs.html' import lead, see_also %}
