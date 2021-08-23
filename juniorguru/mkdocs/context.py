@@ -1,6 +1,6 @@
 import re
+import hashlib
 from pathlib import Path
-from operator import itemgetter
 
 import arrow
 
@@ -52,7 +52,16 @@ def on_theme_context(context, page, config, files):
     context['page'].meta.setdefault('main_class', 'main-simple')
     context['page'].meta.setdefault('thumbnail', thumbnail_logo())
 
+    js_path = Path(__file__).parent.parent / 'web' / 'static' / 'bundle.js'
     css_path = Path(__file__).parent.parent / 'web' / 'static' / 'bundle-mkdocs.css'
+    context['js_hash'] = hash_file(js_path)
+    context['css_hash'] = hash_file(css_path)
     context['bootstrap_icons_file'] = re.search(r'bootstrap-icons.woff2\?\w+', css_path.read_text()).group(0)
 
     context['metrics'] = Metric.as_dict()
+
+
+def hash_file(path):
+    hash = hashlib.sha512()
+    hash.update(path.read_bytes())
+    return hash.hexdigest()

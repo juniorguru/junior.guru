@@ -22,7 +22,7 @@
       {% block stylesheet %}<link rel="stylesheet" href="{{ 'static/bundle.css'|url }}">{% endblock %}
       <link rel="preload" href="https://www.googletagmanager.com/gtm.js?id=UA-1316071-22" as="script">
       <link rel="preload" href="{{ ('static/fonts/' + bootstrap_icons_file)|url }}" as="font" type="font/woff2" crossorigin="anonymous">
-      <script defer src="{{ 'static/bundle.js'|url }}"></script>
+      <script defer src="{{ 'static/bundle.js'|url }}?{{ js_hash }}"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1316071-22"></script>
 
       <meta property="og:title" content="{{ page.meta.title }}">
