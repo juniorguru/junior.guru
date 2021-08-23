@@ -17,19 +17,6 @@ body {
   color: var(--color-dark);
 }
 
-.thumbnail-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-yellow);
-}
-
-.thumbnail-logo img {
-  display: block;
-  width: 50%;
-  margin-bottom: 3%;
-}
-
 .thumbnail {
   display: flex;
   background: var(--color-white);

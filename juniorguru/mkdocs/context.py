@@ -5,7 +5,7 @@ from pathlib import Path
 import arrow
 
 from juniorguru.models import with_db, Metric, Topic, ClubUser, Company, Event, ClubMessage
-from juniorguru.mkdocs.thumbnail import thumbnail, thumbnail_logo
+from juniorguru.mkdocs.thumbnail import thumbnail
 
 
 CLUB_LAUNCH_AT = arrow.get(2021, 2, 1)
@@ -20,9 +20,6 @@ def on_docs_context(context, page, config, files):
     context['page'] = page
     context['config'] = config
     context['pages'] = files
-
-    context['thumbnail'] = thumbnail(page.meta.get('thumbnail_title', page.meta['title']),
-                                     badge=page.meta.get('thumbnail_badge'))
 
     context['club_elapsed_months'] = int(round((context['now'] - CLUB_LAUNCH_AT).days / 30))
     context['members'] = ClubUser.avatars_listing()
@@ -41,7 +38,8 @@ def on_docs_context(context, page, config, files):
 def on_theme_context(context, page, config, files):
     context['page'].meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
     context['page'].meta.setdefault('main_class', 'main-simple')
-    context['page'].meta.setdefault('thumbnail', thumbnail_logo())  # TODO is this actually needed?
+    context['thumbnail'] = thumbnail(context['page'].meta.get('thumbnail_title', context['page'].meta['title']),
+                                     badge=context['page'].meta.get('thumbnail_badge'))
 
     js_path = Path(__file__).parent.parent / 'web' / 'static' / 'bundle.js'
     css_path = Path(__file__).parent.parent / 'web' / 'static' / 'bundle-mkdocs.css'

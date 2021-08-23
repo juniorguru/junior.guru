@@ -15,9 +15,3 @@ def thumbnail(title, badge=None):
     image_path = render_image_file(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT,
                                    'thumbnail.html', context, THUMBNAILS_DIR)
     return f'images/thumbnails/{image_path.name}'
-
-
-def thumbnail_logo():
-    image_path = render_image_file(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT,
-                                   'thumbnail_logo.html', {}, THUMBNAILS_DIR)
-    return f'images/thumbnails/{image_path.name}'
