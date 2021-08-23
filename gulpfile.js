@@ -148,12 +148,24 @@ function overwriteWithMkDocs() {
 }
 
 
+function copyThumbnailsForMkDocs() {
+  return gulp.src('juniorguru/web/static/images/thumbnails/**/*')
+    .pipe(changed('juniorguru/web/static/images/thumbnails/'))
+    .pipe(gulp.dest('juniorguru/web/static/images/thumbnails/'))
+}
+
+
 function cleanMkDocsFiles() {
   return del(['public/mkdocs/']);
 }
 
 
-const buildMkDocs = gulp.series(buildMkDocsFiles, overwriteWithMkDocs, cleanMkDocsFiles);
+const buildMkDocs = gulp.series(
+  buildMkDocsFiles,
+  copyThumbnailsForMkDocs,
+  overwriteWithMkDocs,
+  cleanMkDocsFiles,
+)
 
 
 function copyFavicon() {
