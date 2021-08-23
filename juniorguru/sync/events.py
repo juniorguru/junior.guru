@@ -74,7 +74,7 @@ def main():
 
             for speaker_id in speakers_ids:
                 try:
-                    avatar_path = next((IMAGES_DIR / 'speakers').glob(f"{speaker_id}.*"))
+                    avatar_path = next((IMAGES_DIR / 'avatars_speakers').glob(f"{speaker_id}.*"))
                 except StopIteration:
                     log.info(f"Didn't find speaker avatar for {speaker_id}")
                     avatar_path = None
