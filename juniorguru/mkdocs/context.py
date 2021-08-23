@@ -38,14 +38,6 @@ def on_docs_context(context, page, config, files):
         context['topic'] = Topic.get_by_id(topic_name)
 
 
-METRICS_INC_NAMES = {  # TODO use filter
-    'inc_donations_pct': 'dobrovolné příspěvky',
-    'inc_jobs_pct': 'inzerce nabídek práce',
-    'inc_memberships_pct': 'individuální členství',
-    'inc_partnerships_pct': 'firemní členství',
-}
-
-
 @with_db
 def on_theme_context(context, page, config, files):
     context['page'].meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
