@@ -150,8 +150,8 @@ function overwriteWithMkDocs() {
 
 function copyThumbnailsForMkDocs() {
   return gulp.src('juniorguru/web/static/images/thumbnails/**/*')
-    .pipe(changed('juniorguru/web/static/images/thumbnails/'))
-    .pipe(gulp.dest('juniorguru/web/static/images/thumbnails/'))
+    .pipe(changed('public/static/images/thumbnails/'))
+    .pipe(gulp.dest('public/static/images/thumbnails/'))
 }
 
 
