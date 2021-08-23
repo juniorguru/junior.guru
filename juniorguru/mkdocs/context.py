@@ -5,7 +5,7 @@ from operator import itemgetter
 import arrow
 
 from juniorguru.models import with_db, Metric, Topic, ClubUser, Company, Event, ClubMessage
-from juniorguru.web import thumbnail
+from juniorguru.mkdocs.thumbnail import thumbnail, thumbnail_logo
 
 
 CLUB_LAUNCH_AT = arrow.get(2021, 2, 1)
@@ -48,9 +48,9 @@ METRICS_INC_NAMES = {
 
 @with_db
 def on_theme_context(context, page, config, files):
-    context['page'].meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
+    context['page'].meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
     context['page'].meta.setdefault('main_class', 'main-simple')
-    context['page'].meta.setdefault('thumbnail', thumbnail())
+    context['page'].meta.setdefault('thumbnail', thumbnail_logo())
 
     metrics = Metric.as_dict()
     context['metrics'] = metrics

@@ -4,7 +4,16 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ templates_dir }}/thumbnail.css">
   </head>
-  {% if title %}
+  {% if job_title and job_company and job_location %}
+    <body class="thumbnail-job">
+      <h1>Nabídka práce pro začínající programátory</h1>
+      <h2>
+        <strong class="job-company">{{ job_company }}</strong>
+        <small class="job-location">{{ job_location }}</small>
+      </h2>
+      <p class="job-title">{{ job_title }}</p>
+    </body>
+  {% elif title %}
     <body class="thumbnail-title">
       <img src="{{ images_dir }}/logo-legacy.svg">
       <h1>

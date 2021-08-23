@@ -18,7 +18,7 @@ def render_image_file(width, height, template_name, context, output_dir, filters
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok=True, parents=True)
 
-    cache_key = (width, height, context)
+    cache_key = (width, height, template_name, context)
     hash = sha256(pickle.dumps(cache_key)).hexdigest()
 
     image_name = f'{hash}-{suffix}.png' if suffix else f'{hash}.png'

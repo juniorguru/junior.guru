@@ -85,7 +85,7 @@ def redirect(url):
 
 def thumbnail(**context):
     image_path = render_image_file(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT,
-                                   'thumbnail.html', context, THUMBNAILS_DIR)
+                                   'thumbnail_legacy.html', context, THUMBNAILS_DIR)
     return f'images/thumbnails/{image_path.name}'
 
 
