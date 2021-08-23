@@ -1,5 +1,5 @@
 ---
-title: Zkušenosti se Software Development Academy
+title: Zkušenosti se Software Development Academy
 template: main_legacy.html
 topic_name: sdacademy
 topic_link_text: SDAcademy

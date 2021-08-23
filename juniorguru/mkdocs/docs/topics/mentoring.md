@@ -1,9 +1,9 @@
 ---
-title: Komunitní mentoring na programování
+title: Komunitní mentoring na programování
 template: main_legacy.html
 topic_name: mentoring
 topic_link_text: mentoring
-description: Hledáš někoho, kdo má zkušenosti s programováním a dokáže ti poradit, když se na něčem při učení zasekneš? Někoho, kdo tématu rozumí a umí tě navést na správné postupy?
+description: Hledáš někoho, kdo má zkušenosti s programováním a dokáže ti poradit, když se na něčem při učení zasekneš? Někoho, kdo tématu rozumí a umí tě navést na správné postupy?
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 

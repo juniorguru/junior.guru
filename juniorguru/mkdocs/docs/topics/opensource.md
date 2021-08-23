@@ -1,5 +1,5 @@
 ---
-title: Open source mentoring
+title: Open source mentoring
 template: main_legacy.html
 topic_name: opensource
 topic_link_text: open source

@@ -1,5 +1,5 @@
 ---
-title: Diskutuj o Advent of Code
+title: Diskutuj o Advent of Code
 template: main_legacy.html
 topic_name: adventofcode
 topic_link_text: Advent of Code

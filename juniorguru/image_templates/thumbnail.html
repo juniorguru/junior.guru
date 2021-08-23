@@ -4,18 +4,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ templates_dir }}/thumbnail.css">
   </head>
-  {% if title %}
-    <body class="thumbnail-title">
-      <img src="{{ images_dir }}/logo-legacy.svg">
-      <h1>
-        {% if above_title %}<small>{{ above_title }}<small>{% endif %}
-        <strong>{{ title }}</strong>
-        {% if below_title %}<small>{{ below_title }}<small>{% endif %}
-      </h1>
-    </body>
-  {% else %}
-    <body class="thumbnail">
-      <img src="{{ images_dir }}/logo-legacy.svg">
-    </body>
-  {% endif %}
+  <body class="thumbnail">
+    <main>
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
+    </main>
+    <aside>
+      <img src="{{ images_dir }}/chick2.svg">
+      <img src="{{ images_dir }}/logo.svg">
+    </aside>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-title: "Diskutuj o #100daysofcode"
+title: "Diskutuj o #100daysofcode"
 template: main_legacy.html
 topic_name: 100daysofcode
 topic_link_text: "#100daysofcode"

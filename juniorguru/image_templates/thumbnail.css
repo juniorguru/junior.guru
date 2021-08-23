@@ -1,8 +1,11 @@
 @import "./variables.css";
 
 
-html {
+* {
   box-sizing: border-box;
+}
+
+html {
   font-family: var(--font-family);
 }
 
@@ -12,28 +15,91 @@ body {
   padding: 0;
   margin: 0;
   color: var(--color-dark);
+}
+
+.thumbnail-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--color-yellow);
+}
+
+.thumbnail-logo img {
+  display: block;
+  width: 50%;
+  margin-bottom: 3%;
 }
 
 .thumbnail {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  background: var(--color-white);
 }
 
-.thumbnail img {
+.thumbnail main {
+  flex-shrink: 0;
+  width: 70%;
+  padding: 5%;
+}
+
+.thumbnail main h1 {
+  padding-bottom: 1.2rem;
+  margin: 0;
+  margin-bottom: 4rem;
+  font-size: 4rem;
+  font-weight: 400;
+  border-bottom: .5rem solid var(--color-blue);
+}
+
+.thumbnail main p {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.thumbnail aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  padding: 5%;
+  background: var(--color-yellow);
+}
+
+.thumbnail aside img {
+  display: block;
+}
+
+.thumbnail aside img:nth-child(1) {
+  width: 70%;
+}
+
+.thumbnail aside img:nth-child(2) {
+  width: 100%;
+  margin-top: auto;
+}
+
+
+/* Legacy Thumbnails */
+
+.thumbnail-legacy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-yellow);
+}
+
+.thumbnail-legacy img {
   display: block;
   width: 60%;
   margin-bottom: 3%;
 }
 
-.thumbnail-title {
+.thumbnail-legacy-title {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.thumbnail-title img {
+.thumbnail-legacy-title img {
   display: block;
   flex: 1;
   width: 10%; /* minimal width */
@@ -43,31 +109,31 @@ body {
   border-right: 5px solid var(--color-dark);
 }
 
-.thumbnail-title h1 {
+.thumbnail-legacy-title h1 {
   flex: 1;
   padding: 5%;
   margin: 0;
   text-align: left;
 }
 
-.thumbnail-title small {
+.thumbnail-legacy-title small {
   display: block;
   font-size: 50px;
 }
 
-.thumbnail-title strong {
+.thumbnail-legacy-title strong {
   display: block;
   font-size: 80px;
   font-weight: 700;
 }
 
-.thumbnail-job {
+.thumbnail-legacy-job {
   padding: 0;
   margin: 0;
   text-align: center;
 }
 
-.thumbnail-job h1 {
+.thumbnail-legacy-job h1 {
   padding: 2% 3%;
   margin: 0;
   font-size: 40px;
@@ -76,24 +142,24 @@ body {
   background: var(--color-dark);
 }
 
-.thumbnail-job h2 {
+.thumbnail-legacy-job h2 {
   padding: 8% 3% 3%;
   margin: 0;
 }
 
-.thumbnail-job .job-company {
+.thumbnail-legacy-job .job-company {
   display: block;
   font-size: 80px;
   font-weight: 700;
   white-space: nowrap;
 }
 
-.thumbnail-job .job-location {
+.thumbnail-legacy-job .job-location {
   display: block;
   font-size: 50px;
 }
 
-.thumbnail-job .job-title {
+.thumbnail-legacy-job .job-title {
   padding: 0 5%;
   margin: 0;
   font-size: 50px;

@@ -1,9 +1,9 @@
 ---
-title: Zkušenosti s IT STEP
+title: Zkušenosti s IT STEP
 template: main_legacy.html
 topic_name: step
 topic_link_text: STEP
-description: Hledáš někoho, kdo má zkušenosti s počítačovou akademií STEP? Vyplatí se jejich kurzy?
+description: Hledáš někoho, kdo má zkušenosti s počítačovou akademií STEP? Vyplatí se jejich kurzy?
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 

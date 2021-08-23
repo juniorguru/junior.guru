@@ -1,9 +1,9 @@
 ---
-title: Zkušenosti s Udemy
+title: Zkušenosti s Udemy
 template: main_legacy.html
 topic_name: udemy
 topic_link_text: Udemy
-description: Hledáš někoho, kdo má zkušenosti s Udemy? Má smysl hlásit se na jejich kurzy? Vyplatí se certifikace?
+description: Hledáš někoho, kdo má zkušenosti s Udemy? Má smysl hlásit se na jejich kurzy? Vyplatí se certifikace?
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 

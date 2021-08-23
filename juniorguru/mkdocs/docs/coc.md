@@ -1,5 +1,6 @@
 ---
 title: Pravidla chování na junior.guru
+description: Na junior.guru máme pár společných pravidel, které bychom chtěli, aby lidé dodržovali. Tato pravidla platí rovnocenně pro všechny.
 ---
 
 {% from 'docs.html' import lead, see_also %}

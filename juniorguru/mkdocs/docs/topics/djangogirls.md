@@ -1,9 +1,9 @@
 ---
-title: Zkušenosti s Django Girls
+title: Zkušenosti s Django Girls
 template: main_legacy.html
 topic_name: djangogirls
 topic_link_text: Django Girls
-description: Hledáš někoho, kdo má zkušenosti s Django Girls? Má smysl účastnit se jejich workshopů? Učíš se podle jejich návodů a hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš?
+description: Hledáš někoho, kdo má zkušenosti s Django Girls? Má smysl účastnit se jejich workshopů? Učíš se podle jejich návodů a hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš?
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 

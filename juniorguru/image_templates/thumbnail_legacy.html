@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ templates_dir }}/thumbnail.css">
   </head>
   {% if job_title and job_company and job_location %}
-    <body class="thumbnail-job">
+    <body class="thumbnail-legacy-job">
       <h1>Nabídka práce pro začínající programátory</h1>
       <h2>
         <strong class="job-company">{{ job_company }}</strong>
@@ -14,7 +14,7 @@
       <p class="job-title">{{ job_title }}</p>
     </body>
   {% elif title %}
-    <body class="thumbnail-title">
+    <body class="thumbnail-legacy-title">
       <img src="{{ images_dir }}/logo-legacy.svg">
       <h1>
         {% if above_title %}<small>{{ above_title }}<small>{% endif %}
@@ -23,7 +23,7 @@
       </h1>
     </body>
   {% else %}
-    <body class="thumbnail">
+    <body class="thumbnail-legacy">
       <img src="{{ images_dir }}/logo-legacy.svg">
     </body>
   {% endif %}

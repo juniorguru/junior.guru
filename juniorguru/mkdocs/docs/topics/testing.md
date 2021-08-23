@@ -1,5 +1,5 @@
 ---
-title: Mentoring na automatizované testování
+title: Mentoring na automatizované testování
 template: main_legacy.html
 topic_name: testing
 topic_link_text: automatizované testování

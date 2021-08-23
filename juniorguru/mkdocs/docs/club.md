@@ -1,6 +1,6 @@
 ---
 title: Klub pro začátečníky v programování
-thumbnail_title: Klub pro začátečníky v programování
+thumbnail_title: Klub pro začátečníky v programování
 main_class: main-sections
 description: Přidej se na junior.guru Discord! Jsme tvoje online programovací parta, skupina, fórum. Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---

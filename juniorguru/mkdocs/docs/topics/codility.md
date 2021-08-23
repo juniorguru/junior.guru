@@ -1,5 +1,5 @@
 ---
-title: Komunitní mentoring na hledání práce v IT
+title: Komunitní mentoring na hledání práce v IT
 template: main_legacy.html
 topic_name: codility
 topic_link_text: Codility

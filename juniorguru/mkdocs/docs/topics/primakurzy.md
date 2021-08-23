@@ -1,9 +1,9 @@
 ---
-title: Zkušenosti s PrimaKurzy
+title: Zkušenosti s PrimaKurzy
 template: main_legacy.html
 topic_name: primakurzy
 topic_link_text: PrimaKurzy
-description: Hledáš někoho, kdo má zkušenosti s PrimaKurzy? Vyplatí se jít na jejich akreditované IT kurzy?
+description: Hledáš někoho, kdo má zkušenosti s PrimaKurzy? Vyplatí se jít na jejich akreditované IT kurzy?
 ---
 {% from 'topic.html' import intro, mentions, members_roll %}
 

@@ -1,5 +1,5 @@
 ---
-title: Mentoring na práci s daty
+title: Mentoring na práci s daty
 template: main_legacy.html
 topic_name: data
 topic_link_text: data
