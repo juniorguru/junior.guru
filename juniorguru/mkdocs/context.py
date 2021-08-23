@@ -38,7 +38,7 @@ def on_docs_context(context, page, config, files):
         context['topic'] = Topic.get_by_id(topic_name)
 
 
-METRICS_INC_NAMES = {
+METRICS_INC_NAMES = {  # TODO use filter
     'inc_donations_pct': 'dobrovolné příspěvky',
     'inc_jobs_pct': 'inzerce nabídek práce',
     'inc_memberships_pct': 'individuální členství',
@@ -52,13 +52,7 @@ def on_theme_context(context, page, config, files):
     context['page'].meta.setdefault('main_class', 'main-simple')
     context['page'].meta.setdefault('thumbnail', thumbnail_logo())
 
-    metrics = Metric.as_dict()
-    context['metrics'] = metrics
-    context['metrics_inc_breakdown'] = sorted((
-        (METRICS_INC_NAMES[name], value) for name, value
-        in metrics.items()
-        if name.startswith('inc_') and name.endswith('_pct')
-    ), key=itemgetter(1), reverse=True)
-
     css_path = Path(__file__).parent.parent / 'web' / 'static' / 'bundle-mkdocs.css'
     context['bootstrap_icons_file'] = re.search(r'bootstrap-icons.woff2\?\w+', css_path.read_text()).group(0)
+
+    context['metrics'] = Metric.as_dict()

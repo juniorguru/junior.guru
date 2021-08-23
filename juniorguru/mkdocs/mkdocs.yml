@@ -101,7 +101,8 @@ template_filters:
   docs:
       - sample
       - metric
-  theme: []
+  theme:
+      - metrics_inc_breakdown
 
 
 # Removed 'strict', because it gives warnings if linking non-existing targets. Once the Flask

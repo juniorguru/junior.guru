@@ -143,7 +143,7 @@
 
           <h4 class="footer-subheading">Zdroje příjmů</h4>
           <ul class="footer-finances-list">
-            {% for name, value_pct in metrics_inc_breakdown %}
+            {% for name, value_pct in metrics|metrics_inc_breakdown %}
               <li>
                 <strong class="footer-finances-value">{{ value_pct }} %</strong>
                 {{ name }}

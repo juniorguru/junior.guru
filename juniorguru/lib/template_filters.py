@@ -2,6 +2,7 @@ import re
 import math
 import random
 from datetime import date, datetime
+from operator import itemgetter
 
 import arrow
 from markupsafe import Markup
@@ -133,3 +134,19 @@ def docs_url(files, src_path):
             return file.url
     src_paths = ', '.join([f.src_path for f in files])
     raise ValueError(f"Could not find '{src_path}' in given MkDocs files: {src_paths}")
+
+
+METRICS_INC_NAMES = {
+    'inc_donations_pct': 'dobrovolné příspěvky',
+    'inc_jobs_pct': 'inzerce nabídek práce',
+    'inc_memberships_pct': 'individuální členství',
+    'inc_partnerships_pct': 'firemní členství',
+}
+
+
+def metrics_inc_breakdown(metrics):
+    return sorted((
+        (METRICS_INC_NAMES[name], value) for name, value
+        in metrics.items()
+        if name.startswith('inc_') and name.endswith('_pct')
+    ), key=itemgetter(1), reverse=True)

@@ -252,3 +252,47 @@ def test_docs_url():
         File('club.md', 'juniorguru/mkdocs/docs', 'public/mkdocs', True),
         File('topics/csharp.md', 'juniorguru/mkdocs/docs', 'public/mkdocs', True),
     ], 'club.md') == 'club/'
+
+
+def test_metrics_inc_breakdown():
+    assert template_filters.metrics_inc_breakdown({
+        'inc_donations_pct': 10,
+        'inc_jobs_pct': 20,
+        'inc_memberships_pct': 1,
+        'inc_partnerships_pct': 4,
+    }) == [
+        ('inzerce nabídek práce', 20),
+        ('dobrovolné příspěvky', 10),
+        ('firemní členství', 4),
+        ('individuální členství', 1),
+    ]
+
+
+def test_metrics_inc_breakdown_less():
+    assert template_filters.metrics_inc_breakdown({
+        'inc_partnerships_pct': 4,
+        'inc_jobs_pct': 20,
+    }) == [
+        ('inzerce nabídek práce', 20),
+        ('firemní členství', 4),
+    ]
+
+
+def test_metrics_inc_breakdown_more():
+    assert template_filters.metrics_inc_breakdown({
+        'inc_donations': 10,
+        'inc_jobs_pct': 20,
+        'memberships_pct': 1,
+        'inc_partnerships_pct': 4,
+    }) == [
+        ('inzerce nabídek práce', 20),
+        ('firemní členství', 4),
+    ]
+
+
+def test_metrics_inc_breakdown_unknown():
+    with pytest.raises(KeyError):
+        template_filters.metrics_inc_breakdown({
+            'inc_doesnt_exist_pct': 20,
+            'inc_partnerships_pct': 4,
+        })
