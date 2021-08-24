@@ -12,7 +12,7 @@ class Spider(BaseSpider):
     name = 'dobrysef'
     custom_settings = {
         'DEFAULT_REQUEST_HEADERS': {
-            'Authorization': f"Bearer {os.environ['DOBRYSEF_API_KEY']}",
+            'Authorization': f"Bearer {os.environ.get('DOBRYSEF_API_KEY', '')}",
             **DEFAULT_REQUEST_HEADERS,
         }
     }
