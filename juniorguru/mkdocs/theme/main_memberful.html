@@ -3,12 +3,12 @@
 
 {% block meta %}
   {{ super() }}
-  <!-- https://js.stripe.com/v3/ -->
-  <!-- https://assets.memberful.com/assets/member-2b54550bd62dacf2578ff1fd014406d85c8a63672343cbd5050f66cfba8f5886.js -->
-  <!-- https://assets.memberful.com/packs/js/locales/en-e94652f4339285ad9ee0.js -->
-  <!-- https://assets.memberful.com/packs/js/member-f1c4adf0b7d55370df05.js -->
-  <!-- https://js.stripe.com/v3/fingerprinted/js/m-outer-60c368c1e1eddba7bd149e4b4f5408df.js -->
-  <!-- https://m.stripe.com/6 -->
+  <link rel="dns-prefetch" href="https://assets.memberful.com/">
+  <link rel="dns-prefetch" href="https://js.stripe.com/">
+  <link rel="dns-prefetch" href="https://m.stripe.com/">
+  <link rel="preconnect" href="https://assets.memberful.com/">
+  <link rel="preconnect" href="https://js.stripe.com/">
+  <link rel="preconnect" href="https://m.stripe.com/">
   <link rel="preload" href="https://d35xxde4fgg0cx.cloudfront.net/assets/embedded.js" as="script">
   <script>
     window.MemberfulOptions = {site: 'https://juniorguru.memberful.com'};
