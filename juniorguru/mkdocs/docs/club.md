@@ -149,6 +149,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
   {{ logo('Česko.Digital', 'ceskodigital.svg', 'https://cesko.digital/') }}
   {{ logo('DigiKoalice', 'digikoalice.svg', 'https://digikoalice.cz/') }}
   {{ logo('Frontendisti', 'frontendisti.svg', 'https://frontendisti.cz/') }}
+  {{ logo('#HolkyzMarketingu', 'holkyzmarketingu.svg', 'https://holkyzmarketingu.cz/') }}
   {{ logo('PyLadies', 'pyladies.svg', 'https://pyladies.cz/') }}
   {{ logo('Pyvec', 'pyvec.svg', 'https://pyvec.org/') }}
   {{ logo('CyberMagnolia', 'cybermagnolia.svg', 'https://cybermagnolia.com/') }}
