@@ -28,13 +28,13 @@
       <meta property="og:title" content="{{ page.meta.title }}">
       <meta property="og:type" content="website">
       <meta property="og:url" content="{{ page.canonical_url }}">
-      <meta property="og:image" content="{{ ('static/' + thumbnail|string)|url }}">
+      <meta property="og:image" content="https://res.cloudinary.com/juniorguru/image/fetch/w_auto,dpr_auto,q_auto,f_auto/{{ thumbnail_url }}">
       <meta property="og:image:width" content="1200">
       <meta property="og:image:height" content="630">
       <meta property="og:locale" content="cs_CZ">
 
       <meta name="twitter:card" content="photo">
-      <meta name="twitter:image" content="{{ ('static/' + thumbnail|string)|url }}">
+      <meta name="twitter:image" content="https://res.cloudinary.com/juniorguru/image/fetch/w_auto,dpr_auto,q_auto,f_auto/{{ thumbnail_url }}">
       <meta name="twitter:creator" content="@honzajavorek">
 
       {% if page.meta.description %}<meta name="description" content="{{ page.meta.description }}">{% endif %}

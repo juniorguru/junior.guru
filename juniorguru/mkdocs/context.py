@@ -1,6 +1,7 @@
 import re
 import hashlib
 from pathlib import Path
+from urllib.parse import urljoin
 
 import arrow
 
@@ -38,8 +39,10 @@ def on_docs_context(context, page, config, files):
 def on_theme_context(context, page, config, files):
     context['page'].meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
     context['page'].meta.setdefault('main_class', 'main-simple')
-    context['thumbnail'] = thumbnail(context['page'].meta.get('thumbnail_title', context['page'].meta['title']),
-                                     badge=context['page'].meta.get('thumbnail_badge'))
+
+    thumbnail_path = thumbnail(context['page'].meta.get('thumbnail_title', context['page'].meta['title']),
+                               badge=context['page'].meta.get('thumbnail_badge'))
+    context['thumbnail_url'] = urljoin(config['site_url'], f'static/{thumbnail_path}')
 
     js_path = Path(__file__).parent.parent / 'web' / 'static' / 'bundle.js'
     css_path = Path(__file__).parent.parent / 'web' / 'static' / 'bundle-mkdocs.css'
