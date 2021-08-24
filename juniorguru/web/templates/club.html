@@ -3,7 +3,7 @@
 {% block meta %}
   {{ super() }}
   <script>
-    window.MemberfulOptions = {site: "https://juniorguru.memberful.com"};
+    window.MemberfulOptions = {site: 'https://juniorguru.memberful.com'};
 
     (function() {
       var s   = document.createElement('script');
@@ -14,7 +14,7 @@
 
       setup = function() { window.MemberfulEmbedded.setup(); }
 
-      s.addEventListener("load", setup, false);
+      s.addEventListener('load', setup, false);
 
       ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
     })();
