@@ -9,7 +9,7 @@ thumbnail_title: Otázky a odpovědi
 # Otázky a odpovědi
 
 {% call lead() %}
-Vrtá ti hlavou, jak přesně něco na junior.guru funguje? Prolétni si tuto stránku, třeba tady najdeš odpovědi. Pokud ne, neváhej a piš na {{ 'ahoj@junior.guru'|email_link }}.
+Vrtá ti hlavou, jak to tady přesně funguje? Prolétni si tuto stránku, třeba najdeš odpovědi. Pokud ne, neváhej a piš na {{ 'ahoj@junior.guru'|email_link }}.
 {% endcall %}
 
 ## {{ 'person-plus'|icon }} Členství v klubu

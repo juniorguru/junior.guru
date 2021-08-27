@@ -11,6 +11,13 @@ nav:
   - Práce: jobs/
   - Klub: club.md
 
+  - Tajná příručka:
+      - Rozcestník: handbook.md
+      - Motivace: motivation/
+      - Základy: learn/
+      - První praxe: practice/
+      - Hledání práce: candidate-handbook/
+
   - Témata:
       - topics/100daysofcode.md
       - topics/adventofcode.md

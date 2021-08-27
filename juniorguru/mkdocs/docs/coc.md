@@ -31,29 +31,31 @@ Pravidla platí pro všechny účastníky akcí a diskuzí pod hlavičkou Junior
 Inspirováno [Django Code of Conduct](https://www.djangoproject.com/conduct/). Děkujeme!
 
 
-## Jak nahlásit porušení?
+## {{ 'question-circle'|icon }} Otázky a odpovědi
+
+### Jak nahlásit porušení?
 
 Pokud jsi svědkem nevhodného chování, nebo dokonce jeho terčem, neprodleně kontaktuj realizační tým, organizátory nebo moderátory. Popiš co se stalo a pošli to na [chovani@junior.guru](mailto:chovani@junior.guru). Upozornění vždy zůstávají tajná a zodpovědné osoby se zavazují je řešit.
 
-## Proč potřebujeme pravidla chování?
+### Proč potřebujeme pravidla chování?
 
 Určitě by bylo lepší, kdybychom si mohli říct, že se k sobě budeme chovat hezky, a to by stačilo. Jenže praxe ukazuje, že ne každý se umí chovat hezky a že všichni máme zcela odlišnou představu o tom, kde “hezky” končí.
 
 Sepsaná pravidla chování, i když jsou vágní, pomáhají našemu klubu jasně prohlásit, že jsou v něm vítáni všichni bez rozdílů, a zároveň sjednocuje očekávání všech zúčastněných o tom, kde jsou hranice.
 
-## Není to přetvářka?
+### Není to přetvářka?
 
 Každý jsme jiný a ve svém soukromí nebo v úzkém kruhu známých se můžeme chovat jak chceme, ale v profesionálním kolektivu je žádoucí a produktivnější, když obrousíme hrany a vytvoříme prostor, v němž je příjemně opravdu každému.
 
 Je těžké najít dobré analogie, když i prezident ČR běžně mluví sprostě, ale řekněme, že když jdeš na pohovor nebo do divadla, taky se chováš jinak, než v soukromí. Pravidla chování ti neříkají co si máš oblékat, ale že pokud se chceš účastnit akcí a diskuzí, je vyžadováno oblečení.
 
-## Není to cenzura?
+### Není to cenzura?
 
 Na svých akcích a diskuzích si můžeš si říkat nebo psát, co chceš. Na našich akcích a diskuzích máme těchto pár pravidel, které musíš dodržovat. Nikdo ti nebrání účastnit se akcí a diskuzí na téma začátečníků v programování, kde jsou pravidla jiná. Pokud neexistují, můžeš si je zorganizovat.
 
 V MHD tě také mohou vyloučit z přepravy, a to i s platnou jízdenkou, pokud nedodržuješ jejich podmínky, poškozuješ nebo znečišťuješ vozidlo, ohrožuješ nebo obtěžuješ spolucestující.
 
-## Co se stane při porušení pravidel?
+### Co se stane při porušení pravidel?
 
 Zodpovědné osoby se zavazují zabývat se porušením pravidel, pokud si ho samy všimnou, nebo jej někdo nahlásí.
 

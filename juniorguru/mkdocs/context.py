@@ -38,7 +38,7 @@ def on_docs_context(context, page, config, files):
 @with_db
 def on_theme_context(context, page, config, files):
     context['page'].meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
-    context['page'].meta.setdefault('main_class', 'main-toc')
+    context['page'].meta.setdefault('main_class', 'main-simple')
 
     thumbnail_path = thumbnail(context['page'].meta.get('thumbnail_title', context['page'].meta['title']),
                                badge=context['page'].meta.get('thumbnail_badge'))

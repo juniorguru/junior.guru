@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+
+{% block main %}
+<div class="main main-handbook {{ page.meta.main_class }}">
+  <div class="content-container">
+    <main class="content">
+      {% block content %}{{ page.content }}{% endblock %}
+    </main>
+
+    <nav id="toc" class="toc">
+      <div class="toc-container">
+        <h3 class="toc-heading">Obsah příručky</h3>
+        <ul class="toc-list">
+          {% for toc_sibling in page.parent.children %}
+            <li class="toc-item{% if toc_sibling == page %} active{% endif %}">
+              <a class="toc-link" href="{{ toc_sibling.url|url }}">
+                {{ toc_sibling.title }}
+              </a>
+              {% if toc_sibling == page %}
+                <ul class="toc-sublist">
+                  {% for toc_heading in (page.toc|first).children %}
+                    <li class="toc-subitem">
+                      <a class="toc-sublink" href="{{ toc_heading.url }}">{{ toc_heading.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+{% endblock %}

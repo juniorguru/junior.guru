@@ -50,7 +50,7 @@ $footer-spacer-md: $spacer * 2;
 */
 
 .footer-address-container {
-  border-bottom: map-get($border-widths, 2) solid rgba($jg-white, .2);
+  border-bottom: map-get($border-widths, 1) solid rgba($jg-white, .2);
 }
 
 .footer-address {
