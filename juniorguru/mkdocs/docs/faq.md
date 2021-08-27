@@ -12,6 +12,8 @@ thumbnail_title: Otázky a odpovědi
 Vrtá ti hlavou, jak to tady přesně funguje? Prolétni si tuto stránku, třeba najdeš odpovědi. Pokud ne, neváhej a piš na {{ 'ahoj@junior.guru'|email_link }}.
 {% endcall %}
 
+[TOC]
+
 ## {{ 'person-plus'|icon }} Členství v klubu
 
 ### Jak přesně funguje členství?
