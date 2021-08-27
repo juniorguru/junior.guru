@@ -22,6 +22,10 @@ function activateStickyLogoBar() {
 }
 
 function activateLogoBarShadow() {
+  if(!document.getElementsByClassName('body__container').length) {
+    return;  // turn off on new pages
+  }
+
   if (header && logosBar) {
     if (header.getBoundingClientRect().bottom >= logosBar.getBoundingClientRect().top) {
       logosBar.classList.add('logos--bar-sticky-detached');
@@ -32,6 +36,10 @@ function activateLogoBarShadow() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  if(!document.getElementsByClassName('body__container').length) {
+    return;  // turn off on new pages
+  }
+
   content = Array.from(document.getElementsByClassName('content'))[0];
   header = Array.from(document.getElementsByClassName('header'))[0];
   logosBar = Array.from(document.getElementsByClassName('logos--bar'))[0];

@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+  if(!document.getElementsByClassName('body__container').length) {
+    return;  // turn off on new pages
+  }
+
   const testimonials = document.querySelector('.testimonials');
   const itemList = Array.from(document.querySelectorAll('.testimonials__item'));
   if (!testimonials || !itemList.length) { return; }

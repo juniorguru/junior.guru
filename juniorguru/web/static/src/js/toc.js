@@ -14,6 +14,10 @@ let targetOffset;
 
 // set variables
 document.addEventListener('DOMContentLoaded', function () {
+  if(!document.getElementsByClassName('body__container').length) {
+    return;  // turn off on new pages
+  }
+
   header = document.getElementsByClassName('header')[0];
   footer = document.getElementsByClassName('footer')[0];
 
@@ -57,6 +61,10 @@ document.addEventListener('DOMContentLoaded', function () {
 onScroll(updateToC);
 
 function updateToC() {
+  if(!document.getElementsByClassName('body__container').length) {
+    return;  // turn off on new pages
+  }
+
   // hiding of the ToC if scrolling to the bottom
   if (footer && toc) {
     if (toc.getBoundingClientRect().bottom > footer.getBoundingClientRect().top) {

@@ -1,4 +1,8 @@
 function onLoad() {
+  if(!document.getElementsByClassName('body__container').length) {
+    return;  // turn off on new pages
+  }
+
   const sections = Array.from(document.getElementsByClassName('more'));
   sections.forEach(function (section) {
     const div = document.createElement('div');

@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+  if(!document.getElementsByClassName('body__container').length) {
+    return;  // turn off on new pages
+  }
+
   // if the subnav scrolls horizontally, set it to the middle or to make
   // the active tab visible so it's clear on small screens that users can
   // scroll it and no tabs get hidden
