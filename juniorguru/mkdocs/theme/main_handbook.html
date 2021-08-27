@@ -19,7 +19,7 @@
               </a>
               {% if toc_sibling == page %}
                 <ul class="toc-sublist">
-                  {% for toc_heading in (page.toc|first).children %}
+                  {% for toc_heading in page.toc %}
                     <li class="toc-subitem">
                       <a class="toc-sublink" href="{{ toc_heading.url }}">{{ toc_heading.title }}</a>
                     </li>
