@@ -3,7 +3,7 @@ title: Obchodní podmínky junior.guru
 thumbnail_title: Obchodní podmínky
 ---
 
-{% from 'docs.html' import lead, see_also %}
+{% from 'docs.html' import lead %}
 
 
 # Obchodní podmínky
@@ -192,6 +192,3 @@ TODO
 **11.4.** Jsem oprávněn k prodeji služeb na základě živnostenského oprávnění. Živnostenskou kontrolu provádí v rámci své působnosti příslušný živnostenský úřad. Dozor nad oblastí ochrany osobních údajů vykonává Úřad pro ochranu osobních údajů. Česká obchodní inspekce vykonává ve vymezeném rozsahu mimo jiné dozor nad dodržováním zákona č. 634/1992 Sb., o ochraně spotřebitele, ve znění pozdějších předpisů.
 
 **11.5.** Vztahy a případné spory, které vzniknou na základě smluv a nebude možné je vyřešit mimosoudně, budou řešeny výhradně podle práva České republiky s výjimkou mezinárodních smluv a budou řešeny příslušnými soudy České republiky.
-
-
-{{ see_also(page) }}

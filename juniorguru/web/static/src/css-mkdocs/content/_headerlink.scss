@@ -1,3 +1,11 @@
+@keyframes headerlink-highlight {
+  0% { color: $primary; }
+  50% { color: $primary; }
+  100% { color: $body-color; }
+  // 0% { text-shadow: rgba($jg-dark, .2) 0 0 0; }
+  // 100% { text-shadow: rgba($jg-dark, 0) 0 0 4rem; }
+}
+
 .headerlink {
   @extend .small;
   margin-left: $spacer;
@@ -22,9 +30,5 @@ h1 .headerlink {
 h2:target,
 h3:target,
 h4:target {
-  color: $primary;
-
-  .headerlink {
-    color: $primary;
-  }
+  animation: headerlink-highlight 4s ease-out 1;
 }

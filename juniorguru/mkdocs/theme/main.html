@@ -41,26 +41,31 @@
       <main class="content">
         {% block content %}{{ page.content }}{% endblock %}
       </main>
-      <nav id="toc" class="toc">
-        <ul class="toc-list">
-          {% for toc_sibling in page.parent.children %}
-            <li class="toc-item{% if toc_sibling == page %} active{% endif %}">
-              <a class="toc-link" href="{{ toc_sibling.url|url }}"{% if toc_sibling.is_link %} target="_blank" rel="noopener"{% endif %}>
-                {{ toc_sibling.title }}
-              </a>
-              {% if toc_sibling == page %}
-                <ul class="toc-sublist">
-                  {% for toc_heading in (page.toc|first).children %}
-                    <li class="toc-subitem">
-                      <a class="toc-sublink" href="{{ toc_heading.url }}">{{ toc_heading.title }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
+      {% if 'main-toc' in page.meta.main_class %}
+        <nav id="toc" class="toc">
+          <div class="toc-container">
+            <h3 class="toc-heading">{{ page.parent.title }}</h3>
+            <ul class="toc-list">
+              {% for toc_sibling in page.parent.children %}
+                <li class="toc-item{% if toc_sibling == page %} active{% endif %}">
+                  <a class="toc-link" href="{{ toc_sibling.url|url }}"{% if toc_sibling.is_link %} target="_blank" rel="noopener"{% endif %}>
+                    {{ toc_sibling.title }}
+                  </a>
+                  {% if toc_sibling == page %}
+                    <ul class="toc-sublist">
+                      {% for toc_heading in (page.toc|first).children %}
+                        <li class="toc-subitem">
+                          <a class="toc-sublink" href="{{ toc_heading.url }}">{{ toc_heading.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </nav>
+      {% endif %}
     </div>
   </div>
 

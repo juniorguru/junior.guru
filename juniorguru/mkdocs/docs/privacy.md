@@ -3,7 +3,7 @@ title: Zásady ochrany osobních údajů na junior.guru
 thumbnail_title: Zásady ochrany osobních údajů
 ---
 
-{% from 'docs.html' import lead, see_also %}
+{% from 'docs.html' import lead %}
 
 
 # Zásady ochrany osobních údajů
@@ -82,6 +82,3 @@ Prohlašuji, že jsem přijal veškerá vhodná technická a organizační opat�
 **Právo kdykoli odvolat souhlas se zpracováním osobních údajů** se neuplatní u klientů, kteří u nás objednali některou ze služeb, jelikož osobní údaje klienta jsou pak zpracovávány z důvodu plnění smlouvy uzavřené s klientem, nikoli na základě souhlasu se zpracováním. V případě, že bude klient jakkoli nespokojen se zpracováním svých osobních údajů, může podat stížnost na mou e-mailovou adresu, nebo se obrátit na Úřad pro ochranu osobních údajů.
 
 Více informací o právech klienta je k dispozici na [internetových stránkách Úřadu pro ochranu osobních údajů](https://www.uoou.cz/6-prava-subjektu-udaj/d-27276).
-
-
-{{ see_also(page) }}
