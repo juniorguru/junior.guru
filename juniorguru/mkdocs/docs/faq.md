@@ -1,7 +1,6 @@
 ---
 title: Otázky a odpovědi ohledně junior.guru
 thumbnail_title: Otázky a odpovědi
-main_class: main-simple main-h2-icons
 ---
 
 {% from 'docs.html' import lead %}

@@ -1,49 +1,99 @@
 $main-spacer: map-get($spacers, 5);
 $main-spacer-double: 2 * $main-spacer;
-$eggshell-chick-width: 4.3rem;
 
 .main-simple {
-  @extend .container-lg;
-  max-width: 720px;
-  padding-top: $main-spacer;
-  padding-bottom: $main-spacer-double;
+  @include media-breakpoint-up(lg) {
+    background: linear-gradient(90deg, $jg-blue-light 50%, $jg-white 50%);
+  }
 }
 
-.main-simple h1 {
+.main-simple .content-container {
+  @extend .container-lg;
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.main-simple .toc {
+  @include media-breakpoint-up(lg) {
+    width: 20vw;
+    padding: $container-padding-x;
+    padding-top: $main-spacer;
+    padding-bottom: $main-spacer-double;
+    background: $jg-blue-light;
+  }
+}
+
+.main-simple .toc-list {
+  @include media-breakpoint-up(lg) {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.toc-list,
+.toc-sublist {
+  @extend .list-unstyled;
+}
+
+.toc-list {
+  border: $list-group-border-color $list-group-border-width solid;
+  border-radius: $list-group-border-radius;
+}
+
+.toc-link,
+.toc-sublink {
+  display: block;
+  padding: $list-group-item-padding-y $list-group-item-padding-x;
+  text-decoration: none;
+  border-top: $list-group-border-color $list-group-border-width solid;
+}
+
+.toc-item:first-child .toc-link {
+  border: none;
+}
+
+.main-simple .content {
+  @extend .container-md;
+  padding-top: $main-spacer;
+  padding-bottom: $main-spacer-double;
+  background: $jg-white;
+
+  @include media-breakpoint-up(lg) {
+    max-width: map-get($container-max-widths, md);
+    padding-right: $container-padding-x;
+    padding-left: $main-spacer;
+    margin: 0;
+  }
+}
+
+.main-simple .content h1 {
   padding-bottom: map-get($spacers, 1);
   margin-bottom: $main-spacer;
   border-bottom: .2rem solid $body-color;
 }
 
-.main-simple .lead {
+.main-simple .content .lead {
   margin-bottom: $main-spacer;
 }
 
-// .main-simple h1 {  TODO
-//   padding-right: $eggshell-chick-width + map-get($spacers, 1);
-//   padding-bottom: $spacer + map-get($spacers, 1);
-//   margin-bottom: $main-spacer;
-//   // text-align: center; 
-//   // border-bottom: 2px solid $secondary;
-
-//   background-image: url("./images/eggshell.svg"), url("./images/eggshell-chick.svg");
-//   background-repeat: repeat-x, no-repeat;
-//   background-position: bottom center, right bottom $spacer;
-//   background-size: auto $spacer, auto $h1-font-size;
-// }
-
-.main-simple h2 {
+.main-simple .content h2 {
   margin-top: $main-spacer;
 }
 
-.main-h2-icons h2 .bi {
+.main-simple .content h2 .bi {
   @extend .fs-3;
   margin-right: map-get($spacers, 1);
   line-height: $headings-line-height;
   color: $primary;
 }
 
-.main-simple *:last-child {
+.main-simple .content *:last-child {
   margin-bottom: 0;
 }
 
@@ -52,7 +102,7 @@ $eggshell-chick-width: 4.3rem;
   padding-right: 0;
   padding-left: 0;
 
-  section {
+  .content section {
     @extend .container-lg;
     padding-top: $main-spacer - $spacer;
     padding-bottom: $main-spacer - $spacer;
