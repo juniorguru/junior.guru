@@ -12,6 +12,7 @@
 }
 
 .pricing-block {
+  position: relative;
   min-width: 15rem;
   padding: $spacer;
   margin-bottom: $spacer;
@@ -42,4 +43,5 @@
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-lg;
+  @extend .stretched-link;
 }
