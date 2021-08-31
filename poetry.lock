@@ -245,7 +245,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "czech-sort"
-version = "1.0.0"
+version = "1.0.1"
 description = "Text sorting function for the Czech language"
 category = "main"
 optional = false
@@ -1780,7 +1780,7 @@ cssselect = [
     {file = "cssselect-1.1.0.tar.gz", hash = "sha256:f95f8dedd925fd8f54edb3d2dfb44c190d9d18512377d3c1e2388d16126879bc"},
 ]
 czech-sort = [
-    {file = "czech_sort-1.0.0-py3-none-any.whl", hash = "sha256:b173b87550e6a5e2dc5c704d0b289734d014437fe88b7cf6aa294e749c2f7f1e"},
+    {file = "czech_sort-1.0.1-py3-none-any.whl", hash = "sha256:340bd050ef536ffcdd938fd162e39542964f65ceb4a08320fbf54d14c22121ec"},
 ]
 "discord.py" = [
     {file = "discord.py-1.7.3-py3-none-any.whl", hash = "sha256:c6f64db136de0e18e090f6752ea68bdd4ab0a61b82dfe7acecefa22d6477bb0c"},
