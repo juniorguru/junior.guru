@@ -97,11 +97,11 @@ def main():
             tpl_context = dict(event=event)
             tpl_filters = dict(md=md, local_time=local_time, weekday=weekday)
             image_path = render_image_file(WEB_THUMBNAIL_WIDTH, WEB_THUMBNAIL_HEIGHT,
-                                           'poster.html', tpl_context, POSTERS_DIR,
+                                           'event.html', tpl_context, POSTERS_DIR,
                                            filters=tpl_filters)
             event.poster_path = image_path.relative_to(IMAGES_DIR)
             image_path = render_image_file(YOUTUBE_THUMBNAIL_WIDTH, YOUTUBE_THUMBNAIL_HEIGHT,
-                                           'poster.html', tpl_context, POSTERS_DIR,
+                                           'event.html', tpl_context, POSTERS_DIR,
                                            filters=tpl_filters, suffix='yt')
             event.poster_yt_path = image_path.relative_to(IMAGES_DIR)
             event.poster_ig_path = save_as_ig_square(image_path).relative_to(IMAGES_DIR)

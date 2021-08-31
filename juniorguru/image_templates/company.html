@@ -2,18 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ templates_dir }}/thumbnail.css">
+    <link rel="stylesheet" href="{{ templates_dir }}/company.css">
   </head>
-  <body class="thumbnail">
+  <body>
     <main>
-      <h1>
-        {{ title }}
-        {% if badge %}<strong>{{ badge }}</strong>{% endif %}
-      </h1>
+      <div class="company">
+        <img src="{{ images_dir }}/logos/{{ company.filename }}" width="200">
+      </div>
+      <div class="heart">
+        <img src="{{ images_dir }}/heart.svg" width="200">
+      </div>
+      <div class="juniorguru">
+        <img src="{{ images_dir }}/logo.svg" width="200">
+      </div>
     </main>
     <aside>
-      <img src="{{ images_dir }}/chick2.svg">
-      <img src="{{ images_dir }}/logo.svg">
+      <p>
+        Spolupráce! <strong>junior.guru/club</strong>
+      </p>
     </aside>
   </body>
 </html>
