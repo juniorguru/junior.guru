@@ -34,7 +34,7 @@
 {% macro blockquote_avatar(quote, avatar_filename, avatar_alt, caption, lazy=True) %}
   <div class="blockquote-container avatar">
     <figure class="blockquote-content">
-      {{ img('static/images/avatars_quotes/' + avatar_filename, avatar_alt, 50, 50, class='blockquote-avatar', lazy=lazy) }}
+      {{ img('static/images/avatars-quotes/' + avatar_filename, avatar_alt, 50, 50, class='blockquote-avatar', lazy=lazy) }}
       <blockquote class="blockquote">
         <p>{{ quote }}</p>
       </blockquote>

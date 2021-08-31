@@ -91,7 +91,7 @@ class Pipeline(ImagesPipeline):
 
     def file_path(self, request, response=None, info=None, item=None):
         image_guid = hashlib.sha1(to_bytes(request.url)).hexdigest()
-        return f'company-logos/{image_guid}.png'
+        return f'logos-jobs/{image_guid}.png'
 
 
 def create_orig_size_exif(width, height):

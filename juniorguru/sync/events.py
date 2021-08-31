@@ -17,10 +17,10 @@ from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, discord_task
 log = get_log('events')
 
 
-FLUSH_POSTERS = bool(int(os.getenv('FLUSH_POSTERS', 0)))
+FLUSH_POSTERS_EVENTS = bool(int(os.getenv('FLUSH_POSTERS_EVENTS', 0)))
 DATA_DIR = Path(__file__).parent.parent / 'data'
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
-POSTERS_DIR = IMAGES_DIR / 'posters'
+POSTERS_DIR = IMAGES_DIR / 'posters-events'
 
 WEB_THUMBNAIL_WIDTH = 1280
 WEB_THUMBNAIL_HEIGHT = 672
@@ -56,8 +56,8 @@ def main():
     path = DATA_DIR / 'events.yml'
     records = [load_record(record.data) for record in load(path.read_text(), schema)]
 
-    if FLUSH_POSTERS:
-        log.warning("Removing all existing posters, FLUSH_POSTERS is set")
+    if FLUSH_POSTERS_EVENTS:
+        log.warning("Removing all existing posters for events, FLUSH_POSTERS_EVENTS is set")
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
 
@@ -74,7 +74,7 @@ def main():
 
             for speaker_id in speakers_ids:
                 try:
-                    avatar_path = next((IMAGES_DIR / 'avatars_speakers').glob(f"{speaker_id}.*"))
+                    avatar_path = next((IMAGES_DIR / 'avatars-speakers').glob(f"{speaker_id}.*"))
                 except StopIteration:
                     log.info(f"Didn't find speaker avatar for {speaker_id}")
                     avatar_path = None

@@ -1,0 +1,172 @@
+@import "./variables.css";
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family);
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  color: var(--color-dark);
+}
+
+.thumbnail {
+  display: flex;
+  background: var(--color-white);
+}
+
+.thumbnail main {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  padding: 5%;
+  padding-bottom: 8%;
+  border-left: 2rem solid var(--color-blue);
+}
+
+.thumbnail main h1 {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  margin: 0;
+  font-size: 5rem;
+  font-weight: 500;
+}
+
+.thumbnail main strong {
+  position: absolute;
+  right: 0;
+  bottom: 90%;
+  display: block;
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-white);
+  background: var(--color-blue);
+  border-radius: 50rem;
+}
+
+.thumbnail aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  padding: 5%;
+  background: var(--color-yellow);
+}
+
+.thumbnail aside img {
+  display: block;
+}
+
+.thumbnail aside img:nth-child(1) {
+  width: 70%;
+}
+
+.thumbnail aside img:nth-child(2) {
+  width: 100%;
+  margin-top: auto;
+}
+
+
+/* Legacy Thumbnails */
+
+.thumbnail-legacy,
+.thumbnail-legacy-job,
+.thumbnail-legacy-title {
+  background: var(--color-yellow);
+}
+
+.thumbnail-legacy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail-legacy img {
+  display: block;
+  width: 60%;
+  margin-bottom: 3%;
+}
+
+.thumbnail-legacy-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail-legacy-title img {
+  display: block;
+  flex: 1;
+  width: 10%; /* minimal width */
+  padding: 5%;
+  padding-right: 3%;
+  margin: 0;
+  border-right: 5px solid var(--color-dark);
+}
+
+.thumbnail-legacy-title h1 {
+  flex: 1;
+  padding: 5%;
+  margin: 0;
+  text-align: left;
+}
+
+.thumbnail-legacy-title small {
+  display: block;
+  font-size: 50px;
+}
+
+.thumbnail-legacy-title strong {
+  display: block;
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.thumbnail-legacy-job {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.thumbnail-legacy-job h1 {
+  padding: 2% 3%;
+  margin: 0;
+  font-size: 40px;
+  color: var(--color-white);
+  text-transform: uppercase;
+  background: var(--color-dark);
+}
+
+.thumbnail-legacy-job h2 {
+  padding: 8% 3% 3%;
+  margin: 0;
+}
+
+.thumbnail-legacy-job .job-company {
+  display: block;
+  font-size: 80px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.thumbnail-legacy-job .job-location {
+  display: block;
+  font-size: 50px;
+}
+
+.thumbnail-legacy-job .job-title {
+  padding: 0 5%;
+  margin: 0;
+  font-size: 50px;
+}
