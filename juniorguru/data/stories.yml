@@ -210,9 +210,16 @@
     - age
 
 - url: https://www.zvut.cz/napady-objevy/napady-a-objevy-f38103/hlasem-com-chce-umoznit-snadnou-tvorbu-audioknih-nebo-videopruvodcu-d213591
-  date: 2021-08-09
+  date: 2021-07-09
   title: Studoval výtvarné umění, programoval jako samouk. Dnes tvoří aplikaci pro syntézu hlasu
   image_path: images/stories/simon-hlasem.jpg
   tags:
     - student
     - synergy
+
+- url: https://ivanahuckova.medium.com/my-first-month-at-grafana-b37c792a6d0a
+  date: 2019-10-17
+  title: Jako juniorka začala v globálním startupu, zaučení zvládla i na dálku
+  image_path: images/stories/ivana-grafana.jpg
+  tags:
+    - women
