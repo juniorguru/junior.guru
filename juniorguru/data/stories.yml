@@ -200,3 +200,11 @@
   image_path: images/stories/mike-hostel.jpg
   tags:
     - careerswitch
+
+- url: https://www.apitree.cz/blog/jak-jsem-se-stal-vyvojarem
+  date: 2021-08-09
+  title: Roky dělal IT servisáka, po měsících učení a hledání práce dělá React programátora
+  image_path: images/stories/petr-servisak.jpg
+  tags:
+    - careerswitch
+    - age
