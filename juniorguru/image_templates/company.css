@@ -1,16 +1,5 @@
 @import "./variables.css";
 
-:root {
-  --spacer-sm: 1rem;
-  --spacer: 2rem;
-
-  /* mirroring _variables.scss in Bootstrap */
-  --font-size-base: 1rem;
-  --font-size-lead: 1.25rem;
-  --font-size-h1: 2.5rem;
-  --font-size-h2: 2rem;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -21,56 +10,53 @@ body {
   padding: 0;
   margin: 0;
   font-family: var(--font-family);
-  font-size: var(--font-size-base);
   color: var(--color-dark);
   background: var(--color-yellow);
 }
 
-body {
+main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: 100vh;
 }
 
-main {
-  position: relative;
+main div {
   display: flex;
-  height: 30vh;
-  padding: 0 5vh;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100vh;
+  padding: 5vh;
+  padding-bottom: 40vh;
+}
+
+main div:first-child {
   background: var(--color-white);
 }
 
-div {
-  display: flex;
-  flex-shrink: 0;
-  flex-grow: 0;
-  align-items: center;
-  justify-content: center;
-  width: 33%;
-}
-
-img {
+main img {
   width: auto;
   max-width: 100%;
   height: auto;
   max-height: 20vh;
 }
 
-.heart img {
-  width: 35%;
-}
-
 aside {
-  margin-top: 10vh;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 50vh;
+  margin: 0 auto;
 }
 
-p {
-  padding: var(--spacer-sm) var(--spacer);
-  margin: 0;
-  font-size: var(--font-size-h2);
+aside div {
+  padding: 3vh 5vh;
+  font-size: 4vh;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.5;
   color: var(--color-white);
   text-align: center;
   background: var(--color-blue);
@@ -78,6 +64,18 @@ p {
   box-shadow: rgba(149, 157, 165, .2) 0 8px 24px;
 }
 
-p strong {
+aside img {
+  display: block;
+  width: 15vh;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 2vh;
+}
+
+aside p {
+  margin: 0;
+}
+
+aside strong {
   display: block;
 }
