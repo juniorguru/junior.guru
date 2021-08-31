@@ -223,3 +223,10 @@
   image_path: images/stories/ivana-grafana.jpg
   tags:
     - women
+
+- url: https://blog.cesko.digital/2021/06/zkuste-open-source
+  date: 2021-06-28
+  title: První zkušenosti v oboru našla díky dobrovolné práci pro Česko.Digital
+  image_path: images/stories/martina-cd.jpg
+  tags:
+    - women
