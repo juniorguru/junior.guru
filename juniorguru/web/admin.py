@@ -8,7 +8,6 @@ from juniorguru.web import app
 
 ADMIN_NAV = {
     'Rozcestník': 'admin',
-    'Newsletter': 'admin_newsletter',
     'Nabídky': 'admin_jobs',
     'Zahozené nabídky': 'admin_jobs_dropped',
     'Chyby v nabídkách': 'admin_jobs_errors',
@@ -30,13 +29,6 @@ def admin():
     with db:
         metrics = Metric.as_dict()
     return render_template('admin.html', metrics=metrics)
-
-
-@app.route('/a/newsletter/')
-def admin_newsletter():
-    with db:
-        jobs = list(Job.newsletter_listing(10))
-    return render_template('admin_newsletter.html', jobs=jobs)
 
 
 @app.route('/a/jobs/')

@@ -128,11 +128,6 @@ class Job(BaseModel):
             result[metric.name] = metric.value
         return result
 
-    @property
-    def newsletter_mentions(self):
-        return self.list_newsletter_mentions \
-            .order_by(JobNewsletterMention.sent_at.desc())
-
     @classmethod
     def get_by_url(cls, url):
         match = re.match(r'https?://junior.guru/jobs/([^/]+)/', url)
@@ -196,18 +191,6 @@ class Job(BaseModel):
     @classmethod
     def volunteering_listing(cls):
         return cls.tags_listing(['VOLUNTEERING'])
-
-    @classmethod
-    def newsletter_listing(cls, min_count, today=None):
-        today = today or date.today()
-
-        count = 0
-        for item in cls.juniorguru_listing():
-            yield item
-            count += 1
-
-        backfill_query = cls.listing().where(cls.source != 'juniorguru')
-        yield from itertools.islice(backfill_query, max(min_count - count, 0))
 
     def days_since_posted(self, today=None):
         today = today or date.today()
@@ -303,9 +286,3 @@ class JobMetric(BaseModel):
     job = ForeignKeyField(Job, backref='list_metrics')
     name = CharField(choices=[(name, None) for name in JOB_METRIC_NAMES])
     value = IntegerField()
-
-
-class JobNewsletterMention(BaseModel):
-    job = ForeignKeyField(Job, backref='list_newsletter_mentions')
-    sent_at = DateField()
-    link = CharField()

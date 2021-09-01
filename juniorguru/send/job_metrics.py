@@ -45,6 +45,4 @@ def prepare_template_context(job, today):
                 start_days=job.days_since_posted(today),
                 end_at=job.expires_at,
                 end_days=job.days_until_expires(today),
-                expires_soon=job.expires_soon(today),
-                newsletter_mentions=job.newsletter_mentions,
-                newsletter_archive_url='https://us3.campaign-archive.com/home/?u=7d3f89ef9b2ed953ddf4ff5f6&id=e231b1fb75')
+                expires_soon=job.expires_soon(today))

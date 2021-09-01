@@ -296,11 +296,13 @@ def generate_job_pages():
 def hire_juniors():
     with db:
         metrics = Metric.as_dict()
+        members_total_count = ClubUser.members_count()
     return render_template('hire_juniors.html',
                            nav_active='jobs',
                            subnav_tabs=JOBS_SUBNAV_TABS,
                            subnav_active='hire_juniors',
                            metrics=metrics,
+                           members_total_count=members_total_count,
                            thumbnail=thumbnail(title='Najímejte odhodlané juniory'))
 
 

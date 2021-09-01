@@ -41,7 +41,7 @@ Když mne kontaktujete (telefonicky, e-mailem nebo prostřednictvím webových s
 
 **a. osobní údaje návštěvníků webu.** Jedná se o údaje o akcích uživatelů, které slouží čistě pro statistické účely. Tyto údaje uchovává [Google Analytics](https://analytics.google.com/analytics/) agregované do souhrnných čísel a není z nich možné identifikovat jednotlivce.
 
-**b. osoby odebírající newsletter.** U osob odebírajících [newsletter](https://eepurl.com/gyG8Bb) je uchováván e-mail, a to prostřednictvím služby [Mailchimp](https://mailchimp.com/). Z odebírání newsletteru se můžete kdykoliv odhlásit.
+**b. osoby odebírající newsletter.** U osob odebírajících newsletter je uchováván e-mail, a to prostřednictvím služby [Mailchimp](https://mailchimp.com/). Z odebírání newsletteru se můžete kdykoliv odhlásit.
 
 **c. osobní údaje členů digitálního klubu.** Jedná se o osobní údaje jednotlivých členů [klubu](club.md) dostupné z [klientské sekce](https://juniorguru.memberful.com/account/). tj. uživatelské jméno, e-mail, domovská země člena a dále údaje o platební kartě člena. K vašim zadaným osobním údajům má vzhledem k charakteru služeb přístup také platforma [Memberful](https://memberful.com/), [Discord](https://discord.com/), [Google Sheets](https://www.google.com/sheets/about/). K údajům o platební kartě má přístup pouze služba [Stripe](https://stripe.com), která zajišťuje bezpečnost a realizaci jednotlivých plateb, mě osobně známy nejsou.
 

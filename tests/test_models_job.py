@@ -70,44 +70,6 @@ def test_tags_listing(db_connection):
     assert list(Job.tags_listing(['ALSO_INTERNSHIP', 'ALSO_PART_TIME'])) == [job1, job2, job4]
 
 
-@pytest.mark.parametrize('source', ['juniorguru', 'moo'])
-def test_newsletter_listing_sorts_by_sort_rank_desc(db_connection, source):
-    job1 = create_job('1', source=source, sort_rank=30)
-    job2 = create_job('2', source=source, sort_rank=10)
-    job3 = create_job('3', source=source, sort_rank=20)
-
-    assert list(Job.newsletter_listing(5)) == [job1, job3, job2]
-
-
-def test_newsletter_listing_returns_only_juniorguru_if_enough(db_connection):
-    job1 = create_job('1', source='juniorguru', sort_rank=30)
-    job2 = create_job('2', source='moo')  # noqa
-    job3 = create_job('3', source='juniorguru', sort_rank=20)
-    job4 = create_job('4', source='juniorguru', sort_rank=10)
-    job5 = create_job('5', source='juniorguru', sort_rank=5)
-
-    assert list(Job.newsletter_listing(3)) == [job1, job3, job4, job5]
-
-
-def test_newsletter_listing_backfills_with_other_sources(db_connection):
-    job1 = create_job('1', source='moo', sort_rank=20)
-    job2 = create_job('2', source='foo', sort_rank=10)
-    job3 = create_job('3', source='bar', sort_rank=40)
-    job4 = create_job('4', source='juniorguru', sort_rank=30)
-    job5 = create_job('5', source='juniorguru', sort_rank=20)
-
-    assert list(Job.newsletter_listing(5)) == [job4, job5, job3, job1, job2]
-
-
-def test_newsletter_listing_backfills_up_to_min_count(db_connection):
-    job1 = create_job('1', source='moo', sort_rank=5)
-    job2 = create_job('2', source='foo', sort_rank=1)  # noqa
-    job3 = create_job('3', source='bar', sort_rank=10)
-    job4 = create_job('4', source='juniorguru')
-
-    assert list(Job.newsletter_listing(3)) == [job4, job3, job1]
-
-
 def test_get_by_url(db_connection):
     job = create_job('1')
 

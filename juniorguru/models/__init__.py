@@ -1,5 +1,5 @@
 from juniorguru.models.base import db, retry_when_db_locked, with_db
-from juniorguru.models.job import Job, JobDropped, JobError, JobMetric, JobNewsletterMention, EMPLOYMENT_TYPES
+from juniorguru.models.job import Job, JobDropped, JobError, JobMetric, EMPLOYMENT_TYPES
 from juniorguru.models.metric import Metric
 from juniorguru.models.story import Story
 from juniorguru.models.supporter import Supporter
@@ -15,7 +15,7 @@ from juniorguru.models.company import Company
 
 
 __all__ = [db, Job, JobDropped, JobError, JobMetric, Metric, Story, Supporter,
-           LastModified, PressRelease, JobNewsletterMention, Logo, LogoMetric,
+           LastModified, PressRelease, Logo, LogoMetric,
            retry_when_db_locked, SpiderMetric, EMPLOYMENT_TYPES, Proxy,
            Topic, ClubMessage, ClubUser, ClubPinReaction, Event, EventSpeaking,
            Company, with_db]

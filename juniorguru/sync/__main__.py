@@ -10,7 +10,6 @@ from juniorguru.sync.stories import main as sync_stories
 from juniorguru.sync.supporters import main as sync_supporters
 from juniorguru.sync.last_modified import main as sync_last_modified
 from juniorguru.sync.press_releases import main as sync_press_releases
-from juniorguru.sync.newsletter_mentions import main as sync_newsletter_mentions
 from juniorguru.sync.transactions import main as sync_transactions
 from juniorguru.sync.proxies import main as sync_proxies
 from juniorguru.sync.events import main as sync_events
@@ -56,7 +55,6 @@ def main():
     sync_roles()  # depends on club_content, events, avatars, subscriptions
     sync_jobs()  # depends on proxies
     sync_metrics()  # depends on jobs, logos, transactions
-    sync_newsletter_mentions()  # depends on jobs
 
     # cast magic
     do_magic()  # depends on jobs
