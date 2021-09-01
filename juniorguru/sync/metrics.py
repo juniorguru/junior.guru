@@ -149,13 +149,5 @@ def parse_finances(cells):
     return metrics
 
 
-def merge_metric_dicts(metric_dict1, metric_dict2):
-    metric_dict = dict(metric_dict1)
-    for url, value in metric_dict2.items():
-        metric_dict.setdefault(url, 0)
-        metric_dict[url] += value
-    return metric_dict
-
-
 if __name__ == '__main__':
     main()
