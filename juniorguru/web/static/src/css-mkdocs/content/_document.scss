@@ -1,0 +1,58 @@
+@keyframes headerlink-highlight {
+  0% { color: $primary; }
+  50% { color: $primary; }
+  100% { color: $body-color; }
+}
+
+.document h1 {
+  padding-bottom: map-get($spacers, 1);
+  margin-bottom: $main-spacer;
+  border-bottom: map-get($border-widths, 3) solid $body-color;
+}
+
+.document .lead {
+  margin-bottom: $main-spacer;
+}
+
+.document h2 {
+  margin-top: $main-spacer;
+}
+
+.document a:visited {
+  color: $body-color;
+}
+
+.document h2 .bi {
+  @extend .fs-3;
+  margin-right: map-get($spacers, 1);
+  line-height: $headings-line-height;
+  color: $primary;
+}
+
+.document *:last-child {
+  margin-bottom: 0;
+}
+
+.document .headerlink,
+.document .headerlink:visited {
+  @extend .small;
+  margin-left: $spacer;
+  color: $jg-gray-light;
+  text-decoration: none;
+}
+
+.document .headerlink:hover,
+.document .headerlink:focus,
+.document .headerlink:active {
+  color: $primary;
+}
+
+.document h1 .headerlink {
+  @extend .visually-hidden;
+}
+
+.document h2:target,
+.document h3:target,
+.document h4:target {
+  animation: headerlink-highlight 4s ease-out 1;
+}

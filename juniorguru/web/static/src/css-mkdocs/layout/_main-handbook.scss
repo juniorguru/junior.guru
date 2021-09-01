@@ -1,16 +1,3 @@
-$main-spacer: map-get($spacers, 5);
-$main-spacer-double: 2 * $main-spacer;
-
-.main-simple {
-  @extend .container-lg;
-  max-width: map-get($container-max-widths, md);
-}
-
-.main-simple .content {
-  padding-top: $main-spacer;
-  padding-bottom: $main-spacer-double;
-}
-
 .main-handbook {
   @include media-breakpoint-up(lg) {
     background: linear-gradient(90deg, $jg-blue-light 50%, $jg-white 50%);
@@ -136,72 +123,4 @@ $main-spacer-double: 2 * $main-spacer;
     padding-left: $main-spacer;
     margin: 0;
   }
-}
-
-.main-simple .content h1,
-.main-handbook .content h1 {
-  padding-bottom: map-get($spacers, 1);
-  margin-bottom: $main-spacer;
-  border-bottom: map-get($border-widths, 3) solid $body-color;
-}
-
-.main-simple .content .lead,
-.main-handbook .content .lead {
-  margin-bottom: $main-spacer;
-}
-
-.main-simple .content h2,
-.main-handbook .content h2 {
-  margin-top: $main-spacer;
-}
-
-.main-simple .content h2 .bi,
-.main-handbook .content h2 .bi {
-  @extend .fs-3;
-  margin-right: map-get($spacers, 1);
-  line-height: $headings-line-height;
-  color: $primary;
-}
-
-.main-simple .content *:last-child,
-.main-handbook .content *:last-child {
-  margin-bottom: 0;
-}
-
-.main-sections {
-  @extend .container-fluid;
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.main-sections .content section {
-  @extend .container-lg;
-  padding-top: $main-spacer - $spacer;
-  padding-bottom: $main-spacer - $spacer;
-}
-
-.section-background.dark {
-  color: $jg-white;
-  background: $jg-dark;
-}
-
-.section-background.blue {
-  color: $jg-white;
-  background: $jg-blue;
-}
-
-.section-background.blue-light {
-  background: $jg-blue-light;
-}
-
-.section-background.yellow {
-  background: $jg-yellow;
-}
-
-.section-background.yellow-light {
-  background: $jg-yellow-light;
-}
-
-.section-background.gray-white {
-  background: $jg-gray-white;
 }

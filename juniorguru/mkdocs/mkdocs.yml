@@ -12,8 +12,8 @@ nav:
   - Klub: club.md
 
   - Tajná příručka:
-      - Rozcestník: handbook.md
-      - Motivace: motivation/
+      - Rozcestník: handbook/index.md
+      - Motivace: handbook/motivation.md
       - Základy: learn/
       - První praxe: practice/
       - Hledání práce: candidate-handbook/
@@ -109,6 +109,7 @@ template_filters:
   docs:
       - sample
       - metric
+      - remove_p
   theme:
       - metrics_inc_breakdown
 

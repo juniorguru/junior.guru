@@ -1,0 +1,9 @@
+.main-simple {
+  @extend .container-lg;
+  max-width: map-get($container-max-widths, md);
+}
+
+.main-simple .content {
+  padding-top: $main-spacer;
+  padding-bottom: $main-spacer-double;
+}

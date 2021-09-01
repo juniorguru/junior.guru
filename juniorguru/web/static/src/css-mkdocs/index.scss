@@ -68,7 +68,15 @@
 /*
   BOOTSTRAP: ICONS
 */
+
 @import "../../../../../node_modules/bootstrap-icons/font/bootstrap-icons";
+
+
+/*
+  CUSTOM: VARIABLES
+*/
+
+@import "./variables";
 
 
 /*
@@ -76,17 +84,25 @@
 */
 
 @import "./layout/header";
-@import "./layout/main";
+@import "./layout/main-simple";
+@import "./layout/main-handbook";
+@import "./layout/main-sections";
 @import "./layout/footer";
 
 
 /*
-  CUSTOM: CONTENT
+  CUSTOM: DOCUMENT
+*/
+
+@import "./content/document";
+
+
+/*
+  CUSTOM: CONTENT COMPONENTS
 */
 
 @import "./content/blockquote";
 @import "./content/comparison";
-@import "./content/headerlink";
 @import "./content/icons";
 @import "./content/pricing";
 @import "./content/logos";

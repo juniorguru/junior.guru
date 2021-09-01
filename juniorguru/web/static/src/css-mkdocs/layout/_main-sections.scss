@@ -1,0 +1,41 @@
+.main-sections {
+  @extend .container-fluid;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.main-sections .content section {
+  @extend .container-lg;
+  padding-top: $main-spacer - $spacer;
+  padding-bottom: $main-spacer - $spacer;
+}
+
+.main-sections .headerlink {
+  @extend .visually-hidden;
+}
+
+.section-background.dark {
+  color: $jg-white;
+  background: $jg-dark;
+}
+
+.section-background.blue {
+  color: $jg-white;
+  background: $jg-blue;
+}
+
+.section-background.blue-light {
+  background: $jg-blue-light;
+}
+
+.section-background.yellow {
+  background: $jg-yellow;
+}
+
+.section-background.yellow-light {
+  background: $jg-yellow-light;
+}
+
+.section-background.gray-white {
+  background: $jg-gray-white;
+}

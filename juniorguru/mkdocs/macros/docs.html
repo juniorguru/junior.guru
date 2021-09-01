@@ -23,7 +23,7 @@
         {% if caption %}
           {{ caption }}
         {% else %}
-          {{ caller() }}
+          {{ caller()|md|remove_p }}
         {% endif %}
       </figcaption>
     </figure>
@@ -42,7 +42,7 @@
         {% if caption %}
           {{ caption }}
         {% else %}
-          {{ caller() }}
+          {{ caller()|md|remove_p }}
         {% endif %}
       </figcaption>
     </figure>
