@@ -1,4 +1,3 @@
-import itertools
 import re
 from functools import lru_cache
 from datetime import date
