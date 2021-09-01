@@ -1,5 +1,4 @@
 import math
-import os
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib.google_analytics import (
@@ -13,14 +12,10 @@ from juniorguru.lib.google_analytics import (
     metric_avg_monthly_jobs_users)
 from juniorguru.lib import google_sheets
 from juniorguru.lib.coerce import parse_currency, parse_ptc
-from juniorguru.lib.mailchimp import (MailChimpClient, get_collection,
-                                            get_link,
-                                            sum_clicks_per_external_url)
 from juniorguru.models import Job, JobMetric, Metric, Logo, LogoMetric, db
 
 
 GOOGLE_ANALYTICS_VIEW_ID = '198392474'  # https://ga-dev-tools.appspot.com/account-explorer/
-MAILCHIMP_API_KEY = os.getenv('MAILCHIMP_API_KEY')
 FINANCES_DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
 
@@ -28,7 +23,6 @@ FINANCES_DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 def main():
     google_analytics_metrics = fetch_from_google_analytics()
     google_sheets_metrics = fetch_from_google_sheets()
-    mailchimp_metrics = fetch_from_mailchimp()
 
     with db:
         Metric.drop_table()
@@ -45,7 +39,6 @@ def main():
             Metric.create(name=name, value=google_analytics_metrics[name])
         for name, value in google_sheets_metrics.items():
             Metric.create(name=name, value=value)
-        Metric.create(name='subscribers', value=mailchimp_metrics['subscribers'])
 
         JobMetric.drop_table()
         JobMetric.create_table()
@@ -71,22 +64,14 @@ def main():
             except Job.DoesNotExist:
                 pass
 
-        users_per_external_url = merge_metric_dicts(
-            google_analytics_metrics['users_per_external_job'],
-            mailchimp_metrics['users_per_external_url']
-        )
-        for url, value in users_per_external_url.items():
+        for url, value in google_analytics_metrics['users_per_external_job'].items():
             try:
                 job = Job.get_by_link(url)
                 JobMetric.create(job=job, name='users', value=value)
             except Job.DoesNotExist:
                 pass
 
-        pageviews_per_external_url = merge_metric_dicts(
-            google_analytics_metrics['pageviews_per_external_job'],
-            mailchimp_metrics['pageviews_per_external_url']
-        )
-        for url, value in pageviews_per_external_url.items():
+        for url, value in google_analytics_metrics['pageviews_per_external_job'].items():
             try:
                 job = Job.get_by_link(url)
                 JobMetric.create(job=job, name='pageviews', value=value)
@@ -133,25 +118,6 @@ def fetch_from_google_analytics():
         metric_handbook_users_per_date,
         metric_handbook_pageviews_per_date,
     ]))
-    return metrics
-
-
-def fetch_from_mailchimp():
-    metrics = {}
-
-    api = MailChimpClient(MAILCHIMP_API_KEY)
-    lists = get_collection(api.get('/lists/', count=1), 'lists')
-    metrics['subscribers'] = lists[0]['stats']['member_count']
-
-    urls_clicked = []
-    reports = get_collection(api.get('/reports/', count=1000), 'reports')
-    for report in reports:
-        url = get_link(report, 'click-details')
-        data = api.get(url, count=1000)
-        urls_clicked.extend(get_collection(data, 'urls_clicked'))
-
-    metrics['users_per_external_url'] = sum_clicks_per_external_url(urls_clicked, 'unique_clicks')
-    metrics['pageviews_per_external_url'] = sum_clicks_per_external_url(urls_clicked, 'total_clicks')
     return metrics
 
 
