@@ -46,7 +46,8 @@ $blockquote-toxic-color: $danger;
   margin-bottom: 0;
 }
 
-.blockquote-footer a {
+.blockquote-footer a,
+.blockquote-footer a:visited {
   color: $blockquote-footer-color;
 }
 
