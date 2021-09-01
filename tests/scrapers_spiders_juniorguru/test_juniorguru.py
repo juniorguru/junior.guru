@@ -59,6 +59,7 @@ def test_spider_parse_multiple_locations():
 @pytest.mark.parametrize('value,expected', [
     ('5000 CZK — Annual Flat Rate, first posting (Roční paušál, první inzerát)', 'annual_flat_rate'),
     ('0 CZK — Annual Flat Rate (Roční paušál)', 'annual_flat_rate'),
+    ('0 CZK — Roční paušál, další inzerát', 'annual_flat_rate'),
     ('500 CZK — Standard', 'standard'),
     ('690 CZK — Standard', 'standard'),
     ('600 CZK', 'standard'),

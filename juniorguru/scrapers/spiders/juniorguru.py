@@ -62,7 +62,7 @@ def parse_locations(location):
 def parse_pricing_plan(value):
     if value:
         value = value.strip().lower()
-        if 'flat rate' in value:
+        if 'flat rate' in value or 'paušál' in value.lower():
             return 'annual_flat_rate'
         if not value.startswith('0 czk'):
             return 'standard'
