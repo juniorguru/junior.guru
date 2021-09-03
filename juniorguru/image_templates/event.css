@@ -126,6 +126,11 @@ p {
   line-height: 1.5;
 }
 
+.talk-description a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .talk-description p {
   margin-bottom: var(--spacer-sm);
 }

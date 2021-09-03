@@ -53,28 +53,25 @@
 #    prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
-# - title: "AMA: Mentoři na frontend"
-#   date: "2021-09-29"
-#   description: |
-#     AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Dan a Kate mentorují frontend v CoreSkillu. HTML, CSS, JavaScript, fonty, rychlost načítání, obrázky a nakonec i velké filozofické otázky, jako například _mobile first_, nebo _se středníky nebo bez nich_?! Na vlastní nebezpečí se můžete zeptat i na jQuery.
-#   bio_name: Daniel Srb, Kate Miháliková
-#   bio_title: vývojáři a mentoři, CoreSkill
-#   bio: |
-#     Dan Srb je vývojář se zaměřením na HTML, CSS a návrh uživatelských rozhraní. Jezdí na skládačce a má rád kafe. Kate Miháliková je vývojářka se zaměřením na TypeScript. Hraje si ráda s Arduinem a na první dobrou rozezná jména Pokémonů od buzzwordů a názvů technologií.
-#   bio_links:
-#     - https://coreskill.tech/
-#     - https://github.com/katemihalikova
-#     - https://katemihalikova.cz/
-#     - https://twitter.com/KateMihalikova
-#     - https://www.linkedin.com/in/katemihalikova/
-#     - https://github.com/benabraham
-#     - https://twitter.com/benabraham
-#     - https://www.linkedin.com/in/danielsrb/
-#     - https://www.instagram.com/srbdan/
-#   logo_path: logos/coreskill.svg
-#   speakers:
-#     - 652142810291765248
-#     - 488415538117214220
+- title: "AMA: Mentoři na frontend"
+  date: "2021-09-29"
+  description: |
+    AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Dan a Kate pod značkou [CoreSkill](https://coreskill.tech/) pomáhají budoucím frontendistům a frontendistkám se vším, co potřebují k tomu, aby se jimi co nejdřív stali. Tématy určitě budou HTML, CSS i JavaScript, ale i to, co to frontend je a co frontendisti vlastně všechno dělají a co je minimum pro nalezení první práce.
+  avatar_path: avatars-speakers/dan-kate.jpg
+  bio_name: Daniel Srb, Kate Miháliková
+  bio_title: vývojáři a mentoři, CoreSkill
+  bio: |
+      Dan Srb se zaměřuje na návrh a implementaci webových uživatelských rozhraní. Jezdí na skládačce a má rád dobrou kávu, i když už ji moc nepije. Kate Miháliková je frontedová vývojářka se zaměřením na TypeScript a JavaScript. Baví ji vlaky, hraje si ráda s Arduinem a na první dobrou rozezná jména Pokémonů od buzzwordů a názvů technologií.
+  bio_links:
+    - https://coreskill.tech/
+    - https://github.com/katemihalikova
+    - https://www.linkedin.com/in/katemihalikova/
+    - https://github.com/benabraham
+    - https://www.linkedin.com/in/danielsrb/
+  logo_path: logos/coreskill.svg
+  speakers:
+    - 652142810291765248
+    - 488415538117214220
 
 
 - title: Relační databáze efektivně
