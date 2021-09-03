@@ -15,6 +15,7 @@ EXCLUDE_URLS = [
     'juniorguru.memberful.com',  # HTTP_403, rightfully
     'support.discord.com',  # Discord ¯\_(ツ)_/¯
     'economist.com',  # crawling protection?
+    'udemy.com',  # crawling protection?
 ]
 EXCLUDE_REASONS = [re.compile(r) for r in [
     r'^BLC_UNKNOWN$',  # crawling protection?
