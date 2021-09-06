@@ -20,14 +20,14 @@
 {% endmacro %}
 
 
-{% macro logo(name, filename, url=None, lazy=False) %}
-  <li class="logos-item" title="{{ name }}">
+{% macro logo(name, filename, url=None, lazy=False, class_prefix='logos') %}
+  <li class="{{ class_prefix }}-item" title="{{ name }}">
     {% if url %}
-    <a class="logos-link" href="{{ url }}" target="_blank" rel="noopener"
+    <a class="{{ class_prefix }}-link" href="{{ url }}" target="_blank" rel="noopener"
       data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership">
     {% endif %}
 
-    {{ img('static/images/logos/' + filename, name, 130, 60, class='logos-image', lazy=lazy) }}
+    {{ img('static/images/logos/' + filename, name, 130, 60, class=class_prefix + '-image', lazy=lazy) }}
 
     {% if url %}
     </a>

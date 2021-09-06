@@ -6,18 +6,6 @@
   margin-bottom: 0;
 }
 
-.logos.grayscale .logos-image {
-  filter: grayscale(100%);
-  opacity: .5;
-}
-
-.logos.grayscale a:hover .logos-image,
-.logos.grayscale a:focus .logos-image,
-.logos.grayscale a:active .logos-image {
-  filter: none;
-  opacity: 1;
-}
-
 .logos-item {
   display: flex;
   align-items: center;
@@ -55,4 +43,16 @@
     max-width: 8rem;
     max-height: 4rem;
   }
+}
+
+.logos.grayscale .logos-image {
+  filter: grayscale(100%);
+  opacity: .5;
+}
+
+.logos.grayscale a:hover .logos-image,
+.logos.grayscale a:focus .logos-image,
+.logos.grayscale a:active .logos-image {
+  filter: none;
+  opacity: 1;
 }
