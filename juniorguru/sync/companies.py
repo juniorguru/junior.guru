@@ -3,7 +3,7 @@ from pathlib import Path
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import google_sheets
-from juniorguru.lib.coerce import coerce, parse_text, parse_date, parse_boolean
+from juniorguru.lib.coerce import coerce, parse_boolean_words, parse_text, parse_date, parse_boolean
 from juniorguru.models import Company, db
 from juniorguru.lib.log import get_log
 from juniorguru.lib.images import render_image_file
@@ -49,7 +49,7 @@ def coerce_record(record):
         r'^name$': ('name', parse_text),
         r'^email$': ('email', parse_text),
         r'^filename$': ('filename', parse_text),
-        r'^handbook$': ('is_sponsoring_handbook', parse_boolean),
+        r'^handbook$': ('is_sponsoring_handbook', parse_boolean_words),
         r'^sponsored coupon$': ('has_students', parse_boolean),
         r'^link$': ('link', parse_text),
         r'^coupon$': ('coupon', parse_text),

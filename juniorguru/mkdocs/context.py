@@ -50,6 +50,7 @@ def on_theme_context(context, page, config, files):
     context['bootstrap_icons_file'] = re.search(r'bootstrap-icons.woff2\?\w+', css_path.read_text()).group(0)
 
     context['metrics'] = Metric.as_dict()
+    context['companies_handbook'] = Company.handbook_listing()
 
 
 def hash_file(path):

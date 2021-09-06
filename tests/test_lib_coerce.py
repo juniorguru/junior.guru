@@ -95,8 +95,12 @@ def test_coerce_ptc(value, expected):
     (None, None),
     ('foo', None),
     ('1', None),
-    ('True', None),
-    ('true', None),
+    ('True', True),
+    ('true', True),
+    ('TRUE', True),
+    ('False', False),
+    ('false', False),
+    ('FALSE', False),
     ('yes', True),
     ('no', False),
     ('Yes', True),
@@ -121,6 +125,8 @@ def test_coerce_boolean_words(value, expected):
     ('no', True),
     ('ano', True),
     ('ne', True),
+    ('TRUE', True),
+    ('FALSE', True),
 ])
 def test_coerce_boolean(value, expected):
     assert coerce.parse_boolean(value) is expected
