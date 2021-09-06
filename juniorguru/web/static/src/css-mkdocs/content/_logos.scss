@@ -35,7 +35,7 @@
 
 .logos-caption,
 .logos-caption a {
-  color: $jg-gray;
+  @extend .text-muted;
 }
 
 .logos-caption a:hover,
@@ -45,6 +45,7 @@
 }
 
 .logos-image {
+  display: block;
   width: auto;
   max-width: 6rem;
   height: auto;
@@ -54,4 +55,43 @@
     max-width: 8rem;
     max-height: 4rem;
   }
+}
+
+.logos-handbook {
+  position: relative;
+  padding: ($spacer * 2) 0 $spacer 0;
+  background: $jg-white;
+}
+
+.logos-handbook .logos {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.logos-handbook .logos-image {
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+}
+
+.logos-handbook .logos-caption {
+  position: absolute;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  line-height: $spacer;
+}
+
+.logos-handbook .logos-item {
+  margin-bottom: 0;
+}
+
+.logos-handbook .logos-item:nth-child(2) {
+  margin-left: 0;
+}
+
+.logos-handbook .logos-item:last-child {
+  margin-right: 0;
 }

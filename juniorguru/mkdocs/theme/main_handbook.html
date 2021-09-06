@@ -1,10 +1,22 @@
 {% extends 'main.html' %}
+{% from 'shared.html' import logo with context %}
 
 
 {% block main %}
 <div class="main main-handbook">
   <div class="content-container">
     <main class="content document">
+      <div class="logos-handbook standout-bottom">
+        <ul class="logos">
+          <li class="logos-item logos-caption">
+            <a href="https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/edit?usp=sharing" target="_blank" rel="noopener">Partneři příručky</a>
+          </li>
+          {% for company in companies_handbook %}
+            {{ logo(company.name, company.filename, company.link) }}
+          {% endfor %}
+        </ul>
+      </div>
+
       {% block content %}{{ page.content }}{% endblock %}
     </main>
 

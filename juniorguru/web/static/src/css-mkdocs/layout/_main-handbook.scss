@@ -22,9 +22,10 @@
 
   @include media-breakpoint-up(lg) {
     width: 20vw;
-    padding: $container-padding-x;
     padding-top: $main-spacer;
+    padding-right: $spacer;
     padding-bottom: $main-spacer-double;
+    padding-left: $container-padding-x;
   }
 }
 

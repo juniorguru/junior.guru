@@ -5,8 +5,8 @@ template: main_club.html
 description: Přidej se na junior.guru Discord! Jsme tvoje online programovací parta, skupina, fórum. Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
 
-{% from 'shared.html' import img %}
-{% from 'docs.html' import markdown, blockquote_avatar, blockquote_toxic, logo, lead, event_circle %}
+{% from 'shared.html' import img, logo %}
+{% from 'docs.html' import markdown, blockquote_avatar, blockquote_toxic, lead, event_circle %}
 
 
 <header class="masthead"><div class="masthead-container">
@@ -136,7 +136,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
 {% endcall %}
 <ul class="logos standout">
   <li class="logos-item logos-caption">
-    <a href="https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/edit?usp=sharing" target="_blank" rel="noopener">Firemní partneři</a>:
+    <a href="https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/edit?usp=sharing" target="_blank" rel="noopener">Firemní partneři</a>
   </li>
   {% for company in companies %}
     {{ logo(company.name, company.filename, company.link) }}
@@ -144,7 +144,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
 </ul>
 <ul class="logos grayscale standout">
   <li class="logos-item logos-caption">
-    <a href="{{ pages|docs_url('faq.md')|url }}#komunity">Komunitní partneři</a>:
+    <a href="{{ pages|docs_url('faq.md')|url }}#komunity">Komunitní partneři</a>
   </li>
   {{ logo('Česko.Digital', 'ceskodigital.svg', 'https://cesko.digital/') }}
   {{ logo('DigiKoalice', 'digikoalice.svg', 'https://digikoalice.cz/') }}

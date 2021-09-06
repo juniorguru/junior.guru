@@ -29,7 +29,7 @@
   color: $primary;
 }
 
-.document *:last-child {
+.document > *:last-child {
   margin-bottom: 0;
 }
 
