@@ -22,11 +22,16 @@
 
   @include media-breakpoint-up(lg) {
     flex-grow: 1;
-    min-width: 25%;
+    min-width: $main-toc-width;
     padding-top: $main-spacer;
     padding-right: $spacer;
     padding-bottom: $main-spacer-double;
     padding-left: $container-padding-x;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    flex-grow: 0;
+    width: $main-toc-width;
   }
 }
 

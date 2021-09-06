@@ -27,7 +27,9 @@
 
     <nav id="toc" class="toc">
       <div class="toc-container">
-        <h3 class="toc-heading">Obsah příručky</h3>
+        <h3 class="toc-heading">
+          {{ 'journals'|icon }} Příručka
+        </h3>
         <ul class="toc-list">
           {% for toc_sibling in page.parent.children %}
             <li class="toc-item{% if toc_sibling == page %} active{% endif %}">
