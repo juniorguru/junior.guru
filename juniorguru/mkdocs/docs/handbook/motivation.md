@@ -5,7 +5,7 @@ description: K čemu se hodí programování? Není jen pro ty, kdo chtějí pra
 template: main_handbook.html
 ---
 
-{% from 'docs.html' import lead, blockquote %}
+{% from 'docs.html' import lead, blockquote, blockquote_avatar %}
 
 
 # Proč se učit programování
@@ -29,9 +29,9 @@ Programovat znamená umět počítačům říkat, jak za nás mají dělat nudn�
 
 Co programování není?
 
-*   **Věda** — Nemusíš skvěle ovládat ani matematiku, ani fyziku, ani žádný jiný vědní obor.
-*   **Servis** — Spravování tiskáren v kanclu nebo nastavování e-mailových schránek.
-*   **Magie** — Je to spíš dovednost a zručnost, stejně jako umět vyrobit stůl nebo uvařit dobré jídlo.
+-   **Věda** — Nemusíš skvěle ovládat ani matematiku, ani fyziku, ani žádný jiný vědní obor.
+-   **Servis** — Spravování tiskáren v kanclu nebo nastavování e-mailových schránek.
+-   **Magie** — Je to spíš dovednost a zručnost, stejně jako umět vyrobit stůl nebo uvařit dobré jídlo.
 
 ## Proč se to učit
 
@@ -45,7 +45,7 @@ I když nakonec nebudeš vůbec programovat, hodí se rozumět tomu, jak tato pr
 
 S příchodem covidu-19 se navíc ocitáme ve světě, ve kterém bude široká veřejnost [vědět co je 3D tiskárna](https://josefprusa.cz/od-navrhu-k-hromadnemu-3d-tisku-zdravotnickych-stitu-behem-tri-dnu/), jak navázat videohovor, sdílet dokumenty, hrát online hry, nebo že lze na dálku učit. **I pokud přestanou omezení, budou lidé tyto vymoženosti používat dál.** Mnohé firmy, školy, domácnosti, ale i části státu procházejí urychlenou „digitální transformací“. Společnosti, které budou potřebovat zefektivnit náklady, se obrátí k automatizaci, přechodu na technologická řešení nebo práci z domova. Stoupne hodnota lidí, kteří zvládnou s technologiemi pracovat. Může to být navíc východisko pro ty, kteří během opatření přicházejí o obživu.
 
-{% call blockquote('Čekají nás velké strukturální změny. Cestovní ruch bude zasažen na dlouho. Ukazuje se, že celá řada věcí jde dělat digitálně a online. Celá řada obchodních cest se dá řešit online.') %}
+{% call blockquote_avatar('Čekají nás velké strukturální změny. Cestovní ruch bude zasažen na dlouho. Ukazuje se, že celá řada věcí jde dělat digitálně a online. Celá řada obchodních cest se dá řešit online.', 'danuse-nerudova.jpg', 'Danuše Nerudová') %}
   Danuše Nerudová, rektorka MENDELU a ekonomka, v [rozhovoru pro Český rozhlas](https://plus.rozhlas.cz/uz-nemusime-byt-pouhou-montovnou-cekam-velke-zmeny-i-v-globalnich-dodavatelskych-8180919)
 {% endcall %}
 
@@ -55,7 +55,7 @@ Při programování se také trénuješ v [informatickém myšlení](https://imy
 
 Programování není cíl, ale nástroj — jako šroubovák nebo matematika. Dokáže automatizovat nudnou, opakující se práci. Bude se ti proto hodit, ať už děláš v kanceláři nebo koukáš do mikroskopu a počítáš bakteriím nožičky.
 
-{% call blockquote('Celá farma jede přes počítač. Chladicí boxy i výtopný systém ve fóliovnících jsou naprogramovány na přesnou teplotu, online jede i objednávkový systém, tedy prodej květin.') %}
+{% call blockquote_avatar('Celá farma jede přes počítač. Chladicí boxy i výtopný systém ve fóliovnících jsou naprogramovány na přesnou teplotu, online jede i objednávkový systém, tedy prodej květin.', 'karolina-habova.jpg', 'Karolína Hábová') %}
   Karolína Hábová z květinové farmy [LoukyKvět](https://www.loukykvet.cz/) v [rozhovoru pro Forbes](https://forbes.cz/kvetinarstvi-online-mlady-par-farmaru-dela-revoluci-v-prodeji-kvetin/)
 {% endcall %}
 
@@ -71,9 +71,11 @@ Pokud chceš mít programování jako pomocníka, tento web ti na dalších str�
 
 Průměrná mzda programátorů je 50.000 Kč a [těch zkušených je dlouhodobě nedostatek](https://www.czso.cz/csu/czso/na-trhu-je-nedostatek-ict-odborniku). Vysokoškolský diplom po tobě většinou nikdo nevyžaduje, můžeš mít pružnou pracovní dobu, můžeš pracovat na dálku. Jestli v roce {{ now.year }} existuje výtah k lepší životní úrovni, je to IT. Zkušenějším programátorům navíc nehrozí, že by měli v blízké době problém sehnat si práci, a to i přes ekonomický dopad, který může mít covid-19:
 
-*   V roce 2018 rostlo IT v Evropě [5× rychleji než vše ostatní](https://2018.stateofeuropeantech.com/). Takto rozjetý vlak se nezastaví, zvlášť když není zasažen přímo a podílí se dokonce na řešení krize.
-*   Před krizí [měly dvě třetiny IT firem v Česku nedostatek lidí a poptávka stále rostla](https://www.czso.cz/csu/czso/na-trhu-je-nedostatek-ict-odborniku). I pokud část firem zmizí a bude na trhu více lidí hledajících práci, programátorů bude pořád nedostatek.
-*   Oproti jiným oborům je u IT minimální pokles poptávky, někde je dokonce i nárůst — viz např. [data od profesia.sk](https://public.tableau.com/profile/profesia.analytics4840#!/vizhome/ProfesiaReport/Covid?publish=yes), největšího slovenského portálu s nabídkami práce.
+-   V roce 2018 rostlo IT v Evropě [5× rychleji než vše ostatní](https://2018.stateofeuropeantech.com/). Takto rozjetý vlak se nezastaví, zvlášť když není zasažen přímo a podílí se dokonce na řešení krize.
+
+-   Před krizí [měly dvě třetiny IT firem v Česku nedostatek lidí a poptávka stále rostla](https://www.czso.cz/csu/czso/na-trhu-je-nedostatek-ict-odborniku). I pokud část firem zmizí a bude na trhu více lidí hledajících práci, programátorů bude pořád nedostatek.
+
+-   Oproti jiným oborům je u IT minimální pokles poptávky, někde je dokonce i nárůst — viz např. [data od profesia.sk](https://public.tableau.com/profile/profesia.analytics4840#!/vizhome/ProfesiaReport/Covid?publish=yes), největšího slovenského portálu s nabídkami práce.
 
 IT samozřejmě neexistuje ve vzduchoprázdnu a ostatní obory potřebuje. Vyrábí nástroje a tyto nástroje musí mít kdo používat. **Pro programátory samotné to ale není takový problém.** Když přestane fungovat prodej letenek, mohou jít programovat třeba pro banky.
 
@@ -187,10 +189,13 @@ IT ale naštěstí umožňuje mnoho způsobů, jak se uplatnit i jinak, než jen
 
 Na spoustu věcí jsou dnes už hotová řešení, polotovary, služby. Některé dělají vše za tebe („No Code“ služby), jiné můžeš zadarmo stáhnout, nainstalovat, zprovoznit („open source“ řešení). Vytvořit dnes od základů obstojný web je práce pro tým profesionálů. Dělá se to zpravidla pouze v případě, kdy má zadavatel speciální požadavky a tedy se mu vyplatí vytvářet něco zcela nového. S největší pravděpodobností nadstandardní požadavky nemáš a **nemá pro tebe smysl se učit programovat kvůli něčemu, co lze za dvě odpoledne „naklikat“**. Používání polotovarů je v IT zcela běžné a dělají to i lidé, kteří by danou věc naprogramovat dokázali:
 
-*   **Je to ekonomičtější.** Není potřeba vymýšlet znovu kolo. Místo stovek hodin práce programátorů se něco jen pokliká, poladí, nastaví, a je to.
-*   **Lze to lépe udržovat.** Ať už řešení v počátku nastaví kdokoliv, jeho standardizovaná povaha umožňuje, aby se v něm posléze zorientoval i někdo jiný. Zároveň tvůrci polotovaru vydávají stále nové verze, které např. ošetřují bezpečnostní a jiné chyby.
-*   **Je to kvalitnější.** Neplatí jako u vaření, že polotovar je horší, než vlastní výtvor. V tomto případě šéfkuchaři z celého světa roky ladili a vylepšovali něco, co má lákavou barvu, zdravé přísady a vysoké nutriční hodnoty. Všeho je tam tak akorát, aby to chutnalo většině lidí. Sebelepší jednotlivec by těžko dosáhl stejného výsledku.
-*   **Je to bezpečnější.** Tady platí předchozí bod dvojnásobně. V oblasti přihlašování, uchovávání hesel apod. není radno vymýšlet nic na koleně, protože je téměř jistá šance, že jednotlivec nedomyslí všechny hrozby. Polotovary mají toto vyřešené dle oborových standardů a pokud se přece jen najde bezpečnostní díra, tvůrci se ji snaží hned zalepit.
+-   **Je to ekonomičtější.** Není potřeba vymýšlet znovu kolo. Místo stovek hodin práce programátorů se něco jen pokliká, poladí, nastaví, a je to.
+
+-   **Lze to lépe udržovat.** Ať už řešení v počátku nastaví kdokoliv, jeho standardizovaná povaha umožňuje, aby se v něm posléze zorientoval i někdo jiný. Zároveň tvůrci polotovaru vydávají stále nové verze, které např. ošetřují bezpečnostní a jiné chyby.
+
+-   **Je to kvalitnější.** Neplatí jako u vaření, že polotovar je horší, než vlastní výtvor. V tomto případě šéfkuchaři z celého světa roky ladili a vylepšovali něco, co má lákavou barvu, zdravé přísady a vysoké nutriční hodnoty. Všeho je tam tak akorát, aby to chutnalo většině lidí. Sebelepší jednotlivec by těžko dosáhl stejného výsledku.
+
+-   **Je to bezpečnější.** Tady platí předchozí bod dvojnásobně. V oblasti přihlašování, uchovávání hesel apod. není radno vymýšlet nic na koleně, protože je téměř jistá šance, že jednotlivec nedomyslí všechny hrozby. Polotovary mají toto vyřešené dle oborových standardů a pokud se přece jen najde bezpečnostní díra, tvůrci se ji snaží hned zalepit.
 
 Jestliže se učíš programovat a chceš si to na tvorbě e-shopu jen vyzkoušet, tak v pohodě, klidně si do šuplíku programuj vlastní e-shop. Pokud je ale tvým cílem provozovat použitelný e-shop, neprogramuj si jej, nevynalézej kolo, použij něco hotového. Tento web sice chce lidem ukázat cestu k programování, ale ne za každou cenu, z nesmyslných důvodů.
 
