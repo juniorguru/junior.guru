@@ -21,7 +21,8 @@
   background: $jg-blue-light;
 
   @include media-breakpoint-up(lg) {
-    width: 20vw;
+    flex-grow: 1;
+    min-width: 25%;
     padding-top: $main-spacer;
     padding-right: $spacer;
     padding-bottom: $main-spacer-double;
@@ -119,9 +120,19 @@
   background: $jg-white;
 
   @include media-breakpoint-up(lg) {
-    max-width: map-get($container-max-widths, md);
+    max-width: $main-document-width;
     padding-right: $container-padding-x;
     padding-left: $main-spacer;
     margin: 0;
   }
+}
+
+.main-handbook .document h2 {
+  position: sticky;
+  top: 0;
+  padding-top: $headings-margin-bottom;
+  padding-bottom: $headings-margin-bottom;
+  margin-top: $main-spacer - $headings-margin-bottom;
+  margin-bottom: 0;
+  background: $jg-white;
 }

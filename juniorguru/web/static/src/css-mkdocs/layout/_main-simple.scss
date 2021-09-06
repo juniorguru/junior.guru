@@ -1,6 +1,6 @@
 .main-simple {
   @extend .container-lg;
-  max-width: map-get($container-max-widths, md);
+  max-width: $main-document-width;
 }
 
 .main-simple .content {
