@@ -74,7 +74,7 @@ nav:
 
 markdown_extensions:
   - toc:
-      toc_depth: '2-3'
+      toc_depth: '2-2'
       permalink: '#'
       permalink_title: Odkaz přímo na tuto sekci
   - tables

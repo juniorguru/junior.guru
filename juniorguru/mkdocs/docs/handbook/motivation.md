@@ -14,6 +14,7 @@ template: main_handbook.html
 K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. Pomáhá vědcům, úředníkům nebo novinářům — a práci může usnadnit i tobě.
 {% endcall %}
 
+
 ## Co je programování
 
 Programovat znamená umět počítačům říkat, jak za nás mají dělat nudné, opakující se úkony. Začíná to na tom, že mohou počítat čísla z tabulek nebo odesílat e-maily, a končí samořídícimi auty. Jak vypadá programování v praxi?
@@ -87,6 +88,7 @@ Je ovšem důležité počítat s tím, že **příprava ti může zabrat i dva 
 {{ blockquote('Nauč se programovat, firmy v IT berou z nedostatku lidí každého, kdo má jen zájem. Do začátku si řekni aspoň o pade.', 'český programátorský folklór') }}
 
 Pokud se chceš programováním živit, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](/learn/), [jak získat potřebnou praxi](/practice/) nebo [jak si hledat svou první práci](/candidate-handbook/). Kromě toho je tady i [stránka s nabídkami práce](/jobs/).
+
 
 ## Mýty o programování
 
@@ -179,3 +181,61 @@ Jak už naznačuje předchozí odstavec, programátorská profese má i své nev
 {% endcall %}
 
 IT ale naštěstí umožňuje mnoho způsobů, jak se uplatnit i jinak, než jen sezením u počítače a na schůzích. Můžeš se časem přesunout k učení a mentorování, psaní technických textů, pořádání komunitních akcí, začít přednášet na konferencích, konzultovat, vést lidi… Možností, jak si programování namíchat něčím jiným nebo jak zcela změnit hlavní zaměření své práce, je v rámci IT nepřeberně.
+
+
+## Jde to i „bez kódu“
+
+Na spoustu věcí jsou dnes už hotová řešení, polotovary, služby. Některé dělají vše za tebe („No Code“ služby), jiné můžeš zadarmo stáhnout, nainstalovat, zprovoznit („open source“ řešení). Vytvořit dnes od základů obstojný web je práce pro tým profesionálů. Dělá se to zpravidla pouze v případě, kdy má zadavatel speciální požadavky a tedy se mu vyplatí vytvářet něco zcela nového. S největší pravděpodobností nadstandardní požadavky nemáš a **nemá pro tebe smysl se učit programovat kvůli něčemu, co lze za dvě odpoledne „naklikat“**. Používání polotovarů je v IT zcela běžné a dělají to i lidé, kteří by danou věc naprogramovat dokázali:
+
+*   **Je to ekonomičtější.** Není potřeba vymýšlet znovu kolo. Místo stovek hodin práce programátorů se něco jen pokliká, poladí, nastaví, a je to.
+*   **Lze to lépe udržovat.** Ať už řešení v počátku nastaví kdokoliv, jeho standardizovaná povaha umožňuje, aby se v něm posléze zorientoval i někdo jiný. Zároveň tvůrci polotovaru vydávají stále nové verze, které např. ošetřují bezpečnostní a jiné chyby.
+*   **Je to kvalitnější.** Neplatí jako u vaření, že polotovar je horší, než vlastní výtvor. V tomto případě šéfkuchaři z celého světa roky ladili a vylepšovali něco, co má lákavou barvu, zdravé přísady a vysoké nutriční hodnoty. Všeho je tam tak akorát, aby to chutnalo většině lidí. Sebelepší jednotlivec by těžko dosáhl stejného výsledku.
+*   **Je to bezpečnější.** Tady platí předchozí bod dvojnásobně. V oblasti přihlašování, uchovávání hesel apod. není radno vymýšlet nic na koleně, protože je téměř jistá šance, že jednotlivec nedomyslí všechny hrozby. Polotovary mají toto vyřešené dle oborových standardů a pokud se přece jen najde bezpečnostní díra, tvůrci se ji snaží hned zalepit.
+
+Jestliže se učíš programovat a chceš si to na tvorbě e-shopu jen vyzkoušet, tak v pohodě, klidně si do šuplíku programuj vlastní e-shop. Pokud je ale tvým cílem provozovat použitelný e-shop, neprogramuj si jej, nevynalézej kolo, použij něco hotového. Tento web sice chce lidem ukázat cestu k programování, ale ne za každou cenu, z nesmyslných důvodů.
+
+### Tabulky a dokumenty
+
+Říká se, že **nejrozšířenějším programovacím jazykem na světě jsou vzorečky v Excelu**. Zní to možná jako vtip, ale není to vtip. Možná je zbytečné učit se programovat v něčem jiném, pokud se tvá práce odehrává v tabulkách a odehrávat se v nich ještě dlouho bude. Nauč se pořádně vzorce, makra, funkce. Excel je velmi silný nástroj a jeho dobrá znalost se ti nikdy neztratí. I pokud budeš chtít později přejít k „opravdovému“ programování, znalost maker apod. ti bude sloužit jako základ, na kterém budeš moci stavět.
+
+Podobně se dá udělat velká paráda i s [Google Apps Script](https://www.google.com/script/start/) a automatizací Google dokumentů, které mají tu výhodu, že jsou online a mohou v sobě snadněji propojovat živá data jinde z internetu (např. aktuální kurzy měn).
+
+### Automatizace
+
+Pokud by se ti hodilo **propojit různé internetové služby tak, aby si podle nějakého scénáře automaticky posílaly informace**, i na to existují hotové nástroje. Můžeš třeba pokaždé, když se objeví platba na tvém bankovním účtu, uložit zůstatek do tabulky a následně si ještě nechat poslat zprávu na mobil. V mluvě velkých firem se tomu říká [RPA](https://cs.wikipedia.org/wiki/Robotick%C3%A1_automatizace_proces%C5%AF) a prý je po tom dnes celkem poptávka. Následující služby umožňují takové scénáře programovat klikáním, přetahováním kurzorem a vyplňováním formulářů, tedy zcela bez psaní kódu v tradičních programovacích jazycích.
+
+### Tvorba webu, e-shopu
+
+Jestli chceš psát blog, provozovat e-shop nebo vytvořit webovky pro květinářství kamarádovy tety, **nemusíš se nutně učit programovat**. Najdi vhodnou No Code platformu nebo se nauč pracovat s nějakým open source řešením. Obojího je dnes neskutečné množství, ale tady jsou alespoň tři tipy na ty nejpoužívanější:
+
+### Skládat z dílů nebo programovat?
+
+K čemu je dobré umět programovat věci od základů, když už polotovary existují na vše podstatné? **Představ si běžné programovací jazyky jako auto a hotová řešení jako MHD.** Auto je drahé, musíš jej řídit, parkovat a pečovat o něj, ale umožní ti jezdit přesně tak, jak chceš. Jezdit autobusem sice vyžaduje rozumět systému jízdenek a přesedat mezi spoji, ale i tak je to levné, jednoduché a dostatečně efektivní pro spoustu lidí. Pokud nevezeš náklad, je neekonomické jezdit autem trasu, která je dobře obsluhovaná MHD.
+
+Stejně tak je nesmysl, aby někdo od základů programoval fotogalerii pro kosmetický salon. Ale pak jsou tady Alza nebo Rohlík, které se s běžným řešením nespokojí. Velký, složitý, nebo jinak unikátní byznys zaměstná i celý tým programátorů, kteří vše vyvíjí na míru. **Úspěšnou kariéru přitom můžeš udělat v obou případech.** Specialista na WordPress, jenž umí skládat weby z velkých dílů, se uživí stejně dobře jako PHP programátorka, která umí ty díly vytvořit.
+
+Tento web je o tom, jak se naučit software vyrábět od základů, takže další tipy už budeš muset najít jinde. Pokud se vidíš spíš mezi polotovary než u psaní kódu, zkus se na další informace poptat třeba na fóru [Webtrh](https://webtrh.cz/).
+
+
+## Programování pro děti
+
+I když je v názvu tohoto webu slovo _junior_, není vhodný k tomu, aby se podle něj učily programovat děti. Slovem junior se označují začátečníci na pracovním trhu a tento web ukazuje cestu k programování a kariéře v IT dospělým, případně dospívajícím lidem. Pokud chceš programovat s dětmi a trénovat tak jejich [informatické myšlení](https://imysleni.cz/informaticke-mysleni/co-je-informaticke-mysleni), následující odkazy tě nasměrují na stránky, které jsou pro ten účel vhodnější.
+
+**Programování pro děti se odehrává v barevném prostředí, kde jde s dětmi vytvářet zábavné příběhy, hry, animace.** Rozhodně by nemělo spočívat v psaní písmenek na černou obrazovku nebo v práci s Wordem.
+
+Pokud tě programování pro děti začně bavit fakt hodně, můžeš se inspirovat u [Ivy a Martina](https://cz.pycon.org/2018/programme/detail/talk/13/) nebo u [Luboše](https://blog.zvestov.cz/software%20development/2018/10/29/jak-jsem-zacal-s-krouzkem-programovani.html) a **zkusit něco zorganizovat i pro děti z okolí**. Potom by se ti mohla hodit [příručka pro pedagogy a rodiče od Mirka Suchého](https://github.com/xsuchy/programovani_pro_deti/#readme).
+
+
+## Programování CNC strojů
+
+CNC jsou programovatelné průmyslové stroje, které umí frézovat, vrtat, soustružit, řezat, apod. Lidem, kteří těmto strojům umí zadávat úkoly a tvořit na nich výrobky, se říká CNC programátoři. **Pracují jak se samotným strojem, tak i s počítačem, tím ale podobnost s klasickým programováním končí.** Pro lepší představu o této profesi může sloužit [reportáž Jihočeské televize](https://www.youtube.com/watch?v=uiDdWbSY04s).
+
+{% call blockquote('Obor mechanik seřizovač-programátor byl hlavně o mechanik, pak lehce o seřizovač a takřka vůbec o programátor. A když, tak programovat CNC, což není rozhodně totéž jako programovat dejme tomu aplikace pro web.') %}
+  Marek Dlabáček, autor článku [Já, Python a Roští](https://blog.python.cz/ja-python-a-rosti)
+{% endcall %}
+
+Tento web se zabývá vytvářením softwaru, tedy programů pro počítače nebo mobily. Pokud toužíš programovat CNC, mrkni se třeba [do magazínu Factory Automation](https://factoryautomation.cz/jak-se-stat-cnc-programatorem-mame-6-tipu/), kde k tomu něco mají. Jestliže chceš tvořit software, jsi tady správně.
+
+## Všechny motivační příběhy
+
+Pod některými kapitolami můžeš narazit na motivační příbehy lidí jako ty, kteří se bez předchozí znalosti naučili programovat, programování jim v něčem pomohlo, nebo si dokonce v IT našli i práci. Tady jsou všechny pohromadě. Pokud víš o dalších, které tu nejsou, napiš prosím na {{ 'ahoj@junior.guru'|email_link }}.
