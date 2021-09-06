@@ -80,18 +80,7 @@
 
 
 /*
-  CUSTOM: LAYOUT
-*/
-
-@import "./layout/header";
-@import "./layout/main-simple";
-@import "./layout/main-handbook";
-@import "./layout/main-sections";
-@import "./layout/footer";
-
-
-/*
-  CUSTOM: DOCUMENT
+  CUSTOM: CONTENT AS A DOCUMENT
 */
 
 @import "./content/document";
@@ -111,6 +100,18 @@
 @import "./content/pulse";
 @import "./content/see-also";
 @import "./content/event-circles";
+
+
+/*
+  CUSTOM: LAYOUT
+*/
+
+@import "./layout/navbar";
+@import "./layout/navbar-partners";
+@import "./layout/main-simple";
+@import "./layout/main-handbook";
+@import "./layout/main-sections";
+@import "./layout/footer";
 
 
 /*

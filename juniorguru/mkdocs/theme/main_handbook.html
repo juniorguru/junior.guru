@@ -8,7 +8,7 @@
     <h3 class="navbar-partners-heading">
       <span>Partneři <span class="navbar-partners-nonessential">příručky</span></span>
     </h3>
-    <ul class="navbar-partners-list logos bar">
+    <ul class="navbar-partners-list">
       {% for company in companies_handbook %}
         {{ logo(company.name, company.filename, company.link) }}
       {% endfor %}

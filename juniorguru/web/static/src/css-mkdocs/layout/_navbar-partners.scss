@@ -1,52 +1,3 @@
-.navbar-light {
-  background-color: $jg-yellow;
-}
-
-.navbar-container {
-  @extend .container-xxl;
-}
-
-.navbar-brand {
-  padding: 0;
-}
-
-.nav-link:hover,
-.nav-link:focus,
-.nav-link:active,
-.nav-link.active {
-  text-decoration: underline;
-}
-
-.nav-link.active {
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.navbar-buttons {
-  @extend .order-md-last;
-}
-
-.nav-foldable {
-  position: relative;
-  top: $navbar-padding-y;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  width: 100vw;
-  margin-right: -1 * $container-padding-x;
-  margin-left: -1 * $container-padding-x;
-  border-top: 1px solid $jg-yellow-dark;
-
-  @include media-breakpoint-up(md) {
-    position: static;
-    top: 0;
-    justify-content: left;
-    width: auto;
-    margin-right: auto;
-    margin-left: 0;
-    border-top: none;
-  }
-}
-
 .navbar-partners {
   position: relative;
   top: $navbar-padding-y;
@@ -97,7 +48,61 @@
 }
 
 .navbar-partners-list {
+  @extend .logos;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  width: 100%;
   max-width: $main-document-width;
   padding: 0 $spacer;
   background: $jg-white;
+
+  @include media-breakpoint-up(lg) {
+    justify-content: space-evenly;
+  }
+}
+
+.navbar-partners-list .logos-item {
+  margin-bottom: 0;
+}
+
+.navbar-partners-list .logos-item:first-child {
+  margin-left: 0;
+}
+
+.navbar-partners-list .logos-item:last-child {
+  margin-right: 0;
+}
+
+.navbar-partners-list .logos-link {
+  padding: $navbar-padding-y 0;
+}
+
+.navbar-partners-list .logos-image {
+  width: 100%;
+  max-height: map-get($spacers, 3);
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+
+  @include media-breakpoint-up(md) {
+    max-height: map-get($spacers, 4);
+  }
+}
+
+.navbar-partners-list .logos-caption {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: flex;
+    width: 25%;
+    max-width: 25%;
+    margin: 0;
+    font-size: $sub-sup-font-size;
+    white-space: normal;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: $small-font-size;
+  }
 }
