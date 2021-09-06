@@ -100,7 +100,7 @@ Některé představy o programování a programátorské profesi nemají moc spo
 
 Programování není balet ani hokej, začít se dá opravdu v jakémkoliv věku. Někdo se k programování dostal už v pubertě a pokud je tobě přes třicet, můžeš váhat, jestli má vůbec smysl se o něco pokoušet. Realita je však taková, že těm, kteří začali v patnácti, se už zas tak moc programovat nechce, nebo se na něco specializovali. Jinými slovy, budete soutěžit v jiných ligách a místa je dost pro všechny. Nejspíš se už nestihneš stát programátorskou megahvězdou, byť ani to není zcela vyloučeno, ale normální práci v oboru si v pohodě najdeš.
 
-{% call blockquote('S programováním jsem začala ve 30, při rodičovské. Hrozně mě to baví, nejradši bych u toho strávila 24h denně. Začít se dá v každém věku.') %}
+{% call blockquote_avatar('S programováním jsem začala ve 30, při rodičovské. Hrozně mě to baví, nejradši bych u toho strávila 24h denně. Začít se dá v každém věku.', 'iveta-cesalova.jpg', 'Iveta Česalová') %}
   Iveta Česalová, bývalá účetní, absolventka začátečnického kurzu [PyLadies](https://pyladies.cz/)
 {% endcall %}
 
@@ -110,7 +110,7 @@ Programování není balet ani hokej, začít se dá opravdu v jakémkoliv věku
 
 Častým omylem je představa, že potřebuješ talent na techniku, nebo konkrétně přímo na matematiku. Kromě vysoce specializovaných pozic programátoři při své každodenní práci nic složitého nepočítají. Věda, která za programováním stojí, tedy informatika, má jistě s matematikou mnoho společného, ale v praxi si většinou vystačíš se základy středoškolských počtů a logickým myšlením. Počítání se při programování využívá podobně jako třeba při truhlařině. Je lepší, když si místo zkoušení od oka umíš věci správně změřit a navrhnout.
 
-{% call blockquote('Z matematiky jsem míval čtyřky a nikdy mě nebavila. Dodnes si beru kalkulačku i na odečítání.') %}
+{% call blockquote_avatar('Z matematiky jsem míval čtyřky a nikdy mě nebavila. Dodnes si beru kalkulačku i na odečítání.', 'honza-javorek.jpg', 'Honza Javorek') %}
   Honza Javorek, profesionální programátor a autor junior.guru
 {% endcall %}
 
@@ -124,7 +124,7 @@ Co se týče nějakého talentu, [žádné speciální předpoklady nepotřebuje
 
 Někoho to možná překvapí, ale k programování není potřeba penis. Neexistuje žádný důvod, proč by žena nemohla být skvělou programátorkou a kdo si to myslí, je ze středověku. Naopak, bez žen bychom [neměli počítače](https://cs.wikipedia.org/wiki/Ada_Lovelace), [nedostali bychom se na Měsíc](https://cs.wikipedia.org/wiki/Margaret_Hamilton) a [nevyfotili bychom černou díru](https://cs.wikipedia.org/wiki/Katie_Boumanov%C3%A1).
 
-{{ blockquote('Když jsem přišla k programu Apollo, nebyly tam žádné jiné ženy, které by psaly software.', 'Margaret H. Hamilton, programátorka softwaru pro cestu člověka na měsíc') }}
+{{ blockquote_avatar('Když jsem přišla k programu Apollo, nebyly tam žádné jiné ženy, které by psaly software.', 'margaret-hamilton.jpg', 'Margaret H. Hamilton', 'Margaret H. Hamilton, programátorka softwaru pro cestu člověka na měsíc') }}
 
 Podle ČSÚ je v Česku zatím žen v IT stále méně než v Turecku, ale na zlepšení se intenzivně pracuje. Aktivity jako [PyLadies nebo Czechitas](/learn/#ladies) se snaží programování mezi ženami popularizovat a přichystat jim bezpečné prostředí, v němž si z nich nikdo nebude dělat legraci za to, že položily hloupou otázku, nebo je šovinisticky posílat zpátky k plotně. I kultura IT firem se postupně mění a stává se k ženám příjemnější, a to dokonce i v českém rybníčku, kde se lidé běžně děsí slov jako feminismus nebo diverzita.
 
@@ -144,11 +144,11 @@ Pokud máš možnost studovat informatiku na vysoké škole, jdi do toho! Odradi
 
 To ale většina IT pracovníků nedělá. Běžní zaměstnavatelé po tobě budou chtít vytvářet webové stránky nebo mobilní appky. Ty zhotoví samouk s minimální praxí stejně dobře jako absolvent. K práci v IT tedy [univerzitu nutně mít nemusíš](https://www.youtube.com/watch?v=Tna7J05UoYU&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_). Ještě se občas objeví firma, která z požadavku na VŠ titul nesleví, ale většinou se zaměstnavatelé spokojí s tím, pokud chybějící řádek v životopise vyvážíš dostatečnou praxí na projektech, klidně i v podobě domácích cvičení.
 
-{% call blockquote('Nie každý z nás bude programovať tie roboty čo behajú po Marse. V minulosti možno programovanie bola veľmi špecializovaná záležitosť, ale dnes má tak široký záber, že každý kto chce, si v tom spektre miestečko nájde.') %}
+{% call blockquote_avatar('Nie každý z nás bude programovať tie roboty čo behajú po Marse. V minulosti možno programovanie bola veľmi špecializovaná záležitosť, ale dnes má tak široký záber, že každý kto chce, si v tom spektre miestečko nájde.', 'yablko.jpg', 'yablko') %}
   yablko, lektor online kurzů, ve svém [videu o tom, jestli potřebuješ na programování talent](https://www.youtube.com/watch?v=0VCN-dknx7Q&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_)
 {% endcall %}
 
-{% call blockquote('Firmy hlavne zaujíma, či vieš robiť. Je im viacmenej jedno, kde si sa to naučil. Ak ukážeš niečo skutočné, čo si sám vyrobil, tak koho zaujíma odkiaľ to vieš? Vieš to!') %}
+{% call blockquote_avatar('Firmy hlavne zaujíma, či vieš robiť. Je im viacmenej jedno, kde si sa to naučil. Ak ukážeš niečo skutočné, čo si sám vyrobil, tak koho zaujíma odkiaľ to vieš? Vieš to!', 'yablko.jpg', 'yablko') %}
   yablko, ale v [dalším videu](https://www.youtube.com/watch?v=Tna7J05UoYU&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_), které je o tom, zda potřebuješ na programování školu
 {% endcall %}
 
@@ -178,7 +178,7 @@ Nezřídka dorazíš po práci domů, a byť máš dostatek síly tělesné, z t
 
 Jak už naznačuje předchozí odstavec, programátorská profese má i své nevýhody. Světe div se, je to práce jako každá jiná. Tvoje každodenní spokojenost bude nakonec záviset na konkrétní firmě, projektu, štěstí, šéfech, týmu kolegů a klidně i na tom, co někdo jiný, koho vůbec neznáš, špatně naprogramoval před pěti lety a ty s tím teď musíš pracovat. Budeš bojovat s [psychickou zátěží](http://borisovo.cz/programming-sucks-cz.html), můžeš [zpochybňovat svůj zápal pro věc](https://www.youtube.com/watch?v=IwqN4c2BOFs) a časem i [vyhořet](https://cs.wikipedia.org/wiki/Syndrom_vyho%C5%99en%C3%AD).
 
-{% call blockquote('Programování není něco, co bych milovala. Ne, že bych jej nenáviděla, akorát to prostě nemiluju.') %}
+{% call blockquote_avatar('Programování není něco, co bych milovala. Ne, že bych jej nenáviděla, akorát to prostě nemiluju.', 'sidney-buckner.jpg', 'Sidney Buckner') %}
   Sidney Buckner, programátorka a autorka videa [I Don't Love Being A Software Engineer](https://www.youtube.com/watch?v=IwqN4c2BOFs)
 {% endcall %}
 
@@ -235,7 +235,7 @@ Pokud tě programování pro děti začně bavit fakt hodně, můžeš se inspir
 
 CNC jsou programovatelné průmyslové stroje, které umí frézovat, vrtat, soustružit, řezat, apod. Lidem, kteří těmto strojům umí zadávat úkoly a tvořit na nich výrobky, se říká CNC programátoři. **Pracují jak se samotným strojem, tak i s počítačem, tím ale podobnost s klasickým programováním končí.** Pro lepší představu o této profesi může sloužit [reportáž Jihočeské televize](https://www.youtube.com/watch?v=uiDdWbSY04s).
 
-{% call blockquote('Obor mechanik seřizovač-programátor byl hlavně o mechanik, pak lehce o seřizovač a takřka vůbec o programátor. A když, tak programovat CNC, což není rozhodně totéž jako programovat dejme tomu aplikace pro web.') %}
+{% call blockquote_avatar('Obor mechanik seřizovač-programátor byl hlavně o mechanik, pak lehce o seřizovač a takřka vůbec o programátor. A když, tak programovat CNC, což není rozhodně totéž jako programovat dejme tomu aplikace pro web.', 'marek-dlabacek.jpg', 'Marek Dlabáček') %}
   Marek Dlabáček, autor článku [Já, Python a Roští](https://blog.python.cz/ja-python-a-rosti)
 {% endcall %}
 
