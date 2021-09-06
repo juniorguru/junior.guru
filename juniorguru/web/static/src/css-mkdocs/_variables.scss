@@ -3,3 +3,5 @@ $main-spacer-double: 2 * $main-spacer;
 
 $main-toc-width: 25%;
 $main-document-width: 50rem;
+
+$document-spacer: map-get($spacers, 4);

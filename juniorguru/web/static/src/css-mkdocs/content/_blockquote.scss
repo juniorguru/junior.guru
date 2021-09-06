@@ -1,8 +1,5 @@
 $blockquote-border-width: map-get($border-widths, 5) * 1.5;
-$blockquote-font-size: map-get($font-sizes, 6);
-$blockquote-font-size-md: map-get($font-sizes, 5);
 $blockquote-image-width: map-get($spacers, 5);
-
 $blockquote-toxic-color: $danger;
 
 .blockquote-container {
@@ -22,12 +19,8 @@ $blockquote-toxic-color: $danger;
 
 .blockquote {
   @extend .font-monospace;
-  font-size: $blockquote-font-size;
+  font-size: map-get($font-sizes, 6);
   color: $primary;
-
-  @include media-breakpoint-up(md) {
-    font-size: $blockquote-font-size-md;
-  }
 }
 
 .toxic .blockquote {
@@ -60,7 +53,7 @@ $blockquote-toxic-color: $danger;
   float: left;
   width: $blockquote-image-width;
   height: auto;
-  filter: grayscale(1) contrast(1.3);
+  filter: contrast(1.2);
   border-radius: 100%;
 }
 
