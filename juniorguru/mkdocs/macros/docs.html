@@ -50,15 +50,15 @@
 {% endmacro %}
 
 
-{% macro blockquote_toxic(quote, name, source_name, url) %}
+{% macro blockquote_toxic(quote, caption, url=None) %}
   <div class="blockquote-container toxic icon">
     <figure class="blockquote-content">
       <i class="bi bi-x-circle blockquote-icon"></i>
-      <blockquote class="blockquote" cite="{{ url }}">
+      <blockquote class="blockquote"{% if url %} cite="{{ url }}"{% endif %}>
         <p>{{ quote }}</p>
       </blockquote>
       <figcaption class="blockquote-footer">
-        {{ name }}, <cite>{{ source_name }}</cite>
+        {{ caption }}
       </figcaption>
     </figure>
   </div>
