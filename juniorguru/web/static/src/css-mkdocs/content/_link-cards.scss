@@ -48,12 +48,12 @@
 .card-img-top {
   width: 100%;
   height: auto;
-  filter: contrast(1.2);
-  opacity: .6;
+  filter: grayscale(100%);
+  opacity: .5;
 }
 
 .card:hover .card-img-top {
-  filter: contrast(1.2);
+  filter: grayscale(0%);
   opacity: 1;
 }
 
