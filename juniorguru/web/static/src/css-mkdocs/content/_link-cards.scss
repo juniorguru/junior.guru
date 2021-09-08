@@ -3,7 +3,8 @@
   flex-wrap: wrap;
 }
 
-.card {
+.link-card {
+  @extend .card;
   flex-shrink: 0;
   flex-grow: 0;
   width: 100%;
@@ -29,7 +30,7 @@
   }
 }
 
-.link-cards .card:nth-child(2n) {
+.link-card:nth-child(2n) {
   @include media-breakpoint-up(sm) {
     margin-right: 0;
   }
@@ -39,33 +40,26 @@
   }
 }
 
-.link-cards .card:nth-child(3n) {
+.link-card:nth-child(3n) {
   @include media-breakpoint-up(md) {
     margin-right: 0;
   }
 }
 
-.card-img-top {
+.link-card-image {
+  @extend .card-img-top;
   width: 100%;
   height: auto;
   filter: grayscale(100%);
   opacity: .5;
 }
 
-.card:hover .card-img-top {
+.link-card:hover .link-card-image {
   filter: grayscale(0%);
   opacity: 1;
 }
 
-.card-title {
-  margin: 0;
-  margin-bottom: map-get($spacers, 2);
-}
-
-.card-title a:visited { color: $link-color; }
-.card-title a:visited:hover { color: $link-hover-color; }
-
-.card-icon {
+.link-card-icon {
   @extend .fs-3;
   position: absolute;
   top: map-get($spacers, 2);
@@ -82,6 +76,23 @@
   box-shadow: rgba($jg-dark, .24) 0 map-get($spacers, 1) map-get($spacers, 1);
 }
 
-.card:hover .card-icon {
+.link-card:hover .link-card-icon {
   background: $link-hover-color;
+}
+
+.link-card-body {
+  @extend .card-body;
+}
+
+.link-card-title {
+  @extend .card-title;
+  margin: 0;
+  margin-bottom: map-get($spacers, 2);
+}
+
+.link-card-title a:visited { color: $link-color; }
+.link-card-title a:visited:hover { color: $link-hover-color; }
+
+.link-card-text {
+  @extend .card-text;
 }

@@ -13,7 +13,7 @@
 {% endmacro %}
 
 
-{% macro blockquote(quote, caption) %}
+{% macro blockquote(quote, caption=None) %}
   <div class="blockquote-container">
     <figure class="blockquote-content">
       <blockquote class="blockquote">
@@ -31,7 +31,7 @@
 {% endmacro %}
 
 
-{% macro blockquote_avatar(quote, avatar_filename, avatar_alt, caption, lazy=True) %}
+{% macro blockquote_avatar(quote, avatar_filename, avatar_alt, caption=None, lazy=True) %}
   <div class="blockquote-container avatar">
     <figure class="blockquote-content">
       {{ img('static/images/avatars-quotes/' + avatar_filename, avatar_alt, 50, 50, class='blockquote-avatar', lazy=lazy) }}
@@ -103,4 +103,28 @@
       {{ event.title }}
     </p>
   </li>
+{% endmacro %}
+
+
+{% macro link_card(title, screenshot_filename, url, caption=None, icon=None, icon_alt=None) %}
+<div class="link-card">
+  {{ img('static/images/screenshots/' + screenshot_filename, title, 640, 360, class='link-card-image') }}
+  {% if icon %}
+    <div class="link-card-icon"{% if icon_alt %} title="{{ icon_alt }}"{% endif %}>
+      <i class="bi bi-{{ icon }}" role="img"{% if icon_alt %} aria-label="{{ icon_alt }}"{% endif %}></i>
+    </div>
+  {% endif %}
+  <div class="link-card-body">
+    <h4 class="link-card-title">
+      <a href="{{ url }}" class="stretched-link">{{ title }}</a>
+    </h4>
+    <p class="link-card-text">
+      {% if caption %}
+        {{ caption }}
+      {% else %}
+        {{ caller()|md|remove_p }}
+      {% endif %}
+    </p>
+  </div>
+</div>
 {% endmacro %}

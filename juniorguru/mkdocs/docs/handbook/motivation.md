@@ -5,7 +5,7 @@ description: K čemu se hodí programování? Není jen pro ty, kdo chtějí pra
 template: main_handbook.html
 ---
 
-{% from 'docs.html' import lead, blockquote, blockquote_avatar, blockquote_toxic %}
+{% from 'docs.html' import lead, blockquote, blockquote_avatar, blockquote_toxic, link_card %}
 {% from 'shared.html' import img %}
 
 
@@ -272,48 +272,24 @@ I když je v názvu tohoto webu slovo _junior_, není vhodný k tomu, aby se pod
 **Programování pro děti se odehrává v barevném prostředí, kde jde s dětmi vytvářet zábavné příběhy, hry, animace.** Rozhodně by nemělo spočívat v psaní písmenek na černou obrazovku nebo v práci s Wordem.
 
 <div class="link-cards">
-  <div class="card">
-    {{ img('static/images/screenshots/code.org.jpg', 'Code.org', 640, 360, class='card-img-top') }}
-    <div class="card-icon">
-      <i class="bi bi-link-45deg" role="img" aria-label="Odkaz"></i>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">
-        <a href="https://code.org/" class="stretched-link">Code.org</a>
-      </h4>
-      <p class="card-text">
-        Programování, které zvládne každý rodič, kroužek, družina.
-      </p>
-    </div>
-  </div>
-  <div class="card">
-    {{ img('static/images/screenshots/scratchjr.org.jpg', 'ScratchJr', 640, 360, class='card-img-top') }}
-    <div class="card-icon">
-      <i class="bi bi-link-45deg" role="img" aria-label="Odkaz"></i>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">
-        <a href="https://www.scratchjr.org/" class="stretched-link">ScratchJr</a>
-      </h4>
-      <p class="card-text">
-        V mobilu nebo na tabletu, pro nejmenší děti.
-      </p>
-    </div>
-  </div>
-  <div class="card">
-    {{ img('static/images/screenshots/scratch.mit.edu.jpg', 'Scratch', 640, 360, class='card-img-top') }}
-    <div class="card-icon">
-      <i class="bi bi-link-45deg" role="img" aria-label="Odkaz"></i>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">
-        <a href="https://scratch.mit.edu/" class="stretched-link">Scratch</a>
-      </h4>
-      <p class="card-text">
-        Vytvoř hru nebo příběh a sdílej je s kamarády.
-      </p>
-    </div>
-  </div>
+  {{ link_card(
+    'Code.org',
+    'code.org.jpg',
+    'https://code.org/',
+    'Programování, které zvládne každý rodič, kroužek, družina.'
+  ) }}
+  {{ link_card(
+    'ScratchJr',
+    'scratchjr.org.jpg',
+    'https://www.scratchjr.org/',
+    'V mobilu nebo na tabletu, pro nejmenší děti.'
+  ) }}
+  {{ link_card(
+    'Scratch',
+    'scratch.mit.edu.jpg',
+    'https://scratch.mit.edu/',
+    'Vytvoř hru nebo příběh a sdílej je s kamarády.'
+  ) }}
 </div>
 
 Pokud tě programování pro děti začně bavit fakt hodně, můžeš se inspirovat u [Ivy a Martina](https://cz.pycon.org/2018/programme/detail/talk/13/) nebo u [Luboše](https://blog.zvestov.cz/software%20development/2018/10/29/jak-jsem-zacal-s-krouzkem-programovani.html) a **zkusit něco zorganizovat i pro děti z okolí**. Potom by se ti mohla hodit [příručka pro pedagogy a rodiče od Mirka Suchého](https://github.com/xsuchy/programovani_pro_deti/#readme).
