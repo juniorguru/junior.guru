@@ -108,7 +108,7 @@ Je ovšem důležité počítat s tím, že **příprava ti může zabrat i dva 
 
 Pokud se chceš programováním živit, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](/learn/), [jak získat potřebnou praxi](/practice/) nebo [jak si hledat svou první práci](/candidate-handbook/). Kromě toho je tady i [stránka s nabídkami práce](/jobs/).
 
-stories_by_tags.synergy|sample(4)
+{{ stories_list(stories_by_tags.synergy|sample(4)) }}
 
 
 ## Mýty o programování

@@ -23,6 +23,25 @@
   <div class="content-container">
     <main class="content document">
       {% block content %}{{ page.content }}{% endblock %}
+
+      <div class="pagination">
+        <div class="pagination-control">
+        {% if previous_page %}
+          <a href="{{ previous_page.url|url }}" class="pagination-button" title="{{ previous_page.title }}">
+            {{ 'arrow-left'|icon }}
+            Předchozí téma
+          </a>
+        {% endif %}
+        </div>
+        <div class="pagination-control">
+        {% if next_page %}
+          <a href="{{ next_page.url|url }}" class="pagination-button" title="{{ next_page.title }}">
+            Další téma
+            {{ 'arrow-right'|icon }}
+          </a>
+        {% endif %}
+        </div>
+      </div>
     </main>
 
     <nav id="toc" class="toc">

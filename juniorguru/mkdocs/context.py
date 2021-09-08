@@ -47,6 +47,10 @@ def on_theme_context(context, page, config, files):
     context['css_hash'] = hash_file(css_path)
     context['bootstrap_icons_file'] = re.search(r'bootstrap-icons.woff2\?\w+', css_path.read_text()).group(0)
 
+    context['parent_page'] = get_parent_page(context['page'])
+    context['previous_page'] = get_sibling_page(context['page'], -1)
+    context['next_page'] = get_sibling_page(context['page'], +1)
+
     context['metrics'] = Metric.as_dict()
     context['companies_handbook'] = Company.handbook_listing()
 
@@ -55,3 +59,21 @@ def hash_file(path):
     hash = hashlib.sha512()
     hash.update(path.read_bytes())
     return hash.hexdigest()
+
+
+def get_parent_page(page):
+    try:
+        return page.parent.children[0]
+    except AttributeError:
+        return None
+
+
+def get_sibling_page(page, offset):
+    try:
+        index = page.parent.children.index(page)
+        sibling_index = max(index + offset, 0)
+        if index == sibling_index:
+            return None
+        return page.parent.children[sibling_index]
+    except (AttributeError, IndexError):
+        return None

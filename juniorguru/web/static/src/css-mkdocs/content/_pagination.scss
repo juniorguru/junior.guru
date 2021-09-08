@@ -1,0 +1,12 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin: (2 * $main-spacer) auto;
+}
+
+.pagination-button {
+  @extend .btn;
+  @extend .btn-outline-dark;
+  margin: 0;
+  background: $jg-white;
+}
