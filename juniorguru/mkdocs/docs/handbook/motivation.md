@@ -256,6 +256,27 @@ Pokud by se ti hodilo **propojit různé internetové služby tak, aby si podle 
 
 Jestli chceš psát blog, provozovat e-shop nebo vytvořit webovky pro květinářství kamarádovy tety, **nemusíš se nutně učit programovat**. Najdi vhodnou No Code platformu nebo se nauč pracovat s nějakým open source řešením. Obojího je dnes neskutečné množství, ale tady jsou alespoň tři tipy na ty nejpoužívanější:
 
+<div class="link-cards">
+  {{ link_card(
+    'WordPress',
+    'wordpress.com.jpg',
+    'https://wordpress.com/',
+    'Nejpoužívanější hotové řešení na weby. Služba za peníze, ale i open source ke stažení.'
+  ) }}
+  {{ link_card(
+    'Wix',
+    'wix.com.jpg',
+    'https://www.wix.com/',
+    'Služba, kde si web vytvoříš klikáním. Jednodušší, ale ne tak univerzální jako WP.'
+  ) }}
+  {{ link_card(
+    'Shopify',
+    'shopify.com.jpg',
+    'https://www.shopify.com/',
+    'Celosvětově nejpoužívanější služba pro vytváření vlastního e-shopu.'
+  ) }}
+</div>
+
 ### Skládat z dílů nebo programovat?
 
 K čemu je dobré umět programovat věci od základů, když už polotovary existují na vše podstatné? **Představ si běžné programovací jazyky jako auto a hotová řešení jako MHD.** Auto je drahé, musíš jej řídit, parkovat a pečovat o něj, ale umožní ti jezdit přesně tak, jak chceš. Jezdit autobusem sice vyžaduje rozumět systému jízdenek a přesedat mezi spoji, ale i tak je to levné, jednoduché a dostatečně efektivní pro spoustu lidí. Pokud nevezeš náklad, je neekonomické jezdit autem trasu, která je dobře obsluhovaná MHD.
