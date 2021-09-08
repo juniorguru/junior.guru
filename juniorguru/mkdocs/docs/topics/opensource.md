@@ -5,7 +5,7 @@ topic_name: opensource
 topic_link_text: open source
 description: Nevyznáš se v open source? Hledáš někoho zkušenějšího, kdo ti poradí a pomůže se zorientovat? Jak někam přispět, kde najít projekt, jak používat GitHub? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---
-{% from 'topic.html' import intro, mentions, members_roll %}
+{% from 'topic.html' import intro, mentions, members_roll with context %}
 
 {{ intro('Nech si poradit s open source', page.meta.description) }}
 

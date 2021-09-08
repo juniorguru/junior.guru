@@ -2,8 +2,8 @@ from pathlib import Path
 
 import jinja2
 
-from mkdocs.utils.filters import tojson
-from mkdocs.utils import normalize_url, get_relative_url
+from mkdocs.utils.filters import tojson, url_filter
+from mkdocs.utils import get_relative_url
 
 from juniorguru.lib import template_filters
 from juniorguru.mkdocs import context as context_hooks
@@ -36,11 +36,14 @@ def on_page_markdown(markdown, page, config, files):
 
     filters = {name: getattr(template_filters, name) for name in TEMPLATE_FILTERS}
     filters['tojson'] = tojson
-    filters['url'] = create_url_filter(page)
+    filters['url'] = url_filter
     filters['md'] = create_md_filter(page, config, files)
     env.filters.update(filters)
 
-    context = {}
+    context = dict(page=page,
+                   config=config,
+                   pages=files,
+                   base_url=get_relative_url('.', page.url))
     context_hooks.on_shared_context(context, page, config, files)
     context_hooks.on_docs_context(context, page, config, files)
 
@@ -67,16 +70,6 @@ def on_env(env, config, files):
 def on_page_context(context, page, config, nav):
     context_hooks.on_shared_context(context, page, config, context['pages'])
     context_hooks.on_theme_context(context, page, config, context['pages'])
-
-
-def create_url_filter(page):
-    def url(value):
-        # Like the built-in MkDocs's own Jinja2 url filter, but this one is to be used with
-        # Jinja2 pre-processing the Markdown files. From user's perspective, there should be
-        # no percieved difference between the built-in filter when working on the theme, and
-        # this one when writing the documents. It should look and feel the same.
-        return normalize_url(value, page=page, base=get_relative_url('.', page.url))
-    return url
 
 
 def create_md_filter(page, config, files):

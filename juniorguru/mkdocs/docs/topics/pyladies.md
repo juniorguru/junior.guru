@@ -5,7 +5,7 @@ topic_name: pyladies
 topic_link_text: PyLadies
 description: Hledáš někoho, kdo má zkušenosti s PyLadies? Jsou jejich materiály kvalitní? Má smysl hlásit se na jejich začátečnický kurz? Jak si poradit s projekty?
 ---
-{% from 'topic.html' import intro, mentions, members_roll %}
+{% from 'topic.html' import intro, mentions, members_roll with context %}
 
 {{ intro('Recenze na PyLadies', page.meta.description) }}
 

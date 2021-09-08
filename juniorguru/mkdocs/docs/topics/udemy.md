@@ -5,7 +5,7 @@ topic_name: udemy
 topic_link_text: Udemy
 description: Hledáš někoho, kdo má zkušenosti s Udemy? Má smysl hlásit se na jejich kurzy? Vyplatí se certifikace?
 ---
-{% from 'topic.html' import intro, mentions, members_roll %}
+{% from 'topic.html' import intro, mentions, members_roll with context %}
 
 {{ intro('Recenze na Udemy', page.meta.description) }}
 

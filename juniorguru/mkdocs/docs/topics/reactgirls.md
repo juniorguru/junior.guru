@@ -5,7 +5,7 @@ topic_name: reactgirls
 topic_link_text: ReactGirls
 description: Hledáš někoho, kdo má zkušenosti s ReactGirls? Má smysl účastnit se jejich akademie? Vyplatí se jimi nabízený mentoring?
 ---
-{% from 'topic.html' import intro, mentions, members_roll %}
+{% from 'topic.html' import intro, mentions, members_roll with context %}
 
 {{ intro('Recenze na ReactGirls', page.meta.description) }}
 

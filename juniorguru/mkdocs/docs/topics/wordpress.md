@@ -5,7 +5,7 @@ topic_name: wordpress
 topic_link_text: WordPress
 description: Učíš se WordPress? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---
-{% from 'topic.html' import intro, mentions, members_roll %}
+{% from 'topic.html' import intro, mentions, members_roll with context %}
 
 {{ intro('Nech si poradit s WordPressem', page.meta.description) }}
 

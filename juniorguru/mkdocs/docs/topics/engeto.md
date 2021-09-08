@@ -5,7 +5,7 @@ topic_name: engeto
 topic_link_text: Engeto
 description: Hledáš někoho, kdo má zkušenosti s Engeto Academy? Má smysl hlásit se na jejich kurzy? Vyplatí se Engeto Pro?
 ---
-{% from 'topic.html' import intro, mentions, members_roll %}
+{% from 'topic.html' import intro, mentions, members_roll with context %}
 
 {{ intro('Recenze na Engeto', page.meta.description) }}
 

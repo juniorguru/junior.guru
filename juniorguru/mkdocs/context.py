@@ -18,10 +18,6 @@ def on_shared_context(context, page, config, files):
 
 @with_db
 def on_docs_context(context, page, config, files):
-    context['page'] = page
-    context['config'] = config
-    context['pages'] = files
-
     context['club_elapsed_months'] = int(round((context['now'] - CLUB_LAUNCH_AT).days / 30))
     context['members'] = ClubUser.avatars_listing()
     context['members_total_count'] = ClubUser.members_count()
