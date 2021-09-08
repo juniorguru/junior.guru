@@ -357,16 +357,15 @@ Pod některými kapitolami můžeš narazit na motivační příbehy lidí jako 
 <div class="stories">
 {% for story in stories %}
   <div class="stories-item">
-    {{ img('static/' + story.image_path, 'Doprovodná fotka k příběhu', 100, 100) }}
-    <h4>
-      <a href="" class="">{{ story.title }}</a>
-    </h4>
+    {{ img('static/' + story.image_path, 'Doprovodná fotka k příběhu', 100, 100, class='stories-image') }}
+    <div class="stories-body">
+      <h4 class="stories-title">
+        <a href="{{ story.url }}" class="">{{ story.title }}</a>
+      </h4>
+      <p class="stories-details">
+        {{ story.publisher }} &mdash; {{ story.date.month }}/{{ story.date.year }}
+      </p>
+    </div>
   </div>
-<!--
-  {{ story.title }}
-  {{ story.url }}
-  {{ story.publisher }} &mdash; {{ story.date.month }}/{{ story.date.year }}
-  {{ story.image_path }}
--->
 {% endfor %}
 </div>
