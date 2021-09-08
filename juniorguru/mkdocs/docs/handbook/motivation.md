@@ -252,6 +252,27 @@ Podobně se dá udělat velká paráda i s [Google Apps Script](https://www.goog
 
 Pokud by se ti hodilo **propojit různé internetové služby tak, aby si podle nějakého scénáře automaticky posílaly informace**, i na to existují hotové nástroje. Můžeš třeba pokaždé, když se objeví platba na tvém bankovním účtu, uložit zůstatek do tabulky a následně si ještě nechat poslat zprávu na mobil. V mluvě velkých firem se tomu říká [RPA](https://cs.wikipedia.org/wiki/Robotick%C3%A1_automatizace_proces%C5%AF) a prý je po tom dnes celkem poptávka. Následující služby umožňují takové scénáře programovat klikáním, přetahováním kurzorem a vyplňováním formulářů, tedy zcela bez psaní kódu v tradičních programovacích jazycích.
 
+<div class="link-cards">
+  {{ link_card(
+    'Integromat',
+    'integromat.com!cs.jpg',
+    'https://www.integromat.com/cs',
+    'Největší platforma, navíc česká, podporuje i místní služby jako Fakturoid nebo Fio Banka.'
+  ) }}
+  {{ link_card(
+    'Zapier',
+    'zapier.com.jpg',
+    'https://zapier.com/',
+    'Druhá nejznámější platforma pro automatizaci.'
+  ) }}
+  {{ link_card(
+    'IFTTT',
+    'ifttt.com.jpg',
+    'https://ifttt.com/',
+    'Alternativa pro ty, kterým nesedí Integromat ani Zapier.'
+  ) }}
+</div>
+
 ### Tvorba webu, e-shopu
 
 Jestli chceš psát blog, provozovat e-shop nebo vytvořit webovky pro květinářství kamarádovy tety, **nemusíš se nutně učit programovat**. Najdi vhodnou No Code platformu nebo se nauč pracovat s nějakým open source řešením. Obojího je dnes neskutečné množství, ale tady jsou alespoň tři tipy na ty nejpoužívanější:

@@ -21,11 +21,11 @@ for list_el in el.cssselect('.list'):
             .strip()
 
         print('\n'.join([
-            f"  {{ link_card(",  # noqa
+            f"  {{{{ link_card(",  # noqa
             f"    '{title}',",
             f"    '{image_filename}',",
             f"    '{url}',",
             f"    '{text}'",
-            f"  ) }}",  # noqa
+            f"  ) }}}}",  # noqa
         ]))
     print('</div>')
