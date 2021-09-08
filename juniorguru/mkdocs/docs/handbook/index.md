@@ -4,7 +4,7 @@ thumbnail_title: Příručka pro juniory
 template: main_handbook.html
 ---
 
-{% from 'docs.html' import lead %}
+{% from 'misc.html' import lead %}
 
 
 # Příručka pro juniory

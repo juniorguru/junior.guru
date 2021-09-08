@@ -96,24 +96,6 @@ plugins:
         on_page_context: juniorguru.mkdocs.hooks:on_page_context
 
 
-# Specifies which filters from juniorguru.lib.template_filters
-# will be available in which Jinja2 templates.
-#
-# (Entirely custom config, which is processed in hooks.py)
-template_filters:
-  shared:
-      - docs_url
-      - email_link
-      - icon
-      - thousands
-  docs:
-      - sample
-      - metric
-      - remove_p
-  theme:
-      - metrics_inc_breakdown
-
-
 # Removed 'strict', because it gives warnings if linking non-existing targets. Once the Flask
 # app is gone, 'strict' should return to be enabled.
 #strict: true

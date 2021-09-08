@@ -3,7 +3,7 @@ title: Zásady ochrany osobních údajů na junior.guru
 thumbnail_title: Zásady ochrany osobních údajů
 ---
 
-{% from 'docs.html' import lead %}
+{% from 'misc.html' import lead %}
 
 
 # Zásady ochrany osobních údajů

@@ -3,7 +3,7 @@ title: Pravidla chování na junior.guru
 thumbnail_title: Pravidla chování
 ---
 
-{% from 'docs.html' import lead %}
+{% from 'misc.html' import lead %}
 
 
 # Pravidla chování

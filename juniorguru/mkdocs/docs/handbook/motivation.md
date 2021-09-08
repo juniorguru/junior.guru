@@ -5,8 +5,7 @@ description: K čemu se hodí programování? Není jen pro ty, kdo chtějí pra
 template: main_handbook.html
 ---
 
-{% from 'docs.html' import lead, blockquote, blockquote_avatar, blockquote_toxic, link_card %}
-{% from 'shared.html' import img %}
+{% from 'misc.html' import img, lead, blockquote, blockquote_avatar, blockquote_toxic, link_card %}
 
 
 # Proč se učit programování
@@ -354,3 +353,12 @@ Tento web se zabývá vytvářením softwaru, tedy programů pro počítače neb
 ## Všechny motivační příběhy
 
 Pod některými kapitolami můžeš narazit na motivační příbehy lidí jako ty, kteří se bez předchozí znalosti naučili programovat, programování jim v něčem pomohlo, nebo si dokonce v IT našli i práci. Tady jsou všechny pohromadě. Pokud víš o dalších, které tu nejsou, napiš prosím na {{ 'ahoj@junior.guru'|email_link }}.
+
+{% for story in stories %}
+<!--
+  {{ story.title }}
+  {{ story.url }}
+  {{ story.publisher }} &mdash; {{ story.date.month }}/{{ story.date.year }}
+  {{ story.image_path }}
+-->
+{% endfor %}

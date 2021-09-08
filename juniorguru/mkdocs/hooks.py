@@ -9,6 +9,18 @@ from juniorguru.lib import template_filters
 from juniorguru.mkdocs import context as context_hooks
 
 
+TEMPLATE_FILTERS = [
+    'docs_url',
+    'email_link',
+    'icon',
+    'thousands',
+    'sample',
+    'metric',
+    'remove_p',
+    'metrics_inc_breakdown',
+]
+
+
 class MarkdownTemplateError(Exception):
     pass
 
@@ -22,8 +34,7 @@ def on_page_markdown(markdown, page, config, files):
     loader = jinja2.FileSystemLoader(macros_dir)
     env = jinja2.Environment(loader=loader, auto_reload=False)
 
-    filters_names = config['template_filters']['shared'] + config['template_filters']['docs']
-    filters = {name: getattr(template_filters, name) for name in filters_names}
+    filters = {name: getattr(template_filters, name) for name in TEMPLATE_FILTERS}
     filters['tojson'] = tojson
     filters['url'] = create_url_filter(page)
     filters['md'] = create_md_filter(page, config, files)
@@ -46,8 +57,10 @@ def on_pre_build(config):
 
 
 def on_env(env, config, files):
-    filters_names = config['template_filters']['shared'] + config['template_filters']['theme']
-    filters = {name: getattr(template_filters, name) for name in filters_names}
+    filters = {name: getattr(template_filters, name) for name in TEMPLATE_FILTERS}
+    def md(markdown):
+        raise NotImplementedError("Using Markdown inside theme templates isn't supported")
+    filters['md'] = md
     env.filters.update(filters)
 
 
