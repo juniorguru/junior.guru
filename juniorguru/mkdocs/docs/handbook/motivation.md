@@ -5,7 +5,7 @@ description: K čemu se hodí programování? Není jen pro ty, kdo chtějí pra
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import img, blockquote, blockquote_avatar, blockquote_toxic, lead, link_card with context %}
+{% from 'macros.html' import img, blockquote, blockquote_avatar, blockquote_toxic, lead, link_card, stories_list with context %}
 
 
 # Proč se učit programování
@@ -77,6 +77,8 @@ Doktoři a vědci přicházejí na to, že když výpočty naprogramují, mohou 
 
 Pokud chceš mít programování jako pomocníka, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](/learn/) nebo [jak si lze programování procvičovat a dále prohlubovat znalosti](/practice/).
 
+{{ stories_list(stories_by_tags.careerswitch|sample(4)) }}
+
 ### Programování jako kariéra
 
 Průměrná mzda programátorů je 50.000 Kč a [těch zkušených je dlouhodobě nedostatek](https://www.czso.cz/csu/czso/na-trhu-je-nedostatek-ict-odborniku). Vysokoškolský diplom po tobě většinou nikdo nevyžaduje, můžeš mít pružnou pracovní dobu, můžeš pracovat na dálku. Jestli v roce {{ now.year }} existuje výtah k lepší životní úrovni, je to IT. Zkušenějším programátorům navíc nehrozí, že by měli v blízké době problém sehnat si práci, a to i přes ekonomický dopad, který může mít covid-19:
@@ -106,6 +108,8 @@ Je ovšem důležité počítat s tím, že **příprava ti může zabrat i dva 
 
 Pokud se chceš programováním živit, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](/learn/), [jak získat potřebnou praxi](/practice/) nebo [jak si hledat svou první práci](/candidate-handbook/). Kromě toho je tady i [stránka s nabídkami práce](/jobs/).
 
+stories_by_tags.synergy|sample(4)
+
 
 ## Mýty o programování
 
@@ -124,6 +128,8 @@ Programování není balet ani hokej, začít se dá opravdu v jakémkoliv věku
 {% endcall %}
 
 Že na věku nezáleží dokazují i následující příběhy reálných lidí, kteří dokázali v pozdějším věku změnit kariéru a dnes se programováním živí.
+
+{{ stories_list(stories_by_tags.age|sample(4)) }}
 
 ### Nemáš na to matematický mozek, chybí ti talent
 
@@ -157,6 +163,8 @@ Někoho to možná překvapí, ale k programování není potřeba penis. Neexis
 ) }}
 
 Podle ČSÚ je v Česku zatím žen v IT stále méně než v Turecku, ale na zlepšení se intenzivně pracuje. Aktivity jako [PyLadies nebo Czechitas](/learn/#ladies) se snaží programování mezi ženami popularizovat a přichystat jim bezpečné prostředí, v němž si z nich nikdo nebude dělat legraci za to, že položily hloupou otázku, nebo je šovinisticky posílat zpátky k plotně. I kultura IT firem se postupně mění a stává se k ženám příjemnější, a to dokonce i v českém rybníčku, kde se lidé běžně děsí slov jako feminismus nebo diverzita.
+
+{{ stories_list(stories_by_tags.women|sample(4)) }}
 
 ### IT je pouze pro geniální asociály
 
@@ -193,6 +201,8 @@ To ale většina IT pracovníků nedělá. Běžní zaměstnavatelé po tobě bu
 Nemysli si ale, že když nepotřebuješ titul z VŠ, nebudeš se muset učit. IT je obor, v němž se naopak nikdy učit nepřestaneš. Ani profíci s dvacetiletými zkušenostmi se nemohou přestat vzdělávat v novinkách.
 
 Zajímavou variantou je zkusit VŠ studovat, vybírat si zajímavé obory a předměty, ale ve chvíli, kdy už ti to přestane dávat smysl, bez pocitu viny odejít. Také se můžeš učit programovat po vlastní ose a studovat při tom úplně jiný obor, který tě zajímá. Svou budoucí kariéru můžeš pak založit na tom, že budeš rozumět např. sociologii nebo školství a dokážeš je propojit s moderními technologiemi.
+
+{{ stories_list(stories_by_tags.student|sample(4)) }}
 
 ### Firmy se o tebe porvou
 
@@ -354,18 +364,4 @@ Tento web se zabývá vytvářením softwaru, tedy programů pro počítače neb
 
 Pod některými kapitolami můžeš narazit na motivační příbehy lidí jako ty, kteří se bez předchozí znalosti naučili programovat, programování jim v něčem pomohlo, nebo si dokonce v IT našli i práci. Tady jsou všechny pohromadě. Pokud víš o dalších, které tu nejsou, napiš prosím na {{ 'ahoj@junior.guru'|email_link }}.
 
-<div class="stories">
-{% for story in stories %}
-  <div class="stories-item">
-    {{ img('static/' + story.image_path, 'Doprovodná fotka k příběhu', 100, 100, class='stories-image') }}
-    <div class="stories-body">
-      <h4 class="stories-title">
-        <a href="{{ story.url }}" class="">{{ story.title }}</a>
-      </h4>
-      <p class="stories-details">
-        {{ story.publisher }} &mdash; {{ story.date.month }}/{{ story.date.year }}
-      </p>
-    </div>
-  </div>
-{% endfor %}
-</div>
+{{ stories_list(stories) }}
