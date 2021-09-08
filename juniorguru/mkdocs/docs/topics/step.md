@@ -5,7 +5,7 @@ topic_name: step
 topic_link_text: STEP
 description: Hledáš někoho, kdo má zkušenosti s počítačovou akademií STEP? Vyplatí se jejich kurzy?
 ---
-{% from 'topic.html' import intro, mentions, members_roll with context %}
+{% from 'macros_topic.html' import intro, mentions, members_roll with context %}
 
 {{ intro('Recenze na STEP IT Academy', page.meta.description) }}
 

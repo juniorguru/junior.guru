@@ -5,7 +5,7 @@ description: K čemu se hodí programování? Není jen pro ty, kdo chtějí pra
 template: main_handbook.html
 ---
 
-{% from 'document.html' import blockquote, blockquote_avatar, blockquote_toxic, lead, link_card with context %}
+{% from 'macros.html' import img, blockquote, blockquote_avatar, blockquote_toxic, lead, link_card with context %}
 
 
 # Proč se učit programování
@@ -354,7 +354,14 @@ Tento web se zabývá vytvářením softwaru, tedy programů pro počítače neb
 
 Pod některými kapitolami můžeš narazit na motivační příbehy lidí jako ty, kteří se bez předchozí znalosti naučili programovat, programování jim v něčem pomohlo, nebo si dokonce v IT našli i práci. Tady jsou všechny pohromadě. Pokud víš o dalších, které tu nejsou, napiš prosím na {{ 'ahoj@junior.guru'|email_link }}.
 
+<div class="stories">
 {% for story in stories %}
+  <div class="stories-item">
+    {{ img('static/' + story.image_path, 'Doprovodná fotka k příběhu', 100, 100) }}
+    <h4>
+      <a href="" class="">{{ story.title }}</a>
+    </h4>
+  </div>
 <!--
   {{ story.title }}
   {{ story.url }}
@@ -362,3 +369,4 @@ Pod některými kapitolami můžeš narazit na motivační příbehy lidí jako 
   {{ story.image_path }}
 -->
 {% endfor %}
+</div>

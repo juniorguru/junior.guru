@@ -5,7 +5,7 @@ topic_name: sdacademy
 topic_link_text: SDAcademy
 description: Hledáš někoho, kdo má zkušenosti se Software Development Academy? Vyplatí se jejich kurzy?
 ---
-{% from 'topic.html' import intro, mentions, members_roll with context %}
+{% from 'macros_topic.html' import intro, mentions, members_roll with context %}
 
 {{ intro('Recenze na SDAcademy', page.meta.description) }}
 

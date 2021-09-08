@@ -3,7 +3,7 @@ title: Otázky a odpovědi ohledně junior.guru
 thumbnail_title: Otázky a odpovědi
 ---
 
-{% from 'document.html' import lead %}
+{% from 'macros.html' import lead %}
 
 
 # Otázky a odpovědi

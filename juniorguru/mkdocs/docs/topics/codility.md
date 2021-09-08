@@ -5,7 +5,7 @@ topic_name: codility
 topic_link_text: Codility
 description: Snažíš se najít si práci v IT a chtějí po tobě řešit testy na Codility? Hledáš někoho, kdo ti poradí jak na to a pomůže ti s pohovory? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---
-{% from 'topic.html' import intro, mentions, members_roll with context %}
+{% from 'macros_topic.html' import intro, mentions, members_roll with context %}
 
 {{ intro('Jak na Codility test?', page.meta.description) }}
 

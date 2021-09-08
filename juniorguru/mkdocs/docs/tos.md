@@ -3,7 +3,7 @@ title: Obchodní podmínky junior.guru
 thumbnail_title: Obchodní podmínky
 ---
 
-{% from 'document.html' import lead %}
+{% from 'macros.html' import lead %}
 
 
 # Obchodní podmínky

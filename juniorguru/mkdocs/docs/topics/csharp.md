@@ -5,7 +5,7 @@ topic_name: csharp
 topic_link_text: "C#"
 description: Učíš se C#? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---
-{% from 'topic.html' import intro, mentions, members_roll with context %}
+{% from 'macros_topic.html' import intro, mentions, members_roll with context %}
 
 {{ intro('Nech si poradit s C#', page.meta.description) }}
 
