@@ -28,7 +28,7 @@
     "gulp-rename": "2.0.0",
     "gulp-sourcemaps": "3.0.0",
     "imagemin-cli": "7.0.0",
-    "lighthouse": "8.3.0",
+    "lighthouse": "8.4.0",
     "pageres": "6.2.3",
     "pageres-cli": "6.0.0",
     "rollup": "2.56.3",
