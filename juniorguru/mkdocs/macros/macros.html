@@ -65,7 +65,7 @@
 {% macro blockquote_toxic(quote, caption, url=None) %}
   <div class="blockquote-container toxic icon">
     <figure class="blockquote-content">
-      { 'x-circle'|icon(classes='blockquote-icon') }
+      {{ 'x-circle'|icon(classes='blockquote-icon') }}
       <blockquote class="blockquote"{% if url %} cite="{{ url }}"{% endif %}>
         <p>{{ quote }}</p>
       </blockquote>

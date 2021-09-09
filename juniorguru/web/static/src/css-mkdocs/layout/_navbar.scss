@@ -26,6 +26,11 @@
   @extend .order-md-last;
 }
 
+.navbar-buttons .btn:hover {
+  background: $jg-black;
+  border-color: $jg-black;
+}
+
 .nav-foldable {
   position: relative;
   top: $navbar-padding-y;
