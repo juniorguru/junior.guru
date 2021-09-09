@@ -117,7 +117,7 @@ def sample_jobs(jobs, n=2, sample_fn=None):
     return (sample_fn or random.sample)(jobs, n)
 
 
-def icon(name, classes=None):
+def icon(name, classes=None, alt=None):
     if classes:
         classes = set(filter(None, [cls.strip() for cls in classes.split(' ')]))
     else:
@@ -125,7 +125,9 @@ def icon(name, classes=None):
     classes.add('bi')
     classes.add(f'bi-{name}')
     class_list = ' '.join(sorted(classes))
-    return Markup(f'<i class="{class_list}"></i>')
+
+    alt = f' role="img" aria-label="{alt}"' if alt else ''
+    return Markup(f'<i class="{class_list}"{alt}></i>')
 
 
 def docs_url(files, src_path):

@@ -65,7 +65,7 @@
 {% macro blockquote_toxic(quote, caption, url=None) %}
   <div class="blockquote-container toxic icon">
     <figure class="blockquote-content">
-      <i class="bi bi-x-circle blockquote-icon"></i>
+      { 'x-circle'|icon(classes='blockquote-icon') }
       <blockquote class="blockquote"{% if url %} cite="{{ url }}"{% endif %}>
         <p>{{ quote }}</p>
       </blockquote>
@@ -102,12 +102,12 @@
 {% endmacro %}
 
 
-{% macro link_card(title, screenshot_filename, url, caption=None, icon=None, icon_alt=None) %}
+{% macro link_card(title, screenshot_filename, url, caption=None, icon_name=None, icon_alt=None) %}
 <div class="link-card">
   {{ img('static/images/screenshots/' + screenshot_filename, title, 640, 360, class='link-card-image') }}
   {% if icon %}
     <div class="link-card-icon"{% if icon_alt %} title="{{ icon_alt }}"{% endif %}>
-      <i class="bi bi-{{ icon }}" role="img"{% if icon_alt %} aria-label="{{ icon_alt }}"{% endif %}></i>
+      {{ icon_name|icon(classes='blockquote-icon', alt=icon_alt) }}
     </div>
   {% endif %}
   <div class="link-card-body">

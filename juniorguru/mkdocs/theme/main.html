@@ -51,7 +51,7 @@
   <footer class="footer">
     <div class="footer-construction-container">
       <div class="footer-section footer-construction">
-        <i class="bi bi-exclamation-triangle-fill"></i>
+        {{ 'bi-exclamation-triangle-fill'|icon }}
         <strong>Rekonstrukce:</strong>
         Celé junior.guru by jednou mělo mít nový vzhled podobný této stránce. Zatím to tak ale není, změny probíhají postupně a část webu má stále ještě starý design. Odpusť prosím zhoršenou orientaci, než bude vše hotovo.
       </div>
@@ -82,45 +82,45 @@
             <ul class="footer-links-icons footer-icons-list">
               <li class="footer-icons-item">
                 <a href="https://www.linkedin.com/company/juniorguru/" target="_blank" rel="noopener">
-                  <i class="bi bi-linkedin" role="img" aria-label="LinkedIn"></i>
+                  {{ 'linkedin'|icon(alt='LinkedIn') }}
                 </a>
               </li>
               <li class="footer-icons-item">
                 <a href="https://www.instagram.com/juniordotguru/" target="_blank" rel="noopener">
-                  <i class="bi bi-instagram" role="img" aria-label="Instagram"></i>
+                  {{ 'instagram'|icon(alt='Instagram') }}
                 </a>
               </li>
               <li class="footer-icons-item">
                 <a href="https://facebook.com/juniordotguru" target="_blank" rel="noopener">
-                  <i class="bi bi-facebook" role="img" aria-label="Facebook"></i>
+                  {{ 'facebook'|icon(alt='Facebook') }}
                 </a>
               </li>
               <li class="footer-icons-item">
                 <a href="https://twitter.com/honzajavorek/" target="_blank" rel="noopener">
-                  <i class="bi bi-twitter" role="img" aria-label="Twitter"></i>
+                  {{ 'twitter'|icon(alt='Twitter') }}
                 </a>
               </li>
               <li class="footer-icons-item">
                 <a href="{{ pages|docs_url('club.md')|url }}">
-                  <i class="bi bi-discord" role="img" aria-label="Discord"></i>
+                  {{ 'discord'|icon(alt='Discord') }}
                 </a>
               </li>
               <li class="footer-icons-item">
                 <a href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA" target="_blank" rel="noopener">
-                  <i class="bi bi-youtube" role="img" aria-label="YouTube"></i>
+                  {{ 'youtube'|icon(alt='YouTube') }}
                 </a>
               </li>
               {#
               <li class="footer-icons-item">
                 <a href="https://www.strava.com/clubs/959284" target="_blank" rel="noopener">
                   <!-- https://github.com/twbs/icons/issues/942 -->
-                  <i class="bi bi-compass-fill" role="img" aria-label="Strava"></i>
+                  {{ 'compass-fill'|icon(alt='Strava') }}
                 </a>
               </li>
               #}
               <li class="footer-icons-item">
                 <a href="https://github.com/honzajavorek/junior.guru" target="_blank" rel="noopener">
-                  <i class="bi bi-github" role="img" aria-label="GitHub"></i>
+                  {{ 'github'|icon(alt='GitHub') }}
                 </a>
               </li>
             </ul>

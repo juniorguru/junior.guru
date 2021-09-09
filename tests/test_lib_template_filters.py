@@ -237,13 +237,21 @@ def test_sample_jobs_not_enough_preferred_jobs():
 
 
 def test_icon():
-    assert str(template_filters.icon('check-square')) == '<i class="bi bi-check-square"></i>'
+    markup = template_filters.icon('check-square')
+
+    assert str(markup) == '<i class="bi bi-check-square"></i>'
+
+
+def test_icon_with_alt():
+    markup = template_filters.icon('check-square', alt='Alt Text')
+
+    assert str(markup) == '<i class="bi bi-check-square" role="img" aria-label="Alt Text"></i>'
 
 
 def test_icon_with_classes():
-    markup = str(template_filters.icon('check-square', 'text-success bi'))
+    markup = template_filters.icon('check-square', 'text-success bi')
 
-    assert markup == '<i class="bi bi-check-square text-success"></i>'
+    assert str(markup) == '<i class="bi bi-check-square text-success"></i>'
 
 
 def test_docs_url():
