@@ -8,6 +8,7 @@ def run(scrapy_project_package, spider_name):
     settings_module_name = f'{scrapy_project_package}.settings'
     settings = importlib.import_module(settings_module_name)
 
+    # https://docs.scrapy.org/en/latest/topics/settings.html#designating-the-settings
     env = dict(**os.environ)
     env['SCRAPY_SETTINGS_MODULE'] = settings_module_name
 
