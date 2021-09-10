@@ -17,5 +17,6 @@ class Employment(BaseModel):
 class EmploymentPosting(BaseModel):
     job = ForeignKeyField(Employment, backref='list_postings')
     url = CharField()
-    source = CharField()
     seen_at = DateField()
+    source = CharField()
+    source_url = CharField()
