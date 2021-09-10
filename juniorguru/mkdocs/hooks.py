@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 import jinja2
 
@@ -70,6 +71,12 @@ def on_env(env, config, files):
 def on_page_context(context, page, config, nav):
     context_hooks.on_shared_context(context, page, config, context['pages'])
     context_hooks.on_theme_context(context, page, config, context['pages'])
+
+
+def on_post_build(config):
+    api_dir = Path(config['site_dir']) / 'api'
+    api_dir.mkdir(parents=True, exist_ok=True)
+    (api_dir / 'jobs.json').write_text(json.dumps(['Hello API']))
 
 
 def create_md_filter(page, config, files):

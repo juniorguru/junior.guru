@@ -93,6 +93,7 @@ plugins:
         on_page_markdown: juniorguru.mkdocs.hooks:on_page_markdown
         on_env: juniorguru.mkdocs.hooks:on_env
         on_page_context: juniorguru.mkdocs.hooks:on_page_context
+        on_post_build: juniorguru.mkdocs.hooks:on_post_build
 
 
 # Removed 'strict', because it gives warnings if linking non-existing targets. Once the Flask
