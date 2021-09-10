@@ -4,7 +4,7 @@ import pytest
 from peewee import OperationalError
 
 from juniorguru.models import base as models_base
-from juniorguru.scrapers.items import Job
+from juniorguru.sync.jobs.items import Job
 
 
 @pytest.fixture
