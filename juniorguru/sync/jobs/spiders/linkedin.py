@@ -1,8 +1,7 @@
 import re
 from urllib.parse import urlencode, urlparse
 
-from scrapy import Request
-from scrapy import Spider as BaseSpider
+from scrapy import Spider as BaseSpider, Request
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 

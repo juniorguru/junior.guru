@@ -3,6 +3,7 @@ import importlib
 
 from juniorguru.lib.log import get_log
 from juniorguru.lib import timer
+# from juniorguru.sync.employments import main as sync_employments TODO
 from juniorguru.sync.jobs import main as sync_jobs, manage_jobs_voting_channel
 from juniorguru.sync.logos import main as sync_logos
 from juniorguru.sync.metrics import main as sync_metrics
@@ -42,6 +43,7 @@ def main():
     sync_transactions()
     sync_proxies()
     sync_club_content()
+    # sync_employments() TODO
 
     # order-sensitive
     sync_mentoring()  # depends on club_content
