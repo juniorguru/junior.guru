@@ -7,7 +7,7 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'juniorguru.sync.jobs'
+BOT_NAME = 'jobs'
 
 SPIDER_MODULES = ['juniorguru.sync.jobs.spiders']
 NEWSPIDER_MODULE = 'juniorguru.sync.jobs.spiders'

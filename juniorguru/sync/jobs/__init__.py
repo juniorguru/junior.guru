@@ -1,7 +1,6 @@
-import subprocess
-from multiprocessing import Pool
 from pathlib import Path
 
+from juniorguru.lib import scrapers
 from juniorguru.lib.timer import measure
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import discord_task, count_downvotes, count_upvotes, DISCORD_MUTATIONS_ENABLED
@@ -26,7 +25,7 @@ def main():
         db.drop_tables([Job, JobError, JobDropped, SpiderMetric])
         db.create_tables([Job, JobError, JobDropped, SpiderMetric])
 
-    spider_names = [
+    scrapers.run_many('juniorguru.sync.jobs', [
         'juniorguru',
         'linkedin',
         'stackoverflow',
@@ -34,8 +33,7 @@ def main():
         'remoteok',
         'wwr',
         'dobrysef',
-    ]
-    Pool().map(run_spider, spider_names)
+    ])
 
     manage_jobs_channel()
 
@@ -115,14 +113,3 @@ async def manage_jobs_voting_channel(client):  # experimenting with Mila and ML
             await channel.send(f"**{job_dropped.item['title']}**\n{job_dropped.item['company_name']} – {', '.join(job_dropped.item['locations_raw'])}\n{job_dropped.item['link']}")
     else:
         log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
-
-
-def run_spider(spider_name):
-    proc = subprocess.Popen(['scrapy', 'crawl', spider_name], text=True, bufsize=1,
-                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    try:
-        for line in proc.stdout:
-            print(f'[jobs/{spider_name}] {line}', end='')
-    except KeyboardInterrupt:
-        proc.kill()
-        proc.communicate()
