@@ -105,9 +105,9 @@
 {% macro link_card(title, screenshot_filename, url, caption=None, icon_name=None, icon_alt=None) %}
 <div class="link-card">
   {{ img('static/images/screenshots/' + screenshot_filename, title, 640, 360, class='link-card-image') }}
-  {% if icon %}
+  {% if icon_name %}
     <div class="link-card-icon"{% if icon_alt %} title="{{ icon_alt }}"{% endif %}>
-      {{ icon_name|icon(classes='blockquote-icon', alt=icon_alt) }}
+      {{ icon_name|icon(alt=icon_alt) }}
     </div>
   {% endif %}
   <div class="link-card-body">
@@ -123,6 +123,11 @@
     </p>
   </div>
 </div>
+{% endmacro %}
+
+
+{% macro links_note() %}
+  <small>Seznam je ručně sestavován s ohledem na přívětivost, efektivnost, a vhodnost pro samouky. Za umístění v seznamu se nedá zaplatit, ale jako firma [můžete mít na tomto webu své logo]({{ pricing_url }}). Návrhy na vylepšení seznamu posílejte na {{ 'ahoj@junior.guru'|email_link }}.</small>
 {% endmacro %}
 
 

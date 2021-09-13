@@ -8,7 +8,7 @@ el = html.fromstring(Path(sys.argv[1]).read_text())
 
 for list_el in el.cssselect('.list'):
     print('<div class="link-cards">')
-    for item_el in list_el.cssselect('li'):
+    for item_el in list_el.xpath('li'):
         title = item_el.cssselect('h3,h4')[0].text_content()
         image_filename = item_el.cssselect('img')[0].get('src') \
             .split('/')[-1] \

@@ -60,7 +60,7 @@
 }
 
 .link-card-icon {
-  @extend .fs-3;
+  @extend .fs-4;
   position: absolute;
   top: map-get($spacers, 2);
   right: map-get($spacers, 2);

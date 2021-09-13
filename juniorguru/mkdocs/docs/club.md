@@ -99,13 +99,13 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
 <div class="blockquotes-2">
 {{ blockquote_avatar(
   'Jemně popostrkující a nějakou činnost vyvolávající a podněcující síla, kterou jsem potřebovala. Nacpat se sem byl moc dobrej napád.',
-  'radka.png',
+  'radka.jpg',
   'Radka',
   'Radka'
 ) }}
 {{ blockquote_avatar(
   'Jako kluka z vesnice mě na programování vždy štvalo, že jsem na to byl hrozně moc sám. Jsem opravdu vděčný za tuto komunitu',
-  'lukas.png',
+  'lukas.jpg',
   'Lukáš',
   'Lukáš'
 ) }}
@@ -144,7 +144,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
 {% endcall %}
 <ul class="logos standout">
   <li class="logos-item logos-caption">
-    <a href="https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/edit?usp=sharing" target="_blank" rel="noopener">Firemní partneři</a>
+    <a href="{{ pricing_url }}" target="_blank" rel="noopener">Firemní partneři</a>
   </li>
   {% for company in companies %}
     {{ logo(company.name, company.filename, company.link) }}
@@ -175,13 +175,13 @@ Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloup
 <div class="blockquotes-2 standout">
 {{ blockquote_avatar(
   'Ty diskuze jsou úžasné. Když to lidi zaplatí, tak je to úplně jiné. Extrémně kultivované, srozumitelné, každý příspěvek dává smysl.',
-  'jakub.png',
+  'jakub-mrozek.jpg',
   'Jakub',
   'Jakub'
 ) }}
 {{ blockquote_avatar(
   'Je problém najít komunitu, která je o vzájemný pomoci a výměně informací, ne o honění ega. Tady je to krásná výjimka. Jsem ráda, že toho můžu být součástí.',
-  'hanka.png',
+  'hanka.jpg',
   'Hanka',
   'Hanka'
 ) }}

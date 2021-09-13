@@ -268,12 +268,14 @@ Pokud by se ti hodilo **propojit různé internetové služby tak, aby si podle 
     'https://www.integromat.com/cs',
     'Největší platforma, navíc česká, podporuje i místní služby jako Fakturoid nebo Fio Banka.'
   ) }}
+
   {{ link_card(
     'Zapier',
     'zapier.com.jpg',
     'https://zapier.com/',
     'Druhá nejznámější platforma pro automatizaci.'
   ) }}
+
   {{ link_card(
     'IFTTT',
     'ifttt.com.jpg',
@@ -293,12 +295,14 @@ Jestli chceš psát blog, provozovat e-shop nebo vytvořit webovky pro květiná
     'https://wordpress.com/',
     'Nejpoužívanější hotové řešení na weby. Služba za peníze, ale i open source ke stažení.'
   ) }}
+
   {{ link_card(
     'Wix',
     'wix.com.jpg',
     'https://www.wix.com/',
     'Služba, kde si web vytvoříš klikáním. Jednodušší, ale ne tak univerzální jako WP.'
   ) }}
+
   {{ link_card(
     'Shopify',
     'shopify.com.jpg',
@@ -329,12 +333,14 @@ I když je v názvu tohoto webu slovo _junior_, není vhodný k tomu, aby se pod
     'https://code.org/',
     'Programování, které zvládne každý rodič, kroužek, družina.'
   ) }}
+
   {{ link_card(
     'ScratchJr',
     'scratchjr.org.jpg',
     'https://www.scratchjr.org/',
     'V mobilu nebo na tabletu, pro nejmenší děti.'
   ) }}
+
   {{ link_card(
     'Scratch',
     'scratch.mit.edu.jpg',

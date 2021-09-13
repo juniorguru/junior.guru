@@ -13,7 +13,7 @@ nav:
 
   - Tajná příručka:
       - Motivace: handbook/motivation.md
-      - Základy: learn/
+      - Základy: handbook/learn.md
       - První praxe: practice/
       - Hledání práce: candidate-handbook/
 
@@ -75,7 +75,7 @@ markdown_extensions:
   - toc:
       toc_depth: '2-2'
       permalink: '#'
-      permalink_title: Odkaz přímo na tuto sekci
+      permalink_title: Odkaz na tuto sekci
   - tables
   - fenced_code
   - attr_list

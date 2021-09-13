@@ -13,7 +13,7 @@
         {{ img('static/images/logo.svg', 'Logo junior.guru', 90, 40, lazy=False) }}
       </a>
       <div class="navbar-buttons">
-        <a class="btn btn-outline-dark" href="https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/edit?usp=sharing" target="_blank" rel="noopener">Pro firmy</a>
+        <a class="btn btn-outline-dark" href="{{ pricing_url }}" target="_blank" rel="noopener">Pro firmy</a>
         {% if page.url != 'club/' %}
           <a class="btn btn-dark" href="{{ pages|docs_url('club.md')|url }}">Přidej se</a>
         {% endif %}

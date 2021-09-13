@@ -14,6 +14,7 @@ CLUB_LAUNCH_AT = arrow.get(2021, 2, 1)
 
 def on_shared_context(context, page, config, files):
     context['now'] = arrow.utcnow()
+    context['pricing_url'] = 'https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/'
 
 
 @with_db
