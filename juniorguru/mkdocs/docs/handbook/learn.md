@@ -35,7 +35,7 @@ S programováním můžeš začít úplně v pohodě pouze se **základy ovlád�
 
 Dále se ti mohou hodit **základy matematiky ze základky**: třeba co je to dělení se zbytkem nebo obsah čtverce. Detaily nejsou potřeba, vzorečky se dají najít na Wikipedii. Spíš potřebuješ vědět, že když máš pokoj tři krát čtyři metry, tak se tyhle čísla dají nějak zkombinovat a zjistíš výměru podlahy.
 
-Budeš mít výhodu, pokud budeš [**rozumět alespoň psané angličtině**](#english). Materiály a kurzy pro začátečníky najdeš i v češtině, ale brzy zjistíš, že spoléhat se jen na ně je velmi omezující.
+Budeš mít výhodu, pokud budeš [**rozumět alespoň psané angličtině**](#jak-si-zlepsit-anglictinu). Materiály a kurzy pro začátečníky najdeš i v češtině, ale brzy zjistíš, že spoléhat se jen na ně je velmi omezující.
 
 ### Kolik to bude stát
 
@@ -64,7 +64,7 @@ Neočekávej, že se programování jednou naučíš a vystačíš si s tím. Ne
 
 ### Co nepotřebuješ
 
-O programování [koluje řada mýtů](motivation.md#myths). Třeba že se o něj můžeš zajímat jen pokud jsi geniální na matematiku, že se to musí roky studovat na vysoké škole, že to není pro holky, že už je pro tebe pozdě začít. Jsou to pouze předsudky, nenech se jimi odradit! Raději si projdi [příběhy lidí, kteří se programovat naučili](motivation.md#stories) a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
+O programování [koluje řada mýtů](motivation.md#myty-o-programovani). Třeba že se o něj můžeš zajímat jen pokud jsi geniální na matematiku, že se to musí roky studovat na vysoké škole, že to není pro holky, že už je pro tebe pozdě začít. Jsou to pouze předsudky, nenech se jimi odradit! Raději si projdi [příběhy lidí, kteří se programovat naučili](motivation.md#vsechny-motivacni-pribehy) a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
 
 <small>Rady v této kapitole volně vychází i z [úvodní lekce týmového online kurzu Petra Viktorina](https://naucse.python.cz/2021/online-jaro/adm/intro/), se svolením autora. Díky!</small>
 
@@ -300,7 +300,7 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
 
 ## Jak si zlepšit angličtinu
 
-Mnohem více než [matematika](motivation.md#math) je při programování potřeba angličtina. Materiály pro úplné začátečníky existují i v češtině, ale potom už se bez schopnosti alespoň číst anglický text obejít nelze.
+Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi-ti-talent) je při programování potřeba angličtina. Materiály pro úplné začátečníky existují i v češtině, ale potom už se bez schopnosti alespoň číst anglický text obejít nelze.
 
 <div class="link-cards">
   {{ link_card(
