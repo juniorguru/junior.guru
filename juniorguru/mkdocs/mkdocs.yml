@@ -14,7 +14,7 @@ nav:
   - Tajná příručka:
       - Motivace: handbook/motivation.md
       - Základy: handbook/learn.md
-      - První praxe: practice/
+      - První praxe: handbook/practice.md
       - Hledání práce: candidate-handbook/
 
   - Témata:

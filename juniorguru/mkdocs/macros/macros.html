@@ -114,13 +114,15 @@
     <h4 class="link-card-title">
       <a href="{{ url }}" class="stretched-link">{{ title }}</a>
     </h4>
-    <p class="link-card-text">
-      {% if caption %}
-        {{ caption }}
-      {% else %}
-        {{ caller()|md|remove_p }}
-      {% endif %}
-    </p>
+    {% if caption or caller %}
+      <p class="link-card-text">
+        {% if caption %}
+          {{ caption }}
+        {% else %}
+          {{ caller()|md|remove_p }}
+        {% endif %}
+      </p>
+    {% endif %}
   </div>
 </div>
 {% endmacro %}

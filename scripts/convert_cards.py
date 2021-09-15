@@ -14,11 +14,15 @@ for list_el in el.cssselect('.list'):
             .split('/')[-1] \
             .replace(".jpg') }}", '.jpg')
         url = item_el.cssselect('a')[0].get('href')
-        text = html.tostring(item_el.cssselect('p')[0], encoding='utf-8') \
-            .decode('utf-8') \
-            .replace('<p>', '') \
-            .replace('</p>', '') \
-            .strip()
+
+        try:
+            text = html.tostring(item_el.cssselect('p')[0], encoding='utf-8') \
+                .decode('utf-8') \
+                .replace('<p>', '') \
+                .replace('</p>', '') \
+                .strip()
+        except IndexError:
+            text = ''
 
         print('\n'.join([
             f"  {{{{ link_card(",  # noqa

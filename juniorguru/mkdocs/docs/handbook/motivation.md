@@ -145,8 +145,10 @@ Programování není balet ani hokej, začít se dá opravdu v jakémkoliv věku
 
 Co se týče nějakého talentu, [žádné speciální předpoklady nepotřebuješ](https://www.youtube.com/watch?v=0VCN-dknx7Q&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_). Programování je spíše řemeslo a více než vrozená genialita ti pomůže píle a trpělivost. Kromě toho, mnohem více než třeba zrovna matematika je potřeba angličtina. Materiály pro úplné začátečníky existují i v češtině, ale potom už se bez schopnosti alespoň číst anglický text obejít nelze. Nedostatečná angličtina je v IT jako bolavý zub. Chvíli vydržíš, ale když to nezačneš včas řešit, budeš pak už jen litovat.
 
-{% call blockquote(
-  'Všetko, čo je pre teba nové, bude zo začiatku frustrujúce, pôjde ti to pomaly. Ale nie preto, že si blbý alebo si sa nenarodila so špeciálnym génom. Je to len otázka času, snahy, námahy, vytrvalosti, trpezlivosti.'
+{% call blockquote_avatar(
+  'Všetko, čo je pre teba nové, bude zo začiatku frustrujúce, pôjde ti to pomaly. Ale nie preto, že si blbý alebo si sa nenarodila so špeciálnym génom. Je to len otázka času, snahy, námahy, vytrvalosti, trpezlivosti.',
+  'yablko.jpg',
+  'yablko'
 ) %}
   yablko, lektor online kurzů, ve svém [videu o tom, jestli potřebuješ na programování talent](https://www.youtube.com/watch?v=0VCN-dknx7Q&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_)
 {% endcall %}
