@@ -43,7 +43,6 @@ class Employment(BaseModel):
         return dict(title=self.title,
                     company_name=self.company_name,
                     url=self.url,
-                    description_html=self.description_html,
                     first_seen_at=self.first_seen_at,
                     last_seen_at=self.last_seen_at,
                     source=self.source)
