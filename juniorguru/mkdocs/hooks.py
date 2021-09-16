@@ -1,5 +1,4 @@
 from pathlib import Path
-import json
 
 import jinja2
 
@@ -8,6 +7,7 @@ from mkdocs.utils import get_relative_url
 
 from juniorguru.lib import template_filters
 from juniorguru.mkdocs import context as context_hooks
+from juniorguru.models import Employment, with_db, json_dumps
 
 
 TEMPLATE_FILTERS = [
@@ -73,10 +73,12 @@ def on_page_context(context, page, config, nav):
     context_hooks.on_theme_context(context, page, config, context['pages'])
 
 
+@with_db
 def on_post_build(config):
     api_dir = Path(config['site_dir']) / 'api'
     api_dir.mkdir(parents=True, exist_ok=True)
-    (api_dir / 'jobs.json').write_text(json.dumps(['Hello API']))
+    data = [employment.to_api() for employment in Employment.api_listing()]
+    (api_dir / 'jobs.json').write_text(json_dumps(data))
 
 
 def create_md_filter(page, config, files):
