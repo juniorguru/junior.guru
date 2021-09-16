@@ -39,7 +39,6 @@ extruct = "*"
 "discord.py" = "*"
 gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
-aiopath = "*"
 scikit-learn = "*"
 pandas = "*"
 piexif = "*"
