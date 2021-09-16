@@ -45,6 +45,8 @@ from juniorguru.sync.jobs.pipelines.gender_cleaner import Pipeline
     # Czech
     ('GOlang / PHP backend programátor cloudových služeb (m/ž)',
      'GOlang / PHP backend programátor cloudových služeb'),
+    ('👩‍💻/👨‍💻 Junior Product Designer',
+     'Junior Product Designer')
 ])
 def test_gender_cleaner(item, spider, title, expected):
     item['title'] = title

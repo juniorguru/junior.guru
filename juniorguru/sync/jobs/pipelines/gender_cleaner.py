@@ -29,6 +29,9 @@ class Pipeline():
                 \s*\w+      # anything but space or end
             )?
         ''', re.VERBOSE | re.IGNORECASE),
+
+        # emojis
+        re.compile(r'[👩‍💻👨‍💻][\/\|][👩‍💻👨‍💻]')
     ]
 
     def process_item(self, item, spider):
