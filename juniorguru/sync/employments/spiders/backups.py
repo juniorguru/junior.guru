@@ -9,22 +9,22 @@ import arrow
 from scrapy.utils.project import data_path
 from scrapy import Spider as BaseSpider, Request
 
+from juniorguru.sync.employments.items import Employment
+
 
 class Spider(BaseSpider):
     name = 'backups'
-    project_url = 'https://circleci.com/api/v1.1/project/github/honzajavorek/junior.guru'
+    custom_settings = {
+        'ROBOTSTXT_OBEY': False,  # requesting API, so irrelevant, saving a few requests
+    }
 
+    project_url = 'https://circleci.com/api/v1.1/project/github/honzajavorek/junior.guru'
     filename_backup = 'backup.tar.gz'
     filename_db = './juniorguru/data/data.db'
-
     tables = [
-        # old-style jobs tables
-        'job',
-        'jobdropped',
-
-        # new-style jobs tables
         'employment',
-        'employmentposting',
+        'job',  # old-style jobs
+        'jobdropped',  # old-style jobs
     ]
 
     def __init__(self, *args, **kwargs):
@@ -92,33 +92,35 @@ class Spider(BaseSpider):
         finally:
             connection.close()
 
-    def parse_job_row(self, row, ci_data):
-        yield dict(title=row['title'],
-                   url=row['link'],
-                   company_name=row['company_name'],
-                   description_html=row['description_html'],
-                   seen_at=ci_data['build_date'],
-                   source=row['source'],
-                   source_url=row['response_url'],
-                   backup_url=ci_data['build_url'])
+    def parse_employment_row(self, row, ci_data):
+        for seen_at in (row['first_seen_at'], row['last_seen_at']):
+            yield Employment(title=row['title'],
+                            url=row['link'],
+                            company_name=row['company_name'],
+                            description_html=row['description_html'],
+                            seen_at=seen_at,
+                            source=row['source'],
+                            source_url=row['response_url'])
 
-    def parse_jobdropped_row(self, row, ci_data):
+    def parse_job_row(self, row, ci_data):  # old-style jobs
+        yield Employment(title=row['title'],
+                         url=row['link'],
+                         company_name=row['company_name'],
+                         description_html=row['description_html'],
+                         seen_at=ci_data['build_date'],
+                         source=row['source'],
+                         source_url=row['response_url'])
+
+    def parse_jobdropped_row(self, row, ci_data):  # old-style jobs
         if row['type'] == 'NotEntryLevel':
             item = json.loads(row['item'])
-            yield dict(title=item['title'],
-                       url=item['link'],
-                       company_name=item['company_name'],
-                       description_html=item['description_html'],
-                       seen_at=ci_data['build_date'],
-                       source=row['source'],
-                       source_url=row['response_url'],
-                       backup_url=ci_data['build_url'])
-
-    def parse_employment_row(self, row, ci_data):
-        raise NotImplementedError
-
-    def parse_employmentposting_row(self, row, ci_data):
-        raise NotImplementedError
+            yield Employment(title=item['title'],
+                             url=item['link'],
+                             company_name=item['company_name'],
+                             description_html=item['description_html'],
+                             seen_at=ci_data['build_date'],
+                             source=row['source'],
+                             source_url=row['response_url'])
 
 
 def is_sync_ci_job(ci_job):
