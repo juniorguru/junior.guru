@@ -62,33 +62,6 @@ def test_spider_parse_job():
     assert '<li>ReactJS, Webpack</li>' in job['description_html']
 
 
-def test_spider_parse_job_september_2021():
-    response = HtmlResponse('https://example.com/example/',
-                            body=Path(FIXTURES_DIR / 'job_september_2021.html').read_bytes())
-    jobs = list(linkedin.Spider().parse_job(response))
-
-    assert len(jobs) == 1
-
-    job = jobs[0]
-
-    # assert sorted(job.keys()) == sorted([
-    #     'title', 'link', 'company_name', 'company_link', 'locations_raw',
-    #     'employment_types', 'posted_at', 'description_html',
-    #     'experience_levels', 'company_logo_urls', 'remote',
-    # ])
-    assert job['title'] == '.NET Junior Developer'
-    assert job['link'] == 'https://cz.linkedin.com/jobs/view/net-junior-developer-at-roivenue%E2%84%A2-2665331232'
-    assert job['company_name'] == 'ROIVENUE™'
-    assert job['company_link'] == 'https://cz.linkedin.com/company/roivenue'
-    assert job['locations_raw'] == ['Hlavní město Praha, Česko']
-    assert job['remote'] is False
-    assert job['employment_types'] == ['full-time']
-    assert job['experience_levels'] == ['entry level']
-    assert job['posted_at'] == date.today() - timedelta(days=3)
-    assert job['company_logo_urls'] == ['https://media-exp1.licdn.com/dms/image/C4D0BAQE5dJwgWcSH0g/company-logo_100_100/0/1545137392551?e=1639612800&v=beta&t=q8nYHCU6u2RqmYfqKT0l-BZfC5NgKoNnztsvI1W-gYU']
-    assert '<li>.NET at least at level 3/5</li>' in job['description_html']
-
-
 @pytest.mark.skip('missing a test fixture')
 def test_spider_parse_job_description_doesnt_include_criteria_list():
     response = HtmlResponse('https://example.com/example/',
