@@ -1,18 +1,4 @@
 [[package]]
-name = "aiofile"
-version = "3.5.1"
-description = "Asynchronous file operations."
-category = "main"
-optional = false
-python-versions = ">3.4.*, <4"
-
-[package.dependencies]
-caio = ">=0.8.0,<0.9.0"
-
-[package.extras]
-develop = ["aiomisc", "asynctest", "pytest", "pytest-cov"]
-
-[[package]]
 name = "aiohttp"
 version = "3.7.4.post0"
 description = "Async http client/server framework (asyncio)"
@@ -30,36 +16,6 @@ yarl = ">=1.0,<2.0"
 
 [package.extras]
 speedups = ["aiodns", "brotlipy", "cchardet"]
-
-[[package]]
-name = "aiopath"
-version = "0.5.12"
-description = "📁 Async pathlib for Python"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-aiofile = ">=3.5.0,<4"
-anyio = ">=3.2.0,<4"
-typing-extensions = {version = ">=3.10.0.0", markers = "python_version < \"3.10\""}
-
-[[package]]
-name = "anyio"
-version = "3.2.1"
-description = "High level compatibility layer for multiple asynchronous event loop implementations"
-category = "main"
-optional = false
-python-versions = ">=3.6.2"
-
-[package.dependencies]
-idna = ">=2.8"
-sniffio = ">=1.1"
-
-[package.extras]
-doc = ["sphinx-rtd-theme", "sphinx-autodoc-typehints (>=1.2.0)"]
-test = ["coverage[toml] (>=4.5)", "hypothesis (>=4.0)", "pytest (>=6.0)", "pytest-mock (>=3.6.1)", "trustme", "uvloop (<0.15)", "mock (>=4)", "uvloop (>=0.15)"]
-trio = ["trio (>=0.16)"]
 
 [[package]]
 name = "arrow"
@@ -139,17 +95,6 @@ description = "Extensible memoizing collections and decorators"
 category = "main"
 optional = false
 python-versions = "~=3.5"
-
-[[package]]
-name = "caio"
-version = "0.8.4"
-description = "Asynchronous file IO for Linux Posix and Windows."
-category = "main"
-optional = false
-python-versions = ">=3.5.*, <4"
-
-[package.extras]
-develop = ["aiomisc", "pytest", "pytest-cov"]
 
 [[package]]
 name = "certifi"
@@ -271,7 +216,7 @@ voice = ["PyNaCl (>=1.3.0,<1.5)"]
 
 [[package]]
 name = "emoji"
-version = "1.4.2"
+version = "1.5.0"
 description = "Emoji for Python"
 category = "main"
 optional = false
@@ -1391,14 +1336,6 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
-name = "sniffio"
-version = "1.2.0"
-description = "Sniff out which async library your code is running under"
-category = "main"
-optional = false
-python-versions = ">=3.5"
-
-[[package]]
 name = "soupsieve"
 version = "2.2.1"
 description = "A modern CSS selector implementation for Beautiful Soup."
@@ -1594,12 +1531,9 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.8.*"
-content-hash = "eb353e9f42e2c279f790d64bd8a447eaedc06bcaa4ad06e904ad8fe2b6462990"
+content-hash = "d170cbc73a2c67820571aae7d0b1f937a2f3089cf00b1b0c96036236e3d4a34b"
 
 [metadata.files]
-aiofile = [
-    {file = "aiofile-3.5.1.tar.gz", hash = "sha256:7680bc9ef71cede0c73591d7870a227e6417845da322006e542762165329d1e0"},
-]
 aiohttp = [
     {file = "aiohttp-3.7.4.post0-cp36-cp36m-macosx_10_14_x86_64.whl", hash = "sha256:3cf75f7cdc2397ed4442594b935a11ed5569961333d49b7539ea741be2cc79d5"},
     {file = "aiohttp-3.7.4.post0-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:4b302b45040890cea949ad092479e01ba25911a15e648429c7c5aae9650c67a8"},
@@ -1639,14 +1573,6 @@ aiohttp = [
     {file = "aiohttp-3.7.4.post0-cp39-cp39-win_amd64.whl", hash = "sha256:02f46fc0e3c5ac58b80d4d56eb0a7c7d97fcef69ace9326289fb9f1955e65cfe"},
     {file = "aiohttp-3.7.4.post0.tar.gz", hash = "sha256:493d3299ebe5f5a7c66b9819eacdcfbbaaf1a8e84911ddffcdc48888497afecf"},
 ]
-aiopath = [
-    {file = "aiopath-0.5.12-py2.py3-none-any.whl", hash = "sha256:9d85fd17ef1cbc75c0e81619acb3a1632cf5e15ead459e57fef5ec85e0b7a1da"},
-    {file = "aiopath-0.5.12.tar.gz", hash = "sha256:de2f9401dd098b9a279afb265df5a6eb5b78f39c2c4f3871f671fc1dd4b21d64"},
-]
-anyio = [
-    {file = "anyio-3.2.1-py3-none-any.whl", hash = "sha256:442678a3c7e1cdcdbc37dcfe4527aa851b1b0c9162653b516e9f509821691d50"},
-    {file = "anyio-3.2.1.tar.gz", hash = "sha256:07968db9fa7c1ca5435a133dc62f988d84ef78e1d9b22814a59d1c62618afbc5"},
-]
 arrow = [
     {file = "arrow-1.1.1-py3-none-any.whl", hash = "sha256:77a60a4db5766d900a2085ce9074c5c7b8e2c99afeaa98ad627637ff6f292510"},
     {file = "arrow-1.1.1.tar.gz", hash = "sha256:dee7602f6c60e3ec510095b5e301441bc56288cb8f51def14dcb3079f623823a"},
@@ -1675,18 +1601,6 @@ beautifulsoup4 = [
 cachetools = [
     {file = "cachetools-4.2.2-py3-none-any.whl", hash = "sha256:2cc0b89715337ab6dbba85b5b50effe2b0c74e035d83ee8ed637cf52f12ae001"},
     {file = "cachetools-4.2.2.tar.gz", hash = "sha256:61b5ed1e22a0924aed1d23b478f37e8d52549ff8a961de2909c69bf950020cff"},
-]
-caio = [
-    {file = "caio-0.8.4-cp36-cp36m-macosx_10_14_x86_64.whl", hash = "sha256:e03fcc066f9abb121d432ea46a32f0704ad3dc8233f13127e9def73e3bc88197"},
-    {file = "caio-0.8.4-cp36-cp36m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:4688182ad76e98ea2682f2f2c243123609145d98aff86bb30cab4f253d39d0f3"},
-    {file = "caio-0.8.4-cp37-cp37m-macosx_10_14_x86_64.whl", hash = "sha256:4096bd9d237eecfa816d9fc32e529eb36ef803c45a5ebd787ef9407e67e81a8b"},
-    {file = "caio-0.8.4-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:e4a81aeec1f85f1df2bed04f160832db490d650c025492f3f22c6dac621b01fc"},
-    {file = "caio-0.8.4-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:7bd2b32fd4ba52970081dd05def99f2610d1a0e785feee09417df00d4c604edd"},
-    {file = "caio-0.8.4-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:7a948072859730e01add7021b48ed7dbd905fc4bc9eb280d550c2015b09568f8"},
-    {file = "caio-0.8.4-cp39-cp39-macosx_10_14_x86_64.whl", hash = "sha256:67d0b376676c0959b09d00d8e7715c0dd2127b1503b5727a0a232c6561668d96"},
-    {file = "caio-0.8.4-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:7a422a877c2d9f2c2cdce0219306bb063a4106765f9cad19d2917c70de415a63"},
-    {file = "caio-0.8.4-py3-none-any.whl", hash = "sha256:f7ee73b182d732bbca937df3ce13767641328f8fc69f92605aaab06feba5a125"},
-    {file = "caio-0.8.4.tar.gz", hash = "sha256:c49fef200796ac876a3507d2b07478c3920c48968dcef26ff928d191cd89d041"},
 ]
 certifi = [
     {file = "certifi-2021.5.30-py2.py3-none-any.whl", hash = "sha256:50b1e4f8446b06f41be7dd6338db18e0990601dce795c2b1686458aa7e8fa7d8"},
@@ -1787,7 +1701,7 @@ czech-sort = [
     {file = "discord.py-1.7.3.tar.gz", hash = "sha256:462cd0fe307aef8b29cbfa8dd613e548ae4b2cb581d46da9ac0d46fb6ea19408"},
 ]
 emoji = [
-    {file = "emoji-1.4.2.tar.gz", hash = "sha256:21257f311e24468031e85685867c00b87249dc7612b82dc763a771ba5fb00c01"},
+    {file = "emoji-1.5.0.tar.gz", hash = "sha256:2eddd062f940924fb25a3108d84d77dc571927d91a419b4c30f37e253c791b19"},
 ]
 extruct = [
     {file = "extruct-0.13.0-py2.py3-none-any.whl", hash = "sha256:fe19b9aefdb4dfbf828c2b082b81a363a03a44c7591c2d6b62ca225cb8f8c0be"},
@@ -2494,10 +2408,6 @@ sgmllib3k = [
 six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
-]
-sniffio = [
-    {file = "sniffio-1.2.0-py3-none-any.whl", hash = "sha256:471b71698eac1c2112a40ce2752bb2f4a4814c22a54a3eed3676bc0f5ca9f663"},
-    {file = "sniffio-1.2.0.tar.gz", hash = "sha256:c4666eecec1d3f50960c6bdf61ab7bc350648da6c126e3cf6898d8cd4ddcd3de"},
 ]
 soupsieve = [
     {file = "soupsieve-2.2.1-py3-none-any.whl", hash = "sha256:c2c1c2d44f158cdbddab7824a9af8c4f83c76b1e23e049479aa432feb6c4c23b"},
