@@ -44,7 +44,7 @@ class Spider(BaseSpider):
         }
         return (Request(f"{base_url}{urlencode({'keywords': term, **search_params})}",
                         dont_filter=True,
-                        headers={'Accept-Language': 'cs;q=0.8,en;q=0.6'})
+                        headers={'Accept-Language': 'en-US,en;q=0.8,cs;q=0.6,sk;q=0.4'})
                 for term in self.search_terms)
 
     def parse(self, response):
