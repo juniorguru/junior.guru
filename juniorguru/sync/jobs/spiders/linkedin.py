@@ -22,6 +22,8 @@ class Spider(BaseSpider):
         'COOKIES_ENABLED': False,
     }
 
+    cookies = {'lang': '"v=2&lang=en-us"'}
+    headers = {'Accept-Language': 'en-US,en;q=0.8,cs;q=0.6,sk;q=0.4'}
     search_terms = [
         'junior software engineer',
         'junior developer',
@@ -43,8 +45,7 @@ class Spider(BaseSpider):
             'start': '0',  # pagination - offset
         }
         return (Request(f"{base_url}{urlencode({'keywords': term, **search_params})}",
-                        dont_filter=True,
-                        headers={'Accept-Language': 'en-US,en;q=0.8,cs;q=0.6,sk;q=0.4'})
+                        dont_filter=True, cookies=self.cookies, headers=self.headers)
                 for term in self.search_terms)
 
     def parse(self, response):
@@ -54,7 +55,7 @@ class Spider(BaseSpider):
 
         if len(links) >= self.results_per_request:
             url = increment_param(response.url, 'start', self.results_per_request)
-            yield Request(url, callback=self.parse)
+            yield Request(url, cookies=self.cookies, headers=self.headers, callback=self.parse)
 
     def parse_job(self, response):
         loader = Loader(item=Job(), response=response)
