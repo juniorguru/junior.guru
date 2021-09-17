@@ -44,7 +44,7 @@ class Spider(BaseSpider):
         }
         return (Request(f"{base_url}{urlencode({'keywords': term, **search_params})}",
                         dont_filter=True,
-                        headers={'Accept-Language': 'en-US,en;q=0.8,cs;q=0.6,sk;q=0.4'})
+                        headers={'Accept-Language': 'cs;q=0.8,en;q=0.6'})
                 for term in self.search_terms)
 
     def parse(self, response):
@@ -58,16 +58,14 @@ class Spider(BaseSpider):
 
     def parse_job(self, response):
         loader = Loader(item=Job(), response=response)
-        loader.add_css('title', '.top-card-layout h2::text')
-        loader.add_css('remote', '.top-card-layout h2::text')  # TODO verify
-        loader.add_css('link', '.apply-button::attr(href)')  # TODO verify
-        loader.add_css('link', '.topcard__content-left > a::attr(href)')  # rm
-        loader.add_css('link', '.top-card-layout .top-card-layout__entity-info > a::attr(href)')
-        loader.add_css('company_name', '.topcard__content-left > h3 > span:nth-of-type(1)::text')  # rm
-        loader.add_css('company_name', '.top-card-layout .topcard__org-name-link::text')
+        loader.add_css('title', 'h2::text')
+        loader.add_css('remote', 'h2::text')
+        loader.add_css('link', '.apply-button::attr(href)')
+        loader.add_css('link', '.topcard__content-left > a::attr(href)')
+        loader.add_css('company_name', '.topcard__org-name-link::text')
+        loader.add_css('company_name', '.topcard__content-left > h3 > span:nth-of-type(1)::text')
         loader.add_css('company_link', '.topcard__org-name-link::attr(href)')
-        loader.add_css('locations_raw', '.topcard__content-left > h3:nth-of-type(1) > span:nth-of-type(2)::text')  # rm
-        loader.add_css('locations_raw', '.top-card-layout .topcard__flavor:nth-child(2)::text')
+        loader.add_css('locations_raw', '.topcard__content-left > h3:nth-of-type(1) > span:nth-of-type(2)::text')
         loader.add_xpath('employment_types', "//h3[contains(., 'Employment type')]/following-sibling::span/text()")
         loader.add_xpath('experience_levels', "//h3[contains(., 'Seniority level')]/following-sibling::span/text()")
         loader.add_css('posted_at', '.topcard__content-left > h3:nth-of-type(2) span::text')
@@ -122,7 +120,6 @@ def parse_remote(text):
 class Loader(ItemLoader):
     default_output_processor = TakeFirst()
     link_in = Compose(first, clean_proxied_url, clean_url)
-    company_name_in = MapCompose(str.strip)
     company_link_in = Compose(first, clean_url)
     employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()
@@ -131,5 +128,4 @@ class Loader(ItemLoader):
     experience_levels_out = Identity()
     company_logo_urls_out = Identity()
     remote_in = MapCompose(parse_remote)
-    locations_raw_in = MapCompose(str.strip)
     locations_raw_out = Identity()
