@@ -18,7 +18,7 @@ def test_spider_parse():
     more_requests = list(filter(lambda r: '/seeMoreJobPostings/' in r.url, requests))
 
     assert len(job_requests) == 25
-    assert job_requests[0].url == 'https://cz.linkedin.com/jobs-guest/jobs/api/jobPosting/1846698040'
+    assert job_requests[0].url == 'https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/1846698040'
 
     assert len(more_requests) == 1
     assert 'start=25' in more_requests[0].url
@@ -49,24 +49,24 @@ def test_spider_parse_job():
         'employment_types', 'posted_at', 'description_html',
         'experience_levels', 'company_logo_urls', 'remote',
     ])
-    assert job['title'] == 'Software Engineer'
-    assert job['link'] == 'https://ca.linkedin.com/jobs/view/software-engineer-at-adaptavist-2230926500'
-    assert job['company_name'] == 'Adaptavist'
-    assert job['company_link'] == 'https://uk.linkedin.com/company/adaptavist'
-    assert job['locations_raw'] == ['Toronto, Ontario, Canada']
+    assert job['title'] == 'Junior BI Developer (BI4SG)'
+    assert job['link'] == 'https://cz.linkedin.com/jobs/view/junior-bi-developer-bi4sg-at-komer%C4%8Dn%C3%AD-banka-2701029809'
+    assert job['company_name'] == 'Komerční banka'
+    assert job['company_link'] == 'https://cz.linkedin.com/company/komercni-banka'
+    assert job['locations_raw'] == ['Prague, Czechia']
     assert job['remote'] is False
     assert job['employment_types'] == ['full-time']
     assert job['experience_levels'] == ['entry level']
-    assert job['posted_at'] == date.today() - timedelta(weeks=3)
-    assert job['company_logo_urls'] == ['https://media-exp1.licdn.com/dms/image/C4D0BAQHhfg0SSuymNA/company-logo_100_100/0?e=1612396800&v=beta&t=GoeZ9Wui3hJSaLrewZdVNpWFm3YCMOSsmte2maE7S3o']
-    assert '<li>ReactJS, Webpack</li>' in job['description_html']
+    assert job['posted_at'] == date.today() - timedelta(weeks=1)
+    assert job['company_logo_urls'] == ['https://media-exp1.licdn.com/dms/image/C560BAQHxuVQO-Rz9rw/company-logo_100_100/0/1546508771908?e=1640217600&v=beta&t=hUZKjJ2dnPP92AcBOKAEFzFqEdD-OB9WwS0X18LoyP4']
+    assert '<li>French language</li>' in job['description_html']
 
 
 @pytest.mark.skip('missing a test fixture')
 def test_spider_parse_job_description_doesnt_include_criteria_list():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job.html').read_bytes())
-    job = next(linkedin.Spider().parse_job(response)).cb_kwargs['item']
+    job = next(linkedin.Spider().parse_job(response))
 
     assert 'Employment type' not in job['description_html']
     assert 'Information Technology and Services' not in job['description_html']
@@ -75,27 +75,28 @@ def test_spider_parse_job_description_doesnt_include_criteria_list():
 def test_spider_parse_job_no_company_link():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job_no_company_link.html').read_bytes())
-    job = next(linkedin.Spider().parse_job(response)).cb_kwargs['item']
+    job = next(linkedin.Spider().parse_job(response))
 
-    assert job['company_name'] == 'Grafton Temporary Staffing'
+    assert job['company_name'] == 'NeoTreks, Inc.'
     assert 'company_link' not in job
-    assert job['locations_raw'] == ['Praha 4']
+    assert job['locations_raw'] == ['Frýdek-Místek, Moravia-Silesia, Czechia']
 
 
-def test_spider_parse_job_applicants():
+def test_spider_parse_job_company_logo():
     response = HtmlResponse('https://example.com/example/',
-                            body=Path(FIXTURES_DIR / 'job_applicants.html').read_bytes())
-    job = next(linkedin.Spider().parse_job(response)).cb_kwargs['item']
+                            body=Path(FIXTURES_DIR / 'job_company_logo.html').read_bytes())
+    job = next(linkedin.Spider().parse_job(response))
 
-    assert job['posted_at'] == date.today()
+    assert job['company_logo_urls'] == ['https://media-exp1.licdn.com/dms/image/C4D0BAQE5dJwgWcSH0g/company-logo_100_100/0/1545137392551?e=1640217600&v=beta&t=iVYrn2ljyLGyu53ggzJr7fZ-aTJPfvzTczAfdgsJYTU']
 
 
 def test_spider_parse_job_apply_on_company_website():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job_apply_on_company_website.html').read_bytes())
-    job = next(linkedin.Spider().parse_job(response)).cb_kwargs['item']
+    request = next(linkedin.Spider().parse_job(response))
+    job = request.cb_kwargs['item']
 
-    assert job['link'] == 'https://jobs.cisco.com/jobs/ProjectDetail/Software-Engineer/1304909?source=juniorguru'
+    assert job['link'] == 'https://jobs.siemens.com/jobs/240215?lang=en-us&jobPipeline=juniorguru%3FsourceType%3DPREMIUM_POST_SITE&source=juniorguru%28Wrap%29'
 
 
 def test_clean_proxied_url():

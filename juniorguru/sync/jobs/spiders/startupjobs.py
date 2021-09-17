@@ -9,6 +9,9 @@ from juniorguru.sync.jobs.items import Job, parse_iso_date
 
 class Spider(BaseSpider):
     name = 'startupjobs'
+    custom_settings = {
+        'ROBOTSTXT_OBEY': False,  # requesting API, so irrelevant, saving a few requests
+    }
     start_urls = [
         'https://feedback.startupjobs.cz/feed/juniorguru.php'
     ]

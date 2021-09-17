@@ -1,98 +1,94 @@
 {% extends 'admin_base.html' %}
 {% block body %}
 <h1>{{ title }} ({{ jobs_dropped|length }})</h1>
-{% if not jobs_dropped %}
-  <p>Nebylo nic zahozeno.</p>
-{% else %}
-  <p>
-    <a href="{{ url_for('admin_jobs_dropped') }}">Nejuniorní</a>
-    &nbsp;&mdash;&nbsp;
-    <a href="{{ url_for('admin_jobs_dropped_unexpected') }}">Podezřele zahozené</a>
-    &nbsp;&mdash;&nbsp;
-    <a href="{{ url_for('admin_jobs_dropped_expected') }}">Vědomě zahozené</a>
-    &nbsp;&mdash;&nbsp;
-    <a href="{{ url_for('admin_jobs_dropped_all') }}">Vše</a>
-  </p>
-  <hr>
-  <ul>
-  {% for type, group in jobs_dropped|groupby('type') %}
-    <li><a href="#{{ type }}">{{ type }}</a> ({{ group|length }})</li>
-  {% endfor %}
-  </ul>
-  {% for type, group in jobs_dropped|groupby('type') %}
-    {% for job_dropped in group %}
-      <hr{% if loop.first %} id="{{ type }}"{% endif %}>
-      <h2 id="{{ job_dropped.id }}">
-        {{ job_dropped.type }}: {{ job_dropped.reason }}
-      </h2>
+<p>
+  <a href="{{ url_for('admin_jobs_dropped') }}">Nejuniorní</a>
+  &nbsp;&mdash;&nbsp;
+  <a href="{{ url_for('admin_jobs_dropped_unexpected') }}">Podezřele zahozené</a>
+  &nbsp;&mdash;&nbsp;
+  <a href="{{ url_for('admin_jobs_dropped_expected') }}">Vědomě zahozené</a>
+  &nbsp;&mdash;&nbsp;
+  <a href="{{ url_for('admin_jobs_dropped_all') }}">Vše</a>
+</p>
+<hr>
+<ul>
+{% for type, group in jobs_dropped|groupby('type') %}
+  <li><a href="#{{ type }}">{{ type }}</a> ({{ group|length }})</li>
+{% endfor %}
+</ul>
+{% for type, group in jobs_dropped|groupby('type') %}
+  {% for job_dropped in group %}
+    <hr{% if loop.first %} id="{{ type }}"{% endif %}>
+    <h2 id="{{ job_dropped.id }}">
+      {{ job_dropped.type }}: {{ job_dropped.reason }}
+    </h2>
+    <p>
+      <small>
+        <a href="#{{ job_dropped.id }}">#</a>
+        &mdash;
+        <code>{{ job_dropped.id }}</code>
+        &mdash;
+        <code>{{ job_dropped.source }}</code>
+        &mdash;
+        <a href="{{ job_dropped.response_url }}" target="_blank">Zdrojové URL</a>
+        {% if job_dropped.response_backup_path %}
+          &mdash;
+          <a href="{{ url_for('admin_responses_backup', path=job_dropped.response_backup_path) }}" target="_blank">HTTP odpověď</a>
+        {% endif %}
+      </small>
+    </p>
+    {% if job_dropped.type != 'MissingRequiredFields' %}
+      <h3>{{ job_dropped.item.title }}</h3>
       <p>
-        <small>
-          <a href="#{{ job_dropped.id }}">#</a>
+        {% if job_dropped.item.company_link %}
+          <a href="{{ job_dropped.item.company_link }}" target="_blank">{{ job_dropped.item.company_name }}</a>
+        {% else %}
+          {{ job_dropped.item.company_name }}
+        {% endif %}
+        &mdash;
+        loc: {{ job_dropped.item.location_raw|default('?', true) }},
+        rmt: {% if job_dropped.item.remote %}👍{% else %}👎{% endif %},
+        rmt_reg: {{ job_dropped.item.remote_region_raw|default('?', true) }}
+        {% if job_dropped.item.posted_at %}
           &mdash;
-          <code>{{ job_dropped.id }}</code>
-          &mdash;
-          <code>{{ job_dropped.source }}</code>
-          &mdash;
-          <a href="{{ job_dropped.response_url }}" target="_blank">Zdrojové URL</a>
-          {% if job_dropped.response_backup_path %}
-            &mdash;
-            <a href="{{ url_for('admin_responses_backup', path=job_dropped.response_backup_path) }}" target="_blank">HTTP odpověď</a>
-          {% endif %}
-        </small>
+          {{ job_dropped.item.posted_at|to_datetime|ago }}
+        {% endif %}
       </p>
-      {% if job_dropped.type != 'MissingRequiredFields' %}
-        <h3>{{ job_dropped.item.title }}</h3>
-        <p>
-          {% if job_dropped.item.company_link %}
-            <a href="{{ job_dropped.item.company_link }}" target="_blank">{{ job_dropped.item.company_name }}</a>
-          {% else %}
-            {{ job_dropped.item.company_name }}
-          {% endif %}
-          &mdash;
-          loc: {{ job_dropped.item.location_raw|default('?', true) }},
-          rmt: {% if job_dropped.item.remote %}👍{% else %}👎{% endif %},
-          rmt_reg: {{ job_dropped.item.remote_region_raw|default('?', true) }}
-          {% if job_dropped.item.posted_at %}
-            &mdash;
-            {{ job_dropped.item.posted_at|to_datetime|ago }}
-          {% endif %}
-        </p>
-        {% if job_dropped.item.features %}
-        <details>
-          <summary>Features ({{ job_dropped.item.features|length }})</summary>
-          <table>
-          {% for feature in job_dropped.item.features|sort(attribute='name') %}
-            <tr>
-              <th>{{ feature.name }}</th>
-              <td>
-                {{ feature.sentence }}<br>
-                {% for pattern in feature.patterns|default([], true) %}
-                  <small><code>⇢ {{ pattern }}</code></small><br>
-                {% endfor %}
-              </td>
-              <td><small>{{ feature.origin }}</small></td>
-            </tr>
-          {% endfor %}
-          </table>
-        </details>
-        {% endif %}
-        {% if job_dropped.item.sections %}
-        <details>
-          <summary>Sections ({{ job_dropped.item.sections|length }})</summary>
-          <pre>{{ job_dropped.item.sections|sections }}</pre>
-        </details>
-        {% endif %}
-        <details>
-          <summary>Description</summary>
-          <textarea rows="20" cols="100">{{ job_dropped.item.description_html }}</textarea>
-        </details>
+      {% if job_dropped.item.features %}
+      <details>
+        <summary>Features ({{ job_dropped.item.features|length }})</summary>
+        <table>
+        {% for feature in job_dropped.item.features|sort(attribute='name') %}
+          <tr>
+            <th>{{ feature.name }}</th>
+            <td>
+              {{ feature.sentence }}<br>
+              {% for pattern in feature.patterns|default([], true) %}
+                <small><code>⇢ {{ pattern }}</code></small><br>
+              {% endfor %}
+            </td>
+            <td><small>{{ feature.origin }}</small></td>
+          </tr>
+        {% endfor %}
+        </table>
+      </details>
+      {% endif %}
+      {% if job_dropped.item.sections %}
+      <details>
+        <summary>Sections ({{ job_dropped.item.sections|length }})</summary>
+        <pre>{{ job_dropped.item.sections|sections }}</pre>
+      </details>
       {% endif %}
       <details>
-        <summary>Data</summary>
-        <pre>{{ job_dropped|pprint }}</pre>
+        <summary>Description</summary>
+        <textarea rows="20" cols="100">{{ job_dropped.item.description_html }}</textarea>
       </details>
-      <div>Is Junior by Magical Leviathan:<strong>{{ job_dropped.magic_is_junior }}</strong></div>
-    {% endfor %}
+    {% endif %}
+    <details>
+      <summary>Data</summary>
+      <pre>{{ job_dropped|pprint }}</pre>
+    </details>
+    <div>Is Junior by Magical Leviathan:<strong>{{ job_dropped.magic_is_junior }}</strong></div>
   {% endfor %}
-{% endif %}
+{% endfor %}
 {% endblock %}

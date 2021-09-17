@@ -1,11 +1,13 @@
 from pathlib import Path
 
+from scrapy.utils.project import data_path
+
 from juniorguru.lib import scrapers
 from juniorguru.lib.timer import measure
 from juniorguru.lib.log import get_log
 from juniorguru.lib.club import discord_task, count_downvotes, count_upvotes, DISCORD_MUTATIONS_ENABLED
 from juniorguru.models import Job, JobDropped, JobError, SpiderMetric, db
-from juniorguru.sync.jobs.settings import IMAGES_STORE
+from juniorguru.sync.jobs.settings import IMAGES_STORE, HTTPCACHE_DIR
 
 
 log = get_log('jobs')
@@ -17,8 +19,9 @@ JOBS_VOTING_CHANNEL = 841680291675242546
 
 @measure('jobs')
 def main():
-    # If the creation of the directory is left to the spiders, they can end
+    # If the creation of the directories is left to the spiders, they can end
     # up colliding in making sure it gets created
+    data_path(HTTPCACHE_DIR, createdir=True)
     Path(IMAGES_STORE).mkdir(exist_ok=True, parents=True)
 
     with db:

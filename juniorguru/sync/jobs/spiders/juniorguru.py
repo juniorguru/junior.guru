@@ -13,7 +13,11 @@ from juniorguru.sync.jobs.settings import JUNIORGURU_ITEM_PIPELINES
 
 class Spider(BaseSpider):
     name = 'juniorguru'
-    custom_settings = {'ITEM_PIPELINES': JUNIORGURU_ITEM_PIPELINES}
+    custom_settings = {
+        'ITEM_PIPELINES': JUNIORGURU_ITEM_PIPELINES,
+        'ROBOTSTXT_OBEY': False,  # requesting API, so irrelevant, saving a few requests
+    }
+
     doc_key = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
     sheet_name = 'jobs'
     override_response_url = f'https://docs.google.com/spreadsheets/d/{doc_key}/edit#gid=0'
