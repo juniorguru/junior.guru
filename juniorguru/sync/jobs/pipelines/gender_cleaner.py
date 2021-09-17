@@ -31,7 +31,7 @@ class Pipeline():
         ''', re.VERBOSE | re.IGNORECASE),
 
         # emojis
-        re.compile(r'[👩‍💻👨‍💻][\/\|][👩‍💻👨‍💻]')
+        re.compile(r'👩‍💻[\/\|]👨‍💻|👨‍💻[\/\|]👩‍💻')
     ]
 
     def process_item(self, item, spider):
