@@ -43,6 +43,7 @@ def main():
     sync_transactions()
     sync_proxies()
     sync_club_content()
+    sync_employments()
 
     # order-sensitive
     sync_mentoring()  # depends on club_content
@@ -56,7 +57,6 @@ def main():
     sync_roles()  # depends on club_content, events, avatars, subscriptions
     sync_jobs()  # depends on proxies
     sync_metrics()  # depends on jobs, logos, transactions
-    sync_employments()  # depends on jobs
 
     # cast magic
     do_magic()  # depends on jobs
