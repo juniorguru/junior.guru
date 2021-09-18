@@ -119,7 +119,7 @@ class Loader(ItemLoader):
     default_output_processor = TakeFirst()
     link_in = Compose(first, clean_url)
     alternative_links_in = MapCompose(clean_proxied_url, clean_url)
-    alternative_links_out = Identity()
+    alternative_links_out = Compose(set, list)
     company_link_in = Compose(first, clean_url)
     employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()
