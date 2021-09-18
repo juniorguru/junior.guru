@@ -13,6 +13,7 @@ class Employment(BaseModel):
     company_name = CharField()
     url = CharField()
     alternative_urls = JSONField(default=lambda: [])
+    locations = JSONField(default=lambda: [])
     description_html = TextField()
     first_seen_at = DateField()
     last_seen_at = DateField()
@@ -39,6 +40,7 @@ class Employment(BaseModel):
                    company_name=item['company_name'],
                    url=item['url'],
                    alternative_urls=item['alternative_urls'],
+                   locations=item['locations'],
                    description_html=item['description_html'],
                    first_seen_at=item['seen_at'],
                    last_seen_at=item['seen_at'],
@@ -46,16 +48,23 @@ class Employment(BaseModel):
                    source_urls=item['source_urls'])
 
     def merge_item(self, item):
-        self.alternative_urls = list(set(self.alternative_urls + item['alternative_urls']))
         self.first_seen_at = min(self.first_seen_at, item['seen_at'])
         self.last_seen_at = max(self.last_seen_at, item['seen_at'])
+
+        self.alternative_urls = list(set(self.alternative_urls + item['alternative_urls']))
         self.source_urls = list(set(self.source_urls + item['source_urls']))
+
+        self.locations = [dict(l) for l in list(set(
+            [tuple(l.items()) for l in self.locations] +
+            [tuple(l.items()) for l in item['locations']]
+        ))]
 
     def to_api(self):
         return dict(title=self.title,
                     company_name=self.company_name,
                     url=self.url,
                     alternative_urls=self.alternative_urls,
+                    locations=self.locations,
                     first_seen_at=self.first_seen_at,
                     last_seen_at=self.last_seen_at,
                     source=self.source)

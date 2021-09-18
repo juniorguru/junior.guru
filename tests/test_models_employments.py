@@ -1,4 +1,5 @@
 from datetime import date, timedelta
+from operator import itemgetter
 
 import pytest
 from peewee import SqliteDatabase
@@ -39,6 +40,7 @@ def db_connection():
 @pytest.fixture
 def item():
     return dict(alternative_urls=[],
+                locations=[],
                 seen_at=date.today(),
                 source_urls=[])
 
@@ -149,4 +151,22 @@ def test_merge_item_source_urls(db_connection, item):
         'https://abc.example.com/jobs/1',
         'https://efg.example.com/jobs/1',
         'https://xyz.example.com/jobs/1',
+    ]
+
+
+def test_merge_item_locations(db_connection, item):
+    employment = create_employment(title='Job 1', locations=[
+        {'name': 'Kladno', 'region': 'Prague'},
+        {'name': 'Ivančice', 'region': 'Brno'},
+    ])
+    item['locations'] = [
+        {'name': 'Kladno', 'region': 'Prague'},
+        {'name': 'Tečovice', 'region': 'Zlín'},
+    ]
+    employment.merge_item(item)
+
+    assert sorted(employment.locations, key=itemgetter('name')) == [
+        {'name': 'Ivančice', 'region': 'Brno'},
+        {'name': 'Kladno', 'region': 'Prague'},
+        {'name': 'Tečovice', 'region': 'Zlín'},
     ]
