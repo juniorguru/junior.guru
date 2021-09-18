@@ -96,9 +96,9 @@ class Spider(BaseSpider):
         for seen_at in (row['first_seen_at'], row['last_seen_at']):
             yield Employment(title=row['title'],
                              url=row['link'],
-                             alternative_urls=row.get('alternative_urls', []),
+                             alternative_urls=row['alternative_urls'] if 'alternative_urls' in row else [],
                              company_name=row['company_name'],
-                             locations=row.get('locations', []),
+                             locations=row['locations'] if 'locations' in row else [],
                              description_html=row['description_html'],
                              seen_at=seen_at,
                              source=row['source'],
@@ -108,7 +108,7 @@ class Spider(BaseSpider):
         for seen_at in (row['posted_at'], ci_data['build_date']):
             yield Employment(title=row['title'],
                              url=row['link'],
-                             alternative_urls=row.get('alternative_links', []),
+                             alternative_urls=row['alternative_links'] if 'alternative_links' in row else [],
                              company_name=row['company_name'],
                              locations=row['locations'],
                              description_html=row['description_html'],
@@ -122,7 +122,7 @@ class Spider(BaseSpider):
             for seen_at in (item['posted_at'], ci_data['build_date']):
                 yield Employment(title=item['title'],
                                  url=item['link'],
-                                 alternative_urls=row.get('alternative_links', []),
+                                 alternative_urls=row['alternative_links'] if 'alternative_links' in row else [],
                                  company_name=item['company_name'],
                                  locations=item['locations'],
                                  description_html=item['description_html'],
