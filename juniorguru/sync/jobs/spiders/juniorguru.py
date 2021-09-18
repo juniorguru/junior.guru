@@ -54,6 +54,7 @@ def coerce_record(record):
     }, record)
     data['id'] = create_id(data['posted_at'], data['company_link'])
     data['link'] = f"https://junior.guru/jobs/{data['id']}/"
+    data['alternative_links'] = [data['external_link']] if data.get('external_link') else []
     return data
 
 

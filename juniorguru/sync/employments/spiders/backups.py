@@ -96,21 +96,23 @@ class Spider(BaseSpider):
         for seen_at in (row['first_seen_at'], row['last_seen_at']):
             yield Employment(title=row['title'],
                              url=row['link'],
+                             alternative_urls=row.get('alternative_urls', []),
                              company_name=row['company_name'],
                              description_html=row['description_html'],
                              seen_at=seen_at,
                              source=row['source'],
-                             source_url=row['response_url'])
+                             source_urls=row['source_urls'] + [ci_data['build_url']])
 
     def parse_job_row(self, row, ci_data):  # old-style jobs
         for seen_at in (row['posted_at'], ci_data['build_date']):
             yield Employment(title=row['title'],
                              url=row['link'],
+                             alternative_urls=row.get('alternative_links', []),
                              company_name=row['company_name'],
                              description_html=row['description_html'],
                              seen_at=seen_at,
                              source=row['source'],
-                             source_url=row['response_url'])
+                             source_urls=[row['response_url'], ci_data['build_url']])
 
     def parse_jobdropped_row(self, row, ci_data):  # old-style jobs
         if row['type'] == 'NotEntryLevel':
@@ -118,11 +120,12 @@ class Spider(BaseSpider):
             for seen_at in (item['posted_at'], ci_data['build_date']):
                 yield Employment(title=item['title'],
                                  url=item['link'],
+                                 alternative_urls=row.get('alternative_links', []),
                                  company_name=item['company_name'],
                                  description_html=item['description_html'],
                                  seen_at=seen_at,
                                  source=row['source'],
-                                 source_url=row['response_url'])
+                                 source_urls=[row['response_url'], ci_data['build_url']])
 
 
 def is_sync_ci_job(ci_job):

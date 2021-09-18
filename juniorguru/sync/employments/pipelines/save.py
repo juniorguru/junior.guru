@@ -15,7 +15,7 @@ class Pipeline():
         def operation():
             try:
                 stats_value = 'item_merged_count'
-                employment = self.model.get_by_id(item['id'])
+                employment = self.model.get_by_item(item)
                 employment.merge_item(item)
                 employment.save()
             except self.model.DoesNotExist:

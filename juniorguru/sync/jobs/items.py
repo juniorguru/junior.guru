@@ -19,6 +19,7 @@ class Job(Item):
     company_name = Field(required=True)
     company_link = Field()
     link = Field(required=True)
+    alternative_links = Field()
     description_html = Field(required=True)
     employment_types = Field()
     experience_levels = Field()

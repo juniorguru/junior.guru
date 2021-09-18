@@ -6,10 +6,7 @@ from scrapy.loader import ItemLoader
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
 from juniorguru.sync.jobs.items import Job, first, parse_relative_date, split
-from juniorguru.lib.url_params import increment_param, strip_params, get_param, replace_in_params
-
-
-UTM_PARAM_NAMES = ['utm_source', 'utm_medium', 'utm_campaign']
+from juniorguru.lib.url_params import increment_param, strip_params, get_param, replace_in_params, UTM_PARAM_NAMES
 
 
 class Spider(BaseSpider):
@@ -58,8 +55,8 @@ class Spider(BaseSpider):
         loader = Loader(item=Job(), response=response)
         loader.add_css('title', 'h2::text')
         loader.add_css('remote', 'h2::text')
-        loader.add_css('link', '.apply-button::attr(href)')
         loader.add_css('link', '.top-card-layout__entity-info > a::attr(href)')
+        loader.add_css('alternative_links', '.apply-button::attr(href)')
         loader.add_css('company_name', '.topcard__org-name-link::text')
         loader.add_css('company_name', '.top-card-layout .topcard__flavor:nth-child(1)::text')
         loader.add_css('company_link', '.topcard__org-name-link::attr(href)')
@@ -72,15 +69,17 @@ class Spider(BaseSpider):
         loader.add_css('company_logo_urls', 'img.artdeco-entity-image[data-delayed-url*="company-logo"]::attr(data-delayed-url)')
         item = loader.load_item()
 
-        if not item.get('link') or 'linkedin.com' in item['link']:
-            yield item
+        alternative_links = item.get('alternative_links', [])
+        if len(alternative_links) > 1:
+            raise NotImplementedError(f"Unexpected number of alternative links: {', '.join(alternative_links)}")
+        elif alternative_links:
+            yield response.follow(alternative_links[0], callback=self.verify_job, cb_kwargs=dict(item=item))
         else:
-            yield response.follow(item['link'],
-                                  callback=self.verify_job,
-                                  cb_kwargs=dict(item=item))
+            yield item
 
     def verify_job(self, response, item):
         """Filters out links to broken external links"""
+        item['alternative_links'] = [item['link']]
         item['link'] = response.url  # skips redirects, if any
         yield item
 
@@ -99,7 +98,7 @@ def clean_proxied_url(url):
 
 def clean_url(url):
     if url and 'linkedin.com' in url:
-        return strip_params(url, ['refId', 'trk'])
+        return strip_params(url, ['refId', 'trk', 'trackingId'])
     if url and 'talentify.io' in url:
         return strip_params(url, ['tdd'])
     if url and 'neuvoo.cz' in url:
@@ -118,7 +117,9 @@ def parse_remote(text):
 class Loader(ItemLoader):
     default_input_processor = MapCompose(str.strip)
     default_output_processor = TakeFirst()
-    link_in = Compose(first, clean_proxied_url, clean_url)
+    link_in = Compose(first, clean_url)
+    alternative_links_in = MapCompose(clean_proxied_url, clean_url)
+    alternative_links_out = Identity()
     company_link_in = Compose(first, clean_url)
     employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()

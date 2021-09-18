@@ -7,7 +7,6 @@ USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
 ROBOTSTXT_OBEY = True
 
 ITEM_PIPELINES = {
-    'juniorguru.sync.employments.pipelines.identify.Pipeline': 1,
     'juniorguru.sync.employments.pipelines.save.Pipeline': 2,
 }
 

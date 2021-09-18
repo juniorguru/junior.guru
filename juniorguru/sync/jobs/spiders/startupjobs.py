@@ -5,6 +5,7 @@ from scrapy.loader import ItemLoader
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
 from juniorguru.sync.jobs.items import Job, parse_iso_date
+from juniorguru.lib.url_params import strip_params, UTM_PARAM_NAMES
 
 
 class Spider(BaseSpider):
@@ -22,6 +23,7 @@ class Spider(BaseSpider):
             offer_loader = loader.nested_xpath(f'//offer[{n}]')
             offer_loader.add_xpath('title', './/position/text()')
             offer_loader.add_xpath('link', './/url/text()')
+            offer_loader.add_xpath('alternative_links', './/url/text()')
             offer_loader.add_xpath('company_name', './/startup/text()')
             offer_loader.add_xpath('company_link', './/startupURL/text()')
             offer_loader.add_xpath('locations_raw', './/city/text()')
@@ -38,10 +40,16 @@ def drop_remote(types):
     return [type_ for type_ in types if type_.lower() != 'remote']
 
 
+def strip_utm_params(url):
+    return strip_params(url, UTM_PARAM_NAMES)
+
+
 class Loader(ItemLoader):
     default_input_processor = MapCompose(str.strip)
     default_output_processor = TakeFirst()
     title_in = MapCompose(html.unescape)
+    alternative_links_in = MapCompose(str.strip, strip_utm_params)
+    alternative_links_out = Identity()
     company_name_in = MapCompose(html.unescape)
     employment_types_in = Compose(MapCompose(str.strip), drop_remote)
     employment_types_out = Identity()

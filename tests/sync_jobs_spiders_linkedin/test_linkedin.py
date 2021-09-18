@@ -96,7 +96,18 @@ def test_spider_parse_job_apply_on_company_website():
     request = next(linkedin.Spider().parse_job(response))
     job = request.cb_kwargs['item']
 
-    assert job['link'] == 'https://jobs.siemens.com/jobs/240215?lang=en-us&jobPipeline=juniorguru%3FsourceType%3DPREMIUM_POST_SITE&source=juniorguru%28Wrap%29'
+    assert job['link'] == 'https://cz.linkedin.com/jobs/view/junior-automation-test-engineer-for-siemens-at-siemens-2689458333'
+    assert job['alternative_links'] == ['https://jobs.siemens.com/jobs/240215?lang=en-us&jobPipeline=juniorguru%3FsourceType%3DPREMIUM_POST_SITE&source=juniorguru%28Wrap%29']
+
+
+def test_spider_verify_job_apply_on_company_website():
+    response = HtmlResponse('https://example.com/example/', body=b'')
+    item = dict(link='https://cz.linkedin.com/jobs/view/junior-automation-test-engineer-for-siemens-at-siemens-2689458333',
+                alternative_links=['https://example.com/example/?redirect=foo'])
+    job = next(linkedin.Spider().verify_job(response, item))
+
+    assert job['link'] == 'https://example.com/example/'
+    assert job['alternative_links'] == ['https://cz.linkedin.com/jobs/view/junior-automation-test-engineer-for-siemens-at-siemens-2689458333']
 
 
 def test_clean_proxied_url():

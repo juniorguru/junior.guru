@@ -60,6 +60,7 @@ class Job(BaseModel):
     company_logo_path = CharField(null=True)
     employment_types = JSONField(default=lambda: [])
     link = CharField(index=True)
+    alternative_links = JSONField(default=lambda: [])
     lang = CharField()
     description_html = TextField()
     junior_rank = IntegerField(index=True)

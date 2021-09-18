@@ -2,6 +2,9 @@ import re
 from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
 
 
+UTM_PARAM_NAMES = ['utm_source', 'utm_medium', 'utm_campaign']
+
+
 def strip_params(url, param_names):
     parts = urlparse(url)
     params = {name: value for name, value
