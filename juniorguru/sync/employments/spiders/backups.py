@@ -95,32 +95,34 @@ class Spider(BaseSpider):
     def parse_employment_row(self, row, ci_data):
         for seen_at in (row['first_seen_at'], row['last_seen_at']):
             yield Employment(title=row['title'],
-                            url=row['link'],
-                            company_name=row['company_name'],
-                            description_html=row['description_html'],
-                            seen_at=seen_at,
-                            source=row['source'],
-                            source_url=row['response_url'])
+                             url=row['link'],
+                             company_name=row['company_name'],
+                             description_html=row['description_html'],
+                             seen_at=seen_at,
+                             source=row['source'],
+                             source_url=row['response_url'])
 
     def parse_job_row(self, row, ci_data):  # old-style jobs
-        yield Employment(title=row['title'],
-                         url=row['link'],
-                         company_name=row['company_name'],
-                         description_html=row['description_html'],
-                         seen_at=ci_data['build_date'],
-                         source=row['source'],
-                         source_url=row['response_url'])
+        for seen_at in (row['posted_at'], ci_data['build_date']):
+            yield Employment(title=row['title'],
+                             url=row['link'],
+                             company_name=row['company_name'],
+                             description_html=row['description_html'],
+                             seen_at=seen_at,
+                             source=row['source'],
+                             source_url=row['response_url'])
 
     def parse_jobdropped_row(self, row, ci_data):  # old-style jobs
         if row['type'] == 'NotEntryLevel':
             item = json.loads(row['item'])
-            yield Employment(title=item['title'],
-                             url=item['link'],
-                             company_name=item['company_name'],
-                             description_html=item['description_html'],
-                             seen_at=ci_data['build_date'],
-                             source=row['source'],
-                             source_url=row['response_url'])
+            for seen_at in (item['posted_at'], ci_data['build_date']):
+                yield Employment(title=item['title'],
+                                 url=item['link'],
+                                 company_name=item['company_name'],
+                                 description_html=item['description_html'],
+                                 seen_at=seen_at,
+                                 source=row['source'],
+                                 source_url=row['response_url'])
 
 
 def is_sync_ci_job(ci_job):
