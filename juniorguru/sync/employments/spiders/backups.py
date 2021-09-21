@@ -4,6 +4,7 @@ import shutil
 from pathlib import Path
 import sqlite3
 import json
+from datetime import date
 
 import arrow
 from scrapy.utils.project import data_path
@@ -12,20 +13,68 @@ from scrapy import Spider as BaseSpider, Request
 from juniorguru.sync.employments.items import Employment
 
 
+def employment_adapter(ci_data):
+    for row in (yield 'SELECT * from employment'):
+        for seen_at in (date.fromisoformat(row['first_seen_at']), date.fromisoformat(row['last_seen_at'])):
+            yield Employment(title=row['title'],
+                             urls=json.loads(row['urls']),
+                             company_name=row['company_name'],
+                             locations=row['locations'],
+                             description_html=row['description_html'],
+                             lang=row['lang'],
+                             seen_at=seen_at,
+                             source=row['source'],
+                             source_urls=json.loads(row['source_urls']),
+                             adapter='employment',
+                             build_url=ci_data['build_url'])
+
+
+def job_adapter(ci_data):  # old-style jobs
+    for row in (yield 'SELECT * from job'):
+        urls = [row['link']]
+        urls += json.loads(row['alternative_links']) if 'alternative_links' in row else []
+
+        for seen_at in (date.fromisoformat(row['posted_at']), ci_data['build_date']):
+            yield Employment(title=row['title'],
+                             urls=urls,
+                             company_name=row['company_name'],
+                             locations=json.loads(row['locations']),
+                             description_html=row['description_html'],
+                             lang=row['lang'],
+                             seen_at=seen_at,
+                             source=row['source'],
+                             source_urls=[row['response_url']],
+                             adapter='job',
+                             build_url=ci_data['build_url'])
+
+
+def jobdropped_adapter(ci_data):  # old-style jobs
+    for row in (yield 'SELECT * from jobdropped WHERE type IN ("NotEntryLevel", "Expired")'):
+        item = json.loads(row['item'])
+        urls = [item['link']] + item.get('alternative_links', [])
+
+        for seen_at in (date.fromisoformat(item['posted_at']), ci_data['build_date']):
+            yield Employment(title=item['title'],
+                             urls=urls,
+                             company_name=item['company_name'],
+                             locations=item.get('locations'),
+                             description_html=item['description_html'],
+                             lang=item.get('lang'),
+                             seen_at=seen_at,
+                             source=row['source'],
+                             source_urls=[row['response_url']],
+                             adapter='jobdropped',
+                             build_url=ci_data['build_url'])
+
+
 class Spider(BaseSpider):
     name = 'backups'
-    custom_settings = {
-        'ROBOTSTXT_OBEY': False,  # requesting API, so irrelevant, saving a few requests
-    }
+    custom_settings = {'ROBOTSTXT_OBEY': False}  # requesting API, so irrelevant, saving a few requests
 
     project_url = 'https://circleci.com/api/v1.1/project/github/honzajavorek/junior.guru'
     filename_backup = 'backup.tar.gz'
     filename_db = './juniorguru/data/data.db'
-    tables = [
-        'employment',
-        'job',  # old-style jobs
-        'jobdropped',  # old-style jobs
-    ]
+    adapters = [employment_adapter, job_adapter, jobdropped_adapter]
 
     def __init__(self, *args, **kwargs):
         super(Spider, self).__init__(*args, **kwargs)
@@ -84,51 +133,22 @@ class Spider(BaseSpider):
         connection.row_factory = sqlite3.Row
         try:
             cursor = connection.cursor()
-            sql = f"SELECT name FROM sqlite_master WHERE name IN ({', '.join(['?' for _ in self.tables])})"
-            tables = [row['name'] for row in cursor.execute(sql, self.tables)]
-            for table in tables:
-                for row in cursor.execute(f'SELECT * FROM {table}'):
-                    yield from getattr(self, f'parse_{table}_row')(row, ci_data)
+            for adapter_fn in self.adapters:
+                yield from self.parse_rows(cursor, adapter_fn, ci_data)
         finally:
             connection.close()
 
-    def parse_employment_row(self, row, ci_data):
-        for seen_at in (row['first_seen_at'], row['last_seen_at']):
-            yield Employment(title=row['title'],
-                             url=row['link'],
-                             alternative_urls=row['alternative_urls'] if 'alternative_urls' in row else [],
-                             company_name=row['company_name'],
-                             locations=row['locations'] if 'locations' in row else [],
-                             description_html=row['description_html'],
-                             seen_at=seen_at,
-                             source=row['source'],
-                             source_urls=row['source_urls'] + [ci_data['build_url']])
-
-    def parse_job_row(self, row, ci_data):  # old-style jobs
-        for seen_at in (row['posted_at'], ci_data['build_date']):
-            yield Employment(title=row['title'],
-                             url=row['link'],
-                             alternative_urls=row['alternative_links'] if 'alternative_links' in row else [],
-                             company_name=row['company_name'],
-                             locations=row['locations'],
-                             description_html=row['description_html'],
-                             seen_at=seen_at,
-                             source=row['source'],
-                             source_urls=[row['response_url'], ci_data['build_url']])
-
-    def parse_jobdropped_row(self, row, ci_data):  # old-style jobs
-        if row['type'] == 'NotEntryLevel':
-            item = json.loads(row['item'])
-            for seen_at in (item['posted_at'], ci_data['build_date']):
-                yield Employment(title=item['title'],
-                                 url=item['link'],
-                                 alternative_urls=row['alternative_links'] if 'alternative_links' in row else [],
-                                 company_name=item['company_name'],
-                                 locations=item['locations'],
-                                 description_html=item['description_html'],
-                                 seen_at=seen_at,
-                                 source=row['source'],
-                                 source_urls=[row['response_url'], ci_data['build_url']])
+    def parse_rows(self, cursor, adapter_fn, ci_data):
+        adapter_gen = adapter_fn(ci_data)
+        sql = next(adapter_gen)
+        try:
+            rows = cursor.execute(sql)
+        except sqlite3.OperationalError as e:
+            if 'no such table:' not in str(e):
+                raise e
+        else:
+            adapter_gen.send(rows)
+            yield from adapter_gen
 
 
 def is_sync_ci_job(ci_job):

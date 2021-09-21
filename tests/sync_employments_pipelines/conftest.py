@@ -7,14 +7,15 @@ from scrapy import Spider
 @pytest.fixture
 def item():
     return dict(
-        id='44df50581c3a0c67657c40a587c22a19e10d414b593fcfaea5b01ae9',
         title='Junior Python Engineer',
         company_name='The Best Company',
-        url='https://example.com/jobs/123',
-        description_html='...',
+        locations=[{'name': 'Tečovice', 'region': 'Zlín'}],
+        urls=['https://example.com/jobs/123'],
+        description_html='<p>Need Pythonistas!</p>',
+        lang='en',
         seen_at=date.today(),
         source='example-job-board',
-        source_url='https://example.com/jobs/',
+        source_urls=['https://example.com/jobs/'],
     )
 
 
