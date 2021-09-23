@@ -111,7 +111,7 @@ def clean_url(url):
 
 
 def parse_remote(text):
-    return bool(re.search(r'\bremote\b', text, re.IGNORECASE))
+    return bool(re.search(r'\bremote(ly)?\b', text, re.IGNORECASE))
 
 
 class Loader(ItemLoader):

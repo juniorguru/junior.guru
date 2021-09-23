@@ -145,6 +145,7 @@ def test_clean_url(url, expected):
     ('Junior Software Engineer (C#.NET)', False),
     ('Remote Web Developer - Prague', True),
     ('Remote Web Developer', True),
+    ('JS Frontend Developer (Typescript, Angular) – office nebo 100% remotely', True),
 ])
 def test_parse_remote(text, expected):
     assert linkedin.parse_remote(text) is expected
