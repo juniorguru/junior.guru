@@ -22,7 +22,7 @@ def employment_adapter(ci_data):
     for row in (yield 'SELECT * from employment'):
         apply_url = ((row['apply_link'] if 'apply_link' in row else None) or
                      (row['external_link'] if 'external_link' in row else None) or
-                     (row['link'] if STARTUPJOBS_URL_RE.search(row['link']) else None))
+                     (row['link'] if ('link' in row and STARTUPJOBS_URL_RE.search(row['link'])) else None))
         for seen_at in (date.fromisoformat(row['first_seen_at']), date.fromisoformat(row['last_seen_at'])):
             yield Employment(title=row['title'],
                              url=strip_utm_params(row['url']),
