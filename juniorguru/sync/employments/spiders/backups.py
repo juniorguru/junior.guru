@@ -19,12 +19,12 @@ def employment_adapter(ci_data):
             yield Employment(title=row['title'],
                              url=row['url'],
                              company_name=row['company_name'],
-                             locations=row['locations'],
+                             locations=row['locations'] if 'locations' in row else [],
                              description_html=row['description_html'],
-                             lang=row['lang'],
+                             lang=row['lang'] if 'lang' in row else None,
                              seen_at=seen_at,
                              source=row['source'],
-                             source_urls=json.loads(row['source_urls']),
+                             source_urls=json.loads(row['source_urls']) if 'source_urls' in row else [],
                              adapter='employment',
                              build_url=ci_data['build_url'])
 
@@ -50,7 +50,14 @@ def jobdropped_adapter(ci_data):  # old-style jobs
     for row in (yield 'SELECT * from jobdropped WHERE type IN ("NotEntryLevel", "Expired")'):
         # TODO deal with link, apply_link, utm params links
         item = json.loads(row['item'])
-        for seen_at in (date.fromisoformat(item['posted_at']), ci_data['build_date']):
+
+        first_seen_at = date.fromisoformat(item['posted_at'])
+        if item.get('expires_at'):
+            last_seen_at = min(ci_data['build_date'], date.fromisoformat(item['expires_at']))
+        else:
+            last_seen_at = ci_data['build_date']
+
+        for seen_at in (first_seen_at, last_seen_at):
             yield Employment(title=item['title'],
                              url=item['link'],
                              company_name=item['company_name'],

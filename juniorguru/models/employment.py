@@ -9,6 +9,9 @@ from juniorguru.models.base import BaseModel, JSONField
 
 
 class Employment(BaseModel):
+    class Meta:
+        table_name = 'employment'  # TODO versions
+
     title = CharField()
     company_name = CharField()
     url = CharField(unique=True)
