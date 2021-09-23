@@ -44,7 +44,6 @@ pandas = "*"
 piexif = "*"
 markupsafe = "*"
 mkdocs-simple-hooks = "*"
-setuptools = "<=58"  # solves 'rdflib-jsonld setup command: use_2to3 is invalid'
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
