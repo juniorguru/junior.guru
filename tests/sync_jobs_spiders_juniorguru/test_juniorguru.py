@@ -90,9 +90,8 @@ def test_coerce_record():
         'locations_raw': ['Prague'],
         'remote': False,
         'link': f'https://junior.guru/jobs/{id_}/',
-        'alternative_links': ['https://jobs.example.com/1245/'],
         'pricing_plan': 'community',
         'approved_at': date(2019, 10, 10),
         'expires_at': date(2019, 12, 12),
-        'external_link': 'https://jobs.example.com/1245/',
+        'apply_link': 'https://jobs.example.com/1245/',
     }

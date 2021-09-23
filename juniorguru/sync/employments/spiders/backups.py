@@ -17,7 +17,7 @@ def employment_adapter(ci_data):
     for row in (yield 'SELECT * from employment'):
         for seen_at in (date.fromisoformat(row['first_seen_at']), date.fromisoformat(row['last_seen_at'])):
             yield Employment(title=row['title'],
-                             urls=json.loads(row['urls']),
+                             url=row['url'],
                              company_name=row['company_name'],
                              locations=row['locations'],
                              description_html=row['description_html'],
@@ -31,12 +31,10 @@ def employment_adapter(ci_data):
 
 def job_adapter(ci_data):  # old-style jobs
     for row in (yield 'SELECT * from job'):
-        urls = [row['link']]
-        urls += json.loads(row['alternative_links']) if 'alternative_links' in row else []
-
+        # TODO deal with link, apply_link, utm params links
         for seen_at in (date.fromisoformat(row['posted_at']), ci_data['build_date']):
             yield Employment(title=row['title'],
-                             urls=urls,
+                             url=row['link'],
                              company_name=row['company_name'],
                              locations=json.loads(row['locations']),
                              description_html=row['description_html'],
@@ -50,12 +48,11 @@ def job_adapter(ci_data):  # old-style jobs
 
 def jobdropped_adapter(ci_data):  # old-style jobs
     for row in (yield 'SELECT * from jobdropped WHERE type IN ("NotEntryLevel", "Expired")'):
+        # TODO deal with link, apply_link, utm params links
         item = json.loads(row['item'])
-        urls = [item['link']] + item.get('alternative_links', [])
-
         for seen_at in (date.fromisoformat(item['posted_at']), ci_data['build_date']):
             yield Employment(title=item['title'],
-                             urls=urls,
+                             url=item['link'],
                              company_name=item['company_name'],
                              locations=item.get('locations'),
                              description_html=item['description_html'],

@@ -19,7 +19,7 @@ class Job(Item):
     company_name = Field(required=True)
     company_link = Field()
     link = Field(required=True)
-    alternative_links = Field()
+    apply_link = Field()
     description_html = Field(required=True)
     employment_types = Field()
     experience_levels = Field()
@@ -42,7 +42,6 @@ class Job(Item):
 
 
 class JuniorGuruJob(Job):
-    external_link = Field()
     email = Field(required=True)
     pricing_plan = Field(required=True)
     approved_at = Field(required=True)

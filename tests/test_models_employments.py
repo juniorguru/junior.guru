@@ -9,11 +9,8 @@ from juniorguru.models import Employment
 def create_employment(**data):
     data.setdefault('title', 'Junior Python Engineer')
     data.setdefault('company_name', 'Company Ltd.')
-    data.setdefault('urls', [
-        'https://example.com/jobs/1',
-        'https://example.com/jobs/1?utm_source=123',
-        'https://jobboard.example.com/abcdefgh/1234',
-    ])
+    data.setdefault('url', 'https://example.com/jobs/1')
+    data.setdefault('apply_url', 'https://example.com/jobs/1?utm_source=123')
     data.setdefault('description_html', '<p>Needs to know some <strong>Python</strong>!</p>')
     data.setdefault('lang', 'en')
     data.setdefault('first_seen_at', date.today() - timedelta(weeks=1))
@@ -41,7 +38,7 @@ def db_connection():
 def item():
     return dict(title='Junior Python Engineer',
                 company_name='Company Ltd.',
-                urls=['https://example.com/jobs/123'],
+                url='https://example.com/jobs/123',
                 description_html='<p>Needs to know some <strong>Python</strong>!</p>',
                 lang='en',
                 locations=[],
@@ -51,60 +48,60 @@ def item():
 
 
 def test_get_by_item_url(db_connection):
-    create_employment(title='Job 1', urls=['https://xyz.example.com/jobs/1'])
-    create_employment(title='Job 2', urls=['https://xyz.example.com/jobs/2'])
-    create_employment(title='Job 3', urls=['https://xyz.example.com/jobs/3'])
-    item = dict(urls=['https://xyz.example.com/jobs/2'])
+    create_employment(title='Job 1', url='https://xyz.example.com/jobs/1')
+    create_employment(title='Job 2', url='https://xyz.example.com/jobs/2')
+    create_employment(title='Job 3', url='https://xyz.example.com/jobs/3')
+    item = dict(url='https://xyz.example.com/jobs/2')
     employment = Employment.get_by_item(item)
 
     assert employment.title == 'Job 2'
 
 
-def test_get_by_item_url_finds_by_multiple_urls(db_connection):
-    create_employment(title='Job 1', urls=['https://xyz.example.com/jobs/1'])
-    create_employment(title='Job 2', urls=['https://xyz.example.com/jobs/2'])
-    create_employment(title='Job 3', urls=['https://xyz.example.com/jobs/3'])
-    item = dict(urls=['https://xyz.example.com/jobs/2', 'https://xyz.example.com/jobs/42'])
-    employment = Employment.get_by_item(item)
+# def test_get_by_item_url_finds_by_multiple_urls(db_connection):
+#     create_employment(title='Job 1', urls=['https://xyz.example.com/jobs/1'])
+#     create_employment(title='Job 2', urls=['https://xyz.example.com/jobs/2'])
+#     create_employment(title='Job 3', urls=['https://xyz.example.com/jobs/3'])
+#     item = dict(urls=['https://xyz.example.com/jobs/2', 'https://xyz.example.com/jobs/42'])
+#     employment = Employment.get_by_item(item)
 
-    assert employment.title == 'Job 2'
-
-
-def test_get_by_item_url_finds_in_multiple_urls(db_connection):
-    create_employment(title='Job 1', urls=['https://xyz.example.com/jobs/1'])
-    create_employment(title='Job 2', urls=['https://xyz.example.com/jobs/42', 'https://xyz.example.com/jobs/2'])
-    create_employment(title='Job 3', urls=['https://xyz.example.com/jobs/3'])
-    item = dict(urls=['https://xyz.example.com/jobs/2'])
-    employment = Employment.get_by_item(item)
-
-    assert employment.title == 'Job 2'
+#     assert employment.title == 'Job 2'
 
 
-def test_get_by_item_url_raises_does_not_exist(db_connection):
-    create_employment(title='Job 1', urls=['https://xyz.example.com/jobs/1'])
-    create_employment(title='Job 2', urls=['https://xyz.example.com/jobs/2'])
-    item = dict(urls=['https://xyz.example.com/jobs/42'])
+# def test_get_by_item_url_finds_in_multiple_urls(db_connection):
+#     create_employment(title='Job 1', urls=['https://xyz.example.com/jobs/1'])
+#     create_employment(title='Job 2', urls=['https://xyz.example.com/jobs/42', 'https://xyz.example.com/jobs/2'])
+#     create_employment(title='Job 3', urls=['https://xyz.example.com/jobs/3'])
+#     item = dict(urls=['https://xyz.example.com/jobs/2'])
+#     employment = Employment.get_by_item(item)
 
-    with pytest.raises(Employment.DoesNotExist):
-        Employment.get_by_item(item)
+#     assert employment.title == 'Job 2'
 
 
-def test_merge_item_urls(db_connection, item):
-    employment = create_employment(urls=[
-        'https://abc.example.com/jobs/1',
-        'https://xyz.example.com/jobs/1',
-    ])
-    item['urls'] = [
-        'https://abc.example.com/jobs/1',
-        'https://efg.example.com/jobs/1',
-    ]
-    employment.merge_item(item)
+# def test_get_by_item_url_raises_does_not_exist(db_connection):
+#     create_employment(title='Job 1', urls=['https://xyz.example.com/jobs/1'])
+#     create_employment(title='Job 2', urls=['https://xyz.example.com/jobs/2'])
+#     item = dict(urls=['https://xyz.example.com/jobs/42'])
 
-    assert sorted(employment.urls) == [
-        'https://abc.example.com/jobs/1',
-        'https://efg.example.com/jobs/1',
-        'https://xyz.example.com/jobs/1',
-    ]
+#     with pytest.raises(Employment.DoesNotExist):
+#         Employment.get_by_item(item)
+
+
+# def test_merge_item_urls(db_connection, item):
+#     employment = create_employment(urls=[
+#         'https://abc.example.com/jobs/1',
+#         'https://xyz.example.com/jobs/1',
+#     ])
+#     item['urls'] = [
+#         'https://abc.example.com/jobs/1',
+#         'https://efg.example.com/jobs/1',
+#     ]
+#     employment.merge_item(item)
+
+#     assert sorted(employment.urls) == [
+#         'https://abc.example.com/jobs/1',
+#         'https://efg.example.com/jobs/1',
+#         'https://xyz.example.com/jobs/1',
+#     ]
 
 
 @pytest.mark.parametrize('employment_seen_at, item_seen_at, expected', [
@@ -154,6 +151,7 @@ def test_merge_item_when_item_is_newer(db_connection, item):
     item['seen_at'] = date(2021, 9, 15)
     item['title'] = 'New Title'
     item['company_name'] = 'New Company Name'
+    item['apply_url'] = 'https://new.example.com/1?utm_source=123'
     item['locations'] = [dict(name='New Name', region='New Region')]
     item['description_html'] = '<p>New Description</p>'
     item['lang'] = 'nw'
@@ -161,11 +159,12 @@ def test_merge_item_when_item_is_newer(db_connection, item):
     employment.merge_item(item)
 
     assert sorted([field.name for field in employment.dirty_fields]) == sorted([
-        'title', 'company_name', 'locations', 'description_html', 'source', 'lang',
-        'last_seen_at', 'first_seen_at', 'source_urls', 'urls', 'items_merged_count',
+        'title', 'company_name', 'locations', 'description_html', 'source', 'lang', 'apply_url',
+        'last_seen_at', 'first_seen_at', 'source_urls', 'items_merged_count',
     ])
     assert employment.title == 'New Title'
     assert employment.company_name == 'New Company Name'
+    assert employment.apply_url == 'https://new.example.com/1?utm_source=123'
     assert employment.locations == [dict(name='New Name', region='New Region')]
     assert employment.description_html == '<p>New Description</p>'
     assert employment.lang == 'nw'
@@ -175,6 +174,7 @@ def test_merge_item_when_item_is_newer(db_connection, item):
 def test_merge_item_when_item_is_older(db_connection, item):
     employment = create_employment(last_seen_at=date(2021, 9, 1),
                                    title='Title',
+                                   apply_url='https://example.com/1?utm_source=123',
                                    company_name='Company Name',
                                    locations=[dict(name='Name', region='Region')],
                                    description_html='<p>Description</p>',
@@ -184,10 +184,11 @@ def test_merge_item_when_item_is_older(db_connection, item):
     employment.merge_item(item)
 
     assert sorted([field.name for field in employment.dirty_fields]) == sorted([
-        'last_seen_at', 'first_seen_at', 'source_urls', 'urls', 'items_merged_count',
+        'last_seen_at', 'first_seen_at', 'source_urls', 'items_merged_count',
     ])
     assert employment.title == 'Title'
     assert employment.company_name == 'Company Name'
+    assert employment.apply_url == 'https://example.com/1?utm_source=123'
     assert employment.locations == [dict(name='Name', region='Region')]
     assert employment.description_html == '<p>Description</p>'
     assert employment.lang == 'en'

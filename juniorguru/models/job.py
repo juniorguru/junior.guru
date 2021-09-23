@@ -60,7 +60,7 @@ class Job(BaseModel):
     company_logo_path = CharField(null=True)
     employment_types = JSONField(default=lambda: [])
     link = CharField(index=True)
-    alternative_links = JSONField(default=lambda: [])
+    apply_link = CharField(null=True)
     lang = CharField()
     description_html = TextField()
     junior_rank = IntegerField(index=True)
@@ -75,7 +75,6 @@ class Job(BaseModel):
     downvotes_count = IntegerField(default=0)
 
     # source: juniorguru
-    external_link = CharField(null=True)
     email = CharField(null=True)
     expires_at = DateField(null=True)
 

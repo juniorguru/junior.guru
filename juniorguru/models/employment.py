@@ -11,7 +11,8 @@ from juniorguru.models.base import BaseModel, JSONField
 class Employment(BaseModel):
     title = CharField()
     company_name = CharField()
-    urls = JSONField(unique=True)
+    url = CharField(unique=True)
+    apply_url = CharField(null=True)
     locations = JSONField(null=True)
     lang = CharField(null=True)
     description_html = TextField()
@@ -23,11 +24,7 @@ class Employment(BaseModel):
 
     @classmethod
     def get_by_item(cls, item):
-        urls = cls.urls.children().alias('urls')
-        return cls.select() \
-            .from_(cls, urls) \
-            .where(urls.c.value.in_(item['urls'])) \
-            .get()
+        return cls.select().where(cls.url == item['url']).get()
 
     @classmethod
     def api_listing(cls):
@@ -37,7 +34,8 @@ class Employment(BaseModel):
     def from_item(cls, item):
         return cls(title=item['title'],
                    company_name=item['company_name'],
-                   urls=item['urls'],
+                   url=item['url'],
+                   apply_url=item.get('apply_url'),
                    locations=item['locations'],
                    description_html=item['description_html'],
                    lang=item.get('lang'),
@@ -51,13 +49,13 @@ class Employment(BaseModel):
         if item['seen_at'] >= self.last_seen_at:
             self.title = item.get('title', self.title)
             self.company_name = item.get('company_name', self.company_name)
+            self.apply_url = item.get('apply_url', self.apply_url)
             self.locations = item.get('locations', self.locations)
             self.description_html = item.get('description_html', self.description_html)
             self.lang = item.get('lang', self.lang)
             self.source = item.get('source', self.source)
 
         # merge
-        self.urls = list(set(self.urls + item['urls']))
         self.source_urls = list(set(self.source_urls + item.get('source_urls', [])))
         self.first_seen_at = min(self.first_seen_at, item['seen_at'])
         self.last_seen_at = max(self.last_seen_at, item['seen_at'])
@@ -68,7 +66,7 @@ class Employment(BaseModel):
     def to_api(self):
         return dict(title=self.title,
                     company_name=self.company_name,
-                    urls=self.urls,
+                    url=self.url,
                     locations=self.locations,
                     first_seen_at=self.first_seen_at,
                     last_seen_at=self.last_seen_at,

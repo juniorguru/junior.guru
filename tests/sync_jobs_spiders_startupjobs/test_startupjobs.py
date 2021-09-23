@@ -20,13 +20,13 @@ def test_spider_parse():
     job = jobs[0]
 
     assert sorted(job.keys()) == sorted([
-        'title', 'link', 'alternative_links', 'company_name', 'company_link', 'locations_raw',
+        'title', 'link', 'apply_link', 'company_name', 'company_link', 'locations_raw',
         'employment_types', 'posted_at', 'description_html', 'company_logo_urls',
         'remote',
     ])
     assert job['title'] == 'My hledáme stále! Přidej se k nám do týmu jako junior linux admin'
-    assert job['link'] == 'https://www.startupjobs.cz/nabidka/22025/my-hledame-stale-pridej-se-k-nam-do-tymu-jako-junior-linux-admin?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
-    assert job['alternative_links'] == ['https://www.startupjobs.cz/nabidka/22025/my-hledame-stale-pridej-se-k-nam-do-tymu-jako-junior-linux-admin']
+    assert job['link'] == 'https://www.startupjobs.cz/nabidka/22025/my-hledame-stale-pridej-se-k-nam-do-tymu-jako-junior-linux-admin'
+    assert job['apply_link'] == 'https://www.startupjobs.cz/nabidka/22025/my-hledame-stale-pridej-se-k-nam-do-tymu-jako-junior-linux-admin?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
     assert job['company_name'] == 'Cloudinfrastack'
     assert job['company_link'] == 'https://www.startupjobs.cz/startup/cloudinfrastack?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
     assert job['locations_raw'] == ['Praha, Česko']

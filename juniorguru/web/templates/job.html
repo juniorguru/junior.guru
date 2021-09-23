@@ -53,8 +53,8 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
   </div>
 
   <div class="call-to-action" itemprop="applicationContact" itemscope itemtype="https://schema.org/ContactPoint">
-    {% if job.external_link %}
-      <a id="apply" data-metrics-utm data-metrics-utm-medium="job_board" data-metrics data-metrics-page-url data-metrics-name="apply" class="legacy-button" href="{{ job.external_link }}">
+    {% if job.apply_link %}
+      <a id="apply" data-metrics-utm data-metrics-utm-medium="job_board" data-metrics data-metrics-page-url data-metrics-name="apply" class="legacy-button" href="{{ job.apply_link }}">
         Mám zájem!
       </a>
     {% else %}
