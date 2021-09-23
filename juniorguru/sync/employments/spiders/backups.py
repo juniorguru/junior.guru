@@ -16,9 +16,13 @@ from juniorguru.sync.employments.items import Employment
 
 def employment_adapter(ci_data):
     for row in (yield 'SELECT * from employment'):
+        apply_url = ((row['apply_link'] if 'apply_link' in row else None) or
+                     (row['external_link'] if 'external_link' in row else None) or
+                     (row['link'] if '&utm_' in row['link'] else None))
         for seen_at in (date.fromisoformat(row['first_seen_at']), date.fromisoformat(row['last_seen_at'])):
             yield Employment(title=row['title'],
                              url=strip_utm_params(row['url']),
+                             apply_url=apply_url,
                              company_name=row['company_name'],
                              locations=row['locations'] if 'locations' in row else [],
                              description_html=row['description_html'],
@@ -32,10 +36,13 @@ def employment_adapter(ci_data):
 
 def job_adapter(ci_data):  # old-style jobs
     for row in (yield 'SELECT * from job'):
-        # TODO deal with link, apply_link, utm params links
+        apply_url = ((row['apply_link'] if 'apply_link' in row else None) or
+                     (row['external_link'] if 'external_link' in row else None) or
+                     (row['link'] if '&utm_' in row['link'] else None))
         for seen_at in (date.fromisoformat(row['posted_at']), ci_data['build_date']):
             yield Employment(title=row['title'],
                              url=strip_utm_params(row['link']),
+                             apply_url=apply_url,
                              company_name=row['company_name'],
                              locations=json.loads(row['locations']),
                              description_html=row['description_html'],
