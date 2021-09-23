@@ -1,3 +1,4 @@
+import re
 import io
 import tarfile
 import shutil
@@ -14,11 +15,14 @@ from juniorguru.lib.url_params import strip_utm_params
 from juniorguru.sync.employments.items import Employment
 
 
+STARTUPJOBS_URL_RE = re.compile(r'startupjobs.+\&utm_')
+
+
 def employment_adapter(ci_data):
     for row in (yield 'SELECT * from employment'):
         apply_url = ((row['apply_link'] if 'apply_link' in row else None) or
                      (row['external_link'] if 'external_link' in row else None) or
-                     (row['link'] if '&utm_' in row['link'] else None))
+                     (row['link'] if STARTUPJOBS_URL_RE.search(row['link']) else None))
         for seen_at in (date.fromisoformat(row['first_seen_at']), date.fromisoformat(row['last_seen_at'])):
             yield Employment(title=row['title'],
                              url=strip_utm_params(row['url']),
@@ -38,7 +42,7 @@ def job_adapter(ci_data):  # old-style jobs
     for row in (yield 'SELECT * from job'):
         apply_url = ((row['apply_link'] if 'apply_link' in row else None) or
                      (row['external_link'] if 'external_link' in row else None) or
-                     (row['link'] if '&utm_' in row['link'] else None))
+                     (row['link'] if STARTUPJOBS_URL_RE.search(row['link']) else None))
         for seen_at in (date.fromisoformat(row['posted_at']), ci_data['build_date']):
             yield Employment(title=row['title'],
                              url=strip_utm_params(row['link']),
