@@ -57,51 +57,13 @@ def test_get_by_item_url(db_connection):
     assert employment.title == 'Job 2'
 
 
-# def test_get_by_item_url_finds_by_multiple_urls(db_connection):
-#     create_employment(title='Job 1', urls=['https://xyz.example.com/jobs/1'])
-#     create_employment(title='Job 2', urls=['https://xyz.example.com/jobs/2'])
-#     create_employment(title='Job 3', urls=['https://xyz.example.com/jobs/3'])
-#     item = dict(urls=['https://xyz.example.com/jobs/2', 'https://xyz.example.com/jobs/42'])
-#     employment = Employment.get_by_item(item)
+def test_get_by_item_url_raises_does_not_exist(db_connection):
+    create_employment(title='Job 1', url='https://xyz.example.com/jobs/1')
+    create_employment(title='Job 2', url='https://xyz.example.com/jobs/2')
+    item = dict(url='https://xyz.example.com/jobs/42')
 
-#     assert employment.title == 'Job 2'
-
-
-# def test_get_by_item_url_finds_in_multiple_urls(db_connection):
-#     create_employment(title='Job 1', urls=['https://xyz.example.com/jobs/1'])
-#     create_employment(title='Job 2', urls=['https://xyz.example.com/jobs/42', 'https://xyz.example.com/jobs/2'])
-#     create_employment(title='Job 3', urls=['https://xyz.example.com/jobs/3'])
-#     item = dict(urls=['https://xyz.example.com/jobs/2'])
-#     employment = Employment.get_by_item(item)
-
-#     assert employment.title == 'Job 2'
-
-
-# def test_get_by_item_url_raises_does_not_exist(db_connection):
-#     create_employment(title='Job 1', urls=['https://xyz.example.com/jobs/1'])
-#     create_employment(title='Job 2', urls=['https://xyz.example.com/jobs/2'])
-#     item = dict(urls=['https://xyz.example.com/jobs/42'])
-
-#     with pytest.raises(Employment.DoesNotExist):
-#         Employment.get_by_item(item)
-
-
-# def test_merge_item_urls(db_connection, item):
-#     employment = create_employment(urls=[
-#         'https://abc.example.com/jobs/1',
-#         'https://xyz.example.com/jobs/1',
-#     ])
-#     item['urls'] = [
-#         'https://abc.example.com/jobs/1',
-#         'https://efg.example.com/jobs/1',
-#     ]
-#     employment.merge_item(item)
-
-#     assert sorted(employment.urls) == [
-#         'https://abc.example.com/jobs/1',
-#         'https://efg.example.com/jobs/1',
-#         'https://xyz.example.com/jobs/1',
-#     ]
+    with pytest.raises(Employment.DoesNotExist):
+        Employment.get_by_item(item)
 
 
 @pytest.mark.parametrize('employment_seen_at, item_seen_at, expected', [

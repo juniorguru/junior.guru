@@ -92,6 +92,10 @@ class Job(BaseModel):
         return self.pricing_plan != 'community'
 
     @property
+    def effective_link(self):
+        return self.apply_link or self.link
+
+    @property
     def location(self):
         # TODO refactor, this is terrible
         if len(self.locations) == 1:
@@ -132,11 +136,9 @@ class Job(BaseModel):
         match = re.match(r'https?://junior.guru/jobs/([^/]+)/', url)
         if match:
             return cls.get_by_id(match.group(1))
-        raise ValueError(url)
-
-    @classmethod
-    def get_by_link(cls, link):
-        return cls.get(cls.link == link)
+        return cls.select() \
+            .where((cls.link == url) | (cls.apply_link == url)) \
+            .get()
 
     @classmethod
     def juniorguru_get_by_id(cls, id):

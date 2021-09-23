@@ -11,7 +11,7 @@
       <a class="jobs__link" href="{{ job.link }}" itemprop="url">
     {% else %}
       <a class="jobs__link" href="{{ url_for(jobs_link) }}">
-      <link itemprop="url" href="{{ job.link }}">
+      <link itemprop="url" href="{{ job.effective_link }}">
     {% endif %}
       <div class="jobs__content">
         <div class="jobs__company-logo">

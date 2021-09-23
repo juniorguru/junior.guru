@@ -80,6 +80,7 @@ def prepare_job_data(id, **kwargs):
         sort_rank=kwargs.get('sort_rank', 5),
         lang=kwargs.get('lang', 'en'),
         link=kwargs.get('link', 'https://example.com/jobs/123/'),
+        apply_link=kwargs.get('apply_link'),
         pricing_plan=kwargs.get('pricing_plan', 'community'),
     )
 

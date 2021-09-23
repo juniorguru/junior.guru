@@ -70,31 +70,44 @@ def test_tags_listing(db_connection):
     assert list(Job.tags_listing(['ALSO_INTERNSHIP', 'ALSO_PART_TIME'])) == [job1, job2, job4]
 
 
+def test_effective_link(db_connection):
+    job = create_job('1', link='https://example.com/1234', apply_link=None)
+
+    assert job.effective_link == 'https://example.com/1234'
+
+
+def test_effective_link_apply(db_connection):
+    job = create_job('1', link='https://example.com/1234', apply_link='https://example.com/1234?utm_something=123')
+
+    assert job.effective_link == 'https://example.com/1234?utm_something=123'
+
+
 def test_get_by_url(db_connection):
+    job = create_job('1', link='https://example.com/1234', apply_link='https://example.com/1234?utm_something=123')
+
+    assert Job.get_by_url('https://example.com/1234') == job
+
+
+def test_get_by_url_raises_does_not_exist_error(db_connection):
+    with pytest.raises(Job.DoesNotExist):
+        Job.get_by_url('https://example.com/1234')
+
+
+def test_get_by_url_apply(db_connection):
+    job = create_job('1', link='https://example.com/1234', apply_link='https://example.com/1234?utm_something=123')
+
+    assert Job.get_by_url('https://example.com/1234?utm_something=123') == job
+
+
+def test_get_by_url_juniorguru(db_connection):
     job = create_job('1')
 
     assert Job.get_by_url('https://junior.guru/jobs/1/') == job
 
 
-def test_get_by_url_raises_value_error(db_connection):
-    with pytest.raises(ValueError):
-        Job.get_by_url('https://example.com/jobs/xyz/')
-
-
-def test_get_by_url_raises_does_not_exist_error(db_connection):
+def test_get_by_url_juniorguru_raises_does_not_exist_error(db_connection):
     with pytest.raises(Job.DoesNotExist):
         Job.get_by_url('https://junior.guru/jobs/1/')
-
-
-def test_get_by_link(db_connection):
-    job = create_job('1', link='https://example.com/1234')
-
-    assert Job.get_by_link('https://example.com/1234') == job
-
-
-def test_get_by_link_raises_does_not_exist_error(db_connection):
-    with pytest.raises(Job.DoesNotExist):
-        Job.get_by_link('https://example.com/1234')
 
 
 def test_juniorguru_get_by_id(db_connection):

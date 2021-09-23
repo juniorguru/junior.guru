@@ -7,8 +7,8 @@
     {% if job.is_juniorguru %}
       <a class="jobs__link" href="{{ job.link }}" itemprop="url">
     {% else %}
-      <a class="jobs__link" href="{{ job.link }}"{% if 'utm_' not in job.link and 'linkedin.com' not in job.link %} data-metrics-utm data-metrics-utm-medium="job_board"{% endif %} data-metrics data-metrics-name="job" target="_blank" rel="noopener nofollow">
-      <link itemprop="url" href="{{ job.link }}">
+      <a class="jobs__link" href="{{ job.effective_link }}"{% if 'utm_' not in job.effective_link %} data-metrics-utm data-metrics-utm-medium="job_board"{% endif %} data-metrics data-metrics-name="job" target="_blank" rel="noopener nofollow">
+      <link itemprop="url" href="{{ job.effective_link }}">
     {% endif %}
       <div class="jobs__content">
         <div class="jobs__company-logo">

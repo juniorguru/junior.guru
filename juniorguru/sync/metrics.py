@@ -66,14 +66,14 @@ def main():
 
         for url, value in google_analytics_metrics['users_per_external_job'].items():
             try:
-                job = Job.get_by_link(url)
+                job = Job.get_by_url(url)
                 JobMetric.create(job=job, name='users', value=value)
             except Job.DoesNotExist:
                 pass
 
         for url, value in google_analytics_metrics['pageviews_per_external_job'].items():
             try:
-                job = Job.get_by_link(url)
+                job = Job.get_by_url(url)
                 JobMetric.create(job=job, name='pageviews', value=value)
             except Job.DoesNotExist:
                 pass
