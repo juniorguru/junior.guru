@@ -14,7 +14,7 @@ from juniorguru.sync.jobs.items import Job, absolute_url
 
 
 class Spider(BaseSpider):
-    name = 'wwr'
+    name = 'weworkremotely'
     start_urls = [
         'https://weworkremotely.com/categories/remote-devops-sysadmin-jobs.rss',
         'https://weworkremotely.com/categories/remote-programming-jobs.rss',

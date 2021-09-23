@@ -11,6 +11,7 @@ def item():
         company_name='The Best Company',
         locations=[{'name': 'Tečovice', 'region': 'Zlín'}],
         url='https://example.com/jobs/123',
+        external_ids=[],
         description_html='<p>Need Pythonistas!</p>',
         lang='en',
         seen_at=date.today(),

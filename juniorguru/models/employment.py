@@ -16,6 +16,7 @@ class Employment(BaseModel):
     company_name = CharField()
     url = CharField(unique=True)
     apply_url = CharField(null=True)
+    external_ids = JSONField(default=lambda: [])
     locations = JSONField(null=True)
     lang = CharField(null=True)
     description_html = TextField()
@@ -39,6 +40,7 @@ class Employment(BaseModel):
                    company_name=item['company_name'],
                    url=item['url'],
                    apply_url=item.get('apply_url'),
+                   external_ids=item['external_ids'],
                    locations=item['locations'],
                    description_html=item['description_html'],
                    lang=item.get('lang'),
@@ -59,6 +61,7 @@ class Employment(BaseModel):
             self.source = item.get('source', self.source)
 
         # merge
+        self.external_ids = list(set(self.external_ids + item.get('external_ids', [])))
         self.source_urls = list(set(self.source_urls + item.get('source_urls', [])))
         self.first_seen_at = min(self.first_seen_at, item['seen_at'])
         self.last_seen_at = max(self.last_seen_at, item['seen_at'])
@@ -70,6 +73,7 @@ class Employment(BaseModel):
         return dict(title=self.title,
                     company_name=self.company_name,
                     url=self.url,
+                    external_ids=self.external_ids,
                     locations=self.locations,
                     first_seen_at=self.first_seen_at,
                     last_seen_at=self.last_seen_at,

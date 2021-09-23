@@ -7,6 +7,7 @@ class Employment(Item):
     company_name = Field()
     url = Field()
     apply_url = Field()
+    external_ids = Field()
     locations = Field()
     lang = Field()
     description_html = Field()

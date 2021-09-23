@@ -122,7 +122,7 @@ def test_merge_item_when_item_is_newer(db_connection, item):
 
     assert sorted([field.name for field in employment.dirty_fields]) == sorted([
         'title', 'company_name', 'locations', 'description_html', 'source', 'lang', 'apply_url',
-        'last_seen_at', 'first_seen_at', 'source_urls', 'items_merged_count',
+        'last_seen_at', 'first_seen_at', 'source_urls', 'items_merged_count', 'external_ids',
     ])
     assert employment.title == 'New Title'
     assert employment.company_name == 'New Company Name'
@@ -146,7 +146,7 @@ def test_merge_item_when_item_is_older(db_connection, item):
     employment.merge_item(item)
 
     assert sorted([field.name for field in employment.dirty_fields]) == sorted([
-        'last_seen_at', 'first_seen_at', 'source_urls', 'items_merged_count',
+        'last_seen_at', 'first_seen_at', 'source_urls', 'items_merged_count', 'external_ids',
     ])
     assert employment.title == 'Title'
     assert employment.company_name == 'Company Name'

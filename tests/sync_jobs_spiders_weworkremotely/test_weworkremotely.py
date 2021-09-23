@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from scrapy.http import XmlResponse, HtmlResponse
 
-from juniorguru.sync.jobs.spiders import wwr
+from juniorguru.sync.jobs.spiders import weworkremotely
 
 
 FIXTURES_DIR = Path(__file__).parent
@@ -13,7 +13,7 @@ FIXTURES_DIR = Path(__file__).parent
 def test_spider_parse():
     response = XmlResponse('https://example.com/example/',
                            body=Path(FIXTURES_DIR / 'remote-programming-jobs.rss').read_bytes())
-    requests = list(wwr.Spider().parse(response))
+    requests = list(weworkremotely.Spider().parse(response))
 
     assert len(requests) == 4
 
@@ -35,7 +35,7 @@ def test_spider_parse_job():
     feed_data = dict(remote=True)
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job.html').read_bytes())
-    jobs = list(wwr.Spider().parse_job(response, feed_data))
+    jobs = list(weworkremotely.Spider().parse_job(response, feed_data))
 
     assert len(jobs) == 1
 
@@ -59,7 +59,7 @@ def test_spider_parse_job():
 def test_spider_parse_job_no_image():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job_no_image.html').read_bytes())
-    job = next(wwr.Spider().parse_job(response, {}))
+    job = next(weworkremotely.Spider().parse_job(response, {}))
 
     assert job.get('company_logo_urls') is None
 
@@ -69,4 +69,4 @@ def test_spider_parse_job_json_decode_error_gets_skipped():
                             body=Path(FIXTURES_DIR / 'job_json_decode_error.html').read_bytes())
 
     with pytest.raises(StopIteration):
-        next(wwr.Spider().parse_job(response, {}))
+        next(weworkremotely.Spider().parse_job(response, {}))

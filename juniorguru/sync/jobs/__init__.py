@@ -34,7 +34,7 @@ def main():
         'stackoverflow',
         'startupjobs',
         'remoteok',
-        'wwr',
+        'weworkremotely',
         'dobrysef',
     ])
 
