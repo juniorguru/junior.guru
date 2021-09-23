@@ -50,21 +50,21 @@ async def manage_jobs_channel(client):
 
     async for message in channel.history(limit=None, after=None):
         for job in jobs:
-            if job.link.rstrip('/') in message.content:
-                log.info(f'Job {job.link} exists')
-                seen_links.add(job.link)
+            if job.effective_link.rstrip('/') in message.content:
+                log.info(f'Job {job.effective_link} exists')
+                seen_links.add(job.effective_link)
                 if message.reactions:
                     job.upvotes_count = count_upvotes(message.reactions)
                     job.downvotes_count = count_downvotes(message.reactions)
                     with db:
                         job.save()
-                    log.info(f'Saved {job.link} reactions')
+                    log.info(f'Saved {job.effective_link} reactions')
 
     if DISCORD_MUTATIONS_ENABLED:
-        new_jobs = [job for job in jobs if job.link not in seen_links]
+        new_jobs = [job for job in jobs if job.effective_link not in seen_links]
         log.info(f'Posting {len(new_jobs)} new jobs')
         for job in new_jobs:
-            await channel.send(f'**{job.title}**\n{job.company_name} – {job.location}\n{job.link}')
+            await channel.send(f'**{job.title}**\n{job.company_name} – {job.location}\n{job.effective_link}')
     else:
         log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
@@ -78,7 +78,7 @@ async def manage_jobs_voting_channel(client):  # experimenting with Mila and ML
     jobs = list(Job.select().where(Job.magic_is_junior == False))  # TODO PoC, move this to models or revamp models altogether?
     async for message in channel.history(limit=None, after=None):
         for job in jobs:
-            link = job.link
+            link = job.effective_link
             if link.rstrip('/') in message.content:
                 log.info(f'Job {link} exists')
                 seen_links.add(link)
@@ -105,12 +105,13 @@ async def manage_jobs_voting_channel(client):  # experimenting with Mila and ML
                     log.info(f'Saved {link} reactions')
 
     if DISCORD_MUTATIONS_ENABLED:
-        new_jobs = [job for job in jobs if job.link not in seen_links]
+        new_jobs = [job for job in jobs if job.effective_link not in seen_links]
         log.info(f'Posting {len(new_jobs)} new jobs')
         for job in new_jobs:
-            await channel.send(f'**{job.title}**\n{job.company_name} – {job.location}\n{job.link}')
+            await channel.send(f'**{job.title}**\n{job.company_name} – {job.location}\n{job.effective_link}')
 
-        new_jobs_dropped = [job_dropped for job_dropped in jobs_dropped if job_dropped.item['link'] not in seen_links]
+        new_jobs_dropped = [job_dropped for job_dropped in jobs_dropped
+                            if (job_dropped.item.get('apply_link') or job_dropped.item['link']) not in seen_links]
         log.info(f'Posting {len(new_jobs_dropped)} new dropped jobs')
         for job_dropped in new_jobs_dropped:
             await channel.send(f"**{job_dropped.item['title']}**\n{job_dropped.item['company_name']} – {', '.join(job_dropped.item['locations_raw'])}\n{job_dropped.item['link']}")
