@@ -10,6 +10,7 @@ import arrow
 from scrapy.utils.project import data_path
 from scrapy import Spider as BaseSpider, Request
 
+from juniorguru.lib.url_params import strip_utm_params
 from juniorguru.sync.employments.items import Employment
 
 
@@ -17,7 +18,7 @@ def employment_adapter(ci_data):
     for row in (yield 'SELECT * from employment'):
         for seen_at in (date.fromisoformat(row['first_seen_at']), date.fromisoformat(row['last_seen_at'])):
             yield Employment(title=row['title'],
-                             url=row['url'],
+                             url=strip_utm_params(row['url']),
                              company_name=row['company_name'],
                              locations=row['locations'] if 'locations' in row else [],
                              description_html=row['description_html'],
@@ -34,7 +35,7 @@ def job_adapter(ci_data):  # old-style jobs
         # TODO deal with link, apply_link, utm params links
         for seen_at in (date.fromisoformat(row['posted_at']), ci_data['build_date']):
             yield Employment(title=row['title'],
-                             url=row['link'],
+                             url=strip_utm_params(row['link']),
                              company_name=row['company_name'],
                              locations=json.loads(row['locations']),
                              description_html=row['description_html'],
@@ -59,7 +60,7 @@ def jobdropped_adapter(ci_data):  # old-style jobs
 
         for seen_at in (first_seen_at, last_seen_at):
             yield Employment(title=item['title'],
-                             url=item['link'],
+                             url=strip_utm_params(item['link']),
                              company_name=item['company_name'],
                              locations=item.get('locations'),
                              description_html=item['description_html'],

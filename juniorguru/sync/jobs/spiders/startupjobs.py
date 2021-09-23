@@ -5,7 +5,7 @@ from scrapy.loader import ItemLoader
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
 from juniorguru.sync.jobs.items import Job, parse_iso_date
-from juniorguru.lib.url_params import strip_params, UTM_PARAM_NAMES
+from juniorguru.lib.url_params import strip_utm_params
 
 
 class Spider(BaseSpider):
@@ -38,10 +38,6 @@ class Spider(BaseSpider):
 
 def drop_remote(types):
     return [type_ for type_ in types if type_.lower() != 'remote']
-
-
-def strip_utm_params(url):
-    return strip_params(url, UTM_PARAM_NAMES)
 
 
 class Loader(ItemLoader):

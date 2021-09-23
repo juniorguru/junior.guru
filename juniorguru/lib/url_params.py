@@ -14,6 +14,10 @@ def strip_params(url, param_names):
     return urlunparse(parts._replace(query=query))
 
 
+def strip_utm_params(url):
+    return strip_params(url, UTM_PARAM_NAMES)
+
+
 def set_params(url, params):
     parts = urlparse(url)
     url_params = {name: value for name, value

@@ -6,7 +6,7 @@ from scrapy.loader import ItemLoader
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
 from juniorguru.sync.jobs.items import Job, first, parse_relative_date, split
-from juniorguru.lib.url_params import increment_param, strip_params, get_param, replace_in_params, UTM_PARAM_NAMES
+from juniorguru.lib.url_params import increment_param, strip_params, strip_utm_params, get_param, replace_in_params
 
 
 class Spider(BaseSpider):
@@ -87,7 +87,7 @@ def get_job_id(url):
 def clean_proxied_url(url):
     proxied_url = get_param(url, 'url')
     if proxied_url:
-        proxied_url = strip_params(proxied_url, UTM_PARAM_NAMES)
+        proxied_url = strip_utm_params(proxied_url)
         return replace_in_params(proxied_url, 'linkedin', 'juniorguru', case_insensitive=True)
     return url
 
@@ -101,7 +101,7 @@ def clean_url(url):
         return strip_params(url, ['puid'])
     if url and 'lever.co' in url:
         return re.sub(r'/apply$', '/', url)
-    url = strip_params(url, UTM_PARAM_NAMES)
+    url = strip_utm_params(url)
     url = replace_in_params(url, 'linkedin', 'juniorguru', case_insensitive=True)
     return url
 
