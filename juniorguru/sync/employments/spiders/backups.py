@@ -60,7 +60,6 @@ def job_adapter(ci_data):  # old-style jobs
 
 def jobdropped_adapter(ci_data):  # old-style jobs
     for row in (yield 'SELECT * from jobdropped WHERE type IN ("NotEntryLevel", "Expired")'):
-        # TODO deal with link, apply_link, utm params links
         item = json.loads(row['item'])
 
         first_seen_at = date.fromisoformat(item['posted_at'])
@@ -90,7 +89,11 @@ class Spider(BaseSpider):
     project_url = 'https://circleci.com/api/v1.1/project/github/honzajavorek/junior.guru'
     filename_backup = 'backup.tar.gz'
     filename_db = './juniorguru/data/data.db'
-    adapters = [employment_adapter, job_adapter, jobdropped_adapter]
+    adapters = [
+        employment_adapter,
+        job_adapter,
+        jobdropped_adapter,
+    ]
 
     def __init__(self, *args, **kwargs):
         super(Spider, self).__init__(*args, **kwargs)
