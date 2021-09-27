@@ -18,6 +18,7 @@ class Employment(BaseModel):
     apply_url = CharField(null=True)
     external_ids = JSONField(default=lambda: [])
     locations = JSONField(null=True)
+    remote = BooleanField(default=False)
     lang = CharField(null=True)
     description_html = TextField()
     first_seen_at = DateField()
@@ -54,6 +55,7 @@ class Employment(BaseModel):
                    apply_url=item.get('apply_url'),
                    external_ids=item['external_ids'],
                    locations=item['locations'],
+                   remote=item['remote'],
                    description_html=item['description_html'],
                    lang=item.get('lang'),
                    first_seen_at=item['seen_at'],
@@ -68,6 +70,7 @@ class Employment(BaseModel):
             self.company_name = item.get('company_name', self.company_name)
             self.apply_url = item.get('apply_url', self.apply_url)
             self.locations = item.get('locations', self.locations)
+            self.remote = item.get('remote', self.remote)
             self.description_html = item.get('description_html', self.description_html)
             self.lang = item.get('lang', self.lang)
             self.juniority_re_score = item.get('juniority_re_score', self.juniority_re_score)
@@ -91,7 +94,9 @@ class Employment(BaseModel):
                     url=self.url,
                     external_ids=self.external_ids,
                     locations=self.locations,
+                    remote=self.remote,
                     first_seen_at=self.first_seen_at,
                     last_seen_at=self.last_seen_at,
                     lang=self.lang,
+                    juniority_score=self.juniority_re_score,
                     source=self.source)

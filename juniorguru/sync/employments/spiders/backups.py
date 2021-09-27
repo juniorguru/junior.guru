@@ -18,6 +18,7 @@ from juniorguru.sync.employments.items import Employment
 STARTUPJOBS_URL_RE = re.compile(r'startupjobs.+\&utm_')
 
 
+# TODO
 # def employment_adapter(ci_data):
 #     for row in (yield 'SELECT * from employment'):
 #         apply_url = (row.get('apply_link') or
@@ -53,6 +54,7 @@ def job_adapter(ci_data):  # old-style jobs
                              apply_url=apply_url,
                              company_name=row['company_name'],
                              locations=json.loads(row['locations']),
+                             remote=bool(row['remote']),
                              description_html=row['description_html'],
                              lang=row['lang'],
                              seen_at=seen_at,
@@ -81,6 +83,7 @@ def jobdropped_adapter(ci_data):  # old-style jobs
                              url=strip_utm_params(item['link']),
                              company_name=item['company_name'],
                              locations=item.get('locations'),
+                             remote=item.get('remote', False),
                              description_html=item['description_html'],
                              lang=item.get('lang'),
                              seen_at=seen_at,

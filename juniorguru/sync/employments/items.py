@@ -8,6 +8,7 @@ class Employment(Item):
     apply_url = Field()
     external_ids = Field()
     locations = Field()
+    remote = Field()
     lang = Field()
     description_html = Field()
     seen_at = Field()
