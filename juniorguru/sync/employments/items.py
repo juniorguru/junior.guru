@@ -12,6 +12,7 @@ class Employment(Item):
     lang = Field()
     description_html = Field()
     seen_at = Field()
+    employment_types = Field()
 
     # juniority
     juniority_re_score = Field()

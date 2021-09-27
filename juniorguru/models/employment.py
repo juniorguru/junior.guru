@@ -23,6 +23,7 @@ class Employment(BaseModel):
     description_html = TextField()
     first_seen_at = DateField()
     last_seen_at = DateField()
+    employment_types = JSONField(null=True)
 
     # juniority
     juniority_re_score = IntegerField(null=True)
@@ -60,6 +61,7 @@ class Employment(BaseModel):
                    lang=item.get('lang'),
                    first_seen_at=item['seen_at'],
                    last_seen_at=item['seen_at'],
+                   employment_types=item['employment_types'],
                    source=item['source'],
                    source_urls=item['source_urls'])
 
@@ -77,6 +79,7 @@ class Employment(BaseModel):
             self.juniority_ai_opinion = item.get('juniority_ai_opinion', self.juniority_ai_opinion)
             self.juniority_votes_score = item.get('juniority_votes_score', self.juniority_votes_score)
             self.juniority_votes_count = item.get('juniority_votes_count', self.juniority_votes_count)
+            self.employment_types = item.get('employment_types', self.employment_types)
             self.source = item.get('source', self.source)
 
         # merge
@@ -99,4 +102,5 @@ class Employment(BaseModel):
                     last_seen_at=self.last_seen_at,
                     lang=self.lang,
                     juniority_score=self.juniority_re_score,
+                    employment_types=self.employment_types,
                     source=self.source)
