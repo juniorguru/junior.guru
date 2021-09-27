@@ -117,11 +117,13 @@ def test_merge_item_when_item_is_newer(db_connection, item):
     item['locations'] = [dict(name='New Name', region='New Region')]
     item['description_html'] = '<p>New Description</p>'
     item['lang'] = 'nw'
+    # TODO test juniority...
     item['source'] = 'new-source'
     employment.merge_item(item)
 
     assert sorted([field.name for field in employment.dirty_fields]) == sorted([
         'title', 'company_name', 'locations', 'description_html', 'source', 'lang', 'apply_url',
+        'juniority_re_score', 'juniority_ai_opinion', 'juniority_votes_score', 'juniority_votes_count',
         'last_seen_at', 'first_seen_at', 'source_urls', 'items_merged_count', 'external_ids',
     ])
     assert employment.title == 'New Title'
