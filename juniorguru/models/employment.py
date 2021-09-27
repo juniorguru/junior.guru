@@ -68,19 +68,15 @@ class Employment(BaseModel):
     def merge_item(self, item):
         # overwrite with newer data
         if item['seen_at'] >= self.last_seen_at:
-            self.title = item.get('title', self.title)
-            self.company_name = item.get('company_name', self.company_name)
-            self.apply_url = item.get('apply_url', self.apply_url)
-            self.locations = item.get('locations', self.locations)
-            self.remote = item.get('remote', self.remote)
-            self.description_html = item.get('description_html', self.description_html)
-            self.lang = item.get('lang', self.lang)
-            self.juniority_re_score = item.get('juniority_re_score', self.juniority_re_score)
-            self.juniority_ai_opinion = item.get('juniority_ai_opinion', self.juniority_ai_opinion)
-            self.juniority_votes_score = item.get('juniority_votes_score', self.juniority_votes_score)
-            self.juniority_votes_count = item.get('juniority_votes_count', self.juniority_votes_count)
-            self.employment_types = item.get('employment_types', self.employment_types)
-            self.source = item.get('source', self.source)
+            overwrite_attrs = [
+                'title', 'company_name', 'apply_url', 'locations', 'remote', 'description_html', 'lang',
+                'juniority_re_score', 'juniority_ai_opinion', 'juniority_votes_score', 'juniority_votes_count',
+                'employment_types', 'source',
+            ]
+            for attr in overwrite_attrs:
+                old_value = getattr(self, attr)
+                new_value = item.get(attr, old_value)
+                setattr(self, attr, new_value)
 
         # merge
         self.external_ids = list(set(self.external_ids + item.get('external_ids', [])))

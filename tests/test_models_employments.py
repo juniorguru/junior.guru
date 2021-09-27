@@ -42,7 +42,9 @@ def item():
                 description_html='<p>Needs to know some <strong>Python</strong>!</p>',
                 lang='en',
                 locations=[],
+                remote=True,
                 seen_at=date.today(),
+                employment_types=['FULL_TIME'],
                 source='exciting-job-board',
                 source_urls=['https://api.example.com/jobs.xml'])
 
@@ -90,6 +92,38 @@ def test_merge_item_last_seen_at(db_connection, item, employment_seen_at, item_s
     assert employment.last_seen_at == expected
 
 
+def test_merge_item_when_item_is_newer(db_connection, item):
+    employment = create_employment(last_seen_at=date(2021, 9, 1),
+                                   title='Title')
+    item['seen_at'] = date(2021, 9, 15)
+    item['title'] = 'New Title'
+    employment.merge_item(item)
+
+    assert 'title' in [field.name for field in employment.dirty_fields]
+    assert employment.title == 'New Title'
+
+
+def test_merge_item_when_item_is_newer_but_has_the_attribute_empty(db_connection, item):
+    employment = create_employment(last_seen_at=date(2021, 9, 1),
+                                   title='Title')
+    item['seen_at'] = date(2021, 9, 15)
+    del item['title']
+    employment.merge_item(item)
+
+    assert 'title' in [field.name for field in employment.dirty_fields]
+    assert employment.title == 'Title'
+
+
+def test_merge_item_when_item_is_older(db_connection, item):
+    employment = create_employment(last_seen_at=date(2021, 9, 1),
+                                   title='Title')
+    item['seen_at'] = date(2021, 8, 15)
+    employment.merge_item(item)
+
+    assert 'title' not in [field.name for field in employment.dirty_fields]
+    assert employment.title == 'Title'
+
+
 def test_merge_item_source_urls(db_connection, item):
     employment = create_employment(source_urls=[
         'https://abc.example.com/jobs/1',
@@ -108,55 +142,22 @@ def test_merge_item_source_urls(db_connection, item):
     ]
 
 
-def test_merge_item_when_item_is_newer(db_connection, item):
-    employment = create_employment(last_seen_at=date(2021, 9, 1))
-    item['seen_at'] = date(2021, 9, 15)
-    item['title'] = 'New Title'
-    item['company_name'] = 'New Company Name'
-    item['apply_url'] = 'https://new.example.com/1?utm_source=123'
-    item['locations'] = [dict(name='New Name', region='New Region')]
-    item['description_html'] = '<p>New Description</p>'
-    item['lang'] = 'nw'
-    # TODO test juniority...
-    item['source'] = 'new-source'
+def test_merge_item_external_ids(db_connection, item):
+    employment = create_employment(external_ids=[
+        'startupjobs#123',
+        'remoteok#123456',
+    ])
+    item['external_ids'] = [
+        'startupjobs#123',
+        'linkedin#09876',
+    ]
     employment.merge_item(item)
 
-    assert sorted([field.name for field in employment.dirty_fields]) == sorted([
-        'title', 'company_name', 'locations', 'description_html', 'source', 'lang', 'apply_url',
-        'juniority_re_score', 'juniority_ai_opinion', 'juniority_votes_score', 'juniority_votes_count',
-        'last_seen_at', 'first_seen_at', 'source_urls', 'items_merged_count', 'external_ids',
-    ])
-    assert employment.title == 'New Title'
-    assert employment.company_name == 'New Company Name'
-    assert employment.apply_url == 'https://new.example.com/1?utm_source=123'
-    assert employment.locations == [dict(name='New Name', region='New Region')]
-    assert employment.description_html == '<p>New Description</p>'
-    assert employment.lang == 'nw'
-    assert employment.source == 'new-source'
-
-
-def test_merge_item_when_item_is_older(db_connection, item):
-    employment = create_employment(last_seen_at=date(2021, 9, 1),
-                                   title='Title',
-                                   apply_url='https://example.com/1?utm_source=123',
-                                   company_name='Company Name',
-                                   locations=[dict(name='Name', region='Region')],
-                                   description_html='<p>Description</p>',
-                                   lang='en',
-                                   source='source')
-    item['seen_at'] = date(2021, 8, 15)
-    employment.merge_item(item)
-
-    assert sorted([field.name for field in employment.dirty_fields]) == sorted([
-        'last_seen_at', 'first_seen_at', 'source_urls', 'items_merged_count', 'external_ids',
-    ])
-    assert employment.title == 'Title'
-    assert employment.company_name == 'Company Name'
-    assert employment.apply_url == 'https://example.com/1?utm_source=123'
-    assert employment.locations == [dict(name='Name', region='Region')]
-    assert employment.description_html == '<p>Description</p>'
-    assert employment.lang == 'en'
-    assert employment.source == 'source'
+    assert sorted(employment.external_ids) == [
+        'linkedin#09876',
+        'remoteok#123456',
+        'startupjobs#123',
+    ]
 
 
 def test_merge_item_bookkeeping(db_connection, item):

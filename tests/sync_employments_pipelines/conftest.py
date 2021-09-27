@@ -10,11 +10,13 @@ def item():
         title='Junior Python Engineer',
         company_name='The Best Company',
         locations=[{'name': 'Tečovice', 'region': 'Zlín'}],
+        remote=True,
         url='https://example.com/jobs/123',
         external_ids=[],
         description_html='<p>Need Pythonistas!</p>',
         lang='en',
         seen_at=date.today(),
+        employment_types=['FULL_TIME'],
         source='example-job-board',
         source_urls=['https://example.com/jobs/'],
     )
