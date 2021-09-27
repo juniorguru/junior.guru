@@ -18,31 +18,35 @@ from juniorguru.sync.employments.items import Employment
 STARTUPJOBS_URL_RE = re.compile(r'startupjobs.+\&utm_')
 
 
-def employment_adapter(ci_data):
-    for row in (yield 'SELECT * from employment'):
-        apply_url = ((row['apply_link'] if 'apply_link' in row else None) or
-                     (row['external_link'] if 'external_link' in row else None) or
-                     (row['link'] if ('link' in row and STARTUPJOBS_URL_RE.search(row['link'])) else None))
-        for seen_at in (date.fromisoformat(row['first_seen_at']), date.fromisoformat(row['last_seen_at'])):
-            yield Employment(title=row['title'],
-                             url=strip_utm_params(row['url']),
-                             apply_url=apply_url,
-                             company_name=row['company_name'],
-                             locations=row['locations'] if 'locations' in row else [],
-                             description_html=row['description_html'],
-                             lang=row['lang'] if 'lang' in row else None,
-                             seen_at=seen_at,
-                             source=row['source'],
-                             source_urls=json.loads(row['source_urls']) if 'source_urls' in row else [],
-                             adapter='employment',
-                             build_url=ci_data['build_url'])
+# def employment_adapter(ci_data):
+#     for row in (yield 'SELECT * from employment'):
+#         apply_url = (row.get('apply_link') or
+#                      row.get('external_link') or
+#                      (row['link'] if ('link' in row and STARTUPJOBS_URL_RE.search(row['link'])) else None))
+#         for seen_at in (date.fromisoformat(row['first_seen_at']), date.fromisoformat(row['last_seen_at'])):
+#             yield Employment(title=row['title'],
+#                              url=strip_utm_params(row['url']),
+#                              apply_url=apply_url,
+#                              company_name=row['company_name'],
+#                              locations=row.get('locations', []),
+#                              description_html=row['description_html'],
+#                              lang=row.get('lang'),
+#                              seen_at=seen_at,
+#                              juniority_re_score=row.get('junior_rank'),
+#                              juniority_ai_opinion=row.get('magic_is_junior'),
+#                              juniority_votes_score=row.get('upvotes_count', 0) - row.get('downvotes_count', 0),
+#                              juniority_votes_count=row.get('upvotes_count', 0) + row.get('downvotes_count', 0),
+#                              source=row['source'],
+#                              source_urls=json.loads(row.get('source_urls', '[]')),
+#                              adapter='employment',
+#                              build_url=ci_data['build_url'])
 
 
 def job_adapter(ci_data):  # old-style jobs
     for row in (yield 'SELECT * from job'):
-        apply_url = ((row['apply_link'] if 'apply_link' in row else None) or
-                     (row['external_link'] if 'external_link' in row else None) or
-                     (row['link'] if STARTUPJOBS_URL_RE.search(row['link']) else None))
+        apply_url = (row.get('apply_link') or
+                     row.get('external_link') or
+                     (row['link'] if ('link' in row and STARTUPJOBS_URL_RE.search(row['link'])) else None))
         for seen_at in (date.fromisoformat(row['posted_at']), ci_data['build_date']):
             yield Employment(title=row['title'],
                              url=strip_utm_params(row['link']),
@@ -52,6 +56,10 @@ def job_adapter(ci_data):  # old-style jobs
                              description_html=row['description_html'],
                              lang=row['lang'],
                              seen_at=seen_at,
+                             juniority_re_score=row['junior_rank'],
+                             juniority_ai_opinion=row.get('magic_is_junior'),
+                             juniority_votes_score=row['upvotes_count'] - row['downvotes_count'],
+                             juniority_votes_count=row['upvotes_count'] + row['downvotes_count'],
                              source=row['source'],
                              source_urls=[row['response_url']],
                              adapter='job',
@@ -76,6 +84,10 @@ def jobdropped_adapter(ci_data):  # old-style jobs
                              description_html=item['description_html'],
                              lang=item.get('lang'),
                              seen_at=seen_at,
+                             juniority_re_score=item.get('junior_rank'),
+                             juniority_ai_opinion=row.get('magic_is_junior'),
+                             juniority_votes_score=row['upvotes_count'] - row['downvotes_count'],
+                             juniority_votes_count=row['upvotes_count'] + row['downvotes_count'],
                              source=row['source'],
                              source_urls=[row['response_url']],
                              adapter='jobdropped',
@@ -90,7 +102,7 @@ class Spider(BaseSpider):
     filename_backup = 'backup.tar.gz'
     filename_db = './juniorguru/data/data.db'
     adapters = [
-        employment_adapter,
+        # employment_adapter,
         job_adapter,
         jobdropped_adapter,
     ]
@@ -149,7 +161,7 @@ class Spider(BaseSpider):
 
     def parse_database(self, db_path, ci_data):
         connection = sqlite3.connect(db_path)
-        connection.row_factory = sqlite3.Row
+        connection.row_factory = Row
         try:
             cursor = connection.cursor()
             for adapter_fn in self.adapters:
@@ -168,6 +180,11 @@ class Spider(BaseSpider):
         else:
             adapter_gen.send(rows)
             yield from adapter_gen
+
+
+class Row(sqlite3.Row):
+    def get(self, key, default=None):
+        return self[key] if key in self else default
 
 
 def is_sync_ci_job(ci_job):

@@ -1,4 +1,4 @@
-from peewee import CharField, DateField, TextField, IntegerField
+from peewee import BooleanField, CharField, DateField, TextField, IntegerField
 
 from juniorguru.models.base import BaseModel, JSONField
 
@@ -22,17 +22,29 @@ class Employment(BaseModel):
     description_html = TextField()
     first_seen_at = DateField()
     last_seen_at = DateField()
+
+    # juniority
+    juniority_re_score = IntegerField(null=True)
+    juniority_ai_opinion = BooleanField(null=True)
+    juniority_votes_score = IntegerField(null=True)
+    juniority_votes_count = IntegerField(null=True)
+
+    # meta information
     source = CharField()
     source_urls = JSONField(default=lambda: [])
     items_merged_count = IntegerField(default=0)
 
     @classmethod
     def get_by_item(cls, item):
-        return cls.select().where(cls.url == item['url']).get()
+        return cls.select() \
+            .where(cls.url == item['url']) \
+            .get()
 
     @classmethod
     def api_listing(cls):
-        return cls.select().order_by(cls.last_seen_at.desc())
+        return cls.select() \
+            .where((cls.juniority_re_score > 0) | cls.source == 'juniorguru') \
+            .order_by(cls.last_seen_at.desc())
 
     @classmethod
     def from_item(cls, item):
@@ -58,6 +70,10 @@ class Employment(BaseModel):
             self.locations = item.get('locations', self.locations)
             self.description_html = item.get('description_html', self.description_html)
             self.lang = item.get('lang', self.lang)
+            self.juniority_re_score = item.get('juniority_re_score', self.juniority_re_score)
+            self.juniority_ai_opinion = item.get('juniority_ai_opinion', self.juniority_ai_opinion)
+            self.juniority_votes_score = item.get('juniority_votes_score', self.juniority_votes_score)
+            self.juniority_votes_count = item.get('juniority_votes_count', self.juniority_votes_count)
             self.source = item.get('source', self.source)
 
         # merge
