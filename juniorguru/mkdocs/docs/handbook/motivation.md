@@ -72,7 +72,7 @@ Doktoři a vědci přicházejí na to, že když výpočty naprogramují, mohou 
 {% call blockquote(
   'Vývojáři-amatéři ve firmách se stále častěji uchylují k vlastnoruční tvorbě nástrojů, které potřebují k práci. Počet takových lidí stoupá geometrickou řadou.'
 ) %}
-  CIO Business World, článek [Naprogramuj si to sám!](https://businessworld.cz/temata/aplikace/naprogramuj-si-to-sam-15450)
+  CIO Business World, článek [Naprogramuj si to sám!](https://www.cio.cz/clanky/naprogramuj-si-to-sam/)
 {% endcall %}
 
 Pokud chceš mít programování jako pomocníka, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](/learn/) nebo [jak si lze programování procvičovat a dále prohlubovat znalosti](/practice/).
