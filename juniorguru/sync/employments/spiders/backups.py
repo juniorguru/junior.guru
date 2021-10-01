@@ -48,6 +48,14 @@ def job_adapter(ci_data):  # old-style jobs
         apply_url = (row.get('apply_link') or
                      row.get('external_link') or
                      (row['link'] if ('link' in row and STARTUPJOBS_URL_RE.search(row['link'])) else None))
+
+        if 'upvotes_count' in row and 'downvotes_count' in row:
+            votes_score = row['upvotes_count'] - row['downvotes_count']
+            votes_count = row['upvotes_count'] + row['downvotes_count']
+        else:
+            votes_score = 0
+            votes_count = 0
+
         for seen_at in (date.fromisoformat(row['posted_at']), ci_data['build_date']):
             yield Employment(title=row['title'],
                              url=strip_utm_params(row['link']),
@@ -60,8 +68,8 @@ def job_adapter(ci_data):  # old-style jobs
                              seen_at=seen_at,
                              juniority_re_score=row['junior_rank'],
                              juniority_ai_opinion=row.get('magic_is_junior'),
-                             juniority_votes_score=row['upvotes_count'] - row['downvotes_count'],
-                             juniority_votes_count=row['upvotes_count'] + row['downvotes_count'],
+                             juniority_votes_score=votes_score,
+                             juniority_votes_count=votes_count,
                              employment_types=json.loads(row['employment_types']),
                              source=row['source'],
                              source_urls=[row['response_url']],
@@ -79,6 +87,13 @@ def jobdropped_adapter(ci_data):  # old-style jobs
         else:
             last_seen_at = ci_data['build_date']
 
+        if 'upvotes_count' in row and 'downvotes_count' in row:
+            votes_score = row['upvotes_count'] - row['downvotes_count']
+            votes_count = row['upvotes_count'] + row['downvotes_count']
+        else:
+            votes_score = 0
+            votes_count = 0
+
         for seen_at in (first_seen_at, last_seen_at):
             yield Employment(title=item['title'],
                              url=strip_utm_params(item['link']),
@@ -90,8 +105,8 @@ def jobdropped_adapter(ci_data):  # old-style jobs
                              seen_at=seen_at,
                              juniority_re_score=item.get('junior_rank'),
                              juniority_ai_opinion=row.get('magic_is_junior'),
-                             juniority_votes_score=row['upvotes_count'] - row['downvotes_count'],
-                             juniority_votes_count=row['upvotes_count'] + row['downvotes_count'],
+                             juniority_votes_score=votes_score,
+                             juniority_votes_count=votes_count,
                              employment_types=item.get('employment_types'),
                              source=row['source'],
                              source_urls=[row['response_url']],

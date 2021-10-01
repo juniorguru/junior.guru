@@ -21,6 +21,7 @@ class Employment(BaseModel):
     remote = BooleanField(default=False)
     lang = CharField(null=True)
     description_html = TextField()
+    description_text = TextField()
     first_seen_at = DateField()
     last_seen_at = DateField()
     employment_types = JSONField(null=True)
@@ -28,8 +29,8 @@ class Employment(BaseModel):
     # juniority
     juniority_re_score = IntegerField(null=True)
     juniority_ai_opinion = BooleanField(null=True)
-    juniority_votes_score = IntegerField(null=True)
-    juniority_votes_count = IntegerField(null=True)
+    juniority_votes_score = IntegerField(default=0)
+    juniority_votes_count = IntegerField(default=0)
 
     # meta information
     source = CharField()
@@ -40,6 +41,12 @@ class Employment(BaseModel):
     def get_by_item(cls, item):
         return cls.select() \
             .where(cls.url == item['url']) \
+            .get()
+
+    @classmethod
+    def get_by_url(cls, url):
+        return cls.select() \
+            .where(cls.url == url) \
             .get()
 
     @classmethod
@@ -58,6 +65,7 @@ class Employment(BaseModel):
                    locations=item['locations'],
                    remote=item['remote'],
                    description_html=item['description_html'],
+                   description_text=item['description_text'],
                    lang=item.get('lang'),
                    first_seen_at=item['seen_at'],
                    last_seen_at=item['seen_at'],
@@ -69,8 +77,8 @@ class Employment(BaseModel):
         # overwrite with newer data
         if item['seen_at'] >= self.last_seen_at:
             overwrite_attrs = [
-                'title', 'company_name', 'apply_url', 'locations', 'remote', 'description_html', 'lang',
-                'juniority_re_score', 'juniority_ai_opinion', 'juniority_votes_score', 'juniority_votes_count',
+                'title', 'company_name', 'apply_url', 'locations', 'remote', 'description_html', 'description_text',
+                'lang', 'juniority_re_score', 'juniority_ai_opinion', 'juniority_votes_score', 'juniority_votes_count',
                 'employment_types', 'source',
             ]
             for attr in overwrite_attrs:

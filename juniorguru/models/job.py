@@ -64,15 +64,12 @@ class Job(BaseModel):
     lang = CharField()
     description_html = TextField()
     junior_rank = IntegerField(index=True)
-    magic_is_junior = BooleanField(null=True)
     sort_rank = IntegerField(index=True)
     pricing_plan = CharField(default='community', choices=[
         ('community', None),
         ('standard', None),
         ('annual_flat_rate', None),
     ])
-    upvotes_count = IntegerField(default=0)
-    downvotes_count = IntegerField(default=0)
 
     # source: juniorguru
     email = CharField(null=True)
@@ -93,6 +90,8 @@ class Job(BaseModel):
 
     @property
     def effective_link(self):
+        if self.is_juniorguru:
+            return self.link
         return self.apply_link or self.link
 
     @property
@@ -237,9 +236,6 @@ class JobDropped(BaseModel):
     response_url = CharField()
     response_backup_path = CharField(null=True)
     item = JSONField()
-    magic_is_junior = BooleanField(null=True)
-    upvotes_count = IntegerField(default=0)
-    downvotes_count = IntegerField(default=0)
 
     @classmethod
     def admin_listing(cls, types=None):

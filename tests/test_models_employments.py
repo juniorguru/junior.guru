@@ -12,6 +12,7 @@ def create_employment(**data):
     data.setdefault('url', 'https://example.com/jobs/1')
     data.setdefault('apply_url', 'https://example.com/jobs/1?utm_source=123')
     data.setdefault('description_html', '<p>Needs to know some <strong>Python</strong>!</p>')
+    data.setdefault('description_text', 'Needs to know some Python!')
     data.setdefault('lang', 'en')
     data.setdefault('first_seen_at', date.today() - timedelta(weeks=1))
     data.setdefault('last_seen_at', date.today())
@@ -40,6 +41,7 @@ def item():
                 company_name='Company Ltd.',
                 url='https://example.com/jobs/123',
                 description_html='<p>Needs to know some <strong>Python</strong>!</p>',
+                description_text='Needs to know some Python!',
                 lang='en',
                 locations=[],
                 remote=True,

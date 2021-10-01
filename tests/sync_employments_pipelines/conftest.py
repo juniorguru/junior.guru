@@ -14,6 +14,7 @@ def item():
         url='https://example.com/jobs/123',
         external_ids=[],
         description_html='<p>Need Pythonistas!</p>',
+        description_text='Need Pythonistas!',
         lang='en',
         seen_at=date.today(),
         employment_types=['FULL_TIME'],

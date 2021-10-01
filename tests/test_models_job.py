@@ -71,15 +71,21 @@ def test_tags_listing(db_connection):
 
 
 def test_effective_link(db_connection):
-    job = create_job('1', link='https://example.com/1234', apply_link=None)
+    job = create_job('1', source='xyz', link='https://example.com/1234', apply_link=None)
 
     assert job.effective_link == 'https://example.com/1234'
 
 
 def test_effective_link_apply(db_connection):
-    job = create_job('1', link='https://example.com/1234', apply_link='https://example.com/1234?utm_something=123')
+    job = create_job('1', source='xyz', link='https://example.com/1234', apply_link='https://example.com/1234?utm_something=123')
 
     assert job.effective_link == 'https://example.com/1234?utm_something=123'
+
+
+def test_effective_link_juniorguru(db_connection):
+    job = create_job('1', source='juniorguru', link='https://junior.guru/jobs/1234', apply_link='https://example.com/1234?utm_something=123')
+
+    assert job.effective_link == 'https://junior.guru/jobs/1234'
 
 
 def test_get_by_url(db_connection):

@@ -96,6 +96,7 @@ class ClubMessage(BaseModel):
     url = CharField()
     content = CharField()
     upvotes_count = IntegerField(default=0)
+    downvotes_count = IntegerField(default=0)
     pin_reactions_count = IntegerField(default=0)
     created_at = DateTimeField(index=True)
     author = ForeignKeyField(ClubUser, backref='list_messages')

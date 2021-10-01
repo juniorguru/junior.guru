@@ -1,6 +1,6 @@
 from juniorguru.lib.timer import measure
 from juniorguru.lib.log import get_log
-from juniorguru.lib.club import EMOJI_PINS, discord_task, count_upvotes, emoji_name, get_roles, count_pins
+from juniorguru.lib.club import EMOJI_PINS, discord_task, count_upvotes, count_downvotes, emoji_name, get_roles, count_pins
 from juniorguru.models import ClubMessage, ClubUser, ClubPinReaction, db
 
 
@@ -42,6 +42,7 @@ async def main(client):
                                    url=message.jump_url,
                                    content=message.content,
                                    upvotes_count=count_upvotes(message.reactions),
+                                   downvotes_count=count_downvotes(message.reactions),
                                    pin_reactions_count=count_pins(message.reactions),
                                    created_at=message.created_at,
                                    edited_at=message.edited_at,

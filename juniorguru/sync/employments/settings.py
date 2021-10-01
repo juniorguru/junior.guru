@@ -8,7 +8,8 @@ ROBOTSTXT_OBEY = True
 
 ITEM_PIPELINES = {
     'juniorguru.sync.employments.pipelines.identify.Pipeline': 1,
-    'juniorguru.sync.employments.pipelines.save.Pipeline': 2,
+    'juniorguru.sync.employments.pipelines.parse_description.Pipeline': 2,
+    'juniorguru.sync.employments.pipelines.save.Pipeline': 3,
 }
 
 HTTPCACHE_ENABLED = True

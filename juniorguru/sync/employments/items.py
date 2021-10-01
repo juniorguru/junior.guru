@@ -11,6 +11,7 @@ class Employment(Item):
     remote = Field()
     lang = Field()
     description_html = Field()
+    description_text = Field()
     seen_at = Field()
     employment_types = Field()
 

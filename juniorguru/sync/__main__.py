@@ -4,7 +4,7 @@ import importlib
 from juniorguru.lib.log import get_log
 from juniorguru.lib import timer
 from juniorguru.sync.employments import main as sync_employments
-from juniorguru.sync.jobs import main as sync_jobs, manage_jobs_voting_channel
+from juniorguru.sync.jobs import main as sync_jobs
 from juniorguru.sync.logos import main as sync_logos
 from juniorguru.sync.metrics import main as sync_metrics
 from juniorguru.sync.stories import main as sync_stories
@@ -24,7 +24,8 @@ from juniorguru.sync.pins import main as sync_pins
 from juniorguru.sync.subscriptions import main as sync_subscriptions
 from juniorguru.sync.companies import main as sync_companies
 from juniorguru.sync.mentoring import main as sync_mentoring
-from juniorguru.lib.magic import do_magic
+from juniorguru.sync.jobs_club import main as sync_jobs_club
+from juniorguru.lib.ai import set_ai_opinion
 
 
 log = get_log('sync')
@@ -55,12 +56,10 @@ def main():
     sync_returning_members()  # depends on club_content
     sync_subscriptions()  # depends on club_content
     sync_roles()  # depends on club_content, events, avatars, subscriptions
-    sync_jobs()  # depends on proxies
+    sync_jobs()  # depends on proxies, employments
     sync_metrics()  # depends on jobs, logos, transactions
-
-    # cast magic
-    do_magic()  # depends on jobs
-    manage_jobs_voting_channel()  # depends on jobs, magic
+    set_ai_opinion()  # depends on employments
+    sync_jobs_club()  # depends on employments, jobs, club_content (in the future: set_ai_opinion)
 
 
 try:
