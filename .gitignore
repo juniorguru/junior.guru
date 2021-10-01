@@ -89,11 +89,6 @@ backup.tar.gz
 /juniorguru/web/static/*
 !/juniorguru/web/static/src
 
-# Now
-.now
-.env.build
-public.tar.gz
-
 # Lighthouse
 /lighthouse/
 

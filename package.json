@@ -3,9 +3,6 @@
   "engines": {
     "node": "14.x"
   },
-  "scripts": {
-    "build": "python3 scripts/now_build.py"
-  },
   "dependencies": {
     "bootstrap-icons": "1.5.0",
     "instant.page": "3.0.0",

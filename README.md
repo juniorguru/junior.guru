@@ -20,23 +20,14 @@ Thanks [@lutzroeder](https://github.com/scipy/scipy/issues/13409#issuecomment-77
 
 ## Setting up email address
 
-According to [spectrum.chat/zeit](https://spectrum.chat/zeit/now/redirection-email-domain~b5e1b613-ae92-42f9-bc49-e8c824a8a7f2?m=MTUzNDE5OTg3MzMwMw==):
-
-1.  Run following:
+1.  Add the following to the DNS:
 
     ```
-    $ now dns add junior.guru '@' MX mx1.improvmx.com 10
-    $ now dns add junior.guru '@' MX mx2.improvmx.com 20
-    $ now dns add junior.guru '@' TXT 'v=spf1 include:spf.improvmx.com include:_spf.google.com ~all'
+    junior.guru '@' MX mx1.improvmx.com 10
+    junior.guru '@' MX mx2.improvmx.com 20
+    junior.guru '@' TXT 'v=spf1 include:spf.improvmx.com include:_spf.google.com ~all'
     ```
 1.  Fill the form at [ImprovMX](https://improvmx.com/)
-1.  Setup and verify the address in [MailChimp](https://mailchimp.com/)
-1.  [Authenticate in MailChimp](https://mailchimp.com/help/verify-a-domain/) and add respective DNS records:
-
-    ```
-    $ now dns add k2._domainkey.junior.guru '@' CNAME 'dkim2.mcsv.net'
-    $ now dns add k3._domainkey.junior.guru '@' CNAME 'dkim3.mcsv.net'
-    ```
 
 ## Setting up Google Drive credentials
 
@@ -68,7 +59,7 @@ By default, sending is not enabled. On production or when trying to send e-mails
 The [logo.junior.guru](https://logo.junior.guru/) has [it's own repo](https://github.com/honzajavorek/logo.junior.guru/) and runs on GitHub Pages. Set it up in DNS:
 
 ```
-$ now dns add logo.junior.guru '@' CNAME 'honzajavorek.github.io'
+logo.junior.guru '@' CNAME 'honzajavorek.github.io'
 ```
 
 ## Verify Google Search Console

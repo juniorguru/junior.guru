@@ -94,29 +94,12 @@ jobs:
           root: "~"
           paths:
               - project/public
-      - run: tar -cvzf public.tar.gz ./public
-      - store_artifacts:
-          path: ./public.tar.gz  # the generated HTML is made available for download (used in the deploy job)
 
-  # needs $NOW_TOKEN, $NOW_ORG_ID, $NOW_PROJECT_ID
   deploy:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - restore_cache:  # caches a dummy file .deploy which lets the subsequent code to recognize whether the git ref has been already deployed to Now or not
-          key: deploy-{{ .Revision }}
-      - run:
-          name: Deploy
-          command: |
-            if [[ -f .deploy ]]; then
-              echo "Looks like the build has been triggered by CircleCI (nightly, retries). Deploying with ZEIT Now CLI."
-              sudo npm install --global --unsafe-perm now
-              now --prod -t "$NOW_TOKEN"
-            else
-              echo "Looks like the build has been triggered by GitHub (there are no previous 'deploy' jobs for this commit). Skipping duplicate deploy with ZEIT Now CLI."
-              echo "$CIRCLE_SHA1" > .deploy
-            fi
       - add_ssh_keys:
           fingerprints:
             - "7b:0b:2c:9f:fb:18:db:35:8e:f4:3d:49:73:37:ee:c4"
@@ -130,10 +113,6 @@ jobs:
           ssh-fingerprints: "7b:0b:2c:9f:fb:18:db:35:8e:f4:3d:49:73:37:ee:c4"
           tmp-dir: ".deploy-tmp"
           workspace-root: "~/project"
-      - save_cache:
-          key: deploy-{{ .Revision }}
-          paths:
-            - .deploy
 
   # needs $SMTP_* (see readme)
   send:
@@ -202,10 +181,6 @@ workflows:
           requires:
             - build
       - deploy:
-          # This makes sure retries of 'main' builds still deploy,
-          # even though they were not initiated by a GitHub push. Might
-          # cause double deploy for builds initiated by GitHub push, but
-          # the deploy job recognizes they're to be skipped.
           filters:
             branches:
               only:
