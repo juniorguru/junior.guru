@@ -3,7 +3,7 @@ import re
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
 from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED
-from juniorguru.models import ClubMessage, Employment, Job, db
+from juniorguru.models import ClubMessage, Employment, Job, with_db
 
 
 logger = loggers.get('jobs_club')
@@ -16,6 +16,7 @@ URL_RE = re.compile(r'https?://\S+', re.I)
 
 
 @measure('jobs_club')
+@with_db
 @discord_task
 async def main(client):
     seen_urls = set()
@@ -36,8 +37,7 @@ async def main(client):
                 logger.info(f'Updating {job_url}, new score {votes_score} ({votes_count} votes)')
                 employment.juniority_votes_score = votes_score
                 employment.juniority_votes_count = votes_count
-                with db:
-                    employment.save()
+                employment.save()
         except Employment.DoesNotExist:
             logger.info(f'Not found {job_url}')
 
