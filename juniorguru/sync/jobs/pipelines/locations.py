@@ -4,11 +4,11 @@ from functools import lru_cache, wraps
 import requests
 from lxml import etree
 
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.sync.jobs.settings import USER_AGENT
 
 
-log = get_log(__name__)
+logger = loggers.get(__name__)
 
 
 class GeocodeError(Exception):
@@ -77,7 +77,7 @@ class Pipeline():
 
     def parse_location(self, location_raw, spider, item):
         try:
-            log.debug(f"Geocoding '{location_raw}'")
+            logger.debug(f"Geocoding '{location_raw}'")
             address = self.geocode(location_raw)
             if self.stats:
                 self.stats.inc_value('item_geocoded_count')
@@ -90,7 +90,7 @@ class Pipeline():
             info = dict(spider=spider.name,
                         title=item.get('title'),
                         company=item.get('company_name'))
-            log.exception(f"Geocoding '{location_raw}' failed, {info!r}")
+            logger.exception(f"Geocoding '{location_raw}' failed, {info!r}")
 
 
 def optimize_geocoding(geocode):

@@ -3,12 +3,12 @@ from datetime import datetime, timedelta
 from discord import Embed
 
 from juniorguru.lib.timer import measure
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED
 from juniorguru.models import ClubMessage, db
 
 
-log = get_log('mentoring')
+logger = loggers.get('mentoring')
 
 
 MENTORING_CHANNEL = 878937534464417822
@@ -22,15 +22,15 @@ async def main(client):
         last_reminder_message = ClubMessage.last_bot_message(MENTORING_CHANNEL, ':teacher:')
     if last_reminder_message:
         since_dt = last_reminder_message.created_at
-        log.info(f"Last reminder on {since_dt}")
+        logger.info(f"Last reminder on {since_dt}")
         if since_dt.date() > week_ago_dt.date():
-            log.info(f"Aborting, {since_dt.date()} (last reminder) > {week_ago_dt.date()} (week ago)")
+            logger.info(f"Aborting, {since_dt.date()} (last reminder) > {week_ago_dt.date()} (week ago)")
             return  # abort
         else:
-            log.info(f"About to create reminder, {since_dt.date()} (last reminder) <= {week_ago_dt.date()} (week ago)")
+            logger.info(f"About to create reminder, {since_dt.date()} (last reminder) <= {week_ago_dt.date()} (week ago)")
     else:
         since_dt = week_ago_dt
-        log.info('Last reminder not found')
+        logger.info('Last reminder not found')
 
     channel = await client.fetch_channel(MENTORING_CHANNEL)
     if DISCORD_MUTATIONS_ENABLED:
@@ -47,7 +47,7 @@ async def main(client):
         )
         await channel.send(content=content, embed=Embed(description=embed_description))
     else:
-        log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
+        logger.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
 
 if __name__ == '__main__':

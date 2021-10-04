@@ -5,6 +5,7 @@ import arrow
 from scrapy import Field, Item
 
 from juniorguru.lib.md import md
+from juniorguru.lib.repr import repr_item
 
 
 class Job(Item):
@@ -39,6 +40,9 @@ class Job(Item):
     sort_rank_components = Field()
     locations = Field()
     remote_region_raw = Field()
+
+    def __repr__(self):
+        return repr_item(self, ['title', 'link', 'apply_link', 'source'])
 
 
 class JuniorGuruJob(Job):

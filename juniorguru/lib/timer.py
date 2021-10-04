@@ -1,7 +1,7 @@
 from functools import wraps
 from time import time
 
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 
 
 try:
@@ -10,7 +10,7 @@ except (Exception, ImportError):
     pync = None
 
 
-log = get_log('timer')
+logger = loggers.get('timer')
 
 
 def notify(fn):
@@ -38,6 +38,6 @@ def measure(name=None):
                 return fn(*args, **kwargs)
             finally:
                 t = time() - t0
-                log.info(f'{name or fn.__name__}() took {t / 60:.1f}min')
+                logger.info(f'{name or fn.__name__}() took {t / 60:.1f}min')
         return wrapper
     return decorator

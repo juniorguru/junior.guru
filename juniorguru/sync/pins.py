@@ -3,12 +3,12 @@ import textwrap
 from discord import Embed
 
 from juniorguru.lib.timer import measure
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED
 from juniorguru.models import ClubPinReaction, ClubUser, ClubMessage, db
 
 
-log = get_log('pins')
+logger = loggers.get('pins')
 
 
 @measure('pins')
@@ -20,7 +20,7 @@ async def main(client):
                                     in ClubPinReaction.listing()
                                     if pin_reaction.user.is_member]
 
-    log.info(f'Found {len(pin_reactions_by_members)} pin reactions by people who are currently members')
+    logger.info(f'Found {len(pin_reactions_by_members)} pin reactions by people who are currently members')
     for pin_reaction in pin_reactions_by_members:
         member = await client.juniorguru_guild.fetch_member(pin_reaction.user.id)
 
@@ -29,12 +29,12 @@ async def main(client):
         else:
             channel = await member.create_dm()
 
-        log.info(f"Checking DM if already pinned for {member.display_name} #{member.id}")
+        logger.info(f"Checking DM if already pinned for {member.display_name} #{member.id}")
         if await is_pinned(pin_reaction.message.url, channel):
-            log.info(f"Already pinned for {member.display_name} #{member.id}")
+            logger.info(f"Already pinned for {member.display_name} #{member.id}")
             continue
 
-        log.info(f"Not pinned for {member.display_name} #{member.id}, sending a message to DM")
+        logger.info(f"Not pinned for {member.display_name} #{member.id}, sending a message to DM")
         if DISCORD_MUTATIONS_ENABLED:
             content = (
                 '📌 Vidím špendlík! Ukládám ti příspěvek sem, do soukromé zprávy. '
@@ -49,16 +49,16 @@ async def main(client):
             await channel.send(content=content,
                                embed=Embed(description="\n".join(embed_description)))
         else:
-            log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
+            logger.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
-    log.info(f"Going through messages pinned by reactions, minimum is {top_members_limit} pin reactions")
+    logger.info(f"Going through messages pinned by reactions, minimum is {top_members_limit} pin reactions")
     with db:
         messages = ClubMessage.pinned_by_reactions_listing(top_members_limit)
-    log.info(f'Found {len(messages)} messages')
+    logger.info(f'Found {len(messages)} messages')
     for message in messages:
-        log.info(f"Message {message.url} {'PINNED' if message.is_pinned else 'NOT PINNED'}")
+        logger.info(f"Message {message.url} {'PINNED' if message.is_pinned else 'NOT PINNED'}")
         if not message.is_pinned:
-            log.info(f"Pinning {message.url}")
+            logger.info(f"Pinning {message.url}")
             channel = await client.fetch_channel(message.channel_id)
             discord_message = await channel.fetch_message(message.id)
             await discord_message.pin(reason=f"The message has {message.pin_reactions_count} pin reactions, minimum is {top_members_limit}")

@@ -1,10 +1,10 @@
 from juniorguru.lib import scrapers
 from juniorguru.lib.timer import measure
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.models import Employment, db
 
 
-log = get_log('employments')
+logger = loggers.get('employments')
 
 
 @measure('employments')

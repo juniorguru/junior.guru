@@ -1,3 +1,5 @@
+import os
+
 BOT_NAME = 'employments'
 
 SPIDER_MODULES = ['juniorguru.sync.employments.spiders']
@@ -17,3 +19,6 @@ HTTPCACHE_EXPIRATION_SECS = 0
 HTTPCACHE_DIR = 'http_cache'
 HTTPCACHE_IGNORE_HTTP_CODES = [500, 502, 503, 504, 522, 524, 408, 429, 999]
 HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+LOG_LEVEL = os.getenv('LOG_LEVEL', 'info').upper()
+LOG_DATEFORMAT = '%H:%M:%S'

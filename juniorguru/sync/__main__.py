@@ -1,7 +1,7 @@
 import sys
 import importlib
 
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.lib import timer
 from juniorguru.sync.employments import main as sync_employments
 from juniorguru.sync.jobs import main as sync_jobs
@@ -28,7 +28,7 @@ from juniorguru.sync.jobs_club import main as sync_jobs_club
 from juniorguru.lib.ai import set_ai_opinion
 
 
-log = get_log('sync')
+logger = loggers.get('sync')
 
 
 @timer.notify
@@ -71,7 +71,7 @@ else:
     # For debugging purposes, one can run `make sync SYNC=stories`,
     # which is a shortcut for `poetry run python -m juniorguru.sync stories`,
     # which is a shortcut for `poetry run python -m juniorguru.sync.stories`
-    log.info(f"Running only: {module_name}")
+    logger.info(f"Running only: {module_name}")
     module = importlib.import_module(module_name)
     timer.notify(module.main)()
-log.info('Synchronization done!')
+logger.info('Synchronization done!')

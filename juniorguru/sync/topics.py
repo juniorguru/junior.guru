@@ -2,11 +2,11 @@ import re
 from collections import Counter
 
 from juniorguru.lib.timer import measure
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.models import ClubMessage, Topic, db
 
 
-log = get_log('topics')
+logger = loggers.get('topics')
 
 
 KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value in {
@@ -103,7 +103,7 @@ def main():
                 topics[keyword]['mentions_count'] += 1
     with db:
         for name, data in topics.items():
-            log.info(f"{name} {dict(data)}")
+            logger.info(f"{name} {dict(data)}")
             Topic.create(**{'name': name, **data})
 
 

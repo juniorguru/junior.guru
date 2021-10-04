@@ -8,13 +8,13 @@ from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, load
 from juniorguru.lib.timer import measure
 from juniorguru.models import Event, EventSpeaking, ClubMessage, db
 from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_ig_square, replace_with_jpg
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.lib.md import strip_links
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, discord_task
 
 
-log = get_log('events')
+logger = loggers.get('events')
 
 
 FLUSH_POSTERS_EVENTS = bool(int(os.getenv('FLUSH_POSTERS_EVENTS', 0)))
@@ -57,7 +57,7 @@ def main():
     records = [load_record(record.data) for record in load(path.read_text(), schema)]
 
     if FLUSH_POSTERS_EVENTS:
-        log.warning("Removing all existing posters for events, FLUSH_POSTERS_EVENTS is set")
+        logger.warning("Removing all existing posters for events, FLUSH_POSTERS_EVENTS is set")
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
 
@@ -68,7 +68,7 @@ def main():
         # process data from the YAML, generate posters
         for record in records:
             name = record['title']
-            log.info(f"Creating '{name}'")
+            logger.info(f"Creating '{name}'")
             speakers_ids = record.pop('speakers', [])
             event = Event.create(**record)
 
@@ -76,24 +76,24 @@ def main():
                 try:
                     avatar_path = next((IMAGES_DIR / 'avatars-speakers').glob(f"{speaker_id}.*"))
                 except StopIteration:
-                    log.info(f"Didn't find speaker avatar for {speaker_id}")
+                    logger.info(f"Didn't find speaker avatar for {speaker_id}")
                     avatar_path = None
                 else:
-                    log.info(f"Downsizing speaker avatar for {speaker_id}")
+                    logger.info(f"Downsizing speaker avatar for {speaker_id}")
                     avatar_path = replace_with_jpg(downsize_square_photo(avatar_path, 500))
                     avatar_path = avatar_path.relative_to(IMAGES_DIR)
 
-                log.info(f"Marking member {speaker_id} as a speaker")
+                logger.info(f"Marking member {speaker_id} as a speaker")
                 EventSpeaking.create(speaker=speaker_id, event=event,
                                      avatar_path=avatar_path)
 
             if event.logo_path:
-                log.info(f"Checking '{event.logo_path}'")
+                logger.info(f"Checking '{event.logo_path}'")
                 image_path = IMAGES_DIR / event.logo_path
                 if not image_path.exists():
                     raise ValueError(f"Event '{name}' references '{image_path}', but it doesn't exist")
 
-            log.info(f"Rendering images for '{name}'")
+            logger.info(f"Rendering images for '{name}'")
             tpl_context = dict(event=event)
             tpl_filters = dict(md=md, local_time=local_time, weekday=weekday)
             image_path = render_image_file(WEB_THUMBNAIL_WIDTH, WEB_THUMBNAIL_HEIGHT,
@@ -106,14 +106,14 @@ def main():
             event.poster_yt_path = image_path.relative_to(IMAGES_DIR)
             event.poster_ig_path = save_as_ig_square(image_path).relative_to(IMAGES_DIR)
 
-            log.info(f"Saving '{name}'")
+            logger.info(f"Saving '{name}'")
             event.save()
 
         # discord messages
         if DISCORD_MUTATIONS_ENABLED:
             post_next_event_messages()
         else:
-            log.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
+            logger.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
 
 @discord_task
@@ -123,57 +123,57 @@ async def post_next_event_messages(client):
 
     event = Event.next()
     if not event:
-        log.info("The next event is not announced yet")
+        logger.info("The next event is not announced yet")
         return
     speakers = ', '.join([speaking.speaker.mention for speaking in event.list_speaking])
 
-    log.info("About to post a message 7 days prior to the event")
+    logger.info("About to post a message 7 days prior to the event")
     if event.start_at.date() - timedelta(days=7) <= date.today():
         with db:
             message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '🗓', event.url)
         if message:
-            log.info(f'Looks like the message already exists: {message.url}')
+            logger.info(f'Looks like the message already exists: {message.url}')
         else:
-            log.info("Found no message, posting!")
+            logger.info("Found no message, posting!")
             content = f"🗓 Už **za týden** bude v klubu „{event.title}” s {speakers}! {event.url}"
             await announcements_channel.send(content)
     else:
-        log.info("It's not 7 days prior to the event")
+        logger.info("It's not 7 days prior to the event")
 
-    log.info("About to post a message 1 day prior to the event")
+    logger.info("About to post a message 1 day prior to the event")
     if event.start_at.date() - timedelta(days=1) == date.today():
         with db:
             message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '🤩', event.url)
         if message:
-            log.info(f'Looks like the message already exists: {message.url}')
+            logger.info(f'Looks like the message already exists: {message.url}')
         else:
-            log.info("Found no message, posting!")
+            logger.info("Found no message, posting!")
             content = f"🤩 Už **zítra v {event.start_at_prg:%H:%M}** bude v klubu „{event.title}” s {speakers}! {event.url}"
             await announcements_channel.send(content)
     else:
-        log.info("It's not 1 day prior to the event")
+        logger.info("It's not 1 day prior to the event")
 
-    log.info("About to post a message on the day when the event is")
+    logger.info("About to post a message on the day when the event is")
     if event.start_at.date() == date.today():
         with db:
             message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '⏰', event.url)
         if message:
-            log.info(f'Looks like the message already exists: {message.url}')
+            logger.info(f'Looks like the message already exists: {message.url}')
         else:
-            log.info("Found no message, posting!")
+            logger.info("Found no message, posting!")
             content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu „{event.title}” s {speakers}! Odehrávat se to bude v klubovně, případné dotazy v {events_chat_channel.mention} 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.url}"
             await announcements_channel.send(content)
     else:
-        log.info("It's not the day when the event is")
+        logger.info("It's not the day when the event is")
 
-    log.info("About to post a message to event chat on the day when the event is")
+    logger.info("About to post a message to event chat on the day when the event is")
     if event.start_at.date() == date.today():
         with db:
             message = ClubMessage.last_bot_message(EVENTS_CHAT_CHANNEL, '👋', event.url)
         if message:
-            log.info(f'Looks like the message already exists: {message.url}')
+            logger.info(f'Looks like the message already exists: {message.url}')
         else:
-            log.info("Found no message, posting!")
+            logger.info("Found no message, posting!")
             content = [
                 f"👋 Už **dnes v {event.start_at_prg:%H:%M}** tady bude probíhat „{event.title}” s {speakers} (viz {announcements_channel.mention}). Tento kanál slouží k pokládání dotazů, sdílení odkazů, slajdů k prezentaci…",
                 "",
@@ -188,7 +188,7 @@ async def post_next_event_messages(client):
             ]
             await events_chat_channel.send('\n'.join(content))
     else:
-        log.info("It's not the day when the event is")
+        logger.info("It's not the day when the event is")
 
 
 def load_record(record):

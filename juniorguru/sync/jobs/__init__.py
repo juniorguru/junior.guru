@@ -4,12 +4,12 @@ from scrapy.utils.project import data_path
 
 from juniorguru.lib import scrapers
 from juniorguru.lib.timer import measure
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.models import Job, JobDropped, JobError, SpiderMetric, db
 from juniorguru.sync.jobs.settings import IMAGES_STORE, HTTPCACHE_DIR
 
 
-log = get_log('jobs')
+logger = loggers.get('jobs')
 
 
 @measure('jobs')

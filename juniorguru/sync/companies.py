@@ -5,11 +5,11 @@ from juniorguru.lib.timer import measure
 from juniorguru.lib import google_sheets
 from juniorguru.lib.coerce import coerce, parse_boolean_words, parse_text, parse_date, parse_boolean
 from juniorguru.models import Company, db
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.lib.images import render_image_file
 
 
-log = get_log('companies')
+logger = loggers.get('companies')
 
 
 FLUSH_POSTERS_COMPANIES = bool(int(os.getenv('FLUSH_POSTERS_COMPANIES', 0)))
@@ -23,7 +23,7 @@ POSTER_HEIGHT = 700
 @measure('companies')
 def main():
     if FLUSH_POSTERS_COMPANIES:
-        log.warning("Removing all existing posters for companies, FLUSH_POSTERS_COMPANIES is set")
+        logger.warning("Removing all existing posters for companies, FLUSH_POSTERS_COMPANIES is set")
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
 
@@ -35,10 +35,10 @@ def main():
         Company.create_table()
 
         for record in records:
-            log.info('Saving a record')
+            logger.info('Saving a record')
             company = Company.create(**coerce_record(record))
 
-            log.info(f"Rendering images for '{company.name}'")
+            logger.info(f"Rendering images for '{company.name}'")
             tpl_context = dict(company=company)
             render_image_file(POSTER_WIDTH, POSTER_HEIGHT,
                               'company.html', tpl_context, POSTERS_DIR)

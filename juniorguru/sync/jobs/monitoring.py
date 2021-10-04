@@ -4,11 +4,11 @@ from urllib.parse import urlparse
 
 from scrapy import signals
 
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.models import Job, JobDropped, JobError, SpiderMetric, db, retry_when_db_locked
 
 
-log = get_log(__name__)
+logger = loggers.get(__name__)
 
 
 RESPONSES_BACKUP_DIR = Path('juniorguru/data/responses/').absolute()
@@ -29,17 +29,17 @@ RELEVANT_METRICS = (
 class BackupResponseMiddleware():
     def process_response(self, request, response, spider):
         if hasattr(spider, 'override_response_backup_path'):
-            log.debug(f"Skipping backup of '{response.url}' per spider override")
+            logger.debug(f"Skipping backup of '{response.url}' per spider override")
         else:
             try:
                 response_text = response.text
             except AttributeError:
-                log.debug(f"Unable to backup '{response.url}'")
+                logger.debug(f"Unable to backup '{response.url}'")
             else:
                 path = url_to_backup_path(response.url)
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(response_text)
-                log.debug(f"Backed up '{response.url}' as '{path.absolute()}'")
+                logger.debug(f"Backed up '{response.url}' as '{path.absolute()}'")
         return response
 
 
@@ -104,7 +104,7 @@ class MonitoringExtension():
             for attr, value in response_data.items():
                 setattr(job, attr, value)
             job.save()
-            log.debug(f"Updated job '{job.id}' with monitoring data")
+            logger.debug(f"Updated job '{job.id}' with monitoring data")
             self.stats.inc_value('monitoring/job_saved')
         retry_when_db_locked(db, operation, stats=self.stats)
 
@@ -121,7 +121,7 @@ class MonitoringExtension():
                                             spider_name=spider.name,
                                             value=value)
                     retry_when_db_locked(db, operation, stats=self.stats)
-        log.debug(f"Saved '{spider.name}' spider metrics")
+        logger.debug(f"Saved '{spider.name}' spider metrics")
 
 
 def get_response_data(spider, response_url):

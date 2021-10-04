@@ -7,13 +7,13 @@ from lxml import html
 
 from juniorguru.lib.timer import measure
 from juniorguru.models import Proxy, db
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 
 
 PROXIES_ENABLED = bool(int(os.getenv('PROXIES_ENABLED', 0)))
 
 
-log = get_log('proxies')
+logger = loggers.get('proxies')
 
 
 @measure('proxies')
@@ -48,7 +48,7 @@ def main():
                 Proxy.create(**record)
                 counter += 1
             if counter >= 10:
-                log.info('Found enough fast proxies, aborting!')
+                logger.info('Found enough fast proxies, aborting!')
                 break
         pool.terminate()
         pool.join()
@@ -62,7 +62,7 @@ def test(proxy):
         speed_sec = int(response.elapsed.total_seconds())
     except:
         speed_sec = 1000
-    log.info(f"Proxy {proxy} speed is {speed_sec}")
+    logger.info(f"Proxy {proxy} speed is {speed_sec}")
     return dict(address=proxy, speed_sec=speed_sec)
 
 

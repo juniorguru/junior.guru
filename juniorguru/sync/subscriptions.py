@@ -6,12 +6,12 @@ from gql import Client as Memberful, gql
 from gql.transport.requests import RequestsHTTPTransport
 
 from juniorguru.lib.timer import measure
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.lib import google_sheets
 from juniorguru.models import ClubUser
 
 
-log = get_log('subscriptions')
+logger = loggers.get('subscriptions')
 
 
 MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
@@ -20,7 +20,7 @@ DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
 @measure('subscriptions')
 def main():
-    log.info('Getting data from Memberful')
+    logger.info('Getting data from Memberful')
     # https://memberful.com/help/integrate/advanced/memberful-api/
     # https://juniorguru.memberful.com/api/graphql/explorer?api_user_id=52463
     transport = RequestsHTTPTransport(url='https://juniorguru.memberful.com/api/graphql/',
@@ -68,7 +68,7 @@ def main():
 
     cursor = ''
     while cursor is not None:
-        log.info('Requesting Memberful GraphQL')
+        logger.info('Requesting Memberful GraphQL')
         params = dict(cursor=cursor)
         result = memberful.execute(query, params)
 
@@ -109,7 +109,7 @@ def main():
         else:
             cursor = None
 
-    log.info('Process remaining Discord users')
+    logger.info('Process remaining Discord users')
     for user in ClubUser.listing():
         discord_id = str(user.id)
         if not user.is_bot and discord_id not in seen_discord_ids:
@@ -129,7 +129,7 @@ def main():
                 'Memberful Past Due?': False,
             })
 
-    log.info('Uploading subscriptions to Google Sheets')
+    logger.info('Uploading subscriptions to Google Sheets')
     google_sheets.upload(google_sheets.get(DOC_KEY, 'subscriptions'), records)
 
 

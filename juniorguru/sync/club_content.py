@@ -1,10 +1,10 @@
 from juniorguru.lib.timer import measure
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.lib.club import EMOJI_PINS, discord_task, count_upvotes, count_downvotes, emoji_name, get_roles, count_pins
 from juniorguru.models import ClubMessage, ClubUser, ClubPinReaction, db
 
 
-log = get_log('club_content')
+logger = loggers.get('club_content')
 
 
 @measure('club_content')
@@ -18,17 +18,17 @@ async def main(client):
     relevant_channels = (channel for channel in client.juniorguru_guild.text_channels
                          if channel.permissions_for(client.juniorguru_guild.me).read_messages)
     for channel in relevant_channels:
-        log.info(f'Channel #{channel.name}')
+        logger.info(f'Channel #{channel.name}')
         async for message in channel.history(limit=None, after=None):
             if not hasattr(message.type, 'name'):
-                log.warning('Found thread! Skipping')
+                logger.warning('Found thread! Skipping')
                 continue
             if message.author.id not in authors:
                 # The message.author can be an instance of Member, but it can also be an instance of User,
                 # if the author isn't a member of the Discord guild/server anymore. User instances don't
                 # have certain properties, hence the getattr() calls below.
                 with db:
-                    log.info(f"User '{message.author.display_name}' #{message.author.id}")
+                    logger.info(f"User '{message.author.display_name}' #{message.author.id}")
                     author = ClubUser.create(id=message.author.id,
                                              is_bot=message.author.bot,
                                              is_member=bool(getattr(message.author, 'joined_at', False)),
@@ -58,16 +58,16 @@ async def main(client):
                         for user in [user async for user in reaction.users()]:
                             users.add(user)
                 for user in users:
-                    log.info(f"Message {message.jump_url} is pinned by user '{user.display_name}' #{user.id}")
+                    logger.info(f"Message {message.jump_url} is pinned by user '{user.display_name}' #{user.id}")
                     ClubPinReaction.create(user=user.id, message=message.id)
 
     # remaining members (did not author a single message)
-    log.info('Looking for remaining members, if any')
+    logger.info('Looking for remaining members, if any')
     remaining_members = [member async for member in client.juniorguru_guild.fetch_members(limit=None)
                          if member.id not in authors]
     for member in remaining_members:
         with db:
-            log.info(f"Member '{member.display_name}' #{member.id}")
+            logger.info(f"Member '{member.display_name}' #{member.id}")
             ClubUser.create(id=member.id,
                             is_bot=member.bot,
                             is_member=True,
@@ -79,8 +79,8 @@ async def main(client):
     with db:
         messages_count = ClubMessage.count()
         members_count = ClubUser.members_count()
-    log.info(f'Saved {messages_count} messages from {len(authors)} authors')
-    log.info(f'Saved {members_count} members')
+    logger.info(f'Saved {messages_count} messages from {len(authors)} authors')
+    logger.info(f'Saved {members_count} members')
 
 
 if __name__ == '__main__':

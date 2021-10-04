@@ -5,12 +5,12 @@ from io import BytesIO
 from PIL import Image
 
 from juniorguru.lib.timer import measure
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.lib.club import discord_task, is_default_avatar
 from juniorguru.models import ClubUser, db
 
 
-log = get_log('avatars')
+logger = loggers.get('avatars')
 
 
 IMAGES_PATH = Path(__file__).parent.parent / 'images'
@@ -27,10 +27,10 @@ async def main(client):
 
     with db:
         for member in ClubUser.members_listing():
-            log.info(f"Downloading avatar for '{member.display_name}' #{member.id}")
+            logger.info(f"Downloading avatar for '{member.display_name}' #{member.id}")
             discord_member = await client.juniorguru_guild.fetch_member(member.id)
             member.avatar_path = await download_avatar(discord_member)
-            log.info(f"Result: '{member.avatar_path}'")
+            logger.info(f"Result: '{member.avatar_path}'")
             member.save()
 
 

@@ -1,5 +1,7 @@
 from scrapy import Field, Item
 
+from juniorguru.lib.repr import repr_item
+
 
 class Employment(Item):
     title = Field()
@@ -26,3 +28,6 @@ class Employment(Item):
     source_urls = Field()
     adapter = Field()
     build_url = Field()
+
+    def __repr__(self):
+        return repr_item(self, ['title', 'url', 'apply_url', 'source'])

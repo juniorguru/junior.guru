@@ -8,10 +8,10 @@ import scrapy
 from peewee import Model, SqliteDatabase, OperationalError
 from playhouse.sqlite_ext import JSONField as BaseJSONField
 
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 
 
-log = get_log('db')
+logger = loggers.get('db')
 
 
 db_file = Path(__file__).parent / '..' / 'data' / 'data.db'
@@ -52,7 +52,7 @@ def retry_when_db_locked(db, op, stats=None, retries=10, wait_sec=0.1):
                 return op()
         except OperationalError as error:
             if str(error) == 'database is locked':
-                log.debug(f"Database operation '{op.__qualname__}' failed! ({error}, attempt: {i + 1})")
+                logger.debug(f"Database operation '{op.__qualname__}' failed! ({error}, attempt: {i + 1})")
                 last_error = error
                 if stats:
                     stats.inc_value('database/locked_retries')

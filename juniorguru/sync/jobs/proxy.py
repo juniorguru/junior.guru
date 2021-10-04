@@ -2,11 +2,11 @@ import random
 
 from scrapy.downloadermiddlewares.retry import RetryMiddleware
 
-from juniorguru.lib.log import get_log
+from juniorguru.lib import loggers
 from juniorguru.models import Proxy, db
 
 
-log = get_log(__name__)
+logger = loggers.get(__name__)
 
 
 USER_AGENTS = [
@@ -40,7 +40,7 @@ class ScrapingProxyMiddleware():
         return {'User-Agent': self.get_user_agent(), **headers}
 
     def rotate_proxies(self, request):
-        log.warning(f'Rotating proxies (currently {len(self.proxies)})')
+        logger.warning(f'Rotating proxies (currently {len(self.proxies)})')
         meta = {k: v for k, v in request.meta.items() if k != 'proxy'}
         try:
             self.proxies.remove(request.meta.get('proxy'))
@@ -51,7 +51,7 @@ class ScrapingProxyMiddleware():
             return request.replace(headers=self.rotate_user_agent(request.headers),
                                    meta={'proxy': proxy, **meta},
                                    dont_filter=True)
-        log.warning('No proxies left, continuing without proxy')
+        logger.warning('No proxies left, continuing without proxy')
         return request.replace(headers=self.rotate_user_agent(request.headers),
                                meta=meta,
                                dont_filter=True)
@@ -63,13 +63,13 @@ class ScrapingProxyMiddleware():
         request.headers['User-Agent'] = user_agent
         proxy = self.get_proxy()
         if proxy:
-            log.debug(f"Proxying {request!r} via {proxy} ({user_agent})")
+            logger.debug(f"Proxying {request!r} via {proxy} ({user_agent})")
             request.meta['proxy'] = proxy
 
     def process_exception(self, request, exception, spider):
         if not getattr(spider, 'proxy', False) or not request.meta.get('proxy'):
             return
-        log.debug(f'Got proxy exception {exception!r} for {request!r}')
+        logger.debug(f'Got proxy exception {exception!r} for {request!r}')
         if isinstance(exception, self.EXCEPTIONS_TO_RETRY):
             return self.rotate_proxies(request)
 
@@ -79,7 +79,7 @@ class ScrapingProxyMiddleware():
         if response.status in [504, 999] or 'mgts.ru' in response.url:
             user_agent = request.headers.get('User-Agent').decode()
             proxy = request.meta['proxy']
-            log.info(f"Got {response!r} proxied via {proxy} ({user_agent})")
+            logger.info(f"Got {response!r} proxied via {proxy} ({user_agent})")
             return self.rotate_proxies(request)
-        log.debug(f'Got proxied response {response!r}')
+        logger.debug(f'Got proxied response {response!r}')
         return response
