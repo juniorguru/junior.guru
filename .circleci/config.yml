@@ -121,7 +121,6 @@ jobs:
       - attach_workspace:
           at: "~"
       - run: |
-          export LOG_LEVEL=debug
           export SMTP_ENABLED=1
           make send
 

@@ -65,7 +65,3 @@ logo.junior.guru '@' CNAME 'honzajavorek.github.io'
 ## Verify Google Search Console
 
 In [Google Search Console](https://support.google.com/webmasters/answer/9008080?hl=en) click verify and set a TXT DNS record.
-
-## Logging
-
-The environment variable `LOG_LEVEL` affects what gets filtered out. It's set to `info` by default.
