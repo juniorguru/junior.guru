@@ -24,11 +24,11 @@ def main():
         db.create_tables([Job, JobError, JobDropped, SpiderMetric])
 
     scrape('juniorguru.sync.jobs', [
-        # 'juniorguru',
-        # 'linkedin',
-        # 'stackoverflow',
+        'juniorguru',
+        'linkedin',
+        'stackoverflow',
         'startupjobs',
-        # 'remoteok',
-        # 'weworkremotely',
-        # 'dobrysef',
+        'remoteok',
+        'weworkremotely',
+        'dobrysef',
     ])
