@@ -374,7 +374,7 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
     'Snaž se mluvit s reálnými lidmi. Začni klidně „rukama nohama“<br>
         <small>Nejbližší setkání hledej na
         <a href="https://www.facebook.com/search/events/?q=english">FB</a>,
-        <a href="https://www.meetup.com/find/events/language/">meetup.com</a>,
+        <a href="https://www.meetup.com/find/?source=EVENTS&location=cz--Pardubice&distance=hundredMiles&categoryId=622&keywords=english">meetup.com</a>,
         <a href="https://www.foreigners.cz/meetup">foreigners.cz</a>,
         <a href="https://www.couchsurfing.com/events/search?placeid=ChIJQ4Ld14-UC0cRb1jb03UcZvg&amp;search_query=Czechia">couchsurfing.com</a>
         </small>',
