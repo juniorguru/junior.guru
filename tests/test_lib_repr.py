@@ -19,10 +19,12 @@ def test_repr_item():
                        boo=True,
                        not_important=890)
     assert str(item) == (
-        "test_lib_repr.ExampleItem(title=\"Fabulous' Item\",\n"
-        "                          something=123,\n"
-        "                          boo=True,\n"
-        "                          [4 fields in total])"
+        "test_lib_repr.ExampleItem(\n"
+        "    title=\"Fabulous' Item\",\n"
+        "    something=123,\n"
+        "    boo=True,\n"
+        "    [4 fields in total]\n"
+        ")"
     )
 
 
@@ -31,7 +33,9 @@ def test_repr_item_no_remaining_fields():
                        something=123,
                        boo=True)
     assert str(item) == (
-        "test_lib_repr.ExampleItem(title=\"Fabulous' Item\",\n"
-        "                          something=123,\n"
-        "                          boo=True)"
+        "test_lib_repr.ExampleItem(\n"
+        "    title=\"Fabulous' Item\",\n"
+        "    something=123,\n"
+        "    boo=True\n"
+        ")"
     )
