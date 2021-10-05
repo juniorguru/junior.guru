@@ -1,4 +1,4 @@
-from juniorguru.lib import scrapers
+from juniorguru.lib.scrapers import scrape
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
 from juniorguru.models import Employment, db
@@ -12,4 +12,5 @@ def main():
     with db:
         db.drop_tables([Employment])
         db.create_tables([Employment])
-    scrapers.run('juniorguru.sync.employments', 'backups')
+
+    scrape('juniorguru.sync.employments', ['backups'])

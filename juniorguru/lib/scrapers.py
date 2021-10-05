@@ -1,27 +1,27 @@
-import os
 import importlib
-import subprocess
-from multiprocessing import Pool
+
+from scrapy.settings import Settings
+from scrapy.crawler import CrawlerProcess
+
+from juniorguru.lib import loggers
 
 
-def run(scrapy_project_package, spider_name):
+logger = loggers.get(__name__)
+
+
+def scrape(scrapy_project_package, spider_names):
     settings_module_name = f'{scrapy_project_package}.settings'
-    settings = importlib.import_module(settings_module_name)
+    logger.info(f'Importing Scrapy settings: {settings_module_name}')
+    settings = Settings()
+    settings.setmodule(settings_module_name, priority='project')
 
-    # https://docs.scrapy.org/en/latest/topics/settings.html#designating-the-settings
-    env = dict(**os.environ)
-    env['SCRAPY_SETTINGS_MODULE'] = settings_module_name
+    logger.info(f"Preparing to crawl: {', '.join(spider_names)}")
+    crawler = CrawlerProcess(settings=settings, install_root_handler=False)
+    for spider_name in spider_names:
+        spider_module_name = f'{scrapy_project_package}.spiders.{spider_name}'
+        spider = importlib.import_module(spider_module_name)
+        crawler.crawl(spider.Spider)
 
-    proc = subprocess.Popen(['scrapy', 'crawl', spider_name], text=True, bufsize=1, env=env,
-                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    try:
-        for line in proc.stdout:
-            print(f'[{settings.BOT_NAME}/{spider_name}] {line}', end='')
-    except KeyboardInterrupt:
-        proc.kill()
-        proc.communicate()
-
-
-def run_many(scrapy_project_package, spider_names):
-    args = ((scrapy_project_package, spider_name) for spider_name in spider_names)
-    Pool().starmap(run, args)
+    logger.info('Starting the crawler')
+    crawler.start()
+    logger.info('Crawling finished')

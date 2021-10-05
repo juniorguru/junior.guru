@@ -2,7 +2,7 @@ from pathlib import Path
 
 from scrapy.utils.project import data_path
 
-from juniorguru.lib import scrapers
+from juniorguru.lib.scrapers import scrape
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
 from juniorguru.models import Job, JobDropped, JobError, SpiderMetric, db
@@ -23,7 +23,7 @@ def main():
         db.drop_tables([Job, JobError, JobDropped, SpiderMetric])
         db.create_tables([Job, JobError, JobDropped, SpiderMetric])
 
-    scrapers.run_many('juniorguru.sync.jobs', [
+    scrape('juniorguru.sync.jobs', [
         'juniorguru',
         'linkedin',
         'stackoverflow',
