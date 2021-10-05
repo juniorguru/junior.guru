@@ -10,6 +10,7 @@ MUTED_LOGGERS = [
     'googleapiclient',
     'PIL',
     'asyncio',
+    'MARKDOWN',
 ]
 
 
