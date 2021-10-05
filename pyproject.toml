@@ -49,7 +49,6 @@ mkdocs-simple-hooks = "*"
 pytest = "*"
 cssselect = "*"
 pync = "*"
-python-slugify = "*"
 flake8 = "*"
 
 [tool.pytest.ini_options]

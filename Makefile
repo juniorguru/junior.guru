@@ -31,8 +31,5 @@ check-anchors:
 check-scrapers:
 	poetry run python scripts/check_scrapers.py
 
-check-performance:
-	poetry run python scripts/check_performance.py
-
 serve:
 	npx gulp serve

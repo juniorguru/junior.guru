@@ -145,18 +145,6 @@ jobs:
           at: "~"
       - run: make check-scrapers
 
-  check-performance:
-    executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run: make check-performance
-      - run:
-          command: tar -cvzf lighthouse.tar.gz ./lighthouse
-          when: always
-      - store_artifacts:
-          path: ./lighthouse.tar.gz  # HTML and JSON reports from lighthouse
-
 
 workflows:
   version: 2
@@ -206,9 +194,6 @@ workflows:
       - deploy:
           requires:
             - build
-      - check-performance:
-          requires:
-            - deploy
     triggers:
       - schedule:
           cron: "0 4 * * *"
