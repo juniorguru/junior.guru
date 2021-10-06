@@ -9,6 +9,12 @@ class Pipeline():
         'FULLTIME': 'FULL_TIME',
         'PARTTIME': 'PART_TIME',
         'EXTERNAL_COLLABORATION': 'CONTRACT',
+        'PLNÝ_ÚVAZEK': 'FULL_TIME',
+        'ČÁSTEČNÝ_ÚVAZEK': 'PART_TIME',
+        'PLACENÁ_STÁŽ': 'PAID_INTERNSHIP',
+        'NEPLACENÁ_STÁŽ': 'UNPAID_INTERNSHIP',
+        'STÁŽ': 'INTERNSHIP',
+        'DOBROVOLNICTVÍ': 'VOLUNTEERING',
     }
 
     def process_item(self, item, spider):

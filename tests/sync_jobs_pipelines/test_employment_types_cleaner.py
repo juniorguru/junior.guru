@@ -23,6 +23,12 @@ from juniorguru.sync.jobs.pipelines.employment_types_cleaner import Pipeline
     (['unpaid internship'], ['UNPAID_INTERNSHIP']),
     (['internship'], ['INTERNSHIP']),
     (['volunteering'], ['VOLUNTEERING']),
+    (['plný úvazek'], ['FULL_TIME']),
+    (['částečný úvazek'], ['PART_TIME']),
+    (['placená stáž'], ['PAID_INTERNSHIP']),
+    (['neplacená stáž'], ['UNPAID_INTERNSHIP']),
+    (['stáž'], ['INTERNSHIP']),
+    (['dobrovolnictví'], ['VOLUNTEERING']),
 
     # removing an unknown employment type
     (['Full-Time', 'Gargamel'], ['FULL_TIME']),
