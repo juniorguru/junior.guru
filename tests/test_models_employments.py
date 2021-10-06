@@ -45,7 +45,8 @@ def item():
                 lang='en',
                 locations=[],
                 remote=True,
-                seen_at=date.today(),
+                first_seen_at=date.today() - timedelta(days=3),
+                last_seen_at=date.today(),
                 employment_types=['FULL_TIME'],
                 source='exciting-job-board',
                 source_urls=['https://api.example.com/jobs.xml'])
@@ -76,7 +77,7 @@ def test_get_by_item_url_raises_does_not_exist(db_connection):
 ])
 def test_merge_item_first_seen_at(db_connection, item, employment_seen_at, item_seen_at, expected):
     employment = create_employment(first_seen_at=employment_seen_at)
-    item['seen_at'] = item_seen_at
+    item['first_seen_at'] = item_seen_at
     employment.merge_item(item)
 
     assert employment.first_seen_at == expected
@@ -88,7 +89,7 @@ def test_merge_item_first_seen_at(db_connection, item, employment_seen_at, item_
 ])
 def test_merge_item_last_seen_at(db_connection, item, employment_seen_at, item_seen_at, expected):
     employment = create_employment(last_seen_at=employment_seen_at)
-    item['seen_at'] = item_seen_at
+    item['last_seen_at'] = item_seen_at
     employment.merge_item(item)
 
     assert employment.last_seen_at == expected
@@ -97,7 +98,7 @@ def test_merge_item_last_seen_at(db_connection, item, employment_seen_at, item_s
 def test_merge_item_when_item_is_newer(db_connection, item):
     employment = create_employment(last_seen_at=date(2021, 9, 1),
                                    title='Title')
-    item['seen_at'] = date(2021, 9, 15)
+    item['last_seen_at'] = date(2021, 9, 15)
     item['title'] = 'New Title'
     employment.merge_item(item)
 
@@ -108,7 +109,7 @@ def test_merge_item_when_item_is_newer(db_connection, item):
 def test_merge_item_when_item_is_newer_but_has_the_attribute_empty(db_connection, item):
     employment = create_employment(last_seen_at=date(2021, 9, 1),
                                    title='Title')
-    item['seen_at'] = date(2021, 9, 15)
+    item['last_seen_at'] = date(2021, 9, 15)
     del item['title']
     employment.merge_item(item)
 
@@ -119,7 +120,7 @@ def test_merge_item_when_item_is_newer_but_has_the_attribute_empty(db_connection
 def test_merge_item_when_item_is_older(db_connection, item):
     employment = create_employment(last_seen_at=date(2021, 9, 1),
                                    title='Title')
-    item['seen_at'] = date(2021, 8, 15)
+    item['last_seen_at'] = date(2021, 8, 15)
     employment.merge_item(item)
 
     assert 'title' not in [field.name for field in employment.dirty_fields]

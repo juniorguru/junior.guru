@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, timedelta
 
 import pytest
 from scrapy import Spider
@@ -16,7 +16,8 @@ def item():
         description_html='<p>Need Pythonistas!</p>',
         description_text='Need Pythonistas!',
         lang='en',
-        seen_at=date.today(),
+        first_seen_at=date.today() - timedelta(days=3),
+        last_seen_at=date.today(),
         employment_types=['FULL_TIME'],
         source='example-job-board',
         source_urls=['https://example.com/jobs/'],

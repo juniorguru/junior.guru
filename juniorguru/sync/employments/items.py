@@ -14,7 +14,8 @@ class Employment(Item):
     lang = Field()
     description_html = Field()
     description_text = Field()
-    seen_at = Field()
+    first_seen_at = Field()
+    last_seen_at = Field()
     employment_types = Field()
 
     # juniority

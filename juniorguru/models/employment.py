@@ -57,43 +57,9 @@ class Employment(BaseModel):
 
     @classmethod
     def from_item(cls, item):
-        return cls(title=item['title'],
-                   company_name=item['company_name'],
-                   url=item['url'],
-                   apply_url=item.get('apply_url'),
-                   external_ids=item['external_ids'],
-                   locations=item['locations'],
-                   remote=item['remote'],
-                   description_html=item['description_html'],
-                   description_text=item['description_text'],
-                   lang=item.get('lang'),
-                   first_seen_at=item['seen_at'],
-                   last_seen_at=item['seen_at'],
-                   employment_types=item['employment_types'],
-                   source=item['source'],
-                   source_urls=item['source_urls'])
-
-    def merge_item(self, item):
-        # overwrite with newer data
-        if item['seen_at'] >= self.last_seen_at:
-            overwrite_attrs = [
-                'title', 'company_name', 'apply_url', 'locations', 'remote', 'description_html', 'description_text',
-                'lang', 'juniority_re_score', 'juniority_ai_opinion', 'juniority_votes_score', 'juniority_votes_count',
-                'employment_types', 'source',
-            ]
-            for attr in overwrite_attrs:
-                old_value = getattr(self, attr)
-                new_value = item.get(attr, old_value)
-                setattr(self, attr, new_value)
-
-        # merge
-        self.external_ids = list(set(self.external_ids + item.get('external_ids', [])))
-        self.source_urls = list(set(self.source_urls + item.get('source_urls', [])))
-        self.first_seen_at = min(self.first_seen_at, item['seen_at'])
-        self.last_seen_at = max(self.last_seen_at, item['seen_at'])
-
-        # bookkeeping
-        self.items_merged_count += 1
+        return cls(**{field_name: item.get(field_name)
+                   for field_name in cls._meta.fields.keys()
+                   if field_name in item})
 
     def to_api(self):
         return dict(title=self.title,
@@ -108,3 +74,31 @@ class Employment(BaseModel):
                     juniority_score=self.juniority_re_score,
                     employment_types=self.employment_types,
                     source=self.source)
+
+    def merge_item(self, item):
+        for field_name in self.__class__._meta.fields.keys():
+            try:
+                # use merging method if present
+                merge_method = getattr(self, f'_merge_{field_name}')
+                setattr(self, field_name, merge_method(item))
+            except AttributeError:
+                # overwrite with newer data
+                if item['last_seen_at'] >= self.last_seen_at:
+                    old_value = getattr(self, field_name)
+                    new_value = item.get(field_name, old_value)
+                    setattr(self, field_name, new_value)
+
+    def _merge_external_ids(self, item):
+        return list(set(self.external_ids + item.get('external_ids', [])))
+
+    def _merge_source_urls(self, item):
+        return list(set(self.source_urls + item.get('source_urls', [])))
+
+    def _merge_first_seen_at(self, item):
+        return min(self.first_seen_at, item['first_seen_at'])
+
+    def _merge_last_seen_at(self, item):
+        return max(self.last_seen_at, item['last_seen_at'])
+
+    def _merge_items_merged_count(self, item):
+        return self.items_merged_count + 1

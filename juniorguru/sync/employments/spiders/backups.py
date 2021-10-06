@@ -56,25 +56,25 @@ def job_adapter(ci_data):  # old-style jobs
             votes_score = 0
             votes_count = 0
 
-        for seen_at in (date.fromisoformat(row['posted_at']), ci_data['build_date']):
-            yield Employment(title=row['title'],
-                             url=strip_utm_params(row['link']),
-                             apply_url=apply_url,
-                             company_name=row['company_name'],
-                             locations=json.loads(row['locations']),
-                             remote=bool(row['remote']),
-                             description_html=row['description_html'],
-                             lang=row['lang'],
-                             seen_at=seen_at,
-                             juniority_re_score=row['junior_rank'],
-                             juniority_ai_opinion=row.get('magic_is_junior'),
-                             juniority_votes_score=votes_score,
-                             juniority_votes_count=votes_count,
-                             employment_types=json.loads(row['employment_types']),
-                             source=row['source'],
-                             source_urls=[row['response_url']],
-                             adapter='job',
-                             build_url=ci_data['build_url'])
+        yield Employment(title=row['title'],
+                         url=strip_utm_params(row['link']),
+                         apply_url=apply_url,
+                         company_name=row['company_name'],
+                         locations=json.loads(row['locations']),
+                         remote=bool(row['remote']),
+                         description_html=row['description_html'],
+                         lang=row['lang'],
+                         first_seen_at=date.fromisoformat(row['posted_at']),
+                         last_seen_at=ci_data['build_date'],
+                         juniority_re_score=row['junior_rank'],
+                         juniority_ai_opinion=row.get('magic_is_junior'),
+                         juniority_votes_score=votes_score,
+                         juniority_votes_count=votes_count,
+                         employment_types=json.loads(row['employment_types']),
+                         source=row['source'],
+                         source_urls=[row['response_url']],
+                         adapter='job',
+                         build_url=ci_data['build_url'])
 
 
 def jobdropped_adapter(ci_data):  # old-style jobs
@@ -94,24 +94,24 @@ def jobdropped_adapter(ci_data):  # old-style jobs
             votes_score = 0
             votes_count = 0
 
-        for seen_at in (first_seen_at, last_seen_at):
-            yield Employment(title=item['title'],
-                             url=strip_utm_params(item['link']),
-                             company_name=item['company_name'],
-                             locations=item.get('locations'),
-                             remote=item.get('remote', False),
-                             description_html=item['description_html'],
-                             lang=item.get('lang'),
-                             seen_at=seen_at,
-                             juniority_re_score=item.get('junior_rank'),
-                             juniority_ai_opinion=row.get('magic_is_junior'),
-                             juniority_votes_score=votes_score,
-                             juniority_votes_count=votes_count,
-                             employment_types=item.get('employment_types'),
-                             source=row['source'],
-                             source_urls=[row['response_url']],
-                             adapter='jobdropped',
-                             build_url=ci_data['build_url'])
+        yield Employment(title=item['title'],
+                         url=strip_utm_params(item['link']),
+                         company_name=item['company_name'],
+                         locations=item.get('locations'),
+                         remote=item.get('remote', False),
+                         description_html=item['description_html'],
+                         lang=item.get('lang'),
+                         first_seen_at=first_seen_at,
+                         last_seen_at=last_seen_at,
+                         juniority_re_score=item.get('junior_rank'),
+                         juniority_ai_opinion=row.get('magic_is_junior'),
+                         juniority_votes_score=votes_score,
+                         juniority_votes_count=votes_count,
+                         employment_types=item.get('employment_types'),
+                         source=row['source'],
+                         source_urls=[row['response_url']],
+                         adapter='jobdropped',
+                         build_url=ci_data['build_url'])
 
 
 class Spider(BaseSpider):
