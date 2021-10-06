@@ -216,7 +216,7 @@ voice = ["PyNaCl (>=1.3.0,<1.5)"]
 
 [[package]]
 name = "emoji"
-version = "1.5.0"
+version = "1.6.0"
 description = "Emoji for Python"
 category = "main"
 optional = false
@@ -1675,7 +1675,7 @@ czech-sort = [
     {file = "discord.py-1.7.3.tar.gz", hash = "sha256:462cd0fe307aef8b29cbfa8dd613e548ae4b2cb581d46da9ac0d46fb6ea19408"},
 ]
 emoji = [
-    {file = "emoji-1.5.0.tar.gz", hash = "sha256:2eddd062f940924fb25a3108d84d77dc571927d91a419b4c30f37e253c791b19"},
+    {file = "emoji-1.6.0.tar.gz", hash = "sha256:379610aeeb10c62876d89472e6ed514971512a51224d4845c117681258eda845"},
 ]
 extruct = [
     {file = "extruct-0.13.0-py2.py3-none-any.whl", hash = "sha256:fe19b9aefdb4dfbf828c2b082b81a363a03a44c7591c2d6b62ca225cb8f8c0be"},
