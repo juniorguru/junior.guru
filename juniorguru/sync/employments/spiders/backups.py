@@ -18,29 +18,28 @@ from juniorguru.sync.employments.items import Employment
 STARTUPJOBS_URL_RE = re.compile(r'startupjobs.+\&utm_')
 
 
-# TODO
-# def employment_adapter(ci_data):
-#     for row in (yield 'SELECT * from employment'):
-#         apply_url = (row.get('apply_link') or
-#                      row.get('external_link') or
-#                      (row['link'] if ('link' in row and STARTUPJOBS_URL_RE.search(row['link'])) else None))
-#         for seen_at in (date.fromisoformat(row['first_seen_at']), date.fromisoformat(row['last_seen_at'])):
-#             yield Employment(title=row['title'],
-#                              url=strip_utm_params(row['url']),
-#                              apply_url=apply_url,
-#                              company_name=row['company_name'],
-#                              locations=row.get('locations', []),
-#                              description_html=row['description_html'],
-#                              lang=row.get('lang'),
-#                              seen_at=seen_at,
-#                              juniority_re_score=row.get('junior_rank'),
-#                              juniority_ai_opinion=row.get('magic_is_junior'),
-#                              juniority_votes_score=row.get('upvotes_count', 0) - row.get('downvotes_count', 0),
-#                              juniority_votes_count=row.get('upvotes_count', 0) + row.get('downvotes_count', 0),
-#                              source=row['source'],
-#                              source_urls=json.loads(row.get('source_urls', '[]')),
-#                              adapter='employment',
-#                              build_url=ci_data['build_url'])
+def employment_v1_adapter(ci_data):
+    for row in (yield 'SELECT * from employment_v1'):
+        yield Employment(title=row['title'],
+                         company_name=row['company_name'],
+                         url=row['url'],
+                         apply_url=row.get('apply_url'),
+                         external_ids=json.loads(row['external_ids']),
+                         locations=json.loads(row.get('locations', 'null')),
+                         remote=row['remote'],
+                         lang=row.get('lang'),
+                         description_html=row['description_html'],
+                         first_seen_at=date.fromisoformat(row['first_seen_at']),
+                         last_seen_at=date.fromisoformat(row['last_seen_at']),
+                         employment_types=json.loads(row.get('employment_types', 'null')),
+                         juniority_re_score=row.get('juniority_re_score'),
+                         juniority_ai_opinion=row.get('juniority_ai_opinion'),
+                         juniority_votes_score=row['juniority_votes_score'],
+                         juniority_votes_count=row['juniority_votes_count'],
+                         source=row['source'],
+                         source_urls=json.loads(row['source_urls']),
+                         adapter='employment_v1',
+                         build_url=ci_data['build_url'])
 
 
 def job_adapter(ci_data):  # old-style jobs
@@ -122,7 +121,7 @@ class Spider(BaseSpider):
     filename_backup = 'backup.tar.gz'
     filename_db = './juniorguru/data/data.db'
     adapters = [
-        # employment_adapter,
+        employment_v1_adapter,
         job_adapter,
         jobdropped_adapter,
     ]

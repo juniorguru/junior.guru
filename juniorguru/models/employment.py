@@ -10,7 +10,18 @@ from juniorguru.models.base import BaseModel, JSONField
 
 class Employment(BaseModel):
     class Meta:
-        table_name = 'employment'  # TODO versions
+        table_name = 'employment_v1'
+
+    ############################################################################
+    ##                                                                        ##
+    ##  BIG FAT WARNING:                                                      ##
+    ##                                                                        ##
+    ##  When changing this model, you MUST update also the 'backups' scraper  ##
+    ##  so that it counts with the changes. If you change the model           ##
+    ##  significantly, please do raise the version number above and create    ##
+    ##  a completely new adapter in the 'backups' scraper.                    ##
+    ##                                                                        ##
+    ############################################################################
 
     title = CharField()
     company_name = CharField()

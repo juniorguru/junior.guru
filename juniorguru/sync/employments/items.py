@@ -31,4 +31,4 @@ class Employment(Item):
     build_url = Field()
 
     def __repr__(self):
-        return repr_item(self, ['title', 'url', 'apply_url', 'source'])
+        return repr_item(self, ['title', 'url', 'apply_url', 'source', 'adapter'])
