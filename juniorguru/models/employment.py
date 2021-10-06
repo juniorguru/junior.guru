@@ -52,8 +52,8 @@ class Employment(BaseModel):
     @classmethod
     def api_listing(cls):
         return cls.select() \
-            .where((cls.juniority_re_score > 0) | cls.source == 'juniorguru') \
-            .order_by(cls.last_seen_at.desc())
+            .where((cls.juniority_re_score > 0) | (cls.source == 'juniorguru')) \
+            .order_by(cls.last_seen_at.desc(), cls.first_seen_at.desc())
 
     @classmethod
     def from_item(cls, item):
