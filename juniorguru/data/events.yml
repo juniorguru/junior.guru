@@ -53,6 +53,23 @@
 #    prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+# - title: "[TBD] Case study: David Klimes"
+#   date: "2021-11-02"
+#   description: |
+#     [TBD]
+#   bio_name: Libor Vaněk
+#   bio_title: Vedoucí frontendového vývoje, CDN77
+#   bio: |
+#     [TBD]
+#   bio_links:
+#     - https://twitter.com/liborvanek
+#     - https://www.linkedin.com/in/liborvanekcz/
+#     - https://github.com/liborvanek
+#   logo_path: logos/cdn77.svg
+#   speakers:
+#     - [TBD]
+
+
 - title: "AMA: Mentoři na frontend"
   date: "2021-09-29"
   description: |
