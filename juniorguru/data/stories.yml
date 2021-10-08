@@ -1,3 +1,11 @@
+- url: https://medium.com/ataccama-life/unlimitedplayground-irenas-story-7fef75e8625
+  date: 2021-02-25
+  title: Začala jako asistentka, nyní vede tým expertek a expertů na bezpečnost informací
+  image_path: images/stories/irena-bezpecnost.jpg
+  tags:
+    - careerswitch
+    - women
+
 - url: https://medium.com/socialbakers-engineering/my-precarious-path-to-programming-in-prague-103929145233
   date: 2019-04-17
   title: Bývalý voják se přestěhoval z USA do ČR, živí se programováním
@@ -211,7 +219,7 @@
 
 - url: https://www.zvut.cz/napady-objevy/napady-a-objevy-f38103/hlasem-com-chce-umoznit-snadnou-tvorbu-audioknih-nebo-videopruvodcu-d213591
   date: 2021-07-09
-  title: Studoval výtvarné umění, programoval jako samouk. Dnes tvoří aplikaci pro syntézu hlasu
+  title: Studoval výtvarné umění, programoval jako samouk. Tvoří aplikaci pro syntézu hlasu
   image_path: images/stories/simon-hlasem.jpg
   tags:
     - student
