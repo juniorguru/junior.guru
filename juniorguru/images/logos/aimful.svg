@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 3081.1929 942.6416"
+   version="1.1"
+   id="svg830"
+   sodipodi:docname="aimful.svg"
+   width="3081.1929"
+   height="942.6416"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs834" />
+  <sodipodi:namedview
+     id="namedview832"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.37281553"
+     inkscape:cx="1545"
+     inkscape:cy="477.44792"
+     inkscape:window-width="1382"
+     inkscape:window-height="847"
+     inkscape:window-x="58"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg830" />
+  <path
+     fill="#35383c"
+     d="m 1658.1929,663.6416 h 90 v -330 h -90 z m 90,-455 h -90 v 73 h 90 z m 74,455 h 90 v -192 c 0,-64 44,-75 62,-75 57,0 55,43 55,82 v 185 h 90 v -184 c 0,-41 10,-83 61,-83 51,0 55,36 55,80 v 187 h 91 v -221 c 0,-85 -51,-118 -121,-118 a 120,120 0 0 0 -99,55 98,98 0 0 0 -97,-55 119,119 0 0 0 -100,54 h -1 v -45 h -86 z m 595,0 h 90 v -270 h 63 v -60 h -63 v -19 c 0,-28 11,-38 35,-38 a 300,300 0 0 1 33,2 v -68 l -49,-2 c -74,0 -111,42 -111,100 v 24 h -52 v 61 h 54 z m 501,-330 h -90 v 172 c 0,67 -21,94 -70,94 -42,0 -58,-27 -58,-81 v -185 h -91 v 203 c 0,82 25,136 121,136 a 117,117 0 0 0 100,-55 h 2 v 46 h 86 z m 72,330 h 91 v -455 h -91 z m -1638,-449 h 101 l 168,449 h -102 l -34,-100 h -168 l -35,100 h -100 z m -9,275 h 116 l -57,-164 h -1 z m -1201.00003,-353 a 462.19287,462.19287 0 0 0 640,667 l 150,139 v -479 a 462,462 0 0 0 -790,-327 z"
+     id="path824" />
+  <circle
+     cx="465.19287"
+     cy="459.6416"
+     r="316"
+     fill="#ffffff"
+     id="circle826" />
+  <circle
+     cx="465.19287"
+     cy="459.6416"
+     r="157"
+     fill="#e33e11"
+     id="circle828" />
+</svg>
