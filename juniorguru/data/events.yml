@@ -67,7 +67,24 @@
 #     - https://github.com/liborvanek
 #   logo_path: logos/cdn77.svg
 #   speakers:
-#     - [TBD]
+#     - 330085757211377679
+
+
+# - title: "[TBD]"
+#   date: "2021-10-19"
+#   description: |
+#     [TBD]
+#   bio_name: Honza Král
+#   bio_title: Spoluzakladatel a CTO v Aimful
+#   bio: |
+#     [TBD]
+#   bio_links:
+#     - https://twitter.com/honzakral
+#     - https://www.linkedin.com/in/honzakral/
+#     - https://github.com/honzakral
+#   logo_path: logos/aimful.svg
+#   speakers:
+#     - 514189468673114122
 
 
 - title: "AMA: Mentoři na frontend"
