@@ -5,7 +5,7 @@ from peewee import Model, SqliteDatabase, CharField, IntegerField
 
 
 ERROR_RATE_THRESHOLD = 5
-UNEXPECTED_DROP_RATE_THRESHOLD = 10
+UNEXPECTED_DROP_RATE_THRESHOLD = 5
 
 
 db_file = Path(__file__).parent.parent / 'juniorguru' / 'data' / 'data.db'
@@ -32,7 +32,7 @@ class SpiderMetric(Model):
 with db:
     job_errors = list(JobError.select())
     spider_errors = list(SpiderMetric.select().where(SpiderMetric.name == 'log_count/ERROR'))
-    spider_unexpected_drops = list(SpiderMetric.select().where(SpiderMetric.name.in_(['item_dropped_reasons_count/MissingRequiredFields', 'item_dropped_reasons_count/ShortDescription', 'item_dropped_reasons_count/MissingIdentifyingField'])))
+    spider_unexpected_drops = list(SpiderMetric.select().where(SpiderMetric.name.in_(['item_dropped_reasons_count/MissingRequiredFields', 'item_dropped_reasons_count/MissingIdentifyingField'])))
     spider_items_count = sum([metric.value for metric in
                               SpiderMetric.select().where(SpiderMetric.name.startswith('item_') & SpiderMetric.name.endswith('_count'))])
 
