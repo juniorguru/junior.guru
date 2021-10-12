@@ -53,6 +53,41 @@
 #    prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+# - title: "[TBD] Jak zacit jako junior v QA"
+#   date: "2021-12-[TBD]"
+#   description: |
+#     [TBD]
+#   bio_name: Soňa Mištríková
+#   bio_title: QA specialistka v Mews
+#   bio: |
+#     [TBD]
+#   bio_links:
+#     - https://www.linkedin.com/in/so%C5%88a/
+#     - https://www.instagram.com/iamshe.sona/
+#     - https://github.com/MsSona
+#   logo_path: logos/mews.svg
+#   speakers:
+#     - 869504117154934824
+
+
+# - title: "[TBD] AMA"
+#   date: "2021-11-16"
+#   description: |
+#     [TBD]
+#   bio_name: Matěj Kotrba
+#   bio_title: IT headhunter, podcaster
+#   bio: |
+#     [TBD]
+#   bio_links:
+#     - https://twitter.com/MatjKotrba5
+#     - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
+#     - https://www.instagram.com/matejkotrba/
+#     - https://www.vork.cz/
+#   logo_path: logos/vork.png
+#   speakers:
+#     - [TBD]
+
+
 # - title: "[TBD] AMA"
 #   date: "2021-11-16"
 #   description: |
