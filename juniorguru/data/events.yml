@@ -53,6 +53,24 @@
 #    prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+# - title: "[TBD] AMA"
+#   date: "2021-11-16"
+#   description: |
+#     [TBD]
+#   bio_name: Matěj Kotrba
+#   bio_title: IT headhunter, podcaster
+#   bio: |
+#     [TBD]
+#   bio_links:
+#     - https://twitter.com/MatjKotrba5
+#     - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
+#     - https://www.instagram.com/matejkotrba/
+#     - https://www.vork.cz/
+#   logo_path: logos/vork.png
+#   speakers:
+#     - [TBD]
+
+
 # - title: "[TBD] Case study: David Klimes"
 #   date: "2021-11-02"
 #   description: |
