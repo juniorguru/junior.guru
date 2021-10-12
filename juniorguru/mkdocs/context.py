@@ -5,7 +5,7 @@ from urllib.parse import urljoin
 
 import arrow
 
-from juniorguru.models import with_db, Metric, Topic, ClubUser, Company, Event, ClubMessage, Story
+from juniorguru.models import with_db, Metric, Topic, ClubUser, Company, Event, ClubMessage, Story, LastModified
 from juniorguru.mkdocs.thumbnail import thumbnail
 
 
@@ -28,6 +28,7 @@ def on_docs_context(context, page, config, files):
     context['events'] = Event.listing()
     context['stories'] = Story.listing()
     context['stories_by_tags'] = Story.tags_mapping()
+    context['last_modified'] = LastModified.get_value_by_path('candidate-handbook.md')
 
     if 'topic_name' in page.meta:
         topic_name = page.meta['topic_name']

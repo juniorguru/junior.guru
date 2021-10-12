@@ -15,7 +15,7 @@ nav:
       - Motivace: handbook/motivation.md
       - Základy: handbook/learn.md
       - První praxe: handbook/practice.md
-      - Hledání práce: candidate-handbook/
+      - Hledání práce: handbook/candidate-handbook.md
 
   - Témata:
       - topics/100daysofcode.md

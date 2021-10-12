@@ -19,6 +19,7 @@ TEMPLATE_FILTERS = [
     'metric',
     'remove_p',
     'metrics_inc_breakdown',
+    'ago',
 ]
 
 

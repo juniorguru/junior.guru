@@ -5,44 +5,124 @@ description: Jak začít hledat svou první práci v IT? Jak se připravit na po
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import img, blockquote, blockquote_avatar, blockquote_toxic, lead, link_card, stories_list with context %}
+{% from 'macros.html' import blockquote_toxic, blockquote_avatar, blockquote with context %}
 
 
 # Hledání první práce v IT
 
 ## Úvod
 
-Ještě než se začteš, jednu věc si musíme ujasnit hned. **Toto není e-book.** Nacházíš se na „živé stránce“, na které stále probíhají úpravy — naposledy {{ last_modified|ago }}. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/honzajavorek/junior.guru/commits/main/juniorguru/web/templates/candidate_handbook.html), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](club.md).
+Ještě než se začteš, jednu věc si musíme ujasnit hned. **Toto není e-book.** Nacházíš se na „živé stránce“, na které stále probíhají úpravy — naposledy {{ last_modified|ago }}. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/honzajavorek/junior.guru/commits/main/juniorguru/mkdocs/docs/handbook/candidate-handbook.md), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](club.md).
 
 A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'ahoj@junior.guru'|email_link }}.
 
+### Předmluva
 
+Znáš [základy](learn.md) a máš [praxi](practice.md)? Nastal čas zkoušet své štěstí na pracovním trhu. Jak si ale začít hledat svou první práci v IT? Jak se připravit na pohovor?
+
+{{ blockquote_toxic(
+  'Nauč se programovat, firmy v IT berou z nedostatku lidí každého, kdo má jen zájem. Do začátku si řekni aspoň o pade.',
+  'český programátorský folklór',
+) }}
+
+Tyto věty slyšel v ČR asi každý začátečník — a přitom jde o nesmysly. Ano, senioři mají navrch a firmy jim nadbíhají, junioři si ale oproti tomu musí vše vydřít. Nováčci projdou úvodními kurzy a pak zjistí, že sehnat první práci vůbec není tak snadné. Místo dobrých rad se jim dostane mýtů, takže se na vypsané nabídky hlásí nepřipravení a s nerealistickými očekáváními.
+
+**Tahle část příručky chce situaci změnit.** Ukázat juniorům, jak se kvalitně připravit na hledání své první práce, jak se zorientovat, jak projít pohovorem. Jak vystupovat profesionálně i jako začátečník. A čím více lidí si příručku přečte, tím kultivovanější bude český trh s juniorními kandidáty. Odpovědi na inzeráty budou relevantnější, pozitivní příběhy častější a firmy motivovanější dávat juniorům šanci.
+
+### Doprovodná videa
+
+TODO
+
+
+## Jak dlouho to trvá
+
+Jak dlouho je potřeba se učit programování, než je člověk připraven si začít hledat první práci? A kolik času takové hledání zabere? Tyto otázky si klade hodně lidí, ale odpověď na ně neexistuje. Záleží na tom, jak intenzivně se věnuješ učení, jak k němu přistupuješ, jaké máš příležitosti. Někdo tomu může věnovat osm hodin každý den, takže to zvládne za týdny. Někdo se učí po večerech a stráví s tím klidně **dva roky** nebo i více. Přitom ani jedno nevypovídá nic o talentu.
+
+Raději neplánuj s ohledem na čas. **Jeď si tempo, které můžeš skloubit se zbytkem svého života, a soustřeď se na to, ať umíš [základní minimum](#minimum-requirements).** Potom si začni hledat práci.
+
+{% call blockquote_avatar(
+  'Dva roky jsem se při rodičovské učila programovat, než jsem si začala hledat práci. Jestli tě to baví, uč se uč, čas nepočítej.',
+  'iveta-cesalova.jpg',
+  'Iveta Česalová'
+) %}
+  Iveta Česalová, bývalá účetní, absolventka začátečnického kurzu [PyLadies](https://pyladies.cz/)
+{% endcall %}
+
+
+## Kdy začít hledat
+
+**Kdy je člověk připraven?** Na to existuje jednoduchá odpověď: **Nikdy!** Každý obor v rámci IT má jiné počáteční nároky. Každá firma má na juniory jiné nároky. Možná si říkáš: „Čím více toho umím, tím lépe se mi bude hledat práce!“ Ale tak to nefunguje. Programátoři se totiž nikdy nepřestávají učit. Od určité chvíle prostě musíš začít hledat, i když máš pocit, že toho ještě umíš strašně málo. Ten pocit se neztratí nikdy, [ani dlouho po tom, co už budeš v IT pracovat](https://overreacted.io/things-i-dont-know-as-of-2018/). **Splň [základní minimum](#minimum-requirements) a pak si hned začni hledat práci.**
+
+
+{% call blockquote_avatar(
+  'Bez ohledu na to, jak moc zkušený člověk je, stejně se nakonec motá mezi pocitem, že je zdatný, neschopný („Impostor syndrom“) nebo příliš sebejistý („Dunning–Kruger efekt“).',
+  'dan-abramov.jpg',
+  'Dan Abramov'
+) %}
+  Dan Abramov, vývojář ve Facebooku známý svou prací na projektech Redux a React
+{% endcall %}
+
+
+## Co budou chtít
+
+Nikdo od tebe nečeká, že budeš oslňovat technickými znalostmi. Dej najevo, že tu práci fakt chceš, že jsi **motivovaná osoba**, která má **chuť se učit**, a že do jejich týmu přineseš **nadšení**. Z programátorských veteránů nadšení vyvanulo už před lety a samozřejmostí není ani u [absolventů VŠ](#university). Tvůj přístup a [měkké dovednosti](https://cs.wikipedia.org/wiki/M%C4%9Bkk%C3%A9_dovednosti) (_soft skills_) jsou důležitější než znalosti konkrétních technologií (_hard skills_).
+
+{% call blockquote(
+  'Po roce tvrdé práce a citlivého vedení jsou na tom junioři lépe než leckteří samozvaní senioři. Především potřebuji vidět jiskru v oku a nadšení pro věc.'
+) %}
+  Luboš Račanský, profesionální programátor, autor článku [O náboru juniorů](https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html)
+{% endcall %}
+
+### Základní minimum
+
+1.  Znalost jakéhokoliv běžného jazyka alespoň v rozsahu začátečnického kurzu na [Nauč se Python!](learn.md#jak-zacit)
+2.  Mít vytvořený nějaký [malý vlastní projekt](practice.md#najdi-si-projekt) jako praktickou ukázku své práce.
+3.  Mít na projektech naučenou schopnost dostat zadání a rozložit ho na podproblémy (algoritmizace).
+
+#### Velmi užitečné znalosti navíc
+
+*   [Angličtina](learn.md#jak-si-zlepsit-anglictinu), čím víc tím líp!
+*   Základy práce s [Gitem](https://naucse.python.cz/course/pyladies/sessions/foss/).
+*   Práce s příkazovou řádkou (ideálně tou v [Linuxu](https://cs.wikipedia.org/wiki/Linux), tzn. Bash).
+
+Ano, **toto opravdu většinou stačí!** Neboj se toho, že se učíš Python, ale v nabídkách je Java. Důležité je především **umět programovat** — další jazyk nebo technologie se dá doučit poměrně rychle.
+
+Není potřeba jít víc do šířky a bez jasného cíle se učit tady trochu HTML, tu základy C#, tam úvod do datové analýzy — jen proto, že někde o těchto věcech uslyšíš. Místo toho si **[vyber projekt](practice.md#najdi-si-projekt) a na tom pracuj.** Potřebuješ získat praktické schopnosti, které ti jednodenní workshop nebo čtení knih nedají. Dlouhodobá práce na projektu ti sama ukáže, jaké konkrétní dovednosti a technologie se potřebuješ doučit. A po dokončení projektu ti to ukážou požadavky v pracovních inzerátech a [dotazy na pohovorech](#questions).
+
+Angličtina je důležitá, ale **i s omezenou, pasivní angličtinou se dá začít**. Pokud zvládáš číst anglický text, pochopit v něm zadání a učit se z něj nové věci, pro start to stačí.
+
+{% call blockquote(
+  'Na pohovoru mě nezajímá, co kdo vystudoval, ale jak přemýšlí a jaké má vlastní projekty. Nemusí být nijak světoborné, je to však praxe, kterou ani čerstvý inženýr často nemá.'
+) %}
+  Josef Skládanka, profesionální programátor
+{% endcall %}
+
+### Co přesně znamená „junior“
+
+Chápání slova junior není mezi firmami ustálené. Někde stačí výše popsané základní minimum, jinde na tebe budou nechápavě kulit oči. Někteří jako juniora označují člověka, který toho akorát „umí méně“ a „déle mu to trvá“, ale v oboru už pár let pracuje.
+
+Nenech se tím vykolejit! **Při prvním kontaktu s firmou se ujisti, že jste na stejné vlně** a doopravdy hledají člověka, pro kterého to bude první práce v IT (anglicky _entry job_). Ušetříte si čas a zklamání na obou stranách. Pozor, _entry job_ neznamená, že „neumíš nic“, takže to tak nikomu neříkej. Znamená to pouze, že **hledáš svou první práci v oboru**. Znalostí [máš nejspíš už spoustu](#wins).
+
+### Je potřeba VŠ?
+
+[Ne](motivation.md#potrebujes-vysokou-skolu). Běžní zaměstnavatelé ocení [praxi](practice.md) víc než titul. **Webovky nebo mobilní appky udělá samouk stejně dobře jako absolvent.** Studenti VŠ jsou tvá největší konkurence, ale na rozdíl od tebe jsou semletí pěti lety v českém školství. Nadšení z nich zpravidla nesrší a nemají moc praxe. Žena po rodičovské, která si rok šla za svým a učila se při všem shonu programovat po večerech, smete svou motivací každé ucho z VŠ jako nic.
+
+Zrovna v inzerátech nabízejících první práci v IT nebo částečný úvazek se však ještě stále lze setkat s **omezením, že jsou jen pro studenty či absolventy**. Je to proto, že lidi na druhé straně inzerátu ([recruitery](#recruiters), šéfy) vůbec nenapadlo, že nováčci v oboru se rodí i jinde než na univerzitě. **Zkus se ozvat i tak.** Nic za to nedáš. Buď firmě otevřeš oči, nebo se rozloučíte už při prvním kontaktu.
+
+{% call blockquote(
+  'Vývojáři nepotřebují titul z informatiky! Přestaňme zbytečně bránit lidem pracovat v IT.'
+) %}
+  Emma Bostian, [Coding Coach](https://mentors.codingcoach.io/) & [Ladybug Podcast](https://www.ladybug.dev/)
+{% endcall %}
+
+### Záleží na věku? Pohlaví?
+
+[Ne a ne](motivation.md#myty-o-programovani). Programování není balet, [začít se dá v jakémkoli věku](https://www.youtube.com/watch?v=dKclZ55d_F0). Byť jsou stále ještě v menšině, ženy se dnes programátorkami stávají běžně. IT už dávno nevypadá jako na [této fotce](https://www.forum24.cz/jak-dopadli-chlapci-z-brutalni-parby-informatiku-2/), i když si toho někteří možná ještě nevšimli. **Pokud je z pracovního inzerátu cítit diskriminace, vůbec se jím nezabývej**. Kromě toho, že je to [protizákonné](https://www.google.cz/search?q=pracovn%C3%AD%20inzer%C3%A1t%20diskriminace), tak firma, která se myšlenkově zasekla ve středověku, nebude zrovna dobrým přístavem pro začátečníky.
 
 
 
 
 {#
-
-Úvod
-----
-
-
-
-### Předmluva
-
-Znáš [základy]({{ url_for('learn') }}) a máš [praxi]({{ url_for('practice') }})? Nastal čas zkoušet své štěstí na pracovním trhu. Jak si ale začít hledat svou první práci v IT? Jak se připravit na pohovor?
-
-> Nauč se programovat, firmy v IT berou z nedostatku lidí každého, kdo má jen zájem. Do začátku si řekni aspoň o pade.
-
-český programátorský folklór
-
-Tyto věty slyšel v ČR asi každý začátečník — a přitom jde o nesmysly. Ano, senioři mají navrch a firmy jim nadbíhají, junioři si ale oproti tomu musí vše vydřít. Nováčci projdou úvodními kurzy a pak zjistí, že sehnat první práci vůbec není tak snadné. Místo dobrých rad se jim dostane mýtů, takže se na vypsané nabídky hlásí nepřipravení a s nerealistickými očekáváními.
-
-**Příručka o hledání první práce v IT chce situaci změnit.** Ukázat juniorům, jak se kvalitně připravit na hledání své první práce, jak se zorientovat, jak projít pohovorem. Jak vystupovat profesionálně i jako začátečník. A čím více lidí si příručku přečte, tím kultivovanější bude český trh s juniorními kandidáty. Odpovědi na inzeráty budou relevantnější, pozitivní příběhy častější a firmy motivovanější dávat juniorům šanci.
-
-### Poděkování
-
-Tato příručka a celý web junior.guru může existovat a zůstávat aktuální jen díky [podpoře]({{ url_for('donate') }}) více než {{ supporters\_count }} přispěvatelů a [sponzorství firem]({{ url_for('hire_juniors') }}#handbook), jejichž loga tady můžeš vidět.
 
 ### Doprovodná videa
 
@@ -78,77 +158,6 @@ Svérázný slovenský lektor [yablko](https://www.youtube.com/channel/UC01guyOZ
 
     Jak vypadají pohovory konkrétně pro programátory?
 
-
-Jak dlouho to trvá
-------------------
-
-Jak dlouho je potřeba se učit programování, než je člověk připraven si začít hledat první práci? A kolik času takové hledání zabere? Tyto otázky si klade hodně lidí, ale odpověď na ně neexistuje. Záleží na tom, jak intenzivně se věnuješ učení, jak k němu přistupuješ, jaké máš příležitosti. Někdo tomu může věnovat osm hodin každý den, takže to zvládne za týdny. Někdo se učí po večerech a stráví s tím klidně **dva roky** nebo i více. Přitom ani jedno nevypovídá nic o talentu.
-
-Raději neplánuj s ohledem na čas. **Jeď si tempo, které můžeš skloubit se zbytkem svého života, a soustřeď se na to, ať umíš [základní minimum](#minimum-requirements).** Potom si začni hledat práci.
-
-> Dva roky jsem se při rodičovské učila programovat, než jsem si začala hledat práci. Jestli tě to baví, uč se uč, čas nepočítej.
-
-Iveta Česalová, bývalá účetní, absolventka začátečnického kurzu [PyLadies](https://pyladies.cz/)
-
-Kdy začít hledat
-----------------
-
-**Kdy je člověk připraven?** Na to existuje jednoduchá odpověď: **Nikdy!** Každý obor v rámci IT má jiné počáteční nároky. Každá firma má na juniory jiné nároky. Možná si říkáš: „Čím více toho umím, tím lépe se mi bude hledat práce!“ Ale tak to nefunguje. Programátoři se totiž nikdy nepřestávají učit. Od určité chvíle prostě musíš začít hledat, i když máš pocit, že toho ještě umíš strašně málo. Ten pocit se neztratí nikdy, [ani dlouho po tom, co už budeš v IT pracovat](https://overreacted.io/things-i-dont-know-as-of-2018/). **Splň [základní minimum](#minimum-requirements) a pak si hned začni hledat práci.**
-
-> Bez ohledu na to, jak moc zkušený člověk je, stejně se nakonec motá mezi pocitem, že je zdatný, neschopný („[Impostor syndrom](https://www.google.cz/search?q=impostor+syndrome&lr=lang_cs)“) nebo příliš sebejistý („[Dunning–Kruger efekt](https://cs.wikipedia.org/wiki/Dunning%C5%AFv%E2%80%93Kruger%C5%AFv_efekt)“).
-
-Dan Abramov, vývojář ve Facebooku známý svou prací na projektech Redux a React
-
-Co budou chtít
---------------
-
-Nikdo od tebe nečeká, že budeš oslňovat technickými znalostmi. Dej najevo, že tu práci fakt chceš, že jsi **motivovaná osoba**, která má **chuť se učit**, a že do jejich týmu přineseš **nadšení**. Z programátorských veteránů nadšení vyvanulo už před lety a samozřejmostí není ani u [absolventů VŠ](#university). Tvůj přístup a [měkké dovednosti](https://cs.wikipedia.org/wiki/M%C4%9Bkk%C3%A9_dovednosti) (_soft skills_) jsou důležitější než znalosti konkrétních technologií (_hard skills_).
-
-> Po roce tvrdé práce a citlivého vedení jsou na tom junioři lépe než leckteří samozvaní senioři. Především potřebuji vidět jiskru v oku a nadšení pro věc.
-
-Luboš Račanský, profesionální programátor, autor článku [O náboru juniorů](https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html)
-
-### Základní minimum
-
-1.  Znalost jakéhokoliv běžného jazyka alespoň v rozsahu začátečnického kurzu na [Nauč se Python!]({{ url_for('learn') }}#learn)
-2.  Mít vytvořený nějaký [malý vlastní projekt]({{ url_for('practice') }}#projects) jako praktickou ukázku své práce.
-3.  Mít na projektech naučenou schopnost dostat zadání a rozložit ho na podproblémy (algoritmizace).
-
-#### Velmi užitečné znalosti navíc
-
-*   [Angličtina]({{ url_for('learn') }}#english), čím víc tím líp!
-*   Základy práce s [Gitem](https://naucse.python.cz/course/pyladies/sessions/foss/).
-*   Práce s příkazovou řádkou (ideálně tou v [Linuxu](https://cs.wikipedia.org/wiki/Linux), tzn. Bash).
-
-Ano, **toto opravdu většinou stačí!** Neboj se toho, že se učíš Python, ale v nabídkách je Java. Důležité je především **umět programovat** — další jazyk nebo technologie se dá doučit poměrně rychle.
-
-Není potřeba jít víc do šířky a bez jasného cíle se učit tady trochu HTML, tu základy C#, tam úvod do datové analýzy — jen proto, že někde o těchto věcech uslyšíš. Místo toho si **[vyber projekt]({{ url_for('practice') }}#projects) a na tom pracuj.** Potřebuješ získat praktické schopnosti, které ti jednodenní workshop nebo čtení knih nedají. Dlouhodobá práce na projektu ti sama ukáže, jaké konkrétní dovednosti a technologie se potřebuješ doučit. A po dokončení projektu ti to ukážou požadavky v pracovních inzerátech a [dotazy na pohovorech](#questions).
-
-Angličtina je důležitá, ale **i s omezenou, pasivní angličtinou se dá začít**. Pokud zvládáš číst anglický text, pochopit v něm zadání a učit se z něj nové věci, pro start to stačí.
-
-> Na pohovoru mě nezajímá, co kdo vystudoval, ale jak přemýšlí a jaké má vlastní projekty. Nemusí být nijak světoborné, je to však praxe, kterou ani čerstvý inženýr často nemá.
-
-Josef Skládanka, profesionální programátor
-
-### Co přesně znamená „junior“
-
-Chápání slova junior není mezi firmami ustálené. Někde stačí výše popsané základní minimum, jinde na tebe budou nechápavě kulit oči. Někteří jako juniora označují člověka, který toho akorát „umí méně“ a „déle mu to trvá“, ale v oboru už pár let pracuje.
-
-Nenech se tím vykolejit! **Při prvním kontaktu s firmou se ujisti, že jste na stejné vlně** a doopravdy hledají člověka, pro kterého to bude první práce v IT (anglicky _entry job_). Ušetříte si čas a zklamání na obou stranách. Pozor, _entry job_ neznamená, že „neumíš nic“, takže to tak nikomu neříkej. Znamená to pouze, že **hledáš svou první práci v oboru**. Znalostí [máš nejspíš už spoustu](#wins).
-
-### Je potřeba VŠ?
-
-[Ne]({{ url_for('motivation') }}#university). Běžní zaměstnavatelé ocení [praxi]({{ url_for('practice') }}) víc než titul. **Webovky nebo mobilní appky udělá samouk stejně dobře jako absolvent.** Studenti VŠ jsou tvá největší konkurence, ale na rozdíl od tebe jsou semletí pěti lety v českém školství. Nadšení z nich zpravidla nesrší a nemají moc praxe. Žena po rodičovské, která si rok šla za svým a učila se při všem shonu programovat po večerech, smete svou motivací každé ucho z VŠ jako nic.
-
-Zrovna v inzerátech nabízejících první práci v IT nebo částečný úvazek se však ještě stále lze setkat s **omezením, že jsou jen pro studenty či absolventy**. Je to proto, že lidi na druhé straně inzerátu ([recruitery](#recruiters), šéfy) vůbec nenapadlo, že nováčci v oboru se rodí i jinde než na univerzitě. **Zkus se ozvat i tak.** Nic za to nedáš. Buď firmě otevřeš oči, nebo se rozloučíte už při prvním kontaktu.
-
-> Vývojáři nepotřebují titul z informatiky! Přestaňme zbytečně bránit lidem pracovat v IT.
-
-Emma Bostian, [Coding Coach](https://mentors.codingcoach.io/) & [Ladybug Podcast](https://www.ladybug.dev/)
-
-### Záleží na věku? Pohlaví?
-
-[Ne a ne]({{ url_for('motivation') }}#myths). Programování není balet, [začít se dá v jakémkoli věku](https://www.youtube.com/watch?v=dKclZ55d_F0). Byť jsou stále ještě v menšině, ženy se dnes programátorkami stávají běžně. IT už dávno nevypadá jako na [této fotce](https://www.forum24.cz/jak-dopadli-chlapci-z-brutalni-parby-informatiku-2/), i když si toho někteří možná ještě nevšimli. **Pokud je z pracovního inzerátu cítit diskriminace, vůbec se jím nezabývej**. Kromě toho, že je to [protizákonné](https://www.google.cz/search?q=pracovn%C3%AD%20inzer%C3%A1t%20diskriminace), tak firma, která se myšlenkově zasekla ve středověku, nebude zrovna dobrým přístavem pro začátečníky.
 
 Jaká mít očekávání
 ------------------
@@ -900,3 +909,11 @@ A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkuš
 {% endblock %}
 
 #}
+
+TODO
+
+<span id="minimum-requirements"></span>
+<span id="university"></span>
+<span id="questions"></span>
+<span id="wins"></span>
+<span id="recruiters"></span>
