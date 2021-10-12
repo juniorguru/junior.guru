@@ -243,12 +243,13 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
   Lenka Segura v [rozhovoru pro CyberMagnolia](https://cybermagnolia.com/blog/lenka-segura-interview/), bývalá agrochemička
 {% endcall %}
 
-{{ blockquote_avatar(
+{% call blockquote_avatar(
   'Moje začátky se nesly v duchu: Vidím rozbitou věc, spravím, pošlu opravu. Tím si člověk vybuduje jméno. Stačí jen otevřít GitHub, všechno je rozbitý.',
   'tomas-janousek.jpg',
   'Tomáš Janoušek',
-  'Tomáš Janoušek, profesionální programátor',
-) }}
+) %}
+  Tomáš Janoušek, profesionální programátor, ve [svém tweetu](https://twitter.com/Liskni_si/status/1224359360517877762)
+{% endcall %}
 
 <div class="link-cards">
   {{ link_card(
