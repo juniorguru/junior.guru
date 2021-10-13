@@ -54,7 +54,7 @@
 
 
 # - title: "[TBD] Jak zacit jako junior v QA"
-#   date: "2021-12-[TBD]"
+#   date: "2021-12-07"
 #   description: |
 #     [TBD]
 #   bio_name: Soňa Mištríková
@@ -68,24 +68,6 @@
 #   logo_path: logos/mews.svg
 #   speakers:
 #     - 869504117154934824
-
-
-# - title: "[TBD] AMA"
-#   date: "2021-11-16"
-#   description: |
-#     [TBD]
-#   bio_name: Matěj Kotrba
-#   bio_title: IT headhunter, podcaster
-#   bio: |
-#     [TBD]
-#   bio_links:
-#     - https://twitter.com/MatjKotrba5
-#     - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
-#     - https://www.instagram.com/matejkotrba/
-#     - https://www.vork.cz/
-#   logo_path: logos/vork.png
-#   speakers:
-#     - [TBD]
 
 
 # - title: "[TBD] AMA"
@@ -123,21 +105,21 @@
 #     - 330085757211377679
 
 
-# - title: "[TBD]"
-#   date: "2021-10-19"
-#   description: |
-#     [TBD]
-#   bio_name: Honza Král
-#   bio_title: Spoluzakladatel a CTO v Aimful
-#   bio: |
-#     Joined Elastic as one of the first engineers in 2013. As Elastic’s most senior consultant, advised Fortune 100 companies on high profile initiatives for the past 6 years. Specializes in big data and scalable architectures.
-#   bio_links:
-#     - https://twitter.com/honzakral
-#     - https://www.linkedin.com/in/honzakral/
-#     - https://github.com/honzakral
-#   logo_path: logos/aimful.svg
-#   speakers:
-#     - 514189468673114122
+- title: "AMA: Expert na škálování a architekturu"
+  date: "2021-10-19"
+  description: |
+    AMA znamená _ask me anything_. Honza Král se dlouhá léta zabývá provozem a architekturou složitých systémů. Jak lze navrhovat kód, aby toho zvládl hodně v krátkém čase? Jaké triky má využít webová stránka, pokud chce obsloužit miliony uživatelů? Jak navrhnout a provozovat databáze, aby se popraly s náporem? Zeptej se na cokoliv, co tě zajímá!
+  bio_name: Honza Král
+  bio_title: Spoluzakladatel a CTO v Aimful
+  bio: |
+    Honza je jedním z prvních propagátorů Djanga u nás. Byl u počátků firmy [Elastic](https://www.elastic.co/), která stojí za jedním z nejpopulárnějších databázových a vyhledávacích systémů. Nejdříve pracoval na integraci Elasticu do Pythonu, později působil v roli nejzkušenějšího konzultanta ve firmě a mezinárodního přednášejícího. Objížděl svět a radil top firmám na trhu jak vyřešit zapeklité situace. Dnes rozjíždí startup [Aimful](https://aimful.io/). Libuje si sice v dobré whisky, ale na [srazu Pythonistů](https://pyvo.cz/praha-pyvo/) ho potkáte spíše s tácem zelené.
+  bio_links:
+    - https://twitter.com/honzakral
+    - https://www.linkedin.com/in/honzakral/
+    - https://github.com/honzakral
+  logo_path: logos/aimful.svg
+  speakers:
+    - 514189468673114122
 
 
 - title: "AMA: Mentoři na frontend"
