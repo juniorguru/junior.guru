@@ -85,18 +85,22 @@
   @include media-breakpoint-up(lg) {
     margin-top: map-get($spacers, 3);
     line-height: $line-height-sm;
-    border-bottom: map-get($border-widths, 2) solid $jg-blue-light;
+    border-color: $body-color;
+    border-style: solid;
+    border-width: 0 0 map-get($border-widths, 1) 0;
   }
 }
 
 .toc-link:hover {
   color: $link-hover-color;
+  border-color: $link-hover-color;
 }
 
 .toc-item.active .toc-link {
   font-weight: $headings-font-weight;
   color: $link-color;
   border-color: $link-color;
+  border-width: 0 0 map-get($border-widths, 2) 0;
 }
 
 .toc-item.active .toc-link:hover {
