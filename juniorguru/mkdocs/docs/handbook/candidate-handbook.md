@@ -147,8 +147,10 @@ Nenech se tím vykolejit! **Při prvním kontaktu s firmou se ujisti, že jste n
 
 Zrovna v inzerátech nabízejících první práci v IT nebo částečný úvazek se však ještě stále lze setkat s **omezením, že jsou jen pro studenty či absolventy**. Je to proto, že lidi na druhé straně inzerátu ([recruitery](#recruiters), šéfy) vůbec nenapadlo, že nováčci v oboru se rodí i jinde než na univerzitě. **Zkus se ozvat i tak.** Nic za to nedáš. Buď firmě otevřeš oči, nebo se rozloučíte už při prvním kontaktu.
 
-{% call blockquote(
-  'Vývojáři nepotřebují titul z informatiky! Přestaňme zbytečně bránit lidem pracovat v IT.'
+{% call blockquote_avatar(
+  'Vývojáři nepotřebují titul z informatiky! Přestaňme zbytečně bránit lidem pracovat v IT.',
+  'emma-bostian.jpg',
+  'Emma Bostian'
 ) %}
   Emma Bostian, [Coding Coach](https://mentors.codingcoach.io/) & [Ladybug Podcast](https://www.ladybug.dev/)
 {% endcall %}
@@ -208,8 +210,10 @@ Přímo na junior.guru najdeš [nabídky práce výhradně pro juniory](/jobs/).
 
 Programování je nejlepší způsob, jak začít v IT. **Kolem tvorby softwaru se motá spousta dalších profesí, které tě časem mohou zaujmout více, ale teď o nich ještě ani nevíš. Dokud je neuvidíš v praxi, nebudeš si umět jejich práci ani představit, natož se na ni rovnou hlásit.** Programování má oproti tomu jasně zmapovanou cestu, jak se dá začít učit, a lze z něj časem snadno odskočit jinam. I pokud se nakonec najdeš jinde, ten znalostní základ, který si programováním vytvoříš, [se ti nikdy neztratí](motivation.md#proc-se-to-ucit). Z toho důvodu začni programováním a pak dej volný průchod tomu, kam tě život zavane.
 
-{% call blockquote(
-  'Firma rychle poznala, že umím komunikovat s ostatními a posouvat věci dopředu: Víc než kódit jsem začal odstraňovat překážky a ladit procesy. Posun do role „Scrum Mastera“ byl nabíledni.'
+{% call blockquote_avatar(
+  'Firma rychle poznala, že umím komunikovat s ostatními a posouvat věci dopředu: Víc než kódit jsem začal odstraňovat překážky a ladit procesy. Posun do role „Scrum Mastera“ byl nabíledni.',
+  'michal-havelka.jpg',
+  'Michal Havelka'
 ) %}
   Michal Havelka, autor článku [Jak jsem se (ne)stal front-end vývojářem](https://www.zdrojak.cz/clanky/jak-jsem-se-nestal-front-end-vyvojarem/)
 {% endcall %}
@@ -228,8 +232,10 @@ Pokud **chceš** dělat technickou podporu nebo testování, protože cítíš, 
 
 Pokud na práci spěcháš, nebo si z jakéhokoliv důvodu opravdu chceš nejdříve zkusit jinou technickou pozici, **snaž se, aby zahrnovala programování**. Např. místo ručního testování hledej pozici na programování automatizovaných testů. Místo administrace sítě hledej programování administračních skriptů. Místo ruční správy serverů (_operations_, _ops_) se ujisti, že firma prosazuje opravdové [DevOps](https://cs.wikipedia.org/wiki/DevOps).
 
-{% call blockquote(
-  'Testování není vstupní brána pro vývoj. QA potřebují jiné dovednosti než vývojář.'
+{% call blockquote_avatar(
+  'Testování není vstupní brána pro vývoj. QA potřebují jiné dovednosti než vývojář.',
+  'pylady.png',
+  'PyLady'
 ) %}
   Poznámky ze srazu absolventek začátečnického kurzu [PyLadies](https://pyladies.cz/) v Brně
 {% endcall %}
@@ -263,8 +269,10 @@ Jeden ze způsobů, jak přijít k první praxi, je **pomoci nějakému neziskov
 
 Nemáš-li nápady, mrkni na [Pyvec](https://pyvec.org/), [Česko.Digital](https://cesko.digital/), [Hlídač státu](https://www.hlidacstatu.cz/), [Um sem um tam](https://umsemumtam.cz/), nebo si **projdi projekty na [Darujme.cz](https://www.darujme.cz/) a napiš tomu, kterému by se ti líbilo pomoci**. Ideální je, pokud je za projektem nějaké „IT oddělení“ (možná spíš skupinka nadšenců), kde tě budou zaučovat za to, že jim pomůžeš.
 
-{% call blockquote(
-  'GameCon naplňoval ideální simulaci firemních podmínek. Neziskový projekt má své výhody – pracujete na něčem, co se reálně použije, projekt můžete řídit, máte k ruce tým kolegů.'
+{% call blockquote_avatar(
+  'GameCon naplňoval ideální simulaci firemních podmínek. Neziskový projekt má své výhody – pracujete na něčem, co se reálně použije, projekt můžete řídit, máte k ruce tým kolegů.',
+  'michal-havelka.jpg',
+  'Michal Havelka'
 ) %}
   Michal Havelka, autor článku [Jak jsem se (ne)stal front-end vývojářem](https://www.zdrojak.cz/clanky/jak-jsem-se-nestal-front-end-vyvojarem/)
 {% endcall %}
@@ -336,16 +344,20 @@ Zajímavě korporace rozebírá [Lukáš Linhart v přednášce o své kariéře
 
 **V menších firmách** je méně struktury, méně regulace, méně procesů, máš v nich větší vliv na celkové prostředí. Věci se tak dělají snadněji a možná i rozhodují snadněji. Stejně tak má ale tvůj šéf větší moc a tvůj kariérní růst bude probíhat čistě neformálně, na základě pocitů a vyjednávání. Častěji se také setkáš s [kulturou zatuchlého českého rybníčku](#culture).
 
-{% call blockquote(
-  'Proces je kolektivní dohoda, jak se něco bude dělat. Rozdíl mezi zlým procesem a pozitivní dohodou je jen v tom, jak moc je můžeš ovlivnit.'
+{% call blockquote_avatar(
+  'Proces je kolektivní dohoda, jak se něco bude dělat. Rozdíl mezi zlým procesem a pozitivní dohodou je jen v tom, jak moc je můžeš ovlivnit.',
+  'lukas-linhart.jpg',
+  'Lukáš Linhart'
 ) %}
   Lukáš Linhart, technický ředitel v [Apiary](https://byznys.ihned.cz/c1-65593630-oracle-kupuje-za-miliardy-korun-cesky-start-up-apiary-zakladatele-ve-firme-zustavaji) a poté v Oracle
 {% endcall %}
 
 Nenech se ale **příliš unést zobecněními**, které jsou v této kapitole. Rozdíly mezi konkrétními firmami (např. [Red Hat](https://www.redhat.com/en/jobs) versus [Oracle](https://www.oracle.com/corporate/careers/)), nebo i mezi konkrétními interními týmy v rámci téže korporace, mohou být větší, než výše popsané obecné rozdíly mezi korporacemi a malými firmami. Vždy si [zjisti](#research), jaké podmínky jsou v právě v tom týmu, do jakého se chystáš nastoupit.
 
-{% call blockquote(
-  'Rozdíly mezi jednotlivými manažery a týmy v jedné firmě mohou snadno být větší než rozdíly mezi samotnými firmami.'
+{% call blockquote_avatar(
+  'Rozdíly mezi jednotlivými manažery a týmy v jedné firmě mohou snadno být větší než rozdíly mezi samotnými firmami.',
+  'dan-luu.jpg',
+  'Dan Luu'
 ) %}
   Dan Luu, autor článku [Big companies v. startups](https://danluu.com/startup-tradeoffs/)
 {% endcall %}
@@ -367,8 +379,10 @@ S tím souvisí i **kompenzace nižší mzdy v podobě akcií nebo opcí**. Pře
 
 Startupy jsou dnes velký fenomén, a to především v USA. **Americké [Silicon Valley](https://cs.wikipedia.org/wiki/Silicon_Valley) je pro programátory totéž, co [Hollywood](https://cs.wikipedia.org/wiki/Hollywood) pro tvůrce filmů.** Pokud tě téma zajímá víc, můžeš sledovat český magazín [CzechCrunch](https://www.czechcrunch.cz/) nebo jeho americkou předlohu, [TechCrunch](https://techcrunch.com/). I velká část výše zmiňované [přednášky Lukáše Linharta](https://youtu.be/l7zUC0T1E98?t=1987) je o tom, jak prošel startupem od prvního zaměstnance až po akvizici velkou firmou.
 
-{% call blockquote(
-  'Velké firmy mají určitý druh problémů, které se nevyskytují ve startupech, a startupy zase mají své vlastní problémy, které nenajdeš v korporaci. Je na tobě, jaký kompromis ti vyhovuje, a který druh problémů chceš řešit.'
+{% call blockquote_avatar(
+  'Velké firmy mají určitý druh problémů, které se nevyskytují ve startupech, a startupy zase mají své vlastní problémy, které nenajdeš v korporaci. Je na tobě, jaký kompromis ti vyhovuje, a který druh problémů chceš řešit.',
+  'dan-luu.jpg',
+  'Dan Luu'
 ) %}
   Dan Luu, autor článku [Big companies v. startups](https://danluu.com/startup-tradeoffs/)
 {% endcall %}
@@ -382,10 +396,12 @@ Podnikání je z pochopitelných důvodů opomíjenou možností, jak začít v 
 *   Nějaké podnikání nebo pokusy o něj už máš za sebou a víš co [OSVČ](https://cs.wikipedia.org/wiki/Osoba_samostatn%C4%9B_v%C3%BDd%C4%9Ble%C4%8Dn%C4%9B_%C4%8Dinn%C3%A1) obnáší? Umíš se otáčet, komunikovat, zvládáš samostatnost, samovzdělávání?
 *   Netlačí tě finance a nebude vadit, když během prvních měsíců vyděláš např. jen pár tisíc? Máš velký „sociální kapitál“, ze kterého můžeš čerpat zakázky?
 
-{% call blockquote(
-  'Uvědomil jsem si, že nejspíš nikdy nebudu mít klasické zaměstnání. V mém okolí není po mých schopnostech poptávka. Práci seženu jedině na dálku, jako kontraktor.'
+{% call blockquote_avatar(
+  'Uvědomil jsem si, že nejspíš nikdy nebudu mít klasické zaměstnání. V mém okolí není po mých schopnostech poptávka. Práci seženu jedině na dálku, jako kontraktor.',
+  'vuyisile-ndlovu.jpg',
+  'Vuyisile Ndlovu'
 ) %}
-  Vuyisile Ndlovu, juniorní [programátor na volné noze ze Zimbabwe](https://vuyisile.com/)
+  Vuyisile Ndlovu, [programátor na volné noze ze Zimbabwe](https://vuyisile.com/)
 {% endcall %}
 
 [Práci na dálku](#remote-work) nebo pružnou pracovní dobu dnes firmy nabízejí i jako benefit v rámci běžného zaměstnaneckého poměru. Pokud se ti ovšem takovou práci dlouho nedaří najít a zároveň je to pro tebe jediná možnost, jak začít, může být volná noha způsobem, jak si tyto podmínky zařídit.
@@ -548,8 +564,10 @@ Základem v dnešní době je mít **co nejlépe vyplněný [profil na LinkedIn]
 
 Jedna z těch zásadnějších rad je **začít jasným shrnutím**: _„I am a recent graduate of the [PyLadies](https://pyladies.cz/) beginner course, currently contributing to [Česko.Digital](https://cesko.digital/) with their open source projects. My focus is on Python, which I would like to apply in Data Science.“_ Dalším dobrým tipem je mít u každé minulé pozice na čem přesně se pracovalo, naučené dovednosti a největší úspěchy. Ovšem pozor — životopis není seznam všeho, co máš za sebou od střední školy, ale **letáček, který tě má prodat jako zajímavého kandidáta**.
 
-{% call blockquote(
-  'Pro recruitery je hlavní se hned zorientovat. Klíčový je souhrn — co umíš za technologie? Jaké tě baví? Kam směřuješ? Potom seznam pozic a na čem jsi pracoval.'
+{% call blockquote_avatar(
+  'Pro recruitery je hlavní se hned zorientovat. Klíčový je souhrn — co umíš za technologie? Jaké tě baví? Kam směřuješ? Potom seznam pozic a na čem jsi pracoval.',
+  'pavel-brozek.jpg',
+  'Pavel Brožek'
 ) %}
   Pavel Brožek, recruiter v [dreamBIG](https://www.dreambig.cz/)
 {% endcall %}
@@ -612,16 +630,20 @@ Jednou z nevýhod je, že nabídky na portálech si může přečíst každý a 
 
 Větší problém je tedy spíš s hledáním nabídek vhodných zrovna pro tebe. Mnohé portály umožňují filtrovat podle místa kanceláře nebo programovacího jazyka, ale s rozřazením nabídek na seniorní a juniorní už je to horší.
 
-{% call blockquote(
-  'Narazil jsem na pracovní nabídku, která vyžadovala více než 4 roky zkušeností s FastAPI. Nemohl bych se přihlásit, protože jsem FastAPI vytvořil jen před 1,5 rokem.'
+{% call blockquote_avatar(
+  'Narazil jsem na pracovní nabídku, která vyžadovala více než 4 roky zkušeností s FastAPI. Nemohl bych se přihlásit, protože jsem FastAPI vytvořil jen před 1,5 rokem.',
+  'sebastian-ramirez.jpg',
+  'Sebastián Ramírez'
 ) %}
   Sebastián Ramírez, autor FastAPI
 {% endcall %}
 
 Začátečníci většinou na konkrétní technoligii nelpí a rádi se zaučí v čemkoliv, takže filtrování podle programovacích jazyků využijí jen omezeně. Filtr na juniorní nabídky by ocenili, ale je málokde. I tam, kde takový filtr je, nefunguje podle očekávání. Buď vyskočí brigády pro studenty, nebo **výsledky zahrnují spoustu nabídek, které ve skutečnosti vůbec juniorní nejsou**. Např. amatérská analýza dat z LinkedIn [odhalila](https://www.reddit.com/r/dataisbeautiful/comments/hvtn0i/oc_only_26_of_jobs_marked_entrylevel_are_actually/), že jen 26 % tamních nabídek práce označených jako _entry level_ je opravdu pro začátečníky. Jistě, [slovo junior vnímá každý jinak](#junior), ale některé nabídky požadují dokonce víc než 12 let zkušeností! Tato praxe je předmětem [kritiky](https://www.youtube.com/watch?v=Ictmhp2uJu8), [údivů](https://twitter.com/tiangolo/status/1281946592459853830) i [vtipů](https://twitter.com/nixcraft/status/1294220253224828928), ale v dohledné době se asi nezmění.
 
-{% call blockquote(
-  'Pracovné ponuky sú šľahnuté! Ja neviem polovicu vecí, čo chcú od juniora. A ich seniori tiež nie.'
+{% call blockquote_avatar(
+  'Pracovné ponuky sú šľahnuté! Ja neviem polovicu vecí, čo chcú od juniora. A ich seniori tiež nie.',
+  'yablko.jpg',
+  'yablko'
 ) %}
   yablko, lektor online kurzů, ve svém [videu o nabídkách práce](https://www.youtube.com/watch?v=Ictmhp2uJu8)
 {% endcall %}
@@ -728,8 +750,10 @@ Holt, nedá se nic dělat. Zhluboka se nadechni a hurá do toho:
 2.  **Řeš úlohy** na [webech jako Codewars nebo HackerRank](practice.md#procvicuj). Procvičíš si algoritmizaci a datové struktury na reálných problémech. Projdi si [příručky](#handbooks) zabývající se řešením úloh z pohovorů.
 3.  **Dělej si poznámky**. Díky nim se budeš moci k nabytým vědomostem snadno vracet a budeš je mít v podobě, která ti nejvíc vyhovuje. Psaní navíc upevňuje paměť. Mrkni třeba na [poznámky Ali Spittel](https://github.com/aspittel/coding-cheat-sheets), které si původně psala rukou na papír.
 
-{% call blockquote(
-  'Dělala jsem jednu úlohu každé ráno po probuzení, abych si rozehřála mozek.'
+{% call blockquote_avatar(
+  'Dělala jsem jednu úlohu každé ráno po probuzení, abych si rozehřála mozek.',
+  'ali-spittel.jpg',
+  'Ali Spittel'
 ) %}
   Ali Spittel, [We Learn Code](https://welearncode.com/) & [Ladybug Podcast](https://www.ladybug.dev/)
 {% endcall %}
@@ -779,8 +803,10 @@ TODO
 
 Celkově je dobré se soustředit nejen na firmu, ale i **na sebe**. Jsi juniorní, ale na pohovoru dostáváš rozpačité odpovědi na to, jestli se ti někdo bude věnovat? Vidíš už na pohovoru přebujelá ega, machrování, manipulativní otázky? Nejednají s tebou s respektem? Zaznamenáváš sexistické narážky? Působí firma neorganizovaně? Musíš projít přes desetikolový pohovor se spoustou úloh před tabulí? Až nastoupíš, nebude to lepší! Všechno toto jsou tzv. _red flags_, signály, že **firma, do které se snažíš dostat, [není tak úplně v pořádku](#culture)** a nejspíš nestojí za to s ní ztrácet čas. Pohovor funguje na obě strany — testuješ si i ty firmu, nejen ona tebe.
 
-{% call blockquote(
-  'Mysli i na sebe. Pokud při pohovoru musíš přeskočit milion překážek, možná je to signál, že tak bude vypadat i ta práce.'
+{% call blockquote_avatar(
+  'Mysli i na sebe. Pokud při pohovoru musíš přeskočit milion překážek, možná je to signál, že tak bude vypadat i ta práce.',
+  'ali-spittel.jpg',
+  'Ali Spittel'
 ) %}
   Ali Spittel, [We Learn Code](https://welearncode.com/) & [Ladybug Podcast](https://www.ladybug.dev/)
 {% endcall %}
@@ -841,8 +867,10 @@ Jak už bylo zmíněno výše, **vždy si dobře zvaž, zda se ti nabídka oprav
 
 Je velmi pravděpodobné, že tě odmítnou na pohovoru, a to **proto, že se to děje úplně každému**. [Ano, i seniorním programátorům](https://sw-samuraj.cz/2017/09/smutna-zprava-o-stavu-it-trhu/). U začátečníků navíc chvíli trvá, než se naladí na aktuální poptávku trhu a na to, jak přesně fungují přijímací pohovory v IT. Raději **počítej s tím, že ze začátku to půjde ztuha** a tvé první hledání práce [bude zahrnovat i desítky pohovorů a může trvat měsíce](#expectations).
 
-{% call blockquote(
-  'Pokud tě odmítnou, neznamená to, že nejsi dost dobrá. Nevzdávej to. Máš talent a určitě najdeš práci, která zrovna ten tvůj talent ocení. Každého někdy odmítli na pohovoru.'
+{% call blockquote_avatar(
+  'Pokud tě odmítnou, neznamená to, že nejsi dost dobrá. Nevzdávej to. Máš talent a určitě najdeš práci, která zrovna ten tvůj talent ocení. Každého někdy odmítli na pohovoru.',
+  'emma-bostian.jpg',
+  'Emma Bostian'
 ) %}
   Emma Bostian, [Coding Coach](https://mentors.codingcoach.io/) & [Ladybug Podcast](https://www.ladybug.dev/)
 {% endcall %}
@@ -923,8 +951,10 @@ Vlastní osobní webová stránka (_portfolio_) ti dává prostor **vyniknout me
 
 Stránka nemusí být komplikovaná, stačí aby to byl **rozcestník**. Dvě věty o sobě, popis zkušeností, odkazy na profily (LinkedIn, GitHub…) a případně na tvé [projekty](practice.md#najdi-si-projekt). Pokud tě baví psaní, časem můžeš přidat **blog**. Můžeš psát o své cestě do IT (a tak se [objevit na těchto stránkách](motivation.md#vsechny-motivacni-pribehy)) nebo přidat článek vždy, když se naučíš něco nového — čímž pomůžeš dalším začátečníkům a zároveň tím vystoupíš z davu. Začneš si v oboru budovat své jméno a to ti může pomoci nejen u pohovorů, ale i pokud budeš chtít [přednášet na konferencích](#proactive).
 
-{% call blockquote(
-  'Tweetuju nebo píšu články o všem, co se naučím. Mohu se k tomu vždy vrátit a zároveň s učením pomáhám ostatním. Díky psaní článků navíc věcem porozumím do hloubky a umím je vysvětlit.'
+{% call blockquote_avatar(
+  'Tweetuju nebo píšu články o všem, co se naučím. Mohu se k tomu vždy vrátit a zároveň s učením pomáhám ostatním. Díky psaní článků navíc věcem porozumím do hloubky a umím je vysvětlit.',
+  'vladimir-gorej.jpg',
+  'Vladimír Gorej'
 ) %}
   Vladimír Gorej, profesionální programátor, o svém [Twitteru](https://twitter.com/vladimirgorej/) a [blogu](https://vladimirgorej.com/)
 {% endcall %}
@@ -937,8 +967,10 @@ I když se to nezdá, i začátečníci mohou učit! **Nejlepší způsob, jak s
 
 Na PyLadies kurzech **můžeš „koučovat“ i bez velkých znalostí programování**, stačí se [přihlásit](https://pyladies.cz/stan_se/). Je to doplňková role bez velké zodpovědnosti, se kterou můžeš kdykoliv přestat. Pro lepší představu si přečti [článek od koučky Ivety](https://ivet1987.wz.cz/2020/03/koucovani-na-pyladies-kurzech/). Další podobná role, kterou jde dokonce dělat na dálku z pohodlí domova, je [opravování úkolů](https://pyladies.cz/stan_se/).
 
-{% call blockquote(
-  'Na začátku to byly hrozné pocity. Někdo si mě zavolá k problému, se kterým nedokážu pomoci, budu za trubku. Nakonec to ale byly obyčejné, jednoduché problémy, se kterými jsem poradila.'
+{% call blockquote_avatar(
+  'Na začátku to byly hrozné pocity. Někdo si mě zavolá k problému, se kterým nedokážu pomoci, budu za trubku. Nakonec to ale byly obyčejné, jednoduché problémy, se kterými jsem poradila.',
+  'iveta-cesalova.jpg',
+  'Iveta Česalová'
 ) %}
   Iveta Česalová, autorka [článku o koučování na PyLadies](https://ivet1987.wz.cz/2020/03/koucovani-na-pyladies-kurzech/)
 {% endcall %}
@@ -962,8 +994,10 @@ Pokud by tě přednášení a konference bavily hodně, můžeš dokonce zkusit 
 
 Aktivitu lze projevit i **organizováním akcí** ve volném čase — můžeš třeba [založit sraz](https://docs.pyvec.org/guides/meetup.html) nebo sehnat lektory a podle [volně dostupných materiálů](https://naucse.python.cz/) rozjet kurz ve svém městě (např. [začátečnický kurz PyLadies](https://pyladies.cz/ostatni/)). Pokud tyto akce ve svém okolí už máš, můžeš s nimi pomoci (napiš organizátorům). Stejně tak se lze přihlásit jako výpomoc při organizaci konferencí (např. [PyCon CZ](https://cz.pycon.org/)). Firmy občas dokonce přímo hledají lidi, které organizování akcí a práce s komunitou baví — pozice se jmenuje _event manager_ nebo _community manager_.
 
-{% call blockquote(
-  'Sraz jsem založil, abych na něj mohl sám chodit a učit se Python. Na to, abych zarezervoval stůl, jsem nepotřeboval být Python expert. Získal jsem díky tomu kontakty, kamarády, vědomosti, pracovní nabídky.'
+{% call blockquote_avatar(
+  'Sraz jsem založil, abych na něj mohl sám chodit a učit se Python. Na to, abych zarezervoval stůl, jsem nepotřeboval být Python expert. Získal jsem díky tomu kontakty, kamarády, vědomosti, pracovní nabídky.',
+  'honza-javorek.jpg',
+  'Honza Javorek'
 ) %}
   Honza Javorek, zakladatel [brněnského Python srazu](https://pyvo.cz/brno-pyvo/)
 {% endcall %}
@@ -981,8 +1015,10 @@ Vložená dřina se navíc s největší pravděpodobností dobře zúročí. IT
 
 Lepší peníze nebo pracovní podmínky jsou legitimní a racionální důvody, proč se chtít do IT dostat, nebudou ale fungovat dobře jako tvá jediná motivace. Nejdál to nakonec dotáhneš, pokud tě aspoň trochu baví technologie. Vidina peněz tě nepřenese přes hodiny sezení na židli a psaní závorek do editoru. IT má navíc na rozdíl od jiných oborů extrémní nároky na sebevzdělávání. Nelze se jej jednou naučit tak, že to „stačí“ a pak už jen pracovat. Půl roku se nevzděláváš a hned jsi pozadu. Aby to mohla být tvá práce na spoustu let dopředu, potřebuješ se vyloženě chtít učit. Potřebuješ chtít opakovaně prožívat radost z fungujícího programu, chtít trénovat trpělivost při ladění kódu, chtít zvědavě prozkoumávat nové knihovny, chtít něco tvořit. Jinými slovy, nejvíc ti pomůže vášeň. A vášeň je nakonec i to hlavní, co firmy v juniorech hledají na pohovorech.
 
-{% call blockquote(
-  'Vášeň není to, co se vám líbí, ale něco, pro co jste ochotni trpět, jen abyste to mohli dál dělat.'
+{% call blockquote_avatar(
+  'Vášeň není to, co se vám líbí, ale něco, pro co jste ochotni trpět, jen abyste to mohli dál dělat.',
+  'jenika-mcdavitt.jpg',
+  'Jenika McDavitt'
 ) %}
   Jenika McDavitt, autorka [Psychology for Photographers](https://psychologyforphotographers.com/how-to-live-your-passion-stop-confusing-hobbies-with-passions)
 {% endcall %}
