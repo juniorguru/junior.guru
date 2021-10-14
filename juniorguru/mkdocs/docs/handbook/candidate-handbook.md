@@ -131,8 +131,10 @@ Není potřeba jít víc do šířky a bez jasného cíle se učit tady trochu H
 
 Angličtina je důležitá, ale **i s omezenou, pasivní angličtinou se dá začít**. Pokud zvládáš číst anglický text, pochopit v něm zadání a učit se z něj nové věci, pro start to stačí.
 
-{% call blockquote(
-  'Na pohovoru mě nezajímá, co kdo vystudoval, ale jak přemýšlí a jaké má vlastní projekty. Nemusí být nijak světoborné, je to však praxe, kterou ani čerstvý inženýr často nemá.'
+{% call blockquote_avatar(
+  'Na pohovoru mě nezajímá, co kdo vystudoval, ale jak přemýšlí a jaké má vlastní projekty. Nemusí být nijak světoborné, je to však praxe, kterou ani čerstvý inženýr často nemá.',
+  'josef-skladanka.jpg',
+  'Josef Skládanka'
 ) %}
   Josef Skládanka, profesionální programátor
 {% endcall %}
@@ -605,8 +607,10 @@ Konkrétně GitHub s tím ale nesouvisí. Stejný efekt má, pokud kód vystaví
 
 Pokud se za nějaký starý kód vyloženě stydíš, můžeš repozitář s ním [archivovat](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/archiving-repositories). Jestliže se chceš nějakými repozitáři pochlubit na svém profilu, můžeš si je tam [přišpendlit](https://github.blog/2016-06-16-pin-repositories-to-your-github-profile/). Výhodou je, že přišpendlit jde i cizí repozitáře, do kterých pouze přispíváš.
 
-{% call blockquote(
-  'Na pohovoru mě nezajímá, co kdo vystudoval, ale jak přemýšlí a jaké má vlastní projekty. Nemusí být nijak světoborné, je to však praxe, kterou ani čerstvý inženýr často nemá.'
+{% call blockquote_avatar(
+  'Na pohovoru mě nezajímá, co kdo vystudoval, ale jak přemýšlí a jaké má vlastní projekty. Nemusí být nijak světoborné, je to však praxe, kterou ani čerstvý inženýr často nemá.',
+  'josef-skladanka.jpg',
+  'Josef Skládanka'
 ) %}
   Josef Skládanka, profesionální programátor
 {% endcall %}
