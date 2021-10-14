@@ -80,18 +80,29 @@
   background: $link-hover-color;
 }
 
-.link-card-body {
-  @extend .card-body;
+.link-card-header {
+  position: relative;
 }
 
 .link-card-title {
   @extend .card-title;
+  @extend .card-body;
+  @extend .fs-5;
+  padding-bottom: map-get($spacers, 2);
   margin: 0;
-  margin-bottom: map-get($spacers, 2);
 }
 
 .link-card-title a:visited { color: $link-color; }
 .link-card-title a:visited:hover { color: $link-hover-color; }
+
+.link-card-link {
+  @extend .stretched-link;
+}
+
+.link-card-body {
+  @extend .card-body;
+  padding-top: 0;
+}
 
 .link-card-text {
   @extend .card-text;

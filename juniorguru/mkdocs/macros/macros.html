@@ -104,16 +104,18 @@
 
 {% macro link_card(title, screenshot_filename, url, caption=None, icon_name=None, icon_alt=None) %}
 <div class="link-card">
-  {{ img('static/images/screenshots/' + screenshot_filename, title, 640, 360, class='link-card-image') }}
-  {% if icon_name %}
-    <div class="link-card-icon"{% if icon_alt %} title="{{ icon_alt }}"{% endif %}>
-      {{ icon_name|icon(alt=icon_alt) }}
-    </div>
-  {% endif %}
-  <div class="link-card-body">
+  <div class="link-card-header">
+    {{ img('static/images/screenshots/' + screenshot_filename, title, 640, 360, class='link-card-image') }}
+    {% if icon_name %}
+      <div class="link-card-icon"{% if icon_alt %} title="{{ icon_alt }}"{% endif %}>
+        {{ icon_name|icon(alt=icon_alt) }}
+      </div>
+    {% endif %}
     <h4 class="link-card-title">
-      <a href="{{ url }}" class="stretched-link">{{ title }}</a>
+      <a href="{{ url }}" class="link-card-link">{{ title }}</a>
     </h4>
+  </div>
+  <div class="link-card-body">
     {% if caption or caller %}
       <p class="link-card-text">
         {% if caption %}
