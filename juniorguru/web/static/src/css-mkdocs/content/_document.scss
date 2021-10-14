@@ -37,17 +37,26 @@
   margin-bottom: 0;
 }
 
-.document .headerlink,
-.document .headerlink:visited {
+.document small {
   @extend .small;
+  @extend .text-muted;
+}
+
+.document small a,
+.document small a:visited {
+  color: $text-muted;
+}
+
+.document small .headerlink,
+.document small .headerlink:visited {
   margin-left: $spacer;
   color: $jg-gray-light;
   text-decoration: none;
 }
 
-.document .headerlink:hover,
-.document .headerlink:focus,
-.document .headerlink:active {
+.document small .headerlink:hover,
+.document small .headerlink:focus,
+.document small .headerlink:active {
   color: $primary;
 }
 
@@ -82,14 +91,4 @@
 .document .stories {
   margin-top: $document-spacer;
   margin-bottom: $document-spacer - $spacer;
-}
-
-.document small {
-  @extend .small;
-  @extend .text-muted;
-}
-
-.document small a,
-.document small a:visited {
-  color: $text-muted;
 }
