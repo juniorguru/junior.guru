@@ -78,8 +78,9 @@ document.addEventListener('DOMContentLoaded', function () {
   Array.from(document.querySelectorAll('*[data-metrics-utm]'))
     .forEach(setupMetricsUtm);
 
-  // implicit
-  Array.from(document.querySelectorAll('a'))
-    .filter(isOutboundLink)
-    .forEach(setupMetricsOutbound);
+  // TURNING THIS OFF, IT'S ANNOYING AND I DON'T USE IT FOR ANYTHING ANYWAY
+  // // implicit
+  // Array.from(document.querySelectorAll('a'))
+  //   .filter(isOutboundLink)
+  //   .forEach(setupMetricsOutbound);
 });
