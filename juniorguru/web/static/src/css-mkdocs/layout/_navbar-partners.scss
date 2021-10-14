@@ -14,6 +14,7 @@
   @extend .container-md;
   display: flex;
   justify-content: center;
+  max-width: map-get($container-max-widths, lg);
   padding-right: 0;
   padding-left: 0;
 }

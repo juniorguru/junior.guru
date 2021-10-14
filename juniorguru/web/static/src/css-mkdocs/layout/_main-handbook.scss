@@ -6,6 +6,7 @@
 
 .main-handbook .content-container {
   @extend .container-lg;
+  max-width: map-get($container-max-widths, lg);
   padding-right: 0;
   padding-left: 0;
 

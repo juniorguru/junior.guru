@@ -4,18 +4,18 @@ site_url: https://junior.guru/
 
 nav:
   - Příručka:
-      - 0. Motivace: motivation/
-      - 1. Základy: learn/
-      - 2. První praxe: practice/
-      - 3. Hledání práce: candidate-handbook/
+      - Motivace: motivation/
+      - Základy: learn/
+      - První praxe: practice/
+      - Hledání práce: candidate-handbook/
   - Práce: jobs/
   - Klub: club.md
 
   - Tajná příručka:
-      - 0. Motivace: handbook/motivation.md
-      - 1. Základy: handbook/learn.md
-      - 2. První praxe: handbook/practice.md
-      - 3. Hledání práce: handbook/candidate-handbook.md
+      - Motivace: handbook/motivation.md
+      - Základy: handbook/learn.md
+      - První praxe: handbook/practice.md
+      - Hledání práce: handbook/candidate-handbook.md
 
   - Témata:
       - topics/100daysofcode.md
