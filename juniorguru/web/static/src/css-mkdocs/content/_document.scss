@@ -83,3 +83,13 @@
   margin-top: $document-spacer;
   margin-bottom: $document-spacer - $spacer;
 }
+
+.document small {
+  @extend .small;
+  @extend .text-muted;
+}
+
+.document small a,
+.document small a:visited {
+  color: $text-muted;
+}
