@@ -175,19 +175,63 @@
 
 
 {% macro stories_list(stories) %}
-<div class="stories">
-  {% for story in stories %}
-    <div class="stories-item">
-      {{ img('static/' + story.image_path, 'Doprovodná fotka k příběhu', 100, 100, class='stories-image') }}
-      <div class="stories-body">
-        <h4 class="stories-title">
-          <a href="{{ story.url }}" class="stories-link">{{ story.title }}</a>
-        </h4>
-        <p class="stories-details">
-          {{ story.publisher }} &mdash; {{ story.date.month }}/{{ story.date.year }}
-        </p>
+  <div class="stories">
+    {% for story in stories %}
+      <div class="stories-item">
+        {{ img('static/' + story.image_path, 'Doprovodná fotka k příběhu', 100, 100, class='stories-image') }}
+        <div class="stories-body">
+          <h4 class="stories-title">
+            <a href="{{ story.url }}" class="stories-link">{{ story.title }}</a>
+          </h4>
+          <p class="stories-details">
+            {{ story.publisher }} &mdash; {{ story.date.month }}/{{ story.date.year }}
+          </p>
+        </div>
       </div>
-    </div>
-  {% endfor %}
-</div>
+    {% endfor %}
+  </div>
+{% endmacro %}
+
+
+{% macro jobs_inline(jobs, n, jobs_url='/jobs/') %}
+  <ul class="jobs-inline">
+    {% for job in jobs|sample_jobs(n) %}
+      <li class="jobs-inline-item" itemscope itemtype="https://schema.org/JobPosting">
+        <meta itemprop="industry" content="Informační technologie">
+        <meta itemprop="datePosted" content="{{ job.posted_at.isoformat() }}">
+        <meta itemprop="description" content="Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}">
+        <div itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
+          <meta itemprop="address" content="{{ job.location }}">
+        </div>
+
+        {% if job.is_juniorguru %}
+          <a class="jobs-inline-link" href="{{ job.link }}" itemprop="url">
+        {% else %}
+          <a class="jobs-inline-link" href="{{ jobs_url }}">
+          <link itemprop="url" href="{{ job.effective_link }}">
+        {% endif %}
+          <div class="jobs-inline-logo">
+            {% if job.company_logo_path %}
+              {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class='jobs-inline-image') }}
+            {% endif %}
+          </div>
+          <div class="jobs-inline-body">
+            <h5 class="jobs-inline-title" title="{{ job.title }}">
+              {{ job.title|truncate(60) }}
+              <meta itemprop="title" content="{{ job.title }}">
+            </h5>
+            <p class="jobs-inline-company" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
+              <span itemprop="name">{{ job.company_name }}</span>
+              <link itemprop="url" href="{{ job.company_link }}">
+            </p>
+          </div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  {%- if jobs|length > n -%}
+  <p class="jobs-inline-footer">
+    <a class="jobs-inline-button" href="{{ jobs_url }}" role="button">Další nabídky</a>
+  </p>
+  {%- endif -%}
 {% endmacro %}

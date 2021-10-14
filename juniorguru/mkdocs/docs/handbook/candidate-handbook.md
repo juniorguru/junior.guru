@@ -5,7 +5,7 @@ description: Jak začít hledat svou první práci v IT? Jak se připravit na po
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_toxic, blockquote_avatar, blockquote, link_card with context %}
+{% from 'macros.html' import blockquote_toxic, blockquote_avatar, blockquote, link_card, jobs_inline with context %}
 
 
 # Hledání první práce v IT
@@ -177,21 +177,12 @@ Práce na dálku se během pandemie stala trendem, nejde však o nic vyloženě 
 
 Možná znáš pojem [digitální nomádství](https://honzajavorek.cz/blog/prace-z-domova/#digitalni-nomadi) a láká tě představa, že ťukáš do notebooku někde na pláži. Na fotkách to vypadá dobře, ale [realita je složitější](http://www.svetpatritemcoseneposerou.cz/blog-ikigai-a-japonsky-smysl-zivota.html) — a nejde jen o displej na přímém slunci nebo písek v klávesnici. Hezký úvod a spoustu dalších odkazů najdeš v článku na [Travel Bibli](https://travelbible.cz/digitalni-nomadstvi/).
 
-TODO
-
-{#
-
 {% if jobs_remote %}
-
 #### Nabídky práce na dálku
-
 Přímo na junior.guru najdeš [nabídky práce výhradně pro juniory](/jobs/). Některé z nich práci na dálku umožňují!
-
-{{ jobs_inline_macro(jobs_remote, 2, jobs_link='jobs_remote') }}
-
+{{ jobs_inline(jobs_remote, 2, jobs_url='/jobs/remote/') }}
 {% endif %}
 
-#}
 
 ## Volba strategie
 
@@ -266,19 +257,11 @@ Nemáš-li nápady, mrkni na [Pyvec](https://pyvec.org/), [Česko.Digital](https
   Michal Havelka, autor článku [Jak jsem se (ne)stal front-end vývojářem](https://www.zdrojak.cz/clanky/jak-jsem-se-nestal-front-end-vyvojarem/)
 {% endcall %}
 
-TODO
-
-{#
-
 {% if jobs_volunteering %}
-
 Přímo na junior.guru jsou [nabídky práce výhradně pro juniory](/jobs/) a občas se mezi nimi objeví i nabídka dobrovolnictví (neziskovky a malé projekty zde mohou inzerovat zdarma). Zrovna dnes tam něco je:
-
-{{ jobs_inline_macro(jobs_volunteering, 2) }}
-
+{{ jobs_inline(jobs_volunteering, 2, jobs_url='/jobs/remote/') }}
 {% endif %}
 
-#}
 
 ### Stáže
 
@@ -300,19 +283,10 @@ Pokud studuješ, máš k dispozici nástěnky, poradenská centra, pracovní vel
 
 Pozor na **neplacené stáže**. Je na tobě si vyhodnotit, zda se ti stáž bez odměny ve tvé situaci vyplatí a zda si to vůbec můžeš dovolit. Ač je možné se s neplacenými stážemi setkat běžně u nás i v zahraničí, je to [věc na hranici zákona i etiky](https://www.e15.cz/the-student-times/neplacene-staze-aneb-jak-nedocenitelna-je-zkusenost-1348117). Podle českého práva [není neplacená stáž jednoznačně protizákonná](https://www.epravo.cz/top/clanky/neplacena-praxe-ve-firmach-studenti-i-zamestnavatele-na-hrane-zakona-100528.html), ale **existuje šance, že v případě kontroly ze strany inspektorátu může být taková praxe vyhodnocena jako nelegální práce**.
 
-TODO
-
-{#
-
 {% if jobs_internship %}
-
 Přímo na junior.guru najdeš [nabídky práce výhradně pro juniory](/jobs/). Zrovna dnes jsou mezi nimi i nějaké stáže:
-
-{{ jobs_inline_macro(jobs_internship, 2) }}
-
+{{ jobs_inline(jobs_internship, 2, jobs_url='/jobs/remote/') }}
 {% endif %}
-
-#}
 
 ### Práce pro velkou firmu
 
@@ -609,21 +583,11 @@ Začátečníci většinou na konkrétní technoligii nelpí a rádi se zaučí 
   yablko, lektor online kurzů, ve svém [videu o nabídkách práce](https://www.youtube.com/watch?v=Ictmhp2uJu8)
 {% endcall %}
 
-TODO
-
-{#
-
 {% if jobs %}
-
 #### Nabídky práce na junior.guru
-
 Přímo na junior.guru také najdeš [pracovní portál](/jobs/), ale s nabídkami jen a pouze pro juniory. Jiné zde inzerovat ani nelze. Navíc se každý den spouští robot, který se rozhlíží i po nabídkách z dalších zdrojů. Poté je filtruje na základě přísných pravidel a nechá jen ty, o nichž usoudí, že jsou opravdu pro začátečníky:
-
-{{ jobs_inline_macro(jobs, 3) }}
-
+{{ jobs_inline(jobs, 3, jobs_url='/jobs/remote/') }}
 {% endif %}
-
-#}
 
 ### Náboráři
 

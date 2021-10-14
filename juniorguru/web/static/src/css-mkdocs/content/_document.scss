@@ -1,3 +1,5 @@
+/* stylelint-disable selector-no-qualifying-type */
+
 @keyframes headerlink-highlight {
   0% { color: $primary; }
   50% { color: $primary; }
@@ -22,7 +24,7 @@
   margin-top: $document-spacer;
 }
 
-.document p a:visited {
+.document p a[role=""]:visited { // skips role="button"
   color: $body-color;
 }
 
@@ -71,11 +73,11 @@
   animation: headerlink-highlight 4s ease-out 1;
 }
 
-.document ul {
+.document ul[class=""] { // skips components using ul/li markup
   padding-left: 0;
 }
 
-.document ul li {
+.document ul[class=""] li { // skips components using ul/li markup
   padding-left: 2.5ch;
   list-style-type: none;
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-dot' viewBox='0 0 16 16'><path d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/></svg>");

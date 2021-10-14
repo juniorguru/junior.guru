@@ -20,6 +20,7 @@ TEMPLATE_FILTERS = [
     'remove_p',
     'metrics_inc_breakdown',
     'ago',
+    'sample_jobs',
 ]
 
 
