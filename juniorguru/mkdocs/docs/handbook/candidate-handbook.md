@@ -105,8 +105,10 @@ Raději neplánuj s ohledem na čas. **Jeď si tempo, které můžeš skloubit s
 
 Nikdo od tebe nečeká, že budeš oslňovat technickými znalostmi. Dej najevo, že tu práci fakt chceš, že jsi **motivovaná osoba**, která má **chuť se učit**, a že do jejich týmu přineseš **nadšení**. Z programátorských veteránů nadšení vyvanulo už před lety a samozřejmostí není ani u [absolventů VŠ](#university). Tvůj přístup a [měkké dovednosti](https://cs.wikipedia.org/wiki/M%C4%9Bkk%C3%A9_dovednosti) (_soft skills_) jsou důležitější než znalosti konkrétních technologií (_hard skills_).
 
-{% call blockquote(
-  'Po roce tvrdé práce a citlivého vedení jsou na tom junioři lépe než leckteří samozvaní senioři. Především potřebuji vidět jiskru v oku a nadšení pro věc.'
+{% call blockquote_avatar(
+  'Po roce tvrdé práce a citlivého vedení jsou na tom junioři lépe než leckteří samozvaní senioři. Především potřebuji vidět jiskru v oku a nadšení pro věc.',
+  'lubos-racansky.jpg',
+  'Luboš Račanský'
 ) %}
   Luboš Račanský, profesionální programátor, autor článku [O náboru juniorů](https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html)
 {% endcall %}
@@ -301,10 +303,13 @@ Pokud studuješ, máš k dispozici nástěnky, poradenská centra, pracovní vel
 
 **Ostatním zbývá [asertivita](https://cs.wikipedia.org/wiki/Asertivita).** Odmítli tě v nějaké firmě, protože hledají někoho zkušenějšího? Zeptej se jich na stáž. Líbí se ti nějaká firma? Napiš jim a zeptej se na stáž. Významnou roli hraje také [networking](#networking). Choď na [srazy a konference](practice.md#najdi-inspiraci-poznej-lidi), tam se aktivně druž a — ptej se na stáž.
 
-{{ blockquote(
+{% call blockquote_avatar(
   'Už jsem viděl stáže dohozené přes bratrance, klienty, plesy, spolujízdu. Najednou jsi konkrétní člověk a pokud vypadáš inteligentně, firma si řekne: „Proč ne?“',
-  'Petr Messner, profesionální programátor',
-) }}
+  'petr-messner.jpg',
+  'Petr Messner'
+) %}
+  Petr Messner, profesionální programátor
+{% endcall %}
 
 Pozor na **neplacené stáže**. Je na tobě si vyhodnotit, zda se ti stáž bez odměny ve tvé situaci vyplatí a zda si to vůbec můžeš dovolit. Ač je možné se s neplacenými stážemi setkat běžně u nás i v zahraničí, je to [věc na hranici zákona i etiky](https://www.e15.cz/the-student-times/neplacene-staze-aneb-jak-nedocenitelna-je-zkusenost-1348117). Podle českého práva [není neplacená stáž jednoznačně protizákonná](https://www.epravo.cz/top/clanky/neplacena-praxe-ve-firmach-studenti-i-zamestnavatele-na-hrane-zakona-100528.html), ale **existuje šance, že v případě kontroly ze strany inspektorátu může být taková praxe vyhodnocena jako nelegální práce**.
 
@@ -576,8 +581,10 @@ Jedna z těch zásadnějších rad je **začít jasným shrnutím**: _„I am a 
 
 **Drž se pravdy.** Pokud máš přečtené tři články o [MongoDB](https://cs.wikipedia.org/wiki/MongoDB), napiš, že víš co to je, ale netvrď, že s tím umíš pracovat. Jestliže něco přibarvíš, na pohovoru se na to vždy snadno a rychle přijde. Budeš akorát působit nevěrohodně.
 
-{% call blockquote(
-  'Někdo se chlubí: Scala, Groovy, Kotlin. Nadchne mě to, ovšem hned dostanu studenou sprchu, protože neví, jaký je mezi nimi rozdíl.'
+{% call blockquote_avatar(
+  'Někdo se chlubí: Scala, Groovy, Kotlin. Nadchne mě to, ovšem hned dostanu studenou sprchu, protože neví, jaký je mezi nimi rozdíl.',
+  'lubos-racansky.jpg',
+  'Luboš Račanský'
 ) %}
   Luboš Račanský, profesionální programátor, autor článku [O náboru juniorů](https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html)
 {% endcall %}
