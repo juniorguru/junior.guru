@@ -38,25 +38,26 @@
 }
 
 .document small {
-  @extend .small;
-  @extend .text-muted;
+  font-size: $small-font-size;
 }
 
+.document small,
 .document small a,
 .document small a:visited {
   color: $text-muted;
 }
 
-.document small .headerlink,
-.document small .headerlink:visited {
+.document .headerlink,
+.document .headerlink:visited {
   margin-left: $spacer;
+  font-size: $small-font-size;
   color: $jg-gray-light;
   text-decoration: none;
 }
 
-.document small .headerlink:hover,
-.document small .headerlink:focus,
-.document small .headerlink:active {
+.document .headerlink:hover,
+.document .headerlink:focus,
+.document .headerlink:active {
   color: $primary;
 }
 
@@ -75,7 +76,7 @@
 }
 
 .document ul li {
-  padding-left: 2ch;
+  padding-left: 2.5ch;
   list-style-type: none;
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-dot' viewBox='0 0 16 16'><path d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/></svg>");
   background-repeat: no-repeat;
