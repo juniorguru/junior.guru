@@ -106,8 +106,8 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
     'naucse.python.cz.jpg',
     'https://naucse.python.cz',
     'Nejlepší české textové materiály.',
-    icon_name='layout-text-sidebar-reverse',
-    icon_alt='Online kurz',
+    badge_icon='layout-text-sidebar-reverse',
+    badge_text='Online kurz',
   ) }}
 
   {{ link_card(
@@ -115,8 +115,8 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
     'engeto.com!cs!katalog!python-1-uvod-do-programovani.jpg',
     'https://engeto.com/cs/katalog/python-1-uvod-do-programovani',
     'Kurz v češtině kombinující textové materiály a video.',
-    icon_name='layout-text-sidebar-reverse',
-    icon_alt='Online kurz',
+    badge_icon='layout-text-sidebar-reverse',
+    badge_text='Online kurz',
   ) }}
 
   {{ link_card(
@@ -124,8 +124,8 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
     'coursera.org!learn!python.jpg',
     'https://www.coursera.org/learn/python',
     'Profesionálně vedený video kurz University of Michigan.',
-    icon_name='layout-text-sidebar-reverse',
-    icon_alt='Online kurz',
+    badge_icon='layout-text-sidebar-reverse',
+    badge_text='Online kurz',
   ) }}
 
   {{ link_card(
@@ -133,16 +133,16 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
     'codecademy.com!learn!learn-python-3.jpg',
     'https://www.codecademy.com/learn/learn-python-3',
     'Kurz založený na textu a cvičeních. Rychlejší postup, méně hloubky.',
-    icon_name='layout-text-sidebar-reverse',
-    icon_alt='Online kurz',
+    badge_icon='layout-text-sidebar-reverse',
+    badge_text='Online kurz',
   ) }}
 
   {% call link_card(
     'Umíme programovat',
     'umimeprogramovat.cz.jpg',
     'https://www.umimeprogramovat.cz',
-    icon_name='list-check',
-    icon_alt='Cvičení',
+    badge_icon='list-check',
+    badge_text='Cvičení',
   ) -%}
     Uč se skrze cvičení a opakování, [podložený výzkumy](https://www.umimeto.org/podlozeno-vyzkumem).
   {%- endcall %}
@@ -152,8 +152,8 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
     'diveintopython3.py.cz.jpg',
     'http://diveintopython3.py.cz',
     'Možná strohá, ale i tak nejlepší kniha přeložená do češtiny.',
-    icon_name='book',
-    icon_alt='Kniha',
+    badge_icon='book',
+    badge_text='Kniha',
   ) }}
 
   {{ link_card(
@@ -161,8 +161,8 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
     'automatetheboringstuff.com.jpg',
     'https://automatetheboringstuff.com',
     'Nejlepší kniha do startu. Nech nudnou práci dělat počítač!',
-    icon_name='book',
-    icon_alt='Kniha',
+    badge_icon='book',
+    badge_text='Kniha',
   ) }}
 </div>
 
@@ -240,8 +240,8 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
     'junior.guru!club.jpg',
     pages|docs_url('club.md')|url,
     'Ptej se v klubu pro začátečníky, kde najdeš nejen pomoc, ale i motivaci, kamarády, práci.',
-    icon_name='discord',
-    icon_alt='Discord',
+    badge_icon='discord',
+    badge_text='Discord',
   ) }}
 
   {{ link_card(
@@ -256,8 +256,8 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
     'facebook.com!groups!pyonieri.jpg',
     'https://www.facebook.com/groups/pyonieri/',
     'Ptej na se české a slovenské Python komunity na Facebooku.',
-    icon_name='facebook',
-    icon_alt='Facebook',
+    badge_icon='facebook',
+    badge_text='Facebook',
   ) }}
 
   {{ link_card(
@@ -265,8 +265,8 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
     'facebook.com!groups!144621756262987.jpg',
     'https://www.facebook.com/groups/144621756262987/',
     'Ptej se ve Facebookové skupině pro začátečníky v programování.',
-    icon_name='facebook',
-    icon_alt='Facebook',
+    badge_icon='facebook',
+    badge_text='Facebook',
   ) }}
 
   {{ link_card(
@@ -274,8 +274,8 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
     'discord.com.jpg',
     'https://discord.gg/yUbgArVAyF',
     'Ptej na Discordu české a slovenské Python komunity.',
-    icon_name='discord',
-    icon_alt='Discord',
+    badge_icon='discord',
+    badge_text='Discord',
   ) }}
 
   {{ link_card(
@@ -283,8 +283,8 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
     'reddit.com!r!learnpython.jpg',
     'https://www.reddit.com/r/learnpython/',
     'Pokládej dotazy komunitě pro začátečníky s Pythonem.',
-    icon_name='reddit',
-    icon_alt='Reddit',
+    badge_icon='reddit',
+    badge_text='Reddit',
   ) }}
 
   {{ link_card(
@@ -292,8 +292,8 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
     'reddit.com!r!learnprogramming.jpg',
     'https://www.reddit.com/r/learnprogramming/',
     'Pokládej dotazy komunitě pro začátečníky v programování.',
-    icon_name='reddit',
-    icon_alt='Reddit',
+    badge_icon='reddit',
+    badge_text='Reddit',
   ) }}
 </div>
 
@@ -308,8 +308,8 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
     'italki.com.jpg',
     'https://www.italki.com/',
     'Videohovory s učiteli kdekoliv na světě.',
-    icon_name='headset',
-    icon_alt='Živé lekce',
+    badge_icon='headset',
+    badge_text='Živé lekce',
   ) }}
 
   {{ link_card(
@@ -317,8 +317,8 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
     'youtube.com!user!BBSobotka.jpg',
     'https://www.youtube.com/user/BBSobotka',
     'Video každé úterý. Možná trochu střelený, ale <a href="https://video.aktualne.cz/dvtv/nadseny-ucitel-anglictiny-jazyk-se-nauci-kazdy-lide-ale-maji/r~f94af27a9e4c11e9970a0cc47ab5f122/">nadšený</a>!',
-    icon_name='youtube',
-    icon_alt='YouTube',
+    badge_icon='youtube',
+    badge_text='YouTube',
   ) }}
 
   {{ link_card(
@@ -326,8 +326,8 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
     'helpforenglish.cz.jpg',
     'https://www.helpforenglish.cz',
     'Bezplatné kvalitní materiály, testy, cvičení.',
-    icon_name='layout-text-sidebar-reverse',
-    icon_alt='Materiály',
+    badge_icon='layout-text-sidebar-reverse',
+    badge_text='Materiály',
   ) }}
 
   {{ link_card(
@@ -335,16 +335,16 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
     'cs.duolingo.com.jpg',
     'https://cs.duolingo.com/',
     'Uč se hrou v mobilu, 5 min denně, kdykoliv, kdekoliv.',
-    icon_name='phone',
-    icon_alt='Mobilní appka',
+    badge_icon='phone',
+    badge_text='Mobilní appka',
   ) }}
 
   {% call link_card(
     'Umíme anglicky',
     'umimeanglicky.cz.jpg',
     'https://www.umimeanglicky.cz',
-    icon_name='list-check',
-    icon_alt='Cvičení',
+    badge_icon='list-check',
+    badge_text='Cvičení',
   ) -%}
     Systém učení skrze cvičení a opakování, [podložený výzkumy](https://www.umimeto.org/podlozeno-vyzkumem).
   {%- endcall %}
@@ -354,8 +354,8 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
     'onlinejazyky.cz.jpg',
     'https://www.onlinejazyky.cz',
     'Kurzy pro každou úroveň. 20 min denně.',
-    icon_name='layout-text-sidebar-reverse',
-    icon_alt='Kurzy',
+    badge_icon='layout-text-sidebar-reverse',
+    badge_text='Kurzy',
   ) }}
 
   {{ link_card(
@@ -363,8 +363,8 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
     'speakconfidentenglish.com.jpg',
     'https://www.speakconfidentenglish.com',
     'I nesmělí a introvertní mohou mluvit plynně.',
-    icon_name='headset',
-    icon_alt='Živé lekce',
+    badge_icon='headset',
+    badge_text='Živé lekce',
   ) }}
 
   {{ link_card(
@@ -378,8 +378,8 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
         <a href="https://www.foreigners.cz/meetup">foreigners.cz</a>,
         <a href="https://www.couchsurfing.com/events/search?placeid=ChIJQ4Ld14-UC0cRb1jb03UcZvg&amp;search_query=Czechia">couchsurfing.com</a>
         </small>',
-    icon_name='people',
-    icon_alt='Živá setkání',
+    badge_icon='people',
+    badge_text='Živá setkání',
   ) }}
 </div>
 

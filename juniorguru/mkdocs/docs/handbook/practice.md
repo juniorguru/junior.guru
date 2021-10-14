@@ -58,8 +58,8 @@ template: main_handbook.html
     'projecteuler.net.jpg',
     'https://projecteuler.net/',
     'Řeš matematické úlohy pomocí programování.',
-    icon_name='calculator',
-    icon_alt='Pro matematiky',
+    badge_icon='calculator',
+    badge_text='Pro matematiky',
   ) }}
 </div>
 
@@ -142,8 +142,8 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
     'reactgirls.com!mentoring.jpg',
     'https://reactgirls.com/mentoring',
     'Mentorský program pro ženy zajímající se o webový frontend.',
-    icon_name='gender-female',
-    icon_alt='Pro ženy',
+    badge_icon='gender-female',
+    badge_text='Pro ženy',
   ) }}
 
   {{ link_card(
@@ -151,8 +151,8 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
     'femmepalette.com!mentoring-for-women-it.jpg',
     'https://www.femmepalette.com/mentoring-for-women-it',
     'Český program placeného mentoringu pro ženy.',
-    icon_name='gender-female',
-    icon_alt='Pro ženy',
+    badge_icon='gender-female',
+    badge_text='Pro ženy',
   ) }}
 
   {{ link_card(
@@ -278,8 +278,8 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
     'outreachy.org.jpg',
     'https://www.outreachy.org/',
     'Získej stáž na OSS pro znevýhodněné skupiny.',
-    icon_name='door-open',
-    icon_alt='Pro znevýhodněné skupiny',
+    badge_icon='door-open',
+    badge_text='Pro znevýhodněné',
   ) }}
 
   {{ link_card(
@@ -287,8 +287,8 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
     'summerofcode.withgoogle.com.jpg',
     'https://summerofcode.withgoogle.com/',
     'Pracuj na OSS při studiu, během letních prázdnin.',
-    icon_name='pen',
-    icon_alt='Pro studenty',
+    badge_icon='pen',
+    badge_text='Pro studenty',
   ) }}
 
   {{ link_card(
@@ -296,8 +296,8 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
     'codein.withgoogle.com!archive.jpg',
     'https://codein.withgoogle.com/',
     'Účastni se úvodu do OSS pro mládež, vyhraj ceny.',
-    icon_name='pen',
-    icon_alt='Pro studenty',
+    badge_icon='pen',
+    badge_text='Pro studenty',
   ) }}
 
   {{ link_card(
@@ -305,8 +305,8 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
     'railsgirlssummerofcode.org.jpg',
     'https://railsgirlssummerofcode.org/',
     'Přihlaš svůj tým a po několik měsíců pracuj na OSS.',
-    icon_name='gender-female',
-    icon_alt='Pro ženy',
+    badge_icon='gender-female',
+    badge_text='Pro ženy',
   ) }}
 
   {{ link_card(
@@ -494,8 +494,8 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
     'junior.guru!club.jpg',
     pages|docs_url('club.md')|url,
     'Diskutuj v klubu pro začátečníky, kde najdeš pomoc, motivaci, kamarády, práci.',
-    icon_name='chat-dots',
-    icon_alt='Online komunita',
+    badge_icon='chat-dots',
+    badge_text='Online komunita',
   ) }}
 
   {{ link_card(
@@ -503,8 +503,8 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
     'pyvo.cz.jpg',
     'https://pyvo.cz',
     'Poznej Python programátory ve svém okolí. Pomohou, budou tě motivovat.',
-    icon_name='calendar-week',
-    icon_alt='Srazy',
+    badge_icon='calendar-week',
+    badge_text='Srazy',
   ) }}
 
   {{ link_card(
@@ -512,8 +512,8 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
     'meetup.com.jpg',
     'https://www.meetup.com/',
     'Najdi srazy ve svém okolí, poznej různá odvětví IT, potkej lidi.',
-    icon_name='calendar-week',
-    icon_alt='Srazy',
+    badge_icon='calendar-week',
+    badge_text='Srazy',
   ) }}
 
   {{ link_card(
@@ -521,8 +521,8 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
     'pycon.cz.jpg',
     'https://pycon.cz',
     'Přijeď na českou Python konferenci.',
-    icon_name='calendar-check',
-    icon_alt='Konference',
+    badge_icon='calendar-check',
+    badge_text='Konference',
   ) }}
 
   {{ link_card(
@@ -530,8 +530,8 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
     'pycon.sk.jpg',
     'https://pycon.sk',
     'Přijeď na slovenskou Python konferenci.',
-    icon_name='calendar-check',
-    icon_alt='Konference',
+    badge_icon='calendar-check',
+    badge_text='Konference',
   ) }}
 
   {{ link_card(
@@ -539,8 +539,8 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
     'writethedocs.org!conf.jpg',
     'https://www.writethedocs.org/conf/',
     'Přijeď na konferenci o psaní technické dokumentace.',
-    icon_name='calendar-check',
-    icon_alt='Konference',
+    badge_icon='calendar-check',
+    badge_text='Konference',
   ) }}
 </div>
 

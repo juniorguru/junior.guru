@@ -446,8 +446,8 @@ Další rady ohledně rozjíždění vlastního podnikání jsou nad rámec tét
     'startfreelancing.today.jpg',
     'https://startfreelancing.today/',
     'Praktické tipy jak začít. Ochutnávka <a href="https://www.ladybug.dev/episodes/freelancing">zde</a>. Malá a levná kniha.',
-    icon_name='book',
-    icon_alt='Kniha',
+    badge_icon='book',
+    badge_text='Kniha',
   ) }}
 
   {{ link_card(
@@ -455,8 +455,8 @@ Další rady ohledně rozjíždění vlastního podnikání jsou nad rámec tét
     'freelanceway.eu.jpg',
     'https://freelanceway.eu/',
     'Bible profesionálů na volné noze. Velká a drahá kniha.',
-    icon_name='book',
-    icon_alt='Kniha',
+    badge_icon='book',
+    badge_text='Kniha',
   ) }}
 </div>
 
