@@ -5,7 +5,7 @@ description: Jak začít hledat svou první práci v IT? Jak se připravit na po
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_toxic, blockquote_avatar, blockquote with context %}
+{% from 'macros.html' import blockquote_toxic, blockquote_avatar, blockquote, link_card with context %}
 
 
 # Hledání první práce v IT
@@ -31,45 +31,30 @@ Tyto věty slyšel v ČR asi každý začátečník — a přitom jde o nesmysly
 
 ### Doprovodná videa
 
-TODO
-
-{#
-
-### Doprovodná videa
-
 Svérázný slovenský lektor [yablko](https://www.youtube.com/channel/UC01guyOZpf40pUopBvdPwsg), autor kurzů tvorby webu pro začátečníky, natočil sérii videí o hledání práce v IT. Skvěle doplňují tuto příručku, mrkni na ně!
 
-*   [
+<div class="link-cards">
+  {{ link_card(
+    'Kde najdeš první praxi',
+    'youtube.com!watch!v=3-wsqhCK-wU.jpg',
+    'https://www.youtube.com/watch?v=3-wsqhCK-wU&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_',
+    'Jak získat úplně první praktickou zkušenost?'
+  ) }}
 
-    ![]({{ url_for('static', filename='images/screenshots/youtube.com!watch!v=3-wsqhCK-wU.jpg') }})
+  {{ link_card(
+    'Pohovor na juniora',
+    'youtube.com!watch!v=cEYnF7G7KXI.jpg',
+    'https://www.youtube.com/watch?v=cEYnF7G7KXI&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_',
+    'Všeobecné praktické rady, které se mohou hodit i mimo IT.'
+  ) }}
 
-    ### Kde najdeš první praxi
-
-    ](https://www.youtube.com/watch?v=3-wsqhCK-wU&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_)
-
-    Jak získat úplně první praktickou zkušenost?
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/youtube.com!watch!v=cEYnF7G7KXI.jpg') }})
-
-    ### Pohovor na juniora
-
-    ](https://www.youtube.com/watch?v=cEYnF7G7KXI&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_)
-
-    Všeobecné praktické rady, které se mohou hodit i mimo IT.
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/youtube.com!watch!v=cN3V5J9Wd8Y.jpg') }})
-
-    ### Pohovor na programátora
-
-    ](https://www.youtube.com/watch?v=cN3V5J9Wd8Y&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_)
-
-    Jak vypadají pohovory konkrétně pro programátory?
-
-#}
+  {{ link_card(
+    'Pohovor na programátora',
+    'youtube.com!watch!v=cN3V5J9Wd8Y.jpg',
+    'https://www.youtube.com/watch?v=cN3V5J9Wd8Y&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_',
+    'Jak vypadají pohovory konkrétně pro programátory?'
+  ) }}
+</div>
 
 
 ## Jak dlouho to trvá
@@ -427,75 +412,50 @@ O nástrahách práce „na IČO“ je tady [celá další kapitola](#contractin
 
 Další rady ohledně rozjíždění vlastního podnikání jsou nad rámec této příručky. Následující odkazy by ti nicméně měly ukázat cestu k tomu hlavnímu, co se může do startu hodit. Hodně štěstí!
 
-TODO
+<div class="link-cards">
+  {{ link_card(
+    'Jak podnikat',
+    'jakpodnikat.cz.jpg',
+    'https://www.jakpodnikat.cz/',
+    'Administrativa malého podnikání, lidsky. OSVČ, ŽL, daně.'
+  ) }}
 
-{#
+  {{ link_card(
+    'Podnikatelský almanach',
+    'fakturoid.cz!almanach.jpg',
+    'https://www.fakturoid.cz/almanach/',
+    'Sbírka praktických tipů jak podnikat.'
+  ) }}
 
-*   [
+  {{ link_card(
+    'Blog Na volné noze',
+    'navolnenoze.cz!blog.jpg',
+    'https://navolnenoze.cz/blog/',
+    'Články o všem, co se týká podnikání na volné noze.'
+  ) }}
 
-    ![]({{ url_for('static', filename='images/screenshots/jakpodnikat.cz.jpg') }})
+  {{ link_card(
+    'nakopni.to',
+    'nakopni.to.jpg',
+    'https://www.nakopni.to/',
+    '50% sleva na profi nástroje pro všechny, jejichž IČO je mladší než 1 rok.'
+  ) }}
 
-    ### Jak podnikat
+  {{ link_card(
+    'Start Freelancing Today',
+    'startfreelancing.today.jpg',
+    'https://startfreelancing.today/',
+    'Praktické tipy jak začít. Ochutnávka <a href="https://www.ladybug.dev/episodes/freelancing">zde</a>. Malá a levná kniha.'
+  ) }}
 
-    ](https://www.jakpodnikat.cz/)
+  {{ link_card(
+    'Kniha Na volné noze',
+    'freelanceway.eu.jpg',
+    'https://freelanceway.eu/',
+    'Bible profesionálů na volné noze. Velká a drahá kniha.'
+  ) }}
+</div>
 
-    Administrativa malého podnikání, lidsky. OSVČ, ŽL, daně.
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/fakturoid.cz!almanach.jpg') }})
-
-    ### Podnikatelský almanach
-
-    ](https://www.fakturoid.cz/almanach/)
-
-    Sbírka praktických tipů jak podnikat.
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/navolnenoze.cz!blog.jpg') }})
-
-    ### Blog Na volné noze
-
-    ](https://navolnenoze.cz/blog/)
-
-    Články o všem, co se týká podnikání na volné noze.
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/nakopni.to.jpg') }})
-
-    ### nakopni.to
-
-    ](https://www.nakopni.to/)
-
-    50% sleva na profi nástroje pro všechny, jejichž IČO je mladší než 1 rok.
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/startfreelancing.today.jpg') }})
-
-    ### Start Freelancing Today
-
-    *   kniha
-
-    ](https://startfreelancing.today/)
-
-    Praktické tipy jak začít. Ochutnávka [zde](https://www.ladybug.dev/episodes/freelancing). Malá a levná kniha.
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/freelanceway.eu.jpg') }})
-
-    ### Kniha Na volné noze
-
-    *   kniha
-
-    ](https://freelanceway.eu/)
-
-    Bible profesionálů na volné noze. Velká a drahá kniha.
-
-#}
 
 ## Příprava
 
@@ -505,43 +465,29 @@ Nepodceňuj se, v inzerátech je ideál, který ti má spíše ukázat kam pozic
 
 ### Související příručky
 
-TODO
+<div class="link-cards">
+  {{ link_card(
+    'Tech Interview Handbook',
+    'yangshun.github.io!tech-interview-handbook.jpg',
+    'https://yangshun.github.io/tech-interview-handbook/',
+    'Přečti si jak na CV, pohovory, algoritmy.'
+  ) }}
 
-{#
+  {{ link_card(
+    'Shánění práce na internetu',
+    'prace.rovnou.cz.jpg',
+    'https://prace.rovnou.cz/',
+    'Projdi si českou příručku základů
+        hledání práce na internetu.'
+  ) }}
 
-### Související příručky
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/yangshun.github.io!tech-interview-handbook.jpg') }})
-
-    ### Tech Interview Handbook
-
-    ](https://yangshun.github.io/tech-interview-handbook/)
-
-    Přečti si jak na CV, pohovory, algoritmy.
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/prace.rovnou.cz.jpg') }})
-
-    ### Shánění práce na internetu
-
-    ](https://prace.rovnou.cz/)
-
-    Projdi si českou příručku základů hledání práce na internetu.
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/crackingthecodinginterview.com.jpg') }})
-
-    ### Cracking the Coding Interview
-
-    ](http://www.crackingthecodinginterview.com/)
-
-    Slavná kniha plná [úloh, které můžeš dostat na pohovoru](#leetcode).
-
-#}
+  {{ link_card(
+    'Cracking the Coding Interview',
+    'crackingthecodinginterview.com.jpg',
+    'http://www.crackingthecodinginterview.com/',
+    'Slavná kniha plná <a href="#leetcode">úloh, které můžeš dostat na pohovoru</a>.'
+  ) }}
+</div>
 
 ### Tvoje požadavky
 
@@ -786,31 +732,21 @@ Připrav si dotazy, které budeš mít ty ohledně firmy a nabízené pozice. Zc
 
 Nastupuješ jako začátečník a budeš potřebovat, aby ti někdo stále pomáhal. Pokud s tím firma nepočítá, nebude na tebe mít nikdo čas a tvůj pracovní den se brzy promění v peklo. Neschopnost firmy dát ti příklad tvé práce, nebo ti ji srozumitelně vysvětlit, také o něčem vypovídá. Zároveň je to tvoje kontrola, zda právě toto chceš opravdu dělat. Kromě těchto hlavních existuje i spousta dalších otázek, na které se můžeš zeptat:
 
-TODO
+<div class="link-cards">
+  {{ link_card(
+    'Reverse interview',
+    'github.com!viraptor!reverse-interview!readme.jpg',
+    'https://github.com/viraptor/reverse-interview#readme',
+    'Inspiruj se dlouhým seznamem otázek, které můžeš položit.'
+  ) }}
 
-{#
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/github.com!viraptor!reverse-interview!readme.jpg') }})
-
-    ### Reverse interview
-
-    ](https://github.com/viraptor/reverse-interview#readme)
-
-    Inspiruj se dlouhým seznamem otázek, které můžeš položit.
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/trello.com!b!igarGHRw.jpg') }})
-
-    ### How to do job interview right
-
-    ](https://trello.com/b/igarGHRw/)
-
-    Prostuduj nástěnku plnou tipů jak se připravit a na co se ptát.
-
-#}
+  {{ link_card(
+    'How to do job interview right',
+    'trello.com!b!igarGHRw.jpg',
+    'https://trello.com/b/igarGHRw/',
+    'Prostuduj nástěnku plnou tipů jak se připravit a na co se ptát.'
+  ) }}
+</div>
 
 Celkově je dobré se soustředit nejen na firmu, ale i **na sebe**. Jsi juniorní, ale na pohovoru dostáváš rozpačité odpovědi na to, jestli se ti někdo bude věnovat? Vidíš už na pohovoru přebujelá ega, machrování, manipulativní otázky? Nejednají s tebou s respektem? Zaznamenáváš sexistické narážky? Působí firma neorganizovaně? Musíš projít přes desetikolový pohovor se spoustou úloh před tabulí? Až nastoupíš, nebude to lepší! Všechno toto jsou tzv. _red flags_, signály, že **firma, do které se snažíš dostat, [není tak úplně v pořádku](#culture)** a nejspíš nestojí za to s ní ztrácet čas. Pohovor funguje na obě strany — testuješ si i ty firmu, nejen ona tebe.
 
@@ -913,41 +849,28 @@ Jedna z nejdůležitějších věcí, které potřebuješ jako junior vědět o 
 
 Pokud cítíš, že ti firemní kultura něčím nesedne, **vždy je lepší zkusit hledat jinde než zůstat**. Kulturu firmy prakticky není možné opravit zevnitř. I pokud už zrovna dostaneš svou první práci v IT, je lepší odejít. Je jasné, že není snadné se vzdát těžce nabyté příležitosti a vrátit se do onoho náročného obcházení pohovorů, ale **žádná práce nestojí za dlouhodobý stres a narušené duševní zdraví**. Neboj, za ukončení práce ve zkušebce tě nikdo hodnotit nebude, od toho zkušebka je!
 
-TODO
+<div class="link-cards">
+  {{ link_card(
+    'WinWinJob',
+    'winwinjob.cz.jpg',
+    'https://www.winwinjob.cz/',
+    'Vyber si práci podle šéfa.'
+  ) }}
 
-{#
+  {{ link_card(
+    'Cocuma',
+    'cocuma.cz.jpg',
+    'https://www.cocuma.cz/',
+    'Projdi si firmy podle jejich kultury.'
+  ) }}
 
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/winwinjob.cz.jpg') }})
-
-    ### WinWinJob
-
-    ](https://www.winwinjob.cz/)
-
-    Vyber si práci podle šéfa.
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/cocuma.cz.jpg') }})
-
-    ### Cocuma
-
-    ](https://www.cocuma.cz/)
-
-    Projdi si firmy podle jejich kultury.
-
-*   [
-
-    ![]({{ url_for('static', filename='images/screenshots/welcometothejungle.com.jpg') }})
-
-    ### Welcome to the Jungle
-
-    ](https://www.welcometothejungle.com/)
-
-    Projdi si firmy podle jejich kultury.
-
-#}
+  {{ link_card(
+    'Welcome to the Jungle',
+    'welcometothejungle.com.jpg',
+    'https://www.welcometothejungle.com/',
+    'Projdi si firmy podle jejich kultury.'
+  ) }}
+</div>
 
 
 ## Projev aktivitu navíc
