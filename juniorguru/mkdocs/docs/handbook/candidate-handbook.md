@@ -445,14 +445,18 @@ Další rady ohledně rozjíždění vlastního podnikání jsou nad rámec tét
     'Start Freelancing Today',
     'startfreelancing.today.jpg',
     'https://startfreelancing.today/',
-    'Praktické tipy jak začít. Ochutnávka <a href="https://www.ladybug.dev/episodes/freelancing">zde</a>. Malá a levná kniha.'
+    'Praktické tipy jak začít. Ochutnávka <a href="https://www.ladybug.dev/episodes/freelancing">zde</a>. Malá a levná kniha.',
+    icon_name='book',
+    icon_alt='Kniha',
   ) }}
 
   {{ link_card(
     'Kniha Na volné noze',
     'freelanceway.eu.jpg',
     'https://freelanceway.eu/',
-    'Bible profesionálů na volné noze. Velká a drahá kniha.'
+    'Bible profesionálů na volné noze. Velká a drahá kniha.',
+    icon_name='book',
+    icon_alt='Kniha',
   ) }}
 </div>
 
@@ -798,7 +802,7 @@ Pracovat „na IČO“ **není nutně nic špatného, ale mělo by to být tvé 
 *   Vyhnout se „znakům závislé práce“ [není obtížné](https://www.podnikatel.cz/clanky/7-znaku-ktere-prokazuji-svarcsystem/). Když si to pohlídáš, žádné pokuty za švarc systém ti nehrozí.
 *   Některé chybějící „jistoty“ lze řešit dobře napsanou smlouvou mezi tebou a firmou, která zaručuje podmínky rozumné pro obě strany. Některé si s firmou můžete na dobré slovo slíbit, ale ve smlouvě být nemohou (např. placená dovolená, byl by to znak závislé práce). Především si musíš vše dobře spočítat, všechna rizika vyčíslit a přičíst ke své „čisté“ hodinové sazbě. A to včetně peněz, které vydáš na připojištění, nemocenskou, nebo důchod.
 
-Rozhodně se nikdy nenech do práce „na IČO“ dotlačit firmou. Zákon o [švarc systému](https://cs.wikipedia.org/wiki/%C5%A0varc_syst%C3%A9m) totiž neexistuje ani tak proto, aby zabránil menším odvodům státu, ale hlavně aby zabránil tomu, [aby na tobě někdo šetřil, i když ty nechceš](https://cs.wikipedia.org/wiki/Prekarizace).
+Rozhodně se nikdy nenech do práce „na IČO“ dotlačit firmou. Zákon o [švarc systému](https://cs.wikipedia.org/wiki/%C5%A0varc_syst%C3%A9m) totiž neexistuje ani tak proto, aby zabránil menším odvodům státu, ale hlavně aby zabránil tomu, [že na tobě někdo bude šetřit, i když ty nechceš](https://cs.wikipedia.org/wiki/Prekarizace).
 
 Čím vyšší máš hodnotu na trhu, tím spíš budeš z práce „na IČO“ benefitovat. **Jako junior máš ale hodnotu malou, takže taháš za kratší provaz.** Práci třeba sháníš už delší dobu a zjišťuješ, že si bohužel nemůžeš příliš vybírat. U jedné firmy projdeš pohovorem, ale zaměstnavatel tě nutí pracovat „na IČO“. Argumentuje tím, že zřízení živnosti přece není problém a že si vyděláš víc peněz. Nechceš přijít o jedinečnou příležitost, takže nakonec souhlasíš. Nedobrovolně na sebe jako OSVČ bereš veškerá rizika a je velká pravděpodobnost, že si špatně spočítáš, co vše musíš zahrnout do své sazby. Na rozdíl od dlouholetého profíka nemáš na firmu žádnou páku, nemáš naspořeno a neseženeš si do měsíce jinou práci, pokud tě na hodinu vyhodí. Jsi obětí švarc systému.
 
@@ -963,7 +967,6 @@ Kde se bere vášeň? Do začátku stačí, když ti programování přijde jako
 
 A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'ahoj@junior.guru'|email_link }}. Jestli se ti díky junior.guru povede sehnat práci, ozvi se! Můžeš [motivovat ostatní svým příběhem](motivation.md#vsechny-motivacni-pribehy), nebo tím prostě jen udělat [Honzovi](#honza) radost.
 
-TODO
 
 <span id="big-companies"></span>
 <span id="company-events"></span>
