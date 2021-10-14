@@ -1,4 +1,8 @@
 .jobs-inline {
+  margin-bottom: $spacer;
+}
+
+.jobs-inline-list {
   @extend .list-unstyled;
   margin-bottom: $spacer;
 }
@@ -55,7 +59,7 @@
 }
 
 .jobs-inline-footer {
-  margin: 0 0 $spacer 0;
+  margin: 0;
   text-align: center;
 }
 

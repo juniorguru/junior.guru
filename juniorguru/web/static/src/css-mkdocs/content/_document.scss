@@ -85,7 +85,8 @@
   background-position: 0 .15rem;
 }
 
-.document .blockquote-container {
+.document .blockquote-container,
+.document .jobs-inline {
   margin-top: $document-spacer;
   margin-bottom: $document-spacer;
 }
