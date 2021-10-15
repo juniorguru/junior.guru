@@ -92,6 +92,12 @@ def clean_proxied_url(url):
     return url
 
 
+def clean_validated_url(url):
+    if url and 'validate.perfdrive.com' in url:
+        return get_param(url, 'ssc')
+    return url
+
+
 def clean_url(url):
     if url and 'linkedin.com' in url:
         return strip_params(url, ['refId', 'trk', 'trackingId'])
@@ -114,7 +120,7 @@ class Loader(ItemLoader):
     default_input_processor = MapCompose(str.strip)
     default_output_processor = TakeFirst()
     link_in = Compose(first, clean_url)
-    apply_link_in = Compose(first, clean_proxied_url, clean_url)
+    apply_link_in = Compose(first, clean_proxied_url, clean_validated_url, clean_url)
     company_link_in = Compose(first, clean_url)
     employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()

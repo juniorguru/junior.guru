@@ -120,6 +120,25 @@ def test_clean_proxied_url():
     assert linkedin.clean_proxied_url(url) == 'https://jobs.gecareers.com/global/en/job/GE11GLOBAL32262/Engineering-Trainee?codes=juniorguru'
 
 
+def test_clean_validated_url():
+    url = (
+        'http://validate.perfdrive.com/4708da524564ee0915d03f8ef0481f9d/'
+        '?ssa=c1b11acc-f3fd-4db6-9dcf-4c36cddb0133&ssb=08429203719'
+        '&ssc=http%3A%2F%2Fred-hat-1.talentify.io%2Fjob%2Fjunior-software-engineer-package-maintainer-part-time-brno-southeast-red-hat-89305'
+        '&ssi=c942d48f-bgon-0847-364d-4dae40d0c40b'
+        '&ssk=support@shieldsquare.com'
+        '&ssm=48230879602575515162700730631252'
+        '&ssn=c03a60a5bd22f3c8753a9d199da7f997d879aaabcc26-21f7-46d1-ae5b73&sso=29ce95d2-fabf1b301fcbafb1da0f5201be83bcd10b904ffc649c3938'
+        '&ssp=71823123601634260373163420895431754'
+        '&ssq=26200217335195395023172872720195943237649'
+        '&ssr=My44OC4yMTguMTEx&sst=Mozilla/5.0%20(iPhone;%20CPU%20OS%2014_0_1%20like%20Mac%20OS%20X)%20AppleWebKit/605.1.15%20(KHTML,%20like%20Gecko)%20FxiOS/29.0%20Mobile/15E148%20Safari/605.1.15'
+        '&ssv=aWFiM2hlMHVzMTMwZ2dqc2R1NHZha203MGE='
+        '&ssw=iab3he0us130ggjsdu4vakm70a'
+    )
+
+    assert linkedin.clean_validated_url(url) == 'http://red-hat-1.talentify.io/job/junior-software-engineer-package-maintainer-part-time-brno-southeast-red-hat-89305'
+
+
 def test_get_job_id():
     url = (
         'https://cz.linkedin.com/jobs/view/'
