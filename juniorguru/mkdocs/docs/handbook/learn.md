@@ -15,21 +15,21 @@ template: main_handbook.html
 {% endcall %}
 
 
-## Co budeš potřebovat
+## Co budeš potřebovat    <span id="requirements"></span>
 
-### Vybavení, které musíš mít
+### Vybavení, které musíš mít    <span id="equipment"></span>
 
 Především budeš potřebovat **počítač a internet**. Na mobilu ani tabletu se programovat prakticky nedá a bez připojení nebudeš mít materiály, ani nenajdeš potřebnou pomoc.
 
 Ideální je mít svůj vlastní počítač, nad kterým máš plnou kontrolu a na němž je operační systém Linux, Windows nebo macOS. Pokud máš jiný systém, jako Android nebo ChromeOS, možná se ti povede na něm programování rozjet, ale v praxi je k tomu nikdo nepoužívá a budeš mít velký problém sehnat někoho, kdo ti poradí v případě problémů. Na mobilu můžeš některé věci procvičovat, ale je to jako se v appce učit akordy, vzorečky nebo slovíčka — praktické znalosti tím nezískáš.
 
-### Sežeň si kamarády
+### Sežeň si kamarády    <span id="friends"></span>
 
 Říká se, že **navazování mezilidských vztahů** by mělo vyplňovat pětinu času, který trávíš učením (tzv. [model 70-20-10](https://en.wikipedia.org/wiki/70/20/10_Model_(Learning_and_Development))). Navíc budeš potřebovat **velké množství motivace**. Možná si čteš tento text a přijde ti, že jí máš vrchovatě, ale věř tomu, že už zítra jí bude méně a za týden jí bude polovina. Zvláště pokud neděláš prezenční kurz a chystáš se do toho jít jako samouk, nebudeš mít ani žádné termíny, ani lidi kolem sebe, díky kterým se u učení udržíš. Je snadné další lekci odložit, protože se ti to zrovna nehodí, potom ji odložit znova, a tak dále.
 
 Najdi si proto **studijní skupinu**. Ať už do toho půjdeš s kamarádkou nebo místním zájmovým kroužkem, v partě to prostě odsýpá lépe a máš mnohonásobně, opravdu mnohonásobně vyšší šanci na úspěch. Využít můžeš přímo i [zdejší online klub](../club.md).
 
-### Co je dobré umět předem
+### Co je dobré umět předem    <span id="prerequisities"></span>
 
 S programováním můžeš začít úplně v pohodě pouze se **základy ovládání počítače**. Potřebuješ umět vytvořit a najít soubor nebo adresář (složku). Potřebuješ umět nainstalovat nový program.
 
@@ -37,11 +37,11 @@ Dále se ti mohou hodit **základy matematiky ze základky**: třeba co je to d�
 
 Budeš mít výhodu, pokud budeš [**rozumět alespoň psané angličtině**](#jak-si-zlepsit-anglictinu). Materiály a kurzy pro začátečníky najdeš i v češtině, ale brzy zjistíš, že spoléhat se jen na ně je velmi omezující.
 
-### Kolik to bude stát
+### Kolik to bude stát    <span id="price"></span>
 
 Nemusí to stát **žádné peníze**. Ano, existují placené kurzy, placení mentoři, [placené komunity](../club.md), ale jde to i bez toho. Pokud máš počítač a internet, můžeš se naučit programovat bez jakýchkoliv dalších investic. Některé kurzy dávají své materiály zdarma k dispozici, na problémy můžeš najít řešení v diskuzích na internetu, učební kroužek si můžeš zorganizovat i mezi svými kamarády. Pokud ale nějaké peníze do svého učení investovat můžeš, **mohou tvou cestu usnadnit a urychlit**.
 
-### Kolik času potřebuješ
+### Kolik času potřebuješ    <span id="time"></span>
 
 Úplně první program vytvoříš v řádu hodin nebo dní, ale pokud chceš mít [základ vhodný pro start kariéry v IT](/candidate-handbook/#requirements), budeš se tomu potřebovat věnovat **alespoň 3 měsíce po 10 hodinách týdně** (orientační odhad, každý má jiné možnosti, tempo, výdrž…). Je to stejné jako u sportu nebo hry na hudební nástroj: Princip možná pochopíš rychle, ale budeš muset vždy hodně procvičovat, než to budeš umět správně použít v praxi.
 
@@ -56,20 +56,20 @@ Možná opravdu chceš, ale máš náročnou práci, chodíš domů po večerech
   'Vladlena Benešová, bývalá marketérka, nyní programátorka'
 ) }}
 
-### Nauč se učit
+### Nauč se učit    <span id="learning"></span>
 
 Jakmile se jednou pustíš do programování, nastoupíš do vlaku, jenž už se nikdy nezastaví. Technologie se vyvíjejí rychle a tak je programování, možná více než jiné obory, o neustálém učení. Někdo to dovádí do extrému a hltá hned každou novinku, ale ani **běžný programátor nemůže úplně zaspat a často se téměř každý týden naučí něco nového**, třeba i průběžně během práce.
 
 Neočekávej, že se programování jednou naučíš a vystačíš si s tím. Neměj ale ani hrůzu z toho, že se učíš programovat dva roky a stále toho ještě spoustu neumíš. **Učí se neustále i ti, kteří mají desítky let zkušeností.** Nemá tedy smysl se tím příliš trápit. Najdi si vlastní tempo a způsob, jakým se dokážeš učit efektivně a jak tě to bude nejvíce bavit. Někdo leží v knihách, jiný si pouští návody na YouTube, další si zase nejraději zkouší věci prakticky. Cokoliv z toho je v pořádku, hlavně pokud ti to sedí.
 
-### Co nepotřebuješ
+### Co nepotřebuješ    <span id="myths"></span>
 
 O programování [koluje řada mýtů](motivation.md#myty-o-programovani). Třeba že se o něj můžeš zajímat jen pokud jsi geniální na matematiku, že se to musí roky studovat na vysoké škole, že to není pro holky, že už je pro tebe pozdě začít. Jsou to pouze předsudky, nenech se jimi odradit! Raději si projdi [příběhy lidí, kteří se programovat naučili](motivation.md#vsechny-motivacni-pribehy) a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
 
 <small>Rady v této kapitole volně vychází i z [úvodní lekce týmového online kurzu Petra Viktorina](https://naucse.python.cz/2021/online-jaro/adm/intro/), se svolením autora. Díky!</small>
 
 
-## Proč Python?
+## Proč Python?    <span id="python"></span>
 
 Ať už budeš nakonec dělat cokoliv, začít s programovacím jazykem [Python](https://python.cz) je skvělý tah. Je to nejvhodnější první jazyk.
 
@@ -96,7 +96,7 @@ Co když ale bude nakonec v pracovním inzerátu Java? Důležité je předevš�
 ) }}
 
 
-## Jak začít
+## Jak začít    <span id="learn"></span>
 
 Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplatí investovat. Tyto materiály prošly pečlivým a přísným výběrem. Jsou to ty nejlepší dostupné. Vyber si jeden z následujících materiálů podle toho, jestli ti více vyhovuje kurz nebo kniha, a začni!
 
@@ -169,7 +169,7 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 {{ links_note() }}
 
 
-## Dámy mají přednost
+## Dámy mají přednost    <span id="ladies"></span>
 
 Žen je v IT málo — v Evropských státech je to mezi 10 až 30 %. [Česko je na tom se svými 10 % hůř než Turecko](https://www.ceskovdatech.cz/clanek/128-neni-ajtak-jako-ajtak/), takže existují aktivity, které se snaží ženám cestu do IT usnadnit.
 
@@ -226,11 +226,11 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 </div>
 
 
-## Kde najdeš pomoc
+## Kde najdeš pomoc    <span id="help"></span>
 
 Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout na týdny a úplně ti zkazit radost z učení. Neboj se ptát online, radit se s lidmi na [akcích](/practice/#events), nebo si najít [mentora](/practice/#mentors).
 
-### Kde a jak se ptát
+### Kde a jak se ptát    <span id="questions"></span>
 
 Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná otázka není hloupá, může však být hloupě položená.** Než se někde začneš ptát, přečti si [nejslavnější návod na internetu o psaní dotazů](https://www.root.cz/texty/jak-se-spravne-ptat/), nebo alespoň [tento krátký návod od Stack Overflow](https://stackoverflow.com/help/how-to-ask).
 
@@ -298,7 +298,7 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
 </div>
 
 
-## Jak si zlepšit angličtinu
+## Jak si zlepšit angličtinu    <span id="english"></span>
 
 Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi-ti-talent) je při programování potřeba angličtina. Materiály pro úplné začátečníky existují i v češtině, ale potom už se bez schopnosti alespoň číst anglický text obejít nelze.
 
