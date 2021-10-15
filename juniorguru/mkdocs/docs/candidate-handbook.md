@@ -12,7 +12,7 @@ template: main_handbook.html
 
 ## Úvod    <span id="preface"></span>
 
-Ještě než se začteš, jednu věc si musíme ujasnit hned. **Toto není e-book.** Nacházíš se na „živé stránce“, na které stále probíhají úpravy — naposledy {{ last_modified|ago }}. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/honzajavorek/junior.guru/commits/main/juniorguru/mkdocs/docs/handbook/candidate-handbook.md), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](../club.md).
+Ještě než se začteš, jednu věc si musíme ujasnit hned. **Toto není e-book.** Nacházíš se na „živé stránce“, na které stále probíhají úpravy — naposledy {{ last_modified|ago }}. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/honzajavorek/junior.guru/commits/main/juniorguru/mkdocs/docs/handbook/candidate-handbook.md), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](club.md).
 
 A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'ahoj@junior.guru'|email_link }}.
 
@@ -927,6 +927,6 @@ Lepší peníze nebo pracovní podmínky jsou legitimní a racionální důvody,
 
 Kde se bere vášeň? Do začátku stačí, když ti programování přijde jako něco zajímavého. Když máš alespoň základní touhu to zkoušet a řemeslně se v tom zlepšovat. Stejně jako když se učíš tancovat nebo hrát na kytaru, musíš si na to umět pravidelně vyhradit čas a trénovat. [Vášeň se postupně dostaví sama](https://www.youtube.com/watch?v=LUQjAAwsKR8) a stane se motorem pro veškerou dřinu, která tě čeká. Je to eso, které zvládne přebít titul, talent, i štěstí.
 
-**P.S.** Nezapomeň, že jsi na „živé stránce“, na které stále probíhají úpravy — naposledy {{ last_modified|ago }}. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/honzajavorek/junior.guru/commits/main/juniorguru/mkdocs/docs/handbook/candidate-handbook.md), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](../club.md).
+**P.S.** Nezapomeň, že jsi na „živé stránce“, na které stále probíhají úpravy — naposledy {{ last_modified|ago }}. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/honzajavorek/junior.guru/commits/main/juniorguru/mkdocs/docs/handbook/candidate-handbook.md), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](club.md).
 
 A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'ahoj@junior.guru'|email_link }}. Jestli se ti díky junior.guru povede sehnat práci, ozvi se! Můžeš [motivovat ostatní svým příběhem](motivation.md#vsechny-motivacni-pribehy), nebo tím prostě jen udělat [Honzovi](#honza) radost.

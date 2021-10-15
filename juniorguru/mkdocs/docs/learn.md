@@ -11,7 +11,7 @@ template: main_handbook.html
 # Nauč se základy programování
 
 {% call lead() %}
-  Jak začít programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe bude do úplného startu nejlepší a nejefektivnější. Až tím projdeš, můžeš začít [získávat praxi](/practice/).
+  Jak začít programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe bude do úplného startu nejlepší a nejefektivnější. Až tím projdeš, můžeš začít [získávat praxi](practice.md).
 {% endcall %}
 
 
@@ -27,7 +27,7 @@ Ideální je mít svůj vlastní počítač, nad kterým máš plnou kontrolu a 
 
 Říká se, že **navazování mezilidských vztahů** by mělo vyplňovat pětinu času, který trávíš učením (tzv. [model 70-20-10](https://en.wikipedia.org/wiki/70/20/10_Model_(Learning_and_Development))). Navíc budeš potřebovat **velké množství motivace**. Možná si čteš tento text a přijde ti, že jí máš vrchovatě, ale věř tomu, že už zítra jí bude méně a za týden jí bude polovina. Zvláště pokud neděláš prezenční kurz a chystáš se do toho jít jako samouk, nebudeš mít ani žádné termíny, ani lidi kolem sebe, díky kterým se u učení udržíš. Je snadné další lekci odložit, protože se ti to zrovna nehodí, potom ji odložit znova, a tak dále.
 
-Najdi si proto **studijní skupinu**. Ať už do toho půjdeš s kamarádkou nebo místním zájmovým kroužkem, v partě to prostě odsýpá lépe a máš mnohonásobně, opravdu mnohonásobně vyšší šanci na úspěch. Využít můžeš přímo i [zdejší online klub](../club.md).
+Najdi si proto **studijní skupinu**. Ať už do toho půjdeš s kamarádkou nebo místním zájmovým kroužkem, v partě to prostě odsýpá lépe a máš mnohonásobně, opravdu mnohonásobně vyšší šanci na úspěch. Využít můžeš přímo i [zdejší online klub](club.md).
 
 ### Co je dobré umět předem    <span id="prerequisities"></span>
 
@@ -39,11 +39,11 @@ Budeš mít výhodu, pokud budeš [**rozumět alespoň psané angličtině**](#j
 
 ### Kolik to bude stát    <span id="price"></span>
 
-Nemusí to stát **žádné peníze**. Ano, existují placené kurzy, placení mentoři, [placené komunity](../club.md), ale jde to i bez toho. Pokud máš počítač a internet, můžeš se naučit programovat bez jakýchkoliv dalších investic. Některé kurzy dávají své materiály zdarma k dispozici, na problémy můžeš najít řešení v diskuzích na internetu, učební kroužek si můžeš zorganizovat i mezi svými kamarády. Pokud ale nějaké peníze do svého učení investovat můžeš, **mohou tvou cestu usnadnit a urychlit**.
+Nemusí to stát **žádné peníze**. Ano, existují placené kurzy, placení mentoři, [placené komunity](club.md), ale jde to i bez toho. Pokud máš počítač a internet, můžeš se naučit programovat bez jakýchkoliv dalších investic. Některé kurzy dávají své materiály zdarma k dispozici, na problémy můžeš najít řešení v diskuzích na internetu, učební kroužek si můžeš zorganizovat i mezi svými kamarády. Pokud ale nějaké peníze do svého učení investovat můžeš, **mohou tvou cestu usnadnit a urychlit**.
 
 ### Kolik času potřebuješ    <span id="time"></span>
 
-Úplně první program vytvoříš v řádu hodin nebo dní, ale pokud chceš mít [základ vhodný pro start kariéry v IT](/candidate-handbook/#requirements), budeš se tomu potřebovat věnovat **alespoň 3 měsíce po 10 hodinách týdně** (orientační odhad, každý má jiné možnosti, tempo, výdrž…). Je to stejné jako u sportu nebo hry na hudební nástroj: Princip možná pochopíš rychle, ale budeš muset vždy hodně procvičovat, než to budeš umět správně použít v praxi.
+Úplně první program vytvoříš v řádu hodin nebo dní, ale pokud chceš mít [základ vhodný pro start kariéry v IT](candidate-handbook.md#co-budou-chtit), budeš se tomu potřebovat věnovat **alespoň 3 měsíce po 10 hodinách týdně** (orientační odhad, každý má jiné možnosti, tempo, výdrž…). Je to stejné jako u sportu nebo hry na hudební nástroj: Princip možná pochopíš rychle, ale budeš muset vždy hodně procvičovat, než to budeš umět správně použít v praxi.
 
 Co když **nemáš čas**? „Nemám čas“ znamená „nechci si jej vyhradit, jelikož mám důležitější věci, nebo věci, které mě baví víc“. Možná se ti jen líbí představa, že umíš programovat, ale nechce se ti to doopravdy dělat, stejně jako se spoustě lidem líbí představa, že umí hrát na kytaru, ale nemají chuť si po večerech brnkat a cvičit akordy. Je úplně v pořádku dělat důležitější nebo zábavnější věci, akorát [je dobré si to přiznat](https://twitter.com/mjavorek/status/687386493036396544), vědomě to nechat plavat a nevyčítat si to.
 
@@ -228,7 +228,7 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 
 ## Kde najdeš pomoc    <span id="help"></span>
 
-Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout na týdny a úplně ti zkazit radost z učení. Neboj se ptát online, radit se s lidmi na [akcích](/practice/#events), nebo si najít [mentora](/practice/#mentors).
+Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout na týdny a úplně ti zkazit radost z učení. Neboj se ptát online, radit se s lidmi na [akcích](practice.md#najdi-inspiraci-poznej-lidi), nebo si najít [mentora](practice.md#najdi-si-mentora).
 
 ### Kde a jak se ptát    <span id="questions"></span>
 

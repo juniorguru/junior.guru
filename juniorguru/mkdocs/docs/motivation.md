@@ -75,7 +75,7 @@ Doktoři a vědci přicházejí na to, že když výpočty naprogramují, mohou 
   CIO Business World, článek [Naprogramuj si to sám!](https://www.cio.cz/clanky/naprogramuj-si-to-sam/)
 {% endcall %}
 
-Pokud chceš mít programování jako pomocníka, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](/learn/) nebo [jak si lze programování procvičovat a dále prohlubovat znalosti](/practice/).
+Pokud chceš mít programování jako pomocníka, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](learn.md) nebo [jak si lze programování procvičovat a dále prohlubovat znalosti](practice.md).
 
 {{ stories_list(stories_by_tags.careerswitch|sample(4)) }}
 
@@ -106,7 +106,7 @@ Je ovšem důležité počítat s tím, že **příprava ti může zabrat i dva 
   'český programátorský folklór',
 ) }}
 
-Pokud se chceš programováním živit, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](/learn/), [jak získat potřebnou praxi](/practice/) nebo [jak si hledat svou první práci](/candidate-handbook/). Kromě toho je tady i [stránka s nabídkami práce](/jobs/).
+Pokud se chceš programováním živit, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](learn.md), [jak získat potřebnou praxi](practice.md) nebo [jak si hledat svou první práci](candidate-handbook.md). Kromě toho je tady i [stránka s nabídkami práce](/jobs/).
 
 {{ stories_list(stories_by_tags.synergy|sample(4)) }}
 
@@ -164,7 +164,7 @@ Někoho to možná překvapí, ale k programování není potřeba penis. Neexis
   'Margaret H. Hamilton, programátorka softwaru pro cestu člověka na měsíc'
 ) }}
 
-Podle ČSÚ je v Česku zatím žen v IT stále méně než v Turecku, ale na zlepšení se intenzivně pracuje. Aktivity jako [PyLadies nebo Czechitas](/learn/#ladies) se snaží programování mezi ženami popularizovat a přichystat jim bezpečné prostředí, v němž si z nich nikdo nebude dělat legraci za to, že položily hloupou otázku, nebo je šovinisticky posílat zpátky k plotně. I kultura IT firem se postupně mění a stává se k ženám příjemnější, a to dokonce i v českém rybníčku, kde se lidé běžně děsí slov jako feminismus nebo diverzita.
+Podle ČSÚ je v Česku zatím žen v IT stále méně než v Turecku, ale na zlepšení se intenzivně pracuje. Aktivity jako [PyLadies nebo Czechitas](learn.md#damy-maji-prednost) se snaží programování mezi ženami popularizovat a přichystat jim bezpečné prostředí, v němž si z nich nikdo nebude dělat legraci za to, že položily hloupou otázku, nebo je šovinisticky posílat zpátky k plotně. I kultura IT firem se postupně mění a stává se k ženám příjemnější, a to dokonce i v českém rybníčku, kde se lidé běžně děsí slov jako feminismus nebo diverzita.
 
 {{ stories_list(stories_by_tags.women|sample(4)) }}
 

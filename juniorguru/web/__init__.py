@@ -8,7 +8,7 @@ from flask import Flask, Response, render_template, url_for
 from juniorguru.lib import loggers
 from juniorguru.lib import template_filters
 from juniorguru.lib.images import render_image_file
-from juniorguru.models import Job, Metric, Story, Supporter, LastModified, PressRelease, Logo, Company, Event, db
+from juniorguru.models import Job, Metric, Story, Supporter, PressRelease, Event, db
 
 
 logger = loggers.get('web')
@@ -29,13 +29,6 @@ NAV_TABS = [
 JOBS_SUBNAV_TABS = [
     {'endpoint': 'jobs', 'name': 'Nabídky práce'},
     {'endpoint': 'hire_juniors', 'name': 'Pro firmy'},
-]
-
-HANDBOOK_SUBNAV_TABS = [
-    {'endpoint': 'motivation', 'name': 'Motivace', 'number': 0},
-    {'endpoint': 'learn', 'name': 'Základy', 'number': 1},
-    {'endpoint': 'practice', 'name': 'První praxe', 'number': 2},
-    {'endpoint': 'candidate_handbook', 'name': 'Hledání práce', 'number': 3},
 ]
 
 CLUB_SUBNAV_TABS = [
@@ -116,22 +109,6 @@ def index():
                            stories=stories)
 
 
-@app.route('/club/')
-def club():
-    with db:
-        members = ClubUser.avatars_listing()
-        members_total_count = ClubUser.members_count()
-        companies = Company.listing()
-    return render_template('club.html',
-                           nav_active='club',
-                           subnav_tabs=CLUB_SUBNAV_TABS,
-                           subnav_active='club',
-                           companies=companies,
-                           members=members,
-                           members_total_count=members_total_count,
-                           thumbnail=thumbnail(title='Klub, který tě nastartuje'))
-
-
 @app.route('/events/')
 def events():
     with db:
@@ -158,66 +135,6 @@ def membership():
                            subnav_tabs=CLUB_SUBNAV_TABS,
                            subnav_active='membership',
                            thumbnail=thumbnail(title='Rozcestník pro členy klubu'))
-
-
-
-@app.route('/motivation/')
-def motivation():
-    with db:
-        stories = Story.listing()
-        stories_by_tags = Story.tags_mapping()
-    return render_template('motivation.html',
-                           nav_active='motivation',
-                           subnav_tabs=HANDBOOK_SUBNAV_TABS,
-                           subnav_active='motivation',
-                           stories=stories,
-                           stories_by_tags=stories_by_tags,
-                           thumbnail=thumbnail(title='Proč se učit programování'))
-
-
-@app.route('/learn/')
-def learn():
-    with db:
-        stories_count = len(Story.listing())
-    return render_template('learn.html',
-                           nav_active='motivation',
-                           subnav_tabs=HANDBOOK_SUBNAV_TABS,
-                           subnav_active='learn',
-                           stories_count=stories_count,
-                           thumbnail=thumbnail(title='Jak se naučit programovat'))
-
-
-@app.route('/practice/')
-def practice():
-    return render_template('practice.html',
-                           nav_active='motivation',
-                           subnav_tabs=HANDBOOK_SUBNAV_TABS,
-                           subnav_active='practice',
-                           thumbnail=thumbnail(title='Jak získat praxi v\u00a0programování'))
-
-
-@app.route('/candidate-handbook/')
-def candidate_handbook():
-    with db:
-        jobs = Job.listing()
-        jobs_remote = Job.remote_listing()
-        jobs_internship = Job.internship_listing()
-        jobs_volunteering = Job.volunteering_listing()
-        supporters_count = Supporter.count()
-        last_modified = LastModified.get_value_by_path('candidate_handbook.html')
-        logos = Logo.listing()
-    return render_template('candidate_handbook.html',
-                           nav_active='motivation',
-                           subnav_tabs=HANDBOOK_SUBNAV_TABS,
-                           subnav_active='candidate_handbook',
-                           jobs=jobs,
-                           jobs_remote=jobs_remote,
-                           jobs_internship=jobs_internship,
-                           jobs_volunteering=jobs_volunteering,
-                           supporters_count=supporters_count,
-                           last_modified=last_modified,
-                           logos=logos,
-                           thumbnail=thumbnail(title='Příručka o\u00a0hledání první práce v\u00a0IT'))
 
 
 @app.route('/jobs/')
@@ -368,3 +285,33 @@ def inject_defaults():
 
 
 from juniorguru.web import admin  # noqa
+
+
+# Pages moved to MkDocs
+#
+# These pages have been moved to MkDocs. Keeping them here so that 'url_for()' works throughout
+# the original code. Also fixing local reload when developing. Flask first generates this
+# empty page with refresh, and it's in the browser until MkDocs are ready. The refresh avoids
+# the annoying need for manual refresh.
+
+REFRESH_PAGE = '<html><head><meta http-equiv="refresh" content="5"></head><body></body></html>'
+
+@app.route('/club/')
+def club():
+    return REFRESH_PAGE
+
+@app.route('/motivation/')
+def motivation():
+    return REFRESH_PAGE
+
+@app.route('/learn/')
+def learn():
+    return REFRESH_PAGE
+
+@app.route('/practice/')
+def practice():
+    return REFRESH_PAGE
+
+@app.route('/candidate-handbook/')
+def candidate_handbook():
+    return REFRESH_PAGE

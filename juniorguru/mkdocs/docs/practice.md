@@ -11,7 +11,7 @@ template: main_handbook.html
 # Získej praxi v programování
 
 {% call lead() %}
-  Znáš [základy](learn.md)? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti. Teprve potom si můžeš začít [hledat svou první práci v IT](/candidate-handbook/).
+  Znáš [základy](learn.md)? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti. Teprve potom si můžeš začít [hledat svou první práci v IT](candidate-handbook.md).
 {% endcall %}
 
 
@@ -73,7 +73,7 @@ Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit. Řík
 *   Jednoduchá hra, např. piškvorky nebo [had](https://naucse.python.cz/2018/snake-brno/),
 *   automatizace něčeho, co teď na počítači musíš dělat ručně (mrkni na [tuto knihu](https://automatetheboringstuff.com)),
 *   program na procvičování příkladů nebo slovíček pro děti do školy,
-*   [osobní webová stránka](/candidate-handbook/#portfolio).
+*   [osobní webová stránka](candidate-handbook.md#osobni-web-a-blog).
 
 Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hackathon](#zkus-hackathon) nebo [open source](#zkus-open-source).
 
@@ -90,7 +90,7 @@ Git je **nástroj, který ti umožňuje sledovat historii změn v kódu, ale kro
 
 U začátečníků rozhodně platí, že **nemají co schovávat a měli by světu ukázat co nejvíce toho, co dokázali vytvořit, nebo co zkoušeli řešit**. Můžeš tím jenom získat. GitHub je příhodné místo, kam všechny své projekty a pokusy nahrávat. Zároveň je to místo, kde mají své projekty i všichni ostatní a kde lze spolupracovat s lidmi z celého světa.
 
-Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic neumíš. Neboj se mít svůj kód veřejně a ukazovat ho druhým! Tato obava je zbytečnou překážkou ve tvém rozjezdu. Programování je o spolupráci a **GitHub je hřiště pro programátory, kde si každý experimentuje na čem chce.** Čím více tam toho máš, tím lépe. Nejen že se naučíš lépe ovládat Git, ale hlavně budeš moci svůj kód ukázat, když budeš potřebovat [pomoc na dálku](learn.md#kde-najdes-pomoc). Pokud tě někdo straší, že si tvůj GitHub budou procházet náboráři, [nenech se tím zmást, je to trochu jinak](/candidate-handbook/#projects).
+Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic neumíš. Neboj se mít svůj kód veřejně a ukazovat ho druhým! Tato obava je zbytečnou překážkou ve tvém rozjezdu. Programování je o spolupráci a **GitHub je hřiště pro programátory, kde si každý experimentuje na čem chce.** Čím více tam toho máš, tím lépe. Nejen že se naučíš lépe ovládat Git, ale hlavně budeš moci svůj kód ukázat, když budeš potřebovat [pomoc na dálku](learn.md#kde-najdes-pomoc). Pokud tě někdo straší, že si tvůj GitHub budou procházet náboráři, [nenech se tím zmást, je to trochu jinak](candidate-handbook.md#projekty).
 
 ### Jak se naučit Git a GitHub    <span id="howto-git-github"></span>
 
@@ -569,7 +569,7 @@ Na konference je potřeba si koupit lístek. Výše zmíněné konference mají 
   {% call link_card(
     'Jak si zlepšit angličtinu?',
     'junior.guru!learn!english.jpg',
-    pages|docs_url('handbook/learn.md')|url + '#jak-si-zlepsit-anglictinu',
+    pages|docs_url('learn.md')|url + '#jak-si-zlepsit-anglictinu',
   ) -%}
     Nauč se anglicky podle tipů na junior.guru.
   {%- endcall %}

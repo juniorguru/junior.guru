@@ -40,7 +40,7 @@ Kromě [konání dobra](#seniori) můžeš klub naplno využít k propagaci svý
 
 ### Co mám z členství v klubu jako recruiter(ka)?
 
-Zatímco čekáš na kafe, můžeš někoho posunout o kousek blíž vysněné kariéře v IT. Stačí ti „poflakovat“ se na Discordu, pokud máš zrovna čas. Když vidíš příležitost někomu pomoci, zkusíš pomoci. Někdy to mohou být dva krátké příspěvky, někdy jedno emoji s palcem nahoru. Klub není zdaleka jen o programování, ale i o kariérním rozhodování, pohovorech, životopisech. Můžeš si číst, jak proces náboru vnímají junioři, poskytovat zpětnou vazbu z druhé strany, radit s CVčkem, vyhlížet nadějné talenty, sdílet nabídky práce. Navíc podporuješ rozšiřování [příručky](/candidate-handbook/), díky které se můžou kandidáti lépe připravit už před tím, než se ti ozvou na inzerát.
+Zatímco čekáš na kafe, můžeš někoho posunout o kousek blíž vysněné kariéře v IT. Stačí ti „poflakovat“ se na Discordu, pokud máš zrovna čas. Když vidíš příležitost někomu pomoci, zkusíš pomoci. Někdy to mohou být dva krátké příspěvky, někdy jedno emoji s palcem nahoru. Klub není zdaleka jen o programování, ale i o kariérním rozhodování, pohovorech, životopisech. Můžeš si číst, jak proces náboru vnímají junioři, poskytovat zpětnou vazbu z druhé strany, radit s CVčkem, vyhlížet nadějné talenty, sdílet nabídky práce. Navíc podporuješ rozšiřování [příručky](motivation.md), díky které se můžou kandidáti lépe připravit už před tím, než se ti ozvou na inzerát.
 
 ### Co mám z členství v klubu jako komunitní manažer(ka)?
 
@@ -156,7 +156,7 @@ Organizátoři komunit, které s klubem spolupracují, do něj mají přístup a
 
 ### Proč vznikl klub?
 
-Na junior.guru byly původně pouze [rady](/motivation/) a [pracovní nabídky](/jobs/). Začátečníci však potřebují víc než jen příručku. Nejvíc je posune, když v tom všem nejsou sami a může jim někdo pomoci se zapeklitou situací, dát zpětnou vazbu, dodat motivaci. Proto v lednu 2020 vznikl klub. Kromě toho je to samozřejmě i způsob, jak celé junior.guru financovat. [Honza Javorek](#honza), autor junior.guru, svou motivaci a veškeré okolnosti vzniku klubu otevřeně popsal v [rozsáhlém článku na svém blogu](https://honzajavorek.cz/blog/spoustim-klub/).
+Na junior.guru byly původně pouze [rady](motivation.md) a [pracovní nabídky](/jobs/). Začátečníci však potřebují víc než jen příručku. Nejvíc je posune, když v tom všem nejsou sami a může jim někdo pomoci se zapeklitou situací, dát zpětnou vazbu, dodat motivaci. Proto v lednu 2020 vznikl klub. Kromě toho je to samozřejmě i způsob, jak celé junior.guru financovat. [Honza Javorek](#honza), autor junior.guru, svou motivaci a veškeré okolnosti vzniku klubu otevřeně popsal v [rozsáhlém článku na svém blogu](https://honzajavorek.cz/blog/spoustim-klub/).
 
 ### Budou nové rady už pouze pro členy klubu?
 

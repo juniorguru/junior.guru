@@ -28,7 +28,6 @@
 .header__main-content {
   @include variables.page-width($padding: variables.$whitespace-0);
   display: flex;
-  justify-content: space-between;
 }
 
 .header__logo {
@@ -109,9 +108,9 @@ a.header__nav-tab-control--button {
 a.header__nav-tab-control--active,
 a.header__nav-tab-control--active.header__nav-tab-control--button {
   &, &:hover, &:focus, &:active {
-    text-decoration: underline;
     background: none;
     color: variables.$jg-black;
+    font-weight: bold;
   }
 }
 
@@ -245,12 +244,8 @@ a.header__subnav-tab-control:active {
     margin-right: variables.$whitespace;
   }
 
-  .header__nav-tabs {
-    @include variables.font-2;
-  }
-
   .header__subnav-tabs {
-    @include variables.font;
+    @include variables.font-0;
   }
 
   .header__nav-tab-control {
