@@ -7,7 +7,6 @@ from juniorguru.models import LastModified, db
 
 
 FILES = [
-    'juniorguru/web/templates/candidate_handbook.html',
     'juniorguru/mkdocs/docs/handbook/candidate-handbook.md',
 ]
 
