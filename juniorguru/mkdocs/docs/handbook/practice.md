@@ -15,7 +15,7 @@ template: main_handbook.html
 {% endcall %}
 
 
-## Procvičuj
+## Procvičuj    <span id="exercises"></span>
 
 <div class="link-cards">
   {{ link_card(
@@ -66,7 +66,7 @@ template: main_handbook.html
 {{ links_note() }}
 
 
-## Najdi si projekt
+## Najdi si projekt    <span id="projects"></span>
 
 Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit. Říká se tomu [projektové učení](https://cs.wikipedia.org/wiki/Projektov%C3%A9_u%C4%8Den%C3%AD). Nejlepší je vymyslet si něco vlastního a řešení procházet s [mentorem](#najdi-si-mentora). Inspirace na projekt se nejlépe hledá přímo okolo tebe:
 
@@ -78,21 +78,21 @@ Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit. Řík
 Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hackathon](#zkus-hackathon) nebo [open source](#zkus-open-source).
 
 
-## Osvoj si Git a GitHub
+## Osvoj si Git a GitHub    <span id="git-github"></span>
 
 Git je **nástroj, který ti umožňuje sledovat historii změn v kódu, ale kromě toho jej také sdílet s dalšími lidmi**. Je to program, který nainstaluješ do svého počítače a pracuješ s ním v příkazové řádce, nebo jej ovládáš např. prostřednictvím svého editoru. Git se dnes používá skoro v každé firmě. I když jeho výhody nejvíc oceníš při práci ve dvou a více lidech, může ti pomoci i jako jednotlivci: Zálohovat kód svých projektů jinam, synchronizovat jej mezi vlastním počítačem a internetem, na dálku jej někomu ukázat.
 
-### GitHub
+### GitHub    <span id="github"></span>
 
 [GitHub](https://github.com/) je **úložiště kódu a sociální síť pro programátory**. Kód tam lze poslat pomocí Gitu. GitHub není jediným takovým úložištěm, další jsou např. GitLab nebo BitBucket, ale je nejoblíbenějším pro [open source](#zkus-open-source), takže tam najdeš nejvíce projektů a lidí.
 
-### Neboj se ukázat kód!
+### Neboj se ukázat kód!    <span id="showoff"></span>
 
 U začátečníků rozhodně platí, že **nemají co schovávat a měli by světu ukázat co nejvíce toho, co dokázali vytvořit, nebo co zkoušeli řešit**. Můžeš tím jenom získat. GitHub je příhodné místo, kam všechny své projekty a pokusy nahrávat. Zároveň je to místo, kde mají své projekty i všichni ostatní a kde lze spolupracovat s lidmi z celého světa.
 
 Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic neumíš. Neboj se mít svůj kód veřejně a ukazovat ho druhým! Tato obava je zbytečnou překážkou ve tvém rozjezdu. Programování je o spolupráci a **GitHub je hřiště pro programátory, kde si každý experimentuje na čem chce.** Čím více tam toho máš, tím lépe. Nejen že se naučíš lépe ovládat Git, ale hlavně budeš moci svůj kód ukázat, když budeš potřebovat [pomoc na dálku](learn.md#kde-najdes-pomoc). Pokud tě někdo straší, že si tvůj GitHub budou procházet náboráři, [nenech se tím zmást, je to trochu jinak](/candidate-handbook/#projects).
 
-### Jak se naučit Git a GitHub
+### Jak se naučit Git a GitHub    <span id="howto-git-github"></span>
 
 <div class="link-cards">
   {{ link_card(
@@ -118,7 +118,7 @@ Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic
 </div>
 
 
-## Najdi si mentora
+## Najdi si mentora    <span id="mentors"></span>
 
 Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to být vyloženě mistr v oboru, stačí když bude v programování alespoň o něco zkušenější než ty. A klidně může stačit, když se uvidíte jednu hodinu týdně přes videohovor. Pokud znáš někoho, kdo by mohl být tvým mentorem, ale nemá s tím praktické zkušenosti, projděte spolu [přednášku o mentorování](https://github.com/honzajavorek/become-mentor/blob/master/cs.md#readme) a prostě to zkuste!
 
@@ -171,7 +171,7 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
 </div>
 
 
-## Zkus „hackathon“
+## Zkus „hackathon“    <span id="hackathons"></span>
 
 [Hackathon](https://cs.wikipedia.org/wiki/Hackathon) je akce, kde se sejdou lidi se zájmem o nějaké téma, utvoří smíšené týmy (zkušení i začínající programátoři, designéři) a v daném čase vymyslí a zpracují nějaké řešení. Nejlepší někdy dostanou ceny. Pro lepší představu si přečti [článek od účastnice Michaely](https://medium.com/@misasebestova/m%C5%AFj-prvn%C3%AD-datov%C3%BD-hackathon-6f753a4730cf).
 
@@ -217,21 +217,21 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
 {% endcall %}
 
 
-## Zkus „open source“
+## Zkus „open source“    <span id="opensource"></span>
 
 [Open-source software](https://cs.wikipedia.org/wiki/Otev%C5%99en%C3%BD_software) (OSS) jsou projekty s kódem, na který se může kdokoliv podívat, a které lze většinou využívat zdarma — například [Linux](https://cs.wikipedia.org/wiki/Linux) nebo [LibreOffice](https://cs.wikipedia.org/wiki/LibreOffice). Pokud si [dáš svůj projekt na GitHub](#github), kde jeho kód mohou číst další lidé, máš taky takový maličký open source. I tyto webové stránky [jsou open source](https://github.com/honzajavorek/junior.guru).
 
 Existují tisíce open source projektů uveřejněných pro dobro všech, některé více či méně užitečné, některé vytvářené ve volném čase lidí, jiné zaštiťované organizacemi. Je to obrovský fenomén a když se do něj člověk zapojí, může získat mnoho zkušeností, cenných kontaktů i nových přátel.
 
-### Nemusíš jen programovat
+### Nemusíš jen programovat    <span id="not-only-coding"></span>
 
 Open source není jen o programování. Pokud se zatím necítíš na psaní kódu, [je i hodně jiných způsobů, jak můžeš přiložit ruku k dílu](https://opensource.guide/how-to-contribute/#what-it-means-to-contribute). Např. psaním dokumentace, psaním článků, navrhováním grafiky nebo „procházením GitHub Issues“ (anglicky _triaging_, hezky popsáno v článku [How to fix a bug in open source software](https://opensource.com/life/16/8/how-get-bugs-fixed-open-source-software)).
 
-### Open source jako inspirace
+### Open source jako inspirace    <span id="open-source-inspiration"></span>
 
 Do open source nemusíš hned přispívat. Ze začátku se můžeš hodně naučit i pouhým pozorováním, čtením cizího kódu, hledáním inspirace. Můžeš se např. podívat, [jak jiní lidé naprogramovali piškvorky v Pythonu](https://github.com/search?l=Python&q=tic-tac-toe).
 
-### Jak začít?
+### Jak začít?    <span id="how-to-start"></span>
 
 Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují ve volném čase. Nováčci jsou vítáni, ale jen málo projektů má sílu aktivně nabízet [mentorování](#najdi-si-mentora). Nejsnazší cesta vede přes různé programy a stáže, jako např. [Google Summer of Code](https://summerofcode.withgoogle.com/), ale nejčastěji se lidé k open source dostanou posloupností „vidím rozbitou věc, spravím, pošlu opravu“.
 
@@ -327,13 +327,13 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
 {{ links_note() }}
 
 
-## Rozšiřuj si znalosti
+## Rozšiřuj si znalosti    <span id="skills"></span>
 
 Umět programovat např. v Pythonu je dobrý základ, ale pro plnohodnotnou práci to nestačí. S prvními pokusy se uplatnit zjistíš, že by se ti hodilo aspoň trochu znát Git, HTML, SQL, JavaScript, … Pro každou takovou technologii existují kurzy, workshopy, knihy.
 
 Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to je a k čemu se to používá. Pokud o tom uslyšíš poněkolikáté, zkus si najít víc a pochopit základy.
 
-### Základy
+### Základy    <span id="basics"></span>
 
 <div class="link-cards">
   {{ link_card(
@@ -356,7 +356,8 @@ Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to j
 </div>
 
 
-### Kde hledat kurzy a workshopy?
+### Kde hledat kurzy a workshopy?    <span id="courses"></span>
+
 <div class="link-cards">
   {{ link_card(
     'Aj Ty v IT',
@@ -476,7 +477,7 @@ Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to j
 <small>Tento seznam je v abecedním pořadí. Pokud víš o dalším webu s kurzy, piš na {{ 'ahoj@junior.guru'|email_link }}.</small>
 
 
-## Najdi inspiraci, poznej lidi
+## Najdi inspiraci, poznej lidi    <span id="events"></span>
 
 Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky nebo lidmi z nového oboru. Důvodů, proč polevit, může nastat hodně. Proto je dobré pravidelně se setkávat s komunitou začínajících i pokročilých programátorů a nabíjet se tak novou energií a inspirací. Dříve existovaly hlavně dva druhy setkání: místní srazy a celostátní konference. Během covidu-19 bylo mnoho akcí zrušeno, nebo přešlo do online podoby.
 
@@ -544,16 +545,16 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
   ) }}
 </div>
 
-### Nebudu mimo mísu?
+### Nebudu mimo mísu?    <span id="beginner-friendly"></span>
 
 Výše uvedené akce jsou vhodné i pro začátečníky a účastní se jich významné procento žen. Náplní těchto akcí jsou odborné přednášky pro různé úrovně znalostí a networking — povídání si s lidmi. Vždy se odehrávají v neformálním, pohodovém prostředí.
 
-### Kde na to vzít?
+### Kde na to vzít?    <span id="fin-aid"></span>
 
 Na konference je potřeba si koupit lístek. Výše zmíněné konference mají velmi dostupné lístky se slevami (např. pro studenty), ale i tak je možné, že je mimo tvé finanční možnosti se účastnit. Pro takový případ konference poskytují „Financial Aid“ — finanční pomoc s lístkem, ubytováním nebo cestou.
 
 
-## Neflákej angličtinu
+## Neflákej angličtinu    <span id="english"></span>
 
 **Bez angličtiny se neobejdeš.** Je to klíč ke dveřím do celého světa. Vybíráš ze dvou českých mentorů, ze tří českých online kurzů? S angličtinou vybíráš ze stovek mentorů a desítek kurzů. **Nedostatečná angličtina je v IT jako bolavý zub.** Chvíli s ním vydržíš, ale když to nezačneš řešit včas, budeš hodně litovat. Nauč se ji aspoň pasivně — pokud zvládáš číst anglický text, pochopit v něm zadání a učit se z něj nové věci, pro start to stačí.
 
