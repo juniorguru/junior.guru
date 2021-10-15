@@ -69,8 +69,10 @@ Programování není cíl, ale nástroj — jako šroubovák nebo matematika. Do
 
 Doktoři a vědci přicházejí na to, že když výpočty naprogramují, mohou svůj výzkum provést mnohem rychleji. Novináři, kteří umí zpracovávat velká množství dat, díky tomu [přinášejí zajímavé analýzy](https://www.irozhlas.cz/zpravy-tag/datova-zurnalistika). Kromě toho, s příchodem covidu-19 se dostaly složité grafy a datová žurnalistika do každé větší redakce. Prakticky každý, kdo má základy programování, si zase dokáže ušetřit práci s excelovskými tabulkami nebo s uspořádáním velkého množství souborů na disku. Místo toho, aby se někde muselo 500× udělat Ctrl+C a Ctrl+V, můžeš si to naprogramovat.
 
-{% call blockquote(
-  'Vývojáři-amatéři ve firmách se stále častěji uchylují k vlastnoruční tvorbě nástrojů, které potřebují k práci. Počet takových lidí stoupá geometrickou řadou.'
+{% call blockquote_avatar(
+  'Vývojáři-amatéři ve firmách se stále častěji uchylují k vlastnoruční tvorbě nástrojů, které potřebují k práci. Počet takových lidí stoupá geometrickou řadou.',
+  'cio.png',
+  'CIO Business World'
 ) %}
   CIO Business World, článek [Naprogramuj si to sám!](https://www.cio.cz/clanky/naprogramuj-si-to-sam/)
 {% endcall %}
@@ -91,8 +93,10 @@ Průměrná mzda programátorů je 50.000 Kč a [těch zkušených je dlouhodob�
 
 IT samozřejmě neexistuje ve vzduchoprázdnu a ostatní obory potřebuje. Vyrábí nástroje a tyto nástroje musí mít kdo používat. **Pro programátory samotné to ale není takový problém.** Když přestane fungovat prodej letenek, mohou jít programovat třeba pro banky.
 
-{% call blockquote(
-  'Na rozdíl od řady dalších profesí je pro IT odborníky specifické především to, že jsou rozptýleni napříč hospodářskými odvětvími.'
+{% call blockquote_avatar(
+  'Na rozdíl od řady dalších profesí je pro IT odborníky specifické především to, že jsou rozptýleni napříč hospodářskými odvětvími.',
+  'csu.png',
+  'Český statistický úřad'
 ) %}
   [Zpráva Českého statistického úřadu](https://www.czso.cz/csu/czso/ict-odbornici)
 {% endcall %}
