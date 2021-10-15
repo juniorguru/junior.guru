@@ -12,7 +12,9 @@ for el in root_el.cssselect('[id]'):
     elif el.tag == 'section':
         h2_el = el.cssselect('h2')[0]
         print(f"## {h2_el.text_content().strip()}    <span id=\"{el.get('id')}\"></span>")
+    elif el.tag == 'h2':
+        print(f"## {el.text_content().strip()}    <span id=\"{el.get('id')}\"></span>")
     elif el.tag == 'h3':
         print(f"### {el.text_content().strip()}    <span id=\"{el.get('id')}\"></span>")
     else:
-        raise RuntimeError(f'Unexpected element: {el}')
+        print(f'Unexpected element: {el}')
