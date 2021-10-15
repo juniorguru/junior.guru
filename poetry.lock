@@ -1323,7 +1323,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "strictyaml"
-version = "1.4.4"
+version = "1.5.0"
 description = "Strict, typed YAML parser"
 category = "main"
 optional = false
@@ -2382,7 +2382,7 @@ soupsieve = [
     {file = "soupsieve-2.2.1.tar.gz", hash = "sha256:052774848f448cf19c7e959adf5566904d525f33a3f8b6ba6f6f8f26ec7de0cc"},
 ]
 strictyaml = [
-    {file = "strictyaml-1.4.4.tar.gz", hash = "sha256:044ae3bec56f31e18dff8cfa62a2c9c028f4c7fe4c0f761e50761184d3b68eef"},
+    {file = "strictyaml-1.5.0.tar.gz", hash = "sha256:273a6382cc98a404d20779351cd5bb12e746397fbe18a8e9ccec4ae3c0ffa0e2"},
 ]
 threadpoolctl = [
     {file = "threadpoolctl-2.2.0-py3-none-any.whl", hash = "sha256:e5a995e3ffae202758fa8a90082e35783b9370699627ae2733cd1c3a73553616"},
