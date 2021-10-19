@@ -2,19 +2,28 @@
 {% from 'macros.html' import logo with context %}
 
 
-{% block extra_navbar %}
-<div class="navbar-partners">
-  <div class="navbar-partners-container">
-    <h3 class="navbar-partners-heading">
-      <span>Partneři <span class="navbar-partners-nonessential">příručky</span></span>
+{% block extra_header %}
+<div class="logobar">
+  <div class="logobar-container">
+    <h3 class="logobar-heading">
+      <span>Partneři <span class="logobar-nonessential">příručky</span></span>
     </h3>
-    <ul class="navbar-partners-list">
+    <ul class="logobar-list">
       {% for company in companies_handbook %}
-        {{ logo(company.name, company.filename, company.link, class_prefix='navbar-partners') }}
+        {{ logo(company.name, company.filename, company.link, class_prefix='logobar') }}
       {% endfor %}
     </ul>
   </div>
 </div>
+
+<nav class="tocbar">
+  <div class="tocbar-container">
+    <a class="tocbar-item tocbar-toc-link" href="#toc">
+      <i class="bi bi-list"></i> Obsah
+    </a>
+    <span class="tocbar-item tocbar-current"></span>
+  </div>
+</nav>
 {% endblock %}
 
 

@@ -7,7 +7,7 @@
 
 {% block body %}
 <body>
-  <header class="navbar navbar-light">
+  <header id="header" class="navbar navbar-light">
     <nav class="navbar-container">
       <a class="navbar-brand " href="{{ '/'|url }}">
         {{ img('static/images/logo.svg', 'Logo junior.guru', 90, 40, lazy=False) }}
@@ -33,8 +33,9 @@
       </ul>
       {% endif %}
     </nav>
-    {% block extra_navbar %}{% endblock %}
   </header>
+
+  {% block extra_header %}{% endblock %}
 
   <hr class="visually-hidden">
 

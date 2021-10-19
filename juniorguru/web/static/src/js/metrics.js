@@ -26,27 +26,6 @@ function setupMetricsUtm(link) {
   }
 }
 
-function setupMetricsOutbound(link) {
-  addMetricsEvent(link, link.href, 'outbound');
-  if (!link.dataset.hasOwnProperty('metricsNoUtm')) {
-    setupMetricsUtm(link);
-  }
-}
-
-function isOutboundLink(link) {
-  if (!link || !link.href || !link.href.match(/^http/)) {
-    return false;
-  }
-
-  try {
-    const url = new URL(link.href);
-    const hostname = url.hostname.replace('www.', '');
-    return !(hostname == 'localhost' || hostname == 'junior.guru');
-  } catch (error) {
-    return false;
-  }
-}
-
 function addMetricsEvent(link, url, name) {
   link.addEventListener('mousedown', function (event) {
     try {
@@ -77,10 +56,4 @@ document.addEventListener('DOMContentLoaded', function () {
     .forEach(setupMetrics);
   Array.from(document.querySelectorAll('*[data-metrics-utm]'))
     .forEach(setupMetricsUtm);
-
-  // TURNING THIS OFF, IT'S ANNOYING AND I DON'T USE IT FOR ANYTHING ANYWAY
-  // // implicit
-  // Array.from(document.querySelectorAll('a'))
-  //   .filter(isOutboundLink)
-  //   .forEach(setupMetricsOutbound);
 });

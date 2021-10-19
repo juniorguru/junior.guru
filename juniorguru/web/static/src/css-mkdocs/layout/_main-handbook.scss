@@ -62,14 +62,6 @@
   margin: 0;
 }
 
-.toc-sublist {
-  display: none;
-
-  @include media-breakpoint-up(lg) {
-    display: block;
-  }
-}
-
 .toc-link,
 .toc-sublink {
   color: $body-color;

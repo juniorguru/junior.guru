@@ -1,6 +1,4 @@
-.navbar-partners {
-  position: relative;
-  top: $navbar-padding-y;
+.logobar {
   width: 100%;
   background: $jg-white;
   border-bottom: 1px solid $jg-gray-light;
@@ -10,7 +8,7 @@
   }
 }
 
-.navbar-partners-container {
+.logobar-container {
   @extend .container-md;
   display: flex;
   justify-content: center;
@@ -19,7 +17,7 @@
   padding-left: 0;
 }
 
-.navbar-partners-heading {
+.logobar-heading {
   @extend .text-muted;
   @include font-size($sub-sup-font-size);
   display: flex;
@@ -46,7 +44,7 @@
   }
 }
 
-.navbar-partners-nonessential {
+.logobar-nonessential {
   display: none;
 
   @include media-breakpoint-up(sm) {
@@ -54,7 +52,7 @@
   }
 }
 
-.navbar-partners-list {
+.logobar-list {
   @extend .logos;
   flex-wrap: nowrap;
   justify-content: space-evenly;
@@ -68,25 +66,25 @@
   }
 }
 
-.navbar-partners-item {
+.logobar-item {
   @extend .logos-item;
   margin-bottom: 0;
 }
 
-.navbar-partners-item:first-child {
+.logobar-item:first-child {
   margin-left: 0;
 }
 
-.navbar-partners-item:last-child {
+.logobar-item:last-child {
   margin-right: 0;
 }
 
-.navbar-partners-link {
+.logobar-link {
   // @extend .logos-link;
   padding: $navbar-padding-y 0;
 }
 
-.navbar-partners-image {
+.logobar-image {
   @extend .logos-image;
   width: 100%;
   max-height: map-get($spacers, 3);

@@ -1,0 +1,45 @@
+.tocbar {
+  position: sticky;
+  top: 0;
+  z-index: $zindex-sticky;
+  width: 100%;
+  background: $jg-blue-light;
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+.tocbar-container {
+  @extend .container-md;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: map-get($container-max-widths, lg);
+  padding: $navbar-padding-y $spacer;
+
+  @include media-breakpoint-up(md) {
+    padding: $spacer;
+  }
+}
+
+.tocbar-item {
+  @include font-size($font-size-base);
+  margin: 0;
+  font-weight: $font-weight-normal;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tocbar-item .bi {
+  margin-right: map-get($spacers, 1);
+}
+
+[id] {
+  scroll-margin-top: map-get($spacers, 5);
+
+  @include media-breakpoint-up(lg) {
+    scroll-margin-top: $spacer;
+  }
+}
