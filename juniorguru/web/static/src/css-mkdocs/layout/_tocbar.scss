@@ -16,10 +16,11 @@
   align-items: center;
   justify-content: space-between;
   max-width: map-get($container-max-widths, lg);
+  height: map-get($spacers, 3) + (2 * $navbar-padding-y);
   padding: $navbar-padding-y $spacer;
 
   @include media-breakpoint-up(md) {
-    padding: $spacer;
+    height: map-get($spacers, 4) + (2 * $navbar-padding-y);
   }
 }
 

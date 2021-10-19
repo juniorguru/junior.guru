@@ -64,24 +64,17 @@
 
 .toc-link,
 .toc-sublink {
+  display: block;
   color: $body-color;
-
-  @include media-breakpoint-up(lg) {
-    display: block;
-    text-decoration: none;
-  }
+  text-decoration: none;
 }
 
 .toc-link {
-  line-height: $line-height-lg;
-
-  @include media-breakpoint-up(lg) {
-    margin-top: map-get($spacers, 3);
-    line-height: $line-height-sm;
-    border-color: $body-color;
-    border-style: solid;
-    border-width: 0 0 map-get($border-widths, 1) 0;
-  }
+  margin-top: map-get($spacers, 3);
+  line-height: $line-height-sm;
+  border-color: $body-color;
+  border-style: solid;
+  border-width: 0 0 map-get($border-widths, 1) 0;
 }
 
 .toc-link:hover {
