@@ -4,7 +4,7 @@
     "node": "14.x"
   },
   "dependencies": {
-    "bootstrap-icons": "1.6.0",
+    "bootstrap-icons": "1.6.1",
     "instant.page": "3.0.0",
     "rough-notation": "0.5.1"
   },
