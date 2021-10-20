@@ -1,7 +1,6 @@
 import './annotations';
 import './membership';
 import './metrics';
-import './testimonials';
 
 import 'instant.page';
 
