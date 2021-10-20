@@ -1,4 +1,3 @@
-from juniorguru.models.club import ClubUser
 import os
 from pathlib import Path
 
@@ -187,18 +186,6 @@ def generate_job_pages():
             yield 'job', dict(job_id=job.id)
 
 
-@app.route('/hire-juniors/')
-def hire_juniors():
-    with db:
-        metrics = Metric.as_dict()
-        members_total_count = ClubUser.members_count()
-    return render_template('hire_juniors.html',
-                           nav_active='jobs',
-                           metrics=metrics,
-                           members_total_count=members_total_count,
-                           thumbnail=thumbnail(title='Najímejte odhodlané juniory'))
-
-
 @app.route('/donate/')
 def donate():
     with db:
@@ -291,3 +278,7 @@ def practice():
 @app.route('/candidate-handbook/')
 def candidate_handbook():
     return REFRESH_PAGE
+
+@app.route('/hire-juniors/')
+def hire_juniors():
+    return redirect(url_for('jobs', _external=True))
