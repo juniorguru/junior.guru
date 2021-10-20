@@ -30,7 +30,7 @@
   <body class="body{% block body_modifier %}{% endblock %}">
     <div class="body__container">
     {% block body %}
-      <header class="header{% if subnav_tabs %} header--subnav{% endif %}{% block header_modifier %}{% endblock %}">
+      <header class="header{% block header_modifier %}{% endblock %}">
         <div class="header__navbar">
           <div class="header__main">
             <div class="header__main-content">
@@ -61,22 +61,6 @@
               {% endif %}
             </div>
           </div>
-          {% if subnav_tabs %}
-            <nav class="header__subnav">
-              <ul class="header__subnav-tabs">
-                {%- for tab in subnav_tabs -%}
-                  <li class="header__subnav-tab">
-                    <a class="header__subnav-tab-control{% if tab.endpoint == subnav_active %} header__subnav-tab-control--active{% endif %}" href="{{ url_for(tab.endpoint) }}">
-                      {% if tab.number is defined %}
-                        <span class="header__subnav-tab-number">{{ tab.number }}</span>
-                      {% endif %}
-                      <span class="header__subnav-tab-name">{{ tab.name }}</span>
-                    </a>
-                  </li>
-                {%- endfor -%}
-              </ul>
-            </nav>
-          {% endif %}
           <hr class="header__divider">
         </div>
         {% block header_toc %}{% endblock %}

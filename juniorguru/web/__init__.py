@@ -26,16 +26,6 @@ NAV_TABS = [
     {'endpoint': 'club', 'name': 'Klub'},
 ]
 
-JOBS_SUBNAV_TABS = [
-    {'endpoint': 'jobs', 'name': 'Nabídky práce'},
-    {'endpoint': 'hire_juniors', 'name': 'Pro firmy'},
-]
-
-CLUB_SUBNAV_TABS = [
-    {'endpoint': 'club', 'name': 'O klubu'},
-    {'endpoint': 'events', 'name': 'Akce'},
-    {'endpoint': 'membership', 'name': 'Pro členy'},
-]
 
 REGIONS = [
     # tech hubs
@@ -121,8 +111,6 @@ def events():
         thumbnail_path = thumbnail(title='Klubové akce')
     return render_template('events.html',
                            nav_active='club',
-                           subnav_tabs=CLUB_SUBNAV_TABS,
-                           subnav_active='events',
                            events_planned=events_planned,
                            events_archive=events_archive,
                            thumbnail=thumbnail_path)
@@ -132,8 +120,6 @@ def events():
 def membership():
     return render_template('membership.html',
                            nav_active='club',
-                           subnav_tabs=CLUB_SUBNAV_TABS,
-                           subnav_active='membership',
                            thumbnail=thumbnail(title='Rozcestník pro členy klubu'))
 
 
@@ -144,8 +130,6 @@ def jobs():
         jobs = Job.listing()
     return render_template('jobs.html',
                            nav_active='jobs',
-                           subnav_tabs=JOBS_SUBNAV_TABS,
-                           subnav_active='jobs',
                            jobs=jobs,
                            regions=REGIONS,
                            metrics=metrics,
@@ -159,8 +143,6 @@ def jobs_remote():
         jobs = Job.remote_listing()
     return render_template('jobs_remote.html',
                            nav_active='jobs',
-                           subnav_tabs=JOBS_SUBNAV_TABS,
-                           subnav_active='jobs',
                            jobs=jobs,
                            remote=True,
                            regions=REGIONS,
@@ -177,8 +159,6 @@ def jobs_region(region_id):
         jobs_remote = Job.remote_listing()
     return render_template('jobs_region.html',
                            nav_active='jobs',
-                           subnav_tabs=JOBS_SUBNAV_TABS,
-                           subnav_active='jobs',
                            jobs=jobs,
                            jobs_remote=jobs_remote,
                            region=region,
@@ -194,8 +174,6 @@ def job(job_id):
         job = Job.juniorguru_get_by_id(job_id)
     return render_template('job.html',
                            nav_active='jobs',
-                           subnav_tabs=JOBS_SUBNAV_TABS,
-                           subnav_active='jobs',
                            job=job,
                            metrics=metrics,
                            thumbnail=thumbnail(job_title=job.title,
@@ -216,8 +194,6 @@ def hire_juniors():
         members_total_count = ClubUser.members_count()
     return render_template('hire_juniors.html',
                            nav_active='jobs',
-                           subnav_tabs=JOBS_SUBNAV_TABS,
-                           subnav_active='hire_juniors',
                            metrics=metrics,
                            members_total_count=members_total_count,
                            thumbnail=thumbnail(title='Najímejte odhodlané juniory'))
