@@ -7,7 +7,7 @@ from email.message import EmailMessage
 from email.headerregistry import Address
 
 from juniorguru.lib import loggers
-from juniorguru.send import job_metrics, logo_metrics
+from juniorguru.send import job_metrics
 
 
 logger = loggers.get('send')
@@ -15,7 +15,6 @@ logger = loggers.get('send')
 
 EMAIL_BATCHES = (
     (job_metrics, 'Monday?', lambda date: date.weekday() == 0),
-    (logo_metrics, 'First day of the month?', lambda date: date.today().day == 1),
 )
 
 

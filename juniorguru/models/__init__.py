@@ -5,7 +5,6 @@ from juniorguru.models.story import Story
 from juniorguru.models.supporter import Supporter
 from juniorguru.models.last_modified import LastModified
 from juniorguru.models.press_release import PressRelease
-from juniorguru.models.logo import Logo, LogoMetric
 from juniorguru.models.spider_metric import SpiderMetric
 from juniorguru.models.proxy import Proxy
 from juniorguru.models.topic import Topic
@@ -16,7 +15,7 @@ from juniorguru.models.employment import Employment
 
 
 __all__ = [db, Job, JobDropped, JobError, JobMetric, Metric, Story, Supporter,
-           LastModified, PressRelease, Logo, LogoMetric,
+           LastModified, PressRelease,
            retry_when_db_locked, SpiderMetric, EMPLOYMENT_TYPES, Proxy,
            Topic, ClubMessage, ClubUser, ClubPinReaction, Event, EventSpeaking,
            Company, with_db, Employment, json_dumps]

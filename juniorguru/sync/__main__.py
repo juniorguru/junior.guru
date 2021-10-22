@@ -5,7 +5,6 @@ from juniorguru.lib import loggers
 from juniorguru.lib import timer
 from juniorguru.sync.employments import main as sync_employments
 from juniorguru.sync.jobs import main as sync_jobs
-from juniorguru.sync.logos import main as sync_logos
 from juniorguru.sync.metrics import main as sync_metrics
 from juniorguru.sync.stories import main as sync_stories
 from juniorguru.sync.supporters import main as sync_supporters
@@ -39,7 +38,6 @@ def main():
     sync_supporters()
     sync_last_modified()
     sync_press_releases()
-    sync_logos()
     sync_companies()  # might depend on subscriptions one day?
     sync_transactions()
     sync_proxies()

@@ -12,7 +12,7 @@ from juniorguru.lib.google_analytics import (
     metric_avg_monthly_jobs_users)
 from juniorguru.lib import google_sheets
 from juniorguru.lib.coerce import parse_currency, parse_ptc
-from juniorguru.models import Job, JobMetric, Metric, Logo, LogoMetric, db
+from juniorguru.models import Job, JobMetric, Metric, db
 
 
 GOOGLE_ANALYTICS_VIEW_ID = '198392474'  # https://ga-dev-tools.appspot.com/account-explorer/
@@ -77,24 +77,6 @@ def main():
                 JobMetric.create(job=job, name='pageviews', value=value)
             except Job.DoesNotExist:
                 pass
-
-        LogoMetric.drop_table()
-        LogoMetric.create_table()
-
-        for url, value in google_analytics_metrics['clicks_per_logo'].items():
-            try:
-                logo = Logo.get_by_url(url)
-                LogoMetric.create(logo=logo, name='clicks', value=value)
-            except Logo.DoesNotExist:
-                pass
-
-        for logo in Logo.listing():
-            values = google_analytics_metrics['handbook_users_per_date']
-            metric = LogoMetric.from_values_per_date(logo, 'users', values)
-            metric.save()
-            values = google_analytics_metrics['handbook_pageviews_per_date']
-            metric = LogoMetric.from_values_per_date(logo, 'pageviews', values)
-            metric.save()
 
 
 def fetch_from_google_analytics():
