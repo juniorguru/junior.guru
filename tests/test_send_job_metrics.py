@@ -36,14 +36,6 @@ def test_create_message_metrics(job_mock, template):
     assert '<b>25</b>' in html
 
 
-def test_create_message_prefill_form(job_mock, template):
-    job_mock.company_name = 'Honza Ltd.'
-    message = create_message(job_mock, template, date.today())
-    html = message['html_content']
-
-    assert '&entry.681099058=Honza+Ltd.' in html
-
-
 def test_create_message_start_end(job_mock, template):
     job_mock.posted_at = date(2020, 6, 1)
     job_mock.expires_at = date(2020, 7, 1)
@@ -90,7 +82,7 @@ def test_create_message_expires_soon(job_mock, template):
     html = message['html_content']
 
     assert 'prodloužit o dalších 30&nbsp;dní' in html
-    assert 'https://junior.guru/hire-juniors/#pricing' in html
+    assert '1.199&nbsp;Kč' in html
 
 
 def test_create_message_expires_not_soon(job_mock, template):
@@ -99,39 +91,3 @@ def test_create_message_expires_not_soon(job_mock, template):
     html = message['html_content']
 
     assert 'prodloužit o dalších 30&nbsp;dní' not in html
-
-
-def test_create_message_expires_soon_community(job_mock, template):
-    job_mock.expires_at = date(2020, 7, 1)
-    job_mock.pricing_plan = 'community'
-    message = create_message(job_mock, template, date(2020, 6, 26))
-    html = message['html_content']
-
-    assert 'komunit' in html
-    assert 'ZDARMA' in html
-    assert 'paušál' not in html
-    assert 'https://junior.guru/hire-juniors/#pricing' in html
-
-
-def test_create_message_expires_soon_standard(job_mock, template):
-    job_mock.expires_at = date(2020, 7, 1)
-    job_mock.pricing_plan = 'standard'
-    message = create_message(job_mock, template, date(2020, 6, 26))
-    html = message['html_content']
-
-    assert '500&nbsp;Kč' in html
-    assert 'paušál' not in html
-    assert 'komunit' not in html
-    assert 'https://junior.guru/hire-juniors/#pricing' in html
-
-
-def test_create_message_expires_soon_annual_flat_rate(job_mock, template):
-    job_mock.expires_at = date(2020, 7, 1)
-    job_mock.pricing_plan = 'annual_flat_rate'
-    message = create_message(job_mock, template, date(2020, 6, 26))
-    html = message['html_content']
-
-    assert 'paušál' in html
-    assert 'ZDARMA' in html
-    assert 'komunit' not in html
-    assert 'https://junior.guru/hire-juniors/#pricing' in html
