@@ -1,4 +1,5 @@
 from pathlib import Path
+import csv
 
 import jinja2
 
@@ -7,7 +8,7 @@ from mkdocs.utils import get_relative_url
 
 from juniorguru.lib import template_filters
 from juniorguru.mkdocs import context as context_hooks
-from juniorguru.models import Employment, with_db, json_dumps
+from juniorguru.models import Employment, with_db
 
 
 TEMPLATE_FILTERS = [
@@ -79,8 +80,14 @@ def on_page_context(context, page, config, nav):
 def on_post_build(config):
     api_dir = Path(config['site_dir']) / 'api'
     api_dir.mkdir(parents=True, exist_ok=True)
-    data = [employment.to_api() for employment in Employment.api_listing()]
-    (api_dir / 'jobs.json').write_text(json_dumps(data))
+
+    api_file = (api_dir / 'jobs.csv')
+    rows = [employment.to_api() for employment in Employment.api_listing()]
+
+    with api_file.open('w', encoding='utf-8') as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        writer.writeheader()
+        writer.writerows(rows)
 
 
 def create_md_filter(page, config, files):

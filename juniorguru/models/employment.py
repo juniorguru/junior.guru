@@ -73,18 +73,33 @@ class Employment(BaseModel):
                    if field_name in item})
 
     def to_api(self):
-        return dict(title=self.title,
-                    company_name=self.company_name,
-                    url=self.url,
-                    external_ids=self.external_ids,
-                    locations=self.locations,
-                    remote=self.remote,
-                    first_seen_at=self.first_seen_at,
-                    last_seen_at=self.last_seen_at,
-                    lang=self.lang,
-                    juniority_score=self.juniority_re_score,
-                    employment_types=self.employment_types,
-                    source=self.source)
+        return dict(**dict(
+                        title=self.title,
+                        company_name=self.company_name,
+                        url=self.url,
+                        remote=self.remote,
+                        first_seen_at=self.first_seen_at,
+                        last_seen_at=self.last_seen_at,
+                        lang=self.lang,
+                        juniority_score=self.juniority_re_score,
+                        source=self.source,
+                    ),
+                    **{
+                        f'external_ids_{i}': value for i, value
+                        in columns(self.external_ids, 10)
+                    },
+                    **{
+                        f'locations_{i}_name': (value['name'] if value else None) for i, value
+                        in columns(self.locations, 20)
+                    },
+                    **{
+                        f'locations_{i}_region': (value['region'] if value else None) for i, value
+                        in columns(self.locations, 20)
+                    },
+                    **{
+                        f'employment_types_{i}': value for i, value
+                        in columns(self.employment_types, 10)
+                    })
 
     def merge_item(self, item):
         for field_name in self.__class__._meta.fields.keys():
@@ -113,3 +128,9 @@ class Employment(BaseModel):
 
     def _merge_items_merged_count(self, item):
         return self.items_merged_count + 1
+
+
+def columns(values, columns_count):
+    values = list(values or [])
+    values_count = len(values)
+    return enumerate([values[i] if values_count > i else None for i in range(columns_count)])
