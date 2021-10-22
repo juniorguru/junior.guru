@@ -20,7 +20,8 @@ def create_record(record=None):
         'Je práce na dálku?': record.get('Je práce na dálku?', 'No'),
         'Město, kde se nachází kancelář': record.get('Město, kde se nachází kancelář', 'Prague'),
         'Externí odkaz na pracovní nabídku': record.get('Externí odkaz na pracovní nabídku', 'https://jobs.example.com/1245/'),
-        'Varianta z ceníku': record.get('Varianta z ceníku', '0 CZK — Community'),
+        'Varianta z ceníku': record.get('Varianta z ceníku', None),
+        'Kupón na 100% slevu z ceny inzerátu': record.get('Kupón na 100% slevu z ceny inzerátu', None),
         'Approved': record.get('Approved', '10/10/2019'),
         'Expires': record.get('Expires', '12/12/2019'),
     }
@@ -56,22 +57,6 @@ def test_spider_parse_multiple_locations():
     assert jobs[1]['locations_raw'] == ['Brno']
 
 
-@pytest.mark.parametrize('value,expected', [
-    ('5000 CZK — Annual Flat Rate, first posting (Roční paušál, první inzerát)', 'annual_flat_rate'),
-    ('0 CZK — Annual Flat Rate (Roční paušál)', 'annual_flat_rate'),
-    ('0 CZK — Roční paušál, další inzerát', 'annual_flat_rate'),
-    ('500 CZK — Standard', 'standard'),
-    ('690 CZK — Standard', 'standard'),
-    ('600 CZK', 'standard'),
-    ('0 CZK', 'community'),
-    ('0 CZK — Community', 'community'),
-    ('', 'community'),
-    (None, 'community'),
-])
-def test_parse_pricing_plan(value, expected):
-    assert juniorguru.parse_pricing_plan(value) == expected
-
-
 def test_create_id():
     id_ = juniorguru.create_id(datetime(2019, 7, 6, 20, 24, 3), 'https://www.example.com/foo/bar.html')
     assert id_ == hashlib.sha224(b'2019-07-06T20:24:03 www.example.com').hexdigest()
@@ -90,8 +75,39 @@ def test_coerce_record():
         'locations_raw': ['Prague'],
         'remote': False,
         'link': f'https://junior.guru/jobs/{id_}/',
-        'pricing_plan': 'community',
+        'pricing_plan': 'standard',
         'approved_at': date(2019, 10, 10),
         'expires_at': date(2019, 12, 12),
         'apply_link': 'https://jobs.example.com/1245/',
     }
+
+
+@pytest.mark.parametrize('legacy_value, coupon, expected', [
+    ('5000 CZK — Annual Flat Rate, first posting (Roční paušál, první inzerát)', None, 'annual_flat_rate'),
+    ('0 CZK — Annual Flat Rate (Roční paušál)', None, 'annual_flat_rate'),
+    ('0 CZK — Roční paušál, další inzerát', None, 'annual_flat_rate'),
+    ('500 CZK — Standard', None, 'standard'),
+    ('690 CZK — Standard', None, 'standard'),
+    ('600 CZK', None, 'standard'),
+    ('0 CZK', None, 'community'),
+    ('0 CZK — Community', None, 'community'),
+    ('', None, 'standard'),
+    (None, '', 'standard'),
+    ('', '', 'standard'),
+    (None, None, 'standard'),
+    ('', 'COUPONCODE', 'community'),
+    (None, 'COUPONCODE', 'community'),
+])
+def test_coerce_record_pricing(legacy_value, coupon, expected):
+    record = create_record({'Varianta z ceníku': legacy_value,
+                            'Kupón na 100% slevu z ceny inzerátu': coupon})
+    data = juniorguru.coerce_record(record)
+
+    assert data['pricing_plan'] == expected
+
+
+def test_coerce_record_pricing_raises_when_both_legacy_pricing_plan_and_coupon_are_set():
+    record = create_record({'Varianta z ceníku': '600 CZK',
+                            'Kupón na 100% slevu z ceny inzerátu': 'AMAZINGCOUPON'})
+    with pytest.raises(ValueError):
+        juniorguru.coerce_record(record)

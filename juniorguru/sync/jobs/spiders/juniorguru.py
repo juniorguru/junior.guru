@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 from scrapy import Spider as BaseSpider
 
 from juniorguru.lib import google_sheets
-from juniorguru.lib.coerce import (coerce, parse_datetime, parse_text,
+from juniorguru.lib.coerce import (coerce, parse_boolean, parse_datetime, parse_text,
     parse_date, parse_set, parse_boolean_words)
 from juniorguru.sync.jobs.items import JuniorGuruJob, parse_markdown
 from juniorguru.sync.jobs.settings import JUNIORGURU_ITEM_PIPELINES
@@ -48,12 +48,31 @@ def coerce_record(record):
         r'^město, kde se nachází kancelář$': ('locations_raw', parse_locations),
         r'^text pracovní nabídky$': ('description_html', parse_markdown),
         r'^externí odkaz na pracovní nabídku$': ('apply_link', parse_text),
-        r'^varianta z ceníku$': ('pricing_plan', parse_pricing_plan),
+        r'^varianta z ceníku$': ('pricing_plan', parse_text),
+        r'\bkup[óo]n\b': ('coupon', parse_boolean),
         r'^approved$': ('approved_at', parse_date),
         r'^expire[ds]$': ('expires_at', parse_date),
     }, record)
     data['id'] = create_id(data['posted_at'], data['company_link'])
     data['link'] = f"https://junior.guru/jobs/{data['id']}/"
+
+    # legacy pricing hell, can be simplified once there are no legacy job postings
+    # online (approx. December 2021)
+    pricing_plan, coupon = data.get('pricing_plan'), data['coupon']
+    if pricing_plan and coupon:
+        raise ValueError("Both 'pricing_plan' and 'coupon' are set")
+    if pricing_plan:
+        pricing_plan_value = pricing_plan.strip().lower()
+        if 'flat rate' in pricing_plan_value or 'paušál' in pricing_plan_value:
+            data['pricing_plan'] = 'annual_flat_rate'
+        elif pricing_plan_value.startswith('0 czk'):
+            data['pricing_plan'] = 'community'
+        else:
+            data['pricing_plan'] = 'standard'
+    else:
+        data['pricing_plan'] = 'community' if coupon else 'standard'
+    del data['coupon']
+
     return data
 
 
@@ -61,16 +80,6 @@ def parse_locations(location):
     if location:
         return [loc.strip() for loc in re.split(r'\snebo\s', location)]
     return []
-
-
-def parse_pricing_plan(value):
-    if value:
-        value = value.strip().lower()
-        if 'flat rate' in value or 'paušál' in value.lower():
-            return 'annual_flat_rate'
-        if not value.startswith('0 czk'):
-            return 'standard'
-    return 'community'
 
 
 def create_id(posted_at, company_link):
