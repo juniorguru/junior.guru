@@ -4,6 +4,7 @@ import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.models import Employment
+from juniorguru.models.employment import columns
 
 
 def create_employment(**data):
@@ -173,3 +174,21 @@ def test_merge_item_bookkeeping(db_connection, item):
     employment.merge_item(item)
 
     assert employment.items_merged_count == 3
+
+
+def test_columns():
+    result = columns([10, 20, 30, 40, 50], 5)
+
+    assert list(result) == [(0, 10), (1, 20), (2, 30), (3, 40), (4, 50)]
+
+
+def test_columns_less_values():
+    result = columns([10, 20, 30], 5)
+
+    assert list(result) == [(0, 10), (1, 20), (2, 30), (3, None), (4, None)]
+
+
+def test_columns_more_values():
+    result = columns([10, 20, 30, 40, 50, 60, 70, 80], 5)
+
+    assert list(result) == [(0, 10), (1, 20), (2, 30), (3, 40), (4, 50)]
