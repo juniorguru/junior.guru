@@ -88,14 +88,14 @@
 #     - [TBD]
 
 
-- title: "(Bude upřesněno)"
+- title: "Case study: Jak se staví rychlý, moderní prezentační web"
   date: "2021-11-02"
   description: |
-    (Bude upřesněno)
+    Nedávno jsem vytvořil web pro novináře Davida Klimeše – offline-first Progressive web app. A protože to byla důležitá práce, dal jsem si hodně záležet. Rád bych vám na jejím příkladu ukázal jak se staví moderní prezentační web – jak vybírat technologie, co optimalizovat, na co si dát pozor. Určitě zmíníme přístupnost a stihneme-li to, snad si i povíme k čemu jsou dobré service workery.
   bio_name: Libor Vaněk
   bio_title: Vedoucí frontendového vývoje, CDN77
   bio: |
-    (Bude upřesněno)
+    Mám na starost frontend v CDN77.com a zároveň komplet vývoj jednoho z produktů (stack: React, TypeScript, Next.js, Apollo GraphQL , Node.js, TypeORM). Mám rád řemeslně kvalitní weby a aplikace – rychlé, přístupné, s respektem ke standardům a platformě. Rád je stavím a stejně rád o nich i mluvím 🙂. Na frameworku mi nezáleží, používám React, Vue i Svelte.
   bio_links:
     - https://twitter.com/liborvanek
     - https://www.linkedin.com/in/liborvanekcz/
@@ -103,7 +103,6 @@
   logo_path: logos/cdn77.svg
   speakers:
     - 330085757211377679
-
 
 - title: "AMA: Expert na škálování a architekturu"
   date: "2021-10-19"
