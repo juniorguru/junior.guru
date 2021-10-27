@@ -884,7 +884,7 @@ w3lib = ">=1.19.0"
 
 [[package]]
 name = "peewee"
-version = "3.14.4"
+version = "3.14.6"
 description = "a little orm"
 category = "main"
 optional = false
@@ -2083,7 +2083,7 @@ parsel = [
     {file = "parsel-1.6.0.tar.gz", hash = "sha256:70efef0b651a996cceebc69e55a85eb2233be0890959203ba7c3a03c72725c79"},
 ]
 peewee = [
-    {file = "peewee-3.14.4.tar.gz", hash = "sha256:9e356b327c2eaec6dd42ecea6f4ddded025793dba906a3d065a0452e726c51a2"},
+    {file = "peewee-3.14.6.tar.gz", hash = "sha256:9ca804d6a7032ddf47b7252b1f8e15d8e90a83f366124c127c5f4e0fe16bdbba"},
 ]
 piexif = [
     {file = "piexif-1.1.3-py2.py3-none-any.whl", hash = "sha256:3bc435d171720150b81b15d27e05e54b8abbde7b4242cddd81ef160d283108b6"},
