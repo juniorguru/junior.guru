@@ -13,6 +13,7 @@ from scrapy import Spider as BaseSpider, Request
 
 from juniorguru.lib.url_params import strip_utm_params
 from juniorguru.sync.employments.items import Employment
+from juniorguru.sync.jobs.spiders.linkedin import clean_validated_url
 
 
 STARTUPJOBS_URL_RE = re.compile(r'startupjobs.+\&utm_')
@@ -23,7 +24,7 @@ def employment_v1_adapter(ci_data):
         yield Employment(title=row['title'],
                          company_name=row['company_name'],
                          url=row['url'],
-                         apply_url=row.get('apply_url'),
+                         apply_url=clean_validated_url(row.get('apply_url')),
                          external_ids=json.loads(row['external_ids']),
                          locations=json.loads(row.get('locations', 'null')),
                          remote=row['remote'],
@@ -57,7 +58,7 @@ def job_adapter(ci_data):  # old-style jobs
 
         yield Employment(title=row['title'],
                          url=strip_utm_params(row['link']),
-                         apply_url=apply_url,
+                         apply_url=clean_validated_url(apply_url),
                          company_name=row['company_name'],
                          locations=json.loads(row['locations']),
                          remote=bool(row['remote']),

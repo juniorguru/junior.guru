@@ -53,6 +53,16 @@ def test_first(iterable, expected):
     assert items.first(iterable) == expected
 
 
+@pytest.mark.parametrize('iterable,expected', [
+    ([], None),
+    ([1], 1),
+    ([1, 2], 2),
+    ([3, None, None], 3),
+])
+def test_last(iterable, expected):
+    assert items.last(iterable) == expected
+
+
 @pytest.mark.parametrize('value,expected', [
     (None, None),
     (' **Foo Ltd.**   ', '<p><strong>Foo Ltd.</strong></p>'),

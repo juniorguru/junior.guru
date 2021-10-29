@@ -5,7 +5,7 @@ from scrapy import Spider as BaseSpider, Request
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
-from juniorguru.sync.jobs.items import Job, first, parse_relative_date, split
+from juniorguru.sync.jobs.items import Job, first, last, parse_relative_date, split
 from juniorguru.lib.url_params import increment_param, strip_params, strip_utm_params, get_param, replace_in_params
 
 
@@ -120,7 +120,7 @@ class Loader(ItemLoader):
     default_input_processor = MapCompose(str.strip)
     default_output_processor = TakeFirst()
     link_in = Compose(first, clean_url)
-    apply_link_in = Compose(first, clean_proxied_url, clean_validated_url, clean_url)
+    apply_link_in = Compose(last, clean_proxied_url, clean_validated_url, clean_url)
     company_link_in = Compose(first, clean_url)
     employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()

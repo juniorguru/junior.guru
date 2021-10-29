@@ -78,6 +78,10 @@ def first(iterable):
     return None
 
 
+def last(iterable):
+    return first(reversed(list(iterable)))
+
+
 def parse_relative_date(text, today=None):
     today = today or date.today()
     if 'week' in text or 'týdn' in text:
