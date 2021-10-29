@@ -1,16 +1,34 @@
+const ACTIVE_CLASS = 'active';
+
+
 document.addEventListener('DOMContentLoaded', function() {
-  const currentHeading = document.querySelector('.tocbar-current');
+  const current = document.querySelector('.tocbar-current');
   const toc = {
     bar: document.querySelector('.tocbar'),
-    currentHeading,
-    currentHeadingInitialValue: currentHeading ? currentHeading.innerHTML : null,
+    current,
+    currentInitialValue: current ? current.innerHTML : null,
     headings: Array.from(document.querySelectorAll('.document h2')),
+    items: getItemsByIDs('.toc-subitem', '.toc-sublink'),
   };
 
-  if (toc.bar && toc.currentHeading && toc.headings.length) {
+  if (toc.bar && toc.current && toc.headings.length) {
     onScroll(updateToC, [toc]);
   }
 });
+
+
+function getItemsByIDs(itemSelector, linkSelector) {
+  const items = Array.from(document.querySelectorAll(itemSelector));
+  const ids = items
+    .map(item => item.querySelector(linkSelector))
+    .map(link => link ? link.href : null)
+    .map(href => href ? href.split('#')[1] : null)
+  return items.reduce((map, item, index) => {
+    const id = ids[index];
+    if (id) { map[id] = item; }
+    return map;
+  }, {});
+}
 
 
 function onScroll(fn, args) {
@@ -32,18 +50,20 @@ function onScroll(fn, args) {
 function updateToC(toc) {
   const heading = getCurrentHeading(toc.headings, getPosition(toc.bar));
   if (heading) {
-    toc.currentHeading.innerHTML = heading.childNodes[0].textContent;
+    toc.current.innerHTML = heading.childNodes[0].textContent;
+
+    Object.values(toc.items).forEach(item => item.classList.remove(ACTIVE_CLASS));
+    if (toc.items[heading.id]) { toc.items[heading.id].classList.add(ACTIVE_CLASS); }
   } else {
-    toc.currentHeading.innerHTML = toc.currentHeadingInitialValue;
+    toc.current.innerHTML = toc.currentInitialValue;
   }
 }
 
 
 function getCurrentHeading(headings, position) {
   const pastHeadings = getPastElements(headings, position);
-  if (pastHeadings.length == 1) { return pastHeadings[0]; }
-  if (pastHeadings.length > 1) { return getLastElement(pastHeadings); }
-  return null;
+  if (pastHeadings.length <= 1) { return pastHeadings[0] || null; }
+  return getLastElement(pastHeadings);
 }
 
 

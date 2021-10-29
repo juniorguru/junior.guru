@@ -100,6 +100,11 @@
   line-height: $line-height-sm;
 }
 
+.toc-subitem.active .toc-sublink {
+  font-weight: $headings-font-weight;
+  color: $link-color;
+}
+
 .toc-subitem:first-child .toc-sublink {
   padding-top: map-get($spacers, 3);
 }
