@@ -9,7 +9,6 @@ from juniorguru.sync.metrics import main as sync_metrics
 from juniorguru.sync.stories import main as sync_stories
 from juniorguru.sync.supporters import main as sync_supporters
 from juniorguru.sync.last_modified import main as sync_last_modified
-from juniorguru.sync.press_releases import main as sync_press_releases
 from juniorguru.sync.transactions import main as sync_transactions
 from juniorguru.sync.proxies import main as sync_proxies
 from juniorguru.sync.events import main as sync_events
@@ -37,7 +36,6 @@ def main():
     sync_stories()
     sync_supporters()
     sync_last_modified()
-    sync_press_releases()
     sync_companies()  # might depend on subscriptions one day?
     sync_transactions()
     sync_proxies()

@@ -7,7 +7,7 @@ from flask import Flask, Response, render_template, url_for
 from juniorguru.lib import loggers
 from juniorguru.lib import template_filters
 from juniorguru.lib.images import render_image_file
-from juniorguru.models import Job, Metric, Story, Supporter, PressRelease, Event, db
+from juniorguru.models import Job, Metric, Story, Supporter, Event, db
 
 
 logger = loggers.get('web')
@@ -197,24 +197,6 @@ def donate():
                            thumbnail=thumbnail(title='Pošli LOVE'))
 
 
-@app.route('/press/')
-def press():
-    with db:
-        press_releases = PressRelease.listing()
-    return render_template('press.html',
-                           press_releases=press_releases,
-                           thumbnail=thumbnail(title='Pro média'))
-
-
-@app.route('/press/<id>/')
-def press_release(id):
-    with db:
-        press_release = PressRelease.get_by_id(id)
-    return render_template('press_release.html',
-                           press_release=press_release,
-                           thumbnail=thumbnail(title='Tisková zpráva'))
-
-
 @app.route('/404.html')
 def not_found():
     with db:
@@ -282,3 +264,19 @@ def candidate_handbook():
 @app.route('/hire-juniors/')
 def hire_juniors():
     return redirect(url_for('jobs', _external=True))
+
+@app.route('/press/')
+def press():
+    return redirect(url_for('club', _external=True) + '#honza')
+
+@app.route('/press/handbook/')
+def press_release_handbook():
+    return redirect(url_for('club', _external=True) + '#honza')
+
+@app.route('/press/women/')
+def press_release_women():
+    return redirect(url_for('club', _external=True) + '#honza')
+
+@app.route('/press/crisis/')
+def press_release_crisis():
+    return redirect(url_for('club', _external=True) + '#honza')
