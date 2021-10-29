@@ -33,6 +33,10 @@
   white-space: nowrap;
 }
 
+.tocbar-current {
+  @include font-size($font-size-sm);
+}
+
 .tocbar-item .bi {
   margin-right: map-get($spacers, 1);
 }

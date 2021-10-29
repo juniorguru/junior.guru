@@ -1,3 +1,4 @@
+import './toc2';
 import './annotations';
 import './membership';
 import './metrics';
