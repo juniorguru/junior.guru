@@ -41,7 +41,7 @@
   margin-right: map-get($spacers, 1);
 }
 
-[id] {
+[id] { // keep in sync with SCROLL_MARGIN_TOP_SELECTOR in JS
   scroll-margin-top: map-get($spacers, 5);
 
   @include media-breakpoint-up(lg) {
