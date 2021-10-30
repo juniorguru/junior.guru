@@ -1,4 +1,4 @@
-from juniorguru.lib.scrapers import scrape
+# from juniorguru.lib.scrapers import scrape
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
 from juniorguru.models import Employment, db
