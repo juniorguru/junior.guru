@@ -40,7 +40,7 @@ def main():
     sync_transactions()
     sync_proxies()
     sync_club_content()
-    sync_employments()
+    # sync_employments() !!! HOTFIX
 
     # order-sensitive
     sync_mentoring()  # depends on club_content
