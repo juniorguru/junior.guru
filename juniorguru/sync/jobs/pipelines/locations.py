@@ -12,7 +12,7 @@ logger = loggers.get(__name__)
 
 
 # https://docs.python-requests.org/en/master/user/advanced/#timeouts
-GEOCODING_REQUEST_TIMEOUT = (3.05, 27)
+MAPYCZ_REQUEST_TIMEOUT = (3.05, 27)
 
 
 class GeocodeError(Exception):
@@ -110,10 +110,11 @@ def optimize_geocoding(geocode):
 @optimize_geocoding
 def geocode_mapycz(location_raw):
     try:
+        logger.debug(f"Geocoding '{location_raw}' using api.mapy.cz/geocode")
         response = requests.get('https://api.mapy.cz/geocode',
                                 params={'query': location_raw},
                                 headers={'User-Agent': USER_AGENT},
-                                timeout=GEOCODING_REQUEST_TIMEOUT)
+                                timeout=MAPYCZ_REQUEST_TIMEOUT)
         response.raise_for_status()
 
         xml = etree.fromstring(response.content)
@@ -127,9 +128,11 @@ def geocode_mapycz(location_raw):
         raise GeocodeError(f"Unable to geocode '{location_raw}'") from e
 
     try:
+        logger.debug(f"Reverse geocoding '{location_raw}' lat: {lat} lng: {lng} using api.mapy.cz/rgeocode")
         response = requests.get('https://api.mapy.cz/rgeocode',
                                 params={'lat': lat, 'lon': lng},
-                                headers={'User-Agent': USER_AGENT})
+                                headers={'User-Agent': USER_AGENT},
+                                timeout=MAPYCZ_REQUEST_TIMEOUT)
         response.raise_for_status()
 
         xml = etree.fromstring(response.content)
