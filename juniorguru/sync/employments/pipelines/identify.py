@@ -24,7 +24,11 @@ class Pipeline():
         except KeyError as exc:
             raise MissingIdentifyingField(str(exc))
 
-        item['external_ids'] = sorted(set([parse_id(url) for url in urls if url]))
+        external_ids = [parse_id(url) for url in urls if url]
+        external_ids = filter(None, external_ids)
+        external_ids = sorted(set(external_ids))
+
+        item['external_ids'] = external_ids
         return item
 
 
