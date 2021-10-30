@@ -11,6 +11,10 @@ from juniorguru.sync.jobs.settings import USER_AGENT
 logger = loggers.get(__name__)
 
 
+# https://docs.python-requests.org/en/master/user/advanced/#timeouts
+GEOCODING_REQUEST_TIMEOUT = (3.05, 27)
+
+
 class GeocodeError(Exception):
     pass
 
@@ -108,7 +112,8 @@ def geocode_mapycz(location_raw):
     try:
         response = requests.get('https://api.mapy.cz/geocode',
                                 params={'query': location_raw},
-                                headers={'User-Agent': USER_AGENT})
+                                headers={'User-Agent': USER_AGENT},
+                                timeout=GEOCODING_REQUEST_TIMEOUT)
         response.raise_for_status()
 
         xml = etree.fromstring(response.content)
