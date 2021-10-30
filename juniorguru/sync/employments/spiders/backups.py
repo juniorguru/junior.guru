@@ -23,7 +23,7 @@ def employment_v1_adapter(ci_data):
     for row in (yield 'SELECT * from employment_v1'):
         yield Employment(title=row['title'],
                          company_name=row['company_name'],
-                         url=row['url'],
+                         url=clean_validated_url(row['url']),
                          apply_url=clean_validated_url(row.get('apply_url')),
                          external_ids=json.loads(row['external_ids']),
                          locations=json.loads(row.get('locations', 'null')),
@@ -57,7 +57,7 @@ def job_adapter(ci_data):  # old-style jobs
             votes_count = 0
 
         yield Employment(title=row['title'],
-                         url=strip_utm_params(row['link']),
+                         url=strip_utm_params(clean_validated_url(row['link'])),
                          apply_url=clean_validated_url(apply_url),
                          company_name=row['company_name'],
                          locations=json.loads(row['locations']),
@@ -95,7 +95,8 @@ def jobdropped_adapter(ci_data):  # old-style jobs
             votes_count = 0
 
         yield Employment(title=item['title'],
-                         url=strip_utm_params(item['link']),
+                         url=strip_utm_params(clean_validated_url(item['link'])),
+                         apply_url=clean_validated_url(item.get('apply_link')),
                          company_name=item['company_name'],
                          locations=item.get('locations'),
                          remote=item.get('remote', False),
