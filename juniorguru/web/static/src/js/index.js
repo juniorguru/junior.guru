@@ -1,7 +1,7 @@
+import './toc';
 import './annotations';
 import './membership';
 import './metrics';
-import './toc';
 
 import 'instant.page';
 
