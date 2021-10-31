@@ -1,17 +1,17 @@
 import logging
 
 
-MUTED_LOGGERS = [
-    'discord',
-    'peewee',
-    'urllib3',
-    'oauth2client',
-    'google',
-    'googleapiclient',
-    'PIL',
-    'asyncio',
-    'MARKDOWN',
-]
+MUTED_LOGGERS = []
+#     'discord',
+#     'peewee',
+#     'urllib3',
+#     'oauth2client',
+#     'google',
+#     'googleapiclient',
+#     'PIL',
+#     'asyncio',
+#     'MARKDOWN',
+# ]
 
 
 def configure():
