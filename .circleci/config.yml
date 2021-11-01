@@ -224,7 +224,7 @@ workflows:
             - build
     triggers:
       - schedule:
-          cron: "0 11 * * *"
+          cron: "0 4 * * *"
           filters:
             branches:
               only:
@@ -241,7 +241,7 @@ workflows:
             - sync
     triggers:
       - schedule:
-          cron: "0 5 * * *"
+          cron: "0 12 * * *"
           filters:
             branches:
               only:
