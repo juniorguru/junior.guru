@@ -3,7 +3,7 @@ import importlib
 
 from juniorguru.lib import loggers
 from juniorguru.lib import timer
-# from juniorguru.sync.employments import main as sync_employments !!! HOTFIX
+from juniorguru.sync.employments import main as sync_employments
 from juniorguru.sync.jobs import main as sync_jobs
 from juniorguru.sync.metrics import main as sync_metrics
 from juniorguru.sync.stories import main as sync_stories
@@ -40,7 +40,7 @@ def main():
     sync_transactions()
     sync_proxies()
     sync_club_content()
-    # sync_employments() !!! HOTFIX
+    sync_employments()
 
     # order-sensitive
     sync_mentoring()  # depends on club_content

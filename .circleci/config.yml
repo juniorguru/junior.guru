@@ -46,28 +46,6 @@ jobs:
           name: Test
           command: make test TESTOPTS=-v
 
-  # hotfix
-  sync-backups:
-    executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run: 'date +"%Y-%m-%d" > .today'
-      - restore_cache:
-          key: scrapy-{{ checksum ".today" }}
-      - run:
-          name: Sync backups
-          command: |
-            make sync SYNC=employments
-      - save_cache:
-          key: scrapy-{{ checksum ".today" }}
-          paths:
-            - .scrapy
-      - persist_to_workspace:
-          root: "~"
-          paths:
-              - project/juniorguru/data
-
   # needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY
   sync:
     executor: python-js
@@ -177,12 +155,9 @@ workflows:
       - lint-and-test:
           requires:
             - install
-      - sync-backups:
-          requires:
-            - install
       - sync:
           requires:
-            - sync-backups
+            - install
       - build:
           requires:
             - sync
@@ -204,12 +179,9 @@ workflows:
   nightly:
     jobs:
       - install
-      - sync-backups:
-          requires:
-            - install
       - sync:
           requires:
-            - sync-backups
+            - install
       - build:
           requires:
             - sync
