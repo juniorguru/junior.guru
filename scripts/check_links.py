@@ -16,6 +16,7 @@ EXCLUDE_URLS = [
     'support.discord.com',  # Discord ¯\_(ツ)_/¯
     'economist.com',  # crawling protection?
     'udemy.com',  # crawling protection?
+    'att.jobs',  # crawling protection?
 ]
 EXCLUDE_REASONS = [re.compile(r) for r in [
     r'^BLC_UNKNOWN$',  # crawling protection?
