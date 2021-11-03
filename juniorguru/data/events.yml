@@ -103,6 +103,7 @@
   logo_path: logos/cdn77.svg
   speakers:
     - 330085757211377679
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/905192447276122162
 
 - title: "AMA: Expert na škálování a architekturu"
   date: "2021-10-19"
