@@ -36,7 +36,7 @@ async def main(client):
     if DISCORD_MUTATIONS_ENABLED:
         content = ":teacher: Nezapomeň, že kromě tohoto kanálu máš také možnost si rezervovat čas u mentorů z firem."
         embed_description = (
-            'Kamarádi z **[Mews](https://www.mews.com/en/careers)** ti nabízí tyto konzultace: '
+            'Kamarádi z **[Mews](https://www.mews.com/en/careers?utm_source=juniorguru&utm_medium=club&utm_campaign=partnership)** ti nabízí tyto konzultace: '
             '<@!289482229975875584> na frontend, '
             '<@!672433063690633216> na HR a komunity, '
             '<@!689498517995126847> na datovou analýzu, '
@@ -44,6 +44,10 @@ async def main(client):
             '<@!868083628419199026> na backend, '
             '<@!869504117154934824> na QA a testování.\n'
             '➡️ [Rezervuj v kalendáři](https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/)'
+            '\n\n'
+            'Kamarádi z **[Red Hatu](https://redhat.avature.net/juniorguru?utm_source=juniorguru&utm_medium=club&utm_campaign=partnership)** ti nabízí tyto konzultace: '
+            '<@!886912914353696820> na pohovory nanečisto česky nebo anglicky, zpětná vazba na CV.\n'
+            '➡️ Rezervuj přes soukromou zprávu'
         )
         await channel.send(content=content, embed=Embed(description=embed_description))
     else:
