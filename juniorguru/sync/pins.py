@@ -1,6 +1,7 @@
 import textwrap
 
 from discord import Embed
+from discord.errors import Forbidden
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
@@ -46,8 +47,11 @@ async def main(client):
                 f"[Hop na příspěvek]({pin_reaction.message.url})",
                 "",
             ]
-            await channel.send(content=content,
-                               embed=Embed(description="\n".join(embed_description)))
+            try:
+                await channel.send(content=content,
+                                   embed=Embed(description="\n".join(embed_description)))
+            except Forbidden as e:
+                logger.error(str(e), exc_info=True)
         else:
             logger.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
