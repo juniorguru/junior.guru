@@ -14,14 +14,14 @@ IMAGES_DIR = Path(__file__).parent.parent / 'images'
 TEMPLATES_DIR = Path(__file__).parent.parent / 'image_templates'
 
 
-def render_image_file(width, height, template_name, context, output_dir, filters=None, suffix=None):
+def render_image_file(width, height, template_name, context, output_dir, filters=None, prefix=None, suffix=None):
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok=True, parents=True)
 
     cache_key = (width, height, template_name, context)
     hash = sha256(pickle.dumps(cache_key)).hexdigest()
 
-    image_name = f'{hash}-{suffix}.png' if suffix else f'{hash}.png'
+    image_name = '-'.join(filter(None, [prefix, hash, suffix])) + '.png'
     image_path = output_dir / image_name
 
     if not image_path.exists():
@@ -30,10 +30,12 @@ def render_image_file(width, height, template_name, context, output_dir, filters
     return image_path
 
 
-def save_as_ig_square(path):
+def save_as_square(path, prefix=None, suffix=None):
     cache_key = str(path.relative_to(IMAGES_DIR))
     hash = sha256(cache_key.encode('utf-8')).hexdigest()
-    image_path = path.with_name(f"{hash}-ig{path.suffix}")
+
+    image_name = '-'.join(filter(None, [prefix, hash, suffix])) + '.png'
+    image_path = path.with_name(image_name)
 
     if not image_path.exists():
         with Image.open(path) as image:

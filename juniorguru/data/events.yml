@@ -36,8 +36,7 @@
 #    - https://github.com/examplejanedoe
 #    - https://www.instagram.com/examplejanedoe/
 #  logo_path: logos/example.svg           # LOGO FIRMY, KDE PRACUJEŠ. NENÍ POVINNÉ (NEBO DOPLNÍ HONZA)
-#  speakers:
-#    - 000000000000000000                 # ID TVÉHO DISCORD ÚČTU (KDYŽTAK DOPLNÍ HONZA)
+#  speakers: 000000000000000000           # ID TVÉHO DISCORD ÚČTU (KDYŽTAK DOPLNÍ HONZA)
 #  recording_url: https://example.com     # ODKAZ NA ZÁZNAM PŘEDNÁŠKY, DOPLNÍ HONZA
 #
 #
@@ -66,27 +65,25 @@
 #     - https://www.instagram.com/iamshe.sona/
 #     - https://github.com/MsSona
 #   logo_path: logos/mews.svg
-#   speakers:
-#     - 869504117154934824
+#   speakers: 869504117154934824
 
 
-# - title: "[TBD] AMA"
-#   date: "2021-11-16"
-#   description: |
-#     [TBD]
-#   bio_name: Matěj Kotrba
-#   bio_title: IT headhunter, podcaster
-#   bio: |
-#     [TBD]
-#   bio_links:
-#     - https://twitter.com/MatjKotrba5
-#     - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
-#     - https://www.instagram.com/matejkotrba/
-#     - https://www.vork.cz/
-#   logo_path: logos/vork.png
-#   speakers:
-#     - [TBD]
-
+- title: "10 klíčových otázek, na které by každý junior měl znát odpověď"
+  date: "2021-11-16"
+  description: |
+    Úvodní přednáška do tématu „junioři vs trh práce“, aneb 10 základních klíčových otázek, na které byste měli znát odpovědi, než se pustíte do vytváření CV, přihlašování na pracovní pozice a pohovory. Po přednášce bude prostor pro dotazy na způsob krátké AMA (_ask me anything_).
+  avatar_path: avatars-speakers/matejkotrba.jpg
+  bio_name: Matěj Kotrba
+  bio_title: IT headhunter, podcaster
+  bio: |
+    Matěj je IT headhunter, který pomáhá IT odborníkům najít fit pracovní příležitost a firmám najít nové kolegy do týmu. Zároveň je producentem podcastů **Fuckupy v IT** a **Fuckupy recuiterů**, které si můžete poslechhnout na všech dostupných platformách.
+  bio_links:
+    - https://twitter.com/MatjKotrba5
+    - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
+    - https://www.instagram.com/matejkotrba/
+    - https://www.vork.cz/
+  logo_path: logos/vork.png
+  speakers:
 
 - title: "Případová studie: Jak se staví rychlý, moderní prezentační web"
   date: "2021-11-02"
@@ -101,8 +98,7 @@
     - https://www.linkedin.com/in/liborvanekcz/
     - https://github.com/liborvanek
   logo_path: logos/cdn77.svg
-  speakers:
-    - 330085757211377679
+  speakers: 330085757211377679
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/905192447276122162
 
 - title: "AMA: Expert na škálování a architekturu"
@@ -118,8 +114,7 @@
     - https://www.linkedin.com/in/honzakral/
     - https://github.com/honzakral
   logo_path: logos/aimful.svg
-  speakers:
-    - 514189468673114122
+  speakers: 514189468673114122
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/900105360038326342
 
 
@@ -139,9 +134,7 @@
     - https://github.com/benabraham
     - https://www.linkedin.com/in/danielsrb/
   logo_path: logos/coreskill.svg
-  speakers:
-    - 652142810291765248
-    - 488415538117214220
+  speakers: 652142810291765248, 488415538117214220
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/893578992853086218
 
 
@@ -159,8 +152,7 @@
     - https://github.com/jsmitka
     - https://lynt.cz/
   logo_path: logos/lynt.svg
-  speakers:
-    - 821709585588551701
+  speakers: 821709585588551701
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/882327482559246397
 
 
@@ -179,8 +171,7 @@
     - https://www.linkedin.com/in/ivana-huckova/
     - https://github.com/ivanahuckova
   logo_path: logos/grafana.svg
-  speakers:
-    - 561313047390715904
+  speakers: 561313047390715904
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/877260218650751056
 
 
@@ -201,8 +192,7 @@
     - https://github.com/encukou
     - https://www.youtube.com/channel/UC-W5H6lqLrhJeOwVAW7ktNw
   logo_path: logos/redhat.svg
-  speakers:
-    - 733309153275019326
+  speakers: 733309153275019326
   recording_url: https://www.youtube.com/watch?v=1-Bwa7yp0C4
 
 
@@ -219,8 +209,7 @@
     - https://github.com/nkoranova
     - https://www.instagram.com/norka.vokurka/
   logo_path: logos/suse.svg
-  speakers:
-    - 501682297930645504
+  speakers: 501682297930645504
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/869642782355103814
 
 
@@ -238,8 +227,7 @@
     - https://www.linkedin.com/in/wvi/
     - https://github.com/w-vi
   logo_path: logos/oracle.svg
-  speakers:
-    - 817453228283133982
+  speakers: 817453228283133982
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/844488172364890123
 
 
@@ -272,8 +260,7 @@
     - https://www.linkedin.com/in/jiripsotka/
     - https://www.instagram.com/dog2y/
   logo_path: logos/redhat.svg
-  speakers:
-    - 382474361300451328
+  speakers: 382474361300451328
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/842104677943869440
 
 
@@ -292,8 +279,7 @@
     - https://www.linkedin.com/in/adina-foxova/
     - https://www.instagram.com/adinafxv/
   logo_path: logos/adinafoxova.svg
-  speakers:
-    - 658628731337965586
+  speakers: 658628731337965586
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/836906198426320906
 
 
@@ -312,8 +298,7 @@
     - https://www.linkedin.com/in/ladislavprskavec/
     - https://www.instagram.com/abtris/
   logo_path: logos/oracle.svg
-  speakers:
-    - 779257315782164490
+  speakers: 779257315782164490
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/826872579427794955
 
 
@@ -332,8 +317,7 @@
     - https://twitter.com/dariagrudzien
     - https://www.instagram.com/gruontheroad/
   logo_path: logos/cybermagnolia.svg
-  speakers:
-    - 789165121771536404
+  speakers: 789165121771536404
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/822066882298642462
 
 
@@ -352,7 +336,4 @@
   bio_name: Honza Javorek, Daniel Srb, Karolina Surma
   bio: |
     Kdokoliv z účastníků srazu si může přihlásit _lightning talk_ a dostane prostor.
-  speakers:
-    - 668226181769986078
-    - 652142810291765248
-    - 797088930758524959
+  speakers: 668226181769986078, 652142810291765248, 797088930758524959

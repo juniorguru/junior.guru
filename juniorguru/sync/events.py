@@ -3,11 +3,11 @@ from pathlib import Path
 from datetime import date, timedelta
 
 import arrow
-from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, load
+from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, CommaSeparated, load
 
 from juniorguru.lib.timer import measure
 from juniorguru.models import Event, EventSpeaking, ClubMessage, db
-from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_ig_square, replace_with_jpg
+from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_square, replace_with_jpg
 from juniorguru.lib import loggers
 from juniorguru.lib.md import strip_links
 from juniorguru.lib.template_filters import local_time, md, weekday
@@ -45,7 +45,7 @@ schema = Seq(
         'bio': Str(),
         Optional('bio_links'): Seq(Str()),
         Optional('logo_path'): Str(),
-        'speakers': Seq(Int()),
+        'speakers': CommaSeparated(Int()),
         Optional('recording_url'): Url(),
     })
 )
@@ -96,15 +96,17 @@ def main():
             logger.info(f"Rendering images for '{name}'")
             tpl_context = dict(event=event)
             tpl_filters = dict(md=md, local_time=local_time, weekday=weekday)
+            prefix = event.start_at.date().isoformat().replace('-', '')
             image_path = render_image_file(WEB_THUMBNAIL_WIDTH, WEB_THUMBNAIL_HEIGHT,
                                            'event.html', tpl_context, POSTERS_DIR,
-                                           filters=tpl_filters)
+                                           filters=tpl_filters, prefix=prefix)
             event.poster_path = image_path.relative_to(IMAGES_DIR)
             image_path = render_image_file(YOUTUBE_THUMBNAIL_WIDTH, YOUTUBE_THUMBNAIL_HEIGHT,
                                            'event.html', tpl_context, POSTERS_DIR,
-                                           filters=tpl_filters, suffix='yt')
+                                           filters=tpl_filters, prefix=prefix, suffix='yt')
             event.poster_yt_path = image_path.relative_to(IMAGES_DIR)
-            event.poster_ig_path = save_as_ig_square(image_path).relative_to(IMAGES_DIR)
+            image_path = save_as_square(image_path, prefix=prefix, suffix='ig')
+            event.poster_ig_path = image_path.relative_to(IMAGES_DIR)
 
             logger.info(f"Saving '{name}'")
             event.save()
