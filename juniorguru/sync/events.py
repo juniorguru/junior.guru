@@ -128,6 +128,7 @@ async def post_next_event_messages(client):
         logger.info("The next event is not announced yet")
         return
     speakers = ', '.join([speaking.speaker.mention for speaking in event.list_speaking])
+    speakers = speakers or event.bio_name
 
     logger.info("About to post a message 7 days prior to the event")
     if event.start_at.date() - timedelta(days=7) <= date.today():
