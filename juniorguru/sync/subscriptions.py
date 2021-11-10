@@ -1,5 +1,6 @@
 from operator import itemgetter
 import os
+import re
 
 import arrow
 from gql import Client as Memberful, gql
@@ -16,6 +17,17 @@ logger = loggers.get('subscriptions')
 
 MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
+
+FEMALE_NAME_RE = re.compile(r'''
+    (\w+\s\w+ov[aá]$)|
+    (\w+\s\w+ská$)|
+    (\b(
+        Jana|Marie|Eva|Hana|Anna|Lenka|Kate[řr]ina|Lucie|V[eě]ra|Alena|Petra|Veronika|Jaroslava|
+        Tereza|Martina|Michaela|Jitka|Helena|Ludmila|Zde[ňn]ka|Ivana|Monika|Eli[šs]ka|Zuzana|
+        Mark[ée]ta|Jarmila|Barbora|Ji[řr]ina|Marcela|Krist[ýy]na|Alexandra|Daniela|Kayla|
+        Hann?ah?|Mia|Kl[áa]ra|Olga|Nath?[áa]lie|Adina|Karol[íi]na|Ane[žz]ka|Marij?[ea]
+    )\b)
+''', re.VERBOSE | re.IGNORECASE)
 
 
 @measure('subscriptions')
@@ -84,9 +96,9 @@ def main():
                     pass
 
             coupon = get_active_coupon(node)
-            records.append({
-                'Name': node['member']['fullName'],
-                'Discord Name': user.display_name if user else None,
+            records.append(calculate_fields({
+                'Name': node['member']['fullName'].strip(),
+                'Discord Name': user.display_name.strip() if user else None,
                 'E-mail': node['member']['email'],
                 'Memberful ID': node['member']['id'],
                 'Stripe ID': node['member']['stripeCustomerId'],
@@ -98,7 +110,7 @@ def main():
                 'Discord Member?': user.is_member if user else False,
                 'Discord Since': user.first_seen_on().isoformat() if user else None,
                 'Memberful Past Due?': node['pastDue'],
-            })
+            }))
 
             if user:
                 user.coupon = coupon
@@ -113,9 +125,9 @@ def main():
     for user in ClubUser.listing():
         discord_id = str(user.id)
         if not user.is_bot and discord_id not in seen_discord_ids:
-            records.append({
+            records.append(calculate_fields({
                 'Name': None,
-                'Discord Name': user.display_name,
+                'Discord Name': user.display_name.strip(),
                 'E-mail': None,
                 'Memberful ID': None,
                 'Stripe ID': None,
@@ -127,10 +139,19 @@ def main():
                 'Discord Member?': user.is_member,
                 'Discord Since': user.first_seen_on().isoformat(),
                 'Memberful Past Due?': False,
-            })
+            }))
 
     logger.info('Uploading subscriptions to Google Sheets')
     google_sheets.upload(google_sheets.get(DOC_KEY, 'subscriptions'), records)
+
+
+def calculate_fields(record):
+    keys, items = list(record.keys()), list(record.items())
+
+    gender = ('F' if FEMALE_NAME_RE.search(record['Name']) else 'M') if record.get('Name') else None
+    items.insert(keys.index('Discord Name') + 1, ('Gender', gender))
+
+    return dict(items)
 
 
 def get_active_coupon(node):
