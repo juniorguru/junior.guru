@@ -5,7 +5,7 @@ description: Jak začít hledat svou první práci v IT? Jak se připravit na po
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_toxic, blockquote_avatar, blockquote, link_card, jobs_inline with context %}
+{% from 'macros.html' import blockquote_toxic, blockquote_avatar, blockquote, link_card, video_card, jobs_inline, video_card, video_card_engeto with context %}
 
 
 # Hledání první práce v IT
@@ -33,23 +33,26 @@ Tyto věty slyšel v ČR asi každý začátečník — a přitom jde o nesmysly
 
 Svérázný slovenský lektor [yablko](https://www.youtube.com/channel/UC01guyOZpf40pUopBvdPwsg), autor kurzů tvorby webu pro začátečníky, natočil sérii videí o hledání práce v IT. Skvěle doplňují tuto příručku, mrkni na ně!
 
-<div class="link-cards">
-  {{ link_card(
+<div class="video-cards">
+  {{ video_card(
     'Kde najdeš první praxi',
+    '15min',
     'youtube.com!watch!v=3-wsqhCK-wU.jpg',
     'https://www.youtube.com/watch?v=3-wsqhCK-wU&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_',
     'Jak získat úplně první praktickou zkušenost?'
   ) }}
 
-  {{ link_card(
+  {{ video_card(
     'Pohovor na juniora',
+    '17min',
     'youtube.com!watch!v=cEYnF7G7KXI.jpg',
     'https://www.youtube.com/watch?v=cEYnF7G7KXI&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_',
     'Všeobecné praktické rady, které se mohou hodit i mimo IT.'
   ) }}
 
-  {{ link_card(
+  {{ video_card(
     'Pohovor na programátora',
+    '17min',
     'youtube.com!watch!v=cN3V5J9Wd8Y.jpg',
     'https://www.youtube.com/watch?v=cN3V5J9Wd8Y&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_',
     'Jak vypadají pohovory konkrétně pro programátory?'
@@ -59,9 +62,7 @@ Svérázný slovenský lektor [yablko](https://www.youtube.com/channel/UC01guyOZ
 
 ## Jak dlouho to trvá    <span id="how-long"></span>
 
-Jak dlouho je potřeba se učit programování, než je člověk připraven si začít hledat první práci? A kolik času takové hledání zabere? Tyto otázky si klade hodně lidí, ale odpověď na ně neexistuje. Záleží na tom, jak intenzivně se věnuješ učení, jak k němu přistupuješ, jaké máš příležitosti. Někdo tomu může věnovat osm hodin každý den, takže to zvládne za týdny. Někdo se učí po večerech a stráví s tím klidně **dva roky** nebo i více. Přitom ani jedno nevypovídá nic o talentu.
-
-Raději neplánuj s ohledem na čas. **Jeď si tempo, které můžeš skloubit se zbytkem svého života, a soustřeď se na to, ať umíš [základní minimum](#zakladni-minimum).** Potom si začni hledat práci.
+Jak dlouho je potřeba se učit programování, než je člověk připraven si začít hledat první práci? A kolik času takové hledání zabere? Záleží na tom, jak intenzivně se věnuješ učení, jak k němu přistupuješ, jaké máš příležitosti. Někdo tomu může věnovat osm hodin každý den, takže to zvládne za týdny. Někdo se učí po večerech a stráví s tím klidně **dva roky** nebo i více. Přitom ani jedno nevypovídá nic o talentu.
 
 {% call blockquote_avatar(
   'Dva roky jsem se při rodičovské učila programovat, než jsem si začala hledat práci. Jestli tě to baví, uč se uč, čas nepočítej.',
@@ -70,6 +71,16 @@ Raději neplánuj s ohledem na čas. **Jeď si tempo, které můžeš skloubit s
 ) %}
   Iveta Česalová, bývalá účetní, absolventka začátečnického kurzu [PyLadies](https://pyladies.cz/)
 {% endcall %}
+
+Raději neplánuj s ohledem na čas. **Jeď si tempo, které můžeš skloubit se zbytkem svého života, a soustřeď se na to, ať umíš [základní minimum](#zakladni-minimum).** Potom si začni hledat práci.
+
+{{ video_card_engeto(
+  'Jak dlouho trvá, než se naučím programovat a získám práci?',
+  '4min',
+  'youtube.com!watch!v=iSXqU9C3zMI.jpg',
+  'https://www.youtube.com/watch?v=iSXqU9C3zMI&list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI',
+  'Důležitější je položit si otázku – jak dlouho potrvá, než budou moje dovednosti dostatečně zajímavé pro nějakou firmu?',
+) }}
 
 
 ## Kdy začít hledat    <span id="ready"></span>
@@ -147,6 +158,14 @@ Zrovna v inzerátech nabízejících první práci v IT nebo částečný úvaz
 ### Záleží na věku? Pohlaví?    <span id="age-gender"></span>
 
 [Ne a ne](motivation.md#myty-o-programovani). Programování není balet, [začít se dá v jakémkoli věku](https://www.youtube.com/watch?v=dKclZ55d_F0). Byť jsou stále ještě v menšině, ženy se dnes programátorkami stávají běžně. IT už dávno nevypadá jako na [této fotce](https://www.forum24.cz/jak-dopadli-chlapci-z-brutalni-parby-informatiku-2/), i když si toho někteří možná ještě nevšimli. **Pokud je z pracovního inzerátu cítit diskriminace, vůbec se jím nezabývej**. Kromě toho, že je to [protizákonné](https://www.google.cz/search?q=pracovn%C3%AD%20inzer%C3%A1t%20diskriminace), tak firma, která se myšlenkově zasekla ve středověku, nebude zrovna dobrým přístavem pro začátečníky.
+
+{{ video_card(
+  'Tomáš Hisem: Z horníka programátorem',
+  '16min',
+  'youtube.com!watch!v=dKclZ55d_F0.jpg',
+  'https://www.youtube.com/watch?v=dKclZ55d_F0',
+  'Když se v 45 letech dozvěděl, že důl Paskov bude uzavřen, musel se rozhodnout, co dál. Dostal nečekanou příležitost rekvalifikovat se na programátora.',
+) }}
 
 
 ## Jaká mít očekávání    <span id="expectations"></span>
@@ -227,6 +246,14 @@ Když nahlédneš do IT, zjistíš, že kolem programování se motá spousta da
 Co když ale vůbec netušíš kudy se vydat? Možná to zkus přes „misi“ než přes činnost. **Vyber si firmu nebo organizaci, která je ti sympatická, a zkus najít průnik mezi tím, co dělají oni, a co můžeš dělat ty.** [Parfémy](https://www.czechcrunch.cz/2020/01/ceske-notino-je-nejvetsi-e-shop-s-parfemy-v-evrope-loni-v-rekordnich-trzbach-atakovalo-10-miliard-korun/)? [Oblečení](https://www.czechcrunch.cz/2020/01/desitky-milionu-korun-pro-lepe-odene-muze-cesky-startup-genster-nabira-penize-pro-boxy-s-oblecenim-na-miru/)? [Topení](https://www.czechcrunch.cz/2020/01/digitalizace-remesel-funguje-topite-cz-dela-topenarinu-online-rychle-roste-a-obsluhuje-uz-tisice-lidi/)?
 
 No a pokud ti nedá směr ani to, vezmi prostě jakoukoliv práci jako junior vývojářka nebo vývojář, kterou seženeš se [základním minimem](#zakladni-minimum), a **nech volný průběh tomu, kam tě to zavane**. Možná ti někdo řekl, že máš hledat svou vášeň a dělat to, co tě baví, ale [ono to ve skutečnosti funguje jinak](https://www.youtube.com/watch?v=LUQjAAwsKR8).
+
+{{ video_card(
+  'Cal Newport: ‘Follow your passion’ is wrong',
+  '35min',
+  'youtube.com!watch!v=LUQjAAwsKR8.jpg',
+  'https://www.youtube.com/watch?v=LUQjAAwsKR8',
+  'Říká se, že máš hledat svou vášeň a dělat to, co tě baví. Cal Newport vysvětluje, že to je rada na prd. Ve skutečnosti je to celé složitější.',
+) }}
 
 ### Na čem programátoři ve firmách pracují?    <span id="na-cem-programatori-ve-firmach-pracuji"></span>
 
@@ -573,7 +600,9 @@ Větší problém je tedy spíš s hledáním nabídek vhodných zrovna pro tebe
   Sebastián Ramírez, autor FastAPI
 {% endcall %}
 
-Začátečníci většinou na konkrétní technoligii nelpí a rádi se zaučí v čemkoliv, takže filtrování podle programovacích jazyků využijí jen omezeně. Filtr na juniorní nabídky by ocenili, ale je málokde. I tam, kde takový filtr je, nefunguje podle očekávání. Buď vyskočí brigády pro studenty, nebo **výsledky zahrnují spoustu nabídek, které ve skutečnosti vůbec juniorní nejsou**. Např. amatérská analýza dat z LinkedIn [odhalila](https://www.reddit.com/r/dataisbeautiful/comments/hvtn0i/oc_only_26_of_jobs_marked_entrylevel_are_actually/), že jen 26 % tamních nabídek práce označených jako _entry level_ je opravdu pro začátečníky. Jistě, [slovo junior vnímá každý jinak](#co-presne-znamena-junior), ale některé nabídky požadují dokonce víc než 12 let zkušeností! Tato praxe je předmětem [kritiky](https://www.youtube.com/watch?v=Ictmhp2uJu8), [údivů](https://twitter.com/tiangolo/status/1281946592459853830) i [vtipů](https://twitter.com/nixcraft/status/1294220253224828928), ale v dohledné době se asi nezmění.
+Začátečníci většinou na konkrétní technoligii nelpí a rádi se zaučí v čemkoliv, takže filtrování podle programovacích jazyků využijí jen omezeně. Filtr na juniorní nabídky by ocenili, ale je málokde. I tam, kde takový filtr je, nefunguje podle očekávání. Buď vyskočí brigády pro studenty, nebo **výsledky zahrnují spoustu nabídek, které ve skutečnosti vůbec juniorní nejsou**.
+
+Např. amatérská analýza dat z LinkedIn [odhalila](https://www.reddit.com/r/dataisbeautiful/comments/hvtn0i/oc_only_26_of_jobs_marked_entrylevel_are_actually/), že jen 26 % tamních nabídek práce označených jako _entry level_ je opravdu pro začátečníky. Jistě, [slovo junior vnímá každý jinak](#co-presne-znamena-junior), ale některé nabídky požadují dokonce víc než 12 let zkušeností! Tato praxe je předmětem [kritiky](https://www.youtube.com/watch?v=Ictmhp2uJu8), [údivů](https://twitter.com/tiangolo/status/1281946592459853830) i [vtipů](https://twitter.com/nixcraft/status/1294220253224828928), ale v dohledné době se asi nezmění.
 
 {% call blockquote_avatar(
   'Pracovné ponuky sú šľahnuté! Ja neviem polovicu vecí, čo chcú od juniora. A ich seniori tiež nie.',
@@ -926,6 +955,14 @@ Lepší peníze nebo pracovní podmínky jsou legitimní a racionální důvody,
 {% endcall %}
 
 Kde se bere vášeň? Do začátku stačí, když ti programování přijde jako něco zajímavého. Když máš alespoň základní touhu to zkoušet a řemeslně se v tom zlepšovat. Stejně jako když se učíš tancovat nebo hrát na kytaru, musíš si na to umět pravidelně vyhradit čas a trénovat. [Vášeň se postupně dostaví sama](https://www.youtube.com/watch?v=LUQjAAwsKR8) a stane se motorem pro veškerou dřinu, která tě čeká. Je to eso, které zvládne přebít titul, talent, i štěstí.
+
+{{ video_card(
+  'Cal Newport: ‘Follow your passion’ is wrong',
+  '35min',
+  'youtube.com!watch!v=LUQjAAwsKR8.jpg',
+  'https://www.youtube.com/watch?v=LUQjAAwsKR8',
+  'Říká se, že máš hledat svou vášeň a dělat to, co tě baví. Cal Newport vysvětluje, že to je rada na prd. Ve skutečnosti je to celé složitější.',
+) }}
 
 **P.S.** Nezapomeň, že jsi na „živé stránce“, na které stále probíhají úpravy — naposledy {{ last_modified|ago }}. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/honzajavorek/junior.guru/commits/main/juniorguru/mkdocs/docs/handbook/candidate-handbook.md), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](club.md).
 

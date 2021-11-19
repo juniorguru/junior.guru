@@ -5,7 +5,7 @@ description: K čemu se hodí programování? Není jen pro ty, kdo chtějí pra
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import img, blockquote, blockquote_avatar, blockquote_toxic, lead, link_card, stories_list with context %}
+{% from 'macros.html' import img, blockquote, blockquote_avatar, blockquote_toxic, lead, link_card, stories_list, video_card_engeto with context %}
 
 
 # Proč se učit programování
@@ -39,6 +39,15 @@ Je důležité pochopit, že **programování je jen nástroj, stejně jako klad
 
 Stejně jako u vrtání ale není vůbec od věci, pokud se naučí programovat i amatér. Dnes už běžně základní znalost programování pomáhá vědcům, úředníkům nebo novinářům. Základy se totiž dají naučit za několik týdnů, a i když ti nebudou stačit na zaměstnání v IT, k řešení spousty úkolů stačí perfektně.
 
+{{ video_card_engeto(
+  'IT dovednosti se hodí i v „neIT“ oboru',
+  '6min',
+  'youtube.com!watch!v=Vt-riPe4dMs.jpg',
+  'https://www.youtube.com/watch?v=Vt-riPe4dMs&list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI',
+  'Každý, kdo ovládá nějaké základy programování, si dokáže ušetřit práci s excelovými tabulkami nebo třeba uspořádáním velkého množství souborů na disku.',
+) }}
+
+
 ### Povědomí o programování jako výhoda    <span id="coding-advantage"></span>
 
 I když nakonec nebudeš vůbec programovat, hodí se rozumět tomu, jak tato práce funguje. Každá firma má dnes IT oddělení a to se mnohem raději baví s lidmi, kteří chápou jak vznikají programy. Můžeš se snadno uplatnit jako prostředník mezi nimi a ostatními. Otevře se ti cesta do dalších oborů, které s počítači souvisí — např. internetový marketing nebo psaní technických textů, které rovněž umožňují vydělat si dobré peníze a mít pružnou pracovní dobu. Občas se straší v novinách, že [přicházejí miliony zlých robotů, kteří jednou všem vezmou práci](https://denikn.cz/62624/komu-mohou-sebrat-praci-roboti-experti-vybrali-profese-ktere-jsou-nejvice-ohrozene-zmenami/). Místo robotů to asi budou spíš mobilní appky, ale jedno je jisté — technologie budou prostupovat naše životy stále více a bude tím pádem potřeba stále více těch, kteří technologiím rozumí.
@@ -69,9 +78,8 @@ Programování není cíl, ale nástroj — jako šroubovák nebo matematika. Do
 
 Doktoři a vědci přicházejí na to, že když výpočty naprogramují, mohou svůj výzkum provést mnohem rychleji. Novináři, kteří umí zpracovávat velká množství dat, díky tomu [přinášejí zajímavé analýzy](https://www.irozhlas.cz/zpravy-tag/datova-zurnalistika). Kromě toho, s příchodem covidu-19 se dostaly složité grafy a datová žurnalistika do každé větší redakce. Prakticky každý, kdo má základy programování, si zase dokáže ušetřit práci s excelovskými tabulkami nebo s uspořádáním velkého množství souborů na disku. Místo toho, aby se někde muselo 500× udělat Ctrl+C a Ctrl+V, můžeš si to naprogramovat.
 
-{% call blockquote_avatar(
+{% call blockquote(
   'Vývojáři-amatéři ve firmách se stále častěji uchylují k vlastnoruční tvorbě nástrojů, které potřebují k práci. Počet takových lidí stoupá geometrickou řadou.',
-  'cio.png',
   'CIO Business World'
 ) %}
   CIO Business World, článek [Naprogramuj si to sám!](https://www.cio.cz/clanky/naprogramuj-si-to-sam/)
@@ -93,9 +101,8 @@ Průměrná mzda programátorů je 50.000 Kč a [těch zkušených je dlouhodob�
 
 IT samozřejmě neexistuje ve vzduchoprázdnu a ostatní obory potřebuje. Vyrábí nástroje a tyto nástroje musí mít kdo používat. **Pro programátory samotné to ale není takový problém.** Když přestane fungovat prodej letenek, mohou jít programovat třeba pro banky.
 
-{% call blockquote_avatar(
+{% call blockquote(
   'Na rozdíl od řady dalších profesí je pro IT odborníky specifické především to, že jsou rozptýleni napříč hospodářskými odvětvími.',
-  'csu.png',
   'Český statistický úřad'
 ) %}
   [Zpráva Českého statistického úřadu](https://www.czso.cz/csu/czso/ict-odbornici)
@@ -117,7 +124,16 @@ Pokud se chceš programováním živit, tento web ti na dalších stránkách uk
 
 ## Mýty o programování    <span id="myths"></span>
 
-Některé představy o programování a programátorské profesi nemají moc společného s realitou, ačkoliv je lidé stále opakují. Následující odstavce se snaží věci uvést na pravou míru a zabránit různým falešným obavám nebo naopak nereálným očekáváním.
+Některé představy o programování a programátorské profesi nemají moc společného s realitou, ačkoliv je lidé stále opakují. Následující odstavce se snaží věci uvést na pravou míru a zabránit různým falešným obavám nebo naopak nereálným očekáváním. Můžeš si to pustit i jako video.
+
+{{ video_card_engeto(
+  'Nejčastější mýty o práci v IT',
+  '5min',
+  'youtube.com!watch!v=2Km3orTYFrM.jpg',
+  'https://www.youtube.com/watch?v=2Km3orTYFrM&list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI',
+  'Musím mít talent na techniku nebo matematiku? Záleží na věku? Potřebuji vysokou školu?',
+) }}
+
 
 ### Už je pozdě začít    <span id="age"></span>
 

@@ -1,0 +1,113 @@
+.video-card {
+  @extend .card;
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 100%;
+  max-width: 60ch;
+  margin: 0 auto $spacer auto;
+  overflow: hidden;
+  background: $jg-blue-light;
+  border: 1px solid $jg-blue-light;
+}
+
+.video-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.video-cards .video-card {
+  margin: 0 0 $spacer 0;
+
+  @include media-breakpoint-up(sm) {
+    $w: calc((100% - #{$spacer}) / 2);
+    width: $w;
+    min-width: $w;
+    max-width: $w;
+    margin-right: $spacer;
+  }
+}
+
+.video-card:nth-child(2n) {
+  @include media-breakpoint-up(sm) {
+    margin-right: 0;
+  }
+}
+
+.video-card-image-cover {
+  position: relative;
+}
+
+.video-card-image {
+  @extend .card-img-top;
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: .5;
+}
+
+.video-card:hover .video-card-image {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.video-card-button {
+  @extend .badge;
+  padding: ($badge-padding-y * 2) ($badge-padding-x * 1.5);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-weight: $font-weight-normal;
+  color: $jg-white;
+  background: $link-color;
+  box-shadow: rgba($jg-dark, .24) 0 map-get($spacers, 1) map-get($spacers, 1);
+}
+
+.video-card:hover .video-card-button {
+  background: $link-hover-color;
+}
+
+.video-card-play {
+  @extend .fs-2;
+}
+
+.video-card-duration {
+  @extend .fs-5;
+  margin-left: .5rem;
+}
+
+.video-card-header {
+  position: relative;
+}
+
+.video-card-title {
+  @extend .card-title;
+  @extend .card-body;
+  @extend .fs-5;
+  padding-bottom: map-get($spacers, 2);
+  margin: 0;
+}
+
+.video-card-title a:visited { color: $link-color; }
+.video-card-title a:visited:hover { color: $link-hover-color; }
+
+.video-card-link {
+  @extend .stretched-link;
+}
+
+.video-card-body {
+  @extend .card-body;
+  padding-top: 0;
+}
+
+.video-card-text {
+  @extend .card-text;
+}
+
+.video-card-note {
+  display: block;
+  margin-top: $spacer;
+}

@@ -130,6 +130,53 @@
 {% endmacro %}
 
 
+{% macro video_card(title, duration, screenshot_filename, url, caption=None, note=None) %}
+<div class="video-card">
+  <div class="video-card-header">
+    <div class="video-card-image-cover">
+      {{ img('static/images/screenshots/' + screenshot_filename, title, 640, 360, class='video-card-image') }}
+      <div class="video-card-button">
+        <span class="video-card-play">{{ 'play-circle-fill'|icon }}</span>
+        <span class="video-card-duration">{{ duration }}</span>
+      </div>
+    </div>
+    <h4 class="video-card-title">
+      <a href="{{ url }}" class="video-card-link" target="_blank" rel="noopener">{{ title }}</a>
+    </h4>
+  </div>
+  <div class="video-card-body">
+    {% if caption or caller %}
+      <p class="video-card-text">
+        {% if caption %}
+          {{ caption }}
+        {% else %}
+          {{ caller()|md|remove_p }}
+        {% endif %}
+        {% if note %}
+          <small class="video-card-note">{{ 'info-circle'|icon }} {{ note }}</small>
+        {% endif %}
+      </p>
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}
+
+
+{% macro video_card_engeto(title, duration, screenshot_filename, url, caption=None) %}
+  {% if caller %}
+    {% set caption = caller()|md|remove_p %}
+  {% endif %}
+  {{ video_card(
+    title,
+    duration,
+    screenshot_filename,
+    url,
+    caption=caption,
+    note='Video je součástí série <a href="https://www.youtube.com/playlist?list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI">Průvodce nováčka v IT</a>, kterou natočilo <a href="https://engeto.com/">Engeto</a> ve spolupráci s <a href="#honza">Honzou</a> z junior.guru.',
+  ) }}
+{% endmacro %}
+
+
 {% macro links_note() %}
   <small>Seznam je ručně sestavován s ohledem na přívětivost, efektivnost, a vhodnost pro samouky. Za umístění v seznamu se nedá zaplatit, ale jako firma [můžete mít na tomto webu své logo]({{ pricing_url }}). Návrhy na vylepšení seznamu posílejte na {{ 'ahoj@junior.guru'|email_link }}.</small>
 {% endmacro %}

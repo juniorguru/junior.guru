@@ -5,7 +5,7 @@ description: Jak začít programovat? Zde najdeš pečlivě nachystané jen to, 
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, lead, link_card, links_note with context %}
+{% from 'macros.html' import blockquote_avatar, lead, link_card, links_note, video_card_engeto with context %}
 
 
 # Nauč se základy programování
@@ -22,6 +22,14 @@ template: main_handbook.html
 Především budeš potřebovat **počítač a internet**. Na mobilu ani tabletu se programovat prakticky nedá a bez připojení nebudeš mít materiály, ani nenajdeš potřebnou pomoc.
 
 Ideální je mít svůj vlastní počítač, nad kterým máš plnou kontrolu a na němž je operační systém Linux, Windows nebo macOS. Pokud máš jiný systém, jako Android nebo ChromeOS, možná se ti povede na něm programování rozjet, ale v praxi je k tomu nikdo nepoužívá a budeš mít velký problém sehnat někoho, kdo ti poradí v případě problémů. Na mobilu můžeš některé věci procvičovat, ale je to jako se v appce učit akordy, vzorečky nebo slovíčka — praktické znalosti tím nezískáš.
+
+{{ video_card_engeto(
+  'Vybavení a programy, které budeš potřebovat',
+  '5min',
+  'youtube.com!watch!v=Z-r8xiKX6uM.jpg',
+  'https://www.youtube.com/watch?v=Z-r8xiKX6uM&list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI',
+  'K programování se ti bude hodit hned několik věcí – notebook, připojení k internetu nebo třeba programy, ve kterých si můžeš zkusit psát kód.',
+) }}
 
 ### Sežeň si kamarády    <span id="friends"></span>
 
