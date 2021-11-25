@@ -18,6 +18,12 @@ $ export CFLAGS="-falign-functions=8 ${CFLAGS}"
 
 Thanks [@lutzroeder](https://github.com/scipy/scipy/issues/13409#issuecomment-774640468), no thanks SciPy.
 
+## Logging
+
+Use `export LOG_LEVEL='debug'` to see DEBUG logging, by default logging is set to INFO and for some selected 'muted' loggers it's set to WARNING only. The setup is in `loggers.py`.
+
+Sensitive information should always go to DEBUG. The CI is set to log only INFO. If shit hits the fan and the error in hand isn't reproducible locally, for a few builds even CI could be set to DEBUG, so don't put anything _actually sensitive_ to the logs!
+
 ## Setting up email address
 
 1.  Add the following to the DNS:

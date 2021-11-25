@@ -152,5 +152,9 @@ class ClubPinReaction(BaseModel):
     message = ForeignKeyField(ClubMessage, backref='list_pins')
 
     @classmethod
+    def count(cls):
+        return cls.select().count()
+
+    @classmethod
     def listing(cls):
         return cls.select()
