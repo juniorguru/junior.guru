@@ -9,7 +9,7 @@ from juniorguru.models import ClubMessage, ClubUser, ClubPinReaction, db, with_d
 logger = loggers.get('club_content')
 
 
-WORKERS_COUNT = 10
+WORKERS_COUNT = 5
 
 
 @measure('club_content')
