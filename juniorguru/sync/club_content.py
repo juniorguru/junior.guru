@@ -1,5 +1,7 @@
 import asyncio
 
+import arrow
+
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
 from juniorguru.lib.club import EMOJI_PINS, discord_task, count_upvotes, count_downvotes, emoji_name, get_roles, count_pins
@@ -37,7 +39,7 @@ async def main(client):
                         is_member=True,
                         display_name=member.display_name,
                         mention=member.mention,
-                        joined_at=member.joined_at,
+                        joined_at=arrow.get(member.joined_at).naive,
                         roles=get_roles(member))
 
     logger.info(f'Created {ClubMessage.count()} messages from {len(authors)} authors, '
@@ -105,7 +107,7 @@ async def channel_worker(worker_no, authors, queue):
                                              is_member=bool(getattr(message.author, 'joined_at', False)),
                                              display_name=message.author.display_name,
                                              mention=message.author.mention,
-                                             joined_at=getattr(message.author, 'joined_at', None),
+                                             joined_at=(arrow.get(message.author.joined_at).naive if hasattr(message.author, 'joined_at') else None),
                                              roles=get_roles(message.author))
                     users_count += 1
                 authors[message.author.id] = author
@@ -116,8 +118,8 @@ async def channel_worker(worker_no, authors, queue):
                                    upvotes_count=count_upvotes(message.reactions),
                                    downvotes_count=count_downvotes(message.reactions),
                                    pin_reactions_count=count_pins(message.reactions),
-                                   created_at=message.created_at,
-                                   edited_at=message.edited_at,
+                                   created_at=arrow.get(message.created_at).naive,
+                                   edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
                                    author=authors[message.author.id],
                                    channel_id=channel.id,
                                    channel_name=channel.name,
