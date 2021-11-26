@@ -82,7 +82,8 @@ async def channel_worker(worker_no, authors, queue):
         channel = await queue.get()
 
         worker_logger = loggers.get(f'club_content.channel_workers.{worker_no}')
-        worker_logger.info(f"Reading channel '{channel.name}'")
+        worker_logger.info(f"Reading channel #{channel.id}")
+        worker_logger.debug(f"Channel #{channel.id} is named '{channel.name}'")
 
         messages_count = 0
         users_count = 0
@@ -92,7 +93,7 @@ async def channel_worker(worker_no, authors, queue):
             if message.flags.has_thread:
                 worker_logger.debug(f'Thread {message.jump_url}')
                 thread = await message.guild.fetch_channel(message.id)
-                worker_logger.debug(f"Thread identified as '{thread.name}'")
+                worker_logger.debug(f"Thread identified as #{thread.id}, named '{thread.name}'")
                 queue.put_nowait(thread)
 
             if message.author.id not in authors:
@@ -138,7 +139,7 @@ async def channel_worker(worker_no, authors, queue):
                     ClubPinReaction.create(user=user.id, message=message.id)
                     pins_count += 1
 
-        worker_logger.info(f"Channel '{channel.name}' added {messages_count} messages, {users_count} users, {pins_count} pins")
+        worker_logger.info(f"Channel #{channel.id} added {messages_count} messages, {users_count} users, {pins_count} pins")
         queue.task_done()
 
 
