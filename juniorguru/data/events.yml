@@ -52,18 +52,18 @@
 #    prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
-# - title: "[TBD] Jak zacit jako junior v QA"
-#   date: "2021-12-07"
-#   description: |
-#     [TBD]
-#   bio_name: Soňa Mištríková
-#   bio_title: QA specialistka v Mews
-#   bio: |
-#     [TBD]
-#   bio_links:
-#     - https://www.linkedin.com/in/so%C5%88a/
-#   logo_path: logos/mews.svg
-#   speakers: 869504117154934824
+- title: "Tester jako ideální první práce, aneb čím začít kariéru v IT"
+  date: "2021-12-07"
+  description: |
+    Možná jste už slyšeli tvrzení, že vhodnou pozicí do startu, na kterou byste se mohli zaměřit, je tester. Je to ale skutečně tak? Je pozice testera ideálním začátkem kariéry v IT zrovna pro tebe?
+  bio_name: Soňa Mištríková
+  bio_title: QA specialistka v Mews
+  bio: |
+    Soňa je _career-switcherka_, která se dostala do IT ze zvědavosti a díky zápalu naučit se něco úplně nového. Aktuálně pracuje jako QA specialistka v Mews a koučingem podporuje dámy v Czechitas. Přes víkend vždy zmizí do přírody a pokud k večeru uvidíte někoho v horách, jak kope díru ve sněhu, je to pravděpodobně ona, jak se chystá jít spát.
+  bio_links:
+    - https://www.linkedin.com/in/so%C5%88a/
+  logo_path: logos/mews.svg
+  speakers: 869504117154934824
 
 
 - title: "10 klíčových otázek, na které by každý junior měl znát odpověď"
