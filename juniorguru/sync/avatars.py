@@ -39,12 +39,12 @@ async def process_member(client, member):
     member_logger.debug(f"Member #{member.id} is named '{member.display_name}'")
     discord_member = await client.juniorguru_guild.fetch_member(member.id)
     if discord_member.avatar:
-        member_logger.debug(f"Member '{member.display_name}' has avatar, downloading")
+        member_logger.info(f"Member #{member.id} has avatar, downloading")
         member.avatar_path = await download_avatar(discord_member.avatar)
     if member.avatar_path:
-        member_logger.debug(f"Member '{member.display_name}' has avatar, downloaded as '{member.avatar_path}'")
+        member_logger.info(f"Member #{member.id} has avatar, downloaded as '{member.avatar_path}'")
     else:
-        member_logger.debug(f"Member '{member.display_name}' has no avatar")
+        member_logger.info(f"Member #{member.id} has no avatar")
     member.save()
 
 
