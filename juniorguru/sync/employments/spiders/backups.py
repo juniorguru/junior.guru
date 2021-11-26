@@ -10,10 +10,16 @@ from datetime import date
 import arrow
 from scrapy.utils.project import data_path
 from scrapy import Spider as BaseSpider, Request
+from scrapy.exceptions import CloseSpider
 
 from juniorguru.lib.url_params import strip_utm_params
-from juniorguru.sync.employments.items import Employment
+from juniorguru.lib import loggers
+from juniorguru.sync.employments.items import EmploymentItem
 from juniorguru.sync.jobs.spiders.linkedin import clean_validated_url
+from juniorguru.models import db, Employment
+
+
+logger = loggers.get('backups')
 
 
 STARTUPJOBS_URL_RE = re.compile(r'startupjobs.+\&utm_')
@@ -21,26 +27,26 @@ STARTUPJOBS_URL_RE = re.compile(r'startupjobs.+\&utm_')
 
 def employment_v1_adapter(ci_data):
     for row in (yield 'SELECT * from employment_v1'):
-        yield Employment(title=row['title'],
-                         company_name=row['company_name'],
-                         url=clean_validated_url(row['url']),
-                         apply_url=clean_validated_url(row.get('apply_url')),
-                         external_ids=json.loads(row['external_ids']),
-                         locations=json.loads(row.get('locations', 'null')),
-                         remote=row['remote'],
-                         lang=row.get('lang'),
-                         description_html=row['description_html'],
-                         first_seen_at=date.fromisoformat(row['first_seen_at']),
-                         last_seen_at=date.fromisoformat(row['last_seen_at']),
-                         employment_types=json.loads(row.get('employment_types', 'null')),
-                         juniority_re_score=row.get('juniority_re_score'),
-                         juniority_ai_opinion=row.get('juniority_ai_opinion'),
-                         juniority_votes_score=row['juniority_votes_score'],
-                         juniority_votes_count=row['juniority_votes_count'],
-                         source=row['source'],
-                         source_urls=json.loads(row['source_urls']),
-                         adapter='employment_v1',
-                         build_url=ci_data['build_url'])
+        yield EmploymentItem(title=row['title'],
+                             company_name=row['company_name'],
+                             url=clean_validated_url(row['url']),
+                             apply_url=clean_validated_url(row.get('apply_url')),
+                             external_ids=json.loads(row['external_ids']),
+                             locations=json.loads(row.get('locations', 'null')),
+                             remote=row['remote'],
+                             lang=row.get('lang'),
+                             description_html=row['description_html'],
+                             first_seen_at=date.fromisoformat(row['first_seen_at']),
+                             last_seen_at=date.fromisoformat(row['last_seen_at']),
+                             employment_types=json.loads(row.get('employment_types', 'null')),
+                             juniority_re_score=row.get('juniority_re_score'),
+                             juniority_ai_opinion=row.get('juniority_ai_opinion'),
+                             juniority_votes_score=row['juniority_votes_score'],
+                             juniority_votes_count=row['juniority_votes_count'],
+                             source=row['source'],
+                             source_urls=json.loads(row['source_urls']),
+                             adapter='employment_v1',
+                             build_url=ci_data['build_url'])
 
 
 def job_adapter(ci_data):  # old-style jobs
@@ -56,25 +62,25 @@ def job_adapter(ci_data):  # old-style jobs
             votes_score = 0
             votes_count = 0
 
-        yield Employment(title=row['title'],
-                         url=strip_utm_params(clean_validated_url(row['link'])),
-                         apply_url=clean_validated_url(apply_url),
-                         company_name=row['company_name'],
-                         locations=json.loads(row['locations']),
-                         remote=bool(row['remote']),
-                         description_html=row['description_html'],
-                         lang=row['lang'],
-                         first_seen_at=date.fromisoformat(row['posted_at']),
-                         last_seen_at=ci_data['build_date'],
-                         juniority_re_score=row['junior_rank'],
-                         juniority_ai_opinion=row.get('magic_is_junior'),
-                         juniority_votes_score=votes_score,
-                         juniority_votes_count=votes_count,
-                         employment_types=json.loads(row['employment_types']),
-                         source=row['source'],
-                         source_urls=[row['response_url']],
-                         adapter='job',
-                         build_url=ci_data['build_url'])
+        yield EmploymentItem(title=row['title'],
+                             url=strip_utm_params(clean_validated_url(row['link'])),
+                             apply_url=clean_validated_url(apply_url),
+                             company_name=row['company_name'],
+                             locations=json.loads(row['locations']),
+                             remote=bool(row['remote']),
+                             description_html=row['description_html'],
+                             lang=row['lang'],
+                             first_seen_at=date.fromisoformat(row['posted_at']),
+                             last_seen_at=ci_data['build_date'],
+                             juniority_re_score=row['junior_rank'],
+                             juniority_ai_opinion=row.get('magic_is_junior'),
+                             juniority_votes_score=votes_score,
+                             juniority_votes_count=votes_count,
+                             employment_types=json.loads(row['employment_types']),
+                             source=row['source'],
+                             source_urls=[row['response_url']],
+                             adapter='job',
+                             build_url=ci_data['build_url'])
 
 
 def jobdropped_adapter(ci_data):  # old-style jobs
@@ -94,25 +100,25 @@ def jobdropped_adapter(ci_data):  # old-style jobs
             votes_score = 0
             votes_count = 0
 
-        yield Employment(title=item['title'],
-                         url=strip_utm_params(clean_validated_url(item['link'])),
-                         apply_url=clean_validated_url(item.get('apply_link')),
-                         company_name=item['company_name'],
-                         locations=item.get('locations'),
-                         remote=item.get('remote', False),
-                         description_html=item['description_html'],
-                         lang=item.get('lang'),
-                         first_seen_at=first_seen_at,
-                         last_seen_at=last_seen_at,
-                         juniority_re_score=item.get('junior_rank'),
-                         juniority_ai_opinion=row.get('magic_is_junior'),
-                         juniority_votes_score=votes_score,
-                         juniority_votes_count=votes_count,
-                         employment_types=item.get('employment_types'),
-                         source=row['source'],
-                         source_urls=[row['response_url']],
-                         adapter='jobdropped',
-                         build_url=ci_data['build_url'])
+        yield EmploymentItem(title=item['title'],
+                             url=strip_utm_params(clean_validated_url(item['link'])),
+                             apply_url=clean_validated_url(item.get('apply_link')),
+                             company_name=item['company_name'],
+                             locations=item.get('locations'),
+                             remote=item.get('remote', False),
+                             description_html=item['description_html'],
+                             lang=item.get('lang'),
+                             first_seen_at=first_seen_at,
+                             last_seen_at=last_seen_at,
+                             juniority_re_score=item.get('junior_rank'),
+                             juniority_ai_opinion=row.get('magic_is_junior'),
+                             juniority_votes_score=votes_score,
+                             juniority_votes_count=votes_count,
+                             employment_types=item.get('employment_types'),
+                             source=row['source'],
+                             source_urls=[row['response_url']],
+                             adapter='jobdropped',
+                             build_url=ci_data['build_url'])
 
 
 class Spider(BaseSpider):
@@ -131,6 +137,7 @@ class Spider(BaseSpider):
     def __init__(self, *args, **kwargs):
         super(Spider, self).__init__(*args, **kwargs)
         self.data_dir = data_path('backups', createdir=True)
+        self.employments_saved_count = 0
 
     def start_requests(self):
         # probes just 10 pages as there are only last 30 backups anyway
@@ -168,6 +175,19 @@ class Spider(BaseSpider):
                           cb_kwargs=dict(ci_data=ci_data))
 
     def parse_artifact(self, response, ci_data):
+        logger.info(f'Processing artifact {response.url} from build {repr(ci_data)}')
+
+        # done with requests at this point, the following code blocks the async loop to process
+        # the backups, so check the number of employments loaded from backups and if it didn't
+        # change from the last time, further processing is redundant
+        with db:
+            employments_saved_count = Employment.loaded_from_backups_count()
+        logger.info(f'Employments loaded from backups: {employments_saved_count} (previously {self.employments_saved_count})')
+        if employments_saved_count and employments_saved_count == self.employments_saved_count:
+            raise CloseSpider('Everything loaded, no need to process more backups')
+        else:
+            self.employments_saved_count = employments_saved_count
+
         # couldn't figure out how to do the following line in a memory-efficient way :(
         file = io.BytesIO(response.body)
         with tarfile.open(fileobj=file) as tar:

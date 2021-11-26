@@ -46,6 +46,7 @@ class Employment(BaseModel):
     # meta information
     source = CharField()
     source_urls = JSONField(default=lambda: [])
+    build_url = CharField(null=True)
     items_merged_count = IntegerField(default=0)
 
     @classmethod
@@ -59,6 +60,12 @@ class Employment(BaseModel):
         return cls.select() \
             .where(cls.url == url) \
             .get()
+
+    @classmethod
+    def loaded_from_backups_count(cls):
+        return cls.select() \
+            .where(cls.build_url.is_null(False)) \
+            .count()
 
     @classmethod
     def api_listing(cls):

@@ -3,7 +3,7 @@ from scrapy import Field, Item
 from juniorguru.lib.repr import repr_item
 
 
-class Employment(Item):
+class EmploymentItem(Item):
     title = Field()
     company_name = Field()
     url = Field()
