@@ -7,7 +7,7 @@ from PIL import Image
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import discord_task, is_default_avatar
+from juniorguru.lib.club import discord_task
 from juniorguru.models import ClubUser, with_db
 
 
@@ -37,7 +37,9 @@ async def process_member(client, member):
     user_logger = loggers.get(f'avatars.{member.id}')
     user_logger.debug(f"Checking avatar of '{member.display_name}'")
     discord_member = await client.juniorguru_guild.fetch_member(member.id)
-    member.avatar_path = await download_avatar(discord_member)
+    if discord_member.avatar:
+        user_logger.debug(f"User '{member.display_name}' has avatar, downloading")
+        member.avatar_path = await download_avatar(discord_member.avatar)
     if member.avatar_path:
         user_logger.debug(f"User '{member.display_name}' has avatar, downloaded as '{member.avatar_path}'")
     else:
@@ -45,18 +47,14 @@ async def process_member(client, member):
     member.save()
 
 
-async def download_avatar(discord_member):
-    avatar_url = str(discord_member.display_avatar.url)
-    if is_default_avatar(avatar_url):
-        return None
-    else:
-        buffer = BytesIO()
-        await discord_member.display_avatar.save(buffer)
-        image = Image.open(buffer)
-        image = image.resize((AVATAR_SIZE_PX, AVATAR_SIZE_PX))
-        image_path = AVATARS_PATH / f'{Path(urlparse(avatar_url).path).stem}.png'
-        image.save(image_path, 'PNG')
-        return f'images/avatars/{image_path.name}'
+async def download_avatar(avatar):
+    buffer = BytesIO()
+    await avatar.save(buffer)
+    image = Image.open(buffer)
+    image = image.resize((AVATAR_SIZE_PX, AVATAR_SIZE_PX))
+    image_path = AVATARS_PATH / f'{Path(urlparse(avatar.url).path).stem}.png'
+    image.save(image_path, 'PNG')
+    return f'images/avatars/{image_path.name}'
 
 
 if __name__ == '__main__':

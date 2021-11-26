@@ -1,4 +1,3 @@
-import re
 import os
 import asyncio
 from functools import wraps
@@ -83,10 +82,6 @@ def emoji_name(emoji):
         return emoji.name.lower()
     except AttributeError:
         return str(emoji)
-
-
-def is_default_avatar(url):
-    return bool(re.search(r'/embed/avatars/\d+\.', str(url)))
 
 
 def get_roles(member_or_user):
