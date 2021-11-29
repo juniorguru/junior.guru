@@ -9,7 +9,7 @@ thumbnail_title: Otázky a odpovědi
 # Otázky a odpovědi
 
 {% call lead() %}
-Vrtá ti hlavou, jak to tady přesně funguje? Prolétni si tuto stránku, třeba najdeš odpovědi. Pokud ne, neváhej a piš na {{ 'ahoj@junior.guru'|email_link }}.
+Vrtá ti hlavou, jak to tady přesně funguje? Prolétni si tuto stránku, třeba najdeš odpovědi. Pokud ne, neváhej a piš na {{ 'honza@junior.guru'|email_link }}.
 {% endcall %}
 
 [TOC]
@@ -72,11 +72,11 @@ V klubu se koncentrují lidé, kteří „to myslí vážně“, ať už jde o p
 
 ### Mám platné členství, ale nedaří se mi dostat na Discord
 
-Po registraci na junior.guru by ti měl přijít e-mail s odkazem na propojení. Pokud nic nepřišlo, [klikni sem](https://juniorguru.memberful.com/account/discord/authorize), to je stejný odkaz. Jestliže ještě nemáš účet na Discordu, budeš si jej muset vytvořit. Aby vše správně fungovalo, musí mít tvůj Discord účet ověřenou e-mailovou adresu. V případě problémů napiš na {{ 'ahoj@junior.guru'|email_link }}, společně to vyřešíme.
+Po registraci na junior.guru by ti měl přijít e-mail s odkazem na propojení. Pokud nic nepřišlo, [klikni sem](https://juniorguru.memberful.com/account/discord/authorize), to je stejný odkaz. Jestliže ještě nemáš účet na Discordu, budeš si jej muset vytvořit. Aby vše správně fungovalo, musí mít tvůj Discord účet ověřenou e-mailovou adresu. V případě problémů napiš na {{ 'honza@junior.guru'|email_link }}, společně to vyřešíme.
 
 ### Mám účet na Discordu, jak jej propojím s klubem?
 
-Jestli už Discord používáš a máš tam účet, stačí jej propojit s junior.guru. Aby vše správně fungovalo, musí mít tvůj Discord účet ověřenou e-mailovou adresu. Po registraci na junior.guru by ti měl přijít e-mail s odkazem na propojení. Pokud nic nepřišlo, [klikni sem](https://juniorguru.memberful.com/account/discord/authorize), to je stejný odkaz. V případě problémů napiš na {{ 'ahoj@junior.guru'|email_link }}, společně to vyřešíme.
+Jestli už Discord používáš a máš tam účet, stačí jej propojit s junior.guru. Aby vše správně fungovalo, musí mít tvůj Discord účet ověřenou e-mailovou adresu. Po registraci na junior.guru by ti měl přijít e-mail s odkazem na propojení. Pokud nic nepřišlo, [klikni sem](https://juniorguru.memberful.com/account/discord/authorize), to je stejný odkaz. V případě problémů napiš na {{ 'honza@junior.guru'|email_link }}, společně to vyřešíme.
 
 ## {{ 'credit-card'|icon }} Placení za klub
 
@@ -106,7 +106,7 @@ S největší pravděpodobností tě vyhodil proto, že nemáš vyplněny údaje
 
 ### Co když se mi z karty strhne částka, která se mi nelíbí?
 
-Sice se to nikdy nestane, ale kdyby se to náhodou stalo, podívej se nejdříve do [nastavení](https://juniorguru.memberful.com/account), kde by měl být aktuální stav tvého předplatného. Jestliže vidíš nějaký nesoulad, neváhej napsat na {{ 'ahoj@junior.guru'|email_link }}, společně to objasníme. [Honza Javorek](#honza), provozovatel klubu, má možnost v případě jakéhokoliv problému strhnutou částku ručně vrátit zpět. Další detaily najdeš v [obchodních podmínkách](tos.md).
+Sice se to nikdy nestane, ale kdyby se to náhodou stalo, podívej se nejdříve do [nastavení](https://juniorguru.memberful.com/account), kde by měl být aktuální stav tvého předplatného. Jestliže vidíš nějaký nesoulad, neváhej napsat na {{ 'honza@junior.guru'|email_link }}, společně to objasníme. [Honza Javorek](#honza), provozovatel klubu, má možnost v případě jakéhokoliv problému strhnutou částku ručně vrátit zpět. Další detaily najdeš v [obchodních podmínkách](tos.md).
 
 ### Jak zjistím stav svého předplatného?
 
@@ -118,17 +118,17 @@ Jde to změnit v [nastavení](https://juniorguru.memberful.com/account).
 
 ### Jak zruším předplatné?
 
-Předplatné můžeš zrušit v [nastavení](https://juniorguru.memberful.com/account). Pokud chceš zrušit roční předplatné, počítej s tím, že se ti nevrátí peníze za zbytek nevyužitého období. Další detaily najdeš v [obchodních podmínkách](tos.md). V případě jakéhokoliv problému neváhej napsat na {{ 'ahoj@junior.guru'|email_link }}.
+Předplatné můžeš zrušit v [nastavení](https://juniorguru.memberful.com/account). Pokud chceš zrušit roční předplatné, počítej s tím, že se ti nevrátí peníze za zbytek nevyužitého období. Další detaily najdeš v [obchodních podmínkách](tos.md). V případě jakéhokoliv problému neváhej napsat na {{ 'honza@junior.guru'|email_link }}.
 
 ## {{ 'heart'|icon }} Dobrovolné příspěvky
 
 ### Co když Honzu podporuji na GitHub Sponsors nebo na Patreonu?
 
-Dlouhodobý plán je takový, že by členství v klubu zcela nahradilo původní [dobrovolné příspěvky](/donate/). Můžeš tedy příspěvky zrušit a místo nich si pořídit členství v klubu. Jestliže z nějakého důvodu příspěvky rušit nechceš, napiš prosím na {{ 'ahoj@junior.guru'|email_link }} a domluvíme se, jak to provedeme. Přístup do klubu rozhodně dostaneš.
+Dlouhodobý plán je takový, že by členství v klubu zcela nahradilo původní [dobrovolné příspěvky](/donate/). Můžeš tedy příspěvky zrušit a místo nich si pořídit členství v klubu. Jestliže z nějakého důvodu příspěvky rušit nechceš, napiš prosím na {{ 'honza@junior.guru'|email_link }} a domluvíme se, jak to provedeme. Přístup do klubu rozhodně dostaneš.
 
 ### Mám Honzu podporovat dobrovolnými příspěvky, nebo platit členství v klubu?
 
-Dlouhodobý plán je takový, že by členství v klubu zcela nahradilo původní [dobrovolné příspěvky](/donate/). Můžeš tedy příspěvky zrušit a místo nich si pořídit členství v klubu. Někteří přispěvatelé ale tuto variantu dobrovolně odmítli s tím, že chtějí posílat měsíčně víc peněz, než je cena členství, a to mohou zatím pouze na GitHub Sponsors nebo na Patreonu. Pokud to máš podobně, napiš prosím na {{ 'ahoj@junior.guru'|email_link }} a domluvíme se, jak to provedeme. Přístup do klubu rozhodně dostaneš.
+Dlouhodobý plán je takový, že by členství v klubu zcela nahradilo původní [dobrovolné příspěvky](/donate/). Můžeš tedy příspěvky zrušit a místo nich si pořídit členství v klubu. Někteří přispěvatelé ale tuto variantu dobrovolně odmítli s tím, že chtějí posílat měsíčně víc peněz, než je cena členství, a to mohou zatím pouze na GitHub Sponsors nebo na Patreonu. Pokud to máš podobně, napiš prosím na {{ 'honza@junior.guru'|email_link }} a domluvíme se, jak to provedeme. Přístup do klubu rozhodně dostaneš.
 
 ### Jak mohu podporovat junior.guru, pokud mě klub nezajímá?
 
@@ -142,7 +142,7 @@ Každá firma, která s klubem spolupracuje, má logo nahoře na této stránce 
 
 ### Co firma získává členstvím v klubu?
 
-Firmy, které s klubem spolupracují, do něj mají především přístup. Mohou vyhlížet talentované juniory, promovat ve vyhrazených kanálech své aktivity, poskytovat slevy na své produkty. Mohou se zapojit do diskuzí a radit nebo poskytovat pohled z druhé strany. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na vás, jak to uchopíte a co z toho „vyždímete“. Už jen tím, že svými financemi podpoříte existenci junior.guru a budete zde mít logo, si budujete dobré jméno jak mezi lidmi z nastupující generace vývojářů, tak mezi zainteresovanými profíky. Partnerství pro firmy je od 10.599 Kč/rok. Mrkněte na [ceník]({{ pricing_url }}) a pokud máte zájem, pište na {{ 'ahoj@junior.guru'|email_link }}.
+Firmy, které s klubem spolupracují, do něj mají především přístup. Mohou vyhlížet talentované juniory, promovat ve vyhrazených kanálech své aktivity, poskytovat slevy na své produkty. Mohou se zapojit do diskuzí a radit nebo poskytovat pohled z druhé strany. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na vás, jak to uchopíte a co z toho „vyždímete“. Už jen tím, že svými financemi podpoříte existenci junior.guru a budete zde mít logo, si budujete dobré jméno jak mezi lidmi z nastupující generace vývojářů, tak mezi zainteresovanými profíky. Partnerství pro firmy je od 10.599 Kč/rok. Mrkněte na [ceník]({{ pricing_url }}) a pokud máte zájem, pište na {{ 'honza@junior.guru'|email_link }}.
 
 ### Co vyplývá z toho, že je členem klubu nějaká vzdělávací agentura?  {: #vzdelavaci-agentury :}
 
@@ -150,7 +150,7 @@ Klub a celé junior.guru nenabízí ani nedoporučuje žádný konkrétní vzdě
 
 ### Co vyplývá z toho, že s klubem spolupracuje nějaká komunita?  {: #komunity }
 
-Organizátoři komunit, které s klubem spolupracují, do něj mají přístup a mohou v něm promovat svoje aktivity. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na vás, jak to uchopíte a co z toho „vyždímete“. Spolupráce by ale neměla být samoúčelná, měla by vždy vyústit něco, co bude především nějakým způsobem sloužit samotným juniorům. Partnerství pro komunity je domlouváno nepeněžní formou. Logo komunity se zde objevuje zpravidla ve chvíli, kdy jde o dlouhodobější, ne pouze jednorázovou spolupráci. Máte-li o partnerství zájem, napište na {{ 'ahoj@junior.guru'|email_link }}.
+Organizátoři komunit, které s klubem spolupracují, do něj mají přístup a mohou v něm promovat svoje aktivity. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na vás, jak to uchopíte a co z toho „vyždímete“. Spolupráce by ale neměla být samoúčelná, měla by vždy vyústit něco, co bude především nějakým způsobem sloužit samotným juniorům. Partnerství pro komunity je domlouváno nepeněžní formou. Logo komunity se zde objevuje zpravidla ve chvíli, kdy jde o dlouhodobější, ne pouze jednorázovou spolupráci. Máte-li o partnerství zájem, napište na {{ 'honza@junior.guru'|email_link }}.
 
 ## {{ 'arrow-repeat'|icon }} Vztah mezi radami na webu a klubem
 

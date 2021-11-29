@@ -390,6 +390,6 @@ Tento web se zabývá vytvářením softwaru, tedy programů pro počítače neb
 
 ## Všechny motivační příběhy    <span id="stories"></span>
 
-Pod některými kapitolami můžeš narazit na motivační příbehy lidí jako ty, kteří se bez předchozí znalosti naučili programovat, programování jim v něčem pomohlo, nebo si dokonce v IT našli i práci. Tady jsou všechny pohromadě. Pokud víš o dalších, které tu nejsou, napiš prosím na {{ 'ahoj@junior.guru'|email_link }}.
+Pod některými kapitolami můžeš narazit na motivační příbehy lidí jako ty, kteří se bez předchozí znalosti naučili programovat, programování jim v něčem pomohlo, nebo si dokonce v IT našli i práci. Tady jsou všechny pohromadě. Pokud víš o dalších, které tu nejsou, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
 
 {{ stories_list(stories) }}

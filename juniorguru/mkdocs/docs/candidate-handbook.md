@@ -14,7 +14,7 @@ template: main_handbook.html
 
 Ještě než se začteš, jednu věc si musíme ujasnit hned. **Toto není e-book.** Nacházíš se na „živé stránce“, na které stále probíhají úpravy — naposledy {{ last_modified|ago }}. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/honzajavorek/junior.guru/commits/main/juniorguru/mkdocs/docs/handbook/candidate-handbook.md), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](club.md).
 
-A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'ahoj@junior.guru'|email_link }}.
+A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'honza@junior.guru'|email_link }}.
 
 ### Předmluva    <span id="foreword"></span>
 
@@ -966,4 +966,4 @@ Kde se bere vášeň? Do začátku stačí, když ti programování přijde jako
 
 **P.S.** Nezapomeň, že jsi na „živé stránce“, na které stále probíhají úpravy — naposledy {{ last_modified|ago }}. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/honzajavorek/junior.guru/commits/main/juniorguru/mkdocs/docs/handbook/candidate-handbook.md), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](club.md).
 
-A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'ahoj@junior.guru'|email_link }}. Jestli se ti díky junior.guru povede sehnat práci, ozvi se! Můžeš [motivovat ostatní svým příběhem](motivation.md#vsechny-motivacni-pribehy), nebo tím prostě jen udělat [Honzovi](#honza) radost.
+A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'honza@junior.guru'|email_link }}. Jestli se ti díky junior.guru povede sehnat práci, ozvi se! Můžeš [motivovat ostatní svým příběhem](motivation.md#vsechny-motivacni-pribehy), nebo tím prostě jen udělat [Honzovi](#honza) radost.

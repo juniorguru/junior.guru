@@ -20,7 +20,7 @@ fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodní
 se sídlem Lupáčova 375/24, 130 00 Praha<br>
 IČO: [74279858](https://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0),<br>
 neplátce DPH,<br>
-E-mail: [ahoj@junior.guru](mailto:ahoj@junior.guru)<br>
+E-mail: [honza@junior.guru](mailto:honza@junior.guru)<br>
 
 (dále jako „poskytovatel“)
 
@@ -82,7 +82,7 @@ E-mail: [ahoj@junior.guru](mailto:ahoj@junior.guru)<br>
 
 ## 3\. Zvláštní pravidla pro objednávky ze strany společnosti
 
-**3.1.** Společnostem je poskytováno digitální předplatné na základě specifických podmínek, a to formou individuální objednávky přes e-mail: [ahoj@junior.guru](mailto:ahoj@junior.guru). Společnostem je následně vystavován daňový doklad se zákonným náležitostmi a úhrada za služby probíhá formou bezhotovostního převodu na účet poskytovatele.
+**3.1.** Společnostem je poskytováno digitální předplatné na základě specifických podmínek, a to formou individuální objednávky přes e-mail: [honza@junior.guru](mailto:honza@junior.guru). Společnostem je následně vystavován daňový doklad se zákonným náležitostmi a úhrada za služby probíhá formou bezhotovostního převodu na účet poskytovatele.
 
 **3.2.** Společnost bere na vědomí, že členství v diskuzním klubu poskytnuté formou dle tohoto odstavce, je poskytováno vystavením voucherů. Je tedy pouze na společnosti, komu vouchery poskytne. Vouchery jednou uplatněné nemohou být převedeny na další osobu. Člen, který tímto způsobem získá členství v diskuzním klubu, nemůže být tohoto členství z vůle společnosti zbaven, a to i v případě, že by například ukončil pracovní poměr u společnosti a obdobně.
 
@@ -179,11 +179,11 @@ TODO
 
 **10.1.** Kupujícímu je doručováno na jeho e-mailovou adresu uvedenou v objednávce případně v jeho uživatelském profilu.
 
-**10.2.** Mě můžete doručovat na e-mailovou adresu [ahoj@junior.guru](mailto:ahoj@junior.guru), případně poštou na adresu sídla: Jan Javorek, Lupáčova 375/24, 130 00 Praha
+**10.2.** Mě můžete doručovat na e-mailovou adresu [honza@junior.guru](mailto:honza@junior.guru), případně poštou na adresu sídla: Jan Javorek, Lupáčova 375/24, 130 00 Praha
 
 ## 11\. Vyřizování stížností a případné spory
 
-**11.1.** Vyřizování stížností spotřebitelů zajišťuji prostřednictvím digitální adresy [ahoj@junior.guru](mailto:ahoj@junior.guru). Informaci o vyřízení vaší stížnosti vám následně zašlu na vaši e-mailovou adresu.
+**11.1.** Vyřizování stížností spotřebitelů zajišťuji prostřednictvím digitální adresy [honza@junior.guru](mailto:honza@junior.guru). Informaci o vyřízení vaší stížnosti vám následně zašlu na vaši e-mailovou adresu.
 
 **11.2.** K mimosoudnímu řešení spotřebitelských sporů z kupní smlouvy je příslušná Česká obchodní inspekce, se sídlem Štěpánská 567/15, 120 00 Praha 2, IČ: 000 20 869, internetová adresa: [adr.coi.cz](https://adr.coi.cz/). Platformu pro řešení sporů on-line nacházející se na internetové adrese [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr) je možné využít při řešení sporů mezi poskytovatelem a kupujícím z kupní smlouvy.
 

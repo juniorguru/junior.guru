@@ -12,8 +12,8 @@ def test_debug_message():
     message = debug_message(message)
 
     assert message == dict(from_email=('From', 'sender@example.com'),
-                           to_emails=[('To 1', 'ahoj@junior.guru'),
-                                       ('To 2', 'ahoj@junior.guru')],
+                           to_emails=[('To 1', 'honza@junior.guru'),
+                                       ('To 2', 'honza@junior.guru')],
                            bcc_emails=[],
                            subject='[DEBUG] Subject',
                            html_content='HTML <b>content</b>')

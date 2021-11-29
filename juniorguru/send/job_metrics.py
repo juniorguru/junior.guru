@@ -24,7 +24,7 @@ def create_message(job, template, today):
 
     from_email = ('junior.guru', 'metrics@junior.guru')
     to_emails = [(job.company_name, job.email)]
-    bcc_emails = [('junior.guru', 'ahoj@junior.guru')]
+    bcc_emails = [('junior.guru', 'honza@junior.guru')]
     content = template.render(**prepare_template_context(job, today))
 
     return dict(from_email=from_email, to_emails=to_emails,

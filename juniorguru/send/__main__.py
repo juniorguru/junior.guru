@@ -64,7 +64,7 @@ def main():
 
 def debug_message(message):
     return {**message, **dict(
-        to_emails=[(name, 'ahoj@junior.guru') for
+        to_emails=[(name, 'honza@junior.guru') for
                     name, email_address in message['to_emails']],
         subject=f"[DEBUG] {message['subject']}",
         bcc_emails=[]

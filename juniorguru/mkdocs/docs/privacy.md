@@ -20,7 +20,7 @@ fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodní
 se sídlem Lupáčova 375/24, 130 00 Praha<br>
 IČO: [74279858](https://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0),<br>
 neplátce DPH,<br>
-E-mail: [ahoj@junior.guru](mailto:ahoj@junior.guru)<br>
+E-mail: [honza@junior.guru](mailto:honza@junior.guru)<br>
 
 ## V textu se dozvíte
 
@@ -33,7 +33,7 @@ E-mail: [ahoj@junior.guru](mailto:ahoj@junior.guru)<br>
 
 ## 1. Účel zpracování osobních údajů
 
-Osobní údaje jsou zpracovávány za účelem poskytování služeb správce podle smlouvy uzavřené s klientem. Jméno, příjmení a e-mailová adresa mohou být vedle toho využity k zasílání obchodních sdělení ze strany poskytovatele. Zpracování osobních údajů klienta za účelem zasílání obchodních sdělení může být kdykoliv odmítnuto. Odmítnutí nemá vliv na jiné vzájemné vztahy. E-mail s příslušnou žádostí (odmítnutím) stačí zaslat na [ahoj@junior.guru](mailto:ahoj@junior.guru) nebo jinou adresu, ze které bylo obchodní sdělení zasláno.
+Osobní údaje jsou zpracovávány za účelem poskytování služeb správce podle smlouvy uzavřené s klientem. Jméno, příjmení a e-mailová adresa mohou být vedle toho využity k zasílání obchodních sdělení ze strany poskytovatele. Zpracování osobních údajů klienta za účelem zasílání obchodních sdělení může být kdykoliv odmítnuto. Odmítnutí nemá vliv na jiné vzájemné vztahy. E-mail s příslušnou žádostí (odmítnutím) stačí zaslat na [honza@junior.guru](mailto:honza@junior.guru) nebo jinou adresu, ze které bylo obchodní sdělení zasláno.
 
 ## 2\. Rozsah zpracování osobních údajů
 

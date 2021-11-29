@@ -474,7 +474,7 @@ Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to j
   ) }}
 </div>
 
-<small>Tento seznam je v abecedním pořadí. Pokud víš o dalším webu s kurzy, piš na {{ 'ahoj@junior.guru'|email_link }}.</small>
+<small>Tento seznam je v abecedním pořadí. Pokud víš o dalším webu s kurzy, piš na {{ 'honza@junior.guru'|email_link }}.</small>
 
 
 ## Najdi inspiraci, poznej lidi    <span id="events"></span>
