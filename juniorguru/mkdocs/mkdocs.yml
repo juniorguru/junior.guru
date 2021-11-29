@@ -12,7 +12,6 @@ nav:
   - Klub: club.md
 
   - Témata:
-      - topics/100daysofcode.md
       - topics/adventofcode.md
       - topics/codility.md
       - topics/codingbootcamppraha.md

@@ -42,7 +42,6 @@ KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value
     r'wordpress\w*': 'wordpress',
     r'aoc': 'adventofcode',
     r'advent ?of ?code': 'adventofcode',
-    r'100 ?days ?of ?code': '100daysofcode',
     r'sdacademy': 'sdacademy',
     r'sda': 'sdacademy',
     r'software development a[ck]adem\w+': 'sdacademy',
@@ -76,7 +75,6 @@ TOPIC_CHANNELS = {re.compile(key): value for key, value in {
     r'^pohovory$': 'interviews',
     r'^php$': 'php',
     r'^python$': 'python',
-    r'^100daysofcode$': '100daysofcode',
     r'^adventofcode$': 'adventofcode',
     # r'^java$': 'java',
 }.items()}
