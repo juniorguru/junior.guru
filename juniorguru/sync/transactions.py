@@ -14,6 +14,7 @@ CATEGORIES = [
     lambda t: 'salary' if 'výplata' in t['message'] else None,
     lambda t: 'sideline' if t['variable_symbol'] in SIDELINE_JOBS else None,
     lambda t: 'lawyer' if 'ADVOKATKA' in t['message'] else None,
+    lambda t: 'discord' if 'DISCORD' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'partnerships' if 'RED HAT' in t['message'] and t['amount'] >= 8000 else None,
     lambda t: 'tax' if ('ČSSZ' in t['message'] or 'PSSZ' in t['message'] or 'MSSZ' in t['message']) else None,
     lambda t: 'tax' if 'VZP' in t['message'] else None,
