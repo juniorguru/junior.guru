@@ -5,31 +5,32 @@ from discord import Embed
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
 from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED
-from juniorguru.models import ClubMessage, db
+from juniorguru.models import ClubMessage, with_db
 
 
 logger = loggers.get('mentoring')
 
 
 MENTORING_CHANNEL = 878937534464417822
+MENTORING_MESSAGE_PERIOD = timedelta(weeks=1)
 
 
 @measure('mentoring')
+@with_db
 @discord_task
 async def main(client):
-    week_ago_dt = datetime.utcnow() - timedelta(weeks=1)
-    with db:
-        last_reminder_message = ClubMessage.last_bot_message(MENTORING_CHANNEL, ':teacher:')
+    ago_dt = datetime.utcnow() - MENTORING_MESSAGE_PERIOD
+    logger.info(f'Message period is {repr(MENTORING_MESSAGE_PERIOD)}, calculated as {ago_dt.date()}')
+    last_reminder_message = ClubMessage.last_bot_message(MENTORING_CHANNEL, ':teacher:')
     if last_reminder_message:
         since_dt = last_reminder_message.created_at
         logger.info(f"Last reminder on {since_dt}")
-        if since_dt.date() > week_ago_dt.date():
-            logger.info(f"Stopping, {since_dt.date()} (last reminder) > {week_ago_dt.date()} (week ago)")
+        if since_dt.date() > ago_dt.date():
+            logger.info(f"Stopping, {since_dt.date()} (last reminder) > {ago_dt.date()}")
             return  # stop
         else:
-            logger.info(f"About to create reminder, {since_dt.date()} (last reminder) <= {week_ago_dt.date()} (week ago)")
+            logger.info(f"About to create reminder, {since_dt.date()} (last reminder) <= {ago_dt.date()}")
     else:
-        since_dt = week_ago_dt
         logger.info('Last reminder not found')
 
     channel = await client.fetch_channel(MENTORING_CHANNEL)

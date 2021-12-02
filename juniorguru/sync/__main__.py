@@ -22,6 +22,7 @@ from juniorguru.sync.pins import main as sync_pins
 from juniorguru.sync.subscriptions import main as sync_subscriptions
 from juniorguru.sync.companies import main as sync_companies
 from juniorguru.sync.mentoring import main as sync_mentoring
+from juniorguru.sync.li_group import main as sync_li_group
 from juniorguru.sync.jobs_club import main as sync_jobs_club
 from juniorguru.lib.ai import set_ai_opinion
 
@@ -44,6 +45,7 @@ def main():
 
     # order-sensitive
     sync_mentoring()  # depends on club_content
+    sync_li_group()  # depends on club_content
     sync_pins()  # depends on club_content
     sync_avatars()  # depends on club_content
     sync_events()  # depends on club_content
