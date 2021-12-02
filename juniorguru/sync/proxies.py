@@ -48,7 +48,7 @@ def main():
                 Proxy.create(**record)
                 counter += 1
             if counter >= 10:
-                logger.info('Found enough fast proxies, aborting!')
+                logger.info('Found enough fast proxies, stopping!')
                 break
         pool.terminate()
         pool.join()

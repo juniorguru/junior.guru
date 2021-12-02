@@ -26,8 +26,8 @@ async def main(client):
         since_dt = last_digest_message.created_at
         logger.info(f"Last digest on {since_dt}")
         if since_dt.date() > week_ago_dt.date():
-            logger.info(f"Aborting, {since_dt.date()} (last digest) > {week_ago_dt.date()} (week ago)")
-            return  # abort
+            logger.info(f"Stopping, {since_dt.date()} (last digest) > {week_ago_dt.date()} (week ago)")
+            return  # stop
         else:
             logger.info(f"About to create digest, {since_dt.date()} (last digest) <= {week_ago_dt.date()} (week ago)")
     else:
