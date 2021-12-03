@@ -17,7 +17,7 @@ $member-shift: $member-image-size - ($member-image-size * .8);
 .members-image {
   width: $member-image-size;
   height: $member-image-size;
-  background: $jg-white;
-  border: 2px $jg-white solid;
+  background: $white;
+  border: 2px $white solid;
   border-radius: 100%;
 }

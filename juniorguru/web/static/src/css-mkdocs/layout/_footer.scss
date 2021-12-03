@@ -1,14 +1,14 @@
-$footer-gray-text: darken($jg-white, 30%);
+$footer-gray-text: darken($white, 30%);
 $footer-spacer-sm: map-get($spacers, 2);
 $footer-spacer: $spacer;
 $footer-spacer-md: $spacer * 2;
 
 .footer {
-  color: $jg-white;
+  color: $white;
   background-color: $jg-dark;
 
   a {
-    color: $jg-white;
+    color: $white;
   }
 }
 
@@ -35,7 +35,7 @@ $footer-spacer-md: $spacer * 2;
 */
 
 .footer-address-container {
-  border-bottom: map-get($border-widths, 1) solid rgba($jg-white, .2);
+  border-bottom: map-get($border-widths, 1) solid rgba($white, .2);
 }
 
 .footer-address {
