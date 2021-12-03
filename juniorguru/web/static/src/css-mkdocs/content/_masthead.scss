@@ -113,6 +113,11 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
   }
 }
 
+.masthead-illustration img {
+  width: 100%;
+  height: auto;
+}
+
 .masthead-members {
   display: inline-flex;
   padding-left: $masthead-member-shift;
