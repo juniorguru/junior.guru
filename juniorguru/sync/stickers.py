@@ -1,12 +1,6 @@
-import textwrap
-from datetime import datetime, timedelta
-
-from discord import Embed
-
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
 from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED
-from juniorguru.models import ClubMessage, db
 
 
 logger = loggers.get('stickers')
