@@ -22,9 +22,9 @@
   background: $jg-blue-light;
 
   @include media-breakpoint-up(lg) {
-    order: -1;
     flex-basis: $main-toc-width;
     flex-shrink: 0;
+    order: -1;
     width: $main-toc-width;
     padding-top: $main-spacer;
     padding-right: $main-spacer;
