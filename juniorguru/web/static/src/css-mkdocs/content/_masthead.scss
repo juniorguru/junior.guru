@@ -134,11 +134,3 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
   background: $jg-white;
   border-radius: 100%;
 }
-
-.masthead-members img:last-child {
-  visibility: hidden;
-
-  @include media-breakpoint-up(sm) {
-    visibility: visible;
-  }
-}

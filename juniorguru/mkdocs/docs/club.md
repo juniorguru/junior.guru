@@ -25,7 +25,7 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 {% endcall %}
 </div>
 
-<a class="masthead-button primary" href="#cenik">Přidej se</a>
+<a class="masthead-button primary" href="#cenik">109 Kč měsíčně</a>
 <span class="masthead-members">
   {% for member in members|sample(8) %}
     {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
@@ -287,7 +287,7 @@ Vrtá ti hlavou, jak přesně to celé funguje? Máš nějaké problémy s regis
 {% endcall %}
 <div class="standout text-center">
   <a class="btn btn-lg btn-outline-primary" href="{{ pages|docs_url('faq.md')|url }}">
-    Chci odpovědi
+    Všechny odpovědi
   </a>
 </div>
 </section>
