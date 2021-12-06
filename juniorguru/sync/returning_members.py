@@ -16,7 +16,7 @@ async def main(client):
     system_messages_channel = await client.fetch_channel(SYSTEM_MESSAGES_CHANNEL)
     for message in ClubMessage.channel_listing(SYSTEM_MESSAGES_CHANNEL):
         if message.type == 'new_member' and message.author.first_seen_on() < message.created_at.date():
-            logger.info(f'It looks like {message.author.display_name} has returned')
+            logger.info(f'It looks like #{message.author.id} has returned')
             discord_message = await system_messages_channel.fetch_message(message.id)
             if DISCORD_MUTATIONS_ENABLED:
                 await discord_message.add_reaction('👋')

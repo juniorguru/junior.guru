@@ -14,14 +14,15 @@ def create_user(id_, **kwargs):
                            avatar_path=kwargs.get('avatar_path'),
                            display_name=kwargs.get('display_name', 'Kuře Žluté'),
                            mention=kwargs.get('mention', f'<@{id_}>'),
+                           coupon=kwargs.get('coupon'),
                            joined_at=kwargs.get('joined_at', datetime.now() - timedelta(days=3)),
                            roles=kwargs.get('roles', []))
 
 
-def create_message(id_, author, **kwargs):
+def create_message(id_, user, **kwargs):
     return ClubMessage.create(id=id_,
                               url=f'https://example.com/messages/{id_}',
-                              author=author,
+                              author=user,
                               content=kwargs.get('content', 'hello'),
                               upvotes_count=kwargs.get('upvotes_count', 0),
                               pin_reactions_count=kwargs.get('pin_reactions_count', 0),
@@ -49,79 +50,79 @@ def juniorguru_bot():
 
 
 def test_message_listing_sort_from_the_oldest(db_connection):
-    author = create_user(1)
+    user = create_user(1)
 
-    message1 = create_message(1, author, created_at=datetime(2021, 10, 1))
-    message2 = create_message(2, author, created_at=datetime(2021, 10, 20))
-    message3 = create_message(3, author, created_at=datetime(2021, 10, 5))
+    message1 = create_message(1, user, created_at=datetime(2021, 10, 1))
+    message2 = create_message(2, user, created_at=datetime(2021, 10, 20))
+    message3 = create_message(3, user, created_at=datetime(2021, 10, 5))
 
     assert list(ClubMessage.listing()) == [message1, message3, message2]
 
 
 def test_message_digest_listing(db_connection):
-    author = create_user(1)
+    user = create_user(1)
 
-    message1 = create_message(1, author, created_at=datetime(2021, 4, 30), upvotes_count=30)  # noqa
-    message2 = create_message(2, author, created_at=datetime(2021, 5, 3), upvotes_count=5)
-    message3 = create_message(3, author, created_at=datetime(2021, 5, 4), upvotes_count=10)
-    message4 = create_message(4, author, created_at=datetime(2021, 5, 5), upvotes_count=4)
-    message5 = create_message(5, author, created_at=datetime(2021, 5, 5), upvotes_count=3)  # noqa
+    message1 = create_message(1, user, created_at=datetime(2021, 4, 30), upvotes_count=30)  # noqa
+    message2 = create_message(2, user, created_at=datetime(2021, 5, 3), upvotes_count=5)
+    message3 = create_message(3, user, created_at=datetime(2021, 5, 4), upvotes_count=10)
+    message4 = create_message(4, user, created_at=datetime(2021, 5, 5), upvotes_count=4)
+    message5 = create_message(5, user, created_at=datetime(2021, 5, 5), upvotes_count=3)  # noqa
 
     assert list(ClubMessage.digest_listing(date(2021, 5, 1), limit=3)) == [message3, message2, message4]
 
 
 def test_message_digest_listing_ignores_certain_channels(db_connection):
-    author = create_user(1)
+    user = create_user(1)
 
-    message1 = create_message(1, author, upvotes_count=5)
-    message2 = create_message(2, author, upvotes_count=10)
-    message3 = create_message(3, author, upvotes_count=20, channel_id=INTRO_CHANNEL)  # noqa
+    message1 = create_message(1, user, upvotes_count=5)
+    message2 = create_message(2, user, upvotes_count=10)
+    message3 = create_message(3, user, upvotes_count=20, channel_id=INTRO_CHANNEL)  # noqa
 
     assert set(ClubMessage.digest_listing(date(2021, 5, 1), limit=3)) == {message1, message2}
 
 
 def test_message_channel_listing(db_connection):
-    author = create_user(1)
+    user = create_user(1)
 
-    message1 = create_message(1, author, channel_id=333, created_at=datetime(2021, 10, 10))
-    message2 = create_message(2, author, channel_id=333, created_at=datetime(2021, 10, 1))
-    create_message(3, author, channel_id=222, created_at=datetime(2021, 10, 5))
-    create_message(4, author, channel_id=222, created_at=datetime(2021, 10, 20))
+    message1 = create_message(1, user, channel_id=333, created_at=datetime(2021, 10, 10))
+    message2 = create_message(2, user, channel_id=333, created_at=datetime(2021, 10, 1))
+    create_message(3, user, channel_id=222, created_at=datetime(2021, 10, 5))
+    create_message(4, user, channel_id=222, created_at=datetime(2021, 10, 20))
 
     assert list(ClubMessage.channel_listing(333)) == [message2, message1]
 
 
-def test_author_members_listing(db_connection):
-    author1 = create_user(1, is_member=True, is_bot=True)  # noqa
-    author2 = create_user(2, is_member=True, is_bot=False)
-    author3 = create_user(3, is_member=False, is_bot=True)  # noqa
-    author4 = create_user(4, is_member=False, is_bot=False)  # noqa
+def test_user_members_listing(db_connection):
+    user1 = create_user(1, is_member=True, is_bot=True)  # noqa
+    user2 = create_user(2, is_member=True, is_bot=False)
+    user3 = create_user(3, is_member=False, is_bot=True)  # noqa
+    user4 = create_user(4, is_member=False, is_bot=False)  # noqa
 
-    assert list(ClubUser.members_listing()) == [author2]
+    assert list(ClubUser.members_listing()) == [user2]
 
 
-def test_author_top_members_limit_is_five_percent(db_connection):
+def test_user_top_members_limit_is_five_percent(db_connection):
     for id_ in range(100):
         create_user(id_)
 
     ClubUser.top_members_limit() == 5
 
 
-def test_author_top_members_limit_doesnt_count_past_members(db_connection):
+def test_user_top_members_limit_doesnt_count_past_members(db_connection):
     for id_ in range(200):
         create_user(id_, is_member=id_ < 100)
 
     ClubUser.top_members_limit() == 5
 
 
-def test_author_top_members_limit_doesnt_count_bots(db_connection):
+def test_user_top_members_limit_doesnt_count_bots(db_connection):
     for id_ in range(200):
         create_user(id_, is_bot=id_ < 100)
 
     ClubUser.top_members_limit() == 5
 
 
-def test_author_top_members_limit_rounds_up(db_connection):
+def test_user_top_members_limit_rounds_up(db_connection):
     create_user(1)
     create_user(2)
     create_user(3)
@@ -138,32 +139,41 @@ def test_avatars_listing(db_connection):
     assert list(ClubUser.avatars_listing()) == [user1, user3, user4]
 
 
-def test_author_list_recent_messages(db_connection):
-    author = create_user(1)
+def test_user_list_recent_messages(db_connection):
+    user = create_user(1)
 
-    message1 = create_message(1, author, created_at=datetime(2021, 3, 15))  # noqa
-    message2 = create_message(2, author, created_at=datetime(2021, 3, 31))  # noqa
-    message3 = create_message(3, author, created_at=datetime(2021, 4, 1))
-    message4 = create_message(4, author, created_at=datetime(2021, 4, 15))
+    message1 = create_message(1, user, created_at=datetime(2021, 3, 15))  # noqa
+    message2 = create_message(2, user, created_at=datetime(2021, 3, 31))  # noqa
+    message3 = create_message(3, user, created_at=datetime(2021, 4, 1))
+    message4 = create_message(4, user, created_at=datetime(2021, 4, 15))
 
-    assert list(author.list_recent_messages(today=date(2021, 5, 1))) == [message3, message4]
-
-
-def test_author_first_seen_on_from_messages(db_connection):
-    author = create_user(1, joined_at=datetime(2021, 4, 1))
-
-    create_message(1, author, created_at=datetime(2021, 3, 15))
-    create_message(2, author, created_at=datetime(2021, 3, 31))
-    create_message(3, author, created_at=datetime(2021, 4, 1))
-    create_message(4, author, created_at=datetime(2021, 4, 15))
-
-    assert author.first_seen_on() == date(2021, 3, 15)
+    assert list(user.list_recent_messages(today=date(2021, 5, 1))) == [message3, message4]
 
 
-def test_author_first_seen_on_from_joined_at(db_connection):
-    author = create_user(1, joined_at=datetime(2021, 4, 1))
+def test_user_first_seen_on_from_messages(db_connection):
+    user = create_user(1, joined_at=datetime(2021, 4, 1))
 
-    assert author.first_seen_on() == date(2021, 4, 1)
+    create_message(1, user, created_at=datetime(2021, 3, 15))
+    create_message(2, user, created_at=datetime(2021, 3, 31))
+    create_message(3, user, created_at=datetime(2021, 4, 1))
+    create_message(4, user, created_at=datetime(2021, 4, 15))
+
+    assert user.first_seen_on() == date(2021, 3, 15)
+
+
+def test_user_first_seen_on_respects_messages(db_connection):
+    user = create_user(1, joined_at=datetime(2021, 4, 1))
+
+    create_message(1, user, created_at=datetime(2021, 4, 15))
+    create_message(2, user, created_at=datetime(2021, 8, 30))
+
+    assert user.first_seen_on() == date(2021, 4, 15)
+
+
+def test_user_first_seen_on_from_joined_at_no_messages(db_connection):
+    user = create_user(1, joined_at=datetime(2021, 4, 1))
+
+    assert user.first_seen_on() == date(2021, 4, 1)
 
 
 @pytest.mark.parametrize('today, expected', [
@@ -173,95 +183,126 @@ def test_author_first_seen_on_from_joined_at(db_connection):
     (date(2021, 4, 17), False),
     (date(2021, 4, 20), False),
 ])
-def test_author_is_new(db_connection, today, expected):
-    author = create_user(1, joined_at=datetime(2021, 4, 1))
+def test_user_is_new(db_connection, today, expected):
+    user = create_user(1, joined_at=datetime(2021, 4, 1))
 
-    assert author.is_new(today=today) is expected
-
-
-def test_author_has_intro_false(db_connection):
-    author = create_user(1)
-    create_message(1, author, channel_id=222)
-    create_message(2, author, channel_id=333)
-
-    assert author.has_intro() is False
+    assert user.is_new(today=today) is expected
 
 
-def test_author_has_intro_true(db_connection):
-    author = create_user(1)
-    create_message(1, author, channel_id=222)
-    create_message(2, author, channel_id=INTRO_CHANNEL)
+@pytest.mark.parametrize('today, expected', [
+    (date(2019, 5, 1), False),
+    (date(2021, 12, 4), False),
+    (date(2022, 1, 1), False),
+    (date(2022, 1, 31), False),
+    (date(2022, 2, 1), True),
+    (date(2022, 2, 2), True),
+    (date(2022, 2, 15), True),
+    (date(2022, 5, 1), True),
+    (date(2023, 5, 1), True),
+])
+def test_user_is_year_old(db_connection, today, expected):
+    user = create_user(1, joined_at=datetime(2021, 2, 1))
 
-    assert author.has_intro() is True
-
-
-def test_author_has_intro_skips_system_message(db_connection):
-    author = create_user(1)
-    create_message(1, author, channel_id=222)
-    create_message(2, author, channel_id=INTRO_CHANNEL, type='new_member')
-    create_message(3, author, channel_id=INTRO_CHANNEL, type='premium_guild_subscription')
-
-    assert author.has_intro() is False
-
-
-def test_author_messages_count(db_connection):
-    author = create_user(1)
-
-    create_message(1, author)
-    create_message(2, author)
-    create_message(3, author)
-
-    assert author.messages_count() == 3
+    assert user.is_year_old(today=today) is expected
 
 
-def test_author_recent_messages_count(db_connection):
-    author = create_user(1)
+@pytest.mark.parametrize('joined_at, coupon, expected', [
+    (datetime(2020, 12, 15), None, True),
+    (datetime(2021, 1, 15), None, True),
+    (datetime(2021, 2, 1), None, False),
+    (datetime(2021, 5, 1), None, False),
+    (datetime(2021, 1, 15), 'FOUNDERS123', True),
+    (datetime(2021, 5, 1), 'FOUNDERS123', True),
+])
+def test_user_is_founder(db_connection, joined_at, coupon, expected):
+    user = create_user(1, joined_at=joined_at, coupon=coupon)
 
-    create_message(1, author, created_at=datetime(2021, 2, 15))
-    create_message(2, author, created_at=datetime(2021, 3, 10))
-    create_message(3, author, created_at=datetime(2021, 3, 15))
-
-    assert author.recent_messages_count(today=date(2021, 4, 1)) == 2
-
-
-def test_author_upvotes_count(db_connection):
-    author = create_user(1)
-
-    create_message(1, author, upvotes_count=1)
-    create_message(2, author, upvotes_count=4)
-    create_message(3, author, upvotes_count=10)
-
-    assert author.upvotes_count() == 15
+    assert user.is_founder() is expected
 
 
-def test_author_upvotes_count_skips_some_channels(db_connection):
-    author = create_user(1)
+def test_user_has_intro_false(db_connection):
+    user = create_user(1)
+    create_message(1, user, channel_id=222)
+    create_message(2, user, channel_id=333)
 
-    create_message(1, author, upvotes_count=1, channel_id=INTRO_CHANNEL)
-    create_message(2, author, upvotes_count=4)
-    create_message(3, author, upvotes_count=10)
-
-    assert author.upvotes_count() == 14
+    assert user.has_intro() is False
 
 
-def test_author_recent_upvotes_count(db_connection):
-    author = create_user(1)
+def test_user_has_intro_true(db_connection):
+    user = create_user(1)
+    create_message(1, user, channel_id=222)
+    create_message(2, user, channel_id=INTRO_CHANNEL)
 
-    create_message(1, author, upvotes_count=1, created_at=datetime(2021, 2, 15))
-    create_message(2, author, upvotes_count=4, created_at=datetime(2021, 3, 10))
-    create_message(3, author, upvotes_count=10, created_at=datetime(2021, 3, 15))
-
-    assert author.recent_upvotes_count(today=date(2021, 4, 1)) == 14
+    assert user.has_intro() is True
 
 
-def test_author_recent_upvotes_count_skips_some_channels(db_connection):
-    author = create_user(1)
+def test_user_has_intro_skips_system_message(db_connection):
+    user = create_user(1)
+    create_message(1, user, channel_id=222)
+    create_message(2, user, channel_id=INTRO_CHANNEL, type='new_member')
+    create_message(3, user, channel_id=INTRO_CHANNEL, type='premium_guild_subscription')
 
-    create_message(1, author, upvotes_count=1, created_at=datetime(2021, 2, 15))
-    create_message(2, author, upvotes_count=4, created_at=datetime(2021, 3, 10))
-    create_message(3, author, upvotes_count=10, created_at=datetime(2021, 3, 15), channel_id=INTRO_CHANNEL)
+    assert user.has_intro() is False
 
-    assert author.recent_upvotes_count(today=date(2021, 4, 1)) == 4
+
+def test_user_messages_count(db_connection):
+    user = create_user(1)
+
+    create_message(1, user)
+    create_message(2, user)
+    create_message(3, user)
+
+    assert user.messages_count() == 3
+
+
+def test_user_recent_messages_count(db_connection):
+    user = create_user(1)
+
+    create_message(1, user, created_at=datetime(2021, 2, 15))
+    create_message(2, user, created_at=datetime(2021, 3, 10))
+    create_message(3, user, created_at=datetime(2021, 3, 15))
+
+    assert user.recent_messages_count(today=date(2021, 4, 1)) == 2
+
+
+def test_user_upvotes_count(db_connection):
+    user = create_user(1)
+
+    create_message(1, user, upvotes_count=1)
+    create_message(2, user, upvotes_count=4)
+    create_message(3, user, upvotes_count=10)
+
+    assert user.upvotes_count() == 15
+
+
+def test_user_upvotes_count_skips_some_channels(db_connection):
+    user = create_user(1)
+
+    create_message(1, user, upvotes_count=1, channel_id=INTRO_CHANNEL)
+    create_message(2, user, upvotes_count=4)
+    create_message(3, user, upvotes_count=10)
+
+    assert user.upvotes_count() == 14
+
+
+def test_user_recent_upvotes_count(db_connection):
+    user = create_user(1)
+
+    create_message(1, user, upvotes_count=1, created_at=datetime(2021, 2, 15))
+    create_message(2, user, upvotes_count=4, created_at=datetime(2021, 3, 10))
+    create_message(3, user, upvotes_count=10, created_at=datetime(2021, 3, 15))
+
+    assert user.recent_upvotes_count(today=date(2021, 4, 1)) == 14
+
+
+def test_user_recent_upvotes_count_skips_some_channels(db_connection):
+    user = create_user(1)
+
+    create_message(1, user, upvotes_count=1, created_at=datetime(2021, 2, 15))
+    create_message(2, user, upvotes_count=4, created_at=datetime(2021, 3, 10))
+    create_message(3, user, upvotes_count=10, created_at=datetime(2021, 3, 15), channel_id=INTRO_CHANNEL)
+
+    assert user.recent_upvotes_count(today=date(2021, 4, 1)) == 4
 
 
 def test_last_bot_message_filters_by_channel_id(db_connection, juniorguru_bot):
@@ -302,10 +343,10 @@ def test_last_bot_message_filters_by_emoji_and_text(db_connection, juniorguru_bo
 
 
 def test_message_pinned_listing(db_connection):
-    author = create_user(1)
+    user = create_user(1)
 
-    message1 = create_message(1, author, created_at=datetime(2021, 4, 30), pin_reactions_count=0)  # noqa
-    message2 = create_message(2, author, created_at=datetime(2021, 5, 4), pin_reactions_count=5)
-    message3 = create_message(3, author, created_at=datetime(2021, 5, 3), pin_reactions_count=10)
+    message1 = create_message(1, user, created_at=datetime(2021, 4, 30), pin_reactions_count=0)  # noqa
+    message2 = create_message(2, user, created_at=datetime(2021, 5, 4), pin_reactions_count=5)
+    message3 = create_message(3, user, created_at=datetime(2021, 5, 3), pin_reactions_count=10)
 
     assert list(ClubMessage.pinned_by_reactions_listing()) == [message3, message2]

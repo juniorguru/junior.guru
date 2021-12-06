@@ -96,7 +96,7 @@ def main():
                     pass
 
             coupon = get_active_coupon(node)
-            records.append(calculate_fields({
+            records.append(add_synthetic_fields({
                 'Name': node['member']['fullName'].strip(),
                 'Discord Name': user.display_name.strip() if user else None,
                 'E-mail': node['member']['email'],
@@ -113,6 +113,9 @@ def main():
             }))
 
             if user:
+                logger.debug(f'Updating member #{user.id} with Memberful data')
+                joined_memberful_at = arrow.get(node['createdAt']).naive
+                user.joined_at = min(user.joined_at, joined_memberful_at) if user.joined_at else joined_memberful_at
                 user.coupon = coupon
                 user.save()
 
@@ -125,7 +128,7 @@ def main():
     for user in ClubUser.listing():
         discord_id = str(user.id)
         if not user.is_bot and discord_id not in seen_discord_ids:
-            records.append(calculate_fields({
+            records.append(add_synthetic_fields({
                 'Name': None,
                 'Discord Name': user.display_name.strip(),
                 'E-mail': None,
@@ -145,7 +148,7 @@ def main():
     google_sheets.upload(google_sheets.get(DOC_KEY, 'subscriptions'), records)
 
 
-def calculate_fields(record):
+def add_synthetic_fields(record):
     keys, items = list(record.keys()), list(record.items())
 
     gender = ('F' if FEMALE_NAME_RE.search(record['Name']) else 'M') if record.get('Name') else None

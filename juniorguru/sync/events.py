@@ -76,14 +76,14 @@ def main():
                 try:
                     avatar_path = next((IMAGES_DIR / 'avatars-speakers').glob(f"{speaker_id}.*"))
                 except StopIteration:
-                    logger.info(f"Didn't find speaker avatar for {speaker_id}")
+                    logger.info(f"Didn't find speaker avatar for #{speaker_id}")
                     avatar_path = None
                 else:
-                    logger.info(f"Downsizing speaker avatar for {speaker_id}")
+                    logger.info(f"Downsizing speaker avatar for #{speaker_id}")
                     avatar_path = replace_with_jpg(downsize_square_photo(avatar_path, 500))
                     avatar_path = avatar_path.relative_to(IMAGES_DIR)
 
-                logger.info(f"Marking member {speaker_id} as a speaker")
+                logger.info(f"Marking member #{speaker_id} as a speaker")
                 EventSpeaking.create(speaker=speaker_id, event=event,
                                      avatar_path=avatar_path)
 

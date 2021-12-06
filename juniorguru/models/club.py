@@ -9,6 +9,7 @@ from juniorguru.models.base import BaseModel, JSONField
 TOP_MEMBERS_PERCENT = 0.05
 RECENT_PERIOD_DAYS = 30
 IS_NEW_PERIOD_DAYS = 15
+CLUB_LAUNCH_AT = date(2021, 2, 1)
 
 JUNIORGURU_BOT = 797097976571887687
 INTRO_CHANNEL = 788823881024405544  # ahoj
@@ -69,6 +70,14 @@ class ClubUser(BaseModel):
 
     def is_new(self, today=None):
         return (self.first_seen_on() + timedelta(days=IS_NEW_PERIOD_DAYS)) >= (today or date.today())
+
+    def is_year_old(self, today=None):
+        first_seen_on = min(self.joined_at.date(), self.first_seen_on())
+        return first_seen_on.replace(year=first_seen_on.year + 1) <= (today or date.today())
+
+    def is_founder(self):
+        return (min(self.joined_at.date(), self.first_seen_on()) < CLUB_LAUNCH_AT or
+                bool(self.coupon and self.coupon.startswith('FOUNDERS')))
 
     @classmethod
     def members_count(cls):
