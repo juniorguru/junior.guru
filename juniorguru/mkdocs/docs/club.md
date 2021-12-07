@@ -106,7 +106,7 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
   'Radka'
 ) }}
 {{ blockquote_avatar(
-  'Jako kluka z vesnice mě na programování vždy štvalo, že jsem na to byl hrozně moc sám. Jsem opravdu vděčný za tuto komunitu',
+  'Jako kluka z vesnice mě na programování vždy štvalo, že jsem na to byl hrozně moc sám. Jsem opravdu vděčný za tuto komunitu.',
   'lukas.jpg',
   'Lukáš',
   'Lukáš'

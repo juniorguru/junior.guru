@@ -14,7 +14,7 @@
 .pricing-block {
   position: relative;
   min-width: 15rem;
-  padding: $spacer;
+  padding: map-get($spacers, 4);
   margin-bottom: $spacer;
   text-align: center;
   white-space: nowrap;
