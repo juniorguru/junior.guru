@@ -34,7 +34,7 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 
 </div>
 <div class="masthead-illustration">
-  {{ img('static/images/illustration-club.svg', 'Ilustrace', 400, 400) }}
+  {{ img('static/images/illustration-club.svg', 'Ilustrace', 400, 400, lazy=False) }}
 </div>
 </div></header>
 

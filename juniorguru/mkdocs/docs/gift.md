@@ -13,13 +13,13 @@ description: Dej někomu sílu udržet si své předsevzetí díky členství v 
 <h1>Daruj motivaci programovat</h1>
 
 {% call lead() %}
-Dej svým blízkým sílu dodržet své předsevzetí. Buď mohou s programováním skončit pár dní po prvním lednu, nebo si díky členství v klubu udrží **dlouhodobou motivaci**.
+Dej svým blízkým sílu dodržet své předsevzetí. Chtějí se věnovat programování? Díky členství v klubu neskončí v půlce ledna, ale udrží si **dlouhodobou motivaci**.
 {% endcall %}
 
 <a class="masthead-button primary" href="#cenik">1199 Kč za rok</a>
 </div>
 <div class="masthead-illustration">
-  {{ img('static/images/illustration-club.svg', 'Ilustrace', 400, 400) }}
+  {{ img('static/images/illustration-gift.svg', 'Ilustrace', 400, 400, lazy=False) }}
 </div>
 </div></header>
 

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const annotation = annotate(element, {
         type: 'underline',
         color: '#1755d1',
+        multiline: true,
         animationDuration: 1600,
       });
       annotation.show();
