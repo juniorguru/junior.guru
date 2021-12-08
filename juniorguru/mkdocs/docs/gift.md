@@ -58,9 +58,9 @@ S partou kamarádů je jednodušší **udržet si zápal pro věc**. Ať už je 
 <div id="cenik" class="section-background yellow"><section>
 <h2>Ježíškem ve dvou krocích</h2>
 {% call lead() %}
-Zadáš e-mail obdarované osoby a vybereš datum, odkdy začne roční členství platit. Pokud chceš můžeš přidat i vzkaz. Ve správnou chvíli potom přijdou e-mailem přístupy do klubu.
+Zadáš e-mail obdarované osoby a vybereš datum, odkdy začne roční členství platit. Pokud chceš, můžeš přidat i vzkaz. Ve správnou chvíli potom přijdou e-mailem přístupy do klubu.
 
-Že e-mail pod stromeček nezabalíš? Využij originální poukaz, který vlastní rukou nakreslil [Honza Javorek](#honza), provozovatel junior.guru. Vytiskni, dej do hezké obálky, a je to!
+Že e-mail nejde zabalit pod stromeček? Využij originální poukaz, který vlastní rukou nakreslil [Honza Javorek](#honza), provozovatel junior.guru. Vytiskni, dej do hezké obálky, a je to!
 {% endcall %}
 
 <div class="pricing standout">
