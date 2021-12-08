@@ -28,7 +28,7 @@ Dej svým blízkým sílu dodržet své předsevzetí. Chtějí se věnovat prog
 {% call lead() %}
 Rozhodla se přítelkyně, že se stane programátorkou? Snaží se manžel rekvalifikovat a najít si svou první práci v IT? Můžeš je v tom podpořit! Mnoho lidí napadne, že by zkusili programování, ale **dotáhnout to do úspěšného konce** vyžaduje mnoho dlouhodobé motivace.
 
-Začátečníci potřebují víc než jen kurzy a návody. Nejvíc je posune, **když v tom všem nejsou sami**. Když je u jejich snažení někdo udrží, pomůže jim, dodá motivaci. Klub na junior.guru je speciální online komunita na [Discordu](https://discord.com/). Sdílíme si tipy a postřehy. Podporujeme se a radíme. Občas pořádáme přednášky. Dáváme si zpětnou vazbu. Dohazujeme si práci. Společně se radujeme z úspěchů.
+Začátečníci potřebují víc než jen kurzy a návody. Nejvíc je posune, **když v tom všem nejsou sami**. Když je u jejich snažení někdo udrží, pomůže jim, dodá motivaci. Klub na junior.guru je speciální placená online komunita na [Discordu](https://discord.com/). Sdílíme si tipy a postřehy. Podporujeme se a radíme. Občas pořádáme přednášky. Dáváme si zpětnou vazbu. Dohazujeme si práci. Společně se radujeme z úspěchů.
 {% endcall %}
 <div class="text-center">
   <a class="btn btn-lg btn-primary" href="{{ pages|docs_url('club.md')|url }}">
