@@ -8,7 +8,7 @@ description: Dej někomu sílu udržet si své předsevzetí díky členství v 
 {% from 'macros.html' import img, markdown, blockquote_avatar, blockquote_toxic, lead, logo, event_circle with context %}
 
 
-<header class="masthead"><div class="masthead-container">
+<header class="masthead" id="snow"><div class="masthead-container">
 <div class="masthead-content">
 <h1>Daruj motivaci programovat</h1>
 
@@ -17,12 +17,6 @@ Dej svým blízkým sílu dodržet své předsevzetí. Buď mohou s programová
 {% endcall %}
 
 <a class="masthead-button primary" href="#cenik">1199 Kč za rok</a>
-<span class="masthead-members">
-  {% for member in members|sample(8) %}
-    {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
-  {% endfor %}
-</span>
-
 </div>
 <div class="masthead-illustration">
   {{ img('static/images/illustration-club.svg', 'Ilustrace', 400, 400) }}

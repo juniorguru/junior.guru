@@ -2,6 +2,7 @@ import './toc';
 import './annotations';
 import './membership';
 import './metrics';
+import './snow';
 
 import 'instant.page';
 
