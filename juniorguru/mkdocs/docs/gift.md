@@ -59,7 +59,9 @@ S partou kamarádů je jednodušší **udržet si zápal pro věc**. Ať už je 
 <div id="cenik" class="section-background yellow"><section>
 <h2>Ježíškem ve dvou krocích</h2>
 {% call lead() %}
-Můžeš si vybrat, od jakého data začne roční členství platit. Pokud chceš, přidej i vzkaz, který potom přijde mailem. Dárek můžeš předat originálním poukazem, který vlastní rukou nakreslil [Honza Javorek](#honza), provozovatel junior.guru.
+Zadáš e-mail obdarované osoby a vybereš datum, odkdy začne roční členství platit. Pokud chceš můžeš přidat i vzkaz. Ve správnou chvíli potom přijdou e-mailem přístupy do klubu.
+
+Že e-mail pod stromeček nezabalíš? Využij originální poukaz, který vlastní rukou nakreslil [Honza Javorek](#honza), provozovatel junior.guru. Vytiskni, dej do hezké obálky, a je to!
 {% endcall %}
 
 <div class="pricing standout">
@@ -75,8 +77,7 @@ Můžeš si vybrat, od jakého data začne roční členství platit. Pokud chce
     <ul class="pricing-benefits">
       <li class="pricing-benefits-item">Vytiskneš a nadělíš</li>
     </ul>
-    <!-- <a class="pricing-button" href="#">PDF</a> -->
-    <strong class="pricing-button disabled">PDF</strong>
+    <a class="pricing-button" href="{{ 'static/darkovy-poukaz-jg.pdf'|url }}">PDF</a>
   </div>
 </div>
 
