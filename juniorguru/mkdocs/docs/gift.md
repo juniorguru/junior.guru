@@ -1,6 +1,5 @@
 ---
 title: Daruj členství v klubu pro začátečníky v programování
-thumbnail_badge: 109 Kč/měs
 template: main_memberful.html
 description: Dej někomu sílu udržet si své předsevzetí díky členství v online programovací skupině, jaká nemá obdoby. Daruj dlouhodobou motivaci programovat!
 ---
