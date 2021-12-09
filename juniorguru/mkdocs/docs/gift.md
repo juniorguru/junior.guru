@@ -1,5 +1,5 @@
 ---
-title: "Praktický dárek pro začátečníky v programování"
+title: "Praktický dárek pro začátečníky v programování"
 template: main_memberful.html
 description: Dej někomu sílu udržet si své předsevzetí díky členství v online programovací skupině, jaká nemá obdoby. Daruj dlouhodobou motivaci programovat!
 ---
