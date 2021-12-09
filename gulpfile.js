@@ -148,6 +148,13 @@ function overwriteWithMkDocs() {
 }
 
 
+function copyPDFsForMkDocs() {
+  return gulp.src('juniorguru/web/static/*.pdf')
+    .pipe(changed('public/static/'))
+    .pipe(gulp.dest('public/static/'))
+}
+
+
 function copyThumbnailsForMkDocs() {
   return gulp.src('juniorguru/web/static/images/thumbnails/**/*')
     .pipe(changed('public/static/images/thumbnails/'))
@@ -162,6 +169,7 @@ function cleanMkDocsFiles() {
 
 const buildMkDocs = gulp.series(
   buildMkDocsFiles,
+  copyPDFsForMkDocs,
   copyThumbnailsForMkDocs,
   overwriteWithMkDocs,
   cleanMkDocsFiles,
