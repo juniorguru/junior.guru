@@ -76,7 +76,7 @@ Zadáš e-mail obdarované osoby a vybereš datum, odkdy začne roční členstv
     <ul class="pricing-benefits">
       <li class="pricing-benefits-item">Vytiskneš a nadělíš</li>
     </ul>
-    <a class="pricing-button" href="{{ 'static/darkovy-poukaz-jg.pdf'|url }}">PDF</a>
+    <a class="pricing-button" href="{{ 'static/downloads/darkovy-poukaz-jg.pdf'|url }}">PDF</a>
   </div>
 </div>
 
