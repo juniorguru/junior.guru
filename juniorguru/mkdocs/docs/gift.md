@@ -43,7 +43,7 @@ Začátečníci potřebují víc než jen kurzy a návody. Nejvíc je posune, **
 {% call lead() %}
 Všichni to známe. První týden v lednu se najednou všichni učí japonsky, běhají, chodí do posilovny. Ale co ten druhý týden? A co únor? S programováním je to stejné. Samouk jej **začne brzy odkládat**, protože se to zrovna nehodí. Vypadne z rytmu a už se k tomu nevrátí.
 
-S partou kamarádů je jednodušší **udržet si zápal pro věc**. Ať už je to skrze sdílení společného utrpení, odpovědnost k druhým, nebo humor :) Dokonce i v době, kdy se zrovna nehodí zavřít se k počítači a programovat. Klub máš totiž stále u sebe, na mobilu. Při čekání ve frontě na poště, během dojíždění vlakem, při kojení.
+S partou kamarádů je jednodušší **udržet si zápal pro věc**. Ať už je to skrze sdílení těžkostí, odpovědnost k druhým, nebo humor :) Dokonce i v době, kdy se zrovna nehodí zavřít se k počítači a programovat. Klub máš totiž stále u sebe, na mobilu. Při čekání ve frontě na poště, během dojíždění vlakem, při kojení.
 {% endcall %}
 {{ blockquote_avatar(
   'Jemně popostrkující a nějakou činnost vyvolávající a podněcující síla, kterou jsem potřebovala. Nacpat se sem byl moc dobrej napád.',
