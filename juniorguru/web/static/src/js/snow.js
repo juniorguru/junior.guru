@@ -3,7 +3,6 @@ import Snowflakes from 'magic-snowflakes';
 document.addEventListener('DOMContentLoaded', function () {
   const snow = document.getElementById('snow');
   if (snow) {
-    Snowflakes.prototype.handleResize = function() {};
     const snowflakes = new Snowflakes({
       color: '#fff',
       container: document.getElementById('snow'),
