@@ -791,3 +791,26 @@ a.donate-option {
   margin-top: variables.$whitespace-3;
   margin-bottom: variables.$whitespace-3;
 }
+
+.announcement {
+  font-size: 14px;
+  display: block;
+  padding: 4px;
+  text-align: center;
+  background: #1755d1;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.announcement,
+.announcement:hover,
+.announcement:focus,
+.announcement:active {
+  color: #fff;
+}
+
+.announcement:hover,
+.announcement:focus,
+.announcement:active {
+  background: #1244a7;
+}

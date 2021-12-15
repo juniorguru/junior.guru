@@ -1,0 +1,21 @@
+.announcement {
+  @extend .small;
+  display: block;
+  padding: map-get($spacers, 1);
+  text-align: center;
+  background: $link-color;
+  text-decoration: none;
+}
+
+.announcement,
+.announcement:hover,
+.announcement:focus,
+.announcement:active {
+  color: $white;
+}
+
+.announcement:hover,
+.announcement:focus,
+.announcement:active {
+  background: $link-hover-color;
+}
