@@ -52,6 +52,21 @@
 #    prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+# - title: "TBD peníze"
+#   date: "2021-01-04"
+#   description: |
+#     TBD
+#   bio_name: Jakub Dvořák
+#   bio_title: Team Lead v Processand, zakladatel Rozbité prasátko
+#   bio: |
+#     TBD
+#   bio_links:
+#     - https://www.linkedin.com/in/dvoorajak/
+#     - https://rozbiteprasatko.cz/
+#   logo_path: logos/processand.svg
+#   speakers: 0000000000000000
+
+
 - title: "Tester jako ideální první práce, aneb čím začít kariéru v IT"
   date: "2021-12-07"
   description: |
