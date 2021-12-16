@@ -785,7 +785,7 @@ i18n = ["babel (>=2.9.0)"]
 
 [[package]]
 name = "mkdocs-simple-hooks"
-version = "0.1.3"
+version = "0.1.4"
 description = "Define your own hooks for mkdocs, without having to create a new package."
 category = "main"
 optional = false
@@ -973,7 +973,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "py-cord"
-version = "2.0.0a4514+g125db3ab"
+version = "2.0.0a4542+gd4f55766"
 description = "A Python wrapper for the Discord API"
 category = "main"
 optional = false
@@ -992,7 +992,7 @@ voice = ["PyNaCl (>=1.3.0,<1.5)"]
 type = "git"
 url = "https://github.com/Pycord-Development/pycord.git"
 reference = "master"
-resolved_reference = "125db3ab98eecc4985970f5082cca427c79278a0"
+resolved_reference = "d4f5576680a5632573c0af2078f934143fc87121"
 
 [[package]]
 name = "pyasn1"
@@ -2123,8 +2123,8 @@ mkdocs = [
     {file = "mkdocs-1.2.3.tar.gz", hash = "sha256:89f5a094764381cda656af4298727c9f53dc3e602983087e1fe96ea1df24f4c1"},
 ]
 mkdocs-simple-hooks = [
-    {file = "mkdocs-simple-hooks-0.1.3.tar.gz", hash = "sha256:209f707cfb976ded4ac5a3f89ab96309a5b26d153e748a9c7bf728c7f6974051"},
-    {file = "mkdocs_simple_hooks-0.1.3-py3-none-any.whl", hash = "sha256:98af391af5d8cf86faa7c21d189d299c7af3258908f0f272fd981bbc143b0e33"},
+    {file = "mkdocs-simple-hooks-0.1.4.tar.gz", hash = "sha256:6ea689e91e0d02c70c593a826eaa080e4331011a494abec5c66b0dd9946ee1be"},
+    {file = "mkdocs_simple_hooks-0.1.4-py3-none-any.whl", hash = "sha256:95d39fba90d99a0890a2d41958b3389f883ff4823834fdce7ae000149954c0c8"},
 ]
 multidict = [
     {file = "multidict-5.2.0-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:3822c5894c72e3b35aae9909bef66ec83e44522faf767c0ad39e0e2de11d3b55"},
