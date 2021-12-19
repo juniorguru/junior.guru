@@ -97,50 +97,65 @@ async def channel_worker(worker_no, authors, queue):
                 queue.put_nowait(thread)
 
             if message.author.id not in authors:
-                # The message.author can be an instance of Member, but it can also be an instance of User,
-                # if the author isn't a member of the Discord guild/server anymore. User instances don't
-                # have certain properties, hence the getattr() calls below.
-                with db:
-                    users_logger = loggers.get('club_content.users')
-                    users_logger.debug(f"User '{message.author.display_name}' #{message.author.id}")
-                    author = ClubUser.create(id=message.author.id,
-                                             is_bot=message.author.bot,
-                                             is_member=bool(getattr(message.author, 'joined_at', False)),
-                                             display_name=message.author.display_name,
-                                             mention=message.author.mention,
-                                             joined_at=(arrow.get(message.author.joined_at).naive if hasattr(message.author, 'joined_at') else None),
-                                             roles=get_roles(message.author))
-                    users_count += 1
-                authors[message.author.id] = author
-            with db:
-                ClubMessage.create(id=message.id,
-                                   url=message.jump_url,
-                                   content=message.content,
-                                   upvotes_count=count_upvotes(message.reactions),
-                                   downvotes_count=count_downvotes(message.reactions),
-                                   pin_reactions_count=count_pins(message.reactions),
-                                   created_at=arrow.get(message.created_at).naive,
-                                   edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
-                                   author=authors[message.author.id],
-                                   channel_id=channel.id,
-                                   channel_name=channel.name,
-                                   channel_mention=channel.mention,
-                                   type=message.type.name)
-                messages_count += 1
+                authors[message.author.id] = create_user(message.author)
+                users_count += 1
 
-                users = set()
-                for reaction in message.reactions:
-                    if emoji_name(reaction.emoji) in EMOJI_PINS:
-                        for user in [user async for user in reaction.users()]:
-                            users.add(user)
-                for user in users:
-                    pins_logger = loggers.get('club_content.pins')
-                    pins_logger.debug(f"Message {message.jump_url} is pinned by user '{user.display_name}' #{user.id}")
-                    ClubPinReaction.create(user=user.id, message=message.id)
-                    pins_count += 1
+            ClubMessage.create(id=message.id,
+                               url=message.jump_url,
+                               content=message.content,
+                               upvotes_count=count_upvotes(message.reactions),
+                               downvotes_count=count_downvotes(message.reactions),
+                               pin_reactions_count=count_pins(message.reactions),
+                               created_at=arrow.get(message.created_at).naive,
+                               edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
+                               author=authors[message.author.id],
+                               channel_id=channel.id,
+                               channel_name=channel.name,
+                               channel_mention=channel.mention,
+                               type=message.type.name)
+            messages_count += 1
+
+            for reacting_user in (await get_reacting_users(message.reactions)):
+                if reacting_user.id not in authors:
+                    authors[reacting_user.id] = create_user(reacting_user)
+                    users_count += 1
+
+                create_reaction(reacting_user, message)
+                pins_count += 1
 
         worker_logger.info(f"Channel #{channel.id} added {messages_count} messages, {users_count} users, {pins_count} pins")
         queue.task_done()
+
+
+async def get_reacting_users(reactions):
+    users = set()
+    for reaction in reactions:
+        if emoji_name(reaction.emoji) in EMOJI_PINS:
+            for user in [user async for user in reaction.users()]:
+                users.add(user)
+    return users
+
+
+def create_user(user):
+    users_logger = loggers.get('club_content.users')
+    users_logger.debug(f"User '{user.display_name}' #{user.id}")
+
+    # The message.author can be an instance of Member, but it can also be an instance of User,
+    # if the author isn't a member of the Discord guild/server anymore. User instances don't
+    # have certain properties, hence the getattr() calls below.
+    return ClubUser.create(id=user.id,
+                           is_bot=user.bot,
+                           is_member=bool(getattr(user, 'joined_at', False)),
+                           display_name=user.display_name,
+                           mention=user.mention,
+                           joined_at=(arrow.get(user.joined_at).naive if hasattr(user, 'joined_at') else None),
+                           roles=get_roles(user))
+
+
+def create_reaction(user, message):
+    pins_logger = loggers.get('club_content.pins')
+    pins_logger.debug(f"Message {message.jump_url} is pinned by user '{user.display_name}' #{user.id}")
+    return ClubPinReaction.create(user=user.id, message=message.id)
 
 
 if __name__ == '__main__':
