@@ -3,7 +3,7 @@ from datetime import datetime, date, timedelta
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models import ClubMessage, ClubUser
+from juniorguru.models import ClubMessage, ClubUser, ClubPinReaction
 from juniorguru.models.club import INTRO_CHANNEL, JUNIORGURU_BOT
 
 
@@ -35,7 +35,7 @@ def create_message(id_, user, **kwargs):
 
 @pytest.fixture
 def db_connection():
-    models = [ClubUser, ClubMessage]
+    models = [ClubUser, ClubMessage, ClubPinReaction]
     db = SqliteDatabase(':memory:')
     with db:
         db.bind(models)
@@ -174,6 +174,16 @@ def test_user_first_seen_on_from_joined_at_no_messages(db_connection):
     user = create_user(1, joined_at=datetime(2021, 4, 1))
 
     assert user.first_seen_on() == date(2021, 4, 1)
+
+
+def test_user_first_seen_on_from_joined_at_no_messages_no_joined_at(db_connection):
+    user1 = create_user(1)
+    user2 = create_user(2, joined_at=None)
+
+    message = create_message(1, user1, created_at=datetime(2021, 12, 19))
+    ClubPinReaction.create(user=user2, message=message)
+
+    assert user2.first_seen_on() == date(2021, 12, 19)
 
 
 @pytest.mark.parametrize('today, expected', [
