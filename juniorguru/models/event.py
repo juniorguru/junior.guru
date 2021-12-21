@@ -59,6 +59,10 @@ class Event(BaseModel):
             .order_by(cls.start_at.desc())
 
     @classmethod
+    def api_listing(cls):
+        return cls.listing()
+
+    @classmethod
     def archive_listing(cls, today=None):
         today = today or date.today()
         return cls.select() \

@@ -1,5 +1,4 @@
 from pathlib import Path
-import csv
 
 import jinja2
 
@@ -7,8 +6,7 @@ from mkdocs.utils.filters import tojson, url_filter
 from mkdocs.utils import get_relative_url
 
 from juniorguru.lib import template_filters
-from juniorguru.mkdocs import context as context_hooks
-from juniorguru.models import Employment, with_db
+from juniorguru.mkdocs import api, context as context_hooks
 
 
 TEMPLATE_FILTERS = [
@@ -76,18 +74,13 @@ def on_page_context(context, page, config, nav):
     context_hooks.on_theme_context(context, page, config, context['pages'])
 
 
-@with_db
+
 def on_post_build(config):
     api_dir = Path(config['site_dir']) / 'api'
     api_dir.mkdir(parents=True, exist_ok=True)
 
-    api_file = (api_dir / 'jobs.csv')
-    rows = [employment.to_api() for employment in Employment.api_listing()]
-
-    with api_file.open('w', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
-        writer.writeheader()
-        writer.writerows(rows)
+    api.generate_events_ics(api_dir, config)
+    api.generate_czechitas_csv(api_dir, config)
 
 
 def create_md_filter(page, config, files):

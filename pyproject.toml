@@ -44,6 +44,7 @@ pandas = "*"
 piexif = "*"
 markupsafe = "*"
 mkdocs-simple-hooks = "*"
+ics = { git = "https://github.com/ics-py/ics-py.git", branch = "main" }
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
