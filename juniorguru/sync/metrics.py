@@ -1,5 +1,3 @@
-import math
-
 from juniorguru.lib.timer import measure
 from juniorguru.lib.google_analytics import (
     GoogleAnalyticsClient, get_daily_date_range,
@@ -10,8 +8,6 @@ from juniorguru.lib.google_analytics import (
     metric_avg_monthly_handbook_pageviews, metric_avg_monthly_handbook_logo_clicks,
     metric_clicks_per_logo, metric_handbook_users_per_date, metric_handbook_pageviews_per_date,
     metric_avg_monthly_jobs_users)
-from juniorguru.lib import google_sheets
-from juniorguru.lib.coerce import parse_currency, parse_ptc
 from juniorguru.models import Job, JobMetric, Metric, with_db
 
 
@@ -23,7 +19,6 @@ FINANCES_DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 @with_db
 def main():
     google_analytics_metrics = fetch_from_google_analytics()
-    google_sheets_metrics = fetch_from_google_sheets()
 
     Metric.drop_table()
     Metric.create_table()
@@ -37,8 +32,6 @@ def main():
         'avg_monthly_jobs_users',
     ]:
         Metric.create(name=name, value=google_analytics_metrics[name])
-    for name, value in google_sheets_metrics.items():
-        Metric.create(name=name, value=value)
 
     JobMetric.drop_table()
     JobMetric.create_table()
@@ -100,34 +93,6 @@ def fetch_from_google_analytics():
         metric_handbook_users_per_date,
         metric_handbook_pageviews_per_date,
     ]))
-    return metrics
-
-
-def fetch_from_google_sheets():
-    cells = google_sheets.download_raw(google_sheets.get(FINANCES_DOC_KEY, 'finances'))
-    return parse_finances(cells)
-
-
-def parse_finances(cells):
-    metrics = {}
-    current_section = None
-    for row in cells:
-        if row[0] == 'Total Income':
-            metrics['inc_total'] = math.ceil(parse_currency(row[1]))
-            current_section = 'inc'
-        elif row[0] == 'Total Expenses':
-            metrics['exp_total'] = math.ceil(parse_currency(row[1]))
-            current_section = 'exp'
-        elif row[0] == 'Months':
-            current_section = 'total'
-        elif not any(row):
-            current_section = None
-        elif row[0] and current_section:
-            prefix = '' if current_section == 'total' else f'{current_section}_'
-            name = prefix + row[0].replace(' ', '_').lower()
-            metrics[name] = math.ceil(parse_currency(row[1]))
-            if row[2]:
-                metrics[f'{name}_pct'] = math.ceil(parse_ptc(row[2]))
     return metrics
 
 

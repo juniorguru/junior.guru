@@ -262,12 +262,12 @@ def test_docs_url():
     ], 'club.md') == 'club/'
 
 
-def test_metrics_inc_breakdown():
-    assert template_filters.metrics_inc_breakdown({
-        'inc_donations_pct': 10,
-        'inc_jobs_pct': 20,
-        'inc_memberships_pct': 1,
-        'inc_partnerships_pct': 4,
+def test_incomes():
+    assert template_filters.incomes({
+        'donations': 10,
+        'jobs': 20,
+        'memberships': 1,
+        'partnerships': 4,
     }) == [
         ('inzerce nabídek práce', 20),
         ('dobrovolné příspěvky', 10),
@@ -276,31 +276,31 @@ def test_metrics_inc_breakdown():
     ]
 
 
-def test_metrics_inc_breakdown_less():
-    assert template_filters.metrics_inc_breakdown({
-        'inc_partnerships_pct': 4,
-        'inc_jobs_pct': 20,
+def test_incomes_less():
+    assert template_filters.incomes({
+        'partnerships': 4,
+        'jobs': 20,
     }) == [
         ('inzerce nabídek práce', 20),
         ('firemní členství', 4),
     ]
 
 
-def test_metrics_inc_breakdown_more():
-    assert template_filters.metrics_inc_breakdown({
-        'inc_donations': 10,
-        'inc_jobs_pct': 20,
-        'memberships_pct': 1,
-        'inc_partnerships_pct': 4,
-    }) == [
-        ('inzerce nabídek práce', 20),
-        ('firemní členství', 4),
-    ]
-
-
-def test_metrics_inc_breakdown_unknown():
+def test_incomes_unknown():
     with pytest.raises(KeyError):
-        template_filters.metrics_inc_breakdown({
-            'inc_doesnt_exist_pct': 20,
-            'inc_partnerships_pct': 4,
+        template_filters.incomes({
+            '! doesnt exist !': 20,
+            'partnerships': 4,
         })
+
+
+def test_money_breakdown_ptc():
+    assert template_filters.money_breakdown_ptc({
+        'discord': 300,
+        'lawyer': 500,
+        'tax': 100,
+    }) == {
+        'discord': 34,
+        'lawyer': 56,
+        'tax': 12,
+    }

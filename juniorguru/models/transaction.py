@@ -25,18 +25,30 @@ class Transaction(BaseModel):
             .order_by(cls.happened_on.desc())
 
     @classmethod
-    def incomes_breakdown(cls, today=None):  # dodelat podle vzorce v excelu
-        transactions = cls.listing(today) \
+    def incomes(cls, today=None):
+        return cls.listing(today) \
             .where(cls.amount >= 0, cls.category != 'tax')
-        return sum_by_category(transactions)
 
+    @classmethod
+    def incomes_breakdown(cls, today=None):
+        return sum_by_category(cls.incomes(today))
+
+    @classmethod
+    def expenses(cls, today=None):
+        return cls.listing(today) \
+            .where(((cls.amount < 0) & (cls.category != 'salary')) |
+                   (cls.category == 'tax'))
 
     @classmethod
     def expenses_breakdown(cls, today=None):
-        transactions = cls.listing(today) \
-            .where(((cls.amount < 0) & (cls.category != 'salary')) |
-                   (cls.category == 'tax'))
-        return {category: abs(value) for category, value in sum_by_category(transactions).items()}
+        return {category: abs(value) for category, value
+                in sum_by_category(cls.expenses(today)).items()}
+
+    @classmethod
+    def profit_monthly(cls, today=None):
+        incomes_total = sum(transaction.amount for transaction in cls.incomes(today))
+        expenses_total = sum(transaction.amount for transaction in cls.expenses(today))
+        return math.ceil((incomes_total + expenses_total) / 12.0)
 
 
 def sum_by_category(transactions):
@@ -45,10 +57,3 @@ def sum_by_category(transactions):
         mapping[transaction.category] += transaction.amount
         return mapping
     return functools.reduce(reduce_step, transactions, {})
-
-
-def calc_ptc(breakdown_mapping):
-    items = list(breakdown_mapping.items())
-    total = sum(item[1] for item in items)
-    return [(item[0], item[1], math.ceil(item[1] * 100 / total))
-            for item in items]

@@ -5,4 +5,22 @@ template: main.html
 description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior.guru?
 ---
 
-Testík
+Příjmy
+
+```
+{{ incomes_breakdown|pprint }}
+```
+
+```
+{{ incomes_breakdown|money_breakdown_ptc }}
+```
+
+```
+{{ incomes_breakdown|money_breakdown_ptc|incomes }}
+```
+
+Výdaje
+
+```
+{{ expenses_breakdown|pprint }}
+```

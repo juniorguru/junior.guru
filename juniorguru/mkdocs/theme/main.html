@@ -142,13 +142,13 @@
         </div>
         <div class="footer-about-finances">
           <h4 class="footer-subheading">Můj aktuální čistý zisk</h4>
-          <p class="footer-finances-number">{{ metrics.profit_per_month|thousands }}&nbsp;Kč měsíčně</p>
+          <p class="footer-finances-number">{{ profit_monthly|thousands }}&nbsp;Kč měsíčně</p>
 
           <h4 class="footer-subheading">Zdroje příjmů, zaokrouhleno</h4>
           <ul class="footer-finances-list">
-            {% for name, value_pct in metrics|metrics_inc_breakdown %}
+            {% for name, value_pct in incomes_breakdown|money_breakdown_ptc|incomes %}
               <li>
-                <strong class="footer-finances-value">{{ value_pct }} %</strong>
+                <strong class="footer-finances-value">{{ value_pct }} %</strong>
                 {{ name }}
               </li>
             {% endfor %}

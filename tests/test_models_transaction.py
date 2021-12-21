@@ -4,7 +4,6 @@ import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.models import Transaction
-from juniorguru.models.transaction import calc_ptc
 
 
 @pytest.fixture
@@ -64,7 +63,7 @@ def test_incomes_breakdown(db_connection):
     create_transaction(amount=500, category='b')
     create_transaction(amount=100, category='c')
 
-    assert Transaction.incomes_breakdown(date.today()) == {
+    assert Transaction.incomes_breakdown() == {
         'a': 300,
         'b': 500,
         'c': 100,
@@ -75,7 +74,7 @@ def test_incomes_breakdown_ignores_expenses(db_connection):
     create_transaction(amount=100, category='a')
     create_transaction(amount=-100, category='b')
 
-    assert Transaction.incomes_breakdown(date.today()) == {
+    assert Transaction.incomes_breakdown() == {
         'a': 100,
     }
 
@@ -84,7 +83,7 @@ def test_incomes_breakdown_ignores_tax_returns(db_connection):
     create_transaction(amount=100, category='tax')
     create_transaction(amount=100, category='a')
 
-    assert Transaction.incomes_breakdown(date.today()) == {
+    assert Transaction.incomes_breakdown() == {
         'a': 100,
     }
 
@@ -95,7 +94,7 @@ def test_expenses_breakdown(db_connection):
     create_transaction(amount=-500, category='b')
     create_transaction(amount=-100, category='c')
 
-    assert Transaction.expenses_breakdown(date.today()) == {
+    assert Transaction.expenses_breakdown() == {
         'a': 300,
         'b': 500,
         'c': 100,
@@ -106,7 +105,7 @@ def test_expenses_breakdown_ignores_incomes(db_connection):
     create_transaction(amount=-100, category='a')
     create_transaction(amount=100, category='b')
 
-    assert Transaction.expenses_breakdown(date.today()) == {
+    assert Transaction.expenses_breakdown() == {
         'a': 100,
     }
 
@@ -115,7 +114,7 @@ def test_expenses_breakdown_ignores_salary(db_connection):
     create_transaction(amount=-100, category='salary')
     create_transaction(amount=-100, category='a')
 
-    assert Transaction.expenses_breakdown(date.today()) == {
+    assert Transaction.expenses_breakdown() == {
         'a': 100,
     }
 
@@ -124,18 +123,16 @@ def test_expenses_breakdown_inlcudes_tax_returns(db_connection):
     create_transaction(amount=100, category='tax')
     create_transaction(amount=-1000, category='tax')
 
-    assert Transaction.expenses_breakdown(date.today()) == {
+    assert Transaction.expenses_breakdown() == {
         'tax': 900,
     }
 
 
-def test_calc_ptc():
-    assert calc_ptc({
-        'discord': 300,
-        'lawyer': 500,
-        'tax': 100,
-    }) == [
-        ('discord', 300, 34),
-        ('lawyer', 500, 56),
-        ('tax', 100, 12),
-    ]
+def test_profit_monthly(db_connection):
+    create_transaction(amount=-1000, category='salary', happened_on=date(2020, 2, 2))
+    create_transaction(amount=55, category='a', happened_on=date(2020, 3, 1))
+    create_transaction(amount=100, category='b', happened_on=date(2020, 4, 3))
+    create_transaction(amount=500, category='c', happened_on=date(2020, 6, 6))
+    create_transaction(amount=-300, category='d', happened_on=date(2020, 11, 9))
+
+    assert Transaction.profit_monthly(date(2020, 12, 12)) == 30

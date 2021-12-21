@@ -5,7 +5,7 @@ from urllib.parse import urljoin
 
 import arrow
 
-from juniorguru.models import with_db, Metric, Topic, ClubUser, Company, Event, ClubMessage, Story, LastModified, Job
+from juniorguru.models import with_db, Metric, Topic, ClubUser, Company, Event, ClubMessage, Story, LastModified, Job, Transaction
 from juniorguru.mkdocs.thumbnail import thumbnail
 
 
@@ -15,6 +15,8 @@ CLUB_LAUNCH_AT = arrow.get(2021, 2, 1)
 def on_shared_context(context, page, config, files):
     context['now'] = arrow.utcnow()
     context['pricing_url'] = 'https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/'
+    context['incomes_breakdown'] = Transaction.incomes_breakdown()
+    context['profit_monthly'] = Transaction.profit_monthly()
 
 
 @with_db
@@ -33,6 +35,7 @@ def on_docs_context(context, page, config, files):
     context['jobs_remote'] = Job.remote_listing()
     context['jobs_internship'] = Job.internship_listing()
     context['jobs_volunteering'] = Job.volunteering_listing()
+    context['expenses_breakdown'] = Transaction.expenses_breakdown()
 
     if 'topic_name' in page.meta:
         topic_name = page.meta['topic_name']

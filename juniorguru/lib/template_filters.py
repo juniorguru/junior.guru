@@ -138,17 +138,22 @@ def docs_url(files, src_path):
     raise ValueError(f"Could not find '{src_path}' in given MkDocs files: {src_paths}")
 
 
-METRICS_INC_NAMES = {
-    'inc_donations_pct': 'dobrovolné příspěvky',
-    'inc_jobs_pct': 'inzerce nabídek práce',
-    'inc_memberships_pct': 'individuální členství',
-    'inc_partnerships_pct': 'firemní členství',
+INCOMES_BREAKDOWN_NAMES = {
+    'donations': 'dobrovolné příspěvky',
+    'jobs': 'inzerce nabídek práce',
+    'memberships': 'individuální členství',
+    'partnerships': 'firemní členství',
 }
 
 
-def metrics_inc_breakdown(metrics):
+def incomes(breakdown_mapping):
     return sorted((
-        (METRICS_INC_NAMES[name], value) for name, value
-        in metrics.items()
-        if name.startswith('inc_') and name.endswith('_pct')
+        (INCOMES_BREAKDOWN_NAMES[name], value) for name, value
+        in breakdown_mapping.items()
     ), key=itemgetter(1), reverse=True)
+
+
+def money_breakdown_ptc(breakdown_mapping):
+    items = list(breakdown_mapping.items())
+    total = sum(item[1] for item in items)
+    return {item[0]: math.ceil(item[1] * 100 / total) for item in items}

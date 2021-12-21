@@ -30,22 +30,6 @@ def parse_int(value):
         return int(value)
 
 
-def parse_currency(value):
-    if value:
-        try:
-            return float(re.sub(r'[^0-9\.]', '', value.strip()))
-        except AttributeError:
-            return float(value)
-
-
-def parse_ptc(value):
-    if value:
-        try:
-            return float(re.sub(r'[^0-9\.]', '', value.strip()))
-        except AttributeError:
-            return float(value)
-
-
 def parse_boolean_words(value):
     if value is not None:
         return dict(yes=True,
