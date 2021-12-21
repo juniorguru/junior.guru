@@ -6,7 +6,7 @@ import requests
 from lxml import html
 
 from juniorguru.lib.timer import measure
-from juniorguru.models import Proxy, db
+from juniorguru.models import Proxy, with_db
 from juniorguru.lib import loggers
 
 
@@ -17,6 +17,7 @@ logger = loggers.get('proxies')
 
 
 @measure('proxies')
+@with_db
 def main():
     proxies = []
     if PROXIES_ENABLED:
@@ -37,21 +38,20 @@ def main():
                 proxies.append(f"http://{data['IP Address']}:{data['Port']}")
         random.shuffle(proxies)
 
-    with db:
-        Proxy.drop_table()
-        Proxy.create_table()
+    Proxy.drop_table()
+    Proxy.create_table()
 
-        pool = Pool(15)
-        counter = 0
-        for record in pool.imap(test, proxies):
-            if record['speed_sec'] < 1000:
-                Proxy.create(**record)
-                counter += 1
-            if counter >= 10:
-                logger.info('Found enough fast proxies, stopping!')
-                break
-        pool.terminate()
-        pool.join()
+    pool = Pool(15)
+    counter = 0
+    for record in pool.imap(test, proxies):
+        if record['speed_sec'] < 1000:
+            Proxy.create(**record)
+            counter += 1
+        if counter >= 10:
+            logger.info('Found enough fast proxies, stopping!')
+            break
+    pool.terminate()
+    pool.join()
 
 
 def test(proxy):

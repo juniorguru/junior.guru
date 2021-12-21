@@ -3,7 +3,7 @@ from collections import Counter
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.models import ClubMessage, Topic, db
+from juniorguru.models import ClubMessage, Topic, with_db
 
 
 logger = loggers.get('topics')
@@ -81,14 +81,13 @@ TOPIC_CHANNELS = {re.compile(key): value for key, value in {
 
 
 @measure('topics')
+@with_db
 def main():
-    with db:
-        Topic.drop_table()
-        Topic.create_table()
+    Topic.drop_table()
+    Topic.create_table()
 
     topics = {}
-    with db:
-        messages = ClubMessage.listing()
+    messages = ClubMessage.listing()
     for message in messages:
         topic_channel_keyword = get_topic_channel_keyword(message.channel_name)
         if topic_channel_keyword:
@@ -99,10 +98,9 @@ def main():
             if keyword_re.search(message.content):
                 topics.setdefault(keyword, Counter())
                 topics[keyword]['mentions_count'] += 1
-    with db:
-        for name, data in topics.items():
-            logger.info(f"{name} {dict(data)}")
-            Topic.create(**{'name': name, **data})
+    for name, data in topics.items():
+        logger.info(f"{name} {dict(data)}")
+        Topic.create(**{'name': name, **data})
 
 
 def get_topic_channel_keyword(channel_name):

@@ -3,7 +3,7 @@ from subprocess import run, PIPE
 import arrow
 
 from juniorguru.lib.timer import measure
-from juniorguru.models import LastModified, db
+from juniorguru.models import LastModified, with_db
 
 
 FILES = [
@@ -12,6 +12,7 @@ FILES = [
 
 
 @measure('last_modified')
+@with_db
 def main():
     entries = []
     for path in FILES:
@@ -20,11 +21,10 @@ def main():
         value = arrow.get(result.stdout, 'YYYY-MM-DD HH:mm:ss Z')
         entries.append(dict(path=path, value=value.to('UTC').naive))
 
-    with db:
-        LastModified.drop_table()
-        LastModified.create_table()
-        for entry in entries:
-            LastModified.create(**entry)
+    LastModified.drop_table()
+    LastModified.create_table()
+    for entry in entries:
+        LastModified.create(**entry)
 
 
 if __name__ == '__main__':

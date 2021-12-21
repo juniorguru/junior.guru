@@ -6,7 +6,7 @@ import arrow
 from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, CommaSeparated, load
 
 from juniorguru.lib.timer import measure
-from juniorguru.models import Event, EventSpeaking, ClubMessage, db
+from juniorguru.models import Event, EventSpeaking, ClubMessage, with_db, db
 from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_square, replace_with_jpg
 from juniorguru.lib import loggers
 from juniorguru.lib.md import strip_links
@@ -52,6 +52,7 @@ schema = Seq(
 
 
 @measure('events')
+@with_db
 def main():
     path = DATA_DIR / 'events.yml'
     records = [load_record(record.data) for record in load(path.read_text(), schema)]
@@ -61,55 +62,54 @@ def main():
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
 
-    with db:
-        db.drop_tables([Event, EventSpeaking])
-        db.create_tables([Event, EventSpeaking])
+    db.drop_tables([Event, EventSpeaking])
+    db.create_tables([Event, EventSpeaking])
 
-        # process data from the YAML, generate posters
-        for record in records:
-            name = record['title']
-            logger.info(f"Creating '{name}'")
-            speakers_ids = record.pop('speakers', [])
-            event = Event.create(**record)
+    # process data from the YAML, generate posters
+    for record in records:
+        name = record['title']
+        logger.info(f"Creating '{name}'")
+        speakers_ids = record.pop('speakers', [])
+        event = Event.create(**record)
 
-            for speaker_id in speakers_ids:
-                try:
-                    avatar_path = next((IMAGES_DIR / 'avatars-speakers').glob(f"{speaker_id}.*"))
-                except StopIteration:
-                    logger.info(f"Didn't find speaker avatar for #{speaker_id}")
-                    avatar_path = None
-                else:
-                    logger.info(f"Downsizing speaker avatar for #{speaker_id}")
-                    avatar_path = replace_with_jpg(downsize_square_photo(avatar_path, 500))
-                    avatar_path = avatar_path.relative_to(IMAGES_DIR)
+        for speaker_id in speakers_ids:
+            try:
+                avatar_path = next((IMAGES_DIR / 'avatars-speakers').glob(f"{speaker_id}.*"))
+            except StopIteration:
+                logger.info(f"Didn't find speaker avatar for #{speaker_id}")
+                avatar_path = None
+            else:
+                logger.info(f"Downsizing speaker avatar for #{speaker_id}")
+                avatar_path = replace_with_jpg(downsize_square_photo(avatar_path, 500))
+                avatar_path = avatar_path.relative_to(IMAGES_DIR)
 
-                logger.info(f"Marking member #{speaker_id} as a speaker")
-                EventSpeaking.create(speaker=speaker_id, event=event,
-                                     avatar_path=avatar_path)
+            logger.info(f"Marking member #{speaker_id} as a speaker")
+            EventSpeaking.create(speaker=speaker_id, event=event,
+                                    avatar_path=avatar_path)
 
-            if event.logo_path:
-                logger.info(f"Checking '{event.logo_path}'")
-                image_path = IMAGES_DIR / event.logo_path
-                if not image_path.exists():
-                    raise ValueError(f"Event '{name}' references '{image_path}', but it doesn't exist")
+        if event.logo_path:
+            logger.info(f"Checking '{event.logo_path}'")
+            image_path = IMAGES_DIR / event.logo_path
+            if not image_path.exists():
+                raise ValueError(f"Event '{name}' references '{image_path}', but it doesn't exist")
 
-            logger.info(f"Rendering images for '{name}'")
-            tpl_context = dict(event=event)
-            tpl_filters = dict(md=md, local_time=local_time, weekday=weekday)
-            prefix = event.start_at.date().isoformat().replace('-', '')
-            image_path = render_image_file(WEB_THUMBNAIL_WIDTH, WEB_THUMBNAIL_HEIGHT,
-                                           'event.html', tpl_context, POSTERS_DIR,
-                                           filters=tpl_filters, prefix=prefix)
-            event.poster_path = image_path.relative_to(IMAGES_DIR)
-            image_path = render_image_file(YOUTUBE_THUMBNAIL_WIDTH, YOUTUBE_THUMBNAIL_HEIGHT,
-                                           'event.html', tpl_context, POSTERS_DIR,
-                                           filters=tpl_filters, prefix=prefix, suffix='yt')
-            event.poster_yt_path = image_path.relative_to(IMAGES_DIR)
-            image_path = save_as_square(image_path, prefix=prefix, suffix='ig')
-            event.poster_ig_path = image_path.relative_to(IMAGES_DIR)
+        logger.info(f"Rendering images for '{name}'")
+        tpl_context = dict(event=event)
+        tpl_filters = dict(md=md, local_time=local_time, weekday=weekday)
+        prefix = event.start_at.date().isoformat().replace('-', '')
+        image_path = render_image_file(WEB_THUMBNAIL_WIDTH, WEB_THUMBNAIL_HEIGHT,
+                                        'event.html', tpl_context, POSTERS_DIR,
+                                        filters=tpl_filters, prefix=prefix)
+        event.poster_path = image_path.relative_to(IMAGES_DIR)
+        image_path = render_image_file(YOUTUBE_THUMBNAIL_WIDTH, YOUTUBE_THUMBNAIL_HEIGHT,
+                                        'event.html', tpl_context, POSTERS_DIR,
+                                        filters=tpl_filters, prefix=prefix, suffix='yt')
+        event.poster_yt_path = image_path.relative_to(IMAGES_DIR)
+        image_path = save_as_square(image_path, prefix=prefix, suffix='ig')
+        event.poster_ig_path = image_path.relative_to(IMAGES_DIR)
 
-            logger.info(f"Saving '{name}'")
-            event.save()
+        logger.info(f"Saving '{name}'")
+        event.save()
 
         # discord messages
         if DISCORD_MUTATIONS_ENABLED:
@@ -118,6 +118,7 @@ def main():
             logger.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
 
+@with_db
 @discord_task
 async def post_next_event_messages(client):
     announcements_channel = await client.fetch_channel(ANNOUNCEMENTS_CHANNEL)
@@ -132,8 +133,7 @@ async def post_next_event_messages(client):
 
     logger.info("About to post a message 7 days prior to the event")
     if event.start_at.date() - timedelta(days=7) <= date.today():
-        with db:
-            message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '🗓', event.url)
+        message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '🗓', event.url)
         if message:
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
@@ -145,8 +145,7 @@ async def post_next_event_messages(client):
 
     logger.info("About to post a message 1 day prior to the event")
     if event.start_at.date() - timedelta(days=1) == date.today():
-        with db:
-            message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '🤩', event.url)
+        message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '🤩', event.url)
         if message:
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
@@ -158,8 +157,7 @@ async def post_next_event_messages(client):
 
     logger.info("About to post a message on the day when the event is")
     if event.start_at.date() == date.today():
-        with db:
-            message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '⏰', event.url)
+        message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '⏰', event.url)
         if message:
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
@@ -171,8 +169,7 @@ async def post_next_event_messages(client):
 
     logger.info("About to post a message to event chat on the day when the event is")
     if event.start_at.date() == date.today():
-        with db:
-            message = ClubMessage.last_bot_message(EVENTS_CHAT_CHANNEL, '👋', event.url)
+        message = ClubMessage.last_bot_message(EVENTS_CHAT_CHANNEL, '👋', event.url)
         if message:
             logger.info(f'Looks like the message already exists: {message.url}')
         else:

@@ -4,7 +4,7 @@ from pathlib import Path
 from juniorguru.lib.timer import measure
 from juniorguru.lib import google_sheets
 from juniorguru.lib.coerce import coerce, parse_boolean_words, parse_text, parse_date, parse_boolean
-from juniorguru.models import Company, db
+from juniorguru.models import Company, with_db
 from juniorguru.lib import loggers
 from juniorguru.lib.images import render_image_file
 
@@ -21,6 +21,7 @@ POSTER_HEIGHT = 700
 
 
 @measure('companies')
+@with_db
 def main():
     if FLUSH_POSTERS_COMPANIES:
         logger.warning("Removing all existing posters for companies, FLUSH_POSTERS_COMPANIES is set")
@@ -30,18 +31,17 @@ def main():
     doc_key = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
     records = google_sheets.download(google_sheets.get(doc_key, 'companies'))
 
-    with db:
-        Company.drop_table()
-        Company.create_table()
+    Company.drop_table()
+    Company.create_table()
 
-        for record in records:
-            logger.info('Saving a record')
-            company = Company.create(**coerce_record(record))
+    for record in records:
+        logger.info('Saving a record')
+        company = Company.create(**coerce_record(record))
 
-            logger.info(f"Rendering images for '{company.name}'")
-            tpl_context = dict(company=company)
-            render_image_file(POSTER_WIDTH, POSTER_HEIGHT,
-                              'company.html', tpl_context, POSTERS_DIR)
+        logger.info(f"Rendering images for '{company.name}'")
+        tpl_context = dict(company=company)
+        render_image_file(POSTER_WIDTH, POSTER_HEIGHT,
+                            'company.html', tpl_context, POSTERS_DIR)
 
 
 def coerce_record(record):

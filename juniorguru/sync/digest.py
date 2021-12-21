@@ -6,7 +6,7 @@ from discord import Embed
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
 from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED
-from juniorguru.models import ClubMessage, db
+from juniorguru.models import ClubMessage, with_db
 
 
 logger = loggers.get('digest')
@@ -17,11 +17,11 @@ DIGEST_LIMIT = 5
 
 
 @measure('digest')
+@with_db
 @discord_task
 async def main(client):
     week_ago_dt = datetime.utcnow() - timedelta(weeks=1)
-    with db:
-        last_digest_message = ClubMessage.last_bot_message(DIGEST_CHANNEL, '🔥')
+    last_digest_message = ClubMessage.last_bot_message(DIGEST_CHANNEL, '🔥')
     if last_digest_message:
         since_dt = last_digest_message.created_at
         logger.info(f"Last digest on {since_dt}")
@@ -35,8 +35,7 @@ async def main(client):
         logger.info(f"Last digest not found, analyzing since {week_ago_dt}")
 
     channel = await client.fetch_channel(DIGEST_CHANNEL)
-    with db:
-        messages = ClubMessage.digest_listing(since_dt, limit=DIGEST_LIMIT)
+    messages = ClubMessage.digest_listing(since_dt, limit=DIGEST_LIMIT)
 
     for n, message in enumerate(messages, start=1):
         logger.info(f"Digest #{n}: {message.upvotes_count} votes for {message.author.display_name} in #{message.channel_name}, {message.url}")
