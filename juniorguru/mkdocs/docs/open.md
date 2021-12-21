@@ -12,11 +12,11 @@ Příjmy
 ```
 
 ```
-{{ incomes_breakdown|money_breakdown_ptc }}
+{{ incomes_breakdown|money_breakdown_ptc|pprint }}
 ```
 
 ```
-{{ incomes_breakdown|money_breakdown_ptc|incomes }}
+{{ incomes_breakdown|money_breakdown_ptc|incomes|pprint }}
 ```
 
 Výdaje
