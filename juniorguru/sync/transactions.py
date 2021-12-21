@@ -20,9 +20,11 @@ CATEGORIES = [
     lambda t: 'sideline' if t['variable_symbol'] in SIDELINE_JOBS else None,
     lambda t: 'lawyer' if 'ADVOKATKA' in t['message'] else None,
     lambda t: 'discord' if 'DISCORD' in t['message'] and t['amount'] < 0 else None,
+    lambda t: 'memberful' if 'MEMBERFUL' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'partnerships' if 'RED HAT' in t['message'] and t['amount'] >= 8000 else None,
     lambda t: 'tax' if ('ČSSZ' in t['message'] or 'PSSZ' in t['message'] or 'MSSZ' in t['message']) else None,
     lambda t: 'tax' if 'VZP' in t['message'] else None,
+    lambda t: 'marketing' if 'BUFFER PUBLISH' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'marketing' if 'PrintAll' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'donations' if 'GITHUB SPONSORS' in t['message'] and t['amount'] > 0 else None,
     lambda t: 'memberships' if 'STRIPE' in t['message'] and t['amount'] > 0 else None,
@@ -31,7 +33,7 @@ CATEGORIES = [
     lambda t: 'donations' if t['variable_symbol'] == '444222' and t['amount'] > 0 else None,
     lambda t: 'partnerships' if t['variable_symbol'] and t['amount'] >= 8000 else None,
     lambda t: 'jobs' if t['variable_symbol'] and t['amount'] > 0 else None,
-    lambda t: 'donations' if t['amount'] > 0 else 'overheads',
+    lambda t: 'donations' if t['amount'] > 0 else 'miscellaneous',
 ]
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 

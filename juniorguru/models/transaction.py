@@ -34,6 +34,23 @@ class Transaction(BaseModel):
         return sum_by_category(cls.incomes(today))
 
     @classmethod
+    def revenue(cls, today=None):
+        return sum(transaction.amount for transaction in cls.incomes(today))
+
+    @classmethod
+    def revenue_monthly(cls, today=None):
+        return math.ceil(cls.revenue(today) / 12.0)
+
+    @classmethod
+    def recurring_revenue(cls, today=None):
+        incomes = cls.incomes_breakdown(today)
+        return incomes['donations'] + incomes['memberships']
+
+    @classmethod
+    def recurring_revenue_monthly(cls, today=None):
+        return math.ceil(cls.recurring_revenue(today) / 12.0)
+
+    @classmethod
     def expenses(cls, today=None):
         return cls.listing(today) \
             .where(((cls.amount < 0) & (cls.category != 'salary')) |
@@ -45,10 +62,12 @@ class Transaction(BaseModel):
                 in sum_by_category(cls.expenses(today)).items()}
 
     @classmethod
+    def profit(cls, today=None):
+        return cls.revenue(today) + sum(transaction.amount for transaction in cls.expenses(today))
+
+    @classmethod
     def profit_monthly(cls, today=None):
-        incomes_total = sum(transaction.amount for transaction in cls.incomes(today))
-        expenses_total = sum(transaction.amount for transaction in cls.expenses(today))
-        return math.ceil((incomes_total + expenses_total) / 12.0)
+        return math.ceil(cls.profit(today) / 12.0)
 
 
 def sum_by_category(transactions):

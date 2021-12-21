@@ -1,26 +1,29 @@
 ---
 title: Jak se daří provozovat junior.guru?
-thumbnail_badge: 109 Kč/měs
 template: main.html
 description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior.guru?
 ---
 
+- Revenue/mo {{ transactions.revenue_monthly() }}
+- MRR {{ transactions.recurring_revenue_monthly() }}
+- Profit/mo {{ transactions.profit_monthly() }}
+
 Příjmy
 
 ```
-{{ incomes_breakdown|pprint }}
+{{ transactions.incomes_breakdown()|pprint }}
 ```
 
 ```
-{{ incomes_breakdown|money_breakdown_ptc|pprint }}
+{{ transactions.incomes_breakdown()|money_breakdown_ptc|pprint }}
 ```
 
 ```
-{{ incomes_breakdown|money_breakdown_ptc|incomes|pprint }}
+{{ transactions.incomes_breakdown()|money_breakdown_ptc|incomes|pprint }}
 ```
 
 Výdaje
 
 ```
-{{ expenses_breakdown|pprint }}
+{{ transactions.expenses_breakdown()|pprint }}
 ```
