@@ -37,8 +37,8 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
 
   @include media-breakpoint-up(md) {
     flex-basis: 50%;
-    flex-shrink: 1;
     flex-grow: 0;
+    flex-shrink: 1;
     margin-right: map-get($spacers, 5);
     margin-bottom: map-get($spacers, 5);
   }
@@ -107,8 +107,8 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
 
   @include media-breakpoint-up(md) {
     flex-basis: 50%;
-    flex-shrink: 1;
     flex-grow: 0;
+    flex-shrink: 1;
     margin-top: $spacer;
   }
 }

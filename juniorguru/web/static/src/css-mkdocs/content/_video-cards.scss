@@ -1,7 +1,7 @@
 .video-card {
   @extend .card;
-  flex-shrink: 0;
   flex-grow: 0;
+  flex-shrink: 0;
   width: 100%;
   max-width: 60ch;
   margin: 0 auto $spacer auto;
