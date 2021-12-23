@@ -4,6 +4,7 @@ import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.models import Transaction
+from juniorguru.models.transaction import get_year_ago
 
 
 @pytest.fixture
@@ -22,6 +23,14 @@ def create_transaction(**kwargs):
         category=kwargs.get('category', 'abcd'),
         amount=kwargs.get('amount', 1038)
     )
+
+
+@pytest.mark.parametrize('today, expected', [
+    pytest.param(date(2021, 8, 30), date(2020, 8, 30), id='random specific date'),
+    pytest.param(date(2020, 2, 29), date(2019, 2, 28), id='leap year'),
+])
+def test_get_year_ago(today, expected):
+    assert get_year_ago(today) == expected
 
 
 def test_listing(db_connection):

@@ -15,11 +15,7 @@ class Transaction(BaseModel):
     @classmethod
     def listing(cls, today=None):
         today = today or date.today()
-        try:
-            year_ago = today.replace(year=today.year - 1)
-        except ValueError:  # 29th February
-            year_ago = today.replace(year=today.year - 1, day=today.day - 1)
-
+        year_ago = get_year_ago(today)
         return cls.select() \
             .where(cls.happened_on >= year_ago, cls.happened_on <= today) \
             .order_by(cls.happened_on.desc())
@@ -44,7 +40,7 @@ class Transaction(BaseModel):
     @classmethod
     def recurring_revenue(cls, today=None):
         incomes = cls.incomes_breakdown(today)
-        return incomes['donations'] + incomes['memberships']
+        return incomes.get('donations', 0) + incomes.get('memberships', 0)
 
     @classmethod
     def recurring_revenue_monthly(cls, today=None):
@@ -62,8 +58,16 @@ class Transaction(BaseModel):
                 in sum_by_category(cls.expenses(today)).items()}
 
     @classmethod
+    def cost(cls, today=None):
+        return abs(sum(transaction.amount for transaction in cls.expenses(today)))
+
+    @classmethod
+    def cost_monthly(cls, today=None):
+        return math.ceil(cls.cost(today) / 12.0)
+
+    @classmethod
     def profit(cls, today=None):
-        return cls.revenue(today) + sum(transaction.amount for transaction in cls.expenses(today))
+        return cls.revenue(today) - cls.cost(today)
 
     @classmethod
     def profit_monthly(cls, today=None):
@@ -76,3 +80,10 @@ def sum_by_category(transactions):
         mapping[transaction.category] += transaction.amount
         return mapping
     return functools.reduce(reduce_step, transactions, {})
+
+
+def get_year_ago(today):
+    try:
+        return today.replace(year=today.year - 1)
+    except ValueError:  # 29th February
+        return today.replace(year=today.year - 1, day=today.day - 1)

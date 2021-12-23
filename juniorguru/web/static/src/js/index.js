@@ -3,6 +3,7 @@ import './annotations';
 import './membership';
 import './metrics';
 import './snow';
+import './charts';
 
 import 'instant.page';
 

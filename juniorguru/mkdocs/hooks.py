@@ -21,6 +21,7 @@ TEMPLATE_FILTERS = [
     'incomes',
     'ago',
     'sample_jobs',
+    'map_function',
 ]
 
 

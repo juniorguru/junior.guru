@@ -5,6 +5,7 @@ from urllib.parse import urljoin
 
 import arrow
 
+from juniorguru.lib import charts
 from juniorguru.models import with_db, Metric, Topic, ClubUser, Company, Event, ClubMessage, Story, LastModified, Job, Transaction
 from juniorguru.mkdocs.thumbnail import thumbnail
 
@@ -34,6 +35,7 @@ def on_docs_context(context, page, config, files):
     context['jobs_remote'] = Job.remote_listing()
     context['jobs_internship'] = Job.internship_listing()
     context['jobs_volunteering'] = Job.volunteering_listing()
+    context['charts_ranges'] = charts.ranges(context['now'].date())
 
     if 'topic_name' in page.meta:
         topic_name = page.meta['topic_name']

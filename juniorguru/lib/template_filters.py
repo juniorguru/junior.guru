@@ -157,3 +157,7 @@ def money_breakdown_ptc(breakdown_mapping):
     items = list(breakdown_mapping.items())
     total = sum(item[1] for item in items)
     return {item[0]: math.ceil(item[1] * 100 / total) for item in items}
+
+
+def map_function(iterable, function):
+    return list(map(function, iterable))
