@@ -18,7 +18,7 @@ TEMPLATE_FILTERS = [
     'metric',
     'remove_p',
     'money_breakdown_ptc',
-    'finances',
+    'revenue_categories',
     'ago',
     'sample_jobs',
     'assert_empty',
