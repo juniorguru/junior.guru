@@ -7,12 +7,14 @@
 
 {% block body %}
 <body>
+  {#
   {% if page.url != 'gift/' %}
     <a href="{{ pages|docs_url('gift.md')|url }}" class="announcement">
       {{ 'gift-fill'|icon }}
       Daruj někomu dlouhodobou motivaci k programování
     </a>
   {% endif %}
+  #}
   <header id="header" class="navbar navbar-light">
     <nav class="navbar-container">
       <a class="navbar-brand " href="{{ '/'|url }}">
