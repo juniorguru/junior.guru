@@ -29,7 +29,7 @@ def test_listing_sorts_from_newest_to_oldest(db_connection):
     t2 = create_transaction(happened_on=date(2021, 8, 1))
     t3 = create_transaction(happened_on=date(2021, 8, 15))
 
-    assert list(Transaction.listing()) == [t1, t3, t2]
+    assert list(Transaction.listing(date(2021, 1, 1), date(2021, 12, 31))) == [t1, t3, t2]
 
 
 # def test_ttm_listing_uses_today_implicitly(db_connection):

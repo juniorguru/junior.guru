@@ -262,8 +262,8 @@ def test_docs_url():
     ], 'club.md') == 'club/'
 
 
-def test_incomes():
-    assert template_filters.incomes({
+def test_revenue_categories():
+    assert template_filters.revenue_categories({
         'donations': 10,
         'jobs': 20,
         'memberships': 1,
@@ -276,8 +276,8 @@ def test_incomes():
     ]
 
 
-def test_incomes_less():
-    assert template_filters.incomes({
+def test_revenue_categories_less():
+    assert template_filters.revenue_categories({
         'partnerships': 4,
         'jobs': 20,
     }) == [
@@ -286,9 +286,9 @@ def test_incomes_less():
     ]
 
 
-def test_incomes_unknown():
+def test_revenue_categories_unknown():
     with pytest.raises(KeyError):
-        template_filters.incomes({
+        template_filters.revenue_categories({
             '! doesnt exist !': 20,
             'partnerships': 4,
         })

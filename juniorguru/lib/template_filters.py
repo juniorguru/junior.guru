@@ -138,7 +138,7 @@ def docs_url(files, src_path):
     raise ValueError(f"Could not find '{src_path}' in given MkDocs files: {src_paths}")
 
 
-INCOMES_BREAKDOWN_NAMES = {
+REVENUE_CATEGORIES = {
     'donations': 'dobrovolné příspěvky',
     'jobs': 'inzerce nabídek práce',
     'memberships': 'individuální členství',
@@ -146,9 +146,9 @@ INCOMES_BREAKDOWN_NAMES = {
 }
 
 
-def finances(breakdown_mapping):
+def revenue_categories(breakdown_mapping):
     return sorted((
-        (INCOMES_BREAKDOWN_NAMES[name], value) for name, value
+        (REVENUE_CATEGORIES[name], value) for name, value
         in breakdown_mapping.items()
     ), key=itemgetter(1), reverse=True)
 

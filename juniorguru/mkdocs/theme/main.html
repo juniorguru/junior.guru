@@ -146,7 +146,7 @@
 
           <h4 class="footer-subheading">Zdroje příjmů, zaokrouhleno</h4>
           <ul class="footer-finances-list">
-            {% for name, value_pct in revenue_ttm_breakdown|money_breakdown_ptc|finances %}
+            {% for name, value_pct in revenue_ttm_breakdown|money_breakdown_ptc|revenue_categories %}
               <li>
                 <strong class="footer-finances-value">{{ value_pct }} %</strong>
                 {{ name }}
