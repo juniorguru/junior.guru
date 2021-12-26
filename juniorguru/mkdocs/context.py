@@ -2,6 +2,7 @@ import re
 import hashlib
 from pathlib import Path
 from urllib.parse import urljoin
+from datetime import date
 
 import arrow
 
@@ -10,18 +11,20 @@ from juniorguru.models import with_db, Metric, Topic, ClubUser, Company, Event, 
 from juniorguru.mkdocs.thumbnail import thumbnail
 
 
-CLUB_LAUNCH_AT = arrow.get(2021, 2, 1)
+BUSINESS_BEGIN_ON = date(2020, 1, 1)
+CLUB_BEGIN_ON = date(2021, 2, 1)
 
 
 def on_shared_context(context, page, config, files):
     context['now'] = arrow.utcnow()
     context['pricing_url'] = 'https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/'
-    context['transactions'] = Transaction
+    context['profit_ttm'] = Transaction.profit_ttm(context['now'].date())
+    context['revenue_ttm_breakdown'] = Transaction.revenue_ttm_breakdown(context['now'].date())
 
 
 @with_db
 def on_docs_context(context, page, config, files):
-    context['club_elapsed_months'] = int(round((context['now'] - CLUB_LAUNCH_AT).days / 30))
+    context['club_elapsed_months'] = int(round((context['now'].date() - CLUB_BEGIN_ON).days / 30))
     context['members'] = ClubUser.avatars_listing()
     context['members_total_count'] = ClubUser.members_count()
     context['messages_count'] = ClubMessage.count()
@@ -35,7 +38,15 @@ def on_docs_context(context, page, config, files):
     context['jobs_remote'] = Job.remote_listing()
     context['jobs_internship'] = Job.internship_listing()
     context['jobs_volunteering'] = Job.volunteering_listing()
-    context['charts_ranges'] = charts.ranges(context['now'].date())
+
+    charts_months = charts.months(BUSINESS_BEGIN_ON, context['now'].date())
+    context['charts_labels'] = charts.labels(charts_months)
+    context['charts_revenue'] = charts.per_month(Transaction.revenue, charts_months)
+    context['charts_revenue_ttm'] = charts.per_month(Transaction.revenue_ttm, charts_months)
+    context['charts_revenue_breakdown'] = charts.per_month_breakdown(Transaction.revenue_breakdown, charts_months)
+    context['charts_cost'] = charts.per_month(Transaction.cost, charts_months)
+    context['charts_cost_ttm'] = charts.per_month(Transaction.cost_ttm, charts_months)
+    context['charts_cost_breakdown'] = charts.per_month_breakdown(Transaction.cost_breakdown, charts_months)
 
     if 'topic_name' in page.meta:
         topic_name = page.meta['topic_name']

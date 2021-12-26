@@ -142,11 +142,11 @@
         </div>
         <div class="footer-about-finances">
           <h4 class="footer-subheading">Můj aktuální čistý zisk</h4>
-          <p class="footer-finances-number">{{ transactions.profit_monthly()|thousands }}&nbsp;Kč měsíčně</p>
+          <p class="footer-finances-number">{{ profit_ttm|thousands }} Kč měsíčně</p>
 
           <h4 class="footer-subheading">Zdroje příjmů, zaokrouhleno</h4>
           <ul class="footer-finances-list">
-            {% for name, value_pct in transactions.incomes_breakdown()|money_breakdown_ptc|incomes %}
+            {% for name, value_pct in revenue_ttm_breakdown|money_breakdown_ptc|finances %}
               <li>
                 <strong class="footer-finances-value">{{ value_pct }} %</strong>
                 {{ name }}

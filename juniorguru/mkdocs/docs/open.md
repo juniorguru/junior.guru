@@ -4,76 +4,128 @@ template: main.html
 description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior.guru?
 ---
 
+- Aktuální čistý zisk: {{ profit_ttm|thousands }} Kč měsíčně
+
+<div class="progress">
+    {% set progress_max = 40000 %}
+    {% set progress_ptc = (profit_ttm * 100) / progress_max %}
+    <div class="progress-bar" role="progressbar" style="width: {{ progress_ptc }}%" aria-valuenow="{{ progress_ptc }}" aria-valuemin="0" aria-valuemax="{{ progress_max }}">
+    {{ progress_ptc }} % ze {{ progress_max|thousands }} Kč
+    </div>
+</div>
+
 <canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
-
-    {% set chart = {
-        'labels': charts_ranges.today|map('string')|list,
+    data-chart="{{ {
+        'labels': charts_labels,
         'datasets': [
             {
-                'label': 'příjmy',
-                'data': charts_ranges.today|map_function(transactions.revenue_monthly),
+                'label': 'výnosy',
+                'data': charts_revenue,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
-                'label': 'výdaje',
-                'data': charts_ranges.today|map_function(transactions.cost_monthly),
-                'borderColor': '#DA3C6C',
+                'label': 'výnosy TTM/12',
+                'data': charts_revenue_ttm,
+                'borderColor': '#1755d1',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'náklady',
+                'data': charts_cost,
+                'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
             {
-                'label': 'MRR',
-                'data': charts_ranges.today|map_function(transactions.recurring_revenue_monthly),
-                'borderColor': '#6ED79F',
-                'borderWidth': 2,
-            }
+                'label': 'náklady TTM/12',
+                'data': charts_cost_ttm,
+                'borderColor': '#dc3545',
+                'borderWidth': 1,
+            },
         ]
-    } %}
-    data-chart="{{ chart|tojson|forceescape }}"
->
-</canvas>
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'}
+    }|tojson|forceescape }}"></canvas>
 
-
-{#
-        return {
-            'labels': [f'{data_point:%Y-%m-%d}' for data_point in data_points],
-            'datasets': {
-                'revenue': ,
+<canvas
+    class="chart" width="400" height="200"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': charts_labels,
+        'datasets': [
+            {
+                'label': 'dobrovolné příspěvky',
+                'data': charts_revenue_breakdown.pop('donations'),
+                'backgroundColor': '#02CABB',
             },
-        }
-        return {
-            'labels': labels,
-            'datasets': [{
-                'label': 'blabla',
-                'data': data,
-                'borderColor': '#1755d1',
-                'borderWidth': 3
-            }]
-        }
-#}
+            {
+                'label': 'individuální členství',
+                'data': charts_revenue_breakdown.pop('memberships'),
+                'backgroundColor': '#1755d1',
+            },
+            {
+                'label': 'firemní členství',
+                'data': charts_revenue_breakdown.pop('partnerships'),
+                'backgroundColor': '#638CDD',
+            },
+            {
+                'label': 'inzerce nabídek práce ',
+                'data': charts_revenue_breakdown.pop('jobs'),
+                'backgroundColor': '#421BD4',
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts_revenue_breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
+    }|tojson|forceescape }}"></canvas>
 
-- Revenue/mo {{ transactions.revenue_monthly() }}
-- MRR {{ transactions.recurring_revenue_monthly() }}
-- Profit/mo {{ transactions.profit_monthly() }}
+<canvas
+    class="chart" width="400" height="200"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': charts_labels,
+        'datasets': [
+            {
+                'label': 'daně a pojištění',
+                'data': charts_cost_breakdown.pop('tax'),
+                'backgroundColor': '#ddd',
+            },
+            {
+                'label': 'různé',
+                'data': charts_cost_breakdown.pop('miscellaneous'),
+                'backgroundColor': '#dc3545',
+            },
+            {
+                'label': 'právnička',
+                'data': charts_cost_breakdown.pop('lawyer'),
+                'backgroundColor': '#801515',
+            },
+            {
+                'label': 'marketing',
+                'data': charts_cost_breakdown.pop('marketing'),
+                'backgroundColor': '#550000',
+            },
+            {
+                'label': 'memberful.com',
+                'data': charts_cost_breakdown.pop('memberful'),
+                'backgroundColor': '#EF704F',
+            },
+            {
+                'label': 'discord.com',
+                'data': charts_cost_breakdown.pop('discord'),
+                'backgroundColor': '#5865f2',
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts_cost_breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
+    }|tojson|forceescape }}"></canvas>
 
-Příjmy
-
-```
-{{ transactions.incomes_breakdown()|pprint }}
-```
-
-```
-{{ transactions.incomes_breakdown()|money_breakdown_ptc|pprint }}
-```
-
-```
-{{ transactions.incomes_breakdown()|money_breakdown_ptc|incomes|pprint }}
-```
-
-Výdaje
-
-```
-{{ transactions.expenses_breakdown()|pprint }}
-```
+https://simpleanalytics.com/junior.guru

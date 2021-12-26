@@ -146,7 +146,7 @@ INCOMES_BREAKDOWN_NAMES = {
 }
 
 
-def incomes(breakdown_mapping):
+def finances(breakdown_mapping):
     return sorted((
         (INCOMES_BREAKDOWN_NAMES[name], value) for name, value
         in breakdown_mapping.items()
@@ -159,5 +159,11 @@ def money_breakdown_ptc(breakdown_mapping):
     return {item[0]: math.ceil(item[1] * 100 / total) for item in items}
 
 
-def map_function(iterable, function):
-    return list(map(function, iterable))
+class TemplateError(Exception):
+    pass
+
+
+def assert_empty(collection):
+    if len(collection):
+        raise TemplateError(f"{type(collection).__name__} not empty: {', '.join(collection)}")
+    return ''
