@@ -4,7 +4,19 @@ template: main.html
 description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior.guru?
 ---
 
-- Aktuální čistý zisk: {{ profit_ttm|thousands }} Kč měsíčně
+# Tato stránka se teprve připravuje!
+
+Stránku jsem vytvořil po vzoru [jiných otevřených projektů](https://openstartuplist.com/), především [NomadListu](https://nomadlist.com/open). Tyto grafy a čísla stejně potřebuji pro svou vlastní potřebu, takže proč je v rámci transparentnosti nemít rovnou na webu, že?
+
+Finanční data se každý den stahují přímo z mého podnikatelského účtu u Fio banky. Používám [svou vlastní Python knihovnu](https://pypi.org/project/fiobank/), kterou jsem kdysi vytvořil.
+
+## Aktuální stav
+
+- Aktuální čistý zisk junior.guru: {{ profit_ttm|thousands }} Kč měsíčně
+- Spočítáno jako zisk za posledních 12 měsíců (TTM, _trailing twelve months_) vydělený 12.
+- Zisk znamená výnosy mínus náklady, je to tedy čistý zisk z mého podnikání, který jde do rodinného rozpočtu.
+
+Ze svých předchozích angažmá mám nějaké úspory, díky nimž mohu JG provozovat, i když zatím moc nevydělá. Jako seniorní programátor s mými zkušenostmi bych prací pro pražskou nebo zahraniční firmu mohl vydělávat kolem 100.000 Kč měsíčně čistého. Dohodli jsme se doma, že když mě JG tolik baví, zkusím to provozovat a i když to vydělá méně, stojí nám to za větší domácí pohodu. Na JG dělám na full time, máme jedno malé dítě, nemáme auto, bydlíme v nájmu uprostřed Prahy. Kdybych vydělával 40.000 Kč čistého, tak by nám to myslím vystačilo. Cílem JG není zbohatnout, ale dlouhodobě pomáhat juniorům, pohodlně živit rodinu a žít při tom šťastný život.
 
 <div class="progress">
     {% set progress_max = 40000 %}
@@ -13,6 +25,12 @@ description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior
     {{ progress_ptc }} % ze {{ progress_max|thousands }} Kč
     </div>
 </div>
+
+## Výnosy a náklady
+
+Následující graf zobrazuje vývoj mých výnosů a nákladů v každém konkrétním měsíci. Tenké linky zobrazují totéž, ale vždy za posledních 12 měsíců (TTM, _trailing twelve months_), vyděleno 12. Výnosy ani náklady totiž nejsou vždy pravidelného, měsíčního charakteru, jeden měsíc vydělám víc, jiný méně, stejné je to s výdaji. Zároveň nemám s nikým delší kontrakt než roční, ať už jsou to jednotlivci nebo firmy. Číslo za rok tedy stírá tyto skoky nahoru a dolů, ale protože můj byznys roste rychleji než ročním tempem, tak zase ukazuje možná menší číslo, než je realitou za poslední půlrok, čtvrtrok.
+
+Čísla z konkrétních mesíců tedy pomáhají odtušit aktuální trendy. Čistý zisk je rozdíl mezi modrou a červenou čárou.
 
 <canvas
     class="chart" width="400" height="200"
@@ -50,6 +68,20 @@ description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior
         'interaction': {'mode': 'index'}
     }|tojson|forceescape }}"></canvas>
 
+## Výnosy
+
+Původně jsem se snažil JG živit z inzerce nabídek práce, ale byznys na tomto modelu jsem nedokázal dostatečně rozpohybovat tak, abych věřil, že má smysl v tom dál pokračovat. Mezitím jsem se pokusil zpeněžit [příručku](motivation.md) skrze loga firem a [prosil jsem návštěvníky webu o dobrovolné příspěvky](/donate/).
+
+Ke konci roku 2020 jsem se rozhodl změnit byznys model a vytvořit kolem JG placenou komunitu na Discordu. Toto detailně popisuji ve svém [článku na blogu](https://honzajavorek.cz/blog/spoustim-klub/). [Klub](club.md) se veřejnosti otevřel v únoru 2021.
+
+V ideálním případě by mě živilo individuální členství lidí v klubu, protože je to pravidelný, předvídatelný příjem, který mi navíc zajišťuje největší nezávislost.
+
+Individuální členství ale nevystačí, takže si domlouvám [spolupráce s firmami]({{ pricing_url }}) vždy formou nějakého ročního firemního členství v klubu. Spolupráce s firmami jsou jednorázové větší příjmy, které lze obtížně předvídat a mohou ovlivňovat mou kritičnost k firmám, se kterými spolupracuji.
+
+Inzerci nabídek práce nechci zrušit, ale aktuálně není na vrcholu mých priorit. Pokud, tak spíše v podobě dlouhodobé spolupráce s firmou, než formou jednorázových inzerátů.
+
+Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velkou měrou právě díky nim JG ve svých počátcích neskončilo. Teď je ale čas postavit se na vlastní nohy! Možnost přispět zřejmě nezruším, ale přestal jsem ji propagovat. Chtěl bych, aby dobrovolné příspěvky jednou plně nahradilo individuální členství v klubu.
+
 <canvas
     class="chart" width="400" height="200"
     data-chart-type="bar"
@@ -83,6 +115,12 @@ description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
     }|tojson|forceescape }}"></canvas>
+
+## Náklady
+
+Zahrnuji pouze náklady na byznys, ale zase i s daněmi a odvody na zdravotní a sociální pojištění. V roce 2020 je v nich díra, protože kvůli covidu-19 nebyla povinnost je platit.
+
+Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samolepek apod. Také jsem si jednu dobu platil [Buffer](https://buffer.com/).
 
 <canvas
     class="chart" width="400" height="200"
@@ -128,4 +166,6 @@ description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
     }|tojson|forceescape }}"></canvas>
 
-https://simpleanalytics.com/junior.guru
+## Návštěvnost
+
+Čísla návštěvnosti webu jsou na [simpleanalytics.com/junior.guru](https://simpleanalytics.com/junior.guru).
