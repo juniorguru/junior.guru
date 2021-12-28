@@ -8,7 +8,7 @@ description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior
 
 <div class="progress">
     {% set progress_max = 40000 %}
-    {% set progress_ptc = (profit_ttm * 100) / progress_max %}
+    {% set progress_ptc = ((profit_ttm * 100) / progress_max)|round|int %}
     <div class="progress-bar" role="progressbar" style="width: {{ progress_ptc }}%" aria-valuenow="{{ progress_ptc }}" aria-valuemin="0" aria-valuemax="{{ progress_max }}">
     {{ progress_ptc }} % ze {{ progress_max|thousands }} Kč
     </div>
