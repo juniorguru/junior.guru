@@ -71,3 +71,13 @@ logo.junior.guru '@' CNAME 'honzajavorek.github.io'
 ## Verify Google Search Console
 
 In [Google Search Console](https://support.google.com/webmasters/answer/9008080?hl=en) click verify and set a TXT DNS record.
+
+## Convert WAV podcast files to MP3 files
+
+```
+ffmpeg -i stuff.wav -vn -c:a libmp3lame -ar 44100 -ac 2 -qscale:a 5 -f mp3 stuff_stereo.mp3
+```
+
+```
+ffmpeg -i stuff.wav -vn -c:a libmp3lame -ar 44100 -ac 1 -qscale:a 5 -f mp3 stuff_mono.mp3
+```
