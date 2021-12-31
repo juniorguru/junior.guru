@@ -52,19 +52,19 @@
 #    prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
-# - title: "TBD peníze"
-#   date: "2021-01-04"
-#   description: |
-#     TBD
-#   bio_name: Jakub Dvořák
-#   bio_title: Team Lead v Processand, zakladatel Rozbité prasátko
-#   bio: |
-#     TBD
-#   bio_links:
-#     - https://www.linkedin.com/in/dvoorajak/
-#     - https://rozbiteprasatko.cz/
-#   logo_path: logos/processand.svg
-#   speakers: 0000000000000000
+- title: "Dobrá mzda je jen začátkem"
+  date: "2021-01-11"
+  description: |
+    IT táhne. Vysoké (slibované) mzdy, flexibilní pracovní doba, práce z domova, zaměstnanecké benefity a velký potenciál kariérního růstu láká do IT čím dál tím víc lidí. A co je na tom nejlepší? Že stačí dodržovat pár pravidel a i vy můžete dosáhnout nejen na finančně bezstarostný život, ale i na nejvyšší příčky v podobě finanční nezávislosti.
+  bio_name: Jakub Dvořák
+  bio_title: Team Lead a datový vědec v Processand, finanční šprt, blogger a podcaster v Rozbité prasátko
+  bio: |
+    Přes den pracuji jako vedoucí datový vědec ve firmě [Processand](https://www.processand.com/), kde pomáháme nadnárodním korporacím zefektivnit firemní procesy skrze tzv. [process mining](https://en.wikipedia.org/wiki/Process_mining). V noci pomáhám lidem s osobními financemi skrze blog a podcast [Rozbité prasátko](https://rozbiteprasatko.cz/). A obojí mě strašně baví.
+  bio_links:
+    - https://rozbiteprasatko.cz/
+    - https://www.linkedin.com/in/dvoorajak/
+  logo_path: logos/processand.svg
+  speakers: 925744853508304897
 
 
 - title: "Tester jako ideální první práce, aneb čím začít kariéru v IT"
