@@ -60,12 +60,13 @@ The service account's email address needs to be manually invited wherever it sho
 
 By default, sending is not enabled. On production or when trying to send e-mails from localhost an environment variable `SMTP_ENABLED` needs to be set to something truthy.
 
-## Setting up logo.junior.guru
+## Setting up logo.junior.guru and podcast.junior.guru
 
-The [logo.junior.guru](https://logo.junior.guru/) has [it's own repo](https://github.com/honzajavorek/logo.junior.guru/) and runs on GitHub Pages. Set it up in DNS:
+The [logo.junior.guru](https://logo.junior.guru/) and [podcast.junior.guru](https://podcast.junior.guru/) have their own repos and run on GitHub Pages. Set it up in DNS:
 
 ```
 logo.junior.guru '@' CNAME 'honzajavorek.github.io'
+podcast.junior.guru '@' CNAME 'honzajavorek.github.io'
 ```
 
 ## Verify Google Search Console
