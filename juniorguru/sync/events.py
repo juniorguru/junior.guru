@@ -223,4 +223,4 @@ def load_record(record):
 
 
 if __name__ == '__main__':
-    do_something_regarding_scheduled_events()
+    main()
