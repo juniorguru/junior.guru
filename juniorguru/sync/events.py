@@ -9,7 +9,6 @@ from juniorguru.lib.timer import measure
 from juniorguru.models import Event, EventSpeaking, ClubMessage, with_db, db
 from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_square, replace_with_jpg
 from juniorguru.lib import loggers
-from juniorguru.lib.md import strip_links
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, discord_task
 
@@ -29,6 +28,7 @@ YOUTUBE_THUMBNAIL_WIDTH = 1160
 YOUTUBE_THUMBNAIL_HEIGHT = 735
 
 ANNOUNCEMENTS_CHANNEL = 789046675247333397
+EVENTS_CHANNEL = 769966887055392769
 EVENTS_CHAT_CHANNEL = 821411678167367691
 
 
@@ -111,8 +111,8 @@ def main():
         logger.info(f"Saving '{name}'")
         event.save()
 
-        # discord messages
         if DISCORD_MUTATIONS_ENABLED:
+            sync_scheduled_events()
             post_next_event_messages()
         else:
             logger.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
@@ -179,9 +179,9 @@ async def post_next_event_messages(client):
                 "",
                 "⚠️ Ve výchozím nastavení Discord udělá zvuk při každé aktivitě v hlasovém kanálu, např. při připojení nového účastníka, odpojení, vypnutí zvuku, zapnutí, apod. Zvuky si vypni v _User Settings_, stránka _Notifications_, sekce _Sounds_. Většina zvuků souvisí s hovory, takže je potřeba povypínat skoro vše.",
                 "",
-                f"ℹ️ {strip_links(event.description.strip())}",
+                f"ℹ️ {event.description_plain}",
                 "",
-                f"🦸 {strip_links(event.bio).strip()}"
+                f"🦸 {event.bio_plain}"
                 "",
                 "",
                 f"👉 {event.url}",
@@ -189,6 +189,29 @@ async def post_next_event_messages(client):
             await events_chat_channel.send('\n'.join(content))
     else:
         logger.info("It's not the day when the event is")
+
+
+@with_db
+@discord_task
+async def sync_scheduled_events(client):
+    discord_events = {arrow.get(e.start_time).naive: e
+                      for e in client.juniorguru_guild.scheduled_events}
+    channel = await client.fetch_channel(EVENTS_CHANNEL)
+    for event in Event.planned_listing():
+        discord_event = discord_events.get(event.start_at)
+        if discord_event:
+            logger.info(f"Discord event for '{event.title}' already exists")
+        else:
+            logger.info(f"Creating Discord event for '{event.title}'")
+            discord_event = await client.juniorguru_guild.create_scheduled_event(
+                name=f'{event.bio_name}: {event.title}',
+                description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
+                start_time=event.start_at,
+                end_time=event.end_at,
+                location=channel,
+            )
+            event.discord_id = discord_event.id
+            event.save()
 
 
 def load_record(record):
@@ -200,4 +223,4 @@ def load_record(record):
 
 
 if __name__ == '__main__':
-    main()
+    do_something_regarding_scheduled_events()

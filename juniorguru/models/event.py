@@ -1,13 +1,15 @@
-from datetime import date
+from datetime import date, timedelta
 
 import arrow
-from peewee import CharField, DateTimeField, ForeignKeyField, TextField
+from peewee import CharField, DateTimeField, ForeignKeyField, TextField, IntegerField
 
 from juniorguru.models.base import BaseModel, JSONField
 from juniorguru.models import ClubUser
+from juniorguru.lib.md import strip_links
 
 
 class Event(BaseModel):
+    discord_id = IntegerField(index=True, null=True)
     title = CharField()
     start_at = DateTimeField(index=True)
     description = TextField()
@@ -26,6 +28,18 @@ class Event(BaseModel):
     @property
     def start_at_prg(self):
         return arrow.get(self.start_at).to('Europe/Prague').naive
+
+    @property
+    def end_at(self):
+        return self.start_at + timedelta(hours=1)
+
+    @property
+    def description_plain(self):
+        return strip_links(self.description.strip())
+
+    @property
+    def bio_plain(self):
+        return strip_links(self.bio).strip()
 
     @property
     def slug(self):
