@@ -1,5 +1,5 @@
 ---
-title: Jak se daří provozovat junior.guru?
+title: Jak se daří provozovat junior.guru
 template: main.html
 description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior.guru?
 ---
@@ -115,6 +115,14 @@ Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velk
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
     }|tojson|forceescape }}"></canvas>
+
+### Proč tu není MRR
+
+MRR znamená _monthly recurring revenue_ a je základní metrikou většiny online byznysů, které jsou vedeny jako pravidelně placená služba. Je to součet výnosů, které mi pravidelně měsíčně chodí na účet skrze předplatné, tedy pravidelný příjem, na který se dá spolehnout. I když junior.guru je služba s členstvím na měsíční bázi a MRR by spočítat šlo, nakonec jsem se rozhodl jej zatím neřešit a dívám se spíš na ono TTM vydělené 12.
+
+Jedním důvodem je složitost výpočtu. Data beru z bankovního účtu, kam mi ale nechodí částky za jednotlivé lidi. Stripe mi vždy posílá úhrnné částky za několik týdnů zpětně. Musel bych brát data zvlášť z Memberful. Navíc prodávám i roční členství, které bych musel rozpočítávat.
+
+Druhým důvodem je malá vypovídající hodnota. Velkou část výnosů tvoří kontrakty s firmami, jež jsou nárazovým, ale ve svém množství poměrně stabilním příjmem. Pravidelné příjmy mám zase i z dobrovolných příspěvků, jež bych do MRR započítával jen velice složitě. Aby bylo číslo přesné, musel bych mít data o tom, jak přesně kdo přispívá přes Patreon nebo GitHub Sponsors, což se mi nevyplatí řešit.
 
 ## Náklady
 
