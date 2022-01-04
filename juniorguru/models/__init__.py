@@ -12,10 +12,11 @@ from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.company import Company
 from juniorguru.models.employment import Employment
 from juniorguru.models.transaction import Transaction
+from juniorguru.models.podcast import PodcastEpisode
 
 
 __all__ = [db, Job, JobDropped, JobError, JobMetric, Metric, Story, Supporter,
            LastModified,
            retry_when_db_locked, SpiderMetric, EMPLOYMENT_TYPES, Proxy,
            Topic, ClubMessage, ClubUser, ClubPinReaction, Event, EventSpeaking,
-           Company, with_db, Employment, json_dumps, Transaction]
+           Company, with_db, Employment, json_dumps, Transaction, PodcastEpisode]

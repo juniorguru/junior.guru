@@ -25,6 +25,7 @@ from juniorguru.sync.mentoring import main as sync_mentoring
 from juniorguru.sync.li_group import main as sync_li_group
 from juniorguru.sync.jobs_club import main as sync_jobs_club
 from juniorguru.sync.stickers import main as sync_stickers
+from juniorguru.sync.podcast import main as sync_podcast
 from juniorguru.lib.ai import set_ai_opinion
 
 
@@ -43,18 +44,21 @@ def main():
     sync_proxies()
     sync_club_content()
     sync_employments()
+    sync_podcast()
+
+    # depends on club_content
+    sync_stickers()
+    sync_mentoring()
+    sync_li_group()
+    sync_pins()
+    sync_avatars()
+    sync_events()
+    sync_topics()
+    sync_digest()
+    sync_returning_members()
+    sync_subscriptions()
 
     # order-sensitive
-    sync_stickers()  # depends on club_content
-    sync_mentoring()  # depends on club_content
-    sync_li_group()  # depends on club_content
-    sync_pins()  # depends on club_content
-    sync_avatars()  # depends on club_content
-    sync_events()  # depends on club_content
-    sync_topics()  # depends on club_content
-    sync_digest()  # depends on club_content
-    sync_returning_members()  # depends on club_content
-    sync_subscriptions()  # depends on club_content
     sync_roles()  # depends on club_content, events, avatars, subscriptions
     sync_jobs()  # depends on proxies, employments
     sync_metrics()  # depends on jobs, logos, transactions
