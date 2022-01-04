@@ -29,6 +29,18 @@ class MarkdownTemplateError(Exception):
     pass
 
 
+def on_pre_build(config):
+    macros_dir = Path(config['docs_dir']).parent / 'macros'
+    config['theme'].dirs.append(macros_dir)
+
+    config['shared_context'] = {}
+    context_hooks.on_shared_context(config['shared_context'])
+    config['docs_context'] = {}
+    context_hooks.on_docs_context(config['docs_context'])
+    config['theme_context'] = {}
+    context_hooks.on_theme_context(config['theme_context'])
+
+
 def on_page_markdown(markdown, page, config, files):
     """Renders Markdown as if it was a Jinja2 template.
 
@@ -47,20 +59,17 @@ def on_page_markdown(markdown, page, config, files):
     context = dict(page=page,
                    config=config,
                    pages=files,
-                   base_url=get_relative_url('.', page.url))
-    context_hooks.on_shared_context(context, page, config, files)
-    context_hooks.on_docs_context(context, page, config, files)
+                   base_url=get_relative_url('.', page.url),
+                   **config['shared_context'],
+                   **config['docs_context'])
+    context_hooks.on_shared_page_context(context, page, config, files)
+    context_hooks.on_docs_page_context(context, page, config, files)
 
     try:
         template = env.from_string(markdown)
         return template.render(**context)
     except Exception:
         raise MarkdownTemplateError(page)
-
-
-def on_pre_build(config):
-    macros_dir = Path(config['docs_dir']).parent / 'macros'
-    config['theme'].dirs.append(macros_dir)
 
 
 def on_env(env, config, files):
@@ -72,17 +81,18 @@ def on_env(env, config, files):
 
 
 def on_page_context(context, page, config, nav):
-    context_hooks.on_shared_context(context, page, config, context['pages'])
-    context_hooks.on_theme_context(context, page, config, context['pages'])
-
+    context.update(config['shared_context'])
+    context.update(config['theme_context'])
+    context_hooks.on_shared_page_context(context, page, config, context['pages'])
+    context_hooks.on_theme_page_context(context, page, config, context['pages'])
 
 
 def on_post_build(config):
     api_dir = Path(config['site_dir']) / 'api'
     api_dir.mkdir(parents=True, exist_ok=True)
 
-    api.generate_events_ics(api_dir, config)
-    api.generate_czechitas_csv(api_dir, config)
+    api.build_events_ics(api_dir, config)
+    api.build_czechitas_csv(api_dir, config)
 
 
 def create_md_filter(page, config, files):
