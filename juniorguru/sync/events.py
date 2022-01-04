@@ -111,11 +111,11 @@ def main():
         logger.info(f"Saving '{name}'")
         event.save()
 
-        if DISCORD_MUTATIONS_ENABLED:
-            sync_scheduled_events()
-            post_next_event_messages()
-        else:
-            logger.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
+    if DISCORD_MUTATIONS_ENABLED:
+        sync_scheduled_events()
+        post_next_event_messages()
+    else:
+        logger.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
 
 @with_db
