@@ -137,13 +137,13 @@ class Spider(BaseSpider):
     def __init__(self, *args, **kwargs):
         super(Spider, self).__init__(*args, **kwargs)
         self.data_dir = data_path('backups', createdir=True)
-        self.employments_saved_count = 0
+        self.saved_count = 0
 
     def start_requests(self):
-        # probes just 10 pages as there are only last 30 backups anyway
         # https://circleci.com/docs/2.0/artifacts/
         limit = 100
-        for offset in range(0, limit * 10, limit):
+        pages = 5
+        for offset in range(0, limit * pages, limit):
             yield Request(f'{self.project_url}?limit={limit}&offset={offset}')
 
     def parse(self, response):
@@ -178,15 +178,15 @@ class Spider(BaseSpider):
         logger.info(f'Processing artifact {response.url} from build {repr(ci_data)}')
 
         # done with requests at this point, the following code blocks the async loop to process
-        # the backups, so check the number of employments loaded from backups and if it didn't
+        # the backups, so checking the number of employments loaded from backups and if it didn't
         # change from the last time, further processing is redundant
         with db:
-            employments_saved_count = Employment.loaded_from_backups_count()
-        logger.info(f'Employments loaded from backups: {employments_saved_count} (previously {self.employments_saved_count})')
-        if employments_saved_count and employments_saved_count == self.employments_saved_count:
+            saved_count = Employment.loaded_from_backups_count()
+        logger.info(f'Employments loaded from backups: {saved_count} (previously {self.saved_count})')
+        if saved_count and saved_count == self.saved_count:
             raise CloseSpider('Everything loaded, no need to process more backups')
         else:
-            self.employments_saved_count = employments_saved_count
+            self.saved_count = saved_count
 
         # couldn't figure out how to do the following line in a memory-efficient way :(
         file = io.BytesIO(response.body)
