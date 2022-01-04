@@ -75,8 +75,22 @@ class Spider(BaseSpider):
             yield item
 
     def verify_job(self, response, item):
-        """Filters out links to broken external links"""
-        item['apply_link'] = response.url  # cuts redirects, if any
+        """
+        Verify apply link
+
+        Filters out links to broken external links and cuts redirects, if any.
+        It's not wise to assign new apply_link directly, as the URL of this response
+        is prone to scraping protection. We want our item input processors to clean
+        the URL first. The item is already loaded though, so here we create a temporary
+        dict item just for this purpose, fire the input processors, and assign
+        the value only after it got cleaned.
+        """
+        loader = Loader(item=dict())
+        loader.add_value('apply_link', response.url)
+        fields_to_update = loader.load_item().items()
+
+        for field_name, value in fields_to_update:
+            item[field_name] = value
         yield item
 
 
