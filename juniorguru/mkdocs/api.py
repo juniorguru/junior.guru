@@ -2,8 +2,9 @@ import csv
 from datetime import timedelta
 
 import ics
-from podgen import Podcast, Episode, Media
+from pod2gen import Podcast, Episode, Media, Person, Category
 
+from juniorguru.lib.md import md
 from juniorguru.models import Employment, Event, PodcastEpisode, with_db
 
 
@@ -33,20 +34,35 @@ def build_czechitas_csv(api_dir, config):
 
 @with_db
 def build_podcast_xml(api_dir, config):
+    person_h = Person('Honza Javorek', 'honza@junior.guru')
+    person_p = Person('Pája Froňková')
+
+    authors = [person_p, person_h]
+    copyright = f'© {PodcastEpisode.copyright_year()} Pavlína Froňková, Jan Javorek'
+
     podcast = Podcast(name='Junior Guru podcast',
                       description='...',
-                      website='https://junior.guru',
+                      language='cs',
+                      category=Category('Technology'),  # TODO Category('Business'), Category('Education')
+                      website='https://junior.guru/podcast',
+                      feed_url='https://junior.guru/api/podcast.xml',
+                      authors=authors,
+                      owner=person_h,
+                      web_master=person_h,
+                      copyright=copyright,
+                      generator='JuniorGuruBot (+https://junior.guru)',
                       explicit=False)
+
     for db_episode in PodcastEpisode.api_listing():
-        episode = Episode(id=db_episode.id,
+        episode = Episode(id=db_episode.global_id,
                           title=db_episode.title_numbered,
-                          publication_date=db_episode.published_at_prg,
-                          subtitle='...',
-                          summary='...',
-                          long_summary='...')
+                          publication_date=db_episode.publish_at_prg,
+                          # link='', TODO
+                          summary=md(db_episode.description))
         episode.media = Media(db_episode.media_url,
                               size=db_episode.media_size,
                               type=db_episode.media_type,
                               duration=timedelta(seconds=db_episode.media_duration_s))
         podcast.add_episode(episode)
+
     podcast.rss_file(str(api_dir / 'podcast.xml'))

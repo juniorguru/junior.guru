@@ -45,7 +45,7 @@ piexif = "*"
 markupsafe = "*"
 mkdocs-simple-hooks = "*"
 ics = { git = "https://github.com/ics-py/ics-py.git", branch = "main" }
-podgen = "^1.1.0"
+pod2gen = "^1.0.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
