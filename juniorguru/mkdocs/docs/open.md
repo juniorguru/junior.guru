@@ -1,6 +1,5 @@
 ---
 title: Jak se daří provozovat junior.guru
-template: main.html
 description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior.guru?
 ---
 

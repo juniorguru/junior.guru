@@ -60,7 +60,7 @@ def build_podcast_xml(api_dir, config):
                           episode_name=f'#{db_episode.number}',
                           title=db_episode.title_numbered,
                           publication_date=db_episode.publish_at_prg,
-                          link=f'https://junior.guru/podcast/#episode{db_episode.id}',
+                          link=db_episode.url,
                           summary=md(db_episode.description),
                           media=Media(db_episode.media_url,
                                       size=db_episode.media_size,

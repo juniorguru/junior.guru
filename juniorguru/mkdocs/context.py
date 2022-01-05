@@ -7,7 +7,7 @@ from datetime import date
 import arrow
 
 from juniorguru.lib import charts
-from juniorguru.models import with_db, Topic, ClubUser, Company, Event, ClubMessage, Story, LastModified, Job, Transaction
+from juniorguru.models import with_db, Topic, ClubUser, Company, Event, ClubMessage, Story, LastModified, Job, Transaction, PodcastEpisode
 from juniorguru.mkdocs.thumbnail import thumbnail
 
 
@@ -73,6 +73,9 @@ def on_docs_context(context):
     context['charts_cost'] = charts.per_month(Transaction.cost, charts_months)
     context['charts_cost_ttm'] = charts.per_month(Transaction.cost_ttm, charts_months)
     context['charts_cost_breakdown'] = charts.per_month_breakdown(Transaction.cost_breakdown, charts_months)
+
+    # podcast.md
+    context['podcast_episodes'] = PodcastEpisode.listing()
 
 
 @with_db

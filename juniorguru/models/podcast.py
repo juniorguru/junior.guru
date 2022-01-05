@@ -29,11 +29,26 @@ class PodcastEpisode(BaseModel):
         return f"#{self.number} {self.title}"
 
     @property
+    def slug(self):
+        return f'episode{self.id}'
+
+    @property
+    def url(self):
+        return f'https://junior.guru/podcast/#{self.slug}'
+
+    @property
     def publish_at_prg(self):
         return arrow.get(self.publish_on) \
             .replace(minute=42, second=42) \
             .to('Europe/Prague') \
             .datetime
+
+    @classmethod
+    def listing(cls, today=None):
+        today = today or date.today()
+        return cls.select() \
+            .where(cls.publish_on <= today) \
+            .order_by(cls.publish_on.desc())
 
     @classmethod
     def api_listing(cls, today=None):
