@@ -40,7 +40,7 @@ class PodcastEpisode(BaseModel):
         today = today or date.today()
         return cls.select() \
             .where(cls.publish_on <= today) \
-            .order_by(cls.publish_on.desc())
+            .order_by(cls.publish_on)
 
     @classmethod
     def copyright_year(cls, today=None):

@@ -2,7 +2,7 @@ import csv
 from datetime import timedelta
 
 import ics
-from pod2gen import Podcast, Episode, Media, Person, Category
+from pod2gen import Podcast, Episode, Media, Person, Category, Funding
 
 from juniorguru.lib.md import md
 from juniorguru.models import Employment, Event, PodcastEpisode, with_db
@@ -34,35 +34,38 @@ def build_czechitas_csv(api_dir, config):
 
 @with_db
 def build_podcast_xml(api_dir, config):
-    person_h = Person('Honza Javorek', 'honza@junior.guru')
-    person_p = Person('Pája Froňková')
+    # TODO Category('Business'), Category('Education')
+    # https://gitlab.com/caproni-podcast-publishing/pod2gen/-/issues/26
 
-    authors = [person_p, person_h]
-    copyright = f'© {PodcastEpisode.copyright_year()} Pavlína Froňková, Jan Javorek'
-
+    person_hj = Person('Honza Javorek', 'honza@junior.guru')
     podcast = Podcast(name='Junior Guru podcast',
-                      description='...',
+                      description='Jsme tu pro všechny juniory v IT! Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.',
                       language='cs',
-                      category=Category('Technology'),  # TODO Category('Business'), Category('Education')
-                      website='https://junior.guru/podcast',
+                      category=Category('Technology'),
+                      website='https://junior.guru/podcast/',
                       feed_url='https://junior.guru/api/podcast.xml',
-                      authors=authors,
-                      owner=person_h,
-                      web_master=person_h,
-                      copyright=copyright,
+                      authors=[Person('Pája Froňková'), person_hj],
+                      owner=person_hj,
+                      web_master=person_hj,
+                      copyright=f'© {PodcastEpisode.copyright_year()} Pavlína Froňková, Jan Javorek',
                       generator='JuniorGuruBot (+https://junior.guru)',
+                      image='https://junior.guru/static/images/podcast-v1.png',
+                      fundings=[Funding('Přidej se do klubu junior.guru', 'https://junior.guru/club/'),
+                                Funding('Přispěj junior.guru', 'https://junior.guru/donate/')],
                       explicit=False)
 
-    for db_episode in PodcastEpisode.api_listing():
+    for number, db_episode in enumerate(PodcastEpisode.api_listing(), start=1):
         episode = Episode(id=db_episode.global_id,
+                          episode_number=number,
+                          episode_name=f'#{db_episode.number}',
                           title=db_episode.title_numbered,
                           publication_date=db_episode.publish_at_prg,
-                          # link='', TODO
-                          summary=md(db_episode.description))
-        episode.media = Media(db_episode.media_url,
-                              size=db_episode.media_size,
-                              type=db_episode.media_type,
-                              duration=timedelta(seconds=db_episode.media_duration_s))
+                          link=f'https://junior.guru/podcast/#episode{db_episode.id}',
+                          summary=md(db_episode.description),
+                          media=Media(db_episode.media_url,
+                                      size=db_episode.media_size,
+                                      type=db_episode.media_type,
+                                      duration=timedelta(seconds=db_episode.media_duration_s)))
         podcast.add_episode(episode)
 
     podcast.rss_file(str(api_dir / 'podcast.xml'))

@@ -3,7 +3,7 @@ from pathlib import Path
 from datetime import date
 
 from strictyaml import Map, Seq, Str, Datetime, load
-from podgen import Media
+from pod2gen import Media
 from requests.exceptions import HTTPError
 
 from juniorguru.lib.timer import measure
