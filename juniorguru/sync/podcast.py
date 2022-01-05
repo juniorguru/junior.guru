@@ -1,7 +1,8 @@
 from multiprocessing import Pool
 from pathlib import Path
 
-from strictyaml import Map, Seq, Str, load
+import arrow
+from strictyaml import Map, Seq, Str, Datetime, load
 from podgen import Media
 
 from juniorguru.lib.timer import measure
@@ -16,8 +17,8 @@ schema = Seq(
     Map({
         'id': Str(),
         'title': Str(),
+        'published_at': Datetime(),
         'description': Str(),
-        # 'date': Datetime(),
     })
 )
 
@@ -47,11 +48,12 @@ def process_episode(yaml_record):
 
     media_url = f"https://podcast.junior.guru/episodes/{id}.mp3"
     ep_logger.info(f'Analyzing {media_url}')
-    media = Media.create_from_server_response(media_url)
+    media = Media.create_from_server_response(media_url, type='audio/mpeg')
     media.fetch_duration()
 
     return dict(id=id,
                 number=int(id),
+                published_at=arrow.get(yaml_record['published_at']).naive,
                 title=yaml_record['title'],
                 description=yaml_record['description'],
                 media_url=media_url,
