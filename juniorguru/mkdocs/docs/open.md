@@ -176,3 +176,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
 ## Návštěvnost
 
 Čísla návštěvnosti webu jsou na [simpleanalytics.com/junior.guru](https://simpleanalytics.com/junior.guru).
+
+## Kód
+
+Práci na kódu lze sledovat [na GitHubu](https://github.com/honzajavorek/junior.guru/graphs/contributors).
