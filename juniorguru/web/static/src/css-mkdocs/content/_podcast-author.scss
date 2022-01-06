@@ -1,0 +1,20 @@
+$podcast-author-photo-width: map-get($spacers, 5) * 1.5;
+
+.podcast-author {
+  display: flex;
+}
+
+.podcast-author-photo {
+  width: $podcast-author-photo-width;
+  height: $podcast-author-photo-width;
+  border-radius: 100%;
+}
+
+.podcast-author-body {
+  padding-left: $spacer;
+}
+
+.podcast-author-body h2,
+.podcast-author-body h3 {
+  margin-top: 0;
+}

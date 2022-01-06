@@ -1,0 +1,58 @@
+.podcast-button {
+  @extend .btn;
+}
+
+.podcast-button.spotify {
+  @include button-variant(
+    #1db954,
+    #1db954,
+    $jg-white,
+    $hover-color: $jg-white,
+    $active-color: $jg-white,
+    $disabled-color: $jg-white
+  );
+}
+
+.podcast-button.google {
+  @include button-variant(
+    #4285f4,
+    #4285f4,
+    $jg-white,
+    $hover-color: $jg-white,
+    $active-color: $jg-white,
+    $disabled-color: $jg-white
+  );
+}
+
+.podcast-button.apple {
+  @include button-variant(
+    #872ec4,
+    #872ec4,
+    $jg-white,
+    $hover-color: $jg-white,
+    $active-color: $jg-white,
+    $disabled-color: $jg-white
+  );
+}
+
+.podcast-button.youtube {
+  @include button-variant(
+    #ff0000,
+    #ff0000,
+    $jg-white,
+    $hover-color: $jg-white,
+    $active-color: $jg-white,
+    $disabled-color: $jg-white
+  );
+}
+
+.podcast-button.rss {
+  @include button-variant(
+    #f26522,
+    #f26522,
+    $jg-white,
+    $hover-color: $jg-white,
+    $active-color: $jg-white,
+    $disabled-color: $jg-white
+  );
+}
