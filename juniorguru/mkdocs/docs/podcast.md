@@ -9,7 +9,7 @@ description: Jak začít s programováním? Jak najít práci v IT? Přináš�
 # Podcast
 
 {% call lead() %}
-Podcast pro všechny juniory v IT! Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.
+Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.
 {% endcall %}
 
 <div class="standout">
