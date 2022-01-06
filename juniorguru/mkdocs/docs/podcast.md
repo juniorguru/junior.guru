@@ -49,5 +49,8 @@ Pája je aktuálně na rodičovské a Honza má s junior.guru i tak práce dost,
 
 **{{ episode.publish_on.day }}.{{ episode.publish_on.month }}.{{ episode.publish_on.year }}** — {{ episode.description }}
 
-<a class="btn btn-primary" href="{{ episode.media_url }}" role="button">{{ 'play-circle-fill'|icon }} {{ episode.media_duration_s // 60 }}min</a>
+<audio controls preload="metadata">
+  <source src="{{ episode.media_url }}" type="audio/mpeg">
+  <a class="btn btn-primary" href="{{ episode.media_url }}" role="button">{{ 'play-circle-fill'|icon }} {{ episode.media_duration_s // 60 }}min</a>
+</audio>
 {% endfor %}
