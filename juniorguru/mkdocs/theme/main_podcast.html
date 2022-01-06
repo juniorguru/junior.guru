@@ -1,0 +1,7 @@
+{% extends 'main.html' %}
+
+
+{% block meta %}
+  {{ super() }}
+  <link rel="alternate" type="application/rss+xml" title="{{ page.meta.title }}" href="https://junior.guru/api/podcast.xml">
+{% endblock %}

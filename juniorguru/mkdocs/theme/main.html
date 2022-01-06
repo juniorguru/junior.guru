@@ -165,6 +165,12 @@
     </div>
     <div class="footer-nav-container">
       <nav class="footer-section footer-nav">
+        <h3 class="footer-heading">Dost bylo čtení!</h3>
+        <p>
+          <a href="{{ 'events/'|url }}">Přednášky a další akce</a>,
+          <a href="{{ 'podcast/'|url }}">Podcast</a>
+        </p>
+
         <h3 class="footer-heading">Příručka</h3>
         <p>
           {% for nav_item in (nav|selectattr('title', 'equalto', 'Příručka')|list)[0].children %}

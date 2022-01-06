@@ -3,7 +3,9 @@ title: Jak se daří provozovat junior.guru
 description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior.guru?
 ---
 
-# Tato stránka se teprve připravuje!
+# Čísla a grafy
+
+**Tato stránka se teprve připravuje!**
 
 Stránku jsem vytvořil po vzoru [jiných otevřených projektů](https://openstartuplist.com/), především [NomadListu](https://nomadlist.com/open). Tyto grafy a čísla stejně potřebuji pro svou vlastní potřebu, takže proč je v rámci transparentnosti nemít rovnou na webu, že?
 
