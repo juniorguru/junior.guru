@@ -723,7 +723,7 @@ Celkově je dobré se soustředit nejen na firmu, ale i **na sebe**. Jsi juniorn
 
 ### Vyjednávání    <span id="negotiation"></span>
 
-Vyjednávat jde o všem. O nabídkách, [stážích](#staze), počtu pracovních hodin, typu úvazku, možnosti pracovat z domů, povinnostech v práci, benefitech, [mzdě](#kolik-si-vydelam). **Nic není dáno pevně a hodně firem je ochotno se domluvit alespoň na kompromisu**, pokud o tebe budou mít vážný zájem. Zaměstnavatel by ti měl chtít jít svou nabídkou naproti, protože **čím víc ti budou pracovní podmínky vyhovovat, tím déle zůstaneš** a investice firmy do tvého rozvoje nepřijde za rok vniveč. Vyjednávací pozici ti mohou vylepšit [tvoje úspěchy a reference](#zapisuj-si-uspechy), [zajímavé předchozí zkušenosti](#non-tech-experience), jakékoliv [aktivity navíc](#projev-aktivitu-navic) nebo lepší nabídka v jiné firmě:
+Vyjednávat jde o všem. O nabídkách, [stážích](#staze), počtu pracovních hodin, typu úvazku, možnosti pracovat z domů, povinnostech v práci, benefitech, [mzdě](#kolik-si-vydelam). **Nic není dáno pevně a hodně firem je ochotno se domluvit alespoň na kompromisu**, pokud o tebe budou mít vážný zájem. Zaměstnavatel by ti měl chtít jít svou nabídkou naproti, protože **čím víc ti budou pracovní podmínky vyhovovat, tím déle zůstaneš** a investice firmy do tvého rozvoje nepřijde za rok vniveč. Vyjednávací pozici ti mohou vylepšit [tvoje úspěchy a reference](#zapisuj-si-uspechy), zajímavé předchozí zkušenosti, jakékoliv [aktivity navíc](#projev-aktivitu-navic) nebo lepší nabídka v jiné firmě:
 
 *   Poděkuj za nabídku s tím, že se ti líbí
 *   Řekni, které věci by se ti hodilo dohodnout jinak

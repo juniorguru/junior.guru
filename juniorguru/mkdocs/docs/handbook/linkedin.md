@@ -32,7 +32,7 @@ Jedna z těch zásadnějších rad je **začít jasným shrnutím**: _„I am a 
   Pavel Brožek, recruiter v [dreamBIG](https://www.dreambig.cz/)
 {% endcall %}
 
-**[Projekty](#projekty) jsou pro juniora nejdůležitější věc hned po kontaktních údajích a úvodu**, tak ať jsou hezky vysoko a viditelně. Zmínka o GitHub profilu nestačí, uveď konkrétní projekty, kterými se chceš pochlubit, trochu je popiš, přidej odkaz na každý z nich.
+**[Projekty](cv.md#projekty) jsou pro juniora nejdůležitější věc hned po kontaktních údajích a úvodu**, tak ať jsou hezky vysoko a viditelně. Zmínka o GitHub profilu nestačí, uveď konkrétní projekty, kterými se chceš pochlubit, trochu je popiš, přidej odkaz na každý z nich.
 
 **Drž se pravdy.** Pokud máš přečtené tři články o [MongoDB](https://cs.wikipedia.org/wiki/MongoDB), napiš, že víš co to je, ale netvrď, že s tím umíš pracovat. Jestliže něco přibarvíš, na pohovoru se na to vždy snadno a rychle přijde. Budeš akorát působit nevěrohodně.
 
