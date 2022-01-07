@@ -1,6 +1,6 @@
 ---
 title: Hledání první práce v IT
-thumbnail_title: Proč se učit programování
+thumbnail_title: Jak najít svou první práci v IT
 description: Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
 template: main_handbook.html
 ---
