@@ -284,3 +284,10 @@
     {% endif %}
   </div>
 {% endmacro %}
+
+
+{% macro note(standout=False) %}
+<div class="note{% if standout %} standout{% endif %}" role="alert">
+  {{ caller()|md }}
+</div>
+{% endmacro %}

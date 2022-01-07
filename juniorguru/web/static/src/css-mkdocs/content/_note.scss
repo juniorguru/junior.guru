@@ -1,0 +1,9 @@
+.note {
+  @extend .alert;
+  background: $jg-gray-white;
+  border-color: $jg-gray-light;
+}
+
+.note *:last-child {
+  margin-bottom: 0;
+}

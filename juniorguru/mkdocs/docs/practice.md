@@ -5,7 +5,7 @@ description: "Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat ales
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, lead, link_card, links_note with context %}
+{% from 'macros.html' import blockquote_avatar, lead, link_card, links_note, note with context %}
 
 
 # Získej praxi v programování
@@ -80,43 +80,9 @@ Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hac
 
 ## Osvoj si Git a GitHub    <span id="git-github"></span>
 
-Git je **nástroj, který ti umožňuje sledovat historii změn v kódu, ale kromě toho jej také sdílet s dalšími lidmi**. Je to program, který nainstaluješ do svého počítače a pracuješ s ním v příkazové řádce, nebo jej ovládáš např. prostřednictvím svého editoru. Git se dnes používá skoro v každé firmě. I když jeho výhody nejvíc oceníš při práci ve dvou a více lidech, může ti pomoci i jako jednotlivci: Zálohovat kód svých projektů jinam, synchronizovat jej mezi vlastním počítačem a internetem, na dálku jej někomu ukázat.
-
-### GitHub
-
-[GitHub](https://github.com/) je **úložiště kódu a sociální síť pro programátory**. Kód tam lze poslat pomocí Gitu. GitHub není jediným takovým úložištěm, další jsou např. GitLab nebo BitBucket, ale je nejoblíbenějším pro [open source](#zkus-open-source), takže tam najdeš nejvíce projektů a lidí.
-
-### Neboj se ukázat kód!    <span id="showoff"></span>
-
-U začátečníků rozhodně platí, že **nemají co schovávat a měli by světu ukázat co nejvíce toho, co dokázali vytvořit, nebo co zkoušeli řešit**. Můžeš tím jenom získat. GitHub je příhodné místo, kam všechny své projekty a pokusy nahrávat. Zároveň je to místo, kde mají své projekty i všichni ostatní a kde lze spolupracovat s lidmi z celého světa.
-
-Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic neumíš. Neboj se mít svůj kód veřejně a ukazovat ho druhým! Tato obava je zbytečnou překážkou ve tvém rozjezdu. Programování je o spolupráci a **GitHub je hřiště pro programátory, kde si každý experimentuje na čem chce.** Čím více tam toho máš, tím lépe. Nejen že se naučíš lépe ovládat Git, ale hlavně budeš moci svůj kód ukázat, když budeš potřebovat [pomoc na dálku](learn.md#kde-najdes-pomoc). Pokud tě někdo straší, že si tvůj GitHub budou procházet náboráři, [nenech se tím zmást, je to trochu jinak](candidate-handbook.md#projekty).
-
-### Jak se naučit Git a GitHub    <span id="howto-git-github"></span>
-
-<div class="link-cards">
-  {{ link_card(
-    'Git a GitHub od základov',
-    'youtube.com!watch!v=0v5K4GvK4Gs.jpg',
-    'https://www.youtube.com/watch?v=0v5K4GvK4Gs',
-    'YouTube kurz Gitu a GitHubu od <a href="http://robweb.sk">yablka</a>.'
-  ) }}
-
-  {{ link_card(
-    'Nauč se Python',
-    'naucse.python.cz!course!pyladies!git!basics.jpg',
-    'https://naucse.python.cz/course/pyladies/git/basics/',
-    'Nauč se Git z nejznámějších českých materiálů pro Python.'
-  ) }}
-
-  {{ link_card(
-    'The Missing Semester',
-    'missing.csail.mit.edu!2020!version-control.jpg',
-    'https://missing.csail.mit.edu/2020/version-control/',
-    'Git podle materiálů z americké univerzity MIT.'
-  ) }}
-</div>
-
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Z této kapitoly je teď samostatná stránka: [Git a GitHub](handbook/git.md)
+{% endcall %}
 
 ## Najdi si mentora    <span id="mentors"></span>
 

@@ -7,7 +7,10 @@ nav:
       - Motivace: motivation.md
       - Základy: learn.md
       - První praxe: practice.md
+      - Git a GitHub: handbook/git.md
       - Hledání práce: candidate-handbook.md
+      - Životopis: handbook/cv.md
+      - LinkedIn: handbook/linkedin.md
   - Práce: jobs/
   - Klub: club.md
 
