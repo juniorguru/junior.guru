@@ -254,7 +254,7 @@ Otevřeně přiznej **všechny zkušenosti, které máš.** Že jsi původně zu
   {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
 {% endcall %}
 
-## 9. Jazyky
+## Jazyky
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
@@ -277,11 +277,11 @@ Pro praktickou orientaci stačí, stejně pokud na něčem z toho záleží, tak
 
 ## Zbytečnosti
 
-Jestli na CV dávat fotku, to je na tobě. Když ji tam nedáš, bude větší šance, že tě na pohovor pozvali díky vědomostem a ne sympatickému úsměvu.
+**Fotku** si na CV dát můžeš, ale nemusíš. Záleží na tvém pocitu. Když tam nebude, máš větší šanci, že tě na pohovor pozvali díky vědomostem a ne sympatickému úsměvu, což je dobrá známka pro ně i pro tebe.
 
-Datum narození nebo přesná adresa bydliště nemusí nikoho zajímat. Pokud už z nějakého důvodu chceš adresu uvést, stačí nejbližší město, kde se zdržuješ. Určitě si nepiš na CV adresu trvalého bydliště u rodičů, které je na druhém konci republiky a jezdíš tam akorát na Vánoce.
+**Datum narození** nebo přesná **adresa bydliště** nemusí nikoho zajímat. Pokud už z nějakého důvodu chceš adresu uvést, stačí nejbližší město, kde se zdržuješ. Určitě si nepiš na CV adresu trvalého bydliště u rodičů, které je na druhém konci republiky a jezdíš tam akorát na Vánoce.
 
-Ačkoliv se v některých šablonách nacházejí, vlastnoruční podpis a datum vytvoření dokumentu jsou příjemcům tvého CV k ničemu a působí archaicky. Když firma obdrží CV, automaticky předpokládá, že je aktuální.
+Ačkoliv se v některých šablonách nacházejí, **vlastnoruční podpis** a **datum vytvoření dokumentu** jsou příjemcům tvého CV k ničemu a působí archaicky. Když firma obdrží CV, automaticky předpokládá, že je aktuální.
 
 ## Motivační dopis
 
