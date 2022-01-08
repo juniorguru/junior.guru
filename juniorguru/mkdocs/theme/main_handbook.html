@@ -36,16 +36,16 @@
       <div class="pagination">
         <div class="pagination-control">
         {% if previous_page %}
-          <a href="{{ previous_page.url|url }}" class="pagination-button" title="{{ previous_page.title }}">
+          <a href="{{ previous_page.url|url }}" class="pagination-button" title="Předchozí téma">
             {{ 'arrow-left'|icon }}
-            Předchozí téma
+            {{ previous_page.title }}
           </a>
         {% endif %}
         </div>
         <div class="pagination-control">
         {% if next_page %}
-          <a href="{{ next_page.url|url }}" class="pagination-button" title="{{ next_page.title }}">
-            Další téma
+          <a href="{{ next_page.url|url }}" class="pagination-button" title="Další téma">
+            {{ next_page.title }}
             {{ 'arrow-right'|icon }}
           </a>
         {% endif %}

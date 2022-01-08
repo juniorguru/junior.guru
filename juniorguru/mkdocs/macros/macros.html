@@ -25,6 +25,18 @@
 {% endmacro %}
 
 
+{% macro figure(filename, alt, lazy=True, caption=None) %}
+<figure class="figure standout">
+  {{ img('static/images/figures/' + filename, alt, class='figure-img img-fluid', lazy=lazy) }}
+  {% if caption %}
+    <figcaption class="figure-caption">{{ caption|md|remove_p }}</figcaption>
+  {% elif caller %}
+    <figcaption class="figure-caption">{{ caller()|md|remove_p }}</figcaption>
+  {% endif %}
+</figure>
+{% endmacro %}
+
+
 {% macro blockquote(quote, caption=None) %}
   <div class="blockquote-container">
     <figure class="blockquote-content">
@@ -33,7 +45,7 @@
       </blockquote>
       <figcaption class="blockquote-footer">
         {% if caption %}
-          {{ caption }}
+          {{ caption|md|remove_p }}
         {% else %}
           {{ caller()|md|remove_p }}
         {% endif %}
@@ -52,7 +64,7 @@
       </blockquote>
       <figcaption class="blockquote-footer">
         {% if caption %}
-          {{ caption }}
+          {{ caption|md|remove_p }}
         {% else %}
           {{ caller()|md|remove_p }}
         {% endif %}
@@ -119,7 +131,7 @@
     {% if caption or caller %}
       <p class="link-card-text">
         {% if caption %}
-          {{ caption }}
+          {{ caption|md|remove_p }}
         {% else %}
           {{ caller()|md|remove_p }}
         {% endif %}
@@ -148,7 +160,7 @@
     {% if caption or caller %}
       <p class="video-card-text">
         {% if caption %}
-          {{ caption }}
+          {{ caption|md|remove_p }}
         {% else %}
           {{ caller()|md|remove_p }}
         {% endif %}

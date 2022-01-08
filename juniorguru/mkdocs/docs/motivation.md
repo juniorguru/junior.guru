@@ -5,7 +5,7 @@ description: K čemu se hodí programování? Není jen pro ty, kdo chtějí pra
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import img, blockquote, blockquote_avatar, blockquote_toxic, lead, link_card, stories_list, video_card_engeto with context %}
+{% from 'macros.html' import blockquote, blockquote_avatar, blockquote_toxic, lead, link_card, stories_list, video_card_engeto with context %}
 
 
 # Proč se učit programování
