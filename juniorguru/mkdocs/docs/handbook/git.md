@@ -26,7 +26,7 @@ Git je **nástroj, který ti umožňuje sledovat historii změn v kódu, ale kro
 
 U začátečníků rozhodně platí, že **nemají co schovávat a měli by světu ukázat co nejvíce toho, co dokázali vytvořit, nebo co zkoušeli řešit**. Můžeš tím jenom získat. GitHub je příhodné místo, kam všechny své projekty a pokusy nahrávat. Zároveň je to místo, kde mají své projekty i všichni ostatní a kde lze spolupracovat s lidmi z celého světa.
 
-Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic neumíš. Neboj se mít svůj kód veřejně a ukazovat ho druhým! Tato obava je zbytečnou překážkou ve tvém rozjezdu. Programování je o spolupráci a **GitHub je hřiště pro programátory, kde si každý experimentuje na čem chce.** Čím více tam toho máš, tím lépe. Nejen že se naučíš lépe ovládat Git, ale hlavně budeš moci svůj kód ukázat, když budeš potřebovat [pomoc na dálku](../learn.md#kde-najdes-pomoc). Pokud tě někdo straší, že si tvůj GitHub budou procházet náboráři, [nenech se tím zmást, je to trochu jinak](cv.md#projekty).
+Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic neumíš. Neboj se mít svůj kód veřejně a ukazovat ho druhým! Tato obava je zbytečnou překážkou ve tvém rozjezdu. Programování je o spolupráci a **GitHub je hřiště pro programátory, kde si každý experimentuje na čem chce.** Čím více tam toho máš, tím lépe. Nejen že se naučíš lépe ovládat Git, ale hlavně budeš moci svůj kód ukázat, když budeš potřebovat [pomoc na dálku](../learn.md#kde-najdes-pomoc). Pokud tě někdo straší, že si tvůj GitHub budou procházet náboráři, [nenech se tím zmást, je to trochu jinak](cv.md#6-projekty).
 
 ## Jak se naučit Git a GitHub    <span id="howto-git-github"></span>
 
@@ -156,7 +156,14 @@ Co vidím hned na první pohled je, že lidem automaticky splývá Git a GitHub 
 
 To už jsou velké haluze, ale jde mi o to, že GitHub už je tak složitý, že kdo zná i půlku jeho fičur, je vlastně power user.
 
+Bylo by fajn v tom CV k MealPalu dát nějaký testovací login. Ne každému se bude chtít registrovat, aby viděl funkcionalitu uvnitř a venku jí tolik k vidění není a to je velká škoda!
+
+Vše, co jsem nenapsal mi přijde fakt fajn 👍 , máš u všeho na GH popisky, readme (u jednoho ne, ale to je nějakej cvičnej Czechitas projektík, možná bych ho schoval), url atd. Máš i pořádnej velkej projekt a tak dále. Držím palce.
+
 Firmy používají na uložení Git repozitářů všechno možné, GitLab, BitBucket, možná by se dalo zmínit aspoň povrchně nějak i to. Samozřejmě na GitHubu je zase veškerý Open Source, tak se hodí to umět.
+
+GitHub mám, ale projektov nemám veľa, sú skôr menšie a momentálne pracujem na jednom rozsiahlom, na ktorom to celé sebaprezentovanie tak nejak staviam. Tiež som si vzala k srdcu rady ohľadom GitHubu a pomaly dokončujem popisy a Readme ku všetkým projektom, takže keď to budem mať hotové, tak to určite zazdieľam do
+cv-github-linkedin a poprosím o spätnú väzbu, na to sa už dosť teším 🙂
 
 Na GitHubu hlavně příspívám do open source projektů a chci ho začít víc využívat jako "showcase". Základní workflow mi dnes nedělá potíže. Občas po jednoduchost používám editor přímo v GitHubu, který udělá celou tu práci na pozadí místo mě.
 Ze začátků si vybavuji hlavně konfigurační problémy (někdy těžko odlišit, co je Git a co GitHub):
