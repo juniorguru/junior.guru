@@ -852,14 +852,14 @@ i18n = ["babel (>=2.9.0)"]
 
 [[package]]
 name = "mkdocs-simple-hooks"
-version = "0.1.4"
+version = "0.1.5"
 description = "Define your own hooks for mkdocs, without having to create a new package."
 category = "main"
 optional = false
 python-versions = "*"
 
 [package.dependencies]
-mkdocs = ">=1"
+mkdocs = ">=1.2"
 
 [package.extras]
 test = ["pytest (>=4.0)", "pytest-cov"]
@@ -1056,7 +1056,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "py-cord"
-version = "2.0.0a4748+gc602bc45"
+version = "2.0.0a4771+gef9b5983"
 description = "A Python wrapper for the Discord API"
 category = "main"
 optional = false
@@ -1069,13 +1069,13 @@ aiohttp = ">=3.6.0,<3.9.0"
 [package.extras]
 docs = ["sphinx (==4.3.2)", "sphinxcontrib-trio (==1.1.2)", "sphinxcontrib-websupport"]
 speed = ["orjson (>=3.5.4)", "aiodns (>=1.1)", "brotlipy", "cchardet"]
-voice = ["PyNaCl (>=1.3.0,<1.5)"]
+voice = ["PyNaCl (>=1.3.0,<1.6)"]
 
 [package.source]
 type = "git"
 url = "https://github.com/Pycord-Development/pycord.git"
 reference = "master"
-resolved_reference = "c602bc453450d018c5c4b876f9203431e7b5ff3b"
+resolved_reference = "ef9b59831229c2decf2457dd14ea9c818c047883"
 
 [[package]]
 name = "pyasn1"
@@ -2256,8 +2256,8 @@ mkdocs = [
     {file = "mkdocs-1.2.3.tar.gz", hash = "sha256:89f5a094764381cda656af4298727c9f53dc3e602983087e1fe96ea1df24f4c1"},
 ]
 mkdocs-simple-hooks = [
-    {file = "mkdocs-simple-hooks-0.1.4.tar.gz", hash = "sha256:6ea689e91e0d02c70c593a826eaa080e4331011a494abec5c66b0dd9946ee1be"},
-    {file = "mkdocs_simple_hooks-0.1.4-py3-none-any.whl", hash = "sha256:95d39fba90d99a0890a2d41958b3389f883ff4823834fdce7ae000149954c0c8"},
+    {file = "mkdocs-simple-hooks-0.1.5.tar.gz", hash = "sha256:dddbdf151a18723c9302a133e5cf79538be8eb9d274e8e07d2ac3ac34890837c"},
+    {file = "mkdocs_simple_hooks-0.1.5-py3-none-any.whl", hash = "sha256:efeabdbb98b0850a909adee285f3404535117159d5cb3a34f541d6eaa644d50a"},
 ]
 multidict = [
     {file = "multidict-5.2.0-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:3822c5894c72e3b35aae9909bef66ec83e44522faf767c0ad39e0e2de11d3b55"},
