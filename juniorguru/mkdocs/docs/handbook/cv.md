@@ -66,13 +66,13 @@ Například pokud jsi účetní, která se naučila programovat, pro většinu p
 
 Polotovar CV měj v obou jazycích a následuj jednoduché pravidlo: **Na inzeráty v angličtině posílej anglickou verzi, na české českou.** Nebo slovenskou, rozdíl mezi češtinou a slovenštinou samozřejmě nikdo neřeší. Pokud chceš udržovat jen jednu verzi polotovaru, tak měj anglickou, s tou si nějak poradí každý.
 
-**Netrap se dokonalostí svých formulací.** Pokud se zrovna nechlubíš jazykovými certifikáty, nebo angličtinu nevyučuješ, stačí ti [Euro English](https://cs.wikipedia.org/wiki/Euro_English). Druhá strana taky nemívá angličtinu jak z BBC.
+**Netrap se nedokonalostí svých formulací.** Pokud se zrovna nechlubíš jazykovými certifikáty, nebo angličtinu nevyučuješ, stačí ti [Euro English](https://cs.wikipedia.org/wiki/Euro_English). Druhá strana taky nemívá angličtinu jak z BBC.
 
 Popros někoho, kdo dobře ovládá jazyk, ať ti CV zkontroluje. To platí pro obě verze. Nejde o to přikrášlovat realitu svého projevu a ladit každé slovo. Jde o kontrolu, aby tam nebyly **zjevné hrubky**. Ruší při čtení a působí amatérsky. Je to jako jít v oblíbeném tričku, protože chceš působit autenticky. V pořádku, ale nesmí mít díry.
 
 ## Obsah životopisu
 
-Části CV seřaď **od nejpodstatnějších po méně důležité, od nejnovějších po nejstarší**. Co přesně je důležité se liší pro různé obory, profese, zkušenosti a dokonce i jednotlivé pozice. Pro juniory, kteří zatím nemají pracovní zkušenosti v oboru, je velmi důležitý **souhrn a projekty**, v druhé řadě pak vzdělání.
+Části CV seřaď **od nejpodstatnějších po méně důležité, od nejnovějších po nejstarší**. Co přesně je důležité, se liší pro různé obory, profese, zkušenosti a dokonce i jednotlivé pozice. Pro juniory, kteří zatím nemají pracovní zkušenosti v oboru, je velmi důležitý **souhrn a projekty**, v druhé řadě pak vzdělání.
 
 Snaž se vlézt **na jednu stránku**. Určitě ne za cenu toho, že ta stránka bude bez okrajů a písmo nečitelně malé, to radši přetáhni a měj stránky dvě. Pokud se ale jako junior bez zkušeností na A4 nevejdeš, je to spíš znamení, že se snažíš do CV nacpat zbytečnosti.
 
@@ -270,19 +270,15 @@ Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo d
 
 ### 7. Vzdělání
 
-<!--
-Informace v životopisu řaďte chronologicky od nejnovější po nejstarší. Pokud nemáte dostatek praxe, uvádějte jako první sekci vzdělání.
+Z formálního vzdělání uveď **pouze nejvyšší dosažené**. Rozmezí let, název školy, obor. U nedokončeného vzdělání se hodí to nějak poznačit. Pokud byl na konci projekt, třeba diplomka, dej tam zmínku a téma práce. Jestliže máš více studovaných VŠ, dej tam všechny. Vůbec neřeš, zda mají tyto řádky něco společného s IT, vždy to říká něco o **základu, na kterém stavíš**.
 
-Pak vzdělání, krátce zmínit vystudovanou VŠ nebo online kurzy, kterými jsem prošel, ale nepřehánět to a nedávat tam každé YT video, spíš jen školy nebo názvy nějakých delších kurzů, které zaberou týdny a měsíce dokončit. Pokud mám vzdělání, které s oborem nesouvisí, napsal bych krátce, kde a kdy jsem dokončil své nejvyšší dosažené vzdělání. Vystudovaná zubařina není relevantní, ale pořád je to dokončená VŠ a něco to o mě říká. Dát to jen stručně, rok, název a třeba odkaz.
+Pokud máš kurzy, do vzdělání si je určitě napiš. Pouze však ty, které **souvisí s oborem, délku mají v řádu měsíců a organizuje je nějaká instituce**. Je jedno, jestli byly online nebo prezenčně. YouTube videa nebo mini kurzy z Udemy spíš ne, Coursera nebo PyLadies spíš ano.
 
-Vzdělání – délka trvání, škola, obor.
+Kurzů je hodně a druhá strana skoro nikdy nebude ten tvůj znát nějak blíž. Nemá smysl soutěžit v tom, zda je jeden prestižnější než druhý, jen aby to vypadalo dobře na CV. Na první pohled zaujmou maximálně jména s dobrým marketingem, např. Czechitas. Práci si ale najdou i samouci bez kurzů, protože **na kurzy se nehraje**. Hraje se na praxi, tedy na [projekty](#6-projekty).
 
-Vždy uvádějte jen nejvyšší dosažené vzdělání. S přibývající praxí sekci vzdělání zařaďte pod sekci pracovní zkušenosti.
--->
+Jestliže máš nějaký **certifikát**, nezapomeň jej zmínit. Certifikátem se myslí např. ISTQB u testerů, tedy široce uznávaná věc s vlastní stránkou na Wikipedii. Omalovánku, kterou ti dali za absolvování kurzu, si založ k diplomům z plavání.
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
-{% endcall %}
+Pokud ti z toho vyšlo více záznamů o vzdělání než jeden, seřaď je chronologicky od nejnovějšího po nejstarší.
 
 ### 8. Pracovní zkušenosti
 
@@ -296,6 +292,8 @@ Pracovní zkušenosti – délka trvání, název pozice, firma a stručný vý�
 
 Nezapomeňte na brigády o prázdninách, letní výpomoci, stáže a dobrovolnické aktivity atd., vše se počítá.
 
+S přibývající praxí sekci vzdělání zařaďte pod sekci pracovní zkušenosti.
+
 ## Zkušenosti získané mimo IT
 
 Otevřeně přiznej **všechny zkušenosti, které máš.** Že jsi původně zubařka? Pro firmu, která vytváří software pro nemocnice, může být i toto zajímavá informace. A co si budeme povídat, málokdo viděl tolik _[technical debt](https://en.wikipedia.org/wiki/Technical_debt)_ a _[legacy code](https://en.wikipedia.org/wiki/Legacy_code)_ jako zubaři. Nepodceňuj, co z tvé minulosti může zaměstnavatele zaujmout. Tvoje zkušenosti mimo IT přispívají k tomu, kdo jsi. **Firma může usoudit, že právě díky znalosti jiného oboru můžeš přispět něčím, co ještě nemají**, ať už je to vědecký pohled, lidský přístup, nebo pečlivost účetního. Stalo se i to, že při pohovoru ocenili manažerské dovednosti prokázané při hraní online her (viz [Wired](https://www.wired.com/2006/04/learn/), [CNN](https://money.cnn.com/2014/06/19/technology/world-of-warcraft-resume/index.html)). Pokud najdeš **práci, která kombinuje tvoje předchozí zkušenosti a programování**, budeš mít velký náskok před kýmkoliv jiným. Nepodceňuj své předchozí zkušenosti a neignoruj je — místo toho přemýšlej, jak je můžeš prodat! Ze stejného důvodu může mít smysl zmínit i koníčky.
@@ -307,11 +305,11 @@ Otevřeně přiznej **všechny zkušenosti, které máš.** Že jsi původně zu
 
 ### 9. Jazyky
 
-Někde na konci CV měj seznam všech jazyků, které ovládáš. Většinu firem bude zajímat **hlavně angličtina**. Jestli hledáš práci v rámci EU, popiš znalost každého jazyka pomocí [SERR](https://cs.wikipedia.org/wiki/Spole%C4%8Dn%C3%BD_evropsk%C3%BD_referen%C4%8Dn%C3%AD_r%C3%A1mec) (anglicky _CEFR_). Pokud míříš někam do světa, raději to popiš slovně. Úroveň angličtiny si můžeš otestovat třeba přes [EF SET](https://www.efset.org/).
+Někde na konci CV měj seznam všech jazyků, které ovládáš. Většinu firem bude zajímat **hlavně angličtina**. Jestli hledáš práci v Evropě, popiš znalost každého jazyka pomocí [SERR](https://cs.wikipedia.org/wiki/Spole%C4%8Dn%C3%BD_evropsk%C3%BD_referen%C4%8Dn%C3%AD_r%C3%A1mec) (anglicky _CEFR_). Pokud míříš někam do světa, raději to popiš slovně. Úroveň angličtiny si můžeš otestovat třeba přes [EF SET](https://www.efset.org/).
 
-[Europass](https://europass.cz/) používá **sebehodnotící škálu založenou na SERR v pěti okruzích**: Poslech, čtení, mluvená komunikace, samostatný ústní projev a psaní. Ke každému okruhu a každé úrovni jsou tam navíc jedno až dvouvětné popisky pro orientaci.
+[Europass](https://europass.cz/) používá **sebehodnotící škálu** založenou na SERR v pěti okruzích: Poslech, čtení, mluvená komunikace, samostatný ústní projev a psaní. Ke každému okruhu a každé úrovni jsou tam navíc jedno až dvouvětné popisky pro orientaci.
 
-Na druhou stranu, on to v IT nikdo zas tak moc neřeší. Stejně všichni nakonec mluví nějakou variantou [Euro English](https://cs.wikipedia.org/wiki/Euro_English). **Gramatika jde stranou, hlavně když se domluvíš.** Většinou si tvou angličtinu ověří během pohovoru a pokud dokážeš vést konverzaci, bývá to _good enough_. Určitě nemusíš mít například nějaké oficiální certifikáty.
+Na druhou stranu, on to v IT nikdo zas tak moc neřeší. Stejně všichni nakonec mluví nějakou variantou [Euro English](https://cs.wikipedia.org/wiki/Euro_English). **Gramatika jde stranou, hlavně když se domluvíš.** Většinou si tvou angličtinu ověří během pohovoru a pokud dokážeš vést konverzaci, bývá to _good enough_. Určitě nemusíš mít oficiální certifikáty.
 
 ## Zbytečnosti
 
@@ -319,11 +317,11 @@ Obecně platí, že nic, co na CV nemusí nutně být, by tam být nemělo. Nepl
 
 Odpusť si například **nadpis** „Životopis“ nebo „Curriculum Vitae“. Ze samotného obsahu dokumentu je zcela zřejmé, o co jde.
 
-**Fotku** si na CV dát můžeš, ale nemusíš. Záleží na tvém pocitu. Když tam nebude, máš větší šanci, že tě na pohovor pozvali díky vědomostem a ne sympatickému úsměvu, což je dobrá známka pro ně i pro tebe. Fotka může recruiterům pomáhat přiřadit si vás k CV při osobním setkání.
+**Fotku** si na CV dát můžeš, ale nemusíš. Záleží na tvém pocitu. Když tam nebude, máš větší šanci, že tě na pohovor pozvali díky vědomostem a ne sympatickému úsměvu, což je dobrá známka pro ně i pro tebe. Fotka může recruiterům pomáhat přiřadit si tě k CV při osobním setkání.
 
 **Datum narození**, **rodinný stav** nebo přesná **adresa bydliště** nemusí nikoho zajímat. Pokud už z nějakého důvodu chceš adresu uvést, stačí nejbližší město, kde se zdržuješ. Určitě si nepiš na CV adresu trvalého bydliště u rodičů, které je na druhém konci republiky a jezdíš tam akorát na Vánoce.
 
-Ačkoliv se v některých šablonách nacházejí, **vlastnoruční podpis** a **datum vytvoření dokumentu** jsou příjemcům tvého CV k ničemu a působí archaicky. Když firma obdrží CV, automaticky předpokládá, že je aktuální.
+Ačkoliv se v některých vzorech nacházejí, **vlastnoruční podpis** a **datum vytvoření dokumentu** jsou příjemcům tvého CV k ničemu a působí archaicky. Když firma obdrží CV, automaticky předpokládá, že je aktuální.
 
 ## Motivační dopis
 
