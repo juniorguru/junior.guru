@@ -16,41 +16,45 @@ template: main_handbook.html
   {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě přepisuje. Za pár dní tady bude jiný text, lepší, voňavější, nápomocnější.
 {% endcall %}
 
-## Zaujmout, ale nepřepálit
+
+## Chceš přehlednost, ne krásu
 
 Životopis většiny lidí spadá do jednoho ze dvou extrémů. Buď vyplní [nejobyčejnější šablonu z internetu](https://europass.cz/), nebo se snaží zaujmout růžovými puntíky a zlatými kolibříky.
 
-Tím prvním jistě nic nepokazíš, ale ani nevynikneš. Originální CV na tebe upozorní, nesmí však být **natolik „kreativní“, že bude bránit recruiterům v práci**. Zapamatují si sice tvoje puntíky a kolibříky, ale pouze proto, že písmo bylo špatně čitelné a že čtvrt hodiny trvalo zjistit, kdo vlastně jsi a co chceš.
+Tím prvním jistě nic nepokazíš, ale jde to udělat lépe. To však nutně neznamená originálně. Některá CV jsou **natolik „kreativní“, že brání recruiterům v práci**. Životopis s puntíky a kolibříky sice v paměti uvízne, ale pouze proto, že písmo bylo špatně čitelné a že čtvrt hodiny trvalo zjistit, kdo vlastně jsi a co chceš.
 
 {% call figure('daniel-nekonecny.jpg', 'Daniel Nekonečný', lazy=False) %}
   Daniel Nekonečný by tvé CV možná pochválil, recruiter si zaťuká na čelo a vyhodí ho
 {% endcall %}
 
-Napři své úsilí směrem, kde bude mít největší efekt, ideálně s minimálním rizikem. Životopis jako omalovánka je hodně úsilí s nejistým výsledkem. **Pohlídej si raději základní věci.** Vytvoř přehledné CV, které jde přečíst do pár sekund. Neboj, už jen tím bude dostatečně jiné.
+Firmy v americkém Silicon Valley mají denně stovky kandidátů. U nás tak velká konkurence začátečníků není, firmám se hlásí jednotky nebo desítky lidí. Nepotřebuješ se odlišit za každou cenu.
 
-<!--
-Odrážky a ty designové věci, upřímně, pokud jde o čitelnost tak bych ty připomínky řešil, ale jinak je to velmi nepodstatné, pokud se nehlásíš na UX nebo jinou design pozici, kde by ti to dělalo špatnou reklamu (ale potom bys to dokázal sám udělat nejsprávněji). Na pozici, kam se hlasis, chceš akorát zaujmout a mít to přehledné, jinak budou to číst recruiteri a programátoři a team leadi, a pro tuto cílovku je vizuální stránka věci spis vedlejší, resp. ji ocení jen omylem (tzn. ze se něco dobře čte), ale neoslnis je. Takže nejakej font je fakt asi fuk, když to řeknu naplno 🙂
+Napři své úsilí směrem, kde bude mít největší efekt, ideálně s minimálním rizikem. Životopis jako omalovánka je hodně úsilí s nejistým výsledkem. **Pohlídej si raději základní věci.**
 
-Nevím, jestli platí předpoklad, že konkurence začátečníků, co to taky zkouší, je taková, že se pro úspěch musí odlišovat 🙂 Je potřeba ukázat, že na to máte. Ne, že jste jiní/lepší, než ostatní – to totiž furt nemusí stačit. Myšleno samozřejmě odlišit pozitivně a smysluplně. Ne jako marketingovej trik na zaujmutí pozornosti. Pokud sami něco netriviálního naprogramují a umí to dát na GitHub, má to samo o sobě hodnotu i pro jejich rozvoj.
--->
+Pokud se nehlásíš na pozici v grafice, designu, nebo UX, tak se neočekává ani to, že budeš mít všechno typograficky vyladěné a správně použiješ pomlčky místo spojovníků. Budou to číst recruiteři, programátoři a manažeři. Tyto lidi neoslníš, **vizuální stránka věci je pro ně vedlejší**. Nepřeháněj to s barvami nebo fonty. Soustřeď se především na to, aby byl výsledek dobře čitelný.
 
-## Co je vlastně životopis
+Přehledné CV, které jde **přečíst do pár sekund**, je dostačující a mnohdy bude i odlišující, protože většina lidí takové vyrobit neumí. Kreativitu a originalitu ale směřuj raději do svých [projektů](#6-projekty). S těmi si vyhraj. Na nich ukaž, co umíš, a že na to máš.
 
-Co životopis je a co není? Je to **reklamní letáček**, kterým se snažíš prodat své nabyté zkušenosti. Není to vyčerpávající seznam dokumentující poctivě vše, co máš za sebou. Vypíchni to důležité. Nepodstatné vůbec nepiš.
+
+## K čemu je životopis
+
+Životopis je **reklamní letáček**, kterým se snažíš prodat své zkušenosti. Není to vyčerpávající seznam dokumentující poctivě vše, co máš za sebou. Vypíchni to důležité. Nepodstatné vůbec nepiš.
+
+I bez komerční praxe **máš co nabídnout**. Firma tě může naučit co potřebuje a jak přesně to potřebuje. Může využít tvého nadšení, energie, vloh, zájmů. Nejsi vyhořelý seniorní programátor, který místo chození do kanceláře touží sázet stromky v lese jako pěstební dělník. Stačí se umět dobře prodat!
 
 Pozor, životopis není „sebechvála“, za kterou se máš stydět. V Česku je hluboce zakořeněná **kultura falešné skromnosti**, která brzdí spoustu šikovných lidí. I největší profíci tady mají problém napsat o sobě půl věty. Mnoho lidí trpí [syndromem podvodníka](https://www.heroine.cz/zeny-it/6341-syndrom-podvodnice-vas-pri-praci-v-it-snadno-dozene-jak-proti-nemu-bojovat), úspěchy si nedokážou přiznat.
 
-Pokud chceš v této zemi vystoupit z davu, nehledej okrasný font, ale **nauč se zdravě bavit o svých zásluhách**. Když dokážeš popsat svůj úspěch, přínos, nebo pokud máš dokonce čísla, která můžeš do svého tvrzení dát, je to pecka.
+Pokud chceš v této zemi vystoupit z davu, nehledej okrasný font, ale **nauč se zdravě bavit o sobě**. Když dokážeš popsat svůj potenciál, úspěch, přínos, nebo pokud máš dokonce čísla, která můžeš do svého tvrzení dát, je to pecka.
 
 ## Posílej „papír“
 
-Usnadni život tomu, kdo bude tvé CV zpracovávat, typicky spolu s životopisy dalších deseti kandidátů. Ve většině firem si recruiteři organizují údaje o kandidátech v softwaru, kterému se říká ATS (_application tracking system_). Tam potřebují tvé CV nahrát, někdy i strojově analyzovat. Občas si životopisy dokonce tisknou na papír.
+Usnadni život tomu, kdo bude tvé CV zpracovávat, typicky spolu s životopisy dalších deseti kandidátů. Ve většině firem si recruiteři **organizují údaje o kandidátech** v softwaru, kterému se říká ATS (_application tracking system_). Tam potřebují tvé CV nahrát, někdy i strojově analyzovat. Občas si životopisy dokonce tisknou na papír.
 
 Posílej tedy **dokument, který bude fungovat i na papíře**. JPG obrázek? Není to dokument, nelze ani označit text. Zelené písmo na černém pozadí? Vypadá velmi „hackersky“ a jistě zaujme. Minimálně tím, že když projde tiskárnou, firma bude muset pořídit nový toner.
 
 Ideálně CV **posílej jako PDF** a soubor pojmenuj tak, aby ho člověk na druhé straně po stažení snadno našel: `javorek-cv.pdf` Pokud máš časté příjmení, připoj raději i křestní jméno: `novakova-eva-cv.pdf`
 
-Pokud chceš dát do CV **odkazy**, tak ať na ně jde v PDF opravdu klikat a ať jsou **podtržené**. Jen tak půjde dobře rozpoznat, že to jsou odkazy. A to i na papíře, kde čtenář aspoň uvidí, že tam odkazy byly a tiskem o ně přišel.
+Jestli chceš dát do CV **odkazy**, tak ať na ně jde v PDF opravdu klikat a ať jsou **podtržené**. Jen tak půjde dobře rozpoznat, že to jsou odkazy. A to i na papíře, kde čtenář aspoň uvidí, že tam odkazy byly a tiskem o ně přišel.
 
 ## Upravuj na míru
 
@@ -62,31 +66,17 @@ Například pokud jsi účetní, která se naučila programovat, pro většinu p
 
 Polotovar CV měj v obou jazycích a následuj jednoduché pravidlo: **Na inzeráty v angličtině posílej anglickou verzi, na české českou.** Nebo slovenskou, rozdíl mezi češtinou a slovenštinou samozřejmě nikdo neřeší. Pokud chceš udržovat jen jednu verzi polotovaru, tak měj anglickou, s tou si nějak poradí každý.
 
-Popros někoho, kdo má angličtinu dobrou, ať ti CV zkontroluje. Nejde o to přikrášlovat realitu toho, jak dobře jazyk umíš, nebo o ladění gramatických detailů. Jde o kontrolu, aby tam nebyly **zjevné hrubky**. Ruší při čtení a působí amatérsky. Je v pořádku prezentovat se v oblíbeném tričku, protože chceš působit autenticky, ale nesmí mít díry.
+**Netrap se dokonalostí svých formulací.** Pokud se zrovna nechlubíš jazykovými certifikáty, nebo angličtinu nevyučuješ, stačí ti [Euro English](https://cs.wikipedia.org/wiki/Euro_English). Druhá strana taky nemívá angličtinu jak z BBC.
 
-<!--
-Já si třeba u CV s hrubkama (v čj) říkal, to byl problém těch pár vět dát někomu přečíst? Nestálo jim to ani za to? A ještě šlo o frontenďáky a i když nečekám, že jsou korektoři, tak by jim podobný detaily neměly být cizí.
--->
-
-## Drž se pravdy
-
-Pokud máš přečtené tři články o MongoDB, klidně napiš, že víš co to je. Netvrď ale, že s tím umíš pracovat. Jestliže něco přibarvíš, na pohovoru se na to vždy přijde, snadno a rychle. Budeš akorát působit nevěrohodně.
-
-{% call blockquote_avatar(
-  'Někdo se chlubí: Scala, Groovy, Kotlin. Nadchne mě to, ovšem hned dostanu studenou sprchu, protože neví, jaký je mezi nimi rozdíl.',
-  'lubos-racansky.jpg',
-  'Luboš Račanský'
-) %}
-  Luboš Račanský, profesionální programátor, autor článku [O náboru juniorů](https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html)
-{% endcall %}
+Popros někoho, kdo dobře ovládá jazyk, ať ti CV zkontroluje. To platí pro obě verze. Nejde o to přikrášlovat realitu svého projevu a ladit každé slovo. Jde o kontrolu, aby tam nebyly **zjevné hrubky**. Ruší při čtení a působí amatérsky. Je to jako jít v oblíbeném tričku, protože chceš působit autenticky. V pořádku, ale nesmí mít díry.
 
 ## Obsah životopisu
 
-Části CV seřaď od nejpodstatnějších po méně důležité. Co je důležité se liší pro různé obory, profese, zkušenosti a dokonce i jednotlivé pozice. Pro juniory, kteří zatím nemají pracovní zkušenosti v oboru, je velmi důležitý souhrn a projekty, v druhé řadě pak vzdělání.
+Části CV seřaď **od nejpodstatnějších po méně důležité, od nejnovějších po nejstarší**. Co přesně je důležité se liší pro různé obory, profese, zkušenosti a dokonce i jednotlivé pozice. Pro juniory, kteří zatím nemají pracovní zkušenosti v oboru, je velmi důležitý **souhrn a projekty**, v druhé řadě pak vzdělání.
 
-Snaž se vlézt na jednu stránku. Určitě ne za cenu toho, že ta stránka bude bez okrajů a písmo nečitelně malé, to radši přetáhni a měj stránky dvě. Pokud se ale jako junior bez zkušeností na A4 nevejdeš, je to spíš znamení, že se tam snažíš nacpat zbytečnosti. Zkus být stručnější.
+Snaž se vlézt **na jednu stránku**. Určitě ne za cenu toho, že ta stránka bude bez okrajů a písmo nečitelně malé, to radši přetáhni a měj stránky dvě. Pokud se ale jako junior bez zkušeností na A4 nevejdeš, je to spíš znamení, že se snažíš do CV nacpat zbytečnosti.
 
-Následující odstavce jsou v pořadí, v jakém by se měly dané části na životopisu vyskytovat.
+Následující kapitoly jsou v pořadí, v jakém by se měly dané části na životopisu vyskytovat.
 
 <!--
 Hledat na internetu jak se dělá „killer cv“, ale pár základních rad.
@@ -98,34 +88,27 @@ Skúsim sa teda zamyslieť nad nejakými silnými stránkami 🙂 promysli si, s
 
 ### 1. Jméno
 
-Začni **celým svým jménem**. Velkým, dobře čitelným, výrazným písmem. Pokud lidé mívají problém tvé jméno přečíst na první dobrou správně, můžeš drobným písmem doplnit **fonetickou nápovědu**. Autor jazyka Python, nizozemec Guido van Rossum, o tom má na [svých stránkách](https://gvanrossum.github.io/) celý odstavec a nahrávku, ale tak daleko asi chodit nemusíš.
+Začni **celým svým jménem**. Velkým, dobře čitelným, výrazným písmem. Pokud lidé mívají problém tvé jméno přečíst na první dobrou správně, můžeš drobným písmem doplnit **fonetickou nápovědu**.
+
+Autor jazyka Python, Nizozemec Guido van Rossum, má na [svých stránkách](https://gvanrossum.github.io/) celý odstavec o čtení svého jména a dokonce i nahrávku, ale tak daleko asi chodit nemusíš.
 
 ### 2. Pozice
 
 Jako podtitulek můžeš dát **název pozice, kterou chceš vykonávat**. Například „junior frontend developer“. Díky tomu si tě druhá strana může okamžitě snadno zařadit.
 
-<!--
-A co tam místo Kiwi.com dát čím chceš být, je to velká věc hned na začátku, tak ať je to vidět. To Kiwi si ještě přečtou.
-Něco jako QA Engineer who wants to become frontend developer?
-Tedy podle toho, cos píšeš v tom CV tipuju, že frontend nebo rovnou React třeba?
-Podstatnější je kam chceš jít, ne kde jsi.
+Pokud už někde pracuješ a nehledáš svou úplně první práci, pozice na tvém CV by měla označovat tvou ambici, tedy **co hledáš**, a ne co děláš teď. Ať už jsi účetní nebo máš 5 let zkušeností s PHP, pokud měníš zaměření a hledáš práci s daty, napíšeš „junior data analyst”.
 
-Napsal bych tam jen Junior Frontend Developer. Hlavičku CV beru jako takovou reklamu na čistě mou osobu a ambici, současná firma tam nemá co dělat, protože není součástí té ambice 😀  Nie je to trochu trúfalé/klamlivé, keďže na takej pozícii nie som? 🤔 Obzvlášť po po tejto búrlivej diskusii o úrovni jazyka... 😄 Hmm, já toto plus tu úvodní větu beru ne tolik jako popis toho, co jsi, jako toho, co chceš být, kam směřuješ. Ten zbytek CV pak popisuje popravdě to, co už umíš. Ale zajímá mě názor ostatních 🙂
--->
+Pozice **nezahrnuje název firmy**. Ani té, kde zrovna pracuješ, ani té, kam se teprve hlásíš. Hlavička CV je reklama na tvou osobu a ambici. Současná firma v ní nemá co dělat, protože není součástí té ambice. A předjímat už v CV, že tě někam vezmou, je trochu troufalé.
 
 ### 3. Kontakty
 
-V kontaktech by určitě měl být **e-mail a telefonní číslo**. Můžeš přidat i odkazy na své GitHub a LinkedIn profily.
+V kontaktech by určitě měl být **e-mail a telefonní číslo**. Můžeš přidat i odkazy na své [GitHub](git.md#github) a [LinkedIn](linkedin.md) profily.
 
 **Adresu bydliště vynech**, je to zbytečný údaj. V rámci výběrového řízení ti firmy žádné dopisy posílat nebudou. Pokud se někam hlásíš, předpokládá se, že se na místo pracoviště zvládneš dopravit, nebo že si vyřešíš stěhování.
 
-Jestliže má firma víc poboček, může se hodit připsat ke kontaktům **město** jedné z nich, nebo nějakou spádovou oblast, aby bylo jasné, kam přesně se hlásíš. Kde přesně bydlíš je nepodstatné. Vzdálené město na CV vzbudí každopádně zvědavost. Budou se ptát, jestli hodláš dojíždět, pracovat na dálku, nebo se stěhovat.
+Dá se to vyřídit v [průvodním dopise](#motivacni-dopis), ale pokud má firma víc poboček, můžeš ke kontaktům připsat **město** jedné z nich, nebo nějakou spádovou oblast, aby bylo jasné, kam přesně se hlásíš. Kde přesně bydlíš je nepodstatné. Vzdálené město na CV vzbudí každopádně zvědavost. Budou se ptát, jestli hodláš dojíždět, pracovat na dálku, nebo se stěhovat.
 
 Pokud nejsi původem z Česka, může se hodit připsat **zemi nebo občanství**, aby firma mohla počítat s vyřizováním pracovního víza, případně aby si mohli včas sehnat šarišsko-český slovník.
-
-<!--
-Co se týče lokality - hledáš teda jen v Brně, ok? 🤔 To už mi přijde daný tím, na jakej inzerát odpovídá a pokud má víc lokací, tak by to asi napsala v průvodním dopise. Ale tipuju, že se ptáš, protože bys pro ni měl práci u tebe? 😉
--->
 
 ### 4. Souhrn
 
@@ -134,6 +117,12 @@ Co se týče lokality - hledáš teda jen v Brně, ok? 🤔 To už mi přijde da
 {% endcall %}
 
 <!-- Nahoře „headline“, jasné krátké shrnutí, které mě prodává, kdo jsem a co chci, kam mířím, FAKT DŮLEŽITÉ
+
+Hmm, já toto plus tu úvodní větu beru ne tolik jako popis toho, co jsi, jako toho, co chceš být, kam směřuješ. Ten zbytek CV pak popisuje popravdě to, co už umíš. Ale zajímá mě názor ostatních 🙂
+
+Něco jako QA Engineer who wants to become frontend developer?
+Tedy podle toho, cos píšeš v tom CV tipuju, že frontend nebo rovnou React třeba?
+Podstatnější je kam chceš jít, ne kde jsi.
 
 Z mého pohledu je velmi důležité zejména úvodní odstavec, který funguje jako shrnutí zkušeností, znalostí a budoucích aspirací. Je to v podstatě stejné jako perex u článku. Po přečtení se rozhoduji, zdali budu číst dále a zdali mě autor/kandidát svým obsahem zaujal.
 
@@ -168,7 +157,18 @@ Jedna z těch zásadnějších rad je **začít jasným shrnutím**: _„I am a 
 
 ### 5. Znalosti
 
-<!-- Znalosti - Nedělat tabulky technologií a pak puntíky nebo procenta - z kolika procent? Znalosti nejsou lineární, impostor vs dunning-kruger. Raději slovně popsat, nebo jen zmínit technolgie, se kterými jsem se už nějak potkal a něco jsem s nimi zkusil. Obrázek si musejí udělat přes projekty.
+<!--
+Znalosti - Nedělat tabulky technologií a pak puntíky nebo procenta - z kolika procent? Znalosti nejsou lineární, impostor vs dunning-kruger. Raději slovně popsat, nebo jen zmínit technolgie, se kterými jsem se už nějak potkal a něco jsem s nimi zkusil. Obrázek si musejí udělat přes projekty.
+
+„U technických znalostí je dobré uvést je jako škálu a také pojmenovat body na škále: když k něčemu dá dvě hvězdičky z pěti, co to znamená? Pracoval na tom rok, půl roku? Relevantní mi přijde zvolit škálu 1–5 a doplnit k tomu roky praxe.“ (Eva, personalistka)
+
+„Když tam má napsáno hodně věcí, tak si pod tím nedokážu představit, co skutečně zná. Bylo by super, kdyby napsal, na kolik procent se cítí. Například: umím JavaScript na 60 %. Je to pro mě lepší měřítko a umím si líp představit, kolik toho umí a jak sám sebe hodnotí.“ (Petr, teamleader Frontend)
+
+Některé dovednosti nejsou samozřejmé (psaní všemi 10, kontingenční tabulky v Excelu, základy HTML, …), na ty nezapomeňte.
+
+Dovednosti a znalosti – s čím umíte pracovat, jazykové vybavení, práce s různými programy.
+
+U sekce dovednosti a znalosti se vyhněte frázím „práce s internetem“, která je samozřejmostí.Jsou dovednosti, které jsou standardem, a jejich zmíněním si shodíte životopis. Vyberte si třeba jen 3 zásadní dovednosti a ty rozepište, kde jich využíváte.
 
 A doplnil to, na co se ptal @Messa tedy jaký jazyky a technologie chceš dělat, aby to člověk nemusel louskat z těch projektů atd. Tam už to bude řekněme jako důkaz, že to děláš, ale shrnout na začátku by bylo super.
 
@@ -182,10 +182,37 @@ Decision making – daily routine in the operation of a retail unit
 Time management – planning is an integral part of my work and
 private life
 Tohle mi právě přišlo hodně dobré v jednom návodu na psaní CV, že soft skills jsou tak trochu nicneříkající. Pokud to člověk nerozvede, tak to recruiteři v podstatě nevidí, ale asi jak kdo. Ano, můžeš napsat, že jsi pečlivý. Ale to prostě může napsat kdokoliv a jsou to pro mnohé taková... prázdná slova. Ale když napíšu „jsem pečlivý - od roku 97 sbírám známky a pletu svetry“, tak si pod tím něco hned představím a věřím ti to, ačkoliv to není vůbec z oboru. Je to fakt super nápad.
+
+
+Už jsem to trochu nakousla v předchozím odstavci. Vzpomeňte si na vše, co děláte nebo na čem jste se podíleli v rámci školy, a zkuste z toho vytěžit maximum. Příklad:
+
+„Disciplína – od svých 10 let aktivně hraji fotbal. To vyžaduje 3krát týdně tréninky po škole a aktivní účast na soustředěních.“
+
+„Chuť učit se – mimo školu navštěvuji ještě lekce anglického jazyka. Ráda poslouchám podcasty, čtu knihy a dívám se na záznamy z TEDx přednášek. “
+
+„Samostatnost – v rámci vysoké školy jsem pracoval na několika větších projektech a pracích, které jsem vždy zpracovával sám s pomocí internetu a knih. Rád si přicházím na věci sám, zjišťuji si informace a věřím, že i když to někdy déle trvá, než se zeptat zkušenějšího, je důležité si umět poradit sám.“
+
+„Odolnost vůči stresu – při škole jsem vypomáhala s vedením dětského kroužku. Pomáhala jsem koordinovat 30 dětí a komunikovala jsem i s jejich rodiči. To mě naučilo jednat rychle a být za každou cenu co nejvíce v klidu.“
+
+Věřím, že na základě mých příkladů už sami víte, co o sobě napsat. Nejste si jisti? Zeptejte se svého kamaráda nebo člena rodiny, zda ho nenapadá vlastnost či dovednost, kterou vy sami nevidíte, ale stojí za to ji zmínit.
+
+Píšete blog? Jste kreativní. Hrajete hokej? Jste týmový hráč
+
+Možná hrajete hokej, můžete napsat, že jste týmovým hráčem. Možná si píšete blog, který má slušnou návštěvnost, to znamená, že jste kreativní a že můžete do životopisu napsat i odkaz na blog, aby zaměstnavatel viděl styl vaší práce, aby poznal trochu vaši osobnost, aby věděl, že umíte psát. Jako psát bez chyb.
 -->
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
+{% endcall %}
+
+Pokud máš přečtené tři články o MongoDB, klidně napiš, že víš co to je. Netvrď ale, že s tím umíš pracovat. Jestliže něco přibarvíš, na pohovoru se na to vždy přijde, snadno a rychle. Budeš akorát působit nevěrohodně.
+
+{% call blockquote_avatar(
+  'Někdo se chlubí: Scala, Groovy, Kotlin. Nadchne mě to, ovšem hned dostanu studenou sprchu, protože neví, jaký je mezi nimi rozdíl.',
+  'lubos-racansky.jpg',
+  'Luboš Račanský'
+) %}
+  Luboš Račanský, profesionální programátor, autor článku [O náboru juniorů](https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html)
 {% endcall %}
 
 ### 6. Projekty
@@ -203,6 +230,18 @@ Třeba jen s kratším popisem.
 Je jasný, že MealPal je ta megavěc, na kterou je třeba soustředit se, ale možná by nevadilo ukázat i nějakou menší věc, kde máš všechno pěkně napsaný a umím si představit, že si některým lidem se nebude chtít zkoumat velká aplikace, ale projdou si radši něco menšího.
 
 **[Projekty](#projekty) jsou pro juniora nejdůležitější věc hned po kontaktních údajích a úvodu**, tak ať jsou hezky vysoko a viditelně. Zmínka o GitHub profilu nestačí, uveď konkrétní projekty, kterými se chceš pochlubit, trochu je popiš, přidej odkaz na každý z nich.
+
+„Pokud napíše: pracoval jsem na projektu zavedení objednávkového systému, který měl 100 000 zákazníků, tak už mi to něco řekne. Nebo když napíše: pracoval jsem na projektu eshopu. Dovedu si představit, co za tím je a jaké skilly musí mít.“ (Láďa, manažer v IT)
+
+Co napište vždycky:
+
+    Velikost týmu, ve kterém jste pracovali a z jakých specialistů se skládal.
+    V jaké metodice jste jako tým pracovali (Kanban, Scrum, klasický vývoj).
+    Co jste měli konkrétně na starosti: backend, frontend, nasazování na produkci, návrh architektury, monitoring, část aplikace, správu databáze…
+    S jakými technologiemi a frameworky pracujete na denní bázi.
+    Jaké byly v týmu standardy: code review, unit testy, selenium testy.
+    Jak probíhal vývoj jednotlivých zadání (například: návrh architektury nové funkcionality jsem dostával od lead engineera a pak nasazoval do produkce).
+    Co se v týmu nebo vám za dobu vašeho působení povedlo.
 
 ## Projekty
 
@@ -231,7 +270,15 @@ Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo d
 
 ### 7. Vzdělání
 
-<!-- Pak vzdělání, krátce zmínit vystudovanou VŠ nebo online kurzy, kterými jsem prošel, ale nepřehánět to a nedávat tam každé YT video, spíš jen školy nebo názvy nějakých delších kurzů, které zaberou týdny a měsíce dokončit. Pokud mám vzdělání, které s oborem nesouvisí, napsal bych krátce, kde a kdy jsem dokončil své nejvyšší dosažené vzdělání. Vystudovaná zubařina není relevantní, ale pořád je to dokončená VŠ a něco to o mě říká. Dát to jen stručně, rok, název a třeba odkaz. -->
+<!--
+Informace v životopisu řaďte chronologicky od nejnovější po nejstarší. Pokud nemáte dostatek praxe, uvádějte jako první sekci vzdělání.
+
+Pak vzdělání, krátce zmínit vystudovanou VŠ nebo online kurzy, kterými jsem prošel, ale nepřehánět to a nedávat tam každé YT video, spíš jen školy nebo názvy nějakých delších kurzů, které zaberou týdny a měsíce dokončit. Pokud mám vzdělání, které s oborem nesouvisí, napsal bych krátce, kde a kdy jsem dokončil své nejvyšší dosažené vzdělání. Vystudovaná zubařina není relevantní, ale pořád je to dokončená VŠ a něco to o mě říká. Dát to jen stručně, rok, název a třeba odkaz.
+
+Vzdělání – délka trvání, škola, obor.
+
+Vždy uvádějte jen nejvyšší dosažené vzdělání. S přibývající praxí sekci vzdělání zařaďte pod sekci pracovní zkušenosti.
+-->
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
@@ -244,6 +291,10 @@ Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo d
 I was co-instructor of workshop called Marshmallow Towers. šlo by k tomu doplnit něco hodně krátkýho jako about X? Ten první má samovysvětlující název. U toho druhýho, kromě toho, žes teda měla nějakou aktivitu, tak nevím jakým směrem, nic. Ani na webu tý akce už to není asi k dohledání.
 
 Dalším dobrým tipem je mít u každé minulé pozice na čem přesně se pracovalo, naučené dovednosti a největší úspěchy. Ovšem pozor — životopis není seznam všeho, co máš za sebou od střední školy, ale **letáček, který tě má prodat jako zajímavého kandidáta**.
+
+Pracovní zkušenosti – délka trvání, název pozice, firma a stručný výčet pracovní náplně.
+
+Nezapomeňte na brigády o prázdninách, letní výpomoci, stáže a dobrovolnické aktivity atd., vše se počítá.
 
 ## Zkušenosti získané mimo IT
 
@@ -273,35 +324,41 @@ Osobně se v těch písmenkách nevyznám, ale hodně lidí si v tom frčí 😀
 Domluvím se: Česky, slovensky, anglicky
 Rozumím: Německy, klingonsky
 Pro praktickou orientaci stačí, stejně pokud na něčem z toho záleží, tak si tě musí vyzkoušet. A jen dodám, že tato má rada je relevantní v českém IT, pokud bys šel na obchoďáka nebo mezinárodní vztahy, písmenka budou podle mě frčet mnohem víc 🙂
+
+U jazyků využívejte všeobecně používaného označení A, B, C a 1, 2, a to bez ohledu, zda certifikát máte, či nikoli.
 -->
 
 ## Zbytečnosti
 
-**Fotku** si na CV dát můžeš, ale nemusíš. Záleží na tvém pocitu. Když tam nebude, máš větší šanci, že tě na pohovor pozvali díky vědomostem a ne sympatickému úsměvu, což je dobrá známka pro ně i pro tebe.
+Obecně platí, že nic, co na CV nemusí nutně být, by tam být nemělo. Neplýtvej místem a nerozptyluj čtenáře od toho důležitého.
 
-**Datum narození** nebo přesná **adresa bydliště** nemusí nikoho zajímat. Pokud už z nějakého důvodu chceš adresu uvést, stačí nejbližší město, kde se zdržuješ. Určitě si nepiš na CV adresu trvalého bydliště u rodičů, které je na druhém konci republiky a jezdíš tam akorát na Vánoce.
+Odpusť si například **nadpis** „Životopis“ nebo „Curriculum Vitae“. Ze samotného obsahu dokumentu je zcela zřejmé, o co jde.
+
+**Fotku** si na CV dát můžeš, ale nemusíš. Záleží na tvém pocitu. Když tam nebude, máš větší šanci, že tě na pohovor pozvali díky vědomostem a ne sympatickému úsměvu, což je dobrá známka pro ně i pro tebe. Fotka může recruiterům pomáhat přiřadit si vás k CV při osobním setkání.
+
+**Datum narození**, **rodinný stav** nebo přesná **adresa bydliště** nemusí nikoho zajímat. Pokud už z nějakého důvodu chceš adresu uvést, stačí nejbližší město, kde se zdržuješ. Určitě si nepiš na CV adresu trvalého bydliště u rodičů, které je na druhém konci republiky a jezdíš tam akorát na Vánoce.
 
 Ačkoliv se v některých šablonách nacházejí, **vlastnoruční podpis** a **datum vytvoření dokumentu** jsou příjemcům tvého CV k ničemu a působí archaicky. Když firma obdrží CV, automaticky předpokládá, že je aktuální.
 
 ## Motivační dopis
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
-{% endcall %}
+Většinou se na pozici hlásíš e-mailem. Ten má předmět, tělo a do přílohy dáváš PDF s životopisem. Tomuto e-mailu se říká průvodní nebo motivační dopis, anglicky _cover letter_.
 
-<!--
-cover letter
+U **předmětu** je dobré se zamyslet nad tím, že druhá dostává takových e-mailů hodně. Je tedy praktické, když tam bude tvoje jméno a přesný název vypsané pozice, na kterou se hlásíš. Když si recruiter otevře schránku, bude se hned orientovat. Tvůj e-mail také snadněji vyhledá.
 
-◾️ Hlásíte se na víc pozic do jedné firmy a na úplně rozdílné pozice? Někdy to působí zvláštně, a tak využijte prostor motivačního dopisu a vysvětlete to.
+Motivační dopis určitě **nedávej do zvláštního dokumentu** a nepřikládej jako přílohu. Piš rovnou do těla e-mailu a **piš to krátké**. Žádný „hluboký lidský příběh“ na deset odstavců. Nepřepisuj životopis do prózy. I tam, kde to čtou, s tím chtějí trávit maximálně několik sekund.
 
-Budem sa držať “pravidla” spomenúť, prečo tam chcem pracovať a zároveň prečo by oni mali chcieť zamestnať mňa, ale aj to mi príde celkom náročné; som junior, nemám žiadne skúsenosti a písať, že som pracovitá, rýchlo sa učím, atď mi príde taká ohraná klasika, ktorú by som tam radšej nepísala. Takže moja otázka na vás je: máte nejaké tipy ako neznieť úplne zúfalo a odlíšiť sa a zároveň, čomu sa v tom liste vyvarovať?
+### Souhrn místo dopisu
 
-Motivační dopis jsem odeslal jen jeden přímo vytvořen pro jednu konkrétní společnost, myslím že reálně je lepší buď udělat motivační dopis přímo pro tu společnost nebo žádný, zde mi Honza poradil že mám něco do cv napsat nějakou úvodní větu, myslím že je to velice dobrý nápad a trošku to nahrazuje nějaký větší motivační dopis který bys posílala všem.
+Důležitost motivačního dopisu se v různých firmách liší. **Někde ho skoro nečtou, jinde má váhu větší.** Nikdy však nejde o zásadní věc. Pokud máš dobře udělaný [souhrn](#4-souhrn), můžeš motivační dopis vypustit. Napiš na jakou pozici se hlásíš, přilož CV, hotovo. Na druhou stranu, pokud by dopis četli, je to **prostor pro věci, které do CV nepatří**.
 
-Osobně motivační dopisy píšu, spíš kratší a jsou plus mínus podobné. Jsem spontánní, reaguju na konkrétní nabídky, naladím se na komunikační vlnu, kterou inzerující má. Když jsou upjatí a seriózní, jsem upjatá a seriózní 🙂 Když jsou free, tak se s tím taky nezalamuju. Jediné, co jsem víc bojovala, byl nějaký korporát a takový ten velmi obecný popis pozice plný nic neříkajících superlativů o self driven lidech a firemní kultuře. Tak jsem zašla na nějakou anglickou stránku se vzorovými CL, které byly plné přesně těchhle formulací. Začetla jsem se a pak napsala variaci na to všechno. Na pohovor mě pozvali 🙂
+### Co psát
 
-Také je přeposílají dalším lidem ve firmě a ti je otevírají bez toho, aby četli motivační dopis. CV může být v rámci firmy různě přeposilano, tak by bylo fajn, kdyby fungovalo standalone 🙂
--->
+Nemá moc smysl vyrábět si polotovar. Jednotlivé **zprávy si mohou být podobné, ale každá by měla být ze 100 % na míru dané nabídce** a situaci.
+
+Motivačním dopisem usiluješ o „cenu sympatie“, případně **dodáváš kontext**. Píšeš do své vysněné firmy? Znáš od nich konkrétní lidi, například ze srazů nebo konferencí? Dej klidně průchod emocím, pokud jsou upřímné. Popiš např. své nadšení pro obor, nebo ambici učit se něco konkrétního. Můžeš také předem objasnit něco, co by při čtení životopisu mohlo vyvolávat otázky.
+
+Buď spontánní. **Nalaď se na komunikační vlnu z pracovního inzerátu.** Jsou upjatí a seriózní? Formuluj to taky tak. Pohodoví? Piš to jak zprávu kamarádce. Korporátní text plný obecné vaty a nicneříkajících superlativů? Uvař bramboračku z podobných formulací.
 
 ## Něco extra
 
@@ -311,6 +368,10 @@ Také je přeposílají dalším lidem ve firmě a ti je otevírají bez toho, a
 
 <!--
 https://www.linkedin.com/pulse/jak-melo-vypadat-vase-cv-v-roce-2020-marek-strihavka/?trackingId=cjMvTGBWRWC%2B1pEV5PpZYg%3D%3D
+
+Další aktivity – nahradíte sekci ostatní, zájmy a koníčky.
+
+Sekci další aktivity můžete využít ve svůj prospěch nejvíce. Vypíchněte ty aktivity, které děláte a rozvíjíte při nich firmou hledané kompetence. Děláte nějaký sport? Určitě musíte mít disciplínu, jste zvyklý pracovat v týmu a respektovat rozkazy vedoucího týmu. Účastnili jste se mimoškolních aktivit? Skvělé, napište jakých. Pracovali jste v rámci výuky na zajímavém projektu, který vás obohatil? I ten zmiňte. Píšete blog, máte parádní Instagram, chodíte vypomáhat do útulku? No vidíte, určitě je toho spoustu!
 
 - linkedin
 - [osobní web](../candidate-handbook.md#osobni-web-a-blog)
@@ -343,5 +404,8 @@ Troubleshooting - answers to questions asked in anger, FAQ (if really FA)
 
 <!--
 UDĚLAT UPSELL NA CLUB
+
+Poproste o názor kamaráda nebo napište někomu na LinkedIn, zda by vám životopis nezkontroloval. Budete překvapení, kolik lidí rádo jen tak pomůže.
+
 VLOŽIT PRVNÍ DÍL PODCASTU
 -->
