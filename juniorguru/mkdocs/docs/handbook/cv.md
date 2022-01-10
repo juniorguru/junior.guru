@@ -305,28 +305,13 @@ Otevřeně přiznej **všechny zkušenosti, které máš.** Že jsi původně zu
   {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
 {% endcall %}
 
-## Jazyky
+### 9. Jazyky
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
-{% endcall %}
+Někde na konci CV měj seznam všech jazyků, které ovládáš. Většinu firem bude zajímat **hlavně angličtina**. Jestli hledáš práci v rámci EU, popiš znalost každého jazyka pomocí [SERR](https://cs.wikipedia.org/wiki/Spole%C4%8Dn%C3%BD_evropsk%C3%BD_referen%C4%8Dn%C3%AD_r%C3%A1mec) (anglicky _CEFR_). Pokud míříš někam do světa, raději to popiš slovně. Úroveň angličtiny si můžeš otestovat třeba přes [EF SET](https://www.efset.org/).
 
-<!--
-Obecný dotaz na angličtinu: jsou všechny ty zkratky A,B,C v životopisu jako standard nebo stačí slovně popsat úroveň znalostí (podobně jako na LI)? Ptám se jako samouk, kterému by bylo trapné si to písmenko vymýšlet, když reálně žádnou zkoušku nemám a asi se mi za to nechce utrácet...
+[Europass](https://europass.cz/) používá **sebehodnotící škálu založenou na SERR v pěti okruzích**: Poslech, čtení, mluvená komunikace, samostatný ústní projev a psaní. Ke každému okruhu a každé úrovni jsou tam navíc jedno až dvouvětné popisky pro orientaci.
 
-CEFR se nejvíce používá v EU
-https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages
-https://www.efset.org/
-
-Ještě k těm jazykům, Europass (https://europass.cz/) v životopisu, v oddílu Jazykové znalosti, používá sebehodnotící škálu založenou na SERR v pěti samostatných okruzích - poslech, čtení, mluvená komunikace, samostatný ústní projev a psaní - ke každému okruhu a každé úrovni jsou tam navíc jedno až dvouvětné popisky pro orientaci. Podle mě se tak snáz vyjádří konkrétní znalosti a zkušenosti v daném cizím jazyku.
-
-Osobně se v těch písmenkách nevyznám, ale hodně lidí si v tom frčí 😀 Já bych napsal:
-Domluvím se: Česky, slovensky, anglicky
-Rozumím: Německy, klingonsky
-Pro praktickou orientaci stačí, stejně pokud na něčem z toho záleží, tak si tě musí vyzkoušet. A jen dodám, že tato má rada je relevantní v českém IT, pokud bys šel na obchoďáka nebo mezinárodní vztahy, písmenka budou podle mě frčet mnohem víc 🙂
-
-U jazyků využívejte všeobecně používaného označení A, B, C a 1, 2, a to bez ohledu, zda certifikát máte, či nikoli.
--->
+Na druhou stranu, on to v IT nikdo zas tak moc neřeší. Stejně všichni nakonec mluví nějakou variantou [Euro English](https://cs.wikipedia.org/wiki/Euro_English). **Gramatika jde stranou, hlavně když se domluvíš.** Většinou si tvou angličtinu ověří během pohovoru a pokud dokážeš vést konverzaci, bývá to _good enough_. Určitě nemusíš mít například nějaké oficiální certifikáty.
 
 ## Zbytečnosti
 
@@ -391,14 +376,6 @@ https://www.askamanager.org/
 **Hledej na internetu klíčovou frázi „[Killer CV](https://www.google.cz/search?q=killer%20cv)“**. Pod tímto pojmem najdeš spousty článků i videí o tom, jak napsat životopis, který rozhodně nezapadne. Jsou sice o klasických CV, ale většinu rad lze snadno použít i na LinkedIn.
 
 Další dobré tipy jsou i v [Tech Interview Handbook](https://yangshun.github.io/tech-interview-handbook/resume) nebo na [prace.rovnou.cz](https://prace.rovnou.cz/jak-zivotopis.html).
--->
-
-
-<!--
-Introduction - success within 30 min, epic win, easy-ish, show how it feels
-Explanation - conceptual, deep understanding, explain in detail, why this, behind the scenes
-Reference - fine grained details, complete, experienced users
-Troubleshooting - answers to questions asked in anger, FAQ (if really FA)
 -->
 
 
