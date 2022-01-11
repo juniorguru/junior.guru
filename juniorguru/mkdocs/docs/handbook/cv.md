@@ -155,57 +155,13 @@ Jedna z těch zásadnějších rad je **začít jasným shrnutím**: _„I am a 
   Pavel Brožek, recruiter v [dreamBIG](https://www.dreambig.cz/)
 {% endcall %}
 
-### 5. Znalosti
+### 5. Dovednosti
 
-<!--
-Znalosti - Nedělat tabulky technologií a pak puntíky nebo procenta - z kolika procent? Znalosti nejsou lineární, impostor vs dunning-kruger. Raději slovně popsat, nebo jen zmínit technolgie, se kterými jsem se už nějak potkal a něco jsem s nimi zkusil. Obrázek si musejí udělat přes projekty.
+Sepiš **technologie, případně metodiky nebo nástroje, které ovládáš**. Technologie jsou HTML nebo Python, metodika je třeba SCRUM, tedy „způsob jak něco dělat“. Nástroj může být Git nebo Jira.
 
-„U technických znalostí je dobré uvést je jako škálu a také pojmenovat body na škále: když k něčemu dá dvě hvězdičky z pěti, co to znamená? Pracoval na tom rok, půl roku? Relevantní mi přijde zvolit škálu 1–5 a doplnit k tomu roky praxe.“ (Eva, personalistka)
+Programátoři si každý den rozšiřují obzory a koukají na nové věci. Ve skutečnosti ale i největší profíci **znají dobře pouze několik technologií**. U dalších jen povrchně tuší o co jde, aby si o nich mohli povídat na obědě.
 
-„Když tam má napsáno hodně věcí, tak si pod tím nedokážu představit, co skutečně zná. Bylo by super, kdyby napsal, na kolik procent se cítí. Například: umím JavaScript na 60 %. Je to pro mě lepší měřítko a umím si líp představit, kolik toho umí a jak sám sebe hodnotí.“ (Petr, teamleader Frontend)
-
-Některé dovednosti nejsou samozřejmé (psaní všemi 10, kontingenční tabulky v Excelu, základy HTML, …), na ty nezapomeňte.
-
-Dovednosti a znalosti – s čím umíte pracovat, jazykové vybavení, práce s různými programy.
-
-U sekce dovednosti a znalosti se vyhněte frázím „práce s internetem“, která je samozřejmostí.Jsou dovednosti, které jsou standardem, a jejich zmíněním si shodíte životopis. Vyberte si třeba jen 3 zásadní dovednosti a ty rozepište, kde jich využíváte.
-
-A doplnil to, na co se ptal @Messa tedy jaký jazyky a technologie chceš dělat, aby to člověk nemusel louskat z těch projektů atd. Tam už to bude řekněme jako důkaz, že to děláš, ale shrnout na začátku by bylo super.
-
-Soft skills mi přijde mega dobra sekce, jak píšeš co umíš dobře a podkladas to tím díky čemu jsi v tom dobry, to je hodně silný 👍
-Motivation – since my first Commodore 64 to this day, I've been
-excited from all the new technology and software and learning
-new things is part of my free time
-Problem solving – over 15 years of experience in
-troubleshooting hardware and software issues
-Decision making – daily routine in the operation of a retail unit
-Time management – planning is an integral part of my work and
-private life
-Tohle mi právě přišlo hodně dobré v jednom návodu na psaní CV, že soft skills jsou tak trochu nicneříkající. Pokud to člověk nerozvede, tak to recruiteři v podstatě nevidí, ale asi jak kdo. Ano, můžeš napsat, že jsi pečlivý. Ale to prostě může napsat kdokoliv a jsou to pro mnohé taková... prázdná slova. Ale když napíšu „jsem pečlivý - od roku 97 sbírám známky a pletu svetry“, tak si pod tím něco hned představím a věřím ti to, ačkoliv to není vůbec z oboru. Je to fakt super nápad.
-
-
-Už jsem to trochu nakousla v předchozím odstavci. Vzpomeňte si na vše, co děláte nebo na čem jste se podíleli v rámci školy, a zkuste z toho vytěžit maximum. Příklad:
-
-„Disciplína – od svých 10 let aktivně hraji fotbal. To vyžaduje 3krát týdně tréninky po škole a aktivní účast na soustředěních.“
-
-„Chuť učit se – mimo školu navštěvuji ještě lekce anglického jazyka. Ráda poslouchám podcasty, čtu knihy a dívám se na záznamy z TEDx přednášek. “
-
-„Samostatnost – v rámci vysoké školy jsem pracoval na několika větších projektech a pracích, které jsem vždy zpracovával sám s pomocí internetu a knih. Rád si přicházím na věci sám, zjišťuji si informace a věřím, že i když to někdy déle trvá, než se zeptat zkušenějšího, je důležité si umět poradit sám.“
-
-„Odolnost vůči stresu – při škole jsem vypomáhala s vedením dětského kroužku. Pomáhala jsem koordinovat 30 dětí a komunikovala jsem i s jejich rodiči. To mě naučilo jednat rychle a být za každou cenu co nejvíce v klidu.“
-
-Věřím, že na základě mých příkladů už sami víte, co o sobě napsat. Nejste si jisti? Zeptejte se svého kamaráda nebo člena rodiny, zda ho nenapadá vlastnost či dovednost, kterou vy sami nevidíte, ale stojí za to ji zmínit.
-
-Píšete blog? Jste kreativní. Hrajete hokej? Jste týmový hráč
-
-Možná hrajete hokej, můžete napsat, že jste týmovým hráčem. Možná si píšete blog, který má slušnou návštěvnost, to znamená, že jste kreativní a že můžete do životopisu napsat i odkaz na blog, aby zaměstnavatel viděl styl vaší práce, aby poznal trochu vaši osobnost, aby věděl, že umíte psát. Jako psát bez chyb.
--->
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
-{% endcall %}
-
-Pokud máš přečtené tři články o MongoDB, klidně napiš, že víš co to je. Netvrď ale, že s tím umíš pracovat. Jestliže něco přibarvíš, na pohovoru se na to vždy přijde, snadno a rychle. Budeš akorát působit nevěrohodně.
+Do CV patří pouze **věci, se kterými zvládneš dokončit základní praktické úkoly**. YouTube videa o HTML nestačí. Máš vytvořené dva tři HTML soubory? V pořádku. Pokud nemáš praktickou zkušenost, neumíš s věcí pracovat a je nefér ji někomu nabízet jako dovednost. Nic si nepřibarvuj, vždy se na to přijde a budeš působit nevěrohodně.
 
 {% call blockquote_avatar(
   'Někdo se chlubí: Scala, Groovy, Kotlin. Nadchne mě to, ovšem hned dostanu studenou sprchu, protože neví, jaký je mezi nimi rozdíl.',
@@ -214,6 +170,16 @@ Pokud máš přečtené tři články o MongoDB, klidně napiš, že víš co to
 ) %}
   Luboš Račanský, profesionální programátor, autor článku [O náboru juniorů](https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html)
 {% endcall %}
+
+Neznamená to, že se nemůžeš hlásit na inzerát, kde **technologii, kterou neumíš**, chtějí. Nepiš si ji ale do dovedností. Pokud tě něco láká, ale ještě to neznáš, zakomponuj svou ambici do [souhrnu](#4-souhrn).
+
+A opravdu **stačí praktická zkušenost**, nemusíš být expert. Nech je prozkoušet si tě, případně se s tebou pobavit nad kódem tvých projektů. Ať sami posoudí, zda je pro jejich aktuální potřeby tvoje znalost dostatečná, nebo ne.
+
+I když je to oblíbené, **nedělej ze svých znalostí graf s procenty**. Co znamená 100 %? Měl by autor jazyka Python plné skóre, když po 30 letech zkušeností říká, že mnohá zákoutí Pythonu nezná a stále v něm něco objevuje? Sebehodnocení na neukotvené škále je rájem pro [Dunningův–Krugerův efekt](https://cs.wikipedia.org/wiki/Dunning%C5%AFv%E2%80%93Kruger%C5%AFv_efekt). Na grafy se vykašli.
+
+Neuváděj příliš mnoho dovedností, nedá se v tom orientovat. **Významné technologie** od podružných poznáš tak, že mají svou stránku na (anglické) Wikipedii. Například [Django](https://en.wikipedia.org/wiki/Django_(web_framework)) ji má, [arrow](https://pypi.org/project/arrow/) ne. A vyber jen ty, kterým se chceš do budoucna nejvíc věnovat, nebo jsou podstatné pro konkrétní pozici. Pokud nechceš trolit, „práci s počítačem“ si odpusť. Také kancelářské programy se berou na většině pozicích jako samozřejmost.
+
+Takže co je výsledkem? Takové jakoby hashtagy. **Pár klíčových slov za sebou, v jenom řádku, výrazně v úvodu.** Spolu s pozicí a souhrnem to druhé straně pomůže okamžitě si tě zařadit. Opravdu to stačí. Nemůžeš si pomoci a chceš se rozepisovat? Posuň aspoň dovednosti někam níž, ať exkluzivní prostor v úvodu CV nezaplňují odstavce textu.
 
 ### 6. Projekty
 
@@ -303,7 +269,43 @@ Otevřeně přiznej **všechny zkušenosti, které máš.** Že jsi původně zu
   {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
 {% endcall %}
 
-### 9. Jazyky
+### 9. Soft skills
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
+{% endcall %}
+
+<!--
+Soft skills mi přijde mega dobra sekce, jak píšeš co umíš dobře a podkladas to tím díky čemu jsi v tom dobry, to je hodně silný 👍
+Motivation – since my first Commodore 64 to this day, I've been
+excited from all the new technology and software and learning
+new things is part of my free time
+Problem solving – over 15 years of experience in
+troubleshooting hardware and software issues
+Decision making – daily routine in the operation of a retail unit
+Time management – planning is an integral part of my work and
+private life
+Tohle mi právě přišlo hodně dobré v jednom návodu na psaní CV, že soft skills jsou tak trochu nicneříkající. Pokud to člověk nerozvede, tak to recruiteři v podstatě nevidí, ale asi jak kdo. Ano, můžeš napsat, že jsi pečlivý. Ale to prostě může napsat kdokoliv a jsou to pro mnohé taková... prázdná slova. Ale když napíšu „jsem pečlivý - od roku 97 sbírám známky a pletu svetry“, tak si pod tím něco hned představím a věřím ti to, ačkoliv to není vůbec z oboru. Je to fakt super nápad.
+
+
+Už jsem to trochu nakousla v předchozím odstavci. Vzpomeňte si na vše, co děláte nebo na čem jste se podíleli v rámci školy, a zkuste z toho vytěžit maximum. Příklad:
+
+„Disciplína – od svých 10 let aktivně hraji fotbal. To vyžaduje 3krát týdně tréninky po škole a aktivní účast na soustředěních.“
+
+„Chuť učit se – mimo školu navštěvuji ještě lekce anglického jazyka. Ráda poslouchám podcasty, čtu knihy a dívám se na záznamy z TEDx přednášek. “
+
+„Samostatnost – v rámci vysoké školy jsem pracoval na několika větších projektech a pracích, které jsem vždy zpracovával sám s pomocí internetu a knih. Rád si přicházím na věci sám, zjišťuji si informace a věřím, že i když to někdy déle trvá, než se zeptat zkušenějšího, je důležité si umět poradit sám.“
+
+„Odolnost vůči stresu – při škole jsem vypomáhala s vedením dětského kroužku. Pomáhala jsem koordinovat 30 dětí a komunikovala jsem i s jejich rodiči. To mě naučilo jednat rychle a být za každou cenu co nejvíce v klidu.“
+
+Věřím, že na základě mých příkladů už sami víte, co o sobě napsat. Nejste si jisti? Zeptejte se svého kamaráda nebo člena rodiny, zda ho nenapadá vlastnost či dovednost, kterou vy sami nevidíte, ale stojí za to ji zmínit.
+
+Píšete blog? Jste kreativní. Hrajete hokej? Jste týmový hráč
+
+Možná hrajete hokej, můžete napsat, že jste týmovým hráčem. Možná si píšete blog, který má slušnou návštěvnost, to znamená, že jste kreativní a že můžete do životopisu napsat i odkaz na blog, aby zaměstnavatel viděl styl vaší práce, aby poznal trochu vaši osobnost, aby věděl, že umíte psát. Jako psát bez chyb.
+-->
+
+### 10. Jazyky
 
 Někde na konci CV měj seznam všech jazyků, které ovládáš. Většinu firem bude zajímat **hlavně angličtina**. Jestli hledáš práci v Evropě, popiš znalost každého jazyka pomocí [SERR](https://cs.wikipedia.org/wiki/Spole%C4%8Dn%C3%BD_evropsk%C3%BD_referen%C4%8Dn%C3%AD_r%C3%A1mec) (anglicky _CEFR_). Pokud míříš někam do světa, raději to popiš slovně. Úroveň angličtiny si můžeš otestovat třeba přes [EF SET](https://www.efset.org/).
 
