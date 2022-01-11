@@ -9,11 +9,11 @@ template: main_handbook.html
 # Životopis
 
 {% call lead() %}
-  Co dát do životopisu, když jsi junior a nemáš ještě praxi? Přečti si návod na přehledné a funkční CV, ze kterého budou mít recruiteři radost.
+  Co dát do životopisu, když jsi junior a nemáš ještě praxi? Přečti si dlouhý návod na přehledné a funkční CV, ze kterého budou mít recruiteři radost.
 {% endcall %}
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě přepisuje. Za pár dní tady bude jiný text, lepší, voňavější, nápomocnější.
+  {{ 'exclamation-circle'|icon }} Tuto stránku Honza teprve píše. Některé kapitoly ještě chybí.
 {% endcall %}
 
 
@@ -175,7 +175,7 @@ Neznamená to, že se nemůžeš hlásit na inzerát, kde **technologii, kterou 
 
 A opravdu **stačí praktická zkušenost**, nemusíš být expert. Nech je prozkoušet si tě, případně se s tebou pobavit nad kódem tvých projektů. Ať sami posoudí, zda je pro jejich aktuální potřeby tvoje znalost dostatečná, nebo ne.
 
-I když je to oblíbené, **nedělej ze svých znalostí graf s procenty**. Co znamená 100 %? Měl by autor jazyka Python plné skóre, když po 30 letech zkušeností říká, že mnohá zákoutí Pythonu nezná a stále v něm něco objevuje? Sebehodnocení na neukotvené škále je rájem pro [Dunningův–Krugerův efekt](https://cs.wikipedia.org/wiki/Dunning%C5%AFv%E2%80%93Kruger%C5%AFv_efekt). Na grafy se vykašli.
+I když je to oblíbené, **nedělej ze svých znalostí graf s procenty**. Co znamená 100 %? Měl by autor Pythonu plné skóre, když po 30 letech zkušeností říká, že mnohá zákoutí jazyka nezná a stále v něm něco objevuje? Sebehodnocení na neukotvené škále je rájem pro [Dunningův–Krugerův efekt](https://cs.wikipedia.org/wiki/Dunning%C5%AFv%E2%80%93Kruger%C5%AFv_efekt). Na grafy se vykašli.
 
 Neuváděj příliš mnoho dovedností, nedá se v tom orientovat. **Významné technologie** od podružných poznáš tak, že mají svou stránku na (anglické) Wikipedii. Například [Django](https://en.wikipedia.org/wiki/Django_(web_framework)) ji má, [arrow](https://pypi.org/project/arrow/) ne. A vyber jen ty, kterým se chceš do budoucna nejvíc věnovat, nebo jsou podstatné pro konkrétní pozici. Pokud nechceš trolit, „práci s počítačem“ si odpusť. Také kancelářské programy se berou na většině pozicích jako samozřejmost.
 
@@ -248,26 +248,19 @@ Pokud ti z toho vyšlo více záznamů o vzdělání než jeden, seřaď je chro
 
 ### 8. Pracovní zkušenosti
 
-<!-- Pak nerelevantní pracovní zkušenosti. Stručně, vždy jen rok, kde a co jsem tam dělal. Ideálně velmi krátká věta, co bylo náplní té práce a co jsem tam dělal nebo se naučil zajímavého, pohledem IT. Třeba vedení týmu, sebevzdělávání je zajímavé, ať se odehrávalo kdekoliv. Činnosti, které o mě něco vypovídají. Úspěchy, např. zvýšil jsem prodej o 10 %. Jestliže už mám relevantní zkušenost v oboru, tak prohodit a dát nad vzdělání.
+Předpoklad tohoto návodu je, že žádnou komerční praxi v IT ještě nemáš. I proto jsou pracovní zkušenosti takhle vzadu, jinak by nahradily [projekty](#6-projekty). A pozor, počítají se i brigády, výpomoci, stáže, dobrovolnické aktivity.
 
-I was co-instructor of workshop called Marshmallow Towers. šlo by k tomu doplnit něco hodně krátkýho jako about X? Ten první má samovysvětlující název. U toho druhýho, kromě toho, žes teda měla nějakou aktivitu, tak nevím jakým směrem, nic. Ani na webu tý akce už to není asi k dohledání.
+Předchozí práci mimo obor silně zestručni. Vždy jen **roky od do, název firmy, pozice**. Od nejnovějších po nejstarší. Nemusíš ani uvádět všechny. Vyber pouze významné milníky nebo zkušenosti, které se aspoň trochu váží k pozici, na kterou se hlásíš.
 
-Dalším dobrým tipem je mít u každé minulé pozice na čem přesně se pracovalo, naučené dovednosti a největší úspěchy. Ovšem pozor — životopis není seznam všeho, co máš za sebou od střední školy, ale **letáček, který tě má prodat jako zajímavého kandidáta**.
+Do jednoho záznamu dej klidně i **celé úseky kariéry**. „Od do jsem dělal v bankovnictví, vypracoval jsem se na pozici investičního specialisty.“ Ve dvou větách popiš, co díky tomu umíš, a je to. Další detaily těchto minulých zaměstnání jsou pro tvou budoucnost vedlejší.
 
-Pracovní zkušenosti – délka trvání, název pozice, firma a stručný výčet pracovní náplně.
+Připiš vždy **větu o tom, co bylo náplní tvojí práce**, co se ti tam povedlo, nebo co díky této zkušenosti umíš. Kuchařinu asi vysvětlovat nemusíš, ale jak vypadá den dělníka na úseku pálených lupků, to třeba lidi v IT netuší.
 
-Nezapomeňte na brigády o prázdninách, letní výpomoci, stáže a dobrovolnické aktivity atd., vše se počítá.
+Když přihodíš, **co díky tomu umíš**, jen dobře. Může to být vedení lidí, týmová práce, komunikativnost, sebevzdělávání, koordinace, pečlivost. To vše se dá využít i v IT a je škoda to nezmínit. Samozřejmě krátce.
 
-S přibývající praxí sekci vzdělání zařaďte pod sekci pracovní zkušenosti.
+Můžeš napsat obecně o své chuti ke vzdělávání, ale konkrétní **certifikáty z oborů mimo IT** nikomu nic říkat nebudou. Bohužel, třicet osvědčení ze zubařské praxe při programování nevyužiješ. Zarámuj si je, ale na CV budou zbytečně. I když, popravdě málokdo viděl tolik _[technical debt](https://en.wikipedia.org/wiki/Technical_debt)_ a _[legacy](https://en.wikipedia.org/wiki/Legacy_code)_ jako zubaři.
 
-## Zkušenosti získané mimo IT
-
-Otevřeně přiznej **všechny zkušenosti, které máš.** Že jsi původně zubařka? Pro firmu, která vytváří software pro nemocnice, může být i toto zajímavá informace. A co si budeme povídat, málokdo viděl tolik _[technical debt](https://en.wikipedia.org/wiki/Technical_debt)_ a _[legacy code](https://en.wikipedia.org/wiki/Legacy_code)_ jako zubaři. Nepodceňuj, co z tvé minulosti může zaměstnavatele zaujmout. Tvoje zkušenosti mimo IT přispívají k tomu, kdo jsi. **Firma může usoudit, že právě díky znalosti jiného oboru můžeš přispět něčím, co ještě nemají**, ať už je to vědecký pohled, lidský přístup, nebo pečlivost účetního. Stalo se i to, že při pohovoru ocenili manažerské dovednosti prokázané při hraní online her (viz [Wired](https://www.wired.com/2006/04/learn/), [CNN](https://money.cnn.com/2014/06/19/technology/world-of-warcraft-resume/index.html)). Pokud najdeš **práci, která kombinuje tvoje předchozí zkušenosti a programování**, budeš mít velký náskok před kýmkoliv jiným. Nepodceňuj své předchozí zkušenosti a neignoruj je — místo toho přemýšlej, jak je můžeš prodat! Ze stejného důvodu může mít smysl zmínit i koníčky.
--->
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
-{% endcall %}
+Firma může usoudit, že právě díky znalosti jiného oboru **můžeš přispět něčím, co ještě nemají**, ať už je to vědecký pohled, lidský přístup, nebo pečlivost účetní. Stalo se i to, že při pohovoru ocenili manažerské dovednosti prokázané při hraní online her (viz [Wired](https://www.wired.com/2006/04/learn/), [CNN](https://money.cnn.com/2014/06/19/technology/world-of-warcraft-resume/index.html)). Přemýšlej, jak se díky tomu můžeš lépe prodat, ale aplikuj to spíš v [souhrnu](#4-souhrn) nebo [sekci se soft skills](#9-soft-skills). Seznam pracovních zkušeností zachovej stručný.
 
 ### 9. Soft skills
 
@@ -311,7 +304,7 @@ Někde na konci CV měj seznam všech jazyků, které ovládáš. Většinu fire
 
 [Europass](https://europass.cz/) používá **sebehodnotící škálu** založenou na SERR v pěti okruzích: Poslech, čtení, mluvená komunikace, samostatný ústní projev a psaní. Ke každému okruhu a každé úrovni jsou tam navíc jedno až dvouvětné popisky pro orientaci.
 
-Na druhou stranu, on to v IT nikdo zas tak moc neřeší. Stejně všichni nakonec mluví nějakou variantou [Euro English](https://cs.wikipedia.org/wiki/Euro_English). **Gramatika jde stranou, hlavně když se domluvíš.** Většinou si tvou angličtinu ověří během pohovoru a pokud dokážeš vést konverzaci, bývá to _good enough_. Určitě nemusíš mít oficiální certifikáty.
+Na druhou stranu, on to v IT nikdo zas tak moc neřeší. Stejně všichni nakonec mluví nějakou variantou [Euro English](https://cs.wikipedia.org/wiki/Euro_English). **Gramatika jde stranou, hlavně když se domluvíš.** Většinou si jazyk ověří během pohovoru a pokud dokážeš vést konverzaci, bývá to _good enough_. Určitě nemusíš mít oficiální certifikáty.
 
 ## Zbytečnosti
 
