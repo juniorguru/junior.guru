@@ -1,6 +1,6 @@
 ---
 title: Jak na životopis pro juniory v IT
-description: Co dát do životopisu, když nemáš praxi? Když jsi student? Jak můžeš i jako junior bez praxe připravit CV, které tě dostane na pohovor?
+description: Co dát do životopisu, když nemáš praxi? Když jsi student? Jak můžeš i jako junior bez praxe připravit CV, které tě dostane na pohovor v IT?
 template: main_handbook.html
 ---
 
@@ -9,7 +9,7 @@ template: main_handbook.html
 # Životopis
 
 {% call lead() %}
-  Co dát do životopisu, když jsi junior a nemáš ještě praxi? Přečti si dlouhý návod na přehledné a funkční CV, ze kterého budou mít recruiteři radost.
+  Co dát do životopisu, když jsi junior v IT a nemáš ještě praxi? Přečti si návod na přehledné a funkční CV, ze kterého budou mít recruiteři radost.
 {% endcall %}
 
 {% call note(standout=True) %}
