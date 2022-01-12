@@ -260,43 +260,23 @@ Když přihodíš, **co díky tomu umíš**, jen dobře. Může to být vedení 
 
 Můžeš napsat obecně o své chuti ke vzdělávání, ale konkrétní **certifikáty z oborů mimo IT** nikomu nic říkat nebudou. Bohužel, třicet osvědčení ze zubařské praxe při programování nevyužiješ. Zarámuj si je, ale na CV budou zbytečně. I když, popravdě málokdo viděl tolik _[technical debt](https://en.wikipedia.org/wiki/Technical_debt)_ a _[legacy](https://en.wikipedia.org/wiki/Legacy_code)_ jako zubaři.
 
-Firma může usoudit, že právě díky znalosti jiného oboru **můžeš přispět něčím, co ještě nemají**, ať už je to vědecký pohled, lidský přístup, nebo pečlivost účetní. Stalo se i to, že při pohovoru ocenili manažerské dovednosti prokázané při hraní online her (viz [Wired](https://www.wired.com/2006/04/learn/), [CNN](https://money.cnn.com/2014/06/19/technology/world-of-warcraft-resume/index.html)). Přemýšlej, jak se díky tomu můžeš lépe prodat, ale aplikuj to spíš v [souhrnu](#4-souhrn) nebo [sekci se soft skills](#9-soft-skills). Seznam pracovních zkušeností zachovej stručný.
+Firma může usoudit, že právě díky znalosti jiného oboru **můžeš přispět něčím, co ještě nemají**, ať už je to vědecký pohled, lidský přístup, nebo pečlivost účetní. Stalo se i to, že při pohovoru ocenili manažerské dovednosti prokázané při hraní online her (viz [Wired](https://www.wired.com/2006/04/learn/), [CNN](https://money.cnn.com/2014/06/19/technology/world-of-warcraft-resume/index.html)). Přemýšlej, jak se díky tomu můžeš lépe prodat, ale aplikuj to spíš v [souhrnu](#4-souhrn) nebo [sekci se _soft skills_](#9-soft-skills). Seznam pracovních zkušeností zachovej stručný.
 
 ### 9. Soft skills
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
-{% endcall %}
+Na Wikipedii píšou **„měkké“ nebo „jemné“ dovednosti**, ale v praxi tomu nikdo neříká jinak než _soft skills_. A co že to vlastně je? „Pečlivá, spolehlivá, motivovaná, komunikativní.“ „Týmový hráč, odolný vůči stresu, s velkou chutí učit se.“
 
-<!--
-Soft skills mi přijde mega dobra sekce, jak píšeš co umíš dobře a podkladas to tím díky čemu jsi v tom dobry, to je hodně silný 👍
-Motivation – since my first Commodore 64 to this day, I've been
-excited from all the new technology and software and learning
-new things is part of my free time
-Problem solving – over 15 years of experience in
-troubleshooting hardware and software issues
-Decision making – daily routine in the operation of a retail unit
-Time management – planning is an integral part of my work and
-private life
-Tohle mi právě přišlo hodně dobré v jednom návodu na psaní CV, že soft skills jsou tak trochu nicneříkající. Pokud to člověk nerozvede, tak to recruiteři v podstatě nevidí, ale asi jak kdo. Ano, můžeš napsat, že jsi pečlivý. Ale to prostě může napsat kdokoliv a jsou to pro mnohé taková... prázdná slova. Ale když napíšu „jsem pečlivý - od roku 97 sbírám známky a pletu svetry“, tak si pod tím něco hned představím a věřím ti to, ačkoliv to není vůbec z oboru. Je to fakt super nápad.
+Přijde ti to jako **nadýchané obláčky slov**, které ve skutečnosti nic neznamenají a do životopisu si je může napsat kdokoliv? Nejsi mimo, takhle to totiž přijde úplně každému.
 
+I kdyby podvědomě, většina lidí ta slova pouze přeletí, čte přitom jen „bla bla bla“ a **myslí při tom na to, jestli dnes budou mít v kantýně řízek**. Potřebuješ každou vlastnost něčím podložit, aby si čtenář za vším představil něco konkrétního:
 
-Už jsem to trochu nakousla v předchozím odstavci. Vzpomeňte si na vše, co děláte nebo na čem jste se podíleli v rámci školy, a zkuste z toho vytěžit maximum. Příklad:
+- „Jsem pečlivý. Od roku 1997 sbírám známky a pletu svetry.“
+- „Jsem týmová hráčka. Dlouhé roky jsem hrála volejbal.“
+- „Zvládám organizaci času. S rodinou a zvířaty to jinak ani nejde.“
+- „Mám disciplínu. Na fotbalový trénink chodím třikrát týdně.”
+- „Ráda se vzdělávám. Poslouchám podcasty, přednášky, čtu odborné knihy.“
 
-„Disciplína – od svých 10 let aktivně hraji fotbal. To vyžaduje 3krát týdně tréninky po škole a aktivní účast na soustředěních.“
-
-„Chuť učit se – mimo školu navštěvuji ještě lekce anglického jazyka. Ráda poslouchám podcasty, čtu knihy a dívám se na záznamy z TEDx přednášek. “
-
-„Samostatnost – v rámci vysoké školy jsem pracoval na několika větších projektech a pracích, které jsem vždy zpracovával sám s pomocí internetu a knih. Rád si přicházím na věci sám, zjišťuji si informace a věřím, že i když to někdy déle trvá, než se zeptat zkušenějšího, je důležité si umět poradit sám.“
-
-„Odolnost vůči stresu – při škole jsem vypomáhala s vedením dětského kroužku. Pomáhala jsem koordinovat 30 dětí a komunikovala jsem i s jejich rodiči. To mě naučilo jednat rychle a být za každou cenu co nejvíce v klidu.“
-
-Věřím, že na základě mých příkladů už sami víte, co o sobě napsat. Nejste si jisti? Zeptejte se svého kamaráda nebo člena rodiny, zda ho nenapadá vlastnost či dovednost, kterou vy sami nevidíte, ale stojí za to ji zmínit.
-
-Píšete blog? Jste kreativní. Hrajete hokej? Jste týmový hráč
-
-Možná hrajete hokej, můžete napsat, že jste týmovým hráčem. Možná si píšete blog, který má slušnou návštěvnost, to znamená, že jste kreativní a že můžete do životopisu napsat i odkaz na blog, aby zaměstnavatel viděl styl vaší práce, aby poznal trochu vaši osobnost, aby věděl, že umíte psát. Jako psát bez chyb.
--->
+Pokud se ti nepovede vlastnost ilustrovat, raději ji neuváděj. Ostatně, **tato sekce není povinná**, nic je také lepší než šňůra bezvýznamných slov. Když se ti ale _soft skills_ povede udělat dobře, vynikneš a trochu vykompenzuješ chybějící praxi.
 
 ### 10. Jazyky
 
@@ -315,6 +295,8 @@ Odpusť si například **nadpis** „Životopis“ nebo „Curriculum Vitae“. 
 **Fotku** si na CV dát můžeš, ale nemusíš. Záleží na tvém pocitu. Když tam nebude, máš větší šanci, že tě na pohovor pozvali díky vědomostem a ne sympatickému úsměvu, což je dobrá známka pro ně i pro tebe. Fotka může recruiterům pomáhat přiřadit si tě k CV při osobním setkání.
 
 **Datum narození**, **rodinný stav** nebo přesná **adresa bydliště** nemusí nikoho zajímat. Pokud už z nějakého důvodu chceš adresu uvést, stačí nejbližší město, kde se zdržuješ. Určitě si nepiš na CV adresu trvalého bydliště u rodičů, které je na druhém konci republiky a jezdíš tam akorát na Vánoce.
+
+Lidé se liší v tom, zda je zajímají tvé **koníčky**. Někdo je ani nečte, jiný je použije jako otvírák konverzace, další v tom hledá lidskost, osobnost. Problém je, že když hraješ hokej, jde v tom vidět jednoduchého drsňáka i týmového hráče. Udělej z koníčků raději _[soft skills](#9-soft-skills)_.
 
 Ačkoliv se v některých vzorech nacházejí, **vlastnoruční podpis** a **datum vytvoření dokumentu** jsou příjemcům tvého CV k ničemu a působí archaicky. Když firma obdrží CV, automaticky předpokládá, že je aktuální.
 
