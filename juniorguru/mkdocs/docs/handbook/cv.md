@@ -90,32 +90,32 @@ Autor jazyka Python, Nizozemec Guido van Rossum, má na [svých stránkách](htt
 
 Jako podtitulek můžeš dát **název pozice, kterou chceš vykonávat**. Například „junior frontend developer“. Díky tomu si tě druhá strana může okamžitě snadno zařadit.
 
-Pokud už někde pracuješ a nehledáš svou úplně první práci, pozice na tvém CV by měla označovat tvou ambici, tedy **co hledáš**, a ne co děláš teď. Ať už jsi účetní nebo máš 5 let zkušeností s PHP, pokud měníš zaměření a hledáš práci s daty, napíšeš „junior data analyst”.
+Pokud už někde pracuješ, pozice na tvém CV by měla označovat tvou ambici, tedy **co hledáš**, a ne co děláš teď. Ať už jsi účetní nebo máš 5 let zkušeností s PHP, pokud měníš zaměření a hledáš práci s daty, napíšeš „junior data analyst”.
 
 Pozice **nezahrnuje název firmy**. Ani té, kde zrovna pracuješ, ani té, kam se teprve hlásíš. Hlavička CV je reklama na tvou osobu a ambici. Současná firma v ní nemá co dělat, protože není součástí té ambice. A předjímat už v CV, že tě někam vezmou, je trochu troufalé.
 
 ### 3. Kontakty
 
-V kontaktech by určitě měl být **e-mail a telefonní číslo**. Můžeš přidat i odkazy na své [GitHub](git.md#github) a [LinkedIn](linkedin.md) profily.
+V kontaktech by určitě měl být **e-mail a telefon**, na který se recruiter dovolá. Což běžně dělají, takže zvedej neznámá čísla. Můžeš přidat i odkazy na své [GitHub](git.md#github) a [LinkedIn](linkedin.md) profily.
 
 **Adresu bydliště vynech**, je to zbytečný údaj. V rámci výběrového řízení ti firmy žádné dopisy posílat nebudou. Pokud se někam hlásíš, předpokládá se, že se na místo pracoviště zvládneš dopravit, nebo že si vyřešíš stěhování.
 
-Dá se to vyřídit v [průvodním dopise](#motivacni-dopis), ale pokud má firma víc poboček, můžeš ke kontaktům připsat **město** jedné z nich, nebo nějakou spádovou oblast, aby bylo jasné, kam přesně se hlásíš. Kde přesně bydlíš je nepodstatné. Vzdálené město na CV vzbudí každopádně zvědavost. Budou se ptát, jestli hodláš dojíždět, pracovat na dálku, nebo se stěhovat.
+Dá se to vyřídit v [průvodním dopise](#motivacni-dopis), ale pokud má firma víc poboček, můžeš ke kontaktům připsat **město** jedné z nich, nebo nějakou spádovou oblast, aby bylo jasné, kam přesně se hlásíš. Kde zrovna bydlíš je nepodstatné. Vzdálené město na CV vzbudí každopádně zvědavost. Budou se ptát, jestli hodláš dojíždět, pracovat na dálku, nebo se stěhovat.
 
 Pokud nejsi původem z Česka, může se hodit připsat **zemi nebo občanství**, aby firma mohla počítat s vyřizováním pracovního víza, případně aby si mohli včas sehnat šarišsko-český slovník.
 
 ### 4. Souhrn
 
-Nejdůležitější část celého životopisu! Přitom jej stále ještě mnoho lidí opomíjí. Souhrn je **krátké shrnutí o tom, kdo jsi a co chceš**, které částečně nahrazuje [motivační dopis](#motivacni-dopis). Snažíš se v nejzhuštěnější podobě popsat:
+Nejdůležitější část celého životopisu! Přitom jej stále ještě mnoho lidí opomíjí. Souhrn je **krátké shrnutí o tom, kdo jsi a co chceš**, které částečně nahrazuje [motivační dopis](#motivacni-dopis). Snažíš se zhuštěně popsat:
 
 1. Kým jsi teď, jaký je aktuální stav?
 2. Kým chceš být v budoucnu, jaká je tvá ambice?
 
-Je to [perex](https://cs.wikipedia.org/wiki/Perex) zbytku dokumentu. Prodává tě. **Po jeho přečtení musí mít druhá strana jasno, jestli chce číst dál.** Pár úderných vět, které jdou k věci:
+Je to [perex](https://cs.wikipedia.org/wiki/Perex) zbytku dokumentu. Prodává tě. **Po jeho přečtení musí mít druhá strana jasno, jestli chce číst dál.** Pár úderných vět, k věci:
 
 - „QA inženýrka, která se chce stát Python programátorkou. Po kurzu od PyLadies a několika vlastních projektech hledám první pracovní příležitost.“
 - „I am a recent graduate of the React Girls course, currently contributing to open source projects in Česko.Digital. I am looking for an entry level React job with an opportunity to learn basics of UX.“
-- „Programovat zkouším od základní školy, poslední rok se učím hlavně C#. Po práci ve strojírenství hledám svou první příležitost jako .NET junior programátor na hlavní pracovní poměr.“
+- „Programovat zkouším od základní školy, poslední rok se učím hlavně C#. Po práci ve strojírenství hledám svou první příležitost jako .NET junior programátor, ideálně na dálku.“
 
 Kdo si CV otevře a toto přečte, okamžitě si tě **dokáže zařadit** a zbytek životopisu čte už v **kontextu, který souhrnem nastavuješ**:
 
@@ -123,7 +123,7 @@ Kdo si CV otevře a toto přečte, okamžitě si tě **dokáže zařadit** a zby
 - „Aha, bývalý zubař, teď frontendista.“
 - „Aha, testerka a datová analytička, která jde na vývojářku.“
 
-Recruiter také hned dokáže vyhodnotit, **jestli se tvoje cíle shodují s jejich očekáváními**. Může to ušetřit hodně času na obou stranách.
+Recruiter také dokáže hned vyhodnotit, **jestli se tvoje cíle shodují s jejich očekáváními**. Může to ušetřit hodně času na obou stranách.
 
 {% call blockquote_avatar(
   'Pro recruitery je hlavní se hned zorientovat. Klíčový je souhrn — co umíš za technologie? Jaké tě baví? Kam směřuješ? Potom seznam pozic a na čem jsi pracoval.',
@@ -153,15 +153,17 @@ Do CV patří pouze **věci, se kterými zvládneš dokončit základní praktic
   Luboš Račanský, profesionální programátor, autor článku [O náboru juniorů](https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html)
 {% endcall %}
 
-Neznamená to, že se nemůžeš hlásit na inzerát, kde **technologii, kterou neumíš**, chtějí. Nepiš si ji ale do dovedností. Pokud tě něco láká, ale ještě to neznáš, zakomponuj svou ambici do [souhrnu](#4-souhrn).
+Neznamená to samozřejmě, že se nemůžeš hlásit na inzerát, kde **chtějí technologii, kterou neumíš**. Nepiš si ji ale do dovedností. Pokud tě něco láká, ale ještě to neznáš, vyjádři tuto svou ambici v [souhrnu](#4-souhrn).
 
 A opravdu **stačí praktická zkušenost**, nemusíš být expert. Nech je prozkoušet si tě, případně se s tebou pobavit nad kódem tvých projektů. Ať sami posoudí, zda je pro jejich aktuální potřeby tvoje znalost dostatečná, nebo ne.
 
-I když je to oblíbené, **nedělej ze svých znalostí graf s procenty**. Co znamená 100 %? Měl by autor Pythonu plné skóre, když po 30 letech zkušeností říká, že mnohá zákoutí jazyka nezná a stále v něm něco objevuje? Sebehodnocení na neukotvené škále je rájem pro [Dunningův–Krugerův efekt](https://cs.wikipedia.org/wiki/Dunning%C5%AFv%E2%80%93Kruger%C5%AFv_efekt). Na grafy se vykašli.
+I když je to oblíbené, **nedělej ze svých znalostí graf s procenty**. Co znamená 100 %? Měl by autor Pythonu plné skóre, když po 30 letech zkušeností říká, že mnohá zákoutí jazyka nezná a stále v něm něco objevuje? Sebehodnocení na neukotvené škále je akorát podhoubí pro [Dunningův–Krugerův efekt](https://cs.wikipedia.org/wiki/Dunning%C5%AFv%E2%80%93Kruger%C5%AFv_efekt). Na grafy se vykašli.
 
-Neuváděj příliš mnoho dovedností, nedá se v tom orientovat. **Významné technologie** od podružných poznáš tak, že mají svou stránku na (anglické) Wikipedii. Například [Django](https://en.wikipedia.org/wiki/Django_(web_framework)) ji má, [arrow](https://pypi.org/project/arrow/) ne. A vyber jen ty, kterým se chceš do budoucna nejvíc věnovat, nebo jsou podstatné pro konkrétní pozici. Pokud nechceš trolit, „práci s počítačem“ si odpusť. Také kancelářské programy se berou na většině pozicích jako samozřejmost.
+Neuváděj příliš mnoho dovedností, nedá se v tom orientovat. **Významné technologie** od podružných poznáš tak, že mají svou stránku na (anglické) Wikipedii. Například [Django](https://en.wikipedia.org/wiki/Django_(web_framework)) ji má, [arrow](https://pypi.org/project/arrow/) ne. A vyber jen ty, kterým se chceš do budoucna nejvíc věnovat, nebo jsou podstatné pro konkrétní pozici.
 
-Takže co je výsledkem? Takové jakoby hashtagy. **Pár klíčových slov za sebou, v jenom řádku, výrazně v úvodu.** Spolu s pozicí a souhrnem to druhé straně pomůže okamžitě si tě zařadit. Opravdu to stačí. Nemůžeš si pomoci a chceš se rozepisovat? Posuň aspoň dovednosti někam níž, ať exkluzivní prostor v úvodu CV nezaplňují odstavce textu.
+Pokud nechceš trolit, věci jako „práce s počítačem“ nebo „práce s internetem“ si v IT fakt odpusť. Také kancelářské programy se berou na většině pozicích jako samozřejmost.
+
+Takže co je výsledkem? Takové jakoby hashtagy. **Pár klíčových slov za sebou, v jednom řádku, výrazně v úvodu.** Spolu s pozicí a souhrnem to druhé straně pomůže okamžitě si tě zařadit. Opravdu to stačí. Nemůžeš si pomoci a chceš se rozepisovat? Posuň aspoň dovednosti někam níž, ať exkluzivní prostor v úvodu CV nezaplňují odstavce textu.
 
 ### 6. Projekty
 
@@ -218,7 +220,7 @@ Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo d
 
 ### 7. Vzdělání
 
-Z formálního vzdělání uveď **pouze nejvyšší dosažené**. Rozmezí let, název školy, obor. U nedokončeného vzdělání se hodí to nějak poznačit. Pokud byl na konci projekt, třeba diplomka, dej tam zmínku a téma práce. Jestliže máš více studovaných VŠ, dej tam všechny. Vůbec neřeš, zda mají tyto řádky něco společného s IT, vždy to říká něco o **základu, na kterém stavíš**.
+Z formálního vzdělání uveď **pouze nejvyšší dosažené**. Rozmezí let, název školy, obor. U nedokončeného vzdělání se hodí to nějak poznačit. Pokud byl na konci projekt, třeba diplomka, dej tam zmínku a téma práce. Jestliže máš více studovaných VŠ, dej tam všechny. U škol vůbec neřeš, zda mají něco společného s IT, vždy to říká něco o **základu, na kterém stavíš**.
 
 Pokud máš kurzy, do vzdělání si je určitě napiš. Pouze však ty, které **souvisí s oborem, délku mají v řádu měsíců a organizuje je nějaká instituce**. Je jedno, jestli byly online nebo prezenčně. YouTube videa nebo mini kurzy z Udemy spíš ne, Coursera nebo PyLadies spíš ano.
 
@@ -230,15 +232,15 @@ Pokud ti z toho vyšlo více záznamů o vzdělání než jeden, seřaď je chro
 
 ### 8. Pracovní zkušenosti
 
-Předpoklad tohoto návodu je, že žádnou komerční praxi v IT ještě nemáš. I proto jsou pracovní zkušenosti takhle vzadu, jinak by nahradily [projekty](#6-projekty). A pozor, počítají se i brigády, výpomoci, stáže, dobrovolnické aktivity.
+Předpoklad tohoto návodu je, že žádnou komerční praxi v IT ještě nemáš. I proto jsou pracovní zkušenosti takhle vzadu, jinak by nahradily [projekty](#6-projekty). A pozor, **počítají se i stáže, brigády, dobrovolnictví**. Vše z toho je praxe, která by tuto sekci posunula na CV výš.
 
-Předchozí práci mimo obor silně zestručni. Vždy jen **roky od do, název firmy, pozice**. Od nejnovějších po nejstarší. Nemusíš ani uvádět všechny. Vyber pouze významné milníky nebo zkušenosti, které se aspoň trochu váží k pozici, na kterou se hlásíš.
+Práci mimo obor silně zestručni. Vždy jen **roky od do, název firmy, pozice**. Od nejnovějších po nejstarší. Nemusíš ani uvádět všechny. Vyber pouze významné milníky nebo zkušenosti, které se aspoň trochu váží k pozici, na kterou se hlásíš.
 
-Do jednoho záznamu dej klidně i **celé úseky kariéry**. „Od do jsem dělal v bankovnictví, vypracoval jsem se na pozici investičního specialisty.“ Ve dvou větách popiš, co díky tomu umíš, a je to. Další detaily těchto minulých zaměstnání jsou pro tvou budoucnost vedlejší.
+Do jednoho záznamu dej klidně i **celé úseky kariéry**. „Od do jsem dělal v bankovnictví, vypracoval jsem se na pozici investičního specialisty…“ Další detaily těchto minulých zaměstnání jsou pro tvou budoucnost vedlejší.
 
-Připiš vždy **větu o tom, co bylo náplní tvojí práce**, co se ti tam povedlo, nebo co díky této zkušenosti umíš. Kuchařinu asi vysvětlovat nemusíš, ale jak vypadá den dělníka na úseku pálených lupků, to třeba lidi v IT netuší.
+Připiš **větu o tom, co bylo náplní tvojí práce**. Kuchařinu asi vysvětlovat nemusíš, ale co dělá člověk na úseku pálených lupků, to většina lidí fakt neví.
 
-Když přihodíš, **co díky tomu umíš**, jen dobře. Může to být vedení lidí, týmová práce, komunikativnost, sebevzdělávání, koordinace, pečlivost. To vše se dá využít i v IT a je škoda to nezmínit. Samozřejmě krátce.
+Když přihodíš, **co se ti tam povedlo a co díky tomu umíš**, jen dobře. Může to být vedení lidí, týmová práce, komunikativnost, sebevzdělávání, koordinace, pečlivost. To vše se dá využít i v IT a je škoda to nezmínit. Samozřejmě krátce.
 
 Můžeš napsat obecně o své chuti ke vzdělávání, ale konkrétní **certifikáty z oborů mimo IT** nikomu nic říkat nebudou. Bohužel, třicet osvědčení ze zubařské praxe při programování nevyužiješ. Zarámuj si je, ale na CV budou zbytečně. I když, popravdě málokdo viděl tolik _[technical debt](https://en.wikipedia.org/wiki/Technical_debt)_ a _[legacy](https://en.wikipedia.org/wiki/Legacy_code)_ jako zubaři.
 
@@ -258,15 +260,15 @@ I kdyby podvědomě, většina lidí ta slova pouze přeletí, čte přitom jen 
 - „Mám disciplínu. Na fotbalový trénink chodím třikrát týdně.”
 - „Ráda se vzdělávám. Poslouchám podcasty, přednášky, čtu odborné knihy.“
 
-Pokud se ti nepovede vlastnost ilustrovat, raději ji neuváděj. Ostatně, **tato sekce není povinná**, nic je také lepší než šňůra bezvýznamných slov. Když se ti ale _soft skills_ povede udělat dobře, vynikneš a trochu vykompenzuješ chybějící praxi.
+Pokud se ti nepovede vlastnost ilustrovat, raději ji neuváděj. Ostatně, **tato sekce není povinná**, nic je také lepší než šňůra bezvýznamných slov. Když se ti ale _soft skills_ povede udělat dobře, vynikneš a zase o kousek vykompenzuješ chybějící praxi.
 
 ### 10. Jazyky
 
-Někde na konci CV měj seznam všech jazyků, které ovládáš. Většinu firem bude zajímat **hlavně angličtina**. Jestli hledáš práci v Evropě, popiš znalost každého jazyka pomocí [SERR](https://cs.wikipedia.org/wiki/Spole%C4%8Dn%C3%BD_evropsk%C3%BD_referen%C4%8Dn%C3%AD_r%C3%A1mec) (anglicky _CEFR_). Pokud míříš někam do světa, raději to popiš slovně. Úroveň angličtiny si můžeš otestovat třeba přes [EF SET](https://www.efset.org/).
+Někde na konci CV měj seznam všech jazyků, které ovládáš. Většinu firem bude zajímat **hlavně angličtina**. Jestli hledáš práci v Evropě, popiš znalost každého jazyka pomocí [SERR](https://cs.wikipedia.org/wiki/Spole%C4%8Dn%C3%BD_evropsk%C3%BD_referen%C4%8Dn%C3%AD_r%C3%A1mec) (anglicky _CEFR_). Úroveň angličtiny si můžeš otestovat třeba přes [EF SET](https://www.efset.org/).
 
 [Europass](https://europass.cz/) používá **sebehodnotící škálu** založenou na SERR v pěti okruzích: Poslech, čtení, mluvená komunikace, samostatný ústní projev a psaní. Ke každému okruhu a každé úrovni jsou tam navíc jedno až dvouvětné popisky pro orientaci.
 
-Na druhou stranu, on to v IT nikdo zas tak moc neřeší. Stejně všichni nakonec mluví nějakou variantou [Euro English](https://cs.wikipedia.org/wiki/Euro_English). **Gramatika jde stranou, hlavně když se domluvíš.** Většinou si jazyk ověří během pohovoru a pokud dokážeš vést konverzaci, bývá to _good enough_. Určitě nemusíš mít oficiální certifikáty.
+Na druhou stranu, v IT to nikdo zas tak moc neřeší. Stejně všichni nakonec mluví nějakou variantou [Euro English](https://cs.wikipedia.org/wiki/Euro_English). **Gramatika jde stranou, hlavně když se domluvíš.** Většinou si jazyk ověří během pohovoru a pokud dokážeš vést konverzaci, bývá to _good enough_. Určitě nemusíš mít oficiální certifikáty.
 
 ## Zbytečnosti
 
@@ -278,21 +280,23 @@ Odpusť si například **nadpis** „Životopis“ nebo „Curriculum Vitae“. 
 
 **Datum narození**, **rodinný stav** nebo přesná **adresa bydliště** nemusí nikoho zajímat. Pokud už z nějakého důvodu chceš adresu uvést, stačí nejbližší město, kde se zdržuješ. Určitě si nepiš na CV adresu trvalého bydliště u rodičů, které je na druhém konci republiky a jezdíš tam akorát na Vánoce.
 
-Lidé se liší v tom, zda je zajímají tvé **koníčky**. Někdo je ani nečte, jiný je použije jako otvírák konverzace, další v tom hledá lidskost, osobnost. Problém je, že když hraješ hokej, jde v tom vidět jednoduchého drsňáka i týmového hráče. Udělej z koníčků raději _[soft skills](#9-soft-skills)_.
+Lidé se liší v tom, zda je zajímají tvé **koníčky**. Někdo je ani nečte, jiný je použije jako otvírák konverzace, další v tom hledá lidskost, osobnost. Problém je, že když děláš hokej, jde v tom vidět týmového hráče i zpoceného primitiva. Udělej z koníčků raději _[soft skills](#9-soft-skills)_.
 
-Ačkoliv se v některých vzorech nacházejí, **vlastnoruční podpis** a **datum vytvoření dokumentu** jsou příjemcům tvého CV k ničemu a působí archaicky. Když firma obdrží CV, automaticky předpokládá, že je aktuální.
+Programátoři běžně **nedostávají služební auta a nikam neřídí**, takže není nutné psát, jestli máš řidičák a jaký. Dá se to ale sfouknout dvěma slovy, tak pokud na ně máš místo, proč ne.
+
+Ačkoliv se v některých vzorech nacházejí, **vlastnoruční podpis** a **datum vytvoření dokumentu** jsou druhé straně k ničemu a působí archaicky. Když firma obdrží CV, automaticky předpokládá, že je aktuální.
 
 ## Motivační dopis
 
 Většinou se na pozici hlásíš e-mailem. Ten má předmět, tělo a do přílohy dáváš PDF s životopisem. Tomuto e-mailu se říká průvodní nebo motivační dopis, anglicky _cover letter_.
 
-U **předmětu** je dobré se zamyslet nad tím, že druhá dostává takových e-mailů hodně. Je tedy praktické, když tam bude tvoje jméno a přesný název vypsané pozice, na kterou se hlásíš. Když si recruiter otevře schránku, bude se hned orientovat. Tvůj e-mail také snadněji vyhledá.
+U **předmětu** je dobré se zamyslet nad tím, že firma dostává takových e-mailů hodně. Je tedy praktické, když tam bude tvoje jméno a přesný název vypsané pozice, na kterou se hlásíš. Když si recruiter otevře schránku, bude se hned orientovat. Tvůj e-mail také snadněji vyhledá.
 
 Motivační dopis určitě **nedávej do zvláštního dokumentu** a nepřikládej jako přílohu. Piš rovnou do těla e-mailu a **piš to krátké**. Žádný „hluboký lidský příběh“ na deset odstavců. Nepřepisuj životopis do prózy. I tam, kde to čtou, s tím chtějí trávit maximálně několik sekund.
 
 ### Souhrn místo dopisu
 
-Důležitost motivačního dopisu se v různých firmách liší. **Někde ho skoro nečtou, jinde má váhu větší.** Nikdy však nejde o zásadní věc. Pokud máš dobře udělaný [souhrn](#4-souhrn), můžeš motivační dopis vypustit. Napiš na jakou pozici se hlásíš, přilož CV, hotovo. Na druhou stranu, pokud by dopis četli, je to **prostor pro věci, které do CV nepatří**.
+Důležitost motivačního dopisu se v různých firmách liší. **Někde ho skoro nečtou, jinde má váhu větší.** Nikdy však nejde o zásadní věc. Pokud máš dobře udělaný [souhrn](#4-souhrn), můžeš motivační dopis vypustit. Napiš na jakou pozici se hlásíš, přilož CV, hotovo. Na druhou stranu, pokud by dopis četli, je to **prostor sdělit něco navíc**.
 
 ### Co psát
 
