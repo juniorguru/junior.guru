@@ -27,16 +27,16 @@ Tím prvním jistě nic nepokazíš, ale jde to udělat lépe. To však nutně n
   Daniel Nekonečný by tvé CV možná pochválil, recruiter si zaťuká na čelo a vyhodí ho
 {% endcall %}
 
-Firmy v americkém Silicon Valley mají denně stovky kandidátů. U nás tak velká konkurence začátečníků není, firmám se hlásí jednotky nebo desítky lidí. Nepotřebuješ se odlišit za každou cenu.
+**Nepotřebuješ se odlišit za každou cenu.** Firmy v americkém Silicon Valley mají denně stovky kandidátů. U nás tak velká konkurence začátečníků není, na pozice se hlásí jednotky nebo desítky lidí.
 
 Napři své úsilí směrem, kde bude mít největší efekt, ideálně s minimálním rizikem. Životopis jako omalovánka je hodně úsilí s nejistým výsledkem. **Pohlídej si raději základní věci.**
 
 Pokud se nehlásíš na pozici v grafice, designu, nebo UX, tak se neočekává ani to, že budeš mít všechno typograficky vyladěné a správně použiješ pomlčky místo spojovníků. Budou to číst recruiteři, programátoři a manažeři. Tyto lidi neoslníš, **vizuální stránka věci je pro ně vedlejší**. Nepřeháněj to s barvami nebo fonty. Soustřeď se především na to, aby byl výsledek dobře čitelný.
 
-Přehledné CV, které jde **přečíst do pár sekund**, je dostačující a mnohdy bude i odlišující, protože většina lidí takové vyrobit neumí. Kreativitu a originalitu ale směřuj raději do svých [projektů](#6-projekty). S těmi si vyhraj. Na nich ukaž, co umíš, a že na to máš.
+Přehledné CV, které jde **přečíst do pár sekund**, je dostačující a mnohdy bude i odlišující, protože většina lidí takové vyrobit neumí. Kreativitu a originalitu směřuj raději do svých [projektů](#6-projekty). S těmi si vyhraj. Na nich ukaž, co umíš, a že na to máš.
 
 
-## K čemu je životopis
+## Jak nad tím přemýšlet
 
 Životopis je **reklamní letáček**, kterým se snažíš prodat své zkušenosti. Není to vyčerpávající seznam dokumentující poctivě vše, co máš za sebou. Vypíchni to důležité. Nepodstatné vůbec nepiš.
 
@@ -44,11 +44,11 @@ I bez komerční praxe **máš co nabídnout**. Firma tě může naučit co pot�
 
 Pozor, životopis není „sebechvála“, za kterou se máš stydět. V Česku je hluboce zakořeněná **kultura falešné skromnosti**, která brzdí spoustu šikovných lidí. I největší profíci tady mají problém napsat o sobě půl věty. Mnoho lidí trpí [syndromem podvodníka](https://www.heroine.cz/zeny-it/6341-syndrom-podvodnice-vas-pri-praci-v-it-snadno-dozene-jak-proti-nemu-bojovat), úspěchy si nedokážou přiznat.
 
-Pokud chceš v této zemi vystoupit z davu, nehledej okrasný font, ale **nauč se zdravě bavit o sobě**. Když dokážeš popsat svůj potenciál, úspěch, přínos, nebo pokud máš dokonce čísla, která můžeš do svého tvrzení dát, je to pecka.
+Pokud chceš v Česku nebo na Slovensku vystoupit z davu, nehledej okrasný font, ale **nauč se zdravě bavit o sobě**. Když dokážeš popsat svůj potenciál, úspěch, přínos, nebo pokud máš dokonce čísla, která můžeš do svého tvrzení dát, je to pecka.
 
 ## Posílej „papír“
 
-Usnadni život tomu, kdo bude tvé CV zpracovávat, typicky spolu s životopisy dalších deseti kandidátů. Ve většině firem si recruiteři **organizují údaje o kandidátech** v softwaru, kterému se říká ATS (_application tracking system_). Tam potřebují tvé CV nahrát, někdy i strojově analyzovat. Občas si životopisy dokonce tisknou na papír.
+Usnadni život tomu, kdo bude tvé CV zpracovávat, typicky spolu s životopisy dalších deseti kandidátů. Ve většině firem si recruiteři **organizují údaje o kandidátech** v softwaru, kterému se říká ATS (_application tracking system_). Tam potřebují tvé CV nahrát, někdy i strojově analyzovat. Občas si zase životopisy tisknou na papír.
 
 Posílej tedy **dokument, který bude fungovat i na papíře**. JPG obrázek? Není to dokument, nelze ani označit text. Zelené písmo na černém pozadí? Vypadá velmi „hackersky“ a jistě zaujme. Minimálně tím, že když projde tiskárnou, firma bude muset pořídit nový toner.
 
@@ -78,19 +78,13 @@ Snaž se vlézt **na jednu stránku**. Určitě ne za cenu toho, že ta stránka
 
 Následující kapitoly jsou v pořadí, v jakém by se měly dané části na životopisu vyskytovat.
 
-<!--
-Hledat na internetu jak se dělá „killer cv“, ale pár základních rad.
-
-No rád přidám můj úhel pohledu, na začátku když jsem psal životopis, neměl jsem vůbec tušení co bych o sobě psal,  relevantní vzdělání ani pracovní zkušenost nemám, tak jsem volil cestu že se maximálně rozepišu o programech které jsem udělal na vlastní iniciativu, vlastně ani nic jiného než tohle ukázat nemohu.
-
-Skúsim sa teda zamyslieť nad nejakými silnými stránkami 🙂 promysli si, sepiš své silné stránky, úspěchy, projekty. Za mě i ty, co nejsou IT. Vedeš ve volném čase nějaký kroužek? Organizuješ něco? Děláš sport? Fotíš, maluješ? To všechno jsou činnosti, díky kterým máš vlastnosti přínosné i pro práci (organizační schopnosti, pomáhání druhým, vůle dosahovat cílů a dotahovat věci, kreativita...).
--->
-
 ### 1. Jméno
 
-Začni **celým svým jménem**. Velkým, dobře čitelným, výrazným písmem. Pokud lidé mívají problém tvé jméno přečíst na první dobrou správně, můžeš drobným písmem doplnit **fonetickou nápovědu**.
+Začni **celým svým jménem**. Velkým, dobře čitelným, výrazným písmem.
 
-Autor jazyka Python, Nizozemec Guido van Rossum, má na [svých stránkách](https://gvanrossum.github.io/) celý odstavec o čtení svého jména a dokonce i nahrávku, ale tak daleko asi chodit nemusíš.
+Pokud lidé mívají problém tvé jméno přečíst na první dobrou správně, můžeš drobným písmem doplnit **fonetickou nápovědu**. Nepoužívej [IPA](https://cs.wikipedia.org/wiki/Mezin%C3%A1rodn%C3%AD_fonetick%C3%A1_abeceda), běžný smrtelník ji nezná.
+
+Autor jazyka Python, Nizozemec Guido van Rossum, má na [svých stránkách](https://gvanrossum.github.io/) celý odstavec o čtení svého jména a dokonce i nahrávku, tobě bude stačit napsat to **foneticky v jazyce životopisu**. Anglicky třeba \[sharka kash-par-kova\]. Česky například \[viglaš\], pokud se jmenuješ Wiglasz.
 
 ### 2. Pozice
 
@@ -112,40 +106,24 @@ Pokud nejsi původem z Česka, může se hodit připsat **zemi nebo občanství*
 
 ### 4. Souhrn
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
-{% endcall %}
+Nejdůležitější část celého životopisu! Přitom jej stále ještě mnoho lidí opomíjí. Souhrn je **krátké shrnutí o tom, kdo jsi a co chceš**, které částečně nahrazuje [motivační dopis](#motivacni-dopis). Snažíš se v nejzhuštěnější podobě popsat:
 
-<!-- Nahoře „headline“, jasné krátké shrnutí, které mě prodává, kdo jsem a co chci, kam mířím, FAKT DŮLEŽITÉ
+1. Kým jsi teď, jaký je aktuální stav?
+2. Kým chceš být v budoucnu, jaká je tvá ambice?
 
-Hmm, já toto plus tu úvodní větu beru ne tolik jako popis toho, co jsi, jako toho, co chceš být, kam směřuješ. Ten zbytek CV pak popisuje popravdě to, co už umíš. Ale zajímá mě názor ostatních 🙂
+Je to [perex](https://cs.wikipedia.org/wiki/Perex) zbytku dokumentu. Prodává tě. **Po jeho přečtení musí mít druhá strana jasno, jestli chce číst dál.** Pár úderných vět, které jdou k věci:
 
-Něco jako QA Engineer who wants to become frontend developer?
-Tedy podle toho, cos píšeš v tom CV tipuju, že frontend nebo rovnou React třeba?
-Podstatnější je kam chceš jít, ne kde jsi.
+- „QA inženýrka, která se chce stát Python programátorkou. Po kurzu od PyLadies a několika vlastních projektech hledám první pracovní příležitost.“
+- „I am a recent graduate of the React Girls course, currently contributing to open source projects in Česko.Digital. I am looking for an entry level React job with an opportunity to learn basics of UX.“
+- „Programovat zkouším od základní školy, poslední rok se učím hlavně C#. Po práci ve strojírenství hledám svou první příležitost jako .NET junior programátor na hlavní pracovní poměr.“
 
-Z mého pohledu je velmi důležité zejména úvodní odstavec, který funguje jako shrnutí zkušeností, znalostí a budoucích aspirací. Je to v podstatě stejné jako perex u článku. Po přečtení se rozhoduji, zdali budu číst dále a zdali mě autor/kandidát svým obsahem zaujal.
+Kdo si CV otevře a toto přečte, okamžitě si tě **dokáže zařadit** a zbytek životopisu čte už v **kontextu, který souhrnem nastavuješ**:
 
-No a co mi tam chybí úplně, tak je nějaká úvodní věta, kde popíšeš, kdo jsi a co chceš, jaký je tvůj aktuální stav a kam směřuješ. To tam skoro nikdo nemá, ale i @Jiří Psotka potvrdil, že je to fakt strašně dobré tam mít.
+- „Aha, začátečnice v PHP.“
+- „Aha, bývalý zubař, teď frontendista.“
+- „Aha, testerka a datová analytička, která jde na vývojářku.“
 
-Podle mě i junior může takovou větu sepsat. Je to těžké, něco zformulovat o sobě, ale jde to. Třeba
-
-„Od základní školy programuji, už XY let se zaměřuji hlavně na C#. Po práci ve strojírenství hledám svou první příležitost jako .NET junior programátor na hlavní pracovní poměr.“
-
-Tohle říká kdo jsi a co chceš. Kdo si CV otevře a toto přečte, okamžitě si tě dokáže zařadit a zbytek CV už čte v tomto kontextu. Dokáže hned říct, jestli se tvoje cíle neshodují s jejich očekáváními a ušetřit případně čas oběma stranám.
-
-Beru to tak, že v tom úvodu si tě recruiter potřebuje nějak v hlavě „zařadit“ a při čtení zbytku CV už jen přemýšlí nad tím, co teda přinášíš a co vše umíš a co ti chybí. A to zařazení může vypadat takto:
-- Aha, začátečnice v PHP.
-- Aha, bývalý zubař, teď frontendista.
-- Aha, datová analytička a QA, která jde na vývojářku.
-Takže toto sepnutí kontaktů bych se v hlavě čtenáře CV na těch prvních řádcích snažil vyvolat.
-
-2. Obecně mám rád v CV nějaký krátký odstavec nebo i jen větu/dvě o tom, CO za práci hledáš. Zejména, když se není moc čeho chytnout v předchozích pracovních místech. Máš tam jen "frontend dev", osobně bych to lehce doplnil.
-
-Nebo chceš třeba pak zabrušovat do UX, já nevím, ale prostě bych se snažil v těch větách podchytit a) kdo jsi/kde jsi teď a pak b) kam směřuješ, po čem pokukuješ.
-
-Jedna z těch zásadnějších rad je **začít jasným shrnutím**: _„I am a recent graduate of the [PyLadies](https://pyladies.cz/) beginner course, currently contributing to [Česko.Digital](https://cesko.digital/) with their open source projects. My focus is on Python, which I would like to apply in Data Science.“_
--->
+Recruiter také hned dokáže vyhodnotit, **jestli se tvoje cíle shodují s jejich očekáváními**. Může to ušetřit hodně času na obou stranách.
 
 {% call blockquote_avatar(
   'Pro recruitery je hlavní se hned zorientovat. Klíčový je souhrn — co umíš za technologie? Jaké tě baví? Kam směřuješ? Potom seznam pozic a na čem jsi pracoval.',
@@ -154,6 +132,10 @@ Jedna z těch zásadnějších rad je **začít jasným shrnutím**: _„I am a 
 ) %}
   Pavel Brožek, recruiter v [dreamBIG](https://www.dreambig.cz/)
 {% endcall %}
+
+Nikdo neříká, že je jednoduché souhrn napsat, ale když se ti to povede, **je to tvůj trumf**. Je úplně normální, že to má hlavu a patu až na desátý pokus. Většinou **to mnohem rychleji vymyslí tvůj kamarád**, protože tvou kariéru vnímá z nadhledu.
+
+Vizuálně ať je to **velkorysé** jako vstup do významné budovy. Kresbu monumentálního sloupořadí si odpusť, ale ať je souhrn první, hned za hlavičkou dokumentu. Dej mu celou šířku stránky a dopřej mu klidně větší písmo.
 
 ### 5. Dovednosti
 
