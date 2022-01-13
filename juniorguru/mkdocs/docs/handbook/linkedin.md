@@ -9,14 +9,14 @@ template: main_handbook.html
 # Profil na LinkedIn
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě přepisuje. Za pár dní tady bude jiný text, lepší, voňavější, nápomocnější.
+  {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě připravuje. Za pár dní tady něco bude. Mezitím si můžeš přečíst o tom, jak si vyladit [životopis](cv.md).
 {% endcall %}
 
 <!-- {% call lead() %}
   Bla bla
 {% endcall %} -->
 
-Základem v dnešní době je mít **co nejlépe vyplněný [profil na LinkedIn](https://www.linkedin.com/in/honzajavorek)**. Většinou stačí poslat odkaz na svůj LinkedIn a krátký průvodní dopis — není potřeba přikládat ještě zvlášť sepsaný životopis ve Wordu nebo v PDF. Zajímavým doplňkem životopisu může být tvůj [osobní web](../candidate-handbook.md#osobni-web-a-blog).
+<!-- Základem v dnešní době je mít **co nejlépe vyplněný [profil na LinkedIn](https://www.linkedin.com/in/honzajavorek)**. Většinou stačí poslat odkaz na svůj LinkedIn a krátký průvodní dopis — není potřeba přikládat ještě zvlášť sepsaný životopis ve Wordu nebo v PDF. Zajímavým doplňkem životopisu může být tvůj [osobní web](../candidate-handbook.md#osobni-web-a-blog).
 
 **Životopis piš anglicky, česká verze je zbytečná.** Větší firmy mají buď přímo mezinárodní kolektiv, nebo i tak vyžadují nějakou úroveň znalosti angličtiny. Ani ryze české firmy s angličtinou nebudou mít problém, v IT je to standard.
 
@@ -44,7 +44,7 @@ Jedna z těch zásadnějších rad je **začít jasným shrnutím**: _„I am a 
   Luboš Račanský, profesionální programátor, autor článku [O náboru juniorů](https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html)
 {% endcall %}
 
-<small>Rady v této podkapitole volně vychází mimo jiné i ze [článku recruiterky Simony Liptákové](https://research.redhat.com/blogs_cpt/how-to-hack-your-cv-7-useful-tips-for-students-with-no-work-experience/). Díky!</small>
+<small>Rady v této podkapitole volně vychází mimo jiné i ze [článku recruiterky Simony Liptákové](https://research.redhat.com/blogs_cpt/how-to-hack-your-cv-7-useful-tips-for-students-with-no-work-experience/). Díky!</small> -->
 
 <!--
 Mateje o linkedinu minimalne citovat https://youtu.be/pTrTqUsKkME?t=3360 a predtim dela jeste screensharing
