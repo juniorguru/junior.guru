@@ -47,6 +47,10 @@ Jedna z těch zásadnějších rad je **začít jasným shrnutím**: _„I am a 
 <small>Rady v této podkapitole volně vychází mimo jiné i ze [článku recruiterky Simony Liptákové](https://research.redhat.com/blogs_cpt/how-to-hack-your-cv-7-useful-tips-for-students-with-no-work-experience/). Díky!</small>
 
 <!--
+Mateje o linkedinu minimalne citovat https://youtu.be/pTrTqUsKkME?t=3360 a predtim dela jeste screensharing
+
+velka cast o LI https://medium.com/@yablko/uk%C3%A1%C5%BE-%C5%BEe-si-%C4%8Dlovek-3d134c421940
+
 Ja bych si dovolila nesouhlasit. Ja mám LinkedIn jen velmi stručný a životopis VŽDY šíji na míru dané pozici. Nemyslím si, že jeden životopis je aplikovatelný na více pozic. Toto bych osobně doporučila všem.
 
 Ahoj, když nemám žádné předchozí zkušenost v IT, zatím jsem dělal jen to CNC, tak má cenu si vůbec zakládat Linkedin účet? Resp. chápu takový profily u zkušenějších lidí, co třeba přechází z jiné firmy na vyšší pozici v rámci IT, ale když jsem absolutní junior, má vůbec cenu si ten profil zakládat, pokud si hledám první práci v IT?

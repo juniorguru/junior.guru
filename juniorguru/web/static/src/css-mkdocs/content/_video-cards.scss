@@ -27,7 +27,7 @@
   }
 }
 
-.video-card:nth-child(2n) {
+.video-cards .video-card:nth-child(2n) {
   @include media-breakpoint-up(sm) {
     margin-right: 0;
   }

@@ -4,18 +4,13 @@ description: Co dát do životopisu, když nemáš praxi? Když jsi student? Jak
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, figure, note, blockquote_avatar with context %}
+{% from 'macros.html' import lead, figure, note, blockquote_avatar, video_card with context %}
 
 # Životopis
 
 {% call lead() %}
-  Co dát do životopisu, když jsi junior v IT a nemáš ještě praxi? Přečti si návod na přehledné a funkční CV, ze kterého budou mít recruiteři radost.
+  Co dát do životopisu, když jsi junior v IT a nemáš ještě praxi? Tady máš návod na přehledné a úderné CV, ze kterého budou mít recruiteři radost.
 {% endcall %}
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto stránku Honza teprve píše. Některé kapitoly ještě chybí.
-{% endcall %}
-
 
 ## Chceš přehlednost, ne krásu
 
@@ -23,7 +18,7 @@ template: main_handbook.html
 
 Tím prvním jistě nic nepokazíš, ale jde to udělat lépe. To však nutně neznamená originálně. Některá CV jsou **natolik „kreativní“, že brání recruiterům v práci**. Životopis s puntíky a kolibříky sice v paměti uvízne, ale pouze proto, že písmo bylo špatně čitelné a že čtvrt hodiny trvalo zjistit, kdo vlastně jsi a co chceš.
 
-{% call figure('daniel-nekonecny.jpg', 'Daniel Nekonečný', lazy=False) %}
+{% call figure('daniel-nekonecny.jpg', 'Daniel Nekonečný') %}
   Daniel Nekonečný by tvé CV možná pochválil, recruiter si zaťuká na čelo a vyhodí ho
 {% endcall %}
 
@@ -45,6 +40,10 @@ I bez komerční praxe **máš co nabídnout**. Firma tě může naučit co pot�
 Pozor, životopis není „sebechvála“, za kterou se máš stydět. V Česku je hluboce zakořeněná **kultura falešné skromnosti**, která brzdí spoustu šikovných lidí. I největší profíci tady mají problém napsat o sobě půl věty. Mnoho lidí trpí [syndromem podvodníka](https://www.heroine.cz/zeny-it/6341-syndrom-podvodnice-vas-pri-praci-v-it-snadno-dozene-jak-proti-nemu-bojovat), úspěchy si nedokážou přiznat.
 
 Pokud chceš v Česku nebo na Slovensku vystoupit z davu, nehledej okrasný font, ale **nauč se zdravě bavit o sobě**. Když dokážeš popsat svůj potenciál, úspěch, přínos, nebo pokud máš dokonce čísla, která můžeš do svého tvrzení dát, je to pecka.
+
+{% call note() %}
+  {{ 'lightbulb'|icon }} V [klubu](../club.md) probíráme sebevědomí a sebelásku celkem často. Dáváme si zpětnou vazbu a podporujeme se.
+{% endcall %}
 
 ## Posílej „papír“
 
@@ -69,6 +68,10 @@ Polotovar CV měj v obou jazycích a následuj jednoduché pravidlo: **Na inzer�
 **Netrap se nedokonalostí svých formulací.** Pokud se zrovna nechlubíš jazykovými certifikáty, nebo angličtinu nevyučuješ, stačí ti [Euro English](https://cs.wikipedia.org/wiki/Euro_English). Druhá strana taky nemívá angličtinu jak z BBC.
 
 Popros někoho, kdo dobře ovládá jazyk, ať ti CV zkontroluje. To platí pro obě verze. Nejde o to přikrášlovat realitu svého projevu a ladit každé slovo. Jde o kontrolu, aby tam nebyly **zjevné hrubky**. Ruší při čtení a působí amatérsky. Je to jako jít v oblíbeném tričku, protože chceš působit autenticky. V pořádku, ale nesmí mít díry.
+
+{% call note() %}
+  {{ 'lightbulb'|icon }} V [klubu](../club.md) ti rádi na CV mrkneme. Víc očí, méně hrubek!
+{% endcall %}
 
 ## Obsah životopisu
 
@@ -137,6 +140,10 @@ Nikdo neříká, že je jednoduché souhrn napsat, ale když se ti to povede, **
 
 Vizuálně ať je to **velkorysé** jako vstup do významné budovy. Kresbu monumentálního sloupořadí si odpusť, ale ať je souhrn první, hned za hlavičkou dokumentu. Dej mu celou šířku stránky a dopřej mu klidně větší písmo.
 
+{% call note() %}
+  {{ 'lightbulb'|icon }} V [klubu](../club.md) ti rádi dáme na souhrn zpětnou vazbu. Je tam jak Honza, autor tohoto návodu, tak i spousta lidí, kteří mají zkušenosti z obou stran pohovorů.
+{% endcall %}
+
 ### 5. Dovednosti
 
 Sepiš **technologie, případně metodiky nebo nástroje, které ovládáš**. Technologie jsou HTML nebo Python, metodika je třeba SCRUM, tedy „způsob jak něco dělat“. Nástroj může být Git nebo Jira.
@@ -167,41 +174,11 @@ Takže co je výsledkem? Takové jakoby hashtagy. **Pár klíčových slov za se
 
 ### 6. Projekty
 
-<!-- Pak ideálně projekty, které mám vyrobené nebo na kterých jsem se podílel (např. v rámci dobrovolnictví pro Česko.Digital), ideálně s odkazy jak na místo, kde si je mohu prohlédnout v provozu, tak na místo, kde je kód (GitHub)
+Ukaž, že zvládáš **prakticky použít vědomosti z kurzů**. Že umíš vyrobit něco vlastního, nebo že se na něčem podílíš. [Portfolio projektů](../practice.md#najdi-si-projekt) je pro juniory nejdůležitější věc po [souhrnu](#4-souhrn), tak ať jsou na CV hezky vysoko a viditelně.
 
-Určitě je v podstatě nutnost mít reprezentativní projekt a na něm svou prezentaci stavět. Můžeš pak psát věty typu "ovládám na praktické úrovni XY, dokáži vytvořit takovouhle apku". Tohle si myslím zásadně otvírá dveře minimálně do toho prvního kola.
+Absolvent školy s IT zaměřením ukazuje projekty jako svou **první praxi**. Samouk jimi navíc **kompenzuje formální vzdělání**. Jako by říkal: „Sice nemám školy, ale pokud dokážu vytvořit toto, tak je to asi jedno, ne?“
 
-Pak bych to minimálně přeuspořádal, vzdělání bych dal až dospod mezi tech. zn. a jazyky, aby to začínalo hezky těma praktickýma projektama. Pokud k těm projektům máš přímo odkazy na kód (repo na GitHubu) nebo na místo, kde běží, tak bys je tam měl uvést - jako někdo, kdo si CV čte, se na ně chci hned prokliknout, abych si je prohlédl. Jinak popis projektů mi přijde dobrý.
-
-Bylo by fajn v tom CV k MealPalu dát nějaký testovací login. Ne každému se bude chtít registrovat, aby viděl funkcionalitu uvnitř a venku jí tolik k vidění není a to je velká škoda!
-
-Nechceš do CV ještě přidat aspoň jeden z těch projektů, který máš na GitHubu?
-Třeba jen s kratším popisem.
-Je jasný, že MealPal je ta megavěc, na kterou je třeba soustředit se, ale možná by nevadilo ukázat i nějakou menší věc, kde máš všechno pěkně napsaný a umím si představit, že si některým lidem se nebude chtít zkoumat velká aplikace, ale projdou si radši něco menšího.
-
-**[Projekty](#projekty) jsou pro juniora nejdůležitější věc hned po kontaktních údajích a úvodu**, tak ať jsou hezky vysoko a viditelně. Zmínka o GitHub profilu nestačí, uveď konkrétní projekty, kterými se chceš pochlubit, trochu je popiš, přidej odkaz na každý z nich.
-
-„Pokud napíše: pracoval jsem na projektu zavedení objednávkového systému, který měl 100 000 zákazníků, tak už mi to něco řekne. Nebo když napíše: pracoval jsem na projektu eshopu. Dovedu si představit, co za tím je a jaké skilly musí mít.“ (Láďa, manažer v IT)
-
-Co napište vždycky:
-
-    Velikost týmu, ve kterém jste pracovali a z jakých specialistů se skládal.
-    V jaké metodice jste jako tým pracovali (Kanban, Scrum, klasický vývoj).
-    Co jste měli konkrétně na starosti: backend, frontend, nasazování na produkci, návrh architektury, monitoring, část aplikace, správu databáze…
-    S jakými technologiemi a frameworky pracujete na denní bázi.
-    Jaké byly v týmu standardy: code review, unit testy, selenium testy.
-    Jak probíhal vývoj jednotlivých zadání (například: návrh architektury nové funkcionality jsem dostával od lead engineera a pak nasazoval do produkce).
-    Co se v týmu nebo vám za dobu vašeho působení povedlo.
-
-## Projekty
-
-Na inzerát bytu k pronájmu, u kterého nejsou fotky, nikdo odpovídat nebude. Stejně je to i s kandidáty. **Potřebuješ ukázat, že umíš něco vyrobit, dotáhnout do konce, že máš na něčem otestované základní zkušenosti z kurzů a knížek.** K tomu slouží [projekty](../practice.md#najdi-si-projekt). Pokud nemáš vysokou školu s IT zaměřením, kompenzuješ svými projekty i chybějící vzdělání. Snažíš se jimi říct: „Sice nemám školu, ale koukejte, když dokážu vytvořit toto, tak je to asi jedno, ne?“
-
-Říká se, že [kód na GitHubu](git.md) je u programátorů stejně důležitý, ne-li důležitější, než životopis. Není to tak úplně pravda. U zkušených profesionálů je to ve skutečnosti [velmi špatné měřítko dovedností](https://www.benfrederickson.com/github-wont-help-with-hiring/). Náboráři se na GitHub nedívají, maximálně jej přepošlou programátorům ve firmě. Přijímací procesy mají většinou i jiný způsob, jak si ověřit tvé znalosti, např. domácí úkol nebo test. **Zajímavý projekt s veřejným kódem ti ale může pomoci přijímací proces doplnit nebo přeskočit.** Dokazuje totiž, že umíš něco vytvořit, že umíš s Gitem, a tví budoucí kolegové si mohou rovnou omrknout tvůj kód. Člověk s projekty skoro jistě dostane přednost před někým, kdo nemá co ukázat, zvlášť pokud ani jeden nebudou mít formální vzdělání v oboru.
-
-Konkrétně GitHub s tím ale nesouvisí. Stejný efekt má, pokud kód vystavíš na BitBucket nebo pošleš jako přílohu v e-mailu. Když někdo říká, že „máš mít GitHub“, myslí tím hlavně to, že máš mít [prokazatelnou praxi na projektech](../practice.md#najdi-si-projekt). GitHub je akorát příhodné místo, kam všechny své projekty a pokusy nahrávat. **Nahrávej tam vše a nestyď se za to,** ať už jsou to jen řešení [úloh z Codewars](../practice.md#procvicuj) nebo něco většího, třeba [tvůj osobní web](../candidate-handbook.md#osobni-web-a-blog). Nikdo od tebe neočekává skládání symfonií, potřebují ale mít aspoň trochu realistickou představu, jak zvládáš základní akordy. Budou díky tomu vědět, co tě mají naučit.
-
-Pokud se za nějaký starý kód vyloženě stydíš, můžeš repozitář s ním [archivovat](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/archiving-repositories). Jestliže se chceš nějakými repozitáři pochlubit na svém profilu, můžeš si je tam [přišpendlit](https://github.blog/2016-06-16-pin-repositories-to-your-github-profile/). Výhodou je, že přišpendlit jde i cizí repozitáře, do kterých pouze přispíváš.
+Zajímavý projekt ti také může pomoci **přeskočit ověřování technických znalostí** během přijímacího procesu, jako jsou domácí úlohy nebo testy.
 
 {% call blockquote_avatar(
   'Na pohovoru mě nezajímá, co kdo vystudoval, ale jak přemýšlí a jaké má vlastní projekty. Nemusí být nijak světoborné, je to však praxe, kterou ani čerstvý inženýr často nemá.',
@@ -211,11 +188,22 @@ Pokud se za nějaký starý kód vyloženě stydíš, můžeš repozitář s ní
   Josef Skládanka, profesionální programátor
 {% endcall %}
 
-Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo diplomku. Je to něco, co je výsledkem tvé dlouhodobé, intenzivní práce. Pochlub se s tím!
--->
+Máš nějaký **větší vlastní výtvor**? Bakalářku nebo diplomku? Vypomáháš na něčem společensky prospěšném v rámci [Česko.Digital](https://blog.cesko.digital/2021/06/zkuste-open-source)? Pochlub se!
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
+U každé takové věci by neměl chybět **název, krátký popis a odkazy**. Nejen odkaz na kód, ale i na ukázku. Pokud jde o dobrovolnictví nebo jinou spolupráci, popiš kontext a svůj přínos.
+
+Kód projektu můžeš poskytnout **ke stažení jako zip** na nějakém veřejném odkazu. Dropbox bude působit lépe než Ulož.to. Nejmazanější volbou je ale **používat [GitHub](git.md#github)**, ideálně už během samotného programování. Prokážeš tím, že umíš aspoň trochu pracovat s Gitem a druhá strana si může vše projít přímo v prohlížeči.
+
+Nikdo si nebude nic instalovat, takže **ukázka je zásadní**. Recruiteři kód vůbec nečtou a i programátoři z týmu, kam chceš nastoupit, si jej otevřou až v průběhu technického kola pohovoru. Pokud chceš na první pohled zaujmout, svou tvorbu vhodně odprezentuj.
+
+Pokud jde o webovku, poskytni odkaz na **místo, kde ji lze proklikat**. Jestliže je pro vstup potřeba heslo, **připrav demo účet**. Když nic, dej někam aspoň **snímky obrazovky**. Máš vytvořenou hru? Natoč **záznam obrazovky** jak ji hraješ a dej do CV odkaz na YouTube.
+
+Pokud si někdo při rozřazování kandidátů otevře repozitář na GitHubu, **proletí očima hlavně [README](git.md#readme)**. Ujisti se, že všechny tvé významné projekty ho mají.
+
+Určitě do CV **vypíchni konkrétní projekty**, které chceš ukázat a u každého měj zvlášť odkazy na jejich repozitáře. Nespoléhej se na jeden odkaz na GitHub profil, do hloubky si jej bude procházet málokdo.
+
+{% call note() %}
+  {{ 'lightbulb'|icon }} Pochlub se svými výrobky v [klubu](../club.md)! Rádi na ně mrkneme, pomůžeme ti vyladit si GitHub a vylepšit svá README.
 {% endcall %}
 
 ### 7. Vzdělání
@@ -308,42 +296,44 @@ Buď spontánní. **Nalaď se na komunikační vlnu z pracovního inzerátu.** J
 
 ## Něco extra
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
+Stačí životopis? Nemáš vlastně místo CV vytvořit video nebo hru? Možností, jak se firmám odprezetovat, je spousta.
+
+### Založ si LinkedIn
+
+[LinkedIn](https://www.linkedin.com/) je profesní sociální síť, kde recruiteři hledají kandidáty, kandidáti firmy, firmy byznys, a tak dále. **Založ si tam profil** a využij to na maximum. Pomůže ti návod [jak s LinkedIn pracovat jako junior](linkedin.md).
+
+Ačkoliv LinkedIn **umožňuje stáhnout profil jako PDF**, nepoužívej to jako svoje CV. Výsledný dokument je tragicky nepřehledný.
+
+### Osobní web
+
+Pokud se učíš vytvářet webovky, **vyrob si osobní stránky**. Bude se to počítat jako projekt a zároveň je to možnost, jak se představit barevněji, než PDF dokumentem. Můžeš do toho vložit tolik kreativity, kolik jen chceš. Víc je o tom v kapitole [osobní web a blog](../candidate-handbook.md#osobni-web-a-blog).
+
+{% call figure('robert-belan.png', 'Robert Belan') %}
+  [Robert Belan](https://www.robertbelan.com/) má osobní webovky jako konfigurátor postavy v RPG hře
 {% endcall %}
 
-<!--
-https://www.linkedin.com/pulse/jak-melo-vypadat-vase-cv-v-roce-2020-marek-strihavka/?trackingId=cjMvTGBWRWC%2B1pEV5PpZYg%3D%3D
+### Buď člověk
 
-Další aktivity – nahradíte sekci ostatní, zájmy a koníčky.
+[Yablko](https://robweb.sk) radí, ať dáš **průchod svojí osobnosti**. Píše o tom ve svém starším článku [Ukaž, že jsi člověk](https://medium.com/@yablko/uk%C3%A1%C5%BE-%C5%BEe-si-%C4%8Dlovek-3d134c421940) a zmiňuje to i tady ve videu:
 
-Sekci další aktivity můžete využít ve svůj prospěch nejvíce. Vypíchněte ty aktivity, které děláte a rozvíjíte při nich firmou hledané kompetence. Děláte nějaký sport? Určitě musíte mít disciplínu, jste zvyklý pracovat v týmu a respektovat rozkazy vedoucího týmu. Účastnili jste se mimoškolních aktivit? Skvělé, napište jakých. Pracovali jste v rámci výuky na zajímavém projektu, který vás obohatil? I ten zmiňte. Píšete blog, máte parádní Instagram, chodíte vypomáhat do útulku? No vidíte, určitě je toho spoustu!
+{{ video_card(
+  'Jak získat job v IT?',
+  '7min',
+  'youtube.com!watch!v=IyaxCqoqeHo.jpg',
+  'https://www.youtube.com/watch?v=IyaxCqoqeHo',
+  'Posíláš životopisy, ale nedaří se ti vyvolat zájem? Neposílej životopis, ušij něco na míru.',
+) }}
 
-- linkedin
-- [osobní web](../candidate-handbook.md#osobni-web-a-blog)
-- yablko video
-- https://www.youtube.com/watch?v=IyaxCqoqeHo
-- https://medium.com/@yablko/uk%C3%A1%C5%BE-%C5%BEe-si-%C4%8Dlovek-3d134c421940
+Máš se naučit [dobře prodat co umíš](#jak-nad-tim-premyslet) a dávat do všeho svou osobnost. Pokud máš vysněnou firmu, kde fakt chceš pracovat, máš je oslnit něčím ušitým na míru.
 
-Ačkoliv LinkedIn umožňuje stáhnout profil jako PDF, nepoužívej to jako svoje CV. Výsledný dokument je tragicky nepřehledný.
+{% call blockquote_avatar(
+  'Osobne nerozumiem, prečo by dizajnér neposlal pekné CV. Prečo strihač nepošle video a pisálek ho nenapíše formou poviedky.',
+  'yablko.jpg',
+  'yablko'
+) %}
+  yablko, v článku [Ukáž, že si človek](https://www.youtube.com/watch?v=Tna7J05UoYU&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_)
+{% endcall %}
 
-Naopak, vsichni vyzaduji PDF verzi CV a jako doporuceni bych jeste uvedl aby to byl jen stazeny LinkedIn profil do PDF ale aby to melo trochu lepsi formu, idealne i lepsi styl nez jen strohy Word dokument
+Tato strategie je fajn, ale **můžeš být v situaci, kdy se to nehodí**. Nemusíš mít zrovna mentální sílu vystoupit z davu, ne každý má vysněnou firmu, ne vždy si můžeš dovolit programovat něco na míru. A korporát možná ocení PDF víc než hru, kterou si můžou zahrát.
 
-Odlišit se: pro tohle téma jsem slyšel hodně věcí, junior programátor který se hlásí na vývoj her, udělal hru který pojal ke cv, malou hru nějaký demo jeho znalosti, nebo web designér udělal prožurku co ukazuje jeho znalosti, já osobně takovou kreativitu nemám, nebo by mě nic nenapadlo co by šlo takhle použít, tak jsem volil cestu. cv v latexu, ke úvodním emailu nějakou větu o mém záměru, a většinou mi ty firmy aspoň odpoví, což beru úspěch, lepší než ignorace...
-
-If you need good advice on writing a strong resume, I recommend spending some quality time over at Ask a Manager.
-https://www.askamanager.org/
-
-**Hledej na internetu klíčovou frázi „[Killer CV](https://www.google.cz/search?q=killer%20cv)“**. Pod tímto pojmem najdeš spousty článků i videí o tom, jak napsat životopis, který rozhodně nezapadne. Jsou sice o klasických CV, ale většinu rad lze snadno použít i na LinkedIn.
-
-Další dobré tipy jsou i v [Tech Interview Handbook](https://yangshun.github.io/tech-interview-handbook/resume) nebo na [prace.rovnou.cz](https://prace.rovnou.cz/jak-zivotopis.html).
--->
-
-
-<!--
-UDĚLAT UPSELL NA CLUB
-
-Poproste o názor kamaráda nebo napište někomu na LinkedIn, zda by vám životopis nezkontroloval. Budete překvapení, kolik lidí rádo jen tak pomůže.
-
-VLOŽIT PRVNÍ DÍL PODCASTU
--->
+**Životopis podle junior.guru je kompromis**. Posíláš sice papír, ale uděláš ho tak, aby nebyl nudný. Dáváš do popředí svoje výrobky a silné stránky. Necháváš vyniknout, kdo jsi.
