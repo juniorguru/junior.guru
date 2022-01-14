@@ -190,6 +190,8 @@ Absolvent školy s IT zaměřením ukazuje projekty jako svou **první praxi**. 
 
 Zajímavý projekt ti také může pomoci **přeskočit ověřování technických znalostí** během přijímacího procesu, jako jsou domácí úlohy nebo testy.
 
+Máš nějaký **větší vlastní výtvor**? Bakalářku nebo diplomku? Vypomáháš na něčem společensky prospěšném v rámci [Česko.Digital](https://blog.cesko.digital/2021/06/zkuste-open-source)? Pochlub se!
+
 {% call blockquote_avatar(
   'Na pohovoru mě nezajímá, co kdo vystudoval, ale jak přemýšlí a jaké má vlastní projekty. Nemusí být nijak světoborné, je to však praxe, kterou ani čerstvý inženýr často nemá.',
   'josef-skladanka.jpg',
@@ -197,8 +199,6 @@ Zajímavý projekt ti také může pomoci **přeskočit ověřování technický
 ) %}
   Josef Skládanka, profesionální programátor
 {% endcall %}
-
-Máš nějaký **větší vlastní výtvor**? Bakalářku nebo diplomku? Vypomáháš na něčem společensky prospěšném v rámci [Česko.Digital](https://blog.cesko.digital/2021/06/zkuste-open-source)? Pochlub se!
 
 {% call blockquote_avatar(
   'Kandidáti na juniorní role si často myslí, že musí mít nějaké obrovské, komplexní projekty, aby mělo význam se tím chlubit. Pro mě je důležité vidět, že do něčeho investuješ čas, energii, někdy i peníze, a že to dotahuješ. Skoro dokončený projekt taky stačí.',
