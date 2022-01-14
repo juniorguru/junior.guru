@@ -77,6 +77,14 @@ Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit. Řík
 
 Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hackathon](#zkus-hackathon) nebo [open source](#zkus-open-source).
 
+{% call blockquote_avatar(
+  'Junioři si často udělají kurz, certifikaci, ale potom už tu znalost neprocvičují. A to je strašná škoda, protože ji do pár měsíců zapomenou. Lepší méně kurzů, ale potom začít praktikovat a něco si vytvořit. Nákupní seznam, jednoduchého bota, malou aplikaci.',
+  'jiri-psotka.jpg',
+  'Jiří Psotka'
+) %}
+  Jiří Psotka, recruiter v [Red Hatu](https://redhat.avature.net/juniorguru?jobId=20261&tags=dei+cz+-+juniorguru) v [prvním dílu podcastu junior.guru](podcast.md#episode0001)
+{% endcall %}
+
 
 ## Osvoj si Git a GitHub    <span id="git-github"></span>
 

@@ -77,7 +77,9 @@ Popros někoho, kdo dobře ovládá jazyk, ať ti CV zkontroluje. To platí pro 
 
 Části CV seřaď **od nejpodstatnějších po méně důležité, od nejnovějších po nejstarší**. Co přesně je důležité, se liší pro různé obory, profese, zkušenosti a dokonce i jednotlivé pozice. Pro juniory, kteří zatím nemají pracovní zkušenosti v oboru, je velmi důležitý **souhrn a projekty**, v druhé řadě pak vzdělání.
 
-Snaž se vlézt **na jednu stránku**. Určitě ne za cenu toho, že ta stránka bude bez okrajů a písmo nečitelně malé, to radši přetáhni a měj stránky dvě. Pokud se ale jako junior bez zkušeností na A4 nevejdeš, je to spíš znamení, že se snažíš do CV nacpat zbytečnosti.
+Říká se, že je dobré vejít se na jednu stránku. Jako junior bez zkušeností se **nejspíš na jednu A4 vejdeš**, ale pokud ne, nelam si s tím hlavu. Pokud jsou podstatné věci v úvodu, je už celkem jedno, kolik následuje stránek s detaily.
+
+**Nenatahuj zbytečně** CV, lepší ať je úderné a na půl strany, než plné zbytečností, jen aby zaplnilo list. Pokud toho máš víc, **necpi vše na jednu stránku** za cenu nečitelně malého písma.
 
 Následující kapitoly jsou v pořadí, v jakém by se měly dané části na životopisu vyskytovat.
 
@@ -136,6 +138,14 @@ Recruiter také dokáže hned vyhodnotit, **jestli se tvoje cíle shodují s jej
   Pavel Brožek, recruiter v [dreamBIG](https://www.dreambig.cz/)
 {% endcall %}
 
+{% call blockquote_avatar(
+  'Můžete si to představit jako zkrácenou verzi motivačního dopisu. Stačí tři, čtyři věty. Kdo jste? Jaká je vaše motivace?',
+  'jiri-psotka.jpg',
+  'Jiří Psotka'
+) %}
+  Jiří Psotka, recruiter v [Red Hatu](https://redhat.avature.net/juniorguru?jobId=20261&tags=dei+cz+-+juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
+{% endcall %}
+
 Nikdo neříká, že je jednoduché souhrn napsat, ale když se ti to povede, **je to tvůj trumf**. Je úplně normální, že to má hlavu a patu až na desátý pokus. Většinou **to mnohem rychleji vymyslí tvůj kamarád**, protože tvou kariéru vnímá z nadhledu.
 
 Vizuálně ať je to **velkorysé** jako vstup do významné budovy. Kresbu monumentálního sloupořadí si odpusť, ale ať je souhrn první, hned za hlavičkou dokumentu. Dej mu celou šířku stránky a dopřej mu klidně větší písmo.
@@ -189,6 +199,14 @@ Zajímavý projekt ti také může pomoci **přeskočit ověřování technický
 {% endcall %}
 
 Máš nějaký **větší vlastní výtvor**? Bakalářku nebo diplomku? Vypomáháš na něčem společensky prospěšném v rámci [Česko.Digital](https://blog.cesko.digital/2021/06/zkuste-open-source)? Pochlub se!
+
+{% call blockquote_avatar(
+  'Kandidáti na juniorní role si často myslí, že musí mít nějaké obrovské, komplexní projekty, aby mělo význam se tím chlubit. Pro mě je důležité vidět, že do něčeho investuješ čas, energii, někdy i peníze, a že to dotahuješ. Skoro dokončený projekt taky stačí.',
+  'jiri-psotka.jpg',
+  'Jiří Psotka'
+) %}
+  Jiří Psotka, recruiter v [Red Hatu](https://redhat.avature.net/juniorguru?jobId=20261&tags=dei+cz+-+juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
+{% endcall %}
 
 U každé takové věci by neměl chybět **název, krátký popis a odkazy**. Nejen odkaz na kód, ale i na ukázku. Pokud jde o dobrovolnictví nebo jinou spolupráci, popiš kontext a svůj přínos.
 

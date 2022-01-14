@@ -80,6 +80,14 @@ Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo d
 {% endcall %}
 
 <!--
+{% call blockquote_avatar(
+  'GitHub vyčistit, _polishnout_, upravit. Stejně jako CVčko je to věc, která vás má prodat. Projekty, kterými se chlubit nechceš, radši skryj.',
+  'jiri-psotka.jpg',
+  'Jiří Psotka'
+) %}
+  Jiří Psotka, recruiter v [Red Hatu](https://redhat.avature.net/juniorguru?jobId=20261&tags=dei+cz+-+juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
+{% endcall %}
+
 dobrá, upravím to podle toho co jste mi napsal, zdá se to celkem i rozumné, a jsem rád za nějakou zpětnou vazbu od někoho kdo se tomu aktivně věnuje, mohl bych se ještě zeptat jak by měl vypadat ideálně github? většina projektu mam převážně ve azure devops, a jen nějaké vybrané jsem si dal do nového github učtu https://github.com/LukePavelka
 jedno zadaní od firmy, které jsem vypracoval, jsem si dal taky na github, kritickou chybu nejspiš vidim v tom že jsem udělal jeden velky commit až pak když jsem to měl skoro hotové
 
