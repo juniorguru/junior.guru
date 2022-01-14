@@ -37,6 +37,16 @@
 {% endmacro %}
 
 
+{% macro podcast(episode) %}
+<audio controls preload="metadata">
+  <source src="{{ episode.media_url }}" type="audio/mpeg">
+  <a class="btn btn-primary" href="{{ episode.media_url }}" role="button">
+    {{ 'play-circle-fill'|icon }} {{ episode.media_duration_s // 60 }}min
+  </a>
+</audio>
+{% endmacro %}
+
+
 {% macro blockquote(quote, caption=None) %}
   <div class="blockquote-container">
     <figure class="blockquote-content">
@@ -169,6 +179,27 @@
         {% endif %}
       </p>
     {% endif %}
+  </div>
+</div>
+{% endmacro %}
+
+
+{% macro podcast_card(podcast_episode, caption=None) %}
+<div class="video-card">
+  <div class="video-card-header">
+    <h4 class="video-card-title">{{ podcast_episode.title }}</h4>
+  </div>
+  <div class="video-card-body">
+    {% if caption or caller %}
+      <p class="video-card-text">
+        {% if caption %}
+          {{ caption|md|remove_p }}
+        {% else %}
+          {{ caller()|md|remove_p }}
+        {% endif %}
+      </p>
+    {% endif %}
+    {{ podcast(podcast_episode) }}
   </div>
 </div>
 {% endmacro %}

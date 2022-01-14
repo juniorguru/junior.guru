@@ -4,7 +4,7 @@ description: Co dát do životopisu, když nemáš praxi? Když jsi student? Jak
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, figure, note, blockquote_avatar, video_card with context %}
+{% from 'macros.html' import lead, figure, note, blockquote_avatar, video_card, podcast_card with context %}
 
 # Životopis
 
@@ -14,9 +14,9 @@ template: main_handbook.html
 
 ## Chceš přehlednost, ne krásu
 
-Životopis většiny lidí spadá do jednoho ze dvou extrémů. Buď vyplní [nejobyčejnější šablonu z internetu](https://europass.cz/), nebo se snaží zaujmout růžovými puntíky a zlatými kolibříky.
+Životopis většiny lidí spadá do jednoho ze dvou extrémů. Buď vyplní [nejobyčejnější šablonu z internetu](https://europass.cz/), nebo se snaží zaujmout růžovými puntíky, kudrlinkami a zlatými kolibříky.
 
-Tím prvním jistě nic nepokazíš, ale jde to udělat lépe. To však nutně neznamená originálně. Některá CV jsou **natolik „kreativní“, že brání recruiterům v práci**. Životopis s puntíky a kolibříky sice v paměti uvízne, ale pouze proto, že písmo bylo špatně čitelné a že čtvrt hodiny trvalo zjistit, kdo vlastně jsi a co chceš.
+Tím prvním jistě nic nepokazíš, ale jde to udělat lépe. To však nutně neznamená originálně. Některá CV jsou **natolik „kreativní“, že brání recruiterům v práci**. Životopis s kudrlinkami sice v paměti uvízne, ale pouze proto, že písmo bylo špatně čitelné a čtvrt hodiny trvalo zjistit, kdo vlastně jsi a co chceš.
 
 {% call figure('daniel-nekonecny.jpg', 'Daniel Nekonečný') %}
   Daniel Nekonečný by tvé CV možná pochválil, recruiter si zaťuká na čelo a vyhodí ho
@@ -24,18 +24,15 @@ Tím prvním jistě nic nepokazíš, ale jde to udělat lépe. To však nutně n
 
 **Nepotřebuješ se odlišit za každou cenu.** Firmy v americkém Silicon Valley mají denně stovky kandidátů. U nás tak velká konkurence začátečníků není, na pozice se hlásí jednotky nebo desítky lidí.
 
-Napři své úsilí směrem, kde bude mít největší efekt, ideálně s minimálním rizikem. Životopis jako omalovánka je hodně úsilí s nejistým výsledkem. **Pohlídej si raději základní věci.**
+Pokud se nehlásíš na pozici v grafice, designu, nebo UX, tak se neočekává ani to, že budeš mít všechno typograficky vyladěné a správně použiješ pomlčky místo spojovníků. Recruitery, programátory a manažery, kteří to budou číst, **neoslníš barvami a fonty**.
 
-Pokud se nehlásíš na pozici v grafice, designu, nebo UX, tak se neočekává ani to, že budeš mít všechno typograficky vyladěné a správně použiješ pomlčky místo spojovníků. Budou to číst recruiteři, programátoři a manažeři. Tyto lidi neoslníš, **vizuální stránka věci je pro ně vedlejší**. Nepřeháněj to s barvami nebo fonty. Soustřeď se především na to, aby byl výsledek dobře čitelný.
-
-Přehledné CV, které jde **přečíst do pár sekund**, je dostačující a mnohdy bude i odlišující, protože většina lidí takové vyrobit neumí. Kreativitu a originalitu směřuj raději do svých [projektů](#6-projekty). S těmi si vyhraj. Na nich ukaž, co umíš, a že na to máš.
-
+Zásadní je, aby o tobě mohli mít **jasnou představu do pár sekund**. Přehledné CV je dostačující a mnohdy bude i odlišující, protože většina lidí takové vyrobit neumí. Kreativitu a originalitu tedy směřuj raději do svých [projektů](#6-projekty) a na CV si spíš pohlídej základní věci.
 
 ## Jak nad tím přemýšlet
 
 Životopis je **reklamní letáček**, kterým se snažíš prodat své zkušenosti. Není to vyčerpávající seznam dokumentující poctivě vše, co máš za sebou. Vypíchni to důležité. Nepodstatné vůbec nepiš.
 
-I bez komerční praxe **máš co nabídnout**. Firma tě může naučit co potřebuje a jak přesně to potřebuje. Může využít tvého nadšení, energie, vloh, zájmů. Nejsi vyhořelý seniorní programátor, který místo chození do kanceláře touží sázet stromky v lese jako pěstební dělník. Stačí se umět dobře prodat!
+I bez komerční praxe **máš co nabídnout**. Firma může využít tvé nadšení, energii, vlohy, zájmy. Nemáš existující návyky, takže tě mohou učit věci podle svých představ. Nejsi vyhořelý seniorní programátor, který místo chození do kanceláře touží sázet stromky v lese jako pěstební dělník. Stačí se umět dobře prodat!
 
 Pozor, životopis není „sebechvála“, za kterou se máš stydět. V Česku je hluboce zakořeněná **kultura falešné skromnosti**, která brzdí spoustu šikovných lidí. I největší profíci tady mají problém napsat o sobě půl věty. Mnoho lidí trpí [syndromem podvodníka](https://www.heroine.cz/zeny-it/6341-syndrom-podvodnice-vas-pri-praci-v-it-snadno-dozene-jak-proti-nemu-bojovat), úspěchy si nedokážou přiznat.
 
@@ -53,7 +50,9 @@ Posílej tedy **dokument, který bude fungovat i na papíře**. JPG obrázek? Ne
 
 Ideálně CV **posílej jako PDF** a soubor pojmenuj tak, aby ho člověk na druhé straně po stažení snadno našel: `javorek-cv.pdf` Pokud máš časté příjmení, připoj raději i křestní jméno: `novakova-eva-cv.pdf`
 
-Jestli chceš dát do CV **odkazy**, tak ať na ně jde v PDF opravdu klikat a ať jsou **podtržené**. Jen tak půjde dobře rozpoznat, že to jsou odkazy. A to i na papíře, kde čtenář aspoň uvidí, že tam odkazy byly a tiskem o ně přišel.
+Na **odkazy** ať jde v PDF opravdu klikat a ať jsou podtržené. Jen tak půjde dobře rozpoznat, že jsou to odkazy. A to i na papíře, kde čtenář aspoň uvidí, že tam původně byly a tiskem o ně přišel.
+
+Říká se, že je dobré vejít se na jednu A4. Jako junior se na ni nejspíš vejdeš, ale pokud ne, nelam si s tím hlavu. **Pokud jsou podstatné věci v úvodu, je už celkem jedno, kolik následuje stránek s detaily.** Určitě CV nenatahuj, lepší ať je úderné a na půl strany, než plné zbytečností, jen aby zaplnilo list. Také necpi vše na jednu stránku za cenu nečitelně malého písma.
 
 ## Upravuj na míru
 
@@ -65,9 +64,9 @@ Například pokud jsi účetní, která se naučila programovat, pro většinu p
 
 Polotovar CV měj v obou jazycích a následuj jednoduché pravidlo: **Na inzeráty v angličtině posílej anglickou verzi, na české českou.** Nebo slovenskou, rozdíl mezi češtinou a slovenštinou samozřejmě nikdo neřeší. Pokud chceš udržovat jen jednu verzi polotovaru, tak měj anglickou, s tou si nějak poradí každý.
 
-**Netrap se nedokonalostí svých formulací.** Pokud se zrovna nechlubíš jazykovými certifikáty, nebo angličtinu nevyučuješ, stačí ti [Euro English](https://cs.wikipedia.org/wiki/Euro_English). Druhá strana taky nemívá angličtinu jak z BBC.
+**Netrap se nedokonalostí svých formulací**, v IT si všichni vystačí s hovorovou [Euro English](https://cs.wikipedia.org/wiki/Euro_English) a češtinářů mezi programátory moc není.
 
-Popros někoho, kdo dobře ovládá jazyk, ať ti CV zkontroluje. To platí pro obě verze. Nejde o to přikrášlovat realitu svého projevu a ladit každé slovo. Jde o kontrolu, aby tam nebyly **zjevné hrubky**. Ruší při čtení a působí amatérsky. Je to jako jít v oblíbeném tričku, protože chceš působit autenticky. V pořádku, ale nesmí mít díry.
+Nech si ale CV někým aspoň jednou přečíst, ať **odchytáš největší hrubky**. Ruší při čtení a působí amatérsky. Je v pořádku jít v oblíbeném tričku, protože chceš působit autenticky. Nesmí ale mít díry.
 
 {% call note() %}
   {{ 'lightbulb'|icon }} V [klubu](../club.md) ti rádi na CV mrkneme. Víc očí, méně hrubek!
@@ -77,9 +76,9 @@ Popros někoho, kdo dobře ovládá jazyk, ať ti CV zkontroluje. To platí pro 
 
 Části CV seřaď **od nejpodstatnějších po méně důležité, od nejnovějších po nejstarší**. Co přesně je důležité, se liší pro různé obory, profese, zkušenosti a dokonce i jednotlivé pozice. Pro juniory, kteří zatím nemají pracovní zkušenosti v oboru, je velmi důležitý **souhrn a projekty**, v druhé řadě pak vzdělání.
 
-Říká se, že je dobré vejít se na jednu stránku. Jako junior bez zkušeností se **nejspíš na jednu A4 vejdeš**, ale pokud ne, nelam si s tím hlavu. Pokud jsou podstatné věci v úvodu, je už celkem jedno, kolik následuje stránek s detaily.
-
-**Nenatahuj zbytečně** CV, lepší ať je úderné a na půl strany, než plné zbytečností, jen aby zaplnilo list. Pokud toho máš víc, **necpi vše na jednu stránku** za cenu nečitelně malého písma.
+{% call podcast_card(podcast_episodes|selectattr('id', 'equalto', '0001')|first) %}
+  Poslechni si [podcast junior.guru](../podcast.md), kde spolu Pavlína a Jirka mluví o tom, jak vyrobit skvělé juniorní CV. Probírají také nejčastější chyby, které při své prezentaci junioři dělají.
+{% endcall %}
 
 Následující kapitoly jsou v pořadí, v jakém by se měly dané části na životopisu vyskytovat.
 
@@ -111,15 +110,15 @@ Pokud nejsi původem z Česka, může se hodit připsat **zemi nebo občanství*
 
 ### 4. Souhrn
 
-Nejdůležitější část celého životopisu! Přitom jej stále ještě mnoho lidí opomíjí. Souhrn je **krátké shrnutí o tom, kdo jsi a co chceš**, které částečně nahrazuje [motivační dopis](#motivacni-dopis). Snažíš se zhuštěně popsat:
+Nejdůležitější část životopisu! Pár úvodních vět, které částečně nahrazují [motivační dopis](#motivacni-dopis). Snažíš se zhuštěně popsat:
 
 1. Kým jsi teď, jaký je aktuální stav?
 2. Kým chceš být v budoucnu, jaká je tvá ambice?
 
-Je to [perex](https://cs.wikipedia.org/wiki/Perex) zbytku dokumentu. Prodává tě. **Po jeho přečtení musí mít druhá strana jasno, jestli chce číst dál.** Pár úderných vět, k věci:
+Je to [perex](https://cs.wikipedia.org/wiki/Perex) zbytku dokumentu. **Po jeho přečtení musí mít druhá strana jasno, zda chce číst dál.**
 
 - „QA inženýrka, která se chce stát Python programátorkou. Po kurzu od PyLadies a několika vlastních projektech hledám první pracovní příležitost.“
-- „I am a recent graduate of the React Girls course, currently contributing to open source projects in Česko.Digital. I am looking for an entry level React job with an opportunity to learn basics of UX.“
+- „I am a recent graduate of the React Girls course, currently contributing to open source projects in Česko.Digital. I am looking for an entry level React job with an opportunity to learn the basics of UX.“
 - „Programovat zkouším od základní školy, poslední rok se učím hlavně C#. Po práci ve strojírenství hledám svou první příležitost jako .NET junior programátor, ideálně na dálku.“
 
 Kdo si CV otevře a toto přečte, okamžitě si tě **dokáže zařadit** a zbytek životopisu čte už v **kontextu, který souhrnem nastavuješ**:
@@ -139,7 +138,7 @@ Recruiter také dokáže hned vyhodnotit, **jestli se tvoje cíle shodují s jej
 {% endcall %}
 
 {% call blockquote_avatar(
-  'Můžete si to představit jako zkrácenou verzi motivačního dopisu. Stačí tři, čtyři věty. Kdo jste? Jaká je vaše motivace?',
+  'Můžete si to představit jako zkrácenou verzi průvodního dopisu. Stačí tři, čtyři věty. Kdo jste? Jaká je vaše motivace?',
   'jiri-psotka.jpg',
   'Jiří Psotka'
 ) %}
@@ -172,9 +171,9 @@ Do CV patří pouze **věci, se kterými zvládneš dokončit základní praktic
 
 Neznamená to samozřejmě, že se nemůžeš hlásit na inzerát, kde **chtějí technologii, kterou neumíš**. Nepiš si ji ale do dovedností. Pokud tě něco láká, ale ještě to neznáš, vyjádři tuto svou ambici v [souhrnu](#4-souhrn).
 
-A opravdu **stačí praktická zkušenost**, nemusíš být expert. Nech je prozkoušet si tě, případně se s tebou pobavit nad kódem tvých projektů. Ať sami posoudí, zda je pro jejich aktuální potřeby tvoje znalost dostatečná, nebo ne.
+A opravdu **stačí praktická zkušenost**, nemusíš být expert. Firma si stejně bude číst kód tvých projektů, případně si tě prozkouší. Ať si sami vyhodnotí, zda je tvá znalost dostatečná pro jejich aktuální potřeby.
 
-I když je to oblíbené, **nedělej ze svých znalostí graf s procenty**. Co znamená 100 %? Měl by autor Pythonu plné skóre, když po 30 letech zkušeností říká, že mnohá zákoutí jazyka nezná a stále v něm něco objevuje? Sebehodnocení na neukotvené škále je akorát podhoubí pro [Dunningův–Krugerův efekt](https://cs.wikipedia.org/wiki/Dunning%C5%AFv%E2%80%93Kruger%C5%AFv_efekt). Na grafy se vykašli.
+I když je to oblíbené, **nedělej ze svých znalostí graf s procenty**. Co znamená 100 %? Měl by autor Pythonu plné skóre, když po 30 letech zkušeností říká, že mnohá zákoutí jazyka nezná a stále v něm něco objevuje? Sebehodnocení na neukotvené škále je akorát podhoubím pro [Dunningův–Krugerův efekt](https://cs.wikipedia.org/wiki/Dunning%C5%AFv%E2%80%93Kruger%C5%AFv_efekt).
 
 Neuváděj příliš mnoho dovedností, nedá se v tom orientovat. **Významné technologie** od podružných poznáš tak, že mají svou stránku na (anglické) Wikipedii. Například [Django](https://en.wikipedia.org/wiki/Django_(web_framework)) ji má, [arrow](https://pypi.org/project/arrow/) ne. A vyber jen ty, kterým se chceš do budoucna nejvíc věnovat, nebo jsou podstatné pro konkrétní pozici.
 
@@ -212,16 +211,12 @@ U každé takové věci by neměl chybět **název, krátký popis a odkazy**. N
 
 Kód projektu můžeš poskytnout **ke stažení jako zip** na nějakém veřejném odkazu. Dropbox bude působit lépe než Ulož.to. Nejmazanější volbou je ale **používat [GitHub](git.md#github)**, ideálně už během samotného programování. Prokážeš tím, že umíš aspoň trochu pracovat s Gitem a druhá strana si může vše projít přímo v prohlížeči.
 
-Nikdo si nebude nic instalovat, takže **ukázka je zásadní**. Recruiteři kód vůbec nečtou a i programátoři z týmu, kam chceš nastoupit, si jej otevřou až v průběhu technického kola pohovoru. Pokud chceš na první pohled zaujmout, svou tvorbu vhodně odprezentuj.
+Nikdo si nebude nic instalovat, takže **ukázka je zásadní**. Recruiteři kód vůbec nečtou a i programátoři z týmu, kam chcete nastoupit, si jej otevřou až v průběhu technického kola pohovoru. Buď ať to jde proklikat v prohlížeči, nebo někam dejte aspoň snímky obrazovky. Když vyrobíš něco interaktivního, třeba hru, můžeš natočit záznam obrazovky jak ji hraješ a do CV dát odkaz na YouTube.
 
-Pokud jde o webovku, poskytni odkaz na **místo, kde ji lze proklikat**. Jestliže je pro vstup potřeba heslo, **připrav demo účet**. Když nic, dej někam aspoň **snímky obrazovky**. Máš vytvořenou hru? Natoč **záznam obrazovky** jak ji hraješ a dej do CV odkaz na YouTube.
-
-Pokud si někdo při rozřazování kandidátů otevře repozitář na GitHubu, **proletí očima hlavně [README](git.md#readme)**. Ujisti se, že všechny tvé významné projekty ho mají.
-
-Určitě do CV **vypíchni konkrétní projekty**, které chceš ukázat a u každého měj zvlášť odkazy na jejich repozitáře. Nespoléhej se na jeden odkaz na GitHub profil, do hloubky si jej bude procházet málokdo.
+Určitě do CV **vypíchni konkrétní projekty**, které chceš ukázat a u každého měj zvlášť odkazy na jejich repozitáře. Nespoléhej se na jeden odkaz na GitHub profil, do hloubky si jej bude procházet málokdo. Pokud si někdo při rozřazování kandidátů otevře repozitář na GitHubu, **proletí očima hlavně [README](git.md#readme)**. Ujisti se, že všechny tvé významné projekty ho mají.
 
 {% call note() %}
-  {{ 'lightbulb'|icon }} Pochlub se svými výrobky v [klubu](../club.md)! Rádi na ně mrkneme, pomůžeme ti vyladit si GitHub a vylepšit svá README.
+  {{ 'lightbulb'|icon }} Pochlub se svými výrobky v [klubu](../club.md)! Rádi na ně mrkneme, pomůžeme ti vyladit si GitHub a vylepšit README tvých projektů.
 {% endcall %}
 
 ### 7. Vzdělání
@@ -238,13 +233,13 @@ Pokud ti z toho vyšlo více záznamů o vzdělání než jeden, seřaď je chro
 
 ### 8. Pracovní zkušenosti
 
-Předpoklad tohoto návodu je, že žádnou komerční praxi v IT ještě nemáš. I proto jsou pracovní zkušenosti takhle vzadu, jinak by nahradily [projekty](#6-projekty). A pozor, **počítají se i stáže, brigády, dobrovolnictví**. Vše z toho je praxe, která by tuto sekci posunula na CV výš.
+Jestli nemáš žádnou praxi v oboru, pracovní zkušenosti odsuň takhle dozadu. Jejich roli přebírá sekce s [projekty](#6-projekty). Pokud však za sebou máš **stáž, brigádu, nebo dobrovolnictví** v IT, dej to samozřejmě na odiv v úvodu životopisu.
 
 Práci mimo obor silně zestručni. Vždy jen **roky od do, název firmy, pozice**. Od nejnovějších po nejstarší. Nemusíš ani uvádět všechny. Vyber pouze významné milníky nebo zkušenosti, které se aspoň trochu váží k pozici, na kterou se hlásíš.
 
 Do jednoho záznamu dej klidně i **celé úseky kariéry**. „Od do jsem dělal v bankovnictví, vypracoval jsem se na pozici investičního specialisty…“ Další detaily těchto minulých zaměstnání jsou pro tvou budoucnost vedlejší.
 
-Připiš **větu o tom, co bylo náplní tvojí práce**. Kuchařinu asi vysvětlovat nemusíš, ale co dělá člověk na úseku pálených lupků, to většina lidí fakt neví.
+Připiš **větu o tom, co bylo náplní tvojí práce**. Kuchařinu asi vysvětlovat nemusíš, ale třeba už manažerka je dost široký pojem. Co přesně dělají dělníci na úseku pálených lupků zase neví nikdo mimo úsek.
 
 Když přihodíš, **co se ti tam povedlo a co díky tomu umíš**, jen dobře. Může to být vedení lidí, týmová práce, komunikativnost, sebevzdělávání, koordinace, pečlivost. To vše se dá využít i v IT a je škoda to nezmínit. Samozřejmě krátce.
 
@@ -254,11 +249,9 @@ Firma může usoudit, že právě díky znalosti jiného oboru **můžeš přisp
 
 ### 9. Soft skills
 
-Na Wikipedii píšou **„měkké“ nebo „jemné“ dovednosti**, ale v praxi tomu nikdo neříká jinak než _soft skills_. A co že to vlastně je? „Pečlivá, spolehlivá, motivovaná, komunikativní.“ „Týmový hráč, odolný vůči stresu, s velkou chutí učit se.“
+„Pečlivá, spolehlivá, motivovaná, komunikativní.“ „Týmový hráč, odolný vůči stresu, s velkou chutí učit se.“ **Nadýchané obláčky slov**, které ve skutečnosti nic neznamenají a do životopisu si je může napsat kdokoliv. Na Wikipedii píšou „měkké“ nebo „jemné“ dovednosti, ale v praxi tomu nikdo neříká jinak než _soft skills_.
 
-Přijde ti to jako **nadýchané obláčky slov**, které ve skutečnosti nic neznamenají a do životopisu si je může napsat kdokoliv? Nejsi mimo, takhle to totiž přijde úplně každému.
-
-I kdyby podvědomě, většina lidí ta slova pouze přeletí, čte přitom jen „bla bla bla“ a **myslí při tom na to, jestli dnes budou mít v kantýně řízek**. Potřebuješ každou vlastnost něčím podložit, aby si čtenář za vším představil něco konkrétního:
+I kdyby podvědomě, většina lidí ta slova pouze přeletí. Čtou jen „bla bla bla“ a **ve skutečnosti myslí na řízek v kantýně**. Zkus každou vlastnost podložit něčím konkrétním, co si čtenář představí místo řízku:
 
 - „Jsem pečlivý. Od roku 1997 sbírám známky a pletu svetry.“
 - „Jsem týmová hráčka. Dlouhé roky jsem hrála volejbal.“
@@ -282,11 +275,11 @@ Obecně platí, že nic, co na CV nemusí nutně být, by tam být nemělo. Nepl
 
 Odpusť si například **nadpis** „Životopis“ nebo „Curriculum Vitae“. Ze samotného obsahu dokumentu je zcela zřejmé, o co jde.
 
-**Fotku** si na CV dát můžeš, ale nemusíš. Záleží na tvém pocitu. Když tam nebude, máš větší šanci, že tě na pohovor pozvali díky vědomostem a ne sympatickému úsměvu, což je dobrá známka pro ně i pro tebe. Fotka může recruiterům pomáhat přiřadit si tě k CV při osobním setkání.
+**Fotku** si na CV dát můžeš, ale nemusíš. Záleží na tvém pocitu. Když tam nebude, máš větší šanci, že tě na pohovor pozvali díky vědomostem a ne sympatickému úsměvu, což jsou plusové body pro ně i pro tebe. Fotka může recruiterům pomáhat přiřadit si tě k CV při osobním setkání.
 
 **Datum narození**, **rodinný stav** nebo přesná **adresa bydliště** nemusí nikoho zajímat. Pokud už z nějakého důvodu chceš adresu uvést, stačí nejbližší město, kde se zdržuješ. Určitě si nepiš na CV adresu trvalého bydliště u rodičů, které je na druhém konci republiky a jezdíš tam akorát na Vánoce.
 
-Lidé se liší v tom, zda je zajímají tvé **koníčky**. Někdo je ani nečte, jiný je použije jako otvírák konverzace, další v tom hledá lidskost, osobnost. Problém je, že když děláš hokej, jde v tom vidět týmového hráče i zpoceného primitiva. Udělej z koníčků raději _[soft skills](#9-soft-skills)_.
+Lidé se liší v tom, zda je zajímají tvé **koníčky**. Někdo je ani nečte, jiný je použije jako otvírák konverzace, další v tom hledá lidskost, osobnost. Problém je, že když děláš hokej, jde v tom vidět týmového hráče i zpoceného primitiva. Vezmi jejich rámování do vlastních rukou a udělej z koníčků raději ty _[soft skills](#9-soft-skills)_.
 
 Programátoři běžně **nedostávají služební auta a nikam neřídí**, takže není nutné psát, jestli máš řidičák a jaký. Dá se to ale sfouknout dvěma slovy, tak pokud na ně máš místo, proč ne.
 

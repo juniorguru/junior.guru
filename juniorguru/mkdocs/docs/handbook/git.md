@@ -88,6 +88,8 @@ Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo d
   Jiří Psotka, recruiter v [Red Hatu](https://redhat.avature.net/juniorguru?jobId=20261&tags=dei+cz+-+juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
 {% endcall %}
 
+Repozitáře na GitHubu, které nepovažujete za reprezentativní, můžete archivovat. Budou jen pro čtení a žlutý proužek návštěvníkům řekne, že už na nich nepracujete. Projekty, kterými se chlubit chcete, můžete zviditelnit na svém profilu jako „pinned“.
+
 dobrá, upravím to podle toho co jste mi napsal, zdá se to celkem i rozumné, a jsem rád za nějakou zpětnou vazbu od někoho kdo se tomu aktivně věnuje, mohl bych se ještě zeptat jak by měl vypadat ideálně github? většina projektu mam převážně ve azure devops, a jen nějaké vybrané jsem si dal do nového github učtu https://github.com/LukePavelka
 jedno zadaní od firmy, které jsem vypracoval, jsem si dal taky na github, kritickou chybu nejspiš vidim v tom že jsem udělal jeden velky commit až pak když jsem to měl skoro hotové
 

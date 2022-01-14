@@ -16,7 +16,18 @@ template: main_handbook.html
   Bla bla
 {% endcall %} -->
 
-<!-- Základem v dnešní době je mít **co nejlépe vyplněný [profil na LinkedIn](https://www.linkedin.com/in/honzajavorek)**. Většinou stačí poslat odkaz na svůj LinkedIn a krátký průvodní dopis — není potřeba přikládat ještě zvlášť sepsaný životopis ve Wordu nebo v PDF. Zajímavým doplňkem životopisu může být tvůj [osobní web](../candidate-handbook.md#osobni-web-a-blog).
+<!--
+Portály s pracovními inzeráty umožňují vytvořit si profil, kde strukturovanou formou zadáváte informace z CV. Firmy se vám potom mohou samy ozývat. Užitečnost pro juniory je sporná, protože ti se na trhu musí spíš sami nabízet a hledat, než že by to fungovalo naopak.
+
+Speciálním případem takových profilů je LinkedIn. Je to profesní sociální síť, kde recruiteři hledají kandidáty, kandidáti firmy, firmy byznys, a tak dále. Díky tomu je to příležitost k online networkingu a i junior tam se svým profilem může udělat velkou parádu, když síť využije na maximum. Vše vyplňte, nasaďte si kolečko „open to work“ a přidávejte si recruitery ze zajímavých firem.
+
+Pro LinkedIn je typická až „toxicky pozitivní“ atmosféra, ve které se všichni dokola poplácávají po zádech. Klidně ale můžete prorazit tím, že budete naopak autentičtí. Tak či onak, recruiteři tam tráví celé dny a bylo by škoda přicházet o příležitosti tím, že budete LinkedIn ignorovat.
+
+Ačkoliv LinkedIn umožňuje stáhnout profil jako PDF, nepoužívejte to místo CV. Výsledný dokument je tragicky nepřehledný.
+
+
+
+Základem v dnešní době je mít **co nejlépe vyplněný [profil na LinkedIn](https://www.linkedin.com/in/honzajavorek)**. Většinou stačí poslat odkaz na svůj LinkedIn a krátký průvodní dopis — není potřeba přikládat ještě zvlášť sepsaný životopis ve Wordu nebo v PDF. Zajímavým doplňkem životopisu může být tvůj [osobní web](../candidate-handbook.md#osobni-web-a-blog).
 
 **Životopis piš anglicky, česká verze je zbytečná.** Větší firmy mají buď přímo mezinárodní kolektiv, nebo i tak vyžadují nějakou úroveň znalosti angličtiny. Ani ryze české firmy s angličtinou nebudou mít problém, v IT je to standard.
 
