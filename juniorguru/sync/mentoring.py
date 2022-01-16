@@ -55,6 +55,10 @@ async def main(client):
             '<@!869504117154934824> (Soňa) na QA a testování.\n'
             '➡️ [Rezervuj v kalendáři](https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/)'
             '\n\n'
+            'Kamarádi z **[Red Hatu](https://redhat.avature.net/juniorguru?utm_source=juniorguru&utm_medium=club&utm_campaign=partnership)** ti nabízí tyto konzultace: '
+            '<@!886912914353696820> (Romča) na pohovory nanečisto česky nebo anglicky, zpětná vazba na CV. Neformálně a vesele!\n'
+            '➡️ Rezervuj přes soukromou zprávu'
+            '\n\n'
             '💡 **Tip:** Ať už jsi junior nebo mentor, pusť si parádní [přednášku o mentoringu](https://www.youtube.com/watch?v=8xeX7wfX_x4) od Anny Ossowski. '
             'Existuje i [přepis](https://github.com/honzajavorek/become-mentor/blob/master/README.md) a [český překlad](https://github.com/honzajavorek/become-mentor/blob/master/cs.md).'
         )
