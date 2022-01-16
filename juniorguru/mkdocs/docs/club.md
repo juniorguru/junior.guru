@@ -152,7 +152,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
     {{ logo(company.name, company.filename, company.link) }}
   {% endfor %}
 </ul>
-<ul class="logos grayscale standout">
+<ul class="logos standout">
   <li class="logos-item logos-caption">
     <a href="{{ pages|docs_url('faq.md')|url }}#komunity">Komunitní partneři</a>
   </li>
