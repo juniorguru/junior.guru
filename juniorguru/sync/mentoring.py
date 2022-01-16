@@ -46,7 +46,7 @@ async def main(client):
             "Kdo vyzkoušel, fakt si to pochvaluje!"
         )
         embed_description = (
-            'Kamarádi z **[Mews](https://www.mews.com/en/careers?utm_source=juniorguru&utm_medium=club&utm_campaign=partnership)** ti nabízí tyto konzultace: '
+            'Kamarádi z **[Mews](https://www.mews.com/en/careers)** ti nabízí tyto konzultace: '
             '<@!289482229975875584> (Linh) na frontend, '
             '<@!672433063690633216> (Jan) na HR a komunity, '
             '<@!689498517995126847> (Markéta) na datovou analýzu, '
@@ -55,8 +55,8 @@ async def main(client):
             '<@!869504117154934824> (Soňa) na QA a testování.\n'
             '➡️ [Rezervuj v kalendáři](https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/)'
             '\n\n'
-            'Kamarádi z **[Red Hatu](https://redhat.avature.net/juniorguru?utm_source=juniorguru&utm_medium=club&utm_campaign=partnership)** ti nabízí tyto konzultace: '
-            '<@!886912914353696820> (Romča) na pohovory nanečisto česky nebo anglicky, zpětná vazba na CV. Neformálně a vesele!\n'
+            'Kamarádi z **[Red Hatu](https://redhat.avature.net/juniorguru?jobId=20261&tags=dei+cz+-+juniorguru)** ti nabízí tyto konzultace: '
+            '<@!380388619061559299> (Joža) na Python\n'
             '➡️ Rezervuj přes soukromou zprávu'
             '\n\n'
             '💡 **Tip:** Ať už jsi junior nebo mentor, pusť si parádní [přednášku o mentoringu](https://www.youtube.com/watch?v=8xeX7wfX_x4) od Anny Ossowski. '
