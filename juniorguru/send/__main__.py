@@ -20,7 +20,7 @@ EMAIL_BATCHES = (
 
 def main():
     config = os.environ
-    debug = os.getenv('DEBUG', '--debug' in sys.argv)
+    debug = os.getenv('DEBUG_SEND', '--debug' in sys.argv)
     logger.info(f"Debug: {'YES' if debug else 'NO'}")
     today = date.today()
     logger.info(f"Today: {today:%Y-%m-%d}")

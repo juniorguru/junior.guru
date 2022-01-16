@@ -40,6 +40,7 @@ def prepare_template_context(job, today):
                 url_jobs='https://junior.guru/jobs/',
                 url_index='https://junior.guru/',
                 url_logo='https://junior.guru/static/images/logo-email.png',
+                url_analytics=f'https://simpleanalytics.com/junior.guru?period=month&search=paths%3A{job.id}',
                 metrics=job.metrics,
                 start_at=job.posted_at,
                 start_days=job.days_since_posted(today),
