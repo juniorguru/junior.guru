@@ -43,7 +43,7 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
 
 ## Epizody
 
-Pája je aktuálně na rodičovské a Honza má s junior.guru i tak práce dost, takže jsme se rozhodli pro pohodové tempo. Chceme vydávat zhruba **jednu epizodu měsíčně**.
+Poučky praví, že podcast se stává kvalitním a slavným, až když se autoři zajedou a vymluví, což trvá přibližně 100 epizod. Chceme vydávat zhruba **jednu epizodu měsíčně**, takže špičkové kvality a věčné slávy plánujeme dosáhnout kolem roku 2030.
 
 {% for episode in podcast_episodes %}
 ### {{ episode.title_numbered }}    <span id="{{ episode.slug }}"></span>
