@@ -1,5 +1,6 @@
 .podcast-button {
   @extend .btn;
+  margin-bottom: map-get($spacers, 1);
 }
 
 .podcast-button.spotify {
