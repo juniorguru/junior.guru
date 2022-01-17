@@ -27,13 +27,15 @@ def template():
     return Template(template_path.read_text())
 
 
-def test_create_message_metrics(job_mock, template):
-    job_mock.metrics = dict(users=15, pageviews=25, applications=3)
-    message = create_message(job_mock, template, date.today())
+def test_create_message_simple_analytics_url(job_mock, template):
+    today = date(2022, 1, 17)
+    message = create_message(job_mock, template, today)
     html = message['html_content']
 
-    assert '<b>15</b>' in html
-    assert '<b>25</b>' in html
+    assert ('https://simpleanalytics.com/junior.guru'
+            '?search=paths%3A123'
+            '&start=2019-07-06'
+            '&end=2022-01-17') in html
 
 
 def test_create_message_start_end(job_mock, template):
@@ -42,9 +44,9 @@ def test_create_message_start_end(job_mock, template):
     message = create_message(job_mock, template, date(2020, 6, 23))
     html = message['html_content']
 
-    assert '22&nbsp;dní' in html
+    assert '22 dní' in html
     assert 'schválen 1.6.2020' in html
-    assert '8&nbsp;dní' in html
+    assert '8 dní' in html
     assert 'vyprší 1.7.2020' in html
 
 
@@ -81,8 +83,8 @@ def test_create_message_expires_soon(job_mock, template):
     message = create_message(job_mock, template, date(2020, 6, 24))
     html = message['html_content']
 
-    assert 'prodloužit o dalších 30&nbsp;dní' in html
-    assert '1.199&nbsp;Kč' in html
+    assert 'prodloužit o dalších 30 dní' in html
+    assert '1.199 Kč' in html
 
 
 def test_create_message_expires_not_soon(job_mock, template):
@@ -90,4 +92,4 @@ def test_create_message_expires_not_soon(job_mock, template):
     message = create_message(job_mock, template, date(2020, 6, 20))
     html = message['html_content']
 
-    assert 'prodloužit o dalších 30&nbsp;dní' not in html
+    assert 'prodloužit o dalších 30 dní' not in html
