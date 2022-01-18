@@ -371,7 +371,7 @@ I když je v názvu tohoto webu slovo _junior_, není vhodný k tomu, aby se pod
   ) }}
 </div>
 
-Pokud tě programování pro děti začně bavit fakt hodně, můžeš se inspirovat u [Ivy a Martina](https://cz.pycon.org/2018/programme/detail/talk/13/) nebo u [Luboše](https://blog.zvestov.cz/software%20development/2018/10/29/jak-jsem-zacal-s-krouzkem-programovani.html) a **zkusit něco zorganizovat i pro děti z okolí**. Potom by se ti mohla hodit [příručka pro pedagogy a rodiče od Mirka Suchého](https://github.com/xsuchy/programovani_pro_deti/#readme).
+Pokud tě programování pro děti začně bavit fakt hodně, můžeš se inspirovat u [Ivy a Martina](https://cz.pycon.org/2018/programme/detail/talk/13/) nebo u [Luboše](https://blog.zvestov.cz/tag/krou%C5%BEek-programov%C3%A1n%C3%AD/) a **zkusit něco zorganizovat i pro děti z okolí**. Potom by se ti mohla hodit [příručka pro pedagogy a rodiče od Mirka Suchého](https://github.com/xsuchy/programovani_pro_deti/#readme).
 
 
 ## Programování CNC strojů    <span id="cnc"></span>
