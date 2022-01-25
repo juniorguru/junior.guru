@@ -1,8 +1,11 @@
 import os
 import asyncio
 from functools import wraps
+from datetime import timedelta, date
 
 import discord
+
+from juniorguru.lib import loggers
 
 
 DISCORD_API_KEY = os.getenv('DISCORD_API_KEY') or None
@@ -15,6 +18,9 @@ EMOJI_UPVOTES = ['👍', '❤️', '😍', '🥰', '💕', '♥️', '💖', '�
                  'meowthumbsup', '✅', '🤘', 'this', 'dk', '🙇‍♂️', '🙇', '🙇‍♀️', 'kgsnice', 'successkid', 'white_check_mark',
                  'notbad', 'updoot', '🆒', '🔥'] + EMOJI_PINS
 EMOJI_DOWNVOTES = ['👎']
+
+
+logger = loggers.get('lib.club')
 
 
 class BaseClient(discord.Client):
@@ -62,6 +68,14 @@ def discord_task(task):
     return wrapper
 
 
+def is_discord_mutable():
+    if DISCORD_MUTATIONS_ENABLED:
+        logger.debug("Discord is mutable: DISCORD_MUTATIONS_ENABLED is truthy")
+        return True
+    logger.warning("Discord isn't mutable: DISCORD_MUTATIONS_ENABLED not set")
+    return False
+
+
 def count_upvotes(reactions):
     return sum([reaction.count for reaction in reactions
                 if emoji_name(reaction.emoji) in EMOJI_UPVOTES])
@@ -86,3 +100,32 @@ def emoji_name(emoji):
 
 def get_roles(member_or_user):
     return [int(role.id) for role in getattr(member_or_user, 'roles', [])]
+
+
+def is_message_older_than(message, date):
+    if message:
+        created_dt = message.created_at
+        print(f"Message is from {created_dt}")
+        if created_dt.date() > date:
+            print(f"Message is within period: {created_dt.date()} (last reminder) > {date}")
+            return False
+        else:
+            print(f"Message is long time ago: {created_dt.date()} (last reminder) <= {date}")
+            return True
+    logger.info('No message!')
+    return True
+
+
+def is_message_over_period_ago(message, period, today=None):
+    today = today or date.today()
+    ago = today - period
+    print(f'{today} - {period!r} = {ago}')
+    return is_message_older_than(message, ago)
+
+
+def is_message_over_week_ago(message, today=None):
+    return is_message_over_period_ago(message, timedelta(weeks=1), today)
+
+
+def is_message_over_month_ago(message, today=None):
+    return is_message_over_period_ago(message, timedelta(days=30), today)

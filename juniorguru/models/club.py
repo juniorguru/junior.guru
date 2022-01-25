@@ -1,9 +1,10 @@
 import math
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 
 from peewee import IntegerField, DateTimeField, ForeignKeyField, CharField, BooleanField
 
 from juniorguru.models.base import BaseModel, JSONField
+from juniorguru.lib import loggers
 
 
 TOP_MEMBERS_PERCENT = 0.05

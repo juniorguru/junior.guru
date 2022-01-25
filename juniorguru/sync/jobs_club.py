@@ -2,7 +2,7 @@ import re
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED
+from juniorguru.lib.club import discord_task, is_discord_mutable
 from juniorguru.models import ClubMessage, Employment, Job, with_db
 
 
@@ -46,14 +46,12 @@ async def main(client):
         if job.effective_link in seen_urls:
             continue
 
-        if DISCORD_MUTATIONS_ENABLED:
+        if is_discord_mutable():
             logger.info(f'Posting {job.effective_link}')
             content = f'**{job.title}**\n{job.company_name} – {job.location}\n{job.effective_link}'
             discord_message = await discord_channel.send(content)
             await discord_message.add_reaction('👍')
             await discord_message.add_reaction('👎')
-        else:
-            logger.warning('Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set')
 
 
 def get_first_url(message_content):

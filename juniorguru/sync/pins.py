@@ -6,7 +6,7 @@ from discord.errors import Forbidden
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED
+from juniorguru.lib.club import discord_task, is_discord_mutable
 from juniorguru.models import ClubPinReaction, ClubUser, ClubMessage, with_db
 
 
@@ -54,7 +54,7 @@ async def process_pin_reaction(client, pin_reaction, top_members_limit):
         return
 
     pin_logger.debug(f"Not pinned for {member.display_name} #{member.id}, sending a message to DM")
-    if DISCORD_MUTATIONS_ENABLED:
+    if is_discord_mutable():
         content = (
             '📌 Vidím špendlík! Ukládám ti příspěvek sem, do soukromé zprávy. '
             f'Když bude mít zhruba {top_members_limit} špendlíků, připnu jej '
@@ -71,8 +71,6 @@ async def process_pin_reaction(client, pin_reaction, top_members_limit):
                                embed=Embed(description="\n".join(embed_description)))
         except Forbidden as e:
             pin_logger.error(str(e), exc_info=True)
-    else:
-        pin_logger.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
 
 async def is_pinned(message_url, channel):
@@ -89,12 +87,10 @@ async def process_message(client, message, top_members_limit):
     message_logger.debug(f"Message {message.url} {'PINNED' if message.is_pinned else 'NOT PINNED'}")
     if not message.is_pinned:
         message_logger.info(f"Pinning {message.url}")
-        if DISCORD_MUTATIONS_ENABLED:
+        if is_discord_mutable():
             channel = await client.fetch_channel(message.channel_id)
             discord_message = await channel.fetch_message(message.id)
             await discord_message.pin(reason=f"The message has {message.pin_reactions_count} pin reactions, minimum is {top_members_limit}")
-        else:
-            message_logger.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
 
 if __name__ == '__main__':

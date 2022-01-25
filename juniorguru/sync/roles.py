@@ -3,7 +3,7 @@ from juniorguru.models.company import Company
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED, get_roles
+from juniorguru.lib.club import discord_task, is_discord_mutable, get_roles
 from juniorguru.models import ClubUser, Event, with_db
 
 
@@ -91,10 +91,8 @@ def main():
     for member in members:
         changes.extend(evaluate_changes(member.id, member.roles, sponsoring_members_ids, ROLE_IS_SPONSOR))
 
-    if DISCORD_MUTATIONS_ENABLED:
+    if is_discord_mutable():
         apply_changes(changes)
-    else:
-        logger.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
 
 @discord_task

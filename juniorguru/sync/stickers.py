@@ -1,6 +1,6 @@
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import discord_task, DISCORD_MUTATIONS_ENABLED
+from juniorguru.lib.club import discord_task, is_discord_mutable
 
 
 logger = loggers.get('stickers')
@@ -21,10 +21,8 @@ async def main(client):
         logger.info(f"Found stickers by #{message.author.id}")
         for sticker in message.stickers:
             logger.info(f"Deleting sticker '{sticker.name}'")
-        if DISCORD_MUTATIONS_ENABLED:
+        if is_discord_mutable():
             await message.delete()
-        else:
-            logger.warning("Skipping Discord mutations, DISCORD_MUTATIONS_ENABLED not set")
 
 
 if __name__ == '__main__':
