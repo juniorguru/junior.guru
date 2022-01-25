@@ -99,4 +99,16 @@ Ale typicky, když hledám lidi, tak z inzerátů jich chodí minimum - většin
 - Mám LI v podstatě jen jako vizitku právě a už jen to stáří účtu, respektive doba u pracovních pozic je takovým prvním vodítkem pro HR, kterých tam chodí opravdu mnoho. Mám nabídky do seniorních SEO pozic prakticky obden. hodně i ze zahraničí na IČO. A to mám prostě jen 5+ let v oboru.
 - Podobně to mám taky. Proto si nepřidávám lidi, co mě jen kontaktujou tam, protože i takhle mám často problém si vzpomenout, kde jsem k tomu kontaktu přišel.
 - Dělal jsem to stejně, dokud jsem nezačal vyrábět JG. Potom jsem přešel do módu „každý je můj kamarád“, protože pak mají moje statusy impact.
+
+Ještě jeden rozměr,  jak uvažovat o LinkedInu
+- Je to defakto standard pro nabírání lidí v IT. Nebýt tam, je handicap.
+- I když TEĎ nemáš moc co tam napsat, tak za předpokladu, že seženeš nějakou vstupní práci někde, tak mít LinkedIn znamená, že tam postupně můžeš začít přidávat kolegy, zákazníky, lidi, se kterýma ses potkal, svoji pracovní historii atd.
+- Což znamená, že až budeš za dva, tři nebo třeba čtyři roky chtít měnit práci tak nebudeš v režimu "a teď si zřídím LinkedIn", ale bude už existovat základ na kterým stavět.
+Ta časová investice je jednorázově menší než napsat CV (protože tam věci jen kopíruješ) a potom mu můžeš věnovat třeba 15 minut měsíčně. Nebo půlročně. A výsledek se vyplatí.
+
+Když už se bavíte o LinkedInu... ke každé položce (vzdělání, pracovní místo) lze něco napsat - co tam člověk dělal, co se naučil...
+
+Je lepší to psát heslovite stručně, jako se doporučuje pro CV, nebo se tam můžu trochu rozepsat? /Nejsem spisovatelka, takže mám na mysli rozvite věty, ne žádný dlouhý článek.
+
+btw. máte linked in v češtině nebo angličtině? Mě nějak nedávalo smysl ho psát česky, když už anglicky je pěknej, ale vím že tam i dvoujazyčná funkce (o které většinou lidi ani netuší, co jsem tak potkal), ale přijde mi to hrozně zbytečný to psát ještě česky
 -->
