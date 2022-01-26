@@ -111,4 +111,22 @@ Když už se bavíte o LinkedInu... ke každé položce (vzdělání, pracovní 
 Je lepší to psát heslovite stručně, jako se doporučuje pro CV, nebo se tam můžu trochu rozepsat? /Nejsem spisovatelka, takže mám na mysli rozvite věty, ne žádný dlouhý článek.
 
 btw. máte linked in v češtině nebo angličtině? Mě nějak nedávalo smysl ho psát česky, když už anglicky je pěknej, ale vím že tam i dvoujazyčná funkce (o které většinou lidi ani netuší, co jsem tak potkal), ale přijde mi to hrozně zbytečný to psát ještě česky
+
+Ja vetsinou doporucuju inspirovat se pdf exportem z Linkedinu. Mate tam jistotu, ze to CV sleduje "moderni trendy".
+
+Muj tip pro juniory bez praxe je vyplnit si na Linkedinu:
+- About box s kratkou odpovedi na otazky "kdo jsem?" a "co hledam?"
+- Jednu experience se zkusenosti na vlastnim projektu, pripadne jeste lepe na non-profit projektu ( koukam na tebe Česko.Digital ) s odpovedi na otazku "co jsem na tom delal?"
+- v contact info email a github
+
+Tot vse, export do pdf => profit.
+
+Ukol CV neni presvedcit recruitera aby me prijal a nabidl pozici s mega platem, ale projit uvodnim filtrem a zavolat si s dobre nastavenym ocekavanim.
+
+
+Tak musím říct, že si to pamatuju o dost horší 😀 Teď to vypadá aspoň tak hrozně jako https://europass.cz/
+
+Pořád bych to nikomu nedoporučil. Nepřehledné. Je tam skoro všechno, co jsem kdy do LI vyplnil. Top skills se předvyplní něčím, co mi asi hlasovali lidi na profilu, takže můj známý by tam měl „tea preparation“. Možná mám moc převyplněný profil na LI (píšu si tam vše, abych si to nemusel pamatovat, nehledám práci). Možná bych ho mohl vyplnit s ohledem na vyexportované PDF. Ale pořád mi to neumožní poslat každé firmě jiné CV, ve kterém vypíchnu to, co je relevantnější.
+
+Pro někoho, kdo to moc neřeší, je to asi OK. Junior by to ale řešit měl. Nejde o mega mzdu a chlubení se něčím, co neumím, ale o to dodat recruiterovi na podnose ty nejpodstatnější informace a přehledně. To podle mě to PDF z LinkedIn nesplňuje.
 -->
