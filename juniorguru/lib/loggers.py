@@ -13,6 +13,7 @@ MUTED_LOGGERS = [
     'PIL',
     'asyncio',
     'MARKDOWN',
+    'gql.transport.requests',
 ]
 
 

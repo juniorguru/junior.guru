@@ -40,7 +40,7 @@ def main():
     transport = RequestsHTTPTransport(url='https://juniorguru.memberful.com/api/graphql/',
                                       headers={'Authorization': f'Bearer {MEMBERFUL_API_KEY}'},
                                       verify=True, retries=3)
-    memberful = Memberful(transport=transport, fetch_schema_from_transport=True)
+    memberful = Memberful(transport=transport)
     query = gql("""
         query getSubscriptions($cursor: String!) {
             subscriptions(after: $cursor) {
@@ -84,7 +84,7 @@ def main():
     while cursor is not None:
         logger.info('Requesting Memberful GraphQL')
         params = dict(cursor=cursor)
-        result = memberful.execute(query, params)
+        result = memberful.execute(query, variable_values=params)
 
         for edge in result['subscriptions']['edges']:
             node = edge['node']
