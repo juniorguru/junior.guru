@@ -11,11 +11,13 @@ def create_company(id, **kwargs):
                           name=kwargs.get('name', 'Banana'),
                           filename=kwargs.get('filename', 'banana.svg'),
                           is_sponsoring_handbook=kwargs.get('is_sponsoring_handbook', False),
-                          has_students=kwargs.get('has_students', False),
                           link=kwargs.get('link', 'https://banana.example.com'),
                           coupon=kwargs.get('coupon', 'BANANA123'),
+                          student_coupon=kwargs.get('student_coupon'),
                           starts_at=kwargs.get('starts_at', date.today() - timedelta(days=10)),
-                          expires_at=kwargs.get('expires_at', date.today() + timedelta(days=100)))
+                          expires_at=kwargs.get('expires_at', date.today() + timedelta(days=100)),
+                          role_id=kwargs.get('role_id'),
+                          student_role_id=kwargs.get('student_role_id'))
 
 
 @pytest.fixture
@@ -81,8 +83,8 @@ def test_handbook_listing(db_connection):
 
 
 def test_students_listing(db_connection):
-    company1 = create_company('1', has_students=True)
-    company2 = create_company('2', has_students=False)  # noqa
-    company3 = create_company('3', has_students=True)
+    company1 = create_company('1', student_coupon='STUDENT!')
+    company2 = create_company('2', student_coupon=None)  # noqa
+    company3 = create_company('3', student_coupon='STUDENT!')
 
     assert set(Company.students_listing()) == {company1, company3}

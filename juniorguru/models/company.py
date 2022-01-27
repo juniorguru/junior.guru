@@ -51,4 +51,4 @@ class Company(BaseModel):
     @classmethod
     def students_listing(cls):
         return cls.listing() \
-            .where(cls.student_coupon == True)
+            .where(cls.student_coupon.is_null(False))
