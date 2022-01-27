@@ -24,7 +24,7 @@ class Company(BaseModel):
             return []
         return ClubUser.select() \
             .join(self.__class__, on=(ClubUser.coupon == self.__class__.coupon)) \
-            .where((ClubUser.is_member == True & ClubUser.coupon == self.coupon))
+            .where((ClubUser.is_member == True) & (ClubUser.coupon == self.coupon))
 
     @property
     def list_students(self):
@@ -32,7 +32,7 @@ class Company(BaseModel):
             return []
         return ClubUser.select() \
             .join(self.__class__, on=(ClubUser.coupon == self.__class__.student_coupon)) \
-            .where((ClubUser.is_member == True & ClubUser.coupon == self.student_coupon))
+            .where((ClubUser.is_member == True) & (ClubUser.coupon == self.student_coupon))
 
     @classmethod
     def listing(cls, today=None):

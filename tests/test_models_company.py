@@ -3,7 +3,7 @@ from datetime import date, timedelta
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models import Company
+from juniorguru.models import Company, ClubUser
 
 
 def create_company(id, **kwargs):
@@ -22,7 +22,7 @@ def create_company(id, **kwargs):
 
 @pytest.fixture
 def db_connection():
-    models = [Company]
+    models = [Company, ClubUser]
     db = SqliteDatabase(':memory:')
     with db:
         db.bind(models)
@@ -88,3 +88,22 @@ def test_students_listing(db_connection):
     company3 = create_company('3', student_coupon='STUDENT!')
 
     assert set(Company.students_listing()) == {company1, company3}
+
+
+def test_list_employees(db_connection):
+    member1 = ClubUser.create(display_name='Alice', mention='<@123>', coupon='XEROX')
+    member2 = ClubUser.create(display_name='Bob', mention='<@123>', coupon='XEROX')
+    member3 = ClubUser.create(display_name='Celine', mention='<@123>', coupon='ZALANDO')  # noqa
+    company = create_company('1', coupon='XEROX')
+
+    assert set(company.list_employees) == {member1, member2}
+
+
+def test_list_students(db_connection):
+    member1 = ClubUser.create(display_name='Alice', mention='<@123>', coupon='XEROXSTUDENT')
+    member2 = ClubUser.create(display_name='Bob', mention='<@123>', coupon='XEROXSTUDENT')
+    member3 = ClubUser.create(display_name='Celine', mention='<@123>', coupon='ZALANDOSTUDENT')  # noqa
+    company = create_company('1', student_coupon='XEROXSTUDENT')
+
+    assert set(company.list_students) == {member1, member2}
+
