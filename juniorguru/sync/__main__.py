@@ -39,7 +39,7 @@ def main():
     sync_stories()
     sync_supporters()
     sync_last_modified()
-    sync_companies()  # might depend on subscriptions one day?
+    sync_companies()
     sync_transactions()
     sync_proxies()
     sync_club_content()
@@ -59,7 +59,7 @@ def main():
     sync_subscriptions()
 
     # order-sensitive
-    sync_roles()  # depends on club_content, events, avatars, subscriptions
+    sync_roles()  # depends on club_content, events, avatars, subscriptions, companies
     sync_jobs()  # depends on proxies, employments
     sync_metrics()  # depends on jobs, logos, transactions
     set_ai_opinion()  # depends on employments

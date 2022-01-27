@@ -17,7 +17,7 @@ UPVOTES_EXCLUDE_CHANNELS = [
     INTRO_CHANNEL,
     788822884948770846,  # pravidla
     789046675247333397,  # oznámení
-    797040163325870092,  # offtopic
+    797040163325870092,  # volná-zábava
     788822884948770847,  # moderátoři
     797107515186741248,  # roboti
     806215364379148348,  # nápady-klub
@@ -32,7 +32,7 @@ class ClubUser(BaseModel):
     avatar_path = CharField(null=True)
     display_name = CharField()
     mention = CharField()
-    coupon = CharField(null=True)
+    coupon = CharField(null=True, index=True)
     joined_at = DateTimeField(null=True)
     roles = JSONField(default=lambda: [])
 
