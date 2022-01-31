@@ -67,22 +67,22 @@
 #   speakers: 791020144661889054
 
 
-# - title: "TBD: Mobilné appky"
-#   date: "2022-02-08"
-#   description: |
-#     TBD
-#   bio_name: Svetlana Margetová
-#   bio_title: TBD
-#   bio: |
-#     TBD
-#   bio_links:
-#     - https://margetova.eu/
-#     - https://www.kompilator.cz/
-#     - https://www.linkedin.com/in/msvetlana/
-#     - https://www.instagram.com/swetus/
-#     - https://github.com/SvetlanaM
-#   logo_path: TBD
-#   speakers: 477895566085324801
+- title: "Chcem mobilnú aplikáciu. Ako a kde začať?"
+  date: "2022-02-08"
+  description: |
+    Mobilné aplikácie naberajú na čoraz väčšej popularite a my si ukážeme, ako sa zorientovať vo svete mobilného vývoja. Aplikácie je možné vyvíjať rôznymi technológiami na rôzne platformy (iOS/Android). Využívať pritom viaceré prístupy vývoja, preto spolu prejdeme hlavnými rozdielmi, či výhodami/nevýhodami, ktoré ich od seba odlišujú. V prednáške sa naučíte, čo je potrebné pred vývojom prvej aplikácie zvážiť a ako ju nasadiť do Google Play, či App Store obchodu.
+  bio_name: Svetlana Margetová
+  bio_title: Zakladatelka Kompilátor, programátorka, mentorka
+  bio: |
+    Vediem vývoj vo vlastnej firme Kompilátor, kde pomáham nielen klientom, ale aj programátorom prepájať IT svet s tým reálnym. Mám viac než 10 ročné skúsenosti s návrhom a vývojom systémov, pričom som prešla iteračným prechodom od backend vývojára, cez analytika, až k mobilným aplikáciám. Vo voľnom čase chytám pokémony, hrám sa s Arduinom a som večné dieťa, ktoré nikdy neprestane robiť to, čo ho baví.
+  bio_links:
+    - https://margetova.eu/
+    - https://www.kompilator.cz/
+    - https://www.linkedin.com/in/msvetlana/
+    - https://www.instagram.com/swetus/
+    - https://github.com/SvetlanaM
+  logo_path: logos/kompilator.svg
+  speakers: 477895566085324801
 
 
 - title: "Dobrá mzda je jen začátkem"
