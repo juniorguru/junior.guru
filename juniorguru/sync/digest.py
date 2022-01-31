@@ -33,22 +33,22 @@ async def main(client):
         for n, message in enumerate(messages, start=1):
             logger.info(f"Digest #{n}: {message.upvotes_count} votes for {message.author.display_name} in #{message.channel_name}, {message.url}")
 
-            if is_discord_mutable():
-                content = [
-                    f"🔥 **{DIGEST_LIMIT} nej příspěvků za uplynulý týden (od {since_date.day}.{since_date.month}.)**",
+        if is_discord_mutable():
+            content = [
+                f"🔥 **{DIGEST_LIMIT} nej příspěvků za uplynulý týden (od {since_date.day}.{since_date.month}.)**",
+                "",
+                "Pokud je něco zajímavé nebo ti to pomohlo, dej tomu palec 👍, srdíčko ❤️, očička 👀, apod. Oceníš autory a pomůžeš tomu, aby se příspěvek mohl objevit i tady. Někomu, kdo nemá čas procházet všechno, co se v klubu napíše, se může tento přehled hodit.",
+            ]
+            embed_description = []
+            for message in messages:
+                embed_description += [
+                    f"{message.upvotes_count}× láska pro {message.author.mention} v {message.channel_mention}:",
+                    f"> {textwrap.shorten(message.content, 200, placeholder='…')}",
+                    f"[Hop na příspěvek]({message.url})",
                     "",
-                    "Pokud je něco zajímavé nebo ti to pomohlo, dej tomu palec 👍, srdíčko ❤️, očička 👀, apod. Oceníš autory a pomůžeš tomu, aby se příspěvek mohl objevit i tady. Někomu, kdo nemá čas procházet všechno, co se v klubu napíše, se může tento přehled hodit.",
                 ]
-                embed_description = []
-                for message in messages:
-                    embed_description += [
-                        f"{message.upvotes_count}× láska pro {message.author.mention} v {message.channel_mention}:",
-                        f"> {textwrap.shorten(message.content, 200, placeholder='…')}",
-                        f"[Hop na příspěvek]({message.url})",
-                        "",
-                    ]
-                await channel.send(content="\n".join(content),
-                                   embed=Embed(description="\n".join(embed_description)))
+            await channel.send(content="\n".join(content),
+                                embed=Embed(description="\n".join(embed_description)))
 
 
 if __name__ == '__main__':
