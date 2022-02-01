@@ -1,5 +1,5 @@
 from functools import wraps
-from time import time
+from time import perf_counter
 
 from juniorguru.lib import loggers
 
@@ -16,11 +16,11 @@ logger = loggers.get('timer')
 def notify(fn):
     @wraps(fn)
     def wrapper(*args, **kwargs):
-        t0 = time()
+        t0 = perf_counter()
         try:
             return fn(*args, **kwargs)
         finally:
-            t = time() - t0
+            t = perf_counter() - t0
             print('\a', end='', flush=True)
             if pync:
                 fn_name = f'{fn.__module__}.{fn.__name__}()'
@@ -33,11 +33,11 @@ def measure(name=None):
     def decorator(fn):
         @wraps(fn)
         def wrapper(*args, **kwargs):
-            t0 = time()
+            t0 = perf_counter()
             try:
                 return fn(*args, **kwargs)
             finally:
-                t = time() - t0
+                t = perf_counter() - t0
                 logger.info(f'{name or fn.__name__}() took {t / 60:.1f}min')
         return wrapper
     return decorator
