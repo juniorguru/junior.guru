@@ -14,6 +14,7 @@ MUTED_LOGGERS = [
     'asyncio',
     'MARKDOWN',
     'gql.transport.requests',
+    'protego',
 ]
 
 

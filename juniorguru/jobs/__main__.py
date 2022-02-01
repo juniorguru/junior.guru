@@ -21,7 +21,7 @@ def main():
 
     scrape('juniorguru.jobs', [
         # 'juniorguru',
-        # 'linkedin',
+        'linkedin',
         'stackoverflow',
         'startupjobs',
         'remoteok',

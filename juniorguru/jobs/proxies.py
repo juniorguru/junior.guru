@@ -1,3 +1,4 @@
+from functools import lru_cache
 import os
 import random
 from multiprocessing import Pool
@@ -9,7 +10,7 @@ from scrapy.downloadermiddlewares.retry import RetryMiddleware
 from juniorguru.lib import loggers
 
 
-logger = loggers.get(__name__)
+logger = loggers.get('proxies')
 
 
 PROXIES_ENABLED = bool(int(os.getenv('PROXIES_ENABLED', 0)))
@@ -27,7 +28,8 @@ class ScrapingProxyMiddleware():
 
     @classmethod
     def from_crawler(cls, crawler):
-        return cls(list(scrape_proxies()), crawler.settings)
+        proxies = scrape_proxies() if PROXIES_ENABLED else []
+        return cls(proxies, crawler.settings)
 
     def __init__(self, proxies, settings):
         self.proxies = proxies
@@ -88,39 +90,41 @@ class ScrapingProxyMiddleware():
         return response
 
 
+@lru_cache
 def scrape_proxies():
     urls = []
-    if PROXIES_ENABLED:
-        response = requests.get('https://free-proxy-list.net/', headers={
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-            'Accept-Language': 'en-US,en;q=0.8,cs;q=0.6,sk;q=0.4,es;q=0.2',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:81.0) Gecko/20100101 Firefox/81.0',
-            'Referer': 'https://www.sslproxies.org/',
-        })
-        response.raise_for_status()
-        html_tree = html.fromstring(response.text)
-        rows = iter(html_tree.cssselect('.table-striped tr'))
-        headers = [col.text_content() for col in next(rows)]
-        for row in rows:
-            values = [(col.text_content() or '').strip() for col in row]
-            data = dict(zip(headers, values))
-            if data['IP Address'] and data['Port']:
-                urls.append(f"http://{data['IP Address']}:{data['Port']}")
-        random.shuffle(urls)
+    response = requests.get('https://free-proxy-list.net/', headers={
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.8,cs;q=0.6,sk;q=0.4,es;q=0.2',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:81.0) Gecko/20100101 Firefox/81.0',
+        'Referer': 'https://www.sslproxies.org/',
+    })
+    response.raise_for_status()
+    html_tree = html.fromstring(response.text)
+    rows = iter(html_tree.cssselect('.table-striped tr'))
+    headers = [col.text_content() for col in next(rows)]
+    for row in rows:
+        values = [(col.text_content() or '').strip() for col in row]
+        data = dict(zip(headers, values))
+        if data['IP Address'] and data['Port']:
+            urls.append(f"http://{data['IP Address']}:{data['Port']}")
+    random.shuffle(urls)
     logger.info(f'Scraped {len(urls)} proxies')
 
+    speedy_urls = []
     pool = Pool(15)
     counter = 0
     for proxy in pool.imap(verify_proxy_speed, urls):
         logger.info(f"Proxy {proxy['url']} speed is {proxy['speed_sec']}")
         if proxy['speed_sec'] < 1000:
-            yield proxy['url']
+            speedy_urls.append(proxy['url'])
             counter += 1
         if counter >= 10:
             logger.info('Found enough fast proxies')
             break
     pool.terminate()
     pool.join()
+    return speedy_urls
 
 
 def verify_proxy_speed(url):

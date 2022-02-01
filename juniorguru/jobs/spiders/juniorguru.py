@@ -7,8 +7,8 @@ from scrapy import Spider as BaseSpider
 from juniorguru.lib import google_sheets
 from juniorguru.lib.coerce import (coerce, parse_boolean, parse_datetime, parse_text,
     parse_date, parse_set, parse_boolean_words)
-from juniorguru.jobs.legacy_jobs.items import JuniorGuruJob, parse_markdown
-from juniorguru.jobs.legacy_jobs.settings import JUNIORGURU_ITEM_PIPELINES
+from juniorguru.jobs.items import JuniorGuruJob, parse_markdown
+from juniorguru.jobs.settings import JUNIORGURU_ITEM_PIPELINES
 
 
 class Spider(BaseSpider):

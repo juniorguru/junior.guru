@@ -4,8 +4,8 @@ from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Identity, MapCompose, TakeFirst
 
-from juniorguru.jobs.legacy_jobs.items import Job, absolute_url, parse_iso_date
-from juniorguru.jobs.legacy_jobs.settings import DEFAULT_REQUEST_HEADERS
+from juniorguru.jobs.items import Job, absolute_url, parse_iso_date
+from juniorguru.jobs.settings import DEFAULT_REQUEST_HEADERS
 
 
 class Spider(BaseSpider):
