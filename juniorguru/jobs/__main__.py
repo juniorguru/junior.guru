@@ -1,8 +1,11 @@
-from juniorguru.lib import loggers
+from pathlib import Path
+
+from scrapy.utils.project import data_path
+
+from juniorguru.lib.scrapers import scrape
 from juniorguru.lib import timer
-from juniorguru.jobs.employments import main as scrape_employments
-from juniorguru.jobs.legacy_jobs import main as scrape_jobs
-from juniorguru.jobs.proxies import main as scrape_proxies
+from juniorguru.lib import loggers
+from juniorguru.jobs.settings import IMAGES_STORE, HTTPCACHE_DIR
 
 
 logger = loggers.get('jobs')
@@ -11,10 +14,22 @@ logger = loggers.get('jobs')
 @timer.notify
 @timer.measure('jobs')
 def main():
-    scrape_employments()
-    scrape_proxies()
-    scrape_jobs()
+    # scrape_proxies()
+
+    # If the creation of the directories is left to the spiders, they can end
+    # up colliding in making sure it gets created
+    data_path(HTTPCACHE_DIR, createdir=True)
+    Path(IMAGES_STORE).mkdir(exist_ok=True, parents=True)
+
+    scrape('juniorguru.jobs', [
+        # 'juniorguru',
+        # 'linkedin',
+        'stackoverflow',
+        'startupjobs',
+        'remoteok',
+        'weworkremotely',
+        'dobrysef',
+    ])
 
 
 main()
-logger.info('Scraping done!')
