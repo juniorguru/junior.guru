@@ -1,7 +1,7 @@
 import pytest
 from scrapy import Field, Item
 
-from juniorguru.sync.jobs.pipelines.required_fields_filter import (
+from juniorguru.jobs.legacy_jobs.pipelines.required_fields_filter import (
     MissingRequiredFields, Pipeline)
 
 

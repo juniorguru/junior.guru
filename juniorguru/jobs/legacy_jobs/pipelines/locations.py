@@ -5,7 +5,7 @@ import requests
 from lxml import etree
 
 from juniorguru.lib import loggers
-from juniorguru.sync.jobs.settings import USER_AGENT
+from juniorguru.jobs.legacy_jobs.settings import USER_AGENT
 
 
 logger = loggers.get(__name__)

@@ -3,7 +3,7 @@ from pathlib import Path
 
 from scrapy.http import HtmlResponse
 
-from juniorguru.sync.jobs.spiders import stackoverflow
+from juniorguru.jobs.legacy_jobs.spiders import stackoverflow
 
 
 FIXTURES_DIR = Path(__file__).parent

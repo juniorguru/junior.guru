@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from scrapy.http import XmlResponse, HtmlResponse
 
-from juniorguru.sync.jobs.spiders import weworkremotely
+from juniorguru.jobs.legacy_jobs.spiders import weworkremotely
 
 
 FIXTURES_DIR = Path(__file__).parent

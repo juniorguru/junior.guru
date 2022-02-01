@@ -4,8 +4,14 @@ test:
 lint:
 	poetry run flake8 && npx stylelint 'juniorguru/web/static/src/css-mkdocs/**/*.scss' 'juniorguru/image_templates/*.css'
 
+jobs:
+	poetry run python -m juniorguru.jobs
+
 sync:
 	poetry run python -m juniorguru.sync $(SYNC)
+
+sync-jobs:
+	poetry run python -m juniorguru.sync.jobs
 
 freeze:
 	poetry run python -m juniorguru.web
@@ -27,9 +33,6 @@ check-links:
 
 check-anchors:
 	poetry run python scripts/check_anchors.py
-
-check-scrapers:
-	poetry run python scripts/check_scrapers.py
 
 serve:
 	npx gulp serve

@@ -5,7 +5,7 @@ from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Identity, MapCompose, TakeFirst
 
-from juniorguru.sync.jobs.items import Job, absolute_url, parse_iso_date, parse_markdown
+from juniorguru.jobs.legacy_jobs.items import Job, absolute_url, parse_iso_date, parse_markdown
 
 
 class Spider(BaseSpider):

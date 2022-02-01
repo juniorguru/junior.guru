@@ -6,10 +6,10 @@ from juniorguru.lib.scrapers import scrape
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
 from juniorguru.models import Job, JobDropped, JobError, SpiderMetric, db
-from juniorguru.sync.jobs.settings import IMAGES_STORE, HTTPCACHE_DIR
+from juniorguru.jobs.legacy_jobs.settings import IMAGES_STORE, HTTPCACHE_DIR
 
 
-logger = loggers.get('jobs')
+logger = loggers.get('legacy_jobs')
 
 
 @measure()
@@ -23,7 +23,7 @@ def main():
         db.drop_tables([Job, JobError, JobDropped, SpiderMetric])
         db.create_tables([Job, JobError, JobDropped, SpiderMetric])
 
-    scrape('juniorguru.sync.jobs', [
+    scrape('juniorguru.jobs.legacy_jobs', [
         'juniorguru',
         # 'linkedin',  # TEMPORARILY DISABLED TO MAKE JOBS FASTER
         'stackoverflow',

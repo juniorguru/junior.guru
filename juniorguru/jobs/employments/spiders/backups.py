@@ -14,8 +14,8 @@ from scrapy.exceptions import CloseSpider
 
 from juniorguru.lib.url_params import strip_utm_params
 from juniorguru.lib import loggers
-from juniorguru.sync.employments.items import EmploymentItem
-from juniorguru.sync.jobs.spiders.linkedin import clean_validated_url
+from juniorguru.jobs.employments.items import EmploymentItem
+from juniorguru.jobs.legacy_jobs.spiders.linkedin import clean_validated_url
 from juniorguru.models import db, Employment
 
 

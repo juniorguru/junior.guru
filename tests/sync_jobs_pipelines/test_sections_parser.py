@@ -5,8 +5,8 @@ import pytest
 from lxml import html
 from strictyaml import Enum, Map, Optional, Seq, Str
 
-from juniorguru.sync.jobs.pipelines import sections_parser
-from juniorguru.sync.jobs.pipelines.sections_parser import (ListSection,
+from juniorguru.jobs.legacy_jobs.pipelines import sections_parser
+from juniorguru.jobs.legacy_jobs.pipelines.sections_parser import (ListSection,
                                                            TextFragment)
 from testing_utils import (load_yaml, param_startswith_skip,
                            param_xfail_missing, startswith_skip)

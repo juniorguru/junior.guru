@@ -1,15 +1,15 @@
 BOT_NAME = 'employments'
 
-SPIDER_MODULES = ['juniorguru.sync.employments.spiders']
-NEWSPIDER_MODULE = 'juniorguru.sync.employments.spiders'
+SPIDER_MODULES = ['juniorguru.jobs.employments.spiders']
+NEWSPIDER_MODULE = 'juniorguru.jobs.employments.spiders'
 
 USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
 ROBOTSTXT_OBEY = True
 
 ITEM_PIPELINES = {
-    'juniorguru.sync.employments.pipelines.identify.Pipeline': 1,
-    'juniorguru.sync.employments.pipelines.parse_description.Pipeline': 2,
-    'juniorguru.sync.employments.pipelines.save.Pipeline': 3,
+    'juniorguru.jobs.employments.pipelines.identify.Pipeline': 1,
+    'juniorguru.jobs.employments.pipelines.parse_description.Pipeline': 2,
+    'juniorguru.jobs.employments.pipelines.save.Pipeline': 3,
 }
 
 HTTPCACHE_ENABLED = True

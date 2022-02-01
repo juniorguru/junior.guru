@@ -1,4 +1,4 @@
-from juniorguru.sync.jobs.pipelines.description_parser import extract_text
+from juniorguru.jobs.legacy_jobs.pipelines.description_parser import extract_text
 
 
 class Pipeline():

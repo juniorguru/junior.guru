@@ -5,7 +5,7 @@ import pytest
 from PIL import Image
 from scrapy.pipelines.images import ImageException, ImagesPipeline
 
-from juniorguru.sync.jobs.pipelines.company_logo import Pipeline, load_orig_size, select_company_logo
+from juniorguru.jobs.legacy_jobs.pipelines.company_logo import Pipeline, load_orig_size, select_company_logo
 
 
 FIXTURES_DIR = Path(__file__).parent / 'fixtures_company_logo'

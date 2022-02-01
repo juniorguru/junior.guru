@@ -1,4 +1,4 @@
-from juniorguru.sync.jobs.pipelines.features_parser import Pipeline, deduplicate
+from juniorguru.jobs.legacy_jobs.pipelines.features_parser import Pipeline, deduplicate
 
 
 def test_features_parser(item, spider):

@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from juniorguru.sync.jobs.pipelines.broken_encoding_filter import (
+from juniorguru.jobs.legacy_jobs.pipelines.broken_encoding_filter import (
     BrokenEncoding, Pipeline)
 from testing_utils import param_startswith_skip, startswith_skip
 

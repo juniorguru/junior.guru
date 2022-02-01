@@ -2,7 +2,7 @@ from flask import render_template, send_from_directory
 from playhouse.shortcuts import model_to_dict
 
 from juniorguru.models import Job, JobDropped, JobError, Metric, db, SpiderMetric
-from juniorguru.sync.jobs.monitoring import RESPONSES_BACKUP_DIR
+from juniorguru.jobs.legacy_jobs.monitoring import RESPONSES_BACKUP_DIR
 from juniorguru.web import app
 
 

@@ -3,7 +3,7 @@ from pathlib import Path
 
 from scrapy.http import TextResponse
 
-from juniorguru.sync.jobs.spiders import dobrysef
+from juniorguru.jobs.legacy_jobs.spiders import dobrysef
 
 
 FIXTURES_DIR = Path(__file__).parent

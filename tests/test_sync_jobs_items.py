@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from juniorguru.sync.jobs import items
+from juniorguru.jobs.legacy_jobs import items
 
 
 @pytest.mark.parametrize('string,expected', [

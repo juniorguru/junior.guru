@@ -2,7 +2,7 @@ from operator import itemgetter
 
 import pytest
 
-from juniorguru.sync.jobs.pipelines import locations
+from juniorguru.jobs.legacy_jobs.pipelines import locations
 
 
 def test_locations(item, spider):

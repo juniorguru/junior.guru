@@ -3,14 +3,11 @@ import importlib
 
 from juniorguru.lib import loggers
 from juniorguru.lib import timer
-from juniorguru.sync.employments import main as sync_employments
-from juniorguru.sync.jobs import main as sync_jobs
-from juniorguru.sync.metrics import main as sync_metrics
+# from juniorguru.sync.metrics import main as sync_metrics
 from juniorguru.sync.stories import main as sync_stories
 from juniorguru.sync.supporters import main as sync_supporters
 from juniorguru.sync.last_modified import main as sync_last_modified
 from juniorguru.sync.transactions import main as sync_transactions
-from juniorguru.sync.proxies import main as sync_proxies
 from juniorguru.sync.events import main as sync_events
 from juniorguru.sync.club_content import main as sync_club_content
 from juniorguru.sync.topics import main as sync_topics
@@ -23,10 +20,10 @@ from juniorguru.sync.subscriptions import main as sync_subscriptions
 from juniorguru.sync.companies import main as sync_companies
 from juniorguru.sync.mentoring import main as sync_mentoring
 from juniorguru.sync.li_group import main as sync_li_group
-from juniorguru.sync.jobs_club import main as sync_jobs_club
+# from juniorguru.sync.jobs_club import main as sync_jobs_club
 from juniorguru.sync.stickers import main as sync_stickers
 from juniorguru.sync.podcast import main as sync_podcast
-from juniorguru.lib.ai import set_ai_opinion
+# from juniorguru.lib.ai import set_ai_opinion
 
 
 logger = loggers.get('juniorguru.sync')
@@ -41,9 +38,7 @@ def main():
     sync_last_modified()
     sync_companies()
     sync_transactions()
-    sync_proxies()
     sync_club_content()
-    sync_employments()
     sync_podcast()
 
     # depends on club_content
@@ -60,10 +55,9 @@ def main():
 
     # order-sensitive
     sync_roles()  # depends on club_content, events, avatars, subscriptions, companies
-    sync_jobs()  # depends on proxies, employments
-    sync_metrics()  # depends on jobs, logos, transactions
-    set_ai_opinion()  # depends on employments
-    sync_jobs_club()  # depends on employments, jobs, club_content (in the future: set_ai_opinion)
+    # TODO sync_metrics()  # depends on jobs, logos, transactions
+    # TODO set_ai_opinion()  # depends on employments
+    # TODO sync_jobs_club()  # depends on employments, jobs, club_content (in the future: set_ai_opinion)
 
 
 try:

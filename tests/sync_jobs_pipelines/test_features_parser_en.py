@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.jobs.pipelines.features_parser import parse_from_sentence
+from juniorguru.jobs.legacy_jobs.pipelines.features_parser import parse_from_sentence
 
 
 def get_rule_ids(parse_results):

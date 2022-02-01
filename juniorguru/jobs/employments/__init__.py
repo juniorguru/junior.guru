@@ -13,4 +13,4 @@ def main():
         db.drop_tables([Employment])
         db.create_tables([Employment])
 
-    scrape('juniorguru.sync.employments', ['backups'])
+    scrape('juniorguru.jobs.employments', ['backups'])

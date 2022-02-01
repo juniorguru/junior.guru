@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.jobs.pipelines.junior_rank import WEIGHTS, calc_junior_rank
+from juniorguru.jobs.legacy_jobs.pipelines.junior_rank import WEIGHTS, calc_junior_rank
 
 
 def test_calc_junior_rank_ignores_non_effective_features():

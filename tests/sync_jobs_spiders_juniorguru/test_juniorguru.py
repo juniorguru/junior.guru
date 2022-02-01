@@ -4,7 +4,7 @@ from datetime import datetime, date
 import pytest
 from scrapy.http import HtmlResponse
 
-from juniorguru.sync.jobs.spiders import juniorguru
+from juniorguru.jobs.legacy_jobs.spiders import juniorguru
 
 
 def create_record(record=None):

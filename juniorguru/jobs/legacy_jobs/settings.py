@@ -1,3 +1,5 @@
+from datetime import date
+
 # Scrapy settings for jobs project
 #
 # For simplicity, this file contains only settings considered important or
@@ -103,6 +105,19 @@ JUNIORGURU_ITEM_PIPELINES = {
 # See https://docs.scrapy.org/en/latest/topics/media-pipeline.html
 MEDIA_ALLOW_REDIRECTS = True
 IMAGES_STORE = 'juniorguru/images'
+
+# Feeds
+today = date.today()
+FEEDS = {
+    f'juniorguru/data/jobs/{today:%Y}/{today:%m}/{today:%d}.jsonl': {
+        'format': 'jsonlines',
+        'indent': 2,
+        'overwrite': True,
+        'item_export_kwargs': {
+           'ensure_ascii': False,
+        },
+    },
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

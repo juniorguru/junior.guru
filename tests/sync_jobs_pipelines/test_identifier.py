@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.jobs.pipelines.identifier import Pipeline, MissingIdentifyingField
+from juniorguru.jobs.legacy_jobs.pipelines.identifier import Pipeline, MissingIdentifyingField
 
 
 def test_identifier_keeps_id_set_by_spider(item, spider):

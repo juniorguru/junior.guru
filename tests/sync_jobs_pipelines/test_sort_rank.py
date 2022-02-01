@@ -2,7 +2,7 @@ from datetime import date, timedelta
 
 import pytest
 
-from juniorguru.sync.jobs.pipelines import sort_rank
+from juniorguru.jobs.legacy_jobs.pipelines import sort_rank
 
 
 @pytest.fixture

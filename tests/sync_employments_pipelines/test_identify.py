@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.employments.pipelines.identify import Pipeline, MissingIdentifyingField, parse_id
+from juniorguru.jobs.employments.pipelines.identify import Pipeline, MissingIdentifyingField, parse_id
 
 
 def test_identify(item, spider):

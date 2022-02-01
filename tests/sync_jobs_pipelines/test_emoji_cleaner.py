@@ -1,4 +1,4 @@
-from juniorguru.sync.jobs.pipelines.emoji_cleaner import Pipeline
+from juniorguru.jobs.legacy_jobs.pipelines.emoji_cleaner import Pipeline
 
 
 def test_emoji_cleaner(item, spider):

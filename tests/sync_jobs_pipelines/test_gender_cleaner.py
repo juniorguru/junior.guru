@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.jobs.pipelines.gender_cleaner import Pipeline
+from juniorguru.jobs.legacy_jobs.pipelines.gender_cleaner import Pipeline
 
 
 @pytest.mark.parametrize('title,expected', [

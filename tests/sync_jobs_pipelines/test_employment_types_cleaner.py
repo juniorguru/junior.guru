@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.jobs.pipelines.employment_types_cleaner import Pipeline
+from juniorguru.jobs.legacy_jobs.pipelines.employment_types_cleaner import Pipeline
 
 
 @pytest.mark.parametrize('employment_types,expected', [

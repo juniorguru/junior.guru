@@ -46,33 +46,68 @@ jobs:
           name: Test
           command: make test TESTOPTS=-v
 
-  # needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY
-  sync:
+  # needs $DOBRYSEF_API_KEY, $GOOGLE_SERVICE_ACCOUNT
+  jobs:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
       - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
+      - restore_cache:  # persisting the jobs data between builds
+          key: jobs-v1-{{ .Branch }}
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-{{ checksum ".today" }}
       - run:
-          name: Sync data
+          name: Scrape jobs
           command: |
             export PROXIES_ENABLED=1
-            export DISCORD_MUTATIONS_ENABLED=1
-            make sync
+            make jobs
       - save_cache:
           key: scrapy-{{ checksum ".today" }}
           paths:
             - .scrapy
+      - save_cache:
+          key: jobs-v1-{{ .Branch }}
+          paths:
+            - juniorguru/data/jobs
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/juniorguru/data/jobs
+              - project/juniorguru/images/logos-jobs
+
+  # needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
+  sync:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run:
+          name: Sync data
+          command: |
+            export DISCORD_MUTATIONS_ENABLED=1
+            make sync
       - persist_to_workspace:
           root: "~"
           paths:
               - project/juniorguru/data
               - project/juniorguru/images
-      - run: tar -cvzf backup.tar.gz ./juniorguru/data
-      - store_artifacts:
-          path: ./backup.tar.gz  # all data gets backed up as a CI artifact
+
+  sync-jobs:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run:
+          name: Sync data
+          command: |
+            export DISCORD_MUTATIONS_ENABLED=1
+            make sync-jobs
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/juniorguru/data
+              - project/juniorguru/images
 
   build:
     executor: python-js
@@ -94,6 +129,15 @@ jobs:
           root: "~"
           paths:
               - project/public
+
+  backup:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: tar -cvzf backup.tar.gz ./juniorguru/data
+      - store_artifacts:
+          path: ./backup.tar.gz
 
   deploy:
     executor: python-js
@@ -160,10 +204,7 @@ workflows:
             - install
       - build:
           requires:
-            - sync
-      - check-scrapers:
-          requires:
-            - sync
+            - sync-jobs
       - check-anchors:
           requires:
             - build
@@ -179,15 +220,25 @@ workflows:
   nightly:
     jobs:
       - install
+      - jobs:
+          requires:
+            - install
       - sync:
           requires:
             - install
+      - sync-jobs:
+          requires:
+            - jobs
+            - sync
+      - send:
+          requires:
+            - sync-jobs
       - build:
           requires:
-            - sync
-      - check-scrapers:
+            - sync-jobs
+      - backup:
           requires:
-            - sync
+            - build
       - check-links:
           requires:
             - build
@@ -197,23 +248,6 @@ workflows:
     triggers:
       - schedule:
           cron: "0 4 * * *"
-          filters:
-            branches:
-              only:
-                - main
-
-  sending:
-    jobs:
-      - install
-      - sync:
-          requires:
-            - install
-      - send:
-          requires:
-            - sync
-    triggers:
-      - schedule:
-          cron: "0 5 * * *"
           filters:
             branches:
               only:

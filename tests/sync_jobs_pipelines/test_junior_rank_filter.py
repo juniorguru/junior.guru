@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.jobs.pipelines.junior_rank_filter import Pipeline, NotEntryLevel
+from juniorguru.jobs.legacy_jobs.pipelines.junior_rank_filter import Pipeline, NotEntryLevel
 
 
 @pytest.mark.parametrize('rank', [1, 20, 420])

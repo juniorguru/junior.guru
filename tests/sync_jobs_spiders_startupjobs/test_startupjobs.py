@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from scrapy.http import XmlResponse
 
-from juniorguru.sync.jobs.spiders import startupjobs
+from juniorguru.jobs.legacy_jobs.spiders import startupjobs
 
 
 FIXTURES_DIR = Path(__file__).parent

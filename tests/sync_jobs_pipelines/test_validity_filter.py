@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from juniorguru.sync.jobs.pipelines.validity_filter import (
+from juniorguru.jobs.legacy_jobs.pipelines.validity_filter import (
     Pipeline, Expired, NotApproved)
 
 

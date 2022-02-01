@@ -5,7 +5,7 @@ import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.models import Employment
-from juniorguru.sync.employments.pipelines.save import Pipeline
+from juniorguru.jobs.employments.pipelines.save import Pipeline
 
 
 @pytest.fixture
