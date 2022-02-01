@@ -22,6 +22,8 @@ ROLES = {
     'is_founder': 917431428227145780,
     'is_year_old': 917430017993093140,
 }
+COMPANY_ROLE_PREFIX = 'Firma: '
+STUDENT_ROLE_PREFIX = 'Student: '
 
 
 @measure('roles')
@@ -98,47 +100,68 @@ def main():
 
     # syncing with Discord
     if is_discord_mutable():
-        sync_roles(changes, companies)
+        sync_roles(changes, members, companies)
 
 
 @discord_task
-async def sync_roles(client, changes, companies):
-    logger.info(f'Creating roles for {len(companies)} companies')
-    await create_company_roles(client, companies)
+async def sync_roles(client, changes, members, companies):
+    logger.info(f'Managing roles for {len(companies)} companies')
+    await manage_company_roles(client, companies)
+
     for company in companies:
-        changes.extend([(member.id, 'add', company.role_id)
-                        for member in company.list_employees])
-        changes.extend([(member.id, 'add', company.student_role_id)
-                        for member in company.list_students])
+        employees_ids = [member.id for member in company.list_employees]
+        logger.debug(f"employees_ids({company.name}): {repr_ids(members, employees_ids)}")
+        for member in members:
+            changes.extend(evaluate_changes(member.id, member.roles, employees_ids, company.role_id))
+
+        students_ids = [member.id for member in company.list_students]
+        logger.debug(f"students_ids({company.name}): {repr_ids(members, students_ids)}")
+        for member in members:
+            changes.extend(evaluate_changes(member.id, member.roles, students_ids, company.student_role_id))
 
     logger.info(f'Applying {len(changes)} changes to roles')
     await apply_changes(client, changes)
 
 
-async def create_company_roles(client, companies):
-    for role in (await client.juniorguru_guild.fetch_roles()):
-        if role.name.startswith(('Firma:', 'Student:')):
-            logger.debug(f"Removing role '{role.name}'")
-            await role.delete()
+async def manage_company_roles(client, companies):
+    company_roles_mapping = {COMPANY_ROLE_PREFIX + company.name: company
+                             for company in companies}
+    student_roles_mapping = {STUDENT_ROLE_PREFIX + company.name: company
+                             for company in companies if company.student_coupon}
+    roles_names = list(company_roles_mapping.keys()) + list(student_roles_mapping.keys())
+    logger.info(f"There should be {len(roles_names)} roles with company or student prefixes")
 
-    for company in companies:
-        role = await client.juniorguru_guild.create_role(
-            name=f'Firma: {company.name}',
-            colour=Colour.dark_grey(),
-            mentionable=True,
-        )
-        logger.debug(f"Created role '{role.name}'")
-        company.role_id = role.id
+    existing_roles = [role for role in (await client.juniorguru_guild.fetch_roles())
+                      if role.name.startswith((COMPANY_ROLE_PREFIX, STUDENT_ROLE_PREFIX))]
+    logger.info(f"Found {len(existing_roles)} roles with company or student prefixes")
 
-        if company.student_coupon:
-            student_role = await client.juniorguru_guild.create_role(
-                name=f'Student: {company.name}',
-                mentionable=True,
-            )
-            logger.debug(f"Created role '{student_role.name}'")
-            company.student_role_id = student_role.id
+    roles_to_remove = [role for role in existing_roles if role.name not in roles_names]
+    logger.info(f"Roles [{', '.join([role.name for role in roles_to_remove])}] will be removed")
+    for role in roles_to_remove:
+        logger.info(f"Removing role '{role.name}'")
+        await role.delete()
 
-        company.save()
+    roles_names_to_add = set(roles_names) - {role.name for role in existing_roles}
+    logger.info(f"Roles [{', '.join(roles_names_to_add)}] will be added")
+    for role_name in roles_names_to_add:
+        logger.info(f"Adding role '{role_name}'")
+        colour = Colour.dark_grey() if role_name.startswith(COMPANY_ROLE_PREFIX) else Colour.default()
+        await client.juniorguru_guild.create_role(name=role_name, colour=colour, mentionable=True)
+
+    existing_roles = [role for role in (await client.juniorguru_guild.fetch_roles())
+                      if role.name.startswith((COMPANY_ROLE_PREFIX, STUDENT_ROLE_PREFIX))]
+    for role in existing_roles:
+        company = company_roles_mapping.get(role.name)
+        if company:
+            logger.info(f"Setting '{role.name}' to be employee role of '{company.name}'")
+            company.role_id = role.id
+            company.save()
+        else:
+            company = student_roles_mapping.get(role.name)
+            if company:
+                logger.info(f"Setting '{role.name}' to be student role of '{company.name}'")
+                company.student_role_id = role.id
+                company.save()
 
 
 async def apply_changes(client, changes):
@@ -154,11 +177,11 @@ async def apply_changes(client, changes):
         discord_member = await client.juniorguru_guild.fetch_member(member_id)
         if changes['add']:
             discord_roles = [all_discord_roles[role_id] for role_id in changes['add']]
-            logger.info(f'{discord_member.display_name}: adding {repr_roles(discord_roles)}')
+            logger.debug(f'{discord_member.display_name}: adding {repr_roles(discord_roles)}')
             await discord_member.add_roles(*discord_roles)
         if changes['remove']:
             discord_roles = [all_discord_roles[role_id] for role_id in changes['remove']]
-            logger.info(f'{discord_member.display_name}: removing {repr_roles(discord_roles)}')
+            logger.debug(f'{discord_member.display_name}: removing {repr_roles(discord_roles)}')
             await discord_member.remove_roles(*discord_roles)
 
         member = ClubUser.get_by_id(member_id)
