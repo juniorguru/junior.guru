@@ -14,8 +14,6 @@ logger = loggers.get('jobs')
 @timer.notify
 @timer.measure('jobs')
 def main():
-    # scrape_proxies()
-
     # If the creation of the directories is left to the spiders, they can end
     # up colliding in making sure it gets created
     data_path(HTTPCACHE_DIR, createdir=True)
