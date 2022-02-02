@@ -17,12 +17,12 @@ class ScrapingProxyMiddleware():
 
     @classmethod
     def from_crawler(cls, crawler):
-        proxies = scrape_proxies() if crawler.settings.PROXIES_ENABLED else []
+        proxies = scrape_proxies() if crawler.settings.getbool('PROXIES_ENABLED') else []
         return cls(proxies, crawler.settings)
 
     def __init__(self, proxies, settings):
         self.proxies = proxies
-        self.user_agents = settings.PROXIES_USER_AGENTS
+        self.user_agents = settings.getlist('PROXIES_USER_AGENTS')
 
     def get_proxy(self):
         return random.choice(self.proxies[:5]) if self.proxies else None
