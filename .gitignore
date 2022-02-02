@@ -70,7 +70,6 @@ google_service_account.json
 /public/
 
 # Cache
-.jobs
 .scrapy
 
 # Synced data
