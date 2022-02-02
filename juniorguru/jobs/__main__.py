@@ -8,25 +8,37 @@ from juniorguru.lib import loggers
 from juniorguru.jobs.settings import IMAGES_STORE, HTTPCACHE_DIR, FEEDS
 
 
-logger = loggers.get('jobs')
+logger = loggers.get('juniorguru.jobs')
+
+
+class JobsScrapingException(Exception):
+    pass
 
 
 @timer.notify
 @timer.measure('jobs')
 def main():
-    # If the creation of the directories is left to the spiders, they
-    # can race condition during directory creation
-    paths = [Path(IMAGES_STORE)] + [Path(path).parent for path in FEEDS.keys()]
-    for path in paths:
-        path.mkdir(exist_ok=True, parents=True)
-    data_path(HTTPCACHE_DIR, createdir=True)  # special case
+    path_jsonl_feed = Path(next(iter(FEEDS.keys())))
 
-    scrape('juniorguru.jobs', [
+    logger.info('Creating directories (to prevent race conditions in spiders)')
+    data_path(HTTPCACHE_DIR, createdir=True)
+    Path(IMAGES_STORE).mkdir(exist_ok=True, parents=True)
+    path_jsonl_feed.parent.mkdir(exist_ok=True, parents=True)
+
+    spider_names = [
         'linkedin',
         'startupjobs',
         'remoteok',
         'weworkremotely',
-    ])
+    ]
+    logger.info(f'Scraping {spider_names}')
+    scrape('juniorguru.jobs', spider_names)
+
+    logger.info('Checking scrapers')
+    if not path_jsonl_feed.exists():
+        raise JobsScrapingException("Scrapers didn't save any items")
+
+    logger.info('Scraping done!')
 
 
 main()
