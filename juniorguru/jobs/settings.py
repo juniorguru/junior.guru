@@ -32,9 +32,8 @@ ITEM_PIPELINES = {
    'juniorguru.jobs.pipelines.broken_encoding_filter.Pipeline': 150,
    'juniorguru.jobs.pipelines.language_parser.Pipeline': 200,
    'juniorguru.jobs.pipelines.language_filter.Pipeline': 250,
-   'juniorguru.jobs.pipelines.ids.Pipeline': 300,
-   'juniorguru.jobs.pipelines.employment_types_cleaner.Pipeline': 350,
-   'juniorguru.jobs.pipelines.company_logo.Pipeline': 400,
+   'juniorguru.jobs.pipelines.employment_types_cleaner.Pipeline': 300,
+   'juniorguru.jobs.pipelines.company_logo.Pipeline': 350,
 }
 
 MEDIA_ALLOW_REDIRECTS = True

@@ -13,7 +13,6 @@ class Job(Item):
     posted_at = Field(required=True)
     lang = Field()
 
-    external_ids = Field()
     url = Field(required=True)
     apply_url = Field()
 
@@ -24,7 +23,6 @@ class Job(Item):
     company_logo_path = Field()
 
     locations_raw = Field()
-    locations = Field()
     remote_region_raw = Field()
     remote = Field()
     experience_levels = Field()
