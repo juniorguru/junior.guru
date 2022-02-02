@@ -31,10 +31,12 @@ class Spider(BaseSpider):
 
     def parse_job(self, response, json_data):
         loader = Loader(item=Job(), response=response)
+        loader.add_value('source', self.name)
+        loader.add_value('source_urls', response.url)
         loader.add_value('title', json_data['position'])
-        loader.add_value('link', response.url)
+        loader.add_value('url', response.url)
         loader.add_value('company_name', json_data['company'])
-        loader.add_css('company_link', '*[itemprop="hiringOrganization"]::attr(href)')
+        loader.add_css('company_url', '*[itemprop="hiringOrganization"]::attr(href)')
         loader.add_value('remote_region_raw', json_data['location'])
         loader.add_value('remote', True)
         loader.add_value('posted_at', json_data['date'])
@@ -51,8 +53,9 @@ def fix_newlines(value):
 class Loader(ItemLoader):
     default_input_processor = MapCompose(str.strip)
     default_output_processor = TakeFirst()
-    company_link_in = MapCompose(absolute_url)
+    company_url_in = MapCompose(absolute_url)
     posted_at_in = MapCompose(parse_iso_date)
     description_html_in = MapCompose(fix_newlines, parse_markdown)
     company_logo_urls_out = Identity()
     remote_in = MapCompose(bool)
+    source_urls_out = Identity()

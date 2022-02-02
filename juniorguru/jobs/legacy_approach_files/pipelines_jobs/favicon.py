@@ -27,11 +27,17 @@ FAVICON_REQUEST_HEADERS = {
 
 
 class Pipeline():
+    SUPPORTED_SPIDERS = ['juniorguru']
+
     def process_item(self, item, spider):
-        if not item.get('company_logo_urls') and item.get('company_link'):
-            company_link = item['company_link']
-            logger.debug(f"Favicon lookup at '{company_link}'")
-            item['company_logo_urls'] = get_favicons(company_link)
+        # TODO detect/distinguish true company URLs even for the other job boards
+        if spider.name not in self.SUPPORTED_SPIDERS:
+            return item
+
+        if not item.get('company_logo_urls') and item.get('company_url'):
+            company_url = item['company_url']
+            logger.debug(f"Favicon lookup at '{company_url}'")
+            item['company_logo_urls'] = get_favicons(company_url)
         return item
 
 

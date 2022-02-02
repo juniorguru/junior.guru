@@ -12,7 +12,7 @@ class Expired(DropItem):
 
 
 class Pipeline():
-    implicit_expiration_days = 30
+    IMPLICIT_EXPIRATION_DAYS = 30
 
     def __init__(self, today=None):
         self.today = today or date.today()
@@ -23,7 +23,7 @@ class Pipeline():
         item['posted_at'] = item['approved_at']
 
         if not item.get('expires_at'):
-            item['expires_at'] = item['approved_at'] + timedelta(days=self.implicit_expiration_days)
+            item['expires_at'] = item['approved_at'] + timedelta(days=self.IMPLICIT_EXPIRATION_DAYS)
         if item['expires_at'] <= self.today:
             raise Expired(f"Expiration {item['expires_at']:%Y-%m-%d} ≤ today {self.today:%Y-%m-%d}")
 

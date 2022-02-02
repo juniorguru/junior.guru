@@ -43,23 +43,27 @@ class Spider(BaseSpider):
                           dont_filter=True, cookies=self.cookies, headers=self.headers)
 
     def parse(self, response):
-        links = [f'https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{get_job_id(link)}' for link in
-                 response.css('a[href*="linkedin.com/jobs/view/"]::attr(href)').getall()]
-        yield from response.follow_all(links, cookies=self.cookies, headers=self.headers, callback=self.parse_job)
+        urls = [f'https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{get_job_id(url)}' for url
+                in response.css('a[href*="linkedin.com/jobs/view/"]::attr(href)').getall()]
+        yield from response.follow_all(urls, cookies=self.cookies, headers=self.headers,
+                                       callback=self.parse_job, cb_kwargs=dict(search_url=response.url))
 
-        if len(links) >= self.results_per_request:
+        if len(urls) >= self.results_per_request:
             url = increment_param(response.url, 'start', self.results_per_request)
             yield Request(url, cookies=self.cookies, headers=self.headers, callback=self.parse)
 
-    def parse_job(self, response):
+    def parse_job(self, response, search_url):
         loader = Loader(item=Job(), response=response)
+        loader.add_value('source', self.name)
+        loader.add_value('source_urls', search_url)
+        loader.add_value('source_urls', response.url)
         loader.add_css('title', 'h2::text')
         loader.add_css('remote', 'h2::text')
-        loader.add_css('link', '.top-card-layout__entity-info > a::attr(href)')
-        loader.add_css('apply_link', '.apply-button::attr(href)')
+        loader.add_css('url', '.top-card-layout__entity-info > a::attr(href)')
+        loader.add_css('apply_url', '.apply-button::attr(href)')
         loader.add_css('company_name', '.topcard__org-name-link::text')
         loader.add_css('company_name', '.top-card-layout .topcard__flavor:nth-child(1)::text')
-        loader.add_css('company_link', '.topcard__org-name-link::attr(href)')
+        loader.add_css('company_url', '.topcard__org-name-link::attr(href)')
         loader.add_css('locations_raw', '.top-card-layout .topcard__flavor:nth-child(2)::text')
         loader.add_xpath('employment_types', "//h3[contains(., 'Employment type')]/following-sibling::span/text()")
         loader.add_xpath('experience_levels', "//h3[contains(., 'Seniority level')]/following-sibling::span/text()")
@@ -69,16 +73,16 @@ class Spider(BaseSpider):
         loader.add_css('company_logo_urls', 'img.artdeco-entity-image[data-delayed-url*="company-logo"]::attr(data-delayed-url)')
         item = loader.load_item()
 
-        if item.get('apply_link'):
-            yield response.follow(item['apply_link'], callback=self.verify_job, cb_kwargs=dict(item=item))
+        if item.get('apply_url'):
+            yield response.follow(item['apply_url'], callback=self.verify_job, cb_kwargs=dict(item=item))
         else:
             yield item
 
     def verify_job(self, response, item):
         """
-        Verify apply link
+        Verify apply URL
 
-        Filters out links to broken external links and cuts redirects, if any.
+        Filters out URLs to broken external URLs and cuts redirects, if any.
         It's not wise to assign new apply_link directly, as the URL of this response
         is prone to scraping protection. We want our item input processors to clean
         the URL first. The item is already loaded though, so here we create a temporary
@@ -86,7 +90,8 @@ class Spider(BaseSpider):
         the value only after it got cleaned.
         """
         loader = Loader(item=dict())
-        loader.add_value('apply_link', response.url)
+        loader.add_value('source_urls', response.url)
+        loader.add_value('apply_url', response.url)
         fields_to_update = loader.load_item().items()
 
         for field_name, value in fields_to_update:
@@ -133,9 +138,9 @@ def parse_remote(text):
 class Loader(ItemLoader):
     default_input_processor = MapCompose(str.strip)
     default_output_processor = TakeFirst()
-    link_in = Compose(first, clean_url)
-    apply_link_in = Compose(last, clean_proxied_url, clean_validated_url, clean_url)
-    company_link_in = Compose(first, clean_url)
+    url_in = Compose(first, clean_url)
+    apply_url_in = Compose(last, clean_proxied_url, clean_validated_url, clean_url)
+    company_url_in = Compose(first, clean_url)
     employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()
     posted_at_in = Compose(first, parse_relative_date)
@@ -144,3 +149,4 @@ class Loader(ItemLoader):
     company_logo_urls_out = Compose(set, list)
     remote_in = MapCompose(parse_remote)
     locations_raw_out = Identity()
+    source_urls_out = Identity()

@@ -8,13 +8,16 @@ from juniorguru.lib import google_sheets
 from juniorguru.lib.coerce import (coerce, parse_boolean, parse_datetime, parse_text,
     parse_date, parse_set, parse_boolean_words)
 from juniorguru.jobs.items import JuniorGuruJob, parse_markdown
-from juniorguru.jobs.settings import JUNIORGURU_ITEM_PIPELINES
+from juniorguru.jobs.settings import ITEM_PIPELINES
 
 
 class Spider(BaseSpider):
     name = 'juniorguru'
     custom_settings = {
-        'ITEM_PIPELINES': JUNIORGURU_ITEM_PIPELINES,
+        'ITEM_PIPELINES': {
+            'juniorguru.sync.jobs.pipelines.validity_filter.Pipeline': 1,
+            **ITEM_PIPELINES,
+        },
         'ROBOTSTXT_OBEY': False,  # requesting API, so irrelevant, saving a few requests
     }
 

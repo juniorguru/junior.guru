@@ -27,27 +27,30 @@ class Spider(BaseSpider):
                              remote_region_raw=entry.region,
                              company_logo_urls=[c['url'] for c in getattr(entry, 'media_content', [])],
                              description_html=entry.summary,
-                             remote=True)
+                             remote=True,
+                             source_urls=response.url)
             yield response.follow(entry.link,
                                   callback=self.parse_job,
                                   cb_kwargs=dict(feed_data=feed_data))
 
     def parse_job(self, response, feed_data):
         loader = Loader(item=Job(), response=response)
-        loader.add_value('link', response.url)
+        loader.add_value('url', response.url)
 
         for key, value in feed_data.items():
             loader.add_value(key, value)
 
         try:
             data = extract_job_posting(response.text, response.url)
+            loader.add_value('source', self.name)
+            loader.add_value('source_urls', response.url)
             loader.add_value('title', data['title'])
             loader.add_value('posted_at', data['datePosted'])
             loader.add_value('description_html', html.unescape(data['description']))
             loader.add_value('company_logo_urls', data.get('image'))
             loader.add_value('employment_types', [data['employmentType']])
             loader.add_value('company_name', data['hiringOrganization']['name'])
-            loader.add_value('company_link', data['hiringOrganization']['sameAs'])
+            loader.add_value('company_url', data['hiringOrganization']['sameAs'])
             loader.add_value('locations_raw', data['hiringOrganization']['address'])
             yield loader.load_item()
         except json.JSONDecodeError:
@@ -75,8 +78,9 @@ def extract_job_posting(html_string, base_url):
 class Loader(ItemLoader):
     default_input_processor = MapCompose(str.strip)
     default_output_processor = TakeFirst()
-    company_link_in = MapCompose(absolute_url)
+    company_url_in = MapCompose(absolute_url)
     posted_at_in = MapCompose(parse_date)
     company_logo_urls_out = Identity()
     remote_in = MapCompose(bool)
     locations_raw_out = Identity()
+    source_urls_out = Identity()

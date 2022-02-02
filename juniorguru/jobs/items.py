@@ -9,47 +9,34 @@ from juniorguru.lib.repr import repr_item
 
 
 class Job(Item):
-    # by default set by the first pipeline, but can be overriden in the spider
-    id = Field(required=True)
-
-    # set by spiders
-    posted_at = Field(required=True)
     title = Field(required=True)
-    locations_raw = Field()
-    remote = Field()
-    company_name = Field(required=True)
-    company_link = Field()
-    link = Field(required=True)
-    apply_link = Field()
-    description_html = Field(required=True)
-    employment_types = Field()
-    experience_levels = Field()
-    company_logo_urls = Field()
+    posted_at = Field(required=True)
+    lang = Field()
 
-    # set by pipelines
+    external_ids = Field()
+    url = Field(required=True)
+    apply_url = Field()
+
+    company_name = Field(required=True)
+    company_url = Field()
+    company_logo_urls = Field()
     company_logos = Field()
     company_logo_path = Field()
-    lang = Field()
-    description_text = Field()
-    description_sentences = Field()
-    description_words = Field()
-    sections = Field()  # unused atm, as well as the sections parser
-    features = Field()
-    junior_rank = Field()
-    sort_rank = Field()
-    sort_rank_components = Field()
+
+    locations_raw = Field()
     locations = Field()
     remote_region_raw = Field()
+    remote = Field()
+    experience_levels = Field()
+    employment_types = Field()
+
+    description_html = Field(required=True)
+
+    source = Field(required=True)
+    source_urls = Field(required=True)
 
     def __repr__(self):
-        return repr_item(self, ['title', 'link', 'apply_link', 'source'])
-
-
-class JuniorGuruJob(Job):
-    email = Field(required=True)
-    pricing_plan = Field(required=True)
-    approved_at = Field(required=True)
-    expires_at = Field(required=True)
+        return repr_item(self, ['title', 'url', 'apply_url', 'source'])
 
 
 def absolute_url(url, loader_context):
