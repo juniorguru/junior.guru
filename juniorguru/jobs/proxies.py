@@ -1,6 +1,5 @@
-from functools import lru_cache
-import os
 import random
+from functools import lru_cache
 from multiprocessing import Pool
 
 import requests
@@ -13,32 +12,23 @@ from juniorguru.lib import loggers
 logger = loggers.get('proxies')
 
 
-PROXIES_ENABLED = bool(int(os.getenv('PROXIES_ENABLED', 0)))
-
-USER_AGENTS = [
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:81.0) Gecko/20100101 Firefox/81.0',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:75.0) Gecko/20100101 Firefox/75.0',
-    'Mozilla/5.0 (iPhone; CPU OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/29.0 Mobile/15E148 Safari/605.1.15',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15',
-]
-
-
 class ScrapingProxyMiddleware():
     EXCEPTIONS_TO_RETRY = RetryMiddleware.EXCEPTIONS_TO_RETRY
 
     @classmethod
     def from_crawler(cls, crawler):
-        proxies = scrape_proxies() if PROXIES_ENABLED else []
+        proxies = scrape_proxies() if crawler.settings.PROXIES_ENABLED else []
         return cls(proxies, crawler.settings)
 
     def __init__(self, proxies, settings):
         self.proxies = proxies
+        self.user_agents = settings.PROXIES_USER_AGENTS
 
     def get_proxy(self):
         return random.choice(self.proxies[:5]) if self.proxies else None
 
     def get_user_agent(self):
-        return random.choice(USER_AGENTS)
+        return random.choice(self.user_agents)
 
     def rotate_user_agent(self, headers):
         headers = {n: v for n, v in headers.items() if n.lower() != 'user-agent'}
