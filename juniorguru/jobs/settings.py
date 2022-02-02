@@ -39,8 +39,9 @@ ITEM_PIPELINES = {
 MEDIA_ALLOW_REDIRECTS = True
 IMAGES_STORE = 'juniorguru/images'
 
+FEEDS_DIR = 'juniorguru/data/jobs'
 FEEDS = {
-    f'juniorguru/data/jobs/{today:%Y}/{today:%m}/{today:%d}.jsonl': {
+    f'{FEEDS_DIR}/{today:%Y}/{today:%m}/{today:%d}/%(name)s.jsonl': {
         'format': 'jsonlines',
         'indent': 2,
         'overwrite': True,
