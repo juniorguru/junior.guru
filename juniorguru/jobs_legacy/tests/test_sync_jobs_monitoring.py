@@ -1,7 +1,7 @@
 import pytest
 from scrapy import Spider
 
-from juniorguru.jobs.legacy_jobs.monitoring import get_response_data
+from juniorguru.legacy_jobs.monitoring import get_response_data
 
 
 @pytest.fixture

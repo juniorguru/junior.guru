@@ -56,7 +56,7 @@ flake8 = "*"
 [tool.pytest.ini_options]
 python_files = "test_*.py *_test.py test.py"
 testpaths = "."
-addopts = "--ff --ignore=node_modules"
+addopts = "--ff --ignore=node_modules --ignore=juniorguru/jobs_legacy"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
