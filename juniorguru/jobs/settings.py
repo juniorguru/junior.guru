@@ -1,15 +1,13 @@
 import os
-from datetime import date
 
 
-today = date.today()
 BOT_NAME = 'jobs'
 
 SPIDER_MODULES = ['juniorguru.jobs.spiders']
 NEWSPIDER_MODULE = 'juniorguru.jobs.spiders'
 
 
-USER_AGENT = f'JuniorGuruBot/{today.year}.{today.month}.{today.day} (+https://junior.guru)'
+USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
 ROBOTSTXT_OBEY = True
 
 DEFAULT_REQUEST_HEADERS = {
@@ -41,14 +39,15 @@ IMAGES_STORE = 'juniorguru/images'
 
 FEEDS_DIR = 'juniorguru/data/jobs'
 FEEDS = {
-    f'{FEEDS_DIR}/{today:%Y}/{today:%m}/{today:%d}/%(name)s.jsonl': {
-        'format': 'jsonlines',
-        'indent': 2,
-        'overwrite': True,
-        'item_export_kwargs': {
-           'ensure_ascii': False,
-           'sort_keys': True,
-        },
+    FEEDS_DIR + "/%(year)s/%(month)s/%(day)s/%(name)s.jsonl": {
+         'uri_params': 'juniorguru.jobs.feeds.uri_params',
+         'format': 'jsonlines',
+         'indent': 2,
+         'overwrite': True,
+         'item_export_kwargs': {
+            'ensure_ascii': False,
+            'sort_keys': True,
+         },
     },
 }
 

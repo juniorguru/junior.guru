@@ -5,13 +5,11 @@ from scrapy.utils.project import data_path
 from juniorguru.lib.scrapers import scrape
 from juniorguru.lib import timer
 from juniorguru.lib import loggers
-from juniorguru.jobs.settings import IMAGES_STORE, HTTPCACHE_DIR, FEEDS
+from juniorguru.jobs.settings import IMAGES_STORE, HTTPCACHE_DIR
+from juniorguru.jobs.feeds import feed_path, feeds_dir
 
 
 logger = loggers.get('juniorguru.jobs')
-
-
-FEED_URI_TEMPLATE = next(iter(FEEDS.keys()))
 
 
 class JobsScrapingException(Exception):
@@ -24,7 +22,7 @@ def main():
     logger.info('Creating directories (to prevent race conditions in spiders)')
     data_path(HTTPCACHE_DIR, createdir=True)
     Path(IMAGES_STORE).mkdir(exist_ok=True, parents=True)
-    Path(FEED_URI_TEMPLATE).parent.mkdir(exist_ok=True, parents=True)
+    Path(feeds_dir()).parent.mkdir(exist_ok=True, parents=True)
 
     spider_names = [
         'linkedin',
@@ -38,10 +36,10 @@ def main():
     logger.info('Checking scrapers')
     # TODO vcucnout scripts/check_scrapers.py
     for spider_name in spider_names:
-        feed_path = Path(FEED_URI_TEMPLATE % dict(name=spider_name))
-        if not feed_path:
+        path = feed_path(spider_name)
+        if not path:
             raise JobsScrapingException(f"Scraper {spider_name} didn't save any items")
-        if not feed_path.stat().st_size:
+        if not path.stat().st_size:
             raise JobsScrapingException(f"Scraper {spider_name} didn't save any items")
 
     logger.info('Scraping done!')
