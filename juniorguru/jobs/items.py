@@ -10,7 +10,7 @@ from juniorguru.lib.repr import repr_item
 
 class Job(Item):
     title = Field(required=True)
-    posted_at = Field(required=True)
+    first_seen_on = Field(required=True)
     lang = Field()
 
     url = Field(required=True)
