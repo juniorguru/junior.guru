@@ -1,7 +1,6 @@
 from datetime import date, datetime, time
 
 import pytest
-from peewee import OperationalError
 
 from juniorguru.models import base as models_base
 from juniorguru.jobs.items import Job
@@ -60,29 +59,3 @@ def test_json_dumps_item():
         '"title": "Junior developer", '
         '"employment_types": ["full-time"]'
     '}')
-
-
-def test_retry_when_db_locked(db, stats):
-    def operation():
-        if stats.values.get('database/locked_retries', 0) < 5:
-            raise OperationalError('database is locked')
-        return 42
-
-    _ = models_base.retry_when_db_locked(db, operation, stats=stats, wait_sec=0)
-
-    assert _ == 42
-    assert db.entered == 6
-    assert db.exited == 6
-    assert stats.values == {'database/locked_retries': 5}
-
-
-def test_retry_when_db_locked_raises(db, stats):
-    def operation():
-        raise OperationalError('database is locked')
-
-    with pytest.raises(OperationalError):
-        models_base.retry_when_db_locked(db, operation, stats=stats, wait_sec=0)
-
-    assert db.entered == 10
-    assert db.exited == 10
-    assert stats.values == {'database/locked_retries': 10, 'database/uncaught_errors': 1}
