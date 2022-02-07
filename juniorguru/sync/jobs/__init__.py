@@ -25,7 +25,7 @@ def main():
 
     scrape('juniorguru.sync.jobs', [
         'juniorguru',
-        'linkedin',
+        # 'linkedin',  # TEMPORARILY DISABLED TO MAKE JOBS FASTER
         'stackoverflow',
         'startupjobs',
         'remoteok',
