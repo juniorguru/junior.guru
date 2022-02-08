@@ -11,7 +11,7 @@
 }
 
 .mirror-background-expanded {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1100;
@@ -30,4 +30,8 @@
   @extend .btn;
   @extend .btn-lg;
   @extend .btn-primary;
+}
+
+.mirror-frame {
+  overflow: hidden;
 }

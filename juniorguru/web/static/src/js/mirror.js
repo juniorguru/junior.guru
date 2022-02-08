@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mirrorExpand.addEventListener('click', (event) => {
       event.preventDefault();
       mirrorBackground.classList.add('mirror-background-expanded');
+      document.body.classList.add('mirror-frame');
       mirrorExpand.disabled = true;
     }, false);
   });
