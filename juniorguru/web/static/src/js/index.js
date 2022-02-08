@@ -4,6 +4,7 @@ import './membership';
 import './metrics';
 import './snow';
 import './charts';
+import './mirror';
 
 import 'instant.page';
 
