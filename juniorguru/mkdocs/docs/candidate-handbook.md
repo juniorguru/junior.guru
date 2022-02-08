@@ -477,8 +477,8 @@ Nepodceňuj se, v inzerátech je ideál, který ti má spíše ukázat kam pozic
 <div class="link-cards">
   {{ link_card(
     'Tech Interview Handbook',
-    'yangshun.github.io!tech-interview-handbook.jpg',
-    'https://yangshun.github.io/tech-interview-handbook/',
+    'techinterviewhandbook.org.jpg',
+    'https://www.techinterviewhandbook.org/',
     'Přečti si jak na CV, pohovory, algoritmy.'
   ) }}
 

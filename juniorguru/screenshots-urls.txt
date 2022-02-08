@@ -47,7 +47,7 @@ https://medium.com/basecs
 https://missing.csail.mit.edu/
 https://www.hackerrank.com
 http://www.crackingthecodinginterview.com/
-https://yangshun.github.io/tech-interview-handbook/
+https://www.techinterviewhandbook.org/
 https://prace.rovnou.cz/
 https://trello.com/b/igarGHRw/
 https://www.codetriage.com/
