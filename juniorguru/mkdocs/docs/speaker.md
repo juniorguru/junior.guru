@@ -24,11 +24,15 @@ Aby šlo přednášku oznámit v klubu, v [seznamu na webu](/events/) a na soci�
 - Tvá fotka nebo avatar (ideálně aspoň 500⨯500px)
 - Logo tvé firmy (ideálně SVG)
 
-Pokud jde o texty, rád ti pomůže s jejich formulací. Inspirovat se můžeš v [seznamu přednášek, které už proběhly](/events/). Jestli umíš s GitHubem a nebojíš se upravovat YAML soubor, můžeš kouknout i na [events.yml](https://github.com/honzajavorek/junior.guru/blob/main/juniorguru/data/events.yml) nebo přímo poslat i Pull Request, ale nemusíš.
+Pokud jde o texty, Honza ti rád pomůže s jejich formulací. Inspirovat se můžeš v [seznamu přednášek, které už proběhly](/events/). Jestli umíš s GitHubem a nebojíš se upravovat YAML soubor, můžeš kouknout i na [events.yml](https://github.com/honzajavorek/junior.guru/blob/main/juniorguru/data/events.yml) nebo přímo poslat i Pull Request, ale nemusíš.
 
 ## {{ 'chat-dots'|icon }} Přednášení
 
-V den přednášky se na Discordu sejdeš s Honzou **půl hodiny předem** a vyzkoušíte spolu, zda správně funguje technika.
+Týden před přednáškou ji začne Honza propagovat na sociálních sítích a v klubu. Den před přednáškou a přímo v den přednášky se potom upozornění v klubu stupňují.
+
+Na Discordu se s Honzou sejdeš **půl hodiny předem** a vyzkoušíte spolu, zda správně funguje technika. Následně Honza rozehřívá místnost a čeká, až se připojí lidé. Zhruba pět minut po začátku zapne nahrávání, uvede tě a dá ti slovo.
+
+Lidé mohou pokládat dotazy do kanálu #klubovna-chat, což Honza sleduje a na konci přednášky je čte, případně moderuje diskuzi. Pokud máš k přednášce nějaké odkazy, je dobré je dát do #klubovna-chat. Po přednášce Honza hodí nahrávku na YouTube a odkaz dá do kanálu #oznámení.
 
 ### Nainstaluj si aplikaci
 
@@ -92,18 +96,28 @@ Odkaz na toto video mají členové klubu k dispozici a mohou jej sdílet i dal�
 
 ### Kolik přijde lidí?
 
-Návštěvnost je různá a lze těžko předvídat. Aktuálně se na přednášky připojuje **přes 20 lidí živě**. Mnoho členů ale počítá s tím, že si pustí záznam, protože v době živého vysílání němají čas. **Záznamy mívají 50 až 100 zhlédnutí.**
+Návštěvnost je různá a lze těžko předvídat. Aktuálně se na přednášky připojuje **kolem 20 lidí živě**. Mnoho členů ale počítá s tím, že si pustí záznam, protože v době živého vysílání němají čas. **Záznamy mívají 50 až 100 zhlédnutí.**
 
 ### Kdo je v publiku?
 
-Publikum jsou především junioři, začátečníci v programování, studenti, lidé všeho věku rekvalifikující se do IT. Členy klubu jsou ale i senioři nebo mentoři a mohou přijít také, pokud je bude téma zajímat. Jestli si chceš udělat konkrétnější obrázek, projdi si místnost #ahoj.
+Publikum jsou **především junioři**, začátečníci v programování. Občas studenti, častěji ale **lidé všeho věku a z různých koutů republiky, kteří se rekvalifikují do IT**. Členy klubu jsou i senioři a na přednášky mohou přijít. Projdi si na Discordu kanál #ahoj pro lepší obrázek.
+
+Cílem je podat úvod do problematiky a přiblížit ji začátečníkům. Používej slova, kterým porozumí téměř laik. Zkratky vysvětluj.
 
 ### Mám si připravit slajdy?
 
-### Kdy to bývá a kolik mám času?
+Pokud chceš, můžeš. Povinnost to není. Např. pokud spolu plánujeme AMA (_ask me anything_), tak to ani nedává smysl. Formát slajdů je na tobě, **ukázat můžeš cokoliv ze své obrazovky**.
 
-Přednášky jsou zpravidla v úterky v 18:00, ale pokud by ti to vyhovovalo jinak, není problém se domluvit.
+### Kdy to bývá?
 
-Jsi jediná hvězda večera. Na přednášku není časový limit, ale předpoklad je, že se běžně vejde i s následnými dotazy do hodiny času. Je na tobě, jestli ti dává smysl mluvit 20, 30, nebo 40 minut.
+Přednášky jsou zpravidla v **úterky v 18:00**, ale pokud by ti to vyhovovalo jinak, není problém se domluvit. Mezi přednáškami bývá dvoutýdenní mezera.
 
-### Jak přednáška probíhá?
+### Kolik mám času?
+
+Jsi **jediná hvězda večera**. Je na tobě, jestli ti dává smysl mluvit 20, 30, nebo 40 minut. V ideálním případě by ale přednáška neměla s následnými dotazy překročit hodinu času.
+
+### Co je AMA?
+
+AMA znamená _ask me anything_. Pozveme si odborníka na určité téma a lidé z klubu mohou pokládat libovolné dotazy. Většinou je pokládají v předstihu a písemně do kanálu #klubovna-chat, takže se na ně lze i připravit. Mohou ale přibývat i v průběhu AMA.
+
+Když AMA začne, Honza pomáhá číst dotazy a ty odpovídáš, jak nejlépe umíš. Je úplně v pohodě říct, že nevíš. To je celé, nevyžaduje to žádnou speciální přípravu.
