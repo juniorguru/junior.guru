@@ -151,7 +151,7 @@ def postprocess_jobs(pipelines, workers=None):
     # instance (convoluted).
 
     with Pool(workers) as pool:
-        jobs = pool.imap_unordered(_processor, args_generator, chunksize=10)
+        jobs = pool.imap_unordered(_postprocessor, args_generator, chunksize=10)
         while True:
             try:
                 job = dict_to_model(Job, next(jobs))
@@ -162,16 +162,14 @@ def postprocess_jobs(pipelines, workers=None):
                 break
 
 
-def _processor(args):
+def _postprocessor(args):
     job_id, pipelines = args
-
     job = Job.get(job_id)
-    pipelines = load_pipelines(pipelines)
 
     logger_p = logger.getChild('postprocess')
-    logger_p.debug(f'Executing pipelines for {job!r}')
+    logger_p.debug(f'Executing pipelines {pipelines!r} for {job!r}')
 
-    return model_to_dict(execute_pipelines(job, pipelines))
+    return model_to_dict(execute_pipelines(job, load_pipelines(pipelines)))
 
 
 def load_pipelines(pipelines):
@@ -180,4 +178,6 @@ def load_pipelines(pipelines):
 
 
 def execute_pipelines(item_or_job, pipelines):
-    return item_or_job  # TODO
+    for pipeline in pipelines:
+        item_or_job = pipeline(item_or_job)
+    return item_or_job

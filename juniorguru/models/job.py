@@ -32,6 +32,8 @@ class Job(BaseModel):
     employment_types = JSONField(null=True)
 
     description_html = TextField()
+    description_text = TextField(null=True)
+    description_sentences = JSONField(default=lambda: [])
 
     source = CharField()
     source_urls = JSONField(default=lambda: [])

@@ -274,23 +274,22 @@ RULES = {'en': RULES_EN, 'cs': RULES_CS}
 SUPPRESSING_RULES = {'en': SUPPRESSING_RULES_EN, 'cs': SUPPRESSING_RULES_CS}
 
 
-class Pipeline():
-    def process_item(self, item, spider):
-        parse_results = deduplicate(itertools.chain(
-            parse_from_sentence(item['title'], item['lang']),
-            parse_from_sentences(item['description_sentences'], item['lang']),
-        ))
-        item['features'] = [
-            dict(name=LANG_MAPPING[item['lang']],
-                 origin='language_filter')
-        ] + [
-            dict(name=rule_id,
-                 origin='features_parser',
-                 sentence=sentence,
-                 patterns=patterns)
-            for rule_id, sentence, patterns in parse_results
-        ]
-        return item
+def process(job):
+    parse_results = deduplicate(itertools.chain(
+        parse_from_sentence(job.title, job.lang),
+        parse_from_sentences(job.description_sentences, job.lang),
+    ))
+    job.features = [
+        dict(name=LANG_MAPPING[job.lang],
+                origin='language_filter')
+    ] + [
+        dict(name=rule_id,
+                origin='features_parser',
+                sentence=sentence,
+                patterns=patterns)
+        for rule_id, sentence, patterns in parse_results
+    ]
+    return job
 
 
 def deduplicate(parse_results):

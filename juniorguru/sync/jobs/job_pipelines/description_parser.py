@@ -53,14 +53,12 @@ SENTENCE_END_RE = re.compile(r'''
 ''', re.VERBOSE)
 
 
-class Pipeline():
-    def process_item(self, item, spider):
-        if item.get('description_html'):  # this line added for Mila and ML experiements
-            description_text = extract_text(item['description_html'])
-            item['description_text'] = description_text
-            item['description_sentences'] = split_sentences(description_text)
-            # TODO item['description_words'] = split_words(description_text, item['lang'])
-        return item
+def process(job):
+    description_text = extract_text(job.description_html)
+    job.description_text = description_text
+    job.description_sentences = split_sentences(description_text)
+    # TODO job.description_words = split_words(description_text, job.lang)
+    return job
 
 
 def extract_text(html_text):
