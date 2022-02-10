@@ -1,6 +1,6 @@
 import re
 
-from scrapy.exceptions import DropItem
+from juniorguru.sync.jobs.processing import DropItem
 
 
 RE_IDENTIFY_MAPPING = [
@@ -17,19 +17,18 @@ class MissingIdentifyingField(DropItem):
     pass
 
 
-class Pipeline():
-    def process_item(self, item, spider):
-        try:
-            urls = [item['url'], item.get('apply_url')]
-        except KeyError as exc:
-            raise MissingIdentifyingField(str(exc))
+def process(item):
+    try:
+        urls = [item['url'], item.get('apply_url')]
+    except KeyError as exc:
+        raise MissingIdentifyingField(str(exc))
 
-        external_ids = [parse_id(url) for url in urls if url]
-        external_ids = filter(None, external_ids)
-        external_ids = sorted(set(external_ids))
+    external_ids = [parse_id(url) for url in urls if url]
+    external_ids = filter(None, external_ids)
+    external_ids = sorted(set(external_ids))
 
-        item['external_ids'] = external_ids
-        return item
+    item['external_ids'] = external_ids
+    return item
 
 
 def parse_id(url):

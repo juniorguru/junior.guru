@@ -274,13 +274,13 @@ RULES = {'en': RULES_EN, 'cs': RULES_CS}
 SUPPRESSING_RULES = {'en': SUPPRESSING_RULES_EN, 'cs': SUPPRESSING_RULES_CS}
 
 
-def process(job):
+def process(item):
     parse_results = deduplicate(itertools.chain(
-        parse_from_sentence(job.title, job.lang),
-        parse_from_sentences(job.description_sentences, job.lang),
+        parse_from_sentence(item['title'], item['lang']),
+        parse_from_sentences(item['description_sentences'], item['lang']),
     ))
-    job.features = [
-        dict(name=LANG_MAPPING[job.lang],
+    item['features'] = [
+        dict(name=LANG_MAPPING[item['lang']],
                 origin='language_filter')
     ] + [
         dict(name=rule_id,
@@ -289,7 +289,7 @@ def process(job):
                 patterns=patterns)
         for rule_id, sentence, patterns in parse_results
     ]
-    return job
+    return item
 
 
 def deduplicate(parse_results):

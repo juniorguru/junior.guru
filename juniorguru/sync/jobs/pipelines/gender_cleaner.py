@@ -36,5 +36,5 @@ GENDER_RES = [
 
 def process(job):
     for gender_re in GENDER_RES:
-        job.title = gender_re.sub(' ', job.title).strip()
+        job['title'] = gender_re.sub(' ', job['title']).strip()
     return job

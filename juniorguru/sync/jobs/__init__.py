@@ -7,15 +7,16 @@ from juniorguru.sync.jobs.processing import filter_relevant_paths, process_paths
 
 
 TRAILING_DAYS = 365
-ITEM_PIPELINES = [
-    # 'juniorguru.sync.jobs.item_pipelines.identify',
+PREPROCESS_PIPELINES = [
+    'juniorguru.sync.jobs.pipelines.identify',
 ]
-JOB_PIPELINES = [
-    # 'juniorguru.sync.jobs.job_pipelines.locations',
-    # 'juniorguru.sync.jobs.job_pipelines.description_parser',
-    # 'juniorguru.sync.jobs.job_pipelines.features_parser',
-    'juniorguru.sync.jobs.job_pipelines.emoji_cleaner',
-    # 'juniorguru.sync.jobs.job_pipelines.gender_cleaner',
+POSTPROCESS_PIPELINES = [
+    # 'juniorguru.sync.jobs.pipelines.locations',
+    'juniorguru.sync.jobs.pipelines.description_parser',
+    'juniorguru.sync.jobs.pipelines.features_parser',
+    'juniorguru.sync.jobs.pipelines.gender_cleaner',
+    'juniorguru.sync.jobs.pipelines.emoji_cleaner',
+    'juniorguru.sync.jobs.pipelines.employment_types_cleaner',
 ]
 
 
@@ -27,6 +28,5 @@ def main():
 
     paths = Path(FEEDS_DIR).glob('**/*.jsonl')
     paths = filter_relevant_paths(paths, TRAILING_DAYS)
-    process_paths(paths, ITEM_PIPELINES)
-
-    postprocess_jobs(JOB_PIPELINES)
+    process_paths(paths, PREPROCESS_PIPELINES)
+    postprocess_jobs(POSTPROCESS_PIPELINES)

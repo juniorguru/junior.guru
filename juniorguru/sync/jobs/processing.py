@@ -8,7 +8,6 @@ from datetime import date
 
 from pprint import pformat
 from peewee import IntegrityError
-from playhouse.shortcuts import model_to_dict, dict_to_model
 
 from juniorguru.lib import loggers
 from juniorguru.models import db, with_db, Job
@@ -18,6 +17,10 @@ logger = loggers.get('juniorguru.sync.jobs')
 
 
 WORKERS = os.cpu_count()
+
+
+class DropItem(Exception):
+    pass
 
 
 # TODO musi umet pracovat s tim, ze jsou data odminule, uz probehl sync-jobs jednou a ted se spustil znova aby syncnul increment
@@ -67,7 +70,7 @@ def process_paths(paths, pipelines, workers=None):
 
 def _reader(id, path_queue, item_queue, pipelines):
     logger_r = logger.getChild(f'readers.{id}')
-    logger_r.debug("Starting")
+    logger_r.debug(f"Starting, preprocessing pipelines: {pipelines!r}")
     pipelines = load_pipelines(pipelines)
     try:
         while True:
@@ -138,7 +141,7 @@ def postprocess_jobs(pipelines, workers=None):
     workers = workers or WORKERS
 
     logger_p = logger.getChild('postprocess')
-    logger_p.info('Postprocessing jobs')
+    logger_p.info(f'Starting, postprocessing pipelines: {pipelines!r}')
 
     jobs = Job.select(Job.id)
     args_generator = ((job.id, pipelines) for job in jobs)
@@ -151,12 +154,13 @@ def postprocess_jobs(pipelines, workers=None):
     # instance (convoluted).
 
     with Pool(workers) as pool:
-        jobs = pool.imap_unordered(_postprocessor, args_generator, chunksize=10)
+        results = pool.imap_unordered(_postprocessor, args_generator, chunksize=10)
         while True:
             try:
-                job = dict_to_model(Job, next(jobs))
-                logger_p.debug(f'Updating {job!r}')
-                job.save()
+                operation, item = next(results)
+                job = Job.from_item(item)
+                logger_p.debug(f"Executing '{operation}' on {job!r}")
+                getattr(job, operation)()
                 del job
             except StopIteration:
                 break
@@ -167,9 +171,15 @@ def _postprocessor(args):
     job = Job.get(job_id)
 
     logger_p = logger.getChild('postprocess')
-    logger_p.debug(f'Executing pipelines {pipelines!r} for {job!r}')
+    logger_p.debug(f"Executing pipelines for {job!r}")
 
-    return model_to_dict(execute_pipelines(job, load_pipelines(pipelines)))
+    item = job.to_item()
+    pipelines = load_pipelines(pipelines)
+    try:
+        return ('save', execute_pipelines(item, pipelines))
+    except DropItem:
+        logger_p.info(f"Dropping {job!r}")
+        return ('delete_instance', {'id': job_id})
 
 
 def load_pipelines(pipelines):
@@ -177,7 +187,7 @@ def load_pipelines(pipelines):
             for pipeline in pipelines]
 
 
-def execute_pipelines(item_or_job, pipelines):
+def execute_pipelines(item, pipelines):
     for pipeline in pipelines:
-        item_or_job = pipeline(item_or_job)
-    return item_or_job
+        item = pipeline(item)
+    return item

@@ -1,4 +1,5 @@
 from peewee import CharField, DateField, TextField, BooleanField
+from playhouse.shortcuts import model_to_dict, dict_to_model
 
 from juniorguru.models.base import BaseModel, JSONField
 
@@ -32,8 +33,7 @@ class Job(BaseModel):
     employment_types = JSONField(null=True)
 
     description_html = TextField()
-    description_text = TextField(null=True)
-    description_sentences = JSONField(default=lambda: [])
+    features = JSONField(default=lambda: [])
 
     source = CharField()
     source_urls = JSONField(default=lambda: [])
@@ -49,7 +49,10 @@ class Job(BaseModel):
         data = {field_name: item.get(field_name)
                 for field_name in cls._meta.fields.keys()
                 if field_name in item}
-        return cls(**data)
+        return dict_to_model(cls, data)
+
+    def to_item(self):
+        return model_to_dict(self)
 
     def merge_item(self, item):
         for field_name in self.__class__._meta.fields.keys():

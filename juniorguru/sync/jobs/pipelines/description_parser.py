@@ -53,12 +53,12 @@ SENTENCE_END_RE = re.compile(r'''
 ''', re.VERBOSE)
 
 
-def process(job):
-    description_text = extract_text(job.description_html)
-    job.description_text = description_text
-    job.description_sentences = split_sentences(description_text)
-    # TODO job.description_words = split_words(description_text, job.lang)
-    return job
+def process(item):
+    description_text = extract_text(item['description_html'])
+    item['description_text'] = description_text
+    item['description_sentences'] = split_sentences(description_text)
+    # TODO item['description_words'] = split_words(description_text, job['lang'])
+    return item
 
 
 def extract_text(html_text):
