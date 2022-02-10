@@ -5,7 +5,11 @@ from discord import Colour
 from juniorguru.models.company import Company
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
+<<<<<<< HEAD
 from juniorguru.lib.club import run_discord_task, is_discord_mutable, get_roles
+=======
+from juniorguru.lib.club import discord_task, is_discord_mutable, get_roles
+>>>>>>> c15c7ac5 (attempt to solve various memory, db integrity, and db connection problems)
 from juniorguru.models import ClubUser, Event, db
 
 

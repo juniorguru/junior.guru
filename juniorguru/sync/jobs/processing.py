@@ -2,7 +2,7 @@ import importlib
 import os
 from pathlib import Path
 from queue import Empty
-from multiprocessing import Process, JoinableQueue as Queue, Pool
+from multiprocessing import Process, JoinableQueue as Queue
 import json
 from datetime import date
 
@@ -10,7 +10,7 @@ from pprint import pformat
 from peewee import IntegrityError
 
 from juniorguru.lib import loggers
-from juniorguru.models import db, with_db, Job
+from juniorguru.models import db, Job
 
 
 logger = loggers.get('juniorguru.sync.jobs')
@@ -87,6 +87,7 @@ def _reader(id, path_queue, item_queue, pipelines):
         logger_r.debug("Nothing else to parse, closing")
 
 
+@db.connection_context()
 def _writer(item_queue):
     logger_w = logger.getChild('writer')
     logger_w.debug("Starting")
@@ -94,17 +95,16 @@ def _writer(item_queue):
         while True:
             item = item_queue.get()
             logger_w.debug(f"Saving {item['url']}")
-            with db:
-                job = Job.from_item(item)
-                try:
-                    job.save()
-                except IntegrityError:
-                    job = Job.get_by_item(item)
-                    job.merge_item(item)
-                    job.save()
-                except Exception:
-                    logger_w.error(f'Error saving the following item:\n{pformat(item)}')
-                    raise
+            job = Job.from_item(item)
+            try:
+                job.save()
+            except IntegrityError:
+                job = Job.get_by_item(item)
+                job.merge_item(item)
+                job.save()
+            except Exception:
+                logger_w.error(f'Error saving the following item:\n{pformat(item)}')
+                raise
             logger_w.debug(f"Saved {item['url']} as {job!r}")
             item_queue.task_done()
     finally:
@@ -136,50 +136,76 @@ def path_to_date(path):
                 day=int(path.parent.stem))
 
 
-@with_db
 def postprocess_jobs(pipelines, workers=None):
     workers = workers or WORKERS
 
-    logger_p = logger.getChild('postprocess')
-    logger_p.info(f'Starting, postprocessing pipelines: {pipelines!r}')
+    id_queue = Queue()
+    Process(target=_query, args=(id_queue,), daemon=True).start()
 
-    jobs = Job.select(Job.id)
-    args_generator = ((job.id, pipelines) for job in jobs)
+    op_queue = Queue()
+    Process(target=_persistor, args=(op_queue,), daemon=True).start()
 
-    # The following code can be heavy on memory. The 'chunksize' makes it more
-    # efficient as well as using 'while' instead of 'for in', because this way
-    # it's possible to micromanage the lifecycle of the 'job' variable and clear
-    # it from memory as soon as its contents are not needed. Also the job itself
-    # is transferred between processes as a dict (efficient), not as a 'Job'
-    # instance (convoluted).
+    postprocessors = []
+    for postprocessor_id in range(workers):
+        proc = Process(target=_postprocessor, args=(postprocessor_id, op_queue, id_queue, pipelines))
+        postprocessors.append(proc)
+        proc.start()
 
-    with Pool(workers) as pool:
-        results = pool.imap_unordered(_postprocessor, args_generator, chunksize=10)
-        while True:
-            try:
-                operation, item = next(results)
-                job = Job.from_item(item)
-                logger_p.debug(f"Executing '{operation}' on {job!r}")
-                getattr(job, operation)()
-                del job
-            except StopIteration:
-                break
+    for joinable in postprocessors + [op_queue, id_queue]:
+        joinable.join()
 
 
-def _postprocessor(args):
-    job_id, pipelines = args
-    job = Job.get(job_id)
+db.connection_context()
+def _query(id_queue):
+    for job in Job.select(Job.id).iterator():
+        id_queue.put(job.id)
 
-    logger_p = logger.getChild('postprocess')
-    logger_p.debug(f"Executing pipelines for {job!r}")
 
-    item = job.to_item()
+db.connection_context()
+def _postprocessor(id, op_queue, id_queue, pipelines):
+    logger_p = logger.getChild(f'postprocessors.{id}')
+    logger_p.debug(f"Starting, preprocessing pipelines: {pipelines!r}")
     pipelines = load_pipelines(pipelines)
     try:
-        return ('save', execute_pipelines(item, pipelines))
-    except DropItem:
-        logger_p.info(f"Dropping {job!r}")
-        return ('delete_instance', {'id': job_id})
+        while True:
+            job_id = id_queue.get(timeout=1)
+            job = Job.get(job_id)
+            logger_p.debug(f"Executing pipelines for {job!r}")
+            item = job.to_item()
+            try:
+                op_queue.put(('save', execute_pipelines(item, pipelines)))
+            except DropItem:
+                logger_p.info(f"Dropping {job!r}")
+                op_queue.put(('delete', {'id': job_id}))
+            id_queue.task_done()
+    except Empty:
+        logger_p.debug("Nothing else to postprocess, closing")
+
+
+@db.connection_context()
+def _persistor(op_queue):
+    logger_p = logger.getChild('persistor')
+    logger_p.debug("Starting")
+    try:
+        while True:
+            operation, item = op_queue.get()
+            job = Job.from_item(item)
+            try:
+                if operation == 'delete':
+                    logger_p.debug(f"Deleting {job!r}")
+                    job.delete_instance()
+                elif operation == 'save':
+                    logger_p.debug(f"Updating {job!r}")
+                    job.save()
+                else:
+                    raise ValueError(f'Unknown operation: {operation}')
+            except Exception:
+                logger_p.error(f'Error saving the following item:\n{pformat(item)}')
+                raise
+            del job
+            op_queue.task_done()
+    finally:
+        logger_p.debug("Closing persistor")
 
 
 def load_pipelines(pipelines):

@@ -1,5 +1,5 @@
 from peewee import CharField, DateField, TextField, BooleanField
-from playhouse.shortcuts import model_to_dict, dict_to_model
+from playhouse.shortcuts import model_to_dict
 
 from juniorguru.models.base import BaseModel, JSONField
 
@@ -49,7 +49,7 @@ class Job(BaseModel):
         data = {field_name: item.get(field_name)
                 for field_name in cls._meta.fields.keys()
                 if field_name in item}
-        return dict_to_model(cls, data)
+        return cls(**data)
 
     def to_item(self):
         return model_to_dict(self)

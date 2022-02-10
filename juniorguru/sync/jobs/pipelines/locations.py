@@ -5,18 +5,14 @@ import requests
 from lxml import etree
 
 from juniorguru.lib import loggers
-from juniorguru.jobs.legacy_jobs.settings import USER_AGENT
+from juniorguru.jobs.settings import USER_AGENT
 
 
-logger = loggers.get(__name__)
+logger = loggers.get('juniorguru.jobs.pipelines.locations')
 
 
 # https://docs.python-requests.org/en/master/user/advanced/#timeouts
 MAPYCZ_REQUEST_TIMEOUT = (3.05, 27)
-
-
-class GeocodeError(Exception):
-    pass
 
 
 OPTIMIZATIONS = [
@@ -27,6 +23,7 @@ OPTIMIZATIONS = [
         (r'\bOstrava\b', {'place': 'Ostrava', 'region': 'Ostrava', 'country': 'Česko'}),
     ]
 ]
+
 REGIONS_MAPPING = {
     # countries
     'Deutschland': 'Německo',
@@ -49,6 +46,7 @@ REGIONS_MAPPING = {
     'Zlínský kraj': 'Zlín',
     'Kraj Vysočina': 'Jihlava',
 }
+
 ADDRESS_TYPES_MAPPING = {
     # Mapy.cz
     'muni': 'place',
@@ -62,39 +60,33 @@ ADDRESS_TYPES_MAPPING = {
 }
 
 
-class Pipeline():
-    def __init__(self, stats=None, geocode=None):
-        self.stats = stats
-        self.geocode = geocode or geocode_mapycz
+class GeocodeError(Exception):
+    pass
 
-    @classmethod
-    def from_crawler(cls, crawler):
-        return cls(stats=crawler.stats)
 
-    def process_item(self, item, spider):
-        location_tuples = [self.parse_location(loc, spider, item)
-                           for loc in item.get('locations_raw', [])]
-        location_tuples = set(filter(None, location_tuples))
-        item['locations'] = [dict(name=name, region=region)
-                             for name, region in location_tuples]
-        return item
+def process(item, geocode=None):
+    location_tuples = [parse_location(loc, item, geocode)
+                       for loc in item.get('locations_raw', [])]
+    location_tuples = set(filter(None, location_tuples))
+    item['locations'] = [dict(name=name, region=region)
+                            for name, region in location_tuples]
+    return item
 
-    def parse_location(self, location_raw, spider, item):
-        try:
-            logger.debug(f"Geocoding '{location_raw}'")
-            address = self.geocode(location_raw)
-            if self.stats:
-                self.stats.inc_value('item_geocoded_count')
-            if address:
-                try:
-                    return (address['place'], get_region(address))
-                except KeyError as e:
-                    raise KeyError(f"{address!r} doesn't have key {e}") from e
-        except Exception:
-            info = dict(spider=spider.name,
-                        title=item.get('title'),
-                        company=item.get('company_name'))
-            logger.exception(f"Geocoding '{location_raw}' failed, {info!r}")
+
+def parse_location(location_raw, item, geocode=None):
+    geocode = geocode or geocode_mapycz
+    try:
+        logger.debug(f"Geocoding '{location_raw}'")
+        address = geocode(location_raw)
+        if address:
+            try:
+                return (address['place'], get_region(address))
+            except KeyError as e:
+                raise KeyError(f"{address!r} doesn't have key {e}") from e
+    except Exception:
+        info = dict(title=item.get('title'),
+                    company=item.get('company_name'))
+        logger.exception(f"Geocoding '{location_raw}' failed, {info!r}")
 
 
 def optimize_geocoding(geocode):
@@ -159,15 +151,13 @@ if __name__ == '__main__':
     """
     Usage:
 
-        python -m juniorguru.sync.jobs.pipelines.locations 'Brno, South Moravia'
+        poetry run python -m juniorguru.sync.jobs.pipelines.locations 'Brno, South Moravia'
     """
     import sys
     from pprint import pprint
-    from collections import namedtuple
 
     location_raw = sys.argv[1]
-    print('Pipeline().geocode()')
-    pprint(Pipeline().geocode(location_raw))
-    print('---\nPipeline().process_item()')
-    spider = namedtuple('Spider', ['name'])(name='test')
-    pprint(Pipeline().process_item({'locations_raw': [location_raw]}, spider))
+    print('geocode()')
+    pprint(geocode_mapycz(location_raw))
+    print('---\nprocess()')
+    pprint(process({'locations_raw': [location_raw]}))

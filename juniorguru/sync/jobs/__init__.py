@@ -11,7 +11,7 @@ PREPROCESS_PIPELINES = [
     'juniorguru.sync.jobs.pipelines.identify',
 ]
 POSTPROCESS_PIPELINES = [
-    # 'juniorguru.sync.jobs.pipelines.locations',
+    'juniorguru.sync.jobs.pipelines.locations',
     'juniorguru.sync.jobs.pipelines.description_parser',
     'juniorguru.sync.jobs.pipelines.features_parser',
     'juniorguru.sync.jobs.pipelines.gender_cleaner',
@@ -22,7 +22,7 @@ POSTPROCESS_PIPELINES = [
 
 @measure('jobs')
 def main():
-    with db:
+    with db.connection_context():
         Job.drop_table()
         Job.create_table()
 
