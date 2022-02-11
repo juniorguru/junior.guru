@@ -19,6 +19,40 @@ logger = loggers.get('juniorguru.sync.jobs')
 WORKERS = os.cpu_count()
 
 
+# DEAR READER OF THIS CODE, you're very welcome to study this monstrosity.
+# However, I advise you to go through the following notes first:
+#
+# - This processing is a part of a larger scheme of things, which aren't very well
+#   documented. The basics are: juniorguru.jobs contains a Scrapy project with
+#   scrapers for downloading job postings. Scraped data is stored raw as JSONL files
+#   and those are persisted between junior.guru builds. Then this part, processing,
+#   happens. It reads the data, preprocesses them with pipelines, merges duplicities,
+#   postprocesses the db records with pipelines. Then the rest of the app can finally
+#   consider the jobs to be ready to work with.
+# - The downloading and processing parts are intentionally separate. Having them
+#   together didn't prove to be a good strategy. It makes debugging difficult,
+#   it makes difficult to persist data between builds, it makes harder to postprocess
+#   the same data differently over time, and so on. Also postprocessing directly
+#   in Scrapy pipelines doesn't really scale well. Scrapy is good for downloading
+#   items per scraper, not for source-agnostic concurrent CPU-heavy postprocessing.
+# - Some ideas are borrowed from the Scrapy framework, but mind this is not
+#   Scrapy, this is custom code based on custom ideas. Yes, there are pipelines,
+#   there is a DropItem exception, there's even something called item, but they're
+#   not Scrapy-compatible and they're not the same. The items here are plain dicts.
+#   The pipelines are plain functions, not classes.
+# - The code uses multiprocessing Queues and Processes, because, and I really
+#   really tried, Pools don't work well with the use cases here. Pools abstract
+#   away some stuff, while Queues allow for elegant solutions to consumer/producer
+#   scenarios as well as full control over how the db connection is managed.
+#   Using Pools caused various problems from memory issues to db connection
+#   mismanagement.
+# - The work done here is memory-heavy, so some of the code is ugly for the sake
+#   of optimizations made. Especially Peewee Job objects can be difficult to pass
+#   around multiple processes.
+# - SQLite doesn't handle concurrent writing well. Concurrent reading is okay.
+#   So the bottleneck here is to save the items to the db, or to save changes made.
+
+
 class DropItem(Exception):
     pass
 
@@ -37,27 +71,30 @@ def filter_relevant_paths(paths, trailing_days):
 
 
 def process_paths(paths, pipelines, workers=None):
+    """
+    Load given paths (files) to the database. Before loading, process
+    each item through given pipelines. Merge duplicate items on save.
+    """
     workers = workers or WORKERS
 
     # First we create the path queue and fill it with paths pointing
-    # at .jsonl files we want to parse. Then we create the item queue,
-    # which will collect parsed items. The writer process starts, waiting
-    # for the item queue. The process being deamon means that it's going
-    # to be terminated automatically once this program is done and doesn't
-    # need to be managed manually. Reader processes get started, pop paths
-    # from the path queue, stream the .jsonl files, parse each line, and
-    # put individual items to the item queue. From there the writer process
-    # takes care of saving them to the db and merging the same jobs. This
-    # intentionally happens in a single process so that SQLite isn't
-    # overloaded by concurrent writes.
-
+    # at .jsonl files we want to parse.
     path_queue = Queue()
     for path in paths:
         path_queue.put(path)
 
+    # Then we create the item queue, which will collect parsed items.
+    # The writer process starts, waiting for the item queue. The process
+    # being deamon means that it's going to be terminated automatically
+    # once this program is done and doesn't need to be managed manually.
     item_queue = Queue()
     Process(target=_writer, args=(item_queue,), daemon=True).start()
 
+    # Reader processes get started, pop paths from the path queue, stream
+    # the .jsonl files, parse each line, and put individual items to
+    # the item queue. From there the writer process takes care of saving
+    # them to the db and merging the same jobs. This intentionally happens
+    # in a single process so that SQLite isn't overloaded by concurrent writes.
     readers = []
     for reader_id in range(workers):
         proc = Process(target=_reader, args=(reader_id, path_queue, item_queue, pipelines))
@@ -69,6 +106,11 @@ def process_paths(paths, pipelines, workers=None):
 
 
 def _reader(id, path_queue, item_queue, pipelines):
+    """
+    Processes taking care of reading JSONL files, parsing them to items,
+    preprocessing the items with given pipelines, and putting the items
+    to a queue to be saved to the db.
+    """
     logger_r = logger.getChild(f'readers.{id}')
     logger_r.debug(f"Starting, preprocessing pipelines: {pipelines!r}")
     pipelines = load_pipelines(pipelines)
@@ -89,6 +131,10 @@ def _reader(id, path_queue, item_queue, pipelines):
 
 @db.connection_context()
 def _writer(item_queue):
+    """
+    A single process taking care of writing items to the db
+    and merging them in case of duplicities.
+    """
     logger_w = logger.getChild('writer')
     logger_w.debug("Starting")
     try:
@@ -112,12 +158,20 @@ def _writer(item_queue):
 
 
 def parse(path):
+    """
+    Parse given JSONL file, generate items, i.e. dicts with scraped
+    job data.
+    """
     with path.open() as f:
         for line_no, line in enumerate(f, start=1):
             yield parse_line(path, line_no, line)
 
 
 def parse_line(path, line_no, line):
+    """
+    Parse a single line of a JSONL file. Return an item, i.e. dict with
+    scraped job data.
+    """
     try:
         data = json.loads(line)
         data['first_seen_on'] = date.fromisoformat(data['first_seen_on'])
@@ -131,20 +185,45 @@ def parse_line(path, line_no, line):
 
 
 def path_to_date(path):
+    """
+    Parse date when the scrapping has happened from given path
+    to a JSONL file.
+    """
     return date(year=int(path.parent.parent.parent.stem),
                 month=int(path.parent.parent.stem),
                 day=int(path.parent.stem))
 
 
 def postprocess_jobs(pipelines, workers=None):
+    """
+    Take jobs from the database and apply given postprocessing pipeline
+    on the data. Then update the jobs with the changes.
+    """
     workers = workers or WORKERS
 
+    # First we create the ID queue and start a separate process, which
+    # queries the db and fills the queue with IDs of all the jobs.
+    # The process being deamon means that it's going to be terminated
+    # automatically once this program is done and doesn't need to be
+    # managed manually.
     id_queue = Queue()
     Process(target=_query, args=(id_queue,), daemon=True).start()
 
+    # Then we create the queue for operations. Operation is a tuple
+    # containing a string like 'save' or 'delete', and then a dict with
+    # the job data. We start a separate process responsible for executing
+    # the operations. This intentionally happens in a single process so
+    # that SQLite isn't overloaded by concurrent writes.
     op_queue = Queue()
     Process(target=_persistor, args=(op_queue,), daemon=True).start()
 
+    # Postprocessor processes get started. They pop IDs of jobs from the
+    # ID queue, fetch the jobs by ID from the db (concurrent reads are OK),
+    # then turn the job into a dict, and run the pipelines over the dict.
+    # If the pipelines raise DropItem, a 'delete' operation is returned with
+    # a minimalistic dict containing only the ID of the job to delete. Else
+    # a 'save' operation with a dict of data to update is returned to the
+    # operation queue.
     postprocessors = []
     for postprocessor_id in range(workers):
         proc = Process(target=_postprocessor, args=(postprocessor_id, op_queue, id_queue, pipelines))
@@ -157,12 +236,20 @@ def postprocess_jobs(pipelines, workers=None):
 
 db.connection_context()
 def _query(id_queue):
+    """
+    A single process taking care of listing all jobs in the db
+    and putting their IDs to the ID queue for postprocessing.
+    """
     for job in Job.select(Job.id).iterator():
         id_queue.put(job.id)
 
 
 db.connection_context()
 def _postprocessor(id, op_queue, id_queue, pipelines):
+    """
+    Processes taking care of passing items through the postprocessing
+    pipelines.
+    """
     logger_p = logger.getChild(f'postprocessors.{id}')
     logger_p.debug(f"Starting, preprocessing pipelines: {pipelines!r}")
     pipelines = load_pipelines(pipelines)
@@ -184,6 +271,10 @@ def _postprocessor(id, op_queue, id_queue, pipelines):
 
 @db.connection_context()
 def _persistor(op_queue):
+    """
+    A single process taking care of persisting the changes made
+    by postprocessing pipelines.
+    """
     logger_p = logger.getChild('persistor')
     logger_p.debug("Starting")
     try:
@@ -209,11 +300,27 @@ def _persistor(op_queue):
 
 
 def load_pipelines(pipelines):
+    """
+    Take a list of strings, import paths to pipeline modules,
+    import them, and return the 'process' function from each
+    of them.
+    """
     return [importlib.import_module(pipeline).process
             for pipeline in pipelines]
 
 
 def execute_pipelines(item, pipelines):
+    """
+    Takes an 'item' dict and a list of 'process' functions
+    (see 'load_pipelines'). Returns the 'item' dict as it is
+    returned after processing through the functions.
+
+    The 'process' function is expected to take the dict and
+    return the same dict modified, or return a different
+    one with the same data, modified. It can also raise
+    the DropItem exception to signalize that the 'item'
+    it is processing should instead be deleted for some reason.
+    """
     for pipeline in pipelines:
         item = pipeline(item)
     return item
