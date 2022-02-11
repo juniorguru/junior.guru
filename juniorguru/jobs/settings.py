@@ -6,7 +6,6 @@ BOT_NAME = 'jobs'
 SPIDER_MODULES = ['juniorguru.jobs.spiders']
 NEWSPIDER_MODULE = 'juniorguru.jobs.spiders'
 
-
 USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
 ROBOTSTXT_OBEY = True
 
@@ -36,11 +35,14 @@ ITEM_PIPELINES = {
 MEDIA_ALLOW_REDIRECTS = True
 IMAGES_STORE = 'juniorguru/images'
 
+FEED_EXPORTERS = {
+   'jsonl.gz': 'juniorguru.jobs.feeds.GzipJsonLinesItemExporter',
+}
 FEEDS_DIR = 'juniorguru/data/jobs'
 FEEDS = {
-    FEEDS_DIR + "/%(year)s/%(month)s/%(day)s/%(name)s.jsonl": {
+    FEEDS_DIR + "/%(year)s/%(month)s/%(day)s/%(name)s.jsonl.gz": {
          'uri_params': 'juniorguru.jobs.feeds.uri_params',
-         'format': 'jsonlines',
+         'format': 'jsonl.gz',
          'indent': 2,
          'overwrite': True,
          'item_export_kwargs': {

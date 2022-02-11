@@ -26,7 +26,7 @@ def main():
         Job.drop_table()
         Job.create_table()
 
-    paths = Path(FEEDS_DIR).glob('**/*.jsonl')
+    paths = Path(FEEDS_DIR).glob('**/*.jsonl.gz')
     paths = filter_relevant_paths(paths, TRAILING_DAYS)
     process_paths(paths, PREPROCESS_PIPELINES)
     postprocess_jobs(POSTPROCESS_PIPELINES)

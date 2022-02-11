@@ -4,6 +4,7 @@ from pathlib import Path
 from queue import Empty
 from multiprocessing import Process, JoinableQueue as Queue
 import json
+import gzip
 from datetime import date
 
 from pprint import pformat
@@ -19,16 +20,16 @@ logger = loggers.get('juniorguru.sync.jobs')
 WORKERS = os.cpu_count()
 
 
-# DEAR READER OF THIS CODE, you're very welcome to study this monstrosity.
+# HELLO, ADVENTURER! You're very welcome to study this monstrosity.
 # However, I advise you to go through the following notes first:
 #
 # - This processing is a part of a larger scheme of things, which aren't very well
 #   documented. The basics are: juniorguru.jobs contains a Scrapy project with
-#   scrapers for downloading job postings. Scraped data is stored raw as JSONL files
-#   and those are persisted between junior.guru builds. Then this part, processing,
-#   happens. It reads the data, preprocesses them with pipelines, merges duplicities,
-#   postprocesses the db records with pipelines. Then the rest of the app can finally
-#   consider the jobs to be ready to work with.
+#   scrapers for downloading job postings. Scraped data is stored raw as .jsonl.gz
+#   files and those are persisted between junior.guru builds. Then this part,
+#   processing, happens. It reads the data, preprocesses them with pipelines, merges
+#   duplicities, postprocesses the db records with pipelines. Then the rest
+#   of the app can finally consider the jobs to be ready to work with.
 # - The downloading and processing parts are intentionally separate. Having them
 #   together didn't prove to be a good strategy. It makes debugging difficult,
 #   it makes difficult to persist data between builds, it makes harder to postprocess
@@ -57,16 +58,20 @@ class DropItem(Exception):
     pass
 
 
-# TODO musi umet pracovat s tim, ze jsou data odminule, uz probehl sync-jobs jednou a ted se spustil znova aby syncnul increment
+# TODO musi umet pracovat s tim, ze jsou data odminule, uz probehl
+# sync-jobs jednou a ted se spustil znova aby syncnul increment
 def filter_relevant_paths(paths, trailing_days):
+    """
+    TODO
+    """
     paths = [Path(path) for path in paths]
-    logger.debug(f"Filtering {len(paths)} .jsonl files")
-    logger.debug(f"Detecting relevant directories for {trailing_days} past days")
-    dirs = {path.parent for path in paths}
-    dirs = sorted(dirs, reverse=True)[:trailing_days]
-    logger.debug(f"Detected {len(dirs)} relevant directories")
-    paths = [path for path in paths if path.parent in dirs]
-    logger.debug(f"Detected {len(paths)} relevant .jsonl files")
+    logger.debug(f"Filtering {len(paths)} .jsonl.gz files")
+    # logger.debug(f"Detecting relevant directories for {trailing_days} past days")
+    # dirs = {path.parent for path in paths}
+    # dirs = sorted(dirs, reverse=True)[:trailing_days]
+    # logger.debug(f"Detected {len(dirs)} relevant directories")
+    # paths = [path for path in paths if path.parent in dirs]
+    # logger.debug(f"Detected {len(paths)} relevant .jsonl.gz files")
     return paths
 
 
@@ -78,10 +83,10 @@ def process_paths(paths, pipelines, workers=None):
     workers = workers or WORKERS
 
     # First we create the path queue and fill it with paths pointing
-    # at .jsonl files we want to parse.
+    # at .jsonl.gz files we want to parse.
     path_queue = Queue()
     for path in paths:
-        path_queue.put(path)
+        path_queue.put(str(path))
 
     # Then we create the item queue, which will collect parsed items.
     # The writer process starts, waiting for the item queue. The process
@@ -91,7 +96,7 @@ def process_paths(paths, pipelines, workers=None):
     Process(target=_writer, args=(item_queue,), daemon=True).start()
 
     # Reader processes get started, pop paths from the path queue, stream
-    # the .jsonl files, parse each line, and put individual items to
+    # the .jsonl.gz files, parse each line, and put individual items to
     # the item queue. From there the writer process takes care of saving
     # them to the db and merging the same jobs. This intentionally happens
     # in a single process so that SQLite isn't overloaded by concurrent writes.
@@ -107,7 +112,7 @@ def process_paths(paths, pipelines, workers=None):
 
 def _reader(id, path_queue, item_queue, pipelines):
     """
-    Processes taking care of reading JSONL files, parsing them to items,
+    Processes taking care of reading .jsonl.gz files, parsing them to items,
     preprocessing the items with given pipelines, and putting the items
     to a queue to be saved to the db.
     """
@@ -119,12 +124,14 @@ def _reader(id, path_queue, item_queue, pipelines):
             path = path_queue.get(timeout=1)
             logger_r.debug(f"Parsing {path}")
             counter = 0
-            for item in parse(path):
-                item = execute_pipelines(item, pipelines)
-                item_queue.put(item)
-                counter += 1
-            logger_r.info(f"Parsed {path} into {counter} items")
-            path_queue.task_done()
+            try:
+                for item in parse(path):
+                    item = execute_pipelines(item, pipelines)
+                    item_queue.put(item)
+                    counter += 1
+                logger_r.info(f"Parsed {path} into {counter} items")
+            finally:
+                path_queue.task_done()
     except Empty:
         logger_r.debug("Nothing else to parse, closing")
 
@@ -151,25 +158,32 @@ def _writer(item_queue):
             except Exception:
                 logger_w.error(f'Error saving the following item:\n{pformat(item)}')
                 raise
-            logger_w.debug(f"Saved {item['url']} as {job!r}")
-            item_queue.task_done()
+            else:
+                logger_w.debug(f"Saved {item['url']} as {job!r}")
+            finally:
+                item_queue.task_done()
     finally:
         logger_w.debug("Closing writer")
 
 
 def parse(path):
     """
-    Parse given JSONL file, generate items, i.e. dicts with scraped
+    Parse given .jsonl.gz file, generate items, i.e. dicts with scraped
     job data.
     """
-    with path.open() as f:
-        for line_no, line in enumerate(f, start=1):
-            yield parse_line(path, line_no, line)
+    try:
+        with gzip.open(path, 'rt') as f:
+            for line_no, line in enumerate(f, start=1):
+                yield parse_line(path, line_no, line)
+    except Exception:
+        logger_p = logger.getChild('parse')
+        logger_p.exception(f'Error parsing file: {path}')
+        raise
 
 
 def parse_line(path, line_no, line):
     """
-    Parse a single line of a JSONL file. Return an item, i.e. dict with
+    Parse a single line of a .jsonl.gz file. Return an item, i.e. dict with
     scraped job data.
     """
     try:
@@ -187,8 +201,9 @@ def parse_line(path, line_no, line):
 def path_to_date(path):
     """
     Parse date when the scrapping has happened from given path
-    to a JSONL file.
+    to a .jsonl.gz file.
     """
+    path = Path(path)
     return date(year=int(path.parent.parent.parent.stem),
                 month=int(path.parent.parent.stem),
                 day=int(path.parent.stem))
@@ -264,7 +279,8 @@ def _postprocessor(id, op_queue, id_queue, pipelines):
             except DropItem:
                 logger_p.info(f"Dropping {job!r}")
                 op_queue.put(('delete', {'id': job_id}))
-            id_queue.task_done()
+            finally:
+                id_queue.task_done()
     except Empty:
         logger_p.debug("Nothing else to postprocess, closing")
 
@@ -293,8 +309,9 @@ def _persistor(op_queue):
             except Exception:
                 logger_p.error(f'Error saving the following item:\n{pformat(item)}')
                 raise
-            del job
-            op_queue.task_done()
+            finally:
+                del job
+                op_queue.task_done()
     finally:
         logger_p.debug("Closing persistor")
 
