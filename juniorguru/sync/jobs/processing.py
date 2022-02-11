@@ -14,10 +14,10 @@ from juniorguru.lib import loggers
 from juniorguru.models import db, Job
 
 
-logger = loggers.get('juniorguru.sync.jobs')
-
-
 WORKERS = os.cpu_count()
+
+
+logger = loggers.get('juniorguru.sync.jobs')
 
 
 # HELLO, ADVENTURER! You're very welcome to study this monstrosity.
@@ -58,21 +58,15 @@ class DropItem(Exception):
     pass
 
 
-# TODO musi umet pracovat s tim, ze jsou data odminule, uz probehl
-# sync-jobs jednou a ted se spustil znova aby syncnul increment
-def filter_relevant_paths(paths, trailing_days):
+def filter_relevant_paths(paths, last_seen_on):
     """
-    TODO
+    Filters given .json.gz paths so that only those scraped
+    on equal or later date than 'last_seen_on' are left.
     """
     paths = [Path(path) for path in paths]
-    logger.debug(f"Filtering {len(paths)} .jsonl.gz files")
-    # logger.debug(f"Detecting relevant directories for {trailing_days} past days")
-    # dirs = {path.parent for path in paths}
-    # dirs = sorted(dirs, reverse=True)[:trailing_days]
-    # logger.debug(f"Detected {len(dirs)} relevant directories")
-    # paths = [path for path in paths if path.parent in dirs]
-    # logger.debug(f"Detected {len(paths)} relevant .jsonl.gz files")
-    return paths
+    dirs = {path.parent for path in paths}
+    dirs = [dir for dir in dirs if dir_to_date(dir) >= last_seen_on]
+    return [path for path in paths if path.parent in dirs]
 
 
 def process_paths(paths, pipelines, workers=None):
@@ -136,36 +130,6 @@ def _reader(id, path_queue, item_queue, pipelines):
         logger_r.debug("Nothing else to parse, closing")
 
 
-@db.connection_context()
-def _writer(item_queue):
-    """
-    A single process taking care of writing items to the db
-    and merging them in case of duplicities.
-    """
-    logger_w = logger.getChild('writer')
-    logger_w.debug("Starting")
-    try:
-        while True:
-            item = item_queue.get()
-            logger_w.debug(f"Saving {item['url']}")
-            job = Job.from_item(item)
-            try:
-                job.save()
-            except IntegrityError:
-                job = Job.get_by_item(item)
-                job.merge_item(item)
-                job.save()
-            except Exception:
-                logger_w.error(f'Error saving the following item:\n{pformat(item)}')
-                raise
-            else:
-                logger_w.debug(f"Saved {item['url']} as {job!r}")
-            finally:
-                item_queue.task_done()
-    finally:
-        logger_w.debug("Closing writer")
-
-
 def parse(path):
     """
     Parse given .jsonl.gz file, generate items, i.e. dicts with scraped
@@ -198,15 +162,34 @@ def parse_line(path, line_no, line):
         raise
 
 
-def path_to_date(path):
+@db.connection_context()
+def _writer(item_queue):
     """
-    Parse date when the scrapping has happened from given path
-    to a .jsonl.gz file.
+    A single process taking care of writing items to the db
+    and merging them in case of duplicities.
     """
-    path = Path(path)
-    return date(year=int(path.parent.parent.parent.stem),
-                month=int(path.parent.parent.stem),
-                day=int(path.parent.stem))
+    logger_w = logger.getChild('writer')
+    logger_w.debug("Starting")
+    try:
+        while True:
+            item = item_queue.get()
+            logger_w.debug(f"Saving {item['url']}")
+            job = Job.from_item(item)
+            try:
+                job.save()
+            except IntegrityError:
+                job = Job.get_by_item(item)
+                job.merge_item(item)
+                job.save()
+            except Exception:
+                logger_w.error(f'Error saving the following item:\n{pformat(item)}')
+                raise
+            else:
+                logger_w.debug(f"Saved {item['url']} as {job!r}")
+            finally:
+                item_queue.task_done()
+    finally:
+        logger_w.debug("Closing writer")
 
 
 def postprocess_jobs(pipelines, workers=None):
@@ -341,3 +324,22 @@ def execute_pipelines(item, pipelines):
     for pipeline in pipelines:
         item = pipeline(item)
     return item
+
+
+def path_to_date(path):
+    """
+    Parse date when the scrapping has happened from given path
+    to a .jsonl.gz file.
+    """
+    return dir_to_date(Path(path).parent)
+
+
+def dir_to_date(dir):
+    """
+    Parse date when the scrapping has happened from given path
+    to a directory of .jsonl.gz files.
+    """
+    dir = Path(dir)
+    return date(year=int(dir.parent.parent.stem),
+                month=int(dir.parent.stem),
+                day=int(dir.stem))

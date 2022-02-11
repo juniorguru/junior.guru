@@ -102,6 +102,7 @@ jobs:
           name: Sync data
           command: |
             export DISCORD_MUTATIONS_ENABLED=1
+            export REUSE_JOBS_DB_ENABLED=1
             make sync-jobs
       - persist_to_workspace:
           root: "~"

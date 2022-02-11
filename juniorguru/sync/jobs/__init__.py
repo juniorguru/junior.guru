@@ -1,15 +1,21 @@
+import os
 from pathlib import Path
 
+from peewee import OperationalError
+
+from juniorguru.lib import loggers
 from juniorguru.lib.timer import measure
 from juniorguru.models import db, Job
 from juniorguru.jobs.settings import FEEDS_DIR
 from juniorguru.sync.jobs.processing import filter_relevant_paths, process_paths, postprocess_jobs
 
 
-TRAILING_DAYS = 365
+REUSE_JOBS_DB_ENABLED = bool(int(os.getenv('REUSE_JOBS_DB_ENABLED', 0)))
+
 PREPROCESS_PIPELINES = [
     'juniorguru.sync.jobs.pipelines.identify',
 ]
+
 POSTPROCESS_PIPELINES = [
     'juniorguru.sync.jobs.pipelines.locations',
     'juniorguru.sync.jobs.pipelines.description_parser',
@@ -20,13 +26,31 @@ POSTPROCESS_PIPELINES = [
 ]
 
 
+logger = loggers.get('juniorguru.sync.jobs')
+
+
 @measure('jobs')
 def main():
-    with db.connection_context():
-        Job.drop_table()
-        Job.create_table()
+    paths = list(Path(FEEDS_DIR).glob('**/*.jsonl.gz'))
+    logger.info(f'Found {len(paths)} .json.gz paths')
 
-    paths = Path(FEEDS_DIR).glob('**/*.jsonl.gz')
-    paths = filter_relevant_paths(paths, TRAILING_DAYS)
+    latest_seen_on = None
+    with db.connection_context():
+        if REUSE_JOBS_DB_ENABLED:
+            logger.warning('Reusing of existing jobs database is enabled!')
+            try:
+                latest_seen_on = Job.latest_seen_on()
+                logger.info(f'Last jobs seen on: {latest_seen_on}')
+            except OperationalError:
+                logger.warning('Jobs database not operational!')
+
+        if latest_seen_on:
+            paths = filter_relevant_paths(paths, latest_seen_on)
+            logger.info(f'Keeping {len(paths)} relevant .json.gz paths')
+        else:
+            logger.info('Not reusing jobs database')
+            Job.drop_table()
+            Job.create_table()
+
     process_paths(paths, PREPROCESS_PIPELINES)
     postprocess_jobs(POSTPROCESS_PIPELINES)

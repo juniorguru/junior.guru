@@ -39,6 +39,13 @@ class Job(BaseModel):
     source_urls = JSONField(default=lambda: [])
 
     @classmethod
+    def latest_seen_on(cls):
+        job = cls.select() \
+            .order_by(cls.last_seen_on.desc()) \
+            .first()
+        return job.last_seen_on if job else None
+
+    @classmethod
     def get_by_item(cls, item):
         return cls.select() \
             .where(cls.url == item['url']) \
