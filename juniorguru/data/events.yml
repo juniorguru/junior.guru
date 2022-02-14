@@ -52,19 +52,19 @@
 #    prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
-# - title: "TBD: Jak přežít cestu juniora po psychické stránce"
-#   date: "2022-02-22"
-#   description: |
-#     TBD
-#   bio_name: Nela Slezáková
-#   bio_title: TBD
-#   bio: |
-#     TBD
-#   bio_links:
-#     - https://www.nelaprovazi.cz/
-#     - https://www.linkedin.com/in/nela-slezakova/
-#   logo_path: TBD
-#   speakers: 791020144661889054
+- title: "TBD: Jak přežít cestu juniora po psychické stránce"
+  date: "2022-02-22"
+  description: |
+    Říká se, že zdraví máme pouze jedno. Ale zatímco to fyzické zanedbává málokdo, péče o psychické zdraví zdaleka není takovou normou. Cesta do IT je náročná životní změna. Vysoké nároky na sebe sama, srovnávání se s ostatními, obavy zda jste dost dobří, zda se vám to podaří, nedostatek odpočinku. To vše může vést až k vyhoření. Na přednášce si představíme pět zásad, každou s praktickými tipy, které vám pomohou si na cestě do IT své psychické zdraví nepošlapat.
+  bio_name: Nela Slezáková
+  bio_title: Psycholožka a programátorka
+  bio: |
+    Jako samouk jsem se za relativně krátký čas byla schopná uchytit jako Python programátorka. Mimo to jsem ale taky vystudovaná psycholožka, terapeutka a koučka ve výcviku. Hledala jsem způsob, jak spojit své dva milované světy - programování a psychologii. A když jsem se začala pohybovat mezi začátečníky, kteří se do IT snaží dostat, objevila jsem, že jim mám hodně co nabídnout. A nejen jim, ale i lidem, kteří se v IT pohybují, ale nejsou úplně spokojení.
+  bio_links:
+    - https://www.nelaprovazi.cz/
+    - https://www.linkedin.com/in/nela-slezakova/
+  logo_path: logos/nelaprovazi.png
+  speakers: 791020144661889054
 
 
 - title: "Chcem mobilnú aplikáciu. Ako a kde začať?"
