@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "bootstrap-icons": "1.8.1",
-    "chart.js": "3.7.0",
+    "chart.js": "3.7.1",
     "instant.page": "3.0.0",
     "magic-snowflakes": "6.0.1",
     "rough-notation": "0.5.1"
