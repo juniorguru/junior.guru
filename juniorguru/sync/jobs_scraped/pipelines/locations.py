@@ -8,7 +8,7 @@ from juniorguru.lib import loggers
 from juniorguru.jobs.settings import USER_AGENT
 
 
-logger = loggers.get('juniorguru.jobs.pipelines.locations')
+logger = loggers.get('juniorguru.jobs_scraped.pipelines.locations')
 
 
 # https://docs.python-requests.org/en/master/user/advanced/#timeouts
@@ -151,7 +151,7 @@ if __name__ == '__main__':
     """
     Usage:
 
-        poetry run python -m juniorguru.sync.jobs.pipelines.locations 'Brno, South Moravia'
+        poetry run python -m juniorguru.sync.jobs_scraped.pipelines.locations 'Brno, South Moravia'
     """
     import sys
     from pprint import pprint

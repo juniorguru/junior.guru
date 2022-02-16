@@ -3,12 +3,11 @@ from datetime import date, datetime, time
 import pytest
 
 from juniorguru.models import base as models_base
-from juniorguru.jobs.items import Job
 
 
 @pytest.fixture
 def db():
-    class DummyDB():
+    class StubDB():
         def __init__(self):
             self.entered = 0
             self.exited = 0
@@ -19,12 +18,12 @@ def db():
         def __exit__(self, *args, **kwargs):
             self.exited += 1
 
-    return DummyDB()
+    return StubDB()
 
 
 @pytest.fixture
 def stats():
-    class DummyStats():
+    class StubStats():
         def __init__(self):
             self.values = {}
 
@@ -32,7 +31,7 @@ def stats():
             self.values.setdefault(name, 0)
             self.values[name] += 1
 
-    return DummyStats()
+    return StubStats()
 
 
 @pytest.mark.parametrize('o,expected', [
@@ -50,11 +49,11 @@ def test_json_dumps(o, expected):
 
 
 def test_json_dumps_item():
-    job = Job(posted_at=datetime(2020, 4, 30, 14, 35, 10),
-              title='Junior developer',
-              employment_types=frozenset(['full-time']))
+    item = dict(posted_at=datetime(2020, 4, 30, 14, 35, 10),
+                title='Junior developer',
+                employment_types=frozenset(['full-time']))
 
-    assert models_base.json_dumps(job) == ('{'
+    assert models_base.json_dumps(item) == ('{'
         '"posted_at": "2020-04-30T14:35:10", '
         '"title": "Junior developer", '
         '"employment_types": ["full-time"]'

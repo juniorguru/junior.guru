@@ -3,11 +3,11 @@ from urllib.parse import quote_plus
 
 from jinja2 import Template
 
-from juniorguru.models import Job
+from juniorguru.models import PostedJob
 
 
 def generate_messages(today):
-    jobs = Job.juniorguru_listing()
+    jobs = PostedJob.juniorguru_listing()
 
     template_path = Path(__file__).parent / 'templates' / 'job_metrics.html'
     template = Template(template_path.read_text())

@@ -1,6 +1,6 @@
 import re
 
-from juniorguru.sync.jobs.processing import DropItem
+from juniorguru.sync.jobs_scraped.processing import DropItem
 
 
 RE_IDENTIFY_MAPPING = [

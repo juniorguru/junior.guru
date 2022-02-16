@@ -15,13 +15,13 @@ EMPLOYMENT_TYPES = [
 ]
 
 
-class SubmittedJob(BaseModel):
+class PostedJob(BaseModel):
     id = CharField(primary_key=True)
     boards_ids = JSONField(default=lambda: [], index=True)
 
     title = CharField()
-    posted_at = DateField(index=True)
-    expires_at = DateField(null=True)
+    posted_on = DateField(index=True)
+    expires_on = DateField(null=True)
     lang = CharField()
 
     apply_email = CharField(null=True)
@@ -36,16 +36,8 @@ class SubmittedJob(BaseModel):
 
     description_html = TextField()
 
-    @classmethod
-    def from_sheet_record(cls, record):
-        return cls()
-        # data = {field_name: item.get(field_name)
-        #         for field_name in cls._meta.fields.keys()
-        #         if field_name in item}
-        # return cls(**data)
 
-
-class DownloadedJob(BaseModel):
+class ScrapedJob(BaseModel):
     boards_ids = JSONField(default=lambda: [], index=True)
 
     title = CharField()
