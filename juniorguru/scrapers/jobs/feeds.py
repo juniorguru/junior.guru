@@ -4,7 +4,7 @@ from datetime import date
 
 from scrapy.exporters import JsonLinesItemExporter
 
-from juniorguru.jobs.settings import FEEDS
+from juniorguru.scrapers.jobs.settings import FEEDS
 
 
 class GzipJsonLinesItemExporter(JsonLinesItemExporter):

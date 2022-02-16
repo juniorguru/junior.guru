@@ -5,10 +5,10 @@ import requests
 from lxml import etree
 
 from juniorguru.lib import loggers
-from juniorguru.jobs.settings import USER_AGENT
+from juniorguru.scrapers.jobs.settings import USER_AGENT
 
 
-logger = loggers.get('juniorguru.jobs_scraped.pipelines.locations')
+logger = loggers.get('juniorguru.sync.jobs_scraped.pipelines.locations')
 
 
 # https://docs.python-requests.org/en/master/user/advanced/#timeouts

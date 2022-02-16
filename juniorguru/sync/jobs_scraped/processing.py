@@ -17,7 +17,7 @@ from juniorguru.models import db, ScrapedJob
 WORKERS = os.cpu_count()
 
 
-logger = loggers.get('juniorguru.sync.jobs')
+logger = loggers.get('juniorguru.sync.jobs_scraped')
 
 
 # HELLO, ADVENTURER! You're very welcome to study this monstrosity.

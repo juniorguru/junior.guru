@@ -4,8 +4,8 @@ test:
 lint:
 	poetry run flake8 && npx stylelint 'juniorguru/web/static/src/css-mkdocs/**/*.scss' 'juniorguru/image_templates/*.css'
 
-jobs:
-	poetry run python -m juniorguru.jobs
+scrapers-jobs:
+	poetry run python -m juniorguru.scrapers.jobs
 
 sync:
 	poetry run python -m juniorguru.sync $(SYNC)

@@ -10,7 +10,7 @@ from juniorguru.lib.coerce import (coerce, parse_boolean, parse_datetime, parse_
     parse_date, parse_set, parse_boolean_words, parse_url)
 from juniorguru.models import SubmittedJob, db
 from juniorguru.lib import loggers
-from juniorguru.jobs.pipelines.language_parser import parse_language
+from juniorguru.scrapers.jobs.pipelines.language_parser import parse_language
 from juniorguru.sync.jobs_scraped.pipelines import boards_ids
 
 

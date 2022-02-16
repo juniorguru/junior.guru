@@ -5,11 +5,11 @@ from scrapy.utils.project import data_path
 from juniorguru.lib.scrapers import scrape
 from juniorguru.lib import timer
 from juniorguru.lib import loggers
-from juniorguru.jobs.settings import IMAGES_STORE, HTTPCACHE_DIR
-from juniorguru.jobs.feeds import feed_path, feeds_dir
+from juniorguru.scrapers.jobs.settings import IMAGES_STORE, HTTPCACHE_DIR
+from juniorguru.scrapers.jobs.feeds import feed_path, feeds_dir
 
 
-logger = loggers.get('juniorguru.jobs')
+logger = loggers.get('juniorguru.scrapers.jobs')
 
 
 class JobsScrapingException(Exception):
@@ -17,7 +17,7 @@ class JobsScrapingException(Exception):
 
 
 @timer.notify
-@timer.measure('jobs')
+@timer.measure('scrapers.jobs')
 def main():
     logger.info('Creating directories (to prevent race conditions in spiders)')
     data_path(HTTPCACHE_DIR, createdir=True)
@@ -31,7 +31,7 @@ def main():
         'weworkremotely',
     ]
     logger.info(f'Scraping {spider_names}')
-    scrape('juniorguru.jobs', spider_names)
+    scrape('juniorguru.scrapers.jobs', spider_names)
 
     logger.info('Checking scrapers')
     # TODO vcucnout scripts/check_scrapers.py

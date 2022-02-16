@@ -10,7 +10,7 @@ from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Identity, MapCompose, TakeFirst
 
-from juniorguru.jobs.items import Job, absolute_url
+from juniorguru.scrapers.jobs.items import Job, absolute_url
 
 
 class Spider(BaseSpider):
