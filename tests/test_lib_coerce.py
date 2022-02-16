@@ -122,3 +122,22 @@ def test_coerce_boolean(value, expected):
 ])
 def test_coerce_set(value, expected):
     assert coerce.parse_set(value) == expected
+
+
+@pytest.mark.parametrize('value,expected', [
+    (None, None),
+    ('  https://honzajavorek.cz/  ', 'https://honzajavorek.cz/'),
+])
+def test_coerce_url(value, expected):
+    assert coerce.parse_url(value) == expected
+
+
+@pytest.mark.parametrize('value', [
+    'htps://honzajavorek.cz/',
+    'https//honzajavorek.cz/',
+    'www.honzajavorek.cz/',
+    'honzajavorek.cz/',
+])
+def test_coerce_url_raises(value):
+    with pytest.raises(ValueError):
+        assert coerce.parse_url(value)
