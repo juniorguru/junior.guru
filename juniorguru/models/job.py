@@ -15,7 +15,7 @@ EMPLOYMENT_TYPES = [
 ]
 
 
-class PostedJob(BaseModel):
+class SubmittedJob(BaseModel):
     id = CharField(primary_key=True)
     boards_ids = JSONField(default=lambda: [], index=True)
 

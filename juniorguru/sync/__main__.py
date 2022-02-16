@@ -24,7 +24,7 @@ from juniorguru.sync.li_group import main as sync_li_group
 from juniorguru.sync.stickers import main as sync_stickers
 from juniorguru.sync.podcast import main as sync_podcast
 from juniorguru.sync.jobs_scraped import main as sync_jobs_scraped
-from juniorguru.sync.jobs_posted import main as sync_jobs_posted
+from juniorguru.sync.jobs_submitted import main as sync_jobs_submitted
 # from juniorguru.lib.ai import set_ai_opinion
 
 
@@ -43,7 +43,7 @@ def main():
     sync_club_content()
     sync_podcast()
     sync_jobs_scraped()
-    sync_jobs_posted()
+    sync_jobs_submitted()
 
     # depends on club_content
     sync_stickers()
