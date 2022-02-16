@@ -7,6 +7,9 @@ lint:
 scrapers-jobs:
 	poetry run python -m juniorguru.scrapers.jobs
 
+scrapers-companies:
+	poetry run python -m juniorguru.scrapers.companies
+
 sync:
 	poetry run python -m juniorguru.sync $(SYNC)
 

@@ -48,7 +48,7 @@ def coerce_record(record):
     return coerce({
         r'^name$': ('name', parse_text),
         r'^email$': ('email', parse_text),
-        r'^filename$': ('filename', parse_text),
+        r'^filename$': ('logo_filename', parse_text),
         r'^handbook$': ('is_sponsoring_handbook', parse_boolean_words),
         r'^student coupon base$': ('student_coupon_base', parse_text),
         r'^link$': ('link', parse_text),

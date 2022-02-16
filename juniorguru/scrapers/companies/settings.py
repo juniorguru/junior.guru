@@ -1,10 +1,10 @@
 import os
 
 
-BOT_NAME = 'jobs'
+BOT_NAME = 'companies'
 
-SPIDER_MODULES = ['juniorguru.scrapers.jobs.spiders']
-NEWSPIDER_MODULE = 'juniorguru.scrapers.jobs.spiders'
+SPIDER_MODULES = ['juniorguru.scrapers.companies.spiders']
+NEWSPIDER_MODULE = 'juniorguru.scrapers.companies.spiders'
 
 USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
 ROBOTSTXT_OBEY = True
@@ -24,29 +24,11 @@ EXTENSIONS = {
 }
 
 ITEM_PIPELINES = {
-   'juniorguru.scrapers.jobs.pipelines.required_fields_filter.Pipeline': 50,
-   'juniorguru.scrapers.jobs.pipelines.short_description_filter.Pipeline': 100,
-   'juniorguru.scrapers.jobs.pipelines.broken_encoding_filter.Pipeline': 150,
-   'juniorguru.scrapers.jobs.pipelines.language_parser.Pipeline': 200,
-   'juniorguru.scrapers.jobs.pipelines.language_filter.Pipeline': 250,
+   'juniorguru.scrapers.companies.pipelines.company_logo.Pipeline': 50,
 }
 
-FEED_EXPORTERS = {
-   'jsonl.gz': 'juniorguru.scrapers.jobs.feeds.GzipJsonLinesItemExporter',
-}
-FEEDS_DIR = 'juniorguru/data/jobs'
-FEEDS = {
-    FEEDS_DIR + "/%(year)s/%(month)s/%(day)s/%(name)s.jsonl.gz": {
-         'uri_params': 'juniorguru.scrapers.jobs.feeds.uri_params',
-         'format': 'jsonl.gz',
-         'indent': 2,
-         'overwrite': True,
-         'item_export_kwargs': {
-            'ensure_ascii': False,
-            'sort_keys': True,
-         },
-    },
-}
+MEDIA_ALLOW_REDIRECTS = True
+IMAGES_STORE = 'juniorguru/images'
 
 AUTOTHROTTLE_ENABLED = True
 

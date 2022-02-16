@@ -91,7 +91,7 @@ def parse_markdown(value):
         return md(value.strip())
 
 
-def create_id(submitted_at, company_link):
-    url_parts = urlparse(company_link)
+def create_id(submitted_at, company_url):
+    url_parts = urlparse(company_url)
     seed = f'{submitted_at:%Y-%m-%dT%H:%M:%S} {url_parts.netloc}'
     return hashlib.sha224(seed.encode()).hexdigest()
