@@ -3,9 +3,6 @@ import hashlib
 from urllib.parse import urlparse
 from datetime import date, timedelta
 
-import langdetect
-from w3lib.html import remove_tags
-
 from juniorguru.lib.md import md
 from juniorguru.lib.timer import measure
 from juniorguru.lib import google_sheets
@@ -13,7 +10,8 @@ from juniorguru.lib.coerce import (coerce, parse_boolean, parse_datetime, parse_
     parse_date, parse_set, parse_boolean_words, parse_url)
 from juniorguru.models import SubmittedJob, db
 from juniorguru.lib import loggers
-from juniorguru.sync.jobs_scraped.pipelines.boards_ids import process as boards_ids
+from juniorguru.jobs.pipelines.language_parser import parse_language
+from juniorguru.sync.jobs_scraped.pipelines import boards_ids
 
 
 logger = loggers.get('juniorguru.sync.jobs_submitted')
@@ -75,9 +73,10 @@ def coerce_record(record, today=None):
 
     data['id'] = create_id(data['submitted_at'], data['company_url'])
     data['url'] = f"https://junior.guru/jobs/{data['id']}/"
-    data['lang'] = langdetect.detect(remove_tags(data['description_html']))
-    data = boards_ids(data)
+    urls = filter(None, [data['url'], data.get('apply_url')])
+    data['boards_ids'] = boards_ids.parse_urls(urls)
 
+    data['lang'] = parse_language(data['description_html'])
     return data
 
 

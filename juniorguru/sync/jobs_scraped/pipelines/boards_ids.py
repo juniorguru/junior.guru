@@ -19,19 +19,20 @@ class MissingIdentifyingField(DropItem):
 
 def process(item):
     try:
-        urls = [item['url'], item.get('apply_url')]
-    except KeyError as exc:
-        raise MissingIdentifyingField(str(exc))
+        url = item['url']
+    except KeyError as e:
+        raise MissingIdentifyingField(str(e))
 
-    boards_ids = [parse_board_id(url) for url in urls if url]
-    boards_ids = filter(None, boards_ids)
-    boards_ids = sorted(set(boards_ids))
-
-    item['boards_ids'] = boards_ids
+    item['boards_ids'] = parse_urls(filter(None, [url, item.get('apply_url')]))
     return item
 
 
-def parse_board_id(url):
+def parse_urls(urls):
+    boards_ids = filter(None, map(parse_url, urls))
+    return sorted(set(boards_ids))
+
+
+def parse_url(url):
     for namespace, re_id in RE_IDENTIFY_MAPPING:
         match = re_id.search(url)
         if match:
