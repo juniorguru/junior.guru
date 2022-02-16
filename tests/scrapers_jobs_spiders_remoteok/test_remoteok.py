@@ -5,7 +5,7 @@ from pathlib import Path
 from lxml import html
 from scrapy.http import TextResponse, HtmlResponse
 
-from juniorguru.jobs.legacy_jobs.spiders import remoteok
+from juniorguru.scrapers.jobs.spiders import remoteok
 
 
 FIXTURES_DIR = Path(__file__).parent
@@ -44,15 +44,18 @@ def test_spider_parse_job():
     job = jobs[0]
 
     assert sorted(job.keys()) == sorted([
-        'title', 'link', 'company_name', 'company_link',
-        'posted_at', 'description_html', 'company_logo_urls', 'remote',
+        'title', 'url', 'company_name', 'company_url',
+        'first_seen_on', 'description_html', 'company_logo_urls', 'remote',
+        'source', 'source_urls',
     ])
     assert job['title'] == 'Software Engineer II'
-    assert job['link'] == 'https://example.com/example/'
+    assert job['url'] == 'https://example.com/example/'
     assert job['company_name'] == 'Comscore'
-    assert job['company_link'] == 'https://example.com/remote-companies/comscore'
+    assert job['company_url'] == 'https://example.com/remote-companies/comscore'
     assert job['remote'] is True
-    assert job['posted_at'] == date(2020, 10, 25)
+    assert job['first_seen_on'] == date(2020, 10, 25)
     assert job['company_logo_urls'] == ['https://remoteok.io/assets/jobs/af6ada420dbb093b6fc3cc1dd1a75bb41603782017.png']
+    assert job['source'] == 'remoteok'
+    assert job['source_urls'] == ['https://example.com/example/']
     assert (normalize_html(job['description_html']) ==
             normalize_html(Path(FIXTURES_DIR / 'description.html').read_text()))

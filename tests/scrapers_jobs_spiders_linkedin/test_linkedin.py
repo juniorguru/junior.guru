@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from scrapy.http import HtmlResponse
 
-from juniorguru.jobs.legacy_jobs.spiders import linkedin
+from juniorguru.scrapers.jobs.spiders import linkedin
 
 
 FIXTURES_DIR = Path(__file__).parent
@@ -38,27 +38,30 @@ def test_spider_parse_end():
 def test_spider_parse_job():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job.html').read_bytes())
-    jobs = list(linkedin.Spider().parse_job(response))
+    jobs = list(linkedin.Spider().parse_job(response, 'https://example.com/search?foo=1'))
 
     assert len(jobs) == 1
 
     job = jobs[0]
 
     assert sorted(job.keys()) == sorted([
-        'title', 'link', 'company_name', 'company_link', 'locations_raw',
-        'employment_types', 'posted_at', 'description_html',
+        'title', 'url', 'company_name', 'company_url', 'locations_raw',
+        'employment_types', 'first_seen_on', 'description_html',
         'experience_levels', 'company_logo_urls', 'remote',
+        'source', 'source_urls',
     ])
     assert job['title'] == 'Junior BI Developer (BI4SG)'
-    assert job['link'] == 'https://cz.linkedin.com/jobs/view/junior-bi-developer-bi4sg-at-komer%C4%8Dn%C3%AD-banka-2701029809'
+    assert job['url'] == 'https://cz.linkedin.com/jobs/view/junior-bi-developer-bi4sg-at-komer%C4%8Dn%C3%AD-banka-2701029809'
     assert job['company_name'] == 'Komerční banka'
-    assert job['company_link'] == 'https://cz.linkedin.com/company/komercni-banka'
+    assert job['company_url'] == 'https://cz.linkedin.com/company/komercni-banka'
     assert job['locations_raw'] == ['Prague, Czechia']
     assert job['remote'] is False
     assert job['employment_types'] == ['full-time']
     assert job['experience_levels'] == ['entry level']
-    assert job['posted_at'] == date.today() - timedelta(weeks=1)
+    assert job['first_seen_on'] == date.today() - timedelta(weeks=1)
     assert job['company_logo_urls'] == ['https://media-exp1.licdn.com/dms/image/C560BAQHxuVQO-Rz9rw/company-logo_100_100/0/1546508771908?e=1640217600&v=beta&t=hUZKjJ2dnPP92AcBOKAEFzFqEdD-OB9WwS0X18LoyP4']
+    assert job['source'] == 'linkedin'
+    assert job['source_urls'] == ['https://example.com/search?foo=1', 'https://example.com/example/']
     assert '<li>French language</li>' in job['description_html']
 
 
@@ -66,26 +69,26 @@ def test_spider_parse_job():
 def test_spider_parse_job_description_doesnt_include_criteria_list():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job.html').read_bytes())
-    job = next(linkedin.Spider().parse_job(response))
+    job = next(linkedin.Spider().parse_job(response, 'https://example.com/search?foo=1'))
 
     assert 'Employment type' not in job['description_html']
     assert 'Information Technology and Services' not in job['description_html']
 
 
-def test_spider_parse_job_no_company_link():
+def test_spider_parse_job_no_company_url():
     response = HtmlResponse('https://example.com/example/',
-                            body=Path(FIXTURES_DIR / 'job_no_company_link.html').read_bytes())
-    job = next(linkedin.Spider().parse_job(response))
+                            body=Path(FIXTURES_DIR / 'job_no_company_url.html').read_bytes())
+    job = next(linkedin.Spider().parse_job(response, 'https://example.com/search?foo=1'))
 
     assert job['company_name'] == 'NeoTreks, Inc.'
-    assert 'company_link' not in job
+    assert 'company_url' not in job
     assert job['locations_raw'] == ['Frýdek-Místek, Moravia-Silesia, Czechia']
 
 
 def test_spider_parse_job_company_logo():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job_company_logo.html').read_bytes())
-    job = next(linkedin.Spider().parse_job(response))
+    job = next(linkedin.Spider().parse_job(response, 'https://example.com/search?foo=1'))
 
     assert job['company_logo_urls'] == ['https://media-exp1.licdn.com/dms/image/C4D0BAQE5dJwgWcSH0g/company-logo_100_100/0/1545137392551?e=1640217600&v=beta&t=iVYrn2ljyLGyu53ggzJr7fZ-aTJPfvzTczAfdgsJYTU']
 
@@ -93,25 +96,26 @@ def test_spider_parse_job_company_logo():
 def test_spider_parse_job_apply_on_company_website():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job_apply_on_company_website.html').read_bytes())
-    request = next(linkedin.Spider().parse_job(response))
+    request = next(linkedin.Spider().parse_job(response, 'https://example.com/search?foo=1'))
     job = request.cb_kwargs['item']
 
-    assert job['link'] == 'https://cz.linkedin.com/jobs/view/junior-automation-test-engineer-for-siemens-at-siemens-2689458333'
-    assert job['apply_link'] == 'https://jobs.siemens.com/jobs/240215?lang=en-us&jobPipeline=juniorguru%3FsourceType%3DPREMIUM_POST_SITE&source=juniorguru%28Wrap%29'
+    assert job['url'] == 'https://cz.linkedin.com/jobs/view/junior-automation-test-engineer-for-siemens-at-siemens-2689458333'
+    assert job['apply_url'] == 'https://jobs.siemens.com/jobs/240215?lang=en-us&jobPipeline=juniorguru%3FsourceType%3DPREMIUM_POST_SITE&source=juniorguru%28Wrap%29'
 
 
 def test_spider_verify_job_apply_on_company_website():
     response = HtmlResponse('https://example.com/example/', body=b'')
-    item = dict(link='https://cz.linkedin.com/jobs/view/junior-automation-test-engineer-for-siemens-at-siemens-2689458333',
-                apply_link='https://example.com/example/?redirect=foo')
+    item = dict(url='https://cz.linkedin.com/jobs/view/junior-automation-test-engineer-for-siemens-at-siemens-2689458333',
+                apply_url='https://example.com/example/?redirect=foo')
     job = next(linkedin.Spider().verify_job(response, item))
 
-    assert job['link'] == 'https://cz.linkedin.com/jobs/view/junior-automation-test-engineer-for-siemens-at-siemens-2689458333'
-    assert job['apply_link'] == 'https://example.com/example/'
+    assert job['url'] == 'https://cz.linkedin.com/jobs/view/junior-automation-test-engineer-for-siemens-at-siemens-2689458333'
+    assert job['apply_url'] == 'https://example.com/example/'
+    assert job['source_urls'] == ['https://example.com/example/']
 
 
 def test_spider_verify_job_apply_on_company_website_with_proxies_and_validations():
-    response = HtmlResponse((
+    response_url = (
         'http://validate.perfdrive.com/4708da524564ee0915d03f8ef0481f9d/'
         '?ssa=c1b11acc-f3fd-4db6-9dcf-4c36cddb0133&ssb=08429203719'
         '&ssc=http%3A%2F%2Fred-hat-1.talentify.io%2Fjob%2Fjunior-software-engineer-package-maintainer-part-time-brno-southeast-red-hat-89305'
@@ -124,13 +128,15 @@ def test_spider_verify_job_apply_on_company_website_with_proxies_and_validations
         '&ssr=My44OC4yMTguMTEx&sst=Mozilla/5.0%20(iPhone;%20CPU%20OS%2014_0_1%20like%20Mac%20OS%20X)%20AppleWebKit/605.1.15%20(KHTML,%20like%20Gecko)%20FxiOS/29.0%20Mobile/15E148%20Safari/605.1.15'
         '&ssv=aWFiM2hlMHVzMTMwZ2dqc2R1NHZha203MGE='
         '&ssw=iab3he0us130ggjsdu4vakm70a'
-    ), body=b'')
-    item = dict(link='https://cz.linkedin.com/jobs/view/junior-software-engineer-package-maintainer-part-time-brno-southeast-red-hat-2689458333',
-                apply_link='http://red-hat-1.talentify.io/job/junior-software-engineer-package-maintainer-part-time-brno-southeast-red-hat-89305')
+    )
+    response = HtmlResponse(response_url, body=b'')
+    item = dict(url='https://cz.linkedin.com/jobs/view/junior-software-engineer-package-maintainer-part-time-brno-southeast-red-hat-2689458333',
+                apply_url='http://red-hat-1.talentify.io/job/junior-software-engineer-package-maintainer-part-time-brno-southeast-red-hat-89305')
     job = next(linkedin.Spider().verify_job(response, item))
 
-    assert job['link'] == 'https://cz.linkedin.com/jobs/view/junior-software-engineer-package-maintainer-part-time-brno-southeast-red-hat-2689458333'
-    assert job['apply_link'] == 'http://red-hat-1.talentify.io/job/junior-software-engineer-package-maintainer-part-time-brno-southeast-red-hat-89305'
+    assert job['url'] == 'https://cz.linkedin.com/jobs/view/junior-software-engineer-package-maintainer-part-time-brno-southeast-red-hat-2689458333'
+    assert job['apply_url'] == 'http://red-hat-1.talentify.io/job/junior-software-engineer-package-maintainer-part-time-brno-southeast-red-hat-89305'
+    assert job['source_urls'] == [response_url]
 
 
 def test_clean_proxied_url():
@@ -171,7 +177,7 @@ def test_get_job_id():
     assert linkedin.get_job_id(url) == '2247016723'
 
 
-@pytest.mark.parametrize('url,expected', [
+@pytest.mark.parametrize('url, expected', [
     ('https://uk.linkedin.com/company/adaptavist?trk=public_jobs_topcard_logo', 'https://uk.linkedin.com/company/adaptavist'),
     ('https://example.com?trk=123', 'https://example.com?trk=123'),
     ('https://pipedrive.talentify.io/job/junior-software-engineer-prague-prague-pipedrive-015b84ef-3956-4a28-877f-0385379d40c2?tdd=dDEsaDM1LGozdXFlZSxlcHJvNjA3ZjBhOTA2ZDVkNjE2OTQ4ODk3OA', 'https://pipedrive.talentify.io/job/junior-software-engineer-prague-prague-pipedrive-015b84ef-3956-4a28-877f-0385379d40c2'),
@@ -183,7 +189,7 @@ def test_clean_url(url, expected):
     assert linkedin.clean_url(url) == expected
 
 
-@pytest.mark.parametrize('text,expected', [
+@pytest.mark.parametrize('text, expected', [
     ('Junior Software Engineer (C#.NET)', False),
     ('Remote Web Developer - Prague', True),
     ('Remote Web Developer', True),

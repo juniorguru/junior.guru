@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from scrapy.http import XmlResponse
 
-from juniorguru.jobs.legacy_jobs.spiders import startupjobs
+from juniorguru.scrapers.jobs.spiders import startupjobs
 
 
 FIXTURES_DIR = Path(__file__).parent
@@ -20,20 +20,22 @@ def test_spider_parse():
     job = jobs[0]
 
     assert sorted(job.keys()) == sorted([
-        'title', 'link', 'apply_link', 'company_name', 'company_link', 'locations_raw',
-        'employment_types', 'posted_at', 'description_html', 'company_logo_urls',
-        'remote',
+        'title', 'url', 'apply_url', 'company_name', 'company_url', 'locations_raw',
+        'employment_types', 'first_seen_on', 'description_html', 'company_logo_urls',
+        'remote', 'source', 'source_urls',
     ])
     assert job['title'] == 'My hledáme stále! Přidej se k nám do týmu jako junior linux admin'
-    assert job['link'] == 'https://www.startupjobs.cz/nabidka/22025/my-hledame-stale-pridej-se-k-nam-do-tymu-jako-junior-linux-admin'
-    assert job['apply_link'] == 'https://www.startupjobs.cz/nabidka/22025/my-hledame-stale-pridej-se-k-nam-do-tymu-jako-junior-linux-admin?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
+    assert job['url'] == 'https://www.startupjobs.cz/nabidka/22025/my-hledame-stale-pridej-se-k-nam-do-tymu-jako-junior-linux-admin'
+    assert job['apply_url'] == 'https://www.startupjobs.cz/nabidka/22025/my-hledame-stale-pridej-se-k-nam-do-tymu-jako-junior-linux-admin?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
     assert job['company_name'] == 'Cloudinfrastack'
-    assert job['company_link'] == 'https://www.startupjobs.cz/startup/cloudinfrastack?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
+    assert job['company_url'] == 'https://www.startupjobs.cz/startup/cloudinfrastack?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
     assert job['locations_raw'] == ['Praha, Česko']
     assert job['remote'] is False
     assert job['employment_types'] == ['Part-time', 'Full-time']
-    assert job['posted_at'] == date(2020, 5, 5)
+    assert job['first_seen_on'] == date(2020, 5, 5)
     assert job['company_logo_urls'] == ['https://www.startupjobs.cz/uploads/U56OHNIPVP54cloudinfrastack-fb-logo-180x180-1154411059762.png']
+    assert job['source'] == 'startupjobs'
+    assert job['source_urls'] == ['https://example.com/example/']
     assert '<p>Ahoj, baví tě Linux?' in job['description_html']
 
 

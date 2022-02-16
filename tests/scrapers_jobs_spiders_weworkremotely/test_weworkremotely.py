@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from scrapy.http import XmlResponse, HtmlResponse
 
-from juniorguru.jobs.legacy_jobs.spiders import weworkremotely
+from juniorguru.scrapers.jobs.spiders import weworkremotely
 
 
 FIXTURES_DIR = Path(__file__).parent
@@ -21,7 +21,7 @@ def test_spider_parse():
 
     assert data['title'] == '10up: Senior UI Engineer'
     assert data['remote'] == True
-    assert data['posted_at'] == date(2020, 10, 28)
+    assert data['first_seen_on'] == date(2020, 10, 28)
     assert data['remote_region_raw'] == 'Anywhere (100% Remote) Only'
     assert data['company_logo_urls'] == []
     assert '<li>Moderate PHP experience.</li>' in data['description_html']
@@ -42,17 +42,19 @@ def test_spider_parse_job():
     job = jobs[0]
 
     assert sorted(job.keys()) == sorted([
-        'title', 'link', 'company_name', 'company_link', 'employment_types',
-        'posted_at', 'description_html', 'company_logo_urls', 'remote',
-        'locations_raw',
+        'title', 'url', 'company_name', 'company_url', 'employment_types',
+        'first_seen_on', 'description_html', 'company_logo_urls', 'remote',
+        'locations_raw', 'source', 'source_urls',
     ])
     assert job['title'] == 'DevOps Engineer, Kubernetes, AWS/GCP'
-    assert job['link'] == 'https://example.com/example/'
+    assert job['url'] == 'https://example.com/example/'
     assert job['company_name'] == 'Bluelight Consulting'
-    assert job['company_link'] == 'https://bluelight.co'
+    assert job['company_url'] == 'https://bluelight.co'
     assert job['remote'] is True
-    assert job['posted_at'] == date(2020, 10, 20)
+    assert job['first_seen_on'] == date(2020, 10, 20)
     assert job['company_logo_urls'] == ['https://we-work-remotely.imgix.net/logos/0017/2301/logo.gif?ixlib=rails-4.0.0&w=50&h=50&dpr=2&fit=fill&auto=compress']
+    assert job['source'] == 'weworkremotely'
+    assert job['source_urls'] == ['https://example.com/example/']
     assert '<li>Kubernetes Certificates</li>' in job['description_html']
 
 
