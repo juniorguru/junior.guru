@@ -15,12 +15,43 @@ EMPLOYMENT_TYPES = [
 ]
 
 
-class Job(BaseModel):
+class SubmittedJob(BaseModel):
+    id = CharField(primary_key=True)
+    boards_ids = JSONField(default=lambda: [], index=True)
+
+    title = CharField()
+    posted_at = DateField(index=True)
+    expires_at = DateField(null=True)
+    lang = CharField()
+
+    apply_email = CharField(null=True)
+    apply_url = CharField(null=True)
+
+    company_name = CharField()
+    company_url = CharField()
+
+    locations = JSONField(null=True)
+    remote = BooleanField(default=False)
+    employment_types = JSONField(null=True)
+
+    description_html = TextField()
+
+    @classmethod
+    def from_sheet_record(cls, record):
+        return cls()
+        # data = {field_name: item.get(field_name)
+        #         for field_name in cls._meta.fields.keys()
+        #         if field_name in item}
+        # return cls(**data)
+
+
+class DownloadedJob(BaseModel):
+    boards_ids = JSONField(default=lambda: [], index=True)
+
     title = CharField()
     first_seen_on = DateField(index=True)
     last_seen_on = DateField(index=True)
     lang = CharField(null=True)
-    external_ids = JSONField(default=lambda: [], index=True)
 
     url = CharField(unique=True)
     apply_url = CharField(null=True)
@@ -74,8 +105,8 @@ class Job(BaseModel):
                     new_value = item.get(field_name, old_value)
                     setattr(self, field_name, new_value)
 
-    def _merge_external_ids(self, item):
-        return list(set(self.external_ids + item.get('external_ids', [])))
+    def _merge_boards_ids(self, item):
+        return list(set(self.boards_ids + item.get('boards_ids', [])))
 
     def _merge_items_hashes(self, item):
         return list(set(self.items_hashes + item.get('items_hashes', [])))

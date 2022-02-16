@@ -5,7 +5,7 @@ from peewee import OperationalError
 
 from juniorguru.lib import loggers
 from juniorguru.lib.timer import measure
-from juniorguru.models import db, Job
+from juniorguru.models import db, DownloadedJob
 from juniorguru.jobs.settings import FEEDS_DIR
 from juniorguru.sync.jobs.processing import filter_relevant_paths, process_paths, postprocess_jobs
 
@@ -13,7 +13,7 @@ from juniorguru.sync.jobs.processing import filter_relevant_paths, process_paths
 REUSE_JOBS_DB_ENABLED = bool(int(os.getenv('REUSE_JOBS_DB_ENABLED', 0)))
 
 PREPROCESS_PIPELINES = [
-    'juniorguru.sync.jobs.pipelines.identify',
+    'juniorguru.sync.jobs.pipelines.boards_ids',
 ]
 
 POSTPROCESS_PIPELINES = [
@@ -39,7 +39,7 @@ def main():
         if REUSE_JOBS_DB_ENABLED:
             logger.warning('Reusing of existing jobs database is enabled!')
             try:
-                latest_seen_on = Job.latest_seen_on()
+                latest_seen_on = DownloadedJob.latest_seen_on()
                 logger.info(f'Last jobs seen on: {latest_seen_on}')
             except OperationalError:
                 logger.warning('Jobs database not operational!')
@@ -49,8 +49,8 @@ def main():
             logger.info(f'Keeping {len(paths)} relevant .json.gz paths')
         else:
             logger.info('Not reusing jobs database')
-            Job.drop_table()
-            Job.create_table()
+            DownloadedJob.drop_table()
+            DownloadedJob.create_table()
 
     process_paths(paths, PREPROCESS_PIPELINES)
     postprocess_jobs(POSTPROCESS_PIPELINES)

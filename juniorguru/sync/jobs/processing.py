@@ -11,7 +11,7 @@ from pprint import pformat
 from peewee import IntegrityError
 
 from juniorguru.lib import loggers
-from juniorguru.models import db, Job
+from juniorguru.models import db, DownloadedJob
 
 
 WORKERS = os.cpu_count()
@@ -174,11 +174,11 @@ def _writer(item_queue):
         while True:
             item = item_queue.get()
             logger_w.debug(f"Saving {item['url']}")
-            job = Job.from_item(item)
+            job = DownloadedJob.from_item(item)
             try:
                 job.save()
             except IntegrityError:
-                job = Job.get_by_item(item)
+                job = DownloadedJob.get_by_item(item)
                 job.merge_item(item)
                 job.save()
             except Exception:
@@ -238,7 +238,7 @@ def _query(id_queue):
     A single process taking care of listing all jobs in the db
     and putting their IDs to the ID queue for postprocessing.
     """
-    for job in Job.select(Job.id).iterator():
+    for job in DownloadedJob.select(DownloadedJob.id).iterator():
         id_queue.put(job.id)
 
 
@@ -254,7 +254,7 @@ def _postprocessor(id, op_queue, id_queue, pipelines):
     try:
         while True:
             job_id = id_queue.get(timeout=1)
-            job = Job.get(job_id)
+            job = DownloadedJob.get(job_id)
             logger_p.debug(f"Executing pipelines for {job!r}")
             item = job.to_item()
             try:
@@ -279,7 +279,7 @@ def _persistor(op_queue):
     try:
         while True:
             operation, item = op_queue.get()
-            job = Job.from_item(item)
+            job = DownloadedJob.from_item(item)
             try:
                 if operation == 'delete':
                     logger_p.debug(f"Deleting {job!r}")

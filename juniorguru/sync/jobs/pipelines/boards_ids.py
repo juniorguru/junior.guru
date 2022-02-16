@@ -23,15 +23,15 @@ def process(item):
     except KeyError as exc:
         raise MissingIdentifyingField(str(exc))
 
-    external_ids = [parse_id(url) for url in urls if url]
-    external_ids = filter(None, external_ids)
-    external_ids = sorted(set(external_ids))
+    boards_ids = [parse_board_id(url) for url in urls if url]
+    boards_ids = filter(None, boards_ids)
+    boards_ids = sorted(set(boards_ids))
 
-    item['external_ids'] = external_ids
+    item['boards_ids'] = boards_ids
     return item
 
 
-def parse_id(url):
+def parse_board_id(url):
     for namespace, re_id in RE_IDENTIFY_MAPPING:
         match = re_id.search(url)
         if match:
