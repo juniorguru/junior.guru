@@ -86,6 +86,24 @@ def test_calc_avg_monthly_values_sparse_data():
     }) == math.ceil(21672 / (61 / 30))  # 2020-08-15 - 2020-06-16 = 61 days
 
 
+def test_calc_avg_monthly_values_no_data():
+    assert google_analytics.calc_avg_monthly_values({
+        'columnHeader': {
+            'dimensions': ['ga:date'],
+            'metricHeader': {
+                'metricHeaderEntries': [
+                    {'name': 'ga:uniqueEvents', 'type': 'INTEGER'}
+                ],
+            },
+        },
+        'data': {
+            'totals': [
+                {'values': ['0']},
+            ],
+        }
+    }) == 0
+
+
 def test_per_url_report_to_dict():
     assert google_analytics.per_url_report_to_dict({
         'columnHeader': {

@@ -336,6 +336,8 @@ def get_daily_date_range(today=None, start_months_ago=None):
 
 def calc_avg_monthly_values(report):
     total = int(report['data']['totals'][0]['values'][0])
+    if total == 0:
+        return 0
     dates = [datetime.strptime(row['dimensions'][0], '%Y%m%d')
              for row in report['data']['rows']]
     days = (max(dates) - min(dates)).days + 1
