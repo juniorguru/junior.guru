@@ -22,6 +22,9 @@ YAML_SCHEMA = Seq(
         'description': Str(),
     })
 )
+
+WORKERS = 2
+
 TODAY = date.today()
 
 
@@ -36,7 +39,7 @@ def main():
     yaml_records = (record.data for record in load(path.read_text(), YAML_SCHEMA))
 
     logger.info('Preparing data by downloading and analyzing the mp3 files')
-    records = filter(None, Pool().map(process_episode, yaml_records))
+    records = filter(None, Pool(WORKERS).map(process_episode, yaml_records))
 
     logger.info('Saving to database')
     for record in records:
