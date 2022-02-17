@@ -14,7 +14,7 @@ def create_user(id_, **kwargs):
                            avatar_path=kwargs.get('avatar_path'),
                            display_name=kwargs.get('display_name', 'Kuře Žluté'),
                            mention=kwargs.get('mention', f'<@{id_}>'),
-                           coupon=kwargs.get('coupon'),
+                           coupon_base=kwargs.get('coupon_base'),
                            joined_at=kwargs.get('joined_at', datetime.now() - timedelta(days=3)),
                            roles=kwargs.get('roles', []))
 
@@ -225,7 +225,7 @@ def test_user_is_year_old(db_connection, today, expected):
     (datetime(2021, 5, 1), 'FOUNDERS123', True),
 ])
 def test_user_is_founder(db_connection, joined_at, coupon, expected):
-    user = create_user(1, joined_at=joined_at, coupon=coupon)
+    user = create_user(1, joined_at=joined_at, coupon_base=coupon)
 
     assert user.is_founder() is expected
 

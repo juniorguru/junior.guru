@@ -89,3 +89,40 @@ def test_is_message_over_month_ago(today, expected):
     message = StubClubMessage(created_at)
 
     assert club.is_message_over_month_ago(message, today) is expected
+
+
+@pytest.mark.parametrize('coupon, expected', [
+    ('GARGAMEL', dict(coupon_name='GARGAMEL',
+                      coupon_base='GARGAMEL',
+                      student=False)),
+    ('FAKTUROID123456', dict(coupon_name='FAKTUROID',
+                             coupon_suffix='123456',
+                             coupon_base='FAKTUROID123456',
+                             student=False)),
+    ('FAKTUROID123456I12345678', dict(coupon_name='FAKTUROID',
+                                      coupon_suffix='123456',
+                                      coupon_base='FAKTUROID123456',
+                                      invoice_id='12345678',
+                                      student=False)),
+    ('STUDENTGARGAMEL69320144', dict(coupon_name='STUDENTGARGAMEL',
+                                     coupon_suffix='69320144',
+                                     coupon_base='STUDENTGARGAMEL69320144',
+                                     student=True)),
+    ('STUDENTGARGAMEL69320144V2', dict(coupon_name='STUDENTGARGAMEL',
+                                       coupon_suffix='69320144',
+                                       coupon_base='STUDENTGARGAMEL69320144',
+                                       student=True,
+                                       version='2'))
+])
+def test_parse_coupon(coupon, expected):
+    assert club.parse_coupon(coupon) == expected
+
+
+def test_parse_coupon_raises_on_wrong_input():
+    with pytest.raises(TypeError):
+        club.parse_coupon(None)
+
+
+def test_parse_coupon_raises_when_getting_empty_part():
+    with pytest.raises(KeyError):
+        club.parse_coupon('FAKTUROID123456')['invoice_id']

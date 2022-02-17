@@ -11,8 +11,8 @@ class Company(BaseModel):
     filename = CharField()
     is_sponsoring_handbook = BooleanField(default=False)
     link = CharField()
-    coupon = CharField(null=True)
-    student_coupon = CharField(null=True)
+    coupon_base = CharField(null=True)
+    student_coupon_base = CharField(null=True)
     starts_at = DateField(null=True)
     expires_at = DateField(null=True)
     role_id = IntegerField(null=True)
@@ -20,19 +20,19 @@ class Company(BaseModel):
 
     @property
     def list_employees(self):
-        if not self.coupon:
+        if not self.coupon_base:
             return []
         return ClubUser.select() \
-            .join(self.__class__, on=(ClubUser.coupon == self.__class__.coupon)) \
-            .where((ClubUser.is_member == True) & (ClubUser.coupon == self.coupon))
+            .join(self.__class__, on=(ClubUser.coupon_base == self.__class__.coupon_base)) \
+            .where((ClubUser.is_member == True) & (ClubUser.coupon_base == self.coupon_base))
 
     @property
     def list_students(self):
-        if not self.student_coupon:
+        if not self.student_coupon_base:
             return []
         return ClubUser.select() \
-            .join(self.__class__, on=(ClubUser.coupon == self.__class__.student_coupon)) \
-            .where((ClubUser.is_member == True) & (ClubUser.coupon == self.student_coupon))
+            .join(self.__class__, on=(ClubUser.coupon_base == self.__class__.student_coupon_base)) \
+            .where((ClubUser.is_member == True) & (ClubUser.coupon_base == self.student_coupon_base))
 
     @classmethod
     def listing(cls, today=None):
@@ -51,4 +51,4 @@ class Company(BaseModel):
     @classmethod
     def students_listing(cls):
         return cls.listing() \
-            .where(cls.student_coupon.is_null(False))
+            .where(cls.student_coupon_base.is_null(False))

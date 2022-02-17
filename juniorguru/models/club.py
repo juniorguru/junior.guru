@@ -4,12 +4,13 @@ from datetime import date, timedelta
 from peewee import IntegerField, DateTimeField, ForeignKeyField, CharField, BooleanField
 
 from juniorguru.models.base import BaseModel, JSONField
+from juniorguru.lib.club import parse_coupon
 
 
 TOP_MEMBERS_PERCENT = 0.05
 RECENT_PERIOD_DAYS = 30
 IS_NEW_PERIOD_DAYS = 15
-CLUB_LAUNCH_AT = date(2021, 2, 1)
+CLUB_LAUNCH_ON = date(2021, 2, 1)
 
 JUNIORGURU_BOT = 797097976571887687
 INTRO_CHANNEL = 788823881024405544  # ahoj
@@ -32,7 +33,7 @@ class ClubUser(BaseModel):
     avatar_path = CharField(null=True)
     display_name = CharField()
     mention = CharField()
-    coupon = CharField(null=True, index=True)
+    coupon_base = CharField(null=True, index=True)
     joined_at = DateTimeField(null=True)
     roles = JSONField(default=lambda: [])
 
@@ -82,8 +83,12 @@ class ClubUser(BaseModel):
         return first_seen_on.replace(year=first_seen_on.year + 1) <= (today or date.today())
 
     def is_founder(self):
-        return (min(self.joined_at.date(), self.first_seen_on()) < CLUB_LAUNCH_AT or
-                bool(self.coupon and self.coupon.startswith('FOUNDERS')))
+        if self.coupon_base and parse_coupon(self.coupon_base)['coupon_name'] == 'FOUNDERS':
+            return True
+        joined_date = min(self.joined_at.date(), self.first_seen_on())
+        if joined_date < CLUB_LAUNCH_ON:
+            return True
+        return False
 
     @classmethod
     def members_count(cls):

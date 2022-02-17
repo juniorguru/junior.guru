@@ -1,3 +1,4 @@
+import re
 import os
 import asyncio
 from functools import wraps
@@ -18,6 +19,18 @@ EMOJI_UPVOTES = ['👍', '❤️', '😍', '🥰', '💕', '♥️', '💖', '�
                  'meowthumbsup', '✅', '🤘', 'this', 'dk', '🙇‍♂️', '🙇', '🙇‍♀️', 'kgsnice', 'successkid', 'white_check_mark',
                  'notbad', 'updoot', '🆒', '🔥'] + EMOJI_PINS
 EMOJI_DOWNVOTES = ['👎']
+
+COUPON_RE = re.compile(r'''
+    ^
+        (?P<coupon_name>
+            (?P<student_prefix>STUDENT)?
+            [A-Z]+
+        )
+        (?P<coupon_suffix>[0-9]+)
+        (I(?P<invoice_id>[0-9]+))?
+        (V(?P<version>[0-9]+))?
+    $
+''', re.VERBOSE)
 
 
 logger = loggers.get('lib.club')
@@ -129,3 +142,16 @@ def is_message_over_week_ago(message, today=None):
 
 def is_message_over_month_ago(message, today=None):
     return is_message_over_period_ago(message, timedelta(days=30), today)
+
+
+def parse_coupon(coupon):
+    match = COUPON_RE.match(coupon)
+    if match:
+        parts = match.groupdict()
+        parts['coupon_base'] = ''.join([
+            parts['coupon_name'],
+            parts['coupon_suffix'],
+        ])
+        parts['student'] = bool(parts.pop('student_prefix'))
+        return {key: value for key, value in parts.items() if value is not None}
+    return {'coupon_name': coupon, 'coupon_base': coupon, 'student': False}

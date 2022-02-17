@@ -50,9 +50,9 @@ def coerce_record(record):
         r'^email$': ('email', parse_text),
         r'^filename$': ('filename', parse_text),
         r'^handbook$': ('is_sponsoring_handbook', parse_boolean_words),
-        r'^sponsored coupon$': ('student_coupon', parse_text),
+        r'^student coupon base$': ('student_coupon_base', parse_text),
         r'^link$': ('link', parse_text),
-        r'^coupon$': ('coupon', parse_text),
+        r'^coupon base$': ('coupon_base', parse_text),
         r'^starts$': ('starts_at', parse_date),
         r'^expires$': ('expires_at', parse_date),
     }, record)

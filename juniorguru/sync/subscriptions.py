@@ -10,6 +10,7 @@ from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
 from juniorguru.lib import google_sheets
 from juniorguru.models import ClubUser, with_db
+from juniorguru.lib.club import parse_coupon
 
 
 logger = loggers.get('subscriptions')
@@ -97,28 +98,35 @@ def main():
                 except ClubUser.DoesNotExist:
                     pass
 
+            name = node['member']['fullName'].strip()
+            gender = ('F' if FEMALE_NAME_RE.search(name) else 'M') if name else None
             coupon = get_active_coupon(node)
-            records.append(add_synthetic_fields({
-                'Name': node['member']['fullName'].strip(),
+            coupon_parts = parse_coupon(coupon) if coupon else {}
+
+            records.append({
+                'Name': name,
                 'Discord Name': user.display_name.strip() if user else None,
+                'Gender': gender,
                 'E-mail': node['member']['email'],
                 'Memberful ID': node['member']['id'],
                 'Stripe ID': node['member']['stripeCustomerId'],
                 'Discord ID': discord_id,
+                'Invoice ID': coupon_parts.get('invoice_id'),
                 'Memberful Active?': node['active'],
                 'Memberful Since': arrow.get(node['createdAt']).date().isoformat(),
                 'Memberful End': arrow.get(node['expiresAt']).date().isoformat(),
                 'Memberful Coupon': coupon,
+                'Memberful Coupon Base': coupon_parts.get('coupon_base'),
                 'Discord Member?': user.is_member if user else False,
                 'Discord Since': user.first_seen_on().isoformat() if user else None,
                 'Memberful Past Due?': node['pastDue'],
-            }))
+            })
 
             if user:
                 logger.debug(f'Updating member #{user.id} with Memberful data')
                 joined_memberful_at = arrow.get(node['createdAt']).naive
                 user.joined_at = min(user.joined_at, joined_memberful_at) if user.joined_at else joined_memberful_at
-                user.coupon = coupon
+                user.coupon_base = coupon_parts.get('coupon_base')
                 user.save()
 
         if result['subscriptions']['pageInfo']['hasNextPage']:
@@ -130,33 +138,27 @@ def main():
     for user in ClubUser.listing():
         discord_id = str(user.id)
         if not user.is_bot and discord_id not in seen_discord_ids:
-            records.append(add_synthetic_fields({
+            records.append({
                 'Name': None,
                 'Discord Name': user.display_name.strip(),
+                'Gender': None,
                 'E-mail': None,
                 'Memberful ID': None,
                 'Stripe ID': None,
                 'Discord ID': discord_id,
+                'Invoice ID': None,
                 'Memberful Active?': False,
                 'Memberful Since': None,
                 'Memberful End': None,
                 'Memberful Coupon': None,
+                'Memberful Coupon Base': None,
                 'Discord Member?': user.is_member,
                 'Discord Since': user.first_seen_on().isoformat(),
                 'Memberful Past Due?': False,
-            }))
+            })
 
     logger.info('Uploading subscriptions to Google Sheets')
     google_sheets.upload(google_sheets.get(DOC_KEY, 'subscriptions'), records)
-
-
-def add_synthetic_fields(record):
-    keys, items = list(record.keys()), list(record.items())
-
-    gender = ('F' if FEMALE_NAME_RE.search(record['Name']) else 'M') if record.get('Name') else None
-    items.insert(keys.index('Discord Name') + 1, ('Gender', gender))
-
-    return dict(items)
 
 
 def get_active_coupon(node):
