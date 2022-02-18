@@ -2,11 +2,8 @@ import re
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import discord_task, is_discord_mutable
-from juniorguru.models import ClubMessage, Employment, Job, with_db
-
-
-logger = loggers.get('jobs_club')
+from juniorguru.lib.club import run_discord_task, is_discord_mutable
+from juniorguru.models import ClubMessage, Employment, Job, db
 
 
 JOBS_CHANNEL = 834443926655598592
@@ -15,10 +12,16 @@ JOBS_VOTING_CHANNEL = 841680291675242546  # TODO
 URL_RE = re.compile(r'https?://\S+', re.I)
 
 
-@measure('jobs_club')
-@with_db
-@discord_task
-async def main(client):
+logger = loggers.get(__name__)
+
+
+@measure()
+def main():
+    run_discord_task('juniorguru.sync.jobs_club.discord_task')
+
+
+@db.connection_context()
+async def discord_task(client):
     seen_urls = set()
     discord_channel = await client.fetch_channel(JOBS_CHANNEL)
 

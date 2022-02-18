@@ -11,7 +11,7 @@ FILES = [
 ]
 
 
-@measure('last_modified')
+@measure()
 @with_db
 def main():
     entries = []

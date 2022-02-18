@@ -5,11 +5,11 @@ from discord import Colour
 from juniorguru.models.company import Company
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import discord_task, is_discord_mutable, get_roles
-from juniorguru.models import ClubUser, Event, with_db
+from juniorguru.lib.club import run_discord_task, is_discord_mutable, get_roles
+from juniorguru.models import ClubUser, Event, db
 
 
-logger = loggers.get('roles')
+logger = loggers.get(__name__)
 
 
 ROLES = {
@@ -26,9 +26,13 @@ COMPANY_ROLE_PREFIX = 'Firma: '
 STUDENT_ROLE_PREFIX = 'Student: '
 
 
-@measure('roles')
-@with_db
+@measure()
 def main():
+    run_discord_task('juniorguru.sync.stickers.discord_task')
+
+
+@db.connection_context()
+async def discord_task(client):
     members = ClubUser.members_listing()
     companies = Company.listing()
     changes = []
@@ -100,27 +104,22 @@ def main():
 
     # syncing with Discord
     if is_discord_mutable():
-        sync_roles(changes, members, companies)
+        logger.info(f'Managing roles for {len(companies)} companies')
+        await manage_company_roles(client, companies)
 
+        for company in companies:
+            employees_ids = [member.id for member in company.list_employees]
+            logger.debug(f"employees_ids({company.name}): {repr_ids(members, employees_ids)}")
+            for member in members:
+                changes.extend(evaluate_changes(member.id, member.roles, employees_ids, company.role_id))
 
-@discord_task
-async def sync_roles(client, changes, members, companies):
-    logger.info(f'Managing roles for {len(companies)} companies')
-    await manage_company_roles(client, companies)
+            students_ids = [member.id for member in company.list_students]
+            logger.debug(f"students_ids({company.name}): {repr_ids(members, students_ids)}")
+            for member in members:
+                changes.extend(evaluate_changes(member.id, member.roles, students_ids, company.student_role_id))
 
-    for company in companies:
-        employees_ids = [member.id for member in company.list_employees]
-        logger.debug(f"employees_ids({company.name}): {repr_ids(members, employees_ids)}")
-        for member in members:
-            changes.extend(evaluate_changes(member.id, member.roles, employees_ids, company.role_id))
-
-        students_ids = [member.id for member in company.list_students]
-        logger.debug(f"students_ids({company.name}): {repr_ids(members, students_ids)}")
-        for member in members:
-            changes.extend(evaluate_changes(member.id, member.roles, students_ids, company.student_role_id))
-
-    logger.info(f'Applying {len(changes)} changes to roles')
-    await apply_changes(client, changes)
+        logger.info(f'Applying {len(changes)} changes to roles')
+        await apply_changes(client, changes)
 
 
 async def manage_company_roles(client, companies):

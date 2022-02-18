@@ -12,7 +12,7 @@ from juniorguru.sync.jobs.settings import IMAGES_STORE, HTTPCACHE_DIR
 logger = loggers.get('jobs')
 
 
-@measure('jobs')
+@measure()
 def main():
     # If the creation of the directories is left to the spiders, they can end
     # up colliding in making sure it gets created

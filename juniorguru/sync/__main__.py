@@ -29,7 +29,7 @@ from juniorguru.sync.podcast import main as sync_podcast
 from juniorguru.lib.ai import set_ai_opinion
 
 
-logger = loggers.get('sync')
+logger = loggers.get('juniorguru.sync')
 
 
 @timer.notify

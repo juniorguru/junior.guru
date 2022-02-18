@@ -8,7 +8,7 @@ from juniorguru.lib import google_sheets, loggers
 from juniorguru.models import Transaction
 
 
-logger = loggers.get('transactions')
+logger = loggers.get(__name__)
 
 
 FROM_DATE = date(2020, 1, 1)
@@ -39,7 +39,7 @@ CATEGORIES = [
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
 
-@measure('transactions')
+@measure()
 def main():
     logger.info('Preparing database')
     Transaction.drop_table()

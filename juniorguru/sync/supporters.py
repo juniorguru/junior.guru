@@ -14,7 +14,7 @@ schema = Seq(
 )
 
 
-@measure('supporters')
+@measure()
 @with_db
 def main():
     path = Path(__file__).parent.parent / 'data' / 'supporters.yml'

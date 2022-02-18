@@ -4,20 +4,23 @@ import arrow
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import EMOJI_PINS, discord_task, count_upvotes, count_downvotes, emoji_name, get_roles, count_pins
-from juniorguru.models import ClubMessage, ClubUser, ClubPinReaction, db, with_db
+from juniorguru.lib.club import EMOJI_PINS, run_discord_task, count_upvotes, count_downvotes, emoji_name, get_roles, count_pins
+from juniorguru.models import ClubMessage, ClubUser, ClubPinReaction, db
 
 
-logger = loggers.get('club_content')
+logger = loggers.get(__name__)
 
 
 WORKERS_COUNT = 5
 
 
-@measure('club_content')
-@with_db
-@discord_task
-async def main(client):
+@measure()
+def main():
+    run_discord_task('juniorguru.sync.club_content.discord_task')
+
+
+@db.connection_context()
+async def discord_task(client):
     db.drop_tables([ClubMessage, ClubUser, ClubPinReaction])
     db.create_tables([ClubMessage, ClubUser, ClubPinReaction])
 
@@ -25,15 +28,15 @@ async def main(client):
                 if channel.permissions_for(client.juniorguru_guild.me).read_messages)
     authors = await process_channels(channels)
 
-    users_logger = loggers.get('club_content.users')
-    users_logger.info('Looking for members without a single message')
+    logger_u = logger.getChild('users')
+    logger_u.info('Looking for members without a single message')
     remaining_members = [member async for member
                          in client.juniorguru_guild.fetch_members(limit=None)
                          if member.id not in authors]
 
-    users_logger.info(f'There are {len(remaining_members)} remaining members')
+    logger_u.info(f'There are {len(remaining_members)} remaining members')
     for member in remaining_members:
-        users_logger.debug(f"Member '{member.display_name}' #{member.id}")
+        logger_u.debug(f"Member '{member.display_name}' #{member.id}")
         ClubUser.create(id=member.id,
                         is_bot=member.bot,
                         is_member=True,
@@ -81,9 +84,9 @@ async def channel_worker(worker_no, authors, queue):
     while True:
         channel = await queue.get()
 
-        worker_logger = loggers.get(f'club_content.channel_workers.{worker_no}')
-        worker_logger.info(f"Reading channel #{channel.id}")
-        worker_logger.debug(f"Channel #{channel.id} is named '{channel.name}'")
+        logger_w = logger.getChild(f'channel_workers.{worker_no}')
+        logger_w.info(f"Reading channel #{channel.id}")
+        logger_w.debug(f"Channel #{channel.id} is named '{channel.name}'")
 
         messages_count = 0
         users_count = 0
@@ -91,9 +94,9 @@ async def channel_worker(worker_no, authors, queue):
 
         async for message in channel.history(limit=None, after=None):
             if message.flags.has_thread:
-                worker_logger.debug(f'Thread {message.jump_url}')
+                logger_w.debug(f'Thread {message.jump_url}')
                 thread = await message.guild.fetch_channel(message.id)
-                worker_logger.debug(f"Thread identified as #{thread.id}, named '{thread.name}'")
+                logger_w.debug(f"Thread identified as #{thread.id}, named '{thread.name}'")
                 queue.put_nowait(thread)
 
             if message.author.id not in authors:
@@ -123,7 +126,7 @@ async def channel_worker(worker_no, authors, queue):
                 create_reaction(reacting_user, message)
                 pins_count += 1
 
-        worker_logger.info(f"Channel #{channel.id} added {messages_count} messages, {users_count} users, {pins_count} pins")
+        logger_w.info(f"Channel #{channel.id} added {messages_count} messages, {users_count} users, {pins_count} pins")
         queue.task_done()
 
 
@@ -137,8 +140,8 @@ async def get_reacting_users(reactions):
 
 
 def create_user(user):
-    users_logger = loggers.get('club_content.users')
-    users_logger.debug(f"User '{user.display_name}' #{user.id}")
+    logger_u = logger.getChild('users')
+    logger_u.debug(f"User '{user.display_name}' #{user.id}")
 
     # The message.author can be an instance of Member, but it can also be an instance of User,
     # if the author isn't a member of the Discord guild/server anymore. User instances don't
@@ -153,8 +156,8 @@ def create_user(user):
 
 
 def create_reaction(user, message):
-    pins_logger = loggers.get('club_content.pins')
-    pins_logger.debug(f"Message {message.jump_url} is pinned by user '{user.display_name}' #{user.id}")
+    logger_p = logger.getChild('pins')
+    logger_p.debug(f"Message {message.jump_url} is pinned by user '{user.display_name}' #{user.id}")
     return ClubPinReaction.create(user=user.id, message=message.id)
 
 

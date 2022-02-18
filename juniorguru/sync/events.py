@@ -10,10 +10,10 @@ from juniorguru.models import Event, EventSpeaking, ClubMessage, with_db, db
 from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_square, replace_with_jpg
 from juniorguru.lib import loggers
 from juniorguru.lib.template_filters import local_time, md, weekday
-from juniorguru.lib.club import is_discord_mutable, discord_task
+from juniorguru.lib.club import is_discord_mutable, run_discord_task
 
 
-logger = loggers.get('events')
+logger = loggers.get(__name__)
 
 
 FLUSH_POSTERS_EVENTS = bool(int(os.getenv('FLUSH_POSTERS_EVENTS', 0)))
@@ -51,7 +51,7 @@ schema = Seq(
 )
 
 
-@measure('events')
+@measure()
 @with_db
 def main():
     path = DATA_DIR / 'events.yml'
@@ -112,12 +112,11 @@ def main():
         event.save()
 
     if is_discord_mutable():
-        sync_scheduled_events()
-        post_next_event_messages()
+        run_discord_task('juniorguru.sync.events.sync_scheduled_events')
+        run_discord_task('juniorguru.sync.events.post_next_event_messages')
 
 
-@with_db
-@discord_task
+@db.connection_context()
 async def post_next_event_messages(client):
     announcements_channel = await client.fetch_channel(ANNOUNCEMENTS_CHANNEL)
     events_chat_channel = await client.fetch_channel(EVENTS_CHAT_CHANNEL)
@@ -189,8 +188,7 @@ async def post_next_event_messages(client):
         logger.info("It's not the day when the event is")
 
 
-@with_db
-@discord_task
+@db.connection_context()
 async def sync_scheduled_events(client):
     discord_events = {arrow.get(e.start_time).naive: e
                       for e in client.juniorguru_guild.scheduled_events}

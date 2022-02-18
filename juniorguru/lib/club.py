@@ -1,8 +1,9 @@
 import re
 import os
+import importlib
 import asyncio
-from functools import wraps
 from datetime import timedelta, date
+from multiprocessing import Process
 
 import discord
 
@@ -33,7 +34,7 @@ COUPON_RE = re.compile(r'''
 ''', re.VERBOSE)
 
 
-logger = loggers.get('lib.club')
+logger = loggers.get(__name__)
 
 
 class BaseClient(discord.Client):
@@ -42,43 +43,61 @@ class BaseClient(discord.Client):
         return self.get_guild(JUNIORGURU_GUILD)
 
 
-def discord_task(task):
+def run_discord_task(import_path):
     """
-    Decorator, which turns given async function into a one-time synchronous Discord
-    task.
+    Run given async function in a separate process.
 
-    The wrapped function is expected to be async and it gets a Discord client instance
-    as the first argument. The resulting function is synchronous. Any arguments given
-    to the resulting function get passed down to the wrapped function. Positional
-    arguments follow after the client instance.
+    Separate process is used so that it's possible to run multiple one-time
+    async tasks independently on each other, in separate async loops.
     """
-    @wraps(task)
-    def wrapper(*args, **kwargs):
-        class Client(BaseClient):
-            async def on_ready(self):
-                await self.wait_until_ready()
-                await task(self, *args, **kwargs)
-                await self.close()
+    logger.debug(f'Running async code in a separate process: {import_path}')
+    process = Process(target=_discord_task, args=[import_path])
+    process.start()
+    process.join()
 
-            async def on_error(self, event, *args, **kwargs):
-                raise
 
-        intents = discord.Intents(guilds=True, members=True)
-        client = Client(loop=asyncio.new_event_loop(), intents=intents)
+def _discord_task(import_path):
+    logger_dt = logger.getChild('discord_task')
 
-        exc = None
-        def exc_handler(loop, context):
-            nonlocal exc
-            exc = context.get('exception')
-            loop.default_exception_handler(context)
-            loop.stop()
+    import_path_parts = import_path.split('.')
+    module = importlib.import_module('.'.join(import_path_parts[:-1]))
+    task_fn = getattr(module, import_path_parts[-1])
+    logger_dt.debug(f'Imported {task_fn.__qualname__} from {task_fn.__module__}')
 
-        client.loop.set_exception_handler(exc_handler)
-        client.run(DISCORD_API_KEY)
+    if not asyncio.iscoroutinefunction(task_fn):
+        raise TypeError(f"Not async function: {task_fn.__qualname__} from {task_fn.__module__}")
 
-        if exc:
-            raise exc
-    return wrapper
+    class Client(BaseClient):
+        async def on_ready(self):
+            await self.wait_until_ready()
+            logger_dt.debug('Discord connection ready')
+            await task_fn(self)
+            logger_dt.debug('Closing Discord client')
+            await self.close()
+
+        async def on_error(self, event, *args, **kwargs):
+            logger_dt.debug('Got an error, raising')
+            raise
+
+    intents = discord.Intents(guilds=True, members=True)
+    client = Client(intents=intents)
+
+    exc = None
+    def exc_handler(loop, context):
+        nonlocal exc
+        logger_dt.debug('Recording exception')
+        exc = context.get('exception')
+        loop.default_exception_handler(context)
+        logger_dt.debug('Stopping async execution')
+        loop.stop()
+
+    client.loop.set_exception_handler(exc_handler)
+    logger_dt.debug('Starting')
+    client.run(DISCORD_API_KEY)
+
+    if exc:
+        logger_dt.debug('Found exception, raising')
+        raise exc
 
 
 def is_discord_mutable():

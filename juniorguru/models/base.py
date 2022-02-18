@@ -3,20 +3,38 @@ import json
 from pathlib import Path
 from collections.abc import Set
 from functools import wraps
+import asyncio
 
 import scrapy
-from peewee import Model, SqliteDatabase, OperationalError
+from peewee import Model, SqliteDatabase as BaseSqliteDatabase, OperationalError, ConnectionContext as BaseConnectionContext
 from playhouse.sqlite_ext import JSONField as BaseJSONField
 
 from juniorguru.lib import loggers
 
 
-logger = loggers.get('db')
+DB_FILE = Path(__file__).parent / '..' / 'data' / 'data.db'
 
 
-db_file = Path(__file__).parent / '..' / 'data' / 'data.db'
-db = SqliteDatabase(db_file, check_same_thread=False,
-                    pragmas={'journal_mode': 'wal'})
+logger = loggers.get(__name__)
+
+
+class ConnectionContext(BaseConnectionContext):
+    """Supports async functions when used as decorator"""
+    def __call__(self, fn):
+        if asyncio.iscoroutinefunction(fn):
+            async def wrapper(*args, **kwargs):
+                with self:
+                    return (await fn(*args, **kwargs))
+            return wrapper
+        return super().__call__(fn)
+
+
+class SqliteDatabase(BaseSqliteDatabase):
+    def connection_context(self):
+        return ConnectionContext(self)
+
+
+db = SqliteDatabase(DB_FILE, pragmas={'journal_mode': 'wal'})
 
 
 class BaseModel(Model):

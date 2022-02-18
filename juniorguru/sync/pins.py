@@ -6,17 +6,20 @@ from discord.errors import Forbidden
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import discord_task, is_discord_mutable
-from juniorguru.models import ClubPinReaction, ClubUser, ClubMessage, with_db
+from juniorguru.lib.club import run_discord_task, is_discord_mutable
+from juniorguru.models import ClubPinReaction, ClubUser, ClubMessage, db
 
 
-logger = loggers.get('pins')
+logger = loggers.get(__name__)
 
 
-@measure('pins')
-@with_db
-@discord_task
-async def main(client):
+@measure()
+def main():
+    run_discord_task('juniorguru.sync.pins.discord_task')
+
+
+@db.connection_context()
+async def discord_task(client):
     top_members_limit = ClubUser.top_members_limit()
     pin_reactions = [pin_reaction for pin_reaction
                      in ClubPinReaction.listing()
@@ -39,7 +42,7 @@ async def main(client):
 
 
 async def process_pin_reaction(client, pin_reaction, top_members_limit):
-    pin_logger = loggers.get(f'pins.reactions.{pin_reaction.id}')
+    pin_logger = logger.getChild(f'reactions.{pin_reaction.id}')
 
     member = await client.juniorguru_guild.fetch_member(pin_reaction.user.id)
     if member.dm_channel:

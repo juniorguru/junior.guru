@@ -11,7 +11,7 @@ from juniorguru.lib import loggers
 from juniorguru.models import with_db, PodcastEpisode
 
 
-logger = loggers.get('podcast')
+logger = loggers.get(__name__)
 
 
 YAML_SCHEMA = Seq(
@@ -28,7 +28,7 @@ WORKERS = 2
 TODAY = date.today()
 
 
-@measure('podcast')
+@measure()
 @with_db
 def main():
     PodcastEpisode.drop_table()
@@ -48,7 +48,7 @@ def main():
 
 def process_episode(yaml_record):
     id = yaml_record['id']
-    ep_logger = loggers.get(f'podcast.{id}')
+    ep_logger = logger.getChild(id)
     ep_logger.info(f'Processing episode #{id}')
 
     media_url = f"https://podcast.junior.guru/episodes/{id}.mp3"

@@ -1,15 +1,18 @@
 from juniorguru.lib.timer import measure
-from juniorguru.lib.club import discord_task, is_discord_mutable, is_message_over_month_ago
-from juniorguru.models import ClubMessage, with_db
+from juniorguru.lib.club import run_discord_task, is_discord_mutable, is_message_over_month_ago
+from juniorguru.models import ClubMessage, db
 
 
 LI_GROUP_CHANNEL = 839059491432431616
 
 
-@measure('li_group')
-@with_db
-@discord_task
-async def main(client):
+@measure()
+def main():
+    run_discord_task('juniorguru.sync.li_group.discord_task')
+
+
+@db.connection_context()
+async def discord_task(client):
     message = ClubMessage.last_bot_message(LI_GROUP_CHANNEL, '<:linkedin:915267970752712734>')
     if is_message_over_month_ago(message) and is_discord_mutable():
         channel = await client.fetch_channel(LI_GROUP_CHANNEL)

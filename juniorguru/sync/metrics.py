@@ -15,7 +15,7 @@ GOOGLE_ANALYTICS_VIEW_ID = '198392474'  # https://ga-dev-tools.appspot.com/accou
 FINANCES_DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
 
-@measure('metrics')
+@measure()
 @with_db
 def main():
     google_analytics_metrics = fetch_from_google_analytics()

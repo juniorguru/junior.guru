@@ -10,7 +10,7 @@ except (Exception, ImportError):
     pync = None
 
 
-logger = loggers.get('timer')
+logger = loggers.get(__name__)
 
 
 def notify(fn):
@@ -23,7 +23,7 @@ def notify(fn):
             t = perf_counter() - t0
             print('\a', end='', flush=True)
             if pync:
-                fn_name = f'{fn.__module__}.{fn.__name__}()'
+                fn_name = f'{fn.__module__}.{fn.__qualname__}()'
                 pync.Notifier.notify(f'{t / 60:.1f}min',
                                      title=f'Finished: {fn_name}')
     return wrapper
@@ -38,6 +38,6 @@ def measure(name=None):
                 return fn(*args, **kwargs)
             finally:
                 t = perf_counter() - t0
-                logger.info(f'{name or fn.__name__}() took {t / 60:.1f}min')
+                logger.info(f'{fn.__module__}.{name or fn.__qualname__}() took {t / 60:.1f}min')
         return wrapper
     return decorator

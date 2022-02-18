@@ -5,21 +5,24 @@ from discord import Embed
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import discord_task, is_discord_mutable, is_message_older_than
-from juniorguru.models import ClubMessage, with_db
+from juniorguru.lib.club import run_discord_task, is_discord_mutable, is_message_older_than
+from juniorguru.models import ClubMessage, db
 
 
-logger = loggers.get('digest')
+logger = loggers.get(__name__)
 
 
 DIGEST_CHANNEL = 789046675247333397
 DIGEST_LIMIT = 5
 
 
-@measure('digest')
-@with_db
-@discord_task
-async def main(client):
+@measure()
+def main():
+    run_discord_task('juniorguru.sync.digest.discord_task')
+
+
+@db.connection_context()
+async def discord_task(client):
     since_date = date.today() - timedelta(weeks=1)
     message = ClubMessage.last_bot_message(DIGEST_CHANNEL, '🔥')
     if is_message_older_than(message, since_date):

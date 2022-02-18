@@ -7,11 +7,11 @@ from PIL import Image
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import discord_task
-from juniorguru.models import ClubUser, with_db
+from juniorguru.lib.club import run_discord_task
+from juniorguru.models import ClubUser, db
 
 
-logger = loggers.get('avatars')
+logger = loggers.get(__name__)
 
 
 IMAGES_PATH = Path(__file__).parent.parent / 'images'
@@ -19,10 +19,13 @@ AVATARS_PATH = IMAGES_PATH / 'avatars'
 AVATAR_SIZE_PX = 60
 
 
-@measure('avatars')
-@with_db
-@discord_task
-async def main(client):
+@measure()
+def main():
+    run_discord_task('juniorguru.sync.avatars.discord_task')
+
+
+@db.connection_context()
+async def discord_task(client):
     AVATARS_PATH.mkdir(exist_ok=True, parents=True)
     for path in AVATARS_PATH.glob('*.png'):
         path.unlink()

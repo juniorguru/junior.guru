@@ -13,7 +13,7 @@ from juniorguru.models import ClubUser, with_db
 from juniorguru.lib.club import parse_coupon
 
 
-logger = loggers.get('subscriptions')
+logger = loggers.get(__name__)
 
 
 MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
@@ -32,7 +32,7 @@ FEMALE_NAME_RE = re.compile(r'''
 ''', re.VERBOSE | re.IGNORECASE)
 
 
-@measure('subscriptions')
+@measure()
 @with_db
 def main():
     logger.info('Getting data from Memberful')

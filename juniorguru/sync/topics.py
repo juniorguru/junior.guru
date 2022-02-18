@@ -6,7 +6,7 @@ from juniorguru.lib import loggers
 from juniorguru.models import ClubMessage, Topic, with_db
 
 
-logger = loggers.get('topics')
+logger = loggers.get(__name__)
 
 
 KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value in {
@@ -80,7 +80,7 @@ TOPIC_CHANNELS = {re.compile(key): value for key, value in {
 }.items()}
 
 
-@measure('topics')
+@measure()
 @with_db
 def main():
     Topic.drop_table()

@@ -4,10 +4,10 @@ from juniorguru.lib import loggers
 from juniorguru.models import Employment, db
 
 
-logger = loggers.get('employments')
+logger = loggers.get(__name__)
 
 
-@measure('employments')
+@measure()
 def main():
     with db:
         db.drop_tables([Employment])

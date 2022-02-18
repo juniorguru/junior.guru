@@ -10,7 +10,7 @@ from juniorguru.lib import loggers
 from juniorguru.send import job_metrics
 
 
-logger = loggers.get('send')
+logger = loggers.get('juniorguru.send')
 
 
 EMAIL_BATCHES = (

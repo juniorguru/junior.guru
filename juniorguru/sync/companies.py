@@ -9,7 +9,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.images import render_image_file
 
 
-logger = loggers.get('companies')
+logger = loggers.get(__name__)
 
 
 FLUSH_POSTERS_COMPANIES = bool(int(os.getenv('FLUSH_POSTERS_COMPANIES', 0)))
@@ -20,7 +20,7 @@ POSTER_WIDTH = 700
 POSTER_HEIGHT = 700
 
 
-@measure('companies')
+@measure()
 @with_db
 def main():
     if FLUSH_POSTERS_COMPANIES:

@@ -1,17 +1,20 @@
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import discord_task, is_discord_mutable
-
-
-logger = loggers.get('stickers')
+from juniorguru.lib.club import run_discord_task, is_discord_mutable
 
 
 STICKERS_CHANNEL = 788823881024405544
 
 
-@measure('stickers')
-@discord_task
-async def main(client):
+logger = loggers.get(__name__)
+
+
+@measure()
+def main():
+    run_discord_task('juniorguru.sync.stickers.discord_task')
+
+
+async def discord_task(client):
     channel = await client.juniorguru_guild.fetch_channel(STICKERS_CHANNEL)
 
     async for message in channel.history(limit=None, after=None):

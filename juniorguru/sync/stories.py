@@ -17,7 +17,7 @@ schema = Seq(
 )
 
 
-@measure('stories')
+@measure()
 @with_db
 def main():
     path = Path(__file__).parent.parent / 'data' / 'stories.yml'

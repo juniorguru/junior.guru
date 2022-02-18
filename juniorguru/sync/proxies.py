@@ -13,10 +13,10 @@ from juniorguru.lib import loggers
 PROXIES_ENABLED = bool(int(os.getenv('PROXIES_ENABLED', 0)))
 
 
-logger = loggers.get('proxies')
+logger = loggers.get(__name__)
 
 
-@measure('proxies')
+@measure()
 @with_db
 def main():
     proxies = []

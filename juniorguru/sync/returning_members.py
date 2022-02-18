@@ -1,18 +1,22 @@
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import discord_task, is_discord_mutable
-from juniorguru.models import ClubMessage
+from juniorguru.lib.club import run_discord_task, is_discord_mutable
+from juniorguru.models import ClubMessage, db
 
 
-logger = loggers.get('returning_members')
+logger = loggers.get(__name__)
 
 
 SYSTEM_MESSAGES_CHANNEL = 788823881024405544
 
 
-@measure('returning_members')
-@discord_task
-async def main(client):
+@measure()
+def main():
+    run_discord_task('juniorguru.sync.returning_members.discord_task')
+
+
+@db.connection_context()
+async def discord_task(client):
     system_messages_channel = await client.fetch_channel(SYSTEM_MESSAGES_CHANNEL)
     for message in ClubMessage.channel_listing(SYSTEM_MESSAGES_CHANNEL):
         if message.type == 'new_member' and message.author.first_seen_on() < message.created_at.date():

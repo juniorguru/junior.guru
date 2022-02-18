@@ -2,20 +2,23 @@ from discord import Embed
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.lib.club import discord_task, is_discord_mutable, is_message_over_week_ago
-from juniorguru.models import ClubMessage, with_db
-
-
-logger = loggers.get('mentoring')
+from juniorguru.lib.club import run_discord_task, is_discord_mutable, is_message_over_week_ago
+from juniorguru.models import ClubMessage, db
 
 
 MENTORING_CHANNEL = 878937534464417822
 
 
-@measure('mentoring')
-@with_db
-@discord_task
-async def main(client):
+logger = loggers.get(__name__)
+
+
+@measure()
+def main():
+    run_discord_task('juniorguru.sync.mentoring.discord_task')
+
+
+@db.connection_context()
+async def discord_task(client):
     message = ClubMessage.last_bot_message(MENTORING_CHANNEL, ':teacher:')
     if is_message_over_week_ago(message) and is_discord_mutable():
         channel = await client.fetch_channel(MENTORING_CHANNEL)

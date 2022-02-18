@@ -19,7 +19,7 @@ from juniorguru.sync.jobs.spiders.linkedin import clean_validated_url
 from juniorguru.models import db, Employment
 
 
-logger = loggers.get('backups')
+logger = loggers.get(__name__)
 
 
 STARTUPJOBS_URL_RE = re.compile(r'startupjobs.+\&utm_')
