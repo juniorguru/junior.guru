@@ -34,17 +34,21 @@ async def main(client):
 
 
 async def process_member(client, member):
-    member_logger = loggers.get(f'avatars.{member.id}')
-    member_logger.info(f"Checking avatar of member #{member.id}")
-    member_logger.debug(f"Member #{member.id} is named '{member.display_name}'")
-    discord_member = await client.juniorguru_guild.fetch_member(member.id)
-    if discord_member.avatar:
-        member_logger.info(f"Member #{member.id} has avatar, downloading")
-        member.avatar_path = await download_avatar(discord_member.avatar)
-    if member.avatar_path:
-        member_logger.info(f"Member #{member.id} has avatar, downloaded as '{member.avatar_path}'")
-    else:
-        member_logger.info(f"Member #{member.id} has no avatar")
+    logger_m = logger.getChild(str(member.id))
+    logger_m.info('Checking avatar')
+    logger_m.debug(f"Name: {member.display_name}")
+    try:
+        discord_member = await client.juniorguru_guild.fetch_member(member.id)
+        if discord_member.avatar:
+            logger_m.info("Has avatar, downloading")
+            member.avatar_path = await download_avatar(discord_member.avatar)
+        if member.avatar_path:
+            logger_m.info(f"Has avatar, downloaded as '{member.avatar_path}'")
+        else:
+            logger_m.info("Has no avatar")
+    except:
+        logger_m.exception("Unable to get avatar")
+        raise
     member.save()
 
 
