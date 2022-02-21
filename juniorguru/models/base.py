@@ -2,7 +2,6 @@ import time
 import json
 from pathlib import Path
 from collections.abc import Set
-from functools import wraps
 import asyncio
 
 import scrapy
