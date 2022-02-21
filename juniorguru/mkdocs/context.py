@@ -7,7 +7,7 @@ from datetime import date
 import arrow
 
 from juniorguru.lib import charts
-from juniorguru.models import with_db, Topic, ClubUser, Company, Event, ClubMessage, Story, LastModified, Job, Transaction, PodcastEpisode
+from juniorguru.models import db, Topic, ClubUser, Company, Event, ClubMessage, Story, LastModified, Job, Transaction, PodcastEpisode
 from juniorguru.mkdocs.thumbnail import thumbnail
 
 
@@ -22,7 +22,7 @@ CLUB_BEGIN_ON = date(2021, 2, 1)
 ####################################################################
 
 
-@with_db
+@db.connection_context()
 def on_shared_context(context):
     context['now'] = NOW
     context['today'] = TODAY
@@ -40,7 +40,7 @@ def on_shared_page_context(context, page, config, files):
 ####################################################################
 
 
-@with_db
+@db.connection_context()
 def on_docs_context(context):
     # topics/*
     context['club_elapsed_months'] = int(round((TODAY - CLUB_BEGIN_ON).days / 30))
@@ -78,7 +78,7 @@ def on_docs_context(context):
     context['podcast_episodes'] = PodcastEpisode.listing()
 
 
-@with_db
+@db.connection_context()
 def on_docs_page_context(context, page, config, files):
     if 'topic_name' in page.meta:
         topic_name = page.meta['topic_name']
@@ -100,7 +100,7 @@ def on_theme_context(context):
     context['companies_handbook'] = Company.handbook_listing()
 
 
-@with_db
+@db.connection_context()
 def on_theme_page_context(context, page, config, files):
     page.meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
 

@@ -8,7 +8,7 @@ from juniorguru.lib.google_analytics import (
     metric_avg_monthly_handbook_pageviews, metric_avg_monthly_handbook_logo_clicks,
     metric_clicks_per_logo, metric_handbook_users_per_date, metric_handbook_pageviews_per_date,
     metric_avg_monthly_jobs_users)
-from juniorguru.models import Job, JobMetric, Metric, with_db
+from juniorguru.models import Job, JobMetric, Metric, db
 
 
 GOOGLE_ANALYTICS_VIEW_ID = '198392474'  # https://ga-dev-tools.appspot.com/account-explorer/
@@ -16,7 +16,7 @@ FINANCES_DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
 
 @measure()
-@with_db
+@db.connection_context()
 def main():
     google_analytics_metrics = fetch_from_google_analytics()
 

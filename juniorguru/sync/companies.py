@@ -4,7 +4,7 @@ from pathlib import Path
 from juniorguru.lib.timer import measure
 from juniorguru.lib import google_sheets
 from juniorguru.lib.coerce import coerce, parse_boolean_words, parse_text, parse_date
-from juniorguru.models import Company, with_db
+from juniorguru.models import Company, db
 from juniorguru.lib import loggers
 from juniorguru.lib.images import render_image_file
 
@@ -21,7 +21,7 @@ POSTER_HEIGHT = 700
 
 
 @measure()
-@with_db
+@db.connection_context()
 def main():
     if FLUSH_POSTERS_COMPANIES:
         logger.warning("Removing all existing posters for companies, FLUSH_POSTERS_COMPANIES is set")

@@ -6,7 +6,7 @@ import requests
 from lxml import html
 
 from juniorguru.lib.timer import measure
-from juniorguru.models import Proxy, with_db
+from juniorguru.models import Proxy, db
 from juniorguru.lib import loggers
 
 
@@ -17,7 +17,7 @@ logger = loggers.get(__name__)
 
 
 @measure()
-@with_db
+@db.connection_context()
 def main():
     proxies = []
     if PROXIES_ENABLED:

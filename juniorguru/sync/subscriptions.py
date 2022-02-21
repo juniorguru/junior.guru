@@ -9,7 +9,7 @@ from gql.transport.requests import RequestsHTTPTransport
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
 from juniorguru.lib import google_sheets
-from juniorguru.models import ClubUser, with_db
+from juniorguru.models import ClubUser, db
 from juniorguru.lib.club import parse_coupon
 
 
@@ -33,7 +33,7 @@ FEMALE_NAME_RE = re.compile(r'''
 
 
 @measure()
-@with_db
+@db.connection_context()
 def main():
     logger.info('Getting data from Memberful')
     # https://memberful.com/help/integrate/advanced/memberful-api/

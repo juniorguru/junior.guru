@@ -5,10 +5,10 @@ import ics
 from pod2gen import Podcast, Episode, Media, Person, Category, Funding
 
 from juniorguru.lib.md import md
-from juniorguru.models import Employment, Event, PodcastEpisode, with_db
+from juniorguru.models import Employment, Event, PodcastEpisode, db
 
 
-@with_db
+@db.connection_context()
 def build_events_ics(api_dir, config):
     calendar = ics.Calendar(events=[
         ics.Event(summary=event.title,
@@ -22,7 +22,7 @@ def build_events_ics(api_dir, config):
         f.writelines(calendar)
 
 
-@with_db
+@db.connection_context()
 def build_czechitas_csv(api_dir, config):
     rows = [employment.to_api() for employment in Employment.api_listing()]
     api_file = api_dir / 'jobs.csv'
@@ -32,7 +32,7 @@ def build_czechitas_csv(api_dir, config):
         writer.writerows(rows)
 
 
-@with_db
+@db.connection_context()
 def build_podcast_xml(api_dir, config):
     # TODO Category('Business'), Category('Education')
     # https://gitlab.com/caproni-podcast-publishing/pod2gen/-/issues/26

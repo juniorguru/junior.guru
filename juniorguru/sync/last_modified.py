@@ -3,7 +3,7 @@ from subprocess import run, PIPE
 import arrow
 
 from juniorguru.lib.timer import measure
-from juniorguru.models import LastModified, with_db
+from juniorguru.models import LastModified, db
 
 
 FILES = [
@@ -12,7 +12,7 @@ FILES = [
 
 
 @measure()
-@with_db
+@db.connection_context()
 def main():
     entries = []
     for path in FILES:

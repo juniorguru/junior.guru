@@ -8,7 +8,7 @@ from requests.exceptions import HTTPError
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.models import with_db, PodcastEpisode
+from juniorguru.models import db, PodcastEpisode
 
 
 logger = loggers.get(__name__)
@@ -29,7 +29,7 @@ TODAY = date.today()
 
 
 @measure()
-@with_db
+@db.connection_context()
 def main():
     PodcastEpisode.drop_table()
     PodcastEpisode.create_table()

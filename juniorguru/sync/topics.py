@@ -3,7 +3,7 @@ from collections import Counter
 
 from juniorguru.lib.timer import measure
 from juniorguru.lib import loggers
-from juniorguru.models import ClubMessage, Topic, with_db
+from juniorguru.models import ClubMessage, Topic, db
 
 
 logger = loggers.get(__name__)
@@ -81,7 +81,7 @@ TOPIC_CHANNELS = {re.compile(key): value for key, value in {
 
 
 @measure()
-@with_db
+@db.connection_context()
 def main():
     Topic.drop_table()
     Topic.create_table()
