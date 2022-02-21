@@ -54,6 +54,8 @@ def run_discord_task(import_path):
     process = Process(target=_discord_task, args=[import_path])
     process.start()
     process.join()
+    if process.exitcode != 0:
+        raise RuntimeError(f'Process for running async code finished with non-zero exit code: {process.exitcode}')
 
 
 def _discord_task(import_path):

@@ -17,6 +17,8 @@ def scrape(*args, **kwargs):
     logger.debug('Waiting for the Twisted reactor process to finish')
     process.join()
     logger.debug('Twisted reactor process done')
+    if process.exitcode != 0:
+        raise RuntimeError(f'Twisted reactor process finished with non-zero exit code: {process.exitcode}')
 
 
 def run_twisted_reactor(scrapy_project_package, spider_names):
