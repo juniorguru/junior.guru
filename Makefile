@@ -14,7 +14,7 @@ sync:
 	poetry run python -m juniorguru.sync $(SYNC)
 
 sync-jobs:
-	poetry run python -m juniorguru.sync.jobs
+	poetry run python -m juniorguru.sync_jobs
 
 freeze:
 	poetry run python -m juniorguru.web
