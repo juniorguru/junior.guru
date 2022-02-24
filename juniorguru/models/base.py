@@ -32,8 +32,7 @@ class SqliteDatabase(BaseSqliteDatabase):
         return ConnectionContext(self)
 
 
-db = SqliteDatabase(DB_FILE, pragmas={'journal_mode': 'wal',
-                                      'foreign_keys': 1})
+db = SqliteDatabase(DB_FILE, pragmas={'journal_mode': 'wal'})
 
 
 class BaseModel(Model):
