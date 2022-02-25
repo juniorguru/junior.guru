@@ -15,6 +15,7 @@ MUTED_LOGGERS = [
     'MARKDOWN',
     'gql.transport.requests',
     'protego',
+    'invoke',
 ]
 
 

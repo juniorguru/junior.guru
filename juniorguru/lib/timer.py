@@ -29,16 +29,14 @@ def notify(fn):
     return wrapper
 
 
-def measure(name=None):
-    def decorator(fn):
-        fn_name = name or f'{fn.__module__}.{fn.__qualname__}'
-        @wraps(fn)
-        def wrapper(*args, **kwargs):
-            t0 = perf_counter()
-            try:
-                return fn(*args, **kwargs)
-            finally:
-                t = perf_counter() - t0
-                logger.info(f'{fn_name}() took {t / 60:.1f}min')
-        return wrapper
-    return decorator
+def measure(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        t0 = perf_counter()
+        try:
+            return fn(*args, **kwargs)
+        finally:
+            t = perf_counter() - t0
+            fn_name = f'{fn.__module__}.{fn.__qualname__}'
+            logger.info(f'{fn_name}() took {t / 60:.1f}min')
+    return wrapper

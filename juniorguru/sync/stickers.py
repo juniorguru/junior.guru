@@ -1,4 +1,4 @@
-from juniorguru.lib.timer import measure
+from juniorguru.sync import sync_task, club_content
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, is_discord_mutable
 
@@ -9,7 +9,7 @@ STICKERS_CHANNEL = 788823881024405544
 logger = loggers.get(__name__)
 
 
-@measure()
+@sync_task(club_content.main)
 def main():
     run_discord_task('juniorguru.sync.stickers.discord_task')
 
@@ -26,7 +26,3 @@ async def discord_task(client):
             logger.info(f"Deleting sticker '{sticker.name}'")
         if is_discord_mutable():
             await message.delete()
-
-
-if __name__ == '__main__':
-    main()

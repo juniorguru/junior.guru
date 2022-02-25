@@ -41,13 +41,13 @@ jobs:
           at: "~"
       - run:
           name: Lint
-          command: make lint
+          command: poetry run invoke lint
       - run:
           name: Test
-          command: make test TESTOPTS=-v
+          command: poetry run invoke test -v
 
-  # needs $DOBRYSEF_API_KEY, $GOOGLE_SERVICE_ACCOUNT
-  jobs:
+  # needs $GOOGLE_SERVICE_ACCOUNT
+  scrape-jobs:
     executor: python-js
     steps:
       - attach_workspace:
@@ -61,7 +61,7 @@ jobs:
           name: Scrape jobs
           command: |
             export PROXIES_ENABLED=1
-            make jobs
+            poetry run invoke scrape.jobs
       - save_cache:
           key: scrapy-{{ checksum ".today" }}
           paths:
@@ -86,7 +86,7 @@ jobs:
           name: Sync data
           command: |
             export DISCORD_MUTATIONS_ENABLED=1
-            make sync
+            poetry run invoke sync
       - persist_to_workspace:
           root: "~"
           paths:
@@ -103,14 +103,14 @@ jobs:
           command: |
             export DISCORD_MUTATIONS_ENABLED=1
             export REUSE_JOBS_DB_ENABLED=1
-            make sync-jobs
+            poetry run invoke sync.jobs
       - persist_to_workspace:
           root: "~"
           paths:
               - project/juniorguru/data
               - project/juniorguru/images
 
-  build:
+  build-web:
     executor: python-js
     steps:
       - run:
@@ -125,7 +125,7 @@ jobs:
             done
       - attach_workspace:
           at: "~"
-      - run: make build
+      - run: poetry run invoke web.build
       - persist_to_workspace:
           root: "~"
           paths:
@@ -140,7 +140,7 @@ jobs:
       - store_artifacts:
           path: ./backup.tar.gz
 
-  deploy:
+  deploy-web:
     executor: python-js
     steps:
       - attach_workspace:
@@ -167,28 +167,28 @@ jobs:
           at: "~"
       - run: |
           export SMTP_ENABLED=1
-          make send
+          poetry run invoke send
 
   check-anchors:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: make check-anchors
+      - run: poetry run invoke checks.anchors
 
   check-links:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: make check-links CHECKOPTS=--retry
+      - run: poetry run invoke checks.links --retry
 
   check-scrapers:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: make check-scrapers
+      - run: poetry run invoke checks.scrapers
 
 
 workflows:
@@ -203,25 +203,25 @@ workflows:
       - sync:
           requires:
             - install
-      - build:
+      - build-web:
           requires:
             - sync-jobs
       - check-anchors:
           requires:
-            - build
-      - deploy:
+            - build-web
+      - deploy-web:
           filters:
             branches:
               only:
                 - main
           requires:
-            - build
+            - build-web
             - lint-and-test
 
   nightly:
     jobs:
       - install
-      - jobs:
+      - scrape-jobs:
           requires:
             - install
       - sync:
@@ -229,23 +229,23 @@ workflows:
             - install
       - sync-jobs:
           requires:
-            - jobs
+            - scrape-jobs
             - sync
       - send:
           requires:
             - sync-jobs
-      - build:
+      - build-web:
           requires:
             - sync-jobs
       - backup:
           requires:
-            - build
+            - build-web
       - check-links:
           requires:
-            - build
-      - deploy:
+            - build-web
+      - deploy-web:
           requires:
-            - build
+            - build-web
     triggers:
       - schedule:
           cron: "0 4 * * *"

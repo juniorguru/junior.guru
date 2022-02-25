@@ -17,7 +17,7 @@ class JobsScrapingException(Exception):
 
 
 @timer.notify
-@timer.measure('scrapers.jobs')
+@timer.measure
 def main():
     logger.info('Creating directories (to prevent race conditions in spiders)')
     data_path(HTTPCACHE_DIR, createdir=True)

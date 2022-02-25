@@ -2,7 +2,7 @@ import asyncio
 
 import arrow
 
-from juniorguru.lib.timer import measure
+from juniorguru.sync import sync_task
 from juniorguru.lib import loggers
 from juniorguru.lib.club import EMOJI_PINS, run_discord_task, count_upvotes, count_downvotes, emoji_name, get_roles, count_pins
 from juniorguru.models import ClubMessage, ClubUser, ClubPinReaction, db
@@ -14,7 +14,7 @@ logger = loggers.get(__name__)
 WORKERS_COUNT = 5
 
 
-@measure()
+@sync_task()
 def main():
     run_discord_task('juniorguru.sync.club_content.discord_task')
 
@@ -159,7 +159,3 @@ def create_reaction(user, message):
     logger_p = logger.getChild('pins')
     logger_p.debug(f"Message {message.jump_url} is pinned by user '{user.display_name}' #{user.id}")
     return ClubPinReaction.create(user=user.id, message=message.id)
-
-
-if __name__ == '__main__':
-    main()

@@ -4,7 +4,7 @@ import textwrap
 from discord import Embed
 from discord.errors import Forbidden
 
-from juniorguru.lib.timer import measure
+from juniorguru.sync import sync_task, club_content
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, is_discord_mutable
 from juniorguru.models import ClubPinReaction, ClubUser, ClubMessage, db
@@ -13,7 +13,7 @@ from juniorguru.models import ClubPinReaction, ClubUser, ClubMessage, db
 logger = loggers.get(__name__)
 
 
-@measure()
+@sync_task(club_content.main)
 def main():
     run_discord_task('juniorguru.sync.pins.discord_task')
 
@@ -94,7 +94,3 @@ async def process_message(client, message, top_members_limit):
             channel = await client.fetch_channel(message.channel_id)
             discord_message = await channel.fetch_message(message.id)
             await discord_message.pin(reason=f"The message has {message.pin_reactions_count} pin reactions, minimum is {top_members_limit}")
-
-
-if __name__ == '__main__':
-    main()

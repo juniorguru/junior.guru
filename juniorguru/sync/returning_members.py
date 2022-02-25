@@ -1,4 +1,4 @@
-from juniorguru.lib.timer import measure
+from juniorguru.sync import sync_task, club_content
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, is_discord_mutable
 from juniorguru.models import ClubMessage, db
@@ -10,7 +10,7 @@ logger = loggers.get(__name__)
 SYSTEM_MESSAGES_CHANNEL = 788823881024405544
 
 
-@measure()
+@sync_task(club_content.main)
 def main():
     run_discord_task('juniorguru.sync.returning_members.discord_task')
 
@@ -25,7 +25,3 @@ async def discord_task(client):
             if is_discord_mutable():
                 await discord_message.add_reaction('👋')
                 await discord_message.add_reaction('🔄')
-
-
-if __name__ == '__main__':
-    main()

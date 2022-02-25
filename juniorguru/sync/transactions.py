@@ -3,7 +3,7 @@ from datetime import date
 
 from fiobank import FioBank
 
-from juniorguru.lib.timer import measure
+from juniorguru.sync import sync_task
 from juniorguru.lib import google_sheets, loggers
 from juniorguru.models import Transaction
 
@@ -40,7 +40,7 @@ CATEGORIES = [
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
 
-@measure()
+@sync_task()
 def main():
     logger.info('Preparing database')
     Transaction.drop_table()
@@ -93,7 +93,3 @@ def get_category(transaction):
         if category:
             return category
     raise ValueError('Could not categorize transaction')
-
-
-if __name__ == '__main__':
-    main()

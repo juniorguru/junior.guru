@@ -1,4 +1,4 @@
-from juniorguru.lib.timer import measure
+from juniorguru.sync import sync_task, club_content
 from juniorguru.lib.club import run_discord_task, is_discord_mutable, is_message_over_month_ago
 from juniorguru.models import ClubMessage, db
 
@@ -6,7 +6,7 @@ from juniorguru.models import ClubMessage, db
 LI_GROUP_CHANNEL = 839059491432431616
 
 
-@measure()
+@sync_task(club_content.main)
 def main():
     run_discord_task('juniorguru.sync.li_group.discord_task')
 
@@ -26,7 +26,3 @@ async def discord_task(client):
             "Minimálně jako poznávací znamení mezi námi by to zafungovat mohlo. "
             "Něco jako „Jé, koukám, že ty jsi taky chodila do skauta? Chodíš ještě? Jakou máš přezdívku?“"
         ), embed=None, embeds=[])
-
-
-if __name__ == '__main__':
-    main()

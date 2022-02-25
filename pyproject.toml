@@ -46,6 +46,7 @@ markupsafe = "*"
 mkdocs-simple-hooks = "*"
 ics = { git = "https://github.com/ics-py/ics-py.git", branch = "main" }
 pod2gen = "^1.0.3"
+invoke = "^1.6.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"

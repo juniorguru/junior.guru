@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-from juniorguru.lib.timer import measure
+from juniorguru.sync import sync_task
 from juniorguru.lib import google_sheets
 from juniorguru.lib.coerce import coerce, parse_boolean_words, parse_text, parse_date
 from juniorguru.models import Company, db
@@ -20,7 +20,7 @@ POSTER_WIDTH = 700
 POSTER_HEIGHT = 700
 
 
-@measure()
+@sync_task()
 @db.connection_context()
 def main():
     if FLUSH_POSTERS_COMPANIES:
@@ -56,7 +56,3 @@ def coerce_record(record):
         r'^starts$': ('starts_at', parse_date),
         r'^expires$': ('expires_at', parse_date),
     }, record)
-
-
-if __name__ == '__main__':
-    main()

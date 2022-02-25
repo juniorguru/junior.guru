@@ -1,6 +1,6 @@
 from discord import Embed
 
-from juniorguru.lib.timer import measure
+from juniorguru.sync import sync_task, club_content
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, is_discord_mutable, is_message_over_week_ago
 from juniorguru.models import ClubMessage, db
@@ -12,7 +12,7 @@ MENTORING_CHANNEL = 878937534464417822
 logger = loggers.get(__name__)
 
 
-@measure()
+@sync_task(club_content.main)
 def main():
     run_discord_task('juniorguru.sync.mentoring.discord_task')
 
@@ -50,7 +50,3 @@ async def discord_task(client):
             'Existuje i [přepis](https://github.com/honzajavorek/become-mentor/blob/master/README.md) a [český překlad](https://github.com/honzajavorek/become-mentor/blob/master/cs.md).'
         )
         await channel.send(content=content, embed=Embed(description=embed_description))
-
-
-if __name__ == '__main__':
-    main()

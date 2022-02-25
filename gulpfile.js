@@ -120,7 +120,7 @@ function buildStatic() {
 
 function freezeFlask() {
   // also does everything 'buildStatic' does
-  const proc = spawn('make', ['freeze'], { stdio: 'inherit' });
+  const proc = spawn('poetry', ['run', 'inv', 'web.freeze'], { stdio: 'inherit' });
   return new Promise((resolve, reject) => {
     proc.on('exit', (code) => { code ? reject(new Error(`Exit code ${code}`)) : resolve(code); });
     proc.on('error', (error) => { reject(error); });
@@ -129,7 +129,7 @@ function freezeFlask() {
 
 
 function buildMkDocsFiles() {
-  const proc = spawn('make', ['mkdocs'], { stdio: 'inherit' });
+  const proc = spawn('poetry', ['run', 'inv', 'web.mkdocs'], { stdio: 'inherit' });
   return new Promise((resolve, reject) => {
     proc.on('exit', (code) => { code ? reject(new Error(`Exit code ${code}`)) : resolve(code); });
     proc.on('error', (error) => { reject(error); });

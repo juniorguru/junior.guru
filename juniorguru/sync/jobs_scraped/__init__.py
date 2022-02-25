@@ -4,7 +4,7 @@ from pathlib import Path
 from peewee import OperationalError
 
 from juniorguru.lib import loggers
-from juniorguru.lib.timer import measure
+from juniorguru.sync import sync_task
 from juniorguru.models import db, ScrapedJob
 from juniorguru.scrapers.jobs.settings import FEEDS_DIR
 from juniorguru.sync.jobs_scraped.processing import filter_relevant_paths, process_paths, postprocess_jobs
@@ -29,7 +29,7 @@ POSTPROCESS_PIPELINES = [
 logger = loggers.get('juniorguru.sync.jobs')
 
 
-@measure('jobs_scraped')
+@sync_task()
 def main():
     paths = list(Path(FEEDS_DIR).glob('**/*.jsonl.gz'))
     logger.info(f'Found {len(paths)} .json.gz paths')

@@ -4,7 +4,7 @@ from urllib.parse import urlparse
 from datetime import date, timedelta
 
 from juniorguru.lib.md import md
-from juniorguru.lib.timer import measure
+from juniorguru.sync import sync_task
 from juniorguru.lib import google_sheets
 from juniorguru.lib.coerce import (coerce, parse_boolean, parse_datetime, parse_text,
     parse_date, parse_set, parse_boolean_words, parse_url)
@@ -28,7 +28,7 @@ class DropItem(Exception):
     pass
 
 
-@measure('jobs_submitted')
+@sync_task()
 @db.connection_context()
 def main():
     SubmittedJob.drop_table()

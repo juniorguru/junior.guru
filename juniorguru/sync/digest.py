@@ -3,7 +3,7 @@ from datetime import timedelta, date
 
 from discord import Embed
 
-from juniorguru.lib.timer import measure
+from juniorguru.sync import sync_task, club_content
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, is_discord_mutable, is_message_older_than
 from juniorguru.models import ClubMessage, db
@@ -16,7 +16,7 @@ DIGEST_CHANNEL = 789046675247333397
 DIGEST_LIMIT = 5
 
 
-@measure()
+@sync_task(club_content.main)
 def main():
     run_discord_task('juniorguru.sync.digest.discord_task')
 
@@ -52,7 +52,3 @@ async def discord_task(client):
                 ]
             await channel.send(content="\n".join(content),
                                 embed=Embed(description="\n".join(embed_description)))
-
-
-if __name__ == '__main__':
-    main()

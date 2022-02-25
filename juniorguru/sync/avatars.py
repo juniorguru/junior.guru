@@ -5,7 +5,7 @@ import asyncio
 
 from PIL import Image
 
-from juniorguru.lib.timer import measure
+from juniorguru.sync import sync_task, club_content
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task
 from juniorguru.models import ClubUser, db
@@ -19,7 +19,7 @@ AVATARS_PATH = IMAGES_PATH / 'avatars'
 AVATAR_SIZE_PX = 60
 
 
-@measure()
+@sync_task(club_content.main)
 def main():
     run_discord_task('juniorguru.sync.avatars.discord_task')
 
@@ -63,7 +63,3 @@ async def download_avatar(avatar):
     image_path = AVATARS_PATH / f'{Path(urlparse(avatar.url).path).stem}.png'
     image.save(image_path, 'PNG')
     return f'images/avatars/{image_path.name}'
-
-
-if __name__ == '__main__':
-    main()

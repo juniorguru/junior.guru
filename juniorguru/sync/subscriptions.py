@@ -6,7 +6,7 @@ import arrow
 from gql import Client as Memberful, gql
 from gql.transport.requests import RequestsHTTPTransport
 
-from juniorguru.lib.timer import measure
+from juniorguru.sync import sync_task, club_content
 from juniorguru.lib import loggers
 from juniorguru.lib import google_sheets
 from juniorguru.models import ClubUser, db
@@ -33,7 +33,7 @@ FEMALE_NAME_RE = re.compile(r'''
 ''', re.VERBOSE | re.IGNORECASE)
 
 
-@measure()
+@sync_task(club_content.main)
 @db.connection_context()
 def main():
     logger.info('Getting data from Memberful')
@@ -196,7 +196,3 @@ def sort_key(record):
         bool(record['Memberful ID']),
         record['Discord Since'] if record['Discord Since'] else '2019-01-01',
     )
-
-
-if __name__ == '__main__':
-    main()
