@@ -6,7 +6,7 @@ from strictyaml import Map, Seq, Str, Datetime, load
 from pod2gen import Media
 from requests.exceptions import HTTPError
 
-from juniorguru.sync import sync_task
+from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
 from juniorguru.models import db, PodcastEpisode
 

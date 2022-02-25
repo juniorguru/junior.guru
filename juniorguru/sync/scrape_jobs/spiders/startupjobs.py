@@ -4,7 +4,7 @@ from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
-from juniorguru.scrapers.jobs.items import Job, parse_iso_date
+from juniorguru.sync.scrape_jobs.items import Job, parse_iso_date
 from juniorguru.lib.url_params import strip_utm_params
 
 

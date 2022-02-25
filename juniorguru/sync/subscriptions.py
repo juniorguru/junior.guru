@@ -6,7 +6,8 @@ import arrow
 from gql import Client as Memberful, gql
 from gql.transport.requests import RequestsHTTPTransport
 
-from juniorguru.sync import sync_task, club_content
+from juniorguru.lib.tasks import sync_task
+from juniorguru.sync import club_content
 from juniorguru.lib import loggers
 from juniorguru.lib import google_sheets
 from juniorguru.models import ClubUser, db

@@ -3,8 +3,8 @@ import os
 
 BOT_NAME = 'companies'
 
-SPIDER_MODULES = ['juniorguru.scrapers.companies.spiders']
-NEWSPIDER_MODULE = 'juniorguru.scrapers.companies.spiders'
+SPIDER_MODULES = ['juniorguru.scrape_companies.spiders']
+NEWSPIDER_MODULE = 'juniorguru.scrape_companies.spiders'
 
 USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
 ROBOTSTXT_OBEY = True
@@ -15,16 +15,16 @@ DEFAULT_REQUEST_HEADERS = {
 }
 
 DOWNLOADER_MIDDLEWARES = {
-   # TODO 'juniorguru.scrapers.jobs.monitoring.BackupResponseMiddleware': 530,
-   'juniorguru.scrapers.proxies.ScrapingProxyMiddleware': 555,
+   # TODO 'juniorguru.sync.scrape_jobs.monitoring.BackupResponseMiddleware': 530,
+   'juniorguru.lib.proxies.ScrapingProxyMiddleware': 555,
 }
 
 EXTENSIONS = {
-   # TODO 'juniorguru.scrapers.jobs.monitoring.MonitoringExtension': 100,
+   # TODO 'juniorguru.sync.scrape_jobs.monitoring.MonitoringExtension': 100,
 }
 
 ITEM_PIPELINES = {
-   'juniorguru.scrapers.companies.pipelines.company_logo.Pipeline': 50,
+   'juniorguru.scrape_companies.pipelines.company_logo.Pipeline': 50,
 }
 
 MEDIA_ALLOW_REDIRECTS = True

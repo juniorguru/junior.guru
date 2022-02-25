@@ -2,7 +2,7 @@ from pathlib import Path
 
 from strictyaml import Datetime, Map, Seq, Str, Url, load
 
-from juniorguru.sync import sync_task
+from juniorguru.lib.tasks import sync_task
 from juniorguru.models import Story, db
 
 

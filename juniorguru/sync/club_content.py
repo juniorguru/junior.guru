@@ -2,7 +2,7 @@ import asyncio
 
 import arrow
 
-from juniorguru.sync import sync_task
+from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
 from juniorguru.lib.club import EMOJI_PINS, run_discord_task, count_upvotes, count_downvotes, emoji_name, get_roles, count_pins
 from juniorguru.models import ClubMessage, ClubUser, ClubPinReaction, db

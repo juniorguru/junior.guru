@@ -10,7 +10,7 @@ from juniorguru.lib.images import render_image_file
 from juniorguru.models import Job, Metric, Story, Supporter, Event, db
 
 
-logger = loggers.get('web')
+logger = loggers.get(__name__)
 
 
 FLUSH_THUMBNAILS = bool(int(os.getenv('FLUSH_THUMBNAILS', 0)))

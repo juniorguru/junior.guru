@@ -2,7 +2,7 @@ from subprocess import run, PIPE
 
 import arrow
 
-from juniorguru.sync import sync_task
+from juniorguru.lib.tasks import sync_task
 from juniorguru.models import LastModified, db
 
 

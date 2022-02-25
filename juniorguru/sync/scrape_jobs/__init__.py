@@ -1,27 +1,26 @@
+from ast import alias
 from pathlib import Path
 
 from scrapy.utils.project import data_path
 
 from juniorguru.lib.scrapers import scrape
-from juniorguru.lib import timer
+from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
-from juniorguru.scrapers.jobs.settings import IMAGES_STORE, HTTPCACHE_DIR
-from juniorguru.scrapers.jobs.feeds import feed_path, feeds_dir
+from juniorguru.sync.scrape_jobs.settings import HTTPCACHE_DIR
+from juniorguru.sync.scrape_jobs.feeds import feed_path, feeds_dir
 
 
-logger = loggers.get('juniorguru.scrapers.jobs')
+logger = loggers.get(__name__)
 
 
 class JobsScrapingException(Exception):
     pass
 
 
-@timer.notify
-@timer.measure
+@sync_task(name='scrape-jobs')
 def main():
     logger.info('Creating directories (to prevent race conditions in spiders)')
     data_path(HTTPCACHE_DIR, createdir=True)
-    Path(IMAGES_STORE).mkdir(exist_ok=True, parents=True)
     Path(feeds_dir()).parent.mkdir(exist_ok=True, parents=True)
 
     spider_names = [
@@ -31,7 +30,7 @@ def main():
         'weworkremotely',
     ]
     logger.info(f'Scraping {spider_names}')
-    scrape('juniorguru.scrapers.jobs', spider_names)
+    scrape('juniorguru.sync.scrape_jobs', spider_names)
 
     logger.info('Checking scrapers')
     # TODO vcucnout scripts/check_scrapers.py
@@ -43,6 +42,3 @@ def main():
             raise JobsScrapingException(f"Scraper {spider_name} didn't save any items")
 
     logger.info('Scraping done!')
-
-
-main()

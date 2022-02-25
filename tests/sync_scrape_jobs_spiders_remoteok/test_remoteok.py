@@ -5,7 +5,7 @@ from pathlib import Path
 from lxml import html
 from scrapy.http import TextResponse, HtmlResponse
 
-from juniorguru.scrapers.jobs.spiders import remoteok
+from juniorguru.sync.scrape_jobs.spiders import remoteok
 
 
 FIXTURES_DIR = Path(__file__).parent

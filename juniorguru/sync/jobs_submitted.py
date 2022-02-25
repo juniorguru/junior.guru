@@ -4,17 +4,17 @@ from urllib.parse import urlparse
 from datetime import date, timedelta
 
 from juniorguru.lib.md import md
-from juniorguru.sync import sync_task
+from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import google_sheets
 from juniorguru.lib.coerce import (coerce, parse_boolean, parse_datetime, parse_text,
     parse_date, parse_set, parse_boolean_words, parse_url)
 from juniorguru.models import SubmittedJob, db
 from juniorguru.lib import loggers
-from juniorguru.scrapers.jobs.pipelines.language_parser import parse_language
+from juniorguru.sync.scrape_jobs.pipelines.language_parser import parse_language
 from juniorguru.sync.jobs_scraped.pipelines import boards_ids
 
 
-logger = loggers.get('juniorguru.sync.jobs_submitted')
+logger = loggers.get(__name__)
 
 
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'

@@ -3,8 +3,8 @@ import os
 
 BOT_NAME = 'jobs'
 
-SPIDER_MODULES = ['juniorguru.scrapers.jobs.spiders']
-NEWSPIDER_MODULE = 'juniorguru.scrapers.jobs.spiders'
+SPIDER_MODULES = ['juniorguru.sync.scrape_jobs.spiders']
+NEWSPIDER_MODULE = 'juniorguru.sync.scrape_jobs.spiders'
 
 USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
 ROBOTSTXT_OBEY = True
@@ -15,29 +15,29 @@ DEFAULT_REQUEST_HEADERS = {
 }
 
 DOWNLOADER_MIDDLEWARES = {
-   # TODO 'juniorguru.scrapers.jobs.monitoring.BackupResponseMiddleware': 530,
-   'juniorguru.scrapers.proxies.ScrapingProxyMiddleware': 555,
+   # TODO 'juniorguru.sync.scrape_jobs.monitoring.BackupResponseMiddleware': 530,
+   'juniorguru.lib.proxies.ScrapingProxyMiddleware': 555,
 }
 
 EXTENSIONS = {
-   # TODO 'juniorguru.scrapers.jobs.monitoring.MonitoringExtension': 100,
+   # TODO 'juniorguru.sync.scrape_jobs.monitoring.MonitoringExtension': 100,
 }
 
 ITEM_PIPELINES = {
-   'juniorguru.scrapers.jobs.pipelines.required_fields_filter.Pipeline': 50,
-   'juniorguru.scrapers.jobs.pipelines.short_description_filter.Pipeline': 100,
-   'juniorguru.scrapers.jobs.pipelines.broken_encoding_filter.Pipeline': 150,
-   'juniorguru.scrapers.jobs.pipelines.language_parser.Pipeline': 200,
-   'juniorguru.scrapers.jobs.pipelines.language_filter.Pipeline': 250,
+   'juniorguru.sync.scrape_jobs.pipelines.required_fields_filter.Pipeline': 50,
+   'juniorguru.sync.scrape_jobs.pipelines.short_description_filter.Pipeline': 100,
+   'juniorguru.sync.scrape_jobs.pipelines.broken_encoding_filter.Pipeline': 150,
+   'juniorguru.sync.scrape_jobs.pipelines.language_parser.Pipeline': 200,
+   'juniorguru.sync.scrape_jobs.pipelines.language_filter.Pipeline': 250,
 }
 
 FEED_EXPORTERS = {
-   'jsonl.gz': 'juniorguru.scrapers.jobs.feeds.GzipJsonLinesItemExporter',
+   'jsonl.gz': 'juniorguru.sync.scrape_jobs.feeds.GzipJsonLinesItemExporter',
 }
 FEEDS_DIR = 'juniorguru/data/jobs'
 FEEDS = {
     FEEDS_DIR + "/%(year)s/%(month)s/%(day)s/%(name)s.jsonl.gz": {
-         'uri_params': 'juniorguru.scrapers.jobs.feeds.uri_params',
+         'uri_params': 'juniorguru.sync.scrape_jobs.feeds.uri_params',
          'format': 'jsonl.gz',
          'indent': 2,
          'overwrite': True,

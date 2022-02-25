@@ -3,7 +3,8 @@ from collections import Counter
 from discord import Colour
 
 from juniorguru.models.company import Company
-from juniorguru.sync import sync_task, club_content, events, avatars, subscriptions, companies
+from juniorguru.lib.tasks import sync_task
+from juniorguru.sync import club_content, events, avatars, subscriptions, companies
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, is_discord_mutable, get_roles
 from juniorguru.models import ClubUser, Event, db

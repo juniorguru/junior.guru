@@ -5,7 +5,8 @@ from datetime import date, timedelta
 import arrow
 from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, CommaSeparated, load
 
-from juniorguru.sync import sync_task, club_content
+from juniorguru.lib.tasks import sync_task
+from juniorguru.sync import club_content
 from juniorguru.models import Event, EventSpeaking, ClubMessage, db
 from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_square, replace_with_jpg
 from juniorguru.lib import loggers

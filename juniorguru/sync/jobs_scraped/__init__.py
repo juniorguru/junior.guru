@@ -4,9 +4,9 @@ from pathlib import Path
 from peewee import OperationalError
 
 from juniorguru.lib import loggers
-from juniorguru.sync import sync_task
+from juniorguru.lib.tasks import sync_task
 from juniorguru.models import db, ScrapedJob
-from juniorguru.scrapers.jobs.settings import FEEDS_DIR
+from juniorguru.sync.scrape_jobs.settings import FEEDS_DIR
 from juniorguru.sync.jobs_scraped.processing import filter_relevant_paths, process_paths, postprocess_jobs
 
 
@@ -26,7 +26,7 @@ POSTPROCESS_PIPELINES = [
 ]
 
 
-logger = loggers.get('juniorguru.sync.jobs')
+logger = loggers.get(__name__)
 
 
 @sync_task()

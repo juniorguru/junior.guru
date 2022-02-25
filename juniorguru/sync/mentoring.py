@@ -1,6 +1,7 @@
 from discord import Embed
 
-from juniorguru.sync import sync_task, club_content
+from juniorguru.lib.tasks import sync_task
+from juniorguru.sync import club_content
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, is_discord_mutable, is_message_over_week_ago
 from juniorguru.models import ClubMessage, db

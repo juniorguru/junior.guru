@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from scrapy.http import HtmlResponse
 
-from juniorguru.scrapers.jobs.spiders import linkedin
+from juniorguru.sync.scrape_jobs.spiders import linkedin
 
 
 FIXTURES_DIR = Path(__file__).parent

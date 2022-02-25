@@ -1,9 +1,13 @@
-import importlib
-
 from invoke import task, Collection
 
+from juniorguru.lib.tasks import import_sync_tasks
 
-TASKS_MODULE_PATHS = [
+
+SYNC_TASKS_SCRAPE_JOBS = import_sync_tasks([
+    'juniorguru.sync.scrape_jobs',
+])
+
+SYNC_TASKS_MAIN = import_sync_tasks([
     'juniorguru.sync.avatars',
     'juniorguru.sync.club_content',
     'juniorguru.sync.companies',
@@ -24,34 +28,38 @@ TASKS_MODULE_PATHS = [
     'juniorguru.sync.supporters',
     'juniorguru.sync.topics',
     'juniorguru.sync.transactions',
-]
+])
 
-TASKS = [importlib.import_module(module_path).main
-         for module_path in TASKS_MODULE_PATHS]
+SYNC_TASKS_POSTPROCESS_JOBS = import_sync_tasks([
+    'juniorguru.sync.jobs_scraped',
+])
+
+SYNC_TASKS_ALL = (
+    SYNC_TASKS_SCRAPE_JOBS +
+    SYNC_TASKS_MAIN +
+    SYNC_TASKS_POSTPROCESS_JOBS
+)
 
 
-@task(*TASKS, default=True)
+@task(*SYNC_TASKS_ALL, default=True)
 def sync(context):
     pass
 
 
-namespace = Collection(sync, *TASKS)
+@task(*SYNC_TASKS_SCRAPE_JOBS, name='scrape-jobs')
+def ci_scrape_jobs(context):
+    pass
 
 
-
-# @task()
-# def scrapers_jobs(context):
-#     context.run('python -m juniorguru.scrapers.jobs')
-
-
-# @task()
-# def scrapers_companies(context):
-#     context.run('python -m juniorguru.scrapers.companies')
+@task(*SYNC_TASKS_MAIN, name='main')
+def ci_main(context):
+    pass
 
 
-# scrapers-jobs:
-# 	poetry run python -m juniorguru.scrapers.jobs
+@task(*SYNC_TASKS_POSTPROCESS_JOBS, name='postprocess-jobs')
+def ci_postprocess_jobs(context):
+    pass
 
-# scrapers-companies:
-# 	poetry run python -m juniorguru.scrapers.companies
 
+namespace_ci = Collection('ci', ci_scrape_jobs, ci_main, ci_postprocess_jobs)
+namespace = Collection(sync, namespace_ci, *SYNC_TASKS_ALL)

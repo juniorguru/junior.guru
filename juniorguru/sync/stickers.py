@@ -1,4 +1,5 @@
-from juniorguru.sync import sync_task, club_content
+from juniorguru.lib.tasks import sync_task
+from juniorguru.sync import club_content
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, is_discord_mutable
 

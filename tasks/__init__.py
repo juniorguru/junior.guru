@@ -19,13 +19,8 @@ def lint(context):
 
 
 @task()
-def send(context):
-    context.run('python -m juniorguru.send')
-
-
-@task()
 def screenshots(context):
     context.run('python scripts/screenshots.py')
 
 
-namespace = Collection(test, lint, send, screenshots, sync, web, checks)
+namespace = Collection(test, lint, screenshots, sync, web, checks)

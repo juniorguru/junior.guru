@@ -3,7 +3,7 @@ from datetime import date
 
 from fiobank import FioBank
 
-from juniorguru.sync import sync_task
+from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import google_sheets, loggers
 from juniorguru.models import Transaction
 

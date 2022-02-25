@@ -46,8 +46,7 @@ jobs:
           name: Test
           command: poetry run invoke test -v
 
-  # needs $GOOGLE_SERVICE_ACCOUNT
-  scrape-jobs:
+  sync-scrape-jobs:
     executor: python-js
     steps:
       - attach_workspace:
@@ -58,10 +57,10 @@ jobs:
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-{{ checksum ".today" }}
       - run:
-          name: Scrape jobs
+          name: Sync data (scrape jobs)
           command: |
             export PROXIES_ENABLED=1
-            poetry run invoke scrape.jobs
+            poetry run invoke sync.ci.scrape-jobs
       - save_cache:
           key: scrapy-{{ checksum ".today" }}
           paths:
@@ -74,10 +73,10 @@ jobs:
           root: "~"
           paths:
               - project/juniorguru/data/jobs
-              - project/juniorguru/images/logos-jobs
 
-  # needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
-  sync:
+  # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY,
+  # $MEMBERFUL_API_KEY, $SMTP_* (see README.md)
+  sync-main:
     executor: python-js
     steps:
       - attach_workspace:
@@ -85,30 +84,31 @@ jobs:
       - run:
           name: Sync data
           command: |
+            export SMTP_ENABLED=1
             export DISCORD_MUTATIONS_ENABLED=1
-            poetry run invoke sync
+            poetry run invoke sync.ci.main
       - persist_to_workspace:
           root: "~"
           paths:
               - project/juniorguru/data
               - project/juniorguru/images
 
-  sync-jobs:
+  sync-postprocess-jobs:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
       - run:
-          name: Sync data
+          name: Sync data (postprocess jobs)
           command: |
             export DISCORD_MUTATIONS_ENABLED=1
             export REUSE_JOBS_DB_ENABLED=1
-            poetry run invoke sync.jobs
+            poetry run invoke sync.ci.postprocess-jobs
       - persist_to_workspace:
           root: "~"
           paths:
               - project/juniorguru/data
-              - project/juniorguru/images
+              - project/juniorguru/images/logos-jobs
 
   build-web:
     executor: python-js
@@ -159,16 +159,6 @@ jobs:
           tmp-dir: ".deploy-tmp"
           workspace-root: "~/project"
 
-  # needs $SMTP_* (see readme)
-  send:
-    executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run: |
-          export SMTP_ENABLED=1
-          poetry run invoke send
-
   check-anchors:
     executor: python-js
     steps:
@@ -200,12 +190,15 @@ workflows:
       - lint-and-test:
           requires:
             - install
-      - sync:
+      - sync-main:
           requires:
             - install
+      - sync-postprocess-jobs:
+          requires:
+            - sync-main
       - build-web:
           requires:
-            - sync-jobs
+            - sync-postprocess-jobs
       - check-anchors:
           requires:
             - build-web
@@ -221,22 +214,19 @@ workflows:
   nightly:
     jobs:
       - install
-      - scrape-jobs:
+      - sync-scrape-jobs:
           requires:
             - install
-      - sync:
+      - sync-main:
           requires:
             - install
-      - sync-jobs:
+      - sync-postprocess-jobs:
           requires:
-            - scrape-jobs
-            - sync
-      - send:
-          requires:
-            - sync-jobs
+            - sync-scrape-jobs
+            - sync-main
       - build-web:
           requires:
-            - sync-jobs
+            - sync-postprocess-jobs
       - backup:
           requires:
             - build-web
