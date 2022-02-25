@@ -15,6 +15,24 @@ EMPLOYMENT_TYPES = [
 ]
 
 
+class ListedJob(BaseModel):
+    boards_ids = JSONField(default=lambda: [], index=True)
+
+    title = CharField()
+    first_seen_on = DateField(index=True)
+    last_seen_on = DateField(index=True)
+
+    apply_email = CharField(null=True)
+    apply_url = CharField(null=True)
+
+    company_name = CharField()
+    company_url = CharField()
+
+    locations = JSONField(null=True)
+    remote = BooleanField(default=False)
+    employment_types = JSONField(null=True)
+
+
 class SubmittedJob(BaseModel):
     id = CharField(primary_key=True)
     boards_ids = JSONField(default=lambda: [], index=True)
