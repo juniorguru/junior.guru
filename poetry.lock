@@ -488,7 +488,7 @@ python-versions = ">=3.6,<4"
 
 [[package]]
 name = "gspread"
-version = "5.1.1"
+version = "5.2.0"
 description = "Google Spreadsheets Python API"
 category = "main"
 optional = false
@@ -1998,8 +1998,8 @@ graphql-core = [
     {file = "graphql_core-3.2.0-py3-none-any.whl", hash = "sha256:0dda7e63676f119bb3d814621190fedad72fda07a8e9ab780bedd9f1957c6dc6"},
 ]
 gspread = [
-    {file = "gspread-5.1.1-py3-none-any.whl", hash = "sha256:ffba57786e27519fb97125e3de37a0f062134a396506681f5baacaf47a9febe3"},
-    {file = "gspread-5.1.1.tar.gz", hash = "sha256:d9db8c43d552f541ea072d4727d1e955bc2368b095dd86c5429a845c9d8aed8f"},
+    {file = "gspread-5.2.0-py3-none-any.whl", hash = "sha256:05297b49587b5e89c2a0aa39967f43e5b7f170b62c11ddd43214baa1085131a8"},
+    {file = "gspread-5.2.0.tar.gz", hash = "sha256:25173ac081469cf9d621514c6576c6cf46f39c825f178b8cb9e78374a637b0bf"},
 ]
 h2 = [
     {file = "h2-3.2.0-py2.py3-none-any.whl", hash = "sha256:61e0f6601fa709f35cdb730863b4e5ec7ad449792add80d1410d4174ed139af5"},
