@@ -65,15 +65,16 @@ class GeocodeError(Exception):
 
 
 def process(item, geocode=None):
-    location_tuples = [parse_location(loc, item, geocode)
+    debug_info = dict(title=item.get('title'), company=item.get('company_name'))
+    location_tuples = [parse_location(loc, geocode, debug_info=debug_info)
                        for loc in item.get('locations_raw', [])]
     location_tuples = set(filter(None, location_tuples))
     item['locations'] = [dict(name=name, region=region)
-                            for name, region in location_tuples]
+                         for name, region in location_tuples]
     return item
 
 
-def parse_location(location_raw, item, geocode=None):
+def parse_location(location_raw, geocode=None, debug_info=None):
     geocode = geocode or geocode_mapycz
     try:
         logger.debug(f"Geocoding '{location_raw}'")
@@ -84,9 +85,8 @@ def parse_location(location_raw, item, geocode=None):
             except KeyError as e:
                 raise KeyError(f"{address!r} doesn't have key {e}") from e
     except Exception:
-        info = dict(title=item.get('title'),
-                    company=item.get('company_name'))
-        logger.exception(f"Geocoding '{location_raw}' failed, {info!r}")
+        debug_suffix = f', {debug_info!r}' if debug_info else ''
+        logger.exception(f"Geocoding '{location_raw}' failed{debug_suffix}")
 
 
 def optimize_geocoding(geocode):

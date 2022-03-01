@@ -1,7 +1,7 @@
 {% macro job_macro(job) %}
   <li class="jobs__item{% if job.is_highlighted %} jobs__item--highlighted{% endif %}" itemscope itemtype="https://schema.org/JobPosting">
     <meta itemprop="industry" content="Informační technologie">
-    <meta itemprop="datePosted" content="{{ job.posted_at.isoformat() }}">
+    <meta itemprop="datePosted" content="{{ job.first_seen_on.isoformat() }}">
     <meta itemprop="description" content="Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}">
 
     {% if job.is_juniorguru %}

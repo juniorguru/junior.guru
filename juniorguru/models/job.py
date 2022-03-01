@@ -1,3 +1,6 @@
+from functools import lru_cache
+from datetime import date
+
 from peewee import CharField, DateField, TextField, BooleanField, IntegerField, ForeignKeyField
 from playhouse.shortcuts import model_to_dict
 
@@ -14,6 +17,35 @@ EMPLOYMENT_TYPES = [
     'VOLUNTEERING',
 ]
 
+EMPLOYMENT_TYPES_RULES = [
+    # internship
+    ({'INTERNSHIP', 'PAID_INTERNSHIP'}, {'INTERNSHIP'}),
+    ({'UNPAID_INTERNSHIP', 'PAID_INTERNSHIP'}, {'INTERNSHIP'}),
+    ({'INTERNSHIP', 'UNPAID_INTERNSHIP'}, {'UNPAID_INTERNSHIP'}),
+
+    # volunteering
+    ({'CONTRACT', 'VOLUNTEERING'}, {'CONTRACT'}),
+    ({'PART_TIME', 'VOLUNTEERING'}, {'PART_TIME'}),
+    ({'FULL_TIME', 'VOLUNTEERING'}, {'FULL_TIME'}),
+    ({'INTERNSHIP', 'VOLUNTEERING'}, {'INTERNSHIP'}),
+    ({'PAID_INTERNSHIP', 'VOLUNTEERING'}, {'INTERNSHIP'}),
+
+    # full time
+    ({'FULL_TIME', 'PART_TIME'}, {'FULL_TIME', 'ALSO_PART_TIME'}),
+    ({'FULL_TIME', 'CONTRACT'}, {'FULL_TIME', 'ALSO_CONTRACT'}),
+    ({'FULL_TIME', 'PAID_INTERNSHIP'}, {'FULL_TIME', 'ALSO_INTERNSHIP'}),
+    ({'FULL_TIME', 'UNPAID_INTERNSHIP'}, {'FULL_TIME', 'ALSO_INTERNSHIP'}),
+    ({'FULL_TIME', 'INTERNSHIP'}, {'FULL_TIME', 'ALSO_INTERNSHIP'}),
+
+    # paid internship
+    ({'PAID_INTERNSHIP'}, {'INTERNSHIP'}),
+    ({'FULL_TIME'}, set()),
+]
+
+JOB_NEW_DAYS = 3
+
+JOB_EXPIRED_SOON_DAYS = 10
+
 
 class SubmittedJob(BaseModel):
     id = CharField(primary_key=True)
@@ -24,6 +56,7 @@ class SubmittedJob(BaseModel):
     expires_on = DateField(index=True)
     lang = CharField()
 
+    url = CharField(unique=True)
     apply_email = CharField(null=True)
     apply_url = CharField(null=True)
 
@@ -35,6 +68,18 @@ class SubmittedJob(BaseModel):
     employment_types = JSONField(null=True)
 
     description_html = TextField()
+
+    def days_since_posted(self, today=None):
+        today = today or date.today()
+        return (today - self.posted_on).days
+
+    def days_until_expires(self, today=None):
+        today = today or date.today()
+        return (self.expires_on - today).days
+
+    def expires_soon(self, today=None):
+        today = today or date.today()
+        return self.days_until_expires(today=today) <= JOB_EXPIRED_SOON_DAYS
 
     @classmethod
     def date_listing(cls, date_):
@@ -155,6 +200,7 @@ class ListedJob(BaseModel):
     title = CharField()
     first_seen_on = DateField(index=True)
 
+    url = CharField()
     apply_email = CharField(null=True)
     apply_url = CharField(null=True)
 
@@ -165,6 +211,61 @@ class ListedJob(BaseModel):
     remote = BooleanField(default=False)
     employment_types = JSONField(null=True)
 
+    @property
+    def effective_url(self):
+        return self.apply_url or self.url
+
+    @property
+    def is_submitted(self):
+        return bool(self.submitted_job)
+
+    def tags(self, today=None):
+        tags = []
+
+        today = today or date.today()
+        if (today - self.first_seen_on).days < JOB_NEW_DAYS:
+            tags.append('NEW')
+
+        if self.remote:
+            tags.append('REMOTE')
+
+        employment_types = frozenset(self.employment_types)
+        tags.extend(get_employment_types_tags(employment_types))
+
+        return tags
+
+    @property
+    def location(self):
+        # TODO refactor, this is terrible
+        print(self.locations)
+        if not self.locations:
+            return '?'
+        if len(self.locations) == 1:
+            location = self.locations[0]
+            name, region = location['name'], location['region']
+            parts = [name] if name == region else [name, region]
+            if self.remote:
+                parts.append('na dálku')
+            parts = list(filter(None, parts))
+            if parts:
+                return ', '.join(parts)
+            return '?'
+        else:
+            parts = list(sorted(filter(None, [loc['name'] for loc in self.locations])))
+            if len(parts) > 2:
+                parts = parts[:2]
+                if self.remote:
+                    parts[-1] += ' a další'
+                    parts.append('na dálku')
+                    return ', '.join(parts)
+                else:
+                    return ', '.join(parts) + '…'
+            elif parts:
+                return ', '.join(parts + (['na dálku'] if self.remote else []))
+            if self.remote:
+                return 'na dálku'
+            return '?'
+
     @classmethod
     def listing(cls):
         return cls.select()
@@ -173,3 +274,41 @@ class ListedJob(BaseModel):
     def submitted_listing(cls):
         return cls.select() \
             .where(cls.submitted_job.is_null(False))
+
+    @classmethod
+    def region_listing(cls, region):
+        locations = cls.locations.tree().alias('locations')
+        return cls.listing() \
+            .from_(cls, locations) \
+            .where((locations.c.key == 'region') &
+                   (locations.c.value == region))
+
+    @classmethod
+    def remote_listing(cls):
+        return cls.listing().where(cls.remote == True)
+
+    @classmethod
+    def tags_listing(cls, tags):
+        tags = set(tags)
+        return [job for job in cls.listing() if tags & set(job.tags())]
+
+    @classmethod
+    def internship_listing(cls):
+        return cls.tags_listing([
+            'INTERNSHIP',
+            'UNPAID_INTERNSHIP',
+            'ALSO_INTERNSHIP',
+        ])
+
+    @classmethod
+    def volunteering_listing(cls):
+        return cls.tags_listing(['VOLUNTEERING'])
+
+
+@lru_cache()
+def get_employment_types_tags(types):
+    types = set(types)
+    for rule_match, rule_repl in EMPLOYMENT_TYPES_RULES:
+        if rule_match <= types:
+            types = (types - rule_match) | rule_repl
+    return types

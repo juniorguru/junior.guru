@@ -1,7 +1,7 @@
 {% macro job_inline_macro(job, jobs_link='jobs') %}
   <li class="jobs__item" itemscope itemtype="https://schema.org/JobPosting">
     <meta itemprop="industry" content="Informační technologie">
-    <meta itemprop="datePosted" content="{{ job.posted_at.isoformat() }}">
+    <meta itemprop="datePosted" content="{{ job.first_seen_on.isoformat() }}">
     <meta itemprop="description" content="Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}">
     <div itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
       <meta itemprop="address" content="{{ job.location }}">

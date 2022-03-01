@@ -128,9 +128,6 @@ def jobs():
                            nav_active='jobs',
                            jobs=jobs,
                            regions=REGIONS,
-                           scraped_jobs_count=1,  # TODO
-                           junior_scraped_jobs_count=1,  # TODO
-                           submitted_jobs_companies_count=1,  # TODO
                            thumbnail=thumbnail(title='Práce v IT pro začátečníky'))
 
 

@@ -10,8 +10,10 @@ from juniorguru.lib.coerce import (coerce, parse_boolean, parse_datetime, parse_
     parse_date, parse_set, parse_boolean_words, parse_url)
 from juniorguru.models import SubmittedJob, db
 from juniorguru.lib import loggers
-from juniorguru.sync.scrape_jobs.pipelines.language_parser import parse_language
-from juniorguru.sync.jobs_scraped.pipelines import boards_ids
+from juniorguru.sync.scrape_jobs.pipelines.language_parser import parse as parse_language
+from juniorguru.sync.jobs_scraped.pipelines.boards_ids import parse_urls as parse_board_ids
+from juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner import clean as clean_employment_types
+from juniorguru.sync.jobs_scraped.pipelines.locations import parse_location
 
 
 logger = loggers.get(__name__)
@@ -53,9 +55,9 @@ def coerce_record(record, today=None):
         r'^externí odkaz na pracovní nabídku$': ('apply_url', parse_url),
         r'^název firmy$': ('company_name', parse_text),
         r'^odkaz na webové stránky firmy$': ('company_url', parse_url),
-        r'^město, kde se nachází kancelář$': ('locations_raw', parse_locations),
+        r'^město, kde se nachází kancelář$': ('locations', parse_locations),
         r'^je práce na dálku\?$': ('remote', parse_boolean_words),
-        r'^pracovní poměr$': ('employment_types', parse_set),
+        r'^pracovní poměr$': ('employment_types', parse_employment_types),
         r'^text pracovní nabídky$': ('description_html', parse_markdown),
         r'\bkup[óo]n\b': ('coupon', parse_boolean),
     }, record)
@@ -74,16 +76,20 @@ def coerce_record(record, today=None):
     data['id'] = create_id(data['submitted_at'], data['company_url'])
     data['url'] = f"https://junior.guru/jobs/{data['id']}/"
     urls = filter(None, [data['url'], data.get('apply_url')])
-    data['boards_ids'] = boards_ids.parse_urls(urls)
+    data['boards_ids'] = parse_board_ids(urls)
 
     data['lang'] = parse_language(data['description_html'])
     return data
 
 
-def parse_locations(location):
-    if location:
-        return [loc.strip() for loc in re.split(r'\snebo\s', location)]
+def parse_locations(value):
+    if value:
+        return [parse_location(loc.strip()) for loc in re.split(r'\snebo\s', value)]
     return []
+
+
+def parse_employment_types(value):
+    return clean_employment_types(parse_set(value))
 
 
 def parse_markdown(value):
