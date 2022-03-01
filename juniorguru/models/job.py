@@ -48,6 +48,7 @@ class SubmittedJob(BaseModel):
                 in ListedJob._meta.fields.keys()
                 if field_name not in ['id', 'submitted_job']}
         data['first_seen_on'] = self.posted_on
+        data['submitted_job'] = self
         return ListedJob(**data)
 
 
@@ -163,3 +164,12 @@ class ListedJob(BaseModel):
     locations = JSONField(null=True)
     remote = BooleanField(default=False)
     employment_types = JSONField(null=True)
+
+    @classmethod
+    def listing(cls):
+        return cls.select()
+
+    @classmethod
+    def submitted_listing(cls):
+        return cls.select() \
+            .where(cls.submitted_job.is_null(False))

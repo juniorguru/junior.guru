@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 import arrow
-from flask import Flask, Response, render_template, url_for
+from flask import Flask, render_template, url_for
 
 from juniorguru.lib import loggers
 from juniorguru.lib import template_filters
@@ -122,66 +122,75 @@ def membership():
 
 @app.route('/jobs/')
 def jobs():
-    with db:
-        metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
-        jobs = ListedJob.listing()
-    return render_template('jobs.html',
-                           nav_active='jobs',
-                           jobs=jobs,
-                           regions=REGIONS,
-                           metrics=metrics,
-                           thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky'))
+    return 'TODO'  # TODO
+    # with db:
+    #     metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
+    #     jobs = ListedJob.listing()
+    # return render_template('jobs.html',
+    #                        nav_active='jobs',
+    #                        jobs=jobs,
+    #                        regions=REGIONS,
+    #                        metrics=metrics,
+    #                        thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky'))
 
 
 @app.route('/jobs/remote/')
 def jobs_remote():
-    with db:
-        metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
-        jobs = ListedJob.remote_listing()
-    return render_template('jobs_remote.html',
-                           nav_active='jobs',
-                           jobs=jobs,
-                           remote=True,
-                           regions=REGIONS,
-                           metrics=metrics,
-                           thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky —\u00a0na\u00a0dálku'))
+    return 'TODO'  # TODO
+    # with db:
+    #     metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
+    #     jobs = ListedJob.remote_listing()
+    # return render_template('jobs_remote.html',
+    #                        nav_active='jobs',
+    #                        jobs=jobs,
+    #                        remote=True,
+    #                        regions=REGIONS,
+    #                        metrics=metrics,
+    #                        thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky —\u00a0na\u00a0dálku'))
 
 
 @app.route('/jobs/region/<region_id>/')
 def jobs_region(region_id):
-    region = [reg for reg in REGIONS if reg['id'] == region_id][0]
-    with db:
-        metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
-        jobs = ListedJob.region_listing(region['name'])
-        jobs_remote = ListedJob.remote_listing()
-    return render_template('jobs_region.html',
-                           nav_active='jobs',
-                           jobs=jobs,
-                           jobs_remote=jobs_remote,
-                           region=region,
-                           regions=REGIONS,
-                           metrics=metrics,
-                           thumbnail=thumbnail(title=f"Práce v\u00a0IT pro začátečníky —\u00a0{region['name']}"))
+    return 'TODO'  # TODO
+    # region = [reg for reg in REGIONS if reg['id'] == region_id][0]
+    # with db:
+    #     metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
+    #     jobs = ListedJob.region_listing(region['name'])
+    #     jobs_remote = ListedJob.remote_listing()
+    # return render_template('jobs_region.html',
+    #                        nav_active='jobs',
+    #                        jobs=jobs,
+    #                        jobs_remote=jobs_remote,
+    #                        region=region,
+    #                        regions=REGIONS,
+    #                        metrics=metrics,
+    #                        thumbnail=thumbnail(title=f"Práce v\u00a0IT pro začátečníky —\u00a0{region['name']}"))
+
+
+@db.connection_context()
+def generate_jobs_region_pages():
+    return [('jobs_region', dict(region_id=region['id'])) for region in REGIONS]
 
 
 @app.route('/jobs/<job_id>/')
 def job(job_id):
-    with db:
-        metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
-        job = ListedJob.juniorguru_get_by_id(job_id)
-    return render_template('job.html',
-                           nav_active='jobs',
-                           job=job,
-                           metrics=metrics,
-                           thumbnail=thumbnail(job_title=job.title,
-                                               job_company=job.company_name,
-                                               job_location=job.location))
+    return 'TODO'  # TODO
+    # with db:
+    #     metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
+    #     job = ListedJob.juniorguru_get_by_id(job_id)
+    # return render_template('job.html',
+    #                        nav_active='jobs',
+    #                        job=job,
+    #                        metrics=metrics,
+    #                        thumbnail=thumbnail(job_title=job.title,
+    #                                            job_company=job.company_name,
+    #                                            job_location=job.location))
 
 
+@db.connection_context()
 def generate_job_pages():
-    with db:
-        for job in ListedJob.juniorguru_listing():
-            yield 'job', dict(job_id=job.id)
+    for listed_job in ListedJob.submitted_listing():
+        yield 'job', dict(job_id=listed_job.submitted_job.id)
 
 
 @app.route('/donate/')
@@ -197,24 +206,10 @@ def donate():
 
 @app.route('/404.html')
 def not_found():
-    with db:
-        jobs = ListedJob.listing()
+    return 'TODO'  # TODO
+    # with db:
+    #     jobs = ListedJob.listing()
     return render_template('404.html', jobs=jobs)
-
-
-@app.route('/robots.txt')
-def robots():
-    return Response('', mimetype='text/plain')
-
-
-@app.route('/.nojekyll')
-def nojekyll():
-    return Response('', mimetype='application/octet-stream')
-
-
-@app.route('/CNAME')
-def cname():
-    return Response('junior.guru\n', mimetype='application/octet-stream')
 
 
 @app.context_processor
