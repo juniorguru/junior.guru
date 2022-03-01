@@ -7,7 +7,7 @@ from flask import Flask, Response, render_template, url_for
 from juniorguru.lib import loggers
 from juniorguru.lib import template_filters
 from juniorguru.lib.images import render_image_file
-from juniorguru.models import Job, Metric, Story, Supporter, Event, db
+from juniorguru.models import ListedJob, Metric, Story, Supporter, Event, db
 
 
 logger = loggers.get(__name__)
@@ -90,11 +90,9 @@ for template_filter in [
 @app.route('/')
 def index():
     with db:
-        metrics = Job.aggregate_metrics()
         stories = Story.listing()
     return render_template('index.html',
                            nav_tabs=NAV_TABS,
-                           metrics=metrics,
                            stories=stories)
 
 
@@ -125,8 +123,8 @@ def membership():
 @app.route('/jobs/')
 def jobs():
     with db:
-        metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
-        jobs = Job.listing()
+        metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
+        jobs = ListedJob.listing()
     return render_template('jobs.html',
                            nav_active='jobs',
                            jobs=jobs,
@@ -138,8 +136,8 @@ def jobs():
 @app.route('/jobs/remote/')
 def jobs_remote():
     with db:
-        metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
-        jobs = Job.remote_listing()
+        metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
+        jobs = ListedJob.remote_listing()
     return render_template('jobs_remote.html',
                            nav_active='jobs',
                            jobs=jobs,
@@ -153,9 +151,9 @@ def jobs_remote():
 def jobs_region(region_id):
     region = [reg for reg in REGIONS if reg['id'] == region_id][0]
     with db:
-        metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
-        jobs = Job.region_listing(region['name'])
-        jobs_remote = Job.remote_listing()
+        metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
+        jobs = ListedJob.region_listing(region['name'])
+        jobs_remote = ListedJob.remote_listing()
     return render_template('jobs_region.html',
                            nav_active='jobs',
                            jobs=jobs,
@@ -169,8 +167,8 @@ def jobs_region(region_id):
 @app.route('/jobs/<job_id>/')
 def job(job_id):
     with db:
-        metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
-        job = Job.juniorguru_get_by_id(job_id)
+        metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
+        job = ListedJob.juniorguru_get_by_id(job_id)
     return render_template('job.html',
                            nav_active='jobs',
                            job=job,
@@ -182,7 +180,7 @@ def job(job_id):
 
 def generate_job_pages():
     with db:
-        for job in Job.juniorguru_listing():
+        for job in ListedJob.juniorguru_listing():
             yield 'job', dict(job_id=job.id)
 
 
@@ -200,14 +198,13 @@ def donate():
 @app.route('/404.html')
 def not_found():
     with db:
-        jobs = Job.listing()
+        jobs = ListedJob.listing()
     return render_template('404.html', jobs=jobs)
 
 
 @app.route('/robots.txt')
 def robots():
-    return Response(f"User-agent: *\nDisallow: {url_for('admin')}\n",
-                    mimetype='text/plain')
+    return Response('', mimetype='text/plain')
 
 
 @app.route('/.nojekyll')
@@ -227,9 +224,6 @@ def inject_defaults():
                 now=now,
                 club_launch_at=arrow.get(2021, 2, 1),
                 thumbnail=thumbnail())
-
-
-from juniorguru.web import admin  # noqa
 
 
 # Pages moved to MkDocs
