@@ -1,4 +1,4 @@
-from peewee import CharField, DateField, TextField, BooleanField, IntegerField
+from peewee import CharField, DateField, TextField, BooleanField, IntegerField, ForeignKeyField
 from playhouse.shortcuts import model_to_dict
 
 from juniorguru.models.base import BaseModel, JSONField
@@ -15,31 +15,13 @@ EMPLOYMENT_TYPES = [
 ]
 
 
-class ListedJob(BaseModel):
-    boards_ids = JSONField(default=lambda: [], index=True)
-
-    title = CharField()
-    first_seen_on = DateField(index=True)
-    last_seen_on = DateField(index=True)
-
-    apply_email = CharField(null=True)
-    apply_url = CharField(null=True)
-
-    company_name = CharField()
-    company_url = CharField()
-
-    locations = JSONField(null=True)
-    remote = BooleanField(default=False)
-    employment_types = JSONField(null=True)
-
-
 class SubmittedJob(BaseModel):
     id = CharField(primary_key=True)
     boards_ids = JSONField(default=lambda: [], index=True)
 
     title = CharField()
     posted_on = DateField(index=True)
-    expires_on = DateField(null=True)
+    expires_on = DateField(index=True)
     lang = CharField()
 
     apply_email = CharField(null=True)
@@ -53,6 +35,20 @@ class SubmittedJob(BaseModel):
     employment_types = JSONField(null=True)
 
     description_html = TextField()
+
+    @classmethod
+    def date_listing(cls, date_):
+        return cls.select() \
+            .where((cls.posted_on <= date_) &
+                   (cls.expires_on >= date_))
+
+    def to_listed(self):
+        data = {field_name: getattr(self, field_name, None)
+                for field_name
+                in ListedJob._meta.fields.keys()
+                if field_name not in ['id', 'submitted_job']}
+        data['first_seen_on'] = self.posted_on
+        return ListedJob(**data)
 
 
 class ScrapedJob(BaseModel):
@@ -82,6 +78,12 @@ class ScrapedJob(BaseModel):
 
     source = CharField()
     source_urls = JSONField(default=lambda: [])
+
+    @classmethod
+    def date_listing(cls, date_, min_juniority_re_score=0):
+        return cls.select() \
+            .where((cls.last_seen_on == date_) &
+                   (cls.juniority_re_score >= min_juniority_re_score))
 
     @classmethod
     def latest_seen_on(cls):
@@ -136,3 +138,28 @@ class ScrapedJob(BaseModel):
 
     def _merge_items_merged_count(self, item):
         return self.items_merged_count + 1
+
+    def to_listed(self):
+        data = {field_name: getattr(self, field_name, None)
+                for field_name
+                in ListedJob._meta.fields.keys()
+                if field_name not in ['id', 'submitted_job']}
+        return ListedJob(**data)
+
+
+class ListedJob(BaseModel):
+    boards_ids = JSONField(default=lambda: [], index=True)
+    submitted_job = ForeignKeyField(SubmittedJob, unique=True, null=True)
+
+    title = CharField()
+    first_seen_on = DateField(index=True)
+
+    apply_email = CharField(null=True)
+    apply_url = CharField(null=True)
+
+    company_name = CharField()
+    company_url = CharField(null=True)
+
+    locations = JSONField(null=True)
+    remote = BooleanField(default=False)
+    employment_types = JSONField(null=True)
