@@ -23,6 +23,7 @@ POSTPROCESS_PIPELINES = [
     'juniorguru.sync.jobs_scraped.pipelines.gender_cleaner',
     'juniorguru.sync.jobs_scraped.pipelines.emoji_cleaner',
     'juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner',
+    'juniorguru.sync.jobs_scraped.pipelines.juniority_re_score',
 ]
 
 

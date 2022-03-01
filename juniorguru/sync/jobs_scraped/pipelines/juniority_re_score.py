@@ -16,8 +16,10 @@ WEIGHTS = {
     'JUNIOR_FRIENDLY': 4,
     'EXPLICITLY_JUNIOR': 6,
 }
+
 RELEVANT_FEATURES = {feature for feature, weight
                      in WEIGHTS.items() if weight}
+
 ACCUMULATIVE_FEATURES = {
     'YEARS_EXPERIENCE_REQUIRED',
     'ADVANCED_REQUIRED',
@@ -25,18 +27,16 @@ ACCUMULATIVE_FEATURES = {
     'LEARNING_REQUIRED',
     'JUNIOR_FRIENDLY',
 }
+
 FEW_FEATURES_THRESHOLD = 2
 
 
-class Pipeline():
-    def process_item(self, item, spider):
-        junior_rank = calc_junior_rank([feature['name'] for feature
-                                        in item['features']])
-        item['junior_rank'] = junior_rank
-        return item
+def process(item):
+    item['juniority_re_score'] = calc_score([feature['name'] for feature in item['features']])
+    return item
 
 
-def calc_junior_rank(features):
+def calc_score(features):
     features = [f for f in features if f in RELEVANT_FEATURES]
     features = list(itertools.chain(
         (f for f in features if f in ACCUMULATIVE_FEATURES),

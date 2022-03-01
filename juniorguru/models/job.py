@@ -1,4 +1,4 @@
-from peewee import CharField, DateField, TextField, BooleanField
+from peewee import CharField, DateField, TextField, BooleanField, IntegerField
 from playhouse.shortcuts import model_to_dict
 
 from juniorguru.models.base import BaseModel, JSONField
@@ -75,6 +75,10 @@ class ScrapedJob(BaseModel):
 
     description_html = TextField()
     features = JSONField(default=lambda: [])
+    juniority_re_score = IntegerField(null=True)
+    juniority_ai_opinion = BooleanField(null=True)
+    juniority_votes_score = IntegerField(default=0)
+    juniority_votes_count = IntegerField(default=0)
 
     source = CharField()
     source_urls = JSONField(default=lambda: [])
