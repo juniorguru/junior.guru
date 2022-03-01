@@ -7,65 +7,6 @@
 Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušeností“. Tady najdeš jen nabídky práce, stáže a brigády v oboru IT zaměřené výhradně na začátečníky a juniory bez komerční praxe.
 {%- endblock %}
 
-{% block value_explanation %}
-<section class="content__section value-explanation">
-  <div class="value-explanation__block">
-    <p class="value-explanation__text">
-      Pracovní portál zaměřený vyloženě pro juniory.
-      Přímo zde už inzerovalo <strong>{{ submitted_jobs_companies_count }} firem</strong>, mimo jiné například:
-    </p>
-    <div class="logos logos--greyscale logos--without-margin">
-      <ul class="logos__items">
-        <li class="logos__item logos__item--without-link">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/cznic.svg') }}" alt="CZ.NIC">
-        </li>
-        <li class="logos__item logos__item--without-link">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/csob.svg') }}" alt="ČSOB">
-        </li>
-        <li class="logos__item logos__item--without-link">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/jetbrains.svg') }}" alt="JetBrains">
-        </li>
-        <li class="logos__item logos__item--without-link">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/oracle.svg') }}" alt="Oracle">
-        </li>
-        <li class="logos__item logos__item--without-link">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/redhat.svg') }}" alt="Red Hat">
-        </li>
-        <li class="logos__item logos__item--without-link">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/rossum.svg') }}" alt="Rossum">
-        </li>
-        <li class="logos__item logos__item--without-link">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/seznam.svg') }}" alt="Seznam.cz">
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="value-explanation__block">
-    <p class="value-explanation__text">
-      Kromě toho dnes robot prošel i <strong>{{ total_scraped_jobs_count }} nabídek</strong>
-      z dalších zdrojů. Nechal jen {{ junior_scraped_jobs_count }}, o&nbsp;kterých usoudil, že jsou opravdu pro začátečníky.
-      To nechceš dělat ručně!
-    </p>
-    <div class="logos logos--greyscale logos--without-margin">
-      <ul class="logos__items">
-        <li class="logos__item logos__item--without-link">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/li.svg') }}" alt="LinkedIn">
-        </li>
-        <li class="logos__item logos__item--without-link">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/remoteok.svg') }}" alt="RemoteOK">
-        </li>
-        <li class="logos__item logos__item--without-link">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/startupjobs.svg') }}" alt="StartupJobs">
-        </li>
-        <li class="logos__item logos__item--without-link">
-          <img class="logos__image" width="150" src="{{ url_for('static', filename='images/logos/wwr.svg') }}" alt="We Work Remotely">
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-{% endblock %}
-
 {% block engage_jobs %}
 <section class="content__section">
   <div class="engage">
@@ -97,7 +38,6 @@ Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušenost�
     a procházej nabídky práce. Na&nbsp;této stránce najdeš pouze ty pro juniory.
   </p>
 </header>
-{{ self.value_explanation() }}
 {{ self.engage_jobs() }}
 {% endblock %}
 <section class="content__section filters" id="listing">
