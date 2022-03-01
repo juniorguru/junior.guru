@@ -150,6 +150,8 @@ jobs:
             - "7b:0b:2c:9f:fb:18:db:35:8e:f4:3d:49:73:37:ee:c4"
       - run: mkdir -p ~/.ssh
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - run: touch public/.nojekyll
+      - run: echo "junior.guru" > public/CNAME
       - gh-pages/deploy:
           build-dir: "public"
           git-email: "kure@junior.guru"
