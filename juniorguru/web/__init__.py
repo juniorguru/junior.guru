@@ -7,7 +7,7 @@ from flask import Flask, render_template, url_for
 from juniorguru.lib import loggers
 from juniorguru.lib import template_filters
 from juniorguru.lib.images import render_image_file
-from juniorguru.models import ListedJob, Metric, Story, Supporter, Event, db
+from juniorguru.models import ListedJob, Story, Supporter, Event, db
 
 
 logger = loggers.get(__name__)
@@ -121,17 +121,17 @@ def membership():
 
 
 @app.route('/jobs/')
+@db.connection_context()
 def jobs():
-    return 'TODO'  # TODO
-    # with db:
-    #     metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
-    #     jobs = ListedJob.listing()
-    # return render_template('jobs.html',
-    #                        nav_active='jobs',
-    #                        jobs=jobs,
-    #                        regions=REGIONS,
-    #                        metrics=metrics,
-    #                        thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky'))
+    jobs = ListedJob.listing()
+    return render_template('jobs.html',
+                           nav_active='jobs',
+                           jobs=jobs,
+                           regions=REGIONS,
+                           scraped_jobs_count=1,  # TODO
+                           junior_scraped_jobs_count=1,  # TODO
+                           submitted_jobs_companies_count=1,  # TODO
+                           thumbnail=thumbnail(title='Práce v IT pro začátečníky'))
 
 
 @app.route('/jobs/remote/')

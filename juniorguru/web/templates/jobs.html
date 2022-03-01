@@ -11,8 +11,8 @@ Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušenost�
 <section class="content__section value-explanation">
   <div class="value-explanation__block">
     <p class="value-explanation__text">
-      S více než <strong>{{ metrics.avg_monthly_users|metric }} návštěvníky měsíčně</strong> je junior.guru významným pracovním portálem pro juniory v Česku.
-      Přímo zde už <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSfSZNK30dPAAYmqIGNCs1vBRlf-5b3BFuR8YxgvWxrvY1tIVQ/viewform?usp=sf_link">inzerovalo</a> <strong>{{ metrics.companies_count }} firem</strong>, mimo jiné například:
+      Pracovní portál zaměřený vyloženě pro juniory.
+      Přímo zde už inzerovalo <strong>{{ submitted_jobs_companies_count }} firem</strong>, mimo jiné například:
     </p>
     <div class="logos logos--greyscale logos--without-margin">
       <ul class="logos__items">
@@ -42,8 +42,8 @@ Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušenost�
   </div>
   <div class="value-explanation__block">
     <p class="value-explanation__text">
-      Kromě toho dnes robot prošel i <strong>{{ metrics.approved_jobs_count + metrics.rejected_jobs_count }} nabídek</strong>
-      z dalších zdrojů. Nechal jen {{ metrics.approved_jobs_count }}, o&nbsp;kterých usoudil, že jsou opravdu pro začátečníky.
+      Kromě toho dnes robot prošel i <strong>{{ total_scraped_jobs_count }} nabídek</strong>
+      z dalších zdrojů. Nechal jen {{ junior_scraped_jobs_count }}, o&nbsp;kterých usoudil, že jsou opravdu pro začátečníky.
       To nechceš dělat ručně!
     </p>
     <div class="logos logos--greyscale logos--without-margin">
