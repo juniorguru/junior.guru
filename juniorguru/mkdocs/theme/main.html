@@ -7,14 +7,11 @@
 
 {% block body %}
 <body>
-  {#
-  {% if page.url != 'gift/' %}
-    <a href="{{ pages|docs_url('gift.md')|url }}" class="announcement">
-      {{ 'gift-fill'|icon }}
-      Daruj někomu dlouhodobou motivaci k programování
-    </a>
-  {% endif %}
-  #}
+  <a href="https://www.stojimezaukrajinou.cz/" class="announcement" target="_blank" rel="noopener">
+    <strong>STOJIMEZAUKRAJINOU.CZ</strong>
+    <i class="bi bi-heart-fill"></i>
+    Pomáhat Ukrajině můžeš rukama i hlavou, materiálně i finančně, z terénu i z gauče
+  </a>
   <header id="header" class="navbar navbar-light">
     <nav class="navbar-container">
       <a class="navbar-brand " href="{{ '/'|url }}">
