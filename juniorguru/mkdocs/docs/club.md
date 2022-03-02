@@ -270,7 +270,7 @@ Pokud se vzděláváš u {% for company in companies_students -%}
       <li class="pricing-benefits-item">Podpora pro znevýhodněné</li>
       <li class="pricing-benefits-item">Vyplň formulář a uvidíš</li>
     </ul>
-    <strong class="pricing-button disabled">Připravuje se</strong>
+    <a class="pricing-button" href="{{ finaid_url }}" target="_blank" rel="noopener">na rok zdarma</a>
   </div>
 </div>
 
