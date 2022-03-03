@@ -13,7 +13,7 @@ from juniorguru.lib import loggers
 from juniorguru.sync.scrape_jobs.pipelines.language_parser import parse as parse_language
 from juniorguru.sync.jobs_scraped.pipelines.boards_ids import parse_urls as parse_board_ids
 from juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner import clean as clean_employment_types
-from juniorguru.sync.jobs_scraped.pipelines.locations import parse_location
+from juniorguru.lib.locations import fetch_locations
 
 
 logger = loggers.get(__name__)
@@ -55,7 +55,7 @@ def coerce_record(record, today=None):
         r'^externí odkaz na pracovní nabídku$': ('apply_url', parse_url),
         r'^název firmy$': ('company_name', parse_text),
         r'^odkaz na webové stránky firmy$': ('company_url', parse_url),
-        r'^město, kde se nachází kancelář$': ('locations', parse_locations),
+        r'^město, kde se nachází kancelář$': ('locations_raw', parse_locations),
         r'^je práce na dálku\?$': ('remote', parse_boolean_words),
         r'^pracovní poměr$': ('employment_types', parse_employment_types),
         r'^text pracovní nabídky$': ('description_html', parse_markdown),
@@ -79,12 +79,13 @@ def coerce_record(record, today=None):
     data['boards_ids'] = parse_board_ids(urls)
 
     data['lang'] = parse_language(data['description_html'])
+    data['locations'] = fetch_locations(data['locations_raw'])
     return data
 
 
 def parse_locations(value):
     if value:
-        return [parse_location(loc.strip()) for loc in re.split(r'\snebo\s', value)]
+        return [loc.strip() for loc in re.split(r'\snebo\s', value)]
     return []
 
 

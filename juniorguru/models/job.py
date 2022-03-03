@@ -237,7 +237,6 @@ class ListedJob(BaseModel):
     @property
     def location(self):
         # TODO refactor, this is terrible
-        print(self.locations)
         if not self.locations:
             return '?'
         if len(self.locations) == 1:
