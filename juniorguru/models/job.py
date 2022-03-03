@@ -64,7 +64,6 @@ class SubmittedJob(BaseModel):
     company_url = CharField()
 
     locations_raw = JSONField(null=True)
-    locations = JSONField(null=True)
     remote = BooleanField(default=False)
     employment_types = JSONField(null=True)
 
@@ -113,7 +112,6 @@ class ScrapedJob(BaseModel):
     company_url = CharField(null=True)
 
     locations_raw = JSONField(null=True)
-    locations = JSONField(null=True)
     remote = BooleanField(default=False)
     employment_types = JSONField(null=True)
 
@@ -209,6 +207,7 @@ class ListedJob(BaseModel):
     company_name = CharField()
     company_url = CharField(null=True)
 
+    locations_raw = JSONField(null=True)
     locations = JSONField(null=True)
     remote = BooleanField(default=False)
     employment_types = JSONField(null=True)

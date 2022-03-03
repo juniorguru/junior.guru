@@ -13,7 +13,6 @@ from juniorguru.lib import loggers
 from juniorguru.sync.scrape_jobs.pipelines.language_parser import parse as parse_language
 from juniorguru.sync.jobs_scraped.pipelines.boards_ids import parse_urls as parse_board_ids
 from juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner import clean as clean_employment_types
-from juniorguru.lib.locations import fetch_locations
 
 
 logger = loggers.get(__name__)
@@ -79,7 +78,6 @@ def coerce_record(record, today=None):
     data['boards_ids'] = parse_board_ids(urls)
 
     data['lang'] = parse_language(data['description_html'])
-    data['locations'] = fetch_locations(data['locations_raw'])
     return data
 
 

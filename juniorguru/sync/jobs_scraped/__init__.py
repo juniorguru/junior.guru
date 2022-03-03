@@ -17,7 +17,6 @@ PREPROCESS_PIPELINES = [
 ]
 
 POSTPROCESS_PIPELINES = [
-    'juniorguru.sync.jobs_scraped.pipelines.locations',
     'juniorguru.sync.jobs_scraped.pipelines.description_parser',
     'juniorguru.sync.jobs_scraped.pipelines.features_parser',
     'juniorguru.sync.jobs_scraped.pipelines.gender_cleaner',

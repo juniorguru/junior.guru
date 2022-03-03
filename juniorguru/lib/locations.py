@@ -16,11 +16,15 @@ MAPYCZ_REQUEST_TIMEOUT = (3.05, 27)
 USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
 
 OPTIMIZATIONS = [
-    (re.compile(pattern), value) for pattern, value in [
-        (r'\bPraha\b', {'place': 'Praha', 'region': 'Praha', 'country': 'Česko'}),
-        (r'\bPrague\b', {'place': 'Praha', 'region': 'Praha', 'country': 'Česko'}),
-        (r'\bBrno\b', {'place': 'Brno', 'region': 'Brno', 'country': 'Česko'}),
-        (r'\bOstrava\b', {'place': 'Ostrava', 'region': 'Ostrava', 'country': 'Česko'}),
+    (re.compile(pattern, re.I), value) for pattern, value in [
+        (r'\bpraha\b', {'place': 'Praha', 'region': 'Praha', 'country': 'Česko'}),
+        (r'\bprague\b', {'place': 'Praha', 'region': 'Praha', 'country': 'Česko'}),
+        (r'\bbrno\b', {'place': 'Brno', 'region': 'Brno', 'country': 'Česko'}),
+        (r'\bostrava\b', {'place': 'Ostrava', 'region': 'Ostrava', 'country': 'Česko'}),
+        (r'^česko$', None),
+        (r'^czechia$', None),
+        (r'^česká rep[a-z\.]+$', None),
+        (r'^czech rep[a-z\.]+$', None),
     ]
 ]
 
@@ -58,6 +62,8 @@ ADDRESS_TYPES_MAPPING = {
     'osmr': 'region',
     'osmc': 'country',
 }
+
+RETRY_ON_503_MAX_SECONDS = 3
 
 
 class GeocodeError(Exception):
@@ -110,6 +116,7 @@ def geocode_mapycz(location_raw):
         xml = etree.fromstring(response.content)
         items = xml.xpath('//item')
         if not items:
+            logger.debug(f"Geocoding '{location_raw}' resulted in nothing")
             return None
 
         item = items[0]
@@ -130,6 +137,7 @@ def geocode_mapycz(location_raw):
         if not items:
             raise ValueError('No items in the reverse geocode response')
 
+        logger.debug(f"Reverse geocoding '{location_raw}' lat: {lat} lng: {lng} resulted in {item.attrib!r}")
         address = {ADDRESS_TYPES_MAPPING[item.attrib['type']]: item.attrib['name']
                    for item in items if item.attrib['type'] in ADDRESS_TYPES_MAPPING}
         return address
