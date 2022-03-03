@@ -1,12 +1,8 @@
 from scrapy import Spider as BaseSpider
 
-from juniorguru.models import db, ScrapedJob, SubmittedJob, Company
+from juniorguru.models import db, ListedJob
 
 
-# musi existovat nejaka tabulka JobPosting nebo JobListing nebo tak neco,
-# podle ktery poznam ktery jobs (submitted/scraped) jsou vlastne potreba vyresit,
-# ktery jsou vlastne aktualne na webu
-#
 # pak si vytahne z DB tyhlety jobs a companies a zkousi sparovat, jestli nahodou
 # tahle firma nesponzoruje - v tom pripade propoji informaci a ulozi cestu k obrazku.
 # jestli je nabidka highlighted se pocita podle toho, jestli sponzoruje klub nebo
@@ -20,7 +16,7 @@ from juniorguru.models import db, ScrapedJob, SubmittedJob, Company
 
 
 class Spider(BaseSpider):
-    name = 'db'
+    name = 'listed_jobs'
 
     # tady bude file:// ... primo k tomuto souboru, proste takovej hack
     start_urls = [

@@ -1,4 +1,3 @@
-from ast import alias
 from pathlib import Path
 
 from scrapy.utils.project import data_path

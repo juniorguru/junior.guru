@@ -34,6 +34,7 @@ SYNC_TASKS_POSTPROCESS_JOBS = import_sync_tasks([
     'juniorguru.sync.jobs_scraped',
     'juniorguru.sync.jobs_listing',
     'juniorguru.sync.jobs_locations',
+    'juniorguru.sync.scrape_companies',
 
     # from juniorguru.sync.metrics import main as sync_metrics
     # TODO sync_metrics()  # depends on jobs, logos, transactions

@@ -15,6 +15,13 @@ logger = loggers.get(__name__)
 class ScrapingProxyMiddleware():
     EXCEPTIONS_TO_RETRY = RetryMiddleware.EXCEPTIONS_TO_RETRY
 
+    DEFAULT_PROXIES_USER_AGENTS = [
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:81.0) Gecko/20100101 Firefox/81.0',
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:75.0) Gecko/20100101 Firefox/75.0',
+        'Mozilla/5.0 (iPhone; CPU OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/29.0 Mobile/15E148 Safari/605.1.15',
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15',
+    ]
+
     @classmethod
     def from_crawler(cls, crawler):
         proxies = scrape_proxies() if crawler.settings.getbool('PROXIES_ENABLED') else []
@@ -22,7 +29,7 @@ class ScrapingProxyMiddleware():
 
     def __init__(self, proxies, settings):
         self.proxies = proxies
-        self.user_agents = settings.getlist('PROXIES_USER_AGENTS')
+        self.user_agents = settings.getlist('PROXIES_USER_AGENTS', self.DEFAULT_PROXIES_USER_AGENTS)
 
     def get_proxy(self):
         return random.choice(self.proxies[:5]) if self.proxies else None
