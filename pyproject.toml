@@ -47,6 +47,7 @@ mkdocs-simple-hooks = "*"
 ics = { git = "https://github.com/ics-py/ics-py.git", branch = "main" }
 pod2gen = "^1.0.3"
 invoke = "^1.6.0"
+Scrapy = "2.5.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
