@@ -1,7 +1,7 @@
 from functools import lru_cache
 from datetime import date
 
-from peewee import CharField, DateField, TextField, BooleanField, IntegerField, ForeignKeyField
+from peewee import fn, Expression, CharField, DateField, TextField, BooleanField, IntegerField, ForeignKeyField
 from playhouse.shortcuts import model_to_dict
 
 from juniorguru.models.base import BaseModel, JSONField
@@ -63,6 +63,7 @@ class SubmittedJob(BaseModel):
     company_name = CharField()
     company_url = CharField()
 
+    locations_raw = JSONField(null=True)
     locations = JSONField(null=True)
     remote = BooleanField(default=False)
     employment_types = JSONField(null=True)
@@ -111,6 +112,7 @@ class ScrapedJob(BaseModel):
     company_name = CharField()
     company_url = CharField(null=True)
 
+    locations_raw = JSONField(null=True)
     locations = JSONField(null=True)
     remote = BooleanField(default=False)
     employment_types = JSONField(null=True)
@@ -237,10 +239,9 @@ class ListedJob(BaseModel):
     @property
     def location(self):
         # TODO refactor, this is terrible
-        if not self.locations:
-            return '?'
-        if len(self.locations) == 1:
-            location = self.locations[0]
+        locations = self.locations or []
+        if len(locations) == 1:
+            location = locations[0]
             name, region = location['name'], location['region']
             parts = [name] if name == region else [name, region]
             if self.remote:
@@ -250,7 +251,7 @@ class ListedJob(BaseModel):
                 return ', '.join(parts)
             return '?'
         else:
-            parts = list(sorted(filter(None, [loc['name'] for loc in self.locations])))
+            parts = list(sorted(filter(None, [loc['name'] for loc in locations])))
             if len(parts) > 2:
                 parts = parts[:2]
                 if self.remote:
@@ -266,8 +267,12 @@ class ListedJob(BaseModel):
             return '?'
 
     @classmethod
-    def listing(cls):
-        return cls.select()
+    def listing(cls, today=None):
+        today = today or date.today()
+        days_since_first_seen = fn.julianday(today) - fn.julianday(cls.first_seen_on)
+        return cls.select() \
+            .order_by(cls.submitted_job.is_null(),
+                      Expression(days_since_first_seen, '%', 30))
 
     @classmethod
     def submitted_listing(cls):
