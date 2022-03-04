@@ -1,12 +1,11 @@
 import hashlib
 from pathlib import Path
-from multiprocessing import Process, JoinableQueue as Queue
-from queue import Empty
+from multiprocessing import Pool
 from io import BytesIO
 
 import requests
 import favicon
-from PIL import Image, ImageChops, ImageOps, UnidentifiedImageError
+from PIL import Image, ImageChops, ImageOps
 
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models import db, ListedJob
@@ -46,129 +45,109 @@ REQUEST_HEADERS = {
 logger = loggers.get(__name__)
 
 
-class ImageException(Exception):
-    pass
-
-
 @sync_task()
 @db.connection_context()
 def main():
-    # Start
-    path_queue = Queue()
-    Process(target=_persistor, args=(path_queue,), daemon=True).start()
     Path(LOGOS_DIR).mkdir(exist_ok=True, parents=True)
 
-    # Step 1: Go through all listed jobs and download company logos for them
-    jobs = list(ListedJob.listing())
-    logger.info(f'Downloading company logos for {len(jobs)} listed jobs')
-    if jobs:
-        url_queue = Queue()
+    with Pool(WORKERS) as pool:
+        jobs = ListedJob.listing()
+        urls = {}
+
+        logger.info('Registering company logo URLs')
         for job in jobs:
-            for url in job.company_logo_urls:
-                url_queue.put((url, job.id))
+            for logo_url in job.company_logo_urls:
+                urls.setdefault(logo_url, dict(type='logo', jobs=[]))
+                urls[logo_url]['jobs'].append(job.id)
 
-        downloaders = []
-        for downloader_id in range(WORKERS):
-            proc = Process(target=_downloader, args=(downloader_id, url_queue, path_queue))
-            downloaders.append(proc)
-            proc.start()
+        logger.info('Fetching and registering company icon URLs')
+        inputs = ((job.id, job.company_url) for job in jobs if job.company_url)
+        results = pool.imap_unordered(fetch_icon_urls, inputs)
+        for job_id, icon_urls in results:
+            for icon_url in icon_urls:
+                urls.setdefault(icon_url, dict(type='icon', jobs=[]))
+                urls[icon_url]['jobs'].append(job_id)
 
-        for joinable in downloaders + [url_queue]:
-            joinable.join()
+        logger.info('Downloading images from both logo and icon URLs')
+        results = pool.imap_unordered(download_image, urls.keys())
+        for image_url, image_path, orig_width, orig_height in results:
+            urls[image_url]['image_path'] = image_path
+            urls[image_url]['orig_width'] = orig_width
+            urls[image_url]['orig_height'] = orig_height
 
-    # Step 2: Go through all listed jobs and try at least favicons
-    jobs = list(ListedJob.favicon_listing())
-    logger.info(f'Downloading favicons for {len(jobs)} listed jobs')
-    if jobs:
-        url_queue = Queue()
+        logger.info('Deciding which images to use')
+        logo_paths = {}
+        for logo in sorted(urls.values(), key=sort_key):
+            for job_id in logo['jobs']:
+                logo_paths.setdefault(job_id, logo['image_path'])
         for job in jobs:
-            logger.debug(f'Analyzing {job.company_url}')
-            favicon_urls = get_favicons(job.company_url)
-            logger.debug(f'Found {len(favicon_urls)} favicon URLs at {job.company_url}')
-            for url in favicon_urls:
-                url_queue.put((url, job.id))
-
-        downloaders = []
-        for downloader_id in range(WORKERS):
-            proc = Process(target=_downloader, args=(downloader_id, url_queue, path_queue))
-            downloaders.append(proc)
-            proc.start()
-
-        for joinable in downloaders + [url_queue]:
-            joinable.join()
-
-    # Finish
-    path_queue.join()
+            logo_path = logo_paths.get(job.id)
+            if logo_path:
+                job.company_logo_path = Path(logo_path).relative_to(ROOT_DIR)
+                logger.debug(f'Logo for {job!r}: {job.company_logo_path}')
+            job.save()
 
 
-def _downloader(id, url_queue, path_queue):
-    logger_d = logger.getChild(f'downloaders.{id}')
-    logger_d.debug('Starting')
-    try:
-        while True:
-            url, job_id = url_queue.get(timeout=0.5)
-            logger_d.debug(f"Downloading {url}")
-            try:
-                response = requests.get(url,
-                                        timeout=REQUEST_TIMEOUT,
-                                        headers=REQUEST_HEADERS)
-                response.raise_for_status()
+def sort_key(logo):
+    # Such image didn't download, put it to the end of the list
+    if logo['image_path'] is None:
+        return (True, 100000, 0)
 
-                orig_image = Image.open(BytesIO(response.content))
-                width, height = orig_image.size
-                if width > MAX_SIZE_PX or height > MAX_SIZE_PX:
-                    raise ImageException(f'Image too large ({width}x{height} < {MAX_SIZE_PX}x{MAX_SIZE_PX})')
+    # Prioritize logos over icons (True sorts after False)
+    is_icon = logo['type'] == 'icon'
 
-                image = convert_image(orig_image)
-                buffer = BytesIO()
-                image.save(buffer, 'PNG')
-                buffer.seek(0)
+    # Closer to zero, more like square. For small images, the shape doesn't
+    # matter. All will be compared as if they were perfect squares.
+    if logo['orig_width'] < SIZE_PX or logo['orig_height'] < SIZE_PX:
+        similarity_to_square = 0
+    else:
+        similarity_to_square = abs(logo['orig_width'] - logo['orig_height'])
 
-                hash = hashlib.sha1(url.encode()).hexdigest()
-                logo_path = LOGOS_DIR / f'{hash}.png'
-                logo_path.write_bytes(buffer)
+    # Multiplied by -1 to ensure descending sort, i.e. larger is better.
+    area = -1 * logo['orig_width'] * logo['orig_height']
 
-                logger_d.info(f"Downloaded {url} as {logo_path}")
-                path_queue.put((logo_path, job_id))
-            except Exception:
-                logger_d.exception(f'Unable to download {url} (job ID {job_id})')
-            finally:
-                url_queue.task_done()
-    except Empty:
-        logger_d.debug('Nothing else to download, closing')
+    return (is_icon, similarity_to_square, area)
 
 
-def _persistor(path_queue):
-    logger_p = logger.getChild('persistor')
-    logger_p.debug("Starting")
-    try:
-        while True:
-            path, job_id = path_queue.get()
-            try:
-                job = ListedJob.get(job_id)
-                logger_p.debug(f"Updating {job!r}")
-                job.company_logo_path = str(path.relative_to(ROOT_DIR))
-                job.save()
-            finally:
-                del job
-                path_queue.task_done()
-    finally:
-        logger_p.debug("Closing persistor")
-
-
-def get_favicons(company_url):
+def fetch_icon_urls(args):
+    logger_f = logger.getChild('fetch_icon_urls')
+    job_id, company_url = args
+    logger_f.debug(f'Fetching icon URLs for <ListedJob: {job_id}>, {company_url}')
     try:
         icons = favicon.get(company_url,
                             timeout=REQUEST_TIMEOUT,
                             headers=REQUEST_HEADERS)
-        return unique(icon.url for icon in icons)
+        urls = unique(icon.url for icon in icons)
+        logger_f.info(f'Icon URLs found for <ListedJob: {job_id}>, {company_url}: {urls!r}')
+        return job_id, urls
     except Exception:
-        logger.exception('Favicon lookup has failed')
-        return []
+        logger_f.exception(f'Fetching icon URLs for <ListedJob: {job_id}>, {company_url} failed')
+        return job_id, []
 
 
-def unique(iterable):
-    return list(frozenset(filter(None, iterable)))
+def download_image(image_url):
+    logger_d = logger.getChild('download_image')
+    logger_d.debug(f'Downloading {image_url}')
+    try:
+        response = requests.get(image_url,
+                                timeout=REQUEST_TIMEOUT,
+                                headers=REQUEST_HEADERS)
+        response.raise_for_status()
+
+        orig_image = Image.open(BytesIO(response.content))
+        orig_width, orig_height = orig_image.size
+        if orig_width > MAX_SIZE_PX or orig_height > MAX_SIZE_PX:
+            raise ValueError(f'Image too large ({orig_width}x{orig_height} < {MAX_SIZE_PX}x{MAX_SIZE_PX})')
+
+        hash = hashlib.sha1(image_url.encode()).hexdigest()
+        image_path = LOGOS_DIR / f'{hash}.png'
+        convert_image(orig_image).save(image_path)
+        logger_d.info(f"Downloaded {image_url} as {image_path}")
+
+        return image_url, image_path, orig_width, orig_height
+    except Exception:
+        logger_d.exception(f'Unable to download {image_url}')
+        return image_url, None, None, None
 
 
 def convert_image(image):
@@ -192,3 +171,7 @@ def convert_image(image):
     image = image.resize((SIZE_PX, SIZE_PX))
 
     return image
+
+
+def unique(iterable):
+    return list(frozenset(filter(None, iterable)))

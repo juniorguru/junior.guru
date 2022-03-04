@@ -41,7 +41,6 @@ gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
 scikit-learn = "*"
 pandas = "*"
-piexif = "*"
 markupsafe = "*"
 mkdocs-simple-hooks = "*"
 ics = { git = "https://github.com/ics-py/ics-py.git", branch = "main" }

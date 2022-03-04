@@ -1006,14 +1006,6 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "piexif"
-version = "1.1.3"
-description = "To simplify exif manipulations with python. Writing, reading, and more..."
-category = "main"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-
-[[package]]
 name = "pillow"
 version = "9.0.1"
 description = "Python Imaging Library (Fork)"
@@ -1695,7 +1687,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.8.*"
-content-hash = "3f469dbf6af2c595c211653a9f73de1d773aa01e443ff8cc2338fcfd341b682f"
+content-hash = "aa1a32289f55d7c89581d05dce535513c898577caf0d2e48475da062807f94d0"
 
 [metadata.files]
 aiodns = [
@@ -2505,10 +2497,6 @@ parsel = [
 ]
 peewee = [
     {file = "peewee-3.14.10.tar.gz", hash = "sha256:23271422b332c82d30c92597dee905ee831b56c6d99c33e05901e6891c75fe15"},
-]
-piexif = [
-    {file = "piexif-1.1.3-py2.py3-none-any.whl", hash = "sha256:3bc435d171720150b81b15d27e05e54b8abbde7b4242cddd81ef160d283108b6"},
-    {file = "piexif-1.1.3.zip", hash = "sha256:83cb35c606bf3a1ea1a8f0a25cb42cf17e24353fd82e87ae3884e74a302a5f1b"},
 ]
 pillow = [
     {file = "Pillow-9.0.1-1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:a5d24e1d674dd9d72c66ad3ea9131322819ff86250b30dc5821cbafcfa0b96b4"},

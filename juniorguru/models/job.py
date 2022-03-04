@@ -92,7 +92,8 @@ class SubmittedJob(BaseModel):
         data = {field_name: getattr(self, field_name, None)
                 for field_name
                 in ListedJob._meta.fields.keys()
-                if field_name not in ['id', 'submitted_job']}
+                if (field_name in self.__class__._meta.fields and
+                    field_name not in ['id', 'submitted_job'])}
         data['first_seen_on'] = self.posted_on
         data['submitted_job'] = self
         return ListedJob(**data)
@@ -191,7 +192,8 @@ class ScrapedJob(BaseModel):
         data = {field_name: getattr(self, field_name, None)
                 for field_name
                 in ListedJob._meta.fields.keys()
-                if field_name not in ['id', 'submitted_job']}
+                if (field_name in self.__class__._meta.fields and
+                    field_name not in ['id', 'submitted_job'])}
         return ListedJob(**data)
 
 
