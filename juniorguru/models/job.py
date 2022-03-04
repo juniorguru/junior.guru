@@ -62,6 +62,7 @@ class SubmittedJob(BaseModel):
 
     company_name = CharField()
     company_url = CharField()
+    company_logo_urls = JSONField(default=lambda: [])
 
     locations_raw = JSONField(null=True)
     remote = BooleanField(default=False)
@@ -110,6 +111,7 @@ class ScrapedJob(BaseModel):
 
     company_name = CharField()
     company_url = CharField(null=True)
+    company_logo_urls = JSONField(default=lambda: [])
 
     locations_raw = JSONField(null=True)
     remote = BooleanField(default=False)
@@ -206,6 +208,8 @@ class ListedJob(BaseModel):
 
     company_name = CharField()
     company_url = CharField(null=True)
+    company_logo_urls = JSONField(default=lambda: [])
+    company_logo_path = CharField(null=True)
 
     locations_raw = JSONField(null=True)
     locations = JSONField(null=True)

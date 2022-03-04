@@ -1,32 +1,32 @@
+from pathlib import Path
+
 from scrapy import Spider as BaseSpider
 
+from juniorguru.sync.scrape_companies.items import Company
 from juniorguru.models import db, ListedJob
 
 
-# pak si vytahne z DB tyhlety jobs a companies a zkousi sparovat, jestli nahodou
-# tahle firma nesponzoruje - v tom pripade propoji informaci a ulozi cestu k obrazku.
-# jestli je nabidka highlighted se pocita podle toho, jestli sponzoruje klub nebo
-# jestli je submitted.
-#
-# pro zbyle jobs chceme stahnout nejaky obrazek a to muzeme bud z urls ktery sou ulozeny
+# TODO chceme stahnout nejaky obrazek a to muzeme bud z urls ktery sou ulozeny
 # v db ke kazdymu jobu, nebo se snazime najit nakej favicon?
-#
-# asi blbost, proste by se mely vzit firmy ze vsech jobs podle nazvu a urls k nim
-# a nejak by se to melo resit pospolu
 
 
 class Spider(BaseSpider):
     name = 'listed_jobs'
 
-    # tady bude file:// ... primo k tomuto souboru, proste takovej hack
-    start_urls = [
-        'https://remoteok.io/remote-dev-jobs.json?api=1',
-    ]
+    # Working around the fact that Scrapy spiders must start with
+    # at least one request. Scraping this file from local filesystem
+    # and dropping the response (see second argument of the 'parse'
+    # method).
+    #
+    # In the future, if it makes sense to actually perform a request
+    # per company, solution may look like https://stackoverflow.com/a/46339560/325365
+    # or the Scrapy's start_requests() method can be used.
+    start_urls = [f'file://{Path(__file__).absolute()}']
+    custom_settings = {'ROBOTSTXT_OBEY': False}
 
-    def start_requests(self):
-        # https://stackoverflow.com/a/46339560/325365
-        # https://docs.scrapy.org/en/latest/topics/spiders.html?highlight=start_requests#scrapy.spiders.Spider.start_requests
-        pass
-
-    def parse(self, response):
-        pass
+    def parse(self, _):
+        with db.connection_context():
+            for job in ListedJob.listing():
+                yield Company(name=job.company_name,
+                              url=job.company_url,
+                              logo_urls=job.company_logo_urls)

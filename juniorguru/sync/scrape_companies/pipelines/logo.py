@@ -11,8 +11,8 @@ from scrapy.utils.misc import md5sum
 
 
 class Pipeline(ImagesPipeline):
-    DEFAULT_IMAGES_URLS_FIELD = 'company_logo_urls'
-    DEFAULT_IMAGES_RESULT_FIELD = 'company_logos'
+    DEFAULT_IMAGES_URLS_FIELD = 'logo_urls'
+    DEFAULT_IMAGES_RESULT_FIELD = 'logos'
 
     max_size_px = 1000
     size_px = 100
@@ -32,12 +32,12 @@ class Pipeline(ImagesPipeline):
         # most of the things here. Also, the data in the database are flushed
         # with every sync. And so on. Been there. Done that. Saving it to EXIF
         # is the best method, which survives all the pitfalls, trust me!
-        company_logos = item.get(self.DEFAULT_IMAGES_RESULT_FIELD, [])
-        orig_sizes = [load_orig_size(Path(self.images_dir) / company_logo['path'])
-                      for company_logo in company_logos]
-        company_logo = select_company_logo(company_logos, orig_sizes, self.size_px)
-        if company_logo:
-            item['company_logo_path'] = f"images/{company_logo['path']}"
+        logos = item.get(self.DEFAULT_IMAGES_RESULT_FIELD, [])
+        orig_sizes = [load_orig_size(Path(self.images_dir) / logo['path'])
+                      for logo in logos]
+        logo = select_logo(logos, orig_sizes, self.size_px)
+        if logo:
+            item['logo_path'] = f"images/{logo['path']}"
         return item
 
     def image_downloaded(self, response, request, info, item=None):
@@ -115,10 +115,10 @@ def load_orig_size(path):
         return 0, 0
 
 
-def select_company_logo(company_logos, orig_sizes, size_px):
-    def sort_key(company_logo__orig_size):
+def select_logo(logos, orig_sizes, size_px):
+    def sort_key(logo__orig_size):
         # Deconstruct given tuple to the original width and height of the image.
-        width, height = company_logo__orig_size[1]
+        width, height = logo__orig_size[1]
 
         # Multiplied by -1 to ensure descending sort, i.e. larger is better.
         area = -1 * width * height
@@ -132,9 +132,9 @@ def select_company_logo(company_logos, orig_sizes, size_px):
 
         return (similarity_to_square, area)
 
-    zipped_sorted_list = sorted(zip(company_logos, orig_sizes), key=sort_key)
+    zipped_sorted_list = sorted(zip(logos, orig_sizes), key=sort_key)
     try:
-        company_logo__orig_size = zipped_sorted_list[0]
+        logo__orig_size = zipped_sorted_list[0]
     except IndexError:
         return None
-    return company_logo__orig_size[0]
+    return logo__orig_size[0]
