@@ -63,7 +63,6 @@ class Spider(BaseSpider):
         loader.add_css('apply_url', '.apply-button::attr(href)')
         loader.add_css('company_name', '.topcard__org-name-link::text')
         loader.add_css('company_name', '.top-card-layout .topcard__flavor:nth-child(1)::text')
-        loader.add_css('company_url', '.topcard__org-name-link::attr(href)')
         loader.add_css('locations_raw', '.top-card-layout .topcard__flavor:nth-child(2)::text')
         loader.add_xpath('employment_types', "//h3[contains(., 'Employment type')]/following-sibling::span/text()")
         loader.add_xpath('experience_levels', "//h3[contains(., 'Seniority level')]/following-sibling::span/text()")

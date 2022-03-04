@@ -18,7 +18,7 @@ def main():
     ListedJob.create_table()
 
     listing_date = date.today()
-    logger.info(f"Processing submitted jobs from {listing_date}")
+    logger.info(f"Processing submitted jobs: {listing_date}")
     query = SubmittedJob.date_listing(listing_date)
     for submitted_job in query:
         logger.debug(f"Listing {submitted_job!r}")
@@ -27,7 +27,7 @@ def main():
         logger.debug(f"Saved {submitted_job!r} as {job!r}")
 
     listing_date = ScrapedJob.latest_seen_on()
-    logger.info(f"Processing scraped jobs from {listing_date} and with 'juniority_re_score ≥ {MIN_JUNIORITY_RE_SCORE}'")
+    logger.info(f"Processing scraped jobs: {listing_date}, juniority_re_score ≥ {MIN_JUNIORITY_RE_SCORE}")
     query = ScrapedJob.date_listing(listing_date,
                                     min_juniority_re_score=MIN_JUNIORITY_RE_SCORE)
     for scraped_job in query.iterator():

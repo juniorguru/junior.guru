@@ -4,12 +4,8 @@
     <meta itemprop="datePosted" content="{{ job.first_seen_on.isoformat() }}">
     <meta itemprop="description" content="Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}">
 
-    {% if job.is_juniorguru %}
-      <a class="jobs__link" href="{{ job.link }}" itemprop="url">
-    {% else %}
-      <a class="jobs__link" href="{{ job.effective_link }}"{% if 'utm_' not in job.effective_link %} data-metrics-utm data-metrics-utm-medium="job_board"{% endif %} data-metrics data-metrics-name="job" target="_blank" rel="noopener nofollow">
-      <link itemprop="url" href="{{ job.effective_link }}">
-    {% endif %}
+    <a class="jobs__link" href="{{ job.effective_url }}" data-metrics-utm data-metrics-utm-medium="job_board" data-metrics data-metrics-name="job" target="_blank" rel="noopener nofollow">
+    <link itemprop="url" href="{{ job.effective_url }}">
       <div class="jobs__content">
         <div class="jobs__company-logo">
           {% if job.company_logo_path %}
@@ -22,7 +18,7 @@
           </h3>
           <p class="jobs__company" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
             <span itemprop="name">{{ job.company_name }}</span>
-            <link itemprop="url" href="{{ job.company_link }}">
+            {% if job.company_url %}<link itemprop="url" href="{{ job.company_url }}">{% endif %}
           </p>
           <p class="jobs__location" itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
             <span itemprop="address">{{ job.location }}</span>

@@ -27,7 +27,6 @@ class Spider(BaseSpider):
             offer_loader.add_xpath('url', './/url/text()')
             offer_loader.add_xpath('apply_url', './/url/text()')
             offer_loader.add_xpath('company_name', './/startup/text()')
-            offer_loader.add_xpath('company_url', './/startupURL/text()')
             offer_loader.add_xpath('locations_raw', './/city/text()')
             offer_loader.add_xpath('remote', ".//jobtype[contains(., 'Remote')]/text()")
             offer_loader.add_value('remote', False)

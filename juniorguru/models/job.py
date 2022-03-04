@@ -224,6 +224,10 @@ class ListedJob(BaseModel):
     def is_submitted(self):
         return bool(self.submitted_job)
 
+    @property
+    def is_highlighted(self):
+        return self.is_submitted
+
     def tags(self, today=None):
         tags = []
 
@@ -276,6 +280,12 @@ class ListedJob(BaseModel):
         return cls.select() \
             .order_by(cls.submitted_job.is_null(),
                       Expression(days_since_first_seen, '%', 30))
+
+    @classmethod
+    def favicon_listing(cls):
+        return cls.select() \
+            .where(cls.company_logo_path.is_null() &
+                   cls.company_url.is_null(False))
 
     @classmethod
     def submitted_listing(cls):
