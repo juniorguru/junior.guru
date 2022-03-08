@@ -19,6 +19,10 @@ def email_link(email):
     )
 
 
+def relative_url(url):
+    return url.replace('https://junior.guru', '')
+
+
 def md(*args, **kwargs):
     return Markup(md_(*args, **kwargs))
 

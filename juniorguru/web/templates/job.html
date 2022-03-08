@@ -15,7 +15,7 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
     <h1 class="intro__title" itemprop="title">{{ job.title }}</h1>
 
     <p class="intro__lead job-attributes">
-      <a href="{{ job.company_url }}" data-metrics-utm data-metrics-utm-medium="job_board" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
+      <a href="{{ job.company_url }}" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
         <span itemprop="name">{{ job.company_name }}</span>
       </a>
       {% if job.locations %}
@@ -53,12 +53,12 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
   </div>
 
   <div class="call-to-action" itemprop="applicationContact" itemscope itemtype="https://schema.org/ContactPoint">
-    {% if job.apply_link %}
-      <a id="apply" data-metrics-utm data-metrics-utm-medium="job_board" data-metrics data-metrics-page-url data-metrics-name="apply" class="legacy-button" href="{{ job.apply_link }}">
+    {% if job.apply_url %}
+      <a id="apply" class="legacy-button" href="{{ job.apply_url }}">
         Mám zájem!
       </a>
     {% else %}
-      <p id="apply" data-metrics data-metrics-page-url data-metrics-name="apply" class="legacy-button">
+      <p id="apply" class="legacy-button">
         Máš zájem? Napiš na<br><small itemprop="email">{{ job.email|email_link }}</small>
       </p>
     {% endif %}

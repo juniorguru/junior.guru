@@ -7,12 +7,8 @@
       <meta itemprop="address" content="{{ job.location }}">
     </div>
 
-    {% if job.is_juniorguru %}
-      <a class="jobs__link" href="{{ job.link }}" itemprop="url">
-    {% else %}
-      <a class="jobs__link" href="{{ url_for(jobs_link) }}">
+    <a class="jobs__link" href="{{ job.link|relative_url }}">
       <link itemprop="url" href="{{ job.effective_link }}">
-    {% endif %}
       <div class="jobs__content">
         <div class="jobs__company-logo">
           {% if job.company_logo_path %}
@@ -25,7 +21,7 @@
           </h3>
           <p class="jobs__company" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
             <span itemprop="name">{{ job.company_name }}</span>
-            <link itemprop="url" href="{{ job.company_link }}">
+            <link itemprop="url" href="{{ job.company_url }}">
           </p>
         </div>
       </div>

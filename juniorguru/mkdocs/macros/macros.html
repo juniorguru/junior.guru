@@ -295,12 +295,12 @@
             <meta itemprop="address" content="{{ job.location }}">
           </div>
 
-          {% if job.is_juniorguru %}
-            <a class="jobs-inline-link" href="{{ job.link }}" itemprop="url">
+          {% if job.is_submitted %}
+            <a class="jobs-inline-link" href="{{ job.url|relative_url }}" itemprop="url">
           {% else %}
             <a class="jobs-inline-link" href="{{ jobs_url }}">
-            <link itemprop="url" href="{{ job.effective_link }}">
           {% endif %}
+            <link itemprop="url" href="{{ job.effective_link }}">
             <div class="jobs-inline-logo">
               {% if job.company_logo_path %}
                 {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class='jobs-inline-image') }}
@@ -313,7 +313,7 @@
               </h5>
               <p class="jobs-inline-company" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
                 <span itemprop="name">{{ job.company_name }}</span>
-                <link itemprop="url" href="{{ job.company_link }}">
+                <link itemprop="url" href="{{ job.company_url }}">
               </p>
             </div>
           </a>

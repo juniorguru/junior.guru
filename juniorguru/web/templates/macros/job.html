@@ -4,7 +4,7 @@
     <meta itemprop="datePosted" content="{{ job.first_seen_on.isoformat() }}">
     <meta itemprop="description" content="Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}">
 
-    <a class="jobs__link" href="{{ job.effective_url }}" data-metrics-utm data-metrics-utm-medium="job_board" data-metrics data-metrics-name="job" target="_blank" rel="noopener nofollow">
+    <a class="jobs__link" href="{{ job.effective_url|relative_url }}"{% if not job.is_submitted %} target="_blank" rel="noopener nofollow"{% endif %}>
     <link itemprop="url" href="{{ job.effective_url }}">
       <div class="jobs__content">
         <div class="jobs__company-logo">

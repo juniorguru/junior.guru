@@ -83,6 +83,7 @@ for template_filter in [
     template_filters.sample,
     template_filters.sample_jobs,
     template_filters.local_time,
+    template_filters.relative_url,
 ]:
     app.template_filter()(template_filter)
 

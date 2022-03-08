@@ -220,6 +220,8 @@ class ListedJob(BaseModel):
 
     @property
     def effective_url(self):
+        if self.is_submitted:
+            return self.url
         return self.apply_url or self.url
 
     @property
