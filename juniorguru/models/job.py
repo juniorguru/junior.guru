@@ -1,5 +1,5 @@
 from functools import lru_cache
-from datetime import date
+from datetime import date, datetime, time
 
 from peewee import fn, Expression, CharField, DateField, TextField, BooleanField, IntegerField, ForeignKeyField
 from playhouse.shortcuts import model_to_dict
@@ -203,6 +203,7 @@ class ListedJob(BaseModel):
 
     title = CharField()
     first_seen_on = DateField(index=True)
+    lang = CharField()
 
     url = CharField()
     apply_email = CharField(null=True)
@@ -335,6 +336,40 @@ class ListedJob(BaseModel):
     def volunteering_listing(cls):
         return cls.tags_listing(['VOLUNTEERING'])
 
+    @classmethod
+    def api_listing(cls):
+        return cls.select() \
+            .order_by(cls.first_seen_on.desc())
+
+    def to_api(self):
+        return dict(**dict(
+                        title=self.title,
+                        company_name=self.company_name,
+                        url=self.effective_url,
+                        remote=self.remote,
+                        first_seen_at=datetime.combine(self.first_seen_on, time(0, 0)),  # datetime for backwards compatibility
+                        last_seen_at=None,  # not relevant anymore, equals to present moment
+                        lang=self.lang,
+                        juniority_score=None,  # won't expose publicly anymore
+                        source=None,  # use external IDs instead
+                    ),
+                    **{
+                        f'external_ids_{i}': value for i, value  # renamed elsewhere, but keeping backwards compatible
+                        in columns(self.boards_ids, 10)
+                    },
+                    **{
+                        f'locations_{i}_name': (value['name'] if value else None) for i, value
+                        in columns(self.locations, 20)
+                    },
+                    **{
+                        f'locations_{i}_region': (value['region'] if value else None) for i, value
+                        in columns(self.locations, 20)
+                    },
+                    **{
+                        f'employment_types_{i}': value for i, value
+                        in columns(self.employment_types, 10)
+                    })
+
 
 @lru_cache()
 def get_employment_types_tags(types):
@@ -343,3 +378,9 @@ def get_employment_types_tags(types):
         if rule_match <= types:
             types = (types - rule_match) | rule_repl
     return types
+
+
+def columns(values, columns_count):
+    values = list(values or [])
+    values_count = len(values)
+    return enumerate([values[i] if values_count > i else None for i in range(columns_count)])
