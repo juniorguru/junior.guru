@@ -278,6 +278,10 @@ class ListedJob(BaseModel):
             return '?'
 
     @classmethod
+    def count(cls):
+        return cls.listing().count()
+
+    @classmethod
     def listing(cls, today=None):
         today = today or date.today()
         days_since_first_seen = fn.julianday(today) - fn.julianday(cls.first_seen_on)
@@ -295,6 +299,12 @@ class ListedJob(BaseModel):
     def submitted_listing(cls):
         return cls.select() \
             .where(cls.submitted_job.is_null(False))
+
+    @classmethod
+    def get_by_submitted_id(cls, submitted_job_id):
+        return cls.select() \
+            .where(cls.submitted_job == submitted_job_id) \
+            .get()
 
     @classmethod
     def region_listing(cls, region):

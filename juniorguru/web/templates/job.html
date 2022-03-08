@@ -39,7 +39,7 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
   </header>
 
   <div itemprop="description">
-    {{ job.description_html|safe }}
+    {{ job.submitted_job.description_html|safe }}
   </div>
 
   <div class="engage">
@@ -59,7 +59,7 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
       </a>
     {% else %}
       <p id="apply" class="legacy-button">
-        Máš zájem? Napiš na<br><small itemprop="email">{{ job.email|email_link }}</small>
+        Máš zájem? Napiš na<br><small itemprop="email">{{ job.apply_email|email_link }}</small>
       </p>
     {% endif %}
   </div>
@@ -70,7 +70,7 @@ Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ 
   <h2>
     <small>Nic pro tebe? Nevadí! Je tady celkem</small>
 
-    <strong class="no-wrap">{{ metrics.jobs_count }} nabídek</strong>
+    <strong class="no-wrap">{{ jobs_count }} nabídek</strong>
     <span class="no-wrap">práce</span>
     <span class="no-wrap">pro juniory</span>
   </h2>

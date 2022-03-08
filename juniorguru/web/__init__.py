@@ -136,14 +136,12 @@ def jobs():
 def jobs_remote():
     return 'TODO'  # TODO
     # with db:
-    #     metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
     #     jobs = ListedJob.remote_listing()
     # return render_template('jobs_remote.html',
     #                        nav_active='jobs',
     #                        jobs=jobs,
     #                        remote=True,
     #                        regions=REGIONS,
-    #                        metrics=metrics,
     #                        thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky —\u00a0na\u00a0dálku'))
 
 
@@ -152,7 +150,6 @@ def jobs_region(region_id):
     return 'TODO'  # TODO
     # region = [reg for reg in REGIONS if reg['id'] == region_id][0]
     # with db:
-    #     metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
     #     jobs = ListedJob.region_listing(region['name'])
     #     jobs_remote = ListedJob.remote_listing()
     # return render_template('jobs_region.html',
@@ -161,7 +158,6 @@ def jobs_region(region_id):
     #                        jobs_remote=jobs_remote,
     #                        region=region,
     #                        regions=REGIONS,
-    #                        metrics=metrics,
     #                        thumbnail=thumbnail(title=f"Práce v\u00a0IT pro začátečníky —\u00a0{region['name']}"))
 
 
@@ -171,24 +167,24 @@ def generate_jobs_region_pages():
 
 
 @app.route('/jobs/<job_id>/')
-def job(job_id):
-    return 'TODO'  # TODO
-    # with db:
-    #     metrics = dict(**Metric.as_dict(), **ListedJob.aggregate_metrics())
-    #     job = ListedJob.juniorguru_get_by_id(job_id)
-    # return render_template('job.html',
-    #                        nav_active='jobs',
-    #                        job=job,
-    #                        metrics=metrics,
-    #                        thumbnail=thumbnail(job_title=job.title,
-    #                                            job_company=job.company_name,
-    #                                            job_location=job.location))
-
-
 @db.connection_context()
+def job(job_id):
+    job = ListedJob.get_by_submitted_id(job_id)
+    jobs_count = ListedJob.count()
+    return render_template('job.html',
+                           nav_active='jobs',
+                           job=job,
+                           jobs_count=jobs_count,
+                           thumbnail=thumbnail(job_title=job.title,
+                                               job_company=job.company_name,
+                                               job_location=job.location))
+
+
 def generate_job_pages():
-    for listed_job in ListedJob.submitted_listing():
-        yield 'job', dict(job_id=listed_job.submitted_job.id)
+    with db.connection_context():
+        jobs = list(ListedJob.submitted_listing())
+    for job in jobs:
+        yield 'job', dict(job_id=job.submitted_job.id)
 
 
 @app.route('/donate/')
