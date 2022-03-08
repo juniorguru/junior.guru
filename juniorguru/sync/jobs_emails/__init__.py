@@ -115,13 +115,13 @@ def create_message(job, template, today):
 def prepare_template_context(job, today):
     return dict(title=job.title,
                 company_name=job.company_name,
-                url=f'https://junior.guru/jobs/{job.id}/',
+                url=f'https://junior.guru/jobs/{job.submitted_job.id}/',
                 url_jobs='https://junior.guru/jobs/',
                 url_index='https://junior.guru/',
                 url_logo='https://junior.guru/static/images/logo-email.png',
-                url_analytics=f'https://simpleanalytics.com/junior.guru?search=paths%3A{job.id}&start={job.posted_at}&end={today}',
-                start_at=job.submitted_job.posted_at,
+                url_analytics=f'https://simpleanalytics.com/junior.guru?search=paths%3A{job.submitted_job.id}&start={job.submitted_job.posted_on}&end={today}',
+                start_at=job.submitted_job.posted_on,
                 start_days=job.submitted_job.days_since_posted(today),
-                end_at=job.submitted_job.expires_at,
+                end_at=job.submitted_job.expires_on,
                 end_days=job.submitted_job.days_until_expires(today),
                 expires_soon=job.submitted_job.expires_soon(today))
