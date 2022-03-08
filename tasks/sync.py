@@ -36,6 +36,8 @@ SYNC_TASKS_POSTPROCESS_JOBS = import_sync_tasks([
     'juniorguru.sync.jobs_locations',
     'juniorguru.sync.jobs_logos',
 
+    # 'juniorguru.sync.jobs_emails',
+
     # from juniorguru.sync.jobs_club import main as sync_jobs_club
     # TODO sync_jobs_club()  # depends on employments, jobs, club_content (in the future: set_ai_opinion)
 ])
