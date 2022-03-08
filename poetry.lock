@@ -1687,7 +1687,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.8.*"
-content-hash = "aa1a32289f55d7c89581d05dce535513c898577caf0d2e48475da062807f94d0"
+content-hash = "19886e20c1ea8e1ee280d583439961781faee230f0ea48ec3df3c4052e3eb6d5"
 
 [metadata.files]
 aiodns = [
