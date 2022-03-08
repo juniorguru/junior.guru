@@ -146,22 +146,20 @@ def jobs_remote():
 
 
 @app.route('/jobs/region/<region_id>/')
-def jobs_region(region_id):
-    return 'TODO'  # TODO
-    # region = [reg for reg in REGIONS if reg['id'] == region_id][0]
-    # with db:
-    #     jobs = ListedJob.region_listing(region['name'])
-    #     jobs_remote = ListedJob.remote_listing()
-    # return render_template('jobs_region.html',
-    #                        nav_active='jobs',
-    #                        jobs=jobs,
-    #                        jobs_remote=jobs_remote,
-    #                        region=region,
-    #                        regions=REGIONS,
-    #                        thumbnail=thumbnail(title=f"Práce v\u00a0IT pro začátečníky —\u00a0{region['name']}"))
-
-
 @db.connection_context()
+def jobs_region(region_id):
+    region = [reg for reg in REGIONS if reg['id'] == region_id][0]
+    jobs = ListedJob.region_listing(region['name'])
+    jobs_remote = ListedJob.remote_listing()
+    return render_template('jobs_region.html',
+                           nav_active='jobs',
+                           jobs=jobs,
+                           jobs_remote=jobs_remote,
+                           region=region,
+                           regions=REGIONS,
+                           thumbnail=thumbnail(title=f"Práce v\u00a0IT pro začátečníky —\u00a0{region['name']}"))
+
+
 def generate_jobs_region_pages():
     return [('jobs_region', dict(region_id=region['id'])) for region in REGIONS]
 
