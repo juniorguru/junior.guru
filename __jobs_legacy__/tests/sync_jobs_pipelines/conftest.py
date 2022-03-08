@@ -13,7 +13,7 @@ def item():
         title='Junior Python Engineer',
         remote=True,
         company_name='The Best Company',
-        company_link='https://example.com',
+        company_url='https://example.com',
         employment_types=['full-time'],
         description_html='...',
         link='https://example.com/jobs/123',

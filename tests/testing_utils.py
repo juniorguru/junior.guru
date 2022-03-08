@@ -68,7 +68,7 @@ def prepare_job_data(id, **kwargs):
         company_name=kwargs.get('company_name', 'Honza Ltd.'),
         employment_types=kwargs.get('employment_types', ['internship']),
         title=kwargs.get('title', 'Junior Software Engineer'),
-        company_link=kwargs.get('company_link', 'https://example.com'),
+        company_url=kwargs.get('company_url', 'https://example.com'),
         email=kwargs.get('email', 'recruiter@example.com'),
         remote=kwargs.get('remote', False),
         locations_raw=kwargs.get('locations_raw', ['Brno, Czech Republic']),

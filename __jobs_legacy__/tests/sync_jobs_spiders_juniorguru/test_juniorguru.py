@@ -69,7 +69,7 @@ def test_coerce_record():
         'posted_at': datetime(2019, 7, 6, 20, 24, 3),
         'email': 'jobs@example.com',
         'company_name': 'Honza Ltd.',
-        'company_link': 'https://www.example.com',
+        'company_url': 'https://www.example.com',
         'employment_types': frozenset(['internship', 'full-time']),
         'title': 'Frontend Ninja',
         'locations_raw': ['Prague'],
