@@ -133,16 +133,15 @@ def jobs():
 
 
 @app.route('/jobs/remote/')
+@db.connection_context()
 def jobs_remote():
-    return 'TODO'  # TODO
-    # with db:
-    #     jobs = ListedJob.remote_listing()
-    # return render_template('jobs_remote.html',
-    #                        nav_active='jobs',
-    #                        jobs=jobs,
-    #                        remote=True,
-    #                        regions=REGIONS,
-    #                        thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky —\u00a0na\u00a0dálku'))
+    jobs = ListedJob.remote_listing()
+    return render_template('jobs_remote.html',
+                           nav_active='jobs',
+                           jobs=jobs,
+                           remote=True,
+                           regions=REGIONS,
+                           thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky —\u00a0na\u00a0dálku'))
 
 
 @app.route('/jobs/region/<region_id>/')
@@ -197,10 +196,9 @@ def donate():
 
 
 @app.route('/404.html')
+@db.connection_context()
 def not_found():
-    return 'TODO'  # TODO
-    # with db:
-    #     jobs = ListedJob.listing()
+    jobs = ListedJob.listing()
     return render_template('404.html', jobs=jobs)
 
 

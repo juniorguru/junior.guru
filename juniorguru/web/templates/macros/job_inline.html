@@ -7,8 +7,8 @@
       <meta itemprop="address" content="{{ job.location }}">
     </div>
 
-    <a class="jobs__link" href="{{ job.link|relative_url }}">
-      <link itemprop="url" href="{{ job.effective_link }}">
+    <a class="jobs__link" href="{{ job.effective_url|relative_url }}">
+      <link itemprop="url" href="{{ job.effective_url }}">
       <div class="jobs__content">
         <div class="jobs__company-logo">
           {% if job.company_logo_path %}
