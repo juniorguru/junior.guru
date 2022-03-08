@@ -60,10 +60,10 @@ def on_docs_context(context):
 
     # candidate-handbook.md
     context['last_modified'] = LastModified.get_value_by_path('candidate-handbook.md')
-    context['jobs'] = []  # TODO ListedJob.listing()
-    context['jobs_remote'] = []  # TODO ListedJob.remote_listing()
-    context['jobs_internship'] = []  # TODO ListedJob.internship_listing()
-    context['jobs_volunteering'] = []  # TODO ListedJob.volunteering_listing()
+    context['jobs'] = ListedJob.listing()
+    context['jobs_remote'] = ListedJob.remote_listing()
+    context['jobs_internship'] = ListedJob.internship_listing()
+    context['jobs_volunteering'] = ListedJob.volunteering_listing()
 
     # open.md
     charts_months = charts.months(BUSINESS_BEGIN_ON, TODAY)
