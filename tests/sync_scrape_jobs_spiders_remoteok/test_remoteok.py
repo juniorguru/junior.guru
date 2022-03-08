@@ -44,14 +44,13 @@ def test_spider_parse_job():
     job = jobs[0]
 
     assert sorted(job.keys()) == sorted([
-        'title', 'url', 'company_name', 'company_url',
+        'title', 'url', 'company_name',
         'first_seen_on', 'description_html', 'company_logo_urls', 'remote',
         'source', 'source_urls',
     ])
     assert job['title'] == 'Software Engineer II'
     assert job['url'] == 'https://example.com/example/'
     assert job['company_name'] == 'Comscore'
-    assert job['company_url'] == 'https://example.com/remote-companies/comscore'
     assert job['remote'] is True
     assert job['first_seen_on'] == date(2020, 10, 25)
     assert job['company_logo_urls'] == ['https://remoteok.io/assets/jobs/af6ada420dbb093b6fc3cc1dd1a75bb41603782017.png']

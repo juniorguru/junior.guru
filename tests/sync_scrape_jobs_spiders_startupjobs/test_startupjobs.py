@@ -20,7 +20,7 @@ def test_spider_parse():
     job = jobs[0]
 
     assert sorted(job.keys()) == sorted([
-        'title', 'url', 'apply_url', 'company_name', 'company_url', 'locations_raw',
+        'title', 'url', 'apply_url', 'company_name', 'locations_raw',
         'employment_types', 'first_seen_on', 'description_html', 'company_logo_urls',
         'remote', 'source', 'source_urls',
     ])
@@ -28,7 +28,6 @@ def test_spider_parse():
     assert job['url'] == 'https://www.startupjobs.cz/nabidka/22025/my-hledame-stale-pridej-se-k-nam-do-tymu-jako-junior-linux-admin'
     assert job['apply_url'] == 'https://www.startupjobs.cz/nabidka/22025/my-hledame-stale-pridej-se-k-nam-do-tymu-jako-junior-linux-admin?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
     assert job['company_name'] == 'Cloudinfrastack'
-    assert job['company_url'] == 'https://www.startupjobs.cz/startup/cloudinfrastack?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru'
     assert job['locations_raw'] == ['Praha, Česko']
     assert job['remote'] is False
     assert job['employment_types'] == ['Part-time', 'Full-time']

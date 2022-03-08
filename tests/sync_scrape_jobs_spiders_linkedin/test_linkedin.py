@@ -45,7 +45,7 @@ def test_spider_parse_job():
     job = jobs[0]
 
     assert sorted(job.keys()) == sorted([
-        'title', 'url', 'company_name', 'company_url', 'locations_raw',
+        'title', 'url', 'company_name', 'locations_raw',
         'employment_types', 'first_seen_on', 'description_html',
         'experience_levels', 'company_logo_urls', 'remote',
         'source', 'source_urls',
@@ -53,7 +53,6 @@ def test_spider_parse_job():
     assert job['title'] == 'Junior BI Developer (BI4SG)'
     assert job['url'] == 'https://cz.linkedin.com/jobs/view/junior-bi-developer-bi4sg-at-komer%C4%8Dn%C3%AD-banka-2701029809'
     assert job['company_name'] == 'Komerční banka'
-    assert job['company_url'] == 'https://cz.linkedin.com/company/komercni-banka'
     assert job['locations_raw'] == ['Prague, Czechia']
     assert job['remote'] is False
     assert job['employment_types'] == ['full-time']
