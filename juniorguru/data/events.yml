@@ -48,8 +48,8 @@
 # 2. Bude potřeba ještě fotka, nebo pokud se nerad(a) fotíš, tak alespoň nějaký avatar, obrázek.
 #    Ten je potřeba přidat do složky 'juniorguru/images/speakers' tak, že název souboru
 #    je stejný, jako tvoje ID na Discordu. Přípona a formát jsou jedno. No a pak je potřeba
-#    ještě spustit 'make sync SYNC=events', takže… takže je vlastně lepší to neřešit a poslat
-#    prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
+#    ještě spustit 'poetry run invoke sync.events', takže… takže je vlastně lepší to neřešit
+#    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
 #- title: "TBD (Next.js)"
