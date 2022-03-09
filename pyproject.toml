@@ -39,7 +39,7 @@ extruct = "*"
 py-cord = {version = "2.0.0-beta.4", extras = ["speed"]}
 gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
-scikit-learn = "0.24.2"
+scikit-learn = "1.0.2"
 pandas = "*"
 piexif = "*"
 markupsafe = "*"
