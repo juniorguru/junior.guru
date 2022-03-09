@@ -17,6 +17,7 @@ logger = loggers.get(__name__)
 
 
 MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
+
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
 FEMALE_NAME_RE = re.compile(r'''
@@ -27,7 +28,7 @@ FEMALE_NAME_RE = re.compile(r'''
         Tereza|Martina|Michaela|Jitka|Helena|Ludmila|Zde[ňn]ka|Ivana|Monika|Eli[šs]ka|Zuzana|
         Mark[ée]ta|Jarmila|Barbora|Ji[řr]ina|Marcela|Krist[ýy]na|Alexandra|Daniela|Kayla|
         Hann?ah?|Mia|Kl[áa]ra|Olga|Nath?[áa]lie|Adina|Karol[íi]na|Ane[žz]ka|Marij?[ea]|Alisa|
-        Hany|Dominika
+        Hany|Dominika|Marta|Nikola
     )\b)
 ''', re.VERBOSE | re.IGNORECASE)
 
@@ -70,6 +71,7 @@ def main():
                             email
                             fullName
                             id
+                            metadata
                             stripeCustomerId
                         }
                     }
@@ -103,6 +105,13 @@ def main():
             coupon = get_active_coupon(node)
             coupon_parts = parse_coupon(coupon) if coupon else {}
 
+            if node['member']['metadata']:
+                print(node['member']['metadata'])
+
+            # TODO
+            # sda_student_months = get_student_months(node, 'SDACADEMY')
+            # sda_status = get_student_status(node)
+
             records.append({
                 'Name': name,
                 'Discord Name': user.display_name.strip() if user else None,
@@ -120,6 +129,10 @@ def main():
                 'Discord Member?': user.is_member if user else False,
                 'Discord Since': user.first_seen_on().isoformat() if user else None,
                 'Memberful Past Due?': node['pastDue'],
+
+                # TODO
+                # 'SDA Student': ', '.join(sda_student_months),
+                # 'SDA Status': None,
             })
 
             if user:
@@ -158,6 +171,7 @@ def main():
             })
 
     logger.info('Uploading subscriptions to Google Sheets')
+    records.sort(key=sort_key, reverse=True)
     google_sheets.upload(google_sheets.get(DOC_KEY, 'subscriptions'), records)
 
 
@@ -173,6 +187,15 @@ def get_active_coupon(node):
         return last_order['coupon']['code']
     except IndexError:
         return None
+
+
+def sort_key(record):
+    return (
+        bool(record['Memberful Active?']),
+        bool(record['Discord Member?']),
+        bool(record['Memberful ID']),
+        record['Discord Since'] if record['Discord Since'] else '2019-01-01',
+    )
 
 
 if __name__ == '__main__':
