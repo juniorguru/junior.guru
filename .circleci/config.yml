@@ -10,13 +10,14 @@ executors:
 
 orbs:
   gh-pages: sugarshin/gh-pages@0.0.6
+  git-shallow-clone: guitarrapc/git-shallow-clone@2.4.0
 
 
 jobs:
   install:
     executor: python-js
     steps:
-      - checkout
+      - git-shallow-clone/checkout
       - restore_cache:
           key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
       - run:
