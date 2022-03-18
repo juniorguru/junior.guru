@@ -60,6 +60,7 @@ jobs:
       - run:
           name: Sync data (scrape jobs)
           command: |
+            export LOG_LEVEL='debug'
             export PROXIES_ENABLED=1
             poetry run invoke sync.ci.scrape-jobs
       - save_cache:
