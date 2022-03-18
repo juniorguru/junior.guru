@@ -28,7 +28,7 @@ STUDENT_ROLE_PREFIX = 'Student: '
 
 @measure()
 def main():
-    run_discord_task('juniorguru.sync.stickers.discord_task')
+    run_discord_task('juniorguru.sync.roles.discord_task')
 
 
 @db.connection_context()
