@@ -32,8 +32,6 @@ class ScrapingProxyMiddleware():
         self.proxies = []
 
     def get_proxy(self):
-        if not self.enabled:
-            return None
         if not self.proxies:
             self.proxies = scrape_proxies()
         return random.choice(self.proxies[:5])
@@ -63,7 +61,11 @@ class ScrapingProxyMiddleware():
                                dont_filter=True)
 
     def process_request(self, request, spider):
-        if not getattr(spider, 'proxy', False):
+        if not self.enabled:
+            return
+        if not getattr(spider, 'proxies', False):
+            return
+        if not request.meta.get('proxies', True):
             return
         user_agent = self.get_user_agent()
         request.headers['User-Agent'] = user_agent

@@ -11,7 +11,7 @@ from juniorguru.lib.url_params import increment_param, strip_params, strip_utm_p
 
 class Spider(BaseSpider):
     name = 'linkedin'
-    proxy = True
+    proxies = True
     download_timeout = 59
     download_delay = 1
     custom_settings = {'ROBOTSTXT_OBEY': False}
@@ -73,7 +73,10 @@ class Spider(BaseSpider):
         item = loader.load_item()
 
         if item.get('apply_url'):
-            yield response.follow(item['apply_url'], callback=self.verify_job, cb_kwargs=dict(item=item))
+            yield response.follow(item['apply_url'],
+                                  callback=self.verify_job,
+                                  cb_kwargs=dict(item=item),
+                                  meta=dict(proxies=False))
         else:
             yield item
 
