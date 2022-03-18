@@ -1,18 +1,10 @@
 from pathlib import Path
 import random
-from multiprocessing import Pool
 
-import requests
 from scrapy.downloadermiddlewares.retry import RetryMiddleware
 
 from juniorguru.lib import loggers
 
-
-VERIFY_SPEED_WORKERS = 1
-
-VERIFY_SPEED_TIMEOUT_SEC = 5
-
-SCRAPING_BATCH_SIZE = 5
 
 PROXIES_PATH = Path(__file__).parent.parent / 'data' / 'proxies.txt'
 
@@ -32,21 +24,24 @@ class ScrapingProxyMiddleware():
 
     @classmethod
     def from_crawler(cls, crawler):
-        return cls(enabled=crawler.settings.getbool('PROXIES_ENABLED'),
+        return cls(PROXIES_PATH.read_text().splitlines(),
+                   enabled=crawler.settings.getbool('PROXIES_ENABLED'),
                    user_agents=crawler.settings.getlist('PROXIES_USER_AGENTS'))
 
-    def __init__(self, enabled=False, user_agents=None):
+    def __init__(self, proxies, enabled=False, user_agents=None):
         self.enabled = enabled
         self.user_agents = user_agents or self.DEFAULT_PROXIES_USER_AGENTS
-        self.proxies = None
-        self.proxies_batch = []
+        self.proxies = proxies
+        self.priority_proxies = []
 
     def get_proxy(self):
-        if self.proxies is None:
-            self.proxies = generate_proxies()
-        if not self.proxies_batch:
-            self.proxies_batch = next(self.proxies)
-        return random.choice(self.proxies_batch)
+        try:
+            return random.choice(self.priority_proxies)
+        except IndexError:
+            try:
+                return random.choice(self.proxies)
+            except IndexError:
+                return None
 
     def get_user_agent(self):
         return random.choice(self.user_agents)
@@ -55,17 +50,31 @@ class ScrapingProxyMiddleware():
         headers = {n: v for n, v in headers.items() if n.lower() != 'user-agent'}
         return {'User-Agent': self.get_user_agent(), **headers}
 
-    def rotate_proxies(self, request):
-        logger.warning(f'Rotating proxies (currently {len(self.proxies_batch)})')
-        meta = {k: v for k, v in request.meta.items() if k != 'proxy'}
+    def prioritize_proxy(self, proxy_url):
         try:
-            self.proxies_batch.remove(request.meta.get('proxy'))
+            self.proxies.remove(proxy_url)
         except ValueError:
             pass
-        proxy = self.get_proxy()
-        if proxy:
+        self.priority_proxies.append(proxy_url)
+
+    def rotate_proxies(self, request):
+        logger.warning(f'Rotating proxies (currently {len(self.proxies)})')
+        meta = {k: v for k, v in request.meta.items() if k != 'proxy'}
+
+        proxy_url = request.meta.get('proxy')
+        try:
+            self.proxies.remove(proxy_url)
+        except ValueError:
+            pass
+        try:
+            self.priority_proxies.remove(proxy_url)
+        except ValueError:
+            pass
+
+        proxy_url = self.get_proxy()
+        if proxy_url:
             return request.replace(headers=self.rotate_user_agent(request.headers),
-                                   meta={'proxy': proxy, **meta},
+                                   meta={'proxy': proxy_url, **meta},
                                    dont_filter=True)
         logger.warning('No proxies, continuing without proxy')
         return request.replace(headers=self.rotate_user_agent(request.headers),
@@ -79,10 +88,10 @@ class ScrapingProxyMiddleware():
             return
         user_agent = self.get_user_agent()
         request.headers['User-Agent'] = user_agent
-        proxy = self.get_proxy()
-        if proxy:
-            logger.debug(f"Proxying {request!r} via {proxy} ({user_agent})")
-            request.meta['proxy'] = proxy
+        proxy_url = self.get_proxy()
+        if proxy_url:
+            logger.debug(f"Proxying {request!r} via {proxy_url} ({user_agent})")
+            request.meta['proxy'] = proxy_url
 
     def process_exception(self, request, exception, spider):
         if not self.enabled or not getattr(spider, 'proxies', False):
@@ -97,43 +106,12 @@ class ScrapingProxyMiddleware():
         if not self.enabled or not getattr(spider, 'proxies', False):
             return response
         if not request.meta.get('proxy'):  # proxies haven't been used for this request
-            return
-        if response.status in [504, 999] or 'mgts.ru' in response.url:
+            return response
+        proxy_url = request.meta['proxy']
+        if response.status in [504, 999]:
             user_agent = request.headers.get('User-Agent').decode()
-            proxy = request.meta['proxy']
-            logger.info(f"Got {response!r} proxied via {proxy} ({user_agent})")
+            logger.info(f"Got {response!r} proxied via {proxy_url} ({user_agent})")
             return self.rotate_proxies(request)
         logger.debug(f'Got proxied response {response!r}')
+        self.prioritize_proxy(proxy_url)
         return response
-
-
-def generate_proxies():
-    urls = PROXIES_PATH.read_text().splitlines()
-    logger.info(f'Found {len(urls)} proxies')
-    while True:
-        random.shuffle(urls)
-        speedy_urls = []
-        with Pool(VERIFY_SPEED_WORKERS) as pool:
-            counter = 0
-            for proxy in pool.imap_unordered(verify_proxy_speed, urls):
-                if proxy['speed_sec'] < 1000:
-                    logger.info(f"Proxy {proxy['url']} speed is {proxy['speed_sec']}")
-                    speedy_urls.append(proxy['url'])
-                    counter += 1
-                else:
-                    logger.debug(f"Proxy {proxy['url']} timed out")
-                if counter >= SCRAPING_BATCH_SIZE:
-                    logger.info('Found enough fast proxies')
-                    break
-        yield speedy_urls
-
-
-def verify_proxy_speed(url):
-    try:
-        response = requests.head('https://www.linkedin.com/',
-                                 timeout=VERIFY_SPEED_TIMEOUT_SEC,
-                                 proxies=dict(http=url, https=url))
-        speed_sec = int(response.elapsed.total_seconds())
-    except:
-        speed_sec = 1000
-    return dict(url=url, speed_sec=speed_sec)
