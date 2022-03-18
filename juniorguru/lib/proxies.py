@@ -1,5 +1,4 @@
 import random
-from functools import lru_cache
 from multiprocessing import Pool
 
 import requests
@@ -24,15 +23,20 @@ class ScrapingProxyMiddleware():
 
     @classmethod
     def from_crawler(cls, crawler):
-        proxies = scrape_proxies() if crawler.settings.getbool('PROXIES_ENABLED') else []
-        return cls(proxies, crawler.settings)
+        return cls(enabled=crawler.settings.getbool('PROXIES_ENABLED'),
+                   user_agents=crawler.settings.getlist('PROXIES_USER_AGENTS'))
 
-    def __init__(self, proxies, settings):
-        self.proxies = proxies
-        self.user_agents = settings.getlist('PROXIES_USER_AGENTS', self.DEFAULT_PROXIES_USER_AGENTS)
+    def __init__(self, enabled=False, user_agents=None):
+        self.enabled = enabled
+        self.user_agents = user_agents or self.DEFAULT_PROXIES_USER_AGENTS
+        self.proxies = []
 
     def get_proxy(self):
-        return random.choice(self.proxies[:5]) if self.proxies else None
+        if not self.enabled:
+            return None
+        if not self.proxies:
+            self.proxies = scrape_proxies()
+        return random.choice(self.proxies[:5])
 
     def get_user_agent(self):
         return random.choice(self.user_agents)
@@ -53,7 +57,7 @@ class ScrapingProxyMiddleware():
             return request.replace(headers=self.rotate_user_agent(request.headers),
                                    meta={'proxy': proxy, **meta},
                                    dont_filter=True)
-        logger.warning('No proxies left, continuing without proxy')
+        logger.warning('No proxies, continuing without proxy')
         return request.replace(headers=self.rotate_user_agent(request.headers),
                                meta=meta,
                                dont_filter=True)
@@ -87,8 +91,8 @@ class ScrapingProxyMiddleware():
         return response
 
 
-@lru_cache
 def scrape_proxies():
+    logger.info('Scraping proxies')
     urls = []
     response = requests.get('https://free-proxy-list.net/', headers={
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
