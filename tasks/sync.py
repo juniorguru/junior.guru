@@ -4,6 +4,7 @@ from juniorguru.lib.tasks import import_sync_tasks
 
 
 SYNC_TASKS_SCRAPE_JOBS = import_sync_tasks([
+    'juniorguru.sync.proxies',
     'juniorguru.sync.scrape_jobs',
 ])
 

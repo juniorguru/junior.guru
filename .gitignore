@@ -84,6 +84,7 @@ google_service_account.json
 /juniorguru/images/logos-jobs/*.png
 /juniorguru/images/posters-events/*.png
 /juniorguru/images/posters-companies/*.png
+/juniorguru/data/proxies.txt
 
 # Data backup
 backup.tar.gz

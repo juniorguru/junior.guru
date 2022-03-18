@@ -1,11 +1,20 @@
+from pathlib import Path
 import random
 from multiprocessing import Pool
 
 import requests
-from lxml import html
 from scrapy.downloadermiddlewares.retry import RetryMiddleware
 
 from juniorguru.lib import loggers
+
+
+VERIFY_SPEED_WORKERS = 8
+
+VERIFY_SPEED_TIMEOUT_SEC = 5
+
+SCRAPING_BATCH_SIZE = 5
+
+PROXIES_PATH = Path(__file__).parent.parent / 'data' / 'proxies.txt'
 
 
 logger = loggers.get(__name__)
@@ -29,12 +38,15 @@ class ScrapingProxyMiddleware():
     def __init__(self, enabled=False, user_agents=None):
         self.enabled = enabled
         self.user_agents = user_agents or self.DEFAULT_PROXIES_USER_AGENTS
-        self.proxies = []
+        self.proxies = None
+        self.proxies_batch = []
 
     def get_proxy(self):
-        if not self.proxies:
-            self.proxies = scrape_proxies()
-        return random.choice(self.proxies[:5])
+        if self.proxies is None:
+            self.proxies = generate_proxies()
+        if not self.proxies_batch:
+            self.proxies_batch = next(self.proxies)
+        return random.choice(self.proxies_batch)
 
     def get_user_agent(self):
         return random.choice(self.user_agents)
@@ -44,10 +56,10 @@ class ScrapingProxyMiddleware():
         return {'User-Agent': self.get_user_agent(), **headers}
 
     def rotate_proxies(self, request):
-        logger.warning(f'Rotating proxies (currently {len(self.proxies)})')
+        logger.warning(f'Rotating proxies (currently {len(self.proxies_batch)})')
         meta = {k: v for k, v in request.meta.items() if k != 'proxy'}
         try:
-            self.proxies.remove(request.meta.get('proxy'))
+            self.proxies_batch.remove(request.meta.get('proxy'))
         except ValueError:
             pass
         proxy = self.get_proxy()
@@ -61,11 +73,9 @@ class ScrapingProxyMiddleware():
                                dont_filter=True)
 
     def process_request(self, request, spider):
-        if not self.enabled:
+        if not self.enabled or not getattr(spider, 'proxies', False):
             return
-        if not getattr(spider, 'proxies', False):
-            return
-        if not request.meta.get('proxies', True):
+        if not request.meta.get('proxies', True):  # allows to explicitly turn proxies off for a particular request
             return
         user_agent = self.get_user_agent()
         request.headers['User-Agent'] = user_agent
@@ -75,15 +85,19 @@ class ScrapingProxyMiddleware():
             request.meta['proxy'] = proxy
 
     def process_exception(self, request, exception, spider):
-        if not getattr(spider, 'proxy', False) or not request.meta.get('proxy'):
+        if not self.enabled or not getattr(spider, 'proxies', False):
+            return
+        if not request.meta.get('proxy'):  # proxies haven't been used for this request
             return
         logger.debug(f'Got proxy exception {exception!r} for {request!r}')
         if isinstance(exception, self.EXCEPTIONS_TO_RETRY):
             return self.rotate_proxies(request)
 
     def process_response(self, request, response, spider):
-        if not getattr(spider, 'proxy', False) or not request.meta.get('proxy'):
+        if not self.enabled or not getattr(spider, 'proxies', False):
             return response
+        if not request.meta.get('proxy'):  # proxies haven't been used for this request
+            return
         if response.status in [504, 999] or 'mgts.ru' in response.url:
             user_agent = request.headers.get('User-Agent').decode()
             proxy = request.meta['proxy']
@@ -93,51 +107,33 @@ class ScrapingProxyMiddleware():
         return response
 
 
-def scrape_proxies():
-    logger.info('Scraping proxies')
-    urls = []
-    response = requests.get('https://free-proxy-list.net/', headers={
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.8,cs;q=0.6,sk;q=0.4,es;q=0.2',
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:81.0) Gecko/20100101 Firefox/81.0',
-        'Referer': 'https://www.sslproxies.org/',
-    })
-    response.raise_for_status()
-    html_tree = html.fromstring(response.text)
-    rows = iter(html_tree.cssselect('.table-striped tr'))
-    headers = [col.text_content() for col in next(rows)]
-    for row in rows:
-        values = [(col.text_content() or '').strip() for col in row]
-        data = dict(zip(headers, values))
-        if data['IP Address'] and data['Port']:
-            urls.append(f"http://{data['IP Address']}:{data['Port']}")
-    random.shuffle(urls)
-    logger.info(f'Scraped {len(urls)} proxies')
-
-    speedy_urls = []
-    with Pool(15) as pool:
-        counter = 0
-        for proxy in pool.imap_unordered(verify_proxy_speed, urls):
-            logger.info(f"Proxy {proxy['url']} speed is {proxy['speed_sec']}")
-            if proxy['speed_sec'] < 1000:
-                speedy_urls.append(proxy['url'])
-                counter += 1
-            if counter >= 10:
-                logger.info('Found enough fast proxies')
-                break
-    return speedy_urls
+def generate_proxies():
+    urls = PROXIES_PATH.read_text().splitlines()
+    logger.info(f'Found {len(urls)} proxies')
+    while True:
+        random.shuffle(urls)
+        speedy_urls = []
+        with Pool(VERIFY_SPEED_WORKERS) as pool:
+            counter = 0
+            for proxy in pool.imap_unordered(verify_proxy_speed, urls):
+                if proxy['speed_sec'] < 1000:
+                    logger.info(f"Proxy {proxy['url']} speed is {proxy['speed_sec']}")
+                    speedy_urls.append(proxy['url'])
+                    counter += 1
+                else:
+                    logger.debug(f"Proxy {proxy['url']} timed out")
+                if counter >= SCRAPING_BATCH_SIZE:
+                    logger.info('Found enough fast proxies')
+                    break
+        yield speedy_urls
 
 
 def verify_proxy_speed(url):
     try:
-        response = requests.head('https://honzajavorek.cz/',
-                                 timeout=10,
+        response = requests.head('https://www.linkedin.com/',
+                                 timeout=VERIFY_SPEED_TIMEOUT_SEC,
                                  proxies=dict(http=url, https=url))
         speed_sec = int(response.elapsed.total_seconds())
     except:
         speed_sec = 1000
     return dict(url=url, speed_sec=speed_sec)
-
-
-if __name__ == '__main__':
-    scrape_proxies()
