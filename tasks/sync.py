@@ -13,7 +13,7 @@ SYNC_TASKS_MAIN = import_sync_tasks([
     'juniorguru.sync.companies',
     'juniorguru.sync.digest',
     'juniorguru.sync.events',
-    'juniorguru.sync.jobs_scraped',
+    'juniorguru.sync.jobs_scraped',  # reads cached jobs data
     'juniorguru.sync.jobs_submitted',
     'juniorguru.sync.last_modified',
     'juniorguru.sync.li_group',
@@ -31,7 +31,7 @@ SYNC_TASKS_MAIN = import_sync_tasks([
 ])
 
 SYNC_TASKS_POSTPROCESS_JOBS = import_sync_tasks([
-    'juniorguru.sync.jobs_scraped',
+    'juniorguru.sync.jobs_scraped',  # reuses db from main, adds newly scraped jobs data
     'juniorguru.sync.jobs_listing',
     'juniorguru.sync.jobs_locations',
     'juniorguru.sync.jobs_logos',
