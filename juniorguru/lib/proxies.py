@@ -8,7 +8,7 @@ from scrapy.downloadermiddlewares.retry import RetryMiddleware
 from juniorguru.lib import loggers
 
 
-VERIFY_SPEED_WORKERS = 8
+VERIFY_SPEED_WORKERS = 1
 
 VERIFY_SPEED_TIMEOUT_SEC = 5
 
