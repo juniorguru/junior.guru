@@ -190,6 +190,9 @@ workflows:
   push:
     jobs:
       - install
+      - lint-and-test:
+          requires:
+            - install
       - sync-scrape-jobs:  # TODO if all works well, scraping can be moved to nightly only
           requires:
             - install
