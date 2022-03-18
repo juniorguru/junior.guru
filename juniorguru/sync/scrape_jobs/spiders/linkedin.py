@@ -13,7 +13,7 @@ class Spider(BaseSpider):
     name = 'linkedin'
     proxy = True
     download_timeout = 59
-    download_delay = 1.25
+    download_delay = 1
     custom_settings = {'ROBOTSTXT_OBEY': False}
 
     headers = {'Accept-Language': 'en-us'}
