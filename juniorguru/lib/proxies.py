@@ -113,18 +113,16 @@ def scrape_proxies():
     logger.info(f'Scraped {len(urls)} proxies')
 
     speedy_urls = []
-    pool = Pool(15)
-    counter = 0
-    for proxy in pool.imap(verify_proxy_speed, urls):
-        logger.info(f"Proxy {proxy['url']} speed is {proxy['speed_sec']}")
-        if proxy['speed_sec'] < 1000:
-            speedy_urls.append(proxy['url'])
-            counter += 1
-        if counter >= 10:
-            logger.info('Found enough fast proxies')
-            break
-    pool.terminate()
-    pool.join()
+    with Pool(15) as pool:
+        counter = 0
+        for proxy in pool.imap_unordered(verify_proxy_speed, urls):
+            logger.info(f"Proxy {proxy['url']} speed is {proxy['speed_sec']}")
+            if proxy['speed_sec'] < 1000:
+                speedy_urls.append(proxy['url'])
+                counter += 1
+            if counter >= 10:
+                logger.info('Found enough fast proxies')
+                break
     return speedy_urls
 
 
