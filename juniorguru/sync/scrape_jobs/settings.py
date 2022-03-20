@@ -16,7 +16,7 @@ DEFAULT_REQUEST_HEADERS = {
 
 DOWNLOADER_MIDDLEWARES = {
    # TODO 'juniorguru.sync.scrape_jobs.monitoring.BackupResponseMiddleware': 530,
-   'juniorguru.lib.proxies.ScrapingProxyMiddleware': 555,
+   'juniorguru.lib.proxies.ScrapingProxiesMiddleware': 555,
 }
 
 EXTENSIONS = {
@@ -56,4 +56,5 @@ HTTPCACHE_DIR = 'http_cache'
 HTTPCACHE_IGNORE_HTTP_CODES = [500, 502, 503, 504, 522, 524, 408, 429, 999]
 HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+PROXIES_FILE = 'juniorguru/data/proxies.txt'
 PROXIES_ENABLED = bool(int(os.getenv('PROXIES_ENABLED', 0)))

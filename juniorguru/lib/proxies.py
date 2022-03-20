@@ -1,47 +1,81 @@
 from pathlib import Path
 import random
+from operator import itemgetter
+from pprint import pformat
 
 from scrapy.downloadermiddlewares.retry import RetryMiddleware
 
 from juniorguru.lib import loggers
 
 
-PROXIES_PATH = Path(__file__).parent.parent / 'data' / 'proxies.txt'
-
-
 logger = loggers.get(__name__)
 
 
-class ScrapingProxyMiddleware():
+class ScrapingProxiesMiddleware():
     EXCEPTIONS_TO_RETRY = RetryMiddleware.EXCEPTIONS_TO_RETRY
 
     DEFAULT_PROXIES_USER_AGENTS = [
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:81.0) Gecko/20100101 Firefox/81.0',
-        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:75.0) Gecko/20100101 Firefox/75.0',
         'Mozilla/5.0 (iPhone; CPU OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/29.0 Mobile/15E148 Safari/605.1.15',
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15',
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:98.0) Gecko/20100101 Firefox/98.0',
     ]
+
+    POOL_SIZE = 3
+
+    LATENCIES_SAMPLE_SIZE = 5
+
+    TIMEOUT_LATENCY = 1000
 
     @classmethod
     def from_crawler(cls, crawler):
-        return cls(PROXIES_PATH.read_text().splitlines(),
+        proxies_list_path = Path(crawler.settings.get('PROXIES_FILE'))
+        proxies_list = proxies_list_path.read_text().splitlines()
+        return cls(proxies_list,
                    enabled=crawler.settings.getbool('PROXIES_ENABLED'),
                    user_agents=crawler.settings.getlist('PROXIES_USER_AGENTS'))
 
     def __init__(self, proxies, enabled=False, user_agents=None):
         self.enabled = enabled
         self.user_agents = user_agents or self.DEFAULT_PROXIES_USER_AGENTS
-        self.proxies = proxies
-        self.priority_proxies = []
+        self.proxies = {proxy_url: [] for proxy_url in proxies}
 
     def get_proxy(self):
-        try:
-            return random.choice(self.priority_proxies)
-        except IndexError:
-            try:
-                return random.choice(self.proxies)
-            except IndexError:
-                return None
+        proxies_repr = {proxy_url: latencies[-1 * self.LATENCIES_SAMPLE_SIZE:]
+                        for proxy_url, latencies
+                        in self.proxies.items() if latencies}
+        if proxies_repr:
+            logger.debug(f"Total {len(self.proxies)} proxies, {len(proxies_repr)} with latencies:\n{pformat(proxies_repr)}")
+        else:
+            logger.debug(f"Total {len(self.proxies)} proxies, none with known latencies")
+
+        proxy_pool = self.get_proxy_pool()
+        logger.debug(f"Choosing from proxy pool {proxy_pool!r}")
+        return random.choice(proxy_pool)
+
+    def get_proxy_pool(self):
+        pool = self.get_low_latency_proxies()
+        pool_size = len(pool)
+        if pool_size != self.POOL_SIZE:
+            untested_proxies = [proxy_url for proxy_url, latencies
+                                in self.proxies.items() if not latencies]
+            sample_size = min(self.POOL_SIZE - pool_size, len(untested_proxies))
+            pool = pool + random.sample(untested_proxies, sample_size)
+        return pool
+
+    def get_low_latency_proxies(self):
+        items = sorted(self.get_proxies_with_avg_latency(),
+                       key=itemgetter(1))
+        return [item[0] for item in items[:self.POOL_SIZE]]
+
+    def get_proxies_with_avg_latency(self):
+        return ((proxy_url, self.calc_avg_latency(latencies))
+                 for proxy_url, latencies in self.proxies.items()
+                 if latencies)
+
+    def calc_avg_latency(self, latencies):
+        sample = latencies[-1 * self.LATENCIES_SAMPLE_SIZE:]
+        return sum(sample) / len(sample)
 
     def get_user_agent(self):
         return random.choice(self.user_agents)
@@ -50,31 +84,26 @@ class ScrapingProxyMiddleware():
         headers = {n: v for n, v in headers.items() if n.lower() != 'user-agent'}
         return {'User-Agent': self.get_user_agent(), **headers}
 
-    def prioritize_proxy(self, proxy_url):
-        try:
-            self.proxies.remove(proxy_url)
-        except ValueError:
-            pass
-        self.priority_proxies.append(proxy_url)
+    def record_proxy_latency(self, proxy_url, latency):
+        logger.debug(f"Proxy {proxy_url} has latency {latency}s")
+        self.proxies.setdefault(proxy_url, [])
+        self.proxies[proxy_url].append(latency)
 
     def rotate_proxies(self, request):
-        logger.warning(f'Rotating proxies (currently {len(self.proxies)})')
+        prev_proxy_url = request.meta.get('proxy')
+        if prev_proxy_url in self.proxies:
+            if self.proxies[prev_proxy_url]:  # non-empty list
+                latency = request.meta.get('download_latency', request.meta['download_timeout'])
+                self.proxies[prev_proxy_url].append(latency)
+            else:
+                del self.proxies[prev_proxy_url]
+
+        next_proxy_url = self.get_proxy()
         meta = {k: v for k, v in request.meta.items() if k != 'proxy'}
-
-        proxy_url = request.meta.get('proxy')
-        try:
-            self.proxies.remove(proxy_url)
-        except ValueError:
-            pass
-        try:
-            self.priority_proxies.remove(proxy_url)
-        except ValueError:
-            pass
-
-        proxy_url = self.get_proxy()
-        if proxy_url:
+        if next_proxy_url:
+            logger.warning(f'Rotating proxies: {next_proxy_url} instead of {prev_proxy_url}')
             return request.replace(headers=self.rotate_user_agent(request.headers),
-                                   meta={'proxy': proxy_url, **meta},
+                                   meta={'proxy': next_proxy_url, **meta},
                                    dont_filter=True)
         logger.warning('No proxies, continuing without proxy')
         return request.replace(headers=self.rotate_user_agent(request.headers),
@@ -108,10 +137,13 @@ class ScrapingProxyMiddleware():
         if not request.meta.get('proxy'):  # proxies haven't been used for this request
             return response
         proxy_url = request.meta['proxy']
-        if response.status in [504, 999]:
+        if self.is_invalid_response(response):
             user_agent = request.headers.get('User-Agent').decode()
-            logger.info(f"Got {response!r} proxied via {proxy_url} ({user_agent})")
+            logger.info(f"Invalid response: {response!r} proxied via {proxy_url} ({user_agent})")
             return self.rotate_proxies(request)
         logger.debug(f'Got proxied response {response!r}')
-        self.prioritize_proxy(proxy_url)
+        self.record_proxy_latency(proxy_url, request.meta['download_latency'])
         return response
+
+    def is_invalid_response(self, response):
+        return response.status in [504, 999]

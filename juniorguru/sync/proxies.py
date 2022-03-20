@@ -1,9 +1,16 @@
+from pathlib import Path
+
 import requests
 from lxml import html
 
 from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
-from juniorguru.lib.proxies import PROXIES_PATH
+from juniorguru.sync.scrape_jobs.settings import PROXIES_FILE
+
+
+VERIFY_WORKERS = 15
+VERIFY_TIMEOUT = 20
+VERIFY_URL = 'https://www.linkedin.com'
 
 
 logger = loggers.get(__name__)
@@ -12,7 +19,6 @@ logger = loggers.get(__name__)
 @sync_task()
 def main():
     logger.info('Scraping proxies')
-    urls = []
     response = requests.get('https://free-proxy-list.net/', headers={
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.8,cs;q=0.6,sk;q=0.4,es;q=0.2',
@@ -20,14 +26,19 @@ def main():
         'Referer': 'https://www.sslproxies.org/',
     })
     response.raise_for_status()
+
+    logger.info('Parsing proxies')
     html_tree = html.fromstring(response.text)
     rows = iter(html_tree.cssselect('.table-striped tr'))
     headers = [col.text_content() for col in next(rows)]
+    urls = []
     for row in rows:
         values = [(col.text_content() or '').strip() for col in row]
         data = dict(zip(headers, values))
         if data['IP Address'] and data['Port']:
             urls.append(f"http://{data['IP Address']}:{data['Port']}")
-    logger.info(f'Scraped {len(urls)} proxies')
-    logger.info(f'Writing to {PROXIES_PATH}')
-    PROXIES_PATH.write_text('\n'.join(urls))
+    logger.info(f'Got {len(urls)} proxies')
+
+    proxies_list_path = Path(PROXIES_FILE)
+    logger.info(f'Writing proxies to {proxies_list_path}')
+    proxies_list_path.write_text('\n'.join(urls))
