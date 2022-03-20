@@ -34,20 +34,19 @@ class ScrapingProxiesMiddleware():
         self.proxies = {proxy_url: None for proxy_url in proxies}
 
     def get_proxy(self):
-        verified_proxies = {proxy_url: latency for proxy_url, latency
+        used_proxies = {proxy_url: latency for proxy_url, latency
                             in self.proxies.items() if latency is not None}
-        logger.debug(f"Total {len(self.proxies)} proxies, "
-                     f"{len(verified_proxies)} with known latencies:\n"
-                     f"{pformat(verified_proxies)}")
+        logger.info(f"Total {len(self.proxies)} proxies, {len(used_proxies)} in use")
+        logger.debug('Used proxies (latencies in seconds):\n' + pformat(used_proxies))
 
         try:
-            candidate_proxies = [next(proxy_url for proxy_url in self.proxies.keys()
-                                      if proxy_url not in verified_proxies)]
+            unused_proxies = [next(proxy_url for proxy_url in self.proxies.keys()
+                                   if proxy_url not in used_proxies)]
         except StopIteration:
-            candidate_proxies = []
-
-        proxies = list(verified_proxies.keys()) + candidate_proxies
+            unused_proxies = []
+        proxies = list(used_proxies.keys()) + unused_proxies
         logger.debug(f'Choosing from: {proxies!r}')
+
         try:
             return random.choice(proxies)
         except IndexError:
@@ -61,7 +60,6 @@ class ScrapingProxiesMiddleware():
         return {'User-Agent': self.get_user_agent(), **headers}
 
     def record_proxy_latency(self, proxy_url, latency):
-        logger.debug(f"Proxy {proxy_url} has latency {latency}s")
         self.proxies[proxy_url] = latency
 
     def rotate_proxies(self, request):
