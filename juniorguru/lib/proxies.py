@@ -1,6 +1,5 @@
 from pathlib import Path
 import random
-from operator import itemgetter
 from pprint import pformat
 
 from scrapy.downloadermiddlewares.retry import RetryMiddleware
@@ -21,12 +20,6 @@ class ScrapingProxiesMiddleware():
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:98.0) Gecko/20100101 Firefox/98.0',
     ]
 
-    POOL_SIZE = 3
-
-    LATENCIES_SAMPLE_SIZE = 5
-
-    TIMEOUT_LATENCY = 1000
-
     @classmethod
     def from_crawler(cls, crawler):
         proxies_list_path = Path(crawler.settings.get('PROXIES_FILE'))
@@ -38,47 +31,27 @@ class ScrapingProxiesMiddleware():
     def __init__(self, proxies, enabled=False, user_agents=None):
         self.enabled = enabled
         self.user_agents = user_agents or self.DEFAULT_PROXIES_USER_AGENTS
-        self.proxies = {proxy_url: [] for proxy_url in proxies}
+        self.proxies = {proxy_url: None for proxy_url in proxies}
 
     def get_proxy(self):
-        proxies_repr = {proxy_url: latencies[-1 * self.LATENCIES_SAMPLE_SIZE:]
-                        for proxy_url, latencies
-                        in self.proxies.items() if latencies}
-        if proxies_repr:
-            logger.debug(f"Total {len(self.proxies)} proxies, {len(proxies_repr)} with latencies:\n{pformat(proxies_repr)}")
-        else:
-            logger.debug(f"Total {len(self.proxies)} proxies, none with known latencies")
+        verified_proxies = {proxy_url: latency for proxy_url, latency
+                            in self.proxies.items() if latency is not None}
+        logger.debug(f"Total {len(self.proxies)} proxies, "
+                     f"{len(verified_proxies)} with known latencies:\n"
+                     f"{pformat(verified_proxies)}")
 
-        proxy_pool = self.get_proxy_pool()
-        logger.debug(f"Choosing from proxy pool {proxy_pool!r}")
         try:
-            return random.choice(proxy_pool)
+            candidate_proxies = [next(proxy_url for proxy_url in self.proxies.keys()
+                                      if proxy_url not in verified_proxies)]
+        except StopIteration:
+            candidate_proxies = []
+
+        proxies = list(verified_proxies.keys()) + candidate_proxies
+        logger.debug(f'Choosing from: {proxies!r}')
+        try:
+            return random.choice(proxies)
         except IndexError:
             return None
-
-    def get_proxy_pool(self):
-        pool = self.get_low_latency_proxies()
-        pool_size = len(pool)
-        if pool_size != self.POOL_SIZE:
-            untested_proxies = [proxy_url for proxy_url, latencies
-                                in self.proxies.items() if not latencies]
-            sample_size = min(self.POOL_SIZE - pool_size, len(untested_proxies))
-            pool = pool + random.sample(untested_proxies, sample_size)
-        return pool
-
-    def get_low_latency_proxies(self):
-        items = sorted(self.get_proxies_with_avg_latency(),
-                       key=itemgetter(1))
-        return [item[0] for item in items[:self.POOL_SIZE]]
-
-    def get_proxies_with_avg_latency(self):
-        return ((proxy_url, self.calc_avg_latency(latencies))
-                 for proxy_url, latencies in self.proxies.items()
-                 if latencies)
-
-    def calc_avg_latency(self, latencies):
-        sample = latencies[-1 * self.LATENCIES_SAMPLE_SIZE:]
-        return sum(sample) / len(sample)
 
     def get_user_agent(self):
         return random.choice(self.user_agents)
@@ -89,17 +62,21 @@ class ScrapingProxiesMiddleware():
 
     def record_proxy_latency(self, proxy_url, latency):
         logger.debug(f"Proxy {proxy_url} has latency {latency}s")
-        self.proxies.setdefault(proxy_url, [])
-        self.proxies[proxy_url].append(latency)
+        self.proxies[proxy_url] = latency
 
     def rotate_proxies(self, request):
         prev_proxy_url = request.meta.get('proxy')
-        if prev_proxy_url in self.proxies:
-            if self.proxies[prev_proxy_url]:  # non-empty list
-                latency = request.meta.get('download_latency', request.meta['download_timeout'])
-                self.proxies[prev_proxy_url].append(latency)
-            else:
+
+        try:
+            prev_latency = self.proxies[prev_proxy_url]
+        except KeyError:
+            pass
+        else:
+            if prev_latency is None:
                 del self.proxies[prev_proxy_url]
+            else:
+                next_latency = request.meta.get('download_latency', request.meta['download_timeout'])
+                self.proxies[prev_proxy_url] = next_latency
 
         next_proxy_url = self.get_proxy()
         meta = {k: v for k, v in request.meta.items() if k != 'proxy'}
