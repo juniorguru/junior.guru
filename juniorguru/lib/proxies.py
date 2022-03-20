@@ -51,7 +51,10 @@ class ScrapingProxiesMiddleware():
 
         proxy_pool = self.get_proxy_pool()
         logger.debug(f"Choosing from proxy pool {proxy_pool!r}")
-        return random.choice(proxy_pool)
+        try:
+            return random.choice(proxy_pool)
+        except IndexError:
+            return None
 
     def get_proxy_pool(self):
         pool = self.get_low_latency_proxies()
