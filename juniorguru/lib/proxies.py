@@ -1,6 +1,5 @@
 from pathlib import Path
 import random
-from pprint import pformat
 
 from scrapy.downloadermiddlewares.retry import RetryMiddleware
 
@@ -25,11 +24,9 @@ class ScrapingProxiesMiddleware():
         proxies_list_path = Path(crawler.settings.get('PROXIES_FILE'))
         proxies_list = proxies_list_path.read_text().splitlines()
         return cls(proxies_list,
-                   enabled=crawler.settings.getbool('PROXIES_ENABLED'),
                    user_agents=crawler.settings.getlist('PROXIES_USER_AGENTS'))
 
-    def __init__(self, proxies, enabled=False, user_agents=None):
-        self.enabled = enabled
+    def __init__(self, proxies, user_agents=None):
         self.user_agents = user_agents or self.DEFAULT_PROXIES_USER_AGENTS
         self.proxies = {proxy_url: None for proxy_url in proxies}
 
@@ -37,7 +34,6 @@ class ScrapingProxiesMiddleware():
         used_proxies = {proxy_url: latency for proxy_url, latency
                             in self.proxies.items() if latency is not None}
         logger.info(f"Total {len(self.proxies)} proxies, {len(used_proxies)} in use")
-        logger.debug('Used proxies (latencies in seconds):\n' + pformat(used_proxies))
 
         try:
             unused_proxies = [next(proxy_url for proxy_url in self.proxies.keys()
@@ -45,7 +41,6 @@ class ScrapingProxiesMiddleware():
         except StopIteration:
             unused_proxies = []
         proxies = list(used_proxies.keys()) + unused_proxies
-        logger.debug(f'Choosing from: {proxies!r}')
 
         try:
             return random.choice(proxies)
@@ -79,7 +74,7 @@ class ScrapingProxiesMiddleware():
         next_proxy_url = self.get_proxy()
         meta = {k: v for k, v in request.meta.items() if k != 'proxy'}
         if next_proxy_url:
-            logger.warning(f'Rotating proxies: {next_proxy_url} instead of {prev_proxy_url}')
+            logger.debug(f'Rotating proxies: {next_proxy_url} instead of {prev_proxy_url}')
             return request.replace(headers=self.rotate_user_agent(request.headers),
                                    meta={'proxy': next_proxy_url, **meta},
                                    dont_filter=True)
@@ -89,7 +84,7 @@ class ScrapingProxiesMiddleware():
                                dont_filter=True)
 
     def process_request(self, request, spider):
-        if not self.enabled or not getattr(spider, 'proxies', False):
+        if not getattr(spider, 'proxies', False):
             return
         if not request.meta.get('proxies', True):  # allows to explicitly turn proxies off for a particular request
             return
@@ -101,7 +96,7 @@ class ScrapingProxiesMiddleware():
             request.meta['proxy'] = proxy_url
 
     def process_exception(self, request, exception, spider):
-        if not self.enabled or not getattr(spider, 'proxies', False):
+        if not getattr(spider, 'proxies', False):
             return
         if not request.meta.get('proxy'):  # proxies haven't been used for this request
             return
@@ -110,7 +105,7 @@ class ScrapingProxiesMiddleware():
             return self.rotate_proxies(request)
 
     def process_response(self, request, response, spider):
-        if not self.enabled or not getattr(spider, 'proxies', False):
+        if not getattr(spider, 'proxies', False):
             return response
         if not request.meta.get('proxy'):  # proxies haven't been used for this request
             return response

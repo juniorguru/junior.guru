@@ -1,6 +1,3 @@
-import os
-
-
 BOT_NAME = 'jobs'
 
 SPIDER_MODULES = ['juniorguru.sync.scrape_jobs.spiders']
@@ -57,4 +54,3 @@ HTTPCACHE_IGNORE_HTTP_CODES = [500, 502, 503, 504, 522, 524, 408, 429, 999]
 HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 PROXIES_FILE = 'juniorguru/data/proxies.txt'
-PROXIES_ENABLED = bool(int(os.getenv('PROXIES_ENABLED', 0)))
