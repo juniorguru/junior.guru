@@ -52,8 +52,26 @@
 #    prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+#- title: "TBD (Next.js)"
+#  date: "2022-04-19"
+#  description: |
+#    TBD
+#  bio_name: Svetlana Margetová
+#  bio_title: Zakladatelka Kompilátor, programátorka, mentorka
+#  bio: |
+#    Vediem vývoj vo vlastnej firme Kompilátor, kde pomáham nielen klientom, ale aj programátorom prepájať IT svet s tým reálnym. Mám viac než 10 ročné skúsenosti s návrhom a vývojom systémov, pričom som prešla iteračným prechodom od backend vývojára, cez analytika, až k mobilným aplikáciám. Vo voľnom čase chytám pokémony, hrám sa s Arduinom a som večné dieťa, ktoré nikdy neprestane robiť to, čo ho baví.
+#  bio_links:
+#    - https://margetova.eu/
+#    - https://www.kompilator.cz/
+#    - https://www.linkedin.com/in/msvetlana/
+#    - https://www.instagram.com/swetus/
+#    - https://github.com/SvetlanaM
+#  logo_path: logos/kompilator.svg
+#  speakers: 477895566085324801
+
+
 # - title: "TBD (Jak cestovat při práci v IT)"
-#   date: "2022-03-22"
+#   date: "2022-04-05"
 #   description: |
 #     TBD
 #   bio_name: Honza Tauš
