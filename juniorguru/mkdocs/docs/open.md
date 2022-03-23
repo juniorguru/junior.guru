@@ -153,6 +153,11 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
                 'backgroundColor': '#801515',
             },
             {
+                'label': 'účetní',
+                'data': charts_cost_breakdown.pop('accounting'),
+                'backgroundColor': '#a9a9a9',
+            },
+            {
                 'label': 'marketing',
                 'data': charts_cost_breakdown.pop('marketing'),
                 'backgroundColor': '#550000',
