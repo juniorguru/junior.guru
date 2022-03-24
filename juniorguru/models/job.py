@@ -243,8 +243,9 @@ class ListedJob(BaseModel):
         if self.remote:
             tags.append('REMOTE')
 
-        employment_types = frozenset(self.employment_types)
-        tags.extend(get_employment_types_tags(employment_types))
+        if self.employment_types:
+            employment_types = frozenset(self.employment_types)
+            tags.extend(get_employment_types_tags(employment_types))
 
         return tags
 
