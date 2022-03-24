@@ -135,12 +135,15 @@ def parse(path):
     Parse given .jsonl.gz file, generate items, i.e. dicts with scraped
     job data.
     """
+    logger_p = logger.getChild('parse')
     try:
         with gzip.open(path, 'rt') as f:
             for line_no, line in enumerate(f, start=1):
                 yield parse_line(path, line_no, line)
+    except EOFError:
+        logger_p.error(f'Unreadable file, probably empty: {path}')
+        return
     except Exception:
-        logger_p = logger.getChild('parse')
         logger_p.exception(f'Error parsing file: {path}')
         raise
 
