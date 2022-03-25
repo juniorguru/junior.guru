@@ -68,7 +68,7 @@ jobs:
           paths:
             - .scrapy
       - save_cache:
-          key: jobs-v1-{{ .Branch }}
+          key: jobs-v1-{{ .Branch }}-{{ checksum ".today" }}
           paths:
             - juniorguru/data/jobs
       - persist_to_workspace:
@@ -115,7 +115,7 @@ jobs:
             fi
             poetry run invoke sync.ci.postprocess-jobs
       - save_cache:
-          key: jobs-emails-v1-{{ .Branch }}
+          key: jobs-emails-v1-{{ .Branch }}-{{ checksum "juniorguru/data/jobs-emails.txt" }}
           paths:
             - juniorguru/data/jobs-emails.txt
       - persist_to_workspace:
