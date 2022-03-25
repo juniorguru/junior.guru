@@ -14,14 +14,25 @@ from juniorguru.models import ListedJob
 from juniorguru.sync import jobs_listing
 
 
+DEBUG_JOBS_EMAILS = os.getenv('DEBUG_JOBS_EMAILS')
+
+SMTP_ENABLED = bool(os.getenv('SMTP_ENABLED'))
+
+SMTP_HOST = os.environ['SMTP_HOST']
+
+SMTP_PORT = os.environ['SMTP_PORT']
+
+SMTP_USERNAME = os.environ['SMTP_USERNAME']
+
+SMTP_PASSWORD = os.environ['SMTP_PASSWORD']
+
+
 logger = loggers.get(__name__)
 
 
 @sync_task(jobs_listing.main)
 def main():
-    config = os.environ
-    debug = os.getenv('DEBUG_SEND')
-    logger.info(f"Debug: {'YES' if debug else 'NO'}")
+    logger.info(f"Debug: {'YES' if DEBUG_JOBS_EMAILS else 'NO'}")
     today = date.today()
     logger.info(f"Today: {today:%Y-%m-%d}")
     logger.info(f"About to send {__name__}")
@@ -29,7 +40,7 @@ def main():
         logger.error('Monday? YES')
     else:
         logger.error('Monday? NO')
-        if debug:
+        if DEBUG_JOBS_EMAILS:
             logger.info('Debug mode suppressed early exit')
         else:
             return
@@ -37,18 +48,17 @@ def main():
     messages = list(generate_messages(today))
     logger.info(f"The {__name__} generated {len(messages)} messages")
 
-    if config.get('SMTP_ENABLED'):
+    if SMTP_ENABLED:
         logger.debug('Sending enabled')
 
-        if debug:
+        if DEBUG_JOBS_EMAILS:
             sample_message = random.choice(messages)
             logger.info(f"Debug mode chose a message '{sample_message['subject']}'")
             messages = [debug_message(sample_message)]
 
-        server = smtplib.SMTP(host=config['SMTP_HOST'],
-                                port=int(config['SMTP_PORT']))
+        server = smtplib.SMTP(host=SMTP_HOST, port=int(SMTP_PORT))
         server.starttls()
-        server.login(config['SMTP_USERNAME'], config['SMTP_PASSWORD'])
+        server.login(SMTP_USERNAME, SMTP_PASSWORD)
         try:
             for message in messages:
                 logger.debug(f"Sending message '{message['subject']}'")
