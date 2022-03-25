@@ -115,7 +115,7 @@ class ScrapingProxiesMiddleware():
             logger.info(f"Invalid response: {response!r} proxied via {proxy_url} ({user_agent})")
             return self.rotate_proxies(request)
         logger.debug(f'Got proxied response {response!r}')
-        self.record_proxy_latency(proxy_url, request.meta['download_latency'])
+        self.record_proxy_latency(proxy_url, request.meta.get('download_latency', 0))  # requests from cache don't have this set
         return response
 
     def is_invalid_response(self, response):
