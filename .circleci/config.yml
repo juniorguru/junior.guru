@@ -59,8 +59,9 @@ jobs:
           key: scrapy-{{ checksum ".today" }}
       - run:
           name: Sync data (scrape jobs)
+          environment:
+            LOG_LEVEL: debug
           command: |
-            export LOG_LEVEL='debug'
             poetry run invoke sync.ci.scrape-jobs
       - save_cache:
           key: scrapy-{{ checksum ".today" }}
@@ -75,8 +76,7 @@ jobs:
           paths:
               - project/juniorguru/data/jobs
 
-  # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY,
-  # $MEMBERFUL_API_KEY, $SMTP_* (see README.md)
+  # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
   sync-main:
     executor: python-js
     steps:
@@ -85,7 +85,9 @@ jobs:
       - run:
           name: Sync data
           command: |
-            export DISCORD_MUTATIONS_ENABLED=1
+            if [[ $CIRCLE_BRANCH = "main" ]]; then
+              export DISCORD_MUTATIONS_ENABLED=1
+            fi
             poetry run invoke sync.ci.main
       - persist_to_workspace:
           root: "~"
@@ -93,6 +95,7 @@ jobs:
               - project/juniorguru/data
               - project/juniorguru/images
 
+  # Needs $DISCORD_API_KEY, $SMTP_* (see README.md)
   sync-postprocess-jobs:
     executor: python-js
     steps:
@@ -102,10 +105,13 @@ jobs:
           key: jobs-emails-v1-{{ .Branch }}
       - run:
           name: Sync data (postprocess jobs)
+          environment:
+            JOBS_SCRAPED_REUSE_DB_ENABLED: 1
           command: |
-            [[ $CIRCLE_BRANCH = "main" ]] && export JOBS_EMAILS_SENDING_ENABLED=1 || export JOBS_EMAILS_SENDING_ENABLED=0
-            export DISCORD_MUTATIONS_ENABLED=1
-            export JOBS_SCRAPED_REUSE_DB_ENABLED=1
+            if [[ $CIRCLE_BRANCH = "main" ]]; then
+              export JOBS_EMAILS_SENDING_ENABLED=1
+              export DISCORD_MUTATIONS_ENABLED=1
+            fi
             poetry run invoke sync.ci.postprocess-jobs
       - save_cache:
           key: jobs-emails-v1-{{ .Branch }}

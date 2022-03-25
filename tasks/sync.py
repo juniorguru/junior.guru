@@ -37,7 +37,7 @@ SYNC_TASKS_POSTPROCESS_JOBS = import_sync_tasks([
     'juniorguru.sync.jobs_locations',
     'juniorguru.sync.jobs_logos',
     'juniorguru.sync.jobs_emails',
-    # 'juniorguru.sync.jobs_club',  TODO až naostro!
+    'juniorguru.sync.jobs_club',
 ])
 
 SYNC_TASKS_ALL = (
