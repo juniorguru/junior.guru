@@ -56,7 +56,7 @@ jobs:
       - restore_cache:  # persisting the jobs data between builds
           key: jobs-v1-{{ .Branch }}
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
-          key: scrapy-{{ checksum ".today" }}
+          key: scrapy-v1-{{ checksum ".today" }}
       - run:
           name: Sync data (scrape jobs)
           environment:
@@ -64,7 +64,7 @@ jobs:
           command: |
             poetry run invoke sync.ci.scrape-jobs
       - save_cache:
-          key: scrapy-{{ checksum ".today" }}
+          key: scrapy-v1-{{ checksum ".today" }}
           paths:
             - .scrapy
       - save_cache:
