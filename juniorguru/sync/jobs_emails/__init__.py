@@ -11,12 +11,13 @@ from jinja2 import Template
 from juniorguru.lib import loggers
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models import ListedJob
+from juniorguru.sync import jobs_listing
 
 
 logger = loggers.get(__name__)
 
 
-@sync_task()
+@sync_task(jobs_listing.main)
 def main():
     config = os.environ
     debug = os.getenv('DEBUG_SEND')

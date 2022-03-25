@@ -6,6 +6,7 @@ from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, is_discord_mutable
 from juniorguru.models import ClubMessage, db, ListedJob
+from juniorguru.sync import jobs_listing
 
 
 JOBS_CHANNEL = 834443926655598592
@@ -18,7 +19,7 @@ URL_RE = re.compile(r'https?://\S+', re.I)
 logger = loggers.get(__name__)
 
 
-@sync_task()
+@sync_task(jobs_listing.main)
 def main():
     run_discord_task('juniorguru.sync.jobs_club.discord_task')
 
