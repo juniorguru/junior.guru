@@ -10,7 +10,7 @@ from juniorguru.sync.scrape_jobs.settings import FEEDS_DIR
 from juniorguru.sync.jobs_scraped.processing import filter_relevant_paths, process_paths, postprocess_jobs
 
 
-REUSE_JOBS_DB_ENABLED = bool(int(os.getenv('REUSE_JOBS_DB_ENABLED', 0)))
+JOBS_SCRAPED_REUSE_DB_ENABLED = bool(int(os.getenv('JOBS_SCRAPED_REUSE_DB_ENABLED', 0)))
 
 PREPROCESS_PIPELINES = [
     'juniorguru.sync.jobs_scraped.pipelines.boards_ids',
@@ -37,7 +37,7 @@ def main():
 
     latest_seen_on = None
     with db.connection_context():
-        if REUSE_JOBS_DB_ENABLED:
+        if JOBS_SCRAPED_REUSE_DB_ENABLED:
             logger.warning('Reusing of existing jobs database is enabled!')
             try:
                 latest_seen_on = ScrapedJob.latest_seen_on()

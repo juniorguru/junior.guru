@@ -5,7 +5,7 @@ import pytest
 from jinja2 import Template
 
 from juniorguru.models import ListedJob, SubmittedJob
-from juniorguru.sync.jobs_emails import debug_message, create_message
+from juniorguru.sync.jobs_emails import debug_message, create_message, should_send
 
 
 TEMPLATE_PATH = Path(__file__).parent.parent / 'juniorguru' / 'sync' / 'jobs_emails' / 'templates' / 'job_metrics.html'
@@ -19,6 +19,21 @@ def job():
 @pytest.fixture
 def template():
     return Template(TEMPLATE_PATH.read_text())
+
+
+@pytest.mark.parametrize('today, last_run_on, expected', [
+    pytest.param(date(2022, 3, 28), None, True, id='on Monday, for the first time'),
+    pytest.param(date(2022, 3, 30), None, False, id='on random day, for the first time'),
+    pytest.param(date(2022, 3, 30), date(2022, 3, 28), False, id='on random day, last run this Monday'),
+    pytest.param(date(2022, 4, 3), date(2022, 3, 28), False, id='on random day, last run this Monday'),
+    pytest.param(date(2022, 3, 28), date(2022, 3, 21), True, id='on Monday, last run on previous Monday'),
+    pytest.param(date(2022, 3, 30), date(2022, 3, 21), True, id='on random day, last run on previous Monday'),
+    pytest.param(date(2022, 3, 28), date(2022, 3, 23), True, id='on Monday, last run on previous random day'),
+    pytest.param(date(2022, 3, 30), date(2022, 3, 23), True, id='on random day, last run on previous random day'),
+    pytest.param(date(2022, 3, 28), date(2022, 3, 28), False, id='on Monday, already sent today'),
+])
+def test_should_send(today, last_run_on, expected):
+    assert should_send(today, last_run_on) == expected
 
 
 def test_debug_message():

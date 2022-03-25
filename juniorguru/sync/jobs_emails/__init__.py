@@ -1,6 +1,7 @@
 import os
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
+from pprint import pformat
 import smtplib
 import random
 from email.message import EmailMessage
@@ -14,17 +15,19 @@ from juniorguru.models import ListedJob
 from juniorguru.sync import jobs_listing
 
 
-DEBUG_JOBS_EMAILS = os.getenv('DEBUG_JOBS_EMAILS')
+JOBS_EMAILS_DEBUG = os.getenv('JOBS_EMAILS_DEBUG')
 
-SMTP_ENABLED = bool(os.getenv('SMTP_ENABLED'))
+JOBS_EMAILS_LAST_RUN_FILE = Path('juniorguru/data/jobs-emails.txt')
 
-SMTP_HOST = os.environ['SMTP_HOST']
+JOBS_EMAILS_SENDING_ENABLED = bool(int(os.getenv('JOBS_EMAILS_SENDING_ENABLED', 0)))
 
-SMTP_PORT = os.environ['SMTP_PORT']
+SMTP_HOST = os.environ['SMTP_HOST'] if JOBS_EMAILS_SENDING_ENABLED else None
 
-SMTP_USERNAME = os.environ['SMTP_USERNAME']
+SMTP_PORT = os.environ['SMTP_PORT'] if JOBS_EMAILS_SENDING_ENABLED else None
 
-SMTP_PASSWORD = os.environ['SMTP_PASSWORD']
+SMTP_USERNAME = os.environ['SMTP_USERNAME'] if JOBS_EMAILS_SENDING_ENABLED else None
+
+SMTP_PASSWORD = os.environ['SMTP_PASSWORD'] if JOBS_EMAILS_SENDING_ENABLED else None
 
 
 logger = loggers.get(__name__)
@@ -32,26 +35,34 @@ logger = loggers.get(__name__)
 
 @sync_task(jobs_listing.main)
 def main():
-    logger.info(f"Debug: {'YES' if DEBUG_JOBS_EMAILS else 'NO'}")
     today = date.today()
-    logger.info(f"Today: {today:%Y-%m-%d}")
-    logger.info(f"About to send {__name__}")
-    if today.weekday() == 0:
-        logger.error('Monday? YES')
+    try:
+        last_run_on = date.fromisoformat(JOBS_EMAILS_LAST_RUN_FILE.read_text().strip())
+    except FileNotFoundError:
+        last_run_on = None
+
+    logger.info(f"{today:%A} {today}, " +
+                (f"last run {last_run_on:%A} {last_run_on}, " if last_run_on else 'last run never, ') +
+                f"debug {'YES' if JOBS_EMAILS_DEBUG else 'NO'}, " +
+                f"sending enabled {'YES' if JOBS_EMAILS_SENDING_ENABLED else 'NO'}")
+
+    if should_send(today, last_run_on):
+        logger.info("Should send the emails, yay!")
     else:
-        logger.error('Monday? NO')
-        if DEBUG_JOBS_EMAILS:
+        logger.info("Should NOT send the emails")
+        if JOBS_EMAILS_DEBUG:
             logger.info('Debug mode suppressed early exit')
         else:
             return
 
     messages = list(generate_messages(today))
-    logger.info(f"The {__name__} generated {len(messages)} messages")
+    logger.info(f"Generated {len(messages)} messages")
+    for message_n, message in enumerate(messages, start=1):
+        logger.debug(f'Message #{message_n}:\n' + pformat(message))
 
-    if SMTP_ENABLED:
+    if JOBS_EMAILS_SENDING_ENABLED:
         logger.debug('Sending enabled')
-
-        if DEBUG_JOBS_EMAILS:
+        if JOBS_EMAILS_DEBUG:
             sample_message = random.choice(messages)
             logger.info(f"Debug mode chose a message '{sample_message['subject']}'")
             messages = [debug_message(sample_message)]
@@ -66,8 +77,23 @@ def main():
                 logger.info(f"Sent message '{message['subject']}'")
         finally:
             server.quit()
+
+        logger.info(f"Writing to {JOBS_EMAILS_LAST_RUN_FILE}")
+        JOBS_EMAILS_LAST_RUN_FILE.write_text(today.isoformat())
     else:
         logger.warning('Sending not enabled')
+
+
+def should_send(today, last_run_on):
+    if today.weekday() == 0:
+        if last_run_on == today:
+            return False
+        return True
+    if last_run_on:
+        this_monday = today - timedelta(days=today.weekday())
+        if last_run_on < this_monday:
+            return True
+    return False
 
 
 def debug_message(message):

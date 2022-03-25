@@ -85,7 +85,6 @@ jobs:
       - run:
           name: Sync data
           command: |
-            export SMTP_ENABLED=1
             export DISCORD_MUTATIONS_ENABLED=1
             poetry run invoke sync.ci.main
       - persist_to_workspace:
@@ -99,12 +98,19 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
+      - restore_cache:  # makes jobs-emails idempotent
+          key: jobs-emails-v1-{{ .Branch }}
       - run:
           name: Sync data (postprocess jobs)
           command: |
+            [[ $CIRCLE_BRANCH = "main" ]] && export JOBS_EMAILS_SENDING_ENABLED=1 || export JOBS_EMAILS_SENDING_ENABLED=0
             export DISCORD_MUTATIONS_ENABLED=1
-            export REUSE_JOBS_DB_ENABLED=1
+            export JOBS_SCRAPED_REUSE_DB_ENABLED=1
             poetry run invoke sync.ci.postprocess-jobs
+      - save_cache:
+          key: jobs-emails-v1-{{ .Branch }}
+          paths:
+            - juniorguru/data/jobs-emails.txt
       - persist_to_workspace:
           root: "~"
           paths:
