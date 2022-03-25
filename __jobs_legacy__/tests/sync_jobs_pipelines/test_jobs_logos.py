@@ -5,7 +5,7 @@ import pytest
 from PIL import Image
 from scrapy.pipelines.images import ImageException, ImagesPipeline
 
-from juniorguru.jobs.legacy_jobs.pipelines.company_logo import Pipeline, load_orig_size, select_company_logo
+from juniorguru.sync.jobs_logos import convert_image, SIZE_PX
 
 
 FIXTURES_DIR = Path(__file__).parent / 'fixtures_company_logo'
@@ -66,12 +66,12 @@ def test_company_logo_image_downloaded_too_large(pipeline, res, req, info, width
         pipeline.image_downloaded(res, req, info)
 
 
-def test_company_logo_convert_image_has_expected_size(pipeline):
+def test_company_logo_convert_image_has_expected_size():
     logo = Image.open(FIXTURES_DIR / 'logo.png')
-    image, buffer = pipeline.convert_image(logo)
+    image, buffer = convert_image(logo)
 
-    assert image.width == Pipeline.size_px
-    assert image.height == Pipeline.size_px
+    assert image.width == SIZE_PX
+    assert image.height == SIZE_PX
 
 
 def test_load_orig_size():

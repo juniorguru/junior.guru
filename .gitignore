@@ -97,4 +97,4 @@ backup.tar.gz
 !/juniorguru/web/static/downloads
 
 # Testing debug artifacts
-/tests/sync_scrape_companies/fixtures_company_logo/logo-converted.png
+/tests/sync_jobs_logos/logo-converted.png
