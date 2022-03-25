@@ -53,8 +53,6 @@ jobs:
       - attach_workspace:
           at: "~"
       - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
-      - restore_cache:  # persisting the jobs data between builds
-          key: jobs-v1-{{ .Branch }}
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ checksum ".today" }}
       - run:
@@ -63,14 +61,10 @@ jobs:
             LOG_LEVEL: debug
           command: |
             poetry run invoke sync.ci.scrape-jobs
-      - save_cache:
+      - save_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ checksum ".today" }}
           paths:
             - .scrapy
-      - save_cache:
-          key: jobs-v1-{{ .Branch }}-{{ checksum ".today" }}
-          paths:
-            - juniorguru/data/jobs
       - persist_to_workspace:
           root: "~"
           paths:
@@ -82,8 +76,8 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - restore_cache:  # persisting the jobs data between builds
-          key: jobs-v1-{{ .Branch }}
+      - restore_cache:  # get jobs data persisted between builds
+          key: jobs-v2-{{ .Branch }}
       - run:
           name: Sync data
           command: |
@@ -116,10 +110,14 @@ jobs:
               export DISCORD_MUTATIONS_ENABLED=1
             fi
             poetry run invoke sync.ci.postprocess-jobs
-      - save_cache:
+      - save_cache:  # makes jobs-emails idempotent
           key: jobs-emails-v1-{{ .Branch }}-{{ checksum "juniorguru/data/jobs-emails.txt" }}
           paths:
             - juniorguru/data/jobs-emails.txt
+      - save_cache:  # persisting the jobs data between builds
+          key: jobs-v2-{{ .Branch }}-{{ checksum ".today" }}
+          paths:
+            - juniorguru/data/jobs
       - persist_to_workspace:
           root: "~"
           paths:
