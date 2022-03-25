@@ -1,8 +1,12 @@
+import os
 import string
 
 import gspread
 
 from juniorguru.lib.google import get_credentials
+
+
+GOOGLE_SHEETS_MUTATIONS_ENABLED = bool(int(os.getenv('GOOGLE_SHEETS_MUTATIONS_ENABLED', 0)))
 
 
 def get(doc_key, sheet_name):

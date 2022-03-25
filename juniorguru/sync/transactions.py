@@ -5,6 +5,7 @@ from fiobank import FioBank
 
 from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import google_sheets, loggers
+from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
 from juniorguru.models import Transaction
 
 
@@ -84,7 +85,10 @@ def main():
         Transaction.create(**db_record)
 
     logger.info('Uploading verbose data to a private Google Sheet for manual audit of possible mistakes')
-    google_sheets.upload(google_sheets.get(DOC_KEY, 'transactions'), doc_records)
+    if GOOGLE_SHEETS_MUTATIONS_ENABLED:
+        google_sheets.upload(google_sheets.get(DOC_KEY, 'transactions'), doc_records)
+    else:
+        logger.warning('Google Sheets mutations not enabled')
 
 
 def get_category(transaction):

@@ -10,6 +10,7 @@ from juniorguru.lib.tasks import sync_task
 from juniorguru.sync import club_content
 from juniorguru.lib import loggers
 from juniorguru.lib import google_sheets
+from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
 from juniorguru.models import ClubUser, db
 from juniorguru.lib.club import parse_coupon
 
@@ -173,7 +174,10 @@ def main():
 
     logger.info('Uploading subscriptions to Google Sheets')
     records.sort(key=sort_key, reverse=True)
-    google_sheets.upload(google_sheets.get(DOC_KEY, 'subscriptions'), records)
+    if GOOGLE_SHEETS_MUTATIONS_ENABLED:
+        google_sheets.upload(google_sheets.get(DOC_KEY, 'subscriptions'), records)
+    else:
+        logger.warning('Google Sheets mutations not enabled')
 
 
 def get_active_coupon(node):

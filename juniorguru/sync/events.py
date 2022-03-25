@@ -11,7 +11,7 @@ from juniorguru.models import Event, EventSpeaking, ClubMessage, db
 from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_square, replace_with_jpg
 from juniorguru.lib import loggers
 from juniorguru.lib.template_filters import local_time, md, weekday
-from juniorguru.lib.club import is_discord_mutable, run_discord_task
+from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
 
 
 logger = loggers.get(__name__)
@@ -112,9 +112,11 @@ def main():
             logger.info(f"Saving '{name}'")
             event.save()
 
-    if is_discord_mutable():
+    if DISCORD_MUTATIONS_ENABLED:
         run_discord_task('juniorguru.sync.events.sync_scheduled_events')
         run_discord_task('juniorguru.sync.events.post_next_event_messages')
+    else:
+        logger.warning('Discord mutations not enabled')
 
 
 @db.connection_context()

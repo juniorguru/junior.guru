@@ -4,7 +4,7 @@ from datetime import date, timedelta
 
 from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, is_discord_mutable
+from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED
 from juniorguru.models import ClubMessage, db, ListedJob
 from juniorguru.sync import jobs_listing
 
@@ -34,8 +34,10 @@ async def discord_task(client):
     jobs = [job for job in ListedJob.listing() if job.effective_url not in urls]
     logger.info(f'Posting {len(jobs)} new jobs to the channel')
     discord_channel = await client.fetch_channel(JOBS_CHANNEL)
-    if is_discord_mutable():
+    if DISCORD_MUTATIONS_ENABLED:
         await asyncio.gather(*[post_job(discord_channel, job) for job in jobs])
+    else:
+        logger.warning('Discord mutations not enabled')
 
 
 async def post_job(discord_channel, job):

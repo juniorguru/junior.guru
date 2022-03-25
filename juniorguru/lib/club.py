@@ -10,15 +10,19 @@ import discord
 from juniorguru.lib import loggers
 
 
-DISCORD_API_KEY = os.getenv('DISCORD_API_KEY') or None
 DISCORD_MUTATIONS_ENABLED = bool(int(os.getenv('DISCORD_MUTATIONS_ENABLED', 0)))
+
+DISCORD_API_KEY = os.getenv('DISCORD_API_KEY') or None
+
 JUNIORGURU_GUILD = 769966886598737931
 
 EMOJI_PINS = ['📌']
+
 EMOJI_UPVOTES = ['👍', '❤️', '😍', '🥰', '💕', '♥️', '💖', '💙', '💗', '💜', '💞', '💓', '💛', '🖤', '💚', '😻', '🧡', '👀',
                  '💯', '🤩', '😋', '💟', '🤍', '🤎', '💡', '👆', '👏', '🥇', '🏆', '✔️', 'plus_one', '👌', 'babyyoda',
                  'meowthumbsup', '✅', '🤘', 'this', 'dk', '🙇‍♂️', '🙇', '🙇‍♀️', 'kgsnice', 'successkid', 'white_check_mark',
                  'notbad', 'updoot', '🆒', '🔥'] + EMOJI_PINS
+
 EMOJI_DOWNVOTES = ['👎']
 
 COUPON_RE = re.compile(r'''
@@ -102,14 +106,6 @@ def _discord_task(import_path):
         raise exc
 
 
-def is_discord_mutable():
-    if DISCORD_MUTATIONS_ENABLED:
-        logger.debug("Discord is mutable: DISCORD_MUTATIONS_ENABLED is truthy")
-        return True
-    logger.warning("Discord isn't mutable: DISCORD_MUTATIONS_ENABLED not set")
-    return False
-
-
 def count_upvotes(reactions):
     return sum([reaction.count for reaction in reactions
                 if emoji_name(reaction.emoji) in EMOJI_UPVOTES])
@@ -137,23 +133,24 @@ def get_roles(member_or_user):
 
 
 def is_message_older_than(message, date):
+    logger_fn = logger.getChild('is_message_older_than')
     if message:
         created_dt = message.created_at
-        print(f"Message is from {created_dt}")
+        logger_fn.debug(f"Message is from {created_dt}")
         if created_dt.date() > date:
-            print(f"Message is within period: {created_dt.date()} (last reminder) > {date}")
+            logger_fn.debug(f"Message is within period: {created_dt.date()} (last reminder) > {date}")
             return False
         else:
-            print(f"Message is long time ago: {created_dt.date()} (last reminder) <= {date}")
+            logger_fn.debug(f"Message is long time ago: {created_dt.date()} (last reminder) <= {date}")
             return True
-    logger.info('No message!')
+    logger_fn.debug('No message!')
     return True
 
 
 def is_message_over_period_ago(message, period, today=None):
     today = today or date.today()
     ago = today - period
-    print(f'{today} - {period!r} = {ago}')
+    logger.getChild('is_message_over_period_ago').debug(f'{today} - {period!r} = {ago}')
     return is_message_older_than(message, ago)
 
 

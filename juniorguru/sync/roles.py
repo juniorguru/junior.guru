@@ -6,7 +6,7 @@ from juniorguru.models.company import Company
 from juniorguru.lib.tasks import sync_task
 from juniorguru.sync import club_content, events, avatars, subscriptions, companies
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, is_discord_mutable, get_roles
+from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, get_roles
 from juniorguru.models import ClubUser, Event, db
 
 
@@ -108,7 +108,7 @@ async def discord_task(client):
         changes.extend(evaluate_changes(member.id, member.roles, sponsoring_members_ids, ROLES['is_sponsor']))
 
     # syncing with Discord
-    if is_discord_mutable():
+    if DISCORD_MUTATIONS_ENABLED:
         logger.info(f'Managing roles for {len(companies)} companies')
         await manage_company_roles(client, companies)
 
@@ -125,6 +125,8 @@ async def discord_task(client):
 
         logger.info(f'Applying {len(changes)} changes to roles')
         await apply_changes(client, changes)
+    else:
+        logger.warning('Discord mutations not enabled')
 
 
 async def manage_company_roles(client, companies):
