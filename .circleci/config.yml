@@ -82,6 +82,8 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
+      - restore_cache:  # persisting the jobs data between builds
+          key: jobs-v1-{{ .Branch }}
       - run:
           name: Sync data
           command: |
