@@ -64,7 +64,7 @@ jobs:
             LOG_LEVEL: debug
           command: |
             poetry run invoke sync.ci.scrape-jobs
-      - run: find project/juniorguru/data/jobs/* -print | sort
+      - run: pwd; ls; find project/juniorguru/data/jobs/* -print | sort
       - save_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ checksum ".today" }}
           paths:
