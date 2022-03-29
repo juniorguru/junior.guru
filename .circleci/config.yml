@@ -64,6 +64,7 @@ jobs:
             LOG_LEVEL: debug
           command: |
             poetry run invoke sync.ci.scrape-jobs
+      - run: find project/juniorguru/data/jobs/* -print | sort
       - save_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ checksum ".today" }}
           paths:
@@ -92,7 +93,9 @@ jobs:
       - run:
           name: Prevent persisting the same files as 'sync-scrape-jobs'
           command: |
+            find project/juniorguru/data/jobs/* -print | sort
             rm -rf project/juniorguru/data/jobs/$(date +'%Y')/$(date +'%m')/$(date +'%d')/
+            find project/juniorguru/data/jobs/* -print | sort
       - persist_to_workspace:
           root: "~"
           paths:
