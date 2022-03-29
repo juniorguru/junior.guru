@@ -92,8 +92,6 @@ jobs:
       - run:
           name: Prevent persisting the same files as 'sync-scrape-jobs'
           command: |
-            mkdir -p juniorguru/data/jobs
-            find juniorguru/data/jobs/* -print | sort
             rm -rf juniorguru/data/jobs/$(date +'%Y')/$(date +'%m')/$(date +'%d')/
       - persist_to_workspace:
           root: "~"
