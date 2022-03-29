@@ -111,9 +111,9 @@ jobs:
             fi
             poetry run invoke sync.ci.postprocess-jobs
       - save_cache:  # makes jobs-emails idempotent
-          key: jobs-emails-v1-{{ .Branch }}-{{ checksum "juniorguru/data/jobs-emails.txt" }}
+          key: jobs-emails-v1-{{ .Branch }}-{{ checksum ".today" }}
           paths:
-            - juniorguru/data/jobs-emails.txt
+            - project/juniorguru/data/jobs-emails.txt
       - save_cache:  # persisting the jobs data between builds
           key: jobs-v2-{{ .Branch }}-{{ checksum ".today" }}
           paths:
