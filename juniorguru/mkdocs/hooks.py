@@ -2,7 +2,7 @@ from pathlib import Path
 
 import jinja2
 
-from mkdocs.utils.filters import tojson, url_filter
+from mkdocs.utils.filters import url_filter
 from mkdocs.utils import get_relative_url
 
 from juniorguru.lib import template_filters
@@ -52,7 +52,6 @@ def on_page_markdown(markdown, page, config, files):
     env = jinja2.Environment(loader=loader, auto_reload=False)
 
     filters = {name: getattr(template_filters, name) for name in TEMPLATE_FILTERS}
-    filters['tojson'] = tojson
     filters['url'] = url_filter
     filters['md'] = create_md_filter(page, config, files)
     env.filters.update(filters)
