@@ -1,3 +1,3 @@
 # Company Logos
 
-Gets filled with files during `make sync`. These are logos of companies advertising the jobs on the jobs page. There is a pipeline in the `jobs` scrapers which downloads and edits the logo files.
+Gets filled with files during `poetry run invoke sync.jobs-logos`. These are logos of companies advertising the jobs on the jobs page.

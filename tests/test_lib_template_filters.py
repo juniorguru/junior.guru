@@ -190,26 +190,26 @@ def test_sample_random():
 
 
 
-DummyJob = namedtuple('Job', ['id', 'is_juniorguru'])
+StubJob = namedtuple('Job', ['id', 'is_submitted'])
 
 
 @pytest.mark.parametrize('jobs,n,expected', [
     pytest.param(
-        [DummyJob(id=1, is_juniorguru=False), DummyJob(id=2, is_juniorguru=False)],
+        [StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=False)],
         4,
-        {DummyJob(id=1, is_juniorguru=False), DummyJob(id=2, is_juniorguru=False)},
+        {StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=False)},
         id='len(jobs) < n',
     ),
     pytest.param(
-        [DummyJob(id=1, is_juniorguru=False), DummyJob(id=2, is_juniorguru=False)],
+        [StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=False)],
         2,
-        {DummyJob(id=1, is_juniorguru=False), DummyJob(id=2, is_juniorguru=False)},
+        {StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=False)},
         id='len(jobs) == n',
     ),
     pytest.param(
-        [DummyJob(id=1, is_juniorguru=False), DummyJob(id=2, is_juniorguru=True), DummyJob(id=3, is_juniorguru=True)],
+        [StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=True), StubJob(id=3, is_submitted=True)],
         2,
-        {DummyJob(id=2, is_juniorguru=True), DummyJob(id=3, is_juniorguru=True)},
+        {StubJob(id=2, is_submitted=True), StubJob(id=3, is_submitted=True)},
         id='preferred jobs have priority',
     ),
 ])
@@ -226,12 +226,12 @@ def test_sample_jobs_not_enough_preferred_jobs():
         return jobs[:n]
 
     assert set(template_filters.sample_jobs([
-        DummyJob(id=1, is_juniorguru=False),
-        DummyJob(id=2, is_juniorguru=True),
-        DummyJob(id=3, is_juniorguru=False)
+        StubJob(id=1, is_submitted=False),
+        StubJob(id=2, is_submitted=True),
+        StubJob(id=3, is_submitted=False)
     ], 2, sample_fn=random_sample)) == {
-        DummyJob(id=1, is_juniorguru=False),
-        DummyJob(id=2, is_juniorguru=True),
+        StubJob(id=1, is_submitted=False),
+        StubJob(id=2, is_submitted=True),
     }
     assert random_called is True
 

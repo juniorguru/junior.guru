@@ -1,5 +1,6 @@
 import re
 from datetime import datetime
+from urllib.parse import urlparse
 
 import arrow
 
@@ -70,3 +71,16 @@ def parse_set(value):
         items = (item.strip() for item in value.split(','))
         return frozenset(filter(None, items))
     return frozenset()
+
+
+def parse_url(value):
+    if value:
+        url = value.strip()
+        url_parts = urlparse(url)
+        if not url_parts.scheme:
+            raise ValueError(f"{url} doesn't look like a valid URL")
+        if url_parts.scheme.lower() not in ['http', 'https']:
+            raise ValueError(f"{url} doesn't look like a valid URL")
+        if not url_parts.netloc:
+            raise ValueError(f"{url} doesn't look like a valid URL")
+        return url

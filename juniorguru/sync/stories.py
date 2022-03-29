@@ -2,7 +2,7 @@ from pathlib import Path
 
 from strictyaml import Datetime, Map, Seq, Str, Url, load
 
-from juniorguru.lib.timer import measure
+from juniorguru.lib.tasks import sync_task
 from juniorguru.models import Story, db
 
 
@@ -17,7 +17,7 @@ schema = Seq(
 )
 
 
-@measure()
+@sync_task()
 @db.connection_context()
 def main():
     path = Path(__file__).parent.parent / 'data' / 'stories.yml'
@@ -28,7 +28,3 @@ def main():
 
     for record in records:
         Story.create(**record)
-
-
-if __name__ == '__main__':
-    main()

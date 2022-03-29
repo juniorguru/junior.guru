@@ -3,9 +3,10 @@ from datetime import timedelta, date
 
 from discord import Embed
 
-from juniorguru.lib.timer import measure
+from juniorguru.lib.tasks import sync_task
+from juniorguru.sync import club_content
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, is_discord_mutable, is_message_older_than
+from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, is_message_older_than
 from juniorguru.models import ClubMessage, db
 
 
@@ -16,7 +17,7 @@ DIGEST_CHANNEL = 789046675247333397
 DIGEST_LIMIT = 5
 
 
-@measure()
+@sync_task(club_content.main)
 def main():
     run_discord_task('juniorguru.sync.digest.discord_task')
 
@@ -36,7 +37,7 @@ async def discord_task(client):
         for n, message in enumerate(messages, start=1):
             logger.info(f"Digest #{n}: {message.upvotes_count} votes for {message.author.display_name} in #{message.channel_name}, {message.url}")
 
-        if is_discord_mutable():
+        if DISCORD_MUTATIONS_ENABLED:
             content = [
                 f"🔥 **{DIGEST_LIMIT} nej příspěvků za uplynulý týden (od {since_date.day}.{since_date.month}.)**",
                 "",
@@ -52,7 +53,5 @@ async def discord_task(client):
                 ]
             await channel.send(content="\n".join(content),
                                 embed=Embed(description="\n".join(embed_description)))
-
-
-if __name__ == '__main__':
-    main()
+        else:
+            logger.warning('Discord mutations not enabled')

@@ -16,16 +16,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta http-equiv="Accept-CH" content="DPR,Viewport-Width,Width,Save-Data">
 
-      <link rel="dns-prefetch" href="https://www.google-analytics.com">
       <link rel="dns-prefetch" href="https://sa.junior.guru">
       <link rel="dns-prefetch" href="https://res.cloudinary.com">
       <link rel="preconnect" href="https://res.cloudinary.com">
 
       {% block stylesheet %}<link rel="stylesheet" href="{{ 'static/bundle.css'|url }}">{% endblock %}
-      <link rel="preload" href="https://www.googletagmanager.com/gtm.js?id=UA-1316071-22" as="script">
       <link rel="preload" href="{{ ('static/fonts/' + bootstrap_icons_file)|url }}" as="font" type="font/woff2" crossorigin="anonymous">
       <script defer src="{{ 'static/bundle.js'|url }}?{{ js_hash }}"></script>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1316071-22"></script>
 
       <meta property="og:title" content="{{ page.meta.title }}">
       <meta property="og:type" content="website">

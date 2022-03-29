@@ -1,6 +1,7 @@
-from juniorguru.lib.timer import measure
+from juniorguru.lib.tasks import sync_task
+from juniorguru.sync import club_content
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, is_discord_mutable
+from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED
 
 
 STICKERS_CHANNEL = 788823881024405544
@@ -9,7 +10,7 @@ STICKERS_CHANNEL = 788823881024405544
 logger = loggers.get(__name__)
 
 
-@measure()
+@sync_task(club_content.main)
 def main():
     run_discord_task('juniorguru.sync.stickers.discord_task')
 
@@ -24,9 +25,7 @@ async def discord_task(client):
         logger.info(f"Found stickers by #{message.author.id}")
         for sticker in message.stickers:
             logger.info(f"Deleting sticker '{sticker.name}'")
-        if is_discord_mutable():
+        if DISCORD_MUTATIONS_ENABLED:
             await message.delete()
-
-
-if __name__ == '__main__':
-    main()
+        else:
+            logger.warning('Discord mutations not enabled')

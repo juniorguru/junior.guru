@@ -141,6 +141,13 @@ class ClubMessage(BaseModel):
             .order_by(cls.created_at)
 
     @classmethod
+    def channel_listing_since(cls, channel_id, since_at):
+        return cls.select() \
+            .where((cls.channel_id == channel_id)
+                   & (cls.created_at >= since_at)) \
+            .order_by(cls.created_at)
+
+    @classmethod
     def digest_listing(cls, since_dt, limit=5):
         return cls.select() \
             .where(cls.created_at >= since_dt,

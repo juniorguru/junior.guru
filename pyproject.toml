@@ -27,7 +27,6 @@ lxml = "*"
 cssselect = "*"
 pync = "*"
 google-api-python-client = "*"
-python-dateutil = "*"
 requests = "*"
 czech-sort = "*"
 itemloaders = "*"
@@ -39,13 +38,14 @@ extruct = "*"
 py-cord = {version = "2.0.0-beta.4", extras = ["speed"]}
 gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
-scikit-learn = "0.24.2"
+scikit-learn = "*"
 pandas = "*"
-piexif = "*"
 markupsafe = "*"
 mkdocs-simple-hooks = "*"
 ics = { git = "https://github.com/ics-py/ics-py.git", branch = "main" }
-pod2gen = "^1.0.3"
+pod2gen = "*"
+invoke = "*"
+Scrapy = "2.5.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
@@ -56,7 +56,7 @@ flake8 = "*"
 [tool.pytest.ini_options]
 python_files = "test_*.py *_test.py test.py"
 testpaths = "."
-addopts = "--ff --ignore=node_modules"
+addopts = "--ff --ignore=node_modules --ignore=__jobs_legacy__"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

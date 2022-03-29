@@ -6,7 +6,7 @@ from strictyaml import Map, Seq, Str, Datetime, load
 from pod2gen import Media
 from requests.exceptions import HTTPError
 
-from juniorguru.lib.timer import measure
+from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
 from juniorguru.models import db, PodcastEpisode
 
@@ -28,7 +28,7 @@ WORKERS = 2
 TODAY = date.today()
 
 
-@measure()
+@sync_task()
 @db.connection_context()
 def main():
     PodcastEpisode.drop_table()
@@ -72,7 +72,3 @@ def process_episode(yaml_record):
                 media_size=media.size,
                 media_type=media.type,
                 media_duration_s=media.duration.seconds)
-
-
-if __name__ == '__main__':
-    main()

@@ -1,9 +1,0 @@
-{% extends 'admin_base.html' %}
-{% block body %}
-<h1>Čísla</h1>
-<table>
-    {% for name, value in metrics.items()|sort(0) %}
-        <tr><th>{{ name }}</th><td>{{ value }}</td><td><small>zobrazeno jako {{ value|metric }}</small></td></tr>
-    {% endfor %}
-</table>
-{% endblock %}

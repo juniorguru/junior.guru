@@ -48,6 +48,10 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+# Editors
+/.idea/
+/.vscode/
+
 # pyenv
 .python-version
 
@@ -75,12 +79,13 @@ google_service_account.json
 # Synced data
 /juniorguru/data/*.db
 /juniorguru/data/*.db-*
-/juniorguru/data/responses/
 /juniorguru/data/jobs/
 /juniorguru/images/avatars/*.png
 /juniorguru/images/logos-jobs/*.png
 /juniorguru/images/posters-events/*.png
 /juniorguru/images/posters-companies/*.png
+/juniorguru/data/proxies.txt
+/juniorguru/data/jobs-emails.txt
 
 # Data backup
 backup.tar.gz
@@ -91,11 +96,5 @@ backup.tar.gz
 !/juniorguru/web/static/src
 !/juniorguru/web/static/downloads
 
-# Lighthouse
-/lighthouse/
-
 # Testing debug artifacts
-/tests/scrapers_pipelines/fixtures_company_logo/logo-converted.png
-
-# Editor specific
-/.idea/
+/tests/sync_jobs_logos/logo-converted.png

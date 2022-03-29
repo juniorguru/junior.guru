@@ -3,9 +3,10 @@ from collections import Counter
 from discord import Colour
 
 from juniorguru.models.company import Company
-from juniorguru.lib.timer import measure
+from juniorguru.lib.tasks import sync_task
+from juniorguru.sync import club_content, events, avatars, subscriptions, companies
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, is_discord_mutable, get_roles
+from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, get_roles
 from juniorguru.models import ClubUser, Event, db
 
 
@@ -26,7 +27,11 @@ COMPANY_ROLE_PREFIX = 'Firma: '
 STUDENT_ROLE_PREFIX = 'Student: '
 
 
-@measure()
+@sync_task(club_content.main,
+           events.main,
+           avatars.main,
+           subscriptions.main,
+           companies.main)
 def main():
     run_discord_task('juniorguru.sync.roles.discord_task')
 
@@ -103,7 +108,7 @@ async def discord_task(client):
         changes.extend(evaluate_changes(member.id, member.roles, sponsoring_members_ids, ROLES['is_sponsor']))
 
     # syncing with Discord
-    if is_discord_mutable():
+    if DISCORD_MUTATIONS_ENABLED:
         logger.info(f'Managing roles for {len(companies)} companies')
         await manage_company_roles(client, companies)
 
@@ -120,6 +125,8 @@ async def discord_task(client):
 
         logger.info(f'Applying {len(changes)} changes to roles')
         await apply_changes(client, changes)
+    else:
+        logger.warning('Discord mutations not enabled')
 
 
 async def manage_company_roles(client, companies):
@@ -213,7 +220,3 @@ def repr_ids(members, members_ids):
 
 def repr_roles(roles):
     return repr([role.name for role in roles])
-
-
-if __name__ == '__main__':
-    main()

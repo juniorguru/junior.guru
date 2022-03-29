@@ -10,7 +10,7 @@
     </h3>
     <ul class="logobar-list">
       {% for company in companies_handbook %}
-        {{ logo(company.name, company.filename, company.link, class_prefix='logobar') }}
+        {{ logo(company.name, company.logo_filename, company.link, class_prefix='logobar') }}
       {% endfor %}
     </ul>
   </div>

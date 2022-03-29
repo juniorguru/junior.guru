@@ -6,9 +6,11 @@ import arrow
 from gql import Client as Memberful, gql
 from gql.transport.requests import RequestsHTTPTransport
 
-from juniorguru.lib.timer import measure
+from juniorguru.lib.tasks import sync_task
+from juniorguru.sync import club_content
 from juniorguru.lib import loggers
 from juniorguru.lib import google_sheets
+from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
 from juniorguru.models import ClubUser, db
 from juniorguru.lib.club import parse_coupon
 
@@ -33,7 +35,7 @@ FEMALE_NAME_RE = re.compile(r'''
 ''', re.VERBOSE | re.IGNORECASE)
 
 
-@measure()
+@sync_task(club_content.main)
 @db.connection_context()
 def main():
     logger.info('Getting data from Memberful')
@@ -172,7 +174,10 @@ def main():
 
     logger.info('Uploading subscriptions to Google Sheets')
     records.sort(key=sort_key, reverse=True)
-    google_sheets.upload(google_sheets.get(DOC_KEY, 'subscriptions'), records)
+    if GOOGLE_SHEETS_MUTATIONS_ENABLED:
+        google_sheets.upload(google_sheets.get(DOC_KEY, 'subscriptions'), records)
+    else:
+        logger.warning('Google Sheets mutations not enabled')
 
 
 def get_active_coupon(node):
@@ -196,7 +201,3 @@ def sort_key(record):
         bool(record['Memberful ID']),
         record['Discord Since'] if record['Discord Since'] else '2019-01-01',
     )
-
-
-if __name__ == '__main__':
-    main()

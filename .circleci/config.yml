@@ -10,15 +10,20 @@ executors:
 
 orbs:
   gh-pages: sugarshin/gh-pages@0.0.6
+  git-shallow-clone: guitarrapc/git-shallow-clone@2.4.0
 
 
 jobs:
   install:
     executor: python-js
     steps:
-      - checkout
+      - git-shallow-clone/checkout
       - restore_cache:
           key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
+      - run:
+          name: Create the .today file for caching purposes
+          command: |
+            date +'%Y-%m-%d' > .today
       - run:
           name: Install dependencies
           command: poetry install && npm ci
@@ -41,40 +46,93 @@ jobs:
           at: "~"
       - run:
           name: Lint
-          command: make lint
+          command: poetry run invoke lint
       - run:
           name: Test
-          command: make test TESTOPTS=-v
+          command: poetry run invoke test -v
 
-  # needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY
-  sync:
+  sync-scrape-jobs:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
-          key: scrapy-{{ checksum ".today" }}
+          key: scrapy-v1-{{ checksum ".today" }}
       - run:
-          name: Sync data
+          name: Sync data (scrape jobs)
+          environment:
+            LOG_LEVEL: debug
           command: |
-            export PROXIES_ENABLED=1
-            export DISCORD_MUTATIONS_ENABLED=1
-            make sync
-      - save_cache:
-          key: scrapy-{{ checksum ".today" }}
+            poetry run invoke sync.ci.scrape-jobs
+      - save_cache:  # caches all HTTP communication of the scrapers for one day
+          key: scrapy-v1-{{ checksum ".today" }}
           paths:
             - .scrapy
       - persist_to_workspace:
           root: "~"
           paths:
+              - project/juniorguru/data/jobs
+
+  # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
+  sync-main:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - restore_cache:  # get jobs data persisted between builds
+          key: jobs-v2-{{ .Branch }}
+      - run:
+          name: Sync data
+          command: |
+            if [[ $CIRCLE_BRANCH = "main" ]]; then
+              export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
+              export DISCORD_MUTATIONS_ENABLED=1
+            fi
+            poetry run invoke sync.ci.main
+      - run:
+          name: Prevent persisting the same files as 'sync-scrape-jobs'
+          command: |
+            find juniorguru/data/jobs/* -print | sort
+            rm -rf juniorguru/data/jobs/$(date +'%Y')/$(date +'%m')/$(date +'%d')/
+      - persist_to_workspace:
+          root: "~"
+          paths:
               - project/juniorguru/data
               - project/juniorguru/images
-      - run: tar -cvzf backup.tar.gz ./juniorguru/data
-      - store_artifacts:
-          path: ./backup.tar.gz  # all data gets backed up as a CI artifact
 
-  build:
+  # Needs $DISCORD_API_KEY, $SMTP_* (see README.md)
+  sync-postprocess-jobs:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - restore_cache:  # makes jobs-emails idempotent
+          key: jobs-emails-v1-{{ .Branch }}
+      - run:
+          name: Sync data (postprocess jobs)
+          environment:
+            JOBS_SCRAPED_REUSE_DB_ENABLED: 1
+          command: |
+            if [[ $CIRCLE_BRANCH = "main" ]]; then
+              export JOBS_EMAILS_SENDING_ENABLED=1
+              export DISCORD_MUTATIONS_ENABLED=1
+            fi
+            poetry run invoke sync.ci.postprocess-jobs
+      - save_cache:  # makes jobs-emails idempotent
+          key: jobs-emails-v1-{{ .Branch }}-{{ checksum ".today" }}
+          paths:
+            - project/juniorguru/data/jobs-emails.txt
+      - save_cache:  # persisting the jobs data between builds
+          key: jobs-v2-{{ .Branch }}-{{ checksum ".today" }}
+          paths:
+            - juniorguru/data/jobs
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/juniorguru/data
+              - project/juniorguru/images/logos-jobs
+
+  build-web:
     executor: python-js
     steps:
       - run:
@@ -89,13 +147,22 @@ jobs:
             done
       - attach_workspace:
           at: "~"
-      - run: make build
+      - run: poetry run invoke web.build
       - persist_to_workspace:
           root: "~"
           paths:
               - project/public
 
-  deploy:
+  backup:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: tar -cvzf backup.tar.gz ./juniorguru/data
+      - store_artifacts:
+          path: ./backup.tar.gz
+
+  deploy-web:
     executor: python-js
     steps:
       - attach_workspace:
@@ -105,6 +172,8 @@ jobs:
             - "7b:0b:2c:9f:fb:18:db:35:8e:f4:3d:49:73:37:ee:c4"
       - run: mkdir -p ~/.ssh
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - run: touch public/.nojekyll
+      - run: echo "junior.guru" > public/CNAME
       - gh-pages/deploy:
           build-dir: "public"
           git-email: "kure@junior.guru"
@@ -114,36 +183,26 @@ jobs:
           tmp-dir: ".deploy-tmp"
           workspace-root: "~/project"
 
-  # needs $SMTP_* (see readme)
-  send:
-    executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run: |
-          export SMTP_ENABLED=1
-          make send
-
   check-anchors:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: make check-anchors
+      - run: poetry run invoke checks.anchors
 
   check-links:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: make check-links CHECKOPTS=--retry
+      - run: poetry run invoke checks.links --retry
 
   check-scrapers:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: make check-scrapers
+      - run: poetry run invoke checks.scrapers
 
 
 workflows:
@@ -155,65 +214,59 @@ workflows:
       - lint-and-test:
           requires:
             - install
-      - sync:
+      - sync-scrape-jobs:  # TODO if all works well, scraping can be moved to nightly only
           requires:
             - install
-      - build:
+      - sync-main:
           requires:
-            - sync
-      - check-scrapers:
+            - install
+      - sync-postprocess-jobs:
           requires:
-            - sync
+            - sync-scrape-jobs
+            - sync-main
+      - build-web:
+          requires:
+            - sync-postprocess-jobs
       - check-anchors:
           requires:
-            - build
-      - deploy:
+            - build-web
+      - deploy-web:
           filters:
             branches:
               only:
                 - main
           requires:
-            - build
+            - build-web
             - lint-and-test
 
   nightly:
     jobs:
       - install
-      - sync:
+      - sync-scrape-jobs:
           requires:
             - install
-      - build:
+      - sync-main:
           requires:
-            - sync
-      - check-scrapers:
+            - install
+      - sync-postprocess-jobs:
           requires:
-            - sync
+            - sync-scrape-jobs
+            - sync-main
+      - build-web:
+          requires:
+            - sync-postprocess-jobs
+      - backup:
+          requires:
+            - build-web
       - check-links:
           requires:
-            - build
-      - deploy:
+            - build-web
+      - deploy-web:
           requires:
-            - build
+            - build-web
     triggers:
       - schedule:
           cron: "0 4 * * *"
-          filters:
-            branches:
-              only:
-                - main
-
-  sending:
-    jobs:
-      - install
-      - sync:
-          requires:
-            - install
-      - send:
-          requires:
-            - sync
-    triggers:
-      - schedule:
-          cron: "0 5 * * *"
           filters:
             branches:
               only:

@@ -1,6 +1,7 @@
-from juniorguru.lib.timer import measure
+from juniorguru.lib.tasks import sync_task
+from juniorguru.sync import club_content
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, is_discord_mutable
+from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED
 from juniorguru.models import ClubMessage, db
 
 
@@ -10,7 +11,7 @@ logger = loggers.get(__name__)
 SYSTEM_MESSAGES_CHANNEL = 788823881024405544
 
 
-@measure()
+@sync_task(club_content.main)
 def main():
     run_discord_task('juniorguru.sync.returning_members.discord_task')
 
@@ -22,10 +23,8 @@ async def discord_task(client):
         if message.type == 'new_member' and message.author.first_seen_on() < message.created_at.date():
             logger.info(f'It looks like #{message.author.id} has returned')
             discord_message = await system_messages_channel.fetch_message(message.id)
-            if is_discord_mutable():
+            if DISCORD_MUTATIONS_ENABLED:
                 await discord_message.add_reaction('👋')
                 await discord_message.add_reaction('🔄')
-
-
-if __name__ == '__main__':
-    main()
+            else:
+                logger.warning('Discord mutations not enabled')

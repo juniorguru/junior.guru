@@ -5,12 +5,13 @@ from datetime import date, timedelta
 import arrow
 from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, CommaSeparated, load
 
-from juniorguru.lib.timer import measure
+from juniorguru.lib.tasks import sync_task
+from juniorguru.sync import club_content
 from juniorguru.models import Event, EventSpeaking, ClubMessage, db
 from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_square, replace_with_jpg
 from juniorguru.lib import loggers
 from juniorguru.lib.template_filters import local_time, md, weekday
-from juniorguru.lib.club import is_discord_mutable, run_discord_task
+from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
 
 
 logger = loggers.get(__name__)
@@ -51,7 +52,7 @@ schema = Seq(
 )
 
 
-@measure()
+@sync_task(club_content.main)
 def main():
     path = DATA_DIR / 'events.yml'
     records = [load_record(record.data) for record in load(path.read_text(), schema)]
@@ -111,9 +112,11 @@ def main():
             logger.info(f"Saving '{name}'")
             event.save()
 
-    if is_discord_mutable():
+    if DISCORD_MUTATIONS_ENABLED:
         run_discord_task('juniorguru.sync.events.sync_scheduled_events')
         run_discord_task('juniorguru.sync.events.post_next_event_messages')
+    else:
+        logger.warning('Discord mutations not enabled')
 
 
 @db.connection_context()
@@ -216,7 +219,3 @@ def load_record(record):
                          tzinfo='Europe/Prague')
     record['start_at'] = start_at.to('UTC').naive
     return record
-
-
-if __name__ == '__main__':
-    main()

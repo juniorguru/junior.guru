@@ -3,8 +3,9 @@ from datetime import date
 
 from fiobank import FioBank
 
-from juniorguru.lib.timer import measure
+from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import google_sheets, loggers
+from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
 from juniorguru.models import Transaction
 
 
@@ -40,7 +41,7 @@ CATEGORIES = [
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
 
-@measure()
+@sync_task()
 def main():
     logger.info('Preparing database')
     Transaction.drop_table()
@@ -84,7 +85,10 @@ def main():
         Transaction.create(**db_record)
 
     logger.info('Uploading verbose data to a private Google Sheet for manual audit of possible mistakes')
-    google_sheets.upload(google_sheets.get(DOC_KEY, 'transactions'), doc_records)
+    if GOOGLE_SHEETS_MUTATIONS_ENABLED:
+        google_sheets.upload(google_sheets.get(DOC_KEY, 'transactions'), doc_records)
+    else:
+        logger.warning('Google Sheets mutations not enabled')
 
 
 def get_category(transaction):
@@ -93,7 +97,3 @@ def get_category(transaction):
         if category:
             return category
     raise ValueError('Could not categorize transaction')
-
-
-if __name__ == '__main__':
-    main()

@@ -1,15 +1,13 @@
 from datetime import date, datetime, time
 
 import pytest
-from peewee import OperationalError
 
 from juniorguru.models import base as models_base
-from juniorguru.sync.jobs.items import Job
 
 
 @pytest.fixture
 def db():
-    class DummyDB():
+    class StubDB():
         def __init__(self):
             self.entered = 0
             self.exited = 0
@@ -20,12 +18,12 @@ def db():
         def __exit__(self, *args, **kwargs):
             self.exited += 1
 
-    return DummyDB()
+    return StubDB()
 
 
 @pytest.fixture
 def stats():
-    class DummyStats():
+    class StubStats():
         def __init__(self):
             self.values = {}
 
@@ -33,7 +31,7 @@ def stats():
             self.values.setdefault(name, 0)
             self.values[name] += 1
 
-    return DummyStats()
+    return StubStats()
 
 
 @pytest.mark.parametrize('o,expected', [
@@ -51,38 +49,12 @@ def test_json_dumps(o, expected):
 
 
 def test_json_dumps_item():
-    job = Job(posted_at=datetime(2020, 4, 30, 14, 35, 10),
-              title='Junior developer',
-              employment_types=frozenset(['full-time']))
+    item = dict(posted_at=datetime(2020, 4, 30, 14, 35, 10),
+                title='Junior developer',
+                employment_types=frozenset(['full-time']))
 
-    assert models_base.json_dumps(job) == ('{'
+    assert models_base.json_dumps(item) == ('{'
         '"posted_at": "2020-04-30T14:35:10", '
         '"title": "Junior developer", '
         '"employment_types": ["full-time"]'
     '}')
-
-
-def test_retry_when_db_locked(db, stats):
-    def operation():
-        if stats.values.get('database/locked_retries', 0) < 5:
-            raise OperationalError('database is locked')
-        return 42
-
-    _ = models_base.retry_when_db_locked(db, operation, stats=stats, wait_sec=0)
-
-    assert _ == 42
-    assert db.entered == 6
-    assert db.exited == 6
-    assert stats.values == {'database/locked_retries': 5}
-
-
-def test_retry_when_db_locked_raises(db, stats):
-    def operation():
-        raise OperationalError('database is locked')
-
-    with pytest.raises(OperationalError):
-        models_base.retry_when_db_locked(db, operation, stats=stats, wait_sec=0)
-
-    assert db.entered == 10
-    assert db.exited == 10
-    assert stats.values == {'database/locked_retries': 10, 'database/uncaught_errors': 1}

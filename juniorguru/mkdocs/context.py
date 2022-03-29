@@ -7,7 +7,7 @@ from datetime import date
 import arrow
 
 from juniorguru.lib import charts
-from juniorguru.models import db, Topic, ClubUser, Company, Event, ClubMessage, Story, LastModified, Job, Transaction, PodcastEpisode
+from juniorguru.models import db, Topic, ClubUser, Company, Event, ClubMessage, Story, LastModified, ListedJob, Transaction, PodcastEpisode
 from juniorguru.mkdocs.thumbnail import thumbnail
 
 
@@ -60,10 +60,10 @@ def on_docs_context(context):
 
     # candidate-handbook.md
     context['last_modified'] = LastModified.get_value_by_path('candidate-handbook.md')
-    context['jobs'] = Job.listing()
-    context['jobs_remote'] = Job.remote_listing()
-    context['jobs_internship'] = Job.internship_listing()
-    context['jobs_volunteering'] = Job.volunteering_listing()
+    context['jobs'] = ListedJob.listing()
+    context['jobs_remote'] = ListedJob.remote_listing()
+    context['jobs_internship'] = ListedJob.internship_listing()
+    context['jobs_volunteering'] = ListedJob.volunteering_listing()
 
     # open.md
     charts_months = charts.months(BUSINESS_BEGIN_ON, TODAY)

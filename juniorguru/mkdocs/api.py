@@ -5,7 +5,7 @@ import ics
 from pod2gen import Podcast, Episode, Media, Person, Category, Funding
 
 from juniorguru.lib.md import md
-from juniorguru.models import Employment, Event, PodcastEpisode, db
+from juniorguru.models import Event, PodcastEpisode, ListedJob, db
 
 
 @db.connection_context()
@@ -24,7 +24,7 @@ def build_events_ics(api_dir, config):
 
 @db.connection_context()
 def build_czechitas_csv(api_dir, config):
-    rows = [employment.to_api() for employment in Employment.api_listing()]
+    rows = [job.to_api() for job in ListedJob.api_listing()]
     api_file = api_dir / 'jobs.csv'
     with api_file.open('w', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))

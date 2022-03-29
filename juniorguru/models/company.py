@@ -8,7 +8,7 @@ from juniorguru.models import ClubUser
 
 class Company(BaseModel):
     name = CharField()
-    filename = CharField()
+    logo_filename = CharField()
     is_sponsoring_handbook = BooleanField(default=False)
     link = CharField()
     coupon_base = CharField(null=True)

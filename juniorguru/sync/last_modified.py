@@ -2,7 +2,7 @@ from subprocess import run, PIPE
 
 import arrow
 
-from juniorguru.lib.timer import measure
+from juniorguru.lib.tasks import sync_task
 from juniorguru.models import LastModified, db
 
 
@@ -11,7 +11,7 @@ FILES = [
 ]
 
 
-@measure()
+@sync_task()
 @db.connection_context()
 def main():
     entries = []
@@ -25,7 +25,3 @@ def main():
     LastModified.create_table()
     for entry in entries:
         LastModified.create(**entry)
-
-
-if __name__ == '__main__':
-    main()

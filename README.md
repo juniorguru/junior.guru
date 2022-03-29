@@ -58,7 +58,7 @@ The service account's email address needs to be manually invited wherever it sho
     export SMTP_PASSWORD='abc...xyz'
     ```
 
-By default, sending is not enabled. On production or when trying to send e-mails from localhost an environment variable `SMTP_ENABLED` needs to be set to something truthy.
+By default, sending is not enabled. On production or when trying to send e-mails from localhost an environment variable `JOBS_EMAILS_SENDING_ENABLED` needs to be set to something truthy.
 
 ## Setting up logo.junior.guru and podcast.junior.guru
 

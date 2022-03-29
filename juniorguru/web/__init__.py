@@ -2,15 +2,15 @@ import os
 from pathlib import Path
 
 import arrow
-from flask import Flask, Response, render_template, url_for
+from flask import Flask, render_template, url_for
 
 from juniorguru.lib import loggers
 from juniorguru.lib import template_filters
 from juniorguru.lib.images import render_image_file
-from juniorguru.models import Job, Metric, Story, Supporter, Event, db
+from juniorguru.models import ListedJob, Story, Supporter, Event, db
 
 
-logger = loggers.get('web')
+logger = loggers.get(__name__)
 
 
 FLUSH_THUMBNAILS = bool(int(os.getenv('FLUSH_THUMBNAILS', 0)))
@@ -83,6 +83,7 @@ for template_filter in [
     template_filters.sample,
     template_filters.sample_jobs,
     template_filters.local_time,
+    template_filters.relative_url,
 ]:
     app.template_filter()(template_filter)
 
@@ -90,11 +91,9 @@ for template_filter in [
 @app.route('/')
 def index():
     with db:
-        metrics = Job.aggregate_metrics()
         stories = Story.listing()
     return render_template('index.html',
                            nav_tabs=NAV_TABS,
-                           metrics=metrics,
                            stories=stories)
 
 
@@ -123,67 +122,66 @@ def membership():
 
 
 @app.route('/jobs/')
+@db.connection_context()
 def jobs():
-    with db:
-        metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
-        jobs = Job.listing()
+    jobs = ListedJob.listing()
     return render_template('jobs.html',
                            nav_active='jobs',
                            jobs=jobs,
                            regions=REGIONS,
-                           metrics=metrics,
-                           thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky'))
+                           thumbnail=thumbnail(title='Práce v IT pro začátečníky'))
 
 
 @app.route('/jobs/remote/')
+@db.connection_context()
 def jobs_remote():
-    with db:
-        metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
-        jobs = Job.remote_listing()
+    jobs = ListedJob.remote_listing()
     return render_template('jobs_remote.html',
                            nav_active='jobs',
                            jobs=jobs,
                            remote=True,
                            regions=REGIONS,
-                           metrics=metrics,
                            thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky —\u00a0na\u00a0dálku'))
 
 
 @app.route('/jobs/region/<region_id>/')
+@db.connection_context()
 def jobs_region(region_id):
     region = [reg for reg in REGIONS if reg['id'] == region_id][0]
-    with db:
-        metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
-        jobs = Job.region_listing(region['name'])
-        jobs_remote = Job.remote_listing()
+    jobs = ListedJob.region_listing(region['name'])
+    jobs_remote = ListedJob.remote_listing()
     return render_template('jobs_region.html',
                            nav_active='jobs',
                            jobs=jobs,
                            jobs_remote=jobs_remote,
                            region=region,
                            regions=REGIONS,
-                           metrics=metrics,
                            thumbnail=thumbnail(title=f"Práce v\u00a0IT pro začátečníky —\u00a0{region['name']}"))
 
 
+def generate_jobs_region_pages():
+    return [('jobs_region', dict(region_id=region['id'])) for region in REGIONS]
+
+
 @app.route('/jobs/<job_id>/')
+@db.connection_context()
 def job(job_id):
-    with db:
-        metrics = dict(**Metric.as_dict(), **Job.aggregate_metrics())
-        job = Job.juniorguru_get_by_id(job_id)
+    job = ListedJob.get_by_submitted_id(job_id)
+    jobs_count = ListedJob.count()
     return render_template('job.html',
                            nav_active='jobs',
                            job=job,
-                           metrics=metrics,
+                           jobs_count=jobs_count,
                            thumbnail=thumbnail(job_title=job.title,
                                                job_company=job.company_name,
                                                job_location=job.location))
 
 
 def generate_job_pages():
-    with db:
-        for job in Job.juniorguru_listing():
-            yield 'job', dict(job_id=job.id)
+    with db.connection_context():
+        jobs = list(ListedJob.submitted_listing())
+    for job in jobs:
+        yield 'job', dict(job_id=job.submitted_job.id)
 
 
 @app.route('/donate/')
@@ -198,26 +196,10 @@ def donate():
 
 
 @app.route('/404.html')
+@db.connection_context()
 def not_found():
-    with db:
-        jobs = Job.listing()
+    jobs = ListedJob.listing()
     return render_template('404.html', jobs=jobs)
-
-
-@app.route('/robots.txt')
-def robots():
-    return Response(f"User-agent: *\nDisallow: {url_for('admin')}\n",
-                    mimetype='text/plain')
-
-
-@app.route('/.nojekyll')
-def nojekyll():
-    return Response('', mimetype='application/octet-stream')
-
-
-@app.route('/CNAME')
-def cname():
-    return Response('junior.guru\n', mimetype='application/octet-stream')
 
 
 @app.context_processor
@@ -227,9 +209,6 @@ def inject_defaults():
                 now=now,
                 club_launch_at=arrow.get(2021, 2, 1),
                 thumbnail=thumbnail())
-
-
-from juniorguru.web import admin  # noqa
 
 
 # Pages moved to MkDocs

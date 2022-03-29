@@ -1,7 +1,8 @@
 import re
 from collections import Counter
 
-from juniorguru.lib.timer import measure
+from juniorguru.lib.tasks import sync_task
+from juniorguru.sync import club_content
 from juniorguru.lib import loggers
 from juniorguru.models import ClubMessage, Topic, db
 
@@ -80,7 +81,7 @@ TOPIC_CHANNELS = {re.compile(key): value for key, value in {
 }.items()}
 
 
-@measure()
+@sync_task(club_content.main)
 @db.connection_context()
 def main():
     Topic.drop_table()
@@ -108,7 +109,3 @@ def get_topic_channel_keyword(channel_name):
         if keyword_re.search(channel_name):
             return keyword
     return None
-
-
-if __name__ == '__main__':
-    main()

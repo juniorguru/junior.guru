@@ -22,6 +22,7 @@ TEMPLATE_FILTERS = [
     'ago',
     'sample_jobs',
     'assert_empty',
+    'relative_url',
 ]
 
 

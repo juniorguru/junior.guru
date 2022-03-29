@@ -19,6 +19,10 @@ def email_link(email):
     )
 
 
+def relative_url(url):
+    return url.replace('https://junior.guru', '')
+
+
 def md(*args, **kwargs):
     return Markup(md_(*args, **kwargs))
 
@@ -111,7 +115,7 @@ def sample_jobs(jobs, n=2, sample_fn=None):
     jobs = list(jobs)
     if len(jobs) <= n:
         return jobs
-    preferred_jobs = [job for job in jobs if job.is_juniorguru]
+    preferred_jobs = [job for job in jobs if job.is_submitted]
     if len(preferred_jobs) >= n:
         jobs = preferred_jobs
     return (sample_fn or random.sample)(jobs, n)
