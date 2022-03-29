@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.jobs.legacy_jobs.pipelines.language_filter import (IrrelevantLanguage,
+from juniorguru.sync.scrape_jobs.pipelines.language_filter import (IrrelevantLanguage,
                                                            Pipeline)
 
 

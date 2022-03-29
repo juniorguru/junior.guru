@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.jobs.legacy_jobs.pipelines.short_description_filter import (
+from juniorguru.sync.scrape_jobs.pipelines.short_description_filter import (
     Pipeline, ShortDescription)
 
 

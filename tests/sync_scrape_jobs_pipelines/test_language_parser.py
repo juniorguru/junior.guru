@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 from langdetect import DetectorFactory
 
-from juniorguru.jobs.legacy_jobs.pipelines.language_parser import Pipeline
+from juniorguru.sync.scrape_jobs.pipelines.language_parser import Pipeline
 from testing_utils import param_startswith_skip, startswith_skip
 
 

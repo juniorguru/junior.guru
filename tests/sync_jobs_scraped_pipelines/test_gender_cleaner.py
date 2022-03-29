@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.jobs.legacy_jobs.pipelines.gender_cleaner import Pipeline
+from juniorguru.sync.jobs_scraped.pipelines.gender_cleaner import process
 
 
 @pytest.mark.parametrize('title,expected', [
@@ -48,8 +48,7 @@ from juniorguru.jobs.legacy_jobs.pipelines.gender_cleaner import Pipeline
     ('👩‍💻/👨‍💻 Junior Product Designer',
      'Junior Product Designer')
 ])
-def test_gender_cleaner(item, spider, title, expected):
-    item['title'] = title
-    item = Pipeline().process_item(item, spider)
+def test_gender_cleaner(title, expected):
+    item = process(dict(title=title))
 
     assert item['title'] == expected
