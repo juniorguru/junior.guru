@@ -20,7 +20,10 @@ jobs:
       - git-shallow-clone/checkout
       - restore_cache:
           key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
-      - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be later used to expire cache
+      - run:
+          name: Create the .today file for caching purposes
+          command: |
+            date +'%Y-%m-%d' > .today
       - run:
           name: Install dependencies
           command: poetry install && npm ci
@@ -86,6 +89,10 @@ jobs:
               export DISCORD_MUTATIONS_ENABLED=1
             fi
             poetry run invoke sync.ci.main
+      - run:
+          name: Prevent persisting the same files as 'sync-scrape-jobs'
+          command: |
+            rm -rf project/juniorguru/data/jobs/$(date +'%Y')/$(date +'%m')/$(date +'%d')/
       - persist_to_workspace:
           root: "~"
           paths:
