@@ -20,6 +20,7 @@ jobs:
       - git-shallow-clone/checkout
       - restore_cache:
           key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
+      - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be later used to expire cache
       - run:
           name: Install dependencies
           command: poetry install && npm ci
@@ -52,7 +53,6 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - run: 'date +"%Y-%m-%d" > .today'  # saves today's date to a file so it can be used to expire cache
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ checksum ".today" }}
       - run:
