@@ -103,21 +103,3 @@ def test_slug(db_connection):
     event = create_event(1, start_at=datetime(2021, 5, 17, 16, 30, 00))
 
     assert event.slug == '2021-05-17T18-30-00'
-
-
-def test_is_public(db_connection):
-    event = create_event(1, recording_url='https://www.youtube.com/watch?v=1-Bwa7yp0C4')
-
-    assert event.is_public is True
-
-
-def test_is_public_private(db_connection):
-    event = create_event(1, recording_url='https://discord.com/channels/769966886598737931/789046675247333397/869642782355103814')
-
-    assert event.is_public is False
-
-
-def test_is_public_none(db_connection):
-    event = create_event(1, recording_url=None)
-
-    assert event.is_public is False
