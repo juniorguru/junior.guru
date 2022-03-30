@@ -20,6 +20,7 @@ class Event(BaseModel):
     bio_title = TextField(null=True)
     bio_links = JSONField(default=lambda: [])
     recording_url = CharField(null=True)
+    public_recording_url = CharField(null=True)
     poster_path = CharField(null=True)
     poster_ig_path = CharField(null=True)
     poster_yt_path = CharField(null=True)
@@ -48,10 +49,6 @@ class Event(BaseModel):
     @property
     def url(self):
         return f"https://junior.guru/events/#{self.slug}"
-
-    @property
-    def is_public(self):
-        return 'youtu' in (self.recording_url or '')
 
     @classmethod
     def next(cls, today=None):

@@ -122,10 +122,10 @@ Jednou za čas máme na Discordu večerní akci. Je to **online a zhruba na hodi
 {% endcall %}
 
 <ul class="event-circles standout">
-{% for event in events|selectattr('recording_url')|selectattr('is_public', 'true')|sample(1) %}
+{% for event in events|selectattr('public_recording_url')|sample(1) %}
   {{ event_circle(event) }}
 {% endfor %}
-{% for event in events|selectattr('recording_url')|selectattr('is_public', 'false')|sample(5) %}
+{% for event in events|rejectattr('public_recording_url')|sample(5) %}
   {{ event_circle(event) }}
 {% endfor %}
 </ul>

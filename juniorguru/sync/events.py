@@ -48,6 +48,7 @@ schema = Seq(
         Optional('logo_path'): Str(),
         'speakers': CommaSeparated(Int()),
         Optional('recording_url'): Url(),
+        Optional('public_recording_url'): Url(),
     })
 )
 

@@ -4,7 +4,7 @@ template: main_memberful.html
 description: Dej někomu sílu udržet si své předsevzetí díky členství v online programovací skupině, jaká nemá obdoby. Daruj dlouhodobou motivaci programovat!
 ---
 
-{% from 'macros.html' import img, markdown, blockquote_avatar, blockquote_toxic, lead, logo, event_circle with context %}
+{% from 'macros.html' import img, markdown, blockquote_avatar, blockquote_toxic, lead, logo with context %}
 
 
 <header class="masthead" id="snow"><div class="masthead-container">

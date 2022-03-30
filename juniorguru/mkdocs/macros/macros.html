@@ -101,8 +101,8 @@
 
 {% macro event_circle(event) %}
   <li class="event-circles-item">
-    {% if event.is_public %}
-      <a href="{{ event.recording_url }}" target="_blank" rel="noopener" class="event-circles-link">
+    {% if event.public_recording_url %}
+      <a href="{{ event.public_recording_url }}" target="_blank" rel="noopener" class="event-circles-link">
     {% endif %}
 
     {% if event.avatar_path %}
@@ -115,7 +115,7 @@
 
     <h3>{{ event.bio_name }}</h3>
 
-    {% if event.is_public %}</a>{% endif %}
+    {% if event.public_recording_url %}</a>{% endif %}
 
     <p>
       {{ event.title }}
