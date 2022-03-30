@@ -264,13 +264,13 @@ No a pokud ti nedá směr ani to, vezmi prostě jakoukoliv práci jako junior v�
 Nabídky zaměstnání se hodí rozlišovat podle toho, na čem budeš po nastoupení pracovat. Zajímavě toto téma rozebírá [Lukáš Linhart v přednášce o své kariéře](https://youtu.be/l7zUC0T1E98?t=999). Doplněné shrnutí toho, co zmiňuje:
 
 *   **Produktové firmy** vyvíjí jeden nebo více vlastních softwarových produktů a ty prodávají. Práce na produktu je jako pečovat o zahrádku. Je důležité, jak moc se ti produkt firmy líbí a jak dlouho tě baví pracovat na jedné věci. Vliv zákazníků na tvou každodenní práci je rozmělněný. Mezi nevýhody patří práce s kódem, který vznikl před lety, a stereotyp.<br>
-    Příklady: [Prusa Research](https://www.prusa3d.com/), [Liftago](https://www.liftago.cz/), [Red Hat](https://www.redhat.com/), [startupy](#prace-pro-startup)…
-*   **IT oddělení** firem, jejichž hlavní byznys je v něčem jiném než v softwaru. Fungují obdobně jako produktový vývoj, akorát že nic neprodávají, ale podporují svou činností zbytek firmy. Někdy se hranice stírá — jsou [Twisto](https://www.twisto.cz/) víc finančníci, nebo programátoři?<br>
-    Příklady: [Rohlik.cz](https://www.rohlik.cz/), [Hypoteční banka](https://www.hypotecnibanka.cz/), [Škoda Auto](https://www.skoda-auto.cz/), e-shopy…
+    Příklady: Prusa Research, Liftago, Red Hat, [startupy](#prace-pro-startup)…
+*   **IT oddělení** firem, jejichž hlavní byznys je v něčem jiném než v softwaru. Fungují obdobně jako produktový vývoj, akorát že nic neprodávají, ale podporují svou činností zbytek firmy. Někdy se hranice stírá — jsou Twisto víc finančníci, nebo programátoři?<br>
+    Příklady: Rohlik.cz, Hypoteční banka, Škoda Auto, e-shopy…
 *   **Digitální agentury** zpracovávají zakázky pro jiné firmy. Projekty přicházejí a odcházejí, je větší prostor pro stavění nového na zelené louce a pro zkoušení nejnovějších technologií. Zákazník může mít prostřednictvím „projekťáků“ velký vliv na tvou každodenní práci, je zde riziko vyššího stresu pro všechny zúčastněné. Některé firmy také provozují _[body shopping](https://www.google.cz/search?q=body%20shopping%20programov%C3%A1n%C3%AD)_, tedy že pracuješ „[na IČO](#prace-na-ico)“ a agentura tě přeprodává jako [žoldnéře](https://cs.wikipedia.org/wiki/%C5%BDoldn%C3%A9%C5%99).<br>
-    Příklady: [Fragaria](https://fragaria.cz/), [STRV](https://www.strv.com/), [Symbio](https://symbio.agency/), reklamní agentury…
+    Příklady: Fragaria, STRV, Symbio, reklamní agentury…
 *   **Média nebo oddělení pro práci s daty** zaměstnávají programátory k tomu, aby řešili jednorázové úkoly. Nároky jsou na tebe značně jiné než u běžného vývoje. Není problém psát „nekvalitní“ kód, protože se hned po použití zahodí. Specifika této práce [popisuje Martin Malý](https://www.zdrojak.cz/clanky/co-se-vyvojar-nauci-v-novinach/).<br>
-    Příklady: [Economia](https://www.economia.cz/), [Český rozhlas](https://rozhlas.cz/) aj. média, vědecké instituce…
+    Příklady: Economia, Český rozhlas aj. média, vědecké instituce…
 
 Při hledání zaměstnání si během [zjišťování informací o nabídkách](#informace-o-firme) vždy každou z nich zařaď do jedné z kategorií výše, ať víš co očekávat. Pokud máš na výběr, ujasni si, v jakém režimu by se ti líbilo pracovat.
 
@@ -447,19 +447,10 @@ Další rady ohledně rozjíždění vlastního podnikání jsou nad rámec tét
   ) }}
 
   {{ link_card(
-    'Start Freelancing Today',
-    'startfreelancing.today.jpg',
-    'https://startfreelancing.today/',
-    'Praktické tipy jak začít. Ochutnávka <a href="https://www.ladybug.dev/episodes/freelancing">zde</a>. Malá a levná kniha.',
-    badge_icon='book',
-    badge_text='Kniha',
-  ) }}
-
-  {{ link_card(
     'Kniha Na volné noze',
     'freelanceway.eu.jpg',
     'https://freelanceway.eu/',
-    'Bible profesionálů na volné noze. Velká a drahá kniha.',
+    'Bible profesionálů na volné noze.',
     badge_icon='book',
     badge_text='Kniha',
   ) }}
