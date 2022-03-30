@@ -24,7 +24,7 @@ LOGOS_DIR = ROOT_DIR / 'images' / 'logos-jobs'
 WORKERS = 4
 
 # https://docs.python-requests.org/en/master/user/advanced/#timeouts
-REQUEST_TIMEOUT = (3.05, 5)
+REQUEST_TIMEOUT = (3.05, 15)
 
 # Just copy-paste of raw headers Firefox sends to a web page. None of it is
 # intentionally set to a specific value with a specific meaning.
@@ -175,4 +175,4 @@ def convert_image(image):
 
 
 def unique(iterable):
-    return list(frozenset(filter(None, iterable)))
+    return list(frozenset(item for item in iterable if item is not None))
