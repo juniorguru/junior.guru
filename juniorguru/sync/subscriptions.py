@@ -55,6 +55,7 @@ def main():
                 }
                 edges {
                     node {
+                        id
                         active
                         createdAt
                         expiresAt
@@ -140,7 +141,9 @@ def main():
             if user:
                 logger.debug(f'Updating member #{user.id} with Memberful data')
                 joined_memberful_at = arrow.get(node['createdAt']).naive
+                user.subscription_id = str(node['id'])
                 user.joined_at = min(user.joined_at, joined_memberful_at) if user.joined_at else joined_memberful_at
+                user.expires_at = arrow.get(node['expiresAt']).naive
                 user.coupon_base = coupon_parts.get('coupon_base')
                 user.save()
 

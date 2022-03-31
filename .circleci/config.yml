@@ -87,6 +87,7 @@ jobs:
             if [[ $CIRCLE_BRANCH = "main" ]]; then
               export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
               export DISCORD_MUTATIONS_ENABLED=1
+              export MEMBERFUL_MUTATIONS_ENABLED=1
             fi
             poetry run invoke sync.ci.main
       - run:

@@ -33,6 +33,7 @@ UPVOTES_EXCLUDE_CHANNELS = [
 
 class ClubUser(BaseModel):
     id = IntegerField(primary_key=True)
+    subscription_id = CharField(null=True)
     is_bot = BooleanField(default=False)
     is_member = BooleanField(default=True)
     avatar_path = CharField(null=True)
@@ -40,6 +41,7 @@ class ClubUser(BaseModel):
     mention = CharField()
     coupon_base = CharField(null=True, index=True)
     joined_at = DateTimeField(null=True)
+    expires_at = DateTimeField(null=True)
     roles = JSONField(default=lambda: [])
 
     def messages_count(self):

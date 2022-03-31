@@ -53,6 +53,6 @@ def coerce_record(record):
         r'^student coupon base$': ('student_coupon_base', parse_text),
         r'^link$': ('link', parse_text),
         r'^coupon base$': ('coupon_base', parse_text),
-        r'^starts$': ('starts_at', parse_date),
-        r'^expires$': ('expires_at', parse_date),
+        r'^starts$': ('starts_on', parse_date),
+        r'^expires$': ('expires_on', parse_date),
     }, record)

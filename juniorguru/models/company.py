@@ -13,8 +13,8 @@ class Company(BaseModel):
     link = CharField()
     coupon_base = CharField(null=True)
     student_coupon_base = CharField(null=True)
-    starts_at = DateField(null=True)
-    expires_at = DateField(null=True)
+    starts_on = DateField(null=True)
+    expires_on = DateField(null=True)
     role_id = IntegerField(null=True)
     student_role_id = IntegerField(null=True)
 
@@ -38,9 +38,9 @@ class Company(BaseModel):
     def listing(cls, today=None):
         today = today or date.today()
         return cls.select() \
-            .where(cls.starts_at <= today,
-                   (cls.expires_at >= today) | cls.expires_at.is_null()) \
-            .order_by(cls.starts_at, cls.name)
+            .where(cls.starts_on <= today,
+                   (cls.expires_on >= today) | cls.expires_on.is_null()) \
+            .order_by(cls.starts_on, cls.name)
 
     @classmethod
     def handbook_listing(cls, today=None):
