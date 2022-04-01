@@ -195,6 +195,11 @@ def donate():
                            thumbnail=thumbnail(title='Pošli LOVE'))
 
 
+@app.route('/handbook/')
+def handbook():
+    return redirect(url_for('motivation', _external=True))
+
+
 @app.route('/404.html')
 @db.connection_context()
 def not_found():
