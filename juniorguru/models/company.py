@@ -18,6 +18,7 @@ class Company(BaseModel):
     expires_on = DateField(null=True)
     role_id = IntegerField(null=True)
     student_role_id = IntegerField(null=True)
+    poster_path = CharField(null=True)
 
     @property
     def list_employees(self):

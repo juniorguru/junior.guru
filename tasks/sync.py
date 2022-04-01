@@ -30,7 +30,7 @@ SYNC_TASKS_MAIN = import_sync_tasks([
     'juniorguru.sync.topics',
     'juniorguru.sync.transactions',
     'juniorguru.sync.companies_align_subscriptions',
-    # 'juniorguru.sync.companies_intro',
+    'juniorguru.sync.companies_intro',
 ])
 
 SYNC_TASKS_POSTPROCESS_JOBS = import_sync_tasks([

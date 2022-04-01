@@ -40,8 +40,10 @@ def main():
 
         logger.info(f"Rendering images for {company!r}")
         tpl_context = dict(company=company)
-        render_image_file(POSTER_WIDTH, POSTER_HEIGHT,
-                          'company.html', tpl_context, POSTERS_DIR)
+        image_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT,
+                                       'company.html', tpl_context, POSTERS_DIR)
+        company.poster_path = image_path.relative_to(IMAGES_DIR)
+        company.save()
 
 
 def coerce_record(record):

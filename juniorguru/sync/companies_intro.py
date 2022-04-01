@@ -1,4 +1,3 @@
-import re
 from pathlib import Path
 from datetime import timedelta, date
 
@@ -17,17 +16,13 @@ MESSAGE_EMOJI = '👋'
 
 COMPANIES_INTRO_LAUNCH_ON = date(2022, 4, 1)
 
-POSTERS_DIR = Path(__file__).parent.parent / 'images' / 'posters-companies'
+IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
 
 logger = loggers.get(__name__)
 
 
-@sync_task(
-    # club_content_task,
-    # companies_task,
-    # roles_task,
-)
+@sync_task(club_content_task, companies_task, roles_task)
 def main():
     run_discord_task('juniorguru.sync.companies_intro.discord_task')
 
@@ -59,26 +54,26 @@ async def discord_task(client):
                     )
 
                 embed_description_lines = [
-                    f"ℹ️ Víc **o firmě** najdeš na [{clean_url(company.url)}]({company.url})",
-                    f"💕 Chtějí **pomáhat** juniorům! Mají roli <@&{company.role_id}>",
-                    "🛡 Mají **logo** na [stránce klubu](https://junior.guru/club/)",
+                    f'**{company.name}**\n\n'
+                    f"ℹ️ Víc o firmě najdeš na [jejich webu]({company.url})",
+                    f"💕 Chtějí pomáhat juniorům! Mají roli <@&{company.role_id}>",
+                    "🛡 Mají logo na [stránce klubu](https://junior.guru/club/)",
                 ]
                 if company.is_sponsoring_handbook:
-                    embed_description_lines.append('📖 Mají **logo** na [příručce pro juniory](https://junior.guru/handbook/)')
+                    embed_description_lines.append('📖 Mají logo na [příručce pro juniory](https://junior.guru/handbook/)')
                 if company.job_slots_count:
-                    embed_description_lines.append(f'🧑‍💻 Mají **inzeráty** v <#{JOBS_CHANNEL}> a [na webu](https://junior.guru/jobs/)')
+                    embed_description_lines.append(f'🧑‍💻 Mají inzeráty v <#{JOBS_CHANNEL}> a [na webu](https://junior.guru/jobs/)')
                 if company.student_role_id:
-                    embed_description_lines.append(f'🧑‍🎓 Posílají sem své **studenty**: <@&{company.student_role_id}>')
+                    embed_description_lines.append(f'🧑‍🎓 Posílají sem své studenty: <@&{company.student_role_id}>')
                 embed_description_lines += [
-                    '💰 **Financují** práci na [příručce pro juniory](https://junior.guru/handbook/)',
-                    '\n💡 Jak přesně funguje firemní členství? Mrkni do [FAQ](https://junior.guru/faq/#spoluprace-s-firmami-a-komunitami)',
+                    '💰 Financují práci na [příručce pro juniory](https://junior.guru/handbook/)',
+                    '\nJak přesně funguje firemní členství? Mrkni do [FAQ](https://junior.guru/faq/#spoluprace-s-firmami-a-komunitami)',
                 ]
 
-                image_filename = 'c29bd3bd01915ab3289c293ef8cf05758669acbdb9070ac0bdacf23fe904e039.png'
                 embed = Embed(colour=Colour.dark_grey(),
                               description='\n'.join(embed_description_lines))
-                embed.set_thumbnail(url=f"attachment://{image_filename}")
-                file = File(POSTERS_DIR / image_filename)
+                embed.set_thumbnail(url=f"attachment://{Path(company.poster_path).name}")
+                file = File(IMAGES_DIR / company.poster_path)
 
                 await channel.send(content=content, embed=embed, file=file)
             else:
@@ -107,7 +102,3 @@ def sort_key(company, today=None):
     return (expires_in_days if expires_in_days <= 30 else 1000,
             started_days_ago,
             company.name)
-
-
-def clean_url(url):
-    return re.sub(r'/$', '', re.sub(r'^https?://(www\.)?', '', url))
