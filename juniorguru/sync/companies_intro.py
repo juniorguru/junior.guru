@@ -8,7 +8,7 @@ from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.sync.companies import main as companies_task
 from juniorguru.sync.roles import main as roles_task
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, is_message_over_period_ago, BOT_CHANNEL, JOBS_CHANNEL
+from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, is_message_over_period_ago, INTRO_CHANNEL, JOBS_CHANNEL
 from juniorguru.models import ClubMessage, Company, db
 
 
@@ -29,7 +29,7 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    last_message = ClubMessage.last_bot_message(BOT_CHANNEL, '🤝')
+    last_message = ClubMessage.last_bot_message(INTRO_CHANNEL, MESSAGE_EMOJI)
     if is_message_over_period_ago(last_message, timedelta(weeks=1)):
         logger.info('Last company intro message is more than one week old!')
 
@@ -41,7 +41,7 @@ async def discord_task(client):
 
             logger.debug(f'Decided to announce {company!r}')
             if DISCORD_MUTATIONS_ENABLED:
-                channel = await client.fetch_channel(BOT_CHANNEL)
+                channel = await client.fetch_channel(INTRO_CHANNEL)
                 content = (
                     f"{MESSAGE_EMOJI} "
                     f"Kamarádi z {company_name_formatted(company.name)} se rozhodli podpořit klub a jsou tady s námi! "
@@ -90,7 +90,7 @@ def company_name_formatted(company_name):
 
 
 def doesnt_have_intro(company):
-    message = ClubMessage.last_bot_message(BOT_CHANNEL, MESSAGE_EMOJI,
+    message = ClubMessage.last_bot_message(INTRO_CHANNEL, MESSAGE_EMOJI,
                                            company_name_formatted(company.name))
     return is_message_over_period_ago(message, timedelta(days=365))
 
