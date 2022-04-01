@@ -43,8 +43,9 @@ async def discord_task(client):
             if DISCORD_MUTATIONS_ENABLED:
                 channel = await client.fetch_channel(BOT_CHANNEL)
                 content = (
-                    f"{MESSAGE_EMOJI} Kamarádi z firmy {company_name_formatted(company.name)} "
-                    f"se rozhodli podpořit klub a jsou tady s námi!"
+                    f"{MESSAGE_EMOJI} "
+                    f"Kamarádi z {company_name_formatted(company.name)} se rozhodli podpořit klub a jsou tady s námi! "
+                    f"Mají roli <@&{company.role_id}>."
                 )
                 if company.starts_on < COMPANIES_INTRO_LAUNCH_ON and (date.today() - company.starts_on).days > 30:
                     content += (
@@ -56,7 +57,6 @@ async def discord_task(client):
                 embed_description_lines = [
                     f'**{company.name}**\n\n'
                     f"ℹ️ Víc o firmě najdeš na [jejich webu]({company.url})",
-                    f"💕 Chtějí pomáhat juniorům! Mají roli <@&{company.role_id}>",
                     "🛡 Mají logo na [stránce klubu](https://junior.guru/club/)",
                 ]
                 if company.is_sponsoring_handbook:
@@ -66,6 +66,7 @@ async def discord_task(client):
                 if company.student_role_id:
                     embed_description_lines.append(f'🧑‍🎓 Posílají sem své studenty: <@&{company.student_role_id}>')
                 embed_description_lines += [
+                    "💕 Chtějí pomáhat juniorům!",
                     '💰 Financují práci na [příručce pro juniory](https://junior.guru/handbook/)',
                     '\nJak přesně funguje firemní členství? Mrkni do [FAQ](https://junior.guru/faq/#spoluprace-s-firmami-a-komunitami)',
                 ]
