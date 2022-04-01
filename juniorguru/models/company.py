@@ -10,10 +10,11 @@ class Company(BaseModel):
     name = CharField()
     logo_filename = CharField()
     is_sponsoring_handbook = BooleanField(default=False)
-    link = CharField()
+    url = CharField()
     coupon_base = CharField(null=True)
     student_coupon_base = CharField(null=True)
-    starts_on = DateField(null=True)
+    job_slots_count = IntegerField(default=0)
+    starts_on = DateField()
     expires_on = DateField(null=True)
     role_id = IntegerField(null=True)
     student_role_id = IntegerField(null=True)
@@ -52,3 +53,6 @@ class Company(BaseModel):
     def students_listing(cls):
         return cls.listing() \
             .where(cls.student_coupon_base.is_null(False))
+
+    def __str__(self):
+        return self.name

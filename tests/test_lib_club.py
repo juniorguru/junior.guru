@@ -1,5 +1,5 @@
 from collections import namedtuple
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 
 import pytest
 
@@ -72,23 +72,11 @@ def test_is_message_older_than_no_message():
     (date(2022, 1, 25), True),
     (date(2022, 1, 26), True),
 ])
-def test_is_message_over_week_ago(today, expected):
+def test_is_message_over_period_ago(today, expected):
     created_at = datetime.utcnow().replace(2022, 1, 18)
     message = StubClubMessage(created_at)
 
-    assert club.is_message_over_week_ago(message, today) is expected
-
-
-@pytest.mark.parametrize('today, expected', [
-    (date(2022, 2, 16), False),
-    (date(2022, 2, 17), True),
-    (date(2022, 2, 18), True),
-])
-def test_is_message_over_month_ago(today, expected):
-    created_at = datetime.utcnow().replace(2022, 1, 18)
-    message = StubClubMessage(created_at)
-
-    assert club.is_message_over_month_ago(message, today) is expected
+    assert club.is_message_over_period_ago(message, timedelta(weeks=1), today) is expected
 
 
 @pytest.mark.parametrize('coupon, expected', [

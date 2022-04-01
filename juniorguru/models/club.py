@@ -4,31 +4,9 @@ from datetime import date, timedelta
 from peewee import IntegerField, DateTimeField, ForeignKeyField, CharField, BooleanField
 
 from juniorguru.models.base import BaseModel, JSONField
-from juniorguru.lib.club import parse_coupon
-
-
-TOP_MEMBERS_PERCENT = 0.05
-
-RECENT_PERIOD_DAYS = 30
-
-IS_NEW_PERIOD_DAYS = 15
-
-CLUB_LAUNCH_ON = date(2021, 2, 1)
-
-JUNIORGURU_BOT = 797097976571887687
-
-INTRO_CHANNEL = 788823881024405544  # ahoj
-
-UPVOTES_EXCLUDE_CHANNELS = [
-    INTRO_CHANNEL,
-    788822884948770846,  # pravidla
-    789046675247333397,  # oznámení
-    797040163325870092,  # volná-zábava
-    788822884948770847,  # moderátoři
-    797107515186741248,  # roboti
-    806215364379148348,  # nápady-klub
-    847048522691641345,  # nápady-emoji
-]
+from juniorguru.lib.club import (parse_coupon, INTRO_CHANNEL, UPVOTES_EXCLUDE_CHANNELS,
+                                 CLUB_LAUNCH_ON, JUNIORGURU_BOT, TOP_MEMBERS_PERCENT,
+                                 RECENT_PERIOD_DAYS, IS_NEW_PERIOD_DAYS)
 
 
 class ClubUser(BaseModel):
@@ -60,9 +38,10 @@ class ClubUser(BaseModel):
             .where(ClubMessage.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
         return sum([message.upvotes_count for message in messages])
 
-    def has_intro(self):
+    def has_intro(self, intro_channel_id=None):
+        intro_channel_id = intro_channel_id or INTRO_CHANNEL
         intro_message = self.list_messages \
-            .where(ClubMessage.channel_id == INTRO_CHANNEL, ClubMessage.type == 'default') \
+            .where(ClubMessage.channel_id == intro_channel_id, ClubMessage.type == 'default') \
             .first()
         return bool(intro_message)
 

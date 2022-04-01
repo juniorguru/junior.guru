@@ -1,7 +1,9 @@
+from datetime import timedelta
+
 from juniorguru.lib.tasks import sync_task
-from juniorguru.sync import club_content
+from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, is_message_over_month_ago
+from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, is_message_over_period_ago
 from juniorguru.models import ClubMessage, db
 
 
@@ -11,16 +13,16 @@ LI_GROUP_CHANNEL = 839059491432431616
 logger = loggers.get(__name__)
 
 
-@sync_task(club_content.main)
+@sync_task(club_content_task)
 def main():
     run_discord_task('juniorguru.sync.li_group.discord_task')
 
 
 @db.connection_context()
 async def discord_task(client):
-    message = ClubMessage.last_bot_message(LI_GROUP_CHANNEL, '<:linkedin:915267970752712734>')
-    if is_message_over_month_ago(message):
-        logger.info('Message is more than one month old!')
+    last_message = ClubMessage.last_bot_message(LI_GROUP_CHANNEL, '<:linkedin:915267970752712734>')
+    if is_message_over_period_ago(last_message, timedelta(days=30)):
+        logger.info('Last message is more than one month old!')
         if DISCORD_MUTATIONS_ENABLED:
             channel = await client.fetch_channel(LI_GROUP_CHANNEL)
             await channel.send(content=(

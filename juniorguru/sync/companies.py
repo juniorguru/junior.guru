@@ -3,7 +3,7 @@ from pathlib import Path
 
 from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import google_sheets
-from juniorguru.lib.coerce import coerce, parse_boolean_words, parse_text, parse_date
+from juniorguru.lib.coerce import coerce, parse_boolean_words, parse_text, parse_date, parse_int
 from juniorguru.models import Company, db
 from juniorguru.lib import loggers
 from juniorguru.lib.images import render_image_file
@@ -38,7 +38,7 @@ def main():
         logger.info('Saving a record')
         company = Company.create(**coerce_record(record))
 
-        logger.info(f"Rendering images for '{company.name}'")
+        logger.info(f"Rendering images for {company!r}")
         tpl_context = dict(company=company)
         render_image_file(POSTER_WIDTH, POSTER_HEIGHT,
                           'company.html', tpl_context, POSTERS_DIR)
@@ -51,8 +51,9 @@ def coerce_record(record):
         r'^filename$': ('logo_filename', parse_text),
         r'^handbook$': ('is_sponsoring_handbook', parse_boolean_words),
         r'^student coupon base$': ('student_coupon_base', parse_text),
-        r'^link$': ('link', parse_text),
+        r'^link$': ('url', parse_text),
         r'^coupon base$': ('coupon_base', parse_text),
         r'^starts$': ('starts_on', parse_date),
         r'^expires$': ('expires_on', parse_date),
+        r'^job slots$': ('job_slots_count', parse_int),
     }, record)

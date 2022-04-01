@@ -4,12 +4,10 @@ from datetime import date, timedelta
 
 from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED
+from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, JOBS_CHANNEL
 from juniorguru.models import ClubMessage, db, ListedJob
-from juniorguru.sync import jobs_listing
+from juniorguru.sync.jobs_listing import main as jobs_listing_task
 
-
-JOBS_CHANNEL = 834443926655598592
 
 JOBS_REPEATING_PERIOD_DAYS = 30
 
@@ -19,7 +17,7 @@ URL_RE = re.compile(r'https?://\S+', re.I)
 logger = loggers.get(__name__)
 
 
-@sync_task(jobs_listing.main)
+@sync_task(jobs_listing_task)
 def main():
     run_discord_task('juniorguru.sync.jobs_club.discord_task')
 

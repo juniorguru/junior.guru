@@ -2,9 +2,13 @@ from collections import Counter
 
 from discord import Colour
 
+from juniorguru.sync.club_content import main as club_content_task
+from juniorguru.sync.events import main as events_task
+from juniorguru.sync.avatars import main as avatars_task
+from juniorguru.sync.subscriptions import main as subscriptions_task
+from juniorguru.sync.companies import main as companies_task
 from juniorguru.models.company import Company
 from juniorguru.lib.tasks import sync_task
-from juniorguru.sync import club_content, events, avatars, subscriptions, companies
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, get_roles
 from juniorguru.models import ClubUser, Event, db
@@ -27,11 +31,11 @@ COMPANY_ROLE_PREFIX = 'Firma: '
 STUDENT_ROLE_PREFIX = 'Student: '
 
 
-@sync_task(club_content.main,
-           events.main,
-           avatars.main,
-           subscriptions.main,
-           companies.main)
+@sync_task(club_content_task,
+           events_task,
+           avatars_task,
+           subscriptions_task,
+           companies_task)
 def main():
     run_discord_task('juniorguru.sync.roles.discord_task')
 
@@ -114,12 +118,12 @@ async def discord_task(client):
 
         for company in companies:
             employees_ids = [member.id for member in company.list_employees]
-            logger.debug(f"employees_ids({company.name}): {repr_ids(members, employees_ids)}")
+            logger.debug(f"employees_ids({company!r}): {repr_ids(members, employees_ids)}")
             for member in members:
                 changes.extend(evaluate_changes(member.id, member.roles, employees_ids, company.role_id))
 
             students_ids = [member.id for member in company.list_students]
-            logger.debug(f"students_ids({company.name}): {repr_ids(members, students_ids)}")
+            logger.debug(f"students_ids({company!r}): {repr_ids(members, students_ids)}")
             for member in members:
                 changes.extend(evaluate_changes(member.id, member.roles, students_ids, company.student_role_id))
 
@@ -159,13 +163,13 @@ async def manage_company_roles(client, companies):
     for role in existing_roles:
         company = company_roles_mapping.get(role.name)
         if company:
-            logger.info(f"Setting '{role.name}' to be employee role of '{company.name}'")
+            logger.info(f"Setting '{role.name}' to be employee role of {company!r}'")
             company.role_id = role.id
             company.save()
         else:
             company = student_roles_mapping.get(role.name)
             if company:
-                logger.info(f"Setting '{role.name}' to be student role of '{company.name}'")
+                logger.info(f"Setting '{role.name}' to be student role of {company!r}'")
                 company.student_role_id = role.id
                 company.save()
 

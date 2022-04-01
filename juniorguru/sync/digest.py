@@ -4,7 +4,7 @@ from datetime import timedelta, date
 from discord import Embed
 
 from juniorguru.lib.tasks import sync_task
-from juniorguru.sync import club_content
+from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, is_message_older_than
 from juniorguru.models import ClubMessage, db
@@ -17,7 +17,7 @@ DIGEST_CHANNEL = 789046675247333397
 DIGEST_LIMIT = 5
 
 
-@sync_task(club_content.main)
+@sync_task(club_content_task)
 def main():
     run_discord_task('juniorguru.sync.digest.discord_task')
 

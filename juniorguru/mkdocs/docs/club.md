@@ -149,7 +149,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
     <a href="{{ pricing_url }}" target="_blank" rel="noopener">Firemní partneři</a>
   </li>
   {% for company in companies %}
-    {{ logo(company.name, company.logo_filename, company.link) }}
+    {{ logo(company.name, company.logo_filename, company.url) }}
   {% endfor %}
 </ul>
 <ul class="logos standout">

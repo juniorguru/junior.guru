@@ -6,7 +6,7 @@ import asyncio
 from PIL import Image
 
 from juniorguru.lib.tasks import sync_task
-from juniorguru.sync import club_content
+from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task
 from juniorguru.models import ClubUser, db
@@ -20,7 +20,7 @@ AVATARS_PATH = IMAGES_PATH / 'avatars'
 AVATAR_SIZE_PX = 60
 
 
-@sync_task(club_content.main)
+@sync_task(club_content_task)
 def main():
     run_discord_task('juniorguru.sync.avatars.discord_task')
 

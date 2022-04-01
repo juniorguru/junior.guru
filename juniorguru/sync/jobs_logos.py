@@ -10,7 +10,7 @@ from PIL import Image, ImageChops, ImageOps
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models import db, ListedJob
 from juniorguru.lib import loggers
-from juniorguru.sync import jobs_listing
+from juniorguru.sync.jobs_listing import main as jobs_listing_task
 
 
 MAX_SIZE_PX = 1000
@@ -46,7 +46,7 @@ REQUEST_HEADERS = {
 logger = loggers.get(__name__)
 
 
-@sync_task(jobs_listing.main)
+@sync_task(jobs_listing_task)
 @db.connection_context()
 def main():
     Path(LOGOS_DIR).mkdir(exist_ok=True, parents=True)

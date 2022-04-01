@@ -1,9 +1,11 @@
+from datetime import timedelta
+
 from discord import Embed
 
 from juniorguru.lib.tasks import sync_task
-from juniorguru.sync import club_content
+from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, is_message_over_week_ago
+from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, is_message_over_period_ago
 from juniorguru.models import ClubMessage, db
 
 
@@ -13,16 +15,16 @@ MENTORING_CHANNEL = 878937534464417822
 logger = loggers.get(__name__)
 
 
-@sync_task(club_content.main)
+@sync_task(club_content_task)
 def main():
     run_discord_task('juniorguru.sync.mentoring.discord_task')
 
 
 @db.connection_context()
 async def discord_task(client):
-    message = ClubMessage.last_bot_message(MENTORING_CHANNEL, ':teacher:')
-    if is_message_over_week_ago(message):
-        logger.info('Message is more than one week old!')
+    last_message = ClubMessage.last_bot_message(MENTORING_CHANNEL, ':teacher:')
+    if is_message_over_period_ago(last_message, timedelta(weeks=1)):
+        logger.info('Last message is more than one week old!')
         if DISCORD_MUTATIONS_ENABLED:
             channel = await client.fetch_channel(MENTORING_CHANNEL)
             content = (

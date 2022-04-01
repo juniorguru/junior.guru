@@ -7,7 +7,7 @@ from gql import Client as Memberful, gql
 from gql.transport.requests import RequestsHTTPTransport
 
 from juniorguru.lib.tasks import sync_task
-from juniorguru.sync import club_content
+from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.lib import loggers
 from juniorguru.lib import google_sheets
 from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
@@ -35,7 +35,7 @@ FEMALE_NAME_RE = re.compile(r'''
 ''', re.VERBOSE | re.IGNORECASE)
 
 
-@sync_task(club_content.main)
+@sync_task(club_content_task)
 @db.connection_context()
 def main():
     logger.info('Getting data from Memberful')

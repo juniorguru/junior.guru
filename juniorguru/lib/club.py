@@ -2,7 +2,7 @@ import re
 import os
 import importlib
 import asyncio
-from datetime import timedelta, date
+from datetime import date
 from multiprocessing import Process
 
 import discord
@@ -14,6 +14,8 @@ DISCORD_MUTATIONS_ENABLED = bool(int(os.getenv('DISCORD_MUTATIONS_ENABLED', 0)))
 
 DISCORD_API_KEY = os.getenv('DISCORD_API_KEY') or None
 
+CLUB_LAUNCH_ON = date(2021, 2, 1)
+
 JUNIORGURU_GUILD = 769966886598737931
 
 EMOJI_PINS = ['📌']
@@ -24,6 +26,31 @@ EMOJI_UPVOTES = ['👍', '❤️', '😍', '🥰', '💕', '♥️', '💖', '�
                  'notbad', 'updoot', '🆒', '🔥'] + EMOJI_PINS
 
 EMOJI_DOWNVOTES = ['👎']
+
+JUNIORGURU_BOT = 797097976571887687
+
+INTRO_CHANNEL = 788823881024405544  # ahoj
+
+BOT_CHANNEL = 797107515186741248  # roboti
+
+JOBS_CHANNEL = 834443926655598592  # práce-bot
+
+UPVOTES_EXCLUDE_CHANNELS = [
+    INTRO_CHANNEL,
+    BOT_CHANNEL,
+    788822884948770846,  # pravidla
+    789046675247333397,  # oznámení
+    797040163325870092,  # volná-zábava
+    788822884948770847,  # moderátoři
+    806215364379148348,  # nápady-klub
+    847048522691641345,  # nápady-emoji
+]
+
+TOP_MEMBERS_PERCENT = 0.05
+
+RECENT_PERIOD_DAYS = 30
+
+IS_NEW_PERIOD_DAYS = 15
 
 COUPON_RE = re.compile(r'''
     ^
@@ -152,14 +179,6 @@ def is_message_over_period_ago(message, period, today=None):
     ago = today - period
     logger.getChild('is_message_over_period_ago').debug(f'{today} - {period!r} = {ago}')
     return is_message_older_than(message, ago)
-
-
-def is_message_over_week_ago(message, today=None):
-    return is_message_over_period_ago(message, timedelta(weeks=1), today)
-
-
-def is_message_over_month_ago(message, today=None):
-    return is_message_over_period_ago(message, timedelta(days=30), today)
 
 
 def parse_coupon(coupon):

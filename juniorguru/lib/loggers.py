@@ -16,6 +16,8 @@ MUTED_LOGGERS = [
     'gql.transport.requests',
     'protego',
     'invoke',
+    'juniorguru.lib.club.is_message_over_period_ago',
+    'juniorguru.lib.club.is_message_older_than',
 ]
 
 

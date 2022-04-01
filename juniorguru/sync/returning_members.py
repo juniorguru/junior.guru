@@ -1,5 +1,5 @@
 from juniorguru.lib.tasks import sync_task
-from juniorguru.sync import club_content
+from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED
 from juniorguru.models import ClubMessage, db
@@ -11,7 +11,7 @@ logger = loggers.get(__name__)
 SYSTEM_MESSAGES_CHANNEL = 788823881024405544
 
 
-@sync_task(club_content.main)
+@sync_task(club_content_task)
 def main():
     run_discord_task('juniorguru.sync.returning_members.discord_task')
 

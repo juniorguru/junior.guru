@@ -6,7 +6,7 @@ import arrow
 from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, CommaSeparated, load
 
 from juniorguru.lib.tasks import sync_task
-from juniorguru.sync import club_content
+from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.models import Event, EventSpeaking, ClubMessage, db
 from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_square, replace_with_jpg
 from juniorguru.lib import loggers
@@ -53,7 +53,7 @@ schema = Seq(
 )
 
 
-@sync_task(club_content.main)
+@sync_task(club_content_task)
 def main():
     path = DATA_DIR / 'events.yml'
     records = [load_record(record.data) for record in load(path.read_text(), schema)]

@@ -5,7 +5,7 @@ from discord import Embed
 from discord.errors import Forbidden
 
 from juniorguru.lib.tasks import sync_task
-from juniorguru.sync import club_content
+from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED
 from juniorguru.models import ClubPinReaction, ClubUser, ClubMessage, db
@@ -14,7 +14,7 @@ from juniorguru.models import ClubPinReaction, ClubUser, ClubMessage, db
 logger = loggers.get(__name__)
 
 
-@sync_task(club_content.main)
+@sync_task(club_content_task)
 def main():
     run_discord_task('juniorguru.sync.pins.discord_task')
 

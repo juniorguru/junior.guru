@@ -2,7 +2,7 @@ from juniorguru.lib.tasks import sync_task
 from juniorguru.models import db, ListedJob
 from juniorguru.lib import loggers
 from juniorguru.lib.locations import fetch_locations
-from juniorguru.sync import jobs_listing
+from juniorguru.sync.jobs_listing import main as jobs_listing_task
 
 
 MIN_JUNIORITY_RE_SCORE = 1
@@ -11,7 +11,7 @@ MIN_JUNIORITY_RE_SCORE = 1
 logger = loggers.get(__name__)
 
 
-@sync_task(jobs_listing.main)
+@sync_task(jobs_listing_task)
 @db.connection_context()
 def main():
     for job in ListedJob.listing():

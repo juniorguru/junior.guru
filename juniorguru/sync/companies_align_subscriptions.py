@@ -7,7 +7,8 @@ from gql import Client as Memberful, gql
 from gql.transport.requests import RequestsHTTPTransport
 
 from juniorguru.lib import loggers
-from juniorguru.sync import subscriptions, companies
+from juniorguru.sync.subscriptions import main as subscriptions_task
+from juniorguru.sync.companies import main as companies_task
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models import db, Company
 
@@ -20,7 +21,7 @@ MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
 MEMBERFUL_MUTATIONS_ENABLED = bool(int(os.getenv('MEMBERFUL_MUTATIONS_ENABLED', 0)))
 
 
-@sync_task(subscriptions.main, companies.main)
+@sync_task(subscriptions_task, companies_task)
 @db.connection_context()
 def main():
     # https://memberful.com/help/integrate/advanced/memberful-api/
