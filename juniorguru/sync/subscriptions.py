@@ -191,7 +191,6 @@ def main():
             })
 
     logger.info('Uploading subscriptions to Google Sheets')
-    records.sort(key=sort_key, reverse=True)
     if GOOGLE_SHEETS_MUTATIONS_ENABLED:
         google_sheets.upload(google_sheets.get(DOC_KEY, 'subscriptions'), records)
     else:
@@ -232,12 +231,3 @@ def get_student_started_on(subscription, coupon_base):
         return sorted(orders)[0].date()
     except IndexError:
         return None
-
-
-def sort_key(record):
-    return (
-        bool(record['Memberful Active?']),
-        bool(record['Discord Member?']),
-        bool(record['Memberful ID']),
-        record['Discord Since'] if record['Discord Since'] else '2019-01-01',
-    )
