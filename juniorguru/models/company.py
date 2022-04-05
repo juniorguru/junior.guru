@@ -2,6 +2,7 @@ from datetime import date
 
 from peewee import CharField, DateField, BooleanField, IntegerField
 
+from juniorguru.lib.club import parse_coupon
 from juniorguru.models.base import BaseModel
 from juniorguru.models import ClubUser
 
@@ -19,6 +20,12 @@ class Company(BaseModel):
     role_id = IntegerField(null=True)
     student_role_id = IntegerField(null=True)
     poster_path = CharField(null=True)
+
+    @property
+    def slug(self):
+        if self.coupon_base:
+            return parse_coupon(self.coupon_base)['coupon_name'].lower()
+        return None
 
     @property
     def list_employees(self):

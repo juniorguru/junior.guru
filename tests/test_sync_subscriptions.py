@@ -1,6 +1,8 @@
 from datetime import date
 
-from juniorguru.sync.subscriptions import get_active_coupon, get_student_months, get_student_started_on
+import pytest
+
+from juniorguru.sync.subscriptions import get_active_coupon, get_student_months, get_student_started_on, format_date
 
 
 def test_get_active_coupon():
@@ -144,3 +146,11 @@ def test_get_student_started_on_multiple_sorted_asc():
                                 'createdAt': 1642588223}]}
 
     assert get_student_started_on(subscription, 'STUDENTCOUPON12345678') == date(2022, 2, 2)
+
+
+@pytest.mark.parametrize('value, expected', [
+    (None, None),
+    (date(2022, 2, 4), '2022-02-04'),
+])
+def test_format_date(value, expected):
+    assert format_date(value) == expected

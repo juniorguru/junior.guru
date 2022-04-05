@@ -1,5 +1,6 @@
 from operator import itemgetter
 from datetime import datetime
+import itertools
 import os
 import re
 
@@ -8,7 +9,9 @@ from gql import Client as Memberful, gql
 from gql.transport.requests import RequestsHTTPTransport
 
 from juniorguru.lib.tasks import sync_task
+from juniorguru.models import Company
 from juniorguru.sync.club_content import main as club_content_task
+from juniorguru.sync.companies import main as companies_task
 from juniorguru.lib import loggers
 from juniorguru.lib import google_sheets
 from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
@@ -36,7 +39,7 @@ FEMALE_NAME_RE = re.compile(r'''
 ''', re.VERBOSE | re.IGNORECASE)
 
 
-@sync_task(club_content_task)
+@sync_task(club_content_task, companies_task)
 @db.connection_context()
 def main():
     logger.info('Getting data from Memberful')
@@ -108,20 +111,16 @@ def main():
             gender = ('F' if FEMALE_NAME_RE.search(name) else 'M') if name else None
             coupon = get_active_coupon(subscription)
             coupon_parts = parse_coupon(coupon) if coupon else {}
-
-            sdacademy_student_started_on = get_student_started_on(subscription, 'STUDENTSDACADEMY')
-            if sdacademy_student_started_on:
-                sdacademy_student = f'{sdacademy_student_started_on:%Y-%m-%d}: '
-                sdacademy_student += ', '.join(get_student_months(subscription, 'STUDENTSDACADEMY'))
-            else:
-                sdacademy_student = None
-
-            engeto_student_started_on = get_student_started_on(subscription, 'STUDENTENGETO')
-            if engeto_student_started_on:
-                engeto_student = f'{engeto_student_started_on:%Y-%m-%d}: '
-                engeto_student += ', '.join(get_student_months(subscription, 'STUDENTENGETO'))
-            else:
-                engeto_student = None
+            student_model_fields = {f'student_{company.slug}_started_on': get_student_started_on(subscription, company.student_coupon_base)
+                                    for company in Company.students_listing()}
+            student_record_fields = dict(itertools.chain.from_iterable([
+                [
+                    (f'{company.name} Student Since', format_date(get_student_started_on(subscription, company.student_coupon_base))),
+                    (f'{company.name} Student Months', ', '.join(get_student_months(subscription, company.student_coupon_base))),
+                    (f'{company.name} Student Invoiced?', subscription['member']['metadata'].get(f'{company.slug}InvoicedOn'))
+                ]
+                for company in Company.students_listing()
+            ]))
 
             records.append({
                 'Name': name,
@@ -140,10 +139,7 @@ def main():
                 'Discord Member?': user.is_member if user else False,
                 'Discord Since': user.first_seen_on().isoformat() if user else None,
                 'Memberful Past Due?': subscription['pastDue'],
-                'SDAcademy Student': sdacademy_student,
-                'SDAcademy Invoiced?': subscription['member']['metadata'].get('sdacademyInvoicedOn'),
-                'Engeto Student': engeto_student,
-                'Engeto Invoiced?': subscription['member']['metadata'].get('engetoInvoicedOn'),
+                **student_record_fields,
             })
 
             if user:
@@ -153,8 +149,8 @@ def main():
                 user.joined_at = min(user.joined_at, joined_memberful_at) if user.joined_at else joined_memberful_at
                 user.expires_at = arrow.get(subscription['expiresAt']).naive
                 user.coupon_base = coupon_parts.get('coupon_base')
-                user.sdacademy_student_started_on = sdacademy_student_started_on
-                user.engeto_student_started_on = engeto_student_started_on
+                for attribute, value in student_model_fields.items():
+                    setattr(user, attribute, value)
                 user.save()
 
         if result['subscriptions']['pageInfo']['hasNextPage']:
@@ -166,6 +162,14 @@ def main():
     for user in ClubUser.listing():
         discord_id = str(user.id)
         if not user.is_bot and discord_id not in seen_discord_ids:
+            student_record_fields = dict(itertools.chain.from_iterable([
+                [
+                    (f'{company.name} Student Since', None),
+                    (f'{company.name} Student Months', None),
+                    (f'{company.name} Student Invoiced?', None)
+                ]
+                for company in Company.students_listing()
+            ]))
             records.append({
                 'Name': None,
                 'Discord Name': user.display_name.strip(),
@@ -183,10 +187,7 @@ def main():
                 'Discord Member?': user.is_member,
                 'Discord Since': user.first_seen_on().isoformat(),
                 'Memberful Past Due?': False,
-                'SDAcademy Student': None,
-                'SDAcademy Invoiced?': None,
-                'Engeto Student': None,
-                'Engeto Invoiced?': None,
+                **student_record_fields,
             })
 
     logger.info('Uploading subscriptions to Google Sheets')
@@ -195,6 +196,10 @@ def main():
         google_sheets.upload(google_sheets.get(DOC_KEY, 'subscriptions'), records)
     else:
         logger.warning('Google Sheets mutations not enabled')
+
+
+def format_date(value):
+    return f'{value:%Y-%m-%d}' if value else None
 
 
 def get_active_coupon(subscription):

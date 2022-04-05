@@ -9,13 +9,13 @@ from juniorguru.models import Company, ClubUser
 def create_company(id, **kwargs):
     return Company.create(id=id,
                           name=kwargs.get('name', 'Banana'),
-                          filename=kwargs.get('filename', 'banana.svg'),
+                          logo_filename=kwargs.get('logo_filename', 'banana.svg'),
                           is_sponsoring_handbook=kwargs.get('is_sponsoring_handbook', False),
-                          link=kwargs.get('link', 'https://banana.example.com'),
+                          url=kwargs.get('url', 'https://banana.example.com'),
                           coupon_base=kwargs.get('coupon_base', 'BANANA123'),
                           student_coupon_base=kwargs.get('student_coupon_base'),
-                          starts_at=kwargs.get('starts_at', date.today() - timedelta(days=10)),
-                          expires_at=kwargs.get('expires_at', date.today() + timedelta(days=100)),
+                          starts_on=kwargs.get('starts_on', date.today() - timedelta(days=10)),
+                          expires_on=kwargs.get('expires_on', date.today() + timedelta(days=100)),
                           role_id=kwargs.get('role_id'),
                           student_role_id=kwargs.get('student_role_id'))
 
@@ -32,44 +32,43 @@ def db_connection():
 
 
 def test_listing_sorts_by_starting_date(db_connection):
-    company1 = create_company('1', starts_at=date(2021, 4, 3))
-    company2 = create_company('2', starts_at=date(2021, 4, 2))
-    company3 = create_company('3', starts_at=date(2021, 4, 1))
+    company1 = create_company('1', starts_on=date(2021, 4, 3))
+    company2 = create_company('2', starts_on=date(2021, 4, 2))
+    company3 = create_company('3', starts_on=date(2021, 4, 1))
 
     assert list(Company.listing()) == [company3, company2, company1]
 
 
 def test_listing_sorts_by_name_if_starting_date_is_the_same(db_connection):
-    company1 = create_company('1', name='Banana', starts_at=date(2021, 4, 1))
-    company2 = create_company('2', name='Apricot', starts_at=date(2021, 4, 1))
+    company1 = create_company('1', name='Banana', starts_on=date(2021, 4, 1))
+    company2 = create_company('2', name='Apricot', starts_on=date(2021, 4, 1))
 
     assert list(Company.listing()) == [company2, company1]
 
 
 def test_listing_skips_expired(db_connection):
     today = date(2021, 5, 2)
-    company1 = create_company('1', starts_at=today, expires_at=date(2021, 4, 1))  # noqa
-    company2 = create_company('2', starts_at=today, expires_at=date(2021, 5, 1))  # noqa
-    company3 = create_company('3', starts_at=today, expires_at=date(2021, 5, 2))
-    company4 = create_company('4', starts_at=today, expires_at=date(2021, 5, 3))
+    company1 = create_company('1', starts_on=today, expires_on=date(2021, 4, 1))  # noqa
+    company2 = create_company('2', starts_on=today, expires_on=date(2021, 5, 1))  # noqa
+    company3 = create_company('3', starts_on=today, expires_on=date(2021, 5, 2))
+    company4 = create_company('4', starts_on=today, expires_on=date(2021, 5, 3))
 
     assert set(Company.listing(today=today)) == {company3, company4}
 
 
 def test_listing_includes_companies_without_expiration(db_connection):
     today = date(2021, 5, 1)
-    company1 = create_company('1', starts_at=today, expires_at=date(2021, 5, 1))
-    company2 = create_company('2', starts_at=today, expires_at=None)
+    company1 = create_company('1', starts_on=today, expires_on=date(2021, 5, 1))
+    company2 = create_company('2', starts_on=today, expires_on=None)
 
     assert set(Company.listing(today=today)) == {company1, company2}
 
 
 def test_listing_skips_planned(db_connection):
     today = date(2021, 5, 2)
-    company1 = create_company('1', starts_at=date(2021, 5, 1), expires_at=None)
-    company2 = create_company('2', starts_at=date(2021, 5, 2), expires_at=None)
-    company3 = create_company('3', starts_at=date(2021, 5, 3), expires_at=None)  # noqa
-    company4 = create_company('4', starts_at=None, expires_at=None)  # noqa
+    company1 = create_company('1', starts_on=date(2021, 5, 1), expires_on=None)
+    company2 = create_company('2', starts_on=date(2021, 5, 2), expires_on=None)
+    company3 = create_company('3', starts_on=date(2021, 5, 3), expires_on=None)  # noqa
 
     assert set(Company.listing(today=today)) == {company1, company2}
 
@@ -107,3 +106,12 @@ def test_list_students(db_connection):
 
     assert set(company.list_students) == {member1, member2}
 
+
+@pytest.mark.parametrize('coupon_base, expected', [
+    (None, None),
+    ('BANANA123', 'banana'),
+])
+def test_slug(coupon_base, expected):
+    company = Company(coupon_base=coupon_base)
+
+    assert company.slug == expected
