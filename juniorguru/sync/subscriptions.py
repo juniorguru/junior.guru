@@ -1,4 +1,5 @@
 from operator import itemgetter
+from datetime import datetime
 import os
 import re
 
@@ -93,8 +94,8 @@ def main():
         result = memberful.execute(query, variable_values=params)
 
         for edge in result['subscriptions']['edges']:
-            node = edge['node']
-            discord_id = node['member']['discordUserId']
+            subscription = edge['node']
+            discord_id = subscription['member']['discordUserId']
             user = None
             if discord_id:
                 seen_discord_ids.add(discord_id)
@@ -103,48 +104,47 @@ def main():
                 except ClubUser.DoesNotExist:
                     pass
 
-            name = node['member']['fullName'].strip()
+            name = subscription['member']['fullName'].strip()
             gender = ('F' if FEMALE_NAME_RE.search(name) else 'M') if name else None
-            coupon = get_active_coupon(node)
+            coupon = get_active_coupon(subscription)
             coupon_parts = parse_coupon(coupon) if coupon else {}
 
-            if node['member']['metadata']:
-                print(node['member']['metadata'])
-
-            # TODO
-            # sda_student_months = get_student_months(node, 'SDACADEMY')
-            # sda_status = get_student_status(node)
+            sdacademy_student_started_on = get_student_started_on(subscription, 'STUDENTSDACADEMY')
+            if sdacademy_student_started_on:
+                sdacademy_student = f'{sdacademy_student_started_on:%Y-%m-%d}: '
+                sdacademy_student += ', '.join(get_student_months(subscription, 'STUDENTSDACADEMY'))
+            else:
+                sdacademy_student = None
 
             records.append({
                 'Name': name,
                 'Discord Name': user.display_name.strip() if user else None,
                 'Gender': gender,
-                'E-mail': node['member']['email'],
-                'Memberful ID': node['member']['id'],
-                'Stripe ID': node['member']['stripeCustomerId'],
+                'E-mail': subscription['member']['email'],
+                'Memberful ID': subscription['member']['id'],
+                'Stripe ID': subscription['member']['stripeCustomerId'],
                 'Discord ID': discord_id,
                 'Invoice ID': coupon_parts.get('invoice_id'),
-                'Memberful Active?': node['active'],
-                'Memberful Since': arrow.get(node['createdAt']).date().isoformat(),
-                'Memberful End': arrow.get(node['expiresAt']).date().isoformat(),
+                'Memberful Active?': subscription['active'],
+                'Memberful Since': arrow.get(subscription['createdAt']).date().isoformat(),
+                'Memberful End': arrow.get(subscription['expiresAt']).date().isoformat(),
                 'Memberful Coupon': coupon,
                 'Memberful Coupon Base': coupon_parts.get('coupon_base'),
                 'Discord Member?': user.is_member if user else False,
                 'Discord Since': user.first_seen_on().isoformat() if user else None,
-                'Memberful Past Due?': node['pastDue'],
-
-                # TODO
-                # 'SDA Student': ', '.join(sda_student_months),
-                # 'SDA Status': None,
+                'Memberful Past Due?': subscription['pastDue'],
+                'SDAcademy Student': sdacademy_student,
+                'SDAcademy Invoiced?': subscription['member']['metadata'].get('sdacademyInvoicedOn'),
             })
 
             if user:
                 logger.debug(f'Updating member #{user.id} with Memberful data')
-                joined_memberful_at = arrow.get(node['createdAt']).naive
-                user.subscription_id = str(node['id'])
+                joined_memberful_at = arrow.get(subscription['createdAt']).naive
+                user.subscription_id = str(subscription['id'])
                 user.joined_at = min(user.joined_at, joined_memberful_at) if user.joined_at else joined_memberful_at
-                user.expires_at = arrow.get(node['expiresAt']).naive
+                user.expires_at = arrow.get(subscription['expiresAt']).naive
                 user.coupon_base = coupon_parts.get('coupon_base')
+                user.sdacademy_student_started_on = sdacademy_student_started_on
                 user.save()
 
         if result['subscriptions']['pageInfo']['hasNextPage']:
@@ -173,6 +173,8 @@ def main():
                 'Discord Member?': user.is_member,
                 'Discord Since': user.first_seen_on().isoformat(),
                 'Memberful Past Due?': False,
+                'SDAcademy Student': None,
+                'SDAcademy Invoiced?': None,
             })
 
     logger.info('Uploading subscriptions to Google Sheets')
@@ -183,16 +185,34 @@ def main():
         logger.warning('Google Sheets mutations not enabled')
 
 
-def get_active_coupon(node):
-    if node['coupon']:
-        return node['coupon']['code']
+def get_active_coupon(subscription):
+    if subscription['coupon']:
+        return subscription['coupon']['code']
 
-    orders = list(sorted(node['orders'], key=itemgetter('createdAt'), reverse=True))
+    orders = list(sorted(subscription['orders'], key=itemgetter('createdAt'), reverse=True))
     try:
         last_order = orders[0]
         if not last_order['coupon']:
             return None
         return last_order['coupon']['code']
+    except IndexError:
+        return None
+
+
+def get_student_months(subscription, coupon_base):
+    return sorted((f"{datetime.fromtimestamp(order['createdAt']):%Y-%m}"
+                   for order in subscription['orders']
+                   if (order['coupon'] and
+                       order['coupon']['code'].startswith(coupon_base))))
+
+
+def get_student_started_on(subscription, coupon_base):
+    orders = (datetime.fromtimestamp(order['createdAt'])
+              for order in subscription['orders']
+              if (order['coupon'] and
+                  order['coupon']['code'].startswith(coupon_base)))
+    try:
+        return sorted(orders)[0].date()
     except IndexError:
         return None
 
