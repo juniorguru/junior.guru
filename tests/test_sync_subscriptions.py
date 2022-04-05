@@ -1,6 +1,6 @@
 from datetime import date
 
-from juniorguru.sync.subscriptions import get_active_coupon, get_student_months, get_student_started_on, get_student_status
+from juniorguru.sync.subscriptions import get_active_coupon, get_student_months, get_student_started_on
 
 
 def test_get_active_coupon():

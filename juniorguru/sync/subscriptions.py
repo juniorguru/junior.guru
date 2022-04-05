@@ -116,6 +116,13 @@ def main():
             else:
                 sdacademy_student = None
 
+            engeto_student_started_on = get_student_started_on(subscription, 'STUDENTENGETO')
+            if engeto_student_started_on:
+                engeto_student = f'{engeto_student_started_on:%Y-%m-%d}: '
+                engeto_student += ', '.join(get_student_months(subscription, 'STUDENTENGETO'))
+            else:
+                engeto_student = None
+
             records.append({
                 'Name': name,
                 'Discord Name': user.display_name.strip() if user else None,
@@ -135,6 +142,8 @@ def main():
                 'Memberful Past Due?': subscription['pastDue'],
                 'SDAcademy Student': sdacademy_student,
                 'SDAcademy Invoiced?': subscription['member']['metadata'].get('sdacademyInvoicedOn'),
+                'Engeto Student': engeto_student,
+                'Engeto Invoiced?': subscription['member']['metadata'].get('engetoInvoicedOn'),
             })
 
             if user:
@@ -145,6 +154,7 @@ def main():
                 user.expires_at = arrow.get(subscription['expiresAt']).naive
                 user.coupon_base = coupon_parts.get('coupon_base')
                 user.sdacademy_student_started_on = sdacademy_student_started_on
+                user.engeto_student_started_on = engeto_student_started_on
                 user.save()
 
         if result['subscriptions']['pageInfo']['hasNextPage']:
@@ -175,6 +185,8 @@ def main():
                 'Memberful Past Due?': False,
                 'SDAcademy Student': None,
                 'SDAcademy Invoiced?': None,
+                'Engeto Student': None,
+                'Engeto Invoiced?': None,
             })
 
     logger.info('Uploading subscriptions to Google Sheets')

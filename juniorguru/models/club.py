@@ -22,6 +22,7 @@ class ClubUser(BaseModel):
     expires_at = DateTimeField(null=True)
     roles = JSONField(default=lambda: [])
     sdacademy_student_started_on = DateField(null=True)
+    engeto_student_started_on = DateField(null=True)
 
     def messages_count(self):
         return self.list_messages.count()
