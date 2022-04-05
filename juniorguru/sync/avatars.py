@@ -16,7 +16,13 @@ logger = loggers.get(__name__)
 
 
 IMAGES_PATH = Path(__file__).parent.parent / 'images'
+
 AVATARS_PATH = IMAGES_PATH / 'avatars'
+
+MEMBERS_CHUNK_SIZE = 10
+
+AVATARS_LIMIT = 40
+
 AVATAR_SIZE_PX = 60
 
 
@@ -31,10 +37,31 @@ async def discord_task(client):
     for path in AVATARS_PATH.glob('*.png'):
         path.unlink()
 
-    await asyncio.gather(*[
-        process_member(client, member)
-        for member in ClubUser.members_listing()
-    ])
+    members_chunks = chunks(ClubUser.members_listing(shuffle=True),
+                            size=MEMBERS_CHUNK_SIZE)
+    for n, members_chunk in enumerate(members_chunks, start=1):
+        logger.debug(f'Processing chunk #{n} of {len(members_chunk)} members')
+        await asyncio.gather(*[
+            process_member(client, member)
+            for member in members_chunk
+        ])
+
+        avatars_count = ClubUser.avatars_count()
+        logger.debug(f'There are total {avatars_count} avatars after processing the chunk #{n}')
+        if avatars_count >= AVATARS_LIMIT:
+            logger.debug(f"Done! Got {avatars_count} avatars, need {AVATARS_LIMIT}")
+            break
+
+
+def chunks(iterable, size=1):
+    chunk = []
+    for item in iterable:
+        chunk.append(item)
+        if len(chunk) == size:
+            yield chunk
+            chunk = []
+    if chunk:
+        yield chunk
 
 
 async def process_member(client, member):
@@ -52,7 +79,6 @@ async def process_member(client, member):
             logger_m.info("Has no avatar")
     except:
         logger_m.exception("Unable to get avatar")
-        raise
     member.save()
 
 

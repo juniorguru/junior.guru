@@ -1,7 +1,7 @@
 import math
 from datetime import date, timedelta
 
-from peewee import IntegerField, DateTimeField, ForeignKeyField, CharField, BooleanField
+from peewee import IntegerField, DateTimeField, ForeignKeyField, CharField, BooleanField, fn
 
 from juniorguru.models.base import BaseModel, JSONField
 from juniorguru.lib.club import (parse_coupon, INTRO_CHANNEL, UPVOTES_EXCLUDE_CHANNELS,
@@ -81,6 +81,10 @@ class ClubUser(BaseModel):
         return cls.members_listing().count()
 
     @classmethod
+    def avatars_count(cls):
+        return cls.avatars_listing().count()
+
+    @classmethod
     def top_members_limit(cls):
         return math.ceil(cls.members_count() * TOP_MEMBERS_PERCENT)
 
@@ -89,8 +93,11 @@ class ClubUser(BaseModel):
         return cls.select()
 
     @classmethod
-    def members_listing(cls):
-        return cls.listing().where(cls.is_bot == False, cls.is_member == True)
+    def members_listing(cls, shuffle=False):
+        members = cls.listing().where(cls.is_bot == False, cls.is_member == True)
+        if shuffle:
+            members = members.order_by(fn.random())
+        return members
 
     @classmethod
     def avatars_listing(cls):
