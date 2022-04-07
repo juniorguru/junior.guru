@@ -1,12 +1,12 @@
 import pytest
-from invoke import Collection, task, Exit
+from invoke import Collection, Exit, task
 
 from juniorguru.utils import checks
 from juniorguru.utils.screenshots import main as screenshots
-from juniorguru.utils.winners import main as winners
 from juniorguru.utils.students import main as students
+from juniorguru.utils.winners import main as winners
 
-from . import web, sync
+from . import sync, web
 
 
 @task(incrementable=['v'])
@@ -23,4 +23,9 @@ def lint(context):
     context.run("npx stylelint 'juniorguru/web/static/src/css-mkdocs/**/*.scss' 'juniorguru/image_templates/*.css'")
 
 
-namespace = Collection(test, lint, screenshots, winners, students, sync, web, checks)
+@task()
+def format(context):
+    context.run('poetry run isort .')
+
+
+namespace = Collection(test, lint, format, screenshots, winners, students, sync, web, checks)

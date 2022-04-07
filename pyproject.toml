@@ -52,6 +52,7 @@ pytest = "*"
 cssselect = "*"
 pync = "*"
 flake8 = "*"
+isort = "^5.10.1"
 
 [tool.pytest.ini_options]
 python_files = "test_*.py *_test.py test.py"
