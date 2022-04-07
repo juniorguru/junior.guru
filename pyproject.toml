@@ -60,7 +60,13 @@ testpaths = "."
 addopts = "--ff --ignore=node_modules --ignore=__jobs_legacy__"
 
 [tool.isort]
+profile = "black"
+lines_after_imports = 2
+combine_as_imports = true
+multi_line_output = 0
+include_trailing_comma = false
 extend_skip = ["__jobs_legacy__"]
+known_local_folder = ["testing_utils"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
