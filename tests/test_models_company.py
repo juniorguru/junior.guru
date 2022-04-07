@@ -3,12 +3,13 @@ from datetime import date, timedelta
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models import Company, ClubUser
+from juniorguru.models import Company, CompanyStudentSubscription, ClubUser
 
 
 def create_company(id, **kwargs):
     return Company.create(id=id,
-                          name=kwargs.get('name', 'Banana'),
+                          slug=kwargs.get('slug', f'banana{id}'),
+                          name=kwargs.get('name', f'Banana #{id}'),
                           logo_filename=kwargs.get('logo_filename', 'banana.svg'),
                           is_sponsoring_handbook=kwargs.get('is_sponsoring_handbook', False),
                           url=kwargs.get('url', 'https://banana.example.com'),
@@ -20,9 +21,18 @@ def create_company(id, **kwargs):
                           student_role_id=kwargs.get('student_role_id'))
 
 
+def create_student_subscription(company, **kwargs):
+    return CompanyStudentSubscription.create(company=company,
+                                             memberful_id='123',
+                                             name='Alice',
+                                             email='alice@example.com',
+                                             started_on=kwargs.get('started_on', date.today()),
+                                             invoiced_on=kwargs.get('invoiced_on', date.today()))
+
+
 @pytest.fixture
 def db_connection():
-    models = [Company, ClubUser]
+    models = [Company, CompanyStudentSubscription, ClubUser]
     db = SqliteDatabase(':memory:')
     with db:
         db.bind(models)
@@ -81,37 +91,64 @@ def test_handbook_listing(db_connection):
     assert set(Company.handbook_listing()) == {company1, company3}
 
 
-def test_students_listing(db_connection):
+def test_schools_listing(db_connection):
     company1 = create_company('1', student_coupon_base='STUDENT!')
     company2 = create_company('2', student_coupon_base=None)  # noqa
     company3 = create_company('3', student_coupon_base='STUDENT!')
 
-    assert set(Company.students_listing()) == {company1, company3}
+    assert set(Company.schools_listing()) == {company1, company3}
 
 
-def test_list_employees(db_connection):
+def test_list_members(db_connection):
     member1 = ClubUser.create(display_name='Alice', mention='<@123>', coupon_base='XEROX')
     member2 = ClubUser.create(display_name='Bob', mention='<@123>', coupon_base='XEROX')
     member3 = ClubUser.create(display_name='Celine', mention='<@123>', coupon_base='ZALANDO')  # noqa
     company = create_company('1', coupon_base='XEROX')
 
-    assert set(company.list_employees) == {member1, member2}
+    assert set(company.list_members) == {member1, member2}
 
 
-def test_list_students(db_connection):
+def test_list_student_members(db_connection):
     member1 = ClubUser.create(display_name='Alice', mention='<@123>', coupon_base='XEROXSTUDENT')
     member2 = ClubUser.create(display_name='Bob', mention='<@123>', coupon_base='XEROXSTUDENT')
     member3 = ClubUser.create(display_name='Celine', mention='<@123>', coupon_base='ZALANDOSTUDENT')  # noqa
     company = create_company('1', student_coupon_base='XEROXSTUDENT')
 
-    assert set(company.list_students) == {member1, member2}
+    assert set(company.list_student_members) == {member1, member2}
 
 
-@pytest.mark.parametrize('coupon_base, expected', [
-    (None, None),
-    ('BANANA123', 'banana'),
-])
-def test_slug(coupon_base, expected):
-    company = Company(coupon_base=coupon_base)
+def test_get_by_slug(db_connection):
+    create_company('1', slug='xerox')
+    company = create_company('2', slug='zalando')
 
-    assert company.slug == expected
+    assert Company.get_by_slug('zalando') == company
+
+
+def test_get_by_slug_doesnt_exist(db_connection):
+    create_company('1', slug='xerox')
+
+    with pytest.raises(Company.DoesNotExist):
+        assert Company.get_by_slug('zalando')
+
+
+def test_get_by_slug_empty(db_connection):
+    create_company('1', slug=None)
+
+    with pytest.raises(ValueError):
+        assert Company.get_by_slug(None)
+
+
+def test_list_student_subscriptions(db_connection):
+    company = create_company('1')
+    subscription1 = create_student_subscription(company, invoiced_on=date.today())
+    subscription2 = create_student_subscription(company, invoiced_on=None)
+
+    assert set(company.list_student_subscriptions) == {subscription1, subscription2}
+
+
+def test_list_student_subscriptions_billable(db_connection):
+    company = create_company('1')
+    subscription1 = create_student_subscription(company, invoiced_on=date.today())  # noqa
+    subscription2 = create_student_subscription(company, invoiced_on=None)
+
+    assert set(company.list_student_subscriptions_billable) == {subscription2}

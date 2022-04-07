@@ -3,6 +3,7 @@ from pathlib import Path
 
 from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import google_sheets
+from juniorguru.lib.club import parse_coupon
 from juniorguru.lib.coerce import coerce, parse_boolean_words, parse_text, parse_date, parse_int
 from juniorguru.models import Company, db
 from juniorguru.lib import loggers
@@ -47,7 +48,7 @@ def main():
 
 
 def coerce_record(record):
-    return coerce({
+    data = coerce({
         r'^name$': ('name', parse_text),
         r'^email$': ('email', parse_text),
         r'^filename$': ('logo_filename', parse_text),
@@ -59,3 +60,12 @@ def coerce_record(record):
         r'^expires$': ('expires_on', parse_date),
         r'^job slots$': ('job_slots_count', parse_int),
     }, record)
+    if data.get('coupon_base'):
+        data['slug'] = parse_slug(data['coupon_base'])
+    return data
+
+
+def parse_slug(coupon_base):
+    if coupon_base:
+        return parse_coupon(coupon_base)['coupon_name'].lower()
+    return None

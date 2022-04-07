@@ -1,7 +1,7 @@
 import math
 from datetime import date, timedelta
 
-from peewee import IntegerField, DateTimeField, ForeignKeyField, CharField, BooleanField, DateField, fn
+from peewee import IntegerField, DateTimeField, ForeignKeyField, CharField, BooleanField, fn
 
 from juniorguru.models.base import BaseModel, JSONField
 from juniorguru.lib.club import (parse_coupon, INTRO_CHANNEL, UPVOTES_EXCLUDE_CHANNELS,
@@ -12,17 +12,18 @@ from juniorguru.lib.club import (parse_coupon, INTRO_CHANNEL, UPVOTES_EXCLUDE_CH
 class ClubUser(BaseModel):
     id = IntegerField(primary_key=True)
     subscription_id = CharField(null=True)
+
+    joined_at = DateTimeField(null=True)
+    expires_at = DateTimeField(null=True)
+
     is_bot = BooleanField(default=False)
     is_member = BooleanField(default=True)
+
     avatar_path = CharField(null=True)
     display_name = CharField()
     mention = CharField()
     coupon_base = CharField(null=True, index=True)
-    joined_at = DateTimeField(null=True)
-    expires_at = DateTimeField(null=True)
     roles = JSONField(default=lambda: [])
-    student_sdacademy_started_on = DateField(null=True)
-    student_engeto_started_on = DateField(null=True)
 
     def messages_count(self):
         return self.list_messages.count()

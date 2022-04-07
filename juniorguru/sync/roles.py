@@ -117,15 +117,15 @@ async def discord_task(client):
         await manage_company_roles(client, companies)
 
         for company in companies:
-            employees_ids = [member.id for member in company.list_employees]
-            logger.debug(f"employees_ids({company!r}): {repr_ids(members, employees_ids)}")
+            company_members_ids = [member.id for member in company.list_members]
+            logger.debug(f"company_members_ids({company!r}): {repr_ids(members, company_members_ids)}")
             for member in members:
-                changes.extend(evaluate_changes(member.id, member.roles, employees_ids, company.role_id))
+                changes.extend(evaluate_changes(member.id, member.roles, company_members_ids, company.role_id))
 
-            students_ids = [member.id for member in company.list_students]
-            logger.debug(f"students_ids({company!r}): {repr_ids(members, students_ids)}")
+            student_members_ids = [member.id for member in company.list_student_members]
+            logger.debug(f"student_members_ids({company!r}): {repr_ids(members, student_members_ids)}")
             for member in members:
-                changes.extend(evaluate_changes(member.id, member.roles, students_ids, company.student_role_id))
+                changes.extend(evaluate_changes(member.id, member.roles, student_members_ids, company.student_role_id))
 
         logger.info(f'Applying {len(changes)} changes to roles')
         await apply_changes(client, changes)

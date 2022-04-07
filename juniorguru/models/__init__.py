@@ -6,12 +6,12 @@ from juniorguru.models.last_modified import LastModified
 from juniorguru.models.topic import Topic
 from juniorguru.models.club import ClubMessage, ClubUser, ClubPinReaction
 from juniorguru.models.event import Event, EventSpeaking
-from juniorguru.models.company import Company
+from juniorguru.models.company import Company, CompanyStudentSubscription
 from juniorguru.models.transaction import Transaction
 from juniorguru.models.podcast import PodcastEpisode
 
 
 __all__ = [db, SubmittedJob, ScrapedJob, Story, Supporter, LastModified,
-           ListedJob, EMPLOYMENT_TYPES,
+           ListedJob, EMPLOYMENT_TYPES, CompanyStudentSubscription,
            Topic, ClubMessage, ClubUser, ClubPinReaction, Event, EventSpeaking,
            Company, json_dumps, Transaction, PodcastEpisode]

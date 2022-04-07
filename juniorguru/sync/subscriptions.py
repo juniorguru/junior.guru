@@ -1,15 +1,14 @@
 from operator import itemgetter
-from datetime import datetime
+from datetime import datetime, date
 import itertools
 import os
 import re
 
 import arrow
-from gql import Client as Memberful, gql
-from gql.transport.requests import RequestsHTTPTransport
 
+from juniorguru.lib.memberful import Memberful
 from juniorguru.lib.tasks import sync_task
-from juniorguru.models import Company
+from juniorguru.models import Company, CompanyStudentSubscription
 from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.sync.companies import main as companies_task
 from juniorguru.lib import loggers
@@ -42,14 +41,12 @@ FEMALE_NAME_RE = re.compile(r'''
 @sync_task(club_content_task, companies_task)
 @db.connection_context()
 def main():
+    CompanyStudentSubscription.drop_table()
+    CompanyStudentSubscription.create_table()
+
     logger.info('Getting data from Memberful')
-    # https://memberful.com/help/integrate/advanced/memberful-api/
-    # https://juniorguru.memberful.com/api/graphql/explorer?api_user_id=52463
-    transport = RequestsHTTPTransport(url='https://juniorguru.memberful.com/api/graphql/',
-                                      headers={'Authorization': f'Bearer {MEMBERFUL_API_KEY}'},
-                                      verify=True, retries=3)
-    memberful = Memberful(transport=transport)
-    query = gql("""
+    memberful = Memberful()
+    query = """
         query getSubscriptions($cursor: String!) {
             subscriptions(after: $cursor) {
                 totalCount
@@ -85,17 +82,11 @@ def main():
                 }
             }
         }
-    """)
+    """
 
     records = []
     seen_discord_ids = set()
-
-    cursor = ''
-    while cursor is not None:
-        logger.info('Requesting Memberful GraphQL')
-        params = dict(cursor=cursor)
-        result = memberful.execute(query, variable_values=params)
-
+    for result in memberful.query(query, lambda result: result['subscriptions']['pageInfo']):
         for edge in result['subscriptions']['edges']:
             subscription = edge['node']
             discord_id = subscription['member']['discordUserId']
@@ -111,15 +102,13 @@ def main():
             gender = ('F' if FEMALE_NAME_RE.search(name) else 'M') if name else None
             coupon = get_active_coupon(subscription)
             coupon_parts = parse_coupon(coupon) if coupon else {}
-            student_model_fields = {f'student_{company.slug}_started_on': get_student_started_on(subscription, company.student_coupon_base)
-                                    for company in Company.students_listing()}
             student_record_fields = dict(itertools.chain.from_iterable([
                 [
                     (f'{company.name} Student Since', format_date(get_student_started_on(subscription, company.student_coupon_base))),
                     (f'{company.name} Student Months', ', '.join(get_student_months(subscription, company.student_coupon_base))),
                     (f'{company.name} Student Invoiced?', subscription['member']['metadata'].get(f'{company.slug}InvoicedOn'))
                 ]
-                for company in Company.students_listing()
+                for company in Company.schools_listing()
             ]))
 
             records.append({
@@ -142,6 +131,18 @@ def main():
                 **student_record_fields,
             })
 
+            for company in Company.schools_listing():
+                started_on = get_student_started_on(subscription, company.student_coupon_base)
+                if started_on:
+                    invoiced_on = subscription['member']['metadata'].get(f'{company.slug}InvoicedOn')
+                    invoiced_on = date.fromisoformat(invoiced_on) if invoiced_on else None
+                    CompanyStudentSubscription.create(company=company,
+                                                      memberful_id=subscription['member']['id'],
+                                                      name=name,
+                                                      email=subscription['member']['email'],
+                                                      started_on=started_on,
+                                                      invoiced_on=invoiced_on)
+
             if user:
                 logger.debug(f'Updating member #{user.id} with Memberful data')
                 joined_memberful_at = arrow.get(subscription['createdAt']).naive
@@ -149,14 +150,7 @@ def main():
                 user.joined_at = min(user.joined_at, joined_memberful_at) if user.joined_at else joined_memberful_at
                 user.expires_at = arrow.get(subscription['expiresAt']).naive
                 user.coupon_base = coupon_parts.get('coupon_base')
-                for attribute, value in student_model_fields.items():
-                    setattr(user, attribute, value)
                 user.save()
-
-        if result['subscriptions']['pageInfo']['hasNextPage']:
-            cursor = result['subscriptions']['pageInfo']['endCursor']
-        else:
-            cursor = None
 
     logger.info('Process remaining Discord users')
     for user in ClubUser.listing():
@@ -168,7 +162,7 @@ def main():
                     (f'{company.name} Student Months', None),
                     (f'{company.name} Student Invoiced?', None)
                 ]
-                for company in Company.students_listing()
+                for company in Company.schools_listing()
             ]))
             records.append({
                 'Name': None,

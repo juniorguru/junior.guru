@@ -1,14 +1,14 @@
 from datetime import date
 
-from peewee import CharField, DateField, BooleanField, IntegerField
+from peewee import CharField, DateField, BooleanField, IntegerField, ForeignKeyField
 
-from juniorguru.lib.club import parse_coupon
 from juniorguru.models.base import BaseModel
 from juniorguru.models import ClubUser
 
 
 class Company(BaseModel):
     name = CharField()
+    slug = CharField(null=True, unique=True)
     logo_filename = CharField()
     is_sponsoring_handbook = BooleanField(default=False)
     url = CharField()
@@ -22,13 +22,11 @@ class Company(BaseModel):
     poster_path = CharField(null=True)
 
     @property
-    def slug(self):
-        if self.coupon_base:
-            return parse_coupon(self.coupon_base)['coupon_name'].lower()
-        return None
+    def is_school(self):
+        return bool(self.student_coupon_base)
 
     @property
-    def list_employees(self):
+    def list_members(self):
         if not self.coupon_base:
             return []
         return ClubUser.select() \
@@ -36,12 +34,25 @@ class Company(BaseModel):
             .where((ClubUser.is_member == True) & (ClubUser.coupon_base == self.coupon_base))
 
     @property
-    def list_students(self):
+    def list_student_members(self):
         if not self.student_coupon_base:
             return []
         return ClubUser.select() \
             .join(self.__class__, on=(ClubUser.coupon_base == self.__class__.student_coupon_base)) \
             .where((ClubUser.is_member == True) & (ClubUser.coupon_base == self.student_coupon_base))
+
+    @property
+    def list_student_subscriptions_billable(self):
+        return self.list_student_subscriptions \
+            .where(CompanyStudentSubscription.invoiced_on.is_null())
+
+    @classmethod
+    def get_by_slug(cls, slug):
+        if not slug:
+            raise ValueError(repr(slug))
+        return cls.select() \
+            .where(cls.slug == slug) \
+            .get()
 
     @classmethod
     def listing(cls, today=None):
@@ -58,9 +69,21 @@ class Company(BaseModel):
             .where(cls.is_sponsoring_handbook == True)
 
     @classmethod
-    def students_listing(cls):
+    def schools_listing(cls):
         return cls.listing() \
             .where(cls.student_coupon_base.is_null(False))
 
     def __str__(self):
         return self.name
+
+
+class CompanyStudentSubscription(BaseModel):
+    company = ForeignKeyField(Company, backref='list_student_subscriptions')
+    memberful_id = CharField()
+    name = CharField()
+    email = CharField()
+    started_on = DateField()
+    invoiced_on = DateField(null=True)
+
+    def __str__(self):
+        return f'{self.company.slug}, #{self.memberful_id}, {self.started_on}, {self.invoiced_on}'

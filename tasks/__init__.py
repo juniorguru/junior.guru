@@ -4,6 +4,7 @@ from invoke import Collection, task, Exit
 from juniorguru.utils import checks
 from juniorguru.utils.screenshots import main as screenshots
 from juniorguru.utils.draw_winners import main as draw_winners
+from juniorguru.utils.students import main as students
 
 from . import web, sync
 
@@ -22,4 +23,4 @@ def lint(context):
     context.run("npx stylelint 'juniorguru/web/static/src/css-mkdocs/**/*.scss' 'juniorguru/image_templates/*.css'")
 
 
-namespace = Collection(test, lint, screenshots, draw_winners, sync, web, checks)
+namespace = Collection(test, lint, screenshots, draw_winners, students, sync, web, checks)
