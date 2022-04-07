@@ -1097,7 +1097,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "py-cord"
-version = "2.0.0b4"
+version = "2.0.0b5"
 description = "A Python wrapper for the Discord API"
 category = "main"
 optional = false
@@ -1706,7 +1706,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.8.*"
-content-hash = "728586ff852ed9f25b80c5bc0cb053b2b469efdbc1be14fce019e56d54a2e055"
+content-hash = "90be6e1c448a2606c62fb235af6d1c7f0c89050a71973c0b7c9c8c02773aa720"
 
 [metadata.files]
 aiodns = [
@@ -2428,6 +2428,7 @@ numpy = [
     {file = "numpy-1.22.3-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:8251ed96f38b47b4295b1ae51631de7ffa8260b5b087808ef09a39a9d66c97ab"},
     {file = "numpy-1.22.3-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:48a3aecd3b997bf452a2dedb11f4e79bc5bfd21a1d4cc760e703c31d57c84b3e"},
     {file = "numpy-1.22.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a3bae1a2ed00e90b3ba5f7bd0a7c7999b55d609e0c54ceb2b076a25e345fa9f4"},
+    {file = "numpy-1.22.3-cp310-cp310-win32.whl", hash = "sha256:f950f8845b480cffe522913d35567e29dd381b0dc7e4ce6a4a9f9156417d2430"},
     {file = "numpy-1.22.3-cp310-cp310-win_amd64.whl", hash = "sha256:08d9b008d0156c70dc392bb3ab3abb6e7a711383c3247b410b39962263576cd4"},
     {file = "numpy-1.22.3-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:201b4d0552831f7250a08d3b38de0d989d6f6e4658b709a02a73c524ccc6ffce"},
     {file = "numpy-1.22.3-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:f8c1f39caad2c896bc0018f699882b345b2a63708008be29b1f355ebf6f933fe"},
@@ -2609,8 +2610,8 @@ py = [
     {file = "py-1.11.0.tar.gz", hash = "sha256:51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719"},
 ]
 py-cord = [
-    {file = "py-cord-2.0.0b4.tar.gz", hash = "sha256:49b216af4595781f110725660786c8d650b661c45aff4c392d74e886d0f3c4c0"},
-    {file = "py_cord-2.0.0b4-py3-none-any.whl", hash = "sha256:34ef313b814997d819458d5e7147b011a18b9613f02f369bb432c9ca52924173"},
+    {file = "py-cord-2.0.0b5.tar.gz", hash = "sha256:bf58363d3bade00273113b2e8ecf4eca07f6d57a8836e0882275760055b3ecc6"},
+    {file = "py_cord-2.0.0b5-py3-none-any.whl", hash = "sha256:0d28dcc69be6e7f94ea5094fd37e2083fa1fa37e9cb4800c05c13732510c1282"},
 ]
 pyasn1 = [
     {file = "pyasn1-0.4.8-py2.4.egg", hash = "sha256:fec3e9d8e36808a28efb59b489e4528c10ad0f480e57dcc32b4de5c9d8c9fdf3"},
