@@ -8,7 +8,8 @@ from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import google_sheets
 from juniorguru.lib.coerce import (coerce, parse_boolean, parse_datetime, parse_text,
     parse_date, parse_set, parse_boolean_words, parse_url)
-from juniorguru.models import SubmittedJob, db
+from juniorguru.models.job import SubmittedJob
+from juniorguru.models.base import db
 from juniorguru.lib import loggers
 from juniorguru.sync.scrape_jobs.pipelines.language_parser import parse as parse_language
 from juniorguru.sync.jobs_scraped.pipelines.boards_ids import parse_urls as parse_board_ids

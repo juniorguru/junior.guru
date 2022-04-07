@@ -7,7 +7,9 @@ from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, CommaSeparat
 
 from juniorguru.lib.tasks import sync_task
 from juniorguru.sync.club_content import main as club_content_task
-from juniorguru.models import Event, EventSpeaking, ClubMessage, db
+from juniorguru.models.event import Event, EventSpeaking
+from juniorguru.models.club import ClubMessage
+from juniorguru.models.base import db
 from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_square, replace_with_jpg
 from juniorguru.lib import loggers
 from juniorguru.lib.template_filters import local_time, md, weekday

@@ -1,7 +1,8 @@
 from datetime import date
 
 from juniorguru.lib.tasks import sync_task
-from juniorguru.models import db, ListedJob, SubmittedJob, ScrapedJob
+from juniorguru.models.base import db
+from juniorguru.models.job import ListedJob, SubmittedJob, ScrapedJob
 from juniorguru.lib import loggers
 
 

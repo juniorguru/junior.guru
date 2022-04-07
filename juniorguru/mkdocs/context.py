@@ -7,7 +7,16 @@ from datetime import date
 import arrow
 
 from juniorguru.lib import charts
-from juniorguru.models import db, Topic, ClubUser, Company, Event, ClubMessage, Story, LastModified, ListedJob, Transaction, PodcastEpisode
+from juniorguru.models.base import db
+from juniorguru.models.topic import Topic
+from juniorguru.models.club import ClubUser, ClubMessage
+from juniorguru.models.company import Company
+from juniorguru.models.event import Event
+from juniorguru.models.story import Story
+from juniorguru.models.last_modified import LastModified
+from juniorguru.models.job import ListedJob
+from juniorguru.models.transaction import Transaction
+from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.mkdocs.thumbnail import thumbnail
 
 

@@ -4,7 +4,9 @@ from collections import Counter
 from juniorguru.lib.tasks import sync_task
 from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.lib import loggers
-from juniorguru.models import ClubMessage, Topic, db
+from juniorguru.models.club import ClubMessage
+from juniorguru.models.topic import Topic
+from juniorguru.models.base import db
 
 
 logger = loggers.get(__name__)

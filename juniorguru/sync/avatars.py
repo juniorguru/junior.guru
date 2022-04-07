@@ -9,7 +9,8 @@ from juniorguru.lib.tasks import sync_task
 from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task
-from juniorguru.models import ClubUser, db
+from juniorguru.models.club import ClubUser
+from juniorguru.models.base import db
 
 
 logger = loggers.get(__name__)

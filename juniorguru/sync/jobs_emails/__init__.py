@@ -11,7 +11,7 @@ from jinja2 import Template
 
 from juniorguru.lib import loggers
 from juniorguru.lib.tasks import sync_task
-from juniorguru.models import ListedJob
+from juniorguru.models.job import ListedJob
 from juniorguru.sync.jobs_listing import main as jobs_listing_task
 
 

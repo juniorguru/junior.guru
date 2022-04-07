@@ -3,8 +3,7 @@ from datetime import datetime, date, timedelta
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models import ClubMessage, ClubUser, ClubPinReaction
-from juniorguru.models.club import INTRO_CHANNEL, JUNIORGURU_BOT
+from juniorguru.models.club import ClubMessage, ClubUser, ClubPinReaction, INTRO_CHANNEL, JUNIORGURU_BOT
 
 
 def create_user(id_, **kwargs):

@@ -3,7 +3,8 @@ from pathlib import Path
 from strictyaml import Map, Optional, Seq, Str, Url, load
 
 from juniorguru.lib.tasks import sync_task
-from juniorguru.models import Supporter, db
+from juniorguru.models.supporter import Supporter
+from juniorguru.models.base import db
 
 
 schema = Seq(

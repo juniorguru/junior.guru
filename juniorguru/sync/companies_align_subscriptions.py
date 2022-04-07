@@ -8,7 +8,8 @@ from juniorguru.lib.memberful import Memberful, MEMBERFUL_MUTATIONS_ENABLED
 from juniorguru.sync.subscriptions import main as subscriptions_task
 from juniorguru.sync.companies import main as companies_task
 from juniorguru.lib.tasks import sync_task
-from juniorguru.models import db, Company
+from juniorguru.models.base import db
+from juniorguru.models.company import Company
 
 
 logger = loggers.get(__name__)

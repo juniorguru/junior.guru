@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from jinja2 import Template
 
-from juniorguru.models import ListedJob, SubmittedJob
+from juniorguru.models.job import ListedJob, SubmittedJob
 from juniorguru.sync.jobs_emails import debug_message, create_message, should_send
 
 

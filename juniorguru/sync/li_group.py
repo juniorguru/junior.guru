@@ -4,7 +4,8 @@ from juniorguru.lib.tasks import sync_task
 from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, is_message_over_period_ago
-from juniorguru.models import ClubMessage, db
+from juniorguru.models.club import ClubMessage
+from juniorguru.models.base import db
 
 
 LI_GROUP_CHANNEL = 839059491432431616

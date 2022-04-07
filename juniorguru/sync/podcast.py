@@ -8,7 +8,8 @@ from requests.exceptions import HTTPError
 
 from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
-from juniorguru.models import db, PodcastEpisode
+from juniorguru.models.base import db
+from juniorguru.models.podcast import PodcastEpisode
 
 
 logger = loggers.get(__name__)

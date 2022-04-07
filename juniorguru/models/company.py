@@ -3,7 +3,7 @@ from datetime import date
 from peewee import CharField, DateField, BooleanField, IntegerField, ForeignKeyField
 
 from juniorguru.models.base import BaseModel
-from juniorguru.models import ClubUser
+from juniorguru.models.club import ClubUser
 
 
 class Company(BaseModel):

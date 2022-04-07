@@ -3,7 +3,7 @@ from datetime import date, timedelta
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models import Transaction
+from juniorguru.models.transaction import Transaction
 
 
 @pytest.fixture

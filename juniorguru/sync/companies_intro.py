@@ -9,7 +9,9 @@ from juniorguru.sync.companies import main as companies_task
 from juniorguru.sync.roles import main as roles_task
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, is_message_over_period_ago, INTRO_CHANNEL, JOBS_CHANNEL
-from juniorguru.models import ClubMessage, Company, db
+from juniorguru.models.club import ClubMessage
+from juniorguru.models.company import Company
+from juniorguru.models.base import db
 
 
 MESSAGE_EMOJI = '👋'

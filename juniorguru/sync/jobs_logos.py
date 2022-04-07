@@ -8,7 +8,8 @@ import favicon
 from PIL import Image, ImageChops, ImageOps
 
 from juniorguru.lib.tasks import sync_task
-from juniorguru.models import db, ListedJob
+from juniorguru.models.base import db
+from juniorguru.models.job import ListedJob
 from juniorguru.lib import loggers
 from juniorguru.sync.jobs_listing import main as jobs_listing_task
 

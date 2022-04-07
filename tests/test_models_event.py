@@ -3,7 +3,8 @@ from datetime import datetime, date
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models import Event, EventSpeaking, ClubUser
+from juniorguru.models.event import Event, EventSpeaking
+from juniorguru.models.club import ClubUser
 
 
 def create_member(id):

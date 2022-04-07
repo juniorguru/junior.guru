@@ -3,7 +3,7 @@ from datetime import date
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models import Story
+from juniorguru.models.story import Story
 
 
 @pytest.fixture

@@ -5,7 +5,10 @@ import ics
 from pod2gen import Podcast, Episode, Media, Person, Category, Funding
 
 from juniorguru.lib.md import md
-from juniorguru.models import Event, PodcastEpisode, ListedJob, db
+from juniorguru.models.event import Event
+from juniorguru.models.podcast import PodcastEpisode
+from juniorguru.models.job import ListedJob
+from juniorguru.models.base import db
 
 
 @db.connection_context()

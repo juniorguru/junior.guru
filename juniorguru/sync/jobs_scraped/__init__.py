@@ -5,7 +5,8 @@ from peewee import OperationalError
 
 from juniorguru.lib import loggers
 from juniorguru.lib.tasks import sync_task
-from juniorguru.models import db, ScrapedJob
+from juniorguru.models.base import db
+from juniorguru.models.job import ScrapedJob
 from juniorguru.sync.scrape_jobs.settings import FEEDS_DIR
 from juniorguru.sync.jobs_scraped.processing import filter_relevant_paths, process_paths, postprocess_jobs
 

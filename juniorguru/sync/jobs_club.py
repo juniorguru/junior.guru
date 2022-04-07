@@ -5,7 +5,9 @@ from datetime import date, timedelta
 from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, JOBS_CHANNEL
-from juniorguru.models import ClubMessage, db, ListedJob
+from juniorguru.models.club import ClubMessage
+from juniorguru.models.base import db
+from juniorguru.models.job import ListedJob
 from juniorguru.sync.jobs_listing import main as jobs_listing_task
 
 

@@ -3,7 +3,8 @@ from subprocess import run, PIPE
 import arrow
 
 from juniorguru.lib.tasks import sync_task
-from juniorguru.models import LastModified, db
+from juniorguru.models.last_modified import LastModified
+from juniorguru.models.base import db
 
 
 FILES = [

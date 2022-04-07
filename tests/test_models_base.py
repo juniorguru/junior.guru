@@ -2,39 +2,10 @@ from datetime import date, datetime, time
 
 import pytest
 
-from juniorguru.models import base as models_base
+from juniorguru.models.base import json_dumps
 
 
-@pytest.fixture
-def db():
-    class StubDB():
-        def __init__(self):
-            self.entered = 0
-            self.exited = 0
-
-        def __enter__(self):
-            self.entered += 1
-
-        def __exit__(self, *args, **kwargs):
-            self.exited += 1
-
-    return StubDB()
-
-
-@pytest.fixture
-def stats():
-    class StubStats():
-        def __init__(self):
-            self.values = {}
-
-        def inc_value(self, name):
-            self.values.setdefault(name, 0)
-            self.values[name] += 1
-
-    return StubStats()
-
-
-@pytest.mark.parametrize('o,expected', [
+@pytest.mark.parametrize('o, expected', [
     ([1, 2, 3], '[1, 2, 3]'),
     (datetime(2020, 4, 30, 14, 35, 10), '"2020-04-30T14:35:10"'),
     (date(2020, 4, 30), '"2020-04-30"'),
@@ -45,7 +16,7 @@ def stats():
     (frozenset([1, 2, 3]), '[1, 2, 3]'),
 ])
 def test_json_dumps(o, expected):
-    assert models_base.json_dumps(o) == expected
+    assert json_dumps(o) == expected
 
 
 def test_json_dumps_item():
@@ -53,7 +24,7 @@ def test_json_dumps_item():
                 title='Junior developer',
                 employment_types=frozenset(['full-time']))
 
-    assert models_base.json_dumps(item) == ('{'
+    assert json_dumps(item) == ('{'
         '"posted_at": "2020-04-30T14:35:10", '
         '"title": "Junior developer", '
         '"employment_types": ["full-time"]'

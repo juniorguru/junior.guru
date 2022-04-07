@@ -7,7 +7,7 @@ import itertools
 from invoke import task, Exit
 from playhouse.shortcuts import model_to_dict
 
-from juniorguru.models import Company
+from juniorguru.models.company import Company
 from juniorguru.lib import loggers
 from juniorguru.lib.memberful import Memberful, MEMBERFUL_MUTATIONS_ENABLED, serialize_metadata
 

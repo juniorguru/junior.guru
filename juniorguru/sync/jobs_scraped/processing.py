@@ -11,7 +11,8 @@ from pprint import pformat
 from peewee import IntegrityError
 
 from juniorguru.lib import loggers
-from juniorguru.models import db, ScrapedJob
+from juniorguru.models.base import db
+from juniorguru.models.job import ScrapedJob
 
 
 WORKERS = os.cpu_count()

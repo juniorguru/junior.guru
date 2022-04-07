@@ -1,6 +1,6 @@
 import re
 
-from juniorguru.models import EMPLOYMENT_TYPES
+from juniorguru.models.job import EMPLOYMENT_TYPES
 
 
 CLEAN_RE = re.compile(r'[\-\s]+')

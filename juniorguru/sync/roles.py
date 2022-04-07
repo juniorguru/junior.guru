@@ -11,7 +11,9 @@ from juniorguru.models.company import Company
 from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, get_roles
-from juniorguru.models import ClubUser, Event, db
+from juniorguru.models.club import ClubUser
+from juniorguru.models.event import Event
+from juniorguru.models.base import db
 
 
 logger = loggers.get(__name__)
