@@ -1,19 +1,22 @@
-import re
 import hashlib
-from urllib.parse import urlparse
+import re
 from datetime import date, timedelta
+from urllib.parse import urlparse
 
+from juniorguru.lib import google_sheets, loggers
+from juniorguru.lib.coerce import (coerce, parse_boolean, parse_boolean_words,
+                                   parse_date, parse_datetime, parse_set, parse_text,
+                                   parse_url)
 from juniorguru.lib.md import md
 from juniorguru.lib.tasks import sync_task
-from juniorguru.lib import google_sheets
-from juniorguru.lib.coerce import (coerce, parse_boolean, parse_datetime, parse_text,
-    parse_date, parse_set, parse_boolean_words, parse_url)
-from juniorguru.models.job import SubmittedJob
 from juniorguru.models.base import db
-from juniorguru.lib import loggers
-from juniorguru.sync.scrape_jobs.pipelines.language_parser import parse as parse_language
-from juniorguru.sync.jobs_scraped.pipelines.boards_ids import parse_urls as parse_board_ids
-from juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner import clean as clean_employment_types
+from juniorguru.models.job import SubmittedJob
+from juniorguru.sync.jobs_scraped.pipelines.boards_ids import (
+    parse_urls as parse_board_ids)
+from juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner import (
+    clean as clean_employment_types)
+from juniorguru.sync.scrape_jobs.pipelines.language_parser import (
+    parse as parse_language)
 
 
 logger = loggers.get(__name__)

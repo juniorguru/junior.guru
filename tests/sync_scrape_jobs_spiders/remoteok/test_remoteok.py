@@ -3,7 +3,7 @@ from datetime import date
 from pathlib import Path
 
 from lxml import html
-from scrapy.http import TextResponse, HtmlResponse
+from scrapy.http import HtmlResponse, TextResponse
 
 from juniorguru.sync.scrape_jobs.spiders import remoteok
 

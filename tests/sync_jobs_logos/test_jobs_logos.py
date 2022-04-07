@@ -2,7 +2,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from juniorguru.sync.jobs_logos import convert_image, unique, sort_key, SIZE_PX
+from juniorguru.sync.jobs_logos import SIZE_PX, convert_image, sort_key, unique
 
 
 FIXTURES_DIR = Path(__file__).parent

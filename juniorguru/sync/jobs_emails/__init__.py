@@ -1,11 +1,11 @@
 import os
+import random
+import smtplib
 from datetime import date, timedelta
+from email.headerregistry import Address
+from email.message import EmailMessage
 from pathlib import Path
 from pprint import pformat
-import smtplib
-import random
-from email.message import EmailMessage
-from email.headerregistry import Address
 
 from jinja2 import Template
 

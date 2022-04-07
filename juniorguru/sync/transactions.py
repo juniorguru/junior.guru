@@ -3,9 +3,9 @@ from datetime import date
 
 from fiobank import FioBank
 
-from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import google_sheets, loggers
 from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
+from juniorguru.lib.tasks import sync_task
 from juniorguru.models.transaction import Transaction
 
 

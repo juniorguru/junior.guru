@@ -1,10 +1,10 @@
-from subprocess import run, PIPE
+from subprocess import PIPE, run
 
 import arrow
 
 from juniorguru.lib.tasks import sync_task
-from juniorguru.models.last_modified import LastModified
 from juniorguru.models.base import db
+from juniorguru.models.last_modified import LastModified
 
 
 FILES = [

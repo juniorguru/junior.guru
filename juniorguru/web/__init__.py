@@ -4,14 +4,13 @@ from pathlib import Path
 import arrow
 from flask import Flask, render_template, url_for
 
-from juniorguru.lib import loggers
-from juniorguru.lib import template_filters
+from juniorguru.lib import loggers, template_filters
 from juniorguru.lib.images import render_image_file
+from juniorguru.models.base import db
+from juniorguru.models.event import Event
 from juniorguru.models.job import ListedJob
 from juniorguru.models.story import Story
 from juniorguru.models.supporter import Supporter
-from juniorguru.models.event import Event
-from juniorguru.models.base import db
 
 
 logger = loggers.get(__name__)

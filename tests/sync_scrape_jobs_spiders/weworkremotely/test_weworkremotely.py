@@ -2,7 +2,7 @@ from datetime import date
 from pathlib import Path
 
 import pytest
-from scrapy.http import XmlResponse, HtmlResponse
+from scrapy.http import HtmlResponse, XmlResponse
 
 from juniorguru.sync.scrape_jobs.spiders import weworkremotely
 

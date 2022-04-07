@@ -7,8 +7,9 @@ from juniorguru.lib import loggers
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.job import ScrapedJob
+from juniorguru.sync.jobs_scraped.processing import (filter_relevant_paths,
+                                                     postprocess_jobs, process_paths)
 from juniorguru.sync.scrape_jobs.settings import FEEDS_DIR
-from juniorguru.sync.jobs_scraped.processing import filter_relevant_paths, process_paths, postprocess_jobs
 
 
 JOBS_SCRAPED_REUSE_DB_ENABLED = bool(int(os.getenv('JOBS_SCRAPED_REUSE_DB_ENABLED', 0)))

@@ -1,7 +1,7 @@
+from juniorguru.lib import loggers
+from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
 from juniorguru.lib.tasks import sync_task
 from juniorguru.sync.club_content import main as club_content_task
-from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED
 
 
 STICKERS_CHANNEL = 788823881024405544

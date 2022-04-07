@@ -1,19 +1,20 @@
 import os
-from pathlib import Path
 from datetime import date, timedelta
+from pathlib import Path
 
 import arrow
-from strictyaml import Datetime, Map, Seq, Str, Url, Int, Optional, CommaSeparated, load
+from strictyaml import CommaSeparated, Datetime, Int, Map, Optional, Seq, Str, Url, load
 
-from juniorguru.lib.tasks import sync_task
-from juniorguru.sync.club_content import main as club_content_task
-from juniorguru.models.event import Event, EventSpeaking
-from juniorguru.models.club import ClubMessage
-from juniorguru.models.base import db
-from juniorguru.lib.images import render_image_file, downsize_square_photo, save_as_square, replace_with_jpg
 from juniorguru.lib import loggers
-from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
+from juniorguru.lib.images import (downsize_square_photo, render_image_file,
+                                   replace_with_jpg, save_as_square)
+from juniorguru.lib.tasks import sync_task
+from juniorguru.lib.template_filters import local_time, md, weekday
+from juniorguru.models.base import db
+from juniorguru.models.club import ClubMessage
+from juniorguru.models.event import Event, EventSpeaking
+from juniorguru.sync.club_content import main as club_content_task
 
 
 logger = loggers.get(__name__)

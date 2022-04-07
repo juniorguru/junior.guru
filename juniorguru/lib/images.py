@@ -1,13 +1,13 @@
 import os
-from io import BytesIO
 import pickle
 import tempfile
 from hashlib import sha256
+from io import BytesIO
 from pathlib import Path
 from subprocess import DEVNULL, run
 
-from PIL import Image, ImageOps
 from jinja2 import Environment, FileSystemLoader
+from PIL import Image, ImageOps
 
 
 IMAGES_DIR = Path(__file__).parent.parent / 'images'

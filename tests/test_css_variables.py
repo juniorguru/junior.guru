@@ -1,5 +1,5 @@
-import re
 import itertools
+import re
 from pathlib import Path
 
 import pytest

@@ -1,14 +1,14 @@
-import json
 import html
+import json
 import time
 from datetime import datetime
 
 import arrow
 import extruct
 import feedparser
+from itemloaders.processors import Identity, MapCompose, TakeFirst
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
-from itemloaders.processors import Identity, MapCompose, TakeFirst
 
 from juniorguru.sync.scrape_jobs.items import Job, absolute_url
 

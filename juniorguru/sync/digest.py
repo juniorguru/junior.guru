@@ -1,14 +1,15 @@
 import textwrap
-from datetime import timedelta, date
+from datetime import date, timedelta
 
 from discord import Embed
 
-from juniorguru.lib.tasks import sync_task
-from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, is_message_older_than
-from juniorguru.models.club import ClubMessage
+from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, is_message_older_than,
+                                 run_discord_task)
+from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
+from juniorguru.models.club import ClubMessage
+from juniorguru.sync.club_content import main as club_content_task
 
 
 logger = loggers.get(__name__)

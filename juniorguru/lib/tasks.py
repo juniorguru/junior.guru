@@ -6,6 +6,7 @@ from invoke import task
 
 from juniorguru.lib import loggers
 
+
 try:
     import pync
 except (Exception, ImportError):

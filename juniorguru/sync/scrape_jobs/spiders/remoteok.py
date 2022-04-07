@@ -1,11 +1,12 @@
 import re
 from json import JSONDecodeError
 
+from itemloaders.processors import Identity, MapCompose, TakeFirst
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
-from itemloaders.processors import Identity, MapCompose, TakeFirst
 
-from juniorguru.sync.scrape_jobs.items import Job, absolute_url, parse_iso_date, parse_markdown
+from juniorguru.sync.scrape_jobs.items import (Job, absolute_url, parse_iso_date,
+                                               parse_markdown)
 
 
 class Spider(BaseSpider):

@@ -1,15 +1,15 @@
 import re
-
-import arrow
 from datetime import datetime
 
+import arrow
+
 from juniorguru.lib import loggers
-from juniorguru.lib.memberful import Memberful, MEMBERFUL_MUTATIONS_ENABLED
-from juniorguru.sync.subscriptions import main as subscriptions_task
-from juniorguru.sync.companies import main as companies_task
+from juniorguru.lib.memberful import MEMBERFUL_MUTATIONS_ENABLED, Memberful
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.company import Company
+from juniorguru.sync.companies import main as companies_task
+from juniorguru.sync.subscriptions import main as subscriptions_task
 
 
 logger = loggers.get(__name__)

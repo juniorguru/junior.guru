@@ -4,6 +4,7 @@ import pytest
 
 from juniorguru.sync.scrape_jobs.pipelines.broken_encoding_filter import (
     BrokenEncoding, Pipeline)
+
 from testing_utils import param_startswith_skip, startswith_skip
 
 

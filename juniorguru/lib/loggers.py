@@ -1,5 +1,5 @@
-import os
 import logging
+import os
 
 
 LOG_LEVEL = getattr(logging, os.getenv('LOG_LEVEL', 'info').upper())

@@ -1,14 +1,14 @@
 import os
 from pathlib import Path
 
-from juniorguru.lib.tasks import sync_task
-from juniorguru.lib import google_sheets
+from juniorguru.lib import google_sheets, loggers
 from juniorguru.lib.club import parse_coupon
-from juniorguru.lib.coerce import coerce, parse_boolean_words, parse_text, parse_date, parse_int
-from juniorguru.models.company import Company
-from juniorguru.models.base import db
-from juniorguru.lib import loggers
+from juniorguru.lib.coerce import (coerce, parse_boolean_words, parse_date, parse_int,
+                                   parse_text)
 from juniorguru.lib.images import render_image_file
+from juniorguru.lib.tasks import sync_task
+from juniorguru.models.base import db
+from juniorguru.models.company import Company
 
 
 logger = loggers.get(__name__)

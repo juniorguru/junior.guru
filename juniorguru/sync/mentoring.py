@@ -2,12 +2,13 @@ from datetime import timedelta
 
 from discord import Embed
 
-from juniorguru.lib.tasks import sync_task
-from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, is_message_over_period_ago
-from juniorguru.models.club import ClubMessage
+from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, is_message_over_period_ago,
+                                 run_discord_task)
+from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
+from juniorguru.models.club import ClubMessage
+from juniorguru.sync.club_content import main as club_content_task
 
 
 MENTORING_CHANNEL = 878937534464417822

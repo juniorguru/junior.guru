@@ -1,13 +1,13 @@
+from datetime import date
 from multiprocessing import Pool
 from pathlib import Path
-from datetime import date
 
-from strictyaml import Map, Seq, Str, Datetime, load
 from pod2gen import Media
 from requests.exceptions import HTTPError
+from strictyaml import Datetime, Map, Seq, Str, load
 
-from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
+from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.podcast import PodcastEpisode
 

@@ -1,13 +1,13 @@
-import importlib
-import os
-from pathlib import Path
-from queue import Empty
-from multiprocessing import Process, JoinableQueue as Queue
-import json
 import gzip
+import importlib
+import json
+import os
 from datetime import date
-
+from multiprocessing import JoinableQueue as Queue, Process
+from pathlib import Path
 from pprint import pformat
+from queue import Empty
+
 from peewee import IntegrityError
 
 from juniorguru.lib import loggers

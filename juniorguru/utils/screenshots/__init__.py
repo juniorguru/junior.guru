@@ -4,8 +4,8 @@ from multiprocessing import Pool
 from pathlib import Path
 from subprocess import DEVNULL, PIPE, CalledProcessError, run
 
-from invoke import task
 import requests
+from invoke import task
 from PIL import Image
 
 

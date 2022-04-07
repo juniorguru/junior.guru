@@ -1,9 +1,10 @@
-from datetime import datetime, date, timedelta
+from datetime import date, datetime, timedelta
 
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models.club import ClubMessage, ClubUser, ClubPinReaction, INTRO_CHANNEL, JUNIORGURU_BOT
+from juniorguru.models.club import (INTRO_CHANNEL, JUNIORGURU_BOT, ClubMessage,
+                                    ClubPinReaction, ClubUser)
 
 
 def create_user(id_, **kwargs):

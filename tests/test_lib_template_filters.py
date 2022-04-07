@@ -1,5 +1,5 @@
 from collections import namedtuple
-from datetime import datetime, date
+from datetime import date, datetime
 
 import arrow
 import pytest

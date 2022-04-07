@@ -1,12 +1,13 @@
-import re
 import asyncio
+import re
 from datetime import date, timedelta
 
-from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, JOBS_CHANNEL
-from juniorguru.models.club import ClubMessage
+from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JOBS_CHANNEL,
+                                 run_discord_task)
+from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
+from juniorguru.models.club import ClubMessage
 from juniorguru.models.job import ListedJob
 from juniorguru.sync.jobs_listing import main as jobs_listing_task
 

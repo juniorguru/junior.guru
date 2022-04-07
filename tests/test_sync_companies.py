@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.companies import parse_slug, coerce_record
+from juniorguru.sync.companies import coerce_record, parse_slug
 
 
 def test_coerce_record_slug():

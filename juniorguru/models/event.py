@@ -1,11 +1,11 @@
 from datetime import date, timedelta
 
 import arrow
-from peewee import CharField, DateTimeField, ForeignKeyField, TextField, IntegerField
+from peewee import CharField, DateTimeField, ForeignKeyField, IntegerField, TextField
 
+from juniorguru.lib.md import strip_links
 from juniorguru.models.base import BaseModel, JSONField
 from juniorguru.models.club import ClubUser
-from juniorguru.lib.md import strip_links
 
 
 class Event(BaseModel):

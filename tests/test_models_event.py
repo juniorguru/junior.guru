@@ -1,10 +1,10 @@
-from datetime import datetime, date
+from datetime import date, datetime
 
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.club import ClubUser
+from juniorguru.models.event import Event, EventSpeaking
 
 
 def create_member(id):

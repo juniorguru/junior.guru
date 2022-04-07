@@ -1,9 +1,9 @@
-import math
 import functools
+import math
 
 from peewee import CharField, DateField, IntegerField
 
-from juniorguru.lib.charts import ttm_range, month_range
+from juniorguru.lib.charts import month_range, ttm_range
 from juniorguru.models.base import BaseModel
 
 

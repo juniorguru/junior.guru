@@ -1,6 +1,6 @@
 from datetime import date
 
-from peewee import CharField, DateField, BooleanField, IntegerField, ForeignKeyField
+from peewee import BooleanField, CharField, DateField, ForeignKeyField, IntegerField
 
 from juniorguru.models.base import BaseModel
 from juniorguru.models.club import ClubUser

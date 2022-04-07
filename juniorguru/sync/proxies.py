@@ -3,8 +3,8 @@ from pathlib import Path
 
 import requests
 
-from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
+from juniorguru.lib.tasks import sync_task
 from juniorguru.sync.scrape_jobs.settings import PROXIES_FILE
 
 

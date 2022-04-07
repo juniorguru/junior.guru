@@ -2,11 +2,11 @@ from pathlib import Path
 
 from scrapy.utils.project import data_path
 
+from juniorguru.lib import loggers
 from juniorguru.lib.scrapers import scrape
 from juniorguru.lib.tasks import sync_task
-from juniorguru.lib import loggers
-from juniorguru.sync.scrape_jobs.settings import HTTPCACHE_DIR
 from juniorguru.sync.scrape_jobs.feeds import feed_path, feeds_dir
+from juniorguru.sync.scrape_jobs.settings import HTTPCACHE_DIR
 
 
 logger = loggers.get(__name__)

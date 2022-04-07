@@ -3,7 +3,7 @@ import time
 from pathlib import Path
 from subprocess import PIPE, Popen
 
-from invoke import task, Exit
+from invoke import Exit, task
 
 
 USER_AGENT = (

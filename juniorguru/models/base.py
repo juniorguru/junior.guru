@@ -1,10 +1,11 @@
-import json
-from pathlib import Path
-from collections.abc import Set
 import asyncio
+import json
+from collections.abc import Set
+from pathlib import Path
 
 import scrapy
-from peewee import Model, SqliteDatabase as BaseSqliteDatabase, ConnectionContext as BaseConnectionContext
+from peewee import (ConnectionContext as BaseConnectionContext, Model,
+                    SqliteDatabase as BaseSqliteDatabase)
 from playhouse.sqlite_ext import JSONField as BaseJSONField
 
 from juniorguru.lib import loggers

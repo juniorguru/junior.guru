@@ -1,6 +1,6 @@
 import gzip
-from pathlib import Path
 from datetime import date
+from pathlib import Path
 
 from scrapy.exporters import JsonLinesItemExporter
 

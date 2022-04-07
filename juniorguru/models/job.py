@@ -1,7 +1,8 @@
-from functools import lru_cache
 from datetime import date, datetime, time
+from functools import lru_cache
 
-from peewee import fn, Expression, CharField, DateField, TextField, BooleanField, IntegerField, ForeignKeyField
+from peewee import (BooleanField, CharField, DateField, Expression, ForeignKeyField,
+                    IntegerField, TextField, fn)
 from playhouse.shortcuts import model_to_dict
 
 from juniorguru.models.base import BaseModel, JSONField

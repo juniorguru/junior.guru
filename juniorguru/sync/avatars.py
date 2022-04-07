@@ -1,16 +1,16 @@
+import asyncio
+from io import BytesIO
 from pathlib import Path
 from urllib.parse import urlparse
-from io import BytesIO
-import asyncio
 
 from PIL import Image
 
-from juniorguru.lib.tasks import sync_task
-from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task
-from juniorguru.models.club import ClubUser
+from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
+from juniorguru.models.club import ClubUser
+from juniorguru.sync.club_content import main as club_content_task
 
 
 logger = loggers.get(__name__)

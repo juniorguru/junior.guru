@@ -1,15 +1,16 @@
-import io
 import csv
+import io
+import itertools
 from datetime import date
 from pathlib import Path
-import itertools
 
-from invoke import task, Exit
+from invoke import Exit, task
 from playhouse.shortcuts import model_to_dict
 
-from juniorguru.models.company import Company
 from juniorguru.lib import loggers
-from juniorguru.lib.memberful import Memberful, MEMBERFUL_MUTATIONS_ENABLED, serialize_metadata
+from juniorguru.lib.memberful import (MEMBERFUL_MUTATIONS_ENABLED, Memberful,
+                                      serialize_metadata)
+from juniorguru.models.company import Company
 
 
 logger = loggers.get(__name__)

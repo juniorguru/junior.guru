@@ -3,8 +3,8 @@ from datetime import date, timedelta
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models.company import Company, CompanyStudentSubscription
 from juniorguru.models.club import ClubUser
+from juniorguru.models.company import Company, CompanyStudentSubscription
 
 
 def create_company(id, **kwargs):

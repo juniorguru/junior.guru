@@ -1,8 +1,8 @@
 import importlib
 from multiprocessing import Process
 
-from scrapy.settings import Settings
 from scrapy.crawler import CrawlerProcess
+from scrapy.settings import Settings
 
 from juniorguru.lib import loggers
 

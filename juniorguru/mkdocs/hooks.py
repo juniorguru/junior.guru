@@ -1,9 +1,8 @@
 from pathlib import Path
 
 import jinja2
-
-from mkdocs.utils.filters import url_filter
 from mkdocs.utils import get_relative_url
+from mkdocs.utils.filters import url_filter
 
 from juniorguru.lib import template_filters
 from juniorguru.mkdocs import api, context as context_hooks

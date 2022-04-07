@@ -2,8 +2,8 @@
 
 from pathlib import Path
 
+from invoke import Exit, task
 from lxml import html
-from invoke import task, Exit
 
 
 PUBLIC_DIR = Path('public')

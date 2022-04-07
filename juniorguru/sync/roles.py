@@ -2,18 +2,18 @@ from collections import Counter
 
 from discord import Colour
 
-from juniorguru.sync.club_content import main as club_content_task
-from juniorguru.sync.events import main as events_task
-from juniorguru.sync.avatars import main as avatars_task
-from juniorguru.sync.subscriptions import main as subscriptions_task
-from juniorguru.sync.companies import main as companies_task
-from juniorguru.models.company import Company
-from juniorguru.lib.tasks import sync_task
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, get_roles
-from juniorguru.models.club import ClubUser
-from juniorguru.models.event import Event
+from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, get_roles, run_discord_task
+from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
+from juniorguru.models.club import ClubUser
+from juniorguru.models.company import Company
+from juniorguru.models.event import Event
+from juniorguru.sync.avatars import main as avatars_task
+from juniorguru.sync.club_content import main as club_content_task
+from juniorguru.sync.companies import main as companies_task
+from juniorguru.sync.events import main as events_task
+from juniorguru.sync.subscriptions import main as subscriptions_task
 
 
 logger = loggers.get(__name__)

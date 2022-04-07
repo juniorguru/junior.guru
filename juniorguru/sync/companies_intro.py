@@ -1,17 +1,18 @@
+from datetime import date, timedelta
 from pathlib import Path
-from datetime import timedelta, date
 
-from discord import Embed, File, Colour
+from discord import Colour, Embed, File
 
+from juniorguru.lib import loggers
+from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, INTRO_CHANNEL, JOBS_CHANNEL,
+                                 is_message_over_period_ago, run_discord_task)
 from juniorguru.lib.tasks import sync_task
+from juniorguru.models.base import db
+from juniorguru.models.club import ClubMessage
+from juniorguru.models.company import Company
 from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.sync.companies import main as companies_task
 from juniorguru.sync.roles import main as roles_task
-from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, is_message_over_period_ago, INTRO_CHANNEL, JOBS_CHANNEL
-from juniorguru.models.club import ClubMessage
-from juniorguru.models.company import Company
-from juniorguru.models.base import db
 
 
 MESSAGE_EMOJI = '👋'

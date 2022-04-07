@@ -1,12 +1,14 @@
 import math
 from datetime import date, timedelta
 
-from peewee import IntegerField, DateTimeField, ForeignKeyField, CharField, BooleanField, fn
+from peewee import (BooleanField, CharField, DateTimeField, ForeignKeyField,
+                    IntegerField, fn)
 
+from juniorguru.lib.club import (CLUB_LAUNCH_ON, INTRO_CHANNEL, IS_NEW_PERIOD_DAYS,
+                                 JUNIORGURU_BOT, RECENT_PERIOD_DAYS,
+                                 TOP_MEMBERS_PERCENT, UPVOTES_EXCLUDE_CHANNELS,
+                                 parse_coupon)
 from juniorguru.models.base import BaseModel, JSONField
-from juniorguru.lib.club import (parse_coupon, INTRO_CHANNEL, UPVOTES_EXCLUDE_CHANNELS,
-                                 CLUB_LAUNCH_ON, JUNIORGURU_BOT, TOP_MEMBERS_PERCENT,
-                                 RECENT_PERIOD_DAYS, IS_NEW_PERIOD_DAYS)
 
 
 class ClubUser(BaseModel):

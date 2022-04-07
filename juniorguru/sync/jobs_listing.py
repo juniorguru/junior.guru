@@ -1,9 +1,9 @@
 from datetime import date
 
+from juniorguru.lib import loggers
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
-from juniorguru.models.job import ListedJob, SubmittedJob, ScrapedJob
-from juniorguru.lib import loggers
+from juniorguru.models.job import ListedJob, ScrapedJob, SubmittedJob
 
 
 MIN_JUNIORITY_RE_SCORE = 1

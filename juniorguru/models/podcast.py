@@ -1,7 +1,7 @@
 from datetime import date
 
 import arrow
-from peewee import CharField, IntegerField, DateTimeField
+from peewee import CharField, DateTimeField, IntegerField
 
 from juniorguru.models.base import BaseModel
 

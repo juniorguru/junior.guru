@@ -1,5 +1,5 @@
-import os
 import json
+import os
 
 from gql import Client, gql
 from gql.transport.requests import RequestsHTTPTransport

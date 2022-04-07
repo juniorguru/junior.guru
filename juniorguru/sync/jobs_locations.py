@@ -1,8 +1,8 @@
+from juniorguru.lib import loggers
+from juniorguru.lib.locations import fetch_locations
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
-from juniorguru.lib import loggers
-from juniorguru.lib.locations import fetch_locations
 from juniorguru.sync.jobs_listing import main as jobs_listing_task
 
 
