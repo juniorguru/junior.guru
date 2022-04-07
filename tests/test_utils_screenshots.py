@@ -1,6 +1,6 @@
 import pytest
 
-from scripts import screenshots
+from juniorguru.utils import screenshots
 
 
 @pytest.mark.parametrize('url,expected', [
