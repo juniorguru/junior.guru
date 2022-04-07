@@ -74,7 +74,7 @@ class BaseClient(discord.Client):
         return self.get_guild(JUNIORGURU_GUILD)
 
 
-def run_discord_task(import_path):
+def run_discord_task(import_path, *args):
     """
     Run given async function in a separate process.
 
@@ -82,14 +82,14 @@ def run_discord_task(import_path):
     async tasks independently on each other, in separate async loops.
     """
     logger.debug(f'Running async code in a separate process: {import_path}')
-    process = Process(target=_discord_task, args=[import_path])
+    process = Process(target=_discord_task, args=[import_path, args])
     process.start()
     process.join()
     if process.exitcode != 0:
         raise RuntimeError(f'Process for running async code finished with non-zero exit code: {process.exitcode}')
 
 
-def _discord_task(import_path):
+def _discord_task(import_path, args):
     logger_dt = logger.getChild('discord_task')
 
     import_path_parts = import_path.split('.')
@@ -104,7 +104,7 @@ def _discord_task(import_path):
         async def on_ready(self):
             await self.wait_until_ready()
             logger_dt.debug('Discord connection ready')
-            await task_fn(self)
+            await task_fn(self, *args)
             logger_dt.debug('Closing Discord client')
             await self.close()
 

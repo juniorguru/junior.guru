@@ -1,17 +1,17 @@
 import time
 import random
-import sys
-from pathlib import Path
 
-# The following is needed because /scripts/ is not a package (and I don't want it to be,
-# I consider the directory to be just a drawer of random tools, related to the juniorguru
-# app only very casually). Perhaps it's gonna change one day, but today is not that day.
-sys.path.append(str(Path(__file__).parent.parent))
-from juniorguru.lib.club import discord_task, emoji_name
+from invoke import task
+
+from juniorguru.lib.club import run_discord_task, emoji_name
 
 
-@discord_task
-async def main(client, message_url, winners_count):
+@task(name='draw_winners')
+def main(context, message_url, winners_count):
+    run_discord_task('juniorguru.utils.draw_winners.discord_task', message_url, winners_count)
+
+
+async def discord_task(client, message_url, winners_count):
     message_url_parts = message_url.split('/')
     channel_id = int(message_url_parts[-2])
     channel = await client.fetch_channel(channel_id)
@@ -34,7 +34,3 @@ async def main(client, message_url, winners_count):
         time.sleep(1 * i)
     for user in random.sample(users, winners_count):
         print(f'🏆 {user.display_name} (id #{user.id})')
-
-
-if __name__ == '__main__':
-    main(sys.argv[1], int(sys.argv[2]))

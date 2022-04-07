@@ -73,8 +73,8 @@ FACEBOOK_URL_RE = re.compile(r'facebook\.com/')
 ERRONEOUS_DOUBLE_FRAGMENT = re.compile(r'(\#[^\#])\#[^\.]')
 
 
-@task()
-def screenshots(context):
+@task(name='screenshots')
+def main(context):
     SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
     urls = parse_urls(URLS_TXT.read_text())
 

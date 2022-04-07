@@ -1,8 +1,11 @@
 import pytest
 from invoke import Collection, task, Exit
 
-from . import checks, web, sync
-from .screenshots import screenshots
+from juniorguru.utils import checks
+from juniorguru.utils.screenshots import main as screenshots
+from juniorguru.utils.draw_winners import main as draw_winners
+
+from . import web, sync
 
 
 @task(incrementable=['v'])
@@ -19,4 +22,4 @@ def lint(context):
     context.run("npx stylelint 'juniorguru/web/static/src/css-mkdocs/**/*.scss' 'juniorguru/image_templates/*.css'")
 
 
-namespace = Collection(test, lint, screenshots, sync, web, checks)
+namespace = Collection(test, lint, screenshots, draw_winners, sync, web, checks)
