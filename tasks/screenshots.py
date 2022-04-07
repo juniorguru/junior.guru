@@ -4,6 +4,7 @@ from multiprocessing import Pool
 from pathlib import Path
 from subprocess import DEVNULL, PIPE, CalledProcessError, run
 
+from invoke import task
 import requests
 from PIL import Image
 
@@ -15,7 +16,7 @@ URLS_TXT = PROJECT_DIR / 'juniorguru' / 'screenshots-urls.txt'
 SCREENSHOTS_DIR = IMAGES_DIR / 'screenshots'
 SCREENSHOTS_OVERRIDES_DIR = IMAGES_DIR / 'screenshots-overrides'
 
-PAGERES_FB_SCRIPT = PROJECT_DIR / 'scripts' / 'screenshot-facebook.js'
+PAGERES_FB_SCRIPT = PROJECT_DIR / 'tasks' / 'screenshot-facebook.js'
 
 HIDDEN_ELEMENTS = [
     '[data-cookiebanner]',  # facebook.com
@@ -70,6 +71,34 @@ HEIGHT = 360
 YOUTUBE_URL_RE = re.compile(r'(youtube\.com.+watch\?.*v=|youtu\.be/)([\w\-\_]+)')
 FACEBOOK_URL_RE = re.compile(r'facebook\.com/')
 ERRONEOUS_DOUBLE_FRAGMENT = re.compile(r'(\#[^\#])\#[^\.]')
+
+
+@task()
+def screenshots(context):
+    SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
+    urls = parse_urls(URLS_TXT.read_text())
+
+    print('[main] YouTube cover images')
+    yt_urls = filter_yt_urls(urls)
+    urls = list(set(urls) - set(yt_urls))
+    Pool().map(download_yt_cover_image, yt_urls)
+
+    print('[main] Facebook cover images')
+    fb_urls = filter_fb_urls(urls)
+    urls = list(set(urls) - set(fb_urls))
+    Pool(PAGERES_WORKERS).map(create_fb_screenshot, fb_urls)
+
+    print('[main] web page screenshots')
+    urls_batches = generate_batches(urls, PAGERES_BATCH_SIZE)
+    Pool(PAGERES_WORKERS).map(create_screenshots, urls_batches)
+
+    Pool().map(edit_screenshot, SCREENSHOTS_DIR.glob('*.jpg'))
+
+    print('[main] screenshots overrides')
+    SCREENSHOTS_OVERRIDES_DIR.mkdir(parents=True, exist_ok=True)
+    paths = chain(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'),
+                  SCREENSHOTS_OVERRIDES_DIR.glob('*.png'))
+    Pool().map(edit_screenshot_override, paths)
 
 
 def parse_url(line):
@@ -182,30 +211,3 @@ def edit_screenshot_override(path):
         image.save(path)
 
     image.close()
-
-
-if __name__ == '__main__':
-    SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
-    urls = parse_urls(URLS_TXT.read_text())
-
-    print('[main] YouTube cover images')
-    yt_urls = filter_yt_urls(urls)
-    urls = list(set(urls) - set(yt_urls))
-    Pool().map(download_yt_cover_image, yt_urls)
-
-    print('[main] Facebook cover images')
-    fb_urls = filter_fb_urls(urls)
-    urls = list(set(urls) - set(fb_urls))
-    Pool(PAGERES_WORKERS).map(create_fb_screenshot, fb_urls)
-
-    print('[main] web page screenshots')
-    urls_batches = generate_batches(urls, PAGERES_BATCH_SIZE)
-    Pool(PAGERES_WORKERS).map(create_screenshots, urls_batches)
-
-    Pool().map(edit_screenshot, SCREENSHOTS_DIR.glob('*.jpg'))
-
-    print('[main] screenshots overrides')
-    SCREENSHOTS_OVERRIDES_DIR.mkdir(parents=True, exist_ok=True)
-    paths = chain(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'),
-                  SCREENSHOTS_OVERRIDES_DIR.glob('*.png'))
-    Pool().map(edit_screenshot_override, paths)
