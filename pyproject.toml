@@ -59,6 +59,9 @@ python_files = "test_*.py *_test.py test.py"
 testpaths = "."
 addopts = "--ff --ignore=node_modules --ignore=__jobs_legacy__"
 
+[tool.isort]
+extend_skip = ["__jobs_legacy__"]
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
