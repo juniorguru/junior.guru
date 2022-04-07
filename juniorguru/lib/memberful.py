@@ -26,6 +26,7 @@ class Memberful():
     @property
     def client(self):
         if not self._client:
+            logger.debug('Connecting')
             transport = RequestsHTTPTransport(url='https://juniorguru.memberful.com/api/graphql/',
                                               headers={'Authorization': f'Bearer {self.api_key}'},
                                               verify=True, retries=3)
@@ -36,7 +37,7 @@ class Memberful():
         cursor = ''
         query_gql = gql(query_string)
         while cursor is not None:
-            logger.info('Requesting Memberful GraphQL')
+            logger.debug('Sending a query')
             params = dict(cursor=cursor)
             result = self.client.execute(query_gql, variable_values=params)
             yield result
@@ -47,6 +48,7 @@ class Memberful():
                 cursor = None
 
     def mutate(self, mutation_string, params):
+        logger.debug('Sending a mutation')
         self.client.execute(gql(mutation_string), variable_values=params)
 
 
