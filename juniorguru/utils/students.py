@@ -102,6 +102,8 @@ def main(context, company_slug, all=False, invoice=False):
 
 
 def to_csv(rows):
+    if not rows:
+        raise ValueError('No rows')
     f = io.StringIO()
     writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
     writer.writeheader()
