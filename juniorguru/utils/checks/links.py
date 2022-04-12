@@ -19,6 +19,7 @@ EXCLUDE_URLS = [
     'udemy.com',  # crawling protection?
     'att.jobs',  # crawling protection?
     'fiverr.com',  # crawling protection?
+    'twitter.com',  # crawling protection?
 ]
 EXCLUDE_REASONS = [re.compile(r) for r in [
     r'^BLC_UNKNOWN$',  # crawling protection?
