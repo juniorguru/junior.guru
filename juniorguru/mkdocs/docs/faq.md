@@ -136,7 +136,7 @@ Zaregistruj se jako člen klubu a plať členství. Nemusíš si vytvářet úč
 
 ## {{ 'building'|icon }} Spolupráce s firmami a komunitami
 
-### Co vyplývá z toho, že je členem klubu nějaká firma?
+### Co vyplývá z toho, že je členem klubu nějaká firma? {: #firmy }
 
 Každá firma, která s klubem spolupracuje, má logo na [stránce klubu](club.md) a minimálně šest vstupů pro své lidi. Dále záleží na tom, o jakou kombinaci z [ceníku]({{ pricing_url }}) měli zájem a na jaké konkrétní formě spolupráce se dohodli s provozovatelem junior.guru, [Honzou Javorkem](#honza). Bývá to různé. Některé firmy zajímá nábor juniorů, tak nakupují inzeráty, další berou podporu klubu jako [CSR](https://cs.wikipedia.org/wiki/Spole%C4%8Densk%C3%A1_odpov%C4%9Bdnost_firem), jiné chtějí zviditelnit svou značku.
 
