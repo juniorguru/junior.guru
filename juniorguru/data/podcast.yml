@@ -1,29 +1,48 @@
+# Ahoj! Toto je soubor s daty o podcastových epizodách junior.guru/podcast.
+# Z dat se generuje XML feed pro podcast, stránka https://junior.guru/podcast/
+# a různé jiné věci. Data využívá Discord bot, který na akce upozorňuje. Z dat
+# se rovněž automaticky generují plakátky, tj. upoutávky, které Honza sdílí
+# na sociální sítě.
+#
+# Pavlína sem přidává popisky k novým epizodám pomocí Pull Requestu. Nevyplňuje
+# avatar_path, to nechává na dořešení Honzovi.
+
+
 - id: "0004"
-  title: "Tereza Vaňková (Deepnote) o její cestě k programování a komunitě ReactGirls"
+  title: "Tereza Vaňková (Deepnote) o její cestě k programování a komunitě ReactGirls"
+  avatar_path: avatars-participants/tereza-vankova.jpg
   publish_on: "2022-04-15"
   description: |
     Ve čtvrtém díle si Pája povídá s Terkou Vaňkovou, software developerkou ve startupu Deepnote a zakladatelkou české komunity ReactGirls. Dozvíš se, jaké byly pro Terku začátky v IT, jakými kurzy prošla a jak získala nejen první práci jako software developerka. Dostane se také na české IT komunity a povídání o ReactGirls.
 
+
 - id: "0003"
   title: "Filip Kirschner (Applifting) o firemním přístupu k juniorům a nejen tom"
+  avatar_path: avatars-participants/filip-kirschner.jpg
   publish_on: "2022-03-15"
   description: |
     Ve třetím díle si poslechneš Filipa Kirschnera, spoluzakladatele firmy Applifting. Pája si s ním povídá o jejich firemní kultuře a přístupu k juniorním developerům, ale ptá se ho i na to, jaký programovací jazyk by si vybral, kdyby se znovu učil programovat, nebo co by poradil těm, kteří se chtějí z nuly dostat na první placenou IT pozici.
 
+
 - id: "0002"
   title: "Roman Hraška (yablko) o kurzech webdevelopmentu"
+  avatar_path: avatars-participants/roman-hraska.jpg
   publish_on: "2022-02-15"
   description: |
     Ve druhém díle si Pája povídá s Romanem Hraškou, známým jako yablko, programátorem, youtuberem a tvůrcem kurzů programování. Jak by doporučil začít s programováním těm, kteří ještě tápou? V tomhle díle si přijdou na své hlavně ti, kteří se zajímají o web, ale Roman má spoustu tipů i pro ostatní!
 
+
 - id: "0001"
   title: "Jiří Psotka (Red Hat) o hledání první práce v IT"
+  avatar_path: avatars-participants/jiri-psotka.jpg
   publish_on: "2022-01-15"
   description: |
     V prvním díle uslyšíš Jirku Psotku, seniorního recruitera v Red Hatu. Dozvíš se, jak se jako junior připravit na výběrové řízení – od bezchybného CV, až po samotný pohovor. Hledáš první uplatnění v IT světě a hodilo by se ti pár tipů do začátku? Tak tohle je díl pro tebe!
 
+
 - id: "0000"
   title: "Startujeme!"
+  avatar_path: avatars-participants/honza-javorek.jpg
   publish_on: "2022-01-01"
   description: |
     Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci. Pája Froňková uvádí podcast pro všechny juniory v IT. V krátkém úvodním dílu je spolu s Honzou Javorkem, autorem projektu junior.guru, kde tento podcast našel svůj domov.
