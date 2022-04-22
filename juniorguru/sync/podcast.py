@@ -8,7 +8,7 @@ from requests.exceptions import HTTPError
 from strictyaml import Datetime, Map, Seq, Str, load
 
 from juniorguru.lib import loggers
-from juniorguru.lib.images import render_image_file
+from juniorguru.lib.images import render_image_file, is_image, validate_image
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.podcast import PodcastEpisode
@@ -21,6 +21,7 @@ YAML_SCHEMA = Seq(
     Map({
         'id': Str(),
         'title': Str(),
+        'avatar_path': Str(),
         'publish_on': Datetime(),
         'description': Str(),
     })
@@ -33,6 +34,8 @@ FLUSH_POSTERS_PODCAST = bool(int(os.getenv('FLUSH_POSTERS_PODCAST', 0)))
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
 POSTERS_DIR = IMAGES_DIR / 'posters-podcast'
+
+AVATARS_DIR = IMAGES_DIR / 'avatars-participants'
 
 POSTER_WIDTH = 700
 
@@ -49,12 +52,18 @@ def main():
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
 
+    logger.info('Validating avatar images')
+    for path in filter(is_image, AVATARS_DIR.glob('*.*')):
+        logger.debug(f'Validating {path}')
+        validate_image(path)
+
+    logger.info('Setting up podcast episodes db table')
     PodcastEpisode.drop_table()
     PodcastEpisode.create_table()
 
     logger.info('Reading YAML with episodes')
     path = Path(__file__).parent.parent / 'data' / 'podcast.yml'
-    yaml_records = (record.data for record in load(path.read_text(), YAML_SCHEMA))
+    yaml_records = [record.data for record in load(path.read_text(), YAML_SCHEMA)][:1]
 
     logger.info('Preparing data: downloading and analyzing the mp3 files, creating posters')
     records = filter(None, Pool(WORKERS).map(process_episode, yaml_records))
@@ -71,6 +80,12 @@ def process_episode(yaml_record):
 
     media_url = f"https://podcast.junior.guru/episodes/{id}.mp3"
     publish_on = yaml_record['publish_on'].date()
+
+    avatar_path = yaml_record['avatar_path']
+    ep_logger.info(f'Checking {avatar_path}')
+    image_path = IMAGES_DIR / avatar_path
+    if not image_path.exists():
+        raise ValueError(f"Episode references '{image_path}', but it doesn't exist")
 
     ep_logger.info(f'Analyzing {media_url}')
     try:

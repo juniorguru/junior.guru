@@ -6,17 +6,9 @@
   </head>
   <body>
     <div class="bio">
-      {% if event.avatar_path %}
-        <div class="bio-avatars bio-avatars-1">
-          <img class="bio-avatar" src="{{ images_dir }}/{{ event.avatar_path }}">
-        </div>
-      {% else %}
-        <div class="bio-avatars bio-avatars-{{ event.list_speaking|length }}">
-          {% for speaking in event.list_speaking %}
-            <img class="bio-avatar" src="{{ images_dir }}/{{ speaking.avatar_path }}">
-          {% endfor %}
-        </div>
-      {% endif %}
+      <div class="bio-avatar-container">
+        <img class="bio-avatar" src="{{ images_dir }}/{{ event.avatar_path }}">
+      </div>
       <h2 class="bio-name">{{ event.bio_name }}</h2>
       {% if event.bio_title %}
         <p class="bio-title">{{ event.bio_title }}</p>

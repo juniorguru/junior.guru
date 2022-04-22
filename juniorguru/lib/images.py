@@ -5,13 +5,37 @@ from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
 from subprocess import DEVNULL, run
+import mimetypes
 
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image, ImageOps
 
 
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
+
 TEMPLATES_DIR = Path(__file__).parent.parent / 'image_templates'
+
+
+class InvalidImage(Exception):
+    pass
+
+
+def is_image(path):
+    return path.is_file() and is_image_mimetype(mimetypes.guess_type(path)[0])
+
+
+def is_image_mimetype(mimetype):
+    return mimetype.startswith('image') if mimetype else False
+
+
+def validate_image(path, format=None, max_width=None, max_height=None):
+    with Image.open(path) as image:
+        if max_width and image.width > max_width:
+            raise InvalidImage(f'Image {path} is too large: width {image.width} > {max_width}')
+        if max_height and image.height > max_height:
+            raise InvalidImage(f'Image {path} is too large: height {image.height} > {max_height}')
+        if format and image.format != format:
+            raise InvalidImage(f'Image {path} has incorrect format: {image.format} ≠ {format}')
 
 
 def render_image_file(width, height, template_name, context, output_dir, filters=None, prefix=None, suffix=None):

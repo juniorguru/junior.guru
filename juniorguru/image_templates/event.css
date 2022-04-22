@@ -59,17 +59,14 @@ p {
   background: var(--color-white);
 }
 
-.bio-avatars {
+.bio-avatar-container {
   margin-bottom: var(--spacer);
-}
-
-.bio-avatars-1 {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.bio-avatars-1 .bio-avatar {
+.bio-avatar {
   display: block;
   width: var(--bio-avatar-width);
   height: auto;

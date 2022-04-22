@@ -91,4 +91,3 @@ class Event(BaseModel):
 class EventSpeaking(BaseModel):
     speaker = ForeignKeyField(ClubUser, backref='list_speaking')
     event = ForeignKeyField(Event, backref='list_speaking')
-    avatar_path = CharField(null=True)

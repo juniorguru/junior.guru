@@ -7,8 +7,7 @@ from strictyaml import CommaSeparated, Datetime, Int, Map, Optional, Seq, Str, U
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
-from juniorguru.lib.images import (downsize_square_photo, render_image_file,
-                                   replace_with_jpg, save_as_square)
+from juniorguru.lib.images import is_image, render_image_file, save_as_square, validate_image
 from juniorguru.lib.tasks import sync_task
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.models.base import db
@@ -28,7 +27,7 @@ IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
 POSTERS_DIR = IMAGES_DIR / 'posters-events'
 
-SPEAKERS_DIR = IMAGES_DIR / 'avatars-speakers'
+AVATARS_DIR = IMAGES_DIR / 'avatars-participants'
 
 WEB_THUMBNAIL_WIDTH = 1280
 
@@ -52,7 +51,7 @@ schema = Seq(
         Optional('time', default='18:00'): Str(),
         'description': Str(),
         Optional('poster_description'): Str(),
-        Optional('avatar_path'): Str(),
+        'avatar_path': Str(),
         'bio_name': Str(),
         Optional('bio_title'): Str(),
         'bio': Str(),
@@ -65,21 +64,26 @@ schema = Seq(
 )
 
 
-@sync_task(club_content_task)
+@sync_task()  # club_content_task
 def main():
-    path = DATA_DIR / 'events.yml'
-    records = [load_record(record.data) for record in load(path.read_text(), schema)]
-
     if FLUSH_POSTERS_EVENTS:
         logger.warning("Removing all existing posters for events, FLUSH_POSTERS_EVENTS is set")
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
 
+    logger.info('Validating avatar images')
+    for path in filter(is_image, AVATARS_DIR.glob('*.*')):
+        logger.debug(f'Validating {path}')
+        validate_image(path)
+
     with db.connection_context():
+        logger.info('Setting up events db tables')
         db.drop_tables([Event, EventSpeaking])
         db.create_tables([Event, EventSpeaking])
 
-        # process data from the YAML, generate posters
+        logger.info('Processing data from the YAML, creating posters')
+        path = DATA_DIR / 'events.yml'
+        records = [load_record(record.data) for record in load(path.read_text(), schema)]
         for record in records:
             name = record['title']
             logger.info(f"Creating '{name}'")
@@ -87,27 +91,21 @@ def main():
             event = Event.create(**record)
 
             for speaker_id in speakers_ids:
-                try:
-                    avatar_path = next(SPEAKERS_DIR.glob(f"{speaker_id}.*"))
-                except StopIteration:
-                    logger.warning(f"Didn't find speaker avatar for #{speaker_id}")
-                    avatar_path = None
-                else:
-                    logger.info(f"Downsizing speaker avatar for #{speaker_id}")
-                    avatar_path = replace_with_jpg(downsize_square_photo(avatar_path, 500))
-                    avatar_path = avatar_path.relative_to(IMAGES_DIR)
-
                 logger.info(f"Marking member #{speaker_id} as a speaker")
-                EventSpeaking.create(speaker=speaker_id, event=event,
-                                        avatar_path=avatar_path)
+                EventSpeaking.create(speaker=speaker_id, event=event)
+
+            logger.debug(f"Checking '{event.avatar_path}'")
+            image_path = IMAGES_DIR / event.avatar_path
+            if not image_path.exists():
+                raise ValueError(f"Event '{name}' references '{image_path}', but it doesn't exist")
 
             if event.logo_path:
-                logger.info(f"Checking '{event.logo_path}'")
+                logger.debug(f"Checking '{event.logo_path}'")
                 image_path = IMAGES_DIR / event.logo_path
                 if not image_path.exists():
                     raise ValueError(f"Event '{name}' references '{image_path}', but it doesn't exist")
 
-            logger.info(f"Rendering images for '{name}'")
+            logger.info(f"Rendering posters for '{name}'")
             tpl_context = dict(event=event)
             tpl_filters = dict(md=md, local_time=local_time, weekday=weekday)
             prefix = event.start_at.date().isoformat().replace('-', '')
@@ -125,6 +123,7 @@ def main():
             logger.info(f"Saving '{name}'")
             event.save()
 
+    logger.info('Syncing with Discord')
     if DISCORD_MUTATIONS_ENABLED:
         run_discord_task('juniorguru.sync.events.sync_scheduled_events')
         run_discord_task('juniorguru.sync.events.post_next_event_messages')
