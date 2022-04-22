@@ -63,10 +63,10 @@ def main():
 
     logger.info('Reading YAML with episodes')
     path = Path(__file__).parent.parent / 'data' / 'podcast.yml'
-    yaml_records = [record.data for record in load(path.read_text(), YAML_SCHEMA)][:1]
+    yaml_records = (record.data for record in load(path.read_text(), YAML_SCHEMA))
 
     logger.info('Preparing data: downloading and analyzing the mp3 files, creating posters')
-    records = filter(None, Pool(WORKERS).map(process_episode, yaml_records))
+    records = filter(None, Pool(WORKERS).imap_unordered(process_episode, yaml_records))
 
     logger.info('Saving to database')
     for record in records:

@@ -78,7 +78,7 @@ def test_legacy_web_dots(name, value, source_of_truth):
 VARS_IMAGE_TEMPLATES = [
     (match.group(1), match.group(2))
     for match in
-    parse((PACKAGE_DIR / 'image_templates' / 'variables.css').read_text(), CSS_VARIABLE_RE)
+    parse((PACKAGE_DIR / 'image_templates' / 'variables.scss').read_text(), CSS_VARIABLE_RE)
     if match.group(1).startswith('--color-')
 ]
 

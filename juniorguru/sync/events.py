@@ -64,7 +64,7 @@ schema = Seq(
 )
 
 
-@sync_task()  # club_content_task
+@sync_task(club_content_task)
 def main():
     if FLUSH_POSTERS_EVENTS:
         logger.warning("Removing all existing posters for events, FLUSH_POSTERS_EVENTS is set")

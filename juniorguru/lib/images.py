@@ -101,24 +101,49 @@ def render_template(width, height, template_name, context, filters=None):
     environment = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
     environment.filters.update(filters or {})
     template = environment.get_template(template_name)
-    html = template.render(templates_dir=TEMPLATES_DIR, images_dir=IMAGES_DIR, **context)
 
-    with tempfile.NamedTemporaryFile(suffix='.html', delete=False) as f:
-        f.write(html.encode('utf-8'))
-    try:
-        with tempfile.TemporaryDirectory() as temp_dir:
-            # pageres doesn't support changing the output directory, so we need
-            # to set cwd. The problem is, with cwd set to temp dir, npx stops
-            # to work, therefore we need to use an explicit path here
-            pageres = ['node', f'{os.getcwd()}/node_modules/.bin/pageres']
-            run(pageres + [f'file://{f.name}', f'{width}x{height}',
-                '--format=png', '--overwrite', '--filename=image'],
-                cwd=temp_dir, check=True, stdout=DEVNULL)
+    with tempfile.TemporaryDirectory() as temp_dir:
+        html = template.render(images_dir=IMAGES_DIR, **context)
+        html_path = Path(temp_dir) / template_name
+        html_path.write_text(html)
 
-            with Image.open(Path(temp_dir) / 'image.png') as image:
-                buffer = BytesIO()
-                image = image.crop((0, 0, width, height))
-                image.save(buffer, 'PNG')
-                return buffer.getvalue()
-    finally:
-        os.unlink(f.name)
+        run(['npx', 'sass', f'{TEMPLATES_DIR}:{temp_dir}'],
+            check=True, stdout=DEVNULL)
+
+        # pageres doesn't support changing the output directory, so we need
+        # to set cwd. The problem is, with cwd set to temp dir, npx stops
+        # to work, therefore we need to use an explicit path here
+        pageres = ['node', f'{os.getcwd()}/node_modules/.bin/pageres']
+        run(pageres + [f'file://{html_path}', f'{width}x{height}',
+            '--format=png', '--overwrite', f'--filename={html_path.stem}'],
+            cwd=temp_dir, check=True, stdout=DEVNULL)
+
+        with Image.open(Path(temp_dir) / f'{html_path.stem}.png') as image:
+            buffer = BytesIO()
+            image = image.crop((0, 0, width, height))
+            image.save(buffer, 'PNG')
+            return buffer.getvalue()
+
+    # with tempfile.NamedTemporaryFile(suffix='.html', delete=False) as f:
+    #     f.write(html.encode('utf-8'))
+    # try:
+    #     with tempfile.TemporaryDirectory() as temp_dir:
+    #         # compile scss
+    #         run(['npx', 'sass', f'{TEMPLATES_DIR}:{temp_dir}'],
+    #             check=True, stdout=DEVNULL)
+
+    #         # pageres doesn't support changing the output directory, so we need
+    #         # to set cwd. The problem is, with cwd set to temp dir, npx stops
+    #         # to work, therefore we need to use an explicit path here
+    #         pageres = ['node', f'{os.getcwd()}/node_modules/.bin/pageres']
+    #         run(pageres + [f'file://{f.name}', f'{width}x{height}',
+    #             '--format=png', '--overwrite', '--filename=image'],
+    #             cwd=temp_dir, check=True, stdout=DEVNULL)
+
+    #         with Image.open(Path(temp_dir) / 'image.png') as image:
+    #             buffer = BytesIO()
+    #             image = image.crop((0, 0, width, height))
+    #             image.save(buffer, 'PNG')
+    #             return buffer.getvalue()
+    # finally:
+    #     os.unlink(f.name)

@@ -21,7 +21,7 @@ def test(context, v=0, x=False):
 @task()
 def lint(context):
     context.run('poetry run flake8')
-    context.run("npx stylelint 'juniorguru/scss/**/*.scss' 'juniorguru/image_templates/*.css'")
+    context.run("npx stylelint 'juniorguru/scss/**/*.*css' 'juniorguru/image_templates/*.*css'")
 
 
 @task()
