@@ -12,6 +12,7 @@ from juniorguru.lib.images import render_image_file, is_image, validate_image
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.podcast import PodcastEpisode
+from juniorguru.lib.template_filters import icon
 
 
 logger = loggers.get(__name__)
@@ -100,6 +101,7 @@ def process_episode(yaml_record):
     data = dict(id=id,
                 publish_on=publish_on,
                 title=yaml_record['title'],
+                avatar_path=avatar_path,
                 description=yaml_record['description'],
                 media_url=media_url,
                 media_size=media.size,
@@ -108,9 +110,8 @@ def process_episode(yaml_record):
 
     ep_logger.info('Rendering poster')
     tpl_context = dict(episode=PodcastEpisode(**data))
-    poster_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT,
-                                    'podcast.html', tpl_context,
-                                    POSTERS_DIR, prefix=id)
+    poster_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT, 'podcast.html', tpl_context,
+                                    POSTERS_DIR, prefix=id, filters=dict(icon=icon))
     data['poster_path'] = poster_path.relative_to(IMAGES_DIR)
 
     return data

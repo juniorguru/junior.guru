@@ -1,15 +1,49 @@
-@import "./variables";
+@import "../scss/index";
 
-* {
-  box-sizing: border-box;
+
+body {
+  text-align: center;
 }
 
-html,
-body {
-  padding: 0;
+main {
+  height: 80vh;
+  background-color: $jg-yellow;
+  padding: map-get($spacers, 3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.podcast-photos img {
+  @extend .rounded-circle;
+  display: inline-block;
+  width: 25vw;
+  margin: 0 map-get($spacers, 3);
+}
+
+h1 {
   margin: 0;
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  color: var(--color-dark);
-  background: var(--color-yellow);
+}
+
+.podcast-url img {
+  width: 20vw;
+}
+
+button {
+  @extend .btn;
+  @extend .btn-lg;
+  @extend .btn-primary;
+  font-size: $h3-font-size;
+  margin: 0;
+}
+
+footer {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  margin: 0;
 }

@@ -6,10 +6,13 @@ from io import BytesIO
 from pathlib import Path
 from subprocess import DEVNULL, run
 import mimetypes
+import shutil
 
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image, ImageOps
 
+
+ICONS_FONT_DIR = Path(__file__).parent.parent.parent / 'node_modules' / 'bootstrap-icons' / 'font' / 'fonts'
 
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
@@ -109,6 +112,7 @@ def render_template(width, height, template_name, context, filters=None):
 
         run(['npx', 'sass', f'{TEMPLATES_DIR}:{temp_dir}'],
             check=True, stdout=DEVNULL)
+        shutil.copytree(ICONS_FONT_DIR, Path(temp_dir) / 'fonts')
 
         # pageres doesn't support changing the output directory, so we need
         # to set cwd. The problem is, with cwd set to temp dir, npx stops
@@ -123,27 +127,3 @@ def render_template(width, height, template_name, context, filters=None):
             image = image.crop((0, 0, width, height))
             image.save(buffer, 'PNG')
             return buffer.getvalue()
-
-    # with tempfile.NamedTemporaryFile(suffix='.html', delete=False) as f:
-    #     f.write(html.encode('utf-8'))
-    # try:
-    #     with tempfile.TemporaryDirectory() as temp_dir:
-    #         # compile scss
-    #         run(['npx', 'sass', f'{TEMPLATES_DIR}:{temp_dir}'],
-    #             check=True, stdout=DEVNULL)
-
-    #         # pageres doesn't support changing the output directory, so we need
-    #         # to set cwd. The problem is, with cwd set to temp dir, npx stops
-    #         # to work, therefore we need to use an explicit path here
-    #         pageres = ['node', f'{os.getcwd()}/node_modules/.bin/pageres']
-    #         run(pageres + [f'file://{f.name}', f'{width}x{height}',
-    #             '--format=png', '--overwrite', '--filename=image'],
-    #             cwd=temp_dir, check=True, stdout=DEVNULL)
-
-    #         with Image.open(Path(temp_dir) / 'image.png') as image:
-    #             buffer = BytesIO()
-    #             image = image.crop((0, 0, width, height))
-    #             image.save(buffer, 'PNG')
-    #             return buffer.getvalue()
-    # finally:
-    #     os.unlink(f.name)

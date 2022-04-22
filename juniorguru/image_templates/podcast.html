@@ -5,6 +5,24 @@
     <link rel="stylesheet" href="./podcast.css">
   </head>
   <body>
-    {{ episode.title }}
+    <main>
+      <section class="podcast-photos">
+        <img src="{{ images_dir }}/avatars-participants/pavlina-fronkova.jpg">
+        <img src="{{ images_dir }}/{{ episode.avatar_path }}">
+      </section>
+      <h1>{{ episode.title }}</h1>
+      <section class="podcast-url">
+        <button>junior.guru/podcast</button>
+      </section>
+    </main>
+    <footer>
+      <p>
+        <a class="podcast-button spotify" href="#">{{ 'spotify'|icon }} Spotify</a>
+        <a class="podcast-button google" href="#">{{ 'google'|icon }} Google</a>
+        <a class="podcast-button apple" href="#">{{ 'apple'|icon }} Apple</a>
+        <a class="podcast-button youtube" href="#">{{ 'youtube'|icon }} YouTube</a>
+        <a class="podcast-button rss" href="#">{{ 'rss-fill'|icon }} RSS</a>
+      </p>
+    </footer>
   </body>
 </html>

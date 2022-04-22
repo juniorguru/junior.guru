@@ -15,6 +15,7 @@ class PodcastEpisode(BaseModel):
     media_type = CharField()
     media_duration_s = IntegerField()
     description = CharField()
+    avatar_path = CharField()
     poster_path = CharField(null=True)
 
     @property
