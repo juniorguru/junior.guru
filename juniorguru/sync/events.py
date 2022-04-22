@@ -21,18 +21,27 @@ logger = loggers.get(__name__)
 
 
 FLUSH_POSTERS_EVENTS = bool(int(os.getenv('FLUSH_POSTERS_EVENTS', 0)))
+
 DATA_DIR = Path(__file__).parent.parent / 'data'
+
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
+
 POSTERS_DIR = IMAGES_DIR / 'posters-events'
 
+SPEAKERS_DIR = IMAGES_DIR / 'avatars-speakers'
+
 WEB_THUMBNAIL_WIDTH = 1280
+
 WEB_THUMBNAIL_HEIGHT = 672
 
 YOUTUBE_THUMBNAIL_WIDTH = 1160
+
 YOUTUBE_THUMBNAIL_HEIGHT = 735
 
 ANNOUNCEMENTS_CHANNEL = 789046675247333397
+
 EVENTS_CHANNEL = 940587142659338300
+
 EVENTS_CHAT_CHANNEL = 821411678167367691
 
 
@@ -79,9 +88,9 @@ def main():
 
             for speaker_id in speakers_ids:
                 try:
-                    avatar_path = next((IMAGES_DIR / 'avatars-speakers').glob(f"{speaker_id}.*"))
+                    avatar_path = next(SPEAKERS_DIR.glob(f"{speaker_id}.*"))
                 except StopIteration:
-                    logger.info(f"Didn't find speaker avatar for #{speaker_id}")
+                    logger.warning(f"Didn't find speaker avatar for #{speaker_id}")
                     avatar_path = None
                 else:
                     logger.info(f"Downsizing speaker avatar for #{speaker_id}")
