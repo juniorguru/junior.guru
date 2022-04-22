@@ -48,11 +48,12 @@ invoke = "*"
 Scrapy = "2.5.1"
 
 [tool.poetry.dev-dependencies]
+python-slugify = "*"
 pytest = "*"
 cssselect = "*"
 pync = "*"
 flake8 = "*"
-isort = "^5.10.1"
+isort = "*"
 
 [tool.pytest.ini_options]
 python_files = "test_*.py *_test.py test.py"
