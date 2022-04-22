@@ -23,7 +23,7 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
 
 <h2 class="visually-hidden">Autoři</h2>
 <div class="podcast-author">
-  {{ img('static/images/paja.jpg', 'Pája Froňková', 100, 100, lazy=False, class='podcast-author-photo') }}
+  {{ img('static/images/avatars-participants/pavlina-fronkova.jpg', 'Pája Froňková', 100, 100, lazy=False, class='podcast-author-photo') }}
   <div class="podcast-author-body">
     <h3>Pája Froňková</h3>
     {% call markdown() -%}
@@ -32,7 +32,7 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
   </div>
 </div>
 <div class="podcast-author">
-  {{ img('static/images/honza.jpg', 'Honza Javorek', 100, 100, lazy=False, class='podcast-author-photo') }}
+  {{ img('static/images/avatars-participants/honza-javorek.jpg', 'Honza Javorek', 100, 100, lazy=False, class='podcast-author-photo') }}
   <div class="podcast-author-body">
     <h3>Honza Javorek</h3>
     {% call markdown() -%}

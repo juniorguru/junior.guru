@@ -105,13 +105,7 @@
       <a href="{{ event.public_recording_url }}" target="_blank" rel="noopener" class="event-circles-link">
     {% endif %}
 
-    {% if event.avatar_path %}
-      {{ img('static/images/' + event.avatar_path, event.bio_name, 100, 100) }}
-    {% else %}
-      {% for speaking in event.list_speaking %}
-        {{ img('static/images/' + speaking.avatar_path, event.bio_name, 100, 100) }}
-      {% endfor %}
-    {% endif %}
+    {{ img('static/images/' + event.avatar_path, event.bio_name, 100, 100) }}
 
     <h3>{{ event.bio_name }}</h3>
 
