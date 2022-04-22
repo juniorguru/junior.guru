@@ -80,7 +80,7 @@ google_service_account.json
 /juniorguru/data/*.db
 /juniorguru/data/*.db-*
 /juniorguru/data/jobs/
-/juniorguru/images/avatars/*.png
+/juniorguru/images/avatars-club/*.png
 /juniorguru/images/logos-jobs/*.png
 /juniorguru/images/posters-events/*.png
 /juniorguru/images/posters-companies/*.png

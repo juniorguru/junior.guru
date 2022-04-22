@@ -21,6 +21,8 @@
 #  poster_description: |                  # TEXT LÁKADLA PRO PLAKÁTEK, POKUD JE POTŘEBA JINÉ (TŘEBA KRATŠÍ, VĚTŠINOU TO ALE POTŘEBA NENÍ)
 #    Jana Nováková je expertka na věci a ukáže ti, jak se věci
 #    dělají a jak se stát tím, kým se stát chceš.
+#  avatar_path: |                         # CESTA KE TVÉ FOTCE, 500x500px JPG, IDEÁLNĚ
+#    avatars-participants/jana-novakova.jpg
 #  bio_name: Jana Nováková                # TVOJE JMÉNO
 #  bio_title: |                           # TVOJE ROLE
 #    API designerka ve Velkém Korporátku,
@@ -70,6 +72,7 @@
   date: "2022-04-19"
   description: |
     Ako a prečo prejsť z Reactu na vývoj v Next.js? Čo je potrebné vedieť na začiatok? Vedeli ste, že Next.js je možné využívať aj ako backend? Ukážeme si hlavné featury, ktoré ponúka a aké rôzne spôsoby rendrovania je možné využívať, či navzájom kombinovať s príkladmi využitia z praxe na rôznych aplikáciách.
+  avatar_path: avatars-participants/svetlana-margetova.jpg
   bio_name: Svetlana Margetová
   bio_title: Zakladatelka Kompilátor, programátorka, mentorka
   bio: |
@@ -88,6 +91,7 @@
   date: "2022-02-22"
   description: |
     Říká se, že zdraví máme pouze jedno. Ale zatímco to fyzické zanedbává málokdo, péče o psychické zdraví zdaleka není takovou normou. Cesta do IT je náročná životní změna. Vysoké nároky na sebe sama, srovnávání se s ostatními, obavy zda jste dost dobří, zda se vám to podaří, nedostatek odpočinku… To vše může vést až k vyhoření. Na přednášce si představíme pět zásad, každou s praktickými tipy, které vám pomohou si na cestě do IT své psychické zdraví nepošlapat.
+  avatar_path: avatars-participants/nela-slezakova.jpg
   bio_name: Nela Slezáková
   bio_title: Psycholožka v nelaprovazi.cz, programátorka ve FlowerChecker
   bio: |
@@ -105,6 +109,7 @@
   date: "2022-02-08"
   description: |
     Mobilné aplikácie naberajú na čoraz väčšej popularite a my si ukážeme, ako sa zorientovať vo svete mobilného vývoja. Aplikácie je možné vyvíjať rôznymi technológiami na rôzne platformy (iOS/Android). Využívať pritom viaceré prístupy vývoja, preto spolu prejdeme hlavnými rozdielmi, či výhodami/nevýhodami, ktoré ich od seba odlišujú. V prednáške sa naučíte, čo je potrebné pred vývojom prvej aplikácie zvážiť a ako ju nasadiť do Google Play, či App Store obchodu.
+  avatar_path: avatars-participants/svetlana-margetova.jpg
   bio_name: Svetlana Margetová
   bio_title: Zakladatelka Kompilátor, programátorka, mentorka
   bio: |
@@ -125,6 +130,7 @@
   date: "2022-01-11"
   description: |
     IT táhne. Vysoké (slibované) mzdy, flexibilní pracovní doba, práce z domova, zaměstnanecké benefity a velký potenciál kariérního růstu láká do IT čím dál tím víc lidí. A co je na tom nejlepší? Že stačí dodržovat pár pravidel a i vy můžete dosáhnout nejen na finančně bezstarostný život, ale i na nejvyšší příčky v podobě finanční nezávislosti.
+  avatar_path: avatars-participants/jakub-dvorak.jpg
   bio_name: Jakub Dvořák
   bio_title: Team Lead a datový vědec v Processand, finanční šprt, blogger a podcaster v Rozbité prasátko
   bio: |
@@ -141,6 +147,7 @@
   date: "2021-12-07"
   description: |
     Možná jste už slyšeli tvrzení, že vhodnou pozicí do startu, na kterou byste se mohli zaměřit, je tester. Je to ale skutečně tak? Je pozice testera ideálním začátkem kariéry v IT zrovna pro tebe?
+  avatar_path: avatars-participants/sona-mistrikova.jpg
   bio_name: Soňa Mištríková
   bio_title: QA specialistka v Mews
   bio: |
@@ -156,6 +163,7 @@
   date: "2021-11-16"
   description: |
     Úvodní přednáška do tématu „junioři vs trh práce“, aneb 10 základních klíčových otázek, na které byste měli znát odpovědi, než se pustíte do vytváření CV, přihlašování na pracovní pozice a pohovory. Po přednášce bude prostor pro dotazy na způsob krátké AMA (_ask me anything_).
+  avatar_path: avatars-participants/matej-kotrba.jpg
   bio_name: Matěj Kotrba
   bio_title: IT headhunter, podcaster
   bio: |
@@ -173,6 +181,7 @@
   date: "2021-11-02"
   description: |
     Nedávno jsem vytvořil [web pro novináře Davida Klimeše](https://davidklimes.cz/) – offline-first Progressive Web App. A protože to byla důležitá práce, dal jsem si hodně záležet. Rád bych vám na jejím příkladu ukázal jak se staví moderní prezentační web – jak vybírat technologie, co optimalizovat, na co si dát pozor. Určitě zmíníme přístupnost a stihneme-li to, snad si i povíme k čemu jsou dobré service workery.
+  avatar_path: avatars-participants/libor-vanek.jpg
   bio_name: Libor Vaněk
   bio_title: Vedoucí frontendového vývoje, CDN77
   bio: |
@@ -189,6 +198,7 @@
   date: "2021-10-19"
   description: |
     AMA znamená _ask me anything_. Honza Král se dlouhá léta zabývá provozem a architekturou složitých systémů. Jak lze navrhovat kód, aby toho zvládl hodně v krátkém čase? Jaké triky má využít webová stránka, pokud chce obsloužit miliony uživatelů? Jak navrhnout a provozovat databáze, aby se popraly s náporem? Zeptej se na cokoliv, co tě zajímá!
+  avatar_path: avatars-participants/honza-kral.jpg
   bio_name: Honza Král
   bio_title: Spoluzakladatel a CTO v Aimful
   bio: |
@@ -206,7 +216,7 @@
   date: "2021-09-29"
   description: |
     AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Dan a Kate pod značkou [CoreSkill](https://coreskill.tech/) pomáhají budoucím frontendistům a frontendistkám se vším, co potřebují k tomu, aby se jimi co nejdřív stali. Tématy určitě budou HTML, CSS i JavaScript, ale i to, co to frontend je a co frontendisti vlastně všechno dělají a co je minimum pro nalezení první práce.
-  avatar_path: avatars-speakers/coreskill.jpg
+  avatar_path: avatars-participants/coreskill.jpg
   bio_name: Daniel Srb, Kate Miháliková
   bio_title: vývojáři a mentoři, CoreSkill
   bio: |
@@ -226,6 +236,7 @@
   date: "2021-08-31"
   description: |
     S relačními databázemi se setkává téměř každý vývojář, ale ne každý vývojář je dokáže efektivně využít. V přednášce si představíme, jak jsou data v relačních databázích uložena, jak databáze vykonávají naše dotazy a jak jim v jejich vykonávání pomoci. Ukážeme si i nástroje pro ladění dotazů v MySQL a PostgreSQL a celou řadu praktických tipů.
+  avatar_path: avatars-participants/jan-smitka.jpg
   bio_name: Jan Smitka
   bio_title: Hlavní vývojář, Lynt
   bio: |
@@ -244,6 +255,7 @@
   date: "2021-08-17"
   description: |
     Je mnoho ciest ako sa dostať k programovaniu. Vo svojej prednáške by som vám rada porozprávala o tej svojej, ktorá viedla od práce recruiterky v Bratislave cez Lambda School až do globálneho technologického startupu Grafana Labs, s posledným investičným kolom v hodnote 50 miliónov dolárov. Veľmi rada s vami zazdieľam to, čo sa mi podarilo a osvedčilo a naopak, čo som urobila zle a čo by som dnes urobila úplne inak.
+  avatar_path: avatars-participants/ivana-huckova.jpg
   bio_name: Ivana Hučková
   bio_title: Software Engineer, Grafana Labs
   bio: |
@@ -267,6 +279,7 @@
     Začneme od začátku a postupně se zaměříme na datové typy Pythonu: seznamy a slovníky. Ale nebojte, v JavaScriptu, C# nebo třeba Ruby fungují základní principy odobně.
   poster_description: |
     Jedna za věcí které se dozvíte spíše na škole než z praktických kurzů je to, jak jsou informace uloženy v paměti počítače. Kde jsou vlastně ty jedničky a nuly, o kterých celé IT je? A jak s pomocí nich zapsat číslo, text, seznam, slovník nebo třeba barvu? Začneme od začátku a postupně se zaměříme na datové typy Pythonu: seznamy a slovníky. Ale nebojte, v jiných jazycích fungují základní principy odobně.
+  avatar_path: avatars-participants/petr-viktorin.jpg
   bio_name: Petr Viktorin
   bio_title: Senior Software Engineer, Red Hat
   bio: |
@@ -285,6 +298,7 @@
   date: "2021-07-27"
   description: |
     Technical writer je zajímavá a žádaná práce, málo kdo ale ví o co v ní běží nebo že vůbec taková kariérní cesta existuje. Přijď si poslechnout, jak se z absolventky obecné lingvistiky stala tech writerka. Nora Kořánová ti poví, s čím se běžně v práci potýká, co ji na tom baví, nebaví a jaké dovednosti se jí hodí. Nebudou chybět ani tipy na to, jak se technical writerem stát.
+  avatar_path: avatars-participants/nora-koranova.jpg
   bio_name: Nora Kořánová
   bio_title: Technical Writer, SUSE
   bio: |
@@ -304,6 +318,7 @@
     Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce, jelikož je to voda, ve které jejich výtvor přímo plave. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu. V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
   poster_description: |
     Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu. V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
+  avatar_path: avatars-participants/vilibald-wanca.jpg
   bio_name: Vilibald Wanča
   bio_title: Architekt v Oracle, Princ Wilibald na ČRo Wave
   bio: |
@@ -336,6 +351,7 @@
     -   Jaký je poměr v týmech mezi seniory a juniory, jakou pozornost může junior očekávat, když nastoupí?
   poster_description: |
     AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Jirka je seniorní recruiter v Red Hatu, který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase spoluorganizuje brněnský sraz Python programátorů a věnuje se DJingu.
+  avatar_path: avatars-participants/jiri-psotka.jpg
   bio_name: Jiří Psotka
   bio_title: Senior Recruiter, Red Hat
   bio: |
@@ -353,6 +369,7 @@
   date: "2021-04-13"
   description: |
     Jak se z lektorky angličtiny stane frontendistka? První část přednášky je o těžkých rozhodnutích, motivaci, překážkách a pomoci na cestě k vysněné práci. V druhé se podíváme na související obory s vývojem webů a aplikací, včetně user experience.
+  avatar_path: avatars-participants/adina-foxova.jpg
   bio_name: Adina Foxová
   bio_title: Tlumočnice mezi designem a frontendem na volné noze, UXD tým v Leveris
   bio: |
@@ -372,6 +389,7 @@
   date: "2021-03-31"
   description: |
     Co jsou „staticky generované stránky“? Co je Jamstack a jak ti může pomoci tvořit webovky? Jak se orientovat v existujících řešeních a jak si můžeš na Jamstacku vytvořit třeba vlastní blog?
+  avatar_path: avatars-participants/ladislav-prskavec.jpg
   bio_name: Ladislav Prskavec
   bio_title: Senior Developer Manager v Oracle, SRE, školitel, organizátor srazů
   bio: |
@@ -391,6 +409,7 @@
   date: "2021-03-16"
   description: |
     Máš svou první práci v IT? Výborně! Ale co teď? Jak být užitečným členem týmu, jak se dál vzdělávat a jak se z toho všeho nezbláznit? Přednáška bude v angličtině.
+  avatar_path: avatars-participants/daria-grudzien.jpg
   bio_name: Daria Grudzien
   bio_title: Spoluzakladatelka CyberMagnolia, ex-Apiary SRE
   bio: |

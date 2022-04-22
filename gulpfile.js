@@ -58,7 +58,7 @@ function buildFlaskCSS() {
 }
 
 function buildMkDocsCSS() {
-  return gulp.src('juniorguru/web/static/src/css-mkdocs/index.scss')
+  return gulp.src('juniorguru/scss/index.scss')
     .pipe(gulpIf(isLocalDevelopment, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
     .pipe(gulpIf(isLocalDevelopment, sourcemaps.write()))
@@ -192,7 +192,7 @@ async function watchWeb() {
   ], buildJS);
   gulp.watch([
     'juniorguru/web/static/src/css/',
-    'juniorguru/web/static/src/css-mkdocs/',
+    'juniorguru/scss/',
   ], buildCSS);
   gulp.watch([
     'juniorguru/web/static/src/images/screenshots/',

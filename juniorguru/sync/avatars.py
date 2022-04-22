@@ -18,7 +18,7 @@ logger = loggers.get(__name__)
 
 IMAGES_PATH = Path(__file__).parent.parent / 'images'
 
-AVATARS_PATH = IMAGES_PATH / 'avatars'
+AVATARS_PATH = IMAGES_PATH / 'avatars-club'
 
 MEMBERS_CHUNK_SIZE = 10
 
