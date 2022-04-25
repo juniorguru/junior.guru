@@ -90,4 +90,4 @@ async def download_avatar(avatar):
     image = image.resize((AVATAR_SIZE_PX, AVATAR_SIZE_PX))
     image_path = AVATARS_PATH / f'{Path(urlparse(avatar.url).path).stem}.png'
     image.save(image_path, 'PNG')
-    return f'images/avatars/{image_path.name}'
+    return f'images/avatars-club/{image_path.name}'
