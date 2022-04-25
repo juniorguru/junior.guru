@@ -6,12 +6,12 @@ body {
 }
 
 main {
-  height: 80vh;
-  background-color: $jg-yellow;
-  padding: map-get($spacers, 3);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  height: 80vh;
+  padding: map-get($spacers, 3);
+  background-color: $jg-yellow;
 }
 
 .podcast-photos img {
@@ -33,15 +33,15 @@ button {
   @extend .btn;
   @extend .btn-lg;
   @extend .btn-primary;
-  font-size: $h3-font-size;
   margin: 0;
+  font-size: $h3-font-size;
 }
 
 footer {
-  height: 20vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 20vh;
 }
 
 footer p {
