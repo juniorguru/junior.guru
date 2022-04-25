@@ -160,7 +160,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
             {
                 'label': 'marketing',
                 'data': charts_cost_breakdown.pop('marketing'),
-                'backgroundColor': '#fffa72',
+                'backgroundColor': '#ffd300',
             },
             {
                 'label': 'memberful.com',
