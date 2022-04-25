@@ -25,6 +25,11 @@ jobs:
           command: |
             date +'%Y-%m-%d' > .today
       - run:
+          name: Configure poetry
+          command: |
+            # https://github.com/python-poetry/poetry/issues/3336
+            poetry config experimental.new-installer false
+      - run:
           name: Install dependencies
           command: poetry install && npm ci
       - save_cache:
