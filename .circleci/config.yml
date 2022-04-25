@@ -112,7 +112,7 @@ jobs:
       - attach_workspace:
           at: "~"
       - restore_cache:  # makes jobs-emails idempotent
-          key: jobs-emails-v1-{{ .Branch }}
+          key: jobs-emails-v2-{{ .Branch }}
       - run:
           name: Sync data (postprocess jobs)
           environment:
@@ -125,7 +125,7 @@ jobs:
             fi
             poetry run invoke sync.ci.postprocess-jobs
       - save_cache:  # makes jobs-emails idempotent
-          key: jobs-emails-v1-{{ .Branch }}-{{ checksum ".today" }}
+          key: jobs-emails-v2-{{ .Branch }}-{{ checksum ".today" }}
           paths:
             - juniorguru/data/jobs-emails.txt
       - save_cache:  # persisting the jobs data between builds
