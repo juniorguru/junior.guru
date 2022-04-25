@@ -119,8 +119,7 @@ jobs:
             JOBS_SCRAPED_REUSE_DB_ENABLED: 1
           command: |
             if [[ $CIRCLE_BRANCH = "main" ]]; then
-              #export JOBS_EMAILS_SENDING_ENABLED=1
-              echo '2022-04-25' > juniorguru/data/jobs-emails.txt
+              export JOBS_EMAILS_SENDING_ENABLED=1
               export DISCORD_MUTATIONS_ENABLED=1
             fi
             poetry run invoke sync.ci.postprocess-jobs
