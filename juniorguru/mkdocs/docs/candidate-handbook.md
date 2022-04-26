@@ -5,7 +5,7 @@ description: Jak začít hledat svou první práci v IT? Jak se připravit na po
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_toxic, blockquote_avatar, blockquote, link_card, video_card, jobs_inline, video_card, video_card_engeto, note with context %}
+{% from 'macros.html' import blockquote_toxic, blockquote_avatar, blockquote, link_card, jobs_inline, video_card, video_card_engeto, note with context %}
 
 
 # Hledání první práce v IT
