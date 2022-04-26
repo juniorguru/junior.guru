@@ -9,14 +9,14 @@ from invoke import task
 from PIL import Image
 
 
-PROJECT_DIR = Path(__file__).parent.parent
+PROJECT_DIR = Path(__file__).parent.parent.parent.parent
 IMAGES_DIR = PROJECT_DIR / 'juniorguru' / 'web' / 'static' / 'src' / 'images'
 
-URLS_TXT = PROJECT_DIR / 'juniorguru' / 'screenshots-urls.txt'
+URLS_TXT = Path(__file__).parent / 'screenshots-urls.txt'
 SCREENSHOTS_DIR = IMAGES_DIR / 'screenshots'
 SCREENSHOTS_OVERRIDES_DIR = IMAGES_DIR / 'screenshots-overrides'
 
-PAGERES_FB_SCRIPT = PROJECT_DIR / 'tasks' / 'screenshot-facebook.js'
+PAGERES_FB_SCRIPT = Path(__file__).parent / 'screenshot-facebook.js'
 
 HIDDEN_ELEMENTS = [
     '[data-cookiebanner]',  # facebook.com
