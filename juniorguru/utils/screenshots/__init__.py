@@ -51,6 +51,8 @@ HIDDEN_ELEMENTS = [
     '[style*="Toaster-indicatorColor"]',  # reddit.com
     '#onetrust-banner-sdk',  # codecademy.com
     '#axeptio_overlay',  # welcometothejungle.com
+    '#CybotCookiebotDialog',  # hedepy.cz
+    '.cookiebot-overlay',  # hedepy.cz
 ]
 
 PAGERES_BATCH_SIZE = 3

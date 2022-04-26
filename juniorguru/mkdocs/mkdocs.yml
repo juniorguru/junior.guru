@@ -7,6 +7,7 @@ nav:
       - Motivace: motivation.md
       - Základy: learn.md
       - První praxe: practice.md
+      #- Psychika: handbook/mental-health.md
       - Git a GitHub: handbook/git.md
       - Hledání práce: candidate-handbook.md
       - Životopis: handbook/cv.md

@@ -118,7 +118,10 @@
 {% endmacro %}
 
 
-{% macro link_card(title, screenshot_filename, url, caption=None, badge_icon=None, badge_text=None) %}
+{% macro link_card(title, screenshot_filename, url, caption=None,
+                   badge_icon=None, badge_text=None,
+                   highlight_icon='star', highlight_text=None)
+%}
 <div class="link-card">
   <div class="link-card-header">
     {{ img('static/images/screenshots/' + screenshot_filename, title, 640, 360, class='link-card-image') }}
