@@ -68,6 +68,23 @@
 #   speakers: 854681167018459146
 
 
+- title: "Co je to ten .NET? (bude upřesněno, pracovní název)"
+  date: "2021-06-07"
+  description: |
+    (bude upřesněno)
+  avatar_path: icon.svg
+  bio_name: Vojtěch Mádr
+  bio_title: (bude upřesněno)
+  bio: |
+      (bude upřesněno)
+  bio_links:
+    - https://twitter.com/madrvojt
+    - https://www.dotnetpodcast.cz/
+    - https://www.linkedin.com/in/madrvojtech/
+  logo_path: logos/motionlab.svg
+  speakers: 839123616665698354
+
+
 - title: "Co je to ten frontend? (bude upřesněno, pracovní název)"
   date: "2021-05-10"
   description: |
@@ -87,6 +104,22 @@
   speakers: 652142810291765248, 488415538117214220
 
 
+# - title: "Představení mentorů z Pure Storage (bude upřesněno, pracovní název)"
+#   date: "2021-05-03"
+#   description: |
+#     (bude upřesněno)
+#   avatar_path: icon.svg
+#   bio_name: (bude upřesněno)
+#   bio_title: mentoři, Pure Storage
+#   bio: |
+#       (bude upřesněno)
+#   bio_links:
+#     - https://www.purestorage.com/
+#     - https://www.welcometothejungle.com/en/companies/pure-storage
+#   logo_path: logos/purestorage.svg
+#   speakers:
+
+
 - title: "Next.js úvod pre juniorov"
   date: "2022-04-19"
   description: |
@@ -104,6 +137,23 @@
     - https://github.com/SvetlanaM
   logo_path: logos/kompilator.svg
   speakers: 477895566085324801
+
+
+- title: "Představení Jetveo"
+  date: "2021-02-23"
+  description: |
+    Jetveo je low-code platforma se C#, na které by měl být i úplný začátečník s minimální znalostí kódu schopen poměrně rychle vytvořit funkční, produkční appku. Zakladatel Jetveo Dalibor a junior Jakub, který si díky Jetveo našel svou první práci v IT, v klubu udělali představení platformy a odpovídali na dotazy.
+  avatar_path: icon.svg
+  bio_name: Dalibor Houfek, Jakub Ráček
+  bio_title: Kluci z Jetveo
+  bio: |
+    Dalibor je spoluzakladatelem platformy Jetveo. Jakub je junior, který se s platformou naučil pracovat a našel si díky tomu svou první práci v IT.
+  bio_links:
+    - https://jetveo.io/
+    - https://jetveo.io/cs/blog/articles/jakub-interview
+  logo_path: logos/jetveo.svg
+  speakers: 736963862099918968
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946376703691882497
 
 
 - title: "Jak přežít cestu juniora po psychické stránce"
