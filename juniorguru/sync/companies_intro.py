@@ -71,7 +71,7 @@ async def discord_task(client):
                 embed_description_lines += [
                     "💕 Chtějí pomáhat juniorům!",
                     '💰 Financují práci na [příručce pro juniory](https://junior.guru/handbook/)',
-                    '\nJak přesně funguje firemní členství? Mrkni do [FAQ](https://junior.guru/faq/#spoluprace-s-firmami-a-komunitami)',
+                    '\nJak přesně funguje firemní členství? Mrkni do [FAQ](https://junior.guru/faq/#firmy)',
                 ]
 
                 embed = Embed(colour=Colour.dark_grey(),

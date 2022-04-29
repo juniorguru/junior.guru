@@ -120,9 +120,9 @@
 
 {% macro link_card(title, screenshot_filename, url, caption=None,
                    badge_icon=None, badge_text=None,
-                   highlight_icon='star', highlight_text=None)
+                   highlighted=False)
 %}
-<div class="link-card">
+<div class="link-card{% if highlighted %} highlighted{% endif %}">
   <div class="link-card-header">
     {{ img('static/images/screenshots/' + screenshot_filename, title, 640, 360, class='link-card-image') }}
     {% if badge_icon and badge_text %}
@@ -172,7 +172,7 @@
           {{ caller()|md|remove_p }}
         {% endif %}
         {% if note %}
-          <small class="video-card-note">{{ 'info-circle'|icon }} {{ note }}</small>
+          <small class="video-card-note">{{ 'info-circle'|icon }} {{ note|md|remove_p }}</small>
         {% endif %}
       </p>
     {% endif %}
@@ -212,7 +212,7 @@
     screenshot_filename,
     url,
     caption=caption,
-    note='Video je součástí série <a href="https://www.youtube.com/playlist?list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI">Průvodce nováčka v IT</a>, kterou natočilo <a href="https://engeto.com/">Engeto</a> ve spolupráci s <a href="#honza">Honzou</a> z junior.guru.',
+    note='Video je součástí série [Průvodce nováčka v IT](https://www.youtube.com/playlist?list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI), kterou natočilo [Engeto](https://engeto.com/) ve spolupráci s [Honzou](#honza) z junior.guru.',
   ) }}
 {% endmacro %}
 
@@ -329,5 +329,25 @@
 {% macro note(standout=False) %}
 <div class="note{% if standout %} standout{% endif %}" role="alert">
   {{ caller()|md }}
+</div>
+{% endmacro %}
+
+
+{% macro guarantor(name, avatar_path, url=None, standout=False) %}
+<div class="guarantor{% if standout %} standout{% endif %}" role="alert">
+  {{ img('static/' + avatar_path, name, 100, 100, class='guarantor-image') }}
+  <div class="guarantor-body">
+    <h4 class="guarantor-title">
+      Tuto kapitolu píše {% if url %}<a href="{{ url }}">{{ name }}</a>{% else %}{{ name }}{% endif %}
+    </h4>
+    <p>
+      {{ caller()|md|remove_p }}
+    </p>
+    <p>
+      <small class="guarantor-note">{{ 'info-circle'|icon }}
+        Jak přesně funguje spolupráce na této kapitole? <a href="{{ pages|docs_url('faq.md')|url }}#garanti">Více o garantech</a>
+      </small>
+    </p>
+  </div>
 </div>
 {% endmacro %}

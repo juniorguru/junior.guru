@@ -40,7 +40,7 @@ Kromě [konání dobra](#seniori) můžeš klub naplno využít k propagaci svý
 
 ### Co mám z členství v klubu jako recruiter(ka)?
 
-Zatímco čekáš na kafe, můžeš někoho posunout o kousek blíž vysněné kariéře v IT. Stačí ti „poflakovat“ se na Discordu, pokud máš zrovna čas. Když vidíš příležitost někomu pomoci, zkusíš pomoci. Někdy to mohou být dva krátké příspěvky, někdy jedno emoji s palcem nahoru. Klub není zdaleka jen o programování, ale i o kariérním rozhodování, pohovorech, životopisech. Můžeš si číst, jak proces náboru vnímají junioři, poskytovat zpětnou vazbu z druhé strany, radit s CVčkem, vyhlížet nadějné talenty, sdílet nabídky práce. Navíc podporuješ rozšiřování [příručky](motivation.md), díky které se můžou kandidáti lépe připravit už před tím, než se ti ozvou na inzerát.
+Zatímco čekáš na kafe, můžeš někoho posunout o kousek blíž vysněné kariéře v IT. Stačí ti „poflakovat“ se na Discordu, pokud máš zrovna čas. Když vidíš příležitost někomu pomoci, zkusíš pomoci. Někdy to mohou být dva krátké příspěvky, někdy jedno emoji s palcem nahoru. Klub není zdaleka jen o programování, ale i o kariérním rozhodování, pohovorech, životopisech. Můžeš si číst, jak proces náboru vnímají junioři, poskytovat zpětnou vazbu z druhé strany, radit s CVčkem, vyhlížet nadějné talenty, sdílet nabídky práce. Navíc podporuješ rozšiřování [příručky](/handbook/), díky které se můžou kandidáti lépe připravit už před tím, než se ti ozvou na inzerát.
 
 ### Co mám z členství v klubu jako komunitní manažer(ka)?
 
@@ -134,7 +134,7 @@ Dlouhodobý plán je takový, že by členství v klubu zcela nahradilo původn�
 
 Zaregistruj se jako člen klubu a plať členství. Nemusíš si vytvářet účet na Discordu, ani tam chodit. V souvislosti s klubem by ti neměly chodit žádné zprávy, pouze systémová upozornění do e-mailu např. v případě, že ti končí platnost karty.
 
-## {{ 'building'|icon }} Spolupráce s firmami a komunitami
+## {{ 'building'|icon }} Spolupráce s firmami
 
 ### Co vyplývá z toho, že je členem klubu nějaká firma? {: #firmy }
 
@@ -148,16 +148,20 @@ Firmy, které s klubem spolupracují, do něj mají především přístup. Moho
 
 Klub a celé junior.guru nenabízí ani nedoporučuje žádný konkrétní vzdělávací program, je to nezávislý rozcestník. Pokud je někde odkaz na konkrétní stránku, je to proto, že je autor junior.guru, [Honza Javorek](#honza), upřímně přesvědčen o jejím jedinečném přínosu v daném kontextu. Mimo loga partnerů si na junior.guru nelze koupit žádné odkazy. Klub je místem, kde lze o nabídce firem diskutovat na neutrální půdě, sdílet si zkušenosti, porovnávat. Některé vzdělávací agentury jsou členy klubu, ale Honza si dává pozor na to, aby žádný konkrétní kurz neprotežoval a aby aktivity v rámci partnerství nezasahovaly do nestrannosti junior.guru.
 
-### Co vyplývá z toho, že s klubem spolupracuje nějaká komunita?  {: #komunity }
+## {{ 'people'|icon }} Spolupráce s komunitami  {: #komunity }
 
 Organizátoři komunit, které s klubem spolupracují, do něj mají přístup a mohou v něm promovat svoje aktivity. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na lidech z komunity, jak to uchopí a co z toho „vyždímou“. Spolupráce by ale neměla být samoúčelná, měla by vždy vyústit něco, co bude především nějakým způsobem sloužit samotným juniorům. Partnerství pro komunity je domlouváno nepeněžní formou. Logo komunity se na [stránce klubu](club.md) objevuje zpravidla ve chvíli, kdy jde o dlouhodobější, ne pouze jednorázovou spolupráci. Máte-li o partnerství zájem, napište na {{ 'honza@junior.guru'|email_link }}.
 
-## {{ 'arrow-repeat'|icon }} Vztah mezi radami na webu a klubem
+## {{ 'arrow-repeat'|icon }} Vztah mezi příručkou a klubem
 
 ### Proč vznikl klub?
 
-Na junior.guru byly původně pouze [rady](motivation.md) a [pracovní nabídky](/jobs/). Začátečníci však potřebují víc než jen příručku. Nejvíc je posune, když v tom všem nejsou sami a může jim někdo pomoci se zapeklitou situací, dát zpětnou vazbu, dodat motivaci. Proto v lednu 2020 vznikl klub. Kromě toho je to samozřejmě i způsob, jak celé junior.guru financovat. [Honza Javorek](#honza), autor junior.guru, svou motivaci a veškeré okolnosti vzniku klubu otevřeně popsal v [rozsáhlém článku na svém blogu](https://honzajavorek.cz/blog/spoustim-klub/).
+Na junior.guru byly původně pouze [rady](/handbook/) a [pracovní nabídky](/jobs/). Začátečníci však potřebují víc než jen příručku. Nejvíc je posune, když v tom všem nejsou sami a může jim někdo pomoci se zapeklitou situací, dát zpětnou vazbu, dodat motivaci. Proto v lednu 2020 vznikl klub. Kromě toho je to samozřejmě i způsob, jak celé junior.guru financovat. [Honza Javorek](#honza), autor junior.guru, svou motivaci a veškeré okolnosti vzniku klubu otevřeně popsal v [rozsáhlém článku na svém blogu](https://honzajavorek.cz/blog/spoustim-klub/).
 
 ### Budou nové rady už pouze pro členy klubu?
 
-Všechen obsah junior.guru zůstává zdarma na webu a rozhodně je v plánu jeho rozšiřování a vylepšování. Klub je způsob, jak tuto dobročinnost financovat a posunout ji na interaktivnější úroveň. [Honza Javorek](#honza), autor všech textů na junior.guru, v klubu diskutuje o nových kapitolách do příručky, sbírá tam tipy na témata, získává zpětnou vazbu. Má tedy každodenní kontakt s juniory a jejich radostmi i strastmi, a to bez ohledu na aktuální pandemická omezení. Díky tomu může být veřejná část junior.guru lepší, než kdy mohla být bez klubu.
+Všechen obsah junior.guru zůstává zdarma na webu a rozhodně je v plánu jeho rozšiřování a vylepšování. Klub je způsob, jak tuto dobročinnost financovat a posunout ji na interaktivnější úroveň. [Honza Javorek](#honza), autor příručky na junior.guru, v klubu diskutuje o nových kapitolách, sbírá tam tipy na témata, získává zpětnou vazbu. Má tedy každodenní kontakt s juniory a jejich radostmi i strastmi, a to bez ohledu na aktuální pandemická omezení. Díky tomu může být veřejná část junior.guru lepší, než kdy mohla být bez klubu.
+
+## {{ 'star'|icon }} Garanti kapitol v příručce  {: #garanti }
+
+Autorem příručky na junior.guru je [Honza Javorek](#honza). Protože ale nerozumí všemu a chce, aby čtenáři mohli získat i rady, které by sám zpracovat nedokázal, začal některé kapitoly dělat ve spolupráci s dalšími profíky z oboru. Ti mohou takzvaně „garantovat“ kapitolu na téma, kterému rozumí. To znamená, že připravili texty a odkazy v kapitole a zavazují se stránku doplňovat a udržovat ji aktuální. Jako poděkování dostávají na oné stránce prostor zviditelnit sebe nebo své služby. Honza garantům nic neplatí, ani oni jemu. Obsah kapitol edituje, tzn. hlídá kvalitu a texty upravuje tak, aby zapadly do zbytku příručky.

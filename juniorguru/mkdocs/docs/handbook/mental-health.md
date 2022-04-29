@@ -4,7 +4,7 @@ description: Cesta do IT může být náročná životní změna. Vysoké náro
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, note, video_card, link_card with context %}
+{% from 'macros.html' import guarantor, lead, note, video_card, link_card, md with context %}
 
 # Psychika na cestě do IT
 
@@ -12,21 +12,26 @@ template: main_handbook.html
   Cesta do IT může pro psychiku představovat velkou výzvu. Vysoké nároky, obavy a málo odpočinku potká na své cestě nejeden junior. Jak se s tím můžeš vyrovnat?
 {% endcall %}
 
+{% call guarantor('Nela Slezáková', 'images/avatars-participants/nela-slezakova.jpg', url='https://www.nelaprovazi.cz/', standout=True) %}
+  Jak psycholožka, tak i programátorka. Do IT se dostala po vlastní ose a díky tomu sama dobře ví, co cesta juniora dělá s lidskou psychikou. S otázkami kolem duševního zdraví juniorům pomáhá i ve [zdejším klubu](../club.md).
+{% endcall %}
+
 ## Pět zásad
 
-[Nela Slezáková](https://www.nelaprovazi.cz/) se živí jako psycholožka i programátorka. Do IT se dostala po vlastní ose a díky tomu sama dobře ví, co cesta juniora dělá s lidskou psychikou. Ve zdejším [klubu](../club.md) měla prima přednášku s praktickými tipy, díky kterým můžeš kariérní změnu zvládnout udržitelně. [Klubové přednášky](/events/) bývají jen pro členy, ale tuto jsme zveřejnili, ať tady může být pro všechny.
+Jako úvod do tématu ti poslouží přednáška o pěti zásadách, díky kterým můžeš svou cestu do IT zvládnout ve větší duševní pohodě: Zakotvi se v realitě, přijmi svoje limity, buď svůj fanklub, sežeň si podporu, získej nadhled.
 
 {{ video_card(
   'Nela Slezáková: Jak přežít cestu juniora po psychické stránce',
   '40min',
   'youtube.com!watch!v=6G4TKGQICw0.jpg',
   'https://www.youtube.com/watch?v=6G4TKGQICw0',
-  'Pět zásad: Zakotvi se v realitě, přijmi svoje limity, buď svůj fanklub, sežeň si podporu, získej nadhled.',
+  'Pět zásad a ke každé z nich praktické tipy, díky kterým můžeš svou cestu do IT zvládnout udržitelně.',
+  note='Záznamy [klubových přednášek](/events/) bývají dostupné jen pro členy, ale tento jsme zveřejnili, ať pomáhá všem.',
 ) }}
 
 ## Když je krize
 
-V akutních případech si stáhni mobilní aplikaci, obrať se na telefonní krizovou pomoc, nebo se stav do nejbližsího krizového centra. Tam ti pomůžou zdarma a bez předchozího objednání, někde dokonce 24 hodin denně.
+V akutních případech si stáhni mobilní aplikaci, obrať se na telefonní krizovou pomoc, nebo se stav do nejbližsího krizového centra. Tam si můžeš přijít popovídat s odborníkem, zdarma a bez předchozího objednání, někde dokonce 24 hodin denně.
 
 <div class="link-cards">
   {{ link_card(
@@ -59,17 +64,15 @@ Další variantou je využít **příspěvek na terapii**. Během pandemie covid
 
 Taky máš možnost najít si libovolného **psychoterapeuta na přímou platbu**. Pokud se ti nehodí na terapii docházet osobně, existují i specializované platformy, které zprostředkovávají terapii online.
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Nela bude zvýrazněná, ale zatím na to Honza nemá dodělané CSSko :)
-{% endcall %}
-
 <div class="link-cards">
   {{ link_card(
     'Nela provází',
     'nelaprovazi.cz.jpg',
     'https://www.nelaprovazi.cz/',
     'Psycholožka a programátorka. Pomáhá lidem v IT anebo do IT.',
-    highlight_text='Nela pro junior.guru napsala tuto stránku a udržuje ji aktuální. Pomáhá také v [klubu](club.md).',
+    badge_icon='star',
+    badge_text='Autorka této kapitoly',
+    highlighted=True,
   ) }}
 
   {{ link_card(

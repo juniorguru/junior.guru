@@ -1,0 +1,24 @@
+.guarantor {
+  display: flex;
+  padding: $spacer;
+  margin: 0 auto $spacer auto;
+  background: $jg-yellow;
+  border-radius: $border-radius-sm;
+}
+
+.guarantor-image {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;
+  filter: contrast(1.2);
+  border-radius: 100%;
+}
+
+.guarantor-body {
+  padding-left: $spacer;
+}
+
+.guarantor-body *:last-child {
+  margin-bottom: 0;
+}

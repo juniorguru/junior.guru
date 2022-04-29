@@ -30,6 +30,11 @@
   }
 }
 
+.link-card.highlighted {
+  background: $jg-yellow;
+  border-color: $jg-yellow;
+}
+
 .link-card:nth-child(2n) {
   @include media-breakpoint-up(sm) {
     margin-right: 0;
@@ -69,10 +74,6 @@
   color: $white;
   background: $link-color;
   box-shadow: rgba($jg-dark, .24) 0 map-get($spacers, 1) map-get($spacers, 1);
-}
-
-.link-card:hover .link-card-icon {
-  background: $link-hover-color;
 }
 
 .link-card-header {
