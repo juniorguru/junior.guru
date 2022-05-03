@@ -6,13 +6,12 @@ from io import BytesIO
 from pathlib import Path
 from subprocess import DEVNULL, run
 import mimetypes
-import shutil
 
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image, ImageOps
 
 
-ICONS_FONT_DIR = Path(__file__).parent.parent.parent / 'node_modules' / 'bootstrap-icons' / 'font' / 'fonts'
+NODE_MODULES_DIR = Path(__file__).parent.parent.parent / 'node_modules'
 
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
@@ -110,9 +109,8 @@ def render_template(width, height, template_name, context, filters=None):
         html_path = Path(temp_dir) / template_name
         html_path.write_text(html)
 
-        run(['npx', 'sass', f'{TEMPLATES_DIR}:{temp_dir}'],
+        run(['npx', 'sass', f'{TEMPLATES_DIR}:{temp_dir}', f'--load-path={NODE_MODULES_DIR.absolute()}'],
             check=True, stdout=DEVNULL)
-        shutil.copytree(ICONS_FONT_DIR, Path(temp_dir) / 'fonts')
 
         # pageres doesn't support changing the output directory, so we need
         # to set cwd. The problem is, with cwd set to temp dir, npx stops

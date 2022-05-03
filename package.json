@@ -4,6 +4,7 @@
     "node": "14.x"
   },
   "dependencies": {
+    "@fontsource/inter": "4.5.10",
     "bootstrap-icons": "1.8.1",
     "chart.js": "3.7.1",
     "instant.page": "3.0.0",
