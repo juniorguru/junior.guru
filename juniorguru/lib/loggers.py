@@ -18,6 +18,7 @@ MUTED_LOGGERS = [
     'invoke',
     'juniorguru.lib.club.is_message_over_period_ago',
     'juniorguru.lib.club.is_message_older_than',
+    'juniorguru.lib.images',
 ]
 
 

@@ -1,4 +1,4 @@
-import os
+import re
 import pickle
 import tempfile
 from hashlib import sha256
@@ -6,16 +6,29 @@ from io import BytesIO
 from pathlib import Path
 from subprocess import DEVNULL, run
 import mimetypes
+import shutil
 
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image, ImageOps
 
+from juniorguru.lib import loggers
+
 
 NODE_MODULES_DIR = Path(__file__).parent.parent.parent / 'node_modules'
+
+FONTS = [NODE_MODULES_DIR / '@fontsource' / 'inter' / 'files',
+         NODE_MODULES_DIR / 'bootstrap-icons' / 'font' / 'fonts']
+
+CSS_REWRITE = [
+    (r'\./files/([^\.]+/)?([^\.]+\.woff)', r'\./fonts/\2'),
+]
 
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
 TEMPLATES_DIR = Path(__file__).parent.parent / 'image_templates'
+
+
+logger = loggers.get(__name__)
 
 
 class InvalidImage(Exception):
@@ -105,22 +118,45 @@ def render_template(width, height, template_name, context, filters=None):
     template = environment.get_template(template_name)
 
     with tempfile.TemporaryDirectory() as temp_dir:
+        logger.info(f'Rendering {width}x{height} {template_name} in {temp_dir}')
+
         html = template.render(images_dir=IMAGES_DIR, **context)
         html_path = Path(temp_dir) / template_name
         html_path.write_text(html)
 
-        run(['npx', 'sass', f'{TEMPLATES_DIR}:{temp_dir}', f'--load-path={NODE_MODULES_DIR.absolute()}'],
-            check=True, stdout=DEVNULL)
+        logger.info('Compiling SCSS')
+        run(['npx', 'sass', f'{TEMPLATES_DIR}:{temp_dir}'], check=True, stdout=DEVNULL)
 
+        logger.info(f"Copying fonts: {', '.join(map(str, FONTS))}")
+        fonts_dir = Path(temp_dir) / 'fonts'
+        fonts_dir.mkdir(parents=True)
+        for font_parent_dir in FONTS:
+            for woff_path in Path(font_parent_dir).glob('**/*.woff*'):
+                logger.debug(f"Copying font {woff_path} to {fonts_dir}")
+                shutil.copy2(woff_path, fonts_dir)
+
+        logger.info('Rewriting CSS')
+        for css_path in Path(temp_dir).glob('**/*.css'):
+            logger.debug(f"Rewriting {css_path}")
+            for re_pattern, re_repl in CSS_REWRITE:
+                css = css_path.read_text()
+                rewritten_css = re.sub(re_pattern, re_repl, css)
+                logger.debug(f"Did pattern {re_pattern!r} result in changes? {(css != rewritten_css)}")
+                css_path.write_text(rewritten_css)
+
+        logger.info('Making a screenshot')
         # pageres doesn't support changing the output directory, so we need
         # to set cwd. The problem is, with cwd set to temp dir, npx stops
         # to work, therefore we need to use an explicit path here
-        pageres = ['node', f'{os.getcwd()}/node_modules/.bin/pageres']
+        pageres = ['node', f'{NODE_MODULES_DIR}/.bin/pageres']
         run(pageres + [f'file://{html_path}', f'{width}x{height}',
             '--format=png', '--overwrite', f'--filename={html_path.stem}'],
             cwd=temp_dir, check=True, stdout=DEVNULL)
 
-        with Image.open(Path(temp_dir) / f'{html_path.stem}.png') as image:
+        logger.info('Saving image')
+        image_path = Path(temp_dir) / f'{html_path.stem}.png'
+        logger.debug(f'Saving image as {image_path}')
+        with Image.open(image_path) as image:
             buffer = BytesIO()
             image = image.crop((0, 0, width, height))
             image.save(buffer, 'PNG')
