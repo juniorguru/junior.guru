@@ -16,7 +16,7 @@ from juniorguru.models.base import db
 from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.club import ClubMessage
 from juniorguru.lib.template_filters import icon
-from juniorguru.lib.club import run_discord_task, INTRO_CHANNEL, DISCORD_MUTATIONS_ENABLED
+from juniorguru.lib.club import run_discord_task, ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLED
 from juniorguru.sync.club_content import main as club_content_task
 
 
@@ -153,11 +153,11 @@ def process_episode(yaml_record):
 @db.connection_context()
 async def discord_task(client):
     last_episode = PodcastEpisode.last()
-    last_message = ClubMessage.last_bot_message(INTRO_CHANNEL, MESSAGE_EMOJI, f'**{last_episode.number}. díl**')
+    last_message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, MESSAGE_EMOJI, f'**{last_episode.number}. díl**')
     if not last_message:
         logger.info(f'Announcing {last_episode!r}')
         if DISCORD_MUTATIONS_ENABLED:
-            channel = await client.fetch_channel(INTRO_CHANNEL)
+            channel = await client.fetch_channel(ANNOUNCEMENTS_CHANNEL)
             content = (
                 f"{MESSAGE_EMOJI} Nastraž uši! <@!810862212297130005> natočila **{last_episode.number}. díl** junior.guru podcastu!"
             )
