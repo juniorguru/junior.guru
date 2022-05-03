@@ -62,6 +62,7 @@ def build_podcast_xml(api_dir, config):
                           episode_number=number,
                           episode_name=f'#{db_episode.number}',
                           title=db_episode.title_numbered,
+                          image=f'https://junior.guru/static/images/{db_episode.poster_path}',
                           publication_date=db_episode.publish_at_prg,
                           link=db_episode.url,
                           summary=md(db_episode.description),
