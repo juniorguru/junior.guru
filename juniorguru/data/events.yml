@@ -85,25 +85,8 @@
   speakers: 839123616665698354
 
 
-- title: "Představení mentorů z Pure Storage (bude upřesněno, pracovní název)"
-  date: "2022-05-11"
-  time: "18:30"
-  description: |
-    (bude upřesněno)
-  avatar_path: icon.svg
-  bio_name: (bude upřesněno)
-  bio_title: mentoři, Pure Storage
-  bio: |
-      (bude upřesněno)
-  bio_links:
-    - https://www.purestorage.com/
-    - https://www.welcometothejungle.com/en/companies/pure-storage
-  logo_path: logos/purestorage.svg
-  speakers: 668226181769986078
-
-
 - title: "Co je to ten frontend? (bude upřesněno, pracovní název)"
-  date: "2022-05-10"
+  date: "2022-05-24"
   description: |
     (bude upřesněno)
   avatar_path: avatars-participants/coreskill.jpg
@@ -119,6 +102,23 @@
     - https://www.linkedin.com/in/danielsrb/
   logo_path: logos/coreskill.svg
   speakers: 652142810291765248, 488415538117214220
+
+
+- title: "Představení mentorů z Pure Storage (bude upřesněno, pracovní název)"
+  date: "2022-05-11"
+  time: "18:30"
+  description: |
+    (bude upřesněno)
+  avatar_path: icon.svg
+  bio_name: (bude upřesněno)
+  bio_title: mentoři, Pure Storage
+  bio: |
+      (bude upřesněno)
+  bio_links:
+    - https://www.purestorage.com/
+    - https://www.welcometothejungle.com/en/companies/pure-storage
+  logo_path: logos/purestorage.svg
+  speakers: 668226181769986078
 
 
 - title: "Next.js úvod pre juniorov"
