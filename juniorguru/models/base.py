@@ -40,6 +40,9 @@ class BaseModel(Model):
     class Meta:
         database = db
 
+    def clear_dirty_fields(self):
+        self._dirty = set()
+
 
 class JSONField(BaseJSONField):
     def __init__(self, *args, **kwargs):

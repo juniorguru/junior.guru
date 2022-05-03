@@ -132,7 +132,7 @@ def process_episode(yaml_record):
     # saving this object to database, the only purpose is to provide
     # the image renderer with a populated Peewee model object, so let's drop
     # the contents.
-    episode._dirty = set()
+    episode.clear_dirty_fields()
     tpl_context = dict(episode=episode)
     poster_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT, 'podcast.html', tpl_context,
                                     POSTERS_DIR, prefix=id, filters=dict(icon=icon))
