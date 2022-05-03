@@ -3,6 +3,7 @@ from datetime import date
 from multiprocessing import Pool
 from pathlib import Path
 
+from discord import Embed, File
 import requests
 from pod2gen import Media
 from requests.exceptions import HTTPError
@@ -13,7 +14,10 @@ from juniorguru.lib.images import render_image_file, is_image, validate_image
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.podcast import PodcastEpisode
+from juniorguru.models.club import ClubMessage
 from juniorguru.lib.template_filters import icon
+from juniorguru.lib.club import run_discord_task, INTRO_CHANNEL, DISCORD_MUTATIONS_ENABLED
+from juniorguru.sync.club_content import main as club_content_task
 
 
 logger = loggers.get(__name__)
@@ -49,8 +53,10 @@ POSTER_HEIGHT = 700
 
 TODAY = date.today()
 
+MESSAGE_EMOJI = '🎙'
 
-@sync_task()
+
+@sync_task(club_content_task)
 @db.connection_context()
 def main():
     if FLUSH_POSTERS_PODCAST:
@@ -76,6 +82,9 @@ def main():
     logger.info('Saving to database')
     for record in records:
         PodcastEpisode.create(**record)
+
+    logger.info('Announcing in Discord')
+    run_discord_task('juniorguru.sync.podcast.discord_task')
 
 
 def process_episode(yaml_record):
@@ -139,3 +148,31 @@ def process_episode(yaml_record):
     data['poster_path'] = poster_path.relative_to(IMAGES_DIR)
 
     return data
+
+
+@db.connection_context()
+async def discord_task(client):
+    last_episode = PodcastEpisode.last()
+    last_message = ClubMessage.last_bot_message(INTRO_CHANNEL, MESSAGE_EMOJI, f'**{last_episode.number}. díl**')
+    if not last_message:
+        logger.info(f'Announcing {last_episode!r}')
+        if DISCORD_MUTATIONS_ENABLED:
+            channel = await client.fetch_channel(INTRO_CHANNEL)
+            content = (
+                f"{MESSAGE_EMOJI} Nastraž uši! <@!810862212297130005> natočila **{last_episode.number}. díl** junior.guru podcastu!"
+            )
+            embed_description_lines = [
+                f'**{last_episode.title_numbered}**\n\n'
+                f'ℹ️ {last_episode.description.strip()}\n',
+                f":sound: Pusť si to [na webu]({last_episode.url}) nebo v jakékoliv běžné podcastové službě",
+                f":hourglass: Díl má {last_episode.media_duration_m} minut",
+            ]
+            embed = Embed(description='\n'.join(embed_description_lines))
+            embed.set_thumbnail(url=f"attachment://{Path(last_episode.poster_path).name}")
+            file = File(IMAGES_DIR / last_episode.poster_path)
+
+            await channel.send(content=content, embed=embed, file=file)
+        else:
+            logger.warning('Discord mutations not enabled')
+    else:
+        logger.info(f'Looks like {last_episode!r} has been already announced')

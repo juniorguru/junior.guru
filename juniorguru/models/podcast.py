@@ -1,3 +1,4 @@
+import math
 from datetime import date
 
 import arrow
@@ -44,6 +45,14 @@ class PodcastEpisode(BaseModel):
             .replace(minute=42, second=42) \
             .to('Europe/Prague') \
             .datetime
+
+    @property
+    def media_duration_m(self):
+        return math.ceil(self.media_duration_s / 60)
+
+    @classmethod
+    def last(cls, today=None):
+        return cls.listing(today=today).get()
 
     @classmethod
     def listing(cls, today=None):
