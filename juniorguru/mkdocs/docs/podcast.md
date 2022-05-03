@@ -4,7 +4,7 @@ template: main_podcast.html
 description: Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.
 ---
 
-{% from 'macros.html' import lead, markdown, img, podcast with context %}
+{% from 'macros.html' import lead, markdown, img, podcast_player with context %}
 
 
 # Podcast
@@ -46,9 +46,13 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
 Poučky praví, že podcast se stává kvalitním a slavným, až když se autoři zajedou a vymluví, což trvá přibližně 100 epizod. Chceme vydávat zhruba **jednu epizodu měsíčně**, takže špičkové kvality a věčné slávy plánujeme dosáhnout kolem roku 2030. Znělku nám na míru složil [Patrik Veltruský](https://veltrusky.net/), děkujeme!
 
 {% for episode in podcast_episodes %}
-### {{ episode.title_numbered }}    <span id="{{ episode.slug }}"></span>
-
-**{{ episode.publish_on.day }}.{{ episode.publish_on.month }}.{{ episode.publish_on.year }}** — {{ episode.description }}
-
-{{ podcast(episode) }}
+<div id="{{ episode.slug }}" class="podcast-episode">
+  <h3>{{ episode.title_numbered }}</h3>
+  {{ img('static/images/' + episode.avatar_path, episode.title, 100, 100, class='podcast-episode-image') }}
+  <p>
+    <strong>{{ episode.publish_on.day }}.{{ episode.publish_on.month }}.{{ episode.publish_on.year }}</strong>
+    — {{ episode.description }}
+  </p>
+  {{ podcast_player(episode, class='podcast-episode-player') }}
+</div>
 {% endfor %}

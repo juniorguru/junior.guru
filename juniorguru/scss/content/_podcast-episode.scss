@@ -1,0 +1,13 @@
+$podcast-episode-image-width: map-get($spacers, 5) * 1.5;
+
+.podcast-episode-image {
+  float: right;
+  width: $podcast-episode-image-width;
+  height: $podcast-episode-image-width;
+  margin: 0 0 $spacer map-get($spacers, 2);
+  border-radius: 100%;
+}
+
+.podcast-episode-player {
+  clear: both;
+}

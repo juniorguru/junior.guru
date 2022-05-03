@@ -37,8 +37,8 @@
 {% endmacro %}
 
 
-{% macro podcast(episode) %}
-<audio controls preload="metadata">
+{% macro podcast_player(episode, class=None) %}
+<audio controls preload="metadata"{% if class %} class="{{ class }}"{% endif %}>
   <source src="{{ episode.media_url }}" type="audio/mpeg">
   <a class="btn btn-primary" href="{{ episode.media_url }}" role="button">
     {{ 'play-circle-fill'|icon }} {{ episode.media_duration_s // 60 }}min
@@ -196,7 +196,7 @@
         {% endif %}
       </p>
     {% endif %}
-    {{ podcast(podcast_episode) }}
+    {{ podcast_player(podcast_episode) }}
   </div>
 </div>
 {% endmacro %}
