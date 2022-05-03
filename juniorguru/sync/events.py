@@ -6,7 +6,7 @@ import arrow
 from strictyaml import CommaSeparated, Datetime, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
+from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task, ANNOUNCEMENTS_CHANNEL
 from juniorguru.lib.images import is_image, render_image_file, save_as_square, validate_image
 from juniorguru.lib.tasks import sync_task
 from juniorguru.lib.template_filters import local_time, md, weekday
@@ -36,8 +36,6 @@ WEB_THUMBNAIL_HEIGHT = 672
 YOUTUBE_THUMBNAIL_WIDTH = 1160
 
 YOUTUBE_THUMBNAIL_HEIGHT = 735
-
-ANNOUNCEMENTS_CHANNEL = 789046675247333397
 
 EVENTS_CHANNEL = 940587142659338300
 
