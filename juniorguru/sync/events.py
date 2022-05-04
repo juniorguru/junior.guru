@@ -209,7 +209,13 @@ async def sync_scheduled_events(client):
     for event in Event.planned_listing():
         discord_event = discord_events.get(event.start_at)
         if discord_event:
-            logger.info(f"Discord event for '{event.title}' already exists")
+            logger.info(f"Discord event for '{event.title}' already exists, updating")
+            discord_event = await discord_event.edit(
+                name=f'{event.bio_name}: {event.title}',
+                description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
+                end_time=event.end_at,
+                location=channel,
+            )
         else:
             logger.info(f"Creating Discord event for '{event.title}'")
             discord_event = await client.juniorguru_guild.create_scheduled_event(
@@ -219,8 +225,8 @@ async def sync_scheduled_events(client):
                 end_time=event.end_at,
                 location=channel,
             )
-            event.discord_id = discord_event.id
-            event.save()
+        event.discord_id = discord_event.id
+        event.save()
 
 
 def load_record(record):

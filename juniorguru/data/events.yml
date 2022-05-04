@@ -104,16 +104,15 @@
   speakers: 652142810291765248, 488415538117214220
 
 
-- title: "Představení mentorů z Pure Storage (bude upřesněno, pracovní název)"
+- title: "Jak funguje #mentoring a uvítání mentorů z Pure Storage"
   date: "2022-05-11"
   time: "18:30"
   description: |
-    (bude upřesněno)
+    Jak funguje kanál #mentoring a co přesně zahrnuje pravidelná nabídka, která vybízí ke kontaktování mentorů z firem? Už dřív se takto nabídli kamarádi z Mews a Red Hatu, nyní se přidává Pure Storage. Uvítáme je, ať je máte v paměti jako reálné tváře a ne pouze jména na seznamu. Někteří nerozumí česky, takže část nebo celá akce proběhne anglicky.
   avatar_path: icon.svg
-  bio_name: (bude upřesněno)
-  bio_title: mentoři, Pure Storage
+  bio_name: Honza Javorek a mentoři z Pure Storage
   bio: |
-      (bude upřesněno)
+      Pure Storage je pražská pobočka firmy ze Silicon Valley, která se zabývá ukládáním dat. Chtějí junior.guru podpořit především jako mentoři.
   bio_links:
     - https://www.purestorage.com/
     - https://www.welcometothejungle.com/en/companies/pure-storage
