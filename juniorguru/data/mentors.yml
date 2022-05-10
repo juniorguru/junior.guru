@@ -1,0 +1,62 @@
+- id: 289482229975875584  # Linh
+  company: Mews
+  topics: HTML, CSS, JavaScript, TypeScript
+  book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
+
+- id: 672433063690633216  # Jan M.
+  company: Mews
+  topics: komunity, HR, příprava na pohovor
+  book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
+
+- id: 689498517995126847  # Markéta
+  company: Mews
+  topics: datová analýza, Python, Power BI, Excel
+  book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
+
+- id: 854681167018459146  # Honza T.
+  company: Mews
+  topics: IT, bezpečnost
+  book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
+
+- id: 868083628419199026  # Radek
+  company: Mews
+  topics: PowerShell, automatizace, Azure, C#, .NET, DevOps
+  book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
+
+- id: 869504117154934824  # Soňa
+  company: ihateironing.com
+  topics: QA, testování
+
+- id: 380388619061559299  # Joža
+  company: Red Hat
+  topics: Python
+
+- id: 946777502263701504  # Ana
+  company: Pure Storage
+  topics: DevOps, cloud, IaC, Kubernetes
+  english_only: true
+
+- id: 946039002220343386  # Artem
+  company: Pure Storage
+  topics: Java, JavaScript, TypeScript, Docker, příprava na pohovor
+  book_url: https://calendly.com/abosniak/juniorguru-ask-me-anything
+
+- id: 951873973904351314  # Daniel
+  company: Pure Storage
+  topics: koučování na profesní růst, pohovor nanečisto
+
+- id: 970720852314308658  # Martin
+  company: Pure Storage
+  topics: Python, algoritmy, matematika
+
+- id: 231138284754042881  # Ondra
+  company: Pure Storage
+  topics: C, C++, C#, Linux
+
+- id: 446672244983463939  # Jirka
+  company: Pure Storage
+  topics: Git, vývojový cyklus softwaru, agilní metodiky, profesní růst manažerským směrem, příprava na pohovor
+
+- id: 961655677057630238  # Fanda
+  company: Pure Storage
+  topics: Python, algoritmy, datové struktury

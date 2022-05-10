@@ -21,7 +21,7 @@ logger = loggers.get(__name__)
 
 FLUSH_POSTERS_EVENTS = bool(int(os.getenv('FLUSH_POSTERS_EVENTS', 0)))
 
-DATA_DIR = Path(__file__).parent.parent / 'data'
+DATA_PATH = Path(__file__).parent.parent / 'data' / 'events.yml'
 
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
@@ -80,8 +80,7 @@ def main():
         db.create_tables([Event, EventSpeaking])
 
         logger.info('Processing data from the YAML, creating posters')
-        path = DATA_DIR / 'events.yml'
-        records = [load_record(record.data) for record in load(path.read_text(), schema)]
+        records = [load_record(record.data) for record in load(DATA_PATH.read_text(), schema)]
         for record in records:
             name = record['title']
             logger.info(f"Creating '{name}'")

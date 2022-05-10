@@ -18,7 +18,7 @@ SYNC_TASKS_MAIN = import_sync_tasks([
     'juniorguru.sync.jobs_submitted',
     'juniorguru.sync.last_modified',
     'juniorguru.sync.li_group',
-    'juniorguru.sync.mentoring',
+    'juniorguru.sync.mentors',
     'juniorguru.sync.pins',
     'juniorguru.sync.podcast',
     'juniorguru.sync.returning_members',
