@@ -35,28 +35,34 @@
   company: Pure Storage
   topics: DevOps, cloud, IaC, Kubernetes
   english_only: true
+  book_url: https://calendly.com/atrizna/
 
 - id: 946039002220343386  # Artem
   company: Pure Storage
   topics: Java, JavaScript, TypeScript, Docker, příprava na pohovor
-  book_url: https://calendly.com/abosniak/juniorguru-ask-me-anything
+  book_url: https://calendly.com/abosniak/
 
 - id: 951873973904351314  # Daniel
   company: Pure Storage
   topics: koučování na profesní růst, pohovor nanečisto
+  book_url: https://calendly.com/daniel-fiser/pure-storage-intro
 
 - id: 970720852314308658  # Martin
   company: Pure Storage
   topics: Python, algoritmy, matematika
+  book_url: https://calendly.com/mtopfer/junior-guru
 
 - id: 231138284754042881  # Ondra
   company: Pure Storage
   topics: C, C++, C#, Linux
+  book_url: https://calendly.com/ohlavaty/konzultace
 
 - id: 446672244983463939  # Jirka
   company: Pure Storage
   topics: Git, vývojový cyklus softwaru, agilní metodiky, profesní růst manažerským směrem, příprava na pohovor
+  book_url: https://calendly.com/jchadima-purestorage/junior-guru
 
 - id: 961655677057630238  # Fanda
   company: Pure Storage
   topics: Python, algoritmy, datové struktury
+  book_url: https://calendly.com/fblahoudek/junior-guru
