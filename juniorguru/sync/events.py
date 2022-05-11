@@ -188,6 +188,8 @@ async def post_next_event_messages(client):
                 "",
                 "⚠️ Ve výchozím nastavení Discord udělá zvuk při každé aktivitě v hlasovém kanálu, např. při připojení nového účastníka, odpojení, vypnutí zvuku, zapnutí, apod. Zvuky si vypni v _User Settings_, stránka _Notifications_, sekce _Sounds_. Většina zvuků souvisí s hovory, takže je potřeba povypínat skoro vše.",
                 "",
+                f"📺 Limit přímých účastníků je 25, takže přijďte včas. Kdo se nevleze, bude mít možnost sledovat stream na YouTube, odkaz se kdyžtak objeví tady v chatu. Odkaz na záznam se po akci objeví v {announcements_channel.mention}.",
+                "",
                 f"ℹ️ {event.description_plain}",
                 "",
                 f"🦸 {event.bio_plain}"

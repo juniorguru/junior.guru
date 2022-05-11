@@ -44,31 +44,11 @@ Vypni zvuky v **User Settings**, stránka **Notifications**, sekce **Sounds**. V
 
 Ve výchozím nastavení totiž Discord dělá zvuk při každé aktivitě v hlasovém kanálu, např. při připojení nového účastníka, odpojení, vypnutí zvuku, zapnutí, apod., což by tě rušilo.
 
-### Videohovor na Discordu
+### Discord a YouTube
 
-Discord má technické omezení, které **limituje videohovor na 25 lidí, pokud si kdokoliv z účastníků zapne kameru**. Toto omezení neplatí, když se pouze sdílí obrazovka.
+Honza každou akci v klubu nahrává a publikuje na YouTube kanálu [Junior Guru](https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA). Záznamy jsou pouze pro členy, na neveřejných odkazech. Výjimečně se dá domluvit, že bude video na YouTube veřejně.
 
-Všichni v publiku mají zakázáno video používat. Ty sice budeš mít tlačítko na sdílení kamery funkční, ale **prosím, neklikej na něj**. Způsobilo by to omezení hovoru na 25 lidí až do jeho konce (i pokud kameru hned zase vypneš).
-
-{{ figure('discord-controls.png', 'Ovládání videohovoru') }}
-
-Jako přednášející máš funkční i tlačítko _Share Your Screen_. Pomocí něj můžeš nasdílet cokoliv ze svého počítače, např. slajdy.
-
-**Díky triku se „zrcadlem“ tě publikum uvidí i přesto, že nesmíš zapnout kameru.** Tlačítkem níže otevři zrcadlo. Když lidem nasdílíš svůj prohlížeč, půjdeš vidět jako na kameře, ale bez limitu na počet účastníků.
-
-Pokud máš slajdy, počítá se s tím, že zrcadlo využiješ hlavně na začátku a na konci přednášky. Ovládáš si to dle libosti. Buďto sdílíš slajdy, nebo se přepneš na stránku se zrcadlem a půjde vidět hlava.
-
-<div class="mirror">
-  <noscript>
-    {%- call note(standout=True) -%}
-      {{ 'exclamation-circle'|icon }} Kameru se nedaří spustit. Buď nemáš kameru povolenou pro tento prohlížeč, nebo to nepodporuje, nebo se něco pokazilo. Zkontroluj prosím nastavení, nebo zkus jiný prohlížeč.
-    {%- endcall -%}
-  </noscript>
-  <div class="standout text-center">
-    <button type="button" class="mirror-run">Spustit zrcadlo</button>
-    <button type="button" class="mirror-expand">Roztáhnout zrcadlo</button>
-  </div>
-</div>
+Honza nepořizuje záznam, ale dělá neveřejný živý přenos přímo na YouTube. Discord má totiž technické omezení, které limituje videohovor na 25 lidí, pokud si kdokoliv z účastníků zapne kameru. Pokud by se chtělo na akci připojit více jak 25 lidí, pošle Honza do kanálu #klubovna-chat odkaz na tento živý přenos.
 
 ## {{ 'info-circle'|icon }} Další info
 
