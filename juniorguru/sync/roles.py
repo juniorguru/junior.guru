@@ -9,11 +9,13 @@ from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser
 from juniorguru.models.company import Company
 from juniorguru.models.event import Event
+from juniorguru.models.mentor import Mentor
 from juniorguru.sync.avatars import main as avatars_task
 from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.sync.companies import main as companies_task
 from juniorguru.sync.events import main as events_task
 from juniorguru.sync.subscriptions import main as subscriptions_task
+from juniorguru.sync.mentors import main as mentors_task
 
 
 logger = loggers.get(__name__)
@@ -23,6 +25,7 @@ ROLES = {
     'most_discussing': 836929320706113567,
     'most_helpful': 836960665578766396,
     'is_speaker': 836928169092710441,
+    'is_mentor': 974297387935866910,
     'has_intro_and_avatar': 836959652100702248,
     'is_new': 836930259982352435,
     'is_sponsor': 837316268142493736,
@@ -37,7 +40,8 @@ STUDENT_ROLE_PREFIX = 'Student: '
            events_task,
            avatars_task,
            subscriptions_task,
-           companies_task)
+           companies_task,
+           mentors_task)
 def main():
     run_discord_task('juniorguru.sync.roles.discord_task')
 
@@ -99,6 +103,12 @@ async def discord_task(client):
     logger.debug(f"speaking_members_ids: {repr_ids(members, speaking_members_ids)}")
     for member in members:
         changes.extend(evaluate_changes(member.id, member.roles, speaking_members_ids, ROLES['is_speaker']))
+
+    # role 'is_mentor'
+    mentors_ids = [mentor.id for mentor in Mentor.listing()]
+    logger.debug(f"mentors_ids: {repr_ids(members, mentors_ids)}")
+    for member in members:
+        changes.extend(evaluate_changes(member.id, member.roles, mentors_ids, ROLES['is_mentor']))
 
     # role 'is_founder'
     founders_members_ids = [member.id for member in members if member.is_founder()]

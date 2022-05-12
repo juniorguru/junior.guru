@@ -12,16 +12,20 @@ from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, is_message_over_peri
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
+from juniorguru.models.mentor import Mentor
 from juniorguru.sync.club_content import main as club_content_task
 
 
 MENTORS_CHANNEL = 822415540843839488
+
+MESSAGE_EMOJI = '💁'
 
 DATA_PATH = Path(__file__).parent.parent / 'data' / 'mentors.yml'
 
 SCHEMA = Seq(
     Map({
         'id': Int(),
+        'name': Str(),
         Optional('company'): Str(),
         'topics': CommaSeparated(Str()),
         Optional('english_only', default=False): Bool(),
@@ -40,25 +44,35 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    last_message = ClubMessage.last_bot_message(MENTORS_CHANNEL, '💁')
+    logger.info('Setting up db table')
+    Mentor.drop_table()
+    Mentor.create_table()
+
+    last_message = ClubMessage.last_bot_message(MENTORS_CHANNEL, MESSAGE_EMOJI)
     if is_message_over_period_ago(last_message, timedelta(days=30)):
         logger.info('Last message is more than one week old!')
 
         logger.info('Parsing YAML')
-        yaml_records = [record.data for record in load(DATA_PATH.read_text(), SCHEMA)]
-        logger.debug(f'Loaded {len(yaml_records)} mentors from YAML')
+        for yaml_record in load(DATA_PATH.read_text(), SCHEMA):
+            Mentor.create(**yaml_record.data)
+        mentors = Mentor.listing()
+        logger.debug(f'Loaded {len(mentors)} mentors from YAML')
 
         logger.info('Downloading Discord member info')
-        discord_members = await asyncio.gather(*[
-            client.juniorguru_guild.fetch_member(yaml_record['id'])
-            for yaml_record in yaml_records
-        ])
-        mentors = sorted(zip(discord_members, yaml_records), key=lambda mentor: slugify(mentor[0].display_name))
+        discord_members = {
+            discord_member.id: discord_member
+            for discord_member in
+            (await asyncio.gather(*[
+                client.juniorguru_guild.fetch_member(mentor.id)
+                for mentor in mentors
+            ])
+        )}
+        mentors = sorted(mentors, key=lambda mentor: slugify(discord_members[mentor.id].display_name))
 
         if DISCORD_MUTATIONS_ENABLED:
             channel = await client.fetch_channel(MENTORS_CHANNEL)
             content = (
-                '💁 Pomohlo by ti pravidelně si s někým na hodinku zavolat a probrat svůj postup? '
+                f'{MESSAGE_EMOJI} Pomohlo by ti pravidelně si s někým na hodinku zavolat a probrat svůj postup? '
                 'Následující členové se nabídli jako **mentoři**. Jak to funguje?\n'
                 '\n'
                 '1️⃣ 🧭 Stanov si dlouhodobější cíl, kterého chceš dosáhnout (např. porozumět API)\n'
@@ -71,8 +85,7 @@ async def discord_task(client):
                 '<:discord:935790609023787018> Konkrétním lidem můžeš na Discordu psát přes `Ctrl+K` nebo `⌘+K`\n'
                 '🙋 Není ti cokoliv jasné? Nefunguje něco? Piš <@!668226181769986078>\n'
             )
-            embed_description_lines = [format_mentor(discord_member, yaml_record)
-                                       for discord_member, yaml_record in mentors]
+            embed_description_lines = [format_mentor(discord_members[mentor.id], mentor) for mentor in mentors]
             embed_description_lines += [(
                 '🦸 Chceš se taky nabídnout? Nejdřív si pusť [přednášku o mentoringu](https://www.youtube.com/watch?v=8xeX7wfX_x4) od Anny Ossowski, ať víš jak na to. '
                 'Existuje i [přepis](https://github.com/honzajavorek/become-mentor/blob/master/README.md) a [český překlad](https://github.com/honzajavorek/become-mentor/blob/master/cs.md). '
@@ -85,17 +98,17 @@ async def discord_task(client):
             logger.warning('Discord mutations not enabled')
 
 
-def format_mentor(discord_member, yaml_record):
+def format_mentor(discord_member, mentor):
     entry = f"**{discord_member.display_name}**"
-    if yaml_record.get('company'):
-        entry += f" – {yaml_record['company']}"
+    if mentor.company:
+        entry += f" – {mentor.company}"
     entry += '\n'
 
-    entry += f"💁 {', '.join(yaml_record['topics'])}\n"
+    entry += f"💁 {', '.join(mentor.topics)}\n"
 
-    english = ' 🇬🇧 Pouze anglicky! ' if yaml_record['english_only'] else ''
-    if yaml_record.get('book_url'):
-        entry += f"🗓{english} [Rezervuj přes kalendář]({yaml_record['book_url']})"
+    english = ' 🇬🇧 Pouze anglicky! ' if mentor.english_only else ''
+    if mentor.book_url:
+        entry += f"🗓{english} [Rezervuj přes kalendář]({mentor.book_url})"
     else:
         entry += f'<:discord:935790609023787018>{english} Soukromě napiš `{discord_member.name}#{discord_member.discriminator}`'
     entry += '\n'

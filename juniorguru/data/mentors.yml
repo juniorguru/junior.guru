@@ -1,68 +1,82 @@
-- id: 289482229975875584  # Linh
+- id: 289482229975875584
+  name: Linh
   company: Mews
   topics: HTML, CSS, JavaScript, TypeScript
   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
-- id: 672433063690633216  # Jan M.
+- id: 672433063690633216
+  name: Jan M.
   company: Mews
   topics: komunity, HR, příprava na pohovor
   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
-- id: 689498517995126847  # Markéta
+- id: 689498517995126847
+  name: Markéta L.
   company: Mews
   topics: datová analýza, Python, Power BI, Excel
   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
-- id: 854681167018459146  # Honza T.
+- id: 854681167018459146
+  name: Honza T.
   company: Mews
   topics: IT, bezpečnost
   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
-- id: 868083628419199026  # Radek
+- id: 868083628419199026
+  name: Radek Z.
   company: Mews
   topics: PowerShell, automatizace, Azure, C#, .NET, DevOps
   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
-- id: 869504117154934824  # Soňa
+- id: 869504117154934824
+  name: Soňa M.
   company: ihateironing.com
   topics: QA, testování
 
-- id: 380388619061559299  # Joža
+- id: 380388619061559299
+  name: Joža S.
   company: Red Hat
   topics: Python
 
-- id: 946777502263701504  # Ana
+- id: 946777502263701504
+  name: Ana T.
   company: Pure Storage
   topics: DevOps, cloud, IaC, Kubernetes
   english_only: true
   book_url: https://calendly.com/atrizna/
 
-- id: 946039002220343386  # Artem
+- id: 946039002220343386
+  name: Artem B.
   company: Pure Storage
   topics: Java, JavaScript, TypeScript, Docker, příprava na pohovor
   book_url: https://calendly.com/abosniak/
 
-- id: 951873973904351314  # Daniel
+- id: 951873973904351314
+  name: Daniel F.
   company: Pure Storage
   topics: koučování na profesní růst, pohovor nanečisto
   book_url: https://calendly.com/daniel-fiser/pure-storage-intro
 
-- id: 970720852314308658  # Martin
+- id: 970720852314308658
+  name: Martin T.
   company: Pure Storage
   topics: Python, algoritmy, matematika
   book_url: https://calendly.com/mtopfer/junior-guru
 
-- id: 231138284754042881  # Ondra
+- id: 231138284754042881
+  name: Ondra H.
   company: Pure Storage
   topics: C, C++, C#, Linux
   book_url: https://calendly.com/ohlavaty/konzultace
 
-- id: 446672244983463939  # Jirka
+- id: 446672244983463939
+  name: Jirka Ch.
   company: Pure Storage
   topics: Git, vývojový cyklus softwaru, agilní metodiky, profesní růst manažerským směrem, příprava na pohovor
   book_url: https://calendly.com/jchadima-purestorage/junior-guru
 
-- id: 961655677057630238  # Fanda
+- id: 961655677057630238
+  name: Fanda B.
   company: Pure Storage
   topics: Python, algoritmy, datové struktury
   book_url: https://calendly.com/fblahoudek/junior-guru
