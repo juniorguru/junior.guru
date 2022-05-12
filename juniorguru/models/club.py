@@ -24,6 +24,7 @@ class ClubUser(BaseModel):
     avatar_path = CharField(null=True)
     display_name = CharField()
     mention = CharField()
+    tag = CharField()
     coupon_base = CharField(null=True, index=True)
     roles = JSONField(default=lambda: [])
 

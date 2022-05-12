@@ -105,10 +105,10 @@ async def discord_task(client):
         changes.extend(evaluate_changes(member.id, member.roles, speaking_members_ids, ROLES['is_speaker']))
 
     # role 'is_mentor'
-    mentors_ids = [mentor.id for mentor in Mentor.listing()]
-    logger.debug(f"mentors_ids: {repr_ids(members, mentors_ids)}")
+    mentors_members_ids = [mentor.user.id for mentor in Mentor.listing()]
+    logger.debug(f"mentors_ids: {repr_ids(members, mentors_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.roles, mentors_ids, ROLES['is_mentor']))
+        changes.extend(evaluate_changes(member.id, member.roles, mentors_members_ids, ROLES['is_mentor']))
 
     # role 'is_founder'
     founders_members_ids = [member.id for member in members if member.is_founder()]

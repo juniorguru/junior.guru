@@ -44,6 +44,7 @@ async def discord_task(client):
                         is_member=True,
                         display_name=member.display_name,
                         mention=member.mention,
+                        tag=f'{member.name}#{member.discriminator}',
                         joined_at=arrow.get(member.joined_at).naive,
                         roles=get_roles(member))
 
@@ -153,6 +154,7 @@ def create_user(user):
                            is_member=bool(getattr(user, 'joined_at', False)),
                            display_name=user.display_name,
                            mention=user.mention,
+                           tag=f'{user.name}#{user.discriminator}',
                            joined_at=(arrow.get(user.joined_at).naive if hasattr(user, 'joined_at') else None),
                            roles=get_roles(user))
 

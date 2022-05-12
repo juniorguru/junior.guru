@@ -14,6 +14,7 @@ def create_user(id_, **kwargs):
                            avatar_path=kwargs.get('avatar_path'),
                            display_name=kwargs.get('display_name', 'Kuře Žluté'),
                            mention=kwargs.get('mention', f'<@{id_}>'),
+                           tag=kwargs.get('tag', 'kure_zlute#1234'),
                            coupon_base=kwargs.get('coupon_base'),
                            joined_at=kwargs.get('joined_at', datetime.now() - timedelta(days=3)),
                            roles=kwargs.get('roles', []))
