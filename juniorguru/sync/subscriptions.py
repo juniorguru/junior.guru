@@ -86,71 +86,72 @@ def main():
 
     records = []
     seen_discord_ids = set()
-    for result in memberful.query(query, lambda result: result['subscriptions']['pageInfo']):
-        for edge in result['subscriptions']['edges']:
-            subscription = edge['node']
-            discord_id = subscription['member']['discordUserId']
-            user = None
-            if discord_id:
-                seen_discord_ids.add(discord_id)
-                try:
-                    user = ClubUser.get_by_id(int(discord_id))
-                except ClubUser.DoesNotExist:
-                    pass
 
-            name = subscription['member']['fullName'].strip()
-            gender = ('F' if FEMALE_NAME_RE.search(name) else 'M') if name else None
-            coupon = get_active_coupon(subscription)
-            coupon_parts = parse_coupon(coupon) if coupon else {}
-            student_record_fields = dict(itertools.chain.from_iterable([
-                [
-                    (f'{company.name} Student Since', format_date(get_student_started_on(subscription, company.student_coupon_base))),
-                    (f'{company.name} Student Months', ', '.join(get_student_months(subscription, company.student_coupon_base))),
-                    (f'{company.name} Student Invoiced?', subscription['member']['metadata'].get(f'{company.slug}InvoicedOn'))
-                ]
-                for company in Company.schools_listing()
-            ]))
+    for subscription in get_subscriptions(memberful.query(query,
+                                                          lambda result: result['subscriptions']['pageInfo'])):
+        discord_id = subscription['member']['discordUserId']
+        user = None
+        if discord_id:
+            seen_discord_ids.add(discord_id)
+            try:
+                user = ClubUser.get_by_id(int(discord_id))
+            except ClubUser.DoesNotExist:
+                pass
 
-            records.append({
-                'Name': name,
-                'Discord Name': user.display_name.strip() if user else None,
-                'Gender': gender,
-                'E-mail': subscription['member']['email'],
-                'Memberful ID': subscription['member']['id'],
-                'Stripe ID': subscription['member']['stripeCustomerId'],
-                'Discord ID': discord_id,
-                'Invoice ID': coupon_parts.get('invoice_id'),
-                'Memberful Active?': subscription['active'],
-                'Memberful Since': arrow.get(subscription['createdAt']).date().isoformat(),
-                'Memberful End': arrow.get(subscription['expiresAt']).date().isoformat(),
-                'Memberful Coupon': coupon,
-                'Memberful Coupon Base': coupon_parts.get('coupon_base'),
-                'Discord Member?': user.is_member if user else False,
-                'Discord Since': user.first_seen_on().isoformat() if user else None,
-                'Memberful Past Due?': subscription['pastDue'],
-                **student_record_fields,
-            })
+        name = subscription['member']['fullName'].strip()
+        gender = ('F' if FEMALE_NAME_RE.search(name) else 'M') if name else None
+        coupon = get_active_coupon(subscription)
+        coupon_parts = parse_coupon(coupon) if coupon else {}
+        student_record_fields = dict(itertools.chain.from_iterable([
+            [
+                (f'{company.name} Student Since', format_date(get_student_started_on(subscription, company.student_coupon_base))),
+                (f'{company.name} Student Months', ', '.join(get_student_months(subscription, company.student_coupon_base))),
+                (f'{company.name} Student Invoiced?', subscription['member']['metadata'].get(f'{company.slug}InvoicedOn'))
+            ]
+            for company in Company.schools_listing()
+        ]))
 
-            for company in Company.schools_listing():
-                started_on = get_student_started_on(subscription, company.student_coupon_base)
-                if started_on:
-                    invoiced_on = subscription['member']['metadata'].get(f'{company.slug}InvoicedOn')
-                    invoiced_on = date.fromisoformat(invoiced_on) if invoiced_on else None
-                    CompanyStudentSubscription.create(company=company,
-                                                      memberful_id=subscription['member']['id'],
-                                                      name=name,
-                                                      email=subscription['member']['email'],
-                                                      started_on=started_on,
-                                                      invoiced_on=invoiced_on)
+        records.append({
+            'Name': name,
+            'Discord Name': user.display_name.strip() if user else None,
+            'Gender': gender,
+            'E-mail': subscription['member']['email'],
+            'Memberful ID': subscription['member']['id'],
+            'Stripe ID': subscription['member']['stripeCustomerId'],
+            'Discord ID': discord_id,
+            'Invoice ID': coupon_parts.get('invoice_id'),
+            'Memberful Active?': subscription['active'],
+            'Memberful Since': arrow.get(subscription['createdAt']).date().isoformat(),
+            'Memberful End': arrow.get(subscription['expiresAt']).date().isoformat(),
+            'Memberful Coupon': coupon,
+            'Memberful Coupon Base': coupon_parts.get('coupon_base'),
+            'Discord Member?': user.is_member if user else False,
+            'Discord Since': user.first_seen_on().isoformat() if user else None,
+            'Memberful Past Due?': subscription['pastDue'],
+            **student_record_fields,
+        })
 
-            if user:
-                logger.debug(f'Updating member #{user.id} with Memberful data')
-                joined_memberful_at = arrow.get(subscription['createdAt']).naive
+        for company in Company.schools_listing():
+            started_on = get_student_started_on(subscription, company.student_coupon_base)
+            if started_on:
+                invoiced_on = subscription['member']['metadata'].get(f'{company.slug}InvoicedOn')
+                invoiced_on = date.fromisoformat(invoiced_on) if invoiced_on else None
+                CompanyStudentSubscription.create(company=company,
+                                                    memberful_id=subscription['member']['id'],
+                                                    name=name,
+                                                    email=subscription['member']['email'],
+                                                    started_on=started_on,
+                                                    invoiced_on=invoiced_on)
+
+        if user:
+            logger.debug(f'Updating member #{user.id} with Memberful data')
+            if subscription['active']:
                 user.subscription_id = str(subscription['id'])
-                user.joined_at = min(user.joined_at, joined_memberful_at) if user.joined_at else joined_memberful_at
                 user.expires_at = arrow.get(subscription['expiresAt']).naive
                 user.coupon_base = coupon_parts.get('coupon_base')
-                user.save()
+            joined_memberful_at = arrow.get(subscription['createdAt']).naive
+            user.joined_at = min(user.joined_at, joined_memberful_at) if user.joined_at else joined_memberful_at
+            user.save()
 
     logger.info('Process remaining Discord users')
     for user in ClubUser.listing():
@@ -225,3 +226,13 @@ def get_student_started_on(subscription, coupon_base):
         return sorted(orders)[0].date()
     except IndexError:
         return None
+
+
+def get_subscriptions(graphql_results):
+    for grapqhql_result in graphql_results:
+        for edge in grapqhql_result['subscriptions']['edges']:
+            yield edge['node']
+
+
+def dedupe_by_members(subscriptions):
+    return []
