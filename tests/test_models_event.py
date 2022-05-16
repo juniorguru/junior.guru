@@ -10,7 +10,8 @@ from juniorguru.models.event import Event, EventSpeaking
 def create_member(id):
     return ClubUser.create(id=id,
                            display_name=f"Jane Doe {id}",
-                           mention=f"<#{id}>")
+                           mention=f"<#{id}>",
+                           tag='abc#1234')
 
 
 def create_event(id, **kwargs):
