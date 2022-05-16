@@ -10,9 +10,12 @@
 
 - id: "0005"
   title: "Petr Přibil (Tatanka) o změně kariéry od lesníka až k Python developerovi"
+  avatar_path: avatars-participants/petr-pribil.jpg
   publish_on: "2022-05-16"
   description: |
     V pátém díle se s Pájou podělil o svoji zkušenost Petr Přibil alias Tatanka. Pracuje čerstvě jako juniorní Python vývojář, přitom ještě nedávno byl obchodník a předtím dělal v lesnictví. Co mu na začátku nejvíce pomohlo a co by udělal jinak? Co by poradil těm, kdo chtějí odejít z rozjeté kariéry na juniorní místo v IT?
+  media_size: 26516824
+  media_duration_s: 1894
 
 
 - id: "0004"
