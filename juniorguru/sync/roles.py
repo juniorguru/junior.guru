@@ -81,7 +81,7 @@ async def discord_task(client):
         changes.extend(evaluate_changes(member.id, member.roles, most_helpful_members_ids, ROLES['most_helpful']))
 
     # role 'has_intro_and_avatar'
-    intro_avatar_members_ids = [member.id for member in members if member.avatar_path and member.has_intro()]
+    intro_avatar_members_ids = [member.id for member in members if member.has_avatar and member.has_intro()]
     logger.debug(f"intro_avatar_members: {repr_ids(members, intro_avatar_members_ids)}")
     for member in members:
         changes.extend(evaluate_changes(member.id, member.roles, intro_avatar_members_ids, ROLES['has_intro_and_avatar']))

@@ -20,6 +20,7 @@ class ClubUser(BaseModel):
 
     is_bot = BooleanField(default=False)
     is_member = BooleanField(default=True)
+    has_avatar = BooleanField(default=True)
 
     avatar_path = CharField(null=True)
     display_name = CharField()
