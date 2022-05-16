@@ -8,6 +8,13 @@
 # avatar_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
+- id: "0005"
+  title: "Petr Přibil (Tatanka) o změně kariéry od lesníka až k python developerovi"
+  publish-on: "2022-05-16"
+  description: |
+    V pátém díle se s Pájou podělil o svoji zkušenost Petr Přibil, alias Tatanka. Tatanka čerstvě pracuje jako juniorní python developer a jeho cesta k IT vedla od lesnictví přes sales. Uslyšíš, co mu na začátku nejvíce pomohlo, co by udělal jinak a co by poradil těm z vás, kteří chtějí odejít z rozjeté kariéry na juniorní místo v IT.
+
+
 - id: "0004"
   title: "Tereza Vaňková (Deepnote) o její cestě k programování a komunitě ReactGirls"
   avatar_path: avatars-participants/tereza-vankova.jpg
