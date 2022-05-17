@@ -15,7 +15,7 @@ from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.sync.companies import main as companies_task
 from juniorguru.sync.events import main as events_task
 from juniorguru.sync.subscriptions import main as subscriptions_task
-from juniorguru.sync.mentors import main as mentors_task
+from juniorguru.sync.mentoring import main as mentoring_task
 
 
 logger = loggers.get(__name__)
@@ -41,7 +41,7 @@ STUDENT_ROLE_PREFIX = 'Student: '
            avatars_task,
            subscriptions_task,
            companies_task,
-           mentors_task)
+           mentoring_task)
 def main():
     run_discord_task('juniorguru.sync.roles.discord_task')
 
