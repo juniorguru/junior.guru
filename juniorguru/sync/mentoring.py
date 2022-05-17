@@ -90,7 +90,7 @@ async def discord_task(client):
                                '1️⃣ 🧭 Stanov si dlouhodobější cíl (např. porozumět API)\n'
                                '2️⃣ 👋 Podle tématu si vyber mentorku/mentora a rezervuj si čas na videohovor\n'
                                '3️⃣ 🤝 Domluvte se, jak často si budete volat (např. každé dva týdny, půl roku)\n'
-                               '4️⃣ 📝 Rezervuješ jednotlivé schůzky a předem víš, co na nich chceš řešit\n'
+                               '4️⃣ 📝 Rezervuj jednotlivé schůzky a předem měj jasno, co na nich chceš řešit\n'
                                '5️⃣ 🚀 Mentor ti pomáhá dosáhnout cíle. Radí a posouvá tě správným směrem\n'
                                '\n'
                                '❤️ Mentoři jsou dobrovolníci, ne placení učitelé. Aktivita je na tvé straně. Važ si jejich času a dopřej jim dobrý pocit, pokud pomohli.\n')
