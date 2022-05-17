@@ -1,8 +1,9 @@
 from pathlib import Path
 
 from PIL import Image
+import pytest
 
-from juniorguru.sync.jobs_logos import SIZE_PX, convert_image, sort_key, unique
+from juniorguru.sync.jobs_logos import SIZE_PX, convert_image, sort_key, unique, choose_user_agent
 
 
 FIXTURES_DIR = Path(__file__).parent
@@ -121,3 +122,15 @@ def test_unique_returns_list():
 
 def test_unique_skips_none():
     assert sorted(unique([1, 3, None, 5, 3, None, 6, 0, 1])) == sorted([1, 3, 5, 6, 0])
+
+
+@pytest.mark.parametrize('url, expected', [
+    ('https://www.startupjobs.cz/uploads/S9TXQMP2TJAQavvoka-logo154600848550.png',
+     'JuniorGuruBot (+https://junior.guru)'),
+    ('https://startupjobs.cz/uploads/S9TXQMP2TJAQavvoka-logo154600848550.png',
+     'JuniorGuruBot (+https://junior.guru)'),
+    ('https://media-exp1.licdn.com/dms/image/C560BAQHxuVQO-Rz9rw/company-logo_100_100/0/1546508771908?e=1660780800&v=beta&t=1N9lVI3Vf1KRaM8HHoEr2BpVwzqajuwL198CTZqm2Z0',
+     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:93.0) Gecko/20100101 Firefox/93.0'),
+])
+def test_choose_user_agent(url, expected):
+    assert choose_user_agent(url) == expected

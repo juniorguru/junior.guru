@@ -2,6 +2,7 @@ import hashlib
 from io import BytesIO
 from multiprocessing import Pool
 from pathlib import Path
+from urllib.parse import urlparse
 
 import favicon
 import requests
@@ -29,7 +30,7 @@ REQUEST_TIMEOUT = (3.05, 15)
 
 # Just copy-paste of raw headers Firefox sends to a web page. None of it is
 # intentionally set to a specific value with a specific meaning.
-REQUEST_HEADERS = {
+DEFAULT_REQUEST_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:93.0) Gecko/20100101 Firefox/93.0',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
     'Accept-Language': 'en-US,en;q=0.8,cs;q=0.6,sk;q=0.4,es;q=0.2',
@@ -41,6 +42,10 @@ REQUEST_HEADERS = {
     'Sec-Fetch-User': '?1',
     'Sec-GPC': '1',
     'Cache-Control': 'max-age=0',
+}
+
+USER_AGENTS = {
+    'startupjobs.cz': 'JuniorGuruBot (+https://junior.guru)',
 }
 
 
@@ -118,7 +123,7 @@ def fetch_icon_urls(args):
     try:
         icons = favicon.get(company_url,
                             timeout=REQUEST_TIMEOUT,
-                            headers=REQUEST_HEADERS)
+                            headers=DEFAULT_REQUEST_HEADERS)
         urls = unique(icon.url for icon in icons)
         logger_f.info(f'Icon URLs found for <ListedJob: {job_id}>, {company_url}: {urls!r}')
         return job_id, urls
@@ -131,9 +136,11 @@ def download_image(image_url):
     logger_d = logger.getChild('download_image')
     logger_d.debug(f'Downloading {image_url}')
     try:
+        headers = dict(DEFAULT_REQUEST_HEADERS)
+        headers['User-Agent'] = choose_user_agent(image_url)
         response = requests.get(image_url,
                                 timeout=REQUEST_TIMEOUT,
-                                headers=REQUEST_HEADERS)
+                                headers=headers)
         response.raise_for_status()
 
         orig_image = Image.open(BytesIO(response.content))
@@ -177,3 +184,8 @@ def convert_image(image):
 
 def unique(iterable):
     return list(frozenset(item for item in iterable if item is not None))
+
+
+def choose_user_agent(url):
+    hostname = urlparse(url).hostname.lstrip('www.')
+    return USER_AGENTS.get(hostname, DEFAULT_REQUEST_HEADERS['User-Agent'])
