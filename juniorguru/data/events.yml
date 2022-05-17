@@ -68,6 +68,25 @@
 #   speakers: 854681167018459146
 
 
+# - title: "Co je to ten frontend? (bude upřesněno, pracovní název)"
+#   date: "2022-00-00"
+#   description: |
+#     (bude upřesněno)
+#   avatar_path: avatars-participants/coreskill.jpg
+#   bio_name: Daniel Srb, Kate Miháliková
+#   bio_title: vývojáři a mentoři, CoreSkill
+#   bio: |
+#       Dan Srb se zaměřuje na návrh a implementaci webových uživatelských rozhraní. Jezdí na skládačce a má rád dobrou kávu, i když už ji moc nepije. Kate Miháliková je frontedová vývojářka se zaměřením na TypeScript a JavaScript. Baví ji vlaky, hraje si ráda s Arduinem a na první dobrou rozezná jména Pokémonů od buzzwordů a názvů technologií.
+#   bio_links:
+#     - https://coreskill.tech/
+#     - https://github.com/katemihalikova
+#     - https://www.linkedin.com/in/katemihalikova/
+#     - https://github.com/benabraham
+#     - https://www.linkedin.com/in/danielsrb/
+#   logo_path: logos/coreskill.svg
+#   speakers: 652142810291765248, 488415538117214220
+
+
 - title: "Co je to ten .NET? (bude upřesněno, pracovní název)"
   date: "2022-06-07"
   description: |
@@ -83,25 +102,6 @@
     - https://www.linkedin.com/in/madrvojtech/
   logo_path: logos/motionlab.svg
   speakers: 839123616665698354
-
-
-- title: "Co je to ten frontend? (bude upřesněno, pracovní název)"
-  date: "2022-05-24"
-  description: |
-    (bude upřesněno)
-  avatar_path: avatars-participants/coreskill.jpg
-  bio_name: Daniel Srb, Kate Miháliková
-  bio_title: vývojáři a mentoři, CoreSkill
-  bio: |
-      Dan Srb se zaměřuje na návrh a implementaci webových uživatelských rozhraní. Jezdí na skládačce a má rád dobrou kávu, i když už ji moc nepije. Kate Miháliková je frontedová vývojářka se zaměřením na TypeScript a JavaScript. Baví ji vlaky, hraje si ráda s Arduinem a na první dobrou rozezná jména Pokémonů od buzzwordů a názvů technologií.
-  bio_links:
-    - https://coreskill.tech/
-    - https://github.com/katemihalikova
-    - https://www.linkedin.com/in/katemihalikova/
-    - https://github.com/benabraham
-    - https://www.linkedin.com/in/danielsrb/
-  logo_path: logos/coreskill.svg
-  speakers: 652142810291765248, 488415538117214220
 
 
 - title: "Jak funguje mentoring a uvítání mentorů z Pure Storage"
