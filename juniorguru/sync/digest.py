@@ -47,7 +47,7 @@ async def discord_task(client):
             embed_description = []
             for message in messages:
                 embed_description += [
-                    f"{message.upvotes_count}× láska pro {message.author.mention} v {message.channel_mention}:",
+                    f"{message.upvotes_count}× láska pro **{message.author.display_name}** v {message.channel_mention}:",
                     f"> {textwrap.shorten(message.content, 200, placeholder='…')}",
                     f"[Hop na příspěvek]({message.url})",
                     "",
