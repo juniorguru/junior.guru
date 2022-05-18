@@ -52,15 +52,18 @@ async def discord_task(client):
     mentors = Mentor.listing()
     logger.debug(f'Loaded {len(mentors)} mentors from YAML')
 
+    messages_trash = set(ClubMessage.channel_listing(MENTORING_CHANNEL))
     info_message = ClubMessage.last_bot_message(MENTORING_CHANNEL, INFO_EMOJI)
     discord_channel = await client.fetch_channel(MENTORING_CHANNEL)
 
+    logger.info('Syncing mentors')
     for mentor in mentors:
         discord_member = await client.juniorguru_guild.fetch_member(mentor.user.id)
         mentor_params = get_mentor_params(mentor, thumbnail_url=discord_member.display_avatar.url)
 
         message = ClubMessage.last_bot_message(MENTORING_CHANNEL, MENTOR_EMOJI, mentor.user.mention)
         if message:
+            messages_trash.remove(message)
             logger.info(f"Editing existing message for mentor {mentor.name}")
             if DISCORD_MUTATIONS_ENABLED:
                 discord_message = await discord_channel.fetch_message(message.id)
@@ -80,6 +83,7 @@ async def discord_task(client):
             else:
                 logger.warning('Discord mutations not enabled')
 
+    logger.info('Syncing info')
     info_content = f'{INFO_EMOJI} Co to tady je? Jak to funguje?'
     info_mentee_description = ('**Mentoring**\n'
                                '\n'
@@ -104,12 +108,23 @@ async def discord_task(client):
                                      description=info_mentee_description),
                                Embed(description=info_mentor_description)])
     if info_message:
+        messages_trash.remove(info_message)
         logger.info("Editing info message")
         discord_message = await discord_channel.fetch_message(info_message.id)
         await discord_message.edit(**info_params)
     else:
         logger.info("Creating new info message")
         await discord_channel.send(**info_params)
+
+    logger.info('Deleting extraneous messages')
+    for message in messages_trash:
+        logger.debug(f'Deleting message #{message.id}: {message.content[:10]}…')
+        if DISCORD_MUTATIONS_ENABLED:
+            discord_message = await discord_channel.fetch_message(message.id)
+            await discord_message.delete()
+            message.delete_instance()
+        else:
+            logger.warning('Discord mutations not enabled')
 
 
 def get_mentor_params(mentor, thumbnail_url=None):
