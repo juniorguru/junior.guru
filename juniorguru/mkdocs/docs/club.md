@@ -165,6 +165,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
   {{ logo('Pyvec', 'pyvec.svg', 'https://pyvec.org/') }}
   {{ logo('CyberMagnolia', 'cybermagnolia.svg', 'https://cybermagnolia.com/') }}
   {{ logo('ReactGirls', 'reactgirls.svg', 'https://reactgirls.com/') }}
+  {{ logo('TWguild.cz', 'twguild.svg', 'https://www.twguild.cz/') }}
   {{ logo('yablko', 'yablko.svg', 'http://robweb.sk/') }}
 </ul>
 </section>
