@@ -144,7 +144,7 @@ def get_mentor_params(mentor, thumbnail_url=None):
                                  style=ButtonStyle.secondary))
     else:
         view = ui.View(ui.Button(emoji='<:discord:935790609023787018>',
-                                 label='Napiš přímo přes Discord',
+                                 label='(Piš přímo přes Discord)',
                                  style=ButtonStyle.secondary,
                                  disabled=True))
 
