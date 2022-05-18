@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from discord import Embed, Colour
+from discord import Embed, Colour, ui, ButtonStyle
 from strictyaml import Int, Map, Optional, Seq, Str, Url, Bool, load
 
 from juniorguru.lib import loggers
@@ -132,15 +132,24 @@ def get_mentor_params(mentor, thumbnail_url=None):
     if mentor.company:
         content += f' z firmy {mentor.company}'
 
-    description = f"{mentor.topics}\n\n"
+    description = ''
     if mentor.english_only:
         description += "🇬🇧 Pouze anglicky!\n"
+    description += f"📖 {mentor.topics}\n"
+
     if mentor.book_url:
-        description += f"🗓 [Rezervuj přes kalendář]({mentor.book_url})\n"
+        view = ui.View(ui.Button(emoji='🗓',
+                                 label='Rezervuj přes kalendář',
+                                 url=mentor.book_url,
+                                 style=ButtonStyle.secondary))
     else:
-        description += '<:discord:935790609023787018> Domluvte se přímo přes Discord\n'
+        view = ui.View(ui.Button(emoji='<:discord:935790609023787018>',
+                                 label='Napiš přímo přes Discord',
+                                 style=ButtonStyle.secondary,
+                                 disabled=True))
 
     discord_embed = Embed(description=description)
     if thumbnail_url:
         discord_embed.set_thumbnail(url=thumbnail_url)
-    return dict(content=content, embed=discord_embed)
+
+    return dict(content=content, embed=discord_embed, view=view)
