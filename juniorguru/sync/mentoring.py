@@ -4,15 +4,13 @@ from discord import Embed, Colour, ui, ButtonStyle
 from strictyaml import Int, Map, Optional, Seq, Str, Url, Bool, load
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
+from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task, MENTORING_CHANNEL
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.mentor import Mentor
 from juniorguru.sync.club_content import main as club_content_task
 
-
-MENTORING_CHANNEL = 976054742117658634
 
 MENTOR_EMOJI = '💁'
 
