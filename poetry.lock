@@ -486,7 +486,7 @@ grpc = ["grpcio (>=1.0.0)"]
 
 [[package]]
 name = "gql"
-version = "3.2.0"
+version = "3.3.0"
 description = "GraphQL client for Python"
 category = "main"
 optional = false
@@ -2151,8 +2151,8 @@ googleapis-common-protos = [
     {file = "googleapis_common_protos-1.56.0-py2.py3-none-any.whl", hash = "sha256:60220c89b8bd5272159bed4929ecdc1243ae1f73437883a499a44a1cbc084086"},
 ]
 gql = [
-    {file = "gql-3.2.0-py2.py3-none-any.whl", hash = "sha256:cea850a6a922af74e01386b5c299e3ca9cf491f0c4bf039541da8e8b1f50a437"},
-    {file = "gql-3.2.0.tar.gz", hash = "sha256:026b1c6b605cb9d6f4885ca5d8b1873a686a5b81842f356a834141bf123d4975"},
+    {file = "gql-3.3.0-py2.py3-none-any.whl", hash = "sha256:77fbc0a47c2df4edb8a98afa8c9c23aead5e0b4ab26d424e2dcfeb3fa2a2319d"},
+    {file = "gql-3.3.0.tar.gz", hash = "sha256:efa405aebe0e7b2fe342b43cfc70fd57e2e385fcae04f79c509366ad48a64381"},
 ]
 graphql-core = [
     {file = "graphql-core-3.2.1.tar.gz", hash = "sha256:9d1bf141427b7d54be944587c8349df791ce60ade2e3cccaf9c56368c133c201"},
