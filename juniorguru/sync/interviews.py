@@ -49,7 +49,7 @@ async def discord_task(client):
 
             await channel.send(content=(
                 f"{INTERVIEWS_EMOJI} Pomohla by ti soustavnější příprava na přijímací řízení? "
-                "Chceš si pohovor vyzkoušet nanečisto, česky nebo anglicky? "
+                "Chceš si jednorázově vyzkoušet pohovor nanečisto, česky nebo anglicky? "
                 f"Někteří členové se v <#{MENTORING_CHANNEL}> k takovým konzultacím nabídli!"
             ), embeds=[embed_mentors, embed_handbook])
         else:
