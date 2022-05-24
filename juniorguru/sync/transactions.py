@@ -17,6 +17,8 @@ FIOBANK_API_KEY = os.getenv('FIOBANK_API_KEY')
 SIDELINE_JOBS = ['15']
 CATEGORIES = [
     lambda t: 'memberships' if t['variable_symbol'] == '21' else None,
+    lambda t: 'memberships' if t['variable_symbol'] == '215' else None,
+    lambda t: 'partnerships' if t['variable_symbol'] == '226' else None,
     lambda t: 'salary' if 'výplata' in t['message'] else None,
     lambda t: 'sideline' if t['variable_symbol'] in SIDELINE_JOBS else None,
     lambda t: 'lawyer' if 'ADVOKATKA' in t['message'] else None,
@@ -27,6 +29,7 @@ CATEGORIES = [
     lambda t: 'partnerships' if 'RED HAT' in t['message'] and t['amount'] >= 8000 else None,
     lambda t: 'tax' if ('ČSSZ' in t['message'] or 'PSSZ' in t['message'] or 'MSSZ' in t['message']) else None,
     lambda t: 'tax' if 'VZP' in t['message'] else None,
+    lambda t: 'tax' if 'FÚ pro hl. m. Prahu' in t['message'] else None,
     lambda t: 'marketing' if 'BUFFER PUBLISH' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'marketing' if 'PrintAll' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'marketing' if 'samolep' in t['message'] and t['amount'] < 0 else None,

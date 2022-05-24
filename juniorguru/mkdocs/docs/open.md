@@ -127,7 +127,7 @@ Druhým důvodem je malá vypovídající hodnota. Velkou část výnosů tvoř�
 
 ## Náklady
 
-Zahrnuji pouze náklady na byznys, ale zase i s daněmi a odvody na zdravotní a sociální pojištění. V roce 2020 je v nich díra, protože kvůli covidu-19 nebyla povinnost je platit.
+Zahrnuji pouze náklady na byznys, ale zase i s daněmi a odvody na zdravotní a sociální pojištění. V roce 2020 je v nich díra, protože kvůli covidu-19 nebyla povinnost je platit. Občas jdou do mínusu (stává se z nich příjem), protože mi úřady něco vrátily.
 
 Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samolepek apod. Také jsem si jednu dobu platil [Buffer](https://buffer.com/).
 
@@ -160,7 +160,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
             {
                 'label': 'marketing',
                 'data': charts_cost_breakdown.pop('marketing'),
-                'backgroundColor': '#ffd300',
+                'backgroundColor': '#e8ccd7',
             },
             {
                 'label': 'memberful.com',

@@ -50,17 +50,17 @@ class Transaction(BaseModel):
 
     @classmethod
     def cost(cls, date):
-        return abs(sum(transaction.amount for transaction
-                       in cls.expenses(*month_range(date))))
+        return -1 * sum(transaction.amount for transaction
+                        in cls.expenses(*month_range(date)))
 
     @classmethod
     def cost_ttm(cls, date):
-        return math.ceil(abs(sum(transaction.amount for transaction
-                                 in cls.expenses(*ttm_range(date))) / 12.0))
+        return math.ceil((-1 * sum(transaction.amount for transaction
+                                   in cls.expenses(*ttm_range(date)))) / 12.0)
 
     @classmethod
     def cost_breakdown(cls, date):
-        return {category: abs(value) for category, value
+        return {category: -1 * value for category, value
                 in sum_by_category(cls.expenses(*month_range(date))).items()}
 
     @classmethod
