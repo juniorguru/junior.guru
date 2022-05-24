@@ -9,7 +9,7 @@ import arrow
 from juniorguru.lib import charts
 from juniorguru.mkdocs.thumbnail import thumbnail
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubMessage, ClubUser
+from juniorguru.models.club import ClubMessage, ClubSubscribedPeriod, ClubUser
 from juniorguru.models.company import Company
 from juniorguru.models.event import Event
 from juniorguru.models.job import ListedJob
@@ -75,12 +75,16 @@ def on_docs_context(context):
     # open.md
     charts_months = charts.months(BUSINESS_BEGIN_ON, TODAY)
     context['charts_labels'] = charts.labels(charts_months)
+    context['charts_profit'] = charts.per_month(Transaction.profit, charts_months)
+    context['charts_profit_ttm'] = charts.per_month(Transaction.profit_ttm, charts_months)
     context['charts_revenue'] = charts.per_month(Transaction.revenue, charts_months)
     context['charts_revenue_ttm'] = charts.per_month(Transaction.revenue_ttm, charts_months)
     context['charts_revenue_breakdown'] = charts.per_month_breakdown(Transaction.revenue_breakdown, charts_months)
     context['charts_cost'] = charts.per_month(Transaction.cost, charts_months)
     context['charts_cost_ttm'] = charts.per_month(Transaction.cost_ttm, charts_months)
     context['charts_cost_breakdown'] = charts.per_month_breakdown(Transaction.cost_breakdown, charts_months)
+    context['charts_subscriptions'] = charts.per_month(ClubSubscribedPeriod.count, charts_months)
+    context['charts_women'] = charts.per_month(ClubSubscribedPeriod.women_count, charts_months)
 
     # podcast.md, handbook/cv.md
     context['podcast_episodes'] = PodcastEpisode.listing()

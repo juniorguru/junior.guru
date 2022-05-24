@@ -3,23 +3,51 @@ title: Jak se daří provozovat junior.guru
 description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior.guru?
 ---
 
-# Čísla a grafy
+{% from 'macros.html' import note with context %}
 
-**Tato stránka se teprve připravuje!**
+# Čísla a grafy
 
 Stránku jsem vytvořil po vzoru [jiných otevřených projektů](https://openstartuplist.com/), především [NomadListu](https://nomadlist.com/open). Tyto grafy a čísla stejně potřebuji pro svou vlastní potřebu, takže proč je v rámci transparentnosti nemít rovnou na webu, že?
 
 Finanční data se každý den stahují přímo z mého podnikatelského účtu u Fio banky. Používám [svou vlastní Python knihovnu](https://pypi.org/project/fiobank/), kterou jsem kdysi vytvořil.
 
-## Aktuální stav
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Zatím tady chybí produktové metriky, např. vývoj počtu členů v klubu v čase, apod.
+{% endcall %}
 
-- Aktuální čistý zisk junior.guru: {{ profit_ttm|thousands }} Kč měsíčně
-- Spočítáno jako zisk za posledních 12 měsíců (TTM, _trailing twelve months_) vydělený 12.
-- Zisk znamená výnosy mínus náklady, je to tedy čistý zisk z mého podnikání, který jde do rodinného rozpočtu.
+## Čistý zisk
+
+Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde z mého podnikání přímo do rodinného rozpočtu. Aktuální čistý zisk junior.guru je **{{ profit_ttm|thousands }} Kč měsíčně**. Spočítáno jako zisk za posledních 12 měsíců (TTM, _trailing twelve months_) vydělený 12.
+
+<canvas
+    class="chart" width="400" height="200"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts_labels,
+        'datasets': [
+            {
+                'label': 'zisk',
+                'data': charts_profit,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'zisk TTM/12',
+                'data': charts_profit_ttm,
+                'borderColor': '#1755d1',
+                'borderWidth': 1,
+            }
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'}
+    }|tojson|forceescape }}"></canvas>
+
+### Cíl
 
 Ze svých předchozích angažmá mám nějaké úspory, díky nimž mohu JG provozovat, i když zatím moc nevydělá. Jako seniorní programátor s mými zkušenostmi bych prací pro pražskou nebo zahraniční firmu mohl vydělávat kolem 100.000 Kč měsíčně čistého. Dohodli jsme se doma, že když mě JG tolik baví, zkusím to provozovat a i když to vydělá méně, stojí nám to za větší domácí pohodu. Na JG dělám na full time, máme jedno malé dítě, nemáme auto, bydlíme v nájmu uprostřed Prahy. Kdybych vydělával 40.000 Kč čistého, tak by nám to myslím vystačilo. Cílem JG není zbohatnout, ale dlouhodobě pomáhat juniorům, pohodlně živit rodinu a žít při tom šťastný život.
 
-<div class="progress">
+<div class="charts-progress">
     {% set progress_max = 40000 %}
     {% set progress_ptc = ((profit_ttm * 100) / progress_max)|round|int %}
     <div class="progress-bar" role="progressbar" style="width: {{ progress_ptc }}%" aria-valuenow="{{ progress_ptc }}" aria-valuemin="0" aria-valuemax="{{ progress_max }}">
@@ -178,6 +206,38 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
+    }|tojson|forceescape }}"></canvas>
+
+## Členové klubu
+
+[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v lednu 2021. Aktuálně má **{{ members_total_count }} členů**, ale někteří z nich nejsou z historických důvodů evidováni přes memberful.com, takže nejsou zahrnuti v grafech.
+
+Podíl žen na počtu členů sleduji z vlastní zvědavosti a není to žádná přesná metrika. Nikdo nikde nevyplňuje, zda jsou žena nebo muž. Pro účely statistiky se to určuje jen odhadem podle křestního jména a tvaru příjmení.
+
+<!-- dodelat vyvoj procenta zen spis a dat do kontextu kolik % je v CR v IT -->
+
+<canvas
+    class="chart" width="400" height="200"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts_labels,
+        'datasets': [
+            {
+                'label': 'počet členů a členek',
+                'data': charts_subscriptions,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'počet členek',
+                'data': charts_women,
+                'borderColor': '#dc3545',
+                'borderWidth': 1,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'}
     }|tojson|forceescape }}"></canvas>
 
 ## Návštěvnost

@@ -1,0 +1,6 @@
+.charts-progress {
+  @extend .progress;
+  @extend .standout;
+
+  height: map-get($spacers, 4);
+}

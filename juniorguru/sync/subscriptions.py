@@ -1,7 +1,7 @@
 import itertools
 import os
 import re
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from operator import itemgetter
 
 import arrow
@@ -12,7 +12,7 @@ from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
 from juniorguru.lib.memberful import Memberful
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubUser
+from juniorguru.models.club import ClubUser, ClubSubscribedPeriod
 from juniorguru.models.company import Company, CompanyStudentSubscription
 from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.sync.companies import main as companies_task
@@ -25,7 +25,7 @@ MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
 
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
-FEMALE_NAME_RE = re.compile(r'''
+FEMININE_NAME_RE = re.compile(r'''
     (\w+\s\w+ov[aá]$)|
     (\w+\s\w+ská$)|
     (\b(
@@ -41,8 +41,8 @@ FEMALE_NAME_RE = re.compile(r'''
 @sync_task(club_content_task, companies_task)
 @db.connection_context()
 def main():
-    CompanyStudentSubscription.drop_table()
-    CompanyStudentSubscription.create_table()
+    db.drop_tables([CompanyStudentSubscription, ClubSubscribedPeriod])
+    db.create_tables([CompanyStudentSubscription, ClubSubscribedPeriod])
 
     logger.info('Getting data from Memberful')
     memberful = Memberful()
@@ -99,7 +99,7 @@ def main():
                 pass
 
         name = subscription['member']['fullName'].strip()
-        gender = ('F' if FEMALE_NAME_RE.search(name) else 'M') if name else None
+        has_feminine_name = bool(FEMININE_NAME_RE.search(name)) if name else False
         coupon = get_active_coupon(subscription)
         coupon_parts = parse_coupon(coupon) if coupon else {}
         student_record_fields = dict(itertools.chain.from_iterable([
@@ -114,7 +114,7 @@ def main():
         records.append({
             'Name': name,
             'Discord Name': user.display_name.strip() if user else None,
-            'Gender': gender,
+            'Gender': ('F' if has_feminine_name else 'M'),
             'E-mail': subscription['member']['email'],
             'Memberful ID': subscription['member']['id'],
             'Stripe ID': subscription['member']['stripeCustomerId'],
@@ -146,12 +146,16 @@ def main():
         if user:
             logger.debug(f'Updating member #{user.id} with Memberful data')
             if subscription['active']:
-                user.subscription_id = str(subscription['id'])
+                user.memberful_subscription_id = str(subscription['id'])
                 user.expires_at = arrow.get(subscription['expiresAt']).naive
                 user.coupon_base = coupon_parts.get('coupon_base')
             joined_memberful_at = arrow.get(subscription['createdAt']).naive
             user.joined_at = min(user.joined_at, joined_memberful_at) if user.joined_at else joined_memberful_at
             user.save()
+
+        for subscribed_period in get_subscribed_periods(subscription):
+            ClubSubscribedPeriod.create(has_feminine_name=has_feminine_name,
+                                        **subscribed_period)
 
     logger.info('Process remaining Discord users')
     for user in ClubUser.listing():
@@ -234,5 +238,13 @@ def get_subscriptions(graphql_results):
             yield edge['node']
 
 
-def dedupe_by_members(subscriptions):
-    return []
+def get_subscribed_periods(subscription):
+    orders = list(sorted(subscription['orders'], key=itemgetter('createdAt'), reverse=True))
+    renewal_on = arrow.get(subscription['expiresAt']).date()
+    for order in orders:
+        start_on = arrow.get(order['createdAt']).date()
+        coupon_base = parse_coupon(order['coupon']['code']).get('coupon_base') if order['coupon'] else None
+        yield dict(start_on=start_on,
+                   end_on=renewal_on - timedelta(days=1),
+                   coupon_base=coupon_base)
+        renewal_on = start_on

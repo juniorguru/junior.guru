@@ -71,20 +71,6 @@ class Transaction(BaseModel):
     def profit_ttm(cls, date):
         return cls.revenue_ttm(date) - cls.cost_ttm(date)
 
-    # @classmethod
-    # def recurring_revenue(cls, today=None):
-    #     incomes = cls.incomes_breakdown(today)
-    #     return incomes.get('donations', 0) + incomes.get('memberships', 0)
-
-    # @classmethod
-    # def recurring_revenue_monthly(cls, today=None):
-    #     return math.ceil(cls.recurring_revenue(today) / 12.0)
-
-    # @classmethod
-    # def expenses_breakdown(cls, today=None):
-    #     return {category: abs(value) for category, value
-    #             in sum_by_category(cls.expenses(today)).items()}
-
 
 def sum_by_category(transactions):
     def reduce_step(mapping, transaction):

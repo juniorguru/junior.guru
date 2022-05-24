@@ -2,7 +2,7 @@ import math
 from datetime import date, timedelta
 
 from peewee import (BooleanField, CharField, DateTimeField, ForeignKeyField,
-                    IntegerField, fn)
+                    IntegerField, DateField, fn)
 
 from juniorguru.lib.club import (CLUB_LAUNCH_ON, INTRO_CHANNEL, IS_NEW_PERIOD_DAYS,
                                  JUNIORGURU_BOT, RECENT_PERIOD_DAYS,
@@ -13,7 +13,7 @@ from juniorguru.models.base import BaseModel, JSONField
 
 class ClubUser(BaseModel):
     id = IntegerField(primary_key=True)
-    subscription_id = CharField(null=True)
+    memberful_subscription_id = CharField(null=True)
 
     joined_at = DateTimeField(null=True)
     expires_at = DateTimeField(null=True)
@@ -185,3 +185,25 @@ class ClubPinReaction(BaseModel):
     @classmethod
     def listing(cls):
         return cls.select()
+
+
+class ClubSubscribedPeriod(BaseModel):
+    start_on = DateField()
+    end_on = DateField()
+    coupon_base = CharField(null=True)
+    has_feminine_name = BooleanField()
+
+    @classmethod
+    def listing(cls, date):
+        return cls.select() \
+            .where(cls.start_on <= date, cls.end_on >= date)
+
+    @classmethod
+    def count(cls, date):
+        return cls.listing(date).count()
+
+    @classmethod
+    def women_count(cls, date):
+        return cls.listing(date) \
+            .where(cls.has_feminine_name == True) \
+            .count()
