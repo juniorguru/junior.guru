@@ -68,16 +68,20 @@ async def discord_task(client):
                 await discord_message.edit(**mentor_params)
             else:
                 logger.warning('Discord mutations not enabled')
+            mentor.message_url = message.url
+            mentor.save()
         else:
             logger.info(f"Creating a new message for mentor {mentor.name}")
             if DISCORD_MUTATIONS_ENABLED:
                 if info_message:
                     logger.info("Deleting info message")
-                    discord_message = await discord_channel.fetch_message(info_message.id)
-                    await discord_message.delete()
+                    info_discord_message = await discord_channel.fetch_message(info_message.id)
+                    await info_discord_message.delete()
                     info_message.delete_instance()
                     info_message = None
-                await discord_channel.send(**mentor_params)
+                discord_message = await discord_channel.send(**mentor_params)
+                mentor.message_url = discord_message.jump_url
+                mentor.save()
             else:
                 logger.warning('Discord mutations not enabled')
 

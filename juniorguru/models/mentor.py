@@ -10,6 +10,7 @@ class Mentor(BaseModel):
     company = CharField(null=True)
     topics = CharField()
     book_url = CharField(null=True)
+    message_url = CharField(unique=True, null=True)
     english_only = BooleanField(default=False)
     user = ForeignKeyField(ClubUser, unique=True)
 
