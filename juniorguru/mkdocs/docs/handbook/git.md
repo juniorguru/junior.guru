@@ -9,7 +9,7 @@ template: main_handbook.html
 # Git a GitHub
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě přepisuje. Za pár dní tady bude jiný text, lepší, voňavější, nápomocnější.
+  {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě přepisuje. Brzy tady bude jiný text, lepší, voňavější, nápomocnější.
 {% endcall %}
 
 <!-- {% call lead() %}
@@ -76,7 +76,7 @@ Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo d
 ## README
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Za pár dní tady něco bude.
+  {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Brzy tady něco bude.
 {% endcall %}
 
 <!--
