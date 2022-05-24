@@ -13,7 +13,6 @@ from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.company import Company
 from juniorguru.models.event import Event
 from juniorguru.models.job import ListedJob
-from juniorguru.models.last_modified import LastModified
 from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.story import Story
 from juniorguru.models.topic import Topic
@@ -68,7 +67,6 @@ def on_docs_context(context):
     context['stories_by_tags'] = Story.tags_mapping()
 
     # candidate-handbook.md
-    context['last_modified'] = LastModified.get_value_by_path('candidate-handbook.md')
     context['jobs'] = ListedJob.listing()
     context['jobs_remote'] = ListedJob.remote_listing()
     context['jobs_internship'] = ListedJob.internship_listing()

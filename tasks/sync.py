@@ -16,7 +16,6 @@ SYNC_TASKS_MAIN = import_sync_tasks([
     'juniorguru.sync.events',
     'juniorguru.sync.jobs_scraped',  # reads cached jobs data
     'juniorguru.sync.jobs_submitted',
-    'juniorguru.sync.last_modified',
     'juniorguru.sync.li_group',
     'juniorguru.sync.mentoring',
     'juniorguru.sync.buddies',
