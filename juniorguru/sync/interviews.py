@@ -28,7 +28,7 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    last_message = ClubMessage.last_bot_message(INTERVIEWS_CHANNEL, INTERVIEWS_EMOJI, 'xyz')
+    last_message = ClubMessage.last_bot_message(INTERVIEWS_CHANNEL, INTERVIEWS_EMOJI)
     if is_message_over_period_ago(last_message, timedelta(days=30)):
         logger.info('Last message is more than one month old!')
         if DISCORD_MUTATIONS_ENABLED:
