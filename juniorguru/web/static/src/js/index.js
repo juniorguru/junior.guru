@@ -13,4 +13,8 @@ if (console && console.log) {
     + ' Díky své zvědavosti navíc získáváš 5% slevu na objednávku členství v klubu https://junior.guru/club/ :)'
     + ' Stačí při registraci zadat kupón „ZVEDAVOST“'
   );
+  console.log(
+    '⭐️ A JEŠTĚ NĚCO! ⭐️ Za svoji zvědavost dostáváš i 15% slevu na vstupenku na https://www.webexpo.net/prague2022'
+    + ' Protože junior.guru a WebExpo jsou kamarádi, stačí zadej při koupi lístku kupón „FRIENDS“'
+  );
 }
