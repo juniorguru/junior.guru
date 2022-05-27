@@ -212,10 +212,6 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
 
 [Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v lednu 2021. Aktuálně má **{{ members_total_count }} členů**, ale někteří z nich nejsou z historických důvodů evidováni přes memberful.com, takže nejsou zahrnuti v grafech.
 
-Podíl žen na počtu členů sleduji z vlastní zvědavosti a není to žádná přesná metrika. Nikdo nikde nevyplňuje, zda jsou žena nebo muž. Pro účely statistiky se to určuje jen odhadem podle křestního jména a tvaru příjmení.
-
-<!-- dodelat vyvoj procenta zen spis a dat do kontextu kolik % je v CR v IT -->
-
 <canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
@@ -228,11 +224,29 @@ Podíl žen na počtu členů sleduji z vlastní zvědavosti a není to žádná
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'}
+    }|tojson|forceescape }}"></canvas>
+
+## Podíl žen v klubu
+
+Podíl žen na počtu členů sleduji z vlastní zvědavosti a není to žádná přesná metrika. Nikdo nikde nevyplňuje, zda je žena nebo muž. Pro účely statistiky se to určuje jen odhadem podle křestního jména a tvaru příjmení.
+
+Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/cri/lidske-zdroje-v-informacnich-technologiich-2020) je v českém IT pouze 10 % žen a tento podíl se od jejich poslední analýzy před několika lety nezlepšil, naopak nás definitivně předběhly už všechny ostatní státy v Evropě.
+
+<canvas
+    class="chart" width="400" height="200"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts_labels,
+        'datasets': [
             {
-                'label': 'počet členek',
-                'data': charts_women,
+                'label': 'podíl žen v %',
+                'data': charts_women_ptc,
                 'borderColor': '#dc3545',
-                'borderWidth': 1,
+                'borderWidth': 2,
             },
         ]
     }|tojson|forceescape }}"

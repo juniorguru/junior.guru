@@ -84,7 +84,7 @@ def on_docs_context(context):
     context['charts_cost_ttm'] = charts.per_month(Transaction.cost_ttm, charts_months)
     context['charts_cost_breakdown'] = charts.per_month_breakdown(Transaction.cost_breakdown, charts_months)
     context['charts_subscriptions'] = charts.per_month(ClubSubscribedPeriod.count, charts_months)
-    context['charts_women'] = charts.per_month(ClubSubscribedPeriod.women_count, charts_months)
+    context['charts_women_ptc'] = charts.per_month(ClubSubscribedPeriod.women_ptc, charts_months)
 
     # podcast.md, handbook/cv.md
     context['podcast_episodes'] = PodcastEpisode.listing()

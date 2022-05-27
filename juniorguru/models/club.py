@@ -207,3 +207,10 @@ class ClubSubscribedPeriod(BaseModel):
         return cls.listing(date) \
             .where(cls.has_feminine_name == True) \
             .count()
+
+    @classmethod
+    def women_ptc(cls, date):
+        count = cls.count(date)
+        if count:
+            return math.ceil((100 * cls.women_count(date)) / count)
+        return 0
