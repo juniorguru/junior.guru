@@ -87,19 +87,20 @@
 #   speakers: 652142810291765248, 488415538117214220
 
 
-- title: "Co je to ten .NET? (bude upřesněno, pracovní název)"
+- title: "Od C# k .NETu"
   date: "2022-06-07"
   description: |
-    (bude upřesněno)
-  avatar_path: icon.svg
+    Znáte programovací jazyk C#, ale nikdy jste si jej nezkusili? Kde všude ho můžete využit? Počítá se s ním do budoucna? Co to má společného s .NETem? Je to vhodný jazyk pro juniory? Právě odpovědi na tyto otázky se pokusím odpovědět na této přednášce.
+  avatar_path: avatars-participants/vojtech-madr.png
   bio_name: Vojtěch Mádr
-  bio_title: (bude upřesněno)
+  bio_title: CTO v Motionlab, moderátor podcastů ProgramHRování a .NET.CZ
   bio: |
-      (bude upřesněno)
+      Technický ředitel ve startupu, podcaster a hrdý otec. Rád používá Microsoftí technologíe a mluví o nich, takže je opakovaným držitelem titulu Microsoft MVP.
   bio_links:
-    - https://twitter.com/madrvojt
-    - https://www.dotnetpodcast.cz/
     - https://www.linkedin.com/in/madrvojtech/
+    - https://www.programhrovani.cz/
+    - https://www.dotnetpodcast.cz/
+    - https://twitter.com/madrvojt
   logo_path: logos/motionlab.svg
   speakers: 839123616665698354
 
