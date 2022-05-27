@@ -156,6 +156,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
   <li class="logos-item logos-caption">
     <a href="{{ pages|docs_url('faq.md')|url }}#komunity">Komunitní partneři</a>
   </li>
+  {{ logo('Aj ty v IT', 'ajtyvit.svg', 'https://ajtyvit.sk/') }}
   {{ logo('Česko.Digital', 'ceskodigital.svg', 'https://cesko.digital/') }}
   {{ logo('Czechitas', 'czechitas.svg', 'https://www.czechitas.cz/') }}
   {{ logo('DigiKoalice', 'digikoalice.svg', 'https://digikoalice.cz/') }}
