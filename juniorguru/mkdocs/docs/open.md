@@ -23,7 +23,7 @@ Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde 
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_labels,
+        'labels': charts_business_labels,
         'datasets': [
             {
                 'label': 'zisk',
@@ -65,7 +65,7 @@ Následující graf zobrazuje vývoj mých výnosů a nákladů v každém konkr
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_labels,
+        'labels': charts_business_labels,
         'datasets': [
             {
                 'label': 'výnosy',
@@ -115,7 +115,7 @@ Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velk
     class="chart" width="400" height="200"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts_labels,
+        'labels': charts_business_labels,
         'datasets': [
             {
                 'label': 'dobrovolné příspěvky',
@@ -163,7 +163,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
     class="chart" width="400" height="200"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts_labels,
+        'labels': charts_business_labels,
         'datasets': [
             {
                 'label': 'daně a pojištění',
@@ -210,16 +210,16 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
 
 ## Členové klubu
 
-[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v lednu 2021. Aktuálně má **{{ members_total_count }} členů**, ale někteří z nich nejsou z historických důvodů evidováni přes memberful.com, takže nejsou zahrnuti v grafech.
+[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně má **{{ members_total_count }} členů**, ale někteří z nich nejsou z historických důvodů evidováni přes memberful.com, takže nejsou zahrnuti v grafech.
 
 <canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_labels,
+        'labels': charts_club_labels,
         'datasets': [
             {
-                'label': 'počet členů a členek',
+                'label': 'počet členů',
                 'data': charts_subscriptions,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
@@ -240,7 +240,7 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_labels,
+        'labels': charts_club_labels,
         'datasets': [
             {
                 'label': 'podíl žen v %',
