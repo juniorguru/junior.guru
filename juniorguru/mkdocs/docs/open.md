@@ -11,10 +11,6 @@ Stránku jsem vytvořil po vzoru [jiných otevřených projektů](https://openst
 
 Finanční data se každý den stahují přímo z mého podnikatelského účtu u Fio banky. Používám [svou vlastní Python knihovnu](https://pypi.org/project/fiobank/), kterou jsem kdysi vytvořil.
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Zatím tady chybí produktové metriky, např. vývoj počtu členů v klubu v čase, apod.
-{% endcall %}
-
 ## Čistý zisk
 
 Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde z mého podnikání přímo do rodinného rozpočtu. Aktuální čistý zisk junior.guru je **{{ profit_ttm|thousands }} Kč měsíčně**. Spočítáno jako zisk za posledních 12 měsíců (TTM, _trailing twelve months_) vydělený 12.
@@ -224,10 +220,11 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
-        ]
+        ],
     }|tojson|forceescape }}"
     data-chart-options="{{ {
-        'interaction': {'mode': 'index'}
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}}
     }|tojson|forceescape }}"></canvas>
 
 ## Podíl žen v klubu
@@ -243,7 +240,7 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
         'labels': charts_club_labels,
         'datasets': [
             {
-                'label': 'podíl žen v %',
+                'label': '% žen v klubu',
                 'data': charts_women_ptc,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
@@ -251,7 +248,8 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
         ]
     }|tojson|forceescape }}"
     data-chart-options="{{ {
-        'interaction': {'mode': 'index'}
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'min': 0, 'max': 100}}
     }|tojson|forceescape }}"></canvas>
 
 ## Návštěvnost
