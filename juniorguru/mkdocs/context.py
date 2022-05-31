@@ -86,6 +86,8 @@ def on_docs_context(context):
     club_charts_months = charts.months(CLUB_BEGIN_ON, TODAY)
     context['charts_club_labels'] = charts.labels(club_charts_months)
     context['charts_subscriptions'] = charts.per_month(ClubSubscribedPeriod.count, club_charts_months)
+    context['charts_individuals'] = charts.per_month(ClubSubscribedPeriod.individuals_count, club_charts_months)
+    context['charts_women'] = charts.per_month(ClubSubscribedPeriod.women_count, club_charts_months)
     context['charts_subscriptions_breakdown'] = charts.per_month_breakdown(ClubSubscribedPeriod.count_breakdown, club_charts_months)
     context['charts_women_ptc'] = charts.per_month(ClubSubscribedPeriod.women_ptc, club_charts_months)
 

@@ -37,23 +37,15 @@ FEMININE_NAME_RE = re.compile(r'''
     )\b)
 ''', re.VERBOSE | re.IGNORECASE)
 
-DEFAULT_CATEGORY = 'individuals'
-
-TRIAL_CATEGORY = 'trial'
-
-COMPANY_CATEGORY = 'company'
-
-STUDENT_CATEGORY = 'students'
-
 COUPON_NAMES_CATEGORIES_MAPPING = {
-    'THANKYOU': 'free',
-    'THANKYOUFOREVER': 'free',
-    'PATREON': 'supporters',
-    'GITHUB': 'supporters',
-    'FOUNDERS': 'free',
-    'FINAID': 'free',
-    'CORESKILL': 'coreskill',
-    'STUDENTCORESKILL': 'coreskill',
+    'THANKYOU': ClubSubscribedPeriod.FREE_CATEGORY,
+    'THANKYOUFOREVER': ClubSubscribedPeriod.FREE_CATEGORY,
+    'PATREON': ClubSubscribedPeriod.SUPPORTERS_CATEGORY,
+    'GITHUB': ClubSubscribedPeriod.SUPPORTERS_CATEGORY,
+    'FOUNDERS': ClubSubscribedPeriod.FREE_CATEGORY,
+    'FINAID': ClubSubscribedPeriod.FREE_CATEGORY,
+    'CORESKILL': ClubSubscribedPeriod.CORESKILL_CATEGORY,
+    'STUDENTCORESKILL': ClubSubscribedPeriod.CORESKILL_CATEGORY,
 }
 
 
@@ -64,11 +56,13 @@ def main():
     db.create_tables([CompanyStudentSubscription, ClubSubscribedPeriod])
 
     logger.info('Mapping coupons to categories')
-    coupon_names_categories_mapping = {**{parse_coupon(coupon_base)['coupon_name']: COMPANY_CATEGORY
-                                          for coupon_base in Company.coupon_bases()},
-                                       **{parse_coupon(coupon_base)['coupon_name']: STUDENT_CATEGORY
-                                          for coupon_base in Company.student_coupon_bases()},
-                                       **COUPON_NAMES_CATEGORIES_MAPPING}
+    coupon_names_categories_mapping = {
+        **{parse_coupon(coupon_base)['coupon_name']: ClubSubscribedPeriod.COMPANY_CATEGORY
+           for coupon_base in Company.coupon_bases()},
+        **{parse_coupon(coupon_base)['coupon_name']: ClubSubscribedPeriod.STUDENT_CATEGORY
+           for coupon_base in Company.student_coupon_bases()},
+        **COUPON_NAMES_CATEGORIES_MAPPING
+    }
 
     logger.info('Getting data from Memberful')
     memberful = Memberful()
@@ -180,12 +174,12 @@ def main():
 
         for subscribed_period in get_subscribed_periods(subscription):
             if subscribed_period['is_trial']:
-                category = TRIAL_CATEGORY
+                category = ClubSubscribedPeriod.TRIAL_CATEGORY
             elif subscribed_period['coupon']:
                 coupon_name = parse_coupon(subscribed_period['coupon'])['coupon_name']
-                category = coupon_names_categories_mapping.get(coupon_name, DEFAULT_CATEGORY)
+                category = coupon_names_categories_mapping.get(coupon_name, ClubSubscribedPeriod.INDIVIDUALS_CATEGORY)
             else:
-                category = DEFAULT_CATEGORY
+                category = ClubSubscribedPeriod.INDIVIDUALS_CATEGORY
             ClubSubscribedPeriod.create(start_on=subscribed_period['start_on'],
                                         end_on=subscribed_period['end_on'],
                                         has_feminine_name=has_feminine_name(name),

@@ -215,10 +215,22 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
         'labels': charts_club_labels,
         'datasets': [
             {
-                'label': 'počet členů',
+                'label': 'počet všech členů',
                 'data': charts_subscriptions,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
+            },
+            {
+                'label': 'počet těch, kdo si členství platí sami',
+                'data': charts_individuals,
+                'borderColor': '#1755d1',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'počet žen',
+                'data': charts_women,
+                'borderColor': '#dc3545',
+                'borderWidth': 1,
             },
         ],
     }|tojson|forceescape }}"
@@ -226,6 +238,8 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}}
     }|tojson|forceescape }}"></canvas>
+
+## Typy členství
 
 Každý příchozí člen má v klubu dva týdny zdarma, bez ohledu na to, jakým způsobem za členství následně platí. Některým lidem dávám vstup do klubu zcela zdarma, ať už na základě vlastního uvážení, jako poděkování např. za přednášku v klubu, jako stipendium, nebo ze strategických důvodů. Jde o různé spolupráce s komunitami, podcasty, nebo třeba zvaní mentorů na specifické technologie, jejichž zastoupení na straně seniorů je v klubu slabé, ale od juniorů je po tématu poptávka.
 
@@ -254,7 +268,7 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
             {
                 'label': 'symbióza s CoreSkill',
                 'data': charts_subscriptions_breakdown.pop('coreskill'),
-                'backgroundColor': '#a2d93a',
+                'backgroundColor': '#343434',
             },
             {
                 'label': 'přispívají přes GitHub Sponsors, Patreon',

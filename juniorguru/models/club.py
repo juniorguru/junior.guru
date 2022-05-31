@@ -190,6 +190,14 @@ class ClubPinReaction(BaseModel):
 
 
 class ClubSubscribedPeriod(BaseModel):
+    FREE_CATEGORY = 'free'
+    SUPPORTERS_CATEGORY = 'supporters'
+    CORESKILL_CATEGORY = 'coreskill'
+    INDIVIDUALS_CATEGORY = 'individuals'
+    TRIAL_CATEGORY = 'trial'
+    COMPANY_CATEGORY = 'company'
+    STUDENT_CATEGORY = 'students'
+
     start_on = DateField()
     end_on = DateField()
     category = CharField(null=True)
@@ -224,6 +232,12 @@ class ClubSubscribedPeriod(BaseModel):
         if count:
             return math.ceil((100 * cls.women_count(date)) / count)
         return 0
+
+    @classmethod
+    def individuals_count(cls, date):
+        return cls.listing(date) \
+            .where(cls.category == cls.INDIVIDUALS_CATEGORY) \
+            .count()
 
 
 def sum_by_category(subscribed_periods):
