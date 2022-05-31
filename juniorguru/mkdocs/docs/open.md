@@ -208,6 +208,25 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
 
 [Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} uživatelů**.
 
+<canvas
+    class="chart" width="400" height="200"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts_club_labels,
+        'datasets': [
+            {
+                'label': 'počet členů',
+                'data': charts_subscriptions,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}}
+    }|tojson|forceescape }}"></canvas>
+
 Každý příchozí člen má v klubu dva týdny zdarma, bez ohledu na to, jakým způsobem za členství následně platí. Některým lidem dávám vstup do klubu zcela zdarma, ať už na základě vlastního uvážení, jako poděkování např. za přednášku v klubu, jako stipendium, nebo ze strategických důvodů. Jde o různé spolupráce s komunitami, podcasty, nebo třeba zvaní mentorů na specifické technologie, jejichž zastoupení na straně seniorů je v klubu slabé, ale od juniorů je po tématu poptávka.
 
 S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzájem neplatíme. Oni využívají platformu klubu pro svůj mentoring a své studenty. Všichni mají automaticky vstup zdarma. Klub má díky tomu experty na frontend a moderátora Dana Srba, který může zaskakovat, kdyby bylo potřeba.
@@ -235,7 +254,7 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
             {
                 'label': 'symbióza s CoreSkill',
                 'data': charts_subscriptions_breakdown.pop('coreskill'),
-                'backgroundColor': '#638CDD',
+                'backgroundColor': '#a2d93a',
             },
             {
                 'label': 'přispívají přes GitHub Sponsors, Patreon',
