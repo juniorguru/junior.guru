@@ -230,7 +230,7 @@ class ClubSubscribedPeriod(BaseModel):
     def women_ptc(cls, date):
         count = cls.count(date)
         if count:
-            return math.ceil((100 * cls.women_count(date)) / count)
+            return math.ceil((cls.women_count(date) / count) * 100)
         return 0
 
     @classmethod
@@ -255,3 +255,22 @@ class ClubSubscribedPeriod(BaseModel):
             .group_by(cls.memberful_id) \
             .having(cls.start_on >= from_date, cls.start_on <= to_date) \
             .count()
+
+    @classmethod
+    def churn_count(cls, date):
+        from_date, to_date = month_range(date)
+        return cls.select(cls.memberful_id, fn.max(cls.end_on)) \
+            .group_by(cls.memberful_id) \
+            .having(cls.end_on >= from_date, cls.end_on <= to_date) \
+            .count()
+
+    @classmethod
+    def individual_duration_avg(cls, date):
+        results = cls.select(cls.memberful_id, fn.max(cls.start_on), fn.max(cls.end_on)) \
+            .where(cls.category == cls.INDIVIDUALS_CATEGORY) \
+            .group_by(cls.memberful_id) \
+            .having(cls.start_on <= date)
+        if not results:
+            return 0
+        durations = [((result.end_on - result.start_on).days / 30) for result in results]
+        return sum(durations) / len(durations)

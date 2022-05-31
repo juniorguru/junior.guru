@@ -206,7 +206,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
 
 ## Členství v klubu
 
-[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**.
+[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**, což není stejné číslo jaké hlásí graf. Musím ještě zjistit proč to tak je.
 
 <canvas
     class="chart" width="400" height="200"
@@ -221,7 +221,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
                 'borderWidth': 2,
             },
             {
-                'label': 'počet individuálních platících členů',
+                'label': 'počet individuálně platících členů',
                 'data': charts_individuals,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
@@ -300,7 +300,7 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
 
 ### Příchody a odchody
 
-Graf s registracemi obsahuje všechny typy členství. Ať už nový člen přišel přes firmu, stipendium, nebo individuálně, tak se započte.
+Graf s registracemi obsahuje všechny typy členství. Ať už nový člen přišel přes firmu, stipendium, nebo individuálně, tak se započte. Červená čára je počet členů, kteří z klubu odešli. Pokud jsou obě hlavní čáry na stejných číslech, počet členů v klubu stagnuje. Jestliže jde modrá nahoru a červená dolů, počet členů v klubu roste.
 
 Tenká modrá čára představuje počet členů, kteří v daném měsíci poprvé v historii svého členství přešli na individuální placení. Jsou to především noví členové, kteří se po dvou týdnech na zkoušku rozhodli, že si klub začnou platit. Mohou to ale být i firemní členové nebo studenti ze vzdělávacích agentur, kterým skončilo členství zaplacené někým jiným a rozhodli se pokračovat za svoje.
 
@@ -317,10 +317,36 @@ Tenká modrá čára představuje počet členů, kteří v daném měsíci popr
                 'borderWidth': 2,
             },
             {
-                'label': 'nová placená individuální členství',
+                'label': 'nová individuálně placená členství',
                 'data': charts_individual_signups,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
+            },
+            {
+                'label': 'neprodloužená členství',
+                'data': charts_churn,
+                'borderColor': '#dc3545',
+                'borderWidth': 2,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+    }|tojson|forceescape }}"></canvas>
+
+Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kterým členství platí firma, nebo jej mají zadarmo. Graf průměrné délky členství v klubu tedy počítá pouze s těmi, kdo si to platí sami. Pokud si někdo koupí roční členství, započítá se to jako 12 měsíců trvající členství, i když ještě neproběhlo.
+
+<canvas
+    class="chart" width="400" height="200"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts_club_labels,
+        'datasets': [
+            {
+                'label': 'průměrná délka individuálně placeného členství v měsících',
+                'data': charts_individual_duration,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
             },
         ]
     }|tojson|forceescape }}"
