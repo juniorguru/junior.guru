@@ -129,7 +129,7 @@ Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velk
                 'backgroundColor': '#638CDD',
             },
             {
-                'label': 'inzerce nabídek práce ',
+                'label': 'inzerce nabídek práce',
                 'data': charts_revenue_breakdown.pop('jobs'),
                 'backgroundColor': '#421BD4',
             },
@@ -206,25 +206,63 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
 
 ## Členové klubu
 
-[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně má **{{ members_total_count }} členů**, ale někteří z nich nejsou z historických důvodů evidováni přes memberful.com, takže nejsou zahrnuti v grafech.
+[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} uživatelů**.
+
+Každý příchozí člen má v klubu dva týdny zdarma, bez ohledu na to, jakým způsobem za členství následně platí. Některým lidem dávám vstup do klubu zcela zdarma, ať už na základě vlastního uvážení, jako poděkování např. za přednášku v klubu, jako stipendium, nebo ze strategických důvodů. Jde o různé spolupráce s komunitami, podcasty, nebo třeba zvaní mentorů na specifické technologie, jejichž zastoupení na straně seniorů je v klubu slabé, ale od juniorů je po tématu poptávka.
+
+S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzájem neplatíme. Oni využívají platformu klubu pro svůj mentoring a své studenty. Všichni mají automaticky vstup zdarma. Klub má díky tomu experty na frontend a moderátora Dana Srba, který může zaskakovat, kdyby bylo potřeba.
+
+Část lidí mi neplatí přes systém pro správu členství, ale dostali členství zdarma na základě toho, že mě [podporovali na GitHub Sponsors nebo Patreonu](/donate/). V důsledku to tedy zdarma není, jen mi peníze posílají jinudy. Mnohdy posílají víc, než by je stálo standardní členství v klubu.
+
+S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou studenty svých kurzů a proplatí jim členství na první tři měsíce. Agentura z toho má službu pro studenty navíc a já z toho mám to, že pokud se lidem v klubu zalíbí, budou si jej dál platit ze svého.
 
 <canvas
     class="chart" width="400" height="200"
-    data-chart-type="line"
+    data-chart-type="bar"
     data-chart="{{ {
         'labels': charts_club_labels,
         'datasets': [
             {
-                'label': 'počet členů',
-                'data': charts_subscriptions,
-                'borderColor': '#1755d1',
-                'borderWidth': 2,
+                'label': 'neplatí členství',
+                'data': charts_subscriptions_breakdown.pop('free'),
+                'backgroundColor': '#ddd',
+            },
+            {
+                'label': 'dva týdny zdarma',
+                'data': charts_subscriptions_breakdown.pop('trial'),
+                'backgroundColor': '#a9a9a9',
+            },
+            {
+                'label': 'symbióza s CoreSkill',
+                'data': charts_subscriptions_breakdown.pop('coreskill'),
+                'backgroundColor': '#638CDD',
+            },
+            {
+                'label': 'přispívají přes GitHub Sponsors, Patreon',
+                'data': charts_subscriptions_breakdown.pop('supporters'),
+                'backgroundColor': '#02CABB',
+            },
+            {
+                'label': 'členství si platí sami',
+                'data': charts_subscriptions_breakdown.pop('individuals'),
+                'backgroundColor': '#1755d1',
+            },
+            {
+                'label': 'členství platí firma',
+                'data': charts_subscriptions_breakdown.pop('company'),
+                'backgroundColor': '#638CDD',
+            },
+            {
+                'label': 'členství platí vzdělávací agentura',
+                'data': charts_subscriptions_breakdown.pop('students'),
+                'backgroundColor': '#083284',
             },
         ],
     }|tojson|forceescape }}"
+    {{ charts_subscriptions_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'y': {'beginAtZero': true}}
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
     }|tojson|forceescape }}"></canvas>
 
 ## Podíl žen v klubu

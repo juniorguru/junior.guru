@@ -61,8 +61,10 @@ COUPON_RE = re.compile(r'''
         (?P<coupon_name>
             (?P<student_prefix>STUDENT)?
             [A-Z]+
+            [0-9]{0,4}  # numbers allowed, but only short ones, in the middle of the name
+            [A-Z]+
         )
-        (?P<coupon_suffix>[0-9]+)
+        (?P<coupon_suffix>[0-9]{5,})
         (I(?P<invoice_id>[0-9]+))?
         (V(?P<version>[0-9]+))?
     $

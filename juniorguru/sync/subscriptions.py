@@ -37,12 +37,38 @@ FEMININE_NAME_RE = re.compile(r'''
     )\b)
 ''', re.VERBOSE | re.IGNORECASE)
 
+DEFAULT_CATEGORY = 'individuals'
+
+TRIAL_CATEGORY = 'trial'
+
+COMPANY_CATEGORY = 'company'
+
+STUDENT_CATEGORY = 'students'
+
+COUPON_NAMES_CATEGORIES_MAPPING = {
+    'THANKYOU': 'free',
+    'THANKYOUFOREVER': 'free',
+    'PATREON': 'supporters',
+    'GITHUB': 'supporters',
+    'FOUNDERS': 'free',
+    'FINAID': 'free',
+    'CORESKILL': 'coreskill',
+    'STUDENTCORESKILL': 'coreskill',
+}
+
 
 @sync_task(club_content_task, companies_task)
 @db.connection_context()
 def main():
     db.drop_tables([CompanyStudentSubscription, ClubSubscribedPeriod])
     db.create_tables([CompanyStudentSubscription, ClubSubscribedPeriod])
+
+    logger.info('Mapping coupons to categories')
+    coupon_names_categories_mapping = {**{parse_coupon(coupon_base)['coupon_name']: COMPANY_CATEGORY
+                                          for coupon_base in Company.coupon_bases()},
+                                       **{parse_coupon(coupon_base)['coupon_name']: STUDENT_CATEGORY
+                                          for coupon_base in Company.student_coupon_bases()},
+                                       **COUPON_NAMES_CATEGORIES_MAPPING}
 
     logger.info('Getting data from Memberful')
     memberful = Memberful()
@@ -60,7 +86,8 @@ def main():
                         active
                         createdAt
                         expiresAt
-                        pastDue
+                        trialStartAt
+                        trialEndAt
                         coupon {
                             code
                         }
@@ -99,7 +126,6 @@ def main():
                 pass
 
         name = subscription['member']['fullName'].strip()
-        has_feminine_name = bool(FEMININE_NAME_RE.search(name)) if name else False
         coupon = get_active_coupon(subscription)
         coupon_parts = parse_coupon(coupon) if coupon else {}
         student_record_fields = dict(itertools.chain.from_iterable([
@@ -114,7 +140,7 @@ def main():
         records.append({
             'Name': name,
             'Discord Name': user.display_name.strip() if user else None,
-            'Gender': ('F' if has_feminine_name else 'M'),
+            'Gender': ('F' if has_feminine_name(name) else 'M'),
             'E-mail': subscription['member']['email'],
             'Memberful ID': subscription['member']['id'],
             'Stripe ID': subscription['member']['stripeCustomerId'],
@@ -127,7 +153,6 @@ def main():
             'Memberful Coupon Base': coupon_parts.get('coupon_base'),
             'Discord Member?': user.is_member if user else False,
             'Discord Since': user.first_seen_on().isoformat() if user else None,
-            'Memberful Past Due?': subscription['pastDue'],
             **student_record_fields,
         })
 
@@ -154,8 +179,17 @@ def main():
             user.save()
 
         for subscribed_period in get_subscribed_periods(subscription):
-            ClubSubscribedPeriod.create(has_feminine_name=has_feminine_name,
-                                        **subscribed_period)
+            if subscribed_period['is_trial']:
+                category = TRIAL_CATEGORY
+            elif subscribed_period['coupon']:
+                coupon_name = parse_coupon(subscribed_period['coupon'])['coupon_name']
+                category = coupon_names_categories_mapping.get(coupon_name, DEFAULT_CATEGORY)
+            else:
+                category = DEFAULT_CATEGORY
+            ClubSubscribedPeriod.create(start_on=subscribed_period['start_on'],
+                                        end_on=subscribed_period['end_on'],
+                                        has_feminine_name=has_feminine_name(name),
+                                        category=category)
 
     logger.info('Process remaining Discord users')
     for user in ClubUser.listing():
@@ -241,10 +275,21 @@ def get_subscriptions(graphql_results):
 def get_subscribed_periods(subscription):
     orders = list(sorted(subscription['orders'], key=itemgetter('createdAt'), reverse=True))
     renewal_on = arrow.get(subscription['expiresAt']).date()
+
+    if subscription.get('trialStartAt') and subscription.get('trialEndAt'):
+        trial = (arrow.get(subscription['trialStartAt']).date(),
+                 arrow.get(subscription['trialEndAt']).date() - timedelta(days=1))
+    else:
+        trial = None
+
     for order in orders:
         start_on = arrow.get(order['createdAt']).date()
-        coupon_base = parse_coupon(order['coupon']['code']).get('coupon_base') if order['coupon'] else None
-        yield dict(start_on=start_on,
-                   end_on=renewal_on - timedelta(days=1),
-                   coupon_base=coupon_base)
+        end_on = renewal_on - timedelta(days=1)
+        coupon = order['coupon']['code'] if order['coupon'] else None
+        is_trial = (start_on == trial[0] and end_on == trial[1]) if trial else False
+        yield dict(start_on=start_on, end_on=end_on, coupon=coupon, is_trial=is_trial)
         renewal_on = start_on
+
+
+def has_feminine_name(name):
+    return bool(FEMININE_NAME_RE.search(name)) if name else False

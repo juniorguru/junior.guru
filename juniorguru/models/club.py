@@ -1,5 +1,7 @@
 import math
 from datetime import date, timedelta
+import functools
+from collections import Counter
 
 from peewee import (BooleanField, CharField, DateTimeField, ForeignKeyField,
                     IntegerField, DateField, fn)
@@ -190,17 +192,25 @@ class ClubPinReaction(BaseModel):
 class ClubSubscribedPeriod(BaseModel):
     start_on = DateField()
     end_on = DateField()
-    coupon_base = CharField(null=True)
+    category = CharField(null=True)
     has_feminine_name = BooleanField()
 
     @classmethod
     def listing(cls, date):
         return cls.select() \
-            .where(cls.start_on <= date, cls.end_on >= date)
+            .where(cls.start_on <= date, cls.end_on >= date) \
+            .order_by(cls.start_on.desc())
 
     @classmethod
     def count(cls, date):
         return cls.listing(date).count()
+
+    @classmethod
+    def count_breakdown(cls, date):
+        counter = Counter([subscribed_period.category
+                           for subscribed_period
+                           in cls.listing(date)])
+        return dict(counter)
 
     @classmethod
     def women_count(cls, date):
@@ -214,3 +224,11 @@ class ClubSubscribedPeriod(BaseModel):
         if count:
             return math.ceil((100 * cls.women_count(date)) / count)
         return 0
+
+
+def sum_by_category(subscribed_periods):
+    def reduce_step(mapping, subscribed_period):
+        mapping.setdefault(subscribed_period.category, 0)
+        mapping[subscribed_period.category] += 1
+        return mapping
+    return functools.reduce(reduce_step, subscribed_periods, {})

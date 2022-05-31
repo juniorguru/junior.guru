@@ -186,7 +186,8 @@ def test_get_subscribed_periods():
                     'active': True,
                     'createdAt': 1629300930,
                     'expiresAt': 1654097730,
-                    'pastDue': False,
+                    'trialStartAt': 1629300930,
+                    'trialEndAt': 1630510530,
                     'coupon': None,
                     'member': {},
                     'orders': [
@@ -203,16 +204,16 @@ def test_get_subscribed_periods():
                     ]}
 
     assert list(get_subscribed_periods(subscription)) == [
-        {'start_on': date(2022, 5, 1), 'end_on': date(2022, 5, 31), 'coupon_base': None},
-        {'start_on': date(2022, 4, 1), 'end_on': date(2022, 4, 30), 'coupon_base': None},
-        {'start_on': date(2022, 3, 1), 'end_on': date(2022, 3, 31), 'coupon_base': None},
-        {'start_on': date(2022, 2, 1), 'end_on': date(2022, 2, 28), 'coupon_base': None},
-        {'start_on': date(2022, 1, 1), 'end_on': date(2022, 1, 31), 'coupon_base': None},
-        {'start_on': date(2021, 12, 1), 'end_on': date(2021, 12, 31), 'coupon_base': None},
-        {'start_on': date(2021, 11, 1), 'end_on': date(2021, 11, 30), 'coupon_base': 'COUPON12345678'},
-        {'start_on': date(2021, 10, 1), 'end_on': date(2021, 10, 31), 'coupon_base': 'STUDENTGARGAMEL69320144'},
-        {'start_on': date(2021, 9, 1), 'end_on': date(2021, 9, 30), 'coupon_base': 'COUPON12345678'},
-        {'start_on': date(2021, 8, 18), 'end_on': date(2021, 8, 31), 'coupon_base': None},
+        {'start_on': date(2022, 5, 1), 'end_on': date(2022, 5, 31), 'coupon': None, 'is_trial': False},
+        {'start_on': date(2022, 4, 1), 'end_on': date(2022, 4, 30), 'coupon': None, 'is_trial': False},
+        {'start_on': date(2022, 3, 1), 'end_on': date(2022, 3, 31), 'coupon': None, 'is_trial': False},
+        {'start_on': date(2022, 2, 1), 'end_on': date(2022, 2, 28), 'coupon': None, 'is_trial': False},
+        {'start_on': date(2022, 1, 1), 'end_on': date(2022, 1, 31), 'coupon': None, 'is_trial': False},
+        {'start_on': date(2021, 12, 1), 'end_on': date(2021, 12, 31), 'coupon': None, 'is_trial': False},
+        {'start_on': date(2021, 11, 1), 'end_on': date(2021, 11, 30), 'coupon': 'COUPON12345678', 'is_trial': False},
+        {'start_on': date(2021, 10, 1), 'end_on': date(2021, 10, 31), 'coupon': 'STUDENTGARGAMEL69320144V2', 'is_trial': False},
+        {'start_on': date(2021, 9, 1), 'end_on': date(2021, 9, 30), 'coupon': 'COUPON12345678', 'is_trial': False},
+        {'start_on': date(2021, 8, 18), 'end_on': date(2021, 8, 31), 'coupon': None, 'is_trial': True},
     ]
 
 
@@ -230,8 +231,8 @@ def test_get_subscribed_periods_different_created_at():
                     ]}
 
     assert list(get_subscribed_periods(subscription)) == [
-        {'start_on': date(2021, 5, 14), 'end_on': date(2022, 5, 13), 'coupon_base': None},
-        {'start_on': date(2021, 4, 30), 'end_on': date(2021, 5, 13), 'coupon_base': None},
+        {'start_on': date(2021, 5, 14), 'end_on': date(2022, 5, 13), 'coupon': None, 'is_trial': False},
+        {'start_on': date(2021, 4, 30), 'end_on': date(2021, 5, 13), 'coupon': None, 'is_trial': False},
     ]
 
 

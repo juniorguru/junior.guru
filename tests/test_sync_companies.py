@@ -4,9 +4,9 @@ from juniorguru.sync.companies import coerce_record, parse_slug
 
 
 def test_coerce_record_slug():
-    record = coerce_record({'Coupon Base': 'COUPON123'})
+    record = coerce_record({'Coupon Base': 'COUPON12345678'})
 
-    assert record['coupon_base'] == 'COUPON123'
+    assert record['coupon_base'] == 'COUPON12345678'
     assert record['slug'] == 'coupon'
 
 
@@ -18,7 +18,7 @@ def test_coerce_record_slug_no_coupon_base():
 
 @pytest.mark.parametrize('coupon_base, expected', [
     (None, None),
-    ('BANANA123', 'banana'),
+    ('BANANA12345678', 'banana'),
 ])
 def test_slug(coupon_base, expected):
     assert parse_slug(coupon_base) == expected

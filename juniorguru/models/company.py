@@ -73,6 +73,16 @@ class Company(BaseModel):
         return cls.listing() \
             .where(cls.student_coupon_base.is_null(False))
 
+    @classmethod
+    def coupon_bases(cls):
+        return {company.coupon_base for company
+                in cls.select().where(cls.coupon_base.is_null(False))}
+
+    @classmethod
+    def student_coupon_bases(cls):
+        return {company.student_coupon_base for company
+                in cls.select().where(cls.student_coupon_base.is_null(False))}
+
     def __str__(self):
         return self.name
 

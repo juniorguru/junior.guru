@@ -222,8 +222,8 @@ def test_user_is_year_old(db_connection, today, expected):
     (datetime(2021, 1, 15), None, True),
     (datetime(2021, 2, 1), None, False),
     (datetime(2021, 5, 1), None, False),
-    (datetime(2021, 1, 15), 'FOUNDERS123', True),
-    (datetime(2021, 5, 1), 'FOUNDERS123', True),
+    (datetime(2021, 1, 15), 'FOUNDERS12345678', True),
+    (datetime(2021, 5, 1), 'FOUNDERS12345678', True),
 ])
 def test_user_is_founder(db_connection, joined_at, coupon, expected):
     user = create_user(1, joined_at=joined_at, coupon_base=coupon)
