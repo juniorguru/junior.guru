@@ -90,6 +90,8 @@ def on_docs_context(context):
     context['charts_women'] = charts.per_month(ClubSubscribedPeriod.women_count, club_charts_months)
     context['charts_subscriptions_breakdown'] = charts.per_month_breakdown(ClubSubscribedPeriod.count_breakdown, club_charts_months)
     context['charts_women_ptc'] = charts.per_month(ClubSubscribedPeriod.women_ptc, club_charts_months)
+    context['charts_signups'] = charts.per_month(ClubSubscribedPeriod.signups_count, club_charts_months)
+    context['charts_individual_signups'] = charts.per_month(ClubSubscribedPeriod.individual_signups_count, club_charts_months)
 
     # podcast.md, handbook/cv.md
     context['podcast_episodes'] = PodcastEpisode.listing()

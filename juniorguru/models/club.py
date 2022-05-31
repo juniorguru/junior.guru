@@ -1,11 +1,11 @@
 import math
 from datetime import date, timedelta
-import functools
 from collections import Counter
 
 from peewee import (BooleanField, CharField, DateTimeField, ForeignKeyField,
                     IntegerField, DateField, fn)
 
+from juniorguru.lib.charts import month_range
 from juniorguru.lib.club import (CLUB_LAUNCH_ON, INTRO_CHANNEL, IS_NEW_PERIOD_DAYS,
                                  JUNIORGURU_BOT, RECENT_PERIOD_DAYS,
                                  TOP_MEMBERS_PERCENT, UPVOTES_EXCLUDE_CHANNELS,
@@ -198,6 +198,7 @@ class ClubSubscribedPeriod(BaseModel):
     COMPANY_CATEGORY = 'company'
     STUDENT_CATEGORY = 'students'
 
+    memberful_id = CharField()
     start_on = DateField()
     end_on = DateField()
     category = CharField(null=True)
@@ -206,8 +207,7 @@ class ClubSubscribedPeriod(BaseModel):
     @classmethod
     def listing(cls, date):
         return cls.select() \
-            .where(cls.start_on <= date, cls.end_on >= date) \
-            .order_by(cls.start_on.desc())
+            .where(cls.start_on <= date, cls.end_on >= date)
 
     @classmethod
     def count(cls, date):
@@ -239,10 +239,19 @@ class ClubSubscribedPeriod(BaseModel):
             .where(cls.category == cls.INDIVIDUALS_CATEGORY) \
             .count()
 
+    @classmethod
+    def signups_count(cls, date):
+        from_date, to_date = month_range(date)
+        return cls.select(cls.memberful_id, fn.min(cls.start_on)) \
+            .group_by(cls.memberful_id) \
+            .having(cls.start_on >= from_date, cls.start_on <= to_date) \
+            .count()
 
-def sum_by_category(subscribed_periods):
-    def reduce_step(mapping, subscribed_period):
-        mapping.setdefault(subscribed_period.category, 0)
-        mapping[subscribed_period.category] += 1
-        return mapping
-    return functools.reduce(reduce_step, subscribed_periods, {})
+    @classmethod
+    def individual_signups_count(cls, date):
+        from_date, to_date = month_range(date)
+        return cls.select(cls.memberful_id, fn.min(cls.start_on)) \
+            .where(cls.category == cls.INDIVIDUALS_CATEGORY) \
+            .group_by(cls.memberful_id) \
+            .having(cls.start_on >= from_date, cls.start_on <= to_date) \
+            .count()

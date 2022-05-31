@@ -206,7 +206,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
 
 ## Členství v klubu
 
-[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} uživatelů**.
+[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**.
 
 <canvas
     class="chart" width="400" height="200"
@@ -221,13 +221,13 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
                 'borderWidth': 2,
             },
             {
-                'label': 'počet těch, kdo si členství platí sami',
+                'label': 'počet individuálních platících členů',
                 'data': charts_individuals,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
             {
-                'label': 'počet žen',
+                'label': 'počet členek',
                 'data': charts_women,
                 'borderColor': '#dc3545',
                 'borderWidth': 1,
@@ -296,6 +296,36 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
+    }|tojson|forceescape }}"></canvas>
+
+### Příchody a odchody
+
+Graf s registracemi obsahuje všechny typy členství. Ať už nový člen přišel přes firmu, stipendium, nebo individuálně, tak se započte.
+
+Tenká modrá čára představuje počet členů, kteří v daném měsíci poprvé v historii svého členství přešli na individuální placení. Jsou to především noví členové, kteří se po dvou týdnech na zkoušku rozhodli, že si klub začnou platit. Mohou to ale být i firemní členové nebo studenti ze vzdělávacích agentur, kterým skončilo členství zaplacené někým jiným a rozhodli se pokračovat za svoje.
+
+<canvas
+    class="chart" width="400" height="200"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts_club_labels,
+        'datasets': [
+            {
+                'label': 'všechny nové registrace',
+                'data': charts_signups,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'nová placená individuální členství',
+                'data': charts_individual_signups,
+                'borderColor': '#1755d1',
+                'borderWidth': 1,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
     }|tojson|forceescape }}"></canvas>
 
 ### Podíl žen v klubu

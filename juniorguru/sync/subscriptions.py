@@ -180,7 +180,8 @@ def main():
                 category = coupon_names_categories_mapping.get(coupon_name, ClubSubscribedPeriod.INDIVIDUALS_CATEGORY)
             else:
                 category = ClubSubscribedPeriod.INDIVIDUALS_CATEGORY
-            ClubSubscribedPeriod.create(start_on=subscribed_period['start_on'],
+            ClubSubscribedPeriod.create(memberful_id=subscription['member']['id'],
+                                        start_on=subscribed_period['start_on'],
                                         end_on=subscribed_period['end_on'],
                                         has_feminine_name=has_feminine_name(name),
                                         category=category)
