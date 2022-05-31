@@ -204,7 +204,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
     }|tojson|forceescape }}"></canvas>
 
-## Členové klubu
+## Členství v klubu
 
 [Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} uživatelů**.
 
@@ -239,7 +239,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
         'scales': {'y': {'beginAtZero': true}}
     }|tojson|forceescape }}"></canvas>
 
-## Typy členství
+### Typy členství
 
 Každý příchozí člen má v klubu dva týdny zdarma, bez ohledu na to, jakým způsobem za členství následně platí. Některým lidem dávám vstup do klubu zcela zdarma, ať už na základě vlastního uvážení, jako poděkování např. za přednášku v klubu, jako stipendium, nebo ze strategických důvodů. Jde o různé spolupráce s komunitami, podcasty, nebo třeba zvaní mentorů na specifické technologie, jejichž zastoupení na straně seniorů je v klubu slabé, ale od juniorů je po tématu poptávka.
 
@@ -298,7 +298,7 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
     }|tojson|forceescape }}"></canvas>
 
-## Podíl žen v klubu
+### Podíl žen v klubu
 
 Podíl žen na počtu členů sleduji z vlastní zvědavosti a není to žádná přesná metrika. Nikdo nikde nevyplňuje, zda je žena nebo muž. Pro účely statistiky se to určuje jen odhadem podle křestního jména a tvaru příjmení.
 
