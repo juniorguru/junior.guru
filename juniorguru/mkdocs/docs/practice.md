@@ -112,10 +112,17 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
   ) }}
 
   {{ link_card(
+    'Mentoring na robime.it',
+    'robime.it!mentoring-program-robime-it.jpg',
+    'https://robime.it/mentoring-program-robime-it/',
+    'Slovenský mentoringový program.'
+  ) }}
+
+  {{ link_card(
     'ReactGirls Mentoring',
     'reactgirls.com!mentoring.jpg',
     'https://reactgirls.com/mentoring',
-    'Mentorský program pro ženy zajímající se o webový frontend.',
+    'Mentoringový program pro ženy zajímající se o webový frontend.',
     badge_icon='gender-female',
     badge_text='Pro ženy',
   ) }}
