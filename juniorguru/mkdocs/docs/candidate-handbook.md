@@ -176,7 +176,7 @@ Zrovna v inzerátech nabízejících první práci v IT nebo částečný úvaz
 
 ### Kde jsou firmy, které berou každého?    <span id="hungry-market"></span>
 
-„Nauč se programovat, firmy v IT berou z nedostatku lidí každého, kdo má jen zájem.“ Toto je bohužel **mýtus**. IT rozhodně je přístupný obor a projít změnou kariéry za poměrně krátkou dobu lze, ale **jednoduché to není a hned to také není**. Firmy sice opravdu nemají dostatek lidí, kteří umí programovat, ale často se rozhodnou investovat spoustu času i peněz do hledání zkušených, než aby přijali juniora a tomu se pak museli věnovat. **Počítej s tím, že můžeš projít i desítky pohovorů, než najdeš svou první práci v IT.** Je to běžné. Připrav se na to, že hledání práce ti může zabrat i měsíce. Obrň své sebevědomí i rodinný rozpočet, bude to náročný kolotoč.
+„Nauč se programovat, firmy v IT berou z nedostatku lidí každého, kdo má jen zájem.“ Toto je bohužel **mýtus**. IT rozhodně je přístupný obor a projít změnou kariéry za poměrně krátkou dobu lze, ale **jednoduché to není a hned to také není**. [Firmy sice opravdu nemají dostatek lidí](https://blog.freelo.cz/pruzkum-mezi-programatory-penize-nejsou-vse/), kteří umí programovat, ale často se rozhodnou investovat spoustu času i peněz do hledání zkušených, než aby přijali juniora a tomu se pak museli věnovat. **Počítej s tím, že můžeš projít i desítky pohovorů, než najdeš svou první práci v IT.** Je to běžné. Připrav se na to, že hledání práce ti může zabrat i měsíce. Obrň své sebevědomí i rodinný rozpočet, bude to náročný kolotoč.
 
 ### Proč práci nabízí hlavně velké firmy?    <span id="why-big-companies"></span>
 
