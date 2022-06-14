@@ -8,6 +8,12 @@
 # avatar_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
+- id: "0006"
+  title: Markéta Willis o její cestě k IT a učení (se) programování
+  publish_on: "2022-06-15"
+  description: |
+    Do šestého dílu si Pája pozvala Markétu Willis. Ačkoliv Markéta vystudovala pedagogickou fakultu, teď se živí jako frontend developerka ve společnosti Applifting. Kromě toho stíhá ještě lektorovat pro organizaci Czechitas. Dozvíš se, jaká byla její cesta k programování a uslyšíš i o jejích zkušenostech z lektorování programování. 
+
 - id: "0005"
   title: "Petr Přibil (Tatanka) o změně kariéry od lesníka až k Python developerovi"
   avatar_path: avatars-participants/petr-pribil.jpg
