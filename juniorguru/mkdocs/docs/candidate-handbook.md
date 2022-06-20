@@ -198,7 +198,7 @@ Situace kolem covidu-19 ale nakonec nedává firmám příliš na výběr. Prác
 
 Práce na dálku se během pandemie stala trendem, nejde však o nic vyloženě nového. Souhrnný článek [Práce z domova](https://honzajavorek.cz/blog/prace-z-domova/) nebo kniha [Remote](https://basecamp.com/books/remote) vyšly skoro před dekádou, ale i tak mohou dodnes sloužit jako aktuální a kvalitní zdroje informací o této problematice. Projdi si alespoň ten článek, ať se dokážeš dobře připravit i na nevýhody, které práce na dálku přináší.
 
-Možná znáš pojem [digitální nomádství](https://honzajavorek.cz/blog/prace-z-domova/#digitalni-nomadi) a láká tě představa, že ťukáš do notebooku někde na pláži. Na fotkách to vypadá dobře, ale [realita je složitější](http://www.svetpatritemcoseneposerou.cz/blog-ikigai-a-japonsky-smysl-zivota.html) — a nejde jen o displej na přímém slunci nebo písek v klávesnici. Hezký úvod a spoustu dalších odkazů najdeš v článku na [Travel Bibli](https://travelbible.cz/digitalni-nomadstvi/).
+Možná znáš pojem [digitální nomádství](https://honzajavorek.cz/blog/prace-z-domova/#digitalni-nomadi) a láká tě představa, že ťukáš do notebooku někde na pláži. Na fotkách to vypadá dobře, ale [realita je složitější](https://www.svetpatritemcoseneposerou.cz/blog-ikigai-a-japonsky-smysl-zivota.html) — a nejde jen o displej na přímém slunci nebo písek v klávesnici. Hezký úvod a spoustu dalších odkazů najdeš v článku na [Travel Bibli](https://travelbible.cz/digitalni-nomadstvi/).
 
 {% if jobs_remote %}
 #### Nabídky práce na dálku
