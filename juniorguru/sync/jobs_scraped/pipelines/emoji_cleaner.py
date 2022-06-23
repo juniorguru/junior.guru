@@ -1,9 +1,6 @@
 import emoji
 
 
-EMOJI_RE = emoji.get_emoji_regexp()
-
-
 def process(item):
-    item['title'] = EMOJI_RE.sub('', item['title']).strip()
+    item['title'] = emoji.replace_emoji(item['title'], replace='').strip()
     return item
