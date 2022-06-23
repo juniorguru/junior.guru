@@ -118,7 +118,7 @@ def _discord_task(import_path, args):
             logger_dt.debug('Got an error, raising')
             raise
 
-    intents = discord.Intents(guilds=True, members=True)
+    intents = discord.Intents(guilds=True, members=True, message_content=True)
     client = Client(intents=intents)
 
     exc = None
