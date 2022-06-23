@@ -25,7 +25,6 @@ SYNC_TASKS_MAIN = import_sync_tasks([
     'juniorguru.sync.podcast',
     'juniorguru.sync.returning_members',
     'juniorguru.sync.roles',
-    'juniorguru.sync.stickers',
     'juniorguru.sync.stories',
     'juniorguru.sync.subscriptions',
     'juniorguru.sync.supporters',
