@@ -1096,7 +1096,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "py-cord"
-version = "2.0.0b6"
+version = "2.0.0b7"
 description = "A Python wrapper for the Discord API"
 category = "main"
 optional = false
@@ -1727,7 +1727,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.8.*"
-content-hash = "8723e6aed44a1094cdfbcfa649622783229161b5e4e61ca77e73c160b6b4ff54"
+content-hash = "87a2afba73d39c961624cda3108b599801006d621114f21cf564490b395da3ef"
 
 [metadata.files]
 aiodns = [
@@ -2631,8 +2631,8 @@ py = [
     {file = "py-1.11.0.tar.gz", hash = "sha256:51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719"},
 ]
 py-cord = [
-    {file = "py-cord-2.0.0b6.tar.gz", hash = "sha256:14fb8489940dcfe2ed33db5ce7b974ccf8e721b01b4154ccf648659df1760761"},
-    {file = "py_cord-2.0.0b6-py3-none-any.whl", hash = "sha256:32cae9e5391817ad91ec72fe2756d8d817cad23cbdb6eaf99f51f7722fba8bcc"},
+    {file = "py-cord-2.0.0b7.tar.gz", hash = "sha256:681cc1589eaa90f39a812e8dd94115eff305103ce974f4ca4a2062cea027b47f"},
+    {file = "py_cord-2.0.0b7-py3-none-any.whl", hash = "sha256:4a38ea3a535ab301e53edb7ac8244a793ab174577b5360fbddf9670c9a5f620a"},
 ]
 pyasn1 = [
     {file = "pyasn1-0.4.8-py2.4.egg", hash = "sha256:fec3e9d8e36808a28efb59b489e4528c10ad0f480e57dcc32b4de5c9d8c9fdf3"},
