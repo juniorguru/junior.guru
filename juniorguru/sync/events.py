@@ -39,8 +39,6 @@ YOUTUBE_THUMBNAIL_HEIGHT = 720
 
 EVENTS_CHANNEL = 940587142659338300
 
-EVENTS_CHAT_CHANNEL = 821411678167367691
-
 
 schema = Seq(
     Map({
@@ -131,7 +129,7 @@ def main():
 @db.connection_context()
 async def post_next_event_messages(client):
     announcements_channel = await client.fetch_channel(ANNOUNCEMENTS_CHANNEL)
-    events_chat_channel = await client.fetch_channel(EVENTS_CHAT_CHANNEL)
+    events_channel = await client.fetch_channel(EVENTS_CHANNEL)
 
     event = Event.next()
     if not event:
@@ -171,14 +169,14 @@ async def post_next_event_messages(client):
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
             logger.info("Found no message, posting!")
-            content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu „{event.title}” s {speakers}! Odehrávat se to bude v klubovně, případné dotazy v {events_chat_channel.mention} 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.url}"
+            content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu „{event.title}” s {speakers}! Odehrávat se to bude v {events_channel.mention}, dotazy jde pokládat v tamním chatu 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.url}"
             await announcements_channel.send(content)
     else:
         logger.info("It's not the day when the event is")
 
     logger.info("About to post a message to event chat on the day when the event is")
     if event.start_at.date() == date.today():
-        message = ClubMessage.last_bot_message(EVENTS_CHAT_CHANNEL, '👋', event.url)
+        message = ClubMessage.last_bot_message(EVENTS_CHANNEL, '👋', event.url)
         if message:
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
@@ -197,7 +195,7 @@ async def post_next_event_messages(client):
                 "",
                 f"👉 {event.url}",
             ]
-            await events_chat_channel.send('\n'.join(content))
+            await events_channel.send('\n'.join(content))
     else:
         logger.info("It's not the day when the event is")
 
