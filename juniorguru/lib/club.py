@@ -60,8 +60,7 @@ COUPON_RE = re.compile(r'''
     ^
         (?P<coupon_name>
             (?P<student_prefix>STUDENT)?
-            [A-Z]+
-            [0-9]  # numbers allowed, but only in the middle of the name
+            [A-Z0-9]+
             [A-Z]+
         )
         (?P<coupon_suffix>[0-9]{5,})
