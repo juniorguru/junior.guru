@@ -95,7 +95,6 @@ backup.tar.gz
 # Web statics
 /juniorguru/web/static/*
 !/juniorguru/web/static/src
-!/juniorguru/web/static/downloads
 
 # Testing debug artifacts
 /tests/sync_jobs_logos/logo-converted.png
