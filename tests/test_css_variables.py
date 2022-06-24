@@ -94,7 +94,6 @@ def test_image_templates(name, value, source_of_truth):
 
 SVG_IMAGES_WEB = list(itertools.chain(
     (PACKAGE_DIR / 'web' / 'static' / 'src' / 'images').glob('*.svg'),
-    (PACKAGE_DIR / 'web' / 'static' / 'src' / 'images' / 'donate').glob('*.svg'),
     (PACKAGE_DIR / 'images').glob('*.svg'),
 ))
 

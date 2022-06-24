@@ -95,7 +95,7 @@ Následující graf zobrazuje vývoj mých výnosů a nákladů v každém konkr
 
 ## Výnosy
 
-Původně jsem se snažil JG živit z inzerce nabídek práce, ale byznys na tomto modelu jsem nedokázal dostatečně rozpohybovat tak, abych věřil, že má smysl v tom dál pokračovat. Mezitím jsem se pokusil zpeněžit [příručku](motivation.md) skrze loga firem a [prosil jsem návštěvníky webu o dobrovolné příspěvky](/donate/).
+Původně jsem se snažil JG živit z inzerce nabídek práce, ale byznys na tomto modelu jsem nedokázal dostatečně rozpohybovat tak, abych věřil, že má smysl v tom dál pokračovat. Mezitím jsem se pokusil zpeněžit [příručku](motivation.md) skrze loga firem a prosil jsem návštěvníky webu o dobrovolné příspěvky.
 
 Ke konci roku 2020 jsem se rozhodl změnit byznys model a vytvořit kolem JG placenou komunitu na Discordu. Toto detailně popisuji ve svém [článku na blogu](https://honzajavorek.cz/blog/spoustim-klub/). [Klub](club.md) se veřejnosti otevřel v únoru 2021.
 
@@ -105,7 +105,7 @@ Individuální členství ale nevystačí, takže si domlouvám [spolupráce s f
 
 Inzerci nabídek práce nechci zrušit, ale aktuálně není na vrcholu mých priorit. Pokud, tak spíše v podobě dlouhodobé spolupráce s firmou, než formou jednorázových inzerátů.
 
-Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velkou měrou právě díky nim JG ve svých počátcích neskončilo. Teď je ale čas postavit se na vlastní nohy! Možnost přispět zřejmě nezruším, ale přestal jsem ji propagovat. Chtěl bych, aby dobrovolné příspěvky jednou plně nahradilo individuální členství v klubu.
+Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velkou měrou právě díky nim JG ve svých počátcích neskončilo. Teď je ale čas postavit se na vlastní nohy! Možnost přispět zřejmě neruším, ale přestal jsem ji propagovat. Chtěl bych, aby dobrovolné příspěvky jednou plně nahradilo individuální členství v klubu.
 
 <canvas
     class="chart" width="400" height="200"
@@ -245,7 +245,7 @@ Každý příchozí člen má v klubu dva týdny zdarma, bez ohledu na to, jaký
 
 S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzájem neplatíme. Oni využívají platformu klubu pro svůj mentoring a své studenty. Všichni mají automaticky vstup zdarma. Klub má díky tomu experty na frontend a moderátora Dana Srba, který může zaskakovat, kdyby bylo potřeba.
 
-Část lidí mi neplatí přes systém pro správu členství, ale dostali členství zdarma na základě toho, že mě [podporovali na GitHub Sponsors nebo Patreonu](/donate/). V důsledku to tedy zdarma není, jen mi peníze posílají jinudy. Mnohdy posílají víc, než by je stálo standardní členství v klubu.
+Část lidí mi neplatí přes systém pro správu členství, ale dostali členství zdarma na základě toho, že mě podporovali na GitHub Sponsors nebo Patreonu. V důsledku to tedy zdarma není, jen mi peníze posílají jinudy. Mnohdy posílají víc, než by je stálo standardní členství v klubu.
 
 S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou studenty svých kurzů a proplatí jim členství na první tři měsíce. Agentura z toho má službu pro studenty navíc a já z toho mám to, že pokud se lidem v klubu zalíbí, budou si jej dál platit ze svého.
 

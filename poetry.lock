@@ -223,17 +223,6 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
-name = "czech-sort"
-version = "1.0.1"
-description = "Text sorting function for the Czech language"
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.extras]
-test = ["pytest"]
-
-[[package]]
 name = "dateutils"
 version = "0.6.12"
 description = "Various utilities for working with date and datetime objects"
@@ -1727,7 +1716,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.8.*"
-content-hash = "6505747908547e1a84d8b04695a6b269aca53e485db0712b23309cc93ee2c3a6"
+content-hash = "d8371350f934c55eaf1ff567585efb75163ac1d389f3bddb683964395102fb5f"
 
 [metadata.files]
 aiodns = [
@@ -2018,9 +2007,6 @@ cryptography = [
 cssselect = [
     {file = "cssselect-1.1.0-py2.py3-none-any.whl", hash = "sha256:f612ee47b749c877ebae5bb77035d8f4202c6ad0f0fc1271b3c18ad6c4468ecf"},
     {file = "cssselect-1.1.0.tar.gz", hash = "sha256:f95f8dedd925fd8f54edb3d2dfb44c190d9d18512377d3c1e2388d16126879bc"},
-]
-czech-sort = [
-    {file = "czech_sort-1.0.1-py3-none-any.whl", hash = "sha256:340bd050ef536ffcdd938fd162e39542964f65ceb4a08320fbf54d14c22121ec"},
 ]
 dateutils = [
     {file = "dateutils-0.6.12-py2.py3-none-any.whl", hash = "sha256:f33b6ab430fa4166e7e9cb8b21ee9f6c9843c48df1a964466f52c79b2a8d53b3"},

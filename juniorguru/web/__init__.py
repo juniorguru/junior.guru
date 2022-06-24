@@ -10,7 +10,6 @@ from juniorguru.models.base import db
 from juniorguru.models.event import Event
 from juniorguru.models.job import ListedJob
 from juniorguru.models.story import Story
-from juniorguru.models.supporter import Supporter
 
 
 logger = loggers.get(__name__)
@@ -187,17 +186,6 @@ def generate_job_pages():
         yield 'job', dict(job_id=job.submitted_job.id)
 
 
-@app.route('/donate/')
-def donate():
-    with db:
-        supporters_names_urls = Supporter.listing_names_urls()
-        supporters_names = Supporter.listing_names()
-    return render_template('donate.html',
-                           supporters_names_urls=supporters_names_urls,
-                           supporters_names=supporters_names,
-                           thumbnail=thumbnail(title='Pošli LOVE'))
-
-
 @app.route('/handbook/')
 def handbook():
     return redirect(url_for('motivation', _external=True))
@@ -248,6 +236,10 @@ def practice():
 def candidate_handbook():
     return REFRESH_PAGE
 
+@app.route('/open/')
+def open():
+    return REFRESH_PAGE
+
 @app.route('/hire-juniors/')
 def hire_juniors():
     return redirect(url_for('jobs', _external=True))
@@ -267,3 +259,7 @@ def press_release_women():
 @app.route('/press/crisis/')
 def press_release_crisis():
     return redirect(url_for('club', _external=True) + '#honza')
+
+@app.route('/donate/')
+def donate():
+    return redirect(url_for('open', _external=True))

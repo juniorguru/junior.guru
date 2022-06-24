@@ -124,11 +124,11 @@ Předplatné můžeš zrušit v [nastavení](https://juniorguru.memberful.com/ac
 
 ### Co když Honzu podporuji na GitHub Sponsors nebo na Patreonu?
 
-Dlouhodobý plán je takový, že by členství v klubu zcela nahradilo původní [dobrovolné příspěvky](/donate/). Můžeš tedy příspěvky zrušit a místo nich si pořídit členství v klubu. Jestliže z nějakého důvodu příspěvky rušit nechceš, napiš prosím na {{ 'honza@junior.guru'|email_link }} a domluvíme se, jak to provedeme. Přístup do klubu rozhodně dostaneš.
+Dlouhodobý plán je takový, že by členství v klubu zcela nahradilo původní dobrovolné příspěvky. Můžeš tedy příspěvky zrušit a místo nich si pořídit členství v klubu. Jestliže z nějakého důvodu příspěvky rušit nechceš, napiš prosím na {{ 'honza@junior.guru'|email_link }} a domluvíme se, jak to provedeme. Přístup do klubu rozhodně dostaneš.
 
 ### Mám Honzu podporovat dobrovolnými příspěvky, nebo platit členství v klubu?
 
-Dlouhodobý plán je takový, že by členství v klubu zcela nahradilo původní [dobrovolné příspěvky](/donate/). Můžeš tedy příspěvky zrušit a místo nich si pořídit členství v klubu. Někteří přispěvatelé ale tuto variantu dobrovolně odmítli s tím, že chtějí posílat měsíčně víc peněz, než je cena členství, a to mohou zatím pouze na GitHub Sponsors nebo na Patreonu. Pokud to máš podobně, napiš prosím na {{ 'honza@junior.guru'|email_link }} a domluvíme se, jak to provedeme. Přístup do klubu rozhodně dostaneš.
+Dlouhodobý plán je takový, že by členství v klubu zcela nahradilo původní dobrovolné příspěvky. Můžeš tedy příspěvky zrušit a místo nich si pořídit členství v klubu. Někteří přispěvatelé ale tuto variantu dobrovolně odmítli s tím, že chtějí posílat měsíčně víc peněz, než je cena členství, a to mohou zatím pouze na GitHub Sponsors nebo na Patreonu. Pokud to máš podobně, napiš prosím na {{ 'honza@junior.guru'|email_link }} a domluvíme se, jak to provedeme. Přístup do klubu rozhodně dostaneš.
 
 ### Jak mohu podporovat junior.guru, pokud mě klub nezajímá?
 

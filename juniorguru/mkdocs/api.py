@@ -53,8 +53,7 @@ def build_podcast_xml(api_dir, config):
                       copyright=f'© {PodcastEpisode.copyright_year()} Pavlína Froňková, Jan Javorek',
                       generator='JuniorGuruBot (+https://junior.guru)',
                       image='https://junior.guru/static/images/podcast-v1.png',
-                      fundings=[Funding('Přidej se do klubu junior.guru', 'https://junior.guru/club/'),
-                                Funding('Přispěj junior.guru', 'https://junior.guru/donate/')],
+                      fundings=[Funding('Přidej se do klubu junior.guru', 'https://junior.guru/club/')],
                       explicit=False)
 
     for number, db_episode in enumerate(PodcastEpisode.api_listing(), start=1):
