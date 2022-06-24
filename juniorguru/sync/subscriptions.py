@@ -187,7 +187,7 @@ def main():
                                         category=category)
 
     logger.info('Process remaining Discord users')
-    for user in ClubUser.listing():
+    for user in ClubUser.members_listing():
         discord_id = str(user.id)
         if not user.is_bot and discord_id not in seen_discord_ids:
             student_record_fields = dict(itertools.chain.from_iterable([
