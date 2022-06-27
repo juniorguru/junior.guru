@@ -39,9 +39,11 @@ Přednášky a další akce pro členy klubu junior.guru. Seznam akcí proběhl�
     <p class="note">
       <strong>{{ event.start_at_prg.day }}.&nbsp;{{ event.start_at_prg.month }}.&nbsp;{{ event.start_at_prg.year }},
       {{ event.start_at|local_time }} online v klubovně</strong>{% if event.recording_url %},
-      <a href="{{ event.recording_url }}">záznam</a>{% endif %}
+      <a href="{{ event.recording_url }}">záznam pro členy</a>{% endif %}{% if event.public_recording_url %},
+      <a href="{{ event.public_recording_url }}">veřejný záznam</a>{% endif %}
     </p>
     {{ event.description|md }}
+    <h4 class="content__subsection-heading">{{ event.bio_name }}</h4>
     {{ event.bio|md }}
   {% endfor %}
 </section>
