@@ -254,15 +254,15 @@ class ClubSubscribedPeriod(BaseModel):
         return cls.signups(date).count()
 
     @classmethod
-    def individual_signups(cls, date):
+    def individuals_signups(cls, date):
         return cls.signups(date).where(cls.category == cls.INDIVIDUALS_CATEGORY)
 
     @classmethod
-    def individual_signups_count(cls, date):
-        return cls.individual_signups(date).count()
+    def individuals_signups_count(cls, date):
+        return cls.individuals_signups(date).count()
 
     @classmethod
-    def churn(cls, date):
+    def quits(cls, date):
         from_date, to_date = month_range(date)
         return cls.select(cls, fn.max(cls.end_on)) \
             .group_by(cls.memberful_id) \
@@ -270,19 +270,31 @@ class ClubSubscribedPeriod(BaseModel):
             .order_by(cls.end_on)
 
     @classmethod
-    def churn_count(cls, date):
-        return cls.churn(date).count()
+    def quits_count(cls, date):
+        return cls.quits(date).count()
 
     @classmethod
-    def individual_churn(cls, date):
-        return cls.churn(date).where(cls.category == cls.INDIVIDUALS_CATEGORY)
+    def individuals_quits(cls, date):
+        return cls.quits(date).where(cls.category == cls.INDIVIDUALS_CATEGORY)
 
     @classmethod
-    def individual_churn_count(cls, date):
-        return cls.individual_churn(date).count()
+    def individuals_quits_count(cls, date):
+        return cls.individuals_quits(date).count()
 
     @classmethod
-    def individual_duration_avg(cls, date):
+    def churn_ptc(cls, date):
+        from_date, to_date = month_range(date)
+        churn = cls.quits_count(date) / (cls.count(from_date) + cls.signups_count(date))
+        return churn * 100
+
+    @classmethod
+    def individuals_churn_ptc(cls, date):
+        from_date, to_date = month_range(date)
+        churn = cls.individuals_quits_count(date) / (cls.individuals_count(from_date) + cls.individuals_signups_count(date))
+        return churn * 100
+
+    @classmethod
+    def individuals_duration_avg(cls, date):
         from_date, to_date = month_range(date)
         results = cls.select(cls.memberful_id, fn.min(cls.start_on), fn.max(cls.end_on)) \
             .where(cls.category == cls.INDIVIDUALS_CATEGORY) \

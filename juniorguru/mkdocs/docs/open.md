@@ -316,7 +316,7 @@ Graf s registracemi obsahuje všechny typy členství. Ať už nový člen při�
             },
             {
                 'label': 'nová individuálně placená členství',
-                'data': charts_individual_signups,
+                'data': charts_individuals_signups,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
@@ -329,7 +329,9 @@ Graf s registracemi obsahuje všechny typy členství. Ať už nový člen při�
 
 ### Odchody
 
-Červená čára je počet členů, kteří z klubu odešli.
+Procento členů, kteří z klubu odcházejí, neboli _churn_. Zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli a poté za něj nezačali platit. Tam se očekává celkem velký odpad, ale i tak graf napovídá, jak se daří držet nově příchozí členy v klubu.
+
+Tenká čára sleduje pouze ty, kdo zrušili už existující individuálně placené členství. Naznačuje tedy odchody členů, kteří se za klub rozhodli platit, ale následně změnili názor. Očekává se, že juniorům, kteří si nakonec práci v IT našli, pokryjí většinu hodnoty klubu kolegové ve firmě, kde pracují. Také se v prvních měsících intenzivně zaučují a na klub tak často už nemají čas, i když je to tam baví.
 
 <canvas
     class="chart" width="400" height="200"
@@ -338,14 +340,14 @@ Graf s registracemi obsahuje všechny typy členství. Ať už nový člen při�
         'labels': charts_club_labels,
         'datasets': [
             {
-                'label': 'neprodloužená členství',
-                'data': charts_churn,
+                'label': '% úbytku členů',
+                'data': charts_churn_ptc,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
             {
-                'label': 'neprodloužená individuálně placená členství',
-                'data': charts_individual_churn,
+                'label': '% úbytku individuálně platících členů',
+                'data': charts_individuals_churn_ptc,
                 'borderColor': '#dc3545',
                 'borderWidth': 1,
             },
@@ -368,7 +370,7 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
         'datasets': [
             {
                 'label': 'průměrná délka individuálně placeného členství v měsících',
-                'data': charts_individual_duration,
+                'data': charts_individuals_duration,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
