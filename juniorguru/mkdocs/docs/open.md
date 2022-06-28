@@ -206,7 +206,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
 
 ## Členství v klubu
 
-[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**.
+[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**, ale platících členů může být i víc. Někteří si platí členství pouze aby mě podpořili, bez toho aby se vůbec na Discord přihlásili.
 
 <canvas
     class="chart" width="400" height="200"
