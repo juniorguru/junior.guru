@@ -54,19 +54,19 @@ def coerce_record(record):
         r'^email$': ('email', parse_text),
         r'^filename$': ('logo_filename', parse_text),
         r'^handbook$': ('is_sponsoring_handbook', parse_boolean_words),
-        r'^student coupon base$': ('student_coupon_base', parse_text),
+        r'^student coupon$': ('student_coupon', parse_text),
         r'^link$': ('url', parse_text),
-        r'^coupon base$': ('coupon_base', parse_text),
+        r'^coupon$': ('coupon', parse_text),
         r'^starts$': ('starts_on', parse_date),
         r'^expires$': ('expires_on', parse_date),
         r'^job slots$': ('job_slots_count', parse_int),
     }, record)
-    if data.get('coupon_base'):
-        data['slug'] = parse_slug(data['coupon_base'])
+    if data.get('coupon'):
+        data['slug'] = parse_slug(data['coupon'])
     return data
 
 
-def parse_slug(coupon_base):
-    if coupon_base:
-        return parse_coupon(coupon_base)['coupon_name'].lower()
+def parse_slug(coupon):
+    if coupon:
+        return parse_coupon(coupon)['name'].lower()
     return None

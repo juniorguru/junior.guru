@@ -58,12 +58,12 @@ IS_NEW_PERIOD_DAYS = 15
 
 COUPON_RE = re.compile(r'''
     ^
-        (?P<coupon_name>
+        (?P<name>
             (?P<student_prefix>STUDENT)?
             [A-Z0-9]+
             [A-Z]+
         )
-        (?P<coupon_suffix>[0-9]{5,})
+        (?P<suffix>[0-9]{5,})
     $
 ''', re.VERBOSE)
 
@@ -188,10 +188,10 @@ def parse_coupon(coupon):
     match = COUPON_RE.match(coupon)
     if match:
         parts = match.groupdict()
-        parts['coupon_base'] = ''.join([
-            parts['coupon_name'],
-            parts['coupon_suffix'],
+        parts['coupon'] = ''.join([
+            parts['name'],
+            parts['suffix'],
         ])
-        parts['student'] = bool(parts.pop('student_prefix'))
+        parts['is_student'] = bool(parts.pop('student_prefix'))
         return {key: value for key, value in parts.items() if value is not None}
-    return {'coupon_name': coupon, 'coupon_base': coupon, 'student': False}
+    return {'name': coupon, 'coupon': coupon, 'is_student': False}

@@ -117,8 +117,8 @@ async def discord_task(client):
         changes.extend(evaluate_changes(member.id, member.roles, founders_members_ids, ROLES['is_founder']))
 
     # role 'is_sponsor'
-    coupons = list(filter(None, (company.coupon_base for company in companies)))
-    sponsoring_members_ids = [member.id for member in members if member.coupon_base in coupons]
+    coupons = list(filter(None, (company.coupon for company in companies)))
+    sponsoring_members_ids = [member.id for member in members if member.coupon in coupons]
     logger.debug(f"sponsoring_members_ids: {repr_ids(members, sponsoring_members_ids)}")
     for member in members:
         changes.extend(evaluate_changes(member.id, member.roles, sponsoring_members_ids, ROLES['is_sponsor']))
@@ -149,7 +149,7 @@ async def manage_company_roles(client, companies):
     company_roles_mapping = {COMPANY_ROLE_PREFIX + company.name: company
                              for company in companies}
     student_roles_mapping = {STUDENT_ROLE_PREFIX + company.name: company
-                             for company in companies if company.student_coupon_base}
+                             for company in companies if company.student_coupon}
     roles_names = list(company_roles_mapping.keys()) + list(student_roles_mapping.keys())
     logger.info(f"There should be {len(roles_names)} roles with company or student prefixes")
 

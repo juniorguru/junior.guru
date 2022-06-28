@@ -80,21 +80,21 @@ def test_is_message_over_period_ago(today, expected):
 
 
 @pytest.mark.parametrize('coupon, expected', [
-    ('GARGAMEL', dict(coupon_name='GARGAMEL',
-                      coupon_base='GARGAMEL',
-                      student=False)),
-    ('FAKTUROID123456', dict(coupon_name='FAKTUROID',
-                             coupon_suffix='123456',
-                             coupon_base='FAKTUROID123456',
-                             student=False)),
-    ('CDN77COM123456', dict(coupon_name='CDN77COM',
-                            coupon_suffix='123456',
-                            coupon_base='CDN77COM123456',
-                            student=False)),
-    ('STUDENTGARGAMEL69320144', dict(coupon_name='STUDENTGARGAMEL',
-                                     coupon_suffix='69320144',
-                                     coupon_base='STUDENTGARGAMEL69320144',
-                                     student=True)),
+    ('GARGAMEL', dict(name='GARGAMEL',
+                      coupon='GARGAMEL',
+                      is_student=False)),
+    ('FAKTUROID123456', dict(name='FAKTUROID',
+                             suffix='123456',
+                             coupon='FAKTUROID123456',
+                             is_student=False)),
+    ('CDN77COM123456', dict(name='CDN77COM',
+                            suffix='123456',
+                            coupon='CDN77COM123456',
+                            is_student=False)),
+    ('STUDENTGARGAMEL69320144', dict(name='STUDENTGARGAMEL',
+                                     suffix='69320144',
+                                     coupon='STUDENTGARGAMEL69320144',
+                                     is_student=True)),
 ])
 def test_parse_coupon(coupon, expected):
     assert club.parse_coupon(coupon) == expected

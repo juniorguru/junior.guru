@@ -206,7 +206,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
 
 ## Členství v klubu
 
-[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**, což není stejné číslo jaké hlásí graf. Musím ještě zjistit proč to tak je.
+[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**.
 
 <canvas
     class="chart" width="400" height="200"
@@ -298,11 +298,9 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
     }|tojson|forceescape }}"></canvas>
 
-### Příchody a odchody
+### Příchody
 
-Graf s registracemi obsahuje všechny typy členství. Ať už nový člen přišel přes firmu, stipendium, nebo individuálně, tak se započte. Červená čára je počet členů, kteří z klubu odešli. Pokud jsou obě hlavní čáry na stejných číslech, počet členů v klubu stagnuje. Jestliže jde modrá nahoru a červená dolů, počet členů v klubu roste.
-
-Tenká modrá čára představuje počet členů, kteří v daném měsíci poprvé v historii svého členství přešli na individuální placení. Jsou to především noví členové, kteří se po dvou týdnech na zkoušku rozhodli, že si klub začnou platit. Mohou to ale být i firemní členové nebo studenti ze vzdělávacích agentur, kterým skončilo členství zaplacené někým jiným a rozhodli se pokračovat za svoje.
+Graf s registracemi obsahuje všechny typy členství. Ať už nový člen přišel přes firmu, stipendium, nebo individuálně, tak se započte. Tenká modrá čára představuje počet členů, kteří v daném měsíci poprvé v historii svého členství přešli na individuální placení. Jsou to především noví členové, kteří se po dvou týdnech na zkoušku rozhodli, že si klub začnou platit. Mohou to ale být i firemní členové nebo studenti ze vzdělávacích agentur, kterým skončilo členství zaplacené někým jiným a rozhodli se pokračovat za svoje.
 
 <canvas
     class="chart" width="400" height="200"
@@ -322,19 +320,45 @@ Tenká modrá čára představuje počet členů, kteří v daném měsíci popr
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}}
+    }|tojson|forceescape }}"></canvas>
+
+### Odchody
+
+Červená čára je počet členů, kteří z klubu odešli.
+
+<canvas
+    class="chart" width="400" height="200"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts_club_labels,
+        'datasets': [
             {
                 'label': 'neprodloužená členství',
                 'data': charts_churn,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
+            {
+                'label': 'neprodloužená individuálně placená členství',
+                'data': charts_individual_churn,
+                'borderColor': '#dc3545',
+                'borderWidth': 1,
+            },
         ]
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}}
     }|tojson|forceescape }}"></canvas>
 
-Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kterým členství platí firma, nebo jej mají zadarmo. Graf průměrné délky členství v klubu tedy počítá pouze s těmi, kdo si to platí sami. Pokud si někdo koupí roční členství, započítá se to jako 12 měsíců trvající členství, i když ještě neproběhlo.
+### Délka setrvání v klubu
+
+Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kterým členství platí firma, nebo jej mají zadarmo. Graf průměrné délky členství v klubu tedy počítá pouze s těmi, kdo si platí sami.
 
 <canvas
     class="chart" width="400" height="200"
@@ -352,6 +376,7 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}}
     }|tojson|forceescape }}"></canvas>
 
 ### Podíl žen v klubu

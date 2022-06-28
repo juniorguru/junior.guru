@@ -12,8 +12,8 @@ class Company(BaseModel):
     logo_filename = CharField()
     is_sponsoring_handbook = BooleanField(default=False)
     url = CharField()
-    coupon_base = CharField(null=True)
-    student_coupon_base = CharField(null=True)
+    coupon = CharField(null=True)
+    student_coupon = CharField(null=True)
     job_slots_count = IntegerField(default=0)
     starts_on = DateField()
     expires_on = DateField(null=True)
@@ -23,23 +23,23 @@ class Company(BaseModel):
 
     @property
     def is_school(self):
-        return bool(self.student_coupon_base)
+        return bool(self.student_coupon)
 
     @property
     def list_members(self):
-        if not self.coupon_base:
+        if not self.coupon:
             return []
         return ClubUser.select() \
-            .join(self.__class__, on=(ClubUser.coupon_base == self.__class__.coupon_base)) \
-            .where((ClubUser.is_member == True) & (ClubUser.coupon_base == self.coupon_base))
+            .join(self.__class__, on=(ClubUser.coupon == self.__class__.coupon)) \
+            .where((ClubUser.is_member == True) & (ClubUser.coupon == self.coupon))
 
     @property
     def list_student_members(self):
-        if not self.student_coupon_base:
+        if not self.student_coupon:
             return []
         return ClubUser.select() \
-            .join(self.__class__, on=(ClubUser.coupon_base == self.__class__.student_coupon_base)) \
-            .where((ClubUser.is_member == True) & (ClubUser.coupon_base == self.student_coupon_base))
+            .join(self.__class__, on=(ClubUser.coupon == self.__class__.student_coupon)) \
+            .where((ClubUser.is_member == True) & (ClubUser.coupon == self.student_coupon))
 
     @property
     def list_student_subscriptions_billable(self):
@@ -71,17 +71,17 @@ class Company(BaseModel):
     @classmethod
     def schools_listing(cls):
         return cls.listing() \
-            .where(cls.student_coupon_base.is_null(False))
+            .where(cls.student_coupon.is_null(False))
 
     @classmethod
-    def coupon_bases(cls):
-        return {company.coupon_base for company
-                in cls.select().where(cls.coupon_base.is_null(False))}
+    def coupons(cls):
+        return {company.coupon for company
+                in cls.select().where(cls.coupon.is_null(False))}
 
     @classmethod
-    def student_coupon_bases(cls):
-        return {company.student_coupon_base for company
-                in cls.select().where(cls.student_coupon_base.is_null(False))}
+    def student_coupons(cls):
+        return {company.student_coupon for company
+                in cls.select().where(cls.student_coupon.is_null(False))}
 
     def __str__(self):
         return self.name

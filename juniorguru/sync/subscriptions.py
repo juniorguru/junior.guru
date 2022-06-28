@@ -57,10 +57,10 @@ def main():
 
     logger.info('Mapping coupons to categories')
     coupon_names_categories_mapping = {
-        **{parse_coupon(coupon_base)['coupon_name']: ClubSubscribedPeriod.COMPANY_CATEGORY
-           for coupon_base in Company.coupon_bases()},
-        **{parse_coupon(coupon_base)['coupon_name']: ClubSubscribedPeriod.STUDENT_CATEGORY
-           for coupon_base in Company.student_coupon_bases()},
+        **{parse_coupon(coupon)['name']: ClubSubscribedPeriod.COMPANY_CATEGORY
+           for coupon in Company.coupons()},
+        **{parse_coupon(coupon)['name']: ClubSubscribedPeriod.STUDENT_CATEGORY
+           for coupon in Company.student_coupons()},
         **COUPON_NAMES_CATEGORIES_MAPPING
     }
 
@@ -97,7 +97,6 @@ def main():
                             fullName
                             id
                             metadata
-                            stripeCustomerId
                         }
                     }
                 }
@@ -124,8 +123,8 @@ def main():
         coupon_parts = parse_coupon(coupon) if coupon else {}
         student_record_fields = dict(itertools.chain.from_iterable([
             [
-                (f'{company.name} Student Since', format_date(get_student_started_on(subscription, company.student_coupon_base))),
-                (f'{company.name} Student Months', ', '.join(get_student_months(subscription, company.student_coupon_base))),
+                (f'{company.name} Student Since', format_date(get_student_started_on(subscription, company.student_coupon))),
+                (f'{company.name} Student Months', ', '.join(get_student_months(subscription, company.student_coupon))),
                 (f'{company.name} Student Invoiced?', subscription['member']['metadata'].get(f'{company.slug}InvoicedOn'))
             ]
             for company in Company.schools_listing()
@@ -137,21 +136,19 @@ def main():
             'Gender': ('F' if has_feminine_name(name) else 'M'),
             'E-mail': subscription['member']['email'],
             'Memberful ID': subscription['member']['id'],
-            'Stripe ID': subscription['member']['stripeCustomerId'],
             'Discord ID': discord_id,
-            'Invoice ID': coupon_parts.get('invoice_id'),
             'Memberful Active?': subscription['active'],
             'Memberful Since': arrow.get(subscription['createdAt']).date().isoformat(),
             'Memberful End': arrow.get(subscription['expiresAt']).date().isoformat(),
             'Memberful Coupon': coupon,
-            'Memberful Coupon Base': coupon_parts.get('coupon_base'),
+            'Memberful Coupon Base': coupon_parts.get('coupon'),
             'Discord Member?': user.is_member if user else False,
             'Discord Since': user.first_seen_on().isoformat() if user else None,
             **student_record_fields,
         })
 
         for company in Company.schools_listing():
-            started_on = get_student_started_on(subscription, company.student_coupon_base)
+            started_on = get_student_started_on(subscription, company.student_coupon)
             if started_on:
                 invoiced_on = subscription['member']['metadata'].get(f'{company.slug}InvoicedOn')
                 invoiced_on = date.fromisoformat(invoiced_on) if invoiced_on else None
@@ -167,7 +164,7 @@ def main():
             if subscription['active']:
                 user.memberful_subscription_id = str(subscription['id'])
                 user.expires_at = arrow.get(subscription['expiresAt']).naive
-                user.coupon_base = coupon_parts.get('coupon_base')
+                user.coupon = coupon_parts.get('coupon')
             joined_memberful_at = arrow.get(subscription['createdAt']).naive
             user.joined_at = min(user.joined_at, joined_memberful_at) if user.joined_at else joined_memberful_at
             user.save()
@@ -176,7 +173,7 @@ def main():
             if subscribed_period['is_trial']:
                 category = ClubSubscribedPeriod.TRIAL_CATEGORY
             elif subscribed_period['coupon']:
-                coupon_name = parse_coupon(subscribed_period['coupon'])['coupon_name']
+                coupon_name = parse_coupon(subscribed_period['coupon'])['name']
                 category = coupon_names_categories_mapping.get(coupon_name, ClubSubscribedPeriod.INDIVIDUALS_CATEGORY)
             else:
                 category = ClubSubscribedPeriod.INDIVIDUALS_CATEGORY
@@ -204,9 +201,7 @@ def main():
                 'Gender': None,
                 'E-mail': None,
                 'Memberful ID': None,
-                'Stripe ID': None,
                 'Discord ID': discord_id,
-                'Invoice ID': None,
                 'Memberful Active?': False,
                 'Memberful Since': None,
                 'Memberful End': None,
@@ -214,7 +209,6 @@ def main():
                 'Memberful Coupon Base': None,
                 'Discord Member?': user.is_member,
                 'Discord Since': user.first_seen_on().isoformat(),
-                'Memberful Past Due?': False,
                 **student_record_fields,
             })
 
@@ -243,18 +237,18 @@ def get_active_coupon(subscription):
         return None
 
 
-def get_student_months(subscription, coupon_base):
+def get_student_months(subscription, coupon):
     return sorted((f"{datetime.fromtimestamp(order['createdAt']):%Y-%m}"
                    for order in subscription['orders']
                    if (order['coupon'] and
-                       order['coupon']['code'].startswith(coupon_base))))
+                       order['coupon']['code'].startswith(coupon))))
 
 
-def get_student_started_on(subscription, coupon_base):
+def get_student_started_on(subscription, coupon):
     orders = (datetime.fromtimestamp(order['createdAt'])
               for order in subscription['orders']
               if (order['coupon'] and
-                  order['coupon']['code'].startswith(coupon_base)))
+                  order['coupon']['code'].startswith(coupon)))
     try:
         return sorted(orders)[0].date()
     except IndexError:

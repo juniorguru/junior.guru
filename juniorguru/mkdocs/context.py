@@ -93,6 +93,7 @@ def on_docs_context(context):
     context['charts_signups'] = charts.per_month(ClubSubscribedPeriod.signups_count, club_charts_months)
     context['charts_individual_signups'] = charts.per_month(ClubSubscribedPeriod.individual_signups_count, club_charts_months)
     context['charts_churn'] = charts.per_month(ClubSubscribedPeriod.churn_count, club_charts_months)
+    context['charts_individual_churn'] = charts.per_month(ClubSubscribedPeriod.individual_churn_count, club_charts_months)
     context['charts_individual_duration'] = charts.per_month(ClubSubscribedPeriod.individual_duration_avg, club_charts_months)
 
     # podcast.md, handbook/cv.md

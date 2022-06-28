@@ -14,8 +14,8 @@ def create_company(id, **kwargs):
                           logo_filename=kwargs.get('logo_filename', 'banana.svg'),
                           is_sponsoring_handbook=kwargs.get('is_sponsoring_handbook', False),
                           url=kwargs.get('url', 'https://banana.example.com'),
-                          coupon_base=kwargs.get('coupon_base', 'BANANA123'),
-                          student_coupon_base=kwargs.get('student_coupon_base'),
+                          coupon=kwargs.get('coupon', 'BANANA123'),
+                          student_coupon=kwargs.get('student_coupon'),
                           starts_on=kwargs.get('starts_on', date.today() - timedelta(days=10)),
                           expires_on=kwargs.get('expires_on', date.today() + timedelta(days=100)),
                           role_id=kwargs.get('role_id'),
@@ -93,27 +93,27 @@ def test_handbook_listing(db_connection):
 
 
 def test_schools_listing(db_connection):
-    company1 = create_company('1', student_coupon_base='STUDENT!')
-    company2 = create_company('2', student_coupon_base=None)  # noqa
-    company3 = create_company('3', student_coupon_base='STUDENT!')
+    company1 = create_company('1', student_coupon='STUDENT!')
+    company2 = create_company('2', student_coupon=None)  # noqa
+    company3 = create_company('3', student_coupon='STUDENT!')
 
     assert set(Company.schools_listing()) == {company1, company3}
 
 
 def test_list_members(db_connection):
-    member1 = ClubUser.create(display_name='Alice', mention='<@123>', coupon_base='XEROX', tag='abc#1234')
-    member2 = ClubUser.create(display_name='Bob', mention='<@123>', coupon_base='XEROX', tag='abc#1234')
-    member3 = ClubUser.create(display_name='Celine', mention='<@123>', coupon_base='ZALANDO', tag='abc#1234')  # noqa
-    company = create_company('1', coupon_base='XEROX')
+    member1 = ClubUser.create(display_name='Alice', mention='<@123>', coupon='XEROX', tag='abc#1234')
+    member2 = ClubUser.create(display_name='Bob', mention='<@123>', coupon='XEROX', tag='abc#1234')
+    member3 = ClubUser.create(display_name='Celine', mention='<@123>', coupon='ZALANDO', tag='abc#1234')  # noqa
+    company = create_company('1', coupon='XEROX')
 
     assert set(company.list_members) == {member1, member2}
 
 
 def test_list_student_members(db_connection):
-    member1 = ClubUser.create(display_name='Alice', mention='<@123>', coupon_base='XEROXSTUDENT', tag='abc#1234')
-    member2 = ClubUser.create(display_name='Bob', mention='<@123>', coupon_base='XEROXSTUDENT', tag='abc#1234')
-    member3 = ClubUser.create(display_name='Celine', mention='<@123>', coupon_base='ZALANDOSTUDENT', tag='abc#1234')  # noqa
-    company = create_company('1', student_coupon_base='XEROXSTUDENT')
+    member1 = ClubUser.create(display_name='Alice', mention='<@123>', coupon='XEROXSTUDENT', tag='abc#1234')
+    member2 = ClubUser.create(display_name='Bob', mention='<@123>', coupon='XEROXSTUDENT', tag='abc#1234')
+    member3 = ClubUser.create(display_name='Celine', mention='<@123>', coupon='ZALANDOSTUDENT', tag='abc#1234')  # noqa
+    company = create_company('1', student_coupon='XEROXSTUDENT')
 
     assert set(company.list_student_members) == {member1, member2}
 

@@ -28,7 +28,7 @@ class ClubUser(BaseModel):
     display_name = CharField()
     mention = CharField()
     tag = CharField()
-    coupon_base = CharField(null=True, index=True)
+    coupon = CharField(null=True, index=True)
     roles = JSONField(default=lambda: [])
 
     def messages_count(self):
@@ -78,7 +78,7 @@ class ClubUser(BaseModel):
         return first_seen_on.replace(year=first_seen_on.year + 1) <= (today or date.today())
 
     def is_founder(self):
-        if self.coupon_base and parse_coupon(self.coupon_base)['coupon_name'] == 'FOUNDERS':
+        if self.coupon and parse_coupon(self.coupon)['name'] == 'FOUNDERS':
             return True
         joined_date = min(self.joined_at.date(), self.first_seen_on())
         if joined_date < CLUB_LAUNCH_ON:
@@ -206,8 +206,10 @@ class ClubSubscribedPeriod(BaseModel):
 
     @classmethod
     def listing(cls, date):
-        return cls.select() \
-            .where(cls.start_on <= date, cls.end_on >= date)
+        return cls.select(cls, fn.max(cls.start_on)) \
+            .where(cls.start_on <= date, cls.end_on >= date) \
+            .group_by(cls.memberful_id) \
+            .order_by(cls.start_on)
 
     @classmethod
     def count(cls, date):
@@ -240,37 +242,56 @@ class ClubSubscribedPeriod(BaseModel):
             .count()
 
     @classmethod
-    def signups_count(cls, date):
+    def signups(cls, date):
         from_date, to_date = month_range(date)
-        return cls.select(cls.memberful_id, fn.min(cls.start_on)) \
+        return cls.select(cls, fn.min(cls.start_on)) \
             .group_by(cls.memberful_id) \
             .having(cls.start_on >= from_date, cls.start_on <= to_date) \
-            .count()
+            .order_by(cls.start_on)
+
+    @classmethod
+    def signups_count(cls, date):
+        return cls.signups(date).count()
+
+    @classmethod
+    def individual_signups(cls, date):
+        return cls.signups(date).where(cls.category == cls.INDIVIDUALS_CATEGORY)
 
     @classmethod
     def individual_signups_count(cls, date):
+        return cls.individual_signups(date).count()
+
+    @classmethod
+    def churn(cls, date):
         from_date, to_date = month_range(date)
-        return cls.select(cls.memberful_id, fn.min(cls.start_on)) \
-            .where(cls.category == cls.INDIVIDUALS_CATEGORY) \
+        return cls.select(cls, fn.max(cls.end_on)) \
             .group_by(cls.memberful_id) \
-            .having(cls.start_on >= from_date, cls.start_on <= to_date) \
-            .count()
+            .having(cls.end_on >= from_date, cls.end_on <= to_date) \
+            .order_by(cls.end_on)
 
     @classmethod
     def churn_count(cls, date):
-        from_date, to_date = month_range(date)
-        return cls.select(cls.memberful_id, fn.max(cls.end_on)) \
-            .group_by(cls.memberful_id) \
-            .having(cls.end_on >= from_date, cls.end_on <= to_date) \
-            .count()
+        return cls.churn(date).count()
+
+    @classmethod
+    def individual_churn(cls, date):
+        return cls.churn(date).where(cls.category == cls.INDIVIDUALS_CATEGORY)
+
+    @classmethod
+    def individual_churn_count(cls, date):
+        return cls.individual_churn(date).count()
 
     @classmethod
     def individual_duration_avg(cls, date):
-        results = cls.select(cls.memberful_id, fn.max(cls.start_on), fn.max(cls.end_on)) \
+        from_date, to_date = month_range(date)
+        results = cls.select(cls.memberful_id, fn.min(cls.start_on), fn.max(cls.end_on)) \
             .where(cls.category == cls.INDIVIDUALS_CATEGORY) \
             .group_by(cls.memberful_id) \
-            .having(cls.start_on <= date)
+            .having(fn.min(cls.start_on) <= from_date)
         if not results:
             return 0
-        durations = [((result.end_on - result.start_on).days / 30) for result in results]
+        durations = [((min(to_date, result.end_on) - result.start_on).days / 30) for result in results]
         return sum(durations) / len(durations)
+
+    def __str__(self):
+        return f'#{self.memberful_id} {self.start_on}…{self.end_on} {self.category}'
