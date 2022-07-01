@@ -30,6 +30,7 @@ class ClubUser(BaseModel):
     tag = CharField()
     coupon = CharField(null=True, index=True)
     roles = JSONField(default=lambda: [])
+    private_channel_id = IntegerField(null=True)
 
     def messages_count(self):
         return self.list_messages.count()
