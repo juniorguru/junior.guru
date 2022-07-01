@@ -6,7 +6,7 @@ from juniorguru.lib import charts
 
 
 def test_months():
-    assert list(charts.months(date(2020, 1, 15), date(2020, 8, 30))) == [
+    assert list(charts.months(date(2020, 1, 15), date(2020, 8, 28))) == [
         date(2020, 1, 31),
         date(2020, 2, 29),
         date(2020, 3, 31),
@@ -14,7 +14,7 @@ def test_months():
         date(2020, 5, 31),
         date(2020, 6, 30),
         date(2020, 7, 31),
-        date(2020, 8, 31),
+        date(2020, 8, 28),
     ]
 
 

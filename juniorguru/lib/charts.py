@@ -11,7 +11,7 @@ def generate_months(from_date, to_date):
     d = from_date
     while d <= to_date:
         last_date_of_month = d.replace(day=calendar.monthrange(d.year, d.month)[1])
-        yield last_date_of_month
+        yield min(last_date_of_month, to_date)
         d = last_date_of_month + timedelta(days=1)
 
 

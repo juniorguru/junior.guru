@@ -283,13 +283,13 @@ class ClubSubscribedPeriod(BaseModel):
 
     @classmethod
     def churn_ptc(cls, date):
-        from_date, to_date = month_range(date)
+        from_date = month_range(date)[0]
         churn = cls.quits_count(date) / (cls.count(from_date) + cls.signups_count(date))
         return churn * 100
 
     @classmethod
     def individuals_churn_ptc(cls, date):
-        from_date, to_date = month_range(date)
+        from_date = month_range(date)[0]
         churn = cls.individuals_quits_count(date) / (cls.individuals_count(from_date) + cls.individuals_signups_count(date))
         return churn * 100
 

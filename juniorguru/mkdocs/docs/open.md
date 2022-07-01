@@ -329,7 +329,9 @@ Graf s registracemi obsahuje všechny typy členství. Ať už nový člen při�
 
 ### Odchody
 
-Procento členů, kteří z klubu odcházejí, neboli _churn_. Zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli a poté za něj nezačali platit. Tam se očekává celkem velký odpad, ale i tak graf napovídá, jak se daří držet nově příchozí členy v klubu.
+Procento členů, kteří z klubu odcházejí, neboli _churn_. V aktuálním měsíci graf považuje za odcházející všechny členy, kteří jsou na měsíčním předplatném a nemají ještě prodlouženo na další měsíc.
+
+Tlustá čára zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli a poté za něj nezačali platit. Tam se očekává celkem velký odpad, ale i tak graf napovídá, jak se daří držet nově příchozí členy v klubu.
 
 Tenká čára sleduje pouze ty, kdo zrušili už existující individuálně placené členství. Naznačuje tedy odchody členů, kteří se za klub rozhodli platit, ale následně změnili názor. Očekává se, že juniorům, kteří si nakonec práci v IT našli, pokryjí většinu hodnoty klubu kolegové ve firmě, kde pracují. Také se v prvních měsících intenzivně zaučují a na klub tak často už nemají čas, i když je to tam baví.
 
