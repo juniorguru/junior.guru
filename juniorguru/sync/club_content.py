@@ -1,10 +1,12 @@
 import asyncio
+from datetime import timedelta
 
 import arrow
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (EMOJI_PINS, count_downvotes, count_pins, count_upvotes,
-                                 emoji_name, get_roles, run_discord_task)
+                                 emoji_name, get_roles, run_discord_task, FUN_CHANNEL,
+                                 INTRO_CHANNEL, BOT_CHANNEL)
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
@@ -14,6 +16,14 @@ logger = loggers.get(__name__)
 
 
 WORKERS_COUNT = 5
+
+DEFAULT_CHANNELS_HISTORY_SINCE = timedelta(days=380)
+
+CHANNELS_HISTORY_SINCE = {
+    FUN_CHANNEL: timedelta(days=30),
+    INTRO_CHANNEL: None,  # means 'take all history since ever'
+    BOT_CHANNEL: timedelta(0),  # means 'skip the channel'
+}
 
 
 @sync_task()
@@ -85,18 +95,20 @@ async def process_channels(channels):
 
 
 async def channel_worker(worker_no, authors, queue):
+    logger_w = logger.getChild(f'channel_workers.{worker_no}')
     while True:
         channel = await queue.get()
+        history_since = CHANNELS_HISTORY_SINCE.get(channel.id, DEFAULT_CHANNELS_HISTORY_SINCE)
+        history_after = None if history_since is None else (arrow.utcnow() - history_since).datetime
 
-        logger_w = logger.getChild(f'channel_workers.{worker_no}')
-        logger_w.info(f"Reading channel #{channel.id}")
+        logger_w.info(f"Reading channel #{channel.id} messages after {history_after} ({history_since!r} ago)")
         logger_w.debug(f"Channel #{channel.id} is named '{channel.name}'")
 
         messages_count = 0
         users_count = 0
         pins_count = 0
 
-        async for message in channel.history(limit=None, after=None):
+        async for message in channel.history(limit=None, after=history_after):
             if message.flags.has_thread:
                 logger_w.debug(f'Thread {message.jump_url}')
                 thread = await message.guild.fetch_channel(message.id)
