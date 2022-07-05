@@ -70,9 +70,7 @@ Kdokoliv může klub **zdarma vyzkoušet na dva týdny**. Pokud se tedy přidá 
 
 ### Bude se přednáška nahrávat?
 
-Honza **dělá záznam z každé přednášky** a ten poté okamžitě nahrává na YouTube jako _unlisted_, tedy neveřejné video.
-
-Odkaz na toto video mají členové klubu k dispozici a mohou jej sdílet i dalším lidem mimo klub, pokud chtějí.
+Honza **dělá záznam z každé přednášky** a ten poté okamžitě nahrává na YouTube jako _unlisted_, tedy neveřejné video. Odkaz na toto video mají členové klubu k dispozici a mohou jej sdílet i dalším lidem mimo klub, pokud chtějí.
 
 ### Kolik přijde lidí?
 
