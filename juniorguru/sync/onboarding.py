@@ -7,7 +7,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.club import run_discord_task, JUNIORGURU_BOT, DISCORD_MUTATIONS_ENABLED
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubUser
+from juniorguru.models.club import ClubUser, ClubMessage
 from juniorguru.sync.club_content import main as club_content_task
 
 
@@ -20,16 +20,26 @@ ONBOARDING_CHANNELS_CATEGORY = 992438896078110751
 
 MODERATORS_ROLE = 795609174385098762
 
+MESSAGES = [
+    ('👋', 'Prdíme v klubu!'),
+]
+
+
+
 
 @sync_task(club_content_task)
 def main():
-    run_discord_task('juniorguru.sync.onboarding.discord_task')
+    if len([emoji for emoji, _ in MESSAGES]) != len({emoji for emoji, _ in MESSAGES}):
+        raise ValueError('Emojis of onboarding messages must be unique!')
+
+    run_discord_task('juniorguru.sync.onboarding.manage_channels')
+    run_discord_task('juniorguru.sync.onboarding.send_tips')
 
 
 @db.connection_context()
-async def discord_task(client):
+async def manage_channels(client):
     category = await client.fetch_channel(ONBOARDING_CHANNELS_CATEGORY)
-    member_channel_mapping = {}
+    members_channels_mapping = {}
 
     for channel in category.channels:
         logger.debug(f"Identifying channel #{channel.name} from its topic: {channel.topic}")
@@ -43,8 +53,8 @@ async def discord_task(client):
             else:
                 logger.warning('Discord mutations not enabled')
         else:
-            logger.info(f"Channel #{channel.name} identified as personal channel of member #{member_id}")
-            member_channel_mapping[int(member_id)] = channel
+            logger.info(f"Channel #{channel.name} identified as onboarding channel for member #{member_id}")
+            members_channels_mapping[int(member_id)] = channel
 
     permissions = {
         client.juniorguru_guild.default_role: discord.PermissionOverwrite(read_messages=False),
@@ -56,10 +66,10 @@ async def discord_task(client):
             continue
 
         try:
-            channel = member_channel_mapping[member.id]
-            logger.info(f"Personal channel of member #{member.id} already exists")
+            channel = members_channels_mapping.pop(member.id)
+            logger.info(f"Onboarding channel for member #{member.id} already exists")
         except KeyError:
-            logger.info(f"Personal channel of member #{member.id} needs to be created")
+            logger.info(f"Onboarding channel for member #{member.id} needs to be created")
             overwrites = {
                 (await client.get_or_fetch_user(member.id)): discord.PermissionOverwrite(read_messages=True),
                 **permissions,
@@ -70,6 +80,46 @@ async def discord_task(client):
                                                                         topic=channel_topic,
                                                                         category=category,
                                                                         overwrites=overwrites)
+        logger.debug(f"Setting onboarding channel for member #{member.id} to #{channel.id} and saving")
+        member.onboarding_channel_id = channel.id
+        member.save()
+
+    logger.debug(f'There are {len(members_channels_mapping)} onboarding channels left')
+    for member_id, channel in members_channels_mapping.items():
+        logger.warning(f"Deleting onboarding channel #{channel.name}, member #{member.id} is gone")
+        if DISCORD_MUTATIONS_ENABLED:
+            await channel.delete()
+        else:
+            logger.warning('Discord mutations not enabled')
+
+
+@db.connection_context()
+async def send_tips(client):
+    for member in ClubUser.members_listing():
+        if member.id != 652142810291765248:  # TODO
+            continue
+
+        logger_m = logger.getChild(f'members.{member.id}')
+        if not member.onboarding_channel_id:
+            logger_m.warning("Missing onboarding channel, skipping!")
+            continue
+        discord_channel = None
+        for emoji, message_content in MESSAGES:
+            message = ClubMessage.last_bot_message(member.onboarding_channel_id, emoji)
+            message_content = f'{emoji} {message_content}'
+            if message:
+                if message.content == message_content:
+                    logger_m.info(f'Message {emoji} already exists')
+                else:
+                    logger_m.info(f'Message {emoji} needs updates')
+                    if not discord_channel:
+                        discord_channel = await client.fetch_channel(member.onboarding_channel_id)
+                    discord_message = await discord_channel.fetch_message(message.id)
+                    await discord_message.edit(content=message_content)
+            else:
+                if not discord_channel:
+                    discord_channel = await client.fetch_channel(member.onboarding_channel_id)
+                await discord_channel.send(content=message_content)
 
 
 def get_role(guild, id):
