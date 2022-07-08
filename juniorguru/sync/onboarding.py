@@ -1,4 +1,5 @@
 import re
+from datetime import date
 
 import discord
 from slugify import slugify
@@ -21,7 +22,12 @@ ONBOARDING_CHANNELS_CATEGORY = 992438896078110751
 MODERATORS_ROLE = 795609174385098762
 
 MESSAGES = [
-    ('👋', 'Prdíme v klubu!'),
+    ('👋', 'Smrdíme v klubu!'),
+    ('🌯', 'Žereme burrito'),
+    ('💤', 'Spíme'),
+    ('🆗', 'Jsme OK'),
+    ('🟡', 'Hele žluté kolečko'),
+    ('🟥', 'Hele červený čtvereček'),
 ]
 
 
@@ -95,6 +101,7 @@ async def manage_channels(client):
 
 @db.connection_context()
 async def send_tips(client):
+    today = date.today()
     for member in ClubUser.members_listing():
         if member.id != 652142810291765248:  # TODO
             continue
@@ -104,10 +111,12 @@ async def send_tips(client):
             logger_m.warning("Missing onboarding channel, skipping!")
             continue
         discord_channel = None
+        last_message_on = None
         for emoji, message_content in MESSAGES:
             message = ClubMessage.last_bot_message(member.onboarding_channel_id, emoji)
             message_content = f'{emoji} {message_content}'
             if message:
+                last_message_on = message.created_at.date()
                 if message.content == message_content:
                     logger_m.info(f'Message {emoji} already exists')
                 else:
@@ -117,10 +126,16 @@ async def send_tips(client):
                     discord_message = await discord_channel.fetch_message(message.id)
                     await discord_message.edit(content=message_content)
             else:
-                if not discord_channel:
-                    discord_channel = await client.fetch_channel(member.onboarding_channel_id)
-                await discord_channel.send(content=message_content)
-
+                logger_m.info(f'Message {emoji} needs to be sent')
+                logger_m.debug(f'Last message sent on: {last_message_on}')
+                if not last_message_on or last_message_on < today:
+                    logger_m.debug(f'Sending message {emoji}')
+                    if not discord_channel:
+                        discord_channel = await client.fetch_channel(member.onboarding_channel_id)
+                    await discord_channel.send(content=message_content)
+                else:
+                    logger_m.info(f'Sending message {emoji} canceled, will send tomorrow')
+                    break
 
 def get_role(guild, id):
     return [role for role in guild.roles if role.id == id][0]
