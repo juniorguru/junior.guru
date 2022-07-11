@@ -34,7 +34,7 @@ emoji = "*"
 favicon = "*"
 feedparser = "*"
 extruct = "*"
-py-cord = {version = "2.0.0-rc.1", extras = ["speed"]}
+py-cord = {version = "2.0.0", extras = ["speed"]}
 gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
 scikit-learn = "*"
