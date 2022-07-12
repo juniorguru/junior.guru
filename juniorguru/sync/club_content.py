@@ -80,9 +80,11 @@ async def process_channels(channels):
 
     # if there's a worker which raised
     if not queue_completed.done():
-        workers_done = [worker for worker in workers if worker.done()]
-        logger.warning(f'Some workers ({len(workers_done)} of {WORKERS_COUNT}) finished before the queue is done!')
-        workers_done[0].result()  # raises
+        failed_workers = {worker_no: worker for worker_no, worker
+                          in enumerate(workers) if worker.done()}
+        logger.warning(f"Some workers (numbers: {', '.join(map(str, failed_workers.keys()))}) finished before the queue is done!")
+        first_failed_worker = list(failed_workers.values())[0]
+        first_failed_worker.result()  # raises
 
     # cancel workers which are still runnning
     for worker in workers:
@@ -98,6 +100,8 @@ async def channel_worker(worker_no, authors, queue):
     logger_w = logger.getChild(f'channel_workers.{worker_no}')
     while True:
         channel = await queue.get()
+        print('DBG GET CHANNEL:', repr(channel.guild), repr(channel))
+        assert channel.guild, repr(channel)
         history_since = CHANNELS_HISTORY_SINCE.get(channel.id, DEFAULT_CHANNELS_HISTORY_SINCE)
         history_after = None if history_since is None else (arrow.utcnow() - history_since).datetime
 
@@ -109,11 +113,11 @@ async def channel_worker(worker_no, authors, queue):
         pins_count = 0
 
         async for message in channel.history(limit=None, after=history_after):
-            if message.flags.has_thread:
-                logger_w.debug(f'Thread {message.jump_url}')
-                thread = await message.guild.fetch_channel(message.id)
-                logger_w.debug(f"Thread identified as #{thread.id}, named '{thread.name}'")
-                queue.put_nowait(thread)
+            if message.thread:
+                logger_w.debug(f"Thread titled '{message.thread.name}' starts from {message.jump_url}")
+                print('DBG PUT THREAD:', repr(message.thread.guild), repr(message.thread))
+                assert message.thread.guild, repr(message.thread)
+                queue.put_nowait(message.thread)
 
             if message.author.id not in authors:
                 authors[message.author.id] = create_user(message.author)
