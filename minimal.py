@@ -1,6 +1,10 @@
 import os
+import logging
 
 import discord
+
+logging.root.setLevel(logging.DEBUG)
+logging.root.addHandler(logging.StreamHandler())
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -25,6 +29,7 @@ async def on_ready():
     # AttributeError: 'NoneType' object has no attribute 'get_thread'
     async for message in thread.history():
         pass
+    print('WORKS!')
 
 
 client.run(os.getenv('DISCORD_API_KEY'))
