@@ -28,6 +28,7 @@ MESSAGES = [
     ('🆗', 'Jsme OK'),
     ('🟡', 'Hele žluté kolečko'),
     ('🟥', 'Hele červený čtvereček'),
+    ('🤡', 'Klauni toto!'),
 ]
 
 
@@ -135,7 +136,7 @@ async def send_tips(client):
                     await discord_channel.send(content=message_content)
                 else:
                     logger_m.info(f'Sending message {emoji} canceled, will send tomorrow')
-                    break
+                break
 
 def get_role(guild, id):
     return [role for role in guild.roles if role.id == id][0]
