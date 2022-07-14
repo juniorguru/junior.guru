@@ -361,3 +361,14 @@ def test_message_pinned_listing(db_connection):
     message3 = create_message(3, user, created_at=datetime(2021, 5, 3), pin_reactions_count=10)
 
     assert list(ClubMessage.pinned_by_reactions_listing()) == [message3, message2]
+
+
+@pytest.mark.parametrize('content, expected', [
+    ('🔥 hello', '🔥'),
+    ('hello 🔥', None),
+    ('', None),
+])
+def test_emoji_prefix(db_connection, juniorguru_bot, content, expected):
+    message = create_message(1, juniorguru_bot, content=content)
+
+    assert message.emoji_prefix == expected

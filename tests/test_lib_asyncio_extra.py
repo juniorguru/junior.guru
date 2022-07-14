@@ -1,4 +1,4 @@
-from juniorguru.sync.avatars import chunks
+from juniorguru.lib.asyncio_extra import chunks
 
 
 def test_chunks():

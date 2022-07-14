@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 from PIL import Image
 
 from juniorguru.lib import loggers
+from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib.club import run_discord_task
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
@@ -52,17 +53,6 @@ async def discord_task(client):
         if avatars_count >= AVATARS_LIMIT:
             logger.debug(f"Done! Got {avatars_count} avatars, need {AVATARS_LIMIT}")
             break
-
-
-def chunks(iterable, size=1):
-    chunk = []
-    for item in iterable:
-        chunk.append(item)
-        if len(chunk) == size:
-            yield chunk
-            chunk = []
-    if chunk:
-        yield chunk
 
 
 async def process_member(client, member):

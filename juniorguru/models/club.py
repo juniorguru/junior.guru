@@ -2,6 +2,7 @@ import math
 from datetime import date, timedelta
 from collections import Counter
 
+from emoji import is_emoji
 from peewee import (BooleanField, CharField, DateTimeField, ForeignKeyField,
                     IntegerField, DateField, fn)
 
@@ -129,6 +130,16 @@ class ClubMessage(BaseModel):
     type = CharField(default='default')
     is_pinned = BooleanField(default=False)
 
+    @property
+    def emoji_prefix(self):
+        try:
+            emoji = self.content.split(maxsplit=1)[0]
+        except IndexError:
+            return None
+        if is_emoji(emoji):
+            return emoji
+        return None
+
     @classmethod
     def count(cls):
         return cls.select().count()
@@ -142,6 +153,12 @@ class ClubMessage(BaseModel):
         return cls.select() \
             .where(cls.channel_id == channel_id) \
             .order_by(cls.created_at)
+
+    @classmethod
+    def channel_listing_bot(cls, channel_id):
+        return cls.channel_listing(channel_id) \
+            .join(ClubUser) \
+            .where(ClubUser.id == JUNIORGURU_BOT)
 
     @classmethod
     def channel_listing_since(cls, channel_id, since_at):
