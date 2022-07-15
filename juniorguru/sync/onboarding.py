@@ -60,57 +60,59 @@ async def manage_channels(client):
     logger.info(f"Managing {len(channels)} existing onboarding channels for {len(members)} existing members")
 
     for op_name, op_payload in prepare_channels_operations(channels, members):
-        if op_name == 'assign':
-            member, channel = op_payload
-            logger.info(f"Assigning channel #{channel.id} to member #{member.id}")
-            member.onboarding_channel_id = channel.id
-            member.save()
-
-        elif op_name == 'create':
-            member = op_payload
-            logger.info(f"Creating channel for member #{member.id}")
-            if DISCORD_MUTATIONS_ENABLED:
-                channel = await create_onboarding_channel(client, member.id, member.display_name, category)
-                member.onboarding_channel_id = channel.id
-                member.save()
-            else:
-                logger.warning('Discord mutations not enabled')
-
-        elif op_name == 'delete':
-            channel = op_payload
-            logger.info(f"Deleting channel #{channel.id}")
-            if DISCORD_MUTATIONS_ENABLED:
-                await channel.delete()
-            else:
-                logger.warning('Discord mutations not enabled')
-
-        elif op_name == 'close':
-            channel = op_payload
-            logger.info(f"Closing channel #{channel.id}")
-            last_message_on = ClubMessage.last_message(channel.id).created_at.date()
-            threshold_on = (TODAY - CHANNEL_DELETE_TIMEOUT)
-            if last_message_on > threshold_on:
-                logger.warning(f"Would delete channel #{channel.id}, but waiting (last message on {last_message_on} > {threshold_on})")
-            elif DISCORD_MUTATIONS_ENABLED:
-                await channel.delete()
-            else:
-                logger.warning('Discord mutations not enabled')
-        else:
-            raise RuntimeError(f"Unexpected operation: {op_name}")
+        fn_name = f'{op_name}_onboarding_channel'
+        fn = globals()[fn_name]
+        await fn(client, category, *op_payload)
 
 
-async def create_onboarding_channel(client, member_id, member_name, category):
-    name = f'{slugify(member_name, allow_unicode=True)}-tipy'
-    topic = f'Tipy a soukromý kanál jen pro tebe! 🦸 {member_name} #{member_id}'
-    overwrites = {
+async def assign_onboarding_channel(client, category, member, channel):
+    logger.info(f"Assigning channel #{channel.id} to member #{member.id}")
+    member.onboarding_channel_id = channel.id
+    member.save()
+
+
+async def create_onboarding_channel(client, category, member):
+    logger.info(f"Creating channel for member #{member.id}")
+    name = f'{slugify(member.display_name, allow_unicode=True)}-tipy'
+    topic = f'Tipy a soukromý kanál jen pro tebe! 🦸 {member.display_name} #{member.id}'
+    overwrites = await prepare_permissions_overwrites(client, member.id)
+    if DISCORD_MUTATIONS_ENABLED:
+        channel = await client.juniorguru_guild.create_text_channel(name=name, topic=topic,
+                                                                    category=category,
+                                                                    overwrites=overwrites)
+        member.onboarding_channel_id = channel.id
+        member.save()
+    else:
+        logger.warning('Discord mutations not enabled')
+
+
+async def delete_onboarding_channel(client, category, channel):
+    logger.info(f"Deleting channel #{channel.id}")
+    if DISCORD_MUTATIONS_ENABLED:
+        await channel.delete()
+    else:
+        logger.warning('Discord mutations not enabled')
+
+
+async def close_onboarding_channel(client, category, channel):
+    logger.info(f"Closing channel #{channel.id}")
+    last_message_on = ClubMessage.last_message(channel.id).created_at.date()
+    threshold_on = (TODAY - CHANNEL_DELETE_TIMEOUT)
+    if last_message_on > threshold_on:
+        logger.warning(f"Would delete channel #{channel.id}, but waiting (last message on {last_message_on} > {threshold_on})")
+    elif DISCORD_MUTATIONS_ENABLED:
+        await channel.delete()
+    else:
+        logger.warning('Discord mutations not enabled')
+
+
+async def prepare_permissions_overwrites(client, member_id):
+    return {
         client.juniorguru_guild.default_role: discord.PermissionOverwrite(read_messages=False),
         (await client.get_or_fetch_user(JUNIORGURU_BOT)): discord.PermissionOverwrite(read_messages=True),
         get_role(client.juniorguru_guild, MODERATORS_ROLE): discord.PermissionOverwrite(read_messages=True),
         (await client.get_or_fetch_user(member_id)): discord.PermissionOverwrite(read_messages=True),
     }
-    return await client.juniorguru_guild.create_text_channel(name=name, topic=topic,
-                                                             category=category,
-                                                             overwrites=overwrites)
 
 
 def get_role(guild, id):
