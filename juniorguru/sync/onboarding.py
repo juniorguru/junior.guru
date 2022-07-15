@@ -19,9 +19,9 @@ logger = loggers.get(__name__)
 
 CHANNEL_TOPIC_RE = re.compile(r'\#(?P<id>\d+)\s*$')
 
-ONBOARDING_CHANNELS_CATEGORY = 992438896078110751
-
 MODERATORS_ROLE = 795609174385098762
+
+ONBOARDING_CATEGORY = 992438896078110751
 
 MEMBERS_CHUNK_SIZE = 10
 
@@ -38,89 +38,122 @@ SCHEDULED_MESSAGES = {
 
 @sync_task(club_content_task)
 def main():
-    run_discord_task('juniorguru.sync.onboarding.manage_channels')
-    run_discord_task('juniorguru.sync.onboarding.send_tips')
+    run_discord_task('juniorguru.sync.onboarding.discord_task')
 
 
 @db.connection_context()
-async def manage_channels(client):
-    category = await client.fetch_channel(ONBOARDING_CHANNELS_CATEGORY)
-    members_channels_mapping = {}
+async def discord_task(client):
+    await manage_channels(client)
+    await send_messages(client)
 
-    for channel in category.channels:
-        logger.debug(f"Identifying channel #{channel.name} from its topic: {channel.topic}")
-        match = CHANNEL_TOPIC_RE.search(channel.topic)
-        try:
-            member_id = match.groupdict()['id']
-        except (AttributeError, KeyError):
-            logger.error(f"Channel #{channel.name} couldn't be identified, removing")
+
+async def manage_channels(client):
+    category = await client.fetch_channel(ONBOARDING_CATEGORY)
+
+    # TODO alpha version just for Dan
+    members = [m for m in ClubUser.members_listing() if m.id == 652142810291765248]
+    channels = category.channels
+    logger.info(f"Managing {len(channels)} existing onboarding channels for {len(members)} existing members")
+
+    for op_name, op_payload in prepare_channels_operations(channels, members):
+        if op_name == 'assign':
+            member, channel = op_payload
+            logger.info(f"Assigning channel #{channel.id} to member #{member.id}")
+            member.onboarding_channel_id = channel.id
+            member.save()
+
+        elif op_name == 'create':
+            member = op_payload
+            logger.info(f"Creating channel for member #{member.id}")
+            if DISCORD_MUTATIONS_ENABLED:
+                channel = await create_onboarding_channel(client, member.id, member.display_name, category)
+                member.onboarding_channel_id = channel.id
+                member.save()
+            else:
+                logger.warning('Discord mutations not enabled')
+
+        elif op_name == 'delete':
+            channel = op_payload
+            logger.info(f"Deleting channel #{channel.id}")
             if DISCORD_MUTATIONS_ENABLED:
                 await channel.delete()
             else:
                 logger.warning('Discord mutations not enabled')
-        else:
-            logger.info(f"Channel #{channel.name} identified as onboarding channel for member #{member_id}")
-            members_channels_mapping[int(member_id)] = channel
 
-    permissions = {
+        elif op_name == 'close':
+            channel = op_payload
+            logger.info(f"Closing channel #{channel.id}")
+            raise NotImplementedError()  # TODO
+
+        else:
+            raise RuntimeError(f"Unexpected operation: {op_name}")
+
+
+async def create_onboarding_channel(client, member_id, member_name, category):
+    name = f'{slugify(member_name, allow_unicode=True)}-tipy'
+    topic = f'Tipy a soukromý kanál jen pro tebe! 🦸 {member_name} #{member_id}'
+    overwrites = {
         client.juniorguru_guild.default_role: discord.PermissionOverwrite(read_messages=False),
         (await client.get_or_fetch_user(JUNIORGURU_BOT)): discord.PermissionOverwrite(read_messages=True),
         get_role(client.juniorguru_guild, MODERATORS_ROLE): discord.PermissionOverwrite(read_messages=True),
+        (await client.get_or_fetch_user(member_id)): discord.PermissionOverwrite(read_messages=True),
     }
-    for member in ClubUser.members_listing():
-        if member.id != 652142810291765248:  # TODO
-            continue
+    return await client.juniorguru_guild.create_text_channel(name=name, topic=topic,
+                                                             category=category,
+                                                             overwrites=overwrites)
 
+
+def get_role(guild, id):
+    return [role for role in guild.roles if role.id == id][0]
+
+
+def prepare_channels_operations(channels, members):
+    members_channels_mapping = {}
+    operations = []
+
+    for channel in channels:
+        try:
+            member_id = parse_member_id(channel.topic)
+        except ValueError:
+            operations.append(('delete', channel))
+        else:
+            members_channels_mapping[member_id] = channel
+
+    for member in members:
         try:
             channel = members_channels_mapping.pop(member.id)
-            logger.info(f"Onboarding channel for member #{member.id} already exists")
+            operations.append(('assign', (member, channel)))
         except KeyError:
-            logger.info(f"Onboarding channel for member #{member.id} needs to be created")
-            overwrites = {
-                (await client.get_or_fetch_user(member.id)): discord.PermissionOverwrite(read_messages=True),
-                **permissions,
-            }
-            channel_name = f'{slugify(member.display_name, allow_unicode=True)}-tipy'
-            channel_topic = f'Tipy a soukromý kanál jen pro tebe! 🦸 {member.display_name} #{member.id}'
-            channel = await client.juniorguru_guild.create_text_channel(name=channel_name,
-                                                                        topic=channel_topic,
-                                                                        category=category,
-                                                                        overwrites=overwrites)
-        logger.debug(f"Setting onboarding channel for member #{member.id} to #{channel.id} and saving")
-        member.onboarding_channel_id = channel.id
-        member.save()
+            operations.append(('create', member))
 
-    logger.debug(f'There are {len(members_channels_mapping)} onboarding channels left')
-    for member_id, channel in members_channels_mapping.items():
-        logger.warning(f"Deleting onboarding channel #{channel.name}, member #{member.id} is gone")
-        if DISCORD_MUTATIONS_ENABLED:
-            await channel.delete()
-        else:
-            logger.warning('Discord mutations not enabled')
+    for channel in members_channels_mapping.values():
+        operations.append(('close', channel))
+
+    return operations
 
 
-@db.connection_context()
-async def send_tips(client):
+def parse_member_id(channel_topic):
+    match = CHANNEL_TOPIC_RE.search(channel_topic)
+    try:
+        return int(match.groupdict()['id'])
+    except (AttributeError, KeyError, TypeError):
+        raise ValueError("Given channel topic doesn't contain reference to a member ID")
+
+
+async def send_messages(client):
     today = date.today()
-    members_chunks = chunks(ClubUser.members_listing(),
+    members_chunks = chunks(ClubUser.onboarding_listing(),
                             size=MEMBERS_CHUNK_SIZE)
     for n, members_chunk in enumerate(members_chunks, start=1):
         logger.debug(f'Processing chunk #{n} of {len(members_chunk)} members')
         await asyncio.gather(*[
-            process_member(client, member, today)
+            send_messages_to_member(client, member, today)
             for member in members_chunk
         ])
 
 
-async def process_member(client, member, today):
-    if member.id != 652142810291765248:  # TODO
-        return
-
+async def send_messages_to_member(client, member, today):
     logger_m = logger.getChild(f'members.{member.id}')
-    if not member.onboarding_channel_id:
-        logger_m.warning('Missing onboarding channel, skipping!')
-        return
-
     logger_m.debug('Preparing messages')
     messages = prepare_messages(ClubMessage.channel_listing_bot(member.onboarding_channel_id),
                                 SCHEDULED_MESSAGES, today)
@@ -129,19 +162,19 @@ async def process_member(client, member, today):
         return
     logger_m.info(f'Processing {len(messages)} messages')
 
-    discord_channel = await client.fetch_channel(member.onboarding_channel_id)
+    channel = await client.fetch_channel(member.onboarding_channel_id)
     for message_id, message_content in messages:
         if message_id:
             logger_m.debug(f'Editing message: {message_content}')
             if DISCORD_MUTATIONS_ENABLED:
-                discord_message = await discord_channel.fetch_message(message_id)
+                discord_message = await channel.fetch_message(message_id)
                 await discord_message.edit(content=message_content)
             else:
                 logger_m.warning('Discord mutations not enabled')
         else:
             logger_m.debug(f'Sending message: {message_content}')
             if DISCORD_MUTATIONS_ENABLED:
-                await discord_channel.send(content=message_content)
+                await channel.send(content=message_content)
             else:
                 logger_m.warning('Discord mutations not enabled')
 
@@ -174,7 +207,3 @@ def prepare_messages(history, scheduled_messages, today):
             break
 
     return messages
-
-
-def get_role(guild, id):
-    return [role for role in guild.roles if role.id == id][0]

@@ -111,6 +111,10 @@ class ClubUser(BaseModel):
         return members
 
     @classmethod
+    def onboarding_listing(cls):
+        return cls.members_listing().where(cls.onboarding_channel_id.is_null(False))
+
+    @classmethod
     def avatars_listing(cls):
         return cls.members_listing().where(cls.avatar_path.is_null(False))
 
