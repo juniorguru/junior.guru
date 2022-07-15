@@ -1,6 +1,6 @@
 import re
 import asyncio
-from datetime import date
+from datetime import date, timedelta
 
 import discord
 from slugify import slugify
@@ -17,11 +17,15 @@ from juniorguru.sync.club_content import main as club_content_task
 logger = loggers.get(__name__)
 
 
+TODAY = date.today()
+
 CHANNEL_TOPIC_RE = re.compile(r'\#(?P<id>\d+)\s*$')
 
 MODERATORS_ROLE = 795609174385098762
 
 ONBOARDING_CATEGORY = 992438896078110751
+
+CHANNEL_DELETE_TIMEOUT = timedelta(days=30 * 3)
 
 MEMBERS_CHUNK_SIZE = 10
 
@@ -83,8 +87,14 @@ async def manage_channels(client):
         elif op_name == 'close':
             channel = op_payload
             logger.info(f"Closing channel #{channel.id}")
-            raise NotImplementedError()  # TODO
-
+            last_message_on = ClubMessage.last_message(channel.id).created_at.date()
+            threshold_on = (TODAY - CHANNEL_DELETE_TIMEOUT)
+            if last_message_on > threshold_on:
+                logger.warning(f"Would delete channel #{channel.id}, but waiting (last message on {last_message_on} > {threshold_on})")
+            elif DISCORD_MUTATIONS_ENABLED:
+                await channel.delete()
+            else:
+                logger.warning('Discord mutations not enabled')
         else:
             raise RuntimeError(f"Unexpected operation: {op_name}")
 
@@ -141,22 +151,21 @@ def parse_member_id(channel_topic):
 
 
 async def send_messages(client):
-    today = date.today()
     members_chunks = chunks(ClubUser.onboarding_listing(),
                             size=MEMBERS_CHUNK_SIZE)
     for n, members_chunk in enumerate(members_chunks, start=1):
         logger.debug(f'Processing chunk #{n} of {len(members_chunk)} members')
         await asyncio.gather(*[
-            send_messages_to_member(client, member, today)
+            send_messages_to_member(client, member)
             for member in members_chunk
         ])
 
 
-async def send_messages_to_member(client, member, today):
+async def send_messages_to_member(client, member):
     logger_m = logger.getChild(f'members.{member.id}')
     logger_m.debug('Preparing messages')
     messages = prepare_messages(ClubMessage.channel_listing_bot(member.onboarding_channel_id),
-                                SCHEDULED_MESSAGES, today)
+                                SCHEDULED_MESSAGES, TODAY)
     if not messages:
         logger_m.debug('Nothing to do')
         return

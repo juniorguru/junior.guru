@@ -186,6 +186,13 @@ class ClubMessage(BaseModel):
             .order_by(cls.created_at)
 
     @classmethod
+    def last_message(cls, channel_id):
+        return cls.select() \
+            .where(cls.channel_id == channel_id) \
+            .order_by(cls.created_at.desc()) \
+            .first()
+
+    @classmethod
     def last_bot_message(cls, channel_id, startswith_emoji, contains_text=None):
         query = cls.select() \
             .join(ClubUser) \
