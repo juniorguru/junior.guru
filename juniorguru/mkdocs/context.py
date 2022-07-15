@@ -1,6 +1,6 @@
 import hashlib
 import re
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 from urllib.parse import urljoin
 
@@ -20,8 +20,13 @@ from juniorguru.models.transaction import Transaction
 
 
 NOW = arrow.utcnow()
+
 TODAY = NOW.date()
+
+PREVIOUS_MONTH = TODAY.replace(day=1) - timedelta(days=1)
+
 BUSINESS_BEGIN_ON = date(2020, 1, 1)
+
 CLUB_BEGIN_ON = date(2021, 2, 1)
 
 
@@ -90,11 +95,13 @@ def on_docs_context(context):
     context['charts_women'] = charts.per_month(ClubSubscribedPeriod.women_count, club_charts_months)
     context['charts_subscriptions_breakdown'] = charts.per_month_breakdown(ClubSubscribedPeriod.count_breakdown, club_charts_months)
     context['charts_women_ptc'] = charts.per_month(ClubSubscribedPeriod.women_ptc, club_charts_months)
-    context['charts_signups'] = charts.per_month(ClubSubscribedPeriod.signups_count, club_charts_months)
-    context['charts_individuals_signups'] = charts.per_month(ClubSubscribedPeriod.individuals_signups_count, club_charts_months)
-    context['charts_churn_ptc'] = charts.per_month(ClubSubscribedPeriod.churn_ptc, club_charts_months)
-    context['charts_individuals_churn_ptc'] = charts.per_month(ClubSubscribedPeriod.individuals_churn_ptc, club_charts_months)
     context['charts_individuals_duration'] = charts.per_month(ClubSubscribedPeriod.individuals_duration_avg, club_charts_months)
+    club_trend_charts_months = charts.months(CLUB_BEGIN_ON, PREVIOUS_MONTH)
+    context['charts_club_trend_labels'] = charts.labels(club_trend_charts_months)
+    context['charts_signups'] = charts.per_month(ClubSubscribedPeriod.signups_count, club_trend_charts_months)
+    context['charts_individuals_signups'] = charts.per_month(ClubSubscribedPeriod.individuals_signups_count, club_trend_charts_months)
+    context['charts_churn_ptc'] = charts.per_month(ClubSubscribedPeriod.churn_ptc, club_trend_charts_months)
+    context['charts_individuals_churn_ptc'] = charts.per_month(ClubSubscribedPeriod.individuals_churn_ptc, club_trend_charts_months)
 
     # podcast.md, handbook/cv.md
     context['podcast_episodes'] = PodcastEpisode.listing()
