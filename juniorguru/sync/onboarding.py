@@ -65,21 +65,22 @@ async def manage_channels(client):
         await fn(client, category, *op_payload)
 
 
-async def assign_onboarding_channel(client, category, member, channel):
-    logger.info(f"Assigning channel #{channel.id} to member #{member.id}")
+async def update_onboarding_channel(client, category, member, channel):
+    logger.info(f"Updating channel #{channel.id} to member #{member.id}")
+    channel_data = await prepare_onboarding_channel_data(client, category, member)
+    if DISCORD_MUTATIONS_ENABLED:
+        await channel.edit(**channel_data)
+    else:
+        logger.warning('Discord mutations not enabled')
     member.onboarding_channel_id = channel.id
     member.save()
 
 
 async def create_onboarding_channel(client, category, member):
     logger.info(f"Creating channel for member #{member.id}")
-    name = f'{slugify(member.display_name, allow_unicode=True)}-tipy'
-    topic = f'Tipy a soukromý kanál jen pro tebe! 🦸 {member.display_name} #{member.id}'
-    overwrites = await prepare_permissions_overwrites(client, member.id)
+    channel_data = await prepare_onboarding_channel_data(client, category, member)
     if DISCORD_MUTATIONS_ENABLED:
-        channel = await client.juniorguru_guild.create_text_channel(name=name, topic=topic,
-                                                                    category=category,
-                                                                    overwrites=overwrites)
+        channel = await client.juniorguru_guild.create_text_channel(**channel_data)
         member.onboarding_channel_id = channel.id
         member.save()
     else:
@@ -106,13 +107,16 @@ async def close_onboarding_channel(client, category, channel):
         logger.warning('Discord mutations not enabled')
 
 
-async def prepare_permissions_overwrites(client, member_id):
-    return {
+async def prepare_onboarding_channel_data(client, category, member):
+    name = f'{slugify(member.display_name, allow_unicode=True)}-tipy'
+    topic = f'Tipy a soukromý kanál jen pro tebe! 🦸 {member.display_name} #{member.id}'
+    overwrites = {
         client.juniorguru_guild.default_role: discord.PermissionOverwrite(read_messages=False),
         (await client.get_or_fetch_user(JUNIORGURU_BOT)): discord.PermissionOverwrite(read_messages=True),
         get_role(client.juniorguru_guild, MODERATORS_ROLE): discord.PermissionOverwrite(read_messages=True),
-        (await client.get_or_fetch_user(member_id)): discord.PermissionOverwrite(read_messages=True),
+        (await client.get_or_fetch_user(member.id)): discord.PermissionOverwrite(read_messages=True),
     }
+    return dict(name=name, topic=topic, category=category, overwrites=overwrites)
 
 
 def get_role(guild, id):
@@ -134,7 +138,7 @@ def prepare_channels_operations(channels, members):
     for member in members:
         try:
             channel = members_channels_mapping.pop(member.id)
-            operations.append(('assign', (member, channel)))
+            operations.append(('update', (member, channel)))
         except KeyError:
             operations.append(('create', member))
 

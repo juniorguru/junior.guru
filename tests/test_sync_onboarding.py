@@ -74,8 +74,8 @@ def test_prepare_channels_operations_close_channels_for_missing_members():
     members = [member1, member3]
 
     assert prepare_channels_operations(channels, members) == [
-        ('assign', (member1, channel1)),
-        ('assign', (member3, channel3)),
+        ('update', (member1, channel1)),
+        ('update', (member3, channel3)),
         ('close', channel2),
     ]
 
