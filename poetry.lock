@@ -252,7 +252,7 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "emoji"
-version = "1.7.0"
+version = "2.0.0"
 description = "Emoji for Python"
 category = "main"
 optional = false
@@ -2030,7 +2030,7 @@ decorator = [
     {file = "decorator-5.1.1.tar.gz", hash = "sha256:637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"},
 ]
 emoji = [
-    {file = "emoji-1.7.0.tar.gz", hash = "sha256:65c54533ea3c78f30d0729288998715f418d7467de89ec258a31c0ce8660a1d1"},
+    {file = "emoji-2.0.0.tar.gz", hash = "sha256:297fac7ec9e86f7b602792c28eb6f04819ba67ab88a34c56afcde52243a9a105"},
 ]
 extruct = [
     {file = "extruct-0.13.0-py2.py3-none-any.whl", hash = "sha256:fe19b9aefdb4dfbf828c2b082b81a363a03a44c7591c2d6b62ca225cb8f8c0be"},
