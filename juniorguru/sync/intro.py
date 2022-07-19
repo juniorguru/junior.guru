@@ -14,7 +14,7 @@ SYSTEM_MESSAGES_CHANNEL = 788823881024405544
 
 @sync_task(club_content_task)
 def main():
-    run_discord_task('juniorguru.sync.returning_members.discord_task')
+    run_discord_task('juniorguru.sync.intro.discord_task')
 
 
 @db.connection_context()
