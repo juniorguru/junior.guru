@@ -53,44 +53,55 @@ def is_thread_created(discord_message):
 
 
 async def process_message(client, channel, message):
-    logger_m = logger.getChild(f'messages.{message.id}')
-
     moderators_role = [role for role in client.juniorguru_guild.roles if role.id == MODERATORS_ROLE][0]
     moderators_ids = [member.id for member in moderators_role.members] + [JUNIORGURU_BOT]
 
     if message.type == 'default' and message.author.id not in moderators_ids and message.is_intro:
-        logger_m.info(f'Member #{message.author.id} has an intro message')
-        logger_m.debug(f"Welcoming '{message.author.display_name}' with emojis")
-        discord_message = await channel.fetch_message(message.id)
-        missing_emojis = get_missing_reactions(discord_message.reactions, WELCOME_REACTIONS)
-        if DISCORD_MUTATIONS_ENABLED:
-            await add_reactions(discord_message, missing_emojis)
-        else:
-            logger_m.warning('Discord mutations not enabled')
-
-        if message.created_at >= THREADS_STARTING_AT:
-            logger_m.debug(f"Ensuring thread for '{message.author.display_name}'")
-            if DISCORD_MUTATIONS_ENABLED:
-                if discord_message.flags.has_thread:
-                    logger_m.debug(f"Thread for '{message.author.display_name}' already exists")
-                    thread = await discord_message.guild.fetch_channel(message.id)
-                else:
-                    logger_m.debug(f"Creating thread for '{message.author.display_name}'")
-                    thread = await discord_message.create_thread(name=f'Ahoj {message.author.display_name}!')
-                message.author.intro_thread_id = thread.id
-                message.author.save()
-            else:
-                logger_m.warning('Discord mutations not enabled')
-
+        await welcome(channel, message)
     elif message.type == 'new_member' and message.author.first_seen_on() < message.created_at.date():
-        logger_m.info(f'Member #{message.author.id} has returned')
-        logger_m.debug(f"Welcoming back '{message.author.display_name}' with emojis")
-        discord_message = await channel.fetch_message(message.id)
-        missing_emojis = get_missing_reactions(discord_message.reactions, WELCOME_BACK_REACTIONS)
+        await welcome_back(channel, message)
+
+
+async def welcome(channel, message):
+    logger_m = logger.getChild(f'messages.{message.id}')
+    logger_m.info(f'Member #{message.author.id} has an intro message')
+    logger_m.debug(f"Welcoming '{message.author.display_name}' with emojis")
+    discord_message = await channel.fetch_message(message.id)
+    missing_emojis = get_missing_reactions(discord_message.reactions, WELCOME_REACTIONS)
+    if DISCORD_MUTATIONS_ENABLED:
+        await add_reactions(discord_message, missing_emojis)
+    else:
+        logger_m.warning('Discord mutations not enabled')
+
+    if message.created_at >= THREADS_STARTING_AT:
+        logger_m.debug(f"Ensuring thread for '{message.author.display_name}'")
+        thread_name = f'Ahoj {message.author.display_name}!'
         if DISCORD_MUTATIONS_ENABLED:
-            await add_reactions(discord_message, missing_emojis)
+            if discord_message.flags.has_thread:
+                logger_m.debug(f"Thread for '{message.author.display_name}' already exists")
+                thread = await discord_message.guild.fetch_channel(message.id)
+                if thread.name != thread_name:
+                    logger_m.debug(f"Renaming thread for '{message.author.display_name}' from '{thread.name}' to '{thread_name}'")
+                    thread = await thread.edit(name=thread_name)
+            else:
+                logger_m.debug(f"Creating thread for '{message.author.display_name}'")
+                thread = await discord_message.create_thread(name=thread_name)
+            message.author.intro_thread_id = thread.id
+            message.author.save()
         else:
             logger_m.warning('Discord mutations not enabled')
+
+
+async def welcome_back(channel, message):
+    logger_m = logger.getChild(f'messages.{message.id}')
+    logger_m.info(f'Member #{message.author.id} has returned')
+    logger_m.debug(f"Welcoming back '{message.author.display_name}' with emojis")
+    discord_message = await channel.fetch_message(message.id)
+    missing_emojis = get_missing_reactions(discord_message.reactions, WELCOME_BACK_REACTIONS)
+    if DISCORD_MUTATIONS_ENABLED:
+        await add_reactions(discord_message, missing_emojis)
+    else:
+        logger_m.warning('Discord mutations not enabled')
 
 
 def get_missing_reactions(existing_reactions, ensure_emojis):
