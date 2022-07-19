@@ -17,21 +17,19 @@ from juniorguru.models.base import BaseModel, JSONField
 class ClubUser(BaseModel):
     id = IntegerField(primary_key=True)
     memberful_subscription_id = CharField(null=True)
-
     joined_at = DateTimeField(null=True)
     expires_at = DateTimeField(null=True)
-
     is_bot = BooleanField(default=False)
     is_member = BooleanField(default=True)
     has_avatar = BooleanField(default=True)
-
     avatar_path = CharField(null=True)
     display_name = CharField()
     mention = CharField()
     tag = CharField()
     coupon = CharField(null=True, index=True)
     roles = JSONField(default=lambda: [])
-    onboarding_channel_id = IntegerField(null=True)
+    onboarding_channel_id = IntegerField(null=True, unique=True)
+    intro_thread_id = IntegerField(null=True, unique=True)
 
     @property
     def intro(self):
