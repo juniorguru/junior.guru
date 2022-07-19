@@ -231,29 +231,38 @@ def test_user_is_founder(db_connection, joined_at, coupon, expected):
     assert user.is_founder() is expected
 
 
-def test_user_has_intro_false(db_connection):
+def test_user_intro_doesnt_exist(db_connection):
     user = create_user(1)
     create_message(1, user, channel_id=222)
     create_message(2, user, channel_id=333)
 
-    assert user.has_intro() is False
+    assert user.intro is None
 
 
-def test_user_has_intro_true(db_connection):
+def test_user_intro_exists(db_connection):
     user = create_user(1)
     create_message(1, user, channel_id=222)
     create_message(2, user, channel_id=INTRO_CHANNEL)
 
-    assert user.has_intro() is True
+    assert user.intro.id == 2
 
 
-def test_user_has_intro_skips_system_message(db_connection):
+def test_user_intro_skips_system_messages(db_connection):
     user = create_user(1)
     create_message(1, user, channel_id=222)
     create_message(2, user, channel_id=INTRO_CHANNEL, type='new_member')
     create_message(3, user, channel_id=INTRO_CHANNEL, type='premium_guild_subscription')
 
-    assert user.has_intro() is False
+    assert user.intro is None
+
+
+def test_user_intro_uses_the_latest_message(db_connection):
+    created_at = datetime.now() - timedelta(days=1)
+    user = create_user(1)
+    create_message(1, user, channel_id=INTRO_CHANNEL, created_at=created_at + timedelta(seconds=30))
+    create_message(2, user, channel_id=INTRO_CHANNEL, created_at=created_at)
+
+    assert user.intro.id == 1
 
 
 def test_user_messages_count(db_connection):

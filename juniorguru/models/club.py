@@ -33,6 +33,13 @@ class ClubUser(BaseModel):
     roles = JSONField(default=lambda: [])
     onboarding_channel_id = IntegerField(null=True)
 
+    @property
+    def intro(self):
+        return self.list_messages \
+            .where(ClubMessage.channel_id == INTRO_CHANNEL, ClubMessage.type == 'default') \
+            .order_by(ClubMessage.created_at.desc()) \
+            .first()
+
     def messages_count(self):
         return self.list_messages.count()
 
@@ -48,13 +55,6 @@ class ClubUser(BaseModel):
         messages = self.list_recent_messages(today) \
             .where(ClubMessage.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
         return sum([message.upvotes_count for message in messages])
-
-    def has_intro(self, intro_channel_id=None):
-        intro_channel_id = intro_channel_id or INTRO_CHANNEL
-        intro_message = self.list_messages \
-            .where(ClubMessage.channel_id == intro_channel_id, ClubMessage.type == 'default') \
-            .first()
-        return bool(intro_message)
 
     def first_seen_on(self):
         first_message = self.list_messages \
@@ -143,6 +143,10 @@ class ClubMessage(BaseModel):
         if is_emoji(emoji):
             return emoji
         return None
+
+    @property
+    def is_intro(self):
+        return self.author.intro.id == self.id
 
     @classmethod
     def count(cls):

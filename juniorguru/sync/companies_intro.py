@@ -1,5 +1,6 @@
 from datetime import date, timedelta
 from pathlib import Path
+import asyncio
 
 from discord import Colour, Embed, File
 
@@ -16,6 +17,8 @@ from juniorguru.sync.roles import main as roles_task
 
 
 MESSAGE_EMOJI = '👋'
+
+BOT_REACTIONS = ['👋', '👍', '💕', '💰']
 
 COMPANIES_INTRO_LAUNCH_ON = date(2022, 4, 1)
 
@@ -79,7 +82,8 @@ async def discord_task(client):
                 embed.set_thumbnail(url=f"attachment://{Path(company.poster_path).name}")
                 file = File(IMAGES_DIR / company.poster_path)
 
-                await channel.send(content=content, embed=embed, file=file)
+                message = await channel.send(content=content, embed=embed, file=file)
+                await asyncio.gather(*[message.add_reaction(emoji) for emoji in BOT_REACTIONS])
             else:
                 logger.warning('Discord mutations not enabled')
         else:

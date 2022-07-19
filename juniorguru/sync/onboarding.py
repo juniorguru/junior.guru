@@ -7,7 +7,7 @@ from slugify import slugify
 
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, JUNIORGURU_BOT, DISCORD_MUTATIONS_ENABLED
+from juniorguru.lib.club import run_discord_task, JUNIORGURU_BOT, DISCORD_MUTATIONS_ENABLED, MODERATORS_ROLE
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser, ClubMessage
@@ -20,8 +20,6 @@ logger = loggers.get(__name__)
 TODAY = date.today()
 
 CHANNEL_TOPIC_RE = re.compile(r'\#(?P<id>\d+)\s*$')
-
-MODERATORS_ROLE = 795609174385098762
 
 ONBOARDING_CATEGORY = 992438896078110751
 
