@@ -175,13 +175,6 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
   ) }}
 
   {{ link_card(
-    'HackPrague',
-    'hackprague.com.jpg',
-    'https://hackprague.com',
-    'Každoroční hackhaton nápadů zlepšujících život ve městech.'
-  ) }}
-
-  {{ link_card(
     'Hackathon.com',
     'hackathon.com!city!czech-republic!praha.jpg',
     'https://www.hackathon.com/city/czech-republic/praha',

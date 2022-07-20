@@ -23,7 +23,6 @@ https://www.codewars.com/
 https://checkio.org/
 https://www.umimeprogramovat.cz
 https://projecteuler.net/
-https://hackprague.com
 https://www.hackathon.com/city/czech-republic/praha
 https://opensource.guide/
 https://gismentors.cz/
