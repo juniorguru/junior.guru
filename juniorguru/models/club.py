@@ -29,7 +29,6 @@ class ClubUser(BaseModel):
     coupon = CharField(null=True, index=True)
     roles = JSONField(default=lambda: [])
     onboarding_channel_id = IntegerField(null=True, unique=True)
-    intro_thread_id = IntegerField(null=True, unique=True)
 
     @property
     def intro(self):
@@ -37,6 +36,11 @@ class ClubUser(BaseModel):
             .where(ClubMessage.channel_id == INTRO_CHANNEL, ClubMessage.type == 'default') \
             .order_by(ClubMessage.created_at.desc()) \
             .first()
+
+    @property
+    def intro_thread_id(self):
+        intro = self.intro
+        return intro.id if intro else None
 
     def messages_count(self):
         return self.list_messages.count()

@@ -1,5 +1,6 @@
 import asyncio
 from datetime import datetime, timedelta
+import random
 
 from discord import MessageType
 from discord.errors import Forbidden
@@ -21,6 +22,15 @@ PROCESS_HISTORY_SINCE = timedelta(days=30)
 THREADS_STARTING_AT = datetime(2022, 7, 17, 0, 0)
 
 PURGE_SAFETY_LIMIT = 20
+
+WELCOME_MESSAGE_PREFIXES = [
+    'Vítej v klubu!',
+    'Vítám tě v klubu!',
+    'Vítám tě mezi námi!',
+    'Vítej mezi námi!',
+    'Ahoj!',
+    'Ahój!',
+]
 
 
 logger = loggers.get(__name__)
@@ -75,8 +85,8 @@ async def welcome(channel, message):
 
     if message.created_at >= THREADS_STARTING_AT:
         logger_m.debug(f"Ensuring thread for '{message.author.display_name}'")
-        thread_name = f'Ahoj {message.author.display_name}!'
         if DISCORD_MUTATIONS_ENABLED:
+            thread_name = f'Ahoj {message.author.display_name}!'
             if discord_message.flags.has_thread:
                 logger_m.debug(f"Thread for '{message.author.display_name}' already exists")
                 thread = await discord_message.guild.fetch_channel(message.id)
@@ -86,10 +96,29 @@ async def welcome(channel, message):
             else:
                 logger_m.debug(f"Creating thread for '{message.author.display_name}'")
                 thread = await discord_message.create_thread(name=thread_name)
-            message.author.intro_thread_id = thread.id
-            message.author.save()
+
+            logger_m.debug(f"Ensuring welcome message for '{message.author.display_name}'")
+            content_prefix = random.choice(WELCOME_MESSAGE_PREFIXES)
+            content = (f'{content_prefix} 👋 Já jsem kuře, zdejší robot 🤖 Pomáhám se vším, co by nemusel <@!668226181769986078> stíhat sám.\n\n'
+                       'Díky, že se představuješ ostatním, protože to fakt hodně pomáhá v tom, aby šlo pochopit tvou konkrétní situaci. '
+                       'Takhle ti můžeme dávat rady na míru, a ne jenom nějaká obecná doporučení <:meowthumbsup:842730599906279494>\n\n'
+                       'Tvou situaci můžeme krátce probrat i přímo tady, ale na další dotazy jsou ideální diskuzní kanály jako <#789092262965280778>, <#788826407412170752>, nebo <#769966887055392768> 💬')
+            logger_m.debug(f"Welcome message content: {content!r}")
+            try:
+                welcome_discord_message = [discord_message async for discord_message
+                                           in thread.history(limit=None)
+                                           if is_welcome_message(discord_message)][0]
+                logger_m.debug(f"Welcome message already exists, updating: #{welcome_discord_message.id}")
+                await welcome_discord_message.edit(content=content)
+            except IndexError:
+                logger_m.debug("Sending welcome message")
+                await thread.send(content=content)
         else:
             logger_m.warning('Discord mutations not enabled')
+
+
+def is_welcome_message(discord_message):
+    return discord_message.type == MessageType.default and discord_message.author.id == JUNIORGURU_BOT
 
 
 async def welcome_back(channel, message):
@@ -109,7 +138,7 @@ def get_missing_reactions(existing_reactions, ensure_emojis):
 
 
 async def add_reactions(discord_message, emojis):
-    logger.debug(f"Reacting to message #{discord_message.id} with emojis: {emojis!r}")
+    logger.debug(f"Reacting to message #{discord_message.id} with emojis: {list(emojis)!r}")
     if not emojis:
         return
     try:
