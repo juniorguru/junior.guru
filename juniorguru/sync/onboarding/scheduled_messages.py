@@ -8,35 +8,35 @@ def schedule_message(emoji):
 
 
 @schedule_message('👋')
-def render_hello():
+def render_hello(context):
     return 'Smrdíme v klubu!'
 
 
 @schedule_message('🌯')
-def render_burrito():
+def render_burrito(context):
     return 'Žereme burrito'
 
 
 @schedule_message('💤')
-def render_sleep():
+def render_sleep(context):
     return 'Spíme'
 
 
 @schedule_message('🆗')
-def render_ok():
+def render_ok(context):
     return 'Jsme OK'
 
 
 @schedule_message('🟡')
-def render_circle():
+def render_circle(context):
     return 'Hele žluté kolečko'
 
 
 @schedule_message('🟥')
-def render_square():
+def render_square(context):
     return 'Hele červený čtvereček'
 
 
 @schedule_message('🤡')
-def render_clown():
+def render_clown(context):
     return 'Klauni toto!'
