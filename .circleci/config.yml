@@ -18,6 +18,7 @@ jobs:
   install:
     executor: python-js
     steps:
+      # because the CircleCI's built-in feature doesn't auto-cancel the main branch
       - cancel_previous_build_and_wait/cancel_previous_build_and_wait:
           wait: 0
       - git-shallow-clone/checkout
