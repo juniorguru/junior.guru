@@ -45,6 +45,9 @@ async def manage_channels(client):
 
     # TODO alpha version just for Dan
     members = [m for m in ClubUser.members_listing() if m.id == 652142810291765248]
+    # TODO beta version for people who came recently
+    # members = [m for m in ClubUser.members_listing() if m.first_seen_on() > date(2022, 7, 17)]
+
     channels = category.channels
     logger.info(f"Managing {len(channels)} existing onboarding channels for {len(members)} existing members")
 

@@ -9,34 +9,41 @@ def schedule_message(emoji):
 
 @schedule_message('👋')
 def render_hello(context):
-    return 'Smrdíme v klubu!'
+    member = context['member']
+    return f'Smrdíme v klubu, {member.display_name}!'
 
 
 @schedule_message('🌯')
 def render_burrito(context):
-    return 'Žereme burrito'
+    member = context['member']
+    return f'Žereme burrito, {member.display_name}'
 
 
 @schedule_message('💤')
 def render_sleep(context):
-    return 'Spíme'
+    member = context['member']
+    return f'Spíme, {member.display_name}'
 
 
 @schedule_message('🆗')
 def render_ok(context):
-    return 'Jsme OK'
+    member = context['member']
+    return f'Jsme OK, {member.display_name}'
 
 
 @schedule_message('🟡')
 def render_circle(context):
-    return 'Hele žluté kolečko'
+    member = context['member']
+    return f'Hele žluté kolečko, {member.display_name}'
 
 
 @schedule_message('🟥')
 def render_square(context):
-    return 'Hele červený čtvereček'
+    member = context['member']
+    return f'Hele červený čtvereček, {member.display_name}'
 
 
 @schedule_message('🤡')
 def render_clown(context):
-    return 'Klauni toto!'
+    member = context['member']
+    return f'Klauni toto!, {member.display_name}'
