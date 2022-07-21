@@ -87,6 +87,10 @@ jobs:
       - restore_cache:  # get jobs data persisted between builds
           key: jobs-v2-{{ .Branch }}
       - run:
+          name: Cancel previous builds
+          command: |
+            poetry run invoke cancel-previous-builds
+      - run:
           name: Sync data
           command: |
             if [[ $CIRCLE_BRANCH = "main" ]]; then
