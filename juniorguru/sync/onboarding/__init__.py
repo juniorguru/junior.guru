@@ -12,6 +12,7 @@ from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser, ClubMessage
 from juniorguru.sync.club_content import main as club_content_task
+from juniorguru.sync.onboarding.scheduled_messages import SCHEDULED_MESSAGES
 
 
 logger = loggers.get(__name__)
@@ -26,16 +27,6 @@ ONBOARDING_CATEGORY = 992438896078110751
 CHANNEL_DELETE_TIMEOUT = timedelta(days=30 * 3)
 
 MEMBERS_CHUNK_SIZE = 10
-
-SCHEDULED_MESSAGES = {
-    '👋': 'Smrdíme v klubu!',
-    '🌯': 'Žereme burrito',
-    '💤': 'Spíme',
-    '🆗': 'Jsme OK',
-    '🟡': 'Hele žluté kolečko',
-    '🟥': 'Hele červený čtvereček',
-    '🤡': 'Klauni toto!',
-}
 
 
 @sync_task(club_content_task)
@@ -200,7 +191,8 @@ def prepare_messages(history, scheduled_messages, today):
 
     # append messages to edit
     for emoji_prefix, message in past_messages.items():
-        scheduled_content = f"{emoji_prefix} {scheduled_messages[emoji_prefix]}"
+        render_text = scheduled_messages[emoji_prefix]
+        scheduled_content = f"{emoji_prefix} {render_text()}"
         if message.content != scheduled_content:
             messages.append((message.id, scheduled_content))
 
@@ -213,9 +205,9 @@ def prepare_messages(history, scheduled_messages, today):
             return messages
 
     # append messages to add
-    for emoji_prefix, text in scheduled_messages.items():
+    for emoji_prefix, render_text in scheduled_messages.items():
         if emoji_prefix not in past_messages:
-            scheduled_content = f'{emoji_prefix} {text}'
+            scheduled_content = f'{emoji_prefix} {render_text()}'
             messages.append((None, scheduled_content))
             break
 
