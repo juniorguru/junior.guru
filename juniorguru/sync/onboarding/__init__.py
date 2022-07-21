@@ -193,7 +193,7 @@ def prepare_messages(history, scheduled_messages, today, context=None):
     # append messages to edit
     for emoji_prefix, message in past_messages.items():
         render_text = scheduled_messages[emoji_prefix]
-        scheduled_content = f"{emoji_prefix} {render_text()}"
+        scheduled_content = f"{emoji_prefix} {render_text(context)}"
         if message.content != scheduled_content:
             messages.append((message.id, scheduled_content))
 
@@ -208,7 +208,7 @@ def prepare_messages(history, scheduled_messages, today, context=None):
     # append messages to add
     for emoji_prefix, render_text in scheduled_messages.items():
         if emoji_prefix not in past_messages:
-            scheduled_content = f'{emoji_prefix} {render_text()}'
+            scheduled_content = f'{emoji_prefix} {render_text(context)}'
             messages.append((None, scheduled_content))
             break
 
