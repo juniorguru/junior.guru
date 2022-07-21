@@ -7,13 +7,13 @@ from juniorguru.sync.onboarding import prepare_messages, prepare_channels_operat
 
 
 SCHEDULED_MESSAGES = {
-    '👋': 'First message',
-    '🌯': 'Second message',
-    '💤': 'Third message',
-    '🆗': 'Fourth message',
-    '🟡': 'Fifth message',
-    '🟥': 'Sixth message',
-    '🤡': 'Seventh message',
+    '👋': lambda: 'First message',
+    '🌯': lambda: 'Second message',
+    '💤': lambda: 'Third message',
+    '🆗': lambda: 'Fourth message',
+    '🟡': lambda: 'Fifth message',
+    '🟥': lambda: 'Sixth message',
+    '🤡': lambda: 'Seventh message',
 }
 
 TODAY = date.today()
