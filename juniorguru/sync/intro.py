@@ -58,21 +58,18 @@ async def discord_task(client):
         logger.warning('Discord mutations not enabled')
 
 
-def is_thread_created(discord_message):
-    return discord_message.type == MessageType.thread_created
-
-
 async def process_message(client, channel, message):
     moderators_role = [role for role in client.juniorguru_guild.roles if role.id == MODERATORS_ROLE][0]
-    moderators_ids = [member.id for member in moderators_role.members] + [JUNIORGURU_BOT]
+    moderators = moderators_role.members
+    moderators_ids = [member.id for member in moderators] + [JUNIORGURU_BOT]
 
     if message.type == 'default' and message.author.id not in moderators_ids and message.is_intro:
-        await welcome(channel, message)
+        await welcome(channel, message, moderators)
     elif message.type == 'new_member' and message.author.first_seen_on() < message.created_at.date():
         await welcome_back(channel, message)
 
 
-async def welcome(channel, message):
+async def welcome(channel, message, moderators):
     logger_m = logger.getChild(f'messages.{message.id}')
     logger_m.info(f'Member #{message.author.id} has an intro message')
     logger_m.debug(f"Welcoming '{message.author.display_name}' with emojis")
@@ -97,6 +94,11 @@ async def welcome(channel, message):
                 logger_m.debug(f"Creating thread for '{message.author.display_name}'")
                 thread = await discord_message.create_thread(name=thread_name)
 
+            if thread.archived or thread.locked:
+                logger_m.debug("Skipping the thread, because it's archived or locked")
+                return
+            discord_messages = [discord_message async for discord_message in thread.history(limit=None)]
+
             logger_m.debug(f"Ensuring welcome message for '{message.author.display_name}'")
             content_prefix = random.choice(WELCOME_MESSAGE_PREFIXES)
             content = (f'{content_prefix} 👋 Já jsem kuře, zdejší robot 🤖 Pomáhám se vším, co by nemusel <@!668226181769986078> stíhat sám.\n\n'
@@ -105,20 +107,27 @@ async def welcome(channel, message):
                        'Tvou situaci můžeme krátce probrat i přímo tady, ale na další dotazy jsou ideální diskuzní kanály jako <#789092262965280778>, <#788826407412170752>, nebo <#769966887055392768> 💬')
             logger_m.debug(f"Welcome message content: {content!r}")
             try:
-                welcome_discord_message = [discord_message async for discord_message
-                                           in thread.history(limit=None)
-                                           if is_welcome_message(discord_message)][0]
+                welcome_discord_message = list(filter(is_welcome_message, discord_messages))[0]
                 logger_m.debug(f"Welcome message already exists, updating: #{welcome_discord_message.id}")
-                await welcome_discord_message.edit(content=content)
+                if welcome_discord_message.content != content:
+                    await welcome_discord_message.edit(content=content)
             except IndexError:
                 logger_m.debug("Sending welcome message")
                 await thread.send(content=content)
+
+            logger_m.debug("Analyzing if all moderators are involved")
+            thread_members_ids = [member.id for member in (thread.members or await thread.fetch_members())]
+            members_to_add = [moderator for moderator in moderators
+                              if moderator.id not in thread_members_ids]
+            logger_m.debug(f"Found {len(members_to_add)} moderators to add")
+            if members_to_add:
+                await asyncio.gather(*[thread.add_user(member) for member in members_to_add])
+
+            logger_m.debug("Purging system messages in the thread")
+            if list(filter(is_thread_renamed, discord_messages)):
+                await thread.purge(check=is_thread_renamed, limit=PURGE_SAFETY_LIMIT)
         else:
             logger_m.warning('Discord mutations not enabled')
-
-
-def is_welcome_message(discord_message):
-    return discord_message.type == MessageType.default and discord_message.author.id == JUNIORGURU_BOT
 
 
 async def welcome_back(channel, message):
@@ -148,3 +157,15 @@ async def add_reactions(discord_message, emojis):
             logger.warning(f"Message #{discord_message.id} reached maximum number of reactions!")
         else:
             raise e
+
+
+def is_thread_created(discord_message):
+    return discord_message.type == MessageType.thread_created
+
+
+def is_thread_renamed(discord_message):
+    return discord_message.type == MessageType.channel_name_change
+
+
+def is_welcome_message(discord_message):
+    return discord_message.type == MessageType.default and discord_message.author.id == JUNIORGURU_BOT
