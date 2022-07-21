@@ -122,10 +122,6 @@ async def welcome(channel, message, moderators):
             logger_m.debug(f"Found {len(members_to_add)} moderators to add")
             if members_to_add:
                 await asyncio.gather(*[thread.add_user(member) for member in members_to_add])
-
-            logger_m.debug("Purging system messages in the thread")
-            if list(filter(is_thread_renamed, discord_messages)):
-                await thread.purge(check=is_thread_renamed, limit=PURGE_SAFETY_LIMIT)
         else:
             logger_m.warning('Discord mutations not enabled')
 
@@ -161,10 +157,6 @@ async def add_reactions(discord_message, emojis):
 
 def is_thread_created(discord_message):
     return discord_message.type == MessageType.thread_created
-
-
-def is_thread_renamed(discord_message):
-    return discord_message.type == MessageType.channel_name_change
 
 
 def is_welcome_message(discord_message):
