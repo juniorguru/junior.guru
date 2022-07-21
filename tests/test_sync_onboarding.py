@@ -7,13 +7,13 @@ from juniorguru.sync.onboarding import prepare_messages, prepare_channels_operat
 
 
 SCHEDULED_MESSAGES = {
-    '👋': lambda: 'First message',
-    '🌯': lambda: 'Second message',
-    '💤': lambda: 'Third message',
-    '🆗': lambda: 'Fourth message',
-    '🟡': lambda: 'Fifth message',
-    '🟥': lambda: 'Sixth message',
-    '🤡': lambda: 'Seventh message',
+    '👋': lambda context: 'First message',
+    '🌯': lambda context: 'Second message',
+    '💤': lambda context: 'Third message',
+    '🆗': lambda context: 'Fourth message',
+    '🟡': lambda context: 'Fifth message',
+    '🟥': lambda context: 'Sixth message',
+    '🤡': lambda context: 'Seventh message',
 }
 
 TODAY = date.today()
@@ -149,3 +149,10 @@ def test_prepare_messages_edit_messages_regardless_of_dates():
 
     assert prepare_messages(history, SCHEDULED_MESSAGES, TODAY) == [(1, '👋 First message'),
                                                                     (4, '🆗 Fourth message')]
+
+
+def test_prepare_messages_passes_context():
+    context = dict(name='Honza')
+    scheduled_messages = {'🔥': lambda context: f"Hello {context['name']}"}
+
+    assert prepare_messages([], scheduled_messages, TODAY, context=context) == [(None, '🔥 Hello Honza')]

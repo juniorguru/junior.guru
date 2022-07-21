@@ -160,7 +160,7 @@ async def send_messages_to_member(client, member):
     logger_m = logger.getChild(f'members.{member.id}')
     logger_m.debug('Preparing messages')
     messages = prepare_messages(ClubMessage.channel_listing_bot(member.onboarding_channel_id),
-                                SCHEDULED_MESSAGES, TODAY)
+                                SCHEDULED_MESSAGES, TODAY, context=dict(member=member))
     if not messages:
         logger_m.debug('Nothing to do')
         return
@@ -183,11 +183,12 @@ async def send_messages_to_member(client, member):
                 logger_m.warning('Discord mutations not enabled')
 
 
-def prepare_messages(history, scheduled_messages, today):
+def prepare_messages(history, scheduled_messages, today, context=None):
     messages = []
     past_messages = {message.emoji_prefix: message
                      for message in history
                      if message.emoji_prefix in scheduled_messages}
+    context = context or {}
 
     # append messages to edit
     for emoji_prefix, message in past_messages.items():
