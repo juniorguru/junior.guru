@@ -1,0 +1,40 @@
+.topics {
+  ul {
+    @extend .list-unstyled;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 0;
+  }
+
+  li {
+    padding-right: calc(#{$spacer} / 2);
+    padding-left: calc(#{$spacer} / 2);
+    font-size: $font-size-sm;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-base;
+    }
+  }
+
+  a {
+    display: block;
+  }
+
+  i {
+    @extend .fs-1;
+    display: block;
+    color: $primary;
+  }
+}
+
+.topics-compact li {
+  width: 10em;
+  margin-bottom: $spacer;
+}
+
+.topics-spacious li {
+  width: 20em;
+  margin-bottom: $main-spacer;
+}

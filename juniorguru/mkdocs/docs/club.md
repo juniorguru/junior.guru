@@ -46,57 +46,22 @@ Začátečníci potřebují víc než [příručku](learn.md). Nejvíc je posune
 
 Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme přednášky, ale nejsme škola, neděláme kurzy. Sdílíme si tipy a postřehy. Podporujeme se a radíme, když někomu něco nejde, ať už jde o seniora nebo juniora. Dáváme si zpětnou vazbu. Dohazujeme si práci. Společně se radujeme z úspěchů. Můžeš se aktivně zapojit, nebo vše jen potichu sledovat.
 {% endcall %}
-<div class="standout"><div class="icons">
-  <ul class="icons-list">
-    <li class="icons-item">
-      {{ 'play-btn'|icon }}
-      Online klubové akce
-    </li>
-    <li class="icons-item">
-      {{ 'clock-history'|icon }}
-      Archiv záznamů akcí
-    </li>
-    <li class="icons-item">
-      {{ 'list-check'|icon }}
-      Pracovní nabídky
-    </li>
-    <li class="icons-item">
-      {{ 'compass'|icon }}
-      Kariérní konzultace
-    </li>
-    <li class="icons-item">
-      {{ 'person-check'|icon }}
-      Zpětná vazba na&nbsp;CV
-    </li>
-    <li class="icons-item">
-      {{ 'code-slash'|icon }}
-      Zpětná vazba na&nbsp;kód
-    </li>
-    <li class="icons-item">
-      {{ 'chat-dots'|icon }}
-      Recenze a&nbsp;zkušenosti
-    </li>
-    <li class="icons-item">
-      {{ 'heart'|icon }}
-      Podpora a&nbsp;pochopení
-    </li>
-    <li class="icons-item">
-      {{ 'person-plus'|icon }}
-      Komunita, síť&nbsp;kontaktů
-    </li>
-    <li class="icons-item">
-      {{ 'lightbulb'|icon }}
-      Mentoring od&nbsp;profíků
-    </li>
-    <li class="icons-item">
-      {{ 'patch-plus'|icon }}
-      Slevy a&nbsp;soutěže
-    </li>
-    <li class="icons-item">
-      {{ 'hand-thumbs-up'|icon }}
-      Podporuješ junior.guru
-    </li>
-  </ul>
+
+<div class="standout"><div class="topics topics-compact">
+{% call markdown() %}
+- {{ 'play-btn'|icon }} Online klubové akce
+- {{ 'clock-history'|icon }} Archiv záznamů akcí
+- {{ 'list-check'|icon }} Pracovní nabídky
+- {{ 'compass'|icon }} Kariérní konzultace
+- {{ 'person-check'|icon }} Zpětná vazba na CV
+- {{ 'code-slash'|icon }} Zpětná vazba na kód
+- {{ 'chat-dots'|icon }} Recenze a zkušenosti
+- {{ 'heart'|icon }} Podpora a pochopení
+- {{ 'person-plus'|icon }} Komunita, síť kontaktů
+- {{ 'lightbulb'|icon }} Mentoring od profíků
+- {{ 'patch-plus'|icon }} Slevy a soutěže
+- {{ 'hand-thumbs-up'|icon }} Podporuješ junior.guru
+{% endcall %}
 </div></div>
 <div class="blockquotes-2">
 {{ blockquote_avatar(
@@ -287,9 +252,15 @@ Pokud se vzděláváš u {% for company in companies_schools -%}
 {% call lead() %}
 Vrtá ti hlavou, jak přesně to celé funguje? Máš nějaké problémy s registrací nebo s Discordem? Zajímají tě veškeré detaily ohledně placení? Vypršela ti platnost karty? Prolétni si **otázky a odpovědi**.
 {% endcall %}
-<div class="standout text-center">
-  <a class="btn btn-lg btn-outline-primary" href="{{ pages|docs_url('faq.md')|url }}">
-    Všechny odpovědi
-  </a>
-</div>
+
+<div class="standout"><div class="topics topics-spacious">
+{% call markdown() %}
+- [{{ 'person-plus'|icon }} Členství v klubu](faq.md#clenstvi-v-klubu)
+- [{{ 'person-check'|icon }} Pro koho je klub](faq.md#pro-koho-je-klub)
+- [{{ 'compass'|icon }} Co je a není klub](faq.md#co-je-a-neni-klub)
+- [{{ 'chat-right'|icon }} Discord](faq.md#discord)
+- [{{ 'credit-card'|icon }} Placení za klub](faq.md#placeni-za-klub)
+- [{{ 'three-dots'|icon }} Ostatní](faq.md)
+{% endcall %}
+</div></div>
 </section>
