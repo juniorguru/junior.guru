@@ -8,8 +8,10 @@
   }
 
   li {
+    width: 10em;
     padding-right: calc(#{$spacer} / 2);
     padding-left: calc(#{$spacer} / 2);
+    margin-bottom: $spacer;
     font-size: $font-size-sm;
     text-align: center;
 
@@ -29,12 +31,17 @@
   }
 }
 
-.topics-compact li {
-  width: 10em;
-  margin-bottom: $spacer;
+.topics-grid li {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin-bottom: $main-spacer;
+
+  @include media-breakpoint-up(md) {
+    width: 33.33%;
+  }
 }
 
-.topics-spacious li {
-  width: 20em;
-  margin-bottom: $main-spacer;
+.topics-grid a {
+  max-width: 10em;
 }

@@ -47,7 +47,7 @@ Začátečníci potřebují víc než [příručku](learn.md). Nejvíc je posune
 Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme přednášky, ale nejsme škola, neděláme kurzy. Sdílíme si tipy a postřehy. Podporujeme se a radíme, když někomu něco nejde, ať už jde o seniora nebo juniora. Dáváme si zpětnou vazbu. Dohazujeme si práci. Společně se radujeme z úspěchů. Můžeš se aktivně zapojit, nebo vše jen potichu sledovat.
 {% endcall %}
 
-<div class="standout"><div class="topics topics-compact">
+<div class="standout"><div class="topics">
 {% call markdown() %}
 - {{ 'play-btn'|icon }} Online klubové akce
 - {{ 'clock-history'|icon }} Archiv záznamů akcí
@@ -253,7 +253,7 @@ Pokud se vzděláváš u {% for company in companies_schools -%}
 Vrtá ti hlavou, jak přesně to celé funguje? Máš nějaké problémy s registrací nebo s Discordem? Zajímají tě veškeré detaily ohledně placení? Vypršela ti platnost karty? Prolétni si **otázky a odpovědi**.
 {% endcall %}
 
-<div class="standout"><div class="topics topics-spacious">
+<div class="standout"><div class="topics topics-grid">
 {% call markdown() %}
 - [{{ 'person-plus'|icon }} Členství v klubu](faq.md#clenstvi-v-klubu)
 - [{{ 'person-check'|icon }} Pro koho je klub](faq.md#pro-koho-je-klub)
