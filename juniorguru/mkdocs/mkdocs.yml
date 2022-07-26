@@ -4,6 +4,7 @@ site_url: https://junior.guru/
 
 nav:
   - Příručka:
+      - Úvod: handbook/index.md
       - Motivace: motivation.md
       - Základy: learn.md
       - První praxe: practice.md

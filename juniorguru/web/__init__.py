@@ -186,11 +186,6 @@ def generate_job_pages():
         yield 'job', dict(job_id=job.submitted_job.id)
 
 
-@app.route('/handbook/')
-def handbook():
-    return redirect(url_for('motivation', _external=True))
-
-
 @app.route('/404.html')
 @db.connection_context()
 def not_found():
