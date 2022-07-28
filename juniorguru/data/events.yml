@@ -102,6 +102,20 @@
 #   speakers: ...
 
 
+# - title: "TBD (Webová analytika)"
+#   date: "2022-09-20"
+#   description: |
+#     TBD
+#   bio_name: Pavel Šabatka
+#   bio_title: TBD
+#   bio: |
+#     TBD
+#   bio_links:
+#     - https://www.linkedin.com/in/pavel-%C5%A1abatka-009a0020/
+#   logo_path: logos/houseofrezac.svg
+#   speakers: ...
+
+
 - title: "Od C# k .NETu"
   date: "2022-06-07"
   description: |

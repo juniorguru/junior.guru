@@ -132,7 +132,7 @@ async def discord_task(client):
 def get_mentor_params(mentor, thumbnail_url=None):
     content = f'{MENTOR_EMOJI} {mentor.user.mention}'
     if mentor.company:
-        content += f' z firmy {mentor.company}'
+        content += f' ({mentor.company})'
 
     description = ''
     if mentor.english_only:

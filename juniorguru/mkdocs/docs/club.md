@@ -260,7 +260,7 @@ Vrtá ti hlavou, jak přesně to celé funguje? Máš nějaké problémy s regis
 - [{{ 'compass'|icon }} Co je a není klub](faq.md#co-je-a-neni-klub)
 - [{{ 'chat-right'|icon }} Discord](faq.md#discord)
 - [{{ 'credit-card'|icon }} Placení za klub](faq.md#placeni-za-klub)
-- [{{ 'three-dots'|icon }} Ostatní](faq.md)
+- [{{ 'three-dots'|icon }} Další](faq.md)
 {% endcall %}
 </div></div>
 </section>
