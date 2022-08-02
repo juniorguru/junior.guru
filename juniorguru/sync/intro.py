@@ -107,7 +107,7 @@ async def welcome(channel, message, moderators):
                        'Na dotazy jsou ideální diskuzní kanály jako třeba <#789092262965280778>, <#788826407412170752>, nebo <#769966887055392768>, '
                        'ale tvou situaci můžeme krátce probrat i přímo tady 💬\n\n'
                        'Na stránce https://junior.guru/handbook/ najdeš příručku s užitečnými radami pro všechny, '
-                       'kdo se chtějí naučit programovat a najít si práci v oboru. Začíná popisem osvědčené cesty juniora, která má 10 fází. '
+                       'kdo se chtějí naučit programovat a najít si práci v oboru. Začíná popisem **osvědčené cesty juniora**, která má **10 fází**. '
                        'Odpovíš mi tady ve vlákně, jaké z nich se tě zrovna teď týkají? Pokud se nechceš rozepisovat, '
                        'klidně napiš jenom čísla 🙂')
             logger_m.debug(f"Welcome message content: {content!r}")
