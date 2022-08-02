@@ -101,10 +101,15 @@ async def welcome(channel, message, moderators):
 
             logger_m.debug(f"Ensuring welcome message for '{message.author.display_name}'")
             content_prefix = random.choice(WELCOME_MESSAGE_PREFIXES)
-            content = (f'{content_prefix} 👋 Já jsem kuře, zdejší robot 🤖 Pomáhám se vším, co by nemusel <@!668226181769986078> stíhat sám.\n\n'
+            content = (f'{content_prefix} 👋 '
                        'Díky, že se představuješ ostatním, protože to fakt hodně pomáhá v tom, aby šlo pochopit tvou konkrétní situaci. '
                        'Takhle ti můžeme dávat rady na míru, a ne jenom nějaká obecná doporučení <:meowthumbsup:842730599906279494>\n\n'
-                       'Tvou situaci můžeme krátce probrat i přímo tady, ale na další dotazy jsou ideální diskuzní kanály jako <#789092262965280778>, <#788826407412170752>, nebo <#769966887055392768> 💬')
+                       'Na dotazy jsou ideální diskuzní kanály jako třeba <#789092262965280778>, <#788826407412170752>, nebo <#769966887055392768>, '
+                       'ale tvou situaci můžeme krátce probrat i přímo tady 💬\n\n'
+                       'Na stránce https://junior.guru/handbook/ najdeš příručku s užitečnými radami pro všechny, '
+                       'kdo se chtějí naučit programovat a najít si práci v oboru. Začíná popisem osvědčené cesty juniora, která má 10 fází. '
+                       'Odpovíš mi tady ve vlákně, jaké z nich se tě zrovna teď týkají? Pokud se nechceš rozepisovat, '
+                       'klidně napiš jenom čísla 🙂')
             logger_m.debug(f"Welcome message content: {content!r}")
             try:
                 welcome_discord_message = list(filter(is_welcome_message, discord_messages))[0]
