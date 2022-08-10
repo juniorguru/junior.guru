@@ -9,7 +9,7 @@ homepage = "https://junior.guru/"
 repository = "https://github.com/honzajavorek/junior.guru/"
 
 [tool.poetry.dependencies]
-python = "3.8.*"
+python = "3.9.*"
 jinja2 = "*"
 gspread = "*"
 oauth2client = "*"
