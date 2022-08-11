@@ -23,7 +23,6 @@ Pět zásad, díky kterým můžeš svou cestu do IT zvládnout ve větší duš
 {{ video_card(
   'Nela Slezáková: Jak přežít cestu juniora po psychické stránce',
   '40min',
-  'youtube.com!watch!v=6G4TKGQICw0.jpg',
   'https://www.youtube.com/watch?v=6G4TKGQICw0',
   'Pět zásad a ke každé z nich praktické tipy, díky kterým můžeš svou cestu do IT zvládnout udržitelně.',
   note='Záznamy [klubových přednášek](/events/) bývají dostupné jen pro členy, ale tento jsme zveřejnili, ať pomáhá všem.',
@@ -42,21 +41,18 @@ Existují situace, které nesnesou odkladu. Pokud tě zaplaví velmi silné emoc
 <div class="link-cards">
   {{ link_card(
     'Nepanikař',
-    'nepanikar.eu!aplikace-nepanikar.jpg',
     'https://nepanikar.eu/aplikace-nepanikar/',
     'Mobilní aplikace na rychlou první sebepomoc.',
   ) }}
 
   {{ link_card(
     'Telefonní linky',
-    'mvcr.cz!clanek!adresar-pomoci-telefonni-informacni-a-krizove-linky-a-online-pomoc-v-ceske-republice.jpg',
     'https://www.mvcr.cz/clanek/adresar-pomoci-telefonni-informacni-a-krizove-linky-a-online-pomoc-v-ceske-republice.aspx',
     'Linka první psychické pomoci, linky důvěry, a další.',
   ) }}
 
   {{ link_card(
     'Krizová centra',
-    'nepanikar.eu!mapa-pomoci-krizova-centra.jpg',
     'https://nepanikar.eu/mapa-pomoci-krizova-centra/',
     'Mapa míst, kam můžeš zajít, když už si nevíš rady.',
   ) }}
@@ -89,21 +85,18 @@ Hodina sezení tě zpravidla vyjde na 800-1200 Kč, ale mnozí poskytují **slev
 <div class="link-cards">
   {{ link_card(
     'Jak vybrat terapeuta?',
-    'terapie.cz!jak-vybrat-terapeuta.jpg',
     'https://www.terapie.cz/jak-vybrat-terapeuta',
     'Několik otázek usnadňující výběr terapeuta.',
   ) }}
 
   {{ link_card(
     'Psycho­terapeu­tic­ké školy',
-    'wikipedia-psychoterapeuticke-skoly.jpg',
     'https://cs.wikipedia.org/wiki/Psychoterapie#Psychoterapeutick%C3%A9_%C5%A1koly',
     'Psycho­terapeu­tic­ké výcviky a jejich specifika.',
   ) }}
 
   {{ link_card(
     'Nela provází',
-    'nelaprovazi.cz.jpg',
     'https://www.nelaprovazi.cz/',
     'Nabízí psychologickou podporu na cestě do IT.',
     badge_icon='star',
@@ -121,21 +114,18 @@ Návštěva u psychiatra neznamená, že automaticky odejdeš s diagnózou a hro
 <div class="link-cards">
   {{ link_card(
     'Duševní zdraví a nemoci',
-    'dusevni-zdravi.jpg',
     'https://narovinu.net/dusevni-zdravi-a-nemoc/',
     'Co je duševní zdraví a jaké nemoci rozlišujeme.',
   ) }}
 
   {{ link_card(
     'Otestuj svůj psychický stav',
-    'otestuj-psychicky-stav.jpg',
     'https://www.opatruj.se/otestujte-se',
     'Orientační diagnostika psychického zdraví.',
   ) }}
 
   {{ link_card(
     'Návštěva psychiatra',
-    'ulekare-psychiatr.jpg',
     'https://www.ulekare.cz/clanek/psychiatricke-vysetreni-1176',
     'Co čekat od konzultace s psychiatrem.',
   ) }}
@@ -154,21 +144,18 @@ Kouč je někdo, kdo absolvoval dlouhodobý a ideálně i akreditovaný koučova
 <div class="link-cards">
   {{ link_card(
     'Koučování',
-    'koucink.jpg',
     'https://cs.wikipedia.org/wiki/Kou%C4%8Dov%C3%A1n%C3%AD',
     'Co je to koučink.',
   ) }}
 
   {{ link_card(
     'Koučovací metoda GROW',
-    'grow.jpg',
     'https://cs.wikipedia.org/wiki/GROW_(kou%C4%8Dink)',
     'Specifika nejrozšířenější koučovací metody.',
   ) }}
 
   {{ link_card(
     'Nela provází',
-    'nelaprovazi.cz.jpg',
     'https://www.nelaprovazi.cz/',
     'Akreditovaná koučka, zaměřuje se na cestu do IT.',
     badge_icon='star',

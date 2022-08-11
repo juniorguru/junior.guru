@@ -26,7 +26,6 @@ Ideální je mít svůj vlastní počítač, nad kterým máš plnou kontrolu a 
 {{ video_card_engeto(
   'Vybavení a programy, které budeš potřebovat',
   '5min',
-  'youtube.com!watch!v=Z-r8xiKX6uM.jpg',
   'https://www.youtube.com/watch?v=Z-r8xiKX6uM&list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI',
   'K programování se ti bude hodit hned několik věcí – notebook, připojení k internetu nebo třeba programy, ve kterých si můžeš zkusit psát kód.',
 ) }}
@@ -111,7 +110,6 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 <div class="link-cards">
   {{ link_card(
     'Nauč se Python!',
-    'naucse.python.cz.jpg',
     'https://naucse.python.cz',
     'Nejlepší české textové materiály.',
     badge_icon='layout-text-sidebar-reverse',
@@ -120,7 +118,6 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 
   {{ link_card(
     'Engeto',
-    'engeto.com!cs!katalog!python-1-uvod-do-programovani.jpg',
     'https://engeto.com/cs/katalog/python-1-uvod-do-programovani',
     'Kurz v češtině kombinující textové materiály a video.',
     badge_icon='layout-text-sidebar-reverse',
@@ -129,7 +126,6 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 
   {{ link_card(
     'Coursera',
-    'coursera.org!learn!python.jpg',
     'https://www.coursera.org/learn/python',
     'Profesionálně vedený video kurz University of Michigan.',
     badge_icon='layout-text-sidebar-reverse',
@@ -138,7 +134,6 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 
   {{ link_card(
     'Codecademy',
-    'codecademy.com!learn!learn-python-3.jpg',
     'https://www.codecademy.com/learn/learn-python-3',
     'Kurz založený na textu a cvičeních. Rychlejší postup, méně hloubky.',
     badge_icon='layout-text-sidebar-reverse',
@@ -147,7 +142,6 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 
   {% call link_card(
     'Umíme programovat',
-    'umimeprogramovat.cz.jpg',
     'https://www.umimeprogramovat.cz',
     badge_icon='list-check',
     badge_text='Cvičení',
@@ -157,7 +151,6 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 
   {{ link_card(
     'Ponořme se do Pythonu 3',
-    'diveintopython3.py.cz.jpg',
     'http://diveintopython3.py.cz',
     'Možná strohá, ale i tak nejlepší kniha přeložená do češtiny.',
     badge_icon='book',
@@ -166,7 +159,6 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 
   {{ link_card(
     'Automate the Boring Stuff with Python',
-    'automatetheboringstuff.com.jpg',
     'https://automatetheboringstuff.com',
     'Nejlepší kniha do startu. Nech nudnou práci dělat počítač!',
     badge_icon='book',
@@ -192,42 +184,36 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 <div class="link-cards">
   {{ link_card(
     'PyLadies',
-    'pyladies.cz.jpg',
     'https://pyladies.cz',
     'Komunitní půlroční kurzy programování a navazující workshopy.'
   ) }}
 
   {{ link_card(
     'Czechitas',
-    'czechitas.cz.jpg',
     'https://www.czechitas.cz',
     'Česká neziskovka otevírající IT ženám skrze workshopy, kurzy a další akce.'
   ) }}
 
   {{ link_card(
     'Aj Ty v IT',
-    'ajtyvit.sk.jpg',
     'https://www.ajtyvit.sk',
     'Slovenská neziskovka otevírající IT ženám skrze workshopy, kurzy a další akce.'
   ) }}
 
   {{ link_card(
     'ReactGirls',
-    'reactgirls.com.jpg',
     'https://reactgirls.com/',
     'Komunitní jednodenní workshop tvorby webu v JavaScriptu.'
   ) }}
 
   {{ link_card(
     'Django Girls',
-    'djangogirls.org.jpg',
     'https://djangogirls.org/',
     'Komunitní jednorázový startovací workshop tvorby webu v Pythonu.'
   ) }}
 
   {{ link_card(
     'Rails Girls',
-    'railsgirls.com.jpg',
     'http://railsgirls.com/',
     'Komunitní jednorázový startovací workshop tvorby webu v Ruby.'
   ) }}
@@ -245,7 +231,6 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
 <div class="link-cards">
   {{ link_card(
     'Klub junior.guru',
-    'junior.guru!club.jpg',
     pages|docs_url('club.md')|url,
     'Ptej se v klubu pro začátečníky, kde najdeš nejen pomoc, ale i motivaci, kamarády, práci.',
     badge_icon='discord',
@@ -254,14 +239,12 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
 
   {{ link_card(
     'Stack Overflow',
-    'stackoverflow.com.jpg',
     'https://stackoverflow.com',
     'Ptej se na celosvětově největším webu s otázkami a odpovědmi ohledně programování.'
   ) }}
 
   {{ link_card(
     'Pyonýři',
-    'facebook.com!groups!pyonieri.jpg',
     'https://www.facebook.com/groups/pyonieri/',
     'Ptej na se české a slovenské Python komunity na Facebooku.',
     badge_icon='facebook',
@@ -270,7 +253,6 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
 
   {{ link_card(
     'Programátoři začátečníci',
-    'facebook.com!groups!144621756262987.jpg',
     'https://www.facebook.com/groups/144621756262987/',
     'Ptej se ve Facebookové skupině pro začátečníky v programování.',
     badge_icon='facebook',
@@ -279,7 +261,6 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
 
   {{ link_card(
     'Python CZ/SK',
-    'discord.com.jpg',
     'https://discord.gg/yUbgArVAyF',
     'Ptej na Discordu české a slovenské Python komunity.',
     badge_icon='discord',
@@ -288,7 +269,6 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
 
   {{ link_card(
     'r/learnpython',
-    'reddit.com!r!learnpython.jpg',
     'https://www.reddit.com/r/learnpython/',
     'Pokládej dotazy komunitě pro začátečníky s Pythonem.',
     badge_icon='reddit',
@@ -297,7 +277,6 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
 
   {{ link_card(
     'r/learnprogramming',
-    'reddit.com!r!learnprogramming.jpg',
     'https://www.reddit.com/r/learnprogramming/',
     'Pokládej dotazy komunitě pro začátečníky v programování.',
     badge_icon='reddit',
@@ -313,7 +292,6 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
 <div class="link-cards">
   {{ link_card(
     'italki',
-    'italki.com.jpg',
     'https://www.italki.com/',
     'Videohovory s učiteli kdekoliv na světě.',
     badge_icon='headset',
@@ -322,7 +300,6 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
 
   {{ link_card(
     'Broňa',
-    'youtube.com!user!BBSobotka.jpg',
     'https://www.youtube.com/user/BBSobotka',
     'Video každé úterý. Možná trochu střelený, ale <a href="https://video.aktualne.cz/dvtv/nadseny-ucitel-anglictiny-jazyk-se-nauci-kazdy-lide-ale-maji/r~f94af27a9e4c11e9970a0cc47ab5f122/">nadšený</a>!',
     badge_icon='youtube',
@@ -331,7 +308,6 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
 
   {{ link_card(
     'Help for English',
-    'helpforenglish.cz.jpg',
     'https://www.helpforenglish.cz',
     'Bezplatné kvalitní materiály, testy, cvičení.',
     badge_icon='layout-text-sidebar-reverse',
@@ -340,7 +316,6 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
 
   {{ link_card(
     'Duolingo',
-    'cs.duolingo.com.jpg',
     'https://cs.duolingo.com/',
     'Uč se hrou v mobilu, 5 min denně, kdykoliv, kdekoliv.',
     badge_icon='phone',
@@ -349,7 +324,6 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
 
   {% call link_card(
     'Umíme anglicky',
-    'umimeanglicky.cz.jpg',
     'https://www.umimeanglicky.cz',
     badge_icon='list-check',
     badge_text='Cvičení',
@@ -359,7 +333,6 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
 
   {{ link_card(
     'ONLINE jazyky',
-    'onlinejazyky.cz.jpg',
     'https://www.onlinejazyky.cz',
     'Kurzy pro každou úroveň. 20 min denně.',
     badge_icon='layout-text-sidebar-reverse',
@@ -368,7 +341,6 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
 
   {{ link_card(
     'Speak Confident English',
-    'speakconfidentenglish.com.jpg',
     'https://www.speakconfidentenglish.com',
     'I nesmělí a introvertní mohou mluvit plynně.',
     badge_icon='headset',
@@ -377,7 +349,6 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
 
   {{ link_card(
     'Meetup',
-    'meetup.com!find.jpg',
     'https://www.meetup.com/find/?source=EVENTS&location=cz--Pardubice&distance=hundredMiles&categoryId=622&keywords=english',
     'Snaž se mluvit s reálnými lidmi. Začni klidně „rukama nohama“<br>
         <small>Další setkání hledej na

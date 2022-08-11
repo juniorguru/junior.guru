@@ -119,13 +119,13 @@
 {% endmacro %}
 
 
-{% macro link_card(title, screenshot_filename, url, caption=None,
+{% macro link_card(title, url, caption=None,
                    badge_icon=None, badge_text=None,
                    highlighted=False)
 %}
 <div class="link-card{% if highlighted %} highlighted{% endif %}">
   <div class="link-card-header">
-    {{ img('static/images/screenshots/' + screenshot_filename, title, 640, 360, class='link-card-image') }}
+    {{ img(url|screenshot_url, title, 640, 360, class='link-card-image') }}
     {% if badge_icon and badge_text %}
       <div class="link-card-icon">
         {{ badge_icon|icon }} {{ badge_text }}
@@ -150,11 +150,11 @@
 {% endmacro %}
 
 
-{% macro video_card(title, duration, screenshot_filename, url, caption=None, note=None) %}
+{% macro video_card(title, duration, url, caption=None, note=None) %}
 <div class="media-card">
   <div class="media-card-header">
     <div class="media-card-image-cover">
-      {{ img('static/images/screenshots/' + screenshot_filename, title, 640, 360, class='media-card-image') }}
+      {{ img(url|screenshot_url, title, 640, 360, class='media-card-image') }}
       <div class="media-card-button">
         <span class="media-card-play">{{ 'play-circle-fill'|icon }}</span>
         <span class="media-card-duration">{{ duration }}</span>
@@ -203,14 +203,13 @@
 {% endmacro %}
 
 
-{% macro video_card_engeto(title, duration, screenshot_filename, url, caption=None) %}
+{% macro video_card_engeto(title, duration, url, caption=None) %}
   {% if caller %}
     {% set caption = caller()|md|remove_p %}
   {% endif %}
   {{ video_card(
     title,
     duration,
-    screenshot_filename,
     url,
     caption=caption,
     note='Video je součástí série [Průvodce nováčka v IT](https://www.youtube.com/playlist?list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI), kterou natočilo [Engeto](https://engeto.com/) ve spolupráci s [Honzou](#honza) z junior.guru.',

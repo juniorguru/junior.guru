@@ -330,7 +330,6 @@ Pokud se učíš vytvářet webovky, **vyrob si osobní stránky**. Bude se to p
 {{ video_card(
   'Jak získat job v IT?',
   '7min',
-  'youtube.com!watch!v=IyaxCqoqeHo.jpg',
   'https://www.youtube.com/watch?v=IyaxCqoqeHo',
   'Posíláš životopisy, ale nedaří se ti vyvolat zájem? Neposílej životopis, ušij něco na míru.',
 ) }}

@@ -42,7 +42,6 @@ Stejně jako u vrtání ale není vůbec od věci, pokud se naučí programovat 
 {{ video_card_engeto(
   'IT dovednosti se hodí i v „neIT“ oboru',
   '6min',
-  'youtube.com!watch!v=Vt-riPe4dMs.jpg',
   'https://www.youtube.com/watch?v=Vt-riPe4dMs&list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI',
   'Každý, kdo ovládá nějaké základy programování, si dokáže ušetřit práci s excelovými tabulkami nebo třeba uspořádáním velkého množství souborů na disku.',
 ) }}
@@ -129,7 +128,6 @@ Některé představy o programování a programátorské profesi nemají moc spo
 {{ video_card_engeto(
   'Nejčastější mýty o práci v IT',
   '5min',
-  'youtube.com!watch!v=2Km3orTYFrM.jpg',
   'https://www.youtube.com/watch?v=2Km3orTYFrM&list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI',
   'Musím mít talent na techniku nebo matematiku? Záleží na věku? Potřebuji vysokou školu?',
 ) }}
@@ -286,21 +284,18 @@ Pokud by se ti hodilo **propojit různé internetové služby tak, aby si podle 
 <div class="link-cards">
   {{ link_card(
     'Make',
-    'make.com.jpg',
     'https://www.make.com/',
     'Největší platforma, podporuje i české služby jako Fakturoid nebo Fio Banka.'
   ) }}
 
   {{ link_card(
     'Zapier',
-    'zapier.com.jpg',
     'https://zapier.com/',
     'Druhá nejznámější platforma pro automatizaci.'
   ) }}
 
   {{ link_card(
     'IFTTT',
-    'ifttt.com.jpg',
     'https://ifttt.com/',
     'Alternativa pro ty, kterým nesedí Integromat ani Zapier.'
   ) }}
@@ -313,21 +308,18 @@ Jestli chceš psát blog, provozovat e-shop nebo vytvořit webovky pro květiná
 <div class="link-cards">
   {{ link_card(
     'WordPress',
-    'wordpress.com.jpg',
     'https://wordpress.com/',
     'Nejpoužívanější hotové řešení na weby. Služba za peníze, ale i open source ke stažení.'
   ) }}
 
   {{ link_card(
     'Wix',
-    'wix.com.jpg',
     'https://www.wix.com/',
     'Služba, kde si web vytvoříš klikáním. Jednodušší, ale ne tak univerzální jako WP.'
   ) }}
 
   {{ link_card(
     'Shopify',
-    'shopify.com.jpg',
     'https://www.shopify.com/',
     'Celosvětově nejpoužívanější služba pro vytváření vlastního e-shopu.'
   ) }}
@@ -351,21 +343,18 @@ I když je v názvu tohoto webu slovo _junior_, není vhodný k tomu, aby se pod
 <div class="link-cards">
   {{ link_card(
     'Code.org',
-    'code.org.jpg',
     'https://code.org/',
     'Programování, které zvládne každý rodič, kroužek, družina.'
   ) }}
 
   {{ link_card(
     'ScratchJr',
-    'scratchjr.org.jpg',
     'https://www.scratchjr.org/',
     'V mobilu nebo na tabletu, pro nejmenší děti.'
   ) }}
 
   {{ link_card(
     'Scratch',
-    'scratch.mit.edu.jpg',
     'https://scratch.mit.edu/',
     'Vytvoř hru nebo příběh a sdílej je s kamarády.'
   ) }}

@@ -33,15 +33,6 @@ CSS_SELECTORS = [
     ('.media-card', '.media-card-link', '.media-card-image'),
 ]
 
-LINK_CARD_RE = re.compile(r'''
-    (link_card|video_card|video_card_engeto)
-    \(\s*
-    ('[^']+',\s*)+
-    '(?P<path>[^']+\.jpg)'
-    ,\s*
-    '(?P<url>http[^']+)'
-''', re.VERBOSE | re.IGNORECASE)
-
 WIDTH = 640
 
 HEIGHT = 360

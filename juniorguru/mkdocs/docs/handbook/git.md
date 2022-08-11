@@ -33,21 +33,18 @@ Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic
 <div class="link-cards">
   {{ link_card(
     'Git a GitHub od základov',
-    'youtube.com!watch!v=0v5K4GvK4Gs.jpg',
     'https://www.youtube.com/watch?v=0v5K4GvK4Gs',
     'YouTube kurz Gitu a GitHubu od <a href="http://robweb.sk">yablka</a>.'
   ) }}
 
   {{ link_card(
     'Nauč se Python',
-    'naucse.python.cz!course!pyladies!git!basics.jpg',
     'https://naucse.python.cz/course/pyladies/git/basics/',
     'Nauč se Git z nejznámějších českých materiálů pro Python.'
   ) }}
 
   {{ link_card(
     'The Missing Semester',
-    'missing.csail.mit.edu!2020!version-control.jpg',
     'https://missing.csail.mit.edu/2020/version-control/',
     'Git podle materiálů z americké univerzity MIT.'
   ) }}

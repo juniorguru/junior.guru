@@ -20,42 +20,36 @@ template: main_handbook.html
 <div class="link-cards">
   {{ link_card(
     'Exercism',
-    'exercism.io.jpg',
     'https://exercism.io/',
     'Řeš malé úlohy, dostaň zpětnou vazbu od mentora, uč se z řešení druhých.'
   ) }}
 
   {{ link_card(
     'Codewars',
-    'codewars.com.jpg',
     'https://www.codewars.com/',
     'Řeš malé úlohy přímo v prohlížeči, uč se z řešení druhých.'
   ) }}
 
   {{ link_card(
     'CheckiO',
-    'checkio.org.jpg',
     'https://checkio.org/',
     'Procházej online hru pomocí programovacích úloh, uč se od druhých.'
   ) }}
 
   {{ link_card(
     'Umíme programovat',
-    'umimeprogramovat.cz.jpg',
     'https://www.umimeprogramovat.cz',
     'Uč se skrze cvičení a opakování, <a href="https://www.umimeto.org/podlozeno-vyzkumem">podložený výzkumy</a>.'
   ) }}
 
   {{ link_card(
     'HackerRank',
-    'hackerrank.com.jpg',
     'https://www.hackerrank.com',
     'Soutěž řešením zapeklitých úloh. Propojeno s nabídkami práce.'
   ) }}
 
   {{ link_card(
     'Project Euler',
-    'projecteuler.net.jpg',
     'https://projecteuler.net/',
     'Řeš matematické úlohy pomocí programování.',
     badge_icon='calculator',
@@ -99,28 +93,24 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
 <div class="link-cards">
   {{ link_card(
     'Coding Coach',
-    'mentors.codingcoach.io.jpg',
     'https://mentors.codingcoach.io/',
     'Mentoři z celého světa, kteří nabízí své služby zdarma.'
   ) }}
 
   {{ link_card(
     'Codementor',
-    'codementor.io.jpg',
     'https://www.codementor.io/',
     'Profesionální, placení mentoři z celého světa.'
   ) }}
 
   {{ link_card(
     'Mentoring na robime.it',
-    'robime.it!mentoring-program-robime-it.jpg',
     'https://robime.it/mentoring-program-robime-it/',
     'Slovenský mentoringový program.'
   ) }}
 
   {{ link_card(
     'ReactGirls Mentoring',
-    'reactgirls.com!mentoring.jpg',
     'https://reactgirls.com/mentoring',
     'Mentoringový program pro ženy zajímající se o webový frontend.',
     badge_icon='gender-female',
@@ -129,7 +119,6 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
 
   {{ link_card(
     'Femme Palette',
-    'femmepalette.com!mentoring-for-women-it.jpg',
     'https://www.femmepalette.com/mentoring-for-women-it',
     'Český program placeného mentoringu pro ženy.',
     badge_icon='gender-female',
@@ -138,14 +127,12 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
 
   {{ link_card(
     'PyWorking Sessions',
-    'pyworking.cz.jpg',
     'https://pyworking.cz/',
     'Zastav se na pravidelná setkání začátečníků, kde jsou i koučové.'
   ) }}
 
   {{ link_card(
     'GISMentors',
-    'gismentors.cz.jpg',
     'https://gismentors.cz/',
     'Mentoři, kteří učí využívaní programování v geografii.'
   ) }}
@@ -159,7 +146,6 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
 <div class="link-cards">
   {{ link_card(
     'Hackathony v Česku',
-    'facebook.com!groups!hackathony.cz.jpg',
     'https://www.facebook.com/groups/hackathony.cz/',
     'Největší koncentrace tipů na hackhathony v Česku.
         <small>Někdy ale může být nejlepší prostě
@@ -169,14 +155,12 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
 
   {{ link_card(
     'Hackathony - co a jak',
-    'docs.google.com!presentation!d!1reYrzFy3E3LS-jNzQecLbkf6Qq7iIEjWvXCyvbw389E.jpg',
     'https://docs.google.com/presentation/d/1reYrzFy3E3LS-jNzQecLbkf6Qq7iIEjWvXCyvbw389E/',
     'Všechny základní informace o hackathonech na jednom místě.'
   ) }}
 
   {{ link_card(
     'Hackathon.com',
-    'hackathon.com!city!czech-republic!praha.jpg',
     'https://www.hackathon.com/city/czech-republic/praha',
     'Celosvětový seznam místních i online hackhatonů.'
   ) }}
@@ -228,28 +212,24 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
 <div class="link-cards">
   {{ link_card(
     'Open Source Guides',
-    'opensource.guide.jpg',
     'https://opensource.guide/',
     'Přečti si vše o tom, jak OSS funguje, a jak začít.'
   ) }}
 
   {{ link_card(
     'Česko.Digital',
-    'cesko.digital.jpg',
     'https://cesko.digital/',
     'Přidej se do sdružení dobrovolníků okolo OSS projektů s pozitivním dopadem na Česko.'
   ) }}
 
   {{ link_card(
     'GISMentors',
-    'gismentors.cz.jpg',
     'https://gismentors.cz/',
     'Účastni se kurzů nebo školení na OSS související s geografií.'
   ) }}
 
   {{ link_card(
     'Outreachy',
-    'outreachy.org.jpg',
     'https://www.outreachy.org/',
     'Získej stáž na OSS pro znevýhodněné skupiny.',
     badge_icon='door-open',
@@ -258,7 +238,6 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
 
   {{ link_card(
     'Google Summer of Code',
-    'summerofcode.withgoogle.com.jpg',
     'https://summerofcode.withgoogle.com/',
     'Pracuj na OSS při studiu, během letních prázdnin.',
     badge_icon='pen',
@@ -267,7 +246,6 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
 
   {{ link_card(
     'Google Code-in',
-    'codein.withgoogle.com!archive.jpg',
     'https://codein.withgoogle.com/',
     'Účastni se úvodu do OSS pro mládež, vyhraj ceny.',
     badge_icon='pen',
@@ -276,7 +254,6 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
 
   {{ link_card(
     'Rails Girls SoC',
-    'railsgirlssummerofcode.org.jpg',
     'https://railsgirlssummerofcode.org/',
     'Přihlaš svůj tým a po několik měsíců pracuj na OSS.',
     badge_icon='gender-female',
@@ -285,14 +262,12 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
 
   {{ link_card(
     'CodeTriage',
-    'codetriage.com.jpg',
     'https://www.codetriage.com/',
     'Najdi rozbitou věc, oprav ji, pošli opravu autorům.'
   ) }}
 
   {{ link_card(
     'Awesome OSS Mentors',
-    'github.com!lenadroid!awesome-oss-mentors!readme.jpg',
     'https://github.com/lenadroid/awesome-oss-mentors#readme',
     'Kontaktuj někoho z těch, kdo se sami nabízí zaučovat nováčky na OSS projektech.'
   ) }}
@@ -312,7 +287,6 @@ Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to j
 <div class="link-cards">
   {{ link_card(
     'BaseCS',
-    'medium.com!basecs.jpg',
     'https://medium.com/basecs',
     'Základy informatiky od <a href="https://twitter.com/vaidehijoshi">Vaidehi Joshi</a>.
         Existuje i jako
@@ -323,7 +297,6 @@ Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to j
 
   {{ link_card(
     'MIT: The Missing Semester',
-    'missing.csail.mit.edu.jpg',
     'https://missing.csail.mit.edu/',
     'Úvod do všeho možného, co se ti bude v začátku hodit. Příkazová řádka, Git, editor…'
   ) }}
@@ -335,115 +308,96 @@ Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to j
 <div class="link-cards">
   {{ link_card(
     'Aj Ty v IT',
-    'ajtyvit.sk.jpg',
     'https://www.ajtyvit.sk'
   ) }}
 
   {{ link_card(
     'BeeIT',
-    'beeit.cz.jpg',
     'https://www.beeit.cz/'
   ) }}
 
   {{ link_card(
     'Codecademy',
-    'codecademy.com.jpg',
     'https://www.codecademy.com'
   ) }}
 
   {{ link_card(
     'Coding Bootcamp Praha',
-    'codingbootcamp.cz.jpg',
     'https://www.codingbootcamp.cz/'
   ) }}
 
   {{ link_card(
     'CoreSkill',
-    'coreskill.tech.jpg',
     'https://coreskill.tech/'
   ) }}
 
   {{ link_card(
     'Coursera',
-    'coursera.org.jpg',
     'https://www.coursera.org'
   ) }}
 
   {{ link_card(
     'Czechitas',
-    'czechitas.cz!cs!kalendar-akci.jpg',
     'https://www.czechitas.cz/cs/kalendar-akci'
   ) }}
 
   {{ link_card(
     'edX',
-    'edx.org.jpg',
     'https://www.edx.org'
   ) }}
 
   {{ link_card(
     'Engeto',
-    'engeto.com.jpg',
     'https://engeto.com'
   ) }}
 
   {{ link_card(
     'egghead.io',
-    'egghead.io.jpg',
     'https://egghead.io'
   ) }}
 
   {{ link_card(
     'Green Fox Academy',
-    'greenfoxacademy.cz.jpg',
     'https://www.greenfoxacademy.cz/'
   ) }}
 
   {{ link_card(
     'Skillmea',
-    'skillmea.cz.jpg',
     'https://skillmea.cz/'
   ) }}
 
   {{ link_card(
     'Pluralsight',
-    'pluralsight.com.jpg',
     'https://www.pluralsight.com/'
   ) }}
 
   {{ link_card(
     'PrimaKurzy',
-    'primakurzy.cz.jpg',
     'https://www.primakurzy.cz/'
   ) }}
 
   {{ link_card(
     'PyWorking',
-    'pyworking.cz.jpg',
     'https://pyworking.cz'
   ) }}
 
   {{ link_card(
     'Software Development Academy',
-    'sdacademy.cz.jpg',
     'https://sdacademy.cz/'
   ) }}
 
   {{ link_card(
     'Udacity',
-    'udacity.com.jpg',
     'https://udacity.com'
   ) }}
 
   {{ link_card(
     'Udemy',
-    'udemy.com.jpg',
     'https://www.udemy.com'
   ) }}
 
   {{ link_card(
     'VŠB-TU',
-    'kurzy.vsb.cz.jpg',
     'http://kurzy.vsb.cz/'
   ) }}
 </div>
@@ -466,7 +420,6 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
 <div class="link-cards">
   {{ link_card(
     'Klub junior.guru',
-    'junior.guru!club.jpg',
     pages|docs_url('club.md')|url,
     'Diskutuj v klubu pro začátečníky, kde najdeš pomoc, motivaci, kamarády, práci.',
     badge_icon='chat-dots',
@@ -475,7 +428,6 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
 
   {{ link_card(
     'Pyvo',
-    'pyvo.cz.jpg',
     'https://pyvo.cz',
     'Poznej Python programátory ve svém okolí. Pomohou, budou tě motivovat.',
     badge_icon='calendar-week',
@@ -484,7 +436,6 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
 
   {{ link_card(
     'Meetup',
-    'meetup.com.jpg',
     'https://www.meetup.com/',
     'Najdi srazy ve svém okolí, poznej různá odvětví IT, potkej lidi.',
     badge_icon='calendar-week',
@@ -493,7 +444,6 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
 
   {{ link_card(
     'PyCon CZ',
-    'pycon.cz.jpg',
     'https://pycon.cz',
     'Přijeď na českou Python konferenci.',
     badge_icon='calendar-check',
@@ -502,7 +452,6 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
 
   {{ link_card(
     'PyCon SK',
-    'pycon.sk.jpg',
     'https://pycon.sk',
     'Přijeď na slovenskou Python konferenci.',
     badge_icon='calendar-check',
@@ -511,7 +460,6 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
 
   {{ link_card(
     'Write The Docs Prague',
-    'writethedocs.org!conf.jpg',
     'https://www.writethedocs.org/conf/',
     'Přijeď na konferenci o psaní technické dokumentace.',
     badge_icon='calendar-check',
@@ -535,14 +483,12 @@ Na konference je potřeba si koupit lístek. Výše zmíněné konference mají 
 <div class="link-cards">
   {{ link_card(
     'Jak se opravdu naučit anglicky',
-    'youtube.com!watch!v=Xt7QIgzyxLk.jpg',
     'https://www.youtube.com/watch?v=Xt7QIgzyxLk',
     'Praktický návod jak <strong>opravdu</strong> začít od <a href="https://www.youtube.com/user/BBSobotka">Broni</a>.'
   ) }}
 
   {% call link_card(
     'Jak si zlepšit angličtinu?',
-    'junior.guru!learn!english.jpg',
     pages|docs_url('learn.md')|url + '#jak-si-zlepsit-anglictinu',
   ) -%}
     Nauč se anglicky podle tipů na junior.guru.

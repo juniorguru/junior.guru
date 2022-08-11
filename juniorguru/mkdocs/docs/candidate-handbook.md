@@ -41,7 +41,6 @@ Svérázný slovenský lektor [yablko](https://www.youtube.com/channel/UC01guyOZ
   {{ video_card(
     'Kde najdeš první praxi',
     '15min',
-    'youtube.com!watch!v=3-wsqhCK-wU.jpg',
     'https://www.youtube.com/watch?v=3-wsqhCK-wU&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_',
     'Jak získat úplně první praktickou zkušenost?'
   ) }}
@@ -49,7 +48,6 @@ Svérázný slovenský lektor [yablko](https://www.youtube.com/channel/UC01guyOZ
   {{ video_card(
     'Pohovor na juniora',
     '17min',
-    'youtube.com!watch!v=cEYnF7G7KXI.jpg',
     'https://www.youtube.com/watch?v=cEYnF7G7KXI&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_',
     'Všeobecné praktické rady, které se mohou hodit i mimo IT.'
   ) }}
@@ -57,7 +55,6 @@ Svérázný slovenský lektor [yablko](https://www.youtube.com/channel/UC01guyOZ
   {{ video_card(
     'Pohovor na programátora',
     '17min',
-    'youtube.com!watch!v=cN3V5J9Wd8Y.jpg',
     'https://www.youtube.com/watch?v=cN3V5J9Wd8Y&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_',
     'Jak vypadají pohovory konkrétně pro programátory?'
   ) }}
@@ -81,7 +78,6 @@ Raději neplánuj s ohledem na čas. **Jeď si tempo, které můžeš skloubit s
 {{ video_card_engeto(
   'Jak dlouho trvá, než se naučím programovat a získám práci?',
   '4min',
-  'youtube.com!watch!v=iSXqU9C3zMI.jpg',
   'https://www.youtube.com/watch?v=iSXqU9C3zMI&list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI',
   'Důležitější je položit si otázku – jak dlouho potrvá, než budou moje dovednosti dostatečně zajímavé pro nějakou firmu?',
 ) }}
@@ -166,7 +162,6 @@ Zrovna v inzerátech nabízejících první práci v IT nebo částečný úvaz
 {{ video_card(
   'Tomáš Hisem: Z horníka programátorem',
   '16min',
-  'youtube.com!watch!v=dKclZ55d_F0.jpg',
   'https://www.youtube.com/watch?v=dKclZ55d_F0',
   'Když se v 45 letech dozvěděl, že důl Paskov bude uzavřen, musel se rozhodnout, co dál. Dostal nečekanou příležitost rekvalifikovat se na programátora.',
 ) }}
@@ -254,7 +249,6 @@ No a pokud ti nedá směr ani to, vezmi prostě jakoukoliv práci jako junior v�
 {{ video_card(
   'Cal Newport: ‘Follow your passion’ is wrong',
   '35min',
-  'youtube.com!watch!v=LUQjAAwsKR8.jpg',
   'https://www.youtube.com/watch?v=LUQjAAwsKR8',
   'Říká se, že máš hledat svou vášeň a dělat to, co tě baví. Cal Newport vysvětluje, že to je rada na prd. Ve skutečnosti je to celé složitější.',
 ) }}
@@ -420,35 +414,30 @@ Další rady ohledně rozjíždění vlastního podnikání jsou nad rámec tét
 <div class="link-cards">
   {{ link_card(
     'Jak podnikat',
-    'jakpodnikat.cz.jpg',
     'https://www.jakpodnikat.cz/',
     'Administrativa malého podnikání, lidsky. OSVČ, ŽL, daně.'
   ) }}
 
   {{ link_card(
     'Podnikatelský almanach',
-    'fakturoid.cz!almanach.jpg',
     'https://www.fakturoid.cz/almanach/',
     'Sbírka praktických tipů jak podnikat.'
   ) }}
 
   {{ link_card(
     'Blog Na volné noze',
-    'navolnenoze.cz!blog.jpg',
     'https://navolnenoze.cz/blog/',
     'Články o všem, co se týká podnikání na volné noze.'
   ) }}
 
   {{ link_card(
     'nakopni.to',
-    'nakopni.to.jpg',
     'https://www.nakopni.to/',
     '50% sleva na profi nástroje pro všechny, jejichž IČO je mladší než 1 rok.'
   ) }}
 
   {{ link_card(
     'Kniha Na volné noze',
-    'freelanceway.eu.jpg',
     'https://freelanceway.eu/',
     'Bible profesionálů na volné noze.',
     badge_icon='book',
@@ -468,21 +457,18 @@ Nepodceňuj se, v inzerátech je ideál, který ti má spíše ukázat kam pozic
 <div class="link-cards">
   {{ link_card(
     'Tech Interview Handbook',
-    'techinterviewhandbook.org.jpg',
     'https://www.techinterviewhandbook.org/',
     'Přečti si jak na CV, pohovory, algoritmy.'
   ) }}
 
   {{ link_card(
     'Shánění práce na internetu',
-    'prace.rovnou.cz.jpg',
     'https://prace.rovnou.cz/',
     'Projdi si českou příručku základů hledání práce na internetu.'
   ) }}
 
   {{ link_card(
     'Cracking the Coding Interview',
-    'crackingthecodinginterview.com.jpg',
     'http://www.crackingthecodinginterview.com/',
     'Slavná kniha plná <a href="#leetcode">úloh, které můžeš dostat na pohovoru</a>.'
   ) }}
@@ -688,14 +674,12 @@ Nastupuješ jako začátečník a budeš potřebovat, aby ti někdo stále pomá
 <div class="link-cards">
   {{ link_card(
     'Reverse interview',
-    'github.com!viraptor!reverse-interview!readme.jpg',
     'https://github.com/viraptor/reverse-interview#readme',
     'Inspiruj se dlouhým seznamem otázek, které můžeš položit.'
   ) }}
 
   {{ link_card(
     'How to do job interview right',
-    'trello.com!b!igarGHRw.jpg',
     'https://trello.com/b/igarGHRw/',
     'Prostuduj nástěnku plnou tipů jak se připravit a na co se ptát.'
   ) }}
@@ -805,21 +789,18 @@ Pokud cítíš, že ti firemní kultura něčím nesedne, **vždy je lepší zku
 <div class="link-cards">
   {{ link_card(
     'WinWinJob',
-    'winwinjob.cz.jpg',
     'https://www.winwinjob.cz/',
     'Vyber si práci podle šéfa.'
   ) }}
 
   {{ link_card(
     'Cocuma',
-    'cocuma.cz.jpg',
     'https://www.cocuma.cz/',
     'Projdi si firmy podle jejich kultury.'
   ) }}
 
   {{ link_card(
     'Welcome to the Jungle',
-    'welcometothejungle.com.jpg',
     'https://www.welcometothejungle.com/',
     'Projdi si firmy podle jejich kultury.'
   ) }}
@@ -915,7 +896,6 @@ Kde se bere vášeň? Do začátku stačí, když ti programování přijde jako
 {{ video_card(
   'Cal Newport: ‘Follow your passion’ is wrong',
   '35min',
-  'youtube.com!watch!v=LUQjAAwsKR8.jpg',
   'https://www.youtube.com/watch?v=LUQjAAwsKR8',
   'Říká se, že máš hledat svou vášeň a dělat to, co tě baví. Cal Newport vysvětluje, že to je rada na prd. Ve skutečnosti je to celé složitější.',
 ) }}

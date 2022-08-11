@@ -3,8 +3,10 @@ import random
 import re
 from datetime import date, datetime
 from operator import itemgetter
+from urllib.parse import unquote
 
 import arrow
+from slugify import slugify
 from markupsafe import Markup
 
 from juniorguru.lib.md import md as md_
@@ -171,3 +173,11 @@ def assert_empty(collection):
     if len(collection):
         raise TemplateError(f"{type(collection).__name__} not empty: {', '.join(collection)}")
     return ''
+
+
+def screenshot_url(url):
+    slug = slugify(unquote(url)) \
+        .removeprefix('http-') \
+        .removeprefix('https-') \
+        .removeprefix('www-')
+    return f'static/images/screenshots/{slug}.jpg'

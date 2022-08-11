@@ -22,6 +22,7 @@ TEMPLATE_FILTERS = [
     'sample_jobs',
     'assert_empty',
     'relative_url',
+    'screenshot_url',
 ]
 
 
