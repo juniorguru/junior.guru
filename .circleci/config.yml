@@ -39,11 +39,13 @@ jobs:
           key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
           paths:
             - ~/.cache/pypoetry/virtualenvs
+            - ~/.cache/ms-playwright
             - ./node_modules
       - persist_to_workspace:
           root: "~"
           paths:
               - .cache/pypoetry/virtualenvs
+              - .cache/ms-playwright
               - project/node_modules
               - project
 
