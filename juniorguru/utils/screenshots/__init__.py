@@ -7,8 +7,7 @@ from multiprocessing import Pool
 from subprocess import PIPE, run
 
 import requests
-import playwright
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, Error as PlaywrightError, TimeoutError as PlaywrightTimeoutError
 from invoke import task
 from PIL import Image
 
@@ -41,6 +40,8 @@ WIDTH = 640
 
 HEIGHT = 360
 
+MIN_BYTES_THRESHOLD = 10000
+
 YOUTUBE_URL_RE = re.compile(r'(youtube\.com.+watch\?.*v=|youtu\.be/)([\w\-\_]+)')
 
 FACEBOOK_URL_RE = re.compile(r'facebook\.com/')
@@ -54,40 +55,47 @@ PLAYWRIGHT_WORKERS = 3
 PLAYWRIGHT_RETRIES = 3
 
 HIDDEN_ELEMENTS = [
-    '[class*="ookie"]',
-    '[id*="ookie"]',
-    '[aria-label*="ookie"]',
-    '[aria-describedby*="ookie"]',
+    # generic annoyances
+    '[class*="cookie"]:not(html,body)',
+    '[id*="cookie"]:not(html,body)',
+    '[class*="rc-anchor"]',
+    '[id*="rc-anchor"]',
+    '[class*="helpcrunch"]',
+    '[id*="helpcrunch"]',
+    '[aria-label*="cookie"]',
+    '[aria-label*="banner"]',
+    '[aria-describedby*="cookie"]',
     '[aria-modal]',
     '[role="dialog"]',
     '[id*="onetrust"]',
-    '[data-cookiebanner]',  # facebook.com
+    '[class*="onetrust"]',
+    '[id*="gdpr-consent"]',
+    '[class*="gdpr-consent"]',
+    '[id*="consent-banner"]',
+    '[class*="consent-banner"]',
+    '.alert-dismissible',
+    '.intercom-app',
+    '[data-cookiebanner]',
+    '[data-cookie-path]',
+    '.chatbot-wrapper',
+
+    # specific sites
+    'body > .announcement',  # junior.guru
+    'body > .notice',  # pyvo.cz
+    'body > .ch2',  # czechitas.cz
+    '[data-before-content*="advertisement"]',  # reddit.com
     '[class*="popupThin"]',  # codecademy.com
-    '#pageprompt',  # edx.org
-    '#page-prompt',  # edx.org
-    '[data-cookie-path]',  # google.com
     'ir-modal',  # udacity.com
     'ir-cookie-consent',  # udacity.com
     'ir-content .moustache',  # udacity.com
     'ir-moustache',  # udacity.com
-    '[data-purpose*="smart-bar"]',  # udemy.com
-    '[data-before-content*="advertisement"]',  # reddit.com
     '.butterBar',  # medium.com
     '#banners',  # trello.com
-    '#selectLanguage',  # code.org
-    '.intercom-app',
-    '[id*="gdpr-consent"]',
-    '[id*="consent-banner"]',
-    '.chatbot-wrapper',  # cocuma.cz
-    '.js-consent-banner',  # stackoverflow.com
+    'body > #selectLanguage',  # code.org
     '[style*="Toaster-indicatorColor"]',  # reddit.com
     '#axeptio_overlay',  # welcometothejungle.com
-    '.alert-dismissible',
-    '#rc-anchor-alert',
-    '.notice',  # pyvo.cz
-    '[class*="Modal_modalBackground__"]',  # integromat.com
+    '[class*="Modal_modalBackground__"]',  # make.com
     '.hsbeacon-chat__button',  # fakturoid.cz
-    '.ch2',  # czechitas.cz
 ]
 
 
@@ -215,21 +223,20 @@ def create_screenshot(page, url):
             logger.debug(f"Shooting {url} (attempt #{attempt_no})")
             try:
                 page.goto(url, wait_until='networkidle')
-            except playwright.TimeoutError:
+            except PlaywrightTimeoutError:
                 pass
             page.evaluate('''
-                selectors => selectors
-                    .map(selector => document.querySelector(selector))
-                    .filter(element => element)
+                selectors => Array.from(document.querySelectorAll(selectors.join(', ')))
                     .forEach(element => element.remove());
             ''', list(HIDDEN_ELEMENTS))
             screenshot_bytes = page.screenshot()
-            if not screenshot_bytes:
-                raise playwright.Error('No bytes')
+            if len(screenshot_bytes) < MIN_BYTES_THRESHOLD:
+                raise PlaywrightError(f'Suspiciously small image: {len(screenshot_bytes)} bytes')
             return screenshot_bytes
-        except playwright.Error as e:
-            logger.debug(str(e))
-            if attempt_no == PLAYWRIGHT_RETRIES:
+        except PlaywrightError as e:
+            if attempt_no < PLAYWRIGHT_RETRIES:
+                logger.debug(str(e))
+            else:
                 raise
 
 
