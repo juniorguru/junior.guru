@@ -4,27 +4,14 @@ from juniorguru.utils import screenshots
 
 
 @pytest.mark.parametrize('url,expected', [
-    ('https://example.com', 'https://example.com'),
-    ('https://example.com/foo/', 'https://example.com/foo'),
-    ('https://junior.guru/club/', 'http://localhost:5000/club'),
-    ('https://junior.guru/learn/#english', 'http://localhost:5000/learn/#english'),
+    ('https://pyladies.cz', False),
+    ('https://www.youtube.com/user/BBSobotka', False),
+    ('https://www.youtube.com/channel/UC01guyOZpf40pUopBvdPwsg', False),
+    ('https://www.youtube.com/watch?v=0v5K4GvK4Gs', True),
+    ('https://youtu.be/0v5K4GvK4Gs', True),
 ])
-def test_parse_url(url, expected):
-    assert screenshots.parse_url(url) == expected
-
-
-def test_filter_yt_urls():
-    assert screenshots.filter_yt_urls([
-        'https://pyladies.cz',
-        'https://pyvo.cz',
-        'https://www.youtube.com/user/BBSobotka',
-        'https://www.youtube.com/channel/UC01guyOZpf40pUopBvdPwsg',
-        'https://www.youtube.com/watch?v=0v5K4GvK4Gs',
-        'https://youtu.be/0v5K4GvK4Gs',
-    ]) == [
-        'https://www.youtube.com/watch?v=0v5K4GvK4Gs',
-        'https://youtu.be/0v5K4GvK4Gs',
-    ]
+def test_filter_yt_urls(url, expected):
+    assert screenshots.is_yt_screenshot((url, '... path ...')) is expected
 
 
 @pytest.mark.parametrize('url,expected', [

@@ -42,6 +42,9 @@ class Spider(BaseSpider):
 
         try:
             data = extract_job_posting(response.text, response.url)
+        except (ValueError, json.JSONDecodeError):
+            pass
+        else:
             loader.add_value('source', self.name)
             loader.add_value('source_urls', response.url)
             loader.add_value('title', data['title'])
@@ -53,8 +56,6 @@ class Spider(BaseSpider):
             loader.add_value('company_url', data['hiringOrganization']['sameAs'])
             loader.add_value('locations_raw', data['hiringOrganization']['address'])
             yield loader.load_item()
-        except json.JSONDecodeError:
-            pass
 
 
 def parse_struct_time(struct_time):
@@ -71,8 +72,11 @@ def parse_date(value):
 
 def extract_job_posting(html_string, base_url):
     data = extruct.extract(html_string, base_url, syntaxes=['json-ld'])
-    return next(data_item for data_item in data['json-ld']
-                if data_item['@type'] == 'JobPosting')
+    try:
+        return [data_item for data_item in data['json-ld']
+                if data_item['@type'] == 'JobPosting'][0]
+    except IndexError:
+        raise ValueError('json-ld provided no job postings')
 
 
 class Loader(ItemLoader):

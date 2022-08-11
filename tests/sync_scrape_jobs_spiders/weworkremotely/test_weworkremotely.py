@@ -69,6 +69,7 @@ def test_spider_parse_job_no_image():
 def test_spider_parse_job_json_decode_error_gets_skipped():
     response = HtmlResponse('https://example.com/example/',
                             body=Path(FIXTURES_DIR / 'job_json_decode_error.html').read_bytes())
+    jobs = weworkremotely.Spider().parse_job(response, {})
 
     with pytest.raises(StopIteration):
-        next(weworkremotely.Spider().parse_job(response, {}))
+        next(jobs)

@@ -189,12 +189,12 @@ def is_existing_screenshot(screenshot):
 
 def is_yt_screenshot(screenshot):
     url, path = screenshot
-    return YOUTUBE_URL_RE.search(url)
+    return bool(YOUTUBE_URL_RE.search(url))
 
 
 def is_fb_screenshot(screenshot):
     url, path = screenshot
-    return FACEBOOK_URL_RE.search(url)
+    return bool(FACEBOOK_URL_RE.search(url))
 
 
 def parse_yt_id(url):
