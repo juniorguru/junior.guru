@@ -37,7 +37,7 @@ Tyto věty slyšel v ČR asi každý začátečník — a přitom jde o nesmysly
 
 Svérázný slovenský lektor [yablko](https://www.youtube.com/channel/UC01guyOZpf40pUopBvdPwsg), autor kurzů tvorby webu pro začátečníky, natočil sérii videí o hledání práce v IT. Skvěle doplňují tuto příručku, mrkni na ně!
 
-<div class="video-cards">
+<div class="media-cards">
   {{ video_card(
     'Kde najdeš první praxi',
     '15min',

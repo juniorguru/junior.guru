@@ -1,4 +1,4 @@
-.video-card {
+.media-card {
   @extend .card;
   flex-grow: 0;
   flex-shrink: 0;
@@ -10,12 +10,12 @@
   border: 1px solid $jg-blue-light;
 }
 
-.video-cards {
+.media-cards {
   display: flex;
   flex-wrap: wrap;
 }
 
-.video-cards .video-card {
+.media-cards .media-card {
   margin: 0 0 $spacer 0;
 
   @include media-breakpoint-up(sm) {
@@ -27,17 +27,17 @@
   }
 }
 
-.video-cards .video-card:nth-child(2n) {
+.media-cards .media-card:nth-child(2n) {
   @include media-breakpoint-up(sm) {
     margin-right: 0;
   }
 }
 
-.video-card-image-cover {
+.media-card-image-cover {
   position: relative;
 }
 
-.video-card-image {
+.media-card-image {
   @extend .card-img-top;
   width: 100%;
   height: auto;
@@ -45,12 +45,12 @@
   opacity: .5;
 }
 
-.video-card:hover .video-card-image {
+.media-card:hover .media-card-image {
   filter: grayscale(0%);
   opacity: 1;
 }
 
-.video-card-button {
+.media-card-button {
   @extend .badge;
   position: absolute;
   top: 50%;
@@ -66,24 +66,24 @@
   transform: translate(-50%, -50%);
 }
 
-.video-card:hover .video-card-button {
+.media-card:hover .media-card-button {
   background: $link-hover-color;
 }
 
-.video-card-play {
+.media-card-play {
   @extend .fs-2;
 }
 
-.video-card-duration {
+.media-card-duration {
   @extend .fs-5;
   margin-left: .5rem;
 }
 
-.video-card-header {
+.media-card-header {
   position: relative;
 }
 
-.video-card-title {
+.media-card-title {
   @extend .card-title;
   @extend .card-body;
   @extend .fs-5;
@@ -91,23 +91,23 @@
   margin: 0;
 }
 
-.video-card-title a:visited { color: $link-color; }
-.video-card-title a:visited:hover { color: $link-hover-color; }
+.media-card-title a:visited { color: $link-color; }
+.media-card-title a:visited:hover { color: $link-hover-color; }
 
-.video-card-link {
+.media-card-link {
   @extend .stretched-link;
 }
 
-.video-card-body {
+.media-card-body {
   @extend .card-body;
   padding-top: 0;
 }
 
-.video-card-text {
+.media-card-text {
   @extend .card-text;
 }
 
-.video-card-note {
+.media-card-note {
   display: block;
   margin-top: $spacer;
 }

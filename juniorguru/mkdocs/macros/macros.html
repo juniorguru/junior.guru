@@ -8,6 +8,7 @@
     {% if filename.endswith('.svg') %}
       src="{{ filename|url }}"
     {% else %}
+      data-src="{{ filename|url }}"
       src="https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_auto,q_auto,f_auto/https://junior.guru/{{ filename }}"
       srcset="{{- '' -}}
         https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_1,q_auto,f_auto/https://junior.guru/{{ filename }}, {{- '' -}}
@@ -15,7 +16,7 @@
         https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_2,q_auto,f_auto/https://junior.guru/{{ filename }} 2x, {{- '' -}}
         https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_3,q_auto,f_auto/https://junior.guru/{{ filename }} 3x {{- '' -}}
       "
-      onerror="this.onerror = null; this.src = this.srcset = '{{ filename|url }}';"
+      onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;"
     {% endif %}
     alt="{{ alt }}" width="{{ width }}" height="{{ height }}"
     {% if lazy %} loading="lazy"{% endif %}
@@ -150,29 +151,29 @@
 
 
 {% macro video_card(title, duration, screenshot_filename, url, caption=None, note=None) %}
-<div class="video-card">
-  <div class="video-card-header">
-    <div class="video-card-image-cover">
-      {{ img('static/images/screenshots/' + screenshot_filename, title, 640, 360, class='video-card-image') }}
-      <div class="video-card-button">
-        <span class="video-card-play">{{ 'play-circle-fill'|icon }}</span>
-        <span class="video-card-duration">{{ duration }}</span>
+<div class="media-card">
+  <div class="media-card-header">
+    <div class="media-card-image-cover">
+      {{ img('static/images/screenshots/' + screenshot_filename, title, 640, 360, class='media-card-image') }}
+      <div class="media-card-button">
+        <span class="media-card-play">{{ 'play-circle-fill'|icon }}</span>
+        <span class="media-card-duration">{{ duration }}</span>
       </div>
     </div>
-    <h4 class="video-card-title">
-      <a href="{{ url }}" class="video-card-link" target="_blank" rel="noopener">{{ title }}</a>
+    <h4 class="media-card-title">
+      <a href="{{ url }}" class="media-card-link" target="_blank" rel="noopener">{{ title }}</a>
     </h4>
   </div>
-  <div class="video-card-body">
+  <div class="media-card-body">
     {% if caption or caller %}
-      <p class="video-card-text">
+      <p class="media-card-text">
         {% if caption %}
           {{ caption|md|remove_p }}
         {% else %}
           {{ caller()|md|remove_p }}
         {% endif %}
         {% if note %}
-          <small class="video-card-note">{{ 'info-circle'|icon }} {{ note|md|remove_p }}</small>
+          <small class="media-card-note">{{ 'info-circle'|icon }} {{ note|md|remove_p }}</small>
         {% endif %}
       </p>
     {% endif %}
@@ -182,13 +183,13 @@
 
 
 {% macro podcast_card(podcast_episode, caption=None) %}
-<div class="video-card">
-  <div class="video-card-header">
-    <h4 class="video-card-title">{{ podcast_episode.title }}</h4>
+<div class="media-card">
+  <div class="media-card-header">
+    <h4 class="media-card-title">{{ podcast_episode.title }}</h4>
   </div>
-  <div class="video-card-body">
+  <div class="media-card-body">
     {% if caption or caller %}
-      <p class="video-card-text">
+      <p class="media-card-text">
         {% if caption %}
           {{ caption|md|remove_p }}
         {% else %}

@@ -1,4 +1,3 @@
-import re
 from pathlib import Path
 
 from invoke import Exit, task
@@ -11,8 +10,6 @@ logger = loggers.get(__name__)
 
 
 PUBLIC_DIR = Path('public')
-
-CLOUDINARY_URL = re.compile(r'.*https://junior\.guru')
 
 
 @task(name='docs')
@@ -48,7 +45,7 @@ def main(context):
                 href = '/'
             links.append((doc_name, href))
         for element in html_tree.cssselect('img[src]'):
-            src = CLOUDINARY_URL.sub('', element.get('src'))
+            src = element.get('data-src', element.get('src'))
             if src.startswith(('http', 'mailto')):
                 continue
             if src.startswith('/'):

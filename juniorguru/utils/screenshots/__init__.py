@@ -10,6 +10,7 @@ import requests
 from playwright.sync_api import sync_playwright, Error as PlaywrightError, TimeoutError as PlaywrightTimeoutError
 from invoke import task
 from PIL import Image
+from lxml import html
 
 from juniorguru.lib import loggers
 
@@ -19,13 +20,18 @@ logger = loggers.get(__name__)
 
 PROJECT_DIR = Path(__file__).parent.parent.parent.parent
 
-DOCS_DIR = PROJECT_DIR / 'juniorguru' / 'mkdocs'
+PUBLIC_DIR = PROJECT_DIR / 'public'
 
 IMAGES_DIR = PROJECT_DIR / 'juniorguru' / 'web' / 'static' / 'src' / 'images'
 
 SCREENSHOTS_DIR = IMAGES_DIR / 'screenshots'
 
 SCREENSHOTS_OVERRIDES_DIR = IMAGES_DIR / 'screenshots-overrides'
+
+CSS_SELECTORS = [
+    ('.link-card', '.link-card-link', '.link-card-image'),
+    ('.media-card', '.media-card-link', '.media-card-image'),
+]
 
 LINK_CARD_RE = re.compile(r'''
     (link_card|video_card|video_card_engeto)
@@ -105,7 +111,7 @@ def main(context):
     SCREENSHOTS_OVERRIDES_DIR.mkdir(parents=True, exist_ok=True)
 
     overriding_paths = set(chain(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'),
-                                SCREENSHOTS_OVERRIDES_DIR.glob('*.png')))
+                                 SCREENSHOTS_OVERRIDES_DIR.glob('*.png')))
     logger.info(f'Found {len(overriding_paths)} manual screenshot overrides')
     Pool().map(edit_screenshot_override, overriding_paths)
     overriding_paths = set(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'))
@@ -119,9 +125,11 @@ def main(context):
         logger.warning(f'Expiring {path}')
         path.unlink()
 
-    paths_docs = set(Path(DOCS_DIR).glob('**/*.md'))
-    logger.info(f'Reading {len(paths_docs)} documents')
-    screenshots = set(chain.from_iterable(parse_doc(doc_path) for doc_path in paths_docs))
+    logger.info('Building HTML')
+    run(['npx', 'gulp', 'build'], check=True, stdout=PIPE)
+    html_paths = set(Path(PUBLIC_DIR).glob('**/*.html'))
+    logger.info(f'Reading {len(html_paths)} HTML files')
+    screenshots = set(chain.from_iterable(map(parse_doc, html_paths)))
     logger.info(f'Found {len(screenshots)} links to screenshots')
 
     existing_screenshots = set(filter(is_existing_screenshot, screenshots))
@@ -147,11 +155,22 @@ def main(context):
     Pool(PLAYWRIGHT_WORKERS).map(create_screenshots, screenshots_batches)
 
 
-def parse_doc(doc_path):
-    doc_text = Path(doc_path).read_text()
-    for match in LINK_CARD_RE.finditer(doc_text):
-        groups = match.groupdict()
-        yield (groups['url'], SCREENSHOTS_DIR / groups['path'])
+def parse_doc(path):
+    logger.debug(f'Parsing {path.relative_to(PUBLIC_DIR)}')
+    html_tree = html.fromstring(path.read_bytes())
+    for select_card, select_link, select_image in CSS_SELECTORS:
+        for card in html_tree.cssselect(select_card):
+            try:
+                link = card.cssselect(select_link)[0]
+                image = card.cssselect(select_image)[0]
+            except IndexError:
+                logger.error(f"Problem parsing {select_card} in {path}")
+            else:
+                screenshot_url = link.get('href')
+                if screenshot_url.startswith('.'):
+                    screenshot_url = f'https://junior.guru/{path.parent.relative_to(PUBLIC_DIR) / screenshot_url}'
+                screenshot_path = SCREENSHOTS_DIR / Path(image.get('data-src')).name
+                yield (screenshot_url, screenshot_path)
 
 
 def is_expired_path(path):
