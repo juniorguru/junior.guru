@@ -4,7 +4,7 @@ version: 2.1
 executors:
   python-js:
     docker:
-      - image: cimg/python:3.10.6-node
+      - image: cimg/python:3.10.6-browsers
     working_directory: ~/project
 
 
