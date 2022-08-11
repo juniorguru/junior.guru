@@ -7,7 +7,8 @@ from multiprocessing import Pool
 from subprocess import PIPE, run
 
 import requests
-from playwright.sync_api import sync_playwright, Error as PlaywrightError, TimeoutError as PlaywrightTimeoutError
+import playwright
+from playwright.sync_api import sync_playwright
 from invoke import task
 from PIL import Image
 
@@ -57,6 +58,8 @@ HIDDEN_ELEMENTS = [
     '[id*="ookie"]',
     '[aria-label*="ookie"]',
     '[aria-describedby*="ookie"]',
+    '[aria-modal]',
+    '[role="dialog"]',
     '[id*="onetrust"]',
     '[data-cookiebanner]',  # facebook.com
     '[class*="popupThin"]',  # codecademy.com
@@ -76,7 +79,6 @@ HIDDEN_ELEMENTS = [
     '[id*="gdpr-consent"]',
     '[id*="consent-banner"]',
     '.chatbot-wrapper',  # cocuma.cz
-    '[aria-modal="true"]', # skillmea.cz
     '.js-consent-banner',  # stackoverflow.com
     '[style*="Toaster-indicatorColor"]',  # reddit.com
     '#axeptio_overlay',  # welcometothejungle.com
@@ -127,6 +129,7 @@ def main(context):
 
     paths = list(chain(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'),
                        SCREENSHOTS_OVERRIDES_DIR.glob('*.png')))
+    logger.info(f'Editing {len(paths)} manual screenshot overrides')
     Pool().map(edit_screenshot_override, paths)
 
 
@@ -212,7 +215,7 @@ def create_screenshot(page, url):
             logger.debug(f"Shooting {url} (attempt #{attempt_no})")
             try:
                 page.goto(url, wait_until='networkidle')
-            except PlaywrightTimeoutError:
+            except playwright.TimeoutError:
                 pass
             page.evaluate('''
                 selectors => selectors
@@ -222,9 +225,9 @@ def create_screenshot(page, url):
             ''', list(HIDDEN_ELEMENTS))
             screenshot_bytes = page.screenshot()
             if not screenshot_bytes:
-                raise PlaywrightError('No bytes')
+                raise playwright.Error('No bytes')
             return screenshot_bytes
-        except PlaywrightError as e:
+        except playwright.Error as e:
             logger.debug(str(e))
             if attempt_no == PLAYWRIGHT_RETRIES:
                 raise
