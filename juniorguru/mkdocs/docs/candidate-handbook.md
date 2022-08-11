@@ -477,8 +477,7 @@ Nepodceňuj se, v inzerátech je ideál, který ti má spíše ukázat kam pozic
     'Shánění práce na internetu',
     'prace.rovnou.cz.jpg',
     'https://prace.rovnou.cz/',
-    'Projdi si českou příručku základů
-        hledání práce na internetu.'
+    'Projdi si českou příručku základů hledání práce na internetu.'
   ) }}
 
   {{ link_card(

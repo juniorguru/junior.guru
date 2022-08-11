@@ -1,126 +1,155 @@
+import io
 import re
 from itertools import chain
-from multiprocessing import Pool
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from multiprocessing import Pool
 from subprocess import DEVNULL, PIPE, CalledProcessError, run
 
 import requests
+from playwright.sync_api import sync_playwright, Error as PlaywrightError, TimeoutError as PlaywrightTimeoutError
 from invoke import task
 from PIL import Image
 
+from juniorguru.lib import loggers
+
+
+logger = loggers.get(__name__)
+
 
 PROJECT_DIR = Path(__file__).parent.parent.parent.parent
+
+DOCS_DIR = PROJECT_DIR / 'juniorguru' / 'mkdocs'
+
 IMAGES_DIR = PROJECT_DIR / 'juniorguru' / 'web' / 'static' / 'src' / 'images'
 
-URLS_TXT = Path(__file__).parent / 'screenshots-urls.txt'
 SCREENSHOTS_DIR = IMAGES_DIR / 'screenshots'
+
 SCREENSHOTS_OVERRIDES_DIR = IMAGES_DIR / 'screenshots-overrides'
 
-PAGERES_FB_SCRIPT = Path(__file__).parent / 'screenshot-facebook.js'
+LINK_CARD_RE = re.compile(r'''
+    (link_card|video_card|video_card_engeto)
+    \(\s*
+    ('[^']+',\s*)+
+    '(?P<path>[^']+\.jpg)'
+    ,\s*
+    '(?P<url>http[^']+)'
+''', re.VERBOSE | re.IGNORECASE)
+
+WIDTH = 640
+
+HEIGHT = 360
+
+YOUTUBE_URL_RE = re.compile(r'(youtube\.com.+watch\?.*v=|youtu\.be/)([\w\-\_]+)')
+
+FACEBOOK_URL_RE = re.compile(r'facebook\.com/')
+
+CACHE_PERIOD = timedelta(days=60)
+
+PLAYWRIGHT_BATCH_SIZE = 3
+
+PLAYWRIGHT_WORKERS = 3
+
+PLAYWRIGHT_RETRIES = 3
 
 HIDDEN_ELEMENTS = [
+    '[class*="ookie"]',
+    '[id*="ookie"]',
+    '[aria-label*="ookie"]',
+    '[aria-describedby*="ookie"]',
+    '[id*="onetrust"]',
     '[data-cookiebanner]',  # facebook.com
-    '.fbPageBanner',  # facebook.com
     '[class*="popupThin"]',  # codecademy.com
     '#pageprompt',  # edx.org
     '#page-prompt',  # edx.org
-    '[id*="cookie-law"]',  # engeto.cz
     '[data-cookie-path]',  # google.com
     'ir-modal',  # udacity.com
     'ir-cookie-consent',  # udacity.com
     'ir-content .moustache',  # udacity.com
     'ir-moustache',  # udacity.com
-    'ytd-popup-container',  # youtube.com
-    'iron-overlay-backdrop',  # youtube.com
     '[data-purpose*="smart-bar"]',  # udemy.com
     '[data-before-content*="advertisement"]',  # reddit.com
     '.butterBar',  # medium.com
     '#banners',  # trello.com
+    '#selectLanguage',  # code.org
     '.intercom-app',
     '[id*="gdpr-consent"]',
     '[id*="consent-banner"]',
-    '[class*="cookie-message"]',
-    '[class*="cookieBanner"]',
-    '[class*="cookiebanner"]',
-    '[id*="cookiebanner"]',
-    '[aria-label="cookieconsent"]',
-    '[aria-describedby="cookieconsent:desc"]',
     '.chatbot-wrapper',  # cocuma.cz
-    '.cookies-notification',  # learn2code.cz
+    '[aria-modal="true"]', # skillmea.cz
     '.js-consent-banner',  # stackoverflow.com
     '[style*="Toaster-indicatorColor"]',  # reddit.com
-    '#onetrust-banner-sdk',  # codecademy.com
     '#axeptio_overlay',  # welcometothejungle.com
-    '#CybotCookiebotDialog',  # hedepy.cz
-    '.cookiebot-overlay',  # hedepy.cz
+    '.alert-dismissible',
+    '#rc-anchor-alert',
+    '.notice',  # pyvo.cz
+    '[class*="Modal_modalBackground__"]',  # integromat.com
+    '.hsbeacon-chat__button',  # fakturoid.cz
+    '.ch2',  # czechitas.cz
 ]
-
-PAGERES_BATCH_SIZE = 3
-PAGERES_WORKERS = 3
-PAGERES_OPTIONS = [
-    '--format=jpg',
-    '--verbose',
-    '--overwrite',
-    '--crop',
-    '--filename=<%= url %>',
-    '--delay=2',
-    '--css=' + ', '.join(HIDDEN_ELEMENTS) + ' { display: none !important; }',
-]
-
-WIDTH = 640
-HEIGHT = 360
-
-YOUTUBE_URL_RE = re.compile(r'(youtube\.com.+watch\?.*v=|youtu\.be/)([\w\-\_]+)')
-FACEBOOK_URL_RE = re.compile(r'facebook\.com/')
-ERRONEOUS_DOUBLE_FRAGMENT = re.compile(r'(\#[^\#])\#[^\.]')
 
 
 @task(name='screenshots')
 def main(context):
     SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
-    urls = parse_urls(URLS_TXT.read_text())
-
-    print('[main] YouTube cover images')
-    yt_urls = filter_yt_urls(urls)
-    urls = list(set(urls) - set(yt_urls))
-    Pool().map(download_yt_cover_image, yt_urls)
-
-    print('[main] Facebook cover images')
-    fb_urls = filter_fb_urls(urls)
-    urls = list(set(urls) - set(fb_urls))
-    Pool(PAGERES_WORKERS).map(create_fb_screenshot, fb_urls)
-
-    print('[main] web page screenshots')
-    urls_batches = generate_batches(urls, PAGERES_BATCH_SIZE)
-    Pool(PAGERES_WORKERS).map(create_screenshots, urls_batches)
-
-    Pool().map(edit_screenshot, SCREENSHOTS_DIR.glob('*.jpg'))
-
-    print('[main] screenshots overrides')
     SCREENSHOTS_OVERRIDES_DIR.mkdir(parents=True, exist_ok=True)
-    paths = chain(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'),
-                  SCREENSHOTS_OVERRIDES_DIR.glob('*.png'))
+
+    expired_paths = [path for path
+                     in chain(SCREENSHOTS_DIR.glob('*.jpg'), SCREENSHOTS_DIR.glob('*.png'))
+                     if (datetime.now() - datetime.fromtimestamp(path.stat().st_ctime)) > CACHE_PERIOD]
+    logger.info(f'Expiring {len(expired_paths)} screenshots')
+    for path in expired_paths:
+        logger.warning(f'Expiring {path}')
+        path.unlink()
+
+    paths_docs = list(Path(DOCS_DIR).glob('**/*.md'))
+    logger.info(f'Reading {len(paths_docs)} documents')
+    screenshots = list(chain.from_iterable(parse_doc(doc_path) for doc_path in paths_docs))
+    logger.info(f'Found {len(screenshots)} screenshots')
+
+    existing_screenshots = filter_existing_screenshots(screenshots)
+    logger.info(f'Found {len(existing_screenshots)} existing screenshots')
+    screenshots = list(set(screenshots) - set(existing_screenshots))
+
+    yt_screenshots = filter_yt_screenshots(screenshots)
+    logger.info(f'Downloading {len(yt_screenshots)} YouTube URLs')
+    screenshots = list(set(screenshots) - set(yt_screenshots))
+    Pool().map(download_yt_cover_image, yt_screenshots)
+
+    fb_screenshots = filter_fb_screenshots(screenshots)
+    logger.info(f'Downloading {len(fb_screenshots)} Facebook URLs')
+    screenshots = list(set(screenshots) - set(fb_screenshots))
+    Pool(PLAYWRIGHT_WORKERS).map(download_fb_cover_image, fb_screenshots)
+
+    logger.info(f'Downloading {len(screenshots)} regular website URLs')
+    screenshots_batches = generate_batches(screenshots, PLAYWRIGHT_BATCH_SIZE)
+    Pool(PLAYWRIGHT_WORKERS).map(create_screenshots, screenshots_batches)
+
+    paths = list(chain(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'),
+                       SCREENSHOTS_OVERRIDES_DIR.glob('*.png')))
     Pool().map(edit_screenshot_override, paths)
 
 
-def parse_url(line):
-    url = line.strip().rstrip('/')
-    if url.startswith('https://junior.guru/'):
-        return url.replace('https://junior.guru/', 'http://localhost:5000/')
-    return url
+def parse_doc(doc_path):
+    doc_text = Path(doc_path).read_text()
+    for match in LINK_CARD_RE.finditer(doc_text):
+        groups = match.groupdict()
+        yield (groups['url'], SCREENSHOTS_DIR / groups['path'])
 
 
-def parse_urls(text):
-    urls = (parse_url(line) for line in text.strip().splitlines())
-    return list(set(urls))
+def filter_existing_screenshots(screenshots):
+    return [(url, path) for url, path in screenshots
+            if Path(path).exists()]
 
 
-def filter_yt_urls(urls):
-    return [url for url in urls if YOUTUBE_URL_RE.search(url)]
+def filter_yt_screenshots(screenshots):
+    return [(url, path) for url, path in screenshots
+            if YOUTUBE_URL_RE.search(url)]
 
 
-def filter_fb_urls(urls):
-    return [url for url in urls if FACEBOOK_URL_RE.search(url)]
+def filter_fb_screenshots(screenshots):
+    return [(url, path) for url, path in screenshots
+            if FACEBOOK_URL_RE.search(url)]
 
 
 def parse_yt_id(url):
@@ -131,11 +160,32 @@ def parse_yt_id(url):
         raise ValueError(f"URL {url} doesn't contain YouTube ID")
 
 
-def download_yt_cover_image(url):
+def download_yt_cover_image(screenshot):
+    url, path = screenshot
+    logger.info(f"Shooting {url}")
     resp = requests.get(f"https://img.youtube.com/vi/{parse_yt_id(url)}/maxresdefault.jpg")
     resp.raise_for_status()
-    path = SCREENSHOTS_DIR / f"youtube.com!watch!v={parse_yt_id(url)}.jpg"
-    path.write_bytes(resp.content)
+    image_bytes = edit_image(resp.content)
+    logger.info(f"Writing {path}")
+    Path(path).write_bytes(image_bytes)
+
+
+def download_fb_cover_image(screenshot):
+    url, path = screenshot
+    logger.info(f"Shooting {url}")
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch()
+        page = browser.new_page()
+        page.goto(url, wait_until='networkidle')
+        image_url = page.evaluate('''
+            () => document.querySelector('img[data-imgperflogname="profileCoverPhoto"]').src
+        ''')
+        browser.close()
+    resp = requests.get(image_url)
+    resp.raise_for_status()
+    image_bytes = edit_image(resp.content)
+    logger.info(f"Writing {path}")
+    Path(path).write_bytes(image_bytes)
 
 
 def generate_batches(iterable, batch_size):
@@ -143,73 +193,81 @@ def generate_batches(iterable, batch_size):
         yield iterable[i:i + batch_size]
 
 
-def create_screenshots(urls, options=None):
-    urls = list(urls)
-    pageres = ['npx', 'pageres'] + urls + PAGERES_OPTIONS + (options or [])
-    try:
-        print(f"[pageres] {len(urls)} URLs")
-        run(pageres, check=True, cwd=SCREENSHOTS_DIR, stdout=DEVNULL)
-    except CalledProcessError:
-        print(f"[pageres] RETRY {' '.join(urls)}")
-        run(pageres, check=True, cwd=SCREENSHOTS_DIR, stdout=DEVNULL)
+def create_screenshots(screenshots):
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch()
+        page = browser.new_page()
+        for url, path in screenshots:
+            logger.info(f"Shooting {url}")
+            image_bytes = create_screenshot(page, url)
+            image_bytes = edit_image(image_bytes)
+            logger.info(f"Writing {path}")
+            Path(path).write_bytes(image_bytes)
+        browser.close()
 
 
-def create_fb_screenshot(url):
-    try:
-        print(f"[pageres] {url}")
-        run(['node', PAGERES_FB_SCRIPT, url], check=True, cwd=SCREENSHOTS_DIR, stdout=DEVNULL)
-    except CalledProcessError:
-        print(f"[pageres] RETRY {url}")
-        run(['node', PAGERES_FB_SCRIPT, url], check=True, cwd=SCREENSHOTS_DIR, stdout=DEVNULL)
+def create_screenshot(page, url):
+    for attempt_no in range(1, PLAYWRIGHT_RETRIES + 1):
+        try:
+            logger.debug(f"Shooting {url} (attempt #{attempt_no})")
+            try:
+                page.goto(url, wait_until='networkidle')
+            except PlaywrightTimeoutError:
+                pass
+            page.evaluate('''
+                selectors => selectors
+                    .map(selector => document.querySelector(selector))
+                    .filter(element => element)
+                    .forEach(element => element.remove());
+            ''', list(HIDDEN_ELEMENTS))
+            screenshot_bytes = page.screenshot()
+            if not screenshot_bytes:
+                raise PlaywrightError('No bytes')
+            return screenshot_bytes
+        except PlaywrightError as e:
+            logger.debug(str(e))
+            if attempt_no == PLAYWRIGHT_RETRIES:
+                raise
 
 
-def edit_screenshot(path):
-    name = path.name
+def edit_image(image_bytes):
+    with Image.open(io.BytesIO(image_bytes)) as image:
+        if image.format == 'PNG':
+            image = image.convert('RGB')  # from RGBA
+        elif image.format != 'JPEG':
+            raise RuntimeError(f'Unexpected image format: {image.format}')
 
-    image = Image.open(path)
-    if image.width > WIDTH or image.height > HEIGHT:
-        print(f"[thumbnail] {name} ( → {WIDTH}x{HEIGHT})")
-        image.thumbnail((WIDTH, HEIGHT))
-        image.save(path, 'JPEG')
-    image.close()
+        if image.width > WIDTH or image.height > HEIGHT:
+            image.thumbnail((WIDTH, HEIGHT))
 
-    print(f'[imagemin] {name}')
-    imagemin = ['npx', 'imagemin', str(path)]
-    proc = run(imagemin, check=True, stdout=PIPE)
-    path.write_bytes(proc.stdout)
-
-    original_name = name
-    if ERRONEOUS_DOUBLE_FRAGMENT.search(name):
-        name = ERRONEOUS_DOUBLE_FRAGMENT.sub('\1', name)
-    if '#' in name:
-        name = name.replace('#', '!')
-    if name.startswith('localhost!5000'):
-        name = name.replace('localhost!5000', 'junior.guru')
-    if original_name != name:
-        print(f'[rename] {original_name} ( → {name})')
-        path.rename(path.with_name(name))
+        input_bytes = io.BytesIO()
+        image.save(input_bytes, 'JPEG')
+    input_bytes.seek(0)
+    proc = run(['npx', 'imagemin'], input=input_bytes.getvalue(), stdout=PIPE, check=True)
+    return proc.stdout
 
 
 def edit_screenshot_override(path):
-    image = Image.open(path)
+    path = Path(path)
+    logger.info(f'Editing {path.name}')
 
-    if image.format == 'PNG':
-        path_png, path = path, path.with_suffix('.jpg')
-        print(f'[png to jpg] {path_png.name} ( → {path.name})')
-        image = image.convert('RGB')  # from RGBA
-        image.save(path, 'JPEG')
-        path_png.unlink()
-    elif image.format != 'JPEG':
-        raise RuntimeError(f'Unexpected image format: {image.format}')
+    with Image.open(path) as image:
+        if image.format == 'PNG':
+            path_png, path = path, path.with_suffix('.jpg')
+            image = image.convert('RGB')  # from RGBA
+            image.save(path, 'JPEG')
+            path_png.unlink()
+        elif image.format != 'JPEG':
+            raise RuntimeError(f'Unexpected image format: {image.format}')
 
-    if image.width > WIDTH or image.height > HEIGHT:
-        # We want to support converting drop-in images made as whole-page
-        # manual Firefox screenshots, thus we cannot use 'thumbnail'. Instead,
-        # we resize by aspect ratio (ar) and then crop to the desired height.
-        print(f"[thumbnail] {path.name} ( → {WIDTH}x{HEIGHT})")
-        height_ar = (image.height * WIDTH) // image.width
-        image = image.resize((WIDTH, height_ar), Image.BICUBIC)
-        image = image.crop((0, 0, WIDTH, HEIGHT))
-        image.save(path)
+        if image.width > WIDTH or image.height > HEIGHT:
+            # We want to support converting drop-in images made as whole-page
+            # manual Firefox screenshots, thus we cannot use 'thumbnail'. Instead,
+            # we resize by aspect ratio (ar) and then crop to the desired height.
+            height_ar = (image.height * WIDTH) // image.width
+            image = image.resize((WIDTH, height_ar), Image.BICUBIC)
+            image = image.crop((0, 0, WIDTH, HEIGHT))
+            image.save(path, 'JPEG')
 
-    image.close()
+    proc = run(['npx', 'imagemin', path], stdout=PIPE, check=True)
+    path.write_bytes(proc.stdout)

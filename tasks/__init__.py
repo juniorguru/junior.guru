@@ -74,5 +74,6 @@ def cancel_previous_builds(context):
         response.raise_for_status()
 
 
-namespace = Collection(test, lint, format, screenshots, winners, students, participant, cancel_previous_builds,
+namespace = Collection(test, lint, format, screenshots, winners, students,
+                       participant, cancel_previous_builds,
                        sync, web, checks)

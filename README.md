@@ -18,6 +18,12 @@ $ export CFLAGS="-falign-functions=8 ${CFLAGS}"
 
 Thanks [@lutzroeder](https://github.com/scipy/scipy/issues/13409#issuecomment-774640468), no thanks SciPy.
 
+## Screenshotting
+
+```
+$ playwright install chromium
+```
+
 ## Logging
 
 Use `export LOG_LEVEL='debug'` to see DEBUG logging, by default logging is set to INFO and for some selected 'muted' loggers it's set to WARNING only. The setup is in `loggers.py`.

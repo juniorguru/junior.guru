@@ -99,8 +99,8 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
 <div class="link-cards">
   {{ link_card(
     'Coding Coach',
-    'mentors.codingcoach.io.jpg',
-    'https://mentors.codingcoach.io/',
+    'codingcoach.io.jpg',
+    'https://codingcoach.io/',
     'Mentoři z celého světa, kteří nabízí své služby zdarma.'
   ) }}
 
@@ -400,9 +400,9 @@ Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to j
   ) }}
 
   {{ link_card(
-    'Learn2Code',
-    'learn2code.cz.jpg',
-    'https://www.learn2code.cz/'
+    'Skillmea',
+    'skillmea.cz.jpg',
+    'https://skillmea.cz/'
   ) }}
 
   {{ link_card(

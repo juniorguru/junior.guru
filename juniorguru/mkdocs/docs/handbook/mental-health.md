@@ -9,16 +9,16 @@ template: main_handbook.html
 # Psychika na cestě do IT
 
 {% call lead() %}
-  Cesta do IT může pro psychiku představovat velkou výzvu. Vysoké nároky, obavy a málo odpočinku potká na své cestě nejeden junior. Jak se s tím můžeš vyrovnat?
+  Říká se, že všechno je to v hlavě. Mysl ti může být skvělým spojencem – zdrojem motivace, odvahy a vytrvalosti. Stejně tak ti ale může cestu do IT i pěkně znesnadnit. Nejeden junior se utápí v nadměrných pochybách, má na sebe příliš velké nároky a cítí se pod tlakem. Jak se nenechat brzdit, ale mít svou psychiku za spojence?
 {% endcall %}
 
 {% call guarantor('Nela Slezáková', 'images/avatars-participants/nela-slezakova.jpg', url='https://www.nelaprovazi.cz/', standout=True) %}
-  Jak psycholožka, tak i programátorka. Do IT se dostala po vlastní ose a díky tomu sama dobře ví, co cesta juniora dělá s lidskou psychikou. S otázkami kolem duševního zdraví juniorům pomáhá i ve [zdejším klubu](../club.md).
+  Jak psycholožka, tak programátorka. Rozumí tomu, jak funguje lidská psychika a sama si zažila, co obnáší dostat se do IT po vlastní ose. Ve vlastní praxi pomáhá lidem v IT anebo do IT. S otázkami kolem duševního zdraví juniorům pomáhá i ve [zdejším klubu](../club.md).
 {% endcall %}
 
-## Pět zásad
+## Zásady duševní hygieny pro juniory
 
-Jako úvod do tématu ti poslouží přednáška o pěti zásadách, díky kterým můžeš svou cestu do IT zvládnout ve větší duševní pohodě: Zakotvi se v realitě, přijmi svoje limity, buď svůj fanklub, sežeň si podporu, získej nadhled.
+Pět zásad, díky kterým můžeš svou cestu do IT zvládnout ve větší duševní pohodě a udržitelně. V přednášce se mimo jiné dozvíš, jak stát nohama víc na zemi, proč je důležité přijímat se i se svými limity anebo jak získat nadhled.
 
 {{ video_card(
   'Nela Slezáková: Jak přežít cestu juniora po psychické stránce',
@@ -31,7 +31,13 @@ Jako úvod do tématu ti poslouží přednáška o pěti zásadách, díky kter�
 
 ## Když je krize
 
-V akutních případech si stáhni mobilní aplikaci, obrať se na telefonní krizovou pomoc, nebo se stav do nejbližsího krizového centra. Tam si můžeš přijít popovídat s odborníkem, zdarma a bez předchozího objednání, někde dokonce 24 hodin denně.
+Existují situace, které nesnesou odkladu. Pokud tě zaplaví velmi silné emoce a nevíš si s nimi rady anebo cítíš, že prostě takhle už dál nemůžeš, nechej si s tím pomoct.
+
+**Aplikace Nepanikař** obsahuje tipy na základní a rychlou sebepomoc, řízená dechová cvičení, i kontakty na odborníky.
+
+**Telefonní krizové linky** ti umožňují rychlý kontakt s odborníkem. Hovor by ti měl přinést jak okamžitou úlevu, tak doporučení na to, jak postupovat dál.
+
+**Krizové centrum** nabízí nejvíce komplexní pomoc v krizi. Můžeš tam přijít bez objednání a s odborníkem do hloubky probrat svoji životní situaci. Některá centra fungují dokonce nonstop. Návštěva ti pomůže se zklidnit a naplánovat další kroky.
 
 <div class="link-cards">
   {{ link_card(
@@ -56,15 +62,45 @@ V akutních případech si stáhni mobilní aplikaci, obrať se na telefonní kr
   ) }}
 </div>
 
-## Dlouhodobější terapie
+## Psychoterapie
 
-V méně akutních případech se objednej na psychoterapii. Můžeš se zkusit dostat ke **klinickému psychologovi**, který v rámci svého vzdělávání absolvoval terapeutický výcvik. Jejich služby pojišťovny plně proplácí, ale mnohdy nemají volné kapacity, nebo jsou objednací lhůty několikaměsíční.
+V méně akutních případech můžeš vyhledat jednoho ze dvou odborníků: klinického psychologa, nebo psychoterapeuta na přímou platbu.
 
-Další variantou je využít **příspěvek na terapii**. Během pandemie covidu-19 jej začaly poskytovat všechny větší zdravotní pojišťovny. Zjisti si na webu té svojí jak postupovat. Většinou se setkáš s nabídkou konkrétních odborníků, na jejichž služby pojišťovna příspěvek vyplácí.
+Psychoterapie jsou, zjednodušeně řečeno, **rozhovory s psychoterapeutem** o tématech, které tě tíží. Postupně ventiluješ emoce, chápeš lépe sebe i svou situaci, získáváš nadhled. Hlavně ale přicházíš na způsoby, jakými své problémy řešit.
 
-Taky máš možnost najít si libovolného **psychoterapeuta na přímou platbu**. Pokud se ti nehodí na terapii docházet osobně, existují i specializované platformy, které zprostředkovávají terapii online.
+Terapeuti své služby dnes už běžně nabízí **jak osobně, tak online**. Existují i specializované platformy nabízející terapii výhradně přes videohovor.
+
+Pokud po pár sezeních necítíš významné zlepšení, nevěš hlavu, **chce to čas**. Je běžné cítit se líp po pár týdnech, či měsících. Ale než pocítíš úplnou úlevu, může to trvat i víc než rok.
+
+### Klinický psycholog
+
+Absolventi doktorského studia v oboru klinické psychologie mohou poskytovat psychoterapii a zhodnocovat tvůj psychický stav (psychodiagnostika). Sice ti **vše uhradí pojišťovna**, ale protože klinických psychologů není mnoho, tak mívají plno, nebo nabízejí dlouhé objednací lhůty.
+
+### Psychoterapeut na přímou platbu
+
+Psychoterapeut je někdo, kdo má započatý či úspěšně zakončený psychoterapeutický výcvik. Součástí psychoterapeutických výcviků jsou stovky hodin vzdělávání a desítky hodin nácviků, supervizí a poznávání sebe sama na psychoterapii. Člověk se na takovém výcviku naučí, jak dělat dobrou terapii v praxi. Pokud je navíc vysokoškolsky vzdělaný v psychologii, zná i teorii o fungování lidské psychiky.
+
+Neexistuje žádný seznam všech psychoterapeutů, takže **vybíráš přes internet a ptáš se známých**. Nakonec je nejlepší vybrat někoho sympatického a pak zhodnotit, jak jste si sedli a jak ti spolupráce s ním vyhovuje, případně zkusit někoho jiného. Pamatuj, že terapie plní svůj účel pouze pokud na ní panuje přijímající a chápající atmosféra, ve které můžeš mluvit o čemkoliv, aniž by tě někdo bral na lehkou váhu anebo tě zesměšňoval.
+
+Výcviky mají určité **specializace** a různý styl práce, takže i typ výcviku může být vodítkem při výběru. V základu jsou ovšem pro výkon psychoterapie všechny stejně dobré. Každý terapeut by měl mít na webu napsáno, jaký má výcvik.
+
+Hodina sezení tě zpravidla vyjde na 800-1200 Kč, ale mnozí poskytují **slevy pro studenty, nebo znevýhodněné skupiny**. Od pandemie covidu-19 začaly navíc na terapii přispívat skoro všechny **zdravotní pojišťovny**. Většinou mají na webu postup, jak příspěvek získat, a seznam terapeutů, u kterých jej můžeš čerpat.
 
 <div class="link-cards">
+  {{ link_card(
+    'Jak vybrat terapeuta?',
+    'terapie.cz!jak-vybrat-terapeuta.jpg',
+    'https://www.terapie.cz/jak-vybrat-terapeuta',
+    'Několik otázek usnadňující výběr terapeuta.',
+  ) }}
+
+  {{ link_card(
+    'Psychoterapeutické školy',
+    'terap.io.jpg',
+    'https://cs.wikipedia.org/wiki/Psychoterapie#Psychoterapeutick%C3%A9_%C5%A1koly',
+    'Psychoterapeutické výcviky a jejich specifika.',
+  ) }}
+
   {{ link_card(
     'Nela provází',
     'nelaprovazi.cz.jpg',
@@ -73,42 +109,6 @@ Taky máš možnost najít si libovolného **psychoterapeuta na přímou platbu*
     badge_icon='star',
     badge_text='Autorka této kapitoly',
     highlighted=True,
-  ) }}
-
-  {{ link_card(
-    'Hedepy',
-    'hedepy.cz.jpg',
-    'https://hedepy.cz/',
-    '... (nevím, jak se liší od terapio)',
-    badge_icon='headset',
-    badge_text='Online terapie',
-  ) }}
-
-  {{ link_card(
-    'Terapio',
-    'terap.io.jpg',
-    'https://terap.io/',
-    '... (nevím, jak se liší od hedepy)',
-    badge_icon='headset',
-    badge_text='Online terapie',
-  ) }}
-
-  {{ link_card(
-    'Nevypusť duši: Infografiky',
-    'nevypustdusi.cz!infografika.jpg',
-    'https://nevypustdusi.cz/infografika/',
-    'Vysvětlení pojmů, tipy, nebo jak pomoci sobě či blízkému.',
-    badge_icon='info-circle',
-    badge_text='Info',
-  ) }}
-
-  {{ link_card(
-    'Příspěvek VZP',
-    'dusevnizdravi.vzp.cz.jpg',
-    'https://dusevnizdravi.vzp.cz',
-    'Jak na příspěvek u nejrozšířenější pojišťovny?',
-    badge_icon='info-circle',
-    badge_text='Info',
   ) }}
 </div>
 

@@ -4,14 +4,13 @@ version: 2.1
 executors:
   python-js:
     docker:
-      - image: cimg/python:3.10.6-browsers
+      - image: cimg/python:3.10.6-node
     working_directory: ~/project
 
 
 orbs:
   gh-pages: sugarshin/gh-pages@0.0.6
   git-shallow-clone: guitarrapc/git-shallow-clone@2.4.0
-  browser-tools: circleci/browser-tools@1.4.0
 
 
 jobs:
@@ -19,8 +18,6 @@ jobs:
     executor: python-js
     steps:
       - git-shallow-clone/checkout
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
       - restore_cache:
           key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
       - run:
@@ -34,7 +31,10 @@ jobs:
             poetry config experimental.new-installer false
       - run:
           name: Install dependencies
-          command: poetry install && npm ci
+          command: |
+            poetry install
+            poetry run playwright install chromium
+            npm ci
       - save_cache:
           key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
           paths:

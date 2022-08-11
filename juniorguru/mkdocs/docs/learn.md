@@ -377,7 +377,7 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
 
   {{ link_card(
     'Meetup',
-    'meetup.com!PragueEnglishMeeting.jpg',
+    'meetup.com!find.jpg',
     'https://www.meetup.com/find/?source=EVENTS&location=cz--Pardubice&distance=hundredMiles&categoryId=622&keywords=english',
     'Snaž se mluvit s reálnými lidmi. Začni klidně „rukama nohama“<br>
         <small>Další setkání hledej na

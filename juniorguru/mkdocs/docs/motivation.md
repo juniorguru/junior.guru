@@ -285,10 +285,10 @@ Pokud by se ti hodilo **propojit různé internetové služby tak, aby si podle 
 
 <div class="link-cards">
   {{ link_card(
-    'Integromat',
-    'integromat.com!cs.jpg',
-    'https://www.integromat.com/cs',
-    'Největší platforma, navíc česká, podporuje i místní služby jako Fakturoid nebo Fio Banka.'
+    'Make',
+    'make.com.jpg',
+    'https://www.make.com/',
+    'Největší platforma, podporuje i české služby jako Fakturoid nebo Fio Banka.'
   ) }}
 
   {{ link_card(
