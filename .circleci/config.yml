@@ -185,12 +185,12 @@ jobs:
           tmp-dir: ".deploy-tmp"
           workspace-root: "~/project"
 
-  check-anchors:
+  check-docs:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: poetry run invoke checks.anchors
+      - run: poetry run invoke checks.docs
 
   check-links:
     executor: python-js
@@ -229,7 +229,7 @@ workflows:
       - build-web:
           requires:
             - sync-postprocess-jobs
-      - check-anchors:
+      - check-docs:
           requires:
             - build-web
       - deploy-web:
