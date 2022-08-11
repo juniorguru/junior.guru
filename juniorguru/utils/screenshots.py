@@ -18,7 +18,7 @@ from juniorguru.lib import loggers
 logger = loggers.get(__name__)
 
 
-PROJECT_DIR = Path(__file__).parent.parent.parent.parent
+PROJECT_DIR = Path(__file__).parent.parent.parent
 
 PUBLIC_DIR = PROJECT_DIR / 'public'
 
