@@ -104,41 +104,47 @@ def main(context):
     SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
     SCREENSHOTS_OVERRIDES_DIR.mkdir(parents=True, exist_ok=True)
 
-    expired_paths = [path for path
-                     in chain(SCREENSHOTS_DIR.glob('*.jpg'), SCREENSHOTS_DIR.glob('*.png'))
-                     if (datetime.now() - datetime.fromtimestamp(path.stat().st_ctime)) > CACHE_PERIOD]
-    logger.info(f'Expiring {len(expired_paths)} screenshots')
+    overriding_paths = set(chain(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'),
+                                SCREENSHOTS_OVERRIDES_DIR.glob('*.png')))
+    logger.info(f'Found {len(overriding_paths)} manual screenshot overrides')
+    Pool().map(edit_screenshot_override, overriding_paths)
+    overriding_paths = set(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'))
+
+    paths = set(chain(SCREENSHOTS_DIR.glob('*.jpg'),
+                      SCREENSHOTS_DIR.glob('*.png')))
+    logger.info(f'Found {len(paths)} screenshots')
+    expired_paths = set(filter(is_expired_path, paths))
+    logger.info(f'Expiring {len(expired_paths)} screenshot images')
     for path in expired_paths:
         logger.warning(f'Expiring {path}')
         path.unlink()
 
-    paths_docs = list(Path(DOCS_DIR).glob('**/*.md'))
+    paths_docs = set(Path(DOCS_DIR).glob('**/*.md'))
     logger.info(f'Reading {len(paths_docs)} documents')
-    screenshots = list(chain.from_iterable(parse_doc(doc_path) for doc_path in paths_docs))
-    logger.info(f'Found {len(screenshots)} screenshots')
+    screenshots = set(chain.from_iterable(parse_doc(doc_path) for doc_path in paths_docs))
+    logger.info(f'Found {len(screenshots)} links to screenshots')
 
-    existing_screenshots = filter_existing_screenshots(screenshots)
-    logger.info(f'Found {len(existing_screenshots)} existing screenshots')
-    screenshots = list(set(screenshots) - set(existing_screenshots))
+    existing_screenshots = set(filter(is_existing_screenshot, screenshots))
+    logger.info(f'Skipping {len(existing_screenshots)} existing screenshots')
+    screenshots = set(screenshots) - existing_screenshots
 
-    yt_screenshots = filter_yt_screenshots(screenshots)
+    overridden_screenshots = set(filter(is_overridden_screenshot, screenshots))
+    logger.info(f'Skipping {len(overridden_screenshots)} overridden screenshots')
+    screenshots = set(screenshots) - overridden_screenshots
+
+    yt_screenshots = set(filter(is_yt_screenshot, screenshots))
     logger.info(f'Downloading {len(yt_screenshots)} YouTube URLs')
-    screenshots = list(set(screenshots) - set(yt_screenshots))
+    screenshots = set(screenshots) - yt_screenshots
     Pool().map(download_yt_cover_image, yt_screenshots)
 
-    fb_screenshots = filter_fb_screenshots(screenshots)
+    fb_screenshots = set(filter(is_fb_screenshot, screenshots))
     logger.info(f'Downloading {len(fb_screenshots)} Facebook URLs')
-    screenshots = list(set(screenshots) - set(fb_screenshots))
+    screenshots = set(screenshots) - fb_screenshots
     Pool(PLAYWRIGHT_WORKERS).map(download_fb_cover_image, fb_screenshots)
 
     logger.info(f'Downloading {len(screenshots)} regular website URLs')
     screenshots_batches = generate_batches(screenshots, PLAYWRIGHT_BATCH_SIZE)
     Pool(PLAYWRIGHT_WORKERS).map(create_screenshots, screenshots_batches)
-
-    paths = list(chain(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'),
-                       SCREENSHOTS_OVERRIDES_DIR.glob('*.png')))
-    logger.info(f'Editing {len(paths)} manual screenshot overrides')
-    Pool().map(edit_screenshot_override, paths)
 
 
 def parse_doc(doc_path):
@@ -148,19 +154,28 @@ def parse_doc(doc_path):
         yield (groups['url'], SCREENSHOTS_DIR / groups['path'])
 
 
-def filter_existing_screenshots(screenshots):
-    return [(url, path) for url, path in screenshots
-            if Path(path).exists()]
+def is_expired_path(path):
+    return (datetime.now() - datetime.fromtimestamp(path.stat().st_ctime)) > CACHE_PERIOD
 
 
-def filter_yt_screenshots(screenshots):
-    return [(url, path) for url, path in screenshots
-            if YOUTUBE_URL_RE.search(url)]
+def is_overridden_screenshot(screenshot):
+    url, path = screenshot
+    return (SCREENSHOTS_OVERRIDES_DIR / Path(path).name).exists()
 
 
-def filter_fb_screenshots(screenshots):
-    return [(url, path) for url, path in screenshots
-            if FACEBOOK_URL_RE.search(url)]
+def is_existing_screenshot(screenshot):
+    url, path = screenshot
+    return Path(path).exists()
+
+
+def is_yt_screenshot(screenshot):
+    url, path = screenshot
+    return YOUTUBE_URL_RE.search(url)
+
+
+def is_fb_screenshot(screenshot):
+    url, path = screenshot
+    return FACEBOOK_URL_RE.search(url)
 
 
 def parse_yt_id(url):
@@ -200,6 +215,7 @@ def download_fb_cover_image(screenshot):
 
 
 def generate_batches(iterable, batch_size):
+    iterable = list(iterable)
     for i in range(0, len(iterable), batch_size):
         yield iterable[i:i + batch_size]
 
