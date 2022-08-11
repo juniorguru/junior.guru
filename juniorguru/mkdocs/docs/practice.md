@@ -99,8 +99,8 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
 <div class="link-cards">
   {{ link_card(
     'Coding Coach',
-    'codingcoach.io.jpg',
-    'https://codingcoach.io/',
+    'mentors.codingcoach.io.jpg',
+    'https://mentors.codingcoach.io/',
     'Mentoři z celého světa, kteří nabízí své služby zdarma.'
   ) }}
 

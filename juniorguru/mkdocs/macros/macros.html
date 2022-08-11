@@ -8,12 +8,12 @@
     {% if filename.endswith('.svg') %}
       src="{{ filename|url }}"
     {% else %}
-      src="https://res.cloudinary.com/juniorguru/image/fetch/w_{{ width }},dpr_auto,q_auto,f_auto/https://junior.guru/{{ filename }}"
+      src="https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_auto,q_auto,f_auto/https://junior.guru/{{ filename }}"
       srcset="{{- '' -}}
-        https://res.cloudinary.com/juniorguru/image/fetch/w_{{ width }},dpr_1,q_auto,f_auto/https://junior.guru/{{ filename }}, {{- '' -}}
-        https://res.cloudinary.com/juniorguru/image/fetch/w_{{ width }},dpr_1.5,q_auto,f_auto/https://junior.guru/{{ filename }} 1.5x, {{- '' -}}
-        https://res.cloudinary.com/juniorguru/image/fetch/w_{{ width }},dpr_2,q_auto,f_auto/https://junior.guru/{{ filename }} 2x, {{- '' -}}
-        https://res.cloudinary.com/juniorguru/image/fetch/w_{{ width }},dpr_3,q_auto,f_auto/https://junior.guru/{{ filename }} 3x {{- '' -}}
+        https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_1,q_auto,f_auto/https://junior.guru/{{ filename }}, {{- '' -}}
+        https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_1.5,q_auto,f_auto/https://junior.guru/{{ filename }} 1.5x, {{- '' -}}
+        https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_2,q_auto,f_auto/https://junior.guru/{{ filename }} 2x, {{- '' -}}
+        https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_3,q_auto,f_auto/https://junior.guru/{{ filename }} 3x {{- '' -}}
       "
       onerror="this.onerror = null; this.src = this.srcset = '{{ filename|url }}';"
     {% endif %}

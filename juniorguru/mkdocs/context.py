@@ -1,3 +1,4 @@
+import os
 import hashlib
 import re
 from datetime import date, timedelta
@@ -29,6 +30,8 @@ BUSINESS_BEGIN_ON = date(2020, 1, 1)
 
 CLUB_BEGIN_ON = date(2021, 2, 1)
 
+CLOUDINARY_HOST = os.getenv('CLOUDINARY_HOST', 'res.cloudinary.com')
+
 
 ####################################################################
 # SHARED DOCS AND THEME CONTEXT                                    #
@@ -42,6 +45,7 @@ def on_shared_context(context):
     context['profit_ttm'] = Transaction.profit_ttm(TODAY)
     context['revenue_ttm_breakdown'] = Transaction.revenue_ttm_breakdown(TODAY)
     context['pricing_url'] = 'https://docs.google.com/document/d/1keFyO5aavfaNfJkKlyYha4B-UbdnMja6AhprS_76E7c/'
+    context['cloudinary_host'] = CLOUDINARY_HOST
 
 
 def on_shared_page_context(context, page, config, files):
