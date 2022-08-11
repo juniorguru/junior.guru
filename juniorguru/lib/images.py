@@ -10,6 +10,7 @@ import shutil
 
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image, ImageOps
+from playwright.sync_api import sync_playwright
 
 from juniorguru.lib import loggers
 
@@ -144,20 +145,20 @@ def render_template(width, height, template_name, context, filters=None):
                 logger.debug(f"Did pattern {re_pattern!r} result in changes? {(css != rewritten_css)}")
                 css_path.write_text(rewritten_css)
 
-        logger.info('Making a screenshot')
-        # pageres doesn't support changing the output directory, so we need
-        # to set cwd. The problem is, with cwd set to temp dir, npx stops
-        # to work, therefore we need to use an explicit path here
-        pageres = ['node', f'{NODE_MODULES_DIR}/.bin/pageres']
-        run(pageres + [f'file://{html_path}', f'{width}x{height}',
-            '--format=png', '--overwrite', f'--filename={html_path.stem}'],
-            cwd=temp_dir, check=True, stdout=DEVNULL)
+        logger.info('Taking a screenshot')
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch()
+            page = browser.new_page()
+            page.set_viewport_size({'width': width, 'height': height})
+            page.goto(f'file://{html_path}', wait_until='networkidle')
+            image_bytes = page.screenshot()
+            browser.close()
 
-        logger.info('Saving image')
-        image_path = Path(temp_dir) / f'{html_path.stem}.png'
-        logger.debug(f'Saving image as {image_path}')
-        with Image.open(image_path) as image:
+        logger.info('Editing screenshot')
+        with Image.open(BytesIO(image_bytes)) as image:
             buffer = BytesIO()
+            height_ar = (image.height * width) // image.width
+            image = image.resize((width, height_ar), Image.BICUBIC)
             image = image.crop((0, 0, width, height))
             image.save(buffer, 'PNG')
             return buffer.getvalue()
