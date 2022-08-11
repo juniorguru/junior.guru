@@ -1,10 +1,10 @@
 import io
 import re
 from itertools import chain
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from pathlib import Path
 from multiprocessing import Pool
-from subprocess import DEVNULL, PIPE, CalledProcessError, run
+from subprocess import PIPE, run
 
 import requests
 from playwright.sync_api import sync_playwright, Error as PlaywrightError, TimeoutError as PlaywrightTimeoutError
