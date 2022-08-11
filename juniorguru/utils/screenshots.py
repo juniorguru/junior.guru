@@ -68,6 +68,8 @@ HIDDEN_ELEMENTS = [
     '[id*="rc-anchor"]',
     '[class*="helpcrunch"]',
     '[id*="helpcrunch"]',
+    '[class*="uk-notification"]',
+    '[id*="uk-notification"]',
     '[aria-label*="cookie"]',
     '[aria-label*="banner"]',
     '[aria-describedby*="cookie"]',
@@ -84,6 +86,7 @@ HIDDEN_ELEMENTS = [
     '[data-cookiebanner]',
     '[data-cookie-path]',
     '.chatbot-wrapper',
+    '.adsbygoogle',
 
     # specific sites
     'body > .announcement',  # junior.guru
@@ -91,6 +94,7 @@ HIDDEN_ELEMENTS = [
     'body > .ch2',  # czechitas.cz
     '[data-before-content*="advertisement"]',  # reddit.com
     '[class*="popupThin"]',  # codecademy.com
+    '[id*="kz-modal"]',  # ulekare.cz
     'ir-modal',  # udacity.com
     'ir-cookie-consent',  # udacity.com
     'ir-content .moustache',  # udacity.com
@@ -102,6 +106,11 @@ HIDDEN_ELEMENTS = [
     '#axeptio_overlay',  # welcometothejungle.com
     '[class*="Modal_modalBackground__"]',  # make.com
     '.hsbeacon-chat__button',  # fakturoid.cz
+]
+
+BLOCKED_ROUTES = [
+    re.compile(r'go\.eu\.bbelements\.com'),  # ulekare.cz
+    re.compile(r'googlesyndication\.com'),  # ulekare.cz
 ]
 
 
@@ -256,6 +265,8 @@ def create_screenshot(page, url):
     for attempt_no in range(1, PLAYWRIGHT_RETRIES + 1):
         try:
             logger.debug(f"Shooting {url} (attempt #{attempt_no})")
+            for blocked_route in BLOCKED_ROUTES:
+                page.route(blocked_route, lambda route: route.abort())
             try:
                 page.goto(url, wait_until='networkidle')
             except PlaywrightTimeoutError:

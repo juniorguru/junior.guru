@@ -9,7 +9,7 @@ template: main_handbook.html
 # Psychika na cestě do IT
 
 {% call lead() %}
-  Říká se, že všechno je to v hlavě. Mysl ti může být skvělým spojencem – zdrojem motivace, odvahy a vytrvalosti. Stejně tak ti ale může cestu do IT i pěkně znesnadnit. Nejeden junior se utápí v nadměrných pochybách, má na sebe příliš velké nároky a cítí se pod tlakem. Jak se nenechat brzdit, ale mít svou psychiku za spojence?
+  Říká se, že všechno je to v hlavě. Mysl ti může být skvělým spojencem – zdrojem motivace, odvahy a vytrvalosti. Stejně tak ti ale může cestu do IT i znesnadnit. Nejeden junior se utápí v nadměrných pochybách, má na sebe příliš velké nároky a cítí se pod tlakem. Jak se nenechat brzdit, ale mít svou psychiku za spojence?
 {% endcall %}
 
 {% call guarantor('Nela Slezáková', 'images/avatars-participants/nela-slezakova.jpg', url='https://www.nelaprovazi.cz/', standout=True) %}
@@ -49,7 +49,7 @@ Existují situace, které nesnesou odkladu. Pokud tě zaplaví velmi silné emoc
 
   {{ link_card(
     'Telefonní linky',
-    'mvcr.cz!clanek!adresar-pomoci-telefonni-informacni-a-krizove-linky-a-online-pomoc-v-ceske-republice..jpg',
+    'mvcr.cz!clanek!adresar-pomoci-telefonni-informacni-a-krizove-linky-a-online-pomoc-v-ceske-republice.jpg',
     'https://www.mvcr.cz/clanek/adresar-pomoci-telefonni-informacni-a-krizove-linky-a-online-pomoc-v-ceske-republice.aspx',
     'Linka první psychické pomoci, linky důvěry, a další.',
   ) }}
@@ -95,29 +95,84 @@ Hodina sezení tě zpravidla vyjde na 800-1200 Kč, ale mnozí poskytují **slev
   ) }}
 
   {{ link_card(
-    'Psychoterapeutické školy',
-    'terap.io.jpg',
+    'Psycho­terapeu­tic­ké školy',
+    'wikipedia-psychoterapeuticke-skoly.jpg',
     'https://cs.wikipedia.org/wiki/Psychoterapie#Psychoterapeutick%C3%A9_%C5%A1koly',
-    'Psychoterapeutické výcviky a jejich specifika.',
+    'Psycho­terapeu­tic­ké výcviky a jejich specifika.',
   ) }}
 
   {{ link_card(
     'Nela provází',
     'nelaprovazi.cz.jpg',
     'https://www.nelaprovazi.cz/',
-    'Psycholožka a programátorka. Pomáhá lidem v IT anebo do IT.',
+    'Nabízí psychologickou podporu na cestě do IT.',
     badge_icon='star',
     badge_text='Autorka této kapitoly',
     highlighted=True,
   ) }}
 </div>
 
-## Jak vybírat terapeuty
+## Když psychoterapie nestačí
 
-Úspěch dlouhodobější terapie hodně závisí na tom, jak si sedneš se svou terapeutkou nebo terapeutem. Pohlídej si hlavně **typ a délku psychoterapeutického výcviku**. Pokud výcvik nemá, není to terapeut!
+Pokud ti potíže významně zasahují do života, nebo jsou hodně intenzivní a terapie nezabírá, je dobré **konzultovat tvůj stav s psychiatrem**, tedy lékařem. Nejspíš to doporučí i tvůj terapeut, obzvlášť pokud máš v rodině příbuzné s psychickými obtížemi.
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tady Nela ještě něco doplní. Nějaký odstavec, kde bude asi odkaz [sem na Wikipedii](https://cs.wikipedia.org/wiki/Psychoterapie#Psychoterapeutick%C3%A9_%C5%A1koly) a co s tím maj lidi udělat. Ještě bych do toho odstavce někam zakomponoval větu „S jakými obtížemi má zkušenosti?“ či podobné sdělení, protože tahle věta byla v původním seznamu a Honza ji zatím vyhodil, jelikož tuší, že tenhle budoucí odstavec to nějak pokryje.
-{% endcall %}
+Návštěva u psychiatra neznamená, že automaticky odejdeš s diagnózou a hromadou léků! Psychiatr tě vyslechne, proberete tvůj stav a pak může nabídnout předepsání léků, ale také nemusí. Ty navíc nemusí být nutné brát doživotně, **mohou ti pouze pomoci dočasně překlenout náročné životní období**. Až odezní, můžete se domluvit, že léky vysadíte.
 
-Poptej se známých na doporučení a zkušenosti, ale pamatuj, že **každému sedne někdo jiný**. Každý máme své téma, sedí nám jiný typ práce, jsou nám sympatičtí jiní lidé. Takže pokud ti první terapeut nesedne, nevěš hlavu! Vyzkoušej někoho jiného.
+<div class="link-cards">
+  {{ link_card(
+    'Duševní zdraví a nemoci',
+    'dusevni-zdravi.jpg',
+    'https://narovinu.net/dusevni-zdravi-a-nemoc/',
+    'Co je duševní zdraví a jaké nemoci rozlišujeme.',
+  ) }}
+
+  {{ link_card(
+    'Otestuj svůj psychický stav',
+    'otestuj-psychicky-stav.jpg',
+    'https://www.opatruj.se/otestujte-se',
+    'Orientační diagnostika psychického zdraví.',
+  ) }}
+
+  {{ link_card(
+    'Návštěva psychiatra',
+    'ulekare-psychiatr.jpg',
+    'https://www.ulekare.cz/clanek/psychiatricke-vysetreni-1176',
+    'Co čekat od konzultace s psychiatrem.',
+  ) }}
+</div>
+
+## Koučink
+
+Pokud **toužíš dosáhnout určitého stavu nebo cíle**, můžeš zkusit koučink. Jde o krátkodobější a rychlejší řešení, které spočívá v provádění konkrétních změn ve tvém životě.
+
+Koučink nejde do hloubky a nezabývá se příliš emocemi, takže se nejedná o léčebný nástroj vhodný k řešení psychických obtíží, jakými jsou úzkosti nebo deprese.
+
+Kouč ti dává otevřené otázky a provádí tě procesem, při kterém si uvědomíš, čeho chceš vlastně dosáhnout, jaká je situace a jak to celé uděláš (model GROW). **Kouč by ti nikdy neměl dávat konkrétní rady.**
+
+Kouč je někdo, kdo absolvoval dlouhodobý a ideálně i akreditovaný koučovací výcvik, díky kterému je odborníkem na metodu koučování. Spolupráce s koučem se točí kolem konkrétních změn, a tak bývá rychlejší a za vyšší sazby, než je běžné u psychoterapie.
+
+<div class="link-cards">
+  {{ link_card(
+    'Koučování',
+    'koucink.jpg',
+    'https://cs.wikipedia.org/wiki/Kou%C4%8Dov%C3%A1n%C3%AD',
+    'Co je to koučink.',
+  ) }}
+
+  {{ link_card(
+    'Koučovací metoda GROW',
+    'grow.jpg',
+    'https://cs.wikipedia.org/wiki/GROW_(kou%C4%8Dink)',
+    'Specifika nejrozšířenější koučovací metody.',
+  ) }}
+
+  {{ link_card(
+    'Nela provází',
+    'nelaprovazi.cz.jpg',
+    'https://www.nelaprovazi.cz/',
+    'Akreditovaná koučka, zaměřuje se na cestu do IT.',
+    badge_icon='star',
+    badge_text='Autorka této kapitoly',
+    highlighted=True,
+  ) }}
+</div>
