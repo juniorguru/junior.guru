@@ -137,7 +137,7 @@ Pokud **toužíš dosáhnout určitého stavu nebo cíle**, můžeš zkusit kou�
 
 Koučink nejde do hloubky a nezabývá se příliš emocemi, takže se nejedná o léčebný nástroj vhodný k řešení psychických obtíží, jakými jsou úzkosti nebo deprese.
 
-Kouč ti dává otevřené otázky a provádí tě procesem, při kterém si uvědomíš, čeho chceš vlastně dosáhnout, jaká je situace a jak to celé uděláš (model GROW). **Kouč by ti nikdy neměl dávat konkrétní rady.**
+Kouč ti dává otevřené otázky a provádí tě procesem, při kterém si uvědomíš, čeho chceš vlastně dosáhnout, jaká je situace a jak to celé uděláš (model GROW). Koučování předpokládá, že jsi odborník na svůj život, a proto ti neradí, co máš udělat.
 
 Kouč je někdo, kdo absolvoval dlouhodobý a ideálně i akreditovaný koučovací výcvik, díky kterému je odborníkem na metodu koučování. Spolupráce s koučem se točí kolem konkrétních změn, a tak bývá rychlejší a za vyšší sazby, než je běžné u psychoterapie.
 
@@ -157,7 +157,7 @@ Kouč je někdo, kdo absolvoval dlouhodobý a ideálně i akreditovaný koučova
   {{ link_card(
     'Nela provází',
     'https://www.nelaprovazi.cz/',
-    'Akreditovaná koučka, zaměřuje se na cestu do IT.',
+    'Akreditovaná koučka, zaměřuje se na IT.',
     badge_icon='star',
     badge_text='Autorka této kapitoly',
     highlighted=True,
