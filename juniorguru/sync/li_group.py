@@ -36,6 +36,6 @@ async def discord_task(client):
                 "👀 Nevíme, jestli ti logo na profilu přidá nějaký kredit u recruiterů, ale vyloučeno to není! "
                 "Minimálně jako poznávací znamení mezi námi by to zafungovat mohlo. "
                 "Něco jako „Jé, koukám, že ty jsi taky chodila do skauta? Chodíš ještě? Jakou máš přezdívku?“"
-            ), embed=None, embeds=[])
+            ), embeds=[])
         else:
             logger.warning('Discord mutations not enabled')
