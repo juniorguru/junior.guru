@@ -94,7 +94,7 @@ attrs = ">=19.2.0"
 six = "*"
 
 [package.extras]
-visualize = ["Twisted (>=16.1.1)", "graphviz (>0.5.1)"]
+visualize = ["graphviz (>0.5.1)", "Twisted (>=16.1.1)"]
 
 [[package]]
 name = "backoff"
@@ -315,8 +315,8 @@ optional = false
 python-versions = ">=3.7"
 
 [package.extras]
-testing = ["pytest-timeout (>=2.1)", "pytest-cov (>=3)", "pytest (>=7.1.2)", "coverage (>=6.4.2)", "covdefaults (>=2.2)"]
-docs = ["sphinx-autodoc-typehints (>=1.19.1)", "sphinx (>=5.1.1)", "furo (>=2022.6.21)"]
+docs = ["furo (>=2022.6.21)", "sphinx (>=5.1.1)", "sphinx-autodoc-typehints (>=1.19.1)"]
+testing = ["covdefaults (>=2.2)", "coverage (>=6.4.2)", "pytest (>=7.1.2)", "pytest-cov (>=3)", "pytest-timeout (>=2.1)"]
 
 [[package]]
 name = "fiobank"
@@ -416,7 +416,7 @@ grpc = ["grpcio (>=1.33.2,<2.0dev)", "grpcio-status (>=1.33.2,<2.0dev)"]
 
 [[package]]
 name = "google-api-python-client"
-version = "2.56.0"
+version = "2.57.0"
 description = "Google API Client Library for Python"
 category = "main"
 optional = false
@@ -444,10 +444,10 @@ rsa = {version = ">=3.1.4,<5", markers = "python_version >= \"3.6\""}
 six = ">=1.9.0"
 
 [package.extras]
-reauth = ["pyu2f (>=0.1.5)"]
+aiohttp = ["requests (>=2.20.0,<3.0.0dev)", "aiohttp (>=3.6.2,<4.0.0dev)"]
+enterprise_cert = ["cryptography (==36.0.2)", "pyopenssl (==22.0.0)"]
 pyopenssl = ["pyopenssl (>=20.0.0)"]
-enterprise_cert = ["pyopenssl (==22.0.0)", "cryptography (==36.0.2)"]
-aiohttp = ["aiohttp (>=3.6.2,<4.0.0dev)", "requests (>=2.20.0,<3.0.0dev)"]
+reauth = ["pyu2f (>=0.1.5)"]
 
 [[package]]
 name = "google-auth-httplib2"
@@ -508,14 +508,14 @@ urllib3 = {version = ">=1.26", optional = true, markers = "extra == \"requests\"
 yarl = ">=1.6,<2.0"
 
 [package.extras]
-websockets = ["websockets (>=10,<11)", "websockets (>=9,<10)"]
-test_no_transport = ["aiofiles", "vcrpy (==4.0.2)", "mock (==4.0.2)", "pytest-cov (==3.0.0)", "pytest-console-scripts (==1.3.1)", "pytest-asyncio (==0.16.0)", "pytest (==6.2.5)", "parse (==1.15.0)"]
-test = ["websockets (>=10,<11)", "websockets (>=9,<10)", "aiofiles", "vcrpy (==4.0.2)", "mock (==4.0.2)", "pytest-cov (==3.0.0)", "pytest-console-scripts (==1.3.1)", "pytest-asyncio (==0.16.0)", "pytest (==6.2.5)", "parse (==1.15.0)", "botocore (>=1.21,<2)", "urllib3 (>=1.26)", "requests-toolbelt (>=0.9.1,<1)", "requests (>=2.26,<3)", "aiohttp (>=3.7.1,<3.9.0)"]
-requests = ["urllib3 (>=1.26)", "requests-toolbelt (>=0.9.1,<1)", "requests (>=2.26,<3)"]
-dev = ["websockets (>=10,<11)", "websockets (>=9,<10)", "aiofiles", "vcrpy (==4.0.2)", "mock (==4.0.2)", "pytest-cov (==3.0.0)", "pytest-console-scripts (==1.3.1)", "pytest-asyncio (==0.16.0)", "pytest (==6.2.5)", "parse (==1.15.0)", "types-requests", "types-mock", "types-aiofiles", "sphinx-argparse (==0.2.5)", "sphinx-rtd-theme (>=0.4,<1)", "sphinx (>=3.0.0,<4)", "mypy (==0.910)", "isort (==4.3.21)", "flake8 (==3.8.1)", "check-manifest (>=0.42,<1)", "black (==22.3.0)", "botocore (>=1.21,<2)", "urllib3 (>=1.26)", "requests-toolbelt (>=0.9.1,<1)", "requests (>=2.26,<3)", "aiohttp (>=3.7.1,<3.9.0)"]
-botocore = ["botocore (>=1.21,<2)"]
-all = ["websockets (>=10,<11)", "websockets (>=9,<10)", "botocore (>=1.21,<2)", "urllib3 (>=1.26)", "requests-toolbelt (>=0.9.1,<1)", "requests (>=2.26,<3)", "aiohttp (>=3.7.1,<3.9.0)"]
 aiohttp = ["aiohttp (>=3.7.1,<3.9.0)"]
+all = ["aiohttp (>=3.7.1,<3.9.0)", "requests (>=2.26,<3)", "requests-toolbelt (>=0.9.1,<1)", "urllib3 (>=1.26)", "botocore (>=1.21,<2)", "websockets (>=9,<10)", "websockets (>=10,<11)"]
+botocore = ["botocore (>=1.21,<2)"]
+dev = ["aiohttp (>=3.7.1,<3.9.0)", "requests (>=2.26,<3)", "requests-toolbelt (>=0.9.1,<1)", "urllib3 (>=1.26)", "botocore (>=1.21,<2)", "black (==22.3.0)", "check-manifest (>=0.42,<1)", "flake8 (==3.8.1)", "isort (==4.3.21)", "mypy (==0.910)", "sphinx (>=3.0.0,<4)", "sphinx-rtd-theme (>=0.4,<1)", "sphinx-argparse (==0.2.5)", "types-aiofiles", "types-mock", "types-requests", "parse (==1.15.0)", "pytest (==6.2.5)", "pytest-asyncio (==0.16.0)", "pytest-console-scripts (==1.3.1)", "pytest-cov (==3.0.0)", "mock (==4.0.2)", "vcrpy (==4.0.2)", "aiofiles", "websockets (>=9,<10)", "websockets (>=10,<11)"]
+requests = ["requests (>=2.26,<3)", "requests-toolbelt (>=0.9.1,<1)", "urllib3 (>=1.26)"]
+test = ["aiohttp (>=3.7.1,<3.9.0)", "requests (>=2.26,<3)", "requests-toolbelt (>=0.9.1,<1)", "urllib3 (>=1.26)", "botocore (>=1.21,<2)", "parse (==1.15.0)", "pytest (==6.2.5)", "pytest-asyncio (==0.16.0)", "pytest-console-scripts (==1.3.1)", "pytest-cov (==3.0.0)", "mock (==4.0.2)", "vcrpy (==4.0.2)", "aiofiles", "websockets (>=9,<10)", "websockets (>=10,<11)"]
+test_no_transport = ["parse (==1.15.0)", "pytest (==6.2.5)", "pytest-asyncio (==0.16.0)", "pytest-console-scripts (==1.3.1)", "pytest-cov (==3.0.0)", "mock (==4.0.2)", "vcrpy (==4.0.2)", "aiofiles"]
+websockets = ["websockets (>=9,<10)", "websockets (>=10,<11)"]
 
 [[package]]
 name = "graphql-core"
@@ -721,10 +721,10 @@ optional = false
 python-versions = ">=3.6.1,<4.0"
 
 [package.extras]
-plugins = ["setuptools"]
+pipfile_deprecated_finder = ["pipreqs", "requirementslib"]
+requirements_deprecated_finder = ["pipreqs", "pip-api"]
 colors = ["colorama (>=0.4.3,<0.5.0)"]
-requirements_deprecated_finder = ["pip-api", "pipreqs"]
-pipfile_deprecated_finder = ["requirementslib", "pipreqs"]
+plugins = ["setuptools"]
 
 [[package]]
 name = "itemadapter"
@@ -1177,8 +1177,8 @@ python-versions = ">=3.6"
 cryptography = ">=35.0"
 
 [package.extras]
-test = ["pytest (>=3.0.1)", "pretend", "flaky"]
-docs = ["sphinx-rtd-theme", "sphinx"]
+docs = ["sphinx", "sphinx-rtd-theme"]
+test = ["flaky", "pretend", "pytest (>=3.0.1)"]
 
 [[package]]
 name = "pyparsing"
@@ -1404,8 +1404,8 @@ cssselect = ">=0.9.1"
 itemadapter = ">=0.1.0"
 itemloaders = ">=1.0.1"
 lxml = [
-    {version = ">=4.0.0", markers = "platform_python_implementation == \"PyPy\""},
     {version = ">=3.5.0", markers = "platform_python_implementation == \"CPython\""},
+    {version = ">=4.0.0", markers = "platform_python_implementation == \"PyPy\""},
 ]
 parsel = ">=1.5.0"
 protego = ">=0.1.15"
@@ -1435,10 +1435,10 @@ pyasn1-modules = "*"
 six = "*"
 
 [package.extras]
-tests = ["pytest", "coverage[toml] (>=5.0.2)"]
+dev = ["coverage[toml] (>=5.0.2)", "pytest", "sphinx", "furo", "idna", "pyopenssl"]
+docs = ["sphinx", "furo"]
 idna = ["idna"]
-docs = ["furo", "sphinx"]
-dev = ["pyopenssl", "idna", "furo", "sphinx", "pytest", "coverage[toml] (>=5.0.2)"]
+tests = ["coverage[toml] (>=5.0.2)", "pytest"]
 
 [[package]]
 name = "sgmllib3k"
@@ -1671,8 +1671,8 @@ optional = false
 python-versions = ">=3.7"
 
 [package.extras]
-testing = ["pytest-mypy (>=0.9.1)", "pytest-black (>=0.3.7)", "func-timeout", "jaraco.itertools", "pytest-enabler (>=1.3)", "pytest-cov", "pytest-flake8", "pytest-checkdocs (>=2.4)", "pytest (>=6)"]
-docs = ["jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "jaraco.packaging (>=9)", "sphinx"]
+docs = ["sphinx", "jaraco.packaging (>=9)", "rst.linker (>=1.9)", "jaraco.tidelift (>=1.4)"]
+testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-cov", "pytest-enabler (>=1.3)", "jaraco.itertools", "func-timeout", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)"]
 
 [[package]]
 name = "zope.interface"
@@ -2112,8 +2112,8 @@ google-api-core = [
     {file = "google_api_core-2.8.2-py3-none-any.whl", hash = "sha256:93c6a91ccac79079ac6bbf8b74ee75db970cc899278b97d53bc012f35908cf50"},
 ]
 google-api-python-client = [
-    {file = "google-api-python-client-2.56.0.tar.gz", hash = "sha256:70d33203a4752bf4144b33fc689e997a2b5ed42c696d57149e4b3f5082682436"},
-    {file = "google_api_python_client-2.56.0-py2.py3-none-any.whl", hash = "sha256:ad321cea7aefc6385ac0b2e3e4fa7c9758ca37061efe0b410b4629fffba06601"},
+    {file = "google-api-python-client-2.57.0.tar.gz", hash = "sha256:ec4412545b0c5978a833bb03993a46121ad2c700f32af0cba23f8439b3f5fb02"},
+    {file = "google_api_python_client-2.57.0-py2.py3-none-any.whl", hash = "sha256:cbc39ac20322d6da3989cb54271f15ae6e58fa1ce63bf1fbb1ac1cdeebbc7b6a"},
 ]
 google-auth = [
     {file = "google-auth-2.10.0.tar.gz", hash = "sha256:7904dbd44b745c7323fef29565adee2fe7ff48473e2d94443aced40b0404a395"},
