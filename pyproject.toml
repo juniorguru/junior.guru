@@ -37,7 +37,7 @@ gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
 markupsafe = "*"
 mkdocs-simple-hooks = "*"
-ics = { git = "https://github.com/ics-py/ics-py.git", branch = "main" }
+ics = {version = "*", allow-prereleases = true}
 pod2gen = "*"
 invoke = "*"
 Scrapy = "*"
