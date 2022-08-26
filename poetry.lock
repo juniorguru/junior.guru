@@ -729,7 +729,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "itemloaders"
-version = "1.0.4"
+version = "1.0.5"
 description = "Base library for scrapy's ItemLoader"
 category = "main"
 optional = false
@@ -2254,8 +2254,8 @@ itemadapter = [
     {file = "itemadapter-0.7.0.tar.gz", hash = "sha256:32c061ec9ab47d5343e8011b268730f48ff632a0192b95292d118b18dbd7687a"},
 ]
 itemloaders = [
-    {file = "itemloaders-1.0.4-py3-none-any.whl", hash = "sha256:4cb46a0f8915e910c770242ae3b60b1149913ed37162804f1e40e8535d6ec497"},
-    {file = "itemloaders-1.0.4.tar.gz", hash = "sha256:1277cd8ca3e4c02dcdfbc1bcae9134ad89acfa6041bd15b4561c6290203a0c96"},
+    {file = "itemloaders-1.0.5-py3-none-any.whl", hash = "sha256:5557785570c14883a08270804a825dcac0f415886efefc5bb24d2ab29a76de7b"},
+    {file = "itemloaders-1.0.5.tar.gz", hash = "sha256:f76ed511355602ee817394e08255d4238a83b5853dbdaa5f27dfa80ae110efd9"},
 ]
 itsdangerous = [
     {file = "itsdangerous-2.1.2-py3-none-any.whl", hash = "sha256:2c2349112351b88699d8d4b6b075022c0808887cb7ad10069318a8b0bc88db44"},
