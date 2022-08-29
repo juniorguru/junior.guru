@@ -32,6 +32,8 @@ WELCOME_MESSAGE_PREFIXES = [
     'Ahój!',
 ]
 
+ERROR_CODE_THREAD_ARCHIVED = 50083
+
 
 logger = loggers.get(__name__)
 
@@ -87,9 +89,6 @@ async def welcome(channel, message, moderators):
             if discord_message.flags.has_thread:
                 logger_m.debug(f"Thread for '{message.author.display_name}' already exists")
                 thread = await discord_message.guild.fetch_channel(message.id)
-                if thread.name != thread_name:
-                    logger_m.debug(f"Renaming thread for '{message.author.display_name}' from '{thread.name}' to '{thread_name}'")
-                    thread = await thread.edit(name=thread_name)
             else:
                 logger_m.debug(f"Creating thread for '{message.author.display_name}'")
                 thread = await discord_message.create_thread(name=thread_name)
@@ -97,8 +96,11 @@ async def welcome(channel, message, moderators):
             if thread.archived or thread.locked:
                 logger_m.debug("Skipping the thread, because it's archived or locked")
                 return
-            discord_messages = [discord_message async for discord_message in thread.history(limit=None)]
+            if thread.name != thread_name:
+                logger_m.debug(f"Renaming thread for '{message.author.display_name}' from '{thread.name}' to '{thread_name}'")
+                thread = await thread.edit(name=thread_name)
 
+            discord_messages = [discord_message async for discord_message in thread.history(limit=None)]
             logger_m.debug(f"Ensuring welcome message for '{message.author.display_name}'")
             content_prefix = random.choice(WELCOME_MESSAGE_PREFIXES)
             content = (f'{content_prefix} 👋 '
