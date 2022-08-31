@@ -30,7 +30,7 @@ MEMBERS_CHUNK_SIZE = 10
 
 ALPHA_USERS_PREDICATE = lambda member: member.id == 652142810291765248
 
-BETA_USERS_PREDICATE = lambda member: member.first_seen_on() > date(2022, 7, 17)
+BETA_USERS_PREDICATE = lambda member: member.id == 652142810291765248 or member.first_seen_on() > date(2022, 7, 17)
 
 
 @sync_task(club_content_task)
@@ -46,7 +46,7 @@ async def discord_task(client):
 
 async def manage_channels(client):
     category = await client.fetch_channel(ONBOARDING_CATEGORY)
-    members = filter(ALPHA_USERS_PREDICATE, ClubUser.members_listing())
+    members = list(filter(BETA_USERS_PREDICATE, ClubUser.members_listing()))
     channels = category.channels
     logger.info(f"Managing {len(channels)} existing onboarding channels for {len(members)} existing members")
 
