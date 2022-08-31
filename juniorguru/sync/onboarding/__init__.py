@@ -28,6 +28,10 @@ CHANNEL_DELETE_TIMEOUT = timedelta(days=30 * 3)
 
 MEMBERS_CHUNK_SIZE = 10
 
+ALPHA_USERS_PREDICATE = lambda member: member.id == 652142810291765248
+
+BETA_USERS_PREDICATE = lambda member: member.first_seen_on() > date(2022, 7, 17)
+
 
 @sync_task(club_content_task)
 def main():
@@ -42,12 +46,7 @@ async def discord_task(client):
 
 async def manage_channels(client):
     category = await client.fetch_channel(ONBOARDING_CATEGORY)
-
-    # TODO alpha version just for Dan
-    members = [m for m in ClubUser.members_listing() if m.id == 652142810291765248]
-    # TODO beta version for people who came recently
-    # members = [m for m in ClubUser.members_listing() if m.first_seen_on() > date(2022, 7, 17)]
-
+    members = filter(ALPHA_USERS_PREDICATE, ClubUser.members_listing())
     channels = category.channels
     logger.info(f"Managing {len(channels)} existing onboarding channels for {len(members)} existing members")
 
