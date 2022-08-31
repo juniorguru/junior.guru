@@ -33,7 +33,7 @@ def render_hello(context):
     else:
         text += dedent('''
             **Představ se ostatním** 👋
-            První, co se hodí v klubu udělat, je představit se v kanálu #ahoj. Ostatní členové klubu se tak doví, co už máš za sebou a co je tvým cílem. Zajímá nás všechno, díky čemu tě poznáme, ale piš jen to, co chceš, abychom o tobě věděli. Povinné není nic, ale těžko ti dobře poradíme s kariérou nebo kurzem, pokud nebudeme znát tvou situaci.
+            První, co se hodí v klubu udělat, je představit se v kanálu <#788823881024405544>. Ostatní členové klubu se tak doví, co už máš za sebou a co je tvým cílem. Zajímá nás všechno, díky čemu tě poznáme, ale piš jen to, co chceš, abychom o tobě věděli. Povinné není nic, ale těžko ti dobře poradíme s kariérou nebo kurzem, pokud nebudeme znát tvou situaci.
 
             Co tě přivedlo do klubu? Jaké máš vzdělání a čím se teď živíš? Máš za sebou nějaké IT školy nebo kurzy? Jaké věci už umíš? Jak dlouho se zajímáš o programování? Co tě láká: weby, hry, datová analýza, mobilní appky…? Máš nějaký svůj projekt? Plánuješ si hledat práci v oboru? Kolik na to máš času?
         ''')
