@@ -46,8 +46,8 @@ def test_prepare_channels_operations_declutter():
     channel2 = StubTextChannel('foo-moo-boo', '')
 
     assert prepare_channels_operations([channel1, channel2], []) == [
-        ('delete', channel1),
-        ('delete', channel2),
+        ('delete', (channel1,)),
+        ('delete', (channel2,)),
     ]
 
 
@@ -57,9 +57,9 @@ def test_prepare_channels_operations_empty_category():
     member3 = create_member(3)
 
     assert prepare_channels_operations([], [member1, member2, member3]) == [
-        ('create', member1),
-        ('create', member2),
-        ('create', member3),
+        ('create', (member1,)),
+        ('create', (member2,)),
+        ('create', (member3,)),
     ]
 
 
@@ -76,7 +76,7 @@ def test_prepare_channels_operations_close_channels_for_missing_members():
     assert prepare_channels_operations(channels, members) == [
         ('update', (member1, channel1)),
         ('update', (member3, channel3)),
-        ('close', channel2),
+        ('close', (channel2,)),
     ]
 
 

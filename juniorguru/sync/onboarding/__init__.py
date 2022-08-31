@@ -122,7 +122,7 @@ def prepare_channels_operations(channels, members):
         try:
             member_id = parse_member_id(channel.topic)
         except ValueError:
-            operations.append(('delete', channel))
+            operations.append(('delete', (channel,)))
         else:
             members_channels_mapping[member_id] = channel
 
@@ -131,10 +131,10 @@ def prepare_channels_operations(channels, members):
             channel = members_channels_mapping.pop(member.id)
             operations.append(('update', (member, channel)))
         except KeyError:
-            operations.append(('create', member))
+            operations.append(('create', (member,)))
 
     for channel in members_channels_mapping.values():
-        operations.append(('close', channel))
+        operations.append(('close', (channel,)))
 
     return operations
 
