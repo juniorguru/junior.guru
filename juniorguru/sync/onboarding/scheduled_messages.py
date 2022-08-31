@@ -20,7 +20,7 @@ def render_hello(context):
         V klubu se toho děje hodně, tak ti sem budu posílat tipy, jak se orientovat. Ptej se tady na cokoliv ohledně fungování klubu, klidně reaguj na jednotlivé tipy, posílej zpětnou vazbu. Já odpovídat neumím, ale vidí sem i moderátoři a se vším ti rádi pomůžou.
 
         **Jak funguju já?** 🤖
-        Jsem ranní ptáče – vstanu, udělám všechnu svou práci a zbytek dne se do klubu už nekoukám. Tipy ti tedy budou chodit zhruba jednou denně.
+        Jsem většinou ranní ptáče – vstanu, udělám všechnu svou práci a zbytek dne se do klubu už nekoukám. Tipy ti tedy budou chodit zhruba jednou denně.
 
         **Neboj se chyb** 💁
         Různých rad a pravidel ti sem postupně dám dost, takže si je určitě všechny nezapamatuješ a rozhodně uděláš něco jinak. To vůbec nevadí! Moderátoři tě rádi opraví, nebo nasměrují. Neboj se jich a ber je spíš jako pomocníky, ne policajty.
