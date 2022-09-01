@@ -28,9 +28,9 @@ CHANNEL_DELETE_TIMEOUT = timedelta(days=30 * 3)
 
 MEMBERS_CHUNK_SIZE = 10
 
-ALPHA_USERS_PREDICATE = lambda member: member.id == 652142810291765248
+BETA_USERS = [652142810291765248, 223893231832662016, 819684326261260309, 791020144661889054]
 
-BETA_USERS_PREDICATE = lambda member: member.id == 652142810291765248 or member.first_seen_on() > date(2022, 7, 17)
+BETA_USERS_PREDICATE = lambda member: member.id in BETA_USERS or member.first_seen_on() > date(2022, 7, 17)
 
 
 @sync_task(club_content_task)
@@ -174,13 +174,13 @@ async def send_messages_to_member(client, member):
             logger_m.debug(f'Editing message: {message_content}')
             if DISCORD_MUTATIONS_ENABLED:
                 discord_message = await channel.fetch_message(message_id)
-                await discord_message.edit(content=message_content)
+                await discord_message.edit(content=message_content, embed=None)
             else:
                 logger_m.warning('Discord mutations not enabled')
         else:
             logger_m.debug(f'Sending message: {message_content}')
             if DISCORD_MUTATIONS_ENABLED:
-                await channel.send(content=message_content)
+                await channel.send(content=message_content, embed=None)
             else:
                 logger_m.warning('Discord mutations not enabled')
 
