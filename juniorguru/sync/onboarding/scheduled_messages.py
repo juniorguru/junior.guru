@@ -97,7 +97,7 @@ def render_discord(context):
 
         Do většiny kanálů můžeš psát zcela volně a nemusíš nad tím moc přemýšlet, ale některé mají speciální režim. Jsou to Rituály (<#788823881024405544>, <#806621830383271937>, <#815906954534191117>) a <#878937534464417822>. Aby zůstaly přehledné, odpovídá se v nich pouze pomocí vláken.
 
-        Vlákno se týden od poslední zprávy samo archivuje. Nezmizí ale úplně a můžeš ho obnovit novým příspěvkem.
+        Vlákno zmizí ze seznamu kanálů po týdnu bez aktivity. Můžeš ho ale kdykoliv oživit novým příspěvkem.
     ''')
 
 
@@ -276,3 +276,10 @@ def render_juniorguru(context):
 # discord tipy zasobnik - citace, odkazy na zpravy, shift enter
 # **Online odkudkoliv** 💌
 # Discord jede jen tak v prohlížeči, ale má i svou aplikaci na počítač a na mobil. Mít klub v kapse se hodí, pokud se chceš zabavit nebo pomáhat, když zrovna čekáš ve frontě na poště.
+
+
+####################################################################
+# COLLECTING FEEDBACK                                              #
+####################################################################
+# TODO
+# mozna by to mohla byt i rychla anketa v #pravidla, stejne jako zaklikavani jazyku atd.

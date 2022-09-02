@@ -1,6 +1,9 @@
 import re
 import asyncio
+import math
 from datetime import date, timedelta
+import itertools
+from operator import attrgetter
 
 import discord
 from slugify import slugify
@@ -22,13 +25,17 @@ TODAY = date.today()
 
 CHANNEL_TOPIC_RE = re.compile(r'\#(?P<id>\d+)\s*$')
 
-ONBOARDING_CATEGORY = 992438896078110751
+CHANNELS_PER_CATEGORY_LIMIT = 50
+
+ONBOARDING_CHANNELS_LIMIT = 100
+
+ONBOARDING_CATEGORY_NAME = '👋 Tipy pro tebe'
 
 CHANNEL_DELETE_TIMEOUT = timedelta(days=30 * 3)
 
 MEMBERS_CHUNK_SIZE = 10
 
-BETA_USERS = [652142810291765248, 223893231832662016, 819684326261260309, 791020144661889054]
+BETA_USERS = [652142810291765248, 223893231832662016, 819684326261260309, 791020144661889054, 414887173154930698]
 
 BETA_USERS_PREDICATE = lambda member: member.id in BETA_USERS or member.first_seen_on() > date(2022, 7, 17)
 
@@ -45,19 +52,38 @@ async def discord_task(client):
 
 
 async def manage_channels(client):
-    category = await client.fetch_channel(ONBOARDING_CATEGORY)
     members = list(filter(BETA_USERS_PREDICATE, ClubUser.members_listing()))
-    channels = category.channels
-    logger.info(f"Managing {len(channels)} existing onboarding channels for {len(members)} existing members")
+    if len(members) > ONBOARDING_CHANNELS_LIMIT:
+        raise RuntimeError(f"Need to onboard {len(members)} members, but the limit is {ONBOARDING_CHANNELS_LIMIT}")
+
+    categories_count = math.ceil(len(members) / CHANNELS_PER_CATEGORY_LIMIT)
+    categories = [category for category in client.juniorguru_guild.categories
+                  if category.name == ONBOARDING_CATEGORY_NAME]
+    if len(categories) < categories_count:
+        logger.info(f"Need {categories_count} categories, but found only {len(categories)}")
+        categories_count_to_add = categories_count - len(categories)
+        for i in range(categories_count_to_add):
+            logger.debug(f"Adding onboarding category #{len(categories) + i + 1}")
+            position = max([category.position for category in categories])
+            categories.append(await client.juniorguru_guild.create_category_channel(ONBOARDING_CATEGORY_NAME, position=position))
+
+    channels = list(itertools.chain.from_iterable(category.channels for category in categories))
+    logger.info(f"Managing {len(channels)} existing onboarding channels for {len(members)} members")
 
     for op_name, op_payload in prepare_channels_operations(channels, members):
         fn_name = f'{op_name}_onboarding_channel'
         fn = globals()[fn_name]
-        await fn(client, category, *op_payload)
+        await fn(client, categories, *op_payload)
+
+    for category in categories:
+        if len(category.channels) == 0:
+            logger.debug("Found onboarding category with zero channels, deleting")
+            await category.delete()
 
 
-async def update_onboarding_channel(client, category, member, channel):
+async def update_onboarding_channel(client, categories, member, channel):
     logger.info(f"Updating channel #{channel.id} to member #{member.id}")
+    category = get_available_category(categories)
     channel_data = await prepare_onboarding_channel_data(client, category, member)
     if DISCORD_MUTATIONS_ENABLED:
         await channel.edit(**channel_data)
@@ -67,8 +93,9 @@ async def update_onboarding_channel(client, category, member, channel):
     member.save()
 
 
-async def create_onboarding_channel(client, category, member):
+async def create_onboarding_channel(client, categories, member):
     logger.info(f"Creating channel for member #{member.id}")
+    category = get_available_category(categories)
     channel_data = await prepare_onboarding_channel_data(client, category, member)
     if DISCORD_MUTATIONS_ENABLED:
         channel = await client.juniorguru_guild.create_text_channel(**channel_data)
@@ -78,7 +105,7 @@ async def create_onboarding_channel(client, category, member):
         logger.warning('Discord mutations not enabled')
 
 
-async def delete_onboarding_channel(client, category, channel):
+async def delete_onboarding_channel(client, categories, channel):
     logger.info(f"Deleting channel #{channel.id}")
     if DISCORD_MUTATIONS_ENABLED:
         await channel.delete()
@@ -86,7 +113,7 @@ async def delete_onboarding_channel(client, category, channel):
         logger.warning('Discord mutations not enabled')
 
 
-async def close_onboarding_channel(client, category, channel):
+async def close_onboarding_channel(client, categories, channel):
     logger.info(f"Closing channel #{channel.id}")
     last_message_on = ClubMessage.last_message(channel.id).created_at.date()
     threshold_on = (TODAY - CHANNEL_DELETE_TIMEOUT)
@@ -108,6 +135,12 @@ async def prepare_onboarding_channel_data(client, category, member):
         (await client.get_or_fetch_user(member.id)): discord.PermissionOverwrite(read_messages=True),
     }
     return dict(name=name, topic=topic, category=category, overwrites=overwrites)
+
+
+def get_available_category(categories):
+    available_categories = [category for category in categories
+                            if len(category.channels) < CHANNELS_PER_CATEGORY_LIMIT]
+    return sorted(available_categories, key=attrgetter('position'))[0]
 
 
 def get_role(guild, id):
