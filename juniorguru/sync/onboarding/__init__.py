@@ -10,7 +10,7 @@ from slugify import slugify
 
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, JUNIORGURU_BOT, DISCORD_MUTATIONS_ENABLED, MODERATORS_ROLE
+from juniorguru.lib.club import run_discord_task, JUNIORGURU_BOT, DISCORD_MUTATIONS_ENABLED, MODERATORS_ROLE, ANNOUNCEMENTS_CHANNEL
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser, ClubMessage
@@ -35,9 +35,9 @@ CHANNEL_DELETE_TIMEOUT = timedelta(days=30 * 3)
 
 MEMBERS_CHUNK_SIZE = 10
 
-BETA_USERS = [652142810291765248, 223893231832662016, 819684326261260309, 791020144661889054, 414887173154930698]
+BETA_USERS_MESSAGE = 1014611670598942743
 
-BETA_USERS_PREDICATE = lambda member: member.id in BETA_USERS or member.first_seen_on() > date(2022, 7, 17)
+BETA_USERS_DATE = date(2022, 7, 17)
 
 
 @sync_task(club_content_task)
@@ -52,9 +52,18 @@ async def discord_task(client):
 
 
 async def manage_channels(client):
-    members = list(filter(BETA_USERS_PREDICATE, ClubUser.members_listing()))
+    logger.info('Figuring out BETA users')
+    announcements_channel = await client.juniorguru_guild.fetch_channel(ANNOUNCEMENTS_CHANNEL)
+    beta_users_message = await announcements_channel.fetch_message(BETA_USERS_MESSAGE)
+    beta_users_reaction = [reaction for reaction in beta_users_message.reactions if reaction.emoji == '🐇'][0]
+    beta_users_ids = [beta_user.id async for beta_user in beta_users_reaction.users()]
+    logger.info(f'Found {len(beta_users_ids)} BETA users who volunteered')
+
+    members = [member for member in ClubUser.members_listing()
+               if member.id in beta_users_ids or member.first_seen_on() > BETA_USERS_DATE]
     if len(members) > ONBOARDING_CHANNELS_LIMIT:
         raise RuntimeError(f"Need to onboard {len(members)} members, but the limit is {ONBOARDING_CHANNELS_LIMIT}")
+    logger.info(f'Onboarding {len(members)} members')
 
     categories_count = math.ceil(len(members) / CHANNELS_PER_CATEGORY_LIMIT)
     categories = [category for category in client.juniorguru_guild.categories
@@ -68,7 +77,7 @@ async def manage_channels(client):
             categories.append(await client.juniorguru_guild.create_category_channel(ONBOARDING_CATEGORY_NAME, position=position))
 
     channels = list(itertools.chain.from_iterable(category.channels for category in categories))
-    logger.info(f"Managing {len(channels)} existing onboarding channels for {len(members)} members")
+    logger.info(f"Managing {len(channels)} existing onboarding channels")
 
     for op_name, op_payload in prepare_channels_operations(channels, members):
         fn_name = f'{op_name}_onboarding_channel'
