@@ -5,8 +5,8 @@ SCHEDULED_MESSAGES = {}
 
 
 def schedule_message(emoji):
-    def decorator(render_text):
-        SCHEDULED_MESSAGES[emoji] = render_text
+    def decorator(render_content):
+        SCHEDULED_MESSAGES[emoji] = render_content
     return decorator
 
 
@@ -19,9 +19,7 @@ def schedule_message(emoji):
 def render_hello(context):
     member = context['member']
     text = dedent(f'''
-        Vítám tě v klubu, {member.mention}! Jsme rádi, že jsi tady s námi. Klub je místo, kde můžeš spolu s ostatními posunout svůj rozvoj v oblasti programování, nebo s tím pomoci ostatním.
-
-        Já jsem kuře, zdejší bot. Pomáhám se vším, co by nemusel <@!668226181769986078> stíhat sám. Tento privátní kanál jsem vytvořilo jen pro tebe.
+        Vítám tě v klubu, {member.mention}! Já jsem kuře, zdejší bot. Pomáhám se vším, co by nemusel <@!668226181769986078> stíhat sám. Tento privátní kanál jsem vytvořilo jen pro tebe.
 
         **Jak funguje tento kanál?** 💬
         V klubu se toho děje hodně, tak ti sem budu posílat tipy, jak se orientovat. Ptej se tady na cokoliv ohledně fungování klubu, klidně reaguj na jednotlivé tipy, posílej zpětnou vazbu. Já odpovídat neumím, ale vidí sem i moderátoři a se vším ti rádi pomůžou.
@@ -44,39 +42,30 @@ def render_hello(context):
 
             Co tě přivedlo do klubu? Jaké máš vzdělání a čím se teď živíš? Máš za sebou nějaké IT školy nebo kurzy? Jaké věci už umíš? Jak dlouho se zajímáš o programování? Co tě láká: weby, hry, datová analýza, mobilní appky…? Máš nějaký svůj projekt? Plánuješ si hledat práci v oboru? Kolik na to máš času?
 
-            Já vím, není to jednoduché. Překonat ostych, vymyslet co o sobě napíšeš a ještě poskládat slova za sebe tak, aby to mělo hlavu a patu. Když to však zvládneš, klub ti bude moci posloužit fakt mnohem víc a líp.
+            Já vím, není to jednoduché. Překonat ostych, vymyslet co napsat a ještě nějak poskládat slova za sebe. Když to však zvládneš, klub ti bude umět posloužit mnohem líp.
         ''')
-    if not member.has_avatar:
-        text += dedent('''
-            Když si navíc dáš i profilový obrázek, dostaneš ode mě roli <@&836959652100702248>. Udělat to můžeš v sekci Profily nebo Uživatelský profil (_Profiles_ nebo _User Profile_) ve svém nastavení na Discordu. Nemusí to být přímo fotka, jde pouze o to, abychom tu neměli deset Honzů, které nerozeznáme od sebe.
-        ''')
-    text += dedent('''
-        **P. S.** Všichni si tu tykáme!
-    ''')
-    return text.strip()
+    return text
 
 
 @schedule_message('🧭')  # Day 2
 def render_orientation(context):
     return dedent('''
-        Krásný den přeju, dnes bych ti chtělo pomoci se základní orientací v klubu. Jak najít ten správný kanál a jak se tím vším nenechat zahltit?
+        Dnes bych ti chtělo pomoci se základní orientací v klubu. Jak najít ten správný kanál a jak se tím vším nenechat zahltit?
 
         **Jak se vyznat v kanálech?** 🗺
-        Je tady mnoho kanálů, ale neboj se toho. Po pár dnech si všimneš, že někde se toho děje víc, jinde je to klidnější a něco tě vůbec nezajímá, tak si to vypneš.
+        Kanálů je tady mnoho, ale neboj se toho. Po pár dnech si všimneš, že někde se toho děje víc, jinde je to klidnější a něco tě vůbec nezajímá, tak si to vypneš.
 
-        Kanály jsou rozděleny do kategorií, např. Rituály, Studium, Shánění práce. To ti může orientaci zjednodušit.
-
-        Každý kanál má svůj popis, kde zjistíš jeho účel. Na počítači stačí kanál rozkliknout a podívat se do horní lišty. Na mobilu se popis zobrazí, až když zprava vysuneš seznam členů.
+        Kanály jsou rozděleny do kategorií, např. Rituály, Studium, Shánění práce. To ti může orientaci zjednodušit. Každý kanál má svůj popis, kde zjistíš jeho účel. Na počítači stačí kanál rozkliknout a podívat se do horní lišty. Na mobilu se popis zobrazí, až když zprava vysuneš seznam členů.
 
         Nelam si s tím ale moc hlavu. Potřebuješ na něco zeptat? Máš téma, které chceš probrat, ale nevíš kam s tím? Vždy se můžeš ujistit tady! Moderátoři ti poradí. Nebo to prostě dej do <#769966887055392768>, ten snese cokoliv.
 
         **Je toho moc!** 🔕
-        Pokud nemáš moc času sledovat všechny diskuze, sleduj aspoň <#789046675247333397>. Každý týden je tam shrnutí s nejoceňovanějšími příspěvky.
+        Pokud nemáš čas sledovat všechny diskuze, mrkni občas aspoň do <#789046675247333397>. Každý týden je tam shrnutí s nejoceňovanějšími příspěvky.
 
         Kanály, které víš, že tě nebudou zajímat, si můžeš povypínat. Jdi do kanálu a použij zvoneček. Na počítači je v horní liště, na mobilu se lišta zobrazí, až když zprava vysuneš seznam členů.
 
         Kategorii Archiv (úplně dole) si můžeš schovat kliknutím na její název. Jsou tam staré kanály, které už nepoužíváme, ale chceme, aby jejich historie zůstala ve vyhledávání.
-    ''').strip()
+    ''')
 
 
 @schedule_message('💬')  # Day 3
@@ -98,7 +87,7 @@ def render_discord(context):
         Do většiny kanálů můžeš psát zcela volně a nemusíš nad tím moc přemýšlet, ale některé mají speciální režim. Jsou to Rituály (<#788823881024405544>, <#806621830383271937>, <#815906954534191117>) a <#878937534464417822>. Aby zůstaly přehledné, odpovídá se v nich pouze pomocí vláken.
 
         Vlákno zmizí ze seznamu kanálů po týdnu bez aktivity. Můžeš ho ale kdykoliv oživit novým příspěvkem.
-    ''').strip()
+    ''')
 
 
 @schedule_message('🐣')  # Day 4
@@ -111,7 +100,13 @@ def render_juniorguru(context):
 
         **Podcast** 🎙
         Nahoď sluchátka a pusť si do nich příběhy a rady lidí, kteří se motají kolem začátečníků v IT. <@810862212297130005> si zve na rozhovor juniory, lidi z firem, lektory kurzů. V podcastu se snaží přinášet odpovědi, inspiraci, motivaci. Všechny díly najdeš na https://junior.guru/podcast/, ale taky na Spotify, na YouTube a v dalších podcastových aplikacích. Epizody vychází jednou měsíčně a mívají půl hodiny. Máš nápad, koho dalšího pozvat? Napiš nám!
-    ''').strip()
+    ''')
+
+
+# if not member.has_avatar:
+#     text += dedent('''
+#         Když si navíc dáš i profilový obrázek, dostaneš ode mě roli <@&836959652100702248>. Udělat to můžeš v sekci Profily nebo Uživatelský profil (_Profiles_ nebo _User Profile_) ve svém nastavení na Discordu. Nemusí to být přímo fotka, jde pouze o to, abychom tu neměli deset Honzů, které nerozeznáme od sebe.
+#     ''')
 
 
 # @schedule_message('🙋')  # Day 5

@@ -33,6 +33,8 @@ ONBOARDING_CATEGORY_NAME = '👋 Tipy pro tebe'
 
 CHANNEL_DELETE_TIMEOUT = timedelta(days=30 * 3)
 
+CHANNELS_OPERATIONS_CHUNK_SIZE = 10
+
 MEMBERS_CHUNK_SIZE = 10
 
 BETA_USERS_MESSAGE = 1014611670598942743
@@ -40,7 +42,7 @@ BETA_USERS_MESSAGE = 1014611670598942743
 BETA_USERS_DATE = date(2022, 7, 17)
 
 
-@sync_task()  # club_content_task
+@sync_task(club_content_task)
 def main():
     run_discord_task('juniorguru.sync.onboarding.discord_task')
 
@@ -81,11 +83,8 @@ async def manage_channels(client):
 
     channels = list(itertools.chain.from_iterable(category.channels for category in categories))
     logger.info(f"Managing {len(channels)} existing onboarding channels")
-
-    for op_name, op_payload in prepare_channels_operations(channels, members):
-        fn_name = f'{op_name}_onboarding_channel'
-        fn = globals()[fn_name]
-        await fn(client, categories, *op_payload)
+    channels_operations = prepare_channels_operations(channels, members)
+    await execute_channels_operations(client, categories, channels_operations)
 
     for category in categories:
         if len(category.channels) == 0:
@@ -96,20 +95,39 @@ async def manage_channels(client):
                 logger.warning('Discord mutations not enabled')
 
 
+async def execute_channels_operations(client, categories, operations):
+    channels_operations_chunks = chunks(operations,
+                                       size=CHANNELS_OPERATIONS_CHUNK_SIZE)
+    for n, channels_operations_chunk in enumerate(channels_operations_chunks, start=1):
+        logger.debug(f'Processing chunk #{n} of {len(channels_operations_chunk)} channels operations')
+        await asyncio.gather(*[
+            get_channels_operation_function(operation_name)(client, categories, *operation_payload)
+            for operation_name, operation_payload in channels_operations_chunk
+        ])
+
+
+def get_channels_operation_function(name):
+    return globals()[f'{name}_onboarding_channel']
+
+
 async def update_onboarding_channel(client, categories, member, channel):
-    logger.info(f"Updating channel #{channel.id} for member #{member.id}")
+    logger_c = logger.getChild(f'channels.{channel.id}')
+    logger_c.info(f"Updating (member #{member.id})")
     category = get_available_category(categories)
+    if channel.category.id != category.id:
+        logger_c.debug(f"Moving from category #{channel.category.id} to #{category.id}")
     channel_data = await prepare_onboarding_channel_data(client, category, member)
     if DISCORD_MUTATIONS_ENABLED:
         await channel.edit(**channel_data)
     else:
-        logger.warning('Discord mutations not enabled')
+        logger_c.warning('Discord mutations not enabled')
     member.onboarding_channel_id = channel.id
     member.save()
 
 
 async def create_onboarding_channel(client, categories, member):
-    logger.info(f"Creating channel for member #{member.id}")
+    logger_c = logger.getChild('channels')
+    logger_c.info(f"Creating (member #{member.id})")
     category = get_available_category(categories)
     channel_data = await prepare_onboarding_channel_data(client, category, member)
     if DISCORD_MUTATIONS_ENABLED:
@@ -117,32 +135,34 @@ async def create_onboarding_channel(client, categories, member):
         member.onboarding_channel_id = channel.id
         member.save()
     else:
-        logger.warning('Discord mutations not enabled')
+        logger_c.warning('Discord mutations not enabled')
 
 
 async def delete_onboarding_channel(client, categories, channel):
-    logger.info(f"Deleting channel #{channel.id}")
+    logger_c = logger.getChild(f'channels.{channel.id}')
+    logger_c.info("Deleting")
     if DISCORD_MUTATIONS_ENABLED:
         await channel.delete()
     else:
-        logger.warning('Discord mutations not enabled')
+        logger_c.warning('Discord mutations not enabled')
 
 
 async def close_onboarding_channel(client, categories, channel):
-    logger.info(f"Closing channel #{channel.id}")
+    logger_c = logger.getChild(f'channels.{channel.id}')
+    logger_c.info("Closing")
     last_message_on = ClubMessage.last_message(channel.id).created_at.date()
     threshold_on = (TODAY - CHANNEL_DELETE_TIMEOUT)
     if last_message_on > threshold_on:
-        logger.warning(f"Would delete channel #{channel.id}, but waiting (last message on {last_message_on} > {threshold_on})")
+        logger_c.warning(f"Would delete the channel, but waiting (last message on {last_message_on} > {threshold_on})")
     elif DISCORD_MUTATIONS_ENABLED:
         await channel.delete()
     else:
-        logger.warning('Discord mutations not enabled')
+        logger_c.warning('Discord mutations not enabled')
 
 
 async def prepare_onboarding_channel_data(client, category, member):
     name = f'{slugify(member.display_name, allow_unicode=True)}-tipy'
-    topic = f'Tipy a soukromý kanál jen pro tebe! 🦸 {member.display_name} #{member.id}'
+    topic = f'Soukromý kanál s tipy jen pro tebe! 🦸 {member.display_name} #{member.id}'
     overwrites = {
         client.juniorguru_guild.default_role: discord.PermissionOverwrite(read_messages=False),
         (await client.get_or_fetch_user(JUNIORGURU_BOT)): discord.PermissionOverwrite(read_messages=True),
@@ -219,14 +239,14 @@ async def send_messages_to_member(client, member):
     channel = await client.fetch_channel(member.onboarding_channel_id)
     for message_id, message_content in messages:
         if message_id:
-            logger_m.debug(f'Editing message: {message_content}')
+            logger_m.debug(f'Editing message {message_content[0]}: {len(message_content)} characters')
             if DISCORD_MUTATIONS_ENABLED:
                 discord_message = await channel.fetch_message(message_id)
                 await discord_message.edit(content=message_content, embeds=[])
             else:
                 logger_m.warning('Discord mutations not enabled')
         else:
-            logger_m.debug(f'Sending message: {message_content}')
+            logger_m.debug(f'Sending message {message_content[0]}: {len(message_content)} characters')
             if DISCORD_MUTATIONS_ENABLED:
                 await channel.send(content=message_content, embeds=[])
             else:
@@ -242,8 +262,8 @@ def prepare_messages(history, scheduled_messages, today, context=None):
 
     # append messages to edit
     for emoji_prefix, message in past_messages.items():
-        render_text = scheduled_messages[emoji_prefix]
-        scheduled_content = f"{emoji_prefix} {render_text(context)}"
+        render_content = scheduled_messages[emoji_prefix]
+        scheduled_content = prepare_message_content(emoji_prefix, render_content, context)
         if message.content != scheduled_content:
             messages.append((message.id, scheduled_content))
 
@@ -256,10 +276,14 @@ def prepare_messages(history, scheduled_messages, today, context=None):
             return messages
 
     # append messages to add
-    for emoji_prefix, render_text in scheduled_messages.items():
+    for emoji_prefix, render_content in scheduled_messages.items():
         if emoji_prefix not in past_messages:
-            scheduled_content = f'{emoji_prefix} {render_text(context)}'
+            scheduled_content = prepare_message_content(emoji_prefix, render_content, context)
             messages.append((None, scheduled_content))
             break
 
     return messages
+
+
+def prepare_message_content(emoji, render_content, context):
+    return f'{emoji} {render_content(context).strip()}'
