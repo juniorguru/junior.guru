@@ -216,13 +216,13 @@ async def send_messages_to_member(client, member):
             logger_m.debug(f'Editing message: {message_content}')
             if DISCORD_MUTATIONS_ENABLED:
                 discord_message = await channel.fetch_message(message_id)
-                await discord_message.edit(content=message_content, embed=None)
+                await discord_message.edit(content=message_content, embeds=[])
             else:
                 logger_m.warning('Discord mutations not enabled')
         else:
             logger_m.debug(f'Sending message: {message_content}')
             if DISCORD_MUTATIONS_ENABLED:
-                await channel.send(content=message_content, embed=None)
+                await channel.send(content=message_content, embeds=[])
             else:
                 logger_m.warning('Discord mutations not enabled')
 
