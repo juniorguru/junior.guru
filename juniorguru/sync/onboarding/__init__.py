@@ -40,7 +40,7 @@ BETA_USERS_MESSAGE = 1014611670598942743
 BETA_USERS_DATE = date(2022, 7, 17)
 
 
-@sync_task(club_content_task)
+@sync_task()  # club_content_task
 def main():
     run_discord_task('juniorguru.sync.onboarding.discord_task')
 
@@ -74,7 +74,10 @@ async def manage_channels(client):
         for i in range(categories_count_to_add):
             logger.debug(f"Adding onboarding category #{len(categories) + i + 1}")
             position = max([category.position for category in categories])
-            categories.append(await client.juniorguru_guild.create_category_channel(ONBOARDING_CATEGORY_NAME, position=position))
+            if DISCORD_MUTATIONS_ENABLED:
+                categories.append(await client.juniorguru_guild.create_category_channel(ONBOARDING_CATEGORY_NAME, position=position))
+            else:
+                logger.warning('Discord mutations not enabled')
 
     channels = list(itertools.chain.from_iterable(category.channels for category in categories))
     logger.info(f"Managing {len(channels)} existing onboarding channels")
@@ -87,11 +90,14 @@ async def manage_channels(client):
     for category in categories:
         if len(category.channels) == 0:
             logger.debug("Found onboarding category with zero channels, deleting")
-            await category.delete()
+            if DISCORD_MUTATIONS_ENABLED:
+                await category.delete()
+            else:
+                logger.warning('Discord mutations not enabled')
 
 
 async def update_onboarding_channel(client, categories, member, channel):
-    logger.info(f"Updating channel #{channel.id} to member #{member.id}")
+    logger.info(f"Updating channel #{channel.id} for member #{member.id}")
     category = get_available_category(categories)
     channel_data = await prepare_onboarding_channel_data(client, category, member)
     if DISCORD_MUTATIONS_ENABLED:
