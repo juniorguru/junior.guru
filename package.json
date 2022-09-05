@@ -31,6 +31,6 @@
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-terser": "7.0.2",
     "stylelint": "14.11.0",
-    "stylelint-config-twbs-bootstrap": "5.0.0"
+    "stylelint-config-twbs-bootstrap": "6.0.0"
   }
 }
