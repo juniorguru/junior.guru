@@ -126,6 +126,8 @@ class ClubMessage(BaseModel):
     url = CharField()
     content = CharField()
     reactions = JSONField(default=lambda: {})
+    upvotes_count = IntegerField(default=0)
+    downvotes_count = IntegerField(default=0)
     created_at = DateTimeField(index=True)
     author = ForeignKeyField(ClubUser, backref='list_messages')
     channel_id = IntegerField()
@@ -133,10 +135,6 @@ class ClubMessage(BaseModel):
     channel_mention = CharField()
     type = CharField(default='default')
     is_pinned = BooleanField(default=False)
-
-    # TODO remove and compile from reactions
-    upvotes_count = IntegerField(default=0)
-    downvotes_count = IntegerField(default=0)
 
     @property
     def emoji_prefix(self):

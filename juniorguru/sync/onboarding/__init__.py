@@ -41,7 +41,7 @@ BETA_USERS_MESSAGE = 1014611670598942743
 
 BETA_USERS_DATE = date(2022, 7, 17)
 
-NEXT_TIP_EMOJI = '✅'
+EMOJI_UNREAD = '✅'
 
 
 @sync_task(club_content_task)
@@ -253,7 +253,7 @@ async def send_messages_to_member(client, member):
             if DISCORD_MUTATIONS_ENABLED:
                 message_data = await create_message_data(client, member, message_content)
                 discord_message = await channel.send(**message_data)
-                await discord_message.add_reaction(NEXT_TIP_EMOJI)
+                await discord_message.add_reaction(EMOJI_UNREAD)
             else:
                 logger_m.warning('Discord mutations not enabled')
 
@@ -285,9 +285,17 @@ def prepare_messages(history, scheduled_messages, today, context=None):
     # don't add a message twice the same day
     if past_messages:
         latest_past_message_on = sorted(past_messages.values(),
-                                        key=lambda message: message.created_at,
+                                        key=attrgetter('created_at'),
                                         reverse=True)[0].created_at.date()
         if latest_past_message_on == today:
+            return messages
+
+    # don't add messages if the previous tip is unread
+    if past_messages:
+        last_message = sorted(past_messages.values(),
+                              key=attrgetter('created_at'),
+                              reverse=True)[0]
+        if last_message.reactions.get(EMOJI_UNREAD, 0) < 2:  # bot prepares the emoji, then the user reacts, 1 + 1 = 2
             return messages
 
     # append messages to add

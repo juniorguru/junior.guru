@@ -26,10 +26,11 @@ def create_member(id):
     return ClubUser(id=id, display_name='Alice Foo', mention='...', tag='...')
 
 
-def create_message(id, author_id, content, created_at=None):
+def create_message(id, author_id, content, created_at=None, reactions=None):
     return ClubMessage(id=id,
                        url='https://example.com',
                        content=content,
+                       reactions=reactions or {'❤️': 42},
                        created_at=created_at or datetime(2022, 1, 1),
                        author=create_member(author_id),
                        channel_id=123,
@@ -37,8 +38,9 @@ def create_message(id, author_id, content, created_at=None):
                        channel_mention='...')
 
 
-def create_bot_message(id, content, created_at=None):
-    return create_message(id, JUNIORGURU_BOT, content, created_at)
+def create_bot_message(id, content, created_at=None, unread=False):
+    return create_message(id, JUNIORGURU_BOT, content, created_at=created_at,
+                          reactions={'✅': 1} if unread else {'✅': 2})
 
 
 def test_prepare_channels_operations_declutter():
@@ -94,7 +96,7 @@ def test_prepare_messages_history_with_no_bot_messages():
 
 
 def test_prepare_messages_history_with_non_relevant_bot_messages():
-    history = [create_bot_message(1, 'Non-relevant message'),
+    history = [create_bot_message(1, 'Non-relevant message', unread=True),
                create_bot_message(2, 'Another non-relevant message')]
 
     assert prepare_messages(history, SCHEDULED_MESSAGES, TODAY) == [(None, '👋 First message')]
@@ -104,6 +106,26 @@ def test_prepare_messages_history_with_the_first_message():
     history = [create_bot_message(1, '👋 First message')]
 
     assert prepare_messages(history, SCHEDULED_MESSAGES, TODAY) == [(None, '🌯 Second message')]
+
+
+def test_prepare_messages_history_unread():
+    history = [create_bot_message(1, '👋 First message', unread=True)]
+
+    assert prepare_messages(history, SCHEDULED_MESSAGES, TODAY) == []
+
+
+def test_prepare_messages_history_unread_last_message():
+    history = [create_bot_message(1, '👋 First message', created_at=datetime.utcnow() - timedelta(days=2)),
+               create_bot_message(2, '🌯 Second message', created_at=datetime.utcnow() - timedelta(days=1), unread=True)]
+
+    assert prepare_messages(history, SCHEDULED_MESSAGES, TODAY) == []
+
+
+def test_prepare_messages_history_unread_past_but_not_last_message():
+    history = [create_bot_message(1, '👋 First message', created_at=datetime.utcnow() - timedelta(days=2), unread=True),
+               create_bot_message(2, '🌯 Second message', created_at=datetime.utcnow() - timedelta(days=1))]
+
+    assert prepare_messages(history, SCHEDULED_MESSAGES, TODAY) == [(None, '💤 Third message')]
 
 
 def test_prepare_messages_history_with_missing_messages():
