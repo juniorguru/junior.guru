@@ -362,16 +362,6 @@ def test_last_bot_message_filters_by_emoji_and_text(db_connection, juniorguru_bo
     assert ClubMessage.last_bot_message(123, '🔥', 'ab') == message1
 
 
-def test_message_pinned_listing(db_connection):
-    user = create_user(1)
-
-    message1 = create_message(1, user, created_at=datetime(2021, 4, 30), pin_reactions_count=0)  # noqa
-    message2 = create_message(2, user, created_at=datetime(2021, 5, 4), pin_reactions_count=5)
-    message3 = create_message(3, user, created_at=datetime(2021, 5, 3), pin_reactions_count=10)
-
-    assert list(ClubMessage.pinned_by_reactions_listing()) == [message3, message2]
-
-
 @pytest.mark.parametrize('content, expected', [
     ('🔥 hello', '🔥'),
     ('hello 🔥', None),

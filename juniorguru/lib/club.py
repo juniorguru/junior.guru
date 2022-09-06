@@ -18,12 +18,12 @@ CLUB_LAUNCH_ON = date(2021, 2, 1)
 
 JUNIORGURU_GUILD = 769966886598737931
 
-EMOJI_PINS = ['📌']
+EMOJI_PIN = '📌'
 
 EMOJI_UPVOTES = ['👍', '❤️', '😍', '🥰', '💕', '♥️', '💖', '💙', '💗', '💜', '💞', '💓', '💛', '🖤', '💚', '😻', '🧡', '👀',
                  '💯', '🤩', '😋', '💟', '🤍', '🤎', '💡', '👆', '👏', '🥇', '🏆', '✔️', 'plus_one', '👌', 'babyyoda',
                  'meowthumbsup', '✅', '🤘', 'this', 'dk', '🙇‍♂️', '🙇', '🙇‍♀️', 'kgsnice', 'successkid', 'white_check_mark',
-                 'notbad', 'updoot', '🆒', '🔥', 'yayfrog', 'partyparrot', 'drakeyes', 'awyeah', 'meowparty'] + EMOJI_PINS
+                 'notbad', 'updoot', '🆒', '🔥', 'yayfrog', 'partyparrot', 'drakeyes', 'awyeah', 'meowparty', EMOJI_PIN]
 
 EMOJI_DOWNVOTES = ['👎']
 
@@ -146,11 +146,6 @@ def count_upvotes(reactions):
 def count_downvotes(reactions):
     return sum([reaction.count for reaction in reactions
                 if emoji_name(reaction.emoji) in EMOJI_DOWNVOTES])
-
-
-def count_pins(reactions):
-    return sum([reaction.count for reaction in reactions
-                if emoji_name(reaction.emoji) in EMOJI_PINS])
 
 
 def emoji_name(emoji):

@@ -125,9 +125,7 @@ class ClubMessage(BaseModel):
     id = IntegerField(primary_key=True)
     url = CharField()
     content = CharField()
-    upvotes_count = IntegerField(default=0)
-    downvotes_count = IntegerField(default=0)
-    pin_reactions_count = IntegerField(default=0)
+    reactions = JSONField(default=lambda: {})
     created_at = DateTimeField(index=True)
     author = ForeignKeyField(ClubUser, backref='list_messages')
     channel_id = IntegerField()
@@ -135,6 +133,10 @@ class ClubMessage(BaseModel):
     channel_mention = CharField()
     type = CharField(default='default')
     is_pinned = BooleanField(default=False)
+
+    # TODO remove and compile from reactions
+    upvotes_count = IntegerField(default=0)
+    downvotes_count = IntegerField(default=0)
 
     @property
     def emoji_prefix(self):
@@ -186,12 +188,6 @@ class ClubMessage(BaseModel):
             .limit(limit)
 
     @classmethod
-    def pinned_by_reactions_listing(cls, min_pins=1):
-        return cls.select() \
-            .where(cls.pin_reactions_count >= min_pins) \
-            .order_by(cls.created_at)
-
-    @classmethod
     def last_message(cls, channel_id):
         return cls.select() \
             .where(cls.channel_id == channel_id) \
@@ -222,6 +218,12 @@ class ClubPinReaction(BaseModel):
     @classmethod
     def listing(cls):
         return cls.select()
+
+    @classmethod
+    def members_listing(cls):
+        return cls.select() \
+            .join(ClubUser) \
+            .where(ClubUser.is_member == True)
 
 
 class ClubSubscribedPeriod(BaseModel):

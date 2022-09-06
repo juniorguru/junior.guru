@@ -4,9 +4,8 @@ from datetime import timedelta
 import arrow
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (EMOJI_PINS, count_downvotes, count_pins, count_upvotes,
-                                 emoji_name, get_roles, run_discord_task, FUN_CHANNEL,
-                                 INTRO_CHANNEL, BOT_CHANNEL)
+from juniorguru.lib.club import (count_downvotes, count_upvotes, emoji_name, get_roles, run_discord_task,
+                                 FUN_CHANNEL, INTRO_CHANNEL, BOT_CHANNEL, EMOJI_PIN)
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
@@ -122,9 +121,9 @@ async def channel_worker(worker_no, authors, queue):
             ClubMessage.create(id=message.id,
                                url=message.jump_url,
                                content=message.content,
+                               reactions={emoji_name(reaction.emoji): reaction.count for reaction in message.reactions},
                                upvotes_count=count_upvotes(message.reactions),
                                downvotes_count=count_downvotes(message.reactions),
-                               pin_reactions_count=count_pins(message.reactions),
                                created_at=arrow.get(message.created_at).naive,
                                edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
                                author=authors[message.author.id],
@@ -134,25 +133,22 @@ async def channel_worker(worker_no, authors, queue):
                                type=message.type.name)
             messages_count += 1
 
-            for reacting_user in (await get_reacting_users(message.reactions)):
+            async for reacting_user in fetch_users_reacting_by_pin(message.reactions):
                 if reacting_user.id not in authors:
                     authors[reacting_user.id] = create_user(reacting_user)
                     users_count += 1
-
-                create_reaction(reacting_user, message)
+                create_pin_reaction(reacting_user, message)
                 pins_count += 1
 
         logger_w.info(f"Channel #{channel.id} added {messages_count} messages, {users_count} users, {pins_count} pins")
         queue.task_done()
 
 
-async def get_reacting_users(reactions):
-    users = set()
+async def fetch_users_reacting_by_pin(reactions):
     for reaction in reactions:
-        if emoji_name(reaction.emoji) in EMOJI_PINS:
-            for user in [user async for user in reaction.users()]:
-                users.add(user)
-    return users
+        if emoji_name(reaction.emoji) == EMOJI_PIN:
+            async for user in reaction.users():
+                yield user
 
 
 def create_user(user):
@@ -173,7 +169,7 @@ def create_user(user):
                            roles=get_roles(user))
 
 
-def create_reaction(user, message):
+def create_pin_reaction(user, message):
     logger_p = logger.getChild('pins')
     logger_p.debug(f"Message {message.jump_url} is pinned by user '{user.display_name}' #{user.id}")
     return ClubPinReaction.create(user=user.id, message=message.id)
