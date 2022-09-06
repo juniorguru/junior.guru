@@ -25,13 +25,11 @@ jobs:
           command: |
             date +'%Y-%m-%d' > .today
       - run:
-          name: Configure poetry
-          command: |
-            # https://github.com/python-poetry/poetry/issues/3336
-            poetry config experimental.new-installer false
-      - run:
           name: Install dependencies
           command: |
+            poetry --version
+            poetry self update
+            poetry --version
             poetry install
             poetry run playwright install chromium
             npm ci
