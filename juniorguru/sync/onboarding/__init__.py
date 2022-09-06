@@ -246,6 +246,7 @@ async def send_messages_to_member(client, member):
                 discord_message = await channel.fetch_message(message_id)
                 message_data = await create_message_data(client, member, message_content)
                 await discord_message.edit(**message_data)
+                await discord_message.add_reaction(EMOJI_UNREAD)
             else:
                 logger_m.warning('Discord mutations not enabled')
         else:
