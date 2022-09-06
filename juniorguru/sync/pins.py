@@ -51,9 +51,9 @@ async def process_pin_reaction(client, pin_reaction):
             '📌 Vidím špendlík! Ukládám ti příspěvek sem, do soukromé zprávy.'
         )
         embed_description = [
-            f"**{pin_reaction.message.author.display_name}** v {pin_reaction.message.channel_mention}:",
+            f"**{pin_reaction.message.author.display_name}** v kanálu „{pin_reaction.message.channel_name}”:",
             f"> {textwrap.shorten(pin_reaction.message.content, 500, placeholder='…')}",
-            f"[Hop na příspěvek]({pin_reaction.message.url})",
+            f"[Celý příspěvek]({pin_reaction.message.url})",
             "",
         ]
         try:
