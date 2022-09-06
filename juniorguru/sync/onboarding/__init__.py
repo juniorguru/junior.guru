@@ -31,7 +31,7 @@ ONBOARDING_CHANNELS_LIMIT = 100
 
 ONBOARDING_CATEGORY_NAME = '👋 Tipy pro tebe'
 
-CHANNEL_DELETE_TIMEOUT = timedelta(days=30 * 3)
+CHANNEL_DELETE_TIMEOUT = timedelta(days=30 * 2)
 
 CHANNELS_OPERATIONS_CHUNK_SIZE = 10
 
@@ -155,7 +155,7 @@ async def close_onboarding_channel(client, categories, channel):
     last_message_on = ClubMessage.last_message(channel.id).created_at.date()
     threshold_on = (TODAY - CHANNEL_DELETE_TIMEOUT)
     if last_message_on > threshold_on:
-        logger_c.warning(f"Would delete the channel, but waiting (last message on {last_message_on} > {threshold_on})")
+        logger_c.warning(f"Would delete, but waiting (last message on {last_message_on} > threshold on {threshold_on}, timeout is {CHANNEL_DELETE_TIMEOUT})")
     elif DISCORD_MUTATIONS_ENABLED:
         await channel.delete()
     else:
