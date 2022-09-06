@@ -41,6 +41,8 @@ BETA_USERS_MESSAGE = 1014611670598942743
 
 BETA_USERS_DATE = date(2022, 7, 17)
 
+NEXT_TIP_EMOJI = '✅'
+
 
 @sync_task(club_content_task)
 def main():
@@ -242,15 +244,28 @@ async def send_messages_to_member(client, member):
             logger_m.debug(f'Editing message {message_content[0]}: {len(message_content)} characters')
             if DISCORD_MUTATIONS_ENABLED:
                 discord_message = await channel.fetch_message(message_id)
-                await discord_message.edit(content=message_content, embeds=[])
+                message_data = await create_message_data(client, member, message_content)
+                await discord_message.edit(**message_data)
             else:
                 logger_m.warning('Discord mutations not enabled')
         else:
             logger_m.debug(f'Sending message {message_content[0]}: {len(message_content)} characters')
             if DISCORD_MUTATIONS_ENABLED:
-                await channel.send(content=message_content, embeds=[])
+                message_data = await create_message_data(client, member, message_content)
+                discord_message = await channel.send(**message_data)
+                await discord_message.add_reaction(NEXT_TIP_EMOJI)
             else:
                 logger_m.warning('Discord mutations not enabled')
+
+
+async def create_message_data(client, member, content):
+    return dict(content=content,
+                embed=discord.Embed(colour=discord.Colour.from_rgb(120, 179, 84),
+                                    description='Máš přečteno a chceš dostat další tip? Klikni na zaškrtávátko pod zprávou'),
+                allowed_mentions=discord.AllowedMentions(everyone=True,
+                                                         users=[await client.get_or_fetch_user(member.id)],
+                                                         roles=False,
+                                                         replied_user=True))
 
 
 def prepare_messages(history, scheduled_messages, today, context=None):
