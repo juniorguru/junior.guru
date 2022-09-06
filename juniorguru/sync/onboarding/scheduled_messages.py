@@ -19,7 +19,7 @@ def schedule_message(emoji):
 def render_hello(context):
     member = context['member']
     text = dedent(f'''
-        Vítám tě v klubu, {member.mention}! Já jsem kuře, zdejší bot. Pomáhám se vším, co by nemusel <@!668226181769986078> stíhat sám. Tento privátní kanál jsem vytvořilo jen pro tebe.
+        Vítej v klubu, {member.mention}! Já jsem kuře, zdejší bot. Pomáhám se vším, co by nemusel <@!668226181769986078> stíhat sám. Tento privátní kanál jsem vytvořilo jen pro tebe.
 
         **Jak funguje tento kanál?** 💬
         V klubu se toho děje hodně, tak ti sem budu posílat tipy, jak se orientovat. Ptej se tady na cokoliv ohledně fungování klubu, klidně reaguj na jednotlivé tipy, posílej zpětnou vazbu. Já odpovídat neumím, ale vidí sem i moderátoři a se vším ti rádi pomůžou.
@@ -50,14 +50,13 @@ def render_hello(context):
 @schedule_message('🧭')  # Day 2
 def render_orientation(context):
     return dedent('''
-        Dnes bych ti chtělo pomoci se základní orientací v klubu. Jak najít ten správný kanál a jak se tím vším nenechat zahltit?
+        Dnes ti chci pomoci se základní orientací. Kanálů je tady mnoho, ale neboj se toho. Po pár dnech si všimneš, že někde se toho děje víc, jinde je to klidnější a něco tě vůbec nezajímá, tak si to vypneš.
 
         **Jak se vyznat v kanálech?** 🗺
-        Kanálů je tady mnoho, ale neboj se toho. Po pár dnech si všimneš, že někde se toho děje víc, jinde je to klidnější a něco tě vůbec nezajímá, tak si to vypneš.
-
         Kanály jsou rozděleny do kategorií, např. Rituály, Studium, Shánění práce. To ti může orientaci zjednodušit. Každý kanál má svůj popis, kde zjistíš jeho účel. Na počítači stačí kanál rozkliknout a podívat se do horní lišty. Na mobilu se popis zobrazí, až když zprava vysuneš seznam členů.
 
-        Nelam si s tím ale moc hlavu. Potřebuješ na něco zeptat? Máš téma, které chceš probrat, ale nevíš kam s tím? Vždy se můžeš ujistit tady! Moderátoři ti poradí. Nebo to prostě dej do <#769966887055392768>, ten snese cokoliv.
+        **Stejně nevíš?** 🤔
+        Máš téma, které chceš probrat, ale není ti jasné kam s ním? Ujistit se můžeš v kanálu <#806215364379148348>, nebo se soukromě zeptej moderátorů a oni ti poradí. Ale určitě nad tím nedumej moc dlouho. Vždycky to můžeš dát do <#769966887055392768>, který snese cokoliv.
 
         **Je toho moc!** 🔕
         Pokud nemáš čas sledovat všechny diskuze, mrkni občas aspoň do <#789046675247333397>. Každý týden je tam shrnutí s nejoceňovanějšími příspěvky.
@@ -71,7 +70,7 @@ def render_orientation(context):
 @schedule_message('💬')  # Day 3
 def render_discord(context):
     return dedent('''
-        Píp píp! V tomto tipu ti vysvětlím, jak funguje Discord. Co to vlastně je? Jak tady správně komunikovat? K čemu jsou a jakfungují vlákna?
+        V tomto tipu ti vysvětlím, jak funguje Discord. Co to vlastně je? Jak tady správně komunikovat? K čemu jsou a jak fungují vlákna?
 
         **Co je Discord?** 👾
         Něco mezi sociální sítí a chatovací aplikací. Původně to začalo jako služba pro hráče, ale dnes už je tu všechno možné. Kdokoliv si tady může založit skupinu a pozvat do ní lidi, podobně jako na Facebooku. Skupiny jsou ale soukromé a jen na pozvánky, spíš jako na WhatsApp. Každá skupina (_Discord server_) se dělí na diskuzní kanály, podobně jako to má Slack. A navíc jsou tady hlasové kanály, kde se lidi mohou na jeden klik spojit přes (video)hovor.
@@ -93,7 +92,7 @@ def render_discord(context):
 @schedule_message('🐣')  # Day 4
 def render_juniorguru(context):
     return dedent('''
-        Čau! Dnes to bude o tom, že na junior.guru není jen klub, ale i spousta motivace a užitečných rad, které by bylo škoda minout.
+        Dnes to bude o tom, že na junior.guru není jen klub, ale i spousta motivace a užitečných rad, které by bylo škoda minout.
 
         **Příručka** 📖
         Na https://junior.guru/handbook/ najdeš příručku pro juniory. Celá je zdarma ke čtení na webu a je v ní hromada užitečných tipů. Jak začít programovat? Jak si sehnat první praxi? Co je u pohovorů důležité? Jak připravit životopis? Tím vším a mnohým dalším tě příručka provede, krok za krokem. <@668226181769986078> stále přidává nové kapitoly, takže i pokud už máš něco přečtené, je dobré se tam po čase vracet.
