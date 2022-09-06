@@ -10,7 +10,7 @@ from slugify import slugify
 
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, JUNIORGURU_BOT, DISCORD_MUTATIONS_ENABLED, MODERATORS_ROLE, ANNOUNCEMENTS_CHANNEL
+from juniorguru.lib.club import run_discord_task, JUNIORGURU_BOT, DISCORD_MUTATIONS_ENABLED, MODERATORS_ROLE, ANNOUNCEMENTS_CHANNEL, emoji_name
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser, ClubMessage
@@ -246,7 +246,8 @@ async def send_messages_to_member(client, member):
                 discord_message = await channel.fetch_message(message_id)
                 message_data = await create_message_data(client, member, message_content)
                 await discord_message.edit(**message_data)
-                await discord_message.add_reaction(EMOJI_UNREAD)
+                if not get_reaction(discord_message.reactions, EMOJI_UNREAD):
+                    await discord_message.add_reaction(EMOJI_UNREAD)
             else:
                 logger_m.warning('Discord mutations not enabled')
         else:
@@ -257,6 +258,13 @@ async def send_messages_to_member(client, member):
                 await discord_message.add_reaction(EMOJI_UNREAD)
             else:
                 logger_m.warning('Discord mutations not enabled')
+
+
+def get_reaction(reactions, emoji):
+    for reaction in reactions:
+        if emoji_name(reaction.emoji) == emoji:
+            return reaction
+    return None
 
 
 async def create_message_data(client, member, content):
