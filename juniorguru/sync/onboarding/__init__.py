@@ -288,8 +288,8 @@ def prepare_messages(history, scheduled_messages, today, context=None):
     for emoji_prefix, message in past_messages.items():
         render_content = scheduled_messages[emoji_prefix]
         scheduled_content = prepare_message_content(emoji_prefix, render_content, context)
-        if message.content != scheduled_content:
-            messages.append((message.id, scheduled_content))
+        # TODO if message.content != scheduled_content:
+        messages.append((message.id, scheduled_content))
 
     # don't add a message twice the same day
     if past_messages:
