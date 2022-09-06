@@ -29,7 +29,6 @@ jobs:
           command: |
             poetry --version
             poetry self update
-            poetry --version
             poetry install
             poetry run playwright install chromium
             npm ci
