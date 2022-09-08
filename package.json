@@ -11,7 +11,7 @@
     "rough-notation": "0.5.1"
   },
   "devDependencies": {
-    "bootstrap": "5.2.0",
+    "bootstrap": "5.2.1",
     "broken-link-checker-local": "0.2.1",
     "del": "6.1.1",
     "gulp": "4.0.2",
