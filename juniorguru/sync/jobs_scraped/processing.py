@@ -266,6 +266,9 @@ def _postprocessor(id, op_queue, id_queue, pipelines):
             except DropItem:
                 logger_p.info(f"Dropping {job!r}")
                 op_queue.put(('delete', {'id': job_id}))
+            except Exception as e:
+                logger_p.exception(f"Executing pipelines for {job!r} failed: {e}")
+                op_queue.put(('delete', {'id': job_id}))
             finally:
                 id_queue.task_done()
     except Empty:
