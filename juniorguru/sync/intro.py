@@ -116,7 +116,7 @@ async def welcome(channel, message, moderators):
             try:
                 welcome_discord_message = list(filter(is_welcome_message, discord_messages))[0]
                 logger_m.debug(f"Welcome message already exists, updating: #{welcome_discord_message.id}")
-                if welcome_discord_message.content != content:
+                if welcome_discord_message.embeds or welcome_discord_message.content != content:
                     await welcome_discord_message.edit(content=content, embed=None)
             except IndexError:
                 logger_m.debug("Sending welcome message")
