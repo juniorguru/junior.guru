@@ -95,6 +95,7 @@ async def process_channels(channels):
 
 async def channel_worker(worker_no, authors, queue):
     logger_w = logger.getChild(f'channel_workers.{worker_no}')
+    logger_p = logger_w.getChild('pins')
     while True:
         channel = await queue.get()
         history_since = CHANNELS_HISTORY_SINCE.get(channel.id, DEFAULT_CHANNELS_HISTORY_SINCE)
@@ -137,7 +138,8 @@ async def channel_worker(worker_no, authors, queue):
                 if reacting_user.id not in authors:
                     authors[reacting_user.id] = create_user(reacting_user)
                     users_count += 1
-                create_pin_reaction(reacting_user, message)
+                logger_p.debug(f"Message {message.jump_url} is pinned by user '{reacting_user.display_name}' #{reacting_user.id}")
+                ClubPinReaction.create(user=reacting_user.id, message=message.id)
                 pins_count += 1
 
         logger_w.info(f"Channel #{channel.id} added {messages_count} messages, {users_count} users, {pins_count} pins")
@@ -167,9 +169,3 @@ def create_user(user):
                            tag=f'{user.name}#{user.discriminator}',
                            joined_at=(arrow.get(user.joined_at).naive if hasattr(user, 'joined_at') else None),
                            roles=get_roles(user))
-
-
-def create_pin_reaction(user, message):
-    logger_p = logger.getChild('pins')
-    logger_p.debug(f"Message {message.jump_url} is pinned by user '{user.display_name}' #{user.id}")
-    return ClubPinReaction.create(user=user.id, message=message.id)
