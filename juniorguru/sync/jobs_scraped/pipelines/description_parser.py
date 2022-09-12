@@ -1,7 +1,10 @@
 import re
 import unicodedata
+from pprint import pformat
 
 from lxml import html
+
+from juniorguru.lib import loggers
 
 
 # http://jkorpela.fi/chars/spaces.html
@@ -53,12 +56,19 @@ SENTENCE_END_RE = re.compile(r'''
 ''', re.VERBOSE)
 
 
+logger = loggers.get(__name__)
+
+
 def process(item):
-    description_text = extract_text(item['description_html'])
-    item['description_text'] = description_text
-    item['description_sentences'] = split_sentences(description_text)
-    # TODO item['description_words'] = split_words(description_text, job['lang'])
-    return item
+    try:
+        description_text = extract_text(item['description_html'])
+        item['description_text'] = description_text
+        item['description_sentences'] = split_sentences(description_text)
+        # TODO item['description_words'] = split_words(description_text, job['lang'])
+        return item
+    except Exception:
+        logger.exception(f"Unable to extract text from item:\n{pformat(item)}")
+        raise
 
 
 def extract_text(html_text):
@@ -72,7 +82,7 @@ def extract_text(html_text):
     - have all visual line breaks normalized as a single new line character,
     - have all other white space normalized as a single space character.
     """
-    el = html.fromstring(html_text)
+    el = html.fromstring(html_text.encode('utf-8'))
 
     # iterate over all elements which visually imply line break when rendered
     # in the browser and add the line break explicitly to their tail

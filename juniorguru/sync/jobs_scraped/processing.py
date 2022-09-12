@@ -71,6 +71,10 @@ def filter_relevant_paths(paths, last_seen_on):
     return [path for path in paths if path.parent in dirs]
 
 
+def sort_by_size(paths):
+    return sorted(paths, key=lambda path: path.stat().st_size, reverse=True)
+
+
 def process_paths(paths, pipelines, workers=None):
     """
     Load given paths (files) to the database. Before loading, process
@@ -81,7 +85,7 @@ def process_paths(paths, pipelines, workers=None):
     # First we create the path queue and fill it with paths pointing
     # at .jsonl.gz files we want to parse.
     path_queue = Queue()
-    for path in paths:
+    for path in sort_by_size(paths):
         path_queue.put(str(path))
 
     # Then we create the item queue, which will collect parsed items.
