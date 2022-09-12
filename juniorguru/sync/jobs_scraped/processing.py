@@ -17,6 +17,14 @@ from juniorguru.models.job import ScrapedJob
 
 WORKERS = os.cpu_count()
 
+LOGGING_PARSER_BATCH_SIZE = 100
+
+LOGGING_WRITER_BATCH_SIZE = 1000
+
+LOGGING_POSTPROCESSOR_BATCH_SIZE = 100
+
+LOGGING_PERSISTOR_BATCH_SIZE = 100
+
 
 logger = loggers.get(__name__)
 
@@ -128,10 +136,10 @@ def _reader(id, path_queue, item_queue, pipelines):
                     item = execute_pipelines(item, pipelines)
                     item_queue.put(item)
                     counter += 1
-                    if counter % 100 == 0:
-                        logger_r.info(f"Parsing {path}, so far {counter} items")
-                logger_r.info(f"Done parsing {path}, total {counter} items")
+                    if counter % LOGGING_PARSER_BATCH_SIZE == 0:
+                        logger_r.info(f"Parsing {path}, {counter} items")
             finally:
+                logger_r.info(f"Done parsing {path}, {counter} items total")
                 path_queue.task_done()
     except Empty:
         logger_r.debug("Nothing else to parse, closing")
@@ -180,6 +188,7 @@ def _writer(item_queue):
     """
     logger_w = logger.getChild('writer')
     logger_w.debug("Starting")
+    counter = 0
     try:
         while True:
             item = item_queue.get()
@@ -197,8 +206,12 @@ def _writer(item_queue):
             else:
                 logger_w.debug(f"Saved {item['url']} as {job!r}")
             finally:
+                counter += 1
+                if counter % LOGGING_WRITER_BATCH_SIZE == 0:
+                    logger_w.info(f"Saved {counter} items so far")
                 item_queue.task_done()
     finally:
+        logger_w.info(f"Saved {counter} items total")
         logger_w.debug("Closing writer")
 
 
@@ -261,6 +274,7 @@ def _postprocessor(id, op_queue, id_queue, pipelines):
     logger_p = logger.getChild(f'postprocessors.{id}')
     logger_p.debug(f"Starting, preprocessing pipelines: {pipelines!r}")
     pipelines = load_pipelines(pipelines)
+    counter = 0
     try:
         while True:
             job_id = id_queue.get(timeout=1)
@@ -276,8 +290,12 @@ def _postprocessor(id, op_queue, id_queue, pipelines):
                 logger_p.exception(f"Executing pipelines for {job!r} failed: {e}")
                 op_queue.put(('delete', {'id': job_id}))
             finally:
+                counter += 1
+                if counter % LOGGING_POSTPROCESSOR_BATCH_SIZE == 0:
+                    logger_p.info(f"Processed pipelines for {counter} jobs so far")
                 id_queue.task_done()
     except Empty:
+        logger_p.info(f"Processed pipelines for {counter} jobs total")
         logger_p.debug("Nothing else to postprocess, closing")
 
 
@@ -289,6 +307,7 @@ def _persistor(op_queue):
     """
     logger_p = logger.getChild('persistor')
     logger_p.debug("Starting")
+    counter = 0
     try:
         while True:
             operation, item = op_queue.get()
@@ -307,8 +326,12 @@ def _persistor(op_queue):
                 raise
             finally:
                 del job
+                counter += 1
+                if counter % LOGGING_PERSISTOR_BATCH_SIZE == 0:
+                    logger_p.info(f"Updated {counter} jobs so far")
                 op_queue.task_done()
     finally:
+        logger_p.info(f"Updated {counter} jobs total")
         logger_p.debug("Closing persistor")
 
 
