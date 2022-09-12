@@ -7,6 +7,7 @@ from multiprocessing import JoinableQueue as Queue, Process
 from pathlib import Path
 from pprint import pformat
 from queue import Empty
+from time import perf_counter
 
 from peewee import IntegrityError
 
@@ -120,11 +121,16 @@ def _reader(id, path_queue, item_queue, pipelines):
             logger_r.debug(f"Parsing {path}")
             counter = 0
             try:
+                t0 = perf_counter()
                 for item in parse(path):
                     item = execute_pipelines(item, pipelines)
                     item_queue.put(item)
                     counter += 1
-                logger_r.info(f"Parsed {path} into {counter} items")
+                    if counter % 100 == 0:
+                        t = perf_counter() - t0
+                        logger_r.info(f"Parsing {path}, so far {counter} items ({t / 60:.1f}min)")
+                t = perf_counter() - t0
+                logger_r.info(f"Done parsing {path}, total {counter} items ({t / 60:.1f}min)")
             finally:
                 path_queue.task_done()
     except Empty:
