@@ -120,7 +120,8 @@ async def welcome(channel, message, moderators):
                     await welcome_discord_message.edit(content=content, suppress=True)
             except IndexError:
                 logger_m.debug("Sending welcome message")
-                await thread.send(content=content, suppress=True)
+                welcome_discord_message = await thread.send(content=content)  # TODO suppress=True
+                await welcome_discord_message.edit(suppress=True)  # hotfix, https://github.com/Pycord-Development/pycord/pull/1587 not working?
 
             logger_m.debug("Analyzing if all moderators are involved")
             thread_members_ids = [member.id for member in (thread.members or await thread.fetch_members())]
