@@ -375,7 +375,7 @@ CNC jsou programovatelné průmyslové stroje, které umí frézovat, vrtat, sou
   Marek Dlabáček, autor článku [Já, Python a Roští](https://blog.python.cz/ja-python-a-rosti)
 {% endcall %}
 
-Tento web se zabývá vytvářením softwaru, tedy programů pro počítače nebo mobily. Pokud toužíš programovat CNC, mrkni se třeba [do magazínu Factory Automation](https://factoryautomation.cz/jak-se-stat-cnc-programatorem-mame-6-tipu/), kde k tomu něco mají. Jestliže chceš tvořit software, jsi tady správně.
+Tento web se zabývá vytvářením softwaru, tedy programů pro počítače nebo mobily. Pokud toužíš programovat CNC, budeš muset hledat informace jinde.
 
 ## Všechny motivační příběhy    <span id="stories"></span>
 
