@@ -3,7 +3,7 @@ title: Pravidla chování na junior.guru
 thumbnail_title: Pravidla chování
 ---
 
-{% from 'macros.html' import lead %}
+{% from 'macros.html' import lead, note %}
 
 
 # Pravidla chování
@@ -28,14 +28,12 @@ Pravidla platí pro všechny účastníky akcí a diskuzí pod hlavičkou Junior
 *   **Když nesouhlasíme, snažíme se pochopit proč.** Odlišné názory a neshody jsou běžnou součástí lidské komunikace a práce s technologiemi. V našem klubu se je však snažíme řešit konstruktivně. Každý přišel z jiného prostředí a přinesl si jinou zkušenost.
 *   **Chybovat je lidské.** Obviňování nikam nevede. Chyba je standardní součástí lidského učení. Pomáháme řešit následky a zamýšlíme se nad poučením do budoucna.
 
-Inspirováno [Django Code of Conduct](https://www.djangoproject.com/conduct/). Děkujeme!
-
 
 ## {{ 'question-circle'|icon }} Otázky a odpovědi
 
 ### Jak nahlásit porušení?
 
-Pokud jsi svědkem nevhodného chování, nebo dokonce jeho terčem, neprodleně kontaktuj realizační tým, organizátory nebo moderátory. Popiš co se stalo a pošli to na [chovani@junior.guru](mailto:chovani@junior.guru). Upozornění vždy zůstávají tajná a zodpovědné osoby se zavazují je řešit.
+Pokud jsi svědkem nevhodného chování, nebo dokonce jeho terčem, neprodleně kontaktuj realizační tým, organizátory nebo moderátory. Popiš co se stalo a pošli to na [honza@junior.guru](mailto:honza@junior.guru). Upozornění vždy zůstávají tajná a zodpovědné osoby se zavazují je řešit.
 
 ### Proč potřebujeme pravidla chování?
 
@@ -82,3 +80,8 @@ Následně přijde reakce. Ta může zahrnovat:
 *   veřejné pokárání,
 *   dočasné nebo stálé vyloučení z akcí nebo diskuzí pod hlavičkou Junior Guru,
 *   požadavek na veřejnou omluvu.
+
+
+{% call note(standout=True) %}
+  {{ 'heart'|icon }} Inspirováno [Django Code of Conduct](https://www.djangoproject.com/conduct/). Děkujeme!
+{% endcall %}
