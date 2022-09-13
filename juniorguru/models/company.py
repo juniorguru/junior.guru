@@ -55,12 +55,15 @@ class Company(BaseModel):
             .get()
 
     @classmethod
-    def listing(cls, today=None):
+    def listing(cls, today=None, sort_by_name=False):
         today = today or date.today()
-        return cls.select() \
+        query = cls.select() \
             .where(cls.starts_on <= today,
-                   (cls.expires_on >= today) | cls.expires_on.is_null()) \
-            .order_by(cls.starts_on, cls.name)
+                   (cls.expires_on >= today) | cls.expires_on.is_null())
+        if sort_by_name:
+            return query.order_by(cls.name)
+        else:
+            return query.order_by(cls.starts_on, cls.name)
 
     @classmethod
     def handbook_listing(cls, today=None):

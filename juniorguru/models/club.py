@@ -193,13 +193,14 @@ class ClubMessage(BaseModel):
             .first()
 
     @classmethod
-    def last_bot_message(cls, channel_id, startswith_emoji, contains_text=None):
+    def last_bot_message(cls, channel_id, startswith_emoji=None, contains_text=None):
         query = cls.select() \
             .join(ClubUser) \
             .where(ClubUser.id == JUNIORGURU_BOT,
-                   cls.channel_id == channel_id,
-                   cls.content.startswith(startswith_emoji)) \
+                   cls.channel_id == channel_id) \
             .order_by(cls.created_at.desc())
+        if startswith_emoji:
+            query = query.where(cls.content.startswith(startswith_emoji))
         if contains_text:
             query = query.where(cls.content.contains(contains_text))
         return query.first()

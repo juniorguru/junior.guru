@@ -102,38 +102,29 @@ def render_juniorguru(context):
     ''')
 
 
-# if not member.has_avatar:
-#     text += dedent('''
-#         Když si navíc dáš i profilový obrázek, dostaneš ode mě roli <@&836959652100702248>. Udělat to můžeš v sekci Profily nebo Uživatelský profil (_Profiles_ nebo _User Profile_) ve svém nastavení na Discordu. Nemusí to být přímo fotka, jde pouze o to, abychom tu neměli deset Honzů, které nerozeznáme od sebe.
-#     ''')
-
-
 # @schedule_message('🙋')  # Day 5
 # def render_roles(context):
 #     member = context['member']
 #     text = dedent('''
-#         Ahoj! Víš proč je někdo zelený a jiný žlutý? Co znamená medaile nebo hvězdička vedle jména? A k čemu je dobré reagovat na příspěvky pomocí emoji?
+#         Proč je někdo zelený, nebo žlutý? Co znamená medaile vedle jména? A proč se hodí používat emoji reakce na příspěvky?
 
 #         **Role** 🏅
-#         Na Discordu jde lidem dávat role, díky kterým mají barvu, ikonu vedle jména, jsou oddělení v seznamu členů, nebo mají oprávnění navíc, např. přístup do jinak skrytých kanálů.
+#         Na Discordu jde lidem dávat role, díky kterým mají barvu, ikonu vedle jména, jsou oddělení v seznamu členů, nebo mají nějaká oprávnění navíc.
 
 #         Na každém Discordu je to jinak, zcela podle chuti jeho správců. Tady v klubu se o většinu rolí starám já. Některé dávám jen pro lepší orientaci, jiné za zásluhy.
 #     ''')
 #     if not member.intro or not member.has_avatar:
 #         text += dedent('''
 #             **Mám #ahoj a profilovku** 🦸
-#             Když se představíš v <#788823881024405544> a dáš si profilový obrázek, dostaneš ode mě roli <@&836959652100702248>. Obrázek si můžeš nastavit v sekci Profily nebo Uživatelský profil (_Profiles_ nebo _User Profile_) na Discordu. Nemusí to být přímo fotka, jde pouze o to, abychom tu neměli deset Honzů, které nerozeznáme od sebe. Chodím do klubu zhruba jednou denně, takže je potřeba počkat, než se role objeví.
+#             Když se představíš v <#788823881024405544> a dáš si profilový obrázek, dostaneš ode mě roli <@&836959652100702248>. V uživatelském nastavení hledej sekci Profily nebo Uživatelský profil (_Profiles_ nebo _User Profile_). Nemusí to být fotka, jde pouze o to, abychom tu neměli deset Honzů, které nerozeznáme od sebe. Chodím do klubu zhruba jednou denně, takže je potřeba počkat, než se role objeví.
 #         ''')
 #     text += dedent('''
 #         **Hodně pomáhám** 💛
-#         Když si čteš v klubu a zaujme tě něčí příspěvek, rozdávej emoji reakce, třeba ❤️, 👍, nebo 👀. Někdo si dal práci s odpovědí a je fajn vědět, že to ostatní čtou a že to třeba pomohlo.
+#         Když si čteš v klubu a příspěvek tě zaujme, rozdávej emoji reakce, třeba ❤️, 👍, nebo 👀. Někdo si dal práci s odpovědí a je fajn vědět, že to ostatní čtou a že to pomohlo.
 
-#         Já pak tyto reakce počítám a dělám z toho týdenní souhrny v <#789046675247333397>, ale nejen to. Členové, kteří mají od začátku existence klubu nebo za poslední měsíc nejvíc pozitivně hodnocených příspěvků, ode mě dostávají nejprestižnější roli v klubu, <@&836960665578766396>.
+#         Já reakce počítám a dělám z toho týdenní souhrny v <#789046675247333397>, ale nejen ty. Členové, kteří mají za poslední rok nebo měsíc nejvíc pozitivně hodnocených příspěvků, ode mě dostávají nejprestižnější roli v klubu, <@&836960665578766396>.
 
-#         Všimni si, že si nehrajeme na seniory a juniory. Kdokoliv může být nápomocný, ať už dobrou myšlenkou, otázkou, odpovědí, nebo sdílením zajímavých tipů.
-
-#         **Firemní role** ✨
-#         Firmy, které pomáhají financovat junior.guru, mohou kromě jiného posílat do klubu své lidi. Všichni mají roli <@&837316268142493736> a hvězdičky u jména. Každá firma má pak ještě i svou roli, např. <@&938306918097747968>.
+#         Nehrajeme si na seniory a juniory. Kdokoliv může být nápomocný, ať už dobrou myšlenkou, otázkou, odpovědí, nebo sdílením zajímavých tipů.
 
 #         **Další role** 👑
 #         Následující role jsou docela vidět a je dobré je znát:
@@ -259,6 +250,8 @@ def render_juniorguru(context):
 
 ### 🌈 SPOLUPRACE
 # Spolupráce s firmami a komunitami - faq
+# **Firemní role** ✨
+# Firmy, které pomáhají financovat junior.guru, mohou kromě jiného posílat do klubu své lidi. Všichni mají roli <@&837316268142493736> a hvězdičky u jména. Každá firma má pak ještě i svou roli, např. <@&938306918097747968>.
 
 
 ####################################################################
@@ -267,6 +260,7 @@ def render_juniorguru(context):
 
 
 ### 🤓 DALSI TIPY
+# 📌 Dej reakci špendlíku ke zprávě, @kuře ti ji uloží
 # discord tipy zasobnik - citace, odkazy na zpravy, shift enter
 # **Online odkudkoliv** 💌
 # Discord jede jen tak v prohlížeči, ale má i svou aplikaci na počítač a na mobil. Mít klub v kapse se hodí, pokud se chceš zabavit nebo pomáhat, když zrovna čekáš ve frontě na poště.

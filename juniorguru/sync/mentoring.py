@@ -87,9 +87,7 @@ async def discord_task(client):
 
     logger.info('Syncing info')
     info_content = f'{INFO_EMOJI} Co to tady je? Jak to funguje?'
-    info_mentee_description = ('**Mentoring**\n'
-                               '\n'
-                               'Pomohlo by ti pravidelně si s někým na hodinku zavolat a probrat svůj postup? '
+    info_mentee_description = ('Pomohlo by ti pravidelně si s někým na hodinku zavolat a probrat svůj postup? '
                                'Předchozí zprávy v tomto kanálu představují seznam **mentorů**, kteří se k takové pomoci nabídli. '
                                'Postupuj následovně:\n'
                                '\n'
@@ -106,17 +104,23 @@ async def discord_task(client):
                                'Existuje i [přepis](https://github.com/honzajavorek/become-mentor/blob/master/README.md) a [český překlad](https://github.com/honzajavorek/become-mentor/blob/master/cs.md). '
                                'Potom napiš Honzovi, přidá tě do [seznamu](https://github.com/honzajavorek/junior.guru/blob/main/juniorguru/data/mentors.yml).')
     info_params = dict(content=info_content,
-                       embeds=[Embed(colour=Colour.orange(),
+                       embeds=[Embed(title='Mentoring', colour=Colour.orange(),
                                      description=info_mentee_description),
                                Embed(description=info_mentor_description)])
     if info_message:
         messages_trash.remove(info_message)
         logger.info("Editing info message")
         discord_message = await discord_channel.fetch_message(info_message.id)
-        await discord_message.edit(**info_params)
+        if DISCORD_MUTATIONS_ENABLED:
+            await discord_message.edit(**info_params)
+        else:
+            logger.warning('Discord mutations not enabled')
     else:
         logger.info("Creating new info message")
-        await discord_channel.send(**info_params)
+        if DISCORD_MUTATIONS_ENABLED:
+            await discord_channel.send(**info_params)
+        else:
+            logger.warning('Discord mutations not enabled')
 
     logger.info('Deleting extraneous messages')
     for message in messages_trash:
