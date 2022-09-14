@@ -84,7 +84,7 @@ Cílem je podat úvod do problematiky a přiblížit ji začátečníkům. Použ
 
 ### Mám si připravit slajdy?
 
-Pokud chceš, můžeš. Povinnost to není. Např. pokud spolu plánujeme AMA (_ask me anything_), tak to ani nedává smysl. Formát slajdů je na tobě, **ukázat můžeš cokoliv ze své obrazovky**.
+Pokud chceš, můžeš. Povinnost to není. Např. pokud spolu plánujeme Q&A, tak to ani nedává smysl. Formát slajdů je na tobě, **ukázat můžeš cokoliv ze své obrazovky**.
 
 ### Kdy to bývá?
 
@@ -94,8 +94,10 @@ Přednášky jsou zpravidla v **úterky v 18:00**, ale pokud by ti to vyhovovalo
 
 Jsi **jediná hvězda večera**. Je na tobě, jestli ti dává smysl mluvit 20, 30, nebo 40 minut. V ideálním případě by ale přednáška neměla s následnými dotazy překročit hodinu času.
 
-### Co je AMA?
+### Co je Q&A, dříve AMA?
 
-AMA znamená _ask me anything_. Pozveme si odborníka na určité téma a lidé z klubu mohou pokládat libovolné dotazy. Většinou je pokládají v předstihu a písemně do chatu v kanálu #klubovna-přednášky, takže se na ně lze i připravit. Mohou ale přibývat i v průběhu AMA.
+Q&A znamená _questions and answers_. Pozveme si odborníka na určité téma a lidé z klubu mohou pokládat libovolné dotazy. Většinou je pokládají v předstihu a písemně do chatu v kanálu #klubovna-přednášky, takže se na ně lze i připravit. Mohou ale přibývat i v průběhu.
 
-Když AMA začne, Honza pomáhá číst dotazy a ty odpovídáš, jak nejlépe umíš. Je úplně v pohodě říct, že nevíš. To je celé, nevyžaduje to žádnou speciální přípravu.
+Když akce začne, Honza pomáhá číst dotazy a ty odpovídáš, jak nejlépe umíš. Je úplně v pohodě říct, že nevíš. To je celé, nevyžaduje to žádnou speciální přípravu.
+
+Dříve jsme tomu říkali AMA, což znamená _ask me anything_, ale tuto zkratku moc lidí nezná, tak teď používáme Q&A.
