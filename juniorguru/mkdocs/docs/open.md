@@ -101,7 +101,7 @@ Ke konci roku 2020 jsem se rozhodl změnit byznys model a vytvořit kolem JG pla
 
 V ideálním případě by mě živilo individuální členství lidí v klubu, protože je to pravidelný, předvídatelný příjem, který mi navíc zajišťuje největší nezávislost.
 
-Individuální členství ale nevystačí, takže si domlouvám [spolupráce s firmami]({{ pricing_url }}) vždy formou nějakého ročního firemního členství v klubu. Spolupráce s firmami jsou jednorázové větší příjmy, které lze obtížně předvídat a mohou ovlivňovat mou kritičnost k firmám, se kterými spolupracuji.
+Individuální členství ale nevystačí, takže si domlouvám [spolupráce s firmami](pricing.md) vždy formou nějakého ročního firemního členství v klubu. Spolupráce s firmami jsou jednorázové větší příjmy, které lze obtížně předvídat a mohou ovlivňovat mou kritičnost k firmám, se kterými spolupracuji.
 
 Inzerci nabídek práce nechci zrušit, ale aktuálně není na vrcholu mých priorit. Pokud, tak spíše v podobě dlouhodobé spolupráce s firmou, než formou jednorázových inzerátů.
 

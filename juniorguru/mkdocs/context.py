@@ -44,7 +44,6 @@ def on_shared_context(context):
     context['today'] = TODAY
     context['profit_ttm'] = Transaction.profit_ttm(TODAY)
     context['revenue_ttm_breakdown'] = Transaction.revenue_ttm_breakdown(TODAY)
-    context['pricing_url'] = 'https://docs.google.com/document/d/1CIKQKQ9eTpS8LmdxGqppOSim4gYOpoRcekqmPpnyLEI/'
     context['cloudinary_host'] = CLOUDINARY_HOST
 
 

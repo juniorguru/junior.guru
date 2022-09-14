@@ -1,0 +1,7 @@
+{% extends 'main.html' %}
+
+{% block meta %}
+  {{ super() }}
+  {# https://developers.google.com/search/docs/advanced/crawling/301-redirects #}
+  <meta http-equiv="refresh" content="{{ page.meta.redirect_delay|default(1) }}; {{ page.meta.redirect_url }}">
+{% endblock meta %}

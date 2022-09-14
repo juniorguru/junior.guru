@@ -16,6 +16,8 @@ nav:
   - Práce: jobs/
   - Klub: club.md
 
+  - Ceník: pricing.md
+
   - Témata:
       - topics/adventofcode.md
       - topics/codility.md

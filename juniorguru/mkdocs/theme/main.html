@@ -18,7 +18,7 @@
         {{ img('static/images/logo.svg', 'Logo junior.guru', 90, 40, lazy=False) }}
       </a>
       <div class="navbar-buttons">
-        <a class="btn btn-outline-dark" href="{{ pricing_url }}" target="_blank" rel="noopener">Pro firmy</a>
+        <a class="btn btn-outline-dark" href="{{ pages|docs_url('pricing.md')|url }}">Pro firmy</a>
         {% if page.url != 'club/' %}
           <a class="btn btn-dark" href="{{ pages|docs_url('club.md')|url }}">Přidej se</a>
         {% endif %}
