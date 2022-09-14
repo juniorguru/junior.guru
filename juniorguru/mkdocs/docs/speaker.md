@@ -86,6 +86,10 @@ Cílem je podat úvod do problematiky a přiblížit ji začátečníkům. Použ
 
 Pokud chceš, můžeš. Povinnost to není. Např. pokud spolu plánujeme Q&A, tak to ani nedává smysl. Formát slajdů je na tobě, **ukázat můžeš cokoliv ze své obrazovky**.
 
+### Mohu promovat svoji firmu?
+
+Určitě! Pokud máte otevřené pozice pro juniory, nebo děláte něco, co by mohlo juniory zajímat, je to vyloženě žádoucí. I bez toho je ale vhodné říct něco o sobě, o svých úspěších, o firmě pro kterou dělám a co ta firma dělá.
+
 ### Kdy to bývá?
 
 Přednášky jsou zpravidla v **úterky v 18:00**, ale pokud by ti to vyhovovalo jinak, není problém se domluvit. Mezi přednáškami bývá dvoutýdenní mezera.
