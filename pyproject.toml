@@ -32,7 +32,7 @@ emoji = "*"
 favicon = "*"
 feedparser = "*"
 extruct = "*"
-py-cord = {version = "2.1.*", extras = ["speed"]}
+py-cord = {version = "*", extras = ["speed"]}
 gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
 markupsafe = "*"
