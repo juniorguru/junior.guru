@@ -60,9 +60,7 @@ async def discord_task(client):
             'description': dedent(f'''
                 Klub je místo, kde můžeš spolu s ostatními posunout svůj rozvoj v oblasti programování, nebo s tím pomoci ostatním. Místní bot <@{JUNIORGURU_BOT}> by tě měl postupně provést vším, co klub nabízí.
 
-                👋 Tykáme si, 📖 [Příručka](https://junior.guru/handbook), 🎙 [Podcast](https://junior.guru/podcast), ⚠️ [Pravidla chování](https://junior.guru/coc/), 💳 [Nastavení placení](https://juniorguru.memberful.com/account), 🤔 [Časté dotazy](https://junior.guru/faq/), 🎨 [Formátování zpráv](https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-)
-
-                📋 Pozvánky a promo patří do <#788826928147857439>, pracovní inzeráty do <#788833053425926195>
+                👋 Tykáme si, ⚠️ [Pravidla chování](https://junior.guru/coc/), 💳 [Nastavení placení](https://juniorguru.memberful.com/account), 🤔 [Časté dotazy](https://junior.guru/faq/)
             ''').strip()
         },
         # {  TODO
