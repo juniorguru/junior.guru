@@ -10,9 +10,12 @@
 
 - id: "0008"
   title: Michal Matuška (SUPERKODERS) o leadershipu a juniorech
+  avatar_path: avatars-participants/michal-matuska.jpg
   publish_on: "2022-09-15"
   description: |
     Osmý díl podcastu patří Michalu Matuškovi, frontend developerovi a spoluzakladateli firmy SUPERKODERS. S Pájou si povídá o tom, jak se on sám dostal k programování, co by poradil někomu, kdo začíná dnes, nebo o tom, co hledá na pohovorech u juniorů.
+  media_size: 26471110
+  media_duration_s: 1891
 
 - id: "0007"
   title: Mia Bajić (Seznam) o cestě z Bosny do českého Seznamu
