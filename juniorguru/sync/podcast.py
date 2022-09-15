@@ -162,12 +162,12 @@ async def discord_task(client):
                 f"{MESSAGE_EMOJI} Nastraž uši! <@!810862212297130005> natočila **{last_episode.number}. díl** junior.guru podcastu!"
             )
             embed_description_lines = [
-                f'**{last_episode.title_numbered}**\n\n'
                 f'ℹ️ {last_episode.description.strip()}\n',
-                f":sound: Pusť si to [na webu]({last_episode.url}) nebo v jakékoliv běžné podcastové službě",
-                f":hourglass: Díl má {last_episode.media_duration_m} minut",
+                f"🔊 Do půl hodiny se to objeví [na webu]({last_episode.url})",
+                "📥 Někdy brzo se to objeví i na všech běžných podcastových službách",
+                f"⏳ Díl má {last_episode.media_duration_m} minut",
             ]
-            embed = Embed(description='\n'.join(embed_description_lines))
+            embed = Embed(title=last_episode.title_numbered, description='\n'.join(embed_description_lines))
             embed.set_thumbnail(url=f"attachment://{Path(last_episode.poster_path).name}")
             file = File(IMAGES_DIR / last_episode.poster_path)
 
