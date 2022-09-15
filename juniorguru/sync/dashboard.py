@@ -7,7 +7,7 @@ import feedparser
 import requests
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task, JUNIORGURU_BOT
+from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubSubscribedPeriod, ClubUser
@@ -57,7 +57,7 @@ async def discord_task(client):
         {
             'title': 'Základní tipy',
             'colour': Colour.yellow(),
-            'description': dedent(f'''
+            'description': dedent('''
                 Klub je místo, kde můžeš spolu s ostatními posunout svůj rozvoj v oblasti programování, nebo s tím pomoci ostatním.
 
                 👋 Tykáme si, ⚠️ [Pravidla chování](https://junior.guru/coc/), 💳 [Nastavení placení](https://juniorguru.memberful.com/account), 🤔 [Časté dotazy](https://junior.guru/faq/)
