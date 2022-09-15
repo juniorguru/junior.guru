@@ -11,7 +11,7 @@ template: main_handbook.html
 # Nauč se základy programování
 
 {% call lead() %}
-  Jak začít programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe bude do úplného startu nejlepší a nejefektivnější. Až tím projdeš, můžeš začít [získávat praxi](practice.md).
+  Jak začít programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe bude do úplného startu nejlepší a nejefektivnější. Až tím projdeš, můžeš začít [získávat praxi](handbook/practice.md).
 {% endcall %}
 
 
@@ -222,7 +222,7 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 
 ## Kde najdeš pomoc    <span id="help"></span>
 
-Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout na týdny a úplně ti zkazit radost z učení. Neboj se ptát online, radit se s lidmi na [akcích](practice.md#najdi-inspiraci-poznej-lidi), nebo si najít [mentora](practice.md#najdi-si-mentora).
+Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout na týdny a úplně ti zkazit radost z učení. Neboj se ptát online, radit se s lidmi na [akcích](handbook/practice.md#najdi-inspiraci-poznej-lidi), nebo si najít [mentora](handbook/practice.md#najdi-si-mentora).
 
 ### Kde a jak se ptát    <span id="questions"></span>
 

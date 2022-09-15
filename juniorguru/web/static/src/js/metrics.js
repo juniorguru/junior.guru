@@ -21,9 +21,6 @@ function setupMetricsUtm(link) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  if (!gtag && console.log) {
-    console.error('GA not available, junior.guru metrics turned off');
-  }
   Array.from(document.querySelectorAll('*[data-metrics-utm]'))
     .forEach(setupMetricsUtm);
 });

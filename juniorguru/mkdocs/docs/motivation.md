@@ -84,7 +84,7 @@ Doktoři a vědci přicházejí na to, že když výpočty naprogramují, mohou 
   CIO Business World, článek [Naprogramuj si to sám!](https://www.cio.cz/clanky/naprogramuj-si-to-sam/)
 {% endcall %}
 
-Pokud chceš mít programování jako pomocníka, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](learn.md) nebo [jak si lze programování procvičovat a dále prohlubovat znalosti](practice.md).
+Pokud chceš mít programování jako pomocníka, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](learn.md) nebo [jak si lze programování procvičovat a dále prohlubovat znalosti](handbook/practice.md).
 
 {{ stories_list(stories_by_tags.careerswitch|sample(4)) }}
 
@@ -116,7 +116,7 @@ Je ovšem důležité počítat s tím, že **příprava ti může zabrat i dva 
   'český programátorský folklór',
 ) }}
 
-Pokud se chceš programováním živit, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](learn.md), [jak získat potřebnou praxi](practice.md) nebo [jak si hledat svou první práci](candidate-handbook.md). Kromě toho je tady i [stránka s nabídkami práce](/jobs/).
+Pokud se chceš programováním živit, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](learn.md), [jak získat potřebnou praxi](handbook/practice.md) nebo [jak si hledat svou první práci](candidate-handbook.md). Kromě toho je tady i [stránka s nabídkami práce](/jobs/).
 
 {{ stories_list(stories_by_tags.synergy|sample(4)) }}
 

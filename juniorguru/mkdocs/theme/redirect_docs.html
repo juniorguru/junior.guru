@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block canonical %}
+  <link rel="canonical" href="{{ pages|docs_url(page.meta.redirect)|absolute_url }}">
+{% endblock canonical %}
+
+{% block meta %}
+  {{ super() }}
+  {# https://developers.google.com/search/docs/advanced/crawling/301-redirects #}
+  <meta http-equiv="refresh" content="0; {{ pages|docs_url(page.meta.redirect)|absolute_url }}">
+  <script>window.location.replace('{{ pages|docs_url(page.meta.redirect)|absolute_url }}');</script>
+{% endblock meta %}

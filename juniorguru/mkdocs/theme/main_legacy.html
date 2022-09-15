@@ -9,7 +9,7 @@
 <html lang="cs" data-updated-at="{{ now.to('Europe/Prague') }}">
   <head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
     <meta charset="utf-8">
-    <link rel="canonical" href="{{ page.canonical_url }}">
+    {% block canonical %}<link rel="canonical" href="{{ page.canonical_url }}">{% endblock canonical %}
     <title>{{ page.meta.title }}</title>
 
     {% block meta %}
@@ -150,14 +150,6 @@
       </footer>
     </div>
 
-    <script>
-      if (window.location.hostname === 'junior.guru') {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-1316071-22');
-      }
-    </script>
     <script async defer src="https://sa.junior.guru/latest.js"></script>
     <noscript><img src="https://sa.junior.guru/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
   </body>

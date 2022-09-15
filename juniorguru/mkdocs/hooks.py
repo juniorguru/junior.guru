@@ -23,6 +23,7 @@ TEMPLATE_FILTERS = [
     'assert_empty',
     'relative_url',
     'screenshot_url',
+    'absolute_url',
 ]
 
 

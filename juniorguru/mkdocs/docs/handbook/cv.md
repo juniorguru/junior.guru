@@ -183,7 +183,7 @@ Takže co je výsledkem? Takové jakoby hashtagy. **Pár klíčových slov za se
 
 ### 6. Projekty
 
-Ukaž, že zvládáš **prakticky použít vědomosti z kurzů**. Že umíš vyrobit něco vlastního, nebo že se na něčem podílíš. [Portfolio projektů](../practice.md#najdi-si-projekt) je pro juniory nejdůležitější věc po [souhrnu](#4-souhrn), tak ať jsou na CV hezky vysoko a viditelně.
+Ukaž, že zvládáš **prakticky použít vědomosti z kurzů**. Že umíš vyrobit něco vlastního, nebo že se na něčem podílíš. [Portfolio projektů](practice.md#najdi-si-projekt) je pro juniory nejdůležitější věc po [souhrnu](#4-souhrn), tak ať jsou na CV hezky vysoko a viditelně.
 
 Absolvent školy s IT zaměřením ukazuje projekty jako svou **první praxi**. Samouk jimi navíc **kompenzuje formální vzdělání**. Jako by říkal: „Sice nemám školy, ale pokud dokážu vytvořit toto, tak je to asi jedno, ne?“
 

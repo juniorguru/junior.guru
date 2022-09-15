@@ -7,7 +7,7 @@ nav:
       - Úvod: handbook/index.md
       - Motivace: motivation.md
       - Základy: learn.md
-      - První praxe: practice.md
+      - První praxe: handbook/practice.md
       #- Psychika: handbook/mental-health.md
       - Git a GitHub: handbook/git.md
       - Hledání práce: candidate-handbook.md
@@ -16,7 +16,9 @@ nav:
   - Práce: jobs/
   - Klub: club.md
 
+  - Podcast: podcast.md
   - Ceník: pricing.md
+  - Pro přednášející: speaker.md
 
   - Témata:
       - topics/adventofcode.md
@@ -70,6 +72,9 @@ nav:
       - Zásady ochrany osobních údajů: privacy.md
       - Čísla a grafy: open.md
       - Licence obsahu (CC BY-SA): https://creativecommons.org/licenses/by-sa/4.0/deed.cs
+
+  - Přesměrování:
+      - První praxe: practice.md
 
 
 markdown_extensions:

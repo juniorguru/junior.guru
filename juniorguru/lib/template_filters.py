@@ -3,7 +3,7 @@ import random
 import re
 from datetime import date, datetime
 from operator import itemgetter
-from urllib.parse import unquote
+from urllib.parse import unquote, urljoin
 
 import arrow
 from slugify import slugify
@@ -23,6 +23,10 @@ def email_link(email):
 
 def relative_url(url):
     return url.replace('https://junior.guru', '')
+
+
+def absolute_url(url):
+    return urljoin('https://junior.guru', url)
 
 
 def md(*args, **kwargs):

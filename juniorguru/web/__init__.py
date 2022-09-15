@@ -235,9 +235,13 @@ def candidate_handbook():
 def open():
     return REFRESH_PAGE
 
+@app.route('/pricing/')
+def pricing():
+    return REFRESH_PAGE
+
 @app.route('/hire-juniors/')
 def hire_juniors():
-    return redirect(url_for('jobs', _external=True))
+    return redirect(url_for('pricing', _external=True))
 
 @app.route('/press/')
 def press():
