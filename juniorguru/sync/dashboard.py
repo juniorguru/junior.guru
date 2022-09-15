@@ -58,7 +58,7 @@ async def discord_task(client):
             'title': 'Základní tipy',
             'colour': Colour.yellow(),
             'description': dedent(f'''
-                Klub je místo, kde můžeš spolu s ostatními posunout svůj rozvoj v oblasti programování, nebo s tím pomoci ostatním. Místní bot <@{JUNIORGURU_BOT}> by tě měl postupně provést vším, co klub nabízí.
+                Klub je místo, kde můžeš spolu s ostatními posunout svůj rozvoj v oblasti programování, nebo s tím pomoci ostatním.
 
                 👋 Tykáme si, ⚠️ [Pravidla chování](https://junior.guru/coc/), 💳 [Nastavení placení](https://juniorguru.memberful.com/account), 🤔 [Časté dotazy](https://junior.guru/faq/)
             ''').strip()
