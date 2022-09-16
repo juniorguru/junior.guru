@@ -17,9 +17,9 @@ def db_connection():
 
 
 def test_listing(db_connection):
-    user1 = ClubUser.create(id=123, display_name='Honza', mention='...', tag='...')
+    user1 = ClubUser.create(id=123, display_name='Honza', mention='<@111>', tag='...')
     mentor1 = Mentor.create(id=123, name='Honza J.', topics='a, b, c', user=user1)
-    user2 = ClubUser.create(id=456, display_name='Anna', mention='...', tag='...')
+    user2 = ClubUser.create(id=456, display_name='Anna', mention='<@222>', tag='...')
     mentor2 = Mentor.create(id=456, name='Anna K.', topics='x, y, z', user=user2)
 
     assert list(Mentor.listing()) == [mentor2, mentor1]

@@ -2,7 +2,7 @@ from datetime import date, timedelta
 from pathlib import Path
 import asyncio
 
-from discord import Colour, Embed, File
+from discord import Color, Embed, File
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, INTRO_CHANNEL, JOBS_CHANNEL,
@@ -77,7 +77,7 @@ async def discord_task(client):
                     '\nJak přesně funguje firemní členství? Mrkni do [FAQ](https://junior.guru/faq/#firmy)',
                 ]
 
-                embed = Embed(colour=Colour.dark_grey(),
+                embed = Embed(color=Color.dark_grey(),
                               description='\n'.join(embed_description_lines))
                 embed.set_thumbnail(url=f"attachment://{Path(company.poster_path).name}")
                 file = File(IMAGES_DIR / company.poster_path)

@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from discord import Embed, Colour, ui, ButtonStyle
+from discord import Embed, Color, ui, ButtonStyle
 from strictyaml import Int, Map, Optional, Seq, Str, Url, Bool, load
 
 from juniorguru.lib import loggers
@@ -104,7 +104,7 @@ async def discord_task(client):
                                'Existuje i [přepis](https://github.com/honzajavorek/become-mentor/blob/master/README.md) a [český překlad](https://github.com/honzajavorek/become-mentor/blob/master/cs.md). '
                                'Potom napiš Honzovi, přidá tě do [seznamu](https://github.com/honzajavorek/junior.guru/blob/main/juniorguru/data/mentors.yml).')
     info_params = dict(content=info_content,
-                       embeds=[Embed(title='Mentoring', colour=Colour.orange(),
+                       embeds=[Embed(title='Mentoring', color=Color.orange(),
                                      description=info_mentee_description),
                                Embed(description=info_mentor_description)])
     if info_message:

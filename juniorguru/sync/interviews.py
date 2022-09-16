@@ -1,6 +1,6 @@
 from datetime import timedelta
 
-from discord import Embed, Colour
+from discord import Embed, Color
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, is_message_over_period_ago,
@@ -38,7 +38,7 @@ async def discord_task(client):
                 f'[{mentor.user.display_name}]({mentor.message_url}) – {mentor.topics}'
                 for mentor in Mentor.interviews_listing()
             ])
-            embed_mentors = Embed(colour=Colour.orange(),
+            embed_mentors = Embed(color=Color.orange(),
                                   description=embed_mentors_description)
 
             embed_handbook = Embed(description=(

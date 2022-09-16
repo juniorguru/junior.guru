@@ -269,7 +269,7 @@ def get_reaction(reactions, emoji):
 
 async def create_message_data(client, member, content):
     return dict(content=content,
-                embed=discord.Embed(colour=discord.Colour.from_rgb(120, 179, 84),
+                embed=discord.Embed(color=discord.Color.from_rgb(120, 179, 84),
                                     description='Máš přečteno a chceš dostat další tip? Klikni na zaškrtávátko pod zprávou'),
                 allowed_mentions=discord.AllowedMentions(everyone=True,
                                                          users=[await client.get_or_fetch_user(member.id)],

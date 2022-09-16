@@ -4,7 +4,7 @@ from collections import Counter
 
 from emoji import is_emoji
 from peewee import (BooleanField, CharField, DateTimeField, ForeignKeyField,
-                    IntegerField, DateField, fn)
+                    IntegerField, DateField, TextField, fn)
 
 from juniorguru.lib.charts import month_range
 from juniorguru.lib.club import (CLUB_LAUNCH_ON, INTRO_CHANNEL, IS_NEW_PERIOD_DAYS,
@@ -24,7 +24,7 @@ class ClubUser(BaseModel):
     has_avatar = BooleanField(default=True)
     avatar_path = CharField(null=True)
     display_name = CharField()
-    mention = CharField()
+    mention = CharField(unique=True)
     tag = CharField()
     coupon = CharField(null=True, index=True)
     roles = JSONField(default=lambda: [])
@@ -124,7 +124,7 @@ class ClubUser(BaseModel):
 class ClubMessage(BaseModel):
     id = IntegerField(primary_key=True)
     url = CharField()
-    content = CharField()
+    content = TextField()
     reactions = JSONField(default=lambda: {})
     upvotes_count = IntegerField(default=0)
     downvotes_count = IntegerField(default=0)
@@ -343,3 +343,26 @@ class ClubSubscribedPeriod(BaseModel):
 
     def __str__(self):
         return f'#{self.memberful_id} {self.start_on}…{self.end_on} {self.category}'
+
+
+class ClubDocumentedRole(BaseModel):
+    id = IntegerField(primary_key=True)
+    name = CharField(unique=True)
+    mention = CharField(unique=True)
+    slug = CharField(unique=True)
+    description = TextField()
+    position = IntegerField(unique=True)
+    emoji = CharField(null=True)
+
+    @classmethod
+    def get_by_slug(cls, slug):
+        if not slug:
+            raise ValueError(repr(slug))
+        return cls.select() \
+            .where(cls.slug == slug) \
+            .get()
+
+    @classmethod
+    def listing(cls):
+        return cls.select() \
+            .order_by(cls.position)

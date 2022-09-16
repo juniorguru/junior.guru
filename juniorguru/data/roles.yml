@@ -1,0 +1,74 @@
+- id: 795609174385098762
+  slug: moderator
+  description: |
+    Kdo hlídá fajn atmosféru v klubu, nasměruje tě, poradí ti.
+
+- id: 836960665578766396
+  slug: most_helpful
+  description: |
+    Kdo má od začátku existence klubu nebo za poslední měsíc nejvíc pozitivně hodnocených příspěvků (palce, srdíčka…). Nejprestižnější ocenění! Roli automaticky spravuje bot.
+
+- id: 915967369661251624
+  slug: psychologist
+  description: |
+    Pouze pro info, aby bylo ve <#864434067968360459> vidět, kdo je a není laik. Role je vysoko jen proto, aby barva a ikonka přebily ostatní.
+
+- id: 927588591914340403
+  slug: podcaster
+  description: |
+    Kdo moderuje [podcast](https://junior.guru/podcast/). Takže jen Pavlína.
+
+- id: 898289895624302653
+  slug: organizer
+  description: |
+    Kdo chce něco v klubu organizovat. Díky roli může vytvářet Discord akce a psát do <#789046675247333397>. Pokud chceš pro ostatní uspořádat v klubovně sraz nebo procvičování angličtiny, ozvi se v <#806215364379148348>.
+
+- id: 974297387935866910
+  slug: mentor
+  description: |
+    Kdo se nabízí v <#976054742117658634>. Roli automaticky spravuje bot.
+
+- id: 836928169092710441
+  slug: speaker
+  description: |
+    Kdo v historii měl, nebo teprve bude mít přednášku v klubu. Akce minulé i budoucí najdeš [na webu](https://junior.guru/events/). Roli automaticky spravuje bot.
+
+- id: 837316268142493736
+  slug: sponsor
+  description: |
+    Kdo má předplatné zaplacené některou z firem, které spolupracují s klubem. Roli automaticky spravuje bot.
+
+- id: 806851592799649874
+  slug: booster
+  description: |
+    Kdo si kromě předplatného v klubu platí ještě i Discord a [dá tady boost](https://support.discord.com/hc/en-us/articles/360028038352). Roli automaticky spravuje Discord.
+
+- id: 836930259982352435
+  slug: new
+  description: |
+    Kdo je prvních 15 dní v klubu. Roli automaticky spravuje bot.
+
+- id: 1020079121184849991
+  slug: adventofcode
+  description: |
+    Kdo v prosinci řeší <#819935312272424982>, má tuto roli pro radost a aby šlo všechny označit. Role je vysoko jen proto, aby stromeček přebil ostatní ikonky.
+
+- id: 836929320706113567
+  slug: most_discussing
+  description: |
+    Kdo se tady v klubu nejvíc vykecává. Jen pro info, záměrně to není žádné ocenění, protože kvantita není kvalita. Roli automaticky spravuje bot.
+
+- id: 917431428227145780
+  slug: founder
+  description: |
+    Kdo je v klubu od jeho vzniku v únoru 2021. Roli automaticky spravuje bot.
+
+- id: 917430017993093140
+  slug: year_old
+  description: |
+    Kdo se poprvé v klubu objevil před více než rokem. Roli automaticky spravuje bot.
+
+- id: 836959652100702248
+  slug: has_intro_and_avatar
+  description: |
+    Kdo má představení v <#788823881024405544> a nastavený profilový obrázek. Roli automaticky spravuje bot a může trvat i den, než se změny projeví.

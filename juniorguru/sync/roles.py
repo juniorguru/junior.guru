@@ -1,12 +1,14 @@
 from collections import Counter
+from pathlib import Path
 
-from discord import Colour
+from discord import Color
+from strictyaml import Map, Seq, Str, Int, load
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, get_roles, run_discord_task
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubUser
+from juniorguru.models.club import ClubUser, ClubDocumentedRole
 from juniorguru.models.company import Company
 from juniorguru.models.event import Event
 from juniorguru.models.mentor import Mentor
@@ -20,113 +22,144 @@ from juniorguru.sync.mentoring import main as mentoring_task
 
 logger = loggers.get(__name__)
 
+YAML_PATH = Path(__file__).parent.parent / 'data' / 'roles.yml'
 
-ROLES = {
-    'most_discussing': 836929320706113567,
-    'most_helpful': 836960665578766396,
-    'is_speaker': 836928169092710441,
-    'is_mentor': 974297387935866910,
-    'has_intro_and_avatar': 836959652100702248,
-    'is_new': 836930259982352435,
-    'is_sponsor': 837316268142493736,
-    'is_founder': 917431428227145780,
-    'is_year_old': 917430017993093140,
-}
+YAML_SCHEMA = Seq(
+    Map({
+        'id': Int(),
+        'slug': Str(),
+        'description': Str(),
+    })
+)
+
 COMPANY_ROLE_PREFIX = 'Firma: '
+
 STUDENT_ROLE_PREFIX = 'Student: '
 
 
-@sync_task(club_content_task,
-           events_task,
-           avatars_task,
-           subscriptions_task,
-           companies_task,
-           mentoring_task)
+@sync_task(
+    club_content_task,
+    events_task,
+    avatars_task,
+    subscriptions_task,
+    companies_task,
+    mentoring_task,
+)
 def main():
     run_discord_task('juniorguru.sync.roles.discord_task')
 
 
 @db.connection_context()
 async def discord_task(client):
+    logger.info('Setting up db table for documented roles')
+    ClubDocumentedRole.drop_table()
+    ClubDocumentedRole.create_table()
+
+    logger.info('Fetching info about roles')
+    yaml_records = {record.data['id']: record.data
+                    for record in load(YAML_PATH.read_text(), YAML_SCHEMA)}
+
+    # Why sorting and enumeration? Citing docs: "The recommended and correct way
+    # to compare for roles in the hierarchy is using the comparison operators on
+    # the role objects themselves."
+    discord_roles = await client.juniorguru_guild.fetch_roles()
+    documented_discord_roles = sorted([discord_role for discord_role
+                                       in discord_roles
+                                       if discord_role.id in yaml_records], reverse=True)
+
+    for position, discord_role in enumerate(documented_discord_roles, start=1):
+        logger.debug(f"#{position} {discord_role.name}")
+        ClubDocumentedRole.create(id=discord_role.id,
+                                  position=position,
+                                  name=discord_role.name,
+                                  mention=discord_role.mention,
+                                  slug=yaml_records[discord_role.id]['slug'],
+                                  description=yaml_records[discord_role.id]['description'].strip(),
+                                  emoji=discord_role.unicode_emoji)
+
+    logger.info('Preparing data for computing how to re-assign roles')
     members = ClubUser.members_listing()
     companies = Company.listing()
     changes = []
     top_members_limit = ClubUser.top_members_limit()
     logger.info(f'members_count={len(members)}, top_members_limit={top_members_limit}')
 
-    # role 'most_discussing'
+    logger.info('Computing how to re-assign role: most_discussing')
+    role_id = ClubDocumentedRole.get_by_slug('most_discussing').id
     messages_count_stats = calc_stats(members, lambda m: m.messages_count(), top_members_limit)
     logger.debug(f"messages_count {repr_stats(members, messages_count_stats)}")
-
     recent_messages_count_stats = calc_stats(members, lambda m: m.recent_messages_count(), top_members_limit)
     logger.debug(f"recent_messages_count {repr_stats(members, recent_messages_count_stats)}")
-
     most_discussing_members_ids = set(messages_count_stats.keys()) | set(recent_messages_count_stats.keys())
     logger.debug(f"most_discussing_members: {repr_ids(members, most_discussing_members_ids)}")
-
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.roles, most_discussing_members_ids, ROLES['most_discussing']))
+        changes.extend(evaluate_changes(member.id, member.roles, most_discussing_members_ids, role_id))
 
-    # role 'most_helpful'
+    logger.info('Computing how to re-assign role: most_helpful')
+    role_id = ClubDocumentedRole.get_by_slug('most_helpful').id
     upvotes_count_stats = calc_stats(members, lambda m: m.upvotes_count(), top_members_limit)
     logger.debug(f"upvotes_count {repr_stats(members, upvotes_count_stats)}")
-
     recent_upvotes_count_stats = calc_stats(members, lambda m: m.recent_upvotes_count(), top_members_limit)
     logger.debug(f"recent_upvotes_count {repr_stats(members, recent_upvotes_count_stats)}")
-
     most_helpful_members_ids = set(upvotes_count_stats.keys()) | set(recent_upvotes_count_stats.keys())
     logger.debug(f"most_helpful_members: {repr_ids(members, most_helpful_members_ids)}")
-
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.roles, most_helpful_members_ids, ROLES['most_helpful']))
+        changes.extend(evaluate_changes(member.id, member.roles, most_helpful_members_ids, role_id))
 
-    # role 'has_intro_and_avatar'
+    logger.info('Computing how to re-assign role: has_intro_and_avatar')
+    role_id = ClubDocumentedRole.get_by_slug('has_intro_and_avatar').id
     intro_avatar_members_ids = [member.id for member in members if member.has_avatar and member.intro]
     logger.debug(f"intro_avatar_members: {repr_ids(members, intro_avatar_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.roles, intro_avatar_members_ids, ROLES['has_intro_and_avatar']))
+        changes.extend(evaluate_changes(member.id, member.roles, intro_avatar_members_ids, role_id))
 
-    # role 'is_new'
+    logger.info('Computing how to re-assign role: new')
+    role_id = ClubDocumentedRole.get_by_slug('new').id
     new_members_ids = [member.id for member in members if member.is_new()]
     logger.debug(f"new_members_ids: {repr_ids(members, new_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.roles, new_members_ids, ROLES['is_new']))
+        changes.extend(evaluate_changes(member.id, member.roles, new_members_ids, role_id))
 
-    # role 'is_year_old'
+    logger.info('Computing how to re-assign role: year_old')
+    role_id = ClubDocumentedRole.get_by_slug('year_old').id
     year_old_members_ids = [member.id for member in members if member.is_year_old()]
     logger.debug(f"year_old_members_ids: {repr_ids(members, year_old_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.roles, year_old_members_ids, ROLES['is_year_old']))
+        changes.extend(evaluate_changes(member.id, member.roles, year_old_members_ids, role_id))
 
-    # role 'is_speaker'
+    logger.info('Computing how to re-assign role: speaker')
+    role_id = ClubDocumentedRole.get_by_slug('speaker').id
     speaking_members_ids = [member.id for member in Event.list_speaking_members()]
     logger.debug(f"speaking_members_ids: {repr_ids(members, speaking_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.roles, speaking_members_ids, ROLES['is_speaker']))
+        changes.extend(evaluate_changes(member.id, member.roles, speaking_members_ids, role_id))
 
-    # role 'is_mentor'
+    logger.info('Computing how to re-assign role: mentor')
+    role_id = ClubDocumentedRole.get_by_slug('mentor').id
     mentors_members_ids = [mentor.user.id for mentor in Mentor.listing()]
     logger.debug(f"mentors_ids: {repr_ids(members, mentors_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.roles, mentors_members_ids, ROLES['is_mentor']))
+        changes.extend(evaluate_changes(member.id, member.roles, mentors_members_ids, role_id))
 
-    # role 'is_founder'
+    logger.info('Computing how to re-assign role: founder')
+    role_id = ClubDocumentedRole.get_by_slug('founder').id
     founders_members_ids = [member.id for member in members if member.is_founder()]
     logger.debug(f"founders_members_ids: {repr_ids(members, founders_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.roles, founders_members_ids, ROLES['is_founder']))
+        changes.extend(evaluate_changes(member.id, member.roles, founders_members_ids, role_id))
 
-    # role 'is_sponsor'
+    logger.info('Computing how to re-assign role: sponsor')
+    role_id = ClubDocumentedRole.get_by_slug('sponsor').id
     coupons = list(filter(None, (company.coupon for company in companies)))
     sponsoring_members_ids = [member.id for member in members if member.coupon in coupons]
     logger.debug(f"sponsoring_members_ids: {repr_ids(members, sponsoring_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.roles, sponsoring_members_ids, ROLES['is_sponsor']))
+        changes.extend(evaluate_changes(member.id, member.roles, sponsoring_members_ids, role_id))
 
     # syncing with Discord
     if DISCORD_MUTATIONS_ENABLED:
         logger.info(f'Managing roles for {len(companies)} companies')
-        await manage_company_roles(client, companies)
+        await manage_company_roles(client, discord_roles, companies)
 
         for company in companies:
             company_members_ids = [member.id for member in company.list_members]
@@ -145,7 +178,8 @@ async def discord_task(client):
         logger.warning('Discord mutations not enabled')
 
 
-async def manage_company_roles(client, companies):
+# TODO rewrite so it doesn't need any async/await and can be tested
+async def manage_company_roles(client, discord_roles, companies):
     company_roles_mapping = {COMPANY_ROLE_PREFIX + company.name: company
                              for company in companies}
     student_roles_mapping = {STUDENT_ROLE_PREFIX + company.name: company
@@ -153,7 +187,7 @@ async def manage_company_roles(client, companies):
     roles_names = list(company_roles_mapping.keys()) + list(student_roles_mapping.keys())
     logger.info(f"There should be {len(roles_names)} roles with company or student prefixes")
 
-    existing_roles = [role for role in (await client.juniorguru_guild.fetch_roles())
+    existing_roles = [role for role in discord_roles
                       if role.name.startswith((COMPANY_ROLE_PREFIX, STUDENT_ROLE_PREFIX))]
     logger.info(f"Found {len(existing_roles)} roles with company or student prefixes")
 
@@ -167,10 +201,10 @@ async def manage_company_roles(client, companies):
     logger.info(f"Roles [{', '.join(roles_names_to_add)}] will be added")
     for role_name in roles_names_to_add:
         logger.info(f"Adding role '{role_name}'")
-        colour = Colour.dark_grey() if role_name.startswith(COMPANY_ROLE_PREFIX) else Colour.default()
-        await client.juniorguru_guild.create_role(name=role_name, colour=colour, mentionable=True)
+        color = Color.dark_grey() if role_name.startswith(COMPANY_ROLE_PREFIX) else Color.default()
+        await client.juniorguru_guild.create_role(name=role_name, color=color, mentionable=True)
 
-    existing_roles = [role for role in (await client.juniorguru_guild.fetch_roles())
+    existing_roles = [role for role in discord_roles
                       if role.name.startswith((COMPANY_ROLE_PREFIX, STUDENT_ROLE_PREFIX))]
     for role in existing_roles:
         company = company_roles_mapping.get(role.name)
@@ -187,6 +221,9 @@ async def manage_company_roles(client, companies):
 
 
 async def apply_changes(client, changes):
+    # Can't take discord_roles as an argument and use instead of fetching, because before
+    # this function runs, manage_company_roles makes changes to the list of roles. This
+    # function applies all changes to members, including the company/student ones.
     all_discord_roles = {discord_role.id: discord_role
                          for discord_role in await client.juniorguru_guild.fetch_roles()}
 
