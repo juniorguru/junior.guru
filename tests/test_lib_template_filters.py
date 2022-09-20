@@ -271,7 +271,7 @@ def test_revenue_categories():
     }) == [
         ('inzerce nabídek práce', 20),
         ('dobrovolné příspěvky', 10),
-        ('firemní členství', 4),
+        ('spolupráce s firmami', 4),
         ('individuální členství', 1),
     ]
 
@@ -282,7 +282,7 @@ def test_revenue_categories_less():
         'jobs': 20,
     }) == [
         ('inzerce nabídek práce', 20),
-        ('firemní členství', 4),
+        ('spolupráce s firmami', 4),
     ]
 
 

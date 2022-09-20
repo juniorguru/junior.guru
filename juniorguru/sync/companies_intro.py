@@ -61,7 +61,6 @@ async def discord_task(client):
                     )
 
                 embed_description_lines = [
-                    f'**{company.name}**\n\n'
                     f"ℹ️ Víc o firmě najdeš na [jejich webu]({company.url})",
                     "🛡 Mají logo na [stránce klubu](https://junior.guru/club/)",
                 ]
@@ -74,10 +73,10 @@ async def discord_task(client):
                 embed_description_lines += [
                     "💕 Chtějí pomáhat juniorům!",
                     '💰 Financují práci na [příručce pro juniory](https://junior.guru/handbook/)',
-                    '\nJak přesně funguje firemní členství? Mrkni do [FAQ](https://junior.guru/faq/#firmy)',
+                    '\nJak přesně funguje spolupráce s firmami? Mrkni do [FAQ](https://junior.guru/faq/#firmy)',
                 ]
 
-                embed = Embed(color=Color.dark_grey(),
+                embed = Embed(title=company.name, color=Color.dark_grey(),
                               description='\n'.join(embed_description_lines))
                 embed.set_thumbnail(url=f"attachment://{Path(company.poster_path).name}")
                 file = File(IMAGES_DIR / company.poster_path)

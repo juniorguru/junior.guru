@@ -124,7 +124,7 @@ Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velk
                 'backgroundColor': '#1755d1',
             },
             {
-                'label': 'firemní členství',
+                'label': 'spolupráce s firmami',
                 'data': charts_revenue_breakdown.pop('partnerships'),
                 'backgroundColor': '#638CDD',
             },
