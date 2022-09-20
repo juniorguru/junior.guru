@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, date
 
 from juniorguru.lib.club import JUNIORGURU_BOT
 from juniorguru.models.club import ClubMessage, ClubUser
-from juniorguru.sync.onboarding import prepare_messages
+from juniorguru.sync.onboarding.messages import prepare_messages
 
 
 SCHEDULED_MESSAGES = {
