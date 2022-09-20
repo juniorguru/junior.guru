@@ -14,8 +14,6 @@ CHANNEL_TOPIC_RE = re.compile(r'\#(?P<id>\d+)\s*$')
 
 CHANNELS_OPERATIONS_CHUNK_SIZE = 10
 
-ONBOARDING_CHANNELS_LIMIT = 100
-
 BETA_USERS_MESSAGE = 1014611670598942743
 
 BETA_USERS_EMOJI = '🐇'
@@ -32,8 +30,6 @@ async def manage_channels(client):
 
     members = [member for member in ClubUser.members_listing()
                if member.id in beta_users_ids or member.first_seen_on() > BETA_USERS_DATE]
-    if len(members) > ONBOARDING_CHANNELS_LIMIT:
-        raise RuntimeError(f"Need to onboard {len(members)} members, but the limit is {ONBOARDING_CHANNELS_LIMIT}")
     logger.info(f'Onboarding {len(members)} members')
 
     channels = list(filter(is_onboarding_channel, client.juniorguru_guild.channels))
