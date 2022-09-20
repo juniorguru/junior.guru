@@ -2,13 +2,13 @@ from collections import Counter
 from pathlib import Path
 
 from discord import Color
-from strictyaml import Map, Seq, Str, Int, load
+from strictyaml import Int, Map, Seq, Str, load
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, get_roles, run_discord_task
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubUser, ClubDocumentedRole
+from juniorguru.models.club import ClubDocumentedRole, ClubUser
 from juniorguru.models.company import Company
 from juniorguru.models.event import Event
 from juniorguru.models.mentor import Mentor
@@ -16,8 +16,8 @@ from juniorguru.sync.avatars import main as avatars_task
 from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.sync.companies import main as companies_task
 from juniorguru.sync.events import main as events_task
-from juniorguru.sync.subscriptions import main as subscriptions_task
 from juniorguru.sync.mentoring import main as mentoring_task
+from juniorguru.sync.subscriptions import main as subscriptions_task
 
 
 logger = loggers.get(__name__)

@@ -1,16 +1,18 @@
 import io
 import re
-from itertools import chain
 from datetime import datetime, timedelta
-from pathlib import Path
+from itertools import chain
 from multiprocessing import Pool
+from pathlib import Path
 from subprocess import PIPE, run
 
 import requests
-from playwright.sync_api import sync_playwright, Error as PlaywrightError, TimeoutError as PlaywrightTimeoutError
 from invoke import task
-from PIL import Image
 from lxml import html
+from PIL import Image
+from playwright.sync_api import (Error as PlaywrightError,
+                                 TimeoutError as PlaywrightTimeoutError,
+                                 sync_playwright)
 
 from juniorguru.lib import loggers
 

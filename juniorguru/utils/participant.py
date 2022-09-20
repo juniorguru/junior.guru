@@ -1,8 +1,8 @@
-from pathlib import Path
 import shutil
+from pathlib import Path
 
+from invoke import Exit, task
 from slugify import slugify
-from invoke import task, Exit
 
 from juniorguru.lib import loggers
 from juniorguru.lib.images import downsize_square_photo, replace_with_jpg

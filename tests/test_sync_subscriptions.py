@@ -3,8 +3,8 @@ from datetime import date
 import pytest
 
 from juniorguru.sync.subscriptions import (format_date, get_active_coupon,
-                                           get_student_months, get_student_started_on, get_subscribed_periods,
-                                           get_subscriptions)
+                                           get_student_months, get_student_started_on,
+                                           get_subscribed_periods, get_subscriptions)
 
 
 def test_get_active_coupon():

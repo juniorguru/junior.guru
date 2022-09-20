@@ -1,23 +1,24 @@
+from datetime import date
 from operator import attrgetter
 from textwrap import dedent
-from datetime import date
 
-from discord import Embed, Color
 import feedparser
 import requests
+from discord import Color, Embed
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubMessage, ClubSubscribedPeriod, ClubUser, ClubDocumentedRole
+from juniorguru.models.club import (ClubDocumentedRole, ClubMessage,
+                                    ClubSubscribedPeriod, ClubUser)
 from juniorguru.models.company import Company
 from juniorguru.models.event import Event
 from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.sync.companies import main as companies_task
 from juniorguru.sync.events import main as events_task
-from juniorguru.sync.subscriptions import main as subscriptions_task
 from juniorguru.sync.roles import main as roles_task
+from juniorguru.sync.subscriptions import main as subscriptions_task
 
 
 DASHBOARD_CHANNEL = 788822884948770846

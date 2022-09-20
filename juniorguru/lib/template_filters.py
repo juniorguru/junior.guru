@@ -6,8 +6,8 @@ from operator import itemgetter
 from urllib.parse import unquote, urljoin
 
 import arrow
-from slugify import slugify
 from markupsafe import Markup
+from slugify import slugify
 
 from juniorguru.lib.md import md as md_
 

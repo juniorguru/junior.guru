@@ -4,8 +4,9 @@ from datetime import timedelta
 import arrow
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (count_downvotes, count_upvotes, emoji_name, get_roles, run_discord_task,
-                                 FUN_CHANNEL, INTRO_CHANNEL, BOT_CHANNEL, EMOJI_PIN)
+from juniorguru.lib.club import (BOT_CHANNEL, EMOJI_PIN, FUN_CHANNEL, INTRO_CHANNEL,
+                                 count_downvotes, count_upvotes, emoji_name, get_roles,
+                                 run_discord_task)
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser

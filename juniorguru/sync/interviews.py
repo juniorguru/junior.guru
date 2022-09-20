@@ -1,10 +1,10 @@
 from datetime import timedelta
 
-from discord import Embed, Color
+from discord import Color, Embed
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, is_message_over_period_ago,
-                                 run_discord_task, MENTORING_CHANNEL)
+from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, MENTORING_CHANNEL,
+                                 is_message_over_period_ago, run_discord_task)
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage

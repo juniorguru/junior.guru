@@ -1,4 +1,4 @@
-from peewee import CharField, BooleanField, IntegerField, ForeignKeyField, fn
+from peewee import BooleanField, CharField, ForeignKeyField, IntegerField, fn
 
 from juniorguru.models.base import BaseModel
 from juniorguru.models.club import ClubUser

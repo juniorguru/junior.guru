@@ -1,9 +1,9 @@
-import re
 import asyncio
+import re
 from datetime import date
 
-from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib import loggers
+from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib.club import ANNOUNCEMENTS_CHANNEL
 from juniorguru.models.club import ClubUser
 from juniorguru.sync.onboarding.categories import is_onboarding_category

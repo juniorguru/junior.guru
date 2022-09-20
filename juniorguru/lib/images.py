@@ -1,12 +1,12 @@
-import re
+import mimetypes
 import pickle
+import re
+import shutil
 import tempfile
 from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
 from subprocess import DEVNULL, run
-import mimetypes
-import shutil
 
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image, ImageOps

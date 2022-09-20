@@ -1,5 +1,5 @@
 from collections import namedtuple
-from datetime import datetime, timedelta, date
+from datetime import date, datetime, timedelta
 
 from juniorguru.lib.club import JUNIORGURU_BOT
 from juniorguru.models.club import ClubMessage, ClubUser

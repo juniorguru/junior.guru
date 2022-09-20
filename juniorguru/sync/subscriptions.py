@@ -12,7 +12,7 @@ from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
 from juniorguru.lib.memberful import Memberful
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubUser, ClubSubscribedPeriod
+from juniorguru.models.club import ClubSubscribedPeriod, ClubUser
 from juniorguru.models.company import Company, CompanyStudentSubscription
 from juniorguru.sync.club_content import main as club_content_task
 from juniorguru.sync.companies import main as companies_task

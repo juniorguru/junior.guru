@@ -1,6 +1,6 @@
+import asyncio
 from datetime import date, timedelta
 from pathlib import Path
-import asyncio
 
 from discord import Color, Embed, File
 

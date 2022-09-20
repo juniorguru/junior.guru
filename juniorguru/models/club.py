@@ -1,10 +1,10 @@
 import math
-from datetime import date, timedelta
 from collections import Counter
+from datetime import date, timedelta
 
 from emoji import is_emoji
-from peewee import (BooleanField, CharField, DateTimeField, ForeignKeyField,
-                    IntegerField, DateField, TextField, fn)
+from peewee import (BooleanField, CharField, DateField, DateTimeField, ForeignKeyField,
+                    IntegerField, TextField, fn)
 
 from juniorguru.lib.charts import month_range
 from juniorguru.lib.club import (CLUB_LAUNCH_ON, INTRO_CHANNEL, IS_NEW_PERIOD_DAYS,

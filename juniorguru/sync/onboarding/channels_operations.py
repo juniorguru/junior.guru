@@ -1,10 +1,11 @@
-from datetime import timedelta, date
+from datetime import date, timedelta
 
 import discord
 from slugify import slugify
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, JUNIORGURU_BOT, MODERATORS_ROLE
+from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JUNIORGURU_BOT,
+                                 MODERATORS_ROLE)
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.onboarding.categories import manage_categories
 
