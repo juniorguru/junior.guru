@@ -954,7 +954,7 @@ w3lib = ">=1.19.0"
 
 [[package]]
 name = "peewee"
-version = "3.15.2"
+version = "3.15.3"
 description = "a little orm"
 category = "main"
 optional = false
@@ -2550,7 +2550,7 @@ parsel = [
     {file = "parsel-1.6.0.tar.gz", hash = "sha256:70efef0b651a996cceebc69e55a85eb2233be0890959203ba7c3a03c72725c79"},
 ]
 peewee = [
-    {file = "peewee-3.15.2.tar.gz", hash = "sha256:94d8eb7fc2b8d97d6216382bf5961239645dc9e2473b0e732eb6c79c920c4768"},
+    {file = "peewee-3.15.3.tar.gz", hash = "sha256:cc934286d0c0842203abe66a3c6583d1463371e633b03d6da054d0f74e70706f"},
 ]
 Pillow = [
     {file = "Pillow-9.2.0-cp310-cp310-macosx_10_10_x86_64.whl", hash = "sha256:a9c9bc489f8ab30906d7a85afac4b4944a572a7432e00698a7239f44a44e6efb"},
