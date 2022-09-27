@@ -7,7 +7,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JUNIORGURU_BOT,
                                  MODERATORS_ROLE)
 from juniorguru.models.club import ClubMessage
-from juniorguru.sync.onboarding.categories import get_available_category
+from juniorguru.sync.onboarding.categories import get_available_category, CHANNELS_PER_CATEGORY_EXCEPTION_CODE
 
 
 TODAY = date.today()
@@ -30,10 +30,7 @@ def channels_operation(operation_name):
 async def update_onboarding_channel(client, member, channel):
     logger_c = logger.getChild(f'channels.{channel.id}')
     logger_c.info(f"Updating (member #{member.id})")
-    category = await get_available_category(client)
-    if category and category.id != channel.category.id:
-        logger_c.debug(f"Moving from category #{channel.category.id} to #{category.id}")
-    channel_data = await prepare_onboarding_channel_data(client, category, member)
+    channel_data = await prepare_onboarding_channel_data(client, member)
     if DISCORD_MUTATIONS_ENABLED:
         await channel.edit(**channel_data)
     else:
@@ -46,12 +43,20 @@ async def update_onboarding_channel(client, member, channel):
 async def create_onboarding_channel(client, member):
     logger_c = logger.getChild('channels')
     logger_c.info(f"Creating (member #{member.id})")
-    category = await get_available_category(client)
-    channel_data = await prepare_onboarding_channel_data(client, category, member)
+    channel_data = await prepare_onboarding_channel_data(client, member)
     if DISCORD_MUTATIONS_ENABLED:
-        channel = await client.juniorguru_guild.create_text_channel(**channel_data)
-        member.onboarding_channel_id = channel.id
-        member.save()
+        category = get_available_category(client.juniorguru_guild.categories)
+        while True:
+            try:
+                channel = await client.juniorguru_guild.create_text_channel(category=category, **channel_data)
+                member.onboarding_channel_id = channel.id
+                member.save()
+                break
+            except discord.HTTPException as e:
+                if e.code != CHANNELS_PER_CATEGORY_EXCEPTION_CODE:
+                    raise
+                logger_c.info(f"Category #{category.id} is full")
+                category = get_available_category(await client.juniorguru_guild.fetch_channels())
     else:
         logger_c.warning('Discord mutations not enabled')
 
@@ -73,18 +78,16 @@ async def close_onboarding_channel(client, channel):
     last_message_on = ClubMessage.last_message(channel.id).created_at.date()
     current_period = TODAY - last_message_on
     if current_period < CHANNEL_DELETE_TIMEOUT:
-        logger_c.warning(f"Would delete, but waiting: Last message {last_message_on}, currently {current_period.days} days, timeout {CHANNEL_DELETE_TIMEOUT.days} days")
+        logger_c.warning(f"Waiting before deleting. Last message {last_message_on}, currently {current_period.days} days, timeout {CHANNEL_DELETE_TIMEOUT.days} days")
     elif DISCORD_MUTATIONS_ENABLED:
         await channel.delete()
     else:
         logger_c.warning('Discord mutations not enabled')
 
 
-async def prepare_onboarding_channel_data(client, category, member):
+async def prepare_onboarding_channel_data(client, member):
     name = f'{slugify(member.display_name, allow_unicode=True)}-tipy'
     topic = f'Soukromý kanál s tipy jen pro tebe! 🦸 {member.display_name} #{member.id}'
-    if not category:
-        raise ValueError('No category provided')
     moderators_role = [role for role in client.juniorguru_guild.roles if role.id == MODERATORS_ROLE][0]
     overwrites = {
         client.juniorguru_guild.default_role: discord.PermissionOverwrite(read_messages=False),
@@ -92,4 +95,4 @@ async def prepare_onboarding_channel_data(client, category, member):
         moderators_role: discord.PermissionOverwrite(read_messages=True),
         (await client.get_or_fetch_user(member.id)): discord.PermissionOverwrite(read_messages=True),
     }
-    return dict(name=name, topic=topic, category=category, overwrites=overwrites)
+    return dict(name=name, topic=topic, overwrites=overwrites)
