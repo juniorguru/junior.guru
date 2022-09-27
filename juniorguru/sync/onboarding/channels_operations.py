@@ -7,7 +7,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JUNIORGURU_BOT,
                                  MODERATORS_ROLE)
 from juniorguru.models.club import ClubMessage
-from juniorguru.sync.onboarding.categories import get_available_category, CHANNELS_PER_CATEGORY_EXCEPTION_CODE
+from juniorguru.sync.onboarding.categories import manage_category
 
 
 TODAY = date.today()
@@ -45,18 +45,11 @@ async def create_onboarding_channel(client, member):
     logger_c.info(f"Creating (member #{member.id})")
     channel_data = await prepare_onboarding_channel_data(client, member)
     if DISCORD_MUTATIONS_ENABLED:
-        category = get_available_category(client.juniorguru_guild.categories)
-        while True:
-            try:
-                channel = await client.juniorguru_guild.create_text_channel(category=category, **channel_data)
-                member.onboarding_channel_id = channel.id
-                member.save()
-                break
-            except discord.HTTPException as e:
-                if e.code != CHANNELS_PER_CATEGORY_EXCEPTION_CODE:
-                    raise
-                logger_c.info(f"Category #{category.id} is full")
-                category = get_available_category(await client.juniorguru_guild.fetch_channels())
+        async def create_channel(category):
+            channel = await client.juniorguru_guild.create_text_channel(category=category, **channel_data)
+            member.onboarding_channel_id = channel.id
+            member.save()
+        await manage_category(client.juniorguru_guild, create_channel)
     else:
         logger_c.warning('Discord mutations not enabled')
 

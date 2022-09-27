@@ -6,7 +6,7 @@ from juniorguru.sync.onboarding.channels import manage_channels
 from juniorguru.sync.onboarding.messages import send_messages
 
 
-@sync_task()#club_content_task)
+@sync_task(club_content_task)
 def main():
     run_discord_task('juniorguru.sync.onboarding.discord_task')
 
@@ -14,4 +14,4 @@ def main():
 @db.connection_context()
 async def discord_task(client):
     await manage_channels(client)
-    # await send_messages(client)
+    await send_messages(client)

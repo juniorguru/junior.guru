@@ -17,6 +17,18 @@ CHANNELS_PER_CATEGORY_EXCEPTION_CODE = 50035
 logger = loggers.get(__name__)
 
 
+async def manage_category(guild, async_fn):
+    category = get_available_category(guild.categories)  # from cache
+    while True:
+        try:
+            return await async_fn(category)
+        except discord.HTTPException as e:
+            if e.code != CHANNELS_PER_CATEGORY_EXCEPTION_CODE:
+                raise
+            logger.info(f"Category #{category.id} is full")
+            category = get_available_category(await guild.fetch_channels())  # fresh fetch
+
+
 class NoOnboardingCategoriesAvailableError(Exception):
     pass
 
