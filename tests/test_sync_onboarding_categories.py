@@ -7,7 +7,8 @@ from juniorguru.sync.onboarding.categories import (CHANNELS_PER_CATEGORY_LIMIT,
                                                    ONBOARDING_CATEGORY_NAME,
                                                    has_no_channels,
                                                    is_available_category,
-                                                   is_onboarding_category)
+                                                   is_onboarding_category,
+                                                   calc_missing_categories_count)
 
 
 StubChannel = namedtuple('StubChannel', 'name, type')
@@ -63,3 +64,17 @@ def test_has_no_channels(channels_count, expected):
     category = StubCategory(channels=create_channels(channels_count))
 
     assert has_no_channels(category) is expected
+
+
+@pytest.mark.parametrize('existing_categories_count, max_channels_needed, expected', [
+    (0, 0, 0),
+    (0, 10, 1),
+    (0, 42, 1),
+    (1, 42, 0),
+    (1, 55, 1),
+    (2, 55, 0),
+    (1, 233, 4),
+    (3, 300, 3),
+])
+def test_calc_missing_categories_count(existing_categories_count, max_channels_needed, expected):
+    assert calc_missing_categories_count(existing_categories_count, max_channels_needed) == expected

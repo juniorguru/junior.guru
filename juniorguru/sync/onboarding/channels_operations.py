@@ -7,7 +7,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JUNIORGURU_BOT,
                                  MODERATORS_ROLE)
 from juniorguru.models.club import ClubMessage
-from juniorguru.sync.onboarding.categories import manage_categories
+from juniorguru.sync.onboarding.categories import get_available_category
 
 
 TODAY = date.today()
@@ -27,10 +27,10 @@ def channels_operation(operation_name):
 
 
 @channels_operation('update')
-@manage_categories
-async def update_onboarding_channel(client, member, channel, category):
+async def update_onboarding_channel(client, member, channel):
     logger_c = logger.getChild(f'channels.{channel.id}')
     logger_c.info(f"Updating (member #{member.id})")
+    category = await get_available_category(client)
     if category and category.id != channel.category.id:
         logger_c.debug(f"Moving from category #{channel.category.id} to #{category.id}")
     channel_data = await prepare_onboarding_channel_data(client, category, member)
@@ -43,10 +43,10 @@ async def update_onboarding_channel(client, member, channel, category):
 
 
 @channels_operation('create')
-@manage_categories
-async def create_onboarding_channel(client, member, category):
+async def create_onboarding_channel(client, member):
     logger_c = logger.getChild('channels')
     logger_c.info(f"Creating (member #{member.id})")
+    category = await get_available_category(client)
     channel_data = await prepare_onboarding_channel_data(client, category, member)
     if DISCORD_MUTATIONS_ENABLED:
         channel = await client.juniorguru_guild.create_text_channel(**channel_data)

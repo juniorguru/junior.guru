@@ -6,7 +6,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib.club import ANNOUNCEMENTS_CHANNEL
 from juniorguru.models.club import ClubUser
-from juniorguru.sync.onboarding.categories import is_onboarding_category
+from juniorguru.sync.onboarding.categories import is_onboarding_category, delete_empty_categories, create_enough_categories
 from juniorguru.sync.onboarding.channels_operations import CHANNELS_OPERATIONS
 
 
@@ -34,8 +34,10 @@ async def manage_channels(client):
 
     channels = list(filter(is_onboarding_channel, client.juniorguru_guild.channels))
     logger.info(f"Managing {len(channels)} existing onboarding channels")
+    await create_enough_categories(client, len(members) + len(channels))
     channels_operations = prepare_channels_operations(channels, members)
     await execute_channels_operations(client, channels_operations)
+    await delete_empty_categories(client)
 
 
 async def fetch_beta_users(client):

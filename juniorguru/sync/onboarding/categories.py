@@ -1,3 +1,4 @@
+import math
 from functools import wraps
 from operator import attrgetter
 
@@ -17,45 +18,76 @@ CHANNELS_PER_CATEGORY_EXCEPTION_CODE = 50035
 logger = loggers.get(__name__)
 
 
-def manage_categories(channel_operation):
-    @wraps(channel_operation)
-    async def wrapper(client, *args, **kwargs):
-        category = sorted(filter(is_onboarding_category, client.juniorguru_guild.categories),
-                          key=attrgetter('position'))[0]
-        iteration = 1
-        while True:
-            logger.debug(f"Managing categories, iteration #{iteration}")
-            altered_args = list(args) + [category]
-            try:
-                return await channel_operation(client, *altered_args, **kwargs)
-            except discord.HTTPException as e:
-                if e.code != CHANNELS_PER_CATEGORY_EXCEPTION_CODE:
-                    raise
+# nefunguje position, kategorie se vytvari pod sebou
+# nefunguje to spravne, jak to jede paralelne, tak se vytvori pet kategorii najednou
+# pak se to dokonce zasekne (nekonecny cyklus?)
+# musi to umet "pouklizet"
 
-                # This is how the exception looks like:
-                #
-                #   discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
-                #   In parent_id: Maximum number of channels in category reached (50)
 
-                logger.info("Could not perform channel operation, given category is full")
-                logger.debug("Updating channels cache")
-                categories = filter(is_onboarding_category,
-                                    await client.juniorguru_guild.fetch_channels())
-                available_categories = sorted(filter(is_available_category, categories),
-                                              key=attrgetter('position'))
-                try:
-                    category = available_categories[0]
-                except IndexError:
-                    position = min([category.position for category in categories])
-                    logger.info(f"No available categories, creating a new one on position {position}")
-                    if DISCORD_MUTATIONS_ENABLED:
-                        category = await client.juniorguru_guild.create_category_channel(ONBOARDING_CATEGORY_NAME,
-                                                                                         position=position)
-                    else:
-                        logger.warning('Discord mutations not enabled')
-                        raise e
-            iteration += 1
-    return wrapper
+# def manage_categories(channel_operation):
+#     @wraps(channel_operation)
+#     async def wrapper(client, *args, **kwargs):
+#         category = sorted(filter(is_onboarding_category, client.juniorguru_guild.categories),
+#                           key=attrgetter('position'))[0]
+#         iteration = 1
+#         while True:
+#             logger.debug(f"Managing categories, iteration #{iteration}")
+#             altered_args = list(args) + [category]
+#             try:
+#                 return await channel_operation(client, *altered_args, **kwargs)
+#             except discord.HTTPException as e:
+#                 if e.code != CHANNELS_PER_CATEGORY_EXCEPTION_CODE:
+#                     raise
+
+#                 # This is how the exception looks like:
+#                 #
+#                 #   discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+#                 #   In parent_id: Maximum number of channels in category reached (50)
+
+#                 logger.info("Could not perform channel operation, given category is full")
+#                 logger.debug("Updating channels cache")
+#                 categories = list(filter(is_onboarding_category,
+#                                          await client.juniorguru_guild.fetch_channels()))
+#                 available_categories = sorted(filter(is_available_category, categories),
+#                                               key=attrgetter('position'))
+#                 try:
+#                     category = available_categories[0]
+#                 except IndexError:
+#                     position = min([category.position for category in categories]) - 1
+#                     logger.info(f"No available categories, creating a new one on position {position}")
+#                     if DISCORD_MUTATIONS_ENABLED:
+#                         category = await client.juniorguru_guild.create_category_channel(ONBOARDING_CATEGORY_NAME,
+#                                                                                          position=position)
+#                     else:
+#                         logger.warning('Discord mutations not enabled')
+#                         raise e
+#             iteration += 1
+#     return wrapper
+
+
+async def get_available_category(client):
+    channels = await client.juniorguru_guild.fetch_channels()
+    return sorted(filter(is_available_category, channels), key=attrgetter('position'))[0]
+
+
+async def create_enough_categories(client, max_channels_needed):
+    categories = list(filter(is_onboarding_category,
+                             await client.juniorguru_guild.fetch_channels()))
+    logger.info(f"Found {len(categories)} existing categories, maximum {max_channels_needed} channels will be needed")
+    missing_categories_count = calc_missing_categories_count(len(categories), max_channels_needed)
+    if missing_categories_count:
+        logger.info(f"Creating {missing_categories_count} categories to have enough of them even for the worst case scenario")
+        position = min([category.position for category in categories])
+        if DISCORD_MUTATIONS_ENABLED:
+            for _ in range(missing_categories_count):
+                await client.juniorguru_guild.create_category_channel(ONBOARDING_CATEGORY_NAME,                                                          position=position)
+        else:
+            logger.warning('Discord mutations not enabled')
+
+
+def calc_missing_categories_count(existing_categories_count, max_channels_needed):
+    max_categories_needed = math.ceil(max_channels_needed / CHANNELS_PER_CATEGORY_LIMIT)
+    return max(max_categories_needed - existing_categories_count, 0)
 
 
 async def delete_empty_categories(client):
