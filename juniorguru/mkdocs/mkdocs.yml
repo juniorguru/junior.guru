@@ -13,10 +13,10 @@ nav:
       - Hledání práce: candidate-handbook.md
       - Životopis: handbook/cv.md
       - LinkedIn: handbook/linkedin.md
+  - Podcast: podcast.md
   - Práce: jobs/
   - Klub: club.md
 
-  - Podcast: podcast.md
   - Ceník: pricing.md
   - Pro přednášející: speaker.md
 
