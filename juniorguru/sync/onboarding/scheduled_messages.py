@@ -102,45 +102,26 @@ def render_juniorguru(context):
     ''')
 
 
-# @schedule_message('🙋')  # Day 5
-# def render_roles(context):
-#     member = context['member']
-#     text = dedent('''
-#         Proč je někdo zelený, nebo žlutý? Co znamená medaile vedle jména? A proč se hodí používat emoji reakce na příspěvky?
+@schedule_message('🙋')  # Day 5
+def render_roles(context):
+    return dedent('''
+        Proč je někdo zelený, nebo žlutý? Co znamená medaile vedle jména? A proč se hodí používat emoji reakce na příspěvky?
 
-#         **Role** 🏅
-#         Na Discordu jde lidem dávat role, díky kterým mají barvu, ikonu vedle jména, jsou oddělení v seznamu členů, nebo mají nějaká oprávnění navíc.
+        **Role** 🏅
+        Na Discordu jde lidem dávat role, díky kterým mají barvu, ikonu vedle jména, jsou oddělení v seznamu členů, nebo mají nějaká oprávnění navíc.
 
-#         Na každém Discordu je to jinak, zcela podle chuti jeho správců. Tady v klubu se o většinu rolí starám já. Některé dávám jen pro lepší orientaci, jiné za zásluhy.
-#     ''')
-#     if not member.intro or not member.has_avatar:
-#         text += dedent('''
-#             **Mám #ahoj a profilovku** 🦸
-#             Když se představíš v <#788823881024405544> a dáš si profilový obrázek, dostaneš ode mě roli <@&836959652100702248>. V uživatelském nastavení hledej sekci Profily nebo Uživatelský profil (_Profiles_ nebo _User Profile_). Nemusí to být fotka, jde pouze o to, abychom tu neměli deset Honzů, které nerozeznáme od sebe. Chodím do klubu zhruba jednou denně, takže je potřeba počkat, než se role objeví.
-#         ''')
-#     text += dedent('''
-#         **Hodně pomáhám** 💛
-#         Když si čteš v klubu a příspěvek tě zaujme, rozdávej emoji reakce, třeba ❤️, 👍, nebo 👀. Někdo si dal práci s odpovědí a je fajn vědět, že to ostatní čtou a že to pomohlo.
+        Na každém Discordu je to jinak, zcela podle chuti správců. V klubu se o většinu rolí starám já. Některé dávám jen pro lepší orientaci, jiné za zásluhy. Dvě role ti vysvětlím přímo tady. Popis ostatních najdeš kdykoliv v kanálu <#788822884948770846>.
 
-#         Já reakce počítám a dělám z toho týdenní souhrny v <#789046675247333397>, ale nejen ty. Členové, kteří mají za poslední rok nebo měsíc nejvíc pozitivně hodnocených příspěvků, ode mě dostávají nejprestižnější roli v klubu, <@&836960665578766396>.
+        **Mám #ahoj a profilovku** 🦸
+        Když se představíš v <#788823881024405544> a dáš si profilový obrázek, dostaneš ode mě roli <@&836959652100702248>. V uživatelském nastavení hledej sekci Profily nebo Uživatelský profil (_Profiles_ nebo _User Profile_). Nemusí to být fotka, jde pouze o to, abychom tu neměli deset Honzů, které nerozeznáme od sebe. Chodím do klubu zhruba jednou denně, takže je potřeba počkat, než se role objeví.
 
-#         Nehrajeme si na seniory a juniory. Kdokoliv může být nápomocný, ať už dobrou myšlenkou, otázkou, odpovědí, nebo sdílením zajímavých tipů.
+        **Hodně pomáhám** 💛
+        Když si čteš v klubu a příspěvek tě zaujme, rozdávej emoji reakce, třeba ❤️, 👍, nebo 👀. Někdo si dal práci s odpovědí a je fajn vědět, že to ostatní čtou a že to pomohlo.
 
-#         **Další role** 👑
-#         Následující role jsou docela vidět a je dobré je znát:
+        Já reakce počítám a dělám z toho týdenní souhrny v <#789046675247333397>, ale nejen ty. Členové, kteří mají za poslední rok nebo měsíc nejvíc pozitivně hodnocených příspěvků, ode mě dostávají nejprestižnější roli v klubu, <@&836960665578766396>.
 
-#         ⭐️ <@&795609174385098762>
-#         🧠 <@&915967369661251624> (aby bylo ve <#864434067968360459> poznat, kdo je a není laik)
-#         <@&898289895624302653> (dobrovolníci, kteří pravidelně pořádají nějaké klubové akce)
-#         <@&974297387935866910> (kdo nabízí svou pomoc v <#976054742117658634>)
-#         <@&836928169092710441> (přednášející z oficiálních klubových akcí)
-#         🎄 Advent of Code (řešitelé <#819935312272424982>, používá se v prosinci)
-#         🏅 Rok v klubu, Zakládající člen
-#         <@&836930259982352435> (prvních 15 dní v klubu)
-
-#         Pak je tu ještě hodně dalších, které nemají velký význam a slouží především <@668226181769986078>, aby tu v tom měl pořádek.
-#     ''')
-#     return text
+        Nehrajeme si na seniory a juniory. Kdokoliv může být nápomocný, ať už dobrou myšlenkou, otázkou, odpovědí, nebo sdílením zajímavých tipů.
+    ''')
 
 
 # @schedule_message('💡')  # Day 6
