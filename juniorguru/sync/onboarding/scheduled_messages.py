@@ -52,6 +52,9 @@ def render_orientation(context):
     return dedent('''
         Dnes ti chci pomoci se základní orientací. Kanálů je tady mnoho, ale neboj se toho. Po pár dnech si všimneš, že někde se toho děje víc, jinde je to klidnější a něco tě vůbec nezajímá, tak si to vypneš.
 
+        **Co jsou kanály?** 💬
+        Jejich názvy začínají znakem #, ale nejsou to hashtagy. Kanály jsou jako místnosti v bytě nebo pódia na festivalu. Rozdělují diskuzi podle účelu a tématu. Nemusí být jen textové, existují i hlasové a další.
+
         **Jak se vyznat v kanálech?** 🗺
         Kanály jsou rozděleny do kategorií, např. Rituály, Studium, Shánění práce. To ti může orientaci zjednodušit. Každý kanál má svůj popis, kde zjistíš jeho účel. Na počítači stačí kanál rozkliknout a podívat se do horní lišty. Na mobilu se popis zobrazí, až když zprava vysuneš seznam členů.
 
@@ -124,19 +127,40 @@ def render_roles(context):
     ''')
 
 
-# @schedule_message('💡')  # Day 6
-# def render_sth(context):
-#     return dedent('''
-#          To jsem zase já!
-#     ''')
+@schedule_message('💡')  # Day 6
+def render_contributing(context):
+    return dedent('''
+        Už samotné čtení toho, co se v klubu probírá, je pro mnoho členů užitečné. Omezit se ale jen na to by byla velká škoda. Co dalšího klub nabízí?
 
 
-### 💡 CO TADY DELAT
-#
+    ''')
+
+
 # NASE SLA
+# se tolik neptal, protože nechtěl obtěžovat, přišlo mu, že jsou to blbosti a tak
 #
-# Dnes to bude o tom, jak to tady chodí a co všechno tady vlastně můžeš dělat.
-# Ten týpek, kterýho jsme hledali v klubu mi říkal, že se tolik neptal, protože nechtěl obtěžovat, přišlo mu, že jsou to blbosti a tak
+# že není cílem tady najít kámoše, co ti to budou na DM vysvětlovat
+#
+# motivovat lidi k veřejnému psaní a ne SZ
+#
+# Ještě jednou připomenu, že částku neplatíš za službu „někdo mi radí“, ale za „existuje místo, které se snaží být tím místem, kde mi někdo pomůže“, to je zásadní rozdíl.  Něco jako když město postaví za tvoje daně na promenádě pódium pro buskery a pouliční muzikanti tam hrají zadarmo hudbu. Jestli zrovna tu tvoji oblíbenou v době, kdy tam procházíš, to už není na městu, to jen udělalo prostor.
+#
+# z toho bych dal někam do onboardingu doporučení, ptej se, není to wikipedie
+#
+# Motivovat k použití místností, motivovat k použití poradny, CV, výrobky, ukazovat stránky v příručce, atd. - zajímá te něco? Zeptej se v pokecu, otevri tema, atd. a dat priklady co se muzou zeptat
+#
+#CLOVEK — Today at 14:44
+# Ahoj, byl jsem na tebe odkázán od # Messa. Otázka je . Jaká  je realita mezi kurzem a zaměstnání? Ptám se pro to jestli se dá uplatnit zkušenosti  z kurzu kterým jsem prošel a nebo to chce se zaměřit ještě na něco ? a zaměstnání? Ptám se pro to jestli se dá uplatnit zkušenosti  z kurzu kterým jsem prošel a nebo to chce se zaměřit ještě na něco ?
+# Jinak jsem tu to správu a další věci rozepisoval v #kurzi, je tam i odkaz na jeden můj kód
+# benabraham — Today at 18:19
+# Ano, ale ta mention byla na to, abych si toho případně všiml a odpověděl veřejně.
+# Radím výhradně veřejně, protože pak to pomáhá i jiným lidem, nejen tobě.
+# Výjimkou jsou situace, kdy jde o citlivé věci, což tady není.
+# CLOVEK — Today at 19:20
+# Dobře, beru na vědomí .
+#
+# mělo by ye zdůraznit, že to je plus pro tazajici, poradi vic lidi, vic pohledu
+# a taky ze je to trochu otravovani (ale tady opatrne), protoze vyžaduješ odpovědi přímo od někoho
 #
 # **CO TU JDE DĚLAT**
 # :speech_balloon: Diskutovat. Zkus #kariéra, #zdraví-těla, #kurzy…
@@ -147,11 +171,17 @@ def render_roles(context):
 # :muscle:  Chlubit se! Umíš něco nového? #til Máš něco hotové? #výrobky
 # :people_hugging: Ulevit si v #past-vedle-pasti
 #
+# spravne se ptat je dost narocna samostatna disciplina, je potreba se to naucit jako kazdy jiny skill, googlit je skill, cist odpovedi je skill. zkus vyhledavac, ale pokud vysledkum nerozumis, ptej se, ptej se, kdo se pta, ten se dozvi
+#
 # Veřejné a soukromé
 # TBD faq - co mam z clenstvi v klubu jako...? co tady jde delat… otevri tema, atd. a dat priklady co se muzou zeptat - verejne psani versus soukroma zprava, rady primo od honzy tady v kanalu, ptat se na vse kdyz nevis jak to funguje, poradime, jsme recepce, tajemstvi nepoustim bokem a kdyz dojde na lamani chleba, zastavam se junioru…
 #
+# Například že to není styl, hele kdo mi poradíte s Javou někdo se ozve a pak helé máš DM, tam to dořešíme jo
+#
+# transparentnost směrem ke mě, můžeš mi napsat cokoliv a žádné tajemství nepouštím bokem
+#
 # Proč vůbec něco psát?
-# TBD, dat priklady co se muzou zeptat, co mam z clenstvi v klubu jako… faq, verejne psani versus soukroma zprava, rady primo od honzy tady v kanalu, ptat se na vse kdyz nevis jak to funguje, poradime, jsme recepce, tajemstvi nepoustim bokem a kdyz dojde na lamani chleba, zastavam se junioru…
+# TBD, dat priklady co se muzou zeptat, co mam z clenstvi v klubu jako… faq
 
 
 # @schedule_message('💛')  # Day 7
@@ -204,6 +234,7 @@ def render_roles(context):
 
 
 ### 🔎 KURZY A VYHLEDAVANI
+# recenze a zkusenosti - jak pouzivat hledani
 # kurzy, recenze a zkusenosti, vyhledavani, Co vyplývá z toho, že je členem klubu nějaká vzdělávací agentura?, zkus si vyhledat recenzi na SDA od niny nebo GFA od lukyho, Jak se klub liší od škol, akademií a kurzů? Faq
 
 
@@ -214,6 +245,12 @@ def render_roles(context):
 
 ### 💁 MENTORING
 # jak funguje mentoring, anna prednaska, prostuduj si to, Jak se klub liší od individuálního mentoringu? Faq
+
+
+### 🧠 ZDRAVÍ MYSLI
+# Zatím tam píšou pouze „běžní lidé“. Jediný, kdo tu má vzdělání v psychologii, je Nela. Pokud by tě štvalo i to, co píše ona, bylo by to blbé (ale spis pro Nelu? 😀). Pokud te štve to, co píšou laici, tak to akorát znamená, ze se jim nepovedlo vcitit se do tve situace, nebo ti nesedí způsob, jakým ti chtějí laicky pomoci. To je normální a muže se to stát. Když se diskuze ve zdraví mysli ubírá smerem, který není vhodný (napr. kdyby někdo napsal ze má depresi a někdo jiný mu na to napsal „to bude v pohodě, vždyť svět je krásný“), většinou si toho Nela vsimne a usměrni nás.
+
+# Tedy co napíše Nela bych bral jako nějakou kvalifikovanější radu. Co napíšou ostatní - včetně mě - na tema zdraví mysli, bych bral jako takové to když se sveris kamarádům a oni se ti snaží pomoci, nebo to nějak okomentovat, nebo ti řeknou - já to mám stejně, nejsi v tom sama. Někdy to pomůže, někdy ne. Někdy se to trefí, někdy ne. Někdy pomůže už jen to, ze člověk svou frustraci ventiluje a ty rady lidi vlastně už ani nepotřebuje. Bývá to různé.
 
 
 ### 🏢 JOBS
