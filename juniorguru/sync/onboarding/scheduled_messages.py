@@ -132,7 +132,7 @@ def render_sth(context):
     return dedent('''
         Možná tě něco zajímá, ale bojíš se zeptat. Nechceš ostatní obtěžovat. Přijde ti, že se tady řeší pokročilejší věci, zatímco ty zápasíš se základy. Tvůj dotaz je nejspíš úplná blbost a někdo se ti akorát vysměje…
 
-        **Neboj!** :meowsheart:
+        **Neboj!** <:meowsheart:1002448596572061746>
         Smyslem celého klubu je, aby se začátečníci měli kde ptát a po ruce byl někdo, kdo jim poskytne pomoc, podporu nebo vysvětlení. Všichni jsme tu proto, abychom se něco naučili, sdíleli zkušenosti, radili se.
 
         To se ale může dařit jen pokud k sobě máme respekt a není tu čeho nebo koho se bát. Proto si dáváme záležet, aby tu bylo bezpečné a podporující prostředí.
