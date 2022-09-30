@@ -127,15 +127,53 @@ def render_roles(context):
     ''')
 
 
-@schedule_message('💡')  # Day 6
-def render_contributing(context):
+@schedule_message('💛')  # Day 6
+def render_sth(context):
     return dedent('''
-        Už samotné čtení toho, co se v klubu probírá, je pro mnoho členů užitečné. Omezit se ale jen na to by byla velká škoda. Co dalšího klub nabízí?
+        Možná tě něco zajímá, ale bojíš se zeptat. Nechceš ostatní obtěžovat. Přijde ti, že se tady řeší pokročilejší věci, zatímco ty zápasíš se základy. Tvůj dotaz je nejspíš úplná blbost a někdo se ti akorát vysměje…
 
+        **Neboj!** :meowsheart:
+        Smyslem celého klubu je, aby se začátečníci měli kde ptát a po ruce byl někdo, kdo jim poskytne pomoc, podporu nebo vysvětlení. Všichni jsme tu proto, abychom se něco naučili, sdíleli zkušenosti, radili se.
 
+        To se ale může dařit jen pokud k sobě máme respekt a není tu čeho nebo koho se bát. Proto si dáváme záležet, aby tu bylo bezpečné a podporující prostředí.
+
+        **Pravidla** ☑️
+        Přečti si zásady, kterými se to tu řídí: https://junior.guru/coc/ Popisují, jak se tady snažíme komunikovat a co tu naopak vítáno není.
+
+        Prohřešky bereme vážně. Na rozdíl od skupin např. na Facebooku, kde můžeš dostat posměšné, jízlivé, sexistické, nebo namachrované odpovědi, tady by byli takoví lidé rychle a rázně vyvedeni.
+
+        **Ptej se i na blbosti** 🙋
+        Hloupé otázky neexistují. Čím banálnější problém, tím snáz a rychleji ti může někdo odpovědět a mít radost, že poradil. Pokud existuje způsob, jak si příště můžeš pomoci i bez nás, tak ti to rádi a bez keců ukážeme.
+
+        I každé nové téma k diskuzi je fajn. To, co ti vrtá hlavou, často zajímá dalších třicet lidí, akorát nemají odvahu se zeptat.
+
+        **Piš moderátorům** 👮
+        Lidi jsou jen lidi a psaný projev má své limity, takže i v klubu samozřejmě dochází k nedorozuměním. I dobře míněná, ale stručná věta může vyznít úsečně, nebo až agresivně.
+
+        Hlídat nevhodné chování je jako dávat pozor, aby zahrádka nezarostla plevelem. Placený zahradník <@!668226181769986078> vše vyřeší za tebe, ale nemá oči všude a uvítá pomoc.
+
+        Stačí nechat pár kopřiv a záhonem se už nikdo chtít procházet nebude. Takže pokud se ti něco nepozdává, sdílej svoje pocity s moderátory. Neboj, zůstane to jen mezi vámi.
     ''')
 
 
+# @schedule_message('💡')  # Day 7
+# def render_contributing(context):
+#     return dedent('''
+#         Klub je pro většinu členů přínosný i pokud ho jen čtou. Když se však zapojíš trochu víc, poslouží ti ještě lépe.
+
+#         **Neboj se ptát** 🙋
+#         Pokud tě něco zajímá, zeptej se. Na rozdíl od školy nebo od jiných skupin na internetu se ti tady nikdo smát nebude.
+
+#         **Piš veřejně** 🥷
+
+#         **Buď vidět** 🦸
+
+#         **Pomoc od moderátorů** ⭐️
+
+#     ''')
+
+
+# **Další funkce klubu** 🎛
 # NASE SLA
 # se tolik neptal, protože nechtěl obtěžovat, přišlo mu, že jsou to blbosti a tak
 #
@@ -143,7 +181,7 @@ def render_contributing(context):
 #
 # motivovat lidi k veřejnému psaní a ne SZ
 #
-# Ještě jednou připomenu, že částku neplatíš za službu „někdo mi radí“, ale za „existuje místo, které se snaží být tím místem, kde mi někdo pomůže“, to je zásadní rozdíl.  Něco jako když město postaví za tvoje daně na promenádě pódium pro buskery a pouliční muzikanti tam hrají zadarmo hudbu. Jestli zrovna tu tvoji oblíbenou v době, kdy tam procházíš, to už není na městu, to jen udělalo prostor.
+# hloupa otazka neexistuje, ale může byt spatne polozena
 #
 # z toho bych dal někam do onboardingu doporučení, ptej se, není to wikipedie
 #
@@ -165,9 +203,8 @@ def render_contributing(context):
 # **CO TU JDE DĚLAT**
 # :speech_balloon: Diskutovat. Zkus #kariéra, #zdraví-těla, #kurzy…
 # :tv: Chodit na online srazy a přednášky
-# :person_tipping_hand: Najít řešení. Vytvoř vlákno v #mentoring, pomůžeme!
-# :person_raising_hand: Organizovat vlastní akce, vytvářet studijní skupinky
 # :clipboard:  Inzerovat v #práce, #pozvánky… Povolené, vítané!
+# :person_tipping_hand: Najít řešení. Vytvoř vlákno v #mentoring, pomůžeme!
 # :muscle:  Chlubit se! Umíš něco nového? #til Máš něco hotové? #výrobky
 # :people_hugging: Ulevit si v #past-vedle-pasti
 #
@@ -178,27 +215,8 @@ def render_contributing(context):
 #
 # Například že to není styl, hele kdo mi poradíte s Javou někdo se ozve a pak helé máš DM, tam to dořešíme jo
 #
-# transparentnost směrem ke mě, můžeš mi napsat cokoliv a žádné tajemství nepouštím bokem
-#
 # Proč vůbec něco psát?
 # TBD, dat priklady co se muzou zeptat, co mam z clenstvi v klubu jako… faq
-
-
-# @schedule_message('💛')  # Day 7
-# def render_sth(context):
-#     return dedent('''
-#           Nazdar!
-#     ''')
-
-
-### 💛 COC
-#
-# coc a jak se to lisi od skupin na FB, attitude a hodnoty - Jak se klub liší od skupin na Facebooku? Faq
-# Čau! Dnes to bude o tom, jak se klub liší od většiny jiných skupin na internetu, ať už jsou na Facebooku, na Discordu, nebo jinde.
-#
-# Bezpečný prostor
-#
-# Zahradník
 
 
 # @schedule_message('💸')  # Day 8
@@ -209,6 +227,9 @@ def render_contributing(context):
 
 
 ### 💸 PLACENI
+#
+#**Za co platíš?** 💸
+# Ještě jednou připomenu, že částku neplatíš za službu „někdo mi radí“, ale za „existuje místo, které se snaží být tím místem, kde mi někdo pomůže“, to je zásadní rozdíl.  Něco jako když město postaví za tvoje daně na promenádě pódium pro buskery a pouliční muzikanti tam hrají zadarmo hudbu. Jestli zrovna tu tvoji oblíbenou v době, kdy tam procházíš, to už není na městu, to jen udělalo prostor.
 #
 # placení za klub, vykopnutí, musí být kartou, kde najdes nastaveni a jak se prihlasis - budu rad za dosavadni feedback, napis jak se ti tu zatim libi, Existuje způsob, jak být v klubu zdarma? faq... celkově odkaz na sekci jak platit ve faq
 # na konci doplnit, že pokud 14 dní nestačilo na vyzkoušení, lze ti napsat a prodloužíš - nebo dát do „zadej kartu“ emailu, stejně tak sbírat feedback
@@ -241,7 +262,7 @@ def render_contributing(context):
 ### 📺 EVENTY
 #
 # klubove prednasky, ukol pust si neco, discord eventy, jak to probíhá, vlastní akce, iniciativa, role organizuju akce
-
+# :person_raising_hand: Organizovat vlastní akce, vytvářet studijní skupinky, mozna separatni tip na partaky a tak?
 
 ### 💁 MENTORING
 # jak funguje mentoring, anna prednaska, prostuduj si to, Jak se klub liší od individuálního mentoringu? Faq
@@ -254,6 +275,7 @@ def render_contributing(context):
 
 
 ### 🏢 JOBS
+# :clipboard:  Inzerovat v #práce, #pozvánky… Povolené, vítané!
 # pracovní nabídky bot, web jobs, pripomenout mute, k cemu jsou palce
 
 
