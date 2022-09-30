@@ -35,19 +35,23 @@
   position: relative;
   top: $navbar-padding-y;
   flex-wrap: nowrap;
-  justify-content: space-around;
   width: 100vw;
-  margin-right: -1 * $container-padding-x;
-  margin-left: -1 * $container-padding-x;
+  margin-right: $container-padding-x * -.5;
+  margin-left: $container-padding-x * -.5;
   border-top: 1px solid $jg-yellow-dark;
 
   @include media-breakpoint-up(md) {
     position: static;
     top: 0;
-    justify-content: left;
     width: auto;
     margin-right: auto;
     margin-left: 0;
     border-top: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .nav-foldable {
+    @include font-size($font-size-sm);
   }
 }
