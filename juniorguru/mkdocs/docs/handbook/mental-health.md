@@ -66,7 +66,7 @@ Psychoterapie jsou, zjednodušeně řečeno, **rozhovory s psychoterapeutem** o 
 
 Terapeuti své služby dnes už běžně nabízí **jak osobně, tak online**. Existují i specializované platformy nabízející terapii výhradně přes videohovor.
 
-Pokud po pár sezeních necítíš významné zlepšení, nevěš hlavu, **chce to čas**. Je běžné cítit se líp po pár týdnech, či měsících. Ale než pocítíš úplnou úlevu, může to trvat i víc než rok.
+Pokud po pár sezeních necítíš významné zlepšení, nevěš hlavu, **chce to čas**. Je běžné cítit se o něco lépe už po pár týdnech, či měsících, ale rovněž je normální zažít i dočasný výkyv k horšímu. Celé to může trvat i víc než rok.
 
 ### Klinický psycholog
 
@@ -137,7 +137,7 @@ Pokud **toužíš dosáhnout určitého stavu nebo cíle**, můžeš zkusit kou�
 
 Koučink nejde do hloubky a nezabývá se příliš emocemi, takže se nejedná o léčebný nástroj vhodný k řešení psychických obtíží, jakými jsou úzkosti nebo deprese.
 
-Kouč ti dává otevřené otázky a provádí tě procesem, při kterém si uvědomíš, čeho chceš vlastně dosáhnout, jaká je situace a jak to celé uděláš (model GROW). Koučování předpokládá, že jsi odborník na svůj život, a proto ti neradí, co máš udělat.
+Kouč ti dává otevřené otázky a provádí tě procesem, při kterém si uvědomíš, čeho chceš vlastně dosáhnout, jaká je situace a jak to celé uděláš (model GROW).
 
 Kouč je někdo, kdo absolvoval dlouhodobý a ideálně i akreditovaný koučovací výcvik, díky kterému je odborníkem na metodu koučování. Spolupráce s koučem se točí kolem konkrétních změn, a tak bývá rychlejší a za vyšší sazby, než je běžné u psychoterapie.
 
