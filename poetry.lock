@@ -853,20 +853,6 @@ watchdog = ">=2.0"
 i18n = ["babel (>=2.9.0)"]
 
 [[package]]
-name = "mkdocs-simple-hooks"
-version = "0.1.5"
-description = "Define your own hooks for mkdocs, without having to create a new package."
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-mkdocs = ">=1.2"
-
-[package.extras]
-test = ["pytest (>=4.0)", "pytest-cov"]
-
-[[package]]
 name = "multidict"
 version = "6.0.2"
 description = "multidict implementation"
@@ -1669,7 +1655,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.10.*"
-content-hash = "f6fb331318b0798eab8030a2880b603405ba2a106b553c88338d89792e1afbbb"
+content-hash = "1a0af3ebeb46ceed084a8a03f8aa0290ec0542b7766d95d9295bfe7b4a3890ba"
 
 [metadata.files]
 aiodns = [
@@ -2405,10 +2391,6 @@ mf2py = [
 mkdocs = [
     {file = "mkdocs-1.4.0-py3-none-any.whl", hash = "sha256:ce057e9992f017b8e1496b591b6c242cbd34c2d406e2f9af6a19b97dd6248faa"},
     {file = "mkdocs-1.4.0.tar.gz", hash = "sha256:e5549a22d59e7cb230d6a791edd2c3d06690908454c0af82edc31b35d57e3069"},
-]
-mkdocs-simple-hooks = [
-    {file = "mkdocs-simple-hooks-0.1.5.tar.gz", hash = "sha256:dddbdf151a18723c9302a133e5cf79538be8eb9d274e8e07d2ac3ac34890837c"},
-    {file = "mkdocs_simple_hooks-0.1.5-py3-none-any.whl", hash = "sha256:efeabdbb98b0850a909adee285f3404535117159d5cb3a34f541d6eaa644d50a"},
 ]
 multidict = [
     {file = "multidict-6.0.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:0b9e95a740109c6047602f4db4da9949e6c5945cefbad34a1299775ddc9a62e2"},

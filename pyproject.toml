@@ -36,7 +36,6 @@ py-cord = {version = "*", extras = ["speed"]}
 gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
 markupsafe = "*"
-mkdocs-simple-hooks = "*"
 ics = {version = "*", allow-prereleases = true}
 pod2gen = "*"
 invoke = "*"
