@@ -54,13 +54,13 @@
               {% if nav %}
                 <nav class="header__nav">
                   <ol class="header__nav-tabs">
-                    {%- for tab in (nav|list)[:3] -%}
+                    {%- for tab in (nav|list)[:4] -%}
                       <li class="header__nav-tab">
                         {{- '' -}}
                         <a class="
                           header__nav-tab-control
                           {% if tab.url == 'club/' %}
-                            header__nav-tab-control--button
+                            header__nav-tab-control--active
                           {% endif %}
                           {% if tab.active %}
                             header__nav-tab-control--active

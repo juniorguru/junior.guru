@@ -23,6 +23,7 @@ THUMBNAIL_HEIGHT = 630
 
 NAV_TABS = [
     {'endpoint': 'motivation', 'name': 'Příručka'},
+    {'endpoint': 'podcast', 'name': 'Podcast'},
     {'endpoint': 'jobs', 'name': 'Práce'},
     {'endpoint': 'club', 'name': 'Klub'},
 ]
@@ -213,6 +214,10 @@ REFRESH_PAGE = '<html><head><meta http-equiv="refresh" content="5"></head><body>
 
 @app.route('/club/')
 def club():
+    return REFRESH_PAGE
+
+@app.route('/podcast/')
+def podcast():
     return REFRESH_PAGE
 
 @app.route('/motivation/')

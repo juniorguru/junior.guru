@@ -174,7 +174,7 @@ function copyFavicon() {
 }
 
 const buildWeb = isLocalDevelopment
-  ? gulp.series(freezeFlask, buildMkDocs, minifyCSS)
+  ? gulp.series(freezeFlask, buildMkDocs)
   : gulp.series(freezeFlask, buildMkDocs, minifyCSS, copyFavicon);
 
 async function watchWeb() {
