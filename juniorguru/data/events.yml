@@ -68,25 +68,6 @@
 #   speakers: 854681167018459146
 
 
-# - title: "Co je to ten frontend? (bude upřesněno, pracovní název)"
-#   date: "2022-00-00"
-#   description: |
-#     (bude upřesněno)
-#   avatar_path: avatars-participants/coreskill.jpg
-#   bio_name: Daniel Srb, Kate Miháliková
-#   bio_title: vývojáři a mentoři, CoreSkill
-#   bio: |
-#       Dan Srb se zaměřuje na návrh a implementaci webových uživatelských rozhraní. Jezdí na skládačce a má rád dobrou kávu, i když už ji moc nepije. Kate Miháliková je frontedová vývojářka se zaměřením na TypeScript a JavaScript. Baví ji vlaky, hraje si ráda s Arduinem a na první dobrou rozezná jména Pokémonů od buzzwordů a názvů technologií.
-#   bio_links:
-#     - https://coreskill.tech/
-#     - https://github.com/katemihalikova
-#     - https://www.linkedin.com/in/katemihalikova/
-#     - https://github.com/benabraham
-#     - https://www.linkedin.com/in/danielsrb/
-#   logo_path: logos/coreskill.svg
-#   speakers: 652142810291765248, 488415538117214220
-
-
 # - title: "TBD (Java)"
 #   date: "2022-00-00"
 #   description: |
@@ -100,6 +81,22 @@
 #     - https://blog.zvestov.cz/
 #   logo_path: logos/TBD.svg
 #   speakers: ...
+
+
+- title: "Jak funguje mentoring a uvítání mentorů z Mews"
+  date: "2022-11-15"
+  description: |
+    Jak funguje mentoring v klubu a co přesně zahrnuje pravidelná nabídka, která vybízí ke kontaktování mentorů z firem? Uvítáme mentory z Mews, ať je máte v paměti jako reálné tváře a ne pouze jména na seznamu.
+  avatar_path: icon.svg
+  bio_name: Honza Javorek a mentoři z Mews
+  bio: |
+      (Bude upřesněno)
+  bio_links:
+    - https://www.mews.com/
+    - https://www.mews.com/en/careers
+    - https://github.com/MewsSystems/developers
+  logo_path: logos/mews.svg
+  speakers: 668226181769986078
 
 
 - title: "Technologický dluh – zabiják inovace"
