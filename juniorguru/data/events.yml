@@ -102,18 +102,55 @@
 #   speakers: ...
 
 
-# - title: "TBD (Webová analytika)"
-#   date: "2022-09-20"
-#   description: |
-#     TBD
-#   bio_name: Pavel Šabatka
-#   bio_title: TBD
-#   bio: |
-#     TBD
-#   bio_links:
-#     - https://www.linkedin.com/in/pavel-%C5%A1abatka-009a0020/
-#   logo_path: logos/houseofrezac.svg
-#   speakers: ...
+- title: "Technologický dluh – zabiják inovace"
+  date: "2021-11-01"
+  description: |
+    Během přednášky si na praktických příkladech z praxe (CSS, JavaScript a Python) ukážeme, jak technologický dluh nepříznivě ovlivňuje vývoj z dlouhodobého hlediska a řekneme si, jak jeho dopady eliminovat za použití automatizace.
+  avatar_path: avatars-participants/michal-simon.jpg
+  bio_name: Michal Šimon
+  bio_title: CEO, Codeac.io
+  bio: |
+    Po dokončení studia na univerzitě si Michal koupil letenku do Silicon Valley a odjel tam hledat práci jako vývojář ve startupu. Po několika letech a úspěšném exitu se vrátil zpět a začal vyvíjet nástroj [Codeac.io](https://www.codeac.io/), který pomáhá vyvojářům bojovat s technologickým dluhem.
+  bio_links:
+    - https://github.com/michal-simon/
+    - https://www.linkedin.com/in/michal-simon/
+    - https://twitter.com/michalsimon
+  logo_path: logos/codeac.svg
+  speakers: ''
+
+
+- title: "(Bude upřesněno)"
+  date: "2021-10-18"
+  description: |
+    (Bude upřesněno)
+  avatar_path: avatars-participants/matej-kotrba.jpg
+  bio_name: Matěj Kotrba
+  bio_title: IT headhunter, podcaster
+  bio: |
+    Matěj je IT headhunter, který pomáhá IT odborníkům najít fit pracovní příležitost a firmám najít nové kolegy do týmu. Zároveň je producentem podcastů **Fuckupy v IT** a **Fuckupy recuiterů**, které si můžete poslechhnout na všech dostupných platformách.
+  bio_links:
+    - https://twitter.com/MatjKotrba5
+    - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
+    - https://www.instagram.com/matejkotrba/
+    - https://www.vork.cz/
+  logo_path: logos/vork.png
+  speakers: 909742782254579763
+
+
+- title: "(Bude upřesněno, webová analytika)"
+  date: "2022-10-12"
+  description: |
+    (Bude upřesněno)
+  avatar_path: avatars-participants/pavel-sabatka.jpg
+  bio_name: Pavel Šabatka
+  bio_title: Webový analytik, House of Řezáč
+  bio: |
+    (Bude upřesněno)
+  bio_links:
+    - https://www.linkedin.com/in/pavel-%C5%A1abatka-009a0020/
+    - https://www.houseofrezac.com/
+  logo_path: logos/houseofrezac.png
+  speakers: 1002158848540413952
 
 
 - title: "Od C# k .NETu"
