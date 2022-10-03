@@ -70,7 +70,7 @@ Pokud po pár sezeních necítíš významné zlepšení, nevěš hlavu, **chce 
 
 ### Klinický psycholog
 
-Absolventi doktorského studia v oboru klinické psychologie mohou poskytovat psychoterapii a zhodnocovat tvůj psychický stav (psychodiagnostika). Sice ti **vše uhradí pojišťovna**, ale protože klinických psychologů není mnoho, tak mívají plno, nebo nabízejí dlouhé objednací lhůty.
+Absolventi postgraduálního specializačního vzdělávání v oboru klinické psychologie mohou poskytovat psychoterapii a zhodnocovat tvůj psychický stav (psychodiagnostika). Sice ti **vše uhradí pojišťovna**, ale protože klinických psychologů není mnoho, tak mívají plno, nebo nabízejí dlouhé objednací lhůty.
 
 ### Psychoterapeut na přímou platbu
 
