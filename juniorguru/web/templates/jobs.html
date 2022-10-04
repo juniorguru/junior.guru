@@ -13,7 +13,7 @@ Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušenost�
     <div class="engage__content">
       <ul class="engage__items">
         <li class="engage__item engage__item--handbook">
-          <a class="engage__item-link" href="{{ url_for('candidate_handbook') }}">Příručka o hledání práce</a>
+          <a class="engage__item-link" href="{{ url_for('handbook_candidate') }}">Příručka o hledání práce</a>
         </li>
         <li class="engage__item engage__item--club">
           <a class="engage__item-link" href="{{ url_for('club') }}">Klub pro juniory</a>
@@ -33,8 +33,7 @@ Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušenost�
   <h1 class="intro__title">Najdi svou první práci v&nbsp;IT</h1>
   <p class="intro__lead">
     <img class="intro__illustration" src="{{ url_for('static', filename='images/chick3.svg') }}">
-    Znáš <a href="{{ url_for('learn') }}">základy</a> a máš <a href="{{ url_for('practice') }}">minimální praxi</a>?
-    Pročti si <a href="{{ url_for('candidate_handbook') }}">příručku o hledání první práce v&nbsp;IT</a>
+    Pročti si <a href="{{ url_for('handbook') }}">příručku o hledání první práce v&nbsp;IT</a>
     a procházej nabídky práce. Na&nbsp;této stránce najdeš pouze ty pro juniory.
   </p>
 </header>

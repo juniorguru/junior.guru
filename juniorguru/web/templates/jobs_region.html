@@ -10,9 +10,7 @@ Tento portál je na tvé straně! Už žádné „požadujeme 4 roky zkušenost�
   <h1 class="intro__title">Práce pro juniory {{ region.name_in }}</h1>
   <p class="intro__lead">
     <img class="intro__illustration" src="{{ url_for('static', filename='images/chick3.svg') }}">
-    Chceš pracovat v&nbsp;IT, {{ region.name_in }}? Pokud máš <a href="{{ url_for('learn') }}">základy</a> a <a href="{{ url_for('practice') }}">minimální praxi</a>,
-    pročti si <a href="{{ url_for('candidate_handbook') }}">příručku o hledání práce</a>
-    a procházej nabídky. Tady najdeš pouze ty juniorní.
+    Chceš pracovat v&nbsp;IT, {{ region.name_in }}? <a href="{{ url_for('handbook') }}">příručku o hledání první práce v&nbsp;IT</a> a procházej nabídky. Tady najdeš pouze ty juniorní.
   </p>
 </header>
 {% endblock %}
