@@ -220,11 +220,11 @@ def club():
 def podcast():
     return REFRESH_PAGE
 
-@app.route('/motivation/')
+@app.route('/handbook/motivation/')
 def motivation():
     return REFRESH_PAGE
 
-@app.route('/learn/')
+@app.route('/handbook/learn/')
 def learn():
     return REFRESH_PAGE
 
