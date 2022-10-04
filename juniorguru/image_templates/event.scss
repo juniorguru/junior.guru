@@ -99,7 +99,8 @@ p {
 
 .bio-logo-image {
   display: block;
-  width: var(--bio-logo-width);
+  width: auto;
+  max-width: var(--bio-logo-width);
   height: auto;
   max-height: var(--bio-logo-height);
 }
