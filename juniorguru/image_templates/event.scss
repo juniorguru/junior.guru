@@ -185,3 +185,21 @@ p {
   font-weight: 400;
   line-height: 1.5;
 }
+
+@media (max-height: 650px) {
+  .bio-avatar {
+    width: 10rem;
+  }
+
+  .bio-logo {
+    height: 6rem;
+  }
+
+  .bio-logo-image {
+    max-height: 6rem;
+  }
+
+  .about {
+    display: none;
+  }
+}

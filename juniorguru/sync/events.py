@@ -39,6 +39,10 @@ YOUTUBE_THUMBNAIL_WIDTH = 1280
 
 YOUTUBE_THUMBNAIL_HEIGHT = 720
 
+DISCORD_THUMBNAIL_WIDTH = 1280
+
+DISCORD_THUMBNAIL_HEIGHT = 512
+
 EVENTS_CHANNEL = 940587142659338300
 
 
@@ -110,6 +114,10 @@ def main():
                                             'event.html', tpl_context, POSTERS_DIR,
                                             filters=tpl_filters, prefix=prefix)
             event.poster_path = image_path.relative_to(IMAGES_DIR)
+            image_path = render_image_file(DISCORD_THUMBNAIL_WIDTH, DISCORD_THUMBNAIL_HEIGHT,
+                                            'event.html', tpl_context, POSTERS_DIR,
+                                            filters=tpl_filters, prefix=prefix, suffix='dc')
+            event.poster_dc_path = image_path.relative_to(IMAGES_DIR)
             image_path = render_image_file(YOUTUBE_THUMBNAIL_WIDTH, YOUTUBE_THUMBNAIL_HEIGHT,
                                             'event.html', tpl_context, POSTERS_DIR,
                                             filters=tpl_filters, prefix=prefix, suffix='yt')
@@ -216,6 +224,7 @@ async def sync_scheduled_events(client):
                 description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
                 end_time=event.end_at,
                 location=channel,
+                cover=(IMAGES_DIR / event.poster_dc_path).read_bytes(),
             )
         else:
             logger.info(f"Creating Discord event for '{event.title}'")

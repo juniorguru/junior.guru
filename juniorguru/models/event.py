@@ -1,4 +1,5 @@
 from datetime import date, timedelta
+from urllib.parse import urljoin
 
 import arrow
 from peewee import CharField, DateTimeField, ForeignKeyField, IntegerField, TextField
@@ -24,6 +25,7 @@ class Event(BaseModel):
     poster_path = CharField(null=True)
     poster_ig_path = CharField(null=True)
     poster_yt_path = CharField(null=True)
+    poster_dc_path = CharField(null=True)
     logo_path = CharField(null=True)
 
     @property
