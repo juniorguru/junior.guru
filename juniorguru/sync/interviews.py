@@ -43,7 +43,7 @@ async def discord_task(client):
 
             embed_handbook = Embed(description=(
                 '📖 Než se pustíš do pohovorů, přečti si '
-                '[příručku na junior.guru](https://junior.guru/candidate-handbook/) o tom, '
+                '[příručku na junior.guru](https://junior.guru/handbook/candidate/) o tom, '
                 'jak správně hledat první práci v IT.'
             ))
 

@@ -47,13 +47,13 @@ def main(context):
             except StaticFileLinkError:
                 static.add((doc_name, normalize_static_link(doc_path, href)))
             except ValueError:
-                logger.debug(f'Skipping: {href}')
+                pass #logger.debug(f'Skipping: {href}')
         for element in html_tree.cssselect('img[src]'):
             src = element.get('data-src', element.get('src'))
             try:
                 static.add((doc_name, normalize_static_link(doc_path, src)))
             except ValueError:
-                logger.debug(f'Skipping: {src}')
+                pass #logger.debug(f'Skipping: {src}')
 
     broken = False
     for doc_name, link in links:
@@ -83,7 +83,7 @@ def normalize_link(doc_path, link):
         raise ExternalLinkError(link)
     if link.startswith('mailto'):
         raise EmailLinkError(link)
-    if Path(link).suffix not in ('', '.html'):
+    if Path(link.split('#')[0]).suffix not in ('', '.md'):
         raise StaticFileLinkError(link)
     if link.startswith('#'):
         link = f'{get_doc_name(doc_path)}{link}'

@@ -50,7 +50,7 @@ Nemusí to stát **žádné peníze**. Ano, existují placené kurzy, placení m
 
 ### Kolik času potřebuješ    <span id="time"></span>
 
-Úplně první program vytvoříš v řádu hodin nebo dní, ale pokud chceš mít [základ vhodný pro start kariéry v IT](candidate-handbook.md#co-budou-chtit), budeš se tomu potřebovat věnovat **alespoň 3 měsíce po 10 hodinách týdně** (orientační odhad, každý má jiné možnosti, tempo, výdrž…). Je to stejné jako u sportu nebo hry na hudební nástroj: Princip možná pochopíš rychle, ale budeš muset vždy hodně procvičovat, než to budeš umět správně použít v praxi.
+Úplně první program vytvoříš v řádu hodin nebo dní, ale pokud chceš mít [základ vhodný pro start kariéry v IT](handbook/candidate.md#co-budou-chtit), budeš se tomu potřebovat věnovat **alespoň 3 měsíce po 10 hodinách týdně** (orientační odhad, každý má jiné možnosti, tempo, výdrž…). Je to stejné jako u sportu nebo hry na hudební nástroj: Princip možná pochopíš rychle, ale budeš muset vždy hodně procvičovat, než to budeš umět správně použít v praxi.
 
 Co když **nemáš čas**? „Nemám čas“ znamená „nechci si jej vyhradit, jelikož mám důležitější věci, nebo věci, které mě baví víc“. Možná se ti jen líbí představa, že umíš programovat, ale nechce se ti to doopravdy dělat, stejně jako se spoustě lidem líbí představa, že umí hrát na kytaru, ale nemají chuť si po večerech brnkat a cvičit akordy. Je úplně v pořádku dělat důležitější nebo zábavnější věci, akorát [je dobré si to přiznat](https://twitter.com/mjavorek/status/687386493036396544), vědomě to nechat plavat a nevyčítat si to.
 

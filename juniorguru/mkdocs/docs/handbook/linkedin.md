@@ -27,7 +27,7 @@ Ačkoliv LinkedIn umožňuje stáhnout profil jako PDF, nepoužívejte to místo
 
 
 
-Základem v dnešní době je mít **co nejlépe vyplněný [profil na LinkedIn](https://www.linkedin.com/in/honzajavorek)**. Většinou stačí poslat odkaz na svůj LinkedIn a krátký průvodní dopis — není potřeba přikládat ještě zvlášť sepsaný životopis ve Wordu nebo v PDF. Zajímavým doplňkem životopisu může být tvůj [osobní web](../candidate-handbook.md#osobni-web-a-blog).
+Základem v dnešní době je mít **co nejlépe vyplněný [profil na LinkedIn](https://www.linkedin.com/in/honzajavorek)**. Většinou stačí poslat odkaz na svůj LinkedIn a krátký průvodní dopis — není potřeba přikládat ještě zvlášť sepsaný životopis ve Wordu nebo v PDF. Zajímavým doplňkem životopisu může být tvůj [osobní web](candidate.md#osobni-web-a-blog).
 
 **Životopis piš anglicky, česká verze je zbytečná.** Větší firmy mají buď přímo mezinárodní kolektiv, nebo i tak vyžadují nějakou úroveň znalosti angličtiny. Ani ryze české firmy s angličtinou nebudou mít problém, v IT je to standard.
 
@@ -68,7 +68,7 @@ Ahoj, když nemám žádné předchozí zkušenost v IT, zatím jsem dělal jen 
 
 LinkedIn profil je jako CVčko. Můžeš si ho založit i kdybys byl kuchař a není to nic proti ničemu, akorát že na LI nebude možná moc restauratérů, tak to nebude mít valný efekt v tom, že by ti tam zrovna denně chodily nabídky práce.
 Obecně založení profilu juniorovi nestačí, je potřeba nějak networkovat, přidávat si lidi, atd., aby na ten profil někdo vůbec narazil. Je to jako FB profil bez kamarádů, založit si ho můžeš, ale moc parády s tím neuděláš.
-Pokud jde o to, zda má smysl se bez zkušeností se softwarovým vývojem začít ucházet o práci vývojáře, to smysl moc nemá. Je dobrý se nejdřív něco naučit, pak si to na něčem vyzkoušet (vlastní projekt) a pak teprve hledat práci. Nevím, v jaké fázi přesně jsi, ale něco mi říká, že tahle moje příručka by se ti mohla hodit pročíst https://junior.guru/candidate-handbook/, případně v kondenzované podobě v článcích zde https://www.heroine.cz/clanky/autor/70000223-honza-javorek
+Pokud jde o to, zda má smysl se bez zkušeností se softwarovým vývojem začít ucházet o práci vývojáře, to smysl moc nemá. Je dobrý se nejdřív něco naučit, pak si to na něčem vyzkoušet (vlastní projekt) a pak teprve hledat práci. Nevím, v jaké fázi přesně jsi, ale něco mi říká, že tahle moje příručka by se ti mohla hodit pročíst https://junior.guru/handbook/candidate/, případně v kondenzované podobě v článcích zde https://www.heroine.cz/clanky/autor/70000223-honza-javorek
 
 z osobní zkušenosti někoho, kdo těch firem prolezl fakt hodně - v prvním odstavci jsou sice krásné ideály, ale ani místní HR z velké většiny LinkedIn profily neumějí číst - nebo prostě ze své arogance to nemají za potřebí. Studii o tom sepsal už Pavel Šimerda, odborník na LinkedIn HR to IT komunikaci.
 

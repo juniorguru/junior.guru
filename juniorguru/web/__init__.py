@@ -228,11 +228,11 @@ def motivation():
 def learn():
     return REFRESH_PAGE
 
-@app.route('/practice/')
+@app.route('/handbook/practice/')
 def practice():
     return REFRESH_PAGE
 
-@app.route('/candidate-handbook/')
+@app.route('/handbook/candidate/')
 def candidate_handbook():
     return REFRESH_PAGE
 

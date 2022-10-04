@@ -317,7 +317,7 @@ Ačkoliv LinkedIn **umožňuje stáhnout profil jako PDF**, nepoužívej to jako
 
 ### Osobní web
 
-Pokud se učíš vytvářet webovky, **vyrob si osobní stránky**. Bude se to počítat jako projekt a zároveň je to možnost, jak se představit barevněji, než PDF dokumentem. Můžeš do toho vložit tolik kreativity, kolik jen chceš. Víc je o tom v kapitole [osobní web a blog](../candidate-handbook.md#osobni-web-a-blog).
+Pokud se učíš vytvářet webovky, **vyrob si osobní stránky**. Bude se to počítat jako projekt a zároveň je to možnost, jak se představit barevněji, než PDF dokumentem. Můžeš do toho vložit tolik kreativity, kolik jen chceš. Víc je o tom v kapitole [osobní web a blog](candidate.md#osobni-web-a-blog).
 
 {% call figure('robert-belan.png', 'Robert Belan') %}
   [Robert Belan](https://www.robertbelan.com/) má osobní webovky jako konfigurátor postavy v RPG hře

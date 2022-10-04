@@ -11,7 +11,7 @@ template: main_handbook.html
 # Získej praxi v programování
 
 {% call lead() %}
-  Znáš [základy](../learn.md)? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti. Teprve potom si můžeš začít [hledat svou první práci v IT](../candidate-handbook.md).
+  Znáš [základy](../learn.md)? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti. Teprve potom si můžeš začít [hledat svou první práci v IT](candidate.md).
 {% endcall %}
 
 
@@ -67,7 +67,7 @@ Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit. Řík
 *   Jednoduchá hra, např. piškvorky nebo [had](https://naucse.python.cz/2018/snake-brno/),
 *   automatizace něčeho, co teď na počítači musíš dělat ručně (mrkni na [tuto knihu](https://automatetheboringstuff.com)),
 *   program na procvičování příkladů nebo slovíček pro děti do školy,
-*   [osobní webová stránka](../candidate-handbook.md#osobni-web-a-blog).
+*   [osobní webová stránka](candidate.md#osobni-web-a-blog).
 
 Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hackathon](#zkus-hackathon) nebo [open source](#zkus-open-source).
 

@@ -116,7 +116,7 @@ Je ovšem důležité počítat s tím, že **příprava ti může zabrat i dva 
   'český programátorský folklór',
 ) }}
 
-Pokud se chceš programováním živit, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](learn.md), [jak získat potřebnou praxi](handbook/practice.md) nebo [jak si hledat svou první práci](candidate-handbook.md). Kromě toho je tady i [stránka s nabídkami práce](/jobs/).
+Pokud se chceš programováním živit, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](learn.md), [jak získat potřebnou praxi](handbook/practice.md) nebo [jak si hledat svou první práci](handbook/candidate.md). Kromě toho je tady i [stránka s nabídkami práce](/jobs/).
 
 {{ stories_list(stories_by_tags.synergy|sample(4)) }}
 
