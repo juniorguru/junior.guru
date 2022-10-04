@@ -1,5 +1,4 @@
 from datetime import date, timedelta
-from urllib.parse import urljoin
 
 import arrow
 from peewee import CharField, DateTimeField, ForeignKeyField, IntegerField, TextField
