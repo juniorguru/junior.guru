@@ -5,8 +5,8 @@ site_url: https://junior.guru/
 nav:
   - Příručka:
       - Úvod: handbook/index.md
-      - Motivace: motivation.md
-      - Základy: learn.md
+      - Motivace: handbook/motivation.md
+      - Základy: handbook/learn.md
       - První praxe: handbook/practice.md
       - Psychika: handbook/mental-health.md
       - Git a GitHub: handbook/git.md
@@ -74,6 +74,8 @@ nav:
       - Licence obsahu (CC BY-SA): https://creativecommons.org/licenses/by-sa/4.0/deed.cs
 
   - Přesměrování:
+      - Motivace: motivation.md
+      - Základy: learn.md
       - První praxe: practice.md
       - Hledání práce: candidate-handbook.md
 

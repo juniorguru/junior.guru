@@ -42,7 +42,7 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 <section>
 <h2>Získej parťáky, mentory, kamarády</h2>
 {% call lead() %}
-Začátečníci potřebují víc než [příručku](learn.md). Nejvíc je posune, **když v tom všem nejsou sami**. Když jim někdo může pomoci se zapeklitou situací, dát zpětnou vazbu, dodat motivaci.
+Začátečníci potřebují víc než [příručku](handbook/index.md). Nejvíc je posune, **když v tom všem nejsou sami**. Když jim někdo může pomoci se zapeklitou situací, dát zpětnou vazbu, dodat motivaci.
 
 Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme přednášky, ale nejsme škola, neděláme kurzy. Sdílíme si tipy a postřehy. Podporujeme se a radíme, když někomu něco nejde, ať už jde o seniora nebo juniora. Dáváme si zpětnou vazbu. Dohazujeme si práci. Společně se radujeme z úspěchů. Můžeš se aktivně zapojit, nebo vše jen potichu sledovat.
 {% endcall %}
@@ -197,7 +197,7 @@ Vycházíme z [postupu](handbook/index.md), který je založen na reálných zku
 </div></div>
 
 {% call lead() %}
-Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství, opakují [nejrůznější mýty](motivation.md#myty-o-programovani), doporučují staré postupy. Vycházejí z toho, že když něco vyhovovalo jednomu, zákonitě musí i druhému. Na jednoduchou otázku běžně dostaneš **desítky rozcházejících se odpovědí**, mnohdy zcela nevhodných.
+Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství, opakují [nejrůznější mýty](handbook/motivation.md#myty-o-programovani), doporučují staré postupy. Vycházejí z toho, že když něco vyhovovalo jednomu, zákonitě musí i druhému. Na jednoduchou otázku běžně dostaneš **desítky rozcházejících se odpovědí**, mnohdy zcela nevhodných.
 {% endcall %}
 </section>
 

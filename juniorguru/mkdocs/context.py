@@ -70,7 +70,7 @@ def on_docs_context(context):
     context['companies_schools'] = Company.schools_listing()
     context['events'] = Event.listing()
 
-    # motivation.md
+    # handbook/motivation.md
     context['stories'] = Story.listing()
     context['stories_by_tags'] = Story.tags_mapping()
 

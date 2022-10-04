@@ -11,7 +11,7 @@ template: main_handbook.html
 # Získej praxi v programování
 
 {% call lead() %}
-  Znáš [základy](../learn.md)? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti. Teprve potom si můžeš začít [hledat svou první práci v IT](candidate.md).
+  Znáš [základy](learn.md)? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti. Teprve potom si můžeš začít [hledat svou první práci v IT](candidate.md).
 {% endcall %}
 
 
@@ -489,7 +489,7 @@ Na konference je potřeba si koupit lístek. Výše zmíněné konference mají 
 
   {% call link_card(
     'Jak si zlepšit angličtinu?',
-    pages|docs_url('learn.md')|url + '#jak-si-zlepsit-anglictinu',
+    pages|docs_url('handbook/learn.md')|url + '#jak-si-zlepsit-anglictinu',
   ) -%}
     Nauč se anglicky podle tipů na junior.guru.
   {%- endcall %}

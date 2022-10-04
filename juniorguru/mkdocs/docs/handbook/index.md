@@ -25,10 +25,10 @@ Na základě reálných zkušeností mnohých začátečníků jsme v [klubu](..
 
 Pokud o IT teprve přemýšlíš (fáze 0), budou pro tebe zajímavé jiné rady, než pokud už máš za sebou nějaký kurz (fáze 2 až 3). A jestli tě programování zajímá proto, že chceš automatizovat zalévání rajčat na zahradě (fáze 3), nemusí tě zajímat kapitoly o shánění práce v oboru (fáze 4 až 10).
 
-0. Občas mě napadne, že by nemusela být úplná blbost učit se programovat: [Motivace](../motivation.md)
+0. Občas mě napadne, že by nemusela být úplná blbost učit se programovat: [Motivace](motivation.md)
 {: value=0 }
-1. Nezávazně zkouším všechno možné, nebo začínám s jednou věcí, o které si myslím, že ji chci dělat: [Základy](../motivation.md)
-2. Učím se to, co si myslím, že chci dělat. Samostatně, ve škole, v kurzu: [Základy](../motivation.md), [První praxe](practice.md), [Git a GitHub](git.md)
+1. Nezávazně zkouším všechno možné, nebo začínám s jednou věcí, o které si myslím, že ji chci dělat: [Základy](motivation.md)
+2. Učím se to, co si myslím, že chci dělat. Samostatně, ve škole, v kurzu: [Základy](motivation.md), [První praxe](practice.md), [Git a GitHub](git.md)
 3. Pracuju na projektech: [První praxe](practice.md), [Git a GitHub](git.md)
 4. Připravuji se na hledání práce, ladím CV apod.: [Životopis](cv.md), [LinkedIn](linkedin.md), [Hledání práce](candidate.md)
 5. Hledám práci: [Hledání práce](candidate.md)

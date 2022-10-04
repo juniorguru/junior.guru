@@ -22,7 +22,7 @@ A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkuš
 
 ### Předmluva    <span id="foreword"></span>
 
-Znáš [základy](../learn.md) a máš [praxi](practice.md)? Nastal čas zkoušet své štěstí na pracovním trhu. Jak si ale začít hledat svou první práci v IT? Jak se připravit na pohovor?
+Znáš [základy](learn.md) a máš [praxi](practice.md)? Nastal čas zkoušet své štěstí na pracovním trhu. Jak si ale začít hledat svou první práci v IT? Jak se připravit na pohovor?
 
 {{ blockquote_toxic(
   'Nauč se programovat, firmy v IT berou z nedostatku lidí každého, kdo má jen zájem. Do začátku si řekni aspoň o pade.',
@@ -111,13 +111,13 @@ Nikdo od tebe nečeká, že budeš oslňovat technickými znalostmi. Dej najevo,
 
 ### Základní minimum    <span id="minimum-requirements"></span>
 
-1.  Znalost jakéhokoliv běžného jazyka alespoň v rozsahu začátečnického kurzu na [Nauč se Python!](../learn.md#jak-zacit)
+1.  Znalost jakéhokoliv běžného jazyka alespoň v rozsahu začátečnického kurzu na [Nauč se Python!](learn.md#jak-zacit)
 2.  Mít vytvořený nějaký [malý vlastní projekt](practice.md#najdi-si-projekt) jako praktickou ukázku své práce.
 3.  Mít na projektech naučenou schopnost dostat zadání a rozložit ho na podproblémy (algoritmizace).
 
 #### Velmi užitečné znalosti navíc
 
-*   [Angličtina](../learn.md#jak-si-zlepsit-anglictinu), čím víc tím líp!
+*   [Angličtina](learn.md#jak-si-zlepsit-anglictinu), čím víc tím líp!
 *   Základy práce s [Gitem](https://naucse.python.cz/course/pyladies/sessions/foss/).
 *   Práce s příkazovou řádkou (ideálně tou v [Linuxu](https://cs.wikipedia.org/wiki/Linux), tzn. Bash).
 
@@ -143,7 +143,7 @@ Nenech se tím vykolejit! **Při prvním kontaktu s firmou se ujisti, že jste n
 
 ### Je potřeba VŠ?    <span id="university"></span>
 
-[Ne](../motivation.md#potrebujes-vysokou-skolu). Běžní zaměstnavatelé ocení [praxi](practice.md) víc než titul. **Webovky nebo mobilní appky udělá samouk stejně dobře jako absolvent.** Studenti VŠ jsou tvá největší konkurence, ale na rozdíl od tebe jsou semletí pěti lety v českém školství. Nadšení z nich zpravidla nesrší a nemají moc praxe. Žena po rodičovské, která si rok šla za svým a učila se při všem shonu programovat po večerech, smete svou motivací každé ucho z VŠ jako nic.
+[Ne](motivation.md#potrebujes-vysokou-skolu). Běžní zaměstnavatelé ocení [praxi](practice.md) víc než titul. **Webovky nebo mobilní appky udělá samouk stejně dobře jako absolvent.** Studenti VŠ jsou tvá největší konkurence, ale na rozdíl od tebe jsou semletí pěti lety v českém školství. Nadšení z nich zpravidla nesrší a nemají moc praxe. Žena po rodičovské, která si rok šla za svým a učila se při všem shonu programovat po večerech, smete svou motivací každé ucho z VŠ jako nic.
 
 Zrovna v inzerátech nabízejících první práci v IT nebo částečný úvazek se však ještě stále lze setkat s **omezením, že jsou jen pro studenty či absolventy**. Je to proto, že lidi na druhé straně inzerátu ([recruitery](#naborari), šéfy) vůbec nenapadlo, že nováčci v oboru se rodí i jinde než na univerzitě. **Zkus se ozvat i tak.** Nic za to nedáš. Buď firmě otevřeš oči, nebo se rozloučíte už při prvním kontaktu.
 
@@ -157,7 +157,7 @@ Zrovna v inzerátech nabízejících první práci v IT nebo částečný úvaz
 
 ### Záleží na věku? Pohlaví?    <span id="age-gender"></span>
 
-[Ne a ne](../motivation.md#myty-o-programovani). Programování není balet, [začít se dá v jakémkoli věku](https://www.youtube.com/watch?v=dKclZ55d_F0). Byť jsou stále ještě v menšině, ženy se dnes programátorkami stávají běžně. IT už dávno nevypadá jako na [této fotce](https://www.forum24.cz/jak-dopadli-chlapci-z-brutalni-parby-informatiku-2/), i když si toho někteří možná ještě nevšimli. **Pokud je z pracovního inzerátu cítit diskriminace, vůbec se jím nezabývej**. Kromě toho, že je to [protizákonné](https://www.google.cz/search?q=pracovn%C3%AD%20inzer%C3%A1t%20diskriminace), tak firma, která se myšlenkově zasekla ve středověku, nebude zrovna dobrým přístavem pro začátečníky.
+[Ne a ne](motivation.md#myty-o-programovani). Programování není balet, [začít se dá v jakémkoli věku](https://www.youtube.com/watch?v=dKclZ55d_F0). Byť jsou stále ještě v menšině, ženy se dnes programátorkami stávají běžně. IT už dávno nevypadá jako na [této fotce](https://www.forum24.cz/jak-dopadli-chlapci-z-brutalni-parby-informatiku-2/), i když si toho někteří možná ještě nevšimli. **Pokud je z pracovního inzerátu cítit diskriminace, vůbec se jím nezabývej**. Kromě toho, že je to [protizákonné](https://www.google.cz/search?q=pracovn%C3%AD%20inzer%C3%A1t%20diskriminace), tak firma, která se myšlenkově zasekla ve středověku, nebude zrovna dobrým přístavem pro začátečníky.
 
 {{ video_card(
   'Tomáš Hisem: Z horníka programátorem',
@@ -206,7 +206,7 @@ Přímo na junior.guru najdeš [nabídky práce výhradně pro juniory](/jobs/).
 
 ### Proč začínat programováním    <span id="why-start-with-programming"></span>
 
-Programování je nejlepší způsob, jak začít v IT. **Kolem tvorby softwaru se motá spousta dalších profesí, které tě časem mohou zaujmout více, ale teď o nich ještě ani nevíš. Dokud je neuvidíš v praxi, nebudeš si umět jejich práci ani představit, natož se na ni rovnou hlásit.** Programování má oproti tomu jasně zmapovanou cestu, jak se dá začít učit, a lze z něj časem snadno odskočit jinam. I pokud se nakonec najdeš jinde, ten znalostní základ, který si programováním vytvoříš, [se ti nikdy neztratí](../motivation.md#proc-se-to-ucit). Z toho důvodu začni programováním a pak dej volný průchod tomu, kam tě život zavane.
+Programování je nejlepší způsob, jak začít v IT. **Kolem tvorby softwaru se motá spousta dalších profesí, které tě časem mohou zaujmout více, ale teď o nich ještě ani nevíš. Dokud je neuvidíš v praxi, nebudeš si umět jejich práci ani představit, natož se na ni rovnou hlásit.** Programování má oproti tomu jasně zmapovanou cestu, jak se dá začít učit, a lze z něj časem snadno odskočit jinam. I pokud se nakonec najdeš jinde, ten znalostní základ, který si programováním vytvoříš, [se ti nikdy neztratí](motivation.md#proc-se-to-ucit). Z toho důvodu začni programováním a pak dej volný průchod tomu, kam tě život zavane.
 
 {% call blockquote_avatar(
   'Firma rychle poznala, že umím komunikovat s ostatními a posouvat věci dopředu: Víc než kódit jsem začal odstraňovat překážky a ladit procesy. Posun do role „Scrum Mastera“ byl nabíledni.',
@@ -329,7 +329,7 @@ Mají více peněz a nebývá pro ně problém je investovat. Ovšem jen pokud m
 *   Upřednostňovány jsou starší technologie, které má firma roky odzkoušené a všichni s nimi umí. Ke zkoušení nových moc vůle nebývá.
 *   Mezinárodní firmy musí splňovat širokou škálu zákonů a regulací. Z toho plynou omezení a komplikace. Jednoduché věci často nelze dělat jednoduše.
 *   Můžeš si připadat jako kapka v moři, číslo v kartotéce. Užitek tvé práce může působit vzdáleně.
-*   U mezinárodních firem je ze zřejmých důvodů zcela nepostradatelná komunikativní úroveň [angličtiny](../learn.md#jak-si-zlepsit-anglictinu).
+*   U mezinárodních firem je ze zřejmých důvodů zcela nepostradatelná komunikativní úroveň [angličtiny](learn.md#jak-si-zlepsit-anglictinu).
 
 Zajímavě korporace rozebírá [Lukáš Linhart v přednášce o své kariéře](https://youtu.be/l7zUC0T1E98?t=5671) nebo [Dan Luu v článku Big companies v. startups](https://danluu.com/startup-tradeoffs/). Oproti obecnému přesvědčení **nemusí být velká firma nutně bez zajímavé práce nebo divokých změn**. Vnitřní reorganizace nebo změny korporátní politiky umí přinést stejný stres jako je ten, který ti budou slibovat ve [startupech](#prace-pro-startup).
 
@@ -407,7 +407,7 @@ O nástrahách práce „na IČO“ je tady [celá další kapitola](#prace-na-i
 *   Než do toho půjdeš naplno, můžeš si „něco jako práci na volné noze“ **nejdříve vyzkoušet**, a to v podobě tzv. [příležitostné činnosti](https://www.jakpodnikat.cz/prilezitostna-cinnost.php).
 *   Firmy [outsourcují](https://cs.wikipedia.org/wiki/Outsourcing) spoustu úkolů, ale **nebudou je chtít svěřit amatérovi**. Ujasni si, jaké jsou tvé přednosti a jak hodláš klientům kompenzovat své nedostatky (např. nízkou cenou). Vytvoř si [portfolio](#osobni-web-a-blog), kde to firmám „vysvětlíš“. Začni s jednoduchými, jasně zadanými a ohraničenými úkoly, které zvládneš vypracovat. Nesnaž se dělat všechno (např. weby, nebo i frontend jsou příliš široká zaměření). Vyber si směr, kterým se chceš vydat a na který se budeš specializovat (např. [kódování newsletterů](https://www.google.cz/search?q=k%C3%B3dov%C3%A1n%C3%AD%20newsletter%C5%AF)). Začni malými krůčky, propracovávej se k větším úkolům a s nimi i k sebedůvěře, která ti pomůže odhadnout, do čeho se zvládneš pustit a kolik si za to máš říct.
 *   **Poptávky nepřijdou samy.** Je velká pravděpodobnost, že nikdo zatím ani neví, že vůbec existuješ a něco nabízíš. Zkus si na internetu najít vhodné firmy a napsat jim e-mail s nabídkou svých služeb, účastni se [srazů nezávislých profesionálů](https://www.facebook.com/navolnenoze/events/), procházej různá internetová tržiště s poptávkami. V Česku má jistou tradici fórum [Webtrh](https://webtrh.cz/), ale existuje toho spousta (abecedně): [fiverr.com](https://fiverr.com/), [freelance.cz](https://freelance.cz), [freelancer.com](https://freelancer.com), [guru.com](https://guru.com), [navolnenoze.cz](https://navolnenoze.cz), [peopleperhour.com](https://peopleperhour.com), [topcoder.com](https://topcoder.com), [toptal.com](https://toptal.com), [upwork.com](https://upwork.com)… Připrav se na to, že musíš každý měsíc platit zálohy na pojištění (minimálně kolem 5 000 Kč měsíčně), ať už něco vyděláš, nebo ne.
-*   **Žádný senior nebude mít v popisu práce se ti věnovat a rozvíjet tě**, pokud budeš vůbec dělat v týmu. Intenzivní samostudium a vypracovávání zakázek budou zřejmě jedinými způsoby, jakými se budeš učit. Pokud na to vyděláš, můžeš si [platit mentora](practice.md#najdi-si-mentora). Počítej s tím, že ze začátku budeš moci klientovi účtovat jen zlomek hodin, než kolik jich reálně nad úkolem strávíš. Neboj se ale s nabytými zkušenostmi tento poměr vylepšovat. Chybějící tým kompenzuj v [coworkingu](https://navolnenoze.cz/blog/coworkingy/), účastí v profesní komunitě, na [srazech](practice.md#najdi-inspiraci-poznej-lidi) nebo [online](../learn.md#kde-najdes-pomoc).
+*   **Žádný senior nebude mít v popisu práce se ti věnovat a rozvíjet tě**, pokud budeš vůbec dělat v týmu. Intenzivní samostudium a vypracovávání zakázek budou zřejmě jedinými způsoby, jakými se budeš učit. Pokud na to vyděláš, můžeš si [platit mentora](practice.md#najdi-si-mentora). Počítej s tím, že ze začátku budeš moci klientovi účtovat jen zlomek hodin, než kolik jich reálně nad úkolem strávíš. Neboj se ale s nabytými zkušenostmi tento poměr vylepšovat. Chybějící tým kompenzuj v [coworkingu](https://navolnenoze.cz/blog/coworkingy/), účastí v profesní komunitě, na [srazech](practice.md#najdi-inspiraci-poznej-lidi) nebo [online](learn.md#kde-najdes-pomoc).
 
 Další rady ohledně rozjíždění vlastního podnikání jsou nad rámec této příručky. Následující odkazy by ti nicméně měly ukázat cestu k tomu hlavnímu, co se může do startu hodit. Hodně štěstí!
 
@@ -817,7 +817,7 @@ Tyto aktivity mohou navíc podněcovat [networking](#networking), tedy setkává
 
 Vlastní osobní webová stránka (_portfolio_) ti dává prostor **vyniknout mezi ostatními kandidáty**. Je to [projekt](practice.md#najdi-si-projekt), na kterém si prakticky vyzkoušíš různé technologie a který klidně můžeš ukázat při pohovoru jako důkaz, že něco umíš. Mimo to můžeš na své webovce dát průchod vlastní osobnosti a kreativitě.
 
-Stránka nemusí být komplikovaná, stačí aby to byl **rozcestník**. Dvě věty o sobě, popis zkušeností, odkazy na profily (LinkedIn, GitHub…) a případně na tvé [projekty](practice.md#najdi-si-projekt). Pokud tě baví psaní, časem můžeš přidat **blog**. Můžeš psát o své cestě do IT (a tak se [objevit na těchto stránkách](../motivation.md#vsechny-motivacni-pribehy)) nebo přidat článek vždy, když se naučíš něco nového — čímž pomůžeš dalším začátečníkům a zároveň tím vystoupíš z davu. Začneš si v oboru budovat své jméno a to ti může pomoci nejen u pohovorů, ale i pokud budeš chtít [přednášet na konferencích](#projev-aktivitu-navic).
+Stránka nemusí být komplikovaná, stačí aby to byl **rozcestník**. Dvě věty o sobě, popis zkušeností, odkazy na profily (LinkedIn, GitHub…) a případně na tvé [projekty](practice.md#najdi-si-projekt). Pokud tě baví psaní, časem můžeš přidat **blog**. Můžeš psát o své cestě do IT (a tak se [objevit na těchto stránkách](motivation.md#vsechny-motivacni-pribehy)) nebo přidat článek vždy, když se naučíš něco nového — čímž pomůžeš dalším začátečníkům a zároveň tím vystoupíš z davu. Začneš si v oboru budovat své jméno a to ti může pomoci nejen u pohovorů, ale i pokud budeš chtít [přednášet na konferencích](#projev-aktivitu-navic).
 
 {% call blockquote_avatar(
   'Tweetuju nebo píšu články o všem, co se naučím. Mohu se k tomu vždy vrátit a zároveň s učením pomáhám ostatním. Díky psaní článků navíc věcem porozumím do hloubky a umím je vysvětlit.',
@@ -902,4 +902,4 @@ Kde se bere vášeň? Do začátku stačí, když ti programování přijde jako
 
 **P.S.** Nezapomeň, že jsi na „živé stránce“, na které stále probíhají úpravy. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/honzajavorek/junior.guru/commits/main/juniorguru/mkdocs/docs/handbook/), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](../club.md).
 
-A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'honza@junior.guru'|email_link }}. Jestli se ti díky junior.guru povede sehnat práci, ozvi se! Můžeš [motivovat ostatní svým příběhem](../motivation.md#vsechny-motivacni-pribehy), nebo tím prostě jen udělat [Honzovi](#honza) radost.
+A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'honza@junior.guru'|email_link }}. Jestli se ti díky junior.guru povede sehnat práci, ozvi se! Můžeš [motivovat ostatní svým příběhem](motivation.md#vsechny-motivacni-pribehy), nebo tím prostě jen udělat [Honzovi](#honza) radost.
