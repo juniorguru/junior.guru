@@ -39,7 +39,7 @@ ERROR_CODE_THREAD_ARCHIVED = 50083
 logger = loggers.get(__name__)
 
 
-@sync_task()  # club_content_task
+@sync_task(club_content_task)
 def main():
     run_discord_task('juniorguru.sync.intro.discord_task')
 
