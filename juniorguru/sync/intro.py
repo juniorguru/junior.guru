@@ -39,7 +39,7 @@ ERROR_CODE_THREAD_ARCHIVED = 50083
 logger = loggers.get(__name__)
 
 
-@sync_task(club_content_task)
+@sync_task()  # club_content_task
 def main():
     run_discord_task('juniorguru.sync.intro.discord_task')
 
@@ -123,7 +123,8 @@ async def welcome(channel, message, moderators):
                     await welcome_discord_message.edit(content=content, suppress=True)
             except IndexError:
                 logger_m.debug("Sending welcome message")
-                await thread.send(content=content, suppress=True)
+                welcome_discord_message = await thread.send(content=content)
+                await welcome_discord_message.edit(suppress=True)
 
             logger_m.debug("Analyzing if all moderators are involved")
             thread_members_ids = [member.id for member in (thread.members or await thread.fetch_members())]

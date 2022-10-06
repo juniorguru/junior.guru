@@ -27,7 +27,7 @@ async def discord_task(client):
         logger.info('Last message is more than one month old!')
         if DISCORD_MUTATIONS_ENABLED:
             channel = await client.fetch_channel(LI_GROUP_CHANNEL)
-            await channel.send(content=(
+            message = await channel.send(content=(
                 "<:linkedin:915267970752712734> Nezapomeň, že můžeš svou LinkedIn síť rozšířit o členy klubu. "
                 "Přidej se do naší skupiny <https://www.linkedin.com/groups/13988090/>, "
                 "díky které se pak můžeš snadno propojit s ostatními (a oni s tebou). "
@@ -36,6 +36,7 @@ async def discord_task(client):
                 "👀 Nevíme, jestli ti logo na profilu přidá nějaký kredit u recruiterů, ale vyloučeno to není! "
                 "Minimálně jako poznávací znamení mezi námi by to zafungovat mohlo. "
                 "Něco jako „Jé, koukám, že ty jsi taky chodila do skauta? Chodíš ještě? Jakou máš přezdívku?“"
-            ), suppress=True)
+            ))
+            await message.edit(suppress=True)
         else:
             logger.warning('Discord mutations not enabled')
