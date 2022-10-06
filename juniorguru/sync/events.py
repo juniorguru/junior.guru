@@ -155,7 +155,7 @@ async def post_next_event_messages(client):
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
             logger.info("Found no message, posting!")
-            content = f"🗓 Už **za týden** bude v klubu „{event.title}” s {speakers}! {event.url}"
+            content = f"🗓 Už **za týden** bude v klubu „{event.title}” s {speakers}! {event.discord_url}"
             await announcements_channel.send(content)
     else:
         logger.info("It's not 7 days prior to the event")
@@ -167,7 +167,7 @@ async def post_next_event_messages(client):
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
             logger.info("Found no message, posting!")
-            content = f"🤩 Už **zítra v {event.start_at_prg:%H:%M}** bude v klubu „{event.title}” s {speakers}! {event.url}"
+            content = f"🤩 Už **zítra v {event.start_at_prg:%H:%M}** bude v klubu „{event.title}” s {speakers}! {event.discord_url}"
             await announcements_channel.send(content)
     else:
         logger.info("It's not 1 day prior to the event")
@@ -179,7 +179,7 @@ async def post_next_event_messages(client):
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
             logger.info("Found no message, posting!")
-            content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu „{event.title}” s {speakers}! Odehrávat se to bude v {events_channel.mention}, dotazy jde pokládat v tamním chatu 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.url}"
+            content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu „{event.title}” s {speakers}! Odehrávat se to bude v {events_channel.mention}, dotazy jde pokládat v tamním chatu 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.discord_url}"
             await announcements_channel.send(content)
     else:
         logger.info("It's not the day when the event is")
@@ -236,6 +236,7 @@ async def sync_scheduled_events(client):
                 location=channel,
             )
         event.discord_id = discord_event.id
+        event.discord_url = discord_event.url
         event.save()
 
 

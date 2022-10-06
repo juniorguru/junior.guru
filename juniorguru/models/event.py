@@ -9,7 +9,6 @@ from juniorguru.models.club import ClubUser
 
 
 class Event(BaseModel):
-    discord_id = IntegerField(index=True, null=True)
     title = CharField()
     start_at = DateTimeField(index=True)
     description = TextField()
@@ -26,6 +25,8 @@ class Event(BaseModel):
     poster_yt_path = CharField(null=True)
     poster_dc_path = CharField(null=True)
     logo_path = CharField(null=True)
+    discord_id = IntegerField(index=True, null=True)
+    discord_url = CharField(null=True)
 
     @property
     def start_at_prg(self):
