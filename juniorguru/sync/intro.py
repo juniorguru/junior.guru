@@ -25,12 +25,17 @@ THREADS_STARTING_AT = datetime(2022, 7, 17, 0, 0)
 PURGE_SAFETY_LIMIT = 20
 
 WELCOME_MESSAGE_PREFIXES = [
+    'Vítej!',
     'Vítej v klubu!',
     'Vítám tě v klubu!',
     'Vítám tě mezi námi!',
     'Vítej mezi námi!',
+    'Čau!',
+    'Čáááu!',
     'Ahoj!',
     'Ahój!',
+    'Nazdar!',
+    'Nazdááár!',
 ]
 
 ERROR_CODE_THREAD_ARCHIVED = 50083
