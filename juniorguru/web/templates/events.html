@@ -26,6 +26,7 @@ Přednášky a další akce pro členy klubu junior.guru. Seznam akcí proběhl�
         <a href="{{ url_for('static', filename='images/' + event.poster_yt_path) }}">náhled pro YT</a>
       </p>
       {{ event.description|md }}
+      <h4 class="content__subsection-heading">{{ event.bio_name }}</h4>
       {{ event.bio|md }}
     {% endfor %}
   {% else %}
