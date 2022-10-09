@@ -1,5 +1,5 @@
 import csv
-from datetime import timedelta
+from datetime import timedelta, datetime, time
 
 import ics
 from pod2gen import Category, Episode, Funding, Media, Person, Podcast
@@ -21,6 +21,28 @@ def build_events_ics(api_dir, config):
         for event in Event.api_listing()
     ])
     api_file = api_dir / 'events.ics'
+    with api_file.open('w', encoding='utf-8') as f:
+        f.writelines(calendar)
+
+
+@db.connection_context()
+def build_events_honza_ics(api_dir, config):
+    events = []
+    for event in Event.api_listing():
+        ics_event_day = ics.Event(summary=event.title,
+                                  begin=event.start_at,
+                                  description=event.url)
+        ics_event_day.make_all_day()
+        events.append(ics_event_day)
+        events.append(ics.Event(summary='(věnuju se rodině)',
+                                begin=datetime.combine(event.start_at.date(), time(8)),
+                                end=datetime.combine(event.start_at.date(), time(12))))
+        events.append(ics.Event(summary=event.title,
+                                begin=event.start_at - timedelta(minutes=30),
+                                duration=timedelta(hours=2),
+                                description=event.url))
+    calendar = ics.Calendar(events=events)
+    api_file = api_dir / 'events-honza.ics'
     with api_file.open('w', encoding='utf-8') as f:
         f.writelines(calendar)
 
