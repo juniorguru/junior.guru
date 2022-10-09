@@ -34,7 +34,7 @@ def build_events_honza_ics(api_dir, config):
                                   description=event.url)
         ics_event_day.make_all_day()
         events.append(ics_event_day)
-        events.append(ics.Event(summary='(věnuju se rodině)',
+        events.append(ics.Event(summary='(Honza se věnuje rodině)',
                                 begin=datetime.combine(event.start_at.date(), time(8)),
                                 end=datetime.combine(event.start_at.date(), time(12))))
         events.append(ics.Event(summary=event.title,
