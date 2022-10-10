@@ -160,7 +160,7 @@ async def discord_task(client):
         if DISCORD_MUTATIONS_ENABLED:
             channel = await client.fetch_channel(ANNOUNCEMENTS_CHANNEL)
             content = (
-                f"{MESSAGE_EMOJI} Nastraž uši! <@!810862212297130005> natočila **{last_episode.number}. díl** junior.guru podcastu!"
+                f"{MESSAGE_EMOJI} Nastraž uši! <@810862212297130005> natočila **{last_episode.number}. díl** junior.guru podcastu!"
             )
             embed_description_lines = [
                 f'ℹ️ {last_episode.description.strip()}\n',

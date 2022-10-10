@@ -8,7 +8,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, emoji_name
 from juniorguru.models.club import ClubMessage, ClubUser
-from juniorguru.sync.onboarding.scheduled_messages import SCHEDULED_MESSAGES
+from juniorguru.sync.onboarding.scheduled_messages import SCHEDULED_MESSAGES, ALLOWED_MENTIONS
 
 
 TODAY = date.today()
@@ -76,7 +76,8 @@ async def create_message_data(client, member, content):
                 embed=discord.Embed(color=discord.Color.from_rgb(120, 179, 84),
                                     description='Máš přečteno a chceš dostat další tip? Klikni na zaškrtávátko pod zprávou'),
                 allowed_mentions=discord.AllowedMentions(everyone=True,
-                                                         users=[await client.get_or_fetch_user(member.id)],
+                                                         users=[await client.get_or_fetch_user(member_id)
+                                                                for member_id in [member.id] + ALLOWED_MENTIONS],
                                                          roles=False,
                                                          replied_user=True))
 

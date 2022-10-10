@@ -31,7 +31,7 @@ async def discord_task(client):
             channel = await client.fetch_channel(BUDDIES_CHANNEL)
             await channel.send(content=(
                 f"{BUDDIES_EMOJI} Nezapomeň, že si tady můžeš hledat parťáky na společné učení "
-                "nebo projekt. Pokud utvoříte skupinu, napište <@!668226181769986078> "
+                "nebo projekt. Pokud utvoříte skupinu, napište <@668226181769986078> "
                 "a vytvoří vám tady v klubu roli a soukromý kanál, kde se můžete domlouvat. "
                 "Hlasový kanál **klubovna** může kdokoliv z klubu využívat k volání jak potřebuje, "
                 "takže si tam klidně můžete dávat schůzky."

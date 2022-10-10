@@ -3,6 +3,8 @@ from textwrap import dedent
 
 SCHEDULED_MESSAGES = {}
 
+ALLOWED_MENTIONS = [810862212297130005,]  # https://github.com/discord/discord-api-docs/issues/2126
+
 
 def schedule_message(emoji):
     def decorator(render_content):
@@ -19,7 +21,7 @@ def schedule_message(emoji):
 def render_hello(context):
     member = context['member']
     text = dedent(f'''
-        Vítej v klubu, {member.mention}! Já jsem kuře, zdejší bot. Pomáhám se vším, co by nemusel <@!668226181769986078> stíhat sám. Tento privátní kanál jsem vytvořilo jen pro tebe.
+        Vítej v klubu, {member.mention}! Já jsem kuře, zdejší bot. Pomáhám se vším, co by nemusel <@668226181769986078> stíhat sám. Tento privátní kanál jsem vytvořilo jen pro tebe.
 
         **Jak funguje tento kanál?** 💬
         V klubu se toho děje hodně, tak ti sem budu posílat tipy, jak se orientovat. Ptej se tady na cokoliv ohledně fungování klubu, klidně reaguj na jednotlivé tipy, posílej zpětnou vazbu. Já odpovídat neumím, ale vidí sem i moderátoři a se vším ti rádi pomůžou.
@@ -150,7 +152,7 @@ def render_sth(context):
         **Piš moderátorům** 👮
         Lidi jsou jen lidi a psaný projev má své limity, takže i v klubu samozřejmě dochází k nedorozuměním. I dobře míněná, ale stručná věta může vyznít úsečně, nebo až agresivně.
 
-        Hlídat nevhodné chování je jako dávat pozor, aby zahrádka nezarostla plevelem. Placený zahradník <@!668226181769986078> vše vyřeší za tebe, ale nemá oči všude a uvítá pomoc.
+        Hlídat nevhodné chování je jako dávat pozor, aby zahrádka nezarostla plevelem. Placený zahradník <@668226181769986078> vše vyřeší za tebe, ale nemá oči všude a uvítá pomoc.
 
         Stačí nechat pár kopřiv a záhonem se už nikdo chtít procházet nebude. Takže pokud se ti něco nepozdává, sdílej svoje pocity s moderátory. Neboj, zůstane to jen mezi vámi.
     ''')
