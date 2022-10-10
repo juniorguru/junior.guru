@@ -7,7 +7,19 @@ from juniorguru.lib import club
 
 
 StubReaction = namedtuple('Reaction', ['emoji', 'count'])
+
 StubEmoji = namedtuple('Emoji', ['name'])
+
+StubUser = namedtuple('User', ['id'])
+
+StubMember = namedtuple('Member', ['id', 'roles'],
+                        defaults=dict(roles=[]))
+
+StubRole = namedtuple('Role', ['id'])
+
+StubMessage = namedtuple('Message', ['author', 'content'])
+
+StubClubMessage = namedtuple('ClubMessage', ['created_at'])
 
 
 def test_count_upvotes():
@@ -30,11 +42,6 @@ def test_emoji_name(emoji, expected):
     assert club.emoji_name(emoji) == expected
 
 
-StubUser = namedtuple('User', ['id'])
-StubMember = namedtuple('Member', ['id', 'roles'])
-StubRole = namedtuple('Role', ['id'])
-
-
 @pytest.mark.parametrize('member_or_user, expected', [
     (StubUser(1), []),
     (StubMember(1, [StubRole(42), StubRole(38)]), [42, 38]),
@@ -43,7 +50,14 @@ def test_get_roles(member_or_user, expected):
     assert club.get_roles(member_or_user) == expected
 
 
-StubClubMessage = namedtuple('ClubMessage', ['created_at'])
+@pytest.mark.parametrize('message, expected', [
+    (StubMessage(StubMember(123), 'Hello!'), False),
+    (StubMessage(StubMember(123), '💡 Hello!'), False),
+    (StubMessage(StubMember(club.JUNIORGURU_BOT), 'Hello!'), False),
+    (StubMessage(StubMember(club.JUNIORGURU_BOT), '💡 Hello!'), True),
+])
+def test_is_message_bot_reminder(message, expected):
+    assert club.is_message_bot_reminder(message) is expected
 
 
 @pytest.mark.parametrize('date_, expected', [

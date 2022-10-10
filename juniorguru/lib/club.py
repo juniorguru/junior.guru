@@ -5,6 +5,7 @@ import re
 from datetime import date
 from multiprocessing import Process
 
+import emoji
 import discord
 
 from juniorguru.lib import loggers
@@ -148,11 +149,11 @@ def count_downvotes(reactions):
                 if emoji_name(reaction.emoji) in EMOJI_DOWNVOTES])
 
 
-def emoji_name(emoji):
+def emoji_name(reaction_emoji):
     try:
-        return emoji.name.lower()
+        return reaction_emoji.name.lower()
     except AttributeError:
-        return str(emoji)
+        return str(reaction_emoji)
 
 
 def get_roles(member_or_user):
@@ -192,3 +193,9 @@ def parse_coupon(coupon):
         parts['is_student'] = bool(parts.pop('student_prefix'))
         return {key: value for key, value in parts.items() if value is not None}
     return {'name': coupon, 'coupon': coupon, 'is_student': False}
+
+
+def is_message_bot_reminder(message):
+    return (message.author.id == JUNIORGURU_BOT and
+            message.content and
+            emoji.is_emoji(message.content[0]))

@@ -2,7 +2,7 @@ from datetime import timedelta
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, is_message_over_period_ago,
-                                 run_discord_task)
+                                 run_discord_task, is_message_bot_reminder)
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -29,6 +29,7 @@ async def discord_task(client):
         logger.info('Last message is more than one month old!')
         if DISCORD_MUTATIONS_ENABLED:
             channel = await client.fetch_channel(FORUM_CHANNEL)
+            await channel.purge(check=is_message_bot_reminder)
             await channel.send(content=(
                 f"{FORUM_EMOJI} Jak se zeptat? Oprávnění v tomto kanálu vyžadují, aby se každá záležitost řešila "
                 "v samostatném vlákně. Nové vlákno, anglicky _thread_, "
