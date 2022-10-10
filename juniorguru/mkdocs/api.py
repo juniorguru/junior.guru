@@ -1,5 +1,5 @@
 import csv
-from datetime import timedelta, datetime, time
+from datetime import timedelta
 
 import ics
 from pod2gen import Category, Episode, Funding, Media, Person, Podcast
@@ -35,8 +35,8 @@ def build_events_honza_ics(api_dir, config):
         ics_event_day.make_all_day()
         events.append(ics_event_day)
         events.append(ics.Event(summary='(Honza se věnuje rodině)',
-                                begin=datetime.combine(event.start_at.date(), time(8)),
-                                end=datetime.combine(event.start_at.date(), time(12))))
+                                begin=event.start_at.replace(hour=8, minute=0),
+                                end=event.start_at.replace(hour=12, minute=0)))
         events.append(ics.Event(summary=event.title,
                                 begin=event.start_at - timedelta(minutes=30),
                                 duration=timedelta(hours=2),
