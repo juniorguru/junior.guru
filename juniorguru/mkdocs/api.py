@@ -29,7 +29,7 @@ def build_events_ics(api_dir, config):
 def build_events_honza_ics(api_dir, config):
     events = []
     for event in Event.api_listing():
-        ics_event_day = ics.Event(summary=event.title,
+        ics_event_day = ics.Event(summary='Přednáška v klubu',
                                   begin=event.start_at,
                                   description=event.url)
         ics_event_day.make_all_day()
@@ -37,7 +37,7 @@ def build_events_honza_ics(api_dir, config):
         events.append(ics.Event(summary='(Honza se věnuje rodině)',
                                 begin=event.start_at.replace(hour=8, minute=0),
                                 end=event.start_at.replace(hour=12, minute=0)))
-        events.append(ics.Event(summary=event.title,
+        events.append(ics.Event(summary=f'{event.bio_name}: {event.title}',
                                 begin=event.start_at - timedelta(minutes=30),
                                 duration=timedelta(hours=2),
                                 description=event.url))
