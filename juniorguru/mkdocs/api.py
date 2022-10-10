@@ -35,7 +35,7 @@ def build_events_honza_ics(api_dir, config):
         ics_event_day.make_all_day()
         events.append(ics_event_day)
         events.append(ics.Event(summary='(Honza se věnuje rodině)',
-                                begin=event.start_at.replace(hour=8, minute=0),
+                                begin=event.start_at.replace(hour=10, minute=0),
                                 end=event.start_at.replace(hour=12, minute=0)))
         events.append(ics.Event(summary=f'{event.bio_name}: {event.title}',
                                 begin=event.start_at - timedelta(minutes=30),
