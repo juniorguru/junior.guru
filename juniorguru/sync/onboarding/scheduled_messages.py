@@ -1,5 +1,7 @@
 from textwrap import dedent
 
+from juniorguru.lib.club import HONZAJAVOREK
+
 
 SCHEDULED_MESSAGES = {}
 
@@ -8,6 +10,7 @@ ALLOWED_MENTIONS = [810862212297130005,]  # https://github.com/discord/discord-a
 
 def schedule_message(emoji):
     def decorator(render_content):
+        assert emoji not in SCHEDULED_MESSAGES, 'Duplicate emojis!'
         SCHEDULED_MESSAGES[emoji] = render_content
     return decorator
 
@@ -21,7 +24,7 @@ def schedule_message(emoji):
 def render_hello(context):
     member = context['member']
     text = dedent(f'''
-        Vítej v klubu, {member.mention}! Já jsem kuře, zdejší bot. Pomáhám se vším, co by nemusel <@668226181769986078> stíhat sám. Tento privátní kanál jsem vytvořilo jen pro tebe.
+        Vítej v klubu, {member.mention}! Já jsem kuře, zdejší bot. Pomáhám se vším, co by nemusel <@{HONZAJAVOREK}> stíhat sám. Tento privátní kanál jsem vytvořilo jen pro tebe.
 
         **Jak funguje tento kanál?** 💬
         V klubu se toho děje hodně, tak ti sem budu posílat tipy, jak se orientovat. Ptej se tady na cokoliv ohledně fungování klubu, klidně reaguj na jednotlivé tipy, posílej zpětnou vazbu. Já odpovídat neumím, ale vidí sem i moderátoři a se vším ti rádi pomůžou.
@@ -96,11 +99,11 @@ def render_discord(context):
 
 @schedule_message('🐣')  # Day 4
 def render_juniorguru(context):
-    return dedent('''
+    return dedent(f'''
         Dnes to bude o tom, že na junior.guru není jen klub, ale i spousta motivace a užitečných rad, které by bylo škoda minout.
 
         **Příručka** 📖
-        Na https://junior.guru/handbook/ najdeš příručku pro juniory. Celá je zdarma ke čtení na webu a je v ní hromada užitečných tipů. Jak začít programovat? Jak si sehnat první praxi? Co je u pohovorů důležité? Jak připravit životopis? Tím vším a mnohým dalším tě příručka provede, krok za krokem. <@668226181769986078> stále přidává nové kapitoly, takže i pokud už máš něco přečtené, je dobré se tam po čase vracet.
+        Na https://junior.guru/handbook/ najdeš příručku pro juniory. Celá je zdarma ke čtení na webu a je v ní hromada užitečných tipů. Jak začít programovat? Jak si sehnat první praxi? Co je u pohovorů důležité? Jak připravit životopis? Tím vším a mnohým dalším tě příručka provede, krok za krokem. <@{HONZAJAVOREK}> stále přidává nové kapitoly, takže i pokud už máš něco přečtené, je dobré se tam po čase vracet.
 
         **Podcast** 🎙
         Nahoď sluchátka a pusť si do nich příběhy a rady lidí, kteří se motají kolem začátečníků v IT. <@810862212297130005> si zve na rozhovor juniory, lidi z firem, lektory kurzů. V podcastu se snaží přinášet odpovědi, inspiraci, motivaci. Všechny díly najdeš na https://junior.guru/podcast/, ale taky na Spotify, na YouTube a v dalších podcastových aplikacích. Epizody vychází jednou měsíčně a mívají půl hodiny. Máš nápad, koho dalšího pozvat? Napiš nám!
@@ -130,9 +133,9 @@ def render_roles(context):
 
 
 @schedule_message('💛')  # Day 6
-def render_sth(context):
-    return dedent('''
-        Možná tě něco zajímá, ale bojíš se zeptat. Nechceš ostatní obtěžovat. Přijde ti, že se tady řeší pokročilejší věci, zatímco ty zápasíš se základy. Tvůj dotaz je nejspíš úplná blbost a někdo se ti akorát vysměje…
+def render_coc(context):
+    return dedent(f'''
+        Možná tě něco zajímá, ale bojíš se zeptat. Možná máš co napsat k tématu, ale nechceš riskovat nepříjemné reakce. Co když se ti někdo vysměje? Co když tě někdo nepochopí?
 
         **Neboj!** <:meowsheart:1002448596572061746>
         Smyslem celého klubu je, aby se začátečníci měli kde ptát a po ruce byl někdo, kdo jim poskytne pomoc, podporu nebo vysvětlení. Všichni jsme tu proto, abychom se něco naučili, sdíleli zkušenosti, radili se.
@@ -144,64 +147,58 @@ def render_sth(context):
 
         Prohřešky bereme vážně. Na rozdíl od skupin např. na Facebooku, kde můžeš dostat posměšné, jízlivé, sexistické, nebo namachrované odpovědi, tady by byli takoví lidé rychle a rázně vyvedeni.
 
-        **Ptej se i na blbosti** 🙋
-        Hloupé otázky neexistují. Čím banálnější problém, tím snáz a rychleji ti může někdo odpovědět a mít radost, že poradil. Pokud existuje způsob, jak si příště můžeš pomoci i bez nás, tak ti to rádi a bez keců ukážeme.
-
-        I každé nové téma k diskuzi je fajn. To, co ti vrtá hlavou, často zajímá dalších třicet lidí, akorát nemají odvahu se zeptat.
-
         **Piš moderátorům** 👮
         Lidi jsou jen lidi a psaný projev má své limity, takže i v klubu samozřejmě dochází k nedorozuměním. I dobře míněná, ale stručná věta může vyznít úsečně, nebo až agresivně.
 
-        Hlídat nevhodné chování je jako dávat pozor, aby zahrádka nezarostla plevelem. Placený zahradník <@668226181769986078> vše vyřeší za tebe, ale nemá oči všude a uvítá pomoc.
+        Hlídat nevhodné chování je jako dávat pozor, aby zahrádka nezarostla plevelem. Placený zahradník <@{HONZAJAVOREK}> vše vyřeší za tebe, ale nemá oči všude a uvítá pomoc.
 
         Stačí nechat pár kopřiv a záhonem se už nikdo chtít procházet nebude. Takže pokud se ti něco nepozdává, sdílej svoje pocity s moderátory. Neboj, zůstane to jen mezi vámi.
     ''')
 
 
-# @schedule_message('💡')  # Day 7
-# def render_contributing(context):
-#     return dedent('''
-#         Klub je pro většinu členů přínosný i pokud ho jen čtou. Když se však zapojíš trochu víc, poslouží ti ještě lépe.
+@schedule_message('💡')  # Day 7
+def render_asking(context):
+    return dedent('''
+        Klub je přínosný, i pokud si tady jen čteš. Nejsi však na Wikipedii, tohle je komunita! Když se zapojíš, poslouží ti mnohem lépe. Žádný strach, nic jako hloupá otázka tady neexistuje.
 
-#         **Neboj se ptát** 🙋
-#         Pokud tě něco zajímá, zeptej se. Na rozdíl od školy nebo od jiných skupin na internetu se ti tady nikdo smát nebude.
+        **Ptej se i na blbosti** 🙋
+        Přijde ti, že tvé dotazy jsou moc základní? Čím banálnější problém, tím snáz a rychleji ti může někdo odpovědět! Na obtížný problém je potřeba senior s mnoha lety praxe, ale zapomenutou závorku ti lehce opraví i junioři, kteří na tom jsou jen o něco lépe než ty. Svou otázkou jim dáváš šanci uvědomit si, že už něco umí, a radovat se, že dokázali poradit.
 
-#         **Piš veřejně** 🥷
+        **Kdo se ptá, ten se dozví** 💭
+        Zajímá tě něco? Ptej se. Nejsi ve škole, kde se dotazy a chyby neodpouští. V klubu si myslíme, že je lepší se zeptat, a to klidně i „blbě”, než mlčet a nevědět. Každé nové téma k diskuzi je fajn. To, co vrtá hlavou tobě, často zajímá dalších třicet lidí, akorát nemají odvahu se zeptat.
 
-#         **Buď vidět** 🦸
-
-#         **Pomoc od moderátorů** ⭐️
-
-#     ''')
+        **Jak se ptát** 🤔
+        Pokud existuje způsob, jak se zeptat lépe, nebo jak lze problém příště řešit i bez nás, tak ti to rádi a bez keců ukážeme. Nikoho neobtěžuješ. Není vůbec snadné položit programátorský dotaz správně a se vším, co k tomu patří. Je to dovednost jako každá jiná. Naučíš se ji jen tím, že se budeš často ptát. A taky přečtením návodu v příručce 😀 https://junior.guru/handbook/help/
+    ''')
 
 
-# **Další funkce klubu** 🎛
-# NASE SLA
-# se tolik neptal, protože nechtěl obtěžovat, přišlo mu, že jsou to blbosti a tak
-#
-# že není cílem tady najít kámoše, co ti to budou na DM vysvětlovat
-#
-# motivovat lidi k veřejnému psaní a ne SZ
-#
-# hloupa otazka neexistuje, ale může byt spatne polozena
-#
-# z toho bych dal někam do onboardingu doporučení, ptej se, není to wikipedie
-#
-# Motivovat k použití místností, motivovat k použití poradny, CV, výrobky, ukazovat stránky v příručce, atd. - zajímá te něco? Zeptej se v pokecu, otevri tema, atd. a dat priklady co se muzou zeptat
-#
-#CLOVEK — Today at 14:44
-# Ahoj, byl jsem na tebe odkázán od # Messa. Otázka je . Jaká  je realita mezi kurzem a zaměstnání? Ptám se pro to jestli se dá uplatnit zkušenosti  z kurzu kterým jsem prošel a nebo to chce se zaměřit ještě na něco ? a zaměstnání? Ptám se pro to jestli se dá uplatnit zkušenosti  z kurzu kterým jsem prošel a nebo to chce se zaměřit ještě na něco ?
-# Jinak jsem tu to správu a další věci rozepisoval v #kurzi, je tam i odkaz na jeden můj kód
-# benabraham — Today at 18:19
-# Ano, ale ta mention byla na to, abych si toho případně všiml a odpověděl veřejně.
-# Radím výhradně veřejně, protože pak to pomáhá i jiným lidem, nejen tobě.
-# Výjimkou jsou situace, kdy jde o citlivé věci, což tady není.
-# CLOVEK — Today at 19:20
-# Dobře, beru na vědomí .
-#
-# mělo by ye zdůraznit, že to je plus pro tazajici, poradi vic lidi, vic pohledu
-# a taky ze je to trochu otravovani (ale tady opatrne), protoze vyžaduješ odpovědi přímo od někoho
-#
+@schedule_message('🥷')  # Day 8
+def render_public_over_private(context):
+    return dedent(f'''
+        Kromě citlivých věcí řeš všechno v kanálech, kde si to mohou přečíst i ostatní. Žádání o pomoc nebo názor v soukromých zprávách jde proti komunitní myšlence klubu.
+
+        **Piš veřejně** 📢
+        Veřejné dotazy jsou užitečné všem. Reakce dostaneš rychleji a budou zahrnovat zkušenosti od více lidí. Ostatní si diskuzi přečtou a poučí se, takže má smysl dát si tu práci a přispět propracovaným moudrem. <@{HONZAJAVOREK}> moudra vidí, může je sbírat a postupně dávat do příručky pro všechny. Win-win.
+
+        **Klub je komunita** 💞
+        Pomáháme si ve veřejných kanálech, všichni se při tom učíme, navzájem se obohacujeme. Díky tomu může být poplatek za klub minimální. Pokrývá jen provoz a rozvoj.
+
+        Zdejší profesionálové se ti věnují zdarma a z dobré vůle. Většina z nich sem chodí nahodile, když má volnou chvíli a chuť pomáhat. Respektuj to prosím. Klidně relevantní lidi označuj v kanálech a vláknech, aby si všimli. Nech však na nich, zda a kdy odpoví.
+
+        **Nevýhody soukromých zpráv** ✉️
+        Dotazům v SZ (nebo DM, jako _direct message_) se musí věnovat jen a pouze ten člověk, kterému píšeš. Nemusí mít čas se systematicky věnovat právě tobě, takže můžeš na odpověď dlouze čekat. Napíše ti pouze svůj názor. Nikdo ho neopraví. Nikdo jiný se z toho nepoučí.
+
+        **Mentoring** 💁
+        Nepředpokládej, že je OK žádat o pomoc přes soukromé zprávy. Nehledej ve veřejných kanálech lidi, kteří by ti „s něčím poradili v DM”. Výjimkami jsou moderátoři, kterým můžeš kdykoliv napsat a poradit se o čemkoliv ohledně klubu.
+
+        Profíky, kteří si vyhradili čas a energii na to, aby se juniorům věnovali i formou osobních konzultací, najdeš v kanálu <#976054742117658634>. Není to ale vhodné na jednorázové problémy, jedná se o dlouhodobější vztah.
+    ''')
+
+
+# Dat feedback driv?
+# co tu jde delat bude posledni ze serie tech zakladnich, pak uz jen payments
+
+
 # **CO TU JDE DĚLAT**
 # :speech_balloon: Diskutovat. Zkus #kariéra, #zdraví-těla, #kurzy…
 # :tv: Chodit na online srazy a přednášky
@@ -209,16 +206,19 @@ def render_sth(context):
 # :person_tipping_hand: Najít řešení. Vytvoř vlákno v #mentoring, pomůžeme!
 # :muscle:  Chlubit se! Umíš něco nového? #til Máš něco hotové? #výrobky
 # :people_hugging: Ulevit si v #past-vedle-pasti
+# TBD faq - co mam z clenstvi v klubu jako...? co tady jde delat… otevri tema, atd. a dat priklady co se muzou zeptat
+
+
+####################################################################
+# PAYMENTS AND FEEDBACK                                            #
+####################################################################
+
+
+### 🙇‍♂️ FEEDBACK
 #
-# spravne se ptat je dost narocna samostatna disciplina, je potreba se to naucit jako kazdy jiny skill, googlit je skill, cist odpovedi je skill. zkus vyhledavac, ale pokud vysledkum nerozumis, ptej se, ptej se, kdo se pta, ten se dozvi
-#
-# Veřejné a soukromé
-# TBD faq - co mam z clenstvi v klubu jako...? co tady jde delat… otevri tema, atd. a dat priklady co se muzou zeptat - verejne psani versus soukroma zprava, rady primo od honzy tady v kanalu, ptat se na vse kdyz nevis jak to funguje, poradime, jsme recepce, tajemstvi nepoustim bokem a kdyz dojde na lamani chleba, zastavam se junioru…
-#
-# Například že to není styl, hele kdo mi poradíte s Javou někdo se ozve a pak helé máš DM, tam to dořešíme jo
-#
-# Proč vůbec něco psát?
-# TBD, dat priklady co se muzou zeptat, co mam z clenstvi v klubu jako… faq
+# - odkud prisel
+# - co se ti tu libi
+# - co se ti tu nelibi, co ti tu chybi
 
 
 # @schedule_message('💸')  # Day 8
@@ -279,6 +279,7 @@ def render_sth(context):
 ### 🏢 JOBS
 # :clipboard:  Inzerovat v #práce, #pozvánky… Povolené, vítané!
 # pracovní nabídky bot, web jobs, pripomenout mute, k cemu jsou palce
+# **Buď vidět** 🦸
 
 
 ### 🚀 CV FEEDBACK

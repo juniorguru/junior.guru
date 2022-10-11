@@ -10,6 +10,10 @@ template: main_handbook.html
 
 # Kde najdeš pomoc
 
+{#
+  spravne se ptat je dost narocna samostatna disciplina, je potreba se to naucit jako kazdy jiny skill, googlit je skill, cist odpovedi je skill. zkus vyhledavac, ale pokud vysledkum nerozumis, ptej se, ptej se, kdo se pta, ten se dozvi
+#}
+
 {% call lead() %}
   Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout na týdny a úplně ti zkazit radost z učení. Neboj se ptát online, radit se s lidmi na [akcích](practice.md#najdi-inspiraci-poznej-lidi), nebo si najít [mentora](practice.md#najdi-si-mentora).
 {% endcall %}

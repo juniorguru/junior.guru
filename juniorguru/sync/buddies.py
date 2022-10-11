@@ -3,7 +3,7 @@ from datetime import timedelta
 import discord
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, MENTORING_CHANNEL,
+from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, MENTORING_CHANNEL, HONZAJAVOREK,
                                  is_message_over_period_ago, run_discord_task, is_message_bot_reminder)
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
@@ -34,7 +34,7 @@ async def discord_task(client):
             await channel.purge(check=is_message_bot_reminder)
             await channel.send(content=(
                 f"{BUDDIES_EMOJI} Nezapomeň, že si tady můžeš hledat parťáky na společné učení "
-                "nebo projekt. Pokud utvoříte skupinu, napište <@668226181769986078> "
+                f"nebo projekt. Pokud utvoříte skupinu, napište <@{HONZAJAVOREK}> "
                 "a vytvoří vám tady v klubu roli a soukromý kanál, kde se můžete domlouvat. "
                 "Hlasový kanál **klubovna** může kdokoliv z klubu využívat k volání jak potřebuje, "
                 "takže si tam klidně můžete dávat schůzky."
