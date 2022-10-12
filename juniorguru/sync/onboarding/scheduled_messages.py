@@ -178,7 +178,7 @@ def render_public_over_private(context):
         Kromě citlivých věcí řeš všechno v kanálech, kde si to mohou přečíst i ostatní. Žádání o pomoc nebo názor v soukromých zprávách jde proti komunitní myšlence klubu.
 
         **Piš veřejně** 📢
-        Veřejné dotazy jsou užitečné všem. Reakce dostaneš rychleji a budou zahrnovat zkušenosti od více lidí. Ostatní si diskuzi přečtou a poučí se, takže má smysl dát si tu práci a přispět propracovaným moudrem. <@{HONZAJAVOREK}> moudra vidí, může je sbírat a postupně dávat do příručky pro všechny. Win-win.
+        Veřejné dotazy jsou užitečné všem. Reakce dostaneš rychleji a budou zahrnovat zkušenosti od více lidí. Ostatní si diskuzi přečtou a poučí se, takže odpovídající vidí větší smysl v psaní propracovanějších mouder. <@{HONZAJAVOREK}> moudra vidí, může je sbírat a postupně dávat do příručky pro všechny. Win-win.
 
         **Klub je komunita** 💞
         Pomáháme si ve veřejných kanálech, všichni se při tom učíme, navzájem se obohacujeme. Díky tomu může být poplatek za klub minimální. Pokrývá jen provoz a rozvoj.
