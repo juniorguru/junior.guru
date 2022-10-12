@@ -141,15 +141,16 @@
   description: |
     Data jsou klíčová. Všichni chtějí v investovat jen do věcí, které fungují. Každý chce dělat ta správná rozhodnutí. A nikdo nechce selhat. Ale jak toho dosáhnout v online prostředí? Řešení je webová analytika. Přijďte zjistit, kdo je webový analytik. Jaká data zpracovává. Jak vypadá jeho den. A jak v oboru začít, pokud by vás zaujal.
   avatar_path: avatars-participants/pavel-sabatka.jpg
-  bio_name: Pavel Šabatka
-  bio_title: Webový analytik, House of Řezáč
+  bio_name: Pavel Šabatka (a Katka Hlaváčová)
+  bio_title: Weboví analytici, House of Řezáč
   bio: |
-    Webový analytik od roku 2010, spoluzakladatel House of Řezáč, táta tří dětí. Aktuálně vede tým analytiků, počítá finance a pere se s dětmi.
+    Pavel je webový analytik od roku 2010, spoluzakladatel House of Řezáč, táta tří dětí. Aktuálně vede tým analytiků, počítá finance a pere se s dětmi. Katka je Pavlova kolegyně, čerstvá juniorní webová analytička.
   bio_links:
     - https://www.linkedin.com/in/pavel-%C5%A1abatka-009a0020/
+    - https://www.linkedin.com/in/katarina-hlavacova/
     - https://www.houseofrezac.com/
   logo_path: logos/houseofrezac.svg
-  speakers: 1002158848540413952
+  speakers: 1002158848540413952, 782702546065424405
 
 
 - title: "Od C# k .NETu"
