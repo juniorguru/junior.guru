@@ -172,27 +172,30 @@ def render_asking(context):
     ''')
 
 
-@schedule_message('🥷')  # Day 8
-def render_public_over_private(context):
-    return dedent(f'''
-        Kromě citlivých věcí řeš všechno v kanálech, kde si to mohou přečíst i ostatní. Žádání o pomoc nebo názor v soukromých zprávách jde proti komunitní myšlence klubu.
+# ale říct že je to lepší pro klub a třeba "pokud chcete místní komunitu a klub podpořit, prosím napište svůj dotaz do kanálů tomu určených" nebo tak něco
+# a potom něco jako : protože je to výhoda i pro ostatní - můžou to vidět, atp atd
+#
+# @schedule_message('🥷')  # Day 8
+# def render_public_over_private(context):
+#     return dedent(f'''
+#         Kromě citlivých věcí řeš všechno v kanálech, kde si to mohou přečíst i ostatní. Žádání o pomoc nebo názor v soukromých zprávách jde proti komunitní myšlence klubu.
 
-        **Piš veřejně** 📢
-        Veřejné dotazy jsou užitečné všem. Reakce dostaneš rychleji a budou zahrnovat zkušenosti od více lidí. Ostatní si diskuzi přečtou a poučí se, takže odpovídající vidí větší smysl v psaní propracovanějších mouder. <@{HONZAJAVOREK}> moudra vidí, může je sbírat a postupně dávat do příručky pro všechny. Win-win.
+#         **Piš veřejně** 📢
+#         Veřejné dotazy jsou užitečné všem. Reakce dostaneš rychleji a budou zahrnovat zkušenosti od více lidí. Ostatní si diskuzi přečtou a poučí se, takže odpovídající vidí větší smysl v psaní propracovanějších mouder. <@{HONZAJAVOREK}> moudra vidí, může je sbírat a postupně dávat do příručky pro všechny. Win-win.
 
-        **Klub je komunita** 💞
-        Pomáháme si ve veřejných kanálech, všichni se při tom učíme, navzájem se obohacujeme. Díky tomu může být poplatek za klub minimální. Pokrývá jen provoz a rozvoj.
+#         **Klub je komunita** 💞
+#         Pomáháme si ve veřejných kanálech, všichni se při tom učíme, navzájem se obohacujeme. Díky tomu může být poplatek za klub minimální. Pokrývá jen provoz a rozvoj.
 
-        Zdejší profesionálové se ti věnují zdarma a z dobré vůle. Většina z nich sem chodí nahodile, když má volnou chvíli a chuť pomáhat. Respektuj to prosím. Klidně relevantní lidi označuj v kanálech a vláknech, aby si všimli. Nech však na nich, zda a kdy odpoví.
+#         Zdejší profesionálové se ti věnují zdarma a z dobré vůle. Většina z nich sem chodí nahodile, když má volnou chvíli a chuť pomáhat. Respektuj to prosím. Klidně relevantní lidi označuj v kanálech a vláknech, aby si všimli. Nech však na nich, zda a kdy odpoví.
 
-        **Nevýhody soukromých zpráv** ✉️
-        Dotazům v SZ (nebo DM, jako _direct message_) se musí věnovat jen a pouze ten člověk, kterému píšeš. Nemusí mít čas se systematicky věnovat právě tobě, takže můžeš na odpověď dlouze čekat. Napíše ti pouze svůj názor. Nikdo ho neopraví. Nikdo jiný se z toho nepoučí.
+#         **Nevýhody soukromých zpráv** ✉️
+#         Dotazům v SZ (nebo DM, jako _direct message_) se musí věnovat jen a pouze ten člověk, kterému píšeš. Nemusí mít čas se systematicky věnovat právě tobě, takže můžeš na odpověď dlouze čekat. Napíše ti pouze svůj názor. Nikdo ho neopraví. Nikdo jiný se z toho nepoučí.
 
-        **Mentoring** 💁
-        Nepředpokládej, že je OK žádat o pomoc přes soukromé zprávy. Nehledej ve veřejných kanálech lidi, kteří by ti „s něčím poradili v DM”. Výjimkami jsou moderátoři, kterým můžeš kdykoliv napsat a poradit se o čemkoliv ohledně klubu.
+#         **Mentoring** 💁
+#         Nepředpokládej, že je OK žádat o pomoc přes soukromé zprávy. Nehledej ve veřejných kanálech lidi, kteří by ti „s něčím poradili v DM”. Výjimkami jsou moderátoři, kterým můžeš kdykoliv napsat a poradit se o čemkoliv ohledně klubu.
 
-        Profíky, kteří si vyhradili čas a energii na to, aby se juniorům věnovali i formou osobních konzultací, najdeš v kanálu <#976054742117658634>. Není to ale vhodné na jednorázové problémy, jedná se o dlouhodobější vztah.
-    ''')
+#         Profíky, kteří si vyhradili čas a energii na to, aby se juniorům věnovali i formou osobních konzultací, najdeš v kanálu <#976054742117658634>. Není to ale vhodné na jednorázové problémy, jedná se o dlouhodobější vztah.
+#     ''')
 
 
 # Dat feedback driv?
