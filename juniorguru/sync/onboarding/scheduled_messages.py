@@ -175,6 +175,8 @@ def render_asking(context):
 # ale říct že je to lepší pro klub a třeba "pokud chcete místní komunitu a klub podpořit, prosím napište svůj dotaz do kanálů tomu určených" nebo tak něco
 # a potom něco jako : protože je to výhoda i pro ostatní - můžou to vidět, atp atd
 #
+# asi bych si to klidně i napsal do profilu, že to nestíhám, protože je dotazů hodně, pokud chcete mít "jistotu" že na váš dotaz někdo odpoví, napište ho veřejně :))
+#
 # @schedule_message('🥷')  # Day 8
 # def render_public_over_private(context):
 #     return dedent(f'''
