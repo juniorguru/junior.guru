@@ -68,6 +68,21 @@
 #   speakers: 854681167018459146
 
 
+# - title: "(Bude upřesněno, jak se stát IT analytikem)"
+#   date: "2023-01-10"
+#   description: |
+#     (Bude upřesněno)
+#   avatar_path: avatars-participants/martin-javorek.jpg
+#   bio_name: Martin Javorek
+#   bio_title: IT analytik a architekt v Hypoteční bance
+#   bio: |
+#     (Bude upřesněno)
+#   bio_links:
+#     - https://www.linkedin.com/in/javorek/
+#   logo_path: logos/hypotecni-banka.svg
+#   speakers:
+
+
 - title: "(Bude upřesněno, úvod do Javy)"
   date: "2022-12-06"
   description: |
@@ -126,7 +141,7 @@
   bio_name: Matěj Kotrba
   bio_title: IT headhunter, podcaster
   bio: |
-    Matěj je IT headhunter, který pomáhá IT odborníkům najít fit pracovní příležitost a firmám najít nové kolegy do týmu. Zároveň je producentem podcastů **Fuckupy v IT** a **Fuckupy recuiterů**, které si můžete poslechhnout na všech dostupných platformách.
+    Matěj je IT headhunter, který pomáhá IT odborníkům najít fit pracovní příležitost a firmám najít nové kolegy do týmu. Zároveň je producentem podcastů **Fuckupy v IT** a **Fuckupy recruiterů**, které si můžete poslechnout na všech dostupných platformách.
   bio_links:
     - https://twitter.com/MatjKotrba5
     - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
@@ -307,7 +322,7 @@
   bio_name: Matěj Kotrba
   bio_title: IT headhunter, podcaster
   bio: |
-    Matěj je IT headhunter, který pomáhá IT odborníkům najít fit pracovní příležitost a firmám najít nové kolegy do týmu. Zároveň je producentem podcastů **Fuckupy v IT** a **Fuckupy recuiterů**, které si můžete poslechhnout na všech dostupných platformách.
+    Matěj je IT headhunter, který pomáhá IT odborníkům najít fit pracovní příležitost a firmám najít nové kolegy do týmu. Zároveň je producentem podcastů **Fuckupy v IT** a **Fuckupy recruiterů**, které si můžete poslechnout na všech dostupných platformách.
   bio_links:
     - https://twitter.com/MatjKotrba5
     - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
