@@ -161,7 +161,7 @@ def render_asking(context):
     return dedent('''
         Klub je přínosný, i pokud si tady jen čteš. Nejsi však na Wikipedii, tohle je komunita! Když se zapojíš, poslouží ti mnohem lépe. Žádný strach, nic jako hloupá otázka tady neexistuje.
 
-        **Ptej se i na blbosti** 🙋
+        **Ptej se i na „blbosti”** 🙋
         Přijde ti, že tvé dotazy jsou moc základní? Čím banálnější problém, tím snáz a rychleji ti může někdo odpovědět! Na obtížný problém je potřeba senior s mnoha lety praxe, ale zapomenutou závorku ti lehce opraví i junioři, kteří na tom jsou jen o něco lépe než ty. Svou otázkou jim dáváš šanci uvědomit si, že už něco umí, a radovat se, že dokázali poradit.
 
         **Kdo se ptá, ten se dozví** 💭
