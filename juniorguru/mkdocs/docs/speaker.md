@@ -74,7 +74,7 @@ Honza **dělá záznam z každé přednášky** a ten poté okamžitě nahrává
 
 ### Kolik přijde lidí?
 
-Návštěvnost je různá a lze těžko předvídat. Aktuálně se na přednášky připojuje **kolem 20 lidí živě**. Mnoho členů ale počítá s tím, že si pustí záznam, protože v době živého vysílání němají čas. **Záznamy mívají 50 až 100 zhlédnutí.**
+Návštěvnost je různá a lze těžko předvídat. **Někdy se živě připojí 20 lidí, někdy jen 5.** Neříká to nic o popularitě přednášky. Mnoho členů počítá s tím, že si pustí záznam, protože v době živého vysílání nemají čas. **Záznamy mívají 50 až 100 zhlédnutí.**
 
 ### Kdo je v publiku?
 
