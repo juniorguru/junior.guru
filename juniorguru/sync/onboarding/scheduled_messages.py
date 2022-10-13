@@ -55,7 +55,7 @@ def render_hello(context):
 @schedule_message('🧭')  # Day 2
 def render_orientation(context):
     return dedent('''
-        Dnes ti chci pomoci se základní orientací. Kanálů je tady mnoho, ale neboj se toho. Po pár dnech si všimneš, že někde se toho děje víc, jinde je to klidnější a něco tě vůbec nezajímá, tak si to vypneš.
+        Kanálů je tady mnoho, ale neboj se toho. Po pár dnech si všimneš, že někde se toho děje víc, jinde je to klidnější a něco tě vůbec nezajímá, tak si to vypneš.
 
         **Co jsou kanály?** 💬
         Jejich názvy začínají znakem #, ale nejsou to hashtagy. Kanály jsou jako místnosti v bytě nebo pódia na festivalu. Rozdělují diskuzi podle účelu a tématu. Nemusí být jen textové, existují i hlasové a další.
@@ -78,7 +78,7 @@ def render_orientation(context):
 @schedule_message('💬')  # Day 3
 def render_discord(context):
     return dedent('''
-        V tomto tipu ti vysvětlím, jak funguje Discord. Co to vlastně je? Jak tady správně komunikovat? K čemu jsou a jak fungují vlákna?
+        Jak funguje Discord? Co to vlastně je? Jak tady správně komunikovat? K čemu jsou a jak fungují vlákna?
 
         **Co je Discord?** 👾
         Něco mezi sociální sítí a chatovací aplikací. Původně to začalo jako služba pro hráče, ale dnes už je tu všechno možné. Kdokoliv si tady může založit skupinu a pozvat do ní lidi, podobně jako na Facebooku. Skupiny jsou ale soukromé a jen na pozvánky, spíš jako na WhatsApp. Každá skupina (_Discord server_) se dělí na diskuzní kanály, podobně jako to má Slack. A navíc jsou tady hlasové kanály, kde se lidi mohou na jeden klik spojit přes (video)hovor.
@@ -100,7 +100,7 @@ def render_discord(context):
 @schedule_message('🐣')  # Day 4
 def render_juniorguru(context):
     return dedent(f'''
-        Dnes to bude o tom, že na junior.guru není jen klub, ale i spousta motivace a užitečných rad, které by bylo škoda minout.
+        Na junior.guru není jen klub, ale i spousta motivace a užitečných rad, které by bylo škoda minout.
 
         **Příručka** 📖
         Na https://junior.guru/handbook/ najdeš příručku pro juniory. Celá je zdarma ke čtení na webu a je v ní hromada užitečných tipů. Jak začít programovat? Jak si sehnat první praxi? Co je u pohovorů důležité? Jak připravit životopis? Tím vším a mnohým dalším tě příručka provede, krok za krokem. <@{HONZAJAVOREK}> stále přidává nové kapitoly, takže i pokud už máš něco přečtené, je dobré se tam po čase vracet.
@@ -132,7 +132,22 @@ def render_roles(context):
     ''')
 
 
-@schedule_message('💛')  # Day 6
+@schedule_message('👀')  # Day 6
+def render_feedback(context):
+    return dedent(f'''
+        Píp pípípíp! Pokaždé spousta písmenek ke čtení, že? Pro změnu zkusím zavřít zobáček a poslouchat. Zeptám se tě na tři věci:
+
+        1️⃣ Díky čemu nebo komu víš, že junior.guru existuje? Kde se ti povedlo na to narazit?
+
+        2️⃣ Co se ti tu líbí? Co tě příjemně překvapilo? Co si nejvíc užíváš?
+
+        3️⃣ Co ti tu chybí? Co se ti tu nelíbí? Co by šlo vylepšit? Z čeho máš blbý pocit?
+
+        Odpovědi pomůžou <@{HONZAJAVOREK}> ve vylepšování junior.guru.
+    ''')
+
+
+@schedule_message('💛')  # Day 7
 def render_coc(context):
     return dedent(f'''
         Možná tě něco zajímá, ale bojíš se zeptat. Možná máš co napsat k tématu, ale nechceš riskovat nepříjemné reakce. Co když se ti někdo vysměje? Co když tě někdo nepochopí?
@@ -156,7 +171,7 @@ def render_coc(context):
     ''')
 
 
-@schedule_message('💡')  # Day 7
+@schedule_message('💡')  # Day 8
 def render_asking(context):
     return dedent('''
         Klub je přínosný, i pokud si tady jen čteš. Nejsi však na Wikipedii, tohle je komunita! Když se zapojíš, poslouží ti mnohem lépe. Žádný strach, nic jako hloupá otázka tady neexistuje.
@@ -200,10 +215,6 @@ def render_asking(context):
 #     ''')
 
 
-# Dat feedback driv?
-# co tu jde delat bude posledni ze serie tech zakladnich, pak uz jen payments
-
-
 # **CO TU JDE DĚLAT**
 # :speech_balloon: Diskutovat. Zkus #kariéra, #zdraví-těla, #kurzy…
 # :tv: Chodit na online srazy a přednášky
@@ -212,18 +223,6 @@ def render_asking(context):
 # :muscle:  Chlubit se! Umíš něco nového? #til Máš něco hotové? #výrobky
 # :people_hugging: Ulevit si v #past-vedle-pasti
 # TBD faq - co mam z clenstvi v klubu jako...? co tady jde delat… otevri tema, atd. a dat priklady co se muzou zeptat
-
-
-####################################################################
-# PAYMENTS AND FEEDBACK                                            #
-####################################################################
-
-
-### 🙇‍♂️ FEEDBACK
-#
-# - odkud prisel
-# - co se ti tu libi
-# - co se ti tu nelibi, co ti tu chybi
 
 
 # @schedule_message('💸')  # Day 8
