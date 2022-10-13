@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import datetime
 
 import pytest
 from peewee import SqliteDatabase
@@ -41,7 +41,14 @@ def test_archive_listing(db_connection):
     event3 = create_event(3, start_at=datetime(2021, 5, 3))  # noqa
     event4 = create_event(4, start_at=datetime(2021, 3, 15))
 
-    assert list(Event.archive_listing(today=date(2021, 5, 2))) == [event2, event1, event4]
+    assert list(Event.archive_listing(now=datetime(2021, 5, 2))) == [event2, event1, event4]
+
+
+def test_archive_listing_time(db_connection):
+    event1 = create_event(1, start_at=datetime(2021, 5, 2, 11))
+    event2 = create_event(2, start_at=datetime(2021, 5, 2, 22))  # noqa
+
+    assert list(Event.archive_listing(now=datetime(2021, 5, 2, 18))) == [event1]
 
 
 def test_planned_listing(db_connection):
@@ -50,7 +57,14 @@ def test_planned_listing(db_connection):
     event3 = create_event(3, start_at=datetime(2021, 5, 3))
     event4 = create_event(4, start_at=datetime(2021, 3, 15))  # noqa
 
-    assert list(Event.planned_listing(today=date(2021, 5, 2))) == [event3, event2]
+    assert list(Event.planned_listing(now=datetime(2021, 5, 2))) == [event3, event2]
+
+
+def test_planned_listing_time(db_connection):
+    event1 = create_event(1, start_at=datetime(2021, 5, 2, 11))  # noqa
+    event2 = create_event(2, start_at=datetime(2021, 5, 2, 22))
+
+    assert list(Event.planned_listing(now=datetime(2021, 5, 2, 18))) == [event2]
 
 
 def test_next(db_connection):
@@ -59,7 +73,21 @@ def test_next(db_connection):
     event3 = create_event(3, start_at=datetime(2021, 5, 3))
     event4 = create_event(4, start_at=datetime(2021, 3, 15))  # noqa
 
-    assert Event.next(today=date(2021, 5, 2)) == event3
+    assert Event.next(now=datetime(2021, 5, 2)) == event3
+
+
+def test_next_time_before(db_connection):
+    event1 = create_event(1, start_at=datetime(2021, 5, 2, 11))  # noqa
+    event2 = create_event(2, start_at=datetime(2021, 5, 2, 22))
+
+    assert Event.next(now=datetime(2021, 5, 2, 18)) == event2
+
+
+def test_next_time_after(db_connection):
+    create_event(1, start_at=datetime(2021, 5, 2, 11))
+    create_event(2, start_at=datetime(2021, 5, 2, 22))
+
+    assert Event.next(now=datetime(2021, 5, 2, 22, 5)) is None
 
 
 def test_next_many_planned(db_connection):
@@ -68,7 +96,7 @@ def test_next_many_planned(db_connection):
     event3 = create_event(3, start_at=datetime(2021, 5, 3))
     event4 = create_event(4, start_at=datetime(2021, 3, 15))  # noqa
 
-    assert Event.next(today=date(2021, 5, 2)) == event3
+    assert Event.next(now=datetime(2021, 5, 2)) == event3
 
 
 def test_next_nothing_planned(db_connection):
@@ -76,7 +104,7 @@ def test_next_nothing_planned(db_connection):
     create_event(2, start_at=datetime(2021, 5, 1))
     create_event(4, start_at=datetime(2021, 3, 15))
 
-    assert Event.next(today=date(2021, 5, 2)) is None
+    assert Event.next(now=datetime(2021, 5, 2)) is None
 
 
 def test_list_speaking_members(db_connection):

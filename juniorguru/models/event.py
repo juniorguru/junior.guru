@@ -1,4 +1,4 @@
-from datetime import date, timedelta
+from datetime import timedelta, datetime
 
 import arrow
 from peewee import CharField, DateTimeField, ForeignKeyField, IntegerField, TextField
@@ -53,10 +53,10 @@ class Event(BaseModel):
         return f"https://junior.guru/events/#{self.slug}"
 
     @classmethod
-    def next(cls, today=None):
-        today = today or date.today()
+    def next(cls, now=None):
+        now = now or datetime.utcnow()
         return cls.select() \
-            .where(cls.start_at >= today) \
+            .where(cls.start_at >= now) \
             .order_by(cls.start_at) \
             .first()
 
@@ -76,17 +76,17 @@ class Event(BaseModel):
         return cls.listing()
 
     @classmethod
-    def archive_listing(cls, today=None):
-        today = today or date.today()
+    def archive_listing(cls, now=None):
+        now = now or datetime.utcnow()
         return cls.select() \
-            .where(cls.start_at < today) \
+            .where(cls.start_at < now) \
             .order_by(cls.start_at.desc())
 
     @classmethod
-    def planned_listing(cls, today=None):
-        today = today or date.today()
+    def planned_listing(cls, now=None):
+        now = now or datetime.utcnow()
         return cls.select() \
-            .where(cls.start_at >= today) \
+            .where(cls.start_at >= now) \
             .order_by(cls.start_at)
 
 
