@@ -8,6 +8,12 @@
 # avatar_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
+- id: "0009"
+  title: Markéta Lourenco (Mews) o cestě od lingvistiky k datové analýze
+  publish_on: "2022-10-15"
+  description: |
+    Do devátého dílu podcastu junior guru si Pája pozvala Markétu Lourenco, původně vystudovanou lingvistku a v současnosti datovou analytičku ve firmě Mews. Vypráví o tom, co ji přimělo vyzkoušet svět IT, jak hladce se jí podařilo získat první datovou pozici a co její práce obnáší.
+
 - id: "0008"
   title: Michal Matuška (SUPERKODERS) o leadershipu a juniorech
   avatar_path: avatars-participants/michal-matuska.jpg
