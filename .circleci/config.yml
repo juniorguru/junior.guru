@@ -164,7 +164,7 @@ jobs:
           at: "~"
       - run:
           name: "Debug 'DatabaseError: database disk image is malformed' (list files)"
-          command: find project/juniorguru/data
+          command: find juniorguru/data
       - run:
           name: "Debug 'DatabaseError: database disk image is malformed' (integrity check)"
           command: "poetry run sqlite-utils juniorguru/data/data.db 'PRAGMA integrity_check' | poetry run python -mjson.tool"
