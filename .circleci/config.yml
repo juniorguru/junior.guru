@@ -135,13 +135,13 @@ jobs:
             # poetry run sqlite-utils optimize juniorguru/data/data.db  # TODO
       - run:
           name: "Debug 'DatabaseError: database disk image is malformed' (integrity check)"
-          command: 'sqlite3 juniorguru/data/data.db "PRAGMA integrity_check;"'
+          command: "poetry run sqlite-utils juniorguru/data/data.db 'PRAGMA integrity_check' | poetry run python -mjson.tool"
       - run:
           name: "Debug 'DatabaseError: database disk image is malformed' (optimize)"
           command: 'poetry run sqlite-utils optimize juniorguru/data/data.db'
       - run:
           name: "Debug 'DatabaseError: database disk image is malformed' (integrity check)"
-          command: 'sqlite3 juniorguru/data/data.db "PRAGMA integrity_check;"'
+          command: "poetry run sqlite-utils juniorguru/data/data.db 'PRAGMA integrity_check' | poetry run python -mjson.tool"
       - save_cache:  # makes jobs-emails idempotent
           key: jobs-emails-v2-{{ .Branch }}-{{ checksum ".today" }}
           paths:
@@ -167,7 +167,7 @@ jobs:
           command: find project/juniorguru/data
       - run:
           name: "Debug 'DatabaseError: database disk image is malformed' (integrity check)"
-          command: 'sqlite3 juniorguru/data/data.db "PRAGMA integrity_check;"'
+          command: "poetry run sqlite-utils juniorguru/data/data.db 'PRAGMA integrity_check' | poetry run python -mjson.tool"
       - run:
           name: "Debug 'DatabaseError: database disk image is malformed' (optimize)"
           command: 'poetry run sqlite-utils optimize juniorguru/data/data.db'
