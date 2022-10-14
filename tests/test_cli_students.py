@@ -3,7 +3,7 @@ from datetime import date
 import pytest
 
 from juniorguru.models.company import Company, CompanyStudentSubscription
-from juniorguru.utils.students import subscription_to_row, to_csv
+from juniorguru.cli.students import subscription_to_row, to_csv
 
 
 def test_to_csv():

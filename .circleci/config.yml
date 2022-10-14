@@ -53,10 +53,10 @@ jobs:
           at: "~"
       - run:
           name: Lint
-          command: poetry run invoke lint
+          command: poetry run jg lint
       - run:
           name: Test
-          command: poetry run invoke test -v
+          command: poetry run jg test -v
 
   sync-scrape-jobs:
     executor: python-js
@@ -92,7 +92,7 @@ jobs:
       - run:
           name: Cancel previous builds
           command: |
-            poetry run invoke cancel-previous-builds
+            poetry run jg cancel-previous-builds
       - run:
           name: Sync data
           command: |
@@ -171,7 +171,7 @@ jobs:
       - run:
           name: "Debug 'DatabaseError: database disk image is malformed' (optimize)"
           command: 'poetry run sqlite-utils optimize juniorguru/data/data.db'
-      - run: poetry run invoke web.build
+      - run: poetry run jg web build
       - persist_to_workspace:
           root: "~"
           paths:
@@ -212,21 +212,14 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - run: poetry run invoke checks.docs
+      - run: poetry run jg check-docs
 
   check-links:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: poetry run invoke checks.links --retry
-
-  check-scrapers:
-    executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run: poetry run invoke checks.scrapers
+      - run: poetry run jg check-links --retry
 
 
 workflows:

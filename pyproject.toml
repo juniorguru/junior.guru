@@ -8,6 +8,9 @@ readme = "README.md"
 homepage = "https://junior.guru/"
 repository = "https://github.com/honzajavorek/junior.guru/"
 
+[tool.poetry.scripts]
+jg = "juniorguru.cli:main"
+
 [tool.poetry.dependencies]
 python = "3.10.*"
 jinja2 = "*"
@@ -42,6 +45,7 @@ invoke = "*"
 Scrapy = "*"
 python-slugify = "*"
 playwright = "*"
+click = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"

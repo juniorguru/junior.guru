@@ -4,7 +4,7 @@ import itertools
 from datetime import date
 from pathlib import Path
 
-from invoke import Exit, task
+import click
 from playhouse.shortcuts import model_to_dict
 
 from juniorguru.lib import loggers
@@ -16,18 +16,21 @@ from juniorguru.models.company import Company
 logger = loggers.get(__name__)
 
 
-@task(name='students')
-def main(context, company_slug, all=False, invoice=False):
+@click.command()
+@click.argument('company_slug')
+@click.option('--all/--no-all', default=False)
+@click.option('--invoice/--no-invoice', default=False)
+def main(company_slug, all, invoice):
     if all and invoice:
         logger.error("Can invoice only billable subscriptions, unexpected combination of arguments")
-        raise Exit(code=1)
+        click.Abort()
 
     try:
         company = Company.get_by_slug(company_slug)
     except Company.DoesNotExist:
         slugs = [company.slug for company in Company.schools_listing()]
         logger.error(f"Company must be one of: {', '.join(slugs)}")
-        raise Exit(code=1)
+        click.Abort()
     logger.debug(f"Company identified as {company!r}")
 
     if all:
@@ -46,16 +49,16 @@ def main(context, company_slug, all=False, invoice=False):
         path.write_text(csv_content)
     else:
         logger.warning("Didn't find any subscriptions!")
-        raise Exit(code=0)
+        return
 
     if invoice:
         if input('Are you sure you want to mark the above as invoiced? (type YES!) ') != 'YES!':
             logger.error("You're not sure")
-            raise Exit(code=1)
+            click.Abort()
 
         if not MEMBERFUL_MUTATIONS_ENABLED:
             logger.error('Memberful mutations not enabled')
-            raise Exit(code=1)
+            click.Abort()
 
         memberful = Memberful()
         query = '''

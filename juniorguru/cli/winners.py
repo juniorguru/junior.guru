@@ -1,7 +1,7 @@
 import random
 import time
 
-from invoke import task
+import click
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import emoji_name, run_discord_task
@@ -13,9 +13,11 @@ ROLE = 836959652100702248
 logger = loggers.get(__name__)
 
 
-@task(name='winners')
-def main(context, message_url, winners_count):
-    run_discord_task('juniorguru.utils.winners.discord_task', message_url, int(winners_count))
+@click.command()
+@click.argument('message_url')
+@click.argument('winners_count', type=int)
+def main(message_url, winners_count):
+    run_discord_task('juniorguru.utils.winners.discord_task', message_url, winners_count)
 
 
 async def discord_task(client, message_url, winners_count):

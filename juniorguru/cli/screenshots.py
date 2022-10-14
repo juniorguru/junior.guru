@@ -7,7 +7,7 @@ from pathlib import Path
 from subprocess import PIPE, run
 
 import requests
-from invoke import task
+import click
 from lxml import html
 from PIL import Image
 from playwright.sync_api import (Error as PlaywrightError,
@@ -20,7 +20,7 @@ from juniorguru.lib import loggers
 logger = loggers.get(__name__)
 
 
-PROJECT_DIR = Path(__file__).parent.parent.parent
+PROJECT_DIR = Path(__file__).parent.parent
 
 PUBLIC_DIR = PROJECT_DIR / 'public'
 
@@ -107,8 +107,8 @@ BLOCKED_ROUTES = [
 ]
 
 
-@task(name='screenshots')
-def main(context):
+@click.command()
+def main():
     SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
     SCREENSHOTS_OVERRIDES_DIR.mkdir(parents=True, exist_ok=True)
 

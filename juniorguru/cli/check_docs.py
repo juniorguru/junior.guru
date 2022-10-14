@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from invoke import Exit, task
+import click
 from lxml import html
 
 from juniorguru.lib import loggers
@@ -24,8 +24,8 @@ class StaticFileLinkError(ValueError):
     pass
 
 
-@task(name='docs')
-def main(context):
+@click.command()
+def main():
     links = []
     targets = set()
     static = set()
@@ -66,7 +66,7 @@ def main(context):
             logger.error(f'Broken static file! {doc_name} links to {static_path}')
             broken = True
     if broken:
-        raise Exit(code=1)
+        raise click.Abort()
     else:
         logger.info(f'Checked {len(links)} links, {len(targets)} targets, {len(static)} static files. All good!')
 

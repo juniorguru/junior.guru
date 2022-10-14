@@ -1,7 +1,7 @@
 import shutil
 from pathlib import Path
 
-from invoke import Exit, task
+import click
 from slugify import slugify
 
 from juniorguru.lib import loggers
@@ -16,13 +16,14 @@ AVATAR_SIZE_PX = 500
 logger = loggers.get(__name__)
 
 
-@task(name='participant')
-def main(context, image_path):
+@click.command()
+@click.argument('image_path', type=click.Path(exists=True))
+def main(image_path):
     image_path = Path(image_path)
 
     if image_path.parent == AVATARS_DIR:
         logger.error(f'The image is already in {AVATARS_DIR}, oops')
-        raise Exit(code=1)
+        raise click.Abort()
 
     name = slugify(input('Participant name: '))
     destination_path = AVATARS_DIR / f'{name}{image_path.suffix}'

@@ -3,7 +3,7 @@ import time
 from pathlib import Path
 from subprocess import PIPE, Popen
 
-from invoke import Exit, task
+import click
 
 
 USER_AGENT = (
@@ -37,8 +37,9 @@ EXCLUDE_REASONS = [re.compile(r) for r in [
 PUBLIC_DIR = Path('public')
 
 
-@task(name='links')
-def main(context, retry=False):
+@click.command()
+@click.option('--retry/--no-retry', default=False)
+def main(retry):
     command = ['npx', 'blcl']
     options = [
         '--verbose',
@@ -110,4 +111,5 @@ def main(context, retry=False):
             for url, reason in errors:
                 print(f'{reason}\t{url}')
 
-        raise Exit(code=1 if errors else 0)
+        if errors:
+            raise click.Abort()
