@@ -21,4 +21,5 @@ for module in [cancel_previous_builds,
                screenshots,
                winners,
                students]:
-    main.add_command(module.main, name=module.__name__)
+    command_name = module.__name__.split('.')[-1].replace('_', '-')
+    main.add_command(module.main, name=command_name)
