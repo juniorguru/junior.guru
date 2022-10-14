@@ -6,8 +6,8 @@ from multiprocessing import Pool
 from pathlib import Path
 from subprocess import PIPE, run
 
-import requests
 import click
+import requests
 from lxml import html
 from PIL import Image
 from playwright.sync_api import (Error as PlaywrightError,

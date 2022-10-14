@@ -1,6 +1,7 @@
 import click
 
-from juniorguru.cli import cancel_previous_builds, dev, web, participant, screenshots, winners, students, check_docs, check_links
+from juniorguru.cli import (cancel_previous_builds, check_docs, check_links, dev,
+                            participant, screenshots, students, web, winners)
 
 
 @click.group()

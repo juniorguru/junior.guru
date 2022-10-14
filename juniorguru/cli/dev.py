@@ -1,7 +1,7 @@
 import subprocess
 
-import pytest
 import click
+import pytest
 
 
 @click.command()

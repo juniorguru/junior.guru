@@ -6,7 +6,9 @@ from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib.club import ANNOUNCEMENTS_CHANNEL
 from juniorguru.models.club import ClubUser
-from juniorguru.sync.onboarding.categories import is_onboarding_category, delete_empty_categories, create_enough_categories
+from juniorguru.sync.onboarding.categories import (create_enough_categories,
+                                                   delete_empty_categories,
+                                                   is_onboarding_category)
 from juniorguru.sync.onboarding.channels_operations import CHANNELS_OPERATIONS
 
 

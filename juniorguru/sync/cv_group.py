@@ -4,8 +4,8 @@ from textwrap import dedent
 from discord import ButtonStyle, Embed, ui
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, is_message_over_period_ago,
-                                 run_discord_task, is_message_bot_reminder)
+from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, is_message_bot_reminder,
+                                 is_message_over_period_ago, run_discord_task)
 from juniorguru.lib.tasks import sync_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage

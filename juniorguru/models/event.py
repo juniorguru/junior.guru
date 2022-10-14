@@ -1,4 +1,4 @@
-from datetime import timedelta, datetime
+from datetime import datetime, timedelta
 
 import arrow
 from peewee import CharField, DateTimeField, ForeignKeyField, IntegerField, TextField

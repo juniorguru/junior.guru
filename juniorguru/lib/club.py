@@ -5,8 +5,8 @@ import re
 from datetime import date
 from multiprocessing import Process
 
-import emoji
 import discord
+import emoji
 
 from juniorguru.lib import loggers
 

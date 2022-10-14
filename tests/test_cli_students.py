@@ -2,8 +2,8 @@ from datetime import date
 
 import pytest
 
-from juniorguru.models.company import Company, CompanyStudentSubscription
 from juniorguru.cli.students import subscription_to_row, to_csv
+from juniorguru.models.company import Company, CompanyStudentSubscription
 
 
 def test_to_csv():

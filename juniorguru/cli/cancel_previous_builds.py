@@ -1,8 +1,8 @@
 import os
 from datetime import datetime, timedelta
 
-import requests
 import click
+import requests
 
 
 @click.command()
