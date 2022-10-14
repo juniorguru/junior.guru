@@ -102,6 +102,7 @@ jobs:
               export MEMBERFUL_MUTATIONS_ENABLED=1
             fi
             poetry run invoke sync.ci.main
+            poetry run sqlite-utils optimize juniorguru/data/data.db
       - run:
           name: Prevent persisting the same files as 'sync-scrape-jobs'
           command: |
@@ -131,6 +132,7 @@ jobs:
               export DISCORD_MUTATIONS_ENABLED=1
             fi
             poetry run invoke sync.ci.postprocess-jobs
+            poetry run sqlite-utils optimize juniorguru/data/data.db
       - save_cache:  # makes jobs-emails idempotent
           key: jobs-emails-v2-{{ .Branch }}-{{ checksum ".today" }}
           paths:
@@ -151,6 +153,11 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
+      - run:
+          name: "Debug 'DatabaseError: database disk image is malformed'"
+          command: |
+            find project/juniorguru/data
+            poetry run sqlite-utils optimize juniorguru/data/data.db
       - run: poetry run invoke web.build
       - persist_to_workspace:
           root: "~"
