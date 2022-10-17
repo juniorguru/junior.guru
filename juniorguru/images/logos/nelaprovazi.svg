@@ -1,1 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1750"><path fill="#77aec3" d="m245 1157 88-240 120-306q63-167 112-263 36-69 36-97 0-36-60-80-39-26-39-47 0-25 78-54 68-28 154-48Q820 0 874 0q106 0 161 57 63 65 156 403 38 137 84 265 47 128 77 184 9 21 47 79 42-133 99-349 84-341 154-460 22-38 50-67 52-49 111-74 61-25 122-25 37 0 51 19t14 68q0 37-5 55-13 66-45 171-31 104-90 270-57 163-143 397l-19 47-18 50q-154 430-234 558-16 27-39 50-39 39-77 39-98 0-211-208-206-373-323-767-24-74-37-139h-5l-153 484q-3 13-11 33l-12 37-13 32-11 28q-42 127-69 192-27 63-53 105-23 39-68 85-64 60-143 94t-156 34q-65 0-65-52 0-39 57-136 66-110 149-303 14-41 39-99z" /></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 2000 1747"
+   version="1.1"
+   id="svg380"
+   sodipodi:docname="nelaprovazi.svg"
+   width="2000"
+   height="1747"
+   inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs384" />
+  <sodipodi:namedview
+     id="namedview382"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.13485714"
+     inkscape:cx="1001.0593"
+     inkscape:cy="886.12288"
+     inkscape:window-width="688"
+     inkscape:window-height="480"
+     inkscape:window-x="63"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg380" />
+  <path
+     fill="#77aec3"
+     d="M 245,1157 333,917 453,611 q 63,-167 112,-263 36,-69 36,-97 0,-36 -60,-80 -39,-26 -39,-47 0,-25 78,-54 68,-28 154,-48 86,-22 140,-22 106,0 161,57 63,65 156,403 38,137 84,265 47,128 77,184 9,21 47,79 42,-133 99,-349 84,-341 154,-460 22,-38 50,-67 52,-49 111,-74 61,-25 122,-25 37,0 51,19 14,19 14,68 0,37 -5,55 -13,66 -45,171 -31,104 -90,270 -57,163 -143,397 l -19,47 -18,50 q -154,430 -234,558 -16,27 -39,50 -39,39 -77,39 -98,0 -211,-208 Q 913,1156 796,762 772,688 759,623 h -5 l -153,484 q -3,13 -11,33 l -12,37 -13,32 -11,28 q -42,127 -69,192 -27,63 -53,105 -23,39 -68,85 -64,60 -143,94 -79,34 -156,34 -65,0 -65,-52 0,-39 57,-136 66,-110 149,-303 14,-41 39,-99 z"
+     id="path378" />
+</svg>

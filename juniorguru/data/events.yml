@@ -68,19 +68,19 @@
 #   speakers: 854681167018459146
 
 
-# - title: "(Bude upřesněno, jak se stát IT analytikem)"
-#   date: "2023-01-10"
-#   description: |
-#     (Bude upřesněno)
-#   avatar_path: avatars-participants/martin-javorek.jpg
-#   bio_name: Martin Javorek
-#   bio_title: IT analytik a architekt v Hypoteční bance
-#   bio: |
-#     (Bude upřesněno)
-#   bio_links:
-#     - https://www.linkedin.com/in/javorek/
-#   logo_path: logos/hypotecni-banka.svg
-#   speakers:
+- title: "(Bude upřesněno, jak se stát IT analytikem)"
+  date: "2023-01-10"
+  description: |
+    (Bude upřesněno)
+  avatar_path: avatars-participants/martin-javorek.jpg
+  bio_name: Martin Javorek
+  bio_title: IT analytik a architekt v Hypoteční bance
+  bio: |
+    (Bude upřesněno)
+  bio_links:
+    - https://www.linkedin.com/in/javorek/
+  logo_path: logos/hypotecni-banka.svg
+  speakers:
 
 
 - title: "(Bude upřesněno, úvod do Javy)"
