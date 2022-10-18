@@ -89,7 +89,7 @@ def render_discord(context):
         Je to tady chat, takže zprávy se sypou jedna za druhou. Aby šlo snadněji sledovat prolínající se diskuze nebo reagovat i na příspěvky z hlubin historie, jde na předchozí zprávy navazovat použitím funkce Odpovědět (_Reply_). Má ikonu zatočené šipky.
 
         **Vlákna** 🧵
-        Když chceš řešit něco konkrétního, třeba životopis, projekt nebo dotaz, hodí se založit vlákno (_thread_). Díky němu se diskuze rozvětví a zprávy k tématu se schovají na jedno místo, které má vlastní název. Neplevelí to hlavní diskuzi v kanálu a lépe se to čte.
+        Když chceš řešit něco konkrétního, třeba životopis, projekt nebo dotaz, hodí se založit vlákno (_thread_). Díky němu se diskuze rozvětví a zprávy k tématu se schovají na jedno místo, které má vlastní název. Nemotá se přes sebe víc diskuzí v hlavním kanálu a lépe se to čte.
 
         Do většiny kanálů můžeš psát zcela volně a nemusíš nad tím moc přemýšlet, ale některé mají speciální režim. Jsou to Rituály (<#788823881024405544>, <#806621830383271937>, <#815906954534191117>) a <#878937534464417822>. Aby zůstaly přehledné, odpovídá se v nich pouze pomocí vláken.
 
@@ -233,7 +233,7 @@ def render_sth(context):
         Klub je na první dva týdny zdarma, ale pak se za něj platí. Jak to přesně funguje?
 
         **Za Discord platit nemusíš** 🆓
-        Discord je platforma, kde si může kdokoliv vytvořit účet a založit vlastní komunitu, to všechno zdarma. Firma Discord vydělává na tom, že si jednotlivci kupují tzv. _Nitro_, prémiové členství. To umožňuje používat víc emoji, posílat větší obrázky, apod.
+        Discord je platforma, kde si může kdokoliv zdarma vytvořit účet a založit vlastní komunitu. Firma Discord vydělává na tom, že si lidi kupují tzv. _Nitro_, prémiové členství. To umožňuje používat víc emoji, posílat větší obrázky, apod.
 
         Na Discordu není pouze klub, můžeš se přidat i do dalších skupin a komunit. Třeba čeští Pythonisti https://discord.gg/wUfGAQ7jVv nebo Frontendisti https://discord.gg/XMc85GPHQg. Tyto komunity jsou na rozdíl od klubu zdarma.
 
