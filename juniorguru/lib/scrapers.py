@@ -22,6 +22,7 @@ def scrape(*args, **kwargs):
 
 
 def run_twisted_reactor(scrapy_project_package, spider_names):
+    # use asyncio? https://docs.scrapy.org/en/latest/topics/asyncio.html#using-asyncio
     settings_module_name = f'{scrapy_project_package}.settings'
     logger.debug(f'Importing Scrapy settings: {settings_module_name}')
     settings = Settings()
