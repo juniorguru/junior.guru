@@ -15,9 +15,15 @@ noindex: true
 
 ## Hledání přednášejících
 
+- Najdu speakera, domluvím téma, datum.
+- Pošlu přístup do klubu na rok zdarma.
+- Pošlu [informace pro speakery](speaker.md) a zodpovím případné dotazy.
+- Přidám akci do `events.yml`.
 
 ## Týden před akcí
 
+- Mám všechny informace v `events.yml` doladěné.
+- Vygenerovaný plakátek dám na sociální sítě.
 
 ## Příprava v den akce
 
