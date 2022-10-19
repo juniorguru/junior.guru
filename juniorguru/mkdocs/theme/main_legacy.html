@@ -13,6 +13,7 @@
     <title>{{ page.meta.title }}</title>
 
     {% block meta %}
+      {% if page.meta.noindex %}<meta name="robots" content="noindex">{% endif %}
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta http-equiv="Accept-CH" content="DPR,Viewport-Width,Width,Save-Data">
 
