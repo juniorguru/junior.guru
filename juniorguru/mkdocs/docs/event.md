@@ -64,6 +64,15 @@ noindex: true
 - V mobilu během akce kontroluji textový chat a další zprávy.
 - Pokud potřebuji vypnout sebe, vypnu se jak na Discordu, tak i v OBS.
 
+### Pokud přednáším já
+
+- Vyzkouším si to v den přednášky!
+- Mám po ruce odkaz na **YouTube** stream.
+- Než začnu, zkontroluju si v **OBS** hlasitost lidí.
+- Během přednášení, pokud chci něco ukázat, tak se pak přepínám mezi okny klávesovou zkratkou.
+- Během přednášení, pokud chci něco ukázat, zásadně sdílím jen jedno okno a ne celou obrazovku.
+- Během přednášení nebýt nikdy na _fullscreen_.
+
 ## Po akci
 
 - Poděkuji, pořeším dotazy.
