@@ -155,6 +155,11 @@ def emoji_name(reaction_emoji):
     try:
         return reaction_emoji.name.lower()
     except AttributeError:
+        name = emoji.demojize(reaction_emoji).strip(':')
+        if '_skin_tone' in name:
+            # waving_hand_light_skin_tone -> waving_hand
+            name = '_'.join(name.split('_')[:-3])
+            return emoji.emojize(f':{name}:')
         return str(reaction_emoji)
 
 

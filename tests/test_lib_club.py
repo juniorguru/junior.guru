@@ -37,6 +37,7 @@ def test_count_downvotes():
     ('AHOJ', 'AHOJ'),
     (StubEmoji('lolpain'), 'lolpain'),
     (StubEmoji('BabyYoda'), 'babyyoda'),
+    ('👋🏻', '👋'),
 ])
 def test_emoji_name(emoji, expected):
     assert club.emoji_name(emoji) == expected
