@@ -88,7 +88,7 @@ def get_parallel_chains(dependencies):
                         seen_names.append(other_name)
                 chains[name] = chain
         if len(chains) == len(temp_chains):
-            return list(chains.values())
+            return sorted(map(sorted, chains.values()))
         temp_chains = chains
         chains = {}
 
