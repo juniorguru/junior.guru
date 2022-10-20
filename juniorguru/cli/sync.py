@@ -111,9 +111,8 @@ def print_chains(context, param, value):
 @click.option('--chains', is_flag=True, callback=print_chains, expose_value=False, is_eager=True)
 @click.option('--interactive/--no-interactive', envvar='INTERACTIVE_SYNC', default=False)
 @click.pass_context
-def main(context, node, interactive):
-    context.obj = {'node': node,
-                   'interactive': interactive,
+def main(context, interactive):
+    context.obj = {'interactive': interactive,
                    'timing': {}}
     logger.debug(f"Interactive? {'YES' if interactive else 'NO'}")
     context.call_on_close(close)
