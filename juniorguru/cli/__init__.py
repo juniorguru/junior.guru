@@ -1,7 +1,7 @@
 import click
 
 from juniorguru.cli import (cancel_previous_builds, check_docs, check_links, dev,
-                            participant, screenshots, students, web, winners)
+                            participant, screenshots, students, web, winners, sync)
 
 
 @click.group()
@@ -21,6 +21,7 @@ for module in [cancel_previous_builds,
                participant,
                screenshots,
                winners,
-               students]:
+               students,
+               sync]:
     command_name = module.__name__.split('.')[-1].replace('_', '-')
     main.add_command(module.main, name=command_name)

@@ -13,12 +13,11 @@ from juniorguru.lib import loggers
 from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLED,
                                  run_discord_task)
 from juniorguru.lib.images import is_image, render_image_file, validate_image
-from juniorguru.lib.tasks import sync_task
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib.template_filters import icon
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.podcast import PodcastEpisode
-from juniorguru.sync.club_content import main as club_content_task
 
 
 logger = loggers.get(__name__)
@@ -57,7 +56,7 @@ TODAY = date.today()
 MESSAGE_EMOJI = '🎙'
 
 
-@sync_task(club_content_task)
+@cli.sync_command(requires=['club-content'])
 @db.connection_context()
 def main():
     if FLUSH_POSTERS_PODCAST:

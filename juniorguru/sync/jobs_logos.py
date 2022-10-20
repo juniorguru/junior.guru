@@ -9,10 +9,9 @@ import requests
 from PIL import Image, ImageChops, ImageOps
 
 from juniorguru.lib import loggers
-from juniorguru.lib.tasks import sync_task
+from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
-from juniorguru.sync.jobs_listing import main as jobs_listing_task
 
 
 MAX_SIZE_PX = 1000
@@ -52,7 +51,7 @@ USER_AGENTS = {
 logger = loggers.get(__name__)
 
 
-@sync_task(jobs_listing_task)
+@cli.sync_command(requires=['jobs-listing'])
 @db.connection_context()
 def main():
     Path(LOGOS_DIR).mkdir(exist_ok=True, parents=True)

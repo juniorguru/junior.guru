@@ -10,12 +10,11 @@ from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLE
                                  run_discord_task)
 from juniorguru.lib.images import (is_image, render_image_file, save_as_square,
                                    validate_image)
-from juniorguru.lib.tasks import sync_task
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.event import Event, EventSpeaking
-from juniorguru.sync.club_content import main as club_content_task
 
 
 logger = loggers.get(__name__)
@@ -66,7 +65,7 @@ schema = Seq(
 )
 
 
-@sync_task(club_content_task)
+@cli.sync_command(requires=['club-content'])
 def main():
     if FLUSH_POSTERS_EVENTS:
         logger.warning("Removing all existing posters for events, FLUSH_POSTERS_EVENTS is set")

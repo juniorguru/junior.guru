@@ -8,10 +8,9 @@ from PIL import Image
 from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib.club import run_discord_task
-from juniorguru.lib.tasks import sync_task
+from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser
-from juniorguru.sync.club_content import main as club_content_task
 
 
 logger = loggers.get(__name__)
@@ -28,7 +27,7 @@ AVATARS_LIMIT = 40
 AVATAR_SIZE_PX = 60
 
 
-@sync_task(club_content_task)
+@cli.sync_command(requires=['club-content'])
 def main():
     run_discord_task('juniorguru.sync.avatars.discord_task')
 

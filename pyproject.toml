@@ -34,18 +34,17 @@ fiobank = "*"
 emoji = "*"
 favicon = "*"
 feedparser = "*"
-extruct = "*"
 py-cord = {version = "*", extras = ["speed"]}
 gql = {extras = ["requests"], version = "*"}
 mkdocs = "*"
 markupsafe = "*"
 ics = {version = "*", allow-prereleases = true}
 pod2gen = "*"
-invoke = "*"
 Scrapy = "*"
 python-slugify = "*"
 playwright = "*"
 click = "*"
+extruct = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
@@ -58,6 +57,7 @@ sqlite-utils = "*"
 python_files = "test_*.py *_test.py test.py"
 testpaths = "."
 addopts = "--ff --ignore=node_modules --ignore=__jobs_legacy__"
+filterwarnings = ["ignore:the imp module is deprecated:DeprecationWarning"]
 
 [tool.isort]
 profile = "black"

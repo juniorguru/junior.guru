@@ -6,16 +6,15 @@ from discord.errors import Forbidden
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
-from juniorguru.lib.tasks import sync_task
+from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubPinReaction
-from juniorguru.sync.club_content import main as club_content_task
 
 
 logger = loggers.get(__name__)
 
 
-@sync_task(club_content_task)
+@cli.sync_command(requires=['club-content'])
 def main():
     run_discord_task('juniorguru.sync.pins.discord_task')
 

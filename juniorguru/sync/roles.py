@@ -6,18 +6,12 @@ from strictyaml import Int, Map, Seq, Str, load
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, get_roles, run_discord_task
-from juniorguru.lib.tasks import sync_task
+from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubUser
 from juniorguru.models.company import Company
 from juniorguru.models.event import Event
 from juniorguru.models.mentor import Mentor
-from juniorguru.sync.avatars import main as avatars_task
-from juniorguru.sync.club_content import main as club_content_task
-from juniorguru.sync.companies import main as companies_task
-from juniorguru.sync.events import main as events_task
-from juniorguru.sync.mentoring import main as mentoring_task
-from juniorguru.sync.subscriptions import main as subscriptions_task
 
 
 logger = loggers.get(__name__)
@@ -37,14 +31,12 @@ COMPANY_ROLE_PREFIX = 'Firma: '
 STUDENT_ROLE_PREFIX = 'Student: '
 
 
-@sync_task(
-    club_content_task,
-    events_task,
-    avatars_task,
-    subscriptions_task,
-    companies_task,
-    mentoring_task,
-)
+@cli.sync_command(requires=['club-content',
+                        'events',
+                        'avatars',
+                        'subscriptions',
+                        'companies',
+                        'mentoring'])
 def main():
     run_discord_task('juniorguru.sync.roles.discord_task')
 

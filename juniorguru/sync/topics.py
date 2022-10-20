@@ -2,11 +2,10 @@ import re
 from collections import Counter
 
 from juniorguru.lib import loggers
-from juniorguru.lib.tasks import sync_task
+from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.topic import Topic
-from juniorguru.sync.club_content import main as club_content_task
 
 
 logger = loggers.get(__name__)
@@ -49,7 +48,7 @@ TOPIC_CHANNELS = {re.compile(key): value for key, value in {
 }.items()}
 
 
-@sync_task(club_content_task)
+@cli.sync_command(requires=['club-content'])
 @db.connection_context()
 def main():
     Topic.drop_table()

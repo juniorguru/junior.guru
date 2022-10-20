@@ -5,12 +5,10 @@ from discord import Color, Embed
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, MENTORING_CHANNEL,
                                  is_message_over_period_ago, run_discord_task)
-from juniorguru.lib.tasks import sync_task
+from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.mentor import Mentor
-from juniorguru.sync.club_content import main as club_content_task
-from juniorguru.sync.mentoring import main as mentoring_task
 
 
 INTERVIEWS_CHANNEL = 789107031939481641
@@ -21,7 +19,8 @@ INTERVIEWS_EMOJI = '💁'
 logger = loggers.get(__name__)
 
 
-@sync_task(club_content_task, mentoring_task)
+@cli.sync_command(requires=['club-content',
+                        'mentoring'])
 def main():
     run_discord_task('juniorguru.sync.interviews.discord_task')
 

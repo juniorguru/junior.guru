@@ -6,7 +6,7 @@ from juniorguru.lib.club import parse_coupon
 from juniorguru.lib.coerce import (coerce, parse_boolean_words, parse_date, parse_int,
                                    parse_text)
 from juniorguru.lib.images import render_image_file
-from juniorguru.lib.tasks import sync_task
+from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.company import Company
 
@@ -22,7 +22,7 @@ POSTER_WIDTH = 700
 POSTER_HEIGHT = 700
 
 
-@sync_task()
+@cli.sync_command()
 @db.connection_context()
 def main():
     if FLUSH_POSTERS_COMPANIES:

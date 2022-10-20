@@ -21,10 +21,6 @@ jobs:
       - restore_cache:
           key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
       - run:
-          name: Create the .today file for caching purposes
-          command: |
-            date +'%Y-%m-%d' > .today
-      - run:
           name: Install dependencies
           command: |
             poetry --version
@@ -32,6 +28,10 @@ jobs:
             poetry install
             poetry run playwright install chromium
             npm ci
+      - run:
+          name: Cancel previous builds
+          command: |
+            poetry run jg cancel-previous-builds
       - save_cache:
           key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
           paths:
@@ -43,7 +43,6 @@ jobs:
           paths:
               - .cache/pypoetry/virtualenvs
               - .cache/ms-playwright
-              - project/node_modules
               - project
 
   lint-and-test:
@@ -58,103 +57,56 @@ jobs:
           name: Test
           command: poetry run jg test -v
 
-  sync-scrape-jobs:
+  # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
+  sync:
     executor: python-js
+    resource_class: large
+    parallelism: 4
     steps:
       - attach_workspace:
           at: "~"
+      - run:
+          name: Create the .today file for caching purposes
+          command: |
+            date +'%Y-%m-%d' > .today
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
+      - restore_cache:  # get jobs data persisted between builds
+          key: jobs-v2-{{ .Branch }}
+      - restore_cache:  # makes jobs-emails idempotent
+          key: jobs-emails-v2-{{ .Branch }}
       - run:
-          name: Sync data (scrape jobs)
-          environment:
-            LOG_LEVEL: debug
+          name: Sync data
+          # environment:
+          #   LOG_LEVEL: debug
+          #   JOBS_SCRAPED_REUSE_DB_ENABLED: 1
           command: |
-            poetry run invoke sync.ci.scrape-jobs
+            #if [[ $CIRCLE_BRANCH = "main" ]]; then
+            #  export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
+            #  export DISCORD_MUTATIONS_ENABLED=1
+            #  export MEMBERFUL_MUTATIONS_ENABLED=1
+            #  export JOBS_EMAILS_SENDING_ENABLED=1
+            #fi
+            poetry run jg sync all
+            poetry run sqlite-utils optimize juniorguru/data/data.db
+            poetry run sqlite-utils juniorguru/data/data.db 'PRAGMA integrity_check' | poetry run python -mjson.tool
       - save_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
           paths:
             - .scrapy
-      - persist_to_workspace:
-          root: "~"
+      - save_cache:  # persisting the jobs data between builds
+          key: jobs-v2-{{ .Branch }}-{{ checksum ".today" }}
           paths:
-              - project/juniorguru/data/jobs
-
-  # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
-  sync-main:
-    executor: python-js
-    resource_class: large
-    steps:
-      - attach_workspace:
-          at: "~"
-      - restore_cache:  # get jobs data persisted between builds
-          key: jobs-v2-{{ .Branch }}
-      - run:
-          name: Cancel previous builds
-          command: |
-            poetry run jg cancel-previous-builds
-      - run:
-          name: Sync data
-          command: |
-            if [[ $CIRCLE_BRANCH = "main" ]]; then
-              export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
-              export DISCORD_MUTATIONS_ENABLED=1
-              export MEMBERFUL_MUTATIONS_ENABLED=1
-            fi
-            poetry run invoke sync.ci.main
-            poetry run sqlite-utils optimize juniorguru/data/data.db
-      - run:
-          name: Prevent persisting the same files as 'sync-scrape-jobs'
-          command: |
-            rm -rf juniorguru/data/jobs/$(date +'%Y')/$(date +'%m')/$(date +'%d')/
+            - juniorguru/data/jobs
+      - save_cache:  # makes jobs-emails idempotent
+          key: jobs-emails-v2-{{ .Branch }}-{{ checksum ".today" }}
+          paths:
+            - juniorguru/data/jobs-emails.txt
       - persist_to_workspace:
           root: "~"
           paths:
               - project/juniorguru/data
               - project/juniorguru/images
-
-  # Needs $DISCORD_API_KEY, $SMTP_* (see README.md)
-  sync-postprocess-jobs:
-    executor: python-js
-    resource_class: large
-    steps:
-      - attach_workspace:
-          at: "~"
-      - restore_cache:  # makes jobs-emails idempotent
-          key: jobs-emails-v2-{{ .Branch }}
-      - run:
-          name: Sync data (postprocess jobs)
-          environment:
-            JOBS_SCRAPED_REUSE_DB_ENABLED: 1
-          command: |
-            if [[ $CIRCLE_BRANCH = "main" ]]; then
-              export JOBS_EMAILS_SENDING_ENABLED=1
-              export DISCORD_MUTATIONS_ENABLED=1
-            fi
-            poetry run invoke sync.ci.postprocess-jobs
-            # poetry run sqlite-utils optimize juniorguru/data/data.db  # TODO
-      - run:
-          name: "Debug 'DatabaseError: database disk image is malformed' (integrity check)"
-          command: "poetry run sqlite-utils juniorguru/data/data.db 'PRAGMA integrity_check' | poetry run python -mjson.tool"
-      - run:
-          name: "Debug 'DatabaseError: database disk image is malformed' (optimize)"
-          command: 'poetry run sqlite-utils optimize juniorguru/data/data.db'
-      - run:
-          name: "Debug 'DatabaseError: database disk image is malformed' (integrity check)"
-          command: "poetry run sqlite-utils juniorguru/data/data.db 'PRAGMA integrity_check' | poetry run python -mjson.tool"
-      - save_cache:  # makes jobs-emails idempotent
-          key: jobs-emails-v2-{{ .Branch }}-{{ checksum ".today" }}
-          paths:
-            - juniorguru/data/jobs-emails.txt
-      - save_cache:  # persisting the jobs data between builds
-          key: jobs-v2-{{ .Branch }}-{{ checksum ".today" }}
-          paths:
-            - juniorguru/data/jobs
-      - persist_to_workspace:
-          root: "~"
-          paths:
-              - project/juniorguru/data
-              - project/juniorguru/images/logos-jobs
 
   build-web:
     executor: python-js
@@ -231,19 +183,12 @@ workflows:
       - lint-and-test:
           requires:
             - install
-      - sync-scrape-jobs:  # TODO if all works well, scraping can be moved to nightly only
+      - sync:
           requires:
             - install
-      - sync-main:
-          requires:
-            - install
-      - sync-postprocess-jobs:
-          requires:
-            - sync-scrape-jobs
-            - sync-main
       - build-web:
           requires:
-            - sync-postprocess-jobs
+            - sync
       - check-docs:
           requires:
             - build-web
@@ -259,19 +204,12 @@ workflows:
   nightly:
     jobs:
       - install
-      - sync-scrape-jobs:
+      - sync:
           requires:
             - install
-      - sync-main:
-          requires:
-            - install
-      - sync-postprocess-jobs:
-          requires:
-            - sync-scrape-jobs
-            - sync-main
       - build-web:
           requires:
-            - sync-postprocess-jobs
+            - sync
       - backup:
           requires:
             - build-web

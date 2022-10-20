@@ -4,14 +4,14 @@ from pathlib import Path
 import requests
 
 from juniorguru.lib import loggers
-from juniorguru.lib.tasks import sync_task
+from juniorguru.cli.sync import main as cli
 from juniorguru.sync.scrape_jobs.settings import PROXIES_FILE
 
 
 logger = loggers.get(__name__)
 
 
-@sync_task()
+@cli.sync_command()
 def main():
     # docs at https://docs.proxyscrape.com/
     logger.info('Scraping proxies')

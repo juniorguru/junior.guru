@@ -10,9 +10,8 @@ from pprint import pformat
 from jinja2 import Template
 
 from juniorguru.lib import loggers
-from juniorguru.lib.tasks import sync_task
+from juniorguru.cli.sync import main as cli
 from juniorguru.models.job import ListedJob
-from juniorguru.sync.jobs_listing import main as jobs_listing_task
 
 
 JOBS_EMAILS_DEBUG = os.getenv('JOBS_EMAILS_DEBUG')
@@ -33,7 +32,7 @@ SMTP_PASSWORD = os.environ['SMTP_PASSWORD'] if JOBS_EMAILS_SENDING_ENABLED else 
 logger = loggers.get(__name__)
 
 
-@sync_task(jobs_listing_task)
+@cli.sync_command(requires=['jobs-listing'])
 def main():
     today = date.today()
     try:

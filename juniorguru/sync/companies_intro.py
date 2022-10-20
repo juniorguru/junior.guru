@@ -7,13 +7,10 @@ from discord import Color, Embed, File
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, INTRO_CHANNEL, JOBS_CHANNEL,
                                  is_message_over_period_ago, run_discord_task)
-from juniorguru.lib.tasks import sync_task
+from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.company import Company
-from juniorguru.sync.club_content import main as club_content_task
-from juniorguru.sync.companies import main as companies_task
-from juniorguru.sync.roles import main as roles_task
 
 
 MESSAGE_EMOJI = '👋'
@@ -28,7 +25,9 @@ IMAGES_DIR = Path(__file__).parent.parent / 'images'
 logger = loggers.get(__name__)
 
 
-@sync_task(club_content_task, companies_task, roles_task)
+@cli.sync_command(requires=['club-content',
+                        'companies',
+                        'roles'])
 def main():
     run_discord_task('juniorguru.sync.companies_intro.discord_task')
 

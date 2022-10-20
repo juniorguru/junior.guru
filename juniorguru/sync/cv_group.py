@@ -6,10 +6,9 @@ from discord import ButtonStyle, Embed, ui
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, is_message_bot_reminder,
                                  is_message_over_period_ago, run_discord_task)
-from juniorguru.lib.tasks import sync_task
+from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
-from juniorguru.sync.club_content import main as club_content_task
 
 
 CV_GROUP_CHANNEL = 839059491432431616
@@ -18,7 +17,7 @@ CV_GROUP_CHANNEL = 839059491432431616
 logger = loggers.get(__name__)
 
 
-@sync_task(club_content_task)
+@cli.sync_command(requires=['club-content'])
 def main():
     run_discord_task('juniorguru.sync.cv_group.discord_task')
 
