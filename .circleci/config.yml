@@ -79,7 +79,7 @@ jobs:
           name: Sync data
           command: |
             CHAIN=$(poetry run jg sync --chains | circleci tests split)
-            echo $CHAIN
+            poetry run jg sync $CHAIN
             #if [[ $CIRCLE_BRANCH = "main" ]]; then
             #  export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
             #  export DISCORD_MUTATIONS_ENABLED=1
