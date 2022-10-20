@@ -77,19 +77,18 @@ jobs:
           key: jobs-emails-v2-{{ .Branch }}
       - run:
           name: Sync data
-          # environment:
-          #   LOG_LEVEL: debug
-          #   JOBS_SCRAPED_REUSE_DB_ENABLED: 1
           command: |
+            CHAIN=$(poetry run jg sync --chains | circleci tests split)
+            echo $CHAIN
             #if [[ $CIRCLE_BRANCH = "main" ]]; then
             #  export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
             #  export DISCORD_MUTATIONS_ENABLED=1
             #  export MEMBERFUL_MUTATIONS_ENABLED=1
             #  export JOBS_EMAILS_SENDING_ENABLED=1
             #fi
-            poetry run jg sync all
-            poetry run sqlite-utils optimize juniorguru/data/data.db
-            poetry run sqlite-utils juniorguru/data/data.db 'PRAGMA integrity_check' | poetry run python -mjson.tool
+            #poetry run jg sync all
+            #poetry run sqlite-utils optimize juniorguru/data/data.db
+            #poetry run sqlite-utils juniorguru/data/data.db 'PRAGMA integrity_check' | poetry run python -mjson.tool
       - save_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
           paths:

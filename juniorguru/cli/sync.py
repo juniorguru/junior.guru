@@ -72,41 +72,6 @@ class SyncGroup(click.Group):
                 logger.debug(f"Could not import {name}, {e.__class__.__name__}: {e}")
 
 
-@click.command(cls=SyncGroup, chain=True)
-@click.option('--interactive/--no-interactive', envvar='INTERACTIVE_SYNC', default=False)
-@click.pass_context
-def main(context, interactive):
-    context.obj = {'timing': {},
-                   'interactive': interactive}
-    logger.debug(f"Interactive? {'YES' if interactive else 'NO'}")
-    context.call_on_close(close)
-
-
-main.import_commands_from(sync_package)
-
-
-@main.command()
-@click.pass_context
-def all(context):
-    if context.obj['interactive']:
-        logger.warning('Ignoring interactive mode')
-        context.obj['interactive'] = False
-    for name in main.dependencies.keys():
-        context.invoke(main.get_command(context, name))
-    logger.info('Sync done!')
-
-
-@click.pass_context
-def close(context):
-    pass  # TODO junit.xml, context.obj['timing']
-
-
-def notify(title, text):
-    print('\a', end='', flush=True)
-    if pync:
-        pync.Notifier.notify(text, title=title)
-
-
 def get_parallel_chains(dependencies):
     temp_chains = {name: set([name] + commands)
                    for i, (name, commands)
@@ -126,3 +91,47 @@ def get_parallel_chains(dependencies):
             return list(chains.values())
         temp_chains = chains
         chains = {}
+
+
+def notify(title, text):
+    print('\a', end='', flush=True)
+    if pync:
+        pync.Notifier.notify(text, title=title)
+
+
+def print_chains(context, param, value):
+    if not value or context.resilient_parsing:
+        return
+    for chain in get_parallel_chains(context.command.dependencies):
+        click.echo(' '.join(chain))
+    context.exit()
+
+
+@click.command(cls=SyncGroup, chain=True)
+@click.option('--chains', is_flag=True, callback=print_chains, expose_value=False, is_eager=True)
+@click.option('--interactive/--no-interactive', envvar='INTERACTIVE_SYNC', default=False)
+@click.pass_context
+def main(context, interactive):
+    context.obj = {'timing': {},
+                   'interactive': interactive}
+    logger.debug(f"Interactive? {'YES' if interactive else 'NO'}")
+    context.call_on_close(close)
+
+
+@main.command()
+@click.pass_context
+def all(context):
+    if context.obj['interactive']:
+        logger.warning('Ignoring interactive mode')
+        context.obj['interactive'] = False
+    for name in main.dependencies.keys():
+        context.invoke(main.get_command(context, name))
+    logger.info('Sync done!')
+
+
+@click.pass_context
+def close(context):
+    pass  # TODO junit.xml, context.obj['timing']
+
+
+main.import_commands_from(sync_package)
