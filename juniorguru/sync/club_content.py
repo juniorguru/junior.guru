@@ -26,7 +26,7 @@ CHANNELS_HISTORY_SINCE = {
 }
 
 
-@cli.sync_command()
+@cli.sync_command()  # TODO chains=False
 def main():
     run_discord_task('juniorguru.sync.club_content.discord_task')
 

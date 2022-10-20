@@ -110,7 +110,8 @@ def notify(title, text):
 def print_chains(context, param, value):
     if not value or context.resilient_parsing:
         return
-    for chain in get_parallel_chains(context.command.dependencies):
+    for chain in get_parallel_chains(context.command.dependencies,
+                                     exclude=context.command.chains_exclude):
         click.echo(' '.join(chain))
     context.exit()
 
