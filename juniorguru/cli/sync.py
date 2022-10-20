@@ -20,7 +20,10 @@ logger = loggers.get(__name__)
 
 
 class SyncGroup(click.Group):
-    dependencies = {}
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.dependencies = {}
+        self.chains_exclude = []
 
     def sync_command(self, *args, **kwargs):
         def decorator(fn):
@@ -56,6 +59,8 @@ class SyncGroup(click.Group):
 
             kwargs.setdefault('name', fn.__module__.split('.')[-1].replace('_', '-'))
             self.dependencies[kwargs['name']] = kwargs.pop('requires', [])
+            if kwargs.pop('chains', True) == False:
+                self.chains_exclude.append(kwargs['name'])
             return self.command(*args, **kwargs)(wrapper)
         return decorator
 
@@ -72,10 +77,13 @@ class SyncGroup(click.Group):
                 logger.debug(f"Could not import {name}, {e.__class__.__name__}: {e}")
 
 
-def get_parallel_chains(dependencies):
-    temp_chains = {name: set([name] + commands)
-                   for i, (name, commands)
-                   in enumerate(dependencies.items())}
+def get_parallel_chains(dependencies, exclude=None):
+    exclude = exclude or []
+    temp_chains = {name: set([name] +
+                             [c for c in commands if c not in exclude])
+                   for name, commands
+                   in dependencies.items()
+                   if name not in exclude}
     chains = {}
     while True:
         seen_names = []

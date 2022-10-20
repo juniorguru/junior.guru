@@ -36,3 +36,14 @@ def test_get_parallel_chains_interconnected_chains():
                     'f': ['d']}
 
     assert get_parallel_chains(dependencies) == [['a', 'b', 'c', 'd', 'e', 'f']]
+
+
+def test_get_parallel_chains_exclude():
+    dependencies = {'a': [],
+                    'b': ['a'],
+                    'c': ['a'],
+                    'd': [],
+                    'e': ['d', 'c'],
+                    'f': ['d']}
+
+    assert get_parallel_chains(dependencies, exclude=['a']) == [['b'], ['c', 'd', 'e', 'f']]
