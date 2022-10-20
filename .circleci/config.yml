@@ -79,12 +79,12 @@ jobs:
           name: Sync data
           command: |
             CHAIN=$(poetry run jg sync --chains | circleci tests split)
-            #if [[ $CIRCLE_BRANCH = "main" ]]; then
-            #  export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
-            #  export DISCORD_MUTATIONS_ENABLED=1
-            #  export MEMBERFUL_MUTATIONS_ENABLED=1
-            #  export JOBS_EMAILS_SENDING_ENABLED=1
-            #fi
+            if [[ $CIRCLE_BRANCH = "main" ]]; then
+              export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
+              export DISCORD_MUTATIONS_ENABLED=1
+              export MEMBERFUL_MUTATIONS_ENABLED=1
+              export JOBS_EMAILS_SENDING_ENABLED=1
+            fi
             poetry run jg sync $CHAIN
       - run:
           name: Prepare files for persisting
