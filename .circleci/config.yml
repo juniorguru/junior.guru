@@ -119,8 +119,8 @@ jobs:
       - persist_to_workspace:
           root: "~"
           paths:
-              - project/data
-              - project/images
+              - project/juniorguru/data
+              - project/juniorguru/images
 
   build-web:
     executor: python-js
@@ -185,55 +185,55 @@ workflows:
   push:
     jobs:
       - install
-      # - lint-and-test:
-      #     requires:
-      #       - install
+      - lint-and-test:
+          requires:
+            - install
       - sync:
           requires:
             - install
       - data:
           requires:
             - sync
-      # - build-web:
-      #     requires:
-      #       - data
-      # - check-docs:
-      #     requires:
-      #       - build-web
-      # - deploy-web:
-      #     filters:
-      #       branches:
-      #         only:
-      #           - main
-      #     requires:
-      #       - build-web
-      #       - lint-and-test
+      - build-web:
+          requires:
+            - data
+      - check-docs:
+          requires:
+            - build-web
+      - deploy-web:
+          filters:
+            branches:
+              only:
+                - main
+          requires:
+            - build-web
+            - lint-and-test
 
-  # nightly:
-  #   jobs:
-  #     - install
-  #     - sync:
-  #         requires:
-  #           - install
-  #     - data:
-  #         requires:
-  #           - sync
-  #     - build-web:
-  #         requires:
-  #           - data
-  #     - backup:
-  #         requires:
-  #           - build-web
-  #     - check-links:
-  #         requires:
-  #           - build-web
-  #     - deploy-web:
-  #         requires:
-  #           - build-web
-  #   triggers:
-  #     - schedule:
-  #         cron: "0 4 * * *"
-  #         filters:
-  #           branches:
-  #             only:
-  #               - main
+  nightly:
+    jobs:
+      - install
+      - sync:
+          requires:
+            - install
+      - data:
+          requires:
+            - sync
+      - build-web:
+          requires:
+            - data
+      - backup:
+          requires:
+            - build-web
+      - check-links:
+          requires:
+            - build-web
+      - deploy-web:
+          requires:
+            - build-web
+    triggers:
+      - schedule:
+          cron: "0 4 * * *"
+          filters:
+            branches:
+              only:
+                - main
