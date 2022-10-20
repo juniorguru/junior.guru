@@ -19,8 +19,9 @@ URL_RE = re.compile(r'https?://\S+', re.I)
 logger = loggers.get(__name__)
 
 
-@cli.sync_command(requires=['jobs-locations',
-                        'jobs-logos'])
+@cli.sync_command(requires=['club-content',
+                            'jobs-locations',
+                            'jobs-logos'])
 def main():
     run_discord_task('juniorguru.sync.jobs_club.discord_task')
 

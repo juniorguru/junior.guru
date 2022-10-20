@@ -185,9 +185,9 @@ workflows:
   push:
     jobs:
       - install
-      - lint-and-test:
-          requires:
-            - install
+      # - lint-and-test:
+      #     requires:
+      #       - install
       - sync:
           requires:
             - install

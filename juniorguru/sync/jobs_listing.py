@@ -13,7 +13,7 @@ logger = loggers.get(__name__)
 
 
 @cli.sync_command(requires=['jobs-scraped',
-                        'jobs-submitted'])
+                            'jobs-submitted'])
 @db.connection_context()
 def main():
     ListedJob.drop_table()
