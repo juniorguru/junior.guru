@@ -1,6 +1,6 @@
 import click
 
-from juniorguru.cli import (cancel_previous_builds, check_docs, check_links, dev,
+from juniorguru.cli import (cancel_previous_builds, check_docs, check_links, dev, data,
                             participant, screenshots, students, web, winners, sync)
 
 
@@ -18,6 +18,7 @@ for module in [cancel_previous_builds,
                check_docs,
                check_links,
                web,
+               data,
                participant,
                screenshots,
                winners,

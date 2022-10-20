@@ -21,6 +21,10 @@ jobs:
       - restore_cache:
           key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
       - run:
+          name: Create the .today file for caching purposes
+          command: |
+            date +'%Y-%m-%d' > .today
+      - run:
           name: Install dependencies
           command: |
             poetry --version
@@ -65,10 +69,6 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - run:
-          name: Create the .today file for caching purposes
-          command: |
-            date +'%Y-%m-%d' > .today
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
       - restore_cache:  # get jobs data persisted between builds
@@ -79,16 +79,31 @@ jobs:
           name: Sync data
           command: |
             CHAIN=$(poetry run jg sync --chains | circleci tests split)
-            poetry run jg sync $CHAIN
             #if [[ $CIRCLE_BRANCH = "main" ]]; then
             #  export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
             #  export DISCORD_MUTATIONS_ENABLED=1
             #  export MEMBERFUL_MUTATIONS_ENABLED=1
             #  export JOBS_EMAILS_SENDING_ENABLED=1
             #fi
-            #poetry run jg sync all
-            #poetry run sqlite-utils optimize juniorguru/data/data.db
-            #poetry run sqlite-utils juniorguru/data/data.db 'PRAGMA integrity_check' | poetry run python -mjson.tool
+            poetry run jg sync $CHAIN
+      - run:
+          name: Prepare files for persisting
+          command: |
+            poetry run jg data node ./nodes $CIRCLE_NODE_INDEX
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/nodes
+
+  data:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run:
+          name: Merge data
+          command: |
+            poetry run jg data merge ./nodes
       - save_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
           paths:
@@ -104,8 +119,8 @@ jobs:
       - persist_to_workspace:
           root: "~"
           paths:
-              - project/juniorguru/data
-              - project/juniorguru/images
+              - project/data
+              - project/images
 
   build-web:
     executor: python-js
@@ -113,15 +128,6 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - run:
-          name: "Debug 'DatabaseError: database disk image is malformed' (list files)"
-          command: find juniorguru/data
-      - run:
-          name: "Debug 'DatabaseError: database disk image is malformed' (integrity check)"
-          command: "poetry run sqlite-utils juniorguru/data/data.db 'PRAGMA integrity_check' | poetry run python -mjson.tool"
-      - run:
-          name: "Debug 'DatabaseError: database disk image is malformed' (optimize)"
-          command: 'poetry run sqlite-utils optimize juniorguru/data/data.db'
       - run: poetry run jg web build
       - persist_to_workspace:
           root: "~"
@@ -185,43 +191,49 @@ workflows:
       - sync:
           requires:
             - install
-      - build-web:
+      - data:
           requires:
             - sync
-      - check-docs:
-          requires:
-            - build-web
-      - deploy-web:
-          filters:
-            branches:
-              only:
-                - main
-          requires:
-            - build-web
-            - lint-and-test
+      # - build-web:
+      #     requires:
+      #       - data
+      # - check-docs:
+      #     requires:
+      #       - build-web
+      # - deploy-web:
+      #     filters:
+      #       branches:
+      #         only:
+      #           - main
+      #     requires:
+      #       - build-web
+      #       - lint-and-test
 
-  nightly:
-    jobs:
-      - install
-      - sync:
-          requires:
-            - install
-      - build-web:
-          requires:
-            - sync
-      - backup:
-          requires:
-            - build-web
-      - check-links:
-          requires:
-            - build-web
-      - deploy-web:
-          requires:
-            - build-web
-    triggers:
-      - schedule:
-          cron: "0 4 * * *"
-          filters:
-            branches:
-              only:
-                - main
+  # nightly:
+  #   jobs:
+  #     - install
+  #     - sync:
+  #         requires:
+  #           - install
+  #     - data:
+  #         requires:
+  #           - sync
+  #     - build-web:
+  #         requires:
+  #           - data
+  #     - backup:
+  #         requires:
+  #           - build-web
+  #     - check-links:
+  #         requires:
+  #           - build-web
+  #     - deploy-web:
+  #         requires:
+  #           - build-web
+  #   triggers:
+  #     - schedule:
+  #         cron: "0 4 * * *"
+  #         filters:
+  #           branches:
+  #             only:
+  #               - main

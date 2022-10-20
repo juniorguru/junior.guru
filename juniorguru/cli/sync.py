@@ -111,9 +111,10 @@ def print_chains(context, param, value):
 @click.option('--chains', is_flag=True, callback=print_chains, expose_value=False, is_eager=True)
 @click.option('--interactive/--no-interactive', envvar='INTERACTIVE_SYNC', default=False)
 @click.pass_context
-def main(context, interactive):
-    context.obj = {'timing': {},
-                   'interactive': interactive}
+def main(context, node, interactive):
+    context.obj = {'node': node,
+                   'interactive': interactive,
+                   'timing': {}}
     logger.debug(f"Interactive? {'YES' if interactive else 'NO'}")
     context.call_on_close(close)
 
@@ -131,6 +132,8 @@ def all(context):
 
 @click.pass_context
 def close(context):
+    # if node:
+    #     logger.debug(f"Node #{node}")
     pass  # TODO junit.xml, context.obj['timing']
 
 
