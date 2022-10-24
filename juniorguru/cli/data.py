@@ -125,10 +125,10 @@ def load_file(persist_dir, persist_path, source_dir):
     source_path.parent.mkdir(parents=True, exist_ok=True)
     if source_path.exists():
         raise FileExistsError(source_path)
-    if persist_path.suffix == '.db':
+    if persist_path.suffix == '.sql':
         raise NotImplementedError(persist_path)
     else:
-        shutil.copy2(persist_path, source_path)
+        shutil.move(persist_path, source_path)
 
 
 # def merge_databases(path_src, path_dst):
