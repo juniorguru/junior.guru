@@ -117,7 +117,7 @@ def persist_file(source_dir, source_path, persist_dir):
             for line in db.iterdump():
                 f.write(f"{line}\n")
     else:
-        shutil.copy2(source_path, persist_path)
+        shutil.move(source_path, persist_path)
 
 
 def load_file(persist_dir, persist_path, source_dir):
