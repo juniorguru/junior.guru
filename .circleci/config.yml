@@ -93,11 +93,11 @@ jobs:
       - run:
           name: Prepare modified files for persisting
           command: |
-            poetry run jg data persist
-      # - persist_to_workspace:
-      #     root: "~"
-      #     paths:
-      #         - project/nodes
+            poetry run jg data persist $CIRCLE_NODE_INDEX
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/persist-to-workspace
 
   # data:
   #   executor: python-js

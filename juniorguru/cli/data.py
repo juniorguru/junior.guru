@@ -1,5 +1,5 @@
 from pathlib import Path
-# import shutil
+import shutil
 import itertools
 
 import click
@@ -49,20 +49,23 @@ def snapshot(file, exclude):
 
 
 @main.command()
-@click.option('--dir', default=PERSIST_DIR, type=click.Path())
+@click.argument('namespace')
+@click.option('--persist-dir', default=PERSIST_DIR, type=click.Path())
 @click.option('--snapshot-file', default=SNAPSHOT_FILE, type=click.File())
 @click.option('--snapshot-exclude', default=','.join(SNAPSHOT_EXCLUDE), type=Exclude())
-def persist(dir, snapshot_file, snapshot_exclude):
+def persist(persist_dir, namespace, snapshot_file, snapshot_exclude):
+    persist_dir = Path(persist_dir) / namespace
+    persist_dir.mkdir(parents=True)
     snapshot = {Path(path): float(mtime)
                 for path, mtime
                 in (line.split(' = ') for line in snapshot_file)}
     for path, mtime in take_snapshot('.', exclude=snapshot_exclude):
         if path not in snapshot:
             logger.info(f"New: {path}")
+            persist_file('.', path, persist_dir)
         elif mtime > snapshot[path]:
             logger.info(f"Modified: {path}")
-
-    # ./nodes $CIRCLE_NODE_INDEX
+            persist_file('.', path, persist_dir)
 
 
 # @main.command()
@@ -143,6 +146,12 @@ def persist(dir, snapshot_file, snapshot_exclude):
 #         for row in db_src[table_name].rows:
 #             db_dst[table_name].insert(row)
 #     db_dst.vacuum()
+
+
+def persist_file(source_dir, source_path, persist_dir):
+    persist_path = persist_dir / source_path.relative_to(source_dir)
+    persist_path.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(source_path, persist_path)
 
 
 def take_snapshot(dir, exclude=None):
