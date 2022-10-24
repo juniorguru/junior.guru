@@ -93,7 +93,7 @@ jobs:
       - run:
           name: Prepare modified files for persisting
           command: |
-            poetry run jg data persist $CIRCLE_NODE_INDEX
+            poetry run jg data persist $CIRCLE_NODE_INDEX --move
       - persist_to_workspace:
           root: "~"
           paths:
@@ -107,7 +107,7 @@ jobs:
       - run:
           name: Load data
           command: |
-            poetry run jg data load
+            poetry run jg data load --move
       - save_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
           paths:

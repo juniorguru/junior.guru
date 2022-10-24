@@ -56,7 +56,8 @@ def snapshot(file, exclude):
 @click.option('--persist-exclude', default=','.join(PERSIST_EXCLUDE), type=CommaSeparated())
 @click.option('--snapshot-file', default=SNAPSHOT_FILE, type=click.File())
 @click.option('--snapshot-exclude', default=','.join(SNAPSHOT_EXCLUDE), type=CommaSeparated())
-def persist(persist_dir, namespace, snapshot_file, snapshot_exclude, persist_exclude):
+@click.option('--move/--no-move', default=False)
+def persist(persist_dir, namespace, snapshot_file, snapshot_exclude, persist_exclude, move):
     namespace_dir = persist_dir / namespace
     namespace_dir.mkdir(parents=True)
     snapshot = {Path(path): float(mtime)
@@ -67,10 +68,10 @@ def persist(persist_dir, namespace, snapshot_file, snapshot_exclude, persist_exc
             logger.debug(f"Excluding {path}")
         elif path not in snapshot:
             logger['new'].info(path)
-            persist_file('.', path, namespace_dir)
+            persist_file('.', path, namespace_dir, move=move)
         elif mtime > snapshot[path]:
             logger['mod'].info(path)
-            persist_file('.', path, namespace_dir)
+            persist_file('.', path, namespace_dir, move=move)
     for path in (path for path in persist_dir.glob('**/*')
                  if path.is_file()):
         logger.info(path)
@@ -78,14 +79,15 @@ def persist(persist_dir, namespace, snapshot_file, snapshot_exclude, persist_exc
 
 @main.command()
 @click.option('--persist-dir', default=PERSIST_DIR, type=click.Path(path_type=Path))
-def load(persist_dir):
+@click.option('--move/--no-move', default=False)
+def load(persist_dir, move):
     errors = False
     for namespace_dir in persist_dir.iterdir():
         for path in (path for path in namespace_dir.glob('**/*')
                      if path.is_file()):
             logger.info(path)
             try:
-                load_file(namespace_dir, path, '.')
+                load_file(namespace_dir, path, '.', move=move)
             except FileExistsError:
                 errors = True
                 logger.error(f"Exists: {path}")
@@ -107,7 +109,7 @@ def take_snapshot(dir, exclude=None):
             yield path.relative_to(dir), path.stat().st_mtime
 
 
-def persist_file(source_dir, source_path, persist_dir):
+def persist_file(source_dir, source_path, persist_dir, move=False):
     persist_path = persist_dir / source_path.relative_to(source_dir)
     persist_path.parent.mkdir(parents=True, exist_ok=True)
     if source_path.suffix == '.db':
@@ -117,10 +119,10 @@ def persist_file(source_dir, source_path, persist_dir):
                 for line in db.iterdump():
                     f.write(f"{line}\n")
     else:
-        shutil.move(source_path, persist_path)
+        (shutil.move if move else shutil.copy2)(source_path, persist_path)
 
 
-def load_file(persist_dir, persist_path, source_dir):
+def load_file(persist_dir, persist_path, source_dir, move=False):
     source_path = source_dir / persist_path.relative_to(persist_dir)
     source_path.parent.mkdir(parents=True, exist_ok=True)
     if source_path.exists():
@@ -130,7 +132,7 @@ def load_file(persist_dir, persist_path, source_dir):
         with sqlite3.connect(source_path) as db:
             db.executescript(source_path.read_text())
     else:
-        shutil.move(persist_path, source_path)
+        (shutil.move if move else shutil.copy2)(persist_path, source_path)
 
 
 # def merge_databases(path_src, path_dst):

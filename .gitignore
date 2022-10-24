@@ -91,7 +91,6 @@ google_service_account.json
 # Data persisting and merging
 .persist-to-workspace-snapshot
 /persist-to-workspace/
-/juniorguru/data/*.sql
 
 # Data backup
 backup.tar.gz
