@@ -61,11 +61,25 @@ jobs:
           name: Test
           command: poetry run jg test -v
 
+  # Needs $DISCORD_API_KEY
+  sync-club-content:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run:
+          name: Sync club content
+          command: poetry run jg sync club-content
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/juniorguru/data
+
   # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
   sync:
     executor: python-js
     resource_class: large
-    parallelism: 3
+    parallelism: 4
     steps:
       - attach_workspace:
           at: "~"
@@ -77,8 +91,7 @@ jobs:
           key: jobs-emails-v2-{{ .Branch }}
       - run:
           name: Snapshot files
-          command: |
-            poetry run jg data snapshot
+          command: poetry run jg data snapshot
       - run:
           name: Sync data
           command: |
@@ -91,9 +104,8 @@ jobs:
             fi
             poetry run jg sync $CHAIN
       - run:
-          name: Prepare modified files for persisting
-          command: |
-            poetry run jg data persist $CIRCLE_NODE_INDEX --move
+          name: Prepare changed files for persisting
+          command: poetry run jg data persist $CIRCLE_NODE_INDEX --move
       - persist_to_workspace:
           root: "~"
           paths:
@@ -106,8 +118,7 @@ jobs:
           at: "~"
       - run:
           name: Load data
-          command: |
-            poetry run jg data load --move
+          command: poetry run jg data load --move
       - save_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
           paths:
@@ -192,9 +203,12 @@ workflows:
       - lint-and-test:
           requires:
             - install
-      - sync:
+      - sync-club-content:
           requires:
             - install
+      - sync:
+          requires:
+            - sync-club-content
       - data:
           requires:
             - sync
@@ -216,9 +230,12 @@ workflows:
   nightly:
     jobs:
       - install
-      - sync:
+      - sync-club-content:
           requires:
             - install
+      - sync:
+          requires:
+            - sync-club-content
       - data:
           requires:
             - sync
