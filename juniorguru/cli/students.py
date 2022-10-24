@@ -23,14 +23,14 @@ logger = loggers.get(__name__)
 def main(company_slug, all, invoice):
     if all and invoice:
         logger.error("Can invoice only billable subscriptions, unexpected combination of arguments")
-        click.Abort()
+        raise click.Abort()
 
     try:
         company = Company.get_by_slug(company_slug)
     except Company.DoesNotExist:
         slugs = [company.slug for company in Company.schools_listing()]
         logger.error(f"Company must be one of: {', '.join(slugs)}")
-        click.Abort()
+        raise click.Abort()
     logger.debug(f"Company identified as {company!r}")
 
     if all:
@@ -54,11 +54,11 @@ def main(company_slug, all, invoice):
     if invoice:
         if input('Are you sure you want to mark the above as invoiced? (type YES!) ') != 'YES!':
             logger.error("You're not sure")
-            click.Abort()
+            raise click.Abort()
 
         if not MEMBERFUL_MUTATIONS_ENABLED:
             logger.error('Memberful mutations not enabled')
-            click.Abort()
+            raise click.Abort()
 
         memberful = Memberful()
         query = '''

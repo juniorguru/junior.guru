@@ -99,32 +99,32 @@ jobs:
           paths:
               - project/persist-to-workspace
 
-  # data:
-  #   executor: python-js
-  #   steps:
-  #     - attach_workspace:
-  #         at: "~"
-  #     - run:
-  #         name: Load data
-  #         command: |
-  #           poetry run jg data load
-  #     - save_cache:  # caches all HTTP communication of the scrapers for one day
-  #         key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
-  #         paths:
-  #           - .scrapy
-  #     - save_cache:  # persisting the jobs data between builds
-  #         key: jobs-v2-{{ .Branch }}-{{ checksum ".today" }}
-  #         paths:
-  #           - juniorguru/data/jobs
-  #     - save_cache:  # makes jobs-emails idempotent
-  #         key: jobs-emails-v2-{{ .Branch }}-{{ checksum ".today" }}
-  #         paths:
-  #           - juniorguru/data/jobs-emails.txt
-  #     - persist_to_workspace:
-  #         root: "~"
-  #         paths:
-  #             - project/juniorguru/data
-  #             - project/juniorguru/images
+  data:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run:
+          name: Load data
+          command: |
+            poetry run jg data load
+      # - save_cache:  # caches all HTTP communication of the scrapers for one day
+      #     key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
+      #     paths:
+      #       - .scrapy
+      # - save_cache:  # persisting the jobs data between builds
+      #     key: jobs-v2-{{ .Branch }}-{{ checksum ".today" }}
+      #     paths:
+      #       - juniorguru/data/jobs
+      # - save_cache:  # makes jobs-emails idempotent
+      #     key: jobs-emails-v2-{{ .Branch }}-{{ checksum ".today" }}
+      #     paths:
+      #       - juniorguru/data/jobs-emails.txt
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/juniorguru/data
+              - project/juniorguru/images
 
   build-web:
     executor: python-js

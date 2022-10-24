@@ -71,17 +71,40 @@ def persist(persist_dir, namespace, snapshot_file, snapshot_exclude, persist_exc
         elif mtime > snapshot[path]:
             logger['mod'].info(path)
             persist_file('.', path, namespace_dir)
-    for path in persist_dir.glob('**/*'):
+    for path in (path for path in persist_dir.glob('**/*')
+                 if path.is_file()):
         logger.info(path)
 
 
-# def merge_databases(path_src, path_dst):
-#     db_src = Database(path_src)
-#     db_dst = Database(path_dst)
-#     for table_name in db_src.table_names():
-#         for row in db_src[table_name].rows:
-#             db_dst[table_name].insert(row)
-#     db_dst.vacuum()
+@main.command()
+@click.option('--persist-dir', default=PERSIST_DIR, type=click.Path(path_type=Path))
+def load(persist_dir):
+    errors = False
+    for namespace_dir in persist_dir.iterdir():
+        for path in (path for path in namespace_dir.glob('**/*')
+                     if path.is_file()):
+            logger.info(path)
+            try:
+                load_file(namespace_dir, path, '.')
+            except FileExistsError:
+                errors = True
+                logger.error(f"Exists: {path}")
+            except NotImplementedError:
+                errors = True
+                logger.error(f"Not implemented: {path}")
+    if errors:
+        raise click.Abort()
+
+
+def take_snapshot(dir, exclude=None):
+    exclude = [(f"{pattern.rstrip('/')}/**/*" if Path(pattern).is_dir() else pattern)
+               for pattern in (exclude or [])]
+    excluded = itertools.chain.from_iterable(Path(dir).glob(pattern)
+                                             for pattern in exclude)
+    included = Path(dir).glob('**/*')
+    for path in set(included) - set(excluded):
+        if path.is_file():
+            yield path.relative_to(dir), path.stat().st_mtime
 
 
 def persist_file(source_dir, source_path, persist_dir):
@@ -97,12 +120,21 @@ def persist_file(source_dir, source_path, persist_dir):
         shutil.copy2(source_path, persist_path)
 
 
-def take_snapshot(dir, exclude=None):
-    exclude = [(f"{pattern.rstrip('/')}/**/*" if Path(pattern).is_dir() else pattern)
-               for pattern in (exclude or [])]
-    excluded = itertools.chain.from_iterable(Path(dir).glob(pattern)
-                                             for pattern in exclude)
-    included = Path(dir).glob('**/*')
-    for path in set(included) - set(excluded):
-        if path.is_file():
-            yield path.relative_to(dir), path.stat().st_mtime
+def load_file(persist_dir, persist_path, source_dir):
+    source_path = source_dir / persist_path.relative_to(persist_dir)
+    source_path.parent.mkdir(parents=True, exist_ok=True)
+    if source_path.exists():
+        raise FileExistsError(source_path)
+    if persist_path.suffix == '.db':
+        raise NotImplementedError(persist_path)
+    else:
+        shutil.copy2(persist_path, source_path)
+
+
+# def merge_databases(path_src, path_dst):
+#     db_src = Database(path_src)
+#     db_dst = Database(path_dst)
+#     for table_name in db_src.table_names():
+#         for row in db_src[table_name].rows:
+#             db_dst[table_name].insert(row)
+#     db_dst.vacuum()
