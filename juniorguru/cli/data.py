@@ -131,7 +131,7 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
         source_path = source_path.with_suffix('.db')
         with sqlite3.connect(source_path) as db:
             db.executescript(source_path.read_text())
-            db.execute('VACUUM;')
+            db.execute('VACUUM')
     else:
         (shutil.move if move else shutil.copy2)(persist_path, source_path)
 
