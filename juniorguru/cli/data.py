@@ -52,25 +52,27 @@ def snapshot(file, exclude):
 
 @main.command()
 @click.argument('namespace')
-@click.option('--persist-dir', default=PERSIST_DIR, type=click.Path())
+@click.option('--persist-dir', default=PERSIST_DIR, type=click.Path(path_type=Path))
 @click.option('--persist-exclude', default=','.join(PERSIST_EXCLUDE), type=CommaSeparated())
 @click.option('--snapshot-file', default=SNAPSHOT_FILE, type=click.File())
 @click.option('--snapshot-exclude', default=','.join(SNAPSHOT_EXCLUDE), type=CommaSeparated())
 def persist(persist_dir, namespace, snapshot_file, snapshot_exclude, persist_exclude):
-    persist_dir = Path(persist_dir) / namespace
-    persist_dir.mkdir(parents=True)
+    namespace_dir = persist_dir / namespace
+    namespace_dir.mkdir(parents=True)
     snapshot = {Path(path): float(mtime)
                 for path, mtime
                 in (line.split(' = ') for line in snapshot_file)}
     for path, mtime in take_snapshot('.', exclude=snapshot_exclude):
         if any(fnmatch(path.name, pattern) for pattern in persist_exclude):
-            logger.debug(f"Excluded: {path}")
+            logger.debug(f"Excluding {path}")
         elif path not in snapshot:
-            logger.info(f"New: {path}")
-            persist_file('.', path, persist_dir)
+            logger['new'].info(path)
+            persist_file('.', path, namespace_dir)
         elif mtime > snapshot[path]:
-            logger.info(f"Modified: {path}")
-            persist_file('.', path, persist_dir)
+            logger['mod'].info(path)
+            persist_file('.', path, namespace_dir)
+    for path in persist_dir.glob('**/*'):
+        logger.info(path)
 
 
 # def merge_databases(path_src, path_dst):

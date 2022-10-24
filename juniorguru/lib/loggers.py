@@ -3,6 +3,7 @@ import os
 
 
 LOG_LEVEL = getattr(logging, os.getenv('LOG_LEVEL', 'info').upper())
+
 MUTED_LOGGERS = [
     'discord',
     'peewee',
@@ -21,7 +22,13 @@ MUTED_LOGGERS = [
 ]
 
 
+class Logger(logging.Logger):
+    def __getitem__(self, name):
+        return self.getChild(name)
+
+
 def configure():
+    logging.setLoggerClass(Logger)
     logging.root.setLevel(logging.DEBUG)
 
     for name in MUTED_LOGGERS:
