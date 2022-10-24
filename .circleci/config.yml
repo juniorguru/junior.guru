@@ -87,7 +87,7 @@ jobs:
               export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
               export DISCORD_MUTATIONS_ENABLED=1
               export MEMBERFUL_MUTATIONS_ENABLED=1
-              export JOBS_EMAILS_SENDING_ENABLED=1
+              # export JOBS_EMAILS_SENDING_ENABLED=1
             fi
             poetry run jg sync $CHAIN
       - run:
@@ -105,9 +105,9 @@ jobs:
   #     - attach_workspace:
   #         at: "~"
   #     - run:
-  #         name: Merge data
+  #         name: Load data
   #         command: |
-  #           poetry run jg data merge ./nodes
+  #           poetry run jg data load
   #     - save_cache:  # caches all HTTP communication of the scrapers for one day
   #         key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
   #         paths:
