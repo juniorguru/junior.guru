@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 import shutil
 import itertools
@@ -115,9 +116,9 @@ def persist_file(source_dir, source_path, persist_dir, move=False):
     if source_path.suffix == '.db':
         with sqlite3.connect(source_path) as db:
             persist_path = persist_path.with_suffix('.sql')
-            with persist_path.open(mode='w') as f:
-                for line in db.iterdump():
-                    f.write(f"{line}\n")
+            with persist_path.open(mode='w', encoding='utf-8') as f:
+                for sql_line in db.iterdump():
+                    f.write(f"{modify_sql(sql_line)}\n")
     else:
         (shutil.move if move else shutil.copy2)(source_path, persist_path)
 
@@ -130,16 +131,14 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
     if persist_path.suffix == '.sql':
         source_path = source_path.with_suffix('.db')
         with sqlite3.connect(source_path) as db:
-            db.executescript(source_path.read_text())
+            db.executescript(persist_path.read_text(encoding='utf-8'))
             db.execute('VACUUM')
     else:
         (shutil.move if move else shutil.copy2)(persist_path, source_path)
 
 
-# def merge_databases(path_src, path_dst):
-#     db_src = Database(path_src)
-#     db_dst = Database(path_dst)
-#     for table_name in db_src.table_names():
-#         for row in db_src[table_name].rows:
-#             db_dst[table_name].insert(row)
-#     db_dst.vacuum()
+def modify_sql(sql_line):
+    sql_line = re.sub(r'^CREATE TABLE', r'CREATE TABLE IF NOT EXISTS', sql_line)
+    sql_line = re.sub(r'^INSERT INTO', r'INSERT OR REPLACE INTO', sql_line)
+    sql_line = re.sub(r'^(CREATE( UNIQUE)? INDEX)', r'\1 IF NOT EXISTS', sql_line)
+    return sql_line
