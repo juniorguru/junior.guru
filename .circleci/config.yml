@@ -76,6 +76,10 @@ jobs:
       - restore_cache:  # makes jobs-emails idempotent
           key: jobs-emails-v2-{{ .Branch }}
       - run:
+          name: Snapshot files
+          command: |
+            poetry run jg data snapshot
+      - run:
           name: Sync data
           command: |
             CHAIN=$(poetry run jg sync --chains | circleci tests split)
@@ -87,40 +91,40 @@ jobs:
             fi
             poetry run jg sync $CHAIN
       - run:
-          name: Prepare files for persisting
+          name: Prepare modified files for persisting
           command: |
-            poetry run jg data node ./nodes $CIRCLE_NODE_INDEX
-      - persist_to_workspace:
-          root: "~"
-          paths:
-              - project/nodes
+            poetry run jg data persist
+      # - persist_to_workspace:
+      #     root: "~"
+      #     paths:
+      #         - project/nodes
 
-  data:
-    executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run:
-          name: Merge data
-          command: |
-            poetry run jg data merge ./nodes
-      - save_cache:  # caches all HTTP communication of the scrapers for one day
-          key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
-          paths:
-            - .scrapy
-      - save_cache:  # persisting the jobs data between builds
-          key: jobs-v2-{{ .Branch }}-{{ checksum ".today" }}
-          paths:
-            - juniorguru/data/jobs
-      - save_cache:  # makes jobs-emails idempotent
-          key: jobs-emails-v2-{{ .Branch }}-{{ checksum ".today" }}
-          paths:
-            - juniorguru/data/jobs-emails.txt
-      - persist_to_workspace:
-          root: "~"
-          paths:
-              - project/juniorguru/data
-              - project/juniorguru/images
+  # data:
+  #   executor: python-js
+  #   steps:
+  #     - attach_workspace:
+  #         at: "~"
+  #     - run:
+  #         name: Merge data
+  #         command: |
+  #           poetry run jg data merge ./nodes
+  #     - save_cache:  # caches all HTTP communication of the scrapers for one day
+  #         key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
+  #         paths:
+  #           - .scrapy
+  #     - save_cache:  # persisting the jobs data between builds
+  #         key: jobs-v2-{{ .Branch }}-{{ checksum ".today" }}
+  #         paths:
+  #           - juniorguru/data/jobs
+  #     - save_cache:  # makes jobs-emails idempotent
+  #         key: jobs-emails-v2-{{ .Branch }}-{{ checksum ".today" }}
+  #         paths:
+  #           - juniorguru/data/jobs-emails.txt
+  #     - persist_to_workspace:
+  #         root: "~"
+  #         paths:
+  #             - project/juniorguru/data
+  #             - project/juniorguru/images
 
   build-web:
     executor: python-js
@@ -191,23 +195,23 @@ workflows:
       - sync:
           requires:
             - install
-      - data:
-          requires:
-            - sync
-      - build-web:
-          requires:
-            - data
-      - check-docs:
-          requires:
-            - build-web
-      - deploy-web:
-          filters:
-            branches:
-              only:
-                - main
-          requires:
-            - build-web
-            - lint-and-test
+      # - data:
+      #     requires:
+      #       - sync
+      # - build-web:
+      #     requires:
+      #       - data
+      # - check-docs:
+      #     requires:
+      #       - build-web
+      # - deploy-web:
+      #     filters:
+      #       branches:
+      #         only:
+      #           - main
+      #     requires:
+      #       - build-web
+      #       - lint-and-test
 
   nightly:
     jobs:
@@ -215,21 +219,21 @@ workflows:
       - sync:
           requires:
             - install
-      - data:
-          requires:
-            - sync
-      - build-web:
-          requires:
-            - data
-      - backup:
-          requires:
-            - build-web
-      - check-links:
-          requires:
-            - build-web
-      - deploy-web:
-          requires:
-            - build-web
+      # - data:
+      #     requires:
+      #       - sync
+      # - build-web:
+      #     requires:
+      #       - data
+      # - backup:
+      #     requires:
+      #       - build-web
+      # - check-links:
+      #     requires:
+      #       - build-web
+      # - deploy-web:
+      #     requires:
+      #       - build-web
     triggers:
       - schedule:
           cron: "0 4 * * *"

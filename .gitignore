@@ -88,8 +88,9 @@ google_service_account.json
 /juniorguru/data/proxies.txt
 /juniorguru/data/jobs-emails.txt
 
-# Data nodes
-/nodes/
+# Data persisting and merging
+.persist-to-workspace-snapshot
+/persist-to-workspace/
 
 # Data backup
 backup.tar.gz
