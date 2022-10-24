@@ -111,11 +111,11 @@ def persist_file(source_dir, source_path, persist_dir):
     persist_path = persist_dir / source_path.relative_to(source_dir)
     persist_path.parent.mkdir(parents=True, exist_ok=True)
     if source_path.suffix == '.db':
-        db = sqlite3.connect(source_path)
-        persist_path = persist_path.with_suffix('.sql')
-        with persist_path.open(mode='w') as f:
-            for line in db.iterdump():
-                f.write(f"{line}\n")
+        with sqlite3.connect(source_path) as db:
+            persist_path = persist_path.with_suffix('.sql')
+            with persist_path.open(mode='w') as f:
+                for line in db.iterdump():
+                    f.write(f"{line}\n")
     else:
         shutil.move(source_path, persist_path)
 
@@ -126,7 +126,9 @@ def load_file(persist_dir, persist_path, source_dir):
     if source_path.exists():
         raise FileExistsError(source_path)
     if persist_path.suffix == '.sql':
-        raise NotImplementedError(persist_path)
+        source_path = source_path.with_suffix('.db')
+        with sqlite3.connect(source_path) as db:
+            db.executescript(source_path.read_text())
     else:
         shutil.move(persist_path, source_path)
 
