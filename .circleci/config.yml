@@ -195,9 +195,9 @@ workflows:
       - sync:
           requires:
             - install
-      # - data:
-      #     requires:
-      #       - sync
+      - data:
+          requires:
+            - sync
       # - build-web:
       #     requires:
       #       - data
@@ -219,9 +219,9 @@ workflows:
       - sync:
           requires:
             - install
-      # - data:
-      #     requires:
-      #       - sync
+      - data:
+          requires:
+            - sync
       # - build-web:
       #     requires:
       #       - data
