@@ -198,20 +198,20 @@ workflows:
       - data:
           requires:
             - sync
-      # - build-web:
-      #     requires:
-      #       - data
-      # - check-docs:
-      #     requires:
-      #       - build-web
-      # - deploy-web:
-      #     filters:
-      #       branches:
-      #         only:
-      #           - main
-      #     requires:
-      #       - build-web
-      #       - lint-and-test
+      - build-web:
+          requires:
+            - data
+      - check-docs:
+          requires:
+            - build-web
+      - deploy-web:
+          filters:
+            branches:
+              only:
+                - main
+          requires:
+            - build-web
+            - lint-and-test
 
   nightly:
     jobs:
@@ -222,18 +222,18 @@ workflows:
       - data:
           requires:
             - sync
-      # - build-web:
-      #     requires:
-      #       - data
-      # - backup:
-      #     requires:
-      #       - build-web
-      # - check-links:
-      #     requires:
-      #       - build-web
-      # - deploy-web:
-      #     requires:
-      #       - build-web
+      - build-web:
+          requires:
+            - data
+      - backup:
+          requires:
+            - build-web
+      - check-links:
+          requires:
+            - build-web
+      - deploy-web:
+          requires:
+            - build-web
     triggers:
       - schedule:
           cron: "0 4 * * *"
