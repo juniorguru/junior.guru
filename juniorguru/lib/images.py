@@ -158,7 +158,7 @@ def render_template(width, height, template_name, context, filters=None):
         with Image.open(BytesIO(image_bytes)) as image:
             buffer = BytesIO()
             height_ar = (image.height * width) // image.width
-            image = image.resize((width, height_ar), Image.BICUBIC)
+            image = image.resize((width, height_ar), Image.Resampling.BICUBIC)
             image = image.crop((0, 0, width, height))
             image.save(buffer, 'PNG')
             return buffer.getvalue()

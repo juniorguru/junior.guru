@@ -314,7 +314,7 @@ def edit_screenshot_override(path):
             # manual Firefox screenshots, thus we cannot use 'thumbnail'. Instead,
             # we resize by aspect ratio (ar) and then crop to the desired height.
             height_ar = (image.height * WIDTH) // image.width
-            image = image.resize((WIDTH, height_ar), Image.BICUBIC)
+            image = image.resize((WIDTH, height_ar), Image.Resampling.BICUBIC)
             image = image.crop((0, 0, WIDTH, HEIGHT))
             image.save(path, 'JPEG')
 
