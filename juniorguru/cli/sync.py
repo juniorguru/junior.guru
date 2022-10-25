@@ -42,7 +42,7 @@ class SyncGroup(click.Group):
                 if dependencies:
                     logger_c.info(f"Dependencies: {', '.join(dependencies)}")
                     if context.obj['interactive']:
-                        click.pause()
+                        click.confirm('Continue?', abort=True)
                     for dependency in dependencies:
                         logger_c.debug(f"Invoking: {dependency}")
                         context.invoke(self.get_command(context, dependency))
