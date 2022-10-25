@@ -112,8 +112,9 @@ jobs:
           paths:
               - project/persist-to-workspace
 
-  data:
+  data-and-web:
     executor: python-js
+    resource_class: large
     steps:
       - attach_workspace:
           at: "~"
@@ -132,22 +133,14 @@ jobs:
           key: jobs-emails-v2-{{ .Branch }}-{{ checksum ".today" }}
           paths:
             - juniorguru/data/jobs-emails.txt
+      - run:
+          name: Build web
+          command: poetry run jg web build
       - persist_to_workspace:
           root: "~"
           paths:
               - project/juniorguru/data
               - project/juniorguru/images
-
-  build-web:
-    executor: python-js
-    resource_class: large
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run: poetry run jg web build
-      - persist_to_workspace:
-          root: "~"
-          paths:
               - project/public
 
   backup:
@@ -210,22 +203,19 @@ workflows:
       - sync:
           requires:
             - sync-club-content
-      - data:
+      - data-and-web:
           requires:
             - sync
-      - build-web:
-          requires:
-            - data
       - check-docs:
           requires:
-            - build-web
+            - data-and-web
       - deploy-web:
           filters:
             branches:
               only:
                 - main
           requires:
-            - build-web
+            - data-and-web
             - lint-and-test
 
   nightly:
@@ -237,21 +227,18 @@ workflows:
       - sync:
           requires:
             - sync-club-content
-      - data:
+      - data-and-web:
           requires:
             - sync
-      - build-web:
-          requires:
-            - data
       - backup:
           requires:
-            - build-web
+            - data-and-web
       - check-links:
           requires:
-            - build-web
+            - data-and-web
       - deploy-web:
           requires:
-            - build-web
+            - data-and-web
     triggers:
       - schedule:
           cron: "0 4 * * *"
