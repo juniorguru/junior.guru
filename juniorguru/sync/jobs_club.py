@@ -43,8 +43,7 @@ async def discord_task(client):
 
 
 async def post_job(discord_channel, job):
-    logger_p = logger.getChild(str(job.id))
-    logger_p.info(f'Posting {job!r}: {job.effective_url}')
+    logger[str(job.id)].info(f'Posting {job!r}: {job.effective_url}')
     content = f'**{job.title}**\n{job.company_name} – {job.location}\n{job.effective_url}'
     discord_message = await discord_channel.send(content)
     await discord_message.add_reaction('👍')

@@ -34,7 +34,7 @@ async def send_messages(client):
 
 
 async def send_messages_to_member(client, member):
-    logger_m = logger.getChild(f'members.{member.id}')
+    logger_m = logger[f'members.{member.id}']
     logger_m.debug('Preparing messages')
     messages = prepare_messages(ClubMessage.channel_listing_bot(member.onboarding_channel_id),
                                 SCHEDULED_MESSAGES, TODAY, context=dict(member=member))

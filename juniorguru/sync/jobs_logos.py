@@ -116,7 +116,7 @@ def sort_key(logo):
 
 
 def fetch_icon_urls(args):
-    logger_f = logger.getChild('fetch_icon_urls')
+    logger_f = logger['fetch_icon_urls']
     job_id, company_url = args
     logger_f.debug(f'Fetching icon URLs for <ListedJob: {job_id}>, {company_url}')
     try:
@@ -132,7 +132,7 @@ def fetch_icon_urls(args):
 
 
 def download_image(image_url):
-    logger_d = logger.getChild('download_image')
+    logger_d = logger['download_image']
     logger_d.debug(f'Downloading {image_url}')
     try:
         headers = dict(DEFAULT_REQUEST_HEADERS)

@@ -28,7 +28,7 @@ def channels_operation(operation_name):
 
 @channels_operation('update')
 async def update_onboarding_channel(client, member, channel):
-    logger_c = logger.getChild(f'channels.{channel.id}')
+    logger_c = logger[f'channels.{channel.id}']
     logger_c.info(f"Updating (member #{member.id})")
     channel_data = await prepare_onboarding_channel_data(client, member)
     if DISCORD_MUTATIONS_ENABLED:
@@ -41,7 +41,7 @@ async def update_onboarding_channel(client, member, channel):
 
 @channels_operation('create')
 async def create_onboarding_channel(client, member):
-    logger_c = logger.getChild('channels')
+    logger_c = logger['channels']
     logger_c.info(f"Creating (member #{member.id})")
     channel_data = await prepare_onboarding_channel_data(client, member)
     if DISCORD_MUTATIONS_ENABLED:
@@ -56,7 +56,7 @@ async def create_onboarding_channel(client, member):
 
 @channels_operation('delete')
 async def delete_onboarding_channel(client, channel):
-    logger_c = logger.getChild(f'channels.{channel.id}')
+    logger_c = logger[f'channels.{channel.id}']
     logger_c.info("Deleting")
     if DISCORD_MUTATIONS_ENABLED:
         await channel.delete()
@@ -66,7 +66,7 @@ async def delete_onboarding_channel(client, channel):
 
 @channels_operation('close')
 async def close_onboarding_channel(client, channel):
-    logger_c = logger.getChild(f'channels.{channel.id}')
+    logger_c = logger[f'channels.{channel.id}']
     logger_c.info("Closing")
     last_message_on = ClubMessage.last_message(channel.id).created_at.date()
     current_period = TODAY - last_message_on

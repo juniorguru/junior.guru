@@ -31,7 +31,7 @@ class SyncGroup(click.Group):
             def wrapper(*fn_args, **fn_kwargs):
                 context = click.get_current_context()
                 command_name = context.command.name
-                logger_c = logger.getChild(command_name)
+                logger_c = logger[command_name]
 
                 if command_name in context.obj['timing']:
                     logger_c.debug('Skipping (already executed)')

@@ -55,7 +55,7 @@ async def discord_task(client):
 
 
 async def process_member(client, member):
-    logger_m = logger.getChild(str(member.id))
+    logger_m = logger[str(member.id)]
     logger_m.info('Checking avatar')
     logger_m.debug(f"Name: {member.display_name}")
     try:

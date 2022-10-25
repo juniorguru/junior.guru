@@ -77,7 +77,7 @@ async def process_message(client, channel, message):
 
 
 async def welcome(channel, message, moderators):
-    logger_m = logger.getChild(f'messages.{message.id}')
+    logger_m = logger[f'messages.{message.id}']
     logger_m.info(f'Member #{message.author.id} has an intro message')
     logger_m.debug(f"Welcoming '{message.author.display_name}' with emojis")
     discord_message = await channel.fetch_message(message.id)
@@ -142,7 +142,7 @@ async def welcome(channel, message, moderators):
 
 
 async def welcome_back(channel, message):
-    logger_m = logger.getChild(f'messages.{message.id}')
+    logger_m = logger[f'messages.{message.id}']
     logger_m.info(f'Member #{message.author.id} has returned')
     logger_m.debug(f"Welcoming back '{message.author.display_name}' with emojis")
     discord_message = await channel.fetch_message(message.id)

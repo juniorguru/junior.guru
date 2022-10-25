@@ -123,7 +123,7 @@ def _reader(id, path_queue, item_queue, pipelines):
     preprocessing the items with given pipelines, and putting the items
     to a queue to be saved to the db.
     """
-    logger_r = logger.getChild(f'readers.{id}')
+    logger_r = logger[f'readers.{id}']
     logger_r.debug(f"Starting, preprocessing pipelines: {pipelines!r}")
     pipelines = load_pipelines(pipelines)
     try:
@@ -150,16 +150,15 @@ def parse(path):
     Parse given .jsonl.gz file, generate items, i.e. dicts with scraped
     job data.
     """
-    logger_p = logger.getChild('parse')
     try:
         with gzip.open(path, 'rt') as f:
             for line_no, line in enumerate(f, start=1):
                 yield parse_line(path, line_no, line)
     except EOFError:
-        logger_p.error(f'Unreadable file, probably empty: {path}')
+        logger['parse'].error(f'Unreadable file, probably empty: {path}')
         return
     except Exception:
-        logger_p.exception(f'Error parsing file: {path}')
+        logger['parse'].exception(f'Error parsing file: {path}')
         raise
 
 
@@ -174,9 +173,8 @@ def parse_line(path, line_no, line):
         data['last_seen_on'] = path_to_date(path)
         return data
     except Exception:
-        logger_p = logger.getChild('parse')
-        logger_p.error(f'Error parsing the following data:\n\n{line}\n\n'
-                       f'Line number: {line_no}, file: {path}')
+        logger['parse'].error(f'Error parsing the following data:\n\n{line}\n\n'
+                              f'Line number: {line_no}, file: {path}')
         raise
 
 
@@ -186,7 +184,7 @@ def _writer(item_queue):
     A single process taking care of writing items to the db
     and merging them in case of duplicities.
     """
-    logger_w = logger.getChild('writer')
+    logger_w = logger['writer']
     logger_w.debug("Starting")
     counter = 0
     try:
@@ -271,7 +269,7 @@ def _postprocessor(id, op_queue, id_queue, pipelines):
     Processes taking care of passing items through the postprocessing
     pipelines.
     """
-    logger_p = logger.getChild(f'postprocessors.{id}')
+    logger_p = logger[f'postprocessors.{id}']
     logger_p.debug(f"Starting, preprocessing pipelines: {pipelines!r}")
     pipelines = load_pipelines(pipelines)
     counter = 0
@@ -305,7 +303,7 @@ def _persistor(op_queue):
     A single process taking care of persisting the changes made
     by postprocessing pipelines.
     """
-    logger_p = logger.getChild('persistor')
+    logger_p = logger['persistor']
     logger_p.debug("Starting")
     counter = 0
     try:

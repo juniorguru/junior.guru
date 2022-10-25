@@ -89,38 +89,38 @@ def main():
 
 def process_episode(yaml_record):
     id = yaml_record['id']
-    ep_logger = logger.getChild(id)
-    ep_logger.info(f'Processing episode #{id}')
+    logger_ep = logger[id]
+    logger_ep.info(f'Processing episode #{id}')
 
     media_url = f"https://podcast.junior.guru/episodes/{id}.mp3"
     media_type = 'audio/mpeg'
     publish_on = yaml_record['publish_on'].date()
 
     avatar_path = yaml_record['avatar_path']
-    ep_logger.info(f'Checking {avatar_path}')
+    logger_ep.info(f'Checking {avatar_path}')
     image_path = IMAGES_DIR / avatar_path
     if not image_path.exists():
         raise ValueError(f"Episode references '{image_path}', but it doesn't exist")
 
-    ep_logger.info(f'Analyzing {media_url}')
+    logger_ep.info(f'Analyzing {media_url}')
     try:
         if yaml_record.get('media_size') is None or yaml_record.get('media_duration_s') is None:
-            ep_logger.warning('Media size and duration not found in YAML, downloading the audio file')
+            logger_ep.warning('Media size and duration not found in YAML, downloading the audio file')
             media = Media.create_from_server_response(media_url, type=media_type)
             media.fetch_duration()
             media_size = media.size
             media_type = media.type
             media_duration_s = media.duration.seconds
-            ep_logger.warning(f'Add the following to {YAML_PATH}:\n  media_size: {media_size}\n  media_duration_s: {media_duration_s}')
+            logger_ep.warning(f'Add the following to {YAML_PATH}:\n  media_size: {media_size}\n  media_duration_s: {media_duration_s}')
         else:
-            ep_logger.info('Using media size and duration from YAML and only verifying the audio file exists')
+            logger_ep.info('Using media size and duration from YAML and only verifying the audio file exists')
             response = requests.head(media_url)
             response.raise_for_status()
             media_size = yaml_record['media_size']
             media_duration_s = yaml_record['media_duration_s']
     except HTTPError as e:
         if publish_on >= TODAY and e.response.status_code == 404:
-            ep_logger.warning(f"Future episode {media_url} doesn't exist yet")
+            logger_ep.warning(f"Future episode {media_url} doesn't exist yet")
             return None
         raise
 
@@ -134,7 +134,7 @@ def process_episode(yaml_record):
                 media_type=media_type,
                 media_duration_s=media_duration_s)
 
-    ep_logger.info('Rendering poster')
+    logger_ep.info('Rendering poster')
     episode = PodcastEpisode(**data)
     # The _dirty set causes image cache miss as every time the set gets
     # pickled and serialized to string in different ordering. We won't be

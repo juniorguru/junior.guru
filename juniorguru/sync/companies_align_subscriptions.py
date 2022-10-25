@@ -32,7 +32,7 @@ def main():
     paying_companies = (company for company in Company.listing()
                         if company.expires_on)
     for company in paying_companies:
-        logger_c = logger.getChild(re.sub('\W', '', company.name).lower())
+        logger_c = logger[re.sub('\W', '', company.name).lower()]
         logger_c.info(f'Company subscription expires on {company.expires_on}')
         for employee in company.list_members:
             logger_c.debug(f'Processing {employee.display_name}')

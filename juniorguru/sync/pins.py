@@ -30,21 +30,21 @@ async def discord_task(client):
 
 
 async def process_pin_reaction(client, pin_reaction):
-    pin_logger = logger.getChild(f'reactions.{pin_reaction.id}')
+    logger_p = logger[f'reactions.{pin_reaction.id}']
 
     member = await client.juniorguru_guild.fetch_member(pin_reaction.user.id)
     if member.dm_channel:
         channel = member.dm_channel
     else:
-        pin_logger.debug(f"Creating DM channel for {member.display_name} #{member.id}")
+        logger_p.debug(f"Creating DM channel for {member.display_name} #{member.id}")
         channel = await member.create_dm()
 
-    pin_logger.debug(f"Checking DM if already pinned for {member.display_name} #{member.id}")
+    logger_p.debug(f"Checking DM if already pinned for {member.display_name} #{member.id}")
     if await is_pinned(pin_reaction.message.url, channel):
-        pin_logger.debug(f"Already pinned for {member.display_name} #{member.id}")
+        logger_p.debug(f"Already pinned for {member.display_name} #{member.id}")
         return
 
-    pin_logger.debug(f"Not pinned for {member.display_name} #{member.id}, sending a message to DM")
+    logger_p.debug(f"Not pinned for {member.display_name} #{member.id}, sending a message to DM")
     if DISCORD_MUTATIONS_ENABLED:
         content = (
             '📌 Vidím špendlík! Ukládám ti příspěvek sem, do soukromé zprávy.'
@@ -59,7 +59,7 @@ async def process_pin_reaction(client, pin_reaction):
             await channel.send(content=content,
                                embed=Embed(description="\n".join(embed_description)))
         except Forbidden as e:
-            pin_logger.error(str(e), exc_info=True)
+            logger_p.error(str(e), exc_info=True)
     else:
         logger.warning('Discord mutations not enabled')
 

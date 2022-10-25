@@ -98,7 +98,7 @@ def run_discord_task(import_path, *args):
 
 
 def _discord_task(import_path, args):
-    logger_dt = logger.getChild('discord_task')
+    logger_dt = logger['discord_task']
 
     import_path_parts = import_path.split('.')
     module = importlib.import_module('.'.join(import_path_parts[:-1]))
@@ -168,7 +168,7 @@ def get_roles(member_or_user):
 
 
 def is_message_older_than(message, date):
-    logger_fn = logger.getChild('is_message_older_than')
+    logger_fn = logger['is_message_older_than']
     if message:
         created_dt = message.created_at
         logger_fn.debug(f"Message is from {created_dt}")
@@ -185,7 +185,7 @@ def is_message_older_than(message, date):
 def is_message_over_period_ago(message, period, today=None):
     today = today or date.today()
     ago = today - period
-    logger.getChild('is_message_over_period_ago').debug(f'{today} - {period!r} = {ago}')
+    logger['is_message_over_period_ago'].debug(f'{today} - {period!r} = {ago}')
     return is_message_older_than(message, ago)
 
 
