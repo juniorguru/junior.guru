@@ -61,9 +61,10 @@ jobs:
           name: Test
           command: poetry run jg test -v
 
-  # Needs $DISCORD_API_KEY
+  # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
   sync-1:
     executor: python-js
+    parallelism: 10
     steps:
       - attach_workspace:
           at: "~"
@@ -74,12 +75,43 @@ jobs:
       - restore_cache:  # makes jobs-emails idempotent
           key: jobs-emails-v2-{{ .Branch }}
       - run:
-          name: Sync club content
-          command: poetry run jg sync club-content
+          name: Snapshot files
+          command: poetry run jg data snapshot
+      - run:
+          name: Sync data
+          command: |
+            CHAIN=$(poetry run jg sync chains 1 | circleci tests split)
+            if [[ $CIRCLE_BRANCH = "main" ]]; then
+              export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
+              export DISCORD_MUTATIONS_ENABLED=1
+              export MEMBERFUL_MUTATIONS_ENABLED=1
+              export JOBS_EMAILS_SENDING_ENABLED=1
+              export CLUB_CONTENT_REUSE_DB_ENABLED=1
+            fi
+            echo "Chain: $CHAIN"
+            poetry run jg sync $CHAIN
+      - run:
+          name: Prepare changed files for persisting
+          command: poetry run jg data persist $CIRCLE_NODE_INDEX --move
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/persist-to-workspace
+
+  data-1:
+    executor: python-js
+    resource_class: large
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run:
+          name: Load data
+          command: poetry run jg data load --move
       - persist_to_workspace:
           root: "~"
           paths:
               - project/juniorguru/data
+              - project/juniorguru/images
 
   # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
   sync-2:
@@ -95,7 +127,7 @@ jobs:
       - run:
           name: Sync data
           command: |
-            CHAIN=$(poetry run jg sync --chains | circleci tests split)
+            CHAIN=$(poetry run jg sync chains 2 | circleci tests split)
             if [[ $CIRCLE_BRANCH = "main" ]]; then
               export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
               export DISCORD_MUTATIONS_ENABLED=1
@@ -103,6 +135,7 @@ jobs:
               export JOBS_EMAILS_SENDING_ENABLED=1
               export CLUB_CONTENT_REUSE_DB_ENABLED=1
             fi
+            echo "Chain: $CHAIN"
             poetry run jg sync $CHAIN
       - run:
           name: Prepare changed files for persisting
@@ -112,7 +145,7 @@ jobs:
           paths:
               - project/persist-to-workspace
 
-  data-and-web:
+  data-2:
     executor: python-js
     resource_class: large
     steps:
@@ -133,14 +166,24 @@ jobs:
           key: jobs-emails-v2-{{ .Branch }}-{{ checksum ".today" }}
           paths:
             - juniorguru/data/jobs-emails.txt
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/juniorguru/data
+              - project/juniorguru/images
+
+  web:
+    executor: python-js
+    resource_class: large
+    steps:
+      - attach_workspace:
+          at: "~"
       - run:
           name: Build web
           command: poetry run jg web build
       - persist_to_workspace:
           root: "~"
           paths:
-              - project/juniorguru/data
-              - project/juniorguru/images
               - project/public
 
   backup:
@@ -200,22 +243,28 @@ workflows:
       - sync-1:
           requires:
             - install
-      - sync-2:
+      - data-1:
           requires:
             - sync-1
-      - data-and-web:
+      - sync-2:
+          requires:
+            - data-1
+      - data-2:
           requires:
             - sync-2
+      - web:
+          requires:
+            - data-2
       - check-docs:
           requires:
-            - data-and-web
+            - web
       - deploy-web:
           filters:
             branches:
               only:
                 - main
           requires:
-            - data-and-web
+            - web
             - lint-and-test
 
   nightly:
@@ -224,21 +273,27 @@ workflows:
       - sync-1:
           requires:
             - install
-      - sync-2:
+      - data-1:
           requires:
             - sync-1
-      - data-and-web:
+      - sync-2:
+          requires:
+            - data-1
+      - data-2:
           requires:
             - sync-2
+      - web:
+          requires:
+            - data-2
       - backup:
           requires:
-            - data-and-web
+            - web
       - check-links:
           requires:
-            - data-and-web
+            - web
       - deploy-web:
           requires:
-            - data-and-web
+            - web
     triggers:
       - schedule:
           cron: "0 4 * * *"

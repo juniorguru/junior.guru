@@ -29,7 +29,7 @@ CHANNELS_HISTORY_SINCE = {
 }
 
 
-@cli.sync_command(chains=False)
+@cli.sync_command()
 def main():
     if not CLUB_CONTENT_REUSE_DB_ENABLED:
         run_discord_task('juniorguru.sync.club_content.discord_task')

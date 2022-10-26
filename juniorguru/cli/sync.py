@@ -59,8 +59,6 @@ class SyncGroup(click.Group):
 
             kwargs.setdefault('name', fn.__module__.split('.')[-1].replace('_', '-'))
             self.dependencies[kwargs['name']] = kwargs.pop('requires', [])
-            if kwargs.pop('chains', True) == False:
-                self.chains_exclude.append(kwargs['name'])
             return self.command(*args, **kwargs)(wrapper)
         return decorator
 
@@ -107,17 +105,7 @@ def notify(title, text):
         pync.Notifier.notify(text, title=title)
 
 
-def print_chains(context, param, value):
-    if not value or context.resilient_parsing:
-        return
-    for chain in get_parallel_chains(context.command.dependencies,
-                                     exclude=context.command.chains_exclude):
-        click.echo(' '.join(chain))
-    context.exit()
-
-
 @click.command(cls=SyncGroup, chain=True)
-@click.option('--chains', is_flag=True, callback=print_chains, expose_value=False, is_eager=True)
 @click.option('--interactive/--no-interactive', envvar='INTERACTIVE_SYNC', default=False)
 @click.pass_context
 def main(context, interactive):
@@ -125,6 +113,26 @@ def main(context, interactive):
                    'timing': {}}
     logger.debug(f"Interactive? {'YES' if interactive else 'NO'}")
     context.call_on_close(close)
+
+
+@main.command()
+@click.argument('phase', type=click.Choice(['all', '1', '2']), default='all')
+def chains(phase):
+    commands_without_deps = {name for name, commands
+                             in main.dependencies.items()
+                             if not commands}
+    commands_with_deps = set(main.dependencies.keys()) - commands_without_deps
+
+    if phase == 'all':
+        chains = get_parallel_chains(main.dependencies)
+    elif phase == '1':
+        chains = get_parallel_chains(main.dependencies, exclude=commands_with_deps)
+    elif phase == '2':
+        chains = get_parallel_chains(main.dependencies, exclude=commands_without_deps)
+    else:
+        raise ValueError(phase)
+    for chain in chains:
+        click.echo(' '.join(chain))
 
 
 @main.command()

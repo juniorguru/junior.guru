@@ -91,10 +91,11 @@ def load(persist_dir, move):
         for path in (path for path in namespace_dir.glob('**/*')
                      if path.is_file()):
             logger.info(path)
-            try:
-                load_file(namespace_dir, path, '.', move=move)
-            except FileExistsError:
-                logger.info(f"Exists, skipping: {path}")
+            load_file(namespace_dir, path, '.', move=move)
+        if move:
+            namespace_dir.rmdir()
+    if move:
+        persist_dir.rmdir()
 
 
 def take_snapshot(dir, exclude=None):
@@ -122,10 +123,8 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
     if source_path.exists():
         if source_path.suffix == '.db':
             merge_databases(persist_path, source_path)
-            if move:
-                persist_path.unlink()
-        else:
-            raise FileExistsError(source_path)
+        if move:
+            persist_path.unlink()
     else:
         (shutil.move if move else shutil.copy2)(persist_path, source_path)
 
