@@ -145,19 +145,19 @@ def prepare_database_for_moving(path):
 
 def merge_databases(path_from, path_to):
     logger_db = logger['db']
-    logger_db.debug(f"Merging {path_from} to {path_to}")
+    logger_db.info(f"Merging {path_from} to {path_to}")
     db_from, db_to = Database(path_from), Database(path_to)
 
-    logger_db.debug("Executing idempotent schema SQL")
+    logger_db.info("Applying schema")
     db_to.executescript(make_schema_idempotent(db_from.schema))
 
     for table in db_from.tables:
-        logger_db.debug(f"Upserting rows from {table.name}")
         if not db_to[table.name].exists():
             raise RuntimeError(f"Table {table.name} should already exist!")
-        pks = db_to[table.name].pks
-        rows = map(keep_non_null_values, table.rows)
-        db_to[table.name].upsert_all(rows, pk=pks)
+        logger_db.info(f"Table {table.name} has {db_to[table.name].count()} rows before merge, upserting {table.count()} rows")
+        db_to[table.name].upsert_all(map(keep_non_null_values, table.rows),
+                                     pk=db_to[table.name].pks)
+        logger_db.info(f"Table {table.name} has {db_to[table.name].count()} rows after merge")
     db_to.vacuum()
 
 

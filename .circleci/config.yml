@@ -62,24 +62,8 @@ jobs:
           command: poetry run jg test -v
 
   # Needs $DISCORD_API_KEY
-  sync-club-content:
+  sync-1:
     executor: python-js
-    steps:
-      - attach_workspace:
-          at: "~"
-      - run:
-          name: Sync club content
-          command: poetry run jg sync club-content
-      - persist_to_workspace:
-          root: "~"
-          paths:
-              - project/juniorguru/data
-
-  # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
-  sync:
-    executor: python-js
-    resource_class: large
-    parallelism: 10
     steps:
       - attach_workspace:
           at: "~"
@@ -89,6 +73,22 @@ jobs:
           key: jobs-v2-{{ .Branch }}
       - restore_cache:  # makes jobs-emails idempotent
           key: jobs-emails-v2-{{ .Branch }}
+      - run:
+          name: Sync club content
+          command: poetry run jg sync club-content
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/juniorguru/data
+
+  # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
+  sync-2:
+    executor: python-js
+    resource_class: large
+    parallelism: 10
+    steps:
+      - attach_workspace:
+          at: "~"
       - run:
           name: Snapshot files
           command: poetry run jg data snapshot
@@ -197,15 +197,15 @@ workflows:
       - lint-and-test:
           requires:
             - install
-      - sync-club-content:
+      - sync-1:
           requires:
             - install
-      - sync:
+      - sync-2:
           requires:
-            - sync-club-content
+            - sync-1
       - data-and-web:
           requires:
-            - sync
+            - sync-2
       - check-docs:
           requires:
             - data-and-web
@@ -221,15 +221,15 @@ workflows:
   nightly:
     jobs:
       - install
-      - sync-club-content:
+      - sync-1:
           requires:
             - install
-      - sync:
+      - sync-2:
           requires:
-            - sync-club-content
+            - sync-1
       - data-and-web:
           requires:
-            - sync
+            - sync-2
       - backup:
           requires:
             - data-and-web
