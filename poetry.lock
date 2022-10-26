@@ -1443,7 +1443,7 @@ test = ["pytest"]
 
 [[package]]
 name = "sqlite-utils"
-version = "3.29"
+version = "3.30"
 description = "CLI tool and Python utility functions for manipulating SQLite databases"
 category = "dev"
 optional = false
@@ -2869,8 +2869,8 @@ sqlite-fts4 = [
     {file = "sqlite_fts4-1.0.3-py3-none-any.whl", hash = "sha256:0359edd8dea6fd73c848989e1e2b1f31a50fe5f9d7272299ff0e8dbaa62d035f"},
 ]
 sqlite-utils = [
-    {file = "sqlite-utils-3.29.tar.gz", hash = "sha256:d9ea1026a9c007a895cdd04abdcbe3cd2ac03515c2a2ebbad9233939aa111f5b"},
-    {file = "sqlite_utils-3.29-py3-none-any.whl", hash = "sha256:9e6b2bf7ae89e02e107557b0cff1121f1fbb06128a815122743332197693b272"},
+    {file = "sqlite-utils-3.30.tar.gz", hash = "sha256:30005c12d5f13445659f791766beb6a9900c25f442bea1f980f21d38b75f6e33"},
+    {file = "sqlite_utils-3.30-py3-none-any.whl", hash = "sha256:e2113e5ce8e9c69822fff419145d7144034b0bd7bb6bf9b8bf92bcc6de859705"},
 ]
 strictyaml = [
     {file = "strictyaml-1.6.2.tar.gz", hash = "sha256:70cd55980fe2929dc038924ca08f68f96148223a8777810fa616e3478ebe71ca"},
