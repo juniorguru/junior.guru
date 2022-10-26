@@ -57,7 +57,7 @@ class SyncGroup(click.Group):
                 if context.obj['interactive'] and t >= NOTIFY_AFTER_SEC:
                     notify(f'Finished: sync {command_name}!', f'{t / 60:.1f}min')
 
-            kwargs.setdefault('name', fn.__module__.split('.')[-1].replace('_', '-'))
+            kwargs.setdefault('name', fn.__module__.split('.')[-1].replace('_', '-'))  # duplicate?
             self.dependencies[kwargs['name']] = kwargs.pop('requires', [])
             return self.command(*args, **kwargs)(wrapper)
         return decorator
@@ -67,7 +67,7 @@ class SyncGroup(click.Group):
             try:
                 module = finder.find_module(name).load_module(name)
                 if isinstance(module.main, click.Command):
-                    command_name = module.__name__.split('.')[-1].replace('_', '-')
+                    command_name = module.__name__.split('.')[-1].replace('_', '-')  # duplicate?
                     self.add_command(module.main, name=command_name)
                 else:
                     logger.debug(f"Could not import {name}, module's main is {module.main.__class__!r}")

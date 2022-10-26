@@ -66,6 +66,7 @@ def snapshot(file, exclude):
 @click.option('--snapshot-exclude', default=','.join(SNAPSHOT_EXCLUDE), type=CommaSeparated())
 @click.option('--move/--no-move', default=False)
 def persist(persist_dir, namespace, snapshot_file, snapshot_exclude, persist_exclude, move):
+    shutil.rmtree(persist_dir)
     namespace_dir = persist_dir / namespace
     namespace_dir.mkdir(parents=True)
     snapshot = {Path(path): float(mtime)
@@ -95,9 +96,7 @@ def load(persist_dir, move):
             logger.info(path)
             load_file(namespace_dir, path, '.', move=move)
     if move:
-        leftovers = [persist_dir] + list(persist_dir.glob('**/*'))
-        for leftover in sorted(leftovers, reverse=True):
-            leftover.rmdir()
+        shutil.rmtree(persist_dir)
 
 
 def take_snapshot(dir, exclude=None):
