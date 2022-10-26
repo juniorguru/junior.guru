@@ -89,16 +89,15 @@ def persist(persist_dir, namespace, snapshot_file, snapshot_exclude, persist_exc
 @click.option('--persist-dir', default=PERSIST_DIR, type=click.Path(path_type=Path))
 @click.option('--move/--no-move', default=False)
 def load(persist_dir, move):
-        for namespace_dir in persist_dir.iterdir():
-            for path in (path for path in namespace_dir.glob('**/*')
-                        if path.is_file()):
-                logger.info(path)
-                load_file(namespace_dir, path, '.', move=move)
-        if move:
-            leftovers = [persist_dir] + list(persist_dir.glob('**/*'))
-            logger.info(f"Removing leftovers:\n{'\n'.join(leftovers)}")
-            for leftover in sorted(leftovers, reverse=True):
-                leftover.rmdir()
+    for namespace_dir in persist_dir.iterdir():
+        for path in (path for path in namespace_dir.glob('**/*')
+                    if path.is_file()):
+            logger.info(path)
+            load_file(namespace_dir, path, '.', move=move)
+    if move:
+        leftovers = [persist_dir] + list(persist_dir.glob('**/*'))
+        for leftover in sorted(leftovers, reverse=True):
+            leftover.rmdir()
 
 
 def take_snapshot(dir, exclude=None):
