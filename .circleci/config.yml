@@ -86,7 +86,6 @@ jobs:
               export DISCORD_MUTATIONS_ENABLED=1
               export MEMBERFUL_MUTATIONS_ENABLED=1
               export JOBS_EMAILS_SENDING_ENABLED=1
-              export CLUB_CONTENT_REUSE_DB_ENABLED=1
             fi
             echo "Chain: $CHAIN"
             poetry run jg sync $CHAIN
