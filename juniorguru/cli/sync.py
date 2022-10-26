@@ -1,3 +1,4 @@
+from operator import itemgetter
 from time import perf_counter
 from functools import wraps
 import pkgutil
@@ -53,9 +54,6 @@ class SyncGroup(click.Group):
 
                 logger_c.debug(f"Finished in {t / 60:.1f}min")
                 context.obj['timing'][command_name] = t
-
-                if context.obj['interactive'] and t >= NOTIFY_AFTER_SEC:
-                    notify(f'Finished: sync {command_name}!', f'{t / 60:.1f}min')
 
             kwargs.setdefault('name', fn.__module__.split('.')[-1].replace('_', '-'))  # duplicate?
             self.dependencies[kwargs['name']] = kwargs.pop('requires', [])
@@ -148,9 +146,13 @@ def all(context):
 
 @click.pass_context
 def close(context):
-    # if node:
-    #     logger.debug(f"Node #{node}")
-    pass  # TODO junit.xml, context.obj['timing']
+    timing = sorted(context.obj['timing'].items(), key=itemgetter(1), reverse=True)
+    timing_repr = ', '.join([f"{command} {time_sec / 60:.1f}min" for command, time_sec in timing])
+    logger.info(timing_repr)
+
+    total_time_sec = sum(context.obj['timing'].values())
+    if context.obj['interactive'] and total_time_sec >= NOTIFY_AFTER_SEC:
+        notify('Finished!', f'{total_time_sec / 60:.1f}min')
 
 
 main.import_commands_from(sync_package)
