@@ -95,7 +95,9 @@ def load(persist_dir, move):
                 logger.info(path)
                 load_file(namespace_dir, path, '.', move=move)
         if move:
-            for leftover in (list(persist_dir.glob('**/*')) + [persist_dir]):
+            leftovers = [persist_dir] + list(persist_dir.glob('**/*'))
+            logger.info(f"Removing leftovers:\n{'\n'.join(leftovers)}")
+            for leftover in sorted(leftovers, reverse=True):
                 leftover.rmdir()
 
 
