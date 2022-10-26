@@ -8,7 +8,7 @@ from juniorguru.models.base import BaseModel
 
 
 class PodcastEpisode(BaseModel):
-    id = CharField()
+    id = CharField(primary_key=True)
     publish_on = DateTimeField(index=True)
     title = CharField()
     media_url = CharField()

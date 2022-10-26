@@ -55,7 +55,7 @@ class SyncGroup(click.Group):
                 context.obj['timing'][command_name] = t
 
                 if context.obj['interactive'] and t >= NOTIFY_AFTER_SEC:
-                    notify(f'{t / 60:.1f}min', title=f'Finished: sync {command_name}!')
+                    notify(f'Finished: sync {command_name}!', f'{t / 60:.1f}min')
 
             kwargs.setdefault('name', fn.__module__.split('.')[-1].replace('_', '-'))
             self.dependencies[kwargs['name']] = kwargs.pop('requires', [])

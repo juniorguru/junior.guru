@@ -3,8 +3,8 @@ from pathlib import Path
 import shutil
 import itertools
 from fnmatch import fnmatch
-import sqlite3
 
+from sqlite_utils import Database
 import click
 
 from juniorguru.lib import loggers
@@ -24,6 +24,11 @@ SNAPSHOT_EXCLUDE = [
 ]
 
 PERSIST_EXCLUDE = ['*.pyc', '*.db-shm', '*.db-wal', '.DS_Store']
+
+SCHEMA_TRANSFORMATIONS = {
+    re.compile(r'^CREATE TABLE'): 'CREATE TABLE IF NOT EXISTS',
+    re.compile(r'^(CREATE( UNIQUE)? INDEX)'): r'\1 IF NOT EXISTS',
+}
 
 
 logger = loggers.get(__name__)
@@ -114,31 +119,59 @@ def persist_file(source_dir, source_path, persist_dir, move=False):
     persist_path = persist_dir / source_path.relative_to(source_dir)
     persist_path.parent.mkdir(parents=True, exist_ok=True)
     if source_path.suffix == '.db':
-        with sqlite3.connect(source_path) as db:
-            persist_path = persist_path.with_suffix('.sql')
-            with persist_path.open(mode='w', encoding='utf-8') as f:
-                for sql_line in db.iterdump():
-                    f.write(f"{modify_sql(sql_line)}\n")
-    else:
-        (shutil.move if move else shutil.copy2)(source_path, persist_path)
+        prepare_database_for_moving(source_path)
+    (shutil.move if move else shutil.copy2)(source_path, persist_path)
 
 
 def load_file(persist_dir, persist_path, source_dir, move=False):
     source_path = source_dir / persist_path.relative_to(persist_dir)
     source_path.parent.mkdir(parents=True, exist_ok=True)
     if source_path.exists():
-        raise FileExistsError(source_path)
-    if persist_path.suffix == '.sql':
-        source_path = source_path.with_suffix('.db')
-        with sqlite3.connect(source_path) as db:
-            db.executescript(persist_path.read_text(encoding='utf-8'))
-            db.execute('VACUUM')
+        if source_path.suffix == '.db':
+            merge_databases(persist_path, source_path)
+            if move:
+                persist_path.unlink()
+        else:
+            raise FileExistsError(source_path)
     else:
         (shutil.move if move else shutil.copy2)(persist_path, source_path)
 
 
-def modify_sql(sql_line):
-    sql_line = re.sub(r'^CREATE TABLE', r'CREATE TABLE IF NOT EXISTS', sql_line)
-    sql_line = re.sub(r'^INSERT INTO', r'INSERT OR REPLACE INTO', sql_line)
-    sql_line = re.sub(r'^(CREATE( UNIQUE)? INDEX)', r'\1 IF NOT EXISTS', sql_line)
-    return sql_line
+def prepare_database_for_moving(path):
+    db = Database(path)
+    db.disable_wal()
+    db.vacuum()
+
+
+def merge_databases(path_from, path_to):
+    logger_db = logger['db']
+    logger_db.debug(f"Merging {path_from} to {path_to}")
+    db_from, db_to = Database(path_from), Database(path_to)
+
+    logger_db.debug("Executing idempotent schema SQL")
+    db_to.executescript(make_schema_idempotent(db_from.schema))
+
+    for table in db_from.tables:
+        logger_db.debug(f"Upserting rows from {table.name}")
+        if not db_to[table.name].exists():
+            raise RuntimeError(f"Table {table.name} should already exist!")
+        pks = db_to[table.name].pks
+        rows = map(keep_non_null_values, table.rows)
+        db_to[table.name].upsert_all(rows, pk=pks)
+    db_to.vacuum()
+
+
+def keep_non_null_values(row):
+    return {column_name: value for column_name, value in row.items()
+            if value is not None}
+
+
+def make_schema_idempotent(schema):
+    return '\n'.join(map(make_schema_line_idempotent, schema.splitlines()))
+
+
+def make_schema_line_idempotent(schema_line):
+    for transformation_re, replacement in SCHEMA_TRANSFORMATIONS.items():
+        if transformation_re.search(schema_line):
+            return transformation_re.sub(replacement, schema_line)
+    raise ValueError(f"Unexpected schema line: {schema_line}")

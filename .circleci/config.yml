@@ -61,19 +61,19 @@ jobs:
           name: Test
           command: poetry run jg test -v
 
-  # # Needs $DISCORD_API_KEY
-  # sync-club-content:
-  #   executor: python-js
-  #   steps:
-  #     - attach_workspace:
-  #         at: "~"
-  #     - run:
-  #         name: Sync club content
-  #         command: poetry run jg sync club-content
-  #     - persist_to_workspace:
-  #         root: "~"
-  #         paths:
-  #             - project/juniorguru/data
+  # Needs $DISCORD_API_KEY
+  sync-club-content:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run:
+          name: Sync club content
+          command: poetry run jg sync club-content
+      - persist_to_workspace:
+          root: "~"
+          paths:
+              - project/juniorguru/data
 
   # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
   sync:
@@ -101,7 +101,7 @@ jobs:
               export DISCORD_MUTATIONS_ENABLED=1
               export MEMBERFUL_MUTATIONS_ENABLED=1
               export JOBS_EMAILS_SENDING_ENABLED=1
-              # export CLUB_CONTENT_REUSE_DB_ENABLED=1
+              export CLUB_CONTENT_REUSE_DB_ENABLED=1
             fi
             poetry run jg sync $CHAIN
       - run:
@@ -197,12 +197,12 @@ workflows:
       - lint-and-test:
           requires:
             - install
-      # - sync-club-content:
-      #     requires:
-      #       - install
+      - sync-club-content:
+          requires:
+            - install
       - sync:
           requires:
-            - install #sync-club-content
+            - sync-club-content
       - data-and-web:
           requires:
             - sync
@@ -221,12 +221,12 @@ workflows:
   nightly:
     jobs:
       - install
-      # - sync-club-content:
-      #     requires:
-      #       - install
+      - sync-club-content:
+          requires:
+            - install
       - sync:
           requires:
-            - install #sync-club-content
+            - sync-club-content
       - data-and-web:
           requires:
             - sync
