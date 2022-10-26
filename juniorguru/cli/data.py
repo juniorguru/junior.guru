@@ -30,6 +30,8 @@ SCHEMA_TRANSFORMATIONS = {
     re.compile(r'^(CREATE( UNIQUE)? INDEX)'): r'\1 IF NOT EXISTS',
 }
 
+DIR_NOT_EMPTY_ERRNO = 39
+
 
 logger = loggers.get(__name__)
 
@@ -87,15 +89,22 @@ def persist(persist_dir, namespace, snapshot_file, snapshot_exclude, persist_exc
 @click.option('--persist-dir', default=PERSIST_DIR, type=click.Path(path_type=Path))
 @click.option('--move/--no-move', default=False)
 def load(persist_dir, move):
-    for namespace_dir in persist_dir.iterdir():
-        for path in (path for path in namespace_dir.glob('**/*')
-                     if path.is_file()):
-            logger.info(path)
-            load_file(namespace_dir, path, '.', move=move)
+        for namespace_dir in persist_dir.iterdir():
+            for path in (path for path in namespace_dir.glob('**/*')
+                        if path.is_file()):
+                logger.info(path)
+                load_file(namespace_dir, path, '.', move=move)
+            if move:
+                try:
+                    namespace_dir.rmdir()
+                except OSError as e:
+                    if e.errno == DIR_NOT_EMPTY_ERRNO:
+                        for path_left in namespace_dir.glob('**/*'):
+                            logger.error(f'Directory not empty: {path_left}')
+                    else:
+                        raise
         if move:
-            namespace_dir.rmdir()
-    if move:
-        persist_dir.rmdir()
+            persist_dir.rmdir()
 
 
 def take_snapshot(dir, exclude=None):
