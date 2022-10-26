@@ -64,6 +64,7 @@ jobs:
   # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
   sync-1:
     executor: python-js
+    resource_class: large
     parallelism: 10
     steps:
       - attach_workspace:
@@ -99,7 +100,6 @@ jobs:
 
   data-1:
     executor: python-js
-    resource_class: large
     steps:
       - attach_workspace:
           at: "~"
@@ -146,7 +146,6 @@ jobs:
 
   data-2:
     executor: python-js
-    resource_class: large
     steps:
       - attach_workspace:
           at: "~"
