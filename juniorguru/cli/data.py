@@ -94,17 +94,9 @@ def load(persist_dir, move):
                         if path.is_file()):
                 logger.info(path)
                 load_file(namespace_dir, path, '.', move=move)
-            if move:
-                try:
-                    namespace_dir.rmdir()
-                except OSError as e:
-                    if e.errno == DIR_NOT_EMPTY_ERRNO:
-                        for path_left in namespace_dir.glob('**/*'):
-                            logger.error(f'Directory not empty: {path_left}')
-                    else:
-                        raise
         if move:
-            persist_dir.rmdir()
+            for leftover in (list(persist_dir.glob('**/*')) + [persist_dir]):
+                leftover.rmdir()
 
 
 def take_snapshot(dir, exclude=None):
