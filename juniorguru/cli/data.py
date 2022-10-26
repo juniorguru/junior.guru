@@ -87,7 +87,6 @@ def persist(persist_dir, namespace, snapshot_file, snapshot_exclude, persist_exc
 @click.option('--persist-dir', default=PERSIST_DIR, type=click.Path(path_type=Path))
 @click.option('--move/--no-move', default=False)
 def load(persist_dir, move):
-    errors = False
     for namespace_dir in persist_dir.iterdir():
         for path in (path for path in namespace_dir.glob('**/*')
                      if path.is_file()):
@@ -95,13 +94,7 @@ def load(persist_dir, move):
             try:
                 load_file(namespace_dir, path, '.', move=move)
             except FileExistsError:
-                errors = True
-                logger.error(f"Exists: {path}")
-            except NotImplementedError:
-                errors = True
-                logger.error(f"Not implemented: {path}")
-    if errors:
-        raise click.Abort()
+                logger.info(f"Exists, skipping: {path}")
 
 
 def take_snapshot(dir, exclude=None):
@@ -154,9 +147,10 @@ def merge_databases(path_from, path_to):
     for table in db_from.tables:
         if not db_to[table.name].exists():
             raise RuntimeError(f"Table {table.name} should already exist!")
-        logger_db.info(f"Table {table.name} has {db_to[table.name].count} rows before merge, upserting {table.count} rows")
-        db_to[table.name].upsert_all(map(keep_non_null_values, table.rows),
-                                     pk=db_to[table.name].pks)
+        logger_db.info(f"Table {table.name} has {db_to[table.name].count} rows, merging {table.count} rows")
+        pks = db_to[table.name].pks
+        db_to[table.name].upsert_all(map(keep_non_null_values, table.rows), pk=pks)
+        db_to[table.name].insert_all(table.rows, pk=pks, ignore=True)
         logger_db.info(f"Table {table.name} has {db_to[table.name].count} rows after merge")
     db_to.vacuum()
 
