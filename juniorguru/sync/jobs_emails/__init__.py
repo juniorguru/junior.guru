@@ -11,7 +11,7 @@ import click
 from jinja2 import Template
 
 from juniorguru.lib import loggers
-from juniorguru.cli.sync import Command
+from juniorguru.cli.sync import ChainCommand
 from juniorguru.models.job import ListedJob
 
 
@@ -33,7 +33,7 @@ SMTP_PASSWORD = os.environ['SMTP_PASSWORD'] if JOBS_EMAILS_SENDING_ENABLED else 
 logger = loggers.get(__name__)
 
 
-@click.command(cls=Command, requires=['jobs-listing'])
+@click.command(cls=ChainCommand, requires=['jobs-listing'])
 def main():
     today = date.today()
     try:

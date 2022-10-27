@@ -10,7 +10,7 @@ from juniorguru.lib.coerce import (coerce, parse_boolean, parse_boolean_words,
                                    parse_date, parse_datetime, parse_set, parse_text,
                                    parse_url)
 from juniorguru.lib.md import md
-from juniorguru.cli.sync import Command
+from juniorguru.cli.sync import ChainCommand
 from juniorguru.models.base import db
 from juniorguru.models.job import SubmittedJob
 from juniorguru.sync.jobs_scraped.pipelines.boards_ids import (
@@ -35,7 +35,7 @@ class DropItem(Exception):
     pass
 
 
-@click.command(cls=Command)
+@click.command(cls=ChainCommand)
 @db.connection_context()
 def main():
     SubmittedJob.drop_table()

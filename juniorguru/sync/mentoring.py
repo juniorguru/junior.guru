@@ -7,7 +7,7 @@ from strictyaml import Bool, Int, Map, Optional, Seq, Str, Url, load
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, MENTORING_CHANNEL,
                                  run_discord_task)
-from juniorguru.cli.sync import Command
+from juniorguru.cli.sync import ChainCommand
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.mentor import Mentor
@@ -34,7 +34,7 @@ SCHEMA = Seq(
 logger = loggers.get(__name__)
 
 
-@click.command(cls=Command, requires=['club-content'])
+@click.command(cls=ChainCommand, requires=['club-content'])
 def main():
     run_discord_task('juniorguru.sync.mentoring.discord_task')
 

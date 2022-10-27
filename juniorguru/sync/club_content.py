@@ -9,7 +9,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.club import (BOT_CHANNEL, EMOJI_PIN, FUN_CHANNEL, INTRO_CHANNEL,
                                  count_downvotes, count_upvotes, emoji_name, get_roles,
                                  run_discord_task)
-from juniorguru.cli.sync import Command
+from juniorguru.cli.sync import ChainCommand
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
 
@@ -30,7 +30,7 @@ CHANNELS_HISTORY_SINCE = {
 }
 
 
-@click.command(cls=Command)
+@click.command(cls=ChainCommand)
 def main():
     if not CLUB_CONTENT_REUSE_DB_ENABLED:
         run_discord_task('juniorguru.sync.club_content.discord_task')

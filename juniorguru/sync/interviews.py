@@ -6,7 +6,7 @@ from discord import Color, Embed
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, MENTORING_CHANNEL,
                                  is_message_over_period_ago, run_discord_task)
-from juniorguru.cli.sync import Command
+from juniorguru.cli.sync import ChainCommand
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.mentor import Mentor
@@ -20,7 +20,7 @@ INTERVIEWS_EMOJI = '💁'
 logger = loggers.get(__name__)
 
 
-@click.command(cls=Command, requires=['club-content',
+@click.command(cls=ChainCommand, requires=['club-content',
                         'mentoring'])
 def main():
     run_discord_task('juniorguru.sync.interviews.discord_task')

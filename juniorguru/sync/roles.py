@@ -7,7 +7,7 @@ from strictyaml import Int, Map, Seq, Str, load
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, get_roles, run_discord_task
-from juniorguru.cli.sync import Command
+from juniorguru.cli.sync import ChainCommand
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubUser
 from juniorguru.models.company import Company
@@ -32,7 +32,7 @@ COMPANY_ROLE_PREFIX = 'Firma: '
 STUDENT_ROLE_PREFIX = 'Student: '
 
 
-@click.command(cls=Command, requires=['club-content',
+@click.command(cls=ChainCommand, requires=['club-content',
                         'events',
                         'avatars',
                         'subscriptions',

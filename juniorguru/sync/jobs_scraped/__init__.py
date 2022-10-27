@@ -5,7 +5,7 @@ import click
 from peewee import OperationalError
 
 from juniorguru.lib import loggers
-from juniorguru.cli.sync import Command
+from juniorguru.cli.sync import ChainCommand
 from juniorguru.models.base import db
 from juniorguru.models.job import ScrapedJob
 from juniorguru.sync.jobs_scraped.processing import (filter_relevant_paths,
@@ -33,7 +33,7 @@ POSTPROCESS_PIPELINES = [
 logger = loggers.get(__name__)
 
 
-@click.command(cls=Command, requires=['scrape-jobs'])
+@click.command(cls=ChainCommand, requires=['scrape-jobs'])
 def main():
     paths = list(Path(FEEDS_DIR).glob('**/*.jsonl.gz'))
     logger.info(f'Found {len(paths)} .json.gz paths')

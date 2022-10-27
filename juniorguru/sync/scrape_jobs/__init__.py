@@ -5,7 +5,7 @@ from scrapy.utils.project import data_path
 
 from juniorguru.lib import loggers
 from juniorguru.lib.scrapers import scrape
-from juniorguru.cli.sync import Command
+from juniorguru.cli.sync import ChainCommand
 from juniorguru.sync.scrape_jobs.feeds import feed_path, feeds_dir
 from juniorguru.sync.scrape_jobs.settings import HTTPCACHE_DIR
 
@@ -17,7 +17,7 @@ class JobsScrapingException(Exception):
     pass
 
 
-@click.command(cls=Command, requires=['proxies'])
+@click.command(cls=ChainCommand, requires=['proxies'])
 def main():
     logger.info('Creating directories (to prevent race conditions in spiders)')
     data_path(HTTPCACHE_DIR, createdir=True)

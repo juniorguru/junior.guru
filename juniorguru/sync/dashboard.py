@@ -9,7 +9,7 @@ from discord import Color, Embed
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
-from juniorguru.cli.sync import Command
+from juniorguru.cli.sync import ChainCommand
 from juniorguru.models.base import db
 from juniorguru.models.club import (ClubDocumentedRole, ClubMessage,
                                     ClubSubscribedPeriod, ClubUser)
@@ -29,7 +29,7 @@ BLOG_WEEKNOTES_PREFIX = 'Týdenní poznámky'
 logger = loggers.get(__name__)
 
 
-@click.command(cls=Command, requires=['club-content',
+@click.command(cls=ChainCommand, requires=['club-content',
                         'companies',
                         'events',
                         'subscriptions',
