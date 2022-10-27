@@ -7,6 +7,8 @@ import click
 
 from juniorguru.lib import loggers
 from juniorguru import sync as sync_package
+# from juniorguru.models.base import db
+# from juniorguru.models.sync import SyncCommand
 
 try:
     import pync
@@ -109,23 +111,30 @@ def main(context):
 
 
 @main.command()
-@click.argument('phase', type=click.Choice(['all', '1', '2']), default='all')
-def chains(phase):
+@click.argument('job', type=click.Choice(['sync-1', 'sync-2']), envvar='CIRCLE_JOB')
+@click.argument('node_index', type=int, envvar='CIRCLE_NODE_INDEX')
+@click.option('--nodes', type=int, envvar='CIRCLE_NODE_TOTAL')
+@click.pass_context
+def ci(context, job, node_index, nodes):
     commands_without_deps = {name for name, commands
                              in main.dependencies.items()
                              if not commands}
     commands_with_deps = set(main.dependencies.keys()) - commands_without_deps
 
-    if phase == 'all':
-        chains = get_parallel_chains(main.dependencies)
-    elif phase == '1':
+    if job == 'sync-1':
         chains = get_parallel_chains(main.dependencies, exclude=commands_with_deps)
-    elif phase == '2':
+    elif job == 'sync-2':
         chains = get_parallel_chains(main.dependencies, exclude=commands_without_deps)
     else:
-        raise ValueError(phase)
-    for chain in chains:
-        click.echo(' '.join(chain))
+        raise ValueError(job)
+
+    if nodes and nodes != len(chains):
+        logger.error(f"The job {job} has parallelism {nodes}, but there are {len(chains)} command chains!")
+        raise click.Abort()
+
+    for command in chains[node_index]:
+        context.invoke(main.get_command(context, command))
+    logger.info('Sync done!')
 
 
 @main.command()
@@ -136,15 +145,16 @@ def all(context):
     logger.info('Sync done!')
 
 
+main.import_commands_from(sync_package)
+
+
 @click.pass_context
 def close(context):
     timing = sorted(context.obj['timing'].items(), key=itemgetter(1), reverse=True)
-    timing_repr = ', '.join([f"{command} {time_sec / 60:.1f}min" for command, time_sec in timing])
-    logger.info(timing_repr)
+    if timing:
+        timing_repr = ', '.join([f"{command} {time_sec / 60:.1f}min" for command, time_sec in timing])
+        logger.info(timing_repr)
 
     total_time_sec = sum(context.obj['timing'].values())
     if total_time_sec >= NOTIFY_AFTER_SEC:
         notify('Finished!', f'{total_time_sec / 60:.1f}min')
-
-
-main.import_commands_from(sync_package)

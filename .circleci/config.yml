@@ -81,15 +81,13 @@ jobs:
       - run:
           name: Sync data
           command: |
-            CHAIN=$(poetry run jg sync chains 1 | circleci tests split)
             if [[ $CIRCLE_BRANCH = "main" ]]; then
               export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
               export DISCORD_MUTATIONS_ENABLED=1
               export MEMBERFUL_MUTATIONS_ENABLED=1
               export JOBS_EMAILS_SENDING_ENABLED=1
             fi
-            echo "Chain: $CHAIN"
-            poetry run jg sync $CHAIN
+            poetry run jg sync ci
       - run:
           name: Prepare changed files for persisting
           command: poetry run jg data persist $CIRCLE_NODE_INDEX --move
@@ -126,7 +124,6 @@ jobs:
       - run:
           name: Sync data
           command: |
-            CHAIN=$(poetry run jg sync chains 2 | circleci tests split)
             if [[ $CIRCLE_BRANCH = "main" ]]; then
               export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
               export DISCORD_MUTATIONS_ENABLED=1
@@ -134,8 +131,7 @@ jobs:
               export JOBS_EMAILS_SENDING_ENABLED=1
               export CLUB_CONTENT_REUSE_DB_ENABLED=1
             fi
-            echo "Chain: $CHAIN"
-            poetry run jg sync $CHAIN
+            poetry run jg sync ci
       - run:
           name: Prepare changed files for persisting
           command: poetry run jg data persist $CIRCLE_NODE_INDEX --move
