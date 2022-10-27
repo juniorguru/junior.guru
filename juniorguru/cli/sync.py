@@ -73,12 +73,80 @@ class SyncGroup(click.Group):
                 logger.debug(f"Could not import {name}, {e.__class__.__name__}: {e}")
 
 
-def get_parallel_chains(dependencies, exclude=None):
+@click.command(cls=SyncGroup, chain=True)
+@click.pass_context
+def main(context):
+    context.obj = {'timing': {}}
+    context.call_on_close(close)
+
+
+@main.command()
+@click.argument('job', type=click.Choice(['sync-1', 'sync-2']), envvar='CIRCLE_JOB')
+@click.argument('node_index', type=int, envvar='CIRCLE_NODE_INDEX')
+@click.option('--nodes', type=int, envvar='CIRCLE_NODE_TOTAL')
+@click.pass_context
+def ci(context, job, node_index, nodes):
+    group = context.parent.command
+    dependencies_map = group.dependencies
+
+    commands_without_deps = {name for name, deps in dependencies_map.items() if not deps}
+    commands_with_deps = set(dependencies_map.keys()) - commands_without_deps
+
+    if job == 'sync-1':
+        chains = get_parallel_chains(dependencies_map, exclude=commands_with_deps)
+    elif job == 'sync-2':
+        chains = get_parallel_chains(dependencies_map, exclude=commands_without_deps)
+    else:
+        raise ValueError(job)
+
+    if nodes and nodes != len(chains):
+        logger.error(f"The job {job} has parallelism {nodes}, but there are {len(chains)} command chains!")
+        raise click.Abort()
+
+    for name in chains[node_index]:
+        command = group.get_command(context, name)
+        context.invoke(command)
+
+
+@main.command()
+@click.pass_context
+def all(context):
+    group = context.parent.command
+    dependencies_map = group.dependencies
+    for name in dependencies_map.keys():
+        command = group.get_command(context, name)
+        context.invoke(command)
+
+
+main.import_commands_from(sync_package)
+
+
+@click.pass_context
+def close(context):
+    logger.info('Sync done!')
+
+    timing = sorted(context.obj['timing'].items(), key=itemgetter(1), reverse=True)
+    if timing:
+        timing_repr = ', '.join([f"{command} {time_sec / 60:.1f}min" for command, time_sec in timing])
+        logger.info(timing_repr)
+
+    total_time_sec = sum(context.obj['timing'].values())
+    if total_time_sec >= NOTIFY_AFTER_SEC:
+        notify('Finished!', f'{total_time_sec / 60:.1f}min')
+
+
+def notify(title, text):
+    print('\a', end='', flush=True)
+    if pync:
+        pync.Notifier.notify(text, title=title)
+
+
+def get_parallel_chains(dependencies_map, exclude=None):
     exclude = exclude or []
     temp_chains = {name: set([name] +
-                             [c for c in commands if c not in exclude])
-                   for name, commands
-                   in dependencies.items()
+                             [c for c in deps if c not in exclude])
+                   for name, deps
+                   in dependencies_map.items()
                    if name not in exclude}
     chains = {}
     while True:
@@ -95,66 +163,3 @@ def get_parallel_chains(dependencies, exclude=None):
             return sorted(map(sorted, chains.values()))
         temp_chains = chains
         chains = {}
-
-
-def notify(title, text):
-    print('\a', end='', flush=True)
-    if pync:
-        pync.Notifier.notify(text, title=title)
-
-
-@click.command(cls=SyncGroup, chain=True)
-@click.pass_context
-def main(context):
-    context.obj = {'timing': {}}
-    context.call_on_close(close)
-
-
-@main.command()
-@click.argument('job', type=click.Choice(['sync-1', 'sync-2']), envvar='CIRCLE_JOB')
-@click.argument('node_index', type=int, envvar='CIRCLE_NODE_INDEX')
-@click.option('--nodes', type=int, envvar='CIRCLE_NODE_TOTAL')
-@click.pass_context
-def ci(context, job, node_index, nodes):
-    commands_without_deps = {name for name, commands
-                             in main.dependencies.items()
-                             if not commands}
-    commands_with_deps = set(main.dependencies.keys()) - commands_without_deps
-
-    if job == 'sync-1':
-        chains = get_parallel_chains(main.dependencies, exclude=commands_with_deps)
-    elif job == 'sync-2':
-        chains = get_parallel_chains(main.dependencies, exclude=commands_without_deps)
-    else:
-        raise ValueError(job)
-
-    if nodes and nodes != len(chains):
-        logger.error(f"The job {job} has parallelism {nodes}, but there are {len(chains)} command chains!")
-        raise click.Abort()
-
-    for command in chains[node_index]:
-        context.invoke(main.get_command(context, command))
-    logger.info('Sync done!')
-
-
-@main.command()
-@click.pass_context
-def all(context):
-    for name in main.dependencies.keys():
-        context.invoke(main.get_command(context, name))
-    logger.info('Sync done!')
-
-
-main.import_commands_from(sync_package)
-
-
-@click.pass_context
-def close(context):
-    timing = sorted(context.obj['timing'].items(), key=itemgetter(1), reverse=True)
-    if timing:
-        timing_repr = ', '.join([f"{command} {time_sec / 60:.1f}min" for command, time_sec in timing])
-        logger.info(timing_repr)
-
-    total_time_sec = sum(context.obj['timing'].values())
-    if total_time_sec >= NOTIFY_AFTER_SEC:
-        notify('Finished!', f'{total_time_sec / 60:.1f}min')
