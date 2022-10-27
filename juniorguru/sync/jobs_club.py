@@ -7,7 +7,7 @@ import click
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JOBS_CHANNEL,
                                  run_discord_task)
-from juniorguru.cli.sync import ChainCommand
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.job import ListedJob
@@ -21,7 +21,7 @@ URL_RE = re.compile(r'https?://\S+', re.I)
 logger = loggers.get(__name__)
 
 
-@click.command(cls=ChainCommand, requires=['club-content',
+@click.command(cls=Command, requires=['club-content',
                             'jobs-locations',
                             'jobs-logos'])
 def main():

@@ -5,14 +5,14 @@ import click
 import requests
 
 from juniorguru.lib import loggers
-from juniorguru.cli.sync import ChainCommand
+from juniorguru.cli.sync import Command
 from juniorguru.sync.scrape_jobs.settings import PROXIES_FILE
 
 
 logger = loggers.get(__name__)
 
 
-@click.command(cls=ChainCommand)
+@click.command(cls=Command)
 def main():
     # docs at https://docs.proxyscrape.com/
     logger.info('Scraping proxies')

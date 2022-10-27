@@ -11,7 +11,7 @@ from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLE
                                  run_discord_task)
 from juniorguru.lib.images import (is_image, render_image_file, save_as_square,
                                    validate_image)
-from juniorguru.cli.sync import ChainCommand
+from juniorguru.cli.sync import Command
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -66,7 +66,7 @@ schema = Seq(
 )
 
 
-@click.command(cls=ChainCommand, requires=['club-content'])
+@click.command(cls=Command, requires=['club-content'])
 def main():
     if FLUSH_POSTERS_EVENTS:
         logger.warning("Removing all existing posters for events, FLUSH_POSTERS_EVENTS is set")

@@ -4,7 +4,7 @@ from collections import Counter
 import click
 
 from juniorguru.lib import loggers
-from juniorguru.cli.sync import ChainCommand
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.topic import Topic
@@ -50,7 +50,7 @@ TOPIC_CHANNELS = {re.compile(key): value for key, value in {
 }.items()}
 
 
-@click.command(cls=ChainCommand, requires=['club-content'])
+@click.command(cls=Command, requires=['club-content'])
 @db.connection_context()
 def main():
     Topic.drop_table()

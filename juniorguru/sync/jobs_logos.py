@@ -10,7 +10,7 @@ import requests
 from PIL import Image, ImageChops, ImageOps
 
 from juniorguru.lib import loggers
-from juniorguru.cli.sync import ChainCommand
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
 
@@ -52,7 +52,7 @@ USER_AGENTS = {
 logger = loggers.get(__name__)
 
 
-@click.command(cls=ChainCommand, requires=['jobs-listing'])
+@click.command(cls=Command, requires=['jobs-listing'])
 @db.connection_context()
 def main():
     Path(LOGOS_DIR).mkdir(exist_ok=True, parents=True)

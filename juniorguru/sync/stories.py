@@ -4,7 +4,7 @@ import click
 from strictyaml import Datetime, Map, Seq, Str, Url, load
 
 from juniorguru.lib import loggers
-from juniorguru.cli.sync import ChainCommand
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.story import Story
 
@@ -25,7 +25,7 @@ YAML_SCHEMA = Seq(
 logger = loggers.get(__name__)
 
 
-@click.command(cls=ChainCommand)
+@click.command(cls=Command)
 @db.connection_context()
 def main():
     Story.drop_table()

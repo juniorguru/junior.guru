@@ -2,7 +2,7 @@ import click
 
 from juniorguru.lib import loggers
 from juniorguru.lib.locations import fetch_locations
-from juniorguru.cli.sync import ChainCommand
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
 
@@ -13,7 +13,7 @@ MIN_JUNIORITY_RE_SCORE = 1
 logger = loggers.get(__name__)
 
 
-@click.command(cls=ChainCommand, requires=['jobs-listing'])
+@click.command(cls=Command, requires=['jobs-listing'])
 @db.connection_context()
 def main():
     for job in ListedJob.listing():

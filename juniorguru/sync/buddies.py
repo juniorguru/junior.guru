@@ -7,7 +7,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, HONZAJAVOREK,
                                  MENTORING_CHANNEL, is_message_bot_reminder,
                                  is_message_over_period_ago, run_discord_task)
-from juniorguru.cli.sync import ChainCommand
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
@@ -20,7 +20,7 @@ BUDDIES_EMOJI = '💡'
 logger = loggers.get(__name__)
 
 
-@click.command(cls=ChainCommand, requires=['club-content'])
+@click.command(cls=Command, requires=['club-content'])
 def main():
     run_discord_task('juniorguru.sync.buddies.discord_task')
 

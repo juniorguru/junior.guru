@@ -14,7 +14,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLED,
                                  run_discord_task)
 from juniorguru.lib.images import is_image, render_image_file, validate_image
-from juniorguru.cli.sync import ChainCommand
+from juniorguru.cli.sync import Command
 from juniorguru.lib.template_filters import icon
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -57,7 +57,7 @@ TODAY = date.today()
 MESSAGE_EMOJI = '🎙'
 
 
-@click.command(cls=ChainCommand, requires=['club-content'])
+@click.command(cls=Command, requires=['club-content'])
 @db.connection_context()
 def main():
     if FLUSH_POSTERS_PODCAST:
