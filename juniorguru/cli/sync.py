@@ -42,8 +42,6 @@ class SyncGroup(click.Group):
                                 - set(context.obj['timing'].keys()))
                 if dependencies:
                     logger_c.info(f"Dependencies: {', '.join(dependencies)}")
-                    if context.obj['interactive']:
-                        click.confirm('Continue?', abort=True)
                     for dependency in dependencies:
                         logger_c.debug(f"Invoking: {dependency}")
                         context.invoke(self.get_command(context, dependency))
@@ -104,12 +102,9 @@ def notify(title, text):
 
 
 @click.command(cls=SyncGroup, chain=True)
-@click.option('--interactive/--no-interactive', envvar='INTERACTIVE_SYNC', default=False)
 @click.pass_context
-def main(context, interactive):
-    context.obj = {'interactive': interactive,
-                   'timing': {}}
-    logger.debug(f"Interactive? {'YES' if interactive else 'NO'}")
+def main(context):
+    context.obj = {'timing': {}}
     context.call_on_close(close)
 
 
@@ -136,9 +131,6 @@ def chains(phase):
 @main.command()
 @click.pass_context
 def all(context):
-    if context.obj['interactive']:
-        logger.warning('Ignoring interactive mode')
-        context.obj['interactive'] = False
     for name in main.dependencies.keys():
         context.invoke(main.get_command(context, name))
     logger.info('Sync done!')
@@ -151,7 +143,7 @@ def close(context):
     logger.info(timing_repr)
 
     total_time_sec = sum(context.obj['timing'].values())
-    if context.obj['interactive'] and total_time_sec >= NOTIFY_AFTER_SEC:
+    if total_time_sec >= NOTIFY_AFTER_SEC:
         notify('Finished!', f'{total_time_sec / 60:.1f}min')
 
 
