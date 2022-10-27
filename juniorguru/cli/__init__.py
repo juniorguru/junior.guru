@@ -7,17 +7,21 @@ from juniorguru.cli import (cancel_previous_builds, check_docs, check_links, dat
 
 
 class Group(BaseGroup):
+    command_modules = [
+        cancel_previous_builds,
+        check_docs,
+        check_links,
+        web,
+        data,
+        participant,
+        screenshots,
+        winners,
+        students,
+        sync,
+    ]
+
     def load_dynamic_commands(self):
-        for module in [cancel_previous_builds,
-                       check_docs,
-                       check_links,
-                       web,
-                       data,
-                       participant,
-                       screenshots,
-                       winners,
-                       students,
-                       sync]:
+        for module in self.command_modules:
             yield module.__name__.split('.')[-1].replace('_', '-'), module.main
 
 

@@ -15,8 +15,6 @@ except (Exception, ImportError):
     pync = None
 
 
-DEPENDENCIES_MAP = {}
-
 NOTIFY_AFTER_MIN = 1
 
 
@@ -24,15 +22,23 @@ logger = loggers.get(__name__)
 
 
 class Group(BaseGroup):
+    command_package = sync_package
+
     def load_dynamic_commands(self):
-        for finder, name, is_package in pkgutil.iter_modules(sync_package.__path__):
+        for finder, name, is_package in pkgutil.iter_modules(self.command_package.__path__):
             module = finder.find_module(name).load_module(name)
             yield name.replace('_', '-'), module.main
+
+    def dependencies_map(self, context):
+        for name in self.list_commands(context):
+            command = self.get_command(context, name)
+            if isinstance(command, Command):
+                yield name, command.requires
 
 
 class Command(click.Command):
     def __init__(self, *args, **kwargs):
-        self.requires = kwargs.pop('requires', [])
+        self.requires = list(kwargs.pop('requires', []))
         super().__init__(*args, **kwargs)
 
     def invoke(self, context):
@@ -77,13 +83,15 @@ def main(context, id):
 @click.option('--nodes', type=int, envvar='CIRCLE_NODE_TOTAL')
 @click.pass_context
 def ci(context, job, node_index, nodes):
-    commands_without_deps = {name for name, deps in DEPENDENCIES_MAP.items() if not deps}
-    commands_with_deps = set(DEPENDENCIES_MAP.keys()) - commands_without_deps
+    group = context.parent.command
+    dependencies_map = dict(group.dependencies_map(context))
 
     if job == 'sync-1':
-        chains = get_parallel_chains(DEPENDENCIES_MAP, exclude=commands_with_deps)
+        commands_with_deps = {name for name, deps in dependencies_map.items() if deps}
+        chains = get_parallel_chains(dependencies_map, exclude=commands_with_deps)
     elif job == 'sync-2':
-        chains = get_parallel_chains(DEPENDENCIES_MAP, exclude=commands_without_deps)
+        commands_without_deps = {name for name, deps in dependencies_map.items() if not deps}
+        chains = get_parallel_chains(dependencies_map, exclude=commands_without_deps)
     else:
         raise ValueError(job)
 
@@ -91,7 +99,6 @@ def ci(context, job, node_index, nodes):
         logger.error(f"The job {job} has parallelism {nodes}, but there are {len(chains)} command chains!")
         raise click.Abort()
 
-    group = context.parent.command
     for name in chains[node_index]:
         command = group.get_command(context, name)
         context.invoke(command)
@@ -101,7 +108,7 @@ def ci(context, job, node_index, nodes):
 @click.pass_context
 def all(context):
     group = context.parent.command
-    for name in DEPENDENCIES_MAP.keys():
+    for name in dict(group.dependencies_map(context)).keys():
         command = group.get_command(context, name)
         context.invoke(command)
 
