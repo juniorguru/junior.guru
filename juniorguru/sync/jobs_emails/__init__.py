@@ -7,10 +7,11 @@ from email.message import EmailMessage
 from pathlib import Path
 from pprint import pformat
 
+import click
 from jinja2 import Template
 
 from juniorguru.lib import loggers
-from juniorguru.cli.sync import main as cli
+from juniorguru.cli.sync import Command
 from juniorguru.models.job import ListedJob
 
 
@@ -32,7 +33,7 @@ SMTP_PASSWORD = os.environ['SMTP_PASSWORD'] if JOBS_EMAILS_SENDING_ENABLED else 
 logger = loggers.get(__name__)
 
 
-@cli.sync_command(requires=['jobs-listing'])
+@click.command(cls=Command, requires=['jobs-listing'])
 def main():
     today = date.today()
     try:

@@ -4,7 +4,12 @@ import click
 import pytest
 
 
-@click.command()
+@click.group()
+def main():
+    pass
+
+
+@main.command()
 def lint():
     try:
         subprocess.run(['flake8'], check=True)
@@ -15,7 +20,7 @@ def lint():
         raise click.Abort()
 
 
-@click.command()
+@main.command()
 def format():
     try:
         subprocess.run(['isort', '.'], check=True)
@@ -23,7 +28,7 @@ def format():
         raise click.Abort()
 
 
-@click.command(context_settings={'ignore_unknown_options': True})
+@main.command(context_settings={'ignore_unknown_options': True})
 @click.argument('pytest_args', nargs=-1, type=click.UNPROCESSED)
 def test(pytest_args):
     code = pytest.main(list(pytest_args))

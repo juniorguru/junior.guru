@@ -1,11 +1,12 @@
 import os
 from datetime import date
 
+import click
 from fiobank import FioBank
 
 from juniorguru.lib import google_sheets, loggers
 from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
-from juniorguru.cli.sync import main as cli
+from juniorguru.cli.sync import Command
 from juniorguru.models.transaction import Transaction
 
 
@@ -45,7 +46,7 @@ CATEGORIES = [
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
 
-@cli.sync_command()
+@click.command(cls=Command)
 def main():
     logger.info('Preparing database')
     Transaction.drop_table()

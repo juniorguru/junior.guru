@@ -1,17 +1,18 @@
 import re
 from pathlib import Path
 
+import click
 import requests
 
 from juniorguru.lib import loggers
-from juniorguru.cli.sync import main as cli
+from juniorguru.cli.sync import Command
 from juniorguru.sync.scrape_jobs.settings import PROXIES_FILE
 
 
 logger = loggers.get(__name__)
 
 
-@cli.sync_command()
+@click.command(cls=Command)
 def main():
     # docs at https://docs.proxyscrape.com/
     logger.info('Scraping proxies')

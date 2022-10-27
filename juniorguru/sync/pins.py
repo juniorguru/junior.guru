@@ -1,12 +1,13 @@
 import asyncio
 import textwrap
 
+import click
 from discord import Embed
 from discord.errors import Forbidden
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
-from juniorguru.cli.sync import main as cli
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubPinReaction
 
@@ -14,7 +15,7 @@ from juniorguru.models.club import ClubPinReaction
 logger = loggers.get(__name__)
 
 
-@cli.sync_command(requires=['club-content'])
+@click.command(cls=Command, requires=['club-content'])
 def main():
     run_discord_task('juniorguru.sync.pins.discord_task')
 

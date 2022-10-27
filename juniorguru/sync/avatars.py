@@ -3,12 +3,13 @@ from io import BytesIO
 from pathlib import Path
 from urllib.parse import urlparse
 
+import click
 from PIL import Image
 
 from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib.club import run_discord_task
-from juniorguru.cli.sync import main as cli
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser
 
@@ -27,7 +28,7 @@ AVATARS_LIMIT = 40
 AVATAR_SIZE_PX = 60
 
 
-@cli.sync_command(requires=['club-content'])
+@click.command(cls=Command, requires=['club-content'])
 def main():
     run_discord_task('juniorguru.sync.avatars.discord_task')
 

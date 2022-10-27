@@ -1,7 +1,9 @@
 from datetime import date
 
+import click
+
 from juniorguru.lib import loggers
-from juniorguru.cli.sync import main as cli
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob, ScrapedJob, SubmittedJob
 
@@ -12,7 +14,7 @@ MIN_JUNIORITY_RE_SCORE = 1
 logger = loggers.get(__name__)
 
 
-@cli.sync_command(requires=['jobs-scraped',
+@click.command(cls=Command, requires=['jobs-scraped',
                             'jobs-submitted'])
 @db.connection_context()
 def main():

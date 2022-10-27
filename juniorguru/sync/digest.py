@@ -1,12 +1,13 @@
 import textwrap
 from datetime import date, timedelta
 
+import click
 from discord import Embed
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLED,
                                  is_message_older_than, run_discord_task)
-from juniorguru.cli.sync import main as cli
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
@@ -17,7 +18,7 @@ logger = loggers.get(__name__)
 DIGEST_LIMIT = 5
 
 
-@cli.sync_command(requires=['club-content'])
+@click.command(cls=Command, requires=['club-content'])
 def main():
     run_discord_task('juniorguru.sync.digest.discord_task')
 

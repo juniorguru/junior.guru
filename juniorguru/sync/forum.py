@@ -1,9 +1,11 @@
 from datetime import timedelta
 
+import click
+
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, is_message_bot_reminder,
                                  is_message_over_period_ago, run_discord_task)
-from juniorguru.cli.sync import main as cli
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
@@ -16,7 +18,7 @@ FORUM_EMOJI = '💬'
 logger = loggers.get(__name__)
 
 
-@cli.sync_command(requires=['club-content'])
+@click.command(cls=Command, requires=['club-content'])
 def main():
     run_discord_task('juniorguru.sync.forum.discord_task')
 

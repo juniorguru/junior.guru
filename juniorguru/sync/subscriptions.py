@@ -4,13 +4,14 @@ import re
 from datetime import date, datetime, timedelta
 from operator import itemgetter
 
+import click
 import arrow
 
 from juniorguru.lib import google_sheets, loggers
 from juniorguru.lib.club import parse_coupon
 from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
 from juniorguru.lib.memberful import Memberful
-from juniorguru.cli.sync import main as cli
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubSubscribedPeriod, ClubUser
 from juniorguru.models.company import Company, CompanyStudentSubscription
@@ -47,7 +48,7 @@ COUPON_NAMES_CATEGORIES_MAPPING = {
 }
 
 
-@cli.sync_command(requires=['club-content',
+@click.command(cls=Command, requires=['club-content',
                         'companies'])
 @db.connection_context()
 def main():

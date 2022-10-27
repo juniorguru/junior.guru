@@ -2,12 +2,13 @@ import asyncio
 from datetime import date, timedelta
 from pathlib import Path
 
+import click
 from discord import Color, Embed, File
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, INTRO_CHANNEL, JOBS_CHANNEL,
                                  is_message_over_period_ago, run_discord_task)
-from juniorguru.cli.sync import main as cli
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.company import Company
@@ -25,7 +26,7 @@ IMAGES_DIR = Path(__file__).parent.parent / 'images'
 logger = loggers.get(__name__)
 
 
-@cli.sync_command(requires=['club-content',
+@click.command(cls=Command, requires=['club-content',
                         'companies',
                         'roles'])
 def main():

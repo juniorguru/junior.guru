@@ -1,14 +1,13 @@
-from operator import itemgetter
-from time import perf_counter
-from functools import wraps
+from time import perf_counter_ns
 import pkgutil
 
 import click
 
+from juniorguru.lib.cli import BaseGroup
 from juniorguru.lib import loggers
 from juniorguru import sync as sync_package
-# from juniorguru.models.base import db
-# from juniorguru.models.sync import SyncCommand
+from juniorguru.models.base import db
+from juniorguru.models.sync import Sync
 
 try:
     import pync
@@ -16,67 +15,59 @@ except (Exception, ImportError):
     pync = None
 
 
-NOTIFY_AFTER_SEC = 60
+DEPENDENCIES_MAP = {}
+
+NOTIFY_AFTER_MIN = 1
 
 
 logger = loggers.get(__name__)
 
 
-class SyncGroup(click.Group):
+class Group(BaseGroup):
+    def load_dynamic_commands(self):
+        for finder, name, is_package in pkgutil.iter_modules(sync_package.__path__):
+            module = finder.find_module(name).load_module(name)
+            yield name.replace('_', '-'), module.main
+
+
+class Command(click.Command):
     def __init__(self, *args, **kwargs):
+        self.requires = kwargs.pop('requires', [])
         super().__init__(*args, **kwargs)
-        self.dependencies = {}
-        self.chains_exclude = []
 
-    def sync_command(self, *args, **kwargs):
-        def decorator(fn):
-            @wraps(fn)
-            def wrapper(*fn_args, **fn_kwargs):
-                context = click.get_current_context()
-                command_name = context.command.name
-                logger_c = logger[command_name]
+    def invoke(self, context):
+        group = context.parent.command
+        name = context.info_name
+        sync = context.obj['sync']
 
-                if command_name in context.obj['timing']:
-                    logger_c.debug('Skipping (already executed)')
-                    return
+        with db.connection_context():
+            if sync.is_command_seen(name):
+                logger[name].debug('Skipping (already executed)')
+                return
+            requires = list(filter(sync.is_command_unseen, self.requires))
+            if requires:
+                logger[name].info(f"Dependencies: {', '.join(requires)}")
+                for dep_name in requires:
+                    logger[name].debug(f"Invoking: {dep_name}")
+                    context.invoke(group.get_command(context, dep_name))
+            sync.command_start(name, perf_counter_ns())
 
-                dependencies = (set(self.dependencies[command_name])
-                                - set(context.obj['timing'].keys()))
-                if dependencies:
-                    logger_c.info(f"Dependencies: {', '.join(dependencies)}")
-                    for dependency in dependencies:
-                        logger_c.debug(f"Invoking: {dependency}")
-                        context.invoke(self.get_command(context, dependency))
+        result = super().invoke(context)
 
-                t0 = perf_counter()
-                fn(*fn_args, **fn_kwargs)
-                t = perf_counter() - t0
-
-                logger_c.debug(f"Finished in {t / 60:.1f}min")
-                context.obj['timing'][command_name] = t
-
-            kwargs.setdefault('name', fn.__module__.split('.')[-1].replace('_', '-'))  # duplicate?
-            self.dependencies[kwargs['name']] = kwargs.pop('requires', [])
-            return self.command(*args, **kwargs)(wrapper)
-        return decorator
-
-    def import_commands_from(self, package):
-        for finder, name, is_package in pkgutil.iter_modules(package.__path__):
-            try:
-                module = finder.find_module(name).load_module(name)
-                if isinstance(module.main, click.Command):
-                    command_name = module.__name__.split('.')[-1].replace('_', '-')  # duplicate?
-                    self.add_command(module.main, name=command_name)
-                else:
-                    logger.debug(f"Could not import {name}, module's main is {module.main.__class__!r}")
-            except Exception as e:
-                logger.debug(f"Could not import {name}, {e.__class__.__name__}: {e}")
+        with db.connection_context():
+            sync_command = sync.command_end(name, perf_counter_ns())
+        logger[name].debug(f"Finished in {sync_command.time_diff_min:.1f}min")
+        return result
 
 
-@click.command(cls=SyncGroup, chain=True)
+@click.group(cls=Group, chain=True)
+@click.option('--id', envvar='CIRCLE_BUILD_NUM', default=perf_counter_ns)
 @click.pass_context
-def main(context):
-    context.obj = {'timing': {}}
+def main(context, id):
+    logger.debug(f"Sync ID: {id}")
+    with db.connection_context():
+        sync = Sync.start(id)
+    context.obj = {'sync': sync}
     context.call_on_close(close)
 
 
@@ -86,16 +77,13 @@ def main(context):
 @click.option('--nodes', type=int, envvar='CIRCLE_NODE_TOTAL')
 @click.pass_context
 def ci(context, job, node_index, nodes):
-    group = context.parent.command
-    dependencies_map = group.dependencies
-
-    commands_without_deps = {name for name, deps in dependencies_map.items() if not deps}
-    commands_with_deps = set(dependencies_map.keys()) - commands_without_deps
+    commands_without_deps = {name for name, deps in DEPENDENCIES_MAP.items() if not deps}
+    commands_with_deps = set(DEPENDENCIES_MAP.keys()) - commands_without_deps
 
     if job == 'sync-1':
-        chains = get_parallel_chains(dependencies_map, exclude=commands_with_deps)
+        chains = get_parallel_chains(DEPENDENCIES_MAP, exclude=commands_with_deps)
     elif job == 'sync-2':
-        chains = get_parallel_chains(dependencies_map, exclude=commands_without_deps)
+        chains = get_parallel_chains(DEPENDENCIES_MAP, exclude=commands_without_deps)
     else:
         raise ValueError(job)
 
@@ -103,6 +91,7 @@ def ci(context, job, node_index, nodes):
         logger.error(f"The job {job} has parallelism {nodes}, but there are {len(chains)} command chains!")
         raise click.Abort()
 
+    group = context.parent.command
     for name in chains[node_index]:
         command = group.get_command(context, name)
         context.invoke(command)
@@ -112,27 +101,22 @@ def ci(context, job, node_index, nodes):
 @click.pass_context
 def all(context):
     group = context.parent.command
-    dependencies_map = group.dependencies
-    for name in dependencies_map.keys():
+    for name in DEPENDENCIES_MAP.keys():
         command = group.get_command(context, name)
         context.invoke(command)
-
-
-main.import_commands_from(sync_package)
 
 
 @click.pass_context
 def close(context):
     logger.info('Sync done!')
-
-    timing = sorted(context.obj['timing'].items(), key=itemgetter(1), reverse=True)
-    if timing:
-        timing_repr = ', '.join([f"{command} {time_sec / 60:.1f}min" for command, time_sec in timing])
-        logger.info(timing_repr)
-
-    total_time_sec = sum(context.obj['timing'].values())
-    if total_time_sec >= NOTIFY_AFTER_SEC:
-        notify('Finished!', f'{total_time_sec / 60:.1f}min')
+    sync = context.obj['sync']
+    times = sync.times_min()
+    if times:
+        times_repr = ', '.join([f"{name} {time:.1f}min" for name, time in times.items()])
+        logger.info(times_repr)
+        total_time = sum(times.values())
+        if total_time >= NOTIFY_AFTER_MIN:
+            notify('Finished!', f'{total_time:.1f}min')
 
 
 def notify(title, text):

@@ -1,13 +1,17 @@
 from pathlib import Path
 
+import click
 from strictyaml import Datetime, Map, Seq, Str, Url, load
 
-from juniorguru.cli.sync import main as cli
+from juniorguru.lib import loggers
+from juniorguru.cli.sync import Command
 from juniorguru.models.base import db
 from juniorguru.models.story import Story
 
 
-schema = Seq(
+YAML_PATH = Path('juniorguru/data/stories.yml')
+
+YAML_SCHEMA = Seq(
     Map({
         'url': Url(),
         'date': Datetime(),
@@ -18,14 +22,15 @@ schema = Seq(
 )
 
 
-@cli.sync_command()
+logger = loggers.get(__name__)
+
+
+@click.command(cls=Command)
 @db.connection_context()
 def main():
-    path = Path(__file__).parent.parent / 'data' / 'stories.yml'
-    records = [record.data for record in load(path.read_text(), schema)]
-
     Story.drop_table()
     Story.create_table()
-
-    for record in records:
+    for yaml_record in load(YAML_PATH.read_text(), YAML_SCHEMA):
+        record = yaml_record.data
+        logger.info(record['title'])
         Story.create(**record)
