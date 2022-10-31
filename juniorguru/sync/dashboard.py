@@ -30,10 +30,10 @@ logger = loggers.from_path(__file__)
 
 
 @click.command(cls=Command, requires=['club-content',
-                        'companies',
-                        'events',
-                        'subscriptions',
-                        'roles'])
+                                      'companies',
+                                      'events',
+                                      'subscriptions',
+                                      'roles'])
 def main():
     run_discord_task('juniorguru.sync.dashboard.discord_task')
 
@@ -88,6 +88,7 @@ def render_roles():
         'description': '\n'.join([
             f'{format_role(role)}\n' for role
             in ClubDocumentedRole.listing()
+
         ])
     }
 

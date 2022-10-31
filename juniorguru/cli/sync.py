@@ -81,8 +81,9 @@ def main(context, id):
 @click.argument('job', type=click.Choice(['sync-1', 'sync-2']), envvar='CIRCLE_JOB')
 @click.argument('node_index', type=int, envvar='CIRCLE_NODE_INDEX')
 @click.option('--nodes', type=int, envvar='CIRCLE_NODE_TOTAL')
+@click.option('--dry-run', is_flag=True, default=False, show_default=True)
 @click.pass_context
-def ci(context, job, node_index, nodes):
+def ci(context, job, node_index, nodes, dry_run):
     group = context.parent.command
     dependencies_map = dict(group.dependencies_map(context))
 
@@ -99,18 +100,28 @@ def ci(context, job, node_index, nodes):
         logger.error(f"The job {job} has parallelism {nodes}, but there are {len(chains)} command chains!")
         raise click.Abort()
 
-    for name in chains[node_index]:
-        command = group.get_command(context, name)
-        context.invoke(command)
+    if dry_run:
+        for index, chain in enumerate(chains):
+            for name in chain:
+                bold, color = (True, 'green') if index == node_index else (None, None)
+                click.secho(f"{index} {name}", bold=bold, fg=color)
+    else:
+        for name in chains[node_index]:
+            command = group.get_command(context, name)
+            context.invoke(command)
 
 
 @main.command()
+@click.option('--dry-run', is_flag=True, default=False, show_default=True)
 @click.pass_context
-def all(context):
+def all(context, dry_run):
     group = context.parent.command
     for name in dict(group.dependencies_map(context)).keys():
         command = group.get_command(context, name)
-        context.invoke(command)
+        if dry_run:
+            click.echo(name)
+        else:
+            context.invoke(command)
 
 
 @click.pass_context
