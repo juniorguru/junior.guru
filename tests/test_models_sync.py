@@ -24,9 +24,8 @@ def test_start_flushes_on_different_id(db_connection):
     sync.command_start('cats', 5 * NS_IN_MIN)
     sync.command_end('cats', 10 * NS_IN_MIN)
 
-    assert sync.times_min() == dict(cats=5)
-    assert Sync.select().count() == 1
-    assert SyncCommand.select().count() == 1
+    assert Sync.count() == 1
+    assert SyncCommand.count() == 1
 
 
 def test_start_continues_on_the_same_id(db_connection):
@@ -37,12 +36,21 @@ def test_start_continues_on_the_same_id(db_connection):
     sync.command_start('cats', 5 * NS_IN_MIN)
     sync.command_end('cats', 10 * NS_IN_MIN)
 
-    assert sync.times_min() == dict(cats=5, dogs=5)
-    assert Sync.select().count() == 1
-    assert SyncCommand.select().count() == 2
+    assert Sync.count() == 1
+    assert SyncCommand.count() == 2
 
 
-def test_timing(db_connection):
+def test_count_commands(db_connection):
+    sync = Sync.start(123)
+    sync.command_start('dogs', 0)
+    sync.command_end('dogs', 5 * NS_IN_MIN)
+    sync.command_start('cats', 5 * NS_IN_MIN)
+    sync.command_end('cats', 15 * NS_IN_MIN)
+
+    assert sync.count_commands() == 2
+
+
+def test_times_min(db_connection):
     sync = Sync.start(123)
     sync.command_start('dogs', 0)
     sync.command_end('dogs', 5 * NS_IN_MIN)

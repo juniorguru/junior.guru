@@ -70,10 +70,10 @@ class Command(click.Command):
 @click.option('--id', envvar='CIRCLE_BUILD_NUM', default=perf_counter_ns)
 @click.pass_context
 def main(context, id):
-    logger.debug(f"Sync ID: {id}")
     with db.connection_context():
         sync = Sync.start(id)
     context.obj = {'sync': sync}
+    logger.info(f"Sync #{id} starts with {sync.count_commands()} commands already recorded")
     context.call_on_close(close)
 
 
@@ -115,8 +115,8 @@ def all(context):
 
 @click.pass_context
 def close(context):
-    logger.info('Sync done!')
     sync = context.obj['sync']
+    logger.info(f"Sync #{sync.id} done with {sync.count_commands()} commands recorded")
     times = sync.times_min()
     if times:
         times_repr = ', '.join([f"{name} {time:.1f}min" for name, time in times.items()])

@@ -34,6 +34,9 @@ class Sync(BaseModel):
         command.save()
         return command
 
+    def count_commands(self):
+        return self.list_commands.count()
+
     def is_command_seen(self, name):
         return self.list_commands \
             .where(SyncCommand.name == name) \
