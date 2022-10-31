@@ -34,13 +34,13 @@ class Sync(BaseModel):
         command.save()
         return command
 
-    def is_command_seen(cls, name):
-        return cls.list_commands \
+    def is_command_seen(self, name):
+        return self.list_commands \
             .where(SyncCommand.name == name) \
             .exists()
 
-    def is_command_unseen(cls, name):
-        return not cls.is_command_seen(name)
+    def is_command_unseen(self, name):
+        return not self.is_command_seen(name)
 
     def times_min(self):
         return {command.name: command.time_diff_min
