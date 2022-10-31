@@ -1,17 +1,15 @@
-import click
+import pkgutil
+from importlib import import_module
 
 
-class BaseGroup(click.Group):
-    def load_dynamic_commands(self):
-        raise NotImplementedError()
+def command_name(module_name):
+    return module_name.split('.')[-1].replace('_', '-')
 
-    def list_commands(self, context):
-        names = super().list_commands(context)
-        names += [name for name, command in self.load_dynamic_commands()]
-        return sorted(names)
 
-    def get_command(self, context, name):
-        command = super().get_command(context, name)
-        if command:
-            return command
-        return dict(self.load_dynamic_commands())[name]
+def load_command(module):
+    return command_name(module.__name__), module.main
+
+
+def import_commands(package):
+    for _, name, _ in pkgutil.iter_modules(package.__path__):
+        yield load_command(import_module(f"{package.__package__}.{name}"))

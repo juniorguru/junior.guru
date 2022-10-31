@@ -4,13 +4,12 @@ from multiprocessing import Pool
 from pathlib import Path
 from urllib.parse import urlparse
 
-import click
 import favicon
 import requests
 from PIL import Image, ImageChops, ImageOps
 
 from juniorguru.lib import loggers
-from juniorguru.cli.sync import Command
+from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
 
@@ -52,7 +51,7 @@ USER_AGENTS = {
 logger = loggers.from_path(__file__)
 
 
-@click.command(cls=Command, requires=['jobs-listing'])
+@cli.sync_command(dependencies=['jobs-listing'])
 @db.connection_context()
 def main():
     Path(LOGOS_DIR).mkdir(exist_ok=True, parents=True)

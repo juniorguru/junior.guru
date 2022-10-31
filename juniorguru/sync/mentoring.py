@@ -1,13 +1,12 @@
 from pathlib import Path
 
-import click
 from discord import ButtonStyle, Color, Embed, ui
 from strictyaml import Bool, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, MENTORING_CHANNEL,
                                  run_discord_task)
-from juniorguru.cli.sync import Command
+from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.mentor import Mentor
@@ -34,7 +33,7 @@ SCHEMA = Seq(
 logger = loggers.from_path(__file__)
 
 
-@click.command(cls=Command, requires=['club-content'])
+@cli.sync_command(dependencies=['club-content'])
 def main():
     run_discord_task('juniorguru.sync.mentoring.discord_task')
 

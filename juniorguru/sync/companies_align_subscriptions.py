@@ -1,12 +1,11 @@
 import re
 from datetime import datetime
 
-import click
 import arrow
 
 from juniorguru.lib import loggers
 from juniorguru.lib.memberful import MEMBERFUL_MUTATIONS_ENABLED, Memberful
-from juniorguru.cli.sync import Command
+from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.company import Company
 
@@ -14,7 +13,7 @@ from juniorguru.models.company import Company
 logger = loggers.from_path(__file__)
 
 
-@click.command(cls=Command, requires=['subscriptions',
+@cli.sync_command(dependencies=['subscriptions',
                         'companies'])
 @db.connection_context()
 def main():

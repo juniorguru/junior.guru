@@ -1,13 +1,13 @@
 from time import perf_counter_ns
-import pkgutil
+from functools import wraps
 
 import click
 
-from juniorguru.lib.cli import BaseGroup
 from juniorguru.lib import loggers
-from juniorguru import sync as sync_package
+from juniorguru.lib.cli import command_name, import_commands
 from juniorguru.models.base import db
 from juniorguru.models.sync import Sync
+from juniorguru import sync as sync_package
 
 try:
     import pync
@@ -21,58 +21,76 @@ NOTIFY_AFTER_MIN = 1
 logger = loggers.from_path(__file__)
 
 
-class Group(BaseGroup):
-    command_package = sync_package
+class Group(click.Group):
+    sync_package = sync_package
 
-    def load_dynamic_commands(self):
-        for finder, name, is_package in pkgutil.iter_modules(self.command_package.__path__):
-            module = finder.find_module(name).load_module(name)
-            yield name.replace('_', '-'), module.main
+    def __init__(self, *args, **kwargs):
+        self._sync_commands = None
+        super().__init__(*args, **kwargs)
 
-    def dependencies_map(self, context):
-        for name in self.list_commands(context):
-            command = self.get_command(context, name)
-            if isinstance(command, Command):
-                yield name, command.requires
+    @property
+    def sync_commands(self):
+        if self._sync_commands is None:
+            self._sync_commands = dict(import_commands(self.sync_package))
+        return self._sync_commands
+
+    @property
+    def dependencies_map(self):
+        return {name: command.dependencies for name, command in self.sync_commands.items()}
+
+    def sync_command(self, *args, **kwargs):
+        def decorator(fn):
+            @wraps(fn)
+            @click.pass_context
+            def wrapper(context, *fn_args, **fn_kwargs):
+                name = context.info_name
+                sync = context.obj['sync']
+
+                with db.connection_context():
+                    if sync.is_command_seen(name):
+                        logger[name].info('Skipping (already executed)')
+                        return
+                    dependencies = list(filter(sync.is_command_unseen, self.dependencies_map[name]))
+
+                if dependencies:
+                    logger[name].info(f"Dependencies: {', '.join(dependencies)}")
+                    for dependency_name in dependencies:
+                        logger[name].debug(f"Invoking dependency: {dependency_name}")
+                        context.invoke(main.get_command(context, dependency_name))
+
+                logger[name].debug('Invoking self')
+                with db.connection_context():
+                    sync.command_start(name, perf_counter_ns())
+                try:
+                    context.invoke(fn, *fn_args, **fn_kwargs)
+                finally:
+                    with db.connection_context():
+                        sync_command = sync.command_end(name, perf_counter_ns())
+                    logger[name].info(f"Finished in {sync_command.time_diff_min:.1f}min")
+            return self.command(*args, cls=Command, **kwargs)(wrapper)
+        return decorator
+
+    def list_commands(self, context):
+        return sorted(super().list_commands(context) + list(self.sync_commands))
+
+    def get_command(self, context, name):
+        return super().get_command(context, name) or self.sync_commands[name]
 
 
 class Command(click.Command):
-    def __init__(self, *args, **kwargs):
-        self.requires = list(kwargs.pop('requires', []))
+    def __init__(self, *args, dependencies=None, **kwargs):
+        self.dependencies = list(dependencies or [])
         super().__init__(*args, **kwargs)
-
-    def invoke(self, context):
-        group = context.parent.command
-        name = context.info_name
-        sync = context.obj['sync']
-
-        with db.connection_context():
-            if sync.is_command_seen(name):
-                logger[name].info('Skipping (already executed)')
-                return
-            requires = list(filter(sync.is_command_unseen, self.requires))
-            if requires:
-                logger[name].info(f"Dependencies: {', '.join(requires)}")
-                for dep_name in requires:
-                    logger[name].debug(f"Invoking dependency: {dep_name}")
-                    context.invoke(group.get_command(context, dep_name))
-            logger[name].debug('Invoking self')
-            sync.command_start(name, perf_counter_ns())
-        try:
-            return super().invoke(context)
-        finally:
-            with db.connection_context():
-                sync_command = sync.command_end(name, perf_counter_ns())
-            logger[name].info(f"Finished in {sync_command.time_diff_min:.1f}min")
+        self.name = command_name(self.callback.__module__)
 
 
-@click.group(cls=Group, chain=True)
+@click.group(chain=True, cls=Group)
 @click.option('--id', envvar='CIRCLE_BUILD_NUM', default=perf_counter_ns)
 @click.pass_context
 def main(context, id):
     with db.connection_context():
         sync = Sync.start(id)
-    context.obj = {'sync': sync}
+    context.obj = dict(sync=sync)
     logger.info(f"Sync #{id} starts with {sync.count_commands()} commands already recorded")
     context.call_on_close(close)
 
@@ -84,15 +102,12 @@ def main(context, id):
 @click.option('--dry-run', is_flag=True, default=False, show_default=True)
 @click.pass_context
 def ci(context, job, node_index, nodes, dry_run):
-    group = context.parent.command
-    dependencies_map = dict(group.dependencies_map(context))
-
     if job == 'sync-1':
-        commands_with_deps = {name for name, deps in dependencies_map.items() if deps}
-        chains = get_parallel_chains(dependencies_map, exclude=commands_with_deps)
+        commands_with_deps = {name for name, deps in main.dependencies_map.items() if deps}
+        chains = get_parallel_chains(main.dependencies_map, exclude=commands_with_deps)
     elif job == 'sync-2':
-        commands_without_deps = {name for name, deps in dependencies_map.items() if not deps}
-        chains = get_parallel_chains(dependencies_map, exclude=commands_without_deps)
+        commands_without_deps = {name for name, deps in main.dependencies_map.items() if not deps}
+        chains = get_parallel_chains(main.dependencies_map, exclude=commands_without_deps)
     else:
         raise ValueError(job)
 
@@ -107,7 +122,7 @@ def ci(context, job, node_index, nodes, dry_run):
                 click.secho(f"{index} {name}", bold=bold, fg=color)
     else:
         for name in chains[node_index]:
-            command = group.get_command(context, name)
+            command = main.get_command(context, name)
             context.invoke(command)
 
 
@@ -115,9 +130,8 @@ def ci(context, job, node_index, nodes, dry_run):
 @click.option('--dry-run', is_flag=True, default=False, show_default=True)
 @click.pass_context
 def all(context, dry_run):
-    group = context.parent.command
-    for name in dict(group.dependencies_map(context)).keys():
-        command = group.get_command(context, name)
+    for name in main.dependencies_map:
+        command = main.get_command(context, name)
         if dry_run:
             click.echo(name)
         else:
