@@ -18,7 +18,7 @@ JOBS_REPEATING_PERIOD_DAYS = 30
 URL_RE = re.compile(r'https?://\S+', re.I)
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 @click.command(cls=Command, requires=['club-content',

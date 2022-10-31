@@ -17,7 +17,7 @@ from juniorguru.models.club import ClubSubscribedPeriod, ClubUser
 from juniorguru.models.company import Company, CompanyStudentSubscription
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']

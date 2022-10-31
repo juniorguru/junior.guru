@@ -1,5 +1,6 @@
 import logging
 import os
+from pathlib import Path
 
 
 LOG_LEVEL = getattr(logging, os.getenv('LOG_LEVEL', 'info').upper())
@@ -42,6 +43,12 @@ def configure():
 
 def get(name):
     return logging.getLogger(name)
+
+
+def from_path(path):
+    relative_path = str(Path(path).relative_to(os.getcwd()))
+    name = '.'.join(relative_path.removesuffix('.py').split('/'))
+    return get(name)
 
 
 if not logging.root.hasHandlers():

@@ -10,7 +10,7 @@ from juniorguru.lib.club import emoji_name, run_discord_task
 ROLE = 836959652100702248
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 @click.command()

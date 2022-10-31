@@ -18,7 +18,7 @@ except (Exception, ImportError):
 NOTIFY_AFTER_MIN = 1
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 class Group(BaseGroup):

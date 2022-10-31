@@ -15,7 +15,7 @@ from juniorguru.models.club import ClubMessage
 CV_GROUP_CHANNEL = 839059491432431616
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 @click.command(cls=Command, requires=['club-content'])

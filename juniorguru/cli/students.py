@@ -13,7 +13,7 @@ from juniorguru.lib.memberful import (MEMBERFUL_MUTATIONS_ENABLED, Memberful,
 from juniorguru.models.company import Company
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 @click.command()

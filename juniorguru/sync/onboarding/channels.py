@@ -23,7 +23,7 @@ BETA_USERS_EMOJI = '🐇'
 BETA_USERS_DATE = date(2022, 7, 17)
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 async def manage_channels(client):

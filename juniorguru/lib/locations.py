@@ -7,7 +7,7 @@ from lxml import etree
 from juniorguru.lib import loggers
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 # https://docs.python-requests.org/en/master/user/advanced/#timeouts

@@ -12,7 +12,7 @@ MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
 MEMBERFUL_MUTATIONS_ENABLED = bool(int(os.getenv('MEMBERFUL_MUTATIONS_ENABLED', 0)))
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 class Memberful():

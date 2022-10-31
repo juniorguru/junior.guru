@@ -17,7 +17,7 @@ CHANNELS_OPERATIONS = {}
 CHANNEL_DELETE_TIMEOUT = timedelta(days=30)
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 def channels_operation(operation_name):

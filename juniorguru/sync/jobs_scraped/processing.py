@@ -26,7 +26,7 @@ LOGGING_POSTPROCESSOR_BATCH_SIZE = 100
 LOGGING_PERSISTOR_BATCH_SIZE = 100
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 # HELLO, ADVENTURER! You're very welcome to study this monstrosity.

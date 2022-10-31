@@ -12,7 +12,7 @@ from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 DIGEST_LIMIT = 5

@@ -19,7 +19,7 @@ MEMBERS_CHUNK_SIZE = 10
 EMOJI_UNREAD = '✅'
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 async def send_messages(client):

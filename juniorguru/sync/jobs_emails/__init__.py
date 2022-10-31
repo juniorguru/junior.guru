@@ -30,7 +30,7 @@ SMTP_USERNAME = os.environ['SMTP_USERNAME'] if JOBS_EMAILS_SENDING_ENABLED else 
 SMTP_PASSWORD = os.environ['SMTP_PASSWORD'] if JOBS_EMAILS_SENDING_ENABLED else None
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 @click.command(cls=Command, requires=['jobs-listing'])

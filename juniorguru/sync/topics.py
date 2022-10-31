@@ -10,7 +10,7 @@ from juniorguru.models.club import ClubMessage
 from juniorguru.models.topic import Topic
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value in {

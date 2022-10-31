@@ -14,7 +14,7 @@ CHANNELS_PER_CATEGORY_LIMIT = 50
 CHANNELS_PER_CATEGORY_EXCEPTION_CODE = 50035
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 async def manage_category(guild, async_fn):

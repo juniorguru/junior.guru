@@ -17,7 +17,7 @@ from playwright.sync_api import (Error as PlaywrightError,
 from juniorguru.lib import loggers
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 PROJECT_DIR = Path(__file__).parent.parent

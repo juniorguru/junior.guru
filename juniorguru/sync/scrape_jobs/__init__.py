@@ -10,7 +10,7 @@ from juniorguru.sync.scrape_jobs.feeds import feed_path, feeds_dir
 from juniorguru.sync.scrape_jobs.settings import HTTPCACHE_DIR
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 class JobsScrapingException(Exception):

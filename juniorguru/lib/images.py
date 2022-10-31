@@ -29,7 +29,7 @@ IMAGES_DIR = Path(__file__).parent.parent / 'images'
 TEMPLATES_DIR = Path(__file__).parent.parent / 'image_templates'
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 class InvalidImage(Exception):

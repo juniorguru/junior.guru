@@ -6,7 +6,7 @@ from lxml import html
 from juniorguru.lib import loggers
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 PUBLIC_DIR = Path('public')

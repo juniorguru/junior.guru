@@ -33,7 +33,7 @@ SCHEMA_TRANSFORMATIONS = {
 DIR_NOT_EMPTY_ERRNO = 39
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 class CommaSeparated(click.ParamType):

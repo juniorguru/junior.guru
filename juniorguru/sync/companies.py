@@ -13,7 +13,7 @@ from juniorguru.models.base import db
 from juniorguru.models.company import Company
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 FLUSH_POSTERS_COMPANIES = bool(int(os.getenv('FLUSH_POSTERS_COMPANIES', 0)))

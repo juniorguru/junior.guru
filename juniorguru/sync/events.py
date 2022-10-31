@@ -18,7 +18,7 @@ from juniorguru.models.club import ClubMessage
 from juniorguru.models.event import Event, EventSpeaking
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 FLUSH_POSTERS_EVENTS = bool(int(os.getenv('FLUSH_POSTERS_EVENTS', 0)))

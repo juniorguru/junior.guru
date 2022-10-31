@@ -11,7 +11,7 @@ from juniorguru.models.job import ListedJob, ScrapedJob, SubmittedJob
 MIN_JUNIORITY_RE_SCORE = 1
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 @click.command(cls=Command, requires=['jobs-scraped',

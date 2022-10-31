@@ -14,7 +14,7 @@ from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 CLUB_CONTENT_REUSE_DB_ENABLED = bool(int(os.getenv('CLUB_CONTENT_REUSE_DB_ENABLED', 0)))

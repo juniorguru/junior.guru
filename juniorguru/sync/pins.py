@@ -12,7 +12,7 @@ from juniorguru.models.base import db
 from juniorguru.models.club import ClubPinReaction
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 @click.command(cls=Command, requires=['club-content'])

@@ -56,7 +56,7 @@ SENTENCE_END_RE = re.compile(r'''
 ''', re.VERBOSE)
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 def process(item):

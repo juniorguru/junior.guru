@@ -31,7 +31,7 @@ SCHEMA = Seq(
 )
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 @click.command(cls=Command, requires=['club-content'])

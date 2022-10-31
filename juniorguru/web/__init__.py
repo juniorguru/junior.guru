@@ -12,7 +12,7 @@ from juniorguru.models.job import ListedJob
 from juniorguru.models.story import Story
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 FLUSH_THUMBNAILS = bool(int(os.getenv('FLUSH_THUMBNAILS', 0)))

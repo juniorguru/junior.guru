@@ -14,7 +14,7 @@ from juniorguru.lib import loggers
 DB_FILE = Path(__file__).parent / '..' / 'data' / 'data.db'
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 class ConnectionContext(BaseConnectionContext):

@@ -13,7 +13,7 @@ AVATARS_DIR = Path(__file__).parent.parent / 'images' / 'avatars-participants'
 AVATAR_SIZE_PX = 500
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 @click.command()

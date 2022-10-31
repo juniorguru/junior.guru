@@ -21,7 +21,7 @@ from juniorguru.sync.scrape_jobs.pipelines.language_parser import (
     parse as parse_language)
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'

@@ -30,7 +30,7 @@ POSTPROCESS_PIPELINES = [
 ]
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 @click.command(cls=Command, requires=['scrape-jobs'])

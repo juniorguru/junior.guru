@@ -10,7 +10,7 @@ from juniorguru.cli.sync import Command
 from juniorguru.models.transaction import Transaction
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 FROM_DATE = date(2020, 1, 1)

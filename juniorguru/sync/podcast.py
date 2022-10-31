@@ -21,7 +21,7 @@ from juniorguru.models.club import ClubMessage
 from juniorguru.models.podcast import PodcastEpisode
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 YAML_PATH = Path(__file__).parent.parent / 'data' / 'podcast.yml'

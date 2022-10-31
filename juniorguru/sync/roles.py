@@ -15,7 +15,7 @@ from juniorguru.models.event import Event
 from juniorguru.models.mentor import Mentor
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 YAML_PATH = Path(__file__).parent.parent / 'data' / 'roles.yml'
 

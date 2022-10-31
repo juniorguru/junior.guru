@@ -7,7 +7,7 @@ from scrapy.settings import Settings
 from juniorguru.lib import loggers
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 def scrape(*args, **kwargs):

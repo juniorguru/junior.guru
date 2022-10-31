@@ -14,7 +14,7 @@ from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 IMAGES_PATH = Path(__file__).parent.parent / 'images'

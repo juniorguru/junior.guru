@@ -23,7 +23,7 @@ COMPANIES_INTRO_LAUNCH_ON = date(2022, 4, 1)
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 @click.command(cls=Command, requires=['club-content',

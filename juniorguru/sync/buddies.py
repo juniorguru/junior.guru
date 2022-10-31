@@ -17,7 +17,7 @@ BUDDIES_CHANNEL = 822415540843839488
 BUDDIES_EMOJI = '💡'
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 @click.command(cls=Command, requires=['club-content'])

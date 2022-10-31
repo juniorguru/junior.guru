@@ -9,7 +9,7 @@ from juniorguru.cli.sync import Command
 from juniorguru.sync.scrape_jobs.settings import PROXIES_FILE
 
 
-logger = loggers.get(__name__)
+logger = loggers.from_path(__file__)
 
 
 @click.command(cls=Command)
