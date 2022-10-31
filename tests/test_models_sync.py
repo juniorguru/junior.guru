@@ -24,8 +24,8 @@ def test_start_flushes_on_different_id(db_connection):
     sync.command_start('cats', 5 * NS_IN_MIN)
     sync.command_end('cats', 10 * NS_IN_MIN)
 
-    assert Sync.count() == 1
-    assert SyncCommand.count() == 1
+    assert Sync.select().count() == 1
+    assert SyncCommand.select().count() == 1
 
 
 def test_start_continues_on_the_same_id(db_connection):
@@ -36,8 +36,8 @@ def test_start_continues_on_the_same_id(db_connection):
     sync.command_start('cats', 5 * NS_IN_MIN)
     sync.command_end('cats', 10 * NS_IN_MIN)
 
-    assert Sync.count() == 1
-    assert SyncCommand.count() == 2
+    assert Sync.select().count() == 1
+    assert SyncCommand.select().count() == 2
 
 
 def test_count_commands(db_connection):
