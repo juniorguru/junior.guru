@@ -58,12 +58,12 @@ class Command(click.Command):
                     context.invoke(group.get_command(context, dep_name))
             sync.command_start(name, perf_counter_ns())
 
-        result = super().invoke(context)
-
-        with db.connection_context():
-            sync_command = sync.command_end(name, perf_counter_ns())
-        logger[name].debug(f"Finished in {sync_command.time_diff_min:.1f}min")
-        return result
+        try:
+            return super().invoke(context)
+        finally:
+            with db.connection_context():
+                sync_command = sync.command_end(name, perf_counter_ns())
+            logger[name].debug(f"Finished in {sync_command.time_diff_min:.1f}min")
 
 
 @click.group(cls=Group, chain=True)
