@@ -47,7 +47,7 @@ def get(name):
 
 def from_path(path):
     relative_path = str(Path(path).relative_to(os.getcwd()))
-    name = '.'.join(relative_path.removesuffix('.py').split('/'))
+    name = '.'.join(relative_path.removesuffix('.py').removesuffix('__init__').split('/'))
     return get(name)
 
 
