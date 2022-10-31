@@ -43,15 +43,13 @@ class Group(click.Group):
             @wraps(fn)
             @click.pass_context
             def wrapper(context, *fn_args, **fn_kwargs):
-                name = context.info_name
-                sync = context.obj['sync']
+                name, sync = context.info_name, context.obj['sync']
 
-                with db.connection_context():
-                    if sync.is_command_seen(name):
-                        logger[name].info('Skipping (already executed)')
-                        return
-                    dependencies = list(filter(sync.is_command_unseen, self.dependencies_map[name]))
+                if self._is_sync_command_seen(name, sync):
+                    logger[name].info('Skipping (already executed)')
+                    return
 
+                dependencies = self._get_sync_command_dependencies(name, sync)
                 if dependencies:
                     logger[name].info(f"Dependencies: {', '.join(dependencies)}")
                     for dependency_name in dependencies:
@@ -59,16 +57,30 @@ class Group(click.Group):
                         context.invoke(main.get_command(context, dependency_name))
 
                 logger[name].debug('Invoking self')
-                with db.connection_context():
-                    sync.command_start(name, perf_counter_ns())
+                self._start_sync_command(name, sync)
                 try:
                     context.invoke(fn, *fn_args, **fn_kwargs)
                 finally:
-                    with db.connection_context():
-                        sync_command = sync.command_end(name, perf_counter_ns())
+                    sync_command = self._end_sync_command(name, sync)
                     logger[name].info(f"Finished in {sync_command.time_diff_min:.1f}min")
             return self.command(*args, cls=Command, **kwargs)(wrapper)
         return decorator
+
+    @db.connection_context()
+    def _is_sync_command_seen(self, name, sync):
+        return sync.is_command_seen(name)
+
+    @db.connection_context()
+    def _get_sync_command_dependencies(self, name, sync):
+        return list(filter(sync.is_command_unseen, self.dependencies_map[name]))
+
+    @db.connection_context()
+    def _start_sync_command(self, name, sync):
+        return sync.command_start(name, perf_counter_ns())
+
+    @db.connection_context()
+    def _end_sync_command(self, name, sync):
+        return sync.command_end(name, perf_counter_ns())
 
     def list_commands(self, context):
         return sorted(super().list_commands(context) + list(self.sync_commands))
