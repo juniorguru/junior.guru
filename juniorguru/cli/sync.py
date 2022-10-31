@@ -48,22 +48,22 @@ class Command(click.Command):
 
         with db.connection_context():
             if sync.is_command_seen(name):
-                logger[name].debug('Skipping (already executed)')
+                logger[name].info('Skipping (already executed)')
                 return
             requires = list(filter(sync.is_command_unseen, self.requires))
             if requires:
                 logger[name].info(f"Dependencies: {', '.join(requires)}")
                 for dep_name in requires:
-                    logger[name].debug(f"Invoking: {dep_name}")
+                    logger[name].debug(f"Invoking dependency: {dep_name}")
                     context.invoke(group.get_command(context, dep_name))
+            logger[name].debug('Invoking self')
             sync.command_start(name, perf_counter_ns())
-
         try:
             return super().invoke(context)
         finally:
             with db.connection_context():
                 sync_command = sync.command_end(name, perf_counter_ns())
-            logger[name].debug(f"Finished in {sync_command.time_diff_min:.1f}min")
+            logger[name].info(f"Finished in {sync_command.time_diff_min:.1f}min")
 
 
 @click.group(cls=Group, chain=True)
