@@ -3,6 +3,7 @@ import json
 import time
 from datetime import datetime
 
+from lxml import etree
 import arrow
 import extruct
 import feedparser
@@ -42,7 +43,7 @@ class Spider(BaseSpider):
 
         try:
             data = extract_job_posting(response.text, response.url)
-        except (ValueError, json.JSONDecodeError):
+        except (ValueError, json.JSONDecodeError, etree.ParserError):
             pass
         else:
             loader.add_value('source', self.name)
