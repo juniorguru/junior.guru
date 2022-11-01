@@ -47,13 +47,13 @@ noindex: true
     - a neřeším _Automatic Gain control_, _Input sensitivity_, _Noise suppression_ a doufám, že se to nerozhodí, protože nevím, jestli to co tam je, jsem nastavil já, nebo to jsou výchozí hodnoty. Také nevím, jestli jsou současné hodnoty lepší nebo horší, ale snad jsou OK, protože si nikdo nestěžuje.
 - V **Discordu** si nastavím **DND** kvůli notifikacím.
 - Mám aspoň trochu připravený úvod přednášky, představení speakera.
-
-## Akce
-
 - Otevřu **OBS**.
 - V **OBS** jdu do _Manage Broadcast_. Z `events.yml` kopíruju informace do políček. Nezapomenu dát před _title_ jméno speakera.
 - Dám _Schedule and Select Broadcast_. OBS vytvoří live akci na YouTube.
 - Jdu [na YouTube](https://studio.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA/videos/live) a ověřím, jestli tam akce je. Odkaz mám po ruce.
+
+## Akce
+
 - 15 minut před akcí se připojím a „rozehřívám“ místnost, pomáhám speakerovi.
 - **Otevřu si hovor do okna** a ověřím, že to OBS správně chytá.
 - V čas startu přednášky **odpálím Discord event** a ještě chvíli počkám.
