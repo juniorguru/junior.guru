@@ -97,7 +97,7 @@ class Command(click.Command):
 
 
 @click.group(chain=True, cls=Group)
-@click.option('--id', envvar='CIRCLE_BUILD_NUM', default=perf_counter_ns)
+@click.option('--id', envvar='CIRCLE_WORKFLOW_ID', default=perf_counter_ns)
 @click.pass_context
 def main(context, id):
     with db.connection_context():
