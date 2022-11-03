@@ -1,4 +1,3 @@
-import os
 import asyncio
 from datetime import timedelta
 
@@ -16,8 +15,6 @@ from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
 logger = loggers.from_path(__file__)
 
 
-CLUB_CONTENT_REUSE_DB_ENABLED = bool(int(os.getenv('CLUB_CONTENT_REUSE_DB_ENABLED', 0)))
-
 WORKERS_COUNT = 5
 
 DEFAULT_CHANNELS_HISTORY_SINCE = timedelta(days=380)
@@ -31,8 +28,7 @@ CHANNELS_HISTORY_SINCE = {
 
 @cli.sync_command()
 def main():
-    if not CLUB_CONTENT_REUSE_DB_ENABLED:
-        run_discord_task('juniorguru.sync.club_content.discord_task')
+    run_discord_task('juniorguru.sync.club_content.discord_task')
     with db.connection_context():
         logger.info(f'Finished with {ClubMessage.count()} messages, '
                     f'{ClubUser.members_count()} users, '
