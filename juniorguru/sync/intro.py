@@ -17,6 +17,8 @@ WELCOME_REACTIONS = ['👋', '🐣', '👍']
 
 WELCOME_BACK_REACTIONS = ['👋', '🔄']
 
+NUMBERS_REACTIONS = ['0️⃣', '1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟']
+
 PROCESS_HISTORY_SINCE = timedelta(days=30)
 
 THREADS_STARTING_AT = datetime(2022, 7, 17, 0, 0)
@@ -117,8 +119,7 @@ async def welcome(channel, message, moderators):
                        'Na https://junior.guru/handbook/ najdeš příručku s radami pro všechny, '
                        'kdo se chtějí naučit programovat a najít si práci v oboru. Hodně věcí je už zodpovězeno v ní, tak si ji nezapomeň projít 📖\n\n'
                        'Příručka začíná popisem **osvědčené cesty juniora**, která má **10 fází** 🥚 🐣 🐥 '
-                       'Pokud to nevyplývá už z tvého představení, odpovíš mi tady ve vlákně, jaké z těch fází se tě zrovna teď týkají? Jestli se nechceš rozepisovat, '
-                       'klidně piš jenom čísla 🙂 🔢')
+                       'Jaké z těch fází se tě zrovna teď týkají? Použij reakce s číslama ⬇️')
             logger_m.debug(f"Welcome message content: {content!r}")
             try:
                 welcome_discord_message = list(filter(is_welcome_message, discord_messages))[0]
@@ -127,8 +128,11 @@ async def welcome(channel, message, moderators):
                     await welcome_discord_message.edit(content=content, suppress=True)
             except IndexError:
                 logger_m.debug("Sending welcome message")
-                welcome_discord_message = await thread.send(content=content)
-                await welcome_discord_message.edit(suppress=True)
+                welcome_discord_message = await thread.send(content=content, suppress=True)
+
+            logger_m.debug("Preparing numbers reactions under the welcome message")
+            await add_reactions(discord_message,
+                                get_missing_reactions(welcome_discord_message.reactions, NUMBERS_REACTIONS))
 
             logger_m.debug("Analyzing if all moderators are involved")
             thread_members_ids = [member.id for member in (thread.members or await thread.fetch_members())]
