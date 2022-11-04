@@ -131,7 +131,7 @@ async def welcome(channel, message, moderators):
                 welcome_discord_message = await thread.send(content=content, suppress=True)
 
             logger_m.debug("Preparing numbers reactions under the welcome message")
-            await add_reactions(discord_message,
+            await add_reactions(welcome_discord_message,
                                 get_missing_reactions(welcome_discord_message.reactions, NUMBERS_REACTIONS))
 
             logger_m.debug("Analyzing if all moderators are involved")
