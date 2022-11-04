@@ -130,9 +130,9 @@ async def welcome(channel, message, moderators):
                 logger_m.debug("Sending welcome message")
                 welcome_discord_message = await thread.send(content=content, suppress=True)
 
-            logger_m.debug("Preparing numbers reactions under the welcome message")
+            logger_m.debug("Ensuring numbers reactions under the welcome message")
             await add_reactions(welcome_discord_message,
-                                get_missing_reactions(welcome_discord_message.reactions, NUMBERS_REACTIONS))
+                                get_missing_reactions(welcome_discord_message.reactions, NUMBERS_REACTIONS), ordered=True)
 
             logger_m.debug("Analyzing if all moderators are involved")
             thread_members_ids = [member.id for member in (thread.members or await thread.fetch_members())]
@@ -161,12 +161,16 @@ def get_missing_reactions(existing_reactions, ensure_emojis):
     return set(ensure_emojis) - {reaction.emoji for reaction in existing_reactions if reaction.me}
 
 
-async def add_reactions(discord_message, emojis):
+async def add_reactions(discord_message, emojis, ordered=False):
     logger.debug(f"Reacting to message #{discord_message.id} with emojis: {list(emojis)!r}")
     if not emojis:
         return
     try:
-        await asyncio.gather(*[discord_message.add_reaction(emoji) for emoji in emojis])
+        if ordered:
+            for emoji in emojis:
+                await discord_message.add_reaction(emoji)
+        else:
+            await asyncio.gather(*[discord_message.add_reaction(emoji) for emoji in emojis])
     except Forbidden as e:
         if 'maximum number of reactions reached' in str(e).lower():
             logger.warning(f"Message #{discord_message.id} reached maximum number of reactions!")
