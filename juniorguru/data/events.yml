@@ -68,7 +68,22 @@
 #   speakers: 854681167018459146
 
 
-- title: "(Bude upřesněno, asi bezpečnost)"
+- title: "(Bude upřesněno, .NET MAUI)"
+  date: "2023-02-21"
+  description: |
+    (Bude upřesněno)
+  avatar_path: icon.svg
+  bio_name: Lukáš Pavelka
+  bio_title: "C#/.NET programátor v Edhouse"
+  bio: |
+    (Bude upřesněno)
+  bio_links:
+    - https://www.linkedin.com/in/lukepavelka0321/
+  logo_path: logos/edhouse.png
+  speakers: 113033048957665280
+
+
+- title: "(Bude upřesněno, bezpečnost)"
   date: "2023-02-07"
   description: |
     (Bude upřesněno)
