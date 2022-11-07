@@ -72,14 +72,14 @@
   date: "2023-02-21"
   description: |
     (Bude upřesněno)
-  avatar_path: icon.svg
+  avatar_path: avatars-participants/lukas-pavelka.jpg
   bio_name: Lukáš Pavelka
   bio_title: "C#/.NET programátor v Edhouse"
   bio: |
     (Bude upřesněno)
   bio_links:
     - https://www.linkedin.com/in/lukepavelka0321/
-  logo_path: logos/edhouse.png
+  logo_path: logos/edhouse.svg
   speakers: 113033048957665280
 
 
