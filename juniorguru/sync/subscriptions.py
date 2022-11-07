@@ -41,14 +41,14 @@ COUPON_NAMES_CATEGORIES_MAPPING = {
     'PATREON': ClubSubscribedPeriod.SUPPORTERS_CATEGORY,
     'GITHUB': ClubSubscribedPeriod.SUPPORTERS_CATEGORY,
     'FOUNDERS': ClubSubscribedPeriod.FREE_CATEGORY,
-    'FINAID': ClubSubscribedPeriod.FREE_CATEGORY,
+    'FINAID': ClubSubscribedPeriod.FINAID_CATEGORY,
     'CORESKILL': ClubSubscribedPeriod.CORESKILL_CATEGORY,
     'STUDENTCORESKILL': ClubSubscribedPeriod.CORESKILL_CATEGORY,
 }
 
 
 @cli.sync_command(dependencies=['club-content',
-                        'companies'])
+                                'companies'])
 @db.connection_context()
 def main():
     db.drop_tables([CompanyStudentSubscription, ClubSubscribedPeriod])

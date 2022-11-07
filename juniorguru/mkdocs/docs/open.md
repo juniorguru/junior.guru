@@ -184,7 +184,12 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
             {
                 'label': 'marketing',
                 'data': charts_cost_breakdown.pop('marketing'),
-                'backgroundColor': '#e8ccd7',
+                'backgroundColor': '#DAA520',
+            },
+            {
+                'label': 'fakturoid.cz',
+                'data': charts_cost_breakdown.pop('fakturoid'),
+                'backgroundColor': '#efd040',
             },
             {
                 'label': 'memberful.com',
@@ -194,7 +199,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
             {
                 'label': 'discord.com',
                 'data': charts_cost_breakdown.pop('discord'),
-                'backgroundColor': '#5865f2',
+                'backgroundColor': '#343434',
             },
         ],
     }|tojson|forceescape }}"
@@ -259,6 +264,11 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
                 'label': 'neplatí členství',
                 'data': charts_subscriptions_breakdown.pop('free'),
                 'backgroundColor': '#ddd',
+            },
+            {
+                'label': 'mají stipendium',
+                'data': charts_subscriptions_breakdown.pop('finaid'),
+                'backgroundColor': '#421BD4',
             },
             {
                 'label': 'dva týdny zdarma',

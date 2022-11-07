@@ -227,6 +227,7 @@ class ClubPinReaction(BaseModel):
 
 class ClubSubscribedPeriod(BaseModel):
     FREE_CATEGORY = 'free'
+    FINAID_CATEGORY = 'finaid'
     SUPPORTERS_CATEGORY = 'supporters'
     CORESKILL_CATEGORY = 'coreskill'
     INDIVIDUALS_CATEGORY = 'individuals'
