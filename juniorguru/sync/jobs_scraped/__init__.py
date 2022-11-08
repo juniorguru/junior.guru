@@ -1,6 +1,6 @@
-import os
 from pathlib import Path
 
+import click
 from peewee import OperationalError
 
 from juniorguru.lib import loggers
@@ -11,8 +11,6 @@ from juniorguru.sync.jobs_scraped.processing import (filter_relevant_paths,
                                                      postprocess_jobs, process_paths)
 from juniorguru.sync.scrape_jobs.settings import FEEDS_DIR
 
-
-JOBS_SCRAPED_REUSE_DB_ENABLED = bool(int(os.getenv('JOBS_SCRAPED_REUSE_DB_ENABLED', 0)))
 
 PREPROCESS_PIPELINES = [
     'juniorguru.sync.jobs_scraped.pipelines.boards_ids',
@@ -33,13 +31,14 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command(dependencies=['scrape-jobs'])
-def main():
+@click.option('--reuse-db/--no-reuse-db', default=False)
+def main(reuse_db):
     paths = list(Path(FEEDS_DIR).glob('**/*.jsonl.gz'))
     logger.info(f'Found {len(paths)} .json.gz paths')
 
     latest_seen_on = None
     with db.connection_context():
-        if JOBS_SCRAPED_REUSE_DB_ENABLED:
+        if reuse_db:
             logger.warning('Reusing of existing jobs database is enabled!')
             try:
                 latest_seen_on = ScrapedJob.latest_seen_on()

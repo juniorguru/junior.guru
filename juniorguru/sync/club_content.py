@@ -1,6 +1,7 @@
 import asyncio
 from datetime import timedelta
 
+import click
 import arrow
 
 from juniorguru.lib import loggers
@@ -27,8 +28,10 @@ CHANNELS_HISTORY_SINCE = {
 
 
 @cli.sync_command()
-def main():
-    run_discord_task('juniorguru.sync.club_content.discord_task')
+@click.option('--confirm/--no-confirm', envvar='CLUB_CONTENT_CONFIRM', default=False)
+def main(confirm):
+    if not confirm or click.confirm('Continue fetching club content?', default=True, show_default=True, prompt_suffix=''):
+        run_discord_task('juniorguru.sync.club_content.discord_task')
     with db.connection_context():
         logger.info(f'Finished with {ClubMessage.count()} messages, '
                     f'{ClubUser.members_count()} users, '
