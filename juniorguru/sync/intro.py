@@ -128,7 +128,8 @@ async def welcome(channel, message, moderators):
                     await welcome_discord_message.edit(content=content, suppress=True)
             except IndexError:
                 logger_m.debug("Sending welcome message")
-                welcome_discord_message = await thread.send(content=content, suppress=True)
+                welcome_discord_message = await thread.send(content=content)
+                await welcome_discord_message.edit(suppress=True)
 
             logger_m.debug("Ensuring numbers reactions under the welcome message")
             await add_reactions(welcome_discord_message,
