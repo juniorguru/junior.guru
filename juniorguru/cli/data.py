@@ -173,7 +173,7 @@ def merge_databases(path_from, path_to):
                 table_to.insert(row_from, pk=table_from.pks)
             else:
                 try:
-                    updates = get_updates(row_from, row_to)
+                    updates = get_row_updates(row_from, row_to)
                 except RuntimeError:
                     logger_t.error("Conflicts found! This typically happens if two parallel scripts write values to the same column. Instead add a new column or a new 1:1 table")
                     raise
@@ -184,8 +184,9 @@ def merge_databases(path_from, path_to):
     db_to.vacuum()
 
 
-def get_updates(row_from, row_to):
-    assert frozenset(row_from.keys()) == frozenset(row_to.keys())
+def get_row_updates(row_from, row_to):
+    if frozenset(row_from.keys()) != frozenset(row_to.keys()):
+        raise ValueError(f"Rows don't match! {list(row_from.keys())!r} ≠ {list(row_to.keys())!r}")
     updates = {}
     for column_name, value_from in row_from.items():
         value_to = row_to[column_name]
@@ -197,11 +198,11 @@ def get_updates(row_from, row_to):
 
 
 def make_schema_idempotent(schema):
-    return '\n'.join(map(make_schema_line_idempotent, schema.splitlines()))
+    return '\n'.join(map(make_schema_line_idempotent, filter(None, schema.splitlines())))
 
 
 def make_schema_line_idempotent(schema_line):
     for transformation_re, replacement in SCHEMA_TRANSFORMATIONS.items():
         if transformation_re.search(schema_line):
             return transformation_re.sub(replacement, schema_line)
-    raise ValueError(f"Unexpected schema line: {schema_line}")
+    raise ValueError(f"Unexpected schema line: {schema_line!r}")

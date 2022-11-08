@@ -17,7 +17,8 @@ from juniorguru.models.base import BaseModel, JSONField
 class ClubUser(BaseModel):
     id = IntegerField(primary_key=True)
     memberful_subscription_id = CharField(null=True)
-    joined_at = DateTimeField(null=True)
+    joined_discord_at = DateTimeField(null=True)
+    joined_memberful_at = DateTimeField(null=True)
     expires_at = DateTimeField(null=True)
     is_bot = BooleanField(default=False)
     is_member = BooleanField(default=True)
@@ -29,6 +30,13 @@ class ClubUser(BaseModel):
     coupon = CharField(null=True, index=True)
     roles = JSONField(default=lambda: [])
     onboarding_channel_id = IntegerField(null=True, unique=True)
+
+    @property
+    def joined_at(self):
+        values = list(filter(None, [self.joined_discord_at, self.joined_memberful_at]))
+        if values:
+            return min(values)
+        return None
 
     @property
     def intro(self):

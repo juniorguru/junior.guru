@@ -16,7 +16,8 @@ def create_user(id_, **kwargs):
                            mention=kwargs.get('mention', f'<@{id_}>'),
                            tag=kwargs.get('tag', 'kure_zlute#1234'),
                            coupon=kwargs.get('coupon'),
-                           joined_at=kwargs.get('joined_at', datetime.now() - timedelta(days=3)),
+                           joined_discord_at=kwargs.get('joined_discord_at', datetime.now() - timedelta(days=3)),
+                           joined_memberful_at=kwargs.get('joined_memberful_at', None),
                            roles=kwargs.get('roles', []))
 
 
@@ -151,8 +152,23 @@ def test_user_list_recent_messages(db_connection):
     assert list(user.list_recent_messages(today=date(2021, 5, 1))) == [message3, message4]
 
 
+@pytest.mark.parametrize('joined_discord_at, joined_memberful_at, expected', [
+    (None, None, None),
+    (datetime(2022, 11, 1), None, datetime(2022, 11, 1)),
+    (None, datetime(2022, 11, 1), datetime(2022, 11, 1)),
+    (datetime(2022, 11, 8), datetime(2022, 11, 1), datetime(2022, 11, 1)),
+    (datetime(2022, 11, 1), datetime(2022, 11, 8), datetime(2022, 11, 1)),
+])
+def test_user_joined_at(db_connection, joined_discord_at, joined_memberful_at, expected):
+    user = create_user(1,
+                       joined_discord_at=joined_discord_at,
+                       joined_memberful_at=joined_memberful_at)
+
+    assert user.joined_at == expected
+
+
 def test_user_first_seen_on_from_messages(db_connection):
-    user = create_user(1, joined_at=datetime(2021, 4, 1))
+    user = create_user(1, joined_discord_at=datetime(2021, 4, 1))
 
     create_message(1, user, created_at=datetime(2021, 3, 15))
     create_message(2, user, created_at=datetime(2021, 3, 31))
@@ -163,7 +179,7 @@ def test_user_first_seen_on_from_messages(db_connection):
 
 
 def test_user_first_seen_on_respects_messages(db_connection):
-    user = create_user(1, joined_at=datetime(2021, 4, 1))
+    user = create_user(1, joined_discord_at=datetime(2021, 4, 1))
 
     create_message(1, user, created_at=datetime(2021, 4, 15))
     create_message(2, user, created_at=datetime(2021, 8, 30))
@@ -171,15 +187,21 @@ def test_user_first_seen_on_respects_messages(db_connection):
     assert user.first_seen_on() == date(2021, 4, 15)
 
 
-def test_user_first_seen_on_from_joined_at_no_messages(db_connection):
-    user = create_user(1, joined_at=datetime(2021, 4, 1))
+def test_user_first_seen_on_from_joined_discord_at(db_connection):
+    user = create_user(1, joined_discord_at=datetime(2021, 4, 1))
 
     assert user.first_seen_on() == date(2021, 4, 1)
 
 
-def test_user_first_seen_on_from_joined_at_no_messages_no_joined_at(db_connection):
+def test_user_first_seen_on_from_joined_memberful_at(db_connection):
+    user = create_user(1, joined_memberful_at=datetime(2021, 4, 1))
+
+    assert user.first_seen_on() == date(2021, 4, 1)
+
+
+def test_user_first_seen_on_from_pins(db_connection):
     user1 = create_user(1)
-    user2 = create_user(2, joined_at=None)
+    user2 = create_user(2, joined_discord_at=None, joined_memberful_at=None)
 
     message = create_message(1, user1, created_at=datetime(2021, 12, 19))
     ClubPinReaction.create(user=user2, message=message)
@@ -195,7 +217,7 @@ def test_user_first_seen_on_from_joined_at_no_messages_no_joined_at(db_connectio
     (date(2021, 4, 20), False),
 ])
 def test_user_is_new(db_connection, today, expected):
-    user = create_user(1, joined_at=datetime(2021, 4, 1))
+    user = create_user(1, joined_discord_at=datetime(2021, 4, 1))
 
     assert user.is_new(today=today) is expected
 
@@ -212,7 +234,7 @@ def test_user_is_new(db_connection, today, expected):
     (date(2023, 5, 1), True),
 ])
 def test_user_is_year_old(db_connection, today, expected):
-    user = create_user(1, joined_at=datetime(2021, 2, 1))
+    user = create_user(1, joined_discord_at=datetime(2021, 2, 1))
 
     assert user.is_year_old(today=today) is expected
 
@@ -226,7 +248,7 @@ def test_user_is_year_old(db_connection, today, expected):
     (datetime(2021, 5, 1), 'FOUNDERS12345678', True),
 ])
 def test_user_is_founder(db_connection, joined_at, coupon, expected):
-    user = create_user(1, joined_at=joined_at, coupon=coupon)
+    user = create_user(1, joined_discord_at=joined_at, coupon=coupon)
 
     assert user.is_founder() is expected
 
