@@ -132,8 +132,9 @@ async def welcome(channel, message, moderators):
                 await welcome_discord_message.edit(suppress=True)
 
             logger_m.debug("Ensuring numbers reactions under the welcome message")
-            await add_reactions(welcome_discord_message,
-                                get_missing_reactions(welcome_discord_message.reactions, NUMBERS_REACTIONS), ordered=True)
+            if get_missing_reactions(welcome_discord_message.reactions, NUMBERS_REACTIONS):
+                await welcome_discord_message.clear_reactions()
+            await add_reactions(welcome_discord_message, NUMBERS_REACTIONS, ordered=True)
 
             logger_m.debug("Analyzing if all moderators are involved")
             thread_members_ids = [member.id for member in (thread.members or await thread.fetch_members())]
