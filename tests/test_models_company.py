@@ -24,7 +24,7 @@ def create_company(id, **kwargs):
 
 def create_student_subscription(company, **kwargs):
     return CompanyStudentSubscription.create(company=company,
-                                             memberful_id='123',
+                                             account_id='123',
                                              name='Alice',
                                              email='alice@example.com',
                                              started_on=kwargs.get('started_on', date.today()),

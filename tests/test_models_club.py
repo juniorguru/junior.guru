@@ -16,8 +16,8 @@ def create_user(id_, **kwargs):
                            mention=kwargs.get('mention', f'<@{id_}>'),
                            tag=kwargs.get('tag', 'kure_zlute#1234'),
                            coupon=kwargs.get('coupon'),
-                           joined_discord_at=kwargs.get('joined_discord_at', datetime.now() - timedelta(days=3)),
-                           joined_memberful_at=kwargs.get('joined_memberful_at', None),
+                           joined_at=kwargs.get('joined_at', datetime.now() - timedelta(days=3)),
+                           subscribed_at=kwargs.get('subscribed_at', None),
                            roles=kwargs.get('roles', []))
 
 
@@ -153,7 +153,7 @@ def test_user_list_recent_messages(db_connection):
 
 
 def test_user_first_seen_on_from_messages(db_connection):
-    user = create_user(1, joined_discord_at=datetime(2021, 4, 1))
+    user = create_user(1, joined_at=datetime(2021, 4, 1))
 
     create_message(1, user, created_at=datetime(2021, 3, 15))
     create_message(2, user, created_at=datetime(2021, 3, 31))
@@ -164,7 +164,7 @@ def test_user_first_seen_on_from_messages(db_connection):
 
 
 def test_user_first_seen_on_respects_messages(db_connection):
-    user = create_user(1, joined_discord_at=datetime(2021, 4, 1))
+    user = create_user(1, joined_at=datetime(2021, 4, 1))
 
     create_message(1, user, created_at=datetime(2021, 4, 15))
     create_message(2, user, created_at=datetime(2021, 8, 30))
@@ -172,23 +172,23 @@ def test_user_first_seen_on_respects_messages(db_connection):
     assert user.first_seen_on() == date(2021, 4, 15)
 
 
-def test_user_first_seen_on_from_joined_discord_at(db_connection):
-    user = create_user(1, joined_discord_at=datetime(2021, 4, 1))
+def test_user_first_seen_on_from_joined_at(db_connection):
+    user = create_user(1, joined_at=datetime(2021, 4, 1))
 
     assert user.first_seen_on() == date(2021, 4, 1)
 
 
-def test_user_first_seen_on_ignores_joined_memberful_at(db_connection):
+def test_user_first_seen_on_ignores_subscribed_at(db_connection):
     user = create_user(1,
-                       joined_discord_at=datetime(2021, 4, 1),
-                       joined_memberful_at=datetime(2021, 3, 1))
+                       joined_at=datetime(2021, 4, 1),
+                       subscribed_at=datetime(2021, 3, 1))
 
     assert user.first_seen_on() == date(2021, 4, 1)
 
 
 def test_user_first_seen_on_from_pins(db_connection):
     user1 = create_user(1)
-    user2 = create_user(2, joined_discord_at=None, joined_memberful_at=None)
+    user2 = create_user(2, joined_at=None, subscribed_at=None)
 
     message = create_message(1, user1, created_at=datetime(2021, 12, 19))
     ClubPinReaction.create(user=user2, message=message)
@@ -204,7 +204,7 @@ def test_user_first_seen_on_from_pins(db_connection):
     (date(2021, 4, 20), False),
 ])
 def test_user_is_new(db_connection, today, expected):
-    user = create_user(1, joined_discord_at=datetime(2021, 4, 1))
+    user = create_user(1, joined_at=datetime(2021, 4, 1))
 
     assert user.is_new(today=today) is expected
 
@@ -221,14 +221,14 @@ def test_user_is_new(db_connection, today, expected):
     (date(2023, 5, 1), True),
 ])
 def test_user_is_year_old(db_connection, today, expected):
-    user = create_user(1, joined_discord_at=datetime(2021, 2, 1))
+    user = create_user(1, joined_at=datetime(2021, 2, 1))
 
     assert user.is_year_old(today=today) is expected
 
 
-def test_user_is_year_old_uses_joined_memberful_at(db_connection):
-    user = create_user(1, joined_discord_at=None,
-                          joined_memberful_at=datetime(2021, 2, 1))
+def test_user_is_year_old_uses_subscribed_at(db_connection):
+    user = create_user(1, joined_at=None,
+                          subscribed_at=datetime(2021, 2, 1))
 
     assert user.is_year_old(today=date(2022, 2, 1)) is True
 

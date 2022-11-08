@@ -96,11 +96,11 @@ def main(company_slug, all, invoice):
                     }
                 }
             '''
-            metadata = members_mapping[subscription.memberful_id]
+            metadata = members_mapping[subscription.account_id]
             logger.debug(f"Previous metadata: {metadata!r}")
             metadata.setdefault(f'{company.slug}InvoicedOn', date.today().isoformat())
             logger.debug(f"Future metadata: {metadata!r}")
-            memberful.mutate(mutation, dict(id=subscription.memberful_id,
+            memberful.mutate(mutation, dict(id=subscription.account_id,
                                             metadata=serialize_metadata(metadata)))
 
 

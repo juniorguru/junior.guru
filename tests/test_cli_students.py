@@ -31,7 +31,7 @@ def test_subscription_to_row():
                       starts_on=date.today())
     subscription = CompanyStudentSubscription(id='123',
                                               company=company,
-                                              memberful_id='12345',
+                                              account_id='12345',
                                               name='Honza',
                                               email='honza@example.com',
                                               started_on=date.today(),

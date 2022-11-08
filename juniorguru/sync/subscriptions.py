@@ -152,7 +152,7 @@ def main():
                 invoiced_on = subscription['member']['metadata'].get(f'{company.slug}InvoicedOn')
                 invoiced_on = date.fromisoformat(invoiced_on) if invoiced_on else None
                 CompanyStudentSubscription.create(company=company,
-                                                    memberful_id=subscription['member']['id'],
+                                                    account_id=subscription['member']['id'],
                                                     name=name,
                                                     email=subscription['member']['email'],
                                                     started_on=started_on,
@@ -161,10 +161,10 @@ def main():
         if user:
             logger.debug(f'Updating member #{user.id} with Memberful data')
             if subscription['active']:
-                user.memberful_subscription_id = str(subscription['id'])
+                user.subscription_id = str(subscription['id'])
                 user.expires_at = arrow.get(subscription['expiresAt']).naive
                 user.coupon = coupon_parts.get('coupon')
-            user.update_joined_memberful_at(arrow.get(subscription['createdAt']).naive)
+            user.update_subscribed_at(arrow.get(subscription['createdAt']).naive)
             user.save()
 
         for subscribed_period in get_subscribed_periods(subscription):
@@ -175,7 +175,7 @@ def main():
                 category = coupon_names_categories_mapping.get(coupon_name, ClubSubscribedPeriod.INDIVIDUALS_CATEGORY)
             else:
                 category = ClubSubscribedPeriod.INDIVIDUALS_CATEGORY
-            ClubSubscribedPeriod.create(memberful_id=subscription['member']['id'],
+            ClubSubscribedPeriod.create(account_id=subscription['member']['id'],
                                         start_on=subscribed_period['start_on'],
                                         end_on=subscribed_period['end_on'],
                                         has_feminine_name=has_feminine_name(name),

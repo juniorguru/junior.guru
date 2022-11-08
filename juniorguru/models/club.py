@@ -16,9 +16,9 @@ from juniorguru.models.base import BaseModel, JSONField
 
 class ClubUser(BaseModel):
     id = IntegerField(primary_key=True)
-    memberful_subscription_id = CharField(null=True)
-    joined_discord_at = DateTimeField(null=True)
-    joined_memberful_at = DateTimeField(null=True)
+    subscription_id = CharField(null=True)
+    joined_at = DateTimeField(null=True)
+    subscribed_at = DateTimeField(null=True)
     expires_at = DateTimeField(null=True)
     is_bot = BooleanField(default=False)
     is_member = BooleanField(default=True)
@@ -32,12 +32,12 @@ class ClubUser(BaseModel):
     onboarding_channel_id = IntegerField(null=True, unique=True)
 
     @property
-    def joined_discord_on(self):
-        return self.joined_discord_at.date() if self.joined_discord_at else None
+    def joined_on(self):
+        return self.joined_at.date() if self.joined_at else None
 
     @property
-    def joined_memberful_on(self):
-        return self.joined_memberful_at.date() if self.joined_memberful_at else None
+    def subscribed_on(self):
+        return self.subscribed_at.date() if self.subscribed_at else None
 
     @property
     def intro(self):
@@ -51,8 +51,8 @@ class ClubUser(BaseModel):
         intro = self.intro
         return intro.id if intro else None
 
-    def update_joined_memberful_at(self, joined_memberful_at):
-        self.joined_memberful_at = non_empty_min([self.joined_memberful_at, joined_memberful_at])
+    def update_subscribed_at(self, subscribed_at):
+        self.subscribed_at = non_empty_min([self.subscribed_at, subscribed_at])
 
     def messages_count(self):
         return self.list_messages.count()
@@ -80,7 +80,7 @@ class ClubUser(BaseModel):
                 .order_by(ClubMessage.created_at) \
                 .first()
             first_message = first_pin.message if first_pin else None
-        return first_message.created_at.date() if first_message else self.joined_discord_on
+        return first_message.created_at.date() if first_message else self.joined_on
 
     def list_recent_messages(self, today=None):
         recent_period_start_at = (today or date.today()) - timedelta(days=RECENT_PERIOD_DAYS)
@@ -90,7 +90,7 @@ class ClubUser(BaseModel):
         return (self.first_seen_on() + timedelta(days=IS_NEW_PERIOD_DAYS)) >= (today or date.today())
 
     def is_year_old(self, today=None):
-        joined_on = non_empty_min([self.joined_discord_on, self.joined_memberful_on, self.first_seen_on()])
+        joined_on = non_empty_min([self.joined_on, self.subscribed_on, self.first_seen_on()])
         return joined_on.replace(year=joined_on.year + 1) <= (today or date.today())
 
     def is_founder(self):
@@ -242,7 +242,7 @@ class ClubSubscribedPeriod(BaseModel):
     COMPANY_CATEGORY = 'company'
     STUDENT_CATEGORY = 'students'
 
-    memberful_id = CharField()
+    account_id = CharField()
     start_on = DateField()
     end_on = DateField()
     category = CharField(null=True)
@@ -252,7 +252,7 @@ class ClubSubscribedPeriod(BaseModel):
     def listing(cls, date):
         return cls.select(cls, fn.max(cls.start_on)) \
             .where(cls.start_on <= date, cls.end_on >= date) \
-            .group_by(cls.memberful_id) \
+            .group_by(cls.account_id) \
             .order_by(cls.start_on)
 
     @classmethod
@@ -289,7 +289,7 @@ class ClubSubscribedPeriod(BaseModel):
     def signups(cls, date):
         from_date, to_date = month_range(date)
         return cls.select(cls, fn.min(cls.start_on)) \
-            .group_by(cls.memberful_id) \
+            .group_by(cls.account_id) \
             .having(cls.start_on >= from_date, cls.start_on <= to_date) \
             .order_by(cls.start_on)
 
@@ -309,7 +309,7 @@ class ClubSubscribedPeriod(BaseModel):
     def quits(cls, date):
         from_date, to_date = month_range(date)
         return cls.select(cls, fn.max(cls.end_on)) \
-            .group_by(cls.memberful_id) \
+            .group_by(cls.account_id) \
             .having(cls.end_on >= from_date, cls.end_on <= to_date) \
             .order_by(cls.end_on)
 
@@ -340,9 +340,9 @@ class ClubSubscribedPeriod(BaseModel):
     @classmethod
     def individuals_duration_avg(cls, date):
         from_date, to_date = month_range(date)
-        results = cls.select(cls.memberful_id, fn.min(cls.start_on), fn.max(cls.end_on)) \
+        results = cls.select(cls.account_id, fn.min(cls.start_on), fn.max(cls.end_on)) \
             .where(cls.category == cls.INDIVIDUALS_CATEGORY) \
-            .group_by(cls.memberful_id) \
+            .group_by(cls.account_id) \
             .having(fn.min(cls.start_on) <= from_date)
         if not results:
             return 0
@@ -350,7 +350,7 @@ class ClubSubscribedPeriod(BaseModel):
         return sum(durations) / len(durations)
 
     def __str__(self):
-        return f'#{self.memberful_id} {self.start_on}…{self.end_on} {self.category}'
+        return f'#{self.account_id} {self.start_on}…{self.end_on} {self.category}'
 
 
 class ClubDocumentedRole(BaseModel):

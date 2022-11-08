@@ -92,11 +92,11 @@ class Company(BaseModel):
 
 class CompanyStudentSubscription(BaseModel):
     company = ForeignKeyField(Company, backref='list_student_subscriptions')
-    memberful_id = CharField()
+    account_id = CharField()
     name = CharField()
     email = CharField()
     started_on = DateField()
     invoiced_on = DateField(null=True)
 
     def __str__(self):
-        return f'{self.company.slug}, #{self.memberful_id}, {self.started_on}, {self.invoiced_on}'
+        return f'{self.company.slug}, #{self.account_id}, {self.started_on}, {self.invoiced_on}'
