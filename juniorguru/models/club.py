@@ -7,7 +7,7 @@ from peewee import (BooleanField, CharField, DateField, DateTimeField, ForeignKe
                     IntegerField, TextField, fn)
 
 from juniorguru.lib.charts import month_range
-from juniorguru.lib.club import (CLUB_LAUNCH_ON, INTRO_CHANNEL, IS_NEW_PERIOD_DAYS,
+from juniorguru.lib.club import (INTRO_CHANNEL, IS_NEW_PERIOD_DAYS,
                                  JUNIORGURU_BOT, RECENT_PERIOD_DAYS,
                                  TOP_MEMBERS_PERCENT, UPVOTES_EXCLUDE_CHANNELS,
                                  parse_coupon)
@@ -32,11 +32,12 @@ class ClubUser(BaseModel):
     onboarding_channel_id = IntegerField(null=True, unique=True)
 
     @property
-    def joined_at(self):
-        values = list(filter(None, [self.joined_discord_at, self.joined_memberful_at]))
-        if values:
-            return min(values)
-        return None
+    def joined_discord_on(self):
+        return self.joined_discord_at.date() if self.joined_discord_at else None
+
+    @property
+    def joined_memberful_on(self):
+        return self.joined_memberful_at.date() if self.joined_memberful_at else None
 
     @property
     def intro(self):
@@ -49,6 +50,9 @@ class ClubUser(BaseModel):
     def intro_thread_id(self):
         intro = self.intro
         return intro.id if intro else None
+
+    def update_joined_memberful_at(self, joined_memberful_at):
+        self.joined_memberful_at = non_empty_min([self.joined_memberful_at, joined_memberful_at])
 
     def messages_count(self):
         return self.list_messages.count()
@@ -76,7 +80,7 @@ class ClubUser(BaseModel):
                 .order_by(ClubMessage.created_at) \
                 .first()
             first_message = first_pin.message if first_pin else None
-        return first_message.created_at.date() if first_message else self.joined_at.date()
+        return first_message.created_at.date() if first_message else self.joined_discord_on
 
     def list_recent_messages(self, today=None):
         recent_period_start_at = (today or date.today()) - timedelta(days=RECENT_PERIOD_DAYS)
@@ -86,16 +90,11 @@ class ClubUser(BaseModel):
         return (self.first_seen_on() + timedelta(days=IS_NEW_PERIOD_DAYS)) >= (today or date.today())
 
     def is_year_old(self, today=None):
-        first_seen_on = min(self.joined_at.date(), self.first_seen_on())
-        return first_seen_on.replace(year=first_seen_on.year + 1) <= (today or date.today())
+        joined_on = non_empty_min([self.joined_discord_on, self.joined_memberful_on, self.first_seen_on()])
+        return joined_on.replace(year=joined_on.year + 1) <= (today or date.today())
 
     def is_founder(self):
-        if self.coupon and parse_coupon(self.coupon)['name'] == 'FOUNDERS':
-            return True
-        joined_date = min(self.joined_at.date(), self.first_seen_on())
-        if joined_date < CLUB_LAUNCH_ON:
-            return True
-        return False
+        return bool(self.coupon and parse_coupon(self.coupon)['name'] == 'FOUNDERS')
 
     @classmethod
     def members_count(cls):
@@ -375,3 +374,10 @@ class ClubDocumentedRole(BaseModel):
     def listing(cls):
         return cls.select() \
             .order_by(cls.position)
+
+
+def non_empty_min(values):
+    values = list(filter(None, values))
+    if values:
+        return min(values)
+    return None

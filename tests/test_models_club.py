@@ -152,21 +152,6 @@ def test_user_list_recent_messages(db_connection):
     assert list(user.list_recent_messages(today=date(2021, 5, 1))) == [message3, message4]
 
 
-@pytest.mark.parametrize('joined_discord_at, joined_memberful_at, expected', [
-    (None, None, None),
-    (datetime(2022, 11, 1), None, datetime(2022, 11, 1)),
-    (None, datetime(2022, 11, 1), datetime(2022, 11, 1)),
-    (datetime(2022, 11, 8), datetime(2022, 11, 1), datetime(2022, 11, 1)),
-    (datetime(2022, 11, 1), datetime(2022, 11, 8), datetime(2022, 11, 1)),
-])
-def test_user_joined_at(db_connection, joined_discord_at, joined_memberful_at, expected):
-    user = create_user(1,
-                       joined_discord_at=joined_discord_at,
-                       joined_memberful_at=joined_memberful_at)
-
-    assert user.joined_at == expected
-
-
 def test_user_first_seen_on_from_messages(db_connection):
     user = create_user(1, joined_discord_at=datetime(2021, 4, 1))
 
@@ -193,8 +178,10 @@ def test_user_first_seen_on_from_joined_discord_at(db_connection):
     assert user.first_seen_on() == date(2021, 4, 1)
 
 
-def test_user_first_seen_on_from_joined_memberful_at(db_connection):
-    user = create_user(1, joined_memberful_at=datetime(2021, 4, 1))
+def test_user_first_seen_on_ignores_joined_memberful_at(db_connection):
+    user = create_user(1,
+                       joined_discord_at=datetime(2021, 4, 1),
+                       joined_memberful_at=datetime(2021, 3, 1))
 
     assert user.first_seen_on() == date(2021, 4, 1)
 
@@ -239,16 +226,19 @@ def test_user_is_year_old(db_connection, today, expected):
     assert user.is_year_old(today=today) is expected
 
 
-@pytest.mark.parametrize('joined_at, coupon, expected', [
-    (datetime(2020, 12, 15), None, True),
-    (datetime(2021, 1, 15), None, True),
-    (datetime(2021, 2, 1), None, False),
-    (datetime(2021, 5, 1), None, False),
-    (datetime(2021, 1, 15), 'FOUNDERS12345678', True),
-    (datetime(2021, 5, 1), 'FOUNDERS12345678', True),
+def test_user_is_year_old_uses_joined_memberful_at(db_connection):
+    user = create_user(1, joined_discord_at=None,
+                          joined_memberful_at=datetime(2021, 2, 1))
+
+    assert user.is_year_old(today=date(2022, 2, 1)) is True
+
+
+@pytest.mark.parametrize('coupon, expected', [
+    (None, False),
+    ('FOUNDERS12345678', True),
 ])
-def test_user_is_founder(db_connection, joined_at, coupon, expected):
-    user = create_user(1, joined_discord_at=joined_at, coupon=coupon)
+def test_user_is_founder(db_connection, coupon, expected):
+    user = create_user(1, coupon=coupon)
 
     assert user.is_founder() is expected
 

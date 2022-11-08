@@ -164,8 +164,7 @@ def main():
                 user.memberful_subscription_id = str(subscription['id'])
                 user.expires_at = arrow.get(subscription['expiresAt']).naive
                 user.coupon = coupon_parts.get('coupon')
-            joined_memberful_at = arrow.get(subscription['createdAt']).naive
-            user.joined_memberful_at = min([joined_memberful_at, user.joined_memberful_at]) if user.joined_memberful_at else joined_memberful_at
+            user.update_joined_memberful_at(arrow.get(subscription['createdAt']).naive)
             user.save()
 
         for subscribed_period in get_subscribed_periods(subscription):

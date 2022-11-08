@@ -199,7 +199,6 @@ def inject_defaults():
     now = arrow.utcnow()
     return dict(nav_tabs=NAV_TABS,
                 now=now,
-                club_launch_at=arrow.get(2021, 2, 1),
                 thumbnail=thumbnail())
 
 
