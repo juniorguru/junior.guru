@@ -170,7 +170,7 @@ def merge_databases(path_from, path_to):
                 row_to = table_to.get(pks)
             except NotFoundError:
                 logger_t.debug(f"Inserting {pks!r}")
-                table_to.insert(row_from, pk=pks)
+                table_to.insert(row_from, pk=table_from.pks)
             else:
                 try:
                     updates = get_updates(row_from, row_to)
