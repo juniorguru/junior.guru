@@ -32,6 +32,8 @@ def test_make_schema_idempotent_raises():
     (dict(a=1, b=2, c=3), dict(a=1, b=2, c=3), dict()),
     (dict(a=None, b=None, c=3), dict(a=None, b=None, c=3), dict()),
     (dict(a=1, b=2, c=3), dict(a=1, b=None, c=3), dict(b=2)),
+    (dict(a=None, b=None, c=3), dict(a=1, b=2, c=3), dict()),
+    (dict(a=None, b=42, c=3, d=None), dict(a=1, b=None, c=3, d=None), dict(b=42)),
 ])
 def test_get_row_updates(row_from, row_to, expected):
     assert get_row_updates(row_from, row_to) == expected
@@ -39,7 +41,6 @@ def test_get_row_updates(row_from, row_to, expected):
 
 @pytest.mark.parametrize('row_from, row_to', [
     (dict(a=1, b=2, c=3), dict(a=1, b=42, c=3)),
-    (dict(a=None, b=None, c=3), dict(a=1, b=2, c=3)),
 ])
 def test_get_row_updates_raises_conflict(row_from, row_to):
     with pytest.raises(RuntimeError):

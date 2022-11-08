@@ -189,11 +189,12 @@ def get_row_updates(row_from, row_to):
         raise ValueError(f"Rows don't match! {list(row_from.keys())!r} ≠ {list(row_to.keys())!r}")
     updates = {}
     for column_name, value_from in row_from.items():
-        value_to = row_to[column_name]
-        if value_from is not None and value_to is None:
-            updates[column_name] = value_from
-        elif value_from != value_to:
-            raise RuntimeError(f"Conflict in column {column_name}! Values would be overwritten")
+        if value_from is not None:
+            value_to = row_to[column_name]
+            if value_to is None:
+                updates[column_name] = value_from
+            elif value_from != value_to:
+                raise RuntimeError(f"Conflict in column {column_name}! Values would be overwritten")
     return updates
 
 
