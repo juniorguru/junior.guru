@@ -124,6 +124,8 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
     if source_path.exists():
         if source_path.suffix == '.db':
             merge_databases(persist_path, source_path)
+        else:
+            raise RuntimeError(f"Conflict loading {persist_path}, file already exists: {source_path}")
         if move:
             persist_path.unlink()
     else:
