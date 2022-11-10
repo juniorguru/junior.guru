@@ -32,7 +32,7 @@ Týden před přednáškou ji začne Honza propagovat na sociálních sítích a
 
 Na Discordu se s Honzou sejdeš **půl hodiny předem** a vyzkoušíte spolu, zda správně funguje technika. Následně Honza rozehřívá místnost a čeká, až se připojí lidé. Zhruba pět minut po začátku zapne nahrávání, uvede tě a dá ti slovo.
 
-Lidé mohou pokládat dotazy do chatu v kanálu #klubovna-přednášky, což Honza sleduje a na konci přednášky je čte, případně moderuje diskuzi. Pokud máš k přednášce nějaké odkazy, je dobré je dát do chatu v #klubovna-přednášky. Po přednášce Honza hodí nahrávku na YouTube a odkaz dá do kanálu #oznámení.
+Lidé mohou pokládat dotazy do chatu v kanálu #přednášky, což Honza sleduje a na konci přednášky je čte, případně moderuje diskuzi. Pokud máš k přednášce nějaké odkazy, je dobré je dát do chatu v #přednášky. Po přednášce Honza hodí nahrávku na YouTube a odkaz dá do kanálu #oznámení.
 
 ### Nainstaluj si aplikaci
 
@@ -48,7 +48,7 @@ Ve výchozím nastavení totiž Discord dělá zvuk při každé aktivitě v hla
 
 Honza každou akci v klubu nahrává a publikuje na YouTube kanálu [Junior Guru](https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA). Záznamy jsou pouze pro členy, na neveřejných odkazech. Výjimečně se dá domluvit, že bude video na YouTube veřejně.
 
-Honza nepořizuje záznam, ale dělá neveřejný živý přenos přímo na YouTube. Discord má totiž technické omezení, které limituje videohovor na 25 lidí, pokud si kdokoliv z účastníků zapne kameru. Pokud by se chtělo na akci připojit více jak 25 lidí, pošle Honza do chatu v kanálu #klubovna-přednášky odkaz na tento živý přenos.
+Honza nepořizuje záznam, ale dělá neveřejný živý přenos přímo na YouTube. Discord má totiž technické omezení, které limituje videohovor na 25 lidí, pokud si kdokoliv z účastníků zapne kameru. Pokud by se chtělo na akci připojit více jak 25 lidí, pošle Honza do chatu v kanálu #přednášky odkaz na tento živý přenos.
 
 ## {{ 'info-circle'|icon }} Další info
 
@@ -100,7 +100,7 @@ Jsi **jediná hvězda večera**. Je na tobě, jestli ti dává smysl mluvit 20, 
 
 ### Co je Q&A, dříve AMA?
 
-Q&A znamená _questions and answers_. Pozveme si odborníka na určité téma a lidé z klubu mohou pokládat libovolné dotazy. Většinou je pokládají v předstihu a písemně do chatu v kanálu #klubovna-přednášky, takže se na ně lze i připravit. Mohou ale přibývat i v průběhu.
+Q&A znamená _questions and answers_. Pozveme si odborníka na určité téma a lidé z klubu mohou pokládat libovolné dotazy. Většinou je pokládají v předstihu a písemně do chatu v kanálu #přednášky, takže se na ně lze i připravit. Mohou ale přibývat i v průběhu.
 
 Když akce začne, Honza pomáhá číst dotazy a ty odpovídáš, jak nejlépe umíš. Je úplně v pohodě říct, že nevíš. To je celé, nevyžaduje to žádnou speciální přípravu.
 
