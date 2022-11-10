@@ -18,11 +18,6 @@
   description: |
     Kdo moderuje [podcast](https://junior.guru/podcast/). Takže jen Pavlína.
 
-- id: 898289895624302653
-  slug: organizer
-  description: |
-    Kdo chce něco v klubu organizovat. Díky roli může vytvářet Discord akce a psát do <#789046675247333397>. Pokud chceš pro ostatní uspořádat v klubovně sraz nebo procvičování angličtiny, ozvi se v <#806215364379148348>.
-
 - id: 974297387935866910
   slug: mentor
   description: |
