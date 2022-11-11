@@ -75,7 +75,7 @@ def get_reaction(reactions, emoji):
 async def create_message_data(client, member, content):
     return dict(content=content,
                 embed=discord.Embed(color=discord.Color.from_rgb(120, 179, 84),
-                                    description='Máš přečteno a chceš dostat tip pro další den? Zaklikni zaškrtávátko pod touto zprávou'),
+                                    description='Přečteno? Chceš další? Zaklikni zaškrtávátko pod touto zprávou a brzy ti pošlu další tip'),
                 allowed_mentions=discord.AllowedMentions(everyone=True,
                                                          users=[await client.get_or_fetch_user(member_id)
                                                                 for member_id in [member.id] + ALLOWED_MENTIONS],
