@@ -119,7 +119,7 @@ async def welcome(channel, message, moderators):
                        'Na https://junior.guru/handbook/ najdeš příručku s radami pro všechny, '
                        'kdo se chtějí naučit programovat a najít si práci v oboru. Hodně věcí je už zodpovězeno v ní, tak si ji nezapomeň projít 📖\n\n'
                        'Příručka začíná popisem **osvědčené cesty juniora**, která má **10 fází** 🥚 🐣 🐥 '
-                       'Jaké z těch fází se tě zrovna teď týkají? Použij reakce s číslama ⬇️')
+                       'Jaké z těch fází se tě zrovna teď týkají? Zaklikni čísla pod touto zprávou ⬇️')
             logger_m.debug(f"Welcome message content: {content!r}")
             try:
                 welcome_discord_message = list(filter(is_welcome_message, discord_messages))[0]
