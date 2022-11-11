@@ -88,9 +88,9 @@ async def execute_channels_operations(client, operations):
         ])
 
 
-def parse_member_id(channel_topic):
-    match = CHANNEL_TOPIC_RE.search(channel_topic)
+def parse_member_id(channel_topic):  # once I write tests, test for None input, too
     try:
+        match = CHANNEL_TOPIC_RE.search(channel_topic)
         return int(match.groupdict()['id'])
     except (AttributeError, KeyError, TypeError):
         raise ValueError("Given channel topic doesn't contain reference to a member ID")
