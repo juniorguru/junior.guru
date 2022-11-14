@@ -56,8 +56,12 @@ sqlite-utils = "*"
 [tool.pytest.ini_options]
 python_files = "test_*.py *_test.py test.py"
 testpaths = "."
-addopts = "--ff --ignore=node_modules --ignore=__jobs_legacy__"
-filterwarnings = ["ignore:the imp module is deprecated:DeprecationWarning"]
+norecursedirs = "node_modules __jobs_legacy__"
+addopts = "--ff"
+filterwarnings = [
+    "ignore:the imp module is deprecated:DeprecationWarning",
+    "ignore:_unicode_safe_getattr is deprecated:DeprecationWarning",
+]
 
 [tool.isort]
 profile = "black"
