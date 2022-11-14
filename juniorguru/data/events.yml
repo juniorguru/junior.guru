@@ -151,10 +151,12 @@
   date: "2022-11-15"
   description: |
     Jak funguje mentoring v klubu a co přesně zahrnuje pravidelná nabídka, která vybízí ke kontaktování mentorů z firem? Uvítáme mentory z Mews, ať je máte v paměti jako reálné tváře a ne pouze jména na seznamu.
+
+    Technický tým Mews má v současné době okolo 170 lidí, kteří si své znalosti a zkušenosti nenechávají jen pro sebe, ale i díky junior.guru je dostávají k více lidem. Nejzásadnějším kanálem pro tuto činnost je mentoring, který mohou využít všichni, kdo se chtějí něco dozvědět, něco si ověřit nebo si jen pokecat o technologiích.
   avatar_path: icon.svg
   bio_name: Honza Javorek a mentoři z Mews
   bio: |
-      (Bude upřesněno)
+      Mews je softwarová firma, která buduje moderní systém pro správu ubytovacích zařízení. Zjednodušuje a automatizuje (často nudné) úkony což umožňuje hoteliérům věnovat se naplno svým klientům.
   bio_links:
     - https://www.mews.com/
     - https://www.mews.com/en/careers
