@@ -10,10 +10,13 @@
 
 - id: "0010"
   title: Klára Šťouračová (Productboard) o úspěšném startu kariéry v IT
+  avatar_path: avatars-participants/klara-stouracova.jpg
   publish_on: "2022-11-15"
   description: |
-    V desátém díle si můžeš poslechnout Kláru Šťouračovou, která se pohybuje na různých HR a People pozicích v technologických firmách už 7 let. Kromě toho spoluzaložila úspěšné kurzy programovaní pro děti makeITtoday. Dozvíte se, jakých si za svoji kariéru všimla trendů v IT odvětví, jak si správně nastartovat kariéru, proč je podle ní důležité vést děti k počítačové gramotnosti a mnohem víc.
-  
+    V desátém díle si můžeš poslechnout Kláru Šťouračovou, která se už 7 let pohybuje na různých HR a People pozicích v technologických firmách. Kromě toho spoluzaložila makeITtoday, úspěšné kurzy programovaní pro děti. Jakých si za svoji kariéru všimla trendů v IT odvětví? Jak podle ní správně nastartovat kariéru? A proč si myslí, že je důležité děti vést k počítačové gramotnosti?
+  media_size: 30451178
+  media_duration_s: 2175
+
 - id: "0009"
   title: Markéta Lourenco (Mews) o cestě od lingvistiky k datové analýze
   avatar_path: avatars-participants/marketa-lourenco.jpg
