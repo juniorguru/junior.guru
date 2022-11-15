@@ -1,4 +1,5 @@
 import asyncio
+import itertools
 from datetime import timedelta
 
 import click
@@ -43,7 +44,10 @@ async def discord_task(client):
     db.drop_tables([ClubMessage, ClubUser, ClubPinReaction])
     db.create_tables([ClubMessage, ClubUser, ClubPinReaction])
 
-    channels = (channel for channel in client.juniorguru_guild.text_channels
+    channels = (channel for channel
+                in itertools.chain(client.juniorguru_guild.text_channels,
+                                   client.juniorguru_guild.voice_channels,
+                                   client.juniorguru_guild.forum_channels)
                 if channel.permissions_for(client.juniorguru_guild.me).read_messages)
     authors = await process_channels(channels)
 
