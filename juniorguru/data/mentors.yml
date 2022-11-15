@@ -49,36 +49,42 @@
 - id: 946039002220343386
   name: Artem B.
   company: Pure Storage
+  bio_url: https://youtu.be/DfP7dZ5AMJw?t=1691
   topics: Java, JavaScript, TypeScript, Docker, příprava na pohovor
   book_url: https://calendly.com/abosniak/
 
 - id: 951873973904351314
   name: Daniel F.
   company: Pure Storage
+  bio_url: https://youtu.be/DfP7dZ5AMJw?t=1580
   topics: koučování na profesní růst, pohovor nanečisto
   book_url: https://calendly.com/daniel-fiser/pure-storage-intro
 
 - id: 970720852314308658
   name: Martin T.
   company: Pure Storage
+  bio_url: https://youtu.be/DfP7dZ5AMJw?t=1747
   topics: Python, algoritmy, matematika
   book_url: https://calendly.com/mtopfer/junior-guru
 
 - id: 231138284754042881
   name: Ondra H.
   company: Pure Storage
+  bio_url: https://youtu.be/DfP7dZ5AMJw?t=1508
   topics: C, C++, C#, Linux
   book_url: https://calendly.com/ohlavaty/konzultace
 
 - id: 446672244983463939
   name: Jirka Ch.
   company: Pure Storage
+  bio_url: https://youtu.be/DfP7dZ5AMJw?t=1082
   topics: Git, vývojový cyklus softwaru, agilní metodiky, profesní růst manažerským směrem, příprava na pohovor
   book_url: https://calendly.com/jchadima-purestorage/junior-guru
 
 - id: 961655677057630238
   name: Fanda B.
   company: Pure Storage
+  bio_url: https://youtu.be/DfP7dZ5AMJw?t=1799
   topics: Python, algoritmy, datové struktury
   book_url: https://calendar.app.google/rVxyYYYoxjuM37t87
 

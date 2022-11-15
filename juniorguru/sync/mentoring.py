@@ -23,6 +23,7 @@ SCHEMA = Seq(
         'id': Int(),
         'name': Str(),
         Optional('company'): Str(),
+        Optional('bio_url'): Url(),
         'topics': Str(),
         Optional('english_only', default=False): Bool(),
         Optional('book_url'): Url(),
@@ -143,13 +144,19 @@ def get_mentor_params(mentor, thumbnail_url=None):
         description += "🇬🇧 Pouze anglicky!\n"
     description += f"📖 {mentor.topics}\n"
 
+    buttons = []
+    if mentor.bio_url:
+        buttons.append(ui.Button(emoji='👋',
+                                 label='Představení',
+                                 url=mentor.bio_url,
+                                 style=ButtonStyle.secondary))
     if mentor.book_url:
-        view = ui.View(ui.Button(emoji='🗓',
-                                 label='Rezervuj přes kalendář',
+        buttons.append(ui.Button(emoji='🗓',
+                                 label='Rezervuj',
                                  url=mentor.book_url,
                                  style=ButtonStyle.secondary))
     else:
-        view = ui.View(ui.Button(emoji='<:discord:935790609023787018>',
+        buttons.append(ui.Button(emoji='<:discord:935790609023787018>',
                                  label='(Piš přímo přes Discord)',
                                  style=ButtonStyle.secondary,
                                  disabled=True))
@@ -158,4 +165,4 @@ def get_mentor_params(mentor, thumbnail_url=None):
     if thumbnail_url:
         discord_embed.set_thumbnail(url=thumbnail_url)
 
-    return dict(content=content, embed=discord_embed, view=view)
+    return dict(content=content, embed=discord_embed, view=ui.View(*buttons))

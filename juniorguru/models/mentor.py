@@ -8,6 +8,7 @@ class Mentor(BaseModel):
     id = IntegerField(primary_key=True)
     name = CharField()
     company = CharField(null=True)
+    bio_url = CharField(null=True)
     topics = CharField()
     book_url = CharField(null=True)
     message_url = CharField(unique=True, null=True)
