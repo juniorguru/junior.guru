@@ -193,11 +193,11 @@ class ClubMessage(BaseModel):
             .limit(limit)
 
     @classmethod
-    def last_message(cls, channel_id):
-        return cls.select() \
-            .where(cls.channel_id == channel_id) \
-            .order_by(cls.created_at.desc()) \
-            .first()
+    def last_message(cls, channel_id=None):
+        query = cls.select()
+        if channel_id is not None:
+            query = query.where(cls.channel_id == channel_id)
+        return query.order_by(cls.created_at.desc()).first()
 
     @classmethod
     def last_bot_message(cls, channel_id, startswith_emoji=None, contains_text=None):

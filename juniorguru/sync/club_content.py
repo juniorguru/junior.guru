@@ -1,7 +1,9 @@
+import os
 import asyncio
 import itertools
-from datetime import timedelta
+from datetime import timedelta, datetime
 
+from peewee import OperationalError
 import click
 import arrow
 
@@ -29,14 +31,42 @@ CHANNELS_HISTORY_SINCE = {
 
 
 @cli.sync_command()
-@click.option('--confirm/--no-confirm', envvar='CLUB_CONTENT_CONFIRM', default=False)
+@click.option('--confirm/--no-confirm', default=lambda: os.environ.get('CLUB_CONTENT_CONFIRM', ''), type=bool)
 def main(confirm):
-    if not confirm or click.confirm('Continue fetching club content?', default=True, show_default=True, prompt_suffix=''):
+    total_messages_count = get_total_messages_count()
+    logger.info(f"Found {total_messages_count} messages")
+    if total_messages_count:
+        logger.info(f"Last message is from {get_last_message().created_at.isoformat()}")
+        if not confirm or confirm_fetch():
+            run_discord_task('juniorguru.sync.club_content.discord_task')
+    else:
         run_discord_task('juniorguru.sync.club_content.discord_task')
+
     with db.connection_context():
         logger.info(f'Finished with {ClubMessage.count()} messages, '
                     f'{ClubUser.members_count()} users, '
                     f'{ClubPinReaction.count()} pins')
+
+
+@db.connection_context()
+def get_total_messages_count():
+    try:
+        return ClubMessage.count()
+    except OperationalError:
+        return 0
+
+
+@db.connection_context()
+def get_last_message():
+    return ClubMessage.last_message()
+
+
+def confirm_fetch():
+    print('\a', end='', flush=True)
+    return click.confirm('Fetch the latest club content?',
+                         default=True,
+                         show_default=True,
+                         prompt_suffix='')
 
 
 @db.connection_context()
