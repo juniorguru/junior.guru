@@ -554,7 +554,7 @@ test = ["faulthandler", "objgraph", "psutil"]
 
 [[package]]
 name = "gspread"
-version = "5.6.2"
+version = "5.7.1"
 description = "Google Spreadsheets Python API"
 category = "main"
 optional = false
@@ -2224,8 +2224,8 @@ greenlet = [
     {file = "greenlet-2.0.1.tar.gz", hash = "sha256:42e602564460da0e8ee67cb6d7236363ee5e131aa15943b6670e44e5c2ed0f67"},
 ]
 gspread = [
-    {file = "gspread-5.6.2-py3-none-any.whl", hash = "sha256:41f7a416425f1ec5a1b677f49b8fbf599102766c27ed7be6601a58c9a1550ebc"},
-    {file = "gspread-5.6.2.tar.gz", hash = "sha256:d3bbff4b7aad0fc2c986458e148537a02fe7b46e7162f41f3a42392bfa2adb89"},
+    {file = "gspread-5.7.1-py3-none-any.whl", hash = "sha256:303b182f90d54222b3778d9f344cc24efa59eaf6b4b15679790bd8780cf3a454"},
+    {file = "gspread-5.7.1.tar.gz", hash = "sha256:5f39d7a218343b6514f06e2250e0c413eb4e814dde6aabf485dacb6aa31caab0"},
 ]
 html-text = [
     {file = "html_text-0.5.2-py2.py3-none-any.whl", hash = "sha256:3f1e063f05eddf3e099a88f0440219c55fdc01c44f1291fe59c66e5228d7fc56"},
