@@ -29,7 +29,7 @@ class ClubUser(BaseModel):
     tag = CharField()
     coupon = CharField(null=True, index=True)
     initial_roles = JSONField(default=lambda: [])
-    updated_roles = JSONField(default=lambda: [])
+    updated_roles = JSONField(null=True)
     onboarding_channel_id = IntegerField(null=True, unique=True)
 
     @property
