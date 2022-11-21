@@ -127,9 +127,13 @@ async def discord_task(client):
     for message in messages_trash:
         logger.debug(f'Deleting message #{message.id}: {message.content[:10]}…')
         if DISCORD_MUTATIONS_ENABLED:
-            discord_message = await discord_channel.fetch_message(message.id)
-            await discord_message.delete()
-            message.delete_instance()
+            try:
+                discord_message = await discord_channel.fetch_message(message.id)
+                await discord_message.delete()
+                message.delete_instance()
+            except:
+                logger.error(f'Could not delete message #{message.id}: {message.content[:10]}…')
+                raise
         else:
             logger.warning('Discord mutations not enabled')
 
