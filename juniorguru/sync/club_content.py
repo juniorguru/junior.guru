@@ -31,7 +31,7 @@ CHANNELS_HISTORY_SINCE = {
 
 
 @cli.sync_command()
-@click.option('--confirm/--no-confirm', default=lambda: os.environ.get('CLUB_CONTENT_CONFIRM', ''), type=bool)
+@click.option('--confirm/--no-confirm', default=lambda: bool(os.environ.get('CLUB_CONTENT_CONFIRM', '')))
 def main(confirm):
     total_messages_count = get_total_messages_count()
     logger.info(f"Found {total_messages_count} messages")
