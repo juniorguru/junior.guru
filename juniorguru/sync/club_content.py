@@ -1,7 +1,7 @@
 import os
 import asyncio
 import itertools
-from datetime import timedelta, datetime
+from datetime import timedelta
 
 from peewee import OperationalError
 import click
