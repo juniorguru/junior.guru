@@ -98,7 +98,7 @@ async def discord_task(client):
                         mention=member.mention,
                         tag=f'{member.name}#{member.discriminator}',
                         joined_at=arrow.get(member.joined_at).naive,
-                        roles=get_roles(member))
+                        initial_roles=get_roles(member))
 
 
 async def process_channels(channels):
@@ -204,4 +204,4 @@ def create_user(user):
                            mention=user.mention,
                            tag=f'{user.name}#{user.discriminator}',
                            joined_at=(arrow.get(user.joined_at).naive if hasattr(user, 'joined_at') else None),
-                           roles=get_roles(user))
+                           initial_roles=get_roles(user))
