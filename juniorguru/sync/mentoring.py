@@ -76,6 +76,7 @@ async def discord_task(client):
             if DISCORD_MUTATIONS_ENABLED:
                 if info_message:
                     logger.info("Deleting info message")
+                    messages_trash.remove(info_message)
                     info_discord_message = await discord_channel.fetch_message(info_message.id)
                     await info_discord_message.delete()
                     info_message.delete_instance()
