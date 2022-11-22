@@ -130,18 +130,19 @@
   speakers:
 
 
-- title: "(Bude upřesněno, úvod do Javy)"
+- title: "Posuďme Javu podle obalu"
   date: "2022-12-06"
   description: |
-    (Bude upřesněno)
+    Pohled na ekosystém Javy. Programovací jazyk jako takový dost možná důležitý vůbec není. Přehled pojmů, abyste se hned na začátku své cesty neztratili.
   avatar_path: avatars-participants/lubos-racansky.jpg
   bio_name: Luboš Račanský
   bio_title: Java programátor ve Wultra
   bio: |
-    (Bude upřesněno)
+    Spíš [správce kolonií než kolonizátor](https://honzajavorek.cz/blog/kolonizatori-a-spravci-kolonii/). Programuji v Javě 15 let, z toho 8 let se motám kolem software, který v různé míře zajišťuje bezpečnost. Mám latetní potřebu někoho poučovat, tu teď realizuju v [kroužku programování](https://blog.zvestov.cz/tag/krou%C5%BEek-programov%C3%A1n%C3%AD/) na místní základce. Rád sportuju a čtu, občas fotím. Snažím se dohnat mezery ve svém hudební vzdělání.
   bio_links:
     - https://www.linkedin.com/in/lubosracansky/
     - https://twitter.com/banterCZ
+    - https://witter.cz/@banterCZ
     - https://blog.zvestov.cz/
   logo_path: logos/wultra.svg
   speakers: 775619876152672268
