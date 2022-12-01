@@ -1,13 +1,13 @@
 ---
-title: Zkušenosti s Engeto
+title: Zkušenosti s ENGETO Academy
 template: main_legacy.html
 topic_name: engeto
-topic_link_text: Engeto
-description: Hledáš někoho, kdo má zkušenosti s Engeto Academy? Má smysl hlásit se na jejich kurzy? Vyplatí se Engeto Pro?
+topic_link_text: ENGETO Academy
+description: Hledáš někoho, kdo má zkušenosti s ENGETO Academy? Má smysl hlásit se na jejich kurzy? Vyplatí se ENGETO Pro?
 ---
 {% from 'macros_topic.html' import intro, mentions, members_roll with context %}
 
-{{ intro('Recenze na Engeto', page.meta.description) }}
+{{ intro('Recenze na ENGETO Academy', page.meta.description) }}
 
 {{ mentions(topic, 'Engetu') }}
 
