@@ -146,6 +146,7 @@
     - https://blog.zvestov.cz/
   logo_path: logos/wultra.svg
   speakers: 775619876152672268
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1049755762081140766
 
 
 - title: "Jak funguje mentoring a uvítání mentorů z Mews"
@@ -164,6 +165,7 @@
     - https://github.com/MewsSystems/developers
   logo_path: logos/mews.svg
   speakers: 668226181769986078, 672433063690633216
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1042158897999392819
 
 
 - title: "Technologický dluh – zabiják inovace"
