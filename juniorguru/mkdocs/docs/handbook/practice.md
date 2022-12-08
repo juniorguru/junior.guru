@@ -347,8 +347,8 @@ Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to j
   ) }}
 
   {{ link_card(
-    'Engeto',
-    'https://engeto.com'
+    'ENGETO Academy',
+    'https://engeto.cz'
   ) }}
 
   {{ link_card(

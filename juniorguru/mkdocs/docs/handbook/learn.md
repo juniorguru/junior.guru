@@ -118,8 +118,8 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 
   {{ link_card(
     'Engeto',
-    'https://engeto.com/cs/katalog/python-1-uvod-do-programovani',
-    'Kurz v češtině kombinující textové materiály a video.',
+    'https://e-learning.engeto.cz/kurz/python-uvod-do-programovani',
+    'Jediný plně interaktivní kurz v češtině.',
     badge_icon='layout-text-sidebar-reverse',
     badge_text='Online kurz',
   ) }}
