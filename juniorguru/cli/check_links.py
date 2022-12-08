@@ -25,6 +25,7 @@ EXCLUDE_URLS = [
     'make.com',  # crawling protection?
     'italki.com',  # crawling protection?
     'glassdoor.com',  # crawling protection?
+    'oracle.com',  # crawling protection?
 ]
 EXCLUDE_REASONS = [re.compile(r) for r in [
     r'^BLC_UNKNOWN$',  # crawling protection?

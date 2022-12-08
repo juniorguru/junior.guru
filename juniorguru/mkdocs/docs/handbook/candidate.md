@@ -343,7 +343,7 @@ Zajímavě korporace rozebírá [Lukáš Linhart v přednášce o své kariéře
   Lukáš Linhart, technický ředitel v [Apiary](https://byznys.ihned.cz/c1-65593630-oracle-kupuje-za-miliardy-korun-cesky-start-up-apiary-zakladatele-ve-firme-zustavaji) a poté v Oracle
 {% endcall %}
 
-Nenech se ale **příliš unést zobecněními**, které jsou v této kapitole. Rozdíly mezi konkrétními firmami (např. [Red Hat](https://www.redhat.com/en/jobs) versus [Oracle](https://www.oracle.com/corporate/careers/)), nebo i mezi konkrétními interními týmy v rámci téže korporace, mohou být větší, než výše popsané obecné rozdíly mezi korporacemi a malými firmami. Vždy si [zjisti](#informace-o-firme), jaké podmínky jsou v právě v tom týmu, do jakého se chystáš nastoupit.
+Nenech se ale **příliš unést zobecněními**, které jsou v této kapitole. Rozdíly mezi konkrétními firmami (např. [Red Hat](https://www.redhat.com/en/jobs) versus [Oracle](https://www.oracle.com/careers/)), nebo i mezi konkrétními interními týmy v rámci téže korporace, mohou být větší, než výše popsané obecné rozdíly mezi korporacemi a malými firmami. Vždy si [zjisti](#informace-o-firme), jaké podmínky jsou v právě v tom týmu, do jakého se chystáš nastoupit.
 
 {% call blockquote_avatar(
   'Rozdíly mezi jednotlivými manažery a týmy v jedné firmě mohou snadno být větší než rozdíly mezi samotnými firmami.',
