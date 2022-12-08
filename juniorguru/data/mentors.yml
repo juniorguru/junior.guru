@@ -1,22 +1,33 @@
-- id: 1042088772277387264
-  name: Jakub T.
+# - id:
+#   name: Jakub B.
+#   company: Mews
+#   topics: testování, QA, vývojářské nástroje, Robot Framework, Postman, SQL
+#   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
+
+- id: 206027275861360640
+  name: Jirka S.
   company: Mews
-  bio_url: https://youtu.be/rlzhpwkz5OA?t=1547
-  topics: bude upřesněno
+  topics: testování, QA, Selenium, Robot Framework, Cypress, C#, JavaScript
+  book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
+
+- id: 641674751240044544
+  name: Honza H.
+  company: Mews
+  topics: HTML, CSS, JavaScript, React, React Native
   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
 - id: 1042122150749949953
   name: Daria D.
   company: Mews
   bio_url: https://youtu.be/rlzhpwkz5OA?t=1931
-  topics: bude upřesněno
+  topics: JavaScript, TypeScript, React
   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
 - id: 631389409933000725
   name: Jakub S.
   company: Mews
   bio_url: https://youtu.be/rlzhpwkz5OA?t=1761
-  topics: HTML, CSS, JavaScript, Git
+  topics: HTML, CSS, JavaScript, Git, příprava na pohovor
   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
 - id: 289482229975875584
@@ -30,7 +41,7 @@
   name: Jan M.
   company: Mews
   bio_url: https://youtu.be/rlzhpwkz5OA?t=1222
-  topics: komunity, HR, příprava na pohovor
+  topics: komunity, konference, srazy, networking, HR, příprava na pohovor
   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
 - id: 689498517995126847
@@ -43,7 +54,7 @@
 - id: 854681167018459146
   name: Honza T.
   company: Mews
-  topics: IT, bezpečnost
+  topics: IT, bezpečnost, práce na dálku, digitální nomádství
   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
 - id: 868083628419199026
