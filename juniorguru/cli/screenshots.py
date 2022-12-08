@@ -20,11 +20,9 @@ from juniorguru.lib import loggers
 logger = loggers.from_path(__file__)
 
 
-PROJECT_DIR = Path(__file__).parent.parent
+PUBLIC_DIR = Path('public')
 
-PUBLIC_DIR = PROJECT_DIR / 'public'
-
-IMAGES_DIR = PROJECT_DIR / 'juniorguru' / 'web' / 'static' / 'src' / 'images'
+IMAGES_DIR = Path('juniorguru') / 'web' / 'static' / 'src' / 'images'
 
 SCREENSHOTS_DIR = IMAGES_DIR / 'screenshots'
 
@@ -64,6 +62,7 @@ HIDDEN_ELEMENTS = [
     '[class*="uk-notification"]',
     '[id*="uk-notification"]',
     '[aria-label*="cookie"]',
+    '[aria-label*="Cookie"]',
     '[aria-label*="banner"]',
     '[aria-describedby*="cookie"]',
     '[aria-modal]',
