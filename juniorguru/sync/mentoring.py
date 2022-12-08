@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from discord import ButtonStyle, Color, Embed, ui
+from discord import ButtonStyle, Color, Embed, ui, NotFound
 from strictyaml import Bool, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.lib import loggers
@@ -57,7 +57,11 @@ async def discord_task(client):
 
     logger.info('Syncing mentors')
     for mentor in mentors:
-        discord_member = await client.juniorguru_guild.fetch_member(mentor.user.id)
+        try:
+            discord_member = await client.juniorguru_guild.fetch_member(mentor.user.id)
+        except NotFound:
+            logger.error(f"Not a member! #{mentor.id} ({mentor.name} from {mentor.company})")
+            continue
         mentor_params = get_mentor_params(mentor, thumbnail_url=discord_member.display_avatar.url)
 
         message = ClubMessage.last_bot_message(MENTORING_CHANNEL, MENTOR_EMOJI, mentor.user.mention)
