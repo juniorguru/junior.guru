@@ -25,13 +25,19 @@ jobs:
           command: |
             date +'%Y-%m-%d' > .today
       - run:
-          name: Install dependencies
+          name: Update Poetry
           command: |
             poetry --version
             poetry self update
-            poetry install
-            poetry run playwright install chromium
-            npm ci
+      - run:
+          name: Install Python dependencies
+          command: poetry install
+      - run:
+          name: Install browsers
+          command: poetry run playwright install chromium
+      - run:
+          name: Install JavaScript dependencies
+          command: npm ci
       - run:
           name: Cancel previous builds
           command: |
