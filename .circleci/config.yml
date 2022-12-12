@@ -31,7 +31,7 @@ jobs:
             poetry self update
       - run:
           name: Install Python dependencies
-          command: poetry install
+          command: poetry install -vvv
       - run:
           name: Install browsers
           command: poetry run playwright install chromium
