@@ -28,7 +28,7 @@ jobs:
           name: Update Poetry
           command: |
             poetry --version
-            poetry self update
+            poetry self update 1.2.2
       - run:
           name: Install Python dependencies
           command: poetry install -vvv
@@ -300,3 +300,5 @@ workflows:
             branches:
               only:
                 - main
+
+# VS Code Extension Version: 1.4.0
