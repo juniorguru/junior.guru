@@ -231,8 +231,6 @@ jobs:
 
 
 workflows:
-  version: 2
-
   push:
     jobs:
       - install
@@ -300,5 +298,3 @@ workflows:
             branches:
               only:
                 - main
-
-# VS Code Extension Version: 1.4.0
