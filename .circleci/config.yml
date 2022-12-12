@@ -9,8 +9,8 @@ executors:
 
 
 orbs:
-  gh-pages: sugarshin/gh-pages@1.0.1
-  git-shallow-clone: guitarrapc/git-shallow-clone@2.4.1
+  gh-pages: sugarshin/gh-pages@0.0.6
+  git-shallow-clone: guitarrapc/git-shallow-clone@2.4.0
 
 
 jobs:
