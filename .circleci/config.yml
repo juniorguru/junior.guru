@@ -9,7 +9,7 @@ executors:
 
 
 orbs:
-  gh-pages: sugarshin/gh-pages@1.0.0
+  gh-pages: sugarshin/gh-pages@1.0.1
   git-shallow-clone: guitarrapc/git-shallow-clone@2.4.1
 
 
@@ -213,7 +213,6 @@ jobs:
           commit-message: '"🐣 deployment of ${COMMIT} [skip ci]"'
           ssh-fingerprints: "7b:0b:2c:9f:fb:18:db:35:8e:f4:3d:49:73:37:ee:c4"
           tmp-dir: ".deploy-tmp"
-          workspace-root: "~/project"
 
   check-docs:
     executor: python-js
