@@ -8,6 +8,12 @@
 # avatar_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
+- id: "0011"
+  title: Lukáš Konarovský (Fakturoid) o podnikání, třeba i v IT
+  publish_on: "2022-12-15"
+  description: |
+    V tomto díle si Pája povídá s Lukášem Konarovským, podnikatelem a spoluzakladatelem firmy Fakturoid. Uslyšíte, jak se Lukáš dostal k IT a k podnikání. Také prozradí, co je podle něj na podnikání nejtěžší, a co naopak možná vnímáme jako větší problém, než ve skutečnosti je. Pokud přemýšlíte, že začnete podnikat (třeba zrovna v IT), je tento díl přesně pro vás.
+
 - id: "0010"
   title: Klára Šťouračová (Productboard) o úspěšném startu kariéry v IT
   avatar_path: avatars-participants/klara-stouracova.jpg
