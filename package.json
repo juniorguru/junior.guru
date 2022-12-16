@@ -13,7 +13,7 @@
   "devDependencies": {
     "bootstrap": "5.2.3",
     "broken-link-checker-local": "0.2.1",
-    "del": "6.1.1",
+    "del": "7.0.0",
     "gulp": "4.0.2",
     "gulp-changed": "4.0.3",
     "gulp-concat": "2.6.1",
