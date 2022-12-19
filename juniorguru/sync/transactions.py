@@ -22,6 +22,7 @@ CATEGORIES = [
     lambda t: 'salary' if 'výplata' in t['message'] else None,
     lambda t: 'sideline' if t['variable_symbol'] in SIDELINE_JOBS else None,
     lambda t: 'lawyer' if 'ADVOKATKA' in t['message'] else None,
+    lambda t: 'marketing' if 'JANA DOLEJSOVA' in t['message'] else None,
     lambda t: 'accounting' if 'Irein' in t['message'] else None,
     lambda t: 'accounting' if 'účetnictví' in t['message'] else None,
     lambda t: 'fakturoid' if 'Fakturoid' in t['message'] and t['amount'] < 0 else None,
