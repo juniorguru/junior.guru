@@ -1,4 +1,4 @@
-from peewee import CharField, IntegerField, ForeignKeyField, OperationalError
+from peewee import CharField, ForeignKeyField, IntegerField, OperationalError
 
 from juniorguru.models.base import BaseModel
 

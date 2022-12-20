@@ -3,10 +3,10 @@ from datetime import date, timedelta
 
 from discord import Embed
 
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLED,
                                  is_message_older_than, run_discord_task)
-from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 

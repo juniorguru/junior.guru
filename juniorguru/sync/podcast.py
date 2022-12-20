@@ -9,11 +9,11 @@ from pod2gen import Media
 from requests.exceptions import HTTPError
 from strictyaml import Datetime, Int, Map, Optional, Seq, Str, load
 
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLED,
                                  run_discord_task)
 from juniorguru.lib.images import is_image, render_image_file, validate_image
-from juniorguru.cli.sync import main as cli
 from juniorguru.lib.template_filters import icon
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage

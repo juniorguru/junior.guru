@@ -1,14 +1,14 @@
-import re
-from pathlib import Path
-import shutil
-import itertools
-from fnmatch import fnmatch
 import filecmp
+import itertools
+import re
+import shutil
+from fnmatch import fnmatch
+from pathlib import Path
 from pprint import pformat
 
+import click
 from sqlite_utils import Database
 from sqlite_utils.db import NotFoundError
-import click
 
 from juniorguru.lib import loggers
 

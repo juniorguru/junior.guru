@@ -2,7 +2,7 @@ from textwrap import dedent
 
 import pytest
 
-from juniorguru.cli.data import make_schema_idempotent, get_row_updates
+from juniorguru.cli.data import get_row_updates, make_schema_idempotent
 
 
 def test_make_schema_idempotent():

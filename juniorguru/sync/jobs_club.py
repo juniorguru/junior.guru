@@ -2,10 +2,10 @@ import asyncio
 import re
 from datetime import date, timedelta
 
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JOBS_CHANNEL,
                                  run_discord_task)
-from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.job import ListedJob

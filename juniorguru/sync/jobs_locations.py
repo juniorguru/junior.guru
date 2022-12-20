@@ -1,6 +1,6 @@
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.locations import fetch_locations
-from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
 

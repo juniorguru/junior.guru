@@ -3,12 +3,12 @@ import re
 from datetime import date, timedelta
 from urllib.parse import urlparse
 
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import google_sheets, loggers
 from juniorguru.lib.coerce import (coerce, parse_boolean, parse_boolean_words,
                                    parse_date, parse_datetime, parse_set, parse_text,
                                    parse_url)
 from juniorguru.lib.md import md
-from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.job import SubmittedJob
 from juniorguru.sync.jobs_scraped.pipelines.boards_ids import (

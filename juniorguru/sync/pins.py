@@ -4,9 +4,9 @@ import textwrap
 from discord import Embed
 from discord.errors import Forbidden
 
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
-from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubPinReaction
 

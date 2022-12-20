@@ -3,8 +3,8 @@ from pathlib import Path
 import click
 from peewee import OperationalError
 
-from juniorguru.lib import loggers
 from juniorguru.cli.sync import main as cli
+from juniorguru.lib import loggers
 from juniorguru.models.base import db
 from juniorguru.models.job import ScrapedJob
 from juniorguru.sync.jobs_scraped.processing import (filter_relevant_paths,

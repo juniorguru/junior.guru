@@ -5,10 +5,10 @@ from urllib.parse import urlparse
 
 from PIL import Image
 
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib.club import run_discord_task
-from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser
 

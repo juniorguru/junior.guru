@@ -2,10 +2,10 @@ from datetime import timedelta
 
 from discord import Color, Embed
 
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, MENTORING_CHANNEL,
                                  is_message_over_period_ago, run_discord_task)
-from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.mentor import Mentor

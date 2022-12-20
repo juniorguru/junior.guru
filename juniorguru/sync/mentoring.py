@@ -1,12 +1,12 @@
 from pathlib import Path
 
-from discord import ButtonStyle, Color, Embed, ui, NotFound
+from discord import ButtonStyle, Color, Embed, NotFound, ui
 from strictyaml import Bool, Int, Map, Optional, Seq, Str, Url, load
 
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, MENTORING_CHANNEL,
                                  run_discord_task)
-from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.mentor import Mentor

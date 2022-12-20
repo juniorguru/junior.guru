@@ -5,12 +5,12 @@ from pathlib import Path
 import arrow
 from strictyaml import CommaSeparated, Datetime, Int, Map, Optional, Seq, Str, Url, load
 
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLED,
                                  run_discord_task)
 from juniorguru.lib.images import (is_image, render_image_file, save_as_square,
                                    validate_image)
-from juniorguru.cli.sync import main as cli
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage

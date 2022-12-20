@@ -8,8 +8,8 @@ import favicon
 import requests
 from PIL import Image, ImageChops, ImageOps
 
-from juniorguru.lib import loggers
 from juniorguru.cli.sync import main as cli
+from juniorguru.lib import loggers
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
 

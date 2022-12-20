@@ -9,8 +9,8 @@ from pprint import pformat
 
 from jinja2 import Template
 
-from juniorguru.lib import loggers
 from juniorguru.cli.sync import main as cli
+from juniorguru.lib import loggers
 from juniorguru.models.job import ListedJob
 
 

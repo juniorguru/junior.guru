@@ -1,8 +1,8 @@
 import re
 from collections import Counter
 
-from juniorguru.lib import loggers
 from juniorguru.cli.sync import main as cli
+from juniorguru.lib import loggers
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.topic import Topic

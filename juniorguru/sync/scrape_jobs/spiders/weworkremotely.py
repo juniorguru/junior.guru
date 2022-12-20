@@ -3,11 +3,11 @@ import json
 import time
 from datetime import datetime
 
-from lxml import etree
 import arrow
 import extruct
 import feedparser
 from itemloaders.processors import Identity, MapCompose, TakeFirst
+from lxml import etree
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 

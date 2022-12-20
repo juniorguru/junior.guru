@@ -1,17 +1,17 @@
-import os
 import asyncio
 import itertools
+import os
 from datetime import timedelta
 
-from peewee import OperationalError
-import click
 import arrow
+import click
+from peewee import OperationalError
 
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (BOT_CHANNEL, EMOJI_PIN, FUN_CHANNEL, INTRO_CHANNEL,
                                  count_downvotes, count_upvotes, emoji_name, get_roles,
                                  run_discord_task)
-from juniorguru.cli.sync import main as cli
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
 
