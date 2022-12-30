@@ -39,7 +39,7 @@ Osobní údaje jsou zpracovávány za účelem poskytování služeb správce po
 
 Když mne kontaktujete (telefonicky, e-mailem nebo prostřednictvím webových stránek), můžete být požádáni o uvedení určitých údajů o vás nebo vaší společnosti. Tyto údaje se mohou lišit podle toho, jaké služby ode mne odebíráte:
 
-**a. osobní údaje návštěvníků webu.** Jedná se o údaje o akcích uživatelů, které slouží čistě pro statistické účely. Tyto údaje uchovává [Google Analytics](https://analytics.google.com/analytics/) agregované do souhrnných čísel a není z nich možné identifikovat jednotlivce.
+**a. osobní údaje návštěvníků webu.** Jedná se o údaje o akcích uživatelů, které slouží čistě pro statistické účely. Tyto údaje uchovává [Simple Analytics](https://www.simpleanalytics.com/) agregované do souhrnných čísel a není z nich možné identifikovat jednotlivce.
 
 **b. osoby odebírající newsletter.** U osob odebírajících newsletter je uchováván e-mail, a to prostřednictvím služby [Mailchimp](https://mailchimp.com/). Z odebírání newsletteru se můžete kdykoliv odhlásit.
 
@@ -57,7 +57,7 @@ Vaše údaje mohou být předány níže vyjmenovaným subjektům. Dbáme na to,
 
 *   Orgány veřejné moci (např. soudy, správní orgány),
 *   poskytovatelé údržby informačního systému,
-*   služby třetích stran nezbytné pro realizaci služeb, a to [Google Analytics](https://analytics.google.com/analytics/), [Google Sheets](https://www.google.com/sheets/about/), [Mailchimp](https://mailchimp.com/), [Memberful](https://memberful.com/), [Discord](https://discord.com/),
+*   služby třetích stran nezbytné pro realizaci služeb, a to [Simple Analytics](https://www.simpleanalytics.com/), [Google Sheets](https://www.google.com/sheets/about/), [Mailchimp](https://mailchimp.com/), [Memberful](https://memberful.com/), [Discord](https://discord.com/),
 *   služba třetí strany nezbytná pro realizaci bezkontaktních plateb, a to [Stripe](https://stripe.com),
 *   služba třetí stany spravující účetnictví, a to [Fakturoid](https://www.fakturoid.cz/).
 

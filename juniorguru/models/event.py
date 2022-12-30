@@ -14,7 +14,7 @@ class Event(BaseModel):
     description = TextField()
     poster_description = TextField(null=True)
     bio = TextField()
-    avatar_path = CharField(null=True)
+    avatar_path = CharField(default='icon.svg')
     bio_name = TextField()
     bio_title = TextField(null=True)
     bio_links = JSONField(default=lambda: [])
@@ -88,6 +88,11 @@ class Event(BaseModel):
         return cls.select() \
             .where(cls.start_at >= now) \
             .order_by(cls.start_at)
+
+    @classmethod
+    def club_listing(cls, now=None):
+        return cls.archive_listing(now=now) \
+            .where(cls.avatar_path != cls.avatar_path.default)
 
 
 class EventSpeaking(BaseModel):

@@ -67,6 +67,15 @@ def test_planned_listing_time(db_connection):
     assert list(Event.planned_listing(now=datetime(2021, 5, 2, 18))) == [event2]
 
 
+def test_club_listing(db_connection):
+    event1 = create_event(1, start_at=datetime(2021, 4, 15))  # noqa
+    event2 = create_event(2, start_at=datetime(2021, 5, 1), avatar_path='alice.jpg')
+    event3 = create_event(3, start_at=datetime(2021, 5, 3))  # noqa
+    event4 = create_event(4, start_at=datetime(2021, 3, 15), avatar_path='bob.jpg')
+
+    assert list(Event.club_listing(now=datetime(2021, 5, 2))) == [event2, event4]
+
+
 def test_next(db_connection):
     event1 = create_event(1, start_at=datetime(2021, 4, 15))  # noqa
     event2 = create_event(2, start_at=datetime(2021, 5, 1))  # noqa

@@ -162,7 +162,7 @@ E-mail: [honza@junior.guru](mailto:honza@junior.guru)<br>
 
 **8.1.** Spotřebitel má podle § 1829 a násl. občanského zákoníku právo odstoupit od smlouvy o užívání digitálních produktů včetně toho mého, ve lhůtě 14 dnů od uzavření smlouvy a pouze v případě, že nebylo započato s plněním ze strany poskytovatele. V případě, že byl odběr zahájen, nemá zákazník právo v takovém případě od smlouvy o dodání digitálního předplatného odstoupit.
 
-**8.2.** Svým zákazníkům chci dát jistotu, že je obsah zaujme a že jim členství v diskuzním klubu bude vyhovovat. Nad rámec zákona proto zákazníkům poskytuji zkušební období, v rámci kterého mohou služby bez jakékoliv penalizace ukončit a od smlouvy odstoupit. Toto období je 14denní a je poskytováno každému nově zaregistrovanému členovi před zahájením hrazeného období digitálního předplatné.
+**8.2.** Svým zákazníkům chci dát jistotu, že je obsah zaujme a že jim členství v diskuzním klubu bude vyhovovat. Nad rámec zákona proto zákazníkům poskytuji zkušební období, v rámci kterého mohou služby bez jakékoliv penalizace ukončit a od smlouvy odstoupit. Toto období je 14denní a je poskytováno každému nově zaregistrovanému členovi před zahájením hrazeného období digitálního předplatného.
 
 **8.3.** V případech podle 4.8 (zneužití údajů, platební karty nebo voucheru apod.) jsem oprávněn od smlouvy odstoupit do 14 dní od jejího uzavření. Tuto skutečnost jsem vám povinen oznámit.
 

@@ -1,6 +1,6 @@
 ---
 title: Klub pro začátečníky v programování
-thumbnail_badge: 109 Kč/měs
+thumbnail_badge: 199 Kč/měs
 template: main_memberful.html
 description: Přidej se na junior.guru Discord! Jsme tvoje online programovací parta, skupina, fórum. Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
@@ -25,7 +25,7 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 {% endcall %}
 </div>
 
-<a class="masthead-button primary" href="#cenik">109 Kč měsíčně</a>
+<a class="masthead-button primary" href="#cenik">199 Kč měsíčně</a>
 <span class="masthead-members">
   {% for member in members|sample(8) %}
     {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
@@ -87,10 +87,10 @@ Jednou za čas máme na Discordu večerní akci. Je to **online a zhruba na hodi
 {% endcall %}
 
 <ul class="event-circles standout">
-{% for event in events|selectattr('public_recording_url')|sample(1) %}
+{% for event in events_club|selectattr('public_recording_url')|sample(1) %}
   {{ event_circle(event) }}
 {% endfor %}
-{% for event in events|rejectattr('public_recording_url')|sample(5) %}
+{% for event in events_club|rejectattr('public_recording_url')|sample(5) %}
   {{ event_circle(event) }}
 {% endfor %}
 </ul>
@@ -204,14 +204,21 @@ Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství,
 
 <div id="cenik" class="section-background yellow"><section>
 
-<h2>Za vyzkoušení nic nedáš</h2>
+<h2>Prvních 14 dní zdarma</h2>
 {% call lead() %}
-Nemusíš hned zadávat kartu. Vyber si roční nebo měsíční předplatné a nakoukni, jak to u nás vypadá. **Prvních 14 dní je zdarma.** Pokud ti klub nesedne, prostě akorát nedoplníš platební údaje a systém tě po dvou týdnech vyhodí.
+Nemusíš hned zadávat kartu. Vyber si roční nebo měsíční předplatné a nakoukni, jak to u nás vypadá. **Za vyzkoušení nic nedáš.** Pokud ti klub nesedne, prostě akorát nedoplníš platební údaje a systém tě po dvou týdnech vyhodí.
 
-Pokud se vzděláváš u {% for company in companies_schools -%}
-  {%- if not loop.first %}, {% endif %}{% if loop.last %}nebo {% endif -%}
-  {{ company.name }}
-{%- endfor %}, tvůj **studijní program může zahrnovat bezplatné členství v klubu**. Zeptej se jich, jestli je to tvůj případ!
+{% if companies_schools -%}
+  {%- if companies_schools|length > 1 -%}
+    Pokud se vzděláváš u {% for company in companies_schools -%}
+      {%- if not loop.first %}, {% endif %}{% if loop.last %}nebo {% endif -%}
+      {{ company.name }}
+    {%- endfor %},
+  {%- else -%}
+    Pokud se vzděláváš u {% for company in companies_schools -%}{{ company.name }}{%- endfor %},
+  {%- endif %}
+  tvůj **studijní program může zahrnovat bezplatné členství v klubu**. Zeptej se jich, jestli je to tvůj případ!
+{% endif %}
 {% endcall %}
 
 <div class="pricing standout">
@@ -221,7 +228,7 @@ Pokud se vzděláváš u {% for company in companies_schools -%}
       <li class="pricing-benefits-item">Prvních 14 dní zdarma</li>
       <li class="pricing-benefits-item">Jeden měsíc ušetříš</li>
     </ul>
-    <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=59574">1199 Kč ročně</a>
+    <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=89512">2189 Kč ročně</a>
   </div>
   <div class="pricing-block pulse-hover">
     <h3 class="pricing-heading">Nevážu se</h3>
@@ -229,7 +236,7 @@ Pokud se vzděláváš u {% for company in companies_schools -%}
       <li class="pricing-benefits-item">Prvních 14 dní zdarma</li>
       <li class="pricing-benefits-item">Můžeš to kdykoliv zrušit</li>
     </ul>
-    <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=59515">109 Kč měsíčně</a>
+    <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=89511">199 Kč měsíčně</a>
   </div>
   <div class="pricing-block pulse-hover">
     <h3 class="pricing-heading">Stipendium</h3>

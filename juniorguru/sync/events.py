@@ -52,7 +52,7 @@ schema = Seq(
         Optional('time', default='18:00'): Str(),
         'description': Str(),
         Optional('poster_description'): Str(),
-        'avatar_path': Str(),
+        Optional('avatar_path'): Str(),
         'bio_name': Str(),
         Optional('bio_title'): Str(),
         'bio': Str(),

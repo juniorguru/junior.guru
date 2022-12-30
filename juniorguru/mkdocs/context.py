@@ -69,6 +69,7 @@ def on_docs_context(context):
     context['companies'] = Company.listing()
     context['companies_schools'] = Company.schools_listing()
     context['events'] = Event.listing()
+    context['events_club'] = Event.club_listing()
 
     # handbook/motivation.md
     context['stories'] = Story.listing()

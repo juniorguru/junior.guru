@@ -155,7 +155,6 @@
     Jak funguje mentoring v klubu a co přesně zahrnuje pravidelná nabídka, která vybízí ke kontaktování mentorů z firem? Uvítáme mentory z Mews, ať je máte v paměti jako reálné tváře a ne pouze jména na seznamu.
 
     Technický tým Mews má v současné době okolo 170 lidí, kteří si své znalosti a zkušenosti nenechávají jen pro sebe, ale i díky junior.guru je dostávají k více lidem. Nejzásadnějším kanálem pro tuto činnost je mentoring, který mohou využít všichni, kdo se chtějí něco dozvědět, něco si ověřit nebo si jen pokecat o technologiích.
-  avatar_path: icon.svg
   bio_name: Honza Javorek a mentoři z Mews
   bio: |
       Mews je softwarová firma, která buduje moderní systém pro správu ubytovacích zařízení. Zjednodušuje a automatizuje (často nudné) úkony což umožňuje hoteliérům věnovat se naplno svým klientům.
@@ -246,7 +245,6 @@
   time: "18:30"
   description: |
     Jak funguje mentoring v klubu a co přesně zahrnuje pravidelná nabídka, která vybízí ke kontaktování mentorů z firem? Už dřív se takto nabídli kamarádi z Mews a Red Hatu, nyní se přidává Pure Storage. Uvítáme je, ať je máte v paměti jako reálné tváře a ne pouze jména na seznamu. Někteří nerozumí česky, takže část nebo celá akce proběhne anglicky.
-  avatar_path: icon.svg
   bio_name: Honza Javorek a mentoři z Pure Storage
   bio: |
       Pure Storage je pražská pobočka firmy ze Silicon Valley, která se zabývá ukládáním dat. Chtějí junior.guru podpořit především jako mentoři.
@@ -282,7 +280,6 @@
   date: "2022-02-23"
   description: |
     Jetveo je low-code platforma se C#, na které by měl být i úplný začátečník s minimální znalostí kódu schopen poměrně rychle vytvořit funkční, produkční appku. Zakladatel Jetveo Dalibor a junior Jakub, který si díky Jetveo našel svou první práci v IT, v klubu udělali představení platformy a odpovídali na dotazy.
-  avatar_path: icon.svg
   bio_name: Dalibor Houfek, Jakub Ráček
   bio_title: Kluci z Jetveo
   bio: |
@@ -644,7 +641,6 @@
     -   Karolina Surma - OSM + uMap + GitHub a špetka Bashe = dynamická mapa do každé domácnosti
 
     Pak bude volná debata podobně, jako když se lidi sejdou v hospodě.
-  avatar_path: icon.svg
   bio_name: Honza Javorek, Daniel Srb, Karolina Surma
   bio: |
     Kdokoliv z účastníků srazu si může přihlásit _lightning talk_ a dostane prostor.
