@@ -25,7 +25,7 @@ CATEGORIES = [
     lambda t: 'marketing' if 'JANA DOLEJSOVA' in t['message'] else None,
     lambda t: 'accounting' if 'Irein' in t['message'] else None,
     lambda t: 'accounting' if 'účetnictví' in t['message'] else None,
-    lambda t: 'fakturoid' if 'Fakturoid' in t['message'] and t['amount'] < 0 else None,
+    lambda t: 'fakturoid' if 'účetnictví' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'discord' if 'DISCORD' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'memberful' if 'MEMBERFUL' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'partnerships' if 'RED HAT' in t['message'] and t['amount'] >= 8000 else None,

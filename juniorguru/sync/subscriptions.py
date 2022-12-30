@@ -38,8 +38,8 @@ FEMININE_NAME_RE = re.compile(r'''
 COUPON_NAMES_CATEGORIES_MAPPING = {
     'THANKYOU': ClubSubscribedPeriod.FREE_CATEGORY,
     'THANKYOUFOREVER': ClubSubscribedPeriod.FREE_CATEGORY,
-    'PATREON': ClubSubscribedPeriod.SUPPORTERS_CATEGORY,
-    'GITHUB': ClubSubscribedPeriod.SUPPORTERS_CATEGORY,
+    'PATREON': ClubSubscribedPeriod.FREE_CATEGORY,
+    'GITHUB': ClubSubscribedPeriod.FREE_CATEGORY,
     'FOUNDERS': ClubSubscribedPeriod.FREE_CATEGORY,
     'FINAID': ClubSubscribedPeriod.FINAID_CATEGORY,
     'CORESKILL': ClubSubscribedPeriod.CORESKILL_CATEGORY,

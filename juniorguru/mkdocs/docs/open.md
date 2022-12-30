@@ -153,7 +153,7 @@ Druhým důvodem je malá vypovídající hodnota. Velkou část výnosů tvoř�
 
 Zahrnuji pouze náklady na byznys, ale zase i s daněmi a odvody na zdravotní a sociální pojištění. V roce 2020 je v nich díra, protože kvůli covidu-19 nebyla povinnost je platit. Občas jdou do mínusu (stává se z nich příjem), protože mi úřady něco vrátily.
 
-Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samolepek apod. Také jsem si jednu dobu platil [Buffer](https://buffer.com/).
+Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů jako Buffer nebo MailChimp, tisk samolepek, [konzultace](http://janadolejsova.cz/), apod.
 
 <canvas
     class="chart" width="400" height="200"
@@ -167,6 +167,11 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
                 'backgroundColor': '#ddd',
             },
             {
+                'label': 'memberful.com',
+                'data': charts_cost_breakdown.pop('memberful'),
+                'backgroundColor': '#EF704F',
+            },
+            {
                 'label': 'různé',
                 'data': charts_cost_breakdown.pop('miscellaneous'),
                 'backgroundColor': '#dc3545',
@@ -177,7 +182,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
                 'backgroundColor': '#801515',
             },
             {
-                'label': 'účetní',
+                'label': 'účetnictví, fakturoid.cz',
                 'data': charts_cost_breakdown.pop('accounting'),
                 'backgroundColor': '#a9a9a9',
             },
@@ -185,16 +190,6 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
                 'label': 'marketing',
                 'data': charts_cost_breakdown.pop('marketing'),
                 'backgroundColor': '#DAA520',
-            },
-            {
-                'label': 'fakturoid.cz',
-                'data': charts_cost_breakdown.pop('fakturoid'),
-                'backgroundColor': '#efd040',
-            },
-            {
-                'label': 'memberful.com',
-                'data': charts_cost_breakdown.pop('memberful'),
-                'backgroundColor': '#EF704F',
             },
             {
                 'label': 'discord.com',
@@ -248,9 +243,9 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou většinou za tisk samo
 
 Každý příchozí člen má v klubu dva týdny zdarma, bez ohledu na to, jakým způsobem za členství následně platí. Některým lidem dávám vstup do klubu zcela zdarma, ať už na základě vlastního uvážení, jako poděkování např. za přednášku v klubu, jako stipendium, nebo ze strategických důvodů. Jde o různé spolupráce s komunitami, podcasty, nebo třeba zvaní mentorů na specifické technologie, jejichž zastoupení na straně seniorů je v klubu slabé, ale od juniorů je po tématu poptávka.
 
-S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzájem neplatíme. Oni využívají platformu klubu pro svůj mentoring a své studenty. Všichni mají automaticky vstup zdarma. Klub má díky tomu experty na frontend a moderátora Dana Srba, který může zaskakovat, kdyby bylo potřeba.
+Část lidí má členství zdarma na základě toho, že mě v podpořili dobrovolnými příspěvky. V důsledku to tedy zdarma není, jen mi peníze poslali jinudy. Mnohdy poslali víc, než by je stálo standardní členství v klubu.
 
-Část lidí mi neplatí přes systém pro správu členství, ale dostali členství zdarma na základě toho, že mě podporovali na GitHub Sponsors nebo Patreonu. V důsledku to tedy zdarma není, jen mi peníze posílají jinudy. Mnohdy posílají víc, než by je stálo standardní členství v klubu.
+S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzájem neplatíme. Oni využívají platformu klubu pro svůj mentoring a své studenty. Všichni mají automaticky vstup zdarma. Klub má díky tomu experty na frontend a moderátora Dana Srba, který může zaskakovat, kdyby bylo potřeba.
 
 S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou studenty svých kurzů a proplatí jim členství na první tři měsíce. Agentura z toho má službu pro studenty navíc a já z toho mám to, že pokud se lidem v klubu zalíbí, budou si jej dál platit ze svého.
 
@@ -261,14 +256,14 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
         'labels': charts_club_labels,
         'datasets': [
             {
+                'label': 'symbióza s CoreSkill',
+                'data': charts_subscriptions_breakdown.pop('coreskill'),
+                'backgroundColor': '#343434',
+            },
+            {
                 'label': 'neplatí členství',
                 'data': charts_subscriptions_breakdown.pop('free'),
                 'backgroundColor': '#ddd',
-            },
-            {
-                'label': 'mají stipendium',
-                'data': charts_subscriptions_breakdown.pop('finaid'),
-                'backgroundColor': '#421BD4',
             },
             {
                 'label': 'dva týdny zdarma',
@@ -276,13 +271,8 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
                 'backgroundColor': '#a9a9a9',
             },
             {
-                'label': 'symbióza s CoreSkill',
-                'data': charts_subscriptions_breakdown.pop('coreskill'),
-                'backgroundColor': '#343434',
-            },
-            {
-                'label': 'přispívají přes GitHub Sponsors, Patreon',
-                'data': charts_subscriptions_breakdown.pop('supporters'),
+                'label': 'mají stipendium',
+                'data': charts_subscriptions_breakdown.pop('finaid'),
                 'backgroundColor': '#02CABB',
             },
             {
