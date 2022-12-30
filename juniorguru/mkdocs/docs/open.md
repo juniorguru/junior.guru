@@ -41,15 +41,33 @@ Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde 
 
 ### Cíl
 
-Ze svých předchozích angažmá jsem měl nějaké úspory, díky nimž jsem mohl JG provozovat, i když zatím moc nevydělalo. Jako seniorní programátor s mými zkušenostmi bych prací pro pražskou nebo zahraniční firmu mohl vydělávat kolem 100.000 Kč měsíčně čistého. Dohodli jsme se doma, že když mě JG tolik baví, zkusím to provozovat a i když to vydělá méně, stojí nám to za větší domácí pohodu. Na JG dělám na full time, máme jedno malé dítě, nemáme auto, bydlíme v nájmu uprostřed Prahy. Pokud vydělám 40.000 Kč čistého, tak by nám to myslím vystačilo. Cílem JG není zbohatnout, ale dlouhodobě pomáhat juniorům, pohodlně živit rodinu a žít při tom šťastný život.
+Cílem není zbohatnout, ale dlouhodobě pomáhat juniorům, pohodlně živit rodinu a žít při tom šťastný život.
 
-<div class="charts-progress">
-    {% set progress_max = 40000 %}
-    {% set progress_ptc = ((profit_ttm * 100) / progress_max)|round|int %}
-    <div class="progress-bar" role="progressbar" style="width: {{ progress_ptc }}%" aria-valuenow="{{ progress_ptc }}" aria-valuemin="0" aria-valuemax="{{ progress_max }}">
-    {{ progress_ptc }} % ze {{ progress_max|thousands }} Kč
-    </div>
-</div>
+Seniorní programátor s mými zkušenostmi, který pracuje pro pražskou nebo zahraniční firmu, vydělává 100.000 Kč měsíčně čistého a víc. Dohodli jsme se doma, že když mě JG tolik baví, zkusím to provozovat a i když to vydělá méně, stojí nám to za větší domácí pohodu. Ze svých předchozích angažmá jsem měl úspory, díky nimž jsem mohl v začátcích JG držet při životě, i když zatím moc nevydělávalo.
+
+Na JG pracuji na plný úvazek, mám malé dítě, ženu na rodičovské, nemáme auto, bydlíme v nájmu uprostřed Prahy. Jako podnikatel potřebuji velkou rezervu, abych se nemusel strachovat s každou změnou rodinných nákladů, jestli mohu pokračovat. Také mi nikdo neplatí dovolenou, nemocenskou, nespoří na důchod.
+
+<table class="table table-goals">
+    <tr>
+        <th>Milník</th>
+        <th>40.000 Kč</th>
+        <th>60.000 Kč</th>
+        <th>80.000 Kč</th>
+    </tr>
+    <tr>
+        <th>Jak daleko jsem</td>
+        <td>{{ ((profit_ttm * 100) / 40000)|round|int }} %</td>
+        <td>{{ ((profit_ttm * 100) / 60000)|round|int }} %</td>
+        <td>{{ ((profit_ttm * 100) / 80000)|round|int }} %</td>
+    </tr>
+    <tr>
+        <th>Jak se cítím</td>
+        <td>{% if profit_ttm > 40000 %}✅ 🙂{% else %}😰{% endif %}</td>
+        <td>{% if profit_ttm > 60000 %}✅ 😀{% else %}👀{% endif %}</td>
+        <td>{% if profit_ttm > 80000 %}✅ 🤩{% else %}👀{% endif %}</td>
+    </tr>
+</table>
+
 
 ## Výnosy a náklady
 

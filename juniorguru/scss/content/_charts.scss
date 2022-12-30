@@ -1,6 +1,10 @@
-.charts-progress {
-  @extend .progress;
-  @extend .standout;
+.table-goals td,
+.table-goals th {
+  width: 25%;
+  text-align: center;
+}
 
-  height: map-get($spacers, 4);
+.table-goals tr th:first-child {
+  font-weight: 400;
+  text-align: left;
 }
