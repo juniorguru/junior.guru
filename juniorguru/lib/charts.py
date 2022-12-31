@@ -104,3 +104,11 @@ def annotations(months, milestones):
         'common': {'drawTime': 'beforeDatasetsDraw'},
         'annotations': annotations,
     }
+
+
+def previous_month(month):
+    return month.replace(day=1) - timedelta(days=1)
+
+
+def next_month(month):
+    return (month.replace(day=1) + timedelta(days=32)).replace(day=1)

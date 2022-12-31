@@ -1,7 +1,6 @@
 import asyncio
 import itertools
 import os
-from datetime import timedelta
 
 import arrow
 import click
@@ -9,9 +8,9 @@ from peewee import OperationalError
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (BOT_CHANNEL, EMOJI_PIN, FUN_CHANNEL, INTRO_CHANNEL,
+from juniorguru.lib.club import (EMOJI_PIN,
                                  count_downvotes, count_upvotes, emoji_name, get_roles,
-                                 run_discord_task)
+                                 run_discord_task, DEFAULT_CHANNELS_HISTORY_SINCE, CHANNELS_HISTORY_SINCE)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
 
@@ -21,14 +20,6 @@ logger = loggers.from_path(__file__)
 
 WORKERS_COUNT = 5
 
-DEFAULT_CHANNELS_HISTORY_SINCE = timedelta(days=380)
-
-CHANNELS_HISTORY_SINCE = {
-    FUN_CHANNEL: timedelta(days=30),
-    INTRO_CHANNEL: None,  # means 'take all history since ever'
-    BOT_CHANNEL: timedelta(0),  # means 'skip the channel'
-}
-
 
 @cli.sync_command()
 @click.option('--confirm/--no-confirm', default=lambda: bool(os.environ.get('CLUB_CONTENT_CONFIRM', '')))
@@ -36,8 +27,12 @@ def main(confirm):
     total_messages_count = get_total_messages_count()
     logger.info(f"Found {total_messages_count} messages")
     if total_messages_count:
-        logger.info(f"Last message is from {get_last_message().created_at.isoformat()}")
-        if not confirm or confirm_fetch():
+        try:
+            logger.info(f"Last message is from {get_last_message().created_at.isoformat()}")
+            if not confirm or confirm_fetch():
+                run_discord_task('juniorguru.sync.club_content.discord_task')
+        except OperationalError as e:
+            logger.error(e)
             run_discord_task('juniorguru.sync.club_content.discord_task')
     else:
         run_discord_task('juniorguru.sync.club_content.discord_task')
@@ -163,6 +158,7 @@ async def channel_worker(worker_no, authors, queue):
                                upvotes_count=count_upvotes(message.reactions),
                                downvotes_count=count_downvotes(message.reactions),
                                created_at=arrow.get(message.created_at).naive,
+                               created_month=f'{message.created_at.year}-{message.created_at.month}',
                                edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
                                author=authors[message.author.id],
                                channel_id=channel.id,

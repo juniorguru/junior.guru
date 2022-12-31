@@ -1,13 +1,14 @@
 import hashlib
 import os
 import re
-from datetime import date, timedelta
+from datetime import date
 from pathlib import Path
 from urllib.parse import urljoin
 
 import arrow
 
 from juniorguru.lib import charts
+from juniorguru.lib.club import DEFAULT_CHANNELS_HISTORY_SINCE
 from juniorguru.mkdocs.thumbnail import thumbnail
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubSubscribedPeriod, ClubUser
@@ -23,8 +24,6 @@ from juniorguru.models.transaction import Transaction
 NOW = arrow.utcnow()
 
 TODAY = NOW.date()
-
-PREVIOUS_MONTH = TODAY.replace(day=1) - timedelta(days=1)
 
 BUSINESS_BEGIN_ON = date(2020, 1, 1)
 
@@ -111,12 +110,16 @@ def on_docs_context(context):
     context['charts_subscriptions_breakdown'] = charts.per_month_breakdown(ClubSubscribedPeriod.count_breakdown, club_charts_months)
     context['charts_women_ptc'] = charts.per_month(ClubSubscribedPeriod.women_ptc, club_charts_months)
     context['charts_individuals_duration'] = charts.per_month(ClubSubscribedPeriod.individuals_duration_avg, club_charts_months)
-    club_trend_charts_months = charts.months(CLUB_BEGIN_ON, PREVIOUS_MONTH)
+    club_trend_charts_months = charts.months(CLUB_BEGIN_ON, charts.previous_month(TODAY))
     context['charts_club_trend_labels'] = charts.labels(club_trend_charts_months)
     context['charts_signups'] = charts.per_month(ClubSubscribedPeriod.signups_count, club_trend_charts_months)
     context['charts_individuals_signups'] = charts.per_month(ClubSubscribedPeriod.individuals_signups_count, club_trend_charts_months)
     context['charts_churn_ptc'] = charts.per_month(ClubSubscribedPeriod.churn_ptc, club_trend_charts_months)
     context['charts_individuals_churn_ptc'] = charts.per_month(ClubSubscribedPeriod.individuals_churn_ptc, club_trend_charts_months)
+    club_messages_charts_months = charts.months(charts.next_month(TODAY - DEFAULT_CHANNELS_HISTORY_SINCE), TODAY)
+    context['charts_club_messages_labels'] = charts.labels(club_messages_charts_months)
+    context['charts_club_messages_annotations'] = charts.annotations(club_messages_charts_months, MILESTONES)
+    context['charts_messages'] = charts.per_month(ClubMessage.count_by_month, club_messages_charts_months)
 
     # podcast.md, handbook/cv.md
     context['podcast_episodes'] = PodcastEpisode.listing()

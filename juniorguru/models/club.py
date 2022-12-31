@@ -9,7 +9,7 @@ from peewee import (BooleanField, CharField, DateField, DateTimeField, ForeignKe
 from juniorguru.lib.charts import month_range
 from juniorguru.lib.club import (INTRO_CHANNEL, IS_NEW_PERIOD_DAYS, JUNIORGURU_BOT,
                                  RECENT_PERIOD_DAYS, TOP_MEMBERS_PERCENT,
-                                 UPVOTES_EXCLUDE_CHANNELS, parse_coupon)
+                                 UPVOTES_EXCLUDE_CHANNELS, parse_coupon, STATS_EXCLUDE_CHANNELS)
 from juniorguru.models.base import BaseModel, JSONField
 
 
@@ -136,6 +136,7 @@ class ClubMessage(BaseModel):
     upvotes_count = IntegerField(default=0)
     downvotes_count = IntegerField(default=0)
     created_at = DateTimeField(index=True)
+    created_month = CharField(index=True)
     author = ForeignKeyField(ClubUser, backref='list_messages')
     channel_id = IntegerField()
     channel_name = CharField()
@@ -160,6 +161,13 @@ class ClubMessage(BaseModel):
     @classmethod
     def count(cls):
         return cls.select().count()
+
+    @classmethod
+    def count_by_month(cls, date):
+        return cls.select() \
+            .where(cls.created_month == f'{date.year}-{date.month}') \
+            .where(cls.channel_id.not_in(STATS_EXCLUDE_CHANNELS)) \
+            .count()
 
     @classmethod
     def listing(cls):

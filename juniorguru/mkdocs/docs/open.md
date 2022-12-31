@@ -465,6 +465,32 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
     }|tojson|forceescape }}"
     data-chart-milestones-offset-ptc="0"></canvas></div></div>
 
+## Počet zpráv v klubu
+
+V grafu není celá historie, uchovávám data jen za rok zpětně. Některé kanály se nezapočítávají, např. „volná zábava“. Nejde o kompletní _engagement_, protože lidi se mohou v klubu projevovat různě, např. reagováním pomocí emoji.
+
+Pouze orientační metrika. Nechci sledovat a glorifikovat _engagement_, protože lidi mají z klubu úplně v pohodě hodnotu i pokud si jej pouze čtou a já jsem s tím v pohodě (viz [Stop Measuring Community Engagement](https://rosie.land/posts/stop-measuring-community-engagement/)).
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="200"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts_club_messages_labels,
+        'datasets': [
+            {
+                'label': 'počet zpráv na Discordu',
+                'data': charts_messages,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts_club_messages_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
 ## Návštěvnost
 
 Čísla návštěvnosti webu jsou na [simpleanalytics.com/junior.guru](https://simpleanalytics.com/junior.guru).

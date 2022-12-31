@@ -2,7 +2,7 @@ import asyncio
 import importlib
 import os
 import re
-from datetime import date
+from datetime import date, timedelta
 from multiprocessing import Process
 
 import discord
@@ -69,6 +69,21 @@ COUPON_RE = re.compile(r'''
         (?P<suffix>[0-9]{5,})
     $
 ''', re.VERBOSE)
+
+DEFAULT_CHANNELS_HISTORY_SINCE = timedelta(days=380)
+
+CHANNELS_HISTORY_SINCE = {
+    FUN_CHANNEL: timedelta(days=30),
+    INTRO_CHANNEL: None,  # means 'take all history since ever'
+    BOT_CHANNEL: timedelta(0),  # means 'skip the channel'
+}
+
+STATS_EXCLUDE_CHANNELS = [
+    channel_id
+    for channel_id, setting
+    in CHANNELS_HISTORY_SINCE.items()
+    if setting is not None
+]
 
 
 logger = loggers.from_path(__file__)
