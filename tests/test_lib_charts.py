@@ -35,3 +35,75 @@ def test_ttm_range(today, expected):
 ])
 def test_month_range(today, expected):
     assert charts.month_range(today) == expected
+
+
+def test_annotations():
+    months = [
+        date(2020, 1, 31),
+        date(2020, 2, 29),
+        date(2020, 3, 31),
+        date(2020, 4, 30),
+        date(2020, 5, 31),
+    ]
+    events = [
+        (date(2020, 2, 14), 'Valentýn'),
+        (date(2020, 4, 13), 'Velikonoce'),
+    ]
+    expected_valentyn_x = 1
+    expected_velikonoce_x = 3
+
+    assert charts.annotations(months, events) == {
+        'common': {'drawTime': 'beforeDatasetsDraw'},
+        'annotations': {
+            'valentyn-label': {
+                'content': ['Valentýn'],
+                'xValue': expected_valentyn_x,
+                **charts.ANNOTATION_LABEL_OPTIONS,
+            },
+            'valentyn-line': {
+                'xMin': expected_valentyn_x,
+                'xMax': expected_valentyn_x,
+                **charts.ANNOTATION_LINE_OPTIONS,
+            },
+            'velikonoce-label': {
+                'content': ['Velikonoce'],
+                'xValue': expected_velikonoce_x,
+                **charts.ANNOTATION_LABEL_OPTIONS,
+            },
+            'velikonoce-line': {
+                'xMin': expected_velikonoce_x,
+                'xMax': expected_velikonoce_x,
+                **charts.ANNOTATION_LINE_OPTIONS,
+            },
+        }
+    }
+
+
+def test_annotations_handles_years_correctly():
+    months = [date(2019, 4, 30),
+              date(2020, 4, 30),
+              date(2021, 4, 30)]
+    events = [(date(2020, 4, 13), 'Velikonoce')]
+    result = charts.annotations(months, events)
+
+    assert result['annotations']['velikonoce-label']['xValue'] == 1
+    assert result['annotations']['velikonoce-line']['xMin'] == 1
+    assert result['annotations']['velikonoce-line']['xMax'] == 1
+
+
+def test_annotations_label_splits_by_whitespace():
+    months = [date(2020, 4, 30)]
+    events = [(date(2020, 4, 13), 'Velikonoční pondělí')]
+    result = charts.annotations(months, events)
+    annotation = result['annotations']['velikonocni-pondeli-label']
+
+    assert annotation['content'] == ['Velikonoční', 'pondělí']
+
+
+def test_annotations_label_respects_nbsp():
+    months = [date(2020, 4, 30)]
+    events = [(date(2020, 4, 13), 'Velikonoční pondělí')]
+    result = charts.annotations(months, events)
+    annotation = result['annotations']['velikonocni-pondeli-label']
+
+    assert annotation['content'] == ['Velikonoční pondělí']

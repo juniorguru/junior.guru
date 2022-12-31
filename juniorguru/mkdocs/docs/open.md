@@ -37,34 +37,7 @@ Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde 
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'plugins': {
-            'annotation': {
-                'common': {
-                    'drawTime': 'beforeDatasetsDraw',
-                },
-                'annotations': {
-                    'mylabel': {
-                        'type': 'label',
-                        'color': '#666',
-                        'backgroundColor': 'white',
-                        'borderRadius': 3,
-                        'content': ['Vznik', 'klubu'],
-                        'padding': 3,
-                        'xValue': 13,
-                        'yValue': 0,
-                        'z': 1,
-                    },
-                    'myline': {
-                        'type': 'line',
-                        'borderColor': '#666',
-                        'borderWidth': 1,
-                        'borderDash': [3, 3],
-                        'xMin': 13,
-                        'xMax': 13,
-                    }
-                }
-            }
-        }
+        'plugins': {'annotation': charts_business_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Cíl
@@ -166,7 +139,8 @@ Následující graf zobrazuje vývoj mých výnosů a nákladů v každém konkr
         ]
     }|tojson|forceescape }}"
     data-chart-options="{{ {
-        'interaction': {'mode': 'index'}
+        'interaction': {'mode': 'index'},
+        'plugins': {'annotation': charts_business_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Výnosy
@@ -214,7 +188,8 @@ Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velk
     {{ charts_revenue_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
+        'plugins': {'annotation': charts_business_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Proč tu není MRR
@@ -277,7 +252,8 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
     {{ charts_cost_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
+        'plugins': {'annotation': charts_business_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Členství v klubu

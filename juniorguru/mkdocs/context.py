@@ -30,6 +30,14 @@ BUSINESS_BEGIN_ON = date(2020, 1, 1)
 
 CLUB_BEGIN_ON = date(2021, 2, 1)
 
+BUSINESS_EVENTS = [
+    (date(2020, 9, 1), 'Vznik příručky'),
+    (CLUB_BEGIN_ON, 'Vznik klubu'),
+    (date(2022, 9, 1), 'Zdražení firmám'),
+    (date(2022, 12, 30), 'Zdražení členům'),
+]
+
+
 CLOUDINARY_HOST = os.getenv('CLOUDINARY_HOST', 'res.cloudinary.com')
 
 
@@ -84,6 +92,7 @@ def on_docs_context(context):
     # open.md
     business_charts_months = charts.months(BUSINESS_BEGIN_ON, TODAY)
     context['charts_business_labels'] = charts.labels(business_charts_months)
+    context['charts_business_annotations'] = charts.annotations(business_charts_months, BUSINESS_EVENTS)
     context['charts_profit'] = charts.per_month(Transaction.profit, business_charts_months)
     context['charts_profit_ttm'] = charts.per_month(Transaction.profit_ttm, business_charts_months)
     context['charts_revenue'] = charts.per_month(Transaction.revenue, business_charts_months)

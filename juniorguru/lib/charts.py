@@ -2,6 +2,27 @@ import calendar
 import itertools
 from datetime import timedelta
 
+from slugify import slugify
+
+
+ANNOTATION_LABEL_OPTIONS = {
+    'type': 'label',
+    'color': '#666',
+    'backgroundColor': 'white',
+    'borderRadius': 3,
+    'padding': 3,
+    'position': {'x': 'center', 'y': 'start'},
+    'yAdjust': 10,
+    'z': 1,
+}
+
+ANNOTATION_LINE_OPTIONS = {
+    'type': 'line',
+    'borderColor': '#666',
+    'borderWidth': 1,
+    'borderDash': [3, 3],
+}
+
 
 def months(from_date, to_date):
     return list(generate_months(from_date, to_date))
@@ -39,3 +60,26 @@ def ttm_range(date):
 
 def month_range(date):
     return (date.replace(day=1), date.replace(day=calendar.monthrange(date.year, date.month)[1]))
+
+
+def annotations(months, events):
+    annotations = {}
+    for event_date, event_name in dict(events).items():
+        name = slugify(event_name)
+        x = [index for index, month in enumerate(months)
+             if (month.year == event_date.year and
+                 month.month == event_date.month)][0]
+        annotations[f'{name}-label'] = {
+            'content': event_name.split(' '),
+            'xValue': x,
+            **ANNOTATION_LABEL_OPTIONS,
+        }
+        annotations[f'{name}-line'] = {
+            'xMin': x,
+            'xMax': x,
+            **ANNOTATION_LINE_OPTIONS,
+        }
+    return {
+        'common': {'drawTime': 'beforeDatasetsDraw'},
+        'annotations': annotations,
+    }
