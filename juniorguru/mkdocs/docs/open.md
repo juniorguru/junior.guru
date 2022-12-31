@@ -462,7 +462,8 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
         'interaction': {'mode': 'index'},
         'scales': {'y': {'min': 0, 'max': 100}},
         'plugins': {'annotation': charts_club_annotations},
-    }|tojson|forceescape }}"></canvas></div></div>
+    }|tojson|forceescape }}"
+    data-chart-milestones-offset-ptc="0"></canvas></div></div>
 
 ## Návštěvnost
 
