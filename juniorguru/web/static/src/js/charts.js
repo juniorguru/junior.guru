@@ -1,8 +1,11 @@
 import Chart from 'chart.js/auto';
+import annotationPlugin from 'chartjs-plugin-annotation';
 
 const DEFAULT_OPTIONS = {
   locale: 'cs',
 };
+
+Chart.register(annotationPlugin);
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.chart').forEach((canvas) => {

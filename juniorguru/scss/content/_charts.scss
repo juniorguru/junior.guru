@@ -1,10 +1,60 @@
-.table-goals td,
-.table-goals th {
-  width: 25%;
+.chart-scroll {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  min-width: 40rem;
+  min-height: 20rem;
+}
+
+.table-mood {
+  @extend .fs-2;
+  @extend .table-borderless;
   text-align: center;
 }
 
-.table-goals tr th:first-child {
-  font-weight: 400;
-  text-align: left;
+.table-mood tr * {
+  width: 50%;
+}
+
+.table-mood tr *:nth-child(2) {
+  @extend .table-warning;
+}
+
+.table-goals {
+  @extend .table-borderless;
+}
+
+.table-goals tr:nth-child(1) {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.table-goals tr:nth-child(2) {
+  @extend .fs-2;
+}
+
+.table-goals .progress {
+  height: map-get($spacers, 4);
+}
+
+.table-goals td,
+.table-goals th {
+  width: 33.33%;
+  text-align: center;
+}
+
+.goal {
+  filter: grayscale(100%);
+}
+
+.goal-reached {
+  filter: grayscale(0%);
 }

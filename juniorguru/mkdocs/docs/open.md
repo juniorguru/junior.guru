@@ -15,7 +15,7 @@ Finanční data se každý den stahují přímo z mého podnikatelského účtu 
 
 Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde z mého podnikání přímo do rodinného rozpočtu. Aktuální čistý zisk junior.guru je **{{ profit_ttm|thousands }} Kč měsíčně**. Spočítáno jako zisk za posledních 12 měsíců (TTM, _trailing twelve months_) vydělený 12.
 
-<canvas
+<div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
@@ -36,38 +36,96 @@ Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde 
         ]
     }|tojson|forceescape }}"
     data-chart-options="{{ {
-        'interaction': {'mode': 'index'}
-    }|tojson|forceescape }}"></canvas>
+        'interaction': {'mode': 'index'},
+        'plugins': {
+            'annotation': {
+                'common': {
+                    'drawTime': 'beforeDatasetsDraw',
+                },
+                'annotations': {
+                    'mylabel': {
+                        'type': 'label',
+                        'color': '#666',
+                        'backgroundColor': 'white',
+                        'borderRadius': 3,
+                        'content': ['Vznik', 'klubu'],
+                        'padding': 3,
+                        'xValue': 13,
+                        'yValue': 0,
+                        'z': 1,
+                    },
+                    'myline': {
+                        'type': 'line',
+                        'borderColor': '#666',
+                        'borderWidth': 1,
+                        'borderDash': [3, 3],
+                        'xMin': 13,
+                        'xMax': 13,
+                    }
+                }
+            }
+        }
+    }|tojson|forceescape }}"></canvas></div></div>
 
 ### Cíl
 
-Cílem není zbohatnout, ale dlouhodobě pomáhat juniorům, pohodlně živit rodinu a žít při tom šťastný život.
+Cílem není zbohatnout, ale dlouhodobě pomáhat juniorům, pohodlně živit rodinu a žít při tom šťastný život. Vlevo vidíte měsíční čistý zisk junior.guru a vpravo jak se na to tvářím.
+
+<table class="table table-mood">
+    <tr>
+        <th>{{ profit_ttm|thousands }} Kč</th>
+        <td>
+            {% if profit_ttm < 20000 %}
+                😱
+            {% elif profit_ttm < 40000 %}
+                😰
+            {% elif profit_ttm < 60000 %}
+                🤨
+            {% elif profit_ttm < 80000 %}
+                😀
+            {% else %}
+                🤩
+            {% endif %}
+        </td>
+    </tr>
+</table>
 
 Seniorní programátor s mými zkušenostmi, který pracuje pro pražskou nebo zahraniční firmu, vydělává 100.000 Kč měsíčně čistého a víc. Dohodli jsme se doma, že když mě JG tolik baví, zkusím to provozovat a i když to vydělá méně, stojí nám to za větší domácí pohodu. Ze svých předchozích angažmá jsem měl úspory, díky nimž jsem mohl v začátcích JG držet při životě, i když zatím moc nevydělávalo.
 
 Na JG pracuji na plný úvazek, mám malé dítě, ženu na rodičovské, nemáme auto, bydlíme v nájmu uprostřed Prahy. Jako podnikatel potřebuji velkou rezervu, abych se nemusel strachovat s každou změnou rodinných nákladů, jestli mohu pokračovat. Také mi nikdo neplatí dovolenou, nemocenskou, nespoří na důchod.
 
 <table class="table table-goals">
+    {% set progress_40_ptc = ((profit_ttm * 100) / 40000)|round|int %}
+    {% set progress_60_ptc = ((profit_ttm * 100) / 60000)|round|int %}
+    {% set progress_80_ptc = ((profit_ttm * 100) / 80000)|round|int %}
     <tr>
-        <th>Milník</th>
-        <th>40.000 Kč</th>
-        <th>60.000 Kč</th>
-        <th>80.000 Kč</th>
+        <th class="goal{% if progress_40_ptc >= 100 %} goal-reached{% endif %}">40.000 Kč</th>
+        <th class="goal{% if progress_60_ptc >= 100 %} goal-reached{% endif %}">60.000 Kč</th>
+        <th class="goal{% if progress_80_ptc >= 100 %} goal-reached{% endif %}">80.000 Kč</th>
     </tr>
     <tr>
-        <th>Jak daleko jsem</td>
-        <td>{{ ((profit_ttm * 100) / 40000)|round|int }} %</td>
-        <td>{{ ((profit_ttm * 100) / 60000)|round|int }} %</td>
-        <td>{{ ((profit_ttm * 100) / 80000)|round|int }} %</td>
+        <td class="goal{% if progress_40_ptc >= 100 %} goal-reached{% endif %}">🤨</td>
+        <td class="goal{% if progress_60_ptc >= 100 %} goal-reached{% endif %}">😀</td>
+        <td class="goal{% if progress_80_ptc >= 100 %} goal-reached{% endif %}">🤩</td>
     </tr>
     <tr>
-        <th>Jak se cítím</td>
-        <td>{% if profit_ttm > 40000 %}✅ 🙂{% else %}😰{% endif %}</td>
-        <td>{% if profit_ttm > 60000 %}✅ 😀{% else %}👀{% endif %}</td>
-        <td>{% if profit_ttm > 80000 %}✅ 🤩{% else %}👀{% endif %}</td>
+        <td class="goal{% if progress_40_ptc >= 100 %} goal-reached{% endif %}">
+            <div class="progress">
+                <div class="progress-bar" style="width: {{ progress_40_ptc }}%">{{ progress_40_ptc }} %</div>
+            </div>
+        </td>
+        <td class="goal{% if progress_60_ptc >= 100 %} goal-reached{% endif %}">
+            <div class="progress">
+                <div class="progress-bar" style="width: {{ progress_60_ptc }}%">{{ progress_60_ptc }} %</div>
+            </div>
+        </td>
+        <td class="goal{% if progress_80_ptc >= 100 %} goal-reached{% endif %}">
+            <div class="progress">
+                <div class="progress-bar" style="width: {{ progress_80_ptc }}%">{{ progress_80_ptc }} %</div>
+            </div>
+        </td>
     </tr>
 </table>
-
 
 ## Výnosy a náklady
 
@@ -75,7 +133,7 @@ Následující graf zobrazuje vývoj mých výnosů a nákladů v každém konkr
 
 Čísla z konkrétních mesíců tedy pomáhají odtušit aktuální trendy. Čistý zisk je rozdíl mezi modrou a červenou čárou.
 
-<canvas
+<div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
@@ -109,7 +167,7 @@ Následující graf zobrazuje vývoj mých výnosů a nákladů v každém konkr
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'}
-    }|tojson|forceescape }}"></canvas>
+    }|tojson|forceescape }}"></canvas></div></div>
 
 ## Výnosy
 
@@ -125,7 +183,7 @@ Inzerci nabídek práce nechci zrušit, ale aktuálně není na vrcholu mých pr
 
 Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velkou měrou právě díky nim JG ve svých počátcích neskončilo. Teď je ale čas postavit se na vlastní nohy! Možnost přispět zřejmě nezruším, ale přestal jsem ji propagovat. Chtěl bych, aby dobrovolné příspěvky jednou plně nahradilo individuální členství v klubu.
 
-<canvas
+<div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="bar"
     data-chart="{{ {
@@ -157,7 +215,7 @@ Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velk
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
-    }|tojson|forceescape }}"></canvas>
+    }|tojson|forceescape }}"></canvas></div></div>
 
 ### Proč tu není MRR
 
@@ -173,7 +231,7 @@ Zahrnuji pouze náklady na byznys, ale zase i s daněmi a odvody na zdravotní a
 
 Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů jako Buffer nebo MailChimp, tisk samolepek, [konzultace](http://janadolejsova.cz/), apod.
 
-<canvas
+<div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="bar"
     data-chart="{{ {
@@ -220,13 +278,13 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
-    }|tojson|forceescape }}"></canvas>
+    }|tojson|forceescape }}"></canvas></div></div>
 
 ## Členství v klubu
 
 [Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**, ale platících členů může být i víc. Někteří si platí členství pouze aby mě podpořili, bez toho aby se vůbec na Discord přihlásili.
 
-<canvas
+<div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
@@ -255,7 +313,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}}
-    }|tojson|forceescape }}"></canvas>
+    }|tojson|forceescape }}"></canvas></div></div>
 
 ### Typy členství
 
@@ -267,7 +325,7 @@ S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzáj
 
 S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou studenty svých kurzů a proplatí jim členství na první tři měsíce. Agentura z toho má službu pro studenty navíc a já z toho mám to, že pokud se lidem v klubu zalíbí, budou si jej dál platit ze svého.
 
-<canvas
+<div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="bar"
     data-chart="{{ {
@@ -314,13 +372,13 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
-    }|tojson|forceescape }}"></canvas>
+    }|tojson|forceescape }}"></canvas></div></div>
 
 ### Příchody
 
 Graf s registracemi obsahuje všechny typy členství. Ať už nový člen přišel přes firmu, stipendium, nebo individuálně, tak se započte. Tenká modrá čára představuje počet členů, kteří v daném měsíci poprvé v historii svého členství přešli na individuální placení. Jsou to především noví členové, kteří se po dvou týdnech na zkoušku rozhodli, že si klub začnou platit. Mohou to ale být i firemní členové nebo studenti ze vzdělávacích agentur, kterým skončilo členství zaplacené někým jiným a rozhodli se pokračovat za svoje.
 
-<canvas
+<div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
@@ -343,13 +401,13 @@ Graf s registracemi obsahuje všechny typy členství. Ať už nový člen při�
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}}
-    }|tojson|forceescape }}"></canvas>
+    }|tojson|forceescape }}"></canvas></div></div>
 
 ### Odchody
 
 Procento členů, kteří z klubu odcházejí, neboli _churn_. Tlustá čára zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli a poté za něj nezačali platit. Tam se očekává celkem velký odpad, ale i tak graf napovídá, jak se daří držet nově příchozí členy v klubu. Tenká čára sleduje pouze ty, kdo zrušili už existující individuálně placené členství. Naznačuje tedy odchody členů, kteří se za klub rozhodli platit, ale následně změnili názor. Očekává se, že juniorům, kteří si nakonec práci v IT našli, pokryjí většinu hodnoty klubu kolegové ve firmě, kde pracují. Také se v prvních měsících intenzivně zaučují a na klub tak často už nemají čas, i když je to tam baví.
 
-<canvas
+<div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
@@ -372,13 +430,13 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_. Tlustá čára za
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}}
-    }|tojson|forceescape }}"></canvas>
+    }|tojson|forceescape }}"></canvas></div></div>
 
 ### Délka setrvání v klubu
 
 Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kterým členství platí firma, nebo jej mají zadarmo. Graf průměrné délky členství v klubu tedy počítá pouze s těmi, kdo si platí sami.
 
-<canvas
+<div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
@@ -395,7 +453,7 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}}
-    }|tojson|forceescape }}"></canvas>
+    }|tojson|forceescape }}"></canvas></div></div>
 
 ### Podíl žen v klubu
 
@@ -403,7 +461,7 @@ Podíl žen na počtu členů sleduji z vlastní zvědavosti a není to žádná
 
 Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/cri/lidske-zdroje-v-informacnich-technologiich-2020) je v českém IT pouze 10 % žen a tento podíl se od jejich poslední analýzy před několika lety nezlepšil, naopak nás definitivně předběhly už všechny ostatní státy v Evropě.
 
-<canvas
+<div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
@@ -420,7 +478,7 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'min': 0, 'max': 100}}
-    }|tojson|forceescape }}"></canvas>
+    }|tojson|forceescape }}"></canvas></div></div>
 
 ## Návštěvnost
 
