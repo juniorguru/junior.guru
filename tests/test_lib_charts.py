@@ -45,14 +45,14 @@ def test_annotations():
         date(2020, 4, 30),
         date(2020, 5, 31),
     ]
-    events = [
+    milestones = [
         (date(2020, 2, 14), 'Valentýn'),
         (date(2020, 4, 13), 'Velikonoce'),
     ]
     expected_valentyn_x = 1
     expected_velikonoce_x = 3
 
-    assert charts.annotations(months, events) == {
+    assert charts.annotations(months, milestones) == {
         'common': {'drawTime': 'beforeDatasetsDraw'},
         'annotations': {
             'valentyn-label': {
@@ -79,12 +79,21 @@ def test_annotations():
     }
 
 
+def test_annotations_skips_milestones_out_of_range():
+    months = [date(2020, 4, 30)]
+    milestones = [(date(2020, 4, 13), 'Velikonoce'),
+                  (date(2020, 12, 24), 'Vánoce')]
+    result = charts.annotations(months, milestones)
+
+    assert set(result['annotations'].keys()) == {'velikonoce-label', 'velikonoce-line'}
+
+
 def test_annotations_handles_years_correctly():
     months = [date(2019, 4, 30),
               date(2020, 4, 30),
               date(2021, 4, 30)]
-    events = [(date(2020, 4, 13), 'Velikonoce')]
-    result = charts.annotations(months, events)
+    milestones = [(date(2020, 4, 13), 'Velikonoce')]
+    result = charts.annotations(months, milestones)
 
     assert result['annotations']['velikonoce-label']['xValue'] == 1
     assert result['annotations']['velikonoce-line']['xMin'] == 1
@@ -93,8 +102,8 @@ def test_annotations_handles_years_correctly():
 
 def test_annotations_label_splits_by_whitespace():
     months = [date(2020, 4, 30)]
-    events = [(date(2020, 4, 13), 'Velikonoční pondělí')]
-    result = charts.annotations(months, events)
+    milestones = [(date(2020, 4, 13), 'Velikonoční pondělí')]
+    result = charts.annotations(months, milestones)
     annotation = result['annotations']['velikonocni-pondeli-label']
 
     assert annotation['content'] == ['Velikonoční', 'pondělí']
@@ -102,8 +111,8 @@ def test_annotations_label_splits_by_whitespace():
 
 def test_annotations_label_respects_nbsp():
     months = [date(2020, 4, 30)]
-    events = [(date(2020, 4, 13), 'Velikonoční pondělí')]
-    result = charts.annotations(months, events)
+    milestones = [(date(2020, 4, 13), 'Velikonoční pondělí')]
+    result = charts.annotations(months, milestones)
     annotation = result['annotations']['velikonocni-pondeli-label']
 
     assert annotation['content'] == ['Velikonoční pondělí']

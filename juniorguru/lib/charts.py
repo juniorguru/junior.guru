@@ -11,8 +11,10 @@ ANNOTATION_LABEL_OPTIONS = {
     'backgroundColor': 'white',
     'borderRadius': 3,
     'padding': 3,
-    'position': {'x': 'center', 'y': 'start'},
-    'yAdjust': 10,
+    'position': {'x': 'start', 'y': 'start'},
+    'textAlign': 'left',
+    'xAdjust': 1,
+    'yAdjust': 5,
     'z': 1,
 }
 
@@ -62,23 +64,27 @@ def month_range(date):
     return (date.replace(day=1), date.replace(day=calendar.monthrange(date.year, date.month)[1]))
 
 
-def annotations(months, events):
+def annotations(months, milestones):
     annotations = {}
-    for event_date, event_name in dict(events).items():
-        name = slugify(event_name)
-        x = [index for index, month in enumerate(months)
-             if (month.year == event_date.year and
-                 month.month == event_date.month)][0]
-        annotations[f'{name}-label'] = {
-            'content': event_name.split(' '),
-            'xValue': x,
-            **ANNOTATION_LABEL_OPTIONS,
-        }
-        annotations[f'{name}-line'] = {
-            'xMin': x,
-            'xMax': x,
-            **ANNOTATION_LINE_OPTIONS,
-        }
+    for milestone_date, milestone_name in dict(milestones).items():
+        name = slugify(milestone_name)
+        try:
+            x = [index for index, month in enumerate(months)
+                if (month.year == milestone_date.year and
+                    month.month == milestone_date.month)][0]
+        except IndexError:
+            continue
+        else:
+            annotations[f'{name}-label'] = {
+                'content': milestone_name.split(' '),
+                'xValue': x,
+                **ANNOTATION_LABEL_OPTIONS,
+            }
+            annotations[f'{name}-line'] = {
+                'xMin': x,
+                'xMax': x,
+                **ANNOTATION_LINE_OPTIONS,
+            }
     return {
         'common': {'drawTime': 'beforeDatasetsDraw'},
         'annotations': annotations,

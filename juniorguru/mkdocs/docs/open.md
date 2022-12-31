@@ -288,7 +288,8 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'y': {'beginAtZero': true}}
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts_club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Typy členství
@@ -347,7 +348,8 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
     {{ charts_subscriptions_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'x': {'stacked': True}, 'y': {'stacked': True}}
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
+        'plugins': {'annotation': charts_club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Příchody
@@ -376,7 +378,8 @@ Graf s registracemi obsahuje všechny typy členství. Ať už nový člen při�
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'y': {'beginAtZero': true}}
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts_club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Odchody
@@ -405,7 +408,8 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_. Tlustá čára za
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'y': {'beginAtZero': true}}
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts_club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Délka setrvání v klubu
@@ -428,7 +432,8 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'y': {'beginAtZero': true}}
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts_club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Podíl žen v klubu
@@ -453,7 +458,8 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'y': {'min': 0, 'max': 100}}
+        'scales': {'y': {'min': 0, 'max': 100}},
+        'plugins': {'annotation': charts_club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Návštěvnost
