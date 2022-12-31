@@ -97,6 +97,9 @@ def main():
                             id
                             metadata
                         }
+                        plan {
+                            intervalUnit
+                        }
                     }
                 }
             }
@@ -178,6 +181,7 @@ def main():
             ClubSubscribedPeriod.create(account_id=subscription['member']['id'],
                                         start_on=subscribed_period['start_on'],
                                         end_on=subscribed_period['end_on'],
+                                        interval_unit=subscription['plan']['intervalUnit'],
                                         has_feminine_name=has_feminine_name(name),
                                         category=category)
 

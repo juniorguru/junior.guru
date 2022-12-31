@@ -260,6 +260,8 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
 
 [Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**, ale platících členů může být i víc. Někteří si platí členství pouze aby mě podpořili, bez toho aby se vůbec na Discord přihlásili.
 
+Tenká modrá čára představuje počet členů, kteří si členství platí ze svého. Tenká zelená čára ukazuje ty z nich, kteří preferují roční platbu před měsíční.
+
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
@@ -267,21 +269,21 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
         'labels': charts_club_labels,
         'datasets': [
             {
-                'label': 'počet všech členů',
+                'label': 'všechna členství',
                 'data': charts_subscriptions,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
-                'label': 'počet individuálně platících členů',
+                'label': 'všechna individuální členství',
                 'data': charts_individuals,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
             {
-                'label': 'počet členek',
-                'data': charts_women,
-                'borderColor': '#dc3545',
+                'label': 'roční individuální členství',
+                'data': charts_individuals_yearly,
+                'borderColor': '#02CABB',
                 'borderWidth': 1,
             },
         ],

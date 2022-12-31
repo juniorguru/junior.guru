@@ -4,7 +4,7 @@ from datetime import date, timedelta
 
 from emoji import is_emoji
 from peewee import (BooleanField, CharField, DateField, DateTimeField, ForeignKeyField,
-                    IntegerField, TextField, fn)
+                    IntegerField, TextField, fn, Check)
 
 from juniorguru.lib.charts import month_range
 from juniorguru.lib.club import (INTRO_CHANNEL, IS_NEW_PERIOD_DAYS, JUNIORGURU_BOT,
@@ -241,9 +241,14 @@ class ClubSubscribedPeriod(BaseModel):
     COMPANY_CATEGORY = 'company'
     STUDENT_CATEGORY = 'students'
 
+    MONTHLY_INTERVAL_UNIT = 'month'
+    YEARLY_INTERVAL_UNIT = 'year'
+    INTERVAL_UNITS = (MONTHLY_INTERVAL_UNIT, YEARLY_INTERVAL_UNIT)
+
     account_id = CharField()
     start_on = DateField()
     end_on = DateField()
+    interval_unit = CharField(constraints=[Check(f"interval_unit in {INTERVAL_UNITS!r}")])
     category = CharField(null=True)
     has_feminine_name = BooleanField()
 
@@ -279,9 +284,18 @@ class ClubSubscribedPeriod(BaseModel):
         return 0
 
     @classmethod
-    def individuals_count(cls, date):
+    def individuals(cls, date):
         return cls.listing(date) \
-            .where(cls.category == cls.INDIVIDUALS_CATEGORY) \
+            .where(cls.category == cls.INDIVIDUALS_CATEGORY)
+
+    @classmethod
+    def individuals_count(cls, date):
+        return cls.individuals(date).count()
+
+    @classmethod
+    def individuals_yearly_count(cls, date):
+        return cls.individuals(date) \
+            .where(cls.interval_unit == cls.YEARLY_INTERVAL_UNIT) \
             .count()
 
     @classmethod
