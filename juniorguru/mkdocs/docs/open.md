@@ -46,7 +46,7 @@ Cílem není zbohatnout, ale dlouhodobě pomáhat juniorům, pohodlně živit ro
 
 <table class="table table-mood">
     <tr>
-        <th>{{ profit_ttm|thousands }} Kč</th>
+        <th>{{ profit_ttm|thousands }} Kč <small>čistého</small></th>
         <td>
             {% if profit_ttm < 20000 %}
                 😱

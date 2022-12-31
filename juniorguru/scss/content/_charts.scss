@@ -13,7 +13,13 @@
 .table-mood {
   @extend .fs-2;
   @extend .table-borderless;
+  @extend .align-middle;
   text-align: center;
+}
+
+.table-mood th {
+  @extend .fs-3;
+  font-weight: $font-weight-normal;
 }
 
 .table-mood tr * {
@@ -30,7 +36,6 @@
 
 .table-goals tr:nth-child(1) {
   font-size: $font-size-sm;
-  font-weight: $font-weight-bold;
 
   @include media-breakpoint-up(md) {
     font-size: $font-size-lg;
@@ -48,6 +53,7 @@
 .table-goals td,
 .table-goals th {
   width: 33.33%;
+  font-weight: $font-weight-normal;
   text-align: center;
 }
 

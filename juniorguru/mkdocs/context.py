@@ -34,6 +34,7 @@ MILESTONES = [
     (BUSINESS_BEGIN_ON, 'Začátek podnikání'),
     (date(2020, 9, 1), 'Vznik příručky'),
     (CLUB_BEGIN_ON, 'Vznik klubu'),
+    (date(2022, 1, 1), 'Vznik podcastu'),
     (date(2022, 9, 1), 'Zdražení firmám'),
     (date(2022, 12, 30), 'Zdražení členům'),
 ]

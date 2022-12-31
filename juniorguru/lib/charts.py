@@ -24,11 +24,11 @@ ANNOTATION_LINE_OPTIONS = {
     'borderWidth': 1,
 }
 
-ANNOTATION_YEAR_LINE_OPTIONS = {
+ANNOTATION_YEAR_OPTIONS = {
     'type': 'line',
-    'borderColor': '#bbb',
+    'borderColor': '#666',
     'borderWidth': 1,
-    'borderDash': [5, 5],
+    'borderDash': [3, 3],
     'z': 1,
 }
 
@@ -73,10 +73,10 @@ def month_range(date):
 
 def annotations(months, milestones):
     annotations = {
-        f'{month.year}-line': {
+        f'{month.year}': {
             'xMin': x,
             'xMax': x,
-            **ANNOTATION_YEAR_LINE_OPTIONS,
+            **ANNOTATION_YEAR_OPTIONS,
         }
         for x, month in enumerate(months)
         if month.month == 1  # January

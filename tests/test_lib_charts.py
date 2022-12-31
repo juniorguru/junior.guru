@@ -56,10 +56,9 @@ def test_annotations():
     assert charts.annotations(months, milestones) == {
         'common': {'drawTime': 'beforeDatasetsDraw'},
         'annotations': {
-            '2020-line': {
-                'xMin': expected_year_x,
-                'xMax': expected_year_x,
-                **charts.ANNOTATION_YEAR_LINE_OPTIONS,
+            '2020': {
+                'xValue': expected_year_x,
+                **charts.ANNOTATION_YEAR_OPTIONS,
             },
             'valentyn-label': {
                 'content': ['Valentýn'],
