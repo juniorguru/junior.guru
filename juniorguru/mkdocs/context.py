@@ -30,15 +30,9 @@ BUSINESS_BEGIN_ON = date(2020, 1, 1)
 
 CLUB_BEGIN_ON = date(2021, 2, 1)
 
-BUSINESS_MILESTONES = [
-    (BUSINESS_BEGIN_ON, 'Vznik junior.guru'),
+MILESTONES = [
+    (BUSINESS_BEGIN_ON, 'Začátek podnikání'),
     (date(2020, 9, 1), 'Vznik příručky'),
-    (CLUB_BEGIN_ON, 'Vznik klubu'),
-    (date(2022, 9, 1), 'Zdražení firmám'),
-    (date(2022, 12, 30), 'Zdražení členům'),
-]
-
-CLUB_MILESTONES = [
     (CLUB_BEGIN_ON, 'Vznik klubu'),
     (date(2022, 9, 1), 'Zdražení firmám'),
     (date(2022, 12, 30), 'Zdražení členům'),
@@ -98,7 +92,7 @@ def on_docs_context(context):
     # open.md
     business_charts_months = charts.months(BUSINESS_BEGIN_ON, TODAY)
     context['charts_business_labels'] = charts.labels(business_charts_months)
-    context['charts_business_annotations'] = charts.annotations(business_charts_months, BUSINESS_MILESTONES)
+    context['charts_business_annotations'] = charts.annotations(business_charts_months, MILESTONES)
     context['charts_profit'] = charts.per_month(Transaction.profit, business_charts_months)
     context['charts_profit_ttm'] = charts.per_month(Transaction.profit_ttm, business_charts_months)
     context['charts_revenue'] = charts.per_month(Transaction.revenue, business_charts_months)
@@ -109,7 +103,7 @@ def on_docs_context(context):
     context['charts_cost_breakdown'] = charts.per_month_breakdown(Transaction.cost_breakdown, business_charts_months)
     club_charts_months = charts.months(CLUB_BEGIN_ON, TODAY)
     context['charts_club_labels'] = charts.labels(club_charts_months)
-    context['charts_club_annotations'] = charts.annotations(club_charts_months, CLUB_MILESTONES)
+    context['charts_club_annotations'] = charts.annotations(club_charts_months, MILESTONES)
     context['charts_subscriptions'] = charts.per_month(ClubSubscribedPeriod.count, club_charts_months)
     context['charts_individuals'] = charts.per_month(ClubSubscribedPeriod.individuals_count, club_charts_months)
     context['charts_women'] = charts.per_month(ClubSubscribedPeriod.women_count, club_charts_months)

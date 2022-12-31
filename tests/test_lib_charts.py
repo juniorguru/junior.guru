@@ -49,12 +49,18 @@ def test_annotations():
         (date(2020, 2, 14), 'Valentýn'),
         (date(2020, 4, 13), 'Velikonoce'),
     ]
+    expected_year_x = 0
     expected_valentyn_x = 1
     expected_velikonoce_x = 3
 
     assert charts.annotations(months, milestones) == {
         'common': {'drawTime': 'beforeDatasetsDraw'},
         'annotations': {
+            '2020-line': {
+                'xMin': expected_year_x,
+                'xMax': expected_year_x,
+                **charts.ANNOTATION_YEAR_LINE_OPTIONS,
+            },
             'valentyn-label': {
                 'content': ['Valentýn'],
                 'xValue': expected_valentyn_x,

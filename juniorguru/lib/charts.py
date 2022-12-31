@@ -7,7 +7,7 @@ from slugify import slugify
 
 ANNOTATION_LABEL_OPTIONS = {
     'type': 'label',
-    'color': '#666',
+    'color': '#aaa',
     'backgroundColor': 'white',
     'borderRadius': 3,
     'padding': 3,
@@ -15,14 +15,21 @@ ANNOTATION_LABEL_OPTIONS = {
     'textAlign': 'left',
     'xAdjust': 1,
     'yAdjust': 5,
-    'z': 1,
+    'z': 2,
 }
 
 ANNOTATION_LINE_OPTIONS = {
     'type': 'line',
-    'borderColor': '#666',
+    'borderColor': '#bbb',
     'borderWidth': 1,
-    'borderDash': [3, 3],
+}
+
+ANNOTATION_YEAR_LINE_OPTIONS = {
+    'type': 'line',
+    'borderColor': '#bbb',
+    'borderWidth': 1,
+    'borderDash': [5, 5],
+    'z': 1,
 }
 
 
@@ -65,7 +72,15 @@ def month_range(date):
 
 
 def annotations(months, milestones):
-    annotations = {}
+    annotations = {
+        f'{month.year}-line': {
+            'xMin': x,
+            'xMax': x,
+            **ANNOTATION_YEAR_LINE_OPTIONS,
+        }
+        for x, month in enumerate(months)
+        if month.month == 1  # January
+    }
     for milestone_date, milestone_name in dict(milestones).items():
         name = slugify(milestone_name)
         try:
