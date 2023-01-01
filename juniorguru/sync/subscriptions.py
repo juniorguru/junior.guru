@@ -1,6 +1,5 @@
 import itertools
 import os
-import re
 from datetime import date, datetime, timedelta
 from operator import itemgetter
 
@@ -14,6 +13,7 @@ from juniorguru.lib.memberful import Memberful
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubSubscribedPeriod, ClubUser
 from juniorguru.models.company import Company, CompanyStudentSubscription
+from juniorguru.models.feminine_name import FeminineName
 
 
 logger = loggers.from_path(__file__)
@@ -22,18 +22,6 @@ logger = loggers.from_path(__file__)
 MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
 
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
-
-FEMININE_NAME_RE = re.compile(r'''
-    (\w+\s\w+ov[aá]$)|
-    (\w+\s\w+ská$)|
-    (\b(
-        Jana|Marie|Eva|Hana|Anna|Lenka|Kate[řr]ina|Lucie|V[eě]ra|Alena|Petra|Veronika|Jaroslava|
-        Tereza|Martina|Michaela|Jitka|Helena|Ludmila|Zde[ňn]ka|Ivana|Monika|Eli[šs]ka|Zuzana|
-        Mark[ée]ta|Jarmila|Barbora|Ji[řr]ina|Marcela|Krist[ýy]na|Alexandra|Daniela|Kayla|
-        Hann?ah?|Mia|Kl[áa]ra|Olga|Nath?[áa]lie|Adina|Karol[íi]na|Ane[žz]ka|Marij?[ea]|Alisa|
-        Hany|Dominika|Marta|Nikola
-    )\b)
-''', re.VERBOSE | re.IGNORECASE)
 
 COUPON_NAMES_CATEGORIES_MAPPING = {
     'THANKYOU': ClubSubscribedPeriod.FREE_CATEGORY,
@@ -48,7 +36,8 @@ COUPON_NAMES_CATEGORIES_MAPPING = {
 
 
 @cli.sync_command(dependencies=['club-content',
-                                'companies'])
+                                'companies',
+                                'feminine-names'])
 @db.connection_context()
 def main():
     db.drop_tables([CompanyStudentSubscription, ClubSubscribedPeriod])
@@ -121,6 +110,8 @@ def main():
                 pass
 
         name = subscription['member']['fullName'].strip()
+        has_feminine_name = FeminineName.is_feminine(name)
+
         coupon = get_active_coupon(subscription)
         coupon_parts = parse_coupon(coupon) if coupon else {}
         student_record_fields = dict(itertools.chain.from_iterable([
@@ -135,7 +126,7 @@ def main():
         records.append({
             'Name': name,
             'Discord Name': user.display_name.strip() if user else None,
-            'Gender': ('F' if has_feminine_name(name) else 'M'),
+            'Gender': ('F' if has_feminine_name else 'M'),
             'E-mail': subscription['member']['email'],
             'Memberful ID': subscription['member']['id'],
             'Discord ID': discord_id,
@@ -182,7 +173,7 @@ def main():
                                         start_on=subscribed_period['start_on'],
                                         end_on=subscribed_period['end_on'],
                                         interval_unit=subscription['plan']['intervalUnit'],
-                                        has_feminine_name=has_feminine_name(name),
+                                        has_feminine_name=has_feminine_name,
                                         category=category)
 
     logger.info('Process remaining Discord users')
@@ -280,7 +271,3 @@ def get_subscribed_periods(subscription):
         is_trial = (start_on == trial[0] and end_on == trial[1]) if trial else False
         yield dict(start_on=start_on, end_on=end_on, coupon=coupon, is_trial=is_trial)
         renewal_on = start_on
-
-
-def has_feminine_name(name):
-    return bool(FEMININE_NAME_RE.search(name)) if name else False
