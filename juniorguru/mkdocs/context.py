@@ -13,7 +13,7 @@ from juniorguru.mkdocs.thumbnail import thumbnail
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubSubscribedPeriod, ClubUser
 from juniorguru.models.company import Company
-from juniorguru.models.event import Event
+from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.job import ListedJob
 from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.story import Story
@@ -122,6 +122,7 @@ def on_docs_context(context):
     context['charts_messages'] = charts.per_month(ClubMessage.count_by_month, club_messages_charts_months)
     context['charts_events'] = charts.per_month(Event.count_by_month, club_charts_months)
     context['charts_events_ttm'] = charts.per_month(Event.count_by_month_ttm, club_charts_months)
+    context['charts_events_women_ptc_ttm'] = charts.per_month(EventSpeaking.women_ptc_ttm, club_charts_months)
 
     # podcast.md, handbook/cv.md
     context['podcast_episodes'] = PodcastEpisode.listing()

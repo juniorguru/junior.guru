@@ -24,6 +24,7 @@ class ClubUser(BaseModel):
     has_avatar = BooleanField(default=True)
     avatar_path = CharField(null=True)
     display_name = CharField()
+    has_feminine_name = BooleanField(null=True)
     mention = CharField(unique=True)
     tag = CharField()
     coupon = CharField(null=True, index=True)

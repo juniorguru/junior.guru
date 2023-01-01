@@ -7,7 +7,7 @@ from peewee import CharField, DateTimeField, ForeignKeyField, IntegerField, Text
 from juniorguru.lib.md import strip_links
 from juniorguru.models.base import BaseModel, JSONField
 from juniorguru.models.club import ClubUser
-from juniorguru.lib.charts import ttm_range
+from juniorguru.lib.charts import ttm_range, month_range
 
 
 class Event(BaseModel):
@@ -98,9 +98,10 @@ class Event(BaseModel):
 
     @classmethod
     def count_by_month(cls, date):
+        from_date, to_date = month_range(date)
         return cls.select() \
-            .where(cls.start_at.year == date.year,
-                   cls.start_at.month == date.month) \
+            .where(fn.date_trunc('day', cls.start_at) >= from_date,
+                   fn.date_trunc('day', cls.start_at) <= to_date) \
             .count()
 
     @classmethod
@@ -115,3 +116,32 @@ class Event(BaseModel):
 class EventSpeaking(BaseModel):
     speaker = ForeignKeyField(ClubUser, backref='list_speaking')
     event = ForeignKeyField(Event, backref='list_speaking')
+
+    @classmethod
+    def listing(cls, from_date, to_date):
+        return cls.select() \
+            .join(Event) \
+            .where(fn.date_trunc('day', Event.start_at) >= from_date,
+                   fn.date_trunc('day', Event.start_at) <= to_date)
+
+    @classmethod
+    def count_ttm(cls, date):
+        return math.ceil(cls.listing(*ttm_range(date)).count())
+
+    @classmethod
+    def women_listing(cls, from_date, to_date):
+        return cls.listing(from_date, to_date) \
+            .switch(cls) \
+            .join(ClubUser) \
+            .where(ClubUser.has_feminine_name == True)
+
+    @classmethod
+    def women_count_ttm(cls, date):
+        return math.ceil(cls.women_listing(*ttm_range(date)).count())
+
+    @classmethod
+    def women_ptc_ttm(cls, date):
+        count = cls.count_ttm(date)
+        if count:
+            return math.ceil((cls.women_count_ttm(date) / count) * 100)
+        return 0

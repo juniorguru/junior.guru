@@ -158,6 +158,7 @@ def main():
                 user.subscription_id = str(subscription['id'])
                 user.expires_at = arrow.get(subscription['expiresAt']).naive
                 user.coupon = coupon_parts.get('coupon')
+            user.has_feminine_name = has_feminine_name
             user.update_subscribed_at(arrow.get(subscription['createdAt']).naive)
             user.save()
 

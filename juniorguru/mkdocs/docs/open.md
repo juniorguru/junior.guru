@@ -438,33 +438,6 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
         'plugins': {'annotation': charts_club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-### Podíl žen v klubu
-
-Podíl žen na počtu členů sleduji z vlastní zvědavosti a není to žádná přesná metrika. Nikdo nikde nevyplňuje, zda je žena nebo muž. Pro účely statistiky se to určuje jen odhadem podle křestního jména a tvaru příjmení.
-
-Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/cri/lidske-zdroje-v-informacnich-technologiich-2020) je v českém IT pouze 10 % žen a tento podíl se od jejich poslední analýzy před několika lety nezlepšil, naopak nás definitivně předběhly už všechny ostatní státy v Evropě.
-
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="200"
-    data-chart-type="line"
-    data-chart="{{ {
-        'labels': charts_club_labels,
-        'datasets': [
-            {
-                'label': '% žen v klubu',
-                'data': charts_women_ptc,
-                'borderColor': '#dc3545',
-                'borderWidth': 2,
-            },
-        ]
-    }|tojson|forceescape }}"
-    data-chart-options="{{ {
-        'interaction': {'mode': 'index'},
-        'scales': {'y': {'min': 0, 'max': 100}},
-        'plugins': {'annotation': charts_club_annotations},
-    }|tojson|forceescape }}"
-    data-chart-milestones-offset-ptc="0"></canvas></div></div>
-
 ## Aktivita v klubu
 
 ### Počet zpráv na Discordu
@@ -495,7 +468,7 @@ Pouze orientační metrika. Nechci sledovat a glorifikovat _engagement_, protož
 
 ### Počet online akcí v klubu
 
-V průměru bych chtěl mít v klubu aspoň dvě oficiální online akce měsíčně.
+Chtěl bych mít v klubu v průměru aspoň dvě oficiální online akce měsíčně.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
@@ -520,6 +493,59 @@ V průměru bych chtěl mít v klubu aspoň dvě oficiální online akce měsí�
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts_club_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
+## Ženy
+
+Podíl žen sleduji z vlastní zvědavosti a není to žádná přesná metrika. Nikdo nikde nevyplňuje, zda je žena nebo muž. Pro účely statistik se to určuje jen odhadem podle křestního jména a tvaru příjmení.
+
+### Podíl žen v klubu
+
+Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/cri/lidske-zdroje-v-informacnich-technologiich-2020) je v českém IT pouze 10 % žen. Tento podíl se od jejich [předchozí analýzy v roce 2018](https://www.czso.cz/csu/czso/cri/ict-odbornici-v-ceske-republice-a-jejich-mzdy-2018) nezlepšil, naopak nás definitivně předběhly už všechny ostatní státy v Evropě.
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="200"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts_club_labels,
+        'datasets': [
+            {
+                'label': '% žen v klubu',
+                'data': charts_women_ptc,
+                'borderColor': '#dc3545',
+                'borderWidth': 2,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'min': 0, 'max': 100}},
+        'plugins': {'annotation': charts_club_annotations},
+    }|tojson|forceescape }}"
+    data-chart-milestones-offset-ptc="0"></canvas></div></div>
+
+### Podíl žen mezi přednášejícími
+
+Chtěl bych, aby v průměru polovina přednášejících na online akcích v klubu byly ženy. Graf zobrazuje procentuální podíl žen na počtu přednášejících za posledních 12 měsíců (TTM, _trailing twelve months_).
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="200"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts_club_labels,
+        'datasets': [
+            {
+                'label': '% přednášejících žen TTM',
+                'data': charts_events_women_ptc_ttm,
+                'borderColor': '#dc3545',
+                'borderWidth': 2,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'min': 0, 'suggestedMax': 50}},
         'plugins': {'annotation': charts_club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
