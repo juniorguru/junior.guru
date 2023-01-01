@@ -1,11 +1,13 @@
 from datetime import datetime, timedelta
+import math
 
 import arrow
-from peewee import CharField, DateTimeField, ForeignKeyField, IntegerField, TextField
+from peewee import CharField, DateTimeField, ForeignKeyField, IntegerField, TextField, fn
 
 from juniorguru.lib.md import strip_links
 from juniorguru.models.base import BaseModel, JSONField
 from juniorguru.models.club import ClubUser
+from juniorguru.lib.charts import ttm_range
 
 
 class Event(BaseModel):
@@ -93,6 +95,21 @@ class Event(BaseModel):
     def club_listing(cls, now=None):
         return cls.archive_listing(now=now) \
             .where(cls.avatar_path != cls.avatar_path.default)
+
+    @classmethod
+    def count_by_month(cls, date):
+        return cls.select() \
+            .where(cls.start_at.year == date.year,
+                   cls.start_at.month == date.month) \
+            .count()
+
+    @classmethod
+    def count_by_month_ttm(cls, date):
+        from_date, to_date = ttm_range(date)
+        return math.ceil(cls.select() \
+            .where(fn.date_trunc('day', cls.start_at) >= from_date,
+                   fn.date_trunc('day', cls.start_at) <= to_date) \
+            .count() / 12.0)
 
 
 class EventSpeaking(BaseModel):

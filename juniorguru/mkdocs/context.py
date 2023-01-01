@@ -116,10 +116,12 @@ def on_docs_context(context):
     context['charts_individuals_signups'] = charts.per_month(ClubSubscribedPeriod.individuals_signups_count, club_trend_charts_months)
     context['charts_churn_ptc'] = charts.per_month(ClubSubscribedPeriod.churn_ptc, club_trend_charts_months)
     context['charts_individuals_churn_ptc'] = charts.per_month(ClubSubscribedPeriod.individuals_churn_ptc, club_trend_charts_months)
-    club_messages_charts_months = charts.months(charts.next_month(TODAY - DEFAULT_CHANNELS_HISTORY_SINCE), TODAY)
+    club_messages_charts_months = charts.months(charts.next_month(TODAY - DEFAULT_CHANNELS_HISTORY_SINCE), charts.previous_month(TODAY))
     context['charts_club_messages_labels'] = charts.labels(club_messages_charts_months)
     context['charts_club_messages_annotations'] = charts.annotations(club_messages_charts_months, MILESTONES)
     context['charts_messages'] = charts.per_month(ClubMessage.count_by_month, club_messages_charts_months)
+    context['charts_events'] = charts.per_month(Event.count_by_month, club_charts_months)
+    context['charts_events_ttm'] = charts.per_month(Event.count_by_month_ttm, club_charts_months)
 
     # podcast.md, handbook/cv.md
     context['podcast_episodes'] = PodcastEpisode.listing()
