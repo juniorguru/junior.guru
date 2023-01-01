@@ -57,7 +57,8 @@ def test_annotations():
         'common': {'drawTime': 'beforeDatasetsDraw'},
         'annotations': {
             '2020': {
-                'xValue': expected_year_x,
+                'xMin': expected_year_x,
+                'xMax': expected_year_x,
                 **charts.ANNOTATION_YEAR_OPTIONS,
             },
             'valentyn-label': {
