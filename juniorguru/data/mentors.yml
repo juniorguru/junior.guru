@@ -4,6 +4,12 @@
 #   topics: testování, QA, vývojářské nástroje, Robot Framework, Postman, SQL
 #   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
+- id: 1050753530727763988
+  name: Vašek R.
+  company: Mews
+  topics: matematika, příprava na pohovor, C#, .NET
+  book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
+
 - id: 206027275861360640
   name: Jirka S.
   company: Mews
