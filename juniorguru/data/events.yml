@@ -276,20 +276,21 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/966037882643034153
 
 
-- title: "Představení Jetveo"
-  date: "2022-02-23"
-  description: |
-    Jetveo je low-code platforma se C#, na které by měl být i úplný začátečník s minimální znalostí kódu schopen poměrně rychle vytvořit funkční, produkční appku. Zakladatel Jetveo Dalibor a junior Jakub, který si díky Jetveo našel svou první práci v IT, v klubu udělali představení platformy a odpovídali na dotazy.
-  bio_name: Dalibor Houfek, Jakub Ráček
-  bio_title: Kluci z Jetveo
-  bio: |
-    Dalibor je spoluzakladatelem platformy Jetveo. Jakub je junior, který se s platformou naučil pracovat a našel si díky tomu svou první práci v IT.
-  bio_links:
-    - https://jetveo.io/
-    - https://jetveo.io/cs/blog/articles/jakub-interview
-  logo_path: logos/jetveo.svg
-  speakers: 736963862099918968
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946376703691882497
+# HOTFIX
+# - title: "Představení Jetveo"
+#   date: "2022-02-23"
+#   description: |
+#     Jetveo je low-code platforma se C#, na které by měl být i úplný začátečník s minimální znalostí kódu schopen poměrně rychle vytvořit funkční, produkční appku. Zakladatel Jetveo Dalibor a junior Jakub, který si díky Jetveo našel svou první práci v IT, v klubu udělali představení platformy a odpovídali na dotazy.
+#   bio_name: Dalibor Houfek, Jakub Ráček
+#   bio_title: Kluci z Jetveo
+#   bio: |
+#     Dalibor je spoluzakladatelem platformy Jetveo. Jakub je junior, který se s platformou naučil pracovat a našel si díky tomu svou první práci v IT.
+#   bio_links:
+#     - https://jetveo.io/
+#     - https://jetveo.io/cs/blog/articles/jakub-interview
+#   logo_path: logos/jetveo.svg
+#   speakers: 736963862099918968
+#   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946376703691882497
 
 
 - title: "Jak přežít cestu juniora po psychické stránce"
@@ -630,18 +631,19 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/822066882298642462
 
 
-- title: První klubový sraz
-  date: "2021-02-11"
-  time: "18:30"
-  description: |
-    Začneme s _lightning talks_. Přihlášené příspěvky:
+# HOTFIX
+# - title: První klubový sraz
+#   date: "2021-02-11"
+#   time: "18:30"
+#   description: |
+#     Začneme s _lightning talks_. Přihlášené příspěvky:
 
-    -   Honza Javorek – Co a jak s GitHub profilem
-    -   Daniel Srb – Jak si přepočítat hodinovku jako OSVČ na mzdu zaměstnance a opačně
-    -   Karolina Surma - OSM + uMap + GitHub a špetka Bashe = dynamická mapa do každé domácnosti
+#     -   Honza Javorek – Co a jak s GitHub profilem
+#     -   Daniel Srb – Jak si přepočítat hodinovku jako OSVČ na mzdu zaměstnance a opačně
+#     -   Karolina Surma - OSM + uMap + GitHub a špetka Bashe = dynamická mapa do každé domácnosti
 
-    Pak bude volná debata podobně, jako když se lidi sejdou v hospodě.
-  bio_name: Honza Javorek, Daniel Srb, Karolina Surma
-  bio: |
-    Kdokoliv z účastníků srazu si může přihlásit _lightning talk_ a dostane prostor.
-  speakers: 668226181769986078, 652142810291765248, 797088930758524959
+#     Pak bude volná debata podobně, jako když se lidi sejdou v hospodě.
+#   bio_name: Honza Javorek, Daniel Srb, Karolina Surma
+#   bio: |
+#     Kdokoliv z účastníků srazu si může přihlásit _lightning talk_ a dostane prostor.
+#   speakers: 668226181769986078, 652142810291765248, 797088930758524959
