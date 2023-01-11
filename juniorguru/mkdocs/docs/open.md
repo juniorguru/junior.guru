@@ -220,12 +220,17 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
             {
                 'label': 'memberful.com',
                 'data': charts_cost_breakdown.pop('memberful'),
-                'backgroundColor': '#EF704F',
+                'backgroundColor': '#DF4B25',
             },
             {
                 'label': 'různé',
                 'data': charts_cost_breakdown.pop('miscellaneous'),
-                'backgroundColor': '#dc3545',
+                'backgroundColor': '#aaa',
+            },
+            {
+                'label': 'produkce videa',
+                'data': charts_cost_breakdown.pop('video'),
+                'backgroundColor': '#0c1633',
             },
             {
                 'label': 'právnička',
@@ -235,7 +240,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
             {
                 'label': 'účetnictví, fakturoid.cz',
                 'data': charts_cost_breakdown.pop('accounting'),
-                'backgroundColor': '#a9a9a9',
+                'backgroundColor': '#108a00',
             },
             {
                 'label': 'marketing',
@@ -245,7 +250,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
             {
                 'label': 'discord.com',
                 'data': charts_cost_breakdown.pop('discord'),
-                'backgroundColor': '#343434',
+                'backgroundColor': '#5865f2',
             },
         ],
     }|tojson|forceescape }}"
