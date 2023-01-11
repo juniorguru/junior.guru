@@ -8,7 +8,7 @@ from discord.errors import Forbidden
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, INTRO_CHANNEL,
-                                 JUNIORGURU_BOT, MODERATORS_ROLE, run_discord_task)
+                                 JUNIORGURU_BOT, run_discord_task)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
@@ -22,6 +22,8 @@ NUMBERS_REACTIONS = ['0️⃣', '1️⃣', '2️⃣', '3️⃣', '4️⃣', '5�
 PROCESS_HISTORY_SINCE = timedelta(days=30)
 
 THREADS_STARTING_AT = datetime(2022, 7, 17, 0, 0)
+
+GREETERS_ROLE = 1062755787153358879
 
 PURGE_SAFETY_LIMIT = 20
 
@@ -68,17 +70,17 @@ async def discord_task(client):
 
 
 async def process_message(client, channel, message):
-    moderators_role = [role for role in client.juniorguru_guild.roles if role.id == MODERATORS_ROLE][0]
-    moderators = moderators_role.members
-    moderators_ids = [member.id for member in moderators] + [JUNIORGURU_BOT]
+    greeters_role = [role for role in client.juniorguru_guild.roles if role.id == GREETERS_ROLE][0]
+    greeters = greeters_role.members
+    greeters_ids = [member.id for member in greeters] + [JUNIORGURU_BOT]
 
-    if message.type == 'default' and message.author.id not in moderators_ids and message.is_intro:
-        await welcome(channel, message, moderators)
+    if message.type == 'default' and message.author.id not in greeters_ids and message.is_intro:
+        await welcome(channel, message, greeters)
     elif message.type == 'new_member' and message.author.first_seen_on() < message.created_at.date():
         await welcome_back(channel, message)
 
 
-async def welcome(channel, message, moderators):
+async def welcome(channel, message, greeters):
     logger_m = logger[f'messages.{message.id}']
     logger_m.info(f'Member #{message.author.id} has an intro message')
     logger_m.debug(f"Welcoming '{message.author.display_name}' with emojis")
@@ -136,11 +138,11 @@ async def welcome(channel, message, moderators):
                 await welcome_discord_message.clear_reactions()
             await add_reactions(welcome_discord_message, NUMBERS_REACTIONS, ordered=True)
 
-            logger_m.debug("Analyzing if all moderators are involved")
+            logger_m.debug("Analyzing if all greeters are involved")
             thread_members_ids = [member.id for member in (thread.members or await thread.fetch_members())]
-            members_to_add = [moderator for moderator in moderators
-                              if moderator.id not in thread_members_ids]
-            logger_m.debug(f"Found {len(members_to_add)} moderators to add")
+            members_to_add = [greeter for greeter in greeters
+                              if greeter.id not in thread_members_ids]
+            logger_m.debug(f"Found {len(members_to_add)} greeters to add")
             if members_to_add:
                 await asyncio.gather(*[thread.add_user(member) for member in members_to_add])
         else:

@@ -46,7 +46,7 @@
 - id: 1062002864039415858
   slug: adventofcode
   description: |
-    Kdo chce řešit letošní <#819935312272424982>. V prosinci bývá role vysoko, ale jen proto, aby stromeček přebil ostatní ikonky.
+    Kdo chce řešit letošní <#819935312272424982>. V prosinci bývá role vysoko, ale jen proto, aby stromeček přebil ostatní ikonky. Roli si vlastnoručně spravuješ v _Channels & Roles_.
 
 - id: 836929320706113567
   slug: most_discussing
@@ -67,3 +67,8 @@
   slug: has_intro_and_avatar
   description: |
     Kdo má představení v <#788823881024405544> a nastavený profilový obrázek. Roli automaticky spravuje bot a může trvat i den, než se změny projeví.
+
+- id: 1062755787153358879
+  slug: greeter
+  description: |
+    Kdo má chuť vítat nově příchozí v <#788823881024405544>. Bot je přidává do vítacích vláken. Roli si vlastnoručně spravuješ v _Channels & Roles_.

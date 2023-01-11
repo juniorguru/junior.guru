@@ -5,7 +5,10 @@ from juniorguru.lib.club import HONZAJAVOREK
 
 SCHEDULED_MESSAGES = {}
 
-ALLOWED_MENTIONS = [810862212297130005,]  # https://github.com/discord/discord-api-docs/issues/2126
+# https://github.com/discord/discord-api-docs/issues/2126
+ALLOWED_MENTIONS = [
+    810862212297130005,  # Pavlina
+]
 
 
 def schedule_message(emoji):
