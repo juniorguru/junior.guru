@@ -67,7 +67,7 @@ jobs:
           name: Test
           command: poetry run jg test -v
 
-  # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY
+  # Needs $GOOGLE_SERVICE_ACCOUNT, $FIOBANK_API_KEY, $DISCORD_API_KEY, $MEMBERFUL_API_KEY, $VIDEO_OUTSOURCING_TOKEN
   sync-1:
     executor: python-js
     resource_class: large

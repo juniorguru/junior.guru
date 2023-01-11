@@ -13,14 +13,20 @@ logger = loggers.from_path(__file__)
 
 
 FROM_DATE = date(2020, 1, 1)
+
 FIOBANK_API_KEY = os.getenv('FIOBANK_API_KEY')
+
 SIDELINE_JOBS = ['15']
+
+VIDEO_OUTSOURCING_TOKEN = os.environ['VIDEO_OUTSOURCING_TOKEN']
+
 CATEGORIES = [
     lambda t: 'memberships' if t['variable_symbol'] == '21' else None,
     lambda t: 'memberships' if t['variable_symbol'] == '215' else None,
     lambda t: 'partnerships' if t['variable_symbol'] == '226' else None,
     lambda t: 'salary' if 'výplata' in t['message'] else None,
     lambda t: 'sideline' if t['variable_symbol'] in SIDELINE_JOBS else None,
+    lambda t: 'video' if VIDEO_OUTSOURCING_TOKEN in t['message'] else None,
     lambda t: 'lawyer' if 'ADVOKATKA' in t['message'] else None,
     lambda t: 'marketing' if 'JANA DOLEJSOVA' in t['message'] else None,
     lambda t: 'accounting' if 'Irein' in t['message'] else None,
