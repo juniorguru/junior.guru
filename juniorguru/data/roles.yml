@@ -72,3 +72,8 @@
   slug: greeter
   description: |
     Kdo má chuť vítat nově příchozí v <#788823881024405544>. Bot je přidává do vítacích vláken. Roli si vlastnoručně spravuješ v _Channels & Roles_.
+
+- id: 1055919988222992418
+  slug: github
+  description: |
+    Kdo má s Discordem propojený svůj účet na GitHubu. Roli automaticky spravuje Discord.
