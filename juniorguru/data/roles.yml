@@ -13,10 +13,10 @@
   description: |
     Pouze pro info, aby bylo ve <#864434067968360459> vidět, kdo je a není laik. Role je vysoko jen proto, aby barva a ikonka přebily ostatní.
 
-- id: 927588591914340403
-  slug: podcaster
+- id: 927544920292601906
+  slug: multimedia
   description: |
-    Kdo moderuje [podcast](https://junior.guru/podcast/). Takže jen Pavlína.
+    Kdo na dělá [podcast](https://junior.guru/podcast/) nebo videa z akcí v klubu.
 
 - id: 974297387935866910
   slug: mentor
@@ -31,7 +31,7 @@
 - id: 837316268142493736
   slug: sponsor
   description: |
-    Kdo má předplatné zaplacené některou z firem, které spolupracují s klubem. Roli automaticky spravuje bot.
+    Kdo má předplatné zaplacené firmou, která spolupracuje s klubem. Roli automaticky spravuje bot.
 
 - id: 806851592799649874
   slug: booster
@@ -43,10 +43,10 @@
   description: |
     Kdo je prvních 15 dní v klubu. Roli automaticky spravuje bot.
 
-- id: 1020079121184849991
+- id: 1062002864039415858
   slug: adventofcode
   description: |
-    Kdo v prosinci řeší <#819935312272424982>, má tuto roli pro radost a aby šlo všechny označit. Role je vysoko jen proto, aby stromeček přebil ostatní ikonky.
+    Kdo chce řešit letošní <#819935312272424982>. V prosinci bývá role vysoko, ale jen proto, aby stromeček přebil ostatní ikonky.
 
 - id: 836929320706113567
   slug: most_discussing
