@@ -4,8 +4,7 @@ import discord
 from slugify import slugify
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JUNIORGURU_BOT,
-                                 HONZAJAVOREK)
+from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JUNIORGURU_BOT)
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.onboarding.categories import manage_category
 
@@ -15,6 +14,8 @@ TODAY = date.today()
 CHANNELS_OPERATIONS = {}
 
 CHANNEL_DELETE_TIMEOUT = timedelta(days=30)
+
+ONBOARDING_MODERATORS_ROLE = 1062768651188580494
 
 
 logger = loggers.from_path(__file__)
@@ -81,12 +82,11 @@ async def close_onboarding_channel(client, channel):
 async def prepare_onboarding_channel_data(client, member):
     name = f'{slugify(member.display_name, allow_unicode=True)}-tipy'
     topic = f'Soukromý kanál s tipy jen pro tebe! 🦸 {member.display_name} #{member.id}'
-    # moderators_role = [role for role in client.juniorguru_guild.roles if role.id == MODERATORS_ROLE][0]
+    onboarding_moderators_role = [role for role in client.juniorguru_guild.roles if role.id == ONBOARDING_MODERATORS_ROLE][0]
     overwrites = {
         client.juniorguru_guild.default_role: discord.PermissionOverwrite(read_messages=False),
         (await client.get_or_fetch_user(JUNIORGURU_BOT)): discord.PermissionOverwrite(read_messages=True),
-        (await client.get_or_fetch_user(HONZAJAVOREK)): discord.PermissionOverwrite(read_messages=True),
-        # moderators_role: discord.PermissionOverwrite(read_messages=True),
+        onboarding_moderators_role: discord.PermissionOverwrite(read_messages=True),
         (await client.get_or_fetch_user(member.id)): discord.PermissionOverwrite(read_messages=True),
     }
     return dict(name=name, topic=topic, overwrites=overwrites)

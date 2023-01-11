@@ -22,6 +22,8 @@ BETA_USERS_EMOJI = '🐇'
 
 BETA_USERS_DATE = date(2022, 7, 17)
 
+MODERATORS_ROLE = 795609174385098762
+
 
 logger = loggers.from_path(__file__)
 
@@ -30,8 +32,14 @@ async def manage_channels(client):
     beta_users_ids = await fetch_beta_users(client)
     logger.info(f'Found {len(beta_users_ids)} BETA volunteers')
 
+    moderators_role = [role for role in client.juniorguru_guild.roles if role.id == MODERATORS_ROLE][0]
+    moderators_ids = [member.id for member in moderators_role.members]
+    logger.info(f'Found {len(moderators_ids)} moderators')
+
     members = [member for member in ClubUser.members_listing()
-               if member.id in beta_users_ids or member.first_seen_on() > BETA_USERS_DATE]
+               if (member.id in beta_users_ids or
+                   member.id in moderators_ids or
+                   member.first_seen_on() > BETA_USERS_DATE)]
     logger.info(f'Onboarding {len(members)} members')
 
     channels = list(filter(is_onboarding_channel, client.juniorguru_guild.channels))
