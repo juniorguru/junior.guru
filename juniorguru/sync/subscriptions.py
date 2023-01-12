@@ -26,6 +26,7 @@ DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 COUPON_NAMES_CATEGORIES_MAPPING = {
     'THANKYOU': ClubSubscribedPeriod.FREE_CATEGORY,
     'THANKYOUFOREVER': ClubSubscribedPeriod.FREE_CATEGORY,
+    'THANKYOUTEAM': ClubSubscribedPeriod.TEAM_CATEGORY,
     'PATREON': ClubSubscribedPeriod.FREE_CATEGORY,
     'GITHUB': ClubSubscribedPeriod.FREE_CATEGORY,
     'FOUNDERS': ClubSubscribedPeriod.FREE_CATEGORY,

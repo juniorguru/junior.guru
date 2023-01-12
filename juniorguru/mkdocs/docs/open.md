@@ -316,9 +316,14 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
         'labels': charts_club_labels,
         'datasets': [
             {
+                'label': 'tým junior.guru',
+                'data': charts_subscriptions_breakdown.pop('team'),
+                'backgroundColor': '#457E31',
+            },
+            {
                 'label': 'symbióza s CoreSkill',
                 'data': charts_subscriptions_breakdown.pop('coreskill'),
-                'backgroundColor': '#343434',
+                'backgroundColor': '#2D3432',
             },
             {
                 'label': 'neplatí členství',
@@ -329,11 +334,6 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
                 'label': 'dva týdny zdarma',
                 'data': charts_subscriptions_breakdown.pop('trial'),
                 'backgroundColor': '#a9a9a9',
-            },
-            {
-                'label': 'mají stipendium',
-                'data': charts_subscriptions_breakdown.pop('finaid'),
-                'backgroundColor': '#02CABB',
             },
             {
                 'label': 'členství si platí sami',
