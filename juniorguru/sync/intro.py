@@ -133,18 +133,16 @@ async def welcome(channel, message, greeters):
                 welcome_discord_message = await thread.send(content=content)
                 await welcome_discord_message.edit(suppress=True)
 
-            logger_m.debug("Ensuring numbers reactions under the welcome message")
-            if get_missing_reactions(welcome_discord_message.reactions, NUMBERS_REACTIONS):
-                await welcome_discord_message.clear_reactions()
-            await add_reactions(welcome_discord_message, NUMBERS_REACTIONS, ordered=True)
+                logger_m.debug("Adding numbers reactions under the welcome message")
+                await add_reactions(welcome_discord_message, NUMBERS_REACTIONS, ordered=True)
 
-            logger_m.debug("Analyzing if all greeters are involved")
-            thread_members_ids = [member.id for member in (thread.members or await thread.fetch_members())]
-            members_to_add = [greeter for greeter in greeters
-                              if greeter.id not in thread_members_ids]
-            logger_m.debug(f"Found {len(members_to_add)} greeters to add")
-            if members_to_add:
-                await asyncio.gather(*[thread.add_user(member) for member in members_to_add])
+                logger_m.debug("Analyzing if all greeters are involved")
+                thread_members_ids = [member.id for member in (thread.members or await thread.fetch_members())]
+                members_to_add = [greeter for greeter in greeters
+                                if greeter.id not in thread_members_ids]
+                logger_m.debug(f"Found {len(members_to_add)} greeters to add")
+                if members_to_add:
+                    await asyncio.gather(*[thread.add_user(member) for member in members_to_add])
         else:
             logger_m.warning('Discord mutations not enabled')
 
