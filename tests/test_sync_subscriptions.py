@@ -2,58 +2,58 @@ from datetime import date
 
 import pytest
 
-from juniorguru.sync.subscriptions import (format_date, get_active_coupon,
+from juniorguru.sync.subscriptions import (format_date, get_coupon,
                                            get_student_months, get_student_started_on,
                                            get_subscribed_periods, get_subscriptions)
 
 
-def test_get_active_coupon():
+def test_get_coupon():
     subscription = {'coupon': {'code': 'COUPON12345678'},
                     'createdAt': 1636922909,
                     'expiresAt': 1669668509,
                     'orders': [{'coupon': {'code': 'COUPON12345678'}, 'createdAt': 1638132692},
                                {'coupon': None, 'createdAt': 1636922909}]}
 
-    assert get_active_coupon(subscription) == 'COUPON12345678'
+    assert get_coupon(subscription) == 'COUPON12345678'
 
 
-def test_get_active_coupon_reads_coupon_property_with_priority():
+def test_get_coupon_reads_coupon_property_with_priority():
     subscription = {'coupon': {'code': 'COUPON12345678'},
                     'createdAt': 1636922909,
                     'expiresAt': 1669668509,
                     'orders': []}
 
-    assert get_active_coupon(subscription) == 'COUPON12345678'
+    assert get_coupon(subscription) == 'COUPON12345678'
 
 
-def test_get_active_coupon_looks_at_last_order_if_no_coupon_property_set():
+def test_get_coupon_looks_at_last_order_if_no_coupon_property_set():
     subscription = {'coupon': None,
                     'createdAt': 1636922909,
                     'expiresAt': 1669668509,
                     'orders': [{'coupon': {'code': 'COUPON12345678'}, 'createdAt': 1637228062},
                                {'coupon': None, 'createdAt': 1636018061}]}
 
-    assert get_active_coupon(subscription) == 'COUPON12345678'
+    assert get_coupon(subscription) == 'COUPON12345678'
 
 
-def test_get_active_coupon_sorts_orders_by_date():
+def test_get_coupon_sorts_orders_by_date():
     subscription = {'coupon': None,
                     'createdAt': 1636922909,
                     'expiresAt': 1669668509,
                     'orders': [{'coupon': None, 'createdAt': 1636018061},
                                {'coupon': {'code': 'COUPON12345678'}, 'createdAt': 1637228062}]}
 
-    assert get_active_coupon(subscription) == 'COUPON12345678'
+    assert get_coupon(subscription) == 'COUPON12345678'
 
 
-def test_get_active_coupon_looks_at_last_order_only():
+def test_get_coupon_looks_at_last_order_only():
     subscription = {'coupon': None,
                     'createdAt': 1636922909,
                     'expiresAt': 1669668509,
                     'orders': [{'coupon': None, 'createdAt': 1637228062},
                                {'coupon': {'code': 'COUPON12345678'}, 'createdAt': 1636018061}]}
 
-    assert get_active_coupon(subscription) is None
+    assert get_coupon(subscription) is None
 
 
 def test_get_student_months():
@@ -222,7 +222,6 @@ def test_get_subscribed_periods_different_created_at():
                     'active': True,
                     'createdAt': 1619817670,
                     'expiresAt': 1652563270,
-                    'pastDue': False,
                     'coupon': None,
                     'member': {},
                     'orders': [
@@ -241,9 +240,50 @@ def test_get_subscribed_periods_no_orders():
                     'active': True,
                     'createdAt': 1619817670,
                     'expiresAt': 1652563270,
-                    'pastDue': False,
                     'coupon': None,
                     'member': {},
                     'orders': []}
 
     assert list(get_subscribed_periods(subscription)) == []
+
+
+def test_get_subscribed_periods_subscription_coupon_overlaps_order_coupon():
+    subscription = {'active': True,
+                    'coupon': {'code': 'TEAM666'},
+                    'createdAt': 1636922909,
+                    'expiresAt': 1704897133,
+                    'id': '123456789',
+                    'member': {},
+                    'orders': [{'coupon': {'code': 'COMPANY123'},
+                                'createdAt': 1669668703},
+                               {'coupon': {'code': 'COMPANY123'},
+                                 'createdAt': 1638132692},
+                               {'coupon': None, 'createdAt': 1636922909}],
+                    'plan': {'intervalUnit': 'year'},
+                    'trialEndAt': 1638132509,
+                    'trialStartAt': 1636922909}
+
+    assert list(get_subscribed_periods(subscription)) == [
+        {'start_on': date(2022, 11, 28), 'end_on': date(2024, 1, 9), 'coupon': 'TEAM666', 'is_trial': False},
+        {'start_on': date(2021, 11, 28), 'end_on': date(2022, 11, 27), 'coupon': 'COMPANY123', 'is_trial': False},
+        {'start_on': date(2021, 11, 14), 'end_on': date(2021, 11, 27), 'coupon': None, 'is_trial': True},
+    ]
+
+
+def test_get_subscribed_periods_subscription_coupon_overlaps_trial():
+    subscription = {'active': True,
+                    'coupon': {'code': 'TEAM666'},
+                    'createdAt': 1673613241,
+                    'expiresAt': 1674822841,
+                    'id': '123456789',
+                    'member': {},
+                    'orders': [{'coupon': None, 'createdAt': 1673613241}],
+                    'plan': {'intervalUnit': 'year'},
+                    'trialEndAt': 1674822841,
+                    'trialStartAt': 1673613241}
+
+    assert list(get_subscribed_periods(subscription)) == [
+        {'start_on': date(2023, 1, 13), 'end_on': date(2023, 1, 26), 'coupon': 'TEAM666', 'is_trial': True},
+    ]
+
+

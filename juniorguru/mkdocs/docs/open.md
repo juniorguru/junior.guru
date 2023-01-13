@@ -305,7 +305,7 @@ Každý příchozí člen má v klubu dva týdny zdarma, bez ohledu na to, jaký
 
 Část lidí má členství zdarma na základě toho, že mě v podpořili dobrovolnými příspěvky. V důsledku to tedy zdarma není, jen mi peníze poslali jinudy. Mnohdy poslali víc, než by je stálo standardní členství v klubu.
 
-S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzájem neplatíme. Oni využívají platformu klubu pro svůj mentoring a své studenty. Všichni mají automaticky vstup zdarma. Klub má díky tomu experty na frontend a moderátora Dana Srba, který může zaskakovat, kdyby bylo potřeba.
+S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzájem neplatíme. Oni využívají platformu klubu pro svůj mentoring a své studenty. Všichni mají automaticky vstup zdarma. Klub má díky tomu experty na frontend a moderátora Dana Srba.
 
 S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou studenty svých kurzů a proplatí jim členství na první tři měsíce. Agentura z toho má službu pro studenty navíc a já z toho mám to, že pokud se lidem v klubu zalíbí, budou si jej dál platit ze svého.
 
@@ -318,12 +318,12 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
             {
                 'label': 'tým junior.guru',
                 'data': charts_subscriptions_breakdown.pop('team'),
-                'backgroundColor': '#457E31',
+                'backgroundColor': '#00B7EB',
             },
             {
                 'label': 'symbióza s CoreSkill',
                 'data': charts_subscriptions_breakdown.pop('coreskill'),
-                'backgroundColor': '#2D3432',
+                'backgroundColor': '#666',
             },
             {
                 'label': 'neplatí členství',
@@ -334,6 +334,11 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
                 'label': 'dva týdny zdarma',
                 'data': charts_subscriptions_breakdown.pop('trial'),
                 'backgroundColor': '#a9a9a9',
+            },
+            {
+                'label': 'mají stipendium',
+                'data': charts_subscriptions_breakdown.pop('finaid'),
+                'backgroundColor': '#02CABB',
             },
             {
                 'label': 'členství si platí sami',

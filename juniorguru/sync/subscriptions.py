@@ -11,7 +11,7 @@ from juniorguru.lib.club import parse_coupon
 from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
 from juniorguru.lib.memberful import Memberful
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubSubscribedPeriod, ClubUser
+from juniorguru.models.club import ClubSubscribedPeriod, ClubSubscribedPeriodCategory, ClubUser
 from juniorguru.models.company import Company, CompanyStudentSubscription
 from juniorguru.models.feminine_name import FeminineName
 
@@ -24,15 +24,15 @@ MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
 COUPON_NAMES_CATEGORIES_MAPPING = {
-    'THANKYOU': ClubSubscribedPeriod.FREE_CATEGORY,
-    'THANKYOUFOREVER': ClubSubscribedPeriod.FREE_CATEGORY,
-    'THANKYOUTEAM': ClubSubscribedPeriod.TEAM_CATEGORY,
-    'PATREON': ClubSubscribedPeriod.FREE_CATEGORY,
-    'GITHUB': ClubSubscribedPeriod.FREE_CATEGORY,
-    'FOUNDERS': ClubSubscribedPeriod.FREE_CATEGORY,
-    'FINAID': ClubSubscribedPeriod.FINAID_CATEGORY,
-    'CORESKILL': ClubSubscribedPeriod.CORESKILL_CATEGORY,
-    'STUDENTCORESKILL': ClubSubscribedPeriod.CORESKILL_CATEGORY,
+    'THANKYOU': ClubSubscribedPeriodCategory.FREE,
+    'THANKYOUFOREVER': ClubSubscribedPeriodCategory.FREE,
+    'THANKYOUTEAM': ClubSubscribedPeriodCategory.TEAM,
+    'PATREON': ClubSubscribedPeriodCategory.FREE,
+    'GITHUB': ClubSubscribedPeriodCategory.FREE,
+    'FOUNDERS': ClubSubscribedPeriodCategory.FREE,
+    'FINAID': ClubSubscribedPeriodCategory.FINAID,
+    'CORESKILL': ClubSubscribedPeriodCategory.CORESKILL,
+    'STUDENTCORESKILL': ClubSubscribedPeriodCategory.CORESKILL,
 }
 
 
@@ -46,9 +46,9 @@ def main():
 
     logger.info('Mapping coupons to categories')
     coupon_names_categories_mapping = {
-        **{parse_coupon(coupon)['name']: ClubSubscribedPeriod.COMPANY_CATEGORY
+        **{parse_coupon(coupon)['name']: ClubSubscribedPeriodCategory.COMPANY
            for coupon in Company.coupons()},
-        **{parse_coupon(coupon)['name']: ClubSubscribedPeriod.STUDENT_CATEGORY
+        **{parse_coupon(coupon)['name']: ClubSubscribedPeriodCategory.STUDENT
            for coupon in Company.student_coupons()},
         **COUPON_NAMES_CATEGORIES_MAPPING
     }
@@ -97,10 +97,18 @@ def main():
     """
 
     records = []
+    active_account_ids = set()
     seen_discord_ids = set()
 
     for subscription in get_subscriptions(memberful.query(query,
                                                           lambda result: result['subscriptions']['pageInfo'])):
+        account_id = subscription['member']['id']
+        if subscription['active']:
+            if account_id in active_account_ids:
+                logger.warning(f'{account_admin_url(account_id)} has multiple active subscriptions!')
+            else:
+                active_account_ids.add(account_id)
+
         discord_id = subscription['member']['discordUserId']
         user = None
         if discord_id:
@@ -113,7 +121,7 @@ def main():
         name = subscription['member']['fullName'].strip()
         has_feminine_name = FeminineName.is_feminine(name)
 
-        coupon = get_active_coupon(subscription)
+        coupon = get_coupon(subscription)
         coupon_parts = parse_coupon(coupon) if coupon else {}
         student_record_fields = dict(itertools.chain.from_iterable([
             [
@@ -129,7 +137,7 @@ def main():
             'Discord Name': user.display_name.strip() if user else None,
             'Gender': ('F' if has_feminine_name else 'M'),
             'E-mail': subscription['member']['email'],
-            'Memberful': f"https://juniorguru.memberful.com/admin/members/{subscription['member']['id']}",
+            'Memberful': account_admin_url(account_id),
             'Discord ID': discord_id,
             'Memberful Active?': subscription['active'],
             'Memberful Since': arrow.get(subscription['createdAt']).date().isoformat(),
@@ -147,31 +155,44 @@ def main():
                 invoiced_on = subscription['member']['metadata'].get(f'{company.slug}InvoicedOn')
                 invoiced_on = date.fromisoformat(invoiced_on) if invoiced_on else None
                 CompanyStudentSubscription.create(company=company,
-                                                    account_id=subscription['member']['id'],
-                                                    name=name,
-                                                    email=subscription['member']['email'],
-                                                    started_on=started_on,
-                                                    invoiced_on=invoiced_on)
+                                                  account_id=account_id,
+                                                  name=name,
+                                                  email=subscription['member']['email'],
+                                                  started_on=started_on,
+                                                  invoiced_on=invoiced_on)
 
         if user:
             logger.debug(f'Updating member #{user.id} with Memberful data')
-            if subscription['active']:
+            # After manual changes to admin some people can have multiple active
+            # subscriptions (watch WARNING logs). To save info about the most
+            # recent and relevant subscription, the code below checks not only
+            # whether the subscription is active, but also whether this particular
+            # subscription started later than any other, which might have been
+            # already recorded with the user earlier in this loop.
+            #
+            # TODO: The code will fail to compare three and more subscriptions,
+            # because user.subscribed_at will always contain only the earliest date.
+            subscribed_at = arrow.get(subscription['createdAt']).naive
+            if (
+                subscription['active'] and
+                (not user.subscribed_at or subscribed_at > user.subscribed_at)
+            ):
                 user.subscription_id = str(subscription['id'])
-                user.expires_at = arrow.get(subscription['expiresAt']).naive
                 user.coupon = coupon_parts.get('coupon')
+            user.update_expires_at(arrow.get(subscription['expiresAt']).naive)
+            user.update_subscribed_at(subscribed_at)
             user.has_feminine_name = has_feminine_name
-            user.update_subscribed_at(arrow.get(subscription['createdAt']).naive)
             user.save()
 
         for subscribed_period in get_subscribed_periods(subscription):
-            if subscribed_period['is_trial']:
-                category = ClubSubscribedPeriod.TRIAL_CATEGORY
-            elif subscribed_period['coupon']:
+            if subscribed_period['coupon']:
                 coupon_name = parse_coupon(subscribed_period['coupon'])['name']
-                category = coupon_names_categories_mapping.get(coupon_name, ClubSubscribedPeriod.INDIVIDUALS_CATEGORY)
+                category = coupon_names_categories_mapping.get(coupon_name, ClubSubscribedPeriodCategory.INDIVIDUALS)
+            elif subscribed_period['is_trial']:
+                category = ClubSubscribedPeriodCategory.TRIAL
             else:
-                category = ClubSubscribedPeriod.INDIVIDUALS_CATEGORY
-            ClubSubscribedPeriod.create(account_id=subscription['member']['id'],
+                category = ClubSubscribedPeriodCategory.INDIVIDUALS
+            ClubSubscribedPeriod.create(account_id=account_id,
                                         start_on=subscribed_period['start_on'],
                                         end_on=subscribed_period['end_on'],
                                         interval_unit=subscription['plan']['intervalUnit'],
@@ -214,11 +235,15 @@ def main():
         logger.warning('Google Sheets mutations not enabled')
 
 
+def account_admin_url(account_id):
+    return f"https://juniorguru.memberful.com/admin/members/{account_id}"
+
+
 def format_date(value):
     return f'{value:%Y-%m-%d}' if value else None
 
 
-def get_active_coupon(subscription):
+def get_coupon(subscription):
     if subscription['coupon']:
         return subscription['coupon']['code']
 
@@ -266,10 +291,10 @@ def get_subscribed_periods(subscription):
     else:
         trial = None
 
-    for order in orders:
+    for i, order in enumerate(orders):
         start_on = arrow.get(order['createdAt']).date()
         end_on = renewal_on - timedelta(days=1)
-        coupon = order['coupon']['code'] if order['coupon'] else None
         is_trial = (start_on == trial[0] and end_on == trial[1]) if trial else False
-        yield dict(start_on=start_on, end_on=end_on, coupon=coupon, is_trial=is_trial)
+        coupon = ((subscription['coupon'] if i == 0 else order['coupon']) or {}).get('code')
+        yield dict(start_on=start_on, end_on=end_on, is_trial=is_trial, coupon=coupon)
         renewal_on = start_on

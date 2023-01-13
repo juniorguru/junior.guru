@@ -5,7 +5,7 @@ from pathlib import Path
 
 import scrapy
 from peewee import (ConnectionContext as BaseConnectionContext, Model,
-                    SqliteDatabase as BaseSqliteDatabase)
+                    SqliteDatabase as BaseSqliteDatabase, Check)
 from playhouse.sqlite_ext import JSONField as BaseJSONField
 
 from juniorguru.lib import loggers
@@ -62,3 +62,9 @@ def json_dumps(value):
             raise TypeError(f'Object of type {o.__class__.__name__} is not JSON serializable')
 
     return json.dumps(value, ensure_ascii=False, default=default)
+
+
+def check_enum(field_name, enum_cls):
+    values = tuple(member.value for member in enum_cls)
+    sql = f"{field_name} in {values!r}"
+    return Check(sql)

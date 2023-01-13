@@ -1,16 +1,17 @@
 import math
 from collections import Counter
 from datetime import date, timedelta
+from enum import Enum, unique
 
 from emoji import is_emoji
 from peewee import (BooleanField, CharField, DateField, DateTimeField, ForeignKeyField,
-                    IntegerField, TextField, fn, Check)
+                    IntegerField, TextField, fn)
 
 from juniorguru.lib.charts import month_range
 from juniorguru.lib.club import (INTRO_CHANNEL, IS_NEW_PERIOD_DAYS, JUNIORGURU_BOT,
                                  RECENT_PERIOD_DAYS, TOP_MEMBERS_PERCENT,
                                  UPVOTES_EXCLUDE_CHANNELS, parse_coupon, STATS_EXCLUDE_CHANNELS)
-from juniorguru.models.base import BaseModel, JSONField
+from juniorguru.models.base import BaseModel, JSONField, check_enum
 
 
 class ClubUser(BaseModel):
@@ -54,6 +55,9 @@ class ClubUser(BaseModel):
 
     def update_subscribed_at(self, subscribed_at):
         self.subscribed_at = non_empty_min([self.subscribed_at, subscribed_at])
+
+    def update_expires_at(self, expires_at):
+        self.expires_at = non_empty_max([self.expires_at, expires_at])
 
     def messages_count(self):
         return self.list_messages.count()
@@ -241,25 +245,30 @@ class ClubPinReaction(BaseModel):
             .where(ClubUser.is_member == True)
 
 
+@unique
+class ClubSubscribedPeriodIntervalUnit(str, Enum):
+    MONTHLY = 'month'
+    YEARLY = 'year'
+
+
+@unique
+class ClubSubscribedPeriodCategory(str, Enum):
+    FREE = 'free'
+    TEAM = 'team'
+    FINAID = 'finaid'
+    CORESKILL = 'coreskill'
+    INDIVIDUALS = 'individuals'
+    TRIAL = 'trial'
+    COMPANY = 'company'
+    STUDENT = 'students'
+
+
 class ClubSubscribedPeriod(BaseModel):
-    FREE_CATEGORY = 'free'
-    TEAM_CATEGORY = 'team'
-    FINAID_CATEGORY = 'finaid'
-    CORESKILL_CATEGORY = 'coreskill'
-    INDIVIDUALS_CATEGORY = 'individuals'
-    TRIAL_CATEGORY = 'trial'
-    COMPANY_CATEGORY = 'company'
-    STUDENT_CATEGORY = 'students'
-
-    MONTHLY_INTERVAL_UNIT = 'month'
-    YEARLY_INTERVAL_UNIT = 'year'
-    INTERVAL_UNITS = (MONTHLY_INTERVAL_UNIT, YEARLY_INTERVAL_UNIT)
-
     account_id = CharField()
     start_on = DateField()
     end_on = DateField()
-    interval_unit = CharField(constraints=[Check(f"interval_unit in {INTERVAL_UNITS!r}")])
-    category = CharField(null=True)
+    interval_unit = CharField(constraints=[check_enum('interval_unit', ClubSubscribedPeriodIntervalUnit)])
+    category = CharField(null=True, constraints=[check_enum('category', ClubSubscribedPeriodCategory)])
     has_feminine_name = BooleanField()
 
     @classmethod
@@ -278,7 +287,8 @@ class ClubSubscribedPeriod(BaseModel):
         counter = Counter([subscribed_period.category
                            for subscribed_period
                            in cls.listing(date)])
-        return dict(counter)
+        return {category.value: counter[category] for category
+                in ClubSubscribedPeriodCategory}
 
     @classmethod
     def women_count(cls, date):
@@ -296,7 +306,7 @@ class ClubSubscribedPeriod(BaseModel):
     @classmethod
     def individuals(cls, date):
         return cls.listing(date) \
-            .where(cls.category == cls.INDIVIDUALS_CATEGORY)
+            .where(cls.category == ClubSubscribedPeriodCategory.INDIVIDUALS)
 
     @classmethod
     def individuals_count(cls, date):
@@ -305,7 +315,7 @@ class ClubSubscribedPeriod(BaseModel):
     @classmethod
     def individuals_yearly_count(cls, date):
         return cls.individuals(date) \
-            .where(cls.interval_unit == cls.YEARLY_INTERVAL_UNIT) \
+            .where(cls.interval_unit == ClubSubscribedPeriodIntervalUnit.YEARLY) \
             .count()
 
     @classmethod
@@ -322,7 +332,7 @@ class ClubSubscribedPeriod(BaseModel):
 
     @classmethod
     def individuals_signups(cls, date):
-        return cls.signups(date).where(cls.category == cls.INDIVIDUALS_CATEGORY)
+        return cls.signups(date).where(cls.category == ClubSubscribedPeriodCategory.INDIVIDUALS)
 
     @classmethod
     def individuals_signups_count(cls, date):
@@ -342,7 +352,7 @@ class ClubSubscribedPeriod(BaseModel):
 
     @classmethod
     def individuals_quits(cls, date):
-        return cls.quits(date).where(cls.category == cls.INDIVIDUALS_CATEGORY)
+        return cls.quits(date).where(cls.category == ClubSubscribedPeriodCategory.INDIVIDUALS)
 
     @classmethod
     def individuals_quits_count(cls, date):
@@ -364,7 +374,7 @@ class ClubSubscribedPeriod(BaseModel):
     def individuals_duration_avg(cls, date):
         from_date, to_date = month_range(date)
         results = cls.select(cls.account_id, fn.min(cls.start_on), fn.max(cls.end_on)) \
-            .where(cls.category == cls.INDIVIDUALS_CATEGORY) \
+            .where(cls.category == ClubSubscribedPeriodCategory.INDIVIDUALS) \
             .group_by(cls.account_id) \
             .having(fn.min(cls.start_on) <= from_date)
         if not results:
@@ -403,4 +413,11 @@ def non_empty_min(values):
     values = list(filter(None, values))
     if values:
         return min(values)
+    return None
+
+
+def non_empty_max(values):
+    values = list(filter(None, values))
+    if values:
+        return max(values)
     return None
