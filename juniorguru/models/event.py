@@ -1,13 +1,14 @@
-from datetime import datetime, timedelta
 import math
+from datetime import datetime, timedelta
 
 import arrow
-from peewee import CharField, DateTimeField, ForeignKeyField, IntegerField, TextField, fn
+from peewee import (CharField, DateTimeField, ForeignKeyField, IntegerField, TextField,
+                    fn)
 
+from juniorguru.lib.charts import month_range, ttm_range
 from juniorguru.lib.md import strip_links
 from juniorguru.models.base import BaseModel, JSONField
 from juniorguru.models.club import ClubUser
-from juniorguru.lib.charts import ttm_range, month_range
 
 
 class Event(BaseModel):

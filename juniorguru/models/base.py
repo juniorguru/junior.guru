@@ -4,8 +4,8 @@ from collections.abc import Set
 from pathlib import Path
 
 import scrapy
-from peewee import (ConnectionContext as BaseConnectionContext, Model,
-                    SqliteDatabase as BaseSqliteDatabase, Check)
+from peewee import (Check, ConnectionContext as BaseConnectionContext, Model,
+                    SqliteDatabase as BaseSqliteDatabase)
 from playhouse.sqlite_ext import JSONField as BaseJSONField
 
 from juniorguru.lib import loggers

@@ -9,8 +9,9 @@ from peewee import (BooleanField, CharField, DateField, DateTimeField, ForeignKe
 
 from juniorguru.lib.charts import month_range
 from juniorguru.lib.club import (INTRO_CHANNEL, IS_NEW_PERIOD_DAYS, JUNIORGURU_BOT,
-                                 RECENT_PERIOD_DAYS, TOP_MEMBERS_PERCENT,
-                                 UPVOTES_EXCLUDE_CHANNELS, parse_coupon, STATS_EXCLUDE_CHANNELS)
+                                 RECENT_PERIOD_DAYS, STATS_EXCLUDE_CHANNELS,
+                                 TOP_MEMBERS_PERCENT, UPVOTES_EXCLUDE_CHANNELS,
+                                 parse_coupon)
 from juniorguru.models.base import BaseModel, JSONField, check_enum
 
 

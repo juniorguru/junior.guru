@@ -8,7 +8,8 @@ from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, emoji_name
 from juniorguru.models.club import ClubMessage, ClubUser
-from juniorguru.sync.onboarding.scheduled_messages import ALLOWED_MENTIONS, SCHEDULED_MESSAGES
+from juniorguru.sync.onboarding.scheduled_messages import (ALLOWED_MENTIONS,
+                                                           SCHEDULED_MESSAGES)
 
 
 TODAY = date.today()

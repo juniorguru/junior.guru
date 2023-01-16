@@ -2,8 +2,8 @@ from datetime import date
 
 import pytest
 
-from juniorguru.sync.subscriptions import (format_date, get_coupon,
-                                           get_student_months, get_student_started_on,
+from juniorguru.sync.subscriptions import (format_date, get_coupon, get_student_months,
+                                           get_student_started_on,
                                            get_subscribed_periods, get_subscriptions)
 
 

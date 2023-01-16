@@ -11,7 +11,8 @@ from juniorguru.lib.club import parse_coupon
 from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
 from juniorguru.lib.memberful import Memberful
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubSubscribedPeriod, ClubSubscribedPeriodCategory, ClubUser
+from juniorguru.models.club import (ClubSubscribedPeriod, ClubSubscribedPeriodCategory,
+                                    ClubUser)
 from juniorguru.models.company import Company, CompanyStudentSubscription
 from juniorguru.models.feminine_name import FeminineName
 

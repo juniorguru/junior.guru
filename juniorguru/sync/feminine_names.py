@@ -4,9 +4,9 @@ import requests
 from lxml import html
 
 from juniorguru.cli.sync import main as cli
+from juniorguru.lib import loggers
 from juniorguru.models.base import db
 from juniorguru.models.feminine_name import FeminineName
-from juniorguru.lib import loggers
 
 
 logger = loggers.from_path(__file__)
