@@ -10,6 +10,16 @@ def main():
 
 
 @main.command()
+def install():
+    try:
+        subprocess.run(['poetry', 'install'], check=True)
+        subprocess.run(['playwright', 'install'], check=True)
+        subprocess.run(['npm', 'ci'], check=True)
+    except subprocess.CalledProcessError:
+        raise click.Abort()
+
+
+@main.command()
 def lint():
     try:
         subprocess.run(['flake8'], check=True)
