@@ -10,9 +10,12 @@
 
 - id: "0012"
   title: Veronika Gabrielová (Aimful) o efektivním kariérním růstu
+  avatar_path: avatars-participants/veronika-gabrielova.jpg
   publish_on: "2023-01-15"
   description: |
-    Do prvního dílu nového roku si Pája pozvala Verču Gabrielovou, která už má za sebou sedmiletou kariéru vývojářky, ačkoliv IT na škole nikdy nestudovala. Dozvíte se třeba proč by vám Veronika poradila chodit na pohovory, i když zrovna žádnou práci nehledáte, co by udělala jinak při vyjednávání o platu nebo jak se ona sama dostala k první práci vývojářky. Povídají si také o tom, jak je důležité a zároveň obtížné pracovat se zpětnou vazbou nebo o imposter syndromu. 
+    Do prvního dílu v novém roce si Pája pozvala Verču Gabrielovou. Ačkoliv IT na škole nikdy nestudovala, má dnes za sebou už sedmiletou kariéru vývojářky. Jak se dostala k první práci v oboru? Jak by radila zpracovávat zpětnou vazbu? Jak na zákeřný impostor syndrom? Proč je dobré chodit na pohovory, i když práci zrovna nehledáte? Co by udělala jinak při vyjednávání o mzdě?
+  media_size: 30450081
+  media_duration_s: 2175
 
 - id: "0011"
   title: Lukáš Konarovský (Fakturoid) o podnikání, třeba i v IT
