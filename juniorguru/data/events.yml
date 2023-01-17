@@ -99,18 +99,18 @@
   logo_path: logos/rossum.svg
   speakers: 336111357495738368
 
-
-- title: "(Bude upřesněno, analýza geoprostorových dat a GIS)"
+- title: "Analýza geoprostorových dat, GIS a geospatial data science"
   date: "2023-01-25"
   description: |
-    (Bude upřesněno)
+    Co jsou prostorová data, čím jsou speciální a jak je využít? Pomocí satelitů můžeme koukat nejen na současný stav Země, ale i predikovat, co teprve bude. Co se s tím dá dělat za super věci? Kde prostorová data najít a co umět, abychom s nimi mohli pracovat?
   avatar_path: avatars-participants/tyna-dolezalova.jpg
   bio_name: Týna Doležalová
-  bio_title: Datová analytička v EOX IT Services, organizátorka PyLadies Vienna, mentorka Women+ in Geospatial
+  bio_title: Data Scientist v EOX IT Services, zakladatelka Unlock.IT, organizátorka PyLadies Vienna, mentorka Women+ in Geospatial
   bio: |
-    (Bude upřesněno)
+    Vystudovala jsem geoinformatiku a data science. Baví mě to vzájemně propojovat. Dřív jsem modelovala ceny nemovitostí, dnes pracuji ve firmě, kde děláme na projektech pro ESA (Evropská kosmická agentura). Tak dlouho jsem se dobrovolně angažovala ve vzdělávání IT dovedností, až jsem si na to založila firmu. Ráda čtu, hraji deskovky a chodím po horách.
   bio_links:
     - https://www.linkedin.com/in/kristyna-dolezalova/
+    - https://unlock.it/
   logo_path: logos/eox.svg
   speakers: 844877506259845140
 
