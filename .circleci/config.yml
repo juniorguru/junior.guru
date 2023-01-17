@@ -190,7 +190,9 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - run: tar -cvzf backup.tar.gz ./juniorguru/data
+      - run:
+          name: Backups
+          command: poetry run jg backup --discord
       - store_artifacts:
           path: ./backup.tar.gz
 
