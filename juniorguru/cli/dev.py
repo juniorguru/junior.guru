@@ -10,8 +10,11 @@ def main():
 
 
 @main.command()
-def install():
+@click.option('--pull/--no-pull', default=True)
+def install(pull):
     try:
+        if pull:
+            subprocess.run(['git', 'pull', '--rebase', 'origin', 'main'], check=True)
         subprocess.run(['poetry', 'install'], check=True)
         subprocess.run(['playwright', 'install'], check=True)
         subprocess.run(['npm', 'ci'], check=True)
