@@ -294,7 +294,7 @@ workflows:
             - web
     triggers:
       - schedule:
-          cron: "0 4 * * *"
+          cron: "0 14 * * *"
           filters:
             branches:
               only:
