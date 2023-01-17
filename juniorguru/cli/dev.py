@@ -5,7 +5,7 @@ import click
 import pytest
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, run_discord_task)
+from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
 
 
 DATA_DIR = 'juniorguru/data'
