@@ -88,4 +88,3 @@ async def backup_discord_task(client, template_name):
     else:
         logger['backup'].info(f'Syncing template {template_name}')
         await template.sync()
-    logger['backup'].info(f'Syncing template {template_name}')
