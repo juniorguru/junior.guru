@@ -7,7 +7,7 @@
     "@fontsource/inter": "4.5.15",
     "bootstrap-icons": "1.10.3",
     "chart.js": "4.2.0",
-    "chartjs-plugin-annotation": "2.1.1",
+    "chartjs-plugin-annotation": "2.1.2",
     "instant.page": "5.1.1",
     "rough-notation": "0.5.1"
   },
