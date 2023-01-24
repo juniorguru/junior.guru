@@ -94,7 +94,7 @@ def render_discord(context):
         **Vlákna** 🧵
         Když chceš řešit něco konkrétního, třeba životopis, projekt nebo dotaz, hodí se založit vlákno (_thread_). Díky němu se diskuze rozvětví a zprávy k tématu se schovají na jedno místo, které má vlastní název. Nemotá se přes sebe víc diskuzí v hlavním kanálu a lépe se to čte.
 
-        Do většiny kanálů můžeš psát zcela volně a nemusíš nad tím moc přemýšlet, ale některé mají speciální režim. Jsou to Rituály (<#788823881024405544>, <#806621830383271937>, <#815906954534191117>) a <#878937534464417822>. Aby zůstaly přehledné, odpovídá se v nich pouze pomocí vláken.
+        Do většiny kanálů můžeš psát volně a nemusíš nad tím moc přemýšlet, ale Rituály (<#788823881024405544>, <#806621830383271937>, <#815906954534191117>) mají speciální režim. Aby zůstaly přehledné, odpovídá se v nich pouze pomocí vláken.
 
         Vlákno zmizí ze seznamu kanálů po týdnu bez aktivity. Můžeš ho ale kdykoliv oživit novým příspěvkem.
     ''')
