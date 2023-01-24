@@ -1,11 +1,11 @@
 import asyncio
 import itertools
 import os
+from datetime import datetime, timezone
 
 import arrow
 import click
 from peewee import OperationalError
-from discord import ChannelType
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
@@ -20,6 +20,8 @@ logger = loggers.from_path(__file__)
 
 
 WORKERS_COUNT = 5
+
+DEFAULT_CREATED_AT = datetime(2022, 1, 9, tzinfo=timezone.utc)  # threads have 'created_at' since 2022-01-09
 
 
 @cli.sync_command()
@@ -131,66 +133,86 @@ async def channel_worker(worker_no, authors, queue):
     logger_w = logger[f'channel_workers.{worker_no}']
     while True:
         channel = await queue.get()
+
         history_since = CHANNELS_HISTORY_SINCE.get(channel.id, DEFAULT_CHANNELS_HISTORY_SINCE)
-        history_after = None if history_since is None else (arrow.utcnow() - history_since).datetime
-
-        if channel.type == ChannelType.forum:
-            for thread in channel.threads:
-                logger_w.debug(f'Thread {thread.jump_url}')
-                logger_w.debug(f"Thread identified as #{thread.id}, named '{thread.name}'")
-                queue.put_nowait(thread)
-            async for thread in channel.archived_threads(limit=None):
-                logger_w.debug(f'Thread {thread.jump_url}')
-                logger_w.debug(f"Thread identified as #{thread.id}, named '{thread.name}'")
-                if thread.archive_timestamp.date() >= history_after.date():
-                    queue.put_nowait(thread)
-                else:
-                    logger_w.debug(f'Thread too old ({thread.archive_timestamp.date()} < {history_after.date()})')
+        if history_since is None:
+            history_after = None
+            logger_w.info(f"Reading channel #{channel.id} history since ever")
         else:
-            logger_w.info(f"Reading channel #{channel.id} messages after {history_after} ({history_since!r} ago)")
-            logger_w.debug(f"Channel #{channel.id} is named '{channel.name}'")
+            history_after = (arrow.utcnow() - history_since).datetime
+            logger_w.info(f"Reading channel #{channel.id} history after {history_after:%Y-%m-%d} ({history_since.days} days ago)")
+        logger_w.debug(f"Channel #{channel.id} is named '{channel.name}'")
 
-            messages_count = 0
-            users_count = 0
-            pins_count = 0
+        threads = [thread async for thread in fetch_threads(channel)
+                   if is_thread_after(thread, after=history_after)]
+        if threads:
+            logger_w.info(f"Channel #{channel.id} adds {len(threads)} threads")
+        for thread in threads:
+            logger_w.debug(f"Thread '{thread.name}' #{thread.id} {thread.jump_url}")
+            queue.put_nowait(thread)
 
-            async for message in channel.history(limit=None, after=history_after):
-                if message.flags.has_thread:
-                    logger_w.debug(f'Thread {message.jump_url}')
-                    thread = await message.guild.fetch_channel(message.id)
-                    logger_w.debug(f"Thread identified as #{thread.id}, named '{thread.name}'")
-                    queue.put_nowait(thread)
+        messages_count = 0
+        users_count = 0
+        pins_count = 0
+        async for message in fetch_messages(channel, after=history_after):
+            if message.author.id not in authors:
+                authors[message.author.id] = create_user(message.author)
+                users_count += 1
 
-                if message.author.id not in authors:
-                    authors[message.author.id] = create_user(message.author)
+            ClubMessage.create(id=message.id,
+                               url=message.jump_url,
+                               content=message.content,
+                               reactions={emoji_name(reaction.emoji): reaction.count for reaction in message.reactions},
+                               upvotes_count=count_upvotes(message.reactions),
+                               downvotes_count=count_downvotes(message.reactions),
+                               created_at=arrow.get(message.created_at).naive,
+                               created_month=f'{message.created_at.year}-{message.created_at.month}',
+                               edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
+                               author=authors[message.author.id],
+                               channel_id=channel.id,
+                               channel_name=channel.name,
+                               channel_mention=channel.mention,
+                               type=message.type.name)
+            messages_count += 1
+
+            async for reacting_user in fetch_users_reacting_by_pin(message.reactions):
+                if reacting_user.id not in authors:
+                    authors[reacting_user.id] = create_user(reacting_user)
                     users_count += 1
+                logger_w['pins'].debug(f"Message {message.jump_url} is pinned by user '{reacting_user.display_name}' #{reacting_user.id}")
+                ClubPinReaction.create(user=reacting_user.id, message=message.id)
+                pins_count += 1
 
-                ClubMessage.create(id=message.id,
-                                   url=message.jump_url,
-                                   content=message.content,
-                                   reactions={emoji_name(reaction.emoji): reaction.count for reaction in message.reactions},
-                                   upvotes_count=count_upvotes(message.reactions),
-                                   downvotes_count=count_downvotes(message.reactions),
-                                   created_at=arrow.get(message.created_at).naive,
-                                   created_month=f'{message.created_at.year}-{message.created_at.month}',
-                                   edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
-                                   author=authors[message.author.id],
-                                   channel_id=channel.id,
-                                   channel_name=channel.name,
-                                   channel_mention=channel.mention,
-                                   type=message.type.name)
-                messages_count += 1
-
-                async for reacting_user in fetch_users_reacting_by_pin(message.reactions):
-                    if reacting_user.id not in authors:
-                        authors[reacting_user.id] = create_user(reacting_user)
-                        users_count += 1
-                    logger_w['pins'].debug(f"Message {message.jump_url} is pinned by user '{reacting_user.display_name}' #{reacting_user.id}")
-                    ClubPinReaction.create(user=reacting_user.id, message=message.id)
-                    pins_count += 1
-
-            logger_w.info(f"Channel #{channel.id} added {messages_count} messages, {users_count} users, {pins_count} pins")
+        logger_w.info(f"Channel #{channel.id} added {messages_count} messages, {users_count} users, {pins_count} pins")
         queue.task_done()
+
+
+async def fetch_messages(channel, after=None):
+    try:
+        channel_history = channel.history
+    except AttributeError:
+        pass  # channel type doesn't support history (e.g. forum)
+    else:
+        async for message in channel_history(limit=None, after=after):
+            yield message
+
+
+async def fetch_threads(channel):
+    try:
+        channel_threads = channel.threads
+    except AttributeError:
+        pass  # channel type doesn't support threads (e.g. voice)
+    else:
+        for thread in channel_threads:
+            yield thread
+        async for thread in channel.archived_threads(limit=None):
+            yield thread
+
+
+def is_thread_after(thread, after=None):
+    if after:
+        return (thread.created_at or DEFAULT_CREATED_AT) >= after
+    return thread
 
 
 async def fetch_users_reacting_by_pin(reactions):
