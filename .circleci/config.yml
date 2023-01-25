@@ -185,6 +185,32 @@ jobs:
           paths:
               - project/public
 
+  format:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - add_ssh_keys:
+          fingerprints:
+            - "7b:0b:2c:9f:fb:18:db:35:8e:f4:3d:49:73:37:ee:c4"
+      - run: mkdir -p ~/.ssh
+      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - run:
+          name: Reset the repo
+          command: |
+            git reset --hard
+            git clean -f -d
+      - run:
+          name: Format code
+          command: jg format
+      - run:
+          name: Push to GitHub
+          command: |
+            git config user.email "<insert-the-email-you-use-with-github>"
+            git config user.name "CircleCI Job"
+            git commit -am "format code 💅 [skip ci]"
+            git push
+
   backup:
     executor: python-js
     steps:
@@ -212,7 +238,7 @@ jobs:
           build-dir: "public"
           git-email: "kure@junior.guru"
           git-user: "Kuře"
-          commit-message: '"🐣 deployment of ${COMMIT} [skip ci]"'
+          commit-message: '"deploy ${COMMIT} 🐣 [skip ci]"'
           ssh-fingerprints: "7b:0b:2c:9f:fb:18:db:35:8e:f4:3d:49:73:37:ee:c4"
           tmp-dir: ".deploy-tmp"
 
@@ -290,6 +316,9 @@ workflows:
           requires:
             - web
       - deploy-web:
+          requires:
+            - web
+      - format:
           requires:
             - web
     triggers:
