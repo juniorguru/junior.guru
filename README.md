@@ -21,7 +21,7 @@ Thanks [@lutzroeder](https://github.com/scipy/scipy/issues/13409#issuecomment-77
 ## Screenshotting
 
 ```
-$ playwright install chromium
+$ playwright install
 ```
 
 ## Logging
