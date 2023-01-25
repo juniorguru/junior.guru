@@ -116,7 +116,7 @@ def render_companies():
 
 def render_events():
     events = Event.listing()
-    description = f'Odkazy na posledních {EVENTS_LIMIT} záznamů, ať je máš víc po ruce.\n\n'
+    description = f'Odkazy na posledních {EVENTS_LIMIT} záznamů, ať je máš víc po ruce:\n\n'
     description += '\n'.join([
         format_event(event)
         for event in itertools.islice(events, EVENTS_LIMIT)
