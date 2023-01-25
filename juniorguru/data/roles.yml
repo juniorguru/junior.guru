@@ -6,7 +6,7 @@
 - id: 836960665578766396
   slug: most_helpful
   description: |
-    Kdo má od začátku existence klubu nebo za poslední měsíc nejvíc pozitivně hodnocených příspěvků (palce, srdíčka…). Nejprestižnější ocenění! Roli automaticky spravuje bot.
+    Kdo má nejvíc pozitivně hodnocených příspěvků (palce, srdíčka…). Nejprestižnější ocenění! Roli automaticky spravuje bot.
 
 - id: 915967369661251624
   slug: psychologist
@@ -16,7 +16,7 @@
 - id: 927544920292601906
   slug: multimedia
   description: |
-    Kdo na dělá [podcast](https://junior.guru/podcast/) nebo videa z akcí v klubu.
+    Kdo dělá [podcast](https://junior.guru/podcast/) nebo videa z akcí v klubu.
 
 - id: 974297387935866910
   slug: mentor
@@ -26,7 +26,7 @@
 - id: 836928169092710441
   slug: speaker
   description: |
-    Kdo v historii měl, nebo teprve bude mít přednášku v klubu. Akce minulé i budoucí najdeš [na webu](https://junior.guru/events/). Roli automaticky spravuje bot.
+    Kdo měl, nebo teprve bude mít přednášku v klubu. Akce minulé i budoucí najdeš [na webu](https://junior.guru/events/). Roli automaticky spravuje bot.
 
 - id: 837316268142493736
   slug: sponsor
@@ -46,7 +46,7 @@
 - id: 1062002864039415858
   slug: adventofcode
   description: |
-    Kdo chce řešit letošní <#819935312272424982>. V prosinci bývá role vysoko, ale jen proto, aby stromeček přebil ostatní ikonky. Roli si vlastnoručně spravuješ v _Channels & Roles_.
+    Kdo chce řešit letošní <#819935312272424982>. V prosinci bývá role vysoko, ale jen proto, aby stromeček přebil ostatní ikonky. Roli si dáš vlastnoručně v _Channels & Roles_.
 
 - id: 836929320706113567
   slug: most_discussing
@@ -71,7 +71,7 @@
 - id: 1062755787153358879
   slug: greeter
   description: |
-    Kdo má chuť vítat nově příchozí v <#788823881024405544>. Bot je přidává do vítacích vláken. Roli si vlastnoručně spravuješ v _Channels & Roles_.
+    Kdo má chuť vítat nově příchozí v <#788823881024405544>. Bot je přidává do vítacích vláken. Roli si dáš vlastnoručně v _Channels & Roles_.
 
 - id: 1055919988222992418
   slug: github
