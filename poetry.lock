@@ -777,14 +777,14 @@ grpcio-gcp = ["grpcio-gcp (>=0.2.2,<1.0dev)"]
 
 [[package]]
 name = "google-api-python-client"
-version = "2.73.0"
+version = "2.74.0"
 description = "Google API Client Library for Python"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "google-api-python-client-2.73.0.tar.gz", hash = "sha256:7e860e3ec27b504fb797fa23c07c012a874dd736491fddbe50a20d3bdde8ace6"},
-    {file = "google_api_python_client-2.73.0-py2.py3-none-any.whl", hash = "sha256:bafce2a02b06ee501df039eba5874afc7d28c9cf5ef92253327776448706556d"},
+    {file = "google-api-python-client-2.74.0.tar.gz", hash = "sha256:22c9565b6d4343e35a6d614f2c075e765888a81e11444a27c570e0865631a3f9"},
+    {file = "google_api_python_client-2.74.0-py2.py3-none-any.whl", hash = "sha256:679669b709450a12dacf28612adf0538afc858566b6ee01628e4013a2073dffc"},
 ]
 
 [package.dependencies]
