@@ -25,10 +25,9 @@ IMAGES_DIR = Path(__file__).parent.parent / 'images'
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=['club-content',
-                        'companies',
-                        'roles'])
+@cli.sync_command(dependencies=['club-content', 'companies', 'roles'])
 def main():
+    return  # TODO
     run_discord_task('juniorguru.sync.companies_intro.discord_task')
 
 
