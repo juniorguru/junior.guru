@@ -1,6 +1,7 @@
 from datetime import date
 from operator import attrgetter
 from textwrap import dedent
+import itertools
 
 import feedparser
 import requests
@@ -23,6 +24,8 @@ TODAY = date.today()
 BLOG_RSS_URL = 'https://honzajavorek.cz/feed.xml'
 
 BLOG_WEEKNOTES_PREFIX = 'Týdenní poznámky'
+
+EVENTS_LIMIT = 10
 
 
 logger = loggers.from_path(__file__)
@@ -112,15 +115,14 @@ def render_companies():
 
 
 def render_events():
-    description = (
-        'Všechno o akcích je [na webu](https://junior.guru/events/). '
-        'Tady je akorát seznam odkazů na záznamy, ať je máš víc po ruce.\n\n'
-    )
+    events = Event.listing()
+    description = f'Odkazy na posledních {EVENTS_LIMIT} záznamů, ať je máš víc po ruce.\n\n'
     description += '\n'.join([
         format_event(event)
-        for event in Event.listing()
+        for event in itertools.islice(events, EVENTS_LIMIT)
         if event.recording_url
     ])
+    description += f'\n\nDalších {len(events) - EVENTS_LIMIT} akcí je [na webu](https://junior.guru/events/).'
     return {
         'title': 'Záznamy klubových akcí',
         'description': description,
