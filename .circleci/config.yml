@@ -13,7 +13,7 @@ orbs:
 
 
 commands:
-  init-save-changes:
+  enable-github-pushing:
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -189,6 +189,10 @@ jobs:
           paths:
               - project/juniorguru/data
               - project/juniorguru/images
+      - enable-github-pushing
+      - run:
+          name: Save to GitHub
+          command: poetry run jg save-changes juniorguru/data/podcast.yml --message="record media properties 🎚️"
 
   web:
     executor: python-js
@@ -209,13 +213,16 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - init-save-changes
+      - run:
+          name: Reset repo
+          command: poetry run jg reset-repo
       - run:
           name: Format code
-          command: |
-            poetry run jg reset-repo
-            poetry run jg format .
-            poetry run jg save-changes . --message="format code 💅"
+          command: poetry run jg format .
+      - enable-github-pushing
+      - run:
+          name: Save to GitHub
+          command: poetry run jg save-changes . --message="format code 💅"
 
   backup:
     executor: python-js
@@ -233,7 +240,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - init-save-changes
+      - enable-github-pushing
       - run:
           name: Deploy to GitHub Pages
           command: poetry run jg deploy
