@@ -9,8 +9,27 @@ executors:
 
 
 orbs:
-  gh-pages: sugarshin/gh-pages@1.0.1
   git-shallow-clone: guitarrapc/git-shallow-clone@2.4.1
+
+
+commands:
+  prepare-for-push-to-github:
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "7b:0b:2c:9f:fb:18:db:35:8e:f4:3d:49:73:37:ee:c4"
+      - run:
+          name: Add GitHub to known hosts
+          command: |
+            mkdir -p ~/.ssh
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+            git config user.email "kure@junior.guru"
+            git config user.name "Kuře"
+      - run:
+          name: Set Kuře as the Git user
+          command: |
+            git config user.email "kure@junior.guru"
+            git config user.name "Kuře"
 
 
 jobs:
@@ -190,26 +209,10 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - add_ssh_keys:
-          fingerprints:
-            - "7b:0b:2c:9f:fb:18:db:35:8e:f4:3d:49:73:37:ee:c4"
-      - run: mkdir -p ~/.ssh
-      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
-      - run:
-          name: Reset the repo
-          command: |
-            git reset --hard
-            git clean -f -d
+      - prepare-for-push-to-github
       - run:
           name: Format code
-          command: poetry run jg format
-      - run:
-          name: Push to GitHub
-          command: |
-            git config user.email "<insert-the-email-you-use-with-github>"
-            git config user.name "CircleCI Job"
-            git commit -am "format code 💅 [skip ci]"
-            git push
+          command: poetry run jg format --reset-git --push
 
   backup:
     executor: python-js
@@ -227,20 +230,10 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - add_ssh_keys:
-          fingerprints:
-            - "7b:0b:2c:9f:fb:18:db:35:8e:f4:3d:49:73:37:ee:c4"
-      - run: mkdir -p ~/.ssh
-      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
-      - run: touch public/.nojekyll
-      - run: echo "junior.guru" > public/CNAME
-      - gh-pages/deploy:
-          build-dir: "public"
-          git-email: "kure@junior.guru"
-          git-user: "Kuře"
-          commit-message: '"deploy ${COMMIT} 🐣 [skip ci]"'
-          ssh-fingerprints: "7b:0b:2c:9f:fb:18:db:35:8e:f4:3d:49:73:37:ee:c4"
-          tmp-dir: ".deploy-tmp"
+      - prepare-for-push-to-github
+      - run:
+          name: Deploy to GitHub Pages
+          command: poetry run jg deploy
 
   check-docs:
     executor: python-js

@@ -3,6 +3,7 @@ from pathlib import Path
 
 import click
 import pytest
+from ghp_import import ghp_import
 
 from juniorguru.lib import loggers
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
@@ -46,9 +47,19 @@ def lint():
 
 
 @main.command()
-def format():
+@click.option('--reset-git/--no-reset-git', default=False)
+@click.option('--push/--no-push', default=False)
+def format(reset_git, push):
     try:
+        if reset_git:
+            subprocess.run(['git', 'reset', '--hard'], check=True)
+            subprocess.run(['git', 'reset', '--hard'], check=True)
+
         subprocess.run(['isort', '.'], check=True)
+
+        if push:
+            subprocess.run(['git', 'commit', '-am', 'format code 💅 [skip ci]'], check=True)
+            subprocess.run(['git', 'push'], check=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
 
@@ -88,3 +99,11 @@ async def backup_discord_task(client, template_name):
     else:
         logger['backup'].info(f'Syncing template {template_name}')
         await template.sync()
+
+
+@main.command()
+@click.argument('commit_hash', envvar='CIRCLE_SHA1')
+@click.argument('build_url', envvar='CIRCLE_BUILD_URL')
+def deploy(commit_hash, build_url):
+    message = f'deploy {commit_hash} 🐣 [skip ci]\n\n{build_url}'
+    ghp_import('public', mesg=message, push=True, cname='junior.guru', nojekyll=True)
