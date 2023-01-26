@@ -2,9 +2,10 @@ import math
 from datetime import date
 
 import arrow
-from peewee import CharField, DateTimeField, IntegerField
+from peewee import CharField, DateTimeField, IntegerField, ForeignKeyField
 
 from juniorguru.models.base import BaseModel
+from juniorguru.models.company import Company
 
 
 class PodcastEpisode(BaseModel):
@@ -16,6 +17,7 @@ class PodcastEpisode(BaseModel):
     media_type = CharField()
     media_duration_s = IntegerField()
     description = CharField()
+    company = ForeignKeyField(Company, backref='list_podcasts', null=True)
     avatar_path = CharField()
     poster_path = CharField(null=True)
 

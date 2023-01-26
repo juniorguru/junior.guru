@@ -34,6 +34,7 @@ YAML_SCHEMA = Seq(
         'description': Str(),
         Optional('media_size'): Int(),
         Optional('media_duration_s'): Int(),
+        Optional('company'): Str(),
     })
 )
 
