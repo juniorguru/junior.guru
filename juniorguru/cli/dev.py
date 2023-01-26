@@ -52,14 +52,18 @@ def lint():
 def format(reset_git, push):
     try:
         if reset_git:
+            logger['format'].info('Resetting Git')
             subprocess.run(['git', 'reset', '--hard'], check=True)
-            subprocess.run(['git', 'reset', '--hard'], check=True)
+            subprocess.run(['git', 'clean', '-f', '-d'], check=True)
 
+        logger['format'].info('Formatting code')
         subprocess.run(['isort', '.'], check=True)
 
         if push:
-            subprocess.run(['git', 'commit', '-am', 'format code 💅 [skip ci]'], check=True)
-            subprocess.run(['git', 'push'], check=True)
+            logger['format'].info('Pushing changes to GitHub')
+            if not subprocess.run(['git', 'diff-index', '--quiet', 'HEAD']).returncode:
+                subprocess.run(['git', 'commit', '-am', 'format code 💅 [skip ci]'], check=True)
+                subprocess.run(['git', 'push'], check=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
 
