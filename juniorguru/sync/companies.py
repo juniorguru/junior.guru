@@ -1,5 +1,6 @@
-import os
 from pathlib import Path
+
+import click
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import google_sheets, loggers
@@ -14,19 +15,23 @@ from juniorguru.models.company import Company
 logger = loggers.from_path(__file__)
 
 
-FLUSH_POSTERS_COMPANIES = bool(int(os.getenv('FLUSH_POSTERS_COMPANIES', 0)))
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
+
 POSTERS_DIR = IMAGES_DIR / 'posters-companies'
 
 POSTER_WIDTH = 700
+
 POSTER_HEIGHT = 700
+
+WORKERS = 4
 
 
 @cli.sync_command()
+@click.option('--flush-posters/--no-flush-posters', default=False)
 @db.connection_context()
-def main():
-    if FLUSH_POSTERS_COMPANIES:
-        logger.warning("Removing all existing posters for companies, FLUSH_POSTERS_COMPANIES is set")
+def main(flush_posters):
+    if flush_posters:
+        logger.warning("Removing all existing posters for companies")
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
 
@@ -40,10 +45,12 @@ def main():
         logger.info('Saving a record')
         company = Company.create(**coerce_record(record))
 
-        logger.info(f"Rendering images for {company!r}")
+    for company in Company.listing():
+        logger.info(f"Rendering images for {company.name}")
         tpl_context = dict(company=company)
         image_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT,
-                                       'company.html', tpl_context, POSTERS_DIR)
+                                       'company.html', tpl_context, POSTERS_DIR,
+                                       prefix=company.slug)
         company.poster_path = image_path.relative_to(IMAGES_DIR)
         company.save()
 
