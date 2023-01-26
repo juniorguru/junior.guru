@@ -1,0 +1,55 @@
+- slug: support
+  name: Podporujeme junior.guru
+  benefits:
+    - icon: star
+      text: Logo na [junior.guru/club](https://junior.guru/club/)
+      slug: logo_club
+      quantity: 1
+    - icon: chat
+      text: 15 vstupů do klubu
+      slug: employees
+      quantity: 15
+    - icon: balloon
+      text: Oznámení o spolupráci v klubu
+      slug: welcome_club
+      quantity: 1
+  price: 15000
+
+- slug: hiring
+  name: Najímáme juniory
+  extends: support
+  benefits:
+    - icon: calendar-event
+      text: 1 online akce v klubu
+      slug: event_club
+      quantity: 1
+    - icon: pin-angle
+      text: 1 roční inzerát na [junior.guru/jobs](https://junior.guru/jobs/)
+      slug: job1
+      quantity: 1
+    - icon: pencil-square
+      text: Vyladění textu inzerátu
+    - icon: megaphone
+      text: Oznámení o spolupráci na sociálních sítích
+      slug: welcome_social
+      quantity: 1
+  price: 40000
+
+- slug: branding
+  name: Budujeme značku
+  extends: hiring
+  benefits:
+    - icon: pin-angle
+      text: Druhý roční inzerát na [junior.guru/jobs](https://junior.guru/jobs/)
+      slug: job2
+      quantity: 1
+    - icon: book
+      text: Logo na [junior.guru/handbook](https://junior.guru/handbook/)
+      slug: logo_handbook
+      quantity: 1
+    - icon: mic
+      text: Pozvání do [junior.guru/podcast](https://junior.guru/podcast/)
+      slug: podcast
+      quantity: 1
+  price: 80000
+  limit: 4

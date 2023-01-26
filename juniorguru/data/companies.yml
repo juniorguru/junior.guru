@@ -1,0 +1,175 @@
+- name: Green Fox Academy
+  slug: greenfox
+  link: https://www.greenfoxacademy.cz/
+  collab:
+    - plan: branding
+      expires: 2023-01-25
+      started: 2024-01-24
+
+- name: Processand
+  slug: processand
+  link: https://www.ataccama.com/
+  collab:
+    - plan: support
+      started: 2022-06-01
+      expires: 2023-05-31
+
+- name: Ataccama
+  slug: ataccama
+  link: https://www.ataccama.com/
+  collab:
+    - plan: support
+      started: 2022-06-01
+      expires: 2023-05-31
+
+- name: STRV
+  slug: strv
+  link: https://www.strv.com/careers
+  collab:
+    - plan: hiring
+      started: 2022-03-29
+      expires: 2023-03-28
+
+- name: Pure Storage
+  slug: purestorage
+  link: https://www.welcometothejungle.com/en/companies/pure-storage
+  collab:
+    - plan: support
+      started: 2022-04-01
+      expires: 2023-03-31
+
+- name: Jetveo
+  slug: jetveo
+  link: https://jetveo.io/cs
+  collab:
+    - plan: support
+      started: 2022-02-17
+      expires: 2023-02-16
+
+- name: wf tech
+  slug: wftech
+  link: https://www.wftech.cz/
+  collab:
+    - plan: support
+      started: 2021-11-11
+      expires: 2022-11-10
+
+- name: CDN77.com
+  slug: cdn77com
+  link: https://cdn77.jobs/
+  collab:
+    - plan: branding
+      started: 2021-11-01
+      expires: 2022-10-31
+
+- name: Credo Ventures
+  slug: credo
+  link: https://www.credoventures.com/support/
+  collab:
+    - plan: hiring
+      started: 2021-08-03
+      expires: 2022-10-01
+
+- name: pipetail.io
+  slug: pipetail
+  link: https://pipetail.io/
+  collab:
+    - plan: support
+      started: 2021-06-25
+      expires: 2022-10-01
+
+- name: Skoumal
+  slug: skoumal
+  link: https://www.skoumal.com/
+  collab:
+    - plan: support
+      started: 2021-02-01
+
+- name: Software Development Academy
+  slug: sdacademy
+  link: https://sdacademy.cz/
+  students: true
+  collab:
+    - plan: support
+      started: 2021-06-18
+      expires: 2022-10-01
+
+- name: Mews
+  slug: mews
+  link: https://www.mews.com/
+  collab:
+    - plan: support
+      started: 2021-05-31
+      expires: 2023-05-30
+
+- name: Lynt
+  slug: lynt
+  link: https://lynt.cz/
+  collab:
+    - plan: support
+      started: 2021-03-17
+      expires: 2023-04-15
+
+- name: Inuits
+  slug: inuits
+  link: https://inuits.eu/
+  collab:
+    - plan: support
+      started: 2021-04-02
+      expires: 2023-06-01
+
+- name: Engeto
+  slug: engeto
+  link: https://engeto.cz/
+  collab:
+    - plan: support
+      started: 2021-05-14
+      expires: 2023-06-30
+
+- name: Creatiweb
+  slug: creatiweb
+  link: https://creatiweb.cz/
+  collab:
+    - plan: support
+      started: 2021-02-02
+      expires: 2022-02-15
+
+- name: CoreSkill
+  slug: coreskill
+  link: https://coreskill.tech/
+  students: true
+  collab:
+    - plan: support
+      started: 2021-02-01
+
+- name: Rector
+  slug: rector
+  link: https://getrector.org/
+  collab:
+    - plan: branding
+      started: 2020-09-01
+      expires: 2023-10-01
+
+- name: Red Hat
+  slug: redhat
+  link: https://redhat.avature.net/juniorguru?jobId=20261&tags=dei+cz+-+juniorguru
+  collab:
+    - plan: branding
+      started: 2020-09-01
+      expires: 2023-10-01
+
+- name: OpenGeoLabs
+  slug: opengeolabs
+  link: https://opengeolabs.cz/
+  collab:
+    - plan: support
+      started: 2020-09-01
+      expires: 2021-02-28
+
+- name: Fakturoid
+  slug: fakturoid
+  link: https://www.fakturoid.cz/
+  collab:
+    - plan: branding
+      started: 2020-09-01
+      expires: 2023-02-28
