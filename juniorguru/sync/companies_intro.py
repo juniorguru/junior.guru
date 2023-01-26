@@ -6,8 +6,8 @@ from discord import Color, Embed, File
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, INTRO_CHANNEL, JOBS_CHANNEL,
-                                 is_message_over_period_ago, run_discord_task)
+from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JOBS_CHANNEL,
+                                 is_message_over_period_ago, run_discord_task, BOT_CHANNEL)  # INTRO_CHANNEL
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.company import Company
@@ -21,13 +21,14 @@ COMPANIES_INTRO_LAUNCH_ON = date(2022, 4, 1)
 
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
+INTRO_CHANNEL = BOT_CHANNEL  # FIXME
+
 
 logger = loggers.from_path(__file__)
 
 
 @cli.sync_command(dependencies=['club-content', 'companies', 'roles'])
 def main():
-    return  # TODO
     run_discord_task('juniorguru.sync.companies_intro.discord_task')
 
 
