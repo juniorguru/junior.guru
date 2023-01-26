@@ -52,8 +52,8 @@ jobs:
           name: Install Python dependencies
           command: poetry install -vvv
       - run:
-          name: Install browsers
-          command: poetry run playwright install chromium
+          name: Install browser
+          command: poetry run playwright install firefox
       - run:
           name: Install JavaScript dependencies
           command: npm ci
