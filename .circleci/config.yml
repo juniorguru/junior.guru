@@ -13,7 +13,7 @@ orbs:
 
 
 commands:
-  prepare-for-push-to-github:
+  init-save-changes:
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -209,7 +209,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - prepare-for-push-to-github
+      - init-save-changes
       - run:
           name: Format code
           command: |
@@ -233,7 +233,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - prepare-for-push-to-github
+      - init-save-changes
       - run:
           name: Deploy to GitHub Pages
           command: poetry run jg deploy
