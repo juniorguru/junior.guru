@@ -202,7 +202,7 @@ jobs:
             git clean -f -d
       - run:
           name: Format code
-          command: jg format
+          command: poetry run jg format
       - run:
           name: Push to GitHub
           command: |
@@ -264,6 +264,9 @@ workflows:
       - lint-and-test:
           requires:
             - install
+      - format:
+          requires:
+            - lint-and-test
       - sync-1:
           requires:
             - install
@@ -316,9 +319,6 @@ workflows:
           requires:
             - web
       - deploy-web:
-          requires:
-            - web
-      - format:
           requires:
             - web
     triggers:
