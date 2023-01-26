@@ -97,7 +97,9 @@ async def backup_discord_task(client, template_name):
 @click.argument('build_url', envvar='CIRCLE_BUILD_URL')
 def deploy(commit_hash, build_url):
     message = f'deploy {commit_hash} 🐣 [skip ci]\n\n{build_url}'
-    ghp_import('public', mesg=message, push=True, cname='junior.guru', nojekyll=True)
+    ghp_import('public', mesg=message,
+               push=True, force=True,
+               cname='junior.guru', nojekyll=True)
 
 
 @main.command()
