@@ -212,7 +212,10 @@ jobs:
       - prepare-for-push-to-github
       - run:
           name: Format code
-          command: poetry run jg format --reset-git --push
+          command: |
+            poetry run jg reset-repo
+            poetry run jg format .
+            poetry run jg save-changes . --message="format code 💅"
 
   backup:
     executor: python-js
