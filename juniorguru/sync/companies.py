@@ -46,7 +46,7 @@ def main(flush_posters):
         company = Company.create(**coerce_record(record))
 
     for company in Company.listing():
-        logger.info(f"Rendering images for {company.name}")
+        logger.info(f"Rendering poster for {company.name}")
         tpl_context = dict(company=company)
         image_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT,
                                        'company.html', tpl_context, POSTERS_DIR,
