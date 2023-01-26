@@ -17,6 +17,7 @@ from juniorguru.lib.images import is_image, render_image_file, validate_image
 from juniorguru.lib.template_filters import icon
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
+from juniorguru.models.company import Company
 from juniorguru.models.podcast import PodcastEpisode
 
 
@@ -57,7 +58,7 @@ TODAY = date.today()
 MESSAGE_EMOJI = '🎙'
 
 
-@cli.sync_command(dependencies=['club-content'])
+@cli.sync_command(dependencies=['club-content', 'companies'])
 @db.connection_context()
 def main():
     if FLUSH_POSTERS_PODCAST:
@@ -82,6 +83,8 @@ def main():
 
     logger.info('Saving to database')
     for record in records:
+        if 'company' in record:
+            record['company'] = Company.get_by_slug(record['company'])
         PodcastEpisode.create(**record)
 
     logger.info('Announcing in Discord')
