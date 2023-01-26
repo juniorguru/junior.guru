@@ -47,7 +47,7 @@ def lint():
 
 
 @main.command()
-@click.argument('path', type=click.Path(exists=True, type=Path))
+@click.argument('path', type=click.Path(exists=True, path_type=Path))
 def format(path):
     try:
         subprocess.run(['isort', str(path)], check=True)
@@ -112,7 +112,7 @@ def reset_repo():
 
 
 @main.command()
-@click.argument('paths', nargs=-1, type=click.Path(exists=True, type=Path))
+@click.argument('paths', nargs=-1, type=click.Path(exists=True, path_type=Path))
 @click.option('--message', default='save changes 🛠️')
 @click.option('--build-url', envvar='CIRCLE_BUILD_URL')
 @click.option('--skip-ci/--no-skip-ci', default=True)
