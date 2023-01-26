@@ -1,7 +1,7 @@
+import itertools
 from datetime import date
 from operator import attrgetter
 from textwrap import dedent
-import itertools
 
 import feedparser
 import requests
