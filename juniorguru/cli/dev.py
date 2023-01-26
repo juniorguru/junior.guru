@@ -60,10 +60,12 @@ def format(reset_git, push):
         subprocess.run(['isort', '.'], check=True)
 
         if push:
-            logger['format'].info('Pushing changes to GitHub')
-            if not subprocess.run(['git', 'diff-index', '--quiet', 'HEAD']).returncode:
+            if subprocess.run(['git', 'diff-index', '--quiet', 'HEAD']).returncode:
+                logger['format'].info('Pushing changes')
                 subprocess.run(['git', 'commit', '-am', 'format code 💅 [skip ci]'], check=True)
                 subprocess.run(['git', 'push'], check=True)
+            else:
+                logger['format'].info('No changes to push')
     except subprocess.CalledProcessError:
         raise click.Abort()
 
