@@ -23,8 +23,6 @@ commands:
           command: |
             mkdir -p ~/.ssh
             ssh-keyscan github.com >> ~/.ssh/known_hosts
-            git config user.email "kure@junior.guru"
-            git config user.name "Kuře"
       - run:
           name: Set Kuře as the Git user
           command: |
