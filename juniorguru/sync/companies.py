@@ -92,8 +92,6 @@ def coerce_record(record):
     }, record)
     if data.get('coupon'):
         data['slug'] = parse_slug(data['coupon'])
-    if not data.get('slug'):
-        data['slug'] = data['logo_filename'].replace('.svg', '')
     return data
 
 
