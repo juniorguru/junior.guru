@@ -295,7 +295,13 @@ def get_subscribed_periods(subscription):
     for i, order in enumerate(orders):
         start_on = arrow.get(order['createdAt']).date()
         end_on = renewal_on - timedelta(days=1)
-        is_trial = (start_on == trial[0] and end_on == trial[1]) if trial else False
-        coupon = ((subscription['coupon'] if i == 0 else order['coupon']) or {}).get('code')
+        is_trial = ((start_on, end_on) == trial) if trial else False
+
+        if subscription['coupon'] and i == 0:
+            coupon = subscription['coupon']
+        else:
+            coupon = order['coupon']
+        coupon = (coupon or {}).get('code')
+
         yield dict(start_on=start_on, end_on=end_on, is_trial=is_trial, coupon=coupon)
         renewal_on = start_on

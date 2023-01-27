@@ -247,6 +247,25 @@ def test_get_subscribed_periods_no_orders():
     assert list(get_subscribed_periods(subscription)) == []
 
 
+def test_get_subscribed_periods_coupon():
+    subscription = {'active': True,
+                    'coupon': None,
+                    'createdAt': 1660041421,
+                    'expiresAt': 1692787021,
+                    'id': '123456789',
+                    'member': {},
+                    'orders': [{'coupon': {'code': 'TEAM666'}, 'createdAt': 1661251317},
+                               {'coupon': None, 'createdAt': 1660041421}],
+                    'plan': {'intervalUnit': 'year'},
+                    'trialEndAt': 1661251021,
+                    'trialStartAt': 1660041421}
+
+    assert list(get_subscribed_periods(subscription)) == [
+        {'start_on': date(2022, 8, 23), 'end_on': date(2023, 8, 22), 'coupon': 'TEAM666', 'is_trial': False},
+        {'start_on': date(2022, 8, 9), 'end_on': date(2022, 8, 22), 'coupon': None, 'is_trial': True},
+    ]
+
+
 def test_get_subscribed_periods_subscription_coupon_overlaps_order_coupon():
     subscription = {'active': True,
                     'coupon': {'code': 'TEAM666'},
@@ -285,5 +304,3 @@ def test_get_subscribed_periods_subscription_coupon_overlaps_trial():
     assert list(get_subscribed_periods(subscription)) == [
         {'start_on': date(2023, 1, 13), 'end_on': date(2023, 1, 26), 'coupon': 'TEAM666', 'is_trial': True},
     ]
-
-
