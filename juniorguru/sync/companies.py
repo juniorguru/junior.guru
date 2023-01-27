@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import click
-from strictyaml import Datetime, Map, Optional, Seq, Str, load, Bool
+from strictyaml import Datetime, Map, Optional, Seq, Str, load, Bool, Url
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import google_sheets, loggers
@@ -22,7 +22,7 @@ YAML_SCHEMA = Seq(
     Map({
         'name': Str(),
         'slug': Str(),
-        'url': Str(),
+        'url': Url(),
         Optional('students'): Bool(),
         'collab': Seq(
             Map({
