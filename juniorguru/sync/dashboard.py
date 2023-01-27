@@ -122,7 +122,7 @@ def render_events():
         for event in itertools.islice(events, EVENTS_LIMIT)
         if event.recording_url
     ])
-    description += f'Dalších {len(events) - EVENTS_LIMIT} akcí je [na webu](https://junior.guru/events/).'
+    description += f'\nDalších {len(events) - EVENTS_LIMIT} akcí je [na webu](https://junior.guru/events/).'
     return {
         'title': 'Záznamy klubových akcí',
         'description': description,
