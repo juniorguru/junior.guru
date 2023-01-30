@@ -1,11 +1,12 @@
 from pathlib import Path
 
-from strictyaml import Datetime, Map, Seq, Str, Url, load
+from strictyaml import Map, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.models.base import db
 from juniorguru.models.story import Story
+from juniorguru.lib.yaml import Date
 
 
 YAML_PATH = Path('juniorguru/data/stories.yml')
@@ -13,7 +14,7 @@ YAML_PATH = Path('juniorguru/data/stories.yml')
 YAML_SCHEMA = Seq(
     Map({
         'url': Url(),
-        'date': Datetime(),
+        'date': Date(),
         'title': Str(),
         'image_path': Str(),
         'tags': Seq(Str()),

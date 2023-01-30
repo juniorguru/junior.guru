@@ -3,7 +3,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 import arrow
-from strictyaml import CommaSeparated, Datetime, Int, Map, Optional, Seq, Str, Url, load
+from strictyaml import CommaSeparated, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
@@ -15,6 +15,7 @@ from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.event import Event, EventSpeaking
+from juniorguru.lib.yaml import Date
 
 
 logger = loggers.from_path(__file__)
@@ -48,7 +49,7 @@ EVENTS_CHANNEL = 940587142659338300
 schema = Seq(
     Map({
         'title': Str(),
-        'date': Datetime(),
+        'date': Date(),
         Optional('time', default='18:00'): Str(),
         'description': Str(),
         Optional('poster_description'): Str(),
@@ -240,7 +241,7 @@ async def sync_scheduled_events(client):
 
 
 def load_record(record):
-    start_at = arrow.get(*map(int, str(record.pop('date').date()).split('-')),
+    start_at = arrow.get(*map(int, str(record.pop('date')).split('-')),
                          *map(int, record.pop('time').split(':')),
                          tzinfo='Europe/Prague')
     record['start_at'] = start_at.to('UTC').naive

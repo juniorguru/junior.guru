@@ -7,7 +7,7 @@ import requests
 from discord import Embed, File
 from pod2gen import Media
 from requests.exceptions import HTTPError
-from strictyaml import Datetime, Int, Map, Optional, Seq, Str, load
+from strictyaml import Int, Map, Optional, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
@@ -15,6 +15,7 @@ from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLE
                                  run_discord_task)
 from juniorguru.lib.images import is_image, render_image_file, validate_image
 from juniorguru.lib.template_filters import icon
+from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.company import Company
@@ -31,7 +32,7 @@ YAML_SCHEMA = Seq(
         'id': Str(),
         'title': Str(),
         'avatar_path': Str(),
-        'publish_on': Datetime(),
+        'publish_on': Date(),
         'description': Str(),
         Optional('media_size'): Int(),
         Optional('media_duration_s'): Int(),
@@ -98,7 +99,6 @@ def process_episode(yaml_record):
 
     media_url = f"https://podcast.junior.guru/episodes/{id}.mp3"
     media_type = 'audio/mpeg'
-    publish_on = yaml_record['publish_on'].date()
 
     avatar_path = yaml_record['avatar_path']
     logger_ep.info(f'Checking {avatar_path}')
@@ -123,13 +123,13 @@ def process_episode(yaml_record):
             media_size = yaml_record['media_size']
             media_duration_s = yaml_record['media_duration_s']
     except HTTPError as e:
-        if publish_on >= TODAY and e.response.status_code == 404:
+        if yaml_record['publish_on'] >= TODAY and e.response.status_code == 404:
             logger_ep.warning(f"Future episode {media_url} doesn't exist yet")
             return None
         raise
 
     data = dict(id=id,
-                publish_on=publish_on,
+                publish_on=yaml_record['publish_on'],
                 title=yaml_record['title'],
                 avatar_path=avatar_path,
                 description=yaml_record['description'],

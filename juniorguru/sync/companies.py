@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import click
-from strictyaml import Datetime, Map, Optional, Seq, Str, load, Bool, Url
+from strictyaml import Map, Optional, Seq, Str, load, Bool, Url
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import google_sheets, loggers
@@ -11,6 +11,7 @@ from juniorguru.lib.coerce import (coerce, parse_boolean_words, parse_date, pars
 from juniorguru.lib.images import render_image_file
 from juniorguru.models.base import db
 from juniorguru.models.company import Company
+from juniorguru.lib.yaml import Date
 
 
 logger = loggers.from_path(__file__)
@@ -27,8 +28,8 @@ YAML_SCHEMA = Seq(
         'collab': Seq(
             Map({
                 'plan': Str(),
-                'starts_on': Datetime(),
-                Optional('expires_on'): Datetime(),
+                'starts_on': Date(),
+                Optional('expires_on'): Date(),
             }),
         ),
     })
