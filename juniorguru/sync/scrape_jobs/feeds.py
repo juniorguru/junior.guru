@@ -15,7 +15,7 @@ class GzipJsonLinesItemExporter(JsonLinesItemExporter):
     """
 
     def __init__(self, file, **kwargs):
-        self.gzfile = gzip.GzipFile(fileobj=file)
+        self.gzfile = gzip.GzipFile(fileobj=file, mode='wb')
         super().__init__(self.gzfile, **kwargs)
 
     def finish_exporting(self):
@@ -30,9 +30,7 @@ def uri_params(params, spider, today=None):
     https://docs.scrapy.org/en/latest/topics/feed-exports.html#feed-uri-params
     """
     today = today or date.today()
-    params['year'] = f'{today:%Y}'
-    params['month'] = f'{today:%m}'
-    params['day'] = f'{today:%d}'
+    return params | dict(year=f'{today:%Y}', month=f'{today:%m}', day=f'{today:%d}')
 
 
 def feed_path(spider_name, today=None):
