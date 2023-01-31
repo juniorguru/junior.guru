@@ -126,7 +126,9 @@ def save_changes(paths, message, build_url, skip_ci):
             logger['save-changes'].info(f'Adding path: {path}')
             subprocess.run(['git', 'add', '-A', str(path)], check=True)
 
-        if subprocess.run(['git', 'diff', '--name-only', '--cached']).stdout:
+        proc = subprocess.run(['git', 'diff', '--name-only', '--cached'],
+                              stdout=subprocess.PIPE)
+        if proc.stdout:
             logger['save-changes'].info(f'Commit message: {message!r}')
             subprocess.run(['git', 'commit', '-m', message], check=True)
             logger['save-changes'].info('Pushing changes')
