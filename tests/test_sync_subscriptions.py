@@ -4,7 +4,7 @@ import pytest
 
 from juniorguru.sync.subscriptions import (format_date, get_coupon, get_student_months,
                                            get_student_started_on,
-                                           get_subscribed_periods, get_subscriptions)
+                                           get_subscribed_periods)
 
 
 def test_get_coupon():
@@ -156,29 +156,6 @@ def test_get_student_started_on_multiple_sorted_asc():
 ])
 def test_format_date(value, expected):
     assert format_date(value) == expected
-
-
-def test_get_subscriptions():
-    graphql_results = [{
-        'subscriptions': {
-            'edges': [
-                {'node': 1},
-                {'node': 2},
-                {'node': 3},
-            ]
-        }
-    },
-    {
-        'subscriptions': {
-            'edges': [
-                {'node': 4},
-                {'node': 5},
-            ]
-        }
-    }]
-    subscriptions = get_subscriptions(graphql_results)
-
-    assert list(subscriptions) == [1, 2, 3, 4, 5]
 
 
 def test_get_subscribed_periods():

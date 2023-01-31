@@ -71,7 +71,7 @@ async def discord_task(client):
 
     logger.info('Preparing data for computing how to re-assign roles')
     members = ClubUser.members_listing()
-    companies = Company.listing()
+    companies = Company.active_listing()
     changes = []
     top_members_limit = ClubUser.top_members_limit()
     logger.info(f'members_count={len(members)}, top_members_limit={top_members_limit}')

@@ -1,5 +1,4 @@
 import itertools
-import os
 from datetime import date, datetime, timedelta
 from operator import itemgetter
 
@@ -19,8 +18,6 @@ from juniorguru.models.feminine_name import FeminineName
 
 logger = loggers.from_path(__file__)
 
-
-MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
 
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
@@ -56,53 +53,38 @@ def main():
 
     logger.info('Getting data from Memberful')
     memberful = Memberful()
-    query = """
-        query getSubscriptions($cursor: String!) {
-            subscriptions(after: $cursor) {
-                totalCount
-                pageInfo {
-                    endCursor
-                    hasNextPage
-                }
-                edges {
-                    node {
-                        id
-                        active
-                        createdAt
-                        expiresAt
-                        trialStartAt
-                        trialEndAt
-                        coupon {
-                            code
-                        }
-                        orders {
-                            createdAt
-                            coupon {
-                                code
-                            }
-                        }
-                        member {
-                            discordUserId
-                            email
-                            fullName
-                            id
-                            metadata
-                        }
-                        plan {
-                            intervalUnit
-                        }
-                    }
-                }
+    subscriptions = memberful.get_nodes('subscriptions', """
+        id
+        active
+        createdAt
+        expiresAt
+        trialStartAt
+        trialEndAt
+        coupon {
+            code
+        }
+        orders {
+            createdAt
+            coupon {
+                code
             }
         }
-    """
+        member {
+            discordUserId
+            email
+            fullName
+            id
+            metadata
+        }
+        plan {
+            intervalUnit
+        }
+    """)
 
     records = []
     active_account_ids = set()
     seen_discord_ids = set()
-
-    for subscription in get_subscriptions(memberful.query(query,
-                                                          lambda result: result['subscriptions']['pageInfo'])):
+    for subscription in subscriptions:
         account_id = subscription['member']['id']
         if subscription['active']:
             if account_id in active_account_ids:
@@ -274,12 +256,6 @@ def get_student_started_on(subscription, coupon):
         return sorted(orders)[0].date()
     except IndexError:
         return None
-
-
-def get_subscriptions(graphql_results):
-    for grapqhql_result in graphql_results:
-        for edge in grapqhql_result['subscriptions']['edges']:
-            yield edge['node']
 
 
 def get_subscribed_periods(subscription):

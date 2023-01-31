@@ -17,7 +17,7 @@ class PodcastEpisode(BaseModel):
     media_type = CharField()
     media_duration_s = IntegerField()
     description = CharField()
-    company = ForeignKeyField(Company, backref='list_podcasts', null=True)
+    partner = ForeignKeyField(Company, backref='list_podcasts', null=True)
     avatar_path = CharField()
     poster_path = CharField(null=True)
 

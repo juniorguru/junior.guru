@@ -1,23 +1,24 @@
 from pathlib import Path
+from collections import defaultdict
+from datetime import date
 
 import click
 from strictyaml import Map, Optional, Seq, Str, load, Bool, Url
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import google_sheets, loggers
+from juniorguru.lib.memberful import Memberful
+from juniorguru.lib import loggers
 from juniorguru.lib.club import parse_coupon
-from juniorguru.lib.coerce import (coerce, parse_boolean_words, parse_date, parse_int,
-                                   parse_text)
 from juniorguru.lib.images import render_image_file
 from juniorguru.models.base import db
-from juniorguru.models.company import Company
+from juniorguru.models.company import Company, Partnership, PartnershipPlan
 from juniorguru.lib.yaml import Date
 
 
 logger = loggers.from_path(__file__)
 
 
-YAML_PATH = Path(__file__).parent.parent / 'data' / 'companies.yml'
+YAML_PATH = Path('juniorguru/data/partners.yml')
 
 YAML_SCHEMA = Seq(
     Map({
@@ -25,7 +26,7 @@ YAML_SCHEMA = Seq(
         'slug': Str(),
         'url': Url(),
         Optional('students'): Bool(),
-        'collab': Seq(
+        'partnerships': Seq(
             Map({
                 'plan': Str(),
                 'starts_on': Date(),
@@ -35,68 +36,87 @@ YAML_SCHEMA = Seq(
     })
 )
 
-IMAGES_DIR = Path(__file__).parent.parent / 'images'
+IMAGES_DIR = Path('juniorguru/images')
 
-POSTERS_DIR = IMAGES_DIR / 'posters-companies'
+LOGOS_DIR = IMAGES_DIR / 'logos'
+
+POSTERS_DIR = IMAGES_DIR / 'posters-partners'
 
 POSTER_WIDTH = 700
 
 POSTER_HEIGHT = 700
 
 
-@cli.sync_command()
+@cli.sync_command(dependencies=['partnership-plans'])
 @click.option('--flush-posters/--no-flush-posters', default=False)
+@click.option('--delete-expired-logos/--no-delete-expired-logos', default=False)
 @db.connection_context()
-def main(flush_posters):
+def main(flush_posters, delete_expired_logos):
     if flush_posters:
-        logger.warning("Removing all existing posters for companies")
+        logger.warning("Removing all existing posters for partners")
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
 
-    doc_key = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
-    records = google_sheets.download(google_sheets.get(doc_key, 'companies'))
+    logger.info('Getting coupons data from Memberful')
+    memberful = Memberful()
+    coupons_mapping = get_coupons_mapping(memberful.get_nodes('coupons', 'code, state'))
 
-    logger.info('Setting up companies db table')
-    Company.drop_table()
-    Company.create_table()
-
-    for record in records:
-        logger.info('Saving a record')
-        company = Company.create(**coerce_record(record))
-
-    for company in Company.listing():
-        logger.info(f"Rendering poster for {company.name}")
-        tpl_context = dict(company=company)
-        image_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT,
-                                       'company.html', tpl_context, POSTERS_DIR,
-                                       prefix=company.slug)
-        company.poster_path = image_path.relative_to(IMAGES_DIR)
-        company.save()
-
-    # TODO
-    logger.info('Reading YAML with companies')
+    logger.info('Reading YAML with partners')
     yaml_records = (record.data for record in load(YAML_PATH.read_text(), YAML_SCHEMA))
-    list(yaml_records)
+
+    logger.info('Setting up events db tables')
+    db.drop_tables([Company, Partnership])
+    db.create_tables([Company, Partnership])
+
+    logger.info('Processing YAML records')
+    for yaml_record in yaml_records:
+        partnerships = yaml_record.pop('partnerships')
+
+        logo_path = LOGOS_DIR / f"{yaml_record['slug']}.svg"
+        if not logo_path.exists():
+            logo_path = logo_path.with_suffix('.png')
+        if not logo_path.exists():
+            raise FileNotFoundError(f"'There is no {yaml_record['slug']}.svg or .png inside {LOGOS_DIR}")
+
+        partner = Company.create(logo_path=logo_path.relative_to(IMAGES_DIR),
+                                 **yaml_record,
+                                 **coupons_mapping.get(yaml_record['slug'], {}))
+        for partnership in partnerships:
+            try:
+                plan_slug = partnership.pop('plan')
+                partnership['plan'] = PartnershipPlan.get_by_slug(plan_slug)
+            except PartnershipPlan.DoesNotExist:
+                if not partnership['expires_on'] or partnership['expires_on'] > date.today():
+                    raise
+                logger.warning(f"Expired {partner.name} partnership has non-existing plan: {plan_slug}")
+            Partnership.create(partner=partner, **partnership)
+
+    for partner in Company.active_listing():
+        logger.info(f"Rendering poster for {partner.name}")
+        tpl_context = dict(partner=partner)
+        image_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT,
+                                       'partner.html', tpl_context, POSTERS_DIR,
+                                       prefix=partner.slug)
+        partner.poster_path = image_path.relative_to(IMAGES_DIR)
+        partner.save()
+
+    logger.info('Checking expired partnerships for leftovers')
+    for partner in Company.expired_listing():
+        logo_path = IMAGES_DIR / partner.logo_path
+        if logo_path.exists():
+            if delete_expired_logos:
+                logger.warning(f"Deleting {logo_path}, partnership with {partner.name} expired")
+                logo_path.unlink()
+            else:
+                logger.warning(f"File {logo_path} is probably redundant, partnership with {partner.name} expired")
 
 
-def coerce_record(record):
-    data = coerce({
-        r'^name$': ('name', parse_text),
-        r'^filename$': ('logo_filename', parse_text),
-        r'^handbook$': ('is_sponsoring_handbook', parse_boolean_words),
-        r'^student coupon$': ('student_coupon', parse_text),
-        r'^link$': ('url', parse_text),
-        r'^coupon$': ('coupon', parse_text),
-        r'^starts$': ('starts_on', parse_date),
-        r'^expires$': ('expires_on', parse_date),
-        r'^job slots$': ('job_slots_count', parse_int),
-    }, record)
-    if data.get('coupon'):
-        data['slug'] = parse_slug(data['coupon'])
-    return data
-
-
-def parse_slug(coupon):
-    if coupon:
-        return parse_coupon(coupon)['name'].lower()
-    return None
+def get_coupons_mapping(coupons):
+    coupons_mapping = defaultdict(dict)
+    for coupon in coupons:
+        if coupon['state'] == 'enabled':
+            parts = parse_coupon(coupon['code'])
+            slug = parts['name'].lower().removeprefix('student')
+            field = 'student_coupon' if parts['is_student'] else 'coupon'
+            coupons_mapping[slug][field] = coupon['code']
+    return dict(coupons_mapping)

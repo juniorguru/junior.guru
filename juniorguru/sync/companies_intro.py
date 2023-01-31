@@ -6,7 +6,7 @@ from discord import Color, Embed, File
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JOBS_CHANNEL,
+from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, #JOBS_CHANNEL,
                                  is_message_over_period_ago, run_discord_task, BOT_CHANNEL)  # INTRO_CHANNEL
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -38,11 +38,12 @@ async def discord_task(client):
     if is_message_over_period_ago(last_message, timedelta(weeks=1)):
         logger.info('Last company intro message is more than one week old!')
 
-        companies = [company for company in Company.listing()
+        companies = [company for company in Company.active_listing()
                      if doesnt_have_intro(company)]
         if companies:
             logger.debug(f'Choosing from {len(companies)} companies to announce')
             company = sorted(companies, key=sort_key)[0]
+            partnership = company.active_partnership()
 
             logger.debug(f'Decided to announce {company!r}')
             if DISCORD_MUTATIONS_ENABLED:
@@ -52,10 +53,10 @@ async def discord_task(client):
                     f"Kamarádi z {company_name_formatted(company.name)} se rozhodli podpořit klub a jsou tady s námi! "
                     f"Mají roli <@&{company.role_id}>."
                 )
-                if company.starts_on < COMPANIES_INTRO_LAUNCH_ON and (date.today() - company.starts_on).days > 30:
+                if company.starts_on < COMPANIES_INTRO_LAUNCH_ON and (date.today() - partnership.starts_on).days > 30:
                     content += (
                         ' 🐣 Sice to píšu jako novinku, ale ve skutečnosti klub podporují už od '
-                        f'{company.starts_on.day}.{company.starts_on.month}.{company.starts_on.year}. '
+                        f'{partnership.starts_on.day}.{partnership.starts_on.month}.{partnership.starts_on.year}. '
                         'Jenže tehdy jsem bylo malé kuřátko, které ještě neumělo vítat firmy.'
                     )
 
@@ -63,10 +64,10 @@ async def discord_task(client):
                     f"ℹ️ Víc o firmě najdeš na [jejich webu]({company.url})",
                     "🛡 Mají logo na [stránce klubu](https://junior.guru/club/)",
                 ]
-                if company.is_sponsoring_handbook:
-                    embed_description_lines.append('📖 Mají logo na [příručce pro juniory](https://junior.guru/handbook/)')
-                if company.job_slots_count:
-                    embed_description_lines.append(f'🧑‍💻 Mají inzeráty v <#{JOBS_CHANNEL}> a [na webu](https://junior.guru/jobs/)')
+                # if company.is_sponsoring_handbook:
+                #     embed_description_lines.append('📖 Mají logo na [příručce pro juniory](https://junior.guru/handbook/)')
+                # if company.job_slots_count:
+                #     embed_description_lines.append(f'🧑‍💻 Mají inzeráty v <#{JOBS_CHANNEL}> a [na webu](https://junior.guru/jobs/)')
                 if company.student_role_id:
                     embed_description_lines.append(f'🧑‍🎓 Posílají sem své studenty: <@&{company.student_role_id}>')
                 embed_description_lines += [
@@ -102,9 +103,10 @@ def doesnt_have_intro(company):
 
 def sort_key(company, today=None):
     today = today or date.today()
-    expires_on = (company.expires_on or date(3000, 1, 1))
+    partnership = company.active_partnership()
+    expires_on = (partnership.expires_on or date(3000, 1, 1))
     expires_in_days = (expires_on - today).days
-    started_days_ago = (today - company.starts_on).days
+    started_days_ago = (today - partnership.starts_on).days
     return (expires_in_days if expires_in_days <= 30 else 1000,
             started_days_ago,
             company.name)

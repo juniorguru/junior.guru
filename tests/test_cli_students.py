@@ -26,9 +26,9 @@ def test_to_csv_empty():
 
 def test_subscription_to_row():
     company = Company(name='Foo Corporation',
-                      logo_filename='foo.svg',
-                      url='https://example.com',
-                      starts_on=date.today())
+                      slug='foo',
+                      logo_path='logos/foo.svg',
+                      url='https://example.com')
     subscription = CompanyStudentSubscription(id='123',
                                               company=company,
                                               account_id='12345',

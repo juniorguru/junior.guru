@@ -245,14 +245,14 @@
 {% endmacro %}
 
 
-{% macro logo(name, filename, url=None, lazy=False, class_prefix='logos') %}
+{% macro logo(name, path, url=None, lazy=False, class_prefix='logos') %}
   <li class="{{ class_prefix }}-item" title="{{ name }}">
     {% if url %}
     <a class="{{ class_prefix }}-link" href="{{ url }}" target="_blank" rel="noopener"
       data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership">
     {% endif %}
 
-    {{ img('static/images/logos/' + filename, name, 130, 60, class=class_prefix + '-image', lazy=lazy) }}
+    {{ img('static/images/' + path, name, 130, 60, class=class_prefix + '-image', lazy=lazy) }}
 
     {% if url %}
     </a>

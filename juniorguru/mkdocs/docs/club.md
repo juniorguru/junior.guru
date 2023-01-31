@@ -114,25 +114,25 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
     <a href="{{ pages|docs_url('faq.md')|url }}#firmy" target="_blank" rel="noopener">Firemní partneři</a>
   </li>
   {% for company in companies %}
-    {{ logo(company.name, company.logo_filename, company.url) }}
+    {{ logo(company.name, company.logo_path, company.url) }}
   {% endfor %}
 </ul>
 <ul class="logos standout">
   <li class="logos-item logos-caption">
     <a href="{{ pages|docs_url('faq.md')|url }}#komunity">Komunitní partneři</a>
   </li>
-  {{ logo('Aj ty v IT', 'ajtyvit.svg', 'https://ajtyvit.sk/') }}
-  {{ logo('Česko.Digital', 'ceskodigital.svg', 'https://cesko.digital/') }}
-  {{ logo('Czechitas', 'czechitas.svg', 'https://www.czechitas.cz/') }}
-  {{ logo('DigiKoalice', 'digikoalice.svg', 'https://digikoalice.cz/') }}
-  {{ logo('Frontendisti', 'frontendisti.svg', 'https://frontendisti.cz/') }}
-  {{ logo('#HolkyzMarketingu', 'holkyzmarketingu.svg', 'https://holkyzmarketingu.cz/') }}
-  {{ logo('PyLadies', 'pyladies.svg', 'https://pyladies.cz/') }}
-  {{ logo('Pyvec', 'pyvec.svg', 'https://pyvec.org/') }}
-  {{ logo('CyberMagnolia', 'cybermagnolia.svg', 'https://cybermagnolia.com/') }}
-  {{ logo('ReactGirls', 'reactgirls.svg', 'https://reactgirls.com/') }}
-  {{ logo('TWguild.cz', 'twguild.svg', 'https://www.twguild.cz/') }}
-  {{ logo('yablko', 'yablko.svg', 'http://robweb.sk/') }}
+  {{ logo('Aj ty v IT', 'logos/ajtyvit.svg', 'https://ajtyvit.sk/') }}
+  {{ logo('Česko.Digital', 'logos/ceskodigital.svg', 'https://cesko.digital/') }}
+  {{ logo('Czechitas', 'logos/czechitas.svg', 'https://www.czechitas.cz/') }}
+  {{ logo('DigiKoalice', 'logos/digikoalice.svg', 'https://digikoalice.cz/') }}
+  {{ logo('Frontendisti', 'logos/frontendisti.svg', 'https://frontendisti.cz/') }}
+  {{ logo('#HolkyzMarketingu', 'logos/holkyzmarketingu.svg', 'https://holkyzmarketingu.cz/') }}
+  {{ logo('PyLadies', 'logos/pyladies.svg', 'https://pyladies.cz/') }}
+  {{ logo('Pyvec', 'logos/pyvec.svg', 'https://pyvec.org/') }}
+  {{ logo('CyberMagnolia', 'logos/cybermagnolia.svg', 'https://cybermagnolia.com/') }}
+  {{ logo('ReactGirls', 'logos/reactgirls.svg', 'https://reactgirls.com/') }}
+  {{ logo('TWguild.cz', 'logos/twguild.svg', 'https://www.twguild.cz/') }}
+  {{ logo('yablko', 'logos/yablko.svg', 'http://robweb.sk/') }}
 </ul>
 </section>
 

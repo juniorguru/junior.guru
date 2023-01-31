@@ -36,7 +36,7 @@ YAML_SCHEMA = Seq(
         'description': Str(),
         Optional('media_size'): Int(),
         Optional('media_duration_s'): Int(),
-        Optional('company'): Str(),
+        Optional('partner'): Str(),
     })
 )
 
@@ -84,8 +84,8 @@ def main():
 
     logger.info('Saving to database')
     for record in records:
-        if 'company' in record:
-            record['company'] = Company.get_by_slug(record['company'])
+        if 'partner' in record:
+            record['partner'] = Company.get_by_slug(record['partner'])
         PodcastEpisode.create(**record)
 
     logger.info('Announcing in Discord')

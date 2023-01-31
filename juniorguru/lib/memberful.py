@@ -1,5 +1,6 @@
 import json
 import os
+from string import Template
 
 from gql import Client, gql
 from gql.transport.requests import RequestsHTTPTransport
@@ -33,9 +34,9 @@ class Memberful():
             self._client = Client(transport=transport)
         return self._client
 
-    def query(self, query_string, get_page_info):
+    def _query(self, gql_query, get_page_info):
         cursor = ''
-        query_gql = gql(query_string)
+        query_gql = gql(gql_query)
         while cursor is not None:
             logger.debug('Sending a query')
             params = dict(cursor=cursor)
@@ -46,6 +47,32 @@ class Memberful():
                 cursor = page_info['endCursor']
             else:
                 cursor = None
+
+    def get_nodes(self, collection_name, gql_fields):
+        # way too many brackets for f-strings, using template
+        # requires only to have $$cursor instead of $cursor
+        gql_query_template = Template("""
+            query getNodes($$cursor: String!) {
+                $collection_name(after: $$cursor) {
+                    totalCount
+                    pageInfo {
+                        endCursor
+                        hasNextPage
+                    }
+                    edges {
+                        node {
+                            $gql_fields
+                        }
+                    }
+                }
+            }
+        """)
+        gql_query = gql_query_template.substitute(collection_name=collection_name,
+                                                  gql_fields=gql_fields)
+        get_page_info = lambda result: result[collection_name]['pageInfo']
+        for result in self._query(gql_query, get_page_info):
+            for edge in result[collection_name]['edges']:
+                yield edge['node']
 
     def mutate(self, mutation_string, params):
         logger.debug('Sending a mutation')
@@ -66,3 +93,9 @@ def serialize_metadata(data):
         if len(value) > 500:
             raise ValueError(f"Maximum value length is 500 characters: {value!r}")
     return json.dumps(data)
+
+
+def get_nodes(collection_name, graphql_results):
+    for grapqhql_result in graphql_results:
+        for edge in grapqhql_result[collection_name]['edges']:
+            yield edge['node']

@@ -1,7 +1,7 @@
 - name: Green Fox Academy
   slug: greenfox
   url: https://www.greenfoxacademy.cz/
-  collab:
+  partnerships:
     - plan: branding
       starts_on: 2023-01-25
       expires_on: 2024-01-24
@@ -9,7 +9,7 @@
 - name: Processand
   slug: processand
   url: https://www.ataccama.com/
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2022-06-01
       expires_on: 2023-05-31
@@ -17,7 +17,7 @@
 - name: Ataccama
   slug: ataccama
   url: https://www.ataccama.com/
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2022-06-01
       expires_on: 2023-05-31
@@ -25,7 +25,7 @@
 - name: STRV
   slug: strv
   url: https://www.strv.com/careers
-  collab:
+  partnerships:
     - plan: hiring
       starts_on: 2022-03-29
       expires_on: 2023-03-28
@@ -33,7 +33,7 @@
 - name: Pure Storage
   slug: purestorage
   url: https://www.welcometothejungle.com/en/companies/pure-storage
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2022-04-01
       expires_on: 2023-03-31
@@ -41,7 +41,7 @@
 - name: Jetveo
   slug: jetveo
   url: https://jetveo.io/cs
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2022-02-17
       expires_on: 2023-02-16
@@ -49,7 +49,7 @@
 - name: wf tech
   slug: wftech
   url: https://www.wftech.cz/
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2021-11-11
       expires_on: 2022-11-10
@@ -57,7 +57,7 @@
 - name: CDN77.com
   slug: cdn77com
   url: https://cdn77.jobs/
-  collab:
+  partnerships:
     - plan: branding
       starts_on: 2021-11-01
       expires_on: 2022-10-31
@@ -65,7 +65,7 @@
 - name: Credo Ventures
   slug: credo
   url: https://www.credoventures.com/support/
-  collab:
+  partnerships:
     - plan: hiring
       starts_on: 2021-08-03
       expires_on: 2022-10-01
@@ -73,7 +73,7 @@
 - name: pipetail.io
   slug: pipetail
   url: https://pipetail.io/
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2021-06-25
       expires_on: 2022-10-01
@@ -81,7 +81,7 @@
 - name: Skoumal
   slug: skoumal
   url: https://www.skoumal.com/
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2021-02-01
 
@@ -89,7 +89,7 @@
   slug: sdacademy
   url: https://sdacademy.cz/
   students: true
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2021-06-18
       expires_on: 2022-10-01
@@ -97,7 +97,7 @@
 - name: Mews
   slug: mews
   url: https://www.mews.com/
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2021-05-31
       expires_on: 2023-05-30
@@ -105,7 +105,7 @@
 - name: Lynt
   slug: lynt
   url: https://lynt.cz/
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2021-03-17
       expires_on: 2023-04-15
@@ -113,7 +113,7 @@
 - name: Inuits
   slug: inuits
   url: https://inuits.eu/
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2021-04-02
       expires_on: 2023-06-01
@@ -121,7 +121,7 @@
 - name: Engeto
   slug: engeto
   url: https://engeto.cz/
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2021-05-14
       expires_on: 2023-06-30
@@ -129,7 +129,7 @@
 - name: Creatiweb
   slug: creatiweb
   url: https://creatiweb.cz/
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2021-02-02
       expires_on: 2022-02-15
@@ -138,14 +138,14 @@
   slug: coreskill
   url: https://coreskill.tech/
   students: true
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2021-02-01
 
 - name: Rector
   slug: rector
   url: https://getrector.org/
-  collab:
+  partnerships:
     - plan: branding
       starts_on: 2020-09-04
       expires_on: 2021-11-30
@@ -153,7 +153,7 @@
 - name: Red Hat
   slug: redhat
   url: https://redhat.avature.net/juniorguru?jobId=20261&tags=dei+cz+-+juniorguru
-  collab:
+  partnerships:
     - plan: branding
       starts_on: 2020-09-01
       expires_on: 2023-10-01
@@ -161,7 +161,7 @@
 - name: OpenGeoLabs
   slug: opengeolabs
   url: https://opengeolabs.cz/
-  collab:
+  partnerships:
     - plan: support
       starts_on: 2020-09-01
       expires_on: 2021-02-28
@@ -169,7 +169,7 @@
 - name: Fakturoid
   slug: fakturoid
   url: https://www.fakturoid.cz/
-  collab:
+  partnerships:
     - plan: branding
       starts_on: 2020-09-01
       expires_on: 2023-02-28
