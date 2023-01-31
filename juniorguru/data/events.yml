@@ -83,19 +83,20 @@
   speakers: 113033048957665280
 
 
-- title: "(Bude upřesněno, bezpečnost)"
+- title: "Základy bezpečnosti pro vývojáře"
   date: "2023-02-07"
   description: |
-    (Bude upřesněno)
+    Jak chránit sebe, svoji práci a na co myslet, když chci psát bezpečný kód? Nepůjdeme do přílišného detailu, ale podíváme se na bezpečné používání vlastního počítače, ukládání nebo publikování svojí práce, a na pár zásad, které je dobré dodržovat u libovolného programovacího jazyka.
   avatar_path: avatars-participants/zuzana-pechova.jpg
   bio_name: Zuzana Pechová
   bio_title: Security Manager v Rossum
   bio: |
-    (Bude upřesněno)
+    Profesionálka v oboru kybernetické bezpečnosti se zaměřením na technické prostředky ochrany společností - prevence útoků, monitorování systémů, řešení bezpečnostních incidentů.
   bio_links:
     - https://www.linkedin.com/in/zuzanapechova/
     - https://twitter.com/kayla_eilhart/
     - https://www.twitch.tv/kayla_eilhart
+    - https://witter.cz/@kayla_eilhart
   logo_path: logos/rossum.svg
   speakers: 336111357495738368
 
