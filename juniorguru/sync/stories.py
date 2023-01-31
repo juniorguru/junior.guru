@@ -4,9 +4,9 @@ from strictyaml import Map, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
+from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
 from juniorguru.models.story import Story
-from juniorguru.lib.yaml import Date
 
 
 YAML_PATH = Path('juniorguru/data/stories.yml')

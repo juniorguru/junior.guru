@@ -1,11 +1,11 @@
 from pathlib import Path
 
-from strictyaml import Map, Optional, Seq, Str, load, Int
+from strictyaml import Int, Map, Optional, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.models.base import db
-from juniorguru.models.company import PartnershipPlan, PartnershipBenefit
+from juniorguru.models.company import PartnershipBenefit, PartnershipPlan
 
 
 logger = loggers.from_path(__file__)

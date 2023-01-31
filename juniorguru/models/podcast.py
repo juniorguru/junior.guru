@@ -2,7 +2,7 @@ import math
 from datetime import date
 
 import arrow
-from peewee import CharField, DateTimeField, IntegerField, ForeignKeyField
+from peewee import CharField, DateTimeField, ForeignKeyField, IntegerField
 
 from juniorguru.models.base import BaseModel
 from juniorguru.models.company import Company

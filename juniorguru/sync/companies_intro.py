@@ -6,8 +6,9 @@ from discord import Color, Embed, File
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, #JOBS_CHANNEL,
-                                 is_message_over_period_ago, run_discord_task, BOT_CHANNEL)  # INTRO_CHANNEL
+from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED  # JOBS_CHANNEL,
+from juniorguru.lib.club import (BOT_CHANNEL,  # INTRO_CHANNEL
+                                 is_message_over_period_ago, run_discord_task)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.company import Company

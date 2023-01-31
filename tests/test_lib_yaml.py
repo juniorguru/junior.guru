@@ -1,7 +1,7 @@
 from datetime import date
 
 import pytest
-from strictyaml import load, Map
+from strictyaml import Map, load
 
 from juniorguru.lib.yaml import Date
 

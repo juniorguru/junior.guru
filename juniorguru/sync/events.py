@@ -12,10 +12,10 @@ from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLE
 from juniorguru.lib.images import (is_image, render_image_file, save_as_square,
                                    validate_image)
 from juniorguru.lib.template_filters import local_time, md, weekday
+from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.event import Event, EventSpeaking
-from juniorguru.lib.yaml import Date
 
 
 logger = loggers.from_path(__file__)

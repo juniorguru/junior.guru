@@ -1,18 +1,18 @@
-from pathlib import Path
 from collections import defaultdict
 from datetime import date
+from pathlib import Path
 
 import click
-from strictyaml import Map, Optional, Seq, Str, load, Bool, Url
+from strictyaml import Bool, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib.memberful import Memberful
 from juniorguru.lib import loggers
 from juniorguru.lib.club import parse_coupon
 from juniorguru.lib.images import render_image_file
+from juniorguru.lib.memberful import Memberful
+from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
 from juniorguru.models.company import Company, Partnership, PartnershipPlan
-from juniorguru.lib.yaml import Date
 
 
 logger = loggers.from_path(__file__)
