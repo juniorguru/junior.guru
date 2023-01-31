@@ -30,14 +30,13 @@ def uri_params(params, spider, today=None):
     https://docs.scrapy.org/en/latest/topics/feed-exports.html#feed-uri-params
     """
     today = today or date.today()
-    return params | dict(year=f'{today:%Y}', month=f'{today:%m}', day=f'{today:%d}')
+    return {**params, 'year': f'{today:%Y}', 'month': f'{today:%m}', 'day': f'{today:%d}'}
 
 
 def feed_path(spider_name, today=None):
     """Helps to manipulate with feeds outside of the Scrapy context"""
     uri_template = list(FEEDS.keys())[0]
-    params = dict(name=spider_name)
-    uri_params(params, None, today)
+    params = uri_params(dict(name=spider_name), None, today)
     return Path(uri_template % params)
 
 
