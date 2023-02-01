@@ -16,6 +16,7 @@ from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.event import Event, EventSpeaking
+from juniorguru.models.company import Company
 
 
 logger = loggers.from_path(__file__)
@@ -58,6 +59,7 @@ schema = Seq(
         Optional('bio_title'): Str(),
         'bio': Str(),
         Optional('bio_links'): Seq(Str()),
+        Optional('partner'): Str(),
         Optional('logo_path'): Str(),
         'speakers': CommaSeparated(Int()),
         Optional('recording_url'): Url(),
@@ -66,7 +68,7 @@ schema = Seq(
 )
 
 
-@cli.sync_command(dependencies=['club-content'])
+@cli.sync_command(dependencies=['club-content', 'companies'])
 def main():
     if FLUSH_POSTERS_EVENTS:
         logger.warning("Removing all existing posters for events, FLUSH_POSTERS_EVENTS is set")
@@ -89,6 +91,8 @@ def main():
             name = record['title']
             logger.info(f"Creating '{name}'")
             speakers_ids = record.pop('speakers', [])
+            if 'partner' in record:
+                record['partner'] = Company.get_by_slug(record['partner'])
             event = Event.create(**record)
 
             for speaker_id in speakers_ids:
@@ -155,7 +159,7 @@ async def post_next_event_messages(client):
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
             logger.info("Found no message, posting!")
-            content = f"🗓 Už **za týden** bude v klubu „{event.title}” s {speakers}! {event.discord_url}"
+            content = f"🗓 Už **za týden** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
             await announcements_channel.send(content)
     else:
         logger.info("It's not 7 days prior to the event")
@@ -167,7 +171,7 @@ async def post_next_event_messages(client):
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
             logger.info("Found no message, posting!")
-            content = f"🤩 Už **zítra v {event.start_at_prg:%H:%M}** bude v klubu „{event.title}” s {speakers}! {event.discord_url}"
+            content = f"🤩 Už **zítra v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
             await announcements_channel.send(content)
     else:
         logger.info("It's not 1 day prior to the event")
@@ -179,7 +183,7 @@ async def post_next_event_messages(client):
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
             logger.info("Found no message, posting!")
-            content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu „{event.title}” s {speakers}! Odehrávat se to bude v {events_channel.mention}, dotazy jde pokládat v tamním chatu 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.discord_url}"
+            content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! Odehrávat se to bude v {events_channel.mention}, dotazy jde pokládat v tamním chatu 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.discord_url}"
             await announcements_channel.send(content)
     else:
         logger.info("It's not the day when the event is")
