@@ -49,9 +49,8 @@ POSTER_HEIGHT = 700
 
 @cli.sync_command(dependencies=['partnership-plans'])
 @click.option('--flush-posters/--no-flush-posters', default=False)
-@click.option('--delete-expired-logos/--no-delete-expired-logos', default=False)
 @db.connection_context()
-def main(flush_posters, delete_expired_logos):
+def main(flush_posters):
     if flush_posters:
         logger.warning("Removing all existing posters for partners")
         for poster_path in POSTERS_DIR.glob('*.png'):
@@ -104,11 +103,7 @@ def main(flush_posters, delete_expired_logos):
     for partner in Partner.expired_listing():
         logo_path = IMAGES_DIR / partner.logo_path
         if logo_path.exists():
-            if delete_expired_logos:
-                logger.warning(f"Deleting {logo_path}, partnership with {partner.name} expired")
-                logo_path.unlink()
-            else:
-                logger.warning(f"File {logo_path} is probably redundant, partnership with {partner.name} expired")
+            logger.warning(f"File {logo_path} is probably redundant, partnership with {partner.name} expired")
 
 
 def get_coupons_mapping(coupons):
