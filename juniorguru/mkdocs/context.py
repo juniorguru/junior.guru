@@ -74,7 +74,7 @@ def on_docs_context(context):
     # club.md
     context['finaid_url'] = 'https://docs.google.com/forms/d/e/1FAIpQLSeJ_Bmq__X8AA-XbKqU-Vr1N6fdGHSBQ-IuneO5zhBcGCOgjQ/viewform?usp=sf_link'
     context['messages_count'] = ClubMessage.count()
-    context['partners'] = Partner.active_listing()
+    context['partners'] = Partner.active_listing()  # also open.md
     context['partners_schools'] = Partner.active_schools_listing()
     context['events'] = Event.listing()
     context['events_club'] = Event.club_listing()
@@ -90,6 +90,7 @@ def on_docs_context(context):
     context['jobs_volunteering'] = ListedJob.volunteering_listing()
 
     # open.md
+    context['partners_expired'] = Partner.expired_listing()
     business_charts_months = charts.months(BUSINESS_BEGIN_ON, TODAY)
     context['charts_business_labels'] = charts.labels(business_charts_months)
     context['charts_business_annotations'] = charts.annotations(business_charts_months, MILESTONES)

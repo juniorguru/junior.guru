@@ -3,7 +3,7 @@ title: Jak se daří provozovat junior.guru
 description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior.guru?
 ---
 
-{% from 'macros.html' import note with context %}
+{% from 'macros.html' import note, partner_link with context %}
 
 # Čísla a grafy
 
@@ -67,9 +67,9 @@ Cílem není zbohatnout, ale dlouhodobě pomáhat juniorům, pohodlně živit ro
     </tr>
 </table>
 
-Seniorní programátor s mými zkušenostmi, který pracuje pro pražskou nebo zahraniční firmu, vydělává 100.000 Kč měsíčně čistého a víc. Dohodli jsme se doma, že když mě JG tolik baví, zkusím to provozovat a i když to vydělá méně, stojí nám to za větší domácí pohodu. Ze svých předchozích angažmá jsem měl úspory, díky nimž jsem mohl v začátcích JG držet při životě, i když zatím moc nevydělávalo.
+Seniorní programátor s mými zkušenostmi, který pracuje pro pražskou nebo zahraniční firmu, vydělává 100.000 Kč měsíčně čistého a víc. Dohodli jsme se doma, že když mě junior.guru tolik baví, zkusím to provozovat a i když to vydělá méně, stojí nám to za větší domácí pohodu. Ze svých předchozích angažmá jsem měl úspory, díky nimž jsem mohl v začátcích junior.guru držet při životě, i když zatím moc nevydělávalo.
 
-Na JG pracuji na plný úvazek, mám malé dítě, ženu na rodičovské, nemáme auto, bydlíme v nájmu uprostřed Prahy. Jako podnikatel potřebuji velkou rezervu, abych se nemusel strachovat s každou změnou rodinných nákladů, jestli mohu pokračovat. Také mi nikdo neplatí dovolenou, nemocenskou, nespoří na důchod.
+Na junior.guru pracuji na plný úvazek, mám malé dítě, ženu na rodičovské, nemáme auto, bydlíme v nájmu uprostřed Prahy. Jako podnikatel potřebuji velkou rezervu, abych se nemusel strachovat s každou změnou rodinných nákladů, jestli mohu pokračovat. Také mi nikdo neplatí dovolenou, nemocenskou, nespoří na důchod.
 
 <table class="table table-goals">
     {% set progress_40_ptc = ((profit_ttm * 100) / 40000)|round|int %}
@@ -149,17 +149,17 @@ Následující graf zobrazuje vývoj mých výnosů a nákladů v každém konkr
 
 ## Výnosy
 
-Původně jsem se snažil JG živit z inzerce nabídek práce, ale byznys na tomto modelu jsem nedokázal dostatečně rozpohybovat tak, abych věřil, že má smysl v tom dál pokračovat. Mezitím jsem se pokusil zpeněžit [příručku](handbook/index.md) skrze loga firem a prosil jsem návštěvníky webu o dobrovolné příspěvky.
+Původně jsem se snažil junior.guru živit z inzerce nabídek práce, ale byznys na tomto modelu jsem nedokázal dostatečně rozpohybovat tak, abych věřil, že má smysl v tom dál pokračovat. Mezitím jsem se pokusil zpeněžit [příručku](handbook/index.md) skrze loga firem a prosil jsem návštěvníky webu o dobrovolné příspěvky.
 
-Ke konci roku 2020 jsem se rozhodl změnit byznys model a vytvořit kolem JG placenou komunitu na Discordu. Toto detailně popisuji ve svém [článku na blogu](https://honzajavorek.cz/blog/spoustim-klub/). [Klub](club.md) se veřejnosti otevřel v únoru 2021.
+Ke konci roku 2020 jsem se rozhodl změnit byznys model a vytvořit kolem junior.guru placenou komunitu na Discordu. Toto detailně popisuji ve svém [článku na blogu](https://honzajavorek.cz/blog/spoustim-klub/). [Klub](club.md) se veřejnosti otevřel v únoru 2021.
 
 V ideálním případě by mě živilo individuální členství lidí v klubu, protože je to pravidelný, předvídatelný příjem, který mi navíc zajišťuje největší nezávislost.
 
-Individuální členství ale nevystačí, takže si domlouvám [spolupráce s firmami](pricing.md) vždy formou nějakého ročního firemního členství v klubu. Spolupráce s firmami jsou jednorázové větší příjmy, které lze obtížně předvídat a mohou ovlivňovat mou kritičnost k firmám, se kterými spolupracuji.
+Individuální členství ale nevystačí, takže si domlouvám i [spolupráce s firmami](#firemni-partnerstvi). Jsou z toho větší jednorázové příjmy, které lze obtížně předvídat a mohou ovlivňovat mou kritičnost k firmám, se kterými spolupracuji.
 
 Inzerci nabídek práce nechci zrušit, ale aktuálně není na vrcholu mých priorit. Pokud, tak spíše v podobě dlouhodobé spolupráce s firmou, než formou jednorázových inzerátů.
 
-Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velkou měrou právě díky nim JG ve svých počátcích neskončilo. Teď je ale čas postavit se na vlastní nohy! Možnost přispět zřejmě nezruším, ale přestal jsem ji propagovat. Chtěl bych, aby dobrovolné příspěvky jednou plně nahradilo individuální členství v klubu.
+Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velkou měrou právě díky nim junior.guru ve svých počátcích neskončilo. Teď je ale čas postavit se na vlastní nohy! Možnost přispět zřejmě nezruším, ale přestal jsem ji propagovat. Chtěl bych, aby dobrovolné příspěvky jednou plně nahradilo individuální členství v klubu.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
@@ -270,9 +270,45 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
         'plugins': {'annotation': charts_business_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
+## Firemní partnerství
+
+Firmy mohou spolupracovat s junior.guru na základě zakoupeného balíčku podle [ceníku](pricing.md).
+Partnerství domlouvám osobně a je vždy na rok, potom s firmou domlouváme prodloužení.
+
+Služby, které junior.guru firmě prokazuje, jsou jasně ohraničeny položkami v ceníku.
+Nikdy nedoporučuji konkrétní kurzy a snažím se ve svých vyjádřeních měřit všem stejně, nezávisle na tom, zda si na junior.guru něco platí.
+Aby bylo vše maximálně transparentní, uvádím zde podrobnosti ke každému uzavřenému partnerství.
+
+<table class="table standout">
+  <tr>
+    <th>Firma</th>
+    <th>Balíček</th>
+    <th>Do</th>
+  </tr>
+  {% for partner in partners %}
+    {% set partnership = partner.active_partnership() %}
+    {% set plan = partnership.plan %}
+    <tr>
+      <th>{{ partner_link(partner, 'open') }}</th>
+      <td>
+        {{ plan.name }}
+      </td>
+      <td>
+        {% if partnership.expires_on %}
+            {{ '{:%-d.%-m.%Y}'.format(partnership.expires_on) }}
+        {% else %}
+            ?
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+
+Ukončená partnerství: {% for partner in partners_expired %}{{ partner_link(partner, 'open') }}{% if not loop.last %}, {% endif %}{% endfor %}.
+
 ## Členství v klubu
 
-[Placený klub](https://junior.guru/club/) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**, ale platících členů může být i víc. Někteří si platí členství pouze aby mě podpořili, bez toho aby se vůbec na Discord přihlásili.
+[Placený klub](club.md) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**, ale platících členů může být i víc. Někteří si platí členství pouze aby mě podpořili, bez toho aby se vůbec na Discord přihlásili.
 
 Tenká modrá čára představuje počet členů, kteří si členství platí ze svého. Tenká zelená čára ukazuje ty z nich, kteří preferují roční platbu před měsíční.
 

@@ -245,6 +245,13 @@
 {% endmacro %}
 
 
+{% macro partner_link(partner, utm_medium) -%}
+  <a href="{{ partner.url }}" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="{{ utm_medium }}" data-metrics-utm-campaign="partnership">
+    {{- partner.name -}}
+  </a>
+{%- endmacro %}
+
+
 {% macro logo(name, path, url=None, lazy=False, class_prefix='logos') %}
   <li class="{{ class_prefix }}-item" title="{{ name }}">
     {% if url %}

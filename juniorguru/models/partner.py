@@ -78,7 +78,7 @@ class Partner(BaseModel):
                     Partnership.starts_on < today,
                     Partnership.expires_on.is_null(False),
                     Partnership.expires_on < today) \
-            .order_by(Partnership.expires_on.desc(), cls.name)
+            .order_by(cls.name)
 
     @classmethod
     def handbook_listing(cls, today=None):
