@@ -266,6 +266,10 @@ workflows:
           requires:
             - install
       - format:
+          filters:
+            branches:
+              only:
+                - main
           requires:
             - lint-and-test
       - sync-1:
