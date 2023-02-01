@@ -54,7 +54,7 @@ async def discord_task(client):
                     f"Kamarádi z {company_name_formatted(company.name)} se rozhodli podpořit klub a jsou tady s námi! "
                     f"Mají roli <@&{company.role_id}>."
                 )
-                if company.starts_on < COMPANIES_INTRO_LAUNCH_ON and (date.today() - partnership.starts_on).days > 30:
+                if partnership.starts_on < COMPANIES_INTRO_LAUNCH_ON and (date.today() - partnership.starts_on).days > 30:
                     content += (
                         ' 🐣 Sice to píšu jako novinku, ale ve skutečnosti klub podporují už od '
                         f'{partnership.starts_on.day}.{partnership.starts_on.month}.{partnership.starts_on.year}. '
