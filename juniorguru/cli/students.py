@@ -17,34 +17,34 @@ logger = loggers.from_path(__file__)
 
 
 @click.command()
-@click.argument('company_slug')
+@click.argument('partner_slug')
 @click.option('--all/--no-all', default=False)
 @click.option('--invoice/--no-invoice', default=False)
-def main(company_slug, all, invoice):
+def main(partner_slug, all, invoice):
     if all and invoice:
         logger.error("Can invoice only billable subscriptions, unexpected combination of arguments")
         raise click.Abort()
 
     try:
-        company = Partner.get_by_slug(company_slug)
+        partner = Partner.get_by_slug(partner_slug)
     except Partner.DoesNotExist:
-        slugs = [company.slug for company in Partner.schools_listing()]
+        slugs = [partner.slug for partner in Partner.schools_listing()]
         logger.error(f"Partner must be one of: {', '.join(slugs)}")
         raise click.Abort()
-    logger.debug(f"Partner identified as {company!r}")
+    logger.debug(f"Partner identified as {partner!r}")
 
     if all:
         logger.info("All subscriptions")
-        subscriptions = list(company.list_student_subscriptions)
+        subscriptions = list(partner.list_student_subscriptions)
     else:
         logger.info("Billable subscriptions")
-        subscriptions = list(company.list_student_subscriptions_billable)
+        subscriptions = list(partner.list_student_subscriptions_billable)
 
     if subscriptions:
         rows = [subscription_to_row(subscription) for subscription in subscriptions]
         csv_content = to_csv(rows)
         print(csv_content.strip())
-        path = Path.home() / 'Downloads' / f"{company.slug}-{'all' if all else 'billable'}.csv"
+        path = Path.home() / 'Downloads' / f"{partner.slug}-{'all' if all else 'billable'}.csv"
         logger.info(f'Saving to {path}')
         path.write_text(csv_content)
     else:
@@ -98,7 +98,7 @@ def main(company_slug, all, invoice):
             '''
             metadata = members_mapping[subscription.account_id]
             logger.debug(f"Previous metadata: {metadata!r}")
-            metadata.setdefault(f'{company.slug}InvoicedOn', date.today().isoformat())
+            metadata.setdefault(f'{partner.slug}InvoicedOn', date.today().isoformat())
             logger.debug(f"Future metadata: {metadata!r}")
             memberful.mutate(mutation, dict(id=subscription.account_id,
                                             metadata=serialize_metadata(metadata)))

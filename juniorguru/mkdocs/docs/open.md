@@ -352,7 +352,7 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
             },
             {
                 'label': 'členství platí firma',
-                'data': charts_subscriptions_breakdown.pop('company'),
+                'data': charts_subscriptions_breakdown.pop('partner'),
                 'backgroundColor': '#638CDD',
             },
             {

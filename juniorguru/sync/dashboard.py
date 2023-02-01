@@ -108,7 +108,7 @@ def render_partners():
         'title': 'Partneři',
         'color': Color.dark_grey(),
         'description': 'Následující firmy se podílejí na financování provozu junior.guru. Někdy sem pošlou své lidi. Ti pak mají roli <@&837316268142493736> a k tomu ještě i roli vždy pro konkrétní firmu, například <@&938306918097747968>.\n\n' + ', '.join([
-            f'✨ [{company.name}]({company.url})' for company
+            f'✨ [{partner.name}]({partner.url})' for partner
             in Partner.active_listing()
         ])
     }

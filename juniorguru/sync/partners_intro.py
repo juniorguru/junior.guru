@@ -37,22 +37,22 @@ def main():
 async def discord_task(client):
     last_message = ClubMessage.last_bot_message(INTRO_CHANNEL, MESSAGE_EMOJI)
     if is_message_over_period_ago(last_message, timedelta(weeks=1)):
-        logger.info('Last company intro message is more than one week old!')
+        logger.info('Last partner intro message is more than one week old!')
 
-        partners = [company for company in Partner.active_listing()
-                     if doesnt_have_intro(company)]
+        partners = [partner for partner in Partner.active_listing()
+                     if doesnt_have_intro(partner)]
         if partners:
             logger.debug(f'Choosing from {len(partners)} partners to announce')
-            company = sorted(partners, key=sort_key)[0]
-            partnership = company.active_partnership()
+            partner = sorted(partners, key=sort_key)[0]
+            partnership = partner.active_partnership()
 
-            logger.debug(f'Decided to announce {company!r}')
+            logger.debug(f'Decided to announce {partner!r}')
             if DISCORD_MUTATIONS_ENABLED:
                 channel = await client.fetch_channel(INTRO_CHANNEL)
                 content = (
                     f"{MESSAGE_EMOJI} "
-                    f"Kamarádi z {company_name_formatted(company.name)} se rozhodli podpořit klub a jsou tady s námi! "
-                    f"Mají roli <@&{company.role_id}>."
+                    f"Kamarádi z {partner_name_formatted(partner.name)} se rozhodli podpořit klub a jsou tady s námi! "
+                    f"Mají roli <@&{partner.role_id}>."
                 )
                 if partnership.starts_on < COMPANIES_INTRO_LAUNCH_ON and (date.today() - partnership.starts_on).days > 30:
                     content += (
@@ -62,25 +62,25 @@ async def discord_task(client):
                     )
 
                 embed_description_lines = [
-                    f"ℹ️ Víc o firmě najdeš na [jejich webu]({company.url})",
+                    f"ℹ️ Víc o firmě najdeš na [jejich webu]({partner.url})",
                     "🛡 Mají logo na [stránce klubu](https://junior.guru/club/)",
                 ]
-                # if company.is_sponsoring_handbook:
+                # if partner.is_sponsoring_handbook:
                 #     embed_description_lines.append('📖 Mají logo na [příručce pro juniory](https://junior.guru/handbook/)')
-                # if company.job_slots_count:
+                # if partner.job_slots_count:
                 #     embed_description_lines.append(f'🧑‍💻 Mají inzeráty v <#{JOBS_CHANNEL}> a [na webu](https://junior.guru/jobs/)')
-                if company.student_role_id:
-                    embed_description_lines.append(f'🧑‍🎓 Posílají sem své studenty: <@&{company.student_role_id}>')
+                if partner.student_role_id:
+                    embed_description_lines.append(f'🧑‍🎓 Posílají sem své studenty: <@&{partner.student_role_id}>')
                 embed_description_lines += [
                     "💕 Chtějí pomáhat juniorům!",
                     '💰 Financují práci na [příručce pro juniory](https://junior.guru/handbook/)',
                     '\nJak přesně funguje spolupráce s firmami? Mrkni do [FAQ](https://junior.guru/faq/#firmy)',
                 ]
 
-                embed = Embed(title=company.name, color=Color.dark_grey(),
+                embed = Embed(title=partner.name, color=Color.dark_grey(),
                               description='\n'.join(embed_description_lines))
-                embed.set_thumbnail(url=f"attachment://{Path(company.poster_path).name}")
-                file = File(IMAGES_DIR / company.poster_path)
+                embed.set_thumbnail(url=f"attachment://{Path(partner.poster_path).name}")
+                file = File(IMAGES_DIR / partner.poster_path)
 
                 message = await channel.send(content=content, embed=embed, file=file)
                 await asyncio.gather(*[message.add_reaction(emoji) for emoji in BOT_REACTIONS])
@@ -89,25 +89,25 @@ async def discord_task(client):
         else:
             logger.info('No partners to announce')
     else:
-        logger.info('Last company intro message is less than one week old')
+        logger.info('Last partner intro message is less than one week old')
 
 
-def company_name_formatted(company_name):
-    return f'**{company_name}**'
+def partner_name_formatted(partner_name):
+    return f'**{partner_name}**'
 
 
-def doesnt_have_intro(company):
+def doesnt_have_intro(partner):
     message = ClubMessage.last_bot_message(INTRO_CHANNEL, MESSAGE_EMOJI,
-                                           company_name_formatted(company.name))
+                                           partner_name_formatted(partner.name))
     return is_message_over_period_ago(message, timedelta(days=365))
 
 
-def sort_key(company, today=None):
+def sort_key(partner, today=None):
     today = today or date.today()
-    partnership = company.active_partnership()
+    partnership = partner.active_partnership()
     expires_on = (partnership.expires_on or date(3000, 1, 1))
     expires_in_days = (expires_on - today).days
     started_days_ago = (today - partnership.starts_on).days
     return (expires_in_days if expires_in_days <= 30 else 1000,
             started_days_ago,
-            company.name)
+            partner.name)

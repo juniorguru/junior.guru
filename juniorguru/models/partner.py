@@ -103,12 +103,12 @@ class Partner(BaseModel):
 
     @classmethod
     def coupons(cls):
-        return {company.coupon for company
+        return {partner.coupon for partner
                 in cls.select().where(cls.coupon.is_null(False))}
 
     @classmethod
     def student_coupons(cls):
-        return {company.student_coupon for company
+        return {partner.student_coupon for partner
                 in cls.select().where(cls.student_coupon.is_null(False))}
 
     def __str__(self):
@@ -163,7 +163,7 @@ class Partnership(BaseModel):
 
 
 class PartnerStudentSubscription(BaseModel):
-    company = ForeignKeyField(Partner, backref='list_student_subscriptions')
+    partner = ForeignKeyField(Partner, backref='list_student_subscriptions')
     account_id = CharField()
     name = CharField()
     email = CharField()
@@ -171,4 +171,4 @@ class PartnerStudentSubscription(BaseModel):
     invoiced_on = DateField(null=True)
 
     def __str__(self):
-        return f'{self.company.slug}, #{self.account_id}, {self.started_on}, {self.invoiced_on}'
+        return f'{self.partner.slug}, #{self.account_id}, {self.started_on}, {self.invoiced_on}'

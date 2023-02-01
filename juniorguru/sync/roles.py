@@ -27,7 +27,7 @@ YAML_SCHEMA = Seq(
     })
 )
 
-COMPANY_ROLE_PREFIX = 'Firma: '
+PARTNER_ROLE_PREFIX = 'Firma: '
 
 STUDENT_ROLE_PREFIX = 'Student: '
 
@@ -143,7 +143,7 @@ async def discord_task(client):
 
     logger.info('Computing how to re-assign role: sponsor')
     role_id = ClubDocumentedRole.get_by_slug('sponsor').id
-    coupons = list(filter(None, (company.coupon for company in partners)))
+    coupons = list(filter(None, (partner.coupon for partner in partners)))
     sponsoring_members_ids = [member.id for member in members if member.coupon in coupons]
     logger.debug(f"sponsoring_members_ids: {repr_ids(members, sponsoring_members_ids)}")
     for member in members:
@@ -152,18 +152,18 @@ async def discord_task(client):
     # syncing with Discord
     if DISCORD_MUTATIONS_ENABLED:
         logger.info(f'Managing roles for {len(partners)} partners')
-        await manage_company_roles(client, discord_roles, partners)
+        await manage_partner_roles(client, discord_roles, partners)
 
-        for company in partners:
-            company_members_ids = [member.id for member in company.list_members]
-            logger.debug(f"company_members_ids({company!r}): {repr_ids(members, company_members_ids)}")
+        for partner in partners:
+            partner_members_ids = [member.id for member in partner.list_members]
+            logger.debug(f"partner_members_ids({partner!r}): {repr_ids(members, partner_members_ids)}")
             for member in members:
-                changes.extend(evaluate_changes(member.id, member.initial_roles, company_members_ids, company.role_id))
+                changes.extend(evaluate_changes(member.id, member.initial_roles, partner_members_ids, partner.role_id))
 
-            student_members_ids = [member.id for member in company.list_student_members]
-            logger.debug(f"student_members_ids({company!r}): {repr_ids(members, student_members_ids)}")
+            student_members_ids = [member.id for member in partner.list_student_members]
+            logger.debug(f"student_members_ids({partner!r}): {repr_ids(members, student_members_ids)}")
             for member in members:
-                changes.extend(evaluate_changes(member.id, member.initial_roles, student_members_ids, company.student_role_id))
+                changes.extend(evaluate_changes(member.id, member.initial_roles, student_members_ids, partner.student_role_id))
 
         logger.info(f'Applying {len(changes)} changes to roles:\n{pformat(changes)}')
         await apply_changes(client, changes)
@@ -172,17 +172,17 @@ async def discord_task(client):
 
 
 # TODO rewrite so it doesn't need any async/await and can be tested
-async def manage_company_roles(client, discord_roles, partners):
-    company_roles_mapping = {COMPANY_ROLE_PREFIX + company.name: company
-                             for company in partners}
-    student_roles_mapping = {STUDENT_ROLE_PREFIX + company.name: company
-                             for company in partners if company.student_coupon}
-    roles_names = list(company_roles_mapping.keys()) + list(student_roles_mapping.keys())
-    logger.info(f"There should be {len(roles_names)} roles with company or student prefixes")
+async def manage_partner_roles(client, discord_roles, partners):
+    partner_roles_mapping = {PARTNER_ROLE_PREFIX + partner.name: partner
+                             for partner in partners}
+    student_roles_mapping = {STUDENT_ROLE_PREFIX + partner.name: partner
+                             for partner in partners if partner.student_coupon}
+    roles_names = list(partner_roles_mapping.keys()) + list(student_roles_mapping.keys())
+    logger.info(f"There should be {len(roles_names)} roles with partner or student prefixes")
 
     existing_roles = [role for role in discord_roles
-                      if role.name.startswith((COMPANY_ROLE_PREFIX, STUDENT_ROLE_PREFIX))]
-    logger.info(f"Found {len(existing_roles)} roles with company or student prefixes")
+                      if role.name.startswith((PARTNER_ROLE_PREFIX, STUDENT_ROLE_PREFIX))]
+    logger.info(f"Found {len(existing_roles)} roles with partner or student prefixes")
 
     roles_to_remove = [role for role in existing_roles if role.name not in roles_names]
     logger.info(f"Roles [{', '.join([role.name for role in roles_to_remove])}] will be removed")
@@ -194,29 +194,29 @@ async def manage_company_roles(client, discord_roles, partners):
     logger.info(f"Roles [{', '.join(roles_names_to_add)}] will be added")
     for role_name in roles_names_to_add:
         logger.info(f"Adding role '{role_name}'")
-        color = Color.dark_grey() if role_name.startswith(COMPANY_ROLE_PREFIX) else Color.default()
+        color = Color.dark_grey() if role_name.startswith(PARTNER_ROLE_PREFIX) else Color.default()
         await client.juniorguru_guild.create_role(name=role_name, color=color, mentionable=True)
 
     existing_roles = [role for role in discord_roles
-                      if role.name.startswith((COMPANY_ROLE_PREFIX, STUDENT_ROLE_PREFIX))]
+                      if role.name.startswith((PARTNER_ROLE_PREFIX, STUDENT_ROLE_PREFIX))]
     for role in existing_roles:
-        company = company_roles_mapping.get(role.name)
-        if company:
-            logger.info(f"Setting '{role.name}' to be employee role of {company!r}'")
-            company.role_id = role.id
-            company.save()
+        partner = partner_roles_mapping.get(role.name)
+        if partner:
+            logger.info(f"Setting '{role.name}' to be employee role of {partner!r}'")
+            partner.role_id = role.id
+            partner.save()
         else:
-            company = student_roles_mapping.get(role.name)
-            if company:
-                logger.info(f"Setting '{role.name}' to be student role of {company!r}'")
-                company.student_role_id = role.id
-                company.save()
+            partner = student_roles_mapping.get(role.name)
+            if partner:
+                logger.info(f"Setting '{role.name}' to be student role of {partner!r}'")
+                partner.student_role_id = role.id
+                partner.save()
 
 
 async def apply_changes(client, changes):
     # Can't take discord_roles as an argument and use instead of fetching, because before
-    # this function runs, manage_company_roles makes changes to the list of roles. This
-    # function applies all changes to members, including the company/student ones.
+    # this function runs, manage_partner_roles makes changes to the list of roles. This
+    # function applies all changes to members, including the partner/student ones.
     all_discord_roles = {discord_role.id: discord_role
                          for discord_role in await client.juniorguru_guild.fetch_roles()}
 

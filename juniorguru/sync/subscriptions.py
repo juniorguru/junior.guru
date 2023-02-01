@@ -44,7 +44,7 @@ def main():
 
     logger.info('Mapping coupons to categories')
     coupon_names_categories_mapping = {
-        **{parse_coupon(coupon)['name']: ClubSubscribedPeriodCategory.COMPANY
+        **{parse_coupon(coupon)['name']: ClubSubscribedPeriodCategory.PARTNER
            for coupon in Partner.coupons()},
         **{parse_coupon(coupon)['name']: ClubSubscribedPeriodCategory.STUDENT
            for coupon in Partner.student_coupons()},
@@ -108,11 +108,11 @@ def main():
         coupon_parts = parse_coupon(coupon) if coupon else {}
         student_record_fields = dict(itertools.chain.from_iterable([
             [
-                (f'{company.name} Student Since', format_date(get_student_started_on(subscription, company.student_coupon))),
-                (f'{company.name} Student Months', ', '.join(get_student_months(subscription, company.student_coupon))),
-                (f'{company.name} Student Invoiced?', subscription['member']['metadata'].get(f'{company.slug}InvoicedOn'))
+                (f'{partner.name} Student Since', format_date(get_student_started_on(subscription, partner.student_coupon))),
+                (f'{partner.name} Student Months', ', '.join(get_student_months(subscription, partner.student_coupon))),
+                (f'{partner.name} Student Invoiced?', subscription['member']['metadata'].get(f'{partner.slug}InvoicedOn'))
             ]
-            for company in Partner.schools_listing()
+            for partner in Partner.schools_listing()
         ]))
 
         records.append({
@@ -132,12 +132,12 @@ def main():
             **student_record_fields,
         })
 
-        for company in Partner.schools_listing():
-            started_on = get_student_started_on(subscription, company.student_coupon)
+        for partner in Partner.schools_listing():
+            started_on = get_student_started_on(subscription, partner.student_coupon)
             if started_on:
-                invoiced_on = subscription['member']['metadata'].get(f'{company.slug}InvoicedOn')
+                invoiced_on = subscription['member']['metadata'].get(f'{partner.slug}InvoicedOn')
                 invoiced_on = date.fromisoformat(invoiced_on) if invoiced_on else None
-                PartnerStudentSubscription.create(company=company,
+                PartnerStudentSubscription.create(partner=partner,
                                                   account_id=account_id,
                                                   name=name,
                                                   email=subscription['member']['email'],
@@ -188,11 +188,11 @@ def main():
         if not user.is_bot and discord_id not in seen_discord_ids:
             student_record_fields = dict(itertools.chain.from_iterable([
                 [
-                    (f'{company.name} Student Since', None),
-                    (f'{company.name} Student Months', None),
-                    (f'{company.name} Student Invoiced?', None)
+                    (f'{partner.name} Student Since', None),
+                    (f'{partner.name} Student Months', None),
+                    (f'{partner.name} Student Invoiced?', None)
                 ]
-                for company in Partner.schools_listing()
+                for partner in Partner.schools_listing()
             ]))
             records.append({
                 'Name': None,

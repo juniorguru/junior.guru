@@ -25,12 +25,12 @@ def test_to_csv_empty():
 
 
 def test_subscription_to_row():
-    company = Partner(name='Foo Corporation',
+    partner = Partner(name='Foo Corporation',
                       slug='foo',
                       logo_path='logos/foo.svg',
                       url='https://example.com')
     subscription = PartnerStudentSubscription(id='123',
-                                              company=company,
+                                              partner=partner,
                                               account_id='12345',
                                               name='Honza',
                                               email='honza@example.com',

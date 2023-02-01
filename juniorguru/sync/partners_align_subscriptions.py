@@ -27,17 +27,17 @@ def main():
         }
     '''
 
-    for company in Partner.active_listing(include_barters=False):
-        logger_c = logger[company.slug]
-        partnership = company.active_partnership()
+    for partner in Partner.active_listing(include_barters=False):
+        logger_c = logger[partner.slug]
+        partnership = partner.active_partnership()
         logger_c.info(f'Partnership expires on {partnership.expires_on}')
-        for employee in company.list_members:
+        for employee in partner.list_members:
             logger_c.debug(f'Processing {employee.display_name}')
             if employee.expires_at.date() < partnership.expires_on:
                 logger_c.warning(f'{employee!r} {employee.expires_at.date()} < {partnership.expires_on}')
                 if MEMBERFUL_MUTATIONS_ENABLED:
                     params = dict(id=employee.subscription_id,
-                                  expiresAt=int(arrow.get(company.expires_on).timestamp()))
+                                  expiresAt=int(arrow.get(partner.expires_on).timestamp()))
                     memberful.mutate(mutation, params)
                     employee.expires_at = datetime.combine(partnership.expires_on, datetime.min.time())
                     employee.save()

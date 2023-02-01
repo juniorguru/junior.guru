@@ -260,7 +260,7 @@ class ClubSubscribedPeriodCategory(str, Enum):
     CORESKILL = 'coreskill'
     INDIVIDUALS = 'individuals'
     TRIAL = 'trial'
-    COMPANY = 'company'
+    PARTNER = 'partner'
     STUDENT = 'students'
 
 
