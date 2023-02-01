@@ -33,11 +33,11 @@ STUDENT_ROLE_PREFIX = 'Student: '
 
 
 @cli.sync_command(dependencies=['club-content',
-                        'events',
-                        'avatars',
-                        'subscriptions',
-                        'companies',
-                        'mentoring'])
+                                'events',
+                                'avatars',
+                                'subscriptions',
+                                'partners',
+                                'mentoring'])
 def main():
     run_discord_task('juniorguru.sync.roles.discord_task')
 
@@ -72,7 +72,7 @@ async def discord_task(client):
 
     logger.info('Preparing data for computing how to re-assign roles')
     members = ClubUser.members_listing()
-    companies = Partner.active_listing()
+    partners = Partner.active_listing()
     changes = []
     top_members_limit = ClubUser.top_members_limit()
     logger.info(f'members_count={len(members)}, top_members_limit={top_members_limit}')
@@ -143,7 +143,7 @@ async def discord_task(client):
 
     logger.info('Computing how to re-assign role: sponsor')
     role_id = ClubDocumentedRole.get_by_slug('sponsor').id
-    coupons = list(filter(None, (company.coupon for company in companies)))
+    coupons = list(filter(None, (company.coupon for company in partners)))
     sponsoring_members_ids = [member.id for member in members if member.coupon in coupons]
     logger.debug(f"sponsoring_members_ids: {repr_ids(members, sponsoring_members_ids)}")
     for member in members:
@@ -151,10 +151,10 @@ async def discord_task(client):
 
     # syncing with Discord
     if DISCORD_MUTATIONS_ENABLED:
-        logger.info(f'Managing roles for {len(companies)} companies')
-        await manage_company_roles(client, discord_roles, companies)
+        logger.info(f'Managing roles for {len(partners)} partners')
+        await manage_company_roles(client, discord_roles, partners)
 
-        for company in companies:
+        for company in partners:
             company_members_ids = [member.id for member in company.list_members]
             logger.debug(f"company_members_ids({company!r}): {repr_ids(members, company_members_ids)}")
             for member in members:
@@ -172,11 +172,11 @@ async def discord_task(client):
 
 
 # TODO rewrite so it doesn't need any async/await and can be tested
-async def manage_company_roles(client, discord_roles, companies):
+async def manage_company_roles(client, discord_roles, partners):
     company_roles_mapping = {COMPANY_ROLE_PREFIX + company.name: company
-                             for company in companies}
+                             for company in partners}
     student_roles_mapping = {STUDENT_ROLE_PREFIX + company.name: company
-                             for company in companies if company.student_coupon}
+                             for company in partners if company.student_coupon}
     roles_names = list(company_roles_mapping.keys()) + list(student_roles_mapping.keys())
     logger.info(f"There should be {len(roles_names)} roles with company or student prefixes")
 

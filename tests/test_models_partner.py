@@ -191,7 +191,7 @@ def test_company_expired_listing(db_connection):
     assert set(Partner.expired_listing(today=today)) == {company1, company2}
 
 
-def test_company_expired_listing_skips_companies_without_expiration(db_connection):
+def test_company_expired_listing_skips_barters(db_connection):
     today = date(2023, 5, 1)
     company1 = create_company('1')
     create_partnership(company1, date(2023, 3, 1), date(2023, 4, 1))

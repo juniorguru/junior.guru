@@ -68,7 +68,7 @@ schema = Seq(
 )
 
 
-@cli.sync_command(dependencies=['club-content', 'companies'])
+@cli.sync_command(dependencies=['club-content', 'partners'])
 def main():
     if FLUSH_POSTERS_EVENTS:
         logger.warning("Removing all existing posters for events, FLUSH_POSTERS_EVENTS is set")

@@ -28,9 +28,9 @@ INTRO_CHANNEL = BOT_CHANNEL  # FIXME
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=['club-content', 'companies', 'roles'])
+@cli.sync_command(dependencies=['club-content', 'partners', 'roles'])
 def main():
-    run_discord_task('juniorguru.sync.companies_intro.discord_task')
+    run_discord_task('juniorguru.sync.partners_intro.discord_task')
 
 
 @db.connection_context()
@@ -39,11 +39,11 @@ async def discord_task(client):
     if is_message_over_period_ago(last_message, timedelta(weeks=1)):
         logger.info('Last company intro message is more than one week old!')
 
-        companies = [company for company in Partner.active_listing()
+        partners = [company for company in Partner.active_listing()
                      if doesnt_have_intro(company)]
-        if companies:
-            logger.debug(f'Choosing from {len(companies)} companies to announce')
-            company = sorted(companies, key=sort_key)[0]
+        if partners:
+            logger.debug(f'Choosing from {len(partners)} partners to announce')
+            company = sorted(partners, key=sort_key)[0]
             partnership = company.active_partnership()
 
             logger.debug(f'Decided to announce {company!r}')
@@ -87,7 +87,7 @@ async def discord_task(client):
             else:
                 logger.warning('Discord mutations not enabled')
         else:
-            logger.info('No companies to announce')
+            logger.info('No partners to announce')
     else:
         logger.info('Last company intro message is less than one week old')
 

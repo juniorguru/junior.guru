@@ -12,7 +12,7 @@ from juniorguru.models.partner import Partner
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=['subscriptions', 'companies'])
+@cli.sync_command(dependencies=['subscriptions', 'partners'])
 @db.connection_context()
 def main():
     memberful = Memberful()

@@ -74,8 +74,8 @@ def on_docs_context(context):
     # club.md
     context['finaid_url'] = 'https://docs.google.com/forms/d/e/1FAIpQLSeJ_Bmq__X8AA-XbKqU-Vr1N6fdGHSBQ-IuneO5zhBcGCOgjQ/viewform?usp=sf_link'
     context['messages_count'] = ClubMessage.count()
-    context['companies'] = Partner.active_listing()
-    context['companies_schools'] = Partner.active_schools_listing()
+    context['partners'] = Partner.active_listing()
+    context['partners_schools'] = Partner.active_schools_listing()
     context['events'] = Event.listing()
     context['events_club'] = Event.club_listing()
 
@@ -147,7 +147,7 @@ def on_theme_context(context):
     context['css_hash'] = hash_file(css_path)
     context['bootstrap_icons_file'] = re.search(r'bootstrap-icons.woff2\?\w+', css_path.read_text()).group(0)
 
-    context['companies_handbook'] = Partner.handbook_listing()
+    context['partners_handbook'] = Partner.handbook_listing()
 
 
 @db.connection_context()

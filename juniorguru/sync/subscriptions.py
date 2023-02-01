@@ -35,7 +35,7 @@ COUPON_NAMES_CATEGORIES_MAPPING = {
 
 
 @cli.sync_command(dependencies=['club-content',
-                                'companies',
+                                'partners',
                                 'feminine-names'])
 @db.connection_context()
 def main():

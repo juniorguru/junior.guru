@@ -32,10 +32,10 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command(dependencies=['club-content',
-                                      'companies',
-                                      'events',
-                                      'subscriptions',
-                                      'roles'])
+                                'partners',
+                                'events',
+                                'subscriptions',
+                                'roles'])
 def main():
     run_discord_task('juniorguru.sync.dashboard.discord_task')
 
@@ -47,7 +47,7 @@ async def discord_task(client):
     sections = [
         render_basic_tips(),
         render_roles(),
-        render_companies(),
+        render_partners(),
         render_events(),
         render_open(),
     ]
@@ -103,9 +103,9 @@ def format_role(role):
     return text
 
 
-def render_companies():
+def render_partners():
     return {
-        'title': 'Spolupráce',
+        'title': 'Partneři',
         'color': Color.dark_grey(),
         'description': 'Následující firmy se podílejí na financování provozu junior.guru. Někdy sem pošlou své lidi. Ti pak mají roli <@&837316268142493736> a k tomu ještě i roli vždy pro konkrétní firmu, například <@&938306918097747968>.\n\n' + ', '.join([
             f'✨ [{company.name}]({company.url})' for company

@@ -59,11 +59,11 @@ TODAY = date.today()
 MESSAGE_EMOJI = '🎙'
 
 
-@cli.sync_command(dependencies=['club-content', 'companies'])
+@cli.sync_command(dependencies=['club-content', 'partners'])
 @db.connection_context()
 def main():
     if FLUSH_POSTERS_PODCAST:
-        logger.warning("Removing all existing posters for companies, FLUSH_POSTERS_PODCAST is set")
+        logger.warning("Removing all existing posters for episodes, FLUSH_POSTERS_PODCAST is set")
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
 
