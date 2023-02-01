@@ -59,7 +59,7 @@ def main():
         plan.includes = PartnershipPlan.get_by_slug(includes_slug)
         plan.save()
 
-    logger.info('Determining and recording ranks')
+    logger.info('Determining and recording hierarchy ranks')
     for yaml_record in yaml_records:
         plan = PartnershipPlan.get_by_slug(yaml_record['slug'])
         plan.hierarchy_rank = list(plan.hierarchy).index(plan)

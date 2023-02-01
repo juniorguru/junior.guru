@@ -55,15 +55,17 @@ class Company(BaseModel):
     @classmethod
     def active_listing(cls, today=None, include_barters=True):
         today = today or date.today()
-        starts_before_today = Partnership.starts_on <= today
         expires_after_today = Partnership.expires_on >= today
         if include_barters:
             expires_after_today = (expires_after_today | Partnership.expires_on.is_null())
         return cls.select() \
             .join(Partnership) \
-            .where(starts_before_today,
-                   expires_after_today) \
-            .order_by(cls.name)  # TODO sort by plan 'weight', then by name
+            .join(PartnershipPlan) \
+            .group_by(cls) \
+            .having(Partnership.starts_on == fn.max(Partnership.starts_on),
+                    Partnership.starts_on <= today,
+                    expires_after_today) \
+            .order_by(PartnershipPlan.hierarchy_rank.desc(), cls.name)
 
     @classmethod
     def expired_listing(cls, today=None):
@@ -74,7 +76,7 @@ class Company(BaseModel):
             .group_by(cls) \
             .having(Partnership.starts_on == fn.max(Partnership.starts_on),
                     Partnership.starts_on < today,
-                    Partnership.expires_on == fn.max(Partnership.expires_on),
+                    Partnership.expires_on.is_null(False),
                     Partnership.expires_on < today) \
             .order_by(Partnership.expires_on.desc(), cls.name)
 
@@ -82,7 +84,6 @@ class Company(BaseModel):
     def handbook_listing(cls, today=None):
         today = today or date.today()
         return cls.active_listing() \
-            .join(PartnershipPlan) \
             .join(PartnershipBenefit) \
             .where(PartnershipBenefit.slug == 'logo_handbook') \
             .order_by(cls.name)
@@ -97,7 +98,8 @@ class Company(BaseModel):
     def active_schools_listing(cls, today=None):
         today = today or date.today()
         return cls.active_listing(today=today) \
-            .where(cls.student_coupon.is_null(False))
+            .where(cls.student_coupon.is_null(False)) \
+            .order_by(cls.name)
 
     @classmethod
     def coupons(cls):

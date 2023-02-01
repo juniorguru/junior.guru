@@ -155,16 +155,17 @@ def test_company_active_listing_skips_planned(db_connection):
     assert set(Company.active_listing(today=today)) == {company1, company2}
 
 
-def test_company_active_listing_sorts_by_name(db_connection):
+def test_company_active_listing_sorts_by_hierarchy_rank_then_by_name(db_connection, plan_basic, plan_top):
+    setup_hierarchy(plan_basic, plan_top)
     today = date(2021, 5, 2)
     company1 = create_company('1', name='Company B')
-    create_partnership(company1, date(2021, 4, 1), None)
+    create_partnership(company1, date(2021, 4, 1), None, plan=plan_basic)
     company2 = create_company('2', name='Company C')
-    create_partnership(company2, date(2021, 4, 2), None)
+    create_partnership(company2, date(2021, 4, 2), None, plan=plan_top)
     company3 = create_company('3', name='Company A')
-    create_partnership(company3, date(2021, 4, 3), None)
+    create_partnership(company3, date(2021, 4, 3), None, plan=plan_basic)
 
-    assert list(Company.active_listing(today=today)) == [company3, company1, company2]
+    assert list(Company.active_listing(today=today)) == [company2, company3, company1]
 
 
 def test_company_active_listing_with_multiple_partnerships(db_connection):
