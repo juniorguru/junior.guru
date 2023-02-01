@@ -44,7 +44,7 @@
   partnerships:
     - plan: support
       starts_on: 2022-02-17
-      expires_on: 2023-02-16
+      expires_on: 2023-03-31
 
 - name: wf tech
   slug: wftech
@@ -64,7 +64,7 @@
 
 - name: Credo Ventures
   slug: credo
-  url: https://www.credoventures.com/support/
+  url: https://jobs.credoventures.com/
   partnerships:
     - plan: hiring
       starts_on: 2021-08-03
@@ -172,4 +172,4 @@
   partnerships:
     - plan: branding
       starts_on: 2020-09-01
-      expires_on: 2023-02-28
+      expires_on: 2023-03-31
