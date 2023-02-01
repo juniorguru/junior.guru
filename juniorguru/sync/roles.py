@@ -141,13 +141,13 @@ async def discord_task(client):
     for member in members:
         changes.extend(evaluate_changes(member.id, member.initial_roles, founders_members_ids, role_id))
 
-    logger.info('Computing how to re-assign role: sponsor')
-    role_id = ClubDocumentedRole.get_by_slug('sponsor').id
+    logger.info('Computing how to re-assign role: partner')
+    role_id = ClubDocumentedRole.get_by_slug('partner').id
     coupons = list(filter(None, (partner.coupon for partner in partners)))
-    sponsoring_members_ids = [member.id for member in members if member.coupon in coupons]
-    logger.debug(f"sponsoring_members_ids: {repr_ids(members, sponsoring_members_ids)}")
+    partners_members_ids = [member.id for member in members if member.coupon in coupons]
+    logger.debug(f"partners_members_ids: {repr_ids(members, partners_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.initial_roles, sponsoring_members_ids, role_id))
+        changes.extend(evaluate_changes(member.id, member.initial_roles, partners_members_ids, role_id))
 
     # syncing with Discord
     if DISCORD_MUTATIONS_ENABLED:

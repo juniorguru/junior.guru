@@ -29,9 +29,9 @@
     Kdo měl, nebo teprve bude mít přednášku v klubu. Akce minulé i budoucí najdeš [na webu](https://junior.guru/events/). Roli automaticky spravuje bot.
 
 - id: 837316268142493736
-  slug: sponsor
+  slug: partner
   description: |
-    Kdo má předplatné zaplacené firmou, která spolupracuje s klubem. Roli automaticky spravuje bot.
+    Kdo má předplatné zaplacené partnerskou firmou. Roli automaticky spravuje bot.
 
 - id: 806851592799649874
   slug: booster
