@@ -15,8 +15,8 @@ from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
-from juniorguru.models.partner import Partner
 from juniorguru.models.event import Event, EventSpeaking
+from juniorguru.models.partner import Partner
 
 
 logger = loggers.from_path(__file__)

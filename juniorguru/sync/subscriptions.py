@@ -12,8 +12,8 @@ from juniorguru.lib.memberful import Memberful
 from juniorguru.models.base import db
 from juniorguru.models.club import (ClubSubscribedPeriod, ClubSubscribedPeriodCategory,
                                     ClubUser)
-from juniorguru.models.partner import Partner, PartnerStudentSubscription
 from juniorguru.models.feminine_name import FeminineName
+from juniorguru.models.partner import Partner, PartnerStudentSubscription
 
 
 logger = loggers.from_path(__file__)

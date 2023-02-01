@@ -5,8 +5,8 @@ import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.models.club import ClubUser
-from juniorguru.models.partner import (Partner, PartnerStudentSubscription, Partnership,
-                                       PartnershipBenefit, PartnershipPlan)
+from juniorguru.models.partner import (Partner, Partnership, PartnershipBenefit,
+                                       PartnershipPlan, PartnerStudentSubscription)
 
 
 def create_partner(id, **kwargs):

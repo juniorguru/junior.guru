@@ -10,9 +10,9 @@ from juniorguru.lib import loggers
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, get_roles, run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubUser
-from juniorguru.models.partner import Partner
 from juniorguru.models.event import Event
 from juniorguru.models.mentor import Mentor
+from juniorguru.models.partner import Partner
 
 
 logger = loggers.from_path(__file__)

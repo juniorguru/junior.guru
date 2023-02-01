@@ -13,8 +13,8 @@ from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import (ClubDocumentedRole, ClubMessage,
                                     ClubSubscribedPeriod, ClubUser)
-from juniorguru.models.partner import Partner
 from juniorguru.models.event import Event
+from juniorguru.models.partner import Partner
 
 
 DASHBOARD_CHANNEL = 788822884948770846
