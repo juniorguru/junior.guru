@@ -1,5 +1,6 @@
 from collections import Counter
 from pathlib import Path
+from pprint import pformat
 
 from discord import Color
 from strictyaml import Int, Map, Seq, Str, load
@@ -164,7 +165,7 @@ async def discord_task(client):
             for member in members:
                 changes.extend(evaluate_changes(member.id, member.initial_roles, student_members_ids, company.student_role_id))
 
-        logger.info(f'Applying {len(changes)} changes to roles')
+        logger.info(f'Applying {len(changes)} changes to roles:\n{pformat(changes)}')
         await apply_changes(client, changes)
     else:
         logger.warning('Discord mutations not enabled')
