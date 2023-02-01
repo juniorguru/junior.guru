@@ -36,7 +36,7 @@ YAML_SCHEMA = Seq(
 @db.connection_context()
 def main():
     logger.info('Reading YAML with partners')
-    yaml_records = (record.data for record in load(YAML_PATH.read_text(), YAML_SCHEMA))
+    yaml_records = [record.data for record in load(YAML_PATH.read_text(), YAML_SCHEMA)]
 
     logger.info('Setting up events db tables')
     db.drop_tables([PartnershipPlan, PartnershipBenefit])
