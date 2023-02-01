@@ -30,7 +30,7 @@ def install(pull):
             subprocess.run(['git', 'pull', '--rebase', 'origin', 'main'], check=True)
         subprocess.run(['poetry', 'install'], check=True)
         subprocess.run(['playwright', 'install', 'firefox'], check=True)
-        subprocess.run(['npm', 'ci'], check=True)
+        subprocess.run(['npm', 'install'], check=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
 
