@@ -15,7 +15,7 @@ from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
-from juniorguru.models.partner import Company
+from juniorguru.models.partner import Partner
 from juniorguru.models.event import Event, EventSpeaking
 
 
@@ -92,7 +92,7 @@ def main():
             logger.info(f"Creating '{name}'")
             speakers_ids = record.pop('speakers', [])
             if 'partner' in record:
-                record['partner'] = Company.get_by_slug(record['partner'])
+                record['partner'] = Partner.get_by_slug(record['partner'])
             event = Event.create(**record)
 
             for speaker_id in speakers_ids:

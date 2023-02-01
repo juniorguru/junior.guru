@@ -10,7 +10,7 @@ from playhouse.shortcuts import model_to_dict
 from juniorguru.lib import loggers
 from juniorguru.lib.memberful import (MEMBERFUL_MUTATIONS_ENABLED, Memberful,
                                       serialize_metadata)
-from juniorguru.models.partner import Company
+from juniorguru.models.partner import Partner
 
 
 logger = loggers.from_path(__file__)
@@ -26,12 +26,12 @@ def main(company_slug, all, invoice):
         raise click.Abort()
 
     try:
-        company = Company.get_by_slug(company_slug)
-    except Company.DoesNotExist:
-        slugs = [company.slug for company in Company.schools_listing()]
-        logger.error(f"Company must be one of: {', '.join(slugs)}")
+        company = Partner.get_by_slug(company_slug)
+    except Partner.DoesNotExist:
+        slugs = [company.slug for company in Partner.schools_listing()]
+        logger.error(f"Partner must be one of: {', '.join(slugs)}")
         raise click.Abort()
-    logger.debug(f"Company identified as {company!r}")
+    logger.debug(f"Partner identified as {company!r}")
 
     if all:
         logger.info("All subscriptions")

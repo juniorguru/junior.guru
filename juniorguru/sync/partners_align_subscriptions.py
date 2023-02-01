@@ -6,7 +6,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.memberful import MEMBERFUL_MUTATIONS_ENABLED, Memberful
 from juniorguru.models.base import db
-from juniorguru.models.partner import Company
+from juniorguru.models.partner import Partner
 
 
 logger = loggers.from_path(__file__)
@@ -27,10 +27,10 @@ def main():
         }
     '''
 
-    for company in Company.active_listing(include_barters=False):
+    for company in Partner.active_listing(include_barters=False):
         logger_c = logger[company.slug]
         partnership = company.active_partnership()
-        logger_c.info(f'Company partnership expires on {partnership.expires_on}')
+        logger_c.info(f'Partnership expires on {partnership.expires_on}')
         for employee in company.list_members:
             logger_c.debug(f'Processing {employee.display_name}')
             if employee.expires_at.date() < partnership.expires_on:

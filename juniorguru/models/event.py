@@ -9,7 +9,7 @@ from juniorguru.lib.charts import month_range, ttm_range
 from juniorguru.lib.md import strip_links
 from juniorguru.models.base import BaseModel, JSONField
 from juniorguru.models.club import ClubUser
-from juniorguru.models.partner import Company
+from juniorguru.models.partner import Partner
 
 
 class Event(BaseModel):
@@ -22,7 +22,7 @@ class Event(BaseModel):
     bio_name = TextField()
     bio_title = TextField(null=True)
     bio_links = JSONField(default=lambda: [])
-    partner = ForeignKeyField(Company, backref='list_events', null=True)
+    partner = ForeignKeyField(Partner, backref='list_events', null=True)
     recording_url = CharField(null=True)
     public_recording_url = CharField(null=True)
     poster_path = CharField(null=True)

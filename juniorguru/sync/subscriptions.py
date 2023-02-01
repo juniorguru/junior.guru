@@ -12,7 +12,7 @@ from juniorguru.lib.memberful import Memberful
 from juniorguru.models.base import db
 from juniorguru.models.club import (ClubSubscribedPeriod, ClubSubscribedPeriodCategory,
                                     ClubUser)
-from juniorguru.models.partner import Company, CompanyStudentSubscription
+from juniorguru.models.partner import Partner, PartnerStudentSubscription
 from juniorguru.models.feminine_name import FeminineName
 
 
@@ -39,15 +39,15 @@ COUPON_NAMES_CATEGORIES_MAPPING = {
                                 'feminine-names'])
 @db.connection_context()
 def main():
-    db.drop_tables([CompanyStudentSubscription, ClubSubscribedPeriod])
-    db.create_tables([CompanyStudentSubscription, ClubSubscribedPeriod])
+    db.drop_tables([PartnerStudentSubscription, ClubSubscribedPeriod])
+    db.create_tables([PartnerStudentSubscription, ClubSubscribedPeriod])
 
     logger.info('Mapping coupons to categories')
     coupon_names_categories_mapping = {
         **{parse_coupon(coupon)['name']: ClubSubscribedPeriodCategory.COMPANY
-           for coupon in Company.coupons()},
+           for coupon in Partner.coupons()},
         **{parse_coupon(coupon)['name']: ClubSubscribedPeriodCategory.STUDENT
-           for coupon in Company.student_coupons()},
+           for coupon in Partner.student_coupons()},
         **COUPON_NAMES_CATEGORIES_MAPPING
     }
 
@@ -112,7 +112,7 @@ def main():
                 (f'{company.name} Student Months', ', '.join(get_student_months(subscription, company.student_coupon))),
                 (f'{company.name} Student Invoiced?', subscription['member']['metadata'].get(f'{company.slug}InvoicedOn'))
             ]
-            for company in Company.schools_listing()
+            for company in Partner.schools_listing()
         ]))
 
         records.append({
@@ -132,12 +132,12 @@ def main():
             **student_record_fields,
         })
 
-        for company in Company.schools_listing():
+        for company in Partner.schools_listing():
             started_on = get_student_started_on(subscription, company.student_coupon)
             if started_on:
                 invoiced_on = subscription['member']['metadata'].get(f'{company.slug}InvoicedOn')
                 invoiced_on = date.fromisoformat(invoiced_on) if invoiced_on else None
-                CompanyStudentSubscription.create(company=company,
+                PartnerStudentSubscription.create(company=company,
                                                   account_id=account_id,
                                                   name=name,
                                                   email=subscription['member']['email'],
@@ -192,7 +192,7 @@ def main():
                     (f'{company.name} Student Months', None),
                     (f'{company.name} Student Invoiced?', None)
                 ]
-                for company in Company.schools_listing()
+                for company in Partner.schools_listing()
             ]))
             records.append({
                 'Name': None,

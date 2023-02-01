@@ -12,7 +12,7 @@ from juniorguru.lib.images import render_image_file
 from juniorguru.lib.memberful import Memberful
 from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
-from juniorguru.models.partner import Company, Partnership, PartnershipPlan
+from juniorguru.models.partner import Partner, Partnership, PartnershipPlan
 
 
 logger = loggers.from_path(__file__)
@@ -65,8 +65,8 @@ def main(flush_posters, delete_expired_logos):
     yaml_records = (record.data for record in load(YAML_PATH.read_text(), YAML_SCHEMA))
 
     logger.info('Setting up events db tables')
-    db.drop_tables([Company, Partnership])
-    db.create_tables([Company, Partnership])
+    db.drop_tables([Partner, Partnership])
+    db.create_tables([Partner, Partnership])
 
     logger.info('Processing YAML records')
     for yaml_record in yaml_records:
@@ -78,7 +78,7 @@ def main(flush_posters, delete_expired_logos):
         if not logo_path.exists():
             raise FileNotFoundError(f"'There is no {yaml_record['slug']}.svg or .png inside {LOGOS_DIR}")
 
-        partner = Company.create(logo_path=logo_path.relative_to(IMAGES_DIR),
+        partner = Partner.create(logo_path=logo_path.relative_to(IMAGES_DIR),
                                  **yaml_record,
                                  **coupons_mapping.get(yaml_record['slug'], {}))
         for partnership in partnerships:
@@ -91,7 +91,7 @@ def main(flush_posters, delete_expired_logos):
                 logger.warning(f"Expired {partner.name} partnership has non-existing plan: {plan_slug}")
             Partnership.create(partner=partner, **partnership)
 
-    for partner in Company.active_listing():
+    for partner in Partner.active_listing():
         logger.info(f"Rendering poster for {partner.name}")
         tpl_context = dict(partner=partner)
         image_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT,
@@ -101,7 +101,7 @@ def main(flush_posters, delete_expired_logos):
         partner.save()
 
     logger.info('Checking expired partnerships for leftovers')
-    for partner in Company.expired_listing():
+    for partner in Partner.expired_listing():
         logo_path = IMAGES_DIR / partner.logo_path
         if logo_path.exists():
             if delete_expired_logos:

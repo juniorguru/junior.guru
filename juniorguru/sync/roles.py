@@ -10,7 +10,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, get_roles, run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubUser
-from juniorguru.models.partner import Company
+from juniorguru.models.partner import Partner
 from juniorguru.models.event import Event
 from juniorguru.models.mentor import Mentor
 
@@ -72,7 +72,7 @@ async def discord_task(client):
 
     logger.info('Preparing data for computing how to re-assign roles')
     members = ClubUser.members_listing()
-    companies = Company.active_listing()
+    companies = Partner.active_listing()
     changes = []
     top_members_limit = ClubUser.top_members_limit()
     logger.info(f'members_count={len(members)}, top_members_limit={top_members_limit}')

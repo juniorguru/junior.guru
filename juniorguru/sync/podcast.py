@@ -18,7 +18,7 @@ from juniorguru.lib.template_filters import icon
 from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
-from juniorguru.models.partner import Company
+from juniorguru.models.partner import Partner
 from juniorguru.models.podcast import PodcastEpisode
 
 
@@ -85,7 +85,7 @@ def main():
     logger.info('Saving to database')
     for record in records:
         if 'partner' in record:
-            record['partner'] = Company.get_by_slug(record['partner'])
+            record['partner'] = Partner.get_by_slug(record['partner'])
         PodcastEpisode.create(**record)
 
     logger.info('Announcing in Discord')

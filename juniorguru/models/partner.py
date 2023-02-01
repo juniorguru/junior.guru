@@ -6,7 +6,7 @@ from juniorguru.models.base import BaseModel
 from juniorguru.models.club import ClubUser
 
 
-class Company(BaseModel):
+class Partner(BaseModel):
     name = CharField()
     slug = CharField(unique=True)
     url = CharField()
@@ -36,7 +36,7 @@ class Company(BaseModel):
     @property
     def list_student_subscriptions_billable(self):
         return self.list_student_subscriptions \
-            .where(CompanyStudentSubscription.invoiced_on.is_null())
+            .where(PartnerStudentSubscription.invoiced_on.is_null())
 
     def active_partnership(self, today=None):
         today = today or date.today()
@@ -156,14 +156,14 @@ class PartnershipBenefit(BaseModel):
 
 
 class Partnership(BaseModel):
-    partner = ForeignKeyField(Company, backref='list_partnerships')
+    partner = ForeignKeyField(Partner, backref='list_partnerships')
     plan = ForeignKeyField(PartnershipPlan, null=True, backref='list_partnerships')
     starts_on = DateField(index=True)
     expires_on = DateField(null=True, index=True)
 
 
-class CompanyStudentSubscription(BaseModel):
-    company = ForeignKeyField(Company, backref='list_student_subscriptions')
+class PartnerStudentSubscription(BaseModel):
+    company = ForeignKeyField(Partner, backref='list_student_subscriptions')
     account_id = CharField()
     name = CharField()
     email = CharField()

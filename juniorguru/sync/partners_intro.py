@@ -11,7 +11,7 @@ from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED  # JOBS_CHANNEL,
 from juniorguru.lib.club import is_message_over_period_ago, run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
-from juniorguru.models.partner import Company
+from juniorguru.models.partner import Partner
 
 
 MESSAGE_EMOJI = '👋'
@@ -39,7 +39,7 @@ async def discord_task(client):
     if is_message_over_period_ago(last_message, timedelta(weeks=1)):
         logger.info('Last company intro message is more than one week old!')
 
-        companies = [company for company in Company.active_listing()
+        companies = [company for company in Partner.active_listing()
                      if doesnt_have_intro(company)]
         if companies:
             logger.debug(f'Choosing from {len(companies)} companies to announce')

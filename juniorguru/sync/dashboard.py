@@ -13,7 +13,7 @@ from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import (ClubDocumentedRole, ClubMessage,
                                     ClubSubscribedPeriod, ClubUser)
-from juniorguru.models.partner import Company
+from juniorguru.models.partner import Partner
 from juniorguru.models.event import Event
 
 
@@ -109,7 +109,7 @@ def render_companies():
         'color': Color.dark_grey(),
         'description': 'Následující firmy se podílejí na financování provozu junior.guru. Někdy sem pošlou své lidi. Ti pak mají roli <@&837316268142493736> a k tomu ještě i roli vždy pro konkrétní firmu, například <@&938306918097747968>.\n\n' + ', '.join([
             f'✨ [{company.name}]({company.url})' for company
-            in Company.active_listing()
+            in Partner.active_listing()
         ])
     }
 
