@@ -5,7 +5,7 @@ from strictyaml import Int, Map, Optional, Seq, Str, load
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.models.base import db
-from juniorguru.models.company import PartnershipBenefit, PartnershipPlan
+from juniorguru.models.partner import PartnershipBenefit, PartnershipPlan
 
 
 logger = loggers.from_path(__file__)

@@ -12,7 +12,7 @@ from juniorguru.lib.club import DEFAULT_CHANNELS_HISTORY_SINCE
 from juniorguru.mkdocs.thumbnail import thumbnail
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubSubscribedPeriod, ClubUser
-from juniorguru.models.company import Company
+from juniorguru.models.partner import Company
 from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.job import ListedJob
 from juniorguru.models.podcast import PodcastEpisode

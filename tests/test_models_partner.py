@@ -5,7 +5,7 @@ import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.models.club import ClubUser
-from juniorguru.models.company import (Company, CompanyStudentSubscription, Partnership,
+from juniorguru.models.partner import (Company, CompanyStudentSubscription, Partnership,
                                        PartnershipBenefit, PartnershipPlan)
 
 

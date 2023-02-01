@@ -10,7 +10,7 @@ from playhouse.shortcuts import model_to_dict
 from juniorguru.lib import loggers
 from juniorguru.lib.memberful import (MEMBERFUL_MUTATIONS_ENABLED, Memberful,
                                       serialize_metadata)
-from juniorguru.models.company import Company
+from juniorguru.models.partner import Company
 
 
 logger = loggers.from_path(__file__)

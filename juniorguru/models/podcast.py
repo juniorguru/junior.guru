@@ -5,7 +5,7 @@ import arrow
 from peewee import CharField, DateTimeField, ForeignKeyField, IntegerField
 
 from juniorguru.models.base import BaseModel
-from juniorguru.models.company import Company
+from juniorguru.models.partner import Company
 
 
 class PodcastEpisode(BaseModel):

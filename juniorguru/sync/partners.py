@@ -12,7 +12,7 @@ from juniorguru.lib.images import render_image_file
 from juniorguru.lib.memberful import Memberful
 from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
-from juniorguru.models.company import Company, Partnership, PartnershipPlan
+from juniorguru.models.partner import Company, Partnership, PartnershipPlan
 
 
 logger = loggers.from_path(__file__)

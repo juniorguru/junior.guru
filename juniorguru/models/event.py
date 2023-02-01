@@ -9,7 +9,7 @@ from juniorguru.lib.charts import month_range, ttm_range
 from juniorguru.lib.md import strip_links
 from juniorguru.models.base import BaseModel, JSONField
 from juniorguru.models.club import ClubUser
-from juniorguru.models.company import Company
+from juniorguru.models.partner import Company
 
 
 class Event(BaseModel):

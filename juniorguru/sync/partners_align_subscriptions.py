@@ -6,7 +6,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.memberful import MEMBERFUL_MUTATIONS_ENABLED, Memberful
 from juniorguru.models.base import db
-from juniorguru.models.company import Company
+from juniorguru.models.partner import Company
 
 
 logger = loggers.from_path(__file__)

@@ -11,7 +11,7 @@ from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED  # JOBS_CHANNEL,
 from juniorguru.lib.club import is_message_over_period_ago, run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
-from juniorguru.models.company import Company
+from juniorguru.models.partner import Company
 
 
 MESSAGE_EMOJI = '👋'

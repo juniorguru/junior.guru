@@ -13,7 +13,7 @@ from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import (ClubDocumentedRole, ClubMessage,
                                     ClubSubscribedPeriod, ClubUser)
-from juniorguru.models.company import Company
+from juniorguru.models.partner import Company
 from juniorguru.models.event import Event
 
 
