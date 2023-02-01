@@ -126,8 +126,6 @@ class PartnershipPlan(BaseModel):
             .where(cls.slug == slug) \
             .get()
 
-    # TODO list all benefits
-
 
 class PartnershipBenefit(BaseModel):
     text = CharField()

@@ -71,7 +71,7 @@ def plan_handbook():
     return create_plan('top', ['logo_handbook', 'coffee', 'tea'])
 
 
-def test_active_partnership(db_connection):
+def test_company_active_partnership(db_connection):
     today = date(2021, 5, 2)
     company = create_company('1')
     partnership1 = create_partnership(company, date(2020, 12, 1), date(2021, 1, 1))  # noqa
@@ -80,7 +80,7 @@ def test_active_partnership(db_connection):
     assert company.active_partnership(today=today) == partnership2
 
 
-def test_active_partnership_no_active_partnership(db_connection):
+def test_company_active_partnership_no_active_partnership(db_connection):
     today = date(2021, 5, 2)
     company = create_company('1')
     create_partnership(company, date(2020, 12, 1), date(2021, 1, 1))
@@ -89,13 +89,13 @@ def test_active_partnership_no_active_partnership(db_connection):
     assert company.active_partnership(today=today) is None
 
 
-def test_active_partnership_no_partnership(db_connection):
+def test_company_active_partnership_no_partnership(db_connection):
     company = create_company('1')
 
     assert company.active_partnership() is None
 
 
-def test_active_listing(db_connection):
+def test_company_active_listing(db_connection):
     today = date(2021, 5, 2)
     company1 = create_company('1')
     create_partnership(company1, today, date(2021, 4, 1))
@@ -109,7 +109,7 @@ def test_active_listing(db_connection):
     assert set(Company.active_listing(today=today)) == {company3, company4}
 
 
-def test_active_listing_with_barters(db_connection):
+def test_company_active_listing_with_barters(db_connection):
     today = date(2021, 5, 1)
     company1 = create_company('1')
     create_partnership(company1, today, date(2021, 5, 1))
@@ -119,7 +119,7 @@ def test_active_listing_with_barters(db_connection):
     assert set(Company.active_listing(today=today)) == {company1, company2}
 
 
-def test_active_listing_without_barters(db_connection):
+def test_company_active_listing_without_barters(db_connection):
     today = date(2021, 5, 1)
     company1 = create_company('1')
     create_partnership(company1, today, date(2021, 5, 1))
@@ -129,7 +129,7 @@ def test_active_listing_without_barters(db_connection):
     assert set(Company.active_listing(today=today, include_barters=False)) == {company1}
 
 
-def test_active_listing_skips_planned(db_connection):
+def test_company_active_listing_skips_planned(db_connection):
     today = date(2021, 5, 2)
     company1 = create_company('1')
     create_partnership(company1, date(2021, 5, 1), None)
@@ -141,7 +141,7 @@ def test_active_listing_skips_planned(db_connection):
     assert set(Company.active_listing(today=today)) == {company1, company2}
 
 
-def test_active_listing_sorts_by_name(db_connection):
+def test_company_active_listing_sorts_by_name(db_connection):
     today = date(2021, 5, 2)
     company1 = create_company('1', name='Company B')
     create_partnership(company1, date(2021, 4, 1), None)
@@ -153,7 +153,7 @@ def test_active_listing_sorts_by_name(db_connection):
     assert list(Company.active_listing(today=today)) == [company3, company1, company2]
 
 
-def test_active_listing_with_multiple_partnerships(db_connection):
+def test_company_active_listing_with_multiple_partnerships(db_connection):
     today = date(2023, 6, 1)
     company1 = create_company('1')
     create_partnership(company1, date(2023, 2, 1), date(2023, 5, 1))
@@ -162,7 +162,7 @@ def test_active_listing_with_multiple_partnerships(db_connection):
     assert list(Company.active_listing(today=today)) == [company1]
 
 
-def test_expired_listing(db_connection):
+def test_company_expired_listing(db_connection):
     today = date(2023, 5, 2)
     company1 = create_company('1')
     create_partnership(company1, date(2023, 3, 1), date(2023, 4, 1))
@@ -176,7 +176,7 @@ def test_expired_listing(db_connection):
     assert set(Company.expired_listing(today=today)) == {company1, company2}
 
 
-def test_expired_listing_skips_companies_without_expiration(db_connection):
+def test_company_expired_listing_skips_companies_without_expiration(db_connection):
     today = date(2023, 5, 1)
     company1 = create_company('1')
     create_partnership(company1, date(2023, 3, 1), date(2023, 4, 1))
@@ -186,7 +186,7 @@ def test_expired_listing_skips_companies_without_expiration(db_connection):
     assert set(Company.expired_listing(today=today)) == {company1}
 
 
-def test_expired_listing_skips_planned(db_connection):
+def test_company_expired_listing_skips_planned(db_connection):
     today = date(2023, 5, 1)
     company1 = create_company('1')
     create_partnership(company1, date(2023, 2, 1), date(2023, 4, 1))
@@ -198,7 +198,7 @@ def test_expired_listing_skips_planned(db_connection):
     assert set(Company.expired_listing(today=today)) == {company1, company2}
 
 
-def test_expired_listing_sorts_by_expiration_date_then_by_name(db_connection):
+def test_company_expired_listing_sorts_by_expiration_date_then_by_name(db_connection):
     today = date(2023, 6, 1)
     company1 = create_company('1', name='Company B')
     create_partnership(company1, date(2023, 2, 1), date(2023, 5, 1))
@@ -210,7 +210,7 @@ def test_expired_listing_sorts_by_expiration_date_then_by_name(db_connection):
     assert list(Company.expired_listing(today=today)) == [company3, company1, company2]
 
 
-def test_expired_listing_skips_active_partners(db_connection):
+def test_company_expired_listing_skips_active_partners(db_connection):
     today = date(2023, 6, 1)
     company1 = create_company('1')
     create_partnership(company1, date(2023, 2, 1), date(2023, 5, 1))
@@ -219,7 +219,7 @@ def test_expired_listing_skips_active_partners(db_connection):
     assert list(Company.expired_listing(today=today)) == []
 
 
-def test_handbook_listing(db_connection, plan_generic, plan_handbook):
+def test_company_handbook_listing(db_connection, plan_generic, plan_handbook):
     company1 = create_company('1')
     create_partnership(company1, date(2023, 1, 1), None, plan=plan_generic)
     company2 = create_company('2')
@@ -230,7 +230,7 @@ def test_handbook_listing(db_connection, plan_generic, plan_handbook):
     assert list(Company.handbook_listing()) == [company2]
 
 
-def test_handbook_listing_sorts_by_name(db_connection, plan_handbook):
+def test_company_handbook_listing_sorts_by_name(db_connection, plan_handbook):
     company1 = create_company('1', name='Orange')
     create_partnership(company1, date(2023, 1, 1), None, plan=plan_handbook)
     company2 = create_company('2', name='Banana')
@@ -241,7 +241,7 @@ def test_handbook_listing_sorts_by_name(db_connection, plan_handbook):
     assert list(Company.handbook_listing()) == [company3, company2, company1]
 
 
-def test_schools_listing(db_connection):
+def test_company_schools_listing(db_connection):
     company1 = create_company('1', student_coupon='STUDENT!')
     company2 = create_company('2', student_coupon=None)  # noqa
     company3 = create_company('3', student_coupon='STUDENT!')
@@ -249,14 +249,14 @@ def test_schools_listing(db_connection):
     assert set(Company.schools_listing()) == {company1, company3}
 
 
-def test_schools_listing_sorts_by_name(db_connection):
+def test_company_schools_listing_sorts_by_name(db_connection):
     company1 = create_company('1', name='Banana', student_coupon='STUDENT!')
     company2 = create_company('3', name='Apple', student_coupon='STUDENT!')
 
     assert list(Company.schools_listing()) == [company2, company1]
 
 
-def test_active_schools_listing(db_connection):
+def test_company_active_schools_listing(db_connection):
     today = date(2023, 6, 1)
     company1 = create_company('1', student_coupon='STUDENT!')
     create_partnership(company1, date(2023, 1, 1), None)
@@ -268,7 +268,7 @@ def test_active_schools_listing(db_connection):
     assert [Company.active_schools_listing(today=today)] == [company1]
 
 
-def test_list_members(db_connection):
+def test_company_list_members(db_connection):
     member1 = ClubUser.create(display_name='Alice', mention='<@111>', coupon='XEROX', tag='abc#1234')
     member2 = ClubUser.create(display_name='Bob', mention='<@222>', coupon='XEROX', tag='abc#1234')
     member3 = ClubUser.create(display_name='Celine', mention='<@333>', coupon='ZALANDO', tag='abc#1234')  # noqa
@@ -277,7 +277,7 @@ def test_list_members(db_connection):
     assert set(company.list_members) == {member1, member2}
 
 
-def test_list_student_members(db_connection):
+def test_company_list_student_members(db_connection):
     member1 = ClubUser.create(display_name='Alice', mention='<@111>', coupon='XEROXSTUDENT', tag='abc#1234')
     member2 = ClubUser.create(display_name='Bob', mention='<@222>', coupon='XEROXSTUDENT', tag='abc#1234')
     member3 = ClubUser.create(display_name='Celine', mention='<@333>', coupon='ZALANDOSTUDENT', tag='abc#1234')  # noqa
@@ -286,21 +286,21 @@ def test_list_student_members(db_connection):
     assert set(company.list_student_members) == {member1, member2}
 
 
-def test_get_by_slug(db_connection):
+def test_company_get_by_slug(db_connection):
     create_company('1', slug='xerox')
     company = create_company('2', slug='zalando')
 
     assert Company.get_by_slug('zalando') == company
 
 
-def test_get_by_slug_doesnt_exist(db_connection):
+def test_company_get_by_slug_doesnt_exist(db_connection):
     create_company('1', slug='xerox')
 
     with pytest.raises(Company.DoesNotExist):
         assert Company.get_by_slug('zalando')
 
 
-def test_list_student_subscriptions(db_connection):
+def test_company_list_student_subscriptions(db_connection):
     company = create_company('1')
     subscription1 = create_student_subscription(company, invoiced_on=date.today())
     subscription2 = create_student_subscription(company, invoiced_on=None)
@@ -308,9 +308,23 @@ def test_list_student_subscriptions(db_connection):
     assert set(company.list_student_subscriptions) == {subscription1, subscription2}
 
 
-def test_list_student_subscriptions_billable(db_connection):
+def test_company_list_student_subscriptions_billable(db_connection):
     company = create_company('1')
     subscription1 = create_student_subscription(company, invoiced_on=date.today())  # noqa
     subscription2 = create_student_subscription(company, invoiced_on=None)
 
     assert set(company.list_student_subscriptions_billable) == {subscription2}
+
+
+def test_plan_get_by_slug(db_connection):
+    create_plan('top')
+    plan = create_plan('basic')
+
+    assert PartnershipPlan.get_by_slug('basic') == plan
+
+
+def test_plan_get_by_slug_doesnt_exist(db_connection):
+    create_plan('top')
+
+    with pytest.raises(PartnershipPlan.DoesNotExist):
+        assert PartnershipPlan.get_by_slug('basic')
