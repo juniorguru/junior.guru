@@ -50,8 +50,8 @@ def main():
             hierarchy[yaml_record['slug']] = yaml_record.pop('includes')
 
         plan = PartnershipPlan.create(**yaml_record)
-        for benefit in benefits:
-            PartnershipBenefit.create(plan=plan, **benefit)
+        for position, benefit in enumerate(benefits):
+            PartnershipBenefit.create(plan=plan, position=position, **benefit)
 
     for slug, includes_slug in hierarchy.items():
         plan = PartnershipPlan.get_by_slug(slug)

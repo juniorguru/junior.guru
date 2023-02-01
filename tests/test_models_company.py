@@ -25,8 +25,9 @@ def create_plan(slug, benefit_slugs=None):
     plan = PartnershipPlan.create(slug=slug,
                                   name=f"Plan '{slug}'",
                                   price=10000)
-    for benefit_slug in (benefit_slugs or []):
-        PartnershipBenefit.create(text=f"Benefit '{benefit_slug}'",
+    for position, benefit_slug in enumerate(benefit_slugs or []):
+        PartnershipBenefit.create(position=position,
+                                  text=f"Benefit '{benefit_slug}'",
                                   icon='beer',
                                   plan=plan,
                                   slug=benefit_slug)
@@ -62,13 +63,18 @@ def db_connection():
 
 
 @pytest.fixture
-def plan_generic():
+def plan_basic():
     return create_plan('basic', ['food', 'drinks'])
 
 
 @pytest.fixture
+def plan_top():
+    return create_plan('top', ['flowers', 'balloon'])
+
+
+@pytest.fixture
 def plan_handbook():
-    return create_plan('top', ['logo_handbook', 'coffee', 'tea'])
+    return create_plan('handbook', ['logo_handbook', 'flowers', 'balloon'])
 
 
 def test_company_active_partnership(db_connection):
@@ -219,13 +225,13 @@ def test_company_expired_listing_skips_active_partners(db_connection):
     assert list(Company.expired_listing(today=today)) == []
 
 
-def test_company_handbook_listing(db_connection, plan_generic, plan_handbook):
+def test_company_handbook_listing(db_connection, plan_basic, plan_handbook):
     company1 = create_company('1')
-    create_partnership(company1, date(2023, 1, 1), None, plan=plan_generic)
+    create_partnership(company1, date(2023, 1, 1), None, plan=plan_basic)
     company2 = create_company('2')
     create_partnership(company2, date(2023, 1, 1), None, plan=plan_handbook)
     company3 = create_company('3')
-    create_partnership(company3, date(2023, 1, 1), None, plan=plan_generic)
+    create_partnership(company3, date(2023, 1, 1), None, plan=plan_basic)
 
     assert list(Company.handbook_listing()) == [company2]
 
@@ -328,3 +334,32 @@ def test_plan_get_by_slug_doesnt_exist(db_connection):
 
     with pytest.raises(PartnershipPlan.DoesNotExist):
         assert PartnershipPlan.get_by_slug('basic')
+
+
+def test_plan_hierarchy(db_connection, plan_basic, plan_top):
+    plan_top.includes = plan_basic
+    plan_top.save()
+
+    assert list(plan_top.hierarchy) == [plan_basic, plan_top]
+
+
+def test_plan_weight(db_connection, plan_basic, plan_top):
+    plan_top.includes = plan_basic
+    plan_top.save()
+
+    assert (plan_basic.weight, plan_top.weight) == (0, 1)
+
+
+def test_plan_benefits_all(db_connection, plan_basic, plan_top):
+    plan_top.includes = plan_basic
+    plan_top.save()
+
+    assert [benefit.slug for benefit in plan_top.benefits()] == ['food', 'drinks', 'flowers', 'balloon']
+
+
+
+def test_plan_benefits_own(db_connection, plan_basic, plan_top):
+    plan_top.includes = plan_basic
+    plan_top.save()
+
+    assert [benefit.slug for benefit in plan_top.benefits(all=False)] == ['flowers', 'balloon']

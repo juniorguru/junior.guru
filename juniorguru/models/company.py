@@ -120,6 +120,26 @@ class PartnershipPlan(BaseModel):
     limit = IntegerField(null=True)
     includes = ForeignKeyField('self', null=True, backref='list_where_included')
 
+    @property
+    def hierarchy(self):
+        hierarchy = []
+        plan = self
+        while True:
+            hierarchy.append(plan)
+            if plan.includes:
+                plan = plan.includes
+            else:
+                break
+        return reversed(hierarchy)
+
+    @property
+    def weight(self):
+        return list(self.hierarchy).index(self)
+
+    def benefits(self, all=True):
+        for plan in (self.hierarchy if all else [self]):
+            yield from plan.list_benefits.order_by(PartnershipBenefit.position)
+
     @classmethod
     def get_by_slug(cls, slug):
         return cls.select() \
@@ -128,6 +148,7 @@ class PartnershipPlan(BaseModel):
 
 
 class PartnershipBenefit(BaseModel):
+    position = IntegerField()
     text = CharField()
     icon = CharField()
     plan = ForeignKeyField(PartnershipPlan, backref='list_benefits')
