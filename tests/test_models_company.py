@@ -34,6 +34,14 @@ def create_plan(slug, benefit_slugs=None):
     return plan
 
 
+def setup_hierarchy(plan0, plan1):
+    plan0.hierarchy_rank = 0
+    plan0.save()
+    plan1.includes = plan0
+    plan1.hierarchy_rank = 1
+    plan1.save()
+
+
 def create_partnership(partner, starts_on, expires_on, plan=None):
     return Partnership.create(partner=partner,
                               plan=plan or create_plan(f'basic-{uuid.uuid4()}'),
@@ -322,44 +330,28 @@ def test_company_list_student_subscriptions_billable(db_connection):
     assert set(company.list_student_subscriptions_billable) == {subscription2}
 
 
-def test_plan_get_by_slug(db_connection):
-    create_plan('top')
-    plan = create_plan('basic')
-
-    assert PartnershipPlan.get_by_slug('basic') == plan
+def test_plan_get_by_slug(db_connection, plan_basic):
+    assert PartnershipPlan.get_by_slug('basic') == plan_basic
 
 
 def test_plan_get_by_slug_doesnt_exist(db_connection):
-    create_plan('top')
-
     with pytest.raises(PartnershipPlan.DoesNotExist):
         assert PartnershipPlan.get_by_slug('basic')
 
 
 def test_plan_hierarchy(db_connection, plan_basic, plan_top):
-    plan_top.includes = plan_basic
-    plan_top.save()
+    setup_hierarchy(plan_basic, plan_top)
 
     assert list(plan_top.hierarchy) == [plan_basic, plan_top]
 
 
-def test_plan_weight(db_connection, plan_basic, plan_top):
-    plan_top.includes = plan_basic
-    plan_top.save()
-
-    assert (plan_basic.weight, plan_top.weight) == (0, 1)
-
-
 def test_plan_benefits_all(db_connection, plan_basic, plan_top):
-    plan_top.includes = plan_basic
-    plan_top.save()
+    setup_hierarchy(plan_basic, plan_top)
 
     assert [benefit.slug for benefit in plan_top.benefits()] == ['food', 'drinks', 'flowers', 'balloon']
 
 
-
 def test_plan_benefits_own(db_connection, plan_basic, plan_top):
-    plan_top.includes = plan_basic
-    plan_top.save()
+    setup_hierarchy(plan_basic, plan_top)
 
     assert [benefit.slug for benefit in plan_top.benefits(all=False)] == ['flowers', 'balloon']

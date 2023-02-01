@@ -43,17 +43,24 @@ def main():
     db.create_tables([PartnershipPlan, PartnershipBenefit])
 
     logger.info('Processing YAML records')
-    hierarchy = {}
+    includes = {}
     for yaml_record in yaml_records:
         benefits = yaml_record.pop('benefits')
         if 'includes' in yaml_record:
-            hierarchy[yaml_record['slug']] = yaml_record.pop('includes')
+            includes[yaml_record['slug']] = yaml_record.pop('includes')
 
         plan = PartnershipPlan.create(**yaml_record)
         for position, benefit in enumerate(benefits):
             PartnershipBenefit.create(plan=plan, position=position, **benefit)
 
-    for slug, includes_slug in hierarchy.items():
+    logger.info('Recording hierarchy')
+    for slug, includes_slug in includes.items():
         plan = PartnershipPlan.get_by_slug(slug)
         plan.includes = PartnershipPlan.get_by_slug(includes_slug)
+        plan.save()
+
+    logger.info('Determining and recording ranks')
+    for yaml_record in yaml_records:
+        plan = PartnershipPlan.get_by_slug(yaml_record['slug'])
+        plan.hierarchy_rank = list(plan.hierarchy).index(plan)
         plan.save()

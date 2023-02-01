@@ -119,6 +119,7 @@ class PartnershipPlan(BaseModel):
     price = IntegerField()
     limit = IntegerField(null=True)
     includes = ForeignKeyField('self', null=True, backref='list_where_included')
+    hierarchy_rank = IntegerField(null=True)
 
     @property
     def hierarchy(self):
@@ -131,10 +132,6 @@ class PartnershipPlan(BaseModel):
             else:
                 break
         return reversed(hierarchy)
-
-    @property
-    def weight(self):
-        return list(self.hierarchy).index(self)
 
     def benefits(self, all=True):
         for plan in (self.hierarchy if all else [self]):
