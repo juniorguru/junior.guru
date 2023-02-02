@@ -37,7 +37,7 @@ def main():
                 logger_c.warning(f'{employee!r} {employee.expires_at.date()} < {partnership.expires_on}')
                 if MEMBERFUL_MUTATIONS_ENABLED:
                     params = dict(id=employee.subscription_id,
-                                  expiresAt=int(arrow.get(partner.expires_on).timestamp()))
+                                  expiresAt=int(arrow.get(partnership.expires_on).timestamp()))
                     memberful.mutate(mutation, params)
                     employee.expires_at = datetime.combine(partnership.expires_on, datetime.min.time())
                     employee.save()
