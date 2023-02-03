@@ -17,33 +17,6 @@ nav:
   - Podcast: podcast.md
   - Práce: jobs/
   - Klub: club.md
-
-  - Ceník: pricing.md
-  - Pro přednášející: speaker.md
-  - Návod na akce v klubu: event.md
-
-  - Témata:
-      - topics/adventofcode.md
-      - topics/javascript.md
-      - topics/python.md
-
-      - topics/codingbootcamppraha.md
-      - topics/cs50.md
-      - topics/czechitas.md
-      - topics/djangogirls.md
-      - topics/engeto.md
-      - topics/greenfox.md
-      - topics/itnetwork.md
-      - topics/skillmea.md
-      - topics/primakurzy.md
-      - topics/pyladies.md
-      - topics/reactgirls.md
-      - topics/sdacademy.md
-      - topics/step.md
-      - topics/udemy.md
-      - topics/unicorn.md
-      - topics/vsb.md
-
   - Pravidla:
       - Otázky a odpovědi: faq.md
       - Pravidla chování: coc.md
@@ -51,15 +24,12 @@ nav:
       - Zásady ochrany osobních údajů: privacy.md
       - Čísla a grafy: open.md
       - Licence obsahu (CC BY-SA): https://creativecommons.org/licenses/by-sa/4.0/deed.cs
-
-  - Přesměrování:
-      - Motivace: motivation.md
-      - Základy: learn.md
-      - První praxe: practice.md
-      - Hledání práce: candidate-handbook.md
-      - Téma Git: topics/git.md
-      - Téma GitHub: topics/github.md
-      - Téma Learn2Code: topics/learn2code.md
+  - Témata:
+      - ... | flat | topics/*.md
+  - Partnerství:
+      - ... | flat | open/*.md
+  - Ostatní:
+      - ... | flat
 
 
 markdown_extensions:
@@ -85,6 +55,8 @@ plugins:
   - gen-files:
       scripts:
         - templates.py
+  - awesome-pages:
+      strict: true
 
 
 # Removed 'strict', because it gives warnings if linking non-existing targets. Once the Flask
