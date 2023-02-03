@@ -289,7 +289,7 @@ Aby bylo vše maximálně transparentní, uvádím zde podrobnosti ke každému 
     {% set partnership = partner.active_partnership() %}
     {% set plan = partnership.plan %}
     <tr>
-      <th>{{ partner_link(partner, 'open') }}</th>
+      <th><a href="{{ pages|docs_url('open/' + partner.slug + '.md')|url }}">{{ partner.name }}</a></th>
       <td>
         {{ plan.name }}
       </td>

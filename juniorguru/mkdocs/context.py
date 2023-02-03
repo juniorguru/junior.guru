@@ -131,9 +131,13 @@ def on_docs_context(context):
 
 @db.connection_context()
 def on_docs_page_context(context, page, config, files):
-    if 'topic_name' in page.meta:
-        topic_name = page.meta['topic_name']
-        context['topic'] = Topic.get_by_id(topic_name)
+    meta_model_getters = (
+        ('topic_name', Topic.get_by_id, 'topic'),
+        ('partner_slug', Partner.get_by_slug, 'partner'),
+    )
+    for meta_key, model_getter, model_var in meta_model_getters:
+        if meta_key in page.meta:
+            context[model_var] = model_getter(page.meta[meta_key])
 
 
 ####################################################################

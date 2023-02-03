@@ -81,6 +81,12 @@ hooks:
   - hooks.py
 
 
+plugins:
+  - gen-files:
+      scripts:
+        - templates.py
+
+
 # Removed 'strict', because it gives warnings if linking non-existing targets. Once the Flask
 # app is gone, 'strict' should return to be enabled.
 #strict: true
