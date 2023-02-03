@@ -1,8 +1,8 @@
-from pathlib import Path
 from collections import Counter
+from pathlib import Path
 
-from strictyaml import as_document
 import mkdocs_gen_files
+from strictyaml import as_document
 
 from juniorguru.lib import loggers
 from juniorguru.models.partner import Partner
