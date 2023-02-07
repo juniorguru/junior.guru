@@ -85,7 +85,7 @@ Hodina sezení tě zpravidla vyjde na 800-1200 Kč, ale mnozí poskytují **slev
 <div class="link-cards">
   {{ link_card(
     'Jak vybrat terapeuta?',
-    'https://www.terapie.cz/jak-vybrat-terapeuta',
+    'https://www.terapie.cz/jak-vybrat-psychoterapeuta',
     'Několik otázek usnadňující výběr terapeuta.',
   ) }}
 
