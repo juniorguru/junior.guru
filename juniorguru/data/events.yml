@@ -98,6 +98,7 @@
     - https://witter.cz/@kayla_eilhart
   logo_path: logos/rossum.svg
   speakers: 336111357495738368
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1072591921173774456
 
 - title: "Analýza geoprostorových dat, GIS a geospatial data science"
   date: "2023-01-25"
