@@ -3,7 +3,9 @@ from datetime import date
 from peewee import CharField, DateField, ForeignKeyField, IntegerField, fn
 
 from juniorguru.models.base import BaseModel
-from juniorguru.models.club import ClubUser
+from juniorguru.models.club import ClubUser, ClubMessage
+from juniorguru.models.job import SubmittedJob
+from juniorguru.lib.club import (INTRO_CHANNEL, EMOJI_PARTNER_INTRO)
 
 
 class Partner(BaseModel):
@@ -18,12 +20,17 @@ class Partner(BaseModel):
     student_role_id = IntegerField(null=True)
 
     @property
+    def name_markdown_bold(self):
+        return f'**{self.name}**'
+
+    @property
     def list_members(self):
         if not self.coupon:
             return []
         return ClubUser.select() \
             .join(self.__class__, on=(ClubUser.coupon == self.__class__.coupon)) \
-            .where((ClubUser.is_member == True) & (ClubUser.coupon == self.coupon))
+            .where((ClubUser.is_member == True) & (ClubUser.coupon == self.coupon)) \
+            .order_by(ClubUser.display_name)
 
     @property
     def list_student_members(self):
@@ -38,6 +45,18 @@ class Partner(BaseModel):
         return self.list_student_subscriptions \
             .where(PartnerStudentSubscription.invoiced_on.is_null())
 
+    @property
+    def list_jobs(self):
+        return SubmittedJob.select() \
+            .join(self.__class__, on=(SubmittedJob.company_name == self.__class__.name)) \
+            .where(SubmittedJob.company_name == self.name) \
+            .order_by(SubmittedJob.title)
+
+    @property
+    def list_partnerships_history(self):
+        return self.list_partnerships \
+            .order_by(Partnership.starts_on.desc())
+
     def active_partnership(self, today=None):
         today = today or date.today()
         return self.list_partnerships \
@@ -45,6 +64,12 @@ class Partner(BaseModel):
                    (Partnership.expires_on >= today) | Partnership.expires_on.is_null()) \
             .order_by(Partnership.starts_on.desc()) \
             .first()
+
+    @property
+    def intro(self):
+        return ClubMessage.last_bot_message(INTRO_CHANNEL,
+                                            startswith_emoji=EMOJI_PARTNER_INTRO,
+                                            contains_text=self.name_markdown_bold)
 
     @classmethod
     def get_by_slug(cls, slug):
@@ -160,6 +185,13 @@ class Partnership(BaseModel):
     plan = ForeignKeyField(PartnershipPlan, null=True, backref='list_partnerships')
     starts_on = DateField(index=True)
     expires_on = DateField(null=True, index=True)
+
+    def remaining_days(self, today=None):
+        today = today or date.today()
+        if self.expires_on:
+            return (self.expires_on - today).days
+        else:
+            return None
 
 
 class PartnerStudentSubscription(BaseModel):

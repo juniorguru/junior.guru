@@ -6,15 +6,13 @@ from discord import Color, Embed, File
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import BOT_CHANNEL  # INTRO_CHANNEL
+from juniorguru.lib.club import BOT_CHANNEL, EMOJI_PARTNER_INTRO  # INTRO_CHANNEL
 from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED  # JOBS_CHANNEL,
 from juniorguru.lib.club import is_message_over_period_ago, run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.partner import Partner
 
-
-MESSAGE_EMOJI = '👋'
 
 BOT_REACTIONS = ['👋', '👍', '💕', '💰']
 
@@ -35,7 +33,7 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    last_message = ClubMessage.last_bot_message(INTRO_CHANNEL, MESSAGE_EMOJI)
+    last_message = ClubMessage.last_bot_message(INTRO_CHANNEL, EMOJI_PARTNER_INTRO)
     if is_message_over_period_ago(last_message, timedelta(weeks=1)):
         logger.info('Last partner intro message is more than one week old!')
 
@@ -50,8 +48,8 @@ async def discord_task(client):
             if DISCORD_MUTATIONS_ENABLED:
                 channel = await client.fetch_channel(INTRO_CHANNEL)
                 content = (
-                    f"{MESSAGE_EMOJI} "
-                    f"Kamarádi z {partner_name_formatted(partner.name)} se rozhodli podpořit klub a jsou tady s námi! "
+                    f"{EMOJI_PARTNER_INTRO} "
+                    f"Kamarádi z {partner.name_markdown_bold} se rozhodli podpořit klub a jsou tady s námi! "
                     f"Mají roli <@&{partner.role_id}>."
                 )
                 if partnership.starts_on < COMPANIES_INTRO_LAUNCH_ON and (date.today() - partnership.starts_on).days > 30:
@@ -92,14 +90,8 @@ async def discord_task(client):
         logger.info('Last partner intro message is less than one week old')
 
 
-def partner_name_formatted(partner_name):
-    return f'**{partner_name}**'
-
-
 def doesnt_have_intro(partner):
-    message = ClubMessage.last_bot_message(INTRO_CHANNEL, MESSAGE_EMOJI,
-                                           partner_name_formatted(partner.name))
-    return is_message_over_period_ago(message, timedelta(days=365))
+    return is_message_over_period_ago(partner.intro, timedelta(days=365))
 
 
 def sort_key(partner, today=None):
