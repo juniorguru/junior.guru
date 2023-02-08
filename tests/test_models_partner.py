@@ -31,7 +31,7 @@ def create_plan(slug, benefit_slugs=None):
     for position, benefit_slug in enumerate(benefit_slugs or []):
         PartnershipBenefit.create(position=position,
                                   text=f"Benefit '{benefit_slug}'",
-                                  icon='beer',
+                                  icon=f'{benefit_slug}-circle',
                                   plan=plan,
                                   slug=benefit_slug)
     return plan
@@ -45,11 +45,12 @@ def setup_plan_hierarchy(plan0, plan1):
     plan1.save()
 
 
-def create_partnership(partner, starts_on, expires_on, plan=None):
+def create_partnership(partner, starts_on, expires_on, plan=None, benefits_registry=None):
     return Partnership.create(partner=partner,
                               plan=plan or create_plan(f'basic-{uuid.uuid4()}'),
                               starts_on=starts_on,
-                              expires_on=expires_on)
+                              expires_on=expires_on,
+                              benefits_registry=benefits_registry or [])
 
 
 def create_student_subscription(partner, **kwargs):
@@ -423,9 +424,74 @@ def test_plan_benefits_own(db_connection, plan_basic, plan_top):
     assert [benefit.slug for benefit in plan_top.benefits(all=False)] == ['flowers', 'balloon']
 
 
+def test_plan_benefits_slugs(db_connection, plan_basic, plan_top):
+    setup_plan_hierarchy(plan_basic, plan_top)
+
+    assert plan_top.benefits_slugs() == ['food', 'drinks', 'flowers', 'balloon']
+
+
+def test_plan_benefits_slugs_all(db_connection, plan_basic, plan_top):
+    setup_plan_hierarchy(plan_basic, plan_top)
+
+    assert plan_top.benefits_slugs(all=False) == ['flowers', 'balloon']
+
+
 def test_partnership_remaining_days(db_connection):
     today = date(2022, 12, 24)
     partner = create_partner('1')
     partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15))
 
     assert partnership.remaining_days(today=today) == 22
+
+
+def test_partnership_evaluate_benefits_registry(db_connection):
+    partner = create_partner('1')
+    plan = create_plan('awesome', ['foo', 'bar', 'moo', 'wow'])
+    partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15),
+                                     plan=plan,
+                                     benefits_registry=[
+                                        dict(slug='foo', done=True),
+                                        dict(slug='bar', done=False),
+                                        dict(slug='moo'),
+                                     ])
+
+    assert partnership.evaluate_benefits() == [
+        dict(slug='foo', icon='foo-circle', text="Benefit 'foo'", done=True),
+        dict(slug='bar', icon='bar-circle', text="Benefit 'bar'", done=False),
+        dict(slug='moo', icon='moo-circle', text="Benefit 'moo'", done=False),
+        dict(slug='wow', icon='wow-circle', text="Benefit 'wow'", done=False),
+    ]
+
+
+def test_partnership_evaluate_benefits_functions(db_connection):
+    partner = create_partner('1')
+    plan = create_plan('awesome', ['foo', 'bar', 'moo', 'wow'])
+    partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15),
+                                     plan=plan)
+    functions = dict(foo=lambda partnership: True,
+                     wow=lambda partnership: False)
+
+    assert partnership.evaluate_benefits(functions) == [
+        dict(slug='foo', icon='foo-circle', text="Benefit 'foo'", done=True),
+        dict(slug='bar', icon='bar-circle', text="Benefit 'bar'", done=False),
+        dict(slug='moo', icon='moo-circle', text="Benefit 'moo'", done=False),
+        dict(slug='wow', icon='wow-circle', text="Benefit 'wow'", done=False),
+    ]
+
+
+def test_partnership_evaluate_benefits_registry_overrides_functions(db_connection):
+    partner = create_partner('1')
+    plan = create_plan('awesome', ['foo', 'moo'])
+    partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15),
+                                     plan=plan,
+                                     benefits_registry=[
+                                        dict(slug='foo', done=True),
+                                        dict(slug='moo', done=False),
+                                     ])
+    functions = dict(foo=lambda partnership: False,
+                     moo=lambda partnership: True)
+
+    assert partnership.evaluate_benefits(functions) == [
+        dict(slug='foo', icon='foo-circle', text="Benefit 'foo'", done=True),
+        dict(slug='moo', icon='moo-circle', text="Benefit 'moo'", done=False),
+    ]

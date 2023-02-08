@@ -22,9 +22,10 @@
       slug: event_club
     - text: 1 roční inzerát na [junior.guru/jobs](https://junior.guru/jobs/)
       icon: pin-angle
-      slug: job1
+      slug: job_1
     - text: Vyladění textu inzerátu
       icon: pencil-square
+      slug: job_description
     - text: Oznámení o spolupráci na sociálních sítích
       icon: megaphone
       slug: welcome_social
@@ -36,7 +37,7 @@
   benefits:
     - text: Druhý roční inzerát na [junior.guru/jobs](https://junior.guru/jobs/)
       icon: pin-angle
-      slug: job2
+      slug: job_2
     - text: Logo na [junior.guru/handbook](https://junior.guru/handbook/)
       icon: book
       slug: logo_handbook

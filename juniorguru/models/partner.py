@@ -2,8 +2,9 @@ from datetime import date
 
 from peewee import CharField, DateField, ForeignKeyField, IntegerField, fn
 
+from juniorguru.models.base import BaseModel, JSONField
+from juniorguru.models.club import ClubUser, ClubMessage
 from juniorguru.lib.club import EMOJI_PARTNER_INTRO, INTRO_CHANNEL
-from juniorguru.models.base import BaseModel
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.job import SubmittedJob
 
@@ -165,6 +166,9 @@ class PartnershipPlan(BaseModel):
         for plan in (self.hierarchy if all else [self]):
             yield from plan.list_benefits.order_by(PartnershipBenefit.position)
 
+    def benefits_slugs(self, **kwargs):
+        return [benefit.slug for benefit in self.benefits(**kwargs)]
+
     @classmethod
     def get_by_slug(cls, slug):
         return cls.select() \
@@ -177,7 +181,7 @@ class PartnershipBenefit(BaseModel):
     text = CharField()
     icon = CharField()
     plan = ForeignKeyField(PartnershipPlan, backref='list_benefits')
-    slug = CharField(null=True, unique=True)
+    slug = CharField(unique=True)
     quantity = IntegerField(default=1)
 
 
@@ -186,6 +190,7 @@ class Partnership(BaseModel):
     plan = ForeignKeyField(PartnershipPlan, null=True, backref='list_partnerships')
     starts_on = DateField(index=True)
     expires_on = DateField(null=True, index=True)
+    benefits_registry = JSONField(default=list)
 
     def remaining_days(self, today=None):
         today = today or date.today()
@@ -193,6 +198,21 @@ class Partnership(BaseModel):
             return (self.expires_on - today).days
         else:
             return None
+
+    def evaluate_benefits(self, functions=None):
+        registry = {benefit['slug']: bool(benefit.get('done'))
+                    for benefit
+                    in self.benefits_registry}
+        if functions:
+            registry = {slug: fn(self)
+                        for slug, fn
+                        in functions.items()} | registry
+        return [dict(slug=benefit.slug,
+                     icon=benefit.icon,
+                     text=benefit.text,
+                     done=registry.get(benefit.slug, False))
+                for benefit
+                in self.plan.benefits()]
 
 
 class PartnerStudentSubscription(BaseModel):

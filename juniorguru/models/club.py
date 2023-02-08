@@ -30,7 +30,7 @@ class ClubUser(BaseModel):
     mention = CharField(unique=True)
     tag = CharField()
     coupon = CharField(null=True, index=True)
-    initial_roles = JSONField(default=lambda: [])
+    initial_roles = JSONField(default=list)
     updated_roles = JSONField(null=True)
     onboarding_channel_id = IntegerField(null=True, unique=True)
 
@@ -138,7 +138,7 @@ class ClubMessage(BaseModel):
     id = IntegerField(primary_key=True)
     url = CharField()
     content = TextField()
-    reactions = JSONField(default=lambda: {})
+    reactions = JSONField(default=dict)
     upvotes_count = IntegerField(default=0)
     downvotes_count = IntegerField(default=0)
     created_at = DateTimeField(index=True)

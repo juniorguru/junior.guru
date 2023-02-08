@@ -50,7 +50,7 @@ JOB_EXPIRED_SOON_DAYS = 10
 
 class SubmittedJob(BaseModel):
     id = CharField(primary_key=True)
-    boards_ids = JSONField(default=lambda: [], index=True)
+    boards_ids = JSONField(default=list, index=True)
 
     title = CharField()
     posted_on = DateField(index=True)
@@ -63,7 +63,7 @@ class SubmittedJob(BaseModel):
 
     company_name = CharField()
     company_url = CharField()
-    company_logo_urls = JSONField(default=lambda: [])
+    company_logo_urls = JSONField(default=list)
 
     locations_raw = JSONField(null=True)
     remote = BooleanField(default=False)
@@ -101,7 +101,7 @@ class SubmittedJob(BaseModel):
 
 
 class ScrapedJob(BaseModel):
-    boards_ids = JSONField(default=lambda: [], index=True)
+    boards_ids = JSONField(default=list, index=True)
 
     title = CharField()
     first_seen_on = DateField(index=True)
@@ -113,21 +113,21 @@ class ScrapedJob(BaseModel):
 
     company_name = CharField()
     company_url = CharField(null=True)
-    company_logo_urls = JSONField(default=lambda: [])
+    company_logo_urls = JSONField(default=list)
 
     locations_raw = JSONField(null=True)
     remote = BooleanField(default=False)
     employment_types = JSONField(null=True)
 
     description_html = TextField()
-    features = JSONField(default=lambda: [])
+    features = JSONField(default=list)
     juniority_re_score = IntegerField(null=True)
     juniority_ml_opinion = BooleanField(null=True)
     juniority_votes_score = IntegerField(default=0)
     juniority_votes_count = IntegerField(default=0)
 
     source = CharField()
-    source_urls = JSONField(default=lambda: [])
+    source_urls = JSONField(default=list)
 
     @classmethod
     def date_listing(cls, date_, min_juniority_re_score=0):
@@ -199,7 +199,7 @@ class ScrapedJob(BaseModel):
 
 
 class ListedJob(BaseModel):
-    boards_ids = JSONField(default=lambda: [], index=True)
+    boards_ids = JSONField(default=list, index=True)
     submitted_job = ForeignKeyField(SubmittedJob, unique=True, null=True)
 
     title = CharField()
@@ -212,7 +212,7 @@ class ListedJob(BaseModel):
 
     company_name = CharField()
     company_url = CharField(null=True)
-    company_logo_urls = JSONField(default=lambda: [])
+    company_logo_urls = JSONField(default=list)
     company_logo_path = CharField(null=True)
 
     locations_raw = JSONField(null=True)

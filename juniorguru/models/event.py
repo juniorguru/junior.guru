@@ -21,7 +21,7 @@ class Event(BaseModel):
     avatar_path = CharField(default='icon.svg')
     bio_name = TextField()
     bio_title = TextField(null=True)
-    bio_links = JSONField(default=lambda: [])
+    bio_links = JSONField(default=list)
     partner = ForeignKeyField(Partner, backref='list_events', null=True)
     recording_url = CharField(null=True)
     public_recording_url = CharField(null=True)

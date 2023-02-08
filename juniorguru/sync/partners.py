@@ -95,11 +95,17 @@ def main(flush_posters):
         for partnership in partnerships:
             try:
                 plan_slug = partnership.pop('plan')
-                partnership['plan'] = PartnershipPlan.get_by_slug(plan_slug)
+                plan = PartnershipPlan.get_by_slug(plan_slug)
+                plan_benefits_slugs = plan.benefits_slugs()
+                partnership['plan'] = plan
             except PartnershipPlan.DoesNotExist:
                 if not partnership['expires_on'] or partnership['expires_on'] > date.today():
                     raise
                 logger.warning(f"Expired {partner.name} partnership has non-existing plan: {plan_slug}")
+            else:
+                for benefit in partnership.get('benefits', []):
+                    if benefit['slug'] not in plan_benefits_slugs:
+                        logger.warning(f"Plan {plan_slug!r} doesn't have benefit {benefit['slug']!r}, but {partner.name} has it specified")
             Partnership.create(partner=partner, **partnership)
 
     for partner in Partner.active_listing():

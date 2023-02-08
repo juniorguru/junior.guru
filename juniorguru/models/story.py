@@ -11,7 +11,7 @@ class Story(BaseModel):
     date = DateField(index=True)
     title = CharField()
     image_path = CharField()
-    tags = JSONField(default=lambda: [])
+    tags = JSONField(default=list)
 
     @property
     def publisher(self):
