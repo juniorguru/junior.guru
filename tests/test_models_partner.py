@@ -4,12 +4,12 @@ from datetime import date, datetime
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models.club import ClubUser, ClubMessage
-from juniorguru.models.job import SubmittedJob
+from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.event import Event
-from juniorguru.models.podcast import PodcastEpisode
+from juniorguru.models.job import SubmittedJob
 from juniorguru.models.partner import (Partner, Partnership, PartnershipBenefit,
                                        PartnershipPlan, PartnerStudentSubscription)
+from juniorguru.models.podcast import PodcastEpisode
 
 
 def create_partner(id, **kwargs):

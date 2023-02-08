@@ -2,10 +2,10 @@ from datetime import date
 
 from peewee import CharField, DateField, ForeignKeyField, IntegerField, fn
 
+from juniorguru.lib.club import EMOJI_PARTNER_INTRO, INTRO_CHANNEL
 from juniorguru.models.base import BaseModel
-from juniorguru.models.club import ClubUser, ClubMessage
+from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.job import SubmittedJob
-from juniorguru.lib.club import (INTRO_CHANNEL, EMOJI_PARTNER_INTRO)
 
 
 class Partner(BaseModel):
