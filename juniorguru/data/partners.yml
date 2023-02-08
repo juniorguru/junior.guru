@@ -8,7 +8,7 @@
 
 - name: Processand
   slug: processand
-  url: https://www.ataccama.com/
+  url: https://www.processand.com/
   partnerships:
     - plan: hiring
       starts_on: 2022-06-01
@@ -21,6 +21,12 @@
     - plan: support
       starts_on: 2022-06-01
       expires_on: 2023-05-31
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_pl%C3%A1nuje%C5%A1-hledat-prvn%C3%AD-pr%C3%A1ci-v-it-zkus-pohovor-activity-6986269086892580864-EwIr
+      agreements:
+        - text: Uspořádáme společně minimálně jednu akci pro juniory, která bude probíhat jak online, tak v kancelářích Ataccama.
+          done: https://www.linkedin.com/posts/%C5%A1%C3%A1rka-kousalov%C3%A1_pohovor-nane%C4%8Disto-activity-6975391208445509633-JOhW
 
 - name: STRV
   slug: strv
@@ -29,6 +35,9 @@
     - plan: hiring
       starts_on: 2022-03-29
       expires_on: 2023-03-28
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_a-few-days-ago-ive-got-this-gift-from-strv-activity-7012387898507296768-7EhA
 
 - name: Pure Storage
   slug: purestorage
@@ -37,6 +46,12 @@
     - plan: support
       starts_on: 2022-04-01
       expires_on: 2023-03-31
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_mentoring-activity-6927973476733448193-GNab
+      agreements:
+        - text: Zaměstnanci poskytují v [klubu](https://junior.guru/club) individuální mentoring
+          done: yes
 
 - name: Jetveo
   slug: jetveo
@@ -45,6 +60,12 @@
     - plan: support
       starts_on: 2022-02-17
       expires_on: 2023-03-31
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_jetveo-low-code-platforma-pro-c-kdo-activity-6911626840260374529-5D2g
+      agreements:
+        - text: Má prostor v klubu prezentovat [svou low-code platformu](https://jetveo.io/), která by mohla být [zajímavá pro juniory](https://jetveo.io/cs/blog/articles/jakub-interview).
+          done: https://junior.guru/events/#2022-02-23T18-00-00
 
 - name: wf tech
   slug: wftech
@@ -53,6 +74,9 @@
     - plan: support
       starts_on: 2021-11-11
       expires_on: 2022-11-10
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_ops-devops-monitoring-activity-6868446196663418880-eZD2
 
 - name: CDN77.com
   slug: cdn77com
@@ -61,6 +85,9 @@
     - plan: branding
       starts_on: 2021-11-01
       expires_on: 2022-10-31
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_mezi-firmami-kter%C3%A9-podporuj%C3%AD-klub-https-activity-6863372764594667520-gAJ5
 
 - name: Credo Ventures
   slug: credo
@@ -69,6 +96,9 @@
     - plan: hiring
       starts_on: 2021-08-03
       expires_on: 2022-10-01
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_mezi-firmami-kter%C3%A9-podporuj%C3%AD-klub-https-activity-6843788721234477056-6Iqy
 
 - name: pipetail.io
   slug: pipetail
@@ -77,6 +107,9 @@
     - plan: support
       starts_on: 2021-06-25
       expires_on: 2022-10-01
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_individu%C3%A1ln%C4%9B-u%C5%BE-marek-bart%C3%ADk-a-stepan-vrany-activity-6820233507944636416-dG73
 
 - name: Skoumal
   slug: skoumal
@@ -84,6 +117,11 @@
   partnerships:
     - plan: support
       starts_on: 2021-02-01
+      agreements:
+        - text: Nemusí za partnerství nic platit jako vděčnost za to, že šlo historicky o první partnerství s klubem.
+          done: yes
+        - text: Když Skoumal díky junior.guru získá zajímavé benefity (např. nové zaměstnance), může mít chuť jednorázově finančně junior.guru podpořit.
+          done: yes
 
 - name: Software Development Academy
   slug: sdacademy
@@ -93,6 +131,12 @@
     - plan: support
       starts_on: 2021-06-18
       expires_on: 2022-10-01
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_sdacademy-activity-6817696791581007872-FKZf
+      agreements:
+        - text: Posílá do klubu své studenty, aby tam mohli využívat kariérového poradenství a dalších benefitů komunity. Proplácí jim první 3 měsíce. Studenti pak mohou odejít, nebo se rozhodnou klub si dál platit ze svého. Honza Javorek jednou za čas posílá fakturu a evidenci proplácených členství.
+          done: yes
 
 - name: Mews
   slug: mews
@@ -101,6 +145,13 @@
     - plan: support
       starts_on: 2021-05-31
       expires_on: 2023-05-30
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_mentoring-discord-activity-6997918083440861184-A4oH
+      agreements:
+        - text: Zaměstnanci poskytují v [klubu](https://junior.guru/club) individuální mentoring
+        - text: Podílí se na rozšířené pomoci pro lidi, kteří na junior.guru žádají o [stipendium](https://junior.guru/club).
+          done: yes
 
 - name: Lynt
   slug: lynt
@@ -109,6 +160,9 @@
     - plan: support
       starts_on: 2021-03-17
       expires_on: 2023-04-15
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_afjtvrtkon-wordcamp-wordpress-activity-6925453460544856064-5Dqu
 
 - name: Inuits
   slug: inuits
@@ -117,6 +171,9 @@
     - plan: support
       starts_on: 2021-04-02
       expires_on: 2023-06-01
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_skv%C4%9Bl%C3%A1-zpr%C3%A1va-inuits-jsou-s-n%C3%A1mi-v-klubu-activity-6797403072671887360-mOSO
 
 - name: ENGETO Academy
   slug: engeto
@@ -125,6 +182,16 @@
     - plan: support
       starts_on: 2021-05-14
       expires_on: 2023-06-30
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_engeto-academy-se-rozhodla-podpo%C5%99it-klub-activity-6803201281570725888-6nI8
+      agreements:
+        - text: Vytvoříme anketu mezi juniory. Společně připravíme podklady. ENGETO Academy zajistí provoz ankety a kontrolu ankety odborníkem předtím, než ji spustíme. Výsledná data budou mít k dispozici jak junior.guru, tak ENGETO Academy.
+        - text: Honza Javorek využije svého vlivu v komunitě a pokusí se získat zpětnou vazbu na [novou platformu od ENGETO Academy](https://e-learning.engeto.cz/kurz/python-uvod-do-programovani), především ve srovnání s [naucse.python.cz](https://naucse.python.cz/).
+        - text: Vytvoříme video průvodce nováčka v IT. Společně připravíme podklady. ENGETO Academy zajistí produkci a natočí většinu videí. Honza Javorek natočí videa, která jsou obsahově neutrální a nemají nic společného s ENGETO Academy kurzy. ENGETO Academy videa nabídne svým studentům a bude odkazovat na junior.guru. Honza Javorek vloží videa do [příručky](https://junior.guru/handbook/) a bude odkazovat na kompletní sérii na YouTube.
+          done: https://www.youtube.com/playlist?list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI
+        - text: Honza Javorek se poptá ve svém okolí, zda by někdo nechtěl dělat lektora pro ENGETO Academy. Pokud takto najde vhodné lektory, může dostat provizi.
+          done: https://www.linkedin.com/posts/honzajavorek_u%C4%8Dit-tvo%C5%99it-materi%C3%A1ly-nebo-t%C5%99eba-pom%C3%A1hat-activity-6976126938511753216-1Diu
 
 - name: Creatiweb
   slug: creatiweb
@@ -141,6 +208,11 @@
   partnerships:
     - plan: support
       starts_on: 2021-02-01
+      agreements:
+        - text: Dan Srb v [klubu](https://junior.guru/club) moderuje a radí s frontendem
+          done: yes
+        - text: Využívá [klub](https://junior.guru/club) pro komunikaci se svými klienty (studenty)
+          done: yes
 
 - name: Rector
   slug: rector
@@ -165,6 +237,9 @@
     - plan: support
       starts_on: 2020-09-01
       expires_on: 2021-02-28
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_p%C5%99%C3%ADru%C4%8Dka-o-hled%C3%A1n%C3%AD-prvn%C3%AD-pr%C3%A1ce-v-it-activity-6706500069002141696-JHY8
 
 - name: Fakturoid
   slug: fakturoid
@@ -173,3 +248,6 @@
     - plan: branding
       starts_on: 2020-09-01
       expires_on: 2023-03-31
+      benefits:
+        - slug: welcome_social
+          done: https://www.linkedin.com/posts/honzajavorek_faktury-rubyonrails-ruby-activity-6914182951429648384-hRoV

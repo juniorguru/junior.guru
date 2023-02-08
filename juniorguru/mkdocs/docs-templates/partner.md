@@ -82,4 +82,4 @@ Stránka popisující partnerství junior.guru s firmou {{ partner.name }}.
 - {{ partnership.starts_on }}, {{ partnership.expires_on }}
 {% endfor %}
 
-<!-- výpis minulých partnerství -->
+<!-- výpis minulých partnerství, disclaimer že do ledna 2023 jsem jenom prodlužoval a byl to chaos -->

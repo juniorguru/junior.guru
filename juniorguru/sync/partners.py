@@ -31,6 +31,18 @@ YAML_SCHEMA = Seq(
                 'plan': Str(),
                 'starts_on': Date(),
                 Optional('expires_on'): Date(),
+                Optional('benefits'): Seq(
+                    Map({
+                        'slug': Str(),
+                        Optional('done'): Url() | Bool(),
+                    })
+                ),
+                Optional('agreements'): Seq(
+                    Map({
+                        'text': Str(),
+                        Optional('done'): Url() | Bool(),
+                    })
+                ),
             }),
         ),
     })
