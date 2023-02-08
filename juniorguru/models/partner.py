@@ -38,7 +38,8 @@ class Partner(BaseModel):
             return []
         return ClubUser.select() \
             .join(self.__class__, on=(ClubUser.coupon == self.__class__.student_coupon)) \
-            .where((ClubUser.is_member == True) & (ClubUser.coupon == self.student_coupon))
+            .where((ClubUser.is_member == True) & (ClubUser.coupon == self.student_coupon)) \
+            .order_by(ClubUser.display_name)
 
     @property
     def list_student_subscriptions_billable(self):

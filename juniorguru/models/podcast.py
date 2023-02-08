@@ -10,7 +10,7 @@ from juniorguru.models.partner import Partner
 
 class PodcastEpisode(BaseModel):
     id = CharField(primary_key=True)
-    publish_on = DateTimeField(index=True)
+    publish_on = DateTimeField(unique=True)
     title = CharField()
     media_url = CharField()
     media_size = IntegerField()

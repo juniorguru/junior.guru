@@ -1,11 +1,13 @@
 import uuid
-from datetime import date
+from datetime import date, datetime
 
 import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.models.club import ClubUser, ClubMessage
 from juniorguru.models.job import SubmittedJob
+from juniorguru.models.event import Event
+from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.partner import (Partner, Partnership, PartnershipBenefit,
                                        PartnershipPlan, PartnerStudentSubscription)
 
@@ -35,7 +37,7 @@ def create_plan(slug, benefit_slugs=None):
     return plan
 
 
-def setup_hierarchy(plan0, plan1):
+def setup_plan_hierarchy(plan0, plan1):
     plan0.hierarchy_rank = 0
     plan0.save()
     plan1.includes = plan0
@@ -61,9 +63,9 @@ def create_student_subscription(partner, **kwargs):
 
 @pytest.fixture
 def db_connection():
-    models = [ClubUser, SubmittedJob,
-              Partner, PartnerStudentSubscription,
-              Partnership, PartnershipPlan, PartnershipBenefit]
+    models = [Partner, PartnerStudentSubscription,
+              Partnership, PartnershipPlan, PartnershipBenefit,
+              ClubUser, ClubMessage, SubmittedJob, Event, PodcastEpisode]
     db = SqliteDatabase(':memory:')
     with db:
         db.bind(models)
@@ -85,6 +87,12 @@ def plan_top():
 @pytest.fixture
 def plan_handbook():
     return create_plan('handbook', ['logo_handbook', 'flowers', 'balloon'])
+
+
+def test_partner_name_markdown_bold(db_connection):
+    partner = create_partner('1', name='Banana Company')
+
+    assert partner.name_markdown_bold == '**Banana Company**'
 
 
 def test_partner_active_partnership(db_connection):
@@ -158,7 +166,7 @@ def test_partner_active_listing_skips_planned(db_connection):
 
 
 def test_partner_active_listing_sorts_by_hierarchy_rank_then_by_name(db_connection, plan_basic, plan_top):
-    setup_hierarchy(plan_basic, plan_top)
+    setup_plan_hierarchy(plan_basic, plan_top)
     today = date(2021, 5, 2)
     partner1 = create_partner('1', name='Company B')
     create_partnership(partner1, date(2021, 4, 1), None, plan=plan_basic)
@@ -286,27 +294,27 @@ def test_partner_active_schools_listing(db_connection):
 
 
 def test_partner_list_members(db_connection):
-    member1 = ClubUser.create(display_name='Alice', mention='<@111>', coupon='XEROX', tag='abc#1234')
-    member2 = ClubUser.create(display_name='Bob', mention='<@222>', coupon='XEROX', tag='abc#1234')
+    member1 = ClubUser.create(display_name='Bob', mention='<@111>', coupon='XEROX', tag='abc#1234')
+    member2 = ClubUser.create(display_name='Alice', mention='<@222>', coupon='XEROX', tag='abc#1234')
     member3 = ClubUser.create(display_name='Celine', mention='<@333>', coupon='ZALANDO', tag='abc#1234')  # noqa
     partner = create_partner('1', coupon='XEROX')
 
-    assert set(partner.list_members) == {member1, member2}
+    assert list(partner.list_members) == [member2, member1]
 
 
 def test_partner_list_student_members(db_connection):
-    member1 = ClubUser.create(display_name='Alice', mention='<@111>', coupon='XEROXSTUDENT', tag='abc#1234')
-    member2 = ClubUser.create(display_name='Bob', mention='<@222>', coupon='XEROXSTUDENT', tag='abc#1234')
+    member1 = ClubUser.create(display_name='Bob', mention='<@111>', coupon='XEROXSTUDENT', tag='abc#1234')
+    member2 = ClubUser.create(display_name='Alice', mention='<@222>', coupon='XEROXSTUDENT', tag='abc#1234')
     member3 = ClubUser.create(display_name='Celine', mention='<@333>', coupon='ZALANDOSTUDENT', tag='abc#1234')  # noqa
     partner = create_partner('1', student_coupon='XEROXSTUDENT')
 
-    assert set(partner.list_student_members) == {member1, member2}
+    assert list(partner.list_student_members) == [member2, member1]
 
 
 def test_partner_list_jobs(db_connection):
-    def create_job(id, company_name):
+    def create_job(id, company_name, title='Title'):
         return SubmittedJob.create(id=id,
-                                   title='...',
+                                   title=title,
                                    posted_on=date(2023, 2, 14),
                                    expires_on=date(2024, 2, 14),
                                    url=f'https://junior.guru/jobs/{id}/',
@@ -314,13 +322,48 @@ def test_partner_list_jobs(db_connection):
                                    company_url='https://example.com/',
                                    description_html='...',
                                    lang='cs')
-    job1 = create_job('1', 'Harley-Davidson')
+    job1 = create_job('1', 'Harley-Davidson', title='Job XYZ')
     job2 = create_job('2', 'Harley Davidson')  # noqa
-    job3 = create_job('3', 'Harley-Davidson')
+    job3 = create_job('3', 'Harley-Davidson', title='Job ABC')
     job4 = create_job('4', 'harley-davidson')  # noqa
     partner = create_partner('1', name='Harley-Davidson')
 
-    assert set(partner.list_jobs) == {job1, job3}
+    assert list(partner.list_jobs) == [job3, job1]
+
+
+def test_partner_list_events(db_connection):
+    def create_event(id, partner=None):
+        return Event.create(id=id,
+                            partner=partner,
+                            title='...',
+                            start_at=datetime(2023, 1, 1),
+                            description='...',
+                            bio='...',
+                            bio_name='...')
+    partner = create_partner('1')
+    event1 = create_event('1')  # noqa
+    event2 = create_event('2', partner)
+    event3 = create_event('3', partner)
+    assert set(partner.list_events) == {event2, event3}
+
+
+def test_partner_list_podcast_episodes(db_connection):
+    def create_episode(id, partner=None):
+        return PodcastEpisode.create(id=id,
+                                     partner=partner,
+                                     publish_on=date(2023, 1, int(id)),
+                                     title='...',
+                                     media_url='...',
+                                     media_size=42,
+                                     media_type='...',
+                                     media_duration_s=42,
+                                     description='...',
+                                     avatar_path='...')
+    partner = create_partner('1')
+    episode1 = create_episode('1')  # noqa
+    episode2 = create_episode('2', partner)
+    episode3 = create_episode('3', partner)
+    assert set(partner.list_podcast_episodes) == {episode2, episode3}
 
 
 def test_partner_get_by_slug(db_connection):
@@ -363,18 +406,26 @@ def test_plan_get_by_slug_doesnt_exist(db_connection):
 
 
 def test_plan_hierarchy(db_connection, plan_basic, plan_top):
-    setup_hierarchy(plan_basic, plan_top)
+    setup_plan_hierarchy(plan_basic, plan_top)
 
     assert list(plan_top.hierarchy) == [plan_basic, plan_top]
 
 
 def test_plan_benefits_all(db_connection, plan_basic, plan_top):
-    setup_hierarchy(plan_basic, plan_top)
+    setup_plan_hierarchy(plan_basic, plan_top)
 
     assert [benefit.slug for benefit in plan_top.benefits()] == ['food', 'drinks', 'flowers', 'balloon']
 
 
 def test_plan_benefits_own(db_connection, plan_basic, plan_top):
-    setup_hierarchy(plan_basic, plan_top)
+    setup_plan_hierarchy(plan_basic, plan_top)
 
     assert [benefit.slug for benefit in plan_top.benefits(all=False)] == ['flowers', 'balloon']
+
+
+def test_partnership_remaining_days(db_connection):
+    today = date(2022, 12, 24)
+    partner = create_partner('1')
+    partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15))
+
+    assert partnership.remaining_days(today=today) == 22

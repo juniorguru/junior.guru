@@ -84,8 +84,6 @@ def main():
 
     logger.info('Saving to database')
     for record in records:
-        if 'partner' in record:
-            record['partner'] = Partner.get_by_slug(record['partner'])
         PodcastEpisode.create(**record)
 
     logger.info('Announcing in Discord')
@@ -101,7 +99,7 @@ def process_episode(yaml_record):
     media_type = 'audio/mpeg'
 
     avatar_path = yaml_record['avatar_path']
-    logger_ep.info(f'Checking {avatar_path}')
+    logger_ep.debug(f'Checking {avatar_path}')
     image_path = IMAGES_DIR / avatar_path
     if not image_path.exists():
         raise ValueError(f"Episode references '{image_path}', but it doesn't exist")
@@ -128,6 +126,15 @@ def process_episode(yaml_record):
             return None
         raise
 
+    logger_ep.debug('Figuring out partner')
+    if 'partner' in yaml_record:
+        with db.connection_context():
+            partner = Partner.get_by_slug(yaml_record['partner'])
+        logger_ep.info(f'Partner: {partner.name}')
+    else:
+        partner = None
+
+    logger_ep.debug('Preparing data')
     data = dict(id=id,
                 publish_on=yaml_record['publish_on'],
                 title=yaml_record['title'],
@@ -136,9 +143,10 @@ def process_episode(yaml_record):
                 media_url=media_url,
                 media_size=media_size,
                 media_type=media_type,
-                media_duration_s=media_duration_s)
+                media_duration_s=media_duration_s,
+                partner=partner)
 
-    logger_ep.info('Rendering poster')
+    logger_ep.debug('Rendering poster')
     episode = PodcastEpisode(**data)
     # The _dirty set causes image cache miss as every time the set gets
     # pickled and serialized to string in different ordering. We won't be
