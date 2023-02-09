@@ -1,3 +1,11 @@
+- name: Glance Media
+  slug: glancemedia
+  url: https://www.glancemedia.cz/
+  partnerships:
+    - plan: hiring
+      starts_on: 2023-02-09
+      expires_on: 2024-02-08
+
 - name: Green Fox Academy
   slug: greenfox
   url: https://www.greenfoxacademy.cz/
