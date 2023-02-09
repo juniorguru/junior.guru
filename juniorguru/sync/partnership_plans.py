@@ -23,7 +23,6 @@ YAML_SCHEMA = Seq(
                 'text': Str(),
                 'icon': Str(),
                 Optional('slug'): Str(),
-                Optional('quantity'): Int(),
             }),
         ),
         'price': Int(),

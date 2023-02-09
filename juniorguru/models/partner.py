@@ -181,7 +181,6 @@ class PartnershipBenefit(BaseModel):
     icon = CharField()
     plan = ForeignKeyField(PartnershipPlan, backref='list_benefits')
     slug = CharField(unique=True)
-    quantity = IntegerField(default=1)
 
 
 class Partnership(BaseModel):
@@ -198,14 +197,14 @@ class Partnership(BaseModel):
         else:
             return None
 
-    def evaluate_benefits(self, functions=None):
+    def evaluate_benefits(self, evaluators=None):
         registry = {benefit['slug']: bool(benefit.get('done'))
                     for benefit
                     in self.benefits_registry}
-        if functions:
+        if evaluators:
             registry = {slug: fn(self)
                         for slug, fn
-                        in functions.items()} | registry
+                        in evaluators.items()} | registry
         return [dict(slug=benefit.slug,
                      icon=benefit.icon,
                      text=benefit.text,

@@ -6,8 +6,7 @@
       slug: logo_club
     - text: 15 vstupů do klubu
       icon: chat
-      slug: employees
-      quantity: 15
+      slug: members
     - text: Oznámení o spolupráci v klubu
       icon: balloon
       slug: welcome_club

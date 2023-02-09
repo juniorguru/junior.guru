@@ -463,15 +463,15 @@ def test_partnership_evaluate_benefits_registry(db_connection):
     ]
 
 
-def test_partnership_evaluate_benefits_functions(db_connection):
+def test_partnership_evaluate_benefits_evaluators(db_connection):
     partner = create_partner('1')
     plan = create_plan('awesome', ['foo', 'bar', 'moo', 'wow'])
     partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15),
                                      plan=plan)
-    functions = dict(foo=lambda partnership: True,
+    evaluators = dict(foo=lambda partnership: True,
                      wow=lambda partnership: False)
 
-    assert partnership.evaluate_benefits(functions) == [
+    assert partnership.evaluate_benefits(evaluators) == [
         dict(slug='foo', icon='foo-circle', text="Benefit 'foo'", done=True),
         dict(slug='bar', icon='bar-circle', text="Benefit 'bar'", done=False),
         dict(slug='moo', icon='moo-circle', text="Benefit 'moo'", done=False),
@@ -479,7 +479,7 @@ def test_partnership_evaluate_benefits_functions(db_connection):
     ]
 
 
-def test_partnership_evaluate_benefits_registry_overrides_functions(db_connection):
+def test_partnership_evaluate_benefits_registry_overrides_evaluators(db_connection):
     partner = create_partner('1')
     plan = create_plan('awesome', ['foo', 'moo'])
     partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15),
@@ -488,10 +488,10 @@ def test_partnership_evaluate_benefits_registry_overrides_functions(db_connectio
                                         dict(slug='foo', done=True),
                                         dict(slug='moo', done=False),
                                      ])
-    functions = dict(foo=lambda partnership: False,
+    evaluators = dict(foo=lambda partnership: False,
                      moo=lambda partnership: True)
 
-    assert partnership.evaluate_benefits(functions) == [
+    assert partnership.evaluate_benefits(evaluators) == [
         dict(slug='foo', icon='foo-circle', text="Benefit 'foo'", done=True),
         dict(slug='moo', icon='moo-circle', text="Benefit 'moo'", done=False),
     ]
