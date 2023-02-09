@@ -189,6 +189,7 @@ class Partnership(BaseModel):
     starts_on = DateField(index=True)
     expires_on = DateField(null=True, index=True)
     benefits_registry = JSONField(default=list)
+    agreements_registry = JSONField(default=list)
 
     def remaining_days(self, today=None):
         today = today or date.today()

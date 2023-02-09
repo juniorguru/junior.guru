@@ -463,6 +463,20 @@ def test_partnership_evaluate_benefits_registry(db_connection):
     ]
 
 
+def test_partnership_evaluate_benefits_registry_urls(db_connection):
+    partner = create_partner('1')
+    plan = create_plan('awesome', ['foo'])
+    partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15),
+                                     plan=plan,
+                                     benefits_registry=[
+                                        dict(slug='foo', done='https://example.com'),
+                                     ])
+
+    assert partnership.evaluate_benefits() == [
+        dict(slug='foo', icon='foo-circle', text="Benefit 'foo'", done=True),
+    ]
+
+
 def test_partnership_evaluate_benefits_evaluators(db_connection):
     partner = create_partner('1')
     plan = create_plan('awesome', ['foo', 'bar', 'moo', 'wow'])

@@ -19,6 +19,7 @@ from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.story import Story
 from juniorguru.models.topic import Topic
 from juniorguru.models.transaction import Transaction
+from juniorguru.lib.benefits_evaluators import BENEFITS_EVALUATORS
 
 
 NOW = arrow.utcnow()
@@ -124,6 +125,9 @@ def on_docs_context(context):
     context['charts_events'] = charts.per_month(Event.count_by_month, club_charts_months)
     context['charts_events_ttm'] = charts.per_month(Event.count_by_month_ttm, club_charts_months)
     context['charts_events_women_ptc_ttm'] = charts.per_month(EventSpeaking.women_ptc_ttm, club_charts_months)
+
+    # open/*
+    context['benefits_evaluators'] = BENEFITS_EVALUATORS
 
     # podcast.md, handbook/cv.md
     context['podcast_episodes'] = PodcastEpisode.listing()

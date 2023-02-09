@@ -1,7 +1,6 @@
 {% from 'macros.html' import note, logo with context %}
 
 {% set active_partnership = partner.active_partnership() %}
-{% set active_plan = active_partnership.plan %}
 
 
 # {{ partner.name }}
@@ -14,10 +13,10 @@ Stránka popisující partnerství junior.guru s firmou {{ partner.name }}.
 
 ## Tarif
 
-{{ active_plan.name }}
+{{ active_partnership.plan.name }}
 
-{% for benefit in active_plan.benefits() %}
-- {{ benefit.icon|icon }} {{ benefit.text }}
+{% for benefit in active_partnership.evaluate_benefits(benefits_evaluators) %}
+- {{ benefit.icon|icon }} {{ benefit.text }} {% if benefit.done %}✅{% else %}❌{% endif %}
 {% endfor %}
 
 
