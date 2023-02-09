@@ -8,6 +8,7 @@ from urllib.parse import urljoin
 import arrow
 
 from juniorguru.lib import charts
+from juniorguru.lib.benefits_evaluators import BENEFITS_EVALUATORS
 from juniorguru.lib.club import DEFAULT_CHANNELS_HISTORY_SINCE
 from juniorguru.mkdocs.thumbnail import thumbnail
 from juniorguru.models.base import db
@@ -19,7 +20,6 @@ from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.story import Story
 from juniorguru.models.topic import Topic
 from juniorguru.models.transaction import Transaction
-from juniorguru.lib.benefits_evaluators import BENEFITS_EVALUATORS
 
 
 NOW = arrow.utcnow()
