@@ -19,12 +19,19 @@ Stránka popisující partnerství junior.guru s firmou {{ partner.name }}.
 - {{ benefit.icon|icon }} {{ benefit.text }} {% if benefit.done %}✅{% else %}❌{% endif %}
 {% endfor %}
 
+## Tarif
 
-## Logo
+{{ active_partnership.plan.name }}
 
-{{ logo(partner.name, partner.logo_path, partner.url) }}
+{% for benefit in active_partnership.evaluate_benefits(benefits_evaluators) %}
+- {{ benefit.icon|icon }} {{ benefit.text }} {% if benefit.done %}✅{% else %}❌{% endif %}
+{% endfor %}
 
-<!-- Logo na webu -->
+## Další ujednání
+
+{% for agreement in active_partnership.agreements_registry %}
+- {{ agreement.text }} {% if agreement.done %}✅{% else %}❌{% endif %}
+{% endfor %}
 
 ## Do kdy
 
