@@ -66,6 +66,11 @@ class Partner(BaseModel):
             .order_by(Partnership.starts_on.desc()) \
             .first()
 
+    def first_partnership(self):
+        return self.list_partnerships \
+            .order_by(Partnership.starts_on) \
+            .first()
+
     @property
     def intro(self):
         return ClubMessage.last_bot_message(INTRO_CHANNEL,

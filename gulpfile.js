@@ -216,7 +216,7 @@ async function watchWeb() {
 }
 
 async function serveWeb() {
-  connect.server({ root: 'public/', port: 5000, livereload: true });
+  connect.server({ root: 'public/', port: 5042, livereload: true });
   gulp.watch('public/', { delay: 100 }).on('change', (path) =>
     gulp.src(path, { read: false }).pipe(connect.reload())
   );

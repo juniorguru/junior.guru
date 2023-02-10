@@ -120,6 +120,20 @@ def test_partner_active_partnership_no_partnership(db_connection):
     assert partner.active_partnership() is None
 
 
+def test_partner_first_partnership(db_connection):
+    partner = create_partner('1')
+    partnership1 = create_partnership(partner, date(2020, 12, 1), date(2021, 1, 1))
+    partnership2 = create_partnership(partner, date(2021, 4, 1), None)  # noqa
+
+    assert partner.first_partnership() == partnership1
+
+
+def test_partner_first_partnership_no_partnership(db_connection):
+    partner = create_partner('1')
+
+    assert partner.first_partnership() is None
+
+
 def test_partner_active_listing(db_connection):
     today = date(2021, 5, 2)
     partner1 = create_partner('1')

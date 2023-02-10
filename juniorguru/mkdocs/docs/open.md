@@ -279,19 +279,23 @@ Služby, které junior.guru firmě prokazuje, jsou jasně ohraničeny položkami
 Nikdy nedoporučuji konkrétní kurzy a snažím se ve svých vyjádřeních měřit všem stejně, nezávisle na tom, zda si na junior.guru něco platí.
 Aby bylo vše maximálně transparentní, uvádím zde podrobnosti ke každému uzavřenému partnerství.
 
-<table class="table standout">
+<div class="table-responsive standout"><table class="table">
   <tr>
     <th>Firma</th>
-    <th>Balíček</th>
-    <th>Do</th>
+    <th>Tarif</th>
+    <th>Skončí</th>
   </tr>
   {% for partner in partners %}
     {% set partnership = partner.active_partnership() %}
     {% set plan = partnership.plan %}
     <tr>
-      <th><a href="{{ pages|docs_url('open/' + partner.slug + '.md')|url }}">{{ partner.name }}</a></th>
       <td>
-        {{ plan.name }}
+        <a href="{{ pages|docs_url('open/' + partner.slug + '.md')|url }}">{{ partner.name }}</a>
+      </td>
+      <td>
+        {% for _ in range(plan.hierarchy_rank + 1) %}
+          {{ 'star'|icon }}
+        {% endfor %}
       </td>
       <td>
         {% if partnership.expires_on %}
@@ -302,9 +306,9 @@ Aby bylo vše maximálně transparentní, uvádím zde podrobnosti ke každému 
       </td>
     </tr>
   {% endfor %}
-</table>
+</table></div>
 
-Ukončená partnerství: {% for partner in partners_expired %}{{ partner_link(partner, 'open') }}{% if not loop.last %}, {% endif %}{% endfor %}.
+Ukončená partnerství: {% for partner in partners_expired %}{{ partner_link(partner.name, partner.url, 'open') }}{% if not loop.last %}, {% endif %}{% endfor %}.
 
 ## Členství v klubu
 

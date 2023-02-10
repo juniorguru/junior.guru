@@ -7,7 +7,7 @@
     - text: 15 vstupů do klubu
       icon: chat
       slug: members
-    - text: Oznámení o spolupráci v klubu
+    - text: Oznámení partnerství v klubu
       icon: balloon
       slug: welcome_club
   price: 15000
@@ -25,7 +25,7 @@
     - text: Vyladění textu inzerátu
       icon: pencil-square
       slug: job_description
-    - text: Oznámení o spolupráci na sociálních sítích
+    - text: Oznámení partnerství na sociálních sítích
       icon: megaphone
       slug: welcome_social
   price: 40000

@@ -26,9 +26,9 @@
 {% endmacro %}
 
 
-{% macro figure(filename, alt, lazy=True, caption=None, class=None) %}
+{% macro figure(path, alt, width, height, lazy=True, caption=None, class=None) %}
 <figure class="figure{% if class %} {{ class }}{% endif %}">
-  {{ img('static/images/figures/' + filename, alt, class='figure-img img-fluid', lazy=lazy) }}
+  {{ img('static/images/' + path, alt, width, height, class='figure-img img-fluid', lazy=lazy) }}
   {% if caption %}
     <figcaption class="figure-caption">{{ caption|md|remove_p }}</figcaption>
   {% elif caller %}
@@ -245,9 +245,9 @@
 {% endmacro %}
 
 
-{% macro partner_link(partner, utm_medium) -%}
-  <a href="{{ partner.url }}" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="{{ utm_medium }}" data-metrics-utm-campaign="partnership">
-    {{- partner.name -}}
+{% macro partner_link(text, url, utm_medium) -%}
+  <a href="{{ url }}" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="{{ utm_medium }}" data-metrics-utm-campaign="partnership">
+    {{- text -}}
   </a>
 {%- endmacro %}
 
