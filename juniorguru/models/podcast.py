@@ -1,8 +1,8 @@
 import math
-from datetime import date
+from datetime import date, datetime, time
+from zoneinfo import ZoneInfo
 
-import arrow
-from peewee import CharField, DateTimeField, ForeignKeyField, IntegerField
+from peewee import CharField, DateField, ForeignKeyField, IntegerField
 
 from juniorguru.models.base import BaseModel
 from juniorguru.models.partner import Partner
@@ -10,7 +10,7 @@ from juniorguru.models.partner import Partner
 
 class PodcastEpisode(BaseModel):
     id = CharField(primary_key=True)
-    publish_on = DateTimeField(unique=True)
+    publish_on = DateField(unique=True)
     title = CharField()
     media_url = CharField()
     media_size = IntegerField()
@@ -43,10 +43,9 @@ class PodcastEpisode(BaseModel):
 
     @property
     def publish_at_prg(self):
-        return arrow.get(self.publish_on) \
-            .replace(minute=42, second=42) \
-            .to('Europe/Prague') \
-            .datetime
+        return datetime.combine(self.publish_on,
+                                time(hour=1, minute=42, second=42),
+                                tzinfo=ZoneInfo('Europe/Prague'))
 
     @property
     def media_duration_m(self):
