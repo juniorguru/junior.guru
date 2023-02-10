@@ -19,14 +19,6 @@ Stránka popisující partnerství junior.guru s firmou {{ partner.name }}.
 - {{ benefit.icon|icon }} {{ benefit.text }} {% if benefit.done %}✅{% else %}❌{% endif %}
 {% endfor %}
 
-## Tarif
-
-{{ active_partnership.plan.name }}
-
-{% for benefit in active_partnership.evaluate_benefits(benefits_evaluators) %}
-- {{ benefit.icon|icon }} {{ benefit.text }} {% if benefit.done %}✅{% else %}❌{% endif %}
-{% endfor %}
-
 ## Další ujednání
 
 {% for agreement in active_partnership.agreements_registry %}
