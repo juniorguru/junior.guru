@@ -45,7 +45,7 @@
       <b>{{ start_days }} dní</b>&nbsp;&nbsp;&nbsp;
     </td>
     <td>
-      <small>inzerát schválen {{ ':%-d.%-m.%Y'.format(start_at) }}</small>
+      <small>inzerát schválen {{ '{:%-d.%-m.%Y}'.format(start_at) }}</small>
     </td>
   </tr>
   <tr>
@@ -56,7 +56,7 @@
       <b>{{ end_days }} dní</b>&nbsp;&nbsp;&nbsp;
     </td>
     <td>
-      <small>inzerát vyprší {{ ':%-d.%-m.%Y'.format(event.end_at) }}</small>
+      <small>inzerát vyprší {{ '{:%-d.%-m.%Y}'.format(end_at) }}</small>
     </td>
   </tr>
   <tr>

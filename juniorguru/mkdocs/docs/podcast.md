@@ -50,7 +50,7 @@ Poučky praví, že podcast se stává kvalitním a slavným, až když se auto�
   <h3>{{ episode.title_numbered }}</h3>
   {{ img('static/images/' + episode.avatar_path, episode.title, 100, 100, class='podcast-episode-image') }}
   <p>
-    <strong>{{ ':%-d.%-m.%Y'.format(episode.publish_on) }}</strong>
+    <strong>{{ '{:%-d.%-m.%Y}'.format(episode.publish_on) }}</strong>
     — {{ episode.description }}
   </p>
   {{ podcast_player(episode, class='podcast-episode-player') }}
