@@ -272,11 +272,10 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
 
 ## Firemní partnerství
 
-Firmy mohou spolupracovat s junior.guru na základě zakoupeného balíčku podle [ceníku](pricing.md).
-Partnerství domlouvám osobně a je vždy na rok, potom s firmou domlouváme prodloužení.
+Firmy mohou uzavírat s junior.guru partnerství na základě tarifu zakoupeného podle [ceníku](pricing.md).
+Partnerství domlouvám osobně a je vždy na rok, potom s firmou jednáme o prodloužení.
 
-Služby, které junior.guru firmě prokazuje, jsou jasně ohraničeny položkami v ceníku.
-Nikdy nedoporučuji konkrétní kurzy a snažím se ve svých vyjádřeních měřit všem stejně, nezávisle na tom, zda si na junior.guru něco platí.
+Nikdy nedoporučuji konkrétní kurzy a snažím se ve svých vyjádřeních měřit všem firmám stejně.
 Aby bylo vše maximálně transparentní, uvádím zde podrobnosti ke každému uzavřenému partnerství.
 
 <div class="table-responsive standout"><table class="table">
