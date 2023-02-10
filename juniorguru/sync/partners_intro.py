@@ -55,7 +55,7 @@ async def discord_task(client):
                 if partnership.starts_on < COMPANIES_INTRO_LAUNCH_ON and (date.today() - partnership.starts_on).days > 30:
                     content += (
                         ' 🐣 Sice to píšu jako novinku, ale ve skutečnosti klub podporují už od '
-                        f'{partnership.starts_on.day}.{partnership.starts_on.month}.{partnership.starts_on.year}. '
+                        f'{partnership.starts_on:%-d.%-m.%Y}. '
                         'Jenže tehdy jsem bylo malé kuřátko, které ještě neumělo vítat firmy.'
                     )
 

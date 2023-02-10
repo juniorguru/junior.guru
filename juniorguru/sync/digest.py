@@ -39,7 +39,7 @@ async def discord_task(client):
 
         if DISCORD_MUTATIONS_ENABLED:
             content = [
-                f"🔥 **{DIGEST_LIMIT} nej příspěvků za uplynulý týden (od {since_date.day}.{since_date.month}.)**",
+                f"🔥 **{DIGEST_LIMIT} nej příspěvků za uplynulý týden (od {since_date:%-d.%-m.})**",
                 "",
                 "Pokud je něco zajímavé nebo ti to pomohlo, dej tomu palec 👍, srdíčko ❤️, očička 👀, apod. Oceníš autory a pomůžeš tomu, aby se příspěvek mohl objevit i tady. Někomu, kdo nemá čas procházet všechno, co se v klubu napíše, se může tento přehled hodit.",
             ]

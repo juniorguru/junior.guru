@@ -62,7 +62,7 @@ Klub pro začátečníky v programování, průvodce programováním pro samouky
           <small class="stories_details">
             {{ story.publisher }}
             &mdash;
-            {{ story.date.month }}/{{ story.date.year }}
+            {{ '%-m/%Y'.format(story.date) }}
           </small>
         </div>
         <img class="stories__image" src="{{ url_for('static', filename=story.image_path) }}" width="100" loading="lazy" alt="Fotka obličeje">

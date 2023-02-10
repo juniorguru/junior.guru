@@ -28,7 +28,7 @@
       </div>
       <div class="teaser">
         <p class="teaser-text">
-          {{ event.start_at|weekday|capitalize }} <strong>{{ event.start_at.day }}. {{ event.start_at.month }}. {{ event.start_at.year }}</strong>, začátek v <strong>{{ event.start_at|local_time }}</strong>
+          {{ event.start_at|weekday|capitalize }} <strong>{{ ':%-d.%-m.%Y'.format(event.start_at) }}</strong>, začátek v <strong>{{ event.start_at|local_time }}</strong>
           <br>
           Online pro členy <strong>junior.guru/club</strong>
         </p>

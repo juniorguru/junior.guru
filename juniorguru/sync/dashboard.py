@@ -132,7 +132,7 @@ def render_events():
 def format_event(event):
     return (
         f'📺 [{event.title}]({event.recording_url})\n'
-        f'{event.start_at.date().day}.{event.start_at.date().month}.{event.start_at.date().year}, {event.bio_name}\n'
+        f'{event.start_at.date():%-d.%-m.%Y}, {event.bio_name}\n'
     )
 
 

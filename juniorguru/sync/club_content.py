@@ -166,7 +166,7 @@ async def channel_worker(worker_no, authors, queue):
                                upvotes_count=count_upvotes(message.reactions),
                                downvotes_count=count_downvotes(message.reactions),
                                created_at=arrow.get(message.created_at).naive,
-                               created_month=f'{message.created_at.year}-{message.created_at.month}',
+                               created_month=f'{message.created_at:%Y-%-d}',
                                edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
                                author=authors[message.author.id],
                                channel_id=channel.id,

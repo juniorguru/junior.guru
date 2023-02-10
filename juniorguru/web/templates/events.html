@@ -19,7 +19,7 @@ Přednášky a další akce pro členy klubu junior.guru. Seznam akcí proběhl�
     {% for event in events_planned %}
       <h3 class="content__subsection-heading" id="{{ event.slug }}">{{ event.title }}</h3>
       <p class="note">
-        <strong>{{ event.start_at_prg.day }}.&nbsp;{{ event.start_at_prg.month }}.&nbsp;{{ event.start_at_prg.year }},
+        <strong>{{ ':%-d.%-m.%Y'.format(event.start_at) }},
         {{ event.start_at|local_time }} online v klubovně</strong>,
         <a href="{{ url_for('static', filename='images/' + event.poster_path) }}">upoutávka</a>,
         <a href="{{ url_for('static', filename='images/' + event.poster_ig_path) }}">upoutávka na IG</a>,
@@ -38,7 +38,7 @@ Přednášky a další akce pro členy klubu junior.guru. Seznam akcí proběhl�
   {% for event in events_archive %}
     <h3 class="content__subsection-heading" id="{{ event.slug }}">{{ event.title }}</h3>
     <p class="note">
-      <strong>{{ event.start_at_prg.day }}.&nbsp;{{ event.start_at_prg.month }}.&nbsp;{{ event.start_at_prg.year }},
+      <strong>{{ ':%-d.%-m.%Y'.format(event.start_at) }},
       {{ event.start_at|local_time }} online v klubovně</strong>{% if event.recording_url %},
       <a href="{{ event.recording_url }}">záznam pro členy</a>{% endif %}{% if event.public_recording_url %},
       <a href="{{ event.public_recording_url }}">veřejný záznam</a>{% endif %}

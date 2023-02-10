@@ -30,7 +30,7 @@ def create_message(id_, user, **kwargs):
                               upvotes_count=kwargs.get('upvotes_count', 0),
                               pin_reactions_count=kwargs.get('pin_reactions_count', 0),
                               created_at=created_at,
-                              created_month=kwargs.get('created_month', f'{created_at.year}-{created_at.month}'),
+                              created_month=kwargs.get('created_month', f'{created_at:%Y-%-d}'),
                               channel_id=kwargs.get('channel_id', 123),
                               channel_name=kwargs.get('channel_name', 'random-discussions'),
                               channel_mention=kwargs.get('channel_mention', '<#random-discussions>'),
