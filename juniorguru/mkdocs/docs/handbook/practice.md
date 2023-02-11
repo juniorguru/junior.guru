@@ -161,7 +161,7 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
 
   {{ link_card(
     'Hackathon.com',
-    'https://www.hackathon.com/city/czech-republic/praha',
+    'https://www.hackathon.com/',
     'Celosvětový seznam místních i online hackhatonů.'
   ) }}
 </div>
