@@ -116,7 +116,7 @@ async def welcome(channel, message, greeters):
                        'Dík, že se představuješ ostatním, protože to fakt hodně pomáhá v tom, aby šlo pochopit tvou konkrétní situaci. '
                        'Takhle ti můžeme dávat rady na míru, a ne jenom nějaká obecná doporučení <:meowthumbsup:842730599906279494>\n\n'
                        'Potřebuješ pošťouchnout s kariérním rozhodnutím? Pojď to probrat do <#788826407412170752>. '
-                       'Vybíráš kurz? Napiš do <#789092262965280778>. Hledáš konkrétní recenze? Zkus vyhledávání. '
+                       'Vybíráš kurz? Napiš do <#1075052469303906335>. Hledáš konkrétní recenze? Zkus vyhledávání. '
                        'Něco jiného? <#769966887055392768> snese cokoliv 💬\n\n'
                        'Na https://junior.guru/handbook/ najdeš příručku s radami pro všechny, '
                        'kdo se chtějí naučit programovat a najít si práci v oboru. Hodně věcí je už zodpovězeno v ní, tak si ji nezapomeň projít 📖\n\n'
