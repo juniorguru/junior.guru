@@ -68,15 +68,15 @@
 #   speakers: 854681167018459146
 
 
-- title: "(Bude upřesněno, .NET MAUI)"
+- title: "Vývoj desktopových aplikací v C#: Nové trendy a možnosti"
   date: "2023-02-21"
   description: |
-    (Bude upřesněno)
+    Ukážu vám C# na desktopu. Minulost, současnost, budoucnost. Proletíme historii aplikací pro Windows, od WinForms až po nejnovější technologie, jako je .NET MAUI. Vysvětlíme si vzorové architektury (MVVM, dependency injection) a ukážeme si je na demo aplikaci v .NET MAUI.
   avatar_path: avatars-participants/lukas-pavelka.jpg
   bio_name: Lukáš Pavelka
   bio_title: "C#/.NET programátor v Edhouse"
   bio: |
-    (Bude upřesněno)
+    Nadšený C# a .NET vývojář, který se neustále snaží rozšiřovat své znalosti a nabírat zkušenosti. Před necelými dvěma lety se přidal do klubu jako junior, který si hledá první práci. Díky své vášni pro technologie a neustálému zkoumání, jak by šlo v praxi využít novinky, se dostal až k tomu, že teď bude juniorům sám přednášet.
   bio_links:
     - https://www.linkedin.com/in/lukepavelka0321/
   logo_path: logos/edhouse.svg
