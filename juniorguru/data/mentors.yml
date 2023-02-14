@@ -4,6 +4,12 @@
 #   topics: testování, QA, vývojářské nástroje, Robot Framework, Postman, SQL
 #   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
+- id: 392659924552777730
+  name: Martin K.
+  company: na volné noze
+  topics: HTML, CSS, frontend, freelancing, práce na volné noze
+  book_url: https://calendly.com/martin-kolar91/60min
+
 - id: 1050753530727763988
   name: Vašek R.
   company: Mews
@@ -137,6 +143,6 @@
 
 - id: 844689291254431755
   name: Zuzana Š.
-  company: Freelance frontend kodérka/konzultantka rychlosti webů pro pagespeed.cz
+  company: frontend kodérka na volné noze, konzultantka rychlosti webů pro pagespeed.cz
   topics: frontend kódování, rychlost webů, příprava na pohovor, možnosti práce v IT, jak to v IT chodí
   book_url: https://calendly.com/zuzana-sumlanska/mentoring
