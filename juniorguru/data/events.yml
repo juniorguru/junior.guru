@@ -54,18 +54,21 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
-# - title: "TBD (Jak cestovat při práci v IT)"
-#   date: "2022-00-00"
-#   description: |
-#     TBD
-#   bio_name: Honza Tauš
-#   bio_title: TBD
-#   bio: |
-#     TBD
-#   bio_links:
-#     - https://www.linkedin.com/in/jantaus/
-#   logo_path: logos/mews.svg
-#   speakers: 854681167018459146
+- title: "Práce a dítě: Jak být k sobě laskavější"
+  date: "2023-03-21"
+  description: |
+    (bude upřesněno)
+  avatar_path: avatars-participants/anastazie-sedlakova.jpg
+  bio_name: Anastázie Sedláková
+  bio_title: "Bioinformatička a datařka v DNAnexus, lektorka kurzů programování, máma tří dětí"
+  bio: |
+    (bude upřesněno)
+  bio_links:
+    - https://www.linkedin.com/in/anastazie-sedlakova/
+    - https://github.com/anastazie
+    - https://twitter.com/datasciencefox
+  logo_path: logos/dnanexus.svg
+  speakers:
 
 
 - title: "Vývoj desktopových aplikací v C#: Nové trendy a možnosti"
