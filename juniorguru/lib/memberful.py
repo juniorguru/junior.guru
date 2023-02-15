@@ -29,8 +29,10 @@ class Memberful():
         if not self._client:
             logger.debug('Connecting')
             transport = RequestsHTTPTransport(url='https://juniorguru.memberful.com/api/graphql/',
-                                              headers={'Authorization': f'Bearer {self.api_key}'},
-                                              verify=True, retries=3)
+                                              headers={'Authorization': f'Bearer {self.api_key}',
+                                                       'User-Agent': 'JuniorGuruBot (+https://junior.guru)'},
+                                              verify=True,
+                                              retries=3)
             self._client = Client(transport=transport)
         return self._client
 
