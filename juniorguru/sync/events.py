@@ -44,7 +44,7 @@ DISCORD_THUMBNAIL_WIDTH = 1280
 
 DISCORD_THUMBNAIL_HEIGHT = 512
 
-EVENTS_CHANNEL = 940587142659338300
+EVENTS_CHANNEL = 1075814161138860135
 
 
 schema = Seq(
@@ -227,7 +227,6 @@ async def sync_scheduled_events(client):
                 name=f'{event.bio_name}: {event.title}',
                 description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
                 end_time=event.end_at,
-                location=channel,
                 cover=(IMAGES_DIR / event.poster_dc_path).read_bytes(),
             )
         else:
