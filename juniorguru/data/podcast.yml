@@ -8,6 +8,12 @@
 # avatar_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
+- id: "0013"
+  title: Tomáš Ervín Dombrovský (LMC) nejen o IT sektoru v Čechách
+  publish_on: "2023-02-15"
+  description: |
+    Tentokrát pozvání do podcastu přijal Tomáš Ervín Dombrovský, hlavní analytik firmy LMC. Pája se ho ptala na to, proč je u nás pořád problém sehnat dostatek programátorů, jak si udržet přehled o své ceně na trhu práce nebo jestli umělá inteligence nesebere programátorům práci.  
+
 - id: "0012"
   title: Veronika Gabrielová (Aimful) o efektivním kariérním růstu
   avatar_path: avatars-participants/veronika-gabrielova.jpg
