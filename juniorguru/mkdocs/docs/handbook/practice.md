@@ -76,7 +76,7 @@ Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hac
   'jiri-psotka.jpg',
   'Jiří Psotka'
 ) %}
-  Jiří Psotka, recruiter v [Red Hatu](https://redhat.avature.net/juniorguru?jobId=20261&tags=dei+cz+-+juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
+  Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
 {% endcall %}
 
 

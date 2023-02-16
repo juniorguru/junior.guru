@@ -142,7 +142,7 @@ Recruiter také dokáže hned vyhodnotit, **jestli se tvoje cíle shodují s jej
   'jiri-psotka.jpg',
   'Jiří Psotka'
 ) %}
-  Jiří Psotka, recruiter v [Red Hatu](https://redhat.avature.net/juniorguru?jobId=20261&tags=dei+cz+-+juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
+  Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
 {% endcall %}
 
 Nikdo neříká, že je jednoduché souhrn napsat, ale když se ti to povede, **je to tvůj trumf**. Je úplně normální, že to má hlavu a patu až na desátý pokus. Většinou **to mnohem rychleji vymyslí tvůj kamarád**, protože tvou kariéru vnímá z nadhledu.
@@ -204,7 +204,7 @@ Máš nějaký **větší vlastní výtvor**? Bakalářku nebo diplomku? Vypomá
   'jiri-psotka.jpg',
   'Jiří Psotka'
 ) %}
-  Jiří Psotka, recruiter v [Red Hatu](https://redhat.avature.net/juniorguru?jobId=20261&tags=dei+cz+-+juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
+  Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
 {% endcall %}
 
 U každé takové věci by neměl chybět **název, krátký popis a odkazy**. Nejen odkaz na kód, ale i na ukázku. Pokud jde o dobrovolnictví nebo jinou spolupráci, popiš kontext a svůj přínos.

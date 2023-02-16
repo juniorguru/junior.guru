@@ -82,7 +82,7 @@ Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo d
   'jiri-psotka.jpg',
   'Jiří Psotka'
 ) %}
-  Jiří Psotka, recruiter v [Red Hatu](https://redhat.avature.net/juniorguru?jobId=20261&tags=dei+cz+-+juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
+  Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
 {% endcall %}
 
 Repozitáře na GitHubu, které nepovažujete za reprezentativní, můžete archivovat. Budou jen pro čtení a žlutý proužek návštěvníkům řekne, že už na nich nepracujete. Projekty, kterými se chlubit chcete, můžete zviditelnit na svém profilu jako „pinned“.
