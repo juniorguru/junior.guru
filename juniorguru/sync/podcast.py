@@ -171,13 +171,13 @@ async def discord_task(client):
         if DISCORD_MUTATIONS_ENABLED:
             channel = await client.fetch_channel(ANNOUNCEMENTS_CHANNEL)
             content = (
-                f"{MESSAGE_EMOJI} Nastraž uši! <@810862212297130005> natočila **{last_episode.number}. díl** junior.guru podcastu!"
+                f"{MESSAGE_EMOJI} Nastraž uši! <@810862212297130005> natočila **{last_episode.number}. epizodu** junior.guru podcastu!"
             )
             embed_description_lines = [
                 f'ℹ️ {last_episode.description.strip()}\n',
                 f"🔊 Do půl hodiny se to objeví [na webu]({last_episode.url})",
                 "📥 Někdy brzo se to objeví i na všech běžných podcastových službách",
-                f"⏳ Díl má {last_episode.media_duration_m} minut",
+                f"⏳ Epizoda má {last_episode.media_duration_m} minut",
             ]
             embed = Embed(title=last_episode.title_numbered, description='\n'.join(embed_description_lines))
             embed.set_thumbnail(url=f"attachment://{Path(last_episode.poster_path).name}")
