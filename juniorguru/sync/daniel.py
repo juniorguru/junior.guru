@@ -13,8 +13,6 @@ logger = loggers.from_path(__file__)
 
 DANIELSRB = 652142810291765248
 
-MESSAGE_EMOJI = '📊'
-
 
 @cli.sync_command(dependencies=['club-content'])
 def main():
@@ -32,7 +30,7 @@ async def discord_task(client):
 
     last_message = None
     async for message in channel.history(limit=None, after=None):
-        if message.content.startswith(MESSAGE_EMOJI):
+        if message.content.startswith('📊'):
             last_message = message
             break
 
