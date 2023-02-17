@@ -1,6 +1,6 @@
 - name: Glance Media
   slug: glancemedia
-  url: https://www.glancemedia.cz/
+  url: https://glancemedia.cz/
   partnerships:
     - plan: hiring
       starts_on: 2023-02-09
