@@ -171,7 +171,7 @@ class ClubMessage(BaseModel):
     @classmethod
     def count_by_month(cls, date):
         return cls.select() \
-            .where(cls.created_month == f'{date:%Y-%-d}') \
+            .where(cls.created_month == f'{date:%Y-%d}') \
             .where(cls.channel_id.not_in(STATS_EXCLUDE_CHANNELS)) \
             .count()
 
