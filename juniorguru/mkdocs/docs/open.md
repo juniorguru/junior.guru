@@ -508,11 +508,11 @@ Pouze orientační metrika. Nechci sledovat a glorifikovat _engagement_, protož
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_club_messages_labels,
+        'labels': charts_club_content_labels,
         'datasets': [
             {
-                'label': 'počet zpráv na Discordu',
-                'data': charts_messages,
+                'label': 'počet znaků napsaných na Discordu',
+                'data': charts_club_content,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
@@ -521,7 +521,7 @@ Pouze orientační metrika. Nechci sledovat a glorifikovat _engagement_, protož
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts_club_messages_annotations},
+        'plugins': {'annotation': charts_club_content_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Počet online akcí v klubu

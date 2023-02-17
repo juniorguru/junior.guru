@@ -162,6 +162,7 @@ async def channel_worker(worker_no, authors, queue):
             ClubMessage.create(id=message.id,
                                url=message.jump_url,
                                content=message.content,
+                               content_size=len(message.content),
                                reactions={emoji_name(reaction.emoji): reaction.count for reaction in message.reactions},
                                upvotes_count=count_upvotes(message.reactions),
                                downvotes_count=count_downvotes(message.reactions),

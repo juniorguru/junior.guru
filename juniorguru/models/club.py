@@ -138,6 +138,7 @@ class ClubMessage(BaseModel):
     id = IntegerField(primary_key=True)
     url = CharField()
     content = TextField()
+    content_size = IntegerField()
     reactions = JSONField(default=dict)
     upvotes_count = IntegerField(default=0)
     downvotes_count = IntegerField(default=0)
@@ -169,11 +170,11 @@ class ClubMessage(BaseModel):
         return cls.select().count()
 
     @classmethod
-    def count_by_month(cls, date):
-        return cls.select() \
+    def content_size_by_month(cls, date):
+        messages = cls.select() \
             .where(cls.created_month == f'{date:%Y-%d}') \
-            .where(cls.channel_id.not_in(STATS_EXCLUDE_CHANNELS)) \
-            .count()
+            .where(cls.channel_id.not_in(STATS_EXCLUDE_CHANNELS))
+        return sum(message.content_size for message in messages)
 
     @classmethod
     def listing(cls):
