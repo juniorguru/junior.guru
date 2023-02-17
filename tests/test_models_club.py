@@ -3,7 +3,8 @@ from datetime import date, datetime, timedelta
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models.club import (INTRO_CHANNEL, JUNIORGURU_BOT, ClubMessage,
+from juniorguru.lib.club import INTRO_CHANNEL, JUNIORGURU_BOT
+from juniorguru.models.club import (ClubMessage,
                                     ClubPinReaction, ClubUser)
 
 
@@ -23,10 +24,13 @@ def create_user(id_, **kwargs):
 
 def create_message(id_, user, **kwargs):
     created_at = kwargs.get('created_at', datetime.now() - timedelta(days=3))
+    content = kwargs.get('content', 'hello')
     return ClubMessage.create(id=id_,
                               url=f'https://example.com/messages/{id_}',
                               author=user,
-                              content=kwargs.get('content', 'hello'),
+                              author_is_bot=user.id == JUNIORGURU_BOT,
+                              content=content,
+                              content_size=len(content or ''),
                               upvotes_count=kwargs.get('upvotes_count', 0),
                               pin_reactions_count=kwargs.get('pin_reactions_count', 0),
                               created_at=created_at,

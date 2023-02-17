@@ -8,7 +8,7 @@ from peewee import (BooleanField, CharField, DateField, DateTimeField, ForeignKe
                     IntegerField, TextField, fn)
 
 from juniorguru.lib.charts import month_range
-from juniorguru.lib.club import (INTRO_CHANNEL, IS_NEW_PERIOD_DAYS, JUNIORGURU_BOT,
+from juniorguru.lib.club import (INTRO_CHANNEL, IS_NEW_PERIOD_DAYS,
                                  RECENT_PERIOD_DAYS, STATS_EXCLUDE_CHANNELS,
                                  TOP_MEMBERS_PERCENT, UPVOTES_EXCLUDE_CHANNELS,
                                  parse_coupon)
@@ -145,9 +145,12 @@ class ClubMessage(BaseModel):
     created_at = DateTimeField(index=True)
     created_month = CharField(index=True)
     author = ForeignKeyField(ClubUser, backref='list_messages')
+    author_is_bot = BooleanField()
     channel_id = IntegerField()
-    channel_name = CharField()
-    channel_mention = CharField()
+    channel_name = CharField()  # is this really needed? normalize?
+    channel_mention = CharField()  # is this really needed? normalize?
+    parent_channel_id = IntegerField(index=True, null=True)
+    category_id = IntegerField(index=True, null=True)
     type = CharField(default='default')
     is_pinned = BooleanField(default=False)
 
@@ -173,6 +176,7 @@ class ClubMessage(BaseModel):
     def content_size_by_month(cls, date):
         messages = cls.select() \
             .where(cls.created_month == f'{date:%Y-%d}') \
+            .where(cls.author_is_bot == False) \
             .where(cls.channel_id.not_in(STATS_EXCLUDE_CHANNELS))
         return sum(message.content_size for message in messages)
 
@@ -189,8 +193,7 @@ class ClubMessage(BaseModel):
     @classmethod
     def channel_listing_bot(cls, channel_id):
         return cls.channel_listing(channel_id) \
-            .join(ClubUser) \
-            .where(ClubUser.id == JUNIORGURU_BOT)
+            .where(cls.author_is_bot == True)
 
     @classmethod
     def channel_listing_since(cls, channel_id, since_at):
@@ -217,8 +220,7 @@ class ClubMessage(BaseModel):
     @classmethod
     def last_bot_message(cls, channel_id, startswith_emoji=None, contains_text=None):
         query = cls.select() \
-            .join(ClubUser) \
-            .where(ClubUser.id == JUNIORGURU_BOT,
+            .where(cls.author_is_bot == True,
                    cls.channel_id == channel_id) \
             .order_by(cls.created_at.desc())
         if startswith_emoji:

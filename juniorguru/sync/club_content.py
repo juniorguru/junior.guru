@@ -9,7 +9,7 @@ from peewee import OperationalError
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (CHANNELS_HISTORY_SINCE, DEFAULT_CHANNELS_HISTORY_SINCE,
+from juniorguru.lib.club import (CHANNELS_HISTORY_SINCE, DEFAULT_CHANNELS_HISTORY_SINCE, JUNIORGURU_BOT,
                                  EMOJI_PIN, count_downvotes, count_upvotes, emoji_name,
                                  get_roles, run_discord_task)
 from juniorguru.models.base import db
@@ -162,7 +162,7 @@ async def channel_worker(worker_no, authors, queue):
             ClubMessage.create(id=message.id,
                                url=message.jump_url,
                                content=message.content,
-                               content_size=len(message.content),
+                               content_size=len(message.content or ''),
                                reactions={emoji_name(reaction.emoji): reaction.count for reaction in message.reactions},
                                upvotes_count=count_upvotes(message.reactions),
                                downvotes_count=count_downvotes(message.reactions),
@@ -170,9 +170,12 @@ async def channel_worker(worker_no, authors, queue):
                                created_month=f'{message.created_at:%Y-%m}',
                                edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
                                author=authors[message.author.id],
+                               author_is_bot=message.author.id == JUNIORGURU_BOT,
                                channel_id=channel.id,
                                channel_name=channel.name,
                                channel_mention=channel.mention,
+                               parent_channel_id=channel.parent.id if hasattr(channel, 'parent') else channel.id,
+                               category_id=channel.category_id,
                                type=message.type.name)
             messages_count += 1
 
