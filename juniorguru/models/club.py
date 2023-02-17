@@ -174,7 +174,7 @@ class ClubMessage(BaseModel):
     @classmethod
     def content_size_by_month(cls, date):
         messages = cls.select() \
-            .where(cls.created_month == f'{date:%Y-%d}') \
+            .where(cls.created_month == f'{date:%Y-%m}') \
             .where(cls.author_is_bot == False) \
             .where(cls.channel_id.not_in(STATS_EXCLUDE_CHANNELS))
         return sum(message.content_size for message in messages)
