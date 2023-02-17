@@ -4,8 +4,7 @@ import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.lib.club import INTRO_CHANNEL, JUNIORGURU_BOT
-from juniorguru.models.club import (ClubMessage,
-                                    ClubPinReaction, ClubUser)
+from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
 
 
 def create_user(id_, **kwargs):

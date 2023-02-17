@@ -9,9 +9,9 @@ from peewee import OperationalError
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (CHANNELS_HISTORY_SINCE, DEFAULT_CHANNELS_HISTORY_SINCE, JUNIORGURU_BOT,
-                                 EMOJI_PIN, count_downvotes, count_upvotes, emoji_name,
-                                 get_roles, run_discord_task)
+from juniorguru.lib.club import (CHANNELS_HISTORY_SINCE, DEFAULT_CHANNELS_HISTORY_SINCE,
+                                 EMOJI_PIN, JUNIORGURU_BOT, count_downvotes,
+                                 count_upvotes, emoji_name, get_roles, run_discord_task)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
 
