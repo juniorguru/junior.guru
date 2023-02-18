@@ -40,9 +40,9 @@ def build_events_honza_ics(api_dir, config):
                                   description=event.url)
         ics_event_day.make_all_day()
         events.append(ics_event_day)
-        events.append(ics.Event(summary='(Honza se věnuje rodině)',
-                                begin=arrow.get(event.start_at).to('Europe/Prague').replace(hour=10, minute=0).to('UTC').naive,
-                                end=arrow.get(event.start_at).to('Europe/Prague').replace(hour=12, minute=0).to('UTC').naive))
+        # events.append(ics.Event(summary='(Honza se věnuje rodině)',
+        #                         begin=arrow.get(event.start_at).to('Europe/Prague').replace(hour=10, minute=0).to('UTC').naive,
+        #                         end=arrow.get(event.start_at).to('Europe/Prague').replace(hour=12, minute=0).to('UTC').naive))
         events.append(ics.Event(summary=f'{event.bio_name}: {event.title}',
                                 begin=event.start_at - timedelta(minutes=30),
                                 duration=timedelta(hours=2),
