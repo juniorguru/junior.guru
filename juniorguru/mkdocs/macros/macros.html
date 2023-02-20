@@ -278,7 +278,7 @@
             <a href="{{ story.url }}" class="stories-link">{{ story.title }}</a>
           </h4>
           <p class="stories-details">
-            {{ story.publisher }} &mdash; {{ '%-m/%Y'.format(story.date) }}
+            {{ story.publisher }} &mdash; {{ '{:%-m/%Y}'.format(story.date) }}
           </p>
         </div>
       </div>
