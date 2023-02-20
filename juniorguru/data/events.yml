@@ -58,13 +58,14 @@
   date: "2023-03-21"
   time: "18:30"
   description: |
-    (bude upřesněno)
+    V této přednášce chci povědět svůj příběh hledání sebe jako rodiče i jako člověka se svými sny a kariérními cíli. Doufám, že tato přednáška bude povzbuzením a inspiraci pro hledání rovnováhy mezi rodičovským a pracovním životem.
   avatar_path: avatars-participants/anastazie-sedlakova.jpg
   bio_name: Anastázie Sedláková
-  bio_title: "Bioinformatička a datařka v DNAnexus, lektorka kurzů programování, máma tří dětí"
+  bio_title: "Spoluzákladatelka sedlakovi.org, Community Engagement - Principal Scientist v DNAnexus"
   bio: |
-    (bude upřesněno)
+    Mám doktorát z genetiky člověka a více než 10 let zkušeností s bioinformatickou analýzou a lektorováním programovacích kurzů. Baví mě zkoumat, jak lze co nejefektivněji naučit dospělé lidi komplexním věcem. Ráda kreslím, chodím do přírody a čtu. Mám tři děti: 5 let, 3 roky a 5 měsíců.
   bio_links:
+    - https://www.sedlakovi.org/filozofie/
     - https://www.linkedin.com/in/anastazie-sedlakova/
     - https://github.com/anastazie
     - https://twitter.com/datasciencefox
