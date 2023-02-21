@@ -6,7 +6,7 @@ from peewee import SqliteDatabase
 
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.event import Event
-from juniorguru.models.job import SubmittedJob, ListedJob
+from juniorguru.models.job import ListedJob, SubmittedJob
 from juniorguru.models.partner import (Partner, Partnership, PartnershipBenefit,
                                        PartnershipPlan, PartnerStudentSubscription)
 from juniorguru.models.podcast import PodcastEpisode
