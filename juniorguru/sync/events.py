@@ -188,30 +188,32 @@ async def post_next_event_messages(client):
     else:
         logger.info("It's not the day when the event is")
 
-    logger.info("About to post a message to event chat on the day when the event is")
-    if event.start_at.date() == date.today():
-        message = ClubMessage.last_bot_message(EVENTS_CHANNEL, '👋', event.discord_url)
-        if message:
-            logger.info(f'Looks like the message already exists: {message.url}')
-        else:
-            logger.info("Found no message, posting!")
-            content = [
-                f"👋 Už **dnes v {event.start_at_prg:%H:%M}** tady bude probíhat „{event.title}” s {speakers} (viz {announcements_channel.mention}). Tento kanál slouží k pokládání dotazů, sdílení odkazů, slajdů k prezentaci…",
-                "",
-                "⚠️ Ve výchozím nastavení Discord udělá zvuk při každé aktivitě v hlasovém kanálu, např. při připojení nového účastníka, odpojení, vypnutí zvuku, zapnutí, apod. Zvuky si vypni v Uživatelských nastaveních (_User Settings_), na stránce Oznámení (_Notifications_), sekce Zvuky (_Sounds_). Většina zvuků souvisí s hovory, takže je potřeba povypínat skoro vše.",
-                "",
-                f"📺 Limit přímých účastníků je 25, takže přijďte včas. Kdo se nevleze, bude mít možnost sledovat stream na YouTube, odkaz se kdyžtak objeví tady v chatu. Záznam se po akci objeví v {announcements_channel.mention}.",
-                "",
-                f"ℹ️ {event.description_plain}",
-                "",
-                f"🦸 {event.bio_plain}"
-                "",
-                "",
-                f"👉 {event.url}",
-            ]
-            await events_channel.send('\n'.join(content))
-    else:
-        logger.info("It's not the day when the event is")
+    # See https://github.com/Pycord-Development/pycord/issues/1934
+    #
+    # logger.info("About to post a message to event chat on the day when the event is")
+    # if event.start_at.date() == date.today():
+    #     message = ClubMessage.last_bot_message(EVENTS_CHANNEL, '👋', event.discord_url)
+    #     if message:
+    #         logger.info(f'Looks like the message already exists: {message.url}')
+    #     else:
+    #         logger.info("Found no message, posting!")
+    #         content = [
+    #             f"👋 Už **dnes v {event.start_at_prg:%H:%M}** tady bude probíhat „{event.title}” s {speakers} (viz {announcements_channel.mention}). Tento kanál slouží k pokládání dotazů, sdílení odkazů, slajdů k prezentaci…",
+    #             "",
+    #             "⚠️ Ve výchozím nastavení Discord udělá zvuk při každé aktivitě v hlasovém kanálu, např. při připojení nového účastníka, odpojení, vypnutí zvuku, zapnutí, apod. Zvuky si vypni v Uživatelských nastaveních (_User Settings_), na stránce Oznámení (_Notifications_), sekce Zvuky (_Sounds_). Většina zvuků souvisí s hovory, takže je potřeba povypínat skoro vše.",
+    #             "",
+    #             f"📺 Limit přímých účastníků je 25, takže přijďte včas. Kdo se nevleze, bude mít možnost sledovat stream na YouTube, odkaz se kdyžtak objeví tady v chatu. Záznam se po akci objeví v {announcements_channel.mention}.",
+    #             "",
+    #             f"ℹ️ {event.description_plain}",
+    #             "",
+    #             f"🦸 {event.bio_plain}"
+    #             "",
+    #             "",
+    #             f"👉 {event.url}",
+    #         ]
+    #         await events_channel.send('\n'.join(content))
+    # else:
+    #     logger.info("It's not the day when the event is")
 
 
 @db.connection_context()
