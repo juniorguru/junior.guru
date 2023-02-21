@@ -6,7 +6,7 @@ from peewee import SqliteDatabase
 
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.event import Event
-from juniorguru.models.job import SubmittedJob
+from juniorguru.models.job import SubmittedJob, ListedJob
 from juniorguru.models.partner import (Partner, Partnership, PartnershipBenefit,
                                        PartnershipPlan, PartnerStudentSubscription)
 from juniorguru.models.podcast import PodcastEpisode
@@ -66,7 +66,9 @@ def create_student_subscription(partner, **kwargs):
 def db_connection():
     models = [Partner, PartnerStudentSubscription,
               Partnership, PartnershipPlan, PartnershipBenefit,
-              ClubUser, ClubMessage, SubmittedJob, Event, PodcastEpisode]
+              ClubUser, ClubMessage,
+              ListedJob, SubmittedJob,
+              Event, PodcastEpisode]
     db = SqliteDatabase(':memory:')
     with db:
         db.bind(models)
@@ -328,15 +330,18 @@ def test_partner_list_student_members(db_connection):
 
 def test_partner_list_jobs(db_connection):
     def create_job(id, company_name, title='Title'):
-        return SubmittedJob.create(id=id,
-                                   title=title,
-                                   posted_on=date(2023, 2, 14),
-                                   expires_on=date(2024, 2, 14),
-                                   url=f'https://junior.guru/jobs/{id}/',
-                                   company_name=company_name,
-                                   company_url='https://example.com/',
-                                   description_html='...',
-                                   lang='cs')
+        submitted_job = SubmittedJob.create(id=id,
+                                            title=title,
+                                            posted_on=date(2023, 2, 14),
+                                            expires_on=date(2024, 2, 14),
+                                            url=f'https://junior.guru/jobs/{id}/',
+                                            company_name=company_name,
+                                            company_url='https://example.com/',
+                                            description_html='...',
+                                            lang='cs')
+        listed_job = submitted_job.to_listed()
+        listed_job.save()
+        return listed_job
     job1 = create_job('1', 'Harley-Davidson', title='Job XYZ')
     job2 = create_job('2', 'Harley Davidson')  # noqa
     job3 = create_job('3', 'Harley-Davidson', title='Job ABC')
