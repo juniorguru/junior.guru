@@ -204,7 +204,7 @@ class Partnership(BaseModel):
             return None
 
     def evaluate_benefits(self, evaluators=None):
-        registry = {benefit['slug']: bool(benefit.get('done'))
+        registry = {benefit['slug']: benefit.get('done', False)
                     for benefit
                     in self.benefits_registry}
         if evaluators:

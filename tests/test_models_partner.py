@@ -492,7 +492,7 @@ def test_partnership_evaluate_benefits_registry_urls(db_connection):
                                      ])
 
     assert partnership.evaluate_benefits() == [
-        dict(slug='foo', icon='foo-circle', text="Benefit 'foo'", done=True),
+        dict(slug='foo', icon='foo-circle', text="Benefit 'foo'", done='https://example.com'),
     ]
 
 

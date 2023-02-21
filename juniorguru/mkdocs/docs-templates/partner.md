@@ -55,7 +55,7 @@
 <div class="table-responsive"><table class="table">
   {% for podcast_episode in partner.list_podcast_episodes %}
   <tr>
-    <td>Podcast {{ 'mic'|icon }}</td>
+    <td>Epizoda podcastu {{ 'mic'|icon }}</td>
     <td><a href="{{ podcast_episode.url }}">{{ podcast_episode.title }}</a></td>
   </tr>
   {% endfor %}
@@ -81,7 +81,16 @@
   </tr>
   {% endfor %}
 
-  <!-- todo welcome social, odkaz -->
+  {% for benefit in active_partnership.evaluate_benefits(benefits_evaluators) %}
+  {% if benefit.slug == 'welcome_social' and benefit.done %}
+  <tr>
+    <td>Oznámení na sociálních sítích {{ benefit.icon|icon }}</td>
+    <td>
+      <a href="{{ benefit.done }}">LinkedIn</a>
+    </td>
+  </tr>
+  {% endif %}
+  {% endfor %}
 
   {% set intro = partner.intro %}
   <tr>
