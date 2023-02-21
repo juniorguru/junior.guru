@@ -64,3 +64,12 @@
 .goal-reached {
   filter: grayscale(0%);
 }
+
+.expires-soon,
+.expires-very-soon {
+  color: $danger;
+}
+
+.expires-very-soon {
+  font-weight: $font-weight-bold;
+}

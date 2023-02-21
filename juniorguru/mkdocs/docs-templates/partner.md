@@ -8,7 +8,7 @@
 {% call lead() %}
   Firma {{ partner.name }} je partnerem junior.guru od {{ '{:%-d.%-m.%Y}'.format(partner.first_partnership().starts_on) }}.
   Cílem tohoto přehledu je transparentně popsat, co je domluveno, a jak se to daří plnit.
-  Díky tomu všichni vědí, jak na tom jsou.
+  Díky tomu všichni vědí, jak na tom jsou. Tato stránka je veřejná, ale vyhledávačům není povoleno ji evidovat a zobrazovat.
 {% endcall %}
 
 {{ figure(partner.logo_path, partner.name, 500, 250, class="standout-bottom") }}
@@ -41,7 +41,7 @@
     <th>Prodloužení</th>
     <td>
       {% if active_partnership.expires_on %}
-        Partnerství skončí za {{ active_partnership.remaining_days() }} dní
+        Partnerství skončí za {{ active_partnership.days_until_expires() }} dní
         (do {{ '{:%-d.%-m.%Y}'.format(active_partnership.expires_on) }})
       {% else %}
         Partnerství nemá stanovený konec
@@ -54,7 +54,6 @@
 
 <div class="table-responsive"><table class="table">
   {% for podcast_episode in partner.list_podcast_episodes %}
-  <!-- Disclaimer o tom, že zveme lidi i bez toho, že by si to firma zaplatila -->
   <tr>
     <td>Podcast {{ 'mic'|icon }}</td>
     <td><a href="{{ podcast_episode.url }}">{{ podcast_episode.title }}</a></td>
@@ -62,15 +61,20 @@
   {% endfor %}
 
   {% for job in partner.list_jobs %}
-  <!-- todo info z mailu -->
   <tr>
     <td>Pracovní inzerát {{ 'pin-angle'|icon }}</td>
-    <td><a href="{{ job.url }}">{{ job.title }}</a></td>
+    <td>
+      <a href="{{ job.url }}">{{ job.title }}</a><br>
+      <small>
+        {{ 'graph-up'|icon }} statistiky za
+        <a href="{{ job.submitted_job.analytics_url(30) }}" target="_blank" rel="noopener">měsíc</a>,
+        <a href="{{ job.submitted_job.analytics_url(365) }}" target="_blank" rel="noopener">rok</a>
+      </small>
+    </td>
   </tr>
   {% endfor %}
 
   {% for event in partner.list_events %}
-  <!-- Disclaimer o tom, že zveme lidi i bez toho, že by si to firma zaplatila -->
   <tr>
     <td>Akce v klubu {{ 'calendar-event'|icon }}</td>
     <td><a href="{{ event.url }}">{{ event.title }}</a></td>
@@ -102,6 +106,10 @@
     {% endfor %}
   {% endfor %}
 </table></div>
+
+{% call note() -%}
+  {{ 'exclamation-circle'|icon }} Jako placená spolupráce se berou jen akce v klubu a epizody podcastu, které iniciovala firma na základě tarifu. Pokud si někoho sami pozveme, tak se to jako placená spolupráce nebere.
+{%- endcall %}
 
 ## Stav benefitů
 

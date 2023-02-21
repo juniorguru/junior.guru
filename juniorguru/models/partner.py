@@ -5,7 +5,7 @@ from peewee import CharField, DateField, ForeignKeyField, IntegerField, fn
 from juniorguru.lib.club import EMOJI_PARTNER_INTRO, INTRO_CHANNEL
 from juniorguru.models.base import BaseModel, JSONField
 from juniorguru.models.club import ClubMessage, ClubUser
-from juniorguru.models.job import SubmittedJob
+from juniorguru.models.job import ListedJob
 
 
 class Partner(BaseModel):
@@ -48,10 +48,10 @@ class Partner(BaseModel):
 
     @property
     def list_jobs(self):
-        return SubmittedJob.select() \
-            .join(self.__class__, on=(SubmittedJob.company_name == self.__class__.name)) \
-            .where(SubmittedJob.company_name == self.name) \
-            .order_by(SubmittedJob.title)
+        return ListedJob.submitted_listing() \
+            .join(self.__class__, on=(ListedJob.company_name == self.__class__.name)) \
+            .where(ListedJob.company_name == self.name) \
+            .order_by(ListedJob.title)
 
     @property
     def list_partnerships_history(self):
@@ -196,7 +196,7 @@ class Partnership(BaseModel):
     benefits_registry = JSONField(default=list)
     agreements_registry = JSONField(default=list)
 
-    def remaining_days(self, today=None):
+    def days_until_expires(self, today=None):
         today = today or date.today()
         if self.expires_on:
             return (self.expires_on - today).days

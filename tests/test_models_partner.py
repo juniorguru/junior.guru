@@ -450,12 +450,12 @@ def test_plan_benefits_slugs_all(db_connection, plan_basic, plan_top):
     assert plan_top.benefits_slugs(all=False) == ['flowers', 'balloon']
 
 
-def test_partnership_remaining_days(db_connection):
+def test_partnership_days_until_expires(db_connection):
     today = date(2022, 12, 24)
     partner = create_partner('1')
     partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15))
 
-    assert partnership.remaining_days(today=today) == 22
+    assert partnership.days_until_expires(today=today) == 22
 
 
 def test_partnership_evaluate_benefits_registry(db_connection):

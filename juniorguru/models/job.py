@@ -1,4 +1,4 @@
-from datetime import date, datetime, time
+from datetime import date, datetime, time, timedelta
 from functools import lru_cache
 
 from peewee import (BooleanField, CharField, DateField, Expression, ForeignKeyField,
@@ -70,6 +70,11 @@ class SubmittedJob(BaseModel):
     employment_types = JSONField(null=True)
 
     description_html = TextField()
+
+    def analytics_url(self, days, end_on=None):
+        end_on = end_on or date.today()
+        start_on = end_on - timedelta(days=days)
+        return f'https://simpleanalytics.com/junior.guru?search=paths%3A{self.id}&start={start_on}&end={end_on}'
 
     def days_since_posted(self, today=None):
         today = today or date.today()

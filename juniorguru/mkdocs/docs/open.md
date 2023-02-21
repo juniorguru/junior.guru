@@ -7,7 +7,7 @@ description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior
 
 # Čísla a grafy
 
-Stránku jsem vytvořil po vzoru [jiných otevřených projektů](https://openstartuplist.com/), především [NomadListu](https://nomadlist.com/open). Tyto grafy a čísla stejně potřebuji pro svou vlastní potřebu, takže proč je v rámci transparentnosti nemít rovnou na webu, že?
+Stránku jsem vytvořil po vzoru [jiných otevřených projektů](https://openstartuplist.com/). Tyto grafy a čísla stejně potřebuji pro svou vlastní potřebu, takže proč je v rámci transparentnosti nemít rovnou na webu, že?
 
 [TOC]
 
@@ -282,7 +282,7 @@ Aby bylo vše maximálně transparentní, uvádím zde podrobnosti ke každému 
   <tr>
     <th>Firma</th>
     <th>Tarif</th>
-    <th>Skončí</th>
+    <th>Zbývá</th>
   </tr>
   {% for partner in partners %}
     {% set partnership = partner.active_partnership() %}
@@ -296,13 +296,17 @@ Aby bylo vše maximálně transparentní, uvádím zde podrobnosti ke každému 
           {{ 'star'|icon }}
         {% endfor %}
       </td>
-      <td>
-        {% if partnership.expires_on %}
-            {{ '{:%-d.%-m.%Y}'.format(partnership.expires_on) }}
-        {% else %}
-            ?
-        {% endif %}
-      </td>
+      {% if partnership.expires_on %}
+        <td{% if partnership.days_until_expires() < 30 %}
+          class="expires-very-soon"
+        {% elif partnership.days_until_expires() < 60 %}
+          class="expires-soon"
+        {%- endif %}>
+          {{ partnership.days_until_expires() }} dní
+        </td>
+      {% else %}
+        <td>∞</td>
+      {% endif %}
     </tr>
   {% endfor %}
 </table></div>
