@@ -133,11 +133,15 @@ def _reader(id, path_queue, item_queue, pipelines):
             counter = 0
             try:
                 for item in parse(path):
-                    item = execute_pipelines(item, pipelines)
-                    item_queue.put(item)
-                    counter += 1
-                    if counter % LOGGING_PARSER_BATCH_SIZE == 0:
-                        logger_r.info(f"Parsing {path}, {counter} items")
+                    try:
+                        item = execute_pipelines(item, pipelines)
+                    except DropItem as e:
+                        logger_r.warning(f"Dropping {item!r}, reason: {e}")
+                    else:
+                        item_queue.put(item)
+                        counter += 1
+                        if counter % LOGGING_PARSER_BATCH_SIZE == 0:
+                            logger_r.info(f"Parsing {path}, {counter} items")
             finally:
                 logger_r.info(f"Done parsing {path}, {counter} items total")
                 path_queue.task_done()

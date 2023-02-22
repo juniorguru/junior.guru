@@ -13,15 +13,11 @@ RE_IDENTIFY_MAPPING = [
 ]
 
 
-class MissingIdentifyingField(DropItem):
-    pass
-
-
 def process(item):
     try:
         url = item['url']
     except KeyError as e:
-        raise MissingIdentifyingField(str(e))
+        raise DropItem(str(e))
 
     item['boards_ids'] = parse_urls(filter(None, [url, item.get('apply_url')]))
     return item

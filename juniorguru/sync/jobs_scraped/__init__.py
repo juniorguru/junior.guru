@@ -13,6 +13,7 @@ from juniorguru.sync.scrape_jobs.settings import FEEDS_DIR
 
 
 PREPROCESS_PIPELINES = [
+    'juniorguru.sync.jobs_scraped.pipelines.blocklist',
     'juniorguru.sync.jobs_scraped.pipelines.boards_ids',
 ]
 
