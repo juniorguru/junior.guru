@@ -155,9 +155,9 @@ Ke konci roku 2020 jsem se rozhodl změnit byznys model a vytvořit kolem junior
 
 V ideálním případě by mě živilo individuální členství lidí v klubu, protože je to pravidelný, předvídatelný příjem, který mi navíc zajišťuje největší nezávislost.
 
-Individuální členství ale nevystačí, takže si domlouvám i [spolupráce s firmami](#firemni-partnerstvi). Jsou z toho větší jednorázové příjmy, které lze obtížně předvídat a mohou ovlivňovat mou kritičnost k firmám, se kterými spolupracuji.
+Individuální členství ale nevystačí, takže si domlouvám i [partnerství s firmami](#firemni-partnerstvi). Jsou z toho větší jednorázové příjmy, které lze obtížně předvídat a mohou ovlivňovat mou kritičnost k firmám, se kterými spolupracuji.
 
-Inzerci nabídek práce nechci zrušit, ale aktuálně není na vrcholu mých priorit. Pokud, tak spíše v podobě dlouhodobé spolupráce s firmou, než formou jednorázových inzerátů.
+Inzerci nabídek práce nechci zrušit, ale aktuálně není na vrcholu mých priorit. Pokud, tak spíše v podobě dlouhodobého partnerství s firmou, než formou jednorázových inzerátů.
 
 Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velkou měrou právě díky nim junior.guru ve svých počátcích neskončilo. Teď je ale čas postavit se na vlastní nohy! Možnost přispět zřejmě nezruším, ale přestal jsem ji propagovat. Chtěl bych, aby dobrovolné příspěvky jednou plně nahradilo individuální členství v klubu.
 
@@ -178,7 +178,7 @@ Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velk
                 'backgroundColor': '#1755d1',
             },
             {
-                'label': 'spolupráce s firmami',
+                'label': 'partnerství s firmami',
                 'data': charts_revenue_breakdown.pop('partnerships'),
                 'backgroundColor': '#638CDD',
             },

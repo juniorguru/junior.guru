@@ -32,7 +32,7 @@
     </td>
   </tr>
   <tr>
-    <th>Členů v klubu</th>
+    <th>Členů v klubu</th>
     <td>
       {{ partner.list_members|length }} z 15
     </td>

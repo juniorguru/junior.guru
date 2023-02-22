@@ -9,6 +9,7 @@
 - name: Green Fox Academy
   slug: greenfox
   url: https://www.greenfoxacademy.cz/
+  is_course_provider: yes
   partnerships:
     - plan: branding
       starts_on: 2023-01-25
@@ -134,7 +135,7 @@
 - name: Software Development Academy
   slug: sdacademy
   url: https://sdacademy.cz/
-  students: true
+  is_course_provider: yes
   partnerships:
     - plan: support
       starts_on: 2021-06-18
@@ -186,6 +187,7 @@
 - name: ENGETO Academy
   slug: engeto
   url: https://engeto.cz/
+  is_course_provider: yes
   partnerships:
     - plan: support
       starts_on: 2021-05-14
@@ -212,7 +214,7 @@
 - name: CoreSkill
   slug: coreskill
   url: https://coreskill.tech/
-  students: true
+  is_course_provider: yes
   partnerships:
     - plan: support
       starts_on: 2021-02-01

@@ -134,7 +134,7 @@ Dlouhodobý plán je takový, že by členství v klubu zcela nahradilo původn�
 
 Zaregistruj se jako člen klubu a plať členství. Nemusíš si vytvářet účet na Discordu, ani tam chodit. V souvislosti s klubem by ti neměly chodit žádné zprávy, pouze systémová upozornění do e-mailu např. v případě, že ti končí platnost karty.
 
-## {{ 'building'|icon }} Spolupráce s firmami
+## {{ 'building'|icon }} Partnerství s firmami
 
 ### Co vyplývá z toho, že je členem klubu nějaká firma? {: #firmy }
 
@@ -148,7 +148,7 @@ Firmy, které s klubem spolupracují, do něj mají především přístup. Moho
 
 Klub a celé junior.guru nenabízí ani nedoporučuje žádný konkrétní vzdělávací program, je to nezávislý rozcestník. Pokud je někde odkaz na konkrétní stránku, je to proto, že je autor junior.guru, [Honza Javorek](#honza), upřímně přesvědčen o jejím jedinečném přínosu v daném kontextu. Mimo loga partnerů si na junior.guru nelze koupit žádné odkazy. Klub je místem, kde lze o nabídce firem diskutovat na neutrální půdě, sdílet si zkušenosti, porovnávat. Některé vzdělávací agentury jsou členy klubu, ale Honza si dává pozor na to, aby žádný konkrétní kurz neprotežoval a aby aktivity v rámci partnerství nezasahovaly do nestrannosti junior.guru.
 
-## {{ 'people'|icon }} Spolupráce s komunitami  {: #komunity }
+## {{ 'people'|icon }} Partnerství s komunitami  {: #komunity }
 
 Organizátoři komunit, které s klubem spolupracují, do něj mají přístup a mohou v něm promovat svoje aktivity. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na lidech z komunity, jak to uchopí a co z toho „vyždímou“. Spolupráce by ale neměla být samoúčelná, měla by vždy vyústit něco, co bude především nějakým způsobem sloužit samotným juniorům. Partnerství pro komunity je domlouváno nepeněžní formou. Logo komunity se na [stránce klubu](club.md) objevuje zpravidla ve chvíli, kdy jde o dlouhodobější, ne pouze jednorázovou spolupráci. Máte-li o partnerství zájem, napište na {{ 'honza@junior.guru'|email_link }}.
 

@@ -1,6 +1,6 @@
 from datetime import date
 
-from peewee import CharField, DateField, ForeignKeyField, IntegerField, fn
+from peewee import BooleanField, CharField, DateField, ForeignKeyField, IntegerField, fn
 
 from juniorguru.lib.club import EMOJI_PARTNER_INTRO, INTRO_CHANNEL
 from juniorguru.models.base import BaseModel, JSONField
@@ -12,6 +12,7 @@ class Partner(BaseModel):
     name = CharField()
     slug = CharField(unique=True)
     url = CharField()
+    is_course_provider = BooleanField(default=False)
     coupon = CharField(null=True, index=True)
     student_coupon = CharField(null=True, index=True)
     logo_path = CharField(null=True)

@@ -152,7 +152,7 @@ REVENUE_CATEGORIES = {
     'donations': 'dobrovolné příspěvky',
     'jobs': 'inzerce nabídek práce',
     'memberships': 'individuální členství',
-    'partnerships': 'spolupráce s firmami',
+    'partnerships': 'partnerství s firmami',
 }
 
 
@@ -185,3 +185,11 @@ def screenshot_url(url):
         .removeprefix('https-') \
         .removeprefix('www-')
     return f'static/images/screenshots/{slug}.jpg'
+
+
+def nice_url(url):
+    return url \
+        .removeprefix('http://') \
+        .removeprefix('https://') \
+        .removeprefix('www.') \
+        .removesuffix('/')
