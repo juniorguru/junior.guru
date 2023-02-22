@@ -16,8 +16,6 @@ from juniorguru.models.partner import Partner
 
 BOT_REACTIONS = ['👋', '👍', '💕', '💰']
 
-COMPANIES_INTRO_LAUNCH_ON = date(2022, 4, 1)
-
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
 INTRO_CHANNEL = BOT_CHANNEL  # FIXME
@@ -42,7 +40,7 @@ async def discord_task(client):
         if partners:
             logger.debug(f'Choosing from {len(partners)} partners to announce')
             partner = sorted(partners, key=sort_key)[0]
-            partnership = partner.active_partnership()
+            # partnership = partner.active_partnership()
 
             logger.debug(f'Decided to announce {partner!r}')
             if DISCORD_MUTATIONS_ENABLED:
@@ -52,12 +50,6 @@ async def discord_task(client):
                     f"Kamarádi z {partner.name_markdown_bold} se rozhodli podpořit klub a jsou tady s námi! "
                     f"Mají roli <@&{partner.role_id}>."
                 )
-                if partnership.starts_on < COMPANIES_INTRO_LAUNCH_ON and (date.today() - partnership.starts_on).days > 30:
-                    content += (
-                        ' 🐣 Sice to píšu jako novinku, ale ve skutečnosti klub podporují už od '
-                        f'{partnership.starts_on:%-d.%-m.%Y}. '
-                        'Jenže tehdy jsem bylo malé kuřátko, které ještě neumělo vítat firmy.'
-                    )
 
                 embed_description_lines = [
                     f"ℹ️ Víc o firmě najdeš na [jejich webu]({partner.url})",
