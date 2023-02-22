@@ -3,12 +3,14 @@ from datetime import date, timedelta
 from pathlib import Path
 from textwrap import dedent
 
-from discord import Color, Embed, File, ui, ButtonStyle
+from discord import ButtonStyle, Color, Embed, File, ui
 from jinja2 import Template
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, EMOJI_PARTNER_INTRO, INTRO_CHANNEL, is_message_over_period_ago, run_discord_task
+from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, EMOJI_PARTNER_INTRO,
+                                 INTRO_CHANNEL, is_message_over_period_ago,
+                                 run_discord_task)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.partner import Partner
