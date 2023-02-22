@@ -1,14 +1,15 @@
 import asyncio
 from datetime import date, timedelta
 from pathlib import Path
+from textwrap import dedent
 
-from discord import Color, Embed, File
+from discord import Color, Embed, File, ui, ButtonStyle
+from jinja2 import Template
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED  # JOBS_CHANNEL,
-from juniorguru.lib.club import (BOT_CHANNEL, EMOJI_PARTNER_INTRO,  # INTRO_CHANNEL
-                                 is_message_over_period_ago, run_discord_task)
+from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED
+from juniorguru.lib.club import EMOJI_PARTNER_INTRO, INTRO_CHANNEL, is_message_over_period_ago, run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.partner import Partner
@@ -18,7 +19,15 @@ BOT_REACTIONS = ['👋', '👍', '💕', '💰']
 
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
-INTRO_CHANNEL = BOT_CHANNEL  # FIXME
+DESCRIPTION_TEMPLATE = dedent('''
+    {%- set partnership = partner.active_partnership() -%}
+    Tarif **{{ partnership.plan.name }}** {% for _ in range(partnership.plan.hierarchy_rank + 1) %}:star:{% endfor %}
+
+    ℹ️ Mrkni na [jejich web]({{ partner.url }})
+    🙂 Aktuálně členů v klubu: {{ partner.list_members|length }}
+    🗓️ Od {{ '{:%-d.%-m.%Y}'.format(partnership.starts_on) }} do
+    {%- if partnership.expires_on %} {{ '{:%-d.%-m.%Y}'.format(partnership.expires_on) }}{% else %} odvolání{% endif %}
+''')
 
 
 logger = loggers.from_path(__file__)
@@ -36,43 +45,29 @@ async def discord_task(client):
         logger.info('Last partner intro message is more than one week old!')
 
         partners = [partner for partner in Partner.active_listing()
-                     if doesnt_have_intro(partner)]
+                    if is_message_over_period_ago(partner.intro, timedelta(days=365))]
         if partners:
             logger.debug(f'Choosing from {len(partners)} partners to announce')
             partner = sorted(partners, key=sort_key)[0]
-            # partnership = partner.active_partnership()
-
             logger.debug(f'Decided to announce {partner!r}')
+
+            template = Template(DESCRIPTION_TEMPLATE)
+            description = template.render(partner=partner)
+            channel = await client.fetch_channel(INTRO_CHANNEL)
+            content = (
+                f"{EMOJI_PARTNER_INTRO} "
+                f"Kamarádi z {partner.name_markdown_bold} podporují klub! "
+                f"Mají roli <@&{partner.role_id}>."
+            )
+            embed = Embed(title=partner.name, color=Color.dark_grey(),
+                            description=description)
+            embed.set_thumbnail(url=f"attachment://{Path(partner.poster_path).name}")
+            file = File(IMAGES_DIR / partner.poster_path)
+            button = ui.Button(label='Detaily partnerství',
+                                url=f'https://junior.guru/open/{partner.slug}',
+                                style=ButtonStyle.secondary)
             if DISCORD_MUTATIONS_ENABLED:
-                channel = await client.fetch_channel(INTRO_CHANNEL)
-                content = (
-                    f"{EMOJI_PARTNER_INTRO} "
-                    f"Kamarádi z {partner.name_markdown_bold} se rozhodli podpořit klub a jsou tady s námi! "
-                    f"Mají roli <@&{partner.role_id}>."
-                )
-
-                embed_description_lines = [
-                    f"ℹ️ Víc o firmě najdeš na [jejich webu]({partner.url})",
-                    "🛡 Mají logo na [stránce klubu](https://junior.guru/club/)",
-                ]
-                # if partner.is_sponsoring_handbook:
-                #     embed_description_lines.append('📖 Mají logo na [příručce pro juniory](https://junior.guru/handbook/)')
-                # if partner.job_slots_count:
-                #     embed_description_lines.append(f'🧑‍💻 Mají inzeráty v <#{JOBS_CHANNEL}> a [na webu](https://junior.guru/jobs/)')
-                if partner.student_role_id:
-                    embed_description_lines.append(f'🧑‍🎓 Posílají sem své studenty: <@&{partner.student_role_id}>')
-                embed_description_lines += [
-                    "💕 Chtějí pomáhat juniorům!",
-                    '💰 Financují práci na [příručce pro juniory](https://junior.guru/handbook/)',
-                    '\nJak přesně funguje spolupráce s firmami? Mrkni do [FAQ](https://junior.guru/faq/#firmy)',
-                ]
-
-                embed = Embed(title=partner.name, color=Color.dark_grey(),
-                              description='\n'.join(embed_description_lines))
-                embed.set_thumbnail(url=f"attachment://{Path(partner.poster_path).name}")
-                file = File(IMAGES_DIR / partner.poster_path)
-
-                message = await channel.send(content=content, embed=embed, file=file)
+                message = await channel.send(content=content, embed=embed, file=file, view=ui.View(button))
                 await asyncio.gather(*[message.add_reaction(emoji) for emoji in BOT_REACTIONS])
             else:
                 logger.warning('Discord mutations not enabled')
@@ -80,10 +75,6 @@ async def discord_task(client):
             logger.info('No partners to announce')
     else:
         logger.info('Last partner intro message is less than one week old')
-
-
-def doesnt_have_intro(partner):
-    return is_message_over_period_ago(partner.intro, timedelta(days=365))
 
 
 def sort_key(partner, today=None):

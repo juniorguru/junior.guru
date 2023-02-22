@@ -58,7 +58,7 @@
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_mentoring-activity-6927973476733448193-GNab
       agreements:
-        - text: Zaměstnanci poskytují v [klubu](https://junior.guru/club) individuální mentoring
+        - text: Zaměstnanci poskytují v klubu individuální mentoring
           done: yes
 
 - name: Jetveo
@@ -157,7 +157,7 @@
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_mentoring-discord-activity-6997918083440861184-A4oH
       agreements:
-        - text: Zaměstnanci poskytují v [klubu](https://junior.guru/club) individuální mentoring
+        - text: Zaměstnanci poskytují v klubu individuální mentoring
         - text: Podílí se na rozšířené pomoci pro lidi, kteří na junior.guru žádají o [stipendium](https://junior.guru/club).
           done: yes
 
@@ -217,9 +217,9 @@
     - plan: support
       starts_on: 2021-02-01
       agreements:
-        - text: Dan Srb v [klubu](https://junior.guru/club) moderuje a radí s frontendem
+        - text: Dan Srb v klubu moderuje a radí s frontendem
           done: yes
-        - text: Využívá [klub](https://junior.guru/club) pro komunikaci se svými klienty (studenty)
+        - text: Využívá klub pro komunikaci se svými klienty (studenty)
           done: yes
 
 - name: Rector
