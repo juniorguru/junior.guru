@@ -4,14 +4,13 @@ from pathlib import Path
 from textwrap import dedent
 
 from discord import ButtonStyle, Color, Embed, File, ui
-from jinja2 import Environment
+from jinja2 import Template
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, EMOJI_PARTNER_INTRO,
                                  INTRO_CHANNEL, is_message_over_period_ago,
                                  run_discord_task)
-from juniorguru.lib.template_filters import nice_url
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.partner import Partner
@@ -23,9 +22,8 @@ IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
 DESCRIPTION_TEMPLATE = dedent('''
     {%- set partnership = partner.active_partnership() -%}
-    👉 [{{ partner.url|nice_url }}]({{ partner.url }})
-
     **Tarif „{{ partnership.plan.name }}” {% for _ in range(partnership.plan.hierarchy_rank + 1) %}:star:{% endfor %}**
+
     {% for benefit in partnership.evaluate_benefits() -%}
     {{ benefit.text }}
     {% endfor %}
@@ -59,22 +57,30 @@ async def discord_task(client):
             logger.debug(f'Choosing from {len(partners)} partners to announce')
             partner = sorted(partners, key=sort_key)[0]
             logger.debug(f'Decided to announce {partner!r}')
-            description = render_template(DESCRIPTION_TEMPLATE, dict(partner=partner))
+            template = Template(DESCRIPTION_TEMPLATE)
+            description = template.render(partner=partner)
             content = (
                 f"{EMOJI_PARTNER_INTRO} Partnerství! "
                 f"Firma {partner.name_markdown_bold} chce pomáhat juniorům. "
                 f"Členové, které sem pošle, mají roli <@&{partner.role_id}> (aktuálně {len(partner.list_members)})."
             )
             embed = Embed(title=partner.name, color=Color.dark_grey(),
-                            description=description)
+                          description=description)
             embed.set_thumbnail(url=f"attachment://{Path(partner.poster_path).name}")
             file = File(IMAGES_DIR / partner.poster_path)
-            button = ui.Button(label='Detaily partnerství',
-                                url=f'https://junior.guru/open/{partner.slug}',
-                                style=ButtonStyle.secondary)
+            buttons = [
+                ui.Button(emoji='👉',
+                          label=partner.name,
+                          url=partner.url,
+                          style=ButtonStyle.secondary),
+                ui.Button(emoji='👀',
+                          label='Detaily partnerství',
+                          url=f'https://junior.guru/open/{partner.slug}',
+                          style=ButtonStyle.secondary)
+            ]
             if DISCORD_MUTATIONS_ENABLED:
                 channel = await client.fetch_channel(INTRO_CHANNEL)
-                message = await channel.send(content=content, embed=embed, file=file, view=ui.View(button))
+                message = await channel.send(content=content, embed=embed, file=file, view=ui.View(*buttons))
                 await asyncio.gather(*[message.add_reaction(emoji) for emoji in BOT_REACTIONS])
             else:
                 logger.warning('Discord mutations not enabled')
@@ -82,12 +88,6 @@ async def discord_task(client):
             logger.info('No partners to announce')
     else:
         logger.info('Last partner intro message is less than one week old')
-
-
-def render_template(template, context):
-    environment = Environment()
-    environment.filters['nice_url'] = nice_url
-    return environment.from_string(template).render(**context)
 
 
 def sort_key(partner, today=None):

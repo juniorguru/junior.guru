@@ -185,11 +185,3 @@ def screenshot_url(url):
         .removeprefix('https-') \
         .removeprefix('www-')
     return f'static/images/screenshots/{slug}.jpg'
-
-
-def nice_url(url):
-    return url \
-        .removeprefix('http://') \
-        .removeprefix('https://') \
-        .removeprefix('www.') \
-        .removesuffix('/')
