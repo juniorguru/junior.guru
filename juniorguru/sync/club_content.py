@@ -72,9 +72,10 @@ async def discord_task(client):
     db.drop_tables([ClubMessage, ClubUser, ClubPinReaction])
     db.create_tables([ClubMessage, ClubUser, ClubPinReaction])
 
-    channels = (channel for channel
+    channels = (channel for channel  # or just juniorguru_guild.channels ???
                 in itertools.chain(client.juniorguru_guild.text_channels,
                                    client.juniorguru_guild.voice_channels,
+                                   # TODO client.juniorguru_guild.stage_channels,
                                    client.juniorguru_guild.forum_channels)
                 if channel.permissions_for(client.juniorguru_guild.me).read_messages)
     authors = await process_channels(channels)

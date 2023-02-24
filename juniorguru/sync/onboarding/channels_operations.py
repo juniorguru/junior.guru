@@ -4,7 +4,7 @@ import discord
 from slugify import slugify
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, JUNIORGURU_BOT
+from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, JUNIORGURU_BOT, DEFAULT_AUTO_ARCHIVE_DURATION
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.onboarding.categories import manage_category
 
@@ -92,4 +92,5 @@ async def prepare_onboarding_channel_data(client, member):
         onboarding_role: discord.PermissionOverwrite(read_messages=True),
         (await client.get_or_fetch_user(JUNIORGURU_BOT)): discord.PermissionOverwrite(read_messages=True),
     }
-    return dict(name=name, topic=topic, overwrites=overwrites)
+    return dict(name=name, topic=topic, overwrites=overwrites,
+                default_auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION)

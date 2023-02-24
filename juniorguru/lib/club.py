@@ -60,6 +60,8 @@ RECENT_PERIOD_DAYS = 30
 
 IS_NEW_PERIOD_DAYS = 15
 
+DEFAULT_AUTO_ARCHIVE_DURATION = 10080  # minutes
+
 COUPON_RE = re.compile(r'''
     ^
         (?P<name>
