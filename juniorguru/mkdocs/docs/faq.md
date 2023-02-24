@@ -86,7 +86,7 @@ Klub neprovozuje firma, ale jednotlivec, [Honza Javorek](#honza). Jedna osoba, r
 
 ### Existuje způsob, jak být v klubu zdarma?
 
-První osadníci, kteří pomáhali klub rozjíždět v době jeho počátků, jsou v klubu zdarma, navždy. Přednášející na [klubových akcích](/events/) dostávají jako poděkování roční členství zdarma. Pro znevýhodněné skupiny lidí připravujeme speciální stipendium, ale zatím není v provozu. Pokud si tvoje firma platí v klubu členství, měla by mít k dispozici minimálně šest ročních vstupů pro své lidi. Pokud tady vidíš logo své firmy, poptej se, zda ještě nemají nevyužité vstupy.
+První osadníci, kteří pomáhali klub rozjíždět v době jeho počátků, jsou v klubu zdarma, navždy. Přednášející na [klubových akcích](/events/) dostávají jako poděkování roční členství zdarma. Pro znevýhodněné skupiny existuje [stipendium](finaid.md). Pokud si tvoje firma platí v klubu členství, měla by mít k dispozici minimálně šest ročních vstupů pro své lidi. Pokud tady vidíš logo své firmy, poptej se, zda ještě nemají nevyužité vstupy.
 
 ### Kdy musím zadat platební kartu?
 

@@ -73,7 +73,6 @@ def on_docs_context(context):
     context['members_total_count'] = ClubUser.members_count()
 
     # club.md
-    context['finaid_url'] = 'https://docs.google.com/forms/d/e/1FAIpQLSeJ_Bmq__X8AA-XbKqU-Vr1N6fdGHSBQ-IuneO5zhBcGCOgjQ/viewform?usp=sf_link'
     context['messages_count'] = ClubMessage.count()
     context['partners'] = Partner.active_listing()  # also open.md
     context['partners_schools'] = Partner.active_schools_listing()

@@ -244,7 +244,7 @@ Nemusíš hned zadávat kartu. Vyber si roční nebo měsíční předplatné a 
       <li class="pricing-benefits-item">Podpora pro znevýhodněné</li>
       <li class="pricing-benefits-item">Vyplň formulář a uvidíš</li>
     </ul>
-    <a class="pricing-button" href="{{ finaid_url }}" target="_blank" rel="noopener">na rok zdarma</a>
+    <a class="pricing-button" href="{{ pages|docs_url('finaid.md')|url }}" target="_blank" rel="noopener">na rok zdarma</a>
   </div>
 </div>
 
