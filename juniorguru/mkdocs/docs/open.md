@@ -272,15 +272,12 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
 
 ## Firemní partnerství
 
-Firmy mohou uzavírat s junior.guru partnerství na základě tarifu zakoupeného podle [ceníku](pricing.md).
-Partnerství domlouvám osobně a je vždy na rok, potom s firmou jednáme o prodloužení.
-
-Nikdy nedoporučuji konkrétní kurzy a snažím se ve svých vyjádřeních měřit všem firmám stejně.
-Aby bylo vše maximálně transparentní, uvádím zde podrobnosti ke každému uzavřenému partnerství.
+Firmy mohou uzavírat s junior.guru [partnerství](faq.md#firmy) na základě tarifu zakoupeného podle [ceníku](pricing.md).
+Partnerství domlouvám osobně a je vždy na rok, potom s firmou jednáme o prodloužení. Tady je detailní přehled všech závazků, které má junior.guru vůči jednotlivým firmám.
 
 <div class="table-responsive standout"><table class="table">
   <tr>
-    <th>Firma</th>
+    <th>Detaily</th>
     <th>Tarif</th>
     <th>Zbývá</th>
   </tr>
@@ -289,12 +286,12 @@ Aby bylo vše maximálně transparentní, uvádím zde podrobnosti ke každému 
     {% set plan = partnership.plan %}
     <tr>
       <td>
-        <a href="{{ pages|docs_url('open/' + partner.slug + '.md')|url }}">{{ partner.name }}</a>
+        <a href="{{ pages|docs_url('open/' + partner.slug + '.md')|url }}">Partnerství s {{ partner.name }}</a>
       </td>
       <td>
-        {% for _ in range(plan.hierarchy_rank + 1) %}
-          {{ 'star'|icon }}
-        {% endfor %}
+        {%- for _ in range(plan.hierarchy_rank + 1) -%}
+          &nbsp;{{- 'star'|icon -}}
+        {%- endfor -%}
       </td>
       {% if partnership.expires_on %}
         <td{% if partnership.days_until_expires() < 30 %}

@@ -136,17 +136,43 @@ Zaregistruj se jako člen klubu a plať členství. Nemusíš si vytvářet úč
 
 ## {{ 'building'|icon }} Partnerství s firmami
 
-### Co vyplývá z toho, že je členem klubu nějaká firma? {: #firmy }
+### Co vyplývá z toho, že je nějaká firma partnerem junior.guru? {: #firmy }
 
-Každá firma, která s klubem spolupracuje, má logo na [stránce klubu](club.md) a minimálně šest vstupů pro své lidi. Dále záleží na tom, o jakou kombinaci z [ceníku](pricing.md) měli zájem a na jaké konkrétní formě spolupráce se dohodli s provozovatelem junior.guru, [Honzou Javorkem](#honza). Bývá to různé. Některé firmy zajímá nábor juniorů, tak nakupují inzeráty, další berou podporu klubu jako [CSR](https://cs.wikipedia.org/wiki/Spole%C4%8Densk%C3%A1_odpov%C4%9Bdnost_firem), jiné chtějí zviditelnit svou značku.
+Je žádoucí, aby junior.guru stálo na pomezí firem a juniorů a vyvažovalo diskuzi na obě strany, ne aby mazalo med kolem pusy jedné z nich a stavělo ji proti druhé.
+Rozložení příjmů junior.guru mezi juniory i firmy je způsob, jak to zajistit.
+Také díky tomu může být členství v klubu pro samotné juniory mnohem levnější.
 
-### Co firma získává členstvím v klubu?
+Honza Javorek, autor junior.guru, má ale nakonec vždy na prvním místě dobro samotných juniorů.
+Ačkoliv dělá obchody s firmami, zachovává si nezávislost a nenechává se ovlivnit ve prospěch konkrétního produktu.
+Aby nebylo pochyb o tom, s kým si co domluvil, všechna partnerství jsou do detailu [transparentně zdokumentována](open.md#firemni-partnerstvi).
 
-Firmy, které s klubem spolupracují, do něj mají především přístup. Mohou vyhlížet talentované juniory, promovat ve vyhrazených kanálech své aktivity, poskytovat slevy na své produkty. Mohou se zapojit do diskuzí a radit nebo poskytovat pohled z druhé strany. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na firmě, jak to uchopí a co z toho „vyždíme“. Už jen tím, že svými financemi podpoří existenci junior.guru a bude vidět její logo, si buduje dobré jméno jak mezi lidmi z nastupující generace vývojářů, tak mezi zainteresovanými profíky. Partnerství pro firmy je od 15.000 Kč/rok. Mrk na [ceník](pricing.md) a pokud máte zájem, pište na {{ 'honza@junior.guru'|email_link }}.
+Firmy si v [ceníku](pricing.md) vybírají tarif podle toho, co od spolupráce očekávají.
+Partnerství je na rok.
+Každý tarif má sadu benefitů, které během toho roku může firma čerpat.
+Důvody, proč firmy s junior.guru spolupracují, jsou různé.
+Buď je to [CSR](https://cs.wikipedia.org/wiki/Spole%C4%8Densk%C3%A1_odpov%C4%9Bdnost_firem), nebo by rády najaly nějaké juniory, nebo jim chtějí prezentovat svůj produkt.
 
-### Co vyplývá z toho, že je členem klubu nějaká vzdělávací agentura?  {: #vzdelavaci-agentury :}
+### Co firma získává členstvím v klubu?   {: #firmy-klub :}
 
-Klub a celé junior.guru nenabízí ani nedoporučuje žádný konkrétní vzdělávací program, je to nezávislý rozcestník. Pokud je někde odkaz na konkrétní stránku, je to proto, že je autor junior.guru, [Honza Javorek](#honza), upřímně přesvědčen o jejím jedinečném přínosu v daném kontextu. Mimo loga partnerů si na junior.guru nelze koupit žádné odkazy. Klub je místem, kde lze o nabídce firem diskutovat na neutrální půdě, sdílet si zkušenosti, porovnávat. Některé vzdělávací agentury jsou členy klubu, ale Honza si dává pozor na to, aby žádný konkrétní kurz neprotežoval a aby aktivity v rámci partnerství nezasahovaly do nestrannosti junior.guru.
+Partnerské firmy mají přístup do klubu. Mohou vyhlížet talentované juniory, promovat ve vyhrazených kanálech své aktivity, poskytovat slevy na své produkty. Mohou se zapojit do diskuzí a radit, nebo poskytovat pohled z druhé strany. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na firmě, jak to uchopí a co z toho „vyždíme“.
+
+Už jen tím, že svými financemi podpoří existenci junior.guru a bude vidět její logo, si buduje dobré jméno jak mezi lidmi z nastupující generace vývojářů, tak mezi zainteresovanými profíky. Partnerství pro firmy je od 15.000 Kč/rok. Mrkněte na [ceník](pricing.md) a pokud máte zájem, pište na {{ 'honza@junior.guru'|email_link }}.
+
+### Co vyplývá z toho, že je partnerem vzdělávací agentura?  {: #vzdelavaci-agentury :}
+
+{% if partners_course_providers -%}
+Aktuálně jde o firmy {% for partner in partners_course_providers %}{{ partner.name -}}
+{% if loop.last %}{% else %}, {% endif %}{% endfor %}.
+{%- endif %}
+Všechna partnerství jsou do detailu [transparentně zdokumentována](open.md#firemni-partnerstvi).
+
+Firmy respektují, že klub je místem, kde lze o nabídce kurzů diskutovat na neutrální půdě, sdílet si zkušenosti, porovnávat.
+Recenze členů jsou subjektivním hodnocením konkrétních lidí a firmy nemají možnost do něj zasahovat.
+Pokud chce vzdělávací agentura propagovat své produkty, může tak činit ve vyhrazených místech v klubu.
+Honza si dává pozor na to, aby žádný konkrétní kurz sám neprotežoval a aby aktivity v rámci partnerství nezasahovaly do nestrannosti junior.guru.
+
+Web junior.guru a především příručka jsou nezávislým rozcestníkem a žádný běžný odkaz si tam nelze koupit.
+Pokud je tam odkaz na konkrétní produkt, tak proto, že je Honza upřímně přesvědčen o jeho jedinečném přínosu v daném kontextu.
 
 ## {{ 'people'|icon }} Partnerství s komunitami  {: #komunity }
 

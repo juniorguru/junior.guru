@@ -1,4 +1,4 @@
-{% from 'macros.html' import lead, figure, partner_link, note with context %}
+{% from 'macros.html' import lead, figure, partner_link with context %}
 
 {% set active_partnership = partner.active_partnership() %}
 
@@ -26,15 +26,16 @@
     <th>Tarif</th>
     <td>
       <a href="{{ pages|docs_url('pricing.md')|url }}">{{ active_partnership.plan.name }}</a>
-      {% for _ in range(active_partnership.plan.hierarchy_rank + 1) %}
-        {{ 'star'|icon }}
-      {% endfor %}
+      {%- for _ in range(active_partnership.plan.hierarchy_rank + 1) -%}
+        &nbsp;{{- 'star'|icon -}}
+      {%- endfor -%}
     </td>
   </tr>
   <tr>
     <th>Členů v klubu</th>
     <td>
-      {{ partner.list_members|length }} z 15
+      {{ partner.list_members|length }} z 15<br>
+      <small>{{ 'question-circle'|icon }} <a href="{{ pages|docs_url('faq.md')|url }}#firmy-klub">k čemu je firmě členství v klubu</a></small>
     </td>
   </tr>
   <tr>
@@ -50,7 +51,20 @@
   </tr>
 </table></div>
 
+
+## Vztah s junior.guru
+
+Veškerá placená spolupráce je viditelně označena.
+{%- if partner.is_course_provider %}
+Firma je **vzdělávací agenturou** a jako taková chce lidi přesvědčit o tom, že její vzdělávací programy jsou nejlepší.
+Tím vzniká u Honzy Javorka, autora junior.guru, **konflikt zájmů** a proto se vztah s touto firmou řídí [opatrnějšími pravidly](../faq.md#vzdelavaci-agentury).
+{% else %}
+Firma nepodniká v oblasti vzdělávání juniorů a neměl by tedy existovat žádný konflikt zájmů, který by zpochybňoval neutralitu junior.guru.
+{% endif %}
+
 ## Výsledky spolupráce
+
+Jako placená spolupráce se berou jen akce v klubu a epizody podcastu, které iniciovala firma na základě tarifu. Pokud si někoho sami pozveme, tak se to jako placená spolupráce nebere.
 
 <div class="table-responsive"><table class="table">
   {% for podcast_episode in partner.list_podcast_episodes %}
@@ -116,10 +130,6 @@
   {% endfor %}
 </table></div>
 
-{% call note() -%}
-  {{ 'exclamation-circle'|icon }} Jako placená spolupráce se berou jen akce v klubu a epizody podcastu, které iniciovala firma na základě tarifu. Pokud si někoho sami pozveme, tak se to jako placená spolupráce nebere.
-{%- endcall %}
-
 ## Stav benefitů
 
 <div class="table-responsive"><table class="table">
@@ -159,6 +169,10 @@
 
 ## Historie
 
+{% if partner.first_partnership().starts_on.year < 2023 %}
+Partnerství jsou vždy na jeden rok. Do 1.1.2023 se však při prodlužování nedělal nový záznam, pouze se přepsalo datum ukončení.
+{% endif %}
+
 <div class="table-responsive"><table class="table">
   <tr>
     <th>Tarif</th>
@@ -185,12 +199,6 @@
   </tr>
 {% endfor %}
 </table></div>
-
-{% if partner.first_partnership().starts_on.year < 2023 %}
-  {% call note() -%}
-    {{ 'exclamation-circle'|icon }} Partnerství jsou vždy na jeden rok, ale do 1.1.2023 se při prodlužování nedělal nový záznam, pouze se přepsalo datum ukončení.
-  {%- endcall %}
-{% endif %}
 
 <div class="pagination">
   <div class="pagination-control">

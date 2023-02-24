@@ -115,9 +115,16 @@ class Partner(BaseModel):
     @classmethod
     def handbook_listing(cls, today=None):
         today = today or date.today()
-        return cls.active_listing() \
+        return cls.active_listing(today=today) \
             .join(PartnershipBenefit) \
             .where(PartnershipBenefit.slug == 'logo_handbook') \
+            .order_by(cls.name)
+
+    @classmethod
+    def course_providers_listing(cls, today=None):
+        today = today or date.today()
+        return cls.active_listing(today=today) \
+            .where(cls.is_course_provider == True) \
             .order_by(cls.name)
 
     @classmethod

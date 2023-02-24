@@ -80,6 +80,9 @@ def on_docs_context(context):
     context['events'] = Event.listing()
     context['events_club'] = Event.club_listing()
 
+    # faq.md
+    context['partners_course_providers'] = Partner.course_providers_listing()
+
     # handbook/motivation.md
     context['stories'] = Story.listing()
     context['stories_by_tags'] = Story.tags_mapping()
