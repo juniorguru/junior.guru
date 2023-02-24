@@ -25,17 +25,11 @@
   <tr>
     <th>Tarif</th>
     <td>
-      <a href="{{ pages|docs_url('pricing.md')|url }}">{{ active_partnership.plan.name }}</a>
+      {{ active_partnership.plan.name }}
       {%- for _ in range(active_partnership.plan.hierarchy_rank + 1) -%}
         &nbsp;{{- 'star'|icon -}}
-      {%- endfor -%}
-    </td>
-  </tr>
-  <tr>
-    <th>Členů v klubu</th>
-    <td>
-      {{ partner.list_members|length }} z 15<br>
-      <small>{{ 'question-circle'|icon }} <a href="{{ pages|docs_url('faq.md')|url }}#firmy-klub">k čemu je firmě členství v klubu</a></small>
+      {%- endfor -%}<br>
+      <small>{{ 'question-circle'|icon }} <a href="{{ pages|docs_url('pricing.md')|url }}">jak vypadá ceník</a></small>
     </td>
   </tr>
   <tr>
@@ -64,9 +58,17 @@ Firma nepodniká v oblasti vzdělávání juniorů a neměl by tedy existovat ž
 
 ## Výsledky spolupráce
 
-Jako placená spolupráce se berou jen akce v klubu a epizody podcastu, které iniciovala firma na základě tarifu. Pokud si někoho sami pozveme, tak se to jako placená spolupráce nebere.
+Pokud tady něco chybí, tak buď [nejde o placenou spolupráci](../faq.md#neoznacena-spoluprace), nebo to Honza zapomenul zaznamenat. Napiš mu na {{ 'honza@junior.guru'|email_link }}.
 
 <div class="table-responsive"><table class="table">
+  <tr>
+    <td>Členů v klubu {{ 'person-circle'|icon }}</td>
+    <td>
+      {{ partner.list_members|length }} z 15<br>
+      <small>{{ 'question-circle'|icon }} <a href="{{ pages|docs_url('faq.md')|url }}#firmy-klub">k čemu je členství</a></small>
+    </td>
+  </tr>
+
   {% for podcast_episode in partner.list_podcast_episodes %}
   <tr>
     <td>Epizoda podcastu {{ 'mic'|icon }}</td>

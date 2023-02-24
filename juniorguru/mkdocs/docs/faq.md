@@ -154,9 +154,7 @@ Buď je to [CSR](https://cs.wikipedia.org/wiki/Spole%C4%8Densk%C3%A1_odpov%C4%9B
 
 ### Co firma získává členstvím v klubu?   {: #firmy-klub :}
 
-Partnerské firmy mají přístup do klubu. Mohou vyhlížet talentované juniory, promovat ve vyhrazených kanálech své aktivity, poskytovat slevy na své produkty. Mohou se zapojit do diskuzí a radit, nebo poskytovat pohled z druhé strany. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na firmě, jak to uchopí a co z toho „vyždíme“.
-
-Už jen tím, že svými financemi podpoří existenci junior.guru a bude vidět její logo, si buduje dobré jméno jak mezi lidmi z nastupující generace vývojářů, tak mezi zainteresovanými profíky. Partnerství pro firmy je od 15.000 Kč/rok. Mrkněte na [ceník](pricing.md) a pokud máte zájem, pište na {{ 'honza@junior.guru'|email_link }}.
+Partnerské firmy mají přístup do klubu. Mohou vyhlížet talentované juniory, promovat ve vyhrazených kanálech své aktivity, poskytovat slevy na své produkty. Mohou se zapojit do diskuzí a radit, nebo poskytovat pohled z druhé strany. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na firmě, jak to uchopí a co z toho „vyždíme“. Už jen tím, že svými financemi podpoří existenci junior.guru a bude vidět její logo, si buduje dobré jméno jak mezi lidmi z nastupující generace vývojářů, tak mezi zainteresovanými profíky.
 
 ### Co vyplývá z toho, že je partnerem vzdělávací agentura?  {: #vzdelavaci-agentury :}
 
@@ -173,6 +171,15 @@ Honza si dává pozor na to, aby žádný konkrétní kurz sám neprotežoval a 
 
 Web junior.guru a především příručka jsou nezávislým rozcestníkem a žádný běžný odkaz si tam nelze koupit.
 Pokud je tam odkaz na konkrétní produkt, tak proto, že je Honza upřímně přesvědčen o jeho jedinečném přínosu v daném kontextu.
+
+### Přednášející v klubu nebo host v podcastu je z nějaké firmy, proč to není označeno jako spolupráce?  {: #neoznacena-spoluprace :}
+
+Na akce v klubu a do podcastu si zveme zajímavé lidi z oboru.
+Většinou zrovna někde pracují, takže to pro kontext uvádíme u jejich jména.
+Neznamená to, že k nám firma toho člověka poslala, nebo že za to něco zaplatila.
+
+Jako „placená spolupráce“ jsou viditelně označeny jen akce v klubu a epizody podcastu, které na základě tarifu iniciovala firma.
+Zaplatila za to a vybrala si, koho k nám pošle.
 
 ## {{ 'people'|icon }} Partnerství s komunitami  {: #komunity }
 
