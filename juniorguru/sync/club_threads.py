@@ -1,6 +1,7 @@
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED, DEFAULT_AUTO_ARCHIVE_DURATION
+from juniorguru.lib.club import (DEFAULT_AUTO_ARCHIVE_DURATION,
+                                 DISCORD_MUTATIONS_ENABLED, run_discord_task)
 from juniorguru.models.base import db
 
 

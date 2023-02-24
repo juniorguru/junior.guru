@@ -2,7 +2,7 @@ from discord import Color, Embed, ui
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import run_discord_task, DISCORD_MUTATIONS_ENABLED
+from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
 from juniorguru.models.base import db
 
 

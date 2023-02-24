@@ -4,7 +4,8 @@ import discord
 from slugify import slugify
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, JUNIORGURU_BOT, DEFAULT_AUTO_ARCHIVE_DURATION
+from juniorguru.lib.club import (DEFAULT_AUTO_ARCHIVE_DURATION,
+                                 DISCORD_MUTATIONS_ENABLED, JUNIORGURU_BOT)
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.onboarding.categories import manage_category
 
