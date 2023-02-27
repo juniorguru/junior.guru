@@ -67,12 +67,12 @@ class ClubUser(BaseModel):
 
     def upvotes_count(self):
         messages = self.list_messages \
-            .where(ClubMessage.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
+            .where(ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
         return sum([message.upvotes_count for message in messages])
 
     def recent_upvotes_count(self, today=None):
         messages = self.list_recent_messages(today) \
-            .where(ClubMessage.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
+            .where(ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
         return sum([message.upvotes_count for message in messages])
 
     def first_seen_on(self):
@@ -205,7 +205,7 @@ class ClubMessage(BaseModel):
     def digest_listing(cls, since_dt, limit=5):
         return cls.select() \
             .where(cls.created_at >= since_dt,
-                   ClubMessage.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS)) \
+                   ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS)) \
             .order_by(cls.upvotes_count.desc()) \
             .limit(limit)
 

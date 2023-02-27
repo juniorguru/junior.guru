@@ -2,7 +2,7 @@ import asyncio
 import importlib
 import os
 import re
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime, timezone
 from multiprocessing import Process
 
 import discord
@@ -36,11 +36,9 @@ INTRO_CHANNEL = 788823881024405544  # ahoj
 
 ANNOUNCEMENTS_CHANNEL = 789046675247333397  # oznámení
 
-FUN_CHANNEL = 797040163325870092  # volná-zábava
-
 BOT_CHANNEL = 797107515186741248  # roboti
 
-JOBS_CHANNEL = 834443926655598592  # práce-bot
+JOBS_CHANNEL = 1078773263385251860  # práce-nabídka
 
 MENTORING_CHANNEL = 976054742117658634  # mentoring
 
@@ -48,10 +46,9 @@ UPVOTES_EXCLUDE_CHANNELS = [
     INTRO_CHANNEL,
     ANNOUNCEMENTS_CHANNEL,
     BOT_CHANNEL,
-    FUN_CHANNEL,
     788822884948770846,  # nástěnka
-    974300725976920074,  # mentoři
-    1062741369329811577,  # byznys
+    797040163325870092,  # volná-zábava
+    1075038606881730570,  # volná-témata
 ]
 
 TOP_MEMBERS_PERCENT = 0.05
@@ -73,12 +70,20 @@ COUPON_RE = re.compile(r'''
     $
 ''', re.VERBOSE)
 
+DEFAULT_THREAD_CREATED_AT = datetime(2022, 1, 9, tzinfo=timezone.utc)  # threads have 'created_at' since 2022-01-09
+
 DEFAULT_CHANNELS_HISTORY_SINCE = timedelta(days=380)
 
 CHANNELS_HISTORY_SINCE = {
-    FUN_CHANNEL: timedelta(days=30),
-    INTRO_CHANNEL: None,  # means 'take all history since ever'
-    BOT_CHANNEL: timedelta(0),  # means 'skip the channel'
+    797040163325870092: timedelta(days=30),  # volná-zábava
+    1075038606881730570: timedelta(days=30),  # volná-témata
+
+    # take all history since ever
+    INTRO_CHANNEL: None,
+
+    # skip channels
+    BOT_CHANNEL: timedelta(0),
+    JOBS_CHANNEL: timedelta(0),
 }
 
 STATS_EXCLUDE_CHANNELS = [
@@ -222,3 +227,31 @@ def is_message_bot_reminder(message):
     return (message.author.id == JUNIORGURU_BOT and
             message.content and
             emoji.is_emoji(message.content[0]))
+
+
+async def fetch_messages(channel, after=None):
+    try:
+        channel_history = channel.history
+    except AttributeError:
+        pass  # channel type doesn't support history (e.g. forum)
+    else:
+        async for message in channel_history(limit=None, after=after):
+            yield message
+
+
+async def fetch_threads(channel):
+    try:
+        channel_threads = channel.threads
+    except AttributeError:
+        pass  # channel type doesn't support threads (e.g. voice)
+    else:
+        for thread in channel_threads:
+            yield thread
+        async for thread in channel.archived_threads(limit=None):
+            yield thread
+
+
+def is_thread_after(thread, after=None):
+    if after:
+        return (thread.created_at or DEFAULT_THREAD_CREATED_AT) >= after
+    return thread

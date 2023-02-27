@@ -1,19 +1,24 @@
 import asyncio
-import re
-from datetime import date, timedelta
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
+from discord import Embed, ui, File
+
+from juniorguru.lib.club import fetch_threads, is_thread_after
+from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JOBS_CHANNEL,
                                  run_discord_task)
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubMessage
 from juniorguru.models.job import ListedJob
 
 
+JOBS_POSTING_CHUNK_SIZE = 2
+
 JOBS_REPEATING_PERIOD_DAYS = 30
 
-URL_RE = re.compile(r'https?://\S+', re.I)
+PACKAGE_DIR = Path('juniorguru')
 
 
 logger = loggers.from_path(__file__)
@@ -26,30 +31,49 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    since_at = date.today() - timedelta(days=JOBS_REPEATING_PERIOD_DAYS)
+    since_at = datetime.now(timezone.utc) - timedelta(days=JOBS_REPEATING_PERIOD_DAYS)
     logger.info(f'Figuring out which jobs are not yet in the channel since {since_at}')
-    messages = ClubMessage.channel_listing_since(JOBS_CHANNEL, since_at)
-    urls = frozenset(filter(None, (get_first_url(message.content) for message in messages)))
+    channel = await client.juniorguru_guild.fetch_channel(JOBS_CHANNEL)
+    urls = [get_effective_url(message) async for message
+            in fetch_starting_messages(channel, after=since_at)]
+    urls = frozenset(filter(None, urls))
     logger.info(f'Found {len(urls)} jobs since {since_at}')
     jobs = [job for job in ListedJob.listing() if job.effective_url not in urls]
     logger.info(f'Posting {len(jobs)} new jobs to the channel')
-    discord_channel = await client.fetch_channel(JOBS_CHANNEL)
-    if DISCORD_MUTATIONS_ENABLED:
-        await asyncio.gather(*[post_job(discord_channel, job) for job in jobs])
-    else:
-        logger.warning('Discord mutations not enabled')
+    jobs_chunks = chunks(jobs, size=JOBS_POSTING_CHUNK_SIZE)
+    for n, jobs_chunk in enumerate(jobs_chunks, start=1):
+        logger.debug(f'Processing chunk #{n} of {len(jobs_chunk)} jobs')
+        await asyncio.gather(*[post_job(channel, job) for job in jobs_chunk])
 
 
-async def post_job(discord_channel, job):
+async def fetch_starting_messages(channel, after=None):
+    async for thread in fetch_threads(channel):
+        if is_thread_after(thread, after=after):
+            yield await thread.fetch_message(thread.id)
+
+
+def get_effective_url(message):
+    try:
+        action_row = message.components[0]
+        button = action_row.children[0]
+        return button.url
+    except IndexError:
+        return None
+
+
+async def post_job(channel, job):
     logger[str(job.id)].info(f'Posting {job!r}: {job.effective_url}')
-    content = f'**{job.title}**\n{job.company_name} – {job.location}\n{job.effective_url}'
-    discord_message = await discord_channel.send(content)
-    await discord_message.add_reaction('👍')
-    await discord_message.add_reaction('👎')
-
-
-def get_first_url(message_content):
-    match = URL_RE.search(message_content)
-    if match:
-        return match.group(0)
-    return None
+    if DISCORD_MUTATIONS_ENABLED:
+        thread = await channel.create_thread(job.title,
+                                             job.location,
+                                             view=ui.View(ui.Button(emoji='👉',
+                                                          label='Mám zájem',
+                                                          url=job.effective_url)))
+        if job.company_logo_path:
+            # https://github.com/Pycord-Development/pycord/discussions/1948
+            message = await thread.fetch_message(thread.id)
+            embed = Embed(title=job.company_name)
+            embed.set_thumbnail(url=f"attachment://{Path(job.company_logo_path).name}")
+            await message.edit(file=File(PACKAGE_DIR / job.company_logo_path), embed=embed)
+    else:
+        logger[str(job.id)].warning('Discord mutations not enabled')
