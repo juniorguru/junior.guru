@@ -2,14 +2,13 @@ import asyncio
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from discord import Embed, ui, File
+from discord import Embed, File, ui
 
-from juniorguru.lib.club import fetch_threads, is_thread_after
-from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JOBS_CHANNEL,
-                                 run_discord_task)
+from juniorguru.lib.asyncio_extra import chunks
+from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, JOBS_CHANNEL, fetch_threads,
+                                 is_thread_after, run_discord_task)
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
 
