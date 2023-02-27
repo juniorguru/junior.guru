@@ -22,6 +22,7 @@ def create_user(id_, **kwargs):
 
 
 def create_message(id_, user, **kwargs):
+    channel_id = kwargs.get('channel_id', 123)
     created_at = kwargs.get('created_at', datetime.now() - timedelta(days=3))
     content = kwargs.get('content', 'hello')
     return ClubMessage.create(id=id_,
@@ -34,9 +35,10 @@ def create_message(id_, user, **kwargs):
                               pin_reactions_count=kwargs.get('pin_reactions_count', 0),
                               created_at=created_at,
                               created_month=kwargs.get('created_month', f'{created_at:%Y-%-d}'),
-                              channel_id=kwargs.get('channel_id', 123),
+                              channel_id=channel_id,
                               channel_name=kwargs.get('channel_name', 'random-discussions'),
                               channel_mention=kwargs.get('channel_mention', '<#random-discussions>'),
+                              parent_channel_id=kwargs.get('parent_channel_id', channel_id),
                               type=kwargs.get('type', 'default'))
 
 
