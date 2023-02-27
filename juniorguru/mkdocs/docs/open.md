@@ -499,7 +499,7 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
 
 ## Aktivita v klubu
 
-### Počet zpráv na Discordu
+### Počet znaků napsaných na Discordu
 
 V grafu není celá historie, uchovávám data jen za rok zpětně. Některé kanály se nezapočítávají, např. „volná zábava“. Nejde o kompletní _engagement_, protože lidi se mohou v klubu projevovat různě, např. reagováním pomocí emoji.
 
