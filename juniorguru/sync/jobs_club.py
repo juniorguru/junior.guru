@@ -69,8 +69,8 @@ async def post_job(channel, job):
                                                           label='Mám zájem',
                                                           url=job.effective_url)))
         if job.company_logo_path:
-            # https://github.com/Pycord-Development/pycord/discussions/1948
-            message = await thread.fetch_message(thread.id)
+            # https://github.com/Pycord-Development/pycord/issues/1949
+            message = await thread.get_partial_message(thread.id)
             embed = Embed(title=job.company_name)
             embed.set_thumbnail(url=f"attachment://{Path(job.company_logo_path).name}")
             await message.edit(file=File(PACKAGE_DIR / job.company_logo_path), embed=embed)
