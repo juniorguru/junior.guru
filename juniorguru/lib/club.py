@@ -78,24 +78,13 @@ CHANNELS_HISTORY_SINCE = {
     797040163325870092: timedelta(days=30),  # volná-zábava
     1075038606881730570: timedelta(days=30),  # volná-témata
 
-    # archive
-    834443926655598592: timedelta(days=100),
-    983437070011883540: timedelta(days=100),
-    822415540843839488: timedelta(days=100),
-    1045296191455379497: timedelta(days=100),
-    1053036853059661856: timedelta(days=100),
-    1045296880743096331: timedelta(days=100),
-    878937534464417822: timedelta(days=100),
-    811910392786845737: timedelta(days=100),
-    868076450111184926: timedelta(days=100),
-    824263041666514974: timedelta(days=100),
-
     # take all history since ever
     INTRO_CHANNEL: None,
 
     # skip channels
     BOT_CHANNEL: timedelta(0),
     JOBS_CHANNEL: timedelta(0),
+    834443926655598592: timedelta(0),  # práce-bot (archived)
 }
 
 STATS_EXCLUDE_CHANNELS = [
