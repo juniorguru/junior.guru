@@ -63,16 +63,17 @@ def get_effective_url(message):
 async def post_job(channel, job):
     logger[str(job.id)].info(f'Posting {job!r}: {job.effective_url}')
     if DISCORD_MUTATIONS_ENABLED:
+        # https://github.com/Pycord-Development/pycord/issues/1949
+        embed = Embed(title=job.company_name)
         thread = await channel.create_thread(job.title,
                                              job.location,
+                                             embed=embed,
                                              view=ui.View(ui.Button(emoji='👉',
                                                           label='Mám zájem',
                                                           url=job.effective_url)))
         if job.company_logo_path:
-            # https://github.com/Pycord-Development/pycord/issues/1949
-            message = await thread.fetch_message(thread.id)
-            embed = Embed(title=job.company_name)
             embed.set_thumbnail(url=f"attachment://{Path(job.company_logo_path).name}")
+            message = await thread.fetch_message(thread.id)
             await message.edit(file=File(PACKAGE_DIR / job.company_logo_path), embed=embed)
     else:
         logger[str(job.id)].warning('Discord mutations not enabled')
