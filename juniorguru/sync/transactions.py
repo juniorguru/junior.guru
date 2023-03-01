@@ -21,7 +21,7 @@ SIDELINE_JOBS = ['15']
 VIDEO_OUTSOURCING_TOKEN = os.environ['VIDEO_OUTSOURCING_TOKEN']
 
 CATEGORIES = [
-    lambda t: 'memberships' if t['variable_symbol'] == '21' else None,
+    lambda t: 'memberships' if t['variable_symbol'] in ['21', '243', '241'] else None,
     lambda t: 'memberships' if t['variable_symbol'] == '215' else None,
     lambda t: 'partnerships' if t['variable_symbol'] == '226' else None,
     lambda t: 'salary' if 'výplata' in t['message'] else None,
