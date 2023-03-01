@@ -1,6 +1,7 @@
 import os
 from datetime import date
 
+import click
 from fiobank import FioBank
 
 from juniorguru.cli.sync import main as cli
@@ -12,22 +13,14 @@ from juniorguru.models.transaction import Transaction
 logger = loggers.from_path(__file__)
 
 
-FROM_DATE = date(2020, 1, 1)
-
-FIOBANK_API_KEY = os.getenv('FIOBANK_API_KEY')
-
-SIDELINE_JOBS = ['15']
-
-VIDEO_OUTSOURCING_TOKEN = os.environ['VIDEO_OUTSOURCING_TOKEN']
-
 CATEGORIES = [
     lambda t: 'memberships' if t['variable_symbol'] in ['21', '243', '241'] else None,
     lambda t: 'memberships' if t['variable_symbol'] == '215' else None,
     lambda t: 'partnerships' if 'SKLIK' in t['message'] and 'SEZNAM' in t['message'] else None,
     lambda t: 'partnerships' if t['variable_symbol'] == '226' else None,
     lambda t: 'salary' if 'výplata' in t['message'] else None,
-    lambda t: 'sideline' if t['variable_symbol'] in SIDELINE_JOBS else None,
-    lambda t: 'video' if VIDEO_OUTSOURCING_TOKEN in t['message'] else None,
+    lambda t: 'sideline' if t['variable_symbol'] == '15' else None,
+    lambda t: 'video' if os.environ['VIDEO_OUTSOURCING_TOKEN'] in t['message'] else None,
     lambda t: 'podcast' if 'PAVLINA FRONKOVA' in t['message'] else None,
     lambda t: 'lawyer' if 'ADVOKATKA' in t['message'] else None,
     lambda t: 'marketing' if 'JANA DOLEJSOVA' in t['message'] else None,
@@ -52,18 +45,20 @@ CATEGORIES = [
     lambda t: 'jobs' if t['variable_symbol'] and t['amount'] > 0 else None,
     lambda t: 'donations' if t['amount'] > 0 else 'miscellaneous',
 ]
-DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
 
 
 @cli.sync_command()
-def main():
+@click.option('--from-date', default='2020-01-01', type=date.fromisoformat)
+@click.option('--fio-api-key', default=lambda: os.environ['FIOBANK_API_KEY'])
+@click.option('--doc-key', default='1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls')
+def main(from_date, fio_api_key, doc_key):
     logger.info('Preparing database')
     Transaction.drop_table()
     Transaction.create_table()
 
     logger.info('Reading data from the bank account')
-    client = FioBank(token=FIOBANK_API_KEY)
-    from_date = FROM_DATE.strftime('%Y-%m-%d')
+    client = FioBank(token=fio_api_key)
+    from_date = from_date.strftime('%Y-%m-%d')
     to_date = date.today().strftime('%Y-%m-%d')
     transactions = client.period(from_date=from_date, to_date=to_date)
 
@@ -100,7 +95,7 @@ def main():
 
     logger.info('Uploading verbose data to a private Google Sheet for manual audit of possible mistakes')
     if GOOGLE_SHEETS_MUTATIONS_ENABLED:
-        google_sheets.upload(google_sheets.get(DOC_KEY, 'transactions'), doc_records)
+        google_sheets.upload(google_sheets.get(doc_key, 'transactions'), doc_records)
     else:
         logger.warning('Google Sheets mutations not enabled')
 
