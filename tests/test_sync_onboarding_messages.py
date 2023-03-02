@@ -1,5 +1,5 @@
 from collections import namedtuple
-from datetime import date, datetime, timedelta
+from datetime import datetime, timedelta
 
 from juniorguru.lib.club import JUNIORGURU_BOT
 from juniorguru.models.club import ClubMessage, ClubUser
@@ -16,7 +16,7 @@ SCHEDULED_MESSAGES = {
     '🤡': lambda context: 'Seventh message',
 }
 
-TODAY = date.today()
+TODAY = datetime.utcnow().date()
 
 
 StubTextChannel = namedtuple('StubTextChannel', ['name', 'topic'])

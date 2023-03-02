@@ -108,6 +108,7 @@ jobs:
               export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
               export DISCORD_MUTATIONS_ENABLED=1
               export MEMBERFUL_MUTATIONS_ENABLED=1
+              export FAKTUROID_MUTATIONS_ENABLED=1
               #export JOBS_EMAILS_SENDING_ENABLED=1
             fi
             poetry run jg sync ci
@@ -151,6 +152,7 @@ jobs:
               export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
               export DISCORD_MUTATIONS_ENABLED=1
               export MEMBERFUL_MUTATIONS_ENABLED=1
+              export FAKTUROID_MUTATIONS_ENABLED=1
               #export JOBS_EMAILS_SENDING_ENABLED=1
             fi
             poetry run jg sync ci
