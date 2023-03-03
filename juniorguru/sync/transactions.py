@@ -2,7 +2,6 @@ import os
 import re
 from datetime import date, datetime
 import html
-from decimal import Decimal
 from pprint import pformat
 
 import requests
@@ -65,6 +64,7 @@ CATEGORIES = [
 TOGGLE_TODOS_CATEGORIES = [
     'donations',
     'memberships',
+    'tax',
 ]
 
 
@@ -112,7 +112,7 @@ def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_
 
     db_records = []
     doc_records = []
-    todos_to_toggle = []
+    todos_to_toggle = {}
     for transaction in transactions:
         transaction_key = get_transaction_key(transaction)
         logger.debug(f"Transaction key: {transaction_key!r}")
@@ -134,10 +134,14 @@ def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_
             'Variable Symbol': transaction['variable_symbol'],
         })
 
-        if category in TOGGLE_TODOS_CATEGORIES and (todo := todos.get(transaction_key)):
+        if (
+            transaction['amount'] > 0
+            and category in TOGGLE_TODOS_CATEGORIES
+            and (todo := todos.get(transaction_key))
+        ):
             logger.info(f"Found todo to toggle: ID {todo['id']}, {get_todo_key(todo)}")
             logger.debug(f"Todo: {pformat(todo)}")
-            todos_to_toggle.append(todo)
+            todos_to_toggle[todo['id']] = todo  # using dict to prevent double toggle for todos matching more transactions
 
     logger.info('Saving essential data to the database')
     for db_record in db_records:
@@ -151,7 +155,7 @@ def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_
 
     logger.info(f'Toggling {len(todos_to_toggle)} Fakturoid todos')
     if FAKTUROID_MUTATIONS_ENABLED:
-        for todo in todos_to_toggle:
+        for todo in todos_to_toggle.values():
             todo_id = todo['id']
             logger.info(f"Toggling todo: ID {todo_id}")
             response = requests.post(f'{fakturoid_api_base_url}/todos/{todo_id}/toggle_completion.json',
@@ -179,14 +183,14 @@ def get_transaction_category(transaction):
 
 def get_transaction_key(transaction):
     return (transaction['date'],
-            transaction['variable_symbol'],
-            Decimal(transaction['amount']))
+            normalize_variable_symbol(transaction['variable_symbol']),
+            transaction['amount'])
 
 
 def get_todo_key(todo):
     parse_result = parse_todo_text(todo['text'])
     return (datetime.fromisoformat(todo['created_at']).date(),
-            parse_result['variable_symbol'],
+            normalize_variable_symbol(parse_result['variable_symbol']),
             parse_result['amount'])
 
 
@@ -194,9 +198,13 @@ def parse_todo_text(text):
     text = html.unescape(text)
     match = TODO_TEXT_RE.search(text)
     parse_result = match.groupdict()
-    if parse_result['variable_symbol'] == '0':
-        variable_symbol = None
-    else:
-        variable_symbol = parse_result['variable_symbol']
-    amount = Decimal(parse_result['amount'].replace('\xa0', '').replace(',', '.'))
-    return dict(variable_symbol=variable_symbol, amount=amount)
+    amount = float(parse_result['amount'].replace('\xa0', '').replace(',', '.'))
+    return dict(variable_symbol=parse_result['variable_symbol'], amount=amount)
+
+
+def normalize_variable_symbol(variable_symbol):
+    if not variable_symbol:
+        return None
+    if variable_symbol == '0':
+        return None
+    return variable_symbol
