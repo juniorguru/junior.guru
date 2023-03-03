@@ -1,11 +1,11 @@
+import html
 import os
 import re
 from datetime import date, datetime
-import html
 from pprint import pformat
 
-import requests
 import click
+import requests
 from fiobank import FioBank
 
 from juniorguru.cli.sync import main as cli
