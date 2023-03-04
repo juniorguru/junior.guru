@@ -126,7 +126,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
   {{ logo('Czechitas', 'logos/czechitas.svg', 'https://www.czechitas.cz/') }}
   {{ logo('DigiKoalice', 'logos/digikoalice.svg', 'https://digikoalice.cz/') }}
   {{ logo('Frontendisti', 'logos/frontendisti.svg', 'https://frontendisti.cz/') }}
-  {{ logo('#HolkyzMarketingu', 'logos/holkyzmarketingu.svg', 'https://holkyzmarketingu.cz/') }}
+  {{ logo('#HolkyzMarketingu', 'logos/holkyzmarketingu.svg', 'https://www.holkyzmarketingu.cz/') }}
   {{ logo('PyLadies', 'logos/pyladies.svg', 'https://pyladies.cz/') }}
   {{ logo('Pyvec', 'logos/pyvec.svg', 'https://pyvec.org/') }}
   {{ logo('CyberMagnolia', 'logos/cybermagnolia.svg', 'https://cybermagnolia.com/') }}

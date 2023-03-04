@@ -7,8 +7,8 @@ import click
 
 
 USER_AGENT = (
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:70.0) '
-    'Gecko/20100101 Firefox/70.0'
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) '
+    'Gecko/20100101 Firefox/110.0'
 )
 EXCLUDE_URLS = [
     '*static/images/*.*',  # local links to images
