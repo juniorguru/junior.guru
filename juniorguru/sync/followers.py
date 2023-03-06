@@ -3,6 +3,7 @@ import re
 from datetime import date
 from pathlib import Path
 
+import click
 import requests
 from lxml import html
 from playwright.sync_api import sync_playwright
@@ -13,8 +14,6 @@ from juniorguru.lib import loggers
 
 logger = loggers.from_path(__file__)
 
-
-DATA_FILE = Path('juniorguru') / 'data' / 'followers.jsonl'
 
 YOUTUBE_URL = 'https://www.youtube.com/@juniordotguru'
 
@@ -28,14 +27,17 @@ LINKEDIN_PERSONAL_URL = 'https://www.linkedin.com/in/honzajavorek/'
 
 
 @cli.sync_command()
-def main():
-    today_iso = date.today().isoformat()
+@click.option('--data-path', default='juniorguru/data/followers.jsonl', type=click.Path(path_type=Path))
+@click.option('--flush-data/--no-flush-data', default=False)
+def main(data_path, flush_data):
+    if flush_data and data_path.exists():
+        logger.debug(f'Flushing {data_path}')
+        data_path.unlink()
 
-    with open(DATA_FILE, mode='r') as f:
-        for line in f:
-            if today_iso in line:
-                logger.info(f"Date {today_iso} already recorded: {line.strip()}")
-                return
+    today = date.today()
+    if record := find_record(data_path, today):
+        logger.info(f"Date {today!r} already recorded as {record!r}")
+        return
 
     scrapers = {'youtube': scrape_youtube,
                 'linkedin': scrape_linkedin,
@@ -43,12 +45,24 @@ def main():
     logger.info(f"Scraping: {', '.join(scrapers.keys())}")
 
     data = {name: scrape() for name, scrape in scrapers.items()}
-    data['date'] = today_iso
+    data['date'] = today.isoformat()
     logger.info(f"Results: {data!r}")
 
-    with open(DATA_FILE, mode='a') as f:
+    with open(data_path, mode='a') as f:
         f.write(json.dumps(data, ensure_ascii=False, sort_keys=True))
         f.write('\n')
+
+
+def find_record(path, date):
+    try:
+        logger.debug(f"Looking for {date!r} in {path}")
+        with open(path, mode='r') as f:
+            for line in f:
+                if date.isoformat() in line:
+                    return json.loads(line)
+        return None
+    except FileNotFoundError:
+        return None
 
 
 def scrape_youtube():
