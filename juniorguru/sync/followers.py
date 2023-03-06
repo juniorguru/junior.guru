@@ -1,8 +1,8 @@
-import re
-from pathlib import Path
-from datetime import date
-
 import json
+import re
+from datetime import date
+from pathlib import Path
+
 import requests
 from lxml import html
 from playwright.sync_api import sync_playwright
