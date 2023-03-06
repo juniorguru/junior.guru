@@ -31,7 +31,7 @@ LINKEDIN_PERSONAL_URL = 'https://www.linkedin.com/posts/honzajavorek_courting-ha
 def main(data_path):
     today = date.today()
     if record := find_record(data_path, today):
-        logger.info(f"Date {today!r} already recorded as {record!r}")
+        logger.info(f"Date {today:%Y-%m-%d} already recorded as {record!r}")
         return
 
     scrapers = {'youtube': scrape_youtube,
@@ -40,7 +40,7 @@ def main(data_path):
     logger.info(f"Scraping: {', '.join(scrapers.keys())}")
 
     data = {name: scrape() for name, scrape in scrapers.items()}
-    data['date'] = today.isoformat()
+    data['date'] = f'{today:%Y-%m}'
     logger.info(f"Results: {data!r}")
 
     with open(data_path, mode='a') as f:
@@ -50,10 +50,11 @@ def main(data_path):
 
 def find_record(path, date):
     try:
-        logger.debug(f"Looking for {date!r} in {path}")
+        search_key = f'"{date:%Y-%m}"'
+        logger.debug(f"Looking for {search_key!r} in {path}")
         with open(path, mode='r') as f:
             for line in f:
-                if date.isoformat() in line:
+                if search_key in line:
                     return json.loads(line)
         return None
     except FileNotFoundError:
