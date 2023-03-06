@@ -28,12 +28,7 @@ LINKEDIN_PERSONAL_URL = 'https://www.linkedin.com/posts/honzajavorek_courting-ha
 
 @cli.sync_command()
 @click.option('--data-path', default='juniorguru/data/followers.jsonl', type=click.Path(path_type=Path))
-@click.option('--flush-data/--no-flush-data', default=False)
-def main(data_path, flush_data):
-    if flush_data and data_path.exists():
-        logger.debug(f'Flushing {data_path}')
-        data_path.unlink()
-
+def main(data_path):
     today = date.today()
     if record := find_record(data_path, today):
         logger.info(f"Date {today!r} already recorded as {record!r}")
