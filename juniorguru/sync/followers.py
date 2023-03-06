@@ -110,7 +110,11 @@ def scrape_linkedin_personal():
     with sync_playwright() as playwright:
         browser = playwright.firefox.launch()
         page = browser.new_page()
-        page.goto(LINKEDIN_PERSONAL_URL, wait_until='networkidle')
+        page.set_viewport_size({'width': 375, 'height': 812})
+        page.goto(LINKEDIN_PERSONAL_URL, wait_until='networkidle', referer='https://duckduckgo.com/')
+        logger.info(f'Loaded {page.url}')
+        if '/authwall' in page.url:
+            return None
         response_text = str(page.content())
         browser.close()
     match = re.search(r'"userInteractionCount":\s*(\d+)', response_text)
