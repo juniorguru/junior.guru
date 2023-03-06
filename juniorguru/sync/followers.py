@@ -68,8 +68,6 @@ def find_record(path, date):
 def scrape_youtube():
     logger.info('Scraping YouTube')
     session = requests.Session()
-
-    # consent page
     response = session.get(YOUTUBE_URL)
     response.raise_for_status()
     html_tree = html.fromstring(response.content)
