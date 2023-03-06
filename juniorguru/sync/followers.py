@@ -69,23 +69,19 @@ def scrape_youtube():
     logger.info('Scraping YouTube')
     session = requests.Session()
 
-    # get the consent page and set language to English
+    # consent page
     response = session.get(YOUTUBE_URL)
     response.raise_for_status()
     html_tree = html.fromstring(response.content)
-    language_form = [form for form in html_tree.forms
-                    if form.action == YOUTUBE_LANGUAGE_FORM_URL][0]
-    params = dict(language_form.form_values()) | dict(hl='cs', oldhl='cs', gl='CZ')
-    response = session.get(YOUTUBE_LANGUAGE_FORM_URL, params=params)
-    response.raise_for_status()
-
-    # get the consent form
-    consent_form = [form for form in html_tree.forms
-                    if form.action == YOUTUBE_CONSENT_FORM_URL][0]
-    response = session.request(consent_form.method.lower(), consent_form.action,
-                               params=consent_form.form_values())
-    response.raise_for_status()
-    match = re.search(r'"(\d+) odběratelů"', response.text)
+    try:
+        consent_form = [form for form in html_tree.forms
+                        if form.action == YOUTUBE_CONSENT_FORM_URL][0]
+        response = session.request(consent_form.method.lower(), consent_form.action,
+                                params=consent_form.form_values())
+        response.raise_for_status()
+    except IndexError:
+        logger.warning('There is no YouTube consent form')
+    match = re.search(r'"(\d+) (odběratelů|subscribers)"', response.text)
     return int(match.group(1))
 
 
