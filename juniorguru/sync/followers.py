@@ -24,7 +24,7 @@ YOUTUBE_LANGUAGE_FORM_URL = 'https://consent.youtube.com/ml'
 
 LINKEDIN_URL = 'https://www.linkedin.com/company/juniorguru'
 
-LINKEDIN_PERSONAL_URL = 'https://www.linkedin.com/in/honzajavorek/'
+LINKEDIN_PERSONAL_URL = 'https://www.linkedin.com/in/honzajavorek/?original_referer='
 
 
 @cli.sync_command()
@@ -110,8 +110,6 @@ def scrape_linkedin_personal():
     with sync_playwright() as playwright:
         browser = playwright.firefox.launch()
         page = browser.new_page()
-        page.goto(LINKEDIN_PERSONAL_URL, wait_until='networkidle')  # sometimes ends up being login screen
-        time.sleep(1)
         page.goto(LINKEDIN_PERSONAL_URL, wait_until='networkidle')
         response_text = str(page.content())
         browser.close()
