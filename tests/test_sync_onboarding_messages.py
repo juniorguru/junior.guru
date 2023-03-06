@@ -34,8 +34,7 @@ def create_message(id, author_id, content, created_at=None, reactions=None):
                        created_at=created_at or datetime(2022, 1, 1),
                        author=create_member(author_id),
                        channel_id=123,
-                       channel_name='dan-srb-tipy',
-                       channel_mention='...')
+                       channel_name='dan-srb-tipy')
 
 
 def create_bot_message(id, content, created_at=None, unread=False):

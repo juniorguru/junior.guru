@@ -45,8 +45,12 @@ async def discord_task(client):
             ]
             embed_description = []
             for message in messages:
+                if message.channel_id == message.parent_channel_id:
+                    channel_mention = f'<#{message.parent_channel_id}>'
+                else:
+                    channel_mention = f'„{message.channel_name}” (<#{message.parent_channel_id}>)'
                 embed_description += [
-                    f"{message.upvotes_count}× láska pro **{message.author.display_name}** v {message.channel_mention}:",
+                    f"{message.upvotes_count}× láska pro **{message.author.display_name}** v {channel_mention}:",
                     f"> {textwrap.shorten(message.content, 200, placeholder='…')}",
                     f"[Hop na příspěvek]({message.url})",
                     "",

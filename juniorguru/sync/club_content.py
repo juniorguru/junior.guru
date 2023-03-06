@@ -174,7 +174,6 @@ async def channel_worker(worker_no, authors, queue):
                                author_is_bot=message.author.id == JUNIORGURU_BOT,
                                channel_id=channel.id,
                                channel_name=channel.name,
-                               channel_mention=channel.mention,
                                parent_channel_id=parent_channel_id,
                                category_id=channel.category_id,
                                type=message.type.name)

@@ -146,8 +146,7 @@ class ClubMessage(BaseModel):
     author = ForeignKeyField(ClubUser, backref='list_messages')
     author_is_bot = BooleanField()
     channel_id = IntegerField()
-    channel_name = CharField()  # is this really needed? normalize?
-    channel_mention = CharField()  # is this really needed? normalize?
+    channel_name = CharField()
     parent_channel_id = IntegerField(index=True, null=True)
     category_id = IntegerField(index=True, null=True)
     type = CharField(default='default')
