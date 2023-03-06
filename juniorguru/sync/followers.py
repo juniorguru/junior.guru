@@ -1,6 +1,5 @@
 import json
 import re
-import time
 from datetime import date
 from pathlib import Path
 
@@ -24,7 +23,7 @@ YOUTUBE_LANGUAGE_FORM_URL = 'https://consent.youtube.com/ml'
 
 LINKEDIN_URL = 'https://www.linkedin.com/company/juniorguru'
 
-LINKEDIN_PERSONAL_URL = 'https://www.linkedin.com/in/honzajavorek/?original_referer='
+LINKEDIN_PERSONAL_URL = 'https://www.linkedin.com/posts/honzajavorek_courting-haskell-honza-javorek-activity-6625070791035756544-J3Hr'
 
 
 @cli.sync_command()
@@ -95,12 +94,15 @@ def scrape_linkedin():
         browser = playwright.firefox.launch()
         page = browser.new_page()
         page.goto(LINKEDIN_URL, wait_until='networkidle')
+        if '/authwall' in page.url:
+            logger.error(f'Loaded {page.url}')
+            return None
         response_text = str(page.content())
         browser.close()
     match = re.search(r'Junior Guru \| (\d+) followers on LinkedIn.', response_text)
     try:
         return int(match.group(1))
-    except AttributeError:
+    except (AttributeError, ValueError):
         logger.error(f"Scraping failed!\n\n{response_text}")
         return None
 
@@ -110,16 +112,15 @@ def scrape_linkedin_personal():
     with sync_playwright() as playwright:
         browser = playwright.firefox.launch()
         page = browser.new_page()
-        page.set_viewport_size({'width': 375, 'height': 812})
-        page.goto(LINKEDIN_PERSONAL_URL, wait_until='networkidle', referer='https://duckduckgo.com/')
-        logger.info(f'Loaded {page.url}')
+        page.goto(LINKEDIN_PERSONAL_URL, wait_until='networkidle')
         if '/authwall' in page.url:
+            logger.error(f'Loaded {page.url}')
             return None
         response_text = str(page.content())
         browser.close()
-    match = re.search(r'"userInteractionCount":\s*(\d+)', response_text)
+    match = re.search(r'([\d,]+)\s*(followers|sledujících)', response_text)
     try:
-        return int(match.group(1))
-    except AttributeError:
+        return int(match.group(1).replace(',', ''))
+    except (AttributeError, ValueError):
         logger.error(f"Scraping failed!\n\n{response_text}")
         return None
