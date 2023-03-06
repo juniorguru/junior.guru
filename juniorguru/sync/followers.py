@@ -2,6 +2,7 @@ import json
 import re
 from datetime import date
 from pathlib import Path
+import time
 
 import click
 import requests
@@ -109,6 +110,8 @@ def scrape_linkedin_personal():
     with sync_playwright() as playwright:
         browser = playwright.firefox.launch()
         page = browser.new_page()
+        page.goto(LINKEDIN_PERSONAL_URL, wait_until='networkidle')  # sometimes ends up being login screen
+        time.sleep(1)
         page.goto(LINKEDIN_PERSONAL_URL, wait_until='networkidle')
         response_text = str(page.content())
         browser.close()
