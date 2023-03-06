@@ -81,7 +81,11 @@ def scrape_youtube():
     except IndexError:
         logger.warning('There is no YouTube consent form')
     match = re.search(r'"(\d+) (odběratelů|subscribers)"', response.text)
-    return int(match.group(1))
+    try:
+        return int(match.group(1))
+    except AttributeError:
+        logger.error(f"Scraping failed!\n\n{response.text}")
+        return None
 
 
 def scrape_linkedin():
@@ -93,7 +97,11 @@ def scrape_linkedin():
         response_text = str(page.content())
         browser.close()
     match = re.search(r'Junior Guru \| (\d+) followers on LinkedIn.', response_text)
-    return int(match.group(1))
+    try:
+        return int(match.group(1))
+    except AttributeError:
+        logger.error(f"Scraping failed!\n\n{response_text}")
+        return None
 
 
 def scrape_linkedin_personal():
@@ -105,4 +113,8 @@ def scrape_linkedin_personal():
         response_text = str(page.content())
         browser.close()
     match = re.search(r'"userInteractionCount":\s*(\d+)', response_text)
-    return int(match.group(1))
+    try:
+        return int(match.group(1))
+    except AttributeError:
+        logger.error(f"Scraping failed!\n\n{response_text}")
+        return None
