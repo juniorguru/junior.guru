@@ -54,6 +54,22 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+- title: "(bude upřesněno)"
+  date: "2023-04-04"
+  time: "18:00"
+  description: |
+    (bude upřesněno)
+  avatar_path: avatars-participants/marta-kirchgessner.jpg
+  bio_name: Marta Kirchgessner
+  bio_title: "Frontendistka v Lundegaard"
+  bio: |
+    (bude upřesněno)
+  bio_links:
+    - https://www.linkedin.com/in/marta-k-586110243/
+  logo_path: logos/lundegaard.svg
+  speakers: 1081144172632879167
+
+
 - title: "Práce a dítě: Jak být k sobě laskavější"
   date: "2023-03-21"
   time: "18:30"
