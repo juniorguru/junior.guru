@@ -27,6 +27,7 @@ EXCLUDE_URLS = [
     'glassdoor.com',  # crawling protection?
     'oracle.com',  # crawling protection?
     'open.spotify.com',  # crawling protection?
+    'startupjobs.cz/nabidka/',  # crawling protection?
 ]
 EXCLUDE_REASONS = [re.compile(r) for r in [
     r'^BLC_UNKNOWN$',  # crawling protection?
