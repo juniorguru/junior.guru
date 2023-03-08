@@ -68,12 +68,22 @@
   description: |
     Kdo má představení v <#788823881024405544> a nastavený profilový obrázek. Roli automaticky spravuje bot a může trvat i den, než se změny projeví.
 
+- id: 1078667139881377913
+  slug: events_organizer
+  description: |
+    Kdo má chuť organizovat vlastní akce, např. v <#769966887055392769>. Roli si dáš vlastnoručně v _Channels & Roles_.
+
 - id: 1062755787153358879
   slug: greeter
   description: |
     Kdo má chuť vítat nově příchozí v <#788823881024405544>. Bot je přidává do vítacích vláken. Roli si dáš vlastnoručně v _Channels & Roles_.
 
+- id: 1075044541796716604
+  slug: cv_commenter
+  description: |
+    Kdo má chuť komentovat CV v <#839059491432431616>. Roli si dáš vlastnoručně v _Channels & Roles_.
+
 - id: 1055919988222992418
-  slug: github
+  slug: has_github
   description: |
     Kdo má s Discordem propojený svůj účet na GitHubu. Roli automaticky spravuje Discord.
