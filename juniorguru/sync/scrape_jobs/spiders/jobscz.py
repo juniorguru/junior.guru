@@ -1,8 +1,8 @@
 import re
 
+from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
-from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 
 from juniorguru.lib.url_params import strip_params
 from juniorguru.sync.scrape_jobs.items import Job, first, parse_relative_date, split
