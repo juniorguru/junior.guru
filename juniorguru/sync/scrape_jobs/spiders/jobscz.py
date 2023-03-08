@@ -24,7 +24,7 @@ class Spider(BaseSpider):
     }
 
     start_urls = [
-        'https://www.jobs.cz/prace/?field%5B%5D=200900013&field%5B%5D=200900012&suitable-for=graduates',
+        'https://beta.www.jobs.cz/prace/?field%5B%5D=200900013&field%5B%5D=200900012&suitable-for=graduates',
     ]
 
     def parse(self, response):
@@ -40,6 +40,8 @@ class Spider(BaseSpider):
         loader.add_value('source_urls', search_url)
         loader.add_value('source_urls', response.url)
         loader.add_css('title', 'h1::text')
+        loader.add_xpath('description_html', "//p[contains(text(), 'Úvodní představení')]/following-sibling::p")
+        loader.add_css('description_html', '.content-rich-text')
         # loader.add_css('remote', 'h2::text') TODO
         loader.add_value('url', response.url)
         loader.add_xpath('company_name', "//dt[contains(text(), 'Společnost')]/following-sibling::dd/text()")
@@ -55,13 +57,18 @@ def clean_url(url):
     return strip_params(url, ['positionOfAdInAgentEmail', 'searchId', 'rps'])
 
 
+def join(values):
+    return ''.join(values)
+
+
 class Loader(ItemLoader):
     default_output_processor = TakeFirst()
     url_in = Compose(first, clean_url)
     company_url_in = Compose(first, clean_url)
     employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()
-    posted_at_in = Compose(first, parse_relative_date)
+    first_seen_on_in = Compose(first, parse_relative_date)
+    description_html_out = Compose(join)
     experience_levels_in = MapCompose(str.lower, split)
     experience_levels_out = Identity()
     company_logo_urls_out = Identity()
