@@ -1,12 +1,12 @@
 import re
 from datetime import date
 
-from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
+from itemloaders.processors import Compose, Identity, TakeFirst
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 
 from juniorguru.lib.url_params import strip_params
-from juniorguru.sync.scrape_jobs.items import Job, first, split
+from juniorguru.sync.scrape_jobs.items import Job, first
 
 
 # TODO test board id parsing and params stripping
@@ -66,12 +66,13 @@ def join(values):
 class Loader(ItemLoader):
     default_output_processor = TakeFirst()
     url_in = Compose(first, clean_url)
-    company_url_in = Compose(first, clean_url)
-    employment_types_in = MapCompose(str.lower, split)
-    employment_types_out = Identity()
+    # company_url_in = Compose(first, clean_url)
+    # employment_types_in = MapCompose(str.lower, split)
+    # employment_types_out = Identity()
     description_html_out = Compose(join)
-    experience_levels_in = MapCompose(str.lower, split)
-    experience_levels_out = Identity()
-    company_logo_urls_out = Identity()
+    # experience_levels_in = MapCompose(str.lower, split)
+    # experience_levels_out = Identity()
+    # company_logo_urls_out = Identity()
     # remote_in = MapCompose(parse_remote) TODO
-    locations_raw_out = Identity()
+    # locations_raw_out = Identity()
+    source_urls_out = Identity()

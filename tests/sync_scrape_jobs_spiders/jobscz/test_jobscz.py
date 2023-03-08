@@ -50,7 +50,8 @@ def test_spider_parse_job():
     # assert job['experience_levels'] == ['entry level']
     assert job['first_seen_on'] == date.today()
     # assert job['company_logo_urls'] == ['https://media-exp1.licdn.com/dms/image/C560BAQHxuVQO-Rz9rw/company-logo_100_100/0/1546508771908?e=1640217600&v=beta&t=hUZKjJ2dnPP92AcBOKAEFzFqEdD-OB9WwS0X18LoyP4']
-    # assert job['source'] == 'linkedin'
-    # assert job['source_urls'] == ['https://example.com/search?foo=1', 'https://example.com/example/']
+    assert job['source'] == 'jobscz'
+    assert job['source_urls'] == ['https://beta.www.jobs.cz/prace/...',
+                                  'https://beta.www.jobs.cz/rpd/1613133866/?searchId=ac8f8a52-70fe-4be5-b32e-9f6e6b1c2b23&rps=228']
     assert '<p class="typography-body-large-text-regular mb-900">ComSource s r.o.\nSpolečnost Comsource s.r.o. je dynamicky se rozvíjející' in job['description_html']
     assert 'ComSource</strong>' in job['description_html']
