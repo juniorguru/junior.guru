@@ -1,11 +1,12 @@
 import re
+from datetime import date
 
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 
 from juniorguru.lib.url_params import strip_params
-from juniorguru.sync.scrape_jobs.items import Job, first, parse_relative_date, split
+from juniorguru.sync.scrape_jobs.items import Job, first, split
 
 
 # TODO test board id parsing and params stripping
@@ -39,6 +40,7 @@ class Spider(BaseSpider):
         loader.add_value('source', self.name)
         loader.add_value('source_urls', search_url)
         loader.add_value('source_urls', response.url)
+        loader.add_value('first_seen_on', date.today())
         loader.add_css('title', 'h1::text')
         loader.add_xpath('description_html', "//p[contains(text(), 'Úvodní představení')]/following-sibling::p")
         loader.add_css('description_html', '.content-rich-text')
@@ -67,7 +69,6 @@ class Loader(ItemLoader):
     company_url_in = Compose(first, clean_url)
     employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()
-    first_seen_on_in = Compose(first, parse_relative_date)
     description_html_out = Compose(join)
     experience_levels_in = MapCompose(str.lower, split)
     experience_levels_out = Identity()

@@ -1,4 +1,5 @@
 from pathlib import Path
+from datetime import date
 
 from scrapy.http import HtmlResponse
 
@@ -47,7 +48,7 @@ def test_spider_parse_job():
     # assert job['remote'] is False
     # assert job['employment_types'] == ['full-time']
     # assert job['experience_levels'] == ['entry level']
-    # assert job['first_seen_on'] == date.today() - timedelta(weeks=1)
+    assert job['first_seen_on'] == date.today()
     # assert job['company_logo_urls'] == ['https://media-exp1.licdn.com/dms/image/C560BAQHxuVQO-Rz9rw/company-logo_100_100/0/1546508771908?e=1640217600&v=beta&t=hUZKjJ2dnPP92AcBOKAEFzFqEdD-OB9WwS0X18LoyP4']
     # assert job['source'] == 'linkedin'
     # assert job['source_urls'] == ['https://example.com/search?foo=1', 'https://example.com/example/']
