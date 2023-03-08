@@ -69,7 +69,7 @@ async def post_job(channel, job):
                                              job.location,
                                              embed=embed,
                                              view=ui.View(ui.Button(emoji='👉',
-                                                          label='Mám zájem',
+                                                          label='Zjistit víc',
                                                           url=job.effective_url)))
         if job.company_logo_path:
             embed.set_thumbnail(url=f"attachment://{Path(job.company_logo_path).name}")
