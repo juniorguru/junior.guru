@@ -4,6 +4,8 @@ from datetime import datetime, timedelta
 
 from discord import MessageType
 from discord.errors import Forbidden
+from juniorguru_chick.bot import (  # noqa, for now just proving this is actually possible
+    DAYS)
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
