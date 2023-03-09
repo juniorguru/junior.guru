@@ -1,6 +1,6 @@
 from datetime import date
 
-from itemloaders.processors import Compose, Identity, TakeFirst, MapCompose
+from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 from scrapy import Spider as BaseSpider
 from scrapy.loader import ItemLoader
 

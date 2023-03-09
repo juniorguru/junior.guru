@@ -1,7 +1,8 @@
 import click
 
-from juniorguru.cli import (cancel_previous_builds, check_docs, check_links, data,
-                            participant, screenshots, students, sync, web, winners, check_bot)
+from juniorguru.cli import (cancel_previous_builds, check_bot, check_docs, check_links,
+                            data, participant, screenshots, students, sync, web,
+                            winners)
 from juniorguru.cli.dev import main as dev
 from juniorguru.lib.cli import load_command
 
