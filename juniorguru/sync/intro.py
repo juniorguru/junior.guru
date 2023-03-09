@@ -4,8 +4,6 @@ from datetime import datetime, timedelta
 
 from discord import MessageType
 from discord.errors import Forbidden
-# from juniorguru_chick.bot import (  # noqa, for now just proving this is actually possible
-#     DAYS)
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
@@ -13,6 +11,11 @@ from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, INTRO_CHANNEL,
                                  JUNIORGURU_BOT, run_discord_task)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
+
+
+# from juniorguru_chick.bot import (  # noqa, for now just proving this is actually possible
+#     DAYS)
+
 
 
 WELCOME_REACTIONS = ['👋', '🐣', '👍']
