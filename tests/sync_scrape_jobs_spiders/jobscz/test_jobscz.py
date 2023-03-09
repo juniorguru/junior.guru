@@ -35,21 +35,17 @@ def test_spider_parse_job():
 
     job = jobs[0]
 
-    # assert sorted(job.keys()) == sorted([
-    #     'title', 'url', 'company_name', 'locations_raw',
-    #     'employment_types', 'first_seen_on', 'description_html',
-    #     'experience_levels', 'company_logo_urls', 'remote',
-    #     'source', 'source_urls',
-    # ])
+    assert sorted(job.keys()) == sorted([
+        'title', 'url', 'company_name', 'locations_raw',
+        'employment_types', 'first_seen_on', 'description_html',
+        'source', 'source_urls',
+    ])
     assert job['title'] == 'Network Reliability Engineer'
     assert job['url'] == 'https://beta.www.jobs.cz/rpd/1613133866/'
-    # assert job['company_name'] == 'Komerční banka'
-    # assert job['locations_raw'] == ['Prague, Czechia']
-    # assert job['remote'] is False
-    # assert job['employment_types'] == ['full-time']
-    # assert job['experience_levels'] == ['entry level']
+    assert job['company_name'] == 'ComSource s.r.o.'
+    assert job['locations_raw'] == ['Nad Vršovskou horou 1423/10, Praha – Michle']
+    assert job['employment_types'] == ['Práce na plný úvazek']
     assert job['first_seen_on'] == date.today()
-    # assert job['company_logo_urls'] == ['https://media-exp1.licdn.com/dms/image/C560BAQHxuVQO-Rz9rw/company-logo_100_100/0/1546508771908?e=1640217600&v=beta&t=hUZKjJ2dnPP92AcBOKAEFzFqEdD-OB9WwS0X18LoyP4']
     assert job['source'] == 'jobscz'
     assert job['source_urls'] == ['https://beta.www.jobs.cz/prace/...',
                                   'https://beta.www.jobs.cz/rpd/1613133866/?searchId=ac8f8a52-70fe-4be5-b32e-9f6e6b1c2b23&rps=228']

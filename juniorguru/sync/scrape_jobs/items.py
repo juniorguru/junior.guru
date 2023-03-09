@@ -25,7 +25,6 @@ class Job(Item):
     locations_raw = Field()
     remote_region_raw = Field()
     remote = Field()
-    experience_levels = Field()
     employment_types = Field()
 
     description_html = Field(required=True)
