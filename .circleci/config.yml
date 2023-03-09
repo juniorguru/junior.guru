@@ -261,6 +261,13 @@ jobs:
           at: "~"
       - run: poetry run jg check-links --retry
 
+  check-bot:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: poetry run jg check-bot
+
 
 workflows:
   push:
@@ -276,6 +283,9 @@ workflows:
                 - main
           requires:
             - lint-and-test
+      - check-bot:
+          requires:
+            - install
       - sync-1:
           requires:
             - install
@@ -306,6 +316,9 @@ workflows:
   nightly:
     jobs:
       - install
+      - check-bot:
+          requires:
+            - install
       - sync-1:
           requires:
             - install
