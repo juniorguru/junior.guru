@@ -85,20 +85,11 @@ class Spider(BaseSpider):
         Verify apply URL
 
         Filters out URLs to broken external URLs and cuts redirects, if any.
-        It's not wise to assign new apply_link directly, as the URL of this response
-        is prone to scraping protection. We want our item input processors to clean
-        the URL first. The item is already loaded though, so here we create a temporary
-        dict item just for this purpose, fire the input processors, and assign
-        the value only after it got cleaned.
         """
-        loader = Loader(item=dict())
+        loader = Loader(item=item)
         loader.add_value('source_urls', response.url)
-        loader.add_value('apply_url', response.url)
-        fields_to_update = loader.load_item().items()
-
-        for field_name, value in fields_to_update:
-            item[field_name] = value
-        yield item
+        loader.replace_value('apply_url', response.url)
+        yield loader.load_item()
 
 
 def get_job_id(url):
