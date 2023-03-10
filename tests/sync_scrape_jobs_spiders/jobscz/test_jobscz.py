@@ -15,7 +15,7 @@ def test_spider_parse():
                             body=Path(FIXTURES_DIR / 'listing.html').read_bytes())
     requests = list(jobscz.Spider().parse(response))
 
-    assert len(requests) == 37
+    assert len(requests) == 37 + 4  # jobs + pagination (without page=1)
 
     assert requests[0].url == 'https://beta.www.jobs.cz/rpd/1615173381/?searchId=9d26cd7f-d018-4340-ab3f-f6f1719ce5a9&rps=228'
     item = requests[0].cb_kwargs['item']
@@ -30,6 +30,9 @@ def test_spider_parse():
     assert item['locations_raw'] == ['Praha – Nové Město']
     assert item['company_logo_urls'] == ['https://my.teamio.com/recruit/logo?id=66c81923-c5e2-4969-868b-069c1b63f6e9&v=1587555697131']
     assert item['source_urls'] == ['https://beta.www.jobs.cz/prace/...', 'https://beta.www.jobs.cz/rpd/1615173381/?searchId=9d26cd7f-d018-4340-ab3f-f6f1719ce5a9&rps=228']
+
+    assert requests[37].url == 'https://beta.www.jobs.cz/prace/?field%5B0%5D=200900013&field%5B1%5D=200900012&suitable-for=graduates&cacheKey=ae78dde7-1eee-4e59-936f-13ed3541890c&page=2'
+    assert requests[-1].url == 'https://beta.www.jobs.cz/prace/?field%5B0%5D=200900013&field%5B1%5D=200900012&suitable-for=graduates&cacheKey=ae78dde7-1eee-4e59-936f-13ed3541890c&page=5'
 
 
 def test_spider_parse_without_logo():

@@ -44,7 +44,10 @@ class Spider(BaseSpider):
             card_loader.add_value('source_urls', url)
             item = loader.load_item()
             yield response.follow(url, callback=self.parse_job, cb_kwargs=dict(item=item))
-        logger.warning('Not implemented yet: pagination')
+        urls = [response.urljoin(relative_url) for relative_url
+                in response.css('.Pagination__link::attr(href)').getall()
+                if 'page=' in relative_url]
+        yield from response.follow_all(urls, callback=self.parse)
 
     def parse_job(self, response, item):
         loader = Loader(item=item, response=response)
