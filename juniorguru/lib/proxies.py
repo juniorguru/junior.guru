@@ -31,8 +31,9 @@ class ScrapingProxiesMiddleware():
         self.proxies = {proxy_url: None for proxy_url in proxies}
 
     def get_proxy(self):
-        used_proxies = {proxy_url: latency for proxy_url, latency
-                            in self.proxies.items() if latency is not None}
+        used_proxies = {proxy_url: latency
+                        for proxy_url, latency in self.proxies.items()
+                        if latency is not None}
         logger.info(f"Total {len(self.proxies)} proxies, {len(used_proxies)} in use")
 
         try:
