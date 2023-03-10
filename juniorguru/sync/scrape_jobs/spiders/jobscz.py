@@ -1,4 +1,5 @@
 from datetime import date
+from urllib.parse import urljoin
 
 from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 from scrapy import Spider as BaseSpider
@@ -44,18 +45,34 @@ class Spider(BaseSpider):
         logger.warning('Not implemented yet: pagination')
 
     def parse_job(self, response, item):
-        if 'www.jobs.cz' not in response.url:
-            logger.warning('Not implemented yet: custom job portals')
-            return
         loader = Loader(item=item, response=response)
         loader.add_value('url', response.url)
         loader.add_value('source_urls', response.url)
-        # TODO
-        # loader.add_xpath('employment_types', "//span[contains(text(), 'Typ pracovního poměru')]/following-sibling::p/text()")
-        # loader.add_xpath('description_html', "//p[contains(text(), 'Úvodní představení')]/following-sibling::p")
-        # loader.add_css('description_html', '.content-rich-text')
-        item = loader.load_item()
-        yield item
+        if 'www.jobs.cz' not in response.url:
+            yield from self.parse_job_custom(response, loader)
+        elif response.css('.LayoutGrid--cassiopeia').get():
+            yield from self.parse_job_standard(response, loader)
+        else:
+            yield from self.parse_job_company(response, loader)
+
+    def parse_job_standard(self, response, loader):
+        loader.add_xpath('employment_types', "//span[contains(text(), 'Typ pracovního poměru')]/following-sibling::p/text()")
+        loader.add_xpath('description_html', "//p[contains(@class, 'typography-body-medium-text-regular')][contains(text(), 'Úvodní představení')]/following-sibling::p")
+        loader.add_xpath('description_html', "//p[contains(@class, 'typography-body-medium-text-regular')][contains(text(), 'Pracovní nabídka')]/following-sibling::*")
+        yield loader.load_item()
+
+    def parse_job_company(self, response, loader):
+        loader.add_xpath('employment_types', "//span[contains(text(), 'Typ pracovního poměru')]/parent::dd/text()")
+        loader.add_css('description_html', '.grid__item.e-16 .clearfix')
+        loader.add_css('description_html', '.jobad__body')
+        company_url_relative = response.css('.company-profile__navigation__link::attr(href)').get()
+        loader.add_value('company_url', urljoin(response.url, company_url_relative))
+        yield loader.load_item()
+
+    def parse_job_custom(self, response, loader):
+        logger.warning('Not implemented yet: custom job portals')
+        if False:
+            yield
 
 
 def clean_url(url):
