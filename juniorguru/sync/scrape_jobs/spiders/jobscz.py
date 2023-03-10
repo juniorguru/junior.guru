@@ -16,19 +16,16 @@ logger = loggers.from_path(__file__)
 class Spider(BaseSpider):
     name = 'jobscz'
     proxy = True
-    download_timeout = 59
-    download_delay = 1.25
-    custom_settings = {
-        'ROBOTSTXT_OBEY': False,
-        'COOKIES_ENABLED': False,
-    }
-    employment_types_labels = [
-        'Typ pracovního poměru',
-        'Employment form',
-    ]
+    download_timeout = 15
+    custom_settings = {'ROBOTSTXT_OBEY': False}
     start_urls = [
         'https://beta.www.jobs.cz/prace/programator/',
         'https://beta.www.jobs.cz/prace/tester/',
+    ]
+
+    employment_types_labels = [
+        'Typ pracovního poměru',
+        'Employment form',
     ]
 
     def parse(self, response):
