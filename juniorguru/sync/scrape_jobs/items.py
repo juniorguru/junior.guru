@@ -23,7 +23,6 @@ class Job(Item):
     company_logo_path = Field()
 
     locations_raw = Field()
-    remote_region_raw = Field()
     remote = Field()
     employment_types = Field()
 

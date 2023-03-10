@@ -27,19 +27,19 @@ EMPLOYMENT_TYPES_MAPPING = {
 
 def process(item):
     if item.get('employment_types'):
-        item['employment_types'] = unique(map(clean, item['employment_types']))
+        item['employment_types'] = clean_employment_types(item['employment_types'])
     return item
 
 
-def unique(employment_types):
+def clean_employment_types(employment_types):
+    employment_types = map(clean_employment_type, employment_types)
     return sorted(set(filter(None, employment_types)))
 
 
-def clean(employment_type):
+def clean_employment_type(employment_type):
     value = employment_type.lower()
     for stop_word_re in STOP_WORDS:
         value = stop_word_re.sub('', value)
     mapping_key = SEPARATORS_RE.sub('_', value.strip())
     value = EMPLOYMENT_TYPES_MAPPING.get(mapping_key, mapping_key.upper())
-    print(value)
     return value if value in EMPLOYMENT_TYPES else None

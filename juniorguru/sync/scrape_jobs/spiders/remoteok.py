@@ -39,7 +39,6 @@ class Spider(BaseSpider):
         loader.add_value('title', json_data['position'])
         loader.add_value('url', response.url)
         loader.add_value('company_name', json_data['company'])
-        loader.add_value('remote_region_raw', json_data['location'])
         loader.add_value('remote', True)
         loader.add_value('first_seen_on', json_data['date'])
         loader.add_css('description_html', '*[itemprop="description"] .markdown::text')

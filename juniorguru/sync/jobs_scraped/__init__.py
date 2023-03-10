@@ -1,4 +1,5 @@
 from pathlib import Path
+from datetime import date
 
 import click
 from peewee import OperationalError
@@ -33,11 +34,11 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=['scrape-jobs'])
 @click.option('--reuse-db/--no-reuse-db', default=False)
-def main(reuse_db):
+@click.option('--latest-seen-on', default=None, type=date.fromisoformat)
+def main(reuse_db, latest_seen_on):
     paths = list(Path(FEEDS_DIR).glob('**/*.jsonl.gz'))
     logger.info(f'Found {len(paths)} .json.gz paths')
 
-    latest_seen_on = None
     with db.connection_context():
         if reuse_db:
             logger.warning('Reusing of existing jobs database is enabled!')
