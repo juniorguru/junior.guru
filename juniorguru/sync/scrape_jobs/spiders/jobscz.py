@@ -7,7 +7,7 @@ from scrapy.loader import ItemLoader
 
 from juniorguru.lib import loggers
 from juniorguru.lib.url_params import strip_params
-from juniorguru.sync.scrape_jobs.items import Job, first
+from juniorguru.sync.scrape_jobs.items import Job, first, split
 
 
 logger = loggers.from_path(__file__)
@@ -58,12 +58,14 @@ class Spider(BaseSpider):
 
     def parse_job_standard(self, response, loader):
         loader.add_xpath('employment_types', "//span[contains(text(), 'Typ pracovního poměru')]/following-sibling::p/text()")
+        loader.add_xpath('employment_types', "//span[contains(text(), 'Employment form')]/following-sibling::p/text()")
         loader.add_xpath('description_html', "//p[contains(@class, 'typography-body-medium-text-regular')][contains(text(), 'Úvodní představení')]/following-sibling::p")
         loader.add_xpath('description_html', "//p[contains(@class, 'typography-body-medium-text-regular')][contains(text(), 'Pracovní nabídka')]/following-sibling::*")
         yield loader.load_item()
 
     def parse_job_company(self, response, loader):
         loader.add_xpath('employment_types', "//span[contains(text(), 'Typ pracovního poměru')]/parent::dd/text()")
+        loader.add_xpath('employment_types', "//span[contains(text(), 'Employment form')]/parent::dd/text()")
         loader.add_css('description_html', '.grid__item.e-16 .clearfix')
         loader.add_css('description_html', '.jobad__body')
         company_url_relative = response.css('.company-profile__navigation__link::attr(href)').get()
@@ -100,6 +102,7 @@ class Loader(ItemLoader):
     company_logo_urls_in = MapCompose(remove_width_param)
     company_logo_urls_out = Compose(set, list)
     description_html_out = Compose(join)
+    employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()
     locations_raw_out = Compose(remove_empty, set, list)
     source_urls_out = Identity()

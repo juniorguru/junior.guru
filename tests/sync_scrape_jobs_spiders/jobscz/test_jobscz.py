@@ -56,7 +56,7 @@ def test_spider_parse_job_standard():
 
     assert sorted(job.keys()) == sorted(['employment_types', 'description_html', 'source_urls', 'url'])
     assert job['url'] == 'https://beta.www.jobs.cz/rpd/1613133866/'
-    assert job['employment_types'] == ['Práce na plný úvazek']
+    assert job['employment_types'] == ['práce na plný úvazek']
     assert job['source_urls'] == ['https://beta.www.jobs.cz/rpd/1613133866/?searchId=ac8f8a52-70fe-4be5-b32e-9f6e6b1c2b23&rps=228']
 
     assert '>Úvodní představení</p>' not in job['description_html']
@@ -66,6 +66,21 @@ def test_spider_parse_job_standard():
     assert '<strong>Požadavky:</strong>' in job['description_html']
 
 
+def test_spider_parse_job_standard_en():
+    response = HtmlResponse('https://beta.www.jobs.cz/rpd/1613133866/',
+                            body=Path(FIXTURES_DIR / 'job_standard_en.html').read_bytes())
+    job = next(jobscz.Spider().parse_job(response, Job()))
+
+    assert sorted(job.keys()) == sorted(['employment_types', 'description_html', 'source_urls', 'url'])
+    assert job['employment_types'] == ['full-time work', 'part-time work']
+
+    assert '>Úvodní představení</p>' not in job['description_html']
+    assert 'bezpilotních letounů UAV i antidronové' in job['description_html']
+
+    assert '>Pracovní nabídka</p>' not in job['description_html']
+    assert '<strong>Areas of Our Projects</strong>' in job['description_html']
+
+
 def test_spider_parse_job_company():
     response = HtmlResponse('https://beta.www.jobs.cz/fp/onsemi-61382/1597818748/?positionOfAdInAgentEmail=0&searchId=ac8f8a52-70fe-4be5-b32e-9f6e6b1c2b23&rps=233',
                             body=Path(FIXTURES_DIR / 'job_company.html').read_bytes())
@@ -73,10 +88,23 @@ def test_spider_parse_job_company():
 
     assert sorted(job.keys()) == sorted(['employment_types', 'description_html', 'source_urls', 'url', 'company_url'])
     assert job['url'] == 'https://beta.www.jobs.cz/fp/onsemi-61382/1597818748/'
-    assert job['employment_types'] == ['Práce na plný úvazek']
+    assert job['employment_types'] == ['práce na plný úvazek']
     assert job['source_urls'] == ['https://beta.www.jobs.cz/fp/onsemi-61382/1597818748/?positionOfAdInAgentEmail=0&searchId=ac8f8a52-70fe-4be5-b32e-9f6e6b1c2b23&rps=233']
     assert job['company_url'] == 'https://beta.www.jobs.cz/fp/onsemi-61382/'
 
     assert 'Světoví producenti elektroniky či aut s námi spolupracují a čekají na naše inovativní čipy' in job['description_html']
     assert '<h2>Vývojář polovodičových součástek a automatizace v TCAD</h2>' not in job['description_html']
     assert 'Zkušenost s deskami z karbidu křemíku' in job['description_html']
+
+
+def test_spider_parse_job_company_en():
+    response = HtmlResponse('https://beta.www.jobs.cz/fp/onsemi-61382/1597818748/',
+                            body=Path(FIXTURES_DIR / 'job_company_en.html').read_bytes())
+    job = next(jobscz.Spider().parse_job(response, Job()))
+
+    assert sorted(job.keys()) == sorted(['employment_types', 'description_html', 'source_urls', 'url', 'company_url'])
+    assert job['employment_types'] == ['full-time work']
+
+    assert 'Our new home is the remarkable Churchill II building' in job['description_html']
+    assert '<h2>Group Release &amp; Defect Manager</h2>' not in job['description_html']
+    assert '<strong>RESPONSIBILITIES:</strong>' in job['description_html']
