@@ -27,7 +27,7 @@ def main():
         'startupjobs',
         'remoteok',
         'weworkremotely',
-        # 'jobscz',
+        'jobscz',
     ]
     logger.info(f'Scraping {spider_names}')
     scrape('juniorguru.sync.scrape_jobs', spider_names)

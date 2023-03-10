@@ -27,7 +27,8 @@ class Spider(BaseSpider):
         'Employment form',
     ]
     start_urls = [
-        'https://beta.www.jobs.cz/prace/?field%5B%5D=200900013&field%5B%5D=200900012&suitable-for=graduates',
+        'https://beta.www.jobs.cz/prace/programator/',
+        'https://beta.www.jobs.cz/prace/tester/',
     ]
 
     def parse(self, response):
@@ -45,7 +46,7 @@ class Spider(BaseSpider):
             card_loader.add_value('source_urls', response.url)
             card_loader.add_value('source_urls', url)
             item = loader.load_item()
-            yield response.follow(url, cb_kwargs=dict(item=item))
+            yield response.follow(url, callback=self.parse_job, cb_kwargs=dict(item=item))
         logger.warning('Not implemented yet: pagination')
 
     def parse_job(self, response, item):
