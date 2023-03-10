@@ -22,7 +22,10 @@ class Spider(BaseSpider):
         'ROBOTSTXT_OBEY': False,
         'COOKIES_ENABLED': False,
     }
-
+    employment_types_labels = [
+        'Typ pracovního poměru',
+        'Employment form',
+    ]
     start_urls = [
         'https://beta.www.jobs.cz/prace/?field%5B%5D=200900013&field%5B%5D=200900012&suitable-for=graduates',
     ]
@@ -57,15 +60,15 @@ class Spider(BaseSpider):
             yield from self.parse_job_company(response, loader)
 
     def parse_job_standard(self, response, loader):
-        loader.add_xpath('employment_types', "//span[contains(text(), 'Typ pracovního poměru')]/following-sibling::p/text()")
-        loader.add_xpath('employment_types', "//span[contains(text(), 'Employment form')]/following-sibling::p/text()")
+        for label in self.employment_types_labels:
+            loader.add_xpath('employment_types', f"//span[contains(text(), {label!r})]/following-sibling::p/text()")
         loader.add_xpath('description_html', "//p[contains(@class, 'typography-body-medium-text-regular')][contains(text(), 'Úvodní představení')]/following-sibling::p")
         loader.add_xpath('description_html', "//p[contains(@class, 'typography-body-medium-text-regular')][contains(text(), 'Pracovní nabídka')]/following-sibling::*")
         yield loader.load_item()
 
     def parse_job_company(self, response, loader):
-        loader.add_xpath('employment_types', "//span[contains(text(), 'Typ pracovního poměru')]/parent::dd/text()")
-        loader.add_xpath('employment_types', "//span[contains(text(), 'Employment form')]/parent::dd/text()")
+        for label in self.employment_types_labels:
+            loader.add_xpath('employment_types', f"//span[contains(text(), {label!r})]/parent::dd/text()")
         loader.add_css('description_html', '.grid__item.e-16 .clearfix')
         loader.add_css('description_html', '.jobad__body')
         company_url_relative = response.css('.company-profile__navigation__link::attr(href)').get()
