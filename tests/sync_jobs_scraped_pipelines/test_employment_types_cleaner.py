@@ -1,6 +1,7 @@
 import pytest
 
-from juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner import process, clean_employment_type, clean_employment_types
+from juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner import (
+    clean_employment_type, clean_employment_types, process)
 
 
 @pytest.mark.parametrize('employment_type, expected', [
