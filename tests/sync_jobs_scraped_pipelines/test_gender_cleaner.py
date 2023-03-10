@@ -3,7 +3,7 @@ import pytest
 from juniorguru.sync.jobs_scraped.pipelines.gender_cleaner import process
 
 
-@pytest.mark.parametrize('title,expected', [
+@pytest.mark.parametrize('title, expected', [
     # German
     ('Full Stack Software Engineer: Ruby on Rails (m/f/d)',
      'Full Stack Software Engineer: Ruby on Rails'),

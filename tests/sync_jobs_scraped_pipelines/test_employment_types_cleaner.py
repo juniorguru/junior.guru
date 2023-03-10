@@ -1,9 +1,9 @@
 import pytest
 
-from juniorguru.jobs.legacy_jobs.pipelines.employment_types_cleaner import Pipeline
+from juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner import process
 
 
-@pytest.mark.parametrize('employment_types,expected', [
+@pytest.mark.parametrize('employment_types, expected', [
     # common sense
     (['fulltime'], ['FULL_TIME']),
     (['full time'], ['FULL_TIME']),
@@ -17,6 +17,12 @@ from juniorguru.jobs.legacy_jobs.pipelines.employment_types_cleaner import Pipel
 
     # StartupJobs
     (['external collaboration'], ['CONTRACT']),
+
+    # Jobs
+    (['full-time work'], ['FULL_TIME']),
+    (['práce na plný úvazek'], ['FULL_TIME']),
+    (['part-time work'], ['PART_TIME']),
+    (['práce na zkrácený úvazek'], ['PART_TIME']),
 
     # junior.guru
     (['paid internship'], ['PAID_INTERNSHIP']),
@@ -37,16 +43,13 @@ from juniorguru.jobs.legacy_jobs.pipelines.employment_types_cleaner import Pipel
     # processing duplicates
     (['Full-Time', 'Gargamel', 'full time'], ['FULL_TIME']),
 ])
-def test_employment_types_cleaner(item, spider, employment_types, expected):
-    item['employment_types'] = employment_types
-    item = Pipeline().process_item(item, spider)
+def test_employment_types_cleaner(employment_types, expected):
+    item = process(dict(employment_types=employment_types))
 
     assert sorted(item['employment_types']) == sorted(expected)
 
 
-def test_employment_types_cleaner_no_employment_types(item, spider):
-    if 'employment_types' in item:
-        del item['employment_types']
-    item = Pipeline().process_item(item, spider)
+def test_employment_types_cleaner_no_employment_types():
+    item = process(dict())
 
     assert 'employment_types' not in item
