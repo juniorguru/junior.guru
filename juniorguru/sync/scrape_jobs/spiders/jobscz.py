@@ -30,6 +30,7 @@ class Spider(BaseSpider):
     def parse(self, response):
         card_xpath = "//article[contains(@class, 'SearchResultCard')]"
         for n, card in enumerate(response.xpath(card_xpath), start=1):
+            url = card.css('a[data-link="jd-detail"]::attr(href)').get()
             loader = Loader(item=Job(), response=response)
             card_loader = loader.nested_xpath(f'{card_xpath}[{n}]')
             card_loader.add_value('source', self.name)
@@ -39,9 +40,9 @@ class Spider(BaseSpider):
             card_loader.add_css('company_logo_urls', '.CompanyLogo img::attr(src)')
             card_loader.add_css('locations_raw', '.SearchResultCard__footerItem:nth-child(2)::text')
             card_loader.add_value('source_urls', response.url)
+            card_loader.add_value('source_urls', url)
             item = loader.load_item()
-            link = card.css('a[data-link="jd-detail"]::attr(href)')[0]
-            yield response.follow(link, cb_kwargs=dict(item=item))
+            yield response.follow(url, cb_kwargs=dict(item=item))
         logger.warning('Not implemented yet: pagination')
 
     def parse_job(self, response, item):

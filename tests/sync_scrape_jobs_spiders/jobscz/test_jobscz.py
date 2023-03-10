@@ -29,7 +29,7 @@ def test_spider_parse():
     assert item['company_name'] == 'Fio banka, a.s.'
     assert item['locations_raw'] == ['Praha – Nové Město']
     assert item['company_logo_urls'] == ['https://my.teamio.com/recruit/logo?id=66c81923-c5e2-4969-868b-069c1b63f6e9&v=1587555697131']
-    assert item['source_urls'] == ['https://beta.www.jobs.cz/prace/...']
+    assert item['source_urls'] == ['https://beta.www.jobs.cz/prace/...', 'https://beta.www.jobs.cz/rpd/1615173381/?searchId=9d26cd7f-d018-4340-ab3f-f6f1719ce5a9&rps=228']
 
 
 def test_spider_parse_without_logo():
