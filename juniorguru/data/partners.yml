@@ -43,7 +43,7 @@
   partnerships:
     - plan: hiring
       starts_on: 2022-03-29
-      expires_on: 2023-03-28
+      expires_on: 2023-04-30
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_a-few-days-ago-ive-got-this-gift-from-strv-activity-7012387898507296768-7EhA
@@ -54,7 +54,7 @@
   partnerships:
     - plan: support
       starts_on: 2022-04-01
-      expires_on: 2023-03-31
+      expires_on: 2023-04-30
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_mentoring-activity-6927973476733448193-GNab
@@ -68,7 +68,7 @@
   partnerships:
     - plan: support
       starts_on: 2022-02-17
-      expires_on: 2023-03-31
+      expires_on: 2023-04-30
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_jetveo-low-code-platforma-pro-c-kdo-activity-6911626840260374529-5D2g
@@ -168,7 +168,7 @@
   partnerships:
     - plan: support
       starts_on: 2021-03-17
-      expires_on: 2023-04-15
+      expires_on: 2023-04-30
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_afjtvrtkon-wordcamp-wordpress-activity-6925453460544856064-5Dqu
@@ -255,6 +255,9 @@
   slug: fakturoid
   url: https://www.fakturoid.cz/
   partnerships:
+    - plan: branding
+      starts_on: 2023-04-01
+      expires_on: 2024-04-01
     - plan: branding
       starts_on: 2020-09-01
       expires_on: 2023-03-31
