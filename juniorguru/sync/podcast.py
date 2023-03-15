@@ -40,7 +40,7 @@ YAML_SCHEMA = Seq(
     })
 )
 
-WORKERS = 2
+WORKERS = 4
 
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 

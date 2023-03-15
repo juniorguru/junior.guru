@@ -155,21 +155,50 @@ def render_template(width, height, template_name, context, filters=None):
                 css_path.write_text(rewritten_css)
 
         logger.info('Taking a screenshot')
-        image_path = temp_dir / f'{time.perf_counter_ns()}.png'
-        server_queue.put((html_path, image_path, width, height))
-        global server_proc
-        if server_proc:
-            logger['screenshot'].debug('Server already running')
+        screenshot_path = temp_dir / f'{time.perf_counter_ns()}.png'
+        screenshot_args = (html_path, screenshot_path, width, height)
+        try:
+            global server_proc
+            if server_proc:
+                logger['screenshot'].debug('Server already running')
+            else:
+                logger['screenshot'].debug('Starting server')
+                _server_proc = Process(target=_server, args=(server_queue,), daemon=True)
+                _server_proc.start()
+                logger['screenshot'].debug('Server running')
+                server_proc = _server_proc
+        except Exception as e:
+            logger['screenshot'].debug(f'Could not start server: {e}')
+            with sync_playwright() as playwright:
+                browser = playwright.firefox.launch()
+                _take_screenshot(browser, *screenshot_args)
+                browser.close()
         else:
-            logger['screenshot'].debug('Starting server')
-            server_proc = Process(target=_server, args=(server_queue,), daemon=True)
-            server_proc.start()
-            logger['screenshot'].debug('Server running')
-        while not image_path.exists():
-            logger['screenshot'].debug('Waiting for the image')
-            time.sleep(0.3)
+            server_queue.put(screenshot_args)
+            while not screenshot_path.exists():
+                logger['screenshot'].debug('Waiting for the image')
+                time.sleep(0.3)
         logger['screenshot'].debug('Done')
-        return image_path.read_bytes()
+        return screenshot_path.read_bytes()
+
+
+def _take_screenshot(browser, html_path, screenshot_path, width, height):
+    temp_path = screenshot_path.with_suffix('.temp')
+
+    logger['screenshot'].debug(f"Taking screenshot {width}x{height} {html_path} → {screenshot_path}")
+    page = browser.new_page()
+    page.set_viewport_size({'width': width, 'height': height})
+    page.goto(f'file://{html_path}', wait_until='networkidle')
+    image_bytes = page.screenshot()
+    page.close()
+
+    logger['screenshot'].debug('Editing screenshot')
+    with Image.open(BytesIO(image_bytes)) as image:
+        height_ar = (image.height * width) // image.width
+        image = image.resize((width, height_ar), Image.Resampling.BICUBIC)
+        image = image.crop((0, 0, width, height))
+        image.save(temp_path, 'PNG')
+    return temp_path.rename(screenshot_path)
 
 
 def _server(queue):
@@ -177,29 +206,12 @@ def _server(queue):
     A single process taking care of taking screenshots.
     Keeps the browser alive between subsequent calls of render_template().
     """
-    logger_s = logger['server']
-    logger_s.debug("Starting")
+    logger['server'].debug("Starting")
     with sync_playwright() as playwright:
         browser = playwright.firefox.launch()
         try:
             while True:
-                html_path, image_path, width, height = queue.get()
-                temp_image_path = image_path.with_suffix('.temp')
-
-                logger_s.debug(f"Taking screenshot {width}x{height} {html_path} → {image_path}")
-                page = browser.new_page()
-                page.set_viewport_size({'width': width, 'height': height})
-                page.goto(f'file://{html_path}', wait_until='networkidle')
-                image_bytes = page.screenshot()
-                page.close()
-
-                logger_s.debug('Editing screenshot')
-                with Image.open(BytesIO(image_bytes)) as image:
-                    height_ar = (image.height * width) // image.width
-                    image = image.resize((width, height_ar), Image.Resampling.BICUBIC)
-                    image = image.crop((0, 0, width, height))
-                    image.save(temp_image_path, 'PNG')
-                temp_image_path.rename(image_path)
+                _take_screenshot(browser, *queue.get())
         finally:
-            logger_s.debug("Closing")
+            logger['server'].debug("Closing")
             browser.close()
