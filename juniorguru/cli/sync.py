@@ -44,14 +44,18 @@ class Group(click.Group):
             @wraps(fn)
             @click.pass_context
             def wrapper(context, *fn_args, **fn_kwargs):
-                name, sync = context.info_name, context.obj['sync']
+                name = context.info_name
+                sync = context.obj['sync']
 
                 if self._is_sync_command_seen(name, sync):
                     logger[name].info('Skipping (already executed)')
                     return
 
                 dependencies = self._get_sync_command_dependencies(name, sync)
-                if dependencies:
+                skip_dependencies = context.obj['skip_dependencies']
+                if dependencies and skip_dependencies:
+                    logger[name].warning(f"Skipping dependencies: {', '.join(dependencies)} (at your own risk)")
+                elif dependencies:
                     logger[name].info(f"Dependencies: {', '.join(dependencies)}")
                     for dependency_name in dependencies:
                         logger[name].debug(f"Invoking dependency: {dependency_name}")
@@ -99,11 +103,13 @@ class Command(click.Command):
 
 @click.group(chain=True, cls=Group)
 @click.option('--id', envvar='CIRCLE_WORKFLOW_WORKSPACE_ID', default=perf_counter_ns)
+@click.option('--dependencies/--skip-dependencies', '--deps/--skip-deps', '--deps/--no-deps', 'deps', default=True)
 @click.pass_context
-def main(context, id):
+def main(context, id, deps):
     with db.connection_context():
         sync = Sync.start(id)
-    context.obj = dict(sync=sync)
+    context.obj = dict(sync=sync,
+                       skip_dependencies=not deps)
     logger.info(f"Sync #{id} starts with {sync.count_commands()} commands already recorded")
     context.call_on_close(close)
 
