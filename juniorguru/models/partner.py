@@ -93,10 +93,8 @@ class Partner(BaseModel):
         return cls.select() \
             .join(Partnership) \
             .join(PartnershipPlan) \
+            .where(Partnership.starts_on <= today, expires_after_today) \
             .group_by(cls) \
-            .having(Partnership.starts_on == fn.max(Partnership.starts_on),
-                    Partnership.starts_on <= today,
-                    expires_after_today) \
             .order_by(PartnershipPlan.hierarchy_rank.desc(), cls.name)
 
     @classmethod
@@ -106,9 +104,8 @@ class Partner(BaseModel):
             .select() \
             .join(Partnership) \
             .group_by(cls) \
-            .having(Partnership.starts_on == fn.max(Partnership.starts_on),
+            .having(fn.max(Partnership.starts_on) == Partnership.starts_on,
                     Partnership.starts_on < today,
-                    Partnership.expires_on.is_null(False),
                     Partnership.expires_on < today) \
             .order_by(cls.name)
 
