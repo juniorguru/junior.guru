@@ -4,7 +4,7 @@ template: main_podcast.html
 description: Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.
 ---
 
-{% from 'macros.html' import lead, markdown, img, podcast_player with context %}
+{% from 'macros.html' import lead, markdown, img, podcast_player, partner_link with context %}
 
 
 # Podcast
@@ -49,6 +49,20 @@ Poučky praví, že podcast se stává kvalitním a slavným, až když se auto�
 <div id="{{ episode.slug }}" class="podcast-episode">
   <h3>{{ episode.title_numbered }}</h3>
   {{ img('static/images/' + episode.avatar_path, episode.title, 100, 100, class='podcast-episode-image') }}
+  {% if episode.partner %}
+  <p>
+    <span class="badge text-bg-primary">Spolupráce</span>
+    <small>
+    Tato epizoda vznikla v rámci
+    {% if episode.partner.active_partnership() %}
+      <a href="{{ pages|docs_url('open/' + episode.partner.slug + '.md')|url }}">partnerství</a>
+    {% else %}
+      partnerství
+    {% endif %}
+    s firmou {{ partner_link(episode.partner.name, episode.partner.url, 'podcast') }}
+    </small>
+  </p>
+  {% endif %}
   <p>
     <strong>{{ '{:%-d.%-m.%Y}'.format(episode.publish_on) }}</strong>
     — {{ episode.description }}

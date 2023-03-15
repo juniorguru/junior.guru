@@ -260,7 +260,7 @@
       expires_on: 2024-04-01
     - plan: branding
       starts_on: 2020-09-01
-      expires_on: 2023-03-31
+      expires_on: 2023-04-01
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_faktury-rubyonrails-ruby-activity-6914182951429648384-hRoV
