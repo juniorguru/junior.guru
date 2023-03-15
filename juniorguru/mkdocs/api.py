@@ -84,6 +84,15 @@ def build_podcast_xml(api_dir, config):
                       explicit=False)
 
     for number, db_episode in enumerate(PodcastEpisode.api_listing(), start=1):
+        description = db_episode.description
+        if db_episode.partner:
+            description += '\n\nTato epizoda vznikla v rámci'
+            if db_episode.partner.active_partnership():
+                description += f' [placeného partnerství](https://junior.guru/open/{db_episode.partner.slug})'
+            else:
+                description += ' placeného partnerství'
+            description += f' s firmou [{db_episode.partner.name}]({db_episode.partner.url}?utm_source=juniorguru&utm_medium=podcast&utm_campaign=partnership)'
+
         episode = Episode(id=db_episode.global_id,
                           episode_number=number,
                           episode_name=f'#{db_episode.number}',
@@ -91,7 +100,7 @@ def build_podcast_xml(api_dir, config):
                           image=f'https://junior.guru/static/images/{db_episode.avatar_path}',
                           publication_date=db_episode.publish_at_prg,
                           link=db_episode.url,
-                          summary=md(db_episode.description),
+                          summary=md(description),
                           media=Media(db_episode.media_url,
                                       size=db_episode.media_size,
                                       type=db_episode.media_type,
