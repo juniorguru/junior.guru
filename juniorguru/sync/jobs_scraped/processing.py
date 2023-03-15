@@ -214,7 +214,7 @@ def _writer(item_queue):
                 item_queue.task_done()
     finally:
         logger_w.info(f"Saved {counter} items total")
-        logger_w.debug("Closing writer")
+        logger_w.debug("Closing")
 
 
 def postprocess_jobs(pipelines, workers=None):
@@ -334,7 +334,7 @@ def _persistor(op_queue):
                 op_queue.task_done()
     finally:
         logger_p.info(f"Updated {counter} jobs total")
-        logger_p.debug("Closing persistor")
+        logger_p.debug("Closing")
 
 
 def load_pipelines(pipelines):

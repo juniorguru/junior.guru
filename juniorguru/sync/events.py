@@ -1,7 +1,7 @@
-import os
 from datetime import date, timedelta
 from pathlib import Path
 
+import click
 import arrow
 from strictyaml import CommaSeparated, Int, Map, Optional, Seq, Str, Url, load
 
@@ -21,8 +21,6 @@ from juniorguru.models.partner import Partner
 
 logger = loggers.from_path(__file__)
 
-
-FLUSH_POSTERS_EVENTS = bool(int(os.getenv('FLUSH_POSTERS_EVENTS', 0)))
 
 DATA_PATH = Path(__file__).parent.parent / 'data' / 'events.yml'
 
@@ -69,9 +67,10 @@ schema = Seq(
 
 
 @cli.sync_command(dependencies=['club-content', 'partners'])
-def main():
-    if FLUSH_POSTERS_EVENTS:
-        logger.warning("Removing all existing posters for events, FLUSH_POSTERS_EVENTS is set")
+@click.option('--flush-posters/--no-flush-posters', default=False)
+def main(flush_posters):
+    if flush_posters:
+        logger.warning("Removing all existing posters for events")
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
 

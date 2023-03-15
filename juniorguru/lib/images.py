@@ -7,6 +7,8 @@ from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
 from subprocess import DEVNULL, run
+from multiprocessing import Queue, Process
+import time
 
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image, ImageOps
@@ -30,6 +32,12 @@ TEMPLATES_DIR = Path(__file__).parent.parent / 'image_templates'
 
 
 logger = loggers.from_path(__file__)
+
+
+server_queue = Queue()
+
+
+server_proc = None
 
 
 class InvalidImage(Exception):
@@ -119,46 +127,79 @@ def render_template(width, height, template_name, context, filters=None):
     template = environment.get_template(template_name)
 
     with tempfile.TemporaryDirectory() as temp_dir:
+        temp_dir = Path(temp_dir)
         logger.info(f'Rendering {width}x{height} {template_name} in {temp_dir}')
 
         html = template.render(images_dir=IMAGES_DIR, **context)
-        html_path = Path(temp_dir) / template_name
+        html_path = temp_dir / template_name
         html_path.write_text(html)
 
         logger.info('Compiling SCSS')
         run(['npx', 'sass', f'{TEMPLATES_DIR}:{temp_dir}'], check=True, stdout=DEVNULL)
 
         logger.info(f"Copying fonts: {', '.join(map(str, FONTS))}")
-        fonts_dir = Path(temp_dir) / 'fonts'
+        fonts_dir = temp_dir / 'fonts'
         fonts_dir.mkdir(parents=True)
         for font_parent_dir in FONTS:
             for woff_path in Path(font_parent_dir).glob('**/*.woff*'):
-                logger.debug(f"Copying font {woff_path} to {fonts_dir}")
+                logger['font'].debug(f"Copying {woff_path} to {fonts_dir}")
                 shutil.copy2(woff_path, fonts_dir)
 
         logger.info('Rewriting CSS')
-        for css_path in Path(temp_dir).glob('**/*.css'):
-            logger.debug(f"Rewriting {css_path}")
+        for css_path in temp_dir.glob('**/*.css'):
+            logger['css'].debug(f"Rewriting {css_path}")
             for re_pattern, re_repl in CSS_REWRITE:
                 css = css_path.read_text()
                 rewritten_css = re.sub(re_pattern, re_repl, css)
-                logger.debug(f"Did pattern {re_pattern!r} result in changes? {(css != rewritten_css)}")
+                logger['css'].debug(f"Did pattern {re_pattern!r} result in changes? {(css != rewritten_css)}")
                 css_path.write_text(rewritten_css)
 
         logger.info('Taking a screenshot')
-        with sync_playwright() as playwright:
-            browser = playwright.firefox.launch()
-            page = browser.new_page()
-            page.set_viewport_size({'width': width, 'height': height})
-            page.goto(f'file://{html_path}', wait_until='networkidle')
-            image_bytes = page.screenshot()
-            browser.close()
+        image_path = temp_dir / f'{time.perf_counter_ns()}.png'
+        server_queue.put((html_path, image_path, width, height))
+        global server_proc
+        if server_proc:
+            logger['screenshot'].debug('Server already running')
+        else:
+            logger['screenshot'].debug('Starting server')
+            server_proc = Process(target=_server, args=(server_queue,), daemon=True)
+            server_proc.start()
+            logger['screenshot'].debug('Server running')
+        while not image_path.exists():
+            logger['screenshot'].debug('Waiting for the image')
+            time.sleep(0.3)
+        logger['screenshot'].debug('Done')
+        return image_path.read_bytes()
 
-        logger.info('Editing screenshot')
-        with Image.open(BytesIO(image_bytes)) as image:
-            buffer = BytesIO()
-            height_ar = (image.height * width) // image.width
-            image = image.resize((width, height_ar), Image.Resampling.BICUBIC)
-            image = image.crop((0, 0, width, height))
-            image.save(buffer, 'PNG')
-            return buffer.getvalue()
+
+def _server(queue):
+    """
+    A single process taking care of taking screenshots.
+    Keeps the browser alive between subsequent calls of render_template().
+    """
+    logger_s = logger['server']
+    logger_s.debug("Starting")
+    with sync_playwright() as playwright:
+        browser = playwright.firefox.launch()
+        try:
+            while True:
+                html_path, image_path, width, height = queue.get()
+                temp_image_path = image_path.with_suffix('.temp')
+
+                logger_s.debug(f"Taking screenshot {width}x{height} {html_path} → {image_path}")
+                page = browser.new_page()
+                page.set_viewport_size({'width': width, 'height': height})
+                page.goto(f'file://{html_path}', wait_until='networkidle')
+                image_bytes = page.screenshot()
+                page.close()
+
+                logger_s.debug('Editing screenshot')
+                with Image.open(BytesIO(image_bytes)) as image:
+                    height_ar = (image.height * width) // image.width
+                    image = image.resize((width, height_ar), Image.Resampling.BICUBIC)
+                    image = image.crop((0, 0, width, height))
+                    image.save(temp_image_path, 'PNG')
+                temp_image_path.rename(image_path)
+        finally:
+            logger_s.debug("Closing")
+            browser.close()

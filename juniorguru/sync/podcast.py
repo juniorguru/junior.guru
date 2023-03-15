@@ -1,8 +1,8 @@
-import os
 from datetime import date
 from multiprocessing import Pool
 from pathlib import Path
 
+import click
 import requests
 from discord import Embed, File
 from pod2gen import Media
@@ -42,8 +42,6 @@ YAML_SCHEMA = Seq(
 
 WORKERS = 2
 
-FLUSH_POSTERS_PODCAST = bool(int(os.getenv('FLUSH_POSTERS_PODCAST', 0)))
-
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
 
 POSTERS_DIR = IMAGES_DIR / 'posters-podcast'
@@ -60,10 +58,11 @@ MESSAGE_EMOJI = '🎙'
 
 
 @cli.sync_command(dependencies=['club-content', 'partners'])
+@click.option('--flush-posters/--no-flush-posters', default=False)
 @db.connection_context()
-def main():
-    if FLUSH_POSTERS_PODCAST:
-        logger.warning("Removing all existing posters for episodes, FLUSH_POSTERS_PODCAST is set")
+def main(flush_posters):
+    if flush_posters:
+        logger.warning("Removing all existing posters for podcast episodes")
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
 
