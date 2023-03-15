@@ -72,6 +72,7 @@ class Spider(BaseSpider):
             loader.add_xpath('employment_types', f"//span[contains(text(), {label!r})]/parent::dd/text()")
         loader.add_css('description_html', '.grid__item.e-16 .clearfix')
         loader.add_css('description_html', '.jobad__body')
+        loader.add_css('company_logo_urls', '.company-profile__logo__image::attr(src)')
         company_url_relative = response.css('.company-profile__navigation__link::attr(href)').get()
         loader.add_value('company_url', urljoin(response.url, company_url_relative))
         yield loader.load_item()

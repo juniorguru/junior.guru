@@ -18,18 +18,18 @@ def test_spider_parse():
     assert len(requests) == 37 + 4  # jobs + pagination (without page=1)
 
     assert requests[0].url == 'https://beta.www.jobs.cz/rpd/1615173381/?searchId=9d26cd7f-d018-4340-ab3f-f6f1719ce5a9&rps=228'
-    item = requests[0].cb_kwargs['item']
-    assert sorted(item.keys()) == sorted([
+    job = requests[0].cb_kwargs['item']
+    assert sorted(job.keys()) == sorted([
         'title', 'company_name', 'locations_raw',
         'first_seen_on', 'company_logo_urls', 'source', 'source_urls',
     ])
-    assert item['source'] == 'jobscz'
-    assert item['first_seen_on'] == date.today()
-    assert item['title'] == 'Systémový administrátor/administrátorka senior'
-    assert item['company_name'] == 'Fio banka, a.s.'
-    assert item['locations_raw'] == ['Praha – Nové Město']
-    assert item['company_logo_urls'] == ['https://my.teamio.com/recruit/logo?id=66c81923-c5e2-4969-868b-069c1b63f6e9&v=1587555697131']
-    assert item['source_urls'] == ['https://beta.www.jobs.cz/prace/...', 'https://beta.www.jobs.cz/rpd/1615173381/?searchId=9d26cd7f-d018-4340-ab3f-f6f1719ce5a9&rps=228']
+    assert job['source'] == 'jobscz'
+    assert job['first_seen_on'] == date.today()
+    assert job['title'] == 'Systémový administrátor/administrátorka senior'
+    assert job['company_name'] == 'Fio banka, a.s.'
+    assert job['locations_raw'] == ['Praha – Nové Město']
+    assert job['company_logo_urls'] == ['https://my.teamio.com/recruit/logo?id=66c81923-c5e2-4969-868b-069c1b63f6e9&v=1587555697131']
+    assert job['source_urls'] == ['https://beta.www.jobs.cz/prace/...', 'https://beta.www.jobs.cz/rpd/1615173381/?searchId=9d26cd7f-d018-4340-ab3f-f6f1719ce5a9&rps=228']
 
     assert requests[37].url == 'https://beta.www.jobs.cz/prace/?field%5B0%5D=200900013&field%5B1%5D=200900012&suitable-for=graduates&cacheKey=ae78dde7-1eee-4e59-936f-13ed3541890c&page=2'
     assert requests[-1].url == 'https://beta.www.jobs.cz/prace/?field%5B0%5D=200900013&field%5B1%5D=200900012&suitable-for=graduates&cacheKey=ae78dde7-1eee-4e59-936f-13ed3541890c&page=5'
@@ -89,11 +89,12 @@ def test_spider_parse_job_company():
                             body=Path(FIXTURES_DIR / 'job_company.html').read_bytes())
     job = next(jobscz.Spider().parse_job(response, Job()))
 
-    assert sorted(job.keys()) == sorted(['employment_types', 'description_html', 'source_urls', 'url', 'company_url'])
+    assert sorted(job.keys()) == sorted(['employment_types', 'description_html', 'source_urls', 'url', 'company_url', 'company_logo_urls'])
     assert job['url'] == 'https://beta.www.jobs.cz/fp/onsemi-61382/1597818748/'
     assert job['employment_types'] == ['práce na plný úvazek']
     assert job['source_urls'] == ['https://beta.www.jobs.cz/fp/onsemi-61382/1597818748/?positionOfAdInAgentEmail=0&searchId=ac8f8a52-70fe-4be5-b32e-9f6e6b1c2b23&rps=233']
     assert job['company_url'] == 'https://beta.www.jobs.cz/fp/onsemi-61382/'
+    assert job['company_logo_urls'] == ['https://aeqqktywno.cloudimg.io/crop_px/57,161,1762,510-200/n/_cpimg_prod_/61382/87d218f8-30df-11ec-a11c-0242ac11000a.png']
 
     assert 'Světoví producenti elektroniky či aut s námi spolupracují a čekají na naše inovativní čipy' in job['description_html']
     assert '<h2>Vývojář polovodičových součástek a automatizace v TCAD</h2>' not in job['description_html']
@@ -105,7 +106,7 @@ def test_spider_parse_job_company_en():
                             body=Path(FIXTURES_DIR / 'job_company_en.html').read_bytes())
     job = next(jobscz.Spider().parse_job(response, Job()))
 
-    assert sorted(job.keys()) == sorted(['employment_types', 'description_html', 'source_urls', 'url', 'company_url'])
+    assert sorted(job.keys()) == sorted(['employment_types', 'description_html', 'source_urls', 'url', 'company_url', 'company_logo_urls'])
     assert job['employment_types'] == ['full-time work']
 
     assert 'Our new home is the remarkable Churchill II building' in job['description_html']
