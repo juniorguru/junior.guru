@@ -3,12 +3,12 @@ import pickle
 import re
 import shutil
 import tempfile
+import time
 from hashlib import sha256
 from io import BytesIO
+from multiprocessing import Process, Queue
 from pathlib import Path
 from subprocess import DEVNULL, run
-from multiprocessing import Queue, Process
-import time
 
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image
