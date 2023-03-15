@@ -8,6 +8,12 @@
 # avatar_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
+- id: "0014"
+  title: Lukáš Kubec (Green Fox Academy) o cestě z KFC na software developera a mentora programování
+  publish_on: "2023-03-15"
+  description: |
+    Od Lukáše se v novém díle podcastu dozvíte, jaká byla jeho cesta od zaměstnance KFC až k pozici software developera ve společnosti MIBCON. S Pájou si povídá o tom, proč si pro svoji rekvalifikaci zvolil bootcamp od Green Fox Academy a proč se později rozhodl pokračovat jako mentor programování.
+
 - id: "0013"
   title: Tomáš Ervín Dombrovský (LMC) nejen o IT sektoru v Česku
   avatar_path: avatars-participants/tomas-ervin-dombrovsky.jpg
