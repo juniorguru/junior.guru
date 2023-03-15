@@ -87,7 +87,7 @@ class Group(click.Group):
         return sorted(super().list_commands(context) + list(self.sync_commands))
 
     def get_command(self, context, name):
-        return super().get_command(context, name) or self.sync_commands[name]
+        return super().get_command(context, name) or self.sync_commands.get(name)
 
 
 class Command(click.Command):
