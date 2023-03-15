@@ -103,18 +103,13 @@ def index():
 @app.route('/events/')
 def events():
     with db:
-        event_next = Event.next()
         events_planned = Event.planned_listing()
         events_archive = Event.archive_listing()
-    if event_next:
-        thumbnail_path = f'images/{event_next.poster_path}'
-    else:
-        thumbnail_path = thumbnail(title='Klubové akce')
     return render_template('events.html',
                            nav_active='club',
                            events_planned=events_planned,
                            events_archive=events_archive,
-                           thumbnail=thumbnail_path)
+                           thumbnail=thumbnail(title='Klubové akce'))
 
 
 @app.route('/membership/')

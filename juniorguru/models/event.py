@@ -25,8 +25,6 @@ class Event(BaseModel):
     partner = ForeignKeyField(Partner, backref='list_events', null=True)
     recording_url = CharField(null=True)
     public_recording_url = CharField(null=True)
-    poster_path = CharField(null=True)
-    poster_ig_path = CharField(null=True)
     poster_yt_path = CharField(null=True)
     poster_dc_path = CharField(null=True)
     logo_path = CharField(null=True)

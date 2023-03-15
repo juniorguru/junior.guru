@@ -11,7 +11,7 @@ from multiprocessing import Queue, Process
 import time
 
 from jinja2 import Environment, FileSystemLoader
-from PIL import Image, ImageOps
+from PIL import Image
 from playwright.sync_api import sync_playwright
 
 from juniorguru.lib import loggers
@@ -75,21 +75,6 @@ def render_image_file(width, height, template_name, context, output_dir, filters
     if not image_path.exists():
         image_bytes = render_template(width, height, template_name, context, filters)
         image_path.write_bytes(image_bytes)
-    return image_path
-
-
-def save_as_square(path, prefix=None, suffix=None):
-    cache_key = str(path.relative_to(IMAGES_DIR))
-    hash = sha256(cache_key.encode('utf-8')).hexdigest()
-
-    image_name = '-'.join(filter(None, [prefix, hash, suffix])) + '.png'
-    image_path = path.with_name(image_name)
-
-    if not image_path.exists():
-        with Image.open(path) as image:
-            side_px = max(image.width, image.height)
-            image = ImageOps.pad(image, (side_px, side_px), color=(0, 0, 0))
-            image.save(image_path, 'PNG')
     return image_path
 
 

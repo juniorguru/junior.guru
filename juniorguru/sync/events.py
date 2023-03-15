@@ -9,7 +9,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLED,
                                  run_discord_task)
-from juniorguru.lib.images import (is_image, render_image_file, save_as_square,
+from juniorguru.lib.images import (is_image, render_image_file,
                                    validate_image)
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.lib.yaml import Date
@@ -29,10 +29,6 @@ IMAGES_DIR = Path(__file__).parent.parent / 'images'
 POSTERS_DIR = IMAGES_DIR / 'posters-events'
 
 AVATARS_DIR = IMAGES_DIR / 'avatars-participants'
-
-WEB_THUMBNAIL_WIDTH = 1280
-
-WEB_THUMBNAIL_HEIGHT = 672
 
 YOUTUBE_THUMBNAIL_WIDTH = 1280
 
@@ -113,10 +109,6 @@ def main(flush_posters):
             tpl_context = dict(event=event)
             tpl_filters = dict(md=md, local_time=local_time, weekday=weekday)
             prefix = event.start_at.date().isoformat().replace('-', '')
-            image_path = render_image_file(WEB_THUMBNAIL_WIDTH, WEB_THUMBNAIL_HEIGHT,
-                                            'event.html', tpl_context, POSTERS_DIR,
-                                            filters=tpl_filters, prefix=prefix)
-            event.poster_path = image_path.relative_to(IMAGES_DIR)
             image_path = render_image_file(DISCORD_THUMBNAIL_WIDTH, DISCORD_THUMBNAIL_HEIGHT,
                                             'event.html', tpl_context, POSTERS_DIR,
                                             filters=tpl_filters, prefix=prefix, suffix='dc')
@@ -125,9 +117,6 @@ def main(flush_posters):
                                             'event.html', tpl_context, POSTERS_DIR,
                                             filters=tpl_filters, prefix=prefix, suffix='yt')
             event.poster_yt_path = image_path.relative_to(IMAGES_DIR)
-            image_path = save_as_square(image_path, prefix=prefix, suffix='ig')
-            event.poster_ig_path = image_path.relative_to(IMAGES_DIR)
-
             logger.info(f"Saving '{name}'")
             event.save()
 

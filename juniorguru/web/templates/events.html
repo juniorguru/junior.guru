@@ -21,9 +21,7 @@ Přednášky a další akce pro členy klubu junior.guru. Seznam akcí proběhl�
       <p class="note">
         <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at) }},
         {{ event.start_at|local_time }} online v klubovně</strong>,
-        <a href="{{ url_for('static', filename='images/' + event.poster_path) }}">upoutávka</a>,
-        <a href="{{ url_for('static', filename='images/' + event.poster_ig_path) }}">upoutávka na IG</a>,
-        <a href="{{ url_for('static', filename='images/' + event.poster_yt_path) }}">náhled pro YT</a>
+        <a href="{{ url_for('static', filename='images/' + event.poster_yt_path) }}">upoutávka</a>
       </p>
       {{ event.description|md }}
       <h4 class="content__subsection-heading">{{ event.bio_name }}</h4>
