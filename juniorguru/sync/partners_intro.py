@@ -64,7 +64,8 @@ async def discord_task(client):
                 f"Firma {partner.name_markdown_bold} chce pomáhat juniorům. "
                 f"Členové, které sem pošle, mají roli <@&{partner.role_id}> (aktuálně {len(partner.list_members)})."
             )
-            embed = Embed(title=partner.name, color=Color.dark_grey(),
+            embed = Embed(title=partner.name,
+                          color=Color.dark_grey(),
                           description=description)
             embed.set_thumbnail(url=f"attachment://{Path(partner.poster_path).name}")
             file = File(IMAGES_DIR / partner.poster_path)

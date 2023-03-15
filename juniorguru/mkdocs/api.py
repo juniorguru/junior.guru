@@ -86,7 +86,7 @@ def build_podcast_xml(api_dir, config):
     for number, db_episode in enumerate(PodcastEpisode.api_listing(), start=1):
         description = db_episode.description
         if db_episode.partner:
-            description += '\n\nTato epizoda vznikla v rámci'
+            description += '\n\nEpizoda vznikla v rámci'
             if db_episode.partner.active_partnership():
                 description += f' [placeného partnerství](https://junior.guru/open/{db_episode.partner.slug})'
             else:
