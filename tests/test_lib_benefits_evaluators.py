@@ -3,9 +3,9 @@ from datetime import date
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.models.partner import Partnership, Partner
-from juniorguru.models.club import ClubUser
 from juniorguru.lib.benefits_evaluators import evaluate_members
+from juniorguru.models.club import ClubUser
+from juniorguru.models.partner import Partner, Partnership
 
 from testing_utils import prepare_partner_data
 
