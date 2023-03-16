@@ -8,6 +8,7 @@ def benefit(evaluate):
     slug = evaluate.__name__.replace('evaluate_', '')
     assert slug not in BENEFITS_EVALUATORS, 'Duplicate slug!'
     BENEFITS_EVALUATORS[slug] = evaluate
+    return evaluate
 
 
 @benefit
@@ -20,7 +21,7 @@ def evaluate_logo_club(partnership):
 
 @benefit
 def evaluate_members(partnership):
-    return len(partnership.partner.list_members) > 1
+    return len(partnership.partner.list_members) >= 1
 
 
 @benefit

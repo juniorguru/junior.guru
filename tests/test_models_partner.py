@@ -11,17 +11,11 @@ from juniorguru.models.partner import (Partner, Partnership, PartnershipBenefit,
                                        PartnershipPlan, PartnerStudentSubscription)
 from juniorguru.models.podcast import PodcastEpisode
 
+from testing_utils import prepare_partner_data
+
 
 def create_partner(id, **kwargs):
-    return Partner.create(id=id,
-                          slug=kwargs.get('slug', f'banana{id}'),
-                          name=kwargs.get('name', f'Banana #{id}'),
-                          logo_path=kwargs.get('logo_path', 'logos/banana.svg'),
-                          url=kwargs.get('url', 'https://banana.example.com'),
-                          coupon=kwargs.get('coupon', 'BANANA123123123'),
-                          student_coupon=kwargs.get('student_coupon'),
-                          role_id=kwargs.get('role_id'),
-                          student_role_id=kwargs.get('student_role_id'))
+    return Partner.create(**prepare_partner_data(id, **kwargs))
 
 
 def create_plan(slug, benefit_slugs=None):
