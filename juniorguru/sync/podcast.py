@@ -164,7 +164,7 @@ def process_episode(yaml_record):
 @db.connection_context()
 async def discord_task(client):
     last_episode = PodcastEpisode.last()
-    last_message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, MESSAGE_EMOJI, f'**{last_episode.number}. díl**')
+    last_message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, MESSAGE_EMOJI, f'**{last_episode.number}. epizodu**')
     if not last_message:
         logger.info(f'Announcing {last_episode!r}')
         if DISCORD_MUTATIONS_ENABLED:
