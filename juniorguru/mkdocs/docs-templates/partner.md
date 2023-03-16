@@ -61,14 +61,6 @@ Firma nepodniká v oblasti vzdělávání juniorů a neměl by tedy existovat ž
 Pokud tady něco chybí, tak buď [nejde o placenou spolupráci](../faq.md#neoznacena-spoluprace), nebo to Honza zapomenul zaznamenat. Napiš mu na {{ 'honza@junior.guru'|email_link }}.
 
 <div class="table-responsive"><table class="table">
-  <tr>
-    <td>Členů v klubu {{ 'person-circle'|icon }}</td>
-    <td>
-      {{ partner.list_members|length }} z 15<br>
-      <small>{{ 'question-circle'|icon }} <a href="{{ pages|docs_url('faq.md')|url }}#firmy-klub">k čemu je členství</a></small>
-    </td>
-  </tr>
-
   {% for podcast_episode in partner.list_podcast_episodes %}
   <tr>
     <td>Epizoda podcastu {{ 'mic'|icon }}</td>
@@ -130,6 +122,14 @@ Pokud tady něco chybí, tak buď [nejde o placenou spolupráci](../faq.md#neozn
     </tr>
     {% endfor %}
   {% endfor %}
+
+  <tr>
+    <td>Členů v klubu {{ 'person-circle'|icon }}</td>
+    <td>
+      {{ partner.list_members|length }} z 15<br>
+      <small>{{ 'question-circle'|icon }} <a href="{{ pages|docs_url('faq.md')|url }}#firmy-klub">k čemu je členství</a></small>
+    </td>
+  </tr>
 </table></div>
 
 ## Stav benefitů
