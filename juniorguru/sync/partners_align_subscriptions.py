@@ -4,7 +4,8 @@ import arrow
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.memberful import MEMBERFUL_MUTATIONS_ENABLED, Memberful
+from juniorguru.lib.memberful import Memberful
+from juniorguru.lib.mutations import mutations
 from juniorguru.models.base import db
 from juniorguru.models.partner import Partner
 
@@ -35,14 +36,16 @@ def main():
             logger_c.debug(f'Processing {employee.display_name}')
             if employee.expires_at.date() < partnership.expires_on:
                 logger_c.warning(f'{employee!r} {employee.expires_at.date()} < {partnership.expires_on}')
-                if MEMBERFUL_MUTATIONS_ENABLED:
-                    params = dict(id=employee.subscription_id,
-                                  expiresAt=int(arrow.get(partnership.expires_on).timestamp()))
-                    memberful.mutate(mutation, params)
+                params = dict(id=employee.subscription_id,
+                              expiresAt=int(arrow.get(partnership.expires_on).timestamp()))
+                if align_subscription(memberful, mutation, params):
                     employee.expires_at = datetime.combine(partnership.expires_on, datetime.min.time())
                     employee.save()
                     logger_c.info(f'{employee!r} subscription updated to expire on {employee.expires_at.date()}')
-                else:
-                    logger_c.warning('Memberful mutations not enabled')
             else:
                 logger_c.debug(f'{employee!r} {employee.expires_at.date()} ≥ {partnership.expires_on}')
+
+
+@mutations.mutates('memberful')
+def align_subscription(memberful, mutation, params):
+    return memberful.mutate(mutation, params)

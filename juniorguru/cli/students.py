@@ -7,8 +7,9 @@ from pathlib import Path
 import click
 from playhouse.shortcuts import model_to_dict
 
+from juniorguru.lib.mutations import mutations
 from juniorguru.lib import loggers
-from juniorguru.lib.memberful import (MEMBERFUL_MUTATIONS_ENABLED, Memberful,
+from juniorguru.lib.memberful import (Memberful,
                                       serialize_metadata)
 from juniorguru.models.partner import Partner
 
@@ -56,8 +57,8 @@ def main(partner_slug, all, invoice):
             logger.error("You're not sure")
             raise click.Abort()
 
-        if not MEMBERFUL_MUTATIONS_ENABLED:
-            logger.error('Memberful mutations not enabled')
+        if not mutations.is_allowed('memberful'):
+            logger.error('Memberful mutations not allowed!')
             raise click.Abort()
 
         memberful = Memberful()
@@ -100,8 +101,13 @@ def main(partner_slug, all, invoice):
             logger.debug(f"Previous metadata: {metadata!r}")
             metadata.setdefault(f'{partner.slug}InvoicedOn', date.today().isoformat())
             logger.debug(f"Future metadata: {metadata!r}")
-            memberful.mutate(mutation, dict(id=subscription.account_id,
-                                            metadata=serialize_metadata(metadata)))
+            mark_as_invoiced(memberful, mutation, subscription.account_id, metadata)
+
+
+@mutations.mutates('memberful')
+def mark_as_invoiced(memberful, mutation, account_id, metadata):
+    memberful.mutate(mutation, dict(id=account_id,
+                                    metadata=serialize_metadata(metadata)))
 
 
 def to_csv(rows):

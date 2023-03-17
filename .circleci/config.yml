@@ -106,7 +106,6 @@ jobs:
           command: |
             if [[ $CIRCLE_BRANCH = "main" ]]; then
               export DISCORD_MUTATIONS_ENABLED=1
-              export MEMBERFUL_MUTATIONS_ENABLED=1
               #export JOBS_EMAILS_SENDING_ENABLED=1
             fi
             poetry run jg sync --allow-mutations ci
@@ -148,7 +147,6 @@ jobs:
           command: |
             if [[ $CIRCLE_BRANCH = "main" ]]; then
               export DISCORD_MUTATIONS_ENABLED=1
-              export MEMBERFUL_MUTATIONS_ENABLED=1
               #export JOBS_EMAILS_SENDING_ENABLED=1
             fi
             poetry run jg sync --allow-mutations ci

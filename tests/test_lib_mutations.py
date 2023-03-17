@@ -3,7 +3,7 @@ import pytest
 from juniorguru.lib.mutations import Mutations
 
 
-def test_mutations():
+def test_mutations_mutation():
     mutations = Mutations()
     mutations.allow('discord')
 
@@ -22,7 +22,7 @@ def test_mutations():
 
 
 @pytest.mark.asyncio
-async def test_mutations_async():
+async def test_mutations_mutation_async():
     mutations = Mutations()
     mutations.allow('discord')
 
@@ -38,3 +38,11 @@ async def test_mutations_async():
 
     assert fakturoid_val is None
     assert discord_val == 2
+
+
+def test_mutations_is_allowed():
+    mutations = Mutations()
+    mutations.allow('discord')
+
+    assert mutations.is_allowed('fakturoid') is False
+    assert mutations.is_allowed('discord') is True

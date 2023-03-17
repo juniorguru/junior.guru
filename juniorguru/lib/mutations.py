@@ -29,6 +29,9 @@ class Mutations:
             self.allowed.add(service)
             logger[service.name.lower()].info('Allowed')
 
+    def is_allowed(self, service_name):
+        return Services[service_name.upper()] in self.allowed
+
     def mutation(self, service_name, fn):
         service = Services[service_name.upper()]
         if service in self.allowed:

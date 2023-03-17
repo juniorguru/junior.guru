@@ -10,8 +10,6 @@ from juniorguru.lib import loggers
 
 MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
 
-MEMBERFUL_MUTATIONS_ENABLED = bool(int(os.getenv('MEMBERFUL_MUTATIONS_ENABLED', 0)))
-
 
 logger = loggers.from_path(__file__)
 
@@ -78,7 +76,7 @@ class Memberful():
 
     def mutate(self, mutation_string, params):
         logger.debug('Sending a mutation')
-        self.client.execute(gql(mutation_string), variable_values=params)
+        return self.client.execute(gql(mutation_string), variable_values=params)
 
 
 def serialize_metadata(data):
