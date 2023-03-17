@@ -9,7 +9,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib.discord_club import (DISCORD_MUTATIONS_ENABLED, ClubChannel,
                                          fetch_threads, is_thread_after)
-from juniorguru.lib.discord_proc import run_discord_task
+from juniorguru.lib import discord_sync
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
 

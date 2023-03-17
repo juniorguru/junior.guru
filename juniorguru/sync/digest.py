@@ -7,7 +7,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import (DISCORD_MUTATIONS_ENABLED, ClubChannel,
                                          is_message_older_than)
-from juniorguru.lib.discord_proc import run_discord_task
+from juniorguru.lib import discord_sync
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 

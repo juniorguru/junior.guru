@@ -8,7 +8,7 @@ from PIL import Image
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
-from juniorguru.lib.discord_proc import run_discord_task
+from juniorguru.lib import discord_sync
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser
 

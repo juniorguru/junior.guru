@@ -13,7 +13,7 @@ from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubCha
                                          ClubEmoji, ClubMember, emoji_name,
                                          fetch_messages, fetch_threads, get_roles,
                                          is_thread_after)
-from juniorguru.lib.discord_proc import run_discord_task
+from juniorguru.lib import discord_sync
 from juniorguru.lib.discord_votes import count_downvotes, count_upvotes
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser

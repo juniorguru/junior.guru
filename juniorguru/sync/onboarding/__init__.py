@@ -1,5 +1,5 @@
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib.discord_proc import run_discord_task
+from juniorguru.lib import discord_sync
 from juniorguru.models.base import db
 from juniorguru.sync.onboarding.channels import manage_channels
 from juniorguru.sync.onboarding.messages import send_messages

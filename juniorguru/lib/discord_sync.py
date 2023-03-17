@@ -15,22 +15,27 @@ DISCORD_API_KEY = os.getenv('DISCORD_API_KEY') or None
 logger = loggers.from_path(__file__)
 
 
-def run_discord_task(import_path, *args):
+def run(fn, *args):
     """
     Run given async function in a separate process.
 
     Separate process is used so that it's possible to run multiple one-time
     async tasks independently on each other, in separate async loops.
     """
+    import_path = get_import_path(fn)
     logger.debug(f'Running async code in a separate process: {import_path}')
-    process = Process(target=_discord_task, args=[import_path, args])
+    process = Process(target=discord_process, args=[import_path, args])
     process.start()
     process.join()
     if process.exitcode != 0:
         raise RuntimeError(f'Process for running async code finished with non-zero exit code: {process.exitcode}')
 
 
-def _discord_task(import_path, args):
+def get_import_path(fn):
+    return f'{fn.__module__}.{fn.__name__}'
+
+
+def discord_process(import_path, args):
     logger_dt = logger['discord_task']
 
     import_path_parts = import_path.split('.')

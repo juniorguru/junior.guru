@@ -5,7 +5,7 @@ import click
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import emoji_name
-from juniorguru.lib.discord_proc import run_discord_task
+from juniorguru.lib import discord_sync
 
 
 ROLE = 836959652100702248
