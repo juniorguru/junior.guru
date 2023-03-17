@@ -4,7 +4,7 @@ from datetime import date
 
 from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
-from juniorguru.lib.club import ANNOUNCEMENTS_CHANNEL
+from juniorguru.lib.discord_club import ClubChannel
 from juniorguru.models.club import ClubUser
 from juniorguru.sync.onboarding.categories import (create_enough_categories,
                                                    delete_empty_categories,
@@ -51,7 +51,7 @@ async def manage_channels(client):
 
 
 async def fetch_beta_users(client):
-    announcements_channel = await client.club_guild.fetch_channel(ANNOUNCEMENTS_CHANNEL)
+    announcements_channel = await client.club_guild.fetch_channel(ClubChannel.ANNOUNCEMENTS)
     beta_users_message = await announcements_channel.fetch_message(BETA_USERS_MESSAGE)
     beta_users_reaction = [reaction for reaction
                            in beta_users_message.reactions

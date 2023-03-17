@@ -4,7 +4,8 @@ import time
 import click
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import emoji_name, run_discord_task
+from juniorguru.lib.discord_club import emoji_name
+from juniorguru.lib.discord_proc import run_discord_task
 
 
 ROLE = 836959652100702248

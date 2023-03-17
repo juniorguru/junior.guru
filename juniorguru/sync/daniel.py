@@ -2,16 +2,14 @@ from datetime import date, timedelta
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, HONZAJAVOREK,
-                                 is_message_older_than, run_discord_task)
+from juniorguru.lib.discord_club import (DISCORD_MUTATIONS_ENABLED, ClubMember,
+                                         is_message_older_than)
+from juniorguru.lib.discord_proc import run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
 
 logger = loggers.from_path(__file__)
-
-
-DANIELSRB = 652142810291765248
 
 
 @cli.sync_command(dependencies=['club-content'])
@@ -21,7 +19,7 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    member = await client.club_guild.fetch_member(DANIELSRB)
+    member = await client.club_guild.fetch_member(ClubMember.DANIEL)
     if member.dm_channel:
         channel = member.dm_channel
     else:
@@ -39,11 +37,11 @@ async def discord_task(client):
         messages = ClubMessage.select()
         messages = [message for message in messages
                     if message.created_at.date() == yesterday]
-        daniel_messages = [message for message in messages if message.author.id == DANIELSRB]
+        daniel_messages = [message for message in messages if message.author.id == ClubMember.DANIEL]
         daniel_channels = set(message.parent_channel_id for message in daniel_messages)
         daniel_threads = set(message.channel_id for message in daniel_messages)
         daniel_content_size = sum(message.content_size for message in daniel_messages)
-        honza_messages = [message for message in messages if message.author.id == HONZAJAVOREK]
+        honza_messages = [message for message in messages if message.author.id == ClubMember.HONZA]
         honza_content_size = sum(message.content_size for message in honza_messages)
 
         content = (

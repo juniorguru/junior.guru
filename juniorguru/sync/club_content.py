@@ -1,6 +1,7 @@
 import asyncio
 import itertools
 import os
+from datetime import timedelta
 
 import arrow
 import click
@@ -8,11 +9,12 @@ from peewee import OperationalError
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (CHANNELS_HISTORY_SINCE, DEFAULT_CHANNELS_HISTORY_SINCE,
-                                 EMOJI_PIN, CLUB_BOT, count_downvotes,
-                                 count_upvotes, emoji_name, fetch_messages,
-                                 fetch_threads, get_roles, is_thread_after,
-                                 run_discord_task)
+from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubChannel,
+                                         ClubEmoji, ClubMember, emoji_name,
+                                         fetch_messages, fetch_threads, get_roles,
+                                         is_thread_after)
+from juniorguru.lib.discord_proc import run_discord_task
+from juniorguru.lib.discord_votes import count_downvotes, count_upvotes
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
 
@@ -21,6 +23,19 @@ logger = loggers.from_path(__file__)
 
 
 WORKERS_COUNT = 5
+
+CHANNELS_HISTORY_SINCE = {
+    ClubChannel.FUN: timedelta(days=30),  # volná-zábava
+    ClubChannel.FUN_TOPICS: timedelta(days=30),  # volná-témata
+
+    # take all history since ever
+    ClubChannel.INTRO: None,
+
+    # skip channels
+    ClubChannel.BOT: timedelta(0),
+    ClubChannel.JOBS: timedelta(0),
+    834443926655598592: timedelta(0),  # práce-bot (archived)
+}
 
 
 @cli.sync_command()
@@ -171,7 +186,7 @@ async def channel_worker(worker_no, authors, queue):
                                created_month=f'{message.created_at:%Y-%m}',
                                edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
                                author=authors[message.author.id],
-                               author_is_bot=message.author.id == CLUB_BOT,
+                               author_is_bot=message.author.id == ClubMember.BOT,
                                channel_id=channel.id,
                                channel_name=channel.name,
                                parent_channel_id=parent_channel_id,
@@ -193,7 +208,7 @@ async def channel_worker(worker_no, authors, queue):
 
 async def fetch_users_reacting_by_pin(reactions):
     for reaction in reactions:
-        if emoji_name(reaction.emoji) == EMOJI_PIN:
+        if emoji_name(reaction.emoji) == ClubEmoji.PIN:
             async for user in reaction.users():
                 yield user
 

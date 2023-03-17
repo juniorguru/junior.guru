@@ -1,17 +1,16 @@
 from datetime import timedelta
 from textwrap import dedent
 
+import emoji
 from discord import ButtonStyle, Embed, ui
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, is_message_bot_reminder,
-                                 is_message_over_period_ago, run_discord_task)
+from juniorguru.lib.discord_club import (DISCORD_MUTATIONS_ENABLED, ClubChannel,
+                                         ClubMember, is_message_over_period_ago)
+from juniorguru.lib.discord_proc import run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
-
-
-CV_GROUP_CHANNEL = 839059491432431616
 
 
 logger = loggers.from_path(__file__)
@@ -24,11 +23,11 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    last_message = ClubMessage.last_bot_message(CV_GROUP_CHANNEL, '💡')
+    last_message = ClubMessage.last_bot_message(ClubChannel.CV_FEEDBACK, '💡')
     if is_message_over_period_ago(last_message, timedelta(days=30)):
         logger.info('Last message is more than one month old!')
         if DISCORD_MUTATIONS_ENABLED:
-            channel = await client.fetch_channel(CV_GROUP_CHANNEL)
+            channel = await client.fetch_channel(ClubChannel.CV_FEEDBACK)
             await channel.purge(check=is_message_bot_reminder)
             await channel.send(
                 content='💡 Jsem tady zas se svou pravidelnou dávkou užitečných tipů!',
@@ -67,3 +66,9 @@ async def discord_task(client):
             )
         else:
             logger.warning('Discord mutations not enabled')
+
+
+def is_message_bot_reminder(message):
+    return (message.author.id == ClubMember.BOT and
+            message.content and
+            emoji.is_emoji(message.content[0]))

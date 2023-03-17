@@ -8,9 +8,9 @@ from jinja2 import Template
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, EMOJI_PARTNER_INTRO,
-                                 INTRO_CHANNEL, is_message_over_period_ago,
-                                 run_discord_task)
+from juniorguru.lib.discord_club import (DISCORD_MUTATIONS_ENABLED, ClubChannel,
+                                         ClubEmoji, is_message_over_period_ago)
+from juniorguru.lib.discord_proc import run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.partner import Partner
@@ -47,7 +47,7 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    last_message = ClubMessage.last_bot_message(INTRO_CHANNEL, EMOJI_PARTNER_INTRO)
+    last_message = ClubMessage.last_bot_message(ClubChannel.INTRO, ClubEmoji.PARTNER_INTRO)
     if is_message_over_period_ago(last_message, timedelta(weeks=1)):
         logger.info('Last partner intro message is more than one week old!')
 
@@ -60,7 +60,7 @@ async def discord_task(client):
             template = Template(DESCRIPTION_TEMPLATE)
             description = template.render(partner=partner)
             content = (
-                f"{EMOJI_PARTNER_INTRO} Partnerství! "
+                f"{ClubEmoji.PARTNER_INTRO} Partnerství! "
                 f"Firma {partner.name_markdown_bold} chce pomáhat juniorům. "
                 f"Členové, které sem pošle, mají roli <@&{partner.role_id}> (aktuálně {len(partner.list_members)})."
             )
@@ -80,7 +80,7 @@ async def discord_task(client):
                           style=ButtonStyle.secondary)
             ]
             if DISCORD_MUTATIONS_ENABLED:
-                channel = await client.fetch_channel(INTRO_CHANNEL)
+                channel = await client.fetch_channel(ClubChannel.INTRO)
                 message = await channel.send(content=content, embed=embed, file=file, view=ui.View(*buttons))
                 await asyncio.gather(*[message.add_reaction(emoji) for emoji in BOT_REACTIONS])
             else:

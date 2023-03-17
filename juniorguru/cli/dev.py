@@ -6,7 +6,8 @@ import pytest
 from ghp_import import ghp_import
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
+from juniorguru.lib.discord_club import DISCORD_MUTATIONS_ENABLED
+from juniorguru.lib.discord_proc import run_discord_task
 
 
 DATA_DIR = 'juniorguru/data'

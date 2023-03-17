@@ -8,10 +8,35 @@ from peewee import (BooleanField, CharField, DateField, DateTimeField, ForeignKe
                     IntegerField, TextField, fn)
 
 from juniorguru.lib.charts import month_range
-from juniorguru.lib.club import (INTRO_CHANNEL, IS_NEW_PERIOD_DAYS, RECENT_PERIOD_DAYS,
-                                 STATS_EXCLUDE_CHANNELS, TOP_MEMBERS_PERCENT,
-                                 UPVOTES_EXCLUDE_CHANNELS, parse_coupon)
+from juniorguru.lib.coupons import parse_coupon
+from juniorguru.lib.discord_club import ClubChannel
 from juniorguru.models.base import BaseModel, JSONField, check_enum
+
+
+TOP_MEMBERS_PERCENT = 0.05
+
+RECENT_PERIOD_DAYS = 30
+
+IS_NEW_PERIOD_DAYS = 15
+
+UPVOTES_EXCLUDE_CHANNELS = [
+    ClubChannel.INTRO,
+    ClubChannel.ANNOUNCEMENTS,
+    ClubChannel.BOT,
+    ClubChannel.DASHBOARD,
+    ClubChannel.FUN,
+    ClubChannel.FUN_TOPICS,
+]
+
+STATS_EXCLUDE_CHANNELS = [
+    ClubChannel.ANNOUNCEMENTS,
+    ClubChannel.JOBS,
+    ClubChannel.BOT,
+    ClubChannel.DASHBOARD,
+    ClubChannel.FUN,
+    ClubChannel.FUN_TOPICS,
+    834443926655598592,  # práce-bot (archived)
+]
 
 
 class ClubUser(BaseModel):
@@ -44,7 +69,8 @@ class ClubUser(BaseModel):
     @property
     def intro(self):
         return self.list_messages \
-            .where(ClubMessage.channel_id == INTRO_CHANNEL, ClubMessage.type == 'default') \
+            .where(ClubMessage.channel_id == ClubChannel.INTRO,
+                   ClubMessage.type == 'default') \
             .order_by(ClubMessage.created_at.desc()) \
             .first()
 

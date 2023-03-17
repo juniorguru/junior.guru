@@ -7,8 +7,8 @@ from strictyaml import CommaSeparated, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLED,
-                                 run_discord_task)
+from juniorguru.lib.discord_club import DISCORD_MUTATIONS_ENABLED, ClubChannel
+from juniorguru.lib.discord_proc import run_discord_task
 from juniorguru.lib.images import is_image, render_image_file, validate_image
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.lib.yaml import Date
@@ -36,8 +36,6 @@ YOUTUBE_THUMBNAIL_HEIGHT = 720
 DISCORD_THUMBNAIL_WIDTH = 1280
 
 DISCORD_THUMBNAIL_HEIGHT = 512
-
-EVENTS_CHANNEL = 1075814161138860135
 
 
 schema = Seq(
@@ -129,8 +127,8 @@ def main(flush_posters):
 
 @db.connection_context()
 async def post_next_event_messages(client):
-    announcements_channel = await client.fetch_channel(ANNOUNCEMENTS_CHANNEL)
-    events_channel = await client.fetch_channel(EVENTS_CHANNEL)
+    announcements_channel = await client.fetch_channel(ClubChannel.ANNOUNCEMENTS)
+    events_channel = await client.fetch_channel(ClubChannel.EVENTS)
 
     event = Event.next()
     if not event:
@@ -141,7 +139,7 @@ async def post_next_event_messages(client):
 
     logger.info("About to post a message 7 days prior to the event")
     if event.start_at.date() - timedelta(days=7) <= date.today():
-        message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '🗓', event.discord_url)
+        message = ClubMessage.last_bot_message(ClubChannel.ANNOUNCEMENTS, '🗓', event.discord_url)
         if message:
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
@@ -153,7 +151,7 @@ async def post_next_event_messages(client):
 
     logger.info("About to post a message 1 day prior to the event")
     if event.start_at.date() - timedelta(days=1) == date.today():
-        message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '🤩', event.discord_url)
+        message = ClubMessage.last_bot_message(ClubChannel.ANNOUNCEMENTS, '🤩', event.discord_url)
         if message:
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
@@ -165,7 +163,7 @@ async def post_next_event_messages(client):
 
     logger.info("About to post a message on the day when the event is")
     if event.start_at.date() == date.today():
-        message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, '⏰', event.discord_url)
+        message = ClubMessage.last_bot_message(ClubChannel.ANNOUNCEMENTS, '⏰', event.discord_url)
         if message:
             logger.info(f'Looks like the message already exists: {message.url}')
         else:
@@ -179,7 +177,7 @@ async def post_next_event_messages(client):
     #
     # logger.info("About to post a message to event chat on the day when the event is")
     # if event.start_at.date() == date.today():
-    #     message = ClubMessage.last_bot_message(EVENTS_CHANNEL, '👋', event.discord_url)
+    #     message = ClubMessage.last_bot_message(ClubChannel.EVENTS, '👋', event.discord_url)
     #     if message:
     #         logger.info(f'Looks like the message already exists: {message.url}')
     #     else:
@@ -207,7 +205,7 @@ async def post_next_event_messages(client):
 async def sync_scheduled_events(client):
     discord_events = {arrow.get(e.start_time).naive: e
                       for e in client.club_guild.scheduled_events}
-    channel = await client.fetch_channel(EVENTS_CHANNEL)
+    channel = await client.fetch_channel(ClubChannel.EVENTS)
     for event in Event.planned_listing():
         discord_event = discord_events.get(event.start_at)
         if discord_event:

@@ -4,7 +4,7 @@ import discord
 from slugify import slugify
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, CLUB_BOT
+from juniorguru.lib.discord_club import DISCORD_MUTATIONS_ENABLED, ClubMember
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.onboarding.categories import manage_category
 
@@ -90,6 +90,6 @@ async def prepare_onboarding_channel_data(client, member):
         # have access: onboarded member, people who onboard members, bot
         (await client.get_or_fetch_user(member.id)): discord.PermissionOverwrite(read_messages=True),
         onboarding_role: discord.PermissionOverwrite(read_messages=True),
-        (await client.get_or_fetch_user(CLUB_BOT)): discord.PermissionOverwrite(read_messages=True),
+        (await client.get_or_fetch_user(ClubMember.BOT)): discord.PermissionOverwrite(read_messages=True),
     }
     return dict(name=name, topic=topic, overwrites=overwrites)

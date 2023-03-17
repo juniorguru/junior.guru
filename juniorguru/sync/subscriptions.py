@@ -6,7 +6,7 @@ import arrow
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import google_sheets, loggers
-from juniorguru.lib.club import parse_coupon
+from juniorguru.lib.coupons import parse_coupon
 from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
 from juniorguru.lib.memberful import Memberful
 from juniorguru.models.base import db

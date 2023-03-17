@@ -1,13 +1,13 @@
 from textwrap import dedent
 
-from juniorguru.lib.club import HONZAJAVOREK
+from juniorguru.lib.discord_club import ClubMember
 
 
 SCHEDULED_MESSAGES = {}
 
 # https://github.com/discord/discord-api-docs/issues/2126
 ALLOWED_MENTIONS = [
-    810862212297130005,  # Pavlina
+    ClubMember.PAVLINA,
 ]
 
 
@@ -27,7 +27,7 @@ def schedule_message(emoji):
 def render_hello(context):
     member = context['member']
     text = dedent(f'''
-        Vítej v klubu, {member.mention}! Já jsem kuře, zdejší bot. Pomáhám se vším, co by nemusel <@{HONZAJAVOREK}> stíhat sám. Tento privátní kanál jsem vytvořilo jen pro tebe.
+        Vítej v klubu, {member.mention}! Já jsem kuře, zdejší bot. Pomáhám se vším, co by nemusel <@{ClubMember.HONZA}> stíhat sám. Tento privátní kanál jsem vytvořilo jen pro tebe.
 
         **Jak funguje tento kanál?** 💬
         V klubu se toho děje hodně, tak ti sem budu posílat tipy, jak se orientovat. Ptej se tady na cokoliv ohledně fungování klubu, klidně reaguj na jednotlivé tipy, posílej zpětnou vazbu. Já odpovídat neumím, ale vidí sem i moderátoři a se vším ti rádi pomůžou.
@@ -106,10 +106,10 @@ def render_juniorguru(context):
         Na junior.guru není jen klub, ale i spousta motivace a užitečných rad, které by bylo škoda minout.
 
         **Příručka** 📖
-        Na https://junior.guru/handbook/ najdeš příručku pro juniory. Celá je zdarma ke čtení na webu a je v ní hromada užitečných tipů. Jak začít programovat? Jak si sehnat první praxi? Co je u pohovorů důležité? Jak připravit životopis? Tím vším a mnohým dalším tě příručka provede, krok za krokem. <@{HONZAJAVOREK}> stále přidává nové kapitoly, takže i pokud už máš něco přečtené, je dobré se tam po čase vracet.
+        Na https://junior.guru/handbook/ najdeš příručku pro juniory. Celá je zdarma ke čtení na webu a je v ní hromada užitečných tipů. Jak začít programovat? Jak si sehnat první praxi? Co je u pohovorů důležité? Jak připravit životopis? Tím vším a mnohým dalším tě příručka provede, krok za krokem. <@{ClubMember.HONZA}> stále přidává nové kapitoly, takže i pokud už máš něco přečtené, je dobré se tam po čase vracet.
 
         **Podcast** 🎙
-        Nahoď sluchátka a pusť si do nich příběhy a rady lidí, kteří se motají kolem začátečníků v IT. <@810862212297130005> si zve na rozhovor juniory, lidi z firem, lektory kurzů. V podcastu se snaží přinášet odpovědi, inspiraci, motivaci. Všechny díly najdeš na https://junior.guru/podcast/, ale taky na Spotify, na YouTube a v dalších podcastových aplikacích. Epizody vychází jednou měsíčně a mívají půl hodiny. Máš nápad, koho dalšího pozvat? Napiš nám!
+        Nahoď sluchátka a pusť si do nich příběhy a rady lidí, kteří se motají kolem začátečníků v IT. <@{ClubMember.PAVLINA}> si zve na rozhovor juniory, lidi z firem, lektory kurzů. V podcastu se snaží přinášet odpovědi, inspiraci, motivaci. Všechny díly najdeš na https://junior.guru/podcast/, ale taky na Spotify, na YouTube a v dalších podcastových aplikacích. Epizody vychází jednou měsíčně a mívají půl hodiny. Máš nápad, koho dalšího pozvat? Napiš nám!
     ''')
 
 
@@ -146,7 +146,7 @@ def render_feedback(context):
 
         3️⃣ Co ti tu chybí? Co se ti tu nelíbí? Co by šlo vylepšit? Z čeho máš blbý pocit?
 
-        Odpovědi pomůžou <@{HONZAJAVOREK}> ve vylepšování junior.guru.
+        Odpovědi pomůžou <@{ClubMember.HONZA}> ve vylepšování junior.guru.
     ''')
 
 
@@ -168,7 +168,7 @@ def render_coc(context):
         **Piš moderátorům** 👮
         Lidi jsou jen lidi a psaný projev má své limity, takže i v klubu samozřejmě dochází k nedorozuměním. I dobře míněná, ale stručná věta může vyznít úsečně, nebo až agresivně.
 
-        Hlídat nevhodné chování je jako dávat pozor, aby zahrádka nezarostla plevelem. Placený zahradník <@{HONZAJAVOREK}> vše vyřeší za tebe, ale nemá oči všude a uvítá pomoc.
+        Hlídat nevhodné chování je jako dávat pozor, aby zahrádka nezarostla plevelem. Placený zahradník <@{ClubMember.HONZA}> vše vyřeší za tebe, ale nemá oči všude a uvítá pomoc.
 
         Stačí nechat pár kopřiv a záhonem se už nikdo chtít procházet nebude. Takže pokud se ti něco nepozdává, sdílej svoje pocity s moderátory. Neboj, zůstane to jen mezi vámi.
     ''')
@@ -246,7 +246,7 @@ def render_sth(context):
         Jinak než kartou platit nelze. Neboj, k údajům nemá přístup nikdo z junior.guru. Ani já! Jsou bezpečně uchovány platební bránou Stripe, což je světoznámá služba s hromadou zabezpečení a certifikátů. Pokud potřebuješ větší pocit bezpečí, využij tzv. virtuální platební karty, které dnes banky běžně nabízí.
 
         **Za co platíš** 🧐
-        Díky penězům z předplatného může <@{HONZAJAVOREK}> provozovat a rozvíjet junior.guru na plný úvazek. Stará se o klub, organizuje přednášky, programuje mě, píše kapitoly do příručky a mnoho dalšího. Cena je nastavena na úplné minimum, aby si klub mohlo dovolit pokud možno co nejvíc lidí.
+        Díky penězům z předplatného může <@{ClubMember.HONZA}> provozovat a rozvíjet junior.guru na plný úvazek. Stará se o klub, organizuje přednášky, programuje mě, píše kapitoly do příručky a mnoho dalšího. Cena je nastavena na úplné minimum, aby si klub mohlo dovolit pokud možno co nejvíc lidí.
 
         V ceně není garance toho, že se ti tu za každých okolností dostane pomoci. Taková služba by byla velmi drahá. Zdejší profesionálové se ti věnují zdarma a z dobré vůle. Odměnou je jim radost, když vidí, že se ti daří, nebo když jim poděkuješ.
 

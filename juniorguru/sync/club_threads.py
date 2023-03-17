@@ -1,8 +1,11 @@
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DEFAULT_AUTO_ARCHIVE_DURATION,
-                                 DISCORD_MUTATIONS_ENABLED, run_discord_task)
+from juniorguru.lib.discord_club import DISCORD_MUTATIONS_ENABLED
+from juniorguru.lib.discord_proc import run_discord_task
 from juniorguru.models.base import db
+
+
+DEFAULT_AUTO_ARCHIVE_DURATION = 10080  # minutes
 
 
 logger = loggers.from_path(__file__)

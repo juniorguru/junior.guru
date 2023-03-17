@@ -4,7 +4,7 @@ from operator import attrgetter
 import discord
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED
+from juniorguru.lib.discord_club import DISCORD_MUTATIONS_ENABLED
 
 
 ONBOARDING_CATEGORY_NAME = '👋 Tipy pro tebe'

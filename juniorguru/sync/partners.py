@@ -7,7 +7,7 @@ from strictyaml import Bool, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import parse_coupon
+from juniorguru.lib.coupons import parse_coupon
 from juniorguru.lib.images import render_image_file
 from juniorguru.lib.memberful import Memberful
 from juniorguru.lib.yaml import Date

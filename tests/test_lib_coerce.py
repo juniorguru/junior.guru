@@ -2,15 +2,15 @@ from datetime import date, datetime
 
 import pytest
 
-from juniorguru.lib import coerce
+from juniorguru.lib import google_coerce
 
 
 def test_coerce():
-    assert coerce.coerce({
-        r'^name$': ('name', coerce.parse_text),
-        r'^numbers?$': ('number', coerce.parse_int),
-        r'^start(s|ed)$': ('starts_at', coerce.parse_date),
-        r'^count$': ('something', coerce.parse_int),
+    assert google_coerce.coerce({
+        r'^name$': ('name', google_coerce.parse_text),
+        r'^numbers?$': ('number', google_coerce.parse_int),
+        r'^start(s|ed)$': ('starts_at', google_coerce.parse_date),
+        r'^count$': ('something', google_coerce.parse_int),
     }, {
         'Name': '\tHonza   ',
         'Number': '123   ',
@@ -35,7 +35,7 @@ def test_coerce():
     ('2019-08-06 14:08:49+02:00', datetime(2019, 8, 6, 14, 8, 49)),
 ])
 def test_coerce_datetime(value, expected):
-    assert coerce.parse_datetime(value) == expected
+    assert google_coerce.parse_datetime(value) == expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -51,7 +51,7 @@ def test_coerce_datetime(value, expected):
     ('2019-08-06', date(2019, 8, 6)),
 ])
 def test_coerce_date(value, expected):
-    assert coerce.parse_date(value) == expected
+    assert google_coerce.parse_date(value) == expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -59,7 +59,7 @@ def test_coerce_date(value, expected):
     (' Foo Ltd.   ', 'Foo Ltd.'),
 ])
 def test_coerce_text(value, expected):
-    assert coerce.parse_text(value) == expected
+    assert google_coerce.parse_text(value) == expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -69,7 +69,7 @@ def test_coerce_text(value, expected):
     (345.01, 345),
 ])
 def test_coerce_int(value, expected):
-    assert coerce.parse_int(value) == expected
+    assert google_coerce.parse_int(value) == expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -92,7 +92,7 @@ def test_coerce_int(value, expected):
     ('ne', False),
 ])
 def test_coerce_boolean_words(value, expected):
-    assert coerce.parse_boolean_words(value) is expected
+    assert google_coerce.parse_boolean_words(value) is expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -110,7 +110,7 @@ def test_coerce_boolean_words(value, expected):
     ('FALSE', True),
 ])
 def test_coerce_boolean(value, expected):
-    assert coerce.parse_boolean(value) is expected
+    assert google_coerce.parse_boolean(value) is expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -121,7 +121,7 @@ def test_coerce_boolean(value, expected):
     ('internship', frozenset(['internship'])),
 ])
 def test_coerce_set(value, expected):
-    assert coerce.parse_set(value) == expected
+    assert google_coerce.parse_set(value) == expected
 
 
 @pytest.mark.parametrize('value,expected', [
@@ -129,7 +129,7 @@ def test_coerce_set(value, expected):
     ('  https://honzajavorek.cz/  ', 'https://honzajavorek.cz/'),
 ])
 def test_coerce_url(value, expected):
-    assert coerce.parse_url(value) == expected
+    assert google_coerce.parse_url(value) == expected
 
 
 @pytest.mark.parametrize('value', [
@@ -140,4 +140,4 @@ def test_coerce_url(value, expected):
 ])
 def test_coerce_url_raises(value):
     with pytest.raises(ValueError):
-        assert coerce.parse_url(value)
+        assert google_coerce.parse_url(value)

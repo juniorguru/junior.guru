@@ -11,8 +11,9 @@ from strictyaml import Int, Map, Optional, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLED,
-                                 run_discord_task)
+from juniorguru.lib.discord_club import (DISCORD_MUTATIONS_ENABLED, ClubChannel,
+                                         ClubMember)
+from juniorguru.lib.discord_proc import run_discord_task
 from juniorguru.lib.images import is_image, render_image_file, validate_image
 from juniorguru.lib.template_filters import icon
 from juniorguru.lib.yaml import Date
@@ -164,13 +165,13 @@ def process_episode(yaml_record):
 @db.connection_context()
 async def discord_task(client):
     last_episode = PodcastEpisode.last()
-    last_message = ClubMessage.last_bot_message(ANNOUNCEMENTS_CHANNEL, MESSAGE_EMOJI, f'**{last_episode.number}. epizodu**')
+    last_message = ClubMessage.last_bot_message(ClubChannel.ANNOUNCEMENTS, MESSAGE_EMOJI, f'**{last_episode.number}. epizodu**')
     if not last_message:
         logger.info(f'Announcing {last_episode!r}')
         if DISCORD_MUTATIONS_ENABLED:
-            channel = await client.fetch_channel(ANNOUNCEMENTS_CHANNEL)
+            channel = await client.fetch_channel(ClubChannel.ANNOUNCEMENTS)
             content = (
-                f"{MESSAGE_EMOJI} Nastraž uši! <@810862212297130005>"
+                f"{MESSAGE_EMOJI} Nastraž uši! <@{ClubMember.PAVLINA}>"
                 f" natočila **{last_episode.number}. epizodu** podcastu!"
             )
 

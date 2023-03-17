@@ -7,8 +7,9 @@ from discord.errors import Forbidden
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import (DISCORD_MUTATIONS_ENABLED, INTRO_CHANNEL,
-                                 CLUB_BOT, run_discord_task)
+from juniorguru.lib.discord_club import (DISCORD_MUTATIONS_ENABLED, ClubChannel,
+                                         ClubMember)
+from juniorguru.lib.discord_proc import run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
@@ -61,7 +62,7 @@ def main():
 async def discord_task(client):
     channel = client.club_guild.system_channel
 
-    if channel.id != INTRO_CHANNEL:
+    if channel.id != ClubChannel.INTRO:
         raise RuntimeError('It is expected that the system channel is the same as the intro channel')
 
     messages = ClubMessage.channel_listing_since(channel.id, datetime.utcnow() - PROCESS_HISTORY_SINCE)
@@ -77,7 +78,7 @@ async def discord_task(client):
 async def process_message(client, channel, message):
     greeters_role = [role for role in client.club_guild.roles if role.id == GREETERS_ROLE][0]
     greeters = greeters_role.members
-    greeters_ids = [member.id for member in greeters] + [CLUB_BOT]
+    greeters_ids = [member.id for member in greeters] + [ClubMember.BOT]
 
     if message.type == 'default' and message.author.id not in greeters_ids and message.is_intro:
         await welcome(channel, message, greeters)
@@ -190,4 +191,4 @@ def is_thread_created(discord_message):
 
 
 def is_welcome_message(discord_message):
-    return discord_message.type == MessageType.default and discord_message.author.id == CLUB_BOT
+    return discord_message.type == MessageType.default and discord_message.author.id == ClubMember.BOT

@@ -9,15 +9,14 @@ from discord import Color, Embed
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, run_discord_task
+from juniorguru.lib.discord_club import DISCORD_MUTATIONS_ENABLED, ClubChannel
+from juniorguru.lib.discord_proc import run_discord_task
 from juniorguru.models.base import db
 from juniorguru.models.club import (ClubDocumentedRole, ClubMessage,
                                     ClubSubscribedPeriod, ClubUser)
 from juniorguru.models.event import Event
 from juniorguru.models.partner import Partner
 
-
-DASHBOARD_CHANNEL = 788822884948770846
 
 TODAY = date.today()
 
@@ -42,7 +41,7 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    discord_channel = await client.fetch_channel(DASHBOARD_CHANNEL)
+    discord_channel = await client.fetch_channel(ClubChannel.DASHBOARD)
 
     sections = [
         render_basic_tips(),
@@ -51,7 +50,7 @@ async def discord_task(client):
         render_events(),
         render_open(),
     ]
-    messages = sorted(ClubMessage.channel_listing_bot(DASHBOARD_CHANNEL),
+    messages = sorted(ClubMessage.channel_listing_bot(ClubChannel.DASHBOARD),
                       key=attrgetter('created_at'))
 
     if len(messages) != len(sections):

@@ -9,7 +9,7 @@ import arrow
 
 from juniorguru.lib import charts
 from juniorguru.lib.benefits_evaluators import BENEFITS_EVALUATORS
-from juniorguru.lib.club import DEFAULT_CHANNELS_HISTORY_SINCE
+from juniorguru.lib.discord_club import DEFAULT_CHANNELS_HISTORY_SINCE
 from juniorguru.mkdocs.thumbnail import thumbnail
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubSubscribedPeriod, ClubUser
