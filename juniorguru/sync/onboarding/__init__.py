@@ -7,7 +7,7 @@ from juniorguru.sync.onboarding.messages import send_messages
 
 @cli.sync_command(dependencies=['club-content'])
 def main():
-    run_discord_task('juniorguru.sync.onboarding.discord_task')
+    discord_sync.run(discord_task)
 
 
 @db.connection_context()

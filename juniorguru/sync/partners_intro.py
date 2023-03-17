@@ -42,7 +42,7 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=['club-content', 'partners', 'roles'])
 def main():
-    run_discord_task('juniorguru.sync.partners_intro.discord_task')
+    discord_sync.run(discord_task)
 
 
 @db.connection_context()

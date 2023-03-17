@@ -47,12 +47,12 @@ def main(confirm):
         try:
             logger.info(f"Last message is from {get_last_message().created_at.isoformat()}")
             if not confirm or confirm_fetch():
-                run_discord_task('juniorguru.sync.club_content.discord_task')
+                discord_sync.run(discord_task)
         except OperationalError as e:
             logger.error(e)
-            run_discord_task('juniorguru.sync.club_content.discord_task')
+            discord_sync.run(discord_task)
     else:
-        run_discord_task('juniorguru.sync.club_content.discord_task')
+        discord_sync.run(discord_task)
 
     with db.connection_context():
         logger.info(f'Finished with {ClubMessage.count()} messages, '

@@ -18,7 +18,7 @@ logger = loggers.from_path(__file__)
 @click.argument('message_url')
 @click.argument('winners_count', type=int)
 def main(message_url, winners_count):
-    run_discord_task('juniorguru.utils.winners.discord_task', message_url, winners_count)
+    discord_sync.run(discord_task, message_url, winners_count)
 
 
 async def discord_task(client, message_url, winners_count):

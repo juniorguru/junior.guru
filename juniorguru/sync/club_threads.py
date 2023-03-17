@@ -13,7 +13,7 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command()
 def main():
-    run_discord_task('juniorguru.sync.club_threads.discord_task')
+    discord_sync.run(discord_task)
 
 
 @db.connection_context()

@@ -20,7 +20,7 @@ DIGEST_LIMIT = 5
 
 @cli.sync_command(dependencies=['club-content'])
 def main():
-    run_discord_task('juniorguru.sync.digest.discord_task')
+    discord_sync.run(discord_task)
 
 
 @db.connection_context()

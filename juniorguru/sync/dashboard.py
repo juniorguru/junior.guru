@@ -36,7 +36,7 @@ logger = loggers.from_path(__file__)
                                 'subscriptions',
                                 'roles'])
 def main():
-    run_discord_task('juniorguru.sync.dashboard.discord_task')
+    discord_sync.run(discord_task)
 
 
 @db.connection_context()

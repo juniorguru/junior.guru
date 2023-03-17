@@ -29,7 +29,7 @@ AVATAR_SIZE_PX = 60
 
 @cli.sync_command(dependencies=['club-content'])
 def main():
-    run_discord_task('juniorguru.sync.avatars.discord_task')
+    discord_sync.run(discord_task)
 
 
 @db.connection_context()

@@ -119,8 +119,8 @@ def main(flush_posters):
 
     logger.info('Syncing with Discord')
     if DISCORD_MUTATIONS_ENABLED:
-        run_discord_task('juniorguru.sync.events.sync_scheduled_events')
-        run_discord_task('juniorguru.sync.events.post_next_event_messages')
+        discord_sync.run(sync_scheduled_events)
+        discord_sync.run(post_next_event_messages)
     else:
         logger.warning('Discord mutations not enabled')
 

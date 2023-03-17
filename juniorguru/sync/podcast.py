@@ -87,7 +87,7 @@ def main(flush_posters):
         PodcastEpisode.create(**record)
 
     logger.info('Announcing in Discord')
-    run_discord_task('juniorguru.sync.podcast.discord_task')
+    discord_sync.run(discord_task)
 
 
 def process_episode(yaml_record):

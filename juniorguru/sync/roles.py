@@ -40,7 +40,7 @@ STUDENT_ROLE_PREFIX = 'Student: '
                                 'partners',
                                 'mentoring'])
 def main():
-    run_discord_task('juniorguru.sync.roles.discord_task')
+    discord_sync.run(discord_task)
 
 
 @db.connection_context()
