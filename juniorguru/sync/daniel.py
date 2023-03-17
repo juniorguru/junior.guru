@@ -1,10 +1,9 @@
 from datetime import date, timedelta
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import loggers
+from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import (DISCORD_MUTATIONS_ENABLED, ClubMember,
                                          is_message_older_than)
-from juniorguru.lib import discord_sync
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 

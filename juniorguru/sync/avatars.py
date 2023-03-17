@@ -6,9 +6,8 @@ from urllib.parse import urlparse
 from PIL import Image
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import loggers
+from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.asyncio_extra import chunks
-from juniorguru.lib import discord_sync
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser
 

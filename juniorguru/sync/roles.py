@@ -6,9 +6,8 @@ from discord import Color
 from strictyaml import Int, Map, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import loggers
+from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import DISCORD_MUTATIONS_ENABLED, get_roles
-from juniorguru.lib import discord_sync
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubUser
 from juniorguru.models.event import Event

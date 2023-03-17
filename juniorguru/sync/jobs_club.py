@@ -5,11 +5,10 @@ from pathlib import Path
 from discord import Embed, File, ui
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import loggers
+from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib.discord_club import (DISCORD_MUTATIONS_ENABLED, ClubChannel,
                                          fetch_threads, is_thread_after)
-from juniorguru.lib import discord_sync
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
 

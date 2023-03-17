@@ -5,9 +5,8 @@ import click
 import pytest
 from ghp_import import ghp_import
 
-from juniorguru.lib import loggers
+from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import DISCORD_MUTATIONS_ENABLED
-from juniorguru.lib import discord_sync
 
 
 DATA_DIR = 'juniorguru/data'

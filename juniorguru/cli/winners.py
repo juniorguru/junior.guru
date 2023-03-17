@@ -3,9 +3,8 @@ import time
 
 import click
 
-from juniorguru.lib import loggers
+from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import emoji_name
-from juniorguru.lib import discord_sync
 
 
 ROLE = 836959652100702248

@@ -8,12 +8,11 @@ import click
 from peewee import OperationalError
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import loggers
+from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubChannel,
                                          ClubEmoji, ClubMember, emoji_name,
                                          fetch_messages, fetch_threads, get_roles,
                                          is_thread_after)
-from juniorguru.lib import discord_sync
 from juniorguru.lib.discord_votes import count_downvotes, count_upvotes
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
