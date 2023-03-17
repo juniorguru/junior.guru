@@ -10,8 +10,8 @@ from fiobank import FioBank
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import google_sheets, loggers
-from juniorguru.models.transaction import Transaction
 from juniorguru.lib.mutations import mutations
+from juniorguru.models.transaction import Transaction
 
 
 TODO_TEXT_RE = re.compile(r'''

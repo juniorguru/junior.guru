@@ -7,10 +7,9 @@ from pathlib import Path
 import click
 from playhouse.shortcuts import model_to_dict
 
-from juniorguru.lib.mutations import mutations
 from juniorguru.lib import loggers
-from juniorguru.lib.memberful import (Memberful,
-                                      serialize_metadata)
+from juniorguru.lib.memberful import Memberful, serialize_metadata
+from juniorguru.lib.mutations import mutations
 from juniorguru.models.partner import Partner
 
 
