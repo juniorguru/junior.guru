@@ -67,12 +67,12 @@ class ClubUser(BaseModel):
 
     def upvotes_count(self):
         messages = self.list_messages \
-            .where(ClubMessage.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
+            .where(ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
         return sum([message.upvotes_count for message in messages])
 
     def recent_upvotes_count(self, today=None):
         messages = self.list_recent_messages(today) \
-            .where(ClubMessage.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
+            .where(ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
         return sum([message.upvotes_count for message in messages])
 
     def first_seen_on(self):
@@ -146,8 +146,7 @@ class ClubMessage(BaseModel):
     author = ForeignKeyField(ClubUser, backref='list_messages')
     author_is_bot = BooleanField()
     channel_id = IntegerField()
-    channel_name = CharField()  # is this really needed? normalize?
-    channel_mention = CharField()  # is this really needed? normalize?
+    channel_name = CharField()
     parent_channel_id = IntegerField(index=True, null=True)
     category_id = IntegerField(index=True, null=True)
     type = CharField(default='default')
@@ -174,7 +173,7 @@ class ClubMessage(BaseModel):
     @classmethod
     def content_size_by_month(cls, date):
         messages = cls.select() \
-            .where(cls.created_month == f'{date:%Y-%d}') \
+            .where(cls.created_month == f'{date:%Y-%m}') \
             .where(cls.author_is_bot == False) \
             .where(cls.channel_id.not_in(STATS_EXCLUDE_CHANNELS))
         return sum(message.content_size for message in messages)
@@ -205,7 +204,7 @@ class ClubMessage(BaseModel):
     def digest_listing(cls, since_dt, limit=5):
         return cls.select() \
             .where(cls.created_at >= since_dt,
-                   ClubMessage.channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS)) \
+                   ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS)) \
             .order_by(cls.upvotes_count.desc()) \
             .limit(limit)
 

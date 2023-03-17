@@ -1,16 +1,15 @@
-import os
 from datetime import date, timedelta
 from pathlib import Path
 
 import arrow
+import click
 from strictyaml import CommaSeparated, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (ANNOUNCEMENTS_CHANNEL, DISCORD_MUTATIONS_ENABLED,
                                  run_discord_task)
-from juniorguru.lib.images import (is_image, render_image_file, save_as_square,
-                                   validate_image)
+from juniorguru.lib.images import is_image, render_image_file, validate_image
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
@@ -22,8 +21,6 @@ from juniorguru.models.partner import Partner
 logger = loggers.from_path(__file__)
 
 
-FLUSH_POSTERS_EVENTS = bool(int(os.getenv('FLUSH_POSTERS_EVENTS', 0)))
-
 DATA_PATH = Path(__file__).parent.parent / 'data' / 'events.yml'
 
 IMAGES_DIR = Path(__file__).parent.parent / 'images'
@@ -31,10 +28,6 @@ IMAGES_DIR = Path(__file__).parent.parent / 'images'
 POSTERS_DIR = IMAGES_DIR / 'posters-events'
 
 AVATARS_DIR = IMAGES_DIR / 'avatars-participants'
-
-WEB_THUMBNAIL_WIDTH = 1280
-
-WEB_THUMBNAIL_HEIGHT = 672
 
 YOUTUBE_THUMBNAIL_WIDTH = 1280
 
@@ -69,9 +62,10 @@ schema = Seq(
 
 
 @cli.sync_command(dependencies=['club-content', 'partners'])
-def main():
-    if FLUSH_POSTERS_EVENTS:
-        logger.warning("Removing all existing posters for events, FLUSH_POSTERS_EVENTS is set")
+@click.option('--flush-posters/--no-flush-posters', default=False)
+def main(flush_posters):
+    if flush_posters:
+        logger.warning("Removing all existing posters for events")
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
 
@@ -114,10 +108,6 @@ def main():
             tpl_context = dict(event=event)
             tpl_filters = dict(md=md, local_time=local_time, weekday=weekday)
             prefix = event.start_at.date().isoformat().replace('-', '')
-            image_path = render_image_file(WEB_THUMBNAIL_WIDTH, WEB_THUMBNAIL_HEIGHT,
-                                            'event.html', tpl_context, POSTERS_DIR,
-                                            filters=tpl_filters, prefix=prefix)
-            event.poster_path = image_path.relative_to(IMAGES_DIR)
             image_path = render_image_file(DISCORD_THUMBNAIL_WIDTH, DISCORD_THUMBNAIL_HEIGHT,
                                             'event.html', tpl_context, POSTERS_DIR,
                                             filters=tpl_filters, prefix=prefix, suffix='dc')
@@ -126,9 +116,6 @@ def main():
                                             'event.html', tpl_context, POSTERS_DIR,
                                             filters=tpl_filters, prefix=prefix, suffix='yt')
             event.poster_yt_path = image_path.relative_to(IMAGES_DIR)
-            image_path = save_as_square(image_path, prefix=prefix, suffix='ig')
-            event.poster_ig_path = image_path.relative_to(IMAGES_DIR)
-
             logger.info(f"Saving '{name}'")
             event.save()
 
@@ -188,30 +175,32 @@ async def post_next_event_messages(client):
     else:
         logger.info("It's not the day when the event is")
 
-    logger.info("About to post a message to event chat on the day when the event is")
-    if event.start_at.date() == date.today():
-        message = ClubMessage.last_bot_message(EVENTS_CHANNEL, '👋', event.discord_url)
-        if message:
-            logger.info(f'Looks like the message already exists: {message.url}')
-        else:
-            logger.info("Found no message, posting!")
-            content = [
-                f"👋 Už **dnes v {event.start_at_prg:%H:%M}** tady bude probíhat „{event.title}” s {speakers} (viz {announcements_channel.mention}). Tento kanál slouží k pokládání dotazů, sdílení odkazů, slajdů k prezentaci…",
-                "",
-                "⚠️ Ve výchozím nastavení Discord udělá zvuk při každé aktivitě v hlasovém kanálu, např. při připojení nového účastníka, odpojení, vypnutí zvuku, zapnutí, apod. Zvuky si vypni v Uživatelských nastaveních (_User Settings_), na stránce Oznámení (_Notifications_), sekce Zvuky (_Sounds_). Většina zvuků souvisí s hovory, takže je potřeba povypínat skoro vše.",
-                "",
-                f"📺 Limit přímých účastníků je 25, takže přijďte včas. Kdo se nevleze, bude mít možnost sledovat stream na YouTube, odkaz se kdyžtak objeví tady v chatu. Záznam se po akci objeví v {announcements_channel.mention}.",
-                "",
-                f"ℹ️ {event.description_plain}",
-                "",
-                f"🦸 {event.bio_plain}"
-                "",
-                "",
-                f"👉 {event.url}",
-            ]
-            await events_channel.send('\n'.join(content))
-    else:
-        logger.info("It's not the day when the event is")
+    # See https://github.com/Pycord-Development/pycord/issues/1934
+    #
+    # logger.info("About to post a message to event chat on the day when the event is")
+    # if event.start_at.date() == date.today():
+    #     message = ClubMessage.last_bot_message(EVENTS_CHANNEL, '👋', event.discord_url)
+    #     if message:
+    #         logger.info(f'Looks like the message already exists: {message.url}')
+    #     else:
+    #         logger.info("Found no message, posting!")
+    #         content = [
+    #             f"👋 Už **dnes v {event.start_at_prg:%H:%M}** tady bude probíhat „{event.title}” s {speakers} (viz {announcements_channel.mention}). Tento kanál slouží k pokládání dotazů, sdílení odkazů, slajdů k prezentaci…",
+    #             "",
+    #             "⚠️ Ve výchozím nastavení Discord udělá zvuk při každé aktivitě v hlasovém kanálu, např. při připojení nového účastníka, odpojení, vypnutí zvuku, zapnutí, apod. Zvuky si vypni v Uživatelských nastaveních (_User Settings_), na stránce Oznámení (_Notifications_), sekce Zvuky (_Sounds_). Většina zvuků souvisí s hovory, takže je potřeba povypínat skoro vše.",
+    #             "",
+    #             f"📺 Limit přímých účastníků je 25, takže přijďte včas. Kdo se nevleze, bude mít možnost sledovat stream na YouTube, odkaz se kdyžtak objeví tady v chatu. Záznam se po akci objeví v {announcements_channel.mention}.",
+    #             "",
+    #             f"ℹ️ {event.description_plain}",
+    #             "",
+    #             f"🦸 {event.bio_plain}"
+    #             "",
+    #             "",
+    #             f"👉 {event.url}",
+    #         ]
+    #         await events_channel.send('\n'.join(content))
+    # else:
+    #     logger.info("It's not the day when the event is")
 
 
 @db.connection_context()

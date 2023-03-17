@@ -15,8 +15,7 @@ class Spider(BaseSpider):
     name = 'linkedin'
     proxies = True
     download_timeout = 15
-    custom_settings = {'ROBOTSTXT_OBEY': False,
-                       'AUTOTHROTTLE_ENABLED': False}
+    custom_settings = {'ROBOTSTXT_OBEY': False}
 
     headers = {'Accept-Language': 'en-us'}
     cookies = {'lang': 'v=2&lang=en-us'}
@@ -67,7 +66,6 @@ class Spider(BaseSpider):
         loader.add_css('company_name', '.top-card-layout .topcard__flavor:nth-child(1)::text')
         loader.add_css('locations_raw', '.top-card-layout .topcard__flavor:nth-child(2)::text')
         loader.add_xpath('employment_types', "//h3[contains(., 'Employment type')]/following-sibling::span/text()")
-        loader.add_xpath('experience_levels', "//h3[contains(., 'Seniority level')]/following-sibling::span/text()")
         loader.add_css('first_seen_on', '.posted-time-ago__text::text')
         loader.add_css('description_html', '.description__text')
         loader.add_css('company_logo_urls', 'img.artdeco-entity-image[src*="company-logo"]::attr(src)')
@@ -87,20 +85,11 @@ class Spider(BaseSpider):
         Verify apply URL
 
         Filters out URLs to broken external URLs and cuts redirects, if any.
-        It's not wise to assign new apply_link directly, as the URL of this response
-        is prone to scraping protection. We want our item input processors to clean
-        the URL first. The item is already loaded though, so here we create a temporary
-        dict item just for this purpose, fire the input processors, and assign
-        the value only after it got cleaned.
         """
-        loader = Loader(item=dict())
+        loader = Loader(item=item)
         loader.add_value('source_urls', response.url)
-        loader.add_value('apply_url', response.url)
-        fields_to_update = loader.load_item().items()
-
-        for field_name, value in fields_to_update:
-            item[field_name] = value
-        yield item
+        loader.replace_value('apply_url', response.url)
+        yield loader.load_item()
 
 
 def get_job_id(url):
@@ -148,8 +137,6 @@ class Loader(ItemLoader):
     employment_types_in = MapCompose(str.lower, split)
     employment_types_out = Identity()
     first_seen_on_in = Compose(first, parse_relative_date)
-    experience_levels_in = MapCompose(str.lower, split)
-    experience_levels_out = Identity()
     company_logo_urls_out = Compose(set, list)
     remote_in = MapCompose(parse_remote)
     locations_raw_out = Identity()

@@ -88,7 +88,7 @@ jobs:
   sync-1:
     executor: python-js
     resource_class: large
-    parallelism: 7
+    parallelism: 9
     steps:
       - attach_workspace:
           at: "~"
@@ -108,6 +108,7 @@ jobs:
               export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
               export DISCORD_MUTATIONS_ENABLED=1
               export MEMBERFUL_MUTATIONS_ENABLED=1
+              export FAKTUROID_MUTATIONS_ENABLED=1
               #export JOBS_EMAILS_SENDING_ENABLED=1
             fi
             poetry run jg sync ci
@@ -151,6 +152,7 @@ jobs:
               export GOOGLE_SHEETS_MUTATIONS_ENABLED=1
               export DISCORD_MUTATIONS_ENABLED=1
               export MEMBERFUL_MUTATIONS_ENABLED=1
+              export FAKTUROID_MUTATIONS_ENABLED=1
               #export JOBS_EMAILS_SENDING_ENABLED=1
             fi
             poetry run jg sync ci
@@ -190,7 +192,9 @@ jobs:
       - enable-github-pushing
       - run:
           name: Save to GitHub
-          command: poetry run jg save-changes juniorguru/data/podcast.yml --message="record media properties 🎚️"
+          command: |
+            poetry run jg save-changes juniorguru/data/podcast.yml --message="record media properties 🪄"
+            poetry run jg save-changes juniorguru/data/followers.jsonl --message="record followers 📈"
 
   web:
     executor: python-js
@@ -257,6 +261,13 @@ jobs:
           at: "~"
       - run: poetry run jg check-links --retry
 
+  check-bot:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: poetry run jg check-bot
+
 
 workflows:
   push:
@@ -272,6 +283,9 @@ workflows:
                 - main
           requires:
             - lint-and-test
+      - check-bot:
+          requires:
+            - install
       - sync-1:
           requires:
             - install
@@ -302,6 +316,9 @@ workflows:
   nightly:
     jobs:
       - install
+      - check-bot:
+          requires:
+            - install
       - sync-1:
           requires:
             - install

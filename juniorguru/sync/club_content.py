@@ -1,7 +1,6 @@
 import asyncio
 import itertools
 import os
-from datetime import datetime, timezone
 
 import arrow
 import click
@@ -11,7 +10,9 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (CHANNELS_HISTORY_SINCE, DEFAULT_CHANNELS_HISTORY_SINCE,
                                  EMOJI_PIN, JUNIORGURU_BOT, count_downvotes,
-                                 count_upvotes, emoji_name, get_roles, run_discord_task)
+                                 count_upvotes, emoji_name, fetch_messages,
+                                 fetch_threads, get_roles, is_thread_after,
+                                 run_discord_task)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
 
@@ -20,8 +21,6 @@ logger = loggers.from_path(__file__)
 
 
 WORKERS_COUNT = 5
-
-DEFAULT_CREATED_AT = datetime(2022, 1, 9, tzinfo=timezone.utc)  # threads have 'created_at' since 2022-01-09
 
 
 @cli.sync_command()
@@ -72,9 +71,10 @@ async def discord_task(client):
     db.drop_tables([ClubMessage, ClubUser, ClubPinReaction])
     db.create_tables([ClubMessage, ClubUser, ClubPinReaction])
 
-    channels = (channel for channel
+    channels = (channel for channel  # or just juniorguru_guild.channels ???
                 in itertools.chain(client.juniorguru_guild.text_channels,
                                    client.juniorguru_guild.voice_channels,
+                                   # TODO client.juniorguru_guild.stage_channels,
                                    client.juniorguru_guild.forum_channels)
                 if channel.permissions_for(client.juniorguru_guild.me).read_messages)
     authors = await process_channels(channels)
@@ -133,8 +133,9 @@ async def channel_worker(worker_no, authors, queue):
     logger_w = logger[f'channel_workers.{worker_no}']
     while True:
         channel = await queue.get()
+        parent_channel_id = channel.parent.id if hasattr(channel, 'parent') else channel.id
 
-        history_since = CHANNELS_HISTORY_SINCE.get(channel.id, DEFAULT_CHANNELS_HISTORY_SINCE)
+        history_since = CHANNELS_HISTORY_SINCE.get(parent_channel_id, DEFAULT_CHANNELS_HISTORY_SINCE)
         if history_since is None:
             history_after = None
             logger_w.info(f"Reading channel #{channel.id} history since ever")
@@ -173,8 +174,7 @@ async def channel_worker(worker_no, authors, queue):
                                author_is_bot=message.author.id == JUNIORGURU_BOT,
                                channel_id=channel.id,
                                channel_name=channel.name,
-                               channel_mention=channel.mention,
-                               parent_channel_id=channel.parent.id if hasattr(channel, 'parent') else channel.id,
+                               parent_channel_id=parent_channel_id,
                                category_id=channel.category_id,
                                type=message.type.name)
             messages_count += 1
@@ -189,34 +189,6 @@ async def channel_worker(worker_no, authors, queue):
 
         logger_w.info(f"Channel #{channel.id} added {messages_count} messages, {users_count} users, {pins_count} pins")
         queue.task_done()
-
-
-async def fetch_messages(channel, after=None):
-    try:
-        channel_history = channel.history
-    except AttributeError:
-        pass  # channel type doesn't support history (e.g. forum)
-    else:
-        async for message in channel_history(limit=None, after=after):
-            yield message
-
-
-async def fetch_threads(channel):
-    try:
-        channel_threads = channel.threads
-    except AttributeError:
-        pass  # channel type doesn't support threads (e.g. voice)
-    else:
-        for thread in channel_threads:
-            yield thread
-        async for thread in channel.archived_threads(limit=None):
-            yield thread
-
-
-def is_thread_after(thread, after=None):
-    if after:
-        return (thread.created_at or DEFAULT_CREATED_AT) >= after
-    return thread
 
 
 async def fetch_users_reacting_by_pin(reactions):

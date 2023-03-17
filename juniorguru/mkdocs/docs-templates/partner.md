@@ -1,4 +1,4 @@
-{% from 'macros.html' import lead, figure, partner_link, note with context %}
+{% from 'macros.html' import lead, figure, partner_link with context %}
 
 {% set active_partnership = partner.active_partnership() %}
 
@@ -8,7 +8,7 @@
 {% call lead() %}
   Firma {{ partner.name }} je partnerem junior.guru od {{ '{:%-d.%-m.%Y}'.format(partner.first_partnership().starts_on) }}.
   Cílem tohoto přehledu je transparentně popsat, co je domluveno, a jak se to daří plnit.
-  Díky tomu všichni vědí, jak na tom jsou.
+  Díky tomu všichni vědí, jak na tom jsou. Tato stránka je veřejná, ale vyhledávačům není povoleno ji evidovat a zobrazovat.
 {% endcall %}
 
 {{ figure(partner.logo_path, partner.name, 500, 250, class="standout-bottom") }}
@@ -25,23 +25,18 @@
   <tr>
     <th>Tarif</th>
     <td>
-      <a href="{{ pages|docs_url('pricing.md')|url }}">{{ active_partnership.plan.name }}</a>
-      {% for _ in range(active_partnership.plan.hierarchy_rank + 1) %}
-        {{ 'star'|icon }}
-      {% endfor %}
-    </td>
-  </tr>
-  <tr>
-    <th>Členů v klubu</th>
-    <td>
-      {{ partner.list_members|length }} z 15
+      {{ active_partnership.plan.name }}
+      {%- for _ in range(active_partnership.plan.hierarchy_rank + 1) -%}
+        &nbsp;{{- 'star'|icon -}}
+      {%- endfor -%}<br>
+      <small>{{ 'question-circle'|icon }} <a href="{{ pages|docs_url('pricing.md')|url }}">jak vypadá ceník</a></small>
     </td>
   </tr>
   <tr>
     <th>Prodloužení</th>
     <td>
       {% if active_partnership.expires_on %}
-        Partnerství skončí za {{ active_partnership.remaining_days() }} dní
+        Partnerství skončí za {{ active_partnership.days_until_expires() }} dní
         (do {{ '{:%-d.%-m.%Y}'.format(active_partnership.expires_on) }})
       {% else %}
         Partnerství nemá stanovený konec
@@ -50,34 +45,60 @@
   </tr>
 </table></div>
 
+
+## Vztah s junior.guru
+
+Veškerá placená spolupráce je viditelně označena.
+{%- if partner.is_course_provider %}
+Firma je **vzdělávací agenturou** a jako taková chce lidi přesvědčit o tom, že její vzdělávací programy jsou nejlepší.
+Tím vzniká u Honzy Javorka, autora junior.guru, **konflikt zájmů** a proto se vztah s touto firmou řídí [opatrnějšími pravidly](../faq.md#vzdelavaci-agentury).
+{% else %}
+Firma nepodniká v oblasti vzdělávání juniorů a neměl by tedy existovat žádný konflikt zájmů, který by zpochybňoval neutralitu junior.guru.
+{% endif %}
+
 ## Výsledky spolupráce
+
+Pokud tady něco chybí, tak buď [nejde o placenou spolupráci](../faq.md#neoznacena-spoluprace), nebo to Honza zapomenul zaznamenat. Napiš mu na {{ 'honza@junior.guru'|email_link }}.
 
 <div class="table-responsive"><table class="table">
   {% for podcast_episode in partner.list_podcast_episodes %}
-  <!-- Disclaimer o tom, že zveme lidi i bez toho, že by si to firma zaplatila -->
   <tr>
-    <td>Podcast {{ 'mic'|icon }}</td>
+    <td>Epizoda podcastu {{ 'mic'|icon }}</td>
     <td><a href="{{ podcast_episode.url }}">{{ podcast_episode.title }}</a></td>
   </tr>
   {% endfor %}
 
   {% for job in partner.list_jobs %}
-  <!-- todo info z mailu -->
   <tr>
     <td>Pracovní inzerát {{ 'pin-angle'|icon }}</td>
-    <td><a href="{{ job.url }}">{{ job.title }}</a></td>
+    <td>
+      <a href="{{ job.url }}">{{ job.title }}</a><br>
+      <small>
+        {{ 'graph-up'|icon }} statistiky za
+        <a href="{{ job.submitted_job.analytics_url(30) }}" target="_blank" rel="noopener">měsíc</a>,
+        <a href="{{ job.submitted_job.analytics_url(365) }}" target="_blank" rel="noopener">rok</a>
+      </small>
+    </td>
   </tr>
   {% endfor %}
 
   {% for event in partner.list_events %}
-  <!-- Disclaimer o tom, že zveme lidi i bez toho, že by si to firma zaplatila -->
   <tr>
     <td>Akce v klubu {{ 'calendar-event'|icon }}</td>
     <td><a href="{{ event.url }}">{{ event.title }}</a></td>
   </tr>
   {% endfor %}
 
-  <!-- todo welcome social, odkaz -->
+  {% for benefit in active_partnership.evaluate_benefits(benefits_evaluators) %}
+  {% if benefit.slug == 'welcome_social' and benefit.done %}
+  <tr>
+    <td>Oznámení na sociálních sítích {{ benefit.icon|icon }}</td>
+    <td>
+      <a href="{{ benefit.done }}">LinkedIn</a>
+    </td>
+  </tr>
+  {% endif %}
+  {% endfor %}
 
   {% set intro = partner.intro %}
   <tr>
@@ -101,6 +122,14 @@
     </tr>
     {% endfor %}
   {% endfor %}
+
+  <tr>
+    <td>Členů v klubu {{ 'person-circle'|icon }}</td>
+    <td>
+      {{ partner.list_members|length }} z 15<br>
+      <small>{{ 'question-circle'|icon }} <a href="{{ pages|docs_url('faq.md')|url }}#firmy-klub">k čemu je členství</a></small>
+    </td>
+  </tr>
 </table></div>
 
 ## Stav benefitů
@@ -142,6 +171,10 @@
 
 ## Historie
 
+{% if partner.first_partnership().starts_on.year < 2023 %}
+Partnerství jsou vždy na jeden rok. Do 2023 se však při prodlužování nedělal nový záznam, pouze se přepsalo datum ukončení.
+{% endif %}
+
 <div class="table-responsive"><table class="table">
   <tr>
     <th>Tarif</th>
@@ -168,12 +201,6 @@
   </tr>
 {% endfor %}
 </table></div>
-
-{% if partner.first_partnership().starts_on.year < 2023 %}
-  {% call note() -%}
-    {{ 'exclamation-circle'|icon }} Partnerství jsou vždy na jeden rok, ale do 1.1.2023 se při prodlužování nedělal nový záznam, pouze se přepsalo datum ukončení.
-  {%- endcall %}
-{% endif %}
 
 <div class="pagination">
   <div class="pagination-control">

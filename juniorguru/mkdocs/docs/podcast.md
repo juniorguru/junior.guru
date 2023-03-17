@@ -4,7 +4,7 @@ template: main_podcast.html
 description: Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.
 ---
 
-{% from 'macros.html' import lead, markdown, img, podcast_player with context %}
+{% from 'macros.html' import lead, markdown, img, podcast_player, partner_link with context %}
 
 
 # Podcast
@@ -14,10 +14,10 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
 {% endcall %}
 
 <div class="standout">
+  <a class="podcast-button youtube" href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">{{ 'youtube'|icon }} YouTube</a>
   <a class="podcast-button spotify" href="https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4">{{ 'spotify'|icon }} Spotify</a>
   <a class="podcast-button google" href="https://podcasts.google.com/feed/aHR0cHM6Ly9qdW5pb3IuZ3VydS9hcGkvcG9kY2FzdC54bWw">{{ 'google'|icon }} Google</a>
   <a class="podcast-button apple" href="https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549">{{ 'apple'|icon }} Apple</a>
-  <a class="podcast-button youtube" href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">{{ 'youtube'|icon }} YouTube</a>
   <a class="podcast-button rss" href="https://junior.guru/api/podcast.xml">{{ 'rss-fill'|icon }} RSS</a>
 </div>
 
@@ -49,6 +49,20 @@ Poučky praví, že podcast se stává kvalitním a slavným, až když se auto�
 <div id="{{ episode.slug }}" class="podcast-episode">
   <h3>{{ episode.title_numbered }}</h3>
   {{ img('static/images/' + episode.avatar_path, episode.title, 100, 100, class='podcast-episode-image') }}
+  {% if episode.partner %}
+  <p>
+    <span class="badge text-bg-primary">Spolupráce</span>
+    <small>
+    Epizoda vznikla v rámci
+    {% if episode.partner.active_partnership() %}
+      <a href="{{ pages|docs_url('open/' + episode.partner.slug + '.md')|url }}">placeného partnerství</a>
+    {% else %}
+      placeného partnerství
+    {% endif %}
+    s firmou {{ partner_link(episode.partner.name, episode.partner.url, 'podcast') }}
+    </small>
+  </p>
+  {% endif %}
   <p>
     <strong>{{ '{:%-d.%-m.%Y}'.format(episode.publish_on) }}</strong>
     — {{ episode.description }}

@@ -14,9 +14,8 @@ from juniorguru.models.job import SubmittedJob
 from juniorguru.sync.jobs_scraped.pipelines.boards_ids import (
     parse_urls as parse_board_ids)
 from juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner import (
-    clean as clean_employment_types)
-from juniorguru.sync.scrape_jobs.pipelines.language_parser import (
-    parse as parse_language)
+    clean_employment_types)
+from juniorguru.sync.scrape_jobs.pipelines.language_parser import parse_language
 
 
 logger = loggers.from_path(__file__)

@@ -54,22 +54,52 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+- title: "(bude upřesněno)"
+  date: "2023-04-25"
+  time: "18:00"
+  description: |
+    (bude upřesněno)
+  avatar_path: avatars-participants/marta-kirchgessner.jpg
+  bio_name: Marta Kirchgessner
+  bio_title: "Frontendistka v Lundegaard"
+  bio: |
+    (bude upřesněno)
+  bio_links:
+    - https://www.linkedin.com/in/marta-k-586110243/
+  logo_path: logos/lundegaard.svg
+  speakers: 1081144172632879167
+
+
+- title: "Ptej se na co chceš"
+  date: "2023-04-11"
+  time: "18:00"
+  description: |
+    Kam se bude vyvíjet junior.guru? Je lepší kurz, nebo se učit po vlastní ose? Jak funguje klub? Jakou máš, Honzo, velikost ponožek? Za jak dlouho se dá rekvalifikovat? Musím mít projekt, abych si sehnala práci? Mám studovat VŠ? A tak dále, prostě Q&A. Dotazy můžeš buď psát do chatu, nebo je rovnou řekneš. Pokud se nám to povede, bude akce veřejně streamovaná na YouTube a půjde dotazy pokládat i tam, takže budeš moci snadno pozvat i kamarády mimo klub.
+  avatar_path: avatars-participants/honza-javorek.jpg
+  bio_name: Honza Javorek
+  bio_title: "Provozovatel junior.guru"
+  bio: |
+    Původně programátor, dnes už spíš podnikatel. Tvůrce junior.guru, projektu pro začátečníky v programování. Dlouholetý dobrovolník v české Python komunitě.
+  speakers: 668226181769986078
+
+
 - title: "Práce a dítě: Jak být k sobě laskavější"
   date: "2023-03-21"
   time: "18:30"
   description: |
-    (bude upřesněno)
+    V této přednášce chci povědět svůj příběh hledání sebe jako rodiče i jako člověka se svými sny a kariérními cíli. Doufám, že tato přednáška bude povzbuzením a inspiraci pro hledání rovnováhy mezi rodičovským a pracovním životem.
   avatar_path: avatars-participants/anastazie-sedlakova.jpg
   bio_name: Anastázie Sedláková
-  bio_title: "Bioinformatička a datařka v DNAnexus, lektorka kurzů programování, máma tří dětí"
+  bio_title: "Spoluzákladatelka sedlakovi.org, Community Engagement - Principal Scientist v DNAnexus"
   bio: |
-    (bude upřesněno)
+    Mám doktorát z genetiky člověka a více než 10 let zkušeností s bioinformatickou analýzou a lektorováním programovacích kurzů. Baví mě zkoumat, jak lze co nejefektivněji naučit dospělé lidi komplexním věcem. Ráda kreslím, chodím do přírody a čtu. Mám tři děti: 5 let, 3 roky a 5 měsíců.
   bio_links:
+    - https://www.sedlakovi.org/filozofie/
     - https://www.linkedin.com/in/anastazie-sedlakova/
     - https://github.com/anastazie
     - https://twitter.com/datasciencefox
-  logo_path: logos/dnanexus.svg
-  speakers:
+  logo_path: logos/sedlakovi.svg
+  speakers: 1084944417716178965
 
 
 - title: "Vývoj desktopových aplikací v C#: Nové trendy a možnosti"
@@ -85,6 +115,7 @@
     - https://www.linkedin.com/in/lukepavelka0321/
   logo_path: logos/edhouse.svg
   speakers: 113033048957665280
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1077657861397684396
 
 
 - title: "Základy bezpečnosti pro vývojáře"

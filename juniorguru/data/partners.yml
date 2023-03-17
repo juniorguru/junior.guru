@@ -1,6 +1,6 @@
 - name: Glance Media
   slug: glancemedia
-  url: https://www.glancemedia.cz/
+  url: https://glancemedia.cz/
   partnerships:
     - plan: hiring
       starts_on: 2023-02-09
@@ -9,6 +9,7 @@
 - name: Green Fox Academy
   slug: greenfox
   url: https://www.greenfoxacademy.cz/
+  is_course_provider: yes
   partnerships:
     - plan: branding
       starts_on: 2023-01-25
@@ -42,7 +43,7 @@
   partnerships:
     - plan: hiring
       starts_on: 2022-03-29
-      expires_on: 2023-03-28
+      expires_on: 2023-04-30
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_a-few-days-ago-ive-got-this-gift-from-strv-activity-7012387898507296768-7EhA
@@ -53,12 +54,12 @@
   partnerships:
     - plan: support
       starts_on: 2022-04-01
-      expires_on: 2023-03-31
+      expires_on: 2023-04-30
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_mentoring-activity-6927973476733448193-GNab
       agreements:
-        - text: Zaměstnanci poskytují v [klubu](https://junior.guru/club) individuální mentoring
+        - text: Zaměstnanci poskytují v klubu individuální mentoring
           done: yes
 
 - name: Jetveo
@@ -67,7 +68,7 @@
   partnerships:
     - plan: support
       starts_on: 2022-02-17
-      expires_on: 2023-03-31
+      expires_on: 2023-04-30
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_jetveo-low-code-platforma-pro-c-kdo-activity-6911626840260374529-5D2g
@@ -134,7 +135,7 @@
 - name: Software Development Academy
   slug: sdacademy
   url: https://sdacademy.cz/
-  students: true
+  is_course_provider: yes
   partnerships:
     - plan: support
       starts_on: 2021-06-18
@@ -157,8 +158,8 @@
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_mentoring-discord-activity-6997918083440861184-A4oH
       agreements:
-        - text: Zaměstnanci poskytují v [klubu](https://junior.guru/club) individuální mentoring
-        - text: Podílí se na rozšířené pomoci pro lidi, kteří na junior.guru žádají o [stipendium](https://junior.guru/club).
+        - text: Zaměstnanci poskytují v klubu individuální mentoring
+        - text: Podílí se na rozšířené pomoci pro lidi, kteří na junior.guru žádají o [stipendium](https://junior.guru/finaid).
           done: yes
 
 - name: Lynt
@@ -167,7 +168,7 @@
   partnerships:
     - plan: support
       starts_on: 2021-03-17
-      expires_on: 2023-04-15
+      expires_on: 2023-04-30
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_afjtvrtkon-wordcamp-wordpress-activity-6925453460544856064-5Dqu
@@ -186,6 +187,7 @@
 - name: ENGETO Academy
   slug: engeto
   url: https://engeto.cz/
+  is_course_provider: yes
   partnerships:
     - plan: support
       starts_on: 2021-05-14
@@ -212,14 +214,14 @@
 - name: CoreSkill
   slug: coreskill
   url: https://coreskill.tech/
-  students: true
+  is_course_provider: yes
   partnerships:
     - plan: support
       starts_on: 2021-02-01
       agreements:
-        - text: Dan Srb v [klubu](https://junior.guru/club) moderuje a radí s frontendem
+        - text: Dan Srb v klubu moderuje a radí s frontendem
           done: yes
-        - text: Využívá [klub](https://junior.guru/club) pro komunikaci se svými klienty (studenty)
+        - text: Využívá klub pro komunikaci se svými klienty (studenty)
           done: yes
 
 - name: Rector
@@ -254,8 +256,11 @@
   url: https://www.fakturoid.cz/
   partnerships:
     - plan: branding
+      starts_on: 2023-04-01
+      expires_on: 2024-04-01
+    - plan: branding
       starts_on: 2020-09-01
-      expires_on: 2023-03-31
+      expires_on: 2023-04-01
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_faktury-rubyonrails-ruby-activity-6914182951429648384-hRoV

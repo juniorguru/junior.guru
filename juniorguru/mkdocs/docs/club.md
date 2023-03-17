@@ -126,7 +126,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
   {{ logo('Czechitas', 'logos/czechitas.svg', 'https://www.czechitas.cz/') }}
   {{ logo('DigiKoalice', 'logos/digikoalice.svg', 'https://digikoalice.cz/') }}
   {{ logo('Frontendisti', 'logos/frontendisti.svg', 'https://frontendisti.cz/') }}
-  {{ logo('#HolkyzMarketingu', 'logos/holkyzmarketingu.svg', 'https://holkyzmarketingu.cz/') }}
+  {{ logo('#HolkyzMarketingu', 'logos/holkyzmarketingu.svg', 'https://www.holkyzmarketingu.cz/') }}
   {{ logo('PyLadies', 'logos/pyladies.svg', 'https://pyladies.cz/') }}
   {{ logo('Pyvec', 'logos/pyvec.svg', 'https://pyvec.org/') }}
   {{ logo('CyberMagnolia', 'logos/cybermagnolia.svg', 'https://cybermagnolia.com/') }}
@@ -244,7 +244,7 @@ Nemusíš hned zadávat kartu. Vyber si roční nebo měsíční předplatné a 
       <li class="pricing-benefits-item">Podpora pro znevýhodněné</li>
       <li class="pricing-benefits-item">Vyplň formulář a uvidíš</li>
     </ul>
-    <a class="pricing-button" href="{{ finaid_url }}" target="_blank" rel="noopener">na rok zdarma</a>
+    <a class="pricing-button" href="{{ pages|docs_url('finaid.md')|url }}" target="_blank" rel="noopener">na rok zdarma</a>
   </div>
 </div>
 

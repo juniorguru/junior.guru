@@ -1,14 +1,19 @@
-# - id:
-#   name: Jakub B.
-#   company: Mews
-#   topics: testování, QA, vývojářské nástroje, Robot Framework, Postman, SQL
-#   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
+- id: 775619876152672268
+  name: Luboš R.
+  company: Wultra
+  topics: příprava na Java pohovor, Java pohovor nanečisto
 
 - id: 392659924552777730
   name: Martin K.
   company: na volné noze
   topics: HTML, CSS, frontend, freelancing, práce na volné noze
   book_url: https://calendly.com/martin-kolar91/60min
+
+- id: 1050756247235874817
+  name: Jakub B.
+  company: Mews
+  topics: testování, QA, vývojářské nástroje, Robot Framework, Postman, SQL
+  book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
 - id: 1050753530727763988
   name: Vašek R.
@@ -53,7 +58,7 @@
   name: Jan M.
   company: Mews
   bio_url: https://youtu.be/rlzhpwkz5OA?t=1222
-  topics: komunity, konference, srazy, networking, HR, příprava na pohovor
+  topics: jak do IT bez technologického vzdělání, komunity, startupy, konference, srazy, networking, HR, příprava na pohovor
   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
 - id: 689498517995126847
@@ -67,12 +72,6 @@
   name: Honza T.
   company: Mews
   topics: IT, bezpečnost, práce na dálku, digitální nomádství
-  book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
-
-- id: 868083628419199026
-  name: Radek Z.
-  company: Mews
-  topics: PowerShell, automatizace, Azure, C#, .NET, DevOps
   book_url: https://outlook.office365.com/owa/calendar/Mewsprojuniorguru@mewssystems.com/bookings/
 
 - id: 869504117154934824

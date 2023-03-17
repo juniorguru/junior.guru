@@ -18,16 +18,13 @@ def test_spider_parse():
     assert len(requests) == 4
 
     data = requests[0].cb_kwargs['feed_data']
-
     assert data['title'] == '10up: Senior UI Engineer'
     assert data['remote'] == True
     assert data['first_seen_on'] == date(2020, 10, 28)
-    assert data['remote_region_raw'] == 'Anywhere (100% Remote) Only'
     assert data['company_logo_urls'] == []
     assert '<li>Moderate PHP experience.</li>' in data['description_html']
 
     data = requests[1].cb_kwargs['feed_data']
-
     assert data['company_logo_urls'] == ['https://wwr-pro.s3.amazonaws.com/logos/0017/2713/logo.gif']
 
 

@@ -251,7 +251,7 @@ def render_sth(context):
         V ceně není garance toho, že se ti tu za každých okolností dostane pomoci. Taková služba by byla velmi drahá. Zdejší profesionálové se ti věnují zdarma a z dobré vůle. Odměnou je jim radost, když vidí, že se ti daří, nebo když jim poděkuješ.
 
         **Stipendium** 🆘
-        Pokud se ti klub líbí, ale na předplatné nemáš, zažádej si na https://junior.guru/club/ o stipendium
+        Pokud se ti klub líbí, ale na předplatné nemáš, zažádej si na https://junior.guru/finaid/ o stipendium
     ''')
 
 

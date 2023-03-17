@@ -12,8 +12,7 @@ MIN_JUNIORITY_RE_SCORE = 1
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=['jobs-scraped',
-                            'jobs-submitted'])
+@cli.sync_command(dependencies=['jobs-scraped', 'jobs-submitted'])
 @db.connection_context()
 def main():
     ListedJob.drop_table()

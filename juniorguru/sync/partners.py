@@ -25,7 +25,7 @@ YAML_SCHEMA = Seq(
         'name': Str(),
         'slug': Str(),
         'url': Url(),
-        Optional('students'): Bool(),
+        Optional('is_course_provider'): Bool(),
         'partnerships': Seq(
             Map({
                 'plan': Str(),

@@ -11,7 +11,10 @@ from juniorguru.sync.scrape_jobs.items import (Job, absolute_url, parse_iso_date
 
 class Spider(BaseSpider):
     name = 'remoteok'
-    custom_settings = {'DOWNLOAD_DELAY': 1}
+    custom_settings = {
+        'ROBOTSTXT_OBEY': False,  # requesting API, so irrelevant, saving a few requests
+        'DOWNLOAD_DELAY': 1,
+    }
     start_urls = [
         'https://remoteok.io/remote-dev-jobs.json?api=1',
     ]
@@ -25,8 +28,7 @@ class Spider(BaseSpider):
             raise
 
         for json_data in json_data_list[1:]:  # skip legal notice
-            url = json_data['url'].replace(json_data['id'], json_data['slug'])
-            yield response.follow(url,
+            yield response.follow(json_data['url'],
                                   callback=self.parse_job,
                                   cb_kwargs=dict(json_data=json_data))
 
@@ -37,7 +39,6 @@ class Spider(BaseSpider):
         loader.add_value('title', json_data['position'])
         loader.add_value('url', response.url)
         loader.add_value('company_name', json_data['company'])
-        loader.add_value('remote_region_raw', json_data['location'])
         loader.add_value('remote', True)
         loader.add_value('first_seen_on', json_data['date'])
         loader.add_css('description_html', '*[itemprop="description"] .markdown::text')

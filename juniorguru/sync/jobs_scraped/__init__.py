@@ -1,3 +1,4 @@
+from datetime import date
 from pathlib import Path
 
 import click
@@ -13,6 +14,7 @@ from juniorguru.sync.scrape_jobs.settings import FEEDS_DIR
 
 
 PREPROCESS_PIPELINES = [
+    'juniorguru.sync.jobs_scraped.pipelines.blocklist',
     'juniorguru.sync.jobs_scraped.pipelines.boards_ids',
 ]
 
@@ -32,11 +34,11 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=['scrape-jobs'])
 @click.option('--reuse-db/--no-reuse-db', default=False)
-def main(reuse_db):
+@click.option('--latest-seen-on', default=None, type=date.fromisoformat)
+def main(reuse_db, latest_seen_on):
     paths = list(Path(FEEDS_DIR).glob('**/*.jsonl.gz'))
     logger.info(f'Found {len(paths)} .json.gz paths')
 
-    latest_seen_on = None
     with db.connection_context():
         if reuse_db:
             logger.warning('Reusing of existing jobs database is enabled!')

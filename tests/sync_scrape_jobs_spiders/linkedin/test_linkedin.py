@@ -47,7 +47,7 @@ def test_spider_parse_job():
     assert sorted(job.keys()) == sorted([
         'title', 'url', 'company_name', 'locations_raw',
         'employment_types', 'first_seen_on', 'description_html',
-        'experience_levels', 'company_logo_urls', 'remote',
+        'company_logo_urls', 'remote',
         'source', 'source_urls',
     ])
     assert job['title'] == 'Junior BI Developer (BI4SG)'
@@ -56,7 +56,6 @@ def test_spider_parse_job():
     assert job['locations_raw'] == ['Prague, Czechia']
     assert job['remote'] is False
     assert job['employment_types'] == ['full-time']
-    assert job['experience_levels'] == ['entry level']
     assert job['first_seen_on'] == date.today() - timedelta(weeks=1)
     assert job['company_logo_urls'] == ['https://media-exp1.licdn.com/dms/image/C560BAQHxuVQO-Rz9rw/company-logo_100_100/0/1546508771908?e=1640217600&v=beta&t=hUZKjJ2dnPP92AcBOKAEFzFqEdD-OB9WwS0X18LoyP4']
     assert job['source'] == 'linkedin'

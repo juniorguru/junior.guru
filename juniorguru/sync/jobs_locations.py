@@ -5,9 +5,6 @@ from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
 
 
-MIN_JUNIORITY_RE_SCORE = 1
-
-
 logger = loggers.from_path(__file__)
 
 

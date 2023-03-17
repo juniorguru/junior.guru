@@ -7,7 +7,7 @@ description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior
 
 # Čísla a grafy
 
-Stránku jsem vytvořil po vzoru [jiných otevřených projektů](https://openstartuplist.com/), především [NomadListu](https://nomadlist.com/open). Tyto grafy a čísla stejně potřebuji pro svou vlastní potřebu, takže proč je v rámci transparentnosti nemít rovnou na webu, že?
+Stránku jsem vytvořil po vzoru [jiných otevřených projektů](https://openstartuplist.com/). Tyto grafy a čísla stejně potřebuji pro svou vlastní potřebu, takže proč je v rámci transparentnosti nemít rovnou na webu, že?
 
 [TOC]
 
@@ -155,9 +155,9 @@ Ke konci roku 2020 jsem se rozhodl změnit byznys model a vytvořit kolem junior
 
 V ideálním případě by mě živilo individuální členství lidí v klubu, protože je to pravidelný, předvídatelný příjem, který mi navíc zajišťuje největší nezávislost.
 
-Individuální členství ale nevystačí, takže si domlouvám i [spolupráce s firmami](#firemni-partnerstvi). Jsou z toho větší jednorázové příjmy, které lze obtížně předvídat a mohou ovlivňovat mou kritičnost k firmám, se kterými spolupracuji.
+Individuální členství ale nevystačí, takže si domlouvám i [partnerství s firmami](#firemni-partnerstvi). Jsou z toho větší jednorázové příjmy, které lze obtížně předvídat a mohou ovlivňovat mou kritičnost k firmám, se kterými spolupracuji.
 
-Inzerci nabídek práce nechci zrušit, ale aktuálně není na vrcholu mých priorit. Pokud, tak spíše v podobě dlouhodobé spolupráce s firmou, než formou jednorázových inzerátů.
+Inzerci nabídek práce nechci zrušit, ale aktuálně není na vrcholu mých priorit. Pokud, tak spíše v podobě dlouhodobého partnerství s firmou, než formou jednorázových inzerátů.
 
 Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velkou měrou právě díky nim junior.guru ve svých počátcích neskončilo. Teď je ale čas postavit se na vlastní nohy! Možnost přispět zřejmě nezruším, ale přestal jsem ji propagovat. Chtěl bych, aby dobrovolné příspěvky jednou plně nahradilo individuální členství v klubu.
 
@@ -178,7 +178,7 @@ Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velk
                 'backgroundColor': '#1755d1',
             },
             {
-                'label': 'spolupráce s firmami',
+                'label': 'partnerství s firmami',
                 'data': charts_revenue_breakdown.pop('partnerships'),
                 'backgroundColor': '#638CDD',
             },
@@ -272,37 +272,38 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
 
 ## Firemní partnerství
 
-Firmy mohou uzavírat s junior.guru partnerství na základě tarifu zakoupeného podle [ceníku](pricing.md).
-Partnerství domlouvám osobně a je vždy na rok, potom s firmou jednáme o prodloužení.
-
-Nikdy nedoporučuji konkrétní kurzy a snažím se ve svých vyjádřeních měřit všem firmám stejně.
-Aby bylo vše maximálně transparentní, uvádím zde podrobnosti ke každému uzavřenému partnerství.
+Firmy mohou uzavírat s junior.guru [partnerství](faq.md#firmy) na základě tarifu zakoupeného podle [ceníku](pricing.md).
+Partnerství domlouvám osobně a je vždy na rok, potom s firmou jednáme o prodloužení. Tady je detailní přehled všech závazků, které má junior.guru vůči jednotlivým firmám.
 
 <div class="table-responsive standout"><table class="table">
   <tr>
-    <th>Firma</th>
+    <th>Detaily</th>
     <th>Tarif</th>
-    <th>Skončí</th>
+    <th>Zbývá</th>
   </tr>
   {% for partner in partners %}
     {% set partnership = partner.active_partnership() %}
     {% set plan = partnership.plan %}
     <tr>
       <td>
-        <a href="{{ pages|docs_url('open/' + partner.slug + '.md')|url }}">{{ partner.name }}</a>
+        <a href="{{ pages|docs_url('open/' + partner.slug + '.md')|url }}">Partnerství s {{ partner.name }}</a>
       </td>
       <td>
-        {% for _ in range(plan.hierarchy_rank + 1) %}
-          {{ 'star'|icon }}
-        {% endfor %}
+        {%- for _ in range(plan.hierarchy_rank + 1) -%}
+          &nbsp;{{- 'star'|icon -}}
+        {%- endfor -%}
       </td>
-      <td>
-        {% if partnership.expires_on %}
-            {{ '{:%-d.%-m.%Y}'.format(partnership.expires_on) }}
-        {% else %}
-            ?
-        {% endif %}
-      </td>
+      {% if partnership.expires_on %}
+        <td{% if partnership.days_until_expires() < 30 %}
+          class="expires-very-soon"
+        {% elif partnership.days_until_expires() < 60 %}
+          class="expires-soon"
+        {%- endif %}>
+          {{ partnership.days_until_expires() }} dní
+        </td>
+      {% else %}
+        <td>∞</td>
+      {% endif %}
     </tr>
   {% endfor %}
 </table></div>
@@ -498,7 +499,7 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
 
 ## Aktivita v klubu
 
-### Počet zpráv na Discordu
+### Počet znaků napsaných na Discordu
 
 V grafu není celá historie, uchovávám data jen za rok zpětně. Některé kanály se nezapočítávají, např. „volná zábava“. Nejde o kompletní _engagement_, protože lidi se mohou v klubu projevovat různě, např. reagováním pomocí emoji.
 

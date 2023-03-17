@@ -9,12 +9,13 @@ from juniorguru.models.podcast import PodcastEpisode
 
 @pytest.fixture
 def db_connection():
+    models = [PodcastEpisode]
     db = SqliteDatabase(':memory:')
     with db:
-        PodcastEpisode.bind(db)
-        PodcastEpisode.create_table()
+        db.bind(models)
+        db.create_tables(models)
         yield db
-        PodcastEpisode.drop_table()
+        db.drop_tables(models)
 
 
 def test_publish_at_prg():

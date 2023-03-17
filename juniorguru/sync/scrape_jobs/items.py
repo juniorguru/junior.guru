@@ -23,9 +23,7 @@ class Job(Item):
     company_logo_path = Field()
 
     locations_raw = Field()
-    remote_region_raw = Field()
     remote = Field()
-    experience_levels = Field()
     employment_types = Field()
 
     description_html = Field(required=True)

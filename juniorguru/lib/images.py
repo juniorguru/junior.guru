@@ -3,13 +3,15 @@ import pickle
 import re
 import shutil
 import tempfile
+import time
 from hashlib import sha256
 from io import BytesIO
+from multiprocessing import Process, Queue
 from pathlib import Path
 from subprocess import DEVNULL, run
 
 from jinja2 import Environment, FileSystemLoader
-from PIL import Image, ImageOps
+from PIL import Image
 from playwright.sync_api import sync_playwright
 
 from juniorguru.lib import loggers
@@ -30,6 +32,12 @@ TEMPLATES_DIR = Path(__file__).parent.parent / 'image_templates'
 
 
 logger = loggers.from_path(__file__)
+
+
+server_queue = Queue()
+
+
+server_proc = None
 
 
 class InvalidImage(Exception):
@@ -70,21 +78,6 @@ def render_image_file(width, height, template_name, context, output_dir, filters
     return image_path
 
 
-def save_as_square(path, prefix=None, suffix=None):
-    cache_key = str(path.relative_to(IMAGES_DIR))
-    hash = sha256(cache_key.encode('utf-8')).hexdigest()
-
-    image_name = '-'.join(filter(None, [prefix, hash, suffix])) + '.png'
-    image_path = path.with_name(image_name)
-
-    if not image_path.exists():
-        with Image.open(path) as image:
-            side_px = max(image.width, image.height)
-            image = ImageOps.pad(image, (side_px, side_px), color=(0, 0, 0))
-            image.save(image_path, 'PNG')
-    return image_path
-
-
 def downsize_square_photo(path, side_px):
     with Image.open(path) as image:
         if image.width != image.height:
@@ -119,46 +112,91 @@ def render_template(width, height, template_name, context, filters=None):
     template = environment.get_template(template_name)
 
     with tempfile.TemporaryDirectory() as temp_dir:
+        temp_dir = Path(temp_dir)
         logger.info(f'Rendering {width}x{height} {template_name} in {temp_dir}')
 
         html = template.render(images_dir=IMAGES_DIR, **context)
-        html_path = Path(temp_dir) / template_name
+        html_path = temp_dir / template_name
         html_path.write_text(html)
 
         logger.info('Compiling SCSS')
         run(['npx', 'sass', f'{TEMPLATES_DIR}:{temp_dir}'], check=True, stdout=DEVNULL)
 
         logger.info(f"Copying fonts: {', '.join(map(str, FONTS))}")
-        fonts_dir = Path(temp_dir) / 'fonts'
+        fonts_dir = temp_dir / 'fonts'
         fonts_dir.mkdir(parents=True)
         for font_parent_dir in FONTS:
             for woff_path in Path(font_parent_dir).glob('**/*.woff*'):
-                logger.debug(f"Copying font {woff_path} to {fonts_dir}")
+                logger['font'].debug(f"Copying {woff_path} to {fonts_dir}")
                 shutil.copy2(woff_path, fonts_dir)
 
         logger.info('Rewriting CSS')
-        for css_path in Path(temp_dir).glob('**/*.css'):
-            logger.debug(f"Rewriting {css_path}")
+        for css_path in temp_dir.glob('**/*.css'):
+            logger['css'].debug(f"Rewriting {css_path}")
             for re_pattern, re_repl in CSS_REWRITE:
                 css = css_path.read_text()
                 rewritten_css = re.sub(re_pattern, re_repl, css)
-                logger.debug(f"Did pattern {re_pattern!r} result in changes? {(css != rewritten_css)}")
+                logger['css'].debug(f"Did pattern {re_pattern!r} result in changes? {(css != rewritten_css)}")
                 css_path.write_text(rewritten_css)
 
         logger.info('Taking a screenshot')
-        with sync_playwright() as playwright:
-            browser = playwright.firefox.launch()
-            page = browser.new_page()
-            page.set_viewport_size({'width': width, 'height': height})
-            page.goto(f'file://{html_path}', wait_until='networkidle')
-            image_bytes = page.screenshot()
-            browser.close()
+        screenshot_path = temp_dir / f'{time.perf_counter_ns()}.png'
+        screenshot_args = (html_path, screenshot_path, width, height)
+        try:
+            global server_proc
+            if server_proc:
+                logger['screenshot'].debug('Server already running')
+            else:
+                logger['screenshot'].debug('Starting server')
+                _server_proc = Process(target=_server, args=(server_queue,), daemon=True)
+                _server_proc.start()
+                logger['screenshot'].debug('Server running')
+                server_proc = _server_proc
+        except Exception as e:
+            logger['screenshot'].debug(f'Could not start server: {e}')
+            with sync_playwright() as playwright:
+                browser = playwright.firefox.launch()
+                _take_screenshot(browser, *screenshot_args)
+                browser.close()
+        else:
+            server_queue.put(screenshot_args)
+            while not screenshot_path.exists():
+                logger['screenshot'].debug('Waiting for the image')
+                time.sleep(0.3)
+        logger['screenshot'].debug('Done')
+        return screenshot_path.read_bytes()
 
-        logger.info('Editing screenshot')
-        with Image.open(BytesIO(image_bytes)) as image:
-            buffer = BytesIO()
-            height_ar = (image.height * width) // image.width
-            image = image.resize((width, height_ar), Image.Resampling.BICUBIC)
-            image = image.crop((0, 0, width, height))
-            image.save(buffer, 'PNG')
-            return buffer.getvalue()
+
+def _take_screenshot(browser, html_path, screenshot_path, width, height):
+    temp_path = screenshot_path.with_suffix('.temp')
+
+    logger['screenshot'].debug(f"Taking screenshot {width}x{height} {html_path} → {screenshot_path}")
+    page = browser.new_page()
+    page.set_viewport_size({'width': width, 'height': height})
+    page.goto(f'file://{html_path}', wait_until='networkidle')
+    image_bytes = page.screenshot()
+    page.close()
+
+    logger['screenshot'].debug('Editing screenshot')
+    with Image.open(BytesIO(image_bytes)) as image:
+        height_ar = (image.height * width) // image.width
+        image = image.resize((width, height_ar), Image.Resampling.BICUBIC)
+        image = image.crop((0, 0, width, height))
+        image.save(temp_path, 'PNG')
+    return temp_path.rename(screenshot_path)
+
+
+def _server(queue):
+    """
+    A single process taking care of taking screenshots.
+    Keeps the browser alive between subsequent calls of render_template().
+    """
+    logger['server'].debug("Starting")
+    with sync_playwright() as playwright:
+        browser = playwright.firefox.launch()
+        try:
+            while True:
+                _take_screenshot(browser, *queue.get())
+        finally:
+            logger['server'].debug("Closing")
+            browser.close()

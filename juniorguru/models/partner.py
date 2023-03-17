@@ -1,17 +1,18 @@
 from datetime import date
 
-from peewee import CharField, DateField, ForeignKeyField, IntegerField, fn
+from peewee import BooleanField, CharField, DateField, ForeignKeyField, IntegerField, fn
 
 from juniorguru.lib.club import EMOJI_PARTNER_INTRO, INTRO_CHANNEL
 from juniorguru.models.base import BaseModel, JSONField
 from juniorguru.models.club import ClubMessage, ClubUser
-from juniorguru.models.job import SubmittedJob
+from juniorguru.models.job import ListedJob
 
 
 class Partner(BaseModel):
     name = CharField()
     slug = CharField(unique=True)
     url = CharField()
+    is_course_provider = BooleanField(default=False)
     coupon = CharField(null=True, index=True)
     student_coupon = CharField(null=True, index=True)
     logo_path = CharField(null=True)
@@ -48,10 +49,10 @@ class Partner(BaseModel):
 
     @property
     def list_jobs(self):
-        return SubmittedJob.select() \
-            .join(self.__class__, on=(SubmittedJob.company_name == self.__class__.name)) \
-            .where(SubmittedJob.company_name == self.name) \
-            .order_by(SubmittedJob.title)
+        return ListedJob.submitted_listing() \
+            .join(self.__class__, on=(ListedJob.company_name == self.__class__.name)) \
+            .where(ListedJob.company_name == self.name) \
+            .order_by(ListedJob.title)
 
     @property
     def list_partnerships_history(self):
@@ -92,10 +93,8 @@ class Partner(BaseModel):
         return cls.select() \
             .join(Partnership) \
             .join(PartnershipPlan) \
+            .where(Partnership.starts_on <= today, expires_after_today) \
             .group_by(cls) \
-            .having(Partnership.starts_on == fn.max(Partnership.starts_on),
-                    Partnership.starts_on <= today,
-                    expires_after_today) \
             .order_by(PartnershipPlan.hierarchy_rank.desc(), cls.name)
 
     @classmethod
@@ -105,18 +104,24 @@ class Partner(BaseModel):
             .select() \
             .join(Partnership) \
             .group_by(cls) \
-            .having(Partnership.starts_on == fn.max(Partnership.starts_on),
+            .having(fn.max(Partnership.starts_on) == Partnership.starts_on,
                     Partnership.starts_on < today,
-                    Partnership.expires_on.is_null(False),
                     Partnership.expires_on < today) \
             .order_by(cls.name)
 
     @classmethod
     def handbook_listing(cls, today=None):
         today = today or date.today()
-        return cls.active_listing() \
+        return cls.active_listing(today=today) \
             .join(PartnershipBenefit) \
             .where(PartnershipBenefit.slug == 'logo_handbook') \
+            .order_by(cls.name)
+
+    @classmethod
+    def course_providers_listing(cls, today=None):
+        today = today or date.today()
+        return cls.active_listing(today=today) \
+            .where(cls.is_course_provider == True) \
             .order_by(cls.name)
 
     @classmethod
@@ -196,7 +201,7 @@ class Partnership(BaseModel):
     benefits_registry = JSONField(default=list)
     agreements_registry = JSONField(default=list)
 
-    def remaining_days(self, today=None):
+    def days_until_expires(self, today=None):
         today = today or date.today()
         if self.expires_on:
             return (self.expires_on - today).days
@@ -204,7 +209,7 @@ class Partnership(BaseModel):
             return None
 
     def evaluate_benefits(self, evaluators=None):
-        registry = {benefit['slug']: bool(benefit.get('done'))
+        registry = {benefit['slug']: benefit.get('done', False)
                     for benefit
                     in self.benefits_registry}
         if evaluators:

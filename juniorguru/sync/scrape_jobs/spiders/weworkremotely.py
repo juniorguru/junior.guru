@@ -25,7 +25,6 @@ class Spider(BaseSpider):
         for entry in feedparser.parse(response.text).entries:
             feed_data = dict(title=entry.title,
                              first_seen_on=parse_struct_time(entry.published_parsed),
-                             remote_region_raw=entry.region,
                              company_logo_urls=[c['url'] for c in getattr(entry, 'media_content', [])],
                              description_html=entry.summary,
                              remote=True,

@@ -99,3 +99,17 @@ def prepare_logo_data(id, **kwargs):
         starts_at=kwargs.get('starts_at', today),
         expires_at=kwargs.get('expires_at', today + timedelta(days=365)),
     )
+
+
+def prepare_partner_data(id, **kwargs):
+    return dict(
+        id=id,
+        slug=kwargs.get('slug', f'banana{id}'),
+        name=kwargs.get('name', f'Banana #{id}'),
+        logo_path=kwargs.get('logo_path', 'logos/banana.svg'),
+        url=kwargs.get('url', 'https://banana.example.com'),
+        coupon=kwargs.get('coupon', 'BANANA123123123'),
+        student_coupon=kwargs.get('student_coupon'),
+        role_id=kwargs.get('role_id'),
+        student_role_id=kwargs.get('student_role_id'),
+    )
