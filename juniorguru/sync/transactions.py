@@ -10,11 +10,9 @@ from fiobank import FioBank
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import google_sheets, loggers
-from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
 from juniorguru.models.transaction import Transaction
+from juniorguru.lib.mutations import mutations
 
-
-FAKTUROID_MUTATIONS_ENABLED = bool(int(os.getenv('FAKTUROID_MUTATIONS_ENABLED', 0)))
 
 TODO_TEXT_RE = re.compile(r'''
     ^
@@ -148,21 +146,25 @@ def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_
         Transaction.create(**db_record)
 
     logger.info('Uploading verbose data to a private Google Sheet for manual audit of possible mistakes')
-    if GOOGLE_SHEETS_MUTATIONS_ENABLED:
-        google_sheets.upload(google_sheets.get(doc_key, 'transactions'), doc_records)
-    else:
-        logger.warning('Google Sheets mutations not enabled')
+    upload_to_google_sheet(doc_key, doc_records)
 
     logger.info(f'Toggling {len(todos_to_toggle)} Fakturoid todos')
-    if FAKTUROID_MUTATIONS_ENABLED:
-        for todo in todos_to_toggle.values():
-            todo_id = todo['id']
-            logger.info(f"Toggling todo: ID {todo_id}")
-            response = requests.post(f'{fakturoid_api_base_url}/todos/{todo_id}/toggle_completion.json',
-                                    **fakturoid_api_kwargs)
-            response.raise_for_status()
-    else:
-        logger.warning('Fakturoid mutations not enabled')
+    for todo in todos_to_toggle.values():
+        toggle_fakturoid_todo(fakturoid_api_base_url, fakturoid_api_kwargs, todos_to_toggle)
+
+
+@mutations.mutates('google_sheets')
+def upload_to_google_sheet(doc_key, doc_records):
+    google_sheets.upload(google_sheets.get(doc_key, 'transactions'), doc_records)
+
+
+@mutations.mutates('fakturoid')
+def toggle_fakturoid_todo(api_base_url, api_kwargs, todo):
+    todo_id = todo['id']
+    logger.info(f"Toggling todo: ID {todo_id}")
+    response = requests.post(f'{api_base_url}/todos/{todo_id}/toggle_completion.json',
+                                **api_kwargs)
+    response.raise_for_status()
 
 
 def get_transaction_message(transaction):

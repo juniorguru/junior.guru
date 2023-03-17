@@ -9,7 +9,7 @@ def test_get_import_path():
     func = discord_sync.get_import_path
 
     assert not hasattr(func, '__wrapped__')
-    assert discord_sync.get_import_path(func) == 'juniorguru.lib.discord_proc.get_import_path'
+    assert discord_sync.get_import_path(func) == 'juniorguru.lib.discord_sync.get_import_path'
 
 
 def test_get_import_path_with_decorator():
@@ -21,7 +21,7 @@ def test_get_import_path_with_decorator():
     func = decorator(discord_sync.get_import_path)
 
     assert hasattr(func, '__wrapped__')
-    assert discord_sync.get_import_path(func) == 'juniorguru.lib.discord_proc.get_import_path'
+    assert discord_sync.get_import_path(func) == 'juniorguru.lib.discord_sync.get_import_path'
 
 
 def test_get_import_path_with_db_connection_decorator():
@@ -29,4 +29,4 @@ def test_get_import_path_with_db_connection_decorator():
     func = db.connection_context()(discord_sync.get_import_path)
 
     assert hasattr(func, '__wrapped__')
-    assert discord_sync.get_import_path(func) == 'juniorguru.lib.discord_proc.get_import_path'
+    assert discord_sync.get_import_path(func) == 'juniorguru.lib.discord_sync.get_import_path'

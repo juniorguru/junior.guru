@@ -4,10 +4,10 @@ from operator import itemgetter
 
 import arrow
 
+from juniorguru.lib.mutations import mutations
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import google_sheets, loggers
 from juniorguru.lib.coupons import parse_coupon
-from juniorguru.lib.google_sheets import GOOGLE_SHEETS_MUTATIONS_ENABLED
 from juniorguru.lib.memberful import Memberful
 from juniorguru.models.base import db
 from juniorguru.models.club import (ClubSubscribedPeriod, ClubSubscribedPeriodCategory,
@@ -212,10 +212,12 @@ def main():
             })
 
     logger.info('Uploading subscriptions to Google Sheets')
-    if GOOGLE_SHEETS_MUTATIONS_ENABLED:
-        google_sheets.upload(google_sheets.get(DOC_KEY, 'subscriptions'), records)
-    else:
-        logger.warning('Google Sheets mutations not enabled')
+    upload_to_google_sheet(DOC_KEY, records)
+
+
+@mutations.mutates('google_sheets')
+def upload_to_google_sheet(doc_key, doc_records):
+    google_sheets.upload(google_sheets.get(doc_key, 'subscriptions'), doc_records)
 
 
 def account_admin_url(account_id):

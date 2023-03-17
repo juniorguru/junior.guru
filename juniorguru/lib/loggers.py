@@ -25,7 +25,7 @@ MUTED_LOGGERS = [
 
 
 class Logger(logging.Logger):
-    def __getitem__(self, name):
+    def __getitem__(self, name) -> logging.Logger:
         return self.getChild(name)
 
 
@@ -42,11 +42,11 @@ def configure():
     logging.root.addHandler(stderr)
 
 
-def get(name):
+def get(name) -> logging.Logger:
     return logging.getLogger(name)
 
 
-def from_path(path):
+def from_path(path) -> logging.Logger:
     relative_path = str(Path(path).relative_to(os.getcwd()))
     name = '.'.join(relative_path.removesuffix('.py').removesuffix('__init__').split('/'))
     return get(name)

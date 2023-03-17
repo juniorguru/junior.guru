@@ -8,6 +8,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.cli import command_name, import_commands
 from juniorguru.models.base import db
 from juniorguru.models.sync import Sync
+from juniorguru.lib.mutations import mutations
 
 
 try:
@@ -104,8 +105,16 @@ class Command(click.Command):
 @click.group(chain=True, cls=Group)
 @click.option('--id', envvar='CIRCLE_WORKFLOW_WORKSPACE_ID', default=perf_counter_ns)
 @click.option('--dependencies/--skip-dependencies', '--deps/--skip-deps', '--deps/--no-deps', 'deps', default=True)
+@click.option('--mutate', multiple=True)
+@click.option('--allow-mutations/--disallow-mutations', default=False)
 @click.pass_context
-def main(context, id, deps):
+def main(context, id, deps, mutate, allow_mutations):
+    if allow_mutations:
+        mutations.allow_all()
+    else:
+        for service_name in mutate:
+            mutations.allow(service_name)
+
     with db.connection_context():
         sync = Sync.start(id)
     context.obj = dict(sync=sync,
