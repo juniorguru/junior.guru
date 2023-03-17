@@ -49,7 +49,7 @@ async def discord_task(client):
         content = (
             f"📊 Milý Danieli, dne {yesterday:%A %-d.%-m.%Y} jsi napsal {daniel_content_size} písmenek včetně mezer. "
             f"Bylo to v {len(daniel_messages)} zprávách, v {len(daniel_channels)} různých kanálech ({len(daniel_threads)}, pokud rozlišuji vlákna). "
-            f"To je jako {daniel_content_size / 1800:.1f} normostran nebo "
+            f"To je jako {daniel_content_size / 1800:.1f} normostran."
             f"Honza tentýž den napsal {honza_content_size} písmenek, ale nikdy se to nedoví, protože tyhle zprávy posílám jen tobě. "
             f"\n:abc: {daniel_content_size} :speech_left: {len(daniel_messages)} :discordthread: {len(daniel_threads)} "
         )
