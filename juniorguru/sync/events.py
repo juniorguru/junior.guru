@@ -206,7 +206,7 @@ async def post_next_event_messages(client):
 @db.connection_context()
 async def sync_scheduled_events(client):
     discord_events = {arrow.get(e.start_time).naive: e
-                      for e in client.juniorguru_guild.scheduled_events}
+                      for e in client.club_guild.scheduled_events}
     channel = await client.fetch_channel(EVENTS_CHANNEL)
     for event in Event.planned_listing():
         discord_event = discord_events.get(event.start_at)
@@ -220,7 +220,7 @@ async def sync_scheduled_events(client):
             )
         else:
             logger.info(f"Creating Discord event for '{event.title}'")
-            discord_event = await client.juniorguru_guild.create_scheduled_event(
+            discord_event = await client.club_guild.create_scheduled_event(
                 name=f'{event.bio_name}: {event.title}',
                 description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
                 start_time=event.start_at,

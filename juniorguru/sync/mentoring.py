@@ -58,7 +58,7 @@ async def discord_task(client):
     logger.info('Syncing mentors')
     for mentor in mentors:
         try:
-            discord_member = await client.juniorguru_guild.fetch_member(mentor.user.id)
+            discord_member = await client.club_guild.fetch_member(mentor.user.id)
         except NotFound:
             logger.error(f"Not a member! #{mentor.id} ({mentor.name} from {mentor.company})")
             continue

@@ -54,8 +54,8 @@ def test_get_roles(member_or_user, expected):
 @pytest.mark.parametrize('message, expected', [
     (StubMessage(StubMember(123), 'Hello!'), False),
     (StubMessage(StubMember(123), '💡 Hello!'), False),
-    (StubMessage(StubMember(club.JUNIORGURU_BOT), 'Hello!'), False),
-    (StubMessage(StubMember(club.JUNIORGURU_BOT), '💡 Hello!'), True),
+    (StubMessage(StubMember(club.CLUB_BOT), 'Hello!'), False),
+    (StubMessage(StubMember(club.CLUB_BOT), '💡 Hello!'), True),
 ])
 def test_is_message_bot_reminder(message, expected):
     assert club.is_message_bot_reminder(message) is expected

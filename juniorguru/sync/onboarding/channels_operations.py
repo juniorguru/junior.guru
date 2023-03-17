@@ -4,7 +4,7 @@ import discord
 from slugify import slugify
 
 from juniorguru.lib import loggers
-from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, JUNIORGURU_BOT
+from juniorguru.lib.club import DISCORD_MUTATIONS_ENABLED, CLUB_BOT
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.onboarding.categories import manage_category
 
@@ -47,10 +47,10 @@ async def create_onboarding_channel(client, member):
     channel_data = await prepare_onboarding_channel_data(client, member)
     if DISCORD_MUTATIONS_ENABLED:
         async def create_channel(category):
-            channel = await client.juniorguru_guild.create_text_channel(category=category, **channel_data)
+            channel = await client.club_guild.create_text_channel(category=category, **channel_data)
             member.onboarding_channel_id = channel.id
             member.save()
-        await manage_category(client.juniorguru_guild, create_channel)
+        await manage_category(client.club_guild, create_channel)
     else:
         logger_c.warning('Discord mutations not enabled')
 
@@ -82,14 +82,14 @@ async def close_onboarding_channel(client, channel):
 async def prepare_onboarding_channel_data(client, member):
     name = f'{slugify(member.display_name, allow_unicode=True)}-tipy'
     topic = f'Soukromý kanál s tipy jen pro tebe! 🦸 {member.display_name} #{member.id}'
-    onboarding_role = [role for role in client.juniorguru_guild.roles if role.id == ONBOARDING_ROLE][0]
+    onboarding_role = [role for role in client.club_guild.roles if role.id == ONBOARDING_ROLE][0]
     overwrites = {
         # don't have access: @everyone
-        client.juniorguru_guild.default_role: discord.PermissionOverwrite(read_messages=False),
+        client.club_guild.default_role: discord.PermissionOverwrite(read_messages=False),
 
         # have access: onboarded member, people who onboard members, bot
         (await client.get_or_fetch_user(member.id)): discord.PermissionOverwrite(read_messages=True),
         onboarding_role: discord.PermissionOverwrite(read_messages=True),
-        (await client.get_or_fetch_user(JUNIORGURU_BOT)): discord.PermissionOverwrite(read_messages=True),
+        (await client.get_or_fetch_user(CLUB_BOT)): discord.PermissionOverwrite(read_messages=True),
     }
     return dict(name=name, topic=topic, overwrites=overwrites)

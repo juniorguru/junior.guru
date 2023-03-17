@@ -32,7 +32,7 @@ def main():
 async def discord_task(client):
     since_at = datetime.now(timezone.utc) - timedelta(days=JOBS_REPEATING_PERIOD_DAYS)
     logger.info(f'Figuring out which jobs are not yet in the channel since {since_at}')
-    channel = await client.juniorguru_guild.fetch_channel(JOBS_CHANNEL)
+    channel = await client.club_guild.fetch_channel(JOBS_CHANNEL)
     urls = [get_effective_url(message) async for message
             in fetch_starting_messages(channel, after=since_at)]
     urls = frozenset(filter(None, urls))

@@ -21,7 +21,7 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    member = await client.juniorguru_guild.fetch_member(DANIELSRB)
+    member = await client.club_guild.fetch_member(DANIELSRB)
     if member.dm_channel:
         channel = member.dm_channel
     else:

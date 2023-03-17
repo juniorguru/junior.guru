@@ -55,7 +55,7 @@ async def discord_task(client):
     # Why sorting and enumeration? Citing docs: "The recommended and correct way
     # to compare for roles in the hierarchy is using the comparison operators on
     # the role objects themselves."
-    discord_roles = await client.juniorguru_guild.fetch_roles()
+    discord_roles = await client.club_guild.fetch_roles()
     documented_discord_roles = sorted([discord_role for discord_role
                                        in discord_roles
                                        if discord_role.id in yaml_records], reverse=True)
@@ -195,7 +195,7 @@ async def manage_partner_roles(client, discord_roles, partners):
     for role_name in roles_names_to_add:
         logger.info(f"Adding role '{role_name}'")
         color = Color.dark_grey() if role_name.startswith(PARTNER_ROLE_PREFIX) else Color.default()
-        await client.juniorguru_guild.create_role(name=role_name, color=color, mentionable=True)
+        await client.club_guild.create_role(name=role_name, color=color, mentionable=True)
 
     existing_roles = [role for role in discord_roles
                       if role.name.startswith((PARTNER_ROLE_PREFIX, STUDENT_ROLE_PREFIX))]
@@ -218,7 +218,7 @@ async def apply_changes(client, changes):
     # this function runs, manage_partner_roles makes changes to the list of roles. This
     # function applies all changes to members, including the partner/student ones.
     all_discord_roles = {discord_role.id: discord_role
-                         for discord_role in await client.juniorguru_guild.fetch_roles()}
+                         for discord_role in await client.club_guild.fetch_roles()}
 
     changes_by_members = {}
     for member_id, op, role_id in changes:
@@ -226,7 +226,7 @@ async def apply_changes(client, changes):
         changes_by_members[member_id][op].append(role_id)
 
     for member_id, changes in changes_by_members.items():
-        discord_member = await client.juniorguru_guild.fetch_member(member_id)
+        discord_member = await client.club_guild.fetch_member(member_id)
         if changes['add']:
             discord_roles = [all_discord_roles[role_id] for role_id in changes['add']]
             logger.debug(f'{discord_member.display_name}: adding {repr_roles(discord_roles)}')

@@ -9,7 +9,7 @@ from peewee import OperationalError
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.club import (CHANNELS_HISTORY_SINCE, DEFAULT_CHANNELS_HISTORY_SINCE,
-                                 EMOJI_PIN, JUNIORGURU_BOT, count_downvotes,
+                                 EMOJI_PIN, CLUB_BOT, count_downvotes,
                                  count_upvotes, emoji_name, fetch_messages,
                                  fetch_threads, get_roles, is_thread_after,
                                  run_discord_task)
@@ -71,18 +71,18 @@ async def discord_task(client):
     db.drop_tables([ClubMessage, ClubUser, ClubPinReaction])
     db.create_tables([ClubMessage, ClubUser, ClubPinReaction])
 
-    channels = (channel for channel  # or just juniorguru_guild.channels ???
-                in itertools.chain(client.juniorguru_guild.text_channels,
-                                   client.juniorguru_guild.voice_channels,
-                                   # TODO client.juniorguru_guild.stage_channels,
-                                   client.juniorguru_guild.forum_channels)
-                if channel.permissions_for(client.juniorguru_guild.me).read_messages)
+    channels = (channel for channel  # or just club_guild.channels ???
+                in itertools.chain(client.club_guild.text_channels,
+                                   client.club_guild.voice_channels,
+                                   # TODO client.club_guild.stage_channels,
+                                   client.club_guild.forum_channels)
+                if channel.permissions_for(client.club_guild.me).read_messages)
     authors = await process_channels(channels)
 
     logger_u = logger['users']
     logger_u.info('Looking for members without a single message')
     remaining_members = [member async for member
-                         in client.juniorguru_guild.fetch_members(limit=None)
+                         in client.club_guild.fetch_members(limit=None)
                          if member.id not in authors]
 
     logger_u.info(f'There are {len(remaining_members)} remaining members')
@@ -171,7 +171,7 @@ async def channel_worker(worker_no, authors, queue):
                                created_month=f'{message.created_at:%Y-%m}',
                                edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
                                author=authors[message.author.id],
-                               author_is_bot=message.author.id == JUNIORGURU_BOT,
+                               author_is_bot=message.author.id == CLUB_BOT,
                                channel_id=channel.id,
                                channel_name=channel.name,
                                parent_channel_id=parent_channel_id,

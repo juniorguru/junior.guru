@@ -21,7 +21,7 @@ def main(message_url, winners_count):
 
 
 async def discord_task(client, message_url, winners_count):
-    roles = await client.juniorguru_guild.fetch_roles()
+    roles = await client.club_guild.fetch_roles()
     role = [role for role in roles if role.id == ROLE][0]
     logger.info(f"Limiting winners to only those with role '{role.name}'")
 

@@ -44,7 +44,7 @@ def get_available_category(channels):
 
 async def create_enough_categories(client, max_channels_needed):
     categories = list(filter(is_onboarding_category,
-                             await client.juniorguru_guild.fetch_channels()))
+                             await client.club_guild.fetch_channels()))
     logger.info(f"Found {len(categories)} existing categories, maximum {max_channels_needed} channels will be needed")
     missing_categories_count = calc_missing_categories_count(len(categories), max_channels_needed)
     if missing_categories_count:
@@ -52,7 +52,7 @@ async def create_enough_categories(client, max_channels_needed):
         position = min([category.position for category in categories])
         if DISCORD_MUTATIONS_ENABLED:
             for _ in range(missing_categories_count):
-                await client.juniorguru_guild.create_category_channel(ONBOARDING_CATEGORY_NAME,                                                          position=position)
+                await client.club_guild.create_category_channel(ONBOARDING_CATEGORY_NAME,                                                          position=position)
         else:
             logger.warning('Discord mutations not enabled')
 
@@ -64,7 +64,7 @@ def calc_missing_categories_count(existing_categories_count, max_channels_needed
 
 async def delete_empty_categories(client):
     categories = (channel for channel
-                  in (await client.juniorguru_guild.fetch_channels())
+                  in (await client.club_guild.fetch_channels())
                   if is_onboarding_category(channel) and has_no_channels(channel))
     for category in categories:
         logger.info("Found onboarding category with no channels, deleting")

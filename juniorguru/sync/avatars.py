@@ -59,7 +59,7 @@ async def process_member(client, member):
     logger_m.info('Checking avatar')
     logger_m.debug(f"Name: {member.display_name}")
     try:
-        discord_member = await client.juniorguru_guild.fetch_member(member.id)
+        discord_member = await client.club_guild.fetch_member(member.id)
         if discord_member.avatar:
             logger_m.info("Has avatar, downloading")
             member.avatar_path = await download_avatar(discord_member.avatar)

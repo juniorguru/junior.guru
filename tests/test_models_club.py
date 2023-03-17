@@ -3,7 +3,7 @@ from datetime import date, datetime, timedelta
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.lib.club import INTRO_CHANNEL, JUNIORGURU_BOT
+from juniorguru.lib.club import INTRO_CHANNEL, CLUB_BOT
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
 
 
@@ -28,7 +28,7 @@ def create_message(id_, user, **kwargs):
     return ClubMessage.create(id=id_,
                               url=f'https://example.com/messages/{id_}',
                               author=user,
-                              author_is_bot=user.id == JUNIORGURU_BOT,
+                              author_is_bot=user.id == CLUB_BOT,
                               content=content,
                               content_size=len(content or ''),
                               upvotes_count=kwargs.get('upvotes_count', 0),
@@ -54,7 +54,7 @@ def db_connection():
 
 @pytest.fixture
 def juniorguru_bot():
-    return create_user(JUNIORGURU_BOT)
+    return create_user(CLUB_BOT)
 
 
 def test_message_listing_sort_from_the_oldest(db_connection):

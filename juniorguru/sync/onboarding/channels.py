@@ -32,7 +32,7 @@ async def manage_channels(client):
     beta_users_ids = await fetch_beta_users(client)
     logger.info(f'Found {len(beta_users_ids)} BETA volunteers')
 
-    moderators_role = [role for role in client.juniorguru_guild.roles if role.id == MODERATORS_ROLE][0]
+    moderators_role = [role for role in client.club_guild.roles if role.id == MODERATORS_ROLE][0]
     moderators_ids = [member.id for member in moderators_role.members]
     logger.info(f'Found {len(moderators_ids)} moderators')
 
@@ -42,7 +42,7 @@ async def manage_channels(client):
                    member.first_seen_on() > BETA_USERS_DATE)]
     logger.info(f'Onboarding {len(members)} members')
 
-    channels = list(filter(is_onboarding_channel, client.juniorguru_guild.channels))
+    channels = list(filter(is_onboarding_channel, client.club_guild.channels))
     logger.info(f"Managing {len(channels)} existing onboarding channels")
     await create_enough_categories(client, len(members) + len(channels))
     channels_operations = prepare_channels_operations(channels, members)
@@ -51,7 +51,7 @@ async def manage_channels(client):
 
 
 async def fetch_beta_users(client):
-    announcements_channel = await client.juniorguru_guild.fetch_channel(ANNOUNCEMENTS_CHANNEL)
+    announcements_channel = await client.club_guild.fetch_channel(ANNOUNCEMENTS_CHANNEL)
     beta_users_message = await announcements_channel.fetch_message(BETA_USERS_MESSAGE)
     beta_users_reaction = [reaction for reaction
                            in beta_users_message.reactions

@@ -15,7 +15,7 @@ DISCORD_MUTATIONS_ENABLED = bool(int(os.getenv('DISCORD_MUTATIONS_ENABLED', 0)))
 
 DISCORD_API_KEY = os.getenv('DISCORD_API_KEY') or None
 
-JUNIORGURU_GUILD = 769966886598737931
+CLUB_GUILD = 769966886598737931
 
 EMOJI_PIN = '📌'
 
@@ -28,7 +28,7 @@ EMOJI_DOWNVOTES = ['👎']
 
 EMOJI_PARTNER_INTRO = '👋'
 
-JUNIORGURU_BOT = 797097976571887687
+CLUB_BOT = 797097976571887687
 
 HONZAJAVOREK = 668226181769986078
 
@@ -98,10 +98,10 @@ STATS_EXCLUDE_CHANNELS = [
 logger = loggers.from_path(__file__)
 
 
-class BaseClient(discord.Client):
+class ClubClient(discord.Client):
     @property
-    def juniorguru_guild(self):
-        return self.get_guild(JUNIORGURU_GUILD)
+    def club_guild(self) -> discord.Guild:
+        return self.get_guild(CLUB_GUILD)
 
 
 def run_discord_task(import_path, *args):
@@ -130,7 +130,7 @@ def _discord_task(import_path, args):
     if not asyncio.iscoroutinefunction(task_fn):
         raise TypeError(f"Not async function: {task_fn.__qualname__} from {task_fn.__module__}")
 
-    class Client(BaseClient):
+    class Client(ClubClient):
         async def on_ready(self):
             await self.wait_until_ready()
             logger_dt.debug('Discord connection ready')
@@ -225,7 +225,7 @@ def parse_coupon(coupon):
 
 
 def is_message_bot_reminder(message):
-    return (message.author.id == JUNIORGURU_BOT and
+    return (message.author.id == CLUB_BOT and
             message.content and
             emoji.is_emoji(message.content[0]))
 

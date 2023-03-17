@@ -82,11 +82,11 @@ def backup(data_dir, backup_file, discord, discord_template):
 async def backup_discord_task(client, template_name):
     try:
         logger['backup'].info(f'Looking for template {template_name}')
-        template = [template for template in (await client.juniorguru_guild.templates())
+        template = [template for template in (await client.club_guild.templates())
                     if template.name == template_name][0]
     except IndexError:
         logger['backup'].warning(f'Not found! Creating template {template_name}')
-        await client.juniorguru_guild.create_template(name=template_name)
+        await client.club_guild.create_template(name=template_name)
     else:
         logger['backup'].info(f'Syncing template {template_name}')
         await template.sync()
