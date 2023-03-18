@@ -682,21 +682,6 @@ files = [
 dev = ["coverage", "coveralls", "pytest"]
 
 [[package]]
-name = "exceptiongroup"
-version = "1.1.1"
-description = "Backport of PEP 654 (exception groups)"
-category = "dev"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "exceptiongroup-1.1.1-py3-none-any.whl", hash = "sha256:232c37c63e4f682982c8b6459f33a8981039e5fb8756b2074364e5055c498c9e"},
-    {file = "exceptiongroup-1.1.1.tar.gz", hash = "sha256:d484c3090ba2889ae2928419117447a14daf3c1231d5e30d0aae34f354f01785"},
-]
-
-[package.extras]
-test = ["pytest (>=6)"]
-
-[[package]]
 name = "extruct"
 version = "0.14.0"
 description = "Extract embedded metadata from HTML markup"
@@ -1481,7 +1466,7 @@ version = "0.0.0"
 description = "A real-time, synchronous junior.guru Discord bot"
 category = "main"
 optional = false
-python-versions = "3.10.*"
+python-versions = "3.11.*"
 files = []
 develop = false
 
@@ -1493,7 +1478,7 @@ py-cord = "2.4.0"
 type = "git"
 url = "https://github.com/juniorguru/juniorguru-chick.git"
 reference = "HEAD"
-resolved_reference = "1207584d639ca1d076bfe5c8447d7215b7872980"
+resolved_reference = "91a828283511b4f79fceb90a69042c690dbbb538"
 
 [[package]]
 name = "langdetect"
@@ -2213,7 +2198,6 @@ aiohttp = [
     {version = "*", extras = ["speedups"], optional = true, markers = "extra == \"speed\""},
 ]
 orjson = {version = ">=3.5.4", optional = true, markers = "extra == \"speed\""}
-typing-extensions = {version = ">=4,<5", markers = "python_version < \"3.11\""}
 
 [package.extras]
 docs = ["furo", "myst-parser (==0.18.1)", "sphinx (==5.3.0)", "sphinx-autodoc-typehints (==1.22)", "sphinx-copybutton (==0.5.1)", "sphinxcontrib-trio (==1.1.2)", "sphinxcontrib-websupport (==1.2.4)", "sphinxext-opengraph (==0.8.1)"]
@@ -2485,11 +2469,9 @@ files = [
 [package.dependencies]
 attrs = ">=19.2.0"
 colorama = {version = "*", markers = "sys_platform == \"win32\""}
-exceptiongroup = {version = ">=1.0.0rc8", markers = "python_version < \"3.11\""}
 iniconfig = "*"
 packaging = "*"
 pluggy = ">=0.12,<2.0"
-tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
 
 [package.extras]
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
@@ -2968,18 +2950,6 @@ requests = ">=2.1.0"
 requests-file = ">=1.4"
 
 [[package]]
-name = "tomli"
-version = "2.0.1"
-description = "A lil' TOML parser"
-category = "dev"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
-    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
-]
-
-[[package]]
 name = "twisted"
 version = "22.10.0"
 description = "An asynchronous networking framework written in Python"
@@ -3334,5 +3304,5 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 
 [metadata]
 lock-version = "2.0"
-python-versions = "3.10.*"
-content-hash = "8f46e8e7795c8a217972ca3ecc6c9f0370544edbdc9867bb60987ca45ba25df4"
+python-versions = "3.11.*"
+content-hash = "4a4791c0544cc8fa48fe93289e749c2a2e603c792dffa5de8dfa19554fdec38a"
