@@ -48,7 +48,7 @@ jobs:
             poetry self update 1.4.0
       - run:
           name: Install Python dependencies
-          command: poetry install -vvv
+          command: poetry -vvv install
       - run:
           name: Install browser
           command: poetry run playwright install firefox
