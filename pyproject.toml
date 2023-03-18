@@ -49,16 +49,14 @@ mkdocs-gen-files = "0.4.0"
 mkdocs-awesome-pages-plugin = "2.8.0"
 juniorguru-chick = { git = "https://github.com/juniorguru/juniorguru-chick.git" }
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest = "7.2.2"
 pync = "2.0.3"
 flake8 = "6.0.0"
 isort = "5.12.0"
 sqlite-utils = "3.30"
 ghp-import = "2.1.0"
-
-[tool.poetry.group.dev.dependencies]
-pytest-asyncio = "^0.20.3"
+pytest-asyncio = "0.20.3"
 
 [tool.pytest.ini_options]
 python_files = "test_*.py *_test.py test.py"
@@ -80,5 +78,5 @@ extend_skip = ["__jobs_legacy__"]
 known_local_folder = ["testing_utils"]
 
 [build-system]
-requires = ["poetry-core>=1.4.0"]
+requires = ["poetry-core>=1.5.0"]
 build-backend = "poetry.core.masonry.api"
