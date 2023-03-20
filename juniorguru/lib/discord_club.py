@@ -72,13 +72,8 @@ class MutatingProxy:
 
 
 @contextmanager
-def mutating(*objects):
-    if not objects:
-        raise ValueError()
-    elif len(objects) == 1:
-        yield MutatingProxy(objects[0])
-    else:
-        yield [MutatingProxy(obj) for obj in objects]
+def mutating(object):
+    yield MutatingProxy(object)
 
 
 def emoji_name(reaction_emoji):
