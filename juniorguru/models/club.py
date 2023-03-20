@@ -1,7 +1,7 @@
 import math
 from collections import Counter
 from datetime import date, timedelta
-from enum import Enum, unique
+from enum import StrEnum, unique
 
 from emoji import is_emoji
 from peewee import (BooleanField, CharField, DateField, DateTimeField, ForeignKeyField,
@@ -274,13 +274,13 @@ class ClubPinReaction(BaseModel):
 
 
 @unique
-class ClubSubscribedPeriodIntervalUnit(str, Enum):
+class ClubSubscribedPeriodIntervalUnit(StrEnum):
     MONTHLY = 'month'
     YEARLY = 'year'
 
 
 @unique
-class ClubSubscribedPeriodCategory(str, Enum):
+class ClubSubscribedPeriodCategory(StrEnum):
     FREE = 'free'
     TEAM = 'team'
     FINAID = 'finaid'

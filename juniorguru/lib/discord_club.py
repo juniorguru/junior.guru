@@ -1,6 +1,6 @@
 import os
 from datetime import date, datetime, timedelta, timezone
-from enum import Enum, IntEnum, unique
+from enum import StrEnum, IntEnum, unique
 
 import discord
 import emoji
@@ -43,7 +43,7 @@ class ClubChannel(IntEnum):
     FUN_TOPICS = 1075038606881730570
 
 
-class ClubEmoji(str, Enum):
+class ClubEmoji(StrEnum):
     PIN = '📌'
     PARTNER_INTRO = '👋'
 
