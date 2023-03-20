@@ -1,15 +1,21 @@
 from functools import wraps
 
-from peewee import SqliteDatabase
-
 from juniorguru.lib import discord_sync
+from juniorguru.models.base import SqliteDatabase
 
 
 def test_get_import_path():
-    func = discord_sync.get_import_path
+    def sample_fn():
+        pass
 
-    assert not hasattr(func, '__wrapped__')
-    assert discord_sync.get_import_path(func) == 'juniorguru.lib.discord_sync.get_import_path'
+    assert discord_sync.get_import_path(sample_fn) == 'test_lib_discord_sync.sample_fn'
+
+
+def test_get_import_path_async():
+    async def sample_fn():
+        pass
+
+    assert discord_sync.get_import_path(sample_fn) == 'test_lib_discord_sync.sample_fn'
 
 
 def test_get_import_path_with_decorator():
@@ -18,15 +24,32 @@ def test_get_import_path_with_decorator():
         def wrapper(*args, **kwargs):
             return func(*args, **kwargs)
         return wrapper
-    func = decorator(discord_sync.get_import_path)
 
-    assert hasattr(func, '__wrapped__')
-    assert discord_sync.get_import_path(func) == 'juniorguru.lib.discord_sync.get_import_path'
+    @decorator
+    def sample_fn():
+        pass
+
+    assert hasattr(sample_fn, '__wrapped__')
+    assert discord_sync.get_import_path(sample_fn) == 'test_lib_discord_sync.sample_fn'
 
 
 def test_get_import_path_with_db_connection_decorator():
     db = SqliteDatabase(':memory:')
-    func = db.connection_context()(discord_sync.get_import_path)
 
-    assert hasattr(func, '__wrapped__')
-    assert discord_sync.get_import_path(func) == 'juniorguru.lib.discord_sync.get_import_path'
+    @db.connection_context()
+    def sample_fn():
+        pass
+
+    assert hasattr(sample_fn, '__wrapped__')
+    assert discord_sync.get_import_path(sample_fn) == 'test_lib_discord_sync.sample_fn'
+
+
+def test_get_import_path_with_db_connection_decorator_async():
+    db = SqliteDatabase(':memory:')
+
+    @db.connection_context()
+    async def sample_fn():
+        pass
+
+    assert hasattr(sample_fn, '__wrapped__')
+    assert discord_sync.get_import_path(sample_fn) == 'test_lib_discord_sync.sample_fn'

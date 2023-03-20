@@ -2,6 +2,7 @@ import asyncio
 import json
 from collections.abc import Set
 from pathlib import Path
+from functools import wraps
 
 import scrapy
 from peewee import (Check, ConnectionContext as BaseConnectionContext, Model,
@@ -21,6 +22,7 @@ class ConnectionContext(BaseConnectionContext):
     """Supports async functions when used as decorator"""
     def __call__(self, fn):
         if asyncio.iscoroutinefunction(fn):
+            @wraps(fn)
             async def wrapper(*args, **kwargs):
                 with self:
                     return (await fn(*args, **kwargs))
