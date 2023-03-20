@@ -2,8 +2,8 @@ from datetime import date, timedelta
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (DISCORD_MUTATIONS_ENABLED, ClubMember,
-                                         is_message_older_than)
+from juniorguru.lib.discord_club import ClubMember, is_message_older_than
+from juniorguru.lib.mutations import mutations
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
@@ -51,7 +51,9 @@ async def discord_task(client):
             f"\n:abc: {daniel_content_size} :speech_left: {len(daniel_messages)} <:discordthread:993580255287705681> {len(daniel_threads)} "
         )
         logger.debug(f'Sending: {content}')
-        if DISCORD_MUTATIONS_ENABLED:
-            await channel.send(content=content)
-        else:
-            logger.warning('Discord mutations not enabled')
+        await send(channel, content=content)
+
+
+@mutations.mutates('discord')
+async def send(channel, **data):
+    await channel.send(**data)
