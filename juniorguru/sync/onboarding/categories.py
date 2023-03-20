@@ -4,7 +4,7 @@ from operator import attrgetter
 import discord
 
 from juniorguru.lib import loggers
-from juniorguru.lib.discord_club import create_category, delete_channel
+from juniorguru.lib.discord_club import mutating
 
 
 ONBOARDING_CATEGORY_NAME = '👋 Tipy pro tebe'
@@ -51,7 +51,8 @@ async def create_enough_categories(client, max_channels_needed):
         logger.info(f"Creating {missing_categories_count} categories to have enough of them even for the worst case scenario")
         position = min([category.position for category in categories])
         for _ in range(missing_categories_count):
-            await create_category(client.club_guild, ONBOARDING_CATEGORY_NAME, position=position)
+            with mutating(client.club_guild) as guild:
+                await guild.create_category_channel(ONBOARDING_CATEGORY_NAME, position=position)
 
 
 def calc_missing_categories_count(existing_categories_count, max_channels_needed):
@@ -65,7 +66,8 @@ async def delete_empty_categories(client):
                   if is_onboarding_category(channel) and has_no_channels(channel))
     for category in categories:
         logger.info("Found onboarding category with no channels, deleting")
-        await delete_channel(category)
+        with mutating(category) as category:
+            await category.delete()
 
 
 def is_onboarding_category(channel):

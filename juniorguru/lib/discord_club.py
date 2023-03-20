@@ -1,6 +1,7 @@
 import asyncio
 from datetime import date, datetime, timedelta, timezone
 from enum import IntEnum, StrEnum, unique
+from contextlib import contextmanager
 
 import discord
 import emoji
@@ -52,6 +53,32 @@ class ClubClient(discord.Client):
     @property
     def club_guild(self) -> discord.Guild:
         return self.get_guild(CLUB_GUILD)
+
+
+class MutatingProxy:
+    reading = {'fetch_', 'get_', 'is_'}
+    writing = {'add_', 'create_', 'delete_', 'edit_',
+               'delete', 'edit', 'send', 'purge'}
+
+    def __init__(self, object):
+        self.object = object
+
+    def __getattr__(self, attr):
+        if attr.startswith(tuple(self.reading)):
+            return getattr(self.object, attr)
+        if attr.startswith(tuple(self.writing)):
+            return mutations.mutation('discord', getattr(self.object, attr))
+        raise NotImplementedError(f"Not sure what to do with attribute {attr!r}")
+
+
+@contextmanager
+def mutating(*objects):
+    if not objects:
+        raise ValueError()
+    elif len(objects) == 1:
+        yield MutatingProxy(objects[0])
+    else:
+        yield [MutatingProxy(obj) for obj in objects]
 
 
 def emoji_name(reaction_emoji):
@@ -120,53 +147,13 @@ def is_thread_after(thread, after=None):
 
 
 @mutations.mutates('discord')
-async def send_message(channel, *args, **kwargs):
-    return await channel.send(*args, **kwargs)
-
-
-@mutations.mutates('discord')
-async def edit_message(message, *args, **kwargs):
-    return await message.edit(*args, **kwargs)
-
-
-@mutations.mutates('discord')
-async def delete_message(message, *args, **kwargs):
-    return await message.delete(*args, **kwargs)
-
-
-@mutations.mutates('discord')
-async def create_thread(message, *args, **kwargs):
-    return await message.create_thread(*args, **kwargs)
-
-
-@mutations.mutates('discord')
 async def add_members(thread, members):
     await asyncio.gather(*[thread.add_user(member) for member in members])
 
 
-@mutations.mutates('discord')
-async def create_category(guild, *args, **kwargs):
-    return await guild.create_category(*args, **kwargs)
-
-
-@mutations.mutates('discord')
-async def create_text_channel(guild, *args, **kwargs):
-    return await guild.create_text_channel(*args, **kwargs)
-
-
-@mutations.mutates('discord')
-async def edit_channel(channel, *args, **kwargs):
-    return await channel.edit(*args, **kwargs)
-
-
-@mutations.mutates('discord')
-async def purge_channel(channel, *args, **kwargs):
-    return await channel.purge(*args, **kwargs)
-
-
-@mutations.mutates('discord')
-async def delete_channel(channel, *args, **kwargs):
-    return await channel.delete(*args, **kwargs)
+# @mutations.mutates('discord')
+# async def create_text_channel(guild, *args, **kwargs):
+#     return await guild.create_text_channel(*args, **kwargs)
 
 
 @mutations.mutates('discord')
@@ -187,6 +174,7 @@ async def add_reactions(message, emojis, ordered=False):
             raise e
 
 
+@mutations.mutates('discord')
 async def add_reaction(message, emoji):
     await add_reactions(message, [emoji], ordered=True)
 
@@ -200,28 +188,3 @@ def get_reaction(reactions, emoji):
         if emoji_name(reaction.emoji) == emoji:
             return reaction
     return None
-
-
-@mutations.mutates('discord')
-async def create_event(guild, *args, **kwargs):
-    return await guild.create_scheduled_event(*args, **kwargs)
-
-
-@mutations.mutates('discord')
-async def edit_event(event, *args, **kwargs):
-    return await event.edit(*args, **kwargs)
-
-
-@mutations.mutates('discord')
-async def create_role(guild, *args, **kwargs):
-    return await guild.create_role(*args, **kwargs)
-
-
-@mutations.mutates('discord')
-async def add_roles(member, *args, **kwargs):
-    return await member.add_roles(*args, **kwargs)
-
-
-@mutations.mutates('discord')
-async def remove_roles(member, *args, **kwargs):
-    return await member.remove_roles(*args, **kwargs)

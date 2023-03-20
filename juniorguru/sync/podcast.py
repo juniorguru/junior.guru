@@ -11,7 +11,7 @@ from strictyaml import Int, Map, Optional, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubChannel, ClubMember, send_message
+from juniorguru.lib.discord_club import ClubChannel, ClubMember, mutating
 from juniorguru.lib.images import is_image, render_image_file, validate_image
 from juniorguru.lib.template_filters import icon
 from juniorguru.lib.yaml import Date
@@ -209,10 +209,10 @@ async def discord_task(client):
                         ui.Button(emoji='<:appleinc:842465215718227987>',
                                     label='Apple',
                                     url='https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549'))
-        await send_message(channel,
-                           content=content,
-                           embeds=[description_embed, details_embed],
-                           files=[poster_file],
-                           view=view)
+        with mutating(channel) as channel:
+            await channel.send(content=content,
+                               embeds=[description_embed, details_embed],
+                               files=[poster_file],
+                               view=view)
     else:
         logger.info(f'Looks like {last_episode!r} has been already announced')

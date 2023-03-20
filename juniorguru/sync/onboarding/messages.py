@@ -6,8 +6,8 @@ import discord
 
 from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
-from juniorguru.lib.discord_club import (add_reaction, edit_message, get_reaction,
-                                         send_message)
+from juniorguru.lib.discord_club import (add_reaction, get_reaction,
+                                         mutating)
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.sync.onboarding.scheduled_messages import (ALLOWED_MENTIONS,
                                                            SCHEDULED_MESSAGES)
@@ -50,14 +50,17 @@ async def send_messages_to_member(client, member):
             logger_m.debug(f'Editing message {message_content[0]}: {len(message_content)} characters')
             discord_message = await channel.fetch_message(message_id)
             message_data = await create_message_data(client, member, message_content)
-            await edit_message(discord_message, **message_data)
-            if not get_reaction(discord_message.reactions, EMOJI_UNREAD):
-                await add_reaction(discord_message, EMOJI_UNREAD)
+            with mutating(discord_message) as discord_message:
+                await discord_message.edit(**message_data)
+                if not get_reaction(discord_message.reactions, EMOJI_UNREAD):
+                    await add_reaction(discord_message, EMOJI_UNREAD)
         else:
             logger_m.debug(f'Sending message {message_content[0]}: {len(message_content)} characters')
             message_data = await create_message_data(client, member, message_content)
-            discord_message = await send_message(channel, **message_data)
-            await add_reaction(discord_message, EMOJI_UNREAD)
+            with mutating(channel) as channel:
+                discord_message = await channel.send(**message_data)
+            with mutating(discord_message) as discord_message:
+                await add_reaction(discord_message, EMOJI_UNREAD)
 
 
 async def create_message_data(client, member, content):

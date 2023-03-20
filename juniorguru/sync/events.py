@@ -7,8 +7,7 @@ from strictyaml import CommaSeparated, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (ClubChannel, create_event, edit_event,
-                                         send_message)
+from juniorguru.lib.discord_club import (ClubChannel, mutating)
 from juniorguru.lib.images import is_image, render_image_file, validate_image
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.lib.yaml import Date
@@ -16,6 +15,7 @@ from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.partner import Partner
+from juniorguru.lib.mutations import MutationsNotAllowed
 
 
 logger = loggers.from_path(__file__)
@@ -131,26 +131,27 @@ async def sync_scheduled_events(client):
         discord_event = discord_events.get(event.start_at)
         if discord_event:
             logger.info(f"Discord event for '{event.title}' already exists, updating")
-            discord_event = await edit_event(
-                discord_event,
-                name=f'{event.bio_name}: {event.title}',
-                description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
-                end_time=event.end_at,
-                cover=(IMAGES_DIR / event.poster_dc_path).read_bytes(),
-            )
+            with mutating(discord_event) as discord_event:
+                discord_event = await discord_event.edit(
+                    name=f'{event.bio_name}: {event.title}',
+                    description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
+                    end_time=event.end_at,
+                    cover=(IMAGES_DIR / event.poster_dc_path).read_bytes(),
+                )
         else:
             logger.info(f"Creating Discord event for '{event.title}'")
-            discord_event = await create_event(
-                client.club_guild,
-                name=f'{event.bio_name}: {event.title}',
-                description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
-                start_time=event.start_at,
-                end_time=event.end_at,
-                location=channel,
-            )
-        event.discord_id = discord_event.id
-        event.discord_url = discord_event.url
-        event.save()
+            with mutating(client.club_guild) as guild:
+                discord_event = await guild.create_scheduled_event(
+                    name=f'{event.bio_name}: {event.title}',
+                    description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
+                    start_time=event.start_at,
+                    end_time=event.end_at,
+                    location=channel,
+                )
+        if discord_event is not MutationsNotAllowed:
+            event.discord_id = discord_event.id
+            event.discord_url = discord_event.url
+            event.save()
 
 
 @db.connection_context()
@@ -173,7 +174,8 @@ async def post_next_event_messages(client):
         else:
             logger.info("Found no message, posting!")
             content = f"🗓 Už **za týden** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
-            await send_message(announcements_channel, content)
+            with mutating(announcements_channel) as channel:
+                await channel.send(content)
     else:
         logger.info("It's not 7 days prior to the event")
 
@@ -185,7 +187,8 @@ async def post_next_event_messages(client):
         else:
             logger.info("Found no message, posting!")
             content = f"🤩 Už **zítra v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
-            await send_message(announcements_channel, content)
+            with mutating(announcements_channel) as channel:
+                await channel.send(content)
     else:
         logger.info("It's not 1 day prior to the event")
 
@@ -197,7 +200,8 @@ async def post_next_event_messages(client):
         else:
             logger.info("Found no message, posting!")
             content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! Odehrávat se to bude v {events_channel.mention}, dotazy jde pokládat v tamním chatu 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.discord_url}"
-            await send_message(announcements_channel, content)
+            with mutating(announcements_channel) as channel:
+                await channel.send(content)
     else:
         logger.info("It's not the day when the event is")
 
@@ -224,7 +228,8 @@ async def post_next_event_messages(client):
     #             "",
     #             f"👉 {event.url}",
     #         ]
-    #         await send_message(events_channel, '\n'.join(content))
+    #         with mutating(events_channel) as channel:
+    #             await channel.send('\n'.join(content))
     # else:
     #     logger.info("It's not the day when the event is")
 

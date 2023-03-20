@@ -5,11 +5,11 @@ from strictyaml import Bool, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (ClubChannel, delete_message, edit_message,
-                                         send_message)
+from juniorguru.lib.discord_club import (ClubChannel, mutating)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.mentor import Mentor
+from juniorguru.lib.mutations import MutationsNotAllowed
 
 
 MENTOR_EMOJI = '💁'
@@ -69,7 +69,8 @@ async def discord_task(client):
             messages_trash.remove(message)
             logger.info(f"Editing existing message for mentor {mentor.name}")
             discord_message = await discord_channel.fetch_message(message.id)
-            await edit_message(discord_message, **mentor_params)
+            with mutating(discord_message) as discord_message:
+                await discord_message.edit(**mentor_params)
             mentor.message_url = message.url
             mentor.save()
         else:
@@ -78,12 +79,15 @@ async def discord_task(client):
                 logger.info("Deleting info message")
                 messages_trash.remove(info_message)
                 info_discord_message = await discord_channel.fetch_message(info_message.id)
-                await delete_message(info_discord_message)
+                with mutating(info_discord_message) as info_discord_message:
+                    await info_discord_message.delete()
                 info_message.delete_instance()
                 info_message = None
-            discord_message = await send_message(discord_channel, **mentor_params)
-            mentor.message_url = discord_message.jump_url
-            mentor.save()
+            with mutating(discord_channel) as discord_channel:
+                discord_message = await discord_channel.send(**mentor_params)
+            if discord_message is not MutationsNotAllowed:
+                mentor.message_url = discord_message.jump_url
+                mentor.save()
 
     logger.info('Syncing info')
     info_content = f'{INFO_EMOJI} Co to tady je? Jak to funguje?'
@@ -111,17 +115,20 @@ async def discord_task(client):
         messages_trash.remove(info_message)
         logger.info("Editing info message")
         discord_message = await discord_channel.fetch_message(info_message.id)
-        await edit_message(discord_message, **info_params)
+        with mutating(discord_message) as discord_message:
+            await discord_message.edit(**info_params)
     else:
         logger.info("Creating new info message")
-        await send_message(discord_channel, **info_params)
+        with mutating(discord_channel) as discord_channel:
+            await discord_channel.send(**info_params)
 
     logger.info('Deleting extraneous messages')
     for message in messages_trash:
         logger.debug(f'Deleting message #{message.id}: {message.content[:10]}…')
         try:
             discord_message = await discord_channel.fetch_message(message.id)
-            await delete_message(discord_message)
+            with mutating(discord_message) as discord_message:
+                await discord_message.delete()
             message.delete_instance()
         except:
             logger.error(f'Could not delete message #{message.id}: {message.content[:10]}…')

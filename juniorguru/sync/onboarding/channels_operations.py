@@ -4,10 +4,10 @@ import discord
 from slugify import slugify
 
 from juniorguru.lib import loggers
-from juniorguru.lib.discord_club import (ClubMember, create_text_channel,
-                                         delete_channel, edit_channel)
+from juniorguru.lib.discord_club import (ClubMember, mutating)
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.onboarding.categories import manage_category
+from juniorguru.lib.mutations import MutationsNotAllowed
 
 
 TODAY = date.today()
@@ -33,7 +33,8 @@ async def update_onboarding_channel(client, member, channel):
     logger_c = logger[f'channels.{channel.id}']
     logger_c.info(f"Updating (member #{member.id})")
     channel_data = await prepare_onboarding_channel_data(client, member)
-    await edit_channel(channel, **channel_data)
+    with mutating(channel) as channel:
+        await channel.edit(**channel_data)
     member.onboarding_channel_id = channel.id
     member.save()
 
@@ -44,9 +45,11 @@ async def create_onboarding_channel(client, member):
     logger_c.info(f"Creating (member #{member.id})")
     channel_data = await prepare_onboarding_channel_data(client, member)
     async def create_channel(category):
-        channel = await create_text_channel(client.club_guild, category=category, **channel_data)
-        member.onboarding_channel_id = channel.id
-        member.save()
+        with mutating(client.club_guild) as guild:
+            channel = await guild.create_text_channel(category=category, **channel_data)
+        if channel is not MutationsNotAllowed:
+            member.onboarding_channel_id = channel.id
+            member.save()
     await manage_category(client.club_guild, create_channel)
 
 
@@ -54,7 +57,8 @@ async def create_onboarding_channel(client, member):
 async def delete_onboarding_channel(client, channel):
     logger_c = logger[f'channels.{channel.id}']
     logger_c.info("Deleting")
-    await delete_channel(channel)
+    with mutating(channel) as channel:
+        await channel.delete()
 
 
 @channels_operation('close')
@@ -66,7 +70,8 @@ async def close_onboarding_channel(client, channel):
     if current_period < CHANNEL_DELETE_TIMEOUT:
         logger_c.warning(f"Waiting before deleting. Last message {last_message_on}, currently {current_period.days} days, timeout {CHANNEL_DELETE_TIMEOUT.days} days")
     else:
-        await delete_channel(channel)
+        with mutating(channel) as channel:
+            await channel.delete()
 
 
 async def prepare_onboarding_channel_data(client, member):

@@ -1,4 +1,3 @@
-import asyncio
 import inspect
 from enum import Enum, auto
 
@@ -13,6 +12,10 @@ class Services(Enum):
     GOOGLE_SHEETS = auto()
     FAKTUROID = auto()
     MEMBERFUL = auto()
+
+
+class MutationsNotAllowed:
+    pass
 
 
 class Mutations:
@@ -39,10 +42,10 @@ class Mutations:
 
         def sync_warn(*args, **kwargs):
             logger[service_name.lower()].warning('Not allowed')
+            return MutationsNotAllowed
 
         async def async_warn(*args, **kwargs):
-            sync_warn()
-            return await asyncio.sleep(0)
+            return sync_warn()
 
         return async_warn if inspect.iscoroutinefunction(fn) else sync_warn
 

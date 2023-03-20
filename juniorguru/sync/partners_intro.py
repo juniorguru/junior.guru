@@ -8,7 +8,7 @@ from jinja2 import Template
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import (ClubChannel, ClubEmoji, add_reactions,
-                                         is_message_over_period_ago, send_message)
+                                         is_message_over_period_ago, mutating)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.partner import Partner
@@ -78,8 +78,10 @@ async def discord_task(client):
                           style=ButtonStyle.secondary)
             ]
             channel = await client.fetch_channel(ClubChannel.INTRO)
-            message = await send_message(channel, content=content, embed=embed, file=file, view=ui.View(*buttons))
-            await add_reactions(message, BOT_REACTIONS)
+            with mutating(channel) as channel:
+                message = await channel.send(content=content, embed=embed, file=file, view=ui.View(*buttons))
+            with mutating(message) as message:
+                await add_reactions(message, BOT_REACTIONS)
         else:
             logger.info('No partners to announce')
     else:

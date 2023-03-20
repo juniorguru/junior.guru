@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.lib.mutations import Mutations
+from juniorguru.lib.mutations import Mutations, MutationsNotAllowed
 
 
 def test_mutations_mutation():
@@ -17,7 +17,7 @@ def test_mutations_mutation():
     discord_fn = mutations.mutation('discord', discord)
     discord_val = discord_fn()
 
-    assert fakturoid_val is None
+    assert fakturoid_val is MutationsNotAllowed
     assert discord_val == 2
 
 
@@ -36,7 +36,7 @@ async def test_mutations_mutation_async():
     discord_fn = mutations.mutation('discord', discord)
     discord_val = await discord_fn()
 
-    assert fakturoid_val is None
+    assert fakturoid_val is MutationsNotAllowed
     assert discord_val == 2
 
 
