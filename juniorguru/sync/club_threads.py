@@ -1,6 +1,6 @@
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import edit_channel
+from juniorguru.lib.discord_club import mutating
 from juniorguru.models.base import db
 
 
@@ -24,4 +24,5 @@ async def discord_task(client):
                     and channel.permissions_for(client.club_guild.me).read_messages))
     for channel in channels:
         logger.warning(f'Threads in #{channel.name} auto archive after {channel.default_auto_archive_duration / 60 / 24:.0f} day(s), setting to {DEFAULT_AUTO_ARCHIVE_DURATION / 60 / 24:.0f}')
-        await edit_channel(channel, default_auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION)
+        with mutating(channel) as channel:
+            await channel.edit(default_auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION)
