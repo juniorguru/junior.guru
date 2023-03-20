@@ -229,13 +229,13 @@ async def apply_changes(client, changes):
         if changes['add']:
             discord_roles = [all_discord_roles[role_id] for role_id in changes['add']]
             logger.debug(f'{discord_member.display_name}: adding {repr_roles(discord_roles)}')
-            with mutating(discord_member) as discord_member:
-                await discord_member.add_roles(*discord_roles)
+            with mutating(discord_member) as discord_member_proxy:
+                await discord_member_proxy.add_roles(*discord_roles)
         if changes['remove']:
             discord_roles = [all_discord_roles[role_id] for role_id in changes['remove']]
             logger.debug(f'{discord_member.display_name}: removing {repr_roles(discord_roles)}')
-            with mutating(discord_member) as discord_member:
-                await discord_member.remove_roles(*discord_roles)
+            with mutating(discord_member) as discord_member_proxy:
+                await discord_member_proxy.remove_roles(*discord_roles)
 
         member = ClubUser.get_by_id(member_id)
         member.updated_roles = get_roles(discord_member)

@@ -57,7 +57,7 @@ class ClubClient(discord.Client):
 
 class MutatingProxy:
     reading = {'fetch_', 'get_', 'is_'}
-    writing = {'add_', 'create_', 'delete_', 'edit_',
+    writing = {'add_', 'create_', 'delete_', 'edit_', 'remove_',
                'delete', 'edit', 'send', 'purge'}
 
     def __init__(self, object):
