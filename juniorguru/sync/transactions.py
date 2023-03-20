@@ -150,7 +150,7 @@ def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_
 
     logger.info(f'Toggling {len(todos_to_toggle)} Fakturoid todos')
     for todo in todos_to_toggle.values():
-        toggle_fakturoid_todo(fakturoid_api_base_url, fakturoid_api_kwargs, todos_to_toggle)
+        toggle_fakturoid_todo(fakturoid_api_base_url, fakturoid_api_kwargs, todo)
 
 
 @mutations.mutates('google_sheets')
