@@ -1,8 +1,8 @@
 import asyncio
 import json
 from collections.abc import Set
-from pathlib import Path
 from functools import wraps
+from pathlib import Path
 
 import scrapy
 from peewee import (Check, ConnectionContext as BaseConnectionContext, Model,
