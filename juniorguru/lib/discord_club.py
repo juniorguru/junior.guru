@@ -1,6 +1,6 @@
 import os
 from datetime import date, datetime, timedelta, timezone
-from enum import StrEnum, IntEnum, unique
+from enum import IntEnum, StrEnum, unique
 
 import discord
 import emoji
