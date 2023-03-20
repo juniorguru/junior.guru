@@ -6,8 +6,7 @@ import discord
 
 from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
-from juniorguru.lib.discord_club import (add_reaction, get_reaction,
-                                         mutating)
+from juniorguru.lib.discord_club import add_reaction, get_reaction, mutating
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.sync.onboarding.scheduled_messages import (ALLOWED_MENTIONS,
                                                            SCHEDULED_MESSAGES)

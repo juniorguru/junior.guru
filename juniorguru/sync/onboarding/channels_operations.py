@@ -4,10 +4,10 @@ import discord
 from slugify import slugify
 
 from juniorguru.lib import loggers
-from juniorguru.lib.discord_club import (ClubMember, mutating)
+from juniorguru.lib.discord_club import ClubMember, mutating
+from juniorguru.lib.mutations import MutationsNotAllowed
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.onboarding.categories import manage_category
-from juniorguru.lib.mutations import MutationsNotAllowed
 
 
 TODAY = date.today()

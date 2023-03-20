@@ -1,7 +1,7 @@
 import asyncio
+from contextlib import contextmanager
 from datetime import date, datetime, timedelta, timezone
 from enum import IntEnum, StrEnum, unique
-from contextlib import contextmanager
 
 import discord
 import emoji
@@ -149,11 +149,6 @@ def is_thread_after(thread, after=None):
 @mutations.mutates('discord')
 async def add_members(thread, members):
     await asyncio.gather(*[thread.add_user(member) for member in members])
-
-
-# @mutations.mutates('discord')
-# async def create_text_channel(guild, *args, **kwargs):
-#     return await guild.create_text_channel(*args, **kwargs)
 
 
 @mutations.mutates('discord')

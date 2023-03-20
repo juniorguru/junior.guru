@@ -5,11 +5,11 @@ from strictyaml import Bool, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (ClubChannel, mutating)
+from juniorguru.lib.discord_club import ClubChannel, mutating
+from juniorguru.lib.mutations import MutationsNotAllowed
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.mentor import Mentor
-from juniorguru.lib.mutations import MutationsNotAllowed
 
 
 MENTOR_EMOJI = '💁'
