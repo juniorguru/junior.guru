@@ -5,7 +5,7 @@ from discord import Embed
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (DISCORD_MUTATIONS_ENABLED, ClubChannel,
+from juniorguru.lib.discord_club import (send_message, ClubChannel,
                                          is_message_older_than)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -37,25 +37,23 @@ async def discord_task(client):
         for n, message in enumerate(messages, start=1):
             logger.info(f"Digest #{n}: {message.upvotes_count} votes for {message.author.display_name} in #{message.channel_name}, {message.url}")
 
-        if DISCORD_MUTATIONS_ENABLED:
-            content = [
-                f"🔥 **{DIGEST_LIMIT} nej příspěvků za uplynulý týden (od {since_date:%-d.%-m.})**",
+        content = [
+            f"🔥 **{DIGEST_LIMIT} nej příspěvků za uplynulý týden (od {since_date:%-d.%-m.})**",
+            "",
+            "Pokud je něco zajímavé nebo ti to pomohlo, dej tomu palec 👍, srdíčko ❤️, očička 👀, apod. Oceníš autory a pomůžeš tomu, aby se příspěvek mohl objevit i tady. Někomu, kdo nemá čas procházet všechno, co se v klubu napíše, se může tento přehled hodit.",
+        ]
+        embed_description = []
+        for message in messages:
+            if message.channel_id == message.parent_channel_id:
+                channel_mention = f'<#{message.parent_channel_id}>'
+            else:
+                channel_mention = f'„{message.channel_name}” (<#{message.parent_channel_id}>)'
+            embed_description += [
+                f"{message.upvotes_count}× láska pro **{message.author.display_name}** v {channel_mention}:",
+                f"> {textwrap.shorten(message.content, 200, placeholder='…')}",
+                f"[Hop na příspěvek]({message.url})",
                 "",
-                "Pokud je něco zajímavé nebo ti to pomohlo, dej tomu palec 👍, srdíčko ❤️, očička 👀, apod. Oceníš autory a pomůžeš tomu, aby se příspěvek mohl objevit i tady. Někomu, kdo nemá čas procházet všechno, co se v klubu napíše, se může tento přehled hodit.",
             ]
-            embed_description = []
-            for message in messages:
-                if message.channel_id == message.parent_channel_id:
-                    channel_mention = f'<#{message.parent_channel_id}>'
-                else:
-                    channel_mention = f'„{message.channel_name}” (<#{message.parent_channel_id}>)'
-                embed_description += [
-                    f"{message.upvotes_count}× láska pro **{message.author.display_name}** v {channel_mention}:",
-                    f"> {textwrap.shorten(message.content, 200, placeholder='…')}",
-                    f"[Hop na příspěvek]({message.url})",
-                    "",
-                ]
-            await channel.send(content="\n".join(content),
-                                embed=Embed(description="\n".join(embed_description)))
-        else:
-            logger.warning('Discord mutations not enabled')
+        await send_message(channel,
+                           content="\n".join(content),
+                           embed=Embed(description="\n".join(embed_description)))

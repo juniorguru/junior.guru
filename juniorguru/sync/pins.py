@@ -6,9 +6,9 @@ from discord.errors import Forbidden
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import DISCORD_MUTATIONS_ENABLED
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubPinReaction
+from juniorguru.lib.discord_club import send_message
 
 
 logger = loggers.from_path(__file__)
@@ -45,23 +45,21 @@ async def process_pin_reaction(client, pin_reaction):
         return
 
     logger_p.debug(f"Not pinned for {member.display_name} #{member.id}, sending a message to DM")
-    if DISCORD_MUTATIONS_ENABLED:
-        content = (
-            '📌 Vidím špendlík! Ukládám ti příspěvek sem, do soukromé zprávy.'
-        )
-        embed_description = [
-            f"**{pin_reaction.message.author.display_name}** v kanálu „{pin_reaction.message.channel_name}”:",
-            f"> {textwrap.shorten(pin_reaction.message.content, 500, placeholder='…')}",
-            f"[Celý příspěvek]({pin_reaction.message.url})",
-            "",
-        ]
-        try:
-            await channel.send(content=content,
-                               embed=Embed(description="\n".join(embed_description)))
-        except Forbidden as e:
-            logger_p.error(str(e), exc_info=True)
-    else:
-        logger.warning('Discord mutations not enabled')
+    content = (
+        '📌 Vidím špendlík! Ukládám ti příspěvek sem, do soukromé zprávy.'
+    )
+    embed_description = [
+        f"**{pin_reaction.message.author.display_name}** v kanálu „{pin_reaction.message.channel_name}”:",
+        f"> {textwrap.shorten(pin_reaction.message.content, 500, placeholder='…')}",
+        f"[Celý příspěvek]({pin_reaction.message.url})",
+        "",
+    ]
+    try:
+        await send_message(channel,
+                           content=content,
+                           embed=Embed(description="\n".join(embed_description)))
+    except Forbidden as e:
+        logger_p.error(str(e), exc_info=True)
 
 
 async def is_pinned(message_url, channel):

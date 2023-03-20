@@ -5,7 +5,7 @@ from strictyaml import Bool, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import DISCORD_MUTATIONS_ENABLED, ClubChannel
+from juniorguru.lib.discord_club import edit_message, ClubChannel, delete_message, send_message
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.mentor import Mentor
@@ -67,28 +67,22 @@ async def discord_task(client):
         if message:
             messages_trash.remove(message)
             logger.info(f"Editing existing message for mentor {mentor.name}")
-            if DISCORD_MUTATIONS_ENABLED:
-                discord_message = await discord_channel.fetch_message(message.id)
-                await discord_message.edit(**mentor_params)
-            else:
-                logger.warning('Discord mutations not enabled')
+            discord_message = await discord_channel.fetch_message(message.id)
+            await edit_message(discord_message, **mentor_params)
             mentor.message_url = message.url
             mentor.save()
         else:
             logger.info(f"Creating a new message for mentor {mentor.name}")
-            if DISCORD_MUTATIONS_ENABLED:
-                if info_message:
-                    logger.info("Deleting info message")
-                    messages_trash.remove(info_message)
-                    info_discord_message = await discord_channel.fetch_message(info_message.id)
-                    await info_discord_message.delete()
-                    info_message.delete_instance()
-                    info_message = None
-                discord_message = await discord_channel.send(**mentor_params)
-                mentor.message_url = discord_message.jump_url
-                mentor.save()
-            else:
-                logger.warning('Discord mutations not enabled')
+            if info_message:
+                logger.info("Deleting info message")
+                messages_trash.remove(info_message)
+                info_discord_message = await discord_channel.fetch_message(info_message.id)
+                await delete_message(info_discord_message)
+                info_message.delete_instance()
+                info_message = None
+            discord_message = await send_message(discord_channel, **mentor_params)
+            mentor.message_url = discord_message.jump_url
+            mentor.save()
 
     logger.info('Syncing info')
     info_content = f'{INFO_EMOJI} Co to tady je? Jak to funguje?'
@@ -116,30 +110,21 @@ async def discord_task(client):
         messages_trash.remove(info_message)
         logger.info("Editing info message")
         discord_message = await discord_channel.fetch_message(info_message.id)
-        if DISCORD_MUTATIONS_ENABLED:
-            await discord_message.edit(**info_params)
-        else:
-            logger.warning('Discord mutations not enabled')
+        await edit_message(discord_message, **info_params)
     else:
         logger.info("Creating new info message")
-        if DISCORD_MUTATIONS_ENABLED:
-            await discord_channel.send(**info_params)
-        else:
-            logger.warning('Discord mutations not enabled')
+        await send_message(discord_channel, **info_params)
 
     logger.info('Deleting extraneous messages')
     for message in messages_trash:
         logger.debug(f'Deleting message #{message.id}: {message.content[:10]}…')
-        if DISCORD_MUTATIONS_ENABLED:
-            try:
-                discord_message = await discord_channel.fetch_message(message.id)
-                await discord_message.delete()
-                message.delete_instance()
-            except:
-                logger.error(f'Could not delete message #{message.id}: {message.content[:10]}…')
-                raise
-        else:
-            logger.warning('Discord mutations not enabled')
+        try:
+            discord_message = await discord_channel.fetch_message(message.id)
+            await delete_message(discord_message)
+            message.delete_instance()
+        except:
+            logger.error(f'Could not delete message #{message.id}: {message.content[:10]}…')
+            raise
 
 
 def get_mentor_params(mentor, thumbnail_url=None):

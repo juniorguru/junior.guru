@@ -7,7 +7,7 @@ from strictyaml import Int, Map, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import DISCORD_MUTATIONS_ENABLED, get_roles
+from juniorguru.lib.discord_club import create_role, delete_role, get_roles, remove_roles, add_roles
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubUser
 from juniorguru.models.event import Event
@@ -150,25 +150,22 @@ async def discord_task(client):
         changes.extend(evaluate_changes(member.id, member.initial_roles, partners_members_ids, role_id))
 
     # syncing with Discord
-    if DISCORD_MUTATIONS_ENABLED:
-        logger.info(f'Managing roles for {len(partners)} partners')
-        await manage_partner_roles(client, discord_roles, partners)
+    logger.info(f'Managing roles for {len(partners)} partners')
+    await manage_partner_roles(client, discord_roles, partners)
 
-        for partner in partners:
-            partner_members_ids = [member.id for member in partner.list_members]
-            logger.debug(f"partner_members_ids({partner!r}): {repr_ids(members, partner_members_ids)}")
-            for member in members:
-                changes.extend(evaluate_changes(member.id, member.initial_roles, partner_members_ids, partner.role_id))
+    for partner in partners:
+        partner_members_ids = [member.id for member in partner.list_members]
+        logger.debug(f"partner_members_ids({partner!r}): {repr_ids(members, partner_members_ids)}")
+        for member in members:
+            changes.extend(evaluate_changes(member.id, member.initial_roles, partner_members_ids, partner.role_id))
 
-            student_members_ids = [member.id for member in partner.list_student_members]
-            logger.debug(f"student_members_ids({partner!r}): {repr_ids(members, student_members_ids)}")
-            for member in members:
-                changes.extend(evaluate_changes(member.id, member.initial_roles, student_members_ids, partner.student_role_id))
+        student_members_ids = [member.id for member in partner.list_student_members]
+        logger.debug(f"student_members_ids({partner!r}): {repr_ids(members, student_members_ids)}")
+        for member in members:
+            changes.extend(evaluate_changes(member.id, member.initial_roles, student_members_ids, partner.student_role_id))
 
-        logger.info(f'Applying {len(changes)} changes to roles:\n{pformat(changes)}')
-        await apply_changes(client, changes)
-    else:
-        logger.warning('Discord mutations not enabled')
+    logger.info(f'Applying {len(changes)} changes to roles:\n{pformat(changes)}')
+    await apply_changes(client, changes)
 
 
 # TODO rewrite so it doesn't need any async/await and can be tested
@@ -188,14 +185,14 @@ async def manage_partner_roles(client, discord_roles, partners):
     logger.info(f"Roles [{', '.join([role.name for role in roles_to_remove])}] will be removed")
     for role in roles_to_remove:
         logger.info(f"Removing role '{role.name}'")
-        await role.delete()
+        await delete_role(role)
 
     roles_names_to_add = set(roles_names) - {role.name for role in existing_roles}
     logger.info(f"Roles [{', '.join(roles_names_to_add)}] will be added")
     for role_name in roles_names_to_add:
         logger.info(f"Adding role '{role_name}'")
         color = Color.dark_grey() if role_name.startswith(PARTNER_ROLE_PREFIX) else Color.default()
-        await client.club_guild.create_role(name=role_name, color=color, mentionable=True)
+        await create_role(client.club_guild, name=role_name, color=color, mentionable=True)
 
     existing_roles = [role for role in discord_roles
                       if role.name.startswith((PARTNER_ROLE_PREFIX, STUDENT_ROLE_PREFIX))]
@@ -230,11 +227,11 @@ async def apply_changes(client, changes):
         if changes['add']:
             discord_roles = [all_discord_roles[role_id] for role_id in changes['add']]
             logger.debug(f'{discord_member.display_name}: adding {repr_roles(discord_roles)}')
-            await discord_member.add_roles(*discord_roles)
+            await add_roles(discord_member, *discord_roles)
         if changes['remove']:
             discord_roles = [all_discord_roles[role_id] for role_id in changes['remove']]
             logger.debug(f'{discord_member.display_name}: removing {repr_roles(discord_roles)}')
-            await discord_member.remove_roles(*discord_roles)
+            await remove_roles(discord_member, *discord_roles)
 
         member = ClubUser.get_by_id(member_id)
         member.updated_roles = get_roles(discord_member)

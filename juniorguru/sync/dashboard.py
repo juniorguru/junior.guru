@@ -9,7 +9,7 @@ from discord import Color, Embed
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import DISCORD_MUTATIONS_ENABLED, ClubChannel
+from juniorguru.lib.discord_club import purge_channel, ClubChannel, edit_channel, send_message
 from juniorguru.models.base import db
 from juniorguru.models.club import (ClubDocumentedRole, ClubMessage,
                                     ClubSubscribedPeriod, ClubUser)
@@ -54,20 +54,14 @@ async def discord_task(client):
 
     if len(messages) != len(sections):
         logger.warning('The scheme of sections seems to be different, purging the channel and creating new messages')
-        if DISCORD_MUTATIONS_ENABLED:
-            await discord_channel.purge()
-            for section in sections:
-                await discord_channel.send(embed=Embed(**section))
-        else:
-            logger.warning('Discord mutations not enabled')
+        await purge_channel(discord_channel)
+        for section in sections:
+            await send_message(discord_channel, embed=Embed(**section))
     else:
         logger.info("Editing existing dashboard messages")
-        if DISCORD_MUTATIONS_ENABLED:
-            for i, message in enumerate(messages):
-                discord_message = await discord_channel.fetch_message(message.id)
-                await discord_message.edit(embed=Embed(**sections[i]))
-        else:
-            logger.warning('Discord mutations not enabled')
+        for i, message in enumerate(messages):
+            discord_message = await discord_channel.fetch_message(message.id)
+            await edit_channel(discord_message, embed=Embed(**sections[i]))
 
 
 def render_basic_tips():

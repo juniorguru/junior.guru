@@ -6,7 +6,7 @@ import discord
 
 from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
-from juniorguru.lib.discord_club import DISCORD_MUTATIONS_ENABLED, emoji_name
+from juniorguru.lib.discord_club import edit_message, add_reaction, send_message, get_reaction
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.sync.onboarding.scheduled_messages import (ALLOWED_MENTIONS,
                                                            SCHEDULED_MESSAGES)
@@ -47,29 +47,16 @@ async def send_messages_to_member(client, member):
     for message_id, message_content in messages:
         if message_id:
             logger_m.debug(f'Editing message {message_content[0]}: {len(message_content)} characters')
-            if DISCORD_MUTATIONS_ENABLED:
-                discord_message = await channel.fetch_message(message_id)
-                message_data = await create_message_data(client, member, message_content)
-                await discord_message.edit(**message_data)
-                if not get_reaction(discord_message.reactions, EMOJI_UNREAD):
-                    await discord_message.add_reaction(EMOJI_UNREAD)
-            else:
-                logger_m.warning('Discord mutations not enabled')
+            discord_message = await channel.fetch_message(message_id)
+            message_data = await create_message_data(client, member, message_content)
+            await edit_message(discord_message, **message_data)
+            if not get_reaction(discord_message.reactions, EMOJI_UNREAD):
+                await add_reaction(discord_message, EMOJI_UNREAD)
         else:
             logger_m.debug(f'Sending message {message_content[0]}: {len(message_content)} characters')
-            if DISCORD_MUTATIONS_ENABLED:
-                message_data = await create_message_data(client, member, message_content)
-                discord_message = await channel.send(**message_data)
-                await discord_message.add_reaction(EMOJI_UNREAD)
-            else:
-                logger_m.warning('Discord mutations not enabled')
-
-
-def get_reaction(reactions, emoji):
-    for reaction in reactions:
-        if emoji_name(reaction.emoji) == emoji:
-            return reaction
-    return None
+            message_data = await create_message_data(client, member, message_content)
+            discord_message = await send_message(channel, **message_data)
+            await add_reaction(discord_message, EMOJI_UNREAD)
 
 
 async def create_message_data(client, member, content):

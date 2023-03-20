@@ -1,14 +1,14 @@
-import os
+import asyncio
 from datetime import date, datetime, timedelta, timezone
 from enum import IntEnum, StrEnum, unique
 
 import discord
+from discord.errors import Forbidden
 import emoji
 
+from juniorguru.lib.mutations import mutations
 from juniorguru.lib import loggers
 
-
-DISCORD_MUTATIONS_ENABLED = bool(int(os.getenv('DISCORD_MUTATIONS_ENABLED', 0)))
 
 CLUB_GUILD = 769966886598737931
 
@@ -117,3 +117,111 @@ def is_thread_after(thread, after=None):
     if after:
         return (thread.created_at or DEFAULT_THREAD_CREATED_AT) >= after
     return thread
+
+
+@mutations.mutates('discord')
+async def send_message(channel, *args, **kwargs):
+    return await channel.send(*args, **kwargs)
+
+
+@mutations.mutates('discord')
+async def edit_message(message, *args, **kwargs):
+    return await message.edit(*args, **kwargs)
+
+
+@mutations.mutates('discord')
+async def delete_message(message, *args, **kwargs):
+    return await message.delete(*args, **kwargs)
+
+
+@mutations.mutates('discord')
+async def create_thread(message, *args, **kwargs):
+    return await message.create_thread(*args, **kwargs)
+
+
+@mutations.mutates('discord')
+async def add_members(thread, members):
+    await asyncio.gather(*[thread.add_user(member) for member in members])
+
+
+@mutations.mutates('discord')
+async def create_category(guild, *args, **kwargs):
+    return await guild.create_category(*args, **kwargs)
+
+
+@mutations.mutates('discord')
+async def create_text_channel(guild, *args, **kwargs):
+    return await guild.create_text_channel(*args, **kwargs)
+
+
+@mutations.mutates('discord')
+async def edit_channel(channel, *args, **kwargs):
+    return await channel.edit(*args, **kwargs)
+
+
+@mutations.mutates('discord')
+async def purge_channel(channel, *args, **kwargs):
+    return await channel.purge(*args, **kwargs)
+
+
+@mutations.mutates('discord')
+async def delete_channel(channel, *args, **kwargs):
+    return await channel.delete(*args, **kwargs)
+
+
+@mutations.mutates('discord')
+async def add_reactions(message, emojis, ordered=False):
+    logger.debug(f"Reacting to message #{message.id} with emojis: {list(emojis)!r}")
+    if not emojis:
+        return
+    try:
+        if ordered:
+            for emoji_ in emojis:
+                await message.add_reaction(emoji_)
+        else:
+            await asyncio.gather(*[message.add_reaction(emoji_) for emoji_ in emojis])
+    except Forbidden as e:
+        if 'maximum number of reactions reached' in str(e).lower():
+            logger.warning(f"Message #{message.jump_url} reached maximum number of reactions!")
+        else:
+            raise e
+
+
+async def add_reaction(message, emoji):
+    await add_reactions(message, [emoji], ordered=True)
+
+
+def get_missing_reactions(reactions, emojis):
+    return set(emojis) - {emoji_name(reaction.emoji) for reaction in reactions if reaction.me}
+
+
+def get_reaction(reactions, emoji):
+    for reaction in reactions:
+        if emoji_name(reaction.emoji) == emoji:
+            return reaction
+    return None
+
+
+@mutations.mutates('discord')
+async def create_event(guild, *args, **kwargs):
+    return await guild.create_scheduled_event(*args, **kwargs)
+
+
+@mutations.mutates('discord')
+async def edit_event(event, *args, **kwargs):
+    return await event.edit(*args, **kwargs)
+
+
+@mutations.mutates('discord')
+async def create_role(guild, *args, **kwargs):
+    return await guild.create_role(*args, **kwargs)
+
+
+@mutations.mutates('discord')
+async def add_roles(member, *args, **kwargs):
+    return await member.add_roles(*args, **kwargs)
+
+
+@mutations.mutates('discord')
+async def remove_roles(member, *args, **kwargs):
+    return await member.remove_roles(*args, **kwargs)

@@ -11,7 +11,7 @@ from strictyaml import Int, Map, Optional, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (DISCORD_MUTATIONS_ENABLED, ClubChannel,
+from juniorguru.lib.discord_club import (send_message, ClubChannel,
                                          ClubMember)
 from juniorguru.lib.images import is_image, render_image_file, validate_image
 from juniorguru.lib.template_filters import icon
@@ -167,55 +167,53 @@ async def discord_task(client):
     last_message = ClubMessage.last_bot_message(ClubChannel.ANNOUNCEMENTS, MESSAGE_EMOJI, f'**{last_episode.number}. epizodu**')
     if not last_message:
         logger.info(f'Announcing {last_episode!r}')
-        if DISCORD_MUTATIONS_ENABLED:
-            channel = await client.fetch_channel(ClubChannel.ANNOUNCEMENTS)
-            content = (
-                f"{MESSAGE_EMOJI} Nastraž uši! <@{ClubMember.PAVLINA}>"
-                f" natočila **{last_episode.number}. epizodu** podcastu!"
+        channel = await client.fetch_channel(ClubChannel.ANNOUNCEMENTS)
+        content = (
+            f"{MESSAGE_EMOJI} Nastraž uši! <@{ClubMember.PAVLINA}>"
+            f" natočila **{last_episode.number}. epizodu** podcastu!"
+        )
+
+        description_embed = Embed(title=last_episode.title_numbered,
+                                    description=last_episode.description.strip(),
+                                    color=Color.yellow())
+        description_embed.set_thumbnail(url=f"attachment://{Path(last_episode.poster_path).name}")
+        poster_file = File(IMAGES_DIR / last_episode.poster_path)
+
+        if last_episode.partner:
+            details = (
+                ':star: Epizoda vznikla v rámci'
+                f' [placeného partnerství](https://junior.guru/open/{last_episode.partner.slug})'
+                f' s firmou [{last_episode.partner.name}]({last_episode.partner.url}'
+                '?utm_source=juniorguru&utm_medium=podcast&utm_campaign=partnership)'
+                '\n'
             )
-
-            description_embed = Embed(title=last_episode.title_numbered,
-                                      description=last_episode.description.strip(),
-                                      color=Color.yellow())
-            description_embed.set_thumbnail(url=f"attachment://{Path(last_episode.poster_path).name}")
-            poster_file = File(IMAGES_DIR / last_episode.poster_path)
-
-            if last_episode.partner:
-                details = (
-                    ':star: Epizoda vznikla v rámci'
-                    f' [placeného partnerství](https://junior.guru/open/{last_episode.partner.slug})'
-                    f' s firmou [{last_episode.partner.name}]({last_episode.partner.url}'
-                    '?utm_source=juniorguru&utm_medium=podcast&utm_campaign=partnership)'
-                    '\n'
-                )
-            else:
-                details = ''
-            details += (
-                f"⏱️ {last_episode.media_duration_m} minut poslechu\n"
-                f"<a:vincent:900831887591882782> Do půl hodiny to bude na webu, brzo potom i na ostatních službách\n"
-            )
-            details_embed = Embed(description=details)
-
-            view = ui.View(ui.Button(emoji='<:juniorguru:841683119291760640>',
-                                     label='web',
-                                     url='https://junior.guru/podcast/'),
-                           ui.Button(emoji='<:youtube:976200175490060299>',
-                                     label='YouTube',
-                                     url='https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA'),
-                           ui.Button(emoji='<:spotify:1085596335794819092>',
-                                     label='Spotify',
-                                     url='https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4'),
-                           ui.Button(emoji='<:google:976200950886826084>',
-                                     label='Google',
-                                     url='https://podcasts.google.com/feed/aHR0cHM6Ly9qdW5pb3IuZ3VydS9hcGkvcG9kY2FzdC54bWw'),
-                           ui.Button(emoji='<:appleinc:842465215718227987>',
-                                     label='Apple',
-                                     url='https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549'))
-            await channel.send(content=content,
-                               embeds=[description_embed, details_embed],
-                               files=[poster_file],
-                               view=view)
         else:
-            logger.warning('Discord mutations not enabled')
+            details = ''
+        details += (
+            f"⏱️ {last_episode.media_duration_m} minut poslechu\n"
+            f"<a:vincent:900831887591882782> Do půl hodiny to bude na webu, brzo potom i na ostatních službách\n"
+        )
+        details_embed = Embed(description=details)
+
+        view = ui.View(ui.Button(emoji='<:juniorguru:841683119291760640>',
+                                    label='web',
+                                    url='https://junior.guru/podcast/'),
+                        ui.Button(emoji='<:youtube:976200175490060299>',
+                                    label='YouTube',
+                                    url='https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA'),
+                        ui.Button(emoji='<:spotify:1085596335794819092>',
+                                    label='Spotify',
+                                    url='https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4'),
+                        ui.Button(emoji='<:google:976200950886826084>',
+                                    label='Google',
+                                    url='https://podcasts.google.com/feed/aHR0cHM6Ly9qdW5pb3IuZ3VydS9hcGkvcG9kY2FzdC54bWw'),
+                        ui.Button(emoji='<:appleinc:842465215718227987>',
+                                    label='Apple',
+                                    url='https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549'))
+        await send_message(channel,
+                           content=content,
+                           embeds=[description_embed, details_embed],
+                           files=[poster_file],
+                           view=view)
     else:
         logger.info(f'Looks like {last_episode!r} has been already announced')

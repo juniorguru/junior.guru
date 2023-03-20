@@ -7,7 +7,7 @@ from discord import Embed, File, ui
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.asyncio_extra import chunks
-from juniorguru.lib.discord_club import (DISCORD_MUTATIONS_ENABLED, ClubChannel,
+from juniorguru.lib.discord_club import (create_thread, ClubChannel, edit_message,
                                          fetch_threads, is_thread_after)
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
@@ -62,18 +62,18 @@ def get_effective_url(message):
 
 async def post_job(channel, job):
     logger[str(job.id)].info(f'Posting {job!r}: {job.effective_url}')
-    if DISCORD_MUTATIONS_ENABLED:
-        # https://github.com/Pycord-Development/pycord/issues/1949
-        embed = Embed(title=job.company_name)
-        thread = await channel.create_thread(job.title,
-                                             job.location,
-                                             embed=embed,
-                                             view=ui.View(ui.Button(emoji='👉',
-                                                          label='Zjistit víc',
-                                                          url=job.effective_url)))
-        if job.company_logo_path:
-            embed.set_thumbnail(url=f"attachment://{Path(job.company_logo_path).name}")
-            message = await thread.fetch_message(thread.id)
-            await message.edit(file=File(PACKAGE_DIR / job.company_logo_path), embed=embed)
-    else:
-        logger[str(job.id)].warning('Discord mutations not enabled')
+    # https://github.com/Pycord-Development/pycord/issues/1949
+    embed = Embed(title=job.company_name)
+    thread = await create_thread(channel,
+                                 job.title,
+                                 job.location,
+                                 embed=embed,
+                                 view=ui.View(ui.Button(emoji='👉',
+                                              label='Zjistit víc',
+                                              url=job.effective_url)))
+    if job.company_logo_path:
+        embed.set_thumbnail(url=f"attachment://{Path(job.company_logo_path).name}")
+        message = await thread.fetch_message(thread.id)
+        await edit_message(message,
+                           file=File(PACKAGE_DIR / job.company_logo_path),
+                           embed=embed)
