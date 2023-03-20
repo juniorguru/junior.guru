@@ -7,7 +7,8 @@ from strictyaml import CommaSeparated, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import edit_event, create_event, ClubChannel, send_message
+from juniorguru.lib.discord_club import (ClubChannel, create_event, edit_event,
+                                         send_message)
 from juniorguru.lib.images import is_image, render_image_file, validate_image
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.lib.yaml import Date

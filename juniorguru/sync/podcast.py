@@ -11,8 +11,7 @@ from strictyaml import Int, Map, Optional, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (send_message, ClubChannel,
-                                         ClubMember)
+from juniorguru.lib.discord_club import ClubChannel, ClubMember, send_message
 from juniorguru.lib.images import is_image, render_image_file, validate_image
 from juniorguru.lib.template_filters import icon
 from juniorguru.lib.yaml import Date

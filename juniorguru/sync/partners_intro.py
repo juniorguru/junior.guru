@@ -7,8 +7,8 @@ from jinja2 import Template
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (add_reactions, ClubChannel, send_message,
-                                         ClubEmoji, is_message_over_period_ago)
+from juniorguru.lib.discord_club import (ClubChannel, ClubEmoji, add_reactions,
+                                         is_message_over_period_ago, send_message)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.partner import Partner

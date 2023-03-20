@@ -7,7 +7,7 @@ from discord import Embed, File, ui
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.asyncio_extra import chunks
-from juniorguru.lib.discord_club import (create_thread, ClubChannel, edit_message,
+from juniorguru.lib.discord_club import (ClubChannel, create_thread, edit_message,
                                          fetch_threads, is_thread_after)
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob

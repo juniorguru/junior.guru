@@ -4,7 +4,8 @@ import discord
 from slugify import slugify
 
 from juniorguru.lib import loggers
-from juniorguru.lib.discord_club import edit_channel, ClubMember, delete_channel, create_text_channel
+from juniorguru.lib.discord_club import (ClubMember, create_text_channel,
+                                         delete_channel, edit_channel)
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.onboarding.categories import manage_category
 

@@ -7,7 +7,8 @@ from strictyaml import Int, Map, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import create_role, delete_role, get_roles, remove_roles, add_roles
+from juniorguru.lib.discord_club import (add_roles, create_role, delete_role, get_roles,
+                                         remove_roles)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubUser
 from juniorguru.models.event import Event

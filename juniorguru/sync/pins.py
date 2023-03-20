@@ -6,9 +6,9 @@ from discord.errors import Forbidden
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib.discord_club import send_message
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubPinReaction
-from juniorguru.lib.discord_club import send_message
 
 
 logger = loggers.from_path(__file__)

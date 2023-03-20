@@ -9,7 +9,8 @@ from discord import Color, Embed
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import purge_channel, ClubChannel, edit_channel, send_message
+from juniorguru.lib.discord_club import (ClubChannel, edit_channel, purge_channel,
+                                         send_message)
 from juniorguru.models.base import db
 from juniorguru.models.club import (ClubDocumentedRole, ClubMessage,
                                     ClubSubscribedPeriod, ClubUser)

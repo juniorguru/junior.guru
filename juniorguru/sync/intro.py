@@ -6,8 +6,10 @@ from discord import MessageType
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (ClubChannel, add_reactions, purge_channel, create_thread, edit_channel, edit_message, add_members,
-                                         ClubMember, send_message, get_missing_reactions)
+from juniorguru.lib.discord_club import (ClubChannel, ClubMember, add_members,
+                                         add_reactions, create_thread, edit_channel,
+                                         edit_message, get_missing_reactions,
+                                         purge_channel, send_message)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
