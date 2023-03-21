@@ -104,9 +104,9 @@ jobs:
       - run:
           name: Sync data
           command: |
-            if [[ $CIRCLE_BRANCH = "main" ]]; then
-              #export JOBS_EMAILS_SENDING_ENABLED=1
-            fi
+            #if [[ $CIRCLE_BRANCH = "main" ]]; then
+            #  export JOBS_EMAILS_SENDING_ENABLED=1
+            #fi
             poetry run jg sync --allow-mutations ci
       - run:
           name: Prepare changed files for persisting
@@ -144,9 +144,9 @@ jobs:
       - run:
           name: Sync data
           command: |
-            if [[ $CIRCLE_BRANCH = "main" ]]; then
-              #export JOBS_EMAILS_SENDING_ENABLED=1
-            fi
+            #if [[ $CIRCLE_BRANCH = "main" ]]; then
+            #  export JOBS_EMAILS_SENDING_ENABLED=1
+            #fi
             poetry run jg sync --allow-mutations ci
       - run:
           name: Prepare changed files for persisting
