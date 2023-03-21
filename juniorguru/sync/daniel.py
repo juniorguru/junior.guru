@@ -3,9 +3,9 @@ from datetime import date, timedelta
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubMember, is_message_older_than, mutating
+from juniorguru.lib.mutations import MutationsNotAllowed
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
-from juniorguru.lib.mutations import MutationsNotAllowed
 
 
 logger = loggers.from_path(__file__)
