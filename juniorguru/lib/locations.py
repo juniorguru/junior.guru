@@ -106,8 +106,8 @@ def optimize_geocoding(geocode):
 @optimize_geocoding
 def geocode_mapycz(location_raw):
     try:
-        logger.debug(f"Geocoding '{location_raw}' using api.mapy.cz/geocode")
-        response = requests.get('https://api.mapy.cz/geocode',
+        logger.debug(f"Geocoding '{location_raw}' using api.mapy.cz/v0/geocode")
+        response = requests.get('https://api.mapy.cz/v0/geocode',
                                 params={'query': location_raw},
                                 headers={'User-Agent': USER_AGENT},
                                 timeout=MAPYCZ_REQUEST_TIMEOUT)
@@ -125,8 +125,8 @@ def geocode_mapycz(location_raw):
         raise GeocodeError(f"Unable to geocode '{location_raw}'") from e
 
     try:
-        logger.debug(f"Reverse geocoding '{location_raw}' lat: {lat} lng: {lng} using api.mapy.cz/rgeocode")
-        response = requests.get('https://api.mapy.cz/rgeocode',
+        logger.debug(f"Reverse geocoding '{location_raw}' lat: {lat} lng: {lng} using api.mapy.cz/v0/rgeocode")
+        response = requests.get('https://api.mapy.cz/v0/rgeocode',
                                 params={'lat': lat, 'lon': lng},
                                 headers={'User-Agent': USER_AGENT},
                                 timeout=MAPYCZ_REQUEST_TIMEOUT)
@@ -163,7 +163,7 @@ if __name__ == '__main__':
     from pprint import pprint
 
     location_raw = sys.argv[1]
-    print('geocode()')
+    print('geocode_mapycz()')
     pprint(geocode_mapycz(location_raw))
-    print('---\nprocess()')
+    print('---\nfetch_locations()')
     pprint(fetch_locations([location_raw]))
