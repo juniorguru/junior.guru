@@ -5,6 +5,7 @@ from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubMember, is_message_older_than, mutating
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
+from juniorguru.lib.mutations import MutationsNotAllowed
 
 
 logger = loggers.from_path(__file__)
@@ -22,7 +23,11 @@ async def discord_task(client):
         channel = member.dm_channel
     else:
         logger.debug(f"Creating DM channel for {member.display_name} #{member.id}")
-        channel = await member.create_dm()
+        with mutating(member) as proxy:
+            channel = await proxy.create_dm()
+    if channel is MutationsNotAllowed:
+        logger.warning("Couldn't get the DM channel")
+        return
 
     last_message = None
     async for message in channel.history(limit=None, after=None):

@@ -1,3 +1,4 @@
+from functools import wraps
 import asyncio
 from contextlib import contextmanager
 from datetime import date, datetime, timedelta, timezone
@@ -50,6 +51,23 @@ class ClubEmoji(StrEnum):
 
 
 class ClubClient(discord.Client):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        def check_mutations(request):
+            @wraps(request)
+            async def wrapper(route, *args, **kwargs):
+                if (
+                    mutations.is_allowed('discord')
+                    or route.method in ('GET', 'HEAD', 'OPTIONS')
+                ):
+                    return await request(route, *args, **kwargs)
+                logger.error(f'Discord mutations not allowed! {route.method} {route.path}')
+                raise RuntimeError('Discord mutations not allowed!')
+            return wrapper
+
+        self.http.request = check_mutations(self.http.request)
+
     @property
     def club_guild(self) -> discord.Guild:
         return self.get_guild(CLUB_GUILD)
