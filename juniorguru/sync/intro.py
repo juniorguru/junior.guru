@@ -84,7 +84,8 @@ async def welcome(channel, message, greeters):
     logger_m.debug(f"Welcoming '{message.author.display_name}' with emojis")
     discord_message = await channel.fetch_message(message.id)
     missing_emojis = get_missing_reactions(discord_message.reactions, WELCOME_REACTIONS)
-    await add_reactions(discord_message, missing_emojis)
+    with mutating(discord_message) as discord_message_proxy:
+        await add_reactions(discord_message_proxy, missing_emojis)
 
     if message.created_at >= THREADS_STARTING_AT:
         logger_m.debug(f"Ensuring thread for '{message.author.display_name}'")
@@ -107,6 +108,9 @@ async def welcome(channel, message, greeters):
             logger_m.debug(f"Renaming thread for '{message.author.display_name}' from '{thread.name}' to '{thread_name}'")
             with mutating(thread) as thread_proxy:
                 thread = await thread_proxy.edit(name=thread_name)
+                if thread is MutationsNotAllowed:
+                    logger_m.debug("Skipping, couldn't edit the thread")
+                    return
 
         discord_messages = [discord_message async for discord_message in thread.history(limit=None)]
         logger_m.debug(f"Ensuring welcome message for '{message.author.display_name}'")
