@@ -182,11 +182,6 @@ async def add_reactions(message, emojis, ordered=False):
             raise e
 
 
-@mutations.mutates('discord')
-async def add_reaction(message, emoji):
-    await add_reactions(message, [emoji], ordered=True)
-
-
 def get_missing_reactions(reactions, emojis):
     return set(emojis) - {emoji_name(reaction.emoji) for reaction in reactions if reaction.me}
 
