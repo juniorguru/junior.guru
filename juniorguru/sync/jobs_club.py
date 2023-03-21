@@ -64,8 +64,8 @@ async def post_job(channel, job):
     logger[str(job.id)].info(f'Posting {job!r}: {job.effective_url}')
     # https://github.com/Pycord-Development/pycord/issues/1949
     embed = Embed(title=job.company_name)
-    with mutating(channel) as channel:
-        thread = await channel.create_thread(job.title,
+    with mutating(channel) as proxy:
+        thread = await proxy.create_thread(job.title,
                                              job.location,
                                              embed=embed,
                                              view=ui.View(ui.Button(emoji='👉',
@@ -74,6 +74,6 @@ async def post_job(channel, job):
     if job.company_logo_path:
         embed.set_thumbnail(url=f"attachment://{Path(job.company_logo_path).name}")
         message = await thread.fetch_message(thread.id)
-        with mutating(message) as message:
-            await message.edit(file=File(PACKAGE_DIR / job.company_logo_path),
+        with mutating(message) as proxy:
+            await proxy.edit(file=File(PACKAGE_DIR / job.company_logo_path),
                                embed=embed)

@@ -63,8 +63,8 @@ async def discord_task(client):
     await asyncio.gather(*[process_message(client, channel, message) for message in messages])
 
     logger.info('Purging system messages about created threads')
-    with mutating(channel) as channel_proxy:
-        await channel_proxy.purge(check=is_thread_created, limit=PURGE_SAFETY_LIMIT, after=THREADS_STARTING_AT)
+    with mutating(channel) as proxy:
+        await proxy.purge(check=is_thread_created, limit=PURGE_SAFETY_LIMIT, after=THREADS_STARTING_AT)
 
 
 async def process_message(client, channel, message):
@@ -84,8 +84,8 @@ async def welcome(channel, message, greeters):
     logger_m.debug(f"Welcoming '{message.author.display_name}' with emojis")
     discord_message = await channel.fetch_message(message.id)
     missing_emojis = get_missing_reactions(discord_message.reactions, WELCOME_REACTIONS)
-    with mutating(discord_message) as discord_message_proxy:
-        await add_reactions(discord_message_proxy, missing_emojis)
+    with mutating(discord_message) as proxy:
+        await add_reactions(proxy, missing_emojis)
 
     if message.created_at >= THREADS_STARTING_AT:
         logger_m.debug(f"Ensuring thread for '{message.author.display_name}'")
@@ -95,8 +95,8 @@ async def welcome(channel, message, greeters):
             thread = await discord_message.guild.fetch_channel(message.id)
         else:
             logger_m.debug(f"Creating thread for '{message.author.display_name}'")
-            with mutating(discord_message) as discord_message_proxy:
-                thread = await discord_message_proxy.create_thread(name=thread_name)
+            with mutating(discord_message) as proxy:
+                thread = await proxy.create_thread(name=thread_name)
             if thread is MutationsNotAllowed:
                 logger_m.debug("Skipping, couldn't create the thread")
                 return
@@ -106,8 +106,8 @@ async def welcome(channel, message, greeters):
             return
         if thread.name != thread_name:
             logger_m.debug(f"Renaming thread for '{message.author.display_name}' from '{thread.name}' to '{thread_name}'")
-            with mutating(thread) as thread_proxy:
-                thread = await thread_proxy.edit(name=thread_name)
+            with mutating(thread) as proxy:
+                thread = await proxy.edit(name=thread_name)
                 if thread is MutationsNotAllowed:
                     logger_m.debug("Skipping, couldn't edit the thread")
                     return
@@ -130,16 +130,16 @@ async def welcome(channel, message, greeters):
             welcome_discord_message = list(filter(is_welcome_message, discord_messages))[0]
             logger_m.debug(f"Welcome message already exists, updating: #{welcome_discord_message.id}")
             if welcome_discord_message.embeds or welcome_discord_message.content != content:
-                with mutating(welcome_discord_message) as welcome_discord_message_proxy:
-                    await welcome_discord_message_proxy.edit(content=content, suppress=True)
+                with mutating(welcome_discord_message) as proxy:
+                    await proxy.edit(content=content, suppress=True)
         except IndexError:
             logger_m.debug("Sending welcome message")
-            with mutating(thread) as thread_proxy:
-                welcome_discord_message = await thread_proxy.send(content=content, suppress=True)
+            with mutating(thread) as proxy:
+                welcome_discord_message = await proxy.send(content=content, suppress=True)
 
             logger_m.debug("Adding numbers reactions under the welcome message")
-            with mutating(welcome_discord_message) as welcome_discord_message_proxy:
-                await add_reactions(welcome_discord_message_proxy, NUMBERS_REACTIONS, ordered=True)
+            with mutating(welcome_discord_message) as proxy:
+                await add_reactions(proxy, NUMBERS_REACTIONS, ordered=True)
 
             logger_m.debug("Analyzing if all greeters are involved")
             thread_members_ids = [member.id for member in (thread.members or await thread.fetch_members())]
@@ -147,8 +147,8 @@ async def welcome(channel, message, greeters):
                             if greeter.id not in thread_members_ids]
             logger_m.debug(f"Found {len(members_to_add)} greeters to add")
             if members_to_add:
-                with mutating(thread) as thread_proxy:
-                    await add_members(thread_proxy, members_to_add)
+                with mutating(thread) as proxy:
+                    await add_members(proxy, members_to_add)
 
 
 async def welcome_back(channel, message):
@@ -157,8 +157,8 @@ async def welcome_back(channel, message):
     logger_m.debug(f"Welcoming back '{message.author.display_name}' with emojis")
     discord_message = await channel.fetch_message(message.id)
     missing_emojis = get_missing_reactions(discord_message.reactions, WELCOME_BACK_REACTIONS)
-    with mutating(discord_message) as discord_message_proxy:
-        await add_reactions(discord_message_proxy, missing_emojis)
+    with mutating(discord_message) as proxy:
+        await add_reactions(proxy, missing_emojis)
 
 
 def is_thread_created(discord_message):

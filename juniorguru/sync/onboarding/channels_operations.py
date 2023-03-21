@@ -33,8 +33,8 @@ async def update_onboarding_channel(client, member, channel):
     logger_c = logger[f'channels.{channel.id}']
     logger_c.info(f"Updating (member #{member.id})")
     channel_data = await prepare_onboarding_channel_data(client, member)
-    with mutating(channel) as channel:
-        await channel.edit(**channel_data)
+    with mutating(channel) as proxy:
+        await proxy.edit(**channel_data)
     member.onboarding_channel_id = channel.id
     member.save()
 
@@ -45,8 +45,8 @@ async def create_onboarding_channel(client, member):
     logger_c.info(f"Creating (member #{member.id})")
     channel_data = await prepare_onboarding_channel_data(client, member)
     async def create_channel(category):
-        with mutating(client.club_guild) as guild:
-            channel = await guild.create_text_channel(category=category, **channel_data)
+        with mutating(client.club_guild) as proxy:
+            channel = await proxy.create_text_channel(category=category, **channel_data)
         if channel is not MutationsNotAllowed:
             member.onboarding_channel_id = channel.id
             member.save()
@@ -57,8 +57,8 @@ async def create_onboarding_channel(client, member):
 async def delete_onboarding_channel(client, channel):
     logger_c = logger[f'channels.{channel.id}']
     logger_c.info("Deleting")
-    with mutating(channel) as channel:
-        await channel.delete()
+    with mutating(channel) as proxy:
+        await proxy.delete()
 
 
 @channels_operation('close')
@@ -70,8 +70,8 @@ async def close_onboarding_channel(client, channel):
     if current_period < CHANNEL_DELETE_TIMEOUT:
         logger_c.warning(f"Waiting before deleting. Last message {last_message_on}, currently {current_period.days} days, timeout {CHANNEL_DELETE_TIMEOUT.days} days")
     else:
-        with mutating(channel) as channel:
-            await channel.delete()
+        with mutating(channel) as proxy:
+            await proxy.delete()
 
 
 async def prepare_onboarding_channel_data(client, member):

@@ -49,17 +49,17 @@ async def send_messages_to_member(client, member):
             logger_m.debug(f'Editing message {message_content[0]}: {len(message_content)} characters')
             discord_message = await channel.fetch_message(message_id)
             message_data = await create_message_data(client, member, message_content)
-            with mutating(discord_message) as discord_message:
-                await discord_message.edit(**message_data)
+            with mutating(discord_message) as proxy:
+                await proxy.edit(**message_data)
                 if not get_reaction(discord_message.reactions, EMOJI_UNREAD):
-                    await add_reaction(discord_message, EMOJI_UNREAD)
+                    await add_reaction(proxy, EMOJI_UNREAD)
         else:
             logger_m.debug(f'Sending message {message_content[0]}: {len(message_content)} characters')
             message_data = await create_message_data(client, member, message_content)
-            with mutating(channel) as channel:
-                discord_message = await channel.send(**message_data)
-            with mutating(discord_message) as discord_message:
-                await add_reaction(discord_message, EMOJI_UNREAD)
+            with mutating(channel) as proxy:
+                discord_message = await proxy.send(**message_data)
+            with mutating(discord_message) as proxy:
+                await add_reaction(proxy, EMOJI_UNREAD)
 
 
 async def create_message_data(client, member, content):

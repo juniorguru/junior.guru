@@ -26,9 +26,9 @@ async def discord_task(client):
     if is_message_over_period_ago(last_message, timedelta(days=30)):
         logger.info('Last message is more than one month old!')
         channel = await client.fetch_channel(ClubChannel.CV_FEEDBACK)
-        with mutating(channel) as channel:
-            await channel.purge(check=is_message_bot_reminder)
-            await channel.send(
+        with mutating(channel) as proxy:
+            await proxy.purge(check=is_message_bot_reminder)
+            await proxy.send(
                 content='💡 Jsem tady zas se svou pravidelnou dávkou užitečných tipů!',
                 embeds=[
                     Embed(

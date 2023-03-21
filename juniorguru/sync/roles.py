@@ -185,16 +185,16 @@ async def manage_partner_roles(client, discord_roles, partners):
     logger.info(f"Roles [{', '.join([role.name for role in roles_to_remove])}] will be removed")
     for role in roles_to_remove:
         logger.info(f"Removing role '{role.name}'")
-        with mutating(role) as role:
-            await role.delete()
+        with mutating(role) as proxy:
+            await proxy.delete()
 
     roles_names_to_add = set(roles_names) - {role.name for role in existing_roles}
     logger.info(f"Roles [{', '.join(roles_names_to_add)}] will be added")
     for role_name in roles_names_to_add:
         logger.info(f"Adding role '{role_name}'")
         color = Color.dark_grey() if role_name.startswith(PARTNER_ROLE_PREFIX) else Color.default()
-        with mutating(client.club_guild) as guild:
-            await guild.create_role(name=role_name, color=color, mentionable=True)
+        with mutating(client.club_guild) as proxy:
+            await proxy.create_role(name=role_name, color=color, mentionable=True)
 
     existing_roles = [role for role in discord_roles
                       if role.name.startswith((PARTNER_ROLE_PREFIX, STUDENT_ROLE_PREFIX))]
@@ -229,13 +229,13 @@ async def apply_changes(client, changes):
         if changes['add']:
             discord_roles = [all_discord_roles[role_id] for role_id in changes['add']]
             logger.debug(f'{discord_member.display_name}: adding {repr_roles(discord_roles)}')
-            with mutating(discord_member) as discord_member_proxy:
-                await discord_member_proxy.add_roles(*discord_roles)
+            with mutating(discord_member) as proxy:
+                await proxy.add_roles(*discord_roles)
         if changes['remove']:
             discord_roles = [all_discord_roles[role_id] for role_id in changes['remove']]
             logger.debug(f'{discord_member.display_name}: removing {repr_roles(discord_roles)}')
-            with mutating(discord_member) as discord_member_proxy:
-                await discord_member_proxy.remove_roles(*discord_roles)
+            with mutating(discord_member) as proxy:
+                await proxy.remove_roles(*discord_roles)
 
         member = ClubUser.get_by_id(member_id)
         member.updated_roles = get_roles(discord_member)

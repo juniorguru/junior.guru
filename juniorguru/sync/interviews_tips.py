@@ -39,8 +39,8 @@ async def discord_task(client):
             '[příručku na junior.guru](https://junior.guru/handbook/candidate/) o tom, '
             'jak správně hledat první práci v IT.'
         ))
-        with mutating(channel) as channel:
-            await channel.send(content=(
+        with mutating(channel) as proxy:
+            await proxy.send(content=(
                                    f"{INTERVIEWS_EMOJI} Pomohla by ti soustavnější příprava na přijímací řízení? "
                                    "Chceš si jednorázově vyzkoušet pohovor nanečisto, česky nebo anglicky? "
                                    f"Někteří členové se v <#{ClubChannel.MENTORING}> k takovým konzultacím nabídli!"

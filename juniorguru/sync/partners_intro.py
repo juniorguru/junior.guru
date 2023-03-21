@@ -78,10 +78,10 @@ async def discord_task(client):
                           style=ButtonStyle.secondary)
             ]
             channel = await client.fetch_channel(ClubChannel.INTRO)
-            with mutating(channel) as channel:
-                message = await channel.send(content=content, embed=embed, file=file, view=ui.View(*buttons))
-            with mutating(message) as message:
-                await add_reactions(message, BOT_REACTIONS)
+            with mutating(channel) as proxy:
+                message = await proxy.send(content=content, embed=embed, file=file, view=ui.View(*buttons))
+            with mutating(message) as proxy:
+                await add_reactions(proxy, BOT_REACTIONS)
         else:
             logger.info('No partners to announce')
     else:

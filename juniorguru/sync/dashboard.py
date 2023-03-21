@@ -54,16 +54,16 @@ async def discord_task(client):
 
     if len(messages) != len(sections):
         logger.warning('The scheme of sections seems to be different, purging the channel and creating new messages')
-        with mutating(discord_channel) as discord_channel:
-            await discord_channel.purge()
+        with mutating(discord_channel) as proxy:
+            await proxy.purge()
             for section in sections:
-                await discord_channel.send(embed=Embed(**section))
+                await proxy.send(embed=Embed(**section))
     else:
         logger.info("Editing existing dashboard messages")
         for i, message in enumerate(messages):
             discord_message = await discord_channel.fetch_message(message.id)
-            with mutating(discord_channel) as discord_channel:
-                await discord_message.edit(embed=Embed(**sections[i]))
+            with mutating(discord_message) as proxy:
+                await proxy.edit(embed=Embed(**sections[i]))
 
 
 def render_basic_tips():

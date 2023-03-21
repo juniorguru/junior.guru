@@ -53,6 +53,6 @@ async def discord_task(client):
                 f"[Hop na příspěvek]({message.url})",
                 "",
             ]
-        with mutating(channel) as channel:
-            await channel.send(content="\n".join(content),
-                               embed=Embed(description="\n".join(embed_description)))
+        with mutating(channel) as proxy:
+            await proxy.send(content="\n".join(content),
+                             embed=Embed(description="\n".join(embed_description)))

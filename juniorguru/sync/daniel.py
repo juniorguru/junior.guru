@@ -50,5 +50,5 @@ async def discord_task(client):
             f"\n:abc: {daniel_content_size} :speech_left: {len(daniel_messages)} <:discordthread:993580255287705681> {len(daniel_threads)} "
         )
         logger.debug(f'Sending: {content}')
-        with mutating(channel) as channel:
-            await channel.send(content=content)
+        with mutating(channel) as proxy:
+            await proxy.send(content=content)

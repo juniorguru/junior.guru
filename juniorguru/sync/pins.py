@@ -55,8 +55,8 @@ async def process_pin_reaction(client, pin_reaction):
         "",
     ]
     try:
-        with mutating(channel) as channel:
-            await channel.send(content=content, embed=Embed(description="\n".join(embed_description)))
+        with mutating(channel) as proxy:
+            await proxy.send(content=content, embed=Embed(description="\n".join(embed_description)))
     except Forbidden as e:
         logger_p.error(str(e), exc_info=True)
 

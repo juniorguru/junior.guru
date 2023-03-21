@@ -209,8 +209,8 @@ async def discord_task(client):
                         ui.Button(emoji='<:appleinc:842465215718227987>',
                                     label='Apple',
                                     url='https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549'))
-        with mutating(channel) as channel:
-            await channel.send(content=content,
+        with mutating(channel) as proxy:
+            await proxy.send(content=content,
                                embeds=[description_embed, details_embed],
                                files=[poster_file],
                                view=view)
