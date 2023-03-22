@@ -8,7 +8,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import (ClubChannel, ClubMember, add_members,
                                          add_reactions, get_missing_reactions, mutating)
-from juniorguru.lib.mutations import MutationsNotAllowed
+from juniorguru.lib.mutations import MutationsNotAllowedError
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
@@ -90,9 +90,10 @@ async def welcome(discord_channel, message, greeters):
             thread = await discord_message.guild.fetch_channel(message.id)
         else:
             logger_m.debug(f"Creating thread for '{message.author.display_name}'")
-            with mutating(discord_message) as proxy:
-                thread = await proxy.create_thread(name=thread_name)
-            if thread is MutationsNotAllowed:
+            try:
+                with mutating(discord_message, raises=True) as proxy:
+                    thread = await proxy.create_thread(name=thread_name)
+            except MutationsNotAllowedError:
                 logger_m.debug("Skipping, couldn't create the thread")
                 return
 
@@ -101,11 +102,12 @@ async def welcome(discord_channel, message, greeters):
             return
         if thread.name != thread_name:
             logger_m.debug(f"Renaming thread for '{message.author.display_name}' from '{thread.name}' to '{thread_name}'")
-            with mutating(thread) as proxy:
-                thread = await proxy.edit(name=thread_name)
-                if thread is MutationsNotAllowed:
-                    logger_m.debug("Skipping, couldn't edit the thread")
-                    return
+            try:
+                with mutating(thread, raises=True) as proxy:
+                    thread = await proxy.edit(name=thread_name)
+            except MutationsNotAllowedError:
+                logger_m.debug("Skipping, couldn't edit the thread")
+                return
 
         discord_messages = [discord_message async for discord_message in thread.history(limit=None)]
         logger_m.debug(f"Ensuring welcome message for '{message.author.display_name}'")

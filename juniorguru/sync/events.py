@@ -9,7 +9,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubChannel, mutating
 from juniorguru.lib.images import is_image, render_image_file, validate_image
-from juniorguru.lib.mutations import MutationsNotAllowed
+from juniorguru.lib.mutations import MutationsNotAllowedError
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
@@ -140,18 +140,21 @@ async def sync_scheduled_events(client):
                 )
         else:
             logger.info(f"Creating Discord event for '{event.title}'")
-            with mutating(client.club_guild) as proxy:
-                discord_event = await proxy.create_scheduled_event(
-                    name=f'{event.bio_name}: {event.title}',
-                    description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
-                    start_time=event.start_at,
-                    end_time=event.end_at,
-                    location=channel,
-                )
-        if discord_event is not MutationsNotAllowed:
-            event.discord_id = discord_event.id
-            event.discord_url = discord_event.url
-            event.save()
+            try:
+                with mutating(client.club_guild, raises=True) as proxy:
+                    discord_event = await proxy.create_scheduled_event(
+                        name=f'{event.bio_name}: {event.title}',
+                        description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
+                        start_time=event.start_at,
+                        end_time=event.end_at,
+                        location=channel,
+                    )
+            except MutationsNotAllowedError:
+                pass
+            else:
+                event.discord_id = discord_event.id
+                event.discord_url = discord_event.url
+                event.save()
 
 
 @db.connection_context()

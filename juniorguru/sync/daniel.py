@@ -3,7 +3,7 @@ from datetime import date, timedelta
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubMember, is_message_older_than, mutating
-from juniorguru.lib.mutations import MutationsNotAllowed
+from juniorguru.lib.mutations import MutationsNotAllowedError
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
@@ -19,13 +19,14 @@ def main():
 @db.connection_context()
 async def discord_task(client):
     member = await client.club_guild.fetch_member(ClubMember.DANIEL)
-    if member.dm_channel:
-        channel = member.dm_channel
-    else:
-        logger.debug(f"Creating DM channel for {member.display_name} #{member.id}")
-        with mutating(member) as proxy:
-            channel = await proxy.create_dm()
-    if channel is MutationsNotAllowed:
+    try:
+        if member.dm_channel:
+            channel = member.dm_channel
+        else:
+            logger.debug(f"Creating DM channel for {member.display_name} #{member.id}")
+            with mutating(member, raises=True) as proxy:
+                channel = await proxy.create_dm()
+    except MutationsNotAllowedError:
         logger.warning("Couldn't get the DM channel")
         return
 
