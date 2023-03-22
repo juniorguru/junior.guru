@@ -227,10 +227,13 @@ jobs:
           name: Backup data
           command: poetry run jg backup data
       - run:
+          name: Encrypt data
+          command: poetry run jg backup encrypt
+      - run:
           name: Backup Discord
           command: poetry run jg backup discord
       - store_artifacts:
-          path: ./backup.tgz
+          path: ./backup.tgz.gpg
 
   deploy-web:
     executor: python-js
