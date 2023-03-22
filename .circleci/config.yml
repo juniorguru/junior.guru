@@ -224,10 +224,13 @@ jobs:
       - attach_workspace:
           at: "~"
       - run:
-          name: Backups
-          command: poetry run jg backup --discord
+          name: Backup data
+          command: poetry run jg backup data
+      - run:
+          name: Backup Discord
+          command: poetry run jg backup discord
       - store_artifacts:
-          path: ./backup.tar.gz
+          path: ./backup.tgz
 
   deploy-web:
     executor: python-js

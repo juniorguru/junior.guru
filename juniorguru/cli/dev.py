@@ -5,13 +5,7 @@ import click
 import pytest
 from ghp_import import ghp_import
 
-from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.mutations import mutations
-
-
-DATA_DIR = 'juniorguru/data'
-
-BACKUP_FILE = 'backup.tar.gz'
+from juniorguru.lib import loggers
 
 
 logger = loggers.from_path(__file__)
@@ -61,36 +55,6 @@ def test(pytest_args):
     code = pytest.main(list(pytest_args))
     if code:
         raise click.Abort()
-
-
-@main.command()
-@click.option('--data-dir', default=DATA_DIR, type=click.Path(path_type=Path, exists=True, file_okay=False))
-@click.option('--backup-file', default=BACKUP_FILE, type=click.Path(path_type=Path, exists=False, dir_okay=False))
-@click.option('--discord/--no-discord', default=False)
-@click.option('--discord-template', default='jg-backup')
-def backup(data_dir, backup_file, discord, discord_template):
-    logger['backup'].info(f'Backing up {data_dir} to {backup_file}')
-    subprocess.run(['tar', '-cvzf', backup_file, data_dir], check=True)
-    logger['backup'].info(f'Done! {backup_file.stat().st_size / 1048576:.0f} MB')
-    if discord:
-        logger['backup'].info('Backing up Discord')
-        mutations.allow('discord')
-        discord_sync.run(backup_discord, discord_template)
-    else:
-        logger['backup'].info('Discord backup not enabled')
-
-
-async def backup_discord(client, template_name):
-    try:
-        logger['backup'].info(f'Looking for template {template_name}')
-        template = [template for template in (await client.club_guild.templates())
-                    if template.name == template_name][0]
-    except IndexError:
-        logger['backup'].warning(f'Not found! Creating template {template_name}')
-        await client.club_guild.create_template(name=template_name)
-    else:
-        logger['backup'].info(f'Syncing template {template_name}')
-        await template.sync()
 
 
 @main.command()

@@ -94,6 +94,9 @@ google_service_account.json
 
 # Data backup
 backup.tar.gz
+backup.tar.gz.gpg
+backup.tgz
+backup.tgz.gpg
 /backups/
 
 # Web statics
