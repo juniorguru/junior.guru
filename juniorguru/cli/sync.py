@@ -112,8 +112,7 @@ def main(context, id, deps, mutate, allow_mutations):
     if allow_mutations:
         mutations.allow_all()
     else:
-        for service_name in mutate:
-            mutations.allow(service_name)
+        mutations.allow(*mutate)
 
     with db.connection_context():
         sync = Sync.start(id)

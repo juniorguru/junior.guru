@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.lib.mutations import Mutations, MutationsNotAllowedError, MutationsNotAllowed
+from juniorguru.lib.mutations import Mutations, MutationsNotAllowedError, MutationsNotAllowed, MutationsNotInitializedError
 
 
 def test_mutations_mutation():
@@ -40,6 +40,42 @@ async def test_mutations_mutation_async():
     assert value_d == 2
 
 
+def test_mutations_allow_multiple():
+    mutations = Mutations()
+    mutations.allow('fakturoid', 'discord')
+
+    @mutations.mutates('fakturoid')
+    def fakturoid():
+        return 1
+    value_f = fakturoid()
+
+    @mutations.mutates('discord')
+    def discord():
+        return 2
+    value_d = discord()
+
+    assert value_f == 1
+    assert value_d == 2
+
+
+def test_mutations_allow_all():
+    mutations = Mutations()
+    mutations.allow_all()
+
+    @mutations.mutates('fakturoid')
+    def fakturoid():
+        return 1
+    value_f = fakturoid()
+
+    @mutations.mutates('discord')
+    def discord():
+        return 2
+    value_d = discord()
+
+    assert value_f == 1
+    assert value_d == 2
+
+
 def test_mutations_is_allowed():
     mutations = Mutations()
     mutations.allow('discord')
@@ -50,6 +86,7 @@ def test_mutations_is_allowed():
 
 def test_mutations_evaluate_during_call_time_not_import_time():
     mutations = Mutations()
+    mutations.allow()
 
     @mutations.mutates('discord')
     def discord():
@@ -65,6 +102,7 @@ def test_mutations_evaluate_during_call_time_not_import_time():
 
 def test_mutations_raises():
     mutations = Mutations()
+    mutations.allow()
 
     @mutations.mutates('discord', raises=True)
     def discord():
@@ -72,3 +110,31 @@ def test_mutations_raises():
 
     with pytest.raises(MutationsNotAllowedError):
         discord()
+
+
+def test_mutations_must_be_initialized():
+    mutations = Mutations()
+
+    @mutations.mutates('discord')
+    def discord():
+        return 123
+
+    with pytest.raises(MutationsNotInitializedError):
+        mutations.is_allowed('fakturoid')
+    with pytest.raises(MutationsNotInitializedError):
+        discord()
+
+
+def test_mutations_dump():
+    mutations = Mutations()
+    mutations.allow('discord', 'fakturoid')
+
+    assert mutations.dump() == ['discord', 'fakturoid']
+
+
+def test_mutations_load():
+    mutations = Mutations()
+    mutations.load(['discord', 'fakturoid'])
+
+    assert mutations.is_allowed('discord')
+    assert mutations.is_allowed('fakturoid')
