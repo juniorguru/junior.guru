@@ -197,7 +197,7 @@ def test_user_first_seen_on_from_pins(db_connection):
     user2 = create_user(2, joined_at=None, subscribed_at=None)
 
     message = create_message(1, user1, created_at=datetime(2021, 12, 19))
-    ClubPinReaction.create(user=user2, message=message)
+    ClubPinReaction.create(member=user2, message=message)
 
     assert user2.first_seen_on() == date(2021, 12, 19)
 
