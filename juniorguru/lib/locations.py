@@ -13,7 +13,17 @@ logger = loggers.from_path(__file__)
 # https://docs.python-requests.org/en/master/user/advanced/#timeouts
 MAPYCZ_REQUEST_TIMEOUT = (3.05, 27)
 
-USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
+# Seznam has silently turned off access to the original API.
+# This is a HOTFIX with values from the example at https://api.mapy.cz/view?page=geocoding.
+# I've contacted Seznam support meanwhile to get proper access to the new API.
+MAPYCZ_REQUEST_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/110.0',
+    'Accept': '*/*',
+    'Accept-Language': 'en-US,en;q=0.8,cs;q=0.6,sk;q=0.4,es;q=0.2',
+    'Referer': 'https://fiddle.jshell.net/',
+    'X-SZN-Sdk': 'HgUbCgUbGkgqAQkYBxYEHQNHQlJcSlBYSlJbQg==',
+    'X-Mapy-Api-Key': 'virtual-0fcd17d444befc9b4fa678d506bafc5b',
+}
 
 OPTIMIZATIONS = [
     (re.compile(pattern, re.I), value) for pattern, value in [
@@ -109,7 +119,7 @@ def geocode_mapycz(location_raw):
         logger.debug(f"Geocoding '{location_raw}' using api.mapy.cz/v0/geocode")
         response = requests.get('https://api.mapy.cz/v0/geocode',
                                 params={'query': location_raw},
-                                headers={'User-Agent': USER_AGENT},
+                                headers=MAPYCZ_REQUEST_HEADERS,
                                 timeout=MAPYCZ_REQUEST_TIMEOUT)
         response.raise_for_status()
 
@@ -128,7 +138,7 @@ def geocode_mapycz(location_raw):
         logger.debug(f"Reverse geocoding '{location_raw}' lat: {lat} lng: {lng} using api.mapy.cz/v0/rgeocode")
         response = requests.get('https://api.mapy.cz/v0/rgeocode',
                                 params={'lat': lat, 'lon': lng},
-                                headers={'User-Agent': USER_AGENT},
+                                headers=MAPYCZ_REQUEST_HEADERS,
                                 timeout=MAPYCZ_REQUEST_TIMEOUT)
         response.raise_for_status()
 
