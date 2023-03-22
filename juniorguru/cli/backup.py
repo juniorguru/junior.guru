@@ -2,8 +2,8 @@ import re
 import subprocess
 from pathlib import Path
 
-from pycircleci.api import Api
 import click
+from pycircleci.api import Api
 
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.mutations import mutations
