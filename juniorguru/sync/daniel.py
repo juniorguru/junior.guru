@@ -6,7 +6,6 @@ from juniorguru.lib.discord_club import ClubMember, is_message_older_than, mutat
 from juniorguru.lib.mutations import MutationsNotAllowed
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
-from juniorguru.lib.mutations import MutationsNotAllowed
 
 
 logger = loggers.from_path(__file__)

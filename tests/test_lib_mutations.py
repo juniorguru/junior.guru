@@ -1,6 +1,8 @@
 import pytest
 
-from juniorguru.lib.mutations import Mutations, MutationsNotAllowedError, MutationsNotAllowed, MutationsNotInitializedError
+from juniorguru.lib.mutations import (Mutations, MutationsNotAllowed,
+                                      MutationsNotAllowedError,
+                                      MutationsNotInitializedError)
 
 
 def test_mutations_mutation():
