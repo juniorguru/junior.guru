@@ -82,12 +82,13 @@ class MutatingProxy:
     prefixes = {'add_', 'create_', 'delete_', 'edit_', 'remove_',
                 'delete', 'edit', 'send', 'purge'}
 
-    def __init__(self, object):
+    def __init__(self, object, raises=False):
         self.object = object
+        self.raises = raises
 
     def __getattr__(self, attr):
         if attr.startswith(tuple(self.prefixes)):
-            return mutations.mutates('discord')(getattr(self.object, attr))
+            return mutations.mutates('discord', raises=self.raises)(getattr(self.object, attr))
         raise NotImplementedError(attr)
 
 

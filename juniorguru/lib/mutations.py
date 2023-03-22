@@ -15,10 +15,15 @@ class Services(Enum):
     MEMBERFUL = auto()
 
 
-class Mutations:
-    class MutationsNotAllowed:
-        pass
+class MutationsNotAllowed:
+    pass
 
+
+class MutationsNotAllowedError(Exception):
+    pass
+
+
+class Mutations:
     def __init__(self):
         self.allowed = set()
 
@@ -35,12 +40,14 @@ class Mutations:
     def is_allowed(self, service_name):
         return Services[service_name.upper()] in self.allowed
 
-    def mutates(self, service_name):
+    def mutates(self, service_name, raises=False):
         service = Services[service_name.upper()]
 
         def warn():
             logger[service_name.lower()].warning('Not allowed')
-            return self.MutationsNotAllowed
+            if raises:
+                raise MutationsNotAllowedError
+            return MutationsNotAllowed
 
         def decorator(fn):
             if inspect.iscoroutinefunction(fn):

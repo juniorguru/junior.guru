@@ -8,7 +8,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import (ClubChannel, ClubMember, add_members,
                                          add_reactions, get_missing_reactions, mutating)
-from juniorguru.lib.mutations import mutations
+from juniorguru.lib.mutations import MutationsNotAllowed
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
@@ -54,35 +54,31 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    channel = client.club_guild.system_channel
-
-    if channel.id != ClubChannel.INTRO:
-        raise RuntimeError('It is expected that the system channel is the same as the intro channel')
-
-    messages = ClubMessage.channel_listing_since(channel.id, datetime.utcnow() - PROCESS_HISTORY_SINCE)
-    await asyncio.gather(*[process_message(client, channel, message) for message in messages])
+    messages = ClubMessage.channel_listing_since(ClubChannel.INTRO, datetime.utcnow() - PROCESS_HISTORY_SINCE)
+    discord_channel = await client.club_guild.fetch_channel(ClubChannel.INTRO)
+    await asyncio.gather(*[process_message(client, discord_channel, message) for message in messages])
 
     logger.info('Purging system messages about created threads')
-    with mutating(channel) as proxy:
+    with mutating(discord_channel) as proxy:
         await proxy.purge(check=is_thread_created, limit=PURGE_SAFETY_LIMIT, after=THREADS_STARTING_AT)
 
 
-async def process_message(client, channel, message):
+async def process_message(client, discord_channel, message):
     greeters_role = [role for role in client.club_guild.roles if role.id == GREETERS_ROLE][0]
     greeters = greeters_role.members
     greeters_ids = [member.id for member in greeters] + [ClubMember.BOT]
 
     if message.type == 'default' and message.author.id not in greeters_ids and message.is_intro:
-        await welcome(channel, message, greeters)
+        await welcome(discord_channel, message, greeters)
     elif message.type == 'new_member' and message.author.first_seen_on() < message.created_at.date():
-        await welcome_back(channel, message)
+        await welcome_back(discord_channel, message)
 
 
-async def welcome(channel, message, greeters):
+async def welcome(discord_channel, message, greeters):
     logger_m = logger[f'messages.{message.id}']
     logger_m.info(f'Member #{message.author.id} has an intro message')
     logger_m.debug(f"Welcoming '{message.author.display_name}' with emojis")
-    discord_message = await channel.fetch_message(message.id)
+    discord_message = await discord_channel.fetch_message(message.id)
     missing_emojis = get_missing_reactions(discord_message.reactions, WELCOME_REACTIONS)
     with mutating(discord_message) as proxy:
         await add_reactions(proxy, missing_emojis)
@@ -97,7 +93,7 @@ async def welcome(channel, message, greeters):
             logger_m.debug(f"Creating thread for '{message.author.display_name}'")
             with mutating(discord_message) as proxy:
                 thread = await proxy.create_thread(name=thread_name)
-            if thread is mutations.MutationsNotAllowed:
+            if thread is MutationsNotAllowed:
                 logger_m.debug("Skipping, couldn't create the thread")
                 return
 
@@ -108,7 +104,7 @@ async def welcome(channel, message, greeters):
             logger_m.debug(f"Renaming thread for '{message.author.display_name}' from '{thread.name}' to '{thread_name}'")
             with mutating(thread) as proxy:
                 thread = await proxy.edit(name=thread_name)
-                if thread is mutations.MutationsNotAllowed:
+                if thread is MutationsNotAllowed:
                     logger_m.debug("Skipping, couldn't edit the thread")
                     return
 
@@ -151,11 +147,11 @@ async def welcome(channel, message, greeters):
                     await add_members(proxy, members_to_add)
 
 
-async def welcome_back(channel, message):
+async def welcome_back(discord_channel, message):
     logger_m = logger[f'messages.{message.id}']
     logger_m.info(f'Member #{message.author.id} has returned')
     logger_m.debug(f"Welcoming back '{message.author.display_name}' with emojis")
-    discord_message = await channel.fetch_message(message.id)
+    discord_message = await discord_channel.fetch_message(message.id)
     missing_emojis = get_missing_reactions(discord_message.reactions, WELCOME_BACK_REACTIONS)
     with mutating(discord_message) as proxy:
         await add_reactions(proxy, missing_emojis)

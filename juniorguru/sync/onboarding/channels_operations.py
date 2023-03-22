@@ -5,7 +5,7 @@ from slugify import slugify
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import ClubMember, mutating
-from juniorguru.lib.mutations import mutations
+from juniorguru.lib.mutations import MutationsNotAllowed
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.onboarding.categories import manage_category
 
@@ -47,7 +47,7 @@ async def create_onboarding_channel(client, member):
     async def create_channel(category):
         with mutating(client.club_guild) as proxy:
             channel = await proxy.create_text_channel(category=category, **channel_data)
-        if channel is not mutations.MutationsNotAllowed:
+        if channel is not MutationsNotAllowed:
             member.onboarding_channel_id = channel.id
             member.save()
     await manage_category(client.club_guild, create_channel)
