@@ -36,13 +36,13 @@ class Mutations:
         for service_name in service_names:
             service = Services[service_name.upper()]
             self.allowed.add(service)
-            logger[service_name.lower()].info('Allowed')
+            logger[service_name.lower()].debug('Allowed')
         self._initialized = True
 
     def allow_all(self):
         for service in Services:
             self.allowed.add(service)
-            logger[service.name.lower()].info('Allowed')
+            logger[service.name.lower()].debug('Allowed')
         self._initialized = True
 
     def is_allowed(self, service_name):

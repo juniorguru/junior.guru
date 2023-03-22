@@ -93,8 +93,8 @@ class MutatingProxy:
 
 
 @contextmanager
-def mutating(object):
-    yield MutatingProxy(object)
+def mutating(*args, **kwargs):
+    yield MutatingProxy(*args, **kwargs)
 
 
 def emoji_name(reaction_emoji):
