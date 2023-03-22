@@ -9,7 +9,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubChannel, mutating
 from juniorguru.lib.images import is_image, render_image_file, validate_image
-from juniorguru.lib.mutations import MutationsNotAllowed
+from juniorguru.lib.mutations import mutations
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
@@ -148,7 +148,7 @@ async def sync_scheduled_events(client):
                     end_time=event.end_at,
                     location=channel,
                 )
-        if discord_event is not MutationsNotAllowed:
+        if discord_event is not mutations.MutationsNotAllowed:
             event.discord_id = discord_event.id
             event.discord_url = discord_event.url
             event.save()

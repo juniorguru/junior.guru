@@ -1,5 +1,6 @@
 import inspect
 from enum import Enum, auto
+from functools import wraps
 
 from juniorguru.lib import loggers
 
@@ -14,11 +15,10 @@ class Services(Enum):
     MEMBERFUL = auto()
 
 
-class MutationsNotAllowed:
-    pass
-
-
 class Mutations:
+    class MutationsNotAllowed:
+        pass
+
     def __init__(self):
         self.allowed = set()
 
@@ -35,23 +35,28 @@ class Mutations:
     def is_allowed(self, service_name):
         return Services[service_name.upper()] in self.allowed
 
-    def mutation(self, service_name, fn):
-        service = Services[service_name.upper()]
-        if service in self.allowed:
-            return fn
-
-        def sync_warn(*args, **kwargs):
-            logger[service_name.lower()].warning('Not allowed')
-            return MutationsNotAllowed
-
-        async def async_warn(*args, **kwargs):
-            return sync_warn()
-
-        return async_warn if inspect.iscoroutinefunction(fn) else sync_warn
-
     def mutates(self, service_name):
+        service = Services[service_name.upper()]
+
+        def warn():
+            logger[service_name.lower()].warning('Not allowed')
+            return self.MutationsNotAllowed
+
         def decorator(fn):
-            return self.mutation(service_name, fn)
+            if inspect.iscoroutinefunction(fn):
+                @wraps(fn)
+                async def wrapper(*args, **kwargs):
+                    if service in self.allowed:
+                        return await fn(*args, **kwargs)
+                    return warn()
+                return wrapper
+
+            @wraps(fn)
+            def wrapper(*args, **kwargs):
+                if service in self.allowed:
+                    return fn(*args, **kwargs)
+                return warn()
+            return wrapper
         return decorator
 
 

@@ -79,19 +79,16 @@ class ClubClient(discord.Client):
 
 
 class MutatingProxy:
-    reading = {'fetch_', 'get_', 'is_'}
-    writing = {'add_', 'create_', 'delete_', 'edit_', 'remove_',
-               'delete', 'edit', 'send', 'purge'}
+    prefixes = {'add_', 'create_', 'delete_', 'edit_', 'remove_',
+                'delete', 'edit', 'send', 'purge'}
 
     def __init__(self, object):
         self.object = object
 
     def __getattr__(self, attr):
-        if attr.startswith(tuple(self.reading)):
-            return getattr(self.object, attr)
-        if attr.startswith(tuple(self.writing)):
-            return mutations.mutation('discord', getattr(self.object, attr))
-        raise NotImplementedError(f"Not sure what to do with attribute {attr!r}")
+        if attr.startswith(tuple(self.prefixes)):
+            return mutations.mutates('discord')(getattr(self.object, attr))
+        raise NotImplementedError(attr)
 
 
 @contextmanager

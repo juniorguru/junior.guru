@@ -6,7 +6,7 @@ from strictyaml import Bool, Int, Map, Optional, Seq, Str, Url, load
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubChannel, mutating
-from juniorguru.lib.mutations import MutationsNotAllowed
+from juniorguru.lib.mutations import mutations
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.mentor import Mentor
@@ -85,7 +85,7 @@ async def discord_task(client):
                 info_message = None
             with mutating(discord_channel) as proxy:
                 discord_message = await proxy.send(**mentor_params)
-            if discord_message is not MutationsNotAllowed:
+            if discord_message is not mutations.MutationsNotAllowed:
                 mentor.message_url = discord_message.jump_url
                 mentor.save()
 
