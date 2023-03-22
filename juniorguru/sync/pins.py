@@ -32,7 +32,7 @@ async def discord_task(client):
 async def process_pin_reaction(client, pin_reaction):
     logger_p = logger[f'reactions.{pin_reaction.id}']
 
-    member = await client.club_guild.fetch_member(pin_reaction.user.id)
+    member = await client.club_guild.fetch_member(pin_reaction.member.id)
     if member.dm_channel:
         channel = member.dm_channel
     else:
