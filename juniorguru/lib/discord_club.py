@@ -52,6 +52,11 @@ class ClubEmoji(StrEnum):
 
 class ClubClient(discord.Client):
     def __init__(self, *args, **kwargs):
+        club_intents = discord.Intents(guilds=True,
+                                       members=True,
+                                       message_content=True)
+        kwargs['intents'] = kwargs.pop('intents', club_intents)
+
         super().__init__(*args, **kwargs)
 
         def check_mutations(request):

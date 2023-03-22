@@ -3,8 +3,6 @@ import importlib
 import os
 from multiprocessing import Process
 
-import discord
-
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import ClubClient
 
@@ -32,7 +30,7 @@ def run(fn, *args):
 
 
 def get_import_path(fn):
-    return f'{fn.__module__}.{fn.__name__}'
+    return f'{fn.__module__}.{fn.__qualname__}'
 
 
 def discord_process(import_path, args):
@@ -58,8 +56,7 @@ def discord_process(import_path, args):
             logger_dt.debug('Got an error, raising')
             raise
 
-    intents = discord.Intents(guilds=True, members=True, message_content=True)
-    client = Client(intents=intents)
+    client = Client()
 
     exc = None
     def exc_handler(loop, context):
