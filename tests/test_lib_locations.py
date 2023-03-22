@@ -2,34 +2,31 @@ from operator import itemgetter
 
 import pytest
 
-from juniorguru.jobs.legacy_jobs.pipelines import locations
+from juniorguru.lib.locations import fetch_locations, get_region, optimize_geocoding
 
 
-def test_locations(item, spider):
+def test_locations():
     address = {'place': 'Řevnice',
                'region': 'Středočeský kraj',
                'country': 'Česko'}
-    item['locations_raw'] = ['252 30 Řevnice, Česko']
-    item = locations.Pipeline(geocode=lambda l: address).process_item(item, spider)
+    results = fetch_locations(['252 30 Řevnice, Česko'], geocode=lambda l: address)
 
-    assert item['locations'] == [{'name': 'Řevnice', 'region': 'Praha'}]
-
-
-def test_locations_remote(item, spider):
-    item['locations_raw'] = []
-    item = locations.Pipeline(geocode=lambda l: {}).process_item(item, spider)
-
-    assert item.get('locations', []) == []
+    assert results == [{'name': 'Řevnice', 'region': 'Praha'}]
 
 
-def test_locations_no_response(item, spider):
-    item['locations_raw'] = ['???']
-    item = locations.Pipeline(geocode=lambda l: None).process_item(item, spider)
+def test_locations_remote():
+    results = fetch_locations([], geocode=lambda l: {})
 
-    assert item.get('locations', []) == []
+    assert results == []
 
 
-def test_locations_multiple(item, spider):
+def test_locations_no_response():
+    results = fetch_locations(['???'], geocode=lambda l: None)
+
+    assert results == []
+
+
+def test_locations_multiple():
     addresses = iter([
         {'place': 'Řevnice',
          'region': 'Středočeský kraj',
@@ -38,29 +35,27 @@ def test_locations_multiple(item, spider):
          'region': 'Jihomoravský kraj',
          'country': 'Česko'}
     ])
-    item['locations_raw'] = ['252 30 Řevnice, Česko', 'Brno, Česko']
-    item = locations.Pipeline(geocode=lambda l: next(addresses)).process_item(item, spider)
+    results = fetch_locations(['252 30 Řevnice, Česko', 'Brno, Česko'], geocode=lambda l: next(addresses))
 
-    assert sorted(item['locations'], key=itemgetter('name')) == [
+    assert sorted(results, key=itemgetter('name')) == [
         {'name': 'Brno', 'region': 'Brno'},
         {'name': 'Řevnice', 'region': 'Praha'},
     ]
 
 
-def test_locations_multiple_no_response(item, spider):
+def test_locations_multiple_no_response():
     addresses = iter([
         None,
         {'place': 'Brno',
          'region': 'Jihomoravský kraj',
          'country': 'Česko'}
     ])
-    item['locations_raw'] = ['???', 'Brno, Česko']
-    item = locations.Pipeline(geocode=lambda l: next(addresses)).process_item(item, spider)
+    results = fetch_locations(['???', 'Brno, Česko'], geocode=lambda l: next(addresses))
 
-    assert item['locations'] == [{'name': 'Brno', 'region': 'Brno'}]
+    assert results == [{'name': 'Brno', 'region': 'Brno'}]
 
 
-def test_locations_multiple_unique(item, spider):
+def test_locations_multiple_unique():
     addresses = iter([
         {'place': 'Brno',
          'region': 'Jihomoravský kraj',
@@ -69,17 +64,16 @@ def test_locations_multiple_unique(item, spider):
          'region': 'Jihomoravský kraj',
          'country': 'Česko'}
     ])
-    item['locations_raw'] = ['Plevova 1, Brno, Česko', 'Brno, Česko']
-    item = locations.Pipeline(geocode=lambda l: next(addresses)).process_item(item, spider)
+    results = fetch_locations(['Plevova 1, Brno, Česko', 'Brno, Česko'], geocode=lambda l: next(addresses))
 
-    assert item['locations'] == [{'name': 'Brno', 'region': 'Brno'}]
+    assert results == [{'name': 'Brno', 'region': 'Brno'}]
 
 
 def test_get_region_from_country():
     address = dict(region='Województwo Mazowieckie',
                    country='Polska')
 
-    assert locations.get_region(address) == 'Polsko'
+    assert get_region(address) == 'Polsko'
 
 
 @pytest.mark.parametrize('country', [
@@ -90,7 +84,7 @@ def test_get_region_from_region(country):
     address = dict(region='Středočeský kraj',
                    country=country)
 
-    assert locations.get_region(address) == 'Praha'
+    assert get_region(address) == 'Praha'
 
 
 GEOCODED_ADDRESS = {'place': '-- GEOCODED --',
@@ -114,4 +108,4 @@ def test_optimize_geocoding(location_raw, expected):
     def geocode(location_raw):
         return GEOCODED_ADDRESS
 
-    assert locations.optimize_geocoding(geocode)(location_raw) == expected
+    assert optimize_geocoding(geocode)(location_raw) == expected

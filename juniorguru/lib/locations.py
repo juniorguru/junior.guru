@@ -157,7 +157,7 @@ if __name__ == '__main__':
     """
     Usage:
 
-        poetry run python -m juniorguru.lib.locations 'Brno, South Moravia'
+        poetry run python -m juniorguru.lib.locations 'Ústí nad Orlicí, Pardubice, Czechia'
     """
     import sys
     from pprint import pprint
