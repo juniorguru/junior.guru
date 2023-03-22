@@ -80,8 +80,7 @@ async def welcome(discord_channel, message, greeters):
     logger_m.debug(f"Welcoming '{message.author.display_name}' with emojis")
     discord_message = await discord_channel.fetch_message(message.id)
     missing_emojis = get_missing_reactions(discord_message.reactions, WELCOME_REACTIONS)
-    with mutating(discord_message) as proxy:
-        await add_reactions(proxy, missing_emojis)
+    await add_reactions(discord_message, missing_emojis)
 
     if message.created_at >= THREADS_STARTING_AT:
         logger_m.debug(f"Ensuring thread for '{message.author.display_name}'")
@@ -134,8 +133,7 @@ async def welcome(discord_channel, message, greeters):
                 welcome_discord_message = await proxy.send(content=content, suppress=True)
 
             logger_m.debug("Adding numbers reactions under the welcome message")
-            with mutating(welcome_discord_message) as proxy:
-                await add_reactions(proxy, NUMBERS_REACTIONS, ordered=True)
+            await add_reactions(welcome_discord_message, NUMBERS_REACTIONS, ordered=True)
 
             logger_m.debug("Analyzing if all greeters are involved")
             thread_members_ids = [member.id for member in (thread.members or await thread.fetch_members())]
@@ -143,8 +141,7 @@ async def welcome(discord_channel, message, greeters):
                             if greeter.id not in thread_members_ids]
             logger_m.debug(f"Found {len(members_to_add)} greeters to add")
             if members_to_add:
-                with mutating(thread) as proxy:
-                    await add_members(proxy, members_to_add)
+                await add_members(thread, members_to_add)
 
 
 async def welcome_back(discord_channel, message):
@@ -153,8 +150,7 @@ async def welcome_back(discord_channel, message):
     logger_m.debug(f"Welcoming back '{message.author.display_name}' with emojis")
     discord_message = await discord_channel.fetch_message(message.id)
     missing_emojis = get_missing_reactions(discord_message.reactions, WELCOME_BACK_REACTIONS)
-    with mutating(discord_message) as proxy:
-        await add_reactions(proxy, missing_emojis)
+    await add_reactions(discord_message, missing_emojis)
 
 
 def is_thread_created(discord_message):

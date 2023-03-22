@@ -162,22 +162,22 @@ def is_thread_after(thread, after=None):
     return thread
 
 
-@mutations.mutates('discord')
 async def add_members(thread, members):
-    await asyncio.gather(*[thread.add_user(member) for member in members])
+    with mutating(thread) as proxy:
+        await asyncio.gather(*[proxy.add_user(member) for member in members])
 
 
-@mutations.mutates('discord')
 async def add_reactions(message, emojis, ordered=False):
     logger.debug(f"Reacting to message #{message.id} with emojis: {list(emojis)!r}")
     if not emojis:
         return
     try:
-        if ordered:
-            for emoji_ in emojis:
-                await message.add_reaction(emoji_)
-        else:
-            await asyncio.gather(*[message.add_reaction(emoji_) for emoji_ in emojis])
+        with mutating(message) as proxy:
+            if ordered:
+                for emoji_ in emojis:
+                    await proxy.add_reaction(emoji_)
+            else:
+                await asyncio.gather(*[proxy.add_reaction(emoji_) for emoji_ in emojis])
     except Forbidden as e:
         if 'maximum number of reactions reached' in str(e).lower():
             logger.warning(f"Message #{message.jump_url} reached maximum number of reactions!")
