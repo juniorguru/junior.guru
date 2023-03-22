@@ -6,6 +6,7 @@ import pytest
 from ghp_import import ghp_import
 
 from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib.mutations import mutations
 
 
 DATA_DIR = 'juniorguru/data'
@@ -73,6 +74,7 @@ def backup(data_dir, backup_file, discord, discord_template):
     logger['backup'].info(f'Done! {backup_file.stat().st_size / 1048576:.0f} MB')
     if discord:
         logger['backup'].info('Backing up Discord')
+        mutations.allow('discord')
         discord_sync.run(backup_discord, discord_template)
     else:
         logger['backup'].info('Discord backup not enabled')
