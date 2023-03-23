@@ -171,7 +171,7 @@ Pokud tady něco chybí, tak buď [nejde o placenou spolupráci](../faq.md#neozn
 
 ## Historie
 
-{% if partner.first_partnership().starts_on.year < 2023 %}
+{% if partner.first_partnership().starts_on.year < 2022 %}
 Partnerství jsou vždy na jeden rok. Do 2023 se však při prodlužování nedělal nový záznam, pouze se přepsalo datum ukončení.
 {% endif %}
 
