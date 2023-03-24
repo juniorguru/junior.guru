@@ -9,7 +9,7 @@ executors:
 
 
 orbs:
-  git-shallow-clone: guitarrapc/git-shallow-clone@2.4.1
+  git-shallow-clone: guitarrapc/git-shallow-clone@2.5.0
 
 
 commands:
