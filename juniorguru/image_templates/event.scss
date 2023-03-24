@@ -186,6 +186,14 @@ p {
   line-height: 1.5;
 }
 
+/*
+  I didn't have time to fine tune the CSS to accomodate logical changes
+  coming with introducing public events.
+*/
+.about-invisible {
+  visibility: hidden;
+}
+
 @media (max-height: 650px) {
   .bio-avatar {
     width: 10rem;

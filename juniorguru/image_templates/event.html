@@ -30,10 +30,14 @@
         <p class="teaser-text">
           {{ event.start_at|weekday|capitalize }} <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at) }}</strong>, začátek v <strong>{{ event.start_at|local_time }}</strong>
           <br>
-          Online pro členy <strong>junior.guru/club</strong>
+          {% if event.public_recording_url %}
+            Online na <strong>youtube.com/@juniordotguru</strong>
+          {% else %}
+            Online pro členy <strong>junior.guru/club</strong>
+          {% endif %}
         </p>
       </div>
-      <div class="about">
+      <div class="about{% if event.public_recording_url %} about-invisible{% endif %}">
         <div>
           <img class="about-logo" src="{{ images_dir }}/logo.svg">
         </div>
