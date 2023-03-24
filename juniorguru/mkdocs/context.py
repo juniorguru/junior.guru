@@ -93,6 +93,7 @@ def on_docs_context(context):
     context['jobs_volunteering'] = ListedJob.volunteering_listing()
 
     # open.md
+    context['remaining_months_2023'] = (date(2023, 12, 31) - TODAY).days / 30
     context['partners_expired'] = Partner.expired_listing()
     business_charts_months = charts.months(BUSINESS_BEGIN_ON, TODAY)
     context['charts_business_labels'] = charts.labels(business_charts_months)
