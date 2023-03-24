@@ -193,23 +193,24 @@ async def channel_worker(worker_no, authors, queue):
                                type=message.type.name)
             messages_count += 1
 
-            async for reacting_user in fetch_users_reacting_by_pin(message.reactions):
-                if reacting_user.id not in authors:
-                    authors[reacting_user.id] = create_user(reacting_user)
+            async for reacting_member in fetch_members_reacting_by_pin(message.reactions):
+                if reacting_member.id not in authors:
+                    authors[reacting_member.id] = create_user(reacting_member)
                     users_count += 1
-                logger_w['pins'].debug(f"Message {message.jump_url} is pinned by user '{reacting_user.display_name}' #{reacting_user.id}")
-                ClubPinReaction.create(user=reacting_user.id, message=message.id)
+                logger_w['pins'].debug(f"Message {message.jump_url} is pinned by member '{reacting_member.display_name}' #{reacting_member.id}")
+                ClubPinReaction.create(member=reacting_member.id, message=message.id)
                 pins_count += 1
 
         logger_w.info(f"Channel #{channel.id} added {messages_count} messages, {users_count} users, {pins_count} pins")
         queue.task_done()
 
 
-async def fetch_users_reacting_by_pin(reactions):
+async def fetch_members_reacting_by_pin(reactions):
     for reaction in reactions:
         if emoji_name(reaction.emoji) == ClubEmoji.PIN:
             async for user in reaction.users():
-                yield user
+                if getattr(user, 'joined_at', False):
+                    yield user
 
 
 def create_user(user):

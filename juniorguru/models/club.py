@@ -255,7 +255,7 @@ class ClubMessage(BaseModel):
 
 
 class ClubPinReaction(BaseModel):
-    user = ForeignKeyField(ClubUser, backref='list_pins')
+    member = ForeignKeyField(ClubUser, backref='list_pins')
     message = ForeignKeyField(ClubMessage, backref='list_pins')
 
     @classmethod
