@@ -18,7 +18,7 @@ def op(item):
                                '--fields', 'label=password'],
                               stdout=subprocess.PIPE,
                               check=True)
-        return proc.stdout.decode('utf-8')
+        return proc.stdout.decode('utf-8').strip()
     except FileNotFoundError:
         return None
 
