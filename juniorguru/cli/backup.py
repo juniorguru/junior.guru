@@ -61,9 +61,7 @@ def encrypt(backup_file, passphrase, op_item):
 @main.command()
 @click.argument('circleci_workflow')
 @click.option('--circleci-api-key', envvar='CIRCLECI_API_KEY')
-# @click.option('--passphrase', envvar='BACKUP_PASSPHRASE')
-# @click.option('--op-item', default='Passphrase for junior.guru backup')
-def download(circleci_workflow, circleci_api_key):#, passphrase, op_item):
+def download(circleci_workflow, circleci_api_key):
     circleci = Api(token=circleci_api_key)
     if match := re.search(r'/workflows/([^/]+)', circleci_workflow):
         workflow_id = match.group(1)
