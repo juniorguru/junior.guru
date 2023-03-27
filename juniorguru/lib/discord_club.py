@@ -194,3 +194,7 @@ def get_reaction(reactions, emoji):
         if emoji_name(reaction.emoji) == emoji:
             return reaction
     return None
+
+
+def get_parent_channel_id(channel):
+    return channel.parent.id if hasattr(channel, 'parent') else channel.id

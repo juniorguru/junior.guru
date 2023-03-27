@@ -1,17 +1,13 @@
 import asyncio
 import itertools
-from datetime import timedelta
-
-import arrow
+from datetime import timedelta, datetime
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubChannel,
-                                         ClubEmoji, ClubMember, emoji_name,
-                                         fetch_messages, fetch_threads, get_roles,
-                                         is_thread_after)
-from juniorguru.lib.discord_votes import count_downvotes, count_upvotes
-from juniorguru.models.base import db
-from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
+                                         ClubEmoji, emoji_name,
+                                         fetch_messages, fetch_threads,
+                                         is_thread_after, get_parent_channel_id)
+from juniorguru.sync.club_content.store import store_member, store_user, store_message, store_pin
 
 
 logger = loggers.from_path(__file__)
@@ -33,7 +29,6 @@ CHANNELS_HISTORY_SINCE = {
 }
 
 
-@db.connection_context()
 async def crawl(client):
     channels = (channel for channel  # or just club_guild.channels ???
                 in itertools.chain(client.club_guild.text_channels,
@@ -76,30 +71,20 @@ async def crawl(client):
 
     logger_u.info(f'There are {len(remaining_members)} remaining members')
     for member in remaining_members:
-        logger_u.debug(f"Member '{member.display_name}' #{member.id}")
-        ClubUser.create(id=member.id,
-                        is_bot=member.bot,
-                        is_member=True,
-                        has_avatar=bool(member.avatar),
-                        display_name=member.display_name,
-                        mention=member.mention,
-                        tag=f'{member.name}#{member.discriminator}',
-                        joined_at=arrow.get(member.joined_at).naive,
-                        initial_roles=get_roles(member))
+        await store_member(member)
 
 
 async def channel_worker(worker_no, authors, queue):
     logger_w = logger[f'channel_workers.{worker_no}']
     while True:
         channel = await queue.get()
-        parent_channel_id = channel.parent.id if hasattr(channel, 'parent') else channel.id
-
+        parent_channel_id = get_parent_channel_id(channel)
         history_since = CHANNELS_HISTORY_SINCE.get(parent_channel_id, DEFAULT_CHANNELS_HISTORY_SINCE)
         if history_since is None:
             history_after = None
             logger_w.info(f"Reading channel #{channel.id} history since ever")
         else:
-            history_after = (arrow.utcnow() - history_since).datetime
+            history_after = (datetime.utcnow() - history_since).datetime
             logger_w.info(f"Reading channel #{channel.id} history after {history_after:%Y-%m-%d} ({history_since.days} days ago)")
         logger_w.debug(f"Channel #{channel.id} is named '{channel.name}'")
 
@@ -116,34 +101,16 @@ async def channel_worker(worker_no, authors, queue):
         pins_count = 0
         async for message in fetch_messages(channel, after=history_after):
             if message.author.id not in authors:
-                authors[message.author.id] = create_user(message.author)
+                authors[message.author.id] = await store_user(message.author)
                 users_count += 1
-
-            ClubMessage.create(id=message.id,
-                               url=message.jump_url,
-                               content=message.content,
-                               content_size=len(message.content or ''),
-                               reactions={emoji_name(reaction.emoji): reaction.count for reaction in message.reactions},
-                               upvotes_count=count_upvotes(message.reactions),
-                               downvotes_count=count_downvotes(message.reactions),
-                               created_at=arrow.get(message.created_at).naive,
-                               created_month=f'{message.created_at:%Y-%m}',
-                               edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
-                               author=authors[message.author.id],
-                               author_is_bot=message.author.id == ClubMember.BOT,
-                               channel_id=channel.id,
-                               channel_name=channel.name,
-                               parent_channel_id=parent_channel_id,
-                               category_id=channel.category_id,
-                               type=message.type.name)
+            await store_message(message, channel, authors[message.author.id])
             messages_count += 1
 
             async for reacting_member in fetch_members_reacting_by_pin(message.reactions):
                 if reacting_member.id not in authors:
-                    authors[reacting_member.id] = create_user(reacting_member)
+                    authors[reacting_member.id] = await store_user(reacting_member)
                     users_count += 1
-                logger_w['pins'].debug(f"Message {message.jump_url} is pinned by member '{reacting_member.display_name}' #{reacting_member.id}")
-                ClubPinReaction.create(member=reacting_member.id, message=message.id)
+                await store_pin(message, reacting_member)
                 pins_count += 1
 
         logger_w.info(f"Channel #{channel.id} added {messages_count} messages, {users_count} users, {pins_count} pins")
@@ -156,20 +123,3 @@ async def fetch_members_reacting_by_pin(reactions):
             async for user in reaction.users():
                 if getattr(user, 'joined_at', False):
                     yield user
-
-
-def create_user(user):
-    logger['users'].debug(f"User '{user.display_name}' #{user.id}")
-
-    # The message.author can be an instance of Member, but it can also be an instance of User,
-    # if the author isn't a member of the Discord guild/server anymore. User instances don't
-    # have certain properties, hence the getattr() calls below.
-    return ClubUser.create(id=user.id,
-                           is_bot=user.bot,
-                           is_member=bool(getattr(user, 'joined_at', False)),
-                           has_avatar=bool(user.avatar),
-                           display_name=user.display_name,
-                           mention=user.mention,
-                           tag=f'{user.name}#{user.discriminator}',
-                           joined_at=(arrow.get(user.joined_at).naive if hasattr(user, 'joined_at') else None),
-                           initial_roles=get_roles(user))
