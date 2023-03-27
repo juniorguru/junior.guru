@@ -135,16 +135,6 @@ def is_message_over_period_ago(message, period, today=None):
     return is_message_older_than(message, ago)
 
 
-async def fetch_messages(channel, after=None):
-    try:
-        channel_history = channel.history
-    except AttributeError:
-        pass  # channel type doesn't support history (e.g. forum)
-    else:
-        async for message in channel_history(limit=None, after=after):
-            yield message
-
-
 async def fetch_threads(channel):
     try:
         channel_threads = channel.threads
@@ -198,3 +188,7 @@ def get_reaction(reactions, emoji):
 
 def get_parent_channel_id(channel):
     return channel.parent.id if hasattr(channel, 'parent') else channel.id
+
+
+def is_member(user):
+    return getattr(user, 'joined_at', False)

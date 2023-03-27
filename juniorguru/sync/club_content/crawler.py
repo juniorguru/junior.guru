@@ -6,10 +6,9 @@ import arrow
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubChannel,
-                                         ClubEmoji, emoji_name,
-                                         fetch_messages, fetch_threads,
+                                         ClubEmoji, emoji_name, fetch_threads, is_member,
                                          is_thread_after, get_parent_channel_id)
-from juniorguru.sync.club_content.store import store_member, store_user, store_message, store_pin
+from juniorguru.sync.club_content.store import store_member, store_message, store_pin
 
 
 logger = loggers.from_path(__file__)
@@ -32,20 +31,27 @@ CHANNELS_HISTORY_SINCE = {
 
 
 async def crawl(client):
+    logger.info("Crawling members")
+    async with asyncio.TaskGroup() as tasks:
+        async for member in client.club_guild.fetch_members(limit=None):
+            tasks.create_task(store_member(member))
+
+    logger.info("Crawling channels")
     channels = (channel for channel  # or just club_guild.channels ???
                 in itertools.chain(client.club_guild.text_channels,
                                    client.club_guild.voice_channels,
                                    # TODO client.club_guild.stage_channels,
                                    client.club_guild.forum_channels)
                 if channel.permissions_for(client.club_guild.me).read_messages)
+    await run_channel_queue(channels)
 
-    authors = {}
 
+async def run_channel_queue(channels):
     queue = asyncio.Queue()
     for channel in channels:
         queue.put_nowait(channel)
 
-    workers = [asyncio.create_task(channel_worker(worker_no, authors, queue))
+    workers = [asyncio.create_task(channel_worker(worker_no, queue))
                for worker_no in range(WORKERS_COUNT)]
 
     # trick to prevent hangs if workers raise, see https://stackoverflow.com/a/60710981/325365
@@ -65,63 +71,62 @@ async def crawl(client):
     # return_exceptions=True silently collects CancelledError() exceptions
     await asyncio.gather(*workers, return_exceptions=True)
 
-    logger_u = logger['users']
-    logger_u.info('Looking for members without a single message')
-    remaining_members = [member async for member
-                         in client.club_guild.fetch_members(limit=None)
-                         if member.id not in authors]
 
-    logger_u.info(f'There are {len(remaining_members)} remaining members')
-    for member in remaining_members:
-        await store_member(member)
-
-
-async def channel_worker(worker_no, authors, queue):
-    logger_w = logger[f'channel_workers.{worker_no}']
+async def channel_worker(worker_no, queue):
+    logger_cw = logger[worker_no]['channels']
     while True:
         channel = await queue.get()
-        parent_channel_id = get_parent_channel_id(channel)
-        history_since = CHANNELS_HISTORY_SINCE.get(parent_channel_id, DEFAULT_CHANNELS_HISTORY_SINCE)
+        logger_c = get_channel_logger(logger_cw, channel)
+        logger_c.info(f'Crawling {channel.name!r}')
+
+        history_since = CHANNELS_HISTORY_SINCE.get(get_parent_channel_id(channel),
+                                                   DEFAULT_CHANNELS_HISTORY_SINCE)
         if history_since is None:
             history_after = None
-            logger_w.info(f"Reading channel #{channel.id} history since ever")
+            logger_c.debug("Crawling all channel history")
         else:
             history_after = (arrow.utcnow() - history_since).datetime
-            logger_w.info(f"Reading channel #{channel.id} history after {history_after:%Y-%m-%d} ({history_since.days} days ago)")
-        logger_w.debug(f"Channel #{channel.id} is named '{channel.name}'")
+            logger_c.debug(f"Crawling history after {history_after:%Y-%m-%d} ({history_since.days} days ago)")
 
         threads = [thread async for thread in fetch_threads(channel)
                    if is_thread_after(thread, after=history_after)]
         if threads:
-            logger_w.info(f"Channel #{channel.id} adds {len(threads)} threads")
+            logger_c.info(f"Crawling {len(threads)} threads")
         for thread in threads:
-            logger_w.debug(f"Thread '{thread.name}' #{thread.id} {thread.jump_url}")
+            logger_c.debug(f"Crawling thread '{thread.name}' #{thread.id} {thread.jump_url}")
             queue.put_nowait(thread)
 
-        messages_count = 0
-        users_count = 0
-        pins_count = 0
-        async for message in fetch_messages(channel, after=history_after):
-            if message.author.id not in authors:
-                authors[message.author.id] = await store_user(message.author)
-                users_count += 1
-            await store_message(message, channel, authors[message.author.id])
-            messages_count += 1
+        async with asyncio.TaskGroup() as tasks:
+            async for message in fetch_messages(channel, after=history_after):
+                tasks.create_task(store_message(message, channel))
+                async for reacting_member in fetch_members_reacting_by_pin(message.reactions):
+                    tasks.create_task(store_pin(message, reacting_member))
 
-            async for reacting_member in fetch_members_reacting_by_pin(message.reactions):
-                if reacting_member.id not in authors:
-                    authors[reacting_member.id] = await store_user(reacting_member)
-                    users_count += 1
-                await store_pin(message, reacting_member)
-                pins_count += 1
-
-        logger_w.info(f"Channel #{channel.id} added {messages_count} messages, {users_count} users, {pins_count} pins")
+        logger_c.debug(f'Done crawling {channel.name!r}')
         queue.task_done()
+
+
+def get_channel_logger(logger, channel):
+    parent_channel_id = get_parent_channel_id(channel)
+    logger = logger[parent_channel_id]
+    if parent_channel_id != channel.id:
+        logger = logger[channel.id]
+    return logger
+
+
+async def fetch_messages(channel, after=None):
+    try:
+        channel_history = channel.history
+    except AttributeError:
+        return  # channel type doesn't support history (e.g. forum)
+    async for message in channel_history(limit=None, after=after):
+        yield message
 
 
 async def fetch_members_reacting_by_pin(reactions):
     for reaction in reactions:
         if emoji_name(reaction.emoji) == ClubEmoji.PIN:
             async for user in reaction.users():
-                if getattr(user, 'joined_at', False):
+                if is_member(user):
                     yield user
+            break

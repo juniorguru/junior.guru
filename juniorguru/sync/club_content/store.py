@@ -1,6 +1,7 @@
 import asyncio
 from functools import wraps, partial
 
+import peewee
 import arrow
 
 from juniorguru.models.base import db
@@ -25,7 +26,7 @@ def make_async(fn):
 @db.connection_context()
 def store_member(member):
     """Stores in database given Discord Member object"""
-    logger['users'].debug(f"Member '{member.display_name}' #{member.id}")
+    logger['users'][member.id].debug(f'Saving {member.display_name!r}')
     return ClubUser.create(id=member.id,
                            is_bot=member.bot,
                            is_member=True,
@@ -37,31 +38,39 @@ def store_member(member):
                            initial_roles=get_roles(member))
 
 
-@make_async
 @db.connection_context()
-def store_user(user):
+def _store_user(user):
     """
     Stores in database given Discord User object
+
+    If given user is already stored, it silently returns the existing database object.
 
     The message.author can be an instance of Member, but it can also be an instance of User,
     if the author isn't a member of the Discord guild/server anymore. User instances don't
     have certain properties, hence the getattr() calls.
     """
-    logger['users'].debug(f"User '{user.display_name}' #{user.id}")
-    return ClubUser.create(id=user.id,
-                           is_bot=user.bot,
-                           is_member=bool(getattr(user, 'joined_at', False)),
-                           has_avatar=bool(user.avatar),
-                           display_name=user.display_name,
-                           mention=user.mention,
-                           tag=f'{user.name}#{user.discriminator}',
-                           joined_at=(arrow.get(user.joined_at).naive if hasattr(user, 'joined_at') else None),
-                           initial_roles=get_roles(user))
+    logger['users'][user.id].debug(f'Saving {user.display_name!r}')
+    try:
+        obj = ClubUser.create(id=user.id,
+                              is_bot=user.bot,
+                              is_member=bool(getattr(user, 'joined_at', False)),
+                              has_avatar=bool(user.avatar),
+                              display_name=user.display_name,
+                              mention=user.mention,
+                              tag=f'{user.name}#{user.discriminator}',
+                              joined_at=(arrow.get(user.joined_at).naive if hasattr(user, 'joined_at') else None),
+                              initial_roles=get_roles(user))
+        logger['users'][user.id].debug(f'Saved {user.display_name!r} as {obj!r}')
+        return obj
+    except peewee.IntegrityError:
+        obj = ClubUser.get(id=user.id)
+        logger['users'][user.id].debug(f'Found {user.display_name!r} as {obj!r}')
+        return obj
 
 
 @make_async
 @db.connection_context()
-def store_message(message, channel, db_author):
+def store_message(message, channel):
     """Stores in database given Discord Message object"""
     return ClubMessage.create(id=message.id,
                               url=message.jump_url,
@@ -73,7 +82,7 @@ def store_message(message, channel, db_author):
                               created_at=arrow.get(message.created_at).naive,
                               created_month=f'{message.created_at:%Y-%m}',
                               edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
-                              author=db_author,
+                              author=_store_user(message.author),
                               author_is_bot=message.author.id == ClubMember.BOT,
                               channel_id=channel.id,
                               channel_name=channel.name,
@@ -87,4 +96,5 @@ def store_message(message, channel, db_author):
 def store_pin(message, member):
     """Stores in database the information about given Discord Member pinning given Discord Message"""
     logger['pins'].debug(f"Message {message.jump_url} is pinned by member '{member.display_name}' #{member.id}")
-    return ClubPinReaction.create(member=member.id, message=message.id)
+    return ClubPinReaction.create(message=message.id,
+                                  member=_store_user(member))

@@ -17,8 +17,9 @@ MUTED_LOGGERS = [
     'MARKDOWN',
     'gql.transport.requests',
     'protego',
-    'juniorguru.lib.club.is_message_over_period_ago',
-    'juniorguru.lib.club.is_message_older_than',
+    'juniorguru.sync.club_content.store',
+    'juniorguru.lib.discord_club.is_message_over_period_ago',
+    'juniorguru.lib.discord_club.is_message_older_than',
     'juniorguru.lib.images',
     'juniorguru.mkdocs.templates',
 ]
@@ -26,7 +27,7 @@ MUTED_LOGGERS = [
 
 class Logger(logging.Logger):
     def __getitem__(self, name) -> logging.Logger:
-        return self.getChild(name)
+        return self.getChild(str(name))
 
 
 def configure():
