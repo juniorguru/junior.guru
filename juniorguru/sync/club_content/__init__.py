@@ -3,7 +3,7 @@ from pprint import pformat
 import click
 from peewee import OperationalError
 
-from juniorguru.cli.sync import main as cli, default_from_env, confirm
+from juniorguru.cli.sync import confirm, default_from_env, main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser

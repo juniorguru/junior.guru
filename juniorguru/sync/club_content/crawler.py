@@ -6,8 +6,9 @@ import arrow
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubChannel,
-                                         ClubEmoji, emoji_name, fetch_threads, is_member,
-                                         is_thread_after, get_parent_channel_id)
+                                         ClubEmoji, emoji_name, fetch_threads,
+                                         get_parent_channel_id, is_member,
+                                         is_thread_after)
 from juniorguru.sync.club_content.store import store_member, store_message, store_pin
 
 

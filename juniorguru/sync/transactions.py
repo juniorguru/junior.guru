@@ -7,7 +7,7 @@ import click
 import requests
 from fiobank import FioBank
 
-from juniorguru.cli.sync import main as cli, default_from_env, confirm
+from juniorguru.cli.sync import confirm, default_from_env, main as cli
 from juniorguru.lib import google_sheets, loggers
 from juniorguru.lib.mutations import mutations
 from juniorguru.models.transaction import Transaction
