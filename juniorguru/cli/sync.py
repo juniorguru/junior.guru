@@ -209,6 +209,14 @@ def get_parallel_chains(dependencies_map, exclude=None):
         chains = {}
 
 
+def confirm(question, default=True):
+    print('\a', end='', flush=True)
+    return click.confirm(question,
+                         default=default,
+                         show_default=True,
+                         prompt_suffix='')
+
+
 def default_from_env(name, default='', type=str):
     def env_reader():
         return type(os.environ.get(name) or default)
