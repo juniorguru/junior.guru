@@ -91,9 +91,9 @@ async def channel_worker(worker_no, queue):
         threads = [thread async for thread in fetch_threads(channel)
                    if is_thread_after(thread, after=history_after)]
         if threads:
-            logger_c.info(f"Crawling {len(threads)} threads")
+            logger_c.info(f"Adding {len(threads)} threads")
         for thread in threads:
-            logger_c.debug(f"Crawling thread '{thread.name}' #{thread.id} {thread.jump_url}")
+            logger_c.debug(f"Adding thread '{thread.name}' #{thread.id} {thread.jump_url}")
             queue.put_nowait(thread)
 
         async with asyncio.TaskGroup() as tasks:
