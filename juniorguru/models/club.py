@@ -128,6 +128,10 @@ class ClubUser(BaseModel):
         return bool(self.coupon and parse_coupon(self.coupon)['name'] == 'FOUNDERS')
 
     @classmethod
+    def count(cls):
+        return cls.listing().count()
+
+    @classmethod
     def members_count(cls):
         return cls.members_listing().count()
 
@@ -145,7 +149,9 @@ class ClubUser(BaseModel):
 
     @classmethod
     def members_listing(cls, shuffle=False):
-        members = cls.listing().where(cls.is_bot == False, cls.is_member == True)
+        members = cls.listing() \
+            .where(cls.is_bot == False,
+                   cls.is_member == True)
         if shuffle:
             members = members.order_by(fn.random())
         return members

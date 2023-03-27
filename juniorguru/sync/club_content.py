@@ -1,6 +1,7 @@
 import asyncio
 import itertools
 from datetime import timedelta
+from pprint import pformat
 
 import arrow
 import click
@@ -45,17 +46,13 @@ def main(confirm):
         try:
             logger.info(f"Last message is from {get_last_message().created_at.isoformat()}")
             if not confirm or confirm_fetch():
-                discord_sync.run(discord_task)
+                fetch_club_content()
         except OperationalError as e:
             logger.error(e)
-            discord_sync.run(discord_task)
+            fetch_club_content()
     else:
-        discord_sync.run(discord_task)
-
-    with db.connection_context():
-        logger.info(f'Finished with {ClubMessage.count()} messages, '
-                    f'{ClubUser.members_count()} users, '
-                    f'{ClubPinReaction.count()} pins')
+        fetch_club_content()
+    logger.info(f'Finished with\n{pformat(get_stats())}')
 
 
 @db.connection_context()
@@ -79,40 +76,30 @@ def confirm_fetch():
                          prompt_suffix='')
 
 
-@db.connection_context()
-async def discord_task(client):
-    db.drop_tables([ClubMessage, ClubUser, ClubPinReaction])
-    db.create_tables([ClubMessage, ClubUser, ClubPinReaction])
+def fetch_club_content():
+    with db.connection_context():
+        db.drop_tables([ClubMessage, ClubUser, ClubPinReaction])
+        db.create_tables([ClubMessage, ClubUser, ClubPinReaction])
+    discord_sync.run(process_club_content)
 
+
+@db.connection_context()
+def get_stats():
+    return dict(messages=ClubMessage.count(),
+                users=ClubUser.count(),
+                members=ClubUser.members_count(),
+                pins=ClubPinReaction.count())
+
+
+@db.connection_context()
+async def process_club_content(client):
     channels = (channel for channel  # or just club_guild.channels ???
                 in itertools.chain(client.club_guild.text_channels,
                                    client.club_guild.voice_channels,
                                    # TODO client.club_guild.stage_channels,
                                    client.club_guild.forum_channels)
                 if channel.permissions_for(client.club_guild.me).read_messages)
-    authors = await process_channels(channels)
 
-    logger_u = logger['users']
-    logger_u.info('Looking for members without a single message')
-    remaining_members = [member async for member
-                         in client.club_guild.fetch_members(limit=None)
-                         if member.id not in authors]
-
-    logger_u.info(f'There are {len(remaining_members)} remaining members')
-    for member in remaining_members:
-        logger_u.debug(f"Member '{member.display_name}' #{member.id}")
-        ClubUser.create(id=member.id,
-                        is_bot=member.bot,
-                        is_member=True,
-                        has_avatar=bool(member.avatar),
-                        display_name=member.display_name,
-                        mention=member.mention,
-                        tag=f'{member.name}#{member.discriminator}',
-                        joined_at=arrow.get(member.joined_at).naive,
-                        initial_roles=get_roles(member))
-
-
-async def process_channels(channels):
     authors = {}
 
     queue = asyncio.Queue()
@@ -139,7 +126,24 @@ async def process_channels(channels):
     # return_exceptions=True silently collects CancelledError() exceptions
     await asyncio.gather(*workers, return_exceptions=True)
 
-    return authors
+    logger_u = logger['users']
+    logger_u.info('Looking for members without a single message')
+    remaining_members = [member async for member
+                         in client.club_guild.fetch_members(limit=None)
+                         if member.id not in authors]
+
+    logger_u.info(f'There are {len(remaining_members)} remaining members')
+    for member in remaining_members:
+        logger_u.debug(f"Member '{member.display_name}' #{member.id}")
+        ClubUser.create(id=member.id,
+                        is_bot=member.bot,
+                        is_member=True,
+                        has_avatar=bool(member.avatar),
+                        display_name=member.display_name,
+                        mention=member.mention,
+                        tag=f'{member.name}#{member.discriminator}',
+                        joined_at=arrow.get(member.joined_at).naive,
+                        initial_roles=get_roles(member))
 
 
 async def channel_worker(worker_no, authors, queue):
