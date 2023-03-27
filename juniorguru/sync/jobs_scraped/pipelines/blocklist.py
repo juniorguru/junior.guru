@@ -4,10 +4,11 @@ from juniorguru.sync.jobs_scraped.processing import DropItem
 
 
 BLOCKLIST = [
-    ('title', re.compile(r'plc programátor', re.I)),
+    ('title', re.compile(r'\b(plc|cnc) programátor', re.I)),
     ('title', re.compile(r'elektro', re.I)),
-    ('title', re.compile(r'konstruktér', re.I)),
-    ('title', re.compile(r'cae inženýr', re.I)),
+    ('title', re.compile(r'\bkonstruktér', re.I)),
+    ('title', re.compile(r'\bcae inženýr', re.I)),
+    ('title', re.compile(r'\bseřizovač', re.I)),
 ]
 
 
