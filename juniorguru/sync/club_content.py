@@ -1,13 +1,12 @@
 import asyncio
 import itertools
-import os
 from datetime import timedelta
 
 import arrow
 import click
 from peewee import OperationalError
 
-from juniorguru.cli.sync import main as cli
+from juniorguru.cli.sync import main as cli, default_from_env
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubChannel,
                                          ClubEmoji, ClubMember, emoji_name,
@@ -38,7 +37,7 @@ CHANNELS_HISTORY_SINCE = {
 
 
 @cli.sync_command()
-@click.option('--confirm/--no-confirm', default=lambda: bool(os.environ.get('CLUB_CONTENT_CONFIRM', '')))
+@click.option('--confirm/--no-confirm', default=default_from_env('CLUB_CONTENT_CONFIRM', type=bool))
 def main(confirm):
     total_messages_count = get_total_messages_count()
     logger.info(f"Found {total_messages_count} messages")

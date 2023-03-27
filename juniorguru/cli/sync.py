@@ -1,3 +1,4 @@
+import os
 from functools import wraps
 from time import perf_counter_ns
 
@@ -206,3 +207,8 @@ def get_parallel_chains(dependencies_map, exclude=None):
             return sorted(map(sorted, chains.values()))
         temp_chains = chains
         chains = {}
+
+
+def default_from_env(name, default='', type=str):
+    def env_reader():
+        return type(os.environ.get(name) or default)
