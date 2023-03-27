@@ -34,7 +34,7 @@ CHANNELS_HISTORY_SINCE = {
 
 
 @db.connection_context()
-async def process_club_content(client):
+async def crawl(client):
     channels = (channel for channel  # or just club_guild.channels ???
                 in itertools.chain(client.club_guild.text_channels,
                                    client.club_guild.voice_channels,

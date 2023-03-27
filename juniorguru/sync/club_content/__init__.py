@@ -7,7 +7,7 @@ from juniorguru.cli.sync import main as cli, default_from_env, confirm
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
-from juniorguru.sync.club_content.crawler import process_club_content
+from juniorguru.sync.club_content.crawler import crawl
 
 
 logger = loggers.from_path(__file__)
@@ -48,7 +48,7 @@ def fetch_club_content():
     with db.connection_context():
         db.drop_tables([ClubMessage, ClubUser, ClubPinReaction])
         db.create_tables([ClubMessage, ClubUser, ClubPinReaction])
-    discord_sync.run(process_club_content)
+    discord_sync.run(crawl)
 
 
 @db.connection_context()
