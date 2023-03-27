@@ -1,6 +1,7 @@
 import logging
 import os
 from pathlib import Path
+from typing import cast
 
 
 LOG_LEVEL = getattr(logging, os.getenv('LOG_LEVEL', 'info').upper())
@@ -43,11 +44,11 @@ def configure():
     logging.root.addHandler(stderr)
 
 
-def get(name) -> logging.Logger:
-    return logging.getLogger(name)
+def get(name) -> Logger:
+    return cast(Logger, logging.getLogger(name))
 
 
-def from_path(path, cwd=None) -> logging.Logger:
+def from_path(path, cwd=None) -> Logger:
     cwd = cwd or os.getcwd()
     relative_path = str(Path(path).relative_to(cwd))
     name = '.'.join(
