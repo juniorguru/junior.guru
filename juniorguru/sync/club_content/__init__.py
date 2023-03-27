@@ -11,7 +11,6 @@ from juniorguru.sync.club_content.crawler import crawl
 
 
 logger = loggers.from_path(__file__)
-print(__file__)
 
 
 @cli.sync_command()
