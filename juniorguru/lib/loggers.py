@@ -49,7 +49,13 @@ def get(name) -> logging.Logger:
 def from_path(path, cwd=None) -> logging.Logger:
     cwd = cwd or os.getcwd()
     relative_path = str(Path(path).relative_to(cwd))
-    name = '.'.join(relative_path.removesuffix('.py').removesuffix('__init__').split('/'))
+    name = '.'.join(
+        relative_path
+            .removesuffix('.py')
+            .removesuffix('__init__')
+            .rstrip('/')
+            .split('/')
+    )
     return get(name)
 
 
