@@ -1,6 +1,8 @@
 import asyncio
 import itertools
-from datetime import timedelta, datetime
+from datetime import timedelta
+
+import arrow
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubChannel,
@@ -84,7 +86,7 @@ async def channel_worker(worker_no, authors, queue):
             history_after = None
             logger_w.info(f"Reading channel #{channel.id} history since ever")
         else:
-            history_after = (datetime.utcnow() - history_since).datetime
+            history_after = (arrow.utcnow() - history_since).datetime
             logger_w.info(f"Reading channel #{channel.id} history after {history_after:%Y-%m-%d} ({history_since.days} days ago)")
         logger_w.debug(f"Channel #{channel.id} is named '{channel.name}'")
 

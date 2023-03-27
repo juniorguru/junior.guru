@@ -11,6 +11,7 @@ from juniorguru.sync.club_content.crawler import crawl
 
 
 logger = loggers.from_path(__file__)
+print(__file__)
 
 
 @cli.sync_command()
@@ -28,7 +29,7 @@ def main(do_confirm):
             fetch_club_content()
     else:
         fetch_club_content()
-    logger.info(f'Finished with\n{pformat(get_stats())}')
+    logger.info(f'Finished with {pformat(get_stats())}')
 
 
 @db.connection_context()

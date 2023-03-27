@@ -13,7 +13,7 @@ from juniorguru.lib import loggers
 logger = loggers.from_path(__file__)
 
 
-async def make_async(fn):
+def make_async(fn):
     @wraps(fn)
     async def wrapper(*args, **kwargs):
         loop = asyncio.get_running_loop()
