@@ -1,7 +1,7 @@
 import os
 from functools import wraps
-from time import perf_counter_ns
 from pathlib import Path
+from time import perf_counter_ns
 
 import click
 
