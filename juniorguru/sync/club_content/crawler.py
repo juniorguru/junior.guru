@@ -115,7 +115,7 @@ async def channel_worker(worker_no, queue) -> None:
             tasks.append(asyncio.create_task(store_message(message, channel)))
             async for reacting_member in fetch_members_reacting_by_pin(message.reactions):
                 tasks.append(asyncio.create_task(store_pin(message, reacting_member)))
-        asyncio.gather(*tasks)
+        await asyncio.gather(*tasks)
 
         logger_c.debug(f'Done crawling {get_channel_name(channel)!r}')
         queue.task_done()
