@@ -133,6 +133,8 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
     if source_path.exists() and not filecmp.cmp(persist_path, source_path, shallow=False):
         if source_path.suffix == '.db':
             merge_databases(persist_path, source_path)
+        elif source_path.suffix == '.log':
+            merge_logs(persist_path, source_path)
         else:
             raise RuntimeError(f"Conflict loading {persist_path}, file already exists: {source_path}")
         if move:
@@ -141,13 +143,13 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
         (shutil.move if move else shutil.copy2)(persist_path, source_path)
 
 
-def prepare_database_for_moving(path):
+def prepare_database_for_moving(path: Path):
     db = Database(path)
     db.disable_wal()
     db.vacuum()
 
 
-def merge_databases(path_from, path_to):
+def merge_databases(path_from: Path, path_to: Path):
     logger_db = logger['db']
     logger_db.info(f"Merging {path_from} to {path_to}")
     db_from, db_to = Database(path_from), Database(path_to)
@@ -207,3 +209,12 @@ def make_schema_line_idempotent(schema_line):
         if transformation_re.search(schema_line):
             return transformation_re.sub(replacement, schema_line)
     raise ValueError(f"Unexpected schema line: {schema_line!r}")
+
+
+def merge_logs(path_from: Path, path_to: Path):
+    logger_log = logger['log']
+    logger_log.info(f"Merging {path_from} to {path_to}")
+    with path_to.open(mode='+a') as f_to:
+        with path_from.open(mode='r') as f_from:
+            for line in f_from:
+                f_to.write(line)

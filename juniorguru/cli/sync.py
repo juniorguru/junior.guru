@@ -1,6 +1,7 @@
 import os
 from functools import wraps
 from time import perf_counter_ns
+from pathlib import Path
 
 import click
 
@@ -108,8 +109,12 @@ class Command(click.Command):
 @click.option('--dependencies/--skip-dependencies', '--deps/--skip-deps', '--deps/--no-deps', 'deps', default=True)
 @click.option('--mutate', multiple=True)
 @click.option('--allow-mutations/--disallow-mutations', default=False)
+@click.option('--log-path', default='juniorguru/data/sync.log', type=click.Path(path_type=Path))
 @click.pass_context
-def main(context, id, deps, mutate, allow_mutations):
+def main(context, id, deps, mutate, allow_mutations, log_path):
+    if log_path:
+        loggers.configure_file(log_path)
+
     if allow_mutations:
         mutations.allow_all()
     else:

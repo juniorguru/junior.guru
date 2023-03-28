@@ -105,3 +105,6 @@ backup.tgz.gpg
 
 # Testing debug artifacts
 /tests/sync_jobs_logos/logo-converted.png
+
+# Logs
+*.log
