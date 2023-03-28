@@ -3,16 +3,18 @@ from datetime import timedelta
 from typing import Generator
 
 import arrow
-from discord import HTTPException, Member, DMChannel, Message, Reaction, User
+from discord import DMChannel, HTTPException, Member, Message, Reaction, User
 from discord.abc import GuildChannel
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubChannel,
-                                         ClubEmoji, emoji_name, fetch_threads,
+                                         ClubClient, ClubEmoji, emoji_name,
+                                         fetch_threads, get_channel_name,
                                          get_parent_channel_id, is_member,
-                                         is_thread_after, ClubClient, get_channel_name)
-from juniorguru.sync.club_content.store import store_dm_channel, store_member, store_message, store_pin
+                                         is_thread_after)
 from juniorguru.lib.mutations import mutations
+from juniorguru.sync.club_content.store import (store_dm_channel, store_member,
+                                                store_message, store_pin)
 
 
 logger = loggers.from_path(__file__)

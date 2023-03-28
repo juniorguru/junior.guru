@@ -3,12 +3,12 @@ from functools import partial, wraps
 
 import arrow
 import peewee
-from discord import ChannelType, DMChannel, Member, User, Message
+from discord import ChannelType, DMChannel, Member, Message, User
 from discord.abc import GuildChannel
 
 from juniorguru.lib import loggers
-from juniorguru.lib.discord_club import (ClubMember, emoji_name, get_channel_name, get_parent_channel_id,
-                                         get_roles)
+from juniorguru.lib.discord_club import (ClubMember, emoji_name, get_channel_name,
+                                         get_parent_channel_id, get_roles)
 from juniorguru.lib.discord_votes import count_downvotes, count_upvotes
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser

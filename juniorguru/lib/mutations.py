@@ -1,5 +1,5 @@
-from contextlib import contextmanager
 import inspect
+from contextlib import contextmanager
 from enum import Enum, auto
 from functools import wraps
 
