@@ -3,6 +3,8 @@ from functools import partial, wraps
 
 import arrow
 import peewee
+from discord import Member, User, Message
+from discord.abc import Messageable
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import (ClubMember, emoji_name, get_parent_channel_id,
@@ -25,7 +27,7 @@ def make_async(fn):
 
 @make_async
 @db.connection_context()
-def store_member(member):
+def store_member(member: Member) -> ClubUser:
     """Stores in database given Discord Member object"""
     logger['users'][member.id].debug(f'Saving {member.display_name!r}')
     return ClubUser.create(id=member.id,
@@ -40,7 +42,7 @@ def store_member(member):
 
 
 @db.connection_context()
-def _store_user(user):
+def _store_user(user: User) -> ClubUser:
     """
     Stores in database given Discord User object
 
@@ -71,7 +73,7 @@ def _store_user(user):
 
 @make_async
 @db.connection_context()
-def store_message(message, channel):
+def store_message(message: Message, channel: Messageable) -> ClubMessage:
     """Stores in database given Discord Message object"""
     return ClubMessage.create(id=message.id,
                               url=message.jump_url,
@@ -94,7 +96,7 @@ def store_message(message, channel):
 
 @make_async
 @db.connection_context()
-def store_pin(message, member):
+def store_pin(message: Message, member: Member) -> ClubPinReaction:
     """Stores in database the information about given Discord Member pinning given Discord Message"""
     logger['pins'].debug(f"Message {message.jump_url} is pinned by member '{member.display_name}' #{member.id}")
     return ClubPinReaction.create(message=message.id,
