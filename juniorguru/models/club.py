@@ -69,11 +69,17 @@ class ClubUser(BaseModel):
 
     @property
     def intro(self):
-        return self.list_messages \
+        return self.list_public_messages \
             .where(ClubMessage.channel_id == ClubChannel.INTRO,
                    ClubMessage.type == 'default') \
             .order_by(ClubMessage.created_at.desc()) \
             .first()
+
+    @property
+    def list_public_messages(self):
+        return self.list_messages \
+            .where(ClubMessage.is_dm == False) \
+            .order_by(ClubMessage.created_at.desc())
 
     @property
     def intro_thread_id(self):
@@ -86,19 +92,19 @@ class ClubUser(BaseModel):
     def update_expires_at(self, expires_at):
         self.expires_at = non_empty_max([self.expires_at, expires_at])
 
-    def messages_count(self):
-        return self.list_messages.count()
+    def public_messages_count(self):
+        return self.list_public_messages.count()
 
-    def recent_messages_count(self, today=None):
-        return self.list_recent_messages(today).count()
+    def recent_public_messages_count(self, today=None):
+        return self.list_recent_public_messages(today).count()
 
     def upvotes_count(self):
-        messages = self.list_messages \
+        messages = self.list_public_messages \
             .where(ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
         return sum([message.upvotes_count for message in messages])
 
     def recent_upvotes_count(self, today=None):
-        messages = self.list_recent_messages(today) \
+        messages = self.list_recent_public_messages(today) \
             .where(ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
         return sum([message.upvotes_count for message in messages])
 
@@ -114,9 +120,9 @@ class ClubUser(BaseModel):
             first_message = first_pin.message if first_pin else None
         return first_message.created_at.date() if first_message else self.joined_on
 
-    def list_recent_messages(self, today=None):
+    def list_recent_public_messages(self, today=None):
         recent_period_start_at = (today or date.today()) - timedelta(days=RECENT_PERIOD_DAYS)
-        return self.list_messages.where(ClubMessage.created_at >= recent_period_start_at)
+        return self.list_public_messages.where(ClubMessage.created_at >= recent_period_start_at)
 
     def is_new(self, today=None):
         return (self.first_seen_on() + timedelta(days=IS_NEW_PERIOD_DAYS)) >= (today or date.today())
@@ -208,12 +214,15 @@ class ClubMessage(BaseModel):
         messages = cls.select() \
             .where(cls.created_month == f'{date:%Y-%m}') \
             .where(cls.author_is_bot == False) \
+            .where(cls.is_dm == False) \
             .where(cls.channel_id.not_in(STATS_EXCLUDE_CHANNELS))
         return sum(message.content_size for message in messages)
 
     @classmethod
     def listing(cls):
-        return cls.select().order_by(cls.created_at)
+        return cls.select() \
+            .where(cls.is_dm == False) \
+            .order_by(cls.created_at)
 
     @classmethod
     def channel_listing(cls, channel_id):
@@ -236,8 +245,9 @@ class ClubMessage(BaseModel):
     @classmethod
     def digest_listing(cls, since_dt, limit=5):
         return cls.select() \
-            .where(cls.created_at >= since_dt,
-                   ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS)) \
+            .where(cls.is_dm == False,
+                   ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS),
+                   cls.created_at >= since_dt) \
             .order_by(cls.upvotes_count.desc()) \
             .limit(limit)
 

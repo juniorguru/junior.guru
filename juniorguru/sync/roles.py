@@ -79,9 +79,9 @@ async def discord_task(client):
 
     logger.info('Computing how to re-assign role: most_discussing')
     role_id = ClubDocumentedRole.get_by_slug('most_discussing').id
-    messages_count_stats = calc_stats(members, lambda m: m.messages_count(), top_members_limit)
+    messages_count_stats = calc_stats(members, lambda m: m.public_messages_count(), top_members_limit)
     logger.debug(f"messages_count {repr_stats(members, messages_count_stats)}")
-    recent_messages_count_stats = calc_stats(members, lambda m: m.recent_messages_count(), top_members_limit)
+    recent_messages_count_stats = calc_stats(members, lambda m: m.recent_public_messages_count(), top_members_limit)
     logger.debug(f"recent_messages_count {repr_stats(members, recent_messages_count_stats)}")
     most_discussing_members_ids = set(messages_count_stats.keys()) | set(recent_messages_count_stats.keys())
     logger.debug(f"most_discussing_members: {repr_ids(members, most_discussing_members_ids)}")

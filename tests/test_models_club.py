@@ -147,7 +147,7 @@ def test_avatars_listing(db_connection):
     assert list(ClubUser.avatars_listing()) == [user1, user3, user4]
 
 
-def test_user_list_recent_messages(db_connection):
+def test_user_list_recent_public_messages(db_connection):
     user = create_user(1)
 
     message1 = create_message(1, user, created_at=datetime(2021, 3, 15))  # noqa
@@ -155,7 +155,7 @@ def test_user_list_recent_messages(db_connection):
     message3 = create_message(3, user, created_at=datetime(2021, 4, 1))
     message4 = create_message(4, user, created_at=datetime(2021, 4, 15))
 
-    assert list(user.list_recent_messages(today=date(2021, 5, 1))) == [message3, message4]
+    assert list(user.list_recent_public_messages(today=date(2021, 5, 1))) == [message4, message3]
 
 
 def test_user_first_seen_on_from_messages(db_connection):
@@ -290,17 +290,17 @@ def test_user_messages_count(db_connection):
     create_message(2, user)
     create_message(3, user)
 
-    assert user.messages_count() == 3
+    assert user.public_messages_count() == 3
 
 
-def test_user_recent_messages_count(db_connection):
+def test_user_recent_public_messages_count(db_connection):
     user = create_user(1)
 
     create_message(1, user, created_at=datetime(2021, 2, 15))
     create_message(2, user, created_at=datetime(2021, 3, 10))
     create_message(3, user, created_at=datetime(2021, 3, 15))
 
-    assert user.recent_messages_count(today=date(2021, 4, 1)) == 2
+    assert user.recent_public_messages_count(today=date(2021, 4, 1)) == 2
 
 
 def test_user_upvotes_count(db_connection):
