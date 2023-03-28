@@ -32,7 +32,7 @@ def main(do_confirm):
 
 
 @db.connection_context()
-def get_total_messages_count():
+def get_total_messages_count() -> int:
     try:
         return ClubMessage.count()
     except OperationalError:
@@ -40,7 +40,7 @@ def get_total_messages_count():
 
 
 @db.connection_context()
-def get_last_message():
+def get_last_message() -> ClubMessage:
     return ClubMessage.last_message()
 
 
@@ -52,7 +52,7 @@ def fetch_club_content():
 
 
 @db.connection_context()
-def get_stats():
+def get_stats() -> dict[str, int]:
     return dict(messages=ClubMessage.count(),
                 users=ClubUser.count(),
                 members=ClubUser.members_count(),
