@@ -3,6 +3,7 @@ from contextlib import contextmanager
 from datetime import date, datetime, timedelta, timezone
 from enum import IntEnum, StrEnum, unique
 from functools import wraps
+from typing import Generator
 
 import discord
 import emoji
@@ -67,8 +68,7 @@ class ClubClient(discord.Client):
                     or route.method in ('GET', 'HEAD', 'OPTIONS')
                 ):
                     return await request(route, *args, **kwargs)
-                logger.error(f'Discord mutations not allowed! {route.method} {route.path}')
-                raise RuntimeError('Discord mutations not allowed!')
+                raise RuntimeError(f'Discord mutations not allowed! {route.method} {route.path}')
             return wrapper
 
         self.http.request = check_mutations(self.http.request)
@@ -97,7 +97,7 @@ def mutating(*args, **kwargs):
     yield MutatingProxy(*args, **kwargs)
 
 
-def emoji_name(reaction_emoji):
+def emoji_name(reaction_emoji) -> str:
     try:
         return reaction_emoji.name.lower()
     except AttributeError:
@@ -109,11 +109,11 @@ def emoji_name(reaction_emoji):
         return str(reaction_emoji)
 
 
-def get_roles(member_or_user):
+def get_roles(member_or_user) -> list[int]:
     return [int(role.id) for role in getattr(member_or_user, 'roles', [])]
 
 
-def is_message_older_than(message, date):
+def is_message_older_than(message, date) -> bool:
     logger_fn = logger['is_message_older_than']
     if message:
         created_dt = message.created_at
@@ -128,14 +128,14 @@ def is_message_older_than(message, date):
     return True
 
 
-def is_message_over_period_ago(message, period, today=None):
+def is_message_over_period_ago(message, period, today=None) -> bool:
     today = today or date.today()
     ago = today - period
     logger['is_message_over_period_ago'].debug(f'{today} - {period!r} = {ago}')
     return is_message_older_than(message, ago)
 
 
-async def fetch_threads(channel):
+async def fetch_threads(channel) -> Generator[discord.Thread, None, None]:
     try:
         channel_threads = channel.threads
     except AttributeError:
@@ -146,10 +146,10 @@ async def fetch_threads(channel):
         yield thread
 
 
-def is_thread_after(thread, after=None):
+def is_thread_after(thread, after=None) -> bool:
     if after:
         return (thread.created_at or DEFAULT_THREAD_CREATED_AT) >= after
-    return thread
+    return True
 
 
 async def add_members(thread, members):
@@ -175,20 +175,30 @@ async def add_reactions(message, emojis, ordered=False):
             raise e
 
 
-def get_missing_reactions(reactions, emojis):
+def get_missing_reactions(reactions, emojis) -> set[str]:
     return set(emojis) - {emoji_name(reaction.emoji) for reaction in reactions if reaction.me}
 
 
-def get_reaction(reactions, emoji):
+def get_reaction(reactions, emoji) -> discord.Reaction:
     for reaction in reactions:
         if emoji_name(reaction.emoji) == emoji:
             return reaction
     return None
 
 
-def get_parent_channel_id(channel):
-    return channel.parent.id if hasattr(channel, 'parent') else channel.id
+def get_parent_channel_id(channel) -> int:
+    try:
+        return channel.parent.id
+    except AttributeError:
+        return channel.id
 
 
-def is_member(user):
-    return getattr(user, 'joined_at', False)
+def is_member(user) -> bool:
+    return bool(getattr(user, 'joined_at', False))
+
+
+def get_channel_name(channel: discord.abc.GuildChannel | discord.DMChannel) -> str:
+    try:
+        return channel.name
+    except AttributeError:
+        return channel.recipient.display_name

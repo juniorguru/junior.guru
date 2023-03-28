@@ -1,3 +1,4 @@
+from contextlib import contextmanager
 import inspect
 from enum import Enum, auto
 from functools import wraps
@@ -55,6 +56,7 @@ class Mutations:
 
     def load(self, service_names):
         """Loads the state of allowed mutations from a simple list. Useful for inter-process communitacion."""
+        self.allowed = set()
         self.allow(*service_names)
 
     def mutates(self, service_name, raises=False):
@@ -88,6 +90,15 @@ class Mutations:
     def _raise_if_not_initialized(self):
         if not self._initialized:
             raise MutationsNotInitializedError()
+
+    @contextmanager
+    def allowing(self, *service_names):
+        try:
+            dump = self.dump()
+            self.allow(*service_names)
+            yield
+        finally:
+            self.load(dump)
 
 
 mutations = Mutations()

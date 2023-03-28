@@ -56,6 +56,7 @@ class ClubUser(BaseModel):
     coupon = CharField(null=True, index=True)
     initial_roles = JSONField(default=list)
     updated_roles = JSONField(null=True)
+    dm_channel_id = IntegerField(null=True, unique=True)
     onboarding_channel_id = IntegerField(null=True, unique=True)
 
     @property
@@ -182,7 +183,7 @@ class ClubMessage(BaseModel):
     parent_channel_id = IntegerField(index=True, null=True)
     category_id = IntegerField(index=True, null=True)
     type = CharField(default='default')
-    is_pinned = BooleanField(default=False)
+    is_dm = BooleanField(default=False)
 
     @property
     def emoji_prefix(self):

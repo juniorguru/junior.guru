@@ -1,15 +1,18 @@
 import asyncio
-import itertools
 from datetime import timedelta
+from typing import Generator
 
 import arrow
+from discord import HTTPException, Member, DMChannel, Message, Reaction, User
+from discord.abc import GuildChannel
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubChannel,
                                          ClubEmoji, emoji_name, fetch_threads,
                                          get_parent_channel_id, is_member,
-                                         is_thread_after)
-from juniorguru.sync.club_content.store import store_member, store_message, store_pin
+                                         is_thread_after, ClubClient, get_channel_name)
+from juniorguru.sync.club_content.store import store_dm_channel, store_member, store_message, store_pin
+from juniorguru.lib.mutations import mutations
 
 
 logger = loggers.from_path(__file__)
@@ -31,29 +34,29 @@ CHANNELS_HISTORY_SINCE = {
 }
 
 
-async def crawl(client):
+async def crawl(client: ClubClient) -> None:
     logger.info("Crawling members")
-    async with asyncio.TaskGroup() as tasks:
-        async for member in client.club_guild.fetch_members(limit=None):
-            tasks.create_task(store_member(member))
+    members = []
+    tasks = []
+    async for member in client.club_guild.fetch_members(limit=None):
+        members.append(member)
+        tasks.append(asyncio.create_task(store_member(member)))
+    await asyncio.gather(*tasks)
 
-    logger.info("Crawling channels")
-    channels = (channel for channel  # or just club_guild.channels ???
-                in itertools.chain(client.club_guild.text_channels,
-                                   client.club_guild.voice_channels,
-                                   # TODO client.club_guild.stage_channels,
-                                   client.club_guild.forum_channels)
-                if channel.permissions_for(client.club_guild.me).read_messages)
-    await run_channel_queue(channels)
-
-
-async def run_channel_queue(channels):
+    logger.info("Crawling club channels")
     queue = asyncio.Queue()
-    for channel in channels:
-        queue.put_nowait(channel)
+    for channel in client.club_guild.channels:
+        if channel.permissions_for(client.club_guild.me).read_messages:
+            queue.put_nowait(channel)
 
     workers = [asyncio.create_task(channel_worker(worker_no, queue))
                for worker_no in range(WORKERS_COUNT)]
+
+    logger.info("Adding DM channels")
+    tasks = []
+    for member in members:
+        tasks.append(asyncio.create_task(crawl_dm_channel(queue, member)))
+    await asyncio.gather(*tasks)
 
     # trick to prevent hangs if workers raise, see https://stackoverflow.com/a/60710981/325365
     queue_completed = asyncio.create_task(queue.join())
@@ -73,12 +76,20 @@ async def run_channel_queue(channels):
     await asyncio.gather(*workers, return_exceptions=True)
 
 
-async def channel_worker(worker_no, queue):
+async def crawl_dm_channel(queue: asyncio.Queue, member: Member) -> None:
+    channel = await get_or_create_dm_channel(member)
+    if channel:
+        logger['channels'].debug(f"Adding DM channel #{channel.id} for member {channel.recipient.display_name!r}")
+        queue.put_nowait(channel)
+        await store_dm_channel(channel, member)
+
+
+async def channel_worker(worker_no, queue) -> None:
     logger_cw = logger[worker_no]['channels']
     while True:
         channel = await queue.get()
         logger_c = get_channel_logger(logger_cw, channel)
-        logger_c.info(f'Crawling {channel.name!r}')
+        logger_c.info(f'Crawling {get_channel_name(channel)!r}')
 
         history_since = CHANNELS_HISTORY_SINCE.get(get_parent_channel_id(channel),
                                                    DEFAULT_CHANNELS_HISTORY_SINCE)
@@ -97,17 +108,32 @@ async def channel_worker(worker_no, queue):
             logger_c.debug(f"Adding thread '{thread.name}' #{thread.id} {thread.jump_url}")
             queue.put_nowait(thread)
 
-        async with asyncio.TaskGroup() as tasks:
-            async for message in fetch_messages(channel, after=history_after):
-                tasks.create_task(store_message(message, channel))
-                async for reacting_member in fetch_members_reacting_by_pin(message.reactions):
-                    tasks.create_task(store_pin(message, reacting_member))
+        tasks = []
+        async for message in fetch_messages(channel, after=history_after):
+            tasks.append(asyncio.create_task(store_message(message, channel)))
+            async for reacting_member in fetch_members_reacting_by_pin(message.reactions):
+                tasks.append(asyncio.create_task(store_pin(message, reacting_member)))
+        asyncio.gather(*tasks)
 
-        logger_c.debug(f'Done crawling {channel.name!r}')
+        logger_c.debug(f'Done crawling {get_channel_name(channel)!r}')
         queue.task_done()
 
 
-def get_channel_logger(logger, channel):
+async def get_or_create_dm_channel(member: Member) -> None | DMChannel:
+    if member.dm_channel:
+        return member.dm_channel
+    try:
+        with mutations.allowing('discord'):
+            return await member.create_dm()
+    except HTTPException as e:
+        if e.code == 50007:  # cannot send messages to this user
+            logger['users'][member.id].warning(e)
+            return None
+        raise
+
+
+def get_channel_logger(logger: loggers.Logger,
+                       channel: GuildChannel | DMChannel) -> loggers.Logger:
     parent_channel_id = get_parent_channel_id(channel)
     logger = logger[parent_channel_id]
     if parent_channel_id != channel.id:
@@ -115,7 +141,7 @@ def get_channel_logger(logger, channel):
     return logger
 
 
-async def fetch_messages(channel, after=None):
+async def fetch_messages(channel: GuildChannel | DMChannel, after=None) -> Generator[Message, None, None]:
     try:
         channel_history = channel.history
     except AttributeError:
@@ -124,7 +150,7 @@ async def fetch_messages(channel, after=None):
         yield message
 
 
-async def fetch_members_reacting_by_pin(reactions):
+async def fetch_members_reacting_by_pin(reactions: list[Reaction]) -> Generator[User | Member, None, None]:
     for reaction in reactions:
         if emoji_name(reaction.emoji) == ClubEmoji.PIN:
             async for user in reaction.users():

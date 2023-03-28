@@ -18,6 +18,7 @@ MUTED_LOGGERS = [
     'MARKDOWN',
     'gql.transport.requests',
     'protego',
+    'juniorguru.lib.discord_sync',
     'juniorguru.sync.club_content.store',
     'juniorguru.lib.discord_club.is_message_over_period_ago',
     'juniorguru.lib.discord_club.is_message_older_than',
