@@ -24,6 +24,7 @@ MUTED_LOGGERS = [
     'protego',
     'juniorguru.lib.discord_sync',
     'juniorguru.sync.club_content.store',
+    'juniorguru.lib.mutations.force_allow',
     'juniorguru.lib.discord_club.is_message_over_period_ago',
     'juniorguru.lib.discord_club.is_message_older_than',
     'juniorguru.lib.images',
