@@ -3,7 +3,7 @@ from datetime import timedelta
 from typing import Generator
 
 import arrow
-from discord import DMChannel, HTTPException, Member, Message, Reaction, User
+from discord import DMChannel, Member, Message, Reaction, User
 from discord.abc import GuildChannel
 
 from juniorguru.lib import loggers
@@ -11,8 +11,7 @@ from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubCha
                                          ClubClient, ClubEmoji, emoji_name,
                                          fetch_threads, get_channel_name,
                                          get_parent_channel_id, is_member,
-                                         is_thread_after)
-from juniorguru.lib.mutations import mutations
+                                         is_thread_after, get_or_create_dm_channel)
 from juniorguru.sync.club_content.store import (store_dm_channel, store_member,
                                                 store_message, store_pin)
 
@@ -119,19 +118,6 @@ async def channel_worker(worker_no, queue) -> None:
 
         logger_c.debug(f'Done crawling {get_channel_name(channel)!r}')
         queue.task_done()
-
-
-async def get_or_create_dm_channel(member: Member) -> None | DMChannel:
-    if member.dm_channel:
-        return member.dm_channel
-    try:
-        with mutations.allowing('discord'):
-            return await member.create_dm()
-    except HTTPException as e:
-        if e.code == 50007:  # cannot send messages to this user
-            logger['users'][member.id].warning(e)
-            return None
-        raise
 
 
 def get_channel_logger(logger: loggers.Logger,

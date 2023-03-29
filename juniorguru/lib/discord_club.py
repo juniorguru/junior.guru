@@ -209,3 +209,16 @@ def is_channel_private(channel: discord.abc.GuildChannel | discord.DMChannel) ->
         return True
     assert channel.guild.default_role
     return not channel.permissions_for(channel.guild.default_role).read_messages
+
+
+async def get_or_create_dm_channel(member: discord.Member) -> None | discord.DMChannel:
+    if member.dm_channel:
+        return member.dm_channel
+    try:
+        with mutations.allowing('discord'):
+            return await member.create_dm()
+    except discord.HTTPException as e:
+        if e.code == 50007:  # cannot send messages to this user
+            logger['users'][member.id].warning(e)
+            return None
+        raise
