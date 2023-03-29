@@ -5,10 +5,9 @@ from operator import itemgetter
 import arrow
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import google_sheets, loggers
+from juniorguru.lib import google_sheets, loggers, mutations
 from juniorguru.lib.coupons import parse_coupon
 from juniorguru.lib.memberful import Memberful
-from juniorguru.lib import mutations
 from juniorguru.models.base import db
 from juniorguru.models.club import (ClubSubscribedPeriod, ClubSubscribedPeriodCategory,
                                     ClubUser)

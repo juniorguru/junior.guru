@@ -9,8 +9,7 @@ import discord
 import emoji
 from discord.errors import Forbidden
 
-from juniorguru.lib import loggers
-from juniorguru.lib import mutations
+from juniorguru.lib import loggers, mutations
 
 
 CLUB_GUILD = 769966886598737931

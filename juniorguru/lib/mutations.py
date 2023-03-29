@@ -3,8 +3,7 @@ from contextlib import contextmanager
 from functools import wraps
 from typing import Generator, Iterable
 
-from juniorguru.lib import loggers
-from juniorguru.lib import global_state
+from juniorguru.lib import global_state, loggers
 
 
 logger = loggers.from_path(__file__)

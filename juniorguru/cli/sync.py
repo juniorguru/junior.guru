@@ -6,9 +6,8 @@ from time import perf_counter_ns
 import click
 
 from juniorguru import sync as sync_package
-from juniorguru.lib import loggers
+from juniorguru.lib import loggers, mutations
 from juniorguru.lib.cli import command_name, import_commands
-from juniorguru.lib import mutations
 from juniorguru.models.base import db
 from juniorguru.models.sync import Sync
 

@@ -1,7 +1,9 @@
 import pytest
 
-from juniorguru.lib.global_state import load as load_global_state, save as save_global_state
-from juniorguru.lib.mutations import MutationsNotAllowedError, allow, mutates, allow_all, is_allowed, force_allow
+from juniorguru.lib.global_state import (load as load_global_state,
+                                         save as save_global_state)
+from juniorguru.lib.mutations import (MutationsNotAllowedError, allow, allow_all,
+                                      force_allow, is_allowed, mutates)
 
 
 @pytest.fixture
