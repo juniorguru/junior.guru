@@ -6,7 +6,7 @@ from discord import MessageType
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (ClubChannel, ClubMember, add_members,
+from juniorguru.lib.discord_club import (ClubChannelID, ClubMemberID, add_members,
                                          add_reactions, get_missing_reactions, mutating)
 from juniorguru.lib.mutations import MutationsNotAllowedError
 from juniorguru.models.base import db
@@ -54,8 +54,8 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    messages = ClubMessage.channel_listing_since(ClubChannel.INTRO, datetime.utcnow() - PROCESS_HISTORY_SINCE)
-    discord_channel = await client.club_guild.fetch_channel(ClubChannel.INTRO)
+    messages = ClubMessage.channel_listing_since(ClubChannelID.INTRO, datetime.utcnow() - PROCESS_HISTORY_SINCE)
+    discord_channel = await client.club_guild.fetch_channel(ClubChannelID.INTRO)
     await asyncio.gather(*[process_message(client, discord_channel, message) for message in messages])
 
     logger.info('Purging system messages about created threads')
@@ -66,7 +66,7 @@ async def discord_task(client):
 async def process_message(client, discord_channel, message):
     greeters_role = [role for role in client.club_guild.roles if role.id == GREETERS_ROLE][0]
     greeters = greeters_role.members
-    greeters_ids = [member.id for member in greeters] + [ClubMember.BOT]
+    greeters_ids = [member.id for member in greeters] + [ClubMemberID.BOT]
 
     if message.type == 'default' and message.author.id not in greeters_ids and message.is_intro:
         await welcome(discord_channel, message, greeters)
@@ -160,4 +160,4 @@ def is_thread_created(discord_message):
 
 
 def is_welcome_message(discord_message):
-    return discord_message.type == MessageType.default and discord_message.author.id == ClubMember.BOT
+    return discord_message.type == MessageType.default and discord_message.author.id == ClubMemberID.BOT

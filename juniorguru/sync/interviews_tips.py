@@ -4,7 +4,7 @@ from discord import Color, Embed
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (ClubChannel, is_message_over_period_ago,
+from juniorguru.lib.discord_club import (ClubChannelID, is_message_over_period_ago,
                                          mutating)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -24,10 +24,10 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    last_message = ClubMessage.last_bot_message(ClubChannel.INTERVIEWS, INTERVIEWS_EMOJI)
+    last_message = ClubMessage.last_bot_message(ClubChannelID.INTERVIEWS, INTERVIEWS_EMOJI)
     if is_message_over_period_ago(last_message, timedelta(days=30)):
         logger.info('Last message is more than one month old!')
-        channel = await client.fetch_channel(ClubChannel.INTERVIEWS)
+        channel = await client.fetch_channel(ClubChannelID.INTERVIEWS)
         embed_mentors_description = '\n'.join([
             f'[{mentor.user.display_name}]({mentor.message_url}) – {mentor.topics}'
             for mentor in Mentor.interviews_listing()
@@ -43,6 +43,6 @@ async def discord_task(client):
             await proxy.send(content=(
                                    f"{INTERVIEWS_EMOJI} Pomohla by ti soustavnější příprava na přijímací řízení? "
                                    "Chceš si jednorázově vyzkoušet pohovor nanečisto, česky nebo anglicky? "
-                                   f"Někteří členové se v <#{ClubChannel.MENTORING}> k takovým konzultacím nabídli!"
+                                   f"Někteří členové se v <#{ClubChannelID.MENTORING}> k takovým konzultacím nabídli!"
                                ),
                                embeds=[embed_mentors, embed_handbook])

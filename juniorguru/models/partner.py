@@ -2,7 +2,7 @@ from datetime import date
 
 from peewee import BooleanField, CharField, DateField, ForeignKeyField, IntegerField, fn
 
-from juniorguru.lib.discord_club import ClubChannel, ClubEmoji
+from juniorguru.lib.discord_club import ClubChannelID, ClubEmoji
 from juniorguru.models.base import BaseModel, JSONField
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.job import ListedJob
@@ -74,7 +74,7 @@ class Partner(BaseModel):
 
     @property
     def intro(self):
-        return ClubMessage.last_bot_message(ClubChannel.INTRO,
+        return ClubMessage.last_bot_message(ClubChannelID.INTRO,
                                             startswith_emoji=ClubEmoji.PARTNER_INTRO,
                                             contains_text=self.name_markdown_bold)
 

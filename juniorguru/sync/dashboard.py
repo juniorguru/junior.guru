@@ -9,7 +9,7 @@ from discord import Color, Embed
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubChannel, mutating
+from juniorguru.lib.discord_club import ClubChannelID, mutating
 from juniorguru.models.base import db
 from juniorguru.models.club import (ClubDocumentedRole, ClubMessage,
                                     ClubSubscribedPeriod, ClubUser)
@@ -40,7 +40,7 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    discord_channel = await client.fetch_channel(ClubChannel.DASHBOARD)
+    discord_channel = await client.fetch_channel(ClubChannelID.DASHBOARD)
 
     sections = [
         render_basic_tips(),
@@ -49,7 +49,7 @@ async def discord_task(client):
         render_events(),
         render_open(),
     ]
-    messages = sorted(ClubMessage.channel_listing_bot(ClubChannel.DASHBOARD),
+    messages = sorted(ClubMessage.channel_listing_bot(ClubChannelID.DASHBOARD),
                       key=attrgetter('created_at'))
 
     if len(messages) != len(sections):

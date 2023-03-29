@@ -6,7 +6,7 @@ import peewee
 from discord import DMChannel, Member, Message, User
 
 from juniorguru.lib import loggers
-from juniorguru.lib.discord_club import (ClubMember, emoji_name, get_channel_name,
+from juniorguru.lib.discord_club import (ClubMemberID, emoji_name, get_channel_name,
                                          get_parent_channel_id, get_roles, is_channel_private)
 from juniorguru.lib.discord_votes import count_downvotes, count_upvotes
 from juniorguru.models.base import db
@@ -91,7 +91,7 @@ def store_message(message: Message) -> ClubMessage:
                               created_month=f'{message.created_at:%Y-%m}',
                               edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
                               author=_store_user(message.author),
-                              author_is_bot=message.author.id == ClubMember.BOT,
+                              author_is_bot=message.author.id == ClubMemberID.BOT,
                               channel_id=channel.id,
                               channel_name=get_channel_name(channel),
                               parent_channel_id=get_parent_channel_id(channel),

@@ -5,7 +5,7 @@ from strictyaml import Bool, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubChannel, mutating
+from juniorguru.lib.discord_club import ClubChannelID, mutating
 from juniorguru.lib.mutations import MutationsNotAllowedError
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -51,9 +51,9 @@ async def discord_task(client):
     mentors = Mentor.listing()
     logger.debug(f'Loaded {len(mentors)} mentors from YAML')
 
-    messages_trash = set(ClubMessage.channel_listing(ClubChannel.MENTORING))
-    info_message = ClubMessage.last_bot_message(ClubChannel.MENTORING, INFO_EMOJI)
-    discord_channel = await client.fetch_channel(ClubChannel.MENTORING)
+    messages_trash = set(ClubMessage.channel_listing(ClubChannelID.MENTORING))
+    info_message = ClubMessage.last_bot_message(ClubChannelID.MENTORING, INFO_EMOJI)
+    discord_channel = await client.fetch_channel(ClubChannelID.MENTORING)
 
     logger.info('Syncing mentors')
     for mentor in mentors:
@@ -64,7 +64,7 @@ async def discord_task(client):
             continue
         mentor_params = get_mentor_params(mentor, thumbnail_url=discord_member.display_avatar.url)
 
-        message = ClubMessage.last_bot_message(ClubChannel.MENTORING, MENTOR_EMOJI, mentor.user.mention)
+        message = ClubMessage.last_bot_message(ClubChannelID.MENTORING, MENTOR_EMOJI, mentor.user.mention)
         if message:
             messages_trash.remove(message)
             logger.info(f"Editing existing message for mentor {mentor.name}")

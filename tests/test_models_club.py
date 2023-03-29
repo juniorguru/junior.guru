@@ -3,7 +3,7 @@ from datetime import date, datetime, timedelta
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.lib.discord_club import ClubChannel, ClubMember
+from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
 
 
@@ -28,7 +28,7 @@ def create_message(id_, user, **kwargs):
     return ClubMessage.create(id=id_,
                               url=f'https://example.com/messages/{id_}',
                               author=user,
-                              author_is_bot=user.id == ClubMember.BOT,
+                              author_is_bot=user.id == ClubMemberID.BOT,
                               content=content,
                               content_size=len(content or ''),
                               upvotes_count=kwargs.get('upvotes_count', 0),
@@ -54,7 +54,7 @@ def db_connection():
 
 @pytest.fixture
 def juniorguru_bot():
-    return create_user(ClubMember.BOT)
+    return create_user(ClubMemberID.BOT)
 
 
 def test_message_listing_sort_from_the_oldest(db_connection):
@@ -84,7 +84,7 @@ def test_message_digest_listing_ignores_certain_channels(db_connection):
 
     message1 = create_message(1, user, upvotes_count=5)
     message2 = create_message(2, user, upvotes_count=10)
-    message3 = create_message(3, user, upvotes_count=20, channel_id=ClubChannel.INTRO)  # noqa
+    message3 = create_message(3, user, upvotes_count=20, channel_id=ClubChannelID.INTRO)  # noqa
 
     assert set(ClubMessage.digest_listing(date(2021, 5, 1), limit=3)) == {message1, message2}
 
@@ -147,7 +147,7 @@ def test_avatars_listing(db_connection):
     assert list(ClubUser.avatars_listing()) == [user1, user3, user4]
 
 
-def test_user_list_recent_public_messages(db_connection):
+def test_user_list_recent_messages(db_connection):
     user = create_user(1)
 
     message1 = create_message(1, user, created_at=datetime(2021, 3, 15))  # noqa
@@ -155,7 +155,7 @@ def test_user_list_recent_public_messages(db_connection):
     message3 = create_message(3, user, created_at=datetime(2021, 4, 1))
     message4 = create_message(4, user, created_at=datetime(2021, 4, 15))
 
-    assert list(user.list_recent_public_messages(today=date(2021, 5, 1))) == [message4, message3]
+    assert list(user.list_recent_messages(today=date(2021, 5, 1))) == [message4, message3]
 
 
 def test_user_first_seen_on_from_messages(db_connection):
@@ -260,7 +260,7 @@ def test_user_intro_doesnt_exist(db_connection):
 def test_user_intro_exists(db_connection):
     user = create_user(1)
     create_message(1, user, channel_id=222)
-    create_message(2, user, channel_id=ClubChannel.INTRO)
+    create_message(2, user, channel_id=ClubChannelID.INTRO)
 
     assert user.intro.id == 2
 
@@ -268,8 +268,8 @@ def test_user_intro_exists(db_connection):
 def test_user_intro_skips_system_messages(db_connection):
     user = create_user(1)
     create_message(1, user, channel_id=222)
-    create_message(2, user, channel_id=ClubChannel.INTRO, type='new_member')
-    create_message(3, user, channel_id=ClubChannel.INTRO, type='premium_guild_subscription')
+    create_message(2, user, channel_id=ClubChannelID.INTRO, type='new_member')
+    create_message(3, user, channel_id=ClubChannelID.INTRO, type='premium_guild_subscription')
 
     assert user.intro is None
 
@@ -277,8 +277,8 @@ def test_user_intro_skips_system_messages(db_connection):
 def test_user_intro_uses_the_latest_message(db_connection):
     created_at = datetime.now() - timedelta(days=1)
     user = create_user(1)
-    create_message(1, user, channel_id=ClubChannel.INTRO, created_at=created_at + timedelta(seconds=30))
-    create_message(2, user, channel_id=ClubChannel.INTRO, created_at=created_at)
+    create_message(1, user, channel_id=ClubChannelID.INTRO, created_at=created_at + timedelta(seconds=30))
+    create_message(2, user, channel_id=ClubChannelID.INTRO, created_at=created_at)
 
     assert user.intro.id == 1
 
@@ -290,17 +290,17 @@ def test_user_messages_count(db_connection):
     create_message(2, user)
     create_message(3, user)
 
-    assert user.public_messages_count() == 3
+    assert user.messages_count() == 3
 
 
-def test_user_recent_public_messages_count(db_connection):
+def test_user_recent_messages_count(db_connection):
     user = create_user(1)
 
     create_message(1, user, created_at=datetime(2021, 2, 15))
     create_message(2, user, created_at=datetime(2021, 3, 10))
     create_message(3, user, created_at=datetime(2021, 3, 15))
 
-    assert user.recent_public_messages_count(today=date(2021, 4, 1)) == 2
+    assert user.recent_messages_count(today=date(2021, 4, 1)) == 2
 
 
 def test_user_upvotes_count(db_connection):
@@ -316,7 +316,7 @@ def test_user_upvotes_count(db_connection):
 def test_user_upvotes_count_skips_some_channels(db_connection):
     user = create_user(1)
 
-    create_message(1, user, upvotes_count=1, channel_id=ClubChannel.INTRO)
+    create_message(1, user, upvotes_count=1, channel_id=ClubChannelID.INTRO)
     create_message(2, user, upvotes_count=4)
     create_message(3, user, upvotes_count=10)
 
@@ -338,7 +338,7 @@ def test_user_recent_upvotes_count_skips_some_channels(db_connection):
 
     create_message(1, user, upvotes_count=1, created_at=datetime(2021, 2, 15))
     create_message(2, user, upvotes_count=4, created_at=datetime(2021, 3, 10))
-    create_message(3, user, upvotes_count=10, created_at=datetime(2021, 3, 15), channel_id=ClubChannel.INTRO)
+    create_message(3, user, upvotes_count=10, created_at=datetime(2021, 3, 15), channel_id=ClubChannelID.INTRO)
 
     assert user.recent_upvotes_count(today=date(2021, 4, 1)) == 4
 

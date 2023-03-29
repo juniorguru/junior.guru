@@ -2,7 +2,7 @@ from datetime import date, timedelta
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubMember, get_or_create_dm_channel, is_message_older_than, mutating
+from juniorguru.lib.discord_club import ClubMemberID, get_or_create_dm_channel, is_message_older_than, mutating
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubUser
 
@@ -20,7 +20,7 @@ def main():
 
 @db.connection_context()
 async def send_daily_report(client):
-    member = await client.club_guild.fetch_member(ClubMember.DANIEL)
+    member = await client.club_guild.fetch_member(ClubMemberID.DANIEL)
     channel = await get_or_create_dm_channel(member)
 
     if channel is None:
@@ -35,7 +35,7 @@ async def send_daily_report(client):
     if is_message_older_than(last_message, yesterday):
         czech_weekday = CZECH_WEEKDAYS[yesterday.weekday()]
 
-        daniel = ClubUser.get_by_id(ClubMember.DANIEL)
+        daniel = ClubUser.get_by_id(ClubMemberID.DANIEL)
         daniel_messages = [message for message in daniel.list_public_messages
                            if message.created_at.date() == yesterday]
         daniel_channels = set(message.parent_channel_id for message in daniel_messages)
@@ -48,7 +48,7 @@ async def send_daily_report(client):
         daniel_all_threads = set(message.channel_id for message in daniel_all_messages)
         daniel_all_content_size = sum(message.content_size for message in daniel_all_messages)
 
-        honza = ClubUser.get_by_id(ClubMember.HONZA)
+        honza = ClubUser.get_by_id(ClubMemberID.HONZA)
         honza_messages = [message for message in honza.list_public_messages
                           if message.created_at.date() == yesterday]
         honza_content_size = sum(message.content_size for message in honza_messages)

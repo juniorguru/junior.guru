@@ -24,7 +24,7 @@ logger = loggers.from_path(__file__)
 
 
 @unique
-class ClubMember(IntEnum):
+class ClubMemberID(IntEnum):
     BOT = 797097976571887687
     HONZA = 668226181769986078
     DANIEL = 652142810291765248
@@ -32,7 +32,7 @@ class ClubMember(IntEnum):
 
 
 @unique
-class ClubChannel(IntEnum):
+class ClubChannelID(IntEnum):
     INTRO = 788823881024405544
     ANNOUNCEMENTS = 789046675247333397
     BOT = 797107515186741248

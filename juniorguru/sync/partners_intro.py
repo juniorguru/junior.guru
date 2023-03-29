@@ -7,7 +7,7 @@ from jinja2 import Template
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (ClubChannel, ClubEmoji, add_reactions,
+from juniorguru.lib.discord_club import (ClubChannelID, ClubEmoji, add_reactions,
                                          is_message_over_period_ago, mutating)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -45,7 +45,7 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    last_message = ClubMessage.last_bot_message(ClubChannel.INTRO, ClubEmoji.PARTNER_INTRO)
+    last_message = ClubMessage.last_bot_message(ClubChannelID.INTRO, ClubEmoji.PARTNER_INTRO)
     if is_message_over_period_ago(last_message, timedelta(weeks=1)):
         logger.info('Last partner intro message is more than one week old!')
 
@@ -77,7 +77,7 @@ async def discord_task(client):
                           url=f'https://junior.guru/open/{partner.slug}',
                           style=ButtonStyle.secondary)
             ]
-            channel = await client.fetch_channel(ClubChannel.INTRO)
+            channel = await client.fetch_channel(ClubChannelID.INTRO)
             with mutating(channel) as proxy:
                 message = await proxy.send(content=content, embed=embed, file=file, view=ui.View(*buttons))
             await add_reactions(message, BOT_REACTIONS)

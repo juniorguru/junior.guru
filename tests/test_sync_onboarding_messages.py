@@ -1,7 +1,7 @@
 from collections import namedtuple
 from datetime import datetime, timedelta
 
-from juniorguru.lib.discord_club import ClubMember
+from juniorguru.lib.discord_club import ClubMemberID
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.sync.onboarding.messages import prepare_messages
 
@@ -38,7 +38,7 @@ def create_message(id, author_id, content, created_at=None, reactions=None):
 
 
 def create_bot_message(id, content, created_at=None, unread=False):
-    return create_message(id, ClubMember.BOT, content, created_at=created_at,
+    return create_message(id, ClubMemberID.BOT, content, created_at=created_at,
                           reactions={'✅': 1} if unread else {'✅': 2})
 
 

@@ -7,7 +7,7 @@ from discord import Embed, File, ui
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.asyncio_extra import chunks
-from juniorguru.lib.discord_club import (ClubChannel, fetch_threads, is_thread_after,
+from juniorguru.lib.discord_club import (ClubChannelID, fetch_threads, is_thread_after,
                                          mutating)
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
@@ -32,7 +32,7 @@ def main():
 async def discord_task(client):
     since_at = datetime.now(timezone.utc) - timedelta(days=JOBS_REPEATING_PERIOD_DAYS)
     logger.info(f'Figuring out which jobs are not yet in the channel since {since_at}')
-    channel = await client.club_guild.fetch_channel(ClubChannel.JOBS)
+    channel = await client.club_guild.fetch_channel(ClubChannelID.JOBS)
     urls = [get_effective_url(message) async for message
             in fetch_starting_messages(channel, after=since_at)]
     urls = frozenset(filter(None, urls))

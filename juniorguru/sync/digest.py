@@ -5,7 +5,7 @@ from discord import Embed
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubChannel, is_message_older_than, mutating
+from juniorguru.lib.discord_club import ClubChannelID, is_message_older_than, mutating
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
@@ -24,13 +24,13 @@ def main():
 @db.connection_context()
 async def discord_task(client):
     since_date = date.today() - timedelta(weeks=1)
-    message = ClubMessage.last_bot_message(ClubChannel.ANNOUNCEMENTS, '🔥')
+    message = ClubMessage.last_bot_message(ClubChannelID.ANNOUNCEMENTS, '🔥')
     if is_message_older_than(message, since_date):
         if message:
             since_date = message.created_at.date()
         logger.info(f"Analyzing since {since_date}")
 
-        channel = await client.fetch_channel(ClubChannel.ANNOUNCEMENTS)
+        channel = await client.fetch_channel(ClubChannelID.ANNOUNCEMENTS)
         messages = ClubMessage.digest_listing(since_date, limit=DIGEST_LIMIT)
 
         for n, message in enumerate(messages, start=1):

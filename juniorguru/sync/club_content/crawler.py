@@ -7,7 +7,7 @@ from discord import DMChannel, Member, Message, Reaction, User
 from discord.abc import GuildChannel
 
 from juniorguru.lib import loggers
-from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubChannel,
+from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubChannelID,
                                          ClubClient, ClubEmoji, emoji_name,
                                          fetch_threads, get_channel_name,
                                          get_parent_channel_id, is_member,
@@ -22,15 +22,15 @@ logger = loggers.from_path(__file__)
 WORKERS_COUNT = 5
 
 CHANNELS_HISTORY_SINCE = {
-    ClubChannel.FUN: timedelta(days=30),  # volná-zábava
-    ClubChannel.FUN_TOPICS: timedelta(days=30),  # volná-témata
+    ClubChannelID.FUN: timedelta(days=30),  # volná-zábava
+    ClubChannelID.FUN_TOPICS: timedelta(days=30),  # volná-témata
 
     # take all history since ever
-    ClubChannel.INTRO: None,
+    ClubChannelID.INTRO: None,
 
     # skip channels
-    ClubChannel.BOT: timedelta(0),
-    ClubChannel.JOBS: timedelta(0),
+    ClubChannelID.BOT: timedelta(0),
+    ClubChannelID.JOBS: timedelta(0),
     834443926655598592: timedelta(0),  # práce-bot (archived)
 }
 

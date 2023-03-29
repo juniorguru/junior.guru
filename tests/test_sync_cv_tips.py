@@ -2,7 +2,7 @@ from collections import namedtuple
 
 import pytest
 
-from juniorguru.lib.discord_club import ClubMember
+from juniorguru.lib.discord_club import ClubMemberID
 from juniorguru.sync import cv_tips
 
 
@@ -15,8 +15,8 @@ StubMember = namedtuple('Member', ['id', 'roles'],
 @pytest.mark.parametrize('message, expected', [
     (StubMessage(StubMember(123), 'Hello!'), False),
     (StubMessage(StubMember(123), '💡 Hello!'), False),
-    (StubMessage(StubMember(ClubMember.BOT), 'Hello!'), False),
-    (StubMessage(StubMember(ClubMember.BOT), '💡 Hello!'), True),
+    (StubMessage(StubMember(ClubMemberID.BOT), 'Hello!'), False),
+    (StubMessage(StubMember(ClubMemberID.BOT), '💡 Hello!'), True),
 ])
 def test_is_message_bot_reminder(message, expected):
     assert cv_tips.is_message_bot_reminder(message) is expected
