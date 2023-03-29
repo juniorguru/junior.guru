@@ -1,104 +1,86 @@
 import inspect
 from contextlib import contextmanager
-from enum import Enum, auto
 from functools import wraps
+from typing import Generator, Iterable
 
 from juniorguru.lib import loggers
+from juniorguru.lib import global_state
 
 
 logger = loggers.from_path(__file__)
 
 
-class Services(Enum):
-    DISCORD = auto()
-    GOOGLE_SHEETS = auto()
-    FAKTUROID = auto()
-    MEMBERFUL = auto()
-
-
-class MutationsNotAllowed:
-    pass
-
-
-class MutationsNotInitializedError(Exception):
-    pass
+KNOWN_SERVICES = ['discord', 'google_sheets', 'fakturoid', 'memberful']
 
 
 class MutationsNotAllowedError(Exception):
     pass
 
 
-class Mutations:
-    def __init__(self):
-        self.allowed = set()
-        self._initialized = False
+def _get_allowed() -> set:
+    return set(global_state.get('mutations.allowed') or [])
 
-    def allow(self, *service_names):
-        for service_name in service_names:
-            service = Services[service_name.upper()]
-            self.allowed.add(service)
-            logger[service_name.lower()].debug('Allowed')
-        self._initialized = True
 
-    def allow_all(self):
-        for service in Services:
-            self.allowed.add(service)
-            logger[service.name.lower()].debug('Allowed')
-        self._initialized = True
+def _set_allowed(allowed: Iterable) -> None:
+    global_state.set('mutations.allowed', list(allowed))
 
-    def is_allowed(self, service_name):
-        self._raise_if_not_initialized()
-        return Services[service_name.upper()] in self.allowed
 
-    def dump(self):
-        """Dumps the current state of allowed mutations into a simple list. Useful for inter-process communitacion."""
-        return sorted([service.name.lower() for service in self.allowed])
+def allow(*services: str) -> None:
+    allowed = _get_allowed()
+    for service in map(str.lower, services):
+        assert service in KNOWN_SERVICES
+        allowed.add(service)
+    _set_allowed(allowed)
+    logger.info(f'Allowed: {allowed!r}')
 
-    def load(self, service_names):
-        """Loads the state of allowed mutations from a simple list. Useful for inter-process communitacion."""
-        self.allowed = set()
-        self.allow(*service_names)
 
-    def mutates(self, service_name, raises=False):
-        service = Services[service_name.upper()]
+def allow_all() -> None:
+    allow(*KNOWN_SERVICES)
 
-        def warn():
-            logger[service_name.lower()].warning('Not allowed')
-            if raises:
-                raise MutationsNotAllowedError
-            return MutationsNotAllowed
 
-        def decorator(fn):
-            if inspect.iscoroutinefunction(fn):
-                @wraps(fn)
-                async def wrapper(*args, **kwargs):
-                    self._raise_if_not_initialized()
-                    if service in self.allowed:
-                        return await fn(*args, **kwargs)
-                    return warn()
-                return wrapper
+def is_allowed(service) -> bool:
+    return service in _get_allowed()
 
+
+def mutates(service, raises=False):
+    service = service.lower()
+    assert service in KNOWN_SERVICES
+
+    def create_error():
+        logger['mutates'].warning(f'Not allowed: {service}')
+        error = MutationsNotAllowedError()
+        if raises:
+            raise error
+        return error
+
+    def decorator(fn):
+        if inspect.iscoroutinefunction(fn):
             @wraps(fn)
-            def wrapper(*args, **kwargs):
-                self._raise_if_not_initialized()
-                if service in self.allowed:
-                    return fn(*args, **kwargs)
-                return warn()
+            async def wrapper(*args, **kwargs):
+                if service in _get_allowed():
+                    return await fn(*args, **kwargs)
+                return create_error()
             return wrapper
-        return decorator
 
-    def _raise_if_not_initialized(self):
-        if not self._initialized:
-            raise MutationsNotInitializedError()
-
-    @contextmanager
-    def allowing(self, *service_names):
-        try:
-            dump = self.dump()
-            self.allow(*service_names)
-            yield
-        finally:
-            self.load(dump)
+        @wraps(fn)
+        def wrapper(*args, **kwargs):
+            if service in _get_allowed():
+                return fn(*args, **kwargs)
+            return create_error()
+        return wrapper
+    return decorator
 
 
-mutations = Mutations()
+@contextmanager
+def force_allow(*services) -> Generator[None, None, None]:
+    dump = _get_allowed()
+    try:
+        services = list(map(str.lower, services))
+        for service in services:
+            assert service in KNOWN_SERVICES
+        global_state.set('mutations.allowed', services)
+        logger['force_allow'].debug(f'Force-allowed: {services!r}')
+        yield
+    finally:
+        _set_allowed(dump)
+        logger['force_allow'].debug(f'Back to: {dump!r}')

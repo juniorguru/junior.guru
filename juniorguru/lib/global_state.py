@@ -13,8 +13,8 @@ def load() -> dict:
         return dict()
 
 
-def save(config) -> None:
-    os.environ[ENV_KEY] = json.dumps(config)
+def save(state) -> None:
+    os.environ[ENV_KEY] = json.dumps(state)
 
 
 def set(name, value) -> None:

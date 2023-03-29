@@ -6,7 +6,7 @@ import click
 from pycircleci.api import Api
 
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.mutations import mutations
+from juniorguru.lib import mutations
 
 
 logger = loggers.from_path(__file__)

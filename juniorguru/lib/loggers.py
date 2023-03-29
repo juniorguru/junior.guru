@@ -52,13 +52,13 @@ def configure():
     # inherit logger configuration and this function will run again.
     # If there's already a log path set in the global state,
     # let's configue it for this process too.
-    log_path = global_state.get('log_path')
+    log_path = global_state.get('loggers.log_path')
     if log_path:
         configure_file(log_path)
 
 
 def configure_file(path):
-    global_state.set('log_path', str(path))
+    global_state.set('loggers.log_path', str(path))
     file = logging.FileHandler(path, mode='w')
     file.setLevel(logging.DEBUG)
     file.setFormatter(logging.Formatter(LOG_FORMAT))

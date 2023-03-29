@@ -9,7 +9,6 @@ from playhouse.shortcuts import model_to_dict
 
 from juniorguru.lib import loggers
 from juniorguru.lib.memberful import Memberful, serialize_metadata
-from juniorguru.lib.mutations import mutations
 from juniorguru.models.partner import Partner
 
 
@@ -56,10 +55,6 @@ def main(partner_slug, all, invoice):
             logger.error("You're not sure")
             raise click.Abort()
 
-        if not mutations.is_allowed('memberful'):
-            logger.error('Memberful mutations not allowed!')
-            raise click.Abort()
-
         memberful = Memberful()
         query = '''
             query getMembers($cursor: String!) {
@@ -103,7 +98,6 @@ def main(partner_slug, all, invoice):
             mark_as_invoiced(memberful, mutation, subscription.account_id, metadata)
 
 
-@mutations.mutates('memberful')
 def mark_as_invoiced(memberful, mutation, account_id, metadata):
     memberful.mutate(mutation, dict(id=account_id,
                                     metadata=serialize_metadata(metadata)))

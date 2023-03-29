@@ -5,7 +5,7 @@ import arrow
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.memberful import Memberful
-from juniorguru.lib.mutations import mutations
+from juniorguru.lib import mutations
 from juniorguru.models.base import db
 from juniorguru.models.partner import Partner
 

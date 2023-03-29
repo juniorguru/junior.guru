@@ -10,7 +10,7 @@ import emoji
 from discord.errors import Forbidden
 
 from juniorguru.lib import loggers
-from juniorguru.lib.mutations import mutations
+from juniorguru.lib import mutations
 
 
 CLUB_GUILD = 769966886598737931
@@ -215,7 +215,7 @@ async def get_or_create_dm_channel(member: discord.Member) -> None | discord.DMC
     if member.dm_channel:
         return member.dm_channel
     try:
-        with mutations.allowing('discord'):
+        with mutations.force_allow('discord'):
             return await member.create_dm()
     except discord.HTTPException as e:
         if e.code == 50007:  # cannot send messages to this user

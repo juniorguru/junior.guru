@@ -1,57 +1,63 @@
 import pytest
 
-from juniorguru.lib.mutations import (Mutations, MutationsNotAllowed,
-                                      MutationsNotAllowedError,
-                                      MutationsNotInitializedError)
+from juniorguru.lib.global_state import load as load_global_state, save as save_global_state
+from juniorguru.lib.mutations import MutationsNotAllowedError, allow, mutates, allow_all, is_allowed, force_allow
 
 
-def test_mutations_mutation():
-    mutations = Mutations()
-    mutations.allow('discord')
+@pytest.fixture
+def global_state():
+    dump = load_global_state()
+    try:
+        save_global_state(dict())
+        yield
+    finally:
+        save_global_state(dump)
 
-    @mutations.mutates('fakturoid')
+
+def test_basic_usage(global_state):
+    allow('discord')
+
+    @mutates('fakturoid')
     def fakturoid():
         return 1
     value_f = fakturoid()
 
-    @mutations.mutates('discord')
+    @mutates('discord')
     def discord():
         return 2
     value_d = discord()
 
-    assert value_f is MutationsNotAllowed
+    assert isinstance(value_f, MutationsNotAllowedError)
     assert value_d == 2
 
 
 @pytest.mark.asyncio
-async def test_mutations_mutation_async():
-    mutations = Mutations()
-    mutations.allow('discord')
+async def test_basic_usage_async(global_state):
+    allow('discord')
 
-    @mutations.mutates('fakturoid')
+    @mutates('fakturoid')
     async def fakturoid():
         return 1
     value_f = await fakturoid()
 
-    @mutations.mutates('discord')
+    @mutates('discord')
     async def discord():
         return 2
     value_d = await discord()
 
-    assert value_f is MutationsNotAllowed
+    assert isinstance(value_f, MutationsNotAllowedError)
     assert value_d == 2
 
 
-def test_mutations_allow_multiple():
-    mutations = Mutations()
-    mutations.allow('fakturoid', 'discord')
+def test_allow_multiple(global_state):
+    allow('fakturoid', 'discord')
 
-    @mutations.mutates('fakturoid')
+    @mutates('fakturoid')
     def fakturoid():
         return 1
     value_f = fakturoid()
 
-    @mutations.mutates('discord')
+    @mutates('discord')
     def discord():
         return 2
     value_d = discord()
@@ -60,16 +66,15 @@ def test_mutations_allow_multiple():
     assert value_d == 2
 
 
-def test_mutations_allow_all():
-    mutations = Mutations()
-    mutations.allow_all()
+def test_allow_all(global_state):
+    allow_all()
 
-    @mutations.mutates('fakturoid')
+    @mutates('fakturoid')
     def fakturoid():
         return 1
     value_f = fakturoid()
 
-    @mutations.mutates('discord')
+    @mutates('discord')
     def discord():
         return 2
     value_d = discord()
@@ -78,35 +83,28 @@ def test_mutations_allow_all():
     assert value_d == 2
 
 
-def test_mutations_is_allowed():
-    mutations = Mutations()
-    mutations.allow('discord')
+def test_is_allowed(global_state):
+    allow('discord')
 
-    assert mutations.is_allowed('fakturoid') is False
-    assert mutations.is_allowed('discord') is True
+    assert is_allowed('fakturoid') is False
+    assert is_allowed('discord') is True
 
 
-def test_mutations_evaluate_during_call_time_not_import_time():
-    mutations = Mutations()
-    mutations.allow()
-
-    @mutations.mutates('discord')
+def test_mutates_evaluates_during_call_time_not_import_time(global_state):
+    @mutates('discord')
     def discord():
         return 123
     value1 = discord()
 
-    mutations.allow('discord')
+    allow('discord')
     value2 = discord()
 
-    assert value1 is MutationsNotAllowed
+    assert isinstance(value1, MutationsNotAllowedError)
     assert value2 == 123
 
 
-def test_mutations_raises():
-    mutations = Mutations()
-    mutations.allow()
-
-    @mutations.mutates('discord', raises=True)
+def test_mutates_raises(global_state):
+    @mutates('discord', raises=True)
     def discord():
         return 123
 
@@ -114,29 +112,15 @@ def test_mutations_raises():
         discord()
 
 
-def test_mutations_must_be_initialized():
-    mutations = Mutations()
+def test_force_allow(global_state):
+    allow('fakturoid')
 
-    @mutations.mutates('discord')
-    def discord():
-        return 123
+    assert is_allowed('discord') is False
+    assert is_allowed('fakturoid') is True
 
-    with pytest.raises(MutationsNotInitializedError):
-        mutations.is_allowed('fakturoid')
-    with pytest.raises(MutationsNotInitializedError):
-        discord()
+    with force_allow('discord'):
+        assert is_allowed('discord') is True
+        assert is_allowed('fakturoid') is False
 
-
-def test_mutations_dump():
-    mutations = Mutations()
-    mutations.allow('discord', 'fakturoid')
-
-    assert mutations.dump() == ['discord', 'fakturoid']
-
-
-def test_mutations_load():
-    mutations = Mutations()
-    mutations.load(['discord', 'fakturoid'])
-
-    assert mutations.is_allowed('discord')
-    assert mutations.is_allowed('fakturoid')
+    assert is_allowed('discord') is False
+    assert is_allowed('fakturoid') is True

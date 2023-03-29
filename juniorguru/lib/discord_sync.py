@@ -5,7 +5,6 @@ from multiprocessing import Process
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import ClubClient
-from juniorguru.lib.mutations import mutations
 
 
 DISCORD_API_KEY = os.getenv('DISCORD_API_KEY') or None
@@ -23,7 +22,7 @@ def run(fn, *args):
     """
     import_path = get_import_path(fn)
     logger.debug(f'Running async code in a separate process: {import_path}')
-    process = Process(target=discord_process, args=[import_path, mutations.dump(), args])
+    process = Process(target=discord_process, args=[import_path, args])
     process.start()
     process.join()
     if process.exitcode != 0:
@@ -34,8 +33,7 @@ def get_import_path(fn):
     return f'{fn.__module__}.{fn.__qualname__}'
 
 
-def discord_process(import_path, mutations_dump, args):
-    mutations.load(mutations_dump)
+def discord_process(import_path, args):
     logger_dt = logger['discord_task']
 
     import_path_parts = import_path.split('.')
