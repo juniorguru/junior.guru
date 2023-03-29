@@ -78,7 +78,7 @@ class ClubUser(BaseModel):
     @property
     def list_public_messages(self):
         return self.list_messages \
-            .where(ClubMessage.is_dm == False) \
+            .where(ClubMessage.is_private == False) \
             .order_by(ClubMessage.created_at.desc())
 
     @property
@@ -189,7 +189,7 @@ class ClubMessage(BaseModel):
     parent_channel_id = IntegerField(index=True, null=True)
     category_id = IntegerField(index=True, null=True)
     type = CharField(default='default')
-    is_dm = BooleanField(default=False)
+    is_private = BooleanField(default=False)
 
     @property
     def emoji_prefix(self):
@@ -214,14 +214,14 @@ class ClubMessage(BaseModel):
         messages = cls.select() \
             .where(cls.created_month == f'{date:%Y-%m}') \
             .where(cls.author_is_bot == False) \
-            .where(cls.is_dm == False) \
+            .where(cls.is_private == False) \
             .where(cls.channel_id.not_in(STATS_EXCLUDE_CHANNELS))
         return sum(message.content_size for message in messages)
 
     @classmethod
     def listing(cls):
         return cls.select() \
-            .where(cls.is_dm == False) \
+            .where(cls.is_private == False) \
             .order_by(cls.created_at)
 
     @classmethod
@@ -245,7 +245,7 @@ class ClubMessage(BaseModel):
     @classmethod
     def digest_listing(cls, since_dt, limit=5):
         return cls.select() \
-            .where(cls.is_dm == False,
+            .where(cls.is_private == False,
                    ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS),
                    cls.created_at >= since_dt) \
             .order_by(cls.upvotes_count.desc()) \

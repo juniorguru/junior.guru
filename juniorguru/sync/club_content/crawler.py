@@ -83,7 +83,7 @@ async def crawl_dm_channel(queue: asyncio.Queue, member: Member) -> None:
     if channel:
         logger['channels'].debug(f"Adding DM channel #{channel.id} for member {channel.recipient.display_name!r}")
         queue.put_nowait(channel)
-        await store_dm_channel(channel, member)
+        await store_dm_channel(channel)
 
 
 async def channel_worker(worker_no, queue) -> None:
@@ -112,7 +112,7 @@ async def channel_worker(worker_no, queue) -> None:
 
         tasks = []
         async for message in fetch_messages(channel, after=history_after):
-            tasks.append(asyncio.create_task(store_message(message, channel)))
+            tasks.append(asyncio.create_task(store_message(message)))
             async for reacting_member in fetch_members_reacting_by_pin(message.reactions):
                 tasks.append(asyncio.create_task(store_pin(message, reacting_member)))
         await asyncio.gather(*tasks)

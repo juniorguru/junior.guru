@@ -202,3 +202,10 @@ def get_channel_name(channel: discord.abc.GuildChannel | discord.DMChannel) -> s
         return channel.name
     except AttributeError:
         return channel.recipient.display_name
+
+
+def is_channel_private(channel: discord.abc.GuildChannel | discord.DMChannel) -> bool:
+    if channel.type == discord.ChannelType.private:
+        return True
+    assert channel.guild.default_role
+    return not channel.permissions_for(channel.guild.default_role).read_messages

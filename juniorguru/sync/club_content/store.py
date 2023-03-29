@@ -3,12 +3,11 @@ from functools import partial, wraps
 
 import arrow
 import peewee
-from discord import ChannelType, DMChannel, Member, Message, User
-from discord.abc import GuildChannel
+from discord import DMChannel, Member, Message, User
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import (ClubMember, emoji_name, get_channel_name,
-                                         get_parent_channel_id, get_roles)
+                                         get_parent_channel_id, get_roles, is_channel_private)
 from juniorguru.lib.discord_votes import count_downvotes, count_upvotes
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
@@ -47,13 +46,12 @@ def _store_user(user: User) -> ClubUser:
     Stores in database given Discord User object
 
     If given user is already stored, it silently returns the existing database object.
-
-    The message.author can be an instance of Member, but it can also be an instance of User,
-    if the author isn't a member of the Discord guild/server anymore. User instances don't
-    have certain properties, hence the getattr() calls.
     """
     logger['users'][user.id].debug(f'Saving {user.display_name!r}')
     try:
+        # The message.author can be an instance of Member, but it can also be an instance of User,
+        # if the author isn't a member of the Discord guild/server anymore. User instances don't
+        # have certain properties, hence the getattr() calls below.
         obj = ClubUser.create(id=user.id,
                               is_bot=user.bot,
                               is_member=bool(getattr(user, 'joined_at', False)),
@@ -73,8 +71,15 @@ def _store_user(user: User) -> ClubUser:
 
 @make_async
 @db.connection_context()
-def store_message(message: Message, channel: GuildChannel | DMChannel) -> ClubMessage:
-    """Stores in database given Discord Message object"""
+def store_message(message: Message) -> ClubMessage:
+    """
+    Stores in database given Discord Message object
+
+    If the author isn't stored yet, it stores it along the way.
+    """
+    # The channel can be a GuildChannel, but it can also be a DMChannel.
+    # Those have different properties, hence the get_...() and getattr() calls below.
+    channel = message.channel
     return ClubMessage.create(id=message.id,
                               url=message.jump_url,
                               content=message.content,
@@ -92,13 +97,17 @@ def store_message(message: Message, channel: GuildChannel | DMChannel) -> ClubMe
                               parent_channel_id=get_parent_channel_id(channel),
                               category_id=getattr(channel, 'category_id', None),
                               type=message.type.name,
-                              is_dm=channel.type == ChannelType.private)
+                              is_private=is_channel_private(channel))
 
 
 @make_async
 @db.connection_context()
 def store_pin(message: Message, member: Member) -> ClubPinReaction:
-    """Stores in database the information about given Discord Member pinning given Discord Message"""
+    """
+    Stores in database the information about given Discord Member pinning given Discord Message
+
+    If the reacting member isn't stored yet, it stores it along the way.
+    """
     logger['pins'].debug(f"Message {message.jump_url} is pinned by member '{member.display_name}' #{member.id}")
     return ClubPinReaction.create(message=message.id,
                                   member=_store_user(member))
@@ -106,12 +115,16 @@ def store_pin(message: Message, member: Member) -> ClubPinReaction:
 
 @make_async
 @db.connection_context()
-def store_dm_channel(channel: DMChannel, member: Member) -> None:
+def store_dm_channel(channel: DMChannel) -> None:
     """Stores in database the information about given Discord DM channel"""
+    # Assuming the recipient is a member, but also ensuring it REALLY IS a member
+    # in the where() clause below.
+    member = channel.recipient
     logger['dm'].debug(f"Channel {channel.id} belongs to member '{member.display_name}' #{member.id}")
     rows_count = ClubUser \
         .update({ClubUser.dm_channel_id: channel.id}) \
-        .where(ClubUser.id == member.id) \
+        .where(ClubUser.id == member.id,
+               ClubUser.is_member == True) \
         .execute()
     if rows_count != 1:
         raise RuntimeError(f"Unexpected number of rows updated ({rows_count}) when recording DM channel #{channel.id} to member #{member.id}")
