@@ -1,5 +1,6 @@
 from collections import namedtuple
 from datetime import date, datetime, timedelta
+from discord import ChannelType
 
 import pytest
 
@@ -79,3 +80,22 @@ def test_is_message_over_period_ago(today, expected):
     message = StubClubMessage(created_at)
 
     assert discord_club.is_message_over_period_ago(message, timedelta(weeks=1), today) is expected
+
+
+def test_get_pinned_message_id():
+    StubEmbed = namedtuple('Embed', ['description'])
+    StubChannel = namedtuple('Channel', ['type'])
+    StubMessage = namedtuple('Message', ['content', 'embeds', 'channel'])
+
+    description = ('**Dan Srb** v kanálu „ITnetwork informační hodnota kurzů”:'
+                   '\n> Zjistit se to dá z Excelového souboru tady https://www.msmt.cz/vzdelavani/dalsi-vzdelavani/databaze a '
+                   'řetězec SDA se v něm vůbec nevyskytuje, takže to nevypadá, že akreditaci mají. Za loňsko byly uděleny tyto '
+                   'akreditace, kde je nějaké programování. ``` Číslo jednací Vzdělávací zařízení Email žadatele Pro pracovní '
+                   'činnost MSMT-16743/2022-6 b4u consulting s.r.o. t.kosina@consultant.com Programátor www aplikací '
+                   'MSMT-6316/2022-2 Edu partners s.r.o. info@edu-partners.cz Programátor www aplikací…'
+                   '\n[Celý příspěvek](https://discord.com/channels/769966886598737931/1083734944121102436/1089250472776454154)')
+    message = StubMessage('📌 ...',
+                          [StubEmbed(description)],
+                          StubChannel(type=ChannelType.private))
+
+    assert discord_club.get_pinned_message_id(message) == 1089250472776454154

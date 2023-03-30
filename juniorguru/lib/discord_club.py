@@ -19,6 +19,8 @@ DEFAULT_THREAD_CREATED_AT = datetime(2022, 1, 9, tzinfo=timezone.utc)  # threads
 
 DEFAULT_CHANNELS_HISTORY_SINCE = timedelta(days=380)
 
+PINNED_MESSAGE_ID_RE = re.compile(r'\[Celý příspěvek\]\(https://discord.com/channels/\d+/\d+/(?P<id>\d+)\)')
+
 
 logger = loggers.from_path(__file__)
 
@@ -200,8 +202,12 @@ def get_channel_name(channel: discord.abc.GuildChannel | discord.DMChannel) -> s
         return channel.recipient.display_name
 
 
+def is_channel_dm(channel: discord.abc.GuildChannel | discord.DMChannel) -> bool:
+    return channel.type == discord.ChannelType.private
+
+
 def is_channel_private(channel: discord.abc.GuildChannel | discord.DMChannel) -> bool:
-    if channel.type == discord.ChannelType.private:
+    if is_channel_dm(channel):
         return True
     assert channel.guild.default_role
     return not channel.permissions_for(channel.guild.default_role).read_messages
@@ -218,3 +224,18 @@ async def get_or_create_dm_channel(member: discord.Member) -> None | discord.DMC
             logger['users'][member.id].warning(e)
             return None
         raise
+
+
+def is_message_pin(message: discord.Message) -> bool:
+    return (
+        is_channel_dm(message.channel)
+        and get_starting_emoji(message.content) == ClubEmoji.PIN
+    )
+
+
+def get_pinned_message_id(message: discord.Message) -> int:
+    if is_message_pin(message):
+        embed_description = message.embeds[0].description
+        if match := PINNED_MESSAGE_ID_RE.search(embed_description):
+            return int(match.group('id'))
+    return None

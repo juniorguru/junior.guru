@@ -199,6 +199,7 @@ class ClubMessage(BaseModel):
     category_id = IntegerField(index=True, null=True)
     type = CharField(default='default')
     is_private = BooleanField(default=False)
+    pinned_message_id = IntegerField(null=True, index=True)
 
     @property
     def is_intro(self):

@@ -6,6 +6,8 @@ from discord.errors import Forbidden
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
+# from juniorguru.lib import mutations
+# from juniorguru.lib.discord_club import ClubMemberID
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubPinReaction
@@ -21,6 +23,14 @@ def main():
 
 @db.connection_context()
 async def ensure_pins_are_in_dms(client):
+    # TODO
+    # member = await client.club_guild.fetch_member(ClubMemberID.HONZA)
+    # with mutations.allowing_discord():
+    #     dm_channel = await member.create_dm()
+    # message = await dm_channel.fetch_message(1089766546441785354)
+    # from pprint import pprint
+    # print(repr(message.embeds[0].description))
+    # return
     pin_reactions = ClubPinReaction.listing()
     logger.info(f'Found {len(pin_reactions)} pin reactions by people who are currently members')
     await asyncio.gather(*[
