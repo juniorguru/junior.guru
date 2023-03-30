@@ -21,7 +21,7 @@ def main():
 
 @db.connection_context()
 async def discord_task(client):
-    pin_reactions = ClubPinReaction.members_listing()
+    pin_reactions = ClubPinReaction.listing()
     logger.info(f'Found {len(pin_reactions)} pin reactions by people who are currently members')
     await asyncio.gather(*[
         process_pin_reaction(client, pin_reaction)

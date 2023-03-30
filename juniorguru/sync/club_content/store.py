@@ -65,7 +65,7 @@ def _store_user(user: User) -> ClubUser:
         logger['users'][user.id].debug(f'Saved {user.display_name!r} as {obj!r}')
         return obj
     except peewee.IntegrityError:
-        obj = ClubUser.get(id=user.id)
+        obj = ClubUser.get_by_id(user.id)
         logger['users'][user.id].debug(f'Found {user.display_name!r} as {obj!r}')
         return obj
 
@@ -111,7 +111,7 @@ def store_pin(message: Message, member: Member) -> ClubPinReaction:
     """
     logger['pins'].debug(f"Message {message.jump_url} is pinned by member '{member.display_name}' #{member.id}")
     return ClubPinReaction.create(message=message.id,
-                                  member=_store_user(member))
+                                  member=ClubUser.get_member_by_id(member.id))
 
 
 @make_async

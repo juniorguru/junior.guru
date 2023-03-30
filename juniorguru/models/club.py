@@ -138,6 +138,12 @@ class ClubUser(BaseModel):
         return bool(self.coupon and parse_coupon(self.coupon)['name'] == 'FOUNDERS')
 
     @classmethod
+    def get_member_by_id(cls, id):
+        return cls.members_listing() \
+            .where(cls.id == id) \
+            .get()
+
+    @classmethod
     def count(cls):
         return cls.listing().count()
 
@@ -285,12 +291,6 @@ class ClubPinReaction(BaseModel):
     @classmethod
     def listing(cls):
         return cls.select()
-
-    @classmethod
-    def members_listing(cls):
-        return cls.select() \
-            .join(ClubUser) \
-            .where(ClubUser.is_member == True)
 
 
 @unique
