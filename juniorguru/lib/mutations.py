@@ -6,6 +6,9 @@ from typing import Any, Generator, Iterable
 from juniorguru.lib import global_state, loggers
 
 
+__all__ = ['allow', 'allow_all', 'is_allowed', 'mutates', 'mutating', 'allowing']
+
+
 logger = loggers.from_path(__file__)
 
 
@@ -72,6 +75,7 @@ def mutates(service, raises=False):
 
 for service in KNOWN_SERVICES:
     globals()[f"mutates_{service}"] = partial(mutates, service)
+    __all__.append(f"mutates_{service}")
 
 
 class MutatingProxy:
@@ -95,6 +99,7 @@ def mutating(*args, **kwargs) -> Generator[MutatingProxy, None, None]:
 
 for service in KNOWN_SERVICES:
     globals()[f"mutating_{service}"] = partial(mutating, service)
+    __all__.append(f"mutating_{service}")
 
 
 @contextmanager
@@ -114,3 +119,4 @@ def allowing(service) -> Generator[None, None, None]:
 
 for service in KNOWN_SERVICES:
     globals()[f"allowing_{service}"] = partial(allowing, service)
+    __all__.append(f"allowing_{service}")

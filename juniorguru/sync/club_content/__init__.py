@@ -6,7 +6,7 @@ from peewee import OperationalError
 from juniorguru.cli.sync import confirm, default_from_env, main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
+from juniorguru.models.club import ClubMessage, ClubPin, ClubUser
 from juniorguru.sync.club_content.crawler import crawl
 
 
@@ -46,8 +46,8 @@ def get_last_message() -> ClubMessage:
 
 def fetch_club_content():
     with db.connection_context():
-        db.drop_tables([ClubMessage, ClubUser, ClubPinReaction])
-        db.create_tables([ClubMessage, ClubUser, ClubPinReaction])
+        db.drop_tables([ClubMessage, ClubUser, ClubPin])
+        db.create_tables([ClubMessage, ClubUser, ClubPin])
     discord_sync.run(crawl)
 
 
@@ -56,4 +56,4 @@ def get_stats() -> dict[str, int]:
     return dict(messages=ClubMessage.count(),
                 users=ClubUser.count(),
                 members=ClubUser.members_count(),
-                pins=ClubPinReaction.count())
+                pins=ClubPin.count())

@@ -82,7 +82,11 @@ def test_is_message_over_period_ago(today, expected):
     assert discord_club.is_message_over_period_ago(message, timedelta(weeks=1), today) is expected
 
 
-def test_get_pinned_message_id():
+@pytest.mark.parametrize('link_text', [
+    'Celý příspěvek',
+    'Hop na příspěvek',
+])
+def test_get_pinned_message_url(link_text):
     StubEmbed = namedtuple('Embed', ['description'])
     StubChannel = namedtuple('Channel', ['type'])
     StubMessage = namedtuple('Message', ['content', 'embeds', 'channel'])
@@ -93,9 +97,19 @@ def test_get_pinned_message_id():
                    'akreditace, kde je nějaké programování. ``` Číslo jednací Vzdělávací zařízení Email žadatele Pro pracovní '
                    'činnost MSMT-16743/2022-6 b4u consulting s.r.o. t.kosina@consultant.com Programátor www aplikací '
                    'MSMT-6316/2022-2 Edu partners s.r.o. info@edu-partners.cz Programátor www aplikací…'
-                   '\n[Celý příspěvek](https://discord.com/channels/769966886598737931/1083734944121102436/1089250472776454154)')
+                   f'\n[{link_text}](https://discord.com/channels/769966886598737931/1083734944121102436/1089250472776454154)')
     message = StubMessage('📌 ...',
                           [StubEmbed(description)],
                           StubChannel(type=ChannelType.private))
 
-    assert discord_club.get_pinned_message_id(message) == 1089250472776454154
+    assert discord_club.get_pinned_message_url(message) == 'https://discord.com/channels/769966886598737931/1083734944121102436/1089250472776454154'
+
+
+@pytest.mark.parametrize('url, expected', [
+    ('https://discord.com/channels/769966886598737931/1083734944121102436/1089250472776454154',
+     {'guild_id': 769966886598737931, 'channel_id': 1083734944121102436, 'message_id': 1089250472776454154}),
+    ('https://discord.com/channels/@me/834779122256576522/968729020357296139',
+     {'guild_id': None, 'channel_id': 834779122256576522, 'message_id': 968729020357296139}),
+])
+def test_parse_message_url(url, expected):
+    assert discord_club.parse_message_url(url) == expected

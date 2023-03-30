@@ -2,13 +2,15 @@ import math
 from collections import Counter
 from datetime import date, timedelta
 from enum import StrEnum, unique
+from itertools import groupby
+from operator import attrgetter
 
 from peewee import (BooleanField, CharField, DateField, DateTimeField, ForeignKeyField,
                     IntegerField, TextField, fn)
 
 from juniorguru.lib.charts import month_range
 from juniorguru.lib.coupons import parse_coupon
-from juniorguru.lib.discord_club import ClubChannelID
+from juniorguru.lib.discord_club import ClubChannelID, parse_message_url
 from juniorguru.models.base import BaseModel, JSONField, check_enum
 
 
@@ -115,10 +117,10 @@ class ClubUser(BaseModel):
             .first()
         if not first_message:
             first_pin = self.list_pins \
-                .join(ClubMessage) \
+                .join(ClubMessage, on=(ClubPin.pinned_message == ClubMessage.id)) \
                 .order_by(ClubMessage.created_at) \
                 .first()
-            first_message = first_pin.message if first_pin else None
+            first_message = first_pin.pinned_message if first_pin else None
         return first_message.created_at.date() if first_message else self.joined_on
 
     def list_recent_messages(self, today=None, private=False):
@@ -193,17 +195,41 @@ class ClubMessage(BaseModel):
     created_month = CharField(index=True)
     author = ForeignKeyField(ClubUser, backref='list_messages')
     author_is_bot = BooleanField()
-    channel_id = IntegerField()
+    channel_id = IntegerField(index=True)
     channel_name = CharField()
     parent_channel_id = IntegerField(index=True, null=True)
     category_id = IntegerField(index=True, null=True)
     type = CharField(default='default')
     is_private = BooleanField(default=False)
-    pinned_message_id = IntegerField(null=True, index=True)
+    pinned_message_url = IntegerField(null=True, index=True)
+
+    @property
+    def is_pinning(self):
+        return bool(self.pinned_message_url)
 
     @property
     def is_intro(self):
         return self.author.intro.id == self.id
+
+    @property
+    def dm_member(self):
+        return ClubUser.get(dm_channel_id=self.channel_id)
+
+    @property
+    def pin(self):
+        return self._pin.get()
+
+    def record_pin(self):
+        if not self.is_pinning:
+            raise ValueError('Message is not a pinning message')
+        pinned_message_id = parse_message_url(self.pinned_message_url)['message_id']
+        rows_count = ClubPin \
+            .update({ClubPin.pinning_message: self}) \
+            .where(ClubPin.pinned_message == pinned_message_id,
+                   ClubPin.member == self.dm_member) \
+            .execute()
+        if rows_count != 1:
+            raise ClubPin.DoesNotExist()
 
     @classmethod
     def count(cls):
@@ -222,6 +248,12 @@ class ClubMessage(BaseModel):
     def listing(cls):
         return cls.select() \
             .where(cls.is_private == False) \
+            .order_by(cls.created_at)
+
+    @classmethod
+    def pinning_listing(cls):
+        return cls.select() \
+            .where(cls.pinned_message_url.is_null(False)) \
             .order_by(cls.created_at)
 
     @classmethod
@@ -271,17 +303,23 @@ class ClubMessage(BaseModel):
         return query.first()
 
 
-class ClubPinReaction(BaseModel):
+class ClubPin(BaseModel):
+    pinned_message = ForeignKeyField(ClubMessage, backref='list_pins')
     member = ForeignKeyField(ClubUser, backref='list_pins')
-    message = ForeignKeyField(ClubMessage, backref='list_pins')
+    pinning_message = ForeignKeyField(ClubMessage, backref='_pin', null=True)
 
     @classmethod
     def count(cls):
         return cls.select().count()
 
     @classmethod
-    def listing(cls):
-        return cls.select()
+    def outstanding_by_member(cls):
+        pins = cls.select() \
+            .join(ClubUser) \
+            .where(cls.pinning_message.is_null(True),
+                   ClubUser.dm_channel_id.is_null(False)) \
+            .order_by(ClubUser.id)
+        return groupby(pins, attrgetter('member'))
 
 
 @unique

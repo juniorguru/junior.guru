@@ -7,12 +7,12 @@ from discord import DMChannel, Member, Message, User
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import (ClubMemberID, emoji_name, get_channel_name,
-                                         get_parent_channel_id, get_pinned_message_id,
+                                         get_parent_channel_id, get_pinned_message_url,
                                          get_roles, get_starting_emoji,
                                          is_channel_private)
 from juniorguru.lib.discord_votes import count_downvotes, count_upvotes
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
+from juniorguru.models.club import ClubMessage, ClubPin, ClubUser
 
 
 logger = loggers.from_path(__file__)
@@ -101,20 +101,20 @@ def store_message(message: Message) -> ClubMessage:
                               category_id=getattr(channel, 'category_id', None),
                               type=message.type.name,
                               is_private=is_channel_private(channel),
-                              pinned_message_id=get_pinned_message_id(message))
+                              pinned_message_url=get_pinned_message_url(message))
 
 
 @make_async
 @db.connection_context()
-def store_pin(message: Message, member: Member) -> ClubPinReaction:
+def store_pin(message: ClubMessage, member: Member) -> ClubPin:
     """
     Stores in database the information about given Discord Member pinning given Discord Message
 
     If the reacting member isn't stored yet, it stores it along the way.
     """
-    logger['pins'].debug(f"Message {message.jump_url} is pinned by member '{member.display_name}' #{member.id}")
-    return ClubPinReaction.create(message=message.id,
-                                  member=ClubUser.get_member_by_id(member.id))
+    logger['pins'].debug(f"Message {message.url} is pinned by member '{member.display_name}' #{member.id}")
+    return ClubPin.create(pinned_message=message.id,
+                          member=ClubUser.get_member_by_id(member.id))
 
 
 @make_async

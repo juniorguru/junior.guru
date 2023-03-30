@@ -4,7 +4,7 @@ import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID, get_starting_emoji
-from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
+from juniorguru.models.club import ClubMessage, ClubPin, ClubUser
 
 
 def create_user(id_, **kwargs):
@@ -33,7 +33,6 @@ def create_message(id_, user, **kwargs):
                               content_size=len(content),
                               content_starting_emoji=get_starting_emoji(content),
                               upvotes_count=kwargs.get('upvotes_count', 0),
-                              pin_reactions_count=kwargs.get('pin_reactions_count', 0),
                               created_at=created_at,
                               created_month=kwargs.get('created_month', f'{created_at:%Y-%-d}'),
                               channel_id=channel_id,
@@ -44,7 +43,7 @@ def create_message(id_, user, **kwargs):
 
 @pytest.fixture
 def db_connection():
-    models = [ClubUser, ClubMessage, ClubPinReaction]
+    models = [ClubUser, ClubMessage, ClubPin]
     db = SqliteDatabase(':memory:')
     with db:
         db.bind(models)
@@ -198,7 +197,7 @@ def test_user_first_seen_on_from_pins(db_connection):
     user2 = create_user(2, joined_at=None, subscribed_at=None)
 
     message = create_message(1, user1, created_at=datetime(2021, 12, 19))
-    ClubPinReaction.create(member=user2, message=message)
+    ClubPin.create(member=user2, pinned_message=message)
 
     assert user2.first_seen_on() == date(2021, 12, 19)
 

@@ -18,7 +18,28 @@ DEFAULT_THREAD_CREATED_AT = datetime(2022, 1, 9, tzinfo=timezone.utc)  # threads
 
 DEFAULT_CHANNELS_HISTORY_SINCE = timedelta(days=380)
 
-PINNED_MESSAGE_ID_RE = re.compile(r'\[Celý příspěvek\]\(https://discord.com/channels/\d+/\d+/(?P<id>\d+)\)')
+MESSAGE_URL_RE = re.compile(r'''
+    https://discord.com/channels/
+    (
+        (?P<guild_id>\d+)
+        |
+        (@\w+)
+    )/
+    (?P<channel_id>\d+)/
+    (?P<message_id>\d+)/?
+''', re.VERBOSE)
+
+PINNED_MESSAGE_URL_RE = re.compile(r'''
+    \[
+        (Hop\s+na|Celý)\s+příspěvek
+    \]
+    \(
+        (?P<url>
+            https://discord.com/
+            ([^\)]+)
+        )
+    \)
+''', re.VERBOSE)
 
 
 logger = loggers.from_path(__file__)
@@ -225,14 +246,21 @@ async def get_or_create_dm_channel(member: discord.Member) -> None | discord.DMC
         raise
 
 
-def is_message_pin(message: discord.Message) -> bool:
+def is_message_pinning(message: discord.Message) -> bool:
     return (is_channel_dm(message.channel)
             and get_starting_emoji(message.content) == ClubEmoji.PIN)
 
 
-def get_pinned_message_id(message: discord.Message) -> int:
-    if is_message_pin(message):
+def get_pinned_message_url(message: discord.Message) -> int:
+    if is_message_pinning(message):
         embed_description = message.embeds[0].description
-        if match := PINNED_MESSAGE_ID_RE.search(embed_description):
-            return int(match.group('id'))
+        if match := PINNED_MESSAGE_URL_RE.search(embed_description):
+            return match.group('url')
     return None
+
+
+def parse_message_url(url: str) -> int:
+    if match := MESSAGE_URL_RE.search(url):
+        return {name: int(value) if value else None
+                for name, value in match.groupdict().items()}
+    raise ValueError(url)

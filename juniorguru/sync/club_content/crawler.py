@@ -112,9 +112,9 @@ async def channel_worker(worker_no, queue) -> None:
 
         tasks = []
         async for message in fetch_messages(channel, after=history_after):
-            tasks.append(asyncio.create_task(store_message(message)))
+            db_message = await store_message(message)
             async for reacting_member in fetch_members_reacting_by_pin(message.reactions):
-                tasks.append(asyncio.create_task(store_pin(message, reacting_member)))
+                tasks.append(asyncio.create_task(store_pin(db_message, reacting_member)))
         await asyncio.gather(*tasks)
 
         logger_c.debug(f'Done crawling {get_channel_name(channel)!r}')
