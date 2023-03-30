@@ -3,7 +3,6 @@ from collections import Counter
 from datetime import date, timedelta
 from enum import StrEnum, unique
 
-from emoji import is_emoji
 from peewee import (BooleanField, CharField, DateField, DateTimeField, ForeignKeyField,
                     IntegerField, TextField, fn)
 
@@ -186,6 +185,7 @@ class ClubMessage(BaseModel):
     url = CharField()
     content = TextField()
     content_size = IntegerField()
+    content_starting_emoji = CharField(null=True, index=True)
     reactions = JSONField(default=dict)
     upvotes_count = IntegerField(default=0)
     downvotes_count = IntegerField(default=0)
@@ -199,16 +199,6 @@ class ClubMessage(BaseModel):
     category_id = IntegerField(index=True, null=True)
     type = CharField(default='default')
     is_private = BooleanField(default=False)
-
-    @property
-    def emoji_prefix(self):
-        try:
-            emoji = self.content.split(maxsplit=1)[0]
-        except IndexError:
-            return None
-        if is_emoji(emoji):
-            return emoji
-        return None
 
     @property
     def is_intro(self):
@@ -268,13 +258,13 @@ class ClubMessage(BaseModel):
         return query.order_by(cls.created_at.desc()).first()
 
     @classmethod
-    def last_bot_message(cls, channel_id, startswith_emoji=None, contains_text=None):
+    def last_bot_message(cls, channel_id, starting_emoji=None, contains_text=None):
         query = cls.select() \
             .where(cls.author_is_bot == True,
                    cls.channel_id == channel_id) \
             .order_by(cls.created_at.desc())
-        if startswith_emoji:
-            query = query.where(cls.content.startswith(startswith_emoji))
+        if starting_emoji:
+            query = query.where(cls.content_starting_emoji == starting_emoji)
         if contains_text:
             query = query.where(cls.content.contains(contains_text))
         return query.first()

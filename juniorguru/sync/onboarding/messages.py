@@ -77,15 +77,15 @@ async def create_message_data(client, member, content):
 
 def prepare_messages(history, scheduled_messages, today, context=None):
     messages = []
-    past_messages = {message.emoji_prefix: message
+    past_messages = {message.content_starting_emoji: message
                      for message in history
-                     if message.emoji_prefix in scheduled_messages}
+                     if message.content_starting_emoji in scheduled_messages}
     context = context or {}
 
     # append messages to edit
-    for emoji_prefix, message in past_messages.items():
-        render_content = scheduled_messages[emoji_prefix]
-        scheduled_content = prepare_message_content(emoji_prefix, render_content, context)
+    for starting_emoji, message in past_messages.items():
+        render_content = scheduled_messages[starting_emoji]
+        scheduled_content = prepare_message_content(starting_emoji, render_content, context)
         if message.content != scheduled_content:
             messages.append((message.id, scheduled_content))
 
@@ -106,9 +106,9 @@ def prepare_messages(history, scheduled_messages, today, context=None):
             return messages
 
     # append messages to add
-    for emoji_prefix, render_content in scheduled_messages.items():
-        if emoji_prefix not in past_messages:
-            scheduled_content = prepare_message_content(emoji_prefix, render_content, context)
+    for starting_emoji, render_content in scheduled_messages.items():
+        if starting_emoji not in past_messages:
+            scheduled_content = prepare_message_content(starting_emoji, render_content, context)
             messages.append((None, scheduled_content))
             break
 

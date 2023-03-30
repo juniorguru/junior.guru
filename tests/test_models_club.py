@@ -3,7 +3,7 @@ from datetime import date, datetime, timedelta
 import pytest
 from peewee import SqliteDatabase
 
-from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID
+from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID, get_starting_emoji
 from juniorguru.models.club import ClubMessage, ClubPinReaction, ClubUser
 
 
@@ -30,7 +30,8 @@ def create_message(id_, user, **kwargs):
                               author=user,
                               author_is_bot=user.id == ClubMemberID.BOT,
                               content=content,
-                              content_size=len(content or ''),
+                              content_size=len(content),
+                              content_starting_emoji=get_starting_emoji(content),
                               upvotes_count=kwargs.get('upvotes_count', 0),
                               pin_reactions_count=kwargs.get('pin_reactions_count', 0),
                               created_at=created_at,
@@ -378,14 +379,3 @@ def test_last_bot_message_filters_by_emoji_and_text(db_connection, juniorguru_bo
     message3 = create_message(3, juniorguru_bot, content='🔥 ghi', channel_id=123)  # noqa
 
     assert ClubMessage.last_bot_message(123, '🔥', 'ab') == message1
-
-
-@pytest.mark.parametrize('content, expected', [
-    ('🔥 hello', '🔥'),
-    ('hello 🔥', None),
-    ('', None),
-])
-def test_emoji_prefix(db_connection, juniorguru_bot, content, expected):
-    message = create_message(1, juniorguru_bot, content=content)
-
-    assert message.emoji_prefix == expected

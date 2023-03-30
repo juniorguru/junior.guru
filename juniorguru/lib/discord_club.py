@@ -1,3 +1,4 @@
+import re
 import asyncio
 from datetime import date, datetime, timedelta, timezone
 from enum import IntEnum, StrEnum, unique
@@ -86,6 +87,22 @@ def emoji_name(reaction_emoji) -> str:
             name = '_'.join(name.split('_')[:-3])
             return emoji.emojize(f':{name}:')
         return str(reaction_emoji)
+
+
+def get_starting_emoji(text):
+    text = text.lstrip()
+    try:
+        first_char = text[0]
+    except IndexError:
+        return None
+    if emoji.is_emoji(first_char):
+        prefix = text.split(maxsplit=1)[0]
+        if emoji.is_emoji(prefix):
+            return prefix
+        return first_char
+    if match := re.match(r'^<:[^:]+:\d+>', text):
+        return match.group(0)
+    return None
 
 
 def get_roles(member_or_user) -> list[int]:

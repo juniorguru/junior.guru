@@ -75,7 +75,7 @@ class Partner(BaseModel):
     @property
     def intro(self):
         return ClubMessage.last_bot_message(ClubChannelID.INTRO,
-                                            startswith_emoji=ClubEmoji.PARTNER_INTRO,
+                                            starting_emoji=ClubEmoji.PARTNER_INTRO,
                                             contains_text=self.name_markdown_bold)
 
     @classmethod

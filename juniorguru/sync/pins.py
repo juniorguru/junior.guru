@@ -16,11 +16,11 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=['club-content'])
 def main():
-    discord_sync.run(discord_task)
+    discord_sync.run(ensure_pins_are_in_dms)
 
 
 @db.connection_context()
-async def discord_task(client):
+async def ensure_pins_are_in_dms(client):
     pin_reactions = ClubPinReaction.listing()
     logger.info(f'Found {len(pin_reactions)} pin reactions by people who are currently members')
     await asyncio.gather(*[

@@ -31,6 +31,20 @@ def test_emoji_name(emoji, expected):
     assert discord_club.emoji_name(emoji) == expected
 
 
+@pytest.mark.parametrize('text, expected', [
+    pytest.param('', None, id='empty'),
+    pytest.param('😀', '😀', id='emoji'),
+    pytest.param('😀 blah blah blah', '😀', id='emoji with text'),
+    pytest.param('👨‍👩‍👦 blah blah blah', '👨‍👩‍👦', id='multi-byte emoji with text'),
+    pytest.param('     😀', '😀', id='emoji with spaces'),
+    pytest.param('<:discordthread:993580255287705681>', '<:discordthread:993580255287705681>', id='custom emoji'),
+    pytest.param('<:discordthread:993580255287705681> blah blah blah', '<:discordthread:993580255287705681>', id='custom emoji with text'),
+    pytest.param('    <:discordthread:993580255287705681>', '<:discordthread:993580255287705681>', id='custom emoji with spaces'),
+])
+def test_get_starting_emoji(text, expected):
+    assert discord_club.get_starting_emoji(text) == expected
+
+
 @pytest.mark.parametrize('member_or_user, expected', [
     (StubUser(1), []),
     (StubMember(1, [StubRole(42), StubRole(38)]), [42, 38]),

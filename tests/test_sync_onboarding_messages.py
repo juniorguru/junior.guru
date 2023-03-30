@@ -1,7 +1,7 @@
 from collections import namedtuple
 from datetime import datetime, timedelta
 
-from juniorguru.lib.discord_club import ClubMemberID
+from juniorguru.lib.discord_club import ClubMemberID, get_starting_emoji
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.sync.onboarding.messages import prepare_messages
 
@@ -30,6 +30,7 @@ def create_message(id, author_id, content, created_at=None, reactions=None):
     return ClubMessage(id=id,
                        url='https://example.com',
                        content=content,
+                       content_starting_emoji=get_starting_emoji(content),
                        reactions=reactions or {'❤️': 42},
                        created_at=created_at or datetime(2022, 1, 1),
                        author=create_member(author_id),

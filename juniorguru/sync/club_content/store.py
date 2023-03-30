@@ -7,7 +7,7 @@ from discord import DMChannel, Member, Message, User
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import (ClubMemberID, emoji_name, get_channel_name,
-                                         get_parent_channel_id, get_roles,
+                                         get_parent_channel_id, get_roles, get_starting_emoji,
                                          is_channel_private)
 from juniorguru.lib.discord_votes import count_downvotes, count_upvotes
 from juniorguru.models.base import db
@@ -85,6 +85,7 @@ def store_message(message: Message) -> ClubMessage:
                               url=message.jump_url,
                               content=message.content,
                               content_size=len(message.content or ''),
+                              content_starting_emoji=get_starting_emoji(message.content),
                               reactions={emoji_name(reaction.emoji): reaction.count for reaction in message.reactions},
                               upvotes_count=count_upvotes(message.reactions),
                               downvotes_count=count_downvotes(message.reactions),
