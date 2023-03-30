@@ -5,7 +5,8 @@ from discord import Embed
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubChannelID, is_message_older_than, mutating
+from juniorguru.lib.discord_club import ClubChannelID, is_message_older_than
+from juniorguru.lib.mutations import mutating
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
@@ -53,6 +54,6 @@ async def discord_task(client):
                 f"[Hop na příspěvek]({message.url})",
                 "",
             ]
-        with mutating(channel) as proxy:
+        with mutating('discord', channel) as proxy:
             await proxy.send(content="\n".join(content),
                              embed=Embed(description="\n".join(embed_description)))

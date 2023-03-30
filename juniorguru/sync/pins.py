@@ -6,7 +6,7 @@ from discord.errors import Forbidden
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import mutating
+from juniorguru.lib.mutations import mutating
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubPinReaction
 
@@ -55,7 +55,7 @@ async def process_pin_reaction(client, pin_reaction):
         "",
     ]
     try:
-        with mutating(channel) as proxy:
+        with mutating('discord', channel) as proxy:
             await proxy.send(content=content, embed=Embed(description="\n".join(embed_description)))
     except Forbidden as e:
         logger_p.error(str(e), exc_info=True)

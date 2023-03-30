@@ -1,7 +1,7 @@
 import inspect
 from contextlib import contextmanager
 from functools import wraps
-from typing import Generator, Iterable
+from typing import Any, Generator, Iterable
 
 from juniorguru.lib import global_state, loggers
 
@@ -55,14 +55,14 @@ def mutates(service, raises=False):
     def decorator(fn):
         if inspect.iscoroutinefunction(fn):
             @wraps(fn)
-            async def wrapper(*args, **kwargs):
+            async def wrapper(*args, **kwargs) -> Any | MutationsNotAllowedError:
                 if service in _get_allowed():
                     return await fn(*args, **kwargs)
                 return create_error()
             return wrapper
 
         @wraps(fn)
-        def wrapper(*args, **kwargs):
+        def wrapper(*args, **kwargs) -> Any | MutationsNotAllowedError:
             if service in _get_allowed():
                 return fn(*args, **kwargs)
             return create_error()
@@ -70,16 +70,35 @@ def mutates(service, raises=False):
     return decorator
 
 
+class MutatingProxy:
+    def __init__(self, service: str, object: Any, raises: bool=False):
+        self.service = service
+        self.object = object
+        self.raises = raises
+
+    def __getattr__(self, attr) -> Any | MutationsNotAllowedError:
+        attribute = getattr(self.object, attr)
+        if inspect.ismethod(attribute):
+            decorator = mutates(self.service, raises=self.raises)
+            return decorator(attribute)
+        return attribute
+
+
 @contextmanager
-def forcing_allowed(*services) -> Generator[None, None, None]:
+def mutating(*args, **kwargs) -> Generator[MutatingProxy, None, None]:
+    yield MutatingProxy(*args, **kwargs)
+
+
+@contextmanager
+def allowing(*services) -> Generator[None, None, None]:
     dump = _get_allowed()
     try:
         services = list(map(str.lower, services))
         for service in services:
             assert service in KNOWN_SERVICES
         global_state.set('mutations.allowed', services)
-        logger['forcing_allowed'].debug(f'Force-allowed: {services!r}')
+        logger['allowing'].debug(f'Force-allowed: {services!r}')
         yield
     finally:
         _set_allowed(dump)
-        logger['forcing_allowed'].debug(f'Back to: {dump!r}')
+        logger['allowing'].debug(f'Back to: {dump!r}')

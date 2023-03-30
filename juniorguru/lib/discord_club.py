@@ -1,5 +1,4 @@
 import asyncio
-from contextlib import contextmanager
 from datetime import date, datetime, timedelta, timezone
 from enum import IntEnum, StrEnum, unique
 from functools import wraps
@@ -9,7 +8,9 @@ import discord
 import emoji
 from discord.errors import Forbidden
 
-from juniorguru.lib import loggers, mutations
+from juniorguru.lib import loggers
+from juniorguru.lib import mutations
+from juniorguru.lib.mutations import MutationsNotAllowedError, mutating
 
 
 CLUB_GUILD = 769966886598737931
@@ -58,7 +59,7 @@ def _check_mutations(request):
             or route.method in ('GET', 'HEAD', 'OPTIONS')
         ):
             return await request(route, *args, **kwargs)
-        raise mutations.MutationsNotAllowedError(f'Discord mutations not allowed! {route.method} {route.path}')
+        raise MutationsNotAllowedError(f'Discord mutations not allowed! {route.method} {route.path}')
     return wrapper
 
 
@@ -74,25 +75,6 @@ class ClubClient(discord.Client):
     @property
     def club_guild(self) -> discord.Guild:
         return self.get_guild(CLUB_GUILD)
-
-
-class MutatingProxy:
-    prefixes = {'add_', 'create_', 'delete_', 'edit_', 'remove_',
-                'delete', 'edit', 'send', 'purge'}
-
-    def __init__(self, object, raises=False):
-        self.object = object
-        self.raises = raises
-
-    def __getattr__(self, attr):
-        if attr.startswith(tuple(self.prefixes)):
-            return mutations.mutates('discord', raises=self.raises)(getattr(self.object, attr))
-        raise NotImplementedError(attr)
-
-
-@contextmanager
-def mutating(*args, **kwargs):
-    yield MutatingProxy(*args, **kwargs)
 
 
 def emoji_name(reaction_emoji) -> str:
@@ -151,7 +133,7 @@ def is_thread_after(thread, after=None) -> bool:
 
 
 async def add_members(thread, members):
-    with mutating(thread) as proxy:
+    with mutating('discord', thread) as proxy:
         await asyncio.gather(*[proxy.add_user(member) for member in members])
 
 
@@ -160,7 +142,7 @@ async def add_reactions(message, emojis, ordered=False):
     if not emojis:
         return
     try:
-        with mutating(message) as proxy:
+        with mutating('discord', message) as proxy:
             if ordered:
                 for emoji_ in emojis:
                     await proxy.add_reaction(emoji_)
@@ -213,7 +195,7 @@ async def get_or_create_dm_channel(member: discord.Member) -> None | discord.DMC
     if member.dm_channel:
         return member.dm_channel
     try:
-        with mutations.forcing_allowed('discord'):
+        with mutations.allowing('discord'):
             return await member.create_dm()
     except discord.HTTPException as e:
         if e.code == 50007:  # cannot send messages to this user

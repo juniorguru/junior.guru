@@ -8,7 +8,8 @@ from jinja2 import Template
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import (ClubChannelID, ClubEmoji, add_reactions,
-                                         is_message_over_period_ago, mutating)
+                                         is_message_over_period_ago)
+from juniorguru.lib.mutations import mutating
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.partner import Partner
@@ -78,7 +79,7 @@ async def discord_task(client):
                           style=ButtonStyle.secondary)
             ]
             channel = await client.fetch_channel(ClubChannelID.INTRO)
-            with mutating(channel) as proxy:
+            with mutating('discord', channel) as proxy:
                 message = await proxy.send(content=content, embed=embed, file=file, view=ui.View(*buttons))
             await add_reactions(message, BOT_REACTIONS)
         else:
