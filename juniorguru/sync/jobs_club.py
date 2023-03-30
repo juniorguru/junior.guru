@@ -9,7 +9,7 @@ from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib.discord_club import (ClubChannelID, fetch_threads, is_thread_after,
                                          )
-from juniorguru.lib.mutations import mutating
+from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
 
@@ -65,7 +65,7 @@ async def post_job(channel, job):
     logger[str(job.id)].info(f'Posting {job!r}: {job.effective_url}')
     # https://github.com/Pycord-Development/pycord/issues/1949
     embed = Embed(title=job.company_name)
-    with mutating('discord', channel) as proxy:
+    with mutating_discord(channel) as proxy:
         thread = await proxy.create_thread(job.title,
                                              job.location,
                                              embed=embed,
@@ -75,6 +75,6 @@ async def post_job(channel, job):
     if job.company_logo_path:
         embed.set_thumbnail(url=f"attachment://{Path(job.company_logo_path).name}")
         message = await thread.fetch_message(thread.id)
-        with mutating('discord', message) as proxy:
+        with mutating_discord(message) as proxy:
             await proxy.edit(file=File(PACKAGE_DIR / job.company_logo_path),
                                embed=embed)

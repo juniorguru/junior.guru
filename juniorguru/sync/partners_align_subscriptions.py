@@ -45,6 +45,6 @@ def main():
                 logger_c.debug(f'{employee!r} {employee.expires_at.date()} ≥ {partnership.expires_on}')
 
 
-@mutations.mutates('memberful')
+@mutations.mutates_memberful()
 def align_subscription(memberful, mutation, params):
     return memberful.mutate(mutation, params)

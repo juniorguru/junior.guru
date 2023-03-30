@@ -4,7 +4,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import (ClubMemberID, get_or_create_dm_channel,
                                          is_message_older_than)
-from juniorguru.lib.mutations import mutating
+from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubUser
 
@@ -67,7 +67,7 @@ async def send_daily_report(client):
             f"\n\*\*{czech_weekday}\*\* :abc: {daniel_all_content_size} :speech_left: {len(daniel_all_messages)} <:discordthread:993580255287705681> {len(daniel_all_threads)}"
         )
         logger.info(f'Sending:\n{content}')
-        with mutating('discord', channel) as proxy:
+        with mutating_discord(channel) as proxy:
             await proxy.send(content=content)
     else:
         logger.info("Last message is recent enough, skipping")

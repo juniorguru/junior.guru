@@ -1,6 +1,6 @@
 import inspect
 from contextlib import contextmanager
-from functools import wraps
+from functools import wraps, partial
 from typing import Any, Generator, Iterable
 
 from juniorguru.lib import global_state, loggers
@@ -70,6 +70,10 @@ def mutates(service, raises=False):
     return decorator
 
 
+for service in KNOWN_SERVICES:
+    globals()[f"mutates_{service}"] = partial(mutates, service)
+
+
 class MutatingProxy:
     def __init__(self, service: str, object: Any, raises: bool=False):
         self.service = service
@@ -89,16 +93,24 @@ def mutating(*args, **kwargs) -> Generator[MutatingProxy, None, None]:
     yield MutatingProxy(*args, **kwargs)
 
 
+for service in KNOWN_SERVICES:
+    globals()[f"mutating_{service}"] = partial(mutating, service)
+
+
 @contextmanager
-def allowing(*services) -> Generator[None, None, None]:
+def allowing(service) -> Generator[None, None, None]:
+    service = service.lower()
+    assert service in KNOWN_SERVICES
+
     dump = _get_allowed()
     try:
-        services = list(map(str.lower, services))
-        for service in services:
-            assert service in KNOWN_SERVICES
-        global_state.set('mutations.allowed', services)
-        logger['allowing'].debug(f'Force-allowed: {services!r}')
+        global_state.set('mutations.allowed', [service])
+        logger['allowing'].debug(f'Force-allowed: {service!r}')
         yield
     finally:
         _set_allowed(dump)
         logger['allowing'].debug(f'Back to: {dump!r}')
+
+
+for service in KNOWN_SERVICES:
+    globals()[f"allowing_{service}"] = partial(allowing, service)

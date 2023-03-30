@@ -7,7 +7,7 @@ import discord
 from juniorguru.lib import loggers
 from juniorguru.lib.asyncio_extra import chunks
 from juniorguru.lib.discord_club import get_reaction
-from juniorguru.lib.mutations import mutating
+from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.sync.onboarding.scheduled_messages import (ALLOWED_MENTIONS,
                                                            SCHEDULED_MESSAGES)
@@ -50,17 +50,17 @@ async def send_messages_to_member(client, member):
             logger_m.debug(f'Editing message {message_content[0]}: {len(message_content)} characters')
             discord_message = await channel.fetch_message(message_id)
             message_data = await create_message_data(client, member, message_content)
-            with mutating('discord', discord_message) as proxy:
+            with mutating_discord(discord_message) as proxy:
                 await proxy.edit(**message_data)
             if not get_reaction(discord_message.reactions, EMOJI_UNREAD):
-                with mutating('discord', discord_message) as proxy:
+                with mutating_discord(discord_message) as proxy:
                     await proxy.add_reaction(EMOJI_UNREAD)
         else:
             logger_m.debug(f'Sending message {message_content[0]}: {len(message_content)} characters')
             message_data = await create_message_data(client, member, message_content)
-            with mutating('discord', channel) as proxy:
+            with mutating_discord(channel) as proxy:
                 discord_message = await proxy.send(**message_data)
-            with mutating('discord', discord_message) as proxy:
+            with mutating_discord(discord_message) as proxy:
                 await proxy.add_reaction(EMOJI_UNREAD)
 
 

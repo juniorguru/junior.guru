@@ -10,7 +10,7 @@ from juniorguru.lib.discord_club import (ClubChannelID, ClubMemberID,
                                          is_message_over_period_ago,)
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
-from juniorguru.lib.mutations import mutating
+from juniorguru.lib.mutations import mutating_discord
 
 
 logger = loggers.from_path(__file__)
@@ -27,7 +27,7 @@ async def discord_task(client):
     if is_message_over_period_ago(last_message, timedelta(days=30)):
         logger.info('Last message is more than one month old!')
         channel = await client.fetch_channel(ClubChannelID.CV_FEEDBACK)
-        with mutating('discord', channel) as proxy:
+        with mutating_discord(channel) as proxy:
             await proxy.purge(check=is_message_bot_reminder)
             await proxy.send(
                 content='💡 Jsem tady zas se svou pravidelnou dávkou užitečných tipů!',

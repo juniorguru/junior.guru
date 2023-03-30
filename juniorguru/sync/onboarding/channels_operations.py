@@ -5,7 +5,7 @@ from slugify import slugify
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import ClubMemberID
-from juniorguru.lib.mutations import mutating
+from juniorguru.lib.mutations import mutating_discord
 from juniorguru.lib.mutations import MutationsNotAllowedError
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.onboarding.categories import manage_category
@@ -34,7 +34,7 @@ async def update_onboarding_channel(client, member, channel):
     logger_c = logger[f'channels.{channel.id}']
     logger_c.info(f"Updating (member #{member.id})")
     channel_data = await prepare_onboarding_channel_data(client, member)
-    with mutating('discord', channel) as proxy:
+    with mutating_discord(channel) as proxy:
         await proxy.edit(**channel_data)
     member.onboarding_channel_id = channel.id
     member.save()
@@ -47,7 +47,7 @@ async def create_onboarding_channel(client, member):
     channel_data = await prepare_onboarding_channel_data(client, member)
     async def create_channel(category):
         try:
-            with mutating('discord', client.club_guild, raises=True) as proxy:
+            with mutating_discord(client.club_guild, raises=True) as proxy:
                 channel = await proxy.create_text_channel(category=category, **channel_data)
         except MutationsNotAllowedError:
             pass
@@ -61,7 +61,7 @@ async def create_onboarding_channel(client, member):
 async def delete_onboarding_channel(client, channel):
     logger_c = logger[f'channels.{channel.id}']
     logger_c.info("Deleting")
-    with mutating('discord', channel) as proxy:
+    with mutating_discord(channel) as proxy:
         await proxy.delete()
 
 
@@ -74,7 +74,7 @@ async def close_onboarding_channel(client, channel):
     if current_period < CHANNEL_DELETE_TIMEOUT:
         logger_c.warning(f"Waiting before deleting. Last message {last_message_on}, currently {current_period.days} days, timeout {CHANNEL_DELETE_TIMEOUT.days} days")
     else:
-        with mutating('discord', channel) as proxy:
+        with mutating_discord(channel) as proxy:
             await proxy.delete()
 
 

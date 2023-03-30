@@ -6,7 +6,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import (ClubChannelID, is_message_over_period_ago,
                                          )
-from juniorguru.lib.mutations import mutating
+from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.mentor import Mentor
@@ -40,7 +40,7 @@ async def discord_task(client):
             '[příručku na junior.guru](https://junior.guru/handbook/candidate/) o tom, '
             'jak správně hledat první práci v IT.'
         ))
-        with mutating('discord', channel) as proxy:
+        with mutating_discord(channel) as proxy:
             await proxy.send(content=(
                                    f"{INTERVIEWS_EMOJI} Pomohla by ti soustavnější příprava na přijímací řízení? "
                                    "Chceš si jednorázově vyzkoušet pohovor nanečisto, česky nebo anglicky? "

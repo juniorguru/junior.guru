@@ -163,12 +163,12 @@ def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_
         toggle_fakturoid_todo(fakturoid_api_base_url, fakturoid_api_kwargs, todo)
 
 
-@mutations.mutates('google_sheets')
+@mutations.mutates_google_sheets()
 def upload_to_google_sheet(doc_key, doc_records):
     google_sheets.upload(google_sheets.get(doc_key, 'transactions'), doc_records)
 
 
-@mutations.mutates('fakturoid')
+@mutations.mutates_fakturoid()
 def toggle_fakturoid_todo(api_base_url, api_kwargs, todo):
     todo_id = todo['id']
     logger.info(f"Toggling todo: ID {todo_id}")

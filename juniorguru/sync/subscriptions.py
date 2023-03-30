@@ -214,7 +214,7 @@ def main():
     upload_to_google_sheet(DOC_KEY, records)
 
 
-@mutations.mutates('google_sheets')
+@mutations.mutates_google_sheets()
 def upload_to_google_sheet(doc_key, doc_records):
     google_sheets.upload(google_sheets.get(doc_key, 'subscriptions'), doc_records)
 

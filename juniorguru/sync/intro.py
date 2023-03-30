@@ -8,7 +8,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import (ClubChannelID, ClubMemberID, add_members,
                                          add_reactions, get_missing_reactions)
-from juniorguru.lib.mutations import mutating
+from juniorguru.lib.mutations import mutating_discord
 from juniorguru.lib.mutations import MutationsNotAllowedError
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -60,7 +60,7 @@ async def discord_task(client):
     await asyncio.gather(*[process_message(client, discord_channel, message) for message in messages])
 
     logger.info('Purging system messages about created threads')
-    with mutating('discord', discord_channel) as proxy:
+    with mutating_discord(discord_channel) as proxy:
         await proxy.purge(check=is_thread_created, limit=PURGE_SAFETY_LIMIT, after=THREADS_STARTING_AT)
 
 
@@ -92,7 +92,7 @@ async def welcome(discord_channel, message, greeters):
         else:
             logger_m.debug(f"Creating thread for '{message.author.display_name}'")
             try:
-                with mutating('discord', discord_message, raises=True) as proxy:
+                with mutating_discord(discord_message, raises=True) as proxy:
                     thread = await proxy.create_thread(name=thread_name)
             except MutationsNotAllowedError:
                 logger_m.debug("Skipping, couldn't create the thread")
@@ -104,7 +104,7 @@ async def welcome(discord_channel, message, greeters):
         if thread.name != thread_name:
             logger_m.debug(f"Renaming thread for '{message.author.display_name}' from '{thread.name}' to '{thread_name}'")
             try:
-                with mutating('discord', thread, raises=True) as proxy:
+                with mutating_discord(thread, raises=True) as proxy:
                     thread = await proxy.edit(name=thread_name)
             except MutationsNotAllowedError:
                 logger_m.debug("Skipping, couldn't edit the thread")
@@ -128,11 +128,11 @@ async def welcome(discord_channel, message, greeters):
             welcome_discord_message = list(filter(is_welcome_message, discord_messages))[0]
             logger_m.debug(f"Welcome message already exists, updating: #{welcome_discord_message.id}")
             if welcome_discord_message.embeds or welcome_discord_message.content != content:
-                with mutating('discord', welcome_discord_message) as proxy:
+                with mutating_discord(welcome_discord_message) as proxy:
                     await proxy.edit(content=content, suppress=True)
         except IndexError:
             logger_m.debug("Sending welcome message")
-            with mutating('discord', thread) as proxy:
+            with mutating_discord(thread) as proxy:
                 welcome_discord_message = await proxy.send(content=content, suppress=True)
 
             logger_m.debug("Adding numbers reactions under the welcome message")

@@ -6,7 +6,7 @@ from strictyaml import Bool, Int, Map, Optional, Seq, Str, Url, load
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubChannelID
-from juniorguru.lib.mutations import mutating
+from juniorguru.lib.mutations import mutating_discord
 from juniorguru.lib.mutations import MutationsNotAllowedError
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -70,7 +70,7 @@ async def discord_task(client):
             messages_trash.remove(message)
             logger.info(f"Editing existing message for mentor {mentor.name}")
             discord_message = await discord_channel.fetch_message(message.id)
-            with mutating('discord', discord_message) as proxy:
+            with mutating_discord(discord_message) as proxy:
                 await proxy.edit(**mentor_params)
             mentor.message_url = message.url
             mentor.save()
@@ -80,12 +80,12 @@ async def discord_task(client):
                 logger.info("Deleting info message")
                 messages_trash.remove(info_message)
                 info_discord_message = await discord_channel.fetch_message(info_message.id)
-                with mutating('discord', info_discord_message) as proxy:
+                with mutating_discord(info_discord_message) as proxy:
                     await proxy.delete()
                 info_message.delete_instance()
                 info_message = None
             try:
-                with mutating('discord', discord_channel, raises=True) as proxy:
+                with mutating_discord(discord_channel, raises=True) as proxy:
                     discord_message = await proxy.send(**mentor_params)
             except MutationsNotAllowedError:
                 pass
@@ -119,11 +119,11 @@ async def discord_task(client):
         messages_trash.remove(info_message)
         logger.info("Editing info message")
         discord_message = await discord_channel.fetch_message(info_message.id)
-        with mutating('discord', discord_message) as proxy:
+        with mutating_discord(discord_message) as proxy:
             await proxy.edit(**info_params)
     else:
         logger.info("Creating new info message")
-        with mutating('discord', discord_channel) as proxy:
+        with mutating_discord(discord_channel) as proxy:
             await proxy.send(**info_params)
 
     logger.info('Deleting extraneous messages')
@@ -131,7 +131,7 @@ async def discord_task(client):
         logger.debug(f'Deleting message #{message.id}: {message.content[:10]}…')
         try:
             discord_message = await discord_channel.fetch_message(message.id)
-            with mutating('discord', discord_message) as proxy:
+            with mutating_discord(discord_message) as proxy:
                 await proxy.delete()
             message.delete_instance()
         except:

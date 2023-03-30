@@ -10,7 +10,6 @@ from discord.errors import Forbidden
 
 from juniorguru.lib import loggers
 from juniorguru.lib import mutations
-from juniorguru.lib.mutations import MutationsNotAllowedError, mutating
 
 
 CLUB_GUILD = 769966886598737931
@@ -59,7 +58,7 @@ def _check_mutations(request):
             or route.method in ('GET', 'HEAD', 'OPTIONS')
         ):
             return await request(route, *args, **kwargs)
-        raise MutationsNotAllowedError(f'Discord mutations not allowed! {route.method} {route.path}')
+        raise mutations.MutationsNotAllowedError(f'Discord mutations not allowed! {route.method} {route.path}')
     return wrapper
 
 
@@ -133,7 +132,7 @@ def is_thread_after(thread, after=None) -> bool:
 
 
 async def add_members(thread, members):
-    with mutating('discord', thread) as proxy:
+    with mutations.mutating_discord(thread) as proxy:
         await asyncio.gather(*[proxy.add_user(member) for member in members])
 
 
@@ -142,7 +141,7 @@ async def add_reactions(message, emojis, ordered=False):
     if not emojis:
         return
     try:
-        with mutating('discord', message) as proxy:
+        with mutations.mutating_discord(message) as proxy:
             if ordered:
                 for emoji_ in emojis:
                     await proxy.add_reaction(emoji_)
@@ -195,7 +194,7 @@ async def get_or_create_dm_channel(member: discord.Member) -> None | discord.DMC
     if member.dm_channel:
         return member.dm_channel
     try:
-        with mutations.allowing('discord'):
+        with mutations.allowing_discord():
             return await member.create_dm()
     except discord.HTTPException as e:
         if e.code == 50007:  # cannot send messages to this user

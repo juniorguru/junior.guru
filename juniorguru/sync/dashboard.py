@@ -10,7 +10,7 @@ from discord import Color, Embed
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubChannelID
-from juniorguru.lib.mutations import mutating
+from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import (ClubDocumentedRole, ClubMessage,
                                     ClubSubscribedPeriod, ClubUser)
@@ -55,7 +55,7 @@ async def discord_task(client):
 
     if len(messages) != len(sections):
         logger.warning('The scheme of sections seems to be different, purging the channel and creating new messages')
-        with mutating('discord', discord_channel) as proxy:
+        with mutating_discord(discord_channel) as proxy:
             await proxy.purge()
             for section in sections:
                 await proxy.send(embed=Embed(**section))
@@ -63,7 +63,7 @@ async def discord_task(client):
         logger.info("Editing existing dashboard messages")
         for i, message in enumerate(messages):
             discord_message = await discord_channel.fetch_message(message.id)
-            with mutating('discord', discord_message) as proxy:
+            with mutating_discord(discord_message) as proxy:
                 await proxy.edit(embed=Embed(**sections[i]))
 
 
