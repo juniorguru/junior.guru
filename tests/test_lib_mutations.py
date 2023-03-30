@@ -2,8 +2,10 @@ import asyncio
 
 import pytest
 
-from juniorguru.lib.global_state import load as load_global_state, save as save_global_state
-from juniorguru.lib.mutations import MutationsNotAllowedError, allow, mutates, allow_all, is_allowed, allowing, mutating
+from juniorguru.lib.global_state import (load as load_global_state,
+                                         save as save_global_state)
+from juniorguru.lib.mutations import (MutationsNotAllowedError, allow, allow_all,
+                                      allowing, is_allowed, mutates, mutating)
 
 
 @pytest.fixture

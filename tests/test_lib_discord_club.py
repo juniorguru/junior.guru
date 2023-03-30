@@ -1,8 +1,8 @@
 from collections import namedtuple
 from datetime import date, datetime, timedelta
-from discord import ChannelType
 
 import pytest
+from discord import ChannelType
 
 from juniorguru.lib import discord_club
 

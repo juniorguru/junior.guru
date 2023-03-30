@@ -8,8 +8,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import (ClubChannelID, ClubMemberID, add_members,
                                          add_reactions, get_missing_reactions)
-from juniorguru.lib.mutations import mutating_discord
-from juniorguru.lib.mutations import MutationsNotAllowedError
+from juniorguru.lib.mutations import MutationsNotAllowedError, mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 

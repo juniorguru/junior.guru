@@ -12,8 +12,8 @@ from strictyaml import Int, Map, Optional, Seq, Str, load
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID
-from juniorguru.lib.mutations import mutating_discord
 from juniorguru.lib.images import is_image, render_image_file, validate_image
+from juniorguru.lib.mutations import mutating_discord
 from juniorguru.lib.template_filters import icon
 from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db

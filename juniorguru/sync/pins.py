@@ -6,6 +6,7 @@ from discord.errors import Forbidden
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
+
 # from juniorguru.lib import mutations
 # from juniorguru.lib.discord_club import ClubMemberID
 from juniorguru.lib.mutations import mutating_discord

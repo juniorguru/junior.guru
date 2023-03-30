@@ -5,8 +5,7 @@ from slugify import slugify
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import ClubMemberID
-from juniorguru.lib.mutations import mutating_discord
-from juniorguru.lib.mutations import MutationsNotAllowedError
+from juniorguru.lib.mutations import MutationsNotAllowedError, mutating_discord
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.onboarding.categories import manage_category
 
