@@ -1,9 +1,7 @@
 import pytest
 
-from juniorguru.lib.global_state import (load as load_global_state,
-                                         save as save_global_state)
-from juniorguru.lib.mutations import (MutationsNotAllowedError, allow, allow_all,
-                                      force_allow, is_allowed, mutates)
+from juniorguru.lib.global_state import load as load_global_state, save as save_global_state
+from juniorguru.lib.mutations import MutationsNotAllowedError, allow, mutates, allow_all, is_allowed, forcing_allowed
 
 
 @pytest.fixture
@@ -114,13 +112,13 @@ def test_mutates_raises(global_state):
         discord()
 
 
-def test_force_allow(global_state):
+def test_forcing_allowed(global_state):
     allow('fakturoid')
 
     assert is_allowed('discord') is False
     assert is_allowed('fakturoid') is True
 
-    with force_allow('discord'):
+    with forcing_allowed('discord'):
         assert is_allowed('discord') is True
         assert is_allowed('fakturoid') is False
 

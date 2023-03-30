@@ -71,15 +71,15 @@ def mutates(service, raises=False):
 
 
 @contextmanager
-def force_allow(*services) -> Generator[None, None, None]:
+def forcing_allowed(*services) -> Generator[None, None, None]:
     dump = _get_allowed()
     try:
         services = list(map(str.lower, services))
         for service in services:
             assert service in KNOWN_SERVICES
         global_state.set('mutations.allowed', services)
-        logger['force_allow'].debug(f'Force-allowed: {services!r}')
+        logger['forcing_allowed'].debug(f'Force-allowed: {services!r}')
         yield
     finally:
         _set_allowed(dump)
-        logger['force_allow'].debug(f'Back to: {dump!r}')
+        logger['forcing_allowed'].debug(f'Back to: {dump!r}')

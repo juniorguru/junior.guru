@@ -213,7 +213,7 @@ async def get_or_create_dm_channel(member: discord.Member) -> None | discord.DMC
     if member.dm_channel:
         return member.dm_channel
     try:
-        with mutations.force_allow('discord'):
+        with mutations.forcing_allowed('discord'):
             return await member.create_dm()
     except discord.HTTPException as e:
         if e.code == 50007:  # cannot send messages to this user
