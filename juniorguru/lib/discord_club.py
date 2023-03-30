@@ -226,10 +226,8 @@ async def get_or_create_dm_channel(member: discord.Member) -> None | discord.DMC
 
 
 def is_message_pin(message: discord.Message) -> bool:
-    return (
-        is_channel_dm(message.channel)
-        and get_starting_emoji(message.content) == ClubEmoji.PIN
-    )
+    return (is_channel_dm(message.channel)
+            and get_starting_emoji(message.content) == ClubEmoji.PIN)
 
 
 def get_pinned_message_id(message: discord.Message) -> int:
