@@ -1,4 +1,5 @@
 from decimal import Decimal
+
 from peewee import CharField, DecimalField
 
 from juniorguru.models.base import BaseModel
