@@ -19,6 +19,8 @@ Stránku jsem vytvořil po vzoru [jiných otevřených projektů](https://openst
 
 Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde z mého podnikání přímo do rodinného rozpočtu. Aktuální čistý zisk junior.guru je **{{ profit_ttm|thousands }} Kč měsíčně**. Spočítáno jako zisk za posledních 12 měsíců (TTM, _trailing twelve months_) vydělený 12.
 
+Občas si čtu o zahraničních podnikavcích, kteří taky otevřeně sdílí svoje výdělky. Mají to však v jiné měně, tak se mi to špatně srovnává. Proto jsem si to přepočítal. Podle pondělních kurzů ČNB mám zhruba ${{ profit_ttm_usd|thousands }} nebo {{ profit_ttm_eur|thousands }}€ čistého měsíčně.
+
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="line"

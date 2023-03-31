@@ -14,6 +14,7 @@ from juniorguru.mkdocs.thumbnail import thumbnail
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubSubscribedPeriod, ClubUser
 from juniorguru.models.event import Event, EventSpeaking
+from juniorguru.models.exchange_rate import ExchangeRate
 from juniorguru.models.job import ListedJob
 from juniorguru.models.partner import Partner
 from juniorguru.models.podcast import PodcastEpisode
@@ -51,9 +52,14 @@ CLOUDINARY_HOST = os.getenv('CLOUDINARY_HOST', 'res.cloudinary.com')
 def on_shared_context(context):
     context['now'] = NOW
     context['today'] = TODAY
-    context['profit_ttm'] = Transaction.profit_ttm(TODAY)
-    context['revenue_ttm_breakdown'] = Transaction.revenue_ttm_breakdown(TODAY)
+
     context['cloudinary_host'] = CLOUDINARY_HOST
+
+    profit_ttm = Transaction.profit_ttm(TODAY)
+    context['profit_ttm'] = profit_ttm
+    context['profit_ttm_usd'] = ExchangeRate.in_currency(profit_ttm, 'USD')
+    context['profit_ttm_eur'] = ExchangeRate.in_currency(profit_ttm, 'EUR')
+    context['revenue_ttm_breakdown'] = Transaction.revenue_ttm_breakdown(TODAY)
 
 
 def on_shared_page_context(context, page, config, files):
