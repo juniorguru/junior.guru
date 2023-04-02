@@ -1,6 +1,7 @@
 import asyncio
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+import textwrap
 
 from discord import Embed, File, ui
 
@@ -62,15 +63,17 @@ def get_effective_url(message):
 
 async def post_job(channel, job):
     logger[str(job.id)].info(f'Posting {job!r}: {job.effective_url}')
+    title = textwrap.shorten(job.title, 90, placeholder='…')
+
     # https://github.com/Pycord-Development/pycord/issues/1949
     embed = Embed(title=job.company_name)
     with mutating_discord(channel) as proxy:
-        thread = await proxy.create_thread(job.title,
-                                             job.location,
-                                             embed=embed,
-                                             view=ui.View(ui.Button(emoji='👉',
-                                                                    label='Zjistit víc',
-                                                                    url=job.effective_url)))
+        thread = await proxy.create_thread(title,
+                                           job.location,
+                                           embed=embed,
+                                           view=ui.View(ui.Button(emoji='👉',
+                                                                  label='Zjistit víc',
+                                                                  url=job.effective_url)))
     if job.company_logo_path:
         embed.set_thumbnail(url=f"attachment://{Path(job.company_logo_path).name}")
         message = await thread.fetch_message(thread.id)
