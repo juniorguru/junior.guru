@@ -201,6 +201,17 @@ class Partnership(BaseModel):
     benefits_registry = JSONField(default=list)
     agreements_registry = JSONField(default=list)
 
+    @classmethod
+    def active_listing(cls, today=None, include_barters=True):
+        today = today or date.today()
+        expires_after_today = cls.expires_on >= today
+        if include_barters:
+            expires_after_today = (expires_after_today | cls.expires_on.is_null())
+        return cls.select() \
+            .join(PartnershipPlan) \
+            .where(cls.starts_on <= today, expires_after_today) \
+            .order_by(PartnershipPlan.hierarchy_rank.desc(), cls.starts_on)
+
     def days_until_expires(self, today=None):
         today = today or date.today()
         if self.expires_on:

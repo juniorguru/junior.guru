@@ -9,10 +9,10 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import (ClubChannelID, ClubEmoji, add_reactions,
                                          is_message_over_period_ago)
-from juniorguru.lib.mutations import mutating_discord
+from juniorguru.lib.mutations import MutationsNotAllowedError, mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
-from juniorguru.models.partner import Partner
+from juniorguru.models.partner import Partnership
 
 
 BOT_REACTIONS = ['👋', '👍', '💕', '💰', '🎉']
@@ -50,12 +50,13 @@ async def discord_task(client):
     if is_message_over_period_ago(last_message, timedelta(weeks=1)):
         logger.info('Last partner intro message is more than one week old!')
 
-        partners = [partner for partner in Partner.active_listing()
-                    if is_message_over_period_ago(partner.intro, timedelta(days=365))]
+        partners = list(get_partners_without_intro(Partnership.active_listing()))
         if partners:
-            logger.debug(f'Choosing from {len(partners)} partners to announce')
-            partner = sorted(partners, key=sort_key)[0]
-            logger.debug(f'Decided to announce {partner!r}')
+            partners_names = ', '.join(partner.name for partner in partners)
+            logger.info(f"Partners without intro: {partners_names}")
+            partner = partners[0]
+            logger.info(f"Introducing: {partner.name}")
+
             template = Template(DESCRIPTION_TEMPLATE)
             description = template.render(partner=partner)
             content = (
@@ -79,21 +80,29 @@ async def discord_task(client):
                           style=ButtonStyle.secondary)
             ]
             channel = await client.fetch_channel(ClubChannelID.INTRO)
-            with mutating_discord(channel) as proxy:
-                message = await proxy.send(content=content, embed=embed, file=file, view=ui.View(*buttons))
-            await add_reactions(message, BOT_REACTIONS)
+            try:
+                with mutating_discord(channel, raises=True) as proxy:
+                    message = await proxy.send(content=content, embed=embed, file=file, view=ui.View(*buttons))
+            except MutationsNotAllowedError:
+                pass
+            else:
+                await add_reactions(message, BOT_REACTIONS)
         else:
-            logger.info('No partners to announce')
+            logger.info('No partners to introduce')
     else:
         logger.info('Last partner intro message is less than one week old')
 
 
-def sort_key(partner, today=None):
+def get_partners_without_intro(active_partnerships, today=None):
     today = today or date.today()
-    partnership = partner.active_partnership()
-    expires_on = (partnership.expires_on or date(3000, 1, 1))
-    expires_in_days = (expires_on - today).days
-    started_days_ago = (today - partnership.starts_on).days
-    return (expires_in_days if expires_in_days <= 30 else 1000,
-            started_days_ago,
-            partner.name)
+    for partnership in active_partnerships:
+        partner = partnership.partner
+        if partner.intro:
+            intro_created_on = partner.intro.created_at.date()
+            is_intro_before_partnership = intro_created_on < partnership.starts_on
+            is_barter = not partnership.expires_on
+            is_intro_before_year_ago = today - intro_created_on > timedelta(days=365)
+            if (is_intro_before_partnership or (is_barter and is_intro_before_year_ago)):
+                yield partner
+        else:
+            yield partner
