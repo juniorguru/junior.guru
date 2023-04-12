@@ -275,14 +275,6 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
   ) }}
 
   {{ link_card(
-    'Speak Confident English',
-    'https://www.speakconfidentenglish.com',
-    'I nesmělí a introvertní mohou mluvit plynně.',
-    badge_icon='headset',
-    badge_text='Živé lekce',
-  ) }}
-
-  {{ link_card(
     'Meetup',
     'https://www.meetup.com/find/?source=EVENTS&location=cz--Pardubice&distance=hundredMiles&categoryId=622&keywords=english',
     'Snaž se mluvit s reálnými lidmi. Začni klidně „rukama nohama“<br>
