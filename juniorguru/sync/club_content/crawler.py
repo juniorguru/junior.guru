@@ -1,8 +1,7 @@
 import asyncio
-from datetime import timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Generator
 
-import arrow
 from discord import DMChannel, Member, Message, Reaction, User
 from discord.abc import GuildChannel
 
@@ -99,7 +98,7 @@ async def channel_worker(worker_no, queue) -> None:
             history_after = None
             logger_c.debug("Crawling all channel history")
         else:
-            history_after = (arrow.utcnow() - history_since).datetime
+            history_after = get_history_after(history_since)
             logger_c.debug(f"Crawling history after {history_after:%Y-%m-%d} ({history_since.days} days ago)")
 
         threads = [thread async for thread in fetch_threads(channel)
@@ -146,3 +145,12 @@ async def fetch_members_reacting_by_pin(reactions: list[Reaction]) -> Generator[
                 if is_member(user):
                     yield user
             break
+
+
+def get_history_after(history_since, now=None):
+    if now:
+        if now.tzinfo is None:
+            raise ValueError('now must be timezone-aware')
+    else:
+        now = datetime.now(timezone.utc)
+    return now - history_since
