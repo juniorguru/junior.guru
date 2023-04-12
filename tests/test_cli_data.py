@@ -2,7 +2,7 @@ from textwrap import dedent
 
 import pytest
 
-from juniorguru.cli.data import get_row_updates, make_schema_idempotent
+from juniorguru.cli.data import get_row_updates, make_schema_idempotent, merge_lines
 
 
 def test_make_schema_idempotent():
@@ -54,3 +54,15 @@ def test_get_row_updates_raises_conflict(row_from, row_to):
 def test_get_row_updates_raises_inconsistence(row_from, row_to):
     with pytest.raises(ValueError):
         get_row_updates(row_from, row_to)
+
+
+def test_merge_lines(tmp_path_factory):
+    dir = tmp_path_factory.mktemp('merge_lines')
+    path_from = dir / 'path_from.txt'
+    path_from.write_text('a\nb\nc\n')
+    path_to = dir / 'path_to.txt'
+    path_to.write_text('d\ne\nf\n')
+    merge_lines(path_from, path_to)
+
+    assert path_from.read_text() == 'a\nb\nc\n'
+    assert path_to.read_text() == 'd\ne\nf\na\nb\nc\n'
