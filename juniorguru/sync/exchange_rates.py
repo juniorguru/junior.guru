@@ -27,8 +27,7 @@ def main():
     response = requests.get(url)
     response.raise_for_status()
 
-    exchange_rates = dict(parse_exchange_rate(line)
-                          for line in response.text.splitlines()[2:])
+    exchange_rates = dict(parse_exchange_rate(line) for line in parse_lines(response.text))
 
     ExchangeRate.drop_table()
     ExchangeRate.create_table()
@@ -46,3 +45,7 @@ def parse_exchange_rate(line) -> Tuple[str, Decimal]:
     code = line.split('|')[3]
     rate = Decimal(line.split('|')[4].replace(',', '.'))
     return code, rate
+
+
+def parse_lines(text: str) -> list[str]:
+    return text.strip().splitlines()[2:]
