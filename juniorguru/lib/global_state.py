@@ -6,22 +6,22 @@ from typing import Any
 ENV_KEY = 'JG_GLOBAL_STATE'
 
 
-def load() -> dict:
+def load(env_key=None) -> dict:
     try:
-        return json.loads(os.environ[ENV_KEY])
+        return json.loads(os.environ[env_key or ENV_KEY])
     except KeyError:
         return dict()
 
 
-def save(state) -> None:
-    os.environ[ENV_KEY] = json.dumps(state)
+def save(state, env_key=None) -> None:
+    os.environ[env_key or ENV_KEY] = json.dumps(state)
 
 
-def set(name, value) -> None:
-    data = load()
+def set(name, value, **kwargs) -> None:
+    data = load(**kwargs)
     data[name] = value
-    save(data)
+    save(data, **kwargs)
 
 
-def get(*args) -> Any:
-    return load().get(*args)
+def get(*args, **kwargs) -> Any:
+    return load(**kwargs).get(*args)
