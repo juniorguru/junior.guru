@@ -1,4 +1,4 @@
-from juniorguru.cli.sync import get_parallel_chains, default_from_env
+from juniorguru.cli.sync import default_from_env, get_parallel_chains
 
 
 def test_get_parallel_chains():
