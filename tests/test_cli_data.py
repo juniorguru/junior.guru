@@ -56,11 +56,10 @@ def test_get_row_updates_raises_inconsistence(row_from, row_to):
         get_row_updates(row_from, row_to)
 
 
-def test_merge_lines(tmp_path_factory):
-    dir = tmp_path_factory.mktemp('merge_lines')
-    path_from = dir / 'path_from.txt'
+def test_merge_lines(tmp_path):
+    path_from = tmp_path / 'path_from.txt'
     path_from.write_text('a\nb\nc\n')
-    path_to = dir / 'path_to.txt'
+    path_to = tmp_path / 'path_to.txt'
     path_to.write_text('d\ne\nf\n')
     merge_lines(path_from, path_to)
 

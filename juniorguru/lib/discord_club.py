@@ -111,7 +111,7 @@ def emoji_name(reaction_emoji) -> str:
         return str(reaction_emoji)
 
 
-def get_starting_emoji(text):
+def get_starting_emoji(text) -> str | None:
     text = text.lstrip()
     try:
         first_char = text[0]
