@@ -126,7 +126,9 @@ class ClubUser(BaseModel):
     def list_recent_messages(self, today=None, private=False):
         list_messages = self.list_messages if private else self.list_public_messages
         recent_period_start_at = (today or date.today()) - timedelta(days=RECENT_PERIOD_DAYS)
-        return list_messages.where(ClubMessage.created_at >= recent_period_start_at)
+        return list_messages \
+            .where(ClubMessage.created_at >= recent_period_start_at) \
+            .order_by(ClubMessage.created_at.desc())
 
     def is_new(self, today=None):
         return (self.first_seen_on() + timedelta(days=IS_NEW_PERIOD_DAYS)) >= (today or date.today())

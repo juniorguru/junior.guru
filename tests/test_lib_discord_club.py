@@ -1,10 +1,11 @@
 from collections import namedtuple
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 
 import pytest
-from discord import ChannelType
+from discord import ChannelType, Route
 
 from juniorguru.lib import discord_club
+from juniorguru.lib.mutations import MutationsNotAllowedError
 
 
 StubEmoji = namedtuple('Emoji', ['name'])
@@ -113,3 +114,115 @@ def test_get_pinned_message_url(link_text):
 ])
 def test_parse_message_url(url, expected):
     assert discord_club.parse_message_url(url) == expected
+
+
+@pytest.mark.parametrize('method', [
+    'GET', 'OPTIONS', 'HEAD',
+])
+@pytest.mark.asyncio
+async def test_check_mutations(method):
+    @discord_club._check_mutations
+    async def request(*args, **kwargs):
+        return args, kwargs
+    route = Route(method, '/something')
+
+    assert await request(route, 1, 2, kwarg1=3, kwarg2=4) == (
+        (route, 1, 2),
+        {'kwarg1': 3, 'kwarg2': 4},
+    )
+
+
+@pytest.mark.parametrize('method', [
+    'POST', 'PUT', 'DELETE', 'PATCH',
+])
+@pytest.mark.asyncio
+async def test_check_mutations_raises(method):
+    @discord_club._check_mutations
+    async def request(*args, **kwargs):
+        return args, kwargs
+    route = Route(method, '/something')
+
+    with pytest.raises(MutationsNotAllowedError):
+        await request(route, 1, 2, kwarg1=3, kwarg2=4)
+
+
+@pytest.mark.parametrize('created_at, after, expected', [
+    (None, datetime(2022, 1, 8, tzinfo=timezone.utc), True),
+    (None, datetime(2022, 1, 9, tzinfo=timezone.utc), True),
+    (None, datetime(2022, 1, 10, tzinfo=timezone.utc), False),
+    (datetime(2023, 8, 30, tzinfo=timezone.utc), datetime(2023, 8, 29, tzinfo=timezone.utc), True),
+    (datetime(2023, 8, 30, tzinfo=timezone.utc), datetime(2023, 8, 30, tzinfo=timezone.utc), True),
+    (datetime(2023, 8, 30, tzinfo=timezone.utc), datetime(2023, 8, 31, tzinfo=timezone.utc), False),
+])
+def test_is_thread_after_default(created_at, after, expected):
+    StubThread = namedtuple('Thread', ['created_at'])
+    thread = StubThread(created_at)
+
+    assert discord_club.is_thread_after(thread, after) is expected
+
+
+def test_get_missing_reactions():
+    StubReaction = namedtuple('Reaction', ['emoji', 'me'])
+    reactions = [StubReaction('👍', True), StubReaction('👎', True)]
+
+    assert discord_club.get_missing_reactions(reactions, ['👍', '👎', '🤷']) == {'🤷'}
+
+
+def test_get_missing_reactions_excludes_emojis_from_others():
+    StubReaction = namedtuple('Reaction', ['emoji', 'me'])
+    reactions = [StubReaction('👍', False), StubReaction('👎', True)]
+
+    assert discord_club.get_missing_reactions(reactions, ['👍', '👎', '🤷']) == {'👍', '🤷'}
+
+
+def test_get_reaction():
+    StubReaction = namedtuple('Reaction', ['emoji'])
+    reaction_up = StubReaction('👍')
+    reaction_down = StubReaction('👎')
+
+    assert discord_club.get_reaction([reaction_up, reaction_down], '👍') == reaction_up
+
+
+def test_get_parent_channel_id():
+    StubChannel = namedtuple('Channel', ['id'])
+    channel = StubChannel(1)
+
+    assert discord_club.get_parent_channel_id(channel) == 1
+
+
+def test_get_parent_channel_id_thread():
+    StubChannel = namedtuple('Channel', ['id', 'parent'])
+    channel = StubChannel(1, None)
+    thread = StubChannel(2, channel)
+
+    assert discord_club.get_parent_channel_id(thread) == 1
+
+
+def test_is_member_user():
+    StubUser = namedtuple('User', ['id'])
+    user = StubUser(1)
+
+    assert discord_club.is_member(user) is False
+
+
+def test_is_member_member():
+    StubMember = namedtuple('Member', ['id', 'joined_at'])
+    member = StubMember(1, datetime(2021, 1, 1, tzinfo=timezone.utc))
+
+    assert discord_club.is_member(member) is True
+
+
+def test_get_channel_name_guild():
+    StubChannel = namedtuple('Channel', ['name'])
+    channel = StubChannel('ahoj')
+
+    assert discord_club.get_channel_name(channel) == 'ahoj'
+
+
+def test_get_channel_name_dm():
+    StubUser = namedtuple('User', ['display_name'])
+    user = StubUser('Gargamel')
+    StubDMChannel = namedtuple('DMChannel', ['recipient'])
+    channel = StubDMChannel(user)
+
+    assert discord_club.get_channel_name(channel) == 'Gargamel'

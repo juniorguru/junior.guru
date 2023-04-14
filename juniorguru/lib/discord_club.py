@@ -193,7 +193,7 @@ async def add_reactions(message, emojis, ordered=False):
             raise e
 
 
-def get_missing_reactions(reactions, emojis) -> set[str]:
+def get_missing_reactions(reactions: discord.Reaction, emojis: set[str]) -> set[str]:
     return set(emojis) - {emoji_name(reaction.emoji) for reaction in reactions if reaction.me}
 
 
@@ -204,14 +204,14 @@ def get_reaction(reactions, emoji) -> discord.Reaction:
     return None
 
 
-def get_parent_channel_id(channel) -> int:
+def get_parent_channel_id(channel: discord.abc.GuildChannel | discord.DMChannel) -> int:
     try:
         return channel.parent.id
     except AttributeError:
         return channel.id
 
 
-def is_member(user) -> bool:
+def is_member(user: discord.User) -> bool:
     return bool(getattr(user, 'joined_at', False))
 
 

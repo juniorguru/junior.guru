@@ -541,3 +541,57 @@ def test_partnership_evaluate_benefits_registry_overrides_evaluators(db_connecti
         dict(slug='foo', icon='foo-circle', text="Benefit 'foo'", done=True),
         dict(slug='moo', icon='moo-circle', text="Benefit 'moo'", done=False),
     ]
+
+
+def test_partnership_active_listing(db_connection):
+    today = date(2021, 5, 2)
+    partnership1 = create_partnership(create_partner(1), today, date(2021, 4, 1))  # noqa
+    partnership2 = create_partnership(create_partner(2), today, date(2021, 5, 1))  # noqa
+    partnership3 = create_partnership(create_partner(3), today, date(2021, 5, 2))
+    partnership4 = create_partnership(create_partner(4), today, date(2021, 5, 3))
+
+    assert set(Partnership.active_listing(today=today)) == {partnership3, partnership4}
+
+
+def test_partnership_active_listing_with_barters(db_connection):
+    today = date(2021, 5, 1)
+    partnership1 = create_partnership(create_partner(1), today, date(2021, 5, 1))
+    partnership2 = create_partnership(create_partner(2), today, None)
+
+    assert set(Partnership.active_listing(today=today)) == {partnership1, partnership2}
+
+
+def test_partnership_active_listing_without_barters(db_connection):
+    today = date(2021, 5, 1)
+    partnership1 = create_partnership(create_partner(1), today, date(2021, 5, 1))
+    partnership2 = create_partnership(create_partner(2), today, None)  # noqa
+
+    assert set(Partnership.active_listing(today=today, include_barters=False)) == {partnership1}
+
+
+def test_partnership_active_listing_skips_planned(db_connection):
+    today = date(2021, 5, 2)
+    partnership1 = create_partnership(create_partner(1), date(2021, 5, 1), None)
+    partnership2 = create_partnership(create_partner(2), date(2021, 5, 2), None)
+    partnership3 = create_partnership(create_partner(3), date(2021, 5, 3), None)  # noqa
+
+    assert set(Partnership.active_listing(today=today)) == {partnership1, partnership2}
+
+
+def test_partnership_active_listing_sorts_by_hierarchy_rank_then_by_start_date(db_connection, plan_basic, plan_top):
+    setup_plan_hierarchy(plan_basic, plan_top)
+    today = date(2021, 5, 2)
+    partnership1 = create_partnership(create_partner(1), date(2021, 4, 1), None, plan=plan_basic)
+    partnership2 = create_partnership(create_partner(2), date(2021, 4, 2), None, plan=plan_top)
+    partnership3 = create_partnership(create_partner(3), date(2021, 4, 3), None, plan=plan_basic)
+
+    assert list(Partnership.active_listing(today=today)) == [partnership2, partnership1, partnership3]
+
+
+def test_partnership_active_listing_multiple_partnerships(db_connection):
+    today = date(2023, 6, 1)
+    partner1 = create_partner(1)
+    partnership_a = create_partnership(partner1, date(2023, 2, 1), date(2023, 5, 1))  # noqa
+    partnership_b = create_partnership(partner1, date(2023, 5, 15), None)
+
+    assert list(Partnership.active_listing(today=today)) == [partnership_b]

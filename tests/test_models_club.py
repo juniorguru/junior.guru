@@ -34,11 +34,12 @@ def create_message(id_, user, **kwargs):
                               content_starting_emoji=get_starting_emoji(content),
                               upvotes_count=kwargs.get('upvotes_count', 0),
                               created_at=created_at,
-                              created_month=kwargs.get('created_month', f'{created_at:%Y-%-d}'),
+                              created_month=kwargs.get('created_month', f'{created_at:%Y-%d}'),
                               channel_id=channel_id,
                               channel_name=kwargs.get('channel_name', 'random-discussions'),
                               parent_channel_id=kwargs.get('parent_channel_id', channel_id),
-                              type=kwargs.get('type', 'default'))
+                              type=kwargs.get('type', 'default'),
+                              is_private=kwargs.get('is_private', False))
 
 
 @pytest.fixture
@@ -63,6 +64,7 @@ def test_message_listing_sort_from_the_oldest(db_connection):
     message1 = create_message(1, user, created_at=datetime(2021, 10, 1))
     message2 = create_message(2, user, created_at=datetime(2021, 10, 20))
     message3 = create_message(3, user, created_at=datetime(2021, 10, 5))
+    message4 = create_message(4, user, created_at=datetime(2021, 10, 5), is_private=True)  # noqa
 
     assert list(ClubMessage.listing()) == [message1, message3, message2]
 
@@ -75,6 +77,7 @@ def test_message_digest_listing(db_connection):
     message3 = create_message(3, user, created_at=datetime(2021, 5, 4), upvotes_count=10)
     message4 = create_message(4, user, created_at=datetime(2021, 5, 5), upvotes_count=4)
     message5 = create_message(5, user, created_at=datetime(2021, 5, 5), upvotes_count=3)  # noqa
+    message6 = create_message(6, user, created_at=datetime(2021, 5, 5), upvotes_count=30, is_private=True)  # noqa
 
     assert list(ClubMessage.digest_listing(date(2021, 5, 1), limit=3)) == [message3, message2, message4]
 
@@ -107,6 +110,22 @@ def test_user_members_listing(db_connection):
     user4 = create_user(4, is_member=False, is_bot=False)  # noqa
 
     assert list(ClubUser.members_listing()) == [user2]
+
+
+def test_user_get_member_by_id(db_connection):
+    user = create_user(2, is_member=True, is_bot=False)
+
+    assert ClubUser.get_member_by_id(2) == user
+
+
+@pytest.mark.parametrize('is_member, is_bot', [
+    (True, True),
+    (False, True),
+    (False, False),
+])
+def test_user_get_member_by_id_raises(db_connection, is_member, is_bot):
+    with pytest.raises(ClubUser.DoesNotExist):
+        assert ClubUser.get_member_by_id(2)
 
 
 def test_user_top_members_limit_is_five_percent(db_connection):
@@ -154,8 +173,32 @@ def test_user_list_recent_messages(db_connection):
     message2 = create_message(2, user, created_at=datetime(2021, 3, 31))  # noqa
     message3 = create_message(3, user, created_at=datetime(2021, 4, 1))
     message4 = create_message(4, user, created_at=datetime(2021, 4, 15))
+    message5 = create_message(5, user, created_at=datetime(2021, 4, 16), is_private=True)  # noqa
 
     assert list(user.list_recent_messages(today=date(2021, 5, 1))) == [message4, message3]
+
+
+def test_user_list_recent_messages_private(db_connection):
+    user = create_user(1)
+
+    message1 = create_message(1, user, created_at=datetime(2021, 3, 15))  # noqa
+    message2 = create_message(2, user, created_at=datetime(2021, 3, 31))  # noqa
+    message3 = create_message(3, user, created_at=datetime(2021, 4, 1))
+    message4 = create_message(4, user, created_at=datetime(2021, 4, 15))
+    message5 = create_message(5, user, created_at=datetime(2021, 4, 16), is_private=True)
+
+    assert list(user.list_recent_messages(today=date(2021, 5, 1), private=True)) == [message5, message4, message3]
+
+
+def test_user_list_public_messages(db_connection):
+    user = create_user(1)
+
+    message1 = create_message(1, user, created_at=datetime(2021, 3, 15), is_private=True)  # noqa
+    message2 = create_message(2, user, created_at=datetime(2021, 3, 31), is_private=True)  # noqa
+    message3 = create_message(3, user, created_at=datetime(2021, 4, 1))
+    message4 = create_message(4, user, created_at=datetime(2021, 4, 15))
+
+    assert list(user.list_public_messages) == [message4, message3]
 
 
 def test_user_first_seen_on_from_messages(db_connection):
@@ -289,8 +332,20 @@ def test_user_messages_count(db_connection):
     create_message(1, user)
     create_message(2, user)
     create_message(3, user)
+    create_message(4, user, is_private=True)
 
     assert user.messages_count() == 3
+
+
+def test_user_messages_count_private(db_connection):
+    user = create_user(1)
+
+    create_message(1, user)
+    create_message(2, user)
+    create_message(3, user)
+    create_message(4, user, is_private=True)
+
+    assert user.messages_count(private=True) == 4
 
 
 def test_user_recent_messages_count(db_connection):
@@ -299,8 +354,20 @@ def test_user_recent_messages_count(db_connection):
     create_message(1, user, created_at=datetime(2021, 2, 15))
     create_message(2, user, created_at=datetime(2021, 3, 10))
     create_message(3, user, created_at=datetime(2021, 3, 15))
+    create_message(4, user, created_at=datetime(2021, 3, 15), is_private=True)
 
     assert user.recent_messages_count(today=date(2021, 4, 1)) == 2
+
+
+def test_user_recent_messages_count_private(db_connection):
+    user = create_user(1)
+
+    create_message(1, user, created_at=datetime(2021, 2, 15))
+    create_message(2, user, created_at=datetime(2021, 3, 10))
+    create_message(3, user, created_at=datetime(2021, 3, 15))
+    create_message(4, user, created_at=datetime(2021, 3, 15), is_private=True)
+
+    assert user.recent_messages_count(today=date(2021, 4, 1), private=True) == 3
 
 
 def test_user_upvotes_count(db_connection):
@@ -309,8 +376,20 @@ def test_user_upvotes_count(db_connection):
     create_message(1, user, upvotes_count=1)
     create_message(2, user, upvotes_count=4)
     create_message(3, user, upvotes_count=10)
+    create_message(4, user, upvotes_count=300, is_private=True)
 
     assert user.upvotes_count() == 15
+
+
+def test_user_upvotes_count_private(db_connection):
+    user = create_user(1)
+
+    create_message(1, user, upvotes_count=1)
+    create_message(2, user, upvotes_count=4)
+    create_message(3, user, upvotes_count=10)
+    create_message(4, user, upvotes_count=300, is_private=True)
+
+    assert user.upvotes_count(private=True) == 315
 
 
 def test_user_upvotes_count_skips_some_channels(db_connection):
@@ -329,8 +408,20 @@ def test_user_recent_upvotes_count(db_connection):
     create_message(1, user, upvotes_count=1, created_at=datetime(2021, 2, 15))
     create_message(2, user, upvotes_count=4, created_at=datetime(2021, 3, 10))
     create_message(3, user, upvotes_count=10, created_at=datetime(2021, 3, 15))
+    create_message(4, user, upvotes_count=300, created_at=datetime(2021, 3, 15), is_private=True)
 
     assert user.recent_upvotes_count(today=date(2021, 4, 1)) == 14
+
+
+def test_user_recent_upvotes_count_private(db_connection):
+    user = create_user(1)
+
+    create_message(1, user, upvotes_count=1, created_at=datetime(2021, 2, 15))
+    create_message(2, user, upvotes_count=4, created_at=datetime(2021, 3, 10))
+    create_message(3, user, upvotes_count=10, created_at=datetime(2021, 3, 15))
+    create_message(4, user, upvotes_count=300, created_at=datetime(2021, 3, 15), is_private=True)
+
+    assert user.recent_upvotes_count(today=date(2021, 4, 1), private=True) == 314
 
 
 def test_user_recent_upvotes_count_skips_some_channels(db_connection):
