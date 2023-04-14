@@ -1,10 +1,10 @@
-from collections import namedtuple
 import logging
+from collections import namedtuple
 from datetime import datetime, timedelta, timezone
 
 import pytest
 
-from juniorguru.sync.club_content.crawler import get_history_after, get_channel_logger
+from juniorguru.sync.club_content.crawler import get_channel_logger, get_history_after
 
 
 def test_get_history_after_given_naive_datetime():

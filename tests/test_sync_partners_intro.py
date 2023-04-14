@@ -1,5 +1,7 @@
 from datetime import date
+
 import pytest
+
 from juniorguru.lib.discord_club import ClubChannelID, ClubEmoji, ClubMemberID
 from juniorguru.models.base import SqliteDatabase
 from juniorguru.models.club import ClubMessage, ClubUser
