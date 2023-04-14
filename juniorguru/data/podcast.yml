@@ -10,9 +10,12 @@
 
 - id: "0015"
   title: Marián Kameništák (kamenistak.com) o pohovorech a kariéře v IT
+  avatar_path: avatars-participants/marian-kamenistak.jpg
   publish_on: "2023-04-15"
   description: |
-      V tomto díle podcastu se Marián rozpovídá o svých zkušenostech z IT z té druhé strany. Jak sám říká, má za sebou už snad tisícovku pohovorů. Řekne nám, proč ho více zaujme uchazeč, který na pohovoru působí sebevědomě a stojí si za svým názorem, proč lidem radí, aby v nové práci vždy nejdříve budovali vztahy, proč je dobré dělat si ze začátku poznámky a jestli je dobré být příliš perfekcionistický. Zazní toho ale mnohem víc. 
+    Poslechněte si člověka, který byl možná u tisícovky pohovorů. Proč ho spíš zaujme uchazeč, který působí sebevědomě a stojí si za svým názorem? Co si myslí o perfekcionismu? Proč je důležité si v nové práci nejdříve vybudovat vztahy? A jaké další triky by do začátku doporučil?
+  media_size: 25215247
+  media_duration_s: 1801
 
 - id: "0014"
   title: Lukáš Kubec (Green Fox Academy) o cestě z KFC na software developera a mentora programování
