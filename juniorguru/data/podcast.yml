@@ -8,6 +8,12 @@
 # avatar_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
+- id: "0015"
+  title: Marián Kameništák (kamenistak.com) o pohovorech a kariéře v IT
+  publish_on: "2023-04-15"
+  description: |
+      V tomto díle podcastu se Marián rozpovídá o svých zkušenostech z IT z té druhé strany. Jak sám říká, má za sebou už snad tisícovku pohovorů. Řekne nám, proč ho více zaujme uchazeč, který na pohovoru působí sebevědomě a stojí si za svým názorem, proč lidem radí, aby v nové práci vždy nejdříve budovali vztahy, proč je dobré dělat si ze začátku poznámky a jestli je dobré být příliš perfekcionistický. Zazní toho ale mnohem víc. 
+
 - id: "0014"
   title: Lukáš Kubec (Green Fox Academy) o cestě z KFC na software developera a mentora programování
   avatar_path: avatars-participants/lukas-kubec.jpg
