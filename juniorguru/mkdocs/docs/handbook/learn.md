@@ -214,7 +214,7 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 
   {{ link_card(
     'Rails Girls',
-    'https://railsgirls.org/',
+    'https://railsgirls.com/',
     'Komunitní jednorázový startovací workshop tvorby webu v Ruby.'
   ) }}
 </div>
