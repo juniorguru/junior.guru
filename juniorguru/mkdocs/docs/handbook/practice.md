@@ -158,12 +158,6 @@ Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to
     'https://docs.google.com/presentation/d/1reYrzFy3E3LS-jNzQecLbkf6Qq7iIEjWvXCyvbw389E/',
     'Všechny základní informace o hackathonech na jednom místě.'
   ) }}
-
-  {{ link_card(
-    'Hackathon.com',
-    'https://www.hackathon.com/',
-    'Celosvětový seznam místních i online hackhatonů.'
-  ) }}
 </div>
 
 {% call blockquote_avatar(
