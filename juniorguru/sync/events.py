@@ -129,18 +129,18 @@ async def sync_scheduled_events(client):
     channel = await client.fetch_channel(ClubChannelID.EVENTS)
     for event in Event.planned_listing():
         discord_event = discord_events.get(event.start_at)
-        if discord_event:
-            logger.info(f"Discord event for '{event.title}' already exists, updating")
-            with mutating_discord(discord_event) as proxy:
-                discord_event = await proxy.edit(
-                    name=f'{event.bio_name}: {event.title}',
-                    description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
-                    end_time=event.end_at,
-                    cover=(IMAGES_DIR / event.poster_dc_path).read_bytes(),
-                )
-        else:
-            logger.info(f"Creating Discord event for '{event.title}'")
-            try:
+        try:
+            if discord_event:
+                logger.info(f"Discord event for '{event.title}' already exists, updating")
+                with mutating_discord(discord_event, raises=True) as proxy:
+                    discord_event = await proxy.edit(
+                        name=f'{event.bio_name}: {event.title}',
+                        description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
+                        end_time=event.end_at,
+                        cover=(IMAGES_DIR / event.poster_dc_path).read_bytes(),
+                    )
+            else:
+                logger.info(f"Creating Discord event for '{event.title}'")
                 with mutating_discord(client.club_guild, raises=True) as proxy:
                     discord_event = await proxy.create_scheduled_event(
                         name=f'{event.bio_name}: {event.title}',
@@ -149,12 +149,12 @@ async def sync_scheduled_events(client):
                         end_time=event.end_at,
                         location=channel,
                     )
-            except MutationsNotAllowedError:
-                pass
-            else:
-                event.discord_id = discord_event.id
-                event.discord_url = discord_event.url
-                event.save()
+        except MutationsNotAllowedError:
+            pass
+        if discord_event:
+            event.discord_id = discord_event.id
+            event.discord_url = discord_event.url
+            event.save()
 
 
 @db.connection_context()
@@ -164,7 +164,7 @@ async def post_next_event_messages(client):
 
     event = Event.next()
     if not event:
-        logger.info("The next event is not announced yet")
+        logger.info("There is no upcoming event")
         return
     speakers = ', '.join([speaking.speaker.mention for speaking in event.list_speaking])
     speakers = speakers or event.bio_name
@@ -173,7 +173,7 @@ async def post_next_event_messages(client):
     if event.start_at.date() - timedelta(days=7) <= date.today():
         message = ClubMessage.last_bot_message(ClubChannelID.ANNOUNCEMENTS, '🗓', event.discord_url)
         if message:
-            logger.info(f'Looks like the message already exists: {message.url}')
+            logger.info(f'Looks like the message about {event.discord_url} already exists: {message.url}')
         else:
             logger.info("Found no message, posting!")
             content = f"🗓 Už **za týden** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
@@ -186,7 +186,7 @@ async def post_next_event_messages(client):
     if event.start_at.date() - timedelta(days=1) == date.today():
         message = ClubMessage.last_bot_message(ClubChannelID.ANNOUNCEMENTS, '🤩', event.discord_url)
         if message:
-            logger.info(f'Looks like the message already exists: {message.url}')
+            logger.info(f'Looks like the message about {event.discord_url} already exists: {message.url}')
         else:
             logger.info("Found no message, posting!")
             content = f"🤩 Už **zítra v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
@@ -199,7 +199,7 @@ async def post_next_event_messages(client):
     if event.start_at.date() == date.today():
         message = ClubMessage.last_bot_message(ClubChannelID.ANNOUNCEMENTS, '⏰', event.discord_url)
         if message:
-            logger.info(f'Looks like the message already exists: {message.url}')
+            logger.info(f'Looks like the message about {event.discord_url} already exists: {message.url}')
         else:
             logger.info("Found no message, posting!")
             content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! Odehrávat se to bude v {events_channel.mention}, dotazy jde pokládat v tamním chatu 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.discord_url}"
