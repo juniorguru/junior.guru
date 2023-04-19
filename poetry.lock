@@ -1985,13 +1985,13 @@ w3lib = ">=1.19.0"
 
 [[package]]
 name = "peewee"
-version = "3.16.0"
+version = "3.16.1"
 description = "a little orm"
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "peewee-3.16.0.tar.gz", hash = "sha256:1800c0a04962ee99d161c07f5a12fc49549caf5cfcda426a9103e34e37f854ba"},
+    {file = "peewee-3.16.1.tar.gz", hash = "sha256:03ba808b96bb3366fc7e949d669804d79059e01d472f0dfaddc2da5fa1614ee7"},
 ]
 
 [[package]]
@@ -3309,4 +3309,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "ba34ca2cba9d380e041bbccce64e0eead3a7b404f162c3366387b8d5aeecd185"
+content-hash = "01dffac164666cafdab5437c31e90b688497681b0e75710bb1effe99ee0d89f6"
