@@ -611,7 +611,7 @@ Networking je také způsob, jak od lidí dostat doporučení. Někteří lidé 
 Na pohovoru ti budou pokládat otázky a také se očekává, že [nějaké otázky budeš mít ty](#tvoje-otazky). Začněme těmi, které můžeš dostat:
 
 *   **Behaviorální otázky.** „Kdo tě nejvíce ovlivnil ve tvé kariéře?“ [Další příklady](https://www.pathrise.com/guides/25-behavioral-interview-questions/).
-*   **Technické otázky.** „Představ si, že nic nevím o [Reactu](https://reactjs.org/). Vysvětli mi, co to je.“ Nebo: „Co je [float](https://developer.mozilla.org/en-US/docs/Web/CSS/float) v CSS?“
+*   **Technické otázky.** „Představ si, že nic nevím o [Reactu](https://react.dev/). Vysvětli mi, co to je.“ Nebo: „Co je [float](https://developer.mozilla.org/en-US/docs/Web/CSS/float) v CSS?“
 *   **[Úlohy u tabule](#ulohy-na-algoritmizaci)**, programování na místě, hádanky. Viz např. [HackerRank](https://www.hackerrank.com/).
 *   **Úkoly na doma.** Úkol zpracováváš mimo pohovor a máš na něj kolik času potřebuješ.
 *   **Párové programování.** Spolu s někým z firmy řešíte zadaný problém.
