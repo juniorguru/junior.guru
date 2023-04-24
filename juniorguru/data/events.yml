@@ -56,6 +56,23 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+- title: "(bude upřesněno)"
+  date: "2023-05-04"
+  time: "18:00"
+  description: |
+    (bude upřesněno)
+  avatar_path: avatars-participants/martin-kolar.jpg
+  bio_name: Martin Kolář
+  bio_title: "Frontendista na volné noze"
+  bio: |
+    (bude upřesněno)
+  bio_links:
+    - https://martinkolar.eu/
+    - https://www.linkedin.com/in/martinkolareu/
+  #logo_path: logos/(bude upresneno).svg
+  speakers: 392659924552777730
+
+
 - title: "Dev Fiction: Junioři a realita vývojářského týmu"
   date: "2023-04-25"
   time: "18:00"
