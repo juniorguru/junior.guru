@@ -56,20 +56,20 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
-- title: "(bude upřesněno)"
+- title: "Začínáme správně: klíčové faktory pro úspěšný frontend projekt"
   date: "2023-05-04"
   time: "18:00"
   description: |
-    (bude upřesněno)
+    Jaké jsou důležité faktory, které je třeba mít na paměti při vytváření nového projektu. Naučíte se, jak se vyvarovat častých chyb v této fázi a jak psát kód, který bude udržitelný a snadno rozšiřitelný. Povíme si také, proč je důležité uvažovat o rychlosti webu již od počátku a jak ji můžete optimalizovat pro lepší uživatelskou zkušenost.
   avatar_path: avatars-participants/martin-kolar.jpg
   bio_name: Martin Kolář
   bio_title: "Frontendista na volné noze"
   bio: |
-    (bude upřesněno)
+    Přes 10 let se věnuje webovému frontendu, z toho více než polovinu jako freelancer. Pomáhal organizovat a moderovat srazy Frontendisti, ve volném čase se věnuje české komunitě Waze a rád taky tvoří věci, převážně ze dřeva.
   bio_links:
     - https://martinkolar.eu/
     - https://www.linkedin.com/in/martinkolareu/
-  #logo_path: logos/(bude upresneno).svg
+  logo_path: logos/martinkolar.svg
   speakers: 392659924552777730
 
 
