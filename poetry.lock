@@ -1391,14 +1391,14 @@ files = [
 
 [[package]]
 name = "itemloaders"
-version = "1.0.6"
+version = "1.1.0"
 description = "Base library for scrapy's ItemLoader"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 files = [
-    {file = "itemloaders-1.0.6-py3-none-any.whl", hash = "sha256:248702909af3ab45ae32846f5bdefa0166dc88cffb5f758d662223dcd0953bd9"},
-    {file = "itemloaders-1.0.6.tar.gz", hash = "sha256:8a6b2945a4233a14042a368e17950f447eb1d42494d75634552586342090cb4a"},
+    {file = "itemloaders-1.1.0-py3-none-any.whl", hash = "sha256:c8c82fe0c11fc4cdd08ec04df0b3c43f3cb7190002edb517e02d55de8efc2aeb"},
+    {file = "itemloaders-1.1.0.tar.gz", hash = "sha256:21d81c61da6a08b48e5996288cdf3031c0f92e5d0075920a0242527523e14a48"},
 ]
 
 [package.dependencies]
@@ -3309,4 +3309,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "fa0e9895d58b583eee66148b628fdf653bcf67a0de029e262c155cafdb878047"
+content-hash = "ad53cba48b731331ad518f6827c8e0024f9ac9e5af72384ada96e9e15e3c8d2c"
