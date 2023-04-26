@@ -69,18 +69,36 @@ HIDDEN_ELEMENTS = [
     '[role="dialog"]',
     '[id*="onetrust"]',
     '[class*="onetrust"]',
+    '[id*="transcend"]',
+    '[class*="transcend"]',
+    '[id*="onesignal"]',
+    '[class*="onesignal"]',
     '[id*="gdpr-consent"]',
     '[class*="gdpr-consent"]',
+    '[id*="cookie-banner"]',
+    '[class*="cookie-banner"]',
     '[id*="consent-banner"]',
     '[class*="consent-banner"]',
+    '[id*="consent-manager"]',
+    '[class*="consent-manager"]',
+    '[data-section-name*="cookie"]',
+    '[data-component-name*="cookie"]',
     '.alert-dismissible',
     '.intercom-app',
     '[data-cookiebanner]',
     '[data-cookie-path]',
     '.chatbot-wrapper',
     '.adsbygoogle',
+    '#credential_picker_container',
+    '.tawk-min-container',
+    '.fb_iframe_widget',
+    '.fb_dialog',
 
     # specific sites
+    '#cc--main',  # seduo.cz
+    '#cc_div',  # seduo.cz
+    '[class*="frb-"]',  # wikipedia.org
+    '[id*="drift-"]',  # pluralsight.com
     'body > .announcement',  # junior.guru
     'body > .notice',  # pyvo.cz
     'body > .ch2',  # czechitas.cz
@@ -165,7 +183,7 @@ def parse_doc(path):
                 link = card.cssselect(select_link)[0]
                 image = card.cssselect(select_image)[0]
             except IndexError:
-                logger.error(f"Problem parsing {select_card} in {path}")
+                logger.warning(f"Problem parsing {select_card} in {path}")
             else:
                 screenshot_url = link.get('href')
                 if screenshot_url.startswith('.'):

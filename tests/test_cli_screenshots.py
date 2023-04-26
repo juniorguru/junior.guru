@@ -6,6 +6,7 @@ from juniorguru.cli import screenshots
 @pytest.mark.parametrize('url,expected', [
     ('https://pyladies.cz', False),
     ('https://www.youtube.com/user/BBSobotka', False),
+    ('https://www.youtube.com/@BronislavSobotka', False),
     ('https://www.youtube.com/channel/UC01guyOZpf40pUopBvdPwsg', False),
     ('https://www.youtube.com/watch?v=0v5K4GvK4Gs', True),
     ('https://youtu.be/0v5K4GvK4Gs', True),

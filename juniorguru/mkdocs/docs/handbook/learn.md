@@ -235,7 +235,7 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
 
   {{ link_card(
     'Broňa',
-    'https://www.youtube.com/user/BBSobotka',
+    'https://www.youtube.com/@BronislavSobotka',
     'Video každé úterý. Možná trochu střelený, ale <a href="https://video.aktualne.cz/dvtv/nadseny-ucitel-anglictiny-jazyk-se-nauci-kazdy-lide-ale-maji/r~f94af27a9e4c11e9970a0cc47ab5f122/">nadšený</a>!',
     badge_icon='youtube',
     badge_text='YouTube',
