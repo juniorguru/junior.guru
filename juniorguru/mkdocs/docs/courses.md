@@ -70,11 +70,6 @@ thumbnail_title: Katalog kurzů programování
   ) }}
 
   {{ link_card(
-    'freeCodeCamp',
-    'https://www.freecodecamp.org/'
-  ) }}
-
-  {{ link_card(
     'ENGETO Academy',
     'https://engeto.cz'
   ) }}
@@ -82,6 +77,11 @@ thumbnail_title: Katalog kurzů programování
   {{ link_card(
     'egghead.io',
     'https://egghead.io'
+  ) }}
+
+  {{ link_card(
+    'freeCodeCamp',
+    'https://www.freecodecamp.org/'
   ) }}
 
   {{ link_card(
@@ -96,7 +96,7 @@ thumbnail_title: Katalog kurzů programování
 
   {{ link_card(
     'Hackni svou budoucnost (David Šetek)',
-    'https://www.greenfoxacademy.cz/'
+    'https://www.youtube.com/@hacknisvoubudoucnost'
   ) }}
 
   {{ link_card(
