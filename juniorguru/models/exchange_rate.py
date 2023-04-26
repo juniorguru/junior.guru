@@ -6,7 +6,7 @@ from juniorguru.models.base import BaseModel
 
 
 class ExchangeRate(BaseModel):
-    code = CharField()
+    code = CharField(unique=True)
     rate = DecimalField()
 
     @classmethod
