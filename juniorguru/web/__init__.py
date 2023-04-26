@@ -22,10 +22,11 @@ THUMBNAIL_HEIGHT = 630
 
 
 NAV_TABS = [
-    {'endpoint': 'handbook', 'name': 'Příručka'},
-    {'endpoint': 'podcast', 'name': 'Podcast'},
-    {'endpoint': 'jobs', 'name': 'Práce'},
     {'endpoint': 'club', 'name': 'Klub'},
+    {'endpoint': 'handbook', 'name': 'Příručka'},
+    {'endpoint': 'courses', 'name': 'Kurzy'},
+    {'endpoint': 'jobs', 'name': 'Práce'},
+    {'endpoint': 'podcast', 'name': 'Podcast'},
 ]
 
 
@@ -205,6 +206,10 @@ def inject_defaults():
 # the annoying need for manual refresh.
 
 REFRESH_PAGE = '<html><head><meta http-equiv="refresh" content="5"></head><body></body></html>'
+
+@app.route('/courses/')
+def courses():
+    return REFRESH_PAGE
 
 @app.route('/club/')
 def club():

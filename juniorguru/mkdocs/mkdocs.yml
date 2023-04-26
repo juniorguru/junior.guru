@@ -3,6 +3,7 @@ site_url: https://junior.guru/
 
 
 nav:
+  - Klub: club.md
   - Příručka:
       - Úvod: handbook/index.md
       - Motivace: handbook/motivation.md
@@ -14,9 +15,10 @@ nav:
       - Hledání práce: handbook/candidate.md
       - Životopis: handbook/cv.md
       - LinkedIn: handbook/linkedin.md
-  - Podcast: podcast.md
+  - Kurzy: courses.md
   - Práce: jobs/
-  - Klub: club.md
+  - Podcast: podcast.md
+
   - Pravidla:
       - Otázky a odpovědi: faq.md
       - Pravidla chování: coc.md
