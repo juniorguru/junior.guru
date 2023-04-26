@@ -300,7 +300,7 @@ Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to j
 ### Kde hledat kurzy a workshopy?    <span id="courses"></span>
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Z této kapitoly je teď samostatná stránka: [Kurzy](courses.md)
+  {{ 'exclamation-circle'|icon }} Z této kapitoly je teď samostatná stránka: [Kurzy](../courses.md)
 {% endcall %}
 
 
