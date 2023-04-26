@@ -1,6 +1,7 @@
 import subprocess
 
 import click
+from mkdocs.__main__ import build_command as mkdocs_build
 
 from juniorguru.web.__main__ import main as freeze_main
 
@@ -16,10 +17,10 @@ def freeze():
 
 
 @main.command()
-def mkdocs():
-    subprocess.run(['mkdocs', 'build',
-                    '--config-file=juniorguru/mkdocs/mkdocs.yml',
-                    '--site-dir=../../public/mkdocs'], check=True)
+@click.pass_context
+def mkdocs(context):
+    context.invoke(mkdocs_build, config_file='juniorguru/mkdocs/mkdocs.yml',
+                                 site_dir='../../public/mkdocs')
 
 
 @main.command()
