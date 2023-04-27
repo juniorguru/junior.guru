@@ -28,6 +28,7 @@ def generate_course_provider_pages():
         yield dict(path=f'courses/{course_provider.slug}.md',
                    meta=dict(title=f'Zkušenosti s {course_provider.name}',
                              course_provider_slug=course_provider.slug,
+                             topic_name=course_provider.slug,
                              noindex=True),
                    template='course_provider.md')
 

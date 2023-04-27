@@ -1,13 +1,13 @@
 ---
-title: Zkušenosti s Unicorn University
+title: Zkušenosti s Unicorn Hatchery
 template: main_legacy.html
-topic_name: unicorn
-topic_link_text: Unicorn University
-description: Hledáš někoho, kdo má zkušenosti s Unicorn University? Má smysl hlásit se k nim? Jak moc je to pouze o technologiích firmy Unicorn? Jak je to s kurzem Hatchery, po kterém ti mohou nabídnout práci? Jaký typ otázek můžeš čekat na jejich testech?
+topic_name: unicornhatchery
+topic_link_text: Unicorn Hatchery
+description: Hledáš někoho, kdo má zkušenosti s kurzem Unicorn Hatchery, po kterém ti mohou nabídnout práci? Má smysl hlásit se k nim? Jak moc je to pouze o technologiích firmy Unicorn? Jaký typ otázek můžeš čekat na jejich testech?
 ---
 {% from 'macros_topic.html' import intro, mentions with context %}
 
-{{ intro('Recenze na Unicorn University', page.meta.description) }}
+{{ intro('Recenze na Unicorn Hatchery', page.meta.description) }}
 
 {{ mentions(topic, 'Unicornu') }}
 

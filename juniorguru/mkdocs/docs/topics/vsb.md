@@ -1,7 +1,7 @@
 ---
 title: Zkušenosti s rekvalifikačními kurzy na VŠB
 template: main_legacy.html
-topic_name: vsb
+topic_name: kurzyvsb
 topic_link_text: rekvalifikační kurzy na VŠB
 description: Hledáš někoho, kdo má zkušenosti s rekvalifikačními počítačovými kurzy na VŠB-TU? Má smysl se na ně hlásit?
 ---

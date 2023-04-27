@@ -13,33 +13,67 @@ logger = loggers.from_path(__file__)
 
 KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value in {
     r'pyladies|pylady': 'pyladies',
+    r'aj\s*ty\s*v\s*it': 'ajtyvit',
+    r'beeit': 'beeit',
+    r'codea?cademy': 'codecademy',
+    r'code\s*wars': 'codewars',
+    r'core\s*skill': 'coreskill',
     r'cs50': 'cs50',
+    r'42\s*prague': '42prague',
     r'enget\w+': 'engeto',
     r'czechitas': 'czechitas',
     r'(datov\w+|digit\w+) akademi\w+': 'czechitas',
-    r'it[ \-]?network': 'itnetwork',
-    r'react ?girls': 'reactgirls',
+    r'it[.\s]?network': 'itnetwork',
+    r'react\s*girls': 'reactgirls',
+    r'rails\s*girls': 'railsgirls',
     r'python\w*': 'python',
     r'js': 'javascript',
     r'javascript\w*': 'javascript',
     r'aoc': 'adventofcode',
-    r'advent ?of ?code': 'adventofcode',
+    r'advent\s*of\s*code': 'adventofcode',
     r'sdacademy': 'sdacademy',
     r'sda': 'sdacademy',
-    r'software development a[ck]adem\w+': 'sdacademy',
+    r'software\s*development\s*a[ck]adem\w+': 'sdacademy',
     r'udemy': 'udemy',
     r'learn2code': 'skillmea',
     r'l2c': 'skillmea',
     r'skillmea': 'skillmea',
-    r'prima ?kurzy': 'primakurzy',
-    r'kurzy\.vsb': 'vsb',
-    r'všb': 'vsb',
-    r'django ?girls': 'djangogirls',
-    r'coding ?boo?tcamp( pra(ha|gue))?': 'codingbootcamppraha',
+    r'robweb': 'robweb',
+    r'yablko\w*': 'robweb',
+    r'webrebel\w*': 'webrebel',
+    r'weby\s*kvalitn[ěe]': 'webykvalitne',
+    r'weba[řr]ce\s*pod\s*rukou': 'webykvalitne',
+    r'prima\s*kurzy': 'primakurzy',
+    r'kurzy\.vsb': 'kurzyvsb',
+    r'všb': 'kurzyvsb',
+    r'edx': 'edx',
+    r'school\s*of\s*code': 'schoolofcode',
+    r'seduo': 'seduo',
+    r'scrimb\w+': 'scrimba',
+    r'egg\s*head': 'egghead',
+    r'free\s*code\s*camp\w*': 'freecodecamp',
+    r'inventi': 'inventi',
+    r'it[.\s]?absolvent': 'itabsolvent',
+    r'nau[čc][.\s]?m[ěe][.\s]?it': 'naucmeit',
+    r'nau[čc][.\s]?se[.\s]?python': 'naucsepython',
+    r'it\s*v\s*kurze': 'itvkurze',
+    r'gamedevhub': 'gamedevhub',
+    r'pluralsight': 'pluralsight',
+    r'praha\s*coding\s*school': 'prahacodingschool',
+    r'hackni\s*svou\s*budoucnost': 'hacknisvoubudoucnost',
+    r'(šetek|šetk)\w*': 'hacknisvoubudoucnost',
+    r'david\w*\s*(setek|setk)\w*': 'hacknisvoubudoucnost',
+    r'django\s*girls': 'djangogirls',
+    r'coding\s*boo?tcamp( pra(ha|gue))?': 'codingbootcamppraha',
     r'data4you': 'codingbootcamppraha',
-    r'green ?fox( academy| akademi[ei])?': 'greenfox',
+    r'green\s*fox( academy| akademi[ei])?': 'greenfox',
     r'gfa': 'greenfox',
-    r'unicorn\w*': 'unicorn',
+    r'unicorn\w*': 'unicornhatchery',
+    r'\w*hatchery': 'unicornhatchery',
+    r'courser\w*': 'coursera',
+    r'udemy': 'udemy',
+    r'udacity': 'udacity',
+    r'data\s*camp\w*': 'datacamp',
     r'(it\s*)?step(\.org)?': 'step',
 }.items()}
 
@@ -54,7 +88,7 @@ def main():
     Topic.drop_table()
     Topic.create_table()
 
-    topics = {}
+    topics = {keyword: Counter() for keyword in KEYWORDS.values()}
     messages = ClubMessage.listing()
     for message in messages:
         topic_channel_keyword = get_topic_channel_keyword(message.channel_name)
@@ -64,7 +98,6 @@ def main():
 
         for keyword_re, keyword in KEYWORDS.items():
             if keyword_re.search(message.content):
-                topics.setdefault(keyword, Counter())
                 topics[keyword]['mentions_count'] += 1
     for name, data in topics.items():
         logger.info(f"{name} {dict(data)}")
