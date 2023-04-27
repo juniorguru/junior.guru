@@ -5,10 +5,14 @@ topic_name: reactgirls
 topic_link_text: ReactGirls
 description: Hledáš někoho, kdo má zkušenosti s ReactGirls? Má smysl účastnit se jejich akademie? Vyplatí se jimi nabízený mentoring?
 ---
-{% from 'macros_topic.html' import intro, mentions, members_roll with context %}
+{% from 'macros_topic.html' import intro, mentions with context %}
 
 {{ intro('Recenze na ReactGirls', page.meta.description) }}
 
 {{ mentions(topic, 'ReactGirls') }}
 
-{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}
+<p class="button-compartment">
+  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
+    Přidej se&nbsp;k&nbsp;nám
+  </a>
+</p>

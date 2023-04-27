@@ -5,13 +5,18 @@ topic_name: pyladies
 topic_link_text: PyLadies
 description: Hledáš někoho, kdo má zkušenosti s PyLadies? Jsou jejich materiály kvalitní? Má smysl hlásit se na jejich začátečnický kurz? Jak si poradit s projekty?
 ---
-{% from 'macros_topic.html' import intro, mentions, members_roll with context %}
+{% from 'macros_topic.html' import intro, mentions with context %}
 
 {{ intro('Recenze na PyLadies', page.meta.description) }}
 
 {{ mentions(topic, 'PyLadies') }}
 
-{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}
+<p class="button-compartment">
+  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
+    Přidej se&nbsp;k&nbsp;nám
+  </a>
+</p>
+
 
 
 {#

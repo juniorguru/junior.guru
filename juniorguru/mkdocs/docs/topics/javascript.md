@@ -5,10 +5,14 @@ topic_name: javascript
 topic_link_text: JavaScript
 description: Učíš se JavaScript? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
 ---
-{% from 'macros_topic.html' import intro, mentions, members_roll with context %}
+{% from 'macros_topic.html' import intro, mentions with context %}
 
 {{ intro('Nech si poradit s JavaScriptem', page.meta.description) }}
 
 {{ mentions(topic, 'JavaScriptu') }}
 
-{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}
+<p class="button-compartment">
+  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
+    Přidej se&nbsp;k&nbsp;nám
+  </a>
+</p>

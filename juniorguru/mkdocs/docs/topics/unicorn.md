@@ -5,10 +5,14 @@ topic_name: unicorn
 topic_link_text: Unicorn University
 description: Hledáš někoho, kdo má zkušenosti s Unicorn University? Má smysl hlásit se k nim? Jak moc je to pouze o technologiích firmy Unicorn? Jak je to s kurzem Hatchery, po kterém ti mohou nabídnout práci? Jaký typ otázek můžeš čekat na jejich testech?
 ---
-{% from 'macros_topic.html' import intro, mentions, members_roll with context %}
+{% from 'macros_topic.html' import intro, mentions with context %}
 
 {{ intro('Recenze na Unicorn University', page.meta.description) }}
 
 {{ mentions(topic, 'Unicornu') }}
 
-{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}
+<p class="button-compartment">
+  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
+    Přidej se&nbsp;k&nbsp;nám
+  </a>
+</p>

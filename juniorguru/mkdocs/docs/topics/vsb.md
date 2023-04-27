@@ -5,10 +5,14 @@ topic_name: vsb
 topic_link_text: rekvalifikační kurzy na VŠB
 description: Hledáš někoho, kdo má zkušenosti s rekvalifikačními počítačovými kurzy na VŠB-TU? Má smysl se na ně hlásit?
 ---
-{% from 'macros_topic.html' import intro, mentions, members_roll with context %}
+{% from 'macros_topic.html' import intro, mentions with context %}
 
 {{ intro('Recenze na rekvalifikační kurzy VŠB', page.meta.description) }}
 
 {{ mentions(topic, 'VŠB') }}
 
-{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}
+<p class="button-compartment">
+  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
+    Přidej se&nbsp;k&nbsp;nám
+  </a>
+</p>

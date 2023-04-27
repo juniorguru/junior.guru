@@ -74,9 +74,7 @@ def on_shared_page_context(context, page, config, files):
 
 @db.connection_context()
 def on_docs_context(context):
-    # topics/*
-    context['club_elapsed_months'] = int(round((TODAY - CLUB_BEGIN_ON).days / 30))
-    context['members'] = ClubUser.avatars_listing()
+    # club.md, open.md
     context['members_total_count'] = ClubUser.members_count()
 
     # club.md

@@ -5,10 +5,14 @@ topic_name: udemy
 topic_link_text: Udemy
 description: Hledáš někoho, kdo má zkušenosti s Udemy? Má smysl hlásit se na jejich kurzy? Vyplatí se certifikace?
 ---
-{% from 'macros_topic.html' import intro, mentions, members_roll with context %}
+{% from 'macros_topic.html' import intro, mentions with context %}
 
 {{ intro('Recenze na Udemy', page.meta.description) }}
 
 {{ mentions(topic, 'Udemy') }}
 
-{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}
+<p class="button-compartment">
+  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
+    Přidej se&nbsp;k&nbsp;nám
+  </a>
+</p>

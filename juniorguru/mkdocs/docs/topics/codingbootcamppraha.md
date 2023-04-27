@@ -5,10 +5,14 @@ topic_name: codingbootcamppraha
 topic_link_text: Coding Bootcamp Praha
 description: Hledáš někoho, kdo má zkušenosti s Coding Bootcamp Praha? Má smysl hlásit se na jejich kurzy? Vyplatí se ti učit se programování na kurzu typu bootcamp? Když neprojdeš jejich přijímacím řízením, znamená to, že se nehodíš do IT? Jak funguje záruka pracovního umístění?
 ---
-{% from 'macros_topic.html' import intro, mentions, members_roll with context %}
+{% from 'macros_topic.html' import intro, mentions with context %}
 
 {{ intro('Recenze na Coding Bootcamp Praha', page.meta.description) }}
 
 {{ mentions(topic, 'Coding Bootcampu Praha') }}
 
-{{ members_roll(pages, members, members_total_count, club_elapsed_months) }}
+<p class="button-compartment">
+  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
+    Přidej se&nbsp;k&nbsp;nám
+  </a>
+</p>
