@@ -11,7 +11,7 @@ from juniorguru.models.partner import PartnershipBenefit, PartnershipPlan
 logger = loggers.from_path(__file__)
 
 
-YAML_PATH = Path('juniorguru/data/partnership-plans.yml')
+YAML_PATH = Path('juniorguru/data/partnership_plans.yml')
 
 YAML_SCHEMA = Seq(
     Map({
