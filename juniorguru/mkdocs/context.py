@@ -13,6 +13,7 @@ from juniorguru.lib.discord_club import DEFAULT_CHANNELS_HISTORY_SINCE
 from juniorguru.mkdocs.thumbnail import thumbnail
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubSubscribedPeriod, ClubUser
+from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.exchange_rate import ExchangeRate
 from juniorguru.models.job import ListedJob
@@ -146,8 +147,10 @@ def on_docs_page_context(context, page, config, files):
     meta_model_getters = (
         ('topic_name', Topic.get_by_id, 'topic'),
         ('partner_slug', Partner.get_by_slug, 'partner'),
+        ('course_provider_slug', CourseProvider.get_by_slug, 'course_provider'),
     )
     for meta_key, model_getter, model_var in meta_model_getters:
+        print(page.file.abs_src_path)
         if meta_key in page.meta:
             context[model_var] = model_getter(page.meta[meta_key])
 

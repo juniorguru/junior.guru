@@ -5,13 +5,14 @@ import mkdocs_gen_files
 from strictyaml import as_document
 
 from juniorguru.lib import loggers
+from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.partner import Partner
 
 
 logger = loggers.from_path(__file__)
 
 
-TEMPLATES_DIR = Path('juniorguru/mkdocs/docs-templates')
+TEMPLATES_DIR = Path('juniorguru/mkdocs/docs_templates')
 
 TEMPLATES = {}
 
@@ -19,6 +20,16 @@ TEMPLATES = {}
 def template(generate_pages):
     TEMPLATES[generate_pages.__name__] = generate_pages
     return generate_pages
+
+
+@template
+def generate_course_provider_pages():
+    for course_provider in CourseProvider.listing():
+        yield dict(path=f'courses/{course_provider.slug}.md',
+                   meta=dict(title=f'Zkušenosti s {course_provider.name}',
+                             course_provider_slug=course_provider.slug,
+                             noindex=True),
+                   template='course_provider.md')
 
 
 @template
@@ -47,6 +58,7 @@ def main():
             counter[name] += 1
         level = 'info' if counter[name] else 'warning'
         getattr(logger[name], level)(f'Generated {counter[name]} pages')
+
 
 if __name__ in ('__main__', '<run_path>'):
     main()
