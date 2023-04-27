@@ -86,6 +86,9 @@ def on_docs_context(context):
     context['events'] = Event.listing()
     context['events_club'] = Event.club_listing()
 
+    # courses.md
+    context['course_providers'] = CourseProvider.listing()
+
     # faq.md
     context['partners_course_providers'] = Partner.course_providers_listing()
 
@@ -150,7 +153,6 @@ def on_docs_page_context(context, page, config, files):
         ('course_provider_slug', CourseProvider.get_by_slug, 'course_provider'),
     )
     for meta_key, model_getter, model_var in meta_model_getters:
-        print(page.file.abs_src_path)
         if meta_key in page.meta:
             context[model_var] = model_getter(page.meta[meta_key])
 

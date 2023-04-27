@@ -1,4 +1,4 @@
-from peewee import CharField
+from peewee import CharField, fn
 
 from juniorguru.models.base import BaseModel
 
@@ -10,7 +10,7 @@ class CourseProvider(BaseModel):
 
     @classmethod
     def listing(cls):
-        return cls.select().order_by(cls.name)
+        return cls.select().order_by(fn.lower(cls.name))
 
     @classmethod
     def get_by_slug(cls, slug):

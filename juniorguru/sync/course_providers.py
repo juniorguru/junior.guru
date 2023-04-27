@@ -26,8 +26,9 @@ def main():
     CourseProvider.create_table()
 
     for yaml_path in YAML_DIR_PATH.glob('*.yml'):
-        logger.info(yaml_path.name)
+        logger.debug(f'Loading {yaml_path.name}')
         yaml_record = load(yaml_path.read_text(), YAML_SCHEMA)
         record = yaml_record.data
         record['slug'] = yaml_path.stem
         CourseProvider.create(**record)
+        logger.info(f'Loaded {yaml_path.name} as {record["name"]!r}')
