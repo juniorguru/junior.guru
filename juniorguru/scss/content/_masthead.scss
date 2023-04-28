@@ -1,6 +1,4 @@
 $masthead-eggshell-height: map-get($spacers, 5);
-$masthead-member-size: 3rem;
-$masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
 
 .masthead {
   position: relative;
@@ -116,21 +114,4 @@ $masthead-member-shift: $masthead-member-size - ($masthead-member-size * .8);
 .masthead-illustration img {
   width: 100%;
   height: auto;
-}
-
-.masthead-members {
-  display: inline-flex;
-  padding-left: $masthead-member-shift;
-  margin-bottom: $spacer;
-  overflow: hidden;
-  vertical-align: middle;
-}
-
-.masthead-members img {
-  display: inline-block;
-  width: $masthead-member-size;
-  height: $masthead-member-size;
-  margin-left: -1 * $member-shift;
-  background: $white;
-  border-radius: 100%;
 }

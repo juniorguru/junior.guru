@@ -52,6 +52,7 @@ KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value
     r'scrimb\w+': 'scrimba',
     r'egg\s*head': 'egghead',
     r'free\s*code\s*camp\w*': 'freecodecamp',
+    r'street\s*of\s*code\w*': 'streetofcode',
     r'inventi': 'inventi',
     r'it[.\s]?absolvent': 'itabsolvent',
     r'nau[čc][.\s]?m[ěe][.\s]?it': 'naucmeit',

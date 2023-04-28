@@ -26,7 +26,7 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 </div>
 
 <a class="masthead-button primary" href="#cenik">199 Kč měsíčně</a>
-<span class="masthead-members">
+<span class="masthead-members members">
   {% for member in members|sample(8) %}
     {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
   {% endfor %}

@@ -84,6 +84,9 @@ def on_docs_context(context):
     context['events'] = Event.listing()
     context['events_club'] = Event.club_listing()
 
+    # club.md, courses/*.md
+    context['members'] = ClubUser.avatars_listing()
+
     # courses.md
     context['course_providers'] = CourseProvider.listing()
 

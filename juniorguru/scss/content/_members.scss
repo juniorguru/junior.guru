@@ -1,23 +1,19 @@
-$member-image-size: 3rem;
-$member-shift: $member-image-size - ($member-image-size * .8);
+$member-size: 3rem;
+$member-shift: $member-size - ($member-size * .8);
 
-.members-list {
-  @extend .list-unstyled;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.members {
+  display: inline-flex;
   padding-left: $member-shift;
   margin-bottom: $spacer;
+  overflow: hidden;
+  vertical-align: middle;
 }
 
-.members-item {
+.members img {
+  display: inline-block;
+  width: $member-size;
+  height: $member-size;
   margin-left: -1 * $member-shift;
-}
-
-.members-image {
-  width: $member-image-size;
-  height: $member-image-size;
   background: $white;
-  border: 2px $white solid;
   border-radius: 100%;
 }

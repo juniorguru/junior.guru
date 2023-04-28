@@ -1,60 +1,48 @@
-{% from 'macros.html' import link_card, note with context %}
+{% from 'macros.html' import link_card, note, lead, img with context %}
 
 
 # Kurzy od {{ course_provider.name }}
 
+{% call lead() %}
+  {{ course_provider.page_lead }}
+  <!-- TODO Tady je aspoň základní info, které ti pomůže s rozhodováním. -->
+{% endcall %}
+
 {{ link_card(course_provider.name, course_provider.url, nofollow=True) }}
 
-## Základní info
-
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} O těchto kurzech zatím chybí základní informace.
+  {{ 'exclamation-circle'|icon }}
+  Zatím tady chybí základní info.
+  Pokud o {{ course_provider.name }} něco víš, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
+  Umíš s GitHubem?
+  [Pošli Pull Request]({{ course_provider.edit_url }})!
+{% endcall %}
+
+## Recenze
+
+{% call lead() %}
+Nějaké recenze najdeš na zdejším Discordu.
+Dojmy absolventů ti mohou pomoci poodhalit celkovou kvalitu, ale čti je s rezervou.
+Nevíš, s jakými očekáváními si kurz vybrali.
+
+Jak zjistíš, zda je vzdělávání u {{ course_provider.name }} vhodné zrovna pro tebe?
+Vždy záleží v jaké jsi konkrétní situaci a co zrovna potřebuješ.
+A přesně takové věci se na tom našem Discordu taky probírají.
+{% if topic.mentions_count > 5 -%}
+  Vyloženě o {{ course_provider.name }} tam máme už **{{ topic.mentions_count|thousands }} zmínek**.
+{%- endif %}
+Poradíme!
 {% endcall %}
 
 <div class="standout text-center">
-  <a class="btn btn-lg btn-outline-primary" href="{{ course_provider.edit_url }}">
-    Doplnit informace
+  <a class="btn btn-lg btn-primary mb-4" href="{{ pages|docs_url('club.md')|url }}">
+    Přidej se do klubu
   </a>
-</div>
-
-
-## Recenze na {{ course_provider.name }}
-
-Hledáš někoho, kdo má zkušenosti s {{ course_provider.name }}?
-Vyplatí se tyhle kurzy?
-V klubu tady na junior.guru se přesně takové věci probírají.
-Dostaneš informace, motivaci, rady.
-Kromě toho ale i parťáky, podporu, kontakty a pracovní nabídky.
-
-<!-- Diskutuj v klubu pro začátečníky, kde najdeš pomoc, motivaci, kamarády, práci. -->
-
-<div>
-{% if topic.mentions_count %}
-  V klubu máme
-  {% if topic.mentions_count == 1 %}
-    zatím jen jednu zmínku
-  {% elif topic.mentions_count < 5 %}
-    už {{ topic.mentions_count }} zmínky
-  {% else %}
-    už {{ topic.mentions_count }} zmínek
-  {% endif %}
-  o {{ course_provider.name }}.
-  {% if topic.topic_channels_messages_count %}
-    Dokonce máme na toto téma i celou místnost, kam jsme napsali {{ topic.topic_channels_messages_count }} zpráv.
-  {% endif %}
-  {% if topic.mentions_count > 1 %}
-    Poradíme ti!
-  {% else %}
-    Pojďme to probrat!
-  {% endif %}
-{% else %}
-  V klubu máme o {{ course_provider.name }} celou místnost, kam jsme už napsali {{ topic.topic_channels_messages_count }} zpráv.
-  Poradíme ti!
-{% endif %}
-</div>
-
-<div class="standout text-center">
-  <a class="btn btn-lg btn-outline-primary" href="{{ pages|docs_url('club.md')|url }}">
-    Přidej se k nám
-  </a>
+  <div>
+    <span class="members">
+    {% for member in members|sample(10) %}
+      {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
+    {% endfor %}
+    </span>
+  </div>
 </div>

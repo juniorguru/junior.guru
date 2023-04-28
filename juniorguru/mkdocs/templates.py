@@ -1,5 +1,6 @@
 from collections import Counter
 from pathlib import Path
+from typing import Any, Callable, Generator
 
 import mkdocs_gen_files
 from strictyaml import as_document
@@ -17,16 +18,17 @@ TEMPLATES_DIR = Path('juniorguru/mkdocs/docs_templates')
 TEMPLATES = {}
 
 
-def template(generate_pages):
+def template(generate_pages: Callable) -> Callable:
     TEMPLATES[generate_pages.__name__] = generate_pages
     return generate_pages
 
 
 @template
-def generate_course_provider_pages():
+def generate_course_provider_pages() -> Generator[dict[str, Any], None, None]:
     for course_provider in CourseProvider.listing():
         yield dict(path=f'courses/{course_provider.slug}.md',
-                   meta=dict(title=f'Zkušenosti s {course_provider.name}',
+                   meta=dict(title=course_provider.page_title,
+                             description=course_provider.page_description,
                              course_provider_slug=course_provider.slug,
                              topic_name=course_provider.slug,
                              noindex=True),
@@ -34,7 +36,7 @@ def generate_course_provider_pages():
 
 
 @template
-def generate_partner_pages():
+def generate_partner_pages() -> Generator[dict[str, Any], None, None]:
     for partner in Partner.active_listing():
         yield dict(path=f'open/{partner.slug}.md',
                    meta=dict(title=f'Partnerství s firmou {partner.name}',

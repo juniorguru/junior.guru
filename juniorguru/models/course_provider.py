@@ -9,11 +9,10 @@ class CourseProvider(BaseModel):
     name = CharField()
     slug = CharField(unique=True)
     url = CharField()
-
-    @property
-    def edit_url(self) -> str:
-        return ('https://github.com/honzajavorek/junior.guru/'
-                f'blob/main/juniorguru/data/course_providers/{self.slug}.yml')
+    edit_url = CharField()
+    page_title = CharField()
+    page_description = CharField()
+    page_lead = CharField()
 
     @classmethod
     def listing(cls) -> Iterable['CourseProvider']:
@@ -22,3 +21,6 @@ class CourseProvider(BaseModel):
     @classmethod
     def get_by_slug(cls, slug) -> 'CourseProvider':
         return cls.get(cls.slug == slug)
+
+    def __str__(self) -> str:
+        return self.name
