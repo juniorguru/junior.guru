@@ -1,4 +1,4 @@
-{% from 'macros.html' import link_card with context %}
+{% from 'macros.html' import link_card, note with context %}
 
 
 # Kurzy od {{ course_provider.name }}
