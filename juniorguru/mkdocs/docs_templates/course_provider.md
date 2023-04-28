@@ -5,6 +5,19 @@
 
 {{ link_card(course_provider.name, course_provider.url, nofollow=True) }}
 
+## Základní info
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} O těchto kurzech zatím chybí základní informace.
+{% endcall %}
+
+<div class="standout text-center">
+  <a class="btn btn-lg btn-outline-primary" href="{{ course_provider.edit_url }}">
+    Doplnit informace
+  </a>
+</div>
+
+
 ## Recenze na {{ course_provider.name }}
 
 Hledáš někoho, kdo má zkušenosti s {{ course_provider.name }}?
