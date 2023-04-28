@@ -13,7 +13,7 @@ class CourseProvider(BaseModel):
     @property
     def edit_url(self) -> str:
         return ('https://github.com/honzajavorek/junior.guru/'
-                'blob/main/juniorguru/data/course_providers/{self.slug}.yml')
+                f'blob/main/juniorguru/data/course_providers/{self.slug}.yml')
 
     @classmethod
     def listing(cls) -> Iterable['CourseProvider']:
