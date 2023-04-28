@@ -1,18 +1,9 @@
 ---
-title: Zkušenosti s rekvalifikačními kurzy na VŠB
-template: main_legacy.html
-topic_name: kurzyvsb
-topic_link_text: rekvalifikační kurzy na VŠB
-description: Hledáš někoho, kdo má zkušenosti s rekvalifikačními počítačovými kurzy na VŠB-TU? Má smysl se na ně hlásit?
+title: Zkušenosti s rekvalifikačními kurzy na VŠB-TU
+template: redirect_docs.html
+redirect: courses/kurzyvsb.md
 ---
-{% from 'macros_topic.html' import intro, mentions with context %}
 
-{{ intro('Recenze na rekvalifikační kurzy VŠB', page.meta.description) }}
+# Recenze na rekvalifikační kurzy VŠB-TU
 
-{{ mentions(topic, 'VŠB') }}
-
-<p class="button-compartment">
-  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-    Přidej se&nbsp;k&nbsp;nám
-  </a>
-</p>
+Tato stránka [změnila adresu]({{ pages|docs_url(page.meta.redirect)|url }}). Probíhá přesměrování…

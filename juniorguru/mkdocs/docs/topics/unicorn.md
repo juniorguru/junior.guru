@@ -1,18 +1,9 @@
 ---
-title: Zkušenosti s Unicorn Hatchery
-template: main_legacy.html
-topic_name: unicornhatchery
-topic_link_text: Unicorn Hatchery
-description: Hledáš někoho, kdo má zkušenosti s kurzem Unicorn Hatchery, po kterém ti mohou nabídnout práci? Má smysl hlásit se k nim? Jak moc je to pouze o technologiích firmy Unicorn? Jaký typ otázek můžeš čekat na jejich testech?
+title: Zkušenosti s Unicorn
+template: redirect_docs.html
+redirect: courses/unicornhatchery.md
 ---
-{% from 'macros_topic.html' import intro, mentions with context %}
 
-{{ intro('Recenze na Unicorn Hatchery', page.meta.description) }}
+# Recenze na Unicorn
 
-{{ mentions(topic, 'Unicornu') }}
-
-<p class="button-compartment">
-  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-    Přidej se&nbsp;k&nbsp;nám
-  </a>
-</p>
+Tato stránka [změnila adresu]({{ pages|docs_url(page.meta.redirect)|url }}). Probíhá přesměrování…

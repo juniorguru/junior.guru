@@ -1,18 +1,9 @@
 ---
 title: Zkušenosti s ReactGirls
-template: main_legacy.html
-topic_name: reactgirls
-topic_link_text: ReactGirls
-description: Hledáš někoho, kdo má zkušenosti s ReactGirls? Má smysl účastnit se jejich akademie? Vyplatí se jimi nabízený mentoring?
+template: redirect_docs.html
+redirect: courses/reactgirls.md
 ---
-{% from 'macros_topic.html' import intro, mentions with context %}
 
-{{ intro('Recenze na ReactGirls', page.meta.description) }}
+# Recenze na ReactGirls
 
-{{ mentions(topic, 'ReactGirls') }}
-
-<p class="button-compartment">
-  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-    Přidej se&nbsp;k&nbsp;nám
-  </a>
-</p>
+Tato stránka [změnila adresu]({{ pages|docs_url(page.meta.redirect)|url }}). Probíhá přesměrování…

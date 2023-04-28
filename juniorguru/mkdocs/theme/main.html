@@ -181,7 +181,7 @@
 
         <h3 class="footer-heading">Témata, která řešíme v klubu</h3>
         <p>
-          {% for nav_item in (nav|selectattr('title', 'equalto', 'Témata')|list)[0].children %}
+          {% for nav_item in (nav|selectattr('title', 'equalto', 'Témata')|list)[0].children if nav_item.meta.topic_link_text %}
             <a href="{{ nav_item.url|url }}">{{ nav_item.meta.topic_link_text }}</a>
             {%- if not loop.last %}, {% endif %}
           {% endfor %}

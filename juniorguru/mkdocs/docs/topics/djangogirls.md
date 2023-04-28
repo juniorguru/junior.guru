@@ -1,18 +1,9 @@
 ---
 title: Zkušenosti s Django Girls
-template: main_legacy.html
-topic_name: djangogirls
-topic_link_text: Django Girls
-description: Hledáš někoho, kdo má zkušenosti s Django Girls? Má smysl účastnit se jejich workshopů? Učíš se podle jejich návodů a hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš?
+template: redirect_docs.html
+redirect: courses/djangogirls.md
 ---
-{% from 'macros_topic.html' import intro, mentions with context %}
 
-{{ intro('Recenze na Django Girls', page.meta.description) }}
+# Recenze na Django Girls
 
-{{ mentions(topic, 'Django Girls') }}
-
-<p class="button-compartment">
-  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-    Přidej se&nbsp;k&nbsp;nám
-  </a>
-</p>
+Tato stránka [změnila adresu]({{ pages|docs_url(page.meta.redirect)|url }}). Probíhá přesměrování…

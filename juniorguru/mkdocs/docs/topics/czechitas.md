@@ -1,18 +1,9 @@
 ---
 title: Zkušenosti s Czechitas
-template: main_legacy.html
-topic_name: czechitas
-topic_link_text: Czechitas
-description: Hledáš někoho, kdo má zkušenosti s Czechitas? Má smysl hlásit se na jejich kurzy? Vyplatí se datová akademie?
+template: redirect_docs.html
+redirect: courses/czechitas.md
 ---
-{% from 'macros_topic.html' import intro, mentions with context %}
 
-{{ intro('Recenze na Czechitas', page.meta.description) }}
+# Recenze na Czechitas
 
-{{ mentions(topic, 'Czechitas') }}
-
-<p class="button-compartment">
-  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-    Přidej se&nbsp;k&nbsp;nám
-  </a>
-</p>
+Tato stránka [změnila adresu]({{ pages|docs_url(page.meta.redirect)|url }}). Probíhá přesměrování…

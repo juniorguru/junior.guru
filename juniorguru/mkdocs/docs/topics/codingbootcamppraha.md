@@ -1,18 +1,9 @@
 ---
 title: Zkušenosti s Coding Bootcamp Praha
-template: main_legacy.html
-topic_name: codingbootcamppraha
-topic_link_text: Coding Bootcamp Praha
-description: Hledáš někoho, kdo má zkušenosti s Coding Bootcamp Praha? Má smysl hlásit se na jejich kurzy? Vyplatí se ti učit se programování na kurzu typu bootcamp? Když neprojdeš jejich přijímacím řízením, znamená to, že se nehodíš do IT? Jak funguje záruka pracovního umístění?
+template: redirect_docs.html
+redirect: courses/codingbootcamppraha.md
 ---
-{% from 'macros_topic.html' import intro, mentions with context %}
 
-{{ intro('Recenze na Coding Bootcamp Praha', page.meta.description) }}
+# Recenze na Coding Bootcamp Praha
 
-{{ mentions(topic, 'Coding Bootcampu Praha') }}
-
-<p class="button-compartment">
-  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-    Přidej se&nbsp;k&nbsp;nám
-  </a>
-</p>
+Tato stránka [změnila adresu]({{ pages|docs_url(page.meta.redirect)|url }}). Probíhá přesměrování…

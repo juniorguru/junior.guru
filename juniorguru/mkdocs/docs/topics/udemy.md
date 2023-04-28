@@ -1,18 +1,9 @@
 ---
 title: Zkušenosti s Udemy
-template: main_legacy.html
-topic_name: udemy
-topic_link_text: Udemy
-description: Hledáš někoho, kdo má zkušenosti s Udemy? Má smysl hlásit se na jejich kurzy? Vyplatí se certifikace?
+template: redirect_docs.html
+redirect: courses/udemy.md
 ---
-{% from 'macros_topic.html' import intro, mentions with context %}
 
-{{ intro('Recenze na Udemy', page.meta.description) }}
+# Recenze na Udemy
 
-{{ mentions(topic, 'Udemy') }}
-
-<p class="button-compartment">
-  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-    Přidej se&nbsp;k&nbsp;nám
-  </a>
-</p>
+Tato stránka [změnila adresu]({{ pages|docs_url(page.meta.redirect)|url }}). Probíhá přesměrování…

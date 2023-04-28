@@ -1,2 +1,22 @@
 name: Skillmea
 url: https://skillmea.cz/
+
+
+# ---
+# title: Zkušenosti se Skillmea
+# template: main_legacy.html
+# topic_name: skillmea
+# topic_link_text: Skillmea
+# description: Hledáš někoho, kdo má zkušenosti se Skillmea (dříve Learn2Code)? Má smysl hlásit se na jejich kurzy? Je Webrebel, kde učí yablko, opravdu tak dobrý, jak se říká? Vyplatí se roční předplatné?
+# ---
+# {% from 'macros_topic.html' import intro, mentions with context %}
+
+# {{ intro('Recenze na Skillmea', page.meta.description) }}
+
+# {{ mentions(topic, 'Skillmea') }}
+
+# <p class="button-compartment">
+#   <a href="{{ pages|docs_url('club.md')|url }}" class="button">
+#     Přidej se&nbsp;k&nbsp;nám
+#   </a>
+# </p>

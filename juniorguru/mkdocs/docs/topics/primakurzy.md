@@ -1,18 +1,9 @@
 ---
 title: Zkušenosti s PrimaKurzy
-template: main_legacy.html
-topic_name: primakurzy
-topic_link_text: PrimaKurzy
-description: Hledáš někoho, kdo má zkušenosti s PrimaKurzy? Vyplatí se jít na jejich akreditované IT kurzy?
+template: redirect_docs.html
+redirect: courses/primakurzy.md
 ---
-{% from 'macros_topic.html' import intro, mentions with context %}
 
-{{ intro('Recenze na PrimaKurzy', page.meta.description) }}
+# Recenze na PrimaKurzy
 
-{{ mentions(topic, 'PrimaKurzy') }}
-
-<p class="button-compartment">
-  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-    Přidej se&nbsp;k&nbsp;nám
-  </a>
-</p>
+Tato stránka [změnila adresu]({{ pages|docs_url(page.meta.redirect)|url }}). Probíhá přesměrování…

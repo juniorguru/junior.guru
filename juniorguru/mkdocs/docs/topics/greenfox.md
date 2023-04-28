@@ -1,18 +1,9 @@
 ---
 title: Zkušenosti s Green Fox Academy
-template: main_legacy.html
-topic_name: greenfox
-topic_link_text: Green Fox Academy
-description: Hledáš někoho, kdo má zkušenosti s Green Fox Academy? Má smysl hlásit se na jejich kurzy? Vyplatí se ti učit se programování na kurzu typu bootcamp? Když neprojdeš jejich přijímacím řízením s kognitivním testem a psycholožkou, znamená to, že se nehodíš do IT? Jak funguje záruka pracovního umístění?
+template: redirect_docs.html
+redirect: courses/greenfox.md
 ---
-{% from 'macros_topic.html' import intro, mentions with context %}
 
-{{ intro('Recenze na Green Fox Academy', page.meta.description) }}
+# Recenze na Green Fox Academy
 
-{{ mentions(topic, 'Green Foxu') }}
-
-<p class="button-compartment">
-  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-    Přidej se&nbsp;k&nbsp;nám
-  </a>
-</p>
+Tato stránka [změnila adresu]({{ pages|docs_url(page.meta.redirect)|url }}). Probíhá přesměrování…

@@ -1,18 +1,9 @@
 ---
 title: Zkušenosti se Skillmea
-template: main_legacy.html
-topic_name: skillmea
-topic_link_text: Skillmea
-description: Hledáš někoho, kdo má zkušenosti se Skillmea (dříve Learn2Code)? Má smysl hlásit se na jejich kurzy? Je Webrebel, kde učí yablko, opravdu tak dobrý, jak se říká? Vyplatí se roční předplatné?
+template: redirect_docs.html
+redirect: courses/skillmea.md
 ---
-{% from 'macros_topic.html' import intro, mentions with context %}
 
-{{ intro('Recenze na Skillmea', page.meta.description) }}
+# Recenze na Skillmea
 
-{{ mentions(topic, 'Skillmea') }}
-
-<p class="button-compartment">
-  <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-    Přidej se&nbsp;k&nbsp;nám
-  </a>
-</p>
+Tato stránka [změnila adresu]({{ pages|docs_url(page.meta.redirect)|url }}). Probíhá přesměrování…

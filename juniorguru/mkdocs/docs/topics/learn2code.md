@@ -1,7 +1,7 @@
 ---
 title: Zkušenosti s Learn2Code
 template: redirect_docs.html
-redirect: topics/skillmea.md
+redirect: courses/skillmea.md
 ---
 
 # Recenze na Learn2Code
