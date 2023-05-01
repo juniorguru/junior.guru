@@ -2303,14 +2303,14 @@ idna = ["idna (>=2.1)"]
 
 [[package]]
 name = "pycircleci"
-version = "0.6.1"
+version = "0.7.0"
 description = "Python client for CircleCI API"
 category = "main"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "pycircleci-0.6.1-py3-none-any.whl", hash = "sha256:781c5465fbaef5c52e937f21fa1c87379b397ec447bbe3eead3ab49c0016f438"},
-    {file = "pycircleci-0.6.1.tar.gz", hash = "sha256:2fdae4526e510bd323add42708b444c9c8565e70f69dc1b156a50404d0098663"},
+    {file = "pycircleci-0.7.0-py3-none-any.whl", hash = "sha256:f2835174324e95346829e5824072e4cf2d81460c2a370a422718d95b99a7bdc1"},
+    {file = "pycircleci-0.7.0.tar.gz", hash = "sha256:4153069b2e607693997e4ffe7a0a806e489ffe14e4cff67c1a7e954f0b3b397b"},
 ]
 
 [package.dependencies]
@@ -3322,4 +3322,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "785838e257981b9eb62a13d4721bf5853cc2c74a3b573a258078b1cd2147d92d"
+content-hash = "93d0895662201e8f06c2c7abc985599091cd035af2489aeacbae1038c5611c31"
