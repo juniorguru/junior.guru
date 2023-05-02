@@ -3,28 +3,23 @@
 
 {% block meta %}
   {{ super() }}
-  <link rel="dns-prefetch" href="https://assets.memberful.com/">
+  <link rel="dns-prefetch" href="https://js.memberful.com">
+  <link rel="dns-prefetch" href="https://assets.memberful.com">
   <link rel="dns-prefetch" href="https://js.stripe.com/">
-  <link rel="dns-prefetch" href="https://m.stripe.com/">
-  <link rel="preconnect" href="https://assets.memberful.com/">
+  <link rel="dns-prefetch" href="https://m.stripe.network/">
+  <link rel="preconnect" href="https://js.memberful.com">
+  <link rel="preconnect" href="https://assets.memberful.com">
   <link rel="preconnect" href="https://js.stripe.com/">
-  <link rel="preconnect" href="https://m.stripe.com/">
-  <link rel="preload" href="https://d35xxde4fgg0cx.cloudfront.net/assets/embedded.js" as="script">
+  <link rel="preconnect" href="https://m.stripe.network/">
+  <link rel="preload" href="https://js.memberful.com/embed.js" as="script">
   <script>
-    window.MemberfulOptions = {site: 'https://juniorguru.memberful.com'};
-
-    (function() {
-      var s   = document.createElement('script');
-
-      s.type  = 'text/javascript';
-      s.async = true;
-      s.src   = 'https://d35xxde4fgg0cx.cloudfront.net/assets/embedded.js';
-
-      setup = function() { window.MemberfulEmbedded.setup(); }
-
-      s.addEventListener('load', setup, false);
-
-      ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-    })();
+    (function(c) {
+      var script = document.createElement("script");
+      script.src = "https://js.memberful.com/embed.js";
+      script.onload = function() { Memberful.setup(c) };
+      document.head.appendChild(script);
+    })({
+      site: ["https://juniorguru.memberful.com"]
+    });
   </script>
 {% endblock %}
