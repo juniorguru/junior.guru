@@ -15,7 +15,9 @@ nav:
       - Hledání práce: handbook/candidate.md
       - Životopis: handbook/cv.md
       - LinkedIn: handbook/linkedin.md
-  - Kurzy: courses.md
+  - Kurzy:
+      - Přehled: courses.md
+      - ... | flat | courses/*.md
   - Práce: jobs/
   - Podcast: podcast.md
 
@@ -26,8 +28,6 @@ nav:
       - Zásady ochrany osobních údajů: privacy.md
       - Čísla a grafy: open.md
       - Licence obsahu (CC BY-SA): https://creativecommons.org/licenses/by-sa/4.0/deed.cs
-  - Kurzy:
-      - ... | flat | courses/*.md
   - Témata:
       - ... | flat | topics/*.md
   - Partnerství:

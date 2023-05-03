@@ -165,8 +165,8 @@
 
         <h3 class="footer-heading">Kurzy</h3>
         <p>
-          {% for nav_item in (nav|selectattr('title', 'equalto', 'Kurzy')|list)[1].children %}
-            <a href="{{ nav_item.url|url }}">{{ nav_item.meta.course_provider_name }}</a>
+          {% for course_provider in course_providers %}
+            <a href="{{ pages|docs_url('courses/' + course_provider.slug + '.md')|url }}">{{ course_provider.name }}</a>
             {%- if not loop.last %}, {% endif %}
           {% endfor %}
         </p>

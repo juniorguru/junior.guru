@@ -171,6 +171,7 @@ def on_theme_context(context):
     context['bootstrap_icons_file'] = re.search(r'bootstrap-icons.woff2\?\w+', css_path.read_text()).group(0)
 
     context['partners_handbook'] = Partner.handbook_listing()
+    context['course_providers'] = CourseProvider.listing()
 
 
 @db.connection_context()
