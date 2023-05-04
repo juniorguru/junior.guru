@@ -104,12 +104,10 @@ def prepare_logo_data(id, **kwargs):
 def prepare_partner_data(id, **kwargs):
     return dict(
         id=id,
-        slug=kwargs.get('slug', f'banana{id}'),
-        name=kwargs.get('name', f'Banana #{id}'),
-        logo_path=kwargs.get('logo_path', 'logos/banana.svg'),
-        url=kwargs.get('url', 'https://banana.example.com'),
-        coupon=kwargs.get('coupon', 'BANANA123123123'),
-        student_coupon=kwargs.get('student_coupon'),
-        role_id=kwargs.get('role_id'),
-        student_role_id=kwargs.get('student_role_id'),
+        slug=kwargs.pop('slug', f'banana{id}'),
+        name=kwargs.pop('name', f'Banana #{id}'),
+        logo_path=kwargs.pop('logo_path', 'logos/banana.svg'),
+        url=kwargs.pop('url', 'https://banana.example.com'),
+        coupon=kwargs.pop('coupon', 'BANANA123123123'),
+        **kwargs,
     )
