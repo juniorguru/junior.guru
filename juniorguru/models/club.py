@@ -219,7 +219,7 @@ class ClubMessage(BaseModel):
 
     @property
     def pin(self):
-        return self._pin.get()
+        return self._pin.first()
 
     def record_pin(self):
         if not self.is_pinning:
@@ -308,7 +308,7 @@ class ClubMessage(BaseModel):
 class ClubPin(BaseModel):
     pinned_message = ForeignKeyField(ClubMessage, backref='list_pins')
     member = ForeignKeyField(ClubUser, backref='list_pins')
-    pinning_message = ForeignKeyField(ClubMessage, backref='_pin', null=True)
+    pinning_message = ForeignKeyField(ClubMessage, backref='_pin', null=True, unique=True)
 
     @classmethod
     def count(cls):
