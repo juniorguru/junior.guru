@@ -73,16 +73,18 @@ class Partner(BaseModel):
             .first()
 
     @property
-    def intro(self):
+    def intro(self) -> ClubMessage:
         return ClubMessage.last_bot_message(ClubChannelID.INTRO,
                                             starting_emoji=ClubEmoji.PARTNER_INTRO,
                                             contains_text=self.name_markdown_bold)
 
     @classmethod
-    def get_by_slug(cls, slug):
-        return cls.select() \
-            .where(cls.slug == slug) \
-            .get()
+    def get_by_slug(cls, slug: str) -> 'Partner':
+        return cls.get(cls.slug == slug)
+
+    @classmethod
+    def first_by_slug(cls, slug) -> 'Partner | None':
+        return cls.get_or_none(cls.slug == slug)
 
     @classmethod
     def active_listing(cls, today=None, include_barters=True):
@@ -224,8 +226,8 @@ class Partnership(BaseModel):
                     for benefit
                     in self.benefits_registry}
         if evaluators:
-            registry = {slug: fn(self)
-                        for slug, fn
+            registry = {slug: fn_(self)
+                        for slug, fn_
                         in evaluators.items()} | registry
         return [dict(slug=benefit.slug,
                      icon=benefit.icon,
