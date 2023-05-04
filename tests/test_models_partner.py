@@ -130,93 +130,6 @@ def test_partner_first_partnership_no_partnership(db_connection):
     assert partner.first_partnership() is None
 
 
-def test_partner_active_listing(db_connection):
-    today = date(2021, 5, 2)
-    partner1 = create_partner(1)
-    create_partnership(partner1, today, date(2021, 4, 1))
-    partner2 = create_partner(2)
-    create_partnership(partner2, today, date(2021, 5, 1))
-    partner3 = create_partner(3)
-    create_partnership(partner3, today, date(2021, 5, 2))
-    partner4 = create_partner(4)
-    create_partnership(partner4, today, date(2021, 5, 3))
-
-    assert set(Partner.active_listing(today=today)) == {partner3, partner4}
-
-
-def test_partner_active_listing_with_barters(db_connection):
-    today = date(2021, 5, 1)
-    partner1 = create_partner(1)
-    create_partnership(partner1, today, date(2021, 5, 1))
-    partner2 = create_partner(2)
-    create_partnership(partner2, today, None)
-
-    assert set(Partner.active_listing(today=today)) == {partner1, partner2}
-
-
-def test_partner_active_listing_without_barters(db_connection):
-    today = date(2021, 5, 1)
-    partner1 = create_partner(1)
-    create_partnership(partner1, today, date(2021, 5, 1))
-    partner2 = create_partner(2)
-    create_partnership(partner2, today, None)
-
-    assert set(Partner.active_listing(today=today, include_barters=False)) == {partner1}
-
-
-def test_partner_active_listing_skips_planned(db_connection):
-    today = date(2021, 5, 2)
-    partner1 = create_partner(1)
-    create_partnership(partner1, date(2021, 5, 1), None)
-    partner2 = create_partner(2)
-    create_partnership(partner2, date(2021, 5, 2), None)
-    partner3 = create_partner(3)
-    create_partnership(partner3, date(2021, 5, 3), None)
-
-    assert set(Partner.active_listing(today=today)) == {partner1, partner2}
-
-
-def test_partner_active_listing_sorts_by_hierarchy_rank_then_by_name(db_connection, plan_basic, plan_top):
-    setup_plan_hierarchy(plan_basic, plan_top)
-    today = date(2021, 5, 2)
-    partner1 = create_partner(1, name='Company B')
-    create_partnership(partner1, date(2021, 4, 1), None, plan=plan_basic)
-    partner2 = create_partner(2, name='Company C')
-    create_partnership(partner2, date(2021, 4, 2), None, plan=plan_top)
-    partner3 = create_partner(3, name='Company A')
-    create_partnership(partner3, date(2021, 4, 3), None, plan=plan_basic)
-
-    assert list(Partner.active_listing(today=today)) == [partner2, partner3, partner1]
-
-
-def test_partner_active_listing_multiple_partnerships(db_connection):
-    today = date(2023, 6, 1)
-    partner1 = create_partner(1)
-    create_partnership(partner1, date(2023, 2, 1), date(2023, 5, 1))
-    create_partnership(partner1, date(2023, 5, 15), None)
-
-    assert list(Partner.active_listing(today=today)) == [partner1]
-
-
-@pytest.mark.parametrize('today, expected', [
-    (date(2022, 1, 31), {2}),
-    (date(2022, 2, 1), {2}),
-    (date(2023, 2, 1), {1, 2}),
-    (date(2023, 3, 15), {1}),
-    (date(2023, 4, 1), {1}),
-    (date(2023, 4, 15), {1}),
-])
-def test_partner_active_listing_multiple_partnerships_various_overlaps(db_connection, today, expected):
-    partner1 = create_partner(1)
-    create_partnership(partner1, date(2022, 4, 1), date(2023, 4, 1))
-    create_partnership(partner1, date(2023, 4, 1), date(2024, 4, 1))
-    partner2 = create_partner(2)
-    create_partnership(partner2, date(2021, 2, 1), date(2022, 1, 31))
-    create_partnership(partner2, date(2022, 2, 1), date(2023, 2, 1))
-
-    assert {partner.id for partner in Partner.active_listing(today=today)} == expected
-
-
 def test_partner_expired_listing(db_connection):
     today = date(2023, 5, 2)
     partner1 = create_partner(1)
@@ -253,7 +166,7 @@ def test_partner_expired_listing_skips_planned(db_connection):
     assert set(Partner.expired_listing(today=today)) == {partner1, partner2}
 
 
-def test_partner_expired_listing_sorts_by_expiration_date_then_by_name(db_connection):
+def test_partner_expired_listing_sorts_by_name(db_connection):
     today = date(2023, 6, 1)
     partner1 = create_partner(1, name='Company B')
     create_partnership(partner1, date(2023, 2, 1), date(2023, 5, 1))
@@ -274,53 +187,29 @@ def test_partner_expired_listing_skips_active_partners(db_connection):
     assert list(Partner.expired_listing(today=today)) == []
 
 
-def test_partner_handbook_listing(db_connection, plan_basic, plan_handbook):
-    partner1 = create_partner(1)
-    create_partnership(partner1, date(2023, 1, 1), None, plan=plan_basic)
-    partner2 = create_partner(2)
-    create_partnership(partner2, date(2023, 1, 1), None, plan=plan_handbook)
-    partner3 = create_partner(3)
-    create_partnership(partner3, date(2023, 1, 1), None, plan=plan_basic)
-
-    assert list(Partner.handbook_listing()) == [partner2]
-
-
-def test_partner_handbook_listing_sorts_by_name(db_connection, plan_handbook):
-    partner1 = create_partner(1, name='Orange')
-    create_partnership(partner1, date(2023, 1, 1), None, plan=plan_handbook)
-    partner2 = create_partner(2, name='Banana')
-    create_partnership(partner2, date(2023, 1, 1), None, plan=plan_handbook)
-    partner3 = create_partner(3, name='Apple')
-    create_partnership(partner3, date(2023, 1, 1), None, plan=plan_handbook)
-
-    assert list(Partner.handbook_listing()) == [partner3, partner2, partner1]
-
-
-def test_partner_schools_listing(db_connection):
+def test_partner_having_students_listing(db_connection):
     partner1 = create_partner(1, student_coupon='STUDENT!')
     partner2 = create_partner(2, student_coupon=None)  # noqa
     partner3 = create_partner(3, student_coupon='STUDENT!')
 
-    assert set(Partner.schools_listing()) == {partner1, partner3}
+    assert set(Partner.having_students_listing()) == {partner1, partner3}
 
 
-def test_partner_schools_listing_sorts_by_name(db_connection):
+def test_partner_having_students_listing_sorts_by_name(db_connection):
     partner1 = create_partner(1, name='Banana', student_coupon='STUDENT!')
     partner2 = create_partner(3, name='Apple', student_coupon='STUDENT!')
 
-    assert list(Partner.schools_listing()) == [partner2, partner1]
+    assert list(Partner.having_students_listing()) == [partner2, partner1]
 
 
-def test_partner_active_schools_listing(db_connection):
-    today = date(2023, 6, 1)
-    partner1 = create_partner(1, student_coupon='STUDENT!')
-    create_partnership(partner1, date(2023, 1, 1), None)
-    partner2 = create_partner(2, student_coupon=None)
-    create_partnership(partner2, date(2023, 1, 1), None)
-    partner3 = create_partner(3, student_coupon='STUDENT!')
-    create_partnership(partner3, date(2023, 1, 1), date(2023, 5, 1))
+@pytest.mark.parametrize('student_coupon, expected', [
+    ('STUDENT!', True),
+    (None, False),
+])
+def test_partner_has_students(db_connection, student_coupon, expected):
+    partner = create_partner(1, student_coupon=student_coupon)
 
-    assert [Partner.active_schools_listing(today=today)] == [partner1]
+    assert partner.has_students is expected
 
 
 def test_partner_list_members(db_connection):
@@ -578,14 +467,14 @@ def test_partnership_active_listing_skips_planned(db_connection):
     assert set(Partnership.active_listing(today=today)) == {partnership1, partnership2}
 
 
-def test_partnership_active_listing_sorts_by_hierarchy_rank_then_by_start_date(db_connection, plan_basic, plan_top):
+def test_partnership_active_listing_sorts_by_hierarchy_rank_then_by_name(db_connection, plan_basic, plan_top):
     setup_plan_hierarchy(plan_basic, plan_top)
     today = date(2021, 5, 2)
-    partnership1 = create_partnership(create_partner(1), date(2021, 4, 1), None, plan=plan_basic)
-    partnership2 = create_partnership(create_partner(2), date(2021, 4, 2), None, plan=plan_top)
-    partnership3 = create_partnership(create_partner(3), date(2021, 4, 3), None, plan=plan_basic)
+    partnership1 = create_partnership(create_partner(1, name='C'), date(2021, 4, 1), None, plan=plan_basic)
+    partnership2 = create_partnership(create_partner(2, name='B'), date(2021, 4, 2), None, plan=plan_top)
+    partnership3 = create_partnership(create_partner(3, name='A'), date(2021, 4, 3), None, plan=plan_basic)
 
-    assert list(Partnership.active_listing(today=today)) == [partnership2, partnership1, partnership3]
+    assert list(Partnership.active_listing(today=today)) == [partnership2, partnership3, partnership1]
 
 
 def test_partnership_active_listing_multiple_partnerships(db_connection):
@@ -595,3 +484,25 @@ def test_partnership_active_listing_multiple_partnerships(db_connection):
     partnership_b = create_partnership(partner1, date(2023, 5, 15), None)
 
     assert list(Partnership.active_listing(today=today)) == [partnership_b]
+
+
+def test_partnership_handbook_listing(db_connection, plan_basic, plan_handbook):
+    partner1 = create_partner(1)
+    partnership1 = create_partnership(partner1, date(2023, 1, 1), None, plan=plan_basic)  # noqa
+    partner2 = create_partner(2)
+    partnership2 = create_partnership(partner2, date(2023, 1, 1), None, plan=plan_handbook)
+    partner3 = create_partner(3)
+    partnership3 = create_partnership(partner3, date(2023, 1, 1), None, plan=plan_basic)  # noqa
+
+    assert list(Partnership.handbook_listing()) == [partnership2]
+
+
+def test_partnership_handbook_listing_sorts_by_name(db_connection, plan_handbook):
+    partner1 = create_partner(1, name='Orange')
+    partnership1 = create_partnership(partner1, date(2023, 1, 1), None, plan=plan_handbook)
+    partner2 = create_partner(2, name='Banana')
+    partnership2 = create_partnership(partner2, date(2023, 1, 1), None, plan=plan_handbook)
+    partner3 = create_partner(3, name='Apple')
+    partnership3 = create_partnership(partner3, date(2023, 1, 1), None, plan=plan_handbook)
+
+    assert list(Partnership.handbook_listing()) == [partnership3, partnership2, partnership1]

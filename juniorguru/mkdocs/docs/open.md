@@ -283,8 +283,8 @@ Partnerství domlouvám osobně a je vždy na rok, potom s firmou jednáme o pro
     <th>Tarif</th>
     <th>Zbývá</th>
   </tr>
-  {% for partner in partners %}
-    {% set partnership = partner.active_partnership() %}
+  {% for partnership in partnerships %}
+    {% set partner = partnership.partner %}
     {% set plan = partnership.plan %}
     <tr>
       <td>

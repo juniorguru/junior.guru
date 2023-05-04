@@ -1,4 +1,4 @@
-from juniorguru.models.partner import Partner
+from juniorguru.models.partner import Partnership
 
 
 BENEFITS_EVALUATORS = {}
@@ -13,10 +13,7 @@ def benefit(evaluate):
 
 @benefit
 def evaluate_logo_club(partnership):
-    for partner in Partner.active_listing():
-        if partner == partnership.partner:
-            return True
-    return False
+    return partnership in list(Partnership.active_listing())
 
 
 @benefit
@@ -59,10 +56,7 @@ def evaluate_job_2(partnership):
 
 @benefit
 def evaluate_logo_handbook(partnership):
-    for partner in Partner.handbook_listing():
-        if partner == partnership.partner:
-            return True
-    return False
+    return partnership in list(Partnership.handbook_listing())
 
 
 @benefit

@@ -7,7 +7,7 @@ from strictyaml import as_document
 
 from juniorguru.lib import loggers
 from juniorguru.models.course_provider import CourseProvider
-from juniorguru.models.partner import Partner
+from juniorguru.models.partner import Partnership
 
 
 logger = loggers.from_path(__file__)
@@ -37,7 +37,8 @@ def generate_course_provider_pages() -> Generator[dict[str, Any], None, None]:
 
 @template
 def generate_partner_pages() -> Generator[dict[str, Any], None, None]:
-    for partner in Partner.active_listing():
+    for partnership in Partnership.active_listing():
+        partner = partnership.partner
         yield dict(path=f'open/{partner.slug}.md',
                    meta=dict(title=f'Partnerství s firmou {partner.name}',
                              partner_slug=partner.slug,

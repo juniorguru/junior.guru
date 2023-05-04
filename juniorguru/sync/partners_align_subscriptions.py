@@ -6,7 +6,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers, mutations
 from juniorguru.lib.memberful import Memberful
 from juniorguru.models.base import db
-from juniorguru.models.partner import Partner
+from juniorguru.models.partner import Partnership
 
 
 logger = loggers.from_path(__file__)
@@ -27,9 +27,9 @@ def main():
         }
     '''
 
-    for partner in Partner.active_listing(include_barters=False):
+    for partnership in Partnership.active_listing(include_barters=False):
+        partner = partnership.partner
         logger_c = logger[partner.slug]
-        partnership = partner.active_partnership()
         logger_c.info(f'Partnership expires on {partnership.expires_on}')
         for employee in partner.list_members:
             logger_c.debug(f'Processing {employee.display_name}')

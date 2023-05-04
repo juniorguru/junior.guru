@@ -1,4 +1,5 @@
 from datetime import date
+from operator import attrgetter
 
 from peewee import BooleanField, CharField, DateField, ForeignKeyField, IntegerField, fn
 
@@ -19,6 +20,10 @@ class Partner(BaseModel):
     poster_path = CharField(null=True)
     role_id = IntegerField(null=True)
     student_role_id = IntegerField(null=True)
+
+    @property
+    def has_students(self):
+        return bool(self.student_coupon)
 
     @property
     def name_markdown_bold(self):
@@ -87,17 +92,9 @@ class Partner(BaseModel):
         return cls.get_or_none(cls.slug == slug)
 
     @classmethod
-    def active_listing(cls, today=None, include_barters=True):
-        today = today or date.today()
-        expires_after_today = Partnership.expires_on >= today
-        if include_barters:
-            expires_after_today = (expires_after_today | Partnership.expires_on.is_null())
-        return cls.select() \
-            .join(Partnership) \
-            .join(PartnershipPlan) \
-            .where(Partnership.starts_on <= today, expires_after_today) \
-            .group_by(cls) \
-            .order_by(PartnershipPlan.hierarchy_rank.desc(), cls.name)
+    def active_listing(cls, today=None):
+        return map(attrgetter('partner'),
+                   Partnership.active_listing(today=today))
 
     @classmethod
     def expired_listing(cls, today=None):
@@ -112,30 +109,8 @@ class Partner(BaseModel):
             .order_by(cls.name)
 
     @classmethod
-    def handbook_listing(cls, today=None):
-        today = today or date.today()
-        return cls.active_listing(today=today) \
-            .join(PartnershipBenefit) \
-            .where(PartnershipBenefit.slug == 'logo_handbook') \
-            .order_by(cls.name)
-
-    @classmethod
-    def course_providers_listing(cls, today=None):
-        today = today or date.today()
-        return cls.active_listing(today=today) \
-            .where(cls.is_course_provider == True) \
-            .order_by(cls.name)
-
-    @classmethod
-    def schools_listing(cls):
+    def having_students_listing(cls):
         return cls.select() \
-            .where(cls.student_coupon.is_null(False)) \
-            .order_by(cls.name)
-
-    @classmethod
-    def active_schools_listing(cls, today=None):
-        today = today or date.today()
-        return cls.active_listing(today=today) \
             .where(cls.student_coupon.is_null(False)) \
             .order_by(cls.name)
 
@@ -210,14 +185,24 @@ class Partnership(BaseModel):
         if include_barters:
             expires_after_today = (expires_after_today | cls.expires_on.is_null())
         return cls.select() \
+            .join(Partner) \
+            .switch(cls) \
             .join(PartnershipPlan) \
             .where(cls.starts_on <= today, expires_after_today) \
-            .order_by(PartnershipPlan.hierarchy_rank.desc(), cls.starts_on)
+            .order_by(PartnershipPlan.hierarchy_rank.desc(), Partner.name)
+
+    @classmethod
+    def handbook_listing(cls, today=None):
+        today = today or date.today()
+        return cls.active_listing(today=today) \
+            .switch(PartnershipPlan) \
+            .join(PartnershipBenefit) \
+            .where(PartnershipBenefit.slug == 'logo_handbook')
 
     def days_until_expires(self, today=None):
         today = today or date.today()
         if self.expires_on:
-            return (self.expires_on - today).days
+            return max(0, (self.expires_on - today).days)
         else:
             return None
 

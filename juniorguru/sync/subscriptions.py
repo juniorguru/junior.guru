@@ -111,7 +111,7 @@ def main():
                 (f'{partner.name} Student Months', ', '.join(get_student_months(subscription, partner.student_coupon))),
                 (f'{partner.name} Student Invoiced?', subscription['member']['metadata'].get(f'{partner.slug}InvoicedOn'))
             ]
-            for partner in Partner.schools_listing()
+            for partner in Partner.having_students_listing()
         ]))
 
         records.append({
@@ -131,7 +131,7 @@ def main():
             **student_record_fields,
         })
 
-        for partner in Partner.schools_listing():
+        for partner in Partner.having_students_listing():
             started_on = get_student_started_on(subscription, partner.student_coupon)
             if started_on:
                 invoiced_on = subscription['member']['metadata'].get(f'{partner.slug}InvoicedOn')
@@ -191,7 +191,7 @@ def main():
                     (f'{partner.name} Student Months', None),
                     (f'{partner.name} Student Invoiced?', None)
                 ]
-                for partner in Partner.schools_listing()
+                for partner in Partner.having_students_listing()
             ]))
             records.append({
                 'Name': None,

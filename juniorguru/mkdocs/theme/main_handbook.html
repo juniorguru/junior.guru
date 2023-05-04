@@ -9,7 +9,8 @@
       <span>Partneři <span class="logobar-nonessential">příručky</span></span>
     </h3>
     <ul class="logobar-list">
-      {% for partner in partners_handbook %}
+      {% for partnership in partnerships_handbook %}
+        {% set partner = partnership.partner %}
         {{ logo(partner.name, partner.logo_path, partner.url, class_prefix='logobar') }}
       {% endfor %}
     </ul>

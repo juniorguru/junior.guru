@@ -2,6 +2,7 @@ import hashlib
 import os
 import re
 from datetime import date
+from operator import attrgetter
 from pathlib import Path
 from urllib.parse import urljoin
 
@@ -17,7 +18,7 @@ from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.exchange_rate import ExchangeRate
 from juniorguru.models.job import ListedJob
-from juniorguru.models.partner import Partner
+from juniorguru.models.partner import Partner, Partnership
 from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.story import Story
 from juniorguru.models.topic import Topic
@@ -79,10 +80,12 @@ def on_docs_context(context):
 
     # club.md
     context['messages_count'] = ClubMessage.count()
-    context['partners'] = Partner.active_listing()  # also open.md
-    context['partners_schools'] = Partner.active_schools_listing()
+    context['partners_having_students'] = list(filter(attrgetter('has_students'), Partner.active_listing()))
     context['events'] = Event.listing()
     context['events_club'] = Event.club_listing()
+
+    # club.md, open.md
+    context['partnerships'] = Partnership.active_listing()
 
     # club.md, courses/*.md
     context['members'] = ClubUser.avatars_listing()
@@ -91,7 +94,7 @@ def on_docs_context(context):
     context['course_providers'] = CourseProvider.listing()
 
     # faq.md
-    context['partners_course_providers'] = Partner.course_providers_listing()
+    context['partners_course_providers'] = list(filter(attrgetter('is_course_provider'), Partner.active_listing()))
 
     # handbook/motivation.md
     context['stories'] = Story.listing()
@@ -170,7 +173,7 @@ def on_theme_context(context):
     context['css_hash'] = hash_file(css_path)
     context['bootstrap_icons_file'] = re.search(r'bootstrap-icons.woff2\?\w+', css_path.read_text()).group(0)
 
-    context['partners_handbook'] = Partner.handbook_listing()
+    context['partnerships_handbook'] = Partnership.handbook_listing()
     context['course_providers'] = CourseProvider.listing()
 
 

@@ -114,7 +114,8 @@ def main(flush_posters):
                     partnership['agreements_registry'].append(agreement)
             Partnership.create(partner=partner, **partnership)
 
-    for partner in Partner.active_listing():
+    for partnership in Partnership.active_listing():
+        partner = partnership.partner
         logger.info(f"Rendering poster for {partner.name}")
         tpl_context = dict(partner=partner)
         image_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT,

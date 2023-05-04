@@ -27,7 +27,7 @@ def main(partner_slug, all, invoice):
     try:
         partner = Partner.get_by_slug(partner_slug)
     except Partner.DoesNotExist:
-        slugs = [partner.slug for partner in Partner.schools_listing()]
+        slugs = [partner.slug for partner in Partner.having_students_listing()]
         logger.error(f"Partner must be one of: {', '.join(slugs)}")
         raise click.Abort()
     logger.debug(f"Partner identified as {partner!r}")

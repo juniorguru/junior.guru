@@ -20,7 +20,7 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 {% call markdown() %}
 - **{{ messages_count|thousands }}** příspěvků
 - **{{ members_total_count }}** členů
-- **{{ partners|length }}** firem
+- **{{ partnerships|length }}** firem
 - **{{ events|length }}** akcí
 {% endcall %}
 </div>
@@ -113,7 +113,8 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
   <li class="logos-item logos-caption">
     <a href="{{ pages|docs_url('faq.md')|url }}#firmy" target="_blank" rel="noopener">Firemní partneři</a>
   </li>
-  {% for partner in partners %}
+  {% for partnership in partnerships %}
+    {% set partner = partnership.partner %}
     {{ logo(partner.name, partner.logo_path, partner.url) }}
   {% endfor %}
 </ul>
@@ -208,14 +209,14 @@ Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství,
 {% call lead() %}
 Nemusíš hned zadávat kartu. Vyber si roční nebo měsíční předplatné a nakoukni, jak to u nás vypadá. **Za vyzkoušení nic nedáš.** Pokud ti klub nesedne, prostě akorát nedoplníš platební údaje a systém tě po dvou týdnech vyhodí.
 
-{% if partners_schools -%}
-  {%- if partners_schools|length > 1 -%}
-    Pokud se vzděláváš u {% for partner in partners_schools -%}
+{% if partners_having_students -%}
+  {%- if partners_having_students|length > 1 -%}
+    Pokud se vzděláváš u {% for partner in partners_having_students -%}
       {%- if not loop.first %}, {% endif %}{% if loop.last %}nebo {% endif -%}
       {{ partner.name }}
     {%- endfor %},
   {%- else -%}
-    Pokud se vzděláváš u {% for partner in partners_schools -%}{{ partner.name }}{%- endfor %},
+    Pokud se vzděláváš u {% for partner in partners_having_students -%}{{ partner.name }}{%- endfor %},
   {%- endif %}
   tvůj **studijní program může zahrnovat bezplatné členství v klubu**. Zeptej se jich, jestli je to tvůj případ!
 {% endif %}
