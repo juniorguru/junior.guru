@@ -9,7 +9,6 @@
 - name: Green Fox Academy
   slug: greenfox
   url: https://www.greenfoxacademy.cz/
-  is_course_provider: yes
   partnerships:
     - plan: branding
       starts_on: 2023-01-25
@@ -135,7 +134,6 @@
 - name: Software Development Academy
   slug: sdacademy
   url: https://sdacademy.cz/
-  is_course_provider: yes
   partnerships:
     - plan: support
       starts_on: 2021-06-18
@@ -159,6 +157,7 @@
           done: https://www.linkedin.com/posts/honzajavorek_mentoring-discord-activity-6997918083440861184-A4oH
       agreements:
         - text: Zaměstnanci poskytují v klubu individuální mentoring
+          done: yes
         - text: Podílí se na rozšířené pomoci pro lidi, kteří na junior.guru žádají o [stipendium](https://junior.guru/finaid).
           done: yes
 
@@ -187,7 +186,6 @@
 - name: ENGETO Academy
   slug: engeto
   url: https://engeto.cz/
-  is_course_provider: yes
   partnerships:
     - plan: support
       starts_on: 2021-05-14
@@ -214,7 +212,6 @@
 - name: CoreSkill
   slug: coreskill
   url: https://coreskill.tech/
-  is_course_provider: yes
   partnerships:
     - plan: support
       starts_on: 2021-02-01
