@@ -2,7 +2,6 @@ import hashlib
 import os
 import re
 from datetime import date
-from operator import attrgetter
 from pathlib import Path
 from urllib.parse import urljoin
 
@@ -80,7 +79,7 @@ def on_docs_context(context):
 
     # club.md
     context['messages_count'] = ClubMessage.count()
-    context['partners_having_students'] = list(filter(attrgetter('has_students'), Partner.active_listing()))
+    context['partners_having_students'] = [partner for partner in Partner.active_listing() if partner.has_students]
     context['events'] = Event.listing()
     context['events_club'] = Event.club_listing()
 
@@ -94,7 +93,7 @@ def on_docs_context(context):
     context['course_providers'] = CourseProvider.listing()
 
     # faq.md
-    context['partners_course_providers'] = list(filter(attrgetter('is_course_provider'), Partner.active_listing()))
+    context['partners_course_providers'] = [partner for partner in Partner.active_listing() if partner.is_course_provider]
 
     # handbook/motivation.md
     context['stories'] = Story.listing()
