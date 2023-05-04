@@ -1,5 +1,6 @@
 from datetime import date
 from operator import attrgetter
+from typing import Iterable
 
 from peewee import BooleanField, CharField, DateField, ForeignKeyField, IntegerField, fn
 
@@ -22,15 +23,15 @@ class Partner(BaseModel):
     student_role_id = IntegerField(null=True)
 
     @property
-    def has_students(self):
+    def has_students(self) -> bool:
         return bool(self.student_coupon)
 
     @property
-    def name_markdown_bold(self):
+    def name_markdown_bold(self) -> str:
         return f'**{self.name}**'
 
     @property
-    def list_members(self):
+    def list_members(self) -> Iterable[ClubUser]:
         if not self.coupon:
             return []
         return ClubUser.select() \
@@ -39,7 +40,7 @@ class Partner(BaseModel):
             .order_by(ClubUser.display_name)
 
     @property
-    def list_student_members(self):
+    def list_student_members(self) -> Iterable[ClubUser]:
         if not self.student_coupon:
             return []
         return ClubUser.select() \
@@ -48,23 +49,23 @@ class Partner(BaseModel):
             .order_by(ClubUser.display_name)
 
     @property
-    def list_student_subscriptions_billable(self):
+    def list_student_subscriptions_billable(self) -> Iterable['PartnerStudentSubscription']:
         return self.list_student_subscriptions \
             .where(PartnerStudentSubscription.invoiced_on.is_null())
 
     @property
-    def list_jobs(self):
+    def list_jobs(self) -> Iterable[ListedJob]:
         return ListedJob.submitted_listing() \
             .join(self.__class__, on=(ListedJob.company_name == self.__class__.name)) \
             .where(ListedJob.company_name == self.name) \
             .order_by(ListedJob.title)
 
     @property
-    def list_partnerships_history(self):
+    def list_partnerships_history(self) -> Iterable['Partnership']:
         return self.list_partnerships \
             .order_by(Partnership.starts_on.desc())
 
-    def active_partnership(self, today=None):
+    def active_partnership(self, today: date=None) -> 'Partnership | None':
         today = today or date.today()
         return self.list_partnerships \
             .where(Partnership.starts_on <= today,
@@ -72,7 +73,7 @@ class Partner(BaseModel):
             .order_by(Partnership.starts_on.desc()) \
             .first()
 
-    def first_partnership(self):
+    def first_partnership(self) -> 'Partnership | None':
         return self.list_partnerships \
             .order_by(Partnership.starts_on) \
             .first()
@@ -88,16 +89,16 @@ class Partner(BaseModel):
         return cls.get(cls.slug == slug)
 
     @classmethod
-    def first_by_slug(cls, slug) -> 'Partner | None':
+    def first_by_slug(cls, slug: str) -> 'Partner | None':
         return cls.get_or_none(cls.slug == slug)
 
     @classmethod
-    def active_listing(cls, today=None):
+    def active_listing(cls, today: date=None) -> Iterable['Partner']:
         return map(attrgetter('partner'),
                    Partnership.active_listing(today=today))
 
     @classmethod
-    def expired_listing(cls, today=None):
+    def expired_listing(cls, today: date=None) -> Iterable['Partner']:
         today = today or date.today()
         return cls \
             .select() \
@@ -109,22 +110,22 @@ class Partner(BaseModel):
             .order_by(cls.name)
 
     @classmethod
-    def having_students_listing(cls):
+    def having_students_listing(cls) -> Iterable['Partner']:
         return cls.select() \
             .where(cls.student_coupon.is_null(False)) \
             .order_by(cls.name)
 
     @classmethod
-    def coupons(cls):
+    def coupons(cls) -> set[str]:
         return {partner.coupon for partner
                 in cls.select().where(cls.coupon.is_null(False))}
 
     @classmethod
-    def student_coupons(cls):
+    def student_coupons(cls) -> set[str]:
         return {partner.student_coupon for partner
                 in cls.select().where(cls.student_coupon.is_null(False))}
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
 
@@ -137,7 +138,7 @@ class PartnershipPlan(BaseModel):
     hierarchy_rank = IntegerField(null=True)
 
     @property
-    def hierarchy(self):
+    def hierarchy(self) -> Iterable['PartnershipPlan']:
         hierarchy = []
         plan = self
         while True:
@@ -148,15 +149,15 @@ class PartnershipPlan(BaseModel):
                 break
         return reversed(hierarchy)
 
-    def benefits(self, all=True):
+    def benefits(self, all: bool=True) -> Iterable['PartnershipBenefit']:
         for plan in (self.hierarchy if all else [self]):
             yield from plan.list_benefits.order_by(PartnershipBenefit.position)
 
-    def benefits_slugs(self, **kwargs):
+    def benefits_slugs(self, **kwargs) -> list[str]:
         return [benefit.slug for benefit in self.benefits(**kwargs)]
 
     @classmethod
-    def get_by_slug(cls, slug):
+    def get_by_slug(cls, slug) -> 'PartnershipPlan':
         return cls.select() \
             .where(cls.slug == slug) \
             .get()
@@ -179,7 +180,7 @@ class Partnership(BaseModel):
     agreements_registry = JSONField(default=list)
 
     @classmethod
-    def active_listing(cls, today=None, include_barters=True):
+    def active_listing(cls, today: date=None, include_barters: bool=True) -> Iterable['Partnership']:
         today = today or date.today()
         expires_after_today = cls.expires_on >= today
         if include_barters:
@@ -192,21 +193,21 @@ class Partnership(BaseModel):
             .order_by(PartnershipPlan.hierarchy_rank.desc(), Partner.name)
 
     @classmethod
-    def handbook_listing(cls, today=None):
+    def handbook_listing(cls, today: date=None) -> Iterable['Partnership']:
         today = today or date.today()
         return cls.active_listing(today=today) \
             .switch(PartnershipPlan) \
             .join(PartnershipBenefit) \
             .where(PartnershipBenefit.slug == 'logo_handbook')
 
-    def days_until_expires(self, today=None):
+    def days_until_expires(self, today=None) -> int | None:
         today = today or date.today()
         if self.expires_on:
             return max(0, (self.expires_on - today).days)
         else:
             return None
 
-    def evaluate_benefits(self, evaluators=None):
+    def evaluate_benefits(self, evaluators=None) -> list[dict[str, str | bool]]:
         registry = {benefit['slug']: benefit.get('done', False)
                     for benefit
                     in self.benefits_registry}
@@ -230,5 +231,5 @@ class PartnerStudentSubscription(BaseModel):
     started_on = DateField()
     invoiced_on = DateField(null=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.partner.slug}, #{self.account_id}, {self.started_on}, {self.invoiced_on}'
