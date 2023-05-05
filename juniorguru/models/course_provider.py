@@ -1,5 +1,5 @@
-from typing import Iterable
 from datetime import date
+from typing import Iterable
 
 from peewee import CharField, ForeignKeyField, fn
 

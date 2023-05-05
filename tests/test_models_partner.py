@@ -12,7 +12,7 @@ from juniorguru.models.partner import (Partner, Partnership, PartnershipBenefit,
                                        PartnershipPlan, PartnerStudentSubscription)
 from juniorguru.models.podcast import PodcastEpisode
 
-from testing_utils import prepare_partner_data, prepare_course_provider_data
+from testing_utils import prepare_course_provider_data, prepare_partner_data
 
 
 def create_partner(id, **kwargs):

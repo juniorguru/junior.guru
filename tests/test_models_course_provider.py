@@ -1,9 +1,11 @@
 from datetime import date
+
 import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.partner import Partner, Partnership, PartnershipPlan
+
 from testing_utils import prepare_course_provider_data, prepare_partner_data
 
 
