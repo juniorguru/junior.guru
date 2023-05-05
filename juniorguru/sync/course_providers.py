@@ -8,6 +8,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.models.base import db
 from juniorguru.models.course_provider import CourseProvider
+from juniorguru.models.partner import Partner
 
 
 YAML_DIR_PATH = Path('juniorguru/data/course_providers')
@@ -24,7 +25,7 @@ STRING_LENGTH_SEO_LIMIT = 150
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command()
+@cli.sync_command(dependencies=['partners'])
 @db.connection_context()
 def main():
     CourseProvider.drop_table()
@@ -41,6 +42,7 @@ def main():
         record['page_title'] = compile_page_title(record['name'])
         record['page_description'] = compile_page_description(record['name'], record.get('questions'))
         record['page_lead'] = compile_page_lead(record['name'], record.get('questions'))
+        record['partner'] = Partner.first_by_slug(record['slug'])
 
         CourseProvider.create(**record)
         logger.info(f'Loaded {yaml_path.name} as {record["name"]!r}')

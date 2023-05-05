@@ -1,8 +1,7 @@
 from datetime import date
-from operator import attrgetter
-from typing import Iterable
+from typing import TYPE_CHECKING, Iterable
 
-from peewee import BooleanField, CharField, DateField, ForeignKeyField, IntegerField, fn
+from peewee import CharField, DateField, ForeignKeyField, IntegerField, fn
 
 from juniorguru.lib.discord_club import ClubChannelID, ClubEmoji
 from juniorguru.models.base import BaseModel, JSONField
@@ -10,17 +9,24 @@ from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.job import ListedJob
 
 
+if TYPE_CHECKING:
+    from juniorguru.models.course_provider import CourseProvider
+
+
 class Partner(BaseModel):
     name = CharField()
     slug = CharField(unique=True)
     url = CharField()
-    is_course_provider = BooleanField(default=False)
     coupon = CharField(null=True, index=True)
     student_coupon = CharField(null=True, index=True)
     logo_path = CharField(null=True)
     poster_path = CharField(null=True)
     role_id = IntegerField(null=True)
     student_role_id = IntegerField(null=True)
+
+    @property
+    def course_provider(self) -> 'CourseProvider | None':
+        return self._course_provider.first()
 
     @property
     def has_students(self) -> bool:
@@ -94,8 +100,7 @@ class Partner(BaseModel):
 
     @classmethod
     def active_listing(cls, today: date=None) -> Iterable['Partner']:
-        return map(attrgetter('partner'),
-                   Partnership.active_listing(today=today))
+        return [partnership.partner for partnership in Partnership.active_listing(today=today)]
 
     @classmethod
     def expired_listing(cls, today: date=None) -> Iterable['Partner']:

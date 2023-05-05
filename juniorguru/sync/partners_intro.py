@@ -30,7 +30,7 @@ DESCRIPTION_TEMPLATE = dedent('''
     {% endif %}
     {%- if partnership.agreements_registry|length %}A ještě nějaká [další ujednání](https://junior.guru/open/{{ partner.slug }}#dalsi-ujednani)
     {% endif %}
-    {% if partner.is_course_provider -%}
+    {% if partner.course_provider -%}
     ℹ️ Partnerství neznamená, že junior.guru doporučuje konkrétní kurzy, nebo že na ně nemáš psát recenze v klubu.
     {%- endif %}
 ''')

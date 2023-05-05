@@ -49,7 +49,7 @@
 ## Vztah s junior.guru
 
 Veškerá placená spolupráce je viditelně označena.
-{%- if partner.is_course_provider %}
+{%- if partner.course_provider %}
 Firma je **vzdělávací agenturou** a jako taková chce lidi přesvědčit o tom, že její vzdělávací programy jsou nejlepší.
 Tím vzniká u Honzy Javorka, autora junior.guru, **konflikt zájmů** a proto se vztah s touto firmou řídí [opatrnějšími pravidly](../faq.md#vzdelavaci-agentury).
 {% else %}

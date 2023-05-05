@@ -111,3 +111,17 @@ def prepare_partner_data(id, **kwargs):
         coupon=kwargs.pop('coupon', 'BANANA123123123'),
         **kwargs,
     )
+
+
+def prepare_course_provider_data(id, **kwargs):
+    return dict(
+        id=id,
+        name=kwargs.pop('name', 'Test Course Provider'),
+        slug=kwargs.pop('slug', f'test-course-provider-{id}'),
+        url=kwargs.pop('url', 'https://example.com'),
+        edit_url=kwargs.pop('edit_url', 'https://example.com/edit'),
+        page_title=kwargs.pop('page_title', 'Test Course Provider'),
+        page_description=kwargs.pop('page_description', 'Test Course Provider'),
+        page_lead=kwargs.pop('page_lead', 'Test Course Provider'),
+        **kwargs
+    )

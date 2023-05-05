@@ -93,7 +93,7 @@ def on_docs_context(context):
     context['course_providers'] = CourseProvider.listing()
 
     # faq.md
-    context['partners_course_providers'] = [partner for partner in Partner.active_listing() if partner.is_course_provider]
+    context['partners_course_providers'] = [partner for partner in Partner.active_listing() if partner.course_provider]
 
     # handbook/motivation.md
     context['stories'] = Story.listing()

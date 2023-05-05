@@ -5,13 +5,14 @@ import pytest
 from peewee import SqliteDatabase
 
 from juniorguru.models.club import ClubMessage, ClubUser
+from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.event import Event
 from juniorguru.models.job import ListedJob, SubmittedJob
 from juniorguru.models.partner import (Partner, Partnership, PartnershipBenefit,
                                        PartnershipPlan, PartnerStudentSubscription)
 from juniorguru.models.podcast import PodcastEpisode
 
-from testing_utils import prepare_partner_data
+from testing_utils import prepare_partner_data, prepare_course_provider_data
 
 
 def create_partner(id, **kwargs):
@@ -62,7 +63,7 @@ def db_connection():
               Partnership, PartnershipPlan, PartnershipBenefit,
               ClubUser, ClubMessage,
               ListedJob, SubmittedJob,
-              Event, PodcastEpisode]
+              Event, PodcastEpisode, CourseProvider]
     db = SqliteDatabase(':memory:')
     with db:
         db.bind(models)
@@ -200,6 +201,20 @@ def test_partner_having_students_listing_sorts_by_name(db_connection):
     partner2 = create_partner(3, name='Apple', student_coupon='STUDENT!')
 
     assert list(Partner.having_students_listing()) == [partner2, partner1]
+
+
+def test_partner_course_provider(db_connection):
+    partner = create_partner(123, name='Apple', slug='a')
+    course_provider = CourseProvider.create(**prepare_course_provider_data(456, slug='a', partner=partner))
+
+    assert partner.course_provider == course_provider
+
+
+def test_partner_course_provider_is_none(db_connection):
+    partner = create_partner(123, name='Xena', slug='x')
+    CourseProvider.create(**prepare_course_provider_data(456, slug='a'))
+
+    assert partner.course_provider is None
 
 
 @pytest.mark.parametrize('student_coupon, expected', [

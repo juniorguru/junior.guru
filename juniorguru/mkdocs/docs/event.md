@@ -5,7 +5,7 @@ template: main.html
 noindex: true
 ---
 
-{% from 'macros.html' import note, figure, lead with context %}
+{% from 'macros.html' import figure, lead with context %}
 
 # Návod na akce v klubu
 
