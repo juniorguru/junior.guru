@@ -35,7 +35,7 @@ emoji = "2.2.0"
 favicon = "0.7.0"
 feedparser = "6.0.10"
 py-cord = {version = "2.4.0", extras = ["speed"]}
-gql = {extras = ["requests"], version = "3.4.0"}
+gql = {extras = ["requests"], version = "3.4.1"}
 mkdocs = "1.4.3"
 markupsafe = "2.1.2"
 ics = {version = "0.8.0.dev0", allow-prereleases = true}
