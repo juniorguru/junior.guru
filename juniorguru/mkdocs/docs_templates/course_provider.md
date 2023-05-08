@@ -29,7 +29,7 @@ Jak zjistíš, zda je vzdělávání u {{ course_provider.name }} vhodné zrovna
 Vždy záleží v jaké jsi konkrétní situaci a co zrovna potřebuješ.
 A přesně takové věci se na tom našem Discordu taky probírají.
 {% if topic.mentions_count > 5 -%}
-  Vyloženě o {{ course_provider.name }} tam máme už **{{ topic.mentions_count|thousands }} zmínek**.
+  Vyloženě o {{ course_provider.name }} tam máme už **{{ topic.mentions_count|thousands }} zmínek**.
 {%- endif %}
 Poradíme!
 {% endcall %}
