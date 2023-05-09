@@ -1746,14 +1746,14 @@ min-versions = ["babel (==2.9.0)", "click (==7.0)", "colorama (==0.4)", "ghp-imp
 
 [[package]]
 name = "mkdocs-awesome-pages-plugin"
-version = "2.9.0"
+version = "2.9.1"
 description = "An MkDocs plugin that simplifies configuring page titles and their order"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "mkdocs_awesome_pages_plugin-2.9.0-py3-none-any.whl", hash = "sha256:783dddf7d42aba632324a2e5267ff13ca5a42ba9f4f37996d963f1b518f9009f"},
-    {file = "mkdocs_awesome_pages_plugin-2.9.0.tar.gz", hash = "sha256:845a90b6ee0b00e641ff21a1599ad92805cfd12982c855686a79ef1c63454cc9"},
+    {file = "mkdocs_awesome_pages_plugin-2.9.1-py3-none-any.whl", hash = "sha256:be65e36444f5d991f87a90dae37de64e932562f99e362078724c27124834b90a"},
+    {file = "mkdocs_awesome_pages_plugin-2.9.1.tar.gz", hash = "sha256:faf5241365f94c1f65ef3cad7ea9d6f0e7a436be7f06013c79c4045db0b2eafc"},
 ]
 
 [package.dependencies]
@@ -3322,4 +3322,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "717efedaebaa8b921c8b409246a53a2c5214eb64594cc785940e9733ebf4a57a"
+content-hash = "5e5966ec24d0400c10f045978eba63dd996c14d732a7b7a48120cdbe722b3c9e"
