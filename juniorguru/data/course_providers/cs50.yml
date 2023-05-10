@@ -1,0 +1,22 @@
+name: CS50
+url: https://cs50.harvard.edu/
+
+
+# ---
+# title: Zkušenosti s CS50
+# template: main_legacy.html
+# topic_name: cs50
+# topic_link_text: CS50
+# description: Hledáš někoho, kdo má zkušenosti s kurzem CS50 z Harvard University? Má smysl tomu věnovat čas? Co přesně se tam naučíš a využiješ to v praxi?
+# ---
+# {% from 'macros_topic.html' import intro, mentions with context %}
+
+# {{ intro('Recenze na CS50', page.meta.description) }}
+
+# {{ mentions(topic, 'CS50') }}
+
+# <p class="button-compartment">
+#   <a href="{{ pages|docs_url('club.md')|url }}" class="button">
+#     Přidej se&nbsp;k&nbsp;nám
+#   </a>
+# </p>

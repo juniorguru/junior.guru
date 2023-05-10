@@ -28,11 +28,6 @@ SCREENSHOTS_DIR = IMAGES_DIR / 'screenshots'
 
 SCREENSHOTS_OVERRIDES_DIR = IMAGES_DIR / 'screenshots-overrides'
 
-CSS_SELECTORS = [
-    ('.link-card', '.link-card-link', '.link-card-image'),
-    ('.media-card', '.media-card-link', '.media-card-image'),
-]
-
 WIDTH = 640
 
 HEIGHT = 360
@@ -177,19 +172,12 @@ def main():
 def parse_doc(path):
     logger.debug(f'Parsing {path.relative_to(PUBLIC_DIR)}')
     html_tree = html.fromstring(path.read_bytes())
-    for select_card, select_link, select_image in CSS_SELECTORS:
-        for card in html_tree.cssselect(select_card):
-            try:
-                link = card.cssselect(select_link)[0]
-                image = card.cssselect(select_image)[0]
-            except IndexError:
-                logger.warning(f"Problem parsing {select_card} in {path}")
-            else:
-                screenshot_url = link.get('href')
-                if screenshot_url.startswith('.'):
-                    screenshot_url = f'https://junior.guru/{path.parent.relative_to(PUBLIC_DIR) / screenshot_url}'
-                screenshot_path = SCREENSHOTS_DIR / Path(image.get('data-src')).name
-                yield (screenshot_url, screenshot_path)
+    for card in html_tree.cssselect('*[data-screenshot-source-url][data-screenshot-image-url]'):
+        screenshot_source_url = card.get('data-screenshot-source-url')
+        if screenshot_source_url.startswith('.'):
+            screenshot_source_url = f'https://junior.guru/{path.parent.relative_to(PUBLIC_DIR) / screenshot_source_url}'
+        screenshot_path = SCREENSHOTS_DIR / Path(card.get('data-screenshot-image-url')).name
+        yield (screenshot_source_url, screenshot_path)
 
 
 def is_expired_path(path):

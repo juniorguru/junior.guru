@@ -21,7 +21,7 @@ thumbnail_title: Katalog kurzů programování
       {{ link_card(
         course_provider.name,
         pages|docs_url(course_provider.page_url)|url,
-        img_url=course_provider.url,
+        screenshot_source_url=course_provider.url,
         highlighted=True,
         badge_icon='star',
         badge_text='Partner',
@@ -30,7 +30,7 @@ thumbnail_title: Katalog kurzů programování
       {{ link_card(
         course_provider.name,
         pages|docs_url(course_provider.page_url)|url,
-        img_url=course_provider.url,
+        screenshot_source_url=course_provider.url,
         nofollow=True,
       ) }}
     {% endif %}

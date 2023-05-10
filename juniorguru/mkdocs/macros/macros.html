@@ -121,12 +121,16 @@
 
 {% macro link_card(title, url, caption=None,
                    badge_icon=None, badge_text=None,
-                   img_url=None,
+                   screenshot_source_url=None,
                    highlighted=False, nofollow=False)
 %}
-<div class="link-card{% if highlighted %} highlighted{% endif %}">
+{% set screenshot_source_url = screenshot_source_url or url %}
+{% set screenshot_image_url = screenshot_source_url|screenshot_url %}
+<div class="link-card{% if highlighted %} highlighted{% endif %}"
+  data-screenshot-source-url="{{ screenshot_source_url }}"
+  data-screenshot-image-url="{{ screenshot_image_url }}">
   <div class="link-card-header">
-    {{ img((img_url or url)|screenshot_url, title, 640, 360, class='link-card-image') }}
+    {{ img(screenshot_image_url, title, 640, 360, class='link-card-image') }}
     {% if badge_icon and badge_text %}
       <div class="link-card-icon">
         {{ badge_icon|icon }} {{ badge_text }}
@@ -153,10 +157,14 @@
 
 
 {% macro video_card(title, duration, url, caption=None, note=None) %}
-<div class="media-card">
+{% set screenshot_source_url = url %}
+{% set screenshot_image_url = screenshot_source_url|screenshot_url %}
+<div class="media-card"
+  data-screenshot-source-url="{{ screenshot_source_url }}"
+  data-screenshot-image-url="{{ screenshot_image_url }}">
   <div class="media-card-header">
     <div class="media-card-image-cover">
-      {{ img(url|screenshot_url, title, 640, 360, class='media-card-image') }}
+      {{ img(screenshot_image_url, title, 640, 360, class='media-card-image') }}
       <div class="media-card-button">
         <span class="media-card-play">{{ 'play-circle-fill'|icon }}</span>
         <span class="media-card-duration">{{ duration }}</span>
