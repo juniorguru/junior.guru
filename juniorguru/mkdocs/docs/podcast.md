@@ -54,8 +54,9 @@ Poučky praví, že podcast se stává kvalitním a slavným, až když se auto�
     <span class="badge text-bg-primary">Spolupráce</span>
     <small>
     Epizoda vznikla v rámci
-    {% if episode.partner.active_partnership() %}
-      <a href="{{ pages|docs_url('open/' + episode.partner.slug + '.md')|url }}">placeného partnerství</a>
+    {% set active_partnership = episode.partner.active_partnership() %}
+    {% if active_partnership %}
+      <a href="{{ pages|docs_url(active_partnership.page_url)|url }}">placeného partnerství</a>
     {% else %}
       placeného partnerství
     {% endif %}

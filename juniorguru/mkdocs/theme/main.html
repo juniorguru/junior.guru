@@ -166,7 +166,7 @@
         <h3 class="footer-heading">Kurzy</h3>
         <p>
           {% for course_provider in course_providers %}
-            <a href="{{ pages|docs_url('courses/' + course_provider.slug + '.md')|url }}">{{ course_provider.name }}</a>
+            <a href="{{ pages|docs_url(course_provider.page_url)|url }}">{{ course_provider.name }}</a>
             {%- if not loop.last %}, {% endif %}
           {% endfor %}
         </p>

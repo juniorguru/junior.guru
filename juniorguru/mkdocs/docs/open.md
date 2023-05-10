@@ -288,7 +288,7 @@ Partnerství domlouvám osobně a je vždy na rok, potom s firmou jednáme o pro
     {% set plan = partnership.plan %}
     <tr>
       <td>
-        <a href="{{ pages|docs_url('open/' + partner.slug + '.md')|url }}">Partnerství s {{ partner.name }}</a>
+        <a href="{{ pages|docs_url(partnership.page_url)|url }}">Partnerství s {{ partner.name }}</a>
       </td>
       <td>
         {%- for _ in range(plan.hierarchy_rank + 1) -%}

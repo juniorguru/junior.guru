@@ -40,6 +40,8 @@ KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value
     r'skillmea': 'skillmea',
     r'robweb': 'robweb',
     r'yablko\w*': 'robweb',
+    r'programko\.net': 'programkonet',
+    r'voborn[íi]k': 'programkonet',
     r'webrebel\w*': 'webrebel',
     r'weby\s*kvalitn[ěe]': 'webykvalitne',
     r'weba[řr]ce\s*pod\s*rukou': 'webykvalitne',

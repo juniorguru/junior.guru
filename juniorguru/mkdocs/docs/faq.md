@@ -178,7 +178,7 @@ Na akce v klubu a do podcastu si zveme zajímavé lidi z oboru.
 Většinou zrovna někde pracují, takže to pro kontext uvádíme u jejich jména.
 Neznamená to, že k nám firma toho člověka poslala, nebo že za to něco zaplatila.
 
-Jako „placená spolupráce“ jsou viditelně označeny jen akce v klubu a epizody podcastu, které na základě tarifu iniciovala firma.
+Jako „placená spolupráce“ jsou viditelně označeny jen akce v klubu a epizody podcastu, které na základě [transparentně zdokumentovaného](open.md#firemni-partnerstvi) partnerství iniciovala firma.
 Zaplatila za to a vybrala si, koho k nám pošle.
 
 ## {{ 'people'|icon }} Partnerství s komunitami  {: #komunity }

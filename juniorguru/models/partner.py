@@ -184,6 +184,10 @@ class Partnership(BaseModel):
     benefits_registry = JSONField(default=list)
     agreements_registry = JSONField(default=list)
 
+    @property
+    def page_url(self) -> str:
+        return f'open/{self.partner.slug}.md'
+
     @classmethod
     def active_listing(cls, today: date=None, include_barters: bool=True) -> Iterable['Partnership']:
         today = today or date.today()

@@ -17,6 +17,10 @@ class CourseProvider(BaseModel):
     page_lead = CharField()
     partner = ForeignKeyField(Partner, backref='_course_provider', null=True, unique=True)
 
+    @property
+    def page_url(self) -> str:
+        return f'courses/{self.slug}.md'
+
     def active_partnership(self, today: date=None) -> Partnership | None:
         return self.partner.active_partnership(today=today) if self.partner else None
 
