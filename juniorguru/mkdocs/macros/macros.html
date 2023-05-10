@@ -121,11 +121,12 @@
 
 {% macro link_card(title, url, caption=None,
                    badge_icon=None, badge_text=None,
+                   img_url=None,
                    highlighted=False, nofollow=False)
 %}
 <div class="link-card{% if highlighted %} highlighted{% endif %}">
   <div class="link-card-header">
-    {{ img(url|screenshot_url, title, 640, 360, class='link-card-image') }}
+    {{ img((img_url or url)|screenshot_url, title, 640, 360, class='link-card-image') }}
     {% if badge_icon and badge_text %}
       <div class="link-card-icon">
         {{ badge_icon|icon }} {{ badge_text }}
