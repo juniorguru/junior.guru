@@ -13,7 +13,7 @@
 
 {{ figure(partner.logo_path, partner.name, 500, 250, class="standout-bottom") }}
 
-<div class="table-responsive"><table class="table">
+<div class="table-responsive"><table class="table table-1st-column-25">
   <tr>
     <th>Název</th>
     <td>{{ partner.name }}</td>
@@ -60,17 +60,25 @@ Firma nepodniká v oblasti vzdělávání juniorů a neměl by tedy existovat ž
 
 Pokud tady něco chybí, tak buď [nejde o placenou spolupráci](../faq.md#neoznacena-spoluprace), nebo to Honza zapomenul zaznamenat. Napiš mu na {{ 'honza@junior.guru'|email_link }}.
 
-<div class="table-responsive"><table class="table">
+<div class="table-responsive"><table class="table table-1st-column-25">
+  <tr>
+    <th>Členů v klubu {{ 'person-circle'|icon }}</th>
+    <td>
+      {{ partner.list_members|length }} z 15<br>
+      <small>{{ 'question-circle'|icon }} <a href="{{ pages|docs_url('faq.md')|url }}#firmy-klub">k čemu je členství</a></small>
+    </td>
+  </tr>
+
   {% for podcast_episode in partner.list_podcast_episodes %}
   <tr>
-    <td>Epizoda podcastu {{ 'mic'|icon }}</td>
+    <th>Epizoda podcastu {{ 'mic'|icon }}</th>
     <td><a href="{{ podcast_episode.url }}">{{ podcast_episode.title }}</a></td>
   </tr>
   {% endfor %}
 
   {% for job in partner.list_jobs %}
   <tr>
-    <td>Pracovní inzerát {{ 'pin-angle'|icon }}</td>
+    <th>Pracovní inzerát {{ 'pin-angle'|icon }}</th>
     <td>
       <a href="{{ job.url }}">{{ job.title }}</a><br>
       <small>
@@ -84,15 +92,24 @@ Pokud tady něco chybí, tak buď [nejde o placenou spolupráci](../faq.md#neozn
 
   {% for event in partner.list_events %}
   <tr>
-    <td>Akce v klubu {{ 'calendar-event'|icon }}</td>
+    <th>Akce v klubu {{ 'calendar-event'|icon }}</th>
     <td><a href="{{ event.url }}">{{ event.title }}</a></td>
   </tr>
   {% endfor %}
 
+  {% if partner.course_provider %}
+  <tr>
+    <th>Záznam v katalogu kurzů {{ 'star'|icon }}</th>
+    <td>
+      <a href="{{ pages|docs_url(partner.course_provider.page_url)|url }}">Kurzy od {{ partner.course_provider.name }}</a>
+    </td>
+  </tr>
+  {% endif %}
+
   {% for benefit in active_partnership.evaluate_benefits(benefits_evaluators) %}
   {% if benefit.slug == 'welcome_social' and benefit.done %}
   <tr>
-    <td>Oznámení na sociálních sítích {{ benefit.icon|icon }}</td>
+    <th>Oznámení na sociálních sítích {{ benefit.icon|icon }}</th>
     <td>
       <a href="{{ benefit.done }}">LinkedIn</a>
     </td>
@@ -102,7 +119,7 @@ Pokud tady něco chybí, tak buď [nejde o placenou spolupráci](../faq.md#neozn
 
   {% set intro = partner.intro %}
   <tr>
-    <td>Oznámení v klubu {{ 'balloon'|icon }}</td>
+    <th>Oznámení v klubu {{ 'balloon'|icon }}</th>
     <td>
       {% if intro %}
         <a href="{{ intro.url }}">{{ '{:%-d.%-m.%Y}'.format(intro.created_at) }}</a>
@@ -115,26 +132,18 @@ Pokud tady něco chybí, tak buď [nejde o placenou spolupráci](../faq.md#neozn
   {% for partnership in partner.list_partnerships_history %}
     {% for agreement in partnership.agreements_registry|selectattr('done') %}
     <tr>
-      <td>Další ujednání {{ 'box'|icon }}</td>
+      <th>Další ujednání {{ 'box'|icon }}</th>
       <td>
         {{ agreement.text|md|remove_p }}
       </td>
     </tr>
     {% endfor %}
   {% endfor %}
-
-  <tr>
-    <td>Členů v klubu {{ 'person-circle'|icon }}</td>
-    <td>
-      {{ partner.list_members|length }} z 15<br>
-      <small>{{ 'question-circle'|icon }} <a href="{{ pages|docs_url('faq.md')|url }}#firmy-klub">k čemu je členství</a></small>
-    </td>
-  </tr>
 </table></div>
 
 ## Stav benefitů
 
-<div class="table-responsive"><table class="table">
+<div class="table-responsive"><table class="table table-1st-column-10">
 {% for benefit in active_partnership.evaluate_benefits(benefits_evaluators) %}
 <tr>
   {% if benefit.done %}
@@ -153,7 +162,7 @@ Pokud tady něco chybí, tak buď [nejde o placenou spolupráci](../faq.md#neozn
 {% if active_partnership.agreements_registry %}
 ### Další ujednání
 
-<div class="table-responsive"><table class="table">
+<div class="table-responsive"><table class="table table-1st-column-10">
 {% for agreement in active_partnership.agreements_registry %}
 <tr>
   {% if agreement.done %}
