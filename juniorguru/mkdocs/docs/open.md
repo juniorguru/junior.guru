@@ -318,6 +318,8 @@ Ukončená partnerství: {% for partner in partners_expired %}{{ partner_link(pa
 
 Tenká modrá čára představuje počet členů, kteří si členství platí ze svého. Tenká zelená čára ukazuje ty z nich, kteří preferují roční platbu před měsíční.
 
+Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže graf začíná až v březnu 2023.
+
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
@@ -359,6 +361,8 @@ Každý příchozí člen má v klubu dva týdny zdarma, bez ohledu na to, jaký
 S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzájem neplatíme. Oni využívají platformu klubu pro svůj mentoring a své studenty. Všichni mají automaticky vstup zdarma. Klub má díky tomu experty na frontend a moderátora Dana Srba.
 
 S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou studenty svých kurzů a proplatí jim členství na první tři měsíce. Agentura z toho má službu pro studenty navíc a já z toho mám to, že pokud se lidem v klubu zalíbí, budou si jej dál platit ze svého.
+
+Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže graf začíná až v březnu 2023.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
@@ -419,6 +423,8 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
 
 Graf s registracemi obsahuje všechny typy členství. Ať už nový člen přišel přes firmu, stipendium, nebo individuálně, tak se započte. Tenká modrá čára představuje počet členů, kteří v daném měsíci poprvé v historii svého členství přešli na individuální placení. Jsou to především noví členové, kteří se po dvou týdnech na zkoušku rozhodli, že si klub začnou platit. Mohou to ale být i firemní členové nebo studenti ze vzdělávacích agentur, kterým skončilo členství zaplacené někým jiným a rozhodli se pokračovat za svoje.
 
+Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže graf začíná až v březnu 2023.
+
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
@@ -449,6 +455,8 @@ Graf s registracemi obsahuje všechny typy členství. Ať už nový člen při�
 
 Procento členů, kteří z klubu odcházejí, neboli _churn_. Tlustá čára zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli a poté za něj nezačali platit. Tam se očekává celkem velký odpad, ale i tak graf napovídá, jak se daří držet nově příchozí členy v klubu. Tenká čára sleduje pouze ty, kdo zrušili už existující individuálně placené členství. Naznačuje tedy odchody členů, kteří se za klub rozhodli platit, ale následně změnili názor. Očekává se, že juniorům, kteří si nakonec práci v IT našli, pokryjí většinu hodnoty klubu kolegové ve firmě, kde pracují. Také se v prvních měsících intenzivně zaučují a na klub tak často už nemají čas, i když je to tam baví.
 
+Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže graf začíná až v březnu 2023.
+
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
@@ -478,6 +486,8 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_. Tlustá čára za
 ### Délka setrvání v klubu
 
 Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kterým členství platí firma, nebo jej mají zadarmo. Graf průměrné délky členství v klubu tedy počítá pouze s těmi, kdo si platí sami.
+
+Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže graf začíná až v březnu 2023.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
@@ -564,6 +574,8 @@ Podíl žen sleduji z vlastní zvědavosti a není to žádná přesná metrika.
 ### Podíl žen v klubu
 
 Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/cri/lidske-zdroje-v-informacnich-technologiich-2020) je v českém IT pouze 10 % žen. Tento podíl se od jejich [předchozí analýzy v roce 2018](https://www.czso.cz/csu/czso/cri/ict-odbornici-v-ceske-republice-a-jejich-mzdy-2018) nezlepšil, naopak nás definitivně předběhly už všechny ostatní státy v Evropě.
+
+Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže graf začíná až v březnu 2023.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"

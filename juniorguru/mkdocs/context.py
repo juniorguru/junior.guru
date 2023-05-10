@@ -32,6 +32,8 @@ BUSINESS_BEGIN_ON = date(2020, 1, 1)
 
 CLUB_BEGIN_ON = date(2021, 2, 1)
 
+MEMBERS_DATA_CORRUPTION_END_ON = date(2023, 3, 1)
+
 MILESTONES = [
     (BUSINESS_BEGIN_ON, 'Začátek podnikání'),
     (date(2020, 9, 1), 'Vznik příručky'),
@@ -118,7 +120,7 @@ def on_docs_context(context):
     context['charts_cost'] = charts.per_month(Transaction.cost, business_charts_months)
     context['charts_cost_ttm'] = charts.per_month(Transaction.cost_ttm, business_charts_months)
     context['charts_cost_breakdown'] = charts.per_month_breakdown(Transaction.cost_breakdown, business_charts_months)
-    club_charts_months = charts.months(CLUB_BEGIN_ON, TODAY)
+    club_charts_months = charts.months(MEMBERS_DATA_CORRUPTION_END_ON, TODAY)
     context['charts_club_labels'] = charts.labels(club_charts_months)
     context['charts_club_annotations'] = charts.annotations(club_charts_months, MILESTONES)
     context['charts_subscriptions'] = charts.per_month(ClubSubscribedPeriod.count, club_charts_months)
@@ -127,7 +129,7 @@ def on_docs_context(context):
     context['charts_subscriptions_breakdown'] = charts.per_month_breakdown(ClubSubscribedPeriod.count_breakdown, club_charts_months)
     context['charts_women_ptc'] = charts.per_month(ClubSubscribedPeriod.women_ptc, club_charts_months)
     context['charts_individuals_duration'] = charts.per_month(ClubSubscribedPeriod.individuals_duration_avg, club_charts_months)
-    club_trend_charts_months = charts.months(CLUB_BEGIN_ON, charts.previous_month(TODAY))
+    club_trend_charts_months = charts.months(MEMBERS_DATA_CORRUPTION_END_ON, charts.previous_month(TODAY))
     context['charts_club_trend_labels'] = charts.labels(club_trend_charts_months)
     context['charts_signups'] = charts.per_month(ClubSubscribedPeriod.signups_count, club_trend_charts_months)
     context['charts_individuals_signups'] = charts.per_month(ClubSubscribedPeriod.individuals_signups_count, club_trend_charts_months)
