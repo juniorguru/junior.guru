@@ -526,7 +526,7 @@ Ty se taky započítají do celkové velikosti, ale v tabulce je jejich velikost
 </tr>
 {% for page in pages_handbook %}
     <tr>
-        <th><a href="{{ pages|docs_url(page.src_uri)|url }}">{{ page.src_uri.removeprefix('handbook/') }}</a></th>
+        <td><a href="{{ pages|docs_url(page.src_uri)|url }}">{{ page.src_uri.removeprefix('handbook/') }}</a></td>
         <td>
             {% if page.size < 1000 %}
                 🚧
