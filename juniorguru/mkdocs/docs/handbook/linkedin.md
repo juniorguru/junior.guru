@@ -12,6 +12,18 @@ template: main_handbook.html
   {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě připravuje. Brzy tady něco bude. Mezitím si můžeš přečíst o tom, jak si vyladit [životopis](cv.md).
 {% endcall %}
 
+<!-- {#
+
+https://navolnenoze.cz/novinky/minutovy-kurz-linkedin/
+
+— na linkedin si můžeš nastavit vlastní URL a nebude to tak dlouhé
+
+V neposlední řadě jsem si všiml, že připravujete nový článek o Linkedinu, tak posílám pro inspiraci náš článek o tom, jak nahrát životopis na Linkedin (https://cvapp.cz/blog/jak-nahrat-zivotopis-na-linkedin).
+
+Adresu na LI si můžeš udělat custom (na editaci profilu), takže bude kratší a ne https://www.linkedin.com/in/adam-valenta-6050a2234/ a pak ji tam napsat třeba jako linkedin.com/in/a-valenta/ jde jen o to, aby to šlo opsat do prohlížeče.
+
+#} -->
+
 <!-- {% call lead() %}
   Bla bla
 {% endcall %} -->

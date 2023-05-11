@@ -76,7 +76,21 @@ Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo d
   {{ 'exclamation-circle'|icon }} Tuto část Honza teprve píše. Brzy tady něco bude.
 {% endcall %}
 
-<!--
+
+
+<!-- {#
+
+https://dariagrudzien.com/posts/the-one-about-your-github-account/
+https://dev.to/yuridevat/how-to-create-a-stunning-github-profile-2mh5
+
+Těm projektům na Githubu chybí třeba popis, co to vlastně je, jak to funguje, a odkaz na nasazenou verzi, ale asi na tom ještě pracuješ. Bude se to hodit, až/pokud se těmito projekty a svým Github profilem budeš prezentovat při hledání práce.
+
+gitleaks projdou kod a oznami vsechno co vypada jako token atd.
+
+GitHub je tvoje osobní polička. Až když na něj dáš odkaz do svého CV a pošleš firmám, stává se z něj vitrínka 🙂
+
+Ber to tak, že na GitHub ti nikdo nekouká, i když je to veřejné, dokud mu k tomu nedáš hodně dobrý důvod. Těch profilů je tam milion a dá velkou práci způsobit, aby se tam někdo na něco koukal, když chceš 🙂
+
 {% call blockquote_avatar(
   'GitHub vyčistit, _polishnout_, upravit. Stejně jako CVčko je to věc, která vás má prodat. Projekty, kterými se chlubit nechceš, radši skryj.',
   'jiri-psotka.jpg',
@@ -259,4 +273,5 @@ yablko návod na github a git, naučse návod na git
 
 https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-your-profile-readme
 https://www.gitkraken.com/learn/git/tutorials
--->
+
+#} -->

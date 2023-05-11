@@ -347,3 +347,41 @@ Máš se naučit [dobře prodat co umíš](#jak-nad-tim-premyslet) a dávat do v
 Tato strategie je fajn, ale **můžeš být v situaci, kdy se to nehodí**. Nemusíš mít zrovna mentální sílu vystoupit z davu, ne každý má vysněnou firmu, ne vždy si můžeš dovolit programovat něco na míru. A korporát možná ocení PDF víc než hru, kterou si můžou zahrát.
 
 **Životopis podle junior.guru je kompromis**. Posíláš sice papír, ale uděláš ho tak, aby nebyl nudný. Dáváš do popředí svoje výrobky a silné stránky. Necháváš vyniknout, kdo jsi.
+
+
+
+<!-- {#
+
+jak na cv v angličtině
+https://www.youtube.com/watch?v=Jhn5-N7ABP8
+
+- šablona od Dana (Šablona CV thread na Discordu)
+- citace z kayly clanku o syndromu
+- konkretni priklady na realnych CV
+- citace monika ptacnikova, Málokdy poslouchám podcast pro juniory a celou dobu kývu souhlasně hlavou. S Monikou ptacnikovou se mi to stalo, opravdu realisticky náhled na pracovní trh a na možnosti, jaké juniorky a juniori mají 👏 Kolem -5 minuty ptacnikova rika o CV tak něco vzit z tiho - https://overcast.fm/+oxWgC3EHI
+- citace nulíčková a link na kariérko
+- Další dobré tipy jsou i v [Tech Interview Handbook](https://yangshun.github.io/tech-interview-handbook/resume) nebo na [prace.rovnou.cz](https://prace.rovnou.cz/jak-zivotopis.html).
+- hledání práce tím, že se nabídnu v různých skupinách na FB
+
+https://www.resumemaker.online/
+
+První článek je o životopisech EUROPASS. Ve Vašem článku se zmiňujete, že životopisy od EUROPASSu jsou neoriginální, což by šlo krásně podložit naším článkem Europass CV:Některá pozitiva a řada negativ evropského životopisu.
+
+Dále máme několik užitečných návodů i se vzory na životopisy pro jednotlivé pracovní pozice například: Vývojář softwaru, Programátorka, IT manažer či Stáž, případně i obecný návod pro životopis bez jakýchkoli pracovních zkušeností (https://cvapp.cz/blog/jak-napsat-zivotopis-kdyz-vam-chybi%20jakekoli-zkusenosti).
+
+---
+Osobní web
+Není pro každého a ne každá profese v IT, ani programátorská, nemá nutně skillset na tvorbu vlastního webu. Ale pokud jsem frontenďák, je to low hanging fruit. Třeba https://www.robertbelan.com/ nebo další.
+
+Nebo si udělám web, kde mám možná víc prostoru kreativně vyjádřit kdo jsem a co mám za sebou, i když si ho nevytvořím od píky, ale na nějaké platformě. Taky tam můžu mít třeba blog, kde se dá popisovat např. moje cesta do IT nebo co jsem se naučil nového a může to sloužit jako impostorsyndromový zápisník: https://itnoob.cz/, https://ivet1987.wz.cz/
+
+https://junior.guru/candidate-handbook/#osobni-web-a-blog
+---
+
+https://jsonresume.org/
+flowcv.io
+
+thread o tom ze mas rict proc zrovna do te firmy
+https://discord.com/channels/769966886598737931/932606706809204786/933082534621892638
+
+#} -->
