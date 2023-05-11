@@ -511,7 +511,7 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
 
 ## Příručka
 
-Orientační metriky co se týče stránek v [příručce](../handbook/index.md).
+Orientační metriky co se týče stránek v [příručce](handbook/index.md).
 Počítání znaků v souborech, kde se míchají Markdown a Jinja2 značky, má spoustu vad, ale aspoň něco.
 Příliš velké stránky bych měl nejspíš zkrátit, nebo rozdělit do více menších.
 
@@ -528,12 +528,12 @@ Ty se taky započítají do celkové velikosti, ale v tabulce je jejich velikost
     <tr>
         <td><a href="{{ pages|docs_url(page.src_uri)|url }}">{{ page.src_uri.removeprefix('handbook/') }}</a></td>
         <td>
-            {% if page.size < 1000 %}
+            {% if page.size < 2000 %}
                 🚧
             {% elif page.size < 20000 %}
                 ✅
             {% else %}
-                🔥
+                ❌
             {% endif %}
             {{ page.size|thousands }}
         </td>

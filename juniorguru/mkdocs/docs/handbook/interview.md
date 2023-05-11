@@ -198,5 +198,6 @@ Počítej i s tím, že **mnoho firem ti na tvůj zájem o práci vůbec neodpov
 - zkouset spis driv nez pozdeji, neni uplne co ztratit, impostor syndrom
 - rande, neni to jednostranne, i clovek si vybira firmu, nebrat hned prvni prilezitost, duverovat vlastnimu gut feelingu
 - svarc system
+- https://metro.co.uk/2019/06/01/boss-shares-coffee-cup-test-uses-every-interview-9771626/
 
 #} -->

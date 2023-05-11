@@ -33,6 +33,8 @@ nav:
       - ... | flat | topics/*.md
   - Partnerství:
       - ... | flat | open/*.md
+  - Připravované:
+      - ... | flat | handbook/*.md
   - Ostatní:
       - ... | flat
 
