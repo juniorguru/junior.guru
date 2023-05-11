@@ -513,6 +513,7 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
 
 Orientační metriky co se týče stránek v [příručce](../handbook/index.md).
 Počítání znaků v souborech, kde se míchají Markdown a Jinja2 značky, má spoustu vad, ale aspoň něco.
+Příliš velké stránky bych měl nejspíš zkrátit, nebo rozdělit do více menších.
 
 Když chci na nějaké stránce něco doplnit, dělám si na jejím konci HTML komentář a do něj si ukládám nepříliš strukturované poznámky.
 Ty se taky započítají do celkové velikosti, ale v tabulce je jejich velikost vynesena i do separátního sloupce, abych tušil, kde na mě ještě čeká kolik práce.
