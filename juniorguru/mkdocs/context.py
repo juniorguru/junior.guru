@@ -17,6 +17,7 @@ from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.exchange_rate import ExchangeRate
 from juniorguru.models.job import ListedJob
+from juniorguru.models.page import Page
 from juniorguru.models.partner import Partner, Partnership
 from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.story import Story
@@ -108,6 +109,7 @@ def on_docs_context(context):
     context['jobs_volunteering'] = ListedJob.volunteering_listing()
 
     # open.md
+    context['pages_handbook'] = Page.handbook_listing()
     context['partners_expired'] = Partner.expired_listing()
     business_charts_months = charts.months(BUSINESS_BEGIN_ON, TODAY)
     context['charts_business_labels'] = charts.labels(business_charts_months)

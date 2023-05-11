@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Any
 
 from mkdocs.config import load_config
 from mkdocs.structure.files import get_files
@@ -32,6 +33,22 @@ def main():
             source = f.read()
         data = dict(src_uri=file.src_uri,
                     dest_uri=file.dest_uri,
-                    meta=meta.get_data(source)[1])
+                    size=len(source),
+                    meta=parse_meta(source),
+                    notes=parse_notes(source))
         Page.create(**data)
     logger.info(f'Created {Page.select().count()} pages')
+
+
+def parse_meta(source) -> dict[str, Any]:
+    return meta.get_data(source.strip())[1]
+
+
+def parse_notes(source) -> str:
+    source = source.strip()
+    parts = source.split('<!-- {#')
+    if len(parts) == 1:
+        return None
+    if len(parts) > 2:
+        raise ValueError("More than one block of notes")
+    return parts[1].strip().removesuffix('#} -->').strip() or None

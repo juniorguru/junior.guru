@@ -509,6 +509,44 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
         'plugins': {'annotation': charts_club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
+## Příručka
+
+Orientační metriky co se týče stránek v [příručce](../handbook/index.md).
+Počítání znaků v souborech, kde se míchají Markdown a Jinja2 značky, má spoustu vad, ale aspoň něco.
+
+Když chci na nějaké stránce něco doplnit, dělám si na jejím konci HTML komentář a do něj si ukládám nepříliš strukturované poznámky.
+Ty se taky započítají do celkové velikosti, ale v tabulce je jejich velikost vynesena i do separátního sloupce, abych tušil, kde na mě ještě čeká kolik práce.
+
+<div class="table-responsive standout"><table class="table">
+<tr>
+    <th>Stránka</th>
+    <td>Celková velikost (znaky)</td>
+    <td>TODO (znaky)</td>
+</tr>
+{% for page in pages_handbook %}
+    <tr>
+        <th><a href="{{ pages|docs_url(page.src_uri)|url }}">{{ page.src_uri.removeprefix('handbook/') }}</a></th>
+        <td>
+            {% if page.size < 1000 %}
+                🚧
+            {% elif page.size < 20000 %}
+                ✅
+            {% else %}
+                🔥
+            {% endif %}
+            {{ page.size|thousands }}
+        </td>
+        <td>
+            {% if page.notes_size %}
+                🚧 {{ page.notes_size|thousands }}
+            {% else %}
+                ✅
+            {% endif %}
+        </td>
+    </tr>
+{% endfor %}
+</div></table>
+
 ## Aktivita v klubu
 
 ### Počet znaků napsaných na Discordu
