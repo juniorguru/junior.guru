@@ -48,4 +48,9 @@ https://www.linkedin.com/in/kaitlynchang/
 - https://www.linkedin.com/posts/femme-palette_weve-released-a-new-e-book-about-balancing-activity-7018836400825376768-A6R8
 - https://projekty.heroine.cz/zeny-it
 
+„Většina matek chce dál pokračovat. Často se samy ozvou, jestli pro ně něco máme, a vždycky máme. Pokaždé existuje nějaký malý projekt, který jim můžeme dát. Nebo chodí školit juniory. Ony jsou nadšené, my jsme nadšení,“
+https://denikn.cz/279531/koncici-sefka-slevomatu-muzi-si-me-na-jednanich-pletli-s-obsluhou-zeny-se-podcenuji-a-boji-se-selhani/?cst=91370c7fe392f469f161d9e86d3e151e0e237c39
+
+https://mamajob.online/
+
 #} -->

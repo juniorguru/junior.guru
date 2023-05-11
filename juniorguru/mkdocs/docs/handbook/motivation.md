@@ -382,3 +382,158 @@ Tento web se zabývá vytvářením softwaru, tedy programů pro počítače neb
 Pod některými kapitolami můžeš narazit na motivační příbehy lidí jako ty, kteří se bez předchozí znalosti naučili programovat, programování jim v něčem pomohlo, nebo si dokonce v IT našli i práci. Tady jsou všechny pohromadě. Pokud víš o dalších, které tu nejsou, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
 
 {{ stories_list(stories) }}
+
+
+<!-- {#
+
+- Přidat odstavec o AI na JG
+- stránka pro úplné začátečníky s code.org a scratchem pak poslat Pavlovi
+- https://www.facebook.com/groups/144621756262987/posts/840714789987010/
+- Být ajťák ve sklepě je sociální dostatečně! https://www.facebook.com/groups/junior.guru/posts/603771920546419/?comment_id=603893173867627&reply_comment_id=604521060471505&__cft__[0]=AZWvoQ7k4LtsUi2GvJ5V8o1d9-z3kLYiayBP87mrrziVf8swj67evDh4C-oMjVDL56j0Ikb9xvYiOP2Kholscjoq3hS4x5OtaZld3Bj34ovQLF1wxBPsCiC8P8-uM2gNQUaINrc810Kq9adv7EhE7Z4zxWAP1gd1ol5xD7lpDsSLyPvjhZ8Kz2m3AE6HJPcr45U&__tn__=R]-R
+- Nástupní mzdy se pohybují od 35 do 40 tisíc korun hrubého. Lze se dostat i na vyšší částky, je to ale vykoupené tím, že firma očekává vyšší samostatnost a rychlejší rozvoj dovedností. My našim studentům doporučujeme, aby do šesti až devíti měsíců od absolvování kurzu upřednostňovali nabídku s nižší mzdou a větším mentoringem ze strany právě seniorního pracovníka. V začátku kariéry je důležitější nabírat zkušenosti než několik tisícikorun navíc ke mzdě.
+- ajtaci asocialove ze sklepa? a videl nekdy nekdo ten sklep? me to prijde socialni dost (KMENY) https://www.youtube.com/watch?v=xg7xv6adtmI
+- Kolik to trva casu https://discord.com/channels/769966886598737931/788826407412170752/859537028081123358
+- https://engeto.cz/blog/kariera/budoucnost-pracovniho-trhu-v-cesku-maji-ajtaci-vyhodu/
+- separátní stránka se stories
+- vlozit video s tomasem hisemem z dvtv
+- Je vám 30 a ještě jste nic nedokázali? https://www.systemovemysleni.com/post/je-vam-30-a-jeste-jste-nic-nedokazali Nezoufejte – rád bych vám dnes na pár číslech ukázal, proč si myslím, že to vůbec není důvod ke stresu. Je mi 31, práci na plný úvazek se věnuju posledních 8 let Odnepaměti jsem žil v nevysloveném očekávání, že v tomhle věku už bude moje kariéra jasně daná a já budu stavět na své vybudované specializaci. Jak asi tušíte, tohle očekávání se nenaplnilo. Pojďme si těch 8 let dát do širší perspektivy. Pokud patříte k mojí generaci, v kolika letech byste si tipli, že půjdeme do důchodu? Můj osobní tip
+- https://www.youtube.com/watch?v=HluANRwPyNo
+- disclaimer u success stories https://discord.com/channels/769966886598737931/788826407412170752/823925224520155166 a ještě https://discord.com/channels/769966886598737931/864434067968360459/895988057419956224
+- https://www.csfd.cz/film/892942-nova-sichta/prehled/
+- Je daleko jednodušší začít v malém při aktuálním fungování, než se pokoušet o něco velkého, co pravděpodobně nevydrží.
+
+
+Poutavě odvyprávěné příběhy slavných lidí nebo třeba obětí zločinů a katastrof ovšem fungují přesně tak, jak to popisuje Cowen – vynechávají řadu informací a záměrně nebo mimoděk manipulují s publikem, což sice vede k větší atraktivitě a přístupnosti, ale také to snižuje důvěryhodnost sdělení.
+A ještě:
+Posedlost storytellingem v reklamě, politice, kultuře i médiích z nás všech tak trochu dělá podomní obchodníky s dekami a hrnci. Navzájem spolu manipulujeme a (byť někdy v dobré víře) si záměrně zamlčujeme řadu důležitých věcí. A možná ještě horším důsledkem je, že se kvůli důrazu na příběhy navzájem velmi podceňujeme a hovoříme spolu jako s malými dětmi.
+https://seznam-zpravy.u.mailkit.eu/mc/VVQIVPEI/IFFILXQQDLFARYLJIY/CQMCWMIUIPV
+
+
+Ebbinghaus observed that each time the newly-learned information was reviewed, the EFC was reset at the starting point, but with a *slower decay curve*.
+https://twitter.com/SahilBloom/status/1597940360025899008
+
+
+https://www.youtube.com/watch?v=EkUuXQUByuw
+
+
+2. Jak si vybrat první jazyk
+https://www.youtube.com/watch?v=NE-cOGmaMWs
+
+
+Přemýšlím, že se vrátím na šachtu, tam jsem měl prázdnou hlavu. Teď chodím z práce domů, vole, a furt nad něčím přemýšlím, furt mám něco v hlavě, vole, něco tě napadne, musím si ku**a zapnout komp, ty p**o. Mně se zdálo o závorkách - složené závorky, dvě složené závorky, ty p**o, jak to tam mám dát?
+https://zpravy.aktualne.cz/domaci/tomas-hisem-z-hornika-programatorem/r~927d3882bc9a11ebaedf0cc47ab5f122/
+
+
+Motivace: když koukáš na video, není to reálný odraz práce programátora
+https://discord.com/channels/769966886598737931/789045589869461536/825440188858630194
+
+
+stránka na JG o hurá-do-IT článcích
+https://twitter.com/honzajavorek/status/1589624519311835136
+https://img.ihned.cz/attachment.php/190/78043190/D1Wh0Gc9EtgpMuTUqsroKQv4FBOANaH2/HN_221208_Prace_v_IT.pdf
+https://archiv.hn.cz/c1-67147200-ajtakem-za-tri-mesice-firmy-maji-zajem-i-o-ty-bdquo-preskolene-ldquo
+
+
+clovek musi mit pro zmenu zazemi - podcast s GFA lukasem, hovory s Janem z Mews o samozivitelkach, lidi se vrhaji do zmeny kariery, protoze jsou na tom spatne, ale to neni vhodna chvile, kdy do toho jit, plus mozna by bylo vhodne zvazit nejakou soft IT pozici a ne programovani
+
+Stává se, ze lidi jsou ve špatné domácí a ekonomické situaci a najdou si kariérní změnu do IT jako řešení vsech svých problému. Jenže ta změna není vůbec jednoducha ve výsledku se dostanou do ještě horší situace, třeba jako samoživitelky apod. 😦
+
+Takže někde zdůraznit, ze aby se šlo do IT dostat, tak člověk potřebuje bazalni napr. ekonomickou stabilitu, ne aby se o to pokoušel kdyz nemá už kde brát.
+
+jak se rozhodnout? celá stránka o kariérovém poradenství s tím, že pokud na něj nemáš, zkus... a tam odkaz na klub, moje Q&A, zeptej se poradce (václavková atd.)
+
+
+https://www.joshwcomeau.com/blog/the-end-of-frontend-development/
+https://honzajavorek.cz/blog/empowered-by-ai-why-junior-devs-have-the-winning-edge/
+
+
+ Nahradí umelá inteligencia programátorov? #63
+https://www.youtube.com/watch?v=FMtoqfZuGs4
+
+
+https://www.idnes.cz/finance/prace-a-podnikani/it-kariera-vzdelani.A210701_615448_podnikani_sov
+https://www.novinky.cz/clanek/zena-styl-z-ucitelek-a-servirek-ajtacky-40329377
+https://honzajavorek.cz/blog/proc-se-neucit-python-v-roce-2021/
+
+
+https://docs.google.com/document/d/1sT4uWA3tqKOUD9Ql7OQ0SWqlH8dApV0k2efr8YcyZyg/edit
+
+
+motivace, talent, řemeslo (Tomáš Kai)
+https://www.facebook.com/groups/junior.guru/posts/607656380157973/?comment_id=607684926821785&reply_comment_id=608254406764837&__cft__[0]=AZUHC0TcaD2howuYZAWE7KHJbm1SepMNwNv6H94ggXL-Akg9DVVjVIIqj4vlosaER4_CUdNqPQlrCpbTLCu7RGL2Hh6tK9KDHTHSFFylFnJjANu-0KYm6GMTUnID_p-Fk29VD2Y8xuhmgqaJPb6gjmQQ&__tn__=R]-R
+
+
+
+CESTA K PRACI DO IT (vytazek z engeto dokumentu)
+Jakým způsobem byste měli postupovat, pokud zatím programovat vůbec neumíte, ale chtěli byste se to naučit a potom se tím i živit? Jak vypadá ona <osvědčená cesta>, která <funguje>, a po které jde dojít od nulových předchozích znalostí až k první práci v IT? Za junior.guru a Engeto Academy se shodujeme v tom, jaký postup bychom doporučili, a byl to i jeden z hlavních důvodů, proč jsme se rozhodli dělat tato videa společně. Myslíme si, že byste měli postupně projít přes následující kroky.
+
+1\. Hlavně začněte
+Důležité je nezaseknout se kvůli rozhodovací paralýze hned na začátku. Není podstatné, v jakém jazyce se budete učit programovat. Pokud znáte svoje budoucí zaměření, a například víte, že chcete dělat mobilní appky, tak ano, učte se jazyk zaměřený přímo na to. Jinak je to ale jedno a nejlepší službu vám prokáže ten jazyk, ke kterému máte nějaký vztah. Baví vás Minecraft? Vyberte jazyk, který tam jde použít. Našli jste zábavný kurz? Jeďte podle něj. Kamarádi se učí, jak dělat webovky? Učte se s nimi. Pokud si vyberete tímto způsobem, učení vás bude bavit a je vyšší šance, že u toho vydržíte. A pokud vůbec nevíte, hlavně to moc dlouho neřešte. Vyberte si Python a začněte.
+
+2\. Naučte se základy
+Máte vybraný jazyk? Nastal čas naučit se základy programování. Potřebujete si osvojit koncepty jako jsou proměnné, podmínky, cykly, třídy, a podobně. Tyto znalosti jsou podobné napříč všemi programovacími jazyky a budete je následně využívat stále znova a znova. Najděte si nějaký kurz pro úplné začátečníky, který vás těmito tématy systematicky provede. Většina knih, materiálů a kurzů pro ty, kteří nemají žádnou předešlou zkušenost s programováním, se zabývají právě tímto. Dokud základy neovládáte, těžko zvládnete vyřešit něco většího než školní cvičení a rozhodně nemá smysl si zkoušet hledat práci.
+
+3\. Ověřte své dovednosti na vlastním projektu
+Pokud se chcete programováním živit, základní kurz vám stačit nebude. Budete potřebovat vytvořit minimálně jeden větší projekt, na kterém prokážete, že nabyté znalosti umíte uplatnit v praxi. Projekt vás zároveň procvičí v oblastech, na které vás teoretická výuka připraví jen velmi těžko. Budete muset analyzovat problém, vyřešit jej a ověřit, zda řešení funguje správně. Nevyhnete se přemýšlení nad zadáním a jeho rozložení na menší kusy. Zaseknete se a okolnosti vás donutí naučit se, jak hledat příčinu problému a jak si správně říct o radu. Vyvstane potřeba plynule ovládat příkazovou řádku, editor, nebo se podívat na základy dalších technologií. To vše vás skvěle připraví na budoucí zaměstnání.
+
+Při práci na projektu pravidelně žádejte někoho zkušenějšího o zpětnou vazbu. V ideálním případě si najdi mentora, který ti pomůže překonávat nástrahy a dá ti kontext. Najít dobré mentory není úplně snadné a málokdy je to zadarmo, ale vaše učení s nimi bude rychlejší a kvalitnější. V klubu junior.guru nebo v kurzech, jaké má Engeto Academy, takové mentory najdeš.
+
+4\. Hledejte práci
+Nyní si můžete začít hledat práci. Funkční větší projekt vám poslouží jako důkaz, že vědomosti nabyté v knihách a kurzech umíte použít v praxi. Můžete jej nahrát třeba na GitHub, ať se na něj mohou lidé snadno podívat a čtením vašeho kódu odhadnout, jak jste daleko a co přesně vás budou potřebovat doučit. Vytvořte si životopis a začněte jej větou, která popisuje kdo jste a co chcete. Toto malé shrnutí mnoha lidem na CVčku chybí, přitom firmám pomáhá do pár sekund pochopit, s čím přicházíte. Následně vypište a okomentujte své projekty a až potom, co jste studovali.
+
+Firmy mají nedostatek programátorů, ale chtěli by ty zkušenější. Bohužel, někdy zoufale hledají i půl roku, jen aby nemuseli vzít juniornějšího kandidáta. I když jsou novinové titulky plné toho, jak je v IT nedostatek odborníků a i když vám zkušený kamarád z oboru potvrdí, že dostává deset nabídek práce denně, připravte se na to, že pro vás jako začátečníka bude hledání práce těžké. Nejdůležitější jsou dvě věci. Zaprvé, ukázat co už umíte na praktických projektech. Zadruhé, ukázat jak jste schopni a ochotni se učit, jak vás programování baví, jak jste nadšení. Firmy, které hledají juniory, nečekají mistry světa, ale nadějné vycházející hvězdy. Ukažte váš potenciál do budoucna.
+
+Také je vhodné zajistit si zpětnou vazbu a kontakty v oboru. Některé nabídky práce se ani nedostanou na veřejné pracovní portály, lidé si je sdílí mezi sebou a kandidáty berou na osobní doporučení. Proto je dobré být součástí nějaké komunity, např. programátorských srazů, nebo online klubu na junior.guru, který je přímo dělaný na to, abyste se radili o svých kariérních rozhodnutích, probírali pohovory, nebo dostali zpětnou vazbu na životopis. junior.guru navíc stahuje nabídky práce a třídí tak, aby zůstaly jen ty opravdu pro juniory.
+
+5\. Nevzdávejte to
+Je velmi pravděpodobné, že první pohovory skončí neúspěchem. Ze začátku se potřebujete nakalibrovat na to, jak vůbec probíhá pohovor v IT světě a co se od vás žádá. To nelze efektivně udělat jinak, než začít chodit na pohovory a zjistit aktuální realitu na trhu. Nevzdávejte své snažení po prvním neúspěchu, je to úplně normální. Shánění první práce může zabrat klidně 5 nebo 10 pokusů. Je vhodné v průběhu vylepšovat své znalosti a upravovat strategii, ale do pěti pohovorů nemá smysl to vzdávat. Po pěti pohovorech je dobré získat nějakou zpětnou vazbu od kariérních poradců nebo mentorů a ověřit si, zda děláte něco špatně, nebo jste prostě akorát měli smůlu.
+
+Firmy jsou různé. Často se ani vůbec neshodnou na tom, co znamená slovo junior. Jedna může být neseriózní, jiná má nereálná očekávání, třetí bude mít chaos v náborovém procesu a zapomene se vám ozvat, ve čtvrté si nemusíte sednout povahově. A je to, najednou jdete na pátý pohovor, ani nevíte jak. Nic si z toho nedělejte. Obrňte se trpělivostí a hlavně neberte hned první nabídku - nezapomeňte, že i vy si vybíráte firmu.
+
+
+
+SMYSL SUCCESS STORIES
+Všechny success stories jsou z definice cherry picking nebo survivor bias. Jejich úkolem není ukázat, že všichni to budou mít takto snadné, ale zafungovat jako vzor, že něco jde.
+Když Rom uvidí, že jiný Rom vystudoval psychologii a v pohodě, nevzdá svůj pokus jít za snem jen proto, že mu lidi řeknou „ty na to nemáš, žádný Rom to nedokázal“. Totéž děvče když uvidí prezidentku nebo horník když uvidí Tomáše Hisema.
+
+
+HURÁ VŠICHNI DO IT, ČLÁNKY V NOVINÁCH
+Tak jsem se trochu příspěvkem  https://m.facebook.com/groups/144621756262987/permalink/840504443341378/  zase dojmul a naprd a když už teda jsem v tom, tak se chci zeptat, jestli někdo nemáte známého v nějakém ,,bulvárním" plátku?
+Rád bych totiž uvedl na pravou míru ty vznostné články lákající do pasti nejednu zamilovanou geekovskou duši...
+Články typu:
+> Firmy marně hledají IT odborníky. Nedostatek „šponuje“ jejich mzdy
+https://www.denik.cz/.../it-odborniku-je-nedodstatek...
+> Berou víc než jejich šéfové. Programátorů je v Česku nedostatek, firmy musí hledat v zahraničí https://www.lidovky.cz/.../berou-vic-nez-jejich-sefove...
+> Nedostatek programátorů v Česku kompenzují cizinci
+https://roklen24.cz/.../nedostatek-programatoru-v-cesku.../
+s úžasnou hláškou v textu
+,,Firmy jsou přitom schopné programátorům nabídnout nástupní plat odpovídající i trojnásobku průměrné mzdy."
+Bingo pak je:
+,,Společně s nedostatkem zaměstnanců rostou v oboru IT i mzdy."
+Ač je vidíme teda spíše rapidně klesat...
+> Ajťáci jsou na roztrhání. Jejich nedostatek omezuje část firem v rozletu
+https://www.idnes.cz/.../it-odbornici-prumerna-mzda-firma...
+,,Jejich platy v Česku bývají i šesticiferné a dál rostou"
+> Jedna z nejžádanějších profesí? Programátor. Školy jich chrlí tisíce a pořád je to málo
+https://www.lupa.cz/.../it-poptavka-tvori-desetinu-vsech.../
+> V IT rostly nejvíce mzdy programátorům
+https://www.itbiz.cz/.../v-it-rostly-nejvice-mzdy.../
+Tak tedy pro uvedení na pravou míru pro ty, co na to slyší....
+Ano, platy jsou lukrativní jak slibují, to ano, ale nikdo už vám neřekne, že až tak za dva, za tři roky od chvíle co začněte. Až zeseniorníte a budete opravdu šikovní.
+A to ještě pokud budete v Praze a v opravdu rozumné firmě. Nejlépe ještě se zahraničními zakázkami.
+Jinak se mimo Prahu, a to možná i s těmi seniorními znalostmi, připravte na o něco více pár tisícovek než co máte možná teď..
+Z kraje Vás čeká hodně, hodně, hodně a hodně učení, možná více než jste se učili na střední škole. A pak hodně a hodně praxe a zkoušení ať to vše dostanete do ,,prstů", jinak teorii hned zapomenete. A než se to vše naučíte možná už bude na trhu nějaká žádaná novinka, takže něco budete muset zase zapomenout a učit se něco znova. Toho se neděste. Stejně se nenaučíte vše co by jste umět měli. A stejně se každou chvíli budete učit zase něco nového. No a potom jste konečně junior. Jako junior dostanete za to vše tak 25 000 až 35 000 korun. Dostat víc je něco jako vyhrát ve sportce. Tedy zázrak. No a s tímto vytrvejte tak rok dva a následně pak platí vše to výše. A ke všemu si dejte opravdu bacha kam nastupujete https://forum.root.cz/index.php?topic=24385.msg346296...
+Tak hurá do toho...
+Vždyť přeci https://www.irozhlas.cz/.../ceske-firmy-maji-nedostatek...
+
+- https://www.facebook.com/groups/144621756262987/?multi_permalinks=840714789987010&hoisted_section_header_type=recently_seen&__cft__[0]=AZVnXBXFYNsserbFQgP5guip4BDn2JKzvlywkTmUk5OxEvgLMfmryr6DD6sqL4rX7zw9Gd-RTyB03QF8JrIijfiD3ebigo35o3J95aQvBzncpxnHqp5_dsVooF1D5k5PR9hx5mxjqGKkq_KSD9JFHyobxyJl6CZSdb8SsIEclVorzTtCYXf7RzBYTaI7oQZL0MY&__tn__=%2CO%2CP-R
+- https://www.irozhlas.cz/zpravy-domov/ceske-firmy-maji-nedostatek-it-specialistu-podle-odhadu-chybi-az-100-tisic-programatoru-_201604100315_amanourova
+- https://forum.root.cz/index.php?topic=24385.msg346296#msg346296
+- https://www.itbiz.cz/clanky/v-it-rostly-nejvice-mzdy-programatorum-/
+- https://www.lupa.cz/clanky/it-poptavka-tvori-desetinu-vsech-mist-na-pracovnich-serverech-kraluji-programatori/
+- https://www.idnes.cz/ekonomika/domaci/it-odbornici-prumerna-mzda-firma-nedostatek.A191004_154411_ekonomika_maz
+- https://roklen24.cz/prave-se-stalo/nedostatek-programatoru-v-cesku-kompenzuji-cizinci/
+- https://www.lidovky.cz/byznys/berou-vic-nez-jejich-sefove-presto-je-techto-lidi-v-cesku-i-jinde-obrovsky-nedostatek-casto-se-saha.A190908_211709_ln_domov_ele
+- https://www.denik.cz/ekonomika/it-odborniku-je-nedodstatek-jejich-mzdy-rostou-20190818.html
+
+#} -->
