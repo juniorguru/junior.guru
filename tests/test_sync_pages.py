@@ -1,6 +1,7 @@
 from textwrap import dedent
 
 import pytest
+
 from juniorguru.sync.pages import parse_meta, parse_notes
 
 

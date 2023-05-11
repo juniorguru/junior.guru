@@ -1,4 +1,4 @@
-from peewee import CharField, TextField, IntegerField
+from peewee import CharField, IntegerField, TextField
 
 from juniorguru.models.base import BaseModel, JSONField
 
