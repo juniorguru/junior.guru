@@ -178,3 +178,25 @@ Je to jako Tinder — odmítnutí znamená, že si navzájem šetříte čas. Be
 Řekni si o **zpětnou vazbu po pohovoru**. Může to být dobrý zdroj poznatků (nebo ujištění, že ta firma není nic pro tebe). Někdy ti bohužel žádnou zpětnou vazbu nedají, ale to nemusí být vyloženě chyba těch, kteří s tebou vedli pohovor. **Mnoho velkých mezinárodních firem má doporučení od právníků, že zpětnou vazbu nemá vůbec poskytovat.** Existuje pro ně totiž riziko, že by ji kandidát mohl zneužít k žalobě kvůli diskriminaci. Pošlou ti nějakou obecnou větu, např. „hledáme někoho zkušenějšího“. Nepropadej depresi, že zbytečně investuješ hodiny do učení a práci nenajdeš. Za touto větou se ve skutečnosti může skrývat naprosto cokoliv. Můžeš je vzít za slovo a zkusit se [zeptat na stáž](candidate.md#staze).
 
 Počítej i s tím, že **mnoho firem ti na tvůj zájem o práci vůbec neodpoví**. Ať už mají příliš mnoho kandidátů a odpovídat každému by bylo náročné, nebo jsou prostě nedbalí ve svém přijímacím procesu, výsledek je stejný — můžeš čekat týdny a nic z toho nebude. **Odpovídej na několik nabídek zároveň!** Může se ti stát, že budeš mít na výběr, a díky tomu i méně stresu a lepší [vyjednávací pozici](#vyjednavani).
+
+
+
+<!-- {#
+
+- sdilej zazitky, protoze to pomuze tobe i ostatnim
+- zdravi mysli
+- reality check
+- eticke neeticke chovani
+- projekty/ukoly na doma
+- standardni prubeh pohovoru, jake ma casti, co se kdy deje
+- psotka podcast, kamenistak
+- codility
+- ruzne hadanky a leetcode, co si o tom myslet, zda to potrebovat, jak se na to pripravit, kontext s USA, whiteboard interviews
+- obecne o uzitecnosti algoritmu
+- proc firmy neodpovidaji (meme king charles)
+- pravidlo 10 pohovoru minimum a pak udelat reality check
+- zkouset spis driv nez pozdeji, neni uplne co ztratit, impostor syndrom
+- rande, neni to jednostranne, i clovek si vybira firmu, nebrat hned prvni prilezitost, duverovat vlastnimu gut feelingu
+- svarc system
+
+#} -->
