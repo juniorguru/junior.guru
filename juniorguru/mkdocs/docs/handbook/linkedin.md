@@ -12,6 +12,7 @@ template: main_handbook.html
   {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě připravuje. Brzy tady něco bude. Mezitím si můžeš přečíst o tom, jak si vyladit [životopis](cv.md).
 {% endcall %}
 
+
 <!-- {#
 
 https://navolnenoze.cz/novinky/minutovy-kurz-linkedin/
@@ -22,13 +23,7 @@ V neposlední řadě jsem si všiml, že připravujete nový článek o Linkedin
 
 Adresu na LI si můžeš udělat custom (na editaci profilu), takže bude kratší a ne https://www.linkedin.com/in/adam-valenta-6050a2234/ a pak ji tam napsat třeba jako linkedin.com/in/a-valenta/ jde jen o to, aby to šlo opsat do prohlížeče.
 
-#} -->
 
-<!-- {% call lead() %}
-  Bla bla
-{% endcall %} -->
-
-<!--
 Portály s pracovními inzeráty umožňují vytvořit si profil, kde strukturovanou formou zadáváte informace z CV. Firmy se vám potom mohou samy ozývat. Užitečnost pro juniory je sporná, protože ti se na trhu musí spíš sami nabízet a hledat, než že by to fungovalo naopak.
 
 Speciálním případem takových profilů je LinkedIn. Je to profesní sociální síť, kde recruiteři hledají kandidáty, kandidáti firmy, firmy byznys, a tak dále. Díky tomu je to příležitost k online networkingu a i junior tam se svým profilem může udělat velkou parádu, když síť využije na maximum. Vše vyplňte, nasaďte si kolečko „open to work“ a přidávejte si recruitery ze zajímavých firem.
@@ -67,9 +62,9 @@ Jedna z těch zásadnějších rad je **začít jasným shrnutím**: _„I am a 
   Luboš Račanský, profesionální programátor, autor článku [O náboru juniorů](https://blog.zvestov.cz/software%20development/2018/01/26/o-naboru-junioru.html)
 {% endcall %}
 
-<small>Rady v této podkapitole volně vychází mimo jiné i ze [článku recruiterky Simony Liptákové](https://research.redhat.com/blogs_cpt/how-to-hack-your-cv-7-useful-tips-for-students-with-no-work-experience/). Díky!</small> -->
+<small>Rady v této podkapitole volně vychází mimo jiné i ze [článku recruiterky Simony Liptákové](https://research.redhat.com/blogs_cpt/how-to-hack-your-cv-7-useful-tips-for-students-with-no-work-experience/). Díky!</small>
 
-<!--
+
 Mateje o linkedinu minimalne citovat https://youtu.be/pTrTqUsKkME?t=3360 a predtim dela jeste screensharing
 
 velka cast o LI https://medium.com/@yablko/uk%C3%A1%C5%BE-%C5%BEe-si-%C4%8Dlovek-3d134c421940
@@ -141,4 +136,5 @@ Tak musím říct, že si to pamatuju o dost horší 😀 Teď to vypadá aspoň
 Pořád bych to nikomu nedoporučil. Nepřehledné. Je tam skoro všechno, co jsem kdy do LI vyplnil. Top skills se předvyplní něčím, co mi asi hlasovali lidi na profilu, takže můj známý by tam měl „tea preparation“. Možná mám moc převyplněný profil na LI (píšu si tam vše, abych si to nemusel pamatovat, nehledám práci). Možná bych ho mohl vyplnit s ohledem na vyexportované PDF. Ale pořád mi to neumožní poslat každé firmě jiné CV, ve kterém vypíchnu to, co je relevantnější.
 
 Pro někoho, kdo to moc neřeší, je to asi OK. Junior by to ale řešit měl. Nejde o mega mzdu a chlubení se něčím, co neumím, ale o to dodat recruiterovi na podnose ty nejpodstatnější informace a přehledně. To podle mě to PDF z LinkedIn nesplňuje.
--->
+
+#} -->
