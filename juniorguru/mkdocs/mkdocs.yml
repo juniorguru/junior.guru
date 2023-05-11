@@ -15,6 +15,7 @@ nav:
       - Hledání práce: handbook/candidate.md
       - Životopis: handbook/cv.md
       - LinkedIn: handbook/linkedin.md
+      - Pohovor: handbook/interview.md
   - Kurzy:
       - Přehled: courses.md
       - ... | flat | courses/*.md

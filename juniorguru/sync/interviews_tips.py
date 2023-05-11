@@ -36,8 +36,8 @@ async def discord_task(client):
                               description=embed_mentors_description)
         embed_handbook = Embed(description=(
             '📖 Než se pustíš do pohovorů, přečti si '
-            '[příručku na junior.guru](https://junior.guru/handbook/candidate/) o tom, '
-            'jak správně hledat první práci v IT.'
+            '[příručku na junior.guru](https://junior.guru/handbook/interview/) o tom, '
+            'jak se na ně připravit.'
         ))
         with mutating_discord(channel) as proxy:
             await proxy.send(content=(
