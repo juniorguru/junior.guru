@@ -244,4 +244,7 @@ Samozřejmě v obou případech je rozpor mezi očekáváním a realitou a urči
 
 řeším to (opět) i díky podcastu, do kterýho mě pozvali, protože ten je pro HR případně majitele firem, kteří lidi najímají sami…
 
+
+„Jenom si nedokážu představit jak to vůbec probíhá, když tě někam příjmou například na front-end developera a nebo python developera“
+
 #} -->

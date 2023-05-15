@@ -98,5 +98,7 @@ Nejrealističtější a nejpraktičtější mi připadá začít se učit hned, 
 
 A zároveň zkusit najít někoho, kdo to dělá a může nasměrovat na začátku. Kdyby ho zajímal webový frontend, tak rád pomůžu.
 
+Rychlokvašky
+https://discord.com/channels/769966886598737931/1104687389328281672/1105964105094934638
 
 #} -->
