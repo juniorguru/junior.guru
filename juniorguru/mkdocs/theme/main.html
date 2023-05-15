@@ -7,13 +7,13 @@
 
 {% block body %}
 <body>
-  <!--
-  <a href="https://www.stojimezaukrajinou.cz/" class="announcement" target="_blank" rel="noopener">
-    <strong>STOJIMEZAUKRAJINOU.CZ</strong>
-    <i class="bi bi-heart-fill"></i>
-    Pomáhat Ukrajině můžeš rukama i hlavou, materiálně i finančně, z terénu i z gauče
+  {% if '{:%Y-%m-%d}'.format(today) <= '2023-06-05' %}
+  <a href="https://www.podcastroku.cz/" class="announcement" target="_blank" rel="noopener">
+    <strong>PODCASTROKU.CZ</strong>
+    <i class="bi bi-mic-fill"></i>
+    Posloucháš Junior Guru podcast? Hlasuj pro něj v anketě Podcast roku!
   </a>
-  -->
+  {% endif %}
   <header id="header" class="navbar navbar-light">
     <nav class="navbar-container">
       <a class="navbar-brand " href="{{ '/'|url }}">

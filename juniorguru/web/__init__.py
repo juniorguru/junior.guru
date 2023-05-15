@@ -195,6 +195,7 @@ def inject_defaults():
     now = arrow.utcnow()
     return dict(nav_tabs=NAV_TABS,
                 now=now,
+                today=now.date(),
                 thumbnail=thumbnail())
 
 
