@@ -183,6 +183,27 @@ Počítej i s tím, že **mnoho firem ti na tvůj zájem o práci vůbec neodpov
 
 <!-- {#
 
+Monika Ptáčníková
+https://overcast.fm/+oxWgC3EHI
+
+The Pragmatic Engineer Test: 12 Questions on Engineering Culture
+https://blog.pragmaticengineer.com/pragmatic-engineer-test/
+
+švarc systém - tohle asi ještě oddělit do celé kapitoly zvlášť? na volné noze / ičo?
+https://finmag.penize.cz/penize/428665-proklinany-svarcsystem-ocima-expertu-ma-smysl-s-nim-bojovat
+
+konkurencni dolozka
+https://discord.com/channels/769966886598737931/788826407412170752/873095213382524988
+
+propad platu
+https://discord.com/channels/769966886598737931/788826407412170752/872461572864356412
+
+Ok, you're interviewing somewhere. Rad. There are some things you should write down before your first interview. Don't THINK these things, WRITE them down. It'll help. Those things are below.
+https://twitter.com/rands/status/1442577313795768320
+
+Z druhé strany – i tohle se děje 🙂 Ještě můj tip pro kandidáty – na on-line pohovoru čekejte, že vás budou chtít vidět. Je trochu zvláštní, když se kandidát schovává, nebo když zájemce o remote práci má zřejmé potíže nastavit audio/video setup.
+dějou se podvody https://trello.com/c/zbsJ4Hs0/6644-z-druh%C3%A9-strany-i-tohle-se-d%C4%9Bje-%F0%9F%99%82-je%C5%A1t%C4%9B-m%C5%AFj-tip-pro-kandid%C3%A1ty-na-on-line-pohovoru-%C4%8Dekejte-%C5%BEe-v%C3%A1s-budou-cht%C3%ADt-vid%C4%9Bt-je-trochu-zvl%C3%A1
+
 - sdilej zazitky, protoze to pomuze tobe i ostatnim
 - zdravi mysli
 - reality check
@@ -199,5 +220,70 @@ Počítej i s tím, že **mnoho firem ti na tvůj zájem o práci vůbec neodpov
 - rande, neni to jednostranne, i clovek si vybira firmu, nebrat hned prvni prilezitost, duverovat vlastnimu gut feelingu
 - svarc system
 - https://metro.co.uk/2019/06/01/boss-shares-coffee-cup-test-uses-every-interview-9771626/
+
+
+https://github.com/jwasham/coding-interview-university
+
+https://www.hanakonecna.cz/jak-jsem-totalne-zvorala-pohovor/
+
+
+Jinak k tomu DPH drobnost, limit není těch 80k obratu ale aktuálně 1mil ročně, bude prý až 2mil ročně. PLus to je jen povinost při výdělku u nás nebo v EU. Pokud obrat pochází mimo EU (usa), tak se povinnost DPH nevztahuje.
+
+
+Dohromady jsem se ozval (nebo se mi ozvali recruiteři) na 17 pozic a z toho bylo 7 pohovorů a z toho byly 2 nabídky práce, takže jsem si ještě mohl vybrat. Bohužel negativní odpověď je většinou mlčení, takže když se vám neozvou ve smluveném čase, můžete si firmu vyškrtnout.
+
+Bezpečná částka je z mé zkušenosti někde mezi 30 a 40k. To klidně zkoušejte.
+
+nesmysly na pohovorech https://darkcoding.net/software/a-day-in-the-life-of-a-professional-software-engineer/
+
+posli ukazku kodu na ktery jste pysni
+
+Tituly a role ve firmách
+Tituly podle množství zkušeností
+https://github.com/honzajavorek/junior.guru/issues/427
+
+Tomáš Arcanis Jílek Obecně řečeno: junior - řekneš mu co, řekneš mu jak mid - řekneš mu co a ví jak senior - ví co i jak
+
+61% of “entry-level” jobs require three or more years of experience. HR departments worldwide must stop such nonsense.
+https://twitter.com/simongerman600/status/979327554623557632
+
+Je jedno, s jakými jazyky máš zkušenost a máš se hlásit snad na všechno
+
+U startupů jsem se osobně ptal na kolik měsíců mají peníze na výplaty.
+
+Neni to uplne spatne. Nevidel jsem dve veci "Jak odmitnou nabidku" a dost podstatnou vec "kde hledat praci".
+
+Říkat si o stejné peníze je začátečnická chyba, u každé změny práce je třeba si říct minimálně o 10% navíc nebo se naučit vyjednávat a pochopit svojí hodnotu. Nepřijímat práci kde, slibují zvýšení mzdy po zkušebce, protože s tím často jde tlak na přechod na IČ. Nebrat stáže pokud člověk nemá velmi jasnou představu o své karierní cestě.
+
+https://twitter.com/masylum/status/1375740715758682113
+
+Uvést se na pohovoru
+Porovnejte sami. Na pohovoru můžete říct: „Jsem maminka a jen to zkouším.“ Ale také můžete říct: „Jsem absolventka Digitální akademie, teď jsem tři měsíce intenzivně studovala a říkala jsem si, že tohle je skvělá příležitost pro mě. Mám dvě děti, které už odrostly, a teď se chci rozvíjet víc pracovně.“
+https://www.czechcrunch.cz/2020/10/nejsme-personalka-pokud-firmy-chteji-vice-zen-musi-je-s-nami-vzdelavat-rika-spoluzakladatelka-czechitas-monika-ptacnikova/
+
+Recruiteri mi nerozumí
+https://discord.com/channels/769966886598737931/789107031939481641/885272982438699018
+
+Codility - Codility je platforma na pohovory. Dostaneš nějaký úkol a když ho odevzdáš, je vidět výsledek. Autotesty testují jak funkčnost tak výkonnost. Máš omezený čas na každý úkol a je vidět historie, jestli jsi třeba zkopírovala kus kódu nebo ručně ho napsala. Osobní zkušenosti při pohovorech s tím nemám, zkoušela jsem nějaká cvičení. Úlohy jsou většinou zaměřené na algoritmy a výběr správné datové struktury (výkonnost nad velkým datasetem).
+
+Freelancing: Zmínil bych také paušální daň od příštího roku, kdy odpadá povinnost daňového přiznání. Jinak pěkně napsaný článek :)
+
+zvídavost nejdulezitejsi vec u kandidata, bavi ho to, hrabe se v tom
+
+“Leetcoding”
+
+nechat si poradit od lidí, co dělají něco seniornějšího, než chci dělat, pomůže to odfiltrovat firmy kam nejít.
+
+Some of my favorite resources for prepping for a tech interview:💻 @kyleshevlin 's course on @eggheadio https://t.co/Rx7JJOL6yI💻 @hackerrank 💻 @EducativeInc 💻 @Coderbyte 💻 @exercism_io 💻 @LeetCode— Emma Bostian 🐞 (@EmmaBostian) February 11, 2020
+https://twitter.com/EmmaBostian/status/1227233753682104322
+
+Nejvíc lidi juniory zajímají, kdy už má smysl začít hledat si práci, co musí umět 😀
+potom nejvíc lidi zajímá na co se budou ptát na pohovoru, respektive ty úkoly praktické, z toho je strach 😀
+jo jako ono by stačilo třeba 3 konkrétní příklady jak probíhá pohovor
+
+Víš co mě ještě napadlo, co kdybys dával na svůj web příklady zadání, s kterými se junior může u pohovorů setkat nebo u výběrových řízení ? Že by si tak udělal představu jestli už jsou jeho znalosti dostatečné k tom usi hledat práci. Mě osobně nejvíce demotivuje to, že se úplně šprtám snžím se posouvat mám z toho třeba i dobrý pocit a pak při výběrku dostanu úkol, který nejsem v časovém horizontu schopen splnit protože se nestíhám doučit některé frameworky, které vyžadují  pro použití v kódu. Takhle bych si našel mustr co je třeba se doučit a na jaké úrovni. Možná už to budeš dávat do své knihy. Ale prosím tě to je jen nápad klidně to tam nedávej, nevnucuji ti to. Kdyby tě to zaujalo mám jedno zadání na webscraping.
+
+inzeráty, měnící se požadavky, firma sama neví, co chce
+https://trello.com/c/AdKjIdkZ/1380-%C3%BAprava
 
 #} -->

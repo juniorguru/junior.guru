@@ -16,9 +16,23 @@ noindex: true
 
 <!-- {#
 
+https://towardsdatascience.com/minimal-viable-developer-acing-your-first-month-in-software-8273663edb38
+
+https://cybermagnolia.com/blog/the-money-talk-meetup/
+
+https://www.sijinjoseph.com/programmer-competency-matrix/
+
+Co čekat od prvních dnů v práci? https://forum.root.cz/index.php?topic=24385.msg346296#msg346296
+
+tabs vs spaces https://www.youtube.com/watch?v=SsoOG6ZeyUI&t=2s
+
+https://twitter.com/norootcause/status/1475518692041510915
+
 "Junior in Company" advice
 https://docs.google.com/document/d/1ZSSfAOcWYYkzmcr0uc-oSc8cUfqnI60ha5l7-9iEecs/edit
 Dariin článek o tom, co má dělat junior v práci, jak se chovat, jak řešit věci. Možná je to celá oblast, kterou by se dalo zabývat?
+
+Tip co napsat do příručky: jak ukončit pracovní poměr 🙂 Natalie odchází z ČSOB a měla v tom trochu bordel, naštěstí někdo z HR ji poradil doplnit do dohody o ukončení práce nějaké další věci a také kontaktovat odbory.
 
 vytvaret content pro HR, aspon par kapitol, pak popremyslet o realnem ebooku na prodej
 
@@ -246,5 +260,11 @@ Samozřejmě v obou případech je rozpor mezi očekáváním a realitou a urči
 
 
 „Jenom si nedokážu představit jak to vůbec probíhá, když tě někam příjmou například na front-end developera a nebo python developera“
+
+https://www.howtodeal.dev/
+
+https://jvns.ca/blog/things-your-manager-might-not-know/
+
+Avoid These Common Mistakes Junior Developers Make! https://www.youtube.com/watch?v=5g3dK2DgW-k
 
 #} -->

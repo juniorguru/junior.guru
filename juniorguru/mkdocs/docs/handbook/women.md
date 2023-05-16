@@ -16,6 +16,8 @@ noindex: true
 
 <!-- {#
 
+https://cybermagnolia.com/blog/the-money-talk-meetup/
+
 - https://www.heroine.cz/zeny-it/7701-zeny-jsou-z-it-trhu-vytlacovany-rika-vedouci-analytik-lmc-tomas-dombrovsky
 - ženy v it stránka přímo v příručce kde jsou heroine články atd. a třeba i díl moderná firma o ženách nebo motherhood atd.
 - Vytvořit stránku ženy v IT, kde odkazu heroine a klidně i každý článek odtamtud, moje označené, potom odkazy, potom vysvětlit pro kazdyho proč ženy v it a proč se to hodí dělat a FAQ ala garáž (Brusel a EU atd)
@@ -28,5 +30,6 @@ noindex: true
 - https://developers.google.com/womentechmakers
 - https://medium.com/@lenka.stawarczyk/pro%C4%8D-si-%C5%BEeny-p%C5%99i-hled%C3%A1n%C3%AD-pr%C3%A1ce-nev%C4%9B%C5%99%C3%AD-a-nejsou-sp%C3%AD%C5%A1-jen-vyb%C3%ADrav%C3%A9-a50c936fb805
 - https://projekty.heroine.cz/zeny-it
+- https://www.facebook.com/groups/holkyzit
 
 #} -->

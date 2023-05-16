@@ -16,6 +16,7 @@ noindex: true
 
 <!-- {#
 
+- https://www.czso.cz/csu/czso/cri/lidske-zdroje-v-informacnich-technologiich-2020
 - smitio ankety
 - engeto anketa
 - data o pracovních nabídkách

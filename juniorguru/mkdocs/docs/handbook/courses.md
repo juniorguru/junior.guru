@@ -16,6 +16,18 @@ noindex: true
 
 <!-- {#
 
+problem rekvalifikacnich kurzu
+https://discord.com/channels/769966886598737931/788823881024405544/806236997545885718
+
+BTW možnost splácet až ze mzdy je o dost méně výhodná, než si vzít úvěr v bance. Pokud bych si půjčil na celých ~170000 Kč, co stojí GFA a splácel to celé ty 4 roky, tak je to splátka kolem 4000 měsíčně a cena celého úvěru je 20000 Kč. Rozdíl 70000 Kč a samozřejmě v tom zahrnuto vše, co musí banky dodržet ze zákona. Chápu, že ho každej nedostane, ale nedalo mi to nepoznamenat.
+https://www.facebook.com/groups/144621756262987/permalink/812343062824183/?comment_id=812442359480920&reply_comment_id=812627816129041&__cft__[0]=AZUT0qkG5wJZCam03qPSdt7pl0uDNOKGs5BRTL57sMVx6tkugan65PyUSGGJFZ3pikwddVx0UMZXjYxmFvRh0ceDbkrkOCZ_4QTMF7zp0aDDNlGx8eWqLcoYlU6opPd1NZw&__tn__=R]-R
+
+Dan: Jeden velkej problém bootcampů je ten, že pro ně je obchodně nejlepší vzít lidi, co by to zvládli sami, ale neví to. Nejmíň práce je to naučit, nejlepší úspěchy absolventů.
+
+Sekce s mnoha odkazy na kurzy je tato https://junior.guru/practice/#courses S tou nejsem spokojený, protože jedním z cílů JG je vyřešit začátečníkům rozhodovací paralýzu a ukázat jim jasnou cestu, kde a s čím začít. Tato sekce jde proti tomu, je to snaha o vyčerpávající výčet a různé vzdělávací agentury jsou tam abecedně na jedné hromadě. Právě jsem tam SDA přidal, odkaz na vás tam určitě patří. Jaká je budoucnost té sekce zatím nevím, ale v současné chvíli si myslím, že takový seznam nikomu moc nepomáhá. Bylo by podle mě lepší vysvětlit co je bootcamp, online kurz, prezenční kurz, jaké jsou v ČR/SR možnosti. Dodat lidem informace, které jim pomohou zjistit kontext a informovaně si sami z nějakého nezaujatého „katalogu“ vybrat to, co jim bude nejvíc vyhovovat - jinak se budou rozhodovat jen podle toho, kdo bude mít nejvytrvalejší PR (...narážím na Coding Bootcamp Praha).
+
+Ahoj, chci se zeptat jaká je realita mezi kurzem a zaměstnání? Ptám se pro to jestli se dá uplatnit zkušenosti  z kurzu kterým jsem prošel a nebo to chce se zaměřit ještě na něco ?
+
 vytvořit „návod“ na kurzy a bootcampy do příručky a propojit to - Jak vybrat kurz?
 
 Dopředu můžu říct že žádný kurz z tebe programátora neudělá pokud tomu nedáš víc času sám.
@@ -24,9 +36,12 @@ https://www.facebook.com/groups/144621756262987/posts/901761870548968/?__cft__[0
 typy kurzů
 tutorial hell
 
-https://www.youtube.com/watch?v=EkUuXQUByuw
+Learn learn learn loop
+https://twitter.com/OzolinsJanis/status/1420344259367030784
 
 https://twitter.com/OzolinsJanis/status/1592122944280748035
+
+https://www.youtube.com/watch?v=EkUuXQUByuw
 
 Poslechnout ještě jednou a udělat z toho citáty a linkovat z katalogu pod skillmea
 https://overcast.fm/+U67E82wxk
@@ -100,5 +115,10 @@ A zároveň zkusit najít někoho, kdo to dělá a může nasměrovat na začát
 
 Rychlokvašky
 https://discord.com/channels/769966886598737931/1104687389328281672/1105964105094934638
+
+No rozhodně bych si poradila ať se více ptám na věci, které mi nebyly úplně jasné. I když prostředí v Pyladies bylo přátelské, ten strach položit "hloupý dotaz" tam pořád častečně byl a byla to škoda :). Dále nenechat se odradit a zdeptat tím, že to trvá déle než člověk čeká, popřípadě má pocit, že mu to jde pomaleji než zbytku. A taky teď zpětně vnímám to, že vymyslet si nějaký větší projekt a sehnat si mentora na zpětnou vazbu by mě dopředu posunulo rozhodně rychleji. A rozhodně bych si doporučila věnovat se tomu pravidelně. Stávalo se mi, že jsem měla v učení třeba měsíc pauzu a pak bylo o dost těžší se do toho znovu  dostat :).
+
+Příručka: rekvalifikace proplacená od státu
+https://byznys.ihned.cz/c1-66848610-chcete-rekvalifikaci-na-programatora-ci-pilota-dronu-vime-jak-si-ji-nechat-zaplatit-statem-nebo-unii
 
 #} -->

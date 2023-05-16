@@ -740,3 +740,63 @@ Kde se bere vášeň? Do začátku stačí, když ti programování přijde jako
 **P.S.** Nezapomeň, že jsi na „živé stránce“, na které stále probíhají úpravy. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/honzajavorek/junior.guru/commits/main/juniorguru/mkdocs/docs/handbook/), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](../club.md).
 
 A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'honza@junior.guru'|email_link }}. Jestli se ti díky junior.guru povede sehnat práci, ozvi se! Můžeš [motivovat ostatní svým příběhem](motivation.md#vsechny-motivacni-pribehy), nebo tím prostě jen udělat [Honzovi](#honza) radost.
+
+
+<!-- {#
+
+https://www.freecodecamp.org/news/what-is-web-development-how-to-become-a-web-developer-career-path/
+
+Suma sumárum je to 10 měsíců od chvíle, kdy jsem se rozhodl změnit kariéru z učitele na programátora. Doufám, že vám tohle trochu pomůže a nabudí vás to. Kdyžtak se na cokoliv ptejte.
+jak jsem hledal práci - https://discord.com/channels/769966886598737931/789107031939481641/866373605951537173
+
+https://www.freelance.cz/
+
+https://cybermagnolia.com/blog/the-money-talk-meetup/
+
+podle čeho vybrat první job https://youtu.be/dyQTfuL1Q0g
+
+glue kariéra, dobře komunikující lidi na pomezí technical a communitative https://noidea.dog/glue
+
+https://cestakzamestnani.cz/
+
+Jinak k tomu DPH drobnost, limit není těch 80k obratu ale aktuálně 1mil ročně, bude prý až 2mil ročně. PLus to je jen povinost při výdělku u nás nebo v EU. Pokud obrat pochází mimo EU (usa), tak se povinnost DPH nevztahuje.
+
+http://simonwillison.net/2022/Nov/6/what-to-blog-about/
+
+v létě jsou hiring manažeři a HR často na dovolené + s juniorními pozicemi počítají, že nejvíce zájemců bude v září - absolventi si většinou udělají poslední hezké léto na půl úvazek nebo na žádný, a nastupujou až v září. Léto je určitě slabší. Stejně jako prosinec.
+
+velká část firem má fiskální rok a kalendářní rok identický (my zrovna ne, náš fiskál končí teď v říjnu), takže typicky od října/listopadu už je jasné, kolik peněz a na jaké pozice bude a začínají se vypisovat - s ideálem, aby ten nový člověk nastoupil co nejdřív od začátku roku
+https://discord.com/channels/769966886598737931/788826407412170752/902872779924316161
+
+blogging was the best thing i ever did
+https://open.spotify.com/episode/2VKvivHgq6SwunwIUGfmQZ
+
+For junior position it might be rather difficult to go through recruitment agency. The reason is that recruiters are generally considered expensive and there are a lot of candidates for junior positions on the market, so companies prefer to hire juniors themselves and use recruiters' help with positions that are more difficult to fill.  While it might still be possible to find junior role via recruiters, I'd recommend to start applying directly to companies. Check out LinkedIn, Xing (if you consider Germany), Stack Overflow, but also company pages directly (they might be promoting higher positions outside but also have junior roles on their career sites)
+
+jeste jedna vec takova, ale to nevim jestli jsem zrovna nemel jen kliku, tak mi prijde, ze ve velkejch firmach muzes vic najit mega chytryho cloveka od kteryho se da ucit. to v mensich tezko najdes, pac ho nezaplatej
+
+https://almad.blog/notes/2020/on-four-types-of-dev-companies/
+
+https://technicalinterviews.dev/
+
+Udělám kompromis na kulturu, zamknu se v česky firmě, nebo půjdu ven angličtina větší svět
+
+vuy radí https://twitter.com/terrameijar/status/1311839746537254913
+
+https://www.linkedin.com/feed/update/urn:li:activity:6679279756376064001/?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6679279756376064001%2C6679322502440722432%29
+Prosím přidej i popis různých typů produktů https://www.joelonsoftware.com/2002/05/06/five-worlds/
+
+úpravy v rozdělení firem a tak
+https://trello.com/c/c5ZXh2OV/850-upravy
+
+větší menší firmy
+https://trello.com/c/FJGVxHqF/933-p%C5%99%C3%ADru%C4%8Dka
+
+kolik si vydělám?
+https://trello.com/c/Ivq66HuS/888-p%C5%99%C3%ADru%C4%8Dka
+
+Uaaa, dataři neřeší jen jednorázový úkoly!!!!1
+https://twitter.com/PetraVidnerova/status/1301810810763833344
+https://twitter.com/kondrej/status/1301792984141365248
+
+#} -->

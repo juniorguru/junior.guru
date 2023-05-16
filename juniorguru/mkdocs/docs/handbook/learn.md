@@ -289,3 +289,97 @@ Mnohem více než [matematika](motivation.md#nemas-na-to-matematicky-mozek-chybi
 </div>
 
 {{ links_note() }}
+
+
+<!-- {#
+
+KSI, neboli Korespondenční seminář z informatiky, je celoroční soutěž organizovaná primárně studenty Fakulty informatiky Masarykovy univerzity. Cílem semináře je seznámit řešitele se zajímavými oblastmi informatiky a procvičit programátorské, matematické a logické myšlení. Seminář je uzpůsoben jak pro úplné začátečníky, kteří si na jednoduchých příkladech procvičí danou problematiku, tak pro zkušenější řešitele, kteří se pokusí pokořit hlavní soutěžní úlohy.
+https://ksi.fi.muni.cz/
+
+„Java je ve světě Androidu za zenitem (aspoň v mojí android-sociální bublině). I Google už všude tlačí Kotlin, i když Java je pořád supported, není deprecated. Nový projekty se určitě začínají jen v Kotlinu, tam není nad čím přemýšlet. Občas pracujeme se staršíma codebases, kde je ještě Java, ale většinou se to postupně překlápí na Kotlin. Jeden z velkých problému Javy na Androidu je (krom soudních sporů s Oraclem), že nejsou podporovány nové verze Javy. Teď jde myslím používat Javu 11, ale dlouho to byla 8.“
+„Řekl bych, že výhoda to je, protože Android je napsán v Javě. Takže ty jako vývojář sice kódíš aplikaci v Kotlinu, ale používáš vlastně APIs napsané v Javě. Když budeš koukat na implementaci něčeho v Android SDK, tak to bude v Javě. Ten Kotlin je pořád vázanej na tu Javu, takže si myslim, že znát Javu je dobrý.
+
+Asi bych to popsal tak, ze zatimco FE nebo BE je specialista na svuj obor, FS je ferda mravenec, prace vseho druhu, umi vsechno, ale mozna nic tak do hloubky. Takovi univerzalove se hodi a obcas existuji, vetsinou ale mozna se spis nejaky BE nauci trochu React nebo naopak FE se nauci Node.js a pak si rikaji FS, ale realne je to clovek, ktery tu hlubokou znalost ma pouze v jednom z tech dvou oboru. A to nemluvim o tom, ze FE bys mohl rozdelit na FE-JS a FE-vizuál, takze full-full-stack by musel umet veci od optimalizace obrazku a animace SVG po optimalizaci databazovych dotazu, coz podle me nikdo proste neumi a ani umet nemuze. Timto bych dal tu pozici do kontextu, ale mozna to jen vidim moc názorově :)
+
+https://www.freecodecamp.org/news/what-is-web-development-how-to-become-a-web-developer-career-path/
+
+Suma sumárum je to 10 měsíců od chvíle, kdy jsem se rozhodl změnit kariéru z učitele na programátora. Doufám, že vám tohle trochu pomůže a nabudí vás to. Kdyžtak se na cokoliv ptejte.
+jak jsem se učil - https://discord.com/channels/769966886598737931/789107031939481641/866373605951537173
+
+https://www.freecodecamp.org/news/what-is-web-development-how-to-become-a-web-developer-career-path/
+
+STRANKA LEARN BY MELA JIT "VIC NA BRANU"
+jeste me napadlo,ze tvuj web resi takovy "high level plan" - nauc se to, ziskej praxi a pak hledej praci. Mozna by se hodil i jeste podrobny plan. Kdyz nekdo chce zacit ale vlastne nevi z ktere strany zacit rozmotavat bavlnku. Materialu je hodne - i na tvoji strance. Kurzy, knihy, ruzne online dokumenty.. je toho ale az prilis mnoho. Mozna nejaky kratky clanek co by se melo pred cim a tak precist ci co by pomohlo tem uplne ztracenym. Treba me to prijde desne zamotane. Ja treba jdu jen po tech anglickych materialech a furt nevim kde zacit. Co otevru chce po me hned penize - ale to se mi nelibi, protoze ja nevim jestli to uplne na 100% chci delat. Takze bych chtela neco nacist a vyzkouset na kratkem cviceni pred tim,nez se treba upisu na kurz. Ale tohle jsem nejak nenasla. Na tvych strankach jsem nasla knihu - ale zase cist jen teorii mi prijde naprd :/ nejaka rada? s cim zacit jako prvni? jak se posunout kdyz si stale v te prvni katergorii "nauc se programovat"
+
+Learn learn learn loop
+https://twitter.com/OzolinsJanis/status/1420344259367030784
+
+- Why procrastinators procrastinate
+- konec prokrastinace
+- ADHD
+
+na co potrebuju anglictinu v it
+https://discord.com/channels/769966886598737931/788826407412170752/866750581644722186
+
+část „zkouším“ v cestě juniora by měla být o code.org a scratchi
+
+jak začít https://overcast.fm/+kY7RkAu9Q
+
+https://exercism.org/tracks/python/concepts
+https://www.codecademy.com/code-challenges
+
+https://www.english4it.com/
+https://www.bbc.co.uk/learningenglish/english/
+
+Jak je to s angličtinou, certifikáty
+https://discord.com/channels/769966886598737931/769966887055392768/857365013886271488
+
+https://blog.lewagon.com/skills/programming-language-to-learn/
+
+anglictina pro IT specialisty
+Nenapsal jsi, odkud jsi a jaký typ kurzu chceš, ale našla jsem nějaké kurzy zaměřené na IT, posílám níže. Jinak, ty specifické kurzy (třeba business angličtina) jsou většinou na úrovni B2-C1, když už umíš mluvit, ale potřebuješ se naučit nová slova, tak nevím, jestli to bude pro tebe užitečné.
+- Brno VUT - https://www.fit.vut.cz/study/course/13867/.cs? Oni jedou dle https://www.vutbr.cz/en/rad/results/detail?vav_id=161791...
+- online - https://www.onlinejazyky.cz/eshop-anglictina-v...
+- online - http://www.jazykybieb.cz/anglictina_pro_it_specialisty.htmlNejefektivnější jsou individuální kurzy, ale také i nejdražší.
+
+vyslovnost - youtube
+bronovy tipy?
+italki
+elsa app
+
+- Nebal bych se SRE rozepsat slovy, prijde mi to tam jako zbytecna zkratka (navic pro me konkretne stejne z prvni neznama). Coz me privadi na myslenku - na spoustu veci tam mas odkazy k zajimavym clankum. Kdyz bys tady k tem "starer pozicim" neco takovyho nasel, IMO by to byl supr zdroj informaci.
+
+programování v shellu https://www.youtube.com/@LukasBarinka/playlists
+
+operační systémy https://www.udacity.com/course/introduction-to-operating-systems--ud923
+linux https://www.abclinuxu.cz/ucebnice/obsah
+
+jak se učit - téma deep work.
+Jak se učit - tutorial hell https://youtu.be/jvpXA3aNbak
+jak se učit https://www.youtube.com/watch?v=e9RWnQRq2pg&t=186s
+
+nevhodné rady pro začínající vývojáře https://overcast.fm/+U67GNYVtg
+
+Hodně lidí si dělá výpisky a vlastní poznámky - když ty věci přímo píše, mnohem lépe si je zapamatuje. Já jsem na škole vyráběl taháky pro ostatní a díky tomu jsem se látku naučil a tahák nakonec sám nepotřeboval 😀 Nebo https://github.com/aspittel/coding-cheat-sheets takhle myslím začalo. Nechceš to taky nějak zmínit?
+
+jak začít - kurz engeto https://docs.google.com/document/d/19czo7_jGVcA9Zy6nDT6RJRe7W7IS-XxZY-0Ky-GZ3bw/edit#
+
+Command Line Interface Guidelines https://clig.dev/
+
+Popisy pracovních pozic v it jsou užitečné i HR 🤔
+
+Sekce o samotném učení a jak se učit efektivně, o ucicim procesu - Mrozek, atomic habits, Messenger
+
+https://grasshopper.app/
+
+lessons from reddit https://www.reddit.com/r/learnprogramming/comments/itbw45/lessons_for_beginners_and_junior_developers_after/
+
+Ahoj, čtu si tvou novou knihu a velmi mě zaujala kapitola: Existují pozice vhodnější pro začátečníky? To je věc s kterou hodně bojuju při výběru práce. Jen za mě: Já bych ty pozice možná trochu více rozepsal ono začátečník, který nebyl v žádné IT firmě se v tom asi bude ztrácet co takové pozice obnášejí ve skutečnosti. Že bych možná uvedl nějaký pohled z praxe co tak budu nejspíš na dané pozici konkrétně dělat. Obecně to tam teda máš, ale kdybych se chtěl rozhodnout, která by mě bavila více a na kterou use více zaměřovat, tak to z toho moc nepoznám. A potom kdybych byl na pohovoru tak jako začátečník bych asi absolutně nepoznal jestli firma prosazuje opravdové DevOps nebo rychle potřebuje zalepit díru v ruční správě serverů. Ale jinak super ja se třeba na DevOps vůbec nehlásil protože mi přišlo že je to vyloženě seniorní pozice 😄 A že existuje nějaké SRE nebo reliable engineer jsem vůbec netušil. Naopak jsem se pořád hlásil na tech support a sys admin nebo tester, protože jsem měl pocit, že jiná vstupní brána neexistuje. Ale ani jednu jsem nějak moc dělat nechtěl. Možná automatického testera. Měl jsem to tak asi, že Lumír z Ostravy nám říkal, že většina programátorů začínají nejdříve jako testeři.
+
+teach yourself new things efficiently
+
+Jak vybrat programovací jazyk
+https://www.itnetwork.cz/jak-vybrat-programovaci-jazyk
+https://honzajavorek.cz/blog/proc-se-neucit-python-v-roce-2021/
+
+#} -->

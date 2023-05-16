@@ -85,6 +85,18 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
 
 <!-- {#
 
+https://jvns.ca/blog/good-questions/
+
+https://www.hash.cz/inferno/otazky.html
+
+Zajímavý článek o tom, jak se správně ptát https://hamatti.org/posts/how-to-ask-help-for-technical-problems/
+
+https://github.com/honzajavorek/junior.guru/issues/30
+
+Zdravím Honzo, z těch tutoriálů by se klidně ještě hodilo nějaké uvedení do Stack Overflow :smile: . Já se v něm už snad tak nějak "orientuji", ale potřeboval bych asi ujasnit, jak v tom lépe (čti přesněji) vyhledávat a ideálně nevytvářet duplikátní posty k již zodpovězeným issues :thumbsup:
+
+ja mam pocit, ze kym naformulujeme dobru otazku, napr. podla https://hamatti.org/posts/how-to-ask-help-for-technical-problems/ tak je vacsia sanca ze sami najdeme odpoved na danu otazku a tak ju nikde nenapiseme ... a potom tie otazky co vidime napisane od inych ludi nemusia byt reprezentativne najlepsie otazky ¯\_(ツ)_/¯
+
 https://honzajavorek.cz/blog/empowered-by-ai-why-junior-devs-have-the-winning-edge/
 
 - kdy se zeptat, rule of thumb

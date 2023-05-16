@@ -352,6 +352,10 @@ Tato strategie je fajn, ale **můžeš být v situaci, kdy se to nehodí**. Nemu
 
 <!-- {#
 
+S tím souhlasím, mně jednou HR manager řekl, že poslal můj životopis dál jen kvůli tomu, že měl pěkný design a měl dobrý pocit z toho. :)  Tehdy jsem našla designerku na platformě UpWork, které jsem poslala všechny informace a ona mi ho napsala a udělala design, teď bych to už dělala sama. Doporučuju https://flowcv.io/ , je to docela jednoduché na naklikávání a vypadá dobře.
+
+jestli chceš sám zkusit, doporučuji flowcv.io, já v tom vyťukala několik životopisů několika různých lidem a všem se líbilo 🙂
+
 jak na cv v angličtině
 https://www.youtube.com/watch?v=Jhn5-N7ABP8
 

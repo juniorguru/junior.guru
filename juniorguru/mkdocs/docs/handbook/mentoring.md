@@ -16,6 +16,10 @@ noindex: true
 
 <!-- {#
 
+https://github.com/honzajavorek/junior.guru/issues/4
+
+https://github.com/honzajavorek/junior.guru/issues/28
+
 Stránka mentoring na webu, kde bude základ o mentoringu obecně, k čemu to je… a pak zvýrazněny odkaz na klub, pak sekce přímo s mentory - jenže jak je propojit, když neexistuje propojovací odkaz přes discord? Sekci přímo s mentory nedělat a kdyžtak dat jen křestní a iniciály.
 
 mít stránku /mentoring/ s představením jak to funguje

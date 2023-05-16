@@ -163,3 +163,15 @@ Kouč je někdo, kdo absolvoval dlouhodobý a ideálně i akreditovaný koučova
     highlighted=True,
   ) }}
 </div>
+
+
+<!-- {#
+
+feedback na stránku https://discord.com/channels/769966886598737931/789046675247333397/1025450055999692910
+
+https://www.heroine.cz/zeny-it/6341-syndrom-podvodnice-vas-pri-praci-v-it-snadno-dozene-jak-proti-nemu-bojovat
+
+Don’t compare yourself
+https://twitter.com/traversymedia/status/1298585427016908801
+
+#} -->

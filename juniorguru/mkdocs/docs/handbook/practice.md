@@ -393,3 +393,110 @@ Na konference je potřeba si koupit lístek. Výše zmíněné konference mají 
     Nauč se anglicky podle tipů na junior.guru.
   {%- endcall %}
 </div>
+
+
+<!-- {#
+
+algoritmy http://jeffe.cs.illinois.edu/teaching/algorithms/
+
+https://www.manning.com/books/grokking-algorithms
+
+DOM events https://domevents.dev/
+
+assumptions, predpoklady - https://medium.com/@peter.hozak/krkolomn%C3%A9-predpoklady-6f658f552de4
+
+Hafo se řeší jak odinstalovat Linux k Windows
+
+teoreticka informatika - https://bigmachine.io/products/the-imposters-handbook/ a https://en.wikipedia.org/wiki/The_Pragmatic_Programmer
+
+network programming https://beej.us/guide/bgnet/html/
+
+MARKDOWN JAK FUNGUJE, ANALOGIE
+Je to jako když jsi autor knihy a píšeš článek na psacím stroji - když chceš někde udělat nadpis, použiješ k tomu # apod. nebo to podtrhnes, když chceš udělat caru, tak uděláš spoustu - za sebou. Pak ten papír das vydavateli a tam to vezme sazeč a udělá z toho pěknou barevnou knihu. Tak Markdown je ten psací stroj a sazec je jakýkoliv program, který bere MD (strojopis) a produkuje HTML (barevnou knihu)
+Jako autor mas na barvu obálky a font nadpisu v knize minimální nebo zcela žádný vliv
+Ale můžeš dat sazeči vědět, kde je nadpis a kde je seznam
+
+https://12factor.net/
+
+https://www.freecodecamp.org/news/what-is-web-development-how-to-become-a-web-developer-career-path/
+
+Learn learn learn loop
+https://twitter.com/OzolinsJanis/status/1420344259367030784
+
+koľko HODÍN DENNE musím PROGRAMOVAŤ? (programátor radí) https://www.youtube.com/watch?app=desktop&v=LG-d_BOZE6k
+
+https://www.facebook.com/groups/pyonieri/posts/5247478988597569/?comment_id=5249157481763053&reply_comment_id=5249165655095569
+Teď měj radost, že jsi to nakonec vyřešil 💪 Netrap se tím, že to bylo obtížné. To znamená, že ses u toho hodně naučil. Pokud je to tvůj první pokus aplikovat naučené znalosti na praktickém projektu, není divu, že to šlo obtížně, protože tohle, to přemýšlení kolem toho, rozsekávání problému na podproblémy, debugování, apod., tohle je na celém tom programování to ono, co je největší skok od laika a sledovače tutoriálů k člověku, který dokáže něco reálně naprogramovat.
+Mnoho lidí jen točí tutoriály a diví se, že pak nic nedokážou vytvořit. Ty už jsi dál! 🙂
+A neboj, už třeba za měsíc se na ten svůj teď těžce vydřený kód budeš dívat a zasměješ se mu.
+
+
+univerzální technologie, které potřebuješ všude https://twitter.com/vboykis/status/1451985733867216898
+
+https://exercism.org/tracks/python/concepts
+https://www.codecademy.com/code-challenges
+
+nandtetris https://www.nand2tetris.org/
+
+https://ivet1987.wz.cz/2020/03/koucovani-na-pyladies-kurzech/
+
+https://regexcrossword.com/
+https://refrf.dev/
+
+UX - https://www.designui.cz/hledame-designera
+UX http://www.asociaceux.cz/zacinate-s-user-experience
+
+challenge https://www.trywilco.com/
+
+fyzika, animace v javascriptu - https://thecodingtrain.com/, https://natureofcode.com/
+
+matika pro vyvojare https://youtu.be/bOCHTHkBoAs
+
+zaklady bezpecnosti - odkazy na dobre veci jsou na poslednim slajdu kayly prednasky pro klub
+
+data science - My "data science is different now" post has Data Reddit asking questions already answered by my post.
+https://twitter.com/vboykis/status/1419302245854818306
+
+https://nemil.com/categories/notes-to-a-young-software-engineer/
+
+- Tereza podcast skvela citace na vliv a výhody komunit
+- https://www.pythonistacafe.com/
+
+https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses/
+
+testování - Pánek má spoustu materiálů k automatizaci: https://www.youtube.com/watch?v=OnpOwlp8Hrg&list=PLZaZq-LUymhx3Lip30OGmsMPdAVoNl45i&index=5
+
+Tak mě napadá, jestli by zdejší mozkový trust nedokázal dát dohromady typická spojení obor + programovací jazyk. Ve smyslu v jakém jazyce se nejčastěji programuje v konkrétních oborech. To by bylo další ze skvelých vodítek pro switchery, když se rozhodují, do jakého jazyka se pustit.
+Už jsem tady ten hypreskill.org (od JetBrains) dával víckrát, mám pocit, že to tam celkem mají. Je nutno si kliknout na *open original*, je to dost velkej screenshot…  (rozbalil jsem na ukázku OOP)
+
+Zkus hyperskill.org od JetBrains. Jsou tam algoritmy, matika, obecny veci (kamarad s nedostudovanym matfyzem a dostudovanym Bc. na CVUT FIT rikal, ze mu prijde, ze je tam toho az az co se tyka tech algoritmu a matiky, takze bych se netyral se vsim, ja to bohuzel neposoudim, sem v tomhle pastevec). A myslim, ze by mohl byt nejakej trial mesicni nebo tak neco, abys videl, ze to stoji za to nebo ne.
+
+Zmínit Sifrovacky jako způsob jak si s tím hrát ve volném case
+
+Complete Introduction to the 30 Most Essential Data Structures & Algorithms - DEV
+https://dev.to/iuliagroza/complete-introduction-to-the-30-most-essential-data-structures-algorithms-43kd
+
+https://dr-knz.net/programming-levels.html
+CEFR https://www.linkedin.com/feed/update/urn:li:activity:6832917085660725248/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A6832917085660725248%2C6832968938511458304)
+CEFR Radek Holý
+Už se to potřetí snažím přečíst celý, ale nemám na to morál. Nicméně ty kusy, co jsem viděl, vypadaj super. Moc se mi to líbí.
+Jen mám pocit, že tam chybí totéž, co řešíme i u nás ve firmě. Soft skills. Jo, je to takový zaklínadlo, ale ukazuje se, že tak nějak podvědomě člověk bere v potaz při povyšování i tuhle stránku. Hlavně co se týče týmové spolupráce a komunikace s klientem/businessem. To v té tabulce zohledněné nevidím.
+
+https://naucse.python.cz/2020/linux-admin/
+https://www.edx.org/course/fundamentals-of-red-hat-enterprise-linux
+
+Toto je na procvičení úplně nej: https://ksi.fi.muni.cz/ a nejlepší Python videa má na YouTube Corey Schafer.
+
+https://wizardzines.com/comics/
+
+Prozkoumat tohleto od Radka - https://www.codingame.com/start
+
+https://codingcompetitions.withgoogle.com/codejam
+https://adventofcode.com
+
+testování - co to je https://www.youtube.com/watch?v=LQcKWKJ68ps
+testování jak na to - https://discord.com/channels/769966886598737931/788826407412170752/884384772669972481
+
+jak na security https://discord.com/channels/769966886598737931/769966887055392768/897087048110997584
+
+#} -->

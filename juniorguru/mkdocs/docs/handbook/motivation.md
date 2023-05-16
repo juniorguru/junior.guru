@@ -386,6 +386,25 @@ Pod některými kapitolami můžeš narazit na motivační příbehy lidí jako 
 
 <!-- {#
 
+Kapitola o mobilech
+
+děti https://www.coderebels.cz/
+(nepřesunout do parents.md?)
+https://twitter.com/programohrajeme/status/1462698199001489411
+
+student versus career switcher
+https://discord.com/channels/769966886598737931/788826407412170752/868086772201062420
+
+https://www.heroine.cz/zeny-it/6385-v-it-berou-vsechny-na-tom-nic-neni
+
+https://twitter.com/kondrej/status/1535586323461033984
+
+Ještě bych dodal, abych nastavil správně očekávání, že IT určitě umožňuje dělat poměrně dlouhé úseky práce bez ostatních lidí nebo s kontaktem třeba jen na chatu, ale zároveň je to většinou týmová záležitost a je proto nutné komunikovat přinejmenším i s ostatními vývojáři v týmu. Tedy taková ta představa o někom zalezlém celé dny u počítače, kdo mluví jen s počítačem je spíš stereotyp než realita.
+
+nikdy nebude dost vyvojaru https://whoisnnamdi.com/never-enough-developers/
+
+ageism https://www.newyorker.com/magazine/2017/11/20/why-ageism-never-gets-old
+
 - Přidat odstavec o AI na JG
 - stránka pro úplné začátečníky s code.org a scratchem pak poslat Pavlovi
 - https://www.facebook.com/groups/144621756262987/posts/840714789987010/
@@ -535,5 +554,13 @@ Vždyť přeci https://www.irozhlas.cz/.../ceske-firmy-maji-nedostatek...
 - https://roklen24.cz/prave-se-stalo/nedostatek-programatoru-v-cesku-kompenzuji-cizinci/
 - https://www.lidovky.cz/byznys/berou-vic-nez-jejich-sefove-presto-je-techto-lidi-v-cesku-i-jinde-obrovsky-nedostatek-casto-se-saha.A190908_211709_ln_domov_ele
 - https://www.denik.cz/ekonomika/it-odborniku-je-nedodstatek-jejich-mzdy-rostou-20190818.html
+
+elitismus vs diversity https://techcrunch.com/2015/11/27/software-developers-growing-elitism-problem/?guccounter=1
+
+CNC
+Hooncak#7810 -- CNC: promiň :smile: hele četl jsem tvůj článek o CNC programování a viděl reportáž. Dneska už to není tak jak ukazují v reportáži. Vetšina lidí u CNC jsou dneska opičky co jen vyměňují kusy který změří a mačkají zelené tlačítko. bylo by dobré se tam zmínit o CAD/CAM systémech které jsou dneska alfou a omegou každé dynamicky se rozvíjející firmy. Prakticky dostaneš od konstruktéra model výrobku který má stroj zpracovat. Tvojí úlohou je hlavně tam dodat rozměry materiálu a vybrat co má stroj udělat a jakým to udělá nástrojem ( podmínky obrábění má každý výrobce svoje). To je prakticky celé.. nic těžkého k naučení :smile: jedinej směr kterej by každej člověk co nechce dělat na tři směny ve výrobě měl jít je právě ten cad/cam programátor... https://www.youtube.com/watch?v=OXDg-8_LzXY tohle je třeba pěkný video z toho softwaru. V tomhle konkrétně jsem dělal a přijde mi asi nejvíce přehlednej ze všech co se teď dělají .
+
+https://play.google.com/store/apps/details?id=com.hackages.texidi&hl=en_US&gl=US&pli=1
+Texidi appka pro HR a IT
 
 #} -->

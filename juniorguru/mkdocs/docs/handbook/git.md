@@ -270,4 +270,17 @@ yablko návod na github a git, naučse návod na git
 https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-your-profile-readme
 https://www.gitkraken.com/learn/git/tutorials
 
+Projekty jsem si nahrál na GitHub - vysvětlit workflow a styl práce na GitHubu?
+
+https://ohmygit.org/
+
+základní pitfalls k tomu, co lidi řeší s projekty na githubu
+https://discord.com/channels/769966886598737931/789107031939481641/836969346403926096
+
+Kdysi tady byla taková hravější verze: https://ohmygit.org/ ale po nějaké době používání musím říct, že je to poměrně chudé ve vysvětlování.
+
+https://learngitbranching.js.org/
+
+https://www.gitkraken.com/learn/git/tutorials
+
 #} -->

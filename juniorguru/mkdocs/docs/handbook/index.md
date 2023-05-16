@@ -39,3 +39,18 @@ Pokud o IT teprve přemýšlíš (fáze 0), budou pro tebe zajímavé jiné rady
 10. Už nejsem junior.
 
 Ne každou fázi se zatím povedlo pokrýt kapitolami v příručce, ale se všemi pomáháme a všechny diskutujeme ve zdejším [klubu](../club.md).
+
+
+<!-- {#
+
+fáze https://discord.com/channels/769966886598737931/788826407412170752/904981964208087070
+
+nela https://github.com/NelliaS/development-timeline
+
+https://www.freecodecamp.org/news/what-is-web-development-how-to-become-a-web-developer-career-path/
+
+https://twitter.com/jzunigacoayla/status/1380694681911226373
+
+https://blog.lewagon.com/skills/programming-language-to-learn/
+
+#} -->

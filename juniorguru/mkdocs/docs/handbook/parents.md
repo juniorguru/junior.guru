@@ -18,6 +18,8 @@ noindex: true
 
 - Magda https://mail.google.com/mail/u/0/#inbox/KtbxLrjGQcnLHJfGrPfPsPdVzHDfvDThLB
 
+https://imysleni.cz/ucebnice/zaklady-programovani-v-jazyce-python-pro-stredni-skoly
+
 Privydelek na materske
 - vpp na mateřské
 - OSVČ sám/sama prozovovat znamená přijít o podporu v mateřství
