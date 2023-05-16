@@ -382,4 +382,7 @@ Jak vybrat programovací jazyk
 https://www.itnetwork.cz/jak-vybrat-programovaci-jazyk
 https://honzajavorek.cz/blog/proc-se-neucit-python-v-roce-2021/
 
+Jak se ucit react
+https://discord.com/channels/769966886598737931/822415540843839488/845202549609857034
+
 #} -->
