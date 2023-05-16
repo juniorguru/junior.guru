@@ -385,4 +385,85 @@ https://honzajavorek.cz/blog/proc-se-neucit-python-v-roce-2021/
 Jak se ucit react
 https://discord.com/channels/769966886598737931/822415540843839488/845202549609857034
 
+https://www.tiobe.com/tiobe-index/
+
+https://ehmatthes.github.io/pcc_3e/
+
+S JavaScriptem vidím několik problémů, které si my pokročilí programátoři často neuvědomujeme: 1) Nenašel jsem pro něj dobré aktuální a ucelené materiály v češtině 2) Má několik oddělených světů a návody pro začátečníky jsou roztříštěné v tom, který zrovna protežují - prohlížeč, Node.js, React, atd. 3) Aby v něm začátečník mohl něco hezkého udělat, potřebuje HTML a ideálně i CSS jako prerekvizity, což v důsledku znamená, že aby šlo s JS začít jako s prvním jazykem, je potřeba už dva jiné jazyky umět. Pro tyto důvody doporučuji začít s Pythonem a potom přejít tam, kam to koho táhne.
+
+celej tenhle thread o materialech na nauceni a prvnich kurzech
+https://www.facebook.com/groups/pyonieri/permalink/3125620044116818/
+
+analytik junior je někdo, kdo má silné analytické myšlení a umí rozebrat problém, umí ho zpracovat, dohledat, nastudovat, dát dohromady všechny informace, vyptat od lidí a něco k tomu sám sepsat  senior za mě umí takové lidi vést a nebo umí řešit mnohem komplexnější problémy, nemá se třeba už koho ptát a podobně
+
+jak se učit, jak navrhnout materiály, křivka
+https://launchschool.com/pedagogy
+
+kdyz budou na JG povolani, tak pod sebou muzou mit seznam skillu, ale ty vymakanejsi by mohly mit primo "ROADMAP"
+
+https://www.welcometothejungle.com/cs/articles/front-end-developer-cz
+
+Já používám VS Code, ale hodně lidí má oblíbený PyCharm. Záleží, co člověk hledá. Python jde programovat v každém obyčejném editoru (něco jako manuální řízení v autě), a pak jsou tady integrovaná prostředí jako PyCharm, která se snaží pomoct se vším možným (něco jako automat s parkovacím asistentem :)). Každému vyhovuje něco jiného a na výsledek to nemá vliv.
+
+Ponořme se do Pythonu 3 vs Výukový kurz Python 3
+Luděk Reif Honza Javorek Četl jsem oboje, a zdá se mi, že co do kvalit je to oboje dobré, co do obsahu i stylu je to docela rozdílné. Obojí má něco do sebe, Ponořme se do Pythonu 3 je méně obsáhlé, jde na to hodně přes příklady, takže člověk si to osahá, ale ne vždycky to všechno pochopí do detailu. Výukový kurz Python 3 má nějaké úvodní seznámení, kde se člověk dozví základy, a pak jde se vším docela do hloubky s tím, že je všechno v kapitole okecané, pak jsou nějaké příklady a pak je nějaké zadání, aby si to člověk vyzkoušel. Je to fajn, ale skoro bych řekl, že to začátečníka na těch dalších kapitolách může odrovnat. Já jsem ji jeden čas odložil a přečetl jedním dechem Ponořme se do Pythonu 3, kde nebylo tolik teorie nebo tolik popisování. Na začátek bych skoro řekl, že by bylo ideální to zkombinovat, dát si jako základ prvních pár lekcí z Výukového kurzu, pak přečíst Ponořme se do Pythonu, a pak dočíst Výukový kurz :)
+
+Front-end Developer Handbook 2019
+https://frontendmasters.com/guides/front-end-handbook/2019/
+
+pozice v IT nápady z Discordu
+https://discord.com/channels/769966886598737931/769966887055392768/919890459877310474
+
+jQuery
+Já osobně bych se dnes už jQuery asi neučil. Možná pro nějaké povědomí, abych to uměl aspoň "přečíst", ale bral bych to spíš jako Python 2 (nebo Python 2 před pár lety): Můžu se s tím ještě setkat, budou v tom nějaké produkční věci, ale budoucnost jde už jinudy.  Pokud chceš mít celou webovku v JavaScriptu, je řešením React (popř. framework jako Next.js) nebo Vue.js apod.  Pokud chceš JavaScriptem jen kořenit svoje HTML, dost dlouho si dnes vystačíš s čistým (tzv. vanilla) JS, protože co dřív nešlo (a díky jQuery to šlo), tak dnes jde přímo v browseru. Zdroje:  https://caniuse.com/ https://htmldom.dev/ https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+U pozic procentový koláč kolik stráví času čím
+
+The Modern JavaScript Tutorial
+https://javascript.info/
+
+Codecademy Go, Encode (Android only), alebo Grasshopper (iOS, Android). Kludne vyber len niektore z nich podla tvojich potrieb. Imho povazujem Sololearn a Mimocode, co si tam uviedol,  za class-leading. I ked som nazoru ako ty, ze ucenie sa na mobile je totalne nahovno.. :D
+
+BI lidi
+https://discord.com/channels/769966886598737931/788826407412170752/846461087711756319
+
+
+
+JAVA VS KOTLIN
+Honza Javorek, [27. 5. 2021 18:22:18]:
+@petrnohejl Jak moc je Java na Androidu za zenitem? Dá se to dnes pořád označit za jazyk, ve kterém se vyrábějí mobilní appky, nebo už to není pravda a všichni, co to dnes myslí vážně, jsou na Kotlinu? Pokud jo, znamená to, že Java zůstává zase jenom jako jazyk na velký systémy pro korporátníky?
+
+A když umíš Javu, naučíš se Kotlin rychleji nebo je to úplně jiný jazyk?
+
+@honzajavorek Java je ve světě Androidu za zenitem (aspoň v mojí android-sociální bublině). I Google už všude tlačí Kotlin, i když Java je pořád supported, není deprecated. Nový projekty se určitě začínají jen v Kotlinu, tam není nad čím přemýšlet. Občas pracujeme se staršíma codebases, kde je ještě Java, ale většinou se to postupně překlápí na Kotlin. Jeden z velkých problému Javy na Androidu je (krom soudních sporů s Oraclem), že nejsou podporovány nové verze Javy. Teď jde myslím používat Javu 11, ale dlouho to byla 8.
+
+Petr Nohejl, [27. 5. 2021 21:07:24]:
+Řekl bych, že výhoda to je, protože Android je napsán v Javě. Takže ty jako vývojář sice kódíš aplikaci v Kotlinu, ale používáš vlastně APIs napsané v Javě. Když budeš koukat na implementaci něčeho v Android SDK, tak to bude v Javě. Ten Kotlin je pořád vázanej na tu Javu, takže si myslim, že znát Javu je dobrý.
+
+A když se učíš Kotlin jako jazyk a znáš Javu, tak to máš asi jednodušší v tom, že Kotlin je taková vylepšená moderní Java, takže asi snadnějc pochopíš co jak funguje.
+
+Na druhou stranu to může být i kontraproduktivní - můžeš pak psát Kotlin kód s Java mindsetem, což je vlastně taky špatně. Nevyužiješ plnou sílu Kotlinu.
+
+Testeři
+https://discord.com/channels/769966886598737931/788826407412170752/846454895199387690
+
+Co je Full Stack
+Asi bych to popsal tak, ze zatimco FE nebo BE je specialista na svuj obor, FS je ferda mravenec, prace vseho druhu, umi vsechno, ale mozna nic tak do hloubky. Takovi univerzalove se hodi a obcas existuji, vetsinou ale mozna se spis nejaky BE nauci trochu React nebo naopak FE se nauci Node.js a pak si rikaji FS, ale realne je to clovek, ktery tu hlubokou znalost ma pouze v jednom z tech dvou oboru. A to nemluvim o tom, ze FE bys mohl rozdelit na FE-JS a FE-vizuál, takze full-full-stack by musel umet veci od optimalizace obrazku a animace SVG po optimalizaci databazovych dotazu, coz podle me nikdo proste neumi a ani umet nemuze. Timto bych dal tu pozici do kontextu, ale mozna to jen vidim moc názorově :)
+https://discord.com/channels/769966886598737931/811910782664704040/846492496757522433
+
+Jak se učit JS
+https://discord.com/channels/769966886598737931/788832177135026197/843210448907796530
+
+jak zacit dobre popsany
+https://www.facebook.com/groups/144621756262987/permalink/751143055610851/?comment_id=751238438934646&__cft__[0]=AZVKjm7wAzrkPFDDUggJDx0eNIqmzCaF7csOnAy0GSx2JazUV0KOThy5NvDOtQRMGzmOGKmfIm0DwElpMyqrNpEo5ZCzI8C5q17O5JbyXnwUBJM709tIfEHt7d_haTungS7fLOqNpVTWIpiwRy4s1VSi5mxzeOn5WTLGi-9-qUvLG1BBL9hoKRAtmQIXllHA--pAGi_JfG91C08kq95vPalCR9e7pG6rr8Gg8jRxFN4gGA&__tn__=R]-R
+
+neučit se syntaxi jako slovíčka
+https://discord.com/channels/769966886598737931/769966887055392768/815922886321504286
+
+Proč ne JS
+https://www.facebook.com/groups/144621756262987/permalink/813286826063140/?comment_id=813500689375087&__cft__[0]=AZXAn_nbuF1kW3AEN7acnei0Y9a82mmOAIoSYwseVuho9hVSZiBaJvMDr2sHAPF5rlq6_zxh1vOXcL2MLwMpB3qbh8cEABSXVe76nsxjUFtsahFPE00-q_HBhYBFln_aN8OIbDjitvSjHGXzhCPGWX8NVBKt4Otwa3wM3fdEk6CPsksxM-CNjFJveQIHaHwIuEQ&__tn__=R]-R
+
+Kontext pro php
+https://discord.com/channels/769966886598737931/769966887055392768/878403180290007080
+
 #} -->

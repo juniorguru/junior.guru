@@ -16,6 +16,11 @@ noindex: true
 
 <!-- {#
 
+https://free-for.dev/
+
+Challenging projects every programmer should try - Austin Z. Henley
+https://austinhenley.com/blog/challengingprojects.html
+
 https://www.frontendmentor.io/
 
 https://codingcompetitions.withgoogle.com/codejam
@@ -71,5 +76,64 @@ Já tohle lidem radím na https://junior.guru/handbook/ a v klubu https://junior
 
 Automated Code Review for C#, C++, Java, CSS, JS, Go, Python, Ruby, TypeScript, Scala, CoffeeScript, Groovy, C, PHP, Dockerfile, Shell, YAML, Vue, HTML, Swift, Kotlin, PowerShell, Dart and R source code | CodeFactor
 https://www.codefactor.io/
+
+TODO přidat do projektu:
+
+Me osobne prijde, ze nejlepsi zpusob jak "se to naucit" je najit si problem(y) ktery te tizi, a zkusit s tim neco udelat. Zacnes od drobnosti (ano, na zacatku je tezky zjistit, co je drobnost, ale to je soucast procesu uceni se) typu "rucne neco opakovane pisu do excelu, tak si na to udelam program", nebo "hraju onlinovku a zajima me jak optimalne utracet zdroje a posilat vojacky do bitvy" (hmm, existuje vubec jeste fenomen veic jako Duna online a tak? Citim se starej), pak si zkusis napsat treba jednoduchou skakacku, nebo neco co ti pomuze ucenim se treba ciziho jazyka. Zjistis ze existuje neco jako sit a internet, tak si zkusis k ty skakacce treba pripsat druhyho hrace ovladanyho po siti...
+
+pythonanywhere
+https://www.facebook.com/groups/ucimepython/permalink/2784405088331098/
+
+Nápady na projekty
+https://www.reddit.com/r/learnprogramming/comments/i2c0ud/keep_being_told_to_build_projects_but_dont_know/
+
+Python projects for beginners
+https://www.reddit.com/r/opensource/comments/i2bqyx/i_made_3_current_python_projects_for_beginners/
+
+Python Projects with Source Code – Practice Top Projects in Python
+https://data-flair.training/blogs/python-projects-with-source-code/
+
+Čus - v dnešním videu vysvětluje jak začít s prgáním, má tam doporučení na nějaký tutoriály, to je celkem standardní, ale na konci se mi líbí jak zmiňuje svůj první programovací projekt, to mi občas chybí, něco hodně konkrétního. https://www.youtube.com/watch?v=khqIPspzh4A
+
+https://www.practicepython.org/exercises/
+
+Jak na projekty - jak zjistit zda jsem si nevymyslel blbost
+https://discord.com/channels/769966886598737931/789045589869461536/911723281869053952
+
+web scraping sandbox
+http://toscrape.com/
+
+https://www.vaclavaky.cz/
+https://github.com/jandolezal/energy-mix
+https://jakbude.herokuapp.com/
+
+review
+https://discord.com/channels/769966886598737931/1089219133968752650/1096078922724163615
+
+https://dariagrudzien.com/posts/the-one-about-giving-and-receiving-feedback/
+
+Jak sehnat jobíky
+https://discord.com/channels/769966886598737931/769966887055392768/857539026194399232
+
+
+PROC NEDELAT ESHOPY
+Rozhodně ne jako byznys model pro začátečníka v oboru. Fungující byznys modely v tomto směru:
+- Jsme velmi náročný eshop a máme vlastní inhouse tým lidí, kteří ho dělají (Alza, Mall, CZC…).
+- Jsme velká firma, která dělá pouze systém pro eshopy a to prodáváme ostatním (Shopify, v česku ShopSys), ostatní u nás provoz eshopu de facto outsourcují.
+- Jsme velká agentura s týmy lidí a jsme schopni vytvořit nebo dlouhodobě tvořit náročný eshop úplně na míru jako subdodavatel. (Vlastně nevím, jestli toto v roce 2021 opravdu ještě existuje?)
+- Jsme malá agentura nebo profesionál na volné noze. Umím(e) dobře WordPress, WooCommerce, Shopify, apod., všechno zvládám(e) naklikat, nastavit, přizpůsobit, doplnit custom šablony, nainstalovat pluginy, propojit, atd.
+Třeba https://www.digismoothie.com/ je česká firma o pár lidech, dělají eshopy na míru, ale dělají je tak, že použijou Shopify a postaví to na tom 🙂 Protože kdyby měli dělat všechno, tak je to za a) zbytečné, b) by se zbláznili z toho, jak by se nadřeli.
+Čím menší jsi, tím spíš se živíš rozšiřováním polotovaru v podobě WordPressu apod., jinak je to naprosto nerentabilní. Neříkám, že jako freelancer neseženeš zakázku na zhotovení eshopu, ale takové zakázky považuju za spojení pomýleného zadavatele a pomýleného zhotovitele, protože jeden nebo druhý by měli tušit, že platit zhotovení eshopu od úplných základů je blbost a reálně to má smysl opravdu až pro level na úrovni Alza, Mall, CZC, atd.
+https://www.facebook.com/groups/144621756262987/permalink/847188889339600/?comment_id=847716445953511&reply_comment_id=848019465923209
+
+
+včera a předevčírem mi bublinou prolétlo tohle vlákno https://twitter.com/varjmes/status/1363607492765376513, kde se lidé vyjadřují k tomu, jestli dělají side projects nebo ne. spousta lidí programuje v práci, ve volném čase už ne, to myšlení o programátorovi, co programuje od rána do noci se už posunulo. časté jsou sebevzdělávací side projects - vyzkoušet si technologie apod. nebo "cesta je cíl" - hraní si s projektem, ale nikdy nedokončit.
+
+tipy na projekty
+https://www.theguardian.com/news/datablog/2012/apr/25/baby-names-data
+https://www.theguardian.com/news/datablog/2012/feb/14/highstreet-clothes-size-chart
+
+Charakter juniorniho projektu
+https://discord.com/channels/769966886598737931/788826407412170752/861505874539446282
 
 #} -->

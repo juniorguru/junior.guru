@@ -283,4 +283,14 @@ https://learngitbranching.js.org/
 
 https://www.gitkraken.com/learn/git/tutorials
 
+https://github.com/firstcontributions/first-contributions
+
+https://www.drmaciver.com/2015/04/its-ok-for-your-open-source-library-to-be-a-bit-shitty/
+
+A recent trick I discovered to learning this is to pick an open source project written by developers you like and start writing docs and tests.
+https://twitter.com/hamelhusain/status/1296601185470709760
+
+Talk to maintainers
+https://twitter.com/simonw/status/1293017371536265221
+
 #} -->

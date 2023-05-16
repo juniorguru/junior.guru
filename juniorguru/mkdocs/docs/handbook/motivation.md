@@ -563,4 +563,21 @@ Hooncak#7810 -- CNC: promiň :smile: hele četl jsem tvůj článek o CNC progra
 https://play.google.com/store/apps/details?id=com.hackages.texidi&hl=en_US&gl=US&pli=1
 Texidi appka pro HR a IT
 
+Skilly podle rolí, nápad od člověka
+https://github.com/honzajavorek/junior.guru/issues/3#issuecomment-734427076
+
+Specializations list
+https://github.com/honzajavorek/junior.guru/issues/19
+
+ageism a kam mizí staří programátoři
+https://abrarmasum.medium.com/when-do-programmers-retire-is-35-the-end-72d173760ee2
+
+hraje věk roli?
+https://discord.com/channels/769966886598737931/769966887055392768/818610012866740274
+https://discord.com/channels/769966886598737931/788823881024405544/806262752975912960
+https://discord.com/channels/769966886598737931/769966887055392768/808041228239241256
+
+I totally forgot to warn people to not quit their job before joining my course, but I also think I *really* need to make this some kind of digital signature requirement.  You agree to not quit your job and submit a photo with the date and your name on a piece of paper for proof.
+https://twitter.com/lzsthw/status/1362490493402304513
+
 #} -->

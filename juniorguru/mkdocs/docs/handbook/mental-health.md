@@ -174,4 +174,15 @@ https://www.heroine.cz/zeny-it/6341-syndrom-podvodnice-vas-pri-praci-v-it-snadno
 Don’t compare yourself
 https://twitter.com/traversymedia/status/1298585427016908801
 
+6, 8 - nepropadej panice
+https://www.youtube.com/playlist?list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_
+
+workoholismus
+https://discord.com/channels/769966886598737931/864434067968360459/900281705246633995
+
+Ahoj :-) tohle mi připadá supr! Sám jsem tím trpěl, teď už tolik ne. A věřím, že spousta juniorů a zvlášť juniorek má tenhle syndrom. Tak jsem si říkal, že by tě to mohlo zaujmout... https://www.youtube.com/watch?v=l_Vqp1dPuPo
+
+Produktivita
+https://discord.com/channels/769966886598737931/864434067968360459/901243092856889384
+
 #} -->

@@ -137,4 +137,29 @@ Prostě je to složitější. Ono ani pokládat správně dotazy a rozšifrovat 
 Jak se vůbec učit? V tomhle threadu je pěkně ilustrované, že někteří lidé se učí způsobem, který je pro naučení se programovat dost neefektivní: https://discord.com/channels/769966886598737931/1032224640392769576
 Kdyby třeba v budoucnu do příručky přibyla kapitola "Jak se učit" něbo tak něco 🙂
 
+Dev tip: Add "after:2018" to the end of every Google search for solutions to technical issues. It filters the results with fewer clicks. 💁🏾‍♀️— Taylor Poindexter (@engineering_bae) January 8, 2020
+https://twitter.com/engineering_bae/status/1214956636730744833
+
+Codebytes
+http://links.iterable.com/e/evib?_t=13e4e7efd5b34d1d982e9fb34505f006&_m=94b78d4c11ee40998424e05884535f1f&_e=NtkvZFbtt5kmcjizGz3G6WJ1gv2GVvqrn_TOCqaxZNrvhrVZ_y7XsNa3TxV3WOMoq3uEhQfCmnasml1yGerDFC1MOjGSQmqJ5mwWGAlW0gDdJiO_YOczThgwbd4_2nWouzE7JLsfAAB5FsTjzvYdgg%3D%3D
+
+Jak si nechat radit od druhých
+The more universal a solution someone claims to have to whatever software engineering problem exists, and the more confident they are that it is a fully generalized solution, the more you should question them. The more specific and contingent the advice - the more someone says ‘it depends’ or ‘YourSQL works well in a read-heavy context with the following constraints’ the more likely they are to be leading you in the right direction. At least that’s what I have found.
+https://earthly.dev/blog/thought-leaders/
+
+
+Nevzdávej to. Většina lidí, kteří se začnou učit, odpadne v prvním měsíci. Zkus tento kritický čas překonat.
+Nejúspěšnější jsou ti, kteří se učí pravidelně. Radši se uč každý den deset minut než dvakrát do měsíce čtyři hodiny.
+Zkus na to přijít bez pomoci ostatních. Píšeš nějaký kód a nevíš si s ním rady? Nedívej se hned na správné řešení. Nehledej hned pomoc lektora. Udělej pár variací tvého kódu. Když na to přijdeš sám, posuneš se o veliký kus dál a rozvineš své problem solving skills. A navíc ze sebe máš dobrý pocit.
+Používej Google. Když si nevíš rady a hledáš správnou odpověď, napiš to do Google. Určitě najdeš spoustu správných odpovědí, protože problém, který řešíš, už před tebou řešilo spoustu lidí. Stoprocentně.
+Teorie nestačí. Určitě je dobré mít teoretické základy, ale ty musíš vyzkoušet na praktických úlohách.
+Dej si pozor na stránky, které tvrdí, že tě naučí programovat za 4 dny nebo dokonce za pár hodin. Snaží se tě nalákat na své výukové materiály, které často nejsou příliš kvalitní. Naučit se programovat je záležitost několika měsíců až let.
+Investice do vzdělání se vyplatí. Sice jsme v Česku a na Slovensku zvyklí, že za vysoké školy neplatíme, ale u kurzů je to trochu jinak. Když máš kurzy zpoplatněné, často dostaneš komplexnější a propracovanější materiály a doplňkové služby.
+https://player.vimeo.com/video/302030589?badge=0&autopause=0&player_id=0&app_id=109608
+
+tldr pages (man pages) https://tldr.sh/
+
+jak se ptat kdy se ptat
+https://trello.com/c/0kzSVb96/5606-jak-se-ptat-kdy-se-ptat
+
 #} -->

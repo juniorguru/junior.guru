@@ -45,4 +45,10 @@ Návod pro mentory musí zahrnovat nastavení notifikaci
  '💡 **Tip:** Ať už jsi junior nebo mentor, pusť si parádní [přednášku o mentoringu](https://www.youtube.com/watch?v=8xeX7wfX_x4) od Anny Ossowski. '
  'Existuje i [přepis](https://github.com/honzajavorek/become-mentor/blob/master/README.md) a [český překlad](https://github.com/honzajavorek/become-mentor/blob/master/cs.md).'
 
+Be a good mentor not dickhead
+https://dev.to/mortoray/be-a-good-mentor-not-a-dickhead
+
+jak (ne)najit mentora
+https://twitter.com/willjohnsonio/status/1282713655105159170
+
 #} -->

@@ -32,4 +32,6 @@ https://cybermagnolia.com/blog/the-money-talk-meetup/
 - https://projekty.heroine.cz/zeny-it
 - https://www.facebook.com/groups/holkyzit
 
+https://hbr.org/2014/06/why-women-dont-negotiate-their-job-offers
+
 #} -->

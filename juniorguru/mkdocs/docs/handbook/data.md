@@ -16,6 +16,11 @@ noindex: true
 
 <!-- {#
 
+https://www.jetbrains.com/lp/python-developers-survey-2020/
+
+Statistiky zaměstnaných správců a programátorů
+http://kurzy.vsb.cz/zamstat.php
+
 - https://www.czso.cz/csu/czso/cri/lidske-zdroje-v-informacnich-technologiich-2020
 - smitio ankety
 - engeto anketa

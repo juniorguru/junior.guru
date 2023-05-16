@@ -499,4 +499,156 @@ testování jak na to - https://discord.com/channels/769966886598737931/78882640
 
 jak na security https://discord.com/channels/769966886598737931/769966887055392768/897087048110997584
 
+8-Bits of Advice for New Programmers (The stuff they don't teach you in school!) https://www.youtube.com/watch?v=vVRCJ52g5m4
+
+Objektove programovani v pythone https://www.youtube.com/playlist?list=PLITREQqtwnOkN5VZv-pD3vm7eBDp7zVcn
+
+Data a social justice https://ehmatthes.github.io/pcc_2e/challenges/coding_for_social_justice/
+samizdat
+
+https://wiki.provyvojare.cz/
+
+I am of the opinion that every developer needs to have a solid foundation in computer science/IT
+to be successful. If you're a bootcamp or self taught developer, take the time to learn CS concepts like how CPUs,OSes, memory, filesystems, & networks  work, you'll be better for it
+https://twitter.com/terrameijar/status/1309999684413521921
+
+PETR A ALGORITMY
+- Jak by sis to vlastne teda konkretne predstavoval? Kdyz potkam nekoho, kdo by chtel o algoritmech neco vedet, mam ho poslat za tebou s tim, ze chces vytvorit materialy na toto tema nebo ze je to naucis?
+- Můžeš, nebo jen dej vědět že je zájem. Od juniorů nebo i z druhé strany – kdyby si někdo stěžoval že to junioři z JG neumí.
+
+Skills
+https://github.com/honzajavorek/junior.guru/issues/3
+
+SQL
+Především toto: http://sqlzoo.net a případně http://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all
+https://mail.google.com/mail/u/0/#inbox/FMfcgxwDrlfqmHRzCLJsKHHFDHbbwrJF
+
+design systems
+https://adele.uxpin.com/
+http://styleguides.io/
+
+The Most Important Non-Programming Skills for Programmers
+https://welearncode.com/most-important-nonprogramming/
+
+proč třídy
+https://www.reddit.com/r/learnpython/comments/f0ir0x/i_have_a_demon_i_consider_myself_a_decent_python/?utm_source=share&utm_medium=ios_app&utm_name=iossmf
+
+pridat neco o data analyticich? https://veekaybee.github.io/2019/02/13/data-science-is-different/
+
+linux kernel https://linux-kernel-labs.github.io/refs/heads/master/index.html
+
+Máme selektuju.cz a jakpsatsql.cz ale je to zatím stavěný na snowflake s predpripravenyma datama a dost punkový. Asi by tam šel přidat návod, jak data v trialce naimportovat.
+https://github.com/czechitas/da-data-jakpsatsql
+
+CZECH TESTERS GROUP (Prague, Czech Republic)
+https://www.meetup.com/ProfessionalTesting/
+
+https://regex101.com/
+
+API - Frontend backend apis https://discord.com/channels/769966886598737931/788826407412170752/916448465817600001
+
+JAK SE NAUČIT JINÝ JAZYK - CELÁ NOVÁ STRÁNKA
+přidávám cheat sheet, který porovnává syntaxy pythonu a JS, což člověku dá rychlý náhled jak něco napsat v JS (nebo obráceně). https://github.com/LambdaSchool/CS-Wiki/wiki/Javascript-Python-cheatsheet a https://sayazamurai.github.io/python-vs-javascript/
+learn x in x minutes https://twitter.com/nbashaw/status/1187779382628081664
+
+Data science playground https://www.kaggle.com/
+
+Knihy https://learntocodewith.me/posts/programming-books/
+
+JAK SI VYBRAT JAZYK
+Ptáš se, jaké auto je nejlepší na to, aby ses naučil řídit. Odpověď je, že nejlepší je jakékoliv, které můžeš zkoušet řídit a nejlépe takové, ve kterém ti to půjde dobře a bude tě to bavit.
+Odpověď je, že je jedno, jaký programovací jazyk si vybereš, pokud tě bude bavit a pokud tě napadá, co si v něm pro sebe vytvoříš jako první projekt. Klidně PHP nebo HTML, pokud to má být webovka, klidně C#, pokud hra, je to jedno. Jestliže vůbec nevíš, tak si vyber Python, protože je to dobrá univerzální první volba, dobře se učí a používá se v mnoha oborech, takže si můžeš vybrat později, kdy už tomu budeš lépe rozumět.
+Ptáš se, jaké auto je nejlepší na to, aby ses stal profi řidičem. Jenže profi řidičů je spousta druhů a my nevíme, co budeš chtít potom dělat. Řídit autobus (MHD řidič), kamion (mezinárodní dopravce), motorku (kurýr), limuzínu (řidič a bodyguard v jednom 　 )? Každé z toho bude vyžadovat trochu jinou praxi.
+Odpověď je, že každý jazyk se hodí na něco trochu jiného. Pokud jsi si jistý, že chceš profesionálně programovat mobilní aplikace, asi nemá smysl ti doporučovat něco jiného, než Kotlin (Android) nebo Swift (iOS). Pokud si ničím tak úplně jistý nejsi, tak si vyber Python, protože je to dobrá univerzální volba, používá se v praxi v mnoha oborech, takže se i pouze s ním (dokonce bez znalosti HTML a dalších) lze uplatnit a najít si svou první práci. Každý další programovací jazyk pro tebe už bude snazší se naučit, takže pokud nevíš, moc to neřeš, v budoucnu se snadno cokoliv doučíš nebo přeučíš, až vědět budeš.
+Víc o tom píšu tady: https://junior.guru/learn/
+
+https://www.learnpython.org/
+https://github.com/ronreiter/interactive-tutorials
+
+Nauč sa matiku
+https://www.elea.sk/
+Elea je historicky prvý projekt s matematickými výukovými videami v SR a ČR. Nájdete tu kvalitné a zrozumiteľné materiály úplne zdarma.
+
+My Favorite Free Resources for New Programmers
+https://welearncode.com/favorite-free-resources/
+
+The OSSU curriculum is a complete education in computer science using online materials. It's not merely for career training or professional development. It's for those who want a proper, well-rounded grounding in concepts fundamental to all computing disciplines, and for those who have the discipline, will, and (most importantly!) good habits to obtain this education largely on their own, but with support from a worldwide community of fellow learners.
+https://github.com/ossu/computer-science
+
+Podobný cíl jako OSSU má i "Teach Yourself Computer Science". Slovy autorů: "You don’t need yet another “200+ Free Online Courses” listicle. You need answers to these questions: Which subjects should you learn, and why? What is the best book or video lecture series for each subject? This guide is our attempt to definitively answer these questions." https://teachyourselfcs.com/
+
+Parádní příspěvek o algoritmech
+https://discord.com/channels/769966886598737931/769966887055392768/906583738140467271
+
+Unity
+Za uložení na později stojí i Brackeys na YT. Kanál narvanej úplně vším co tě okolo tvorby her v Unity napadne. K prasknutí. Má pak i discord komunitu, početnou a aktivní. https://www.youtube.com/c/Brackeys
+
+Morsels exercise
+https://twitter.com/obiskywalker/status/1278665773523898368
+
+Kateřina Shine Churanová Kniha Fluent Python od O'Reilly. Asi nejlíp zpracovaná učebnice Python pro pokročilé.
+
+sítě
+https://www.libordos.eu/Prednasky/
+
+If you want to start learning Python programming with a focus on data analysis (for journalism) this is the best starter course I've ever encountered https://t.co/jkmx3tjAM3— Simon Willison (@simonw) March 21, 2020
+https://twitter.com/simonw/status/1241403850788982784
+
+This is a series of books diving deep into the core mechanisms of the JavaScript language. This is the second edition of the book series:
+https://github.com/getify/You-Dont-Know-JS
+
+deeplearning
+https://www.facebook.com/groups/pyonieri/permalink/3292652264080261/
+https://deeplizard.com/learn/playlist/PLZbbT5o_s2xq7LwI2y8_QtvuXZedL6tQU
+https://www.mff.cuni.cz/en
+
+datovy povolani - Kokes:
+ty role se rok od roku mění, ale ta nějak dlouhodobě to vnímám takhle- data analyst - tohle vzniká z těch různých digitálních akademií, databázovejch tréninků atd., zejména deskriptivní analýzy, reporting atd.
+- data scientist - taková všehochuť, všichni to chtěj, nikdo neví co to vlastně je, a každej kdo prošel jednou Kaggle competition si to píše do CV
+- data engineer - infrastrukturní/orchestrační support pro ty dvě role výše - moc firem je nemá, často jsou (částečně) nahrazovaný nějakou službou/infrastrukturou/kontraktoremco se týče hlášení - tak na analysty se hlásí juniornější lidi, kteří se chtěji dostat do oboru, na scientisty se hlásí skoro všichni a na engineery skoro nikdo
+https://gist.github.com/kokes/49ca2f42edf30d6a1f02e3859ad3f9f2
+
+https://www.fullstackpython.com/
+
+Alois Tomasek za me nejlepsi zdroj kterej rad davam je tenhle https://krokodata.vse.cz/ .... k pochopeni SQL je dobry odkaz treba O modelování -> tutorial analyzy -> vztahy
+
+The old age problem of junior sysadmin or programmer pic.twitter.com/OALNV1Xgij— The Best Linux Blog In the Unixverse (@nixcraft) November 26, 2018
+https://twitter.com/nixcraft/status/1066903824634384386
+
+MeetUp-ing like a Boss
+https://medium.com/le-wagon/meetup-ing-like-a-boss-1a4493d75fa6
+
+Mapa technologií
+https://discord.com/channels/769966886598737931/811910782664704040/847778860928860170
+
+OOP bez blbostí
+https://www.reddit.com/r/learnpython/comments/lkaffj/looking_for_a_tutorial_on_classes_that_isnt_about/?utm_source=share&utm_medium=ios_app&utm_name=iossmf
+
+DNS, sítě https://twitter.com/simonw/status/1364356791954366464
+
+nejlepsi kurz na OS https://www.udacity.com/course/introduction-to-operating-systems--ud923
+
+Jak vysvětlit OOP https://www.reddit.com/r/learnprogramming/comments/m6yb5z/how_would_you_explain_what_object_oriented/
+
+design patterns overused
+https://twitter.com/ericnormand/status/1364595203420479494
+https://trello.com/c/eSNJQTCe/2273-design-patterns
+K návrhovým vzorům – rozdělil bych je takto 🙂  - takové, na které selským rozumem přijdete (např. zmíněný adapter), ale je fajn mít nějakou terminologii (a bohužel i buzeraci na pohovorech). - pak takové, které řeší nějaký konkrétní problém v konkrétním jazyce (typicky Java, C++), a třeba nedávají smysl v Pythonu - např. singleton - a vzory, které vám pomohou vyřešit nějaký hlubší problém a selským rozumem byste na ně přicházeli dlouho nebo by vás ani nenapadlo je použít - dataloader, data mapper, unit of work, activerecord, idempotence, immutable typy, job queue...
+
+Junior frontend CLI:  hlavně se toho nebát, za mě tohle (+-): ls, pwd, cd, mkdir, touch, ls -a, ls -l, ls -alt (jako ukázka kombinace parametrů), cp, mv, rm, *, ** (globstar), >, |, sort, grep, doplňování, historie příkazů a hledání v historii + základní použití gitu na CLI, curl, bash profile
+
+dataři https://www.kaggle.com/ plus pripnute odkazy na diskuzi
+https://discord.com/channels/769966886598737931/769966887055392768/836998750182047804
+
+debata o čistém kódu
+https://discord.com/channels/769966886598737931/789107031939481641/838469696663322625
+
+Certifikát PCAP
+https://www.facebook.com/groups/pyonieri/posts/4377451915600285/
+
+VYSVĚTLIT KONCEPT SLOŽEK A ADRESÁŘŮ A PROJEKTŮ, META JAKOŽE
+Já právě v tom roce 2017, jeden den dělali jednoduchou HTML stránku (index.html) a když sem druhej den řekl: otevřete si tu stránku a budeme pokračovat, tak byl problém.
+„Nevím kde to je“. Protože při vytváření vůbec nemyslela na lokaci, prostě se to udělá a je to. A pak to dala do spotlightu… index.html je na MacOS zjevně dostkrát…
+https://www.theverge.com/22684730/students-file-folder-directory-structure-education-gen-z
+
 #} -->

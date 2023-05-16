@@ -242,6 +242,9 @@ Tituly a role ve firmách
 Tituly podle množství zkušeností
 https://github.com/honzajavorek/junior.guru/issues/427
 
+kdo je senior medior junior
+https://discord.com/channels/769966886598737931/769966887055392768/821353834646601829
+
 Tomáš Arcanis Jílek Obecně řečeno: junior - řekneš mu co, řekneš mu jak mid - řekneš mu co a ví jak senior - ví co i jak
 
 61% of “entry-level” jobs require three or more years of experience. HR departments worldwide must stop such nonsense.
@@ -285,5 +288,69 @@ Víš co mě ještě napadlo, co kdybys dával na svůj web příklady zadání,
 
 inzeráty, měnící se požadavky, firma sama neví, co chce
 https://trello.com/c/AdKjIdkZ/1380-%C3%BAprava
+
+https://dev.to/macmacky/70-javascript-interview-questions-5gfi?utm_campaign=Juniors%20in%20Tech&utm_…
+
+otazky na pohovoru
+https://discord.com/channels/769966886598737931/789107031939481641/908679666649399356
+
+dokázat samostatnost
+https://trello.com/c/W66BomqZ/4144-dokazat-samostatnost
+
+Zkusit si s někým pohovor nanečisto.
+
+neber hned prvni nabidku, nerozhoduj se ve stresu, zjisti co je na trhu (Olga)
+
+REDDIT + QUORA: I have applied for over 50 positions, most of which I should be completely or partially qualified for, and I have not received 1 response
+https://www.reddit.com/r/jobs/comments/7y8k6p/im_an_exrecruiter_for_some_of_the_top_companies/
+https://www.quora.com/I-have-applied-for-over-50-positions-most-of-which-I-should-be-completely-or-partially-qualified-for-and-I-have-not-received-1-response-I-need-to-understand-why-Who-can-I-call-to-find-out-if-there-is-a-problem-with
+
+The Best Medium-Hard Data Analyst SQL Interview Questions
+https://quip.com/2gwZArKuWk7W
+
+7 tipů, jak zvládnout online pohovor
+https://blog.smitio.com/clanek-7-tipu-na-online-pohovor
+
+https://www.glassdoor.com/Salaries/index.htm
+
+https://www.coursera.org/learn/time-value-of-money
+
+https://www.moneyunder30.com/best-salary-information-websites
+
+https://www.coursera.org/learn/negotiation
+
+https://glebbahmutov.com/blog/help-me-say-yes/
+
+Něco o platech a jak vypadají inzeráty, které obsahují platové rozmezí
+https://www.facebook.com/groups/junior.guru/permalink/501500764106869/?comment_id=501739954082950&reply_comment_id=503292073927738
+
+Terka's Candidate Handbook
+https://teamaround.notion.site/48e616b977b34dde8db103d0974aef23
+
+Hledáme někoho seniornějšího, hledáme absolventy IT
+https://discord.com/channels/769966886598737931/788826407412170752/849588484749656064
+
+https://hbr.org/2014/06/why-women-dont-negotiate-their-job-offers
+
+Mzdy podle smitia 2.0 Část 2: HPP vs. OSVČ
+https://blog.smitio.com/clanek-mzdy-podle-smitia-2-0-hpp-vs-osvc
+
+diskuze o zkoušení pohovorů
+https://discord.com/channels/769966886598737931/788826407412170752/823163748939595827
+
+Trello s tipy na pohovory pro juniory na frontend
+https://trello.com/b/WkFLQwP8/pohovor-na-frontend-developera
+
+banka interview otázek
+https://www.tryexponent.com/questions
+
+super diskuze o pohovorech hned na n2kolik doplneni prirucky
+https://discord.com/channels/769966886598737931/789107031939481641/832172911422472213
+
+téma - testy jazyka na pohovoru
+https://trello.com/c/ZtFMpfHB/2850-t%C3%A9ma-testy-jazyka-na-pohovoru
+
+Udělej si tabulku s pohovory
+https://trello.com/c/GlUNbcnU/3829-ud%C4%9Blej-si-tabulku-s-pohovory
 
 #} -->

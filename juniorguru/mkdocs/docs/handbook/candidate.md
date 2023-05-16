@@ -775,6 +775,7 @@ For junior position it might be rather difficult to go through recruitment agenc
 
 jeste jedna vec takova, ale to nevim jestli jsem zrovna nemel jen kliku, tak mi prijde, ze ve velkejch firmach muzes vic najit mega chytryho cloveka od kteryho se da ucit. to v mensich tezko najdes, pac ho nezaplatej
 
+Types of companies
 https://almad.blog/notes/2020/on-four-types-of-dev-companies/
 
 https://technicalinterviews.dev/
@@ -798,5 +799,129 @@ https://trello.com/c/Ivq66HuS/888-p%C5%99%C3%ADru%C4%8Dka
 Uaaa, dataři neřeší jen jednorázový úkoly!!!!1
 https://twitter.com/PetraVidnerova/status/1301810810763833344
 https://twitter.com/kondrej/status/1301792984141365248
+
+Studie ze algoritmy na pohovoru jsou bullshit
+https://www.facebook.com/fczbkk/posts/10157621725912741
+
+Here are their top tips:
+-    Cold email and use LinkedIn- Candidates who created tailored emails and sent them directly to the CEO, co-founder or hiring manager expressing interest and outlining your qualifications landed positions this way and received an accelerated interview process!
+-    Use Slack Groups- Join various slack groups and find #hiring channels where employers will post open positions, then reach out to the poster via email or on Slack
+-    Don’t underestimate the behavioural interview- Prepare for the most common behavioural questions such as “tell me about yourself,” “what are you looking for in your next role” and “why do you want to work here” questions. Make sure you make these personal, and do your research on the company to make sure your answers align.
+
+Štěpán a certifikace, Certifikace (Štěpán poradí)
+https://docs.google.com/document/d/1FXiYV3uv0pql4tUliSytr7Z_frvKJsLwFxZQiPrMekc/edit
+https://discord.com/channels/769966886598737931/769966887055392768/851844891805876284
+https://engeto.cz/blog/linux/linux-serial-3-pomuzou-certifikaty-k-lepsi-kariere-v-it/
+https://mail.google.com/mail/u/0/#inbox/FMfcgxwLtZnhDVknJZLzkmPFbpGHzrQf
+https://twitter.com/stepanb/status/1301826148545048576
+Štěpán dokument, Luboš mail, Red Hat má taky certifikace?
+
+https://twitter.com/jurri_cz/status/1299425286077976581
+
+Arogantni HR
+https://www.linkedin.com/pulse/jak-recruite%C5%99i-sm%C3%BD%C5%A1lej%C3%AD-o-aj%C5%A5%C3%A1c%C3%ADch-pavel-%C5%A1imerda/
+
+Entry level jobs. Sad. Only 26% of jobs marked 'entry-level', are actually entry-level. Details here https://reddit.com/r/dataisbeautiful/comments/hvtn0i/oc_only_26_of_jobs_marked_entrylevel_are_actually/
+
+https://twitter.com/nixcraft/status/1286275591512064001
+
+Finding Employment - Python Crash Course, 2nd Edition
+https://ehmatthes.github.io/pcc_2e/finding_employment/
+
+DOPLNIT TYP FIREM: OUTSOURCING
+Jen bych doplnil ještě jeden typ firem do https://junior.guru/candidate-handbook/#job-types a sice firmy dělající outsourcing. Tyto firmy narozdíl od bodyshoppingu umožňují dělat v rámci týmu dlouhodobě (roky) na konkrétním produktu a mít tak dost času se s ním žít a výrazně jej ovlivnit. Zároveň ale umožňují co pár let změnit projekt a dělat tak na jiném produktu, třeba i z jiného odvětví, v rámci stejného kolektivu. Nejzajímavější jsou podle mě firmy dělající outsourcing pro USA, protože se tak zároveň programátor dostane k zajímavým produktům, např. monitorování výkonnosti a funkčnosti databází firem jako je Netflix nebo Sony, SW infrastruktura pro zabezpečeníAustralian Open a olympiády v Tokyu, vizuální dashboard pro plánování strategií v Amazonu či NASA a podobně. Nevýhodou těchto firem pak jsou omezené možnosti růstu mimo programátorskou profesi, protože díky svému typu práce mívají hodně plochou organizační strukturu. Příklad takové firmy je třeba SDE Software Solutions (www.sde.cz.), kde pracuju, nebo jiné.
+
+networking / konference / hackathon / jak se zapojit: https://code.kiwi.com/pythonweekend/
+
+Mzda zaručena minimální https://discord.com/channels/769966886598737931/821411678167367691/910826527812370432
+
+https://www.goodsailors.cz/ - popis firem, diverzita, hendikepy
+
+Reddit - cscareerquestions - What are the harshest truths of being a software engineer?
+https://www.reddit.com/r/cscareerquestions/comments/ihj5ha/what_are_the_harshest_truths_of_being_a_software/
+
+Trying to land a high paying job in tech? Want companies reaching out to you?
+https://randallkanna.com/the-standout-developer/
+
+https://dariagrudzien.com/posts/the-one-about-researching-job-market/
+
+Korporaty https://finmag.penize.cz/recenze/416865-za-stastne-dnesky!-vysla-pusobiva-studie-zivota-v-korporatu
+
+My advice to her & to CS students who don't feel ready
+https://twitter.com/venikunche/status/1217928485626355718
+
+
+CO BY MĚL DNES DĚLAT JUNIOR
+When I graduated a few years ago in the UK almost all the companies I applied to had a hackerrank/leetcode stage. Definitely worth doing as a junior dev.
+
+Hi there, first of all sorry for the late reply - haven't been that active on Reddit of late.
+
+I think for the current scenario - if you're actually a fresher who may have lost his/her job, then I'd recommend grinding more on GeeksForGeeks, Leetcode and also on contests on codechef, codeforces, kaggle, etc. - achievements on these platforms promote visibility if you post them on sites such as LinkedIn and/or AngelList.
+
+I mentioned about being constantly in touch with CS subjects - primarily since if someone's actually out of job and if they suddenly get a call from a dream company, then it can become difficult for them to start preparing all of a sudden. Also, when you keep preparing yourself for a length of time, you're in some sort of a rhythm and then when the time comes to up the ante, you can do so easily.
+
+Collapse of certain segments like travel - maybe utilize that time to do some exercising, do some sort of distance socializing (connecting with friends over a video call), hop onto websites that are offering free courses - last but not the least, one should keep their LinkedIn profiles updated. I got my 2nd job (around August last year) due to that thing only.
+
+
+Tipy od holky ze Skotska
+https://www.reddit.com/r/cscareerquestionsEU/comments/idhfuw/i_bring_some_hope_39_female_selftaught_just_got/
+
+Leetcode rant
+https://www.reddit.com/r/cscareerquestions/comments/jsrmtw/remove_cs_and_replace_with_leetcode_engineering/
+
+Náhodné rady z FB
+https://www.facebook.com/nixcraft/posts/4076448305701850
+
+Olga, dodělat
+https://slides.com/olgafomicheva/my-journey-as-a-developer#/4
+
+jak uzitecny je realne glassdoor
+https://www.reddit.com/r/cscareerquestions/comments/kaiyoa/is_it_just_me_or_is_glassdoor_becoming_less_and/
+
+
+ZAVER
+"...Půl roku se nevzděláváš a hned jsi pozadu." Tady bych asi byl opatrný, že je člověk za 6 měsíců bez vzdělávání pozadu. Reálně z hlediska práce si myslím, že to tak vždycky být nemusí (záleží, co bude dotyčná osoba konkrétně dělat). Problém vidím v tom, že bude stagnovat, tj. 6 měsíců se nikde neposune, nezlepší se v řemesle. Obecně bych možná ten řemeslný přístup trošku více akcentoval. Rozhodně bych více rozepsal "chuť něco tvořit" - tohle je podle mě killer feature programování. Ta možnost z ničeho vytvořit něco. Z prázdného editoru, kde bliká jen kurzor, k programu, který třeba interepretuje jiný program, sekvencuje genom něčeho atd. V tom je ta krása.
+A taky to, že do toho kódu můžeš vložit kus sebe - jak řešením problému (algo), tak filozofií řešení (OOP vs. FP. vs. ?), ale i celkovým vzhledem kódu (vytiskni a pověs na zeď 😊).
+Možná by se hodilo i zmínit, že je ideální mít mindset maratonce - není to závod na 100m, ale celoživotní cesta za "mistrovstvím."
+Jinak celkově je ten závěr dobrý. Ten poslední odstavec je v nové podobě podstatně lepší, než byl 👍🏿
+
+
+Na volné noze
+https://navolnenoze.cz/novinky/it/
+
+
+
+JAK KOMPENZOVAT HANDICAP (NESLYŠÍCÍ A TAK)
+Ahoj Jakube,
+
+poradil bych ti následující:
+
+1) Stejně jako každý jiný junior, vytvořit si praxi na projektech. Popisuji to zde: https://junior.guru/practice/#projects Ostatně, celá ta stránka se soustředí na to, jak si sehnat praxi: https://junior.guru/practice/ Jsou tam i ty tipy na různá místa, kde se můžeš zapojit. Trochu je pak o tom i zde: https://junior.guru/candidate-handbook/#projects Mrkni i na možnosti stáží a dobrovolnictví: https://junior.guru/candidate-handbook/#internships
+
+2) Kompenzovat své nedostatky. Ve tvém případě to bude to, že jsi neslyšící, ale znám programátora bez ruky, slepého programátora, znám lidi, kteří řeší různé psychické potíže. Někdo má zase omezení, která jsou úplně jiného charakteru, ale taky jej penalizují na pracovním trhu - třeba bydlí někde v Jihlavě a starají se tam o rodiče. Nemohou tedy jednoduše sehnat práci třeba v Brně nebo Praze a přestěhovat se za ní. Všichni musí něco kompenzovat.
+
+Chce to jasnou strategii.
+
+Pokud je tvé omezení, že neslyšíš, můžeš se zkusit zaměřit na firmy, kterým to vadit nebude, nebo se můžeš snažit ukázat, že to není problém. Ideálně možná oboje. V prvním případě bych ti doporučil zaměřit se na velké firmy, které mají zkušenosti se zaměstnáváním různě limitovaných lidí. Např. Red Hat nebo Oracle jsou velké firmy, které mají jako součást své firemní kultury přímo kodex, který říká, že chtějí zaměstnávat všechny lidi, i lidi s nějakým omezením - viz třeba https://blog.python.cz/blind-attendee-about-pycon-cz-2016
+
+Druhá věc je všem firmám ukázat, že to prostě není problém. Vzhledem k tomu, že neslyšíš, asi nikdo nebude zpochybňovat, že bys mohl mít problém s programováním samotným, ale půjde spíš o komunikaci s ostatními. Přímo v CV bych tedy být tebou měl nějakou pasáž, kde popíšeš, jakým způsobem s ostatními běžně komunikuješ (protože pro lidi ve firmě to třeba není problém, ale neumí si to prostě jen představit a je pro ně jednodušší tě vyřadit). Dnes lidi dost pracují na dálku, takže to ti může i nahrát - sice asi nedáš nějaký videocall (nebo dáš? já vůbec nevím, co všechno dnes různé asistivní technologie dokážou), ale můžeš si s lidmi stejně jako ostatní psát apod. Největší průlom potom asi nastane ve chvíli, kdy budeš mít pozitivní zkušenost z reálného týmu. Našel bych si tedy být tebou nějaký tým lidí, ať už to bude neziskovka nebo nějaký nadšenecký hobby projekt, kde ověříte, že práce v týmu funguje, a budeš schopen od lidí, se kterými pracuješ, dostat nějaké doporučení. Toto doporučení si potom zase opět klidně přímo napiš do CV. Vyzdvihni, že máš za sebou tento týmový projekt a pod tím klidně citaci ve smyslu "S Jakubem se mi pracovalo skvěle, vše podstatné jsme zvládli vyřešit po Slacku, s jeho prací jsem spokojen. -- Tomáš, týmový kolega"
+
+Abych to shrnul, pracuj na sobě jako každý jiný junior, vyselektuj si firmy tak, aby ses hlásil do těch, kde jim to bude vadit s nejmenší pravděpodobností, a snaž se v CV kompenzovat vysvětlováním a pozitivními referencemi, které jdou přímo proti jakýmkoliv předsudkům, které by kdo mohl mít.
+
+Ještě mě napadá, že mohou existovat různé organizace, které řeší sluchové omezení, a mohli by vědět o jiných programátorech a dalších profesionálech, kteří prorazili. Já znám jen Radka Pavlíčka https://twitter.com/radlicek, který se angažuje ve webové přístupnosti nejen pro lidi se zrakovým postižením, možná mu zkus napsat. Jde o to, že pokud bys znal další programátory, kteří neslyší, mohl by ses jich vyptat na reálné zkušenosti, tipy jak prorazit, jak to firmám vysvětlit. A možná i na tipy jak efektivně pracovat v programátorském týmu, atd.
+
+Doufám, že něco z mých tipů půjde použít :) Držím palce a měj se!
+https://mail.google.com/mail/u/0/#search/nesly%C5%A1%C3%ADc%C3%AD/FMfcgxwJXxtFnJVBQdXrFLxRwmnqHQzg
+
+
+
+How to become self taught dev
+https://www.reddit.com/r/learnprogramming/comments/inm8z3/how_i_became_a_selftaught_developer/
+
+Neplacené stáže ano/ne?
+https://discord.com/channels/769966886598737931/788826407412170752/860449245131309116
+
+part-time rozebrat, odkazy uvnitř
+vše před a po https://discord.com/channels/769966886598737931/788826407412170752/935797332501491772
 
 #} -->

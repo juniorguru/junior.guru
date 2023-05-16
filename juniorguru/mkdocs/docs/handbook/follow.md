@@ -16,6 +16,7 @@ noindex: true
 
 <!-- {#
 
+- https://learntocodewith.me/podcast/
 - IG https://www.informatikakukave.sk/
 - odkazy na zpratelene podcasty na stranku podcastu?
 - stránku s podcasty vyrobit? Stránku s odkazy na pravidelný obsah jako jsou podcasty, YouTube, srazy, konference

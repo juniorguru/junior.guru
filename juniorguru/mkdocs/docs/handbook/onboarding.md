@@ -267,4 +267,36 @@ https://jvns.ca/blog/things-your-manager-might-not-know/
 
 Avoid These Common Mistakes Junior Developers Make! https://www.youtube.com/watch?v=5g3dK2DgW-k
 
+Be a good mentor not dickhead
+https://dev.to/mortoray/be-a-good-mentor-not-a-dickhead
+
+Produkční codebase jak vypadá reálně
+https://discord.com/channels/769966886598737931/789045589869461536/929711441320243281
+
+Začátky ve firmě
+https://discord.com/channels/769966886598737931/864434067968360459/910594474428739604
+
+Celý kanál #zaučování
+
+FILIP MIKSCHIK - JUNIOR PO TOM CO NASTOUPI (NAPADY)
+Já to spíš prolétl, mě se to líbí, ještě by se mi líbilo nějaké doporučení, že tím, že tu práci dostaneš to nekončí. Naopak. Pracoval jsem s různými juniory a spoustu lidí jsme takhle vychovali skoro od nuly a občas je ten člověk super, když nastoupí, ale pak zjistíš, že za pár měsíců se moc neposunul. Že mu nemůžeš pořád dát větší úkol a zvládne jen upravit nějaký překlep aniž by rozbil něco jiného. A pak máš vedle člověka, kterému za stejnou dobu dáš volnost si brát z todočka libovolný task, protože i když to bude něco většího, tak to zvládne. Tak jen aby si nemysleli, že tím, že nastoupí mají vyhráno a různě velká firma bude mít různě velkou trpělivost. A hlavně ať se ptají a komunikují s tím týmem - měl jsem lidi, kteří vzali task a pak týden studovali dokumentaci, aby stvořili geniální řešení, které ale vůbec neodpovídalo té potřebě. A i když jsme jim opakovali, že se mají ptát, konzultovat s lidmi, co sedí dva metry od nich, tak tohle prostě nefungovalo.
+
+https://dariagrudzien.com/posts/the-one-about-being-a-competent-team-member-in-high-stress-situations/
+
+https://dariagrudzien.com/posts/the-one-about-giving-and-receiving-feedback/
+
+https://dariagrudzien.com/posts/the-one-about-managing-self-as-a-junior/
+
+We only hire the trendiest
+https://danluu.com/programmer-moneyball/
+
+meetingy
+https://www.facebook.com/vivaladirtleague/videos/1177063656029627/?__cft__[0]=AZX-dIZlnN3OY1ifBUHkCXQcis4kiLOE7glUW0_0oLsoDuOZecNAH4nGRLIlVH5s-6igXfqtIMi3LkzgVlSt6b18dxJnmBbZRHsHZhGwu2srf3n-vUSftTwN_H9YMrvPMeNj8O7eO2F_ar16AXR0Iwq_RgK94nrh4sYRnHD0D3BWk6vl8AFEii1O8yrkliGkMXQ&__tn__=%2CO%2CP-R
+
+jak se zorientovat po nastupu do firmy, diskuze
+https://discord.com/channels/769966886598737931/769966887055392768/820005012696596520
+
+orientace ve velkem projektu
+https://twitter.com/ASpittel/status/1365376038931415040
+
 #} -->

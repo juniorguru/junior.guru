@@ -121,4 +121,18 @@ No rozhodně bych si poradila ať se více ptám na věci, které mi nebyly úpl
 Příručka: rekvalifikace proplacená od státu
 https://byznys.ihned.cz/c1-66848610-chcete-rekvalifikaci-na-programatora-ci-pilota-dronu-vime-jak-si-ji-nechat-zaplatit-statem-nebo-unii
 
+Certifikáty a akreditace
+https://trello.com/c/Wfy4o1o8/4926-certifikaty
+
+https://www.czechitas.cz/blog/jak-si-vybrat-kurz
+
+mely by kurzy mit vlastni materialy?
+https://discord.com/channels/769966886598737931/769966887055392768/845278004624228372
+
+maji najaky smysl psychotesty?
+https://discord.com/channels/769966886598737931/769966887055392768/845265153971716107
+
+co je bootcamp
+https://www.facebook.com/groups/1806114342948040/permalink/3581897008703089/?comment_id=3582808101945313&__cft__[0]=AZVLPF3myMElmSDbhPIfH2EZ_WoHV5ppoxFJuhlx90CTy5jEt8mXlPdgb37GZMRp13tfKjPTm9LoDfBuu9oWumBKTlHgU2-QdTKVuuGwHsCqwMuNvsFEAe_W8eDwWCDPsHg9v80aSIvrh9H0haubkwBohkixR4aQwzGnNl0Cbup9AzD_wdDoPFFdVGPz-he0xL0&__tn__=R]-R
+
 #} -->

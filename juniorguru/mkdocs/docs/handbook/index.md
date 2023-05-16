@@ -53,4 +53,20 @@ https://twitter.com/jzunigacoayla/status/1380694681911226373
 
 https://blog.lewagon.com/skills/programming-language-to-learn/
 
+https://roadmap.sh/
+
+https://codeburst.io/the-2018-web-developer-roadmap-826b1b806e8d
+
+https://twitter.com/ladybugpodcast/status/1247051343212281856
+
+Front-end Developer Handbook 2019
+https://frontendmasters.com/guides/front-end-handbook/2019/
+
+How to Learn to Code & Get a Developer Job [Full Book]
+https://www.freecodecamp.org/news/learn-to-code-book/#500-word-executive-summary
+
+https://learntocodewith.me/
+
+https://www.pythondiscord.com/resources/
+
 #} -->
