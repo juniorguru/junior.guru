@@ -512,6 +512,9 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
 ## Příručka
 
 Orientační metriky co se týče stránek v [příručce](handbook/index.md).
+Všechny soubory spadající pod příručku mají aktuálně **{{ charts_handbook_size_total|thousands }}** znaků.
+[Podle Wikipedie](https://cs.wikipedia.org/wiki/Diplomov%C3%A1_pr%C3%A1ce) je 180.000 znaků doporučovaná velikost disertační práce (titul Ph.D.).
+
 Počítání znaků v souborech, kde se míchají Markdown a Jinja2 značky, má spoustu vad, ale aspoň něco.
 Příliš velké stránky bych měl nejspíš zkrátit, nebo rozdělit do více menších.
 

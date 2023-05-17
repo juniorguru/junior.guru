@@ -144,6 +144,7 @@ def on_docs_context(context):
     context['charts_events_ttm'] = charts.per_month(Event.count_by_month_ttm, club_charts_months)
     context['charts_events_women_ptc_ttm'] = charts.per_month(EventSpeaking.women_ptc_ttm, club_charts_months)
     context['charts_handbook_labels'] = [page.src_uri.removeprefix('handbook/') for page in Page.handbook_listing()]
+    context['charts_handbook_size_total'] = sum([page.size for page in Page.handbook_listing()])
     context['charts_handbook_size'] = [page.size for page in Page.handbook_listing()]
     context['charts_handbook_notes_size'] = [page.notes_size for page in Page.handbook_listing()]
     context['pages_handbook'] = Page.handbook_listing()
