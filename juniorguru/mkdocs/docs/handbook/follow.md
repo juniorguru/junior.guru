@@ -1,5 +1,6 @@
 ---
 title: Co sledovat
+emoji: 📺
 description: TODO
 template: main_handbook.html
 noindex: true

@@ -1,5 +1,6 @@
 ---
 title: Příručka pro juniory
+emoji: 🗺️
 thumbnail_badge: zdarma
 description: Obsáhlá příručka pro všechny, kdo se chtějí naučit programovat a najít si práci v oboru.
 template: main_handbook.html

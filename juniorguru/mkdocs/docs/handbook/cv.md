@@ -1,5 +1,6 @@
 ---
 title: Jak na životopis pro juniory v IT
+emoji: 📝
 description: Co dát do životopisu, když nemáš praxi? Když jsi student? Jak můžeš i jako junior bez praxe připravit CV, které tě dostane na pohovor v IT?
 template: main_handbook.html
 ---

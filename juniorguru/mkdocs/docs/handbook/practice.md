@@ -1,5 +1,6 @@
 ---
 title: Jak získat praxi v programování
+emoji: 🛠️
 thumbnail_title: Jak získat praxi v programování
 description: "Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti."
 template: main_handbook.html

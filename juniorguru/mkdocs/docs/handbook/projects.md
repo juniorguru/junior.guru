@@ -1,5 +1,6 @@
 ---
 title: Projekty
+emoji: 🏗️
 description: TODO
 template: main_handbook.html
 noindex: true

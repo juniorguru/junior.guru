@@ -1,5 +1,6 @@
 ---
 title: Rodiče v IT
+emoji: 👶
 description: TODO
 template: main_handbook.html
 noindex: true
