@@ -528,20 +528,21 @@ Ty se taky započítají do celkové velikosti, ale v grafu je jejich velikost v
         'labels': charts_handbook_labels,
         'datasets': [
             {
-                'label': 'počet znaků celkem',
-                'data': charts_handbook_size,
-                'backgroundColor': '#1755d1',
-            },
-            {
                 'label': 'počet znaků TODO',
                 'data': charts_handbook_notes_size,
                 'backgroundColor': '#a9a9a9',
+            },
+            {
+                'label': 'počet znaků celkem',
+                'data': charts_handbook_size,
+                'backgroundColor': '#1755d1',
             },
         ],
     }|tojson|forceescape }}"
     {{ charts_revenue_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
+        'scales': {'x': {'stacked': true}},
         'plugins': {
             'annotation': {
                 'common': {'drawTime': 'beforeDatasetsDraw'},
