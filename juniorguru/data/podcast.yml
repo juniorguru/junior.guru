@@ -8,6 +8,12 @@
 # avatar_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
+- id: "0016"
+  title: Tomáš Stankovič (Pretlak) 
+  publish_on: "2023-05-17"
+  description: |
+    Pája si v novém díle povídá s Tomášem, který se kolem webů pohybuje už od střední a dnes je spoluzakladatelem a CTO pracovního portálu Pretlak. Dozvíte se, jak vnímá vývoj v technologiích a jaký bude trend následujících let a také jaké mylné představy někdy lidi mají o práci v IT. 
+
 - id: "0015"
   title: Marián Kameništák (kamenistak.com) o pohovorech a kariéře v IT
   avatar_path: avatars-participants/marian-kamenistak.jpg
