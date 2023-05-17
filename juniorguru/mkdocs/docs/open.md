@@ -516,37 +516,45 @@ Počítání znaků v souborech, kde se míchají Markdown a Jinja2 značky, má
 Příliš velké stránky bych měl nejspíš zkrátit, nebo rozdělit do více menších.
 
 Když chci na nějaké stránce něco doplnit, dělám si na jejím konci HTML komentář a do něj si ukládám nepříliš strukturované poznámky.
-Ty se taky započítají do celkové velikosti, ale v tabulce je jejich velikost vynesena i do separátního sloupce, abych tušil, kde na mě ještě čeká kolik práce.
+Ty se taky započítají do celkové velikosti, ale v grafu je jejich velikost vynesena i do separátního sloupce, abych tušil, kde na mě ještě čeká kolik práce.
 
-<div class="table-responsive standout"><table class="table">
-<tr>
-    <th>Stránka</th>
-    <td>Celková velikost (znaky)</td>
-    <td>TODO (znaky)</td>
-</tr>
-{% for page in pages_handbook %}
-    <tr>
-        <td><a href="{{ pages|docs_url(page.src_uri)|url }}">{{ page.src_uri.removeprefix('handbook/') }}</a></td>
-        <td>
-            {% if page.size < 2000 %}
-                🚧
-            {% elif page.size < 20000 %}
-                ✅
-            {% else %}
-                ❌
-            {% endif %}
-            {{ page.size|thousands }}
-        </td>
-        <td>
-            {% if page.notes_size %}
-                🚧 {{ page.notes_size|thousands }}
-            {% else %}
-                ✅
-            {% endif %}
-        </td>
-    </tr>
-{% endfor %}
-</div></table>
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="200"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': charts_handbook_labels,
+        'datasets': [
+            {
+                'label': 'počet znaků celkem',
+                'data': charts_handbook_size,
+                'backgroundColor': '#1755d1',
+            },
+            {
+                'label': 'počet znaků TODO',
+                'data': charts_handbook_notes_size,
+                'backgroundColor': '#a9a9a9',
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts_revenue_breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'plugins': {
+            'annotation': {
+                'common': {'drawTime': 'beforeDatasetsDraw'},
+                'annotations': {
+                    'threshold': {
+                        'value': 20000,
+                        'scaleID': 'y',
+                        'type': 'line',
+                        'borderColor': '#dc3545',
+                        'borderWidth': 1,
+                    }
+                },
+            }
+        },
+    }|tojson|forceescape }}"></canvas></div></div>
+
 
 ## Aktivita v klubu
 

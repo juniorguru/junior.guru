@@ -1,6 +1,6 @@
 import calendar
 import itertools
-from datetime import timedelta
+from datetime import date, timedelta
 
 from slugify import slugify
 
@@ -71,7 +71,7 @@ def month_range(date):
     return (date.replace(day=1), date.replace(day=calendar.monthrange(date.year, date.month)[1]))
 
 
-def annotations(months, milestones):
+def annotations(months: date, milestones: list[tuple[date, str]]):
     annotations = {
         f'{month.year}': {
             'xMin': x,
