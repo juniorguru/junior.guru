@@ -123,7 +123,7 @@ def main(context, id, deps, mutate, allow_mutations, log_path):
         sync = Sync.start(id)
     context.obj = dict(sync=sync,
                        skip_dependencies=not deps)
-    logger.info(f"Sync #{id} starts with {sync.count_commands()} commands already recorded")
+    logger.debug(f"Sync #{id} starts with {sync.count_commands()} commands already recorded")
     context.call_on_close(close)
 
 
@@ -173,7 +173,7 @@ def all(context, dry_run):
 @click.pass_context
 def close(context):
     sync = context.obj['sync']
-    logger.info(f"Sync #{sync.id} done with {sync.count_commands()} commands recorded")
+    logger.debug(f"Sync #{sync.id} done with {sync.count_commands()} commands recorded")
     times = sync.times_min()
     if times:
         times_repr = ', '.join([f"{name} {time:.1f}min" for name, time in times.items()])
