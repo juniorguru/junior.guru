@@ -389,4 +389,9 @@ flowcv.io
 thread o tom ze mas rict proc zrovna do te firmy
 https://discord.com/channels/769966886598737931/932606706809204786/933082534621892638
 
+--- https://discord.com/channels/769966886598737931/839059491432431616/849041512499249222
+Ještě k těm jazykům, Europass (https://europass.cz/) v životopisu, v oddílu Jazykové znalosti, používá _sebehodnotící_ škálu založenou na SERR v pěti samostatných okruzích - poslech, čtení, mluvená komunikace, samostatný ústní projev a psaní - ke každému okruhu a každé úrovni jsou tam navíc jedno až dvouvětné popisky pro orientaci. Podle mě se tak snáz vyjádří konkrétní znalosti a zkušenosti v daném cizím jazyku.
+---
+
+
 #} -->

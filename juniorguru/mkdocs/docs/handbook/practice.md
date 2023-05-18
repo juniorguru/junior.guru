@@ -661,4 +661,67 @@ Takže, jsem spokojeně zaměstnanej rok mám víc peněz a nějak stíhám (tak
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/901412010410008577
+Pánek má spoustu materiálů k automatizaci: https://www.youtube.com/watch?v=OnpOwlp8Hrg&list=PLZaZq-LUymhx3Lip30OGmsMPdAVoNl45i&index=5
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/897087048110997584
+Vystudovaná škola je irelevantní, fakt. Když pominu procesní části kyberbezpečnosti, kde je stejně dobrý vstup pro právníka, ekonoma jako informatika, tak ty technický části kyberbezpečnosti na škole nic moc neudělají. I na specializovaných školách je to pár profilujících předmětů, navíc (bohužel) ne vždycky valné kvality. Jako juniorní základ bych řekl, že pokud má člověk technické znalosti, aby dokázal přečíst a pochopit Security Engineering od Rosse Andersona https://www.cl.cam.ac.uk/~rja14/book.html (druhá edice je tam elektronicky zdarma), tak je na tom líp než průměrný absolvent oboru kyberbezpečnosti na výšce. Ta vysoká škola s tímhle zaměřením ti dá prostor se tomu věnovat, ale nic negarantuje - můžeš vyjít super nabitej, nebo taky prolézt s tím, že to na tobě nezanechá stop ani v nejmenším.
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910782664704040/892875350655262773
+Nedávno jsem narazil na knihu Refactoring UI (https://www.refactoringui.com/book). Rozebírá tam velmi hrubě základní teorii barev, volbu písem, jak pracovat s bílým místem atd. Je ale hlavně o tom řemeslu a systematičnosti - ukazuje, jakým způsobem postupovat, aby výsledek vypadal dobře. Celá kniha se nese v duchu "redukce možností" - radí například, jak si poskládat paletu barev a jejich odstínů. Když pak člověk vybírá vhodnou barvu pro tlačítko a má 20 možností, tak se trefí spíš, než když jich má 16 milionů (celé RGB). V knížce je i spousta praktických tipů na práci s kontrastem, obrázky, stíny...
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826190692483082/884015212573904916
+Zkusil jsem něco dát dohromady, postupně to asi budu vylepšovat: https://itsrazy.cz/
+Chybí vám tam kdyžtak nějaký meetup?
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/883236495060783114
+Motivován debatou jinde, jestli je lepší CZ nebo US rozložení klávesnice pro vývojáře jsem aktualizoval „tahák“ na klávesnici. Třeba by se i tady mohl někomu hodit.
+
+**EDIT: verze aktualizovaná  podle připomínek**
+PNG (1920×1080 px) https://coreskill.tech/downloads/klavesnice-cz-en.png
+SVG https://coreskill.tech/downloads/klavesnice-cz-en.svg
+PDF (A4 pro tisk) https://coreskill.tech/downloads/klavesnice-cz-en.pdf
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/877136649933455360
+YouTube algoritmus mi po čase doporučil dobré video. Pro ty, kteří baží po přehledném vysvětlení OOP https://www.youtube.com/watch?v=m_MQYyJpIjg
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/870253808037552168
+Je to devops focused, ale i tak je to sada dobrejch rad, kde ty hlavní jsou: 1) koncepty se napříč technologiema tolik neliší, takže je hlavní pochopit ty, 2) je dobrý mít rozhled, i když jste "jen" programátor, protože pak můžete dělat lepší architektonický rozhodnutí https://www.youtube.com/watch?v=d8X4Nd5gswU
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/867726165561049129
+Ahoj, posílám zdroje, které jsem já používala:
+ 
+* toto je super úvod do DB, sice tam používá SQLite a Python, ale začíná s ukládáním dat do Google sheets a uvidíš, jaký je rozdíl a proč jsou DB užitečné, takový krok za krokem, jak jsme se dostali k DB: https://www.youtube.com/watch?v=Wb0DM9I8RDo
+* k procvičování SQL doporučuju Murder Mystery, je to hrozně zajímavé: http://mystery.knightlab.com/
+* k modelování jsem používala krokodýlovy databáze: https://krokodata.vse.cz/DM/DMDB 
+* MUNI má materiály k DM online: https://www.fi.muni.cz/~xdohnal/lectures/PB154/czech/
+
+EDIT: když už mám několik špendlíků, zkusila jsem vygooglit další zajímavé zdroje: 
+* ELI5 (explain like I were 5) o databázích, první dvě odpovědi: https://www.reddit.com/r/explainlikeimfive/comments/jht6he/eli5_what_are_databases_and_how_do_they_work/
+* ELI5 o tom, jak ukládat velké množství dat do DB: https://www.reddit.com/r/explainlikeimfive/comments/78ppdo/eli5_how_does_a_database_handle_1_billion_users/
+* SQL tutorial: https://www.w3schools.com/sql/default.asp
+* SQL joins visualizer: https://sql-joins.leopard.in.ua/
+* Vennůvy diagramy, ze kterých vychází SQL joiny: https://www.mathsisfun.com/sets/venn-diagrams.html
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/867285980209348628
+Tohle nemusí být špatný čtení (díky <@!739821357503742042> , že to na LI lajkla https://blog.oliverjumpertz.dev/the-10-most-valuable-lessons-i-learned-as-a-developer)
+---
+
+
 #} -->

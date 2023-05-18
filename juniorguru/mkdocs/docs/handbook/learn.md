@@ -499,4 +499,32 @@ V prubehu sabbaticalu jsem zkousel ruzne cesty , kam se v kariere vydat a postup
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/859537028081123358
+> **Total time spent: ~418+h**
+Pro všechny vypíchnu tenhle ⬆️  údaj z https://github.com/NelliaS/development-timeline
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/853948221734649876
+Je to pořád spíš interní tool, kterej vyžaduje vysvětlení jak fungování, tak obsahu, ale za ty prachy… (zadarmo)
+https://your.coreskill.tech 
+Je to většinou velmi konkrétní. A taky stále nekompletní atd.
+A není tam zatím žádný reaktivní framework (Vue.js/React atd.)
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/897087048110997584
+Vystudovaná škola je irelevantní, fakt. Když pominu procesní části kyberbezpečnosti, kde je stejně dobrý vstup pro právníka, ekonoma jako informatika, tak ty technický části kyberbezpečnosti na škole nic moc neudělají. I na specializovaných školách je to pár profilujících předmětů, navíc (bohužel) ne vždycky valné kvality. Jako juniorní základ bych řekl, že pokud má člověk technické znalosti, aby dokázal přečíst a pochopit Security Engineering od Rosse Andersona https://www.cl.cam.ac.uk/~rja14/book.html (druhá edice je tam elektronicky zdarma), tak je na tom líp než průměrný absolvent oboru kyberbezpečnosti na výšce. Ta vysoká škola s tímhle zaměřením ti dá prostor se tomu věnovat, ale nic negarantuje - můžeš vyjít super nabitej, nebo taky prolézt s tím, že to na tobě nezanechá stop ani v nejmenším.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/884384772669972481
+Pokud kamarádka nemá žádné zkušenosti s testováním, doporučuju začít s Czechitas jednodenním *úvod do testování* - vyzkouší si prakticky, jak vypadá práce manuálního testera/ky. Dále se může podívat na zdroje kolem test stacku a Radima Pánka (http://rdpanek.cz/) - témata jsou sice  technická, ale mají i zdroje pro začátečníky v automatizovaném testování. 
+
+Pokud se rozhodne jít do toho, doporučuju si najít nějaký kurz. Jsou firmy a neziskovky, které nabízí takové kurzy. Toto bohužel neumím objektivně hodnotit, protože nemám s tím osobní zkušenosti. 
+
+Na práci manuálního testera stačí látka z ISTQB zkoušky - https://castb.org/wp-content/uploads/2020/05/ISTQB_CTFL_CZ_3_1_1-6.pdf. Na pohovorech se často ptají na teorii (otázky typu co je boundary analysis, black box versus white box testování, kdy automatizovat testy a proč a kdy neautomatizovat apod.) a také ověřují způsob, jak kandidát/ka přemýšlí - otázky typu jak otestovat žehličku/konvičku/jakýkoliv předmět. Co se ještě hodí umět je Linux a SQL - občas bude potřeba podívat se do logů, zapnout si prostředí nebo vytáhnout nějaká data z databáze. Na pohovorech, jak vím, se na to obvykle neptají, pokud se jedná čistě o manuální testování.
+---
+
+
 #} -->

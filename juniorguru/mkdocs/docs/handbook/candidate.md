@@ -984,4 +984,36 @@ Je možné, že to někomu to vyšlo, tak se prosím podělte, zatím jsem ale t
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788833053425926195/847575361696825416
+Ono už je to asi i vedle, ale dávám raději i sem 🙂 Letní stáž v JetBrains: https://www.facebook.com/315284691916211/posts/3773302836114362/
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/902872779924316161
+Jinak jedna věc, na kterou mě <@!819485466231177256> přivedl - je dobrý vědět, že v průběhu roku máte z definice různý šance na úspěšné přijetí. Drtivá většina firem funguje na bázi ročních rozpočtů - a čím větší firma, tím striktnější ten proces je. Což znamená, že v průběhu roku se ukáže, že je třeba přidat člověka, ale není na něj/ni žádná část rozpočtu přiřazená (protože když se rozpočet plánoval,, tak se to nevědělo - nebo neprosadilo). Což znamená, že se může snadno stát, že taková pozice bude vypsaná při nejbližší možné příležitosti - což je typicky další rok.
+No a velká část firem má fiskální rok a kalendářní rok identický (my zrovna ne, náš fiskál končí teď v říjnu), takže typicky od října/listopadu už je jasné, kolik peněz a na jaké pozice bude a začínají se vypisovat - s ideálem, aby ten nový člověk nastoupil co nejdřív od začátku roku.
+Není to náhoda, dá se s tím pracovat - a doporučuju to. Pokud naopak máte zájem o konkrétní firmu, zjistit jak to tam mají s fiskálem a rozpočtem vám s tím časováním může pomoct taky. Totéž platí, když se nabírají absolventi - typicky firma, co chce absolventy je chce mít "co nejdřív" poté co absolvují. Ale zároveň ví, že málokdo nastoupí v červenci, protože si chce užít poslední prázdniny. Takže se snaží naplánovat hiring kampaň tak, aby proběhla PO zkouškovým a PO státnicích (protože student, který řeší jestli a jak dokáže vůbec projít nemá v hlavě prostor na pohovory), ale zároveň aby stihli ti lidi nastoupit v září nebo říjnu. 
+Obecně chci tímhle dlouhým textem říct, že má smysl přemýšlet o faktoru času při hledání práce - a to i z pohledu druhé strany (která se zase snaží vcítit do vás, takže je to nekonečný cyklus).
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/887687959669800970
+Ano, existují lidé (spíš firmy), kteří ti umí pomoci za peníze, s tím, aby ses (ty) naučila, co je třeba. I v té intenzivní podobě, kterou plánuješ. I u nás je jich několik.
+Debata o tom byla tady
+https://discord.com/channels/769966886598737931/769966887055392768/860589911634477076 + aktualizace
+https://discord.com/channels/769966886598737931/769966887055392768/866680751499902986
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/884384782669213727
+Certifikát ISTQB může být užitečný pro hledání první práce, protože je tam hooodně teorie, kterou se člověk musí naučit, na druhou stranu znám spoustu lidí, kteří dostali práci i bez něj. Pokud už člověk má praxi, certifikáty jsou většinou nerelevantní. 
+
+Co si myslím, že by mohlo pomoct je ukázat, že člověk ví, kam se chce dál posunout. Automatizované testování je často dalším krokem a aby člověk mohl psát autotesty, musí nejdříve umět programovat na základní úrovni. Doporučuju tady začít s Javou, protože junior testery většinou nabírají v bankách, kde jsou testy v Javě. Pokud nejsou v Javě, jsou většinou v Pythonu a přechod Java ->Python je jednodušší, než naopak. Nicméně, dá se začít i Pythonem, to je možná jednodušší na začátek. Každopádně bych tady doporučila mít nějaký ukázkový projekt. Taky bych doporučila, osvojit si základy DevOPSu - někdo bude muset připravovat testovací prostředí, automaticky na něm spouštět testy atd. 
+
+U testera/ky můžou být důležité doménové znalosti - toho bych se nebála využít. Pokud mám vystudované bankovnictví, zkusila bych se primárně hlásit do bank. Je spousta dalších cest, kromě automatizovaného testování - pokud už vím, kam mířím, zkusila bych to na pohovoru zmínit. 
+
+Co se týká firem, hledala bych nějakou, kde mají menší poměr manuálních testerů (nebo ideálně žádné), protože se může stát, že se junior/ka zasekne na manuálním testování a nikam neposune. Na pohovoru bych se vyloženě ptala, kolik je manuálních testerů, kolik mají manuálních vs automatizovaných testů, co ode mě očekávají.
+---
+
+
 #} -->

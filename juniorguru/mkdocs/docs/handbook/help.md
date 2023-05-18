@@ -163,4 +163,15 @@ tldr pages (man pages) https://tldr.sh/
 jak se ptat kdy se ptat
 https://trello.com/c/0kzSVb96/5606-jak-se-ptat-kdy-se-ptat
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/872541661706748026
+<:python:842331892091322389>  Motivace k pokročilejšímu debuggování:
+https://youtu.be/5AYIe-3cD-s
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/872033850581188658
+[WebDev/JS] Naucil jsem se nedavat vsude `console.log` na debuggovani a misto toho pouzivat logpointy: https://developer.chrome.com/blog/new-in-devtools-73/#logpoints
+---
+
+
 #} -->

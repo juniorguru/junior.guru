@@ -361,4 +361,23 @@ Jedna dívka z 🇬🇧 sdílela své postřehy, zkušenosti a strategie z pří
 ---
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/864435350793355284
+Já taky vykopnu, mého velmi oblíbeného kouče. Když jsem se připravovala na pohovory, shlídla jsem od něj všechno, co jsem na youtube našla a dost mi to dodalo odvahy. Doporučuju! https://www.youtube.com/watch?v=Nu8j-I8DP-g&list=PLHWSimfGgi3uxRy_SHg344tG8p6Ya1lgL&ab_channel=PavelMoric
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/860439257353420820
+Já si tady odložím mého velmi oblíbeného kouče, https://www.youtube.com/watch?v=Nu8j-I8DP-g&list=PLotrBczWsvlgxQRf7zJcJwIFC4tuhHxZe&index=5&ab_channel=PavelMoric od 10.minuty. Když jsem se připravovala na pohovory, sjela jsem od něj všechny videa a dost mě to povzbudilo. A chtělo to víc, než jen "neboj se".
+---
+
+
+--- https://discord.com/channels/769966886598737931/788833053425926195/860200758481780757
+A ještě někdo jinej psal takovou zkratku:
+
+**Junior**: řekneš mu co, řekneš mu jak
+**Medior**: řekneš mu co a ví jak
+**Senior**: ví sám co i jak
+---
+
+
 #} -->

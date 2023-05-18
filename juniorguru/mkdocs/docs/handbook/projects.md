@@ -137,4 +137,43 @@ https://www.theguardian.com/news/datablog/2012/feb/14/highstreet-clothes-size-ch
 Charakter juniorniho projektu
 https://discord.com/channels/769966886598737931/788826407412170752/861505874539446282
 
+--- https://discord.com/channels/769966886598737931/789087476072710174/862669093898813440
+Jako nástroj doporučim naprosto boží TablePlus. Velmi lightweight, velmi rychlý, relativně levný https://tableplus.com/
+---
+
+
+--- https://discord.com/channels/769966886598737931/789087476072710174/864057143056662528
+Zrovna ve čtvrtek jsem se na to víc koukal a úvodní video z této stránky má asi 25 minut a dá slušnou představu 😀 
+https://docs.docker.com/get-started/
+---
+
+
+--- https://discord.com/channels/769966886598737931/789087476072710174/864484645721604097
+V minulosti měli limit 18 hod./den. Teď mají 550 hod./měsíc, případně 1000 hod./měsíc, když ověříš svojí identitu platební kartou. Průměrný měsíc má 730 hod. (konstanta, kterou je dobré si pamatovat, když procházíš ceníky cloudových služeb), takže by to mělo být v pohodě, i když tam pošleš Pingdoma/UptimeRobota.
+
+Zdroj: https://devcenter.heroku.com/articles/free-dyno-hours#free-dyno-hour-pool
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/859041142553051138
+Z mých poznámek, kde se dají sehnat projekty na rozjezd:
+
+- https://junior.guru/practice/#projects
+- dobrovolničení pro https://cesko.digital/
+- okopírovat existující věc (viz co píše <@!419662350874837003> nebo yablko tu https://www.linkedin.com/feed/update/urn:li:activity:6796762431776403456/, nebo úplně pecka je toto https://github.com/danistefanovic/build-your-own-x )
+- zpracování dat o jménech https://www.theguardian.com/news/datablog/2012/apr/25/baby-names-data, o velikostech oblečení https://www.theguardian.com/news/datablog/2012/feb/14/highstreet-clothes-size-chart
+- nějaká další inspirace tady https://www.codementor.io/projects
+- https://data-flair.training/blogs/python-projects-with-source-code/
+- https://automatetheboringstuff.com/
+- tady je spousta dalších nápadů  https://www.reddit.com/r/learnprogramming/comments/i2c0ud/keep_being_told_to_build_projects_but_dont_know/
+
+Nejlepší samozřejmě je, když k tomu máš nějaký osobní vztah, tzn. něco, co ti usnadní život nebo tě bude bavit, ať už je to program, který analyzuje výdaje na účtu, hypoteční kalkulačka na míru, procvičování počítání pro děti, osobní web o nějakém koníčku... Trochu už se to řešilo i tady https://discord.com/channels/769966886598737931/769966887055392768/817042156581421086
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/887690090162298930
+Al Sweigart byl teď hostem podcastu https://realpython.com/podcasts/rpp/77/  právě kvůli té nové knížce. Docela inspirativní na poslech a obsah knihy je volně i online zde: https://inventwithpython.com/bigbookpython/
+---
+
+
 #} -->

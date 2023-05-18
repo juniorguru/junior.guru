@@ -70,4 +70,53 @@ https://learntocodewith.me/
 
 https://www.pythondiscord.com/resources/
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/904981964208087070
+**Fáze juniora.**
+
+Skoro u každýho kroku je možno se zaseknout a nepřejít dál.
+Každej krok má svoje úskalí.
+
+0️⃣ **občas mě něco jako učit se programovat napadne** 
+úskalí: nezačnu nebo začnu, ale první zkušenost je špatná
+
+1️⃣ **nezávazně zkouším všechno možné nebo začínám s jednou věcí, o které si myslím, že ji chci dělat** 
+úskalí: nemůžu se rozhodnout mezi technologiemi či oblastmi
+
+2️⃣ **učím se samostatně / v kurzu to, co si myslím, že chci dělat** 
+úskalí: sám nevím kam až / kurz zas nemusí být dostatečný nebo kvalitní / nedaří se mi najít si dost času se tomu věnovat
+
+3️⃣ **pracuju na projektech**
+úskalí: nevím jak začít / nevím jaký projekt / nedám projekt (ani průběžně) ke zhodnocení / špatně odhadnutý rozsah projektu
+
+4️⃣ **připravuju se na hledání práce (CV apod.)** 
+úskalí: neodvažuju se do téhle fáze přejít, nevím co se v IT očekává nebo dokonce nemám moc zkušeností s prací celkově / neumím sám sebe „prodávat“, mám problém napsat pozitiva do CV
+
+5️⃣ **hledám práci**
+úskalí: nemám dostatečnou výdrž / nemám dostatečnou finanční rezervu / odradí mě první neúspěchy / vezmu cokoli i když je to něco jiného, než jsem chtěl dělat (někdy ok, někdy problém)
+
+6️⃣ **mám nalezenou/domluvenou práci a nastupuju v budoucnu** 
+úskalí: nezačnu se vůbec sám učit technologii, kterou ve firmě používají  nebo to s tím naopak místo odpočinku přeženu
+
+7️⃣ **zkušební doba v první práci** 
+úskalí: málo se ptám seniora a tím se málo učím / není k dispozici senior / zůstanu ve firmě i když je to tam zjevně špatný
+
+8️⃣ **pracuju (po zkušební době)** 
+úskalí: přestanu se rozvíjet a učit, nedostávám pokročilejší úkoly
+
+9️⃣ **mám 1-2 roky praxe**
+úskalí: to co v 8️⃣ + neřeknu si o větší peníze, přestože mám na trhu o dost vyšší cenu než na začátku
+
+🔟 už nejsem „junior“
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/894840146845925427
+https://www.codecademy.com/resources/docs
+
+Blog post k tomu https://www.codecademy.com/resources/blog/introducing-docs/
+
+Samozřejmě jsou jiné existující zdroje, ale tady je to hodně stručně, takže to začátečníci asi ocení.
+---
+
+
 #} -->

@@ -59,4 +59,11 @@ Kafemlejnek
 PROGRAMOVÁNÍ POD POKLIČKOU
 https://www.youtube.com/watch?v=RVCjcIqMeh8
 
+--- https://discord.com/channels/769966886598737931/811910782664704040/868064817259352095
+Dva tipy na newslettery.
+https://csslayout.news/
+https://frontendfoc.us/
+---
+
+
 #} -->

@@ -165,4 +165,23 @@ neví asi nikdo 😄 Ale základ je pochopit svou situaci, pochopit co každý z
 ---
 
 
+--- https://discord.com/channels/769966886598737931/811910392786845737/856204731193884683
+Zajímavý web https://calmcode.io/ s krátkými lekcemi, který zatím pokrývá hlavně Python. Líbí se mi, že lekce k args a kwargs končí srozumitelným příkladem situace, kdy se podobná věc může hodit. https://calmcode.io/args-kwargs/usecase.html
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910782664704040/869859900572983377
+Jessica Rose si plní sen udělat začátečnický webdev kurz zadarmo: https://www.classcentral.com/report/webdev-bootcamp/
+Za Jessicu se můžu zaručit, není to žádné skryté tahání peněz.  (Jestli ji teda nezradí platforma, ale to Class Central  vypadá OK.)
+Místo peněz kurz vyžaduje čas a dřinu, jak říkají v https://www.classcentral.com/report/webdev-bootcamp/#expectations  ~~(Já ten čas nemám, tak se nepřihlásím...)~~
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/868020295351537704
+https://www.udemy.com/course/the-modern-python3-bootcamp/
+https://www.udemy.com/course/100-days-of-code/
+https://www.udemy.com/course/automate/ (kdysi jsem někde sehnal kód, abych to měl zdarma, ale teď nemůžu najít kde)
+---
+
+
 #} -->
