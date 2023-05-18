@@ -707,5 +707,6 @@ před časem jsem se zavázal, že to sepíšu nějak strukturovaně - a bohuže
 draft je tutaj: https://gist.github.com/kokes/49ca2f42edf30d6a1f02e3859ad3f9f2
 ---
 
+anglictina: https://www.deepl.com/translator
 
 #} -->

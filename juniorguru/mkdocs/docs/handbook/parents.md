@@ -72,7 +72,6 @@ A kdy se tedy učím? Když jsou starší dva kluci ve školce a nejmladšího u
 Teď, jak začnu pracovat, tak se budu muset s manželem už domluvit, aby mě od dětí odstínil pravidelně, jestli to nemám dělat večer a víkendy, když mi nejmladší háže vidle do toho spaní. Manžel sám mi na začátku tvrdil, že si to představuju moc jednoduše, jak se dostanu do IT, takže chápe, že když už tam jsem, že to mé úsilí k něčemu je a je zapotřebí.
 ---
 
-
-#} -->
+http://www.zasnem.cz/2023/04/26/maly-hacker/
 
 #} -->
