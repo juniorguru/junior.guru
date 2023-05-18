@@ -1202,4 +1202,20 @@ Známý, který má Crohnovu chorobu tam dělá projektovýho manažera a říka
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1100742108870086716
+Včera <@771661208007868446> hrozně pěkně mluvil o herním testování, tak jsem si vzpomněl na jeden web, jehož název mluví asi za vše. Kvalitu a kvantitu všech těch informací může posoudit někdo povolanější, ale říkal jsem si, že by se to mohlo někomu líbit/hodit. Já si tam jen něco málo četl a přišlo mi to zajímavý 🎮 https://www.gameindustrycareerguide.com/how-to-break-into-video-game-industry/
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1099677728803913749
+Jojo včera. Za mě dobrý, nemám teda žádnou zkušenost z podobné akce, ale kupodivu jsem u toho vydržela až do konce. Neobešlo se to bez technických potíží, kdy to každého občas vyhodilo a musel se přihlásit znovu, takže si tak povídáte s HR a najednou zmizne, no byla sranda 😄  Chat byl neustále plný zpráv typu nejede mi mikrofon, nejde mi kamera, nic neslyším, nevidím, kam zmizel ten nebo onen. Pozdravila jsem se s <@1028946296771461180> . Nakonec ani kamera nebyla nutná, spoustu lidí jelo bez kamer, jen přes mikrofon a pokud člověk nechtěl, tak nemusel mluvit s nikým. Součástí byl i malý kvíz, kdy v rámci světa bylo 5 otazníků, které jste museli najít a odpovědět na různé otázky či hádanky. 
+
+Celkem se mi líbilo představení ČSOB ze kterého jsem měla pocit, že hodně podporují remote pozice i částečné úvazky a mají dobrou firemní kulturu. Co se týče firemní kultury, tak se mi hodně líbí i brněnská firma IRESOFT, momentálně nabízí pozice na C#, Python a React. Podle příspěvků na LI by měli uchazeči dostat zpětnou vazbu vždy, ikdyž si vás nepozvou ani na pohovor, dají vám vědět a řeknou proč, což mi přijde dost super. Více takových firem.
+
+Na základě mého LI se mi ozvala na mail paní z jedné firmy, která nebyla součástí veletrhu, takže jsem s ní v kontaktu a uvidím co z toho bude. 
+
+I přes technické problémy hodnotím kladně, mě všechno jelo jak mělo, jen mě to občas vyhodilo a musela jsem se připojit znovu. Nevím jak přínosné je to pro lidi co už vyloženě aktivně hledají práci, já to beru zatím jako takový průzkum trhu.
+---
+
+
 #} -->

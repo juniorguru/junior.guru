@@ -342,4 +342,49 @@ Za uložení na později stojí i Brackeys na YT. Kanál narvanej úplně vším
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1100772270445703199/1101219405838418051
+https://www.seznamzpravy.cz/clanek/domaci-zivot-v-cesku-zlepsete-svou-karieru-vyzyva-ministerstvo-nabizi-az-50-tisic-na-kurzy-230085#dop_ab_variant=0&dop_source_zone_name=zpravy.sznhp.box&source=hp&seq_no=3&utm_campaign=abtest217_krokovy_redesign_feedu_varA&utm_medium=z-boxiku&utm_source=www.seznam.cz
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1080894646424703046
+Velmi mě zaujalo video https://www.youtube.com/watch?v=DPg4EVufkfs - vypadá to, že autorka Lucie Lénertová je velmi dobrá v tom, co dělá. 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/789092262965280778/1062686928115347466
+Těm, co začínají s Javou, nebo si ji chtějí osvěžit jako já, bych chtěl doporučit už zmiňovaný finský MOOC kurz: https://java-programming.mooc.fi/ (má dvě části). Mám za sebou tu první a budu pokračovat, tak tady jsou dojmy:
+
+MOOC Java Programming
+🙂 Vše je pěkně vysvětlováno, dobře se to čte
+🙂 Podle mě vhodné i pro někoho s horší angličtinou
+🙂 Nutí pořád psát nějaký kód (většinou menší cvičení)
+🙂 Celý kurz je zdarma
+
+🤷‍♂️ Text-based + obrázky + pár videí ve finštině <:lolpain:859017227515854879> (s titulky ofc)
+🤷‍♂️ Jako podpora slouží skupina na Telegramu
+🤷‍♂️ Někdo může být rád za certifikát, v závěru jsou dva, tj. jeden za každou část
+
+🙁 Absence větších projektů (možná na konci druhé části?)
+🙁 Používat jejich plugin TMC v IDE může být docela pain
+(asi ne minus pro někoho, kdo je v pohodě s NetBeans,
+kde je oficiálně podporovaný a měl by být hladší průběh)
+🙁 Něco se může dít se servery -> Neuploadneš vypracovaný úkol, musíš čekat
+(to poslední se mi stalo zatím jen jednou, ale trvá to už déle jak půl dne,
+s něčím podobným jsem se ale setkal třeba i u kurzu od Jetbrains)
+---
+
+
+--- https://discord.com/channels/769966886598737931/789092262965280778/1056643531650900030
+<@186214860080676864> ptal ses
+> Stojí tyto kurzy obecně vůbec za to? V případě greenfox je to něco okolo 100 000,- není to úplně málo, tak jestli má vůbec smysl tuto částku investovat.
+Je to trochu jiné téma, než v tom threadu řešíme, tak napíšu odpověď tady.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789092262965280778/1056473925497929768
+Prošel jsem všechny kurzy programování a tvorby webu s aktuálně platnou akreditací MŠMT, tedy takové, na které můžete (ale nemusíte) dostat peníze (až 50000 Kč) od Úřadu práce.
+---
+
+
 #} -->

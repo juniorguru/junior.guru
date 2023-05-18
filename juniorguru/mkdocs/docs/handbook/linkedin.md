@@ -169,4 +169,40 @@ aj ja sa bojim, ale vravim si, ze to skusim a necham si tam len to čím prejdem
 ---
 
 
+--- https://discord.com/channels/769966886598737931/839059491432431616/1089162987979411567
+<:linkedin:915267970752712734> tip: zkraťte si URL vašeho profilu, hodí se to hlavně v CV 
+ https://www.linkedin.com/help/linkedin/answer/a542685/manage-your-public-profile-url?lang=en
+---
+
+
+--- https://discord.com/channels/769966886598737931/839059491432431616/1083753293467095102
+Mám otázku: Mít profil na LinkedIn v češtině nebo v angličtině? Z mého pozorování je to skoro 50/50, případně kombinace obojího.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1059550477286658179
+Serus, ked píšete ludom z HR na LinkedIn tak im tykáte ci vykáte ?
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1061002896558260266
+Tool na zhodnocení CV a Linkedinu, který dává i doporučení, co by jak mohlo vypadat. Zkoušel jsem tam nahrát svoje anglické verze Linkedinu a CV a dalo to nějaké zajímavé tipy https://resumeworded.com/
+---
+
+
+--- https://discord.com/channels/769966886598737931/839059491432431616/1055409817444946032
+Nestihl jsem projet celou diskuzi. Po zkušenostech z IT recruitmentu mohu jen říct, že někteří ičaři mají "open to work" permanentně. A já (HPP) to taky budu měnit až po/během zkušebky nejspíš.
+---
+
+
+--- https://discord.com/channels/769966886598737931/839059491432431616/1055404629107691580
+Tyhle obavy jsem v minulosti taky měla. Nedávala bych si v tomto případě "Open to work" na profil, ale zkusila bych přidat do profilu klíčová slova z oboru, ve kterém chceš začít. Třeba něco jako: "V pracovní době dělám xxx. Ve volném čase nadšeně programuji v ..., zajímá mě ... a ..., procvičuju ...". Tohle ještě o switchi nic nevypovídá, a zároveň dává poměrně jasný obraz, na co se zaměřuješ.
+---
+
+
+--- https://discord.com/channels/769966886598737931/839059491432431616/1054821889001926778
+Open to work by nemeli videt lidi kteri s tebou pracuji ve stejne spolecnosti na LinkedIn. Takze i to je pomerne bezpecne.
+---
+
+
 #} -->

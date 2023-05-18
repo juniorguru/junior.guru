@@ -241,4 +241,41 @@ https://www.reddit.com/r/learnprogramming/comments/2a9ygh/1000_beginner_programm
 ---
 
 
+--- https://discord.com/channels/769966886598737931/811910782664704040/1085161148330029156
+Třeba má někdo detailnější poznámky, ale alespoň body ze včerejšího povídání tady v klubovně.
+Nebudu to ale vysvětlovat ani rozepisovat.
+
+**Časté chyby začátečníků, když píšou HTML a CSS**
+– nekódují podle návrhu, přestože to je většina práce pro většinu těch, co CSS tvoří
+– kódují podle návrhu v PNG/JPG apod. místo Figmy (případně XD nebo Sketche)
+– berou návrh příliš doslova (vlevo 39px, vpravo 40px…)
+– berou návrh od oka: nedávají hodnoty z Figmy
+– kopírují „CSS“ z Figmy, přestože 98 % těch hodnot nemá správné jednotky, případně nejsou dostatečné (font-family)
+– nastavují `width` častěji než je nutno a ještě pevnými jednotkami (nevyužívají % apod.)
+– nastavují `height`, které není potřeba nastavovat skoro nikdy – výška elementů vzniká z velikosti obsahu (často velikosti písma, line-height atd.) jeho paddingů, marginů, borderů atd. ne tak, že nastaví `height`
+– zbytečně zaokrouhlují, i 5 desetinných míst je v pořádku
+– používají padding tam, kde by stačil margin nebo dokonce gap
+– nevyužívají dědičnost vlastností pro nastavení vlastností textu v celé stránce/webu
+– jejich css selektory kopírují strukturu v HTML např. `body header p { … }` apod.
+– používají v selektorech ID (stačí elementy, třídy + pseudoelementy, pseudotřídy atd.)
+– využívají proměnné (custom properties v CSS nebo proměnné v Sassu) tam, kde nemají moc smysl
+– používají _CSS reset_, který „smaže“ přiliš mnoho výchozích vlastností a musí je pak znovu nastavovat, spousta práce navíc
+– mají „špatně“ nevalidní kód, nevyužívají validátor („dobře“ nevalidní kód je takový, který nic nerozbije, validita sama o sobě velkou hodnotu nemá)
+– nekomentují si kód a za pár dní neví proč tam je to, co tam je
+
+A dvě věci, které jsem myslím nezmínil.
+– v Sassu příliš vnořují, špatně se to čte 
+– neporovnávají návrh s výsledkem v prohlížeči
+– netestují ve všech možných šířkách (a případně i výškách).
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910782664704040/1077904819328651344
+V <#1075155024965025792> <@1016967149371277323> otevřela téma webu jako portfolia frontendisty.
+Nemyslím si, že je nutné ho mít, ale mají ho všichni klienti <:coreskill:929824061071192084> CoreSkillu, kteří s námi procházejí cestou z „umím málo“ do „mám první práci“.
+
+Proč? Protože je to výborné zadání na jednoduchý statický web, kterým začínáme a je méně motivující dělat nějaký cvičný, který se pak zahodí, než tohle, co má nějakej smysl a navíc obsah je jasnej. Taky je časem větší motivace ho upravovat a vylepšovat.
+---
+
+
 #} -->

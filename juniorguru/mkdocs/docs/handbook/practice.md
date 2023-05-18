@@ -863,4 +863,31 @@ K algoritmům obecně třeba tohle: https://knihy.nic.cz/files/edice/pruvodce_la
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/1099057039549927534
+Průlet matematikou, která se někdy hodí většině programátorům. Nemusíte ji umět, ale chcete vědět, jak se to jmenuje a co to je, abyste si to uměli aspoň vygooglit, až to budete potřebovat 🔢 https://youtu.be/bOCHTHkBoAs
+---
+
+
+--- https://discord.com/channels/769966886598737931/1075541542669922424/1098976769509445653
+ad materialy, z hlavy: 
+* surrounded by idiots - jak se lidi chovají a proč se chovají tak, jak se chovají
+* how to win friends and influence people - nejlepší kniha ever o lidech a o tom, jak udělat takový dojem, že tě lidi budou mít rádi
+* how to present on ted talk - o prezentačních dovednostech, do hloubky a na profi úrovni, přímo od zakladatele ted talků
+* the subtle art of not giving a fuck - právě čtu, ale má to dobré hodnocení
+* radical candor - o dávání zpětné vazby, užitečné pro ty, co se jí bojí 
+* https://www.youtube.com/watch?v=Ks-_Mh1QhMc - nejlepší talk ever o sebevědomí a imposter syndromu
+* https://www.youtube.com/watch?v=H14bBuluwB8 - o disciplíně a její vlivu na úspěch
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826928147857439/1085251519496073368
+Byste někdo kdo se těch Pyv účastníte mohl sepsat, jak to celé probíhá. Pro nás co jsme na podobné akci nikdy nebyli. Mě osobně se to těžko představuje. Bývá to v hospodě, zároveň je tam přednáška...někdy popis v angličtině někdy v češtině. Už z těchto informací mě napadá několik dotazů...komunikuje se tam v angličtině nebo je jen přednáška v angličtině? Sedí se tam po nějakých skupinkách u stolů nebo v řadách jako na přednášce? Je tam nějaký tlak na nově příchozí aby se představili nebo je naopak všichni přehlíží dokud se sami někam neuvedou?
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1065341778682712105
+MDO https://www.trywilco.com/
+---
+
+
 #} -->

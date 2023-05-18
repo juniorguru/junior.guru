@@ -689,4 +689,49 @@ Nevím, jestli se v českém prostředí tohle objevuje u pohovorů, ale jako cv
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1099057355620106342/1099665136341487666
+A zhruba polovina poslala zamítnutí na základě CV.
+Asi 15–20 vůbec neodepsalo. (10–20 %)
+---
+
+
+--- https://discord.com/channels/769966886598737931/1075541542669922424/1099426281302528103
+Chápu, že to není cesta pro každého, ale pohovory se pro mě radikálně změnily tím, že jsem si zažil druhou stranu barikády a pochopil tak víc její motivace a postupy. Najednou z toho nebyl neznámej bubák a stres. 
+Snažím se to tady opakovaně předat, ale nevím jestli se to daří.
+
+Časté je vnímání jako zkoušky někde na VŠ, kterou je potřeba nějak prolézt, kde bude někdo prověřovat, zda máš nějaké znalosti, které se jde případně nahučet pár dní předtím a zase zapomenout. To ale vůbec nedává smysl.
+
+Lepší přirovnání mi přijde první rande, je možné, že o ten vztah jeden z nich stojí víc, ale je to prostě začátek vztahu, často na dobu neurčitou a obě strany po prvním oťukání přes inzerát na jedné straně a screening / CV / projekty na GitHubu na straně druhé zjišťujou, jestli by delší vztah mohl fungovat. Někdy je na to potřeba víc schůzek (kol).
+
+Ti, kteří hledají lidi, je chtějí co nejrychleji a nejsnadněji najít, ale nechtějí se trefit vedle. 
+Nemají potřebu nikoho potápět, ponižovat nebo zbytečně tahat přes více kol.
+Já se před každým pohovorem „modlil“, aby konečně po těch týdnech a měsících přišel někdo, koho můžem bez výhrad vzít…
+
+Samozřejmě píšu o ideálu. 
+Jako u všeho platí, že 90 % všeho jsou sračky, takže spousta lidí to dělá blbě nebo musí jet podle nějakých pitomých procesů atd. Ale i to je něco, co zjišťuješ ty, jako kandidát o firmě. Jak to tam chodí a jestli chceš s takovými lidmi pak řešit něco dalšího.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789087476072710174/1090957362438869092
+🆓 <:shutupandtakemymoney:842465302783590441> **Kalkulačka pro přepočet mezi OSVČ a zaměstnancem** aktualizovaná pro letošní rok.
+Má to svoje limity, které tam snad vysvětluju, ale umí to letošní dvě sazby paušální daně apod.
+
+Pokud jste neviděli, je dobré pro pochopení vidět https://www.youtube.com/watch?v=iJGjTFDYw9A
+
+Link na tabulku https://bit.ly/osvc-v-zamestnanec-2023
+
+_🙏 Díky <@380388619061559299> a <@614870427931770900> za feedback, který mě donutil nad tím po letech přemýšlet a opravit ~~nepřesnost~~ chybu <a:thisisfinefire:976193331975557260> (i proto už ty starší tabulky nenajdete <a:awkward:985064290044223488> )_
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1088537642758574150
+Tak mě dneska napadlo: Když je práce na částečný úvazek, pro přehlednost se bavme o polovičním, jak dojdete k výpočtu své ceny? Čistě polovinu toho, co byste si řekli za plný?
+---
+
+
+--- https://discord.com/channels/769966886598737931/1031588279532933223/1080435541738258434
+2023 update, rekl bych ze  junior, ktery umi kodit, si muze momentalne rict neco mezi 40 a 50k hrubeho, smaozrejme zalezi na lokalite a firme 🙂
+---
+
+
 #} -->

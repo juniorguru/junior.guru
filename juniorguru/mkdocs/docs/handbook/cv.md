@@ -405,4 +405,20 @@ To co píše <@539022501876072448> se týká lidí, co už něco mají za sebou 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1099057355620106342/1099665136341487666
+A zhruba polovina poslala zamítnutí na základě CV.
+Asi 15–20 vůbec neodepsalo. (10–20 %)
+---
+
+
+--- https://discord.com/channels/769966886598737931/839059491432431616/1072271057265901718
+<@447531834713047042> Ať tím nekrademe vlákno Lucii… myslím, že historicky největší rozdíl v CV před a po byl <@378163381573648387> a nejen vizuálně a přehledností, ale hlavně obsahem. Takhle to šlo za sebou (bylo jich asi víc, ale tyhle jsou: první, první zásadní změna od Pavla a pak ještě finální verze)
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1061002896558260266
+Tool na zhodnocení CV a Linkedinu, který dává i doporučení, co by jak mohlo vypadat. Zkoušel jsem tam nahrát svoje anglické verze Linkedinu a CV a dalo to nějaké zajímavé tipy https://resumeworded.com/
+---
+
+
 #} -->

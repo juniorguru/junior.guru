@@ -337,4 +337,14 @@ Má to i českou verzi! 🙂 sprostou https://ohshitgit.com/cs a slušnou https:
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789087476072710174/1068139247799902238
+Udělátor, co simuluje a vizualizuje příkazy v gitu, dokážu si představit, že by to mohlo být užitečné lidem co si třeba ještě nejsou úplně jistí jak git funguje: https://github.com/initialcommit-com/git-sim
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1062732102237437973
+Pěkný materiál pro prvo-přispěvatele/ky na GitHubu: https://github.com/firstcontributions/first-contributions
+---
+
+
 #} -->

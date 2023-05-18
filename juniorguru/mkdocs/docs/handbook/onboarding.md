@@ -403,4 +403,14 @@ Na Twitter spaces teď Cassidy zmínila https://career-ladders.dev/ – jak v Ne
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1080049938173542411
+Krátký článek o feedbacku, jak ho dávat, přijímat... https://brightinventions.pl/blog/5-feedback-models-you-should-know Užitečné nejen v IT 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1070762673681219624
+za dva týdny mě čeká 1:1 s šéfem, nevím co přesně od takové schuzky čekat, na co se mám připravit a jak se já mám připravit?
+---
+
+
 #} -->

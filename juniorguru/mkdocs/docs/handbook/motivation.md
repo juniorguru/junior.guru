@@ -610,4 +610,17 @@ https://en.wikipedia.org/wiki/Real_Programmers_Don%27t_Use_Pascal
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1099996552291942471
+Na to jsou dokonce data: https://whoisnnamdi.com/never-enough-developers/ zajímavé je, že ti nejlepší lidi odchází z oboru, zatímco zůstávají průměrní (oni to označili jako fast-pace learners a average-page learners). Je to tím, že náklad obětované příležitosti pro lidi, co se rychle učí může být vyšší než jejich TC (total compensation).
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1082587990104215613
+Jak je IT úžasný víme všichni. 
+Namátkou: topíme se v penězích, pracujeme z pláže v Karibiku / vrcholku Everestu / sklepa na samotě u lesa, měníme svět, pořád se máme co nového učit, umíme opravit libovolnou tiskárnu atd.
+
+Co jsou ale podle vás nevýhody tohoto oboru?
+---
+
+
 #} -->

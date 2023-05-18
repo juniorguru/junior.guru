@@ -193,4 +193,24 @@ Ideální časová jednotka asi neexistuje, každý to bude mít trochu jinde, a
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1091322623943786577
+Co si myslíte o používání Copilota (apod.) někým, kdo se učí programovat? Je větší výhoda, že to třeba dává člověku nápady jak ten kód napsat, který by ho normálně nenapadly a on se tím něco naučí nebo je to horší tím, že si pak člověk nenabíjí tolik držku, na spoustu věcí si nepřijde sám a třeba mu uniknou i nějaký důležitý vlastnosti jazyka?
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1080894646424703046
+Velmi mě zaujalo video https://www.youtube.com/watch?v=DPg4EVufkfs - vypadá to, že autorka Lucie Lénertová je velmi dobrá v tom, co dělá. 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1080049938173542411
+Krátký článek o feedbacku, jak ho dávat, přijímat... https://brightinventions.pl/blog/5-feedback-models-you-should-know Užitečné nejen v IT 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1060527570539532368
+Zajímavý jak se to schází... O debuggingu vydala nedávno zine i Julia Evans: https://wizardzines.com/zines/debugging-guide/
+---
+
+
 #} -->

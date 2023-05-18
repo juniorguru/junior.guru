@@ -63,4 +63,6 @@ Určitě je to firma od firmy, ale na otázku, jestli máš šanci sehnat IT pr�
 ---
 
 
+
+
 #} -->

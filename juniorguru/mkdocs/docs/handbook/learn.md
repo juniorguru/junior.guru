@@ -594,4 +594,33 @@ Ahoj, Brno je plny cizincu, kteri se vidaji - staci mrknout na FB.
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1100742108870086716
+Včera <@771661208007868446> hrozně pěkně mluvil o herním testování, tak jsem si vzpomněl na jeden web, jehož název mluví asi za vše. Kvalitu a kvantitu všech těch informací může posoudit někdo povolanější, ale říkal jsem si, že by se to mohlo někomu líbit/hodit. Já si tam jen něco málo četl a přišlo mi to zajímavý 🎮 https://www.gameindustrycareerguide.com/how-to-break-into-video-game-industry/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1089542061910413345/1089650948328136865
+🇬🇧 Dodám, že slabší angličtina je v IT samozřejmě mínus, na druhou stranu **není potřeba nějaký zázrak**, nějaké porozumění psanému textu může stačit.
+Co třeba tenhle text (je to úvod k jednomu kurzu), je to pro tebe nesrozumitelné?
+
+> Simply put, computer programming is a way to make computers do different tasks. It is a process of writing a set of instructions (also known as code) that a machine can understand and making the machine follow them. The end goal might be to solve a mathematical equation, automate a boring task, or create a web page, a piece of software, a mobile app, or a whole game.
+> 
+> Computer programming requires technical skills and creative thinking. Some call it science, some call it art.
+> 
+> To have a full picture of what computer programming is, we need to highlight two points in the definition: "make computers do tasks" and "writing a set of instructions that a machine can understand". Let’s talk about the instructions first.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1083076710586658866
+Možná jsem to tu už sdílel, ale koukám, že můžu zopakovat
+> If you have to google it then it's going to use 1 of your 4 working memory slots.
+https://saveall.ai/blog/learning-is-remembering
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1063554627959791687
+Toto je post od Software Engineera v google. Je to skor smerovane na juniorov a ake jazyky sa ucit podla toho comu sa chces venovat. https://www.linkedin.com/posts/demitriswan_programming-golang-go-activity-7018701749519601664-rnY1?utm_source=share&utm_medium=member_desktop
+---
+
+
 #} -->

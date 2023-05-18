@@ -208,4 +208,24 @@ Druhý den jsem nastoupila na projekt do jiné společnosti. Takže stejné kole
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1089542061910413345/1089645111840886836
+Ahoj Jamébo, vítej v klubu. 
+Máš tedy v životě aktuálně řádně naloženo, ne že ne. 😓 
+Jsme sice stejně staří a už sem taky nějakou tou krizí prošel, ale jako bezdětný, si tohle neumím moc představit. 😮 
+
+Co si představit umím, je to, co je potřeba pro změnu kariéry do IT, protože posledních několik let tím lidi provázím.
+
+Ne všem se to povede a ty důvody jsou v naprosté většině stejné:
+🪫 nejsou na tom psychicky dobře, vyhoření, deprese, rozpad vztahu, to všechno je často bohužel smrtelná rána téhle snaze, prostě už nemáš energii  
+💸 nemají dost finančních rezerv: není to levné, místo práce se učit, platit kurzy, hledání práce taky trvá, nástupní peníze v IT nejsou žádná výhra (pořád není výjimkou 30 hrubého za fulltime) i když to samozřejmě stoupá relativně rychle
+🫂 chybí podpora partnerů / rodiny / okolí: tohle je trochu propojené s těmi předchozími, okolí ti to může financovat, hlídat děti a vůbec ten pocit, že ti někdo blízký říká, že to zvládneš je taky dost důležitej.
+
+A teď když se touhle optikou dívám na tvoji situaci, jak ji tu popisuješ, tak kromě odhodlání, které z toho cítím (respekt!), tam vidím i dost rizik. Trh aktuálně taky není na tvé straně, poněkud to vychladlo a je potřeba umět víc a práci juniorům trvá najít déle než třeba před rokem.
+
+Nerad bych tě tím demotivoval, ale v tvé situaci asi nemůžeš moc riskovat a jít do toho po hlavě bez ohledu na šance a je proto na místě spíš opatrnější přístup. ☹️ 
+
+Zkusme přijít na nějakou cestu, jak by to mohlo jít. 🤔
+---
+
+
 #} -->
