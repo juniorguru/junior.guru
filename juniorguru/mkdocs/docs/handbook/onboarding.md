@@ -310,4 +310,97 @@ Doporucuju to nastavit jako "rada bych se dostala na pozici XYZ/plat 123/..., co
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1014967078639374387
+Čtu si tenhle příjemný článek o tom, jak přistoupit k tomu, když před sebe dostanu nový kód https://amberwilson.co.uk/blog/how-to-approach-a-new-codebase, a napadlo mě se zeptat, jak to vidíte vy? Např. jestli dokážete nějak zobecnit, kolik toho vyzkoušíte a přečtete, než se pustíte do vlastního psaní?
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1002496242456219719
+Nepíšou inzeráty s názvem *Junior Developer* ale ani *Senior Developer*, prostě popisujou co a v čem tam budeš dělat, co od tebe čekají. Když se na to začátečník nebo junior cítí, ať se klidně ozve. Pokud chtějí spíš někoho seniornějšího, je to v těch popisech popsané těmi požadavky, ne slovem _senior/junior_.
+
+Když napsali junior, měli problém, že těch začátečníků se hlásilo opravdu hodně a opravdu hodně z nich nebylo na úrovni o kterou by stáli, takže i tímto tomu předcházejí.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/999948607002259537
+> nebudu dostávat zpětnou vazbu, že byli vybráni blbě
+Jasně, pak je to klasickej https://en.wikipedia.org/wiki/Survivorship_bias, ale může to nevadit, když je dost kandidátů.
+Sice jsme odmítli i lidi, co by tu mohli pracovat, ale nevadí, máme dost jiných. Akorát to v IT spíš není.
+
+> chci dávat šanci lidem, kteří by ji třeba jinde nedostali
+to není nutně charita, ale klidně chytrá strategie, jak si rozšířit množství lidi, mezi kterými hledám (nemluvě o výhodách diverznějších týmů)
+Toto nedělá ten obchod aby chudáci introverti mohli nakupovat, ale aby vydělal.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/999243598371491910
+Ok, za me muze fungovat:
+• chci videt jak ten clovek realne koduje, dam mu zadani, nejakej cas at si to castecne sam zpracuje, zorientuje se a pak mi to muze okomentovat, a projdem to a u nejakyho neudelanyho zbytku nebo nejake dalsi ficury, co mu nove k tomuhle zadani pridam, to popisuje, ja koukam jak se s tim umi vyporadat, jak komunikuje.. on mel klid, ja vidim jak funguje
+• povidam si s tim clovekem opravdu jako s partakem, "nezkousim ho", tohle se strasne spatne urcuje a bude to i zalezet na tom co a jak ten zajemce vnima, ale ja mam treba ze skoly ted dva zazitky kdy jeden vyucujici se mnou proste ten kod probiral, neformalne, v klidu, nezkousel me, pohoda. Druhej chtel proste slyset neco a ani se nejak nesnazil se k tomu dostat, pritom bych ty principy zvladala, ale to ho nezajinalo. Chtel slyset/videt neco a hotovo. Otazka za zlatyho bludistaka, kterou zkousku mam? :) . Nerikam ze to tady nekdo delare nebo ze dokonce se zlym umyslem, to nemyslim, jen i ta "atmosfera dela hodne"
+• asi bych radsi zacala nejakym povidanim a "hledanim" neceho spolecnyho, zajimavejch temat, treba i osobnich, souvisi to s tou atmosferou, zmeni se a ovlivni to me i jeho a i kdyz to nevyjde, tak ten clovek(spis oba) pravdepodobneji odejde s tim ze "jo to je dobrej typek, hezkej pohovor, i kdyz to nevyslo"
+• klidne bych pred nejakym tim ukolem rekla, ze je mozna trosku narocnejsi, ale ze to nevadi, ze neni nutny zvladnout vsechno, ze je to tak i udelany a neocekavam, ze to clovek zvladne vsechno, takze v klidu. Samozrejme za predpokladu ze to tak je :D netusim jestli to tak nekdo dela ze zada velkej ukol, ale cloveka to pak desi, kdyz vidi tu hromadu veci. Mnohem klidnejsi budu, kdyz vim, ze to je v pohode neudelat vsechno.  Nic na tom nemeni, ze mi to uz na junior.guru rikali tisickrat, ze nemusim umet vsehcno :)
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/999224056492589138
+Ja jen rikam, ze to filtrujes svou optikou a chces po tech lidech ,pokud to dobre chapu, neco celkem jako konkretniho. A nejen ty, spousta spousta lidi.
+ A oukej, to je tvoje vec, nejak ses k tomu dostal, asi to ma pro tebe vyznam, v necem treba opodstatnenej, nevim, nemuzu soudit a ja ti to neberu, ale to neznamena, ze je ta cesta jedina spravna.
+Co ale vim je, ze z hromady lidi vytahnes hodne zajimavy veci, kdyz k nim aspon treba castecne pristupujes tak, jak to oni potrebujou. (Protoze jak tu sami rikate je to two way street, zejo).
+Coz je obcas problem nejakejch vedoucich pracovniku, ucitelu, managementu, vlastne to muze bejt uplne kdekoliv... Chtej nejakej vysledek, ale chtej taky aby se udelal "po jejich". Pritom by to mohlo jit i jinak.
+Jo nekdy to proste fungovat nebude, nekdy se clovek fakt nehodi, nerikam ze ne. Jen vim, ze se obcas to tak vubec neni. A je to pak i skoda pro toho zamestnavatele. Moh mit supr cloveka. A ja vlastne nemluvim moc ani o tobe, a to s tou charitou si asi klidne nech, ja to jen uvadela jako faktor kterej prispiva ke stresu, ne ze mas vzit kazdyho jelimana, co ti vejde do dveri 🙂
+
+A ano, pro nekoho je ten stres nekdy i velkej handicap, do jake miry to muzes ty ovlivnit je otazka, to bude asi u kazdyho jiny, stejne jako ten zpusob. A opakuju, opravdu netvrdim, ze mas brat kazdyho a kazdej se bude hodit. Nebude. Nekdy jim ale staci dat jen prostor a klid. A ne, nemusi se na dve hodiny odpojit. Klidne muze treba i sedet v koute kanclu, ty si delat svoje, obcas se preptat, fakt to bude ruzny, takze navod ti nepovim. Bohuzel. Jediny o co se snazim je trosku rozsirit ten pohled obecne. Jako byste to jako programatori nevedeli, ze k vysledku se da dojit ruznejma cestama 😆
+---
+
+
+--- https://discord.com/channels/769966886598737931/806215364379148348/981836438893101066
+Tohle není moc o zadání, ale o tom, "jak se orientovat v kodu". Když se teď bavím s těmi, které mám třeba na starosti a dělají vlastní první větší projekty, sami se ptají: "když se dostanu k reálnému projektu, který je velký, jak v tom pracovat?"
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/974017267920683018
+Ahojte, neviem ci sa pytam v dobrom kanali ale po dnesku som si povedala ze to tu uverejnim a chcem pocut vase nazory…
+Po pol roku studia javascriptu (framework) som este ani nezacala som dostala job …ze ano hladame frontendistov takze som bola nadsena avsak po par tyzdnoch harmonogramu to nezvladam (namiesto frontendu) ma dali hned na poziciu full stack kde beriem kazde dva dni uplne ine jazyky a technologie alebo resp ich casti.
+Cize dva dni mam pracu s mysql,dva dni react,tri dni js, dalsie dva dni C# a zaklady toho jazyka,potom sa preduniem na Api ktore mam stihnut za den a nakoniec OOP v C#…som totalne stratena frustrovana a dnes bol moj teamlead prekvapeny ze som vobec nevedela napisat jednoduchy OOP program  v ramci class a method..ponevac som zabudla aj na to ako sa volam a nie to este co je metoda s konstruktorom.
+Bola som uz aj za riaditelom ze toho je prodte vela aj na kona a potrebujem sa venovat bud tomu alebo tomu..ale nemaju cas na mna …prosim Vas je to vobec realne sa naucit vsetko do troch mesiacov? Podla mna zabudnem aj ako sa pise funkcia..neviem ale tento styl ucenia mi pride zabijacky..a to som bezcoredoslych skusenosti v programovani.Dali vy ste mi mozno nejake hinty ako to mam cele uchopit? Radu alebo nieco co vas pri tomto mojom prispevku napadne? Dakujem 🤗
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/972951035226247258
+Práce, kterou jste doteď dělali jako koníčka po večerech najednou děláte přes den a máte za ni zaplaceno. Učíte se 3x rychleji -> nové informace nasáváte jak podvědomě (protože se to na vás valí ze všech stran a chtě nechtě jste součástí), tak vědomě a cíleně (protože máte silnější potřebu a motivaci se učit, už jen pro to, abyste si tu práci udrželi).
+Píšu, nevzdávejte to, ale ve zkušební době není ostuda to vzdát, pokud cítíte, že to není ono. Nemusí vám vyhovovat prostředí (malá kancelář nebo velký open-space), tým (ne s každým si lidsky sednete), práce (představovali jste si něco jiného), časové možnosti (dojíždění moc dlouhé a drahé), nebo naopak remote či home-office není tak super, jak jste si mysleli.
+Buď máte to štěstí a víte předem, co hledáte (a moc nedoporučuji se do něčeho nutit s tím, že si možná zvyknete), nebo si to prostě musíte vyzkoušet a pak zvážit případnou změnu. I samotná změna projektu může být pro někoho problémová, na to pozor už při pohovoru, zda si chcete přechod na jiný projekt určovat sami nebo vám nevadí, když vás podle potřeby realokují jinam.
+To se teď stalo mně, po 3 měsících zaškolování na jednom projektu (a s ním související tým, prostory, režim, atd.) mě zítra čeká v rámci zákaznické společnosti nový projekt, nové prostory, nový tým, nový režim. Já jsem dost přizpůsobivá a obecně nemívám se změnami problém, přesto je pro mě tento přesun trochu „šok“, že se to v praxi opravdu děje. 😊
+Co bych si dnes před nástupem do práce poradila, tak hlavně KLID. Kladla jsem na sebe od začátku vysoké nároky a zbytečně se tím nervovala. Nepřemýšlela jsem nad tím tak, že mám celé 3 měsíce na to, abych poznala novou práci, spíš jsem to brala jako snahu nic nezkazit a za každou cenu se tam udržet. 😊 Do dnešního dne se mi přes LinkedIn ozvalo asi 10 dalších recruiterů, zda nehledám pracovní příležitost (a to nemám zelené kolečko opentowork). Lidí je opravdu nedostatek, a pokud nejste na stávající pozici spokojeni, nebojte se změny. Držím palce!
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/960828106032164895
+Já myslím, že používat tato označení v inzerátech a vnitrofiremně jsou dvě různé věci s hodně odlišnými důsledky. Junior / mid / senior beru jako orientační a vágní škatulky, podle kterých můžeš zhruba signalizovat, koho hledáš, nebo kdo si myslíš, že jsi, na pracovním trhu. Svět je pestrý, ale beru to tak, že tříbarevný semafor prostě pomáhá v hrubé orientaci a je to aspoň nějaký společný jazyk, i když v důsledku stejně musíš toho člověka vzít na pohovor a zjistit, kým doopravdy je. Nebo musíš na pohovor jít a zjistit, koho doopravdy hledají (jsem v oboru 2 roky, napsali junior, ale nejsem na ně dost zkušený, hmm, asi mají tu laťku ustřelenou, tak co už, jejich problém 🤷‍♂️).
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/960829382107226152
+Vnitrofiremní použití by podle mě mělo být pomocí nějakých levelů, kde máš definované, čím se který level zhruba vyznačuje jak odměnou, tak zodpovědností a podle toho lidi zařazuješ a něco od nich očekáváš, nebo se od takové „tabulky“ mohou lidi odrazit při pokusu o nějaké povýšení, atd.
+
+Třeba v Oracle (v části OCI) jsem zažil pěknou tabulku, kde bylo řečeno, co (ne)máš umět, když jsi level 1, level 2, atd., jestli vypracováváš nějaké úkoly samostatně, pak to pokračovalo dál, např. že tvůj impact je na tým (level 3 tuším), pak že tvůj impact / komunikace / vzdělávání ostatních jde za hranice týmu do jiných týmů (level 4), pak že tvůj impact je celofiremní nebo za hranice firmy, konferenční, atd. Prostě to bylo celkem dobře popsáno a já jsem se pěkně dokázal zorientovat v tom, jaký level jsem (nebo bych měl být) a jaký level by měli být lidi v mém týmu. Zároveň to bylo popsáno pro IC track, tzn. kariérní cestu pro _individual contributors_, tedy lidi, kteří chtějí být větší a větší experti, chtějí třeba ostatní vzdělávat a mentorovat, ale nechtějí vést lidi jako manažeři, ti měli svůj separátní paralelní track definovaný úplně jinak. Což je vždycky fajn, když je to rozdělené, je podle mě chyba předpokládat, že jediná cesta „vejš“ pro seniornějšího programátora je… vést lidi, ehm.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/956959078716956682
+dnes si znovu citam tuto klasiku z roku 2014 a zda sa, ze to tu este nikto nesharoval: https://seldo.com/posts/you_suck_at_technical_interviews
+(priamo uchadzacom to asi moc nepomoze, skor pre tych co hladaju novych kolegov a kolegyne, preposlat na HR a tak)
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/939209871046361089
+Ahoj, máte nějaké materiály nebo dokumentaci, která vám pomáhá při onboardingu nových lidí? Zejména tedy junior programátorů (jak jinak, v tomto klubu 🙂)? Nebo jak vlastně u vás onboarding probíhá?
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/939215320135110737
+Na Twitter spaces teď Cassidy zmínila https://career-ladders.dev/ – jak v Netlify rozlišují jednotlivé role
+---
+
+
 #} -->

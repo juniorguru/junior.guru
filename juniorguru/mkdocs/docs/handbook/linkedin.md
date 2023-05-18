@@ -138,4 +138,35 @@ Pořád bych to nikomu nedoporučil. Nepřehledné. Je tam skoro všechno, co js
 
 Pro někoho, kdo to moc neřeší, je to asi OK. Junior by to ale řešit měl. Nejde o mega mzdu a chlubení se něčím, co neumím, ale o to dodat recruiterovi na podnose ty nejpodstatnější informace a přehledně. To podle mě to PDF z LinkedIn nesplňuje.
 
+--- https://discord.com/channels/769966886598737931/839059491432431616/991214346988425216
+<@668226181769986078>  nevím, kam to napsat, jen mě napadlo, že až budeš psát část příručky o LinkedInu, že by bylo dobré zmínit, že je užitečné mít už i jakžtakž připravené CV.
+Když mě oslovili na LinkedInu, tak po prvním pohovoru jsem byla požádána v podstatě okamžitě o CV. Tak jsem ho honem dopisovala a dost mi pomohlo, že jsem měla vybranou už jakousi šablonu a velké ponětí o informacích, které uvádět. CV v mém případě sloužilo k tomu, aby jím personalistka oslovila vedoucí různých týmů, jestli někdo projeví zájem i o brigádníka. (Třeba zrovna typografie lze vyřešit už předem, obsah informací jsem upravila na míru pozici.)
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/983773845372690472
+ve skupine jsem, <@668226181769986078>, ale o tom, ze se da pripsat i zprava se dozvidam az ted 😄 oh well... LinkedIn neni uplne muj kamos
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/981182112923279370
+Já si tam napsala, že dělám na projektu v Pythonu při mateřské, a taky si všimli. Open to work tam ani nemám. (Mým cílem zatím nebylo ani tak lákat IT recruitery, jako zbavit se pro mě dnes už nerelevantních nabídek a při té příležitosti si postupně připravovat půdu na to, až práci shánět budu).
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/981075439177068545
+Na LinkedIn si často lidi dávají ´open to work´ a jako zaměstnání ´aspiring java programmer ´ (jakýkoliv jazyk). Myslím že to přitahuje recruitery, když spadneš do nějakýho vyhledávacího filteru.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/980773136427536384
+Neboj se ten LI víc vyšperkovat, do profilové fotky si hodit badge, že jsi volný, pokud si hodně troufáš, tak klidně uvítací, představovací video. Ale minimálně teda ten připíchnutý post, vyplněné zájmy, různé badge, pracovní milníky s časovými termíny. HR tě budou hledat dle nějaké filtrace, doporučení, tak to chce jít algoritmu LI trochu naproti.
+---
+
+
+--- https://discord.com/channels/769966886598737931/839059491432431616/939184981937369108
+aj ja sa bojim, ale vravim si, ze to skusim a necham si tam len to čím prejdem...zobrazuje sa to potom takto https://www.linkedin.com/in/ondra-marik-avinery/ ako vidíte tu u kolegu, s tou fajkou, že urobil ten LI test, ale zase mi vravel, že sú tam samé ťažké a "zakerne" otázky a na prejdenie treba aspoň 80% alebo čo :d
+---
+
+
 #} -->

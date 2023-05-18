@@ -184,4 +184,162 @@ https://www.udemy.com/course/automate/ (kdysi jsem někde sehnal kód, abych to 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/1050093159587250176
+„tenhle kurz Javy je co jsem viděl je asi nejvíc oceňovanej on-line a na druhou stranu se o něm hodně málo ví. Sám jsem ho zatím neprošel a koukal jsem do něj a vypadal fakt dobře :)) “, napsal mi jinde <@414887173154930698>, tak to sem dávám:
+
+https://java-programming.mooc.fi/
+---
+
+
+--- https://discord.com/channels/769966886598737931/789092262965280778/1040690678247739483
+Ha ha, nevím jestli pod stejnou skupinou, ale na ten příspěvek jsem na fb reagoval jako absolvent (nemám žádný jiný business s GFA).
+
+A moje vlastní pritakani, tedy částečný souhlas byl pouze s tím co jsem dával zpětnou vazbu i GFA po dokončení, že prostě neřeknou úplně narovinu jak extrémně náročné to je. Oni to jako naznačí, ale není v jejich zájmu si brát zákazníka.
+
+Myslim že nejdůležitější je celá životní fáze ve které se člověk nachází, jestli si to může dovolit finančně, jestli je v "nejlepší fázi života" Teda neřeší nějaký extrémní stress, neřeší nějaká velká vztahová traumata, neřeší osobní I pracovní problémy, nebo zdravotní problémy. Oni to naznačí, ale spíš to nedotahnou dokonce, než aby si vzali klienta (alespoň za mě jsem měl takový pocit) a pokud máte úplně optimální situaci, ale třeba jste v životě neprogramovali, připravte se na jízdu na tobogánu mordorem (zejména u té intenzivní části)
+
+Nadruhou stranu pokud jste ready (což člověk nikdy sám pořádně neví, ale dá se to alespoň odhadnout a v tomhle myslím že by to měl mít greenfox jako první informací na svých stránkách) a jste ochotni u intenzivního kurzu trpět (ne nutně) a zároveň si přinést spoustu obohacujicich zážitků obecně jste velmi výkonné povahy (nebo alespoň běžně) greenfox naprosto doručí co slibuje a celý ten komentář je vážně spíš fikce z mojí zkušenosti.
+
+Ale prostě někdo kdo nikdy neprogramoval a najednou má sedět 12 hodin denně velmi intenzivně u náročné programátorské látky, bude muset podat bez nadsázky trochu heroický výkon. Abych to trochu odlehcil, začínal jsem v intenzivní fázi že které jsem pak přešel na Part-time (zjistil jsem že můj život pro to není dost zařízený, zároveň jsem v tom viděl unikátní příležitost)  a v té intenzivní verzi jsme měli např člověka který měl vlastní business, (vlastní firmu) velkou rodinu a stíhal mám pocit si v přípravném týdnu na zkoušky  odjet na dovololenou, celou látku zvládat jako jeden z těch více vepředu a během onlinelekci
+---
+
+
+--- https://discord.com/channels/769966886598737931/789092262965280778/1037426032849993776
+Kromě kurzů od <:czechitas:842465242071171132>  Czechitas (Staň se kodérkou nebo DA: Web), které mají bezkonkurenční poměr cena / výkon, tak jen nás, tedy <:coreskill:929824061071192084> https://CoreSkill.tech
+
+Jaké jsou alternativy?
+<:sdacademy:929734682097107024> SDA https://sdacademy.cz/kurzy/javascript/
+Primakurzy https://www.primakurzyonline.cz/tvorba-www-stranek (obsah nedostatečný)
+<:engeto:929737378288005140> https://engeto.cz/webova-akademie/ (příliš krátké)
+StepIT: https://praha.itstep.org/kurz-front-end (ale není to online)
+Škola kódu: https://skolakodu.cz/web-programator/ (jQuery uff)
+AbecedaPC https://skoleni.abecedapc.cz/rekvalifikace-webdesigner (sorry, ale nesmyslný obsah)
+
+Ostatní, například <:greenfox:929737456423698472> GFA a další neučí frontend nebo **jen** frontend
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1010071732880674816
+**Zájem firmy** je tvorba zisku. Pokud nebudeš mít výsledky, tak nepřijdou klienti a nebude zisk. Takže opravdová spokojenost je až sekundární. A opět sem to viděl na vlastní oči.
+Já to mám sice trochu jinak, ale taky tomu, co dělám, říkám byznys skoro ironicky.
+
+> klientových očekáváních
+I protože jsme na dlouho a za poměrně dost peněz, tak se snažíme to očekávání na začátku sladit jak jenom to jde.
+Takže je to zodpovědnost firmy. Opět jsem viděl lidi, co dali nevratně vyšší desítky tisíc za kurz, který byl moc pokročilý nebo moc začátečnicky pro jejich úroveň, považuju to primárně za selhání toho, kdo jim to prodal.
+
+> schopnostech
+jasně, někomu to jde rychleji nebo už má start za sebou, proto jedeme personalizovaně, každej svým tempem, to je dost těžké při skupinové frontální výuce řešit
+
+> někdy mám pocit, že se ji žák snaží zbavit
+Určitě někdo může zaujmout hodně pasivní postoj, „bav mě / uč mě“, zvlášť když je to povinná (a „povinná“) výuka někde na ZŠ a SŠ, ale i proto pomáhám jen dospělým, kteřá to mají už srovnané a motivaci mají vyřešenou.
+Zážitek s několika lidmi, co byli mentálně ještě na střední mi stačil, abych věděl, že to není pro mě.
+A píšu mentálně, poznal jsem i mladší věkem než oni, s kterýma byla radost něco dělat.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1009900463908462622
+Mě to přijde strašně důležitý téma, už protože nějaké „kurzy“ dělám jako živobytí 🙂 a taky asi každý tady v klubu nějakým kurzem projde (i kdyby byl online).
+
+Pointa toho mého pohledu je, že neexistuje žádná objektivní metrika, kterou by se daly kurzy srovnávat. Ve světě bootcampů je to často % těch, co do nějaké doby najdou práci, ale jednak se s tou metrikou snadno a často podvádí (i když formálně to může být pravdivé číslo) a jednak je to závislé i na tom, jaké lidi nabíráš atd.
+
+Proto je nakonec subjektivní hodnocení lidí, kteří tím projdou, to jediné relevantní ne protože by bylo ideální, ale protože jiné reálně není možné a samozřejmě je lepší než nějaké skóre typu 4/5, se dozvědět kvalitativní data typu lektoři byli takoví a makoví, měli na nás tolik času, problémy v kurzu firma řešila atd.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/999610490294652958
+Nemám zkušenost konkrétně s ITnetwork, takže píšu obecně. Pokud seženeš dobrý kurz a pracák ti to proplatí, tak je to samozřejmě značka ideál, protože budeš za sebou mít dobrý kurz a ušetříš peníze 🙂 Hrajou do toho ale několik věcí:
+
+📝 Kurz, který lze proplatit pracákem, musí splňovat nějaké formální požadavky, které mohou být třeba trochu zastaralé, nebo náročné na byrokracii či jinou režii. Toto ovlivňuje způsob, jakým lze pak ten kurz vést a ne každý má prostor a energii na to, aby to splnil, i když by to splnit mohl, nebo dělal ten kurz inovativně navzdory těm formálním požadavkům.
+
+<:philosoraptor:911721791146315826> Kurz, který umožňuje proplacení z pracáku, má přísun lidí z pracáku. Lidé tam jdou a neplatí to. To vytváří určité motivační pokřivení, protože na to lidi nehážou svoje vlastní peníze a tudíž nehodnotí tak přísně kvalitu (když to nebude užitečné, nechají si to proplatit a pokrčí rameny, ale neřeknou si „tyjo, to za to fakt nestálo, chci peníze zpět, nebo jim napíšu blbou recenzi aspoň“). Zároveň kurz má dobrý zdroj studentů, kteří jdou po ceně (mají proplaceno, tedy to mají zadarmo nebo skoro zadarmo) a nemusí se namáhat udělat ten kurz nutně nějak skvěle aktuální nebo jinak perfektní, protože i průměrný kurz bude prostě stačit, studenti přijdou, peníze přijdou, proč se snažit. Tímto nechci ty kurzy všechny nějak šmahem hodnotit, jen chci prostě říct, že je dobré si vždy uvědomit byznys model a motivaci toho, od koho kupuju, protože mi to pak umožní dávat si pozor na ty správné věci, když vybírám.
+
+🏅 Drtivá většina kurzů nestačí na to, abys pak naběhl na pohovor a z první tě vzali, i kdyby to desetkrát v promo materiálech tvrdili. Stát se to může, ale častěji potřebuješ ještě udělat něco navíc po kurzu, typicky vytvořit nějaký svůj demo projekt, na kterém ukážeš, že umíš něco sám vyřešit a vytvořit, ne pouze „opisovat z tabule“. Pokud kurz dává nějaký certifikát, je to pro většinu zaměstnavatelů jako diplom z plavání ve školce. Je to milé, ale přihlížet budou spíš na to, co ukážeš v bazénu. Pro samotný certifikát to tedy spíš nedělej, dobře si prostuduj náplň kurzu. Toto se týká skoro všech kurzů, ne pouze těch, které umožňují proplacení z pracáku.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/985177771284262962
+20 hodin týdně 2 roky.
+https://twitter.com/kondrej/status/1535586323461033984
+https://twitter.com/svpino/status/1535230313315508224
+https://github.com/ossu/computer-science
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/985904462071742535
+[Python / Java / Kotlin / Frontend]
+**JetBrains Academy** (https://www.jetbrains.com/academy/)
+- Pěkné učební plány postavené na psaní malých projektů
+- Vlastní knowledge map a propojení s IDE od JetBrains
+- Zdarma tracky: Kotlin Basics a Frontend Developer
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/980377341870100520
+Pro <@786562518985605132> a kohokoliv dalšího - bezva učební videa Pythonu z dílny <@733309153275019326>  https://youtube.com/playlist?list=PLFt-PM7J_H3GJSvIWwJDaAgJjq9W-oWSF
+---
+
+
+--- https://discord.com/channels/769966886598737931/789092262965280778/979083071053762560
+Předpokládám že máš na mysli kurz s lektorem.
+Nemám zkušenosti, ale podle toho co vím. Používají materiály které najdeš i na ITNetworku. Většinou ty od Davida, protože ty jako jediné mají potřebnou úroveň, najdeš tam desítky článků které obsahují chyby, nedokončené seriály, atd. V rámci kurzu ti odemknou všechny potřebné lekce z daného bloku, tedy pokud nejsou dané články free. Výhoda je očividná, a to lektor kterého se můžeš doptat, pokud něčemu nerozumíš. Myslím že dostaneš i kontakt na lektora.
+
+Jako druhou výhodu bych viděl že některé kurzy (webové aplikace) lze uhradit v rámci rekvalifikace skrze úřad práce.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/976037409215115274
+Naučit se programovat “doma” je normální, to není volný čas, ale domácí příprava, a může být časově i několikanásobně náročná, než kolik času strávíš sezením v učebně při kurzu.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789092262965280778/974326857015115796
+Ctu taky jednu z moznosti BeeIT, tak ráda neco málo sepíšu, protože vím, že když jsem sem přišla, psali jste mi, že o BeeIT tady zatím moc nepadlo.
+
+ Mám za sebou velkou část C# a SQL, ale ještě nejsem u konce. Já jsem zatím spokojená, ale má to svá specifika.
+Kurz je možné chodit jak fyzicky, tak i online (aspoň ten náš jde), lektoři na to jsou připraveni. Nicméně z našeho kurzu jsem asi z 15 lidi byla jediná, kdo do učebny docházel. Což mě trochu mrzelo, protože jsem se těšila, že poznám i ostatní souputníky - ti často ani nejsou switcheři, ale lidi, které tam poslala firma, aby se přivzdělali. Bohužel si nikdo na lekcích ani nezapíná kamery (lektoři ano, studenti ne). Lekce mají pěkný materiály a kurz je určen pro někoho, kdo už aspoň něco umí, což bylo pro mě rozhodující (nechtěla jsem na kurz, kde první 8 lekcí budeme probírat podminky - to je nadneseny, vím). Takže sice jsme šli od základu, ale měli jsme to během asi dvou lekcí zfouknuté a pak se šlo rovnou na OOP a pak to začal být fičák. Ale co vim, tak Python mají udělaný pro úplné začátečníky, takže to se od C# liší.
+
+Úkolů na procvičování bych si i klidně představila víc, ale zase neměla jsem tolik moc času navíc. Ale zato byly zajímavý. Třeba zkusit si naprogramovat jednotlivé metody, které dela list nebo linkedList (add, remove...). Hodně oceňuji, že mám materiály, do kterých můžu nakouknout (hlavně k wpf), až budu něco hledat, dá se v nich hezky vyznat. Nějakým způsobem se rozjíždí i projekt, ale to je něco, co podle nemají moc vymakané (metodologicky), ale myslím, že hodně hraje i roli to, že se účastníci nepotkavaji fyzicky... nějak se snažíme o tom komunikovat, ale moc si neumíme rozhodit praci mezi sebe.
+Určitě sem hodím někdy v červnu i nějaké info už kompletně po kurzu se všemi dojmy. Kdyztak se klidně dal doptej :)
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/972951035226247258
+Práce, kterou jste doteď dělali jako koníčka po večerech najednou děláte přes den a máte za ni zaplaceno. Učíte se 3x rychleji -> nové informace nasáváte jak podvědomě (protože se to na vás valí ze všech stran a chtě nechtě jste součástí), tak vědomě a cíleně (protože máte silnější potřebu a motivaci se učit, už jen pro to, abyste si tu práci udrželi).
+Píšu, nevzdávejte to, ale ve zkušební době není ostuda to vzdát, pokud cítíte, že to není ono. Nemusí vám vyhovovat prostředí (malá kancelář nebo velký open-space), tým (ne s každým si lidsky sednete), práce (představovali jste si něco jiného), časové možnosti (dojíždění moc dlouhé a drahé), nebo naopak remote či home-office není tak super, jak jste si mysleli.
+Buď máte to štěstí a víte předem, co hledáte (a moc nedoporučuji se do něčeho nutit s tím, že si možná zvyknete), nebo si to prostě musíte vyzkoušet a pak zvážit případnou změnu. I samotná změna projektu může být pro někoho problémová, na to pozor už při pohovoru, zda si chcete přechod na jiný projekt určovat sami nebo vám nevadí, když vás podle potřeby realokují jinam.
+To se teď stalo mně, po 3 měsících zaškolování na jednom projektu (a s ním související tým, prostory, režim, atd.) mě zítra čeká v rámci zákaznické společnosti nový projekt, nové prostory, nový tým, nový režim. Já jsem dost přizpůsobivá a obecně nemívám se změnami problém, přesto je pro mě tento přesun trochu „šok“, že se to v praxi opravdu děje. 😊
+Co bych si dnes před nástupem do práce poradila, tak hlavně KLID. Kladla jsem na sebe od začátku vysoké nároky a zbytečně se tím nervovala. Nepřemýšlela jsem nad tím tak, že mám celé 3 měsíce na to, abych poznala novou práci, spíš jsem to brala jako snahu nic nezkazit a za každou cenu se tam udržet. 😊 Do dnešního dne se mi přes LinkedIn ozvalo asi 10 dalších recruiterů, zda nehledám pracovní příležitost (a to nemám zelené kolečko opentowork). Lidí je opravdu nedostatek, a pokud nejste na stávající pozici spokojeni, nebojte se změny. Držím palce!
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/939234781462405120
+Kurz na prg.ai je spíš takový populárně naučný: https://prg.ai/elements-of-ai/
+Ten doopravdický kurz je na ČVUT a Matfyzu 🙂
+Samozřejmě samouci mohou vyzkoušet různé OCW platformy, samostatné online kurzy, ... nebo i kurz pydata.cz (který zatím běží v podobě navazujícího kurzu pro PyLadies): https://projekty.pyladies.cz/course?course=pydata-2021-praha-podzim
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/912663319645683723
+Jak chtěl Dan Srb,
+já nedávno doporučoval https://learnjavascript.online/.
+Je to cca měsíc, co jsem to dodělal. Seděl jsem u toho celkově týden několik hodin denně.
+Je dobré mít už nějaké základy programování. Na obsah se lze podívat v odkaze.
+Kurzem tě provází postupně od elementárních věcí po pokročilejší. K výkladu jsou doplňující interaktivní cvičení hned vedle výkladu. Těch druhů cvičení není mnoho, ale postupně se opakují avšak s tím rozdílem, že nově je upravíš o nově naučenou látku. Vidíš tedy několik různých variant řešení a provedení. Kolikrát to je až otravný a chceš pokračovat dál ale on tě nepustí. Musíš to udělat. (Samozřejmě nemusíš, můžeš se jedním Help tlačítkem proklikat k tomu, že se ti odemče další kapitola. Je to však schovaný, aby tě to nelákalo. Asi jako možnost odstranit FB profil :)) Takto ti třeba nejprve bezpečně seznámí a procvičí s tebou Promises, a až pochopíš toto, ukáže ti (po několika jiných kapitolách) Async/Await srandy.
+
+Když nevíš, můžeš použít nápovědy autora. Když ti dojdou nápovědy, můžeš si nechat zobrazit řešení. Zobrazit nápovědu a popř. řešení můžeš až po určité době. Tímto tě chce jemmě donutit zapojit hlavu a ne jen prolítnout tutoriál jak knižku v knihkupectví.
+
+Kurz stál cca 1300,-.
+Po kurzu už mi stačí do kurzu občas nahlédnout na nějakou drobnost, ale po většinu času stačí MDN.
+
+Po tom kurzu jsem hned najel na tvorbu webovek, který jsem měl v plánu už dřív.
+
+Na kurz jsem přešel z freecodecamp kurzu, který jsem prolítl mega rychle (myslím tu část pouze o JS) Když jsem si však sedl ke klávesnici, že začnu psát ten web, tak jsem slyšel akorát vibrovat ten drátek, co drží uši. 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/908862016536600576
+Za uložení na později stojí i Brackeys na YT. Kanál narvanej úplně vším co tě okolo tvorby her v Unity napadne. K prasknutí. Má pak i discord komunitu, početnou a aktivní. https://www.youtube.com/c/Brackeys
+---
+
+
 #} -->

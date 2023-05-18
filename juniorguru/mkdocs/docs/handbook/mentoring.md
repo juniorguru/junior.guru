@@ -52,4 +52,9 @@ https://dev.to/mortoray/be-a-good-mentor-not-a-dickhead
 jak (ne)najit mentora
 https://twitter.com/willjohnsonio/status/1282713655105159170
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/962393354056925234
+<@477895566085324801> pokud nevíš zda je koučování pro tebe tak doporučuji mrknout na webinář a poté se zúčastnit základního kurzu https://bytkoucem.cz/zaklady-koucovaciho-pristupu/. Koučovat nebudu, ale hledal jsem další cestu jak zlepšit porady, posouvat lidi dopředu a nakonec to v mnoha ohledech pomohlo mě samotnému. Na zkoušku a pochopení o čem je a není koučování je kurz dostatečný, mé požadavky byly splněny.
+---
+
+
 #} -->

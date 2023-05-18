@@ -143,7 +143,7 @@ Jako nástroj doporučim naprosto boží TablePlus. Velmi lightweight, velmi ryc
 
 
 --- https://discord.com/channels/769966886598737931/789087476072710174/864057143056662528
-Zrovna ve čtvrtek jsem se na to víc koukal a úvodní video z této stránky má asi 25 minut a dá slušnou představu 😀 
+Zrovna ve čtvrtek jsem se na to víc koukal a úvodní video z této stránky má asi 25 minut a dá slušnou představu 😀
 https://docs.docker.com/get-started/
 ---
 
@@ -173,6 +173,71 @@ Nejlepší samozřejmě je, když k tomu máš nějaký osobní vztah, tzn. něc
 
 --- https://discord.com/channels/769966886598737931/788832177135026197/887690090162298930
 Al Sweigart byl teď hostem podcastu https://realpython.com/podcasts/rpp/77/  právě kvůli té nové knížce. Docela inspirativní na poslech a obsah knihy je volně i online zde: https://inventwithpython.com/bigbookpython/
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/990100877064953856
+Chceš ale vlastně vědět, jestli už je máš znalosti na to to zkusit, že?
+
+Takovou informaci ti koukání na ta zadání bohužel nemusí dát, protože nevíš jak na to, co z toho zvládneš budou reagovat v té firmě. Někde mají hodně velká zadání, která „nejdou“ dodělat, chtějí třeba vidět, kam se dostaneš za dva dny a jak to bude vypadat apod.
+
+Neříkám, že se z toho něco nedozvíš, ale dává mi větší smysl udělat si samostatný projekt (tedy ne takový, kterým tě provází nějaký tutorial) a pak to jít zkoušet už na ty pohovory.
+
+Nevíš na co narazíš. Ten proces není nějak standardizovaný jako maturity, firmy jsou různý, dělaj různý věci a lidi v nich jsou taky různí, takže co stačí někde nemusí stačit jinde atd.
+
+Samozřejmě jde i o to, jestli chceš/potřebuješ změnu co nejrychleji nebo je ti jedno, že budeš doma sedět třeba půl roku nebo rok „zbytečně“. Ono i kdybys řekl, že se „to chceš pořádně naučit“ tak si myslím, že po nějakých základech už se stejně rychleji budeš učit ve firmě už jen protože tomu budeš moci věnovat o dost víc času.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/974343605437206548
+Mít každý, i malý projekt, v gitu není špatný nápad, zvykat si s tím pracovat je důležité.
+
+Jestli to pak chceš poslat i na GitHub je na tobě. Je to tvůj GitHub a je ok tam mít i nějaké rozpracované nebo banální věci veřejně.
+
+Ale! Pokud hledáš první práci, mysli ale na to, že ten GitHub tě reprezentuje a pokud už se na něj bude někdo dívat, tak nebude mít moc času ani motivace to procházet všechno. Proto si myslím, že je lepší tam mít 2-5 tvých nejlepších projektů a ostatní skrýt, protože pokud se tam někdo dostane, může si udělat mylný dojem o tom, jak komplexní věci už zvládáš.
+Jasně, odkážeš na ně z CV přímo, ale nikdy nevíš, kdo a jak se kam dostane…
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/974689373226422292
+Čtu tvůj případ až teď a chtěl jsem poradit, ale nemám co 😎 Už tady všechno padlo:
+
+1. Pokud už máš v něčem základy, šup a tvořit, vykašli se na další kurzy a učení teorie. Nejvíc se teď naučíš tím, že vytvoříš něco reálného, ať už to bude super mario nebo appka počasí se sluníčky a mráčky. Můžeš projet <#788826190692483082>, nebo můžeme zkusit něco vymyslet speciálně pro tebe. Je jedno co to bude, jako praxe a jako ukázka na pohovoru se počítá cokoliv, klidně webovka pro tvoje morče, pexeso s dinosaury, nebo kalkulačka pojištění. Začít s něčím malým a pak po kouskách vylepšovat, sdílet to tady, klidně rozpracované, nechávat si radit (to je odpověď <@971787978689089676> jak nevyhořet na vlastním projektu <:thisisfine:900831851361501214> ).
+
+2. Dva pohovory jsou málo a motivoval bych tě, ať zkoušíš dál, ale pokud nemáš projekt, tak to dělat nebudu. Vytvoř si projekt, vylepšuj ho postupně, ukazuj ho pak jako praxi, kterou máš. Nech si vyladit CV podle https://junior.guru/handbook/cv/ v <#839059491432431616>. A potom až selže desátý pohovor, pojďme se zamyslet nad tím, kde je problém.
+
+Dík <@652142810291765248>, <@971787978689089676>, <@814084764838658111>, <@866239781313708045> a dalším, že jste už <@567592397647773706> tak pěkně poradili <:meowthumbsup:842730599906279494>
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/969844861714984980
+Narazila jsem na toto, super jako inspirace na projekty: https://copyassignment.com/
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910392786845737/966807181519372338
+<:react:842332165822742539> React-like framework v <:python:842331892091322389> Pythonu pro terminál 🙂 Třeba se to bude někomu hodit na projekt: https://github.com/Textualize/textual
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/965331497106165800
+**Hromada zdrojů pro ruzné UI, stock media, Icons, Favicons, tools a miliarda dalšího!**
+_Doporučuji si to připíchnout někde do záložek :-)_
+
+_Velmi často aktualizované a přidávané další užitečné zdroje._
+
+- https://github.com/bradtraversy/design-resources-for-developers#favicons
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/965219975793098842
+Tip na projekt: když nevíte, co nového vytvořit, zkuste místo toho něco zkopírovat 🙂 https://dev.to/eknoor4197/i-built-a-devto-clone-from-scratch-including-the-api-56k9
+To mi připomíná, že někdo takhle před lety přinesl na pohovor do Seznamu vlastnoručně vytvořenou kopii Seznam homepage. Prý byl úspěšný 🙂 Dává to smysl i z toho pohledu, že pak mate hromadu společných témat k diskuzi.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/907183575244345355
+https://www.reddit.com/r/learnprogramming/comments/2a9ygh/1000_beginner_programming_projects_xpost/
 ---
 
 

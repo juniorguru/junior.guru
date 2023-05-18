@@ -704,13 +704,13 @@ Je to devops focused, ale i tak je to sada dobrejch rad, kde ty hlavní jsou: 1)
 
 --- https://discord.com/channels/769966886598737931/788832177135026197/867726165561049129
 Ahoj, posílám zdroje, které jsem já používala:
- 
+
 * toto je super úvod do DB, sice tam používá SQLite a Python, ale začíná s ukládáním dat do Google sheets a uvidíš, jaký je rozdíl a proč jsou DB užitečné, takový krok za krokem, jak jsme se dostali k DB: https://www.youtube.com/watch?v=Wb0DM9I8RDo
 * k procvičování SQL doporučuju Murder Mystery, je to hrozně zajímavé: http://mystery.knightlab.com/
-* k modelování jsem používala krokodýlovy databáze: https://krokodata.vse.cz/DM/DMDB 
+* k modelování jsem používala krokodýlovy databáze: https://krokodata.vse.cz/DM/DMDB
 * MUNI má materiály k DM online: https://www.fi.muni.cz/~xdohnal/lectures/PB154/czech/
 
-EDIT: když už mám několik špendlíků, zkusila jsem vygooglit další zajímavé zdroje: 
+EDIT: když už mám několik špendlíků, zkusila jsem vygooglit další zajímavé zdroje:
 * ELI5 (explain like I were 5) o databázích, první dvě odpovědi: https://www.reddit.com/r/explainlikeimfive/comments/jht6he/eli5_what_are_databases_and_how_do_they_work/
 * ELI5 o tom, jak ukládat velké množství dat do DB: https://www.reddit.com/r/explainlikeimfive/comments/78ppdo/eli5_how_does_a_database_handle_1_billion_users/
 * SQL tutorial: https://www.w3schools.com/sql/default.asp
@@ -721,6 +721,145 @@ EDIT: když už mám několik špendlíků, zkusila jsem vygooglit další zají
 
 --- https://discord.com/channels/769966886598737931/788832177135026197/867285980209348628
 Tohle nemusí být špatný čtení (díky <@!739821357503742042> , že to na LI lajkla https://blog.oliverjumpertz.dev/the-10-most-valuable-lessons-i-learned-as-a-developer)
+---
+
+
+--- https://discord.com/channels/769966886598737931/789092262965280778/1035308642427228221
+https://www.smashingmagazine.com/2020/09/figma-developers-guide/
+Ještě článek 😉
+---
+
+
+--- https://discord.com/channels/769966886598737931/797040163325870092/1015688999676936252
+https://mystery.knightlab.com/ Kdo je vrah? :))
+---
+
+
+--- https://discord.com/channels/769966886598737931/916339896963190785/1014539554952314901
+Tohle je ultimátní YT kanál na tohle téma: https://www.youtube.com/c/professormesser
+Má to rozházený po playlistech na certifikace od firmy CompTIA (A+ je obecné IT, NET+ jsou sítě a Security+ je IT bezpečnost)
+Sjel bych to přesně v tomhle pořadí 🙂
+Pokud bys radši česky, tak sítě jsou super napsaný třeba tady od Peterky: https://www.earchiv.cz/l226/index.php3
+Dobrý a vtipný YT kanál od jednoho síťaře: https://www.youtube.com/c/NetworkChuck
+Penetrační testování: https://www.hackthebox.com/
+Python začni klidně tady, kde jsem začal i já 🙂 https://pyladies.cz/course.html
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1007554087887314944
+skvělý materiál na téma, jak fungují web servery
+
+https://ruslanspivak.com/lsbaws-part1/
+---
+
+
+--- https://discord.com/channels/769966886598737931/789092262965280778/1000826851050131537
+Teoreticky bys měla umět javascript, a ten se používá i na backendu. Backendistu/fullstack z tebe nebude dělat znalost dalsiho jazyka (i když to se hodí), ale znalost databází, ORM, testování, API, queues (async/background zpracovávání), devops, logování, debugování… vše klidně v javascriptu/typescriptu. Nebo v tom javascriptu aspoň můžeš začít, ať vidíš, jestli se ti to líbí, bez toho, abys nejdřív marnila čas učením se dalšího jazyka. Nebo se můžeš učit typescript, pokud ho zatím neovládáš.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/985177771284262962
+20 hodin týdně 2 roky.
+https://twitter.com/kondrej/status/1535586323461033984
+https://twitter.com/svpino/status/1535230313315508224
+https://github.com/ossu/computer-science
+---
+
+
+--- https://discord.com/channels/769966886598737931/806215364379148348/981836438893101066
+Tohle není moc o zadání, ale o tom, "jak se orientovat v kodu". Když se teď bavím s těmi, které mám třeba na starosti a dělají vlastní první větší projekty, sami se ptají: "když se dostanu k reálnému projektu, který je velký, jak v tom pracovat?"
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/974691777820905502
+Trochu navážu i na diskuzi výše, že je podle mě dobré dělat si _přehled_, tedy zkoumat věci do šířky (čím víc, tím líp), ale povrchně. Vědět, že existují, tušit, co dělají. A potom mít jednu dvě věci, které se opravdu _učím_. Díky přehledu se pak mohu lépe rozhodovat o tom, co se chci učit. Nesmí se to ale přehnat, aby se místo získávání přehledu (= pustím si pár YT videí o té věci nebo přečtu jeden článek) nestalo učení všeho (= dokončím kurz na to téma).
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910392786845737/968592246209388615
+zaujímavé python výzvy na učenie https://www.practiceprobs.com/
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/968070061183082536
+Dávnejšie som si pre klientov/rodinu/kamarátov a začiatočnícke Czechitas kurzy napísala IT slovník základných pojmov, ktoré pred nimi používam, aby mi rozumeli a lepšie sa v IT zorientovali - https://kompilator.medium.com/it-slovn%C3%ADk-7b71b75d6099 . Celé som sa to snažila napísať svojimi slovami a dala som tam aj čo ma navyše sem-tam napadlo.
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910782664704040/966976515856273428
+b) Ty dvě věci, kromě toho, že obě souvisí s JavaScriptem, jsou vlastně úplně něco jiného.
+
+**Next.js je framework postavený na Reactu.**
+Je to React + nějaká hromada kódu k tomu + dokumentace a usnadní ti to dělání webů na Reactu, protože už je tam dost věcí, který bys jinak musel dělat sám, vyřešenejch.
+
+**Node.js je „JavaScript runtime“**, tedy běhové prostředí, to je něco, co umí spustit JavaScript na počítači. Ať už je to tvůj notebook nebo nějaký server a musíš si to na něj nainstalovat a pak tam můžeš spouštět programy v JS.
+To samé se dělá pro Python a některé další jazyky.
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910782664704040/965681036157653022
+jo, rozhodně zkus. Na tom se naučíš řešit problém v jakéomkoli programovacím jazyce. Codewars je asi nejlepší, protože jsou tam přehledně seřazená řešení od jiných lidí - podle kvality kódu a taky se dá filtrovat podle jazyka. Takže až si to napíšeš sám, koukneš, jak to udělali "mistři". A nebo koukneš, když fakt nevíš. A začíná to úplně lehkýma úlohama. Hackerrank je o něco těžší mi přijde. Na druhou stranu u Hackerranku byly k některým úlohám dost kvalitní diskuse, ze kterých se člověk taky ledacos dozvěděl.
+---
+
+
+--- https://discord.com/channels/769966886598737931/916339236721004595/957246070864363520
+Pěkný článek, jak funguje OAuth2 pro začátečníky 🙂 (mě to hodně pomohlo, když jsem se to snažil před lety pochopit) - http://agileanswer.blogspot.com/2012/08/oauth-20-for-my-ninth-grader.html
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/945383885531930785
+článek k tomu: https://digichef.cz/otazky
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/939241551681425448
+Není jen JS Fiddle, existuje i SQL Fiddle 😱 🙂 http://www.sqlfiddle.com/#!3/002f1/2
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910782664704040/937839936424509500
+https://github.com/kettanaito/naming-cheatsheet
+---
+
+
+--- https://discord.com/channels/769966886598737931/789087476072710174/934111300798271529
+<:vscode:628587870273142795>  https://vscodecandothat.com/
+---
+
+
+--- https://discord.com/channels/769966886598737931/916346318048337960/930759930904993834
+Pokud ti jde o úplný základy syntaxe, tak doporučju hostovaný tutoriály jako je https://sqlzoo.net/wiki/SQL_Tutorial, bude jich jistě víc (tipuju, že repl.it něco má). Pokud bys pak chtěl vlastní data, tak doporučuju SQLite s nějakým rozhraním - já mám rád mnohokrát zmiňovaný TablePlus (jen mu dáš cestu k databázi na disku a jedeš)
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/930220329031307285
+[sítě] objevil jsem Cisco Packet Tracer https://www.netacad.com/courses/packet-tracer - docela pěkná hračka k pochopení sítí. Jde tam snadno poskládat libovolná síť a pak pozorovat, kudy a jak data tečou, krok za krokem...
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/919699123081449543
+Asi to tu ještě nebylo zmíněno, tak to sem dávám – super tool na prohledávání modulů a funkcí ve standardních knihovnách různých jazyků (a sem tam i dalších knihoven). Podporuje i offline režim.
+https://devdocs.io/
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/913331018864414751
+Mě pomohl až Lumír 🙂 https://youtu.be/1UPTK8OTdeg
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/910436103838912532
+Kdyby chtěl někdo něco programovat 😉
+<:python:842331892091322389> <:javascript:842329110293381142> <:java:847749733664555018>
+Vypadá, že to je zadarmo.
+https://www.codecademy.com/code-challenges
+> With technical interviews, practice makes perfect. Now, you can practice real code challenges from actual interviews to see how your skills stack up. If you get stuck, we’ll point you to what you still need to learn.
+Nevím, jestli se v českém prostředí tohle objevuje u pohovorů, ale jako cvičení to pro někoho může být zajímavý.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/906580836185428020
+K algoritmům obecně třeba tohle: https://knihy.nic.cz/files/edice/pruvodce_labyrintem_algoritmu.pdf
 ---
 
 

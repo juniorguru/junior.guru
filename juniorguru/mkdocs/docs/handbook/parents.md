@@ -56,4 +56,21 @@ https://denikn.cz/279531/koncici-sefka-slevomatu-muzi-si-me-na-jednanich-pletli-
 
 https://mamajob.online/
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/990538199308853278
+Dneska na mě facebook vyhodil Strojové učení pro děti:
+https://www.donio.cz/ucebnice-umele-inteligence-pro-deti?fbclid=IwAR3_mBSfWFSQYHnGUEhNm0sDopBkZGOQwmZaCi3IvyRvOK7eOiij1YeGFtE
+
+Myslím, že tohle potřebuju 😄 Kromě toho že to je Strojové učení pro děti, chápete, jako vysvětlený pro děti, 😁  , tak to am podle všeho dělaj ve Scratchi 😄
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/982900261263646821
+<@933738477449785384> Mateřská mi funguje 24/7/365. <:lolpain:859017227515854879> Mám tři velice aktivní kluky 23 měsíců, 4 roky a 6 let. Škola nám teď naštěstí teprve začne, to ještě bude tóčo. Hlídání nulové, jen když se manžel občas zapojí o víkendu. Večer nic nedělám, protože chci aspoň ten večer chvíli strávit s manželem, pokud mě teda nezabaví na celý večer nejmladší a neusnu s ním. 😄
+
+A kdy se tedy učím? Když jsou starší dva kluci ve školce a nejmladšího uspim po obědě. (Bohužel zrovna teď nastal čas, kdy mi po obědě nechce už moc spát.) A zbytek o víkendech, případně v týdnu navečer chvilky a výjimečně když se děti na chvíli něčím zabaví. "Hlídání" televizí odmítám, protože kluci pak akorát víc zlobí, takže tam používám časovač na televizi, abych to nemusela sledovat (přičemž vím, na co se koukají a je okolo toho hodně debat, co povolím) a někdy tak získám taky chvilku - aspoň od starších, nejmladšímu nic ještě nepouštím.
+
+Teď, jak začnu pracovat, tak se budu muset s manželem už domluvit, aby mě od dětí odstínil pravidelně, jestli to nemám dělat večer a víkendy, když mi nejmladší háže vidle do toho spaní. Manžel sám mi na začátku tvrdil, že si to představuju moc jednoduše, jak se dostanu do IT, takže chápe, že když už tam jsem, že to mé úsilí k něčemu je a je zapotřebí.
+---
+
+
 #} -->

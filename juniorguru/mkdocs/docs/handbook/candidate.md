@@ -992,7 +992,7 @@ Ono už je to asi i vedle, ale dávám raději i sem 🙂 Letní stáž v JetBra
 --- https://discord.com/channels/769966886598737931/788826407412170752/902872779924316161
 Jinak jedna věc, na kterou mě <@!819485466231177256> přivedl - je dobrý vědět, že v průběhu roku máte z definice různý šance na úspěšné přijetí. Drtivá většina firem funguje na bázi ročních rozpočtů - a čím větší firma, tím striktnější ten proces je. Což znamená, že v průběhu roku se ukáže, že je třeba přidat člověka, ale není na něj/ni žádná část rozpočtu přiřazená (protože když se rozpočet plánoval,, tak se to nevědělo - nebo neprosadilo). Což znamená, že se může snadno stát, že taková pozice bude vypsaná při nejbližší možné příležitosti - což je typicky další rok.
 No a velká část firem má fiskální rok a kalendářní rok identický (my zrovna ne, náš fiskál končí teď v říjnu), takže typicky od října/listopadu už je jasné, kolik peněz a na jaké pozice bude a začínají se vypisovat - s ideálem, aby ten nový člověk nastoupil co nejdřív od začátku roku.
-Není to náhoda, dá se s tím pracovat - a doporučuju to. Pokud naopak máte zájem o konkrétní firmu, zjistit jak to tam mají s fiskálem a rozpočtem vám s tím časováním může pomoct taky. Totéž platí, když se nabírají absolventi - typicky firma, co chce absolventy je chce mít "co nejdřív" poté co absolvují. Ale zároveň ví, že málokdo nastoupí v červenci, protože si chce užít poslední prázdniny. Takže se snaží naplánovat hiring kampaň tak, aby proběhla PO zkouškovým a PO státnicích (protože student, který řeší jestli a jak dokáže vůbec projít nemá v hlavě prostor na pohovory), ale zároveň aby stihli ti lidi nastoupit v září nebo říjnu. 
+Není to náhoda, dá se s tím pracovat - a doporučuju to. Pokud naopak máte zájem o konkrétní firmu, zjistit jak to tam mají s fiskálem a rozpočtem vám s tím časováním může pomoct taky. Totéž platí, když se nabírají absolventi - typicky firma, co chce absolventy je chce mít "co nejdřív" poté co absolvují. Ale zároveň ví, že málokdo nastoupí v červenci, protože si chce užít poslední prázdniny. Takže se snaží naplánovat hiring kampaň tak, aby proběhla PO zkouškovým a PO státnicích (protože student, který řeší jestli a jak dokáže vůbec projít nemá v hlavě prostor na pohovory), ale zároveň aby stihli ti lidi nastoupit v září nebo říjnu.
 Obecně chci tímhle dlouhým textem říct, že má smysl přemýšlet o faktoru času při hledání práce - a to i z pohledu druhé strany (která se zase snaží vcítit do vás, takže je to nekonečný cyklus).
 ---
 
@@ -1006,13 +1006,199 @@ https://discord.com/channels/769966886598737931/769966887055392768/8666807514999
 
 
 --- https://discord.com/channels/769966886598737931/788826407412170752/884384782669213727
-Certifikát ISTQB může být užitečný pro hledání první práce, protože je tam hooodně teorie, kterou se člověk musí naučit, na druhou stranu znám spoustu lidí, kteří dostali práci i bez něj. Pokud už člověk má praxi, certifikáty jsou většinou nerelevantní. 
+Certifikát ISTQB může být užitečný pro hledání první práce, protože je tam hooodně teorie, kterou se člověk musí naučit, na druhou stranu znám spoustu lidí, kteří dostali práci i bez něj. Pokud už člověk má praxi, certifikáty jsou většinou nerelevantní.
 
-Co si myslím, že by mohlo pomoct je ukázat, že člověk ví, kam se chce dál posunout. Automatizované testování je často dalším krokem a aby člověk mohl psát autotesty, musí nejdříve umět programovat na základní úrovni. Doporučuju tady začít s Javou, protože junior testery většinou nabírají v bankách, kde jsou testy v Javě. Pokud nejsou v Javě, jsou většinou v Pythonu a přechod Java ->Python je jednodušší, než naopak. Nicméně, dá se začít i Pythonem, to je možná jednodušší na začátek. Každopádně bych tady doporučila mít nějaký ukázkový projekt. Taky bych doporučila, osvojit si základy DevOPSu - někdo bude muset připravovat testovací prostředí, automaticky na něm spouštět testy atd. 
+Co si myslím, že by mohlo pomoct je ukázat, že člověk ví, kam se chce dál posunout. Automatizované testování je často dalším krokem a aby člověk mohl psát autotesty, musí nejdříve umět programovat na základní úrovni. Doporučuju tady začít s Javou, protože junior testery většinou nabírají v bankách, kde jsou testy v Javě. Pokud nejsou v Javě, jsou většinou v Pythonu a přechod Java ->Python je jednodušší, než naopak. Nicméně, dá se začít i Pythonem, to je možná jednodušší na začátek. Každopádně bych tady doporučila mít nějaký ukázkový projekt. Taky bych doporučila, osvojit si základy DevOPSu - někdo bude muset připravovat testovací prostředí, automaticky na něm spouštět testy atd.
 
-U testera/ky můžou být důležité doménové znalosti - toho bych se nebála využít. Pokud mám vystudované bankovnictví, zkusila bych se primárně hlásit do bank. Je spousta dalších cest, kromě automatizovaného testování - pokud už vím, kam mířím, zkusila bych to na pohovoru zmínit. 
+U testera/ky můžou být důležité doménové znalosti - toho bych se nebála využít. Pokud mám vystudované bankovnictví, zkusila bych se primárně hlásit do bank. Je spousta dalších cest, kromě automatizovaného testování - pokud už vím, kam mířím, zkusila bych to na pohovoru zmínit.
 
 Co se týká firem, hledala bych nějakou, kde mají menší poměr manuálních testerů (nebo ideálně žádné), protože se může stát, že se junior/ka zasekne na manuálním testování a nikam neposune. Na pohovoru bych se vyloženě ptala, kolik je manuálních testerů, kolik mají manuálních vs automatizovaných testů, co ode mě očekávají.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789092262965280778/1050378327627669544
+Nedávno jsme v <#769966887055392768> řešili návratnost investice (ROI) do switche.
+Byla to diskuze k článku https://www.seznamzpravy.cz/clanek/ekonomika-firmy-cesi-se-predelavaji-na-ajtaky-vydelavaji-i-nasobky-toho-co-driv-216944
+
+Psal jsem:
+> A vůbec tam nepočítají náklady, které na to jsou. Ať už ušlý příjem nebo na kurzy samotný. Finanční ROI je mizerný, návratnost je někde v dalekém budoucnu.
+> Důvody pro switch jsou samozřejmě i nefinanční a ty jsou pro mnoho lidí podstatnější.
+
+No a teď čtu na stránkách GFA tohle
+> Chceš začít v IT, ale dávat za školné tolik peněz připadá moc? My tvrdíme opak. Školné se ti totiž za pár měsíců vrátí ve výplatě.
+> ‍Pojďme počítat:
+> V rámci našeho bootcampu máš 100% garanci umístění a nástupní plat minimálně 40 000 Kč hrubého. Průměrná mzda našich čerstvých absolventů je však 47 200 Kč.
+> 47 200 Kč x 4 (měsíce) = 188 800 Kč
+> Stačí ti tedy v nové kariéře odpracovat 4 měsíce a školné budeš mít zpátky na svém účtě. Tím ale zdaleka nekončíš, protože platy v IT neustále rostou. Za 2 roky z tebe může být medior a do 5 let už můžeš být seniorní programátor, jehož hrubá mzda se s přehledem vyšplhá i přes 100 tisíc měsíčně.
+
+No tak tedy pojďme, ale nic nevynechejme…
+Kalkulačku ROI do Google Sheetu jsem udělal už tehdy, ale teď jsem tam doplnil ty mzdy dle toho co píšou a taky cenu online kurzu s platbou předem.
+
+https://docs.google.com/spreadsheets/d/1uxb1ZotwxRAB40u99LE4B59hC15nHkLO4WNZNrA9V0Q/ (Udělejte si kopii a klidně si doplňte svoje čísla.)
+
+Jasně, že se to někdy zlomí. Dřív, pokud někdo před tím nevydělával moc peněz, ale rozhodně to není tak rychle, že náklady jsou zpět za pár měsíců.
+Mám v té logice někde chybu? 🤔
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1048193165875757096
+ber inzeráty jako kdyby si firmy psaly seznam vánočních přání - i když dostanou od ježíška něco podobného, jsou rádi
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1047556321274245182
+Ja by som to chapala tak, ze intern moze/nemusi byt plateny a ten internship je na pevne danu dobu, ktora ked skonci, tak sa uvidi co dalej, ale nemusi sa udiat nic. A trainee moze/nemusi byt plateny (ale asi skor ano ako nie) a po skonceni zacne normalne pracovat 🤔
+---
+
+
+--- https://discord.com/channels/769966886598737931/797040163325870092/1044323870737432617
+Pokud narazíte na inzerát, kde je napsáno _mladý dynamický_ kolektiv nebo firma, dejte link do threadu. Myslel sem, že to vymřelo podobně jako fialová saka z devadesátek.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1030150072895295552
+**Zajímaly by mě vaše zkušenosti s Úřady práce.**
+Ti, co se pustí do hledání nebo změny na fulltime a nejsou na rodičovské s nimi asi mají zkušenost.
+A taky schvalují proplácení různých rekvalifikací.
+Připomenu, že je dobré se tam registrovat už jen proto, že si nemusíte platit zdravotní pojištění.
+
+Sám jsem byl na ÚP registrovaný před asi 7 lety a musím říct, že to byl poměrně depresivní zážitek a byl jsem rád, že reálně nejsem odkázán na jejich „pomoc“.
+
+Jaká byla vaše zkušenost?
+Snažili se vám nějak pomoci?
+Tlačili vás do nějakého zaměstnání na které máte kvalifikaci?
+Chápali, že se sami učíte a práci si pak najdete?
+Nebo vás nechali žít?
+---
+
+
+--- https://discord.com/channels/769966886598737931/788833053425926195/1002163691120246834
+**FB skupiny aj. místa, kde jde číhat na pracovní nabídky, nebo tam jde dát příspěvek s vlastním představením a vlastními požadavky a čekat, kdo se ozve**
+
+🔵 Pyonieri - Python SR & ČR https://www.facebook.com/groups/pyonieri/
+🔵 Frontendisti.cz práce https://www.facebook.com/groups/frontendistiprace/
+🔵 IT jobs / Práce v IT https://www.facebook.com/groups/1806114342948040/
+🔵 Backendisti práce https://www.facebook.com/groups/backendistiprace/
+🔵 Práce v IT - nabídka, poptávka, rady a tipy https://www.facebook.com/groups/pracevit/
+🔵 Ajťáci pro IT komunitu https://www.facebook.com/groups/114237176143464/
+🔵 Czechitas Příležitosti https://www.facebook.com/groups/292829031070632/
+🔵 PRÁCE - PROGRAMÁTOŘI, VÝVOJÁŘI, KODÉŘI - PRÁCE A BRIGÁDY V OBLASTI IT https://www.facebook.com/groups/684672464913744/
+🔵 IT jobs in Brno, Praha, Ostrava https://www.facebook.com/groups/1410077719228836/
+🔵 Práce pro webové programátory https://www.facebook.com/groups/469950746429675/
+🔵 IT Jobs & Internships (Czech Republic) https://www.facebook.com/groups/168885910244057/
+🔵 Data Jobs - Data Analysts, Data Engineers & Data Scientists - Prace https://www.facebook.com/groups/1788236724824404
+🔵 No Fluff Jobs CZ/SK –⁠ IT Junioři https://www.facebook.com/groups/604043784717336/
+
+⚠️ Předem upozorňuju, že některé z nich jsou vyloženě toxické, ale svůj jednorázový účel přesto mohou splnit. Pokud se představíte, nejspíš vám přijde spousta nesmyslných zpráv (udělej něco zadarmo, za pár stovek, atd.), ale mohou se ozvat i seriózní nabídky, je dobré to poctivě filtrovat. Ty zprávy najdete někde bokem, protože třeba zrovna FB zprávy od cizích lidí schová do nějakého šuplíku a nezobrazí je normálně s notifikací, tak je dobré to ručně kontrolovat. Stejně tak nabídky tam mohou být od kdejakého nadšence, který vám pak nemusí být schopen platit, takže bacha a lustrujte si, komu odpovídáte.
+
+👉 Pokud víte o dalších, zmiňte je ve vlákně. Tento příspěvek tady připnu a budu ho průběžně i editovat, dokud věc celou nepřesunu do nějaké specializované stránky přímo v rámci webu junior.guru.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/999304168261029968
+Ja si tu jen naskocim s mym pet-peeve - nemam rad oznaceni *soft skills* vs *hard skills*, obsahuje to nejakou implicitni vahu. Preferuju misto toho rozdeleni *technical skills* a *professional skills*. Imho to lepe vyjadruje, co ty skills (a hlavne jejich absence) znamena - neoznacil bych za seniora nekoho, kdo se chova neprofesionalne, neumi komunikovat, nechape/nechce chapat prdukt v sirsim kontextu a nema empatii s uzivateli.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/983610893973745714
+Já mám taky pocit, že nejsme názorově tak vzdálený. Snad všichni tu souhlasíme, že udělat kariérní switch je dřina, pot a nutné oběti. A každá minuta se počítá a posouvá člověka vpřed. Opakovaně tu pomáháme lidem omámeným sladkými marketingovými se zakotvit v realitě a vyvracet mýty (ty jsou i v příručce). Kde se domnívám neshodneme je ta premisa toho, že "co dělám, musím dělat na 110% abych byl skvělej". A tam myslím, že je právě velkej rozdíl v junior x senior, kde pro juniora je nový snad všechno a posouvá se mílovými kroky v pracovní době, což se o seniorovi asi tak snadno tvrdit nedá - ten pak víc skilluje mimo pracovní dobu, aby dělal větší kroky, pokud si to přeje. Takže podle mě má junior skvěle našlápnuto i když nedělá nic mimo pracovní dobu. A druhý háček, jak tu psalo víc lidí, každej nemusí chtít být špička v oboru, anebo ani nemůže (povinnosti, vlastní omezení..), a to je taky v pořádku. Nejzdravější je podle mě být si vlastním měřítkem úspěchu - já teď x já před rokem.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/983340740778266647
+Tohle podepisuju. Přečetl jsem celou tu diskuzi. Předně dík, že jste se udrželi a zvládli to ještě relativně nekonfliktně, i přes rozdílný pohled na věc 😉 Pokusím se shrnout, jak to vidím já. Mám dojem, že každý má trochu pravdu a že se to tu míchá do jednoho velkého guláše.
+
+Přesně jak psal <@419662350874837003>, většina lidí nic „navíc“ nedalají a normálně se v oboru uživí a jsou spokojení, po práci jdou na kolo nebo pečují o děti, zajedou na chatu, prostě řeší život. Kvalitně si odpočinou a nic jim nechybí. Absolutní minimum lidí z oboru dělá aktivně open source, píše si blog, čte tuny knih, přednáší, jezdí na mnoho konferencí, nebo přijde na sraz programátorů. Pokud jste někdy zašli na Pyvo, jste z hlediska vlastní proaktivity dál, než 99 % lidí, kteří se v Česku živí programováním. Další sebevzdělávání lidi běžně nechávají na tom, co se přihodí v práci. Nový projekt, nová technologie, novinka z oboru, co poslal kolega do Slacku nebo vysvětlil na obědě, jednou za rok třeba nějaká konference, občas nějaké školení. V normální firmě s normálním kolektivem mi přijde skoro nemožný nenasávat novinky v rámci pěny dní. Samozřejmě jsou i firmy a kolektivy, kde se člověk rozvojem zasekne na dekádu a taky to jde.
+
+I z vlastní zkušenosti bych řekl, že <@839123616665698354> má pravdu v tom, že kdo dělá něco „navíc“, tak se mu prostě vrátí „víc“, a to v mnoha ohledech. Každý přečtený odborný článek nad rámec toho, co se vám přihodí ve firmě, každá konference, každý sraz, na který zajdete. Cokoliv navíc se prostě z mé zkušenosti 4x vrátí. Někdy třeba za rok za dva, ale vrátí. Ani nejde o to, aby člověk byl top programátor, ale prostě si tím otevírá příležitosti, je víc v obraze, dokáže lépe posloužit svému týmu, je lepším seniorem, profesně a kariérně roste. Z definice slova „navíc“ to ale není pro každého. Nechci zašlapávat u lidí ambici - sám jsem příkladem toho, kam to jde dotáhnout, když člověk dělá věci navíc. Nechci to akorát lidem předkládat jako standard. Jak psala <@791020144661889054>, když si to přečtu jako junior, tak budu mít očekávání, že bez věcí navíc budu nula, což prostě není pravda. Zase chci lidem říkat, že ty možnosti existují, protože pokud na ně tu energii a chuť mají, je to skvělý kariérní výtah.
+
+Takže za mě je OK nedělat nic navíc. Zároveň kdo má ty možnosti a ambici, existuje 30 věcí, které navíc dělat lze a komukoliv o nich rád řeknu a poradím jak na ně, protože junior si tím může reálně pomoci a urychlit svůj postup. Ale pouze v případě, kdy má sám pocit, že to dělat chce. Nerad bych dával signál, že bez toho to nejde a že je to nutná podmínka, protože si to ani nemyslím. A nepřijde mi např. etické takový tlak paušálně vyvíjet na svoje lidi ve firmě. Nebo obecně na juniory. A přijde mi OK, pokud někam do firmy nastoupím jako junior a chtějí po mě věci navíc a já to nedávám, jelikož potřebuji ten odpočinek, nebo mám rodinu, tak mi přijde OK tu práci změnit. Protože jsou firmy, kde věci navíc nechtějí a je zbytečné, aby se ten člověk topil v depkách, pokud nemusí.
+
+Prostě kdo bude chtít, toho pošlu do vesmíru a až na měsíc, ukážu mu cestu. Ale kdo z jakéhokoliv důvodu do vesmíru nemůže nebo nechce, tak chci, aby chápal, že většina letadel do vesmíru nelítá a úplně v pohodě dopravuje velice efektivně spoustu lidí po celé planetě na letových výškách a bez stavu beztíže a že to fakt stačí.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/979547837052362772
+hledal jsem alespoň part-time myslel jsem že půjdu do lidlu, protože part-time a linked in je jako šikana lidskýho přístupu :D,...
+
+Pak jsem napsal příspěvek na facebook co chci co nabízím (jo taky jsem dostal nový léky, protože jsem se mezitím málem zabil - tak trochu bez nadsázky, ale to je spíš ta psychika... 😄 ))) a sehnal super práci. Na částečný úvazek, Vývojář v Javě (kterou jsem dělal  v green fox academy) a s lidma který konečně taky myslí že zajetý koncepty pruzení nadřízenej podřízenej sou totální bulshit. ..
+
+Takže Konečně pracuju. Jako vývojář. Success story? Možná možná se mi nelíbí na něco takového dávat takovej label... Každopádně jsem fakt rád že to za těch asi deset let vyšlo, a stálo to za to. Kdybych si to tenkrát nevybral, nikdy bych to nedělal a nemyslel si že toho sem schopnej.... GL to you too 😄 :)))
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/977161736987754546
+Formou bodyshoppingu pracuji já, tak kdybys pak sbíral názory, ráda přispěju.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/975513302614544454
+Obecne certifikaci delej jen kdyz ti ji nekdo zaplati a/nebo je to nutna podminka pro neco co chces (povyseni, job, ...), jinak moc nedavaji smysl imho
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/973580991274823740
+<@668226181769986078>  Nebylo by tohle téma možné přidat do příručky pro juniora? Já jsem třeba vůbec nevěděl, že to takhle funguje a dozvěděl jsem se o tom až nedávno, právě na  tom pohovoru, taktéž jsem o tom nikdy nečetl... Ale možná jsem to jen přehlédl a v příručce už o tom máš napsáno. 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/972951035226247258
+Práce, kterou jste doteď dělali jako koníčka po večerech najednou děláte přes den a máte za ni zaplaceno. Učíte se 3x rychleji -> nové informace nasáváte jak podvědomě (protože se to na vás valí ze všech stran a chtě nechtě jste součástí), tak vědomě a cíleně (protože máte silnější potřebu a motivaci se učit, už jen pro to, abyste si tu práci udrželi).
+Píšu, nevzdávejte to, ale ve zkušební době není ostuda to vzdát, pokud cítíte, že to není ono. Nemusí vám vyhovovat prostředí (malá kancelář nebo velký open-space), tým (ne s každým si lidsky sednete), práce (představovali jste si něco jiného), časové možnosti (dojíždění moc dlouhé a drahé), nebo naopak remote či home-office není tak super, jak jste si mysleli.
+Buď máte to štěstí a víte předem, co hledáte (a moc nedoporučuji se do něčeho nutit s tím, že si možná zvyknete), nebo si to prostě musíte vyzkoušet a pak zvážit případnou změnu. I samotná změna projektu může být pro někoho problémová, na to pozor už při pohovoru, zda si chcete přechod na jiný projekt určovat sami nebo vám nevadí, když vás podle potřeby realokují jinam.
+To se teď stalo mně, po 3 měsících zaškolování na jednom projektu (a s ním související tým, prostory, režim, atd.) mě zítra čeká v rámci zákaznické společnosti nový projekt, nové prostory, nový tým, nový režim. Já jsem dost přizpůsobivá a obecně nemívám se změnami problém, přesto je pro mě tento přesun trochu „šok“, že se to v praxi opravdu děje. 😊
+Co bych si dnes před nástupem do práce poradila, tak hlavně KLID. Kladla jsem na sebe od začátku vysoké nároky a zbytečně se tím nervovala. Nepřemýšlela jsem nad tím tak, že mám celé 3 měsíce na to, abych poznala novou práci, spíš jsem to brala jako snahu nic nezkazit a za každou cenu se tam udržet. 😊 Do dnešního dne se mi přes LinkedIn ozvalo asi 10 dalších recruiterů, zda nehledám pracovní příležitost (a to nemám zelené kolečko opentowork). Lidí je opravdu nedostatek, a pokud nejste na stávající pozici spokojeni, nebojte se změny. Držím palce!
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/971919809212190790
+No jak nějaká holka, která je trans a fakt hezká říkala - znám obě varianty byla jsem kluk a teďka jsem holka, a to že máte spoustu nabídek a matchů ať už skvělých nebo míň nebo dokonce otravných na tinderu, bych nevyměnila za to když vám nikdo nepíše a nikoho nezajímáte.
+
+Jinými slovy je rozdíl psát firmám bez praxe a bez vzdělání(a jiné - hledám part-time, x , y, z, ....)  atp., milion životopisů a horkotěžko přemýšlet jak dostat více než nula až jednu reakci - děkujeme vám ale dali jsme přednost jinému kandidátovi - než napsat inzerát který můžete pojmout úplně po svém - protože běžné sociální sítě to snesou ba co často ocení, můžete vyzdvihnout svoje silné stránky které by jste do životopisu nedali - ale sem tak nějak sedí - a dostat reakce od reálných firem a lidí zaměstnávajících programátory (checkujte zprávy a žádosti o zprávy 😛 ) a hlavně! Je to inzerát podle Vás, budou s větší šancí rovnou reagovat na vaše podmínky a "rukopis".
+
+Pokud se vaše hledání pozice vymyká standardu toxického linked-inu, nebo obecně považovaných nejlepších podmínek pro start v IT (vlastní projekt, škola, bootcamp, plný-úvazek, plynulá angličtina, 10 let praxe 😛 atp.) a nejste úplně šablonový uchazeč, nejen že možná (VY!) zaujmete firmu která vám s větší šancí sedne, ale hlavně dostanete možnost napsat úplně cokoliv a vybírat si ať už z dobrých, méně dobrých a úplně mimo nabídek které musíte vyfiltrovat ale zareagovali oni na vás.
+A ať to klapne nebo ne, v nejhorším to smažete / dáte novou zprávu za týden / za měsíc - a i když budete muset někomu vysvětlit že mu nenaprogramujete za dva tisíce apku do mobilu kterou potřebuje na doma - za večer (spěchá) a 2000 korun (jestli by to teda nešlo za pět set nemám zrovna cash) a jinému že dobrovolničit od února do konce příštího roku nemůžete( a vlastně vám to ani nepřijde úplně fér, ale sorry nechtěl jsem se vás dotknout), tak dostanete reakce které mají šanci na úspěch.
+
+Napsání klidně může trvat kolem pěti minut (nebo víc :D).
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/971690440443191306
+Tenhle příspěvěk z jedné veřejné FB skupiny by mohl být pro někoho inspirací, jak proniknout do nového oboru. Naprosto jednoduchá strategie a při tom za pár hodin hned 2 příležitosti <:notbad:842465452911099905>
+---
+
+
+--- https://discord.com/channels/769966886598737931/797040163325870092/971670339052503060
+Mi říkal jeden aktivní týpek z TAČR (agentura pod úřadem vlády, která rozděluje státní granty na aplikovaný výzkum), že vidí 3 druhy státních ajťáků:
+1) ne moc dobrej: v komerční sféře mě nechtěj (což je co říct, protože díky nedostatku lidí jsem viděl, jak firmy zkously dost děsný lidi)
+2) doklepu to v klidu do důchodu, ktere není daleko
+3) idealisti, co chtějí, aby stát dobře fungoval (ti většinou dříve nebo později vyhoří)
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/952720555872747581
+Většinou tady řešíme reaktivní způsob hledání práce. Tedy koukáte na nabídky a reagujete na ně.
+
+Občas ale někde vidím **aktivní způsob**, kdy se switcheři nějakým způsobem sami ozvou, že hledají práci. Typicky někde na FB ve skupině s nabídkami práce někdo napíše: *„Projel sem nějaký kurzy, udělal tady projekt a teď bych chtěl najít první práci, mám šanci s tímto? Nevíte o něčem?“*.
+
+Nevím jak to reálně funguje, ale pro mě až překvapivě často tam jsou odpovědi typu *„SZ“* nebo *„Napiš na hr@nasefirma.cz“*.
+
+Taky je možný, že někdo i přímo oslovuje firmy, které mu nějak přijdou zajímavé, jen to není vidět (tedy uvnitř té firmy to vidí). To se ostatně dělalo i před mnoha lety. Na vlastní oči jsem viděl, jak někdo přišel na recepci firmy s papírovým CV, že by to chtěl předat HR (ano, je to dlouho 👴)
+
+Co si o tom myslíte?
+Zkusil jste to někdo?
+Zvažujete že byste to zkusili?
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/925305675838550036
+https://twitter.com/norootcause/status/1475518692041510915?s=21
+---
+
+
+--- https://discord.com/channels/769966886598737931/864434067968360459/910398477794697216
+Nevím jakého přesně rázu jsou tvoje problémy, ale napadlo mě, že tahle firma zaměstnává převážně lidi s nějakými problémy, šéf vývoje je na vozíku, pracujou tam i lidi s psychiatrickýma diagnózama https://www.goodsailors.cz/ je sice v Děčíně, ale jak píšou na webu *„Kotvíme v Děčíně, fyzicky ale můžeme být kdekoliv“*
+Známý, který má Crohnovu chorobu tam dělá projektovýho manažera a říkal o nich samý dobrý věci.
 ---
 
 

@@ -380,4 +380,313 @@ A ještě někdo jinej psal takovou zkratku:
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/1035104757188137014
+Obecná poučka je to, co najdeš tady: https://junior.guru/handbook/cv/
+1) Napiš seznam toho, co umíš. Bez specifikace „jak moc“.
+2) U projektů v CV můžeš v popisu zmínit hlavní použité technologie.
+To, co tu řešíme je ale to, že na jaké seš úrovni, se pozná podle těch projektů.
+To platí pro začátečníka bez komerční praxe.
+
+To co píše <@539022501876072448> se týká lidí, co už něco mají za sebou a dá se čekat, že pokud třeba 3 roky pracovali ve firmě a dělali tam weby na Djangu, tak umí ledascos, co je k tomu potřeba, na nějaké úrovni. Samozřejmě je dobré si to ověřit na pohovoru potom.
+---
+
+
+--- https://discord.com/channels/769966886598737931/864434067968360459/1024068178554400879
+Těmi věcmi, které ovlivnit nejdou jsem myslel (a výčet to asi není úplný)
+— hlásil ses na nějakou pozici, ale ta už mezitím zanikla / změnila se a ty se na ni nehodíš
+— nesoulad mezi jejich představou a tím, co můžeš nabídnout jako junior (prostě jsi juniornější než čekali) to se nutně hned nepozná předem a i když by někdo řekl, že se na to jde připravit, tak jakoby ano, ale vlastně ne, je tu úroveň _switcher_ a ve firmách, kam se třeba nikdy žádný nehlásil netuší, že existují lidi, co umí tak málo i když na první pohled třeba nevypadají tak nezkušeně.
+— nejsi jim sympatický
+— máš špatný den, kdy se něco stane a prostě nejsi v náladě / mentální kondici a neukážeš, co umíš
+— mají nějaké předsudky
+— hledají juniora, protože senioři nejsou a on se během toho řízení přeci jen nějaký přihlásí a dostane holt přednost (skutečný příběh)
+— pohovor dělají špatně ti na druhé straně, chtějí po tobě nesmysly, které jim o tobě ve skutečnosti moc neřeknou apod.
+---
+
+
+--- https://discord.com/channels/769966886598737931/864434067968360459/1023737337957589032
+4) technicky leader/ vedoucí tymu/ .... který bude na vašem pohovoru -->  většinou při dalším pohovornim kole po HR, je pohovor s technicky leaderem který se jednak snaží i zjistit něco o vás (jak se chováte,, jaký jste.. jaké maté rysy).. snaží se zjistit zda budete pasovat do jeho tymu po stránce osobnosti, s tím mu pomáhá otázky od HR. a poté ho bude zajímat váš technicky skill, což odhalí jak třeba nějaký test na papíru tak úkol na vypracovaní.
+
+Muže se stát i to že ty znalosti máte, ale nemáte dostatečné vyjadřovací znalosti (nebo jen velká míra stressu) na to tyto znalosti proti straně přednést a dokázat že je opravdu máte (na to je ale většinou právě ten test, aby tohle odhalilo)
+některé firmy ale tyto technicky pohovory mají až po úkolu, a tímto pohovorem se snaží z validovat skill který vychází od úkolu či testu. (takže zde nějaký vyjadřovací block muže velmi ublížit u pohovoru)
+
+no a některé firmy to zase mají naopak.. tedy technicky pohovor a až pak úkol.. zde mi přijde daleko větší šance v přijímacím řízení, protože když například technicky neohromíte na pohovoru, tak stále máte šanci dokázat že na to máte skrz úkol
+
+5) souhra vlastnosti osobnosti a technického skillu: aspoň u mě ta výherní kombinace byla to že na pohovoru jsem zaujal člověka který mě chtěl do tymu, a to hlavně po stránce motivace, a pohledu na svět.. (tohle mi řekl když jsem se ho zpětně zeptal ). po stránce technické si nebyl jisty, protože jsem fyzicky na životopisu nic neměl, krom osobních projektu. takže to rozhodl až úkol na vypracovaní který byl úspěšný. Pak už jen doufal že se neutopím v moři korporátu
+---
+
+
+--- https://discord.com/channels/769966886598737931/864434067968360459/1023737296211693650
+> Pohovor se úspěšně povede, když je člověk připraven.
+souhlas, taky mě to trošku pobouřilo, když jsem to četl (v duchu jsem si říkal.. no určitě 😄 )
+
+neříkám že připravenost ti nedá plusové body, ale je to jen nějaká malá ovlivnitelná část na pohovoru.
+
+asi bych to shrnul na následující aspekty
+
+1) jak má firma nastavené přijímací řízení --> je velký rozdíl pokud má firma 4 kola které se táhnou celkem měsíc, nebo pokud má jen dvě kola které jsou do jednoho týdne hotové
+
+2) HR / komunikace --> takový první dojem dělá to jak firma komunikuje s novými uchazeči. prvotní odpověď na váš email (či vůbec neodepíšou), nebo naopak zavolají na druhy den a domluví si schůzku.  zažil jsem například HR která mi napsala email že mí v pátek zavolá ohledně výsledku přijímacího řízení, a nakonec po celodenním čekáním v pátek, jsem dostal odpověď a to přes email v 8 večer. Což nedělá zrovna moc dobry dojem o firmě, pak je tu druha strana mince, člověk během těch všech přijímacích řízení nesmí na ně myslet, nesmí byt upření jen na to zda to vyjde nebo ne. pak se o tom zbytečně uvažuje, a psychicky akorát stresuje, kdy konečně dostane odpověď. Každopádně tento aspekt HR jsem zmínil i hlavně proto že HR většinou s vámi má osobně pohovor, a je možné že přes HR do dalšího kola nedáte.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826190692483082/1011743744812392468
+Aktualizoval jsem konečně tabulku, která se pokouší o srovnání peněz OSVČ a peněz zaměstnance s pracovní smlovou pro tento rok.
+Najdete ji na adrese https://bit.ly/osvc-v-zamestnanec-2022 a jestli tam najdete nějakou chybu, dejte prosím vědět.
+Je to v ní napsané, ale připomenu, že je potřeba si pro vlastní použití udělat kopii.
+
+Vysvětlení co tam je a proč najdete v přednášce.
+https://www.youtube.com/watch?v=iJGjTFDYw9A
+
+Díky <@614870427931770900> a <@933738477449785384> za pošťouchnutí
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1002496242456219719
+Nepíšou inzeráty s názvem *Junior Developer* ale ani *Senior Developer*, prostě popisujou co a v čem tam budeš dělat, co od tebe čekají. Když se na to začátečník nebo junior cítí, ať se klidně ozve. Pokud chtějí spíš někoho seniornějšího, je to v těch popisech popsané těmi požadavky, ne slovem _senior/junior_.
+
+Když napsali junior, měli problém, že těch začátečníků se hlásilo opravdu hodně a opravdu hodně z nich nebylo na úrovni o kterou by stáli, takže i tímto tomu předcházejí.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1002114785887916123
+Sice opět píšu, co se už psalo, co píše <@668226181769986078> v příručce a psali tu i jiní, ale zkusím to jinak, třeba si začneme rozumět.
+
+1) Označení „junior“, „medior“ nebo „senior“ jsou **obecně** jen velmi hrubá označení
+představ si recept na koláč, kde je napsáno místo „200 g“ mouky jen: „trochu“, „středně“ a „hodně“. Slouží k tomu, abys věděla, že něco je víc než něco jiného, ale to je tak vše. Někdo dokonce tvrdí, že to nedává vůbec smysl používat.
+
+2) To označení je obvykle přesněji definované v rámci jedné firmy a slouží to jako ne úplně přesná zkratka aby se nemuselo vypisovat detailně, co ten člověk dělá a jaký má přínos firmě. Takže už tam může být definované, že je to „hrnek mouky“ nebo „hrst mouky“, pořád to nemusí být úplně exaktní a splní to různá množství mouky, ale už je to přesnější.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1001957868565696632
+<@788486062430355497>  Nevím kde jsi se ptala na tu angličtinu, ale napíšu to sem, tady to bude asi nejvíc namístě:
+
+Z angličtiny používané ve firmách, které mají pobočku v Česku a pracují v ní převážně Češi, není potřeba mít stres.
+Z mých zkušeností (ne jedné) se komunikuje na úrovni basic English s odbornou slovní zásobou, která ale čítá tak 20 základních výrazů. Žádné košaté větné struktury nikdo nevyrábí  a skvostnou oxfordskou výslovností taky trpí málokdo 🙂
+Tu slovní zásobu pobereš po prvních pár meetech od kolegů. Většinu toho už budeš znát pasivně  z různých tutorálů, které kolem tebe prošly.
+Jestli se základně domluvíš a jsi schopna složit větu, tak bych se angličtinou speciálně netrápila a brousila ji až za pochodu 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1001961604889452598
+Hele, co me se tyka, je to "deleni" uplne k prdu a zbytecny, ale kdybych nutne musel rict co pro me znamena rozdil mezi Juniorem/Mediorem/Seniorem/Whateverbullshiterem tak jak s nima interaguju ja, tak je to
+ - samostatnost - jak moc detailne musim rozepisovat zadani - srovnej "Naprogramuj backend pro blog" s "Zadani z Appliftingu"
+ - empatie k ostatnim - treba jak moc resis, ze to po tobe bude nekdo cist. Vyberes si "genialni one-liner co ma o 2 % lepsi performance" (na neco co se spousti jednou za den), nebo "delsi/vic noob-looking kod, kterej je potencialne pomalejsi, ale za pet let porad presne vis co a proc dela"?
+ - znalost domeny - jak moc "delas na svym" vs "jak moc reflektujes zbytek projektu/platformy/..."
+ - komunikace - je bozi byt superhero, co se na mesic zavre do komory a na konci z nej vypadne DOOM engine, ale kdyz ten mesic zbytek kolegu nevi co, proc, jak dlouho... delas a treba kvuli tomu stoji... Muzes byt genius, ale to je tak vsecko.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1001119588462899200
+Kdyz jsme u toho everestu - vyprava na Everest stoji minimalne milion a to moc nepocitam cestu, jen material, povoleni, pripravu. Takze na Everest nelezou lidi, kterym je jedno, kam jdou - jsou mnohem obtiznejsi/snazsi/zajimavejsi hory, jedine cim je Everest unikatni je prave ta prestiz toho, ze je nejvetsi/nejznamejsi. Kdyz nekomu reknes, ze si vylezl na druhou nejvetsi horu na svete, nezni to tak dobre, i kdyz kazdy horolezec si z toho sedne na prdel protoze K2 je mnohem narocnejsi vystup.
+
+Myslim, ze to dobre pasuje i na ten FAANG - neznam zadneho skutecne seniorniho vyvojare, ktery by chtel pracovat ve FAANG, vcetne tech, kteri si tim (at uz dobrovolne nebo ne) prosli. Je to takova predstava lidi o tom, co je vrchol IT prace, nez ze by to byl skutecny vrchol.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/999948607002259537
+> nebudu dostávat zpětnou vazbu, že byli vybráni blbě
+Jasně, pak je to klasickej https://en.wikipedia.org/wiki/Survivorship_bias, ale může to nevadit, když je dost kandidátů.
+Sice jsme odmítli i lidi, co by tu mohli pracovat, ale nevadí, máme dost jiných. Akorát to v IT spíš není.
+
+> chci dávat šanci lidem, kteří by ji třeba jinde nedostali
+to není nutně charita, ale klidně chytrá strategie, jak si rozšířit množství lidi, mezi kterými hledám (nemluvě o výhodách diverznějších týmů)
+Toto nedělá ten obchod aby chudáci introverti mohli nakupovat, ale aby vydělal.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/999920569971642508
+Tvoje úvaha předpokládá, že pohovor je vždycky/většinou **správně udělaný**.
+Což znamená, že to, co se tam děje, je záměrné ze strany toho, kdo pohovor vede a splňuje to asi takové ty obecné cíle, který by pohovor měl mít:
+– vede to k tomu, že o daném člověku zjistí co chtějí zjistit
+– že to co chtějí zjistit je to, co je potřeba pro pozici, kterou obsazují (ať už jde o osobní vlastnosti nebo odborné schopnosti nebo cokoli dalšího)
+– a že na tom pohovoru chtějí předat co nejlépe informace o té pozici tak, aby se kandidát mohl správně rozhodnout, jestli je tam tam pro něj a nebude z reality rozčarovanej
+
+To by bylo krásný, ale zažil jsem dost pohovorů (na obou stranách barikády), abych neměl iluzi o tom, že to tak **vždy** je.
+
+Vyvozovat z průběhu pohovoru, co hledají může tedy být dost nepřesné. Po projití pohovorem, kde polovina úspěchu bude záviset na tvé schopnosti pohotově reagovat mluvením, tě klidně posadí do openspace s dalšími 30 vývojáři a začneš bušit issues z issue trackeru a mluvit zrovna moc nebudeš…
+
+Spousta lidí dělá spoustu věcí nějak ne protože by se zamysleli, co je problém a jaký je nejlepší způsob řešení jeho řešení, ale prostě tak, že kopíruje co dělají jiní (nebo oni sami v minulosti). Že to může být překonané nebo v daném kontextu nevhodné už neřeší.
+
+Taky se může stát, že firma je fajn, lidi ve vývoji jsou fajn, ale zrovna je nějaká personální krize v HR a pohovory jsou horší, než když nabírali ty fajn lidi… (zažil jsem), takže špatné pohovory nutně neindikují špatnou firmu pro práci celkově nebo ne krátkodobě.
+
+Pokud dotáhu argument <@614870427931770900> do extrému, abych ilustroval ten problém, tak pokud by cool firmy chtěly, abys zahrála slušně na saxofon Giant Steps, než tě přijmou jako vývojáře, tak to nemáš co kritizovat a začneš cvičit. Je to přeci skvělej důkaz toho, že máš výdrž a že tam opravdu chceš.
+
+Pokud mi některé techniky nebo postupy na pohovorech nedávají smysl v naprosté většině kontextů, tak takové pohovory budu označovat za špatné a vidím v tom smysl, protože mi z vyplyne užitečná informace i pro toho, kdo ten pohovor dělal: že ještě víc než jindy jeho úspěch nezávisí na tom, co užitečného pro danou práci umí.
+(plus to, co jsem tu už psal, že část lidí tady ty pohovory dělá, takže je ta debata užitečná, protože s tím tedy něco dělat můžou)
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/999788038861365248
+Z toho plyne, že spíše souhlasím s tezí, že nemá smysl hodnotit pohovory jako dobré vs. špatné - protože do firmy, co špatně pohovoruje, ať už je to "špatně" z jakéhokoli důvodu, člověk stejně nechce 🙂  Nebo má chtít?
+Mockrát jste tu psali, že pohovor je rande, kde obě strany zjišťují, jestli se chtějí. Kdyby mě pohovoroval budoucí šéf a bylo to pro mě nepříjemný, proč bych do té firmy měla chtít a vídat toho nepříjemného člověka každý den?
+
+Ad live coding:  nezavrhovala bych to šmahem. Prostě jsou pracovní pozice, kde je potřeba nějaká míra komunikativnosti, a totální introvert, kterému je nejlíp na homeoffice, kdy s nikým 3 dny nepromluví, se na to nemusí hodit; ani on by v tom nebyl šťastnej.
+
+Z vlastní zkušenosti: pohovor na práci, kde teď jsem, zahrnoval live coding. Pohovorující byl maximálně příjemný a povzbuzující, ale i já byla maximálně otevřená v tom smyslu, že jsem se snažila komentovat, co dělám, jak to myslím apod.. A ta výsledná pozice opravdu je hodně o spolupráci a komunikaci s dalšími lidmi v týmu, pro introverta by to fakt nebylo. Takže tady měl tenhle typ "testu extroverze" plné opodstatnění a určitě bych v tomhle případě neříkala, že když to kandidát nedá, tak firma přijde o potenciálně kvalitního člověka. Nepřijde, protože by se na takovou pozici nehodil.
+
+Takže znovu:
+Když vám nesedne pohovor, není to o tom, že jste špatní. Je to o tom, že nejste kompatibilní s touhle konkrétní firmou /pozicí. Firem je ale milión a pozic taky. Vždycky se dá najít něco, co klapne.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/999298195182059620
+Rozhodne pseudokod. Nebo, pokud to jde, jen funkci kterou "dopisu pozdeji." Tohle delam i v beznem zivote a prijde mi to dobry pristup: "tady potrebuju vyresit XYZ, zavolam tedy `vyres_xyz(data)` a tu dopisu pozdeji, ted potrebuju vymyslet zbytek tohodle kodu"
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/999289463081553930
+Tipy jak projit (i nesmyslnym) pohovorem, ktere funguji u me:
+
+* mluvit - verbalizovat jak o tom premyslim a co delam/snazim se delat
+* otevrene priznat co vim a hlavne co nevim
+* ptat se - nejen na zadani a otazky, ale i klidne na technicke veci. Pokud mam google/stack overflow, budu se ptat tam, ale jinak bych se klidne ptal i lidi co vedou ten pohovor
+* idealne vztahnout dany problem/otazky na nejakou zkusenost z me historie (na projektu "XYZ" jsme resili neco podobneho a ...)
+* kdyz vubec necim, popisu jak bych se to dozvedel, jake kroky bych podnikl abych problem vyresil/zjistil co se da
+
+Celkove proste komunikovat, cim vic, tim lip - je hrozny rozdil kdyz na tabuli/papi/chat napisu  "`podil = celek / cast * 100`" bez pruvodniho komentare a kdyz k tomu reknu "spocitam si kolik procent cini `cast` z `celek`"
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/999243598371491910
+Ok, za me muze fungovat:
+• chci videt jak ten clovek realne koduje, dam mu zadani, nejakej cas at si to castecne sam zpracuje, zorientuje se a pak mi to muze okomentovat, a projdem to a u nejakyho neudelanyho zbytku nebo nejake dalsi ficury, co mu nove k tomuhle zadani pridam, to popisuje, ja koukam jak se s tim umi vyporadat, jak komunikuje.. on mel klid, ja vidim jak funguje
+• povidam si s tim clovekem opravdu jako s partakem, "nezkousim ho", tohle se strasne spatne urcuje a bude to i zalezet na tom co a jak ten zajemce vnima, ale ja mam treba ze skoly ted dva zazitky kdy jeden vyucujici se mnou proste ten kod probiral, neformalne, v klidu, nezkousel me, pohoda. Druhej chtel proste slyset neco a ani se nejak nesnazil se k tomu dostat, pritom bych ty principy zvladala, ale to ho nezajinalo. Chtel slyset/videt neco a hotovo. Otazka za zlatyho bludistaka, kterou zkousku mam? :) . Nerikam ze to tady nekdo delare nebo ze dokonce se zlym umyslem, to nemyslim, jen i ta "atmosfera dela hodne"
+• asi bych radsi zacala nejakym povidanim a "hledanim" neceho spolecnyho, zajimavejch temat, treba i osobnich, souvisi to s tou atmosferou, zmeni se a ovlivni to me i jeho a i kdyz to nevyjde, tak ten clovek(spis oba) pravdepodobneji odejde s tim ze "jo to je dobrej typek, hezkej pohovor, i kdyz to nevyslo"
+• klidne bych pred nejakym tim ukolem rekla, ze je mozna trosku narocnejsi, ale ze to nevadi, ze neni nutny zvladnout vsechno, ze je to tak i udelany a neocekavam, ze to clovek zvladne vsechno, takze v klidu. Samozrejme za predpokladu ze to tak je :D netusim jestli to tak nekdo dela ze zada velkej ukol, ale cloveka to pak desi, kdyz vidi tu hromadu veci. Mnohem klidnejsi budu, kdyz vim, ze to je v pohode neudelat vsechno.  Nic na tom nemeni, ze mi to uz na junior.guru rikali tisickrat, ze nemusim umet vsehcno :)
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/999239037187534898
+Na "jak zvýšit psychickou odolnost" jsou psaný celý knížky 😄 ale já osobně jsem spíš zastánce toho, že tě zocelují náročné životní situace, které jsi překonal. Je rozdíl mezi eustresem a distresem, eustres je mírný a nabudí tě k lepšímu výkonu, distres už je za hranou a tvůj výkon zhorší. Můj tip na snížení stresu je určitě nácvik. Kognitivně behaviorální terapie vystavování se podnětům, které způsobují úzkost hodně propaguje, a funguje to. Takže poprosit někoho blízkého, ať se mnou simuluje pohovorovou situaci může snížit stres při samotném pohovoru.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/999231195726479360
+Několikrát týdně programuju (nahlas) před skupinou lidí s vysvětlováním co a jak a k tomu pár poznámek:
+- vždycky si ten kod připravuju (a vlastně ho před nima jen přepisuju, sláva více obrazovek), protože jinak začnu být po chvíli nervózní, zaseknu se a vypadám jak kdybych neuměl do pěti počítat (stalo se mi - skončilo, sedl jsem is k tomu znova a najednou vše šlo).
+- na každý pohovor co jsem měl, jsem si kod tak připravil předem s tím že "budete chtít vědět, jak programuju, je mi jasný, není ale lepší vidět něco, na čem už delší dobu pracuju? Něco tu pro vás máím..." a díky bohu jsem nikdy algo na pohovoru dělat nemusel. Obvykle schválně vybírám kod, který není perfektní (řeknu to i předem) s tím, že rovnou ukazuju, jak mám v plánu jej vylepšít. **Zatím to fungovali vždy, tak třeba to někomu pomůže.**
+- v kanclu **nenávidím** a když to dávám tučně, je fakt **nenávidím** záda do prostoru. Nejsem schopný **skoro nic ** napsat.
+
+Na druhou stranu, když se seznámím s kolektivem, zapadnu, nemám problém s codereviews, párovým programováním, vůbec ničím takovým. To je úplně jiná disciplína.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/990100877064953856
+Chceš ale vlastně vědět, jestli už je máš znalosti na to to zkusit, že?
+
+Takovou informaci ti koukání na ta zadání bohužel nemusí dát, protože nevíš jak na to, co z toho zvládneš budou reagovat v té firmě. Někde mají hodně velká zadání, která „nejdou“ dodělat, chtějí třeba vidět, kam se dostaneš za dva dny a jak to bude vypadat apod.
+
+Neříkám, že se z toho něco nedozvíš, ale dává mi větší smysl udělat si samostatný projekt (tedy ne takový, kterým tě provází nějaký tutorial) a pak to jít zkoušet už na ty pohovory.
+
+Nevíš na co narazíš. Ten proces není nějak standardizovaný jako maturity, firmy jsou různý, dělaj různý věci a lidi v nich jsou taky různí, takže co stačí někde nemusí stačit jinde atd.
+
+Samozřejmě jde i o to, jestli chceš/potřebuješ změnu co nejrychleji nebo je ti jedno, že budeš doma sedět třeba půl roku nebo rok „zbytečně“. Ono i kdybys řekl, že se „to chceš pořádně naučit“ tak si myslím, že po nějakých základech už se stejně rychleji budeš učit ve firmě už jen protože tomu budeš moci věnovat o dost víc času.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/981249271489757194
+Junior (switcher) hlavně vezme často první nabídku a ignoruje varovný znamení, který by ve svým oboru pro něj byly stopka.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/975832870344069161
+Pozor, tohle je rande, kde partner chybí oběma.
+Lidi zoufale nejsou. To, že začátečníci se jim hlásí sami, kdežto seniory musej lovit a prosit neznamená, že maj dost lidí.
+Zkus si začít uvědomovat, že dojem musí udělat i na tebe. Dojem v tom, jak se budou věnovat tvému rozvoji a že ti lidsky sednou. Bez toho to nebude fungovat a nemá to smysl ani pro tebe.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/975880401212030976
+Přemýšlím, že by možná pomohlo zbavit se mindsetu 'udělat dobrý dojem' a mít nějaká očekávání, ale brát to spíš jako zábavu a pokec - jdu potkat nové lidi a možná to povede někam dál a možná ne. To samozřejmě může platit, pokud nemáš časová a finanční omezení.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/975879339033903154
+Být sebevědomý a asertivní neznamená střelit se do nohy. Když ti protistrana položí nepříjemnou otázku, polož jí ji taky.
+
+Např. proč chceš odejít ze stávající práce? Zeptej se jich, proč lidi u nich odchází.  Na otázky ohledně technologií se můžeš zeptat, v jakém stavu mají dokumentaci, jaké mají pokrytí testů, jaký mají poměr manuálních versus autotestů atd.
+
+Když je jedna strana needy, je to hodně cítit, ať už na rande nebo na pohovoru. Jen bacha na lidi, kteří to rádi zneužívají.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/972950345863028737
+Strach a vzrušení před prvním zveřejněním životopisu…, před prvním pohovorem…, před nástupem do práce… Už vím, že mě chtějí, mám domluvenou pozici i mzdu, a přece se to první pracovní ráno cítím jako kdybych šla k maturitě. Sevřená nervozitou, plná očekávání. Co se bude dít první den? A co ty dny další?
+Obecně je nástupní den hlavně o setkání a poznání prostředí, vyřízení administrace, předání notebooku a mobilu, přidělení práv a přístupů, absolvování prvních „školení“ o firmě, práci, režimu, atd. Informace jsem hltala možná až moc vehementně, nevím proč jsem si myslela, že musím nasadit vražedné tempo a všechno si hned zapamatovat… Měla jsem toho tak plnou hlavu, že jsem v noci neusnula.
+Druhý den jsem nastoupila na projekt do jiné společnosti. Takže stejné kolečko co předchozí den: další nové prostředí, setkání, administrace, notebook, školení… někdy jste na tom tak dobře, že přijdete, první den dostanete notebook a smlouvu, druhý den vám zařídí přístupy a vysvětlí práci, a třetí den už přispíváte jako plnohodnotný člen týmu. Mně se ty dny změnily v týdny (slabina korporátů), takže třeba první měsíc jsem dost intenzivně bojovala se strachem z vyhazovu a s pocitem, že jsem tam k ničemu, protože „nic neprogramuji a jen čtu dokumentaci“ k projektu. Ale v týmu se vědělo, že jsem úplný nováček a zaškoluji se na nových technologiích, takže všichni byli klidní, nápomocní a já se postupně uklidňovala taky… Hlavně díky rozhovorům v kuchyňkách a na obědech (které vřele doporučuji), protože jsem se dozvěděla, že i mým kolegům trval proces rozkoukávání dlouho, že je to normální, pochopitelné, že není kam spěchat, mám být v klidu a pokud budou mít pocit, že bych „měla zrychlit“, určitě to jasně řeknou – opadly tak moje obavy, že bych ze dne na den dostala smsku, ať už do práce nechodím. Postupně jsem začala psát kód a těšilo mě, že byl schvalován bez připomínek a s pochvalou, že mi to jde. Takže nevzdávejte to!
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/969602675261976666
+Toto - https://docs.google.com/spreadsheets/d/1YQkyVqyKeNUyMp7DrY_ayJsUvIZIb_0RMwnCStGA0UE/edit ?
+
+Dnes jsem se na to díval 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/963948141487472650
+To je jednoduchý, napíšu ti svůj názor, který jsem si udělal na základě rozhovorů na pohovorech :-).
+
+Junior už něco umí, má třeba rok reálných zkušeností, má za sebou nějaký vlastní projekt (ne tutorial z YT), zná základní principy a umí je použít v praxi, i když stále potřebuje odborný dohled seniornějšího kolegy. Dokáže už firmě přinést nějaký (i když zdaleka ne zásadní) zisk, má přidanou hodnotu, může si už říct zhruba o 40-50.000Kč (=cca 250-300Kč/hod).
+
+Starter má za sebou kurzy, je to samouk. nemá reálné zkušenosti z IT firmy, potřebuje v podstatě full-time vedení - intenzivní mentoring, není vůbec samostatný, nezná procesy ve firmě, prvních pár měsíců až třeba půlroku na něm firma reálně těžce prodělává, nepřináší žádnou přidanou hodnotu, starter stojí mnoho času = peněz a je pro firmu velký otazník, proto mu je spíše nabízená i třeba placená "stáž/akademie" na 1-3 měsíce, na reálnou pozici ještě nastoupit nemůže, nemá na to skill. Finančně je to bída, pohybuje se kolem 150-180Kč/hod, více ani náhodou.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/960760268974075904
+https://rainofterra.com/interview-theater-f2d749353422
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/960828106032164895
+Já myslím, že používat tato označení v inzerátech a vnitrofiremně jsou dvě různé věci s hodně odlišnými důsledky. Junior / mid / senior beru jako orientační a vágní škatulky, podle kterých můžeš zhruba signalizovat, koho hledáš, nebo kdo si myslíš, že jsi, na pracovním trhu. Svět je pestrý, ale beru to tak, že tříbarevný semafor prostě pomáhá v hrubé orientaci a je to aspoň nějaký společný jazyk, i když v důsledku stejně musíš toho člověka vzít na pohovor a zjistit, kým doopravdy je. Nebo musíš na pohovor jít a zjistit, koho doopravdy hledají (jsem v oboru 2 roky, napsali junior, ale nejsem na ně dost zkušený, hmm, asi mají tu laťku ustřelenou, tak co už, jejich problém 🤷‍♂️).
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/960643262031482930
+Teď jsem slyšel tohle o rozdělení junior / mid / senior a přišlo mi to dobrý 🙂 Několikrát se to tu řešilo, tak koho to zajímá, přijde mi tento díl jako dobry odrazový mustek k orientaci https://overcast.fm/+U67H-Wc10
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/946297939922387024
+_Career switcher_ je za mě člověk, který se rekvalifikuje z jiného oboru. Typicky v pozdějším věku, má už něco za sebou v životě i práci a ve vetsine případu to nedělá skrze studium VS, ale samostudium nebo kurzy. Nedaval bych _career switcher_ a _junior_ na stejnou osu, to první proste popisuje cestu, jakou se ten člověk dostal do oboru a nějaké stereotypy, které se k tomu vážou. Podobně muže byt _absolvent_, čímž se typicky mysli někdo, kdo má relevantni VŠ. Ve vetsine případu se tím mysli někdo, kdo ji vystudoval zrovna teď a nemá zatím moc další praxe. Opět to popisuje především tu cestu a nějaká očekávání, stereotypy vážící se ke studentům, atd.
+
+Pak je _entry level_, to je označení pozic pro úplné začátečníky bez praxe. Pak _junior_. Kde jsou hranice těchto pojmů je vždy na každé firmě, jsou to jen orientační pojmy z HR a jsou vágní, nemají definici. Já vědomě a záměrně říkám _junior_ lidem bez praxe a tlačím firmy spis k tomu, aby měly nároku méně než více. Ten začátek je nejlépe pojmenovatelny a nesnáze se na tom všichni shodneme, zároveň je to podle mě adekvatni očekávání v dnešní době, kdy na trhu není snadné najít lidi i s minimální praxí 🤷‍♂️
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/941264446725173259
+Rekl bych, ze lide s praxi jsou vic v pohode, maji vice nabidek, a uz vedi, do ceho jit nechteji. Oproti tomu junior je nervozni, ze ho nikdo nechce, tak vezme prvni nabidku co prijde - a bez pracovni zkusenosti jeste nemuze vedet, na co si ma dat pri vyberu prace v novem oboru pozor.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/941265372617773056
+Napada mne jedna prakticka rada - pri pohovoru trvat na tom, ze chci mluvit se svym budoucim mentorem?
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/941265433300983828
+Chtít po nich aby tě tam před přijetím provedli a ukázali na čem budeš dělat asi taky není reálný požadavek pro juniora co? 😄
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/916443586302738432
+tak pak bych čekal pěkné podrobné zadání, kolega mi to nedáno vysvětloval na příkladu: "potřebuješ stůl"
+Zadání pro seniora: "Potřebuji stůl" a on se o to postará a máš stůl
+Zadání pro mediora: "Potřebuji ten a ten stůl z IKEA"
+Zadání pro juniora: "Potřebuji ten a ten stůl z IKEA Zličín, Částku xy si vezmi na recepci. Do IKEA pojedeš tramvají 1, na zastávce ABC přestoupíš na metro směr Zličín, tam vystoupíš, z nástupiště 3 pojedeš busem....."
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/910436103838912532
+Kdyby chtěl někdo něco programovat 😉
+<:python:842331892091322389> <:javascript:842329110293381142> <:java:847749733664555018>
+Vypadá, že to je zadarmo.
+https://www.codecademy.com/code-challenges
+> With technical interviews, practice makes perfect. Now, you can practice real code challenges from actual interviews to see how your skills stack up. If you get stuck, we’ll point you to what you still need to learn.
+Nevím, jestli se v českém prostředí tohle objevuje u pohovorů, ale jako cvičení to pro někoho může být zajímavý.
+---
+
+
 #} -->

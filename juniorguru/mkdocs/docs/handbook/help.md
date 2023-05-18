@@ -174,4 +174,23 @@ https://youtu.be/5AYIe-3cD-s
 ---
 
 
+--- https://discord.com/channels/769966886598737931/806621830383271937/1049637818273632328
+Tak, jestli ještě někdo nezaregistroval https://chat.openai.com tak ho vřele doporučuji, takový stackoverflow už u mě nemá šanci... odpověď je okamžitá, nabízí víc možností i s ukázkou kódu, komplet v češtině, výklad krásně srozumitelný...  začínajícím programátorům vřele doporučuji! Je nutné se nejdřív registrovat, ale pak už je to nepopsatelný luxus.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/959408332395937814
+Ona taky existuje nějaká poučka, že když něco řešíš a neposouváš se víc než (doplň si časovou jednotku), tak je lepší se zeptat.
+
+Pokud je časová jednotka nula, tak je to hodně ptaní a může jít o otravování. Fakt je dobrý na to nejdřív zkusit přijít. Ale když je jednotka zase moc velká, tak ten člověk zase zbytečně bloudí, třeba mu chybí nějaký kontext, který nemůže vědět, nebo stačí postrčit správným směrem, název algoritmu… prostě je zase zbytečný, aby vymýšlel tři dny kolo, když mu někdo dokáže za 10 minut pomoct a posunout úplně jinam.
+
+Ideální časová jednotka asi neexistuje, každý to bude mít trochu jinde, ale podle mě by to měly být nižší jednotky hodin. Třeba 1-3h, kdy se na to snažíš přijít sama a pak se jdeš zeptat.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/959408485051826196
+<:ducky:843773644945489941>  https://en.wikipedia.org/wiki/Rubber_duck_debugging
+---
+
+
 #} -->

@@ -41,4 +41,9 @@ Třešnička na dortu celé sekvence – posunujeme hlavu směrem dozadu tak, ab
 ---
 
 
+--- https://discord.com/channels/769966886598737931/864434121409560616/937506023894290492
+Ahoj, mám poškozený zrak a tak si hledám cesty jak nejlépe šetřit oči. Koupil jsem si lampičku https://www.benq.eu/cs-cz/lighting/screenbar-lamp/screenbar-plus.html a musím říci, že jsem nadšený jak funguje. Doporučuji
+---
+
+
 #} -->

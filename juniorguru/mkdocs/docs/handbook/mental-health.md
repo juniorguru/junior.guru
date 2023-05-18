@@ -186,4 +186,26 @@ Ahoj :-) tohle mi připadá supr! Sám jsem tím trpěl, teď už tolik ne. A v�
 Produktivita
 https://discord.com/channels/769966886598737931/864434067968360459/901243092856889384
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/999239037187534898
+Na "jak zvýšit psychickou odolnost" jsou psaný celý knížky 😄 ale já osobně jsem spíš zastánce toho, že tě zocelují náročné životní situace, které jsi překonal. Je rozdíl mezi eustresem a distresem, eustres je mírný a nabudí tě k lepšímu výkonu, distres už je za hranou a tvůj výkon zhorší. Můj tip na snížení stresu je určitě nácvik. Kognitivně behaviorální terapie vystavování se podnětům, které způsobují úzkost hodně propaguje, a funguje to. Takže poprosit někoho blízkého, ať se mnou simuluje pohovorovou situaci může snížit stres při samotném pohovoru.
+---
+
+
+--- https://discord.com/channels/769966886598737931/864434067968360459/997241498452111441
+Teď jsem narazil na velice zajímavou myšlenku, která by mohla rozproudit diskuzi. Čtu zrovna knihu Psychologie peněz (všiml jsem si ze téma financí se tu někde nedávno řešilo) a velice mě tam zaujala myšlenka toho, že pokud člověk zjistí, že chce najednou dělat něco nového (třeba nastartovat kariéru v IT jako asi většina z nás) tak má tendenci se na to až nezdravě soustředit. Plus ho k tomu ještě svírá lítost, že obětoval tolik času něčemu jinému co zrovna opouští a takovéto “kéž bych začal dřív” mu může dost ublížit. Co vy na to? Znáte to? Já osobně jsem s tímhle pocitem bojoval dost dlouhou dobu. Jednou za čas mě to přepadne, ale naučil jsem se s tím pracovat a soustředit se na fakt, že vše v životě má své opodstatnění a vše má svůj čas. Proto taky třeba tolik nespěchám na učení a je to pro mě až na druhém místě za rodinou. 😊
+---
+
+
+--- https://discord.com/channels/769966886598737931/864434067968360459/980834407839571988
+Velmi dobrá otázka, já si myslím, že např. 1) ti psychické obtíže zasahují do života - způsobují problémy v práci, vztazích... 2) ostatní ti říkají, že to už není normální, 3) můžeš si udělat screening, který zaštituje Národní ústav duševního zdraví https://www.opatruj.se/otestujte-se .... 4) + pokud máš v rodině historii duševních obtíží, tak je to další důvod
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/972950345863028737
+Strach a vzrušení před prvním zveřejněním životopisu…, před prvním pohovorem…, před nástupem do práce… Už vím, že mě chtějí, mám domluvenou pozici i mzdu, a přece se to první pracovní ráno cítím jako kdybych šla k maturitě. Sevřená nervozitou, plná očekávání. Co se bude dít první den? A co ty dny další?
+Obecně je nástupní den hlavně o setkání a poznání prostředí, vyřízení administrace, předání notebooku a mobilu, přidělení práv a přístupů, absolvování prvních „školení“ o firmě, práci, režimu, atd. Informace jsem hltala možná až moc vehementně, nevím proč jsem si myslela, že musím nasadit vražedné tempo a všechno si hned zapamatovat… Měla jsem toho tak plnou hlavu, že jsem v noci neusnula.
+Druhý den jsem nastoupila na projekt do jiné společnosti. Takže stejné kolečko co předchozí den: další nové prostředí, setkání, administrace, notebook, školení… někdy jste na tom tak dobře, že přijdete, první den dostanete notebook a smlouvu, druhý den vám zařídí přístupy a vysvětlí práci, a třetí den už přispíváte jako plnohodnotný člen týmu. Mně se ty dny změnily v týdny (slabina korporátů), takže třeba první měsíc jsem dost intenzivně bojovala se strachem z vyhazovu a s pocitem, že jsem tam k ničemu, protože „nic neprogramuji a jen čtu dokumentaci“ k projektu. Ale v týmu se vědělo, že jsem úplný nováček a zaškoluji se na nových technologiích, takže všichni byli klidní, nápomocní a já se postupně uklidňovala taky… Hlavně díky rozhovorům v kuchyňkách a na obědech (které vřele doporučuji), protože jsem se dozvěděla, že i mým kolegům trval proces rozkoukávání dlouho, že je to normální, pochopitelné, že není kam spěchat, mám být v klidu a pokud budou mít pocit, že bych „měla zrychlit“, určitě to jasně řeknou – opadly tak moje obavy, že bych ze dne na den dostala smsku, ať už do práce nechodím. Postupně jsem začala psát kód a těšilo mě, že byl schvalován bez připomínek a s pochvalou, že mi to jde. Takže nevzdávejte to!
+---
+
+
 #} -->

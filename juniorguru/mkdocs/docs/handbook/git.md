@@ -296,4 +296,45 @@ https://twitter.com/simonw/status/1293017371536265221
 
 https://dariagrudzien.com/posts/the-one-about-your-github-account/
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/974294385242017842
+Ahoj, chci se zeptat ohledne 'projektu', kterymi se clovek muze prezentovat pri pripadnym hledani prace. Jste zastanci toho, aby clovek ukladal treba na GitHub kazdou vec co naprogramuje i treba v ramci nejakeho kurzu, anebo toho mit malo, a to veci, ktere primo souvisi s tim, co chci delat? Proc?
+Ted jak jsem to napsala, tak mi z toho vychazi spis druha moznost, ale i tak si chci precist, jak o tom uvazujete. (Asi je to hodne zakladni otazka, pravdepodobne se to tu nekde resilo, jen se spatne vyhledava podle klicovych slov.)
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/974298717454737408
+Já si tam teď ukládam skoro všechno. Třeba i krátká řešení z Codewars, kterýma se prezentovat nebudu, ale jejich ukládání na GitHub mi pomáhá s pravidelností a je to pro mě přehledné. Repozitáře můžeš "připnout" ->  Takové se budou na profilu zobrazovat vždycky jako první  😉  To se může hodit pro projekt/y, kterým/i se chceš prezentovat.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/974343605437206548
+Mít každý, i malý projekt, v gitu není špatný nápad, zvykat si s tím pracovat je důležité.
+
+Jestli to pak chceš poslat i na GitHub je na tobě. Je to tvůj GitHub a je ok tam mít i nějaké rozpracované nebo banální věci veřejně.
+
+Ale! Pokud hledáš první práci, mysli ale na to, že ten GitHub tě reprezentuje a pokud už se na něj bude někdo dívat, tak nebude mít moc času ani motivace to procházet všechno. Proto si myslím, že je lepší tam mít 2-5 tvých nejlepších projektů a ostatní skrýt, protože pokud se tam někdo dostane, může si udělat mylný dojem o tom, jak komplexní věci už zvládáš.
+Jasně, odkážeš na ně z CV přímo, ale nikdy nevíš, kdo a jak se kam dostane…
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/974683976184778822
+Souhlas s <@614870427931770900> . Někdo nerad na GitHub dává věci, které nejsou reprezentativní a bojí se, že mu to zhorší pozici. Vím, že <@652142810291765248> je spíš zastáncem toho si GitHub „čistit“, pokud je člověk junior, a mít ty věci spíš private, protože proč ne. Já jsem zastáncem toho, že GitHub není CV a každý má právo si tam dávat úplně co chce. S touto myšlenkou GitHub vznikl, je to prostě odkladiště kódu. Nakonec málokdo si lidi lustruje tak, že by procházel vše, co je na GitHubu, dělá se to spíš z nouze, když je nenasměruješ na něco konkrétního, co chceš ukázat. Takže bych na GitHub dával cokoliv a do CV dal odkaz na konkrétní projekt, na který jsi hrdá, ani nemusíš dávat odkaz na celý profil.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/946040086108205087
+[GitHub] Pokud byste rádi trochu interaktivnější výuku práce s Gitem <:git:900831000567902229>  a GitHubem <:github:842685206095724554> , tak https://lab.github.com/ je zdrojem spousty zábavy stylem **learning-by-doing** 🧑‍🎓
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/935558014327468032
+<@!477895566085324801> K tématu "psaní commit messages" mohu doporučit následující článek: https://cbea.ms/git-commit/ - řeší se v něm forma i co by dobrá commit message měla (či naopak neměla) obsahovat.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/909083706793279549
+Má to i českou verzi! 🙂 sprostou https://ohshitgit.com/cs a slušnou https://dangitgit.com/cs 😄
+---
+
+
 #} -->

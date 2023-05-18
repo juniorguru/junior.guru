@@ -394,4 +394,15 @@ Ještě k těm jazykům, Europass (https://europass.cz/) v životopisu, v oddíl
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/1035104757188137014
+Obecná poučka je to, co najdeš tady: https://junior.guru/handbook/cv/
+1) Napiš seznam toho, co umíš. Bez specifikace „jak moc“.
+2) U projektů v CV můžeš v popisu zmínit hlavní použité technologie.
+To, co tu řešíme je ale to, že na jaké seš úrovni, se pozná podle těch projektů.
+To platí pro začátečníka bez komerční praxe.
+
+To co píše <@539022501876072448> se týká lidí, co už něco mají za sebou a dá se čekat, že pokud třeba 3 roky pracovali ve firmě a dělali tam weby na Djangu, tak umí ledascos, co je k tomu potřeba, na nějaké úrovni. Samozřejmě je dobré si to ověřit na pohovoru potom.
+---
+
+
 #} -->

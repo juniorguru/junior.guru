@@ -66,4 +66,26 @@ https://frontendfoc.us/
 ---
 
 
+--- https://discord.com/channels/769966886598737931/797040163325870092/1030939769334673408
+Pak ještě Czechitas, ProgramHRování, poslouchat.digital, CZPodcast, SharkTalk, (re)štarty v IT
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/980377341870100520
+Pro <@786562518985605132> a kohokoliv dalšího - bezva učební videa Pythonu z dílny <@733309153275019326>  https://youtube.com/playlist?list=PLFt-PM7J_H3GJSvIWwJDaAgJjq9W-oWSF
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/908862016536600576
+Za uložení na později stojí i Brackeys na YT. Kanál narvanej úplně vším co tě okolo tvorby her v Unity napadne. K prasknutí. Má pak i discord komunitu, početnou a aktivní. https://www.youtube.com/c/Brackeys
+---
+
+
+--- https://discord.com/channels/769966886598737931/789092262965280778/908619360384458752
+Nový Harvarduv předmět/kurz online, toto bude pecka 🙂 Prošla jsem jejich základní a WebDev a můžu jen doporučit, nejlepší kurz ever
+
+https://www.edx.org/course/cs50s-introduction-to-programming-with-python
+---
+
+
 #} -->

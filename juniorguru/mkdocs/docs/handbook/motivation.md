@@ -581,4 +581,33 @@ https://discord.com/channels/769966886598737931/769966887055392768/8080412282392
 I totally forgot to warn people to not quit their job before joining my course, but I also think I *really* need to make this some kind of digital signature requirement.  You agree to not quit your job and submit a photo with the date and your name on a piece of paper for proof.
 https://twitter.com/lzsthw/status/1362490493402304513
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1021533571330093177
+To jsou ty ztracené kontexty. <@773601329095376906> se odkazuje na diskuzi, kterou jsme tu spolu vedli, ale kdo ví kdy to bylo, možná i před rokem 🙂 Napsala to zkratkovitě a mohlo to vyznít zvláštně, ale já přesně vím, na co se odkazuje.
+
+Pointa je zhruba to, že _success stories_ jsou fajn jako inspirace a motivace. Ukazují, že něco jde, že pro určitou skupinu lidí není vyloučeno něco dokázat (např. film Nová šichta), že existují různé způsoby jak něčeho dokázat, atd. To je super. Je super, když malá holka vidí prezidentku, hasičku, nebo astronautku a uvědomí si, že i ona může jednou prezidentkou, hasičkou, nebo astronautkou být.
+
+Jenže, a tady je souvislost s tím, čím tady diskuzi odstartovala <@1016967149371277323>, je fakt hodně lidí, kteří se nedokážou zastavit u inspirace a motivace, ale začnou se s protagonistou příběhu **srovnávat**. Až bych skoro řekl, že možná i většina, nebo že je to možná i nějaká úplně přirozená lidská reakce, ale nemám žádná data 🙂 To je za mě strašně nebezpečné pro vlastní psychiku a lidi by si na to měli dát pozor a neměli by to dělat. Tady se vrátím k <@773601329095376906>, která použila slovo toxické a já bych ho použil taky, ale ne v kontextu toho, že _success stories_ jsou samy o sobě toxické, ale že mnohým hrozí toxický způsob čtení těch příběhů.
+
+Většina těch příběhů totiž není kompletních. Chybí hromada informací o tom, co proběhlo v zákulisí. Příklad: Někdo se čtyřmi dětmi změní kariéru, ale nikde se už nedočteš, že má prarodiče v bytě naproti, atd. Každý má zcela jiné výchozí podmínky a i když jsou zdánlivě navenek podobné, většinou prostě stejné nejsou a opravdu nemá smysl se srovnávat a bičovat se za to, že někdo už má a já nemám.
+
+Je jasné, proč ten příběh není kompletní. Že někdo probrečel večery s hlavou v dlaních se v příběhu na stránkách agentury, která dělá kurzy, prostě nedočteš, stejně jako se James Bond ve filmu nikdy nepotřebuje jít vyčůrat. A možná ani ten člověk to takto nechce sdílet, je to osobní. Takže je pak ta tíha uvědomit si to na čtenáři a ten musí být holt odolný a nesrovnávat se, stejně jako když scrolluje Instáč, kde mají všichni nejlepší dovolené a nejlepší zadky. Inspirovat se kam zajet na dovolenou? Proč ne. Ale uvědomovat si, že ti lidé tam zažili i blbé chvíle, možná je okradli, možná měli v kuchyni šváby, možná se pohádali, ale tohle ven nesdílí. A nebičovat se, že nemám stejný zadek, protože je možná vyfocený z boku a možná má vlastník toho zadku jiné geny, možná má problémy se štítnou žlázou, možná  má bohaté rodiče a nemá na starost nic jiného, než si někde třikrát týdně dělat dřepy a hlídat si kalorické tabulky. Ale to tam taky nevyfotí.
+---
+
+
+--- https://discord.com/channels/769966886598737931/797040163325870092/985220533044002877
+Já jsem fanda průzkumu bojem. Zkus to a uvidíš. Jestli nevíš co, tak zkus https://blockly.games/ od začátku pěkně. Jestli tě bude bavit vyřešit i to poslední Maze například. Dej vědět.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/983610893973745714
+Já mám taky pocit, že nejsme názorově tak vzdálený. Snad všichni tu souhlasíme, že udělat kariérní switch je dřina, pot a nutné oběti. A každá minuta se počítá a posouvá člověka vpřed. Opakovaně tu pomáháme lidem omámeným sladkými marketingovými se zakotvit v realitě a vyvracet mýty (ty jsou i v příručce). Kde se domnívám neshodneme je ta premisa toho, že "co dělám, musím dělat na 110% abych byl skvělej". A tam myslím, že je právě velkej rozdíl v junior x senior, kde pro juniora je nový snad všechno a posouvá se mílovými kroky v pracovní době, což se o seniorovi asi tak snadno tvrdit nedá - ten pak víc skilluje mimo pracovní dobu, aby dělal větší kroky, pokud si to přeje. Takže podle mě má junior skvěle našlápnuto i když nedělá nic mimo pracovní dobu. A druhý háček, jak tu psalo víc lidí, každej nemusí chtít být špička v oboru, anebo ani nemůže (povinnosti, vlastní omezení..), a to je taky v pořádku. Nejzdravější je podle mě být si vlastním měřítkem úspěchu - já teď x já před rokem.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/978387259881562213
+„opravdový programování“ 🙄
+https://en.wikipedia.org/wiki/Real_Programmers_Don%27t_Use_Pascal
+---
+
+
 #} -->

@@ -507,7 +507,7 @@ Pro všechny vypíchnu tenhle ⬆️  údaj z https://github.com/NelliaS/develop
 
 --- https://discord.com/channels/769966886598737931/789107031939481641/853948221734649876
 Je to pořád spíš interní tool, kterej vyžaduje vysvětlení jak fungování, tak obsahu, ale za ty prachy… (zadarmo)
-https://your.coreskill.tech 
+https://your.coreskill.tech
 Je to většinou velmi konkrétní. A taky stále nekompletní atd.
 A není tam zatím žádný reaktivní framework (Vue.js/React atd.)
 ---
@@ -519,11 +519,78 @@ Vystudovaná škola je irelevantní, fakt. Když pominu procesní části kyberb
 
 
 --- https://discord.com/channels/769966886598737931/788826407412170752/884384772669972481
-Pokud kamarádka nemá žádné zkušenosti s testováním, doporučuju začít s Czechitas jednodenním *úvod do testování* - vyzkouší si prakticky, jak vypadá práce manuálního testera/ky. Dále se může podívat na zdroje kolem test stacku a Radima Pánka (http://rdpanek.cz/) - témata jsou sice  technická, ale mají i zdroje pro začátečníky v automatizovaném testování. 
+Pokud kamarádka nemá žádné zkušenosti s testováním, doporučuju začít s Czechitas jednodenním *úvod do testování* - vyzkouší si prakticky, jak vypadá práce manuálního testera/ky. Dále se může podívat na zdroje kolem test stacku a Radima Pánka (http://rdpanek.cz/) - témata jsou sice  technická, ale mají i zdroje pro začátečníky v automatizovaném testování.
 
-Pokud se rozhodne jít do toho, doporučuju si najít nějaký kurz. Jsou firmy a neziskovky, které nabízí takové kurzy. Toto bohužel neumím objektivně hodnotit, protože nemám s tím osobní zkušenosti. 
+Pokud se rozhodne jít do toho, doporučuju si najít nějaký kurz. Jsou firmy a neziskovky, které nabízí takové kurzy. Toto bohužel neumím objektivně hodnotit, protože nemám s tím osobní zkušenosti.
 
 Na práci manuálního testera stačí látka z ISTQB zkoušky - https://castb.org/wp-content/uploads/2020/05/ISTQB_CTFL_CZ_3_1_1-6.pdf. Na pohovorech se často ptají na teorii (otázky typu co je boundary analysis, black box versus white box testování, kdy automatizovat testy a proč a kdy neautomatizovat apod.) a také ověřují způsob, jak kandidát/ka přemýšlí - otázky typu jak otestovat žehličku/konvičku/jakýkoliv předmět. Co se ještě hodí umět je Linux a SQL - občas bude potřeba podívat se do logů, zapnout si prostředí nebo vytáhnout nějaká data z databáze. Na pohovorech, jak vím, se na to obvykle neptají, pokud se jedná čistě o manuální testování.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789092262965280778/1038373495291269130
+Na youtube mi přijde fajn tento kanál: https://www.youtube.com/c/PerfectWorldjazykovka
+
+Jinak nedávno jsem narazil na zajímavou aplikaci k učení slovíček pomocí paměťové techniky: https://www.2000slovicek.cz/
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1001957868565696632
+<@788486062430355497>  Nevím kde jsi se ptala na tu angličtinu, ale napíšu to sem, tady to bude asi nejvíc namístě:
+
+Z angličtiny používané ve firmách, které mají pobočku v Česku a pracují v ní převážně Češi, není potřeba mít stres.
+Z mých zkušeností (ne jedné) se komunikuje na úrovni basic English s odbornou slovní zásobou, která ale čítá tak 20 základních výrazů. Žádné košaté větné struktury nikdo nevyrábí  a skvostnou oxfordskou výslovností taky trpí málokdo 🙂
+Tu slovní zásobu pobereš po prvních pár meetech od kolegů. Většinu toho už budeš znát pasivně  z různých tutorálů, které kolem tebe prošly.
+Jestli se základně domluvíš a jsi schopna složit větu, tak bych se angličtinou speciálně netrápila a brousila ji až za pochodu 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/797040163325870092/985220533044002877
+Já jsem fanda průzkumu bojem. Zkus to a uvidíš. Jestli nevíš co, tak zkus https://blockly.games/ od začátku pěkně. Jestli tě bude bavit vyřešit i to poslední Maze například. Dej vědět.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/975717126809727006
+Přidám se k tomu, co píše <@668226181769986078>  1) koukni na tu přednášku. 2) zkus si manuální testování, ona je to teda, co si budem, trochu blbárna 😄 , ale je jednoduchý se k tomu dostat a stačí ti to dělat chvilku, jen klidně brigádně. Mně to třeba pomohlo jako nakouknutí do testingu obecně a hodilo se to i jako zářez do CV, když jsem se pak ucházela o QA pozici na automatizované testování.
+QA jako přestupní stanice k developmentu může a nemusí fungovat. Třeba v Oracle je to úplně cajk, lidi tam z QA na devy přechází nebo mezi těmi pozicemi různě přepínají, podle zájmu. Ale je to proto, že jsou tam ty specializace takto nastavené, že se ty pozice částečně prolínají. V jiných firmách naopak tady ty lidi, co jdou na QA jenom aby mohli být brzy devové, nevidí moc rádi, protože u těch lidí je menší ochota se učit testovací nástroje a celkově je ta oblast vlastně nezajímá. Což je jasný, že takovýho pracovníka úplně nechceš. Záleží tedy právě na tom, jak která firma má ty role nastavené.
+Každop. ta vstupní znalostní hranice do QA je níž než do developmentu, protože se hodně liší nástroje, jakými která  firma testing dělá, takže nikdo moc nepředpokládá, že to lidi z venku budou umět (s výjimkou seniorních pozic, když se hledá někdo, kdo to testování bude zavádět). Takže ti defacto stačí umět programovat na úrovni Advent of Code tak do 4. dne 😄
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/974647570636886027
+Ahoj 👋 Měl jsem to ještě nedávno podobně jako ty. Všechno mě lákalo, a tak jsem skákal z jednoho na druhé, popř. jsem se učil více věcí současně. Buď mi z přemíry informací šla hlava kolem (a donutilo mě to přestat), nebo jsem se naučil trochu tohle, trochu támhleto, ale v závěru jsem nedokázal samostatně tvořit/přinášet nějakou hodnotu. Je to podobné jako s cizími jazyky. Můžeš skákat z jednoho na druhý a umět trochu třeba 10 jazyků na úrovni A1-A2. S cizincem u baru small talk dáš, ale abys mohl v jednom z těch jazyků plně fungovat třeba v práci, která je hodně o aktivním používání toho jazyka, to už je něco úplně jiného. Zjednodušeně podáno 🙂 Je dobrý zkoušet, ale mělo by se to dělat systematicky a mělo by to mít nějaké cíle/meze. Kdybych se toho držel, tak ušetřím spoustu času, energie i peněz. Mně nakonec zachraňuje staré dobré: Vymysli/najdi si větší/menší projekt -> uč se to, co k tomu potřebuješ -> piš, skládej, tvoř. Větší cíle se dají rozložit na menší, tahle série tří kroků se pak může x-krát opakovat. Můžeme dát call, když si o tom budeš chtít ještě popovídat 😉
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910392786845737/970708351174463508
+Pro JS jsem právě něco takového viděl na MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/965701681075589160
+**Frontend developer není designér**, jeho rolí není vysloveně designovat, to je role designéra (a je jich hned několik druhů).
+Ale protože od designérů dostáváš jejich představy, jak má nějaký web nebo aplikace vypadat, tak je potřeba **rozumět jejich uvažování** a **umět s nimi komunikovat** jejich jazykem. Ta komunikace se často odehrává předáním návrhu, ale nejen tak.
+
+Protože návrhy, ani případné slovní popisy, či videa nemohou 100% web popsat, je to vždy do jisté míry **interpretace a domýšlení detailů** v duchu návrhu. Pokud je designér k dispozici, dá se ho ptát, ale to často není a taky není úplně efektivní to dělat s každou „drobností“, protože pak to trvá dost dlouho.
+
+Není ale jedna úroveň znalosti designu, liší se to podle role, firmy, produktu. Někde stačí umět hlavně programovat v JavaScriptu/TypeScriptu (React developer typicky) a někde seš napůl designer, protože dostáváš jen velmi hrubá zadání. BTW: čím víc to první, tím víc peněz, obvykle.
+
+Cit pro design podle mne neexistuje. Ještě rovnou napíšu, že „design“ není jen jak něco vypadá, ale i to jak to funguje.
+Lze se to naučit. Dokonce je potřeba se to učit, zvlášť proces navrhování.
+Samozřejmě když tě taková věc zajímá a třeba v okolí vidíš, jak to někdo řeší, jak o tom přemýšlí a/nebo jsi obklopen kvalitním i tím nekvalitním designem a učíš se to vnímat, tak tím získáš ten „cit“.
+
+Protože podklady přebíráš od designérů, kteří je tvoří v těch programech (dnes nejčastěji Figma), tak je potřeba s nimi umět trochu pracovat, aby sis byl schopen prvky přebrat.
+
+Tady odbočím k tomu FE mentoru: to zadání vypadá spíš na JS a API než na CSS, ale ano, je tam i tahle složka. Pokud ale využiješ jen ten JPG a jimi připravené obrázky, tak to nebude v tomto směru blízko praxi. K tomu bys měl využít tu _pro_ verzi s Figmou.
+
+Kromě vysloveně vytahování informací o návrhu se taky hodí umět pracovat s něčím, kde můžeš tvořit a upravovat různé grafické prvky, dnes je to na webu nejčastěji formát SVG pro který doporučuju naučit se trochu pracovat s programem _Inkscape_.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789092262965280778/945632592810639380
+Ahoj, Brno je plny cizincu, kteri se vidaji - staci mrknout na FB.
+-https://www.facebook.com/callofthewoods -cizinci co jezdi na vylety. Vim, ze se poradali i pub meetingy, ale nemuzu najit odkaz.
+-10 způsobů jak se rozmluvit anglicky od me oblibene lektorky - https://ninaenglish.cz/blog/10-zpusobu-jak-se-rozmluvit-anglicky/
+-a mne osobne hodne pomohlo chozeni do Toasmasters - https://www.facebook.com/BrnoBusiness Jsou ceske i anglicke kluby. Toto je dobry i na ziskani sebejistoty v prezentaci 😄 Sice obcas cl musi udelat velky krok mimo komfortni zonu, ale stoji to za to!
 ---
 
 
