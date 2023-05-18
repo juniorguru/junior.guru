@@ -4,6 +4,7 @@ from juniorguru.models.base import BaseModel, JSONField
 
 
 class Page(BaseModel):
+    path = CharField(unique=True)
     src_uri = CharField(unique=True)
     dest_uri = CharField(unique=True)
     size = IntegerField()

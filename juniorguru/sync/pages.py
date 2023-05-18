@@ -31,7 +31,8 @@ def main():
         logger.debug(f"Reading: {file.src_uri}")
         with open(file.abs_src_path, encoding='utf-8-sig', errors='strict') as f:
             source = f.read()
-        data = dict(src_uri=file.src_uri,
+        data = dict(path=Path(file.abs_src_path).relative_to(Path.cwd()),
+                    src_uri=file.src_uri,
                     dest_uri=file.dest_uri,
                     size=len(source),
                     meta=parse_meta(source),
