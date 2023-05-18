@@ -1,6 +1,6 @@
 ---
 title: Jak vybrat kurz programování
-emoji: 🧑‍🎓
+emoji: 🧑‍🏫
 description: TODO
 template: main_handbook.html
 noindex: true
