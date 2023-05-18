@@ -33,7 +33,7 @@ def allow(*services: str) -> None:
         assert service in KNOWN_SERVICES
         allowed.add(service)
     _set_allowed(allowed)
-    logger.info(f'Allowed: {allowed!r}')
+    logger.info(f'Allowed: {list(allowed)!r}')
 
 
 def allow_all() -> None:
