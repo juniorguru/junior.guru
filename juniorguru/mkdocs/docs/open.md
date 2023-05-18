@@ -519,7 +519,7 @@ Počítání znaků v souborech, kde se míchají Markdown a Jinja2 značky, má
 Příliš velké stránky bych měl nejspíš zkrátit, nebo rozdělit do více menších.
 
 Když chci na nějaké stránce něco doplnit, dělám si na jejím konci HTML komentář a do něj si ukládám nepříliš strukturované poznámky.
-Ty se taky započítají do celkové velikosti, ale v grafu je jejich velikost vynesena i do separátního sloupce, abych tušil, kde na mě ještě čeká kolik práce.
+Ty se taky započítají do celkové velikosti, ale v grafu je jejich velikost zobrazena šedě, abych tušil, jaký je poměr a kde na mě ještě čeká kolik práce.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
