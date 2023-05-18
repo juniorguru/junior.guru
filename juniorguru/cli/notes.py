@@ -1,11 +1,15 @@
-from time import perf_counter_ns
-import click
 import asyncio
 from collections import defaultdict
 from pathlib import Path
+from time import perf_counter_ns
+
+import click
 
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubMemberID, emoji_name, get_or_create_dm_channel, get_pinned_message_url, get_reaction, parse_message_url
+from juniorguru.lib.discord_club import (ClubMemberID, emoji_name,
+                                         get_or_create_dm_channel,
+                                         get_pinned_message_url, get_reaction,
+                                         parse_message_url)
 from juniorguru.models.base import db
 from juniorguru.models.page import Page
 from juniorguru.models.sync import Sync
