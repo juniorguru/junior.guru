@@ -479,4 +479,28 @@ Co se týká firem, hledala bych nějakou, kde mají menší poměr manuálních
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1107639286486028321/1108422028727431218
+Hezké téma mě blízké. 👍 
+
+Z pohledu účastníka kurzu před cca 6 lety, bych svému mladšímu já poradila, abych po jeho ukončení, makala na sobě dál, pracovala na klidně basic projektech - pokud možno denně využívala své znalosti a snažila se dostat do IT. Abych se obklopovala komunitou, která by byla na stejné vlně, navštěvovala meetupy a získávala kontakty. Abych nespoléhala pouze na to, že jsem si udělala nějaký kurz a mám z něj certifikát.
+
+Píšu z vlastní zkušenosti, mám možnost porovnat s obdobím od září 2022, kdy na sobě makám, jela jsem Koderku, navázala jsem JS1, ani jsem si neoddychla a hned na to JS2. Je to pomalu jako semestr. Po jeho ukončení mám obavy, že zakrním, že nedokážu ničím navázat. Že jen tak zahodím těch 10 měsíců. 😐 
+Ideálně bych se ráda chtěla dostat do profese, kde bych nějaké to "minimum" využívala - praxí se učila a dalšími kurzy (React) na sobě dál makala.
+
+Je to o zodpovědném přístupu každého účastníka kurzů, ale za mě: ptát se, zajímat se, vypracovávat úkoly, denně používat a hledat příležitost pro to zůstat (nebo se dostat) v oboru.
+A jak bylo napsáno, počítat s časem nad rámec kurzu.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1107639286486028321/1107717837566525460
+Být si dobře vědom, že mezi kurzem a jeho „aplikací“ ve firmě bude mezera, proto se snažit tuto mezeru minimalizovat výběrem kurzu co nejbližšího potřebám (a to se týká zejména používaných nástrojů), a (pokud možné) mít ex-ante konkrétní představu o firmě, která bude ocenit a umožní rozvíjet tento počátek znalosti a dovedností.
+Jinak to může působit kontraproduktivně, tj. vést k postupným pocitům zklamání, frustrace, ztráty sebevědomí a podvodníka, natolik, že člověk může mít někdy dojem, že je méně schopný než někteří, kteří se však takového kurzu ani nezúčastnili 😖
+---
+
+
+--- https://discord.com/channels/769966886598737931/1107639286486028321/1107704939347722310
+Jednoznačne rátať s časom aj nadrámec kurzu, robiť zadania, pýtať sa, komunikovať s lektorom…tie možnosti tam sú. Nestalo sa mi ani raz, že by mi neodpovedal na správu, nepozrel sa na odovzdaný kód a pod. (tiež SDA).  Nevzdávať sa, keď to nejde hneď na začiatku.😉💪
+---
+
+
 #} -->
