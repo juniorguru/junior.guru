@@ -5,7 +5,7 @@ from time import perf_counter_ns
 
 import click
 
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_sync, loggers, mutations
 from juniorguru.lib.discord_club import (ClubMemberID, emoji_name,
                                          get_or_create_dm_channel,
                                          get_pinned_message_url, get_reaction,
@@ -31,6 +31,7 @@ def main(context):
         sync = Sync.start(perf_counter_ns())
     context.obj = dict(sync=sync, skip_dependencies=False)
     context.invoke(sync_pages)
+    mutations.allow('discord')
     discord_sync.run(process_pins)
 
 
@@ -66,9 +67,12 @@ async def process_pins(client):
         for message in messages:
             pinned_message_details = parse_message_url(get_pinned_message_url(message))
             channel = client.club_guild.get_channel_or_thread(pinned_message_details['channel_id'])
-            pinned_message = await channel.fetch_message(pinned_message_details['message_id'])
-            note = f'--- {pinned_message.jump_url}\n{pinned_message.content}\n---\n'
-            notes.append(note)
+            if channel:
+                pinned_message = await channel.fetch_message(pinned_message_details['message_id'])
+                note = f'--- {pinned_message.jump_url}\n{pinned_message.content}\n---\n'
+                notes.append(note)
+            else:
+                logger.warning(f"Channel #{pinned_message_details['channel_id']} not found")
         notes_text = '\n\n' + '\n\n'.join(notes) + NOTES_END
         path.write_text(path.read_text().replace(NOTES_END, notes_text))
         await asyncio.gather(*[message.add_reaction(EMOJI_PROCESSED) for message in messages])
