@@ -869,12 +869,12 @@ Průlet matematikou, která se někdy hodí většině programátorům. Nemusít
 
 
 --- https://discord.com/channels/769966886598737931/1075541542669922424/1098976769509445653
-ad materialy, z hlavy: 
+ad materialy, z hlavy:
 * surrounded by idiots - jak se lidi chovají a proč se chovají tak, jak se chovají
 * how to win friends and influence people - nejlepší kniha ever o lidech a o tom, jak udělat takový dojem, že tě lidi budou mít rádi
 * how to present on ted talk - o prezentačních dovednostech, do hloubky a na profi úrovni, přímo od zakladatele ted talků
 * the subtle art of not giving a fuck - právě čtu, ale má to dobré hodnocení
-* radical candor - o dávání zpětné vazby, užitečné pro ty, co se jí bojí 
+* radical candor - o dávání zpětné vazby, užitečné pro ty, co se jí bojí
 * https://www.youtube.com/watch?v=Ks-_Mh1QhMc - nejlepší talk ever o sebevědomí a imposter syndromu
 * https://www.youtube.com/watch?v=H14bBuluwB8 - o disciplíně a její vlivu na úspěch
 ---
@@ -887,6 +887,25 @@ Byste někdo kdo se těch Pyv účastníte mohl sepsat, jak to celé probíhá. 
 
 --- https://discord.com/channels/769966886598737931/806621830383271937/1065341778682712105
 MDO https://www.trywilco.com/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1002976022486057020/1004009895634403479
+Ten dotaz je hodně do široka, ale v začátku bych se, jak píše Honza, soustředil na to, abych uměl problém rozložit na podproblémy a hlavně abych dokázal projít takovým tím kolečkem řešení problému:
+
+1. Dostanu zadání (převodník z římských na arabská čísla)
+2. Zjistím si všechno o problému který řeším, udělám základní rešerši (přečtu Wikipedii o římských číslech, zjistím kolik mají maximálně znaků, jak se strukturují, jaké mají speciální případy, atd.)
+3. Až poté se zamyslím, jak nejlépe věc řešit. Navrhnu řešení. To znamená zamyslím se, jestli už něco neexistuje co můžu použít, jestli to vůbec musím programovat, kouknu se na balíčky, na standardní knihovnu, googlím jestli to někdo už neřešil přede mnou, pak si řeknu ok, asi to opravdu naprogramuju, tak a tak. Rozložím velký úkol na menší úkoly (načtení vstupu, převod textu s římskými čísly do arabských čísel, vypsání výsledku...).
+4. Až v tuto chvíli jdu psát první kód.
+
+Někdy je dobré smíchat trochu 3 a 4, čemuž se říká prototypování. Zkoušíš různé věci a to ti pomáhá lépe vymyslet finální řešení.
+
+Toto je podle mě největší úkol pro začátečníka a na toto by se začátečník měl soustředit, aby si to osvojil a ideálně na praktických úkolech.
+---
+
+
+--- https://discord.com/channels/769966886598737931/993478147355971684/993479121483075684
+pre ludi co nemaju OOP skusenosti mozem odporucit pozret si nejaky clanok k SOLID principom, napr. https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design a zapamatat si zo 2 vety k aspon 3 z 5 bodov, to by malo stacit na 99% interview o OOP pre zaciatocnikov, aby clovek nedostal cerveny bod (povedat, ze nemam skusenosti, ale cital som clanok o SOLID a zapamatal som si z toho xxx)
 ---
 
 

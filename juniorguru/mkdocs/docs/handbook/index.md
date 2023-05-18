@@ -76,31 +76,31 @@ https://www.pythondiscord.com/resources/
 Skoro u každýho kroku je možno se zaseknout a nepřejít dál.
 Každej krok má svoje úskalí.
 
-0️⃣ **občas mě něco jako učit se programovat napadne** 
+0️⃣ **občas mě něco jako učit se programovat napadne**
 úskalí: nezačnu nebo začnu, ale první zkušenost je špatná
 
-1️⃣ **nezávazně zkouším všechno možné nebo začínám s jednou věcí, o které si myslím, že ji chci dělat** 
+1️⃣ **nezávazně zkouším všechno možné nebo začínám s jednou věcí, o které si myslím, že ji chci dělat**
 úskalí: nemůžu se rozhodnout mezi technologiemi či oblastmi
 
-2️⃣ **učím se samostatně / v kurzu to, co si myslím, že chci dělat** 
+2️⃣ **učím se samostatně / v kurzu to, co si myslím, že chci dělat**
 úskalí: sám nevím kam až / kurz zas nemusí být dostatečný nebo kvalitní / nedaří se mi najít si dost času se tomu věnovat
 
 3️⃣ **pracuju na projektech**
 úskalí: nevím jak začít / nevím jaký projekt / nedám projekt (ani průběžně) ke zhodnocení / špatně odhadnutý rozsah projektu
 
-4️⃣ **připravuju se na hledání práce (CV apod.)** 
+4️⃣ **připravuju se na hledání práce (CV apod.)**
 úskalí: neodvažuju se do téhle fáze přejít, nevím co se v IT očekává nebo dokonce nemám moc zkušeností s prací celkově / neumím sám sebe „prodávat“, mám problém napsat pozitiva do CV
 
 5️⃣ **hledám práci**
 úskalí: nemám dostatečnou výdrž / nemám dostatečnou finanční rezervu / odradí mě první neúspěchy / vezmu cokoli i když je to něco jiného, než jsem chtěl dělat (někdy ok, někdy problém)
 
-6️⃣ **mám nalezenou/domluvenou práci a nastupuju v budoucnu** 
+6️⃣ **mám nalezenou/domluvenou práci a nastupuju v budoucnu**
 úskalí: nezačnu se vůbec sám učit technologii, kterou ve firmě používají  nebo to s tím naopak místo odpočinku přeženu
 
-7️⃣ **zkušební doba v první práci** 
+7️⃣ **zkušební doba v první práci**
 úskalí: málo se ptám seniora a tím se málo učím / není k dispozici senior / zůstanu ve firmě i když je to tam zjevně špatný
 
-8️⃣ **pracuju (po zkušební době)** 
+8️⃣ **pracuju (po zkušební době)**
 úskalí: přestanu se rozvíjet a učit, nedostávám pokročilejší úkoly
 
 9️⃣ **mám 1-2 roky praxe**
@@ -120,19 +120,19 @@ Samozřejmě jsou jiné existující zdroje, ale tady je to hodně stručně, ta
 
 
 --- https://discord.com/channels/769966886598737931/788832177135026197/1061972910488703036
-Spíše motivační četba, ale pěkný článek. Něco jako příručka junior.guru ale od freeCodeCamp 🙂 
+Spíše motivační četba, ale pěkný článek. Něco jako příručka junior.guru ale od freeCodeCamp 🙂
 https://www.freecodecamp.org/news/learn-to-code-book/#500-word-executive-summary
 ---
 
 
 --- https://discord.com/channels/769966886598737931/788826407412170752/1055146186413187102
-Doufal jsem, že sem taky budu moct jednou napsat, že jsem konečně v klubu a našel jsem práci. A stalo se to ! Od února se budu podílet na softwaru v automobilech v Pythonu. 🤩 
+Doufal jsem, že sem taky budu moct jednou napsat, že jsem konečně v klubu a našel jsem práci. A stalo se to ! Od února se budu podílet na softwaru v automobilech v Pythonu. 🤩
 
-Od začátku utekly dva roky, kolik jsem oslovil firem přesně nevím, ale mohlo to být kolem dvaceti. Hlavně bych ale chtěl říct, že na začátku není důležité někam spěchat - což se mi také stalo. Pak jsem si uvědomil, že stihnout to za pár měsíců souběžně s prací a rodinou je blbost. A tak jsem v klidnějším tempu pokračoval k cíli. 
+Od začátku utekly dva roky, kolik jsem oslovil firem přesně nevím, ale mohlo to být kolem dvaceti. Hlavně bych ale chtěl říct, že na začátku není důležité někam spěchat - což se mi také stalo. Pak jsem si uvědomil, že stihnout to za pár měsíců souběžně s prací a rodinou je blbost. A tak jsem v klidnějším tempu pokračoval k cíli.
 
 Pár slov a odkazů k cestě, na začátku za mě nejlepší start na https://www.umimeinformatiku.cz/programovani-v-pythonu , to mi pomohlo nejvíc a je to hlavně zábavnou formou příkladů. Pak jsem si vybral projekt od https://www.techwithtim.net/ , který má super tutorialy na Youtube a zakončil jsem to projektem s Corey Schafer také na Youtube, nicméně ty už jsou pro pokročilejší.
 
-U pohovoru také dost pomohl GitHub, který doporučuji si založit hned první den. Jednak mě motivoval ten kalendář příspěvků udělat něco pokud možno alespoň každý druhý den. A poté je vidět jak dlouho už se člověk tématem zabývá. 🙂 
+U pohovoru také dost pomohl GitHub, který doporučuji si založit hned první den. Jednak mě motivoval ten kalendář příspěvků udělat něco pokud možno alespoň každý druhý den. A poté je vidět jak dlouho už se člověk tématem zabývá. 🙂
 
 Hodně zdaru, sil a velký dík Honzovi, že to tu založil a spravuje <:dk:842727526736068609> 🥳
 ---
@@ -141,6 +141,8 @@ Hodně zdaru, sil a velký dík Honzovi, že to tu založil a spravuje <:dk:8427
 --- https://discord.com/channels/769966886598737931/788826407412170752/1054800375703683113
 Níže založím vlákno s malým shrnutím mého hledání práce, které jsem teď završil přijetím nabídky na pozici Java vývojáře s nástupem v únoru. Přidám pár postřehů o tom, co bych udělal stejně/jinak, kdybych si znovu hledal práci. Taky zmíním jména pár firem, které na mě působily velmi dobře, nebo naopak velmi špatně, a proč. Celé je to založené na mých zkušenostech podpořenými zkušenostmi z práce v IT recruitmentu. Takže všechno můj názor, i když to místy napíšu jako “poučku s absolutní pravdou” nebo tak něco 🙂
 ---
+
+
 
 
 #} -->

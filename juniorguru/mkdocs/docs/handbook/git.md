@@ -347,4 +347,67 @@ Pěkný materiál pro prvo-přispěvatele/ky na GitHubu: https://github.com/firs
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1090649291804135485/1090912862542766121
+Pokud ti to pomůže, tak je to asi nejčastější chyba začátečníků. Možná bych to měl mít někde napsané, až budu mít v příručce hezkou stránku o projektech 🤔
+---
+
+
+--- https://discord.com/channels/769966886598737931/1082249171278512151/1083785079702163496
+Na GitHubu může být ještě detailnější, ale tam nebude koukat recruiter, ten mrkne CV, řekne si, hele má nějakou appku, něco dělá, to pošlu dál. Na GH zase kouká spíš ten technickej člověk, co to posuzuje, mrkne na README, mrkne na kód.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1082316811703427102/1082316817424466000
+Ahoj, na začátek předesílám, že příručku jsem přečetla a neustále se k ní vracím (mimochodem tam ještě nedávno byla nějaká formulka, že kdo si tam chce přečíst o GitHubu, má se hlásit, aby <@668226181769986078> měl motivaci něco napsat - tak se hlásím!, a ano, vím, že teď už tam něco je), zdejší příklady jsem zkoukla, e-kurz o Githubu od Yablka vyslechla, a stejně se budu ptát na úplný úplný základy:
+
+Mám nějaké vlastní drobné "projekty" a ráda bych je na GitHub dala jako ukázku práce, hlavně přímo kvůli hledání práce, kvůli komunitnímu hodokvasu a poznámkám ani ne 🙂 A teď.
+
+Mám například aplikaci v shiny (dělám v Rku). Takže na GH nahraju kód a do readme dám odkaz na tu apku na webu, kde je možné ji vyzkoušet? Obdobně, když mám script (je to správně použitá terminologie?), kde jsem zpracovala data (u kterých si ani nejsem jistá, jestli bych je mohla publikovat, nejsou moje) a dělám tam klasifikátor - udělám to tak, že nahraju do GH kód, popíšu v readme, co ten script dělá a pak tam například někam nahraju grafy nebo screenshoty úspěšnosti, které z toho klasifikátoru na konci vypadly? Pochopila jsem to správně?
+
+Jde mi o to, že je mi vlastně nepříjemný, že si uživatel/nahlížející nemůže ten kód pustit, aby viděl, jak to funguje. Ani mi nepřišlo, že by to nějak šlo, ale možná jen špatně koukám a hledám. Taky tam cpát ta zdrojová data mi nepřipadá úplně dobré, z vícero důvodů.
+
+Vlastně tápu, jak to udělat elegantně, aby to mělo hlavu a patu a nějakou formu. Ta moje verze mi tak nepřipadá, ale nějak nevím, jak to udělat líp.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1062006092571361320/1062018181654380605
+Na mě to nepůsobí dobře a přesně jak to Martin popsal „vlastně nemám žádnou fotku, tak tam dám něco 5 let starýho“ 🤷‍♂️
+Když už fotku, tak něco lehce profesionálnějšího, tedy pro situaci hledám první práci. Dělám nějakej dojem.
+Ale to jsem já.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1061663829353844907/1061680592074326056
+pro priste: https://ohshitgit.com/#magic-time-machine 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/1027275076355231754/1027276811190665226
+https://learngitbranching.js.org/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1017008201427845153/1017377812602179594
+K tomu readme: syntaxe Markdownu
+https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+Něco k tomu jak je psát
+https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes
+https://www.makeareadme.com/
+---
+
+
+--- https://discord.com/channels/769966886598737931/983615979881906197/983618508460011580
+Klidně začni tím, že si připravíš CV, GitHub a LinkedIn profil.
+K CV tady https://junior.guru/handbook/cv/
+
+<:linkedin:915267970752712734> uděláš podle toho CV
+
+Na <:github:842685206095724554> si prosím dej nějakou profilovku, nemusí být tvoje fotka, ale ten default maj jen lidi, co to moc nepoužívaj, špatnej signál.
+Schovej projekty, které jsou k ničemu, jako piškvorky.
+K ostatním projektům doplň informace přímo na GitHubu i do README.md a někam je nasaď, statické jdou přímo na GitHubu.
+Mrkni třeba na https://github.com/hankaEsha jak to má udělané.
+4 vypíchlé projekty, popsané, nasazené.
+---
+
+
 #} -->

@@ -421,4 +421,54 @@ Tool na zhodnocení CV a Linkedinu, který dává i doporučení, co by jak mohl
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1072259833593606185/1073198884341432340
+Rouhodne deti priznat hned na zacatku, pokud s tim ma firma problem, tak to stejne neni firma, kde bys chtela pracovat. Uz to, ze jsi se zvladla ucit a vzdelavat s detmi za zady, tak pravdepodobne dokazes i pracovat s detmi. Porad je v IT ta vyhoda, ze muzes pracovat z domu, pokud by byli deti nemocne, pripadne se postara druhy rodic. Tak doufam, ze to uz neni pro zamestnavatele takova prekazka. Je to soucast nasich zivotu a manzela taky nikomu nezatajuju 😂 Jinak pokud bys mela zajem, muzes se pridat do nasi skupinky <#963857545544470558>
+---
+
+
+--- https://discord.com/channels/769966886598737931/1062006092571361320/1062018181654380605
+Na mě to nepůsobí dobře a přesně jak to Martin popsal „vlastně nemám žádnou fotku, tak tam dám něco 5 let starýho“ 🤷‍♂️
+Když už fotku, tak něco lehce profesionálnějšího, tedy pro situaci hledám první práci. Dělám nějakej dojem.
+Ale to jsem já.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1033829073249644554/1033833523586551848
+Do threadu, díky.
+Zrovna takoví dva matadoři.
+
+<@614870427931770900>
+Flowcv.io - zdarma.
+
+<@414887173154930698>  — Today at 9:53 PM
+prosímtě ještě potřebuju aby to šlo udělat Česky :))
+
+<@614870427931770900>  — Today at 9:54 PM
+Co to přesně znamená?
+
+<@414887173154930698>  — Today at 9:55 PM
+ta šablona má nadpisy v angličtině a já potřebuju aby to bylo české cv
+
+<@614870427931770900>  — Today at 9:56 PM
+Dá se to změnit
+
+<@414887173154930698>  — Today at 10:00 PM
+ty jo jako je to libovka, jenom nevím kde to změnit :))
+---
+
+
+--- https://discord.com/channels/769966886598737931/991253586312953976/991387575413653635
+Mně tam chybí třeba tvoje jméno.
+
+Ten dark mode taky působí zvláštně, předpokládám, že to využije někdo, kdo nemá rád příliš velký jas nebo se mu to blbě čte na světlém a takhle ten problém vlastně vůbec neřešíš, protože tam zůstávají dvě obří bílé pruhy. Za mě bych to teda buď neřešila, nebo to dotáhla.
+
+Zkusila bych být také víc specifická ohledně tvých dosažených "produktů" v práci.
+`Work on application for logistics. Drag and drop, infinite scroll, breadcrumb navigation, pagination etc.`
+by mohlo byt
+`Worked on [...technologie...] applications for logistics. Developed drag & drop feature for [...] using [...] to facilitate user interaction with the system, implemented infinite scroll with lazy loading and pagination for [...]` atp.
+Něco na ten styl.  Co jsi dělala, co jsi k tomu používala, čeho jsi tím dosáhla.  Hodně se mi tenhle model osvědčil 🙂
+Obzvlášť, pokud ten kód/projekt není nikde veřejně.
+---
+
+
 #} -->

@@ -387,4 +387,96 @@ Prošel jsem všechny kurzy programování a tvorby webu s aktuálně platnou ak
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1083734944121102436/1089250472776454154
+Zjistit se to dá z Excelového souboru tady https://www.msmt.cz/vzdelavani/dalsi-vzdelavani/databaze a řetězec SDA se v něm vůbec nevyskytuje, takže to nevypadá, že akreditaci mají.
+
+Za loňsko byly uděleny tyto akreditace, kde je nějaké programování.
+```
+Číslo jednací    Vzdělávací zařízení    Email žadatele    Pro pracovní činnost
+MSMT-16743/2022-6    b4u consulting s.r.o.    t.kosina@consultant.com    Programátor www aplikací
+MSMT-6316/2022-2    Edu partners s.r.o.    info@edu-partners.cz    Programátor www aplikací
+MSMT-1493/2022-7    ITnetwork s.r.o.    mcapka@itnetwork.cz    Programátor www aplikací
+MSMT-16736/2022-2    Orange Academy s.r.o.    damborsky.j.@seznam.cz    Programátor www aplikací
+MSMT-5048/2022-2    Počítačová služba s.r.o.    info@poc-sluzba.cz    Programátor www aplikací
+MSMT-3957/2022-2    RS Semily s.r.o.    info@rssemily.cz    Programátor www aplikací
+```
+---
+
+
+--- https://discord.com/channels/769966886598737931/1083734944121102436/1088109106482651216
+Na IT network jsem práve v kurzu "programátor ww aplikací - C# .NET". Mám to přes ÚP a při podávání žádosti mi paní zdělila, že do zdůvodnění žádosti je nejlepší napsat průzkum aktuálního stavu trhu práce, proste data a fakta, ne jen pocity. Ideální je mít příslib práce, ale není to nutné. Nakonec mě ještě iniciativně dostali do programu Outplacement, který novému zaměstnavateli přispívá na mzdy do výše 15k na 9 měsíců. Tak uvidíme, jestli to pomůže se uplatnit.
+ITnetwork jsem volil hlavně kvůli akreditaci a ÚP. Líbila se mi i GFA, ale to bylo výrazně dražší.
+V podstatě to, co popsali lidi přede mnou, jsou i moje dojmy. Kvalita e-learningu je závislý na tématu a tvůrci obsahu. Já měl největší problém s tím, že jsem lekci prošel, poctivě procvičil zadání a pak v řešených úlohách tápal, jelikož se s těmi informacemi daný úkol nedokázal udělat. Hledal jsem řešení v dikuzích, googlil, ptal se známých a tak postupoval dále. Taky jsem si k tomu vzal ještě kurz na Udemy, protože mi video učení více sedí. Vidím, co se tam děje, lektor to i patřičně popisuje a tak se mi ty informace lépe spojí a mohu pak kódit i sám. Postupem času jsem se zlepšil a zvládal udělat Jednoduché a Středně náročné úlohy sám. Pokročilé jsem rozpracoval do stádia, co jsem věděl a pak hledal pomoc nebo se prostě podíval do řešení, přečetl si kód, snažil se tomu porozumět a pak to reprodukovat po vlastní ose. Někdy to šlo někdy ne. Zde myslím, že má ITnetwork slabinu v tom, že není k dispozici nikdo, kdo by ti dokázal obratem pomoci se hnout z místa a vysvětlit "polopatě", co, proč a jak se děje. Porozumět, co se v kódu děje, mi nejvíce pomohla rada od zkušeného známého, který mě navedl, jak to pozorovat ve VS. To byl pro mě "game changer". Do té doby jsem se trápil a procházel lekcemi sem a tam, jestli nejsem trotl a něco mi neuniklo nebo jsem to nepochopil. Prezeční školení je fajn, chlapi jsou vstřícní a pomohou věci lépe vysvětlit. A to, že jsou tyto dny s odtupem po ukončení E-L, je jen dobře ...
+---
+
+
+--- https://discord.com/channels/769966886598737931/1088118073774587985/1088118073774587985
+Při absolvování online kurzů si uvědomte následující nuance:
+Zdroj: DataCamp Radar 2023
+---
+
+
+--- https://discord.com/channels/769966886598737931/1085638261583650947/1085881389238472765
+Ještě přidám pracovní verzi textu, kde rozebírám, proč nejsme akreditovaní a co to znamená.
+
+> Akreditovaný kurz musí splnit spoustu zastaralých a z hlediska praxe zbytečných požadavků.
+> Pro získání akreditace bychom museli slevit z našich standardů a moderních, funkčních postupů.
+>
+> Místo byrokracie spojené s akreditací se věnujeme podstatnějším věcem, které ti opravdu pomůžou.
+>
+> Akreditované kurzy jsou osvobozené od DPH, takže mohou být levnější, my ale nejsme plátci DPH a tak je to jedno.
+>
+> Akreditace taky znamenala možnost dostat uhrazeno až 50000 Kč od Úřadu práce. V novém programu už o tuto dotaci může požádat kdokoli.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1074720669939531776/1075035258044547102
+Jsem samouk. Trvalo to dlouho, prvni kod jsem napsal(opsal) v roce 2020. Ale sam jsem si zvolil tuhle cestu. Bylo to pozvolne objevovani programovani a veci s nim spojenymi. Myslim, ze kdybych sel do nejake nalejvarny ala 4 mesicni bootcamp , tak vyhorim a programovani si znechutim. Jel jsem vcelku pohodovym tempem a  mel dlouhodobou vizi. Urcite se z 0 na moji uroven da dostat mnohem rychleji.  A dost  mozna se da prace ziskat i s mensima znalostma. Ja si opravdu pockal a  az na konci lonskeho roku jsem si rekl, ze chci hledat praci, protoze jako samouk jsem mel pocit, ze se posouvam moc pomalu. Nakopl me k tomu pohovor od attacamy.
+Kurzy a cestu mam trosku vic v <#788823881024405544> https://discord.com/channels/769966886598737931/788823881024405544/1048280508985000047
+---
+
+
+--- https://discord.com/channels/769966886598737931/1073248653415821354/1073334336985759795
+A nebo to můžeš zkusit netradiční cestou a vyzobat si z internetu kurzy, které mají na internetu různé světové university. Viz třeba https://teachyourselfcs.com/, kde je přehled kurzů k základním okruhům z computer science (základy programování, algoritmy a datové struktury, sítě, databáze, atd.) Jasně, nebudeš z toho mít titul, ale zase to jsou kurzy z nejlepších škol na světě (Berkeley, Stanford, MIT, atd.) a pokud si tu materii poctivě projdeš, uděláš si všechna cvičení, atd., tak se toho opravdu hodně naučíš. Osobně jsem si prošel prakticky celý úvod do programování z Berkeley (CS61A) a potom i jejich algoritmy a datové struktury (CS61B) a byly to naprosto skvělé kurzy, které mě opravdu hodně posunuly. A navíc i úlohy tam jsou hodně zajímavé, například závěrečný projekt v CS61B byl napsání vlastní počítačové hry 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/1064858674415280129/1064872825762086912
+Je to tu trochu offtopic, ale jedná se formát *školení* není to kurz.
+Máš ve firmě nějaké IT lidi, klidně s léty praxe a chceš jim rychle zvýšit nějak kvalifikaci třeba v nějaké nové oblasti.
+Tak zaplatíš třeba dvoudenní školení. Expert to s nimi projde hodně intenzivně, nazval bych to nalejvárnou.
+Můžou se samozřejmě doptávat, to je asi jediná výhoda proti nahranému online kurzu a taky to, že jako šéf víš, že tam seděli a asi poslouchali.
+
+Tohle vzniklo v době, kdy získat tyhle znalosti na internetu z milionu různých kurzů nebylo možné a knížky na to téma vycházely později než to v té firmě potřebovali. Cesta byla tedy školení. Dneska mi to často přijde jako už přežitek, ale věřím, že jsou situace, kdy to smysl dává.
+
+Protože to školení dělaj v lepším případě opravdu drazí experti, tak to není levné.
+Běžné je několik tisíc za den. Ale je to koncentrát, který si pak týdny ředíš a čerpáš z toho.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1050148634202755082/1050152414201774090
+S dobrým kurzem (a tam si myslím, že GFA není špatný, co se obsahu týká) asi dostaneš o něco přímější cestu, ale nevím jestli o 3–4 měsíce.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/884384772669972481
+Pokud kamarádka nemá žádné zkušenosti s testováním, doporučuju začít s Czechitas jednodenním *úvod do testování* - vyzkouší si prakticky, jak vypadá práce manuálního testera/ky. Dále se může podívat na zdroje kolem test stacku a Radima Pánka (http://rdpanek.cz/) - témata jsou sice  technická, ale mají i zdroje pro začátečníky v automatizovaném testování.
+
+Pokud se rozhodne jít do toho, doporučuju si najít nějaký kurz. Jsou firmy a neziskovky, které nabízí takové kurzy. Toto bohužel neumím objektivně hodnotit, protože nemám s tím osobní zkušenosti.
+
+Na práci manuálního testera stačí látka z ISTQB zkoušky - https://castb.org/wp-content/uploads/2020/05/ISTQB_CTFL_CZ_3_1_1-6.pdf. Na pohovorech se často ptají na teorii (otázky typu co je boundary analysis, black box versus white box testování, kdy automatizovat testy a proč a kdy neautomatizovat apod.) a také ověřují způsob, jak kandidát/ka přemýšlí - otázky typu jak otestovat žehličku/konvičku/jakýkoliv předmět. Co se ještě hodí umět je Linux a SQL - občas bude potřeba podívat se do logů, zapnout si prostředí nebo vytáhnout nějaká data z databáze. Na pohovorech, jak vím, se na to obvykle neptají, pokud se jedná čistě o manuální testování.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/884384782669213727
+Certifikát ISTQB může být užitečný pro hledání první práce, protože je tam hooodně teorie, kterou se člověk musí naučit, na druhou stranu znám spoustu lidí, kteří dostali práci i bez něj. Pokud už člověk má praxi, certifikáty jsou většinou nerelevantní.
+
+Co si myslím, že by mohlo pomoct je ukázat, že člověk ví, kam se chce dál posunout. Automatizované testování je často dalším krokem a aby člověk mohl psát autotesty, musí nejdříve umět programovat na základní úrovni. Doporučuju tady začít s Javou, protože junior testery většinou nabírají v bankách, kde jsou testy v Javě. Pokud nejsou v Javě, jsou většinou v Pythonu a přechod Java ->Python je jednodušší, než naopak. Nicméně, dá se začít i Pythonem, to je možná jednodušší na začátek. Každopádně bych tady doporučila mít nějaký ukázkový projekt. Taky bych doporučila, osvojit si základy DevOPSu - někdo bude muset připravovat testovací prostředí, automaticky na něm spouštět testy atd.
+
+U testera/ky můžou být důležité doménové znalosti - toho bych se nebála využít. Pokud mám vystudované bankovnictví, zkusila bych se primárně hlásit do bank. Je spousta dalších cest, kromě automatizovaného testování - pokud už vím, kam mířím, zkusila bych to na pohovoru zmínit.
+
+Co se týká firem, hledala bych nějakou, kde mají menší poměr manuálních testerů (nebo ideálně žádné), protože se může stát, že se junior/ka zasekne na manuálním testování a nikam neposune. Na pohovoru bych se vyloženě ptala, kolik je manuálních testerů, kolik mají manuálních vs automatizovaných testů, co ode mě očekávají.
+---
+
+
 #} -->

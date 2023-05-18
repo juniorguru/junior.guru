@@ -604,9 +604,9 @@ Včera <@771661208007868446> hrozně pěkně mluvil o herním testování, tak j
 Co třeba tenhle text (je to úvod k jednomu kurzu), je to pro tebe nesrozumitelné?
 
 > Simply put, computer programming is a way to make computers do different tasks. It is a process of writing a set of instructions (also known as code) that a machine can understand and making the machine follow them. The end goal might be to solve a mathematical equation, automate a boring task, or create a web page, a piece of software, a mobile app, or a whole game.
-> 
+>
 > Computer programming requires technical skills and creative thinking. Some call it science, some call it art.
-> 
+>
 > To have a full picture of what computer programming is, we need to highlight two points in the definition: "make computers do tasks" and "writing a set of instructions that a machine can understand". Let’s talk about the instructions first.
 ---
 
@@ -620,6 +620,91 @@ https://saveall.ai/blog/learning-is-remembering
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1063554627959791687
 Toto je post od Software Engineera v google. Je to skor smerovane na juniorov a ake jazyky sa ucit podla toho comu sa chces venovat. https://www.linkedin.com/posts/demitriswan_programming-golang-go-activity-7018701749519601664-rnY1?utm_source=share&utm_medium=member_desktop
+---
+
+
+--- https://discord.com/channels/769966886598737931/1088577532376387705/1091349723937505321
+Dokonce ty základy jako cykly, podmínky, proměnné a dokonce i funkce se můžeš naučit bez konkrétního jazyka vizuálně na https://blockly.games/ Sice po vyřešení pak ukazuje „javascriptový kód“, kterým by se to samé naprogramovalo a v pokročilejších lekcích se jde přepnout na psaní kódu, ale pořád to jde řešit těmi bloky, které na začátku zabrání chybám v syntaxi, tedy že ti někde chybí středník, tečka nebo mezera.
+
+U těch komplexnějších věci mi pak už přijde lepší pro začátečníky opravdové programování, protože je snažší zkoumat jak ten kód funguje.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1088577532376387705/1088957232919625728
+V podstatě je ta mainstreamová volba z těchto pěti:
+
+<:javascript:842329110293381142> **JavaScript** – na backendu (Node.js) a na webovém frontendu (+ TypeScript) – pokud chceš dělat frontend (React apod.) tak tam jiná volba není.
+
+<:python:842331892091322389> **Python** – „druhý nejlepší jazyk na cokoliv“ (trochu bonmot, ale není to úplně blbost), píše se v něm všechno možné, desktopové programy, backendy všeho druhu (třeba webů), používá se na analýzu dat, ale na některé věci (hry, mobilní appky a další) fakt není dobrá volba
+
+<:csharp:842666113230045224> **C#** – desktopové programy, backendy všeho druhu (třeba webů), hry (Unity), mobilní appky
+
+<:java:1036333651740327966> **Java** – mám asi hrozně stereotypní pohled: jdeš na IT VŠ, programuješ tam hodně v Javě a pak jdeš do korporátu bouchat nějaký složitý systémy (banky, ale nejen), druhá část jsou nativní aplikace pro Android, tam ale na popularitě získává Javě blízký *Kotlin*.
+
+<:php:842331754731274240> **PHP** – v podstatě se v něm píší jen backendy webů, mula a otloukánek webového backendu, jsou názory, že je na ústupu, ale běží na něm asi většina internetu (záleží jak to počítáš)
+
+Můj pohled může být zkreslenej, ale aspoň něco 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/1074720669939531776/1075035258044547102
+Jsem samouk. Trvalo to dlouho, prvni kod jsem napsal(opsal) v roce 2020. Ale sam jsem si zvolil tuhle cestu. Bylo to pozvolne objevovani programovani a veci s nim spojenymi. Myslim, ze kdybych sel do nejake nalejvarny ala 4 mesicni bootcamp , tak vyhorim a programovani si znechutim. Jel jsem vcelku pohodovym tempem a  mel dlouhodobou vizi. Urcite se z 0 na moji uroven da dostat mnohem rychleji.  A dost  mozna se da prace ziskat i s mensima znalostma. Ja si opravdu pockal a  az na konci lonskeho roku jsem si rekl, ze chci hledat praci, protoze jako samouk jsem mel pocit, ze se posouvam moc pomalu. Nakopl me k tomu pohovor od attacamy.
+Kurzy a cestu mam trosku vic v <#788823881024405544> https://discord.com/channels/769966886598737931/788823881024405544/1048280508985000047
+---
+
+
+--- https://discord.com/channels/769966886598737931/1049284297133133854/1050733829196873779
+pořadí důležitosti je:
+1) rozumět čtené (návody, kurzy, dokumentace, čtení řešení někde na Stackoverflow)
+2) umět správně anglicky pojmenovat proměnné a funkce atd.
+3) umět se písemně zeptat na problém
+4) umět napsat dokumentaci
+5) rozumět mluvené (typicky nějaká videa, přednášky apod., tam jdou ale často zapnout titulky, co pomůžou) případně kolegům
+6) ta aktivní mluvená, to už jsem psal nahoře
+---
+
+
+--- https://discord.com/channels/769966886598737931/1048500617657712670/1049227809396109312
+Můj osobní pohled na závěr:
+Pokud si chcete najít co nejrychleji práci na pozici Datový analytik, tak Excel a SQL vám k tomu pomůže nejvíce. Navíc Excel a SQL vás dobře připraví i na ten Python. V Excelu se setkáte s jazykem VBA a učení Pythonu pro vás bude poté jednodušší. SQL vás zase dobře připraví na knihovnu Pandas, kde budete používat groupby, joiny atd..
+---
+
+
+--- https://discord.com/channels/769966886598737931/1029701809809399918/1029723001773633577
+Ahoj Terezo, přeji ti hodně štěstí a síly se studiem! 💪 Souhlas s <@652142810291765248> "osmihodinovky" neřeš, spíš si najdi nějaký svůj rytmus a toho se drž. Zkus si den rozdělit na bloky třeba po 2 hodinách a podle toho si i věci plánovat. Vyplatí se ti to ve dnech kdy budeš "dole", nebudeš tomu rozumět, nebudeš schopná přijít na to proč se děje tohle a proč se neděje tohle, budeš unavená, budeš nemocná... Budeš tam pak mít mnohem více prostoru na odpočinek, odstup atd.
+Zde jen  pár rad, které jsem za ty 2,5 roku učení se pochytil a aplikuji:
+1) Udělej si plán! Nejdřív na celý rok, potom na čtvrtletí, potom na měsíce... Vidím, že chceš začít pracovat na začátku příštího roku, ale i tak je dobré mít naplánovanou i nějakou variantu B.
+2) Naplánuj si každý den předem. Kolik chceš projít materiálu, jaké video vidět, o jakém tématu si přečíst... nebudeš pak muset ráno vše vymýšlet a ztrácet čas a motivaci.
+3) Choď spát brzy a vstávej brzy... Uvidíš, že se ti začne líbit ten pocit, že je teprve 9 hodin ráno, ale ty už jsi toho tolik stihla. Navíc ráno máš nejvíc energie, tak ji dávej do toho nejdůležitějšího.
+4) Nauč se pracovat s Pomodoro systémem. Dvouhodinový cyklus, 4x 25 minut práce + 5 minut na protažení, pití...
+5) Piš si deník, sdílej svůj progres nebo jakkoli jinak dokumentuj svou cestu... To je především pro tvou psychiku. Je pěkné se ohlédnout zpět a vidět za sebou kus práce, i když není na první pohled vidět.
+6) NEPOROVNÁVEJ SE!!! Nesmírně důležité. Nikdo na planetě nemá stejné podmínky jako ty. Někdo má více času, někdo má méně peněz, někdo je houževnatější... nemá cenu se porovnávat s kýmkoli jiným než jsi ty sama!
+7) Pořiď si polohovatelný stůl, u kterého můžeš stát, sportuj a cvič, a dodržuj Pomodoro. Pokud jsi byla zvyklá většinu času v práci stát, a předpokládám, že jako ošetřovatelka jsi byla zvyklá, tak pro tebe několikahodinové sezení bude peklo!
+---
+
+
+--- https://discord.com/channels/769966886598737931/1010552267612631132/1011571611654176829
+S angličtinou doplním, ze v IT většinou stačí úroveň, která nějak dostačuje na běžnou komunikaci a umožňuje ti rozumět a umožňuje jiným lidem ti rozumět. Na bohatost slovní zásoby nebo dokonalou výslovnost se moc nepřihlíží. Takže ano, angličtina je velmi důležitá, ale není potřeba to s ni přehánět a představovat si za tím plynuly projev moderátorů z BBC.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1007330330149126274/1007575709029519400
+Díky za odpověď Verčo 😊  v první řadě k tobě budu upřímný. Jestli se chceš naučit Python jen proto, že je jednoduchý, tak to nedělej! Věř mi, já to měl úplně stejné. Myslel jsem si, že jen proto, že ten jazyk je jednoduchý tak se ho naučím a pak už to všechno půjde samo. Obrovská chyba! Taky jsem na to dost doplatil... nic hrozného, ale srážka s realitou přišla 😁
+☝ Jestli můžu, tak bych ti poradil následující:
+Zkus se nejdřív zamyslet nad tím, co bys jako programátorka ráda dělala. Tzn. chtěla bys dělat webové stránky? Nebo třeba mobilní aplikace? Nebo by tě víc bavila práce s daty? Chtěla by ses spíš zaměřit na práci s vizuální stránkou programu(frontend) nebo na to jak to všechno pracuje "za oponou" (backend - tady je třeba právě Python)? Nebo klidně obojí (fullstack)? Je toho dost a dost. Zkus si nejdřív projít jednotlivé pozice a podívej se co je k nim potřeba umět. Podle toho i uvidíš co by se ti víc mohlo líbit a pak se na to i zaměříš. 😉  Pokud si nebudeš jistá, CodeAcademy má takový jednoduchý kvízek, který by ti mohl pomoci s nasměrováním (nebrat závazně) https://www.codecademy.com/explore/sorting-quiz
+Píšu to proto, že Python je rozhodně jednoduchý na naučení a za mě je to skvělý nástroj na pochopení základních principů programování, ale například na frontend, kterému se teď věnuji já, je ze začátku úplně k ničemu. 😁
+---
+
+
+--- https://discord.com/channels/769966886598737931/1005045233614082168/1005045236424261652
+Ahoj, mám takový problém… Učím se Javu/Spigot z YT, ale je to takovéto: Opis a rozumíš, ale nedokazes sám použit… Nemá prosím někdo nějakou metodu? Díky moc 🙂🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/882896792377765898/882939982556311552
+před časem jsem se zavázal, že to sepíšu nějak strukturovaně - a bohužel jsem to jen rozepsal, ale chybí mi tam ještě nějaké praktické příklady
+
+draft je tutaj: https://gist.github.com/kokes/49ca2f42edf30d6a1f02e3859ad3f9f2
 ---
 
 

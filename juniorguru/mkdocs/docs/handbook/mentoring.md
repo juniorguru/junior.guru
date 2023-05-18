@@ -57,4 +57,15 @@ https://twitter.com/willjohnsonio/status/1282713655105159170
 ---
 
 
+--- https://discord.com/channels/769966886598737931/931605794040975430/931610600239423488
+- líbilo se mi , když mi dokázal vysvětlit mou otázku krok za krokem a zpětně se ujišťoval, že mu rozumím (když jsem váhala, dával další a další příklady k vysvětlení a procvičení)
+
+- naučil mě myslet nad problémem, tj. jak si ho rozložit, jak a kde hledat řešení
+
+- byl lidský, tzn. ujistil mě, že i senioři neví a jsou mnohdy ztracení, že pátrají a stále se učí, že není špatně přiznat si, že mi něco nejde a nestydět se říct si o pomoc, že to děláme všichni
+---
+
+
+
+
 #} -->

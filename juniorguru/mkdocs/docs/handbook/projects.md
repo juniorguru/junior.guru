@@ -264,7 +264,7 @@ Nebudu to ale vysvětlovat ani rozepisovat.
 – nekomentují si kód a za pár dní neví proč tam je to, co tam je
 
 A dvě věci, které jsem myslím nezmínil.
-– v Sassu příliš vnořují, špatně se to čte 
+– v Sassu příliš vnořují, špatně se to čte
 – neporovnávají návrh s výsledkem v prohlížeči
 – netestují ve všech možných šířkách (a případně i výškách).
 ---
@@ -275,6 +275,42 @@ V <#1075155024965025792> <@1016967149371277323> otevřela téma webu jako portfo
 Nemyslím si, že je nutné ho mít, ale mají ho všichni klienti <:coreskill:929824061071192084> CoreSkillu, kteří s námi procházejí cestou z „umím málo“ do „mám první práci“.
 
 Proč? Protože je to výborné zadání na jednoduchý statický web, kterým začínáme a je méně motivující dělat nějaký cvičný, který se pak zahodí, než tohle, co má nějakej smysl a navíc obsah je jasnej. Taky je časem větší motivace ho upravovat a vylepšovat.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1069298711202644051/1072093745635405924
+Já vím, jak jsi to myslel, ale trochu se v tom pošťourám 🙂
+> použitelná pro prezentaci mých dovedností, když odkaz posílám při odpovídání na nabízené pracovní pozice
+Něco jsi vytvořil a je to odrazem tvých znalostí. Použitelné je tedy cokoliv, co zrovna vytvoříš, jelikož to dává firmě informaci o tom, co zhruba tě budou potřebovat doučit. (Slovo „zrovna” je důležité, protože neaktualizovaná věc stará půl roku, rok, by už asi tvé současné znalosti neodrážela.) Neexistuje žádná laťka projektu, za kterou když se dostaneš, je to použitelné. Můžeme vychytat nějaké chybky, které dělá každý začátečník. Ty si je opravíš a tím vylepšíš své znalosti. Takže se nestane opět nic jiného, než že projekt zrcadlí tvé znalosti. Prostě tvoř, vylepšuj a sem tam to zkus poslat na nějaké firmy s CVčkem. Pak ta otázka nestojí, jestli je to dost dobré, ale jestli si ta konkrétní firma vyhodnotí, že na ty konkrétní úkoly, na které tě potřebuje, tě se zvými zdroji zvládne zaučit z té úrovně, kterou si domyslí podle tvého projektu.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1067513448168181850/1067758031472967750
+hele mám 6 projektů
+---
+
+
+--- https://discord.com/channels/769966886598737931/1054825337160212571/1057998994980221040
+<@668226181769986078> Myslím si, že i jinak proaktivní jedinci můžou mít s projekty problém, ať už se bavíme o jejich vymýšlení nebo realizaci. Společný projekt podle mě člověka více "nakopne", vyzkouší si (byť třeba v hodně omezené míře) spolupracovat s někým jiným a může se u toho naučit věci, se kterými se u samostatného projektu setkat nemusí 🙂 Může se tak třeba podílet i na něčem větším, co by jinak sám nezvládl. Někdo by to taky mohl vidět jako hybrida vlastního projektu a přispívání do něčeho open-source 🤷‍♂️
+
+Moje představa zjednodušeně v bodech ⬇️ ⬇️ ⬇️ Hlavní jsou první dva body, další dva už jsou jen takové doplňky.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1049695821962170498/1049697487209910272
+Zkusím ti to dilema vyřešit: pokud se hlásíš na frontendové pozice, tak to musíš mít 100%, pokud ne, tak nepotřebuješ ani web.
+---
+
+
+--- https://discord.com/channels/769966886598737931/983615979881906197/983620893458702356
+Pokud bys neměl projekt, tak na https://www.frontendmentor.io/ jsou zadání včetně návrhů.
+
+Tenhle je zadarmo https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3 (spíš webovka, ale můžeš ji udělat v Reactu, že jo…)
+
+Jsou tam i víc JS věci typu pexeso https://www.frontendmentor.io/challenges/memory-game-vse4WFPvM a další
+https://www.frontendmentor.io/challenges?difficulties=5,4&languages=HTML|CSS|JS
+
+**Pokud bys dělal něco jinýho než *Space tourism*, tak si zaplať těch 12 dolarů na 1 měsíc a stáhni si zadání včetně souboru Figma, což je grafický program ve kterým dělá návrhy webů většina designérů. Je zadarmo (pro tvoje účely) a měl bys umět z něj vytáhnout jak co má přesně vypadat.**
 ---
 
 

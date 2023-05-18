@@ -47,3 +47,5 @@ Ahoj, mám poškozený zrak a tak si hledám cesty jak nejlépe šetřit oči. K
 
 
 #} -->
+
+#} -->

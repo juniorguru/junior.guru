@@ -86,6 +86,8 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
 
 <!-- {#
 
+Nechceš o tom napsat článek? Rozepsat tyhle body (nebo tak něco, viděls asi hodinu, kdy sem šel spát…) 1) rady je těžké dávat 2) neraď to, co fungovalo tobě, každý je jiný a zbytek kontextu je taky jiný, říkej mě fungovalo toto 3) neraď, dokud nevíš, co někdo potřebuje Krátkej, že bychom to dali do pravidel nebo doporučení.
+
 https://jvns.ca/blog/good-questions/
 
 https://www.hash.cz/inferno/otazky.html
@@ -210,6 +212,21 @@ Krátký článek o feedbacku, jak ho dávat, přijímat... https://brightinvent
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1060527570539532368
 Zajímavý jak se to schází... O debuggingu vydala nedávno zine i Julia Evans: https://wizardzines.com/zines/debugging-guide/
+---
+
+
+--- https://discord.com/channels/769966886598737931/938529943023915069/938923222156595230
+Ahoj,
+draft překladu: https://docs.google.com/document/d/1apa_4Mw9CwCTO_z3tYVYRGmfw0-s_iJJ/edit?usp=sharing&ouid=112039692281202535262&rtpof=true&sd=true
+
+je tam jedna červená část, kterou ještě musím přeložit, je to jeden odstavec, který se odkazuje na jiný anglický text hodně.
+
+Klasicky mám problém s gramatikou, na to pozor a je to draft, takže jakýkoliv zásah, učesání, oprava či změna prkennosti vítána, jen mezi napsáním tohoto komentáře a jeho odesláním jsem tam pár věcí upravil, znovu si to přečtu až zítra.
+
+Suggest edit či comment je pro všechny otevřené, <@!652142810291765248>  a <@!668226181769986078> když mi napíšete mail, dám vám tam přístup i pro přímé úpravy, není dobré, když do toho může takhle naplno lézt mnoho lidí, ať to má nějaký řád - ale jestli chcete, klidně to otevřu pro všechny.
+
+Dík,
+L.
 ---
 
 

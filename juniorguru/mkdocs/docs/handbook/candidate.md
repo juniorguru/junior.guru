@@ -1208,13 +1208,59 @@ Včera <@771661208007868446> hrozně pěkně mluvil o herním testování, tak j
 
 
 --- https://discord.com/channels/769966886598737931/788826407412170752/1099677728803913749
-Jojo včera. Za mě dobrý, nemám teda žádnou zkušenost z podobné akce, ale kupodivu jsem u toho vydržela až do konce. Neobešlo se to bez technických potíží, kdy to každého občas vyhodilo a musel se přihlásit znovu, takže si tak povídáte s HR a najednou zmizne, no byla sranda 😄  Chat byl neustále plný zpráv typu nejede mi mikrofon, nejde mi kamera, nic neslyším, nevidím, kam zmizel ten nebo onen. Pozdravila jsem se s <@1028946296771461180> . Nakonec ani kamera nebyla nutná, spoustu lidí jelo bez kamer, jen přes mikrofon a pokud člověk nechtěl, tak nemusel mluvit s nikým. Součástí byl i malý kvíz, kdy v rámci světa bylo 5 otazníků, které jste museli najít a odpovědět na různé otázky či hádanky. 
+Jojo včera. Za mě dobrý, nemám teda žádnou zkušenost z podobné akce, ale kupodivu jsem u toho vydržela až do konce. Neobešlo se to bez technických potíží, kdy to každého občas vyhodilo a musel se přihlásit znovu, takže si tak povídáte s HR a najednou zmizne, no byla sranda 😄  Chat byl neustále plný zpráv typu nejede mi mikrofon, nejde mi kamera, nic neslyším, nevidím, kam zmizel ten nebo onen. Pozdravila jsem se s <@1028946296771461180> . Nakonec ani kamera nebyla nutná, spoustu lidí jelo bez kamer, jen přes mikrofon a pokud člověk nechtěl, tak nemusel mluvit s nikým. Součástí byl i malý kvíz, kdy v rámci světa bylo 5 otazníků, které jste museli najít a odpovědět na různé otázky či hádanky.
 
 Celkem se mi líbilo představení ČSOB ze kterého jsem měla pocit, že hodně podporují remote pozice i částečné úvazky a mají dobrou firemní kulturu. Co se týče firemní kultury, tak se mi hodně líbí i brněnská firma IRESOFT, momentálně nabízí pozice na C#, Python a React. Podle příspěvků na LI by měli uchazeči dostat zpětnou vazbu vždy, ikdyž si vás nepozvou ani na pohovor, dají vám vědět a řeknou proč, což mi přijde dost super. Více takových firem.
 
-Na základě mého LI se mi ozvala na mail paní z jedné firmy, která nebyla součástí veletrhu, takže jsem s ní v kontaktu a uvidím co z toho bude. 
+Na základě mého LI se mi ozvala na mail paní z jedné firmy, která nebyla součástí veletrhu, takže jsem s ní v kontaktu a uvidím co z toho bude.
 
 I přes technické problémy hodnotím kladně, mě všechno jelo jak mělo, jen mě to občas vyhodilo a musela jsem se připojit znovu. Nevím jak přínosné je to pro lidi co už vyloženě aktivně hledají práci, já to beru zatím jako takový průzkum trhu.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1083734944121102436/1088109106482651216
+Na IT network jsem práve v kurzu "programátor ww aplikací - C# .NET". Mám to přes ÚP a při podávání žádosti mi paní zdělila, že do zdůvodnění žádosti je nejlepší napsat průzkum aktuálního stavu trhu práce, proste data a fakta, ne jen pocity. Ideální je mít příslib práce, ale není to nutné. Nakonec mě ještě iniciativně dostali do programu Outplacement, který novému zaměstnavateli přispívá na mzdy do výše 15k na 9 měsíců. Tak uvidíme, jestli to pomůže se uplatnit.
+ITnetwork jsem volil hlavně kvůli akreditaci a ÚP. Líbila se mi i GFA, ale to bylo výrazně dražší.
+V podstatě to, co popsali lidi přede mnou, jsou i moje dojmy. Kvalita e-learningu je závislý na tématu a tvůrci obsahu. Já měl největší problém s tím, že jsem lekci prošel, poctivě procvičil zadání a pak v řešených úlohách tápal, jelikož se s těmi informacemi daný úkol nedokázal udělat. Hledal jsem řešení v dikuzích, googlil, ptal se známých a tak postupoval dále. Taky jsem si k tomu vzal ještě kurz na Udemy, protože mi video učení více sedí. Vidím, co se tam děje, lektor to i patřičně popisuje a tak se mi ty informace lépe spojí a mohu pak kódit i sám. Postupem času jsem se zlepšil a zvládal udělat Jednoduché a Středně náročné úlohy sám. Pokročilé jsem rozpracoval do stádia, co jsem věděl a pak hledal pomoc nebo se prostě podíval do řešení, přečetl si kód, snažil se tomu porozumět a pak to reprodukovat po vlastní ose. Někdy to šlo někdy ne. Zde myslím, že má ITnetwork slabinu v tom, že není k dispozici nikdo, kdo by ti dokázal obratem pomoci se hnout z místa a vysvětlit "polopatě", co, proč a jak se děje. Porozumět, co se v kódu děje, mi nejvíce pomohla rada od zkušeného známého, který mě navedl, jak to pozorovat ve VS. To byl pro mě "game changer". Do té doby jsem se trápil a procházel lekcemi sem a tam, jestli nejsem trotl a něco mi neuniklo nebo jsem to nepochopil. Prezeční školení je fajn, chlapi jsou vstřícní a pomohou věci lépe vysvětlit. A to, že jsou tyto dny s odtupem po ukončení E-L, je jen dobře ...
+---
+
+
+--- https://discord.com/channels/769966886598737931/1066992347725971516/1067089251595984947
+Nabídky s požadavkem na 1-2 roky praxe bych nepřeskakoval, ale zkusil začít motivační dopis takhle:
+
+> Vím, že požadujete 1-2 roky praxe a já narovinu píšu, že je nemám. Vytvořila jsem ale sama dva větší projekty (odkazy v přiloženém CV), které si můžete prohlédnout a sami usoudit, kolik práce by pro vás bylo doučit mě věci, které potřebujete.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1063112761841831990/1063113351573536938
+**__Nevýhody__**
+
+•   ** Agentura si bere provizi**
+ výši se nedozvíš - která je počítaná z výše tvé mzdy a dojednává si jí agentura s klientem, takže pro firmu jsi dražší položka, takže záleží na tobě jestli s tím budeš OK
+•    Nevztahuje se na tebe zákoník práce
+takže při propouštění jde většinou externista jako první pokud jde o budget a není tu ani výpovědní lhůta - ta je pak na domluvě s klientem
+•    **Neplacené volno, nemocenská**
+Protože nejsi zaměstnanec, tak většinou nemáš nárok na placenou dovolenou, nemocenskou, firemní benefity a odměny, školení atd...  - ale i tady hodně záleží na klientovi, jsou firmy, které nabízí stejné podmínky i externistům jako internímu zaměstnanci nebo aspoň rozšířené, v TM ale ne
+•   ** Omezené přístupy a práva**
+Protože nejsi zaměstnanec tak HW máš vlastní a občas nemáš práva a přístupy takovém rozsahu jako má interní zaměstnanec - zase záleží na klientovi...
+•    **Staráš se sám o daně, daňové přiznání, atd... **
+pokud tedy nejsi přímým zaměstnancem agentury a o odvody se ti stará zaměstnavatel...
+
+
+Hodně záleží na tom, jak to mají dané firmy a agentury nastavené, co máš ve smlouvě s agenturou a co ti bude více vyhovovat. Vždy si pořádně projdi smlouvu/objednávku než ji podepíšeš...
+---
+
+
+--- https://discord.com/channels/769966886598737931/1058066444677550132/1058313285495164978
+Ahoj 🙂 podpořím tu Dana, v jeho tvrzení, že po menších úvazcích než full-time zájem moc není. Mě se povedlo sehnat před rokem svoji 2. práci v IT (a ta první trvala jen 3m) na 0.6 (potřebovala jsem prostor na vlastní praxi https://www.nelaprovazi.cz). Ale jednoduchý to nebylo, firmy ještě tak slyší trochen na 0.8, a cokoliv pod 0.5 mi přijde naprosto nereálný jako první job. Na částečnej úvazek bys musel být hodně naskillenej switcher (což jsem myslím byla), mít kliku (taky můj případ) a mít prostor na 0.6 výš, na míň bys musel mít hodně velkou kliku a asi spíš hledat něco formou hůře placené brigády, ideálně přes známý.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1002976022486057020/1003021387142807659
+Vzdy je dobre delat neco navic, ale je hrozne tezke rict co presne a konkretne. Za me klicove body jsou:
+
+* Vzdy premyslet co je mym cilem, tedy proc neco delam (jaky problem v realnem svete resim)
+* Umet problem rozsekat na kousky ktere jsou snadno uchopitelne a popsatelne, tedy rozlozit slozity problem na jednodussi.
 ---
 
 

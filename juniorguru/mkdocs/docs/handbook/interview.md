@@ -696,18 +696,18 @@ Asi 15–20 vůbec neodepsalo. (10–20 %)
 
 
 --- https://discord.com/channels/769966886598737931/1075541542669922424/1099426281302528103
-Chápu, že to není cesta pro každého, ale pohovory se pro mě radikálně změnily tím, že jsem si zažil druhou stranu barikády a pochopil tak víc její motivace a postupy. Najednou z toho nebyl neznámej bubák a stres. 
+Chápu, že to není cesta pro každého, ale pohovory se pro mě radikálně změnily tím, že jsem si zažil druhou stranu barikády a pochopil tak víc její motivace a postupy. Najednou z toho nebyl neznámej bubák a stres.
 Snažím se to tady opakovaně předat, ale nevím jestli se to daří.
 
 Časté je vnímání jako zkoušky někde na VŠ, kterou je potřeba nějak prolézt, kde bude někdo prověřovat, zda máš nějaké znalosti, které se jde případně nahučet pár dní předtím a zase zapomenout. To ale vůbec nedává smysl.
 
 Lepší přirovnání mi přijde první rande, je možné, že o ten vztah jeden z nich stojí víc, ale je to prostě začátek vztahu, často na dobu neurčitou a obě strany po prvním oťukání přes inzerát na jedné straně a screening / CV / projekty na GitHubu na straně druhé zjišťujou, jestli by delší vztah mohl fungovat. Někdy je na to potřeba víc schůzek (kol).
 
-Ti, kteří hledají lidi, je chtějí co nejrychleji a nejsnadněji najít, ale nechtějí se trefit vedle. 
+Ti, kteří hledají lidi, je chtějí co nejrychleji a nejsnadněji najít, ale nechtějí se trefit vedle.
 Nemají potřebu nikoho potápět, ponižovat nebo zbytečně tahat přes více kol.
 Já se před každým pohovorem „modlil“, aby konečně po těch týdnech a měsících přišel někdo, koho můžem bez výhrad vzít…
 
-Samozřejmě píšu o ideálu. 
+Samozřejmě píšu o ideálu.
 Jako u všeho platí, že 90 % všeho jsou sračky, takže spousta lidí to dělá blbě nebo musí jet podle nějakých pitomých procesů atd. Ale i to je něco, co zjišťuješ ty, jako kandidát o firmě. Jak to tam chodí a jestli chceš s takovými lidmi pak řešit něco dalšího.
 ---
 
@@ -731,6 +731,71 @@ Tak mě dneska napadlo: Když je práce na částečný úvazek, pro přehlednos
 
 --- https://discord.com/channels/769966886598737931/1031588279532933223/1080435541738258434
 2023 update, rekl bych ze  junior, ktery umi kodit, si muze momentalne rict neco mezi 40 a 50k hrubeho, smaozrejme zalezi na lokalite a firme 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/1087647522157232139/1087667419880894545
+Tohle už možná píšu zbytečně (nepředpokládám, že bys vždycky čekala na odpověď, a až pak psala do jiné firmy), ale podle mě lepší zmínit než nezmínit 🙂 Dokud není práce tak kontaktovat a kontaktovat (další firmy) bez ohledu na to jestli někdo odpovídá, nebo ne. Samozřejmě, bavíme se jen o relevantní pracovních nabídkách. Když nevidím relevantní pracovní nabídky tak hledám, hledám, a pak kontaktuju 😀 Ideální je mít nějaký cíl, např. odpovím na X pracovních nabídek týdně dokud nebudu mít domluvenou práci. To "čekání" na odpovědi se pak stane naprosto irelevantní, jen třeba si poznamenat, kam už jsem psal/a a jestli někdo z firmy odpověděl atd.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1087647522157232139/1087652565954592828
+To může být různé. Pro sebe jsem si určil limit dva týdny a jeden až dva týdny mi přijde jako "normální" doba. Když mi do dvou týdnů nikdo neodpověděl, tak jsem kontaktoval přímo jejich HR/osobu uvedenou u pracovního inzerátu. Když ani to nepomohlo, tak jsem si u firmy udělal značku, že nereagují, a že už tu firmu nebudu řešit. Mimochodem, s takovým cejchem u mě skončily jenom dvě firmy z necelých třiceti. Vedl jsem si přehled všech firem, kam jsem napsal, a případně i jak probíhal následný proces - jen pro vysvětlení 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/1083418245266165880/1084778814246244393
+Pokud jako OSVČ ajťák uzavíráš smlouvu s odběratelem, limitace náhrady újmy je obecně na dohodě smluvních stran.
+
+Zákon v tomhle dává jen následující mantinely, kdy nelze omezit újmu:
+- způsobenou úmyslně nebo z hrubé nedbalosti;
+- na přirozených právech člověka (ochrana osobnosti, důstojnosti, života, zdraví...);
+- způsobenou smluvní straně (tzn. typicky pokud by odběratel byl v pozici spotřebitele, což v praxi asi tolik nebývá).
+
+V ostatních případech jde skutečně jen o to, na čem se smluvní strany dohodnou. Obvykle se nastavuje nějaká horní hranice, ať už fixní částkou, nebo třeba procentem z ceny.
+
+např. *„Dodavatel odpovídá za škodu, která vznikne objednateli v souvislosti s plněním podle této smlouvy maximálně do výše XXXXX Kč.“*
+
+Lze to pak různě modifikovat, např. stanovit různé limity pro různé situace, když třeba předem upozorníš, že škoda může vzniknout atd.
+
+Co se týče ručení celým majetkem, teoreticky se ještě jako alternativa nabízí založení s.r.o., ale jasně, že prakticky to není úplně ideální řešení. 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/1071014984819167283/1071112669672788018
+Nepytas sa uplne na to, ale prihodim ako to funguje u nas. Najprv ma s uchadzacom call HR a potom automaticky dostane task alebo sa medzi HR call a task dostane kratky uvodny meeting s mojim manazerom a nasledne potom sa cloveku posle task na vypracovanie. Na tom meetingu vobec neviem co riesia, ci sa pozeraju na nejake ukazky prace, ja som bola pritomna iba na tych dalsich viac technickych kolach.
+
+Ten nas task ma vacsinou 3 casti - prva je manualna a cielom je vytvorit testovacie scenaria na nejaku feature na nasej stranke. Byvaju tam rozne obmeny ako maju tie scenaria vyzerat, aku maju mat formu atd. Druha je hladanie bugov na stagingu, ktory vytvorili developeri - naposledy som pripravila list s cca 20 bugmi (vizualne, funkcionalne, niektore boli iba pre mobile) a developer upravil kod, aby tam tie bugy boli. Casto tie bugy ludia ani nenajdu, ale naopak najdu realne bugy, ktore mame na stranke. To je vzdy plus. Tretia cast je automatizacia, kde casto byva ulohou zautomatizovat scenaria z prvej ulohy, ale niekedy je to separatne. V podstate tento task musi urobit kazdy a nepozerame sa na to, ci ma nieco ine na ukazku. Ale na druhu stranu, iba raz sa stalo, ze ten clovek nieco mal - bol to clovek, ktory vedel aj programovat a mal nejaku svoju stranku, na ktoru napisal testy.
+
+Aby som ti teda odpovedala, myslim ze ide mat nieco ako tester na ukazku. Ovplyvnena tym nasim taskom - asi by som zacala tym, ze by som si vybrala nejaku stranku, ktora je vseobecne znama, aby to bolo jednoduchsie pre vsetkych, vybrala by som si tam nejaku feature a k tomu by som napisala nejake testovacie scenaria, ako by som tu feature otestovala manualne. A potom by som k tomu napisala nejake testy, asi podla tych scenarii.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1066992347725971516/1067089251595984947
+Nabídky s požadavkem na 1-2 roky praxe bych nepřeskakoval, ale zkusil začít motivační dopis takhle:
+
+> Vím, že požadujete 1-2 roky praxe a já narovinu píšu, že je nemám. Vytvořila jsem ale sama dva větší projekty (odkazy v přiloženém CV), které si můžete prohlédnout a sami usoudit, kolik práce by pro vás bylo doučit mě věci, které potřebujete.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1054800634345422868/1054805319026491392
+**G)** Ještě bych dodal **srovnání priorit**. Ideálně mít připravenou optimální a minimální mzdu, za kterou jsem ochoten pracovat, jak moc jsem flexibilní, jestli zvládnu pracovat převážně z HO apod. U dojíždění je například nejlepší si vážně zkusit jet do kanclu v době, kdy bych tam jezdil, a způsobem, jakým bych se tam dopravoval. Pro někoho může hrát velkou roli styl spolupráce, složení týmu a tak. Já se třeba v jednom procesu zaměřoval furt na technickou stránku věci, ale unikaly mi pak některý detaily.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1049592405378224148/1049592407274029076
+👗 Napadlo mě toto téma, protože vlastně nikdy moc nevím, jestli se mám na offline pohovory nějak strojit (na online snad stačí, že nejsem nahoře v pyžamu a jsem nějak učesaná), abych udělala dobrý dojem. Sama to mám tak, že šaty skoro nenosím a spíš tíhnu k tričku, kalhotám a teniskám. Formálněji se obléct mi přijde nepohodlné, zvlášť když musím být v tom oblečení celý den. Je potřeba tohle nějak u IT pohovorů řešit? Zatím neřeším nic. Ale v některých korporátech mají dress code a s tím nejsem obeznámená absolutně vůbec.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1006604070972305580/1006622957013053570
+Fakt to nevidím jako selhání na tvý straně, přijde mi to naopak jako úspěch, že si tím neztratila víc času.
+U juniorů jsou ukončení ve zkušebce o hodně běžnější protože je to častěji průzkum bojem.
+---
+
+
+--- https://discord.com/channels/769966886598737931/967847510234234972/967899831420981329
+*"Nejsem čokoláda, nemůžu se zavděčit každému."* (citát)
 ---
 
 

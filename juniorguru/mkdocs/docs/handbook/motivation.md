@@ -616,10 +616,52 @@ Na to jsou dokonce data: https://whoisnnamdi.com/never-enough-developers/ zajím
 
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1082587990104215613
-Jak je IT úžasný víme všichni. 
+Jak je IT úžasný víme všichni.
 Namátkou: topíme se v penězích, pracujeme z pláže v Karibiku / vrcholku Everestu / sklepa na samotě u lesa, měníme svět, pořád se máme co nového učit, umíme opravit libovolnou tiskárnu atd.
 
 Co jsou ale podle vás nevýhody tohoto oboru?
+---
+
+
+--- https://discord.com/channels/769966886598737931/1080041944236953623/1080549618271666257
+Titul není v IT příliš podstatný, ale to co ti škola umožní už podstatné být může.
+Všimni si, že píšu **umožní**, ne naučí.
+
+Na VŠ platí mnohem více to než na střední (o základce nemluvě), že to není jen místo, kde do tebe nalejou znalosti, pak prověří, jestli jich v tobě dost utkvělo a „musíš“ to dokončit. Samozřejmě někdo to tak vnímá a chová se tak.
+
+Teď už „nemusíš“, ale můžeš **chtít** nebo si uvědomit, že tam **potřebuješ** chodit k dosažení cíle, který **chceš**.
+
+Ta škola kromě toho, že tě vede nějakými předměty a vyžaduje po tobě nějakou aktivitu, tak je hlavně prostředí, které tě může přivést ke všemu možnému, dát ti možnost si to vyzkoušet, ukázat ti možnosti.
+
+Často je důležitější, co se naučíš sám, protože budeš se spolužákama dělat nějakej projekt mimo školu.
+A to, že nebudeš tlačenej v praxi hned vše aplikovat tak, aby to něco vydělalo.
+
+Budeš mít čas a podmínky si hrát a **učit se**.
+Toho samozřejmě budeš mít víc, pokud tě během studia budou živit rodiče.
+
+Pro někoho může být prostředí VŠ silně demotivační, akademická sféra umí být všelijaká.
+Některé předměty můžou být skoro k ničemu, jiné zase těžké a otravné a sám by ses k nim nedokopal, ale dají ti nějaké základy, které využiješ.
+
+Ty si z toho vem co potřebuješ, studium se dá i všelijak rozkládat, dělat u toho práci atd. není to jako střední, kde propadnout nebo nedat maturitu je průšvih. Dá se odejít po roce, dvou i před těma státnicema jak psala <@773601329095376906>. Ber to tak, že tvůj mozek bude časem jen pomalejší, takže jestli chceš bejt dobrej, tak teď je nejlepší šance se pustit do těch těžších věcí z IT.
+
+A přestože je v IT spousta práce i pro lidi, kteří toho zas tolik neumí, tak jsou tam i hodně těžký problémy, který bez tý VŠ (nebo ekvivalentní znalosti) budou dělat jen těžko.
+
+_Kéž bych tohle svému mladšímu já mohl před 25 lety předat…a ještě i to, že je jedno, jak se mi nepravděpodobné zdá, že se někam dostanu, ať to zkusím. Přinejhorším je tu další rok a ten rok můžu strávit prací a přípravou na studium / zkoušky._
+---
+
+
+--- https://discord.com/channels/769966886598737931/1062640883834572850/1062655520508489748
+
+---
+
+
+--- https://discord.com/channels/769966886598737931/1062640883834572850/1062655475004473344
+
+---
+
+
+--- https://discord.com/channels/769966886598737931/1062640883834572850/1062655377163964436
+
 ---
 
 

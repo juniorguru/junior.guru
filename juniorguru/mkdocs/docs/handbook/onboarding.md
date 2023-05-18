@@ -413,4 +413,70 @@ za dva týdny mě čeká 1:1 s šéfem, nevím co přesně od takové schuzky č
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1064890746886443098/1065999376041906287
+Já souhlasím s body výše. Ještě bych k tomu přidala, že se jako switcher cítím podobně - mám pořád pocit, že se chci učit víc.
+Ale poslední dobou se zkouším zamyslet, jestli je to, že opravdu chci, nebo jestli jen mám pocit, že bych MĚLA. Protože měla bych (abych nezakrněla, abych se posouvala, abych ostatní dohnala, abych to někomu dokázala), je spíš externí faktor a naopak moji motivaci zabíjí.
+Já jsem si dala pár měsíců pauzu od učení dělala jsem "jenom" práci. A zbytek času jsem věnovala koníčkům a rodině.
+(tady dodám, že dělat "jenom" práci je naprosto v pořádku, pokud jsi v takové životní fázi, kdy to potřebuješ!)
+A světe div se, za pár týdnů jsem zjistila, že mě nová témata začínají zajímat víc a že se je najednou CHCI naučit. Motivace přichází sama a nemusím jí hledat a nutit se.
+Nevím, jestli to s někým rezonuje, ale třeba to pomůže.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1060493668840124456/1060509251136667648
+Ahoj všichni, tady Honza. Řekl jsem si, že se taky podělím o svůj kariérní update. Omlouvám se předem, jestli jsem thread založil na špatném místě, ale kanál, co by odpovídal blíž, jsem nenašel 🙂
+
+Přicházím si o radu/reality check/možná trošku doplnění motivace. Velmi ve zkratce o mně:
+
+Je mi 28, vždycky mě strašně bavilo učení a objevování nových věcí. Jak jsem psal už v představovacím kanálu, kdybych měl neomezeně času, strávím ho učením. Klasický nerd 😄 Studoval jsem v zahraničí na celkem náročných školách a donedávna jsem dělal v úplně jiném oboru. To zmiňuji hlavně proto, abych ukázal, že fakt mám většinou dost silnou vůli zabrat a něco se naučit, i když to třeba bolí. Řekl bych, že jsem rozhodně nepatřil k nejchytřejším na té škole, ale silou vůle jsem často byl úspěšnější než objektivně inteligentnější lidi... Znova - fakt se nechci vytahovat, jen je to důležité pro kontext toho, kde se teď nacházím, bear with me 😄
+
+V listopadu se mi podařil switch a nastoupil jsem do velké firmy jako juniorní full stack vývojář. Což je super a jsem fakt rád za tu příležitost, navíc ve chvíli, kdy jsem objektivně nepodal žádný hvězdný výkon na pohovoru a opravdu z něj odcházel s pocitem, že to přeci nemůže nikdy vyjít 😄 Ale vyšlo a já jsem fakt rád.
+
+Jenže přesně tady začínají ty problémy/moje nejistota. Firma, do které jsem nastoupil, je velký korporát. V celém výběrku jsem byl maximálně transparentní - oni věděli, že jsem junior samouk, věděli, že jsem se naučil JavaScript a základy Reactu. A i s tím mi nabídli pozici psanou půl na půl React + Java, s tím, že jsou připraveni na to, že Javu ještě vůbec neumím a že se ji prostě časem doučím. A že v mezičase budu dělat projekty v Reactu. To znělo jako super nabídka, protože vždycky rád ocením učení se novým věcem...
+---
+
+
+--- https://discord.com/channels/769966886598737931/999588223774896161/999962404031057971
+ale souhlasím s tebou, feedback je důležitý, zvlášť na začátku, když si člověk ještě nění jistý, jestli něco dělá dobře či ne. musela jsem se naučit, že pokud si nikdo nestěžuje, tak to asi dělám dobře. což je náročné, pokud člověk má insecurities a nikdy neví, jestli odbavuje tickety dostatečně rychle. až si budu vybírat další tým/práci, rozhodně půjdu do týmu/firmy, která má větší kulturu dávání zpětné vazby. ale na druhou stranu říkám, že to není vždy nutné, některé firmy nepotřebují tolik růst a lidem taky v určité fázi v životě tolik nejde o růst. nebo jsou taky lidi, který to řeší sami/nechtějí nějaký strukturovaný přístup/vůbec nechtějí řešit, stačí, že od 9 do 5 něco dělají a za to dostávají peníze.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1001150078960025712/1001211915256746094
+A ze vzhladom na demograficky krivku a vyvoj trhu prace bude coraz menej ludi, ktori si budu moct luxus 5 rocnej pripravy na IT dovolit
+---
+
+
+--- https://discord.com/channels/769966886598737931/1001150078960025712/1001211672461070386
+Zopakujem hlavnu myslienku, pretoze ta nie je o tom, kto ma robit bootcampy, ale o tom, ze ludia na VS a s VS maju prestat byt povysenecki a vnimat tych, co tu VS nemaju a neboli na nej ani 1-2 roky ako menejcennych ajtakov a ich sposob pripravy ludi na IT ako jediny spravny.
+---
+
+
+--- https://discord.com/channels/769966886598737931/978944292330569759/979023812878274610
+Inak som sa ich pytala a vela krat ich vraj vydesi to mnozstvo existujuceho kodu…aj ked maju sahat do mini casti, ich to stresuje kolko tam toho je a vsade vela kodu, kt nerozumeju , ze si prestanu verit ze to dokazu a vzdaju to skor ako ten kod dopisu, aspon to mi povedalo par juniorov
+---
+
+
+--- https://discord.com/channels/769966886598737931/964110741240164362/964113927560630283
+Muzu ti dat svoji omeznou zkusenost toho "seniorniho" cloveka - brali jsme lidi nekde na urovni "bakalar z IT" a jednoho "nemam skolu, ale programuju si sam". V obou typech "juniora" to probihalo uplne stejne (tj tak jak me by se libilo):
+ - na za catku mas onboarding - tedy dozvis se co ten tym dela za produkty/projekty a k cemu jsou dobry ve vetsim detailu nez pri pohovoru
+ - mentor ti navrhne jeden/dva (pokud tym dela na vic vecech) projektu, kde vidi nejaky easy-fixes  - u nas to muzou byt typicky veci jako "moc se nam nelibi, jak se vypisuji logy, ale nikoho to nepali tak moc, aby to resil" nebo "mame velice dobre popsanou nejakou featuru, ale je pro nas low-priority". Cokoli kde je jasny (nebo se da dobre konkretizovat) zadani, ma to prinos, ale kdyz to nebude, tak se nic nedeje
+ - sednes si k pocitaci a zacnes kodit 😄
+ - mentor se za tebou casto (nechci rikat ze "kazdou hodinu" nebo tak, ale casto) zastavi, zepta se na cem delas, jestli ses na necem nezasekla, co ti prislo (v kodu kterej si zatim videla) nesrozumitelny, zkontroluje ze porad konceptualne rozumis zadani...
+ - pravdepodobne se zaseknes. V idealnim pripade se zeptas, v typickym pripade si mentor/nekdo jinej vsimne ze do toho koukas jak tele na novy vrata, a jde za tebou.
+ - vysvetlis mu "tady jsem se zasekla", a ten clovek s tebou zacne probirat o co jde. Vetsinou zacne na nejvyssi urovni nejakych konceptu, a jde az tak nizko jak je potreba.
+ - na konci bud vis jak dal, a programujes si sama, nebo s tebou zustane a date si nejaky parovy programovani, nebo tak.
+ - celou dobu si ten mentor dost hlida, aby s tebou prubezne komunikoval, podporuje te v ptani se na veci, predava svoje znalosti a zkusenosti relevantni pro tvuj kontext
+ - jednou za cas muzes dostat "homework" - v mym pripade to typicky byval seznam dobrych clanku a nejakych uloh na procviceni veci, kde jsem u tech lidi citil nejvetsi nedostatek, a na tom pak delali par dalsich hodin/dni behem pracovni doby
+---
+
+
+--- https://discord.com/channels/769966886598737931/931605794040975430/931610600239423488
+- líbilo se mi , když mi dokázal vysvětlit mou otázku krok za krokem a zpětně se ujišťoval, že mu rozumím (když jsem váhala, dával další a další příklady k vysvětlení a procvičení)
+
+- naučil mě myslet nad problémem, tj. jak si ho rozložit, jak a kde hledat řešení
+
+- byl lidský, tzn. ujistil mě, že i senioři neví a jsou mnohdy ztracení, že pátrají a stále se učí, že není špatně přiznat si, že mi něco nejde a nestydět se říct si o pomoc, že to děláme všichni
+---
+
+
 #} -->

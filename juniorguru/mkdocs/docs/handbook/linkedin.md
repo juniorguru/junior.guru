@@ -170,7 +170,7 @@ aj ja sa bojim, ale vravim si, ze to skusim a necham si tam len to čím prejdem
 
 
 --- https://discord.com/channels/769966886598737931/839059491432431616/1089162987979411567
-<:linkedin:915267970752712734> tip: zkraťte si URL vašeho profilu, hodí se to hlavně v CV 
+<:linkedin:915267970752712734> tip: zkraťte si URL vašeho profilu, hodí se to hlavně v CV
  https://www.linkedin.com/help/linkedin/answer/a542685/manage-your-public-profile-url?lang=en
 ---
 
@@ -202,6 +202,41 @@ Tyhle obavy jsem v minulosti taky měla. Nedávala bych si v tomto případě "O
 
 --- https://discord.com/channels/769966886598737931/839059491432431616/1054821889001926778
 Open to work by nemeli videt lidi kteri s tebou pracuji ve stejne spolecnosti na LinkedIn. Takze i to je pomerne bezpecne.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1082249171278512151/1083787557592121364
+tip (dávám to tady každýmu, nechce <@668226181769986078> už dopsat ten návod? <:lolpain:859017227515854879>  já vím, chce, ale nestíhá)
+na svým profilu vpravo nahoře je možnost si customizovat tu URL (tedy ten slug na konci)
+/marcel-mravec a dokonce /mravec je volný!
+---
+
+
+--- https://discord.com/channels/769966886598737931/991253586312953976/991387575413653635
+Mně tam chybí třeba tvoje jméno.
+
+Ten dark mode taky působí zvláštně, předpokládám, že to využije někdo, kdo nemá rád příliš velký jas nebo se mu to blbě čte na světlém a takhle ten problém vlastně vůbec neřešíš, protože tam zůstávají dvě obří bílé pruhy. Za mě bych to teda buď neřešila, nebo to dotáhla.
+
+Zkusila bych být také víc specifická ohledně tvých dosažených "produktů" v práci.
+`Work on application for logistics. Drag and drop, infinite scroll, breadcrumb navigation, pagination etc.`
+by mohlo byt
+`Worked on [...technologie...] applications for logistics. Developed drag & drop feature for [...] using [...] to facilitate user interaction with the system, implemented infinite scroll with lazy loading and pagination for [...]` atp.
+Něco na ten styl.  Co jsi dělala, co jsi k tomu používala, čeho jsi tím dosáhla.  Hodně se mi tenhle model osvědčil 🙂
+Obzvlášť, pokud ten kód/projekt není nikde veřejně.
+---
+
+
+--- https://discord.com/channels/769966886598737931/983615979881906197/983618508460011580
+Klidně začni tím, že si připravíš CV, GitHub a LinkedIn profil.
+K CV tady https://junior.guru/handbook/cv/
+
+<:linkedin:915267970752712734> uděláš podle toho CV
+
+Na <:github:842685206095724554> si prosím dej nějakou profilovku, nemusí být tvoje fotka, ale ten default maj jen lidi, co to moc nepoužívaj, špatnej signál.
+Schovej projekty, které jsou k ničemu, jako piškvorky.
+K ostatním projektům doplň informace přímo na GitHubu i do README.md a někam je nasaď, statické jdou přímo na GitHubu.
+Mrkni třeba na https://github.com/hankaEsha jak to má udělané.
+4 vypíchlé projekty, popsané, nasazené.
 ---
 
 

@@ -65,4 +65,23 @@ Určitě je to firma od firmy, ale na otázku, jestli máš šanci sehnat IT pr�
 
 
 
+--- https://discord.com/channels/769966886598737931/1052331159088017489/1053232282900639774
+A ten rozpor, mezi tím, co chtějí firmy a co chtějí lidi je asi vidět i v tomto.
+https://twitter.com/brianbrackeen/status/1602301360698974208
+(ano není to specificky o **juniorech**, ale potřeby toho člověka se nemění podle toho, jestli začíná nebo ne)
+---
+
+
+--- https://discord.com/channels/769966886598737931/1052331159088017489/1052543776406638724
+to je skvely mindset! Ale ne kazdy junior ho ma a tam prichazi pro me ten kamen urazu. Mam zkusenosti kdy si lidi nedelali poznamky a na nabidku nahravani se koukali divne nebo nemaji sebevedomi na to se ptat a nejsem schopni vyhodnotit kdy jeste googlit sam a kdy se zeptat.  A dost tezko se to zjisti behem pohovoru, jak ta komunikace pujde. Vetsinou se proto snazime mit neco jako "den s nami na zkousku" pro juniory abychom zjistili jestli to nebude prilis mnoho prace z nasi strany nez si muzeme dovolit.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1052331159088017489/1052341254056312862
+Jo však jasně že to jde, to co mi vedení říkalo bylo že to s juniory akorát zabere o dost víc času. Že na full remote jsou lepší lidi už s nějakými návyky.
+
+Jako jo, je to o tom co chceš a co si může firma dovolit, jen jak se tu řešilo jestli to opravdu je tak rozdílné tak jsem jen podal názor dalších lidí že ano, dle nich je.
+---
+
+
 #} -->

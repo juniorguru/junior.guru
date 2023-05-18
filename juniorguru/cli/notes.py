@@ -4,6 +4,7 @@ from pathlib import Path
 from time import perf_counter_ns
 
 import click
+import discord
 
 from juniorguru.lib import discord_sync, loggers, mutations
 from juniorguru.lib.discord_club import (ClubMemberID, emoji_name,
@@ -62,17 +63,19 @@ async def process_pins(client):
     logger.info(f'Done processing {count} messages, collected notes for {len(notes_mapping)} pages')
 
     for path, messages in notes_mapping.items():
+        text = path.read_text()
         logger.info(f'Adding {len(messages)} notes to {path}')
         notes = []
         for message in messages:
             pinned_message_details = parse_message_url(get_pinned_message_url(message))
-            channel = client.club_guild.get_channel_or_thread(pinned_message_details['channel_id'])
-            if channel:
+            try:
+                channel = await client.club_guild.fetch_channel(pinned_message_details['channel_id'])
+            except discord.errors.NotFound:
+                logger.warning(f"Channel #{pinned_message_details['channel_id']} not found, {message.jump_url}")
+            else:
                 pinned_message = await channel.fetch_message(pinned_message_details['message_id'])
                 note = f'--- {pinned_message.jump_url}\n{pinned_message.content}\n---\n'
                 notes.append(note)
-            else:
-                logger.warning(f"Channel #{pinned_message_details['channel_id']} not found")
         notes_text = '\n\n' + '\n\n'.join(notes) + NOTES_END
-        path.write_text(path.read_text().replace(NOTES_END, notes_text))
+        path.write_text(text.replace(NOTES_END, notes_text))
         await asyncio.gather(*[message.add_reaction(EMOJI_PROCESSED) for message in messages])
