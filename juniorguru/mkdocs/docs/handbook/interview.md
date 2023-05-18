@@ -354,4 +354,11 @@ https://trello.com/c/ZtFMpfHB/2850-t%C3%A9ma-testy-jazyka-na-pohovoru
 Udělej si tabulku s pohovory
 https://trello.com/c/GlUNbcnU/3829-ud%C4%9Blej-si-tabulku-s-pohovory
 
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1102928944392577134
+Drobky ze Scrimba Discordu 💡
+Jedna dívka z 🇬🇧 sdílela své postřehy, zkušenosti a strategie z příjímacích pohovorů. Mě osobně nejvíce zaujala pasáž o tom, že je dobré si zjistit něco jak o firmě samotné, tak i o technologiích, které firmy inzerují. Zabere to pár desítek minut, ale na pohovorujícího to může udělat dojem. 🙂
+---
+
+
 #} -->

@@ -652,4 +652,13 @@ Já právě v tom roce 2017, jeden den dělali jednoduchou HTML stránku (index.
 „Nevím kde to je“. Protože při vytváření vůbec nemyslela na lokaci, prostě se to udělá a je to. A pak to dala do spotlightu… index.html je na MacOS zjevně dostkrát…
 https://www.theverge.com/22684730/students-file-folder-directory-structure-education-gen-z
 
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1106993630209638500
+ahoj, mam dotaz, nevim jestli bych to měl psát do poradny, ale já se v těch kategoriích tak nevyznám :
+
+MATEMATIKA pro Developery?
+Takže, jsem spokojeně zaměstnanej rok mám víc peněz a nějak stíhám (takže pohoda) a uvažuju o tom že bych ve volném čase kouknul po nějaké matematice pro programátory. Hlavní důvod že mě na základce matematika dost bavila. Studoval jsem sice gympl, ale tenkrát jsem nějak nestíhal chodit do školy 😄 😄  tak ze středoškolský matematiky už skoro nic nevím a co jsem věděl, jsem zapomněl po testu. Každopádně, nic mě do toho nenutí, hrozně rád bych se tím ve volným čase prokousával a vytvořil si alespoň nějaké základy. Jednou začas si k tomu sednu a prokousávám se Khan academy. Přesto budu moc rád za jakékoliv tipy na "základy" plus pokročilé - např. jaké kurzy jsou fakt dobré a tak podobně. Je to takovej geekovskej "kink" se naučit nějakou matematiku, nevím jak moc mě to chytne a nedělám si iluze o tom jak náročnej je to obor. Ale když už se na to podívám, mohl bych to spojit s nějakou matikou užitečnou pro developery :))
+---
+
+
 #} -->

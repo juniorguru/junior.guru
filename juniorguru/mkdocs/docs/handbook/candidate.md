@@ -925,4 +925,63 @@ https://discord.com/channels/769966886598737931/788826407412170752/8604492451313
 part-time rozebrat, odkazy uvnitř
 vše před a po https://discord.com/channels/769966886598737931/788826407412170752/935797332501491772
 
+
+--- https://discord.com/channels/769966886598737931/1106936398893826058/1107086623709081710
+Ode dneška je 6 měsíců (nebo 31 týdnů) do Vánoc, respektive týdne před nimi, kdy už ve většině firem nikdo nebude žádné přijímání řešit.
+
+Na současném trhu (ještě před rokem to bylo jiné, snazší) říkám, že na hledání práce s určitou úrovní znalostí je potřeba 8–12 týdnů. Někdo má kliku a stačí mu méně a na druhé straně nedává ani těch 12 týdnů úplnou jistotu.
+I během hledání se dál učíš a zvyšuješ si kvalifikaci a tedy i pravděpodobnost, že se to povede.
+Samotné hledání ale zabere taky nějaký čas, takže už učení není v takovém tempu.
+
+Řekněme, že by se to povedlo za 11 týdnů, takže ti zbyde 20 týdnů na to, aby ses co nejlépe připravil, než s hledáním vůbec začneš.
+To je čas, který může stačit, ale má to několik podmínek:
+
+— Chce to mít v podstatě fulltime čas a trávit tím řekněme 18–22 hodin čistého času týdně.
+Ono to reálně ani o moc víc nejde, protože to není rutina, ale dělání a učení se stále nových věcí a to je záhul.
+Nejde to tedy dělat spolu s prací.
+
+— Zvládnout psané návody a zdroje v angličtině. Bez ní se v IT funguje jen velmi těžko. Není potřeba mluvit, psát vysloveně bez chyb apod. většinu toho stejně ani nepíšou rodilí mluvčí. Ale přečíst si nějaký text a vědět o čem je, třeba: _By default, browsers separate paragraphs with a single blank line. Alternate separation methods, such as first-line indentation, can be achieved with CSS._ je skoro nutnost. Měl jsem klientku, která si hodně pomáhala automatickým překladačem a nějak to zvládla ale ideálně bys na angličtině měl zároveň pracovat, aby sis ji zlepšil. Za půl roku můžeš mít viditelné pokroky a rozhodně se ti to neztratí.
+A to, že je alespoň nějaká angličtina v podstatě nutnost vědí i ve firmách. Takže když tam pošleš CV s tím, že umíš velmi málo, tak už si tím snižuješ šance i kdyby ta firma byla plná lidí, kteří mluví česky. Protože i v takové firmě je většinou zvykem psát třeba komentáře a další texty okolo kódu v angličtině.
+
+— Dělat to efektivně: nevěnovat se věcem, které jsou zbytečné a učit se jen to nejnutnější (můžu ti dát detailní seznam, většinou anglicky…)
+
+— Mít se kde zeptat a kde dostat zpětnou vazbu na to, co uděláš (to je třeba i tady klub)
+
+Je taky třeba počítat s tím, že další roky se budeš muset pořád učit, to, co se jde naučit za 6 měsíců je zlomek toho, co budeš muset umět za 3 roky…
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1105793725608767528
+Ještě sem si vzpomněl na tenhle pohled, proč může být dobré zrychlit, proč dřív hledat práci od <@797840210272190514>:
+> Práce, kterou jste doteď dělali jako koníčka po večerech najednou děláte přes den a máte za ni zaplaceno. Učíte se 3x rychleji -> nové informace nasáváte jak podvědomě (protože se to na vás valí ze všech stran a chtě nechtě jste součástí), tak vědomě a cíleně (protože máte silnější potřebu a motivaci se učit, už jen pro to, abyste si tu práci udrželi).
+zdroj https://discord.com/channels/769966886598737931/788826407412170752/972951035226247258
+_(nepíšu to abych někoho přesvědčil, pro spoustu lidí je pomalejší cesta to pravé, jen jeden pohled navíc)_
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1105211320820838500
+Ja osobne v prubehu me cesty k prvni praci presel od intenzivniho stylu uceni full time k pomalejsimu stylu. Rozvedu:
+
+V prubehu sabbaticalu jsem zkousel ruzne cesty , kam se v kariere vydat a postupne vykrystalizoval ten hlavni cil, stat se back-end developerem. Mel jsem budget a plan , ze si udelam vlastni coding-camp a do pul roku se naucim , co bude potreba. V tu chvili je asi nejlepsi mit osnovu od nejake treti strany( napr. to co dela CoreSkill).  Ja jel na vlastni pest, coz s sebou neslo uskali, se kterymi jsem nepocital. Sice jsem si urcil nejakou osnovu podle ktere bych chtel jet, jenze jako amater, ktery nebyl v primem kontaktu s nejakym mentorem me potkavali dva hlavni problemy. Kdyz jsem objevil nejaky koncept, napriklad SQL, tak jsem chtel zjisti vic, dalsi video,clanek  idealne kurz a zabredaval jsem hloubeji a hloubeji . Takove rekruze v uceni a nekdy mi trvalo dlouho nez jsem se vratil do te nulte vrsty ,kde je ta osnova. A druhy problem: Protoze, jsem se ucil vse od nuly, tak jsem nedokazal odhadnout, co je for beginners a co ne. Takze jsem v uvodu zabil nejaky cas dekoratory apod, ktere me spis odrazovali od toho ucit se dal. A zjistil jsem ,ze casovej tlak, nauc se to do nejake doby mi brani v dulezitejsi veci, t.j pochop a vyzkousej si. A dalsi aspekt byl, ze pokud jsem byl nucenej se neco naucit a neslo mi to , ztracel jsem chut a mel jsem strach si si programovani znechutim. Protoze jsem byl presvedcenej, ze to je ta spravna cestu(stat se vyvojarem). Nechtel jsem vyhoret hned v procesu uceni, jeste nez si najdu prvni praci v IT.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1102522930686079047
+Nejednou jsme tady slyšeli od různých lidí varianty vlastně téhož příběhu, je to nějak takhle:
+
+1️⃣ Bavil jsem se v nějaké firmě a říkali, že sice s jazykem X, který se učím, nikoho nepotřebujou, ale kdybych se naučil jazyk/technologii Y, tak s tím lidi hledají.
+2️⃣ Přestože jsem už v X ledascos uměl, vrhnul jsem na Y, protože byla přece šance, že mě někde vezmou!!!
+3️⃣ Přišel jsem do firmy s tím, že umím už dost z Y a dozvěděl jsem se, že pro mě práci nemají.
+
+Proč to podle mě nemá moc šance vyjít?
+– z pohledu té firmy nejde o žádný závazek, prostě to tak plácnou, že by si někdo takový hodil
+– leckdy to ani neříká někdo, kdo ve firmě o najímání rozhoduje, ale nějaký tvůj známý, který tam pracuje jako programátor
+– nikdo neví, co bude za několik měsíců, které ti bude trvat se to naučit, jestli budou zrovna toužit po juniorovi
+– i kdyby to věděli, tak neví předem, kam se za tu dobu dostaneš, jestli to bude stačit
+– pokud to bylo na pohovoru, tak třeba už vědí, že lidsky a z dalších hledisek by to s tebou bylo ok a jde jen o tu odbornost, ale leckdy je to neformální pokec, takže to klidně může selhat na mnoha dalších faktorech, stejně jako všechny další juniorní přijímací řízení, kde je běžná větší nejistota a tedy i větší množství odmítnutí, takže sázet vše na jednoho koně je dost riskantní.
+
+Je možné, že to někomu to vyšlo, tak se prosím podělte, zatím jsem ale takovou verzi neslyšel.
+---
+
+
 #} -->

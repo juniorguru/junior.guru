@@ -467,4 +467,36 @@ https://www.facebook.com/groups/144621756262987/permalink/813286826063140/?comme
 Kontext pro php
 https://discord.com/channels/769966886598737931/769966887055392768/878403180290007080
 
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1107252558843613215
+Návrat k tématu pár dní dozadu, neříká sice nic, co tu nepadlo, ale je to anglicky a video, takže je to určitě pravda. 😅 https://youtube.com/shorts/wyVvOiVFKqo
+---
+
+
+--- https://discord.com/channels/769966886598737931/1105431262702874664/1106638164682092544
+Když to **hodně** zjednoduším, tak pokud ti udělá radost, že
+1️⃣ přibylo pěkné tlačítko a je správně velké v mobilu i v počítači => jdi dělat frontend
+2️⃣ přibyla funkčnost schovaná pod tím tlačítkem => jdi dělat backend
+3️⃣ nové tlačítko nezpůsobilo pád všech serverů => jdi dělat SRE
+4️⃣ to tlačítko vždy funguje => jdi dělat testera/QA
+5️⃣ to tlačítko dělá, co uživatelé potřebují a chápou to => jdi dělat UX
+6️⃣ to tlačítko přiměje lidi dělat něco, z čeho má firma peníze => jdi dělat product management
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1105793725608767528
+Ještě sem si vzpomněl na tenhle pohled, proč může být dobré zrychlit, proč dřív hledat práci od <@797840210272190514>:
+> Práce, kterou jste doteď dělali jako koníčka po večerech najednou děláte přes den a máte za ni zaplaceno. Učíte se 3x rychleji -> nové informace nasáváte jak podvědomě (protože se to na vás valí ze všech stran a chtě nechtě jste součástí), tak vědomě a cíleně (protože máte silnější potřebu a motivaci se učit, už jen pro to, abyste si tu práci udrželi).
+zdroj https://discord.com/channels/769966886598737931/788826407412170752/972951035226247258
+_(nepíšu to abych někoho přesvědčil, pro spoustu lidí je pomalejší cesta to pravé, jen jeden pohled navíc)_
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1105211320820838500
+Ja osobne v prubehu me cesty k prvni praci presel od intenzivniho stylu uceni full time k pomalejsimu stylu. Rozvedu:
+
+V prubehu sabbaticalu jsem zkousel ruzne cesty , kam se v kariere vydat a postupne vykrystalizoval ten hlavni cil, stat se back-end developerem. Mel jsem budget a plan , ze si udelam vlastni coding-camp a do pul roku se naucim , co bude potreba. V tu chvili je asi nejlepsi mit osnovu od nejake treti strany( napr. to co dela CoreSkill).  Ja jel na vlastni pest, coz s sebou neslo uskali, se kterymi jsem nepocital. Sice jsem si urcil nejakou osnovu podle ktere bych chtel jet, jenze jako amater, ktery nebyl v primem kontaktu s nejakym mentorem me potkavali dva hlavni problemy. Kdyz jsem objevil nejaky koncept, napriklad SQL, tak jsem chtel zjisti vic, dalsi video,clanek  idealne kurz a zabredaval jsem hloubeji a hloubeji . Takove rekruze v uceni a nekdy mi trvalo dlouho nez jsem se vratil do te nulte vrsty ,kde je ta osnova. A druhy problem: Protoze, jsem se ucil vse od nuly, tak jsem nedokazal odhadnout, co je for beginners a co ne. Takze jsem v uvodu zabil nejaky cas dekoratory apod, ktere me spis odrazovali od toho ucit se dal. A zjistil jsem ,ze casovej tlak, nauc se to do nejake doby mi brani v dulezitejsi veci, t.j pochop a vyzkousej si. A dalsi aspekt byl, ze pokud jsem byl nucenej se neco naucit a neslo mi to , ztracel jsem chut a mel jsem strach si si programovani znechutim. Protoze jsem byl presvedcenej, ze to je ta spravna cestu(stat se vyvojarem). Nechtel jsem vyhoret hned v procesu uceni, jeste nez si najdu prvni praci v IT.
+---
+
+
 #} -->

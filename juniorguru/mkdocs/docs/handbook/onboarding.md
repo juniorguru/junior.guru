@@ -300,4 +300,14 @@ https://discord.com/channels/769966886598737931/769966887055392768/8200050126965
 orientace ve velkem projektu
 https://twitter.com/ASpittel/status/1365376038931415040
 
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1108059243971612692
+Je to ruzne u ruznych firem. Typicky vetsi firmy budou casto mit oficialni proces jak to vypada, napriklad pololetni hodnoceni s managerem na kterem se vetsinou resi prave zvyseni platu, zmena titulu/pozice a/nebo bonusy. Dobre je se na tohle zeptat bud pri pohovoru, nebo pri nastupu a orientaci, jak probiha karierni rust.
+
+U mensich firem je to casto mene formalni a zalezi na konkretni domluve. Idealni je tohle si domluvit s managerem a pravidelne se k tomu vracet, nejen co se penez tyka, ale i co se tyka pozice atp.
+
+Doporucuju to nastavit jako "rada bych se dostala na pozici XYZ/plat 123/..., co mi pro to chybi?" - z toho pak vypadnou konkretni body na kterych muzes se svym managerem pracovat(naucit se X, byt vic Y, mene Z, ...) a cas od casu zhodnotit, zda uz si dosahla tech podminek. Je to idealizovany priklad, ktery ne vsude funguje, ale snad dava nejaky vhled do situace
+---
+
+
 #} -->

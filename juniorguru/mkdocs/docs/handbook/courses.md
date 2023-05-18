@@ -136,4 +136,33 @@ https://discord.com/channels/769966886598737931/769966887055392768/8452651539717
 co je bootcamp
 https://www.facebook.com/groups/1806114342948040/permalink/3581897008703089/?comment_id=3582808101945313&__cft__[0]=AZVLPF3myMElmSDbhPIfH2EZ_WoHV5ppoxFJuhlx90CTy5jEt8mXlPdgb37GZMRp13tfKjPTm9LoDfBuu9oWumBKTlHgU2-QdTKVuuGwHsCqwMuNvsFEAe_W8eDwWCDPsHg9v80aSIvrh9H0haubkwBohkixR4aQwzGnNl0Cbup9AzD_wdDoPFFdVGPz-he0xL0&__tn__=R]-R
 
+
+--- https://discord.com/channels/769966886598737931/1107639286486028321/1107697000478158848
+Ze zkušenosti z 8 měsíčního SDA:
+
+1. Nedělat kurz s tím, že když ho udělám, budu mít práci, ale s tím, že když ho udělám, začnu tvořit svoje projekty a nepřestanu se učit
+2. Reálně si určit časový možnosti (frekvence kurzu, délka, moje tendence k prokrastinaci, dojíždění pokud není online, děti, atp.) tak, abych nevyhořel a měl čas na vlastní procvičování mimo kurz, čtení si a zajímání se, rejpání, experimentování
+3. Nenechat se od kurzu demotivovat tím, že třeba jsem si vybral backend, ale teď mě láká frontend atp.
+4. Přidat se do nějaký komunity / chodit na workshopy, případně na to nebýt sám
+5. Nezačínat se učit programovat kurzem, ale nejdřív si to chvíli zkoušet
+6. Kurz není potřeba
+7. Programovat je potřeba
+8. Nenechat se rozladit množstvím technologií a případně tím, že já se učím tuto, ale u nějaký podobný alternativy všude čtu, že je populárnější
+9. Ptát se lektora, zejména, pokud mi něco není jasný a ne jen sedět, koukat, opisovat a pak si to hledat (na to stačí youtube a nepotřebuju drahý kurz a lektora)
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1107575340919947344
+Kdybych měl **tipnout** proč — tedy kromě nejpravděpodobnějšího zkreslení malým vzorkem — tak ty, které projdou DA se to už předtím léta vlastně učily, takže toho vlastně umí spoustu a teprve po DA se odhodlají tu práci hledat.
+U testingu čekám víc „nejsnazší začátek, není potřeba tolik umět“ a v kombinaci s tím, že narozdíl od „něco si naprogramuju“ asi nikdo doma neřekne „něco si otestuju“, takže veškerá znalost jde z kurzů, které si myslím nevybírají účastnice tolik podle stávajících IT znalostí, tak to tak může dopadat. Podle motivace snad vybírají, ale pokud je celý proces od 0 do zaměstnání moc rychlý, ani si nestačí uvědomit, co ta práce znamená.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1102026858268209192/1102981412170235966
+Jen dodám, že
+> nevim jak posoudit verohodnost a efektivitu daneho kurzu
+neví asi nikdo 😄 Ale základ je pochopit svou situaci, pochopit co každý z těch kurzů nabízí a minimálně si vybrat ten, který se pro tu mou situaci nejvíc hodí. Např. ITnetwork a GFA jsou typově kurzy úplně jiné, za úplně jiné peníze, s úplně jinou časovou náročností a stylem výuky a hodí se pro úplně jiné lidi. Jestli se upsat nějakému konkrétnímu kurzu je otázka až na druhém místě, protože nejdřív musíš vědět, z čeho vůbec vybíráš.
+---
+
+
 #} -->
