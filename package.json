@@ -4,7 +4,7 @@
     "node": "16.x"
   },
   "dependencies": {
-    "@fontsource/inter": "4.5.15",
+    "@fontsource/inter": "5.0.0",
     "bootstrap-icons": "1.10.5",
     "chart.js": "4.3.0",
     "chartjs-plugin-annotation": "3.0.1",
