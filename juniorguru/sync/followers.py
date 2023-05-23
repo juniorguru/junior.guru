@@ -11,8 +11,8 @@ from playwright.sync_api import sync_playwright
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.models.followers import Followers
 from juniorguru.models.base import db
+from juniorguru.models.followers import Followers
 
 
 logger = loggers.from_path(__file__)
