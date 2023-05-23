@@ -80,6 +80,8 @@ Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo d
 https://dariagrudzien.com/posts/the-one-about-your-github-account/
 https://dev.to/yuridevat/how-to-create-a-stunning-github-profile-2mh5
 
+https://www.reddit.com/r/cscareerquestions/comments/13otqke/why_ask_for_github_profile_url/
+
 Těm projektům na Githubu chybí třeba popis, co to vlastně je, jak to funguje, a odkaz na nasazenou verzi, ale asi na tom ještě pracuješ. Bude se to hodit, až/pokud se těmito projekty a svým Github profilem budeš prezentovat při hledání práce.
 
 gitleaks projdou kod a oznami vsechno co vypada jako token atd.
