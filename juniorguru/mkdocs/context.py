@@ -16,6 +16,7 @@ from juniorguru.models.club import ClubMessage, ClubSubscribedPeriod, ClubUser
 from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.exchange_rate import ExchangeRate
+from juniorguru.models.followers import Followers
 from juniorguru.models.job import ListedJob
 from juniorguru.models.page import Page
 from juniorguru.models.partner import Partner, Partnership
@@ -149,6 +150,9 @@ def on_docs_context(context):
     context['charts_handbook_size'] = [page.size for page in Page.handbook_listing()]
     context['charts_handbook_notes_size'] = [page.notes_size for page in Page.handbook_listing()]
     context['pages_handbook'] = Page.handbook_listing()
+    followers_charts_months = charts.months(*Followers.months_range())
+    context['charts_followers_labels'] = charts.labels(followers_charts_months)
+    context['charts_followers_breakdown'] = charts.per_month_breakdown(Followers.breakdown, followers_charts_months)
 
     # open/*
     context['benefits_evaluators'] = BENEFITS_EVALUATORS

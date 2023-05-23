@@ -673,6 +673,41 @@ Chtěl bych, aby v průměru polovina přednášejících na online akcích v kl
         'plugins': {'annotation': charts_club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
+## Marketing
+
+Vývoj počtu sledujících na profilech na relevantních sociálních sítích.
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="200"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts_followers_labels,
+        'datasets': [
+            {
+                'label': 'osobní LinkedIn',
+                'data': charts_followers_breakdown.pop('linkedin_personal'),
+                'borderColor': '#1755d1',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'LinkedIn',
+                'data': charts_followers_breakdown.pop('linkedin'),
+                'borderColor': '#638CDD',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'YouTube',
+                'data': charts_followers_breakdown.pop('youtube'),
+                'borderColor': '#dc3545',
+                'borderWidth': 1,
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts_followers_breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+    }|tojson|forceescape }}"></canvas></div></div>
+
 ## Návštěvnost
 
 Čísla návštěvnosti webu jsou na [simpleanalytics.com/junior.guru](https://simpleanalytics.com/junior.guru).
