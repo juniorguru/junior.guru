@@ -7,7 +7,7 @@ from strictyaml import Int, Map, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import get_roles
+from juniorguru.lib.discord_club import get_user_roles
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubUser
@@ -239,7 +239,7 @@ async def apply_changes(client, changes):
                 await proxy.remove_roles(*discord_roles)
 
         member = ClubUser.get_by_id(member_id)
-        member.updated_roles = get_roles(discord_member)
+        member.updated_roles = get_user_roles(discord_member)
         member.save()
 
 

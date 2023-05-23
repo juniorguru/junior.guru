@@ -17,6 +17,8 @@ StubMember = namedtuple('Member', ['id', 'roles'],
 
 StubRole = namedtuple('Role', ['id'])
 
+StubGuild = namedtuple('Guild', ['roles'])
+
 StubMessage = namedtuple('Message', ['author', 'content'])
 
 StubClubMessage = namedtuple('ClubMessage', ['created_at'])
@@ -51,8 +53,21 @@ def test_get_starting_emoji(text, expected):
     (StubUser(1), []),
     (StubMember(1, [StubRole(42), StubRole(38)]), [42, 38]),
 ])
-def test_get_roles(member_or_user, expected):
-    assert discord_club.get_roles(member_or_user) == expected
+def test_get_user_roles(member_or_user, expected):
+    assert discord_club.get_user_roles(member_or_user) == expected
+
+
+def test_get_guild_role():
+    role42 = StubRole(42)
+    role38 = StubRole(38)
+    guild = StubGuild([role42, role38])
+
+    assert discord_club.get_guild_role(guild, 42) == role42
+
+
+def test_get_guild_role_not_found_raises():
+    with pytest.raises(ValueError):
+        discord_club.get_guild_role(StubGuild([]), 42)
 
 
 @pytest.mark.parametrize('date_, expected', [

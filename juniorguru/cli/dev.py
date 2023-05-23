@@ -23,6 +23,7 @@ def install(pull):
         if pull:
             subprocess.run(['git', 'pull', '--rebase', 'origin', 'main'], check=True)
         subprocess.run(['poetry', 'install'], check=True)
+        subprocess.run(['poetry', 'update', 'juniorguru-chick'], check=True)
         subprocess.run(['playwright', 'install', 'firefox'], check=True)
         subprocess.run(['npm', 'install'], check=True)
     except subprocess.CalledProcessError:

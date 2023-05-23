@@ -3,13 +3,16 @@ import re
 from datetime import date, datetime, timedelta, timezone
 from enum import IntEnum, StrEnum, unique
 from functools import wraps
-from typing import Generator
+from typing import Generator, TYPE_CHECKING
 
 import discord
 import emoji
-from discord.errors import Forbidden
 
 from juniorguru.lib import loggers, mutations
+
+
+if TYPE_CHECKING:
+    from juniorguru.models.club import ClubMessage
 
 
 CLUB_GUILD = 769966886598737931
@@ -99,7 +102,7 @@ class ClubClient(discord.Client):
         return self.get_guild(CLUB_GUILD)
 
 
-def emoji_name(reaction_emoji) -> str:
+def emoji_name(reaction_emoji: discord.Emoji | discord.PartialEmoji) -> str:
     try:
         return reaction_emoji.name.lower()
     except AttributeError:
@@ -111,7 +114,7 @@ def emoji_name(reaction_emoji) -> str:
         return str(reaction_emoji)
 
 
-def get_starting_emoji(text) -> str | None:
+def get_starting_emoji(text: str) -> str | None:
     text = text.lstrip()
     try:
         first_char = text[0]
@@ -127,11 +130,18 @@ def get_starting_emoji(text) -> str | None:
     return None
 
 
-def get_roles(member_or_user) -> list[int]:
+def get_user_roles(member_or_user: discord.Member | discord.User) -> list[int]:
     return [int(role.id) for role in getattr(member_or_user, 'roles', [])]
 
 
-def is_message_older_than(message, date) -> bool:
+def get_guild_role(guild: discord.Guild, role_id: int) -> discord.Role:
+    try:
+        return next(role for role in guild.roles if role.id == role_id)
+    except StopIteration:
+        raise ValueError(f"Role #{role_id} not found")
+
+
+def is_message_older_than(message: 'discord.Message | ClubMessage', date: date) -> bool:
     logger_fn = logger['is_message_older_than']
     if message:
         created_dt = message.created_at
@@ -146,14 +156,14 @@ def is_message_older_than(message, date) -> bool:
     return True
 
 
-def is_message_over_period_ago(message, period, today=None) -> bool:
+def is_message_over_period_ago(message: 'discord.Message | ClubMessage', period: timedelta, today: date=None) -> bool:
     today = today or date.today()
     ago = today - period
     logger['is_message_over_period_ago'].debug(f'{today} - {period!r} = {ago}')
     return is_message_older_than(message, ago)
 
 
-async def fetch_threads(channel) -> Generator[discord.Thread, None, None]:
+async def fetch_threads(channel: discord.abc.GuildChannel | discord.DMChannel) -> Generator[discord.Thread, None, None]:
     try:
         channel_threads = channel.threads
     except AttributeError:
@@ -164,18 +174,13 @@ async def fetch_threads(channel) -> Generator[discord.Thread, None, None]:
         yield thread
 
 
-def is_thread_after(thread, after=None) -> bool:
+def is_thread_after(thread: discord.Thread, after: date=None) -> bool:
     if after:
         return (thread.created_at or DEFAULT_THREAD_CREATED_AT) >= after
     return True
 
 
-async def add_members(thread, members):
-    with mutations.mutating_discord(thread) as proxy:
-        await asyncio.gather(*[proxy.add_user(member) for member in members])
-
-
-async def add_reactions(message, emojis, ordered=False):
+async def add_reactions(message: discord.Message, emojis: list[str], ordered: bool=False):
     logger.debug(f"Reacting to message #{message.id} with emojis: {list(emojis)!r}")
     if not emojis:
         return
@@ -186,7 +191,7 @@ async def add_reactions(message, emojis, ordered=False):
                     await proxy.add_reaction(emoji_)
             else:
                 await asyncio.gather(*[proxy.add_reaction(emoji_) for emoji_ in emojis])
-    except Forbidden as e:
+    except discord.errors.Forbidden as e:
         if 'maximum number of reactions reached' in str(e).lower():
             logger.warning(f"Message #{message.jump_url} reached maximum number of reactions!")
         else:

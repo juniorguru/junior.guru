@@ -8,7 +8,7 @@ from discord import DMChannel, Member, Message, User
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import (ClubMemberID, emoji_name, get_channel_name,
                                          get_parent_channel_id, get_pinned_message_url,
-                                         get_roles, get_starting_emoji,
+                                         get_user_roles, get_starting_emoji,
                                          is_channel_private)
 from juniorguru.lib.discord_votes import count_downvotes, count_upvotes
 from juniorguru.models.base import db
@@ -39,7 +39,7 @@ def store_member(member: Member) -> ClubUser:
                            mention=member.mention,
                            tag=f'{member.name}#{member.discriminator}',
                            joined_at=arrow.get(member.joined_at).naive,
-                           initial_roles=get_roles(member))
+                           initial_roles=get_user_roles(member))
 
 
 @db.connection_context()
@@ -62,7 +62,7 @@ def _store_user(user: User) -> ClubUser:
                               mention=user.mention,
                               tag=f'{user.name}#{user.discriminator}',
                               joined_at=(arrow.get(user.joined_at).naive if hasattr(user, 'joined_at') else None),
-                              initial_roles=get_roles(user))
+                              initial_roles=get_user_roles(user))
         logger['users'][user.id].debug(f'Saved {user.display_name!r} as {obj!r}')
         return obj
     except peewee.IntegrityError:
