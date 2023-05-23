@@ -230,4 +230,9 @@ L.
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1108854332331397231
+Zkoušeli jste někdo? Používáte? https://www.phind.com/
+---
+
+
 #} -->

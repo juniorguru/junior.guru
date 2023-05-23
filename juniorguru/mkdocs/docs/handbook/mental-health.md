@@ -230,4 +230,9 @@ Zkusme přijít na nějakou cestu, jak by to mohlo jít. 🤔
 
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1108854118119919667
+Zajímavá pomůcka 🙂 https://www.starterstory.com/how-to-say-no
+---
+
+
 #} -->

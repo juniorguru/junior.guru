@@ -503,4 +503,24 @@ Jednoznačne rátať s časom aj nadrámec kurzu, robiť zadania, pýtať sa, ko
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1108401917266243674/1109415461692649522
+Jak to myslíš Honzo ? No co jsem tak koukal tak je tam jen Gopas ten jsem hned vyloučil (špatné recenze), a pak beeit který máš i na svých stránkách ty. 
+Takže by měli být fajn. 
+Jsou to asi věci které jsem  už dělal ale tak procvičím si to a naučím se zase něco nového.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1107587511032754226/1107751724455825548
+„Chci si zopakovat“ tu slyším poměrně často a je to past. 
+Programovat se naučíš tak, že programuješ.
+Místo „dělání kurzu znovu“ si udělej něco jako v tom zadání, který si dělala.
+Nebo jak říkáš nějaký si vymysli. I s něčím, co zatím neumíš. 
+Protože i po 20 letech psaní kódu v podstatě v každém projektu dělám něco, co „neumím“, co jsem předtím nedělal.
+
+A víš co se stane, když něco nebudeš vědět? Nic, najdeš si to. <:meowsmile:849227459530457108> 
+
+To je výhoda proti jazykům, tam si většinou musíš vše pamatovat (dobře, překladatel asi ne, ten má čas se dívat do slovníků, tedy měl, dokud někdo stál o překladatele… 😬)
+---
+
+
 #} -->
