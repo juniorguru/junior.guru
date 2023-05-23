@@ -4,8 +4,9 @@ from datetime import datetime, timedelta
 import discord
 from discord import Client, MessageType, TextChannel
 from juniorguru_chick.bot import (GREETER_ROLE_ID, INTRO_THREAD_NAME_TEMPLATE,
-                                  add_members_with_role, choose_intro_emojis,
-                                  create_thread, ensure_thread_name, is_thread_created)
+                                  add_members_with_role, create_thread,
+                                  ensure_thread_name, is_thread_created)
+from juniorguru_chick.intro_emojis import choose_intro_emojis
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
