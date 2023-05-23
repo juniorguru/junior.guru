@@ -2,6 +2,7 @@ import json
 import re
 from datetime import date
 from pathlib import Path
+from typing import Any, Generator
 
 import click
 import requests
@@ -10,6 +11,8 @@ from playwright.sync_api import sync_playwright
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
+from juniorguru.models.followers import Followers
+from juniorguru.models.base import db
 
 
 logger = loggers.from_path(__file__)
@@ -28,11 +31,11 @@ LINKEDIN_PERSONAL_URL = 'https://www.linkedin.com/posts/honzajavorek_courting-ha
 
 @cli.sync_command()
 @click.option('--data-path', default='juniorguru/data/followers.jsonl', type=click.Path(path_type=Path))
+@db.connection_context()
 def main(data_path):
-    today = date.today()
-    if record := find_record(data_path, today):
-        logger.info(f"Date {today:%Y-%m-%d} already recorded as {record!r}")
-        return
+    logger.info("Preparing database")
+    Followers.drop_table()
+    Followers.create_table()
 
     scrapers = {'youtube': scrape_youtube,
                 'linkedin': scrape_linkedin,
@@ -40,25 +43,35 @@ def main(data_path):
     logger.info(f"Scraping: {', '.join(scrapers.keys())}")
 
     data = {name: scrape() for name, scrape in scrapers.items()}
-    data['date'] = f'{today:%Y-%m}'
-    logger.info(f"Results: {data!r}")
+    data['month'] = f'{date.today():%Y-%m}'
+    line_new = json.dumps(data, ensure_ascii=False, sort_keys=True)
+    logger.info(f"Results: {line_new}")
 
-    with open(data_path, mode='a') as f:
-        f.write(json.dumps(data, ensure_ascii=False, sort_keys=True))
-        f.write('\n')
+    already_in_file = False
+    with open(data_path, mode='r') as f:
+        for line in f:
+            if line.strip() == line_new:
+                already_in_file = True
+            for record in parse_line(line):
+                Followers.create(**record)
+
+    if already_in_file:
+        logger.info('Line already in the file')
+    else:
+        logger.info('Adding new line')
+        with open(data_path, mode='a') as f:
+            f.write(line_new)
+            f.write('\n')
+        for record in parse_line(line_new):
+            Followers.create(**record)
 
 
-def find_record(path, date):
-    try:
-        search_key = f'"{date:%Y-%m}"'
-        logger.debug(f"Looking for {search_key!r} in {path}")
-        with open(path, mode='r') as f:
-            for line in f:
-                if search_key in line:
-                    return json.loads(line)
-        return None
-    except FileNotFoundError:
-        return None
+def parse_line(line: str) -> Generator[dict[str, Any], None, None]:
+    data = json.loads(line)
+    month = data.pop('month')
+    for name, count in data.items():
+        if count is not None:
+            yield dict(month=month, name=name, count=count)
 
 
 def scrape_youtube():
