@@ -1,15 +1,16 @@
 import asyncio
 from datetime import datetime, timedelta
 
-from discord import Client, MessageType, TextChannel
 import discord
-from juniorguru_chick.bot import is_thread_created, choose_intro_emojis, INTRO_THREAD_NAME_TEMPLATE, ensure_thread_name, create_thread, add_members_with_role, GREETER_ROLE_ID
+from discord import Client, MessageType, TextChannel
+from juniorguru_chick.bot import (GREETER_ROLE_ID, INTRO_THREAD_NAME_TEMPLATE,
+                                  add_members_with_role, choose_intro_emojis,
+                                  create_thread, ensure_thread_name, is_thread_created)
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib import mutations
-from juniorguru.lib.discord_club import (ClubChannelID, ClubMemberID,
-                                         add_reactions, get_missing_reactions)
+from juniorguru.lib import discord_sync, loggers, mutations
+from juniorguru.lib.discord_club import (ClubChannelID, ClubMemberID, add_reactions,
+                                         get_missing_reactions)
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
