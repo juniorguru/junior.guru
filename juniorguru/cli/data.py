@@ -133,8 +133,10 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
     if source_path.exists() and not filecmp.cmp(persist_path, source_path, shallow=False):
         if source_path.suffix == '.db':
             merge_databases(persist_path, source_path)
-        elif source_path.suffix in ('.log', '.jsonl'):
+        elif source_path.suffix == '.log':
             merge_lines(persist_path, source_path)
+        elif source_path.suffix == '.jsonl':
+            merge_unique_lines(persist_path, source_path)
         else:
             raise RuntimeError(f"Conflict loading {persist_path}, file already exists: {source_path}")
         if move:
@@ -218,3 +220,13 @@ def merge_lines(path_from: Path, path_to: Path):
         with path_from.open(mode='r') as f_from:
             for line in f_from:
                 f_to.write(line)
+
+
+def merge_unique_lines(path_from: Path, path_to: Path):
+    logger_lines = logger['unique_lines']
+    logger_lines.info(f"Merging {path_from} to {path_to}")
+
+    lines_to = set(path_to.read_text().splitlines(keepends=True))
+    with path_from.open(mode='r') as f_from:
+        lines_to.update(f_from)
+    path_to.write_text(''.join(sorted(lines_to)))

@@ -2,7 +2,7 @@ from textwrap import dedent
 
 import pytest
 
-from juniorguru.cli.data import get_row_updates, make_schema_idempotent, merge_lines
+from juniorguru.cli.data import get_row_updates, make_schema_idempotent, merge_lines, merge_unique_lines
 
 
 def test_make_schema_idempotent():
@@ -65,3 +65,14 @@ def test_merge_lines(tmp_path):
 
     assert path_from.read_text() == 'a\nb\nc\n'
     assert path_to.read_text() == 'd\ne\nf\na\nb\nc\n'
+
+
+def test_merge_unique_lines(tmp_path):
+    path_from = tmp_path / 'path_from.txt'
+    path_from.write_text('a\nb\nc\n')
+    path_to = tmp_path / 'path_to.txt'
+    path_to.write_text('d\ne\na\nf\nb\n')
+    merge_unique_lines(path_from, path_to)
+
+    assert path_from.read_text() == 'a\nb\nc\n'
+    assert path_to.read_text() == 'a\nb\nc\nd\ne\nf\n'

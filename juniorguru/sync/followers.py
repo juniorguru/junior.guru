@@ -43,7 +43,7 @@ def main(data_path):
     logger.info(f"Scraping: {', '.join(scrapers.keys())}")
 
     data = {name: scrape() for name, scrape in scrapers.items()}
-    data['month'] = f'{date.today():%Y-%m}'
+    data['_month'] = f'{date.today():%Y-%m}'
     line_new = json.dumps(data, ensure_ascii=False, sort_keys=True)
     logger.info(f"Results: {line_new}")
 
@@ -68,7 +68,7 @@ def main(data_path):
 
 def parse_line(line: str) -> Generator[dict[str, Any], None, None]:
     data = json.loads(line)
-    month = data.pop('month')
+    month = data.pop('_month')
     for name, count in data.items():
         if count is not None:
             yield dict(month=month, name=name, count=count)
