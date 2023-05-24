@@ -225,8 +225,9 @@ def merge_lines(path_from: Path, path_to: Path):
 def merge_unique_lines(path_from: Path, path_to: Path):
     logger_lines = logger['unique_lines']
     logger_lines.info(f"Merging {path_from} to {path_to}")
-
-    lines_to = set(path_to.read_text().splitlines(keepends=True))
-    with path_from.open(mode='r') as f_from:
-        lines_to.update(f_from)
-    path_to.write_text(''.join(sorted(lines_to)))
+    lines = frozenset(path_to.read_text().splitlines(keepends=True))
+    with path_to.open(mode='+a') as f_to:
+        with path_from.open(mode='r') as f_from:
+            for line in f_from:
+                if line not in lines:
+                    f_to.write(line)

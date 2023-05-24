@@ -76,4 +76,4 @@ def test_merge_unique_lines(tmp_path):
     merge_unique_lines(path_from, path_to)
 
     assert path_from.read_text() == 'a\nb\nc\n'
-    assert path_to.read_text() == 'a\nb\nc\nd\ne\nf\n'
+    assert path_to.read_text() == 'd\ne\na\nf\nb\nc\n'
