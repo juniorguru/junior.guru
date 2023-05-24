@@ -49,7 +49,7 @@ KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value
     r'prima\s*kurzy': 'primakurzy',
     r'kurzy\.vsb': 'kurzyvsb',
     r'všb': 'kurzyvsb',
-    r'[šs]kola\s*k[óo]du': 'skolakodu',
+    r'[šs]kola\s*k[óo]d[uúů]': 'skolakodu',
     r'edx': 'edx',
     r'school\s*of\s*code': 'schoolofcode',
     r'seduo': 'seduo',

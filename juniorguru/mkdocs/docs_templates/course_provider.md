@@ -39,7 +39,7 @@ Vždy záleží v jaké jsi konkrétní situaci a co zrovna potřebuješ.
 A přesně takové věci se na tom našem Discordu taky probírají.
 Poradíme!
 
-<div class="text-center mt-4">
+<div class="mt-4">
   <a class="btn btn-lg btn-primary mb-4" href="{{ pages|docs_url('club.md')|url }}">
     Přidej se do klubu
   </a>
@@ -56,6 +56,20 @@ Poradíme!
 ## Partnerství s junior.guru
 
 {{ course_provider.name }} si tady platí zvýraznění.
-Neznamená to nutně, že jsou nejlepší, nebo že je junior.guru doporučuje.
-Vše kolem partnerství je transparentní, takže klidně [mrkni na detaily]({{ pages|docs_url(active_partnership.page_url)|url }}).
+Neznamená to, že jsou nejlepší, že je kurz nějak ověřený, nebo že je junior.guru doporučuje.
+Vše kolem partnerství je transparentní, takže [mrkni na detaily]({{ pages|docs_url(active_partnership.page_url)|url }}).
+{% else %}
+## Vztah s junior.guru
+
+Kurzy od {{ course_provider.name }} jsou tady v rámci seznamu všech míst, kde se můžeš učit programovat.
+Neznamená to, že jsou dobré, ověřené, nebo že je junior.guru doporučuje.
 {% endif %}
+
+<div class="pagination">
+  <div class="pagination-control">
+    <a href="{{ pages|docs_url('courses.md')|url }}" class="pagination-button">
+      {{ 'arrow-left'|icon }}
+      Všechny kurzy
+    </a>
+  </div>
+</div>
