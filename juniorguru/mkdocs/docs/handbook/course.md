@@ -1,21 +1,186 @@
 ---
 title: Jak vybrat kurz programování
 emoji: 🧑‍🏫
-description: TODO
+description: Jaký kurz základů programování je vhodný zrovna pro tebe? Které jsou rekvalifikační a jak je to s úřadem práce? Prezenčně, nebo online? Za peníze, nebo zdarma?
 template: main_handbook.html
-noindex: true
 ---
 
 {% from 'macros.html' import note with context %}
 
-# Kurzy
+# Jak vybírat kurz
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+## Stačí kurz?
+
+<!-- 80 % hodnoty kurzu je na tobe -->
+<!-- nikdo z tebe programatora neudela -->
+<!-- projekt -->
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+## Potřebuješ (další) kurz?
+
+<!-- tutorial hell -->
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+## Jaký kurz je vhodný pro tebe?
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+## Typy kurzů
+
+### Bootcamp
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+### Prezenční výuka
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+### Online výuka
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+### Samostudium
+
+<!-- text, video, youtube, platformy -->
+<!-- neni osnova, tutorial hell -->
+<!-- nedelaji chyby na obrazovce -->
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+### Jednodenní workshopy
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+### Mentoring
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+### Školení
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+### Certifikace
+
+<!-- certifikát vs certifikace -->
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+## Za peníze nebo zdarma?
+
+<!-- Přednášky vysokých škol -->
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+## Proplacení Úřadem práce
+
+### Akreditované rekvalifikační kurzy
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+### Jsem v kurzu
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+## Jak poznat kvalitu
+
+### Garance pracovního umístění
+
+<!-- Income Share Agreement -->
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+### Materiály
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+### Příběhy absolventů
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+### Certifikáty, osvědčení, diplomy
+
+<!-- certifikát vs certifikace -->
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+{% endcall %}
+
+### Psychotesty
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
 {% endcall %}
 
 
+
+
 <!-- {#
+
+Certifikát vydaný společností Green Fox Academy, který dokládá splnění podmínek kurzu a složení závěrečné zkoušky.
+Pokud splníš podmínky pro účast v akreditovaném kurzu, získáš i osvědčení o rekvalifikaci od MŠMT ČR.
+
+jsemvkurzu.cz
+https://www.uradprace.cz/rekvalifikace-1
+https://cs.wikipedia.org/wiki/Rekvalifikace
+
+https://beta.www.jobs.cz/poradna/programujte-5-rad-jak-si-vybrat-dobry-kurz/
+https://www.czechitas.cz/blog/jak-si-vybrat-kurz
+https://www.itnetwork.cz/blog/jak-si-vybrat-it-kurz-v-5-jednoduchych-krocich
+
+- základy programování kurz
+- online
+- rekvalifikační
+- letní
+kurz programování
+- recenze
+- online, youtube
+- cena
+- zdarma
+- pro začátečníky
+- pro děti
+- pro ženy
+- python, java, c#, cnc, webových stránek, webu
+- praha, brno, ostrava, olomouc...
 
 problem rekvalifikacnich kurzu
 https://discord.com/channels/769966886598737931/788823881024405544/806236997545885718
@@ -42,7 +207,7 @@ https://twitter.com/OzolinsJanis/status/1420344259367030784
 
 https://twitter.com/OzolinsJanis/status/1592122944280748035
 
-https://www.youtube.com/watch?v=EkUuXQUByuw
+Code Tutorials Are Holding You Back https://www.youtube.com/watch?v=EkUuXQUByuw
 
 Poslechnout ještě jednou a udělat z toho citáty a linkovat z katalogu pod skillmea
 https://overcast.fm/+U67E82wxk
@@ -480,11 +645,11 @@ Co se týká firem, hledala bych nějakou, kde mají menší poměr manuálních
 
 
 --- https://discord.com/channels/769966886598737931/1107639286486028321/1108422028727431218
-Hezké téma mě blízké. 👍 
+Hezké téma mě blízké. 👍
 
 Z pohledu účastníka kurzu před cca 6 lety, bych svému mladšímu já poradila, abych po jeho ukončení, makala na sobě dál, pracovala na klidně basic projektech - pokud možno denně využívala své znalosti a snažila se dostat do IT. Abych se obklopovala komunitou, která by byla na stejné vlně, navštěvovala meetupy a získávala kontakty. Abych nespoléhala pouze na to, že jsem si udělala nějaký kurz a mám z něj certifikát.
 
-Píšu z vlastní zkušenosti, mám možnost porovnat s obdobím od září 2022, kdy na sobě makám, jela jsem Koderku, navázala jsem JS1, ani jsem si neoddychla a hned na to JS2. Je to pomalu jako semestr. Po jeho ukončení mám obavy, že zakrním, že nedokážu ničím navázat. Že jen tak zahodím těch 10 měsíců. 😐 
+Píšu z vlastní zkušenosti, mám možnost porovnat s obdobím od září 2022, kdy na sobě makám, jela jsem Koderku, navázala jsem JS1, ani jsem si neoddychla a hned na to JS2. Je to pomalu jako semestr. Po jeho ukončení mám obavy, že zakrním, že nedokážu ničím navázat. Že jen tak zahodím těch 10 měsíců. 😐
 Ideálně bych se ráda chtěla dostat do profese, kde bych nějaké to "minimum" využívala - praxí se učila a dalšími kurzy (React) na sobě dál makala.
 
 Je to o zodpovědném přístupu každého účastníka kurzů, ale za mě: ptát se, zajímat se, vypracovávat úkoly, denně používat a hledat příležitost pro to zůstat (nebo se dostat) v oboru.
@@ -503,21 +668,14 @@ Jednoznačne rátať s časom aj nadrámec kurzu, robiť zadania, pýtať sa, ko
 ---
 
 
---- https://discord.com/channels/769966886598737931/1108401917266243674/1109415461692649522
-Jak to myslíš Honzo ? No co jsem tak koukal tak je tam jen Gopas ten jsem hned vyloučil (špatné recenze), a pak beeit který máš i na svých stránkách ty. 
-Takže by měli být fajn. 
-Jsou to asi věci které jsem  už dělal ale tak procvičím si to a naučím se zase něco nového.
----
-
-
 --- https://discord.com/channels/769966886598737931/1107587511032754226/1107751724455825548
-„Chci si zopakovat“ tu slyším poměrně často a je to past. 
+„Chci si zopakovat“ tu slyším poměrně často a je to past.
 Programovat se naučíš tak, že programuješ.
 Místo „dělání kurzu znovu“ si udělej něco jako v tom zadání, který si dělala.
-Nebo jak říkáš nějaký si vymysli. I s něčím, co zatím neumíš. 
+Nebo jak říkáš nějaký si vymysli. I s něčím, co zatím neumíš.
 Protože i po 20 letech psaní kódu v podstatě v každém projektu dělám něco, co „neumím“, co jsem předtím nedělal.
 
-A víš co se stane, když něco nebudeš vědět? Nic, najdeš si to. <:meowsmile:849227459530457108> 
+A víš co se stane, když něco nebudeš vědět? Nic, najdeš si to. <:meowsmile:849227459530457108>
 
 To je výhoda proti jazykům, tam si většinou musíš vše pamatovat (dobře, překladatel asi ne, ten má čas se dívat do slovníků, tedy měl, dokud někdo stál o překladatele… 😬)
 ---
