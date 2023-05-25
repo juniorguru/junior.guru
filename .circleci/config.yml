@@ -181,12 +181,16 @@ jobs:
           paths:
               - project/juniorguru/data
               - project/juniorguru/images
-      - enable-github-pushing
-      - run:
-          name: Save to GitHub
-          command: |
-            poetry run jg save-changes juniorguru/data/podcast.yml --message="record media properties 🪄"
-            poetry run jg save-changes juniorguru/data/followers.jsonl --message="record followers 📈"
+      - when:
+          condition:
+            equal: [ main, << pipeline.git.branch >> ]
+          steps:
+            - enable-github-pushing
+            - run:
+                name: Save to GitHub
+                command: |
+                  poetry run jg save-changes juniorguru/data/podcast.yml --message="record media properties 🪄"
+                  poetry run jg save-changes juniorguru/data/followers.jsonl --message="record followers 📈"
 
   web:
     executor: python-js
