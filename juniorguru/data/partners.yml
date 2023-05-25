@@ -154,7 +154,7 @@
   partnerships:
     - plan: support
       starts_on: 2021-05-31
-      expires_on: 2023-05-30
+      expires_on: 2023-07-01
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_mentoring-discord-activity-6997918083440861184-A4oH
