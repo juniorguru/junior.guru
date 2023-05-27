@@ -93,8 +93,9 @@ async def welcome(discord_channel: TextChannel, message: ClubMessage):
     await ensure_thread_name(thread, intro.THREAD_NAME_TEMPLATE)
 
     logger.debug(f"Ensuring welcome messages for {message.author.display_name!r}")
-    discord_messages = [discord_message async for discord_message in thread.history(limit=None)
-                        if discord_message.author.id == ClubMemberID.BOT]
+    discord_messages = [discord_message async for discord_message
+                        in thread.history(limit=None)
+                        if is_welcome_message(discord_message)]
     if discord_messages:
         logger.debug(f"Thread for {message.author.display_name!r} already has some messages from bot, skipping")
     else:
