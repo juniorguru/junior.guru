@@ -1,5 +1,6 @@
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib.discord_club import ClubChannelID
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 
@@ -19,7 +20,8 @@ def main():
 async def discord_task(client):
     channels = (channel for channel
                 in client.club_guild.channels
-                if (hasattr(channel, 'default_auto_archive_duration')
+                if (channel.id != ClubChannelID.BOT
+                    and hasattr(channel, 'default_auto_archive_duration')
                     and channel.default_auto_archive_duration != DEFAULT_AUTO_ARCHIVE_DURATION
                     and channel.permissions_for(client.club_guild.me).read_messages))
     for channel in channels:
