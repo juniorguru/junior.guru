@@ -681,4 +681,7 @@ To je výhoda proti jazykům, tam si většinou musíš vše pamatovat (dobře, 
 ---
 
 
+https://www.facebook.com/groups/144621756262987/posts/1284103288981489
+
+
 #} -->

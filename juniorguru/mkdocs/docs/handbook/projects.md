@@ -17,6 +17,9 @@ noindex: true
 
 <!-- {#
 
+kam veřejně napsat, že tady chybí https://junior.guru/handbook/practice/#najdi-si-projekt info o tom, že projekt nemusí být unikátní? že to může klidně být todolist
+protože mám pocit, že si to tak 2/3 lidí myslí, možná i víc
+
 https://free-for.dev/
 
 Challenging projects every programmer should try - Austin Z. Henley
