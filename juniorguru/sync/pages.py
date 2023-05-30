@@ -25,7 +25,7 @@ def main():
     Page.create_table()
 
     logger.info('Reading MkDocs files')
-    config = load_config(config_file='juniorguru/mkdocs/mkdocs.yml')
+    config = load_config(config_file='juniorguru/web/mkdocs.yml')
     files = get_files(config)
     for file in files.documentation_pages():
         logger.debug(f"Reading: {file.src_uri}")

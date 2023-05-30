@@ -8,7 +8,7 @@ from juniorguru.lib import loggers
 from juniorguru.lib.images import downsize_square_photo, replace_with_jpg
 
 
-AVATARS_DIR = Path(__file__).parent.parent / 'images' / 'avatars-participants'
+AVATARS_DIR = Path('juniorguru/images/avatars-participants')
 
 AVATAR_SIZE_PX = 500
 

@@ -184,4 +184,4 @@ def screenshot_url(url):
         .removeprefix('http-') \
         .removeprefix('https-') \
         .removeprefix('www-')
-    return f'static/images/screenshots/{slug}.jpg'
+    return f'static/screenshots/{slug}.jpg'

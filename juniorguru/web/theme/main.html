@@ -1,0 +1,201 @@
+{% extends 'main_legacy.html' %}
+{% from 'macros.html' import img with context %}
+
+
+{% block stylesheet %}<link rel="stylesheet" href="{{ 'static/css/index.css'|url }}?{{ css_hash }}">{% endblock %}
+
+
+{% block body %}
+<body>
+  {# if '{:%Y-%m-%d}'.format(today) <= '2023-06-05' #}
+  <a href="https://forms.gle/CvcrqJLwaU9bSLzf7" class="announcement" target="_blank" rel="noopener">
+    <strong>DUŠEVNÍ ZDRAVÍ JUNIORŮ</strong>
+    <i class="bi bi-check-circle-fill"></i>
+    Co prožíváš na své cestě do IT a v prvním roce zaměstnání? Vyplň nám dotazník!
+  </a>
+  {# endif #}
+  <header id="header" class="navbar navbar-light">
+    <nav class="navbar-container">
+      <a class="navbar-brand " href="{{ '/'|url }}">
+        {{ img('static/logo.svg', 'Logo junior.guru', 90, 40, lazy=False) }}
+      </a>
+      <div class="navbar-buttons">
+        <a class="btn btn-outline-dark" href="{{ pages|docs_url('pricing.md')|url }}">Pro firmy</a>
+        {% if page.url != 'club/' %}
+          <a class="btn btn-dark" href="{{ pages|docs_url('club.md')|url }}">Přidej se</a>
+        {% endif %}
+      </div>
+      {% if nav %}
+      <ul class="nav nav-foldable">
+        {% for nav_item in (nav|list)[:5] %}
+        <li class="nav-item">
+          <a
+            {% if nav_item.active %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %}
+            {% if nav_item.is_section %}href="{{ (nav_item.children|first).url|url }}"{% else %}href="{{ nav_item.url|url }}"{% endif %}
+          >
+            {{ nav_item.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </nav>
+  </header>
+
+  {% block extra_header %}{% endblock %}
+
+  <hr class="visually-hidden">
+
+  {% block main %}
+  <div class="main main-simple">
+    <main class="content document">
+      {% block content %}{{ page.content }}{% endblock %}
+    </main>
+  </div>
+  {% endblock %}
+
+  <hr class="visually-hidden">
+
+  <footer class="footer">
+    <div class="footer-address-container">
+      <address class="footer-section footer-address">
+        <ul class="footer-address-list">
+          <li class="footer-address-item">
+            {{ img('static/logo-i.svg', 'Logo junior.guru', 90, 40, class='footer-address-logo') }}
+          </li>
+          <li class="footer-address-item">
+            <h3 class="footer-subheading">Projekt</h3>
+            Junior Guru<br>
+            stylizovaně „junior.guru“<br>
+            <a href="https://logo.junior.guru/" target="_blank" rel="noopener">logo a barvy</a>
+          </li>
+          <li class="footer-address-item">
+            <h3 class="footer-subheading">Provozovatel</h3>
+            Jan Javorek<br>
+            OSVČ, neplátce DPH<br>
+            IČO: <a href="https://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi?ico=74279858&jazyk=cz&xml=1&rozsah=0" target="_blank" rel="noopener">74279858</a><br>
+            Lupáčova 375/24<br>
+            130 00 Praha
+          </li>
+          <li class="footer-address-item footer-links">
+            <h3 class="footer-subheading">Kontakt a sociální sítě</h3>
+            <p class="footer-links-email">{{ 'honza@junior.guru'|email_link }}</p>
+            <ul class="footer-links-icons footer-icons-list">
+              <li class="footer-icons-item">
+                <a href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
+                  {{ 'linkedin'|icon(alt='LinkedIn') }}
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="{{ pages|docs_url('club.md')|url }}">
+                  {{ 'discord'|icon(alt='Discord') }}
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="https://www.youtube.com/@juniordotguru" target="_blank" rel="noopener">
+                  {{ 'youtube'|icon(alt='YouTube') }}
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="https://github.com/honzajavorek/junior.guru" target="_blank" rel="noopener">
+                  {{ 'github'|icon(alt='GitHub') }}
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </address>
+    </div>
+    <div id="honza" class="footer-section footer-about">
+      <h3 class="footer-heading">Kdo to provozuje? Na čem vydělává?</h3>
+      <div class="footer-about-content">
+        <div class="footer-about-text">
+          {{ img('static/avatars-participants/honza-javorek.jpg', 'Honza Javorek', 100, 100, class='footer-about-avatar') }}
+          <p>
+            Jmenuji se Honza Javorek a býval jsem obyčejný programátor. Díky dobrovolným aktivitám jsem se dostal k pomáhání začátečníkům, a to mě hodně bavilo. Časem mi přišlo, že chybí jedno místo, kde by byly všechny pracovní nabídky pro juniory, nezávislé informace a základní praktické rady. Proto jsem odešel z korporátu a založil tento projekt.
+          </p>
+          <p>
+            Chci začátečníkům zpříjemnit cestu k jejich první práci v IT a dodat jim kultivovanou podpůrnou komunitu, kde budou vítáni a mezi svými. Chci nezávisle informovat o vzdělávacích agenturách a propojovat juniory s firmami, kam by mohli nastoupit. Chci, aby každý Luďan z Mostu, každá puberťačka, každý vědec nebo každá máma na rodičovské měli po ruce návod, jak začít s programováním.
+          </p>
+          <p>
+            Tento web má <a href="{{ pages|docs_url('open.md')|url }}">veřejná čísla</a>, <a href="https://github.com/honzajavorek/junior.guru">otevřený zdrojový kód</a> a obsah je pod <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs">CC licencí</a>. Ilustrace si kreslím sám. Projekt tvořím jako podnikatel na volné noze, jenž nemá ambice rozjíždět firmu. Své úspěchy a selhání otevřeně popisuji v každotýdenních poznámkách na <a href="https://honzajavorek.cz/blog/">osobním blogu</a>. Cílem je vydělat si tak akorát, aby se žilo dobře mojí rodině.
+          </p>
+        </div>
+        <div class="footer-about-finances">
+          <h4 class="footer-subheading">Můj aktuální čistý zisk</h4>
+          <p class="footer-finances-number">{{ profit_ttm|thousands }} Kč měsíčně</p>
+
+          <h4 class="footer-subheading">Zdroje příjmů, zaokrouhleno</h4>
+          <ul class="footer-finances-list">
+            {% for name, value_pct in revenue_ttm_breakdown|money_breakdown_ptc|revenue_categories %}
+              <li>
+                <strong class="footer-finances-value">{{ value_pct }} %</strong>
+                {{ name }}
+              </li>
+            {% endfor %}
+          </ul>
+          <p class="footer-finances-actions">
+            <span class="footer-finances-button">
+              <a class="btn btn-lg btn-primary" href="{{ pages|docs_url('club.md')|url }}">Podpoř mě členstvím</a>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-nav-container">
+      <nav class="footer-section footer-nav">
+        <h3 class="footer-heading">Dost bylo čtení!</h3>
+        <p>
+          <a href="{{ 'events/'|url }}">Přednášky a další akce</a>,
+          <a href="{{ 'podcast/'|url }}">Podcast</a>
+        </p>
+
+        <h3 class="footer-heading">Příručka</h3>
+        <p>
+          {% for nav_item in (nav|selectattr('title', 'equalto', 'Příručka')|list)[0].children %}
+            <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+            {%- if not loop.last %}, {% endif %}
+          {% endfor %}
+        </p>
+
+        <h3 class="footer-heading">Kurzy</h3>
+        <p>
+          {% for course_provider in course_providers %}
+            <a href="{{ pages|docs_url(course_provider.page_url)|url }}">{{ course_provider.name }}</a>
+            {%- if not loop.last %}, {% endif %}
+          {% endfor %}
+        </p>
+
+        <h3 class="footer-heading">Pracovní nabídky</h3>
+        <p>
+          <a href="{{ 'jobs/remote/'|url }}">Junior programátor na dálku</a>,
+          <a href="{{ 'jobs/region/praha/'|url }}">Junior programátor Praha</a>,
+          <a href="{{ 'jobs/region/brno/'|url }}">Junior programátor Brno</a>,
+          <a href="{{ 'jobs/region/ostrava/'|url }}">Junior programátor Ostrava</a>
+        </p>
+
+        <h3 class="footer-heading">Témata, která řešíme v klubu</h3>
+        <p>
+          {% for nav_item in (nav|selectattr('title', 'equalto', 'Témata')|list)[0].children if nav_item.meta.topic_link_text %}
+            <a href="{{ nav_item.url|url }}">{{ nav_item.meta.topic_link_text }}</a>
+            {%- if not loop.last %}, {% endif %}
+          {% endfor %}
+        </p>
+      </nav>
+    </div>
+    <nav class="footer-section footer-rules">
+      <h3 class="visually-hidden">Pravidla</h3>
+      <ul class="footer-rules-list">
+        {% for nav_item in (nav|selectattr('title', 'equalto', 'Pravidla')|list)[0].children %}
+          <li class="footer-rules-item">
+            <a href="{{ nav_item.url|url }}"{% if nav_item.is_link %} target="_blank" rel="noopener"{% endif %}>{{ nav_item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </footer>
+
+  <script async defer src="https://sa.junior.guru/latest.js"></script>
+  <noscript><img src="https://sa.junior.guru/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+</body>
+{% endblock %}

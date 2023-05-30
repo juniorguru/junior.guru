@@ -1,0 +1,370 @@
+{% macro markdown() %}
+    {{ caller()|md }}
+{% endmacro %}
+
+
+{% macro img(filename, alt, width, height, class=None, lazy=True) %}
+  <img
+    {% if filename.endswith('.svg') %}
+      src="{{ filename|url }}"
+    {% else %}
+      data-src="{{ filename|url }}"
+      src="https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_auto,q_auto,f_auto/https://junior.guru/{{ filename }}"
+      srcset="{{- '' -}}
+        https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_1,q_auto,f_auto/https://junior.guru/{{ filename }}, {{- '' -}}
+        https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_1.5,q_auto,f_auto/https://junior.guru/{{ filename }} 1.5x, {{- '' -}}
+        https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_2,q_auto,f_auto/https://junior.guru/{{ filename }} 2x, {{- '' -}}
+        https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_3,q_auto,f_auto/https://junior.guru/{{ filename }} 3x {{- '' -}}
+      "
+      onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;"
+    {% endif %}
+    alt="{{ alt }}" width="{{ width }}" height="{{ height }}"
+    {% if lazy %} loading="lazy"{% endif %}
+    {% if class %} class="{{ class }}"{% endif %}
+    {{- '' -}}
+  >
+{% endmacro %}
+
+
+{% macro figure(path, alt, width, height, lazy=True, caption=None, class=None) %}
+<figure class="figure{% if class %} {{ class }}{% endif %}">
+  {{ img('static/' + path, alt, width, height, class='figure-img img-fluid', lazy=lazy) }}
+  {% if caption %}
+    <figcaption class="figure-caption">{{ caption|md|remove_p }}</figcaption>
+  {% elif caller %}
+    <figcaption class="figure-caption">{{ caller()|md|remove_p }}</figcaption>
+  {% endif %}
+</figure>
+{% endmacro %}
+
+
+{% macro podcast_player(episode, class=None) %}
+<audio controls preload="metadata"{% if class %} class="{{ class }}"{% endif %}>
+  <source src="{{ episode.media_url }}" type="audio/mpeg">
+  <a class="btn btn-primary" href="{{ episode.media_url }}" role="button">
+    {{ 'play-circle-fill'|icon }} {{ episode.media_duration_s // 60 }}min
+  </a>
+</audio>
+{% endmacro %}
+
+
+{% macro blockquote(quote, caption=None) %}
+  <div class="blockquote-container">
+    <figure class="blockquote-content">
+      <blockquote class="blockquote">
+        <p>{{ quote }}</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        {% if caption %}
+          {{ caption|md|remove_p }}
+        {% else %}
+          {{ caller()|md|remove_p }}
+        {% endif %}
+      </figcaption>
+    </figure>
+  </div>
+{% endmacro %}
+
+
+{% macro blockquote_avatar(quote, avatar_filename, avatar_alt, caption=None, lazy=True) %}
+  <div class="blockquote-container avatar">
+    <figure class="blockquote-content">
+      {{ img('static/avatars-quotes/' + avatar_filename, avatar_alt, 50, 50, class='blockquote-avatar', lazy=lazy) }}
+      <blockquote class="blockquote">
+        <p>{{ quote }}</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        {% if caption %}
+          {{ caption|md|remove_p }}
+        {% else %}
+          {{ caller()|md|remove_p }}
+        {% endif %}
+      </figcaption>
+    </figure>
+  </div>
+{% endmacro %}
+
+
+{% macro blockquote_toxic(quote, caption, url=None) %}
+  <div class="blockquote-container toxic icon">
+    <figure class="blockquote-content">
+      {{ 'x-circle'|icon(classes='blockquote-icon') }}
+      <blockquote class="blockquote"{% if url %} cite="{{ url }}"{% endif %}>
+        <p>{{ quote }}</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        {{ caption }}
+      </figcaption>
+    </figure>
+  </div>
+{% endmacro %}
+
+
+{% macro event_circle(event) %}
+  <li class="event-circles-item">
+    {% if event.public_recording_url %}
+      <a href="{{ event.public_recording_url }}" target="_blank" rel="noopener" class="event-circles-link">
+    {% endif %}
+
+    {{ img('static/' + event.avatar_path, event.bio_name, 100, 100) }}
+
+    <h3>{{ event.bio_name }}</h3>
+
+    {% if event.public_recording_url %}</a>{% endif %}
+
+    <p>
+      {{ event.title }}
+    </p>
+  </li>
+{% endmacro %}
+
+
+{% macro link_card(title, url, caption=None,
+                   badge_icon=None, badge_text=None,
+                   screenshot_source_url=None,
+                   highlighted=False, nofollow=False)
+%}
+{% set screenshot_source_url = screenshot_source_url or url %}
+{% set screenshot_image_url = screenshot_source_url|screenshot_url %}
+<div class="link-card{% if highlighted %} highlighted{% endif %}"
+  data-screenshot-source-url="{{ screenshot_source_url }}"
+  data-screenshot-image-url="{{ screenshot_image_url }}">
+  <div class="link-card-header">
+    {{ img(screenshot_image_url, title, 640, 360, class='link-card-image') }}
+    {% if badge_icon and badge_text %}
+      <div class="link-card-icon">
+        {{ badge_icon|icon }} {{ badge_text }}
+      </div>
+    {% endif %}
+    <h4 class="link-card-title">
+      <a href="{{ url }}" class="link-card-link"
+        {%- if nofollow %} rel="nofollow"{% endif -%}>{{ title }}</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+    {% if caption or caller %}
+      <p class="link-card-text">
+        {% if caption %}
+          {{ caption|md|remove_p }}
+        {% else %}
+          {{ caller()|md|remove_p }}
+        {% endif %}
+      </p>
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}
+
+
+{% macro video_card(title, duration, url, caption=None, note=None) %}
+{% set screenshot_source_url = url %}
+{% set screenshot_image_url = screenshot_source_url|screenshot_url %}
+<div class="media-card"
+  data-screenshot-source-url="{{ screenshot_source_url }}"
+  data-screenshot-image-url="{{ screenshot_image_url }}">
+  <div class="media-card-header">
+    <div class="media-card-image-cover">
+      {{ img(screenshot_image_url, title, 640, 360, class='media-card-image') }}
+      <div class="media-card-button">
+        <span class="media-card-play">{{ 'play-circle-fill'|icon }}</span>
+        <span class="media-card-duration">{{ duration }}</span>
+      </div>
+    </div>
+    <h4 class="media-card-title">
+      <a href="{{ url }}" class="media-card-link" target="_blank" rel="noopener">{{ title }}</a>
+    </h4>
+  </div>
+  <div class="media-card-body">
+    {% if caption or caller %}
+      <p class="media-card-text">
+        {% if caption %}
+          {{ caption|md|remove_p }}
+        {% else %}
+          {{ caller()|md|remove_p }}
+        {% endif %}
+        {% if note %}
+          <small class="media-card-note">{{ 'info-circle'|icon }} {{ note|md|remove_p }}</small>
+        {% endif %}
+      </p>
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}
+
+
+{% macro podcast_card(podcast_episode, caption=None) %}
+<div class="media-card">
+  <div class="media-card-header">
+    <h4 class="media-card-title">{{ podcast_episode.title }}</h4>
+  </div>
+  <div class="media-card-body">
+    {% if caption or caller %}
+      <p class="media-card-text">
+        {% if caption %}
+          {{ caption|md|remove_p }}
+        {% else %}
+          {{ caller()|md|remove_p }}
+        {% endif %}
+      </p>
+    {% endif %}
+    {{ podcast_player(podcast_episode) }}
+  </div>
+</div>
+{% endmacro %}
+
+
+{% macro video_card_engeto(title, duration, url, caption=None) %}
+  {% if caller %}
+    {% set caption = caller()|md|remove_p %}
+  {% endif %}
+  {{ video_card(
+    title,
+    duration,
+    url,
+    caption=caption,
+    note='Video je součástí série [Průvodce nováčka v IT](https://www.youtube.com/playlist?list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI), kterou natočilo [Engeto](https://engeto.cz/) ve spolupráci s [Honzou](#honza) z junior.guru.',
+  ) }}
+{% endmacro %}
+
+
+{% macro links_note() %}
+  <small>Seznam je ručně sestavován s ohledem na přívětivost, efektivnost, a vhodnost pro samouky. Za umístění v seznamu se nedá zaplatit, ale jako firma [můžete mít na tomto webu své logo]({{ pages|docs_url('pricing.md')|url }}). Návrhy na vylepšení seznamu posílejte na {{ 'honza@junior.guru'|email_link }}.</small>
+{% endmacro %}
+
+
+{% macro see_also(page) %}
+  <div class="see-also standout-top">
+    <h2>Související</h2>
+    <ul>
+      {% for nav_item in page.parent.children %}
+        {% if nav_item != page %}
+          <li><a href="{{ nav_item.url|url }}"{% if nav_item.is_link %} target="_blank" rel="noopener"{% endif %}>
+            {{- nav_item.title -}}
+          </a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}
+
+
+{% macro lead() %}
+  <div class="lead">
+    {{ caller()|md }}
+  </div>
+{% endmacro %}
+
+
+{% macro partner_link(text, url, utm_medium) -%}
+  <a href="{{ url }}" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="{{ utm_medium }}" data-metrics-utm-campaign="partnership">
+    {{- text -}}
+  </a>
+{%- endmacro %}
+
+
+{% macro logo(name, path, url=None, lazy=False, class_prefix='logos') %}
+  <li class="{{ class_prefix }}-item" title="{{ name }}">
+    {% if url %}
+    <a class="{{ class_prefix }}-link" href="{{ url }}" target="_blank" rel="noopener"
+      data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership">
+    {% endif %}
+
+    {{ img('static/' + path, name, 130, 60, class=class_prefix + '-image', lazy=lazy) }}
+
+    {% if url %}
+    </a>
+    {% endif %}
+  </li>
+{% endmacro %}
+
+
+{% macro stories_list(stories) %}
+  <div class="stories">
+    {% for story in stories %}
+      <div class="stories-item">
+        {{ img('static/' + story.image_path, 'Doprovodná fotka k příběhu', 100, 100, class='stories-image') }}
+        <div class="stories-body">
+          <h4 class="stories-title">
+            <a href="{{ story.url }}" class="stories-link">{{ story.title }}</a>
+          </h4>
+          <p class="stories-details">
+            {{ story.publisher }} &mdash; {{ '{:%-m/%Y}'.format(story.date) }}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endmacro %}
+
+
+{% macro jobs_inline(jobs, n, jobs_url='/jobs/') %}
+  <div class="jobs-inline">
+    <ul class="jobs-inline-list">
+      {% for job in jobs|sample_jobs(n) %}
+        <li class="jobs-inline-item" itemscope itemtype="https://schema.org/JobPosting">
+          <meta itemprop="industry" content="Informační technologie">
+          <meta itemprop="datePosted" content="{{ job.first_seen_on.isoformat() }}">
+          <meta itemprop="description" content="Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}">
+          <div itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
+            <meta itemprop="address" content="{{ job.location }}">
+          </div>
+
+          {% if job.is_submitted %}
+            <a class="jobs-inline-link" href="{{ job.url|relative_url }}" itemprop="url">
+          {% else %}
+            <a class="jobs-inline-link" href="{{ jobs_url }}">
+          {% endif %}
+            <link itemprop="url" href="{{ job.effective_link }}">
+            <div class="jobs-inline-logo">
+              {% if job.company_logo_path %}
+                {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class='jobs-inline-image') }}
+              {% endif %}
+            </div>
+            <div class="jobs-inline-body">
+              <h5 class="jobs-inline-title" title="{{ job.title }}">
+                {{ job.title|truncate(60) }}
+                <meta itemprop="title" content="{{ job.title }}">
+              </h5>
+              <p class="jobs-inline-company" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">{{ job.company_name }}</span>
+                <link itemprop="url" href="{{ job.company_url }}">
+              </p>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% if jobs|length > n %}
+    <p class="jobs-inline-footer">
+      <a class="jobs-inline-button" href="{{ jobs_url }}" role="button">Další nabídky</a>
+    </p>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+
+{% macro note(standout=False) %}
+<div class="note{% if standout %} standout{% endif %}" role="alert">
+  {{ caller()|md }}
+</div>
+{% endmacro %}
+
+
+{% macro guarantor(name, avatar_path, url=None, standout=False) %}
+<div class="guarantor{% if standout %} standout{% endif %}" role="alert">
+  {{ img('static/' + avatar_path, name, 100, 100, class='guarantor-image') }}
+  <div class="guarantor-body">
+    <h4 class="guarantor-title">
+      Tuto kapitolu píše {% if url %}<a href="{{ url }}">{{ name }}</a>{% else %}{{ name }}{% endif %}
+    </h4>
+    <p>
+      {{ caller()|md|remove_p }}
+    </p>
+    <p>
+      <small class="guarantor-note">{{ 'info-circle'|icon }}
+        Jak přesně funguje spolupráce na této kapitole? <a href="{{ pages|docs_url('faq.md')|url }}#garanti">Více o garantech</a>
+      </small>
+    </p>
+  </div>
+</div>
+{% endmacro %}

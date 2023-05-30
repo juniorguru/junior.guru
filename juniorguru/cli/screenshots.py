@@ -22,7 +22,7 @@ logger = loggers.from_path(__file__)
 
 PUBLIC_DIR = Path('public')
 
-IMAGES_DIR = Path('juniorguru') / 'web' / 'static' / 'src' / 'images'
+IMAGES_DIR = Path('juniorguru/images_legacy')
 
 SCREENSHOTS_DIR = IMAGES_DIR / 'screenshots'
 

@@ -25,7 +25,7 @@ from juniorguru.models.podcast import PodcastEpisode
 logger = loggers.from_path(__file__)
 
 
-YAML_PATH = Path(__file__).parent.parent / 'data' / 'podcast.yml'
+YAML_PATH = Path('juniorguru/data/podcast.yml')
 
 YAML_SCHEMA = Seq(
     Map({
@@ -42,7 +42,7 @@ YAML_SCHEMA = Seq(
 
 WORKERS = 4
 
-IMAGES_DIR = Path(__file__).parent.parent / 'images'
+IMAGES_DIR = Path('juniorguru/images')
 
 POSTERS_DIR = IMAGES_DIR / 'posters-podcast'
 

@@ -17,7 +17,7 @@ from playwright.sync_api import sync_playwright
 from juniorguru.lib import loggers
 
 
-NODE_MODULES_DIR = Path(__file__).parent.parent.parent / 'node_modules'
+NODE_MODULES_DIR = Path('node_modules')
 
 FONTS = [NODE_MODULES_DIR / '@fontsource' / 'inter' / 'files',
          NODE_MODULES_DIR / 'bootstrap-icons' / 'font' / 'fonts']
@@ -26,9 +26,9 @@ CSS_REWRITE = [
     (r'\./files/([^\.]+/)?([^\.]+\.woff)', r'\./fonts/\2'),
 ]
 
-IMAGES_DIR = Path(__file__).parent.parent / 'images'
+IMAGES_DIR = Path('juniorguru/images')
 
-TEMPLATES_DIR = Path(__file__).parent.parent / 'image_templates'
+TEMPLATES_DIR = Path('juniorguru/image_templates')
 
 
 logger = loggers.from_path(__file__)

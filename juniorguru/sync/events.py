@@ -21,9 +21,9 @@ from juniorguru.models.partner import Partner
 logger = loggers.from_path(__file__)
 
 
-DATA_PATH = Path(__file__).parent.parent / 'data' / 'events.yml'
+DATA_PATH = Path('juniorguru/data/events.yml')
 
-IMAGES_DIR = Path(__file__).parent.parent / 'images'
+IMAGES_DIR = Path('juniorguru/images')
 
 POSTERS_DIR = IMAGES_DIR / 'posters-events'
 
