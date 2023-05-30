@@ -18,7 +18,7 @@ def main():
 
 @main.command()
 @click.option('--pull/--no-pull', default=True)
-def install(pull):
+def update(pull):
     try:
         if pull:
             subprocess.run(['git', 'pull', '--rebase', 'origin', 'main'], check=True)
