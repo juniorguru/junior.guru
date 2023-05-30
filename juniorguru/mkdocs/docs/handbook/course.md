@@ -684,4 +684,31 @@ To je výhoda proti jazykům, tam si většinou musíš vše pamatovat (dobře, 
 https://www.facebook.com/groups/144621756262987/posts/1284103288981489
 
 
+Přijímací scénář má dvě kola - začíná se dvouhodinovým blokem dvou on-line her - jedna testuje paměť, druhá logiku - schopnost přemýšlet v algoritmu. Pokud hrami projdete, je možnost zvolit si termín tzv. Piscine, měsíčního zkušebního přijímacího řízení. Zní to ošklivě, má to však sloužit hlavně k tomu, aby si uchazeč "osahal", jestli je takový styl studia pro něj, zda mu podobný systém vyhovuje. Ne každému sedí, že nebude mít lektora, někdo zjistí, že na to nemá čas, že mu nevyhovuje obsah učiva a podobně. Hodně lidí to vzdalo hned po pár dnech. Úspěch na Piscine se tak úplně neměří znalostmi a schopnostmi programovat, nakonec 42 Prague je otevřena i lidem, kteří předchozí znalost programování neměli.
+
+
+--- https://discord.com/channels/769966886598737931/1107639286486028321/1112000873967657020
+Jsou na to asi dva pohledy, jeden je co to znamená pro uchazeče a druhý co to znamená pro GFA.
+
+**Pro uchazeče** to znamená jen to, že se GFA rozhodla, že si nejsou dost jistí, že projde jejich programem. Nic víc. 
+
+**Pro GFA** je to cesta k eliminaci podnikatelského rizika daného tím, že GFA zaručuje pracovní umístění a jinak vrací školné a nedostává provizi od firemních partnerů. 
+
+Problém je spolehlivost. Už počet lidí, kteří tím prošli, nemusel být zrovna statisticky průkazný, ale s léty to tam mohlo dospět. 🤷‍♂️ 
+
+Druhý je to zpřesňování na základě podle toho, jestli se je povedlo udat. Působí to jako učebnicový *survivorship bias*. Neexistuje kontrolní skupina těch, kteří byli odmítnuti a procházeli by tím programem a viděla se i jejich (ne)úspěšnost. Dá se případně jen omezovat false positive, tedy zpětně zkoumat výsledky testů těch, kterým se to nepodařilo dotáhnout a hledat v tom nějaký vzorec.
+
+Ono je asi pro GFA přijatelnější někoho schopného odmítnout na základě nepřesného testu než riskovat ztrátu. I za cenu toho, že musí investovat víc do marketingu i času na těch testech, aby vhodné kandidáty našli. 
+
+I když zavedení možnosti ukončit za nějaké menší peníze program po nějaké úvodní fázi (která pokud vím, nebyla od začátku) naznačuje, že „průzkum bojem“ taky úplně nezatracují.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1099472100101718147/1099472100101718147
+Zvažujete někdo nebo jste už zkusil https://www.42prague.com/ ?
+
+Bohužel jediná zkušenost je zatím v https://discord.com/channels/769966886598737931/1062039358208745602 od <@949387504082124860>, která tu už není.
+---
+
+
 #} -->

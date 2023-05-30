@@ -479,4 +479,9 @@ Muzu ti dat svoji omeznou zkusenost toho "seniorniho" cloveka - brali jsme lidi 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1110272084896124999/1110325273917935756
+<@614870427931770900>  dobrý otázky; méně času mi trvá, než se seznámím s produktem, i díky představení (prozatím dvě větší aplikace, oboje - Python, Fast Api, Vue.js, Quasar). Ale pak narážím hlavně na neznalost technologií (na FE), nebo problémy s neznalostí prostředí a vazeb. V případě, že se na něčem zaseknu, tak je to někdy i na pár dní, než zjistím jak funguje 10 dalších souvislostí (např dnes jsem celý den hledal funkci v js, která řeší, jestli je soubor dirty, abych ji mohl upravit pro usecase, kde potřebuju část dat ignorovat). Kdybych měl prostor se zeptat, tak to mám hotový za 20 min. Celkem důkladě jsem si prošel další souvislosti a dává mi to o trochu větší smysl. Stále to ale naráží na neefektivní proces učení, na druhou stranu to asi bude v případě téhle organizace, jediná cesta, mám dojem. No a codereview probíhá často tak, že si až zpětně dohledávám, co bylo z mého merge requestu použité na produkci.
+---
+
+
 #} -->

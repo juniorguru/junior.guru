@@ -909,4 +909,19 @@ pre ludi co nemaju OOP skusenosti mozem odporucit pozret si nejaky clanok k SOLI
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789087476072710174/1112727311347875922
+https://cron-ai.vercel.app/
+---
+
+
+--- https://discord.com/channels/769966886598737931/789087476072710174/1112726378677272628
+Máš odkaz? Já znám jen https://crontab.guru/ (teda „jen“ bych dal do závorek, už tohle mi přijde hodně užitečné 😄 )
+---
+
+
+--- https://discord.com/channels/769966886598737931/789087476072710174/1111723379028922418
+Regulární výrazy. Napíšete a máte. https://www.autoregex.xyz/
+---
+
+
 #} -->

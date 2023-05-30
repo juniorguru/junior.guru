@@ -235,4 +235,9 @@ Zajímavá pomůcka 🙂 https://www.starterstory.com/how-to-say-no
 ---
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1111537040358654012
+Vykouklo na mě na <:facebook:976201141924802580>: https://www.elsa.cvut.cz/wp-content/uploads/2022/11/manual-dusevniho-zdravi-vysokoskolaka.pdf
+---
+
+
 #} -->
