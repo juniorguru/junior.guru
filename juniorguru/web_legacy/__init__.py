@@ -1,24 +1,16 @@
-import os
-from pathlib import Path
-
 import arrow
+from flask_frozen import Freezer
 from flask import Flask, render_template, url_for
 
 from juniorguru.lib import loggers, template_filters
-from juniorguru.lib.images import render_image_file
 from juniorguru.models.base import db
 from juniorguru.models.event import Event
 from juniorguru.models.job import ListedJob
+from juniorguru.models.page import LegacyThumbnail
 from juniorguru.models.story import Story
 
 
 logger = loggers.from_path(__file__)
-
-
-FLUSH_THUMBNAILS = bool(int(os.getenv('FLUSH_THUMBNAILS', 0)))
-THUMBNAILS_DIR = Path('public/static/thumbnails')
-THUMBNAIL_WIDTH = 1200
-THUMBNAIL_HEIGHT = 630
 
 
 NAV_TABS = [
@@ -56,23 +48,18 @@ REGIONS = [
 ]
 
 
+def get_freezer(app) -> Freezer:
+    freezer = Freezer(app)
+    freezer.register_generator(generate_job_pages)
+    freezer.register_generator(generate_jobs_region_pages)
+    return freezer
+
+
 app = Flask(__name__)
-
-
-if FLUSH_THUMBNAILS:
-    logger.warning("Removing all existing thumbnails, FLUSH_THUMBNAILS is set")
-    for thumbnail_path in THUMBNAILS_DIR.glob('*.png'):
-        thumbnail_path.unlink()
 
 
 def redirect(url):
     return render_template('meta_redirect.html', url=url)
-
-
-def thumbnail(**context):
-    image_path = render_image_file(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT,
-                                   'thumbnail_legacy.html', context, THUMBNAILS_DIR)
-    return f'thumbnails/{image_path.name}'
 
 
 for template_filter in [
@@ -98,7 +85,8 @@ def index():
         stories = Story.listing()
     return render_template('index.html',
                            nav_tabs=NAV_TABS,
-                           stories=stories)
+                           stories=stories,
+                           thumbnail=LegacyThumbnail.image_path_by_url('/'))
 
 
 @app.route('/events/')
@@ -110,14 +98,14 @@ def events():
                            nav_active='club',
                            events_planned=events_planned,
                            events_archive=events_archive,
-                           thumbnail=thumbnail(title='Klubové akce'))
+                           thumbnail=LegacyThumbnail.image_path_by_url('/events/'))
 
 
 @app.route('/membership/')
 def membership():
     return render_template('membership.html',
                            nav_active='club',
-                           thumbnail=thumbnail(title='Rozcestník pro členy klubu'))
+                           thumbnail=LegacyThumbnail.image_path_by_url('/membership/'))
 
 
 @app.route('/jobs/')
@@ -128,7 +116,7 @@ def jobs():
                            nav_active='jobs',
                            jobs=jobs,
                            regions=REGIONS,
-                           thumbnail=thumbnail(title='Práce v IT pro začátečníky'))
+                           thumbnail=LegacyThumbnail.image_path_by_url('/jobs/'))
 
 
 @app.route('/jobs/remote/')
@@ -140,7 +128,7 @@ def jobs_remote():
                            jobs=jobs,
                            remote=True,
                            regions=REGIONS,
-                           thumbnail=thumbnail(title='Práce v\u00a0IT pro začátečníky —\u00a0na\u00a0dálku'))
+                           thumbnail=LegacyThumbnail.image_path_by_url('/jobs/remote/'))
 
 
 @app.route('/jobs/region/<region_id>/')
@@ -155,7 +143,7 @@ def jobs_region(region_id):
                            jobs_remote=jobs_remote,
                            region=region,
                            regions=REGIONS,
-                           thumbnail=thumbnail(title=f"Práce v\u00a0IT pro začátečníky —\u00a0{region['name']}"))
+                           thumbnail=LegacyThumbnail.image_path_by_url(f'/jobs/region/{region_id}/'))
 
 
 def generate_jobs_region_pages():
@@ -171,9 +159,7 @@ def job(job_id):
                            nav_active='jobs',
                            job=job,
                            jobs_count=jobs_count,
-                           thumbnail=thumbnail(job_title=job.title,
-                                               job_company=job.company_name,
-                                               job_location=job.location))
+                           thumbnail=LegacyThumbnail.image_path_by_url(f'/jobs/{job_id}/'))
 
 
 def generate_job_pages():
@@ -187,16 +173,15 @@ def generate_job_pages():
 @db.connection_context()
 def not_found():
     jobs = ListedJob.listing()
-    return render_template('404.html', jobs=jobs)
+    return render_template('404.html',
+                           jobs=jobs,
+                           thumbnail=LegacyThumbnail.image_path_by_url('/404.html'))
 
 
 @app.context_processor
 def inject_defaults():
     now = arrow.utcnow()
-    return dict(nav_tabs=NAV_TABS,
-                now=now,
-                today=now.date(),
-                thumbnail=thumbnail())
+    return dict(nav_tabs=NAV_TABS, now=now, today=now.date())
 
 
 # Pages moved to MkDocs

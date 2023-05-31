@@ -1,9 +1,9 @@
 from pathlib import Path
 import warnings
 
-import flask_frozen
+from flask_frozen import FrozenFlaskWarning
 
-from juniorguru.web_legacy import app, generate_job_pages, generate_jobs_region_pages
+from juniorguru.web_legacy import app, get_freezer
 
 
 def main(dest_path: str | Path):
@@ -14,9 +14,7 @@ def main(dest_path: str | Path):
     app.config['FREEZER_BASE_URL'] = 'https://junior.guru'
     app.static_folder=dest_path / 'static'
 
-    warnings.filterwarnings('error', category=flask_frozen.FrozenFlaskWarning)
+    warnings.filterwarnings('error', category=FrozenFlaskWarning)
 
-    freezer = flask_frozen.Freezer(app)
-    freezer.register_generator(generate_job_pages)
-    freezer.register_generator(generate_jobs_region_pages)
+    freezer = get_freezer(app)
     freezer.freeze()

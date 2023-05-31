@@ -20,7 +20,6 @@ from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.story import Story
 from juniorguru.models.topic import Topic
 from juniorguru.models.transaction import Transaction
-from juniorguru.web.thumbnail import thumbnail
 
 
 NOW = arrow.utcnow()
@@ -182,11 +181,9 @@ def on_theme_context(context):
 
 @db.connection_context()
 def on_theme_page_context(context, page, config, files):
-    page.meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
-
-    thumbnail_path = thumbnail(page.meta.get('thumbnail_title', page.meta['title']),
-                               badge=page.meta.get('thumbnail_badge'))
-    context['thumbnail_url'] = urljoin(config['site_url'], f'static/{thumbnail_path}')
+    # FIXME ??? page.meta.setdefault('title', 'Jak se naučit programovat a získat první práci v IT')
+    thumbnail_path = Page.get_by_src_uri(page.file.src_uri).thumbnail_path
+    context['thumbnail_url'] = urljoin(config['site_url'], f'static/thumbnails/{thumbnail_path}')
 
     context['parent_page'] = get_parent_page(page)
     context['previous_page'] = get_sibling_page(page, -1)
