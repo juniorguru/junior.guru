@@ -22,8 +22,8 @@
       <link rel="preconnect" href="https://{{ cloudinary_host }}">
 
       {% block stylesheet %}<link rel="stylesheet" href="{{ 'static/css_legacy/index.css'|url }}">{% endblock %}
-      <link rel="preload" href="{{ ('static/' + bootstrap_icons_file)|url }}" as="font" type="font/woff2" crossorigin="anonymous">
-      <script defer src="{{ 'static/js/index.js'|url }}?{{ js_hash }}"></script>
+      <link rel="preload" href="{{ ('static/bootstrap-icons.woff2')|url }}" as="font" type="font/woff2" crossorigin="anonymous">
+      <script defer src="{{ 'static/js/index.js'|url }}"></script>
 
       <meta property="og:title" content="{{ page.meta.title }}">
       <meta property="og:type" content="website">

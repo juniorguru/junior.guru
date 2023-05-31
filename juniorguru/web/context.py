@@ -1,8 +1,5 @@
-import hashlib
 import os
-import re
 from datetime import date
-from pathlib import Path
 from urllib.parse import urljoin
 
 import arrow
@@ -179,12 +176,6 @@ def on_docs_page_context(context, page, config, files):
 
 
 def on_theme_context(context):
-    js_path = Path.cwd() / 'public' / 'static' / 'js' / 'index.js'
-    css_path = Path.cwd() / 'public' / 'static' / 'css' / 'index.css'
-    context['js_hash'] = hash_file(js_path)
-    context['css_hash'] = hash_file(css_path)
-    context['bootstrap_icons_file'] = re.search(r'bootstrap-icons(\-\w+)?.woff2\?\w+', css_path.read_text()).group(0)
-
     context['partnerships_handbook'] = Partnership.handbook_listing()
     context['course_providers'] = CourseProvider.listing()
 
@@ -205,12 +196,6 @@ def on_theme_page_context(context, page, config, files):
 ####################################################################
 # HELPER FUNCTIONS                                                 #
 ####################################################################
-
-
-def hash_file(path):
-    hash = hashlib.sha512()
-    hash.update(path.read_bytes())
-    return hash.hexdigest()
 
 
 def get_parent_page(page):

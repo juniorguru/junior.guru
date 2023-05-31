@@ -84,7 +84,7 @@ def normalize_link(dir, doc_path, link):
     if Path(link.split('#')[0]).suffix not in ('', '.md'):
         raise StaticFileLinkError(link)
     if link.startswith('#'):
-        link = f'{get_doc_name(doc_path)}{link}'
+        link = f'{get_doc_name(dir, doc_path)}{link}'
     if not link.startswith(('.', '/')):
         link = f'./{link}'
     if link.startswith('.'):

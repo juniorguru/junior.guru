@@ -28,5 +28,5 @@ await esbuild.build({
       // },
     }),
   ],
-  outdir: "public/static/",
+  outdir: process.argv[2] || "public/static/",
 })
