@@ -40,8 +40,7 @@ def building(title: str):
 @building('static files')
 def build_static(output_path: Path):
     static_path = output_path / 'static'
-    shutil.copytree('juniorguru/images', static_path, dirs_exist_ok=True)
-    shutil.copytree('juniorguru/images_legacy', static_path, dirs_exist_ok=True,
+    shutil.copytree('juniorguru/images', static_path, dirs_exist_ok=True,
                     ignore=shutil.ignore_patterns('screenshots-overrides'))
     shutil.copytree('juniorguru/images/screenshots-overrides', static_path / 'screenshots', dirs_exist_ok=True)
     subprocess.run(['node', 'esbuild.js', str(static_path.absolute())], check=True)

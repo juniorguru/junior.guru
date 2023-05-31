@@ -88,7 +88,7 @@ body.body--index {
 
 .billboard-learn {
   background-color: variables.$jg-yellow;
-  background-image: url('../images_legacy/billboard-learn.jpg');
+  background-image: url('../images/billboard-learn.jpg');
   background-position: right 35% center;
   color: variables.$jg-dark;
 
@@ -113,7 +113,7 @@ body.body--index {
 
 .billboard-jobs {
   background-color: variables.$jg-dark;
-  background-image: url('../images_legacy/billboard-jobs.jpg');
+  background-image: url('../images/billboard-jobs.jpg');
   color: variables.$jg-white;
 
   @media screen and (min-width: 650px) {
@@ -217,9 +217,9 @@ body.body--index {
     @include variables.page-width($padding: variables.$whitespace);
   }
 
-  li:nth-child(1)::before { background-image: url('../images_legacy/chick1-i.svg'); }
-  li:nth-child(2)::before { background-image: url('../images_legacy/chick2-i.svg'); }
-  li:nth-child(3)::before { background-image: url('../images_legacy/chick3-i.svg'); }
+  li:nth-child(1)::before { background-image: url('../images/chick1-i.svg'); }
+  li:nth-child(2)::before { background-image: url('../images/chick2-i.svg'); }
+  li:nth-child(3)::before { background-image: url('../images/chick3-i.svg'); }
 
   .handbook-block {
     display: block;
