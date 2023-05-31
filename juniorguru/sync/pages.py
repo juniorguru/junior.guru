@@ -9,6 +9,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.models.base import db
 from juniorguru.models.page import Page
+from juniorguru.web.templates import TEMPLATES
 
 
 PACKAGE_DIR = Path('juniorguru')
@@ -24,20 +25,29 @@ def main():
     Page.drop_table()
     Page.create_table()
 
-    logger.info('Reading MkDocs files')
+    logger.info('Reading Markdown source files')
     config = load_config(config_file='juniorguru/web/mkdocs.yml')
     files = get_files(config)
     for file in files.documentation_pages():
         logger.debug(f"Reading: {file.src_uri}")
         with open(file.abs_src_path, encoding='utf-8-sig', errors='strict') as f:
             source = f.read()
-        data = dict(path=Path(file.abs_src_path).relative_to(Path.cwd()),
-                    src_uri=file.src_uri,
+        data = dict(src_uri=file.src_uri,
                     dest_uri=file.dest_uri,
                     size=len(source),
                     meta=parse_meta(source),
                     notes=parse_notes(source))
         Page.create(**data)
+
+    logger.info('Generating pages from templates')
+    for _, generate_pages in TEMPLATES.items():
+        for page in generate_pages():
+            logger.debug(f"Reading: {page['path']}")
+            data = dict(src_uri=page['path'],
+                        dest_uri=page['path'].replace('.md', '/index.html'),
+                        meta=page['meta'])
+            Page.create(**data)
+
     logger.info(f'Created {Page.select().count()} pages')
 
 

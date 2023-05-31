@@ -5,11 +5,10 @@ from juniorguru.models.base import BaseModel, JSONField
 
 
 class Page(BaseModel):
-    path = CharField(unique=True)
     src_uri = CharField(unique=True)
     dest_uri = CharField(unique=True)
-    size = IntegerField()
     meta = JSONField(default=dict)
+    size = IntegerField(null=True)
     notes = TextField(null=True)
     thumbnail_path = CharField(null=True)
 
