@@ -15,6 +15,7 @@ from playwright.sync_api import (Error as PlaywrightError,
                                  sync_playwright)
 
 from juniorguru.lib import loggers
+from juniorguru.cli.web import build
 
 
 logger = loggers.from_path(__file__)
@@ -22,7 +23,7 @@ logger = loggers.from_path(__file__)
 
 PUBLIC_DIR = Path('public')
 
-IMAGES_DIR = Path('juniorguru/images_legacy')
+IMAGES_DIR = Path('juniorguru/images')
 
 SCREENSHOTS_DIR = IMAGES_DIR / 'screenshots'
 
@@ -120,7 +121,8 @@ BLOCKED_ROUTES = [
 
 
 @click.command()
-def main():
+@click.pass_context
+def main(context):
     SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
     SCREENSHOTS_OVERRIDES_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -140,7 +142,7 @@ def main():
         path.unlink()
 
     logger.info('Building HTML')
-    run(['npx', 'gulp', 'build'], check=True, stdout=PIPE)
+    context.invoke(build)
     html_paths = set(Path(PUBLIC_DIR).glob('**/*.html'))
     logger.info(f'Reading {len(html_paths)} HTML files')
     screenshots = set(chain.from_iterable(map(parse_doc, html_paths)))

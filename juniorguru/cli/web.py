@@ -43,7 +43,7 @@ def build_static(output_path: Path):
     shutil.copytree('juniorguru/images', static_path, dirs_exist_ok=True)
     shutil.copytree('juniorguru/images_legacy', static_path, dirs_exist_ok=True,
                     ignore=shutil.ignore_patterns('screenshots-overrides'))
-    shutil.copytree('juniorguru/images_legacy/screenshots-overrides', static_path / 'screenshots', dirs_exist_ok=True)
+    shutil.copytree('juniorguru/images/screenshots-overrides', static_path / 'screenshots', dirs_exist_ok=True)
     subprocess.run(['node', 'esbuild.js', str(static_path.absolute())], check=True)
     Path(static_path / 'favicon.ico').rename(output_path / 'favicon.ico')
 
