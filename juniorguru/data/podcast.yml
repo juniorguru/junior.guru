@@ -8,6 +8,12 @@
 # avatar_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
+- id: "0016"
+  title: Kateřina Lesch (Deloitte) o umělé inteligenci
+  publish_on: "2023-06-01"
+  description: |
+      Jak sama říká, trénovala NLP (natural language processing) modely, ještě než to bylo cool. Teď je Katka senior manager AI and Data v Deloittu a s Pájou si povídá o tom, jak se sama dívá na vývoj umělé inteligence, do jaké míry byste měli rozumět principům AI modelů pokud je chcete dobře používat nebo jestli potřebujete formální vzdělání, abyste se na poli AI prosadili.
+
 - id: "0015"
   title: Marián Kameništák (kamenistak.com) o pohovorech a kariéře v IT
   avatar_path: avatars-participants/marian-kamenistak.jpg
