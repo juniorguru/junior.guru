@@ -1,6 +1,6 @@
 import arrow
-from flask_frozen import Freezer
 from flask import Flask, render_template, url_for
+from flask_frozen import Freezer
 
 from juniorguru.lib import loggers, template_filters
 from juniorguru.models.base import db

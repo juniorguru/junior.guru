@@ -1,5 +1,5 @@
-from pathlib import Path
 import warnings
+from pathlib import Path
 
 from flask_frozen import FrozenFlaskWarning
 

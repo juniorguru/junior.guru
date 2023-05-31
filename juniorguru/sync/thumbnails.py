@@ -7,8 +7,8 @@ from juniorguru.lib import loggers
 from juniorguru.lib.images import render_image_file
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
-from juniorguru.models.page import Page, LegacyThumbnail
-from juniorguru.web_legacy import app, get_freezer, generate_job_pages
+from juniorguru.models.page import LegacyThumbnail, Page
+from juniorguru.web_legacy import app, generate_job_pages, get_freezer
 
 
 logger = loggers.from_path(__file__)

@@ -14,8 +14,8 @@ from playwright.sync_api import (Error as PlaywrightError,
                                  TimeoutError as PlaywrightTimeoutError,
                                  sync_playwright)
 
-from juniorguru.lib import loggers
 from juniorguru.cli.web import build
+from juniorguru.lib import loggers
 
 
 logger = loggers.from_path(__file__)
