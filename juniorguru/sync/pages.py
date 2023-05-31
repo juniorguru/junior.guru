@@ -1,4 +1,3 @@
-from pathlib import Path
 from typing import Any
 
 from mkdocs.config import load_config
@@ -10,9 +9,6 @@ from juniorguru.lib import loggers
 from juniorguru.models.base import db
 from juniorguru.models.page import Page
 from juniorguru.web.templates import TEMPLATES
-
-
-PACKAGE_DIR = Path('juniorguru')
 
 
 logger = loggers.from_path(__file__)
