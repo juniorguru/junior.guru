@@ -31,7 +31,7 @@
       expires_on: 2024-05-31
     - plan: support
       starts_on: 2022-06-01
-      expires_on: 2023-05-31
+      expires_on: 2023-05-30
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_pl%C3%A1nuje%C5%A1-hledat-prvn%C3%AD-pr%C3%A1ci-v-it-zkus-pohovor-activity-6986269086892580864-EwIr
