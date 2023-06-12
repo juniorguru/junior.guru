@@ -51,7 +51,7 @@ juniorguru-chick = { git = "https://github.com/juniorguru/juniorguru-chick.git" 
 pycircleci = "^0.7.0"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "7.3.1"
+pytest = "7.3.2"
 pync = "2.0.3"
 flake8 = "6.0.0"
 isort = "5.12.0"
