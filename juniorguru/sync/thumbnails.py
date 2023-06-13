@@ -19,12 +19,21 @@ logger = loggers.from_path(__file__)
 @click.option('--output-dir', default='thumbnails', type=click.Path(path_type=Path))
 @click.option('--width', default=1200, type=int)
 @click.option('--height', default=630, type=int)
+@click.option('--clear/--no-clear', default=False)
 @db.connection_context()
-def main(images_path, output_dir, width, height):
+def main(images_path, output_dir, width, height, clear):
     output_path = images_path / output_dir
     output_path.mkdir(exist_ok=True)
 
-    for page in Page.listing():
+    if clear:
+        existing_paths = list(output_path.glob('*.png'))
+        logger.info(f'Removing {len(existing_paths)} existing thumbnails')
+        for existing_path in existing_paths:
+            existing_path.unlink()
+
+    pages = list(Page.listing())
+    logger.info(f'Generating {len(pages)} thumbnails')
+    for page in pages:
         context = dict(title=page.meta.get('thumbnail_title', page.meta['title']),
                        badge=page.meta.get('thumbnail_badge'))
         image_path = render_image_file(width, height, 'thumbnail.html', context, output_path)
