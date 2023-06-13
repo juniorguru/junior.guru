@@ -115,7 +115,7 @@ def render_template(width, height, template_name, context, filters=None):
         temp_dir = Path(temp_dir)
         logger.info(f'Rendering {width}x{height} {template_name} in {temp_dir}')
 
-        html = template.render(images_dir=IMAGES_DIR, **context)
+        html = template.render(images_dir=IMAGES_DIR.absolute(), **context)
         html_path = temp_dir / template_name
         html_path.write_text(html)
 
