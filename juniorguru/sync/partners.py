@@ -59,10 +59,10 @@ POSTER_HEIGHT = 700
 
 
 @cli.sync_command(dependencies=['partnership-plans'])
-@click.option('--flush-posters/--no-flush-posters', default=False)
+@click.option('--clear-posters/--no-clear-posters', default=False)
 @db.connection_context()
-def main(flush_posters):
-    if flush_posters:
+def main(clear_posters):
+    if clear_posters:
         logger.warning("Removing all existing posters for partners")
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()

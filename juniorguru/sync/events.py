@@ -60,9 +60,9 @@ schema = Seq(
 
 
 @cli.sync_command(dependencies=['club-content', 'partners'])
-@click.option('--flush-posters/--no-flush-posters', default=False)
-def main(flush_posters):
-    if flush_posters:
+@click.option('--clear-posters/--no-clear-posters', default=False)
+def main(clear_posters):
+    if clear_posters:
         logger.warning("Removing all existing posters for events")
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
