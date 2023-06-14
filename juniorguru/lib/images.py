@@ -23,7 +23,7 @@ FONTS = [NODE_MODULES_DIR / '@fontsource' / 'inter' / 'files',
          NODE_MODULES_DIR / 'bootstrap-icons' / 'font' / 'fonts']
 
 CSS_REWRITE = [
-    (r'\./files/([^\.]+/)?([^\.]+\.woff)', r'\./fonts/\2'),
+    (r'(\.+/)+([^\.]+/)?([^\.]+\.woff)', r'./fonts/\3'),
 ]
 
 IMAGES_DIR = Path('juniorguru/images')
