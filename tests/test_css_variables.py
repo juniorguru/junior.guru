@@ -1,4 +1,3 @@
-import itertools
 import re
 from pathlib import Path
 
@@ -10,7 +9,7 @@ EXCEPTIONS = ['eggshell.svg']
 SCSS_VARIABLE_RE = re.compile(r'(\$[^:]+):\s+([^;]+);')
 CSS_VARIABLE_RE = re.compile(r'(\-\-[^:]+):\s+([^;]+);')
 SVG_FILL_RE = re.compile(r"fill='(\#[^']+)'" + r'|fill="(\#[^"]+)"|fill:\s*(\#[^;]+);')
-PACKAGE_DIR = Path(__file__).parent.parent / 'juniorguru'
+PACKAGE_DIR = Path('juniorguru')
 
 
 def parse(css_text, match_re):
@@ -29,7 +28,7 @@ def find_fill(svg_text):
 
 @pytest.fixture
 def source_of_truth():
-    path = PACKAGE_DIR / 'scss' / '_defaults.scss'
+    path = PACKAGE_DIR / 'css/_defaults.scss'
     return {match.group(1): match.group(2) for match
             in parse(path.read_text(), SCSS_VARIABLE_RE)
             if match.group(1).startswith('$jg-')}
@@ -42,7 +41,7 @@ def test_source_of_truth_variables_exist(source_of_truth):
 VARS_LEGACY_WEB = [
     (match.group(1), match.group(2))
     for match in
-    parse((PACKAGE_DIR / 'web' / 'static' / 'src' / 'css' / 'spaghetti' / 'variables.scss').read_text(), SCSS_VARIABLE_RE)
+    parse((PACKAGE_DIR / 'css_legacy/spaghetti/variables.scss').read_text(), SCSS_VARIABLE_RE)
     if match.group(1).startswith('$jg-')
 ]
 
@@ -59,7 +58,7 @@ def test_legacy_web(name, value, source_of_truth):
 VARS_LEGACY_WEB_DOTS = [
     (match.group(1), match.group(2))
     for match in
-    parse((PACKAGE_DIR / 'web' / 'static' / 'src' / 'css' / 'spaghetti' / 'variables.scss').read_text(), SCSS_VARIABLE_RE)
+    parse((PACKAGE_DIR / 'css_legacy/spaghetti/variables.scss').read_text(), SCSS_VARIABLE_RE)
     if match.group(1).startswith('$dots-')
 ]
 
@@ -92,10 +91,7 @@ def test_image_templates(name, value, source_of_truth):
     assert source_of_truth[name.replace('--color-', '$jg-')] == value
 
 
-SVG_IMAGES_WEB = list(itertools.chain(
-    (PACKAGE_DIR / 'web' / 'static' / 'src' / 'images').glob('*.svg'),
-    (PACKAGE_DIR / 'images').glob('*.svg'),
-))
+SVG_IMAGES_WEB = list((PACKAGE_DIR / 'images').glob('*.svg'))
 
 
 def test_svg_images_exist():
@@ -133,6 +129,6 @@ def test_dark_svg_images(path, source_of_truth):
 
 
 def test_annotations(source_of_truth):
-    js_text = (PACKAGE_DIR / 'web' / 'static' / 'src' / 'js' / 'annotations.js').read_text()
+    js_text = (PACKAGE_DIR / 'js/annotations.js').read_text()
 
     assert source_of_truth['$jg-blue'] in js_text

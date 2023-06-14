@@ -62,7 +62,7 @@ pytest-asyncio = "0.21.0"
 [tool.pytest.ini_options]
 python_files = "test_*.py *_test.py test.py"
 testpaths = "."
-norecursedirs = "node_modules __jobs_legacy__"
+norecursedirs = "node_modules jobs_legacy"
 addopts = "--ff"
 filterwarnings = [
     "ignore:the imp module is deprecated:DeprecationWarning",
@@ -77,7 +77,7 @@ lines_after_imports = 2
 combine_as_imports = true
 multi_line_output = 0
 include_trailing_comma = false
-extend_skip = ["__jobs_legacy__"]
+extend_skip = ["jobs_legacy"]
 known_local_folder = ["testing_utils"]
 
 [build-system]

@@ -85,6 +85,7 @@ google_service_account.json
 /juniorguru/images/posters-events/*.png
 /juniorguru/images/posters-partners/*.png
 /juniorguru/images/posters-podcast/*.png
+/juniorguru/images/thumbnails/*.png
 /juniorguru/data/proxies.txt
 /juniorguru/data/jobs-emails.txt
 
@@ -98,10 +99,6 @@ backup.tar.gz.gpg
 backup.tgz
 backup.tgz.gpg
 /backups/
-
-# Web statics
-/juniorguru/web/static/*
-!/juniorguru/web/static/src
 
 # Testing debug artifacts
 /tests/sync_jobs_logos/logo-converted.png

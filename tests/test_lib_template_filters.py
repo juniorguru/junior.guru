@@ -256,9 +256,9 @@ def test_icon_with_classes():
 
 def test_docs_url():
     assert template_filters.docs_url([
-        File('privacy.md', 'juniorguru/mkdocs/docs', 'public/mkdocs', True),
-        File('club.md', 'juniorguru/mkdocs/docs', 'public/mkdocs', True),
-        File('topics/csharp.md', 'juniorguru/mkdocs/docs', 'public/mkdocs', True),
+        File('privacy.md', 'juniorguru/web/docs', 'public', True),
+        File('club.md', 'juniorguru/web/docs', 'public', True),
+        File('topics/csharp.md', 'juniorguru/web/docs', 'public', True),
     ], 'club.md') == 'club/'
 
 

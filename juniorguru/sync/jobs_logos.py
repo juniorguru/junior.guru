@@ -18,9 +18,9 @@ MAX_SIZE_PX = 1000
 
 SIZE_PX = 100
 
-ROOT_DIR = Path(__file__).parent.parent
+IMAGES_DIR = Path('juniorguru/images')
 
-LOGOS_DIR = ROOT_DIR / 'images' / 'logos-jobs'
+LOGOS_DIR = IMAGES_DIR / 'logos-jobs'
 
 WORKERS = 4
 
@@ -89,7 +89,7 @@ def main():
         for job in jobs:
             logo_path = logo_paths.get(job.id)
             if logo_path:
-                job.company_logo_path = Path(logo_path).relative_to(ROOT_DIR)
+                job.company_logo_path = Path(logo_path).relative_to(IMAGES_DIR)
                 logger.debug(f'Logo for {job!r}: {job.company_logo_path}')
             job.save()
 

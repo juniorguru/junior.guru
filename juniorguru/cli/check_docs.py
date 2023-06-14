@@ -9,9 +9,6 @@ from juniorguru.lib import loggers
 logger = loggers.from_path(__file__)
 
 
-PUBLIC_DIR = Path('public')
-
-
 class EmailLinkError(ValueError):
     pass
 
@@ -25,14 +22,15 @@ class StaticFileLinkError(ValueError):
 
 
 @click.command()
-def main():
+@click.argument('dir', default='public', type=click.Path(exists=True, path_type=Path))
+def main(dir):
     links = []
     targets = set()
     static = set()
 
-    for doc_path in PUBLIC_DIR.glob('**/*.html'):
+    for doc_path in dir.glob('**/*.html'):
         logger.info(f'Reading {doc_path}')
-        doc_name = get_doc_name(doc_path)
+        doc_name = get_doc_name(dir, doc_path)
         targets.add(doc_name)
 
         html_tree = html.fromstring(doc_path.read_bytes())
@@ -43,15 +41,15 @@ def main():
         for element in html_tree.cssselect('a[href]'):
             href = element.get('href')
             try:
-                links.append((doc_name, normalize_link(doc_path, href)))
+                links.append((doc_name, normalize_link(dir, doc_path, href)))
             except StaticFileLinkError:
-                static.add((doc_name, normalize_static_link(doc_path, href)))
+                static.add((doc_name, normalize_static_link(dir, doc_path, href)))
             except ValueError:
                 pass #logger.debug(f'Skipping: {href}')
         for element in html_tree.cssselect('img[src]'):
             src = element.get('data-src', element.get('src'))
             try:
-                static.add((doc_name, normalize_static_link(doc_path, src)))
+                static.add((doc_name, normalize_static_link(dir, doc_path, src)))
             except ValueError:
                 pass #logger.debug(f'Skipping: {src}')
 
@@ -61,7 +59,7 @@ def main():
             logger.error(f'Broken link! {doc_name} links to {link}')
             broken = True
     for doc_name, static_path in static:
-        static_path = PUBLIC_DIR / static_path
+        static_path = dir / static_path
         if not static_path.exists():
             logger.error(f'Broken static file! {doc_name} links to {static_path}')
             broken = True
@@ -71,14 +69,14 @@ def main():
         logger.info(f'Checked {len(links)} links, {len(targets)} targets, {len(static)} static files. All good!')
 
 
-def get_doc_name(doc_path):
-    doc_name = f'/{doc_path.relative_to(PUBLIC_DIR)}'
+def get_doc_name(dir, doc_path):
+    doc_name = f'/{doc_path.relative_to(dir)}'
     if doc_name.endswith('index.html'):
         return doc_name[:-10]
     return doc_name
 
 
-def normalize_link(doc_path, link):
+def normalize_link(dir, doc_path, link):
     if link.startswith('http'):
         raise ExternalLinkError(link)
     if link.startswith('mailto'):
@@ -86,11 +84,11 @@ def normalize_link(doc_path, link):
     if Path(link.split('#')[0]).suffix not in ('', '.md'):
         raise StaticFileLinkError(link)
     if link.startswith('#'):
-        link = f'{get_doc_name(doc_path)}{link}'
+        link = f'{get_doc_name(dir, doc_path)}{link}'
     if not link.startswith(('.', '/')):
         link = f'./{link}'
     if link.startswith('.'):
-        link = f'/{doc_path.parent.joinpath(link).resolve().relative_to(PUBLIC_DIR.absolute())}'
+        link = f'/{doc_path.parent.joinpath(link).resolve().relative_to(dir.absolute())}'
     if not link.endswith('/') and '#' not in link:
         link = f'{link}/'
     if link == '/./':
@@ -98,7 +96,7 @@ def normalize_link(doc_path, link):
     return link
 
 
-def normalize_static_link(doc_path, link):
+def normalize_static_link(dir, doc_path, link):
     if link.startswith('http'):
         raise ExternalLinkError(link)
     if link.startswith('mailto'):
@@ -106,5 +104,5 @@ def normalize_static_link(doc_path, link):
     if link.startswith('/'):
         return link.lstrip('/')
     if link.startswith('.'):
-        return f'{doc_path.parent.joinpath(link).resolve().relative_to(PUBLIC_DIR.absolute())}'
+        return f'{doc_path.parent.joinpath(link).resolve().relative_to(dir.absolute())}'
     return link

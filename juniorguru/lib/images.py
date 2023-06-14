@@ -17,18 +17,18 @@ from playwright.sync_api import sync_playwright
 from juniorguru.lib import loggers
 
 
-NODE_MODULES_DIR = Path(__file__).parent.parent.parent / 'node_modules'
+NODE_MODULES_DIR = Path('node_modules')
 
 FONTS = [NODE_MODULES_DIR / '@fontsource' / 'inter' / 'files',
          NODE_MODULES_DIR / 'bootstrap-icons' / 'font' / 'fonts']
 
 CSS_REWRITE = [
-    (r'\./files/([^\.]+/)?([^\.]+\.woff)', r'\./fonts/\2'),
+    (r'(\.+/)+([^\.]+/)?([^\.]+\.woff)', r'./fonts/\3'),
 ]
 
-IMAGES_DIR = Path(__file__).parent.parent / 'images'
+IMAGES_DIR = Path('juniorguru/images')
 
-TEMPLATES_DIR = Path(__file__).parent.parent / 'image_templates'
+TEMPLATES_DIR = Path('juniorguru/image_templates')
 
 
 logger = loggers.from_path(__file__)
@@ -115,7 +115,7 @@ def render_template(width, height, template_name, context, filters=None):
         temp_dir = Path(temp_dir)
         logger.info(f'Rendering {width}x{height} {template_name} in {temp_dir}')
 
-        html = template.render(images_dir=IMAGES_DIR, **context)
+        html = template.render(images_dir=IMAGES_DIR.absolute(), **context)
         html_path = temp_dir / template_name
         html_path.write_text(html)
 

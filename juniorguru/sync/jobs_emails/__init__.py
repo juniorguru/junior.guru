@@ -154,7 +154,7 @@ def prepare_template_context(job, today):
                 url=f'https://junior.guru/jobs/{job.submitted_job.id}/',
                 url_jobs='https://junior.guru/jobs/',
                 url_index='https://junior.guru/',
-                url_logo='https://junior.guru/static/images/logo-email.png',
+                url_logo='https://junior.guru/static/logo-email.png',
                 url_analytics=f'https://simpleanalytics.com/junior.guru?search=paths%3A{job.submitted_job.id}&start={job.submitted_job.posted_on}&end={today}',
                 start_at=job.submitted_job.posted_on,
                 start_days=job.submitted_job.days_since_posted(today),

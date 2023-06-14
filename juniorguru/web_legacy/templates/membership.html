@@ -1,0 +1,56 @@
+{% extends 'layouts/base.html' %}
+
+{% block meta %}
+  {{ super() }}
+  <meta name="robots" content="nofollow, nosnippet, noimageindex, noarchive, nocache">
+{% endblock %}
+
+{% block title %}Rozcestník pro členy klubu junior.guru{% endblock %}
+
+{% block description -%}
+Důležité odkazy a praktické tipy pro členy klubu junior.guru.
+{%- endblock %}
+
+{% block content %}
+<header class="intro">
+  <h1 class="intro__title">Rozcestník pro členy</h1>
+  <p class="intro__lead">
+    <img class="intro__illustration" src="{{ url_for('static', filename='club-thin.svg') }}">
+    Vítej v&nbsp;<a href="{{ url_for('club') }}">klubu</a>! Na&nbsp;této stránce najdeš důležité odkazy a praktické tipy, které by ti měly pomoci se&nbsp;základní orientací.
+  </p>
+</header>
+<section class="content__section content__section--hidden">
+  <div class="engage">
+    <div class="engage__content">
+      <h2 class="engage__heading engage__heading--centered">Jak dokončit registraci?</h2>
+      <p class="engage__single-paragraph">
+        Jsme moc rádi, že se k nám chceš přidat! Během pár minut by ti měla do e-mailu přijít pozvánka na Discord. Pokud e-mail nepřijde nebo se na něčem zasekneš, omrkni prosím důležité odkazy níže nebo napiš na {{ 'honza@junior.guru'|email_link }}, určitě to vyřešíme.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="content__section">
+  <h2 class="content__section-heading" id="links">Důležité odkazy</h2>
+  <div class="settings">
+    <div class="settings__block">
+      <h3 class="content__subsection-heading">Předplatné</h3>
+      <p>
+        Po registraci na junior.guru se můžeš kdykoliv přihlásit do členské sekce. Tam můžeš měnit typ předplatného, údaje na platební kartě, zadat slevový kupón.
+      </p>
+      <p class="button-compartment button-compartment--row">
+        <a class="button button--spaced" href="https://juniorguru.memberful.com/account">Otevřít nastavení</a>
+        <a class="button button--secondary button--spaced" href="https://juniorguru.memberful.com/auth/sign_out">Odhlásit se</a>
+      </p>
+    </div>
+    <div class="settings__block">
+      <h3 class="content__subsection-heading">Discord</h3>
+      <p>
+        Klubovna je na platformě <a href="https://discord.com/">Discord</a>. Pokud už Discord používáš a máš tam účet, stačí jej s junior.guru propojit. V opačném případě si musíš nejprve účet vytvořit. Aby vše správně fungovalo, musí mít tvůj Discord účet ověřenou e-mailovou adresu.
+      </p>
+      <p class="button-compartment button-compartment--row">
+        <a class="button" href="https://juniorguru.memberful.com/account/discord/authorize">Otevřít Discord</a>
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}

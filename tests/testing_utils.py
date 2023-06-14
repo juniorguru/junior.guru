@@ -7,9 +7,6 @@ import pytest
 from strictyaml import load
 
 
-PROJECT_DIR = Path(__file__).parent.parent
-
-
 def load_yaml(s, schema):
     """
     Uses json.loads/json.dumps to recursively convert all ordered dicts
@@ -37,8 +34,8 @@ def param_startswith_skip(path, values=2):
 
     The skip reason can be displayed by running 'pytest -r s'
     """
-    args = ['' for i in range(values)]
-    path_relative = path.relative_to(PROJECT_DIR)
+    args = ['' for _ in range(values)]
+    path_relative = path.relative_to(Path.cwd())
     marks = pytest.mark.skip(f'starts with SKIP: {path_relative}')
     return pytest.param(*args, id=Path(path).name, marks=marks)
 
@@ -55,8 +52,8 @@ def param_xfail_missing(path, values=2):
 
     The skip reason can be displayed by running 'pytest -r x'
     """
-    args = ['' for i in range(values)]
-    path_relative = path.relative_to(PROJECT_DIR)
+    args = ['' for _ in range(values)]
+    path_relative = path.relative_to(Path.cwd())
     marks = pytest.mark.xfail(f'missing: {path_relative}')
     return pytest.param(*args, id=Path(path).name, marks=marks)
 

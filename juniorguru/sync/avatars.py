@@ -15,7 +15,7 @@ from juniorguru.models.club import ClubUser
 logger = loggers.from_path(__file__)
 
 
-IMAGES_PATH = Path(__file__).parent.parent / 'images'
+IMAGES_PATH = Path('juniorguru/images')
 
 AVATARS_PATH = IMAGES_PATH / 'avatars-club'
 
@@ -78,4 +78,4 @@ async def download_avatar(avatar):
     image = image.resize((AVATAR_SIZE_PX, AVATAR_SIZE_PX))
     image_path = AVATARS_PATH / f'{Path(urlparse(avatar.url).path).stem}.png'
     image.save(image_path, 'PNG')
-    return f'images/avatars-club/{image_path.name}'
+    return f'avatars-club/{image_path.name}'

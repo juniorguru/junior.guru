@@ -1,4 +1,3 @@
-from pathlib import Path
 from typing import Any
 
 from mkdocs.config import load_config
@@ -9,35 +8,43 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.models.base import db
 from juniorguru.models.page import Page
-
-
-PACKAGE_DIR = Path('juniorguru')
+from juniorguru.web.templates import TEMPLATES
 
 
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command()
+# See 'Generating pages from templates' on why the dependencies are needed
+@cli.sync_command(dependencies=['course-providers', 'partners'])
 @db.connection_context()
 def main():
     logger.info('Setting up db table')
     Page.drop_table()
     Page.create_table()
 
-    logger.info('Reading MkDocs files')
-    config = load_config(config_file='juniorguru/mkdocs/mkdocs.yml')
+    logger.info('Reading Markdown source files')
+    config = load_config(config_file='juniorguru/web/mkdocs.yml')
     files = get_files(config)
     for file in files.documentation_pages():
         logger.debug(f"Reading: {file.src_uri}")
         with open(file.abs_src_path, encoding='utf-8-sig', errors='strict') as f:
             source = f.read()
-        data = dict(path=Path(file.abs_src_path).relative_to(Path.cwd()),
-                    src_uri=file.src_uri,
+        data = dict(src_uri=file.src_uri,
                     dest_uri=file.dest_uri,
                     size=len(source),
                     meta=parse_meta(source),
                     notes=parse_notes(source))
         Page.create(**data)
+
+    logger.info('Generating pages from templates')
+    for _, generate_pages in TEMPLATES.items():
+        for page in generate_pages():
+            logger.debug(f"Reading: {page['path']}")
+            data = dict(src_uri=page['path'],
+                        dest_uri=page['path'].replace('.md', '/index.html'),
+                        meta=page['meta'])
+            Page.create(**data)
+
     logger.info(f'Created {Page.select().count()} pages')
 
 

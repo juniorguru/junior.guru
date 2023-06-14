@@ -10,8 +10,9 @@ USER_AGENT = (
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) '
     'Gecko/20100101 Firefox/110.0'
 )
+
 EXCLUDE_URLS = [
-    '*static/images/*.*',  # local links to images
+    '*static/*.*',  # local links to static files
     'facebook.com/search/',  # HTTP_404 in response if user isn't logged in
     'juniorguru.memberful.com',  # HTTP_403, rightfully
     'support.discord.com',  # Discord ¯\_(ツ)_/¯
@@ -30,6 +31,7 @@ EXCLUDE_URLS = [
     'startupjobs.cz/nabidka/',  # crawling protection?
     'datacamp.com',  # crawling protection?
 ]
+
 EXCLUDE_REASONS = [re.compile(r) for r in [
     r'^BLC_UNKNOWN$',  # crawling protection?
     r'^ERRNO_EPROTO$',  # Czech TV website ¯\_(ツ)_/¯
@@ -39,12 +41,12 @@ EXCLUDE_REASONS = [re.compile(r) for r in [
     r'^HTTP_5\d\d$',  # server-side problem, can't do anything about that
     r'HTTP_undefined',  # :notsureif:
 ]]
-PUBLIC_DIR = Path('public')
 
 
 @click.command()
+@click.argument('dir', default='public', type=click.Path(exists=True, path_type=Path))
 @click.option('--retry/--no-retry', default=False)
-def main(retry):
+def main(dir, retry):
     command = ['npx', 'blcl']
     options = [
         '--verbose',
@@ -73,7 +75,7 @@ def main(retry):
         print('=' * 79)
         broken = set()
 
-        with Popen(command + options + [PUBLIC_DIR], stdout=PIPE, bufsize=1,
+        with Popen(command + options + [dir], stdout=PIPE, bufsize=1,
                 universal_newlines=True) as proc:
             for line in proc.stdout:
                 print(line, end='')

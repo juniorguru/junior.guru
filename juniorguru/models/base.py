@@ -12,7 +12,7 @@ from playhouse.sqlite_ext import JSONField as BaseJSONField
 from juniorguru.lib import loggers
 
 
-DB_FILE = Path(__file__).parent / '..' / 'data' / 'data.db'
+DB_FILE = Path('juniorguru/data/data.db')
 
 
 logger = loggers.from_path(__file__)

@@ -16,7 +16,7 @@ MENTOR_EMOJI = '💁'
 
 INFO_EMOJI = '💡'
 
-DATA_PATH = Path(__file__).parent.parent / 'data' / 'mentors.yml'
+DATA_PATH = Path('juniorguru/data/mentors.yml')
 
 SCHEMA = Seq(
     Map({

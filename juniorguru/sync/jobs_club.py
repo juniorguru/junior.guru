@@ -78,5 +78,4 @@ async def post_job(channel, job):
         embed.set_thumbnail(url=f"attachment://{Path(job.company_logo_path).name}")
         message = await thread.fetch_message(thread.id)
         with mutating_discord(message) as proxy:
-            await proxy.edit(file=File(PACKAGE_DIR / job.company_logo_path),
-                               embed=embed)
+            await proxy.edit(file=File(PACKAGE_DIR.absolute() / job.company_logo_path), embed=embed)

@@ -8,7 +8,7 @@ from juniorguru.models.job import ListedJob, SubmittedJob
 from juniorguru.sync.jobs_emails import create_message, debug_message, should_send
 
 
-TEMPLATE_PATH = Path(__file__).parent.parent / 'juniorguru' / 'sync' / 'jobs_emails' / 'templates' / 'job_metrics.html'
+TEMPLATE_PATH = Path('juniorguru/sync/jobs_emails/templates/job_metrics.html')
 
 
 @pytest.fixture

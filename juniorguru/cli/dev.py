@@ -1,3 +1,4 @@
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -26,6 +27,7 @@ def update(pull):
         subprocess.run(['poetry', 'update', 'juniorguru-chick'], check=True)
         subprocess.run(['playwright', 'install', 'firefox'], check=True)
         subprocess.run(['npm', 'install'], check=True)
+        shutil.rmtree('public', ignore_errors=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
 

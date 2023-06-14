@@ -18,7 +18,7 @@ from juniorguru.models.partner import Partnership
 
 logger = loggers.from_path(__file__)
 
-YAML_PATH = Path(__file__).parent.parent / 'data' / 'roles.yml'
+YAML_PATH = Path('juniorguru/data/roles.yml')
 
 YAML_SCHEMA = Seq(
     Map({

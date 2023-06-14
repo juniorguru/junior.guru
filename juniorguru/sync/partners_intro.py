@@ -17,7 +17,7 @@ from juniorguru.models.partner import Partnership
 
 BOT_REACTIONS = ['👋', '👍', '💕', '💰', '🎉']
 
-IMAGES_DIR = Path(__file__).parent.parent / 'images'
+IMAGES_DIR = Path('juniorguru/images')
 
 DESCRIPTION_TEMPLATE = dedent('''
     {%- set partnership = partner.active_partnership() -%}

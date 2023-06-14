@@ -25,7 +25,7 @@ from juniorguru.models.podcast import PodcastEpisode
 logger = loggers.from_path(__file__)
 
 
-YAML_PATH = Path(__file__).parent.parent / 'data' / 'podcast.yml'
+YAML_PATH = Path('juniorguru/data/podcast.yml')
 
 YAML_SCHEMA = Seq(
     Map({
@@ -42,7 +42,7 @@ YAML_SCHEMA = Seq(
 
 WORKERS = 4
 
-IMAGES_DIR = Path(__file__).parent.parent / 'images'
+IMAGES_DIR = Path('juniorguru/images')
 
 POSTERS_DIR = IMAGES_DIR / 'posters-podcast'
 
@@ -58,10 +58,10 @@ MESSAGE_EMOJI = '🎙'
 
 
 @cli.sync_command(dependencies=['club-content', 'partners'])
-@click.option('--flush-posters/--no-flush-posters', default=False)
+@click.option('--clear-posters/--no-clear-posters', default=False)
 @db.connection_context()
-def main(flush_posters):
-    if flush_posters:
+def main(clear_posters):
+    if clear_posters:
         logger.warning("Removing all existing posters for podcast episodes")
         for poster_path in POSTERS_DIR.glob('*.png'):
             poster_path.unlink()
