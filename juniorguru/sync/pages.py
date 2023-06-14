@@ -14,7 +14,8 @@ from juniorguru.web.templates import TEMPLATES
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command()
+# See 'Generating pages from templates' on why the dependencies are needed
+@cli.sync_command(dependencies=['course-providers', 'partners'])
 @db.connection_context()
 def main():
     logger.info('Setting up db table')
