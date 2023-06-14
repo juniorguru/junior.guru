@@ -14,7 +14,8 @@ from juniorguru.web_legacy import app, generate_job_pages, get_freezer
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=['pages'])
+# Generating thumbnails for the legacy Flask app requires jobs data and events
+@cli.sync_command(dependencies=['pages', 'jobs-listing', 'events'])
 @click.option('--images-path', default='juniorguru/images', type=click.Path(exists=True, path_type=Path))
 @click.option('--output-dir', default='thumbnails', type=click.Path(path_type=Path))
 @click.option('--width', default=1200, type=int)
