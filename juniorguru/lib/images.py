@@ -6,7 +6,6 @@ import tempfile
 import time
 from hashlib import sha256
 from io import BytesIO
-from multiprocessing import Process, Queue
 from pathlib import Path
 from subprocess import DEVNULL, run
 
@@ -32,12 +31,6 @@ TEMPLATES_DIR = Path('juniorguru/image_templates')
 
 
 logger = loggers.from_path(__file__)
-
-
-server_queue = Queue()
-
-
-server_proc = None
 
 
 class InvalidImage(Exception):
@@ -141,62 +134,21 @@ def render_template(width, height, template_name, context, filters=None):
 
         logger.info('Taking a screenshot')
         screenshot_path = temp_dir / f'{time.perf_counter_ns()}.png'
-        screenshot_args = (html_path, screenshot_path, width, height)
-        try:
-            global server_proc
-            if server_proc:
-                logger['screenshot'].debug('Server already running')
-            else:
-                logger['screenshot'].debug('Starting server')
-                _server_proc = Process(target=_server, args=(server_queue,), daemon=True)
-                _server_proc.start()
-                logger['screenshot'].debug('Server running')
-                server_proc = _server_proc
-        except Exception as e:
-            logger['screenshot'].debug(f'Could not start server: {e}')
-            with sync_playwright() as playwright:
-                browser = playwright.firefox.launch()
-                _take_screenshot(browser, *screenshot_args)
+        logger['screenshot'].debug(f"Taking screenshot {width}x{height} {html_path} → {screenshot_path}")
+        with sync_playwright() as playwright:
+            browser = playwright.firefox.launch()
+            try:
+                page = browser.new_page()
+                page.set_viewport_size({'width': width, 'height': height})
+                page.goto(f'file://{html_path}', wait_until='networkidle')
+                image_bytes = page.screenshot()
+                page.close()
+            finally:
                 browser.close()
-        else:
-            server_queue.put(screenshot_args)
-            while not screenshot_path.exists():
-                logger['screenshot'].debug('Waiting for the image')
-                time.sleep(0.3)
-        logger['screenshot'].debug('Done')
+        logger['screenshot'].debug('Editing screenshot')
+        with Image.open(BytesIO(image_bytes)) as image:
+            height_ar = (image.height * width) // image.width
+            image = image.resize((width, height_ar), Image.Resampling.BICUBIC)
+            image = image.crop((0, 0, width, height))
+            image.save(screenshot_path, 'PNG')
         return screenshot_path.read_bytes()
-
-
-def _take_screenshot(browser, html_path, screenshot_path, width, height):
-    temp_path = screenshot_path.with_suffix('.temp')
-
-    logger['screenshot'].debug(f"Taking screenshot {width}x{height} {html_path} → {screenshot_path}")
-    page = browser.new_page()
-    page.set_viewport_size({'width': width, 'height': height})
-    page.goto(f'file://{html_path}', wait_until='networkidle')
-    image_bytes = page.screenshot()
-    page.close()
-
-    logger['screenshot'].debug('Editing screenshot')
-    with Image.open(BytesIO(image_bytes)) as image:
-        height_ar = (image.height * width) // image.width
-        image = image.resize((width, height_ar), Image.Resampling.BICUBIC)
-        image = image.crop((0, 0, width, height))
-        image.save(temp_path, 'PNG')
-    return temp_path.rename(screenshot_path)
-
-
-def _server(queue):
-    """
-    A single process taking care of taking screenshots.
-    Keeps the browser alive between subsequent calls of render_template().
-    """
-    logger['server'].debug("Starting")
-    with sync_playwright() as playwright:
-        browser = playwright.firefox.launch()
-        try:
-            while True:
-                _take_screenshot(browser, *queue.get())
-        finally:
-            logger['server'].debug("Closing")
-            browser.close()
