@@ -1,4 +1,5 @@
 import pytest
+
 from juniorguru.sync.jobs_scraped.pipelines.emoji_cleaner import process
 
 
