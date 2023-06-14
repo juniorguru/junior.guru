@@ -24,7 +24,7 @@ def main():
     url = ('https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/'
            'denni_kurz.txt'
            f'?date={monday:%d.%m.%Y}')
-    response = requests.get(url)
+    response = requests.get(url, headers={'User-Agent': 'JuniorGuruBot (+https://junior.guru)'})
     response.raise_for_status()
 
     exchange_rates = dict(parse_exchange_rate(line) for line in parse_lines(response.text))
