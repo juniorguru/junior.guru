@@ -48,7 +48,8 @@ extruct = "0.14.0"
 mkdocs-gen-files = "0.5.0"
 mkdocs-awesome-pages-plugin = "2.9.1"
 juniorguru-chick = { git = "https://github.com/juniorguru/juniorguru-chick.git" }
-pycircleci = "^0.7.0"
+pycircleci = "0.7.0"
+livereload = "2.6.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "7.3.2"

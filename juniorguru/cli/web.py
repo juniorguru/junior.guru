@@ -6,6 +6,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from time import perf_counter
 
+from livereload import Server
 import click
 from mkdocs.__main__ import build_command as mkdocs_build
 
@@ -73,8 +74,8 @@ def build_mkdocs(context, config: Path, output_path: Path, warn: bool):
     with TemporaryDirectory() as temp_dir:
         try:
             context.invoke(mkdocs_build,
-                            config_file=str(config.absolute()),
-                            site_dir=temp_dir)
+                           config_file=str(config.absolute()),
+                           site_dir=temp_dir)
             shutil.copytree(temp_dir, output_path.absolute(), dirs_exist_ok=True,
                             ignore=shutil.ignore_patterns('sitemap.xml*'))
         finally:
@@ -82,17 +83,47 @@ def build_mkdocs(context, config: Path, output_path: Path, warn: bool):
 
 
 @main.command()
-@click.pass_context
 @click.argument('output_path', default='public', type=click.Path(path_type=Path))
+@click.pass_context
 @building('everything')
 def build(context, output_path: Path):
-    # TODO clean output_path once we deal with thumbnails
+    shutil.rmtree(output_path, ignore_errors=True)
+    output_path.mkdir(parents=True, exist_ok=True)
     context.invoke(build_static, output_path=output_path)
     context.invoke(build_flask, output_path=output_path)
     context.invoke(build_mkdocs, output_path=output_path)
 
 
 @main.command()
-def serve():
-    raise NotImplementedError()
-    subprocess.run(['npx', 'gulp', 'serve'], check=True)
+@click.argument('output_path', default='public', type=click.Path(path_type=Path))
+@click.option('--open/--no-open', default=True)
+@click.pass_context
+def serve(context, output_path: Path, open: bool):
+    context.invoke(build, output_path=output_path)
+
+    def ignore_data(path):
+        return Path(path).suffix in ['.db-shm', '.db-wal', '.log']
+
+    def rebuild_static():
+        context.invoke(build_static, output_path=output_path)
+
+    def rebuild_flask_and_mkdocs():
+        context.invoke(build_flask, output_path=output_path)
+        context.invoke(build_mkdocs, output_path=output_path)
+
+    def rebuild_mkdocs():
+        context.invoke(build_mkdocs, output_path=output_path)
+
+    server = Server()
+    server.setHeader('Access-Control-Allow-Origin', '*')
+    server.watch('juniorguru/**/*.js', rebuild_static)
+    server.watch('juniorguru/**/*.scss', rebuild_static)
+    server.watch('juniorguru/images/', rebuild_static)
+    server.watch('juniorguru/data/', rebuild_flask_and_mkdocs, ignore=ignore_data)
+    server.watch('juniorguru/lib/', rebuild_flask_and_mkdocs)
+    server.watch('juniorguru/models/', rebuild_flask_and_mkdocs)
+    server.watch('juniorguru/web/', rebuild_mkdocs)
+    server.watch('juniorguru/web_legacy/', rebuild_flask_and_mkdocs)
+    server.serve(host='localhost',
+                 root=str(output_path.absolute()),
+                 open_url_delay=0.1 if open else None)
