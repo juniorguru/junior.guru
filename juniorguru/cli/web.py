@@ -6,8 +6,8 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from time import perf_counter
 
-from livereload import Server
 import click
+from livereload import Server
 from mkdocs.__main__ import build_command as mkdocs_build
 
 from juniorguru.lib import loggers
