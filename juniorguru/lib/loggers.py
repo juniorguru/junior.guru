@@ -27,7 +27,6 @@ MUTED_LOGGERS = [
     'juniorguru.lib.mutations.allowing',
     'juniorguru.lib.discord_club.is_message_over_period_ago',
     'juniorguru.lib.discord_club.is_message_older_than',
-    'juniorguru.lib.images',
     'juniorguru.web.templates',
 ]
 
