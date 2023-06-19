@@ -709,4 +709,9 @@ draft je tutaj: https://gist.github.com/kokes/49ca2f42edf30d6a1f02e3859ad3f9f2
 
 anglictina: https://www.deepl.com/translator
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1118637273576112128
+Nový projekt „angličtina pro ajťáky“. Na první pohled něco, co na trhu podle mě trochu chybí https://geekpower.cz/
+---
+
+
 #} -->

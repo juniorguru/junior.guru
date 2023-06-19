@@ -711,4 +711,20 @@ Bohužel jediná zkušenost je zatím v https://discord.com/channels/76996688659
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1111780971298177105/1118260640298053673
+a celé to vlastně bylo promo na tohle:
+https://kariera.seznam.cz/428980-rocni-it-akademie-cloud-engineer-developer-hpp/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1099472100101718147/1100371425178697878
+https://cc.cz/ani-ucitele-ani-pracovni-sesity-skola-programovani-v-praze-nechava-studenty-ucit-se-od-sebe-navzajem/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1099472100101718147/1099798405615734908
+Já jsem se o tom dozvěděl před několika měsíci z cc.cz Bohužel nic pro mě...
+---
+
+
 #} -->

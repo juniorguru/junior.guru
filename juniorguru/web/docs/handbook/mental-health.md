@@ -240,4 +240,9 @@ Vykouklo na mě na <:facebook:976201141924802580>: https://www.elsa.cvut.cz/wp-c
 ---
 
 
+--- https://discord.com/channels/769966886598737931/916339896963190785/1118274720081641662
+
+---
+
+
 #} -->

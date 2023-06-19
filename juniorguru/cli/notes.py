@@ -17,6 +17,8 @@ from juniorguru.models.sync import Sync
 from juniorguru.sync.pages import main as sync_pages
 
 
+PAGES_PATH = Path('juniorguru/web/docs')
+
 NOTES_END = '\n\n#} -->'
 
 EMOJI_PROCESSED = '✅'
@@ -38,7 +40,7 @@ def main(context):
 
 @db.connection_context()
 async def process_pins(client):
-    emoji_mapping = {page.meta['emoji']: Path(page.path)
+    emoji_mapping = {page.meta['emoji']: PAGES_PATH.absolute() / page.src_uri
                      for page in Page.handbook_listing()}
     notes_mapping = defaultdict(list)
 

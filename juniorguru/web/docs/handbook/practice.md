@@ -924,4 +924,14 @@ Regulární výrazy. Napíšete a máte. https://www.autoregex.xyz/
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1115564713242271854
+Ještě jsem našel tento seznam backend challenges. https://github.com/CollabCodeTech/backend-challenges
+---
+
+
+--- https://discord.com/channels/769966886598737931/1117785793533071450/1117787037794324570
+Ano, syntaxí, které jsou všechny markdown, ale mají nějaké speciální vlastnosti nebo s v některých detailech chovají jinak, je plno. Nicméně to, co je tady na Discordu jsou jen základní věci, takže se asi užijí všude, kde se to jmenuje Markdown.
+---
+
+
 #} -->

@@ -484,4 +484,16 @@ Muzu ti dat svoji omeznou zkusenost toho "seniorniho" cloveka - brali jsme lidi 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1074791564209029231/1114463120493125682
+Skoro mi přijde, že 50 % času strávím na schůzkách a callech, 25 % čtu dokumentaci a doptávám se a zbytek času provádím to vlastní testování, nebo přípravu/úpravu testů. Taky se mi stane, že se klidně 3 dny (které jsou ale prošpikované schůzkami, takže řekněmě těch 25 % ze tří dnů) plácám s nějakoku blbou chybou v kódu (mém testerském), abych vzápětí našla jinou. Do toho vám třeba nefunguej prostředí, protože jste závislí na funkčnosti od jiného týmu, a když se to konečně rozjede, tak nefunguje něco jiného. Jsou dny, kdy prostě nic neotestujete. Frustrující.
+
+Nejnáročnější mi přijde to, že člověk musí všechno a pořád rozporovat a nic nebrat jako dané. Něco předpokládat či domýšlet je cesta do pekla a vede to jen k dálším chybám, nejasnostem a frustraci. Ničemu, co nemám přímo od zdroje, není radno věřit. To je teď moje zlaté pravidlo. Pokud něco jen předpokládám, ale nemám to na 100 % ověřené, je na 100 % jisté, že po týdnu zjistím, že ten předpoklad byl chybný.
+
+A skoro bych řekla, že za tu dobu, co tu jsem, se zadání pro mě, ale i ostatní testery, výrazně zlepšila, že se v nich nejen objevují odkazy na dokumentaci (která už bývá i aktualizovaná), ale i stručný popisek. Asi si uvědomili, že než mi to pak vysvětlovat, tak to rovnou sepíší.
+
+Jinak můj roční deníček cesty, která mě dovedla až k pozici testera v KB si můžete přečíst zde:
+https://umarku.cz/2023/moje-rocni-testerska-cesta-2022-2023/
+---
+
+
 #} -->

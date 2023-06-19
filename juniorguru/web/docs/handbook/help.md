@@ -235,4 +235,10 @@ Zkoušeli jste někdo? Používáte? https://www.phind.com/
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1117365521696948336
+**a debugging manifesto ** 🐛 
+zdroj: https://twitter.com/b0rk/status/1570060516839641092
+---
+
+
 #} -->
