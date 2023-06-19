@@ -19,7 +19,7 @@
     "esbuild-sass-plugin": "2.9.0",
     "imagemin-cli": "7.0.0",
     "sass": "1.63.4",
-    "stylelint": "15.7.0",
+    "stylelint": "15.8.0",
     "stylelint-config-twbs-bootstrap": "10.0.0"
   }
 }
