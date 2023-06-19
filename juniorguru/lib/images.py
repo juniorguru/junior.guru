@@ -3,11 +3,10 @@ import pickle
 import re
 import shutil
 import tempfile
-import time
 from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
-from subprocess import DEVNULL, run
+from subprocess import DEVNULL, run, PIPE
 
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image
@@ -133,8 +132,7 @@ def render_template(width, height, template_name, context, filters=None):
                 css_path.write_text(rewritten_css)
 
         logger.info('Taking a screenshot')
-        screenshot_path = temp_dir / f'{time.perf_counter_ns()}.png'
-        logger['screenshot'].debug(f"Taking screenshot {width}x{height} {html_path} → {screenshot_path}")
+        logger['screenshot'].debug(f"Taking screenshot {width}x{height} {html_path}")
         with sync_playwright() as playwright:
             browser = playwright.firefox.launch()
             try:
@@ -150,5 +148,10 @@ def render_template(width, height, template_name, context, filters=None):
             height_ar = (image.height * width) // image.width
             image = image.resize((width, height_ar), Image.Resampling.BICUBIC)
             image = image.crop((0, 0, width, height))
-            image.save(screenshot_path, 'PNG')
-        return screenshot_path.read_bytes()
+
+            edited_image_bytes = BytesIO()
+            image.save(edited_image_bytes, 'PNG')
+        logger['screenshot'].debug('Optimizing screenshot')
+        edited_image_bytes.seek(0)
+        proc = run(['npx', 'imagemin'], input=edited_image_bytes.getvalue(), stdout=PIPE, check=True)
+        return proc.stdout
