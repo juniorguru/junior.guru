@@ -12,7 +12,7 @@
       <div class="jobs__content">
         <div class="jobs__company-logo">
           {% if job.company_logo_path %}
-            <img width="100" height="100" loading="lazy" class="jobs__company-logo-image" src="{{ url_for('static', filename=job.company_logo_path) }}" alt="Logo {{ job.company_name }}">
+            <img width="100" height="100" loading="lazy" class="jobs__company-logo-image" src="{{ url_for('static', filename='images/' + job.company_logo_path) }}" alt="Logo {{ job.company_name }}">
           {% endif %}
         </div>
         <div class="jobs__content-body">
