@@ -6,7 +6,7 @@ import tempfile
 from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
-from subprocess import DEVNULL, run, PIPE
+from subprocess import DEVNULL, PIPE, run
 
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image
