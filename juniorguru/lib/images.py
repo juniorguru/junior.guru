@@ -6,10 +6,11 @@ import tempfile
 from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
-from subprocess import DEVNULL, PIPE, run
+from subprocess import DEVNULL, run
 
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image
+import oxipng
 from playwright.sync_api import sync_playwright
 
 from juniorguru.lib import loggers
@@ -149,9 +150,6 @@ def render_template(width, height, template_name, context, filters=None):
             image = image.resize((width, height_ar), Image.Resampling.BICUBIC)
             image = image.crop((0, 0, width, height))
 
-            edited_image_bytes = BytesIO()
-            image.save(edited_image_bytes, 'PNG')
-        logger['screenshot'].debug('Optimizing screenshot')
-        edited_image_bytes.seek(0)
-        proc = run(['npx', 'imagemin'], input=edited_image_bytes.getvalue(), stdout=PIPE, check=True)
-        return proc.stdout
+            stream = BytesIO()
+            image.save(stream, 'PNG', optimize=True)
+        return oxipng.optimize_from_memory(stream.getvalue(), strip=oxipng.Headers.all())
