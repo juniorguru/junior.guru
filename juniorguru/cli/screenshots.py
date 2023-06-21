@@ -1,6 +1,6 @@
-from io import BytesIO
 import re
 from datetime import datetime, timedelta
+from io import BytesIO
 from itertools import chain
 from multiprocessing import Pool
 from pathlib import Path

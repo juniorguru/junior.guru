@@ -8,9 +8,9 @@ from io import BytesIO
 from pathlib import Path
 from subprocess import DEVNULL, run
 
+import oxipng
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image
-import oxipng
 from playwright.sync_api import sync_playwright
 
 from juniorguru.lib import loggers
