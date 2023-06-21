@@ -44,10 +44,8 @@ jobs:
       - run:
           name: Install system dependencies
           command: |
-            which pngquant
-            which oxipng
-            #sudo apt-get update -qq
-            #sudo apt-get install -y -qq
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq $(cat .dependencies/circleci.txt)
       - run:
           name: Update Poetry
           command: |
