@@ -1,8 +1,8 @@
+import os
 import mimetypes
 import pickle
 import re
 import shutil
-import tempfile
 from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
@@ -17,6 +17,8 @@ from juniorguru.lib import loggers
 
 
 NODE_MODULES_DIR = Path('node_modules')
+
+CACHE_DIR = Path('.images_templates_cache')
 
 FONTS = [NODE_MODULES_DIR / '@fontsource' / 'inter' / 'files',
          NODE_MODULES_DIR / 'bootstrap-icons' / 'font' / 'fonts']
@@ -104,52 +106,58 @@ def render_template(width, height, template_name, context, filters=None):
     environment.filters.update(filters or {})
     template = environment.get_template(template_name)
 
-    with tempfile.TemporaryDirectory() as temp_dir:
-        temp_dir = Path(temp_dir)
-        logger.info(f'Rendering {width}x{height} {template_name} in {temp_dir}')
-
-        html = template.render(images_dir=IMAGES_DIR.absolute(), **context)
-        html_path = temp_dir / template_name
-        html_path.write_text(html)
+    try:
+        CACHE_DIR.mkdir()
+    except FileExistsError:
+        logger.info(f'Cache exists: {CACHE_DIR.absolute()}')
+    else:
+        logger.info(f'Cache created: {CACHE_DIR.absolute()}')
 
         logger.info('Compiling SCSS')
-        run(['npx', 'sass', f'{TEMPLATES_DIR}:{temp_dir}'], check=True, stdout=DEVNULL)
+        run(['npx', 'sass', f'{TEMPLATES_DIR}:{CACHE_DIR}'], check=True, stdout=DEVNULL)
 
         logger.info(f"Copying fonts: {', '.join(map(str, FONTS))}")
-        fonts_dir = temp_dir / 'fonts'
+        fonts_dir = CACHE_DIR / 'fonts'
         fonts_dir.mkdir(parents=True)
         for font_parent_dir in FONTS:
             for woff_path in Path(font_parent_dir).glob('**/*.woff*'):
-                logger['font'].debug(f"Copying {woff_path} to {fonts_dir}")
+                logger.debug(f"Copying {woff_path} to {fonts_dir}")
                 shutil.copy2(woff_path, fonts_dir)
 
         logger.info('Rewriting CSS')
-        for css_path in temp_dir.glob('**/*.css'):
-            logger['css'].debug(f"Rewriting {css_path}")
+        for css_path in CACHE_DIR.glob('**/*.css'):
+            logger.debug(f"Rewriting {css_path}")
             for re_pattern, re_repl in CSS_REWRITE:
                 css = css_path.read_text()
                 rewritten_css = re.sub(re_pattern, re_repl, css)
-                logger['css'].debug(f"Did pattern {re_pattern!r} result in changes? {(css != rewritten_css)}")
+                logger.debug(f"Did pattern {re_pattern!r} result in changes? {(css != rewritten_css)}")
                 css_path.write_text(rewritten_css)
 
-        logger.info('Taking a screenshot')
-        logger['screenshot'].debug(f"Taking screenshot {width}x{height} {html_path}")
-        with sync_playwright() as playwright:
-            browser = playwright.firefox.launch()
-            try:
-                page = browser.new_page()
-                page.set_viewport_size({'width': width, 'height': height})
-                page.goto(f'file://{html_path}', wait_until='networkidle')
-                image_bytes = page.screenshot()
-                page.close()
-            finally:
-                browser.close()
-        logger['screenshot'].debug('Editing screenshot')
-        with Image.open(BytesIO(image_bytes)) as image:
-            height_ar = (image.height * width) // image.width
-            image = image.resize((width, height_ar), Image.Resampling.BICUBIC)
-            image = image.crop((0, 0, width, height))
+    logger.info(f'Rendering {width}x{height} {template_name} in {CACHE_DIR}')
+    html = template.render(images_dir=IMAGES_DIR.absolute(), **context)
+    html_path = CACHE_DIR.absolute() / f'{os.getpid()}-{template_name}'
+    html_path.write_text(html)
 
-            stream = BytesIO()
-            image.save(stream, 'PNG', optimize=True)
-        return oxipng.optimize_from_memory(stream.getvalue(), strip=oxipng.Headers.all())
+    logger.info(f"Taking screenshot {width}x{height} {html_path}")
+    with sync_playwright() as playwright:
+        browser = playwright.firefox.launch()
+        try:
+            page = browser.new_page()
+            page.set_viewport_size({'width': width, 'height': height})
+            page.goto(f'file://{html_path}', wait_until='networkidle')
+            image_bytes = page.screenshot()
+            page.close()
+        finally:
+            browser.close()
+
+    logger.info('Editing screenshot')
+    with Image.open(BytesIO(image_bytes)) as image:
+        height_ar = (image.height * width) // image.width
+        image = image.resize((width, height_ar), Image.Resampling.BICUBIC)
+        image = image.crop((0, 0, width, height))
+
+        stream = BytesIO()
+        image.save(stream, 'PNG', optimize=True)
+
+    logger.info('Optimizing screenshot')
+    return oxipng.optimize_from_memory(stream.getvalue(), strip=oxipng.Headers.all())
