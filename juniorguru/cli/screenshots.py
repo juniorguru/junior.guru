@@ -1,10 +1,9 @@
-import io
+from io import BytesIO
 import re
 from datetime import datetime, timedelta
 from itertools import chain
 from multiprocessing import Pool
 from pathlib import Path
-from subprocess import PIPE, run
 
 import click
 import requests
@@ -127,13 +126,13 @@ def main(context):
     SCREENSHOTS_OVERRIDES_DIR.mkdir(parents=True, exist_ok=True)
 
     overriding_paths = set(chain(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'),
-                                 SCREENSHOTS_OVERRIDES_DIR.glob('*.png')))
+                                 SCREENSHOTS_OVERRIDES_DIR.glob('*.png'),
+                                 SCREENSHOTS_OVERRIDES_DIR.glob('*.webp')))
     logger.info(f'Found {len(overriding_paths)} manual screenshot overrides')
     Pool().map(edit_screenshot_override, overriding_paths)
-    overriding_paths = set(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'))
+    overriding_paths = set(SCREENSHOTS_OVERRIDES_DIR.glob('*.webp'))
 
-    paths = set(chain(SCREENSHOTS_DIR.glob('*.jpg'),
-                      SCREENSHOTS_DIR.glob('*.png')))
+    paths = set(chain(SCREENSHOTS_DIR.glob('*.webp')))
     logger.info(f'Found {len(paths)} screenshots')
     expired_paths = set(filter(is_expired_path, paths))
     logger.info(f'Expiring {len(expired_paths)} screenshot images')
@@ -287,20 +286,18 @@ def create_screenshot(page, url):
 
 
 def edit_image(image_bytes):
-    with Image.open(io.BytesIO(image_bytes)) as image:
-        if image.format == 'PNG':
+    with Image.open(BytesIO(image_bytes)) as image:
+        if image.format in ('PNG', 'JPEG'):
             image = image.convert('RGB')  # from RGBA
-        elif image.format != 'JPEG':
+        elif image.format != 'WEBP':
             raise RuntimeError(f'Unexpected image format: {image.format}')
 
         if image.width > WIDTH or image.height > HEIGHT:
             image.thumbnail((WIDTH, HEIGHT))
 
-        input_bytes = io.BytesIO()
-        image.save(input_bytes, 'JPEG')
-    input_bytes.seek(0)
-    proc = run(['npx', 'imagemin'], input=input_bytes.getvalue(), stdout=PIPE, check=True)
-    return proc.stdout
+        stream = BytesIO()
+        image.save(stream, 'WEBP', quality=80, method=6, lossless=False)
+    return stream.getvalue()
 
 
 def edit_screenshot_override(path):
@@ -308,12 +305,12 @@ def edit_screenshot_override(path):
     logger.info(f'Editing {path.name}')
 
     with Image.open(path) as image:
-        if image.format == 'PNG':
-            path_png, path = path, path.with_suffix('.jpg')
+        if image.format in ('PNG', 'JPEG'):
+            path_original, path = path, path.with_suffix('.webp')
             image = image.convert('RGB')  # from RGBA
-            image.save(path, 'JPEG')
-            path_png.unlink()
-        elif image.format != 'JPEG':
+            image.save(path, 'WEBP', quality=80, method=6, lossless=False)
+            path_original.unlink()
+        elif image.format != 'WEBP':
             raise RuntimeError(f'Unexpected image format: {image.format}')
 
         if image.width > WIDTH or image.height > HEIGHT:
@@ -323,7 +320,4 @@ def edit_screenshot_override(path):
             height_ar = (image.height * WIDTH) // image.width
             image = image.resize((WIDTH, height_ar), Image.Resampling.BICUBIC)
             image = image.crop((0, 0, WIDTH, HEIGHT))
-            image.save(path, 'JPEG')
-
-    proc = run(['npx', 'imagemin', path], stdout=PIPE, check=True)
-    path.write_bytes(proc.stdout)
+            image.save(path, 'WEBP', quality=80, method=6, lossless=False)
