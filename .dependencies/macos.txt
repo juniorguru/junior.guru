@@ -1,5 +1,0 @@
-pngquant
-oxipng
-openblas
-gfortran
-gpg

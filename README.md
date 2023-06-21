@@ -10,16 +10,18 @@ Don't panic, failing build under your PR is unrelated to your changes. Contribut
 
 ## Installation on macOS M1
 
-```
-$ brew install $(cat .dependencies/macos.txt)
-```
-
 This is needed for SciPy to work (thanks [@lutzroeder](https://github.com/scipy/scipy/issues/13409#issuecomment-774640468)):
 
 ```
 $ brew install openblas gfortran
 $ export OPENBLAS=$(/usr/local/bin/brew --prefix openblas)
 $ export CFLAGS="-falign-functions=8 ${CFLAGS}"
+```
+
+This is needed for decrypting backups:
+
+```
+$ brew install gpg
 ```
 
 ## Screenshotting
