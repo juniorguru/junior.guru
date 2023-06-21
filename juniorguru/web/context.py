@@ -182,7 +182,7 @@ def on_theme_context(context):
 @db.connection_context()
 def on_theme_page_context(context, page, config, files):
     thumbnail_path = Page.get_by_src_uri(page.file.src_uri).thumbnail_path
-    context['thumbnail_url'] = urljoin(config['site_url'], f'static/thumbnails/{thumbnail_path}')
+    context['thumbnail_url'] = urljoin(config['site_url'], f'static/{thumbnail_path}')
 
     context['parent_page'] = get_parent_page(page)
     context['previous_page'] = get_sibling_page(page, -1)
