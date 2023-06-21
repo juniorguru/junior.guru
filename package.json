@@ -17,7 +17,6 @@
     "broken-link-checker-local": "0.2.1",
     "esbuild": "0.18.6",
     "esbuild-sass-plugin": "2.10.0",
-    "imagemin-cli": "7.0.0",
     "sass": "1.63.5",
     "stylelint": "15.8.0",
     "stylelint-config-twbs-bootstrap": "10.0.0"
