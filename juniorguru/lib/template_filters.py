@@ -10,6 +10,7 @@ from markupsafe import Markup
 from slugify import slugify
 
 from juniorguru.lib.md import md as md_
+from juniorguru.lib.url_params import strip_utm_params
 
 
 def email_link(email):
@@ -180,8 +181,8 @@ def assert_empty(collection):
 
 
 def screenshot_url(url):
-    slug = slugify(unquote(url)) \
+    slug = slugify(unquote(strip_utm_params(url))) \
         .removeprefix('http-') \
         .removeprefix('https-') \
         .removeprefix('www-')
-    return f'static/screenshots/{slug}.jpg'
+    return f'static/screenshots/{slug}.webp'
