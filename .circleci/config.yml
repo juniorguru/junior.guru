@@ -42,6 +42,13 @@ jobs:
           command: |
             date +'%Y-%m-%d' > .today
       - run:
+          name: Install system dependencies
+          command: |
+            which pngquant
+            which oxipng
+            #sudo apt-get update -qq
+            #sudo apt-get install -y -qq
+      - run:
           name: Update Poetry
           command: |
             poetry --version
