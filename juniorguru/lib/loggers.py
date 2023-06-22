@@ -35,8 +35,12 @@ class Logger(logging.Logger):
 def configure(level: str | None=None,
               format: str='[%(name)s] %(levelname)s: %(message)s',
               timestamp: bool | None=None):
-    level = _get_level() if level is None else level.upper()
-    timestamp = _get_timestamp() if timestamp is None else timestamp
+    if level is None:
+        level = _get_level(global_state.get('log_level'), os.environ)
+    else:
+        level = level.upper()
+    if timestamp is None:
+        timestamp = _get_timestamp(global_state.get('log_timestamp'), os.environ)
     format = f'[%(asctime)s] {format}' if timestamp else format
 
     logging.setLoggerClass(Logger)
@@ -56,21 +60,21 @@ def configure(level: str | None=None,
     global_state.set('log_timestamp', 'true' if timestamp else 'false')
 
 
-def _get_level() -> str:  # TODO test
-    value = global_state.get('log_level')
+def _get_level(global_value: str, env: dict) -> str:  # TODO test
+    value = global_value
     if value is None:
-        value = os.getenv('LOG_LEVEL')
+        value = env.get('LOG_LEVEL')
     if not value:
         return 'INFO'
     return value.upper()
 
 
-def _get_timestamp() -> bool:  # TODO test
-    value = global_state.get('log_timestamp')
+def _get_timestamp(global_value: str, env: dict) -> bool:  # TODO test
+    value = global_value
     if value is None:
-        value = os.getenv('LOG_TIMESTAMP')
+        value = env.get('LOG_TIMESTAMP')
     if value is None:
-        value = os.getenv('CI')
+        value = env.get('CI')
     if not value or value.lower() in ['0', 'false']:
         return False
     return True
