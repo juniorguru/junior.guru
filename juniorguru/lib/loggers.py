@@ -3,6 +3,8 @@ import os
 from pathlib import Path
 from typing import cast
 
+from juniorguru.lib import global_state
+
 
 MUTED_LOGGERS = [
     'discord',
@@ -32,8 +34,9 @@ class Logger(logging.Logger):
 
 def configure(level: str | None=None,
               format: str='[%(name)s] %(levelname)s: %(message)s',
-              timestamp: bool=False):
-    level = getattr(logging, (level or 'INFO').upper())
+              timestamp: bool | None=None):
+    level = _get_level() if level is None else level.upper()
+    timestamp = _get_timestamp() if timestamp is None else timestamp
     format = f'[%(asctime)s] {format}' if timestamp else format
 
     logging.setLoggerClass(Logger)
@@ -43,9 +46,34 @@ def configure(level: str | None=None,
         logging.getLogger(name).setLevel(logging.WARNING)
 
     stderr = logging.StreamHandler()
-    stderr.setLevel(level)
+    stderr.setLevel(getattr(logging, level))
     stderr.setFormatter(logging.Formatter(format))
     logging.root.addHandler(stderr)
+
+    # In multiprocessing, the child processes won't automatically
+    # inherit logger configuration and this function will run again.
+    global_state.set('log_level', level)
+    global_state.set('log_timestamp', 'true' if timestamp else 'false')
+
+
+def _get_level() -> str:  # TODO test
+    value = global_state.get('log_level')
+    if value is None:
+        value = os.getenv('LOG_LEVEL')
+    if not value:
+        return 'INFO'
+    return value.upper()
+
+
+def _get_timestamp() -> bool:  # TODO test
+    value = global_state.get('log_timestamp')
+    if value is None:
+        value = os.getenv('LOG_TIMESTAMP')
+    if value is None:
+        value = os.getenv('CI')
+    if not value or value.lower() in ['0', 'false']:
+        return False
+    return True
 
 
 def get(name) -> Logger:
@@ -65,22 +93,5 @@ def from_path(path, cwd=None) -> Logger:
     return get(name)
 
 
-def level_from_env(env: dict) -> str:  # TODO test
-    value = env.get('LOG_LEVEL')
-    if not value:
-        return None
-    return value.upper()
-
-
-def timestamp_from_env(env: dict) -> bool:  # TODO test
-    value = env.get('LOG_TIMESTAMP')
-    if value is None:
-        value = env.get('CI')
-    if not value or value.lower() in ['0', 'false']:
-        return False
-    return True
-
-
 if not logging.root.hasHandlers():
-    configure(level=level_from_env(os.environ),
-              timestamp=timestamp_from_env(os.environ))
+    configure()

@@ -107,8 +107,8 @@ class Command(click.Command):
 @click.option('--dependencies/--skip-dependencies', '--deps/--skip-deps', '--deps/--no-deps', 'deps', default=True)
 @click.option('--mutate', multiple=True)
 @click.option('--allow-mutations/--disallow-mutations', default=False)
-@click.option('--debug/--no-debug', default=lambda: loggers.level_from_env(os.environ) == 'DEBUG')
-@click.option('--timestamp/--no-timestamp', default=lambda: loggers.timestamp_from_env(os.environ))
+@click.option('--debug/--no-debug', default=None)
+@click.option('--timestamp/--no-timestamp', default=None)
 @click.pass_context
 def main(context, id, deps, mutate, allow_mutations, debug, timestamp):
     loggers.configure(level='DEBUG' if debug else None, timestamp=timestamp)
