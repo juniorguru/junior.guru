@@ -133,8 +133,6 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
     if source_path.exists() and not filecmp.cmp(persist_path, source_path, shallow=False):
         if source_path.suffix == '.db':
             merge_databases(persist_path, source_path)
-        elif source_path.suffix == '.log':
-            merge_lines(persist_path, source_path)
         elif source_path.suffix == '.jsonl':
             merge_unique_lines(persist_path, source_path)
         else:
@@ -211,15 +209,6 @@ def make_schema_line_idempotent(schema_line):
         if transformation_re.search(schema_line):
             return transformation_re.sub(replacement, schema_line)
     raise ValueError(f"Unexpected schema line: {schema_line!r}")
-
-
-def merge_lines(path_from: Path, path_to: Path):
-    logger_lines = logger['lines']
-    logger_lines.info(f"Merging {path_from} to {path_to}")
-    with path_to.open(mode='+a') as f_to:
-        with path_from.open(mode='r') as f_from:
-            for line in f_from:
-                f_to.write(line)
 
 
 def merge_unique_lines(path_from: Path, path_to: Path):

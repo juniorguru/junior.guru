@@ -3,12 +3,6 @@ import os
 from pathlib import Path
 from typing import cast
 
-from juniorguru.lib import global_state
-
-
-LOG_LEVEL = getattr(logging, os.getenv('LOG_LEVEL', 'info').upper())
-
-LOG_FORMAT = '[%(name)s] %(levelname)s: %(message)s'
 
 MUTED_LOGGERS = [
     'discord',
@@ -36,7 +30,12 @@ class Logger(logging.Logger):
         return self.getChild(str(name))
 
 
-def configure():
+def configure(level: str | None=None,
+              format: str='[%(name)s] %(levelname)s: %(message)s',
+              timestamp: bool=False):
+    level = getattr(logging, (level or 'INFO').upper())
+    format = f'[%(asctime)s] {format}' if timestamp else format
+
     logging.setLoggerClass(Logger)
     logging.root.setLevel(logging.DEBUG)
 
@@ -44,25 +43,9 @@ def configure():
         logging.getLogger(name).setLevel(logging.WARNING)
 
     stderr = logging.StreamHandler()
-    stderr.setLevel(LOG_LEVEL)
-    stderr.setFormatter(logging.Formatter(LOG_FORMAT))
+    stderr.setLevel(level)
+    stderr.setFormatter(logging.Formatter(format))
     logging.root.addHandler(stderr)
-
-    # In multiprocessing, the child processes won't automatically
-    # inherit logger configuration and this function will run again.
-    # If there's already a log path set in the global state,
-    # let's configue it for this process too.
-    log_path = global_state.get('loggers.log_path')
-    if log_path:
-        configure_file(log_path)
-
-
-def configure_file(path):
-    global_state.set('loggers.log_path', str(path))
-    file = logging.FileHandler(path, mode='w')
-    file.setLevel(logging.DEBUG)
-    file.setFormatter(logging.Formatter(LOG_FORMAT))
-    logging.root.addHandler(file)
 
 
 def get(name) -> Logger:
@@ -82,5 +65,22 @@ def from_path(path, cwd=None) -> Logger:
     return get(name)
 
 
+def level_from_env(env: dict) -> str:  # TODO test
+    value = env.get('LOG_LEVEL')
+    if not value:
+        return None
+    return value.upper()
+
+
+def timestamp_from_env(env: dict) -> bool:  # TODO test
+    value = env.get('LOG_TIMESTAMP')
+    if value is None:
+        value = env.get('CI')
+    if not value or value.lower() in ['0', 'false']:
+        return False
+    return True
+
+
 if not logging.root.hasHandlers():
-    configure()
+    configure(level=level_from_env(os.environ),
+              timestamp=timestamp_from_env(os.environ))

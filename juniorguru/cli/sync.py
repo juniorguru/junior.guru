@@ -108,11 +108,11 @@ class Command(click.Command):
 @click.option('--dependencies/--skip-dependencies', '--deps/--skip-deps', '--deps/--no-deps', 'deps', default=True)
 @click.option('--mutate', multiple=True)
 @click.option('--allow-mutations/--disallow-mutations', default=False)
-@click.option('--log-path', default='juniorguru/data/sync.log', type=click.Path(path_type=Path))
+@click.option('--debug/--no-debug', default=lambda: loggers.level_from_env(os.environ) == 'DEBUG')
+@click.option('--timestamp/--no-timestamp', default=lambda: loggers.timestamp_from_env(os.environ))
 @click.pass_context
-def main(context, id, deps, mutate, allow_mutations, log_path):
-    if log_path:
-        loggers.configure_file(log_path)
+def main(context, id, deps, mutate, allow_mutations, debug, timestamp):
+    loggers.configure(level='DEBUG' if debug else None, timestamp=timestamp)
 
     if allow_mutations:
         mutations.allow_all()
