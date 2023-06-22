@@ -32,16 +32,20 @@ class Logger(logging.Logger):
         return self.getChild(str(name))
 
 
-def configure(level: str | None=None,
-              format: str='[%(name)s] %(levelname)s: %(message)s',
-              timestamp: bool | None=None):
+def configure(level: str | None=None, timestamp: bool | None=None):
     if level is None:
         level = _get_level(global_state.get('log_level'), os.environ)
     else:
         level = level.upper()
+
+    logging.setLogRecordFactory(record_factory)
+
+    format = ''
     if timestamp is None:
         timestamp = _get_timestamp(global_state.get('log_timestamp'), os.environ)
-    format = f'[%(asctime)s] {format}' if timestamp else format
+    if timestamp:
+        format += '[%(asctime)s] '
+    format += '[%(name)s%(processSuffix)s] %(levelname)s: %(message)s'
 
     logging.setLoggerClass(Logger)
     logging.root.setLevel(logging.DEBUG)
@@ -58,6 +62,18 @@ def configure(level: str | None=None,
     # inherit logger configuration and this function will run again.
     global_state.set('log_level', level)
     global_state.set('log_timestamp', 'true' if timestamp else 'false')
+
+
+_record_factory = logging.getLogRecordFactory()
+
+
+def record_factory(*args, **kwargs) -> logging.LogRecord:
+    record = _record_factory(*args, **kwargs)
+    record.processSuffix = record.processName \
+        .replace('MainProcess', '') \
+        .replace('SpawnPoolWorker-', '/worker') \
+        .replace('Process-', '/process')
+    return record
 
 
 def _get_level(global_value: str, env: dict) -> str:  # TODO test
