@@ -3,12 +3,12 @@ import os
 import pickle
 import re
 import shutil
+import time
 from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
 from subprocess import DEVNULL, run
 from typing import Any, Callable
-import time
 
 import oxipng
 from jinja2 import Environment, FileSystemLoader
