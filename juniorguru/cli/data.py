@@ -22,6 +22,9 @@ SNAPSHOT_EXCLUDE = [
     'backups',
     'node_modules',
     'public',
+    '.images_templates_cache',
+    '.pytest_cache',
+    '.vscode',
     SNAPSHOT_FILE,
     PERSIST_DIR,
 ]

@@ -7,6 +7,8 @@ from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
 from subprocess import DEVNULL, run
+from typing import Any, Callable
+import time
 
 import oxipng
 from jinja2 import Environment, FileSystemLoader
@@ -101,7 +103,14 @@ def replace_with_jpg(path):
     return path
 
 
-def render_template(width, height, template_name, context, filters=None):
+def render_template(width: int,
+                    height: int,
+                    template_name: str,
+                    context: dict[str, Any],
+                    filters: dict[str, Callable]=None) -> bytes:
+    logger.info(f'Rendering {width}x{height} {template_name}')
+    t = time.perf_counter()
+
     environment = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
     environment.filters.update(filters or {})
     template = environment.get_template(template_name)
@@ -133,7 +142,7 @@ def render_template(width, height, template_name, context, filters=None):
                 logger.debug(f"Did pattern {re_pattern!r} result in changes? {(css != rewritten_css)}")
                 css_path.write_text(rewritten_css)
 
-    logger.info(f'Rendering {width}x{height} {template_name} in {CACHE_DIR}')
+    logger.info('Jinja2 rendering')
     html = template.render(images_dir=IMAGES_DIR.absolute(), **context)
     html_path = CACHE_DIR.absolute() / f'{os.getpid()}-{template_name}'
     html_path.write_text(html)
@@ -160,4 +169,7 @@ def render_template(width, height, template_name, context, filters=None):
         image.save(stream, 'PNG', optimize=True)
 
     logger.info('Optimizing screenshot')
-    return oxipng.optimize_from_memory(stream.getvalue(), strip=oxipng.Headers.all())
+    image_bytes = oxipng.optimize_from_memory(stream.getvalue(), strip=oxipng.Headers.all())
+
+    logger.info(f'Rendered {template_name} in {time.perf_counter() - t:.2f}s')
+    return image_bytes
