@@ -72,6 +72,7 @@ def record_factory(*args, **kwargs) -> logging.LogRecord:
     record.processSuffix = record.processName \
         .replace('MainProcess', '') \
         .replace('SpawnPoolWorker-', '/worker') \
+        .replace('ForkPoolWorker-', '/worker') \
         .replace('Process-', '/process')
     return record
 
