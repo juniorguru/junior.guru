@@ -92,6 +92,9 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
+      - run:
+          name: Snapshot files
+          command: poetry run jg data snapshot
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
       - restore_cache:
@@ -100,9 +103,6 @@ jobs:
           key: jobs-emails-v2-{{ .Branch }}
       - restore_cache:
           key: images-v1-{{ .Branch }}
-      - run:
-          name: Snapshot files
-          command: poetry run jg data snapshot
       - run:
           name: Sync data
           command: |
