@@ -32,13 +32,13 @@ class Logger(logging.Logger):
         return self.getChild(str(name))
 
 
-def configure():
+def _configure():
     level = _infer_level(global_state.get('log_level'), os.environ)
     timestamp = _infer_timestamp(global_state.get('log_timestamp'), os.environ)
     format = '[%(asctime)s] ' if timestamp else ''
     format += '[%(name)s%(processSuffix)s] %(levelname)s: %(message)s'
 
-    logging.setLogRecordFactory(record_factory)
+    logging.setLogRecordFactory(_record_factory)
     logging.setLoggerClass(Logger)
     logging.root.setLevel(logging.DEBUG)
 
@@ -64,7 +64,7 @@ def reconfigure_level(level: str):
 _original_record_factory = logging.getLogRecordFactory()
 
 
-def record_factory(*args, **kwargs) -> logging.LogRecord:
+def _record_factory(*args, **kwargs) -> logging.LogRecord:
     record = _original_record_factory(*args, **kwargs)
     record.processSuffix = _get_process_suffix(record.processName)
     return record
@@ -116,4 +116,4 @@ def from_path(path, cwd=None) -> Logger:
 
 
 if not logging.root.hasHandlers():
-    configure()
+    _configure()
