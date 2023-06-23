@@ -33,7 +33,7 @@ IMAGES_DIR = Path('juniorguru/images')
 
 TEMPLATES_DIR = Path('juniorguru/image_templates')
 
-OXIPNG_TIMEOUT_MS = 1000
+OXIPNG_TIMEOUT_MS = 2000
 
 
 logger = loggers.from_path(__file__)
@@ -111,38 +111,13 @@ def render_template(width: int,
                     context: dict[str, Any],
                     filters: dict[str, Callable]=None) -> bytes:
     logger.info(f'Rendering {width}x{height} {template_name}')
+    if not len(list(CACHE_DIR.glob("*.css"))):
+        raise FileNotFoundError(f'Cache {CACHE_DIR.absolute()} does not exist, run init_templates_cache() before rendering')
     t = time.perf_counter()
 
     environment = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
     environment.filters.update(filters or {})
     template = environment.get_template(template_name)
-
-    try:
-        CACHE_DIR.mkdir()
-    except FileExistsError:
-        logger.info(f'Cache exists: {CACHE_DIR.absolute()}')
-    else:
-        logger.info(f'Cache created: {CACHE_DIR.absolute()}')
-
-        logger.info('Compiling SCSS')
-        run(['npx', 'sass', f'{TEMPLATES_DIR}:{CACHE_DIR}'], check=True, stdout=DEVNULL)
-
-        logger.info(f"Copying fonts: {', '.join(map(str, FONTS))}")
-        fonts_dir = CACHE_DIR / 'fonts'
-        fonts_dir.mkdir(parents=True)
-        for font_parent_dir in FONTS:
-            for woff_path in Path(font_parent_dir).glob('**/*.woff*'):
-                logger.debug(f"Copying {woff_path} to {fonts_dir}")
-                shutil.copy2(woff_path, fonts_dir)
-
-        logger.info('Rewriting CSS')
-        for css_path in CACHE_DIR.glob('**/*.css'):
-            logger.debug(f"Rewriting {css_path}")
-            for re_pattern, re_repl in CSS_REWRITE:
-                css = css_path.read_text()
-                rewritten_css = re.sub(re_pattern, re_repl, css)
-                logger.debug(f"Did pattern {re_pattern!r} result in changes? {(css != rewritten_css)}")
-                css_path.write_text(rewritten_css)
 
     logger.info('Jinja2 rendering')
     html = template.render(images_dir=IMAGES_DIR.absolute(), **context)
@@ -180,3 +155,34 @@ def render_template(width: int,
 
     logger.info(f'Rendered {template_name} in {time.perf_counter() - t:.2f}s')
     return image_bytes
+
+
+def init_templates_cache():
+    logger.info(f'Removing cache: {CACHE_DIR.absolute()}')
+    shutil.rmtree(CACHE_DIR, ignore_errors=True)
+
+    CACHE_DIR.mkdir()
+    logger.info(f'Cache created: {CACHE_DIR.absolute()}')
+
+    logger.info('Compiling SCSS')
+    # This depends on 'esbuild-sass-plugin' being installed, as it has sass as a direct dependency.
+    # Intentionally, we don't depend on sass directly to avoid having different
+    # version for building with esbuild and with a standalone sass here.
+    run(['npx', 'sass', f'{TEMPLATES_DIR}:{CACHE_DIR}'], check=True, stdout=DEVNULL)
+
+    logger.info(f"Copying fonts: {', '.join(map(str, FONTS))}")
+    fonts_dir = CACHE_DIR / 'fonts'
+    fonts_dir.mkdir(parents=True)
+    for font_parent_dir in FONTS:
+        for woff_path in Path(font_parent_dir).glob('**/*.woff*'):
+            logger.debug(f"Copying {woff_path} to {fonts_dir}")
+            shutil.copy2(woff_path, fonts_dir)
+
+    logger.info('Rewriting CSS')
+    for css_path in CACHE_DIR.glob('**/*.css'):
+        logger.debug(f"Rewriting {css_path}")
+        for re_pattern, re_repl in CSS_REWRITE:
+            css = css_path.read_text()
+            rewritten_css = re.sub(re_pattern, re_repl, css)
+            logger.debug(f"Did pattern {re_pattern!r} result in changes? {(css != rewritten_css)}")
+            css_path.write_text(rewritten_css)

@@ -7,6 +7,7 @@ import click
 from juniorguru import sync as sync_package
 from juniorguru.lib import loggers, mutations
 from juniorguru.lib.cli import command_name, import_commands
+from juniorguru.lib import images
 from juniorguru.models.base import db
 from juniorguru.models.sync import Sync
 
@@ -108,8 +109,9 @@ class Command(click.Command):
 @click.option('--mutate', multiple=True)
 @click.option('--allow-mutations/--disallow-mutations', default=False)
 @click.option('--debug/--no-debug', default=None)
+@click.option('--clear-images-templates-cache/--keep-images-templates-cache', default=True)
 @click.pass_context
-def main(context, id, deps, mutate, allow_mutations, debug):
+def main(context, id, deps, mutate, allow_mutations, debug, clear_images_templates_cache):
     if debug:
         loggers.reconfigure_level('DEBUG')
         logger.info('Logging level set to DEBUG')
@@ -118,6 +120,11 @@ def main(context, id, deps, mutate, allow_mutations, debug):
         mutations.allow_all()
     else:
         mutations.allow(*mutate)
+
+    if clear_images_templates_cache:
+        images.init_templates_cache()
+    else:
+        logger.info('Keeping images templates cache')
 
     with db.connection_context():
         sync = Sync.start(id)

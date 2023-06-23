@@ -60,7 +60,7 @@ schema = Seq(
 
 
 @cli.sync_command(dependencies=['club-content', 'partners'])
-@click.option('--clear-posters/--no-clear-posters', default=False)
+@click.option('--clear-posters/--keep-posters', default=False)
 def main(clear_posters):
     if clear_posters:
         logger.warning("Removing all existing posters for events")

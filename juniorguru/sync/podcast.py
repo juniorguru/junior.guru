@@ -58,7 +58,7 @@ MESSAGE_EMOJI = '🎙'
 
 
 @cli.sync_command(dependencies=['club-content', 'partners'])
-@click.option('--clear-posters/--no-clear-posters', default=False)
+@click.option('--clear-posters/--keep-posters', default=False)
 @db.connection_context()
 def main(clear_posters):
     if clear_posters:

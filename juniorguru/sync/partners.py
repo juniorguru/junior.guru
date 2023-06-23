@@ -59,7 +59,7 @@ POSTER_HEIGHT = 700
 
 
 @cli.sync_command(dependencies=['partnership-plans'])
-@click.option('--clear-posters/--no-clear-posters', default=False)
+@click.option('--clear-posters/--keep-posters', default=False)
 @db.connection_context()
 def main(clear_posters):
     if clear_posters:
