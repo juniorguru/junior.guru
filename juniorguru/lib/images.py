@@ -20,7 +20,7 @@ from juniorguru.lib import loggers
 
 NODE_MODULES_DIR = Path('node_modules')
 
-CACHE_DIR = Path('.images_templates_cache')
+CACHE_DIR = Path('.image_templates_cache')
 
 FONTS = [NODE_MODULES_DIR / '@fontsource' / 'inter' / 'files',
          NODE_MODULES_DIR / 'bootstrap-icons' / 'font' / 'fonts']

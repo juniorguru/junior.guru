@@ -109,9 +109,9 @@ class Command(click.Command):
 @click.option('--mutate', multiple=True)
 @click.option('--allow-mutations/--disallow-mutations', default=False)
 @click.option('--debug/--no-debug', default=None)
-@click.option('--clear-images-templates-cache/--keep-images-templates-cache', default=True)
+@click.option('--clear-image-templates-cache/--keep-image-templates-cache', default=True)
 @click.pass_context
-def main(context, id, deps, mutate, allow_mutations, debug, clear_images_templates_cache):
+def main(context, id, deps, mutate, allow_mutations, debug, clear_image_templates_cache):
     if debug:
         loggers.reconfigure_level('DEBUG')
         logger.info('Logging level set to DEBUG')
@@ -121,10 +121,10 @@ def main(context, id, deps, mutate, allow_mutations, debug, clear_images_templat
     else:
         mutations.allow(*mutate)
 
-    if clear_images_templates_cache:
+    if clear_image_templates_cache:
         images.init_templates_cache()
     else:
-        logger.info('Keeping images templates cache')
+        logger.info('Keeping image templates cache')
 
     with db.connection_context():
         sync = Sync.start(id)
