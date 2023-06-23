@@ -2345,31 +2345,6 @@ docs = ["sphinx (!=5.2.0,!=5.2.0.post0)", "sphinx-rtd-theme"]
 test = ["flaky", "pretend", "pytest (>=3.0.1)"]
 
 [[package]]
-name = "pyoxipng"
-version = "8.0.0"
-description = "Python wrapper for multithreaded .png image file optimizer oxipng"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "pyoxipng-8.0.0-cp310-cp310-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:dfdc7b97c0afcc2d6ba9ae36b9a4976370a9b74a446f3c04147fe2a68a663cd5"},
-    {file = "pyoxipng-8.0.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:34f3fbcfe53f0a54460deaea8afb8faaeac266d79e4f10b6027b95aa165e0a56"},
-    {file = "pyoxipng-8.0.0-cp310-none-win_amd64.whl", hash = "sha256:f246c72c8ec79ce55329366bd9f5a969824365b96181ae19874a3d6b26fc66e0"},
-    {file = "pyoxipng-8.0.0-cp311-cp311-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:1d28700c1be79e8c98ac50bd9177cf756f78c04a51cab33264380157ee682369"},
-    {file = "pyoxipng-8.0.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c065751d31dee163d6522e4156f8024be382045879d7bef81f738c4570b22873"},
-    {file = "pyoxipng-8.0.0-cp311-none-win_amd64.whl", hash = "sha256:21aa0217e302365fa2702c8793cc64a468bb5d24ca4bbcf036a08e0847029c2e"},
-    {file = "pyoxipng-8.0.0-cp37-cp37m-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:6b8fdf02dee51b26895b320a3a963c451416ef73611dc9f0f2eb646f768ef6db"},
-    {file = "pyoxipng-8.0.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:60057d4dd29b2aa1af87c5dcd5759f1d5af7b723d1df842db86416fad2ee3d8d"},
-    {file = "pyoxipng-8.0.0-cp37-none-win_amd64.whl", hash = "sha256:28ef0d5c384557d3ec93b18b46bba4682174e805232b56884960fb3aff27c18c"},
-    {file = "pyoxipng-8.0.0-cp38-cp38-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:0753a93f2f960f98dd58099e7f015797bcd04e855b2724a38d5ce35ec6e19d7b"},
-    {file = "pyoxipng-8.0.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d9e9438d7af37cc40016bb3f0738d386eee09a77aef80a49c1ed29326980fe12"},
-    {file = "pyoxipng-8.0.0-cp38-none-win_amd64.whl", hash = "sha256:4e8c36bbce436397c16283c2c4617730966ab411e43ae7faa992ec9a5af152aa"},
-    {file = "pyoxipng-8.0.0-cp39-cp39-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:cb6ffc2489329a89f4cb269d032af1917e57a9942affd02ed74a3192c0c80d5b"},
-    {file = "pyoxipng-8.0.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:69e69992121b2b1339900ff16fd164751b938df18e868efcdb59dd04da41af35"},
-    {file = "pyoxipng-8.0.0-cp39-none-win_amd64.whl", hash = "sha256:e97a283422c825216ad6d154be90f11e41502ada98c9ac9fc00bef1067d83c61"},
-    {file = "pyoxipng-8.0.0.tar.gz", hash = "sha256:88e587e079c42393c87a233aef159c9677554bc8913d52f47691cd83e3106ca4"},
-]
-
-[[package]]
 name = "pyparsing"
 version = "3.1.0"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
@@ -3242,4 +3217,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "8fc80e6dbba47b8fa4aa183517aa9ac26e712e58b94e4d14d12b31626c0ba772"
+content-hash = "1851b7d77d78c0d7048a5ef2237d70717341a48e789afc4642dc35ab89d2102d"
