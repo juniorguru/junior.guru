@@ -9,7 +9,7 @@ from pathlib import Path
 from subprocess import run
 from typing import Any, Callable
 
-import oxipng
+# import oxipng
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image
 from playwright.sync_api import sync_playwright
@@ -137,11 +137,11 @@ def render_template(width: int,
         image.save(stream, 'PNG', optimize=True)
     image_bytes = stream.getvalue()
 
-    logger.info('Optimizing screenshot')
-    image_bytes = oxipng.optimize_from_memory(image_bytes,
-                                            force=True,
-                                            strip=oxipng.Headers.all(),
-                                            timeout=OXIPNG_TIMEOUT_MS)
+    # logger.info('Optimizing screenshot')
+    # image_bytes = oxipng.optimize_from_memory(image_bytes,
+    #                                         force=True,
+    #                                         strip=oxipng.Headers.all(),
+    #                                         timeout=OXIPNG_TIMEOUT_MS)
 
     logger.info(f'Rendered {template_name} in {time.perf_counter() - t:.2f}s')
     return image_bytes
