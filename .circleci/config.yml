@@ -94,10 +94,12 @@ jobs:
           at: "~"
       - restore_cache:  # caches all HTTP communication of the scrapers for one day
           key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
-      - restore_cache:  # get jobs data persisted between builds
+      - restore_cache:
           key: jobs-v2-{{ .Branch }}
-      - restore_cache:  # makes jobs-emails idempotent
+      - restore_cache:
           key: jobs-emails-v2-{{ .Branch }}
+      - restore_cache:
+          key: images-v1-{{ .Branch }}
       - run:
           name: Snapshot files
           command: poetry run jg data snapshot
@@ -168,14 +170,21 @@ jobs:
           key: scrapy-v1-{{ .Branch }}-{{ checksum ".today" }}
           paths:
             - .scrapy
-      - save_cache:  # persisting the jobs data between builds
+      - save_cache:
           key: jobs-v2-{{ .Branch }}-{{ checksum ".today" }}
           paths:
             - juniorguru/data/jobs
-      - save_cache:  # makes jobs-emails idempotent
+      - save_cache:
           key: jobs-emails-v2-{{ .Branch }}-{{ checksum ".today" }}
           paths:
             - juniorguru/data/jobs-emails.txt
+      - save_cache:
+          key: images-v1-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - juniorguru/images/posters-events
+            - juniorguru/images/posters-partners
+            - juniorguru/images/posters-podcast
+            - juniorguru/images/thumbnails
       - persist_to_workspace:
           root: "~"
           paths:
