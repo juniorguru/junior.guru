@@ -1,13 +1,12 @@
 import mimetypes
 import os
 import pickle
-import re
 import shutil
 import time
 from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
-from subprocess import DEVNULL, run
+from subprocess import run
 from typing import Any, Callable
 
 import oxipng
@@ -18,16 +17,7 @@ from playwright.sync_api import sync_playwright
 from juniorguru.lib import loggers
 
 
-NODE_MODULES_DIR = Path('node_modules')
-
 CACHE_DIR = Path('.image_templates_cache')
-
-FONTS = [NODE_MODULES_DIR / '@fontsource' / 'inter' / 'files',
-         NODE_MODULES_DIR / 'bootstrap-icons' / 'font' / 'fonts']
-
-CSS_REWRITE = [
-    (r'(\.+/)+([^\.]+/)?([^\.]+\.woff)', r'./fonts/\3'),
-]
 
 IMAGES_DIR = Path('juniorguru/images')
 
@@ -157,32 +147,17 @@ def render_template(width: int,
     return image_bytes
 
 
-def init_templates_cache():
-    logger.info(f'Removing cache: {CACHE_DIR.absolute()}')
-    shutil.rmtree(CACHE_DIR, ignore_errors=True)
+def init_templates_cache(cache_dir=None):
+    cache_dir = Path(cache_dir or CACHE_DIR).absolute()
+    t = time.perf_counter()
 
-    CACHE_DIR.mkdir()
-    logger.info(f'Cache created: {CACHE_DIR.absolute()}')
+    logger.info(f'Removing cache: {cache_dir}')
+    shutil.rmtree(cache_dir, ignore_errors=True)
 
-    logger.info('Compiling SCSS')
-    # This depends on 'esbuild-sass-plugin' being installed, as it has sass as a direct dependency.
-    # Intentionally, we don't depend on sass directly to avoid having different
-    # version for building with esbuild and with a standalone sass here.
-    run(['npx', 'sass', f'{TEMPLATES_DIR}:{CACHE_DIR}'], check=True, stdout=DEVNULL)
+    cache_dir.mkdir()
+    logger.info(f'Cache created: {cache_dir}')
 
-    logger.info(f"Copying fonts: {', '.join(map(str, FONTS))}")
-    fonts_dir = CACHE_DIR / 'fonts'
-    fonts_dir.mkdir(parents=True)
-    for font_parent_dir in FONTS:
-        for woff_path in Path(font_parent_dir).glob('**/*.woff*'):
-            logger.debug(f"Copying {woff_path} to {fonts_dir}")
-            shutil.copy2(woff_path, fonts_dir)
+    logger.info('Building static assets')
+    run(['node', 'esbuild-image-templates.js', str(cache_dir)], check=True)
 
-    logger.info('Rewriting CSS')
-    for css_path in CACHE_DIR.glob('**/*.css'):
-        logger.debug(f"Rewriting {css_path}")
-        for re_pattern, re_repl in CSS_REWRITE:
-            css = css_path.read_text()
-            rewritten_css = re.sub(re_pattern, re_repl, css)
-            logger.debug(f"Did pattern {re_pattern!r} result in changes? {(css != rewritten_css)}")
-            css_path.write_text(rewritten_css)
+    logger.info(f'Initialized {cache_dir} in {time.perf_counter() - t:.2f}s')

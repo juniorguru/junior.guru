@@ -1,3 +1,4 @@
+import { readdir } from 'node:fs/promises';
 import * as esbuild from 'esbuild'
 import { sassPlugin } from 'esbuild-sass-plugin';
 
@@ -8,11 +9,9 @@ if (!outdir) {
 }
 
 await esbuild.build({
-  entryPoints: [
-    "juniorguru/js/index.js",
-    'juniorguru/css/index.scss',
-    'juniorguru/css_legacy/index.scss',
-  ],
+  entryPoints: (await readdir('juniorguru/image_templates'))
+    .filter(file => file.endsWith('.scss'))
+    .map(file => `juniorguru/image_templates/${file}`),
   bundle: true,
   minify: true,
   sourcemap: true,
@@ -28,10 +27,12 @@ await esbuild.build({
   assetNames: 'assets/[name]',
   plugins: [
     sassPlugin({
-      // async transform(source) {
-      //     const { css } = await postcss([autoprefixer]).process(source);
-      //     return css;
-      // },
+      precompile(source, pathname) {
+        if (pathname.endsWith('@fontsource/inter/index.css')) {
+          return source.replaceAll('./files/', '../../node_modules/@fontsource/inter/files/')
+        }
+        return source
+      },
     }),
   ],
   outdir,
