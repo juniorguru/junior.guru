@@ -146,7 +146,7 @@ def render_template(width: int,
 
     logger.info('Jinja2 rendering')
     html = template.render(images_dir=IMAGES_DIR.absolute(), **context)
-    html_path = CACHE_DIR.absolute() / f'{os.getpid()}-{template_name}'
+    html_path = CACHE_DIR.absolute() / f'{os.getpid()}-{time.perf_counter_ns()}-{template_name}'
     html_path.write_text(html)
 
     logger.info(f"Taking screenshot {width}x{height} {html_path}")
@@ -160,6 +160,7 @@ def render_template(width: int,
             page.close()
         finally:
             browser.close()
+    html_path.unlink()
 
     logger.info('Editing screenshot')
     with Image.open(BytesIO(image_bytes)) as image:
@@ -173,9 +174,9 @@ def render_template(width: int,
 
     logger.info('Optimizing screenshot')
     image_bytes = oxipng.optimize_from_memory(image_bytes,
-                                              force=True,
-                                              strip=oxipng.Headers.all(),
-                                              timeout=OXIPNG_TIMEOUT_MS)
+                                            force=True,
+                                            strip=oxipng.Headers.all(),
+                                            timeout=OXIPNG_TIMEOUT_MS)
 
     logger.info(f'Rendered {template_name} in {time.perf_counter() - t:.2f}s')
     return image_bytes
