@@ -108,10 +108,11 @@ class Command(click.Command):
 @click.option('--mutate', multiple=True)
 @click.option('--allow-mutations/--disallow-mutations', default=False)
 @click.option('--debug/--no-debug', default=None)
-@click.option('--timestamp/--no-timestamp', default=None)
 @click.pass_context
-def main(context, id, deps, mutate, allow_mutations, debug, timestamp):
-    loggers.configure(level='DEBUG' if debug else None, timestamp=timestamp)
+def main(context, id, deps, mutate, allow_mutations, debug):
+    if debug:
+        loggers.reconfigure_level('DEBUG')
+        logger.info('Logging level set to DEBUG')
 
     if allow_mutations:
         mutations.allow_all()

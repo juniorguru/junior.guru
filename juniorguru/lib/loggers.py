@@ -32,21 +32,13 @@ class Logger(logging.Logger):
         return self.getChild(str(name))
 
 
-def configure(level: str | None=None, timestamp: bool | None=None):
-    if level is None:
-        level = _get_level(global_state.get('log_level'), os.environ)
-    else:
-        level = level.upper()
-
-    logging.setLogRecordFactory(record_factory)
-
-    format = ''
-    if timestamp is None:
-        timestamp = _get_timestamp(global_state.get('log_timestamp'), os.environ)
-    if timestamp:
-        format += '[%(asctime)s] '
+def configure():
+    level = _infer_level(global_state.get('log_level'), os.environ)
+    timestamp = _infer_timestamp(global_state.get('log_timestamp'), os.environ)
+    format = '[%(asctime)s] ' if timestamp else ''
     format += '[%(name)s%(processSuffix)s] %(levelname)s: %(message)s'
 
+    logging.setLogRecordFactory(record_factory)
     logging.setLoggerClass(Logger)
     logging.root.setLevel(logging.DEBUG)
 
@@ -64,20 +56,29 @@ def configure(level: str | None=None, timestamp: bool | None=None):
     global_state.set('log_timestamp', 'true' if timestamp else 'false')
 
 
-_record_factory = logging.getLogRecordFactory()
+def reconfigure_level(level: str):
+    for handler in logging.root.handlers:
+        handler.setLevel(getattr(logging, level.upper()))
+
+
+_original_record_factory = logging.getLogRecordFactory()
 
 
 def record_factory(*args, **kwargs) -> logging.LogRecord:
-    record = _record_factory(*args, **kwargs)
-    record.processSuffix = record.processName \
+    record = _original_record_factory(*args, **kwargs)
+    record.processSuffix = _get_process_suffix(record.processName)
+    return record
+
+
+def _get_process_suffix(process_name: str) -> str:
+    return process_name \
         .replace('MainProcess', '') \
         .replace('SpawnPoolWorker-', '/worker') \
         .replace('ForkPoolWorker-', '/worker') \
         .replace('Process-', '/process')
-    return record
 
 
-def _get_level(global_value: str, env: dict) -> str:  # TODO test
+def _infer_level(global_value: str, env: dict) -> str:
     value = global_value
     if value is None:
         value = env.get('LOG_LEVEL')
@@ -86,7 +87,7 @@ def _get_level(global_value: str, env: dict) -> str:  # TODO test
     return value.upper()
 
 
-def _get_timestamp(global_value: str, env: dict) -> bool:  # TODO test
+def _infer_timestamp(global_value: str, env: dict) -> bool:
     value = global_value
     if value is None:
         value = env.get('LOG_TIMESTAMP')
