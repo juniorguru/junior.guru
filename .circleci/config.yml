@@ -287,13 +287,6 @@ workflows:
       - lint-and-test:
           requires:
             - install
-      - format:
-          filters:
-            branches:
-              only:
-                - main
-          requires:
-            - lint-and-test
       - check-bot:
           requires:
             - install
@@ -357,6 +350,20 @@ workflows:
     triggers:
       - schedule:
           cron: "0 4 * * *"
+          filters:
+            branches:
+              only:
+                - main
+
+  optimize:
+    jobs:
+      - install
+      - format:
+          requires:
+            - install
+    triggers:
+      - schedule:
+          cron: "0 2 * * *"
           filters:
             branches:
               only:
