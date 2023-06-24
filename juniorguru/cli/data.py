@@ -139,7 +139,8 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
         elif source_path.suffix == '.jsonl':
             merge_unique_lines(persist_path, source_path)
         else:
-            raise RuntimeError(f"Conflict loading {persist_path}, file already exists: {source_path}")
+            raise RuntimeError(f"Conflict loading {persist_path} ({persist_path.stat().st_size}b), "
+                               f"file already exists: {source_path} ({source_path.stat().st_size}b)")
         if move:
             persist_path.unlink()
     else:
