@@ -1,3 +1,4 @@
+import gzip
 from textwrap import dedent
 
 import pytest
@@ -66,3 +67,18 @@ def test_merge_unique_lines(tmp_path):
 
     assert path_from.read_text() == 'a\nb\nc\n'
     assert path_to.read_text() == 'd\ne\na\nf\nb\nc\n'
+
+
+def test_merge_unique_lines_gzip(tmp_path):
+    path_from = tmp_path / 'path_from.txt.gz'
+    with gzip.open(path_from, 'wt') as f_from:
+        f_from.write('a\nb\nc\n')
+    path_to = tmp_path / 'path_to.txt.gz'
+    with gzip.open(path_to, 'wt') as f_to:
+        f_to.write('d\ne\na\nf\nb\n')
+    merge_unique_lines(path_from, path_to, open=gzip.open)
+
+    with gzip.open(path_from, 'rt') as f_from:
+        assert f_from.read() == 'a\nb\nc\n'
+    with gzip.open(path_to, 'rt') as f_to:
+        assert f_to.read() == 'd\ne\na\nf\nb\nc\n'

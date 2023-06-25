@@ -1,4 +1,5 @@
 import filecmp
+import gzip
 import itertools
 import re
 import shutil
@@ -138,6 +139,8 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
             merge_databases(persist_path, source_path)
         elif source_path.suffix == '.jsonl':
             merge_unique_lines(persist_path, source_path)
+        elif source_path.suffix == '.jsonl.gz':
+            merge_unique_lines(persist_path, source_path, open=gzip.open)
         else:
             raise RuntimeError(f"Conflict loading {persist_path} "
                                f"({persist_path.stat().st_size}b, created {persist_path.stat().st_ctime})"
@@ -217,12 +220,23 @@ def make_schema_line_idempotent(schema_line):
     raise ValueError(f"Unexpected schema line: {schema_line!r}")
 
 
-def merge_unique_lines(path_from: Path, path_to: Path):
+def merge_unique_lines(path_from: Path, path_to: Path, open=open):
     logger_lines = logger['unique_lines']
     logger_lines.info(f"Merging {path_from} to {path_to}")
-    lines = frozenset(path_to.read_text().splitlines(keepends=True))
-    with path_to.open(mode='+a') as f_to:
-        with path_from.open(mode='r') as f_from:
-            for line in f_from:
-                if line not in lines:
+    with open(path_to, mode='rt') as f_to:
+        lines = list(f_to)
+    lines_extra = []
+    with open(path_from, mode='rt') as f_from:
+        for line in f_from:
+            if line not in lines:
+                lines_extra.append(line)
+    if lines_extra:
+        lines += lines_extra
+
+        seen = set()
+        seen_add = seen.add  # https://stackoverflow.com/a/480227/325365
+
+        with open(path_to, mode='wt') as f_to:
+            for line in lines:
+                if not (line in seen or seen_add(line)):
                     f_to.write(line)
