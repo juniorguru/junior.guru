@@ -139,7 +139,7 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
             merge_databases(persist_path, source_path)
         elif source_path.suffix == '.jsonl':
             merge_unique_lines(persist_path, source_path)
-        elif source_path.suffix == '.jsonl.gz':
+        elif source_path.name.endswith('.jsonl.gz'):
             merge_unique_lines(persist_path, source_path, open=gzip.open)
         else:
             raise RuntimeError(f"Conflict loading {persist_path} "
