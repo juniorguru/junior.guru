@@ -141,11 +141,11 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
             merge_unique_lines(persist_path, source_path)
         elif source_path.name.endswith('.jsonl.gz'):
             merge_unique_lines(persist_path, source_path, open=gzip.open)
+        elif any(parent_path.name == '.scrapy' for parent_path in source_path.parents):
+            pass  # ignore conflicts, this is just a cache which gets regularly cleared anyway
         else:
-            raise RuntimeError(f"Conflict loading {persist_path} "
-                               f"({persist_path.stat().st_size}b, created {persist_path.stat().st_ctime})"
-                               f", file already exists: {source_path} "
-                               f"({source_path.stat().st_size}b, created {source_path.stat().st_ctime})")
+            raise RuntimeError(f"Conflict loading {persist_path} ({persist_path.stat().st_size}b)"
+                               f", file already exists: {source_path} ({source_path.stat().st_size}b)")
         if move:
             persist_path.unlink()
     else:
