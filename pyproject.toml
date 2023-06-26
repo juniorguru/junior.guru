@@ -52,7 +52,7 @@ pycircleci = "0.7.0"
 livereload = "2.6.3"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "7.3.2"
+pytest = "7.4.0"
 pync = "2.0.3"
 flake8 = "6.0.0"
 isort = "5.12.0"
