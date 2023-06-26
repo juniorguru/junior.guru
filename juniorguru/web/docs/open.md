@@ -229,6 +229,11 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
                 'backgroundColor': '#DF4B25',
             },
             {
+                'label': 'kancelář',
+                'data': charts_cost_breakdown.pop('office'),
+                'backgroundColor': '#c8102e',
+            },
+            {
                 'label': 'různé',
                 'data': charts_cost_breakdown.pop('miscellaneous'),
                 'backgroundColor': '#aaa',
@@ -262,6 +267,11 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
                 'label': 'discord.com',
                 'data': charts_cost_breakdown.pop('discord'),
                 'backgroundColor': '#5865f2',
+            },
+            {
+                'label': 'doména',
+                'data': charts_cost_breakdown.pop('domains'),
+                'backgroundColor': '#89c731',
             },
         ],
     }|tojson|forceescape }}"

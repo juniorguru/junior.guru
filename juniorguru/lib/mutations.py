@@ -30,7 +30,8 @@ def _set_allowed(allowed: Iterable) -> None:
 def allow(*services: str) -> None:
     allowed = _get_allowed()
     for service in map(str.lower, services):
-        assert service in KNOWN_SERVICES
+        if service not in KNOWN_SERVICES:
+            raise ValueError(f'Unknown service: {service!r} not in {KNOWN_SERVICES!r}')
         allowed.add(service)
     _set_allowed(allowed)
     logger.info(f'Allowed: {list(allowed)!r}')
