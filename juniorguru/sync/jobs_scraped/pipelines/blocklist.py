@@ -10,6 +10,7 @@ BLOCKLIST = [
     ('title', re.compile(r'\bcae inženýr', re.I)),
     ('title', re.compile(r'\bseřizovač', re.I)),
     ('company_name', re.compile(r'Advantage Consulting', re.I)),
+    ('company_name', re.compile(r'Hitachi Energy', re.I)),
 ]
 
 
