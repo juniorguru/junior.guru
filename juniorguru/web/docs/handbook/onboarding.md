@@ -496,4 +496,13 @@ https://umarku.cz/2023/moje-rocni-testerska-cesta-2022-2023/
 ---
 
 
+---
+Stalubo@ v mailu:
+1. OSVĚTA PERSONALISTŮ MINIMÁLNÍ: "juniorů jsou dnes mraky a dívají se na ně přes prsty" - Na trhu chybí osvěta zaměstnavatelů, aby se nebáli zaměstnávat juniory a to nejen junior-IT-student, ale také junior-IT 40+, 45+, 50+. Pozic na částečný úvazek pro juniory je dnes velice málo. A když je, tak poptávají jen studenty. Do studentů jsou ochotni firmy investovat čas na zaučení, protože žijí v iluzi, že jim tam pak zůstane dlouhodobě, že jim tam bude pracovat od nevidím do nevidím a ještě za nízkou odměnu.
+Vůbec nevidí pozitiva ročníků 40+, 45+, 50+ kde jsou také snaživí, vyzrálí i vytrvalí lidé. Tato osvěta zcela chybí a mám pocit, že tím, že na všech "vykonných nemanažerských pozicích v personálním pracuji mlaďoši, tak jaksi jim v podvědomí chybí pozitivní příběhy, jak i starší dokáží "zahrát dobrý game". Že mají často větší trpělivost, jsou méně roztěkaní, dokáže přemýšlet nad problémem a řešit i problémy, které vyžadují čas.
+Vlaštovkami je Česká spořitelna či Generali, kde nabízí i pozice pro juniory s možností postupného zaučení, ale zase jen Full-time. Jiní nabízí part-time, ale pro "zkušené developry" za 200-250/hod (to je 40.000 hrubého pro seniora je podhodnocená odměna).
+Prostě v korporaci mají předsudek - částečný úvazek znamená matka na mateřské - a těch tam mají - v seznamu na personálním - mnoho. Tak proč by to vypisovali. Když tak se udělá jenom Trainee program, kde se to nabídne studentům za minimální mzdu.
+---
+
+
 #} -->

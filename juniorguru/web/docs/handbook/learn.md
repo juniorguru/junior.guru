@@ -714,4 +714,14 @@ Nový projekt „angličtina pro ajťáky“. Na první pohled něco, co na trhu
 ---
 
 
+---
+Stalubo@ v mailu:
+3. "PRŮBĚŽNÉ ZAPOMÍNÁNÍ" - i když se učíte denně, tak než se nachytříte jedno, tak to druhé pomalu začnete zapomínat. Protože to nepoužíváte. A nepoužíváte, protože čas není nafukovací a vy ho věnujete novému tématu. Navíc, to že se to člověk naučil, není nijak odměněno. Naučíte se, udělate test anebo si jenom odškrtnete a zatleskáte, ale za měsíc už si z toho pamatujete sotva polovinu. A to máte za sebou jen HTML, CSS a 40% SQL a čeká vás Python a GIt-Github.
+; Člověk by už potřeboval dostávat malé "honorované" úkoly, aby získával jistotu, že to není jen učení do šuplíku. Kde netvoří žádné hodnoty. Něco, co by za ním zůstávalo. Když se necháte zaměstnat na part-time do Alberta k pokladně, tak je to sice "málo duchaplná práce", ale někdo vám za ni zaplatí. Když se učíte IT, tak "duchaplná práce", ale nevíte, jestli vám někdo někdy za ni bude ochoten zaplatit (jestli vydržíte, aby jste dosáhl toho stádia).
+
+4. "PŮL NA PŮL" - shledávám velice obtížně rozdělit den na polovinu, kdy se učím a polovinu, kdy dělám jiné povinnosti. Vždy to sklouzne k tomu, že buď dělám celý den jedno anebo celý den druhé. Když se do něčeho zakoncentruju, tak se mi to už žádá dokončit a nikdy se mi to nepovede v tom původně naplánovaném 4 hodinovém čase.
+A najednou zjistíte, že jste 2 dny nenapsal ani čárku kódu.
+---
+
+
 #} -->

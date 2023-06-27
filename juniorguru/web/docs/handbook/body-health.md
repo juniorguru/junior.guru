@@ -46,6 +46,15 @@ Ahoj, mám poškozený zrak a tak si hledám cesty jak nejlépe šetřit oči. K
 ---
 
 
-#} -->
+---
+Stalubo@ v mailu:
+2. ZDRAVÍ AŽ NA PRVNÍM MÍSTĚ: "Hodiny hodiny hodiny před monitorem 20 - 40 let znamená (1) poškození zraku (odchlipující se rohovka, degradace sítnice). (2) ztuhlá krční a bederní páteř, (3) obezita (cukr na utišení stresu a aktivaci mozku), (4) poruchy krevního oběhu (přiškrcení krevního oběhu odneustálého sezení)" - a to platí u pro mladé. Jako junior mám v hlavě "červíka": (1) chceš dalších 20 let sedět denně 8 hodin před monitorem v opakujícím se stresu, že tu kreativní úlohu - v termínu, který jsi na to dostal - nevyřešíš ?
+Je to, kam směřuješ, to nejlepší co pro svých posledních 15-20 let produktivního života můžeš udělat ? Nebyla by lepší sedavé práce s nesedavou prací ? Např. CNC stroje přesného obrábění - přeci jenom by se střídal čas před monitorem s časem u obráběcího stroje.
+STRES: Jiná věc je udělat "rutinní úkol" v limitovaném čase a jiná "udělat kreativní úkol" v limitovaném čase. Když se to vymyšlené nedaří rozhýbat, tak ... anebo nepřichází ta správná myšlenka.
+A na záda juniorům dýchá umělá inteligence (chatGPT), která skript navrhne rychlostí lusknutí (pak už budou potřeba jenom testeři). A davy mladých absolventů z VŠ. Čínská medicína říká, že čím je člověk starší, tím vice by měl střídat činnosti a vedle čistě mentální práce přidávat i hodně manuální práce s dostatkem pohybu (a ještě nejlépe venku - tzv. "hrabat" se v hlíně). Tuto druhou stranu mince nikdo moc nezdůrazňuje. A už zcela postrádám rozumnou diskuzi na tato témata.
+Ale možná je chyba u mě, že se špatně dívám :-)
+V této souvislosti bych uvítal i informace o IT specializacích, které nejsou čistě vývoj (100% sedavé zaměstnání), ale i správa systémů, správa hardwaru - něco nakódím a něco zapojím, vyladím stroj, server apod. To je taky přece IT. A to jsou obory, kde dnes chybí lidé - mladí se vidí v čisté kanceláři. Ale ona i ta práce - kde něco seřídím, naprogramuji a pak vidím, jak něco hmatatelného vytvořím má své kouzlo. Bylo by dobré to propagovat.
+---
+
 
 #} -->
