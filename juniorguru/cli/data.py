@@ -225,11 +225,13 @@ def merge_unique_lines(path_from: Path, path_to: Path, open=open):
     logger_lines.info(f"Merging {path_from} to {path_to}")
     with open(path_to, mode='rt') as f_to:
         lines = list(f_to)
+    logger_lines.info(f"File {path_to} contains {len(lines)} lines")
     lines_extra = []
     with open(path_from, mode='rt') as f_from:
         for line in f_from:
             if line not in lines:
                 lines_extra.append(line)
+    logger_lines.info(f"File {path_to} contains {len(lines_extra)} extra lines")
     if lines_extra:
         lines += lines_extra
 
