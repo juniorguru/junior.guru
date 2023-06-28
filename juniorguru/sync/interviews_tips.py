@@ -1,10 +1,11 @@
 from datetime import timedelta
 
 from discord import Color, Embed
+import emoji
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubChannelID, is_message_over_period_ago
+from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID, is_message_over_period_ago
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -40,9 +41,16 @@ async def discord_task(client):
             'jak se na ně připravit.'
         ))
         with mutating_discord(channel) as proxy:
+            await proxy.purge(check=is_message_bot_reminder)
             await proxy.send(content=(
                                    f"{INTERVIEWS_EMOJI} Pomohla by ti soustavnější příprava na přijímací řízení? "
                                    "Chceš si jednorázově vyzkoušet pohovor nanečisto, česky nebo anglicky? "
                                    f"Někteří členové se v <#{ClubChannelID.MENTORING}> k takovým konzultacím nabídli!"
                                ),
                                embeds=[embed_mentors, embed_handbook])
+
+
+def is_message_bot_reminder(message):
+    return (message.author.id == ClubMemberID.BOT and
+            message.content and
+            emoji.is_emoji(message.content[0]))
