@@ -87,3 +87,8 @@
   slug: has_github
   description: |
     Kdo má s Discordem propojený svůj účet na GitHubu. Roli automaticky spravuje Discord.
+
+- id: 1123557007874596976
+  slug: week_planner
+  description: |
+    Kdo chce být aktivní v <#1123554774147670046>. Přidáváme je do vláken pro jednotlivé týdny. Roli si dáš vlastnoručně v _Channels & Roles_.
