@@ -199,7 +199,8 @@ class ClubMessage(BaseModel):
     author_is_bot = BooleanField()
     channel_id = IntegerField(index=True)
     channel_name = CharField()
-    parent_channel_id = IntegerField(index=True, null=True)
+    parent_channel_id = IntegerField(index=True)
+    parent_channel_name = CharField()
     category_id = IntegerField(index=True, null=True)
     type = CharField(default='default')
     is_private = BooleanField(default=False)
@@ -284,6 +285,20 @@ class ClubMessage(BaseModel):
                    cls.created_at >= since_dt) \
             .order_by(cls.upvotes_count.desc()) \
             .limit(limit)
+
+    @classmethod
+    def digest_channels(cls, since_dt, limit=5):
+        size = fn.sum(cls.content_size).alias('size')
+        return cls.select(size,
+                          cls.channel_id, cls.channel_name,
+                          cls.parent_channel_id, cls.parent_channel_name) \
+            .where(cls.is_private == False,
+                   ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS),
+                   cls.created_at >= since_dt) \
+            .group_by(cls.channel_id) \
+            .order_by(size.desc()) \
+            .limit(limit) \
+            .dicts()
 
     @classmethod
     def last_message(cls, channel_id=None):

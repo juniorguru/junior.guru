@@ -198,19 +198,19 @@ def test_get_reaction():
     assert discord_club.get_reaction([reaction_up, reaction_down], '👍') == reaction_up
 
 
-def test_get_parent_channel_id():
+def test_get_parent_channel():
     StubChannel = namedtuple('Channel', ['id'])
     channel = StubChannel(1)
 
-    assert discord_club.get_parent_channel_id(channel) == 1
+    assert discord_club.get_parent_channel(channel).id == 1
 
 
-def test_get_parent_channel_id_thread():
+def test_get_parent_channel_thread():
     StubChannel = namedtuple('Channel', ['id', 'parent'])
     channel = StubChannel(1, None)
     thread = StubChannel(2, channel)
 
-    assert discord_club.get_parent_channel_id(thread) == 1
+    assert discord_club.get_parent_channel(thread).id == 1
 
 
 def test_is_member_user():

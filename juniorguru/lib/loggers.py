@@ -18,11 +18,8 @@ MUTED_LOGGERS = [
     'MARKDOWN',
     'gql.transport.requests',
     'protego',
-    'juniorguru.lib.discord_sync',
     'juniorguru.sync.club_content.store',
     'juniorguru.lib.mutations.allowing',
-    'juniorguru.lib.discord_club.is_message_over_period_ago',
-    'juniorguru.lib.discord_club.is_message_older_than',
     'juniorguru.web.templates',
 ]
 
@@ -59,6 +56,7 @@ def _configure():
 def reconfigure_level(level: str):
     for handler in logging.root.handlers:
         handler.setLevel(getattr(logging, level.upper()))
+    global_state.set('log_level', level)
 
 
 _original_record_factory = logging.getLogRecordFactory()

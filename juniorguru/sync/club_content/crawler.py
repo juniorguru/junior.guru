@@ -10,7 +10,7 @@ from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubCha
                                          ClubClient, ClubEmoji, emoji_name,
                                          fetch_threads, get_channel_name,
                                          get_or_create_dm_channel,
-                                         get_parent_channel_id, is_member,
+                                         get_parent_channel, is_member,
                                          is_thread_after)
 from juniorguru.sync.club_content.store import (store_dm_channel, store_member,
                                                 store_message, store_pin)
@@ -92,7 +92,7 @@ async def channel_worker(worker_no, queue) -> None:
         logger_c = get_channel_logger(logger_cw, channel)
         logger_c.info(f'Crawling {get_channel_name(channel)!r}')
 
-        history_since = CHANNELS_HISTORY_SINCE.get(get_parent_channel_id(channel),
+        history_since = CHANNELS_HISTORY_SINCE.get(get_parent_channel(channel).id,
                                                    DEFAULT_CHANNELS_HISTORY_SINCE)
         if history_since is None:
             history_after = None
@@ -122,7 +122,7 @@ async def channel_worker(worker_no, queue) -> None:
 
 def get_channel_logger(logger: loggers.Logger,
                        channel: GuildChannel | DMChannel) -> loggers.Logger:
-    parent_channel_id = get_parent_channel_id(channel)
+    parent_channel_id = get_parent_channel(channel).id
     logger = logger[parent_channel_id]
     if parent_channel_id != channel.id:
         logger = logger[channel.id]

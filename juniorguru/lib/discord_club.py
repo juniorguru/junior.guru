@@ -208,11 +208,11 @@ def get_reaction(reactions, emoji) -> discord.Reaction:
     return None
 
 
-def get_parent_channel_id(channel: discord.abc.GuildChannel | discord.DMChannel) -> int:
+def get_parent_channel(channel: discord.abc.GuildChannel | discord.DMChannel) -> discord.abc.GuildChannel | discord.DMChannel:
     try:
-        return channel.parent.id
+        return channel.parent
     except AttributeError:
-        return channel.id
+        return channel
 
 
 def is_member(user: discord.User) -> bool:

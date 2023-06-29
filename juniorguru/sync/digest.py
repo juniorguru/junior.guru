@@ -1,11 +1,15 @@
+import math
 import textwrap
 from datetime import date, timedelta
+import click
 
-from discord import Embed
+from discord import Color, Embed
 
+from juniorguru.lib.text import extract_text
+from juniorguru.lib.md import md, neutralize_urls
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubChannelID, is_message_older_than
+from juniorguru.lib.discord_club import ClubChannelID, is_message_older_than, CLUB_GUILD
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -14,46 +18,87 @@ from juniorguru.models.club import ClubMessage
 logger = loggers.from_path(__file__)
 
 
-DIGEST_LIMIT = 5
+DIGEST_EMOJI = '📰'
+
+TOP_MESSAGES_LIMIT = 5
+
+TOP_CHANNELS_LIMIT = 5
 
 
 @cli.sync_command(dependencies=['club-content'])
-def main():
-    discord_sync.run(discord_task)
+@click.option('--force-since', default=None, type=click.DateTime(['%Y-%m-%d']))
+def main(force_since):
+    discord_sync.run(discord_task, force_since.date() if force_since else None)
 
 
 @db.connection_context()
-async def discord_task(client):
-    since_date = date.today() - timedelta(weeks=1)
-    message = ClubMessage.last_bot_message(ClubChannelID.ANNOUNCEMENTS, '🔥')
-    if is_message_older_than(message, since_date):
-        if message:
-            since_date = message.created_at.date()
-        logger.info(f"Analyzing since {since_date}")
+async def discord_task(client, force_since: date):
+    since = force_since or date.today() - timedelta(weeks=1)
+    message = ClubMessage.last_bot_message(ClubChannelID.ANNOUNCEMENTS, DIGEST_EMOJI)
 
-        channel = await client.fetch_channel(ClubChannelID.ANNOUNCEMENTS)
-        messages = ClubMessage.digest_listing(since_date, limit=DIGEST_LIMIT)
+    if not is_message_older_than(message, since):
+        if not force_since:
+            logger.info("Digest not needed")
+            return
+        logger.warning("Digest forced!")
 
-        for n, message in enumerate(messages, start=1):
-            logger.info(f"Digest #{n}: {message.upvotes_count} votes for {message.author.display_name} in #{message.channel_name}, {message.url}")
+    if not force_since and message:
+        since = message.created_at.date()
+    logger.info(f"Analyzing since {since}")
 
-        content = [
-            f"🔥 **{DIGEST_LIMIT} nej příspěvků za uplynulý týden (od {since_date:%-d.%-m.})**",
-            "",
-            "Pokud je něco zajímavé nebo ti to pomohlo, dej tomu palec 👍, srdíčko ❤️, očička 👀, apod. Oceníš autory a pomůžeš tomu, aby se příspěvek mohl objevit i tady. Někomu, kdo nemá čas procházet všechno, co se v klubu napíše, se může tento přehled hodit.",
-        ]
-        embed_description = []
-        for message in messages:
-            if message.channel_id == message.parent_channel_id:
-                channel_mention = f'<#{message.parent_channel_id}>'
-            else:
-                channel_mention = f'„{message.channel_name}” (<#{message.parent_channel_id}>)'
-            embed_description += [
-                f"{message.upvotes_count}× láska pro **{message.author.display_name}** v {channel_mention}:",
-                f"> {textwrap.shorten(message.content, 200, placeholder='…')}",
-                f"[Hop na příspěvek]({message.url})",
-                "",
-            ]
-        with mutating_discord(channel) as proxy:
-            await proxy.send(content="\n".join(content),
-                             embed=Embed(description="\n".join(embed_description)))
+    messages_desc = ('Pokud je něco zajímavé, nebo ti to pomohlo, reaguj palecem 👍, srdíčkem ❤️, apod. '
+                     'Oceníš autory a pomůžeš tomu, aby se příspěvek objevil i tady.\n\n')
+    messages = ClubMessage.digest_listing(since, limit=TOP_MESSAGES_LIMIT)
+    for n, message in enumerate(messages, start=1):
+        logger.info(f"Message #{n}: {message.upvotes_count} votes for {message.author.display_name} in #{message.channel_name}, {message.url}")
+        messages_desc += (f"{message.upvotes_count}× láska pro **{message.author.display_name}** v {format_channel(message)}\n"
+                          f"{format_content(message.content)}\n"
+                          f"[Číst příspěvek]({message.url})\n\n")
+    messages_embed = Embed(title=f'{TOP_MESSAGES_LIMIT} nej příspěvků',
+                           color=Color.light_grey(),
+                           description=messages_desc)
+
+    channels_desc = ''
+    channels_digest = ClubMessage.digest_channels(since, limit=TOP_CHANNELS_LIMIT)
+    for n, channel_digest in enumerate(channels_digest, start=1):
+        logger.info(f"Channel #{n}: {channel_digest['size']} characters in {channel_digest['channel_name']!r}, parent channel #{channel_digest['parent_channel_name']}")
+        if channel_digest["channel_id"] == channel_digest["parent_channel_id"]:
+            channels_desc += f'**#{channel_digest["channel_name"]}**'
+        else:
+            channels_desc += f'**{channel_digest["channel_name"]}** v #{channel_digest["parent_channel_name"]}'
+        channels_desc += ('\n'
+                          f'{calc_reading_time(channel_digest["size"])} minut čtení'
+                          ' · '
+                          f'[Číst diskuzi](https://discord.com/channels/{CLUB_GUILD}/{channel_digest["channel_id"]}/)'
+                          '\n\n')
+    channels_embed = Embed(title='Kde se hodně diskutovalo',
+                           color=Color.from_rgb(70, 154, 233),
+                           description=channels_desc)
+
+    content = f'{DIGEST_EMOJI} Co se tu dělo za poslední týden? (od {since:%-d.%-m.})'
+
+    channel = await client.fetch_channel(ClubChannelID.ANNOUNCEMENTS)
+    with mutating_discord(channel) as proxy:
+        await proxy.send(content, embeds=[messages_embed, channels_embed])
+
+
+def format_content(content: str) -> str:
+    content_html = md(neutralize_urls((content)))
+    content_text = extract_text(content_html, newline=' ')
+    content_text_short = textwrap.shorten(content_text, 150, placeholder='…')
+    return f"> {content_text_short}"
+
+
+def format_channel(message: ClubMessage) -> str:
+    mention = f'#{message.parent_channel_name}'
+    if message.channel_id != message.parent_channel_id:
+        mention += f', vlákno „{message.channel_name}”'
+    return mention
+
+
+def calc_reading_time(content_size: int) -> int:
+    if not content_size:
+        return 0
+    norm_pages = content_size / 1800  # see https://cs.wikipedia.org/wiki/Normostrana
+    words_count = norm_pages * 250  # estimate, see https://cs.wikipedia.org/wiki/Normostrana
+    return math.ceil(words_count / 200)  # 200 words per minute

@@ -38,6 +38,7 @@ def create_message(id_, user, **kwargs):
                               channel_id=channel_id,
                               channel_name=kwargs.get('channel_name', 'random-discussions'),
                               parent_channel_id=kwargs.get('parent_channel_id', channel_id),
+                              parent_channel_name=kwargs.get('parent_channel_name', 'random-discussions'),
                               type=kwargs.get('type', 'default'),
                               is_private=kwargs.get('is_private', False))
 
@@ -60,7 +61,6 @@ def juniorguru_bot():
 
 def test_message_listing_sort_from_the_oldest(db_connection):
     user = create_user(1)
-
     message1 = create_message(1, user, created_at=datetime(2021, 10, 1))
     message2 = create_message(2, user, created_at=datetime(2021, 10, 20))
     message3 = create_message(3, user, created_at=datetime(2021, 10, 5))
@@ -71,7 +71,6 @@ def test_message_listing_sort_from_the_oldest(db_connection):
 
 def test_message_digest_listing(db_connection):
     user = create_user(1)
-
     message1 = create_message(1, user, created_at=datetime(2021, 4, 30), upvotes_count=30)  # noqa
     message2 = create_message(2, user, created_at=datetime(2021, 5, 3), upvotes_count=5)
     message3 = create_message(3, user, created_at=datetime(2021, 5, 4), upvotes_count=10)
@@ -84,12 +83,117 @@ def test_message_digest_listing(db_connection):
 
 def test_message_digest_listing_ignores_certain_channels(db_connection):
     user = create_user(1)
-
     message1 = create_message(1, user, upvotes_count=5)
     message2 = create_message(2, user, upvotes_count=10)
     message3 = create_message(3, user, upvotes_count=20, channel_id=ClubChannelID.INTRO)  # noqa
 
     assert set(ClubMessage.digest_listing(date(2021, 5, 1), limit=3)) == {message1, message2}
+
+
+def test_message_digest_channels(db_connection):
+    user = create_user(1)
+    for i in range(3):
+        create_message(10 + i, user, created_at=datetime(2023, 5, 2),
+                       content='abcd',
+                       channel_id=1, channel_name='channel-1',
+                       parent_channel_id=100, parent_channel_name='parent-channel-100')
+    for i in range(10):
+        create_message(20 + i, user, created_at=datetime(2023, 5, 3),
+                       content='abcd',
+                       channel_id=2, channel_name='channel-2',
+                       parent_channel_id=200, parent_channel_name='parent-channel-200')
+    for i in range(5):
+        create_message(30 + i, user, created_at=datetime(2023, 5, 4),
+                       content='abcd',
+                       channel_id=3, channel_name='channel-3',
+                       parent_channel_id=300, parent_channel_name='parent-channel-300')
+    digest_channels = list(ClubMessage.digest_channels(date(2023, 5, 1), limit=3))
+
+    assert digest_channels == [{'size': 10 * 4,
+                                'channel_id': 2,
+                                'channel_name': 'channel-2',
+                                'parent_channel_id': 200,
+                                'parent_channel_name': 'parent-channel-200'},
+                               {'size': 5 * 4,
+                                'channel_id': 3,
+                                'channel_name': 'channel-3',
+                                'parent_channel_id': 300,
+                                'parent_channel_name': 'parent-channel-300'},
+                               {'size': 3 * 4,
+                                'channel_id': 1,
+                                'channel_name': 'channel-1',
+                                'parent_channel_id': 100,
+                                'parent_channel_name': 'parent-channel-100'}]
+
+
+def test_message_digest_channels_ignores_private_messages(db_connection):
+    user = create_user(1)
+    kwargs = dict(created_at=datetime(2023, 5, 2),
+                  content='abcd',
+                  channel_id=1,
+                  channel_name='channel',
+                  parent_channel_id=100,
+                  parent_channel_name='parent-channel')
+    for i in range(3):
+        create_message(10 + i, user, is_private=False, **kwargs)
+    for i in range(10):
+        create_message(20 + i, user, is_private=True, **kwargs)
+    digest_channels = list(ClubMessage.digest_channels(date(2023, 5, 1), limit=3))
+
+    assert digest_channels == [{'size': 3 * 4,
+                                'channel_id': 1,
+                                'channel_name': 'channel',
+                                'parent_channel_id': 100,
+                                'parent_channel_name': 'parent-channel'}]
+
+
+def test_message_digest_channels_ignores_certain_channels(db_connection):
+    user = create_user(1)
+    for i in range(3):
+        create_message(10 + i,
+                       user,
+                       content='abcd',
+                       created_at=datetime(2023, 5, 2),
+                       channel_id=123,
+                       channel_name='Hello Alice!',
+                       parent_channel_id=ClubChannelID.INTRO,
+                       parent_channel_name='intro')
+    for i in range(10):
+        create_message(20 + i,
+                       user,
+                       content='abcd',
+                       created_at=datetime(2023, 5, 2),
+                       channel_id=456,
+                       channel_name='Blah blah',
+                       parent_channel_id=100,
+                       parent_channel_name='parent-channel')
+    digest_channels = list(ClubMessage.digest_channels(date(2023, 5, 1), limit=3))
+
+    assert digest_channels == [{'size': 10 * 4,
+                                'channel_id': 456,
+                                'channel_name': 'Blah blah',
+                                'parent_channel_id': 100,
+                                'parent_channel_name': 'parent-channel'}]
+
+
+def test_message_digest_channels_ignores_old_messages(db_connection):
+    user = create_user(1)
+    kwargs = dict(content='abcd',
+                  channel_id=1,
+                  channel_name='channel',
+                  parent_channel_id=100,
+                  parent_channel_name='parent-channel')
+    for i in range(3):
+        create_message(10 + i, user, created_at=datetime(2023, 4, 29), **kwargs)
+    for i in range(10):
+        create_message(20 + i, user, created_at=datetime(2023, 5, 2), **kwargs)
+    digest_channels = list(ClubMessage.digest_channels(date(2023, 5, 1), limit=3))
+
+    assert digest_channels == [{'size': 10 * 4,
+                                'channel_id': 1,
+                                'channel_name': 'channel',
+                                'parent_channel_id': 100,
+                                'parent_channel_name': 'parent-channel'}]
 
 
 def test_message_channel_listing(db_connection):

@@ -7,7 +7,7 @@ from discord import DMChannel, Member, Message, User
 
 from juniorguru.lib import loggers
 from juniorguru.lib.discord_club import (ClubMemberID, emoji_name, get_channel_name,
-                                         get_parent_channel_id, get_pinned_message_url,
+                                         get_parent_channel, get_pinned_message_url,
                                          get_starting_emoji, get_user_roles,
                                          is_channel_private)
 from juniorguru.lib.discord_votes import count_downvotes, count_upvotes
@@ -97,7 +97,8 @@ def store_message(message: Message) -> ClubMessage:
                               author_is_bot=message.author.id == ClubMemberID.BOT,
                               channel_id=channel.id,
                               channel_name=get_channel_name(channel),
-                              parent_channel_id=get_parent_channel_id(channel),
+                              parent_channel_id=get_parent_channel(channel).id,
+                              parent_channel_name=get_channel_name(get_parent_channel(channel)),
                               category_id=getattr(channel, 'category_id', None),
                               type=message.type.name,
                               is_private=is_channel_private(channel),

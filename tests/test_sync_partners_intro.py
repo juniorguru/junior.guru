@@ -26,6 +26,8 @@ def create_intro(partner, created_at):
                               author_is_bot=True,
                               channel_id=ClubChannelID.INTRO,
                               channel_name='',
+                              parent_channel_id=ClubChannelID.INTRO,
+                              parent_channel_name='',
                               author=author)
 
 @pytest.fixture

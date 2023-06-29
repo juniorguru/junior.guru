@@ -14,6 +14,10 @@ LINK_RE = re.compile(r'''
     \)
 ''', re.VERBOSE)
 
+URL_RE = re.compile(r'''
+    https?://(www\.)?
+''', re.VERBOSE)
+
 
 def md(markdown_text):
     return markdown(markdown_text,
@@ -23,3 +27,7 @@ def md(markdown_text):
 
 def strip_links(markdown_text):
     return LINK_RE.sub(r'\1', markdown_text)
+
+
+def neutralize_urls(markdown_text):
+    return URL_RE.sub('', markdown_text)
