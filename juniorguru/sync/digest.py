@@ -68,7 +68,7 @@ async def discord_task(client, force_since: date):
             channels_desc += f'**{channel_digest["channel_name"]}** v #{channel_digest["parent_channel_name"]}'
         channels_desc += ('\n'
                           f'{calc_reading_time(channel_digest["size"])} minut čtení'
-                          ' · '
+                          ' – '
                           f'[Číst diskuzi](https://discord.com/channels/{CLUB_GUILD}/{channel_digest["channel_id"]}/)'
                           '\n\n')
     channels_embed = Embed(title='Kde se hodně diskutovalo',
