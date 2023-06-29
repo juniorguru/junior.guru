@@ -99,8 +99,7 @@ async def welcome(discord_channel: TextChannel, message: ClubMessage):
     if discord_messages:
         logger.debug(f"Thread for {message.author.display_name!r} already has some messages from bot, skipping")
     else:
-        for message_args in intro.generate_messages():
-            await thread.send(**message_args)
+        await thread.send(**intro.generate_intro_message())
 
     logger.debug(f"Analyzing if greeters are involved for {message.author.display_name!r}")
     thread_members = thread.members or await thread.fetch_members()
