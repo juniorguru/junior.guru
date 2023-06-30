@@ -3,7 +3,7 @@ from textwrap import dedent
 
 import pytest
 
-from juniorguru.cli.data import (get_row_updates, make_schema_idempotent,
+from juniorguru.cli.data import (count_lines, get_row_updates, is_jobs_archive, is_scrapy_cache, make_schema_idempotent,
                                  merge_unique_lines)
 
 
@@ -82,3 +82,34 @@ def test_merge_unique_lines_gzip(tmp_path):
         assert f_from.read() == 'a\nb\nc\n'
     with gzip.open(path_to, 'rt') as f_to:
         assert f_to.read() == 'd\ne\na\nf\nb\nc\n'
+
+
+def test_count_lines(tmp_path):
+    path = tmp_path / 'path.txt'
+    path.write_text('a\nb\nc\n')
+
+    assert count_lines(path) == 3
+
+
+def test_count_lines_gzip(tmp_path):
+    path = tmp_path / 'path.txt'
+    with gzip.open(path, 'wt') as f:
+        f.write('a\nb\nc\nd\n')
+
+    assert count_lines(path, open=gzip.open) == 4
+
+
+@pytest.mark.parametrize('path, expected', [
+    ('persist-to-workspace/0/.scrapy/http_cache/remoteok/6b/6b0ef6dce04d86506412fbe8e08f417f108f8115/request_headers', True),
+    ('persist-to-workspace/0/juniorguru/images/avatars-club/0b5f22a77c1f5510921c930b6cb8ccdb.png', False),
+])
+def test_is_scrapy_cache(path, expected):
+    assert is_scrapy_cache(path) is expected
+
+
+@pytest.mark.parametrize('path, expected', [
+    ('persist-to-workspace/0/juniorguru/data/jobs/2023/06/30/jobscz.jsonl.gz', True),
+    ('persist-to-workspace/0/juniorguru/images/avatars-club/0b5f22a77c1f5510921c930b6cb8ccdb.png', False),
+])
+def test_is_jobs_archive(path, expected):
+    assert is_jobs_archive(path) is expected

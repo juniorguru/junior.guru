@@ -139,10 +139,13 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
             merge_databases(persist_path, source_path)
         elif source_path.suffix == '.jsonl':
             merge_unique_lines(persist_path, source_path)
-        elif source_path.name.endswith('.jsonl.gz'):
-            merge_unique_lines(persist_path, source_path, open=gzip.open)
-        elif any(parent_path.name == '.scrapy' for parent_path in source_path.parents):
-            pass  # ignore conflicts, this is just a cache which gets regularly cleared anyway
+        elif is_scrapy_cache(source_path):
+            pass  # ignore, this is just a cache which gets regularly cleared anyway
+        elif is_jobs_archive(source_path):
+            if count_lines(persist_path) == count_lines(source_path):
+                pass  # ignore, very likely they're the same
+            else:
+                merge_unique_lines(persist_path, source_path, open=gzip.open)
         else:
             raise RuntimeError(f"Conflict loading {persist_path} ({persist_path.stat().st_size}b)"
                                f", file already exists: {source_path} ({source_path.stat().st_size}b)")
@@ -242,3 +245,19 @@ def merge_unique_lines(path_from: Path, path_to: Path, open=open):
             for line in lines:
                 if not (line in seen or seen_add(line)):
                     f_to.write(line)
+
+
+def is_jobs_archive(path: str | Path) -> bool:
+    return Path(path).name.endswith('.jsonl.gz') and '/data/jobs/' in str(path)
+
+
+def is_scrapy_cache(path: str | Path) -> bool:
+    return any(parent_path.name == '.scrapy' for parent_path in Path(path).parents)
+
+
+def count_lines(path: Path, open=open):
+    lines = 0
+    with open(path, mode='rt') as f:
+        for _ in f:
+            lines += 1
+    return lines
