@@ -8,6 +8,13 @@
 # avatar_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
+- id: "0017"
+  title: Matěj Kotrba (Fuckupy v IT, Očima Ajťáka)
+  publish_on: "2023-07-01"
+  description: |
+    V tomto díle si Pája povídá s Matějem Kotrbou, IT headhunterem, tvůrcem podcastu Fuckupy v IT a projektu Očima ajťáka. Poslechnete si, jak se i jako junior dostat do hledáčku IT recruitera, tipy jak si najít první praci, proč být nejen při hledání práce proaktivní nebo jak se na pohovoru postavit k otázce peněz a kolik je rozumné si říct.
+
+
 - id: "0016"
   title: Kateřina Lesch (Deloitte) o umělé inteligenci
   avatar_path: avatars-participants/katerina-lesch.jpg
