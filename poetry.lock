@@ -944,13 +944,13 @@ uritemplate = ">=3.0.1,<5"
 
 [[package]]
 name = "google-auth"
-version = "2.20.0"
+version = "2.21.0"
 description = "Google Authentication Library"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "google-auth-2.20.0.tar.gz", hash = "sha256:030af34138909ccde0fbce611afc178f1d65d32fbff281f25738b1fe1c6f3eaa"},
-    {file = "google_auth-2.20.0-py2.py3-none-any.whl", hash = "sha256:23b7b0950fcda519bfb6692bf0d5289d2ea49fc143717cc7188458ec620e63fa"},
+    {file = "google-auth-2.21.0.tar.gz", hash = "sha256:b28e8048e57727e7cf0e5bd8e7276b212aef476654a09511354aa82753b45c66"},
+    {file = "google_auth-2.21.0-py2.py3-none-any.whl", hash = "sha256:da3f18d074fa0f5a7061d99b9af8cee3aa6189c987af7c1b07d94566b6b11268"},
 ]
 
 [package.dependencies]
@@ -1424,7 +1424,7 @@ py-cord = {version = "2.4.1", extras = ["speed"]}
 type = "git"
 url = "https://github.com/juniorguru/juniorguru-chick.git"
 reference = "HEAD"
-resolved_reference = "e5856bf8b0fcd65232d4362c171f34a4010c1b5f"
+resolved_reference = "eb33e02089f798af3d2f72b06e8ecda44eb8df3c"
 
 [[package]]
 name = "langdetect"
@@ -1644,12 +1644,13 @@ files = [
 
 [[package]]
 name = "mf2py"
-version = "1.1.2"
+version = "1.1.3"
 description = "Python Microformats2 parser"
 optional = false
-python-versions = "*"
+python-versions = ">=2.7"
 files = [
-    {file = "mf2py-1.1.2.tar.gz", hash = "sha256:84f1f8f2ff3f1deb1c30be497e7ccd805452996a662fd4a77f09e0105bede2c9"},
+    {file = "mf2py-1.1.3-py3-none-any.whl", hash = "sha256:8f9e2c147beadd56f8839644124c7d141d96e879319b9f50d02826c88766bf4d"},
+    {file = "mf2py-1.1.3.tar.gz", hash = "sha256:4241e91ed4b644dd666d9fbd2557ed86e5bb7399c196026f7b0a1f413b33f59f"},
 ]
 
 [package.dependencies]
@@ -2936,13 +2937,13 @@ files = [
 
 [[package]]
 name = "typing-extensions"
-version = "4.6.3"
+version = "4.7.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "typing_extensions-4.6.3-py3-none-any.whl", hash = "sha256:88a4153d8505aabbb4e13aacb7c486c2b4a33ca3b3f807914a9b4c844c471c26"},
-    {file = "typing_extensions-4.6.3.tar.gz", hash = "sha256:d91d5919357fe7f681a9f2b5b4cb2a5f1ef0a1e9f59c4d8ff0d3491e05c0ffd5"},
+    {file = "typing_extensions-4.7.0-py3-none-any.whl", hash = "sha256:5d8c9dac95c27d20df12fb1d97b9793ab8b2af8a3a525e68c80e21060c161771"},
+    {file = "typing_extensions-4.7.0.tar.gz", hash = "sha256:935ccf31549830cda708b42289d44b6f74084d616a00be651601a4f968e77c82"},
 ]
 
 [[package]]
@@ -3217,4 +3218,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "1fe692dc430cb010c4e00b445ee2566c49e2fa0e8501d468039584500409a611"
+content-hash = "e708ba73864dadde84c22443991cb41f41ea0441fa929df86f184bff5cea8d94"
