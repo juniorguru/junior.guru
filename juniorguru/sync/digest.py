@@ -46,40 +46,46 @@ async def discord_task(client, force_since: date):
         since = message.created_at.date()
     logger.info(f"Analyzing since {since}")
 
-    messages_desc = ('Pokud je něco zajímavé, nebo ti to pomohlo, reaguj palecem 👍, srdíčkem ❤️, apod. '
-                     'Oceníš autory a pomůžeš tomu, aby se příspěvek objevil i tady.\n\n')
+    content = f'{DIGEST_EMOJI} Co se tu dělo za poslední týden? (od {since:%-d.%-m.})'
+
+    logger.info(f"Listing {TOP_MESSAGES_LIMIT} top messages")
     messages = ClubMessage.digest_listing(since, limit=TOP_MESSAGES_LIMIT)
     for n, message in enumerate(messages, start=1):
         logger.info(f"Message #{n}: {message.upvotes_count} votes for {message.author.display_name} in #{message.channel_name}, {message.url}")
-        messages_desc += (f"{message.upvotes_count}× láska pro **{message.author.display_name}** v {format_channel(message)}\n"
-                          f"{format_content(message.content)}\n"
-                          f"[Číst příspěvek]({message.url})\n\n")
-    messages_embed = Embed(title=f'{TOP_MESSAGES_LIMIT} nej příspěvků',
-                           color=Color.light_grey(),
-                           description=messages_desc)
+    messages_desc = ('Pokud je něco zajímavé, nebo ti to pomohlo, reaguj palecem 👍, srdíčkem ❤️, apod. '
+                     'Oceníš autory a pomůžeš tomu, aby se příspěvek objevil i tady.\n\n')
+    messages_desc += '\n\n'.join(format_message(message) for message in messages)
+    messages_embed = Embed(title=f'{TOP_MESSAGES_LIMIT} nej příspěvků', color=Color.light_grey(), description=messages_desc)
 
-    channels_desc = ''
+    logger.info(f"Listing {TOP_CHANNELS_LIMIT} top channels")
     channels_digest = ClubMessage.digest_channels(since, limit=TOP_CHANNELS_LIMIT)
     for n, channel_digest in enumerate(channels_digest, start=1):
         logger.info(f"Channel #{n}: {channel_digest['size']} characters in {channel_digest['channel_name']!r}, parent channel #{channel_digest['parent_channel_name']}")
-        if channel_digest["channel_id"] == channel_digest["parent_channel_id"]:
-            channels_desc += f'**#{channel_digest["channel_name"]}**'
-        else:
-            channels_desc += f'**{channel_digest["channel_name"]}** v #{channel_digest["parent_channel_name"]}'
-        channels_desc += ('\n'
-                          f'{calc_reading_time(channel_digest["size"])} minut čtení'
-                          ' – '
-                          f'[Číst diskuzi](https://discord.com/channels/{CLUB_GUILD}/{channel_digest["channel_id"]}/)'
-                          '\n\n')
-    channels_embed = Embed(title='Kde se hodně diskutovalo',
-                           color=Color.from_rgb(70, 154, 233),
-                           description=channels_desc)
-
-    content = f'{DIGEST_EMOJI} Co se tu dělo za poslední týden? (od {since:%-d.%-m.})'
+    channels_desc = '\n\n'.join(format_channel_digest(channel_digest) for channel_digest in channels_digest)
+    channels_embed = Embed(title='Kde se hodně diskutovalo', color=Color.from_rgb(70, 154, 233), description=channels_desc)
 
     channel = await client.fetch_channel(ClubChannelID.ANNOUNCEMENTS)
     with mutating_discord(channel) as proxy:
         await proxy.send(content, embeds=[messages_embed, channels_embed])
+
+
+def format_message(message: ClubMessage) -> str:
+    return (f"{message.upvotes_count}× láska pro **{message.author.display_name}** v {format_channel(message)}\n"
+            f"{format_content(message.content)}\n"
+            f"[Číst příspěvek]({message.url})")
+
+
+def format_channel_digest(channel_digest: dict) -> str:
+    text = ''
+    if channel_digest["channel_id"] == channel_digest["parent_channel_id"]:
+        text += f'**#{channel_digest["channel_name"]}**'
+    else:
+        text += f'**{channel_digest["channel_name"]}** v #{channel_digest["parent_channel_name"]}'
+    text += ('\n'
+             f'{calc_reading_time(channel_digest["size"])} minut čtení'
+             ' – '
+             f'[Číst diskuzi](https://discord.com/channels/{CLUB_GUILD}/{channel_digest["channel_id"]}/)')
+    return text
 
 
 def format_content(content: str) -> str:

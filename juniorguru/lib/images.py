@@ -142,13 +142,13 @@ def init_templates_cache(cache_dir=None):
     cache_dir = Path(cache_dir or CACHE_DIR).absolute()
     t = time.perf_counter()
 
-    logger.info(f'Removing cache: {cache_dir}')
+    logger.debug(f'Removing cache: {cache_dir}')
     shutil.rmtree(cache_dir, ignore_errors=True)
 
     cache_dir.mkdir()
-    logger.info(f'Cache created: {cache_dir}')
+    logger.debug(f'Cache created: {cache_dir}')
 
-    logger.info('Building static assets')
+    logger.debug('Building static assets')
     run(['node', 'esbuild-image-templates.js', str(cache_dir)], check=True)
 
     logger.info(f'Initialized {cache_dir} in {time.perf_counter() - t:.2f}s')
