@@ -1133,13 +1133,13 @@ test = ["objgraph", "psutil"]
 
 [[package]]
 name = "gspread"
-version = "5.9.0"
+version = "5.10.0"
 description = "Google Spreadsheets Python API"
 optional = false
-python-versions = ">=3.6, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+python-versions = ">=3.7"
 files = [
-    {file = "gspread-5.9.0-py3-none-any.whl", hash = "sha256:85f296f3ee95d1742e44be368d5a7c0ca3957b8ad2cb6833f7094055f3390e32"},
-    {file = "gspread-5.9.0.tar.gz", hash = "sha256:34b97834bbefaccf72497702bae26d12f96d0685e49a418afe6a92a9bbcb9c9c"},
+    {file = "gspread-5.10.0-py3-none-any.whl", hash = "sha256:f58b15d950ef5c45c8607edb3687188d5a543f2b66242f9c26fbb0d2cf36169d"},
+    {file = "gspread-5.10.0.tar.gz", hash = "sha256:2b6bba6dc111580170346a9bcd1893e0e8c52f67a9e537caec7b7a1e27c14435"},
 ]
 
 [package.dependencies]
@@ -3217,4 +3217,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "f3738a54770607fea588d43bdcceeee63d1e0515354bacdb1a012c397e4d00d2"
+content-hash = "1fe692dc430cb010c4e00b445ee2566c49e2fa0e8501d468039584500409a611"
