@@ -96,15 +96,15 @@ def format_content(content: str) -> str:
 
 
 def format_channel(message: ClubMessage) -> str:
-    mention = f'#{message.parent_channel_name}'
+    text = f'#{message.parent_channel_name}'
     if message.channel_id != message.parent_channel_id:
-        mention += f', vlákno „{message.channel_name}”'
-    return mention
+        text += f', vlákno „{message.channel_name}”'
+    return text
 
 
 def calc_reading_time(content_size: int) -> int:
     if not content_size:
-        return 0
+        return 1
     norm_pages = content_size / 1800  # see https://cs.wikipedia.org/wiki/Normostrana
     words_count = norm_pages * 250  # estimate, see https://cs.wikipedia.org/wiki/Normostrana
     return math.ceil(words_count / 200)  # 200 words per minute
