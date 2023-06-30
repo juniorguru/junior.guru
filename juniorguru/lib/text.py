@@ -1,7 +1,7 @@
 import re
 import unicodedata
 
-from lxml import html, etree
+from lxml import etree, html
 from lxml.html import soupparser as html_soup
 
 

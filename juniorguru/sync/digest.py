@@ -1,16 +1,16 @@
 import math
 import textwrap
 from datetime import date, timedelta
-import click
 
+import click
 from discord import Color, Embed
 
-from juniorguru.lib.text import extract_text
-from juniorguru.lib.md import md, neutralize_urls
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubChannelID, is_message_older_than, CLUB_GUILD
+from juniorguru.lib.discord_club import CLUB_GUILD, ClubChannelID, is_message_older_than
+from juniorguru.lib.md import md, neutralize_urls
 from juniorguru.lib.mutations import mutating_discord
+from juniorguru.lib.text import extract_text
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
