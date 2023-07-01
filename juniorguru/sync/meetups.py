@@ -1,9 +1,10 @@
-from datetime import date
-import ics
 import re
+from datetime import date
+
 import click
-from playwright.sync_api import sync_playwright
+import ics
 import requests
+from playwright.sync_api import sync_playwright
 
 from juniorguru.cli.sync import default_from_env, main as cli
 from juniorguru.lib import loggers

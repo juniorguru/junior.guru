@@ -3,7 +3,8 @@ from textwrap import dedent
 
 import pytest
 
-from juniorguru.cli.data import (count_lines, get_row_updates, is_jobs_archive, is_scrapy_cache, make_schema_idempotent,
+from juniorguru.cli.data import (count_lines, get_row_updates, is_jobs_archive,
+                                 is_scrapy_cache, make_schema_idempotent,
                                  merge_unique_lines)
 
 

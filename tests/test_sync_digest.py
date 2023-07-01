@@ -1,8 +1,10 @@
 import pytest
-from juniorguru.lib.discord_club import CLUB_GUILD
 
-from juniorguru.sync.digest import format_message, format_channel_digest, format_content, format_channel, calc_reading_time
+from juniorguru.lib.discord_club import CLUB_GUILD
 from juniorguru.models.club import ClubMessage, ClubUser
+from juniorguru.sync.digest import (calc_reading_time, format_channel,
+                                    format_channel_digest, format_content,
+                                    format_message)
 
 
 def test_format_message():
