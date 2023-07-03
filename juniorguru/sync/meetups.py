@@ -34,6 +34,8 @@ def main(context, meetupcom_email, meetupcom_password):
         icals = {}
 
         logger.info('About to scrape meetup.com (use PWDEBUG=1 to debug this)')
+        if not meetupcom_email or not meetupcom_password:
+            raise ValueError('Missing meetup.com credentials')
         with sync_playwright() as playwright:
             browser = playwright.firefox.launch()
             page = browser.new_page()
