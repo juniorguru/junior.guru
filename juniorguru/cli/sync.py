@@ -1,5 +1,6 @@
 import os
 from functools import wraps
+from pathlib import Path
 from time import perf_counter_ns
 
 import click
@@ -108,9 +109,13 @@ class Command(click.Command):
 @click.option('--mutate', multiple=True)
 @click.option('--allow-mutations/--disallow-mutations', default=False)
 @click.option('--debug/--no-debug', default=None)
+@click.option('--cache-dir', default='.sync_cache', type=click.Path(path_type=Path))
 @click.option('--clear-image-templates-cache/--keep-image-templates-cache', default=True)
 @click.pass_context
-def main(context, id, deps, mutate, allow_mutations, debug, clear_image_templates_cache):
+def main(context, id, deps, mutate, allow_mutations, debug, cache_dir, clear_image_templates_cache):
+    Path(cache_dir).mkdir(exist_ok=True)
+    logger.info(f'Cache directory set to {cache_dir.absolute()}')
+
     if debug:
         loggers.reconfigure_level('DEBUG')
         logger.info('Logging level set to DEBUG')
@@ -128,6 +133,7 @@ def main(context, id, deps, mutate, allow_mutations, debug, clear_image_template
     with db.connection_context():
         sync = Sync.start(id)
     context.obj = dict(sync=sync,
+                       cache_dir=cache_dir,
                        skip_dependencies=not deps)
     logger.debug(f"Sync #{id} starts with {sync.count_commands()} commands already recorded")
     context.call_on_close(close)
