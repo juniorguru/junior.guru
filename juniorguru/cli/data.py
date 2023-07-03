@@ -1,5 +1,4 @@
 import filecmp
-import gzip
 import itertools
 import re
 import shutil
@@ -141,11 +140,6 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
             merge_unique_lines(persist_path, source_path)
         elif is_scrapy_cache(source_path):
             pass  # ignore, this is just a cache which gets regularly cleared anyway
-        elif is_jobs_archive(source_path):
-            if count_lines(persist_path, open=gzip.open) == count_lines(source_path, open=gzip.open):
-                pass  # ignore, very likely they're the same
-            else:
-                merge_unique_lines(persist_path, source_path, open=gzip.open)
         else:
             raise RuntimeError(f"Conflict loading {persist_path} ({persist_path.stat().st_size}b)"
                                f", file already exists: {source_path} ({source_path.stat().st_size}b)")
@@ -223,41 +217,16 @@ def make_schema_line_idempotent(schema_line):
     raise ValueError(f"Unexpected schema line: {schema_line!r}")
 
 
-def merge_unique_lines(path_from: Path, path_to: Path, open=open):
+def merge_unique_lines(path_from: Path, path_to: Path):
     logger_lines = logger['unique_lines']
     logger_lines.info(f"Merging {path_from} to {path_to}")
-    with open(path_to, mode='rt') as f_to:
-        lines = list(f_to)
-    logger_lines.info(f"File {path_to} contains {len(lines)} lines")
-    lines_extra = []
-    with open(path_from, mode='rt') as f_from:
-        for line in f_from:
-            if line not in lines:
-                lines_extra.append(line)
-    logger_lines.info(f"File {path_to} contains {len(lines_extra)} extra lines")
-    if lines_extra:
-        lines += lines_extra
-
-        seen = set()
-        seen_add = seen.add  # https://stackoverflow.com/a/480227/325365
-
-        with open(path_to, mode='wt') as f_to:
-            for line in lines:
-                if not (line in seen or seen_add(line)):
+    lines = frozenset(path_to.read_text().splitlines(keepends=True))
+    with path_to.open(mode='+a') as f_to:
+        with path_from.open(mode='r') as f_from:
+            for line in f_from:
+                if line not in lines:
                     f_to.write(line)
-
-
-def is_jobs_archive(path: str | Path) -> bool:
-    return Path(path).name.endswith('.jsonl.gz') and '/data/jobs/' in str(path)
 
 
 def is_scrapy_cache(path: str | Path) -> bool:
     return any(parent_path.name == '.scrapy' for parent_path in Path(path).parents)
-
-
-def count_lines(path: Path, open=open):
-    lines = 0
-    with open(path, mode='rt') as f:
-        for _ in f:
-            lines += 1
-    return lines

@@ -1,6 +1,7 @@
 import gzip
 from datetime import date
 from pathlib import Path
+from scrapy import Spider
 
 from scrapy.exporters import JsonLinesItemExporter
 
@@ -23,7 +24,7 @@ class GzipJsonLinesItemExporter(JsonLinesItemExporter):
         self.gzfile.close()
 
 
-def uri_params(params, spider, today=None):
+def uri_params(params: dict, spider: Spider, today: date=None) -> dict[str, str]:
     """
     Used by settings.py
 
@@ -33,13 +34,13 @@ def uri_params(params, spider, today=None):
     return {**params, 'year': f'{today:%Y}', 'month': f'{today:%m}', 'day': f'{today:%d}'}
 
 
-def feed_path(spider_name, today=None):
+def get_feed_path(spider_name: str, today: date=None) -> Path:
     """Helps to manipulate with feeds outside of the Scrapy context"""
     uri_template = list(FEEDS.keys())[0]
     params = uri_params(dict(name=spider_name), None, today)
     return Path(uri_template % params)
 
 
-def feeds_dir(today=None):
+def get_feeds_dir(today: date=None) -> Path:
     """Helps to manipulate with feeds outside of the Scrapy context"""
-    return feed_path('placeholder', today).parent
+    return get_feed_path('placeholder', today).parent
