@@ -30,6 +30,7 @@ EXCLUDE_URLS = [
     'open.spotify.com',  # crawling protection?
     'startupjobs.cz/nabidka/',  # crawling protection?
     'datacamp.com',  # crawling protection?
+    'meetup.com',  # crawling protection?
 ]
 
 EXCLUDE_REASONS = [re.compile(r) for r in [
