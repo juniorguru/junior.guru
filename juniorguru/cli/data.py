@@ -142,7 +142,7 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
         elif is_scrapy_cache(source_path):
             pass  # ignore, this is just a cache which gets regularly cleared anyway
         elif is_jobs_archive(source_path):
-            if count_lines(persist_path) == count_lines(source_path):
+            if count_lines(persist_path, open=gzip.open) == count_lines(source_path, open=gzip.open):
                 pass  # ignore, very likely they're the same
             else:
                 merge_unique_lines(persist_path, source_path, open=gzip.open)
