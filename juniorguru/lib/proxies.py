@@ -1,9 +1,11 @@
+import importlib
 import random
-from pathlib import Path
 
 from scrapy.downloadermiddlewares.retry import RetryMiddleware
 
 from juniorguru.lib import loggers
+from juniorguru.models.proxy import Proxy
+from juniorguru.models.base import db
 
 
 logger = loggers.from_path(__file__)
@@ -21,8 +23,16 @@ class ScrapingProxiesMiddleware():
 
     @classmethod
     def from_crawler(cls, crawler):
-        proxies_list_path = Path(crawler.settings.get('PROXIES_FILE'))
-        proxies_list = proxies_list_path.read_text().splitlines()
+        logger.info('Evaluating PROXIES_LISTING setting')
+        import_path = crawler.settings.get('PROXIES_LISTING')
+        import_path_parts = import_path.split('.')
+        module = importlib.import_module('.'.join(import_path_parts[:-1]))
+        get_proxies = getattr(module, import_path_parts[-1])
+
+        logger.info('Listing proxies')
+        proxies_list = get_proxies()
+
+        logger.info('Initializing middleware')
         return cls(proxies_list,
                    user_agents=crawler.settings.getlist('PROXIES_USER_AGENTS'))
 
@@ -121,3 +131,8 @@ class ScrapingProxiesMiddleware():
 
     def is_invalid_response(self, response):
         return response.status in [504, 999]
+
+
+@db.connection_context()
+def get_proxies() -> list[str]:
+    return [proxy.url for proxy in Proxy.listing()]

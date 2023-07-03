@@ -1,18 +1,22 @@
 import re
-from pathlib import Path
 
 import requests
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
-from juniorguru.sync.scrape_jobs.settings import PROXIES_FILE
+from juniorguru.models.proxy import Proxy
+from juniorguru.models.base import db
 
 
 logger = loggers.from_path(__file__)
 
 
 @cli.sync_command()
+@db.connection_context()
 def main():
+    Proxy.drop_table()
+    Proxy.create_table()
+
     # docs at https://docs.proxyscrape.com/
     logger.info('Scraping proxies')
     response = requests.get('https://api.proxyscrape.com/v2/',
@@ -24,9 +28,6 @@ def main():
     if not re.search(r'^[\d\.\:\s]+$', text):
         raise Exception(f'{response.url} returned: {text}')
 
-    urls = [f'http://{line}' for line in text.splitlines()]
-    logger.info(f'Got {len(urls)} proxies')
-
-    proxies_list_path = Path(PROXIES_FILE)
-    logger.info(f'Writing proxies to {proxies_list_path}')
-    proxies_list_path.write_text('\n'.join(urls))
+    for line in text.splitlines():
+        Proxy.create(url=f'http://{line}')
+    logger.info(f'Saved {len(Proxy.listing())} proxies')

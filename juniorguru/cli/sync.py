@@ -114,7 +114,7 @@ class Command(click.Command):
 @click.pass_context
 def main(context, id, deps, mutate, allow_mutations, debug, cache_dir, clear_image_templates_cache):
     Path(cache_dir).mkdir(exist_ok=True)
-    logger.info(f'Cache directory set to {cache_dir.absolute()}')
+    logger.info(f'Sync cache directory set to {cache_dir.absolute()}')
 
     if debug:
         loggers.reconfigure_level('DEBUG')
