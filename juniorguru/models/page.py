@@ -31,6 +31,10 @@ class Page(BaseModel):
             .where(cls.src_uri.startswith('handbook/')) \
             .order_by(cls.src_uri)
 
+    @classmethod
+    def handbook_size_total(cls) -> int:
+        return sum([page.size for page in cls.handbook_listing()])
+
 
 class LegacyThumbnail(BaseModel):  # can be deleted once Flask is gone
     url = CharField(index=True, unique=True)

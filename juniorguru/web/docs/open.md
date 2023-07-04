@@ -25,17 +25,17 @@ Občas si čtu o zahraničních podnikavcích, kteří taky otevřeně sdílí s
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_business_labels,
+        'labels': charts.business_labels,
         'datasets': [
             {
                 'label': 'zisk',
-                'data': charts_profit,
+                'data': charts.business_profit,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'zisk TTM/12',
-                'data': charts_profit_ttm,
+                'data': charts.business_profit_ttm,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             }
@@ -43,7 +43,7 @@ Občas si čtu o zahraničních podnikavcích, kteří taky otevřeně sdílí s
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'plugins': {'annotation': charts_business_annotations},
+        'plugins': {'annotation': charts.business_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Cíl
@@ -116,29 +116,29 @@ Následující graf zobrazuje vývoj mých výnosů a nákladů v každém konkr
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_business_labels,
+        'labels': charts.business_labels,
         'datasets': [
             {
                 'label': 'výnosy',
-                'data': charts_revenue,
+                'data': charts.business_revenue,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'výnosy TTM/12',
-                'data': charts_revenue_ttm,
+                'data': charts.business_revenue_ttm,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
             {
                 'label': 'náklady',
-                'data': charts_cost,
+                'data': charts.business_cost,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
             {
                 'label': 'náklady TTM/12',
-                'data': charts_cost_ttm,
+                'data': charts.business_cost_ttm,
                 'borderColor': '#dc3545',
                 'borderWidth': 1,
             },
@@ -146,7 +146,7 @@ Následující graf zobrazuje vývoj mých výnosů a nákladů v každém konkr
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'plugins': {'annotation': charts_business_annotations},
+        'plugins': {'annotation': charts.business_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Výnosy
@@ -167,35 +167,35 @@ Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velk
     class="chart" width="400" height="200"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts_business_labels,
+        'labels': charts.business_labels,
         'datasets': [
             {
                 'label': 'dobrovolné příspěvky',
-                'data': charts_revenue_breakdown.pop('donations'),
+                'data': charts.business_revenue_breakdown.pop('donations'),
                 'backgroundColor': '#02CABB',
             },
             {
                 'label': 'individuální členství',
-                'data': charts_revenue_breakdown.pop('memberships'),
+                'data': charts.business_revenue_breakdown.pop('memberships'),
                 'backgroundColor': '#1755d1',
             },
             {
                 'label': 'partnerství s firmami',
-                'data': charts_revenue_breakdown.pop('partnerships'),
+                'data': charts.business_revenue_breakdown.pop('partnerships'),
                 'backgroundColor': '#638CDD',
             },
             {
                 'label': 'inzerce nabídek práce',
-                'data': charts_revenue_breakdown.pop('jobs'),
+                'data': charts.business_revenue_breakdown.pop('jobs'),
                 'backgroundColor': '#421BD4',
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts_revenue_breakdown.keys()|list|assert_empty }}
+    {{ charts.business_revenue_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
-        'plugins': {'annotation': charts_business_annotations},
+        'plugins': {'annotation': charts.business_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Proč tu není MRR
@@ -216,70 +216,70 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
     class="chart" width="400" height="200"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts_business_labels,
+        'labels': charts.business_labels,
         'datasets': [
             {
                 'label': 'daně a pojištění',
-                'data': charts_cost_breakdown.pop('tax'),
+                'data': charts.business_cost_breakdown.pop('tax'),
                 'backgroundColor': '#ddd',
             },
             {
                 'label': 'memberful.com',
-                'data': charts_cost_breakdown.pop('memberful'),
+                'data': charts.business_cost_breakdown.pop('memberful'),
                 'backgroundColor': '#DF4B25',
             },
             {
                 'label': 'kancelář',
-                'data': charts_cost_breakdown.pop('office'),
+                'data': charts.business_cost_breakdown.pop('office'),
                 'backgroundColor': '#c8102e',
             },
             {
                 'label': 'různé',
-                'data': charts_cost_breakdown.pop('miscellaneous'),
+                'data': charts.business_cost_breakdown.pop('miscellaneous'),
                 'backgroundColor': '#aaa',
             },
             {
                 'label': 'produkce videa',
-                'data': charts_cost_breakdown.pop('video'),
+                'data': charts.business_cost_breakdown.pop('video'),
                 'backgroundColor': '#0c1633',
             },
             {
                 'label': 'produkce podcastu',
-                'data': charts_cost_breakdown.pop('podcast'),
+                'data': charts.business_cost_breakdown.pop('podcast'),
                 'backgroundColor': '#872ec4',
             },
             {
                 'label': 'právnička',
-                'data': charts_cost_breakdown.pop('lawyer'),
+                'data': charts.business_cost_breakdown.pop('lawyer'),
                 'backgroundColor': '#801515',
             },
             {
                 'label': 'účetnictví, fakturoid.cz',
-                'data': charts_cost_breakdown.pop('accounting'),
+                'data': charts.business_cost_breakdown.pop('accounting'),
                 'backgroundColor': '#108a00',
             },
             {
                 'label': 'marketing',
-                'data': charts_cost_breakdown.pop('marketing'),
+                'data': charts.business_cost_breakdown.pop('marketing'),
                 'backgroundColor': '#DAA520',
             },
             {
                 'label': 'discord.com',
-                'data': charts_cost_breakdown.pop('discord'),
+                'data': charts.business_cost_breakdown.pop('discord'),
                 'backgroundColor': '#5865f2',
             },
             {
                 'label': 'doména',
-                'data': charts_cost_breakdown.pop('domains'),
+                'data': charts.business_cost_breakdown.pop('domains'),
                 'backgroundColor': '#89c731',
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts_cost_breakdown.keys()|list|assert_empty }}
+    {{ charts.business_cost_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
-        'plugins': {'annotation': charts_business_annotations},
+        'plugins': {'annotation': charts.business_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Firemní partnerství
@@ -334,23 +334,23 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_club_labels,
+        'labels': charts.club_labels,
         'datasets': [
             {
                 'label': 'všechna členství',
-                'data': charts_subscriptions,
+                'data': charts.club_subscriptions,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'všechna individuální členství',
-                'data': charts_individuals,
+                'data': charts.club_individuals,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
             {
                 'label': 'roční individuální členství',
-                'data': charts_individuals_yearly,
+                'data': charts.club_individuals_yearly,
                 'borderColor': '#02CABB',
                 'borderWidth': 1,
             },
@@ -359,7 +359,7 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts_club_annotations},
+        'plugins': {'annotation': charts.club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Typy členství
@@ -378,55 +378,55 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
     class="chart" width="400" height="200"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts_club_labels,
+        'labels': charts.club_labels,
         'datasets': [
             {
                 'label': 'tým junior.guru',
-                'data': charts_subscriptions_breakdown.pop('team'),
+                'data': charts.club_subscriptions_breakdown.pop('team'),
                 'backgroundColor': '#00B7EB',
             },
             {
                 'label': 'symbióza s CoreSkill',
-                'data': charts_subscriptions_breakdown.pop('coreskill'),
+                'data': charts.club_subscriptions_breakdown.pop('coreskill'),
                 'backgroundColor': '#666',
             },
             {
                 'label': 'neplatí členství',
-                'data': charts_subscriptions_breakdown.pop('free'),
+                'data': charts.club_subscriptions_breakdown.pop('free'),
                 'backgroundColor': '#ddd',
             },
             {
                 'label': 'dva týdny zdarma',
-                'data': charts_subscriptions_breakdown.pop('trial'),
+                'data': charts.club_subscriptions_breakdown.pop('trial'),
                 'backgroundColor': '#a9a9a9',
             },
             {
                 'label': 'mají stipendium',
-                'data': charts_subscriptions_breakdown.pop('finaid'),
+                'data': charts.club_subscriptions_breakdown.pop('finaid'),
                 'backgroundColor': '#02CABB',
             },
             {
                 'label': 'členství si platí sami',
-                'data': charts_subscriptions_breakdown.pop('individuals'),
+                'data': charts.club_subscriptions_breakdown.pop('individuals'),
                 'backgroundColor': '#1755d1',
             },
             {
                 'label': 'členství platí firma',
-                'data': charts_subscriptions_breakdown.pop('partner'),
+                'data': charts.club_subscriptions_breakdown.pop('partner'),
                 'backgroundColor': '#638CDD',
             },
             {
                 'label': 'členství platí vzdělávací agentura',
-                'data': charts_subscriptions_breakdown.pop('students'),
+                'data': charts.club_subscriptions_breakdown.pop('students'),
                 'backgroundColor': '#083284',
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts_subscriptions_breakdown.keys()|list|assert_empty }}
+    {{ charts.club_subscriptions_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
-        'plugins': {'annotation': charts_club_annotations},
+        'plugins': {'annotation': charts.club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Příchody
@@ -439,17 +439,17 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_club_trend_labels,
+        'labels': charts.club_trend_labels,
         'datasets': [
             {
                 'label': 'všechny nové registrace',
-                'data': charts_signups,
+                'data': charts.club_trend_signups,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'nová individuálně placená členství',
-                'data': charts_individuals_signups,
+                'data': charts.club_trend_individuals_signups,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
@@ -458,7 +458,7 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts_club_annotations},
+        'plugins': {'annotation': charts.club_trend_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Odchody
@@ -471,17 +471,17 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_club_trend_labels,
+        'labels': charts.club_trend_labels,
         'datasets': [
             {
                 'label': '% úbytku členů',
-                'data': charts_churn_ptc,
+                'data': charts.club_trend_churn_ptc,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
             {
                 'label': '% úbytku individuálně platících členů',
-                'data': charts_individuals_churn_ptc,
+                'data': charts.club_trend_individuals_churn_ptc,
                 'borderColor': '#dc3545',
                 'borderWidth': 1,
             },
@@ -490,7 +490,7 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts_club_annotations},
+        'plugins': {'annotation': charts.club_trend_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Délka setrvání v klubu
@@ -503,11 +503,11 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_club_labels,
+        'labels': charts.club_labels,
         'datasets': [
             {
                 'label': 'průměrná délka individuálně placeného členství v měsících',
-                'data': charts_individuals_duration,
+                'data': charts.club_individuals_duration,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
@@ -516,13 +516,13 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts_club_annotations},
+        'plugins': {'annotation': charts.club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Příručka
 
 Orientační metriky co se týče stránek v [příručce](handbook/index.md).
-Všechny soubory spadající pod příručku mají aktuálně **{{ charts_handbook_size_total|thousands }}** znaků.
+Všechny soubory spadající pod příručku mají aktuálně **{{ handbook_size_total|thousands }}** znaků.
 [Podle Wikipedie](https://cs.wikipedia.org/wiki/Diplomov%C3%A1_pr%C3%A1ce) je 180.000 znaků doporučovaná velikost disertační práce (titul Ph.D.).
 
 Počítání znaků v souborech, kde se míchají Markdown a Jinja2 značky, má spoustu vad, ale aspoň něco.
@@ -535,21 +535,20 @@ Ty se taky započítají do celkové velikosti, ale v grafu je jejich velikost z
     class="chart" width="400" height="200"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts_handbook_labels,
+        'labels': charts.handbook_labels,
         'datasets': [
             {
                 'label': 'znaků TODO',
-                'data': charts_handbook_notes_size,
+                'data': charts.handbook_notes_size,
                 'backgroundColor': '#a9a9a9',
             },
             {
                 'label': 'znaků obsahu',
-                'data': charts_handbook_size,
+                'data': charts.handbook_size,
                 'backgroundColor': '#1755d1',
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts_revenue_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': true}},
@@ -582,11 +581,11 @@ Pouze orientační metrika. Nechci sledovat a glorifikovat _engagement_, protož
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_club_content_labels,
+        'labels': charts.club_content_labels,
         'datasets': [
             {
                 'label': 'počet znaků napsaných na Discordu',
-                'data': charts_club_content,
+                'data': charts.club_content_size,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
@@ -595,7 +594,7 @@ Pouze orientační metrika. Nechci sledovat a glorifikovat _engagement_, protož
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts_club_content_annotations},
+        'plugins': {'annotation': charts.club_content_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Počet online akcí v klubu
@@ -606,17 +605,17 @@ Chtěl bych mít v klubu v průměru aspoň dvě oficiální online akce měsí�
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_club_labels,
+        'labels': charts.club_labels,
         'datasets': [
             {
                 'label': 'počet oficiálních akcí',
-                'data': charts_events,
+                'data': charts.club_events,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'počet oficiálních akcí TTM/12',
-                'data': charts_events_ttm,
+                'data': charts.club_events_ttm,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
@@ -625,7 +624,7 @@ Chtěl bych mít v klubu v průměru aspoň dvě oficiální online akce měsí�
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts_club_annotations},
+        'plugins': {'annotation': charts.club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Ženy
@@ -642,11 +641,11 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_club_labels,
+        'labels': charts.club_labels,
         'datasets': [
             {
                 'label': '% žen v klubu',
-                'data': charts_women_ptc,
+                'data': charts.club_women_ptc,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
@@ -655,7 +654,7 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'min': 0, 'suggestedMax': 50}},
-        'plugins': {'annotation': charts_club_annotations},
+        'plugins': {'annotation': charts.club_annotations},
     }|tojson|forceescape }}"
     data-chart-milestones-offset-ptc="0"></canvas></div></div>
 
@@ -667,11 +666,11 @@ Chtěl bych, aby v průměru polovina přednášejících na online akcích v kl
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_club_labels,
+        'labels': charts.club_labels,
         'datasets': [
             {
                 'label': '% přednášejících žen TTM',
-                'data': charts_events_women_ptc_ttm,
+                'data': charts.club_events_women_ptc_ttm,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
@@ -680,7 +679,7 @@ Chtěl bych, aby v průměru polovina přednášejících na online akcích v kl
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'min': 0, 'suggestedMax': 50}},
-        'plugins': {'annotation': charts_club_annotations},
+        'plugins': {'annotation': charts.club_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Marketing
@@ -691,29 +690,29 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích.
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts_followers_labels,
+        'labels': charts.followers_labels,
         'datasets': [
             {
                 'label': 'osobní LinkedIn',
-                'data': charts_followers_breakdown.pop('linkedin_personal'),
+                'data': charts.followers_breakdown.pop('linkedin_personal'),
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
             {
                 'label': 'LinkedIn',
-                'data': charts_followers_breakdown.pop('linkedin'),
+                'data': charts.followers_breakdown.pop('linkedin'),
                 'borderColor': '#638CDD',
                 'borderWidth': 1,
             },
             {
                 'label': 'YouTube',
-                'data': charts_followers_breakdown.pop('youtube'),
+                'data': charts.followers_breakdown.pop('youtube'),
                 'borderColor': '#dc3545',
                 'borderWidth': 1,
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts_followers_breakdown.keys()|list|assert_empty }}
+    {{ charts.followers_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
     }|tojson|forceescape }}"></canvas></div></div>

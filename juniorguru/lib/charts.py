@@ -1,6 +1,9 @@
 import calendar
+from functools import cache
 import itertools
 from datetime import date, timedelta
+from numbers import Number
+from typing import Callable, Generator, Iterable
 
 from slugify import slugify
 
@@ -33,11 +36,12 @@ ANNOTATION_YEAR_OPTIONS = {
 }
 
 
-def months(from_date, to_date):
+@cache
+def months(from_date: date, to_date: date) -> list[date]:
     return list(generate_months(from_date, to_date))
 
 
-def generate_months(from_date, to_date):
+def generate_months(from_date: date, to_date: date) -> Generator[date, None, None]:
     d = from_date
     while d <= to_date:
         last_date_of_month = d.replace(day=calendar.monthrange(d.year, d.month)[1])
@@ -45,33 +49,35 @@ def generate_months(from_date, to_date):
         d = last_date_of_month + timedelta(days=1)
 
 
-def labels(months):
+def labels(months: list[date]) -> list[str]:
     return [f'{month:%Y-%m}' for month in months]
 
 
-def per_month(fn_returning_numbers, months):
+def per_month(fn_returning_numbers: Callable, months: Iterable[date]) -> list[Number]:
     return [fn_returning_numbers(month) for month in months]
 
 
-def per_month_breakdown(fn_returning_breakdowns, months):
+def per_month_breakdown(fn_returning_breakdowns: Callable, months: Iterable[date]) -> dict[str, list[Number]]:
     breakdowns = [fn_returning_breakdowns(month) for month in months]
     categories = set(itertools.chain.from_iterable(breakdown.keys() for breakdown in breakdowns))
     return {category: [breakdown.get(category, 0) for breakdown in breakdowns]
             for category in categories}
 
 
-def ttm_range(date):
+@cache
+def ttm_range(date: date) -> tuple[date, date]:
     try:
         return (date.replace(year=date.year - 1), date)
     except ValueError:  # 29th February
         return (date.replace(year=date.year - 1, day=date.day - 1), date)
 
 
-def month_range(date):
+@cache
+def month_range(date: date) -> tuple[date, date]:
     return (date.replace(day=1), date.replace(day=calendar.monthrange(date.year, date.month)[1]))
 
 
-def annotations(months: date, milestones: list[tuple[date, str]]):
+def annotations(months: date, milestones: list[tuple[date, str]]) -> dict:
     annotations = {
         f'{month.year}': {
             'xMin': x,
@@ -106,9 +112,11 @@ def annotations(months: date, milestones: list[tuple[date, str]]):
     }
 
 
-def previous_month(month):
+@cache
+def previous_month(month: date) -> date:
     return month.replace(day=1) - timedelta(days=1)
 
 
-def next_month(month):
+@cache
+def next_month(month: date) -> date:
     return (month.replace(day=1) + timedelta(days=32)).replace(day=1)
