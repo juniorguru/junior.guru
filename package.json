@@ -5,7 +5,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@fontsource/inter": "5.0.3",
+    "@fontsource/inter": "5.0.4",
     "bootstrap-icons": "1.10.5",
     "chart.js": "4.3.0",
     "chartjs-plugin-annotation": "3.0.1",
