@@ -1424,7 +1424,7 @@ py-cord = {version = "2.4.1", extras = ["speed"]}
 type = "git"
 url = "https://github.com/juniorguru/juniorguru-chick.git"
 reference = "HEAD"
-resolved_reference = "eb33e02089f798af3d2f72b06e8ecda44eb8df3c"
+resolved_reference = "dd0795062c3f49351c3fbfac92007332c291a7a7"
 
 [[package]]
 name = "langdetect"
