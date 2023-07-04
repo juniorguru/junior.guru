@@ -2,7 +2,8 @@ import math
 from datetime import date, datetime, time
 from zoneinfo import ZoneInfo
 
-from peewee import CharField, DateField, ForeignKeyField, IntegerField
+from peewee import CharField, DateField, ForeignKeyField, IntegerField, BooleanField
+from juniorguru.lib.charts import ttm_range
 
 from juniorguru.models.base import BaseModel
 from juniorguru.models.partner import Partner
@@ -12,6 +13,9 @@ class PodcastEpisode(BaseModel):
     id = CharField(primary_key=True)
     publish_on = DateField(unique=True)
     title = CharField()
+    participant_name = CharField(null=True)
+    participant_has_feminine_name = BooleanField(null=True)
+    companies = CharField(null=True)
     media_url = CharField()
     media_size = IntegerField()
     media_type = CharField()
@@ -78,3 +82,30 @@ class PodcastEpisode(BaseModel):
         if last_episode:
             return last_episode.publish_on.year
         return today.year
+
+    @classmethod
+    def guests_listing(cls, from_date, to_date):
+        return cls.select() \
+            .where(cls.publish_on >= from_date,
+                   cls.publish_on <= to_date,
+                   cls.participant_name.is_null(False))
+
+    @classmethod
+    def guests_count_ttm(cls, date):
+        return math.ceil(cls.guests_listing(*ttm_range(date)).count())
+
+    @classmethod
+    def women_listing(cls, from_date, to_date):
+        return cls.guests_listing(from_date, to_date) \
+            .where(cls.participant_has_feminine_name == True)
+
+    @classmethod
+    def women_count_ttm(cls, date):
+        return math.ceil(cls.women_listing(*ttm_range(date)).count())
+
+    @classmethod
+    def women_ptc_ttm(cls, date):
+        count = cls.guests_count_ttm(date)
+        if count:
+            return math.ceil((cls.women_count_ttm(date) / count) * 100)
+        return 0

@@ -1,6 +1,7 @@
 from datetime import date
 from multiprocessing import Pool
 from pathlib import Path
+import re
 
 import click
 import requests
@@ -18,12 +19,15 @@ from juniorguru.lib.template_filters import icon
 from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
+from juniorguru.models.feminine_name import FeminineName
 from juniorguru.models.partner import Partner
 from juniorguru.models.podcast import PodcastEpisode
 
 
 logger = loggers.from_path(__file__)
 
+
+TITLE_RE = re.compile(r'^(?P<participant_name>[^\(]+) \((?P<companies>[^\)]+)\)')
 
 YAML_PATH = Path('juniorguru/data/podcast.yml')
 
@@ -57,7 +61,7 @@ TODAY = date.today()
 MESSAGE_EMOJI = '🎙'
 
 
-@cli.sync_command(dependencies=['club-content', 'partners'])
+@cli.sync_command(dependencies=['club-content', 'partners', 'feminine-names'])
 @click.option('--clear-posters/--keep-posters', default=False)
 @db.connection_context()
 def main(clear_posters):
@@ -133,10 +137,24 @@ def process_episode(yaml_record):
     else:
         partner = None
 
+    logger_ep.debug('Parsing title')
+    title = yaml_record['title']
+    if match := TITLE_RE.search(title):
+        participant_name = match.group('participant_name')
+        participant_has_feminine_name = FeminineName.is_feminine(participant_name)
+        companies = match.group('companies')
+    else:
+        participant_name = None
+        participant_has_feminine_name = None
+        companies = None
+
     logger_ep.debug('Preparing data')
     data = dict(id=id,
                 publish_on=yaml_record['publish_on'],
-                title=yaml_record['title'],
+                title=title,
+                participant_name=participant_name,
+                participant_has_feminine_name=participant_has_feminine_name,
+                companies=companies,
                 avatar_path=avatar_path,
                 description=yaml_record['description'],
                 media_url=media_url,
