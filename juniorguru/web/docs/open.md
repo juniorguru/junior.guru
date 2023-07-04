@@ -268,11 +268,6 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
                 'data': charts.business_cost_breakdown.pop('discord'),
                 'backgroundColor': '#5865f2',
             },
-            {
-                'label': 'doména',
-                'data': charts.business_cost_breakdown.pop('domains'),
-                'backgroundColor': '#89c731',
-            },
         ],
     }|tojson|forceescape }}"
     {{ charts.business_cost_breakdown.keys()|list|assert_empty }}

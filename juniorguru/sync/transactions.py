@@ -35,7 +35,6 @@ CATEGORIES_SPEC = [
     lambda t: 'lawyer' if 'ADVOKATKA' in t['message'] else None,
     lambda t: 'marketing' if 'JANA DOLEJSOVA' in t['message'] else None,
     lambda t: 'accounting' if 'Irein' in t['message'] else None,
-    lambda t: 'domains' if 'subreg.cz' in t['message'] else None,
     lambda t: 'office' if 'VITEZSLAV PLISKA' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'accounting' if 'účetnictví' in t['message'] else None,
     lambda t: 'fakturoid' if 'účetnictví' in t['message'] and t['amount'] < 0 else None,
