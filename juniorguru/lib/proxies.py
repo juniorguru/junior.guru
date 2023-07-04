@@ -4,8 +4,8 @@ import random
 from scrapy.downloadermiddlewares.retry import RetryMiddleware
 
 from juniorguru.lib import loggers
-from juniorguru.models.proxy import Proxy
 from juniorguru.models.base import db
+from juniorguru.models.proxy import Proxy
 
 
 logger = loggers.from_path(__file__)

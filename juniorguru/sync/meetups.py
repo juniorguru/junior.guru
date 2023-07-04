@@ -1,20 +1,20 @@
 import json
-from operator import itemgetter
-from datetime import date, datetime, timedelta
-from pathlib import Path
 import re
+from datetime import date, datetime, timedelta
+from operator import itemgetter
+from pathlib import Path
 from typing import Any
 
-import extruct
 import click
+import extruct
 import ics
 import requests
 
 from juniorguru.cli.sync import main as cli
+from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubMemberID
 from juniorguru.lib.locations import fetch_location
 from juniorguru.lib.mutations import mutating_discord
-from juniorguru.lib import discord_sync, loggers
 
 
 NAME_PREFIX = 'Mini sraz juniorů'

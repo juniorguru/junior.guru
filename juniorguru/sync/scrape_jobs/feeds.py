@@ -1,8 +1,8 @@
 import gzip
 from datetime import date
 from pathlib import Path
-from scrapy import Spider
 
+from scrapy import Spider
 from scrapy.exporters import JsonLinesItemExporter
 
 from juniorguru.sync.scrape_jobs.settings import FEEDS
