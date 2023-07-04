@@ -1,12 +1,15 @@
 import json
 import os
-from string import Template
+import re
+from typing import Callable
 
 from gql import Client, gql
 from gql.transport.requests import RequestsHTTPTransport
 
 from juniorguru.lib import loggers
 
+
+COLLECTION_NAME_RE = re.compile(r'(?P<collection_name>\w+)\(after:\s*\$cursor')
 
 MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
 
@@ -34,13 +37,14 @@ class Memberful():
             self._client = Client(transport=transport)
         return self._client
 
-    def _query(self, gql_query, get_page_info):
+    def _query(self, query: str, get_page_info: Callable, variable_values: dict=None):
+        variable_values = variable_values or {}
         cursor = ''
-        query_gql = gql(gql_query)
+        query_gql = gql(query)
         while cursor is not None:
             logger.debug('Sending a query')
-            params = dict(cursor=cursor)
-            result = self.client.execute(query_gql, variable_values=params)
+            result = self.client.execute(query_gql,
+                                         variable_values=dict(cursor=cursor, **variable_values))
             yield result
             page_info = get_page_info(result)
             if page_info['hasNextPage']:
@@ -48,35 +52,20 @@ class Memberful():
             else:
                 cursor = None
 
-    def get_nodes(self, collection_name, gql_fields):
-        # way too many brackets for f-strings, using template
-        # requires only to have $$cursor instead of $cursor
-        gql_query_template = Template("""
-            query getNodes($$cursor: String!) {
-                $collection_name(after: $$cursor) {
-                    totalCount
-                    pageInfo {
-                        endCursor
-                        hasNextPage
-                    }
-                    edges {
-                        node {
-                            $gql_fields
-                        }
-                    }
-                }
-            }
-        """)
-        gql_query = gql_query_template.substitute(collection_name=collection_name,
-                                                  gql_fields=gql_fields)
-        get_page_info = lambda result: result[collection_name]['pageInfo']
-        for result in self._query(gql_query, get_page_info):
+    def get_nodes(self, query: str, variable_values: dict=None):
+        if match := COLLECTION_NAME_RE.search(query):
+            collection_name = match.group('collection_name')
+        else:
+            raise ValueError('Could not parse collection name')
+        for result in self._query(query,
+                                  lambda result: result[collection_name]['pageInfo'],
+                                  variable_values):
             for edge in result[collection_name]['edges']:
                 yield edge['node']
 
-    def mutate(self, mutation_string, params):
+    def mutate(self, mutation: str, variable_values: dict):
         logger.debug('Sending a mutation')
-        return self.client.execute(gql(mutation_string), variable_values=params)
+        return self.client.execute(gql(mutation), variable_values=variable_values)
 
 
 def serialize_metadata(data):
@@ -93,9 +82,3 @@ def serialize_metadata(data):
         if len(value) > 500:
             raise ValueError(f"Maximum value length is 500 characters: {value!r}")
     return json.dumps(data)
-
-
-def get_nodes(collection_name, graphql_results):
-    for grapqhql_result in graphql_results:
-        for edge in grapqhql_result[collection_name]['edges']:
-            yield edge['node']

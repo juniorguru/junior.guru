@@ -1,0 +1,38 @@
+query fetch($cursor: String!) {
+    subscriptions(after: $cursor) {
+        totalCount
+        pageInfo {
+            endCursor
+            hasNextPage
+        }
+        edges {
+            node {
+                id
+                active
+                createdAt
+                expiresAt
+                trialStartAt
+                trialEndAt
+                coupon {
+                    code
+                }
+                orders {
+                    createdAt
+                    coupon {
+                        code
+                    }
+                }
+                member {
+                    discordUserId
+                    email
+                    fullName
+                    id
+                    metadata
+                }
+                plan {
+                    intervalUnit
+                }
+            }
+        }
+    }
+}

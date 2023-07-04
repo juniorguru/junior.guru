@@ -1,6 +1,7 @@
 import itertools
 from datetime import date, datetime, timedelta
 from operator import itemgetter
+from pathlib import Path
 
 import arrow
 
@@ -19,6 +20,8 @@ logger = loggers.from_path(__file__)
 
 
 DOC_KEY = '1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls'
+
+SUBSCRIPTIONS_GQL_PATH = Path(__file__).parent / 'subscriptions.gql'
 
 COUPON_NAMES_CATEGORIES_MAPPING = {
     'THANKYOU': ClubSubscribedPeriodCategory.FREE,
@@ -52,33 +55,7 @@ def main():
 
     logger.info('Getting data from Memberful')
     memberful = Memberful()
-    subscriptions = memberful.get_nodes('subscriptions', """
-        id
-        active
-        createdAt
-        expiresAt
-        trialStartAt
-        trialEndAt
-        coupon {
-            code
-        }
-        orders {
-            createdAt
-            coupon {
-                code
-            }
-        }
-        member {
-            discordUserId
-            email
-            fullName
-            id
-            metadata
-        }
-        plan {
-            intervalUnit
-        }
-    """)
+    subscriptions = memberful.get_nodes(SUBSCRIPTIONS_GQL_PATH.read_text())
 
     records = []
     active_account_ids = set()

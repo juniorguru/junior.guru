@@ -47,6 +47,8 @@ YAML_SCHEMA = Seq(
     })
 )
 
+COUPONS_GQL_PATH = Path(__file__).parent / 'coupons.gql'
+
 IMAGES_DIR = Path('juniorguru/images')
 
 LOGOS_DIR = IMAGES_DIR / 'logos'
@@ -69,7 +71,7 @@ def main(clear_posters):
 
     logger.info('Getting coupons data from Memberful')
     memberful = Memberful()
-    coupons_mapping = get_coupons_mapping(memberful.get_nodes('coupons', 'code, state'))
+    coupons_mapping = get_coupons_mapping(memberful.get_nodes(COUPONS_GQL_PATH.read_text()))
 
     logger.info('Reading YAML with partners')
     yaml_records = (record.data for record in load(YAML_PATH.read_text(), YAML_SCHEMA))

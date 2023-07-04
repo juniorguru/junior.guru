@@ -366,7 +366,7 @@ class ClubSubscribedPeriodCategory(StrEnum):
 
 
 class ClubSubscribedPeriod(BaseModel):
-    account_id = CharField()
+    account_id = CharField(index=True)
     start_on = DateField()
     end_on = DateField()
     interval_unit = CharField(constraints=[check_enum('interval_unit', ClubSubscribedPeriodIntervalUnit)])
@@ -486,6 +486,37 @@ class ClubSubscribedPeriod(BaseModel):
 
     def __str__(self):
         return f'#{self.account_id} {self.start_on}…{self.end_on} {self.category}'
+
+
+@unique
+class ClubSubscriptionActivityType(StrEnum):
+    BEGIN = 'begin'
+    END = 'end'
+
+
+class ClubSubscriptionActivity(BaseModel):
+    account_id = CharField(null=True)
+    happening_on = DateField()
+    type = CharField(constraints=[check_enum('type', ClubSubscriptionActivityType)])
+
+    @classmethod
+    def delete_duplicates(cls) -> int:
+        row_num = fn.row_number() \
+            .over(partition_by=[cls.account_id, cls.type],
+                  order_by=[cls.happening_on]) \
+            .alias('row_num')
+        subquery = cls.select(ClubSubscriptionActivity.id, row_num) \
+            .from_(cls) \
+            .cte('subquery')
+        duplicate_ids = cls.select(subquery.c.id) \
+            .from_(subquery) \
+            .where(subquery.c.row_num > 1) \
+            .with_cte(subquery)
+        count = duplicate_ids.count()
+        cls.delete() \
+            .where(cls.id.in_(duplicate_ids)) \
+            .execute()
+        return count
 
 
 class ClubDocumentedRole(BaseModel):

@@ -11,6 +11,7 @@ from juniorguru.models.club import ClubMessage, ClubSubscribedPeriod
 from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.followers import Followers
 from juniorguru.models.page import Page
+from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.transaction import Transaction
 from juniorguru.models.base import db
 
@@ -19,13 +20,15 @@ BUSINESS_BEGIN_ON = date(2020, 1, 1)
 
 CLUB_BEGIN_ON = date(2021, 2, 1)
 
+PODCAST_BEGIN_ON = date(2022, 1, 1)
+
 MEMBERS_DATA_CORRUPTION_END_ON = date(2023, 3, 1)
 
 MILESTONES = [
     (BUSINESS_BEGIN_ON, 'Začátek podnikání'),
     (date(2020, 9, 1), 'Vznik příručky'),
     (CLUB_BEGIN_ON, 'Vznik klubu'),
-    (date(2022, 1, 1), 'Vznik podcastu'),
+    (PODCAST_BEGIN_ON, 'Vznik podcastu'),
     (date(2022, 9, 1), 'Zdražení firmám'),
     (date(2022, 12, 30), 'Zdražení členům'),
 ]
@@ -41,7 +44,8 @@ logger = loggers.from_path(__file__)
                                 'pages',
                                 'events',
                                 'followers',
-                                'club-content'])
+                                'club-content',
+                                'podcast'])
 @db.connection_context()
 def main():
     db.drop_tables([ChartNamespace, Chart])
@@ -133,40 +137,10 @@ def business_cost_breakdown(months: list[date]) -> list[Number]:
 
 @namespace
 def club(today) -> dict[str, Any]:
-    months = charts.months(MEMBERS_DATA_CORRUPTION_END_ON, today)
+    months = charts.months(CLUB_BEGIN_ON, today)
     return dict(values=months,
                 labels=charts.labels(months),
                 annotations=charts.annotations(months, MILESTONES))
-
-
-@chart
-def club_subscriptions(months: list[date]) -> list[Number]:
-    return charts.per_month(ClubSubscribedPeriod.count, months)
-
-
-@chart
-def club_individuals(months: list[date]) -> list[Number]:
-    return charts.per_month(ClubSubscribedPeriod.individuals_count, months)
-
-
-@chart
-def club_individuals_yearly(months: list[date]) -> list[Number]:
-    return charts.per_month(ClubSubscribedPeriod.individuals_yearly_count, months)
-
-
-@chart
-def club_subscriptions_breakdown(months: list[date]) -> list[Number]:
-    return charts.per_month_breakdown(ClubSubscribedPeriod.count_breakdown, months)
-
-
-@chart
-def club_women_ptc(months: list[date]) -> list[Number]:
-    return charts.per_month(ClubSubscribedPeriod.women_ptc, months)
-
-
-@chart
-def club_individuals_duration(months: list[date]) -> list[Number]:
-    return charts.per_month(ClubSubscribedPeriod.individuals_duration_avg, months)
 
 
 @chart
@@ -185,7 +159,57 @@ def club_events_women_ptc_ttm(months: list[date]) -> list[Number]:
 
 
 @namespace
-def club_trend(today) -> dict[str, Any]:
+def podcast(today) -> dict[str, Any]:
+    months = charts.months(PODCAST_BEGIN_ON, today)
+    return dict(values=months,
+                labels=charts.labels(months))
+
+
+@chart
+def podcast_women_ptc_ttm(months: list[date]) -> list[Number]:
+    return charts.per_month(PodcastEpisode.women_ptc_ttm, months)
+
+
+@namespace
+def club_members(today) -> dict[str, Any]:
+    months = charts.months(MEMBERS_DATA_CORRUPTION_END_ON, today)
+    return dict(values=months,
+                labels=charts.labels(months),
+                annotations=charts.annotations(months, MILESTONES))
+
+
+@chart
+def club_members_subscriptions(months: list[date]) -> list[Number]:
+    return charts.per_month(ClubSubscribedPeriod.count, months)
+
+
+@chart
+def club_members_individuals(months: list[date]) -> list[Number]:
+    return charts.per_month(ClubSubscribedPeriod.individuals_count, months)
+
+
+@chart
+def club_members_individuals_yearly(months: list[date]) -> list[Number]:
+    return charts.per_month(ClubSubscribedPeriod.individuals_yearly_count, months)
+
+
+@chart
+def club_members_subscriptions_breakdown(months: list[date]) -> list[Number]:
+    return charts.per_month_breakdown(ClubSubscribedPeriod.count_breakdown, months)
+
+
+@chart
+def club_members_women_ptc(months: list[date]) -> list[Number]:
+    return charts.per_month(ClubSubscribedPeriod.women_ptc, months)
+
+
+@chart
+def club_members_individuals_duration(months: list[date]) -> list[Number]:
+    return charts.per_month(ClubSubscribedPeriod.individuals_duration_avg, months)
+
+
+@namespace
+def club_members_trend(today) -> dict[str, Any]:
     months = charts.months(MEMBERS_DATA_CORRUPTION_END_ON, charts.previous_month(today))
     return dict(values=months,
                 labels=charts.labels(months),
@@ -193,22 +217,22 @@ def club_trend(today) -> dict[str, Any]:
 
 
 @chart
-def club_trend_signups(months: list[date]) -> list[Number]:
+def club_members_trend_signups(months: list[date]) -> list[Number]:
     return charts.per_month(ClubSubscribedPeriod.signups_count, months)
 
 
 @chart
-def club_trend_individuals_signups(months: list[date]) -> list[Number]:
+def club_members_trend_individuals_signups(months: list[date]) -> list[Number]:
     return charts.per_month(ClubSubscribedPeriod.individuals_signups_count, months)
 
 
 @chart
-def club_trend_churn_ptc(months: list[date]) -> list[Number]:
+def club_members_trend_churn_ptc(months: list[date]) -> list[Number]:
     return charts.per_month(ClubSubscribedPeriod.churn_ptc, months)
 
 
 @chart
-def club_trend_individuals_churn_ptc(months: list[date]) -> list[Number]:
+def club_members_trend_individuals_churn_ptc(months: list[date]) -> list[Number]:
     return charts.per_month(ClubSubscribedPeriod.individuals_churn_ptc, months)
 
 

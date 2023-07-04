@@ -1,0 +1,19 @@
+query fetch($cursor: String!, $type: ActivityType!) {
+    activities(after: $cursor, type: $type) {
+        totalCount
+        pageInfo {
+            endCursor
+            hasNextPage
+        }
+        edges {
+            node {
+                id
+                createdAt
+                member {
+                    id
+                }
+                type
+            }
+        }
+    }
+}
