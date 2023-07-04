@@ -32,7 +32,7 @@ class Page(BaseModel):
             .order_by(cls.src_uri)
 
     @classmethod
-    def handbook_size_total(cls) -> int:
+    def handbook_total_size(cls) -> int:
         return sum([page.size for page in cls.handbook_listing()])
 
 

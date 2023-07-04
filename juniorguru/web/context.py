@@ -88,7 +88,7 @@ def on_docs_context(context):
 
     # open.md
     context['partners_expired'] = Partner.expired_listing()
-    context['handbook_size_total'] = Page.handbook_size_total()
+    context['handbook_total_size'] = Page.handbook_total_size()
     context['charts'] = charts_as_dict()
 
     # open/*

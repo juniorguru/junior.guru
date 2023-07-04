@@ -517,7 +517,7 @@ Po zdražení členství jsem si uklízel v administraci a smazal jsem staré ta
 ## Příručka
 
 Orientační metriky co se týče stránek v [příručce](handbook/index.md).
-Všechny soubory spadající pod příručku mají aktuálně **{{ handbook_size_total|thousands }}** znaků.
+Všechny soubory spadající pod příručku mají aktuálně **{{ handbook_total_size|thousands }}** znaků.
 [Podle Wikipedie](https://cs.wikipedia.org/wiki/Diplomov%C3%A1_pr%C3%A1ce) je 180.000 znaků doporučovaná velikost disertační práce (titul Ph.D.).
 
 Počítání znaků v souborech, kde se míchají Markdown a Jinja2 značky, má spoustu vad, ale aspoň něco.
