@@ -67,9 +67,8 @@ def main(context, clear_cache):
             feed['source_url'] = response.url  # overwrite with the final URL
             feed['data'] = response.text
             data.append(feed)
-
-    logger.info('Caching data')
-    cache_path.write_text(json.dumps(data))
+        logger.info('Caching data')
+        cache_path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
 
     logger.info('Parsing events')
     today = date.today()
