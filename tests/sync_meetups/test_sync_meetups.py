@@ -1,10 +1,11 @@
 import itertools
 import json
-
 from pathlib import Path
+
 import pytest
 
-from juniorguru.sync.meetups import parse_icalendar, parse_json_dl, parse_json_dl_location
+from juniorguru.sync.meetups import (parse_icalendar, parse_json_dl,
+                                     parse_json_dl_location)
 
 
 @pytest.fixture

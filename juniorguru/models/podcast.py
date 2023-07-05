@@ -2,9 +2,9 @@ import math
 from datetime import date, datetime, time
 from zoneinfo import ZoneInfo
 
-from peewee import CharField, DateField, ForeignKeyField, IntegerField, BooleanField
-from juniorguru.lib.charts import ttm_range
+from peewee import BooleanField, CharField, DateField, ForeignKeyField, IntegerField
 
+from juniorguru.lib.charts import ttm_range
 from juniorguru.models.base import BaseModel
 from juniorguru.models.partner import Partner
 

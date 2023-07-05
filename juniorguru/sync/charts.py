@@ -1,19 +1,18 @@
 from datetime import date
-from typing import Any, Callable
 from numbers import Number
+from typing import Any, Callable
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import loggers
+from juniorguru.lib import charts, loggers
 from juniorguru.lib.discord_club import DEFAULT_CHANNELS_HISTORY_SINCE
+from juniorguru.models.base import db
 from juniorguru.models.chart import Chart, ChartNamespace
-from juniorguru.lib import charts
 from juniorguru.models.club import ClubMessage, ClubSubscribedPeriod
 from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.followers import Followers
 from juniorguru.models.page import Page
 from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.transaction import Transaction
-from juniorguru.models.base import db
 
 
 BUSINESS_BEGIN_ON = date(2020, 1, 1)

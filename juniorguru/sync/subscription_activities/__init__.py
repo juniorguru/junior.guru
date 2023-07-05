@@ -1,11 +1,14 @@
 import itertools
 from pathlib import Path
+
 import arrow
+
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.memberful import Memberful
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubSubscriptionActivity, ClubSubscriptionActivityType
+from juniorguru.models.club import (ClubSubscriptionActivity,
+                                    ClubSubscriptionActivityType)
 
 
 ACTIVITIES_GQL_PATH = Path(__file__).parent / 'activities.gql'

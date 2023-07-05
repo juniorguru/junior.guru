@@ -6,8 +6,8 @@ import arrow
 from juniorguru.lib.benefits_evaluators import BENEFITS_EVALUATORS
 from juniorguru.models.base import db
 from juniorguru.models.chart import charts_as_dict
-from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.club import ClubMessage, ClubUser
+from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.event import Event
 from juniorguru.models.exchange_rate import ExchangeRate
 from juniorguru.models.job import ListedJob

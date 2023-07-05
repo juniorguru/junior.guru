@@ -1,7 +1,7 @@
 import calendar
-from functools import cache
 import itertools
 from datetime import date, timedelta
+from functools import cache
 from numbers import Number
 from typing import Callable, Generator, Iterable
 

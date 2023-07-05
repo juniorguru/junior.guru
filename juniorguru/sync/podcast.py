@@ -1,7 +1,7 @@
+import re
 from datetime import date
 from multiprocessing import Pool
 from pathlib import Path
-import re
 
 import click
 import requests

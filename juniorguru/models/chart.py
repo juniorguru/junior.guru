@@ -1,4 +1,5 @@
 from typing import Any
+
 from peewee import CharField, ForeignKeyField
 
 from juniorguru.models.base import BaseModel, JSONField
