@@ -412,4 +412,10 @@ Mrkni třeba na https://github.com/hankaEsha jak to má udělané.
 ---
 
 
+--- https://discord.com/channels/769966886598737931/806621830383271937/1121055030825472060
+[GitHub] Ani jsem netušila, že se dá GitHub takhle tunit. Hned jsem několik věcí vyzkoušela. 
+https://dev.to/supritha/how-to-have-an-awesome-github-profile-1969
+---
+
+
 #} -->

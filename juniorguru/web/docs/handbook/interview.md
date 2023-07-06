@@ -802,4 +802,21 @@ U juniorů jsou ukončení ve zkušebce o hodně běžnější protože je to č
 https://www.reddit.com/r/ChatGPT/comments/143ubjs/as_a_recruiter_i_feel_like_i_can_tell_when/
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1119307390576230492
+Petra Nulíčková měla hromadu skvělých tipů na meetupu ReactGirls před měsícem a tady je to na záznamu
+https://www.youtube.com/watch?v=uNL3yEzNsbQ
+---
+
+
+--- https://discord.com/channels/769966886598737931/991010207280807986/1119153375347478548
+Přemýšlím tu o té zprávě od chvíle, co tu visí, až doteď 🙂 Nejsme úplně společnost, co bere běžně juniory. Ale tu a tam se k nám dostanou a přemýšlel jsem, proč jsme kdy koho pustili (a to přemýšlení mi zabralo tolik času 😀 ).
+
+Jednoznačně bych řekl, že tak z 90 % jsou důvodem měkké schopnosti (soft skills). Nebo vlastně spíše neschopnosti. Nespolehlivost. Neochota nést zodpovědnost za svou práci (nikomu netrháme hlavu, chyby děláme všichni). Obtížná komunikace, vyhnívání mailů a úkolů. Nezeptám se, když mám problém, nekonzultuju návrh s jinými. Konzultuju s jinými, dostanu radu a stejně si to udělám po svém. Nepřijdu do práce a nikdo neví proč. Nepřijdu do práce první den a nikdy se už neozvu (tak u toho vlastně nevím, zda jsme ho pustili a nebo zda nepustil spíše on nás). Někdy možná i nějaké osobní naladění s lidmi v týmu, prostě jsme si lidsky nesedli.
+
+Těch 10 % jsou pak ty znalosti a posouvání se v nich. Každý nemusí být rock star a pokud je na něj spoleh a lehké úkoly zvládá dobře a precizně, může z něj být dobrý "analytik lehčích úkolů" a může to tak být na dlouho, i věčně. Já sám pracuji ve velmi těžké a komplikované doméně. Ty znalosti se ale nestaly za víkend. Mám pochopení pro lidi, kteří se je chtějí naučit a vím, že to bude na dlouho, i roky (ocením pokoru). Mám pochopení i pro ty, co se zastaví v polovině a řeknou, že takto jim to stačí. Pokud pomáhám někomu v učení, stojí mě to nemalou energii navíc. Musím vidět, že to k něčemu je, že to nebylo zbytečné.
+
+Nutno říct, že pro absenci elementárních pracovních soft skills jsme pustili i mnoho nejuniorů.
+---
+
+
 #} -->

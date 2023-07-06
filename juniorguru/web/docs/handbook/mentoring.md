@@ -68,4 +68,9 @@ https://twitter.com/willjohnsonio/status/1282713655105159170
 
 
 
+--- https://discord.com/channels/769966886598737931/797040163325870092/1121407657258008596
+Ahoj! Tady sdilime zaznam z prednasky <@289482229975875584> o tom jak byt dobry mentee a pripravit se na prvni hodinu mentoringu 💪🙂👉 https://www.youtube.com/watch?v=xZJyPeZMl0M
+---
+
+
 #} -->

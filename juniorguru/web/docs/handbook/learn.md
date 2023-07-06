@@ -724,4 +724,9 @@ A najednou zjistíte, že jste 2 dny nenapsal ani čárku kódu.
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1123350431255515287
+Sice pro tvůrce, ale jsou tam dobré tipy vlastně pro kohokoliv, kdo se učí něco nového 🧑‍🎓 „Bez toho, abyste si na zahrádce ušpinili ruce nikdy nic nevypěstujete!“ https://overcast.fm/+9-bVhiVy8
+---
+
+
 #} -->

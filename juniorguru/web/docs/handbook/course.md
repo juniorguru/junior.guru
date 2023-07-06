@@ -727,4 +727,45 @@ Já jsem se o tom dozvěděl před několika měsíci z cc.cz Bohužel nic pro m
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1114563017443655831/1118956982657876099
+Samoštúdium...
+
+Keďže som mal nejaký coľný čas, pokiaľ kurz nezačne, tak som sa ho snažil a snažím venovať naplno na zbieranie nových informácií. Chcem sa niečo doučiť. Predsa mi teraz všetko pomôže. 
+
+Hoci si prejdeme aj v kurze záležitosti okolo html, git, github a pod, no chcel som sa, to už ako-tak naučiť... Vrátil som sa k yablkovi a prešiel si základ, kde vysvetľuje, čo a ako funguje vo VSC a zároveň som si prešiel jeho kurz git a github na skillmea stránke. 
+
+Potom som pokračoval na jeho YT kanáli, a prešiel si rôzne videá, možno skôr motivačné, prípadne niečo zo skúsenosti a poznatkov a pod... 
+
+Detailnejšie som začal používať a zároveň aj fungovať v junior.guru.klube (čiže tu). A pravdupovediac som sa dostal k nespočetnému množstvu ďalších informácií  a poznatkov. Junior návod je úžasný a nehovoriac o tom akú pridanú hodnotu dáva táto komunita aj vo forme discordu.
+
+Tak som si ešte prešiel Dávida Šetka na YT, kde ma celkom zaujímave tutoriály, podľa ktorých sa človek vie veľa naučit. Prešiel som si aj tam VSC a git+github. Popritom nejaké tie webináre na linkedin learning a taktiež musím povedať, že je tam mnoho materiálu... 
+
+Momentálne sa sústredím na začiatok kurzu 19.6.2023- pondelok... 
+
+A popritom ešte na angličtinu, ktorú mám zaradenú do každodenného rozvrhu... 
+Zároveň Vám tu pripájam detailnejší plán kurzu... Toto by ešte nemalo byť "prísne tajné", nedávam to z dôvodu, že chcem ukazvať ich know-how, ale skôr iba ako taký prehľad, veď z toho nieje ani nič jasné, len čo kedy a ako... 
+
+Svoj postup budem naďalej zapisovať...
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1122281137662865429
+Konečně jsem našel chvilku volného času na sepsání mých dojmů ze "studia" na FITu, takže s o ně rád podělím. Pokud by kohokoliv zajímaly jakékoliv detaily, rád je samozřejmě zodpovím 🙂
+
+**Motivace**
+Myslím, že jsem se mi samostudiem podařilo dostat na relativně solidní začátečnickou úroveň a byl jsem schopen tvořit i netriviální projekty (něco najdete v sekci Výrobky). Stejně tak jsem snad docela zvládl řešit různé algoritmické úlohy, viz náš společně řešený Advent of Code, kde jsem relativně obstojně držel tempo i s profíky.  Takže jsem hledal další způsoby, jak se dále posouvat. Do toho se okolo konce minulého roku v mém životě událo pár změn, konkrétně zajímavé povýšení v práci, spojené s tím, že letos pracuji mnohem méně, rozchod s partnerkou a úspěšné nalezení bytu v mé trochu vysněné lokalitě a následné stěhování. Díky (nebo kvůli) tomuto jsem měl relativně více volného času. Zároveň jsem neplánoval nějaký rychlý switch do IT, takže jsem si řekl, že nikam nespěchám a půjdu na to pomalu. A tak jsem se rozhodl zkusit si zapsat předměty z kombinované formy přes celoživotní vzdělání na FITu ČVUT 🙂
+
+**Jak to funguje?**
+Jednoduše 🙂 Kdokoliv si může požádat o zápis jakéhokoliv předmětu z bakalářského nebo magisterského studia. A pokud má předmět volnou kapacitu, neměl by být se zápisem praktický problém. Studium je ale zpoplatněno a aktuální cena je 1.000 Kč za kredit, takže cca 5.000-6.000 Kč za předmět. FIT na bakalářské úrovni nabízí i kombinované studium, které je v tomto ideální, protože má výuku koncentrovanou do sobot a počítá se s tím, že velkou část práce dělají studenti sami doma.  Detaily jsou pak k dispozici zde: https://fit.cvut.cz/cs/uchazeci/programy-a-obory/celozivotni-vzdelavani
+
+**Co jsem si zapsal?**
+Na začátek jsem zkusil dva předměty - počítačové sítě a databázové systémy. Obě oblasti vnímám jako klíčové pro praxi a zároveň jsem o nich měl spíše jen povrchní znalosti. Detaily pak ve vláknu.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1119613954294026250
+Začátkem roku jsem procházel menší krizičkou a hledal jsem nové výzvy, takže jsem se z hecu zapsal na dva předměty na FIT ČVUT - počítačové sítě a databázové systémy. Nikomu jsem o tom neřekl, protože jsem z toho docela respekt a bál jsem se, že to bude úplná katastrofa... No a dnes jsem měl druhou zkoušku a dopadlo to až překvapivě dobře! Nakonec jsem vyválčil dvě hezká béčka a to jsem ještě u obou předmětů mohl jít na ústní zkoušku zkusit si zlepšit známku o jeden stupeň, ale to už se mi nechtělo 🙂 Jelikož se asi zatím žádný junior z této komunity nevydal cestou studia na technické VŠ, dejte vědět, zda mám napsat detailnějí příspěvek se svými dojmy a doporučeními. Každopádně TLDR bude takové, že příští semestr si zase něco zapíšu 🙂
+---
+
+
 #} -->

@@ -1264,4 +1264,26 @@ Vzdy je dobre delat neco navic, ale je hrozne tezke rict co presne a konkretne. 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1118986066117009519/1118986066117009519
+Asi by se mi hodily praktické tipy, jak na to. Zatím na všech akcích, kde jsem byla, jsme po akci na sebe velmi často všichni jen hloupě zírali, popř. mluvilo jen pár lidí.
+
+Nikdy jsem si na nikoho nevzala kontakt a jako bonus jsem se skoro nikdy neúčastnila žádné "afterparty", které jsou pro mne kvůli bariérovosti extrémně náročné.
+
+Zkouším si občas vychytat někoho na LI, ale všude doporučují i tak udržovat alespoň virtuální kontakt. I na Seduo jsem si vysbírala pár přednášek na téma networking, ale vůbec se nechytám.
+
+Nesmírně mne děsí, že nejčastěji lidé nachází práci právě přes známosti a já tuhle možnost nemám.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1120721530561773649
+K zamyšlení: https://www.idnes.cz/finance/financni-radce/omyly-uvazovani-psychologie-kariera-uspech-jan-urban.A230616_081121_viteze_sov&h=9B92CD62E5D55260B84BF71F5E2391D8
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1119307390576230492
+Petra Nulíčková měla hromadu skvělých tipů na meetupu ReactGirls před měsícem a tady je to na záznamu
+https://www.youtube.com/watch?v=uNL3yEzNsbQ
+---
+
+
 #} -->
