@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 
 
-EXCEPTIONS = ['eggshell.svg']
+EXCEPTIONS = ['icon.svg']
 
 SCSS_VARIABLE_RE = re.compile(r'(\$[^:]+):\s+([^;]+);')
 CSS_VARIABLE_RE = re.compile(r'(\-\-[^:]+):\s+([^;]+);')
