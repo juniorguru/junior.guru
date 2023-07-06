@@ -3,6 +3,7 @@ import itertools
 import math
 import subprocess
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 import click
 from PIL import Image
@@ -57,10 +58,17 @@ def avatars(size_px):
 
 @main.command()
 def svg():
-    paths = Path('juniorguru/images').rglob('*.svg')
+    images_dir = Path('juniorguru/images')
+    paths = images_dir.rglob('*.svg')
     for path in paths:
-        print(path)
-    # TODO scour
+        logger.debug(f'{path.relative_to(images_dir)}')
+        size_before = kilobytes(path.stat().st_size)
+        proc = subprocess.run(['scour', '-i', str(path)], check=True, capture_output=True)
+        image_bytes = proc.stdout
+        size_after = kilobytes(len(image_bytes))
+        if size_after < size_before:
+            path.write_bytes(image_bytes)
+            logger.info(f'{path.relative_to(images_dir)}: {size_before}kB → {size_after}kB')
 
 
 def kilobytes(size):
