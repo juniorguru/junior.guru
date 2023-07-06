@@ -18,13 +18,13 @@ logger = loggers.from_path(__file__)
 def main(context):
     if context.invoked_subcommand:
         return
-    context.invoke(python_code)
-    context.invoke(avatars)
-    context.invoke(svg)
+    context.invoke(format_python)
+    context.invoke(optimize_avatars)
+    context.invoke(optimize_svg)
 
 
 @main.command()
-def python_code():
+def format_python():
     try:
         subprocess.run(['isort', '.'], check=True)
     except subprocess.CalledProcessError:
@@ -33,7 +33,7 @@ def python_code():
 
 @main.command()
 @click.option('--size', 'size_px', default=500, type=int)
-def avatars(size_px):
+def optimize_avatars(size_px):
     images_dir = Path('juniorguru/images')
     paths = itertools.chain.from_iterable(avatars_dir.rglob('*.jpg')
                                           for avatars_dir
@@ -56,7 +56,7 @@ def avatars(size_px):
 
 
 @main.command()
-def svg():
+def optimize_svg():
     images_dir = Path('juniorguru/images')
     paths = images_dir.rglob('*.svg')
     for path in paths:
