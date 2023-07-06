@@ -35,9 +35,9 @@ def python_code():
 @click.option('--size', 'size_px', default=500, type=int)
 def avatars(size_px):
     images_dir = Path('juniorguru/images')
-    paths = itertools.chain((images_dir / 'avatars-participants').rglob('*.jpg'),
-                            (images_dir / 'avatars-quotes').rglob('*.jpg'),
-                            (images_dir / 'stories').rglob('*.jpg'))
+    paths = itertools.chain.from_iterable(avatars_dir.rglob('*.jpg')
+                                          for avatars_dir
+                                          in images_dir.glob('avatars-*'))
     for path in paths:
         logger.debug(f'{path.relative_to(images_dir)}')
         size_before = kilobytes(path.stat().st_size)
