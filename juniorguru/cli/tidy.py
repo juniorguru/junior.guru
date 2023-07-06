@@ -3,7 +3,6 @@ import itertools
 import math
 import subprocess
 from pathlib import Path
-from tempfile import TemporaryDirectory
 
 import click
 from PIL import Image
