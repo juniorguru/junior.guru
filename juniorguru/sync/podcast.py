@@ -13,7 +13,7 @@ from strictyaml import Int, Map, Optional, Seq, Str, load
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID
-from juniorguru.lib.images import is_image, render_image_file, validate_image
+from juniorguru.lib.images import PostersCache, is_image, render_image_file, validate_image
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.lib.template_filters import icon
 from juniorguru.lib.yaml import Date
@@ -65,10 +65,8 @@ MESSAGE_EMOJI = '🎙'
 @click.option('--clear-posters/--keep-posters', default=False)
 @db.connection_context()
 def main(clear_posters):
-    if clear_posters:
-        logger.warning("Removing all existing posters for podcast episodes")
-        for poster_path in POSTERS_DIR.glob('*.png'):
-            poster_path.unlink()
+    posters = PostersCache(POSTERS_DIR)
+    posters.init(clear=clear_posters)
 
     logger.info('Validating avatar images')
     for path in filter(is_image, AVATARS_DIR.glob('*.*')):
@@ -88,6 +86,8 @@ def main(clear_posters):
     logger.info('Saving to database')
     for record in records:
         PodcastEpisode.create(**record)
+        posters.record(IMAGES_DIR / record['poster_path'])
+    posters.cleanup()
 
     logger.info('Announcing in Discord')
     discord_sync.run(discord_task)

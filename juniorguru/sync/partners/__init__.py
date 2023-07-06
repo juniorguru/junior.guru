@@ -8,7 +8,7 @@ from strictyaml import Bool, Map, Optional, Seq, Str, Url, load
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.coupons import parse_coupon
-from juniorguru.lib.images import render_image_file
+from juniorguru.lib.images import PostersCache, render_image_file
 from juniorguru.lib.memberful import Memberful
 from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
@@ -64,10 +64,8 @@ POSTER_HEIGHT = 700
 @click.option('--clear-posters/--keep-posters', default=False)
 @db.connection_context()
 def main(clear_posters):
-    if clear_posters:
-        logger.warning("Removing all existing posters for partners")
-        for poster_path in POSTERS_DIR.glob('*.png'):
-            poster_path.unlink()
+    posters = PostersCache(POSTERS_DIR)
+    posters.init(clear=clear_posters)
 
     logger.info('Getting coupons data from Memberful')
     memberful = Memberful()
@@ -124,6 +122,8 @@ def main(clear_posters):
                                        prefix=partner.slug)
         partner.poster_path = image_path.relative_to(IMAGES_DIR)
         partner.save()
+        posters.record(IMAGES_DIR / partner.poster_path)
+    posters.cleanup()
 
     logger.info('Checking expired partnerships for leftovers')
     for partner in Partner.expired_listing():

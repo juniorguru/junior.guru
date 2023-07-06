@@ -8,7 +8,7 @@ from strictyaml import CommaSeparated, Int, Map, Optional, Seq, Str, Url, load
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID
-from juniorguru.lib.images import is_image, render_image_file, validate_image
+from juniorguru.lib.images import PostersCache, is_image, render_image_file, validate_image
 from juniorguru.lib.mutations import MutationsNotAllowedError, mutating_discord
 from juniorguru.lib.template_filters import local_time, md, weekday
 from juniorguru.lib.yaml import Date
@@ -62,10 +62,8 @@ schema = Seq(
 @cli.sync_command(dependencies=['club-content', 'partners'])
 @click.option('--clear-posters/--keep-posters', default=False)
 def main(clear_posters):
-    if clear_posters:
-        logger.warning("Removing all existing posters for events")
-        for poster_path in POSTERS_DIR.glob('*.png'):
-            poster_path.unlink()
+    posters = PostersCache(POSTERS_DIR)
+    posters.init(clear=clear_posters)
 
     logger.info('Validating avatar images')
     for path in filter(is_image, AVATARS_DIR.glob('*.*')):
@@ -110,12 +108,15 @@ def main(clear_posters):
                                             'event.html', tpl_context, POSTERS_DIR,
                                             filters=tpl_filters, prefix=prefix, suffix='dc')
             event.poster_dc_path = image_path.relative_to(IMAGES_DIR)
+            posters.record(IMAGES_DIR / event.poster_dc_path)
             image_path = render_image_file(YOUTUBE_THUMBNAIL_WIDTH, YOUTUBE_THUMBNAIL_HEIGHT,
                                             'event.html', tpl_context, POSTERS_DIR,
                                             filters=tpl_filters, prefix=prefix, suffix='yt')
             event.poster_yt_path = image_path.relative_to(IMAGES_DIR)
+            posters.record(IMAGES_DIR / event.poster_yt_path)
             logger.info(f"Saving '{name}'")
             event.save()
+    posters.cleanup()
 
     logger.info('Syncing with Discord')
     discord_sync.run(sync_scheduled_events)

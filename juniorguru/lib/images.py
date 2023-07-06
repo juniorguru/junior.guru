@@ -124,3 +124,25 @@ def init_templates_cache(cache_dir=None):
     run(['node', 'esbuild-image-templates.js', str(cache_dir)], check=True)
 
     logger.info(f'Initialized {cache_dir} in {time.perf_counter() - t:.2f}s')
+
+
+class PostersCache:
+    def __init__(self, posters_dir: str | Path):
+        self.posters_dir = Path(posters_dir)
+        self.existing_paths = set()
+        self.generated_paths = set()
+
+    def init(self, clear: bool=False):
+        if clear:
+            logger.warning("Removing all existing posters")
+            for path in self.existing_paths:
+                path.unlink()
+        self.existing_paths.update(self.posters_dir.glob('*.png'))
+
+    def record(self, path: Path):
+        self.generated_paths.add(path)
+
+    def cleanup(self):
+        for path in self.existing_paths - self.generated_paths:
+            logger.info(f"Removing {path}")
+            path.unlink()
