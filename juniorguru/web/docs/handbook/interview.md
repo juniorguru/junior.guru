@@ -799,4 +799,7 @@ U juniorů jsou ukončení ve zkušebce o hodně běžnější protože je to č
 ---
 
 
+https://www.reddit.com/r/ChatGPT/comments/143ubjs/as_a_recruiter_i_feel_like_i_can_tell_when/
+
+
 #} -->

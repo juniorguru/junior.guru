@@ -51,5 +51,6 @@ Given  their  relatively  high  frequency,  large  volume    of    observations,
 
 https://cew.georgetown.edu/wp-content/uploads/2014/11/OCLM.Tech_.Web_.pdf
 
+https://karolinum.cz/knihy/disman-jak-se-vyrabi-sociologicka-znalost-23436
 
 #} -->
