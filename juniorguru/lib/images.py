@@ -64,34 +64,6 @@ def render_image_file(width, height, template_name, context, output_dir, filters
     return image_path
 
 
-def downsize_square_photo(path, side_px):
-    with Image.open(path) as image:
-        if image.width != image.height:
-            raise ValueError(f"Image {path} must be square, but is {image.width}x{image.height}")
-        if image.width > side_px:
-            image = image.resize((side_px, side_px))
-            image.save(path, image.format)
-        return path
-
-
-def replace_with_jpg(path):
-    modified = False
-    with Image.open(path) as image:
-        if image.mode != 'RGB':
-            modified = True
-            image = image.convert('RGB')
-
-        path_jpg = path.with_suffix('.jpg')
-        if path != path_jpg:
-            modified = True
-            path.unlink()
-            path = path_jpg
-
-        if modified:
-            image.save(path, 'JPEG')
-    return path
-
-
 def render_template(width: int,
                     height: int,
                     template_name: str,

@@ -224,12 +224,12 @@ jobs:
           name: Reset repo
           command: poetry run jg reset-repo
       - run:
-          name: Format code
-          command: poetry run jg format .
+          name: Format code, optimize images
+          command: poetry run jg format
       - enable-github-pushing
       - run:
           name: Save to GitHub
-          command: poetry run jg save-changes . --message="format code 💅"
+          command: poetry run jg save-changes . --message="format 💅"
 
   backup:
     executor: python-js

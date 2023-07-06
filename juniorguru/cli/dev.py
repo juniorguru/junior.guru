@@ -43,15 +43,6 @@ def lint():
         raise click.Abort()
 
 
-@main.command()
-@click.argument('path', type=click.Path(exists=True, path_type=Path))
-def format(path):
-    try:
-        subprocess.run(['isort', str(path)], check=True)
-    except subprocess.CalledProcessError:
-        raise click.Abort()
-
-
 @main.command(context_settings={'ignore_unknown_options': True})
 @click.argument('pytest_args', nargs=-1, type=click.UNPROCESSED)
 def test(pytest_args):
