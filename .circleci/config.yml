@@ -215,7 +215,7 @@ jobs:
           paths:
               - project/public
 
-  format:
+  tidyup:
     executor: python-js
     steps:
       - attach_workspace:
@@ -224,12 +224,12 @@ jobs:
           name: Reset repo
           command: poetry run jg reset-repo
       - run:
-          name: Format code, optimize images
-          command: poetry run jg format
+          name: Tidy up code and images
+          command: poetry run jg tidy
       - enable-github-pushing
       - run:
           name: Save to GitHub
-          command: poetry run jg save-changes . --message="format 💅"
+          command: poetry run jg save-changes . --message="tidy up! 💅"
 
   backup:
     executor: python-js
@@ -355,10 +355,10 @@ workflows:
               only:
                 - main
 
-  optimize:
+  nightly-tidyup:
     jobs:
       - install
-      - format:
+      - tidyup:
           requires:
             - install
     triggers:
