@@ -152,7 +152,7 @@ def parse_json_dl(html: str, base_url: str) -> list[dict[str, Any]]:
                  location_raw=parse_json_dl_location(item['location']),
                  url=item['url'])
             for item in data['json-ld']
-            if item['@type'] == 'Event']
+            if item['@type'] == 'Event' and base_url in item['url']]
 
 
 def parse_json_dl_location(location: dict[str, str]) -> str:
