@@ -1,7 +1,7 @@
-from io import BytesIO
 import itertools
 import math
 import subprocess
+from io import BytesIO
 from pathlib import Path
 
 import click
