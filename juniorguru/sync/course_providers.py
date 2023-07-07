@@ -2,7 +2,7 @@ from functools import wraps
 from pathlib import Path
 from typing import Callable
 
-from strictyaml import Map, Optional, Seq, Str, Url, load
+from strictyaml import Map, Optional, Seq, Str, Url, load, Int
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
@@ -17,6 +17,7 @@ YAML_SCHEMA = Map({
     'name': Str(),
     'url': Url(),
     Optional('questions'): Seq(Str()),
+    Optional('cz_business_id'): Int(),
 })
 
 STRING_LENGTH_SEO_LIMIT = 150

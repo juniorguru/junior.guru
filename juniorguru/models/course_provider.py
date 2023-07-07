@@ -1,7 +1,7 @@
 from datetime import date
 from typing import Iterable
 
-from peewee import CharField, ForeignKeyField, fn
+from peewee import CharField, ForeignKeyField, fn, IntegerField
 
 from juniorguru.models.base import BaseModel
 from juniorguru.models.partner import Partner, Partnership
@@ -11,6 +11,7 @@ class CourseProvider(BaseModel):
     name = CharField()
     slug = CharField(unique=True)
     url = CharField()
+    cz_business_id = IntegerField(null=True)
     edit_url = CharField()
     page_title = CharField()
     page_description = CharField()
