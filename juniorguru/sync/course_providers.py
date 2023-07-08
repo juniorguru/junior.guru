@@ -1,6 +1,7 @@
 from functools import wraps
 from pathlib import Path
 from typing import Callable
+import requests
 
 from strictyaml import Int, Map, Optional, Seq, Str, Url, load
 
@@ -47,6 +48,21 @@ def main():
 
         CourseProvider.create(**record)
         logger.info(f'Loaded {yaml_path.name} as {record["name"]!r}')
+
+    logger.info('Fetching stats from Simple Analytics')
+    params = dict(version=5,
+                  fields='pageviews,visitors,pages',
+                  info='false',
+                  page='/courses/*')
+    response = requests.get('https://simpleanalytics.com/junior.guru.json', params=params)
+    response.raise_for_status()
+    data = response.json()
+    for page in data['pages']:
+        slug = page['value'].replace('/courses/', '')
+        course_provider = CourseProvider.get_by_slug(slug)
+        course_provider.stats_pageviews = page['pageviews']
+        course_provider.stats_visitors = page['visitors']
+        course_provider.save()
 
 
 def raise_if_too_long(fn: Callable[..., str]) -> Callable[..., str]:

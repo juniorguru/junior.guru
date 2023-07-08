@@ -17,6 +17,8 @@ class CourseProvider(BaseModel):
     page_title = CharField()
     page_description = CharField()
     page_lead = CharField()
+    stats_pageviews = IntegerField(null=True)
+    stats_visitors = IntegerField(null=True)
     partner = ForeignKeyField(Partner, backref='_course_provider', null=True, unique=True)
 
     @cached_property
