@@ -52,6 +52,18 @@ Poradíme!
   </div>
 </div>
 
+## Úřad práce
+
+Úřad práce ČR přispívá na kurzy, které má ve svém katalogu na [jsemvkurzu.cz](http://www.jsemvkurzu.cz).
+{%- if course_provider.list_courses_up|length %}
+Provozovatel {{ course_provider.name }} tam nabízí tyto kurzy:
+{% for course in course_provider.list_courses_up %}
+- [{{ course.name }}]({{ course.url }})
+{% endfor %}
+{% else %}
+{{ course_provider.name }} tam žádné kurzy nenabízí.
+{% endif %}
+
 {% if active_partnership %}
 ## Partnerství s junior.guru
 

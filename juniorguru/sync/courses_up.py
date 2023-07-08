@@ -2,13 +2,17 @@ import requests
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
+from juniorguru.models.course_provider import CourseUP
 
 
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=[])  # TODO
+@cli.sync_command()
 def main():
+    CourseUP.drop_table()
+    CourseUP.create_table()
+
     courses = []
     start = 0
     step = 100
@@ -35,3 +39,12 @@ def main():
         else:
             break
     logger.info(f'Downloaded {len(courses)} courses in total')
+
+    for course in courses:
+        logger.debug(f'Saving {course["nazev"]!r}')
+        CourseUP.create(id=course['id'],
+                        url=f"https://www.uradprace.cz/web/cz/vyhledani-rekvalifikacniho-kurzu#/rekvalifikacni-kurz-detail/{course['id']}",
+                        name=course['nazev'],
+                        description=course['popisRekvalifikace'],
+                        cz_business_id=int(course['osoba']['ico'].lstrip('0')))
+    logger.info(f'Saved {len(courses)} to database')

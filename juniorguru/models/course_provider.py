@@ -1,7 +1,8 @@
 from datetime import date
+from functools import cached_property
 from typing import Iterable
 
-from peewee import CharField, ForeignKeyField, IntegerField, fn
+from peewee import CharField, ForeignKeyField, fn, IntegerField, TextField
 
 from juniorguru.models.base import BaseModel
 from juniorguru.models.partner import Partner, Partnership
@@ -18,12 +19,18 @@ class CourseProvider(BaseModel):
     page_lead = CharField()
     partner = ForeignKeyField(Partner, backref='_course_provider', null=True, unique=True)
 
-    @property
+    @cached_property
     def page_url(self) -> str:
         return f'courses/{self.slug}.md'
 
     def active_partnership(self, today: date=None) -> Partnership | None:
         return self.partner.active_partnership(today=today) if self.partner else None
+
+    @cached_property
+    def list_courses_up(self) -> Iterable['CourseUP']:
+        return CourseUP.select() \
+            .where(CourseUP.cz_business_id == self.cz_business_id) \
+            .order_by(CourseUP.name)
 
     @classmethod
     def listing(cls, today: date=None) -> Iterable['CourseProvider']:
@@ -41,3 +48,11 @@ class CourseProvider(BaseModel):
 
     def __str__(self) -> str:
         return self.name
+
+
+class CourseUP(BaseModel):
+    id = IntegerField(primary_key=True)
+    url = CharField()
+    name = CharField()
+    description = TextField()
+    cz_business_id = IntegerField()
