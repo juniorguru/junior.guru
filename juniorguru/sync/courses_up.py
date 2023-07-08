@@ -1,7 +1,7 @@
 import requests
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import loggers
+from juniorguru.lib import loggers, remove_emoji
 from juniorguru.models.course_provider import CourseUP
 
 
@@ -44,7 +44,7 @@ def main():
         logger.debug(f'Saving {course["nazev"]!r}')
         CourseUP.create(id=course['id'],
                         url=f"https://www.uradprace.cz/web/cz/vyhledani-rekvalifikacniho-kurzu#/rekvalifikacni-kurz-detail/{course['id']}",
-                        name=course['nazev'],
+                        name=remove_emoji(course['nazev']),
                         description=course['popisRekvalifikace'],
                         cz_business_id=int(course['osoba']['ico'].lstrip('0')))
     logger.info(f'Saved {len(courses)} to database')
