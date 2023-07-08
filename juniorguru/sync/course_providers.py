@@ -2,7 +2,7 @@ from functools import wraps
 from pathlib import Path
 from typing import Callable
 
-from strictyaml import Map, Optional, Seq, Str, Url, load, Int
+from strictyaml import Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers

@@ -1,7 +1,7 @@
 from datetime import date
 from typing import Iterable
 
-from peewee import CharField, ForeignKeyField, fn, IntegerField
+from peewee import CharField, ForeignKeyField, IntegerField, fn
 
 from juniorguru.models.base import BaseModel
 from juniorguru.models.partner import Partner, Partnership
