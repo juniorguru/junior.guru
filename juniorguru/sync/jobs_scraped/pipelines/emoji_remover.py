@@ -7,4 +7,4 @@ def process(item):
         item['title'] = remove_emoji(title)
         return item
     except Exception as e:
-        raise ValueError(f"Failed to clean emojis in {item['title']!r}") from e
+        raise ValueError(f"Failed to remove emojis in {item['title']!r}") from e

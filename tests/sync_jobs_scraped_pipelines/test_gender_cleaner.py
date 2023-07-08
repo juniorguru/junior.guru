@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.jobs_scraped.pipelines.gender_cleaner import process
+from juniorguru.sync.jobs_scraped.pipelines.gender_remover import process
 
 
 @pytest.mark.parametrize('title, expected', [
@@ -48,7 +48,7 @@ from juniorguru.sync.jobs_scraped.pipelines.gender_cleaner import process
     ('👩‍💻/👨‍💻 Junior Product Designer',
      'Junior Product Designer')
 ])
-def test_gender_cleaner(title, expected):
+def test_gender_remover(title, expected):
     item = process(dict(title=title))
 
     assert item['title'] == expected

@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.jobs_scraped.pipelines.emoji_cleaner import process
+from juniorguru.sync.jobs_scraped.pipelines.emoji_remover import process
 
 
 @pytest.mark.parametrize('title', [
@@ -8,7 +8,7 @@ from juniorguru.sync.jobs_scraped.pipelines.emoji_cleaner import process
     '  🦸🏻 Junior projekťák 🦸🏻  ',
     '🦸🏻  Junior projekťák  🦸🏻',
 ])
-def test_emoji_cleaner(title):
+def test_emoji_remover(title):
     item = process(dict(title=title))
 
     assert item['title'] == 'Junior projekťák'

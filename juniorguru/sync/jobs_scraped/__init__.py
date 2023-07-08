@@ -21,8 +21,8 @@ PREPROCESS_PIPELINES = [
 POSTPROCESS_PIPELINES = [
     'juniorguru.sync.jobs_scraped.pipelines.description_parser',
     'juniorguru.sync.jobs_scraped.pipelines.features_parser',
-    'juniorguru.sync.jobs_scraped.pipelines.gender_cleaner',
-    'juniorguru.sync.jobs_scraped.pipelines.emoji_cleaner',
+    'juniorguru.sync.jobs_scraped.pipelines.gender_remover',
+    'juniorguru.sync.jobs_scraped.pipelines.emoji_remover',
     'juniorguru.sync.jobs_scraped.pipelines.company_url_cleaner',
     'juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner',
     'juniorguru.sync.jobs_scraped.pipelines.juniority_re_score',
