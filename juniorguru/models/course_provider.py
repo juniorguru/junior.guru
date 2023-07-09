@@ -32,7 +32,7 @@ class CourseProvider(BaseModel):
     def list_courses_up(self) -> Iterable['CourseUP']:
         return CourseUP.select() \
             .where(CourseUP.cz_business_id == self.cz_business_id) \
-            .order_by(CourseUP.name)
+            .order_by(fn.lower(CourseUP.name))
 
     @classmethod
     def listing(cls, today: date=None) -> Iterable['CourseProvider']:

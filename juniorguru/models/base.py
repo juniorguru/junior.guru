@@ -3,6 +3,7 @@ import json
 from collections.abc import Set
 from functools import wraps
 from pathlib import Path
+import sqlite3
 
 import scrapy
 from peewee import (Check, ConnectionContext as BaseConnectionContext, Model,
@@ -16,6 +17,9 @@ DB_FILE = Path('juniorguru/data/data.db')
 
 
 logger = loggers.from_path(__file__)
+
+
+sqlite3.enable_callback_tracebacks(True)
 
 
 class ConnectionContext(BaseConnectionContext):
