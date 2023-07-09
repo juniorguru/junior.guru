@@ -12,6 +12,7 @@ from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.followers import Followers
 from juniorguru.models.page import Page
 from juniorguru.models.podcast import PodcastEpisode
+from juniorguru.models.product_analytics import ProductAnalytics
 from juniorguru.models.transaction import Transaction
 
 
@@ -44,7 +45,8 @@ logger = loggers.from_path(__file__)
                                 'events',
                                 'followers',
                                 'club-content',
-                                'podcast'])
+                                'podcast',
+                                'product-analytics'])
 @db.connection_context()
 def main():
     db.drop_tables([ChartNamespace, Chart])
@@ -274,3 +276,24 @@ def followers(today) -> dict[str, Any]:
 @chart
 def followers_breakdown(months: list[date]) -> list[Number]:
     return charts.per_month_breakdown(Followers.breakdown, months)
+
+
+@namespace
+def analytics(today) -> dict[str, Any]:
+    months = charts.months(*ProductAnalytics.months_range())
+    return dict(values=months,
+                labels=charts.labels(months),
+                annotations=charts.annotations(months, MILESTONES))
+
+
+@chart
+def analytics_total(months: list[date]) -> list[Number]:
+    breakdown = charts.per_month_breakdown(ProductAnalytics.breakdown, months)
+    return breakdown.pop('total')
+
+
+@chart
+def analytics_breakdown(months: list[date]) -> list[Number]:
+    breakdown = charts.per_month_breakdown(ProductAnalytics.breakdown, months)
+    breakdown.pop('total')
+    return breakdown

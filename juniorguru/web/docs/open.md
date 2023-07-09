@@ -712,6 +712,86 @@ Sice do toho Pavlíně nekecám, ale za mě by bylo fajn, kdyby v průměru polo
         'scales': {'y': {'min': 0, 'suggestedMax': 50}},
     }|tojson|forceescape }}"></canvas></div></div>
 
+## Návštěvnost
+
+Návštěvnost měří [Simple Analytics](https://www.simpleanalytics.com/?referral=honza-javorek) a veškerá čísla jsou [veřejná](https://simpleanalytics.com/junior.guru).
+Tady jen pár vybraných grafů, které se tam špatně naklikávají ručně.
+
+### Souhrnná návštěvnost podle produktů
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="200"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.analytics_labels,
+        'datasets': [
+            {
+                'label': 'úvodní stránka',
+                'data': charts.analytics_breakdown.pop('home'),
+                'borderColor': '#638CDD',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'prodejní stránka klubu',
+                'data': charts.analytics_breakdown.pop('club'),
+                'borderColor': '#dc3545',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'příručka',
+                'data': charts.analytics_breakdown.pop('handbook'),
+                'borderColor': '#02CABB',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'katalog kurzů',
+                'data': charts.analytics_breakdown.pop('courses'),
+                'borderColor': '#00B7EB',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'pracovní inzeráty',
+                'data': charts.analytics_breakdown.pop('jobs'),
+                'borderColor': '#1755d1',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'stránka s podcastem',
+                'data': charts.analytics_breakdown.pop('podcast'),
+                'borderColor': '#083284',
+                'borderWidth': 1,
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.analytics_breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.analytics_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
+### Celková návštěvnost
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="200"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.analytics_labels,
+        'datasets': [
+            {
+                'label': 'celková návštěvnost',
+                'data': charts.analytics_total,
+                'borderColor': '#638CDD',
+                'borderWidth': 2,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.analytics_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
 ## Marketing
 
 ### Sociální sítě
@@ -748,10 +828,6 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích.
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
     }|tojson|forceescape }}"></canvas></div></div>
-
-### Návštěvnost
-
-Čísla návštěvnosti webu jsou na [simpleanalytics.com/junior.guru](https://simpleanalytics.com/junior.guru).
 
 ## Kód
 

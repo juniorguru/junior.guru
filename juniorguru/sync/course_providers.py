@@ -49,9 +49,9 @@ def main():
         CourseProvider.create(**record)
         logger.info(f'Loaded {yaml_path.name} as {record["name"]!r}')
 
-    logger.info('Fetching stats from Simple Analytics')
+    logger.info('Fetching analytics')
     params = dict(version=5,
-                  fields='pageviews,visitors,pages',
+                  fields='pageviews,pages',
                   info='false',
                   page='/courses/*')
     response = requests.get('https://simpleanalytics.com/junior.guru.json', params=params)
@@ -60,8 +60,7 @@ def main():
     for page in data['pages']:
         slug = page['value'].replace('/courses/', '')
         course_provider = CourseProvider.get_by_slug(slug)
-        course_provider.stats_pageviews = page['pageviews']
-        course_provider.stats_visitors = page['visitors']
+        course_provider.page_pageviews = page['pageviews']
         course_provider.save()
 
 
