@@ -2,7 +2,7 @@ from datetime import date
 from functools import cached_property
 from typing import Iterable
 
-from peewee import CharField, ForeignKeyField, fn, IntegerField, TextField
+from peewee import CharField, ForeignKeyField, IntegerField, TextField, fn
 
 from juniorguru.models.base import BaseModel
 from juniorguru.models.partner import Partner, Partnership
