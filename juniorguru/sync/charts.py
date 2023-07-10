@@ -295,5 +295,5 @@ def analytics_total(months: list[date]) -> list[Number]:
 @chart
 def analytics_breakdown(months: list[date]) -> list[Number]:
     breakdown = charts.per_month_breakdown(ProductAnalytics.breakdown, months)
-    breakdown.pop('total')
+    del breakdown['total']
     return breakdown
