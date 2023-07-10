@@ -1,9 +1,9 @@
 import asyncio
 import json
+import sqlite3
 from collections.abc import Set
 from functools import wraps
 from pathlib import Path
-import sqlite3
 
 import scrapy
 from peewee import (Check, ConnectionContext as BaseConnectionContext, Model,

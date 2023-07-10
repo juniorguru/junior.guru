@@ -1,11 +1,11 @@
 from datetime import date, timedelta
+
 import requests
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import loggers
+from juniorguru.lib import charts, loggers
 from juniorguru.models.base import db
 from juniorguru.models.product_analytics import ProductAnalytics
-from juniorguru.lib import charts
 
 
 PRODUCTS = {

@@ -1,4 +1,5 @@
 from datetime import date
+
 from peewee import CharField, DateField, IntegerField
 
 from juniorguru.models.base import BaseModel
