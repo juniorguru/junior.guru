@@ -28,6 +28,7 @@ CHANNELS_HISTORY_SINCE = {
     ClubChannelID.INTRO: None,
 
     # skip channels
+    ClubChannelID.MODERATION: timedelta(0),
     ClubChannelID.BOT: timedelta(0),
     ClubChannelID.JOBS: timedelta(0),
     834443926655598592: timedelta(0),  # práce-bot (archived)

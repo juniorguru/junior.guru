@@ -82,27 +82,32 @@ def store_message(message: Message) -> ClubMessage:
     # The channel can be a GuildChannel, but it can also be a DMChannel.
     # Those have different properties, hence the get_...() and getattr() calls below.
     channel = message.channel
-    return ClubMessage.create(id=message.id,
-                              url=message.jump_url,
-                              content=message.content,
-                              content_size=len(message.content or ''),
-                              content_starting_emoji=get_starting_emoji(message.content),
-                              reactions={emoji_name(reaction.emoji): reaction.count for reaction in message.reactions},
-                              upvotes_count=count_upvotes(message.reactions),
-                              downvotes_count=count_downvotes(message.reactions),
-                              created_at=arrow.get(message.created_at).naive,
-                              created_month=f'{message.created_at:%Y-%m}',
-                              edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
-                              author=_store_user(message.author),
-                              author_is_bot=message.author.id == ClubMemberID.BOT,
-                              channel_id=channel.id,
-                              channel_name=get_channel_name(channel),
-                              parent_channel_id=get_parent_channel(channel).id,
-                              parent_channel_name=get_channel_name(get_parent_channel(channel)),
-                              category_id=getattr(channel, 'category_id', None),
-                              type=message.type.name,
-                              is_private=is_channel_private(channel),
-                              pinned_message_url=get_pinned_message_url(message))
+    try:
+        return ClubMessage.create(id=message.id,
+                                  url=message.jump_url,
+                                  content=message.content,
+                                  content_size=len(message.content or ''),
+                                  content_starting_emoji=get_starting_emoji(message.content),
+                                  reactions={emoji_name(reaction.emoji): reaction.count for reaction in message.reactions},
+                                  upvotes_count=count_upvotes(message.reactions),
+                                  downvotes_count=count_downvotes(message.reactions),
+                                  created_at=arrow.get(message.created_at).naive,
+                                  created_month=f'{message.created_at:%Y-%m}',
+                                  edited_at=(arrow.get(message.edited_at).naive if message.edited_at else None),
+                                  author=_store_user(message.author),
+                                  author_is_bot=message.author.id == ClubMemberID.BOT,
+                                  channel_id=channel.id,
+                                  channel_name=get_channel_name(channel),
+                                  parent_channel_id=get_parent_channel(channel).id,
+                                  parent_channel_name=get_channel_name(get_parent_channel(channel)),
+                                  category_id=getattr(channel, 'category_id', None),
+                                  type=message.type.name,
+                                  is_private=is_channel_private(channel),
+                                  pinned_message_url=get_pinned_message_url(message))
+    except peewee.IntegrityError:
+        message_obj = ClubMessage.get_by_id(message.id)
+        logger['messages'].debug(f"Message {message.jump_url} apparently already stored as {message_obj!r}")
+        return message_obj
 
 
 @make_async
