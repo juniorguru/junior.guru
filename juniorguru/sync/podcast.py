@@ -84,8 +84,8 @@ def main(clear_posters):
     logger.info('Preparing data: downloading and analyzing the mp3 files, creating posters')
     records = filter(None, Pool(WORKERS).imap_unordered(process_episode, yaml_records))
 
-    logger.info('Saving to database')
     for record in records:
+        logger.info(f'Saving {record["id"]}')
         PodcastEpisode.create(**record)
         posters.record(IMAGES_DIR / record['poster_path'])
     posters.cleanup()

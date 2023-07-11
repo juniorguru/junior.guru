@@ -317,8 +317,6 @@ Partnerství domlouvám osobně a je vždy na rok, potom s firmou jednáme o pro
 
 Ukončená partnerství: {% for partner in partners_expired %}{{ partner_link(partner.name, partner.url, 'open') }}{% if not loop.last %}, {% endif %}{% endfor %}.
 
-{#
-
 ## Členství v klubu
 
 [Placený klub](club.md) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**, ale platících členů může být i víc. Někteří si platí členství pouze aby mě podpořili, bez toho aby se vůbec na Discord přihlásili.
@@ -333,23 +331,23 @@ Tenká modrá čára představuje počet členů, kteří si členství platí z
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.club_members_labels,
+        'labels': charts.members_labels,
         'datasets': [
             {
                 'label': 'všechna členství',
-                'data': charts.club_members_subscriptions,
+                'data': charts.members_subscriptions,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'všechna individuální členství',
-                'data': charts.club_members_individuals,
+                'data': charts.members_individuals,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
             {
                 'label': 'roční individuální členství',
-                'data': charts.club_members_individuals_yearly,
+                'data': charts.members_individuals_yearly,
                 'borderColor': '#02CABB',
                 'borderWidth': 1,
             },
@@ -358,7 +356,7 @@ Tenká modrá čára představuje počet členů, kteří si členství platí z
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.club_members_annotations},
+        'plugins': {'annotation': charts.members_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Typy členství
@@ -369,7 +367,7 @@ Každý příchozí člen má v klubu dva týdny zdarma, bez ohledu na to, jaký
 
 S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzájem neplatíme. Oni využívají platformu klubu pro svůj mentoring a své studenty. Všichni mají automaticky vstup zdarma. Klub má díky tomu experty na frontend a moderátora Dana Srba.
 
-S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou studenty svých kurzů a proplatí jim členství na první tři měsíce. Agentura z toho má službu pro studenty navíc a já z toho mám to, že pokud se lidem v klubu zalíbí, budou si jej dál platit ze svého.
+S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou studenty svých kurzů a proplatí jim členství na pár měsíců. Agentura z toho má službu pro studenty a já z toho mám to, že pokud se lidem v klubu zalíbí, budou si jej dál platit ze svého.
 
 {% call note() %}
   {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže graf začíná až v březnu 2023.
@@ -379,55 +377,55 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
     class="chart" width="400" height="200"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts.club_members_labels,
+        'labels': charts.members_labels,
         'datasets': [
             {
                 'label': 'tým junior.guru',
-                'data': charts.club_members_subscriptions_breakdown.pop('team'),
+                'data': charts.members_subscriptions_breakdown.pop('team'),
                 'backgroundColor': '#00B7EB',
             },
             {
                 'label': 'symbióza s CoreSkill',
-                'data': charts.club_members_subscriptions_breakdown.pop('coreskill'),
+                'data': charts.members_subscriptions_breakdown.pop('coreskill'),
                 'backgroundColor': '#666',
             },
             {
                 'label': 'neplatí členství',
-                'data': charts.club_members_subscriptions_breakdown.pop('free'),
+                'data': charts.members_subscriptions_breakdown.pop('free'),
                 'backgroundColor': '#ddd',
             },
             {
                 'label': 'dva týdny zdarma',
-                'data': charts.club_members_subscriptions_breakdown.pop('trial'),
+                'data': charts.members_subscriptions_breakdown.pop('trial'),
                 'backgroundColor': '#a9a9a9',
             },
             {
                 'label': 'mají stipendium',
-                'data': charts.club_members_subscriptions_breakdown.pop('finaid'),
+                'data': charts.members_subscriptions_breakdown.pop('finaid'),
                 'backgroundColor': '#02CABB',
             },
             {
                 'label': 'členství si platí sami',
-                'data': charts.club_members_subscriptions_breakdown.pop('individuals'),
+                'data': charts.members_subscriptions_breakdown.pop('individuals'),
                 'backgroundColor': '#1755d1',
             },
             {
                 'label': 'členství platí firma',
-                'data': charts.club_members_subscriptions_breakdown.pop('partner'),
+                'data': charts.members_subscriptions_breakdown.pop('partner'),
                 'backgroundColor': '#638CDD',
             },
             {
                 'label': 'členství platí vzdělávací agentura',
-                'data': charts.club_members_subscriptions_breakdown.pop('students'),
+                'data': charts.members_subscriptions_breakdown.pop('students'),
                 'backgroundColor': '#083284',
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts.club_members_subscriptions_breakdown.keys()|list|assert_empty }}
+    {{ charts.members_subscriptions_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
-        'plugins': {'annotation': charts.club_members_annotations},
+        'plugins': {'annotation': charts.members_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Příchody
@@ -442,17 +440,17 @@ Graf s registracemi obsahuje všechny typy členství. Ať už nový člen při�
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.club_members_trend_labels,
+        'labels': charts.members_trend_labels,
         'datasets': [
             {
                 'label': 'všechny nové registrace',
-                'data': charts.club_members_trend_signups,
+                'data': charts.members_trend_signups,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'nová individuálně placená členství',
-                'data': charts.club_members_trend_individuals_signups,
+                'data': charts.members_trend_individuals_signups,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
@@ -461,7 +459,7 @@ Graf s registracemi obsahuje všechny typy členství. Ať už nový člen při�
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.club_members_trend_annotations},
+        'plugins': {'annotation': charts.members_trend_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Odchody
@@ -476,17 +474,17 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_. Tlustá čára za
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.club_members_trend_labels,
+        'labels': charts.members_trend_labels,
         'datasets': [
             {
                 'label': '% úbytku členů',
-                'data': charts.club_members_trend_churn_ptc,
+                'data': charts.members_trend_churn_ptc,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
             {
                 'label': '% úbytku individuálně platících členů',
-                'data': charts.club_members_trend_individuals_churn_ptc,
+                'data': charts.members_trend_individuals_churn_ptc,
                 'borderColor': '#dc3545',
                 'borderWidth': 1,
             },
@@ -495,7 +493,7 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_. Tlustá čára za
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.club_members_trend_annotations},
+        'plugins': {'annotation': charts.members_trend_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Délka setrvání v klubu
@@ -510,11 +508,11 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.club_members_labels,
+        'labels': charts.members_labels,
         'datasets': [
             {
                 'label': 'průměrná délka individuálně placeného členství v měsících',
-                'data': charts.club_members_individuals_duration,
+                'data': charts.members_individuals_duration,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
@@ -523,10 +521,8 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.club_members_annotations},
+        'plugins': {'annotation': charts.members_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
-
-#}
 
 ## Příručka
 
@@ -614,17 +610,17 @@ Chtěl bych mít v klubu v průměru aspoň dvě oficiální online akce měsí�
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.club_labels,
+        'labels': charts.events_labels,
         'datasets': [
             {
                 'label': 'počet oficiálních akcí',
-                'data': charts.club_events,
+                'data': charts.events_count,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'počet oficiálních akcí TTM/12',
-                'data': charts.club_events_ttm,
+                'data': charts.events_count_ttm,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
@@ -633,7 +629,7 @@ Chtěl bych mít v klubu v průměru aspoň dvě oficiální online akce měsí�
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.club_annotations},
+        'plugins': {'annotation': charts.events_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Ženy
@@ -652,11 +648,11 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.club_members_labels,
+        'labels': charts.members_labels,
         'datasets': [
             {
                 'label': '% žen v klubu',
-                'data': charts.club_members_women_ptc,
+                'data': charts.members_women_ptc,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
@@ -665,7 +661,7 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'min': 0, 'suggestedMax': 50}},
-        'plugins': {'annotation': charts.club_members_annotations},
+        'plugins': {'annotation': charts.members_annotations},
     }|tojson|forceescape }}"
     data-chart-milestones-offset-ptc="0"></canvas></div></div>
 
@@ -677,11 +673,11 @@ Chtěl bych, aby v průměru polovina přednášejících na online akcích v kl
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.club_labels,
+        'labels': charts.events_labels,
         'datasets': [
             {
                 'label': '% přednášejících žen TTM',
-                'data': charts.club_events_women_ptc_ttm,
+                'data': charts.events_women_ptc_ttm,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
@@ -690,7 +686,7 @@ Chtěl bych, aby v průměru polovina přednášejících na online akcích v kl
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'min': 0, 'suggestedMax': 50}},
-        'plugins': {'annotation': charts.club_annotations},
+        'plugins': {'annotation': charts.events_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Podíl žen mezi hosty podcastu
@@ -722,6 +718,8 @@ Návštěvnost měří [Simple Analytics](https://www.simpleanalytics.com/?refer
 Tady jen pár vybraných grafů, které se tam špatně naklikávají ručně.
 
 ### Souhrnná návštěvnost podle produktů
+
+Graf zobrazuje trend pouze zpětně za jeden rok, protože mi to tak stačí.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
@@ -776,6 +774,8 @@ Tady jen pár vybraných grafů, které se tam špatně naklikávají ručně.
 
 ### Celková návštěvnost
 
+Graf zobrazuje trend pouze zpětně za jeden rok, protože mi to tak stačí.
+
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
     data-chart-type="line"
@@ -796,9 +796,7 @@ Tady jen pár vybraných grafů, které se tam špatně naklikávají ručně.
         'plugins': {'annotation': charts.web_usage_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-## Marketing
-
-### Sociální sítě
+## Sociální sítě
 
 Vývoj počtu sledujících na profilech na relevantních sociálních sítích.
 
