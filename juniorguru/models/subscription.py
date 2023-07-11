@@ -16,9 +16,7 @@ class SubscribedPeriodIntervalUnit(StrEnum):
 @unique
 class SubscribedPeriodType(StrEnum):
     FREE = 'free'
-    TEAM = 'team'
     FINAID = 'finaid'
-    CORESKILL = 'coreskill'
     INDIVIDUALS = 'individuals'
     TRIAL = 'trial'
     PARTNER = 'partner'
@@ -146,34 +144,3 @@ class SubscribedPeriod(BaseModel):
 
     def __str__(self):
         return f'#{self.account_id} {self.start_on}…{self.end_on} {self.type}'
-
-
-@unique
-class SubscriptionActivityType(StrEnum):
-    BEGIN = 'begin'
-    END = 'end'
-
-
-class SubscriptionActivity(BaseModel):
-    account_id = CharField(null=True)
-    happening_on = DateField()
-    type = CharField(constraints=[check_enum('type', SubscriptionActivityType)])
-
-    @classmethod
-    def delete_duplicates(cls) -> int:
-        row_num = fn.row_number() \
-            .over(partition_by=[cls.account_id, cls.type],
-                  order_by=[cls.happening_on]) \
-            .alias('row_num')
-        subquery = cls.select(SubscriptionActivity.id, row_num) \
-            .from_(cls) \
-            .cte('subquery')
-        duplicate_ids = cls.select(subquery.c.id) \
-            .from_(subquery) \
-            .where(subquery.c.row_num > 1) \
-            .with_cte(subquery)
-        count = duplicate_ids.count()
-        cls.delete() \
-            .where(cls.id.in_(duplicate_ids)) \
-            .execute()
-        return count

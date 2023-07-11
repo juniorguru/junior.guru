@@ -1,5 +1,4 @@
 from datetime import timedelta
-import itertools
 from operator import itemgetter
 from pathlib import Path
 from typing import Any, Generator
@@ -13,31 +12,21 @@ from juniorguru.lib.memberful import Memberful
 from juniorguru.models.base import db
 from juniorguru.models.feminine_name import FeminineName
 from juniorguru.models.partner import Partner
-from juniorguru.models.subscription import SubscribedPeriodType, SubscriptionActivity, SubscriptionActivityType, SubscribedPeriod
+from juniorguru.models.subscription import SubscribedPeriodType, SubscribedPeriod
 
 
 MEMBERS_GQL_PATH = Path(__file__).parent / 'members.gql'
 
-ACTIVITIES_GQL_PATH = Path(__file__).parent / 'activities.gql'
-
-ACTIVITY_TYPES_MAPPING = {
-    'new_order': SubscriptionActivityType.BEGIN,
-    'new_gift': SubscriptionActivityType.BEGIN,
-    'subscription_deleted': SubscriptionActivityType.END,
-    'member_deleted': SubscriptionActivityType.END,
-    'subscription_deactivated': SubscriptionActivityType.END,
-}
-
 SUBSCRIBED_PERIOD_TYPES_MAPPING = {
     'THANKYOU': SubscribedPeriodType.FREE,
     'THANKYOUFOREVER': SubscribedPeriodType.FREE,
-    'THANKYOUTEAM': SubscribedPeriodType.TEAM,
+    'THANKYOUTEAM': SubscribedPeriodType.FREE,
     'PATREON': SubscribedPeriodType.FREE,
     'GITHUB': SubscribedPeriodType.FREE,
     'FOUNDERS': SubscribedPeriodType.FREE,
+    'CORESKILL': SubscribedPeriodType.FREE,
+    'STUDENTCORESKILL': SubscribedPeriodType.FREE,
     'FINAID': SubscribedPeriodType.FINAID,
-    'CORESKILL': SubscribedPeriodType.CORESKILL,
-    'STUDENTCORESKILL': SubscribedPeriodType.CORESKILL,
 }
 
 
@@ -86,48 +75,6 @@ def main():
                                         interval_unit=subscription['plan']['intervalUnit'],
                                         has_feminine_name=has_feminine_name,
                                         type=type)
-
-    # TODO
-    # - rozsirim obdobi pro zobrazovani SubscribedPeriod, protoze mozna je to cele akorat zpusobeno tim bugem
-    # - overim, co se tam presne sakra deje
-
-    # TODO pokud fakt musim pouzit activity log
-    # - subscription activity nebudu zatim deduplikovat, proste to ulozim
-    # - pak pojedu cyklus ze pujdu podle account_id a seradim podle happening_on
-    # - vyprintuju si jak ty udalosti jdou za sebou a budu se je snazit trochu pochopit na urovni jednoho cloveka
-    # - pokusim se normalizovat BEGIN a END tak, aby to bylo co nejvic konzistentni se SubscribedPeriod
-    # - pokud SubscribedPeriod se stejnym BEGIN a END uz existuje, tak necham byt
-    # - pokud SubscribedPeriod se stejnym BEGIN a END neexistuje, tak ho vytvorim i bez doplnujicich informaci
-    # - mozna si k takovym SubscribedPeriod budu ukladat, ze jde o fragment nebo stub
-
-    logger.info('Preparing subscription activity table')
-    SubscriptionActivity.drop_table()
-    SubscriptionActivity.create_table()
-
-    logger.info('Fetching activity log entries from Memberful')
-    query = ACTIVITIES_GQL_PATH.read_text()
-    activities = itertools.chain(memberful.get_nodes(query, dict(type='new_order')),
-                                 memberful.get_nodes(query, dict(type='new_gift')),
-                                 memberful.get_nodes(query, dict(type='subscription_deleted')),
-                                 memberful.get_nodes(query, dict(type='member_deleted')),
-                                 memberful.get_nodes(query, dict(type='subscription_deactivated')))
-    for activity in activities:
-        try:
-            account_id = activity['member']['id']
-        except (KeyError, TypeError):
-            account_id = None
-        activity_type = ACTIVITY_TYPES_MAPPING[activity['type']]
-        happening_on = arrow.get(activity['createdAt']).date()
-        logger.info(f"Saving {activity_type.upper()} activity for account {format_account_id(account_id)}, {happening_on}")
-        SubscriptionActivity.create(account_id=account_id,
-                                    happening_on=happening_on,
-                                    type=activity_type)
-    count = SubscriptionActivity.delete_duplicates()
-    logger.info(f"Deleted {count} duplicates")
-
-
-def format_account_id(account_id: str) -> str:
-    return f"#{account_id}" if account_id else '(deleted)'
 
 
 def get_subscribed_periods(subscription: dict) -> Generator[dict[str, Any], None, None]:

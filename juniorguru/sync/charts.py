@@ -23,8 +23,6 @@ CLUB_BEGIN_ON = date(2021, 2, 1)
 
 PODCAST_BEGIN_ON = date(2022, 1, 1)
 
-MEMBERS_DATA_CORRUPTION_END_ON = date(2023, 3, 1)
-
 MILESTONES = [
     (BUSINESS_BEGIN_ON, 'Začátek podnikání'),
     (date(2020, 9, 1), 'Vznik příručky'),
@@ -174,7 +172,7 @@ def podcast_women_ptc_ttm(months: list[date]) -> list[Number]:
 
 @namespace
 def members(today) -> dict[str, Any]:
-    months = charts.months(MEMBERS_DATA_CORRUPTION_END_ON, today)
+    months = charts.months(CLUB_BEGIN_ON, today)
     return dict(values=months,
                 labels=charts.labels(months),
                 annotations=charts.annotations(months, MILESTONES))
@@ -212,7 +210,7 @@ def members_individuals_duration(months: list[date]) -> list[Number]:
 
 @namespace
 def members_trend(today) -> dict[str, Any]:
-    months = charts.months(MEMBERS_DATA_CORRUPTION_END_ON, charts.previous_month(today))
+    months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
     return dict(values=months,
                 labels=charts.labels(months),
                 annotations=charts.annotations(months, MILESTONES))
