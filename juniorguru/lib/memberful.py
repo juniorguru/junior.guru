@@ -45,10 +45,8 @@ class Memberful():
         n = 0
         while cursor is not None:
             logger.debug(f'Sending a query with cursor {cursor!r}')
-            # Path(f'iteration-{n}_cursor-{cursor}_gql.txt').write_text(query + '\n\n' + json.dumps(dict(cursor=cursor, **variable_values), indent=2))
             result = self.client.execute(query_gql,
                                          variable_values=dict(cursor=cursor, **variable_values))
-            # Path(f'iteration_{n}_cursor-{cursor}_result.json').write_text(json.dumps(result, indent=2, ensure_ascii=False))
             yield result
             n += 1
             page_info = get_page_info(result)
