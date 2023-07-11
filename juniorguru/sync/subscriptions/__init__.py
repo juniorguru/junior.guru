@@ -87,6 +87,19 @@ def main():
                                         has_feminine_name=has_feminine_name,
                                         type=type)
 
+    # TODO
+    # - rozsirim obdobi pro zobrazovani SubscribedPeriod, protoze mozna je to cele akorat zpusobeno tim bugem
+    # - overim, co se tam presne sakra deje
+
+    # TODO pokud fakt musim pouzit activity log
+    # - subscription activity nebudu zatim deduplikovat, proste to ulozim
+    # - pak pojedu cyklus ze pujdu podle account_id a seradim podle happening_on
+    # - vyprintuju si jak ty udalosti jdou za sebou a budu se je snazit trochu pochopit na urovni jednoho cloveka
+    # - pokusim se normalizovat BEGIN a END tak, aby to bylo co nejvic konzistentni se SubscribedPeriod
+    # - pokud SubscribedPeriod se stejnym BEGIN a END uz existuje, tak necham byt
+    # - pokud SubscribedPeriod se stejnym BEGIN a END neexistuje, tak ho vytvorim i bez doplnujicich informaci
+    # - mozna si k takovym SubscribedPeriod budu ukladat, ze jde o fragment nebo stub
+
     logger.info('Preparing subscription activity table')
     SubscriptionActivity.drop_table()
     SubscriptionActivity.create_table()
