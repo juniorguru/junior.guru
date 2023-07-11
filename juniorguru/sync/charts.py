@@ -12,7 +12,7 @@ from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.followers import Followers
 from juniorguru.models.page import Page
 from juniorguru.models.podcast import PodcastEpisode
-from juniorguru.models.product_analytics import ProductAnalytics
+from juniorguru.models.web_usage import WebUsage
 from juniorguru.models.transaction import Transaction
 
 
@@ -279,21 +279,21 @@ def followers_breakdown(months: list[date]) -> list[Number]:
 
 
 @namespace
-def analytics(today) -> dict[str, Any]:
-    months = charts.months(*ProductAnalytics.months_range())
+def web_usage(today) -> dict[str, Any]:
+    months = charts.months(*WebUsage.months_range())
     return dict(values=months,
                 labels=charts.labels(months),
                 annotations=charts.annotations(months, MILESTONES))
 
 
 @chart
-def analytics_total(months: list[date]) -> list[Number]:
-    breakdown = charts.per_month_breakdown(ProductAnalytics.breakdown, months)
+def web_usage_total(months: list[date]) -> list[Number]:
+    breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
     return breakdown.pop('total')
 
 
 @chart
-def analytics_breakdown(months: list[date]) -> list[Number]:
-    breakdown = charts.per_month_breakdown(ProductAnalytics.breakdown, months)
+def web_usage_breakdown(months: list[date]) -> list[Number]:
+    breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
     del breakdown['total']
     return breakdown

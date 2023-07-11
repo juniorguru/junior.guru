@@ -5,7 +5,7 @@ import requests
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import charts, loggers
 from juniorguru.models.base import db
-from juniorguru.models.product_analytics import ProductAnalytics
+from juniorguru.models.web_usage import WebUsage
 
 
 PRODUCTS = {
@@ -27,8 +27,8 @@ logger = loggers.from_path(__file__)
 @cli.sync_command()
 @db.connection_context()
 def main():
-    ProductAnalytics.drop_table()
-    ProductAnalytics.create_table()
+    WebUsage.drop_table()
+    WebUsage.create_table()
 
     date_to = date.today()
     date_from = date_to - timedelta(days=30 * MONTHS_RANGE)
@@ -51,4 +51,4 @@ def main():
             data = response.json()
             starts_on = date.fromisoformat(time_range['start'])
             logger.info(f'Product {slug!r} got {data["pageviews"]} pageviews on {starts_on:%Y-%m}')
-            ProductAnalytics.create(slug=slug, starts_on=starts_on, pageviews=data['pageviews'])
+            WebUsage.create(product_slug=slug, month_starts_on=starts_on, pageviews=data['pageviews'])

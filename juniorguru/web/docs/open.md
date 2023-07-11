@@ -727,51 +727,51 @@ Tady jen pár vybraných grafů, které se tam špatně naklikávají ručně.
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.analytics_labels,
+        'labels': charts.web_usage_labels,
         'datasets': [
             {
                 'label': 'úvodní stránka',
-                'data': charts.analytics_breakdown.pop('home'),
+                'data': charts.web_usage_breakdown.pop('home'),
                 'borderColor': '#638CDD',
                 'borderWidth': 1,
             },
             {
                 'label': 'prodejní stránka klubu',
-                'data': charts.analytics_breakdown.pop('club'),
+                'data': charts.web_usage_breakdown.pop('club'),
                 'borderColor': '#dc3545',
                 'borderWidth': 1,
             },
             {
                 'label': 'příručka',
-                'data': charts.analytics_breakdown.pop('handbook'),
+                'data': charts.web_usage_breakdown.pop('handbook'),
                 'borderColor': '#02CABB',
                 'borderWidth': 1,
             },
             {
                 'label': 'katalog kurzů',
-                'data': charts.analytics_breakdown.pop('courses'),
+                'data': charts.web_usage_breakdown.pop('courses'),
                 'borderColor': '#00B7EB',
                 'borderWidth': 1,
             },
             {
                 'label': 'pracovní inzeráty',
-                'data': charts.analytics_breakdown.pop('jobs'),
+                'data': charts.web_usage_breakdown.pop('jobs'),
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
             {
                 'label': 'stránka s podcastem',
-                'data': charts.analytics_breakdown.pop('podcast'),
+                'data': charts.web_usage_breakdown.pop('podcast'),
                 'borderColor': '#083284',
                 'borderWidth': 1,
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts.analytics_breakdown.keys()|list|assert_empty }}
+    {{ charts.web_usage_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.analytics_annotations},
+        'plugins': {'annotation': charts.web_usage_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Celková návštěvnost
@@ -780,11 +780,11 @@ Tady jen pár vybraných grafů, které se tam špatně naklikávají ručně.
     class="chart" width="400" height="200"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.analytics_labels,
+        'labels': charts.web_usage_labels,
         'datasets': [
             {
                 'label': 'celková návštěvnost',
-                'data': charts.analytics_total,
+                'data': charts.web_usage_total,
                 'borderColor': '#638CDD',
                 'borderWidth': 2,
             },
@@ -793,7 +793,7 @@ Tady jen pár vybraných grafů, které se tam špatně naklikávají ručně.
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.analytics_annotations},
+        'plugins': {'annotation': charts.web_usage_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Marketing
