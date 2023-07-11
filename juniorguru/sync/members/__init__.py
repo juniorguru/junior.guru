@@ -64,7 +64,7 @@ def main():
     logger.info('Processing remaining club users who are Discord members')
     remaining_users = (user for user in ClubUser.members_listing()
                        if user.id not in seen_discord_ids)
-    reported_users = []
+    extra_users_ids = []
     for user in remaining_users:
         if user.id in (ClubMemberID.HONZA, ClubMemberID.HONZA_TEST):
             logger.debug(f"Skipping admin account #{user.id}")
@@ -73,25 +73,26 @@ def main():
         else:
             logger.warning(f"Club user #{user.id} is a Discord member, but doesn't have a Memberful account!")
             logger.debug(f"User #{user.id}:\n{pformat(model_to_dict(user))}")
-            reported_users.append(user)
-    discord_sync.run(report_missing_memberful_account, [user.id for user in reported_users])
+            extra_users_ids.append(user.id)
+    if extra_users_ids:
+        discord_sync.run(report_extra_users, extra_users_ids)
 
 
 @db.connection_context()
-async def report_missing_memberful_account(client, user_ids):
+async def report_extra_users(client, extra_users_ids: list[int]):
     logger.info('Prevent mistakes caused by out-of-sync data')
-    users = []
-    for user_id in user_ids:
+    extra_users = []
+    for extra_user_id in extra_users_ids:
         try:
-            users.append(await client.club_guild.fetch_member(user_id))
+            extra_users.append(await client.club_guild.fetch_member(extra_user_id))
         except NotFound:
-            logger.info(f"User #{user_id} is not on Discord anymore, skipping")
-    if users:
-        logger.info(f"Verified {len(users)} users, reporting them")
+            logger.info(f"User #{extra_user_id} is not on Discord anymore, skipping")
+    if extra_users:
+        logger.info(f"Verified {len(extra_users)} users, reporting them")
         channel = await client.fetch_channel(ClubChannelID.MODERATION)
         with mutating_discord(channel) as proxy:
             await proxy.send("⚠️ Vypadá to, že tito členové nemají účet na Memberful: "
-                            f"{', '.join(user.mention for user in users)}")
+                            f"{', '.join(user.mention for user in extra_users)}")
     else:
         logger.info('After all, there are no users to report')
 
