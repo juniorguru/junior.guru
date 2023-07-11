@@ -62,6 +62,7 @@ class Memberful():
             raise ValueError('Could not parse collection name')
         declared_count = None
         nodes_count = 0
+        duplicates_count = 0
         seen_node_ids = set()
         for result in self._query(query,
                                   lambda result: result[collection_name]['pageInfo'],
@@ -69,6 +70,7 @@ class Memberful():
             # save total count so we can later check if we got all the nodes
             count = result[collection_name]['totalCount']
             if declared_count is None:
+                logger.debug(f'Expecting {count} nodes')
                 declared_count = count
             assert declared_count == count, f'Memberful API suddenly declares different total count: {count} (≠ {declared_count})'
 
@@ -78,10 +80,12 @@ class Memberful():
                 node_id = node.get('id') or hashlib.sha256(json.dumps(node).encode()).hexdigest()
                 if node_id in seen_node_ids:
                     logger.debug(f'Dropping a duplicate node: {node_id!r}')
+                    duplicates_count += 1
                 else:
                     yield node
                     seen_node_ids.add(node_id)
                 nodes_count += 1
+        logger.debug(f'Dropped {duplicates_count} duplicate nodes')
         assert declared_count == nodes_count, f"Memberful API returned {nodes_count} nodes instead of {declared_count}"
 
     def mutate(self, mutation: str, variable_values: dict):
