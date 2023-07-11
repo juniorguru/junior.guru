@@ -61,7 +61,7 @@ async def process_member(client, member):
         discord_member = await client.club_guild.fetch_member(member.id)
         if discord_member.display_avatar:
             logger_m.info("Has avatar, downloading")
-            member.avatar_path = await download_avatar(discord_member.avatar)
+            member.avatar_path = await download_avatar(discord_member.display_avatar)
         if member.avatar_path:
             logger_m.info(f"Has avatar, downloaded as '{member.avatar_path}'")
         else:
