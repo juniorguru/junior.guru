@@ -317,6 +317,8 @@ Partnerství domlouvám osobně a je vždy na rok, potom s firmou jednáme o pro
 
 Ukončená partnerství: {% for partner in partners_expired %}{{ partner_link(partner.name, partner.url, 'open') }}{% if not loop.last %}, {% endif %}{% endfor %}.
 
+{#
+
 ## Členství v klubu
 
 [Placený klub](club.md) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**, ale platících členů může být i víc. Někteří si platí členství pouze aby mě podpořili, bez toho aby se vůbec na Discord přihlásili.
@@ -523,6 +525,8 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
         'scales': {'y': {'beginAtZero': true}},
         'plugins': {'annotation': charts.club_members_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
+
+#}
 
 ## Příručka
 

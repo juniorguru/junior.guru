@@ -1,0 +1,38 @@
+query fetch($cursor: String!) {
+    members(after: $cursor, state: ACTIVE) {
+        totalCount
+        pageInfo {
+            endCursor
+            hasNextPage
+        }
+        edges {
+            node {
+                id
+                discordUserId
+                email
+                fullName
+                metadata
+              	subscriptions {
+                    id
+                    active
+                    createdAt
+                    expiresAt
+                    trialStartAt
+                    trialEndAt
+                    coupon {
+                        code
+                    }
+                    orders {
+                        createdAt
+                        coupon {
+                            code
+                        }
+                    }
+                    plan {
+                        intervalUnit
+                    }
+                }
+            }
+        }
+    }
+}

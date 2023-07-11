@@ -55,11 +55,6 @@ class Partner(BaseModel):
             .order_by(ClubUser.display_name)
 
     @property
-    def list_student_subscriptions_billable(self) -> Iterable['PartnerStudentSubscription']:
-        return self.list_student_subscriptions \
-            .where(PartnerStudentSubscription.invoiced_on.is_null())
-
-    @property
     def list_jobs(self) -> Iterable[ListedJob]:
         return ListedJob.submitted_listing() \
             .join(self.__class__, on=(ListedJob.company_name == self.__class__.name)) \
@@ -112,12 +107,6 @@ class Partner(BaseModel):
             .having(fn.max(Partnership.starts_on) == Partnership.starts_on,
                     Partnership.starts_on < today,
                     Partnership.expires_on < today) \
-            .order_by(cls.name)
-
-    @classmethod
-    def having_students_listing(cls) -> Iterable['Partner']:
-        return cls.select() \
-            .where(cls.student_coupon.is_null(False)) \
             .order_by(cls.name)
 
     @classmethod
@@ -230,15 +219,3 @@ class Partnership(BaseModel):
                      done=registry.get(benefit.slug, False))
                 for benefit
                 in self.plan.benefits()]
-
-
-class PartnerStudentSubscription(BaseModel):
-    partner = ForeignKeyField(Partner, backref='list_student_subscriptions')
-    account_id = CharField()
-    name = CharField()
-    email = CharField()
-    started_on = DateField()
-    invoiced_on = DateField(null=True)
-
-    def __str__(self) -> str:
-        return f'{self.partner.slug}, #{self.account_id}, {self.started_on}, {self.invoiced_on}'

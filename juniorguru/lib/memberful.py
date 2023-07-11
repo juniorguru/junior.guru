@@ -1,3 +1,4 @@
+import hashlib
 import json
 import os
 import re
@@ -41,11 +42,15 @@ class Memberful():
         variable_values = variable_values or {}
         cursor = ''
         query_gql = gql(query)
+        n = 0
         while cursor is not None:
-            logger.debug('Sending a query')
+            logger.debug(f'Sending a query with cursor {cursor!r}')
+            # Path(f'iteration-{n}_cursor-{cursor}_gql.txt').write_text(query + '\n\n' + json.dumps(dict(cursor=cursor, **variable_values), indent=2))
             result = self.client.execute(query_gql,
                                          variable_values=dict(cursor=cursor, **variable_values))
+            # Path(f'iteration_{n}_cursor-{cursor}_result.json').write_text(json.dumps(result, indent=2, ensure_ascii=False))
             yield result
+            n += 1
             page_info = get_page_info(result)
             if page_info['hasNextPage']:
                 cursor = page_info['endCursor']
@@ -57,11 +62,29 @@ class Memberful():
             collection_name = match.group('collection_name')
         else:
             raise ValueError('Could not parse collection name')
+        declared_count = None
+        nodes_count = 0
+        seen_node_ids = set()
         for result in self._query(query,
                                   lambda result: result[collection_name]['pageInfo'],
-                                  variable_values):
+                                  variable_values=variable_values):
+            # save total count so we can later check if we got all the nodes
+            count = result[collection_name]['totalCount']
+            if declared_count is None:
+                declared_count = count
+            assert declared_count == count, f'Memberful API suddenly declares different total count: {count} (≠ {declared_count})'
+
+            # iterate over nodes and drop duplicates, because, unfortunately, the API returns duplicates
             for edge in result[collection_name]['edges']:
-                yield edge['node']
+                node = edge['node']
+                node_id = node.get('id') or hashlib.sha256(json.dumps(node).encode()).hexdigest()
+                if node_id in seen_node_ids:
+                    logger.debug(f'Dropping a duplicate node: {node_id!r}')
+                else:
+                    yield node
+                    seen_node_ids.add(node_id)
+                nodes_count += 1
+        assert declared_count == nodes_count, f"Memberful API returned {nodes_count} nodes instead of {declared_count}"
 
     def mutate(self, mutation: str, variable_values: dict):
         logger.debug('Sending a mutation')

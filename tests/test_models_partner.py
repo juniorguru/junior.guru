@@ -9,7 +9,7 @@ from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.event import Event
 from juniorguru.models.job import ListedJob, SubmittedJob
 from juniorguru.models.partner import (Partner, Partnership, PartnershipBenefit,
-                                       PartnershipPlan, PartnerStudentSubscription)
+                                       PartnershipPlan)
 from juniorguru.models.podcast import PodcastEpisode
 
 from testing_utils import prepare_course_provider_data, prepare_partner_data
@@ -48,18 +48,9 @@ def create_partnership(partner, starts_on, expires_on, plan=None, benefits_regis
                               benefits_registry=benefits_registry or [])
 
 
-def create_student_subscription(partner, **kwargs):
-    return PartnerStudentSubscription.create(partner=partner,
-                                             account_id='123',
-                                             name='Alice',
-                                             email='alice@example.com',
-                                             started_on=kwargs.get('started_on', date.today()),
-                                             invoiced_on=kwargs.get('invoiced_on', date.today()))
-
-
 @pytest.fixture
 def db_connection():
-    models = [Partner, PartnerStudentSubscription,
+    models = [Partner,
               Partnership, PartnershipPlan, PartnershipBenefit,
               ClubUser, ClubMessage,
               ListedJob, SubmittedJob,
@@ -188,21 +179,6 @@ def test_partner_expired_listing_skips_active_partners(db_connection):
     assert list(Partner.expired_listing(today=today)) == []
 
 
-def test_partner_having_students_listing(db_connection):
-    partner1 = create_partner(1, student_coupon='STUDENT!')
-    partner2 = create_partner(2, student_coupon=None)  # noqa
-    partner3 = create_partner(3, student_coupon='STUDENT!')
-
-    assert set(Partner.having_students_listing()) == {partner1, partner3}
-
-
-def test_partner_having_students_listing_sorts_by_name(db_connection):
-    partner1 = create_partner(1, name='Banana', student_coupon='STUDENT!')
-    partner2 = create_partner(3, name='Apple', student_coupon='STUDENT!')
-
-    assert list(Partner.having_students_listing()) == [partner2, partner1]
-
-
 def test_partner_course_provider(db_connection):
     partner = create_partner(123, name='Apple', slug='a')
     course_provider = CourseProvider.create(**prepare_course_provider_data(456, slug='a', partner=partner))
@@ -315,22 +291,6 @@ def test_partner_get_by_slug_doesnt_exist(db_connection):
 
     with pytest.raises(Partner.DoesNotExist):
         assert Partner.get_by_slug('zalando')
-
-
-def test_partner_list_student_subscriptions(db_connection):
-    partner = create_partner(1)
-    subscription1 = create_student_subscription(partner, invoiced_on=date.today())
-    subscription2 = create_student_subscription(partner, invoiced_on=None)
-
-    assert set(partner.list_student_subscriptions) == {subscription1, subscription2}
-
-
-def test_partner_list_student_subscriptions_billable(db_connection):
-    partner = create_partner(1)
-    subscription1 = create_student_subscription(partner, invoiced_on=date.today())  # noqa
-    subscription2 = create_student_subscription(partner, invoiced_on=None)
-
-    assert set(partner.list_student_subscriptions_billable) == {subscription2}
 
 
 def test_plan_get_by_slug(db_connection, plan_basic):
