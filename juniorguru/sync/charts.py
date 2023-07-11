@@ -46,7 +46,7 @@ logger = loggers.from_path(__file__)
                                 'followers',
                                 'club-content',
                                 'podcast',
-                                'product-analytics'])
+                                'web-usage'])
 @db.connection_context()
 def main():
     db.drop_tables([ChartNamespace, Chart])

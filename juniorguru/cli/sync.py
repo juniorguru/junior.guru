@@ -1,5 +1,5 @@
 import os
-from functools import wraps
+from functools import cached_property, wraps
 from pathlib import Path
 from time import perf_counter_ns
 
@@ -28,16 +28,13 @@ class Group(click.Group):
     sync_package = sync_package
 
     def __init__(self, *args, **kwargs):
-        self._sync_commands = None
         super().__init__(*args, **kwargs)
 
-    @property
+    @cached_property
     def sync_commands(self):
-        if self._sync_commands is None:
-            self._sync_commands = dict(import_commands(self.sync_package))
-        return self._sync_commands
+        return dict(import_commands(self.sync_package))
 
-    @property
+    @cached_property
     def dependencies_map(self):
         return {name: command.dependencies for name, command in self.sync_commands.items()}
 
@@ -59,6 +56,9 @@ class Group(click.Group):
                     logger[name].warning(f"Skipping dependencies: {', '.join(dependencies)} (at your own risk)")
                 elif dependencies:
                     logger[name].info(f"Dependencies: {', '.join(dependencies)}")
+                    unkwnown_dependencies = set(dependencies) - set(self.list_commands(context))
+                    if unkwnown_dependencies:
+                        raise NotImplementedError(f"Unknown dependencies: {', '.join(unkwnown_dependencies)}")
                     for dependency_name in dependencies:
                         logger[name].debug(f"Invoking dependency: {dependency_name}")
                         context.invoke(main.get_command(context, dependency_name))
