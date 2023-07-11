@@ -46,9 +46,13 @@ def main():
             account_id = None
         activity_type = ACTIVITY_TYPES_MAPPING[activity['type']]
         happening_on = arrow.get(activity['createdAt']).date()
-        logger.info(f"Saving {activity_type.upper()} activity for account #{account_id}, {happening_on}")
+        logger.info(f"Saving {activity_type.upper()} activity for account {format_account_id(account_id)}, {happening_on}")
         ClubSubscriptionActivity.create(account_id=account_id,
                                         happening_on=happening_on,
                                         type=activity_type)
     count = ClubSubscriptionActivity.delete_duplicates()
     logger.info(f"Deleted {count} duplicates")
+
+
+def format_account_id(account_id):
+    return f"#{account_id}" if account_id else '(deleted account)'
