@@ -29,5 +29,5 @@ class WebUsage(BaseModel):
     def breakdown(cls, date: date) -> dict[str, int]:
         breakdown = {product_slug: 0 for product_slug in cls.products()}
         for usage in cls.select().where(cls.month_starts_on == date.replace(day=1)):
-            breakdown[usage.slug] = max(breakdown[usage.product_slug], usage.pageviews)
+            breakdown[usage.product_slug] = max(breakdown[usage.product_slug], usage.pageviews)
         return breakdown
