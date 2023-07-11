@@ -96,3 +96,10 @@ def save_changes(paths, message, build_url, skip_ci):
             logger['save-changes'].warning('No changes to push')
     except subprocess.CalledProcessError:
         raise click.Abort()
+
+
+@main.command()
+@click.argument('path', default='juniorguru/data/data.db', type=click.Path(exists=True, path_type=Path))
+@click.pass_context
+def datasette(context: click.Context, path: Path):
+    subprocess.run(['datasette', str(path.absolute()), '--reload', '--open'], check=True)
