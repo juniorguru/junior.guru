@@ -199,6 +199,14 @@
   url: https://engeto.cz/
   partnerships:
     - plan: support
+      starts_on: 2023-08-01
+      expires_on: 2024-07-31
+      agreements:
+        - text: Honza pomůže s textem pracovního inzerátu na seniorního vývojáře.
+        - text: Dotáhneme první anketu mezi juniory. Výsledná data budou mít k dispozici jak junior.guru, tak ENGETO Academy.
+        - text: Až ENGETO Academy přepracuje svůj e-learning, domluvíme se, zda může Honza Javorek nějak pomoci s propagací toho, co ENGETO Academy nabízí ze své platformy zdarma na svém webu.
+
+    - plan: support
       starts_on: 2021-05-14
       expires_on: 2023-07-31
       benefits:
@@ -206,6 +214,7 @@
           done: https://www.linkedin.com/posts/honzajavorek_engeto-academy-se-rozhodla-podpo%C5%99it-klub-activity-6803201281570725888-6nI8
       agreements:
         - text: Vytvoříme anketu mezi juniory. Společně připravíme podklady. ENGETO Academy zajistí provoz ankety a kontrolu ankety odborníkem předtím, než ji spustíme. Výsledná data budou mít k dispozici jak junior.guru, tak ENGETO Academy.
+          done: yes
         - text: Honza Javorek využije svého vlivu v komunitě a pokusí se získat zpětnou vazbu na [novou platformu od ENGETO Academy](https://e-learning.engeto.cz/kurz/python-uvod-do-programovani), především ve srovnání s [naucse.python.cz](https://naucse.python.cz/).
         - text: Vytvoříme video průvodce nováčka v IT. Společně připravíme podklady. ENGETO Academy zajistí produkci a natočí většinu videí. Honza Javorek natočí videa, která jsou obsahově neutrální a nemají nic společného s ENGETO Academy kurzy. ENGETO Academy videa nabídne svým studentům a bude odkazovat na junior.guru. Honza Javorek vloží videa do [příručky](https://junior.guru/handbook/) a bude odkazovat na kompletní sérii na YouTube.
           done: https://www.youtube.com/playlist?list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI
