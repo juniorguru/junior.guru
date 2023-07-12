@@ -4,6 +4,7 @@ import sqlite3
 from collections.abc import Set
 from functools import wraps
 from pathlib import Path
+import czech_sort
 
 import scrapy
 from peewee import (Check, ConnectionContext as BaseConnectionContext, Model,
@@ -40,6 +41,9 @@ class SqliteDatabase(BaseSqliteDatabase):
 
 
 db = SqliteDatabase(DB_FILE, pragmas={'journal_mode': 'wal'})
+
+
+db.func('czech_sort')(czech_sort.bytes_key)
 
 
 class BaseModel(Model):
