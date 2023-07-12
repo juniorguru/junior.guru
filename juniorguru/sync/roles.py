@@ -36,7 +36,7 @@ STUDENT_ROLE_PREFIX = 'Student: '
 @cli.sync_command(dependencies=['club-content',
                                 'events',
                                 'avatars',
-                                'subscriptions',
+                                'members',
                                 'partners',
                                 'mentoring'])
 def main():
