@@ -776,19 +776,19 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích.
                 'label': 'osobní LinkedIn',
                 'data': charts.followers_breakdown.pop('linkedin_personal'),
                 'borderColor': '#1755d1',
-                'borderWidth': 1,
+                'borderWidth': 2,
             },
             {
                 'label': 'LinkedIn',
                 'data': charts.followers_breakdown.pop('linkedin'),
                 'borderColor': '#638CDD',
-                'borderWidth': 1,
+                'borderWidth': 2,
             },
             {
                 'label': 'YouTube',
                 'data': charts.followers_breakdown.pop('youtube'),
                 'borderColor': '#dc3545',
-                'borderWidth': 1,
+                'borderWidth': 2,
             },
         ],
     }|tojson|forceescape }}"
