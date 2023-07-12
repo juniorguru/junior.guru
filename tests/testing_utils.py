@@ -2,9 +2,27 @@ import json
 import random
 from datetime import date, timedelta
 from pathlib import Path
+from typing import Generator
 
+from peewee import SqliteDatabase
 import pytest
 from strictyaml import load
+
+from juniorguru.models.base import BaseModel, db as production_db
+
+
+def prepare_test_db(models: list[BaseModel]) -> Generator[SqliteDatabase, None, None]:
+    """
+    Prepares a temporary in-memory SQLite database with the given models
+    and the same custom functions as on the production database.
+    """
+    db = SqliteDatabase(':memory:')
+    db._functions = dict(production_db._functions)  # copy functions
+    with db.connection_context():
+        db.bind(models)
+        db.create_tables(models)
+        yield db
+        db.drop_tables(models)
 
 
 def load_yaml(s, schema):

@@ -1,10 +1,10 @@
 from datetime import datetime
 
 import pytest
-from peewee import SqliteDatabase
 
 from juniorguru.models.club import ClubUser
 from juniorguru.models.event import Event, EventSpeaking
+from testing_utils import prepare_test_db
 
 
 def create_member(id):
@@ -25,17 +25,11 @@ def create_event(id, **kwargs):
 
 
 @pytest.fixture
-def db_connection():
-    models = [Event, EventSpeaking, ClubUser]
-    db = SqliteDatabase(':memory:')
-    with db:
-        db.bind(models)
-        db.create_tables(models)
-        yield db
-        db.drop_tables(models)
+def test_db():
+    yield from prepare_test_db([Event, EventSpeaking, ClubUser])
 
 
-def test_archive_listing(db_connection):
+def test_archive_listing(test_db):
     event1 = create_event(1, start_at=datetime(2021, 4, 15))
     event2 = create_event(2, start_at=datetime(2021, 5, 1))
     event3 = create_event(3, start_at=datetime(2021, 5, 3))  # noqa
@@ -44,14 +38,14 @@ def test_archive_listing(db_connection):
     assert list(Event.archive_listing(now=datetime(2021, 5, 2))) == [event2, event1, event4]
 
 
-def test_archive_listing_time(db_connection):
+def test_archive_listing_time(test_db):
     event1 = create_event(1, start_at=datetime(2021, 5, 2, 11))
     event2 = create_event(2, start_at=datetime(2021, 5, 2, 22))  # noqa
 
     assert list(Event.archive_listing(now=datetime(2021, 5, 2, 18))) == [event1]
 
 
-def test_planned_listing(db_connection):
+def test_planned_listing(test_db):
     event1 = create_event(1, start_at=datetime(2021, 4, 15))  # noqa
     event2 = create_event(2, start_at=datetime(2021, 6, 1))
     event3 = create_event(3, start_at=datetime(2021, 5, 3))
@@ -60,14 +54,14 @@ def test_planned_listing(db_connection):
     assert list(Event.planned_listing(now=datetime(2021, 5, 2))) == [event3, event2]
 
 
-def test_planned_listing_time(db_connection):
+def test_planned_listing_time(test_db):
     event1 = create_event(1, start_at=datetime(2021, 5, 2, 11))  # noqa
     event2 = create_event(2, start_at=datetime(2021, 5, 2, 22))
 
     assert list(Event.planned_listing(now=datetime(2021, 5, 2, 18))) == [event2]
 
 
-def test_club_listing(db_connection):
+def test_club_listing(test_db):
     event1 = create_event(1, start_at=datetime(2021, 4, 15))  # noqa
     event2 = create_event(2, start_at=datetime(2021, 5, 1), avatar_path='alice.jpg')
     event3 = create_event(3, start_at=datetime(2021, 5, 3))  # noqa
@@ -76,7 +70,7 @@ def test_club_listing(db_connection):
     assert list(Event.club_listing(now=datetime(2021, 5, 2))) == [event2, event4]
 
 
-def test_next(db_connection):
+def test_next(test_db):
     event1 = create_event(1, start_at=datetime(2021, 4, 15))  # noqa
     event2 = create_event(2, start_at=datetime(2021, 5, 1))  # noqa
     event3 = create_event(3, start_at=datetime(2021, 5, 3))
@@ -85,21 +79,21 @@ def test_next(db_connection):
     assert Event.next(now=datetime(2021, 5, 2)) == event3
 
 
-def test_next_time_before(db_connection):
+def test_next_time_before(test_db):
     event1 = create_event(1, start_at=datetime(2021, 5, 2, 11))  # noqa
     event2 = create_event(2, start_at=datetime(2021, 5, 2, 22))
 
     assert Event.next(now=datetime(2021, 5, 2, 18)) == event2
 
 
-def test_next_time_after(db_connection):
+def test_next_time_after(test_db):
     create_event(1, start_at=datetime(2021, 5, 2, 11))
     create_event(2, start_at=datetime(2021, 5, 2, 22))
 
     assert Event.next(now=datetime(2021, 5, 2, 22, 5)) is None
 
 
-def test_next_many_planned(db_connection):
+def test_next_many_planned(test_db):
     event1 = create_event(1, start_at=datetime(2021, 4, 15))  # noqa
     event2 = create_event(2, start_at=datetime(2021, 6, 1))  # noqa
     event3 = create_event(3, start_at=datetime(2021, 5, 3))
@@ -108,7 +102,7 @@ def test_next_many_planned(db_connection):
     assert Event.next(now=datetime(2021, 5, 2)) == event3
 
 
-def test_next_nothing_planned(db_connection):
+def test_next_nothing_planned(test_db):
     create_event(1, start_at=datetime(2021, 4, 15))
     create_event(2, start_at=datetime(2021, 5, 1))
     create_event(4, start_at=datetime(2021, 3, 15))
@@ -116,7 +110,7 @@ def test_next_nothing_planned(db_connection):
     assert Event.next(now=datetime(2021, 5, 2)) is None
 
 
-def test_list_speaking_members(db_connection):
+def test_list_speaking_members(test_db):
     event1 = create_event(1)
     member1 = create_member(1)
     EventSpeaking.create(event=event1, speaker=member1)
@@ -132,13 +126,13 @@ def test_list_speaking_members(db_connection):
     assert set(Event.list_speaking_members()) == {member1, member2, member3}
 
 
-def test_url(db_connection):
+def test_url(test_db):
     event = create_event(1, start_at=datetime(2021, 5, 17, 16, 30, 00))
 
     assert event.url == 'https://junior.guru/events/#2021-05-17T18-30-00'
 
 
-def test_slug(db_connection):
+def test_slug(test_db):
     event = create_event(1, start_at=datetime(2021, 5, 17, 16, 30, 00))
 
     assert event.slug == '2021-05-17T18-30-00'

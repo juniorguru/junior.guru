@@ -1,21 +1,7 @@
 from datetime import date, datetime
 from zoneinfo import ZoneInfo
 
-import pytest
-from peewee import SqliteDatabase
-
 from juniorguru.models.podcast import PodcastEpisode
-
-
-@pytest.fixture
-def db_connection():
-    models = [PodcastEpisode]
-    db = SqliteDatabase(':memory:')
-    with db:
-        db.bind(models)
-        db.create_tables(models)
-        yield db
-        db.drop_tables(models)
 
 
 def test_publish_at_prg():

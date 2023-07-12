@@ -1,22 +1,16 @@
 import pytest
-from peewee import SqliteDatabase
 
 from juniorguru.models.club import ClubUser
 from juniorguru.models.mentor import Mentor
+from testing_utils import prepare_test_db
 
 
 @pytest.fixture
-def db_connection():
-    models = [Mentor, ClubUser]
-    db = SqliteDatabase(':memory:')
-    with db:
-        db.bind(models)
-        db.create_tables(models)
-        yield db
-        db.drop_tables(models)
+def test_db():
+    yield from prepare_test_db([Mentor, ClubUser])
 
 
-def test_listing(db_connection):
+def test_listing(test_db):
     user1 = ClubUser.create(id=123, display_name='Honza', mention='<@111>', tag='...')
     mentor1 = Mentor.create(id=123, name='Honza J.', topics='a, b, c', user=user1)
     user2 = ClubUser.create(id=456, display_name='Anna', mention='<@222>', tag='...')
@@ -31,7 +25,7 @@ def test_listing(db_connection):
     ('koučování na profesní růst, pohovor nanečisto', True),
     ('datová analýza, Python, Power BI, Excel', False),
 ])
-def test_interviews_listing(db_connection, topics, expected):
+def test_interviews_listing(test_db, topics, expected):
     user = ClubUser.create(id=123, display_name='Honza', mention='...', tag='...')
     mentor = Mentor.create(id=123, name='Honza J.', topics=topics, user=user)
 

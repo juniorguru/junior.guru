@@ -1,19 +1,14 @@
 from datetime import date
 
 import pytest
-from peewee import SqliteDatabase
 
 from juniorguru.models.story import Story
+from testing_utils import prepare_test_db
 
 
 @pytest.fixture
-def db_connection():
-    db = SqliteDatabase(':memory:')
-    with db:
-        Story.bind(db)
-        Story.create_table()
-        yield db
-        Story.drop_table()
+def test_db():
+    yield from prepare_test_db([Story])
 
 
 def create_story(**kwargs):
@@ -26,7 +21,7 @@ def create_story(**kwargs):
     )
 
 
-def test_listing_sorts_by_date_desc(db_connection):
+def test_listing_sorts_by_date_desc(test_db):
     story1 = create_story(date=date(2010, 7, 6))
     story2 = create_story(date=date(2019, 7, 6))
     story3 = create_story(date=date(2014, 7, 6))
@@ -34,7 +29,7 @@ def test_listing_sorts_by_date_desc(db_connection):
     assert list(Story.listing()) == [story2, story3, story1]
 
 
-def test_tag_listing(db_connection):
+def test_tag_listing(test_db):
     story1 = create_story(tags=['science', 'age'])
     story2 = create_story(tags=['science', 'careerswitch'])  # noqa
     story3 = create_story(tags=['age', 'careerswitch'])
@@ -42,7 +37,7 @@ def test_tag_listing(db_connection):
     assert set(Story.tag_listing('age')) == {story1, story3}
 
 
-def test_tags_mapping(db_connection):
+def test_tags_mapping(test_db):
     story1 = create_story(date=date(2010, 7, 6), tags=['science', 'age'])
     story2 = create_story(date=date(2019, 7, 6), tags=['science', 'careerswitch'])
     story3 = create_story(date=date(2014, 7, 6), tags=['age', 'careerswitch'])
@@ -59,5 +54,5 @@ def test_tags_mapping(db_connection):
     ('http://www.example.com/foo-bar?moo=1#hell=o', 'example.com'),
     ('https://www.exAMPLE.com/', 'example.com'),
 ))
-def test_publisher(db_connection, url, expected):
+def test_publisher(test_db, url, expected):
     assert create_story(url=url).publisher == expected

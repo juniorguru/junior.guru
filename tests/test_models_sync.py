@@ -1,22 +1,18 @@
 import pytest
-from peewee import SqliteDatabase
 
 from juniorguru.models.sync import Sync, SyncCommand
+from testing_utils import prepare_test_db
 
 
 NS_IN_MIN = 60000000000
 
 
 @pytest.fixture
-def db_connection():
-    db = SqliteDatabase(':memory:')
-    with db:
-        Sync.bind(db)
-        yield db
-        db.drop_tables([Sync, SyncCommand])
+def test_db():
+    yield from prepare_test_db([Sync])
 
 
-def test_start_flushes_on_different_id(db_connection):
+def test_start_flushes_on_different_id(test_db):
     sync = Sync.start(123)
     sync.command_start('dogs', 0)
     sync.command_end('dogs', 5 * NS_IN_MIN)
@@ -28,7 +24,7 @@ def test_start_flushes_on_different_id(db_connection):
     assert SyncCommand.select().count() == 1
 
 
-def test_start_continues_on_the_same_id(db_connection):
+def test_start_continues_on_the_same_id(test_db):
     sync = Sync.start(123)
     sync.command_start('dogs', 0)
     sync.command_end('dogs', 5 * NS_IN_MIN)
@@ -40,7 +36,7 @@ def test_start_continues_on_the_same_id(db_connection):
     assert SyncCommand.select().count() == 2
 
 
-def test_count_commands(db_connection):
+def test_count_commands(test_db):
     sync = Sync.start(123)
     sync.command_start('dogs', 0)
     sync.command_end('dogs', 5 * NS_IN_MIN)
@@ -50,7 +46,7 @@ def test_count_commands(db_connection):
     assert sync.count_commands() == 2
 
 
-def test_times_min(db_connection):
+def test_times_min(test_db):
     sync = Sync.start(123)
     sync.command_start('dogs', 0)
     sync.command_end('dogs', 5 * NS_IN_MIN)
@@ -66,7 +62,7 @@ def test_times_min(db_connection):
     ('dogs', True),
     ('cats', False),
 ])
-def test_is_command_seen(db_connection, name, expected):
+def test_is_command_seen(test_db, name, expected):
     sync = Sync.start(123)
     sync.command_start('dogs', 0)
     sync.command_end('dogs', 5 * NS_IN_MIN)
@@ -78,7 +74,7 @@ def test_is_command_seen(db_connection, name, expected):
     ('dogs', False),
     ('cats', True),
 ])
-def test_is_command_unseen(db_connection, name, expected):
+def test_is_command_unseen(test_db, name, expected):
     sync = Sync.start(123)
     sync.command_start('dogs', 0)
     sync.command_end('dogs', 5 * NS_IN_MIN)

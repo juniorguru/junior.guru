@@ -1,12 +1,11 @@
 from datetime import date
 
 import pytest
-from peewee import SqliteDatabase
 
 from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.partner import Partner, Partnership, PartnershipPlan
 
-from testing_utils import prepare_course_provider_data, prepare_partner_data
+from testing_utils import prepare_test_db, prepare_course_provider_data, prepare_partner_data
 
 
 def create_course_provider(id, **kwargs):
@@ -18,17 +17,16 @@ def create_partner(id, **kwargs):
 
 
 @pytest.fixture
-def db_connection():
-    models = [CourseProvider, Partner, Partnership, PartnershipPlan]
-    db = SqliteDatabase(':memory:')
-    with db:
-        db.bind(models)
-        db.create_tables(models)
-        yield db
-        db.drop_tables(models)
+def test_db():
+    yield from prepare_test_db([
+        CourseProvider,
+        Partner,
+        Partnership,
+        PartnershipPlan,
+    ])
 
 
-def test_listing_sorts_alphabetically(db_connection):
+def test_listing_sorts_alphabetically(test_db):
     course_provider1 = create_course_provider(1, name='Cool Courses')
     course_provider2 = create_course_provider(2, name='Awesome Courses')
     course_provider3 = create_course_provider(3, name='Wonderful Courses')
@@ -36,7 +34,7 @@ def test_listing_sorts_alphabetically(db_connection):
     assert list(CourseProvider.listing()) == [course_provider2, course_provider1, course_provider3]
 
 
-def test_listing_sorts_alphabetically_case_insensitive(db_connection):
+def test_listing_sorts_alphabetically_case_insensitive(test_db):
     course_provider1 = create_course_provider(1, name='Cool Courses')
     course_provider2 = create_course_provider(2, name='awesome Courses')
     course_provider3 = create_course_provider(3, name='Wonderful Courses')
@@ -45,7 +43,7 @@ def test_listing_sorts_alphabetically_case_insensitive(db_connection):
     assert list(CourseProvider.listing()) == [course_provider2, course_provider1, course_provider3, course_provider4]
 
 
-def test_listing_sorts_partners_first(db_connection):
+def test_listing_sorts_partners_first(test_db):
     today = date(2021, 5, 2)
     plan = PartnershipPlan.create(slug='plan', name='Plan', price=10000)
     partner = create_partner(1)
@@ -57,7 +55,7 @@ def test_listing_sorts_partners_first(db_connection):
     assert list(CourseProvider.listing(today=today)) == [course_provider3, course_provider2, course_provider1]
 
 
-def test_listing_sorts_only_active_partners_first(db_connection):
+def test_listing_sorts_only_active_partners_first(test_db):
     today = date(2021, 5, 2)
     plan = PartnershipPlan.create(slug='plan', name='Plan', price=10000)
     partner = create_partner(1)
@@ -69,7 +67,7 @@ def test_listing_sorts_only_active_partners_first(db_connection):
     assert list(CourseProvider.listing(today=today)) == [course_provider2, course_provider1, course_provider3]
 
 
-def test_listing_sorts_partners_by_hierarchy_rank_then_by_name(db_connection):
+def test_listing_sorts_partners_by_hierarchy_rank_then_by_name(test_db):
     today = date(2021, 5, 2)
     plan1 = PartnershipPlan.create(slug='plan-top', name='Plan Top', price=10000)
     partner1 = create_partner(1)

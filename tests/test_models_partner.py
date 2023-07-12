@@ -2,7 +2,6 @@ import uuid
 from datetime import date, datetime
 
 import pytest
-from peewee import SqliteDatabase
 
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.course_provider import CourseProvider
@@ -13,6 +12,7 @@ from juniorguru.models.partner import (Partner, Partnership, PartnershipBenefit,
 from juniorguru.models.podcast import PodcastEpisode
 
 from testing_utils import prepare_course_provider_data, prepare_partner_data
+from testing_utils import prepare_test_db
 
 
 def create_partner(id, **kwargs):
@@ -49,18 +49,14 @@ def create_partnership(partner, starts_on, expires_on, plan=None, benefits_regis
 
 
 @pytest.fixture
-def db_connection():
-    models = [Partner,
-              Partnership, PartnershipPlan, PartnershipBenefit,
-              ClubUser, ClubMessage,
-              ListedJob, SubmittedJob,
-              Event, PodcastEpisode, CourseProvider]
-    db = SqliteDatabase(':memory:')
-    with db:
-        db.bind(models)
-        db.create_tables(models)
-        yield db
-        db.drop_tables(models)
+def test_db():
+    yield from prepare_test_db([
+        Partner,
+        Partnership, PartnershipPlan, PartnershipBenefit,
+        ClubUser, ClubMessage,
+        ListedJob, SubmittedJob,
+        Event, PodcastEpisode, CourseProvider,
+    ])
 
 
 @pytest.fixture
@@ -78,13 +74,13 @@ def plan_handbook():
     return create_plan('handbook', ['logo_handbook', 'flowers', 'balloon'])
 
 
-def test_partner_name_markdown_bold(db_connection):
+def test_partner_name_markdown_bold(test_db):
     partner = create_partner(1, name='Banana Company')
 
     assert partner.name_markdown_bold == '**Banana Company**'
 
 
-def test_partner_active_partnership(db_connection):
+def test_partner_active_partnership(test_db):
     today = date(2021, 5, 2)
     partner = create_partner(1)
     partnership1 = create_partnership(partner, date(2020, 12, 1), date(2021, 1, 1))  # noqa
@@ -93,7 +89,7 @@ def test_partner_active_partnership(db_connection):
     assert partner.active_partnership(today=today) == partnership2
 
 
-def test_partner_active_partnership_no_active_partnership(db_connection):
+def test_partner_active_partnership_no_active_partnership(test_db):
     today = date(2021, 5, 2)
     partner = create_partner(1)
     create_partnership(partner, date(2020, 12, 1), date(2021, 1, 1))
@@ -102,13 +98,13 @@ def test_partner_active_partnership_no_active_partnership(db_connection):
     assert partner.active_partnership(today=today) is None
 
 
-def test_partner_active_partnership_no_partnership(db_connection):
+def test_partner_active_partnership_no_partnership(test_db):
     partner = create_partner(1)
 
     assert partner.active_partnership() is None
 
 
-def test_partner_first_partnership(db_connection):
+def test_partner_first_partnership(test_db):
     partner = create_partner(1)
     partnership1 = create_partnership(partner, date(2020, 12, 1), date(2021, 1, 1))
     partnership2 = create_partnership(partner, date(2021, 4, 1), None)  # noqa
@@ -116,13 +112,13 @@ def test_partner_first_partnership(db_connection):
     assert partner.first_partnership() == partnership1
 
 
-def test_partner_first_partnership_no_partnership(db_connection):
+def test_partner_first_partnership_no_partnership(test_db):
     partner = create_partner(1)
 
     assert partner.first_partnership() is None
 
 
-def test_partner_expired_listing(db_connection):
+def test_partner_expired_listing(test_db):
     today = date(2023, 5, 2)
     partner1 = create_partner(1)
     create_partnership(partner1, date(2023, 3, 1), date(2023, 4, 1))
@@ -136,7 +132,7 @@ def test_partner_expired_listing(db_connection):
     assert set(Partner.expired_listing(today=today)) == {partner1, partner2}
 
 
-def test_partner_expired_listing_skips_barters(db_connection):
+def test_partner_expired_listing_skips_barters(test_db):
     today = date(2023, 5, 1)
     partner1 = create_partner(1)
     create_partnership(partner1, date(2023, 3, 1), date(2023, 4, 1))
@@ -146,7 +142,7 @@ def test_partner_expired_listing_skips_barters(db_connection):
     assert set(Partner.expired_listing(today=today)) == {partner1}
 
 
-def test_partner_expired_listing_skips_planned(db_connection):
+def test_partner_expired_listing_skips_planned(test_db):
     today = date(2023, 5, 1)
     partner1 = create_partner(1)
     create_partnership(partner1, date(2023, 2, 1), date(2023, 4, 1))
@@ -158,7 +154,7 @@ def test_partner_expired_listing_skips_planned(db_connection):
     assert set(Partner.expired_listing(today=today)) == {partner1, partner2}
 
 
-def test_partner_expired_listing_sorts_by_name(db_connection):
+def test_partner_expired_listing_sorts_by_name(test_db):
     today = date(2023, 6, 1)
     partner1 = create_partner(1, name='Company B')
     create_partnership(partner1, date(2023, 2, 1), date(2023, 5, 1))
@@ -170,7 +166,7 @@ def test_partner_expired_listing_sorts_by_name(db_connection):
     assert list(Partner.expired_listing(today=today)) == [partner3, partner1, partner2]
 
 
-def test_partner_expired_listing_skips_active_partners(db_connection):
+def test_partner_expired_listing_skips_active_partners(test_db):
     today = date(2023, 6, 1)
     partner1 = create_partner(1)
     create_partnership(partner1, date(2023, 2, 1), date(2023, 5, 1))
@@ -179,14 +175,14 @@ def test_partner_expired_listing_skips_active_partners(db_connection):
     assert list(Partner.expired_listing(today=today)) == []
 
 
-def test_partner_course_provider(db_connection):
+def test_partner_course_provider(test_db):
     partner = create_partner(123, name='Apple', slug='a')
     course_provider = CourseProvider.create(**prepare_course_provider_data(456, slug='a', partner=partner))
 
     assert partner.course_provider == course_provider
 
 
-def test_partner_course_provider_is_none(db_connection):
+def test_partner_course_provider_is_none(test_db):
     partner = create_partner(123, name='Xena', slug='x')
     CourseProvider.create(**prepare_course_provider_data(456, slug='a'))
 
@@ -197,13 +193,13 @@ def test_partner_course_provider_is_none(db_connection):
     ('STUDENT!', True),
     (None, False),
 ])
-def test_partner_has_students(db_connection, student_coupon, expected):
+def test_partner_has_students(test_db, student_coupon, expected):
     partner = create_partner(1, student_coupon=student_coupon)
 
     assert partner.has_students is expected
 
 
-def test_partner_list_members(db_connection):
+def test_partner_list_members(test_db):
     member1 = ClubUser.create(display_name='Bob', mention='<@111>', coupon='XEROX', tag='abc#1234')
     member2 = ClubUser.create(display_name='Alice', mention='<@222>', coupon='XEROX', tag='abc#1234')
     member3 = ClubUser.create(display_name='Celine', mention='<@333>', coupon='ZALANDO', tag='abc#1234')  # noqa
@@ -212,7 +208,7 @@ def test_partner_list_members(db_connection):
     assert list(partner.list_members) == [member2, member1]
 
 
-def test_partner_list_student_members(db_connection):
+def test_partner_list_student_members(test_db):
     member1 = ClubUser.create(display_name='Bob', mention='<@111>', coupon='XEROXSTUDENT', tag='abc#1234')
     member2 = ClubUser.create(display_name='Alice', mention='<@222>', coupon='XEROXSTUDENT', tag='abc#1234')
     member3 = ClubUser.create(display_name='Celine', mention='<@333>', coupon='ZALANDOSTUDENT', tag='abc#1234')  # noqa
@@ -221,7 +217,7 @@ def test_partner_list_student_members(db_connection):
     assert list(partner.list_student_members) == [member2, member1]
 
 
-def test_partner_list_jobs(db_connection):
+def test_partner_list_jobs(test_db):
     def create_job(id, company_name, title='Title'):
         submitted_job = SubmittedJob.create(id=id,
                                             title=title,
@@ -244,7 +240,7 @@ def test_partner_list_jobs(db_connection):
     assert list(partner.list_jobs) == [job3, job1]
 
 
-def test_partner_list_events(db_connection):
+def test_partner_list_events(test_db):
     def create_event(id, partner=None):
         return Event.create(id=id,
                             partner=partner,
@@ -260,7 +256,7 @@ def test_partner_list_events(db_connection):
     assert set(partner.list_events) == {event2, event3}
 
 
-def test_partner_list_podcast_episodes(db_connection):
+def test_partner_list_podcast_episodes(test_db):
     def create_episode(id, partner=None):
         return PodcastEpisode.create(id=id,
                                      partner=partner,
@@ -279,60 +275,60 @@ def test_partner_list_podcast_episodes(db_connection):
     assert set(partner.list_podcast_episodes) == {episode2, episode3}
 
 
-def test_partner_get_by_slug(db_connection):
+def test_partner_get_by_slug(test_db):
     create_partner(1, slug='xerox')
     partner = create_partner(2, slug='zalando')
 
     assert Partner.get_by_slug('zalando') == partner
 
 
-def test_partner_get_by_slug_doesnt_exist(db_connection):
+def test_partner_get_by_slug_doesnt_exist(test_db):
     create_partner(1, slug='xerox')
 
     with pytest.raises(Partner.DoesNotExist):
         assert Partner.get_by_slug('zalando')
 
 
-def test_plan_get_by_slug(db_connection, plan_basic):
+def test_plan_get_by_slug(test_db, plan_basic):
     assert PartnershipPlan.get_by_slug('basic') == plan_basic
 
 
-def test_plan_get_by_slug_doesnt_exist(db_connection):
+def test_plan_get_by_slug_doesnt_exist(test_db):
     with pytest.raises(PartnershipPlan.DoesNotExist):
         assert PartnershipPlan.get_by_slug('basic')
 
 
-def test_plan_hierarchy(db_connection, plan_basic, plan_top):
+def test_plan_hierarchy(test_db, plan_basic, plan_top):
     setup_plan_hierarchy(plan_basic, plan_top)
 
     assert list(plan_top.hierarchy) == [plan_basic, plan_top]
 
 
-def test_plan_benefits_all(db_connection, plan_basic, plan_top):
+def test_plan_benefits_all(test_db, plan_basic, plan_top):
     setup_plan_hierarchy(plan_basic, plan_top)
 
     assert [benefit.slug for benefit in plan_top.benefits()] == ['food', 'drinks', 'flowers', 'balloon']
 
 
-def test_plan_benefits_own(db_connection, plan_basic, plan_top):
+def test_plan_benefits_own(test_db, plan_basic, plan_top):
     setup_plan_hierarchy(plan_basic, plan_top)
 
     assert [benefit.slug for benefit in plan_top.benefits(all=False)] == ['flowers', 'balloon']
 
 
-def test_plan_benefits_slugs(db_connection, plan_basic, plan_top):
+def test_plan_benefits_slugs(test_db, plan_basic, plan_top):
     setup_plan_hierarchy(plan_basic, plan_top)
 
     assert plan_top.benefits_slugs() == ['food', 'drinks', 'flowers', 'balloon']
 
 
-def test_plan_benefits_slugs_all(db_connection, plan_basic, plan_top):
+def test_plan_benefits_slugs_all(test_db, plan_basic, plan_top):
     setup_plan_hierarchy(plan_basic, plan_top)
 
     assert plan_top.benefits_slugs(all=False) == ['flowers', 'balloon']
 
 
-def test_partnership_days_until_expires(db_connection):
+def test_partnership_days_until_expires(test_db):
     today = date(2022, 12, 24)
     partner = create_partner(1)
     partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15))
@@ -340,7 +336,7 @@ def test_partnership_days_until_expires(db_connection):
     assert partnership.days_until_expires(today=today) == 22
 
 
-def test_partnership_evaluate_benefits_registry(db_connection):
+def test_partnership_evaluate_benefits_registry(test_db):
     partner = create_partner(1)
     plan = create_plan('awesome', ['foo', 'bar', 'moo', 'wow'])
     partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15),
@@ -359,7 +355,7 @@ def test_partnership_evaluate_benefits_registry(db_connection):
     ]
 
 
-def test_partnership_evaluate_benefits_registry_urls(db_connection):
+def test_partnership_evaluate_benefits_registry_urls(test_db):
     partner = create_partner(1)
     plan = create_plan('awesome', ['foo'])
     partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15),
@@ -373,7 +369,7 @@ def test_partnership_evaluate_benefits_registry_urls(db_connection):
     ]
 
 
-def test_partnership_evaluate_benefits_evaluators(db_connection):
+def test_partnership_evaluate_benefits_evaluators(test_db):
     partner = create_partner(1)
     plan = create_plan('awesome', ['foo', 'bar', 'moo', 'wow'])
     partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15),
@@ -389,7 +385,7 @@ def test_partnership_evaluate_benefits_evaluators(db_connection):
     ]
 
 
-def test_partnership_evaluate_benefits_registry_overrides_evaluators(db_connection):
+def test_partnership_evaluate_benefits_registry_overrides_evaluators(test_db):
     partner = create_partner(1)
     plan = create_plan('awesome', ['foo', 'moo'])
     partnership = create_partnership(partner, date(2020, 12, 1), date(2023, 1, 15),
@@ -407,7 +403,7 @@ def test_partnership_evaluate_benefits_registry_overrides_evaluators(db_connecti
     ]
 
 
-def test_partnership_active_listing(db_connection):
+def test_partnership_active_listing(test_db):
     today = date(2021, 5, 2)
     partnership1 = create_partnership(create_partner(1), today, date(2021, 4, 1))  # noqa
     partnership2 = create_partnership(create_partner(2), today, date(2021, 5, 1))  # noqa
@@ -417,7 +413,7 @@ def test_partnership_active_listing(db_connection):
     assert set(Partnership.active_listing(today=today)) == {partnership3, partnership4}
 
 
-def test_partnership_active_listing_with_barters(db_connection):
+def test_partnership_active_listing_with_barters(test_db):
     today = date(2021, 5, 1)
     partnership1 = create_partnership(create_partner(1), today, date(2021, 5, 1))
     partnership2 = create_partnership(create_partner(2), today, None)
@@ -425,7 +421,7 @@ def test_partnership_active_listing_with_barters(db_connection):
     assert set(Partnership.active_listing(today=today)) == {partnership1, partnership2}
 
 
-def test_partnership_active_listing_without_barters(db_connection):
+def test_partnership_active_listing_without_barters(test_db):
     today = date(2021, 5, 1)
     partnership1 = create_partnership(create_partner(1), today, date(2021, 5, 1))
     partnership2 = create_partnership(create_partner(2), today, None)  # noqa
@@ -433,7 +429,7 @@ def test_partnership_active_listing_without_barters(db_connection):
     assert set(Partnership.active_listing(today=today, include_barters=False)) == {partnership1}
 
 
-def test_partnership_active_listing_skips_planned(db_connection):
+def test_partnership_active_listing_skips_planned(test_db):
     today = date(2021, 5, 2)
     partnership1 = create_partnership(create_partner(1), date(2021, 5, 1), None)
     partnership2 = create_partnership(create_partner(2), date(2021, 5, 2), None)
@@ -442,7 +438,7 @@ def test_partnership_active_listing_skips_planned(db_connection):
     assert set(Partnership.active_listing(today=today)) == {partnership1, partnership2}
 
 
-def test_partnership_active_listing_sorts_by_hierarchy_rank_then_by_name(db_connection, plan_basic, plan_top):
+def test_partnership_active_listing_sorts_by_hierarchy_rank_then_by_name(test_db, plan_basic, plan_top):
     setup_plan_hierarchy(plan_basic, plan_top)
     today = date(2021, 5, 2)
     partnership1 = create_partnership(create_partner(1, name='C'), date(2021, 4, 1), None, plan=plan_basic)
@@ -452,7 +448,7 @@ def test_partnership_active_listing_sorts_by_hierarchy_rank_then_by_name(db_conn
     assert list(Partnership.active_listing(today=today)) == [partnership2, partnership3, partnership1]
 
 
-def test_partnership_active_listing_multiple_partnerships(db_connection):
+def test_partnership_active_listing_multiple_partnerships(test_db):
     today = date(2023, 6, 1)
     partner1 = create_partner(1)
     partnership_a = create_partnership(partner1, date(2023, 2, 1), date(2023, 5, 1))  # noqa
@@ -461,7 +457,7 @@ def test_partnership_active_listing_multiple_partnerships(db_connection):
     assert list(Partnership.active_listing(today=today)) == [partnership_b]
 
 
-def test_partnership_handbook_listing(db_connection, plan_basic, plan_handbook):
+def test_partnership_handbook_listing(test_db, plan_basic, plan_handbook):
     partner1 = create_partner(1)
     partnership1 = create_partnership(partner1, date(2023, 1, 1), None, plan=plan_basic)  # noqa
     partner2 = create_partner(2)
@@ -472,7 +468,7 @@ def test_partnership_handbook_listing(db_connection, plan_basic, plan_handbook):
     assert list(Partnership.handbook_listing()) == [partnership2]
 
 
-def test_partnership_handbook_listing_sorts_by_name(db_connection, plan_handbook):
+def test_partnership_handbook_listing_sorts_by_name(test_db, plan_handbook):
     partner1 = create_partner(1, name='Orange')
     partnership1 = create_partnership(partner1, date(2023, 1, 1), None, plan=plan_handbook)
     partner2 = create_partner(2, name='Banana')
