@@ -30,8 +30,9 @@ def test_listing_sorts_alphabetically(test_db):
     course_provider1 = create_course_provider(1, name='Cool Courses')
     course_provider2 = create_course_provider(2, name='Awesome Courses')
     course_provider3 = create_course_provider(3, name='Wonderful Courses')
+    course_provider4 = create_course_provider(4, name='České Kurzy')
 
-    assert list(CourseProvider.listing()) == [course_provider2, course_provider1, course_provider3]
+    assert list(CourseProvider.listing()) == [course_provider2, course_provider1, course_provider4, course_provider3]
 
 
 def test_listing_sorts_alphabetically_case_insensitive(test_db):
