@@ -1,17 +1,17 @@
 from operator import itemgetter
 from pathlib import Path
 from pprint import pformat
-from discord import NotFound
 
-from playhouse.shortcuts import model_to_dict
 import arrow
+from discord import NotFound
+from playhouse.shortcuts import model_to_dict
 
-from juniorguru.lib.mutations import mutating_discord
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.coupons import parse_coupon
 from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID
 from juniorguru.lib.memberful import Memberful
+from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser
 from juniorguru.models.feminine_name import FeminineName

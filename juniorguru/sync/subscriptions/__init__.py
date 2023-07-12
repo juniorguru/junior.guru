@@ -12,7 +12,7 @@ from juniorguru.lib.memberful import Memberful
 from juniorguru.models.base import db
 from juniorguru.models.feminine_name import FeminineName
 from juniorguru.models.partner import Partner
-from juniorguru.models.subscription import SubscribedPeriodType, SubscribedPeriod
+from juniorguru.models.subscription import SubscribedPeriod, SubscribedPeriodType
 
 
 MEMBERS_GQL_PATH = Path(__file__).parent / 'members.gql'

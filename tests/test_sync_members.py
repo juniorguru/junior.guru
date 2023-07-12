@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.members import get_coupon, get_active_subscription
+from juniorguru.sync.members import get_active_subscription, get_coupon
 
 
 def test_get_coupon():

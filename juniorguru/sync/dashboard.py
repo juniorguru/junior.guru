@@ -12,7 +12,7 @@ from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubChannelID
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
-from juniorguru.models.club import (ClubDocumentedRole, ClubMessage, ClubUser)
+from juniorguru.models.club import ClubDocumentedRole, ClubMessage, ClubUser
 from juniorguru.models.event import Event
 from juniorguru.models.partner import Partnership
 from juniorguru.models.subscription import SubscribedPeriod

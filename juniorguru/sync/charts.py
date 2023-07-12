@@ -13,8 +13,8 @@ from juniorguru.models.followers import Followers
 from juniorguru.models.page import Page
 from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.subscription import SubscribedPeriod
-from juniorguru.models.web_usage import WebUsage
 from juniorguru.models.transaction import Transaction
+from juniorguru.models.web_usage import WebUsage
 
 
 BUSINESS_BEGIN_ON = date(2020, 1, 1)

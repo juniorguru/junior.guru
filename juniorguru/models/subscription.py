@@ -1,10 +1,11 @@
+import math
 from collections import Counter
 from enum import StrEnum, unique
-import math
-from juniorguru.lib.charts import month_range
 
+from peewee import BooleanField, CharField, DateField, fn
+
+from juniorguru.lib.charts import month_range
 from juniorguru.models.base import BaseModel, check_enum
-from peewee import (CharField, DateField, fn, BooleanField)
 
 
 @unique
