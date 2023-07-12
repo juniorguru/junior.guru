@@ -80,6 +80,7 @@ KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value
     r'udacity': 'udacity',
     r'data\s*camp\w*': 'datacamp',
     r'(it\s*)?step(\.org)?': 'step',
+    r'coders\s*lab': 'coderslab',
 }.items()}
 
 TOPIC_CHANNELS = {re.compile(key): value for key, value in {
