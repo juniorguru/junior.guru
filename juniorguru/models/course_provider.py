@@ -31,7 +31,7 @@ class CourseProvider(BaseModel):
     def list_courses_up(self) -> Iterable['CourseUP']:
         return CourseUP.select() \
             .where(CourseUP.cz_business_id == self.cz_business_id) \
-            .order_by(fn.czech_sort(CourseUP.name))
+            .order_by(fn.lower(CourseUP.name))
 
     @classmethod
     def listing(cls, today: date=None) -> Iterable['CourseProvider']:
@@ -40,7 +40,7 @@ class CourseProvider(BaseModel):
         priority_slugs = [course_provider.slug for course_provider in priority]
         query = cls.select() \
             .where(cls.slug.not_in(priority_slugs)) \
-            .order_by(fn.czech_sort(cls.name))
+            .order_by(fn.lower(cls.name))
         return priority + list(query)
 
     @classmethod
