@@ -40,6 +40,7 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=['transactions',
                                 'subscriptions',
+                                'members',
                                 'pages',
                                 'events',
                                 'followers',
