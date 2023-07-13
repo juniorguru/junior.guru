@@ -3,6 +3,7 @@ from datetime import date, timedelta
 import pytest
 
 from juniorguru.models.transaction import Transaction
+
 from testing_utils import prepare_test_db
 
 

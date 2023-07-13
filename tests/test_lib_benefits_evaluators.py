@@ -6,8 +6,7 @@ from juniorguru.lib.benefits_evaluators import evaluate_members
 from juniorguru.models.club import ClubUser
 from juniorguru.models.partner import Partner, Partnership
 
-from testing_utils import prepare_partner_data
-from testing_utils import prepare_test_db
+from testing_utils import prepare_partner_data, prepare_test_db
 
 
 @pytest.fixture

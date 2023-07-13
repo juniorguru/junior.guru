@@ -11,8 +11,8 @@ from juniorguru.models.partner import (Partner, Partnership, PartnershipBenefit,
                                        PartnershipPlan)
 from juniorguru.models.podcast import PodcastEpisode
 
-from testing_utils import prepare_course_provider_data, prepare_partner_data
-from testing_utils import prepare_test_db
+from testing_utils import (prepare_course_provider_data, prepare_partner_data,
+                           prepare_test_db)
 
 
 def create_partner(id, **kwargs):

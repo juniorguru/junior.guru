@@ -2,6 +2,7 @@ import pytest
 
 from juniorguru.models.club import ClubUser
 from juniorguru.models.mentor import Mentor
+
 from testing_utils import prepare_test_db
 
 

@@ -3,6 +3,7 @@ from datetime import date
 import pytest
 
 from juniorguru.models.followers import Followers
+
 from testing_utils import prepare_test_db
 
 

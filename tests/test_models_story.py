@@ -3,6 +3,7 @@ from datetime import date
 import pytest
 
 from juniorguru.models.story import Story
+
 from testing_utils import prepare_test_db
 
 

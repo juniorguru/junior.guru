@@ -4,8 +4,8 @@ from datetime import date, timedelta
 from pathlib import Path
 from typing import Generator
 
-from peewee import SqliteDatabase
 import pytest
+from peewee import SqliteDatabase
 from strictyaml import load
 
 from juniorguru.models.base import BaseModel, db as production_db

@@ -5,7 +5,8 @@ import pytest
 from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.partner import Partner, Partnership, PartnershipPlan
 
-from testing_utils import prepare_test_db, prepare_course_provider_data, prepare_partner_data
+from testing_utils import (prepare_course_provider_data, prepare_partner_data,
+                           prepare_test_db)
 
 
 def create_course_provider(id, **kwargs):

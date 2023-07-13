@@ -4,9 +4,9 @@ import sqlite3
 from collections.abc import Set
 from functools import wraps
 from pathlib import Path
-from czech_sort import bytes_key as czech_sort_key
 
 import scrapy
+from czech_sort import bytes_key as czech_sort_key
 from peewee import (Check, ConnectionContext as BaseConnectionContext, Model,
                     SqliteDatabase as BaseSqliteDatabase)
 from playhouse.sqlite_ext import JSONField as BaseJSONField

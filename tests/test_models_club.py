@@ -4,6 +4,7 @@ import pytest
 
 from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID, get_starting_emoji
 from juniorguru.models.club import ClubMessage, ClubPin, ClubUser
+
 from testing_utils import prepare_test_db
 
 
