@@ -7,6 +7,7 @@ BLOCKLIST = [
     ('title', re.compile(r'\b(plc|cnc) programátor', re.I)),
     ('title', re.compile(r'elektro', re.I)),
     ('title', re.compile(r'\bkonstruktér', re.I)),
+    ('title', re.compile(r'\boperátor výroby', re.I)),
     ('title', re.compile(r'\bcae inženýr', re.I)),
     ('title', re.compile(r'\bseřizovač', re.I)),
     ('company_name', re.compile(r'Advantage Consulting', re.I)),
