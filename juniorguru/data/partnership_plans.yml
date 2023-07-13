@@ -1,5 +1,5 @@
 - slug: support
-  name: Podporujeme junior.guru
+  name: Základní tarif
   benefits:
     - text: Logo na [junior.guru/club](https://junior.guru/club/)
       icon: star
@@ -10,10 +10,16 @@
     - text: Oznámení partnerství v klubu
       icon: balloon
       slug: welcome_club
+    - text: Zvýraznění na [junior.guru/courses](https://junior.guru/courses/)
+      icon: sun
+      slug: courses_highlight
+    - text: Odkaz na [junior.guru/courses](https://junior.guru/courses/) nemá „nofollow“
+      icon: link-45deg
+      slug: courses_seo
   price: 15000
 
 - slug: hiring
-  name: Najímáme juniory
+  name: Stříbrný tarif
   includes: support
   benefits:
     - text: 1 online akce v klubu
@@ -28,10 +34,16 @@
     - text: Oznámení partnerství na sociálních sítích
       icon: megaphone
       slug: welcome_social
+    - text: Logo na podstránce [junior.guru/courses](https://junior.guru/courses/)
+      icon: star
+      slug: courses_logo
+    - text: 1 měsíc členství v [junior.guru/club](https://junior.guru/club/) pro studenty kurzu
+      icon: mortarboard
+      slug: students_1m
   price: 40000
 
 - slug: branding
-  name: Budujeme značku
+  name: Zlatý tarif
   includes: hiring
   benefits:
     - text: Druhý roční inzerát na [junior.guru/jobs](https://junior.guru/jobs/)
@@ -43,5 +55,8 @@
     - text: Pozvání do [junior.guru/podcast](https://junior.guru/podcast/)
       icon: mic
       slug: podcast
+    - text: 3 měsíce členství v [junior.guru/club](https://junior.guru/club/) pro studenty kurzu
+      icon: mortarboard
+      slug: students_3m
   price: 80000
   limit: 4
