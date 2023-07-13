@@ -54,6 +54,9 @@ async def discord_task(client: Client):
 
 
 async def process_message(discord_channel: TextChannel, message: ClubMessage):
+    if message.author.id == ClubMemberID.BOT:
+        logger.debug(f'Message {message.url} sent by the bot itself, skipping')
+        return
     if message.type == 'default' and message.is_intro:
         logger.info(f'Welcoming member #{message.author.id}')
         await welcome(discord_channel, message)
