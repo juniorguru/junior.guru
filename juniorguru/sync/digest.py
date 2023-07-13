@@ -82,7 +82,7 @@ def format_channel_digest(channel_digest: dict) -> str:
     else:
         text += f'**{channel_digest["channel_name"]}** v #{channel_digest["parent_channel_name"]}'
     text += ('\n'
-             f'{calc_reading_time(channel_digest["size"])} minut čtení'
+             f'{calc_reading_time(channel_digest["size"])} min čtení'
              ' – '
              f'[Číst diskuzi](https://discord.com/channels/{CLUB_GUILD}/{channel_digest["channel_id"]}/)')
     return text

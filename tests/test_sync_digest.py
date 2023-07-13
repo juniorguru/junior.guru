@@ -32,7 +32,7 @@ def test_format_channel_digest():
                           size=4)
 
     assert format_channel_digest(channel_digest) == ('**#general**\n'
-                                                     '1 minut čtení'
+                                                     '1 min čtení'
                                                      ' – '
                                                      f'[Číst diskuzi](https://discord.com/channels/{CLUB_GUILD}/123/)')
 
