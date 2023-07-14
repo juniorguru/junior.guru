@@ -48,17 +48,17 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command()
-@click.option('--clear-cache/--keep-cache')
+@click.option('--clear-cache/--keep-cache', default=False)
 @click.pass_context
 def main(context, clear_cache):
-    logger.info('Reading cache')
     cache_path = context.obj['cache_dir'] / 'meetups.json'
     if clear_cache:
         cache_path.unlink(missing_ok=True)
     try:
+        logger.info('Loading data from cache')
         data = json.loads(cache_path.read_text())
     except FileNotFoundError:
-        logger.warning('No cache found')
+        logger.debug('No cache found')
         data = []
         for feed in FEEDS:
             logger.info(f'Downloading {feed["format"]!r} feed from {feed["source_url"]}')

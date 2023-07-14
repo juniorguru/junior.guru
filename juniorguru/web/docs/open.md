@@ -317,6 +317,8 @@ Partnerství domlouvám osobně a je vždy na rok, potom s firmou jednáme o pro
 
 Ukončená partnerství: {% for partner in partners_expired %}{{ partner_link(partner.name, partner.url, 'open') }}{% if not loop.last %}, {% endif %}{% endfor %}.
 
+{#
+
 ## Členství v klubu
 
 [Placený klub](club.md) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**, ale platících členů může být i víc. Někteří si platí členství pouze aby mě podpořili, bez toho aby se vůbec na Discord přihlásili.
@@ -494,6 +496,8 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
         'plugins': {'annotation': charts.members_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
+#}
+
 ## Příručka
 
 Orientační metriky co se týče stránek v [příručce](handbook/index.md).
@@ -606,6 +610,8 @@ Chtěl bych mít v klubu v průměru aspoň dvě oficiální online akce měsí�
 
 Podíl žen sleduji z vlastní zvědavosti a není to žádná přesná metrika. Nikdo nikde nevyplňuje, zda je žena nebo muž. Pro účely statistik se to určuje jen odhadem podle křestního jména a tvaru příjmení.
 
+{#
+
 ### Podíl žen v klubu
 
 Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/cri/lidske-zdroje-v-informacnich-technologiich-2020) je v českém IT pouze 10 % žen. Tento podíl se od jejich [předchozí analýzy v roce 2018](https://www.czso.cz/csu/czso/cri/ict-odbornici-v-ceske-republice-a-jejich-mzdy-2018) nezlepšil, naopak nás definitivně předběhly už všechny ostatní státy v Evropě.
@@ -630,6 +636,8 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
         'plugins': {'annotation': charts.members_annotations},
     }|tojson|forceescape }}"
     data-chart-milestones-offset-ptc="0"></canvas></div></div>
+
+#}
 
 ### Podíl žen mezi přednášejícími
 

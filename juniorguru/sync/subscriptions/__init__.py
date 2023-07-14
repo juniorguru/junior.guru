@@ -1,9 +1,10 @@
-from datetime import timedelta
+import itertools
 from operator import itemgetter
 from pathlib import Path
-from typing import Any, Generator
+from typing import Generator
 
 import arrow
+import click
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
@@ -12,21 +13,30 @@ from juniorguru.lib.memberful import Memberful
 from juniorguru.models.base import db
 from juniorguru.models.feminine_name import FeminineName
 from juniorguru.models.partner import Partner
-from juniorguru.models.subscription import SubscribedPeriod, SubscribedPeriodType
+from juniorguru.models.subscription import SubscriptionActivity, SubscriptionType
 
 
-MEMBERS_GQL_PATH = Path(__file__).parent / 'members.gql'
+ACTIVITIES_GQL_PATH = Path(__file__).parent / 'activities.gql'
 
-SUBSCRIBED_PERIOD_TYPES_MAPPING = {
-    'THANKYOU': SubscribedPeriodType.FREE,
-    'THANKYOUFOREVER': SubscribedPeriodType.FREE,
-    'THANKYOUTEAM': SubscribedPeriodType.FREE,
-    'PATREON': SubscribedPeriodType.FREE,
-    'GITHUB': SubscribedPeriodType.FREE,
-    'FOUNDERS': SubscribedPeriodType.FREE,
-    'CORESKILL': SubscribedPeriodType.FREE,
-    'STUDENTCORESKILL': SubscribedPeriodType.FREE,
-    'FINAID': SubscribedPeriodType.FINAID,
+ACTIVITY_TYPES_MAPPING = {
+    'new_order': 'order',
+    'renewal': 'order',
+    'gift_activated': 'order',
+    'subscription_deactivated': 'deactivation',
+}
+
+SUBSCRIPTIONS_GQL_PATH = Path(__file__).parent / 'subscriptions.gql'
+
+SUBSCRIPTION_TYPES_MAPPING = {
+    'THANKYOU': SubscriptionType.FREE,
+    'THANKYOUFOREVER': SubscriptionType.FREE,
+    'THANKYOUTEAM': SubscriptionType.FREE,
+    'PATREON': SubscriptionType.FREE,
+    'GITHUB': SubscriptionType.FREE,
+    'FOUNDERS': SubscriptionType.FREE,
+    'CORESKILL': SubscriptionType.FREE,
+    'STUDENTCORESKILL': SubscriptionType.FREE,
+    'FINAID': SubscriptionType.FINAID,
 }
 
 
@@ -34,69 +44,91 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command(dependencies=['partners', 'feminine-names'])
+@click.option('--clear-cache/--keep-cache', default=False)
+@click.pass_context
 @db.connection_context()
-def main():
-    memberful = Memberful()
+def main(context, clear_cache):
+    memberful = Memberful(cache_dir=context.obj['cache_dir'],
+                          clear_cache=clear_cache)
 
-    logger.info('Preparing subscribed periods table')
-    SubscribedPeriod.drop_table()
-    SubscribedPeriod.create_table()
+    logger.info('Preparing')
+    SubscriptionActivity.drop_table()
+    SubscriptionActivity.create_table()
 
-    logger.info('Mapping coupons to subscribed period types')
-    subscribed_period_types_mapping = {
-        **{parse_coupon(coupon)['name']: SubscribedPeriodType.PARTNER
+    subscripton_types_mapping = {
+        **{parse_coupon(coupon)['name']: SubscriptionType.PARTNER
         for coupon in Partner.coupons()},
-        **{parse_coupon(coupon)['name']: SubscribedPeriodType.STUDENT
+        **{parse_coupon(coupon)['name']: SubscriptionType.STUDENT
         for coupon in Partner.student_coupons()},
-        **SUBSCRIBED_PERIOD_TYPES_MAPPING
+        **SUBSCRIPTION_TYPES_MAPPING
     }
 
-    logger.info('Fetching all subscriptions from Memberful')
-    members = memberful.get_nodes(MEMBERS_GQL_PATH.read_text())
-    for member in members:
-        logger.info(f'Processing member #{member["id"]} (subscriptions: {len(member["subscriptions"])})')
-        name = member['fullName'].strip()
-        has_feminine_name = FeminineName.is_feminine(name)
+    def has_feminine_name(name) -> bool:
+        return FeminineName.is_feminine(name.strip())
 
-        for subscription in member['subscriptions']:
-            logger.debug(f'Processing subscription #{subscription["id"]}')
-            for n, subscribed_period in enumerate(get_subscribed_periods(subscription), start=1):
-                logger.debug(f'Processing subscribed period #{n}: {subscribed_period!r}')
-                if subscribed_period['coupon']:
-                    coupon_name = parse_coupon(subscribed_period['coupon'])['name']
-                    type = subscribed_period_types_mapping.get(coupon_name, SubscribedPeriodType.INDIVIDUALS)
-                elif subscribed_period['is_trial']:
-                    type = SubscribedPeriodType.TRIAL
-                else:
-                    type = SubscribedPeriodType.INDIVIDUALS
-                SubscribedPeriod.create(account_id=member['id'],
-                                        start_on=subscribed_period['start_on'],
-                                        end_on=subscribed_period['end_on'],
-                                        interval_unit=subscription['plan']['intervalUnit'],
-                                        has_feminine_name=has_feminine_name,
-                                        type=type)
-
-
-def get_subscribed_periods(subscription: dict) -> Generator[dict[str, Any], None, None]:
-    orders = list(sorted(subscription['orders'], key=itemgetter('createdAt'), reverse=True))
-    renewal_on = arrow.get(subscription['expiresAt']).date()
-
-    if subscription.get('trialStartAt') and subscription.get('trialEndAt'):
-        trial = (arrow.get(subscription['trialStartAt']).date(),
-                 arrow.get(subscription['trialEndAt']).date() - timedelta(days=1))
-    else:
-        trial = None
-
-    for i, order in enumerate(orders):
-        start_on = arrow.get(order['createdAt']).date()
-        end_on = renewal_on - timedelta(days=1)
-        is_trial = ((start_on, end_on) == trial) if trial else False
-
-        if subscription['coupon'] and i == 0:
-            coupon = subscription['coupon']
+    logger.info('Fetching activities from Memberful')
+    query = ACTIVITIES_GQL_PATH.read_text()
+    activities = itertools.chain.from_iterable(memberful.get_nodes(query, dict(type=type))
+                                               for type in ACTIVITY_TYPES_MAPPING)
+    for activity in activities:
+        try:
+            account_id = activity['member']['id']
+        except (KeyError, TypeError):
+            logger.debug('Activity with no account ID, skipping')
         else:
-            coupon = order['coupon']
-        coupon = (coupon or {}).get('code')
+            SubscriptionActivity.add(account_id=account_id,
+                                     account_has_feminine_name=has_feminine_name(activity['member']['fullName']),
+                                     happened_at=arrow.get(activity['createdAt']).naive,
+                                     type=ACTIVITY_TYPES_MAPPING[activity['type']])
 
-        yield dict(start_on=start_on, end_on=end_on, is_trial=is_trial, coupon=coupon)
-        renewal_on = start_on
+    logger.info('Fetching subscriptions from Memberful')
+    for subscription in memberful.get_nodes(SUBSCRIPTIONS_GQL_PATH.read_text()):
+        for activity in activities_from_subscription(subscription):
+            activity['account_has_feminine_name'] = has_feminine_name(subscription['member']['fullName'])
+            try:
+                coupon_name = parse_coupon(activity['order_coupon'])['name']
+            except TypeError:
+                activity['subscription_type'] = None
+            else:
+                activity['subscription_type'] = subscripton_types_mapping.get(coupon_name)
+            SubscriptionActivity.add(**activity)
+
+    SubscriptionActivity.cleanup()
+    logger.info(f'Finished with {SubscriptionActivity.count()} activities')
+
+
+def activities_from_subscription(subscription: dict) -> Generator[dict, None, None]:
+    account_id = subscription['member']['id']
+    subscription_interval = subscription['plan']['intervalUnit']
+    subscription_coupon = (subscription['coupon'] or {}).get('code')
+
+    yield dict(account_id=account_id,
+               type='order',
+               happened_at=arrow.get(subscription['createdAt']).naive,
+               subscription_interval=subscription_interval,
+               order_coupon=subscription_coupon)
+    if subscription['trialStartAt']:
+        yield dict(account_id=account_id,
+                   type='trial_start',
+                   happened_at=arrow.get(subscription['trialStartAt']).naive,
+                   subscription_interval=subscription_interval,
+                   order_coupon=subscription_coupon)
+    if subscription['trialEndAt']:
+        yield dict(account_id=account_id,
+                   type='trial_end',
+                   happened_at=arrow.get(subscription['trialEndAt']).naive,
+                   subscription_interval=subscription_interval,
+                   order_coupon=subscription_coupon)
+
+    orders = sorted(subscription['orders'], key=itemgetter('createdAt'), reverse=True)
+    for i, order in enumerate(orders):
+        if subscription_coupon and i == 0:
+            order_coupon = subscription_coupon
+        else:
+            order_coupon = (order['coupon'] or {}).get('code')
+
+        yield dict(account_id=account_id,
+                   type='order',
+                   happened_at=arrow.get(order['createdAt']).naive,
+                   subscription_interval=subscription['plan']['intervalUnit'],
+                   order_coupon=order_coupon)

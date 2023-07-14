@@ -1,8 +1,9 @@
 import hashlib
 import json
 import os
+from pathlib import Path
 import re
-from typing import Callable
+from typing import Any, Callable, Generator
 
 from gql import Client, gql
 from gql.transport.requests import RequestsHTTPTransport
@@ -22,12 +23,14 @@ class Memberful():
     # https://memberful.com/help/integrate/advanced/memberful-api/
     # https://juniorguru.memberful.com/api/graphql/explorer?api_user_id=52463
 
-    def __init__(self, api_key=None):
+    def __init__(self, api_key: str=None, cache_dir: str|Path=None, clear_cache: bool=False):
+        self.cache_dir = Path(cache_dir) if cache_dir else None
+        self.clear_cache = clear_cache
         self.api_key = api_key or MEMBERFUL_API_KEY
         self._client = None
 
     @property
-    def client(self):
+    def client(self) -> Client:
         if not self._client:
             logger.debug('Connecting')
             transport = RequestsHTTPTransport(url='https://juniorguru.memberful.com/api/graphql/',
@@ -38,24 +41,11 @@ class Memberful():
             self._client = Client(transport=transport)
         return self._client
 
-    def _query(self, query: str, get_page_info: Callable, variable_values: dict=None):
-        variable_values = variable_values or {}
-        cursor = ''
-        query_gql = gql(query)
-        n = 0
-        while cursor is not None:
-            logger.debug(f'Sending a query with cursor {cursor!r}')
-            result = self.client.execute(query_gql,
-                                         variable_values=dict(cursor=cursor, **variable_values))
-            yield result
-            n += 1
-            page_info = get_page_info(result)
-            if page_info['hasNextPage']:
-                cursor = page_info['endCursor']
-            else:
-                cursor = None
+    def mutate(self, mutation: str, variable_values: dict) -> dict[str, Any]:
+        logger.debug('Sending a mutation')
+        return self.client.execute(gql(mutation), variable_values=variable_values)
 
-    def get_nodes(self, query: str, variable_values: dict=None):
+    def get_nodes(self, query: str, variable_values: dict=None) -> Generator[dict, None, None]:
         if match := COLLECTION_NAME_RE.search(query):
             collection_name = match.group('collection_name')
         else:
@@ -77,7 +67,7 @@ class Memberful():
             # iterate over nodes and drop duplicates, because, unfortunately, the API returns duplicates
             for edge in result[collection_name]['edges']:
                 node = edge['node']
-                node_id = node.get('id') or hashlib.sha256(json.dumps(node).encode()).hexdigest()
+                node_id = node.get('id') or hash_data(node)
                 if node_id in seen_node_ids:
                     logger.debug(f'Dropping a duplicate node: {node_id!r}')
                     duplicates_count += 1
@@ -85,12 +75,50 @@ class Memberful():
                     yield node
                     seen_node_ids.add(node_id)
                 nodes_count += 1
-        logger.debug(f'Dropped {duplicates_count} duplicate nodes')
+        assert duplicates_count == 0, f'Memberful API returned {duplicates_count} duplicate nodes'
         assert declared_count == nodes_count, f"Memberful API returned {nodes_count} nodes instead of {declared_count}"
 
-    def mutate(self, mutation: str, variable_values: dict):
-        logger.debug('Sending a mutation')
-        return self.client.execute(gql(mutation), variable_values=variable_values)
+    def _query(self, query: str, get_page_info: Callable, variable_values: dict=None):
+        variable_values = variable_values or {}
+        cursor = ''
+        n = 0
+        while cursor is not None:
+            logger.debug(f'Sending a query with cursor {cursor!r}')
+            result = self._execute_query(query, dict(cursor=cursor, **variable_values))
+            yield result
+            n += 1
+            page_info = get_page_info(result)
+            if page_info['hasNextPage']:
+                cursor = page_info['endCursor']
+            else:
+                cursor = None
+
+    def _execute_query(self, query: str, variable_values: dict) -> dict:
+        if self.cache_dir:
+            if self.clear_cache:
+                logger.debug('Clearing cache')
+                for path in self.cache_dir.glob('memberful-*.json'):
+                    path.unlink()
+                self.clear_cache = False
+
+            cache_key = hash_data(dict(query=query, variable_values=variable_values))
+            cache_path = self.cache_dir / f'memberful-{cache_key}.json'
+            try:
+                with cache_path.open() as f:
+                    logger.debug(f'Loading from cache: {cache_path}')
+                    return json.load(f)
+            except FileNotFoundError:
+                pass
+
+        logger.debug('Querying Memberful API')
+        result = self.client.execute(gql(query), variable_values=variable_values)
+
+        if self.cache_dir:
+            logger.debug(f'Saving to cache: {cache_path}')
+            with cache_path.open('w') as f:
+                json.dump(result, f)
+
+        return result
 
 
 def serialize_metadata(data):
@@ -107,3 +135,7 @@ def serialize_metadata(data):
         if len(value) > 500:
             raise ValueError(f"Maximum value length is 500 characters: {value!r}")
     return json.dumps(data)
+
+
+def hash_data(data: dict) -> str:
+    return hashlib.sha256(json.dumps(data).encode()).hexdigest()
