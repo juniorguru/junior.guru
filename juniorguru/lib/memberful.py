@@ -1,8 +1,8 @@
 import hashlib
 import json
 import os
-from pathlib import Path
 import re
+from pathlib import Path
 from typing import Any, Callable, Generator
 
 from gql import Client, gql
