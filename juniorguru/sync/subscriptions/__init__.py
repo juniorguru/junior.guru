@@ -68,7 +68,7 @@ def main(context, clear_cache):
 
     logger.info('Fetching activities from Memberful')
     query = ACTIVITIES_GQL_PATH.read_text()
-    activities = itertools.chain.from_iterable(memberful.get_nodes(query, dict(type=type))
+    activities = itertools.chain.from_iterable(memberful.get_nodes(query, dict(type=type), delay=0.2)
                                                for type in ACTIVITY_TYPES_MAPPING)
     for activity in logger.progress(activities):
         try:
@@ -82,7 +82,7 @@ def main(context, clear_cache):
                                      type=ACTIVITY_TYPES_MAPPING[activity['type']])
 
     logger.info('Fetching subscriptions from Memberful')
-    subscriptions = memberful.get_nodes(SUBSCRIPTIONS_GQL_PATH.read_text())
+    subscriptions = memberful.get_nodes(SUBSCRIPTIONS_GQL_PATH.read_text(), delay=0.2)
     for subscription in logger.progress(subscriptions):
         for activity in activities_from_subscription(subscription):
             activity['account_has_feminine_name'] = has_feminine_name(subscription['member']['fullName'])

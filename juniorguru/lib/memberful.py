@@ -3,6 +3,7 @@ import json
 import os
 import re
 from pathlib import Path
+import time
 from typing import Any, Callable, Generator
 
 from gql import Client, gql
@@ -45,7 +46,7 @@ class Memberful():
         logger.debug('Sending a mutation')
         return self.client.execute(gql(mutation), variable_values=variable_values)
 
-    def get_nodes(self, query: str, variable_values: dict=None) -> Generator[dict, None, None]:
+    def get_nodes(self, query: str, variable_values: dict=None, delay: int=0) -> Generator[dict, None, None]:
         if match := COLLECTION_NAME_RE.search(query):
             collection_name = match.group('collection_name')
         else:
@@ -56,7 +57,8 @@ class Memberful():
         seen_node_ids = set()
         for result in self._query(query,
                                   lambda result: result[collection_name]['pageInfo'],
-                                  variable_values=variable_values):
+                                  variable_values=variable_values,
+                                  delay=delay):
             # save total count so we can later check if we got all the nodes
             count = result[collection_name]['totalCount']
             if declared_count is None:
@@ -78,13 +80,13 @@ class Memberful():
         assert duplicates_count == 0, f'Memberful API returned {duplicates_count} duplicate nodes'
         assert declared_count == nodes_count, f"Memberful API returned {nodes_count} nodes instead of {declared_count}"
 
-    def _query(self, query: str, get_page_info: Callable, variable_values: dict=None):
+    def _query(self, query: str, get_page_info: Callable, variable_values: dict=None, delay: int=0):
         variable_values = variable_values or {}
         cursor = ''
         n = 0
         while cursor is not None:
             logger.debug(f'Sending a query with cursor {cursor!r}')
-            result = self._execute_query(query, dict(cursor=cursor, **variable_values))
+            result = self._execute_query(query, dict(cursor=cursor, **variable_values), delay)
             yield result
             n += 1
             page_info = get_page_info(result)
@@ -93,7 +95,7 @@ class Memberful():
             else:
                 cursor = None
 
-    def _execute_query(self, query: str, variable_values: dict) -> dict:
+    def _execute_query(self, query: str, variable_values: dict, delay: int) -> dict:
         if self.cache_dir:
             if self.clear_cache:
                 logger.debug('Clearing cache')
@@ -112,6 +114,8 @@ class Memberful():
 
         logger.debug('Querying Memberful API')
         result = self.client.execute(gql(query), variable_values=variable_values)
+        logger.debug(f'Memberful API delay: {delay}s')
+        time.sleep(delay)
 
         if self.cache_dir:
             logger.debug(f'Saving to cache: {cache_path}')
