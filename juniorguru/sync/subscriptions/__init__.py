@@ -70,7 +70,7 @@ def main(context, clear_cache):
     query = ACTIVITIES_GQL_PATH.read_text()
     activities = itertools.chain.from_iterable(memberful.get_nodes(query, dict(type=type))
                                                for type in ACTIVITY_TYPES_MAPPING)
-    for activity in activities:
+    for activity in logger.progress(activities):
         try:
             account_id = activity['member']['id']
         except (KeyError, TypeError):
@@ -82,7 +82,8 @@ def main(context, clear_cache):
                                      type=ACTIVITY_TYPES_MAPPING[activity['type']])
 
     logger.info('Fetching subscriptions from Memberful')
-    for subscription in memberful.get_nodes(SUBSCRIPTIONS_GQL_PATH.read_text()):
+    subscriptions = memberful.get_nodes(SUBSCRIPTIONS_GQL_PATH.read_text())
+    for subscription in logger.progress(subscriptions):
         for activity in activities_from_subscription(subscription):
             activity['account_has_feminine_name'] = has_feminine_name(subscription['member']['fullName'])
             try:

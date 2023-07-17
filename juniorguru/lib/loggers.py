@@ -1,9 +1,10 @@
 import logging
 import os
 from pathlib import Path
-from typing import cast
+from typing import Any, Generator, Iterable, cast
 
 from juniorguru.lib import global_state
+from juniorguru.lib.chunks import chunks
 
 
 MUTED_LOGGERS = [
@@ -27,6 +28,13 @@ MUTED_LOGGERS = [
 class Logger(logging.Logger):
     def __getitem__(self, name) -> logging.Logger:
         return self.getChild(str(name))
+
+    def progress(self, iterable: Iterable, chunk_size=100) -> Generator[Any, None, None]:
+        total_count = 0
+        for chunk in chunks(iterable, size=chunk_size):
+            yield from chunk
+            total_count += len(chunk)
+            self.info(f'Done {total_count} items')
 
 
 def _configure():

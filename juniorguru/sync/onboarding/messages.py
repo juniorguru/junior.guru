@@ -5,7 +5,7 @@ from operator import attrgetter
 import discord
 
 from juniorguru.lib import loggers
-from juniorguru.lib.asyncio_extra import chunks
+from juniorguru.lib.chunks import chunks
 from juniorguru.lib.discord_club import get_reaction
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.club import ClubMessage, ClubUser

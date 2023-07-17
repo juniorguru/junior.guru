@@ -1,4 +1,4 @@
-from juniorguru.lib.asyncio_extra import chunks
+from juniorguru.lib.chunks import chunks
 
 
 def test_chunks():
