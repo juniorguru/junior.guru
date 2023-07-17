@@ -2,7 +2,7 @@
   slug: glancemedia
   url: https://glancemedia.cz/
   partnerships:
-    - plan: hiring
+    - plan: silver
       starts_on: 2023-02-09
       expires_on: 2024-02-08
 
@@ -10,7 +10,7 @@
   slug: greenfox
   url: https://www.greenfoxacademy.cz/
   partnerships:
-    - plan: branding
+    - plan: gold
       starts_on: 2023-01-25
       expires_on: 2024-01-24
 
@@ -26,7 +26,7 @@
   slug: ataccama
   url: https://www.ataccama.com/
   partnerships:
-    - plan: support
+    - plan: basic
       starts_on: 2023-05-31
       expires_on: 2024-05-31
     - plan: support
@@ -126,7 +126,7 @@
   slug: skoumal
   url: https://www.skoumal.com/
   partnerships:
-    - plan: support
+    - plan: basic
       starts_on: 2021-02-01
       agreements:
         - text: Nemusí za partnerství nic platit jako vděčnost za to, že šlo historicky o první partnerství s klubem.
@@ -152,7 +152,7 @@
   slug: mews
   url: https://www.mews.com/
   partnerships:
-    - plan: support
+    - plan: basic
       starts_on: 2023-07-01
       expires_on: 2024-06-30
       agreements:
@@ -198,14 +198,13 @@
   slug: engeto
   url: https://engeto.cz/
   partnerships:
-    - plan: support
+    - plan: basic
       starts_on: 2023-08-01
       expires_on: 2024-07-31
       agreements:
         - text: Honza pomůže s textem pracovního inzerátu na seniorního vývojáře.
         - text: Dotáhneme první anketu mezi juniory. Výsledná data budou mít k dispozici jak junior.guru, tak ENGETO Academy.
         - text: Až ENGETO Academy přepracuje svůj e-learning, domluvíme se, zda může Honza Javorek nějak pomoci s propagací toho, co ENGETO Academy nabízí ze své platformy zdarma na svém webu.
-
     - plan: support
       starts_on: 2021-05-14
       expires_on: 2023-07-31
@@ -233,7 +232,7 @@
   slug: coreskill
   url: https://coreskill.tech/
   partnerships:
-    - plan: support
+    - plan: basic
       starts_on: 2021-02-01
       agreements:
         - text: Dan Srb v klubu moderuje a radí s frontendem
@@ -245,6 +244,9 @@
   slug: rector
   url: https://getrector.org/
   partnerships:
+    - plan: gold
+      starts_on: 2023-07-17
+      expires_on: 2024-07-16
     - plan: branding
       starts_on: 2020-09-04
       expires_on: 2021-11-30
@@ -253,7 +255,7 @@
   slug: redhat
   url: https://red.ht/juniorguru
   partnerships:
-    - plan: branding
+    - plan: gold
       starts_on: 2020-09-01
       expires_on: 2023-10-01
 
@@ -272,7 +274,7 @@
   slug: fakturoid
   url: https://www.fakturoid.cz/
   partnerships:
-    - plan: branding
+    - plan: gold
       starts_on: 2023-04-01
       expires_on: 2024-04-01
     - plan: branding

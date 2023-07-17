@@ -1,4 +1,4 @@
-- slug: support
+- slug: basic
   name: Základní tarif
   benefits:
     - text: Logo na [junior.guru/club](https://junior.guru/club/)
@@ -18,7 +18,7 @@
       slug: courses_seo
   price: 15000
 
-- slug: hiring
+- slug: silver
   name: Stříbrný tarif
   includes: support
   benefits:
@@ -42,7 +42,7 @@
       slug: students_1m
   price: 40000
 
-- slug: branding
+- slug: gold
   name: Zlatý tarif
   includes: hiring
   benefits:
