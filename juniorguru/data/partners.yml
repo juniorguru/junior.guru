@@ -199,15 +199,15 @@
   url: https://engeto.cz/
   partnerships:
     - plan: basic
-      starts_on: 2023-08-01
-      expires_on: 2024-07-31
+      starts_on: 2023-07-17
+      expires_on: 2024-07-16
       agreements:
         - text: Honza pomůže s textem pracovního inzerátu na seniorního vývojáře.
         - text: Dotáhneme první anketu mezi juniory. Výsledná data budou mít k dispozici jak junior.guru, tak ENGETO Academy.
         - text: Až ENGETO Academy přepracuje svůj e-learning, domluvíme se, zda může Honza Javorek nějak pomoci s propagací toho, co ENGETO Academy nabízí ze své platformy zdarma na svém webu.
     - plan: support
       starts_on: 2021-05-14
-      expires_on: 2023-07-31
+      expires_on: 2023-07-16
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_engeto-academy-se-rozhodla-podpo%C5%99it-klub-activity-6803201281570725888-6nI8

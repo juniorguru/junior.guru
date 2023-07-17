@@ -94,6 +94,7 @@ def main(clear_posters):
         for partnership in partnerships:
             try:
                 plan_slug = partnership.pop('plan')
+                logger.info(f"Creating {partner.name} partnership with plan {plan_slug!r}")
                 plan = PartnershipPlan.get_by_slug(plan_slug)
                 plan_benefits_slugs = plan.benefits_slugs()
                 partnership['plan'] = plan

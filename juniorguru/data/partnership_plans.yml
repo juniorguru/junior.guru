@@ -20,7 +20,7 @@
 
 - slug: silver
   name: Stříbrný tarif
-  includes: support
+  includes: basic
   benefits:
     - text: 1 online akce v klubu
       icon: calendar-event
@@ -44,7 +44,7 @@
 
 - slug: gold
   name: Zlatý tarif
-  includes: hiring
+  includes: silver
   benefits:
     - text: Druhý roční inzerát na [junior.guru/jobs](https://junior.guru/jobs/)
       icon: pin-angle
