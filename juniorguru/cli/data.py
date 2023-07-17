@@ -139,8 +139,8 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
             merge_databases(persist_path, source_path)
         elif source_path.suffix == '.jsonl':
             merge_unique_lines(persist_path, source_path)
-        elif is_scrapy_cache(source_path):
-            pass  # ignore, this is just a cache which gets regularly cleared anyway
+        elif is_cache(source_path):
+            pass  # ignore, just a cache which gets regularly cleared anyway
         else:
             raise RuntimeError(f"Conflict loading {persist_path} ({persist_path.stat().st_size}b)"
                                f", file already exists: {source_path} ({source_path.stat().st_size}b)")
@@ -229,5 +229,6 @@ def merge_unique_lines(path_from: Path, path_to: Path):
                     f_to.write(line)
 
 
-def is_scrapy_cache(path: str | Path) -> bool:
-    return any(parent_path.name == '.scrapy' for parent_path in Path(path).parents)
+def is_cache(path: str | Path) -> bool:
+    return any(parent_path.name in ('.scrapy', '.sync_cache')
+               for parent_path in Path(path).parents)

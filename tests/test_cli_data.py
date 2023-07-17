@@ -2,7 +2,7 @@ from textwrap import dedent
 
 import pytest
 
-from juniorguru.cli.data import (get_row_updates, is_scrapy_cache,
+from juniorguru.cli.data import (get_row_updates, is_cache,
                                  make_schema_idempotent, merge_unique_lines)
 
 
@@ -70,7 +70,8 @@ def test_merge_unique_lines(tmp_path):
 
 @pytest.mark.parametrize('path, expected', [
     ('persist-to-workspace/0/.scrapy/http_cache/remoteok/6b/6b0ef6dce04d86506412fbe8e08f417f108f8115/request_headers', True),
+    ('persist-to-workspace/0/.sync_cache/memberful-1ff3b5951b15bafd73543a9a6ffc24bf7f0ebb78faa0a0f2c8733fbaaf2d7424.json', True),
     ('persist-to-workspace/0/juniorguru/images/avatars-club/0b5f22a77c1f5510921c930b6cb8ccdb.png', False),
 ])
-def test_is_scrapy_cache(path, expected):
-    assert is_scrapy_cache(path) is expected
+def test_is_cache(path, expected):
+    assert is_cache(path) is expected
