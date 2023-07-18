@@ -2,8 +2,8 @@ from textwrap import dedent
 
 import pytest
 
-from juniorguru.cli.data import (get_row_updates, is_cache,
-                                 make_schema_idempotent, merge_unique_lines)
+from juniorguru.cli.data import (get_row_updates, is_cache, make_schema_idempotent,
+                                 merge_unique_lines)
 
 
 def test_make_schema_idempotent():
