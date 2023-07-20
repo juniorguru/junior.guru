@@ -55,13 +55,13 @@ async def discord_task(client):
 
 async def process_member(client, member):
     logger_m = logger[str(member.id)]
-    logger_m.info('Checking avatar')
-    logger_m.debug(f"Name: {member.display_name}")
+    logger_m.info(f'Checking avatar of #{member.id}')
     try:
         discord_member = await client.club_guild.fetch_member(member.id)
-        if discord_member.display_avatar:
-            logger_m.info("Has avatar, downloading")
-            member.avatar_path = await download_avatar(discord_member.display_avatar)
+        avatar = discord_member.display_avatar
+        if avatar and not is_default_avatar(avatar.url):
+            logger_m.info(f"Has avatar, downloading {avatar.url}")
+            member.avatar_path = await download_avatar(avatar)
         if member.avatar_path:
             logger_m.info(f"Has avatar, downloaded as '{member.avatar_path}'")
         else:
@@ -79,3 +79,7 @@ async def download_avatar(avatar):
     image_path = AVATARS_PATH / f'{Path(urlparse(avatar.url).path).stem}.png'
     image.save(image_path, 'PNG')
     return f'avatars-club/{image_path.name}'
+
+
+def is_default_avatar(url: str) -> bool:
+    return '/embed/avatars/' in url
