@@ -54,6 +54,7 @@ def main():
             coupon_parts = parse_coupon(coupon) if coupon else {}
 
             logger.debug(f"Updating club user #{user.id} with data from {member_admin_url}")
+            user.account_id = str(member['id'])
             user.subscription_id = str(subscription['id'])
             user.coupon = coupon_parts.get('coupon')
             user.update_subscribed_at(arrow.get(subscription['createdAt']).naive)

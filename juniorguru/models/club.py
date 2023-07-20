@@ -39,6 +39,7 @@ STATS_EXCLUDE_CHANNELS = [
 
 class ClubUser(BaseModel):
     id = IntegerField(primary_key=True)
+    account_id = CharField(null=True)
     subscription_id = CharField(null=True)
     joined_at = DateTimeField(null=True)
     subscribed_at = DateTimeField(null=True)
