@@ -149,10 +149,3 @@ def scrape_linkedin_personal():
     except (AttributeError, ValueError):
         logger.error(f"Scraping failed!\n\n{response_text}")
         return None
-
-
-def parents(html_node):
-    parent = html_node.getparent()
-    while parent is not None:
-        yield parent
-        parent = parent.getparent()
