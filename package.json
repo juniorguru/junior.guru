@@ -18,6 +18,6 @@
     "broken-link-checker-local": "0.2.1",
     "esbuild": "0.18.14",
     "esbuild-sass-plugin": "2.10.0",
-    "stylelint": "15.10.1"
+    "stylelint": "15.10.2"
   }
 }
