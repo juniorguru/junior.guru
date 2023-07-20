@@ -3,6 +3,7 @@ import re
 from datetime import date
 from pathlib import Path
 from typing import Any, Generator
+from urllib.parse import urlencode
 
 import click
 import requests
@@ -11,6 +12,7 @@ from playwright.sync_api import sync_playwright
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
+from juniorguru.lib.text import extract_text
 from juniorguru.models.base import db
 from juniorguru.models.followers import Followers
 
@@ -99,20 +101,34 @@ def scrape_youtube():
 
 def scrape_linkedin():
     logger.info('Scraping LinkedIn')
+    text = None
+
     with sync_playwright() as playwright:
         browser = playwright.firefox.launch()
         page = browser.new_page()
+
+        # try LinkedIn first
         page.goto(LINKEDIN_URL, wait_until='networkidle')
         if '/authwall' in page.url:
             logger.error(f'Loaded {page.url}')
-            return None
-        response_text = str(page.content())
-        browser.close()
-    match = re.search(r'Junior Guru \| (\d+) followers on LinkedIn.', response_text)
+        else:
+            text = str(page.content())
+
+        # if we've got authwall, try Google results
+        if text is None:
+            google_query = f'{LINKEDIN_URL} sledujících'
+            google_url = f'https://www.google.cz/search?{urlencode(dict(q=google_query))}'
+            page.goto(google_url, wait_until='networkidle')
+            html_tree = html.fromstring(page.content())
+            html_link = html_tree.cssselect(f'a[href^="{LINKEDIN_URL}"]')[0]
+            html_item = html_link.xpath('./ancestor::*[@data-hveid][position() = 1]')[0]
+            text = extract_text(html.tostring(html_item))
+
+    match = re.search(r'Junior Guru \| (\d+) (followers on|sledujících uživatelů na) LinkedIn.', text)
     try:
         return int(match.group(1))
     except (AttributeError, ValueError):
-        logger.error(f"Scraping failed!\n\n{response_text}")
+        logger.error(f"Scraping failed!\n\n{text}")
         return None
 
 
@@ -133,3 +149,10 @@ def scrape_linkedin_personal():
     except (AttributeError, ValueError):
         logger.error(f"Scraping failed!\n\n{response_text}")
         return None
+
+
+def parents(html_node):
+    parent = html_node.getparent()
+    while parent is not None:
+        yield parent
+        parent = parent.getparent()
