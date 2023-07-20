@@ -1,3 +1,4 @@
+import csv
 import hashlib
 import json
 import os
@@ -5,16 +6,27 @@ import re
 import time
 from pathlib import Path
 from typing import Any, Callable, Generator
+from urllib.parse import urlencode
 
+import requests
+from lxml import html
 from gql import Client, gql
 from gql.transport.requests import RequestsHTTPTransport
 
 from juniorguru.lib import loggers
 
 
+USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
+
 COLLECTION_NAME_RE = re.compile(r'(?P<collection_name>\w+)\(after:\s*\$cursor')
 
-MEMBERFUL_API_KEY = os.environ['MEMBERFUL_API_KEY']
+MEMBERFUL_API_KEY = os.environ.get('MEMBERFUL_API_KEY')
+
+MEMBERFUL_EMAIL = os.environ.get('MEMBERFUL_EMAIL', 'kure@junior.guru')
+
+MEMBERFUL_PASSWORD = os.environ.get('MEMBERFUL_PASSWORD')
+
+DOWNLOAD_POLLING_WAIT_SEC = 4
 
 
 logger = loggers.from_path(__file__)
@@ -36,7 +48,7 @@ class Memberful():
             logger.debug('Connecting')
             transport = RequestsHTTPTransport(url='https://juniorguru.memberful.com/api/graphql/',
                                               headers={'Authorization': f'Bearer {self.api_key}',
-                                                       'User-Agent': 'JuniorGuruBot (+https://junior.guru)'},
+                                                       'User-Agent': USER_AGENT},
                                               verify=True,
                                               retries=3)
             self._client = Client(transport=transport)
@@ -143,3 +155,98 @@ def serialize_metadata(data):
 
 def hash_data(data: dict) -> str:
     return hashlib.sha256(json.dumps(data).encode()).hexdigest()
+
+
+class DownloadError(Exception):
+    pass
+
+
+class MemberfulCSV:
+    def __init__(self, email: str=None, password: str=None, cache_dir: str|Path=None, clear_cache: bool=False):
+        self.cache_dir = Path(cache_dir) if cache_dir else None
+        self.clear_cache = clear_cache
+        self.email = email or MEMBERFUL_EMAIL
+        self.password = password or MEMBERFUL_PASSWORD
+        self._session = None
+        self._csrf_token = None
+
+    @property
+    def session(self) -> requests.Session:
+        if not self._session:
+            self._session, self._csrf_token = self._auth()
+        return self._session
+
+    @property
+    def csrf_token(self) -> str:
+        if not self._csrf_token:
+            self._session, self._csrf_token = self._auth()
+        return self._csrf_token
+
+    def _auth(self) -> tuple[requests.Session, Any]:
+        logger.debug('Logging into Memberful')
+        session = requests.Session()
+        session.headers.update({'User-Agent': USER_AGENT})
+        response = session.get('https://juniorguru.memberful.com/admin/auth/sign_in')
+        response.raise_for_status()
+        html_tree = html.fromstring(response.content)
+        html_tree.make_links_absolute(response.url)
+        form = html_tree.forms[0]
+        form.fields['email'] = self.email
+        form.fields['password'] = self.password
+        response = session.post(form.action, data=form.form_values())
+        response.raise_for_status()
+        html_tree = html.fromstring(response.content)
+        csrf_token = html_tree.cssselect('meta[name="csrf-token"]')[0].get('content')
+        logger.debug('Success!')
+        return session, csrf_token
+
+    def download_csv(self, params: dict):
+        url = f'https://juniorguru.memberful.com/admin/csv_exports?{urlencode(params)}'
+        logger.debug(f'Looking CSV export: {url}')
+
+        if self.cache_dir:
+            if self.clear_cache:
+                logger.debug('Clearing cache')
+                for path in self.cache_dir.glob('memberful-*.csv'):
+                    path.unlink()
+                self.clear_cache = False
+
+            cache_key = hash_data(dict(url=url))
+            cache_path = self.cache_dir / f'memberful-{cache_key}.csv'
+            try:
+                logger.debug(f'Loading from cache: {cache_path}')
+                return self._parse_csv(cache_path.read_text())
+            except FileNotFoundError:
+                pass
+
+        logger.debug('Downloading from Memberful website')
+        response = self.session.post(url, allow_redirects=False,
+                                     headers={'X-CSRF-Token': self.csrf_token})
+        response.raise_for_status()
+        download_url = f"{response.headers['Location']}/download"
+
+        success = False
+        for attempt_no in range(1, 10):
+            logger.debug(f'Attempt #{attempt_no}, waiting {DOWNLOAD_POLLING_WAIT_SEC}s for {download_url}')
+            time.sleep(DOWNLOAD_POLLING_WAIT_SEC)
+            try:
+                response = self.session.get(download_url)
+                response.raise_for_status()
+            except requests.exceptions.HTTPError as e:
+                logger.debug(str(e))
+            else:
+                logger.debug('Success!')
+                success = True
+                break
+        if not success:
+            raise DownloadError('Failed to download the CSV export')
+        data = response.content.decode('utf-8')
+
+        if self.cache_dir:
+            logger.debug(f'Saving to cache: {cache_path}')
+            cache_path.write_text(data)
+
+        return self._parse_csv(data)
+
+    def _parse_csv(self, content: str) -> csv.DictReader:
+        return csv.DictReader(content.splitlines())

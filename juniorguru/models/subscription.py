@@ -8,6 +8,7 @@ from juniorguru.models.base import BaseModel, check_enum
 
 LEGACY_PLANS_DELETED_ON = date(2023, 2, 24)
 
+
 @unique
 class SubscriptionInterval(StrEnum):
     MONTH = 'month'
@@ -78,6 +79,27 @@ class SubscriptionActivity(BaseModel):
     @classmethod
     def count(cls):
         return cls.select().count()
+
+
+class SubscriptionCancellation(BaseModel):
+    name = CharField()
+    email = CharField()
+    reason = CharField()
+    feedback = CharField(null=True)
+
+
+class SubscriptionReferrer(BaseModel):
+    account_id = CharField()
+    name = CharField()
+    email = CharField()
+    referrer = CharField()
+
+
+class SubscriptionOrigin(BaseModel):
+    account_id = CharField()
+    name = CharField()
+    email = CharField()
+    origin = CharField()
 
 
 # class SubscribedPeriod(BaseModel):
