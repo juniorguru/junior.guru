@@ -9,9 +9,9 @@ from typing import Any, Callable, Generator
 from urllib.parse import urlencode
 
 import requests
-from lxml import html
 from gql import Client, gql
 from gql.transport.requests import RequestsHTTPTransport
+from lxml import html
 
 from juniorguru.lib import loggers
 

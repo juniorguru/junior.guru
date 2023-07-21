@@ -13,7 +13,10 @@ from juniorguru.lib.memberful import Memberful, MemberfulCSV
 from juniorguru.models.base import db
 from juniorguru.models.feminine_name import FeminineName
 from juniorguru.models.partner import Partner
-from juniorguru.models.subscription import SubscriptionActivity, SubscriptionCancellation, SubscriptionOrigin, SubscriptionReferrer, SubscriptionType
+from juniorguru.models.subscription import (SubscriptionActivity,
+                                            SubscriptionCancellation,
+                                            SubscriptionOrigin, SubscriptionReferrer,
+                                            SubscriptionType)
 
 
 ACTIVITIES_GQL_PATH = Path(__file__).parent / 'activities.gql'
