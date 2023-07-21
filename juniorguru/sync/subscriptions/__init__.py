@@ -1,3 +1,4 @@
+from datetime import date
 import itertools
 from operator import itemgetter
 from pathlib import Path
@@ -109,12 +110,14 @@ def main(context, clear_cache):
             SubscriptionReferrer.create(account_id=csv_row['Memberful ID'],
                                         name=csv_row['Full Name'],
                                         email=csv_row['Email'],
+                                        created_on=date.fromisoformat(csv_row['Created at']),
                                         referrer=referrer)
         origin = csv_row['Jak ses dozvěděl(a) o junior.guru?'] or None
         if origin:
             SubscriptionOrigin.create(account_id=csv_row['Memberful ID'],
                                       name=csv_row['Full Name'],
                                       email=csv_row['Email'],
+                                      created_on=date.fromisoformat(csv_row['Created at']),
                                       origin=origin)
 
     logger.info("Fetching cancellations data from Memberful CSV")
@@ -124,8 +127,15 @@ def main(context, clear_cache):
         reason = csv_row['Reason'] or None
         feedback = csv_row['Feedback'] or None
         if reason:
+            try:
+                date_field_value = csv_row.get('Date') or csv_row.get('Expiration Date')
+                expires_on = date.fromisoformat(date_field_value)
+            except ValueError:
+                logger.warning(f"Invalid date format: {date_field_value!r}")
+                expires_on = None
             SubscriptionCancellation.create(name=csv_row['Name'],
                                             email=csv_row['Email'],
+                                            expires_on=expires_on,
                                             reason=reason,
                                             feedback=feedback)
 

@@ -1,7 +1,7 @@
 from datetime import date
 from enum import StrEnum, unique
 
-from peewee import BooleanField, CharField, DateTimeField
+from peewee import BooleanField, CharField, DateTimeField, DateField
 
 from juniorguru.models.base import BaseModel, check_enum
 
@@ -84,6 +84,7 @@ class SubscriptionActivity(BaseModel):
 class SubscriptionCancellation(BaseModel):
     name = CharField()
     email = CharField()
+    expires_on = DateField(null=True)
     reason = CharField()
     feedback = CharField(null=True)
 
@@ -92,6 +93,7 @@ class SubscriptionReferrer(BaseModel):
     account_id = CharField()
     name = CharField()
     email = CharField()
+    created_on = DateField()
     referrer = CharField()
 
 
@@ -99,6 +101,7 @@ class SubscriptionOrigin(BaseModel):
     account_id = CharField()
     name = CharField()
     email = CharField()
+    created_on = DateField()
     origin = CharField()
 
 
