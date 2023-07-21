@@ -15,7 +15,7 @@ logger = loggers.from_path(__file__)
 @cli.sync_command(dependencies=['subscriptions', 'partners'])
 @db.connection_context()
 def main():
-    memberful = Memberful()
+    memberful = MemberfulAPI()
     mutation = '''
         mutation ($id: ID!, $expiresAt: Int!) {
             subscriptionChangeExpirationTime(id: $id, expiresAt: $expiresAt) {
