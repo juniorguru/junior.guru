@@ -26,7 +26,7 @@ MEMBERFUL_EMAIL = os.environ.get('MEMBERFUL_EMAIL', 'kure@junior.guru')
 
 MEMBERFUL_PASSWORD = os.environ.get('MEMBERFUL_PASSWORD')
 
-DOWNLOAD_POLLING_WAIT_SEC = 4
+DOWNLOAD_POLLING_WAIT_SEC = 5
 
 
 logger = loggers.from_path(__file__)
@@ -197,6 +197,7 @@ class MemberfulCSV:
         response.raise_for_status()
         html_tree = html.fromstring(response.content)
         csrf_token = html_tree.cssselect('meta[name="csrf-token"]')[0].get('content')
+        time.sleep(1)  # arbitrary wait to avoid too many subsequent requests
         logger.debug('Success!')
         return session, csrf_token
 
