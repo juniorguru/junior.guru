@@ -10,7 +10,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.coupons import parse_coupon
 from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID
-from juniorguru.lib.memberful import Memberful
+from juniorguru.lib.memberful import MemberfulAPI
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser
@@ -31,7 +31,7 @@ MEMBERS_GQL_PATH = Path(__file__).parent / 'members.gql'
 @db.connection_context()
 def main():
     logger.info('Getting data from Memberful')
-    memberful = Memberful()
+    memberful = MemberfulAPI()
 
     members = memberful.get_nodes(MEMBERS_GQL_PATH.read_text())
     seen_discord_ids = set()

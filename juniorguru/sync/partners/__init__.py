@@ -9,7 +9,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.coupons import parse_coupon
 from juniorguru.lib.images import PostersCache, render_image_file
-from juniorguru.lib.memberful import Memberful
+from juniorguru.lib.memberful import MemberfulAPI
 from juniorguru.lib.yaml import Date
 from juniorguru.models.base import db
 from juniorguru.models.partner import Partner, Partnership, PartnershipPlan
@@ -68,7 +68,7 @@ def main(clear_posters):
     posters.init(clear=clear_posters)
 
     logger.info('Getting coupons data from Memberful')
-    memberful = Memberful()
+    memberful = MemberfulAPI()
     coupons_mapping = get_coupons_mapping(memberful.get_nodes(COUPONS_GQL_PATH.read_text()))
 
     logger.info('Reading YAML with partners')

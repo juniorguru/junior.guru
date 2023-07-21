@@ -32,7 +32,7 @@ DOWNLOAD_POLLING_WAIT_SEC = 4
 logger = loggers.from_path(__file__)
 
 
-class Memberful():
+class MemberfulAPI():
     # https://memberful.com/help/integrate/advanced/memberful-api/
     # https://juniorguru.memberful.com/api/graphql/explorer?api_user_id=52463
 

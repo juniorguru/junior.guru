@@ -9,7 +9,7 @@ import click
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.coupons import parse_coupon
-from juniorguru.lib.memberful import Memberful, MemberfulCSV
+from juniorguru.lib.memberful import MemberfulAPI, MemberfulCSV
 from juniorguru.models.base import db
 from juniorguru.models.feminine_name import FeminineName
 from juniorguru.models.partner import Partner
@@ -51,8 +51,8 @@ logger = loggers.from_path(__file__)
 @click.pass_context
 @db.connection_context()
 def main(context, clear_cache):
-    memberful = Memberful(cache_dir=context.obj['cache_dir'],
-                          clear_cache=clear_cache)
+    memberful = MemberfulAPI(cache_dir=context.obj['cache_dir'],
+                             clear_cache=clear_cache)
 
     logger.info('Preparing')
     tables = [SubscriptionActivity, SubscriptionReferrer, SubscriptionOrigin, SubscriptionCancellation]
