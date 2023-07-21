@@ -68,7 +68,7 @@ class SubscriptionActivity(BaseModel):
             .execute()
 
         # Activating trial also creates an 'order' activity.
-        # We want to keep only the 'trial_start' activity so that
+        # We want to keep just the 'trial_start' activity so that
         # 'order' activites only mark moments where money is involved.
         to_delete = cls.select(cls.id) \
             .join(cls_also, on=((cls.account_id == cls_also.account_id) &
@@ -94,7 +94,9 @@ class SubscriptionReferrer(BaseModel):
     name = CharField()
     email = CharField()
     created_on = DateField()
-    referrer = CharField()
+    value = CharField()
+    type = CharField(index=True)
+    is_internal = BooleanField(index=True)
 
 
 class SubscriptionOrigin(BaseModel):

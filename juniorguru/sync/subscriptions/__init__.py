@@ -3,6 +3,7 @@ import itertools
 from operator import itemgetter
 from pathlib import Path
 from typing import Generator
+from urllib.parse import urlparse
 
 import arrow
 import click
@@ -107,11 +108,14 @@ def main(context, clear_cache):
     for csv_row in memberful.download_csv(dict(type='MembersCsvExport', filter='all')):
         referrer = csv_row['Referrer'] or None
         if referrer:
+            referrer_type = get_referrer_type(referrer)
             SubscriptionReferrer.create(account_id=csv_row['Memberful ID'],
                                         name=csv_row['Full Name'],
                                         email=csv_row['Email'],
                                         created_on=date.fromisoformat(csv_row['Created at']),
-                                        referrer=referrer)
+                                        value=referrer,
+                                        type=referrer_type,
+                                        is_internal=referrer_type.startswith('/'))
         origin = csv_row['Jak ses dozvěděl(a) o junior.guru?'] or None
         if origin:
             SubscriptionOrigin.create(account_id=csv_row['Memberful ID'],
@@ -175,3 +179,19 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
                    happened_at=arrow.get(order['createdAt']).naive,
                    subscription_interval=subscription['plan']['intervalUnit'],
                    order_coupon=order_coupon)
+
+
+def get_referrer_type(url: str) -> str:
+    parts = urlparse(url)
+    if parts.netloc == 'junior.guru':
+        return parts.path.rstrip('/') or '/'
+    if parts.netloc == 't.co':
+        return 'twitter'
+    if parts.netloc == 'honzajavorek.cz':
+        if '/blog/' in url and 'poznamky' in url:
+            return 'weeknotes'
+        return 'honzajavorek'
+    domain = parts.netloc.split('.')[-2]
+    if domain in ('google', 'facebook', 'linkedin', 'youtube'):
+        return domain
+    return 'other'

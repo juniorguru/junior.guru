@@ -1,8 +1,29 @@
-from juniorguru.sync.subscriptions import activities_from_subscription
+import pytest
+from juniorguru.sync.subscriptions import activities_from_subscription, get_referrer_type
 
 
 def test_activities_from_subscription():
     assert activities_from_subscription  # TODO
+
+
+@pytest.mark.parametrize('url, expected', [
+    ('https://junior.guru/', '/'),
+    ('https://junior.guru/learn/', '/learn'),
+    ('https://junior.guru/events/?fbclid=IwAR0WkuqPqg7z6GHW-vEGgWlhgpzcT62qJkarSOrOQTsUjzxRBbSS8RGMw8I', '/events'),
+    ('https://t.co', 'twitter'),
+    ('https://t.co/RExQZc2z4V?amp=1', 'twitter'),
+    ('https://www.linkedin.com/', 'linkedin'),
+    ('https://l.facebook.com/', 'facebook'),
+    ('http://m.facebook.com', 'facebook'),
+    ('android-app://m.facebook.com/', 'facebook'),
+    ('https://honzajavorek.cz/', 'honzajavorek'),
+    ('https://honzajavorek.cz/blog/tydenni-poznamky-37-prvni-klubovy-sraz/', 'weeknotes'),
+    ('https://www.youtube.com/', 'youtube'),
+    ('https://www.google.com', 'google'),
+    ('https://www.patreon.com/', 'other'),
+])
+def test_parse_referrer(url, expected):
+    assert get_referrer_type(url) == expected
 
 
 # def test_get_subscribed_periods():
