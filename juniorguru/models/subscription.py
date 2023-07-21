@@ -1,7 +1,7 @@
 from datetime import date
 from enum import StrEnum, unique
 
-from peewee import BooleanField, CharField, DateTimeField, DateField
+from peewee import BooleanField, CharField, DateField, DateTimeField
 
 from juniorguru.models.base import BaseModel, check_enum
 
@@ -99,12 +99,13 @@ class SubscriptionReferrer(BaseModel):
     is_internal = BooleanField(index=True)
 
 
-class SubscriptionOrigin(BaseModel):
+class SubscriptionMarketingSurvey(BaseModel):
     account_id = CharField()
     name = CharField()
     email = CharField()
     created_on = DateField()
-    origin = CharField()
+    value = CharField()
+    type = CharField(index=True)
 
 
 # class SubscribedPeriod(BaseModel):

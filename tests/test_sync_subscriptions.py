@@ -1,5 +1,8 @@
 import pytest
-from juniorguru.sync.subscriptions import activities_from_subscription, get_referrer_type
+
+from juniorguru.sync.subscriptions import (activities_from_subscription,
+                                           classify_marketing_survey_answer,
+                                           classify_referrer)
 
 
 def test_activities_from_subscription():
@@ -22,8 +25,19 @@ def test_activities_from_subscription():
     ('https://www.google.com', 'google'),
     ('https://www.patreon.com/', 'other'),
 ])
-def test_parse_referrer(url, expected):
-    assert get_referrer_type(url) == expected
+def test_classify_referrer(url, expected):
+    assert classify_referrer(url) == expected
+
+
+@pytest.mark.parametrize('text, expected', [
+    ('Google', 'search'),
+    ('Youtube', 'youtube'),
+    ('Youtube videá od "Yablko"', 'yablko'),
+    ('Cez video od yablka.', 'yablko'),
+    ('bla bla', 'other'),
+])
+def test_classify_marketing_survey_answer(text, expected):
+    assert classify_marketing_survey_answer(text) == expected
 
 
 # def test_get_subscribed_periods():

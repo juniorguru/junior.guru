@@ -1,5 +1,6 @@
-from datetime import date
 import itertools
+import re
+from datetime import date
 from operator import itemgetter
 from pathlib import Path
 from typing import Generator
@@ -17,8 +18,8 @@ from juniorguru.models.feminine_name import FeminineName
 from juniorguru.models.partner import Partner
 from juniorguru.models.subscription import (SubscriptionActivity,
                                             SubscriptionCancellation,
-                                            SubscriptionOrigin, SubscriptionReferrer,
-                                            SubscriptionType)
+                                            SubscriptionMarketingSurvey,
+                                            SubscriptionReferrer, SubscriptionType)
 
 
 ACTIVITIES_GQL_PATH = Path(__file__).parent / 'activities.gql'
@@ -57,7 +58,7 @@ def main(context, clear_cache):
                              clear_cache=clear_cache)
 
     logger.info('Preparing')
-    tables = [SubscriptionActivity, SubscriptionReferrer, SubscriptionOrigin, SubscriptionCancellation]
+    tables = [SubscriptionActivity, SubscriptionReferrer, SubscriptionMarketingSurvey, SubscriptionCancellation]
     db.drop_tables(tables)
     db.create_tables(tables)
 
@@ -108,7 +109,7 @@ def main(context, clear_cache):
     for csv_row in memberful.download_csv(dict(type='MembersCsvExport', filter='all')):
         referrer = csv_row['Referrer'] or None
         if referrer:
-            referrer_type = get_referrer_type(referrer)
+            referrer_type = classify_referrer(referrer)
             SubscriptionReferrer.create(account_id=csv_row['Memberful ID'],
                                         name=csv_row['Full Name'],
                                         email=csv_row['Email'],
@@ -116,13 +117,15 @@ def main(context, clear_cache):
                                         value=referrer,
                                         type=referrer_type,
                                         is_internal=referrer_type.startswith('/'))
-        origin = csv_row['Jak ses dozvěděl(a) o junior.guru?'] or None
-        if origin:
-            SubscriptionOrigin.create(account_id=csv_row['Memberful ID'],
-                                      name=csv_row['Full Name'],
-                                      email=csv_row['Email'],
-                                      created_on=date.fromisoformat(csv_row['Created at']),
-                                      origin=origin)
+        marketing_survey_answer = csv_row['Jak ses dozvěděl(a) o junior.guru?'] or None
+        if marketing_survey_answer:
+            marketing_survey_answer_type = classify_marketing_survey_answer(marketing_survey_answer)
+            SubscriptionMarketingSurvey.create(account_id=csv_row['Memberful ID'],
+                                               name=csv_row['Full Name'],
+                                               email=csv_row['Email'],
+                                               created_on=date.fromisoformat(csv_row['Created at']),
+                                               value=marketing_survey_answer,
+                                               type=marketing_survey_answer_type)
 
     logger.info("Fetching cancellations data from Memberful CSV")
     csv_rows = itertools.chain(memberful.download_csv(dict(type='CancellationsCsvExport', filter='all')),
@@ -181,7 +184,7 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
                    order_coupon=order_coupon)
 
 
-def get_referrer_type(url: str) -> str:
+def classify_referrer(url: str) -> str:
     parts = urlparse(url)
     if parts.netloc == 'junior.guru':
         return parts.path.rstrip('/') or '/'
@@ -194,4 +197,38 @@ def get_referrer_type(url: str) -> str:
     domain = parts.netloc.split('.')[-2]
     if domain in ('google', 'facebook', 'linkedin', 'youtube'):
         return domain
+    return 'other'
+
+
+def classify_marketing_survey_answer(text: str) -> str:
+    if re.search(r'\b(yablk\w+|rob\s*web)\b', text, re.I):
+        return 'yablko'
+    if re.search(r'\b(pod[ck][aá]st\w*|spotify)\b', text, re.I):
+        return 'podcasts'
+    if re.search(r'\bpyladies\b', text, re.I):
+        return 'pyladies'
+    if re.search(r'\bczechitas\b', text, re.I):
+        return 'czechitas'
+    if re.search(r'\brecenz\w+\b', text, re.I):
+        return 'courses_search'
+    if (re.search(r'\b(software\s+development\s+academy|sd\s*academy|sda\s+academy)\b', text, re.I) or
+        re.search(r'\bSDA\b', text)):
+        return 'sdacademy'
+    if re.search(r'\b(kurz\w*|akademie|enget\w*|green\s*fox\w*|it\s*network\w*|webin[áa][řr]\w*)\b', text, re.I):
+        return 'courses'
+    if re.search(r'\b(youtube|yt)\b', text, re.I):
+        return 'youtube'
+    if re.search(r'\b(facebook\w*|fb|fcb)\b', text, re.I):
+        return 'facebook'
+    if (re.search(r'\blinkedin\w*\b', text, re.I) or
+        re.search(r'\bLI\b', text)):
+        return 'linkedin'
+    if re.search(r'\b(goo?gl\w*|vyhled[aá]v\w+)\b', text, re.I):
+        return 'search'
+    if re.search(r'\b(komunit\w+|kamar[aá]d\w*|brat\w*|koleg\w*|br[aá]ch\w*|manžel\w*|partner\w*|p[řr][íi]a?tel\w*|přátelé|pratele|zn[áa]m[ée]\w*|doporu[čc]en\w+)\b', text, re.I):
+        return 'friend'
+    if re.search(r'^od\s+\w{3,}', text.strip(), re.I):
+        return 'friend'
+    if re.search(r'\b(\w*hled[aá]\w+|search)\b', text, re.I):
+        return 'search'
     return 'other'
