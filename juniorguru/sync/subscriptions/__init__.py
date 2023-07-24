@@ -17,6 +17,7 @@ from juniorguru.models.base import db
 from juniorguru.models.feminine_name import FeminineName
 from juniorguru.models.partner import Partner
 from juniorguru.models.subscription import (SubscriptionActivity,
+                                            SubscriptionActivityType,
                                             SubscriptionCancellation,
                                             SubscriptionMarketingSurvey,
                                             SubscriptionReferrer, SubscriptionType)
@@ -25,10 +26,10 @@ from juniorguru.models.subscription import (SubscriptionActivity,
 ACTIVITIES_GQL_PATH = Path(__file__).parent / 'activities.gql'
 
 ACTIVITY_TYPES_MAPPING = {
-    'new_order': 'order',
-    'renewal': 'order',
-    'gift_activated': 'order',
-    'subscription_deactivated': 'deactivation',
+    'new_order': SubscriptionActivityType.ORDER,
+    'renewal': SubscriptionActivityType.ORDER,
+    'gift_activated': SubscriptionActivityType.ORDER,
+    'subscription_deactivated': SubscriptionActivityType.DEACTIVATION,
 }
 
 SUBSCRIPTIONS_GQL_PATH = Path(__file__).parent / 'subscriptions.gql'
@@ -102,7 +103,7 @@ def main(context, clear_cache):
             SubscriptionActivity.add(**activity)
 
     SubscriptionActivity.cleanup()
-    logger.info(f'Finished with {SubscriptionActivity.count()} activities')
+    logger.info(f'Finished with {SubscriptionActivity.total_count()} activities')
 
     logger.info("Fetching members data from Memberful CSV")
     memberful = MemberfulCSV(cache_dir=context.obj['cache_dir'], clear_cache=clear_cache)

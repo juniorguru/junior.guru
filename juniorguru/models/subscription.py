@@ -1,12 +1,20 @@
 from datetime import date
 from enum import StrEnum, unique
 
-from peewee import BooleanField, CharField, DateField, DateTimeField
+from peewee import BooleanField, CharField, DateField, DateTimeField, fn
 
 from juniorguru.models.base import BaseModel, check_enum
 
 
 LEGACY_PLANS_DELETED_ON = date(2023, 2, 24)
+
+
+@unique
+class SubscriptionActivityType(StrEnum):
+    TRIAL_START = 'trial_start'
+    TRIAL_END = 'trial_end'
+    ORDER = 'order'
+    DEACTIVATION = 'deactivation'
 
 
 @unique
@@ -31,7 +39,7 @@ class SubscriptionActivity(BaseModel):
             (('type', 'account_id', 'happened_at'), True),
         )
 
-    type = CharField()
+    type = CharField(constraints=[check_enum('type', SubscriptionActivityType)])
     account_id = CharField(index=True)
     account_has_feminine_name = BooleanField()
     happened_at = DateTimeField(index=True)
@@ -63,7 +71,8 @@ class SubscriptionActivity(BaseModel):
 
         # Trials which are part of a free subscription are not really trials
         cls.delete() \
-            .where(cls.type.in_(['trial_start', 'trial_end']),
+            .where(cls.type.in_([SubscriptionActivityType.TRIAL_START,
+                                 SubscriptionActivityType.TRIAL_END]),
                    cls.subscription_type == SubscriptionType.FREE) \
             .execute()
 
@@ -73,12 +82,21 @@ class SubscriptionActivity(BaseModel):
         to_delete = cls.select(cls.id) \
             .join(cls_also, on=((cls.account_id == cls_also.account_id) &
                                 (cls.happened_at == cls_also.happened_at))) \
-            .where(cls.type == 'order', cls_also.type == 'trial_start')
+            .where(cls.type == SubscriptionActivityType.ORDER,
+                   cls_also.type == SubscriptionActivityType.TRIAL_START)
         cls.delete().where(cls.id.in_(to_delete)).execute()
 
     @classmethod
-    def count(cls):
+    def total_count(cls):
         return cls.select().count()
+
+    @classmethod
+    def count(cls, date: date):
+        query = cls.select(cls, fn.max(cls.happened_at).alias('latest_at')) \
+            .where(cls.happened_at <= date) \
+            .group_by(cls.account_id) \
+            .having(cls.type != SubscriptionActivityType.DEACTIVATION)
+        return query.count()
 
 
 class SubscriptionCancellation(BaseModel):

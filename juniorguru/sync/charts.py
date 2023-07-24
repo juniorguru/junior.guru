@@ -12,6 +12,7 @@ from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.followers import Followers
 from juniorguru.models.page import Page
 from juniorguru.models.podcast import PodcastEpisode
+from juniorguru.models.subscription import SubscriptionActivity
 from juniorguru.models.transaction import Transaction
 from juniorguru.models.web_usage import WebUsage
 
@@ -170,17 +171,17 @@ def podcast_women_ptc_ttm(months: list[date]) -> list[Number]:
     return charts.per_month(PodcastEpisode.women_ptc_ttm, months)
 
 
-# @namespace
-# def members(today) -> dict[str, Any]:
-#     months = charts.months(CLUB_BEGIN_ON, today)
-#     return dict(values=months,
-#                 labels=charts.labels(months),
-#                 annotations=charts.annotations(months, MILESTONES))
+@namespace
+def members(today) -> dict[str, Any]:
+    months = charts.months(CLUB_BEGIN_ON, today)
+    return dict(values=months,
+                labels=charts.labels(months),
+                annotations=charts.annotations(months, MILESTONES))
 
 
-# @chart
-# def members_subscriptions(months: list[date]) -> list[Number]:
-#     return charts.per_month(SubscribedPeriod.count, months)
+@chart
+def members_subscriptions(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.count, months)
 
 
 # @chart

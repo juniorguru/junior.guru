@@ -317,13 +317,19 @@ Partnerství domlouvám osobně a je vždy na rok, potom s firmou jednáme o pro
 
 Ukončená partnerství: {% for partner in partners_expired %}{{ partner_link(partner.name, partner.url, 'open') }}{% if not loop.last %}, {% endif %}{% endfor %}.
 
-{#
-
 ## Členství v klubu
 
-[Placený klub](club.md) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Aktuálně je na Discordu **{{ members_total_count }} členů**, ale platících členů může být i víc. Někteří si platí členství pouze aby mě podpořili, bez toho aby se vůbec na Discord přihlásili.
+[Placený klub](club.md) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Když nepočítám roboty, tak je teď na Discordu **{{ members_total_count }} členů**.
 
+Historická data v grafech jsou z Memberful, služby, která se mi stará o registrace a placení.
+Čísla se mohou lišit, protože když někdo ukončí členství a smaže svůj účet, ze statistik zmizí.
+Také ne každý, kdo se zaregistroval, je i na Discordu.
+Někdo se tam teprve chystá, někdo to ani neplánuje, jelikož mě chce podpořit pouze finančně.
+Grafy jsou tedy orientační.
+
+{#
 Tenká modrá čára představuje počet členů, kteří si členství platí ze svého. Tenká zelená čára ukazuje ty z nich, kteří preferují roční platbu před měsíční.
+#}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
@@ -337,18 +343,6 @@ Tenká modrá čára představuje počet členů, kteří si členství platí z
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
-            {
-                'label': 'všechna individuální členství',
-                'data': charts.members_individuals,
-                'borderColor': '#1755d1',
-                'borderWidth': 1,
-            },
-            {
-                'label': 'roční individuální členství',
-                'data': charts.members_individuals_yearly,
-                'borderColor': '#02CABB',
-                'borderWidth': 1,
-            },
         ],
     }|tojson|forceescape }}"
     data-chart-options="{{ {
@@ -356,6 +350,21 @@ Tenká modrá čára představuje počet členů, kteří si členství platí z
         'scales': {'y': {'beginAtZero': true}},
         'plugins': {'annotation': charts.members_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
+
+{#
+
+{
+    'label': 'všechna individuální členství',
+    'data': charts.members_individuals,
+    'borderColor': '#1755d1',
+    'borderWidth': 1,
+},
+{
+    'label': 'roční individuální členství',
+    'data': charts.members_individuals_yearly,
+    'borderColor': '#02CABB',
+    'borderWidth': 1,
+},
 
 ### Typy členství
 

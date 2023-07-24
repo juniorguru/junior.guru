@@ -44,7 +44,7 @@ def main():
         except (TypeError, ClubUser.DoesNotExist):
             logger.warning(f"Member {member_admin_url} isn't on Discord")
         else:
-            logger.info(f"Identified as club user #{user.id}")
+            logger.debug(f"Identified as club user #{user.id}")
             seen_discord_ids.add(user.id)
 
             subscription = get_active_subscription(member['subscriptions'])
