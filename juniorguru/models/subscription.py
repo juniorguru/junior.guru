@@ -6,7 +6,7 @@ import math
 from numbers import Number
 from typing import Callable, Iterable, Self
 
-from peewee import BooleanField, CharField, DateField, DateTimeField, fn, Case
+from peewee import BooleanField, CharField, DateField, DateTimeField, fn, Case, SQL
 from juniorguru.lib.charts import month_range
 
 from juniorguru.models.base import BaseModel, check_enum
@@ -91,39 +91,78 @@ class SubscriptionActivity(BaseModel):
         insert.execute()
 
     @classmethod
+    def mark_trials(cls) -> None:
+        # The 'order' activity happening on the same day as 'trial_end' activity
+        # marks subscription type of the whole trial.
+        also_cls = cls.alias()
+        cte = cls.select(cls.account_id, cls.happened_on, cls.subscription_type) \
+            .join(also_cls, on=((cls.account_id == also_cls.account_id) &
+                                (cls.happened_on == also_cls.happened_on))) \
+            .where(cls.type == SubscriptionActivityType.ORDER,
+                   also_cls.type == SubscriptionActivityType.TRIAL_END) \
+            .cte('new_subscription_type', columns=('account_id', 'happened_on', 'subscription_type'))
+        cls.update(subscription_type=SQL('new_subscription_type.subscription_type')) \
+            .with_cte(cte) \
+            .from_(cte) \
+            .where(cls.account_id == SQL('new_subscription_type.account_id'),
+                   cls.happened_on <= SQL('new_subscription_type.happened_on')) \
+            .execute()
+
+        # Mark trials of individual subscriptions as true trials
+        also_cls = cls.alias()
+        to_update = cls.select(cls.id) \
+            .join(also_cls, on=(cls.account_id == also_cls.account_id)) \
+            .where(also_cls.type == SubscriptionActivityType.TRIAL_END,
+                   also_cls.subscription_type == SubscriptionType.INDIVIDUAL,
+                   ((cls.type == SubscriptionActivityType.ORDER) & (cls.happened_on < also_cls.happened_on)) |
+                   ((cls.type == SubscriptionActivityType.TRIAL_END) & (cls.happened_on == also_cls.happened_on)) |
+                   ((cls.type == SubscriptionActivityType.TRIAL_START) & (cls.happened_on < also_cls.happened_on)))
+        cls.update(subscription_type=SubscriptionType.TRIAL) \
+            .where(cls.id.in_(to_update)) \
+            .execute()
+
+    @classmethod
     def total_count(cls) -> int:
         return cls.select().count()
 
     @classmethod
     def listing(cls, date: date) -> Iterable[Self]:
-        return cls.select(cls, fn.max(cls.happened_at).alias('latest_at')) \
+        latest_at = fn.max(cls.happened_at).alias('latest_at')
+        latest = cls.select(cls.account_id, latest_at) \
             .where(cls.happened_on <= date) \
-            .group_by(cls.account_id) \
-            .having(cls.type != SubscriptionActivityType.DEACTIVATION)
+            .group_by(cls.account_id)
+        return cls.select(cls) \
+            .join(latest, on=((cls.account_id == latest.c.account_id) &
+                              (cls.happened_at == latest.c.latest_at)))
 
     @classmethod
-    def count(cls, date: date) -> int:
-        return cls.listing(date).count()
+    def active_listing(cls, date: date) -> Iterable[Self]:
+        return cls.listing(date) \
+            .where(cls.type != SubscriptionActivityType.DEACTIVATION)
+
+    @classmethod
+    def active_count(cls, date: date) -> int:
+        return cls.active_listing(date).count()
 
     @classmethod
     @uses_data_from_subscriptions()
-    def individuals_count(cls, date: date) -> int | None:
-        return cls.listing(date) \
-            .having(cls.subscription_type == SubscriptionType.INDIVIDUAL) \
+    def active_individuals_count(cls, date: date) -> int | None:
+        return cls.active_listing(date) \
+            .where(cls.subscription_type == SubscriptionType.INDIVIDUAL) \
             .count()
 
     @classmethod
     @uses_data_from_subscriptions()
-    def yearly_individuals_count(cls, date: date) -> int | None:
-        return cls.listing(date) \
-            .having(cls.subscription_type == SubscriptionType.INDIVIDUAL,
-                    cls.subscription_interval == SubscriptionInterval.YEAR) \
+    def active_individuals_yearly_count(cls, date: date) -> int | None:
+        return cls.active_listing(date) \
+            .where(cls.subscription_type == SubscriptionType.INDIVIDUAL,
+                   cls.subscription_interval == SubscriptionInterval.YEAR) \
             .count()
 
     @classmethod
     @uses_data_from_subscriptions(default=dict)
-    def subscription_type_breakdown(cls, date: date) -> dict[str, int]:
-        counter = Counter([activity.subscription_type for activity in cls.listing(date)])
+    def active_subscription_type_breakdown(cls, date: date) -> dict[str, int]:
+        counter = Counter([activity.subscription_type for activity in cls.active_listing(date)])
         if None in counter:
             raise ValueError("There are members whose latest activity is without subscription type, "
                              f"which can happen only if they're from before {LEGACY_PLANS_DELETED_ON}. "
@@ -134,17 +173,81 @@ class SubscriptionActivity(BaseModel):
                 for subscription_type in SubscriptionType}
 
     @classmethod
-    def women_count(cls, date: date) -> int:
-        return cls.listing(date) \
-            .having(cls.account_has_feminine_name == True) \
+    def active_women_count(cls, date: date) -> int:
+        return cls.active_listing(date) \
+            .where(cls.account_has_feminine_name == True) \
             .count()
 
     @classmethod
-    def women_ptc(cls, date: date) -> int:
-        count = cls.count(date)
-        if count:
-            return math.ceil((cls.women_count(date) / count) * 100)
+    def active_women_ptc(cls, date: date) -> int:
+        if count := cls.active_count(date):
+            return math.ceil((cls.active_women_count(date) / count) * 100)
         return 0
+
+    @classmethod
+    def signups(cls, date: date) -> Iterable[Self]:
+        from_date, to_date = month_range(date)
+        return cls.select(fn.min(cls.happened_at)) \
+            .where(cls.happened_on <= to_date) \
+            .group_by(cls.account_id) \
+            .having(cls.happened_on >= from_date)
+
+    @classmethod
+    def signups_count(cls, date: date) -> int:
+        return cls.signups(date).count()
+
+    @classmethod
+    @uses_data_from_subscriptions()
+    def individuals_signups_count(cls, date: date) -> int:
+        return cls.signups(date) \
+            .where(cls.subscription_type == SubscriptionType.INDIVIDUAL) \
+            .count()
+
+    # @classmethod
+    # def quits(cls, date):
+    #     from_date, to_date = month_range(date)
+    #     return cls.select(cls, fn.max(cls.end_on)) \
+    #         .group_by(cls.account_id) \
+    #         .having(cls.end_on >= from_date, cls.end_on <= to_date) \
+    #         .order_by(cls.end_on)
+
+    # @classmethod
+    # def quits_count(cls, date):
+    #     return cls.quits(date).count()
+
+    # @classmethod
+    # def individuals_quits(cls, date):
+    #     return cls.quits(date).where(cls.type == SubscribedPeriodType.INDIVIDUALS)
+
+    # @classmethod
+    # def individuals_quits_count(cls, date):
+    #     return cls.individuals_quits(date).count()
+
+    # @classmethod
+    # def churn_ptc(cls, date):
+    #     from_date = month_range(date)[0]
+    #     churn = cls.quits_count(date) / (cls.count(from_date) + cls.signups_count(date))
+    #     return churn * 100
+
+    # @classmethod
+    # def individuals_churn_ptc(cls, date):
+    #     from_date = month_range(date)[0]
+    #     churn = cls.individuals_quits_count(date) / (cls.individuals_count(from_date) + cls.individuals_signups_count(date))
+    #     return churn * 100
+
+    # @classmethod
+    # def active_duration_avg(cls, date: date) -> int:
+    #     earliest_at = fn.min(cls.happened_at)
+    #     duration_sec = (fn.unixepoch(date) - fn.unixepoch(earliest_at))
+    #     duration_mo = (duration_sec / 60 / 60 / 24 / 30).alias('duration_mo')
+
+    #     rows = cls.select(duration_mo) \
+    #         .where(cls.happened_at <= date) \
+    #         .group_by(cls.account_id) \
+    #         .dicts()
+    #     if durations := [row['duration_mo'] for row in rows]:
+    #         return sum(durations) / len(durations)
+    #     return 0
 
 
 class SubscriptionCancellation(BaseModel):
@@ -172,123 +275,3 @@ class SubscriptionMarketingSurvey(BaseModel):
     created_on = DateField()
     value = CharField()
     type = CharField(index=True)
-
-
-# class SubscribedPeriod(BaseModel):
-#     account_id = CharField(index=True)
-#     start_on = DateField()
-#     end_on = DateField()
-#     interval_unit = CharField(constraints=[check_enum('interval_unit', SubscribedPeriodIntervalUnit)])
-#     type = CharField(null=True, constraints=[check_enum('type', SubscribedPeriodType)])
-#     has_feminine_name = BooleanField()
-
-#     @classmethod
-#     def listing(cls, date):
-#         return cls.select(cls, fn.max(cls.start_on)) \
-#             .where(cls.start_on <= date, cls.end_on >= date) \
-#             .group_by(cls.account_id) \
-#             .order_by(cls.start_on)
-
-#     @classmethod
-#     def count(cls, date):
-#         return cls.listing(date).count()
-
-#     @classmethod
-#     def count_breakdown(cls, date):
-#         counter = Counter([subscribed_period.type
-#                            for subscribed_period
-#                            in cls.listing(date)])
-#         return {type.value: counter[type] for type
-#                 in SubscribedPeriodType}
-
-#     @classmethod
-#     def women_count(cls, date):
-#         return cls.listing(date) \
-#             .where(cls.has_feminine_name == True) \
-#             .count()
-
-#     @classmethod
-#     def women_ptc(cls, date):
-#         count = cls.count(date)
-#         if count:
-#             return math.ceil((cls.women_count(date) / count) * 100)
-#         return 0
-
-#     @classmethod
-#     def individuals(cls, date):
-#         return cls.listing(date) \
-#             .where(cls.type == SubscribedPeriodType.INDIVIDUALS)
-
-#     @classmethod
-#     def individuals_count(cls, date):
-#         return cls.individuals(date).count()
-
-#     @classmethod
-#     def individuals_yearly_count(cls, date):
-#         return cls.individuals(date) \
-#             .where(cls.interval_unit == SubscribedPeriodIntervalUnit.YEARLY) \
-#             .count()
-
-#     @classmethod
-#     def signups(cls, date):
-#         from_date, to_date = month_range(date)
-#         return cls.select(cls, fn.min(cls.start_on)) \
-#             .group_by(cls.account_id) \
-#             .having(cls.start_on >= from_date, cls.start_on <= to_date) \
-#             .order_by(cls.start_on)
-
-#     @classmethod
-#     def signups_count(cls, date):
-#         return cls.signups(date).count()
-
-#     @classmethod
-#     def individuals_signups(cls, date):
-#         return cls.signups(date).where(cls.type == SubscribedPeriodType.INDIVIDUALS)
-
-#     @classmethod
-#     def individuals_signups_count(cls, date):
-#         return cls.individuals_signups(date).count()
-
-#     @classmethod
-#     def quits(cls, date):
-#         from_date, to_date = month_range(date)
-#         return cls.select(cls, fn.max(cls.end_on)) \
-#             .group_by(cls.account_id) \
-#             .having(cls.end_on >= from_date, cls.end_on <= to_date) \
-#             .order_by(cls.end_on)
-
-#     @classmethod
-#     def quits_count(cls, date):
-#         return cls.quits(date).count()
-
-#     @classmethod
-#     def individuals_quits(cls, date):
-#         return cls.quits(date).where(cls.type == SubscribedPeriodType.INDIVIDUALS)
-
-#     @classmethod
-#     def individuals_quits_count(cls, date):
-#         return cls.individuals_quits(date).count()
-
-#     @classmethod
-#     def churn_ptc(cls, date):
-#         from_date = month_range(date)[0]
-#         churn = cls.quits_count(date) / (cls.count(from_date) + cls.signups_count(date))
-#         return churn * 100
-
-#     @classmethod
-#     def individuals_churn_ptc(cls, date):
-#         from_date = month_range(date)[0]
-#         churn = cls.individuals_quits_count(date) / (cls.individuals_count(from_date) + cls.individuals_signups_count(date))
-#         return churn * 100
-
-#     @classmethod
-#     def individuals_duration_avg(cls, date):
-#         from_date, to_date = month_range(date)
-#         results = cls.select(cls.account_id, fn.min(cls.start_on), fn.max(cls.end_on)) \
-#             .where(cls.type == SubscribedPeriodType.INDIVIDUALS) \
-#             .group_by(cls.account_id) \
-#             .having(fn.min(cls.start_on) <= from_date)
-#         if not results:
-#             return 0
-#         durations = [((min(to_date, result.end_on) - result.start_on).days / 30) for result in results]
-#         return sum(durations) / len(durations)

@@ -337,7 +337,7 @@ Tenká modrá čára představuje počet členů, kteří si členství platí z
         'datasets': [
             {
                 'label': 'všechna členství',
-                'data': charts.members_count,
+                'data': charts.members_all,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
@@ -416,8 +416,6 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
         'plugins': {'annotation': charts.members_subscriptions_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-{#
-
 ### Příchody
 
 Graf s registracemi obsahuje všechny typy členství. Ať už nový člen přišel přes firmu, stipendium, nebo individuálně, tak se započte. Tenká modrá čára představuje počet členů, kteří v daném měsíci poprvé v historii svého členství přešli na individuální placení. Jsou to především noví členové, kteří se po dvou týdnech na zkoušku rozhodli, že si klub začnou platit. Mohou to ale být i firemní členové nebo studenti ze vzdělávacích agentur, kterým skončilo členství zaplacené někým jiným a rozhodli se pokračovat za svoje.
@@ -447,6 +445,8 @@ Graf s registracemi obsahuje všechny typy členství. Ať už nový člen při�
         'scales': {'y': {'beginAtZero': true}},
         'plugins': {'annotation': charts.members_trend_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
+
+{#
 
 ### Odchody
 
@@ -489,8 +489,8 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
         'labels': charts.members_labels,
         'datasets': [
             {
-                'label': 'průměrná délka individuálně placeného členství v měsících',
-                'data': charts.members_individuals_duration,
+                'label': 'průměrná délka členství v měsících',
+                'data': charts.members_duration,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },

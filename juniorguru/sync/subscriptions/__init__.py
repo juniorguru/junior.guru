@@ -103,6 +103,8 @@ def main(context, clear_cache):
             except (TypeError, KeyError):
                 activity['subscription_type'] = SubscriptionType.INDIVIDUAL
             SubscriptionActivity.add(**activity)
+    logger.info('Identifying trials and updating their subscription type')
+    SubscriptionActivity.mark_trials()
     logger.info(f'Finished with {SubscriptionActivity.total_count()} activities')
 
     logger.info("Fetching members data from Memberful CSV")

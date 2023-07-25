@@ -180,23 +180,28 @@ def members(today) -> dict[str, Any]:
 
 
 @chart
-def members_count(months: list[date]) -> list[Number]:
-    return charts.per_month(SubscriptionActivity.count, months)
+def members_all(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.active_count, months)
 
 
 @chart
 def members_individuals(months: list[date]) -> list[Number]:
-    return charts.per_month(SubscriptionActivity.individuals_count, months)
+    return charts.per_month(SubscriptionActivity.active_individuals_count, months)
 
 
 @chart
 def members_individuals_yearly(months: list[date]) -> list[Number]:
-    return charts.per_month(SubscriptionActivity.yearly_individuals_count, months)
+    return charts.per_month(SubscriptionActivity.active_individuals_yearly_count, months)
 
 
 @chart
 def members_women_ptc(months: list[date]) -> list[Number]:
-    return charts.per_month(SubscriptionActivity.women_ptc, months)
+    return charts.per_month(SubscriptionActivity.active_women_ptc, months)
+
+
+# @chart
+# def members_duration(months: list[date]) -> list[Number]:
+#     return charts.per_month(SubscriptionActivity.active_duration_avg, months)
 
 
 @namespace
@@ -209,30 +214,25 @@ def members_subscriptions(today) -> dict[str, Any]:
 
 @chart
 def members_subscriptions_breakdown(months: list[date]) -> list[Number]:
-    return charts.per_month_breakdown(SubscriptionActivity.subscription_type_breakdown, months)
+    return charts.per_month_breakdown(SubscriptionActivity.active_subscription_type_breakdown, months)
 
 
-# @chart
-# def members_individuals_duration(months: list[date]) -> list[Number]:
-#     return charts.per_month(SubscribedPeriod.individuals_duration_avg, months)
+@namespace
+def members_trend(today) -> dict[str, Any]:
+    months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
+    return dict(values=months,
+                labels=charts.labels(months),
+                annotations=charts.annotations(months, MILESTONES))
 
 
-# @namespace
-# def members_trend(today) -> dict[str, Any]:
-#     months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
-#     return dict(values=months,
-#                 labels=charts.labels(months),
-#                 annotations=charts.annotations(months, MILESTONES))
+@chart
+def members_trend_signups(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.signups_count, months)
 
 
-# @chart
-# def members_trend_signups(months: list[date]) -> list[Number]:
-#     return charts.per_month(SubscribedPeriod.signups_count, months)
-
-
-# @chart
-# def members_trend_individuals_signups(months: list[date]) -> list[Number]:
-#     return charts.per_month(SubscribedPeriod.individuals_signups_count, months)
+@chart
+def members_trend_individuals_signups(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.individuals_signups_count, months)
 
 
 # @chart
