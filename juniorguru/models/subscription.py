@@ -2,6 +2,7 @@ from collections import Counter
 from datetime import date
 from enum import StrEnum, unique
 from functools import wraps
+import math
 from numbers import Number
 from typing import Callable, Iterable, Self
 
@@ -94,7 +95,7 @@ class SubscriptionActivity(BaseModel):
         return cls.select().count()
 
     @classmethod
-    def latest_active_listing(cls, date: date) -> Iterable[Self]:
+    def listing(cls, date: date) -> Iterable[Self]:
         return cls.select(cls, fn.max(cls.happened_at).alias('latest_at')) \
             .where(cls.happened_on <= date) \
             .group_by(cls.account_id) \
@@ -102,29 +103,27 @@ class SubscriptionActivity(BaseModel):
 
     @classmethod
     def count(cls, date: date) -> int:
-        return cls.latest_active_listing(date).count()
+        return cls.listing(date).count()
 
     @classmethod
     @uses_data_from_subscriptions()
     def individuals_count(cls, date: date) -> int | None:
-        return cls.latest_active_listing(date) \
+        return cls.listing(date) \
             .having(cls.subscription_type == SubscriptionType.INDIVIDUAL) \
             .count()
 
     @classmethod
     @uses_data_from_subscriptions()
-    def individuals_yearly_count(cls, date: date) -> int | None:
-        return cls.latest_active_listing(date) \
+    def yearly_individuals_count(cls, date: date) -> int | None:
+        return cls.listing(date) \
             .having(cls.subscription_type == SubscriptionType.INDIVIDUAL,
                     cls.subscription_interval == SubscriptionInterval.YEAR) \
             .count()
 
     @classmethod
     @uses_data_from_subscriptions(default=dict)
-    def count_breakdown(cls, date: date) -> dict[str, int]:
-        counter = Counter([activity.subscription_type
-                           for activity
-                           in cls.latest_active_listing(date)])
+    def subscription_type_breakdown(cls, date: date) -> dict[str, int]:
+        counter = Counter([activity.subscription_type for activity in cls.listing(date)])
         if None in counter:
             raise ValueError("There are members whose latest activity is without subscription type, "
                              f"which can happen only if they're from before {LEGACY_PLANS_DELETED_ON}. "
@@ -133,6 +132,19 @@ class SubscriptionActivity(BaseModel):
                              "See if we shouldn't observe more activities in the ACTIVITY_TYPES_MAPPING.")
         return {subscription_type.value: counter[subscription_type]
                 for subscription_type in SubscriptionType}
+
+    @classmethod
+    def women_count(cls, date: date) -> int:
+        return cls.listing(date) \
+            .having(cls.account_has_feminine_name == True) \
+            .count()
+
+    @classmethod
+    def women_ptc(cls, date: date) -> int:
+        count = cls.count(date)
+        if count:
+            return math.ceil((cls.women_count(date) / count) * 100)
+        return 0
 
 
 class SubscriptionCancellation(BaseModel):

@@ -616,8 +616,6 @@ Chtěl bych mít v klubu v průměru aspoň dvě oficiální online akce měsí�
 
 Podíl žen sleduji z vlastní zvědavosti a není to žádná přesná metrika. Nikdo nikde nevyplňuje, zda je žena nebo muž. Pro účely statistik se to určuje jen odhadem podle křestního jména a tvaru příjmení.
 
-{#
-
 ### Podíl žen v klubu
 
 Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/cri/lidske-zdroje-v-informacnich-technologiich-2020) je v českém IT pouze 10 % žen. Tento podíl se od jejich [předchozí analýzy v roce 2018](https://www.czso.cz/csu/czso/cri/ict-odbornici-v-ceske-republice-a-jejich-mzdy-2018) nezlepšil, naopak nás definitivně předběhly už všechny ostatní státy v Evropě.
@@ -642,8 +640,6 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
         'plugins': {'annotation': charts.members_annotations},
     }|tojson|forceescape }}"
     data-chart-milestones-offset-ptc="0"></canvas></div></div>
-
-#}
 
 ### Podíl žen mezi přednášejícími
 

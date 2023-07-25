@@ -191,7 +191,12 @@ def members_individuals(months: list[date]) -> list[Number]:
 
 @chart
 def members_individuals_yearly(months: list[date]) -> list[Number]:
-    return charts.per_month(SubscriptionActivity.individuals_yearly_count, months)
+    return charts.per_month(SubscriptionActivity.yearly_individuals_count, months)
+
+
+@chart
+def members_women_ptc(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.women_ptc, months)
 
 
 @namespace
@@ -204,12 +209,7 @@ def members_subscriptions(today) -> dict[str, Any]:
 
 @chart
 def members_subscriptions_breakdown(months: list[date]) -> list[Number]:
-    return charts.per_month_breakdown(SubscriptionActivity.count_breakdown, months)
-
-
-# @chart
-# def members_women_ptc(months: list[date]) -> list[Number]:
-#     return charts.per_month(SubscribedPeriod.women_ptc, months)
+    return charts.per_month_breakdown(SubscriptionActivity.subscription_type_breakdown, months)
 
 
 # @chart

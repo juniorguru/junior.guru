@@ -15,6 +15,7 @@ from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubMessage, ClubUser
 from juniorguru.models.event import Event
 from juniorguru.models.partner import Partnership
+from juniorguru.models.subscription import SubscriptionActivity
 
 
 TODAY = date.today()
@@ -132,7 +133,7 @@ def format_event(event):
 
 def render_open():
     members_total_count = ClubUser.members_count()
-    # members_women_ptc = SubscribedPeriod.women_ptc(TODAY)
+    members_women_ptc = SubscriptionActivity.women_ptc(TODAY)
 
     response = requests.get(BLOG_RSS_URL)
     response.raise_for_status()
@@ -142,7 +143,7 @@ def render_open():
     last_blog_entry = blog_entries[0]
 
     description = ', '.join([
-        f'🙋 {members_total_count} členů v klubu',#  TODO: , z toho asi {members_women_ptc} % žen',
+        f'🙋 {members_total_count} členů v klubu, z toho asi {members_women_ptc} % žen',
         f'📝 [{last_blog_entry.title}]({last_blog_entry.link})',
         '📊 [Návštěvnost webu](https://simpleanalytics.com/junior.guru)',
         '<:github:842685206095724554> [Zdrojový kód](https://github.com/honzajavorek/junior.guru)',
