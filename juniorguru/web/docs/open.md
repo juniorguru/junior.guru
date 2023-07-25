@@ -433,7 +433,7 @@ Graf s registracemi obsahuje všechny typy členství. Ať už nový člen při�
                 'borderWidth': 2,
             },
             {
-                'label': 'nová individuálně placená členství',
+                'label': 'nová individuální členství',
                 'data': charts.members_trend_individuals_signups,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
