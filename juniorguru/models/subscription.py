@@ -1,7 +1,12 @@
+from collections import Counter
 from datetime import date
 from enum import StrEnum, unique
+from functools import wraps
+from numbers import Number
+from typing import Callable, Iterable, Self
 
-from peewee import BooleanField, CharField, DateField, DateTimeField, fn
+from peewee import BooleanField, CharField, DateField, DateTimeField, fn, Case
+from juniorguru.lib.charts import month_range
 
 from juniorguru.models.base import BaseModel, check_enum
 
@@ -33,15 +38,35 @@ class SubscriptionType(StrEnum):
     STUDENT = 'student'
 
 
+def uses_data_from_subscriptions(default: Callable=None) -> Callable:
+    def decorator(class_method: Callable) -> Callable:
+        @wraps(class_method)
+        def wrapper(cls, date) -> None | Number:
+            if is_missing_subscriptions_data(date):
+                return default() if default is not None else None
+            return class_method(cls, date)
+        return wrapper
+    return decorator
+
+
+def is_missing_subscriptions_data(month: date) -> bool:
+    if month < LEGACY_PLANS_DELETED_ON:
+        return True
+    if month_range(month) == month_range(LEGACY_PLANS_DELETED_ON):
+        return True
+    return False
+
+
 class SubscriptionActivity(BaseModel):
     class Meta:
         indexes = (
-            (('type', 'account_id', 'happened_at'), True),
+            (('type', 'account_id', 'happened_on'), True),
         )
 
     type = CharField(constraints=[check_enum('type', SubscriptionActivityType)])
     account_id = CharField(index=True)
     account_has_feminine_name = BooleanField()
+    happened_on = DateField()
     happened_at = DateTimeField(index=True)
     order_coupon = CharField(null=True)
     subscription_interval = CharField(null=True, constraints=[check_enum('subscription_interval', SubscriptionInterval)])
@@ -50,53 +75,64 @@ class SubscriptionActivity(BaseModel):
     @classmethod
     def add(cls, **kwargs):
         unique_key_fields = cls._meta.indexes[0][0]
-        if set(unique_key_fields) == set(kwargs.keys()) or not any(kwargs.values()):
-            insert = cls.insert(**kwargs) \
-                .on_conflict_ignore()
-        else:
-            conflict_target = [getattr(cls, field) for field in unique_key_fields]
-            update = {field: kwargs[field]
-                      for field, value in kwargs.items()
-                      if ((value is not None) and
-                          (field not in unique_key_fields))}
-            insert = cls.insert(**kwargs) \
-                .on_conflict(action='update',
-                             update=update,
-                             conflict_target=conflict_target)
+        conflict_target = [getattr(cls, field) for field in unique_key_fields]
+        update = {field: kwargs[field]
+                  for field, value in kwargs.items()
+                  if ((value is not None) and
+                      (field not in unique_key_fields))}
+        update[cls.happened_at] = Case(None,
+                                       [(cls.happened_at < kwargs['happened_at'], kwargs['happened_at'])],
+                                       cls.happened_at)
+        insert = cls.insert(**kwargs) \
+            .on_conflict(action='update',
+                         update=update,
+                         conflict_target=conflict_target)
         insert.execute()
 
     @classmethod
-    def cleanup(cls):
-        cls_also = cls.alias()
-
-        # Trials which are part of a free subscription are not really trials
-        cls.delete() \
-            .where(cls.type.in_([SubscriptionActivityType.TRIAL_START,
-                                 SubscriptionActivityType.TRIAL_END]),
-                   cls.subscription_type == SubscriptionType.FREE) \
-            .execute()
-
-        # Activating trial also creates an 'order' activity.
-        # We want to keep just the 'trial_start' activity so that
-        # 'order' activites only mark moments where money is involved.
-        to_delete = cls.select(cls.id) \
-            .join(cls_also, on=((cls.account_id == cls_also.account_id) &
-                                (cls.happened_at == cls_also.happened_at))) \
-            .where(cls.type == SubscriptionActivityType.ORDER,
-                   cls_also.type == SubscriptionActivityType.TRIAL_START)
-        cls.delete().where(cls.id.in_(to_delete)).execute()
-
-    @classmethod
-    def total_count(cls):
+    def total_count(cls) -> int:
         return cls.select().count()
 
     @classmethod
-    def count(cls, date: date):
-        query = cls.select(cls, fn.max(cls.happened_at).alias('latest_at')) \
-            .where(cls.happened_at <= date) \
+    def latest_active_listing(cls, date: date) -> Iterable[Self]:
+        return cls.select(cls, fn.max(cls.happened_at).alias('latest_at')) \
+            .where(cls.happened_on <= date) \
             .group_by(cls.account_id) \
             .having(cls.type != SubscriptionActivityType.DEACTIVATION)
-        return query.count()
+
+    @classmethod
+    def count(cls, date: date) -> int:
+        return cls.latest_active_listing(date).count()
+
+    @classmethod
+    @uses_data_from_subscriptions()
+    def individuals_count(cls, date: date) -> int | None:
+        return cls.latest_active_listing(date) \
+            .having(cls.subscription_type == SubscriptionType.INDIVIDUAL) \
+            .count()
+
+    @classmethod
+    @uses_data_from_subscriptions()
+    def individuals_yearly_count(cls, date: date) -> int | None:
+        return cls.latest_active_listing(date) \
+            .having(cls.subscription_type == SubscriptionType.INDIVIDUAL,
+                    cls.subscription_interval == SubscriptionInterval.YEAR) \
+            .count()
+
+    @classmethod
+    @uses_data_from_subscriptions(default=dict)
+    def count_breakdown(cls, date: date) -> dict[str, int]:
+        counter = Counter([activity.subscription_type
+                           for activity
+                           in cls.latest_active_listing(date)])
+        if None in counter:
+            raise ValueError("There are members whose latest activity is without subscription type, "
+                             f"which can happen only if they're from before {LEGACY_PLANS_DELETED_ON}. "
+                             "But then they should be filtered out by the clause HAVING type != deactivation. "
+                             "It's very likely these members are deactivated, but it's not reflected in the data. "
+                             "See if we shouldn't observe more activities in the ACTIVITY_TYPES_MAPPING.")
+        return {subscription_type.value: counter[subscription_type]
+                for subscription_type in SubscriptionType}
 
 
 class SubscriptionCancellation(BaseModel):
@@ -244,6 +280,3 @@ class SubscriptionMarketingSurvey(BaseModel):
 #             return 0
 #         durations = [((min(to_date, result.end_on) - result.start_on).days / 30) for result in results]
 #         return sum(durations) / len(durations)
-
-#     def __str__(self):
-#         return f'#{self.account_id} {self.start_on}…{self.end_on} {self.type}'

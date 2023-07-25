@@ -19,7 +19,7 @@ Stránku jsem vytvořil po vzoru [jiných otevřených projektů](https://openst
 
 Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde z mého podnikání přímo do rodinného rozpočtu. Aktuální čistý zisk junior.guru je **{{ profit_ttm|thousands }} Kč měsíčně**. Spočítáno jako zisk za posledních 12 měsíců (TTM, _trailing twelve months_) vydělený 12.
 
-Občas si čtu o zahraničních podnikavcích, kteří taky otevřeně sdílí svoje výdělky. Mají to však v jiné měně, tak se mi to špatně srovnává. Proto jsem si to přepočítal. Podle pondělních kurzů ČNB mám zhruba ${{ profit_ttm_usd|thousands }} nebo {{ profit_ttm_eur|thousands }}€ čistého měsíčně.
+Občas si čtu o zahraničních podnikavcích, kteří taky otevřeně sdílí svoje výdělky. Mají to však v jiné měně, tak se mi to špatně srovnává. Proto jsem si to přepočítal. Podle pondělních kurzů ČNB mám zhruba **${{ profit_ttm_usd|thousands }}** nebo **{{ profit_ttm_eur|thousands }}€** čistého měsíčně.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
@@ -324,12 +324,10 @@ Ukončená partnerství: {% for partner in partners_expired %}{{ partner_link(pa
 Historická data v grafech jsou z Memberful, služby, která se mi stará o registrace a placení.
 Čísla se mohou lišit, protože když někdo ukončí členství a smaže svůj účet, ze statistik zmizí.
 Také ne každý, kdo se zaregistroval, je i na Discordu.
-Někdo se tam teprve chystá, někdo to ani neplánuje, jelikož mě chce podpořit pouze finančně.
+Někdo se tam teprve chystá a někdo to ani neplánuje, jelikož mě chce podpořit pouze finančně.
 Grafy jsou tedy orientační.
 
-{#
 Tenká modrá čára představuje počet členů, kteří si členství platí ze svého. Tenká zelená čára ukazuje ty z nich, kteří preferují roční platbu před měsíční.
-#}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
@@ -339,9 +337,21 @@ Tenká modrá čára představuje počet členů, kteří si členství platí z
         'datasets': [
             {
                 'label': 'všechna členství',
-                'data': charts.members_subscriptions,
+                'data': charts.members_count,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
+            },
+            {
+                'label': 'všechna individuální členství',
+                'data': charts.members_individuals,
+                'borderColor': '#1755d1',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'roční individuální členství',
+                'data': charts.members_individuals_yearly,
+                'borderColor': '#02CABB',
+                'borderWidth': 1,
             },
         ],
     }|tojson|forceescape }}"
@@ -350,21 +360,6 @@ Tenká modrá čára představuje počet členů, kteří si členství platí z
         'scales': {'y': {'beginAtZero': true}},
         'plugins': {'annotation': charts.members_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
-
-{#
-
-{
-    'label': 'všechna individuální členství',
-    'data': charts.members_individuals,
-    'borderColor': '#1755d1',
-    'borderWidth': 1,
-},
-{
-    'label': 'roční individuální členství',
-    'data': charts.members_individuals_yearly,
-    'borderColor': '#02CABB',
-    'borderWidth': 1,
-},
 
 ### Typy členství
 
@@ -380,7 +375,7 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
     class="chart" width="400" height="200"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts.members_labels,
+        'labels': charts.members_subscriptions_labels,
         'datasets': [
             {
                 'label': 'neplatí členství',
@@ -399,7 +394,7 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
             },
             {
                 'label': 'členství si platí sami',
-                'data': charts.members_subscriptions_breakdown.pop('individuals'),
+                'data': charts.members_subscriptions_breakdown.pop('individual'),
                 'backgroundColor': '#1755d1',
             },
             {
@@ -409,7 +404,7 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
             },
             {
                 'label': 'členství platí vzdělávací agentura',
-                'data': charts.members_subscriptions_breakdown.pop('students'),
+                'data': charts.members_subscriptions_breakdown.pop('student'),
                 'backgroundColor': '#083284',
             },
         ],
@@ -418,8 +413,10 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
-        'plugins': {'annotation': charts.members_annotations},
+        'plugins': {'annotation': charts.members_subscriptions_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
+
+{#
 
 ### Příchody
 
@@ -699,10 +696,9 @@ Sice do toho Pavlíně nekecám, ale za mě by bylo fajn, kdyby v průměru polo
 
 Návštěvnost měří [Simple Analytics](https://www.simpleanalytics.com/?referral=honza-javorek) a veškerá čísla jsou [veřejná](https://simpleanalytics.com/junior.guru).
 Tady jen pár vybraných grafů, které se tam špatně naklikávají ručně.
+Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
 
 ### Souhrnná návštěvnost podle produktů
-
-Graf zobrazuje trend pouze zpětně za jeden rok, protože mi to tak stačí.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"
@@ -756,8 +752,6 @@ Graf zobrazuje trend pouze zpětně za jeden rok, protože mi to tak stačí.
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Celková návštěvnost
-
-Graf zobrazuje trend pouze zpětně za jeden rok, protože mi to tak stačí.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="200"

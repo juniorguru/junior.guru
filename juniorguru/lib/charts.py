@@ -60,7 +60,7 @@ def per_month(fn_returning_numbers: Callable, months: Iterable[date]) -> list[Nu
 def per_month_breakdown(fn_returning_breakdowns: Callable, months: Iterable[date]) -> dict[str, list[Number]]:
     breakdowns = [fn_returning_breakdowns(month) for month in months]
     categories = set(itertools.chain.from_iterable(breakdown.keys() for breakdown in breakdowns))
-    return {category: [breakdown.get(category, 0) for breakdown in breakdowns]
+    return {category: [breakdown.get(category) for breakdown in breakdowns]
             for category in categories}
 
 

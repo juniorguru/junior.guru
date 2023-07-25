@@ -30,6 +30,8 @@ ACTIVITY_TYPES_MAPPING = {
     'renewal': SubscriptionActivityType.ORDER,
     'gift_activated': SubscriptionActivityType.ORDER,
     'subscription_deactivated': SubscriptionActivityType.DEACTIVATION,
+    'subscription_deleted': SubscriptionActivityType.DEACTIVATION,
+    'order_suspended': SubscriptionActivityType.DEACTIVATION,
 }
 
 SUBSCRIPTIONS_GQL_PATH = Path(__file__).parent / 'subscriptions.gql'
@@ -84,11 +86,12 @@ def main(context, clear_cache):
         except (KeyError, TypeError):
             logger.debug('Activity with no account ID, skipping')
         else:
+            happened_at = arrow.get(activity['createdAt']).naive
             SubscriptionActivity.add(account_id=account_id,
                                      account_has_feminine_name=has_feminine_name(activity['member']['fullName']),
-                                     happened_at=arrow.get(activity['createdAt']).naive,
+                                     happened_on=happened_at.date(),
+                                     happened_at=happened_at,
                                      type=ACTIVITY_TYPES_MAPPING[activity['type']])
-
     logger.info('Fetching subscriptions from Memberful API')
     subscriptions = memberful.get_nodes(SUBSCRIPTIONS_GQL_PATH.read_text(), delay=0.2)
     for subscription in logger.progress(subscriptions):
@@ -96,13 +99,10 @@ def main(context, clear_cache):
             activity['account_has_feminine_name'] = has_feminine_name(subscription['member']['fullName'])
             try:
                 coupon_name = parse_coupon(activity['order_coupon'])['name']
-            except TypeError:
-                activity['subscription_type'] = None
-            else:
-                activity['subscription_type'] = subscripton_types_mapping.get(coupon_name)
+                activity['subscription_type'] = subscripton_types_mapping[coupon_name]
+            except (TypeError, KeyError):
+                activity['subscription_type'] = SubscriptionType.INDIVIDUAL
             SubscriptionActivity.add(**activity)
-
-    SubscriptionActivity.cleanup()
     logger.info(f'Finished with {SubscriptionActivity.total_count()} activities')
 
     logger.info("Fetching members data from Memberful CSV")
@@ -153,21 +153,27 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
     subscription_interval = subscription['plan']['intervalUnit']
     subscription_coupon = (subscription['coupon'] or {}).get('code')
 
+    created_at = arrow.get(subscription['createdAt']).naive
     yield dict(account_id=account_id,
                type='order',
-               happened_at=arrow.get(subscription['createdAt']).naive,
+               happened_on=created_at.date(),
+               happened_at=created_at,
                subscription_interval=subscription_interval,
                order_coupon=subscription_coupon)
     if subscription['trialStartAt']:
+        trial_start_at = arrow.get(subscription['trialStartAt']).naive
         yield dict(account_id=account_id,
                    type='trial_start',
-                   happened_at=arrow.get(subscription['trialStartAt']).naive,
+                   happened_on=trial_start_at.date(),
+                   happened_at=trial_start_at,
                    subscription_interval=subscription_interval,
                    order_coupon=subscription_coupon)
     if subscription['trialEndAt']:
+        trial_end_at = arrow.get(subscription['trialEndAt']).naive
         yield dict(account_id=account_id,
                    type='trial_end',
-                   happened_at=arrow.get(subscription['trialEndAt']).naive,
+                   happened_on=trial_end_at.date(),
+                   happened_at=trial_end_at,
                    subscription_interval=subscription_interval,
                    order_coupon=subscription_coupon)
 
@@ -178,9 +184,11 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
         else:
             order_coupon = (order['coupon'] or {}).get('code')
 
+        order_created_at = arrow.get(order['createdAt']).naive
         yield dict(account_id=account_id,
                    type='order',
-                   happened_at=arrow.get(order['createdAt']).naive,
+                   happened_on=order_created_at.date(),
+                   happened_at=order_created_at,
                    subscription_interval=subscription['plan']['intervalUnit'],
                    order_coupon=order_coupon)
 

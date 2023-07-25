@@ -12,7 +12,7 @@ from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.followers import Followers
 from juniorguru.models.page import Page
 from juniorguru.models.podcast import PodcastEpisode
-from juniorguru.models.subscription import SubscriptionActivity
+from juniorguru.models.subscription import SubscriptionActivity, LEGACY_PLANS_DELETED_ON
 from juniorguru.models.transaction import Transaction
 from juniorguru.models.web_usage import WebUsage
 
@@ -180,23 +180,31 @@ def members(today) -> dict[str, Any]:
 
 
 @chart
-def members_subscriptions(months: list[date]) -> list[Number]:
+def members_count(months: list[date]) -> list[Number]:
     return charts.per_month(SubscriptionActivity.count, months)
 
 
-# @chart
-# def members_individuals(months: list[date]) -> list[Number]:
-#     return charts.per_month(SubscribedPeriod.individuals_count, months)
+@chart
+def members_individuals(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.individuals_count, months)
 
 
-# @chart
-# def members_individuals_yearly(months: list[date]) -> list[Number]:
-#     return charts.per_month(SubscribedPeriod.individuals_yearly_count, months)
+@chart
+def members_individuals_yearly(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.individuals_yearly_count, months)
 
 
-# @chart
-# def members_subscriptions_breakdown(months: list[date]) -> list[Number]:
-#     return charts.per_month_breakdown(SubscribedPeriod.count_breakdown, months)
+@namespace
+def members_subscriptions(today) -> dict[str, Any]:
+    months = charts.months(charts.next_month(LEGACY_PLANS_DELETED_ON), today)
+    return dict(values=months,
+                labels=charts.labels(months),
+                annotations=charts.annotations(months, MILESTONES))
+
+
+@chart
+def members_subscriptions_breakdown(months: list[date]) -> list[Number]:
+    return charts.per_month_breakdown(SubscriptionActivity.count_breakdown, months)
 
 
 # @chart
