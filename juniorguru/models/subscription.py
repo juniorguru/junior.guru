@@ -65,6 +65,7 @@ class SubscriptionActivity(BaseModel):
         )
 
     type = CharField(constraints=[check_enum('type', SubscriptionActivityType)])
+    source = CharField()
     account_id = CharField(index=True)
     account_has_feminine_name = BooleanField()
     happened_on = DateField()
@@ -77,13 +78,16 @@ class SubscriptionActivity(BaseModel):
     def add(cls, **kwargs):
         unique_key_fields = cls._meta.indexes[0][0]
         conflict_target = [getattr(cls, field) for field in unique_key_fields]
+
         update = {field: kwargs[field]
                   for field, value in kwargs.items()
                   if ((value is not None) and
                       (field not in unique_key_fields))}
+        update[cls.source] = cls.source.concat(',' + kwargs['source'])
         update[cls.happened_at] = Case(None,
                                        [(cls.happened_at < kwargs['happened_at'], kwargs['happened_at'])],
                                        cls.happened_at)
+
         insert = cls.insert(**kwargs) \
             .on_conflict(action='update',
                          update=update,
@@ -203,25 +207,55 @@ class SubscriptionActivity(BaseModel):
             .where(cls.subscription_type == SubscriptionType.INDIVIDUAL) \
             .count()
 
-    # @classmethod
-    # def quits(cls, date):
-    #     from_date, to_date = month_range(date)
-    #     return cls.select(cls, fn.max(cls.end_on)) \
-    #         .group_by(cls.account_id) \
-    #         .having(cls.end_on >= from_date, cls.end_on <= to_date) \
-    #         .order_by(cls.end_on)
+    @classmethod
+    def quits(cls, date: date) -> Iterable[Self]:
+        from_date, to_date = month_range(date)
 
-    # @classmethod
-    # def quits_count(cls, date):
-    #     return cls.quits(date).count()
+        o_cls = cls.alias('orders')
+        d_cls = cls.alias('deactivations')
 
-    # @classmethod
-    # def individuals_quits(cls, date):
-    #     return cls.quits(date).where(cls.type == SubscribedPeriodType.INDIVIDUALS)
+        # Subquery to select when the latest order for given account_id happened
+        latest_order_at = o_cls.select(fn.max(o_cls.happened_at)) \
+            .where(o_cls.type != SubscriptionActivityType.DEACTIVATION,
+                   o_cls.account_id == d_cls.account_id,
+                   o_cls.happened_on <= to_date) \
+            .group_by(o_cls.account_id) \
+            .alias('latest_order_at')
 
-    # @classmethod
-    # def individuals_quits_count(cls, date):
-    #     return cls.individuals_quits(date).count()
+        # The row_num column will allow us to filter out duplicit deactivations
+        # and must be ordered ascendingly so that the first occurance
+        # of deactivation is row number one
+        row_num = fn.row_number() \
+            .over(partition_by=[d_cls.account_id, d_cls.type],
+                  order_by=[d_cls.happened_at]) \
+            .alias('row_num')
+
+        # Then selecting deactivations for each account_id which happen
+        # later than the latest order, and we keep track of the row number
+        deactivations = d_cls.select(d_cls.id, row_num) \
+            .where(d_cls.type == SubscriptionActivityType.DEACTIVATION,
+                   d_cls.happened_at >= latest_order_at,
+                   d_cls.happened_on <= to_date) \
+            .order_by(d_cls.account_id.asc(), d_cls.happened_at.desc()) \
+            .alias('deactivations')
+
+        # Now selecting only the first row for each account_id, effectively
+        # getting rid of later duplicit deactivations
+        return cls.select(cls) \
+            .join(deactivations, on=(cls.id == deactivations.c.id)) \
+            .where(deactivations.c.row_num == 1,
+                   cls.happened_on >= from_date)
+
+    @classmethod
+    def quits_count(cls, date: date) -> int:
+        return cls.quits(date).count()
+
+    @classmethod
+    @uses_data_from_subscriptions()
+    def individuals_quits_count(cls, date: date) -> int:  # TODO
+        return cls.quits(date) \
+            .where(cls.subscription_type == SubscriptionType.INDIVIDUAL) \
+            .count()
 
     # @classmethod
     # def churn_ptc(cls, date):

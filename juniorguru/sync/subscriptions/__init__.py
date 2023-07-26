@@ -91,6 +91,7 @@ def main(context, clear_cache):
                                      account_has_feminine_name=has_feminine_name(activity['member']['fullName']),
                                      happened_on=happened_at.date(),
                                      happened_at=happened_at,
+                                     source=f"activity#{activity['id']}/{activity['type']}",
                                      type=ACTIVITY_TYPES_MAPPING[activity['type']])
     logger.info('Fetching subscriptions from Memberful API')
     subscriptions = memberful.get_nodes(SUBSCRIPTIONS_GQL_PATH.read_text(), delay=0.2)
@@ -158,6 +159,7 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
     created_at = arrow.get(subscription['createdAt']).naive
     yield dict(account_id=account_id,
                type='order',
+               source=f"subscription#{subscription['id']}/created_at",
                happened_on=created_at.date(),
                happened_at=created_at,
                subscription_interval=subscription_interval,
@@ -166,6 +168,7 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
         trial_start_at = arrow.get(subscription['trialStartAt']).naive
         yield dict(account_id=account_id,
                    type='trial_start',
+                   source=f"subscription#{subscription['id']}/trial_start_at",
                    happened_on=trial_start_at.date(),
                    happened_at=trial_start_at,
                    subscription_interval=subscription_interval,
@@ -174,6 +177,7 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
         trial_end_at = arrow.get(subscription['trialEndAt']).naive
         yield dict(account_id=account_id,
                    type='trial_end',
+                   source=f"subscription#{subscription['id']}/trial_end_at",
                    happened_on=trial_end_at.date(),
                    happened_at=trial_end_at,
                    subscription_interval=subscription_interval,
@@ -189,6 +193,7 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
         order_created_at = arrow.get(order['createdAt']).naive
         yield dict(account_id=account_id,
                    type='order',
+                   source=f"subscription#{subscription['id']}/order#{i}/created_at",
                    happened_on=order_created_at.date(),
                    happened_at=order_created_at,
                    subscription_interval=subscription['plan']['intervalUnit'],

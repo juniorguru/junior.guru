@@ -235,6 +235,16 @@ def members_trend_individuals_signups(months: list[date]) -> list[Number]:
     return charts.per_month(SubscriptionActivity.individuals_signups_count, months)
 
 
+@chart
+def members_trend_quits(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.quits_count, months)
+
+
+@chart
+def members_trend_individuals_quits(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.individuals_quits_count, months)
+
+
 # @chart
 # def members_trend_churn_ptc(months: list[date]) -> list[Number]:
 #     return charts.per_month(SubscribedPeriod.churn_ptc, months)
