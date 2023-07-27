@@ -629,3 +629,10 @@
 {"_id": "26097597806", "amount": 6, "category": "donations", "happened_on": "2023-07-07"}
 {"_id": "26098494777", "amount": -46, "category": "tax", "happened_on": "2023-07-07"}
 {"_id": "26100293939", "amount": 5392, "category": "memberships", "happened_on": "2023-07-10"}
+{"_id": "26103588581", "amount": 6, "category": "donations", "happened_on": "2023-07-12"}
+{"_id": "26103609818", "amount": -40, "category": "miscellaneous", "happened_on": "2023-07-12"}
+{"_id": "26107858277", "amount": -2841, "category": "tax", "happened_on": "2023-07-15"}
+{"_id": "26107858278", "amount": -2722, "category": "tax", "happened_on": "2023-07-15"}
+{"_id": "26109541542", "amount": 9949, "category": "memberships", "happened_on": "2023-07-17"}
+{"_id": "26109804288", "amount": 15000, "category": "partnerships", "happened_on": "2023-07-17"}
+{"_id": "26110310446", "amount": 80000, "category": "partnerships", "happened_on": "2023-07-17"}
