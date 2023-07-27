@@ -153,13 +153,6 @@ class SubscriptionActivity(BaseModel):
             deactivation.subscription_interval = previous_activity.subscription_interval
             deactivation.save()
 
-        # Make sure we don't draw any conclusions from incomplete data
-        cls.update(dict(order_coupon=None,
-                        subscription_interval=None,
-                        subscription_type=None)) \
-            .where(cls.happened_on <= LEGACY_PLANS_DELETED_ON) \
-            .execute()
-
     @classmethod
     def total_count(cls) -> int:
         return cls.select().count()
