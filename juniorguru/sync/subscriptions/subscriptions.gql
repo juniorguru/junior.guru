@@ -21,6 +21,7 @@ query fetch($cursor: String!) {
                     code
                 }
                 orders {
+                    uuid
                     createdAt
                     coupon {
                         code

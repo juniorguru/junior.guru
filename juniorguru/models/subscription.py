@@ -98,76 +98,66 @@ class SubscriptionActivity(BaseModel):
     def cleanse_data(cls) -> None:
         # The 'order' activity happening on the same day as 'trial_end' activity
         # marks subscription type of the whole trial.
-        te_cls = cls.alias('trial_ends')
-        cte = cls.select(cls.account_id, cls.happened_on, cls.subscription_type) \
-            .join(te_cls, on=((cls.account_id == te_cls.account_id) &
-                              (cls.happened_on == te_cls.happened_on))) \
-            .where(cls.type == SubscriptionActivityType.ORDER,
-                   te_cls.type == SubscriptionActivityType.TRIAL_END) \
-            .cte('cte', columns=('account_id', 'happened_on', 'subscription_type'))
-        cls.update(subscription_type=SQL('cte.subscription_type')) \
-            .with_cte(cte) \
-            .from_(cte) \
-            .where(cls.account_id == SQL('cte.account_id'),
-                   ((cls.type == SubscriptionActivityType.ORDER) & (cls.happened_on == SQL('cte.happened_on'))) |
-                   ((cls.type == SubscriptionActivityType.TRIAL_START) & (cls.happened_on < SQL('cte.happened_on')))) \
-            .execute()
+        #
+        # If the 'order' activity is for an individual subscription, we can assume
+        # the trial was a true trial and not something free or paid by invoice. Hence
+        # we can mark all the trial activities with a special subscription type 'trial'.
+        #
+        # If there's no such order, we can also assume the trial was a true trial,
+        # albeit not finished yet, or not followed by an order (deactivated).
+        trial_ends = cls.select() \
+            .where(cls.type == SubscriptionActivityType.TRIAL_END,
+                   cls.subscription_type == SubscriptionType.INDIVIDUAL,
+                   cls.happened_on > LEGACY_PLANS_DELETED_ON)
+        for trial_end in trial_ends:
+            account_activities = cls.select().where(cls.account_id == trial_end.account_id)
 
-        # Only those trials which have individual subscription type are true trials.
-        # This rewrites subscription type of individual 'trial_end' and 'trial_start' to 'trial'.
-        ite_cls = cls.alias('individual_trial_ends')
-        to_update = cls.select(cls.id) \
-            .join(ite_cls, on=(cls.account_id == ite_cls.account_id)) \
-            .where(ite_cls.type == SubscriptionActivityType.TRIAL_END,
-                   ite_cls.subscription_type == SubscriptionType.INDIVIDUAL,
-                   ((cls.type == SubscriptionActivityType.TRIAL_END) & (cls.happened_on == ite_cls.happened_on)) |
-                   ((cls.type == SubscriptionActivityType.TRIAL_START) & (cls.happened_on < ite_cls.happened_on)))
-        cls.update(subscription_type=SubscriptionType.TRIAL) \
-            .where(cls.id.in_(to_update)) \
-            .execute()
+            new_order = account_activities \
+                .where(cls.type == SubscriptionActivityType.ORDER,
+                       cls.happened_on == trial_end.happened_on) \
+                .first()
 
-        # The 'order' activity happening on the same day as 'trial_start' activity of type 'trial'
-        # should also have type 'trial'.
-        ts_cls = cls.alias('trial_starts')
-        to_update = cls.select(cls.id) \
-            .join(ts_cls, on=(cls.account_id == ts_cls.account_id)) \
-            .where(ts_cls.type == SubscriptionActivityType.TRIAL_START,
-                   ts_cls.subscription_type == SubscriptionType.TRIAL,
-                   cls.type == SubscriptionActivityType.ORDER,
-                   cls.happened_on == ts_cls.happened_on)
-        cls.update(subscription_type=SubscriptionType.TRIAL) \
-            .where(cls.id.in_(to_update)) \
-            .execute()
+            if not new_order or new_order.subscription_type == SubscriptionType.INDIVIDUAL:
+                subscription_type = SubscriptionType.TRIAL
+            else:
+                subscription_type = new_order.subscription_type
+
+            trial_end.subscription_type = subscription_type
+            trial_end.save()
+            trial_start = account_activities \
+                .where(cls.type == SubscriptionActivityType.TRIAL_START,
+                       cls.happened_on < trial_end.happened_on) \
+                .get()
+            trial_start.subscription_type = subscription_type
+            trial_start.save()
+            trial_order = account_activities \
+                .where(cls.type == SubscriptionActivityType.ORDER,
+                       cls.happened_on == trial_start.happened_on) \
+                .first()
+            trial_order.subscription_type = subscription_type
+            trial_order.save()
 
         # By default 'deactivation' activities are without details, so let's
-        # give it the details of the latest order before it.
-        # deactivations = cls.select() \
-        #     .where(cls.type == SubscriptionActivityType.DEACTIVATION)
-        # for deactivation in deactivations:
-        #     previous_activity = cls.select() \
-        #         .where(cls.type != SubscriptionActivityType.DEACTIVATION,
-        #                cls.account_id == deactivation.account_id,
-        #                cls.happened_at <= deactivation.happened_at) \
-        #         .order_by(cls.happened_at.desc()) \
-        #         .get()
-        #     deactivation.subscription_type = previous_activity.subscription_type
-        #     deactivation.subscription_interval = previous_activity.subscription_interval
-        #     deactivation.save()
-
-        a_cls = cls.alias('activities')
-        cte = cls.select(cls.id, a_cls.subscription_type, a_cls.subscription_interval) \
-            .join(a_cls, on=(cls.account_id == a_cls.account_id)) \
+        # give it the details of the latest activity before it.
+        deactivations = cls.select() \
             .where(cls.type == SubscriptionActivityType.DEACTIVATION,
-                   a_cls.type != SubscriptionActivityType.DEACTIVATION,
-                   a_cls.happened_at <= cls.happened_at) \
-            .group_by(cls.account_id) \
-            .having(fn.max(a_cls.happened_at) == a_cls.happened_at) \
-            .cte('cte', columns=('id', 'subscription_type', 'subscription_interval'))
-        cls.update(subscription_type=SQL('cte.subscription_type'),
-                   subscription_interval=SQL('cte.subscription_interval')) \
-            .with_cte(cte) \
-            .from_(cte) \
-            .where(cls.id == SQL('cte.id')) \
+                   cls.happened_on > LEGACY_PLANS_DELETED_ON)
+        for deactivation in deactivations:
+            previous_activity = cls.select() \
+                .where(cls.type != SubscriptionActivityType.DEACTIVATION,
+                       cls.account_id == deactivation.account_id,
+                       cls.happened_at <= deactivation.happened_at) \
+                .order_by(cls.happened_at.desc()) \
+                .get()
+            deactivation.subscription_type = previous_activity.subscription_type
+            deactivation.subscription_interval = previous_activity.subscription_interval
+            deactivation.save()
+
+        # Make sure we don't draw any conclusions from incomplete data
+        cls.update(dict(order_coupon=None,
+                        subscription_interval=None,
+                        subscription_type=None)) \
+            .where(cls.happened_on <= LEGACY_PLANS_DELETED_ON) \
             .execute()
 
     @classmethod
