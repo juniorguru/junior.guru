@@ -329,6 +329,10 @@ Grafy jsou tedy orientační.
 
 Tenká modrá čára představuje počet členů, kteří si členství platí ze svého. Tenká zelená čára ukazuje ty z nich, kteří preferují roční platbu před měsíční.
 
+{% call note() %}
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže některá data začínají až v březnu 2023.
+{% endcall %}
+
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
     data-chart-type="line"
@@ -370,6 +374,10 @@ Každý příchozí člen má v klubu dva týdny zdarma, bez ohledu na to, jaký
 S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzájem neplatíme. Oni využívají platformu klubu pro svůj mentoring a své studenty. Všichni mají automaticky vstup zdarma. Klub má díky tomu experty na frontend a moderátora Dana Srba.
 
 S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou studenty svých kurzů a proplatí jim členství na pár měsíců. Agentura z toho má službu pro studenty a já z toho mám to, že pokud se lidem v klubu zalíbí, budou si jej dál platit ze svého.
+
+{% call note() %}
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže data začínají až v březnu 2023.
+{% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -421,6 +429,10 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
 Graf s **příchody** obsahuje všechny typy členství. Ať už nový člen přišel přes firmu, stipendium, nebo individuálně, tak se započte. Tenká modrá čára představuje počet členů, kteří v daném měsíci poprvé v historii svého členství přešli na individuální placení. Jsou to především noví členové, kteří se po dvou týdnech na zkoušku rozhodli, že si klub začnou platit. Mohou to ale být i firemní členové nebo studenti ze vzdělávacích agentur, kterým skončilo členství zaplacené někým jiným a rozhodli se pokračovat za svoje.
 
 Graf s **odchody** zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli a poté za něj nezačali platit. Tam se očekává celkem velký odpad. Tenká čára sleduje pouze ty, kdo zrušili už existující individuálně placené členství. Naznačuje tedy odchody členů, kteří se za klub rozhodli platit, ale následně změnili názor. Očekává se, že juniorům, kteří si nakonec práci v IT našli, pokryjí většinu hodnoty klubu kolegové ve firmě, kde pracují. Také se v prvních měsících intenzivně zaučují a na klub tak často už nemají čas, i když je to tam baví.
+
+{% call note() %}
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže některá data začínají až v březnu 2023.
+{% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -534,6 +546,10 @@ Graf začíná v době, kdy jsem začal tato data sbírat.
 
 Procento členů, kteří z klubu odcházejí, neboli _churn_.
 
+{% call note() %}
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže některá data začínají až v březnu 2023.
+{% endcall %}
+
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
     data-chart-type="line"
@@ -614,6 +630,10 @@ Graf začíná v době, kdy jsem začal tímto způsobem zpětnou vazbu sbírat.
 
 Pokud jde graf nahoru, znamená to, že velká část členů zůstává v klubu dlouho.
 Propady nastávají, pokud do klubu přijdou noví lidé, kteří tam ale nevydrží a brzy zase odejdou.
+
+{% call note() %}
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže některá data začínají až v březnu 2023.
+{% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
