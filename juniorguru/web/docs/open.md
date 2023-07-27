@@ -492,6 +492,9 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_.
 
 ### Důvody odchodu
 
+Když někdo ukončuje členství v klubu, může mi sdělit důvod, proč tak činí.
+Graf začíná v době, kdy jsem začal tímto způsobem zpětnou vazbu sbírat.
+
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="250"
     data-chart-type="bar"
