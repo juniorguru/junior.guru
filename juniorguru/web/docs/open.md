@@ -22,7 +22,7 @@ Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde 
 Občas si čtu o zahraničních podnikavcích, kteří taky otevřeně sdílí svoje výdělky. Mají to však v jiné měně, tak se mi to špatně srovnává. Proto jsem si to přepočítal. Podle pondělních kurzů ČNB mám zhruba **${{ profit_ttm_usd|thousands }}** nebo **{{ profit_ttm_eur|thousands }}€** čistého měsíčně.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.business_labels,
@@ -113,7 +113,7 @@ Následující graf zobrazuje vývoj mých výnosů a nákladů v každém konkr
 Čísla z konkrétních mesíců tedy pomáhají odtušit aktuální trendy. Čistý zisk je rozdíl mezi modrou a červenou čárou.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.business_labels,
@@ -164,7 +164,7 @@ Inzerci nabídek práce nechci zrušit, ale aktuálně není na vrcholu mých pr
 Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velkou měrou právě díky nim junior.guru ve svých počátcích neskončilo. Teď je ale čas postavit se na vlastní nohy! Možnost přispět zřejmě nezruším, ale přestal jsem ji propagovat. Chtěl bych, aby dobrovolné příspěvky jednou plně nahradilo individuální členství v klubu.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="bar"
     data-chart="{{ {
         'labels': charts.business_labels,
@@ -213,7 +213,7 @@ Zahrnuji pouze náklady na byznys, ale zase i s daněmi a odvody na zdravotní a
 Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů jako Buffer nebo MailChimp, tisk samolepek, [konzultace](http://janadolejsova.cz/), apod.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="bar"
     data-chart="{{ {
         'labels': charts.business_labels,
@@ -330,7 +330,7 @@ Grafy jsou tedy orientační.
 Tenká modrá čára představuje počet členů, kteří si členství platí ze svého. Tenká zelená čára ukazuje ty z nich, kteří preferují roční platbu před měsíční.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.members_labels,
@@ -372,7 +372,7 @@ S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzáj
 S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou studenty svých kurzů a proplatí jim členství na pár měsíců. Agentura z toho má službu pro studenty a já z toho mám to, že pokud se lidem v klubu zalíbí, budou si jej dál platit ze svého.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="bar"
     data-chart="{{ {
         'labels': charts.members_subscriptions_labels,
@@ -423,7 +423,7 @@ Graf s **příchody** obsahuje všechny typy členství. Ať už nový člen př
 Graf s **odchody** zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli a poté za něj nezačali platit. Tam se očekává celkem velký odpad. Tenká čára sleduje pouze ty, kdo zrušili už existující individuálně placené členství. Naznačuje tedy odchody členů, kteří se za klub rozhodli platit, ale následně změnili názor. Očekává se, že juniorům, kteří si nakonec práci v IT našli, pokryjí většinu hodnoty klubu kolegové ve firmě, kde pracují. Také se v prvních měsících intenzivně zaučují a na klub tak často už nemají čas, i když je to tam baví.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.members_trend_labels,
@@ -462,8 +462,11 @@ Graf s **odchody** zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli 
 
 ### Zdroje příchodů
 
+Když se někdo registruje do klubu, může mi sdělit, kde na junior.guru narazil.
+Graf začíná v době, kdy jsem začal tato data sbírat.
+
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="bar"
     data-chart="{{ {
         'labels': charts.members_surveys_labels,
@@ -532,7 +535,7 @@ Graf s **odchody** zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli 
 Procento členů, kteří z klubu odcházejí, neboli _churn_.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.members_trend_labels,
@@ -563,7 +566,7 @@ Když někdo ukončuje členství v klubu, může mi sdělit důvod, proč tak �
 Graf začíná v době, kdy jsem začal tímto způsobem zpětnou vazbu sbírat.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="bar"
     data-chart="{{ {
         'labels': charts.members_surveys_labels,
@@ -613,7 +616,7 @@ Pokud jde graf nahoru, znamená to, že velká část členů zůstává v klubu
 Propady nastávají, pokud do klubu přijdou noví lidé, kteří tam ale nevydrží a brzy zase odejdou.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.members_labels,
@@ -651,7 +654,7 @@ Když chci na nějaké stránce něco doplnit, dělám si na jejím konci HTML k
 Ty se taky započítají do celkové velikosti, ale v grafu je jejich velikost zobrazena šedě, abych tušil, jaký je poměr a kde na mě ještě čeká kolik práce.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="bar"
     data-chart="{{ {
         'labels': charts.handbook_labels,
@@ -685,7 +688,8 @@ Ty se taky započítají do celkové velikosti, ale v grafu je jejich velikost z
                 },
             }
         },
-    }|tojson|forceescape }}"></canvas></div></div>
+    }|tojson|forceescape }}"
+    data-chart-milestones-offset-ptc="0"></canvas></div></div>
 
 
 ## Aktivita v klubu
@@ -697,7 +701,7 @@ V grafu není celá historie, uchovávám data jen za rok zpětně. Některé ka
 Pouze orientační metrika. Nechci sledovat a glorifikovat _engagement_, protože lidi mají z klubu úplně v pohodě hodnotu i pokud si jej pouze čtou. K tématu doporučuji [Stop Measuring Community Engagement](https://rosie.land/posts/stop-measuring-community-engagement/).
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.club_content_labels,
@@ -721,7 +725,7 @@ Pouze orientační metrika. Nechci sledovat a glorifikovat _engagement_, protož
 Chtěl bych mít v klubu v průměru aspoň dvě oficiální online akce měsíčně.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.events_labels,
@@ -755,7 +759,7 @@ Podíl žen sleduji z vlastní zvědavosti a není to žádná přesná metrika.
 Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/cri/lidske-zdroje-v-informacnich-technologiich-2020) je v českém IT pouze 10 % žen. Tento podíl se od jejich [předchozí analýzy v roce 2018](https://www.czso.cz/csu/czso/cri/ict-odbornici-v-ceske-republice-a-jejich-mzdy-2018) nezlepšil, naopak nás definitivně předběhly už všechny ostatní státy v Evropě.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.members_labels,
@@ -780,7 +784,7 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
 Chtěl bych, aby v průměru polovina přednášejících na online akcích v klubu byly ženy. Graf zobrazuje procentuální podíl žen na počtu přednášejících za posledních 12 měsíců (TTM, _trailing twelve months_).
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.events_labels,
@@ -804,7 +808,7 @@ Chtěl bych, aby v průměru polovina přednášejících na online akcích v kl
 Sice do toho Pavlíně nekecám, ale za mě by bylo fajn, kdyby v průměru polovina hostů v podcastu byly ženy. Graf zobrazuje procentuální podíl žen na počtu hostů za posledních 12 měsíců (TTM, _trailing twelve months_).
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.podcast_labels,
@@ -831,7 +835,7 @@ Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
 ### Souhrnná návštěvnost podle produktů
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.web_usage_labels,
@@ -884,7 +888,7 @@ Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
 ### Celková návštěvnost
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.web_usage_labels,
@@ -908,7 +912,7 @@ Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
 Vývoj počtu sledujících na profilech na relevantních sociálních sítích.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
+    class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
         'labels': charts.followers_labels,
