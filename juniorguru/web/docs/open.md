@@ -330,7 +330,7 @@ Grafy jsou tedy orientační.
 Tenká modrá čára představuje počet členů, kteří si členství platí ze svého. Tenká zelená čára ukazuje ty z nich, kteří preferují roční platbu před měsíční.
 
 {% call note() %}
-  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže některá data začínají až v březnu 2023.
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco začíná až v březnu 2023.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -431,7 +431,7 @@ Graf s **příchody** obsahuje všechny typy členství. Ať už nový člen př
 Graf s **odchody** zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli a poté za něj nezačali platit. Tam se očekává celkem velký odpad. Tenká čára sleduje pouze ty, kdo zrušili už existující individuálně placené členství. Naznačuje tedy odchody členů, kteří se za klub rozhodli platit, ale následně změnili názor. Očekává se, že juniorům, kteří si nakonec práci v IT našli, pokryjí většinu hodnoty klubu kolegové ve firmě, kde pracují. Také se v prvních měsících intenzivně zaučují a na klub tak často už nemají čas, i když je to tam baví.
 
 {% call note() %}
-  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže některá data začínají až v březnu 2023.
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco začíná až v březnu 2023.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -547,7 +547,7 @@ Graf začíná v době, kdy jsem začal tato data sbírat.
 Procento členů, kteří z klubu odcházejí, neboli _churn_.
 
 {% call note() %}
-  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže některá data začínají až v březnu 2023.
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco začíná až v březnu 2023.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -632,7 +632,7 @@ Pokud jde graf nahoru, znamená to, že velká část členů zůstává v klubu
 Propady nastávají, pokud do klubu přijdou noví lidé, kteří tam ale nevydrží a brzy zase odejdou.
 
 {% call note() %}
-  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže některá data začínají až v březnu 2023.
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco začíná až v březnu 2023.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
