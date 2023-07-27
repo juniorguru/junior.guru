@@ -236,7 +236,7 @@ class SubscriptionActivity(BaseModel):
             .count()
 
     @classmethod
-    def quits(cls, date: date) -> Iterable[Self]:  # ma vyjit 18 pro cervenec
+    def quits(cls, date: date) -> Iterable[Self]:
         from_date, to_date = month_range(date)
 
         o_cls = cls.alias('orders')
@@ -280,7 +280,7 @@ class SubscriptionActivity(BaseModel):
 
     @classmethod
     @uses_data_from_subscriptions()
-    def individuals_quits_count(cls, date: date) -> int:  # ma vyjit 8 pro cervenec
+    def individuals_quits_count(cls, date: date) -> int:
         return cls.quits(date) \
             .where(cls.subscription_type == SubscriptionType.INDIVIDUAL) \
             .count()
