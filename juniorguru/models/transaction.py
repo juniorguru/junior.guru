@@ -1,16 +1,50 @@
+from datetime import date
 import functools
+import json
 import math
+from typing import Iterable, Self
 
 from peewee import CharField, DateField, IntegerField
+from playhouse.shortcuts import model_to_dict
 
 from juniorguru.lib.charts import month_range, ttm_range
 from juniorguru.models.base import BaseModel
 
 
 class Transaction(BaseModel):
+    id = CharField(primary_key=True)
     happened_on = DateField(index=True)
     category = CharField()
     amount = IntegerField()
+
+    @classmethod
+    def deserialize(cls, line: str):
+        data = json.loads(line)
+        data['id'] = data.pop('_id')
+        data['happened_on'] = date.fromisoformat(data['happened_on'])
+        return cls.create(**data)
+
+    def serialize(self) -> str:
+        data = model_to_dict(self)
+        data['_id'] = data.pop('id')
+        data['happened_on'] = data['happened_on'].isoformat()
+        return json.dumps(data, sort_keys=True, ensure_ascii=False) + '\n'
+
+    @classmethod
+    def add(cls, **data):
+        return cls.replace(**data).execute()
+
+    @classmethod
+    def latest_happened_on(cls):
+        return cls.select(cls.happened_on) \
+            .order_by(cls.happened_on.desc()) \
+            .limit(1) \
+            .scalar()
+
+    @classmethod
+    def history(cls) -> Iterable[Self]:
+        return cls.select() \
+            .order_by(cls.happened_on.asc())
 
     @classmethod
     def listing(cls, from_date, to_date):

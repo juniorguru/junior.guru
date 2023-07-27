@@ -1,4 +1,6 @@
 import html
+from pathlib import Path
+import pickle
 import re
 from datetime import date, datetime
 from pprint import pformat
@@ -75,8 +77,12 @@ logger = loggers.from_path(__file__)
 @click.option('--fakturoid-api-key', default=default_from_env('FAKTUROID_API_KEY'))
 @click.option('--doc-key', default='1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls')
 @click.option('--video-outsourcing-token', default=default_from_env('VIDEO_OUTSOURCING_TOKEN'))
-def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_key,
-         video_outsourcing_token):
+@click.option('--history-path', default='juniorguru/data/transactions.jsonl', type=click.Path(exists=True, path_type=Path))
+@click.option('--clear-history/--keep-history', default=False)
+@click.option('--clear-cache/--keep-cache', default=False)
+@click.pass_context
+def main(context, from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_key,
+         video_outsourcing_token, history_path, clear_history, clear_cache):
     fakturoid_api_kwargs = dict(auth=('mail@honzajavorek.cz', fakturoid_api_key),
                                 headers={'User-Agent': 'JuniorGuruBot (honza@junior.guru; +https://junior.guru)'})
 
@@ -113,11 +119,32 @@ def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_
     todos = {get_todo_key(todo): todo for todo in todos}
     logger.debug(f'Mapping Fakturoid todos by key leaves {len(todos)} todos')
 
-    logger.info('Reading data from the bank account')
-    client = FioBank(token=fio_api_key)
-    from_date = from_date.strftime('%Y-%m-%d')
-    to_date = date.today().strftime('%Y-%m-%d')
-    transactions = client.period(from_date=from_date, to_date=to_date)
+    logger.info('Reading history from a file')
+    if clear_history:
+        history_path.write_text('')
+    else:
+        with history_path.open() as f:
+            for line in f:
+                Transaction.deserialize(line)
+    from_date = Transaction.latest_happened_on() or from_date
+    to_date = date.today()
+
+    logger.info(f'Reading data from the bank account, since {from_date}')
+    cache_path = context.obj['cache_dir'] / f'fiobank-from{from_date}-to{to_date}.json'
+    if clear_cache:
+        cache_path.unlink(missing_ok=True)
+    try:
+        logger.info('Loading data from cache')
+        transactions = pickle.loads(cache_path.read_bytes())
+    except FileNotFoundError:
+        logger.debug('No cache found')
+        client = FioBank(token=fio_api_key)
+        try:
+            transactions = list(client.period(from_date=str(from_date), to_date=str(to_date)))
+            cache_path.write_bytes(pickle.dumps(transactions))
+        except requests.HTTPError as e:
+            logger.error(f"FioBank API error: {e.response.text}")
+            raise
 
     db_records = []
     doc_records = []
@@ -133,7 +160,8 @@ def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_
                                             categories_spec)
         logger.debug(f"Category: {category!r}")
 
-        db_records.append(dict(happened_on=transaction['date'],
+        db_records.append(dict(id=transaction['transaction_id'],
+                               happened_on=transaction['date'],
                                category=category,
                                amount=transaction['amount']))
         doc_records.append({
@@ -155,7 +183,12 @@ def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_
 
     logger.info('Saving essential data to the database')
     for db_record in db_records:
-        Transaction.create(**db_record)
+        Transaction.add(**db_record)
+
+    logger.info('Saving history to a file')
+    with history_path.open('w') as f:
+        for db_object in Transaction.history():
+            f.write(db_object.serialize())
 
     logger.info('Uploading verbose data to a private Google Sheet for manual audit of possible mistakes')
     upload_to_google_sheet(doc_key, doc_records)

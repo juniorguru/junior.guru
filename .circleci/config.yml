@@ -216,6 +216,7 @@ jobs:
                 command: |
                   poetry run jg save-changes juniorguru/data/podcast.yml --message="record media properties 🪄"
                   poetry run jg save-changes juniorguru/data/followers.jsonl --message="record followers 📈"
+                  poetry run jg save-changes juniorguru/data/transactions.jsonl --message="record transaction history 💰"
 
   web:
     executor: python-js
