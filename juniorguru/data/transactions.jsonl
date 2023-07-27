@@ -636,3 +636,8 @@
 {"_id": "26109541542", "amount": 9949, "category": "memberships", "happened_on": "2023-07-17"}
 {"_id": "26109804288", "amount": 15000, "category": "partnerships", "happened_on": "2023-07-17"}
 {"_id": "26110310446", "amount": 80000, "category": "partnerships", "happened_on": "2023-07-17"}
+{"_id": "26113099635", "amount": 6, "category": "donations", "happened_on": "2023-07-19"}
+{"_id": "26118026470", "amount": 9950, "category": "memberships", "happened_on": "2023-07-24"}
+{"_id": "26118331889", "amount": 2496, "category": "donations", "happened_on": "2023-07-24"}
+{"_id": "26120093011", "amount": -2000, "category": "podcast", "happened_on": "2023-07-25"}
+{"_id": "26121028747", "amount": 6, "category": "donations", "happened_on": "2023-07-26"}
