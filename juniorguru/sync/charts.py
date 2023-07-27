@@ -219,7 +219,7 @@ def members_subscriptions_breakdown(months: list[date]) -> list[Number]:
 
 @namespace
 def members_trend(today) -> dict[str, Any]:
-    months = charts.months(CLUB_BEGIN_ON, today)#charts.previous_month(today))
+    months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
     return dict(values=months,
                 labels=charts.labels(months),
                 annotations=charts.annotations(months, MILESTONES))
