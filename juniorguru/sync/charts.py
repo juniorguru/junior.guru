@@ -12,7 +12,7 @@ from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.followers import Followers
 from juniorguru.models.page import Page
 from juniorguru.models.podcast import PodcastEpisode
-from juniorguru.models.subscription import SubscriptionActivity, LEGACY_PLANS_DELETED_ON
+from juniorguru.models.subscription import LEGACY_PLANS_DELETED_ON, SubscriptionActivity
 from juniorguru.models.transaction import Transaction
 from juniorguru.models.web_usage import WebUsage
 

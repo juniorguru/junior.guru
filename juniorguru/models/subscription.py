@@ -1,14 +1,14 @@
+import math
 from collections import Counter
 from datetime import date
 from enum import StrEnum, unique
 from functools import wraps
-import math
 from numbers import Number
 from typing import Callable, Iterable, Self
 
-from peewee import BooleanField, CharField, DateField, DateTimeField, fn, Case, SQL
-from juniorguru.lib.charts import month_range
+from peewee import BooleanField, Case, CharField, DateField, DateTimeField, fn
 
+from juniorguru.lib.charts import month_range
 from juniorguru.models.base import BaseModel, check_enum
 
 
