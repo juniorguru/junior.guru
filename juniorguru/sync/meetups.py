@@ -86,7 +86,7 @@ def main(context, clear_cache):
     logger.info('Filtering and sorting events')
     timeline_limit = today + timedelta(days=TIMELINE_LIMIT_DAYS)
     events = sorted((event for event in events
-                     if (event['starts_at'].date() >= today)
+                     if (event['starts_at'].date() > today)
                          and event['starts_at'].date() <= timeline_limit),
                     key=itemgetter('starts_at'))
 
