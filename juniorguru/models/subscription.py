@@ -202,7 +202,7 @@ class SubscriptionActivity(BaseModel):
 
     @classmethod
     def active_individuals_listing(cls, date: date) -> Iterable[Self]:
-        return cls.listing(date) \
+        return cls.active_listing(date) \
             .where(cls.subscription_type == SubscriptionType.INDIVIDUAL)
 
     @classmethod
