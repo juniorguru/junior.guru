@@ -416,9 +416,11 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
         'plugins': {'annotation': charts.members_subscriptions_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-### Příchody
+### Příchody a odchody
 
-Graf s registracemi obsahuje všechny typy členství. Ať už nový člen přišel přes firmu, stipendium, nebo individuálně, tak se započte. Tenká modrá čára představuje počet členů, kteří v daném měsíci poprvé v historii svého členství přešli na individuální placení. Jsou to především noví členové, kteří se po dvou týdnech na zkoušku rozhodli, že si klub začnou platit. Mohou to ale být i firemní členové nebo studenti ze vzdělávacích agentur, kterým skončilo členství zaplacené někým jiným a rozhodli se pokračovat za svoje.
+Graf s **příchody** obsahuje všechny typy členství. Ať už nový člen přišel přes firmu, stipendium, nebo individuálně, tak se započte. Tenká modrá čára představuje počet členů, kteří v daném měsíci poprvé v historii svého členství přešli na individuální placení. Jsou to především noví členové, kteří se po dvou týdnech na zkoušku rozhodli, že si klub začnou platit. Mohou to ale být i firemní členové nebo studenti ze vzdělávacích agentur, kterým skončilo členství zaplacené někým jiným a rozhodli se pokračovat za svoje.
+
+Graf s **odchody** zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli a poté za něj nezačali platit. Tam se očekává celkem velký odpad. Tenká čára sleduje pouze ty, kdo zrušili už existující individuálně placené členství. Naznačuje tedy odchody členů, kteří se za klub rozhodli platit, ale následně změnili názor. Očekává se, že juniorům, kteří si nakonec práci v IT našli, pokryjí většinu hodnoty klubu kolegové ve firmě, kde pracují. Také se v prvních měsících intenzivně zaučují a na klub tak často už nemají čas, i když je to tam baví.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="250"
@@ -438,24 +440,6 @@ Graf s registracemi obsahuje všechny typy členství. Ať už nový člen při�
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
-        ]
-    }|tojson|forceescape }}"
-    data-chart-options="{{ {
-        'interaction': {'mode': 'index'},
-        'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.members_trend_annotations},
-    }|tojson|forceescape }}"></canvas></div></div>
-
-### Odchody
-
-Procento členů, kteří z klubu odcházejí, neboli _churn_. Tlustá čára zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli a poté za něj nezačali platit. Tam se očekává celkem velký odpad, ale i tak graf napovídá, jak se daří držet nově příchozí členy v klubu. Tenká čára sleduje pouze ty, kdo zrušili už existující individuálně placené členství. Naznačuje tedy odchody členů, kteří se za klub rozhodli platit, ale následně změnili názor. Očekává se, že juniorům, kteří si nakonec práci v IT našli, pokryjí většinu hodnoty klubu kolegové ve firmě, kde pracují. Také se v prvních měsících intenzivně zaučují a na klub tak často už nemají čas, i když je to tam baví.
-
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="250"
-    data-chart-type="line"
-    data-chart="{{ {
-        'labels': charts.members_trend_labels,
-        'datasets': [
             {
                 'label': 'všechny odchody',
                 'data': charts.members_trend_quits,
@@ -476,7 +460,9 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_. Tlustá čára za
         'plugins': {'annotation': charts.members_trend_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-{#
+### Retence
+
+Procento členů, kteří z klubu odcházejí, neboli _churn_.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="250"
@@ -491,7 +477,7 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_. Tlustá čára za
                 'borderWidth': 2,
             },
             {
-                'label': '% úbytku individuálně platících členů',
+                'label': '% úbytku individuálních členů',
                 'data': charts.members_trend_individuals_churn_ptc,
                 'borderColor': '#dc3545',
                 'borderWidth': 1,
@@ -506,7 +492,8 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_. Tlustá čára za
 
 ### Délka setrvání v klubu
 
-Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kterým členství platí firma, nebo jej mají zadarmo. Graf průměrné délky členství v klubu tedy počítá pouze s těmi, kdo si platí sami.
+Pokud jde graf nahoru, znamená to, že velká část členů zůstává v klubu dlouho.
+Propady nastávají, pokud do klubu přijdou noví lidé, kteří tam ale nevydrží a brzy zase odejdou.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="250"
@@ -515,10 +502,16 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
         'labels': charts.members_labels,
         'datasets': [
             {
-                'label': 'průměrná délka členství v měsících',
+                'label': 'průměrný počet měsíců všech členství',
                 'data': charts.members_duration,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
+            },
+            {
+                'label': 'průměrný počet měsíců individuálních členství',
+                'data': charts.members_individuals_duration,
+                'borderColor': '#1755d1',
+                'borderWidth': 1,
             },
         ]
     }|tojson|forceescape }}"
@@ -527,8 +520,6 @@ Není pro mě úplně zajímavé sledovat jak dlouho v klubu zůstávají ti, kt
         'scales': {'y': {'beginAtZero': true}},
         'plugins': {'annotation': charts.members_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
-
-#}
 
 ## Příručka
 

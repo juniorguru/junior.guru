@@ -199,9 +199,14 @@ def members_women_ptc(months: list[date]) -> list[Number]:
     return charts.per_month(SubscriptionActivity.active_women_ptc, months)
 
 
-# @chart
-# def members_duration(months: list[date]) -> list[Number]:
-#     return charts.per_month(SubscriptionActivity.active_duration_avg, months)
+@chart
+def members_duration(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.active_duration_avg, months)
+
+
+@chart
+def members_individuals_duration(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.active_individuals_duration_avg, months)
 
 
 @namespace
@@ -245,14 +250,14 @@ def members_trend_individuals_quits(months: list[date]) -> list[Number]:
     return charts.per_month(SubscriptionActivity.individuals_quits_count, months)
 
 
-# @chart
-# def members_trend_churn_ptc(months: list[date]) -> list[Number]:
-#     return charts.per_month(SubscribedPeriod.churn_ptc, months)
+@chart
+def members_trend_churn_ptc(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.churn_ptc, months)
 
 
-# @chart
-# def members_trend_individuals_churn_ptc(months: list[date]) -> list[Number]:
-#     return charts.per_month(SubscribedPeriod.individuals_churn_ptc, months)
+@chart
+def members_trend_individuals_churn_ptc(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.individuals_churn_ptc, months)
 
 
 @namespace

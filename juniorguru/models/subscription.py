@@ -68,7 +68,7 @@ class SubscriptionActivity(BaseModel):
     source = CharField()
     account_id = CharField(index=True)
     account_has_feminine_name = BooleanField()
-    happened_on = DateField()
+    happened_on = DateField(index=True)
     happened_at = DateTimeField(index=True)
     order_coupon = CharField(null=True)
     subscription_interval = CharField(null=True, constraints=[check_enum('subscription_interval', SubscriptionInterval)])
@@ -177,11 +177,14 @@ class SubscriptionActivity(BaseModel):
         return cls.active_listing(date).count()
 
     @classmethod
+    def active_individuals_listing(cls, date: date) -> Iterable[Self]:
+        return cls.listing(date) \
+            .where(cls.subscription_type == SubscriptionType.INDIVIDUAL)
+
+    @classmethod
     @uses_data_from_subscriptions()
     def active_individuals_count(cls, date: date) -> int | None:
-        return cls.active_listing(date) \
-            .where(cls.subscription_type == SubscriptionType.INDIVIDUAL) \
-            .count()
+        return cls.active_individuals_listing(date).count()
 
     @classmethod
     @uses_data_from_subscriptions()
@@ -285,31 +288,47 @@ class SubscriptionActivity(BaseModel):
             .where(cls.subscription_type == SubscriptionType.INDIVIDUAL) \
             .count()
 
-    # @classmethod
-    # def churn_ptc(cls, date):
-    #     from_date = month_range(date)[0]
-    #     churn = cls.quits_count(date) / (cls.count(from_date) + cls.signups_count(date))
-    #     return churn * 100
+    @classmethod
+    def churn_ptc(cls, date):
+        from_date = month_range(date)[0]
+        churn = cls.quits_count(date) / (cls.active_count(from_date) + cls.signups_count(date))
+        return churn * 100
 
-    # @classmethod
-    # def individuals_churn_ptc(cls, date):
-    #     from_date = month_range(date)[0]
-    #     churn = cls.individuals_quits_count(date) / (cls.individuals_count(from_date) + cls.individuals_signups_count(date))
-    #     return churn * 100
+    @classmethod
+    @uses_data_from_subscriptions()
+    def individuals_churn_ptc(cls, date):
+        from_date = month_range(date)[0]
+        churn = cls.individuals_quits_count(date) / (cls.active_individuals_count(from_date) + cls.individuals_signups_count(date))
+        return churn * 100
 
-    # @classmethod
-    # def active_duration_avg(cls, date: date) -> int:
-    #     earliest_at = fn.min(cls.happened_at)
-    #     duration_sec = (fn.unixepoch(date) - fn.unixepoch(earliest_at))
-    #     duration_mo = (duration_sec / 60 / 60 / 24 / 30).alias('duration_mo')
+    @classmethod
+    def active_duration_avg(cls, date: date) -> int:
+        durations = []
+        for latest_activity in cls.active_listing(date):
+            earliest_on = cls.select(fn.min(cls.happened_on)) \
+                .where(cls.account_id == latest_activity.account_id) \
+                .scalar()
+            duration_sec = (date - earliest_on).total_seconds()
+            duration_mo = (duration_sec / 60 / 60 / 24 / 30)
+            durations.append(duration_mo)
+        if durations:
+            return sum(durations) / len(durations)
+        return 0
 
-    #     rows = cls.select(duration_mo) \
-    #         .where(cls.happened_at <= date) \
-    #         .group_by(cls.account_id) \
-    #         .dicts()
-    #     if durations := [row['duration_mo'] for row in rows]:
-    #         return sum(durations) / len(durations)
-    #     return 0
+    @classmethod
+    @uses_data_from_subscriptions()
+    def active_individuals_duration_avg(cls, date: date) -> int:
+        durations = []
+        for latest_activity in cls.active_individuals_listing(date):
+            earliest_on = cls.select(fn.min(cls.happened_on)) \
+                .where(cls.account_id == latest_activity.account_id) \
+                .scalar()
+            duration_sec = (date - earliest_on).total_seconds()
+            duration_mo = (duration_sec / 60 / 60 / 24 / 30)
+            durations.append(duration_mo)
+        if durations:
+            return sum(durations) / len(durations)
+        return 0
 
 
 class SubscriptionCancellation(BaseModel):
