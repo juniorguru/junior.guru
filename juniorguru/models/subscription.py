@@ -95,34 +95,79 @@ class SubscriptionActivity(BaseModel):
         insert.execute()
 
     @classmethod
-    def mark_trials(cls) -> None:
+    def cleanse_data(cls) -> None:
         # The 'order' activity happening on the same day as 'trial_end' activity
         # marks subscription type of the whole trial.
-        also_cls = cls.alias()
+        te_cls = cls.alias('trial_ends')
         cte = cls.select(cls.account_id, cls.happened_on, cls.subscription_type) \
-            .join(also_cls, on=((cls.account_id == also_cls.account_id) &
-                                (cls.happened_on == also_cls.happened_on))) \
+            .join(te_cls, on=((cls.account_id == te_cls.account_id) &
+                              (cls.happened_on == te_cls.happened_on))) \
             .where(cls.type == SubscriptionActivityType.ORDER,
-                   also_cls.type == SubscriptionActivityType.TRIAL_END) \
-            .cte('new_subscription_type', columns=('account_id', 'happened_on', 'subscription_type'))
-        cls.update(subscription_type=SQL('new_subscription_type.subscription_type')) \
+                   te_cls.type == SubscriptionActivityType.TRIAL_END) \
+            .cte('cte', columns=('account_id', 'happened_on', 'subscription_type'))
+        cls.update(subscription_type=SQL('cte.subscription_type')) \
             .with_cte(cte) \
             .from_(cte) \
-            .where(cls.account_id == SQL('new_subscription_type.account_id'),
-                   cls.happened_on <= SQL('new_subscription_type.happened_on')) \
+            .where(cls.account_id == SQL('cte.account_id'),
+                   ((cls.type == SubscriptionActivityType.ORDER) & (cls.happened_on == SQL('cte.happened_on'))) |
+                   ((cls.type == SubscriptionActivityType.TRIAL_START) & (cls.happened_on < SQL('cte.happened_on')))) \
             .execute()
 
-        # Mark trials of individual subscriptions as true trials
-        also_cls = cls.alias()
+        # Only those trials which have individual subscription type are true trials.
+        # This rewrites subscription type of individual 'trial_end' and 'trial_start' to 'trial'.
+        ite_cls = cls.alias('individual_trial_ends')
         to_update = cls.select(cls.id) \
-            .join(also_cls, on=(cls.account_id == also_cls.account_id)) \
-            .where(also_cls.type == SubscriptionActivityType.TRIAL_END,
-                   also_cls.subscription_type == SubscriptionType.INDIVIDUAL,
-                   ((cls.type == SubscriptionActivityType.ORDER) & (cls.happened_on < also_cls.happened_on)) |
-                   ((cls.type == SubscriptionActivityType.TRIAL_END) & (cls.happened_on == also_cls.happened_on)) |
-                   ((cls.type == SubscriptionActivityType.TRIAL_START) & (cls.happened_on < also_cls.happened_on)))
+            .join(ite_cls, on=(cls.account_id == ite_cls.account_id)) \
+            .where(ite_cls.type == SubscriptionActivityType.TRIAL_END,
+                   ite_cls.subscription_type == SubscriptionType.INDIVIDUAL,
+                   ((cls.type == SubscriptionActivityType.TRIAL_END) & (cls.happened_on == ite_cls.happened_on)) |
+                   ((cls.type == SubscriptionActivityType.TRIAL_START) & (cls.happened_on < ite_cls.happened_on)))
         cls.update(subscription_type=SubscriptionType.TRIAL) \
             .where(cls.id.in_(to_update)) \
+            .execute()
+
+        # The 'order' activity happening on the same day as 'trial_start' activity of type 'trial'
+        # should also have type 'trial'.
+        ts_cls = cls.alias('trial_starts')
+        to_update = cls.select(cls.id) \
+            .join(ts_cls, on=(cls.account_id == ts_cls.account_id)) \
+            .where(ts_cls.type == SubscriptionActivityType.TRIAL_START,
+                   ts_cls.subscription_type == SubscriptionType.TRIAL,
+                   cls.type == SubscriptionActivityType.ORDER,
+                   cls.happened_on == ts_cls.happened_on)
+        cls.update(subscription_type=SubscriptionType.TRIAL) \
+            .where(cls.id.in_(to_update)) \
+            .execute()
+
+        # By default 'deactivation' activities are without details, so let's
+        # give it the details of the latest order before it.
+        # deactivations = cls.select() \
+        #     .where(cls.type == SubscriptionActivityType.DEACTIVATION)
+        # for deactivation in deactivations:
+        #     previous_activity = cls.select() \
+        #         .where(cls.type != SubscriptionActivityType.DEACTIVATION,
+        #                cls.account_id == deactivation.account_id,
+        #                cls.happened_at <= deactivation.happened_at) \
+        #         .order_by(cls.happened_at.desc()) \
+        #         .get()
+        #     deactivation.subscription_type = previous_activity.subscription_type
+        #     deactivation.subscription_interval = previous_activity.subscription_interval
+        #     deactivation.save()
+
+        a_cls = cls.alias('activities')
+        cte = cls.select(cls.id, a_cls.subscription_type, a_cls.subscription_interval) \
+            .join(a_cls, on=(cls.account_id == a_cls.account_id)) \
+            .where(cls.type == SubscriptionActivityType.DEACTIVATION,
+                   a_cls.type != SubscriptionActivityType.DEACTIVATION,
+                   a_cls.happened_at <= cls.happened_at) \
+            .group_by(cls.account_id) \
+            .having(fn.max(a_cls.happened_at) == a_cls.happened_at) \
+            .cte('cte', columns=('id', 'subscription_type', 'subscription_interval'))
+        cls.update(subscription_type=SQL('cte.subscription_type'),
+                   subscription_interval=SQL('cte.subscription_interval')) \
+            .with_cte(cte) \
+            .from_(cte) \
+            .where(cls.id == SQL('cte.id')) \
             .execute()
 
     @classmethod
@@ -208,7 +253,7 @@ class SubscriptionActivity(BaseModel):
             .count()
 
     @classmethod
-    def quits(cls, date: date) -> Iterable[Self]:
+    def quits(cls, date: date) -> Iterable[Self]:  # ma vyjit 18 pro cervenec
         from_date, to_date = month_range(date)
 
         o_cls = cls.alias('orders')
@@ -252,7 +297,7 @@ class SubscriptionActivity(BaseModel):
 
     @classmethod
     @uses_data_from_subscriptions()
-    def individuals_quits_count(cls, date: date) -> int:  # TODO
+    def individuals_quits_count(cls, date: date) -> int:  # ma vyjit 8 pro cervenec
         return cls.quits(date) \
             .where(cls.subscription_type == SubscriptionType.INDIVIDUAL) \
             .count()
