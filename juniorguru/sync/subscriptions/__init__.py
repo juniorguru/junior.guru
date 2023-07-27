@@ -8,6 +8,7 @@ from urllib.parse import urlparse
 
 import arrow
 import click
+from slugify import slugify
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
@@ -135,7 +136,7 @@ def main(context, clear_cache):
     csv_rows = itertools.chain(memberful.download_csv(dict(type='CancellationsCsvExport', filter='all')),
                                memberful.download_csv(dict(type='CancellationsCsvExport', scope='completed', filter='all')))
     for csv_row in csv_rows:
-        reason = csv_row['Reason'] or None
+        reason = slugify(csv_row['Reason'], separator='_') if csv_row['Reason'] else None
         feedback = csv_row['Feedback'] or None
         if reason:
             try:

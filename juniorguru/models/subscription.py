@@ -4,7 +4,7 @@ from datetime import date
 from enum import StrEnum, unique
 from functools import wraps
 from numbers import Number
-from typing import Callable, Iterable, Self
+from typing import Callable, Generator, Iterable, Self
 
 from peewee import BooleanField, Case, CharField, DateField, DateTimeField, fn
 
@@ -37,6 +37,16 @@ class SubscriptionType(StrEnum):
     TRIAL = 'trial'
     PARTNER = 'partner'
     STUDENT = 'student'
+
+
+@unique
+class CancellationReason(StrEnum):
+    OTHER = 'other'
+    NECESSITY = 'necessity'
+    AFFORDABILITY = 'affordability'
+    TEMPORARY_USE = 'temporary_use'
+    MISUNDERSTOOD = 'misunderstood'
+    COMPETITION = 'competition'
 
 
 def uses_data_from_subscriptions(default: Callable=None) -> Callable:
@@ -303,40 +313,49 @@ class SubscriptionActivity(BaseModel):
 
     @classmethod
     def active_duration_avg(cls, date: date) -> int:
-        durations = []
-        for latest_activity in cls.active_listing(date):
-            earliest_on = cls.select(fn.min(cls.happened_on)) \
-                .where(cls.account_id == latest_activity.account_id) \
-                .scalar()
-            duration_sec = (date - earliest_on).total_seconds()
-            duration_mo = (duration_sec / 60 / 60 / 24 / 30)
-            durations.append(duration_mo)
-        if durations:
+        account_ids = [activity.account_id for activity in cls.active_listing(date)]
+        if durations := list(cls._calc_durations(account_ids, date)):
             return sum(durations) / len(durations)
         return 0
 
     @classmethod
     @uses_data_from_subscriptions()
     def active_individuals_duration_avg(cls, date: date) -> int:
-        durations = []
-        for latest_activity in cls.active_individuals_listing(date):
-            earliest_on = cls.select(fn.min(cls.happened_on)) \
-                .where(cls.account_id == latest_activity.account_id) \
-                .scalar()
-            duration_sec = (date - earliest_on).total_seconds()
-            duration_mo = (duration_sec / 60 / 60 / 24 / 30)
-            durations.append(duration_mo)
-        if durations:
+        account_ids = [activity.account_id for activity in cls.active_individuals_listing(date)]
+        if durations := list(cls._calc_durations(account_ids, date)):
             return sum(durations) / len(durations)
         return 0
+
+    @classmethod
+    def _calc_durations(cls, account_ids: list[str], date: date) -> Generator[int, None, None]:
+        earliest_on = fn.min(cls.happened_on).alias('earliest_on')
+        items = cls.select(earliest_on) \
+            .where(cls.account_id.in_(account_ids)) \
+            .group_by(cls.account_id) \
+            .dicts()
+        for item in items:
+            duration_sec = (date - item['earliest_on']).total_seconds()
+            duration_mo = (duration_sec / 60 / 60 / 24 / 30)
+            yield duration_mo
 
 
 class SubscriptionCancellation(BaseModel):
     name = CharField()
     email = CharField()
     expires_on = DateField(null=True)
-    reason = CharField()
+    reason = CharField(constraints=[check_enum('reason', CancellationReason)])
     feedback = CharField(null=True)
+
+    @classmethod
+    def breakdown(cls, date: date) -> dict[str, int]:
+        from_date, to_date = month_range(date)
+        query = cls.select() \
+            .where(cls.reason.is_null(False),
+                   cls.expires_on >= from_date,
+                   cls.expires_on <= to_date)
+        counter = Counter([cancellation.reason for cancellation in query])
+        return {reason.value: counter[reason]
+                for reason in CancellationReason}
 
 
 class SubscriptionReferrer(BaseModel):

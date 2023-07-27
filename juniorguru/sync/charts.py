@@ -12,7 +12,7 @@ from juniorguru.models.event import Event, EventSpeaking
 from juniorguru.models.followers import Followers
 from juniorguru.models.page import Page
 from juniorguru.models.podcast import PodcastEpisode
-from juniorguru.models.subscription import LEGACY_PLANS_DELETED_ON, SubscriptionActivity
+from juniorguru.models.subscription import LEGACY_PLANS_DELETED_ON, SubscriptionActivity, SubscriptionCancellation
 from juniorguru.models.transaction import Transaction
 from juniorguru.models.web_usage import WebUsage
 
@@ -22,6 +22,8 @@ BUSINESS_BEGIN_ON = date(2020, 1, 1)
 CLUB_BEGIN_ON = date(2021, 2, 1)
 
 PODCAST_BEGIN_ON = date(2022, 1, 1)
+
+CANCELLATION_SURVEYS_STARTED_ON = date(2023, 1, 1)
 
 MILESTONES = [
     (BUSINESS_BEGIN_ON, 'Začátek podnikání'),
@@ -207,6 +209,19 @@ def members_duration(months: list[date]) -> list[Number]:
 @chart
 def members_individuals_duration(months: list[date]) -> list[Number]:
     return charts.per_month(SubscriptionActivity.active_individuals_duration_avg, months)
+
+
+@namespace
+def members_cancellations(today) -> dict[str, Any]:
+    months = charts.months(CANCELLATION_SURVEYS_STARTED_ON, today)
+    return dict(values=months,
+                labels=charts.labels(months),
+                annotations=charts.annotations(months, MILESTONES))
+
+
+@chart
+def members_cancellations_breakdown(months: list[date]) -> list[Number]:
+    return charts.per_month_breakdown(SubscriptionCancellation.breakdown, months)
 
 
 @namespace

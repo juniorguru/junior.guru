@@ -490,6 +490,53 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_.
         'plugins': {'annotation': charts.members_trend_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
+### Důvody odchodu
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="250"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': charts.members_cancellations_labels,
+        'datasets': [
+            {
+                'label': 'jiný důvod',
+                'data': charts.members_cancellations_breakdown.pop('other'),
+                'backgroundColor': '#a9a9a9',
+            },
+            {
+                'label': 'klub už nepotřebuju',
+                'data': charts.members_cancellations_breakdown.pop('necessity'),
+                'backgroundColor': '#1755d1',
+            },
+            {
+                'label': 'potřeboval(a) jsem klub na omezenou dobu',
+                'data': charts.members_cancellations_breakdown.pop('temporary_use'),
+                'backgroundColor': '#02CABB',
+            },
+            {
+                'label': 'vybral(a) jsem jinou službu, která mi vyhovuje víc',
+                'data': charts.members_cancellations_breakdown.pop('competition'),
+                'backgroundColor': '#083284',
+            },
+            {
+                'label': 'klub nesplnil moje očekávání',
+                'data': charts.members_cancellations_breakdown.pop('misunderstood'),
+                'backgroundColor': '#00B7EB',
+            },
+            {
+                'label': 'klub je moc drahý',
+                'data': charts.members_cancellations_breakdown.pop('affordability'),
+                'backgroundColor': '#dc3545',
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.members_cancellations_breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
+        'plugins': {'annotation': charts.members_cancellations_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
 ### Délka setrvání v klubu
 
 Pokud jde graf nahoru, znamená to, že velká část členů zůstává v klubu dlouho.
