@@ -40,13 +40,27 @@ class SubscriptionType(StrEnum):
 
 
 @unique
-class CancellationReason(StrEnum):
+class SubscriptionCancellationReason(StrEnum):
     OTHER = 'other'
     NECESSITY = 'necessity'
     AFFORDABILITY = 'affordability'
     TEMPORARY_USE = 'temporary_use'
     MISUNDERSTOOD = 'misunderstood'
     COMPETITION = 'competition'
+
+
+@unique
+class SubscriptionMarketingSurveyAnswer(StrEnum):
+    YABLKO = 'yablko'
+    PODCASTS = 'podcasts'
+    COURSES_SEARCH = 'courses_search'
+    COURSES = 'courses'
+    YOUTUBE = 'youtube'
+    FACEBOOK = 'facebook'
+    LINKEDIN = 'linkedin'
+    SEARCH = 'search'
+    FRIEND = 'friend'
+    OTHER = 'other'
 
 
 def uses_data_from_subscriptions(default: Callable=None) -> Callable:
@@ -343,19 +357,18 @@ class SubscriptionCancellation(BaseModel):
     name = CharField()
     email = CharField()
     expires_on = DateField(null=True)
-    reason = CharField(constraints=[check_enum('reason', CancellationReason)])
+    reason = CharField(index=True, constraints=[check_enum('reason', SubscriptionCancellationReason)])
     feedback = CharField(null=True)
 
     @classmethod
     def breakdown(cls, date: date) -> dict[str, int]:
         from_date, to_date = month_range(date)
         query = cls.select() \
-            .where(cls.reason.is_null(False),
-                   cls.expires_on >= from_date,
+            .where(cls.expires_on >= from_date,
                    cls.expires_on <= to_date)
         counter = Counter([cancellation.reason for cancellation in query])
         return {reason.value: counter[reason]
-                for reason in CancellationReason}
+                for reason in SubscriptionCancellationReason}
 
 
 class SubscriptionReferrer(BaseModel):
@@ -374,4 +387,14 @@ class SubscriptionMarketingSurvey(BaseModel):
     email = CharField()
     created_on = DateField()
     value = CharField()
-    type = CharField(index=True)
+    type = CharField(index=True, constraints=[check_enum('type', SubscriptionMarketingSurveyAnswer)])
+
+    @classmethod
+    def breakdown(cls, date: date) -> dict[str, int]:
+        from_date, to_date = month_range(date)
+        query = cls.select() \
+            .where(cls.created_on >= from_date,
+                   cls.created_on <= to_date)
+        counter = Counter([response.type for response in query])
+        return {type.value: counter[type]
+                for type in SubscriptionMarketingSurveyAnswer}

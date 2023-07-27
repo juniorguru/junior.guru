@@ -172,7 +172,7 @@ Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velk
             {
                 'label': 'dobrovolné příspěvky',
                 'data': charts.business_revenue_breakdown.pop('donations'),
-                'backgroundColor': '#02CABB',
+                'backgroundColor': '#02cabb',
             },
             {
                 'label': 'individuální členství',
@@ -182,12 +182,12 @@ Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velk
             {
                 'label': 'partnerství s firmami',
                 'data': charts.business_revenue_breakdown.pop('partnerships'),
-                'backgroundColor': '#638CDD',
+                'backgroundColor': '#638cdd',
             },
             {
                 'label': 'inzerce nabídek práce',
                 'data': charts.business_revenue_breakdown.pop('jobs'),
-                'backgroundColor': '#421BD4',
+                'backgroundColor': '#421bd4',
             },
         ],
     }|tojson|forceescape }}"
@@ -226,7 +226,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
             {
                 'label': 'memberful.com',
                 'data': charts.business_cost_breakdown.pop('memberful'),
-                'backgroundColor': '#DF4B25',
+                'backgroundColor': '#df4b25',
             },
             {
                 'label': 'kancelář',
@@ -261,7 +261,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
             {
                 'label': 'marketing',
                 'data': charts.business_cost_breakdown.pop('marketing'),
-                'backgroundColor': '#DAA520',
+                'backgroundColor': '#daa520',
             },
             {
                 'label': 'discord.com',
@@ -390,7 +390,7 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
             {
                 'label': 'mají stipendium',
                 'data': charts.members_subscriptions_breakdown.pop('finaid'),
-                'backgroundColor': '#02CABB',
+                'backgroundColor': '#02cabb',
             },
             {
                 'label': 'členství si platí sami',
@@ -400,7 +400,7 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
             {
                 'label': 'členství platí firma',
                 'data': charts.members_subscriptions_breakdown.pop('partner'),
-                'backgroundColor': '#638CDD',
+                'backgroundColor': '#638cdd',
             },
             {
                 'label': 'členství platí vzdělávací agentura',
@@ -460,6 +460,73 @@ Graf s **odchody** zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli 
         'plugins': {'annotation': charts.members_trend_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
+### Zdroje příchodů
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="250"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': charts.members_surveys_labels,
+        'datasets': [
+            {
+                'label': 'ostatní',
+                'data': charts.members_surveys_marketing_breakdown.pop('other'),
+                'backgroundColor': '#a9a9a9',
+            },
+            {
+                'label': 'doporučení z kurzu',
+                'data': charts.members_surveys_marketing_breakdown.pop('courses'),
+                'backgroundColor': '#083284',
+            },
+            {
+                'label': 'vyhledávání',
+                'data': charts.members_surveys_marketing_breakdown.pop('search'),
+                'backgroundColor': '#4285f4',
+            },
+            {
+                'label': 'doporučení známého',
+                'data': charts.members_surveys_marketing_breakdown.pop('friend'),
+                'backgroundColor': '#02cabb',
+            },
+            {
+                'label': 'Facebook',
+                'data': charts.members_surveys_marketing_breakdown.pop('facebook'),
+                'backgroundColor': '#4267b2',
+            },
+            {
+                'label': 'podcasty',
+                'data': charts.members_surveys_marketing_breakdown.pop('podcasts'),
+                'backgroundColor': '#872ec4',
+            },
+            {
+                'label': 'LinkedIn',
+                'data': charts.members_surveys_marketing_breakdown.pop('linkedin'),
+                'backgroundColor': '#0072b1',
+            },
+            {
+                'label': 'YouTube',
+                'data': charts.members_surveys_marketing_breakdown.pop('youtube'),
+                'backgroundColor': '#ff0000',
+            },
+            {
+                'label': 'yablko',
+                'data': charts.members_surveys_marketing_breakdown.pop('yablko'),
+                'backgroundColor': '#e7cd49',
+            },
+            {
+                'label': 'vyhledávání recenzí kurzů',
+                'data': charts.members_surveys_marketing_breakdown.pop('courses_search'),
+                'backgroundColor': '#00b7eb',
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.members_surveys_marketing_breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
+        'plugins': {'annotation': charts.members_surveys_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
 ### Retence
 
 Procento členů, kteří z klubu odcházejí, neboli _churn_.
@@ -499,45 +566,45 @@ Graf začíná v době, kdy jsem začal tímto způsobem zpětnou vazbu sbírat.
     class="chart" width="400" height="250"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts.members_cancellations_labels,
+        'labels': charts.members_surveys_labels,
         'datasets': [
             {
                 'label': 'jiný důvod',
-                'data': charts.members_cancellations_breakdown.pop('other'),
+                'data': charts.members_surveys_cancellations_breakdown.pop('other'),
                 'backgroundColor': '#a9a9a9',
             },
             {
                 'label': 'klub už nepotřebuju',
-                'data': charts.members_cancellations_breakdown.pop('necessity'),
+                'data': charts.members_surveys_cancellations_breakdown.pop('necessity'),
                 'backgroundColor': '#1755d1',
             },
             {
                 'label': 'potřeboval(a) jsem klub na omezenou dobu',
-                'data': charts.members_cancellations_breakdown.pop('temporary_use'),
-                'backgroundColor': '#02CABB',
+                'data': charts.members_surveys_cancellations_breakdown.pop('temporary_use'),
+                'backgroundColor': '#02cabb',
             },
             {
                 'label': 'vybral(a) jsem jinou službu, která mi vyhovuje víc',
-                'data': charts.members_cancellations_breakdown.pop('competition'),
+                'data': charts.members_surveys_cancellations_breakdown.pop('competition'),
                 'backgroundColor': '#083284',
             },
             {
                 'label': 'klub nesplnil moje očekávání',
-                'data': charts.members_cancellations_breakdown.pop('misunderstood'),
-                'backgroundColor': '#00B7EB',
+                'data': charts.members_surveys_cancellations_breakdown.pop('misunderstood'),
+                'backgroundColor': '#00b7eb',
             },
             {
                 'label': 'klub je moc drahý',
-                'data': charts.members_cancellations_breakdown.pop('affordability'),
+                'data': charts.members_surveys_cancellations_breakdown.pop('affordability'),
                 'backgroundColor': '#dc3545',
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts.members_cancellations_breakdown.keys()|list|assert_empty }}
+    {{ charts.members_surveys_cancellations_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
-        'plugins': {'annotation': charts.members_cancellations_annotations},
+        'plugins': {'annotation': charts.members_surveys_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Délka setrvání v klubu
@@ -790,7 +857,7 @@ Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
             {
                 'label': 'katalog kurzů',
                 'data': charts.web_usage_breakdown.pop('courses'),
-                'borderColor': '#00B7EB',
+                'borderColor': '#dc3545',
                 'borderWidth': 1,
             },
             {
