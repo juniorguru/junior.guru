@@ -154,7 +154,7 @@
   partnerships:
     - plan: basic
       starts_on: 2023-07-01
-      expires_on: 2024-06-30
+      expires_on: 2024-08-31
       agreements:
         - text: Zaměstnanci poskytují v klubu individuální mentoring
           done: yes
