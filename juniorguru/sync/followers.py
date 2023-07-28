@@ -6,7 +6,7 @@ from urllib.parse import urlencode
 import click
 import requests
 from lxml import html
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, TimeoutError
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
@@ -94,13 +94,16 @@ def scrape_linkedin():
         page = browser.new_page()
 
         # try LinkedIn first
-        page.goto(LINKEDIN_URL, wait_until='networkidle')
-        if '/authwall' in page.url:
-            logger.error(f'Loaded {page.url}')
-        else:
-            text = str(page.content())
+        try:
+            page.goto(LINKEDIN_URL, wait_until='networkidle')
+            if '/authwall' in page.url:
+                logger.error(f'Loaded {page.url}')
+            else:
+                text = str(page.content())
+        except TimeoutError:
+            logger.error(f'Time out on {LINKEDIN_URL}')
 
-        # if we've got authwall, try Google results
+        # if we've got authwall or timeout, try Google results
         if text is None:
             google_query = f'{LINKEDIN_URL} sledujících'
             google_url = f'https://www.google.cz/search?{urlencode(dict(q=google_query))}'
