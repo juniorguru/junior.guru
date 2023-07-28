@@ -1,8 +1,8 @@
 import html
-from pathlib import Path
 import pickle
 import re
 from datetime import date, datetime
+from pathlib import Path
 from pprint import pformat
 
 import click

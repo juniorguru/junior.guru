@@ -1,7 +1,7 @@
-from datetime import date
 import functools
 import json
 import math
+from datetime import date
 from typing import Iterable, Self
 
 from peewee import CharField, DateField, IntegerField
