@@ -1,5 +1,4 @@
 import html
-import pickle
 import re
 from datetime import date, datetime
 from pathlib import Path
@@ -79,10 +78,8 @@ logger = loggers.from_path(__file__)
 @click.option('--video-outsourcing-token', default=default_from_env('VIDEO_OUTSOURCING_TOKEN'))
 @click.option('--history-path', default='juniorguru/data/transactions.jsonl', type=click.Path(exists=True, path_type=Path))
 @click.option('--clear-history/--keep-history', default=False)
-@click.option('--clear-cache/--keep-cache', default=False)
-@click.pass_context
-def main(context, from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_key,
-         video_outsourcing_token, history_path, clear_history, clear_cache):
+def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_key,
+         video_outsourcing_token, history_path, clear_history):
     fakturoid_api_kwargs = dict(auth=('mail@honzajavorek.cz', fakturoid_api_key),
                                 headers={'User-Agent': 'JuniorGuruBot (honza@junior.guru; +https://junior.guru)'})
 
@@ -130,21 +127,12 @@ def main(context, from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_
     to_date = date.today()
 
     logger.info(f'Reading data from the bank account, since {from_date}')
-    cache_path = context.obj['cache_dir'] / f'fiobank-from{from_date}-to{to_date}.json'
-    if clear_cache:
-        cache_path.unlink(missing_ok=True)
+    client = FioBank(token=fio_api_key)
     try:
-        logger.info('Loading data from cache')
-        transactions = pickle.loads(cache_path.read_bytes())
-    except FileNotFoundError:
-        logger.debug('No cache found')
-        client = FioBank(token=fio_api_key)
-        try:
-            transactions = list(client.period(from_date=str(from_date), to_date=str(to_date)))
-            cache_path.write_bytes(pickle.dumps(transactions))
-        except requests.HTTPError as e:
-            logger.error(f"FioBank API error: {e.response.text}")
-            raise
+        transactions = list(client.period(from_date=str(from_date), to_date=str(to_date)))
+    except requests.HTTPError as e:
+        logger.error(f"FioBank API error: {e.response.text}")
+        raise
 
     db_records = []
     doc_records = []
