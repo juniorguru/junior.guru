@@ -133,7 +133,7 @@ def format_event(event):
 
 def render_open():
     members_total_count = ClubUser.members_count()
-    members_women_ptc = SubscriptionActivity.women_ptc(TODAY)
+    members_women_ptc = SubscriptionActivity.active_women_ptc(TODAY)
 
     response = requests.get(BLOG_RSS_URL)
     response.raise_for_status()
