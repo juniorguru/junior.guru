@@ -50,7 +50,7 @@ class Followers(BaseModel):
     def breakdown(cls, date: date) -> dict[str, int]:
         breakdown = {name: 0 for name in cls.names()}
         for followers in cls.select().where(cls.month == f'{date:%Y-%m}'):
-            breakdown[followers.name] = max(breakdown[followers.name], followers.count)
+            breakdown[followers.name] = followers.count
         return breakdown
 
     @classmethod
