@@ -158,7 +158,7 @@ class SubscriptionActivity(BaseModel):
         # Saving only everything before the end, to avoid overlaps
         return cls.select() \
             .where(cls.happened_on < cls.history_end_on()) \
-            .order_by(cls.happened_at.asc())
+            .order_by(cls.happened_at)
 
     @classmethod
     def cleanse_data(cls) -> None:
@@ -333,7 +333,7 @@ class SubscriptionActivity(BaseModel):
             .where(d_cls.type == SubscriptionActivityType.DEACTIVATION,
                    d_cls.happened_at >= latest_order_at,
                    d_cls.happened_on <= to_date) \
-            .order_by(d_cls.account_id.asc(), d_cls.happened_at.desc()) \
+            .order_by(d_cls.account_id, d_cls.happened_at.desc()) \
             .alias('deactivations')
 
         # Now selecting only the first row for each account_id, effectively

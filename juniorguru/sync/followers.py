@@ -1,8 +1,6 @@
-import json
 import re
 from datetime import date
 from pathlib import Path
-from typing import Any, Generator
 from urllib.parse import urlencode
 
 import click
@@ -32,48 +30,36 @@ LINKEDIN_PERSONAL_URL = 'https://www.linkedin.com/posts/honzajavorek_courting-ha
 
 
 @cli.sync_command()
-@click.option('--data-path', default='juniorguru/data/followers.jsonl', type=click.Path(path_type=Path))
+@click.option('--history-path', default='juniorguru/data/followers.jsonl', type=click.Path(path_type=Path))
 @db.connection_context()
-def main(data_path):
+def main(history_path: Path):
     logger.info("Preparing database")
     Followers.drop_table()
     Followers.create_table()
 
+    logger.info('Reading history from a file')
+    history_path.touch(exist_ok=True)
+    with history_path.open() as f:
+        for line in f:
+            Followers.deserialize(line)
+
     scrapers = {'youtube': scrape_youtube,
                 'linkedin': scrape_linkedin,
                 'linkedin_personal': scrape_linkedin_personal}
-    logger.info(f"Scraping: {', '.join(scrapers.keys())}")
+    month = f'{date.today():%Y-%m}'
+    logger.info(f"Scraping {month}: {', '.join(scrapers.keys())}")
+    for name, scrape in scrapers.items():
+        logger.info(f"Scraping {name!r}")
+        if count := scrape():
+            logger.info(f"Saving result: {count}")
+            Followers.add(month=month, name=name, count=count)
+        else:
+            logger.warning(f"Result: {count}")
 
-    data = {name: scrape() for name, scrape in scrapers.items()}
-    data['_month'] = f'{date.today():%Y-%m}'
-    line_new = json.dumps(data, ensure_ascii=False, sort_keys=True)
-    logger.info(f"Results: {line_new}")
-
-    already_in_file = False
-    with open(data_path, mode='r') as f:
-        for line in f:
-            if line.strip() == line_new:
-                already_in_file = True
-            for record in parse_line(line):
-                Followers.create(**record)
-
-    if already_in_file:
-        logger.info('Line already in the file')
-    else:
-        logger.info('Adding new line')
-        with open(data_path, mode='a') as f:
-            f.write(line_new)
-            f.write('\n')
-        for record in parse_line(line_new):
-            Followers.create(**record)
-
-
-def parse_line(line: str) -> Generator[dict[str, Any], None, None]:
-    data = json.loads(line)
-    month = data.pop('_month')
-    for name, count in data.items():
-        if count is not None:
-            yield dict(month=month, name=name, count=count)
+    logger.info('Saving history to a file')
+    with history_path.open('w') as f:
+        for db_object in Followers.history():
+            f.write(db_object.serialize())
 
 
 def scrape_youtube():
