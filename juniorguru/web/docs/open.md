@@ -863,8 +863,8 @@ Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
             {
                 'label': 'úvodní stránka',
                 'data': charts.web_usage_breakdown.pop('home'),
-                'borderColor': '#638CDD',
-                'borderWidth': 1,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
             },
             {
                 'label': 'prodejní stránka klubu',
@@ -881,19 +881,19 @@ Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
             {
                 'label': 'katalog kurzů',
                 'data': charts.web_usage_breakdown.pop('courses'),
-                'borderColor': '#dc3545',
+                'borderColor': '#00b7eb',
                 'borderWidth': 1,
             },
             {
                 'label': 'pracovní inzeráty',
                 'data': charts.web_usage_breakdown.pop('jobs'),
-                'borderColor': '#1755d1',
+                'borderColor': '#638CDD',
                 'borderWidth': 1,
             },
             {
                 'label': 'stránka s podcastem',
                 'data': charts.web_usage_breakdown.pop('podcast'),
-                'borderColor': '#083284',
+                'borderColor': '#872ec4',
                 'borderWidth': 1,
             },
         ],
