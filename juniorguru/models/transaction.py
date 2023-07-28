@@ -31,11 +31,11 @@ class Transaction(BaseModel):
         return json.dumps(data, sort_keys=True, ensure_ascii=False) + '\n'
 
     @classmethod
-    def add(cls, **data):
-        return cls.replace(**data).execute()
+    def add(cls, **data) -> None:
+        cls.replace(**data).execute()
 
     @classmethod
-    def latest_happened_on(cls):
+    def history_end_on(cls) -> date:
         return cls.select(cls.happened_on) \
             .order_by(cls.happened_on.desc()) \
             .limit(1) \

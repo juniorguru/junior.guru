@@ -1,12 +1,14 @@
+import json
 import math
 from collections import Counter
-from datetime import date
+from datetime import date, datetime, timedelta
 from enum import StrEnum, unique
 from functools import wraps
 from numbers import Number
 from typing import Callable, Generator, Iterable, Self
 
-from peewee import BooleanField, Case, CharField, DateField, DateTimeField, fn
+from playhouse.shortcuts import model_to_dict
+from peewee import BooleanField, Case, CharField, DateField, DateTimeField, fn, IntegerField
 
 from juniorguru.lib.charts import month_range
 from juniorguru.models.base import BaseModel, check_enum
@@ -89,17 +91,38 @@ class SubscriptionActivity(BaseModel):
         )
 
     type = CharField(constraints=[check_enum('type', SubscriptionActivityType)])
-    source = CharField()
-    account_id = CharField(index=True)
+    account_id = IntegerField(index=True)
     account_has_feminine_name = BooleanField()
     happened_on = DateField(index=True)
     happened_at = DateTimeField(index=True)
-    order_coupon = CharField(null=True)
+    order_coupon_slug = CharField(null=True)
     subscription_interval = CharField(null=True, constraints=[check_enum('subscription_interval', SubscriptionInterval)])
     subscription_type = CharField(null=True, constraints=[check_enum('subscription_type', SubscriptionType)])
 
     @classmethod
-    def add(cls, **kwargs):
+    def deserialize(cls, line: str):
+        data = json.loads(line)
+        data['account_has_feminine_name'] = data.pop('f')
+        data['happened_at'] = datetime.fromisoformat(data['happened_at'])
+        data['happened_on'] = data['happened_at'].date()
+        return cls.create(**data)
+
+    def serialize(self) -> str:
+        # most of the following is done to save bytes
+        drop_fields = [
+            'id',  # irrelevant
+            'happened_on',  # can be computed from 'happened_at'
+            'subscription_type',  # can be computed from 'order_coupon_slug'
+        ]
+        data = {field: value for field, value
+                in model_to_dict(self).items()
+                if value is not None and field not in drop_fields}
+        data['f'] = data.pop('account_has_feminine_name')  # saves bytes
+        data['happened_at'] = data['happened_at'].isoformat()
+        return json.dumps(data, sort_keys=True, ensure_ascii=False) + '\n'
+
+    @classmethod
+    def add(cls, **kwargs) -> None:
         unique_key_fields = cls._meta.indexes[0][0]
         conflict_target = [getattr(cls, field) for field in unique_key_fields]
 
@@ -107,7 +130,6 @@ class SubscriptionActivity(BaseModel):
                   for field, value in kwargs.items()
                   if ((value is not None) and
                       (field not in unique_key_fields))}
-        update[cls.source] = cls.source.concat(',' + kwargs['source'])
         update[cls.happened_at] = Case(None,
                                        [(cls.happened_at < kwargs['happened_at'], kwargs['happened_at'])],
                                        cls.happened_at)
@@ -117,6 +139,32 @@ class SubscriptionActivity(BaseModel):
                          update=update,
                          conflict_target=conflict_target)
         insert.execute()
+
+    @classmethod
+    def history_end_on(cls, buffer_days=30) -> date:
+        # The 'trial_end' activities are sometimes in the future,
+        # so let's not consider them as the end of the known history
+        end_on = cls.select(cls.happened_at) \
+            .where(cls.type != SubscriptionActivityType.TRIAL_END) \
+            .order_by(cls.happened_at.desc()) \
+            .limit(1) \
+            .scalar()
+        if end_on:
+            return end_on - timedelta(days=buffer_days)
+        return None
+
+    @classmethod
+    def history(cls) -> Iterable[Self]:
+        # Saving only everything before the end, to avoid overlaps
+        return cls.select() \
+            .where(cls.happened_on < cls.history_end_on()) \
+            .order_by(cls.happened_at.asc())
+
+    @classmethod
+    def coupon_listing(cls) -> Iterable[Self]:
+        return cls.select() \
+            .where(cls.order_coupon_slug.is_null(False)) \
+            .order_by(cls.happened_at.asc())
 
     @classmethod
     def cleanse_data(cls) -> None:
@@ -372,7 +420,7 @@ class SubscriptionCancellation(BaseModel):
 
 
 class SubscriptionReferrer(BaseModel):
-    account_id = CharField()
+    account_id = IntegerField()
     name = CharField()
     email = CharField()
     created_on = DateField()
@@ -382,7 +430,7 @@ class SubscriptionReferrer(BaseModel):
 
 
 class SubscriptionMarketingSurvey(BaseModel):
-    account_id = CharField()
+    account_id = IntegerField()
     name = CharField()
     email = CharField()
     created_on = DateField()

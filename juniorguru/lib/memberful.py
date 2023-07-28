@@ -58,7 +58,7 @@ class MemberfulAPI():
         logger.debug('Sending a mutation')
         return self.client.execute(gql(mutation), variable_values=variable_values)
 
-    def get_nodes(self, query: str, variable_values: dict=None, delay: int=0) -> Generator[dict, None, None]:
+    def get_nodes(self, query: str, variable_values: dict=None) -> Generator[dict, None, None]:
         if match := COLLECTION_NAME_RE.search(query):
             collection_name = match.group('collection_name')
         else:
@@ -69,8 +69,7 @@ class MemberfulAPI():
         seen_node_ids = set()
         for result in self._query(query,
                                   lambda result: result[collection_name]['pageInfo'],
-                                  variable_values=variable_values,
-                                  delay=delay):
+                                  variable_values=variable_values):
             # save total count so we can later check if we got all the nodes
             count = result[collection_name]['totalCount']
             if declared_count is None:
@@ -92,13 +91,13 @@ class MemberfulAPI():
         assert duplicates_count == 0, f'Memberful API returned {duplicates_count} duplicate nodes'
         assert declared_count == nodes_count, f"Memberful API returned {nodes_count} nodes instead of {declared_count}"
 
-    def _query(self, query: str, get_page_info: Callable, variable_values: dict=None, delay: int=0):
+    def _query(self, query: str, get_page_info: Callable, variable_values: dict=None):
         variable_values = variable_values or {}
         cursor = ''
         n = 0
         while cursor is not None:
             logger.debug(f'Sending a query with cursor {cursor!r}')
-            result = self._execute_query(query, dict(cursor=cursor, **variable_values), delay)
+            result = self._execute_query(query, dict(cursor=cursor, **variable_values))
             yield result
             n += 1
             page_info = get_page_info(result)
@@ -107,7 +106,7 @@ class MemberfulAPI():
             else:
                 cursor = None
 
-    def _execute_query(self, query: str, variable_values: dict, delay: int) -> dict:
+    def _execute_query(self, query: str, variable_values: dict) -> dict:
         if self.cache_dir:
             if self.clear_cache:
                 logger.debug('Clearing cache')
@@ -124,10 +123,8 @@ class MemberfulAPI():
             except FileNotFoundError:
                 pass
 
-        logger.debug('Querying Memberful API')
+        logger.debug(f'Querying Memberful API, variable values: {json.dumps(variable_values)}')
         result = self.client.execute(gql(query), variable_values=variable_values)
-        logger.debug(f'Memberful API delay: {delay}s')
-        time.sleep(delay)
 
         if self.cache_dir:
             logger.debug(f'Saving to cache: {cache_path}')
@@ -197,7 +194,6 @@ class MemberfulCSV:
         response.raise_for_status()
         html_tree = html.fromstring(response.content)
         csrf_token = html_tree.cssselect('meta[name="csrf-token"]')[0].get('content')
-        time.sleep(1)  # arbitrary wait to avoid too many subsequent requests
         logger.debug('Success!')
         return session, csrf_token
 

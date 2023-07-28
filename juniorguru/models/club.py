@@ -39,7 +39,7 @@ STATS_EXCLUDE_CHANNELS = [
 
 class ClubUser(BaseModel):
     id = IntegerField(primary_key=True)
-    account_id = CharField(null=True)
+    account_id = IntegerField(null=True)
     subscription_id = CharField(null=True)
     joined_at = DateTimeField(null=True)
     subscribed_at = DateTimeField(null=True)
@@ -136,7 +136,7 @@ class ClubUser(BaseModel):
         return joined_on.replace(year=joined_on.year + 1) <= (today or date.today())
 
     def is_founder(self):
-        return bool(self.coupon and parse_coupon(self.coupon)['name'] == 'FOUNDERS')
+        return bool(self.coupon and parse_coupon(self.coupon)['slug'] == 'founders')
 
     @classmethod
     def get_member_by_id(cls, id):

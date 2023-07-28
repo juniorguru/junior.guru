@@ -138,7 +138,7 @@ def get_coupons_mapping(coupons):
     for coupon in coupons:
         if coupon['state'] == 'enabled':
             parts = parse_coupon(coupon['code'])
-            slug = parts['name'].lower().removeprefix('student')
+            slug = parts['slug'].lower().removeprefix('student')
             field = 'student_coupon' if parts['is_student'] else 'coupon'
             coupons_mapping[slug][field] = coupon['code']
     return dict(coupons_mapping)

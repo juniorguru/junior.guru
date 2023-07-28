@@ -1,6 +1,6 @@
 import itertools
 import re
-from datetime import date
+from datetime import date, datetime, time, timezone
 from operator import itemgetter
 from pathlib import Path
 from typing import Generator
@@ -38,15 +38,15 @@ ACTIVITY_TYPES_MAPPING = {
 SUBSCRIPTIONS_GQL_PATH = Path(__file__).parent / 'subscriptions.gql'
 
 SUBSCRIPTION_TYPES_MAPPING = {
-    'THANKYOU': SubscriptionType.FREE,
-    'THANKYOUFOREVER': SubscriptionType.FREE,
-    'THANKYOUTEAM': SubscriptionType.FREE,
-    'PATREON': SubscriptionType.FREE,
-    'GITHUB': SubscriptionType.FREE,
-    'FOUNDERS': SubscriptionType.FREE,
-    'CORESKILL': SubscriptionType.FREE,
-    'STUDENTCORESKILL': SubscriptionType.FREE,
-    'FINAID': SubscriptionType.FINAID,
+    'thankyou': SubscriptionType.FREE,
+    'thankyouforever': SubscriptionType.FREE,
+    'thankyouteam': SubscriptionType.FREE,
+    'patreon': SubscriptionType.FREE,
+    'github': SubscriptionType.FREE,
+    'founders': SubscriptionType.FREE,
+    'coreskill': SubscriptionType.FREE,
+    'studentcoreskill': SubscriptionType.FREE,
+    'finaid': SubscriptionType.FINAID,
 }
 
 
@@ -54,10 +54,13 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command(dependencies=['partners', 'feminine-names'])
+@click.option('--from-date', default='2021-01-01', type=date.fromisoformat)
 @click.option('--clear-cache/--keep-cache', default=False)
+@click.option('--history-path', default='juniorguru/data/subscription_activities.jsonl', type=click.Path(exists=True, path_type=Path))
+@click.option('--clear-history/--keep-history', default=False)
 @click.pass_context
 @db.connection_context()
-def main(context, clear_cache):
+def main(context, from_date, clear_cache, history_path, clear_history):
     memberful = MemberfulAPI(cache_dir=context.obj['cache_dir'],
                              clear_cache=clear_cache)
 
@@ -67,23 +70,39 @@ def main(context, clear_cache):
     db.create_tables(tables)
 
     subscripton_types_mapping = {
-        **{parse_coupon(coupon)['name']: SubscriptionType.PARTNER
+        **{parse_coupon(coupon)['slug']: SubscriptionType.PARTNER
         for coupon in Partner.coupons()},
-        **{parse_coupon(coupon)['name']: SubscriptionType.STUDENT
+        **{parse_coupon(coupon)['slug']: SubscriptionType.STUDENT
         for coupon in Partner.student_coupons()},
         **SUBSCRIPTION_TYPES_MAPPING
     }
 
+    # The result of this function will be stored in history, because we cannot store
+    # full names of members. If we change how we classify feminine names, there's no
+    # way to go back and reclassify the names in the history (without clearing the history).
     def has_feminine_name(name) -> bool:
         return FeminineName.is_feminine(name.strip())
 
-    logger.info('Fetching activities from Memberful API')
-    query = ACTIVITIES_GQL_PATH.read_text()
-    activities = itertools.chain.from_iterable(memberful.get_nodes(query, dict(type=type), delay=0.2)
-                                               for type in ACTIVITY_TYPES_MAPPING)
-    for activity in logger.progress(activities):
+    logger.info('Reading history from a file')
+    if clear_history:
+        history_path.write_text('')
+    else:
+        with history_path.open() as f:
+            for line in f:
+                SubscriptionActivity.deserialize(line)
+    from_date = SubscriptionActivity.history_end_on() or from_date
+
+    logger.info(f'Fetching activities from Memberful API, since {from_date}')
+    # This heavily relies on history. If there's no history, it will fetch everything
+    # since the beginning of time. That's very slow and won't finish, because Memberful API
+    # will ban the IP address until the next day. It can be done with cache and different
+    # IP addresses (like starting over tethering using LTE of my phone, and re-starting over WiFi).
+    queries = (memberful.get_nodes(ACTIVITIES_GQL_PATH.read_text(),
+                                   dict(type=type, createdAt=dict(gte=get_timestamp(from_date))))
+               for type in ACTIVITY_TYPES_MAPPING)
+    for activity in logger.progress(itertools.chain.from_iterable(queries)):
         try:
-            account_id = activity['member']['id']
+            account_id = int(activity['member']['id'])
         except (KeyError, TypeError):
             logger.debug('Activity with no account ID, skipping')
         else:
@@ -92,22 +111,40 @@ def main(context, clear_cache):
                                      account_has_feminine_name=has_feminine_name(activity['member']['fullName']),
                                      happened_on=happened_at.date(),
                                      happened_at=happened_at,
-                                     source=f"activity#{activity['id']}/{activity['type']}",
                                      type=ACTIVITY_TYPES_MAPPING[activity['type']])
+    logger.info(f'Finished with {SubscriptionActivity.total_count()} activities')
+
     logger.info('Fetching subscriptions from Memberful API')
-    subscriptions = memberful.get_nodes(SUBSCRIPTIONS_GQL_PATH.read_text(), delay=0.2)
+    # There is no filtering by date, so we need to fetch everything every time. One could
+    # say that in such case there's no reason to save the data to history, but the reason
+    # we do it is to have a backup (and a git commits to inspect) in case there is something
+    # messing with the data again.
+    subscriptions = memberful.get_nodes(SUBSCRIPTIONS_GQL_PATH.read_text())
     for subscription in logger.progress(subscriptions):
         for activity in activities_from_subscription(subscription):
             activity['account_has_feminine_name'] = has_feminine_name(subscription['member']['fullName'])
-            try:
-                coupon_name = parse_coupon(activity['order_coupon'])['name']
-                activity['subscription_type'] = subscripton_types_mapping[coupon_name]
-            except (TypeError, KeyError):
-                activity['subscription_type'] = SubscriptionType.INDIVIDUAL
             SubscriptionActivity.add(**activity)
+    logger.info(f'Finished with {SubscriptionActivity.total_count()} activities')
+
+    logger.info('Saving history to a file')
+    with history_path.open('w') as f:
+        for db_object in SubscriptionActivity.history():
+            f.write(db_object.serialize())
+
+    logger.info('Classifying subscription types')
+    # History only stores coupon slug, so this is done as part of post-processing.
+    # It's better than to store the subscription type in the history, because
+    # this way over time we can change how the subscription types are classified.
+    for activity in SubscriptionActivity.coupon_listing():
+        try:
+            coupon_slug = activity['order_coupon_slug']
+            activity.subscription_type = subscripton_types_mapping[coupon_slug]
+        except (TypeError, KeyError):
+            activity.subscription_type = SubscriptionType.INDIVIDUAL
+        activity.save()
+
     logger.info('Cleansing data')
     SubscriptionActivity.cleanse_data()
-    logger.info(f'Finished with {SubscriptionActivity.total_count()} activities')
 
     logger.info("Fetching members data from Memberful CSV")
     memberful = MemberfulCSV(cache_dir=context.obj['cache_dir'], clear_cache=clear_cache)
@@ -115,7 +152,7 @@ def main(context, clear_cache):
         referrer = csv_row['Referrer'] or None
         if referrer:
             referrer_type = classify_referrer(referrer)
-            SubscriptionReferrer.create(account_id=csv_row['Memberful ID'],
+            SubscriptionReferrer.create(account_id=int(csv_row['Memberful ID']),
                                         name=csv_row['Full Name'],
                                         email=csv_row['Email'],
                                         created_on=date.fromisoformat(csv_row['Created at']),
@@ -125,7 +162,7 @@ def main(context, clear_cache):
         marketing_survey_answer = csv_row['Jak ses dozvěděl(a) o junior.guru?'] or None
         if marketing_survey_answer:
             marketing_survey_answer_type = classify_marketing_survey_answer(marketing_survey_answer)
-            SubscriptionMarketingSurvey.create(account_id=csv_row['Memberful ID'],
+            SubscriptionMarketingSurvey.create(account_id=int(csv_row['Memberful ID']),
                                                name=csv_row['Full Name'],
                                                email=csv_row['Email'],
                                                created_on=date.fromisoformat(csv_row['Created at']),
@@ -153,52 +190,58 @@ def main(context, clear_cache):
 
 
 def activities_from_subscription(subscription: dict) -> Generator[dict, None, None]:
-    account_id = subscription['member']['id']
+    account_id = int(subscription['member']['id'])
     subscription_interval = subscription['plan']['intervalUnit']
-    subscription_coupon = (subscription['coupon'] or {}).get('code')
+    subscription_coupon_slug = get_coupon_slug(subscription['coupon'])
 
     created_at = arrow.get(subscription['createdAt']).naive
     yield dict(account_id=account_id,
                type='order',
-               source=f"subscription#{subscription['id']}/created_at",
                happened_on=created_at.date(),
                happened_at=created_at,
                subscription_interval=subscription_interval,
-               order_coupon=subscription_coupon)
+               order_coupon_slug=subscription_coupon_slug)
     if subscription['trialStartAt']:
         trial_start_at = arrow.get(subscription['trialStartAt']).naive
         yield dict(account_id=account_id,
                    type='trial_start',
-                   source=f"subscription#{subscription['id']}/trial_start_at",
                    happened_on=trial_start_at.date(),
                    happened_at=trial_start_at,
                    subscription_interval=subscription_interval,
-                   order_coupon=subscription_coupon)
+                   order_coupon_slug=subscription_coupon_slug)
     if subscription['trialEndAt']:
         trial_end_at = arrow.get(subscription['trialEndAt']).naive
         yield dict(account_id=account_id,
                    type='trial_end',
-                   source=f"subscription#{subscription['id']}/trial_end_at",
                    happened_on=trial_end_at.date(),
                    happened_at=trial_end_at,
                    subscription_interval=subscription_interval,
-                   order_coupon=subscription_coupon)
+                   order_coupon_slug=subscription_coupon_slug)
 
     orders = sorted(subscription['orders'], key=itemgetter('createdAt'), reverse=True)
     for i, order in enumerate(orders):
-        if subscription_coupon and i == 0:
-            order_coupon = subscription_coupon
+        if subscription_coupon_slug and i == 0:
+            order_coupon_slug = subscription_coupon_slug
         else:
-            order_coupon = (order['coupon'] or {}).get('code')
+            order_coupon_slug = get_coupon_slug(order['coupon'])
 
         order_created_at = arrow.get(order['createdAt']).naive
         yield dict(account_id=account_id,
                    type='order',
-                   source=f"subscription#{subscription['id']}/order#{i}/created_at",
                    happened_on=order_created_at.date(),
                    happened_at=order_created_at,
                    subscription_interval=subscription['plan']['intervalUnit'],
-                   order_coupon=order_coupon)
+                   order_coupon_slug=order_coupon_slug)
+
+
+def get_timestamp(date: date) -> int:
+    return int(datetime.combine(date, time(), tzinfo=timezone.utc).timestamp())
+
+
+def get_coupon_slug(coupon_data: dict) -> None | str:
+    if coupon := (coupon_data or {}).get('code'):
+        return parse_coupon(coupon)['slug']
+    return None
 
 
 def classify_referrer(url: str) -> str:

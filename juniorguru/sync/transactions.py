@@ -126,7 +126,7 @@ def main(context, from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_
         with history_path.open() as f:
             for line in f:
                 Transaction.deserialize(line)
-    from_date = Transaction.latest_happened_on() or from_date
+    from_date = Transaction.history_end_on() or from_date
     to_date = date.today()
 
     logger.info(f'Reading data from the bank account, since {from_date}')
