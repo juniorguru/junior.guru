@@ -225,12 +225,12 @@ def members_surveys(today) -> dict[str, Any]:
 
 @chart
 def members_surveys_cancellations_breakdown(months: list[date]) -> list[Number]:
-    return charts.per_month_breakdown(SubscriptionCancellation.breakdown, months)
+    return charts.per_month_breakdown(SubscriptionCancellation.breakdown_ptc, months)
 
 
 @chart
 def members_surveys_marketing_breakdown(months: list[date]) -> list[Number]:
-    return charts.per_month_breakdown(SubscriptionMarketingSurvey.breakdown, months)
+    return charts.per_month_breakdown(SubscriptionMarketingSurvey.breakdown_ptc, months)
 
 
 @namespace

@@ -476,6 +476,7 @@ Graf s **odchody** zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli 
 
 Když se někdo registruje do klubu, může mi sdělit, kde na junior.guru narazil.
 Graf začíná v době, kdy jsem začal tato data sbírat.
+Procenta jsou podíl z těch, co odpověděli, ne ze všech příchozích.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -484,52 +485,52 @@ Graf začíná v době, kdy jsem začal tato data sbírat.
         'labels': charts.members_surveys_labels,
         'datasets': [
             {
-                'label': 'ostatní',
+                'label': '% ostatní',
                 'data': charts.members_surveys_marketing_breakdown.pop('other'),
                 'backgroundColor': '#a9a9a9',
             },
             {
-                'label': 'doporučení z kurzu',
+                'label': '% doporučení z kurzu',
                 'data': charts.members_surveys_marketing_breakdown.pop('courses'),
                 'backgroundColor': '#083284',
             },
             {
-                'label': 'vyhledávání',
+                'label': '% vyhledávání',
                 'data': charts.members_surveys_marketing_breakdown.pop('search'),
                 'backgroundColor': '#4285f4',
             },
             {
-                'label': 'doporučení známého',
+                'label': '% doporučení známého',
                 'data': charts.members_surveys_marketing_breakdown.pop('friend'),
                 'backgroundColor': '#02cabb',
             },
             {
-                'label': 'Facebook',
+                'label': '% Facebook',
                 'data': charts.members_surveys_marketing_breakdown.pop('facebook'),
                 'backgroundColor': '#4267b2',
             },
             {
-                'label': 'podcasty',
+                'label': '% podcasty',
                 'data': charts.members_surveys_marketing_breakdown.pop('podcasts'),
                 'backgroundColor': '#872ec4',
             },
             {
-                'label': 'LinkedIn',
+                'label': '% LinkedIn',
                 'data': charts.members_surveys_marketing_breakdown.pop('linkedin'),
                 'backgroundColor': '#0072b1',
             },
             {
-                'label': 'YouTube',
+                'label': '% YouTube',
                 'data': charts.members_surveys_marketing_breakdown.pop('youtube'),
                 'backgroundColor': '#ff0000',
             },
             {
-                'label': 'yablko',
+                'label': '% yablko',
                 'data': charts.members_surveys_marketing_breakdown.pop('yablko'),
                 'backgroundColor': '#e7cd49',
             },
             {
-                'label': 'vyhledávání recenzí kurzů',
+                'label': '% vyhledávání recenzí kurzů',
                 'data': charts.members_surveys_marketing_breakdown.pop('courses_search'),
                 'backgroundColor': '#00b7eb',
             },
@@ -538,7 +539,7 @@ Graf začíná v době, kdy jsem začal tato data sbírat.
     {{ charts.members_surveys_marketing_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true}},
         'plugins': {'annotation': charts.members_surveys_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
@@ -580,6 +581,7 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_.
 
 Když někdo ukončuje členství v klubu, může mi sdělit důvod, proč tak činí.
 Graf začíná v době, kdy jsem začal tímto způsobem zpětnou vazbu sbírat.
+Procenta jsou podíl z těch, co odpověděli, ne ze všech odcházejících.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -588,32 +590,32 @@ Graf začíná v době, kdy jsem začal tímto způsobem zpětnou vazbu sbírat.
         'labels': charts.members_surveys_labels,
         'datasets': [
             {
-                'label': 'jiný důvod',
+                'label': '% jiný důvod',
                 'data': charts.members_surveys_cancellations_breakdown.pop('other'),
                 'backgroundColor': '#a9a9a9',
             },
             {
-                'label': 'klub už nepotřebuju',
+                'label': '% klub už nepotřebuju',
                 'data': charts.members_surveys_cancellations_breakdown.pop('necessity'),
                 'backgroundColor': '#1755d1',
             },
             {
-                'label': 'potřeboval(a) jsem klub na omezenou dobu',
+                'label': '% potřeboval(a) jsem klub na omezenou dobu',
                 'data': charts.members_surveys_cancellations_breakdown.pop('temporary_use'),
                 'backgroundColor': '#02cabb',
             },
             {
-                'label': 'vybral(a) jsem jinou službu, která mi vyhovuje víc',
+                'label': '% vybral(a) jsem jinou službu, která mi vyhovuje víc',
                 'data': charts.members_surveys_cancellations_breakdown.pop('competition'),
                 'backgroundColor': '#083284',
             },
             {
-                'label': 'klub nesplnil moje očekávání',
+                'label': '% klub nesplnil moje očekávání',
                 'data': charts.members_surveys_cancellations_breakdown.pop('misunderstood'),
                 'backgroundColor': '#00b7eb',
             },
             {
-                'label': 'klub je moc drahý',
+                'label': '% klub je moc drahý',
                 'data': charts.members_surveys_cancellations_breakdown.pop('affordability'),
                 'backgroundColor': '#dc3545',
             },
@@ -622,7 +624,7 @@ Graf začíná v době, kdy jsem začal tímto způsobem zpětnou vazbu sbírat.
     {{ charts.members_surveys_cancellations_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true}},
         'plugins': {'annotation': charts.members_surveys_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 

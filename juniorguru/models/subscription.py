@@ -404,13 +404,14 @@ class SubscriptionCancellation(BaseModel):
     feedback = CharField(null=True)
 
     @classmethod
-    def breakdown(cls, date: date) -> dict[str, int]:
+    def breakdown_ptc(cls, date: date) -> dict[str, float]:
         from_date, to_date = month_range(date)
         query = cls.select() \
             .where(cls.expires_on >= from_date,
                    cls.expires_on <= to_date)
         counter = Counter([cancellation.reason for cancellation in query])
-        return {reason.value: counter[reason]
+        total_count = sum(counter.values())
+        return {reason.value: (counter[reason] / total_count) * 100
                 for reason in SubscriptionCancellationReason}
 
 
@@ -433,11 +434,12 @@ class SubscriptionMarketingSurvey(BaseModel):
     type = CharField(index=True, constraints=[check_enum('type', SubscriptionMarketingSurveyAnswer)])
 
     @classmethod
-    def breakdown(cls, date: date) -> dict[str, int]:
+    def breakdown_ptc(cls, date: date) -> dict[str, float]:
         from_date, to_date = month_range(date)
         query = cls.select() \
             .where(cls.created_on >= from_date,
                    cls.created_on <= to_date)
         counter = Counter([response.type for response in query])
-        return {type.value: counter[type]
+        total_count = sum(counter.values())
+        return {type.value: (counter[type] / total_count) * 100
                 for type in SubscriptionMarketingSurveyAnswer}
