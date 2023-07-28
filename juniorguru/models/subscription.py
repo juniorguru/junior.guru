@@ -161,12 +161,6 @@ class SubscriptionActivity(BaseModel):
             .order_by(cls.happened_at.asc())
 
     @classmethod
-    def coupon_listing(cls) -> Iterable[Self]:
-        return cls.select() \
-            .where(cls.order_coupon_slug.is_null(False)) \
-            .order_by(cls.happened_at.asc())
-
-    @classmethod
     def cleanse_data(cls) -> None:
         # The 'order' activity happening on the same day as 'trial_end' activity
         # marks subscription type of the whole trial.

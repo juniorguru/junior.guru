@@ -135,11 +135,10 @@ def main(context, from_date, clear_cache, history_path, clear_history):
     # History only stores coupon slug, so this is done as part of post-processing.
     # It's better than to store the subscription type in the history, because
     # this way over time we can change how the subscription types are classified.
-    for activity in SubscriptionActivity.coupon_listing():
+    for activity in SubscriptionActivity.select():
         try:
-            coupon_slug = activity['order_coupon_slug']
-            activity.subscription_type = subscripton_types_mapping[coupon_slug]
-        except (TypeError, KeyError):
+            activity.subscription_type = subscripton_types_mapping[activity.order_coupon_slug]
+        except KeyError:
             activity.subscription_type = SubscriptionType.INDIVIDUAL
         activity.save()
 
