@@ -1,8 +1,8 @@
-from datetime import date
 import json
+from datetime import date
 from typing import Iterable, Self
 
-from peewee import CharField, IntegerField, Case
+from peewee import Case, CharField, IntegerField
 from playhouse.shortcuts import model_to_dict
 
 from juniorguru.models.base import BaseModel

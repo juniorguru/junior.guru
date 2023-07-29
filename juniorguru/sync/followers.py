@@ -6,7 +6,7 @@ from urllib.parse import urlencode
 import click
 import requests
 from lxml import html
-from playwright.sync_api import sync_playwright, TimeoutError
+from playwright.sync_api import TimeoutError, sync_playwright
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
