@@ -11635,3 +11635,7 @@
 {"account_id": 4747892, "f": false, "happened_at": "2023-06-28T22:13:21", "subscription_interval": "month", "type": "trial_start"}
 {"account_id": 4145063, "f": false, "happened_at": "2023-06-28T22:50:04", "subscription_interval": "month", "type": "trial_end"}
 {"account_id": 4145063, "f": false, "happened_at": "2023-06-28T22:52:25", "type": "deactivation"}
+{"account_id": 2293452, "f": false, "happened_at": "2021-03-11T08:22:10", "order_coupon_slug": "thankyouforever", "subscription_interval": "year", "type": "order"}
+{"account_id": 2293452, "f": false, "happened_at": "2021-03-11T08:22:10", "order_coupon_slug": "thankyouforever", "subscription_interval": "year", "type": "trial_start"}
+{"account_id": 2293452, "f": false, "happened_at": "2021-03-25T08:22:10", "order_coupon_slug": "thankyouforever", "subscription_interval": "year", "type": "trial_end"}
+{"account_id": 2293452, "f": false, "happened_at": "2023-02-25T08:31:34", "order_coupon_slug": "thankyouforever", "subscription_interval": "year", "type": "order"}
