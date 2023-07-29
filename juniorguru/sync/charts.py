@@ -95,7 +95,7 @@ def chart(chart_fn: Callable) -> Callable:
 
 
 @namespace
-def business(today) -> dict[str, Any]:
+def business(today: date) -> dict[str, Any]:
     months = charts.months(BUSINESS_BEGIN_ON, today)
     return dict(values=months,
                 labels=charts.labels(months),
@@ -123,7 +123,7 @@ def business_revenue_ttm(months: list[date]) -> list[Number]:
 
 
 @chart
-def business_revenue_breakdown(months: list[date]) -> list[Number]:
+def business_revenue_breakdown(months: list[date]) -> dict[Number]:
     return charts.per_month_breakdown(Transaction.revenue_breakdown, months)
 
 
@@ -138,12 +138,12 @@ def business_cost_ttm(months: list[date]) -> list[Number]:
 
 
 @chart
-def business_cost_breakdown(months: list[date]) -> list[Number]:
+def business_cost_breakdown(months: list[date]) -> dict[Number]:
     return charts.per_month_breakdown(Transaction.cost_breakdown, months)
 
 
 @namespace
-def events(today) -> dict[str, Any]:
+def events(today: date) -> dict[str, Any]:
     months = charts.months(CLUB_BEGIN_ON, today)
     return dict(values=months,
                 labels=charts.labels(months),
@@ -166,7 +166,7 @@ def events_women_ptc_ttm(months: list[date]) -> list[Number]:
 
 
 @namespace
-def podcast(today) -> dict[str, Any]:
+def podcast(today: date) -> dict[str, Any]:
     months = charts.months(PODCAST_BEGIN_ON, today)
     return dict(values=months,
                 labels=charts.labels(months))
@@ -178,7 +178,7 @@ def podcast_women_ptc_ttm(months: list[date]) -> list[Number]:
 
 
 @namespace
-def members(today) -> dict[str, Any]:
+def members(today: date) -> dict[str, Any]:
     months = charts.months(CLUB_BEGIN_ON, today)
     return dict(values=months,
                 labels=charts.labels(months),
@@ -216,7 +216,7 @@ def members_individuals_duration(months: list[date]) -> list[Number]:
 
 
 @namespace
-def members_surveys(today) -> dict[str, Any]:
+def members_surveys(today: date) -> dict[str, Any]:
     months = charts.months(SURVEYS_BEGIN_ON, today)
     return dict(values=months,
                 labels=charts.labels(months),
@@ -224,17 +224,27 @@ def members_surveys(today) -> dict[str, Any]:
 
 
 @chart
-def members_surveys_cancellations_breakdown(months: list[date]) -> list[Number]:
+def members_surveys_cancellations_breakdown(months: list[date]) -> dict[Number]:
     return charts.per_month_breakdown(SubscriptionCancellation.breakdown_ptc, months)
 
 
 @chart
-def members_surveys_marketing_breakdown(months: list[date]) -> list[Number]:
+def members_surveys_marketing_breakdown(months: list[date]) -> dict[Number]:
     return charts.per_month_breakdown(SubscriptionMarketingSurvey.breakdown_ptc, months)
 
 
 @namespace
-def members_subscriptions(today) -> dict[str, Any]:
+def members_surveys_total(today: date) -> dict[str, Any]:
+    return dict(labels=[])
+
+
+@chart
+def members_surveys_total_cancellations_breakdown() -> dict[Number]:
+    return SubscriptionCancellation.total_breakdown_ptc()
+
+
+@namespace
+def members_subscriptions(today: date) -> dict[str, Any]:
     months = charts.months(charts.next_month(LEGACY_PLANS_DELETED_ON), today)
     return dict(values=months,
                 labels=charts.labels(months),
@@ -247,7 +257,7 @@ def members_subscriptions_breakdown(months: list[date]) -> list[Number]:
 
 
 @namespace
-def members_trend(today) -> dict[str, Any]:
+def members_trend(today: date) -> dict[str, Any]:
     months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
     return dict(values=months,
                 labels=charts.labels(months),
@@ -285,7 +295,7 @@ def members_trend_individuals_churn_ptc(months: list[date]) -> list[Number]:
 
 
 @namespace
-def club_content(today) -> dict[str, Any]:
+def club_content(today: date) -> dict[str, Any]:
     months = charts.months(charts.next_month(today - DEFAULT_CHANNELS_HISTORY_SINCE), charts.previous_month(today))
     return dict(values=months,
                 labels=charts.labels(months),
@@ -298,7 +308,7 @@ def club_content_size(months: list[date]) -> list[Number]:
 
 
 @namespace
-def handbook(today) -> dict[str, Any]:
+def handbook(today: date) -> dict[str, Any]:
     return dict(labels=[f"{page.meta['emoji']} {page.src_uri.removeprefix('handbook/')}"
                         for page in Page.handbook_listing()])
 
@@ -314,7 +324,7 @@ def handbook_notes_size() -> list[Number]:
 
 
 @namespace
-def followers(today) -> dict[str, Any]:
+def followers(today: date) -> dict[str, Any]:
     months = charts.months(*Followers.months_range())
     return dict(values=months,
                 labels=charts.labels(months))
@@ -326,7 +336,7 @@ def followers_breakdown(months: list[date]) -> list[Number]:
 
 
 @namespace
-def web_usage(today) -> dict[str, Any]:
+def web_usage(today: date) -> dict[str, Any]:
     months = charts.months(*WebUsage.months_range())
     return dict(values=months,
                 labels=charts.labels(months),
@@ -340,7 +350,7 @@ def web_usage_total(months: list[date]) -> list[Number]:
 
 
 @chart
-def web_usage_breakdown(months: list[date]) -> list[Number]:
+def web_usage_breakdown(months: list[date]) -> dict[Number]:
     breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
     del breakdown['total']
     return breakdown

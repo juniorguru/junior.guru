@@ -414,6 +414,14 @@ class SubscriptionCancellation(BaseModel):
         return {reason.value: (counter[reason] / total_count) * 100
                 for reason in SubscriptionCancellationReason}
 
+    @classmethod
+    def total_breakdown_ptc(cls) -> dict[str, float]:
+        query = cls.select()
+        counter = Counter([cancellation.reason for cancellation in query])
+        total_count = sum(counter.values())
+        return {reason.value: (counter[reason] / total_count) * 100
+                for reason in SubscriptionCancellationReason}
+
 
 class SubscriptionReferrer(BaseModel):
     account_id = IntegerField()

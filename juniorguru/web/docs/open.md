@@ -628,6 +628,27 @@ Procenta jsou podíl z těch, co odpověděli, ne ze všech odcházejících.
         'plugins': {'annotation': charts.members_surveys_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
+### Důvody odchodu za celou historii
+
+Celkový poměr důvodů odchodu za celou historii, po kterou sbírám tento typ zpětné vazby.
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="pie"
+    data-chart="{{ {
+        'labels': charts.members_surveys_total_cancellations_breakdown.keys()|list,
+        'datasets': [
+            {
+                'data': charts.members_surveys_total_cancellations_breakdown.values()|list,
+            },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'scales': None,
+        'aspectRatio': 2,
+    }|tojson|forceescape }}"
+    data-chart-milestones-offset-ptc="0"></canvas></div></div>
+
 ### Délka setrvání v klubu
 
 Pokud jde graf nahoru, znamená to, že velká část členů zůstává v klubu dlouho.
