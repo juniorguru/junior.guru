@@ -8,6 +8,12 @@
 # avatar_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
+- id: "0018"
+  title: Anastázie Sedláková (DNAnexus) nejen o mateřství a kariéře v IT
+  publish_on: "2023-08-01"
+  description: |
+    Nasťa Sedláková je bioinformatička, data analytička a lektorka programování. Mimo to je i maminkou třech malých dětí. Jak se jí daří skloubit rodičovství a kariéru? Jaké má zkušenosti s učením programování? A co jí přinesly české IT komunity?
+
 - id: "0017"
   title: Matěj Kotrba (Fuckupy v IT, Očima ajťáka) o tom, jak se recruiterům dostat do hledáčku
   avatar_path: avatars-participants/matej-kotrba.jpg
