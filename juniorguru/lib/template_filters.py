@@ -3,6 +3,7 @@ import random
 import re
 from datetime import date, datetime
 from operator import itemgetter
+from typing import Iterable, Literal
 from urllib.parse import unquote, urljoin
 
 import arrow
@@ -174,15 +175,19 @@ class TemplateError(Exception):
     pass
 
 
-def assert_empty(collection):
+def assert_empty(collection: Iterable) -> Literal['']:
     if len(collection):
         raise TemplateError(f"{type(collection).__name__} not empty: {', '.join(collection)}")
     return ''
 
 
-def screenshot_url(url):
+def screenshot_url(url: str) -> str:
     slug = slugify(unquote(strip_utm_params(url))) \
         .removeprefix('http-') \
         .removeprefix('https-') \
         .removeprefix('www-')
     return f'static/screenshots/{slug}.webp'
+
+
+def mapping(mapping: dict, keys: Iterable) -> list:
+    return [mapping[key] for key in keys]

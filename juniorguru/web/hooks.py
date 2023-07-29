@@ -24,6 +24,7 @@ TEMPLATE_FILTERS = [
     'relative_url',
     'screenshot_url',
     'absolute_url',
+    'mapping',
 ]
 
 

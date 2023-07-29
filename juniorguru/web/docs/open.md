@@ -636,10 +636,25 @@ Celkový poměr důvodů odchodu za celou historii, po kterou sbírám tento typ
     class="chart" width="400" height="230"
     data-chart-type="pie"
     data-chart="{{ {
-        'labels': charts.members_surveys_total_cancellations_breakdown.keys()|list,
+        'labels': {
+            'other': '% jiný důvod',
+            'necessity': '% klub už nepotřebuju',
+            'temporary_use': '% potřeboval(a) jsem klub na omezenou dobu',
+            'competition': '% vybral(a) jsem jinou službu, která mi vyhovuje víc',
+            'misunderstood': '% klub nesplnil moje očekávání',
+            'affordability': '% klub je moc drahý',
+        }|mapping(charts.members_surveys_total_cancellations_breakdown.keys()),
         'datasets': [
             {
                 'data': charts.members_surveys_total_cancellations_breakdown.values()|list,
+                'backgroundColor': {
+                    'other': '#a9a9a9',
+                    'necessity': '#1755d1',
+                    'temporary_use': '#02cabb',
+                    'competition': '#083284',
+                    'misunderstood': '#00b7eb',
+                    'affordability': '#dc3545',
+                }|mapping(charts.members_surveys_total_cancellations_breakdown.keys())
             },
         ],
     }|tojson|forceescape }}"
