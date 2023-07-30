@@ -411,14 +411,14 @@ class SubscriptionCancellation(BaseModel):
         query = cls.select() \
             .where(cls.expires_on >= from_date,
                    cls.expires_on <= to_date)
-        counter = Counter([cancellation.reason for cancellation in query])
-        total_count = sum(counter.values())
-        return {reason.value: (counter[reason] / total_count) * 100
-                for reason in SubscriptionCancellationReason}
+        return cls._calc_breakdown_ptc(query)
 
     @classmethod
     def total_breakdown_ptc(cls) -> dict[str, float]:
-        query = cls.select()
+        return cls._calc_breakdown_ptc(cls.select())
+
+    @classmethod
+    def _calc_breakdown_ptc(cls, query: Iterable[Self]) -> dict[str, Number]:
         counter = Counter([cancellation.reason for cancellation in query])
         total_count = sum(counter.values())
         return {reason.value: (counter[reason] / total_count) * 100
@@ -451,14 +451,14 @@ class SubscriptionMarketingSurvey(BaseModel):
         query = cls.select() \
             .where(cls.created_on >= from_date,
                    cls.created_on <= to_date)
-        counter = Counter([answer.type for answer in query])
-        total_count = sum(counter.values())
-        return {type.value: (counter[type] / total_count) * 100
-                for type in SubscriptionMarketingSurveyAnswer}
+        return cls._calc_breakdown_ptc(query)
 
     @classmethod
     def total_breakdown_ptc(cls) -> dict[str, float]:
-        query = cls.select()
+        return cls._calc_breakdown_ptc(cls.select())
+
+    @classmethod
+    def _calc_breakdown_ptc(cls, query: Iterable[Self]) -> dict[str, Number]:
         counter = Counter([answer.type for answer in query])
         total_count = sum(counter.values())
         return {type.value: (counter[type] / total_count) * 100
