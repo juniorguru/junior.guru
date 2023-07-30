@@ -101,12 +101,12 @@ class SubscriptionActivity(BaseModel):
     subscription_type = CharField(null=True, constraints=[check_enum('subscription_type', SubscriptionType)])
 
     @classmethod
-    def deserialize(cls, line: str):
+    def deserialize(cls, line: str) -> Self:
         data = json.loads(line)
         data['account_has_feminine_name'] = data.pop('f')
         data['happened_at'] = datetime.fromisoformat(data['happened_at'])
         data['happened_on'] = data['happened_at'].date()
-        return cls.create(**data)
+        return cls.add(**data)
 
     def serialize(self) -> str:
         # most of the following is done to save bytes
