@@ -539,9 +539,53 @@ Procenta jsou podíl z těch, co odpověděli, ne ze všech příchozích.
     {{ charts.members_surveys_marketing_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true}},
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true, 'max': 100}},
         'plugins': {'annotation': charts.members_surveys_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
+
+### Zdroje příchodů za celou historii
+
+Celkový poměr zdrojů příchodů za celou historii, po kterou sbírám tento typ zpětné vazby.
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="pie"
+    data-chart="{{ {
+        'labels': {
+            'other': '% ostatní',
+            'courses': '% doporučení z kurzu',
+            'search': '% vyhledávání',
+            'friend': '% doporučení známého',
+            'facebook': '% Facebook',
+            'podcasts': '% podcasty',
+            'linkedin': '% LinkedIn',
+            'youtube': '% YouTube',
+            'yablko': '% yablko',
+            'courses_search': '% vyhledávání recenzí kurzů',
+        }|mapping(charts.members_surveys_total_marketing_breakdown.keys()),
+        'datasets': [
+            {
+                'data': charts.members_surveys_total_marketing_breakdown.values()|list,
+                'backgroundColor': {
+                    'other': '#a9a9a9',
+                    'courses': '#083284',
+                    'search': '#4285f4',
+                    'friend': '#02cabb',
+                    'facebook': '#4267b2',
+                    'podcasts': '#872ec4',
+                    'linkedin': '#0072b1',
+                    'youtube': '#ff0000',
+                    'yablko': '#e7cd49',
+                    'courses_search': '#00b7eb',
+                }|mapping(charts.members_surveys_total_marketing_breakdown.keys())
+            },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'scales': None,
+        'aspectRatio': 2,
+    }|tojson|forceescape }}"
+    data-chart-milestones-offset-ptc="0"></canvas></div></div>
 
 ### Retence
 
@@ -624,7 +668,7 @@ Procenta jsou podíl z těch, co odpověděli, ne ze všech odcházejících.
     {{ charts.members_surveys_cancellations_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true}},
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true, 'max': 100}},
         'plugins': {'annotation': charts.members_surveys_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 

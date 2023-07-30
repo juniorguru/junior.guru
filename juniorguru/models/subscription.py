@@ -447,7 +447,15 @@ class SubscriptionMarketingSurvey(BaseModel):
         query = cls.select() \
             .where(cls.created_on >= from_date,
                    cls.created_on <= to_date)
-        counter = Counter([response.type for response in query])
+        counter = Counter([answer.type for answer in query])
+        total_count = sum(counter.values())
+        return {type.value: (counter[type] / total_count) * 100
+                for type in SubscriptionMarketingSurveyAnswer}
+
+    @classmethod
+    def total_breakdown_ptc(cls) -> dict[str, float]:
+        query = cls.select()
+        counter = Counter([answer.type for answer in query])
         total_count = sum(counter.values())
         return {type.value: (counter[type] / total_count) * 100
                 for type in SubscriptionMarketingSurveyAnswer}
