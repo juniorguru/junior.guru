@@ -1,3 +1,4 @@
+import math
 from operator import itemgetter
 from pathlib import Path
 from pprint import pformat
@@ -60,6 +61,7 @@ def main():
             user.update_subscribed_at(arrow.get(subscription['createdAt']).naive)
             user.update_expires_at(arrow.get(subscription['expiresAt']).naive)
             user.has_feminine_name = has_feminine_name
+            user.total_spend = math.ceil(subscription['totalSpendCents'] / 100)
             user.save()
 
     logger.info('Processing remaining club users who are Discord members')

@@ -11,7 +11,7 @@ query fetch($cursor: String!) {
                 discordUserId
                 email
                 fullName
-                metadata
+                totalSpendCents
               	subscriptions {
                     id
                     active

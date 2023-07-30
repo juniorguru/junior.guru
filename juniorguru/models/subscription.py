@@ -397,8 +397,10 @@ class SubscriptionActivity(BaseModel):
 
 
 class SubscriptionCancellation(BaseModel):
-    name = CharField()
-    email = CharField()
+    account_id = IntegerField()
+    account_name = CharField()
+    account_email = CharField()
+    account_total_spend = IntegerField(null=True)
     expires_on = DateField(null=True)
     reason = CharField(index=True, constraints=[check_enum('reason', SubscriptionCancellationReason)])
     feedback = CharField(null=True)
@@ -425,8 +427,9 @@ class SubscriptionCancellation(BaseModel):
 
 class SubscriptionReferrer(BaseModel):
     account_id = IntegerField()
-    name = CharField()
-    email = CharField()
+    account_name = CharField()
+    account_email = CharField()
+    account_total_spend = IntegerField(null=True)
     created_on = DateField()
     value = CharField()
     type = CharField(index=True)
@@ -435,8 +438,9 @@ class SubscriptionReferrer(BaseModel):
 
 class SubscriptionMarketingSurvey(BaseModel):
     account_id = IntegerField()
-    name = CharField()
-    email = CharField()
+    account_name = CharField()
+    account_email = CharField()
+    account_total_spend = IntegerField(null=True)
     created_on = DateField()
     value = CharField()
     type = CharField(index=True, constraints=[check_enum('type', SubscriptionMarketingSurveyAnswer)])

@@ -134,22 +134,6 @@ class MemberfulAPI():
         return result
 
 
-def serialize_metadata(data):
-    # https://memberful.com/help/custom-development-and-api/memberful-api/#member-metadata
-    if len(data) > 500:
-        raise ValueError('Maximum 50 keys')
-    for key, value in data.items():
-        if len(key) > 40:
-            raise ValueError(f"Maximum key length is 40 characters: {key!r}")
-        if value is None:
-            raise TypeError("If you want to unset value, use empty string, not None")
-        if not isinstance(value, str):
-            raise TypeError(f"Limited to string values! {value!r}")
-        if len(value) > 500:
-            raise ValueError(f"Maximum value length is 500 characters: {value!r}")
-    return json.dumps(data)
-
-
 def hash_data(data: dict) -> str:
     return hashlib.sha256(json.dumps(data).encode()).hexdigest()
 

@@ -57,6 +57,7 @@ class ClubUser(BaseModel):
     updated_roles = JSONField(null=True)
     dm_channel_id = IntegerField(null=True, unique=True)
     onboarding_channel_id = IntegerField(null=True, unique=True)
+    total_spend = IntegerField(null=True)
 
     @property
     def joined_on(self):

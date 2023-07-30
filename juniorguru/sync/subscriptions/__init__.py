@@ -1,4 +1,5 @@
 import itertools
+import math
 import re
 from datetime import date, datetime, time, timezone
 from operator import itemgetter
@@ -48,6 +49,8 @@ SUBSCRIPTION_TYPES_MAPPING = {
     'studentcoreskill': SubscriptionType.FREE,
     'finaid': SubscriptionType.FINAID,
 }
+
+MEMBERS_GQL_PATH = Path(__file__).parent / 'members.gql'
 
 
 logger = loggers.from_path(__file__)
@@ -145,15 +148,23 @@ def main(context, from_date, clear_cache, history_path, clear_history):
     logger.info('Cleansing data')
     SubscriptionActivity.cleanse_data()
 
+    logger.info('Fetching all members from Memberful API')
+    members = list(logger.progress(memberful.get_nodes(MEMBERS_GQL_PATH.read_text())))
+    logger.info(f'Got {len(members)} members')
+    emails = {member['email']: int(member['id']) for member in members}
+    total_spend = {int(member['id']): math.ceil(member['totalSpendCents'] / 100) for member in members}
+
     logger.info("Fetching members data from Memberful CSV")
     memberful = MemberfulCSV(cache_dir=context.obj['cache_dir'], clear_cache=clear_cache)
     for csv_row in memberful.download_csv(dict(type='MembersCsvExport', filter='all')):
         referrer = csv_row['Referrer'] or None
         if referrer:
             referrer_type = classify_referrer(referrer)
-            SubscriptionReferrer.create(account_id=int(csv_row['Memberful ID']),
-                                        name=csv_row['Full Name'],
-                                        email=csv_row['Email'],
+            account_id = int(csv_row['Memberful ID'])
+            SubscriptionReferrer.create(account_id=account_id,
+                                        account_name=csv_row['Full Name'],
+                                        account_email=csv_row['Email'],
+                                        account_total_spend=total_spend[account_id],
                                         created_on=date.fromisoformat(csv_row['Created at']),
                                         value=referrer,
                                         type=referrer_type,
@@ -161,9 +172,11 @@ def main(context, from_date, clear_cache, history_path, clear_history):
         marketing_survey_answer = csv_row['Jak ses dozvěděl(a) o junior.guru?'] or None
         if marketing_survey_answer:
             marketing_survey_answer_type = classify_marketing_survey_answer(marketing_survey_answer)
-            SubscriptionMarketingSurvey.create(account_id=int(csv_row['Memberful ID']),
-                                               name=csv_row['Full Name'],
-                                               email=csv_row['Email'],
+            account_id = int(csv_row['Memberful ID'])
+            SubscriptionMarketingSurvey.create(account_id=account_id,
+                                               account_name=csv_row['Full Name'],
+                                               account_email=csv_row['Email'],
+                                               account_total_spend=total_spend[account_id],
                                                created_on=date.fromisoformat(csv_row['Created at']),
                                                value=marketing_survey_answer,
                                                type=marketing_survey_answer_type)
@@ -181,8 +194,11 @@ def main(context, from_date, clear_cache, history_path, clear_history):
             except ValueError:
                 logger.warning(f"Invalid date format: {date_field_value!r}")
                 expires_on = None
-            SubscriptionCancellation.create(name=csv_row['Name'],
-                                            email=csv_row['Email'],
+            account_email = csv_row['Email']
+            SubscriptionCancellation.create(account_id=emails[account_email],
+                                            account_name=csv_row['Name'],
+                                            account_email=account_email,
+                                            account_total_spend=total_spend[account_id],
                                             expires_on=expires_on,
                                             reason=reason,
                                             feedback=feedback)
