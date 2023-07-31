@@ -13,7 +13,7 @@ from juniorguru.models.page import Page
 from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.subscription import (LEGACY_PLANS_DELETED_ON,
                                             SubscriptionActivity,
-                                            SubscriptionCancellation, SubscriptionExternalReferrer,
+                                            SubscriptionCancellation, SubscriptionReferrer, SubscriptionInternalReferrer,
                                             SubscriptionMarketingSurvey)
 from juniorguru.models.transaction import Transaction
 from juniorguru.models.web_usage import WebUsage
@@ -216,14 +216,28 @@ def total_spend_marketing_breakdown(today: date):
 
 @chart
 def total_referrer_breakdown(today: date):
-    return dict(data=SubscriptionExternalReferrer.total_breakdown_ptc(),
-                count=SubscriptionExternalReferrer.count())
+    return dict(data=SubscriptionReferrer.total_breakdown_ptc(),
+                count=SubscriptionReferrer.count())
 
 
 @chart
 def total_spend_referrer_breakdown(today: date):
-    return dict(data=SubscriptionExternalReferrer.total_spend_breakdown_ptc(),
-                count=SubscriptionExternalReferrer.count())
+    return dict(data=SubscriptionReferrer.total_spend_breakdown_ptc(),
+                count=SubscriptionReferrer.count())
+
+
+@chart
+def total_internal_referrer_breakdown(today: date):
+    period_days = 30 * 6
+    return dict(data=SubscriptionInternalReferrer.total_breakdown_ptc(period_days),
+                count=SubscriptionInternalReferrer.count(period_days))
+
+
+@chart
+def total_spend_internal_referrer_breakdown(today: date):
+    period_days = 30 * 6
+    return dict(data=SubscriptionInternalReferrer.total_spend_breakdown_ptc(period_days),
+                count=SubscriptionInternalReferrer.count(period_days))
 
 
 @chart

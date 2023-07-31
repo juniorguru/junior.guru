@@ -723,7 +723,7 @@ Procenta nejsou podíl ze všech, kdo odešli, ale z **{{ charts.total_cancellat
 
 Když se někdo registruje do klubu, může mi sdělit, kde na junior.guru narazil.
 Graf porovnává kolik lidí jednotlivé marketingové kanály přivedly do klubu, a kolik z toho doposud bylo peněz.
-Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_spend_marketing_breakdown_count }}** lidí, kteří odpověděli na anketu.
+Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_marketing_breakdown_count }}** lidí, kteří odpověděli na anketu.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -759,11 +759,11 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_spend_ma
         'scales': {'y': {'beginAtZero': true}},
     }|tojson|forceescape }}"></canvas></div></div>
 
-### Výkonnost kanálů podle referreru
+### Výkonnost kanálů podle předchozí stránky
 
 Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
 Graf porovnává kolik lidí jednotlivé marketingové kanály přivedly do klubu, a kolik z toho doposud bylo peněz.
-Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_spend_referrer_breakdown_count }}** lidí, kteří měli referrer ze stránky mimo junior.guru.
+Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_referrer_breakdown_count }}** lidí, kteří měli _referrer_ odjinud než z junior.guru.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -911,6 +911,57 @@ Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
         'plugins': {'annotation': charts.web_usage_total_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
+### Registrace do klubu podle předchozí stránky
+
+Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
+Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_internal_referrer_breakdown_count }}** lidí, kteří měli za poslední půlrok _referrer_ z junior.guru.
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': charts.total_internal_referrer_breakdown.keys()|list,
+        'datasets': [
+            {
+                'axis': 'y',
+                'label': '% členů',
+                'data': charts.total_internal_referrer_breakdown.values()|list,
+                'backgroundColor': '#1755d1',
+            },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'indexAxis': 'y',
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+    }|tojson|forceescape }}"></canvas></div></div>
+
+### Peníze za členství v klubu podle předchozí stránky
+
+Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
+Graf ukazuje, kolik takhle jednotlivé stránky na junior.guru přinesly peněz.
+Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_spend_internal_referrer_breakdown_count }}** lidí, kteří měli za poslední půlrok _referrer_ z junior.guru.
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': charts.total_spend_internal_referrer_breakdown.keys()|list,
+        'datasets': [
+            {
+                'axis': 'y',
+                'label': '% členů',
+                'data': charts.total_spend_internal_referrer_breakdown.values()|list,
+                'backgroundColor': '#638cdd',
+            },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'indexAxis': 'y',
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Příručka

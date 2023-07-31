@@ -22,7 +22,7 @@ from juniorguru.models.subscription import (SubscriptionActivity,
                                             SubscriptionActivityType,
                                             SubscriptionCancellation, SubscriptionInternalReferrer,
                                             SubscriptionMarketingSurvey,
-                                            SubscriptionExternalReferrer, SubscriptionType)
+                                            SubscriptionReferrer, SubscriptionType)
 
 
 ACTIVITIES_GQL_PATH = Path(__file__).parent / 'activities.gql'
@@ -69,7 +69,7 @@ def main(context, from_date, clear_cache, history_path, clear_history):
 
     logger.info('Preparing')
     tables = [SubscriptionActivity,
-              SubscriptionExternalReferrer,
+              SubscriptionReferrer,
               SubscriptionInternalReferrer,
               SubscriptionMarketingSurvey,
               SubscriptionCancellation]
@@ -172,18 +172,22 @@ def main(context, from_date, clear_cache, history_path, clear_history):
 
         referrer = csv_row['Referrer'] or None
         if referrer:
+            account_details = dict(account_id=account_id,
+                                   account_name=csv_row['Full Name'],
+                                   account_email=csv_row['Email'],
+                                   account_total_spend=total_spend[account_id])
+            created_on = date.fromisoformat(csv_row['Created at'])
             referrer_type = classify_referrer(referrer)
             if referrer_type.startswith('/'):
-                referrer_cls = SubscriptionInternalReferrer
+                SubscriptionInternalReferrer.create(created_on=created_on,
+                                                    url=referrer,
+                                                    path=referrer_type,
+                                                    **account_details)
             else:
-                referrer_cls = SubscriptionExternalReferrer
-            referrer_cls.create(account_id=account_id,
-                                account_name=csv_row['Full Name'],
-                                account_email=csv_row['Email'],
-                                account_total_spend=total_spend[account_id],
-                                created_on=date.fromisoformat(csv_row['Created at']),
-                                url=referrer,
-                                type=referrer_type)
+                SubscriptionReferrer.create(created_on=created_on,
+                                            url=referrer,
+                                            type=referrer_type,
+                                            **account_details)
 
         marketing_survey_answer = csv_row['Jak ses dozvěděl(a) o junior.guru?'] or None
         if marketing_survey_answer:
