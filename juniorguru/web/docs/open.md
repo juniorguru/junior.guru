@@ -633,7 +633,7 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_.
 ### Důvody odchodu
 
 Když někdo ukončuje členství v klubu, může mi sdělit důvod, proč tak činí.
-Procenta jsou podíl z těch, kdo odpověděli, ne ze všech odcházejících.
+Procenta jsou podíl z těch, kdo odpověděli na anketu, ne ze všech odcházejících.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
