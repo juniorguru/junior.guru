@@ -77,7 +77,7 @@ def month_range(date: date) -> tuple[date, date]:
     return (date.replace(day=1), date.replace(day=calendar.monthrange(date.year, date.month)[1]))
 
 
-def annotations(months: date, milestones: list[tuple[date, str]]) -> dict:
+def milestones(months: list[date], milestones: list[tuple[date, str]]) -> dict:
     annotations = {
         f'{month.year}': {
             'xMin': x,
