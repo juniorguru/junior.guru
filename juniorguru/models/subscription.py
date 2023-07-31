@@ -275,6 +275,26 @@ class SubscriptionActivity(BaseModel):
                 for subscription_type in SubscriptionType}
 
     @classmethod
+    @uses_data_from_subscriptions(default=dict)
+    def trial_conversion_ptc(cls, date: date) -> dict[str, int]:
+        from_date, to_date = month_range(date)
+
+        trials = cls.select(cls.account_id) \
+            .where(cls.happened_on <= to_date,
+                   cls.subscription_type == SubscriptionType.TRIAL) \
+            .group_by(cls.account_id) \
+            .having(cls.happened_on >= from_date)
+        total_count = trials.count()
+
+        subscriptions = cls.select(cls.account_id) \
+            .where(cls.happened_on >= from_date,
+                   cls.subscription_type == SubscriptionType.INDIVIDUAL) \
+            .group_by(cls.account_id)
+        converting_trials = trials.intersect(subscriptions)
+        converting_count = converting_trials.count()
+        return (converting_count / total_count) * 100 if total_count else 0
+
+    @classmethod
     def active_women_count(cls, date: date) -> int:
         return cls.active_listing(date) \
             .where(cls.account_has_feminine_name == True) \

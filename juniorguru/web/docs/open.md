@@ -388,7 +388,7 @@ Grafy jsou tedy orientační.
 Tenká modrá čára představuje počet členů, kteří si členství platí ze svého. Tenká zelená čára ukazuje ty z nich, kteří preferují roční platbu před měsíční.
 
 {% call note() %}
-  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco začíná až v březnu 2023.
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco v grafu začíná až v březnu 2023.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -434,7 +434,7 @@ S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzáj
 S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou studenty svých kurzů a proplatí jim členství na pár měsíců. Agentura z toho má službu pro studenty a já z toho mám to, že pokud se lidem v klubu zalíbí, budou si jej dál platit ze svého.
 
 {% call note() %}
-  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže data začínají až v březnu 2023.
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže graf začíná až v březnu 2023.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -489,7 +489,7 @@ Graf s **příchody** obsahuje všechny typy členství. Ať už nový člen př
 Graf s **odchody** zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli a poté za něj nezačali platit. Tam se očekává celkem velký odpad. Tenká čára sleduje pouze ty, kdo zrušili už existující individuálně placené členství. Naznačuje tedy odchody členů, kteří se za klub rozhodli platit, ale následně změnili názor. Očekává se, že juniorům, kteří si nakonec práci v IT našli, pokryjí většinu hodnoty klubu kolegové ve firmě, kde pracují. Také se v prvních měsících intenzivně zaučují a na klub tak často už nemají čas, i když je to tam baví.
 
 {% call note() %}
-  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco začíná až v březnu 2023.
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco v grafu začíná až v březnu 2023.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -530,13 +530,44 @@ Graf s **odchody** zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli 
         'plugins': {'annotation': charts.members_trend_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
+### Konverze dvou týdnů na zkoušku
+
+Nově registrovaní mají v klubu dva týdny zdarma na zkoušku, tzv. _trial_.
+Jejich členství není nijak omezeno, mohou dělat všechno, co ostatní členové.
+Po dvou týdnech buď vyplní kartu a začnou platit, nebo je jim členství zrušeno.
+Graf ukazuje konverzi _trialů_.
+
+{% call note() %}
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže graf začíná až v březnu 2023.
+{% endcall %}
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.members_subscriptions_trial_labels,
+        'datasets': [
+            {
+                'label': '% konverze trialu',
+                'data': charts.members_subscriptions_trial_conversion,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.members_subscriptions_trial_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
 ### Délka setrvání v klubu
 
 Pokud jde graf nahoru, znamená to, že velká část členů zůstává v klubu dlouho.
 Propady nastávají, pokud do klubu přijdou noví lidé, kteří tam ale nevydrží a brzy zase odejdou.
 
 {% call note() %}
-  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco začíná až v březnu 2023.
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco v grafu začíná až v březnu 2023.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -570,7 +601,7 @@ Propady nastávají, pokud do klubu přijdou noví lidé, kteří tam ale nevydr
 Procento členů, kteří z klubu odcházejí, neboli _churn_.
 
 {% call note() %}
-  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco začíná až v březnu 2023.
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco v grafu začíná až v březnu 2023.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -755,91 +786,10 @@ Procenta jsou podíl z těch, kdo odpověděli, ne ze všech příchozích.
         'plugins': {'annotation': charts.members_surveys_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-### Které kanály přivedly v součtu nejvíc členů
+### Výkonnost kanálů
 
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="230"
-    data-chart-type="pie"
-    data-chart="{{ {
-        'labels': {
-            'other': '% ostatní',
-            'courses': '% doporučení z kurzu',
-            'search': '% vyhledávání',
-            'friend': '% doporučení známého',
-            'facebook': '% Facebook',
-            'podcasts': '% podcasty',
-            'linkedin': '% LinkedIn',
-            'youtube': '% YouTube',
-            'yablko': '% yablko',
-            'courses_search': '% vyhledávání recenzí kurzů',
-        }|mapping(charts.members_surveys_total_marketing_breakdown.keys()),
-        'datasets': [
-            {
-                'data': charts.members_surveys_total_marketing_breakdown.values()|list,
-                'backgroundColor': {
-                    'other': '#a9a9a9',
-                    'courses': '#083284',
-                    'search': '#4285f4',
-                    'friend': '#02cabb',
-                    'facebook': '#4267b2',
-                    'podcasts': '#872ec4',
-                    'linkedin': '#0072b1',
-                    'youtube': '#ff0000',
-                    'yablko': '#e7cd49',
-                    'courses_search': '#00b7eb',
-                }|mapping(charts.members_surveys_total_marketing_breakdown.keys())
-            },
-        ],
-    }|tojson|forceescape }}"
-    data-chart-options="{{ {
-        'scales': None,
-        'aspectRatio': 2,
-    }|tojson|forceescape }}"
-    data-chart-milestones-offset-ptc="0"></canvas></div></div>
-
-### Které kanály přivedly v součtu nejvíc peněz
-
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="230"
-    data-chart-type="pie"
-    data-chart="{{ {
-        'labels': {
-            'other': '% ostatní',
-            'courses': '% doporučení z kurzu',
-            'search': '% vyhledávání',
-            'friend': '% doporučení známého',
-            'facebook': '% Facebook',
-            'podcasts': '% podcasty',
-            'linkedin': '% LinkedIn',
-            'youtube': '% YouTube',
-            'yablko': '% yablko',
-            'courses_search': '% vyhledávání recenzí kurzů',
-        }|mapping(charts.members_surveys_total_spend_marketing_breakdown.keys()),
-        'datasets': [
-            {
-                'data': charts.members_surveys_total_spend_marketing_breakdown.values()|list,
-                'backgroundColor': {
-                    'other': '#a9a9a9',
-                    'courses': '#083284',
-                    'search': '#4285f4',
-                    'friend': '#02cabb',
-                    'facebook': '#4267b2',
-                    'podcasts': '#872ec4',
-                    'linkedin': '#0072b1',
-                    'youtube': '#ff0000',
-                    'yablko': '#e7cd49',
-                    'courses_search': '#00b7eb',
-                }|mapping(charts.members_surveys_total_spend_marketing_breakdown.keys())
-            },
-        ],
-    }|tojson|forceescape }}"
-    data-chart-options="{{ {
-        'scales': None,
-        'aspectRatio': 2,
-    }|tojson|forceescape }}"
-    data-chart-milestones-offset-ptc="0"></canvas></div></div>
-
-### bla bla
+Graf porovnává kolik lidí jednotlivé marketingové kanály přivedly do klubu, a kolik z toho doposud bylo peněz.
+Procenta jsou podíl z těch, kdo odpověděli na anketu, ne ze všech příchozích.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"

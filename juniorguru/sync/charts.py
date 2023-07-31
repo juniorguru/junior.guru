@@ -267,6 +267,19 @@ def members_subscriptions_breakdown(months: list[date]) -> list[Number]:
 
 
 @namespace
+def members_subscriptions_trial(today: date) -> dict[str, Any]:
+    months = charts.months(charts.next_month(LEGACY_PLANS_DELETED_ON), charts.previous_month(today))
+    return dict(values=months,
+                labels=charts.labels(months),
+                annotations=charts.annotations(months, MILESTONES))
+
+
+@chart
+def members_subscriptions_trial_conversion(months: list[date]) -> list[Number]:
+    return charts.per_month(SubscriptionActivity.trial_conversion_ptc, months)
+
+
+@namespace
 def members_trend(today: date) -> dict[str, Any]:
     months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
     return dict(values=months,
