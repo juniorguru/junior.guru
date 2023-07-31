@@ -60,7 +60,16 @@ def main():
     today = date.today()
     for chart_slug, chart_fn in CHARTS.items():
         logger.info(f'Generating: {chart_slug}')
-        Chart.create(**chart_fn(today))
+        chart = chart_fn(today)
+        chart.setdefault('slug', chart_slug)
+        try:
+            months = chart.pop('months')
+        except KeyError:
+            pass
+        else:
+            chart.setdefault('labels', charts.labels(months))
+            chart.setdefault('annotations', charts.milestones(months, MILESTONES))
+        Chart.create(**chart)
 
 
 def chart(chart_fn: Callable) -> Callable:
@@ -68,283 +77,253 @@ def chart(chart_fn: Callable) -> Callable:
 
 
 @chart
-def business_profit(today: date):
+def profit(today: date):
     months = charts.months(BUSINESS_BEGIN_ON, today)
-    return dict(data=charts.per_month(Transaction.profit, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(Transaction.profit, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def business_profit_ttm(today: date):
+def profit_ttm(today: date):
     months = charts.months(BUSINESS_BEGIN_ON, today)
-    return dict(data=charts.per_month(Transaction.profit_ttm, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(Transaction.profit_ttm, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def business_revenue(today: date):
+def revenue(today: date):
     months = charts.months(BUSINESS_BEGIN_ON, today)
-    return dict(data=charts.per_month(Transaction.revenue, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(Transaction.revenue, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def business_revenue_ttm(today: date):
+def revenue_ttm(today: date):
     months = charts.months(BUSINESS_BEGIN_ON, today)
-    return dict(data=charts.per_month(Transaction.revenue_ttm, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(Transaction.revenue_ttm, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def business_revenue_breakdown(today: date):
+def revenue_breakdown(today: date):
     months = charts.months(BUSINESS_BEGIN_ON, today)
-    return dict(data=charts.per_month_breakdown(Transaction.revenue_breakdown, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month_breakdown(Transaction.revenue_breakdown, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def business_cost(today: date):
+def cost(today: date):
     months = charts.months(BUSINESS_BEGIN_ON, today)
-    return dict(data=charts.per_month(Transaction.cost, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(Transaction.cost, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def business_cost_ttm(today: date):
+def cost_ttm(today: date):
     months = charts.months(BUSINESS_BEGIN_ON, today)
-    return dict(data=charts.per_month(Transaction.cost_ttm, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(Transaction.cost_ttm, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def business_cost_breakdown(today: date):
+def cost_breakdown(today: date):
     months = charts.months(BUSINESS_BEGIN_ON, today)
-    return dict(data=charts.per_month_breakdown(Transaction.cost_breakdown, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month_breakdown(Transaction.cost_breakdown, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def events_count(today: date):
+def events(today: date):
     months = charts.months(CLUB_BEGIN_ON, today)
-    return dict(data=charts.per_month(Event.count_by_month, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(Event.count_by_month, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def events_count_ttm(today: date):
+def events_ttm(today: date):
     months = charts.months(CLUB_BEGIN_ON, today)
-    return dict(data=charts.per_month(Event.count_by_month_ttm, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(Event.count_by_month_ttm, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def events_women_ptc_ttm(today: date):
+def events_women(today: date):
     months = charts.months(CLUB_BEGIN_ON, today)
-    return dict(data=charts.per_month(EventSpeaking.women_ptc_ttm, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(EventSpeaking.women_ptc_ttm, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def podcast_women_ptc_ttm(today: date):
+def podcast_women(today: date):
     months = charts.months(PODCAST_BEGIN_ON, today)
-    return dict(data=charts.per_month(PodcastEpisode.women_ptc_ttm, months),
-                labels=charts.labels(months))
+    data = charts.per_month(PodcastEpisode.women_ptc_ttm, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_all(today: date):
+def members(today: date):
     months = charts.months(CLUB_BEGIN_ON, today)
-    return dict(data=charts.per_month(SubscriptionActivity.active_count, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(SubscriptionActivity.active_count, months)
+    return dict(data=data, months=months)
 
 
 @chart
 def members_individuals(today: date):
     months = charts.months(CLUB_BEGIN_ON, today)
-    return dict(data=charts.per_month(SubscriptionActivity.active_individuals_count, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(SubscriptionActivity.active_individuals_count, months)
+    return dict(data=data, months=months)
 
 
 @chart
 def members_individuals_yearly(today: date):
     months = charts.months(CLUB_BEGIN_ON, today)
-    return dict(data=charts.per_month(SubscriptionActivity.active_individuals_yearly_count, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(SubscriptionActivity.active_individuals_yearly_count, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_women_ptc(today: date):
+def members_women(today: date):
     months = charts.months(CLUB_BEGIN_ON, today)
-    return dict(data=charts.per_month(SubscriptionActivity.active_women_ptc, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(SubscriptionActivity.active_women_ptc, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_duration(today: date):
+def subscriptions_duration(today: date):
     months = charts.months(CLUB_BEGIN_ON, today)
-    return dict(data=charts.per_month(SubscriptionActivity.active_duration_avg, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(SubscriptionActivity.active_duration_avg, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_individuals_duration(today: date):
+def subscriptions_duration_individuals(today: date):
     months = charts.months(CLUB_BEGIN_ON, today)
-    return dict(data=charts.per_month(SubscriptionActivity.active_individuals_duration_avg, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(SubscriptionActivity.active_individuals_duration_avg, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_surveys_cancellations_breakdown(today: date):
+def cancellations_breakdown(today: date):
     months = charts.months(SURVEYS_BEGIN_ON, today)
-    return dict(data=charts.per_month_breakdown(SubscriptionCancellation.breakdown_ptc, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month_breakdown(SubscriptionCancellation.breakdown_ptc, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_surveys_marketing_breakdown(today: date):
+def marketing_breakdown(today: date):
     months = charts.months(SURVEYS_BEGIN_ON, today)
-    return dict(data=charts.per_month_breakdown(SubscriptionMarketingSurvey.breakdown_ptc, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month_breakdown(SubscriptionMarketingSurvey.breakdown_ptc, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_surveys_total_cancellations_breakdown(today: date):
+def total_cancellations_breakdown(today: date):
     return dict(data=SubscriptionCancellation.total_breakdown_ptc())
 
 
 @chart
-def members_surveys_total_marketing_breakdown(today: date):
+def total_marketing_breakdown(today: date):
     return dict(data=SubscriptionMarketingSurvey.total_breakdown_ptc())
 
 
 @chart
-def members_surveys_total_spend_marketing_breakdown(today: date):
+def total_spend_marketing_breakdown(today: date):
     return dict(data=SubscriptionMarketingSurvey.total_spend_breakdown_ptc())
 
 
 @chart
-def members_subscriptions_breakdown(today: date):
+def subscriptions_breakdown(today: date):
     months = charts.months(charts.next_month(LEGACY_PLANS_DELETED_ON), today)
-    return dict(data=charts.per_month_breakdown(SubscriptionActivity.active_subscription_type_breakdown, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month_breakdown(SubscriptionActivity.active_subscription_type_breakdown, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_subscriptions_trial_conversion(today: date):
+def trials_conversion(today: date):
     months = charts.months(charts.next_month(LEGACY_PLANS_DELETED_ON),
                            charts.previous_month(today))
-    return dict(data=charts.per_month(SubscriptionActivity.trial_conversion_ptc, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(SubscriptionActivity.trial_conversion_ptc, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_trend_signups(today: date):
+def signups(today: date):
     months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
-    return dict(data=charts.per_month(SubscriptionActivity.signups_count, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(SubscriptionActivity.signups_count, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_trend_individuals_signups(today: date):
+def signups_individuals(today: date):
     months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
-    return dict(data=charts.per_month(SubscriptionActivity.individuals_signups_count, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(SubscriptionActivity.individuals_signups_count, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_trend_quits(today: date):
+def quits(today: date):
     months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
-    return dict(data=charts.per_month(SubscriptionActivity.quits_count, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(SubscriptionActivity.quits_count, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_trend_individuals_quits(today: date):
+def quits_individuals(today: date):
     months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
-    return dict(data=charts.per_month(SubscriptionActivity.individuals_quits_count, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(SubscriptionActivity.individuals_quits_count, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_trend_churn_ptc(today: date):
+def churn(today: date):
     months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
-    return dict(data=charts.per_month(SubscriptionActivity.churn_ptc, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(SubscriptionActivity.churn_ptc, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def members_trend_individuals_churn_ptc(today: date):
+def churn_individuals(today: date):
     months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
-    return dict(data=charts.per_month(SubscriptionActivity.individuals_churn_ptc, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(SubscriptionActivity.individuals_churn_ptc, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def club_content_size(today: date):
+def club_content(today: date):
     months = charts.months(charts.next_month(today - DEFAULT_CHANNELS_HISTORY_SINCE),
                            charts.previous_month(today))
-    return dict(data=charts.per_month(ClubMessage.content_size_by_month, months),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    data = charts.per_month(ClubMessage.content_size_by_month, months)
+    return dict(data=data, months=months)
 
 
 @chart
-def handbook_size(today: date):
+def handbook(today: date):
     labels = [f"{page.meta['emoji']} {page.src_uri.removeprefix('handbook/')}"
               for page in Page.handbook_listing()]
-    return dict(data=[page.size for page in Page.handbook_listing()],
-                labels=labels)
+    data = [page.size for page in Page.handbook_listing()]
+    return dict(data=data, labels=labels)
 
 
 @chart
-def handbook_notes_size(today: date):
+def handbook_notes(today: date):
     labels = [f"{page.meta['emoji']} {page.src_uri.removeprefix('handbook/')}"
               for page in Page.handbook_listing()]
-    return dict(data=[page.notes_size for page in Page.handbook_listing()],
-                labels=labels)
+    data = [page.notes_size for page in Page.handbook_listing()]
+    return dict(data=data, labels=labels)
 
 
 @chart
 def followers_breakdown(today: date):
     months = charts.months(*Followers.months_range())
-    return dict(data=charts.per_month_breakdown(Followers.breakdown, months),
-                labels=charts.labels(months))
+    data = charts.per_month_breakdown(Followers.breakdown, months)
+    return dict(data=data, months=months)
 
 
 @chart
 def web_usage_total(today: date):
     months = charts.months(*WebUsage.months_range())
     breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
-    return dict(data=breakdown.pop('total'),
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    return dict(data=breakdown.pop('total'), months=months)
 
 
 @chart
@@ -352,6 +331,4 @@ def web_usage_breakdown(today: date):
     months = charts.months(*WebUsage.months_range())
     breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
     del breakdown['total']
-    return dict(data=breakdown,
-                labels=charts.labels(months),
-                annotations=charts.milestones(months, MILESTONES))
+    return dict(data=breakdown, months=months)

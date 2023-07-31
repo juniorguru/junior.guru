@@ -5,7 +5,7 @@ import arrow
 
 from juniorguru.lib.benefits_evaluators import BENEFITS_EVALUATORS
 from juniorguru.models.base import db
-from juniorguru.models.chart import charts_as_dict
+from juniorguru.models.chart import Chart
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.event import Event
@@ -89,7 +89,7 @@ def on_docs_context(context):
     # open.md
     context['partners_expired'] = Partner.expired_listing()
     context['handbook_total_size'] = Page.handbook_total_size()
-    context['charts'] = charts_as_dict()
+    context['charts'] = Chart.as_dict()
 
     # open/*
     context['benefits_evaluators'] = BENEFITS_EVALUATORS

@@ -25,17 +25,17 @@ Občas si čtu o zahraničních podnikavcích, kteří taky otevřeně sdílí s
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.business_labels,
+        'labels': charts.profit_labels,
         'datasets': [
             {
                 'label': 'zisk',
-                'data': charts.business_profit,
+                'data': charts.profit,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'zisk TTM/12',
-                'data': charts.business_profit_ttm,
+                'data': charts.profit_ttm,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             }
@@ -43,7 +43,7 @@ Občas si čtu o zahraničních podnikavcích, kteří taky otevřeně sdílí s
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'plugins': {'annotation': charts.business_annotations},
+        'plugins': {'annotation': charts.profit_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Cíl
@@ -116,29 +116,29 @@ Následující graf zobrazuje vývoj mých výnosů a nákladů v každém konkr
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.business_labels,
+        'labels': charts.revenue_labels,
         'datasets': [
             {
                 'label': 'výnosy',
-                'data': charts.business_revenue,
+                'data': charts.revenue,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'výnosy TTM/12',
-                'data': charts.business_revenue_ttm,
+                'data': charts.revenue_ttm,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
             {
                 'label': 'náklady',
-                'data': charts.business_cost,
+                'data': charts.cost,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
             {
                 'label': 'náklady TTM/12',
-                'data': charts.business_cost_ttm,
+                'data': charts.cost_ttm,
                 'borderColor': '#dc3545',
                 'borderWidth': 1,
             },
@@ -146,7 +146,7 @@ Následující graf zobrazuje vývoj mých výnosů a nákladů v každém konkr
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'plugins': {'annotation': charts.business_annotations},
+        'plugins': {'annotation': charts.revenue_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Výnosy
@@ -167,35 +167,35 @@ Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velk
     class="chart" width="400" height="230"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts.business_labels,
+        'labels': charts.revenue_breakdown_labels,
         'datasets': [
             {
                 'label': 'dobrovolné příspěvky',
-                'data': charts.business_revenue_breakdown.pop('donations'),
+                'data': charts.revenue_breakdown.pop('donations'),
                 'backgroundColor': '#02cabb',
             },
             {
                 'label': 'individuální členství',
-                'data': charts.business_revenue_breakdown.pop('memberships'),
+                'data': charts.revenue_breakdown.pop('memberships'),
                 'backgroundColor': '#1755d1',
             },
             {
                 'label': 'partnerství s firmami',
-                'data': charts.business_revenue_breakdown.pop('partnerships'),
+                'data': charts.revenue_breakdown.pop('partnerships'),
                 'backgroundColor': '#638cdd',
             },
             {
                 'label': 'inzerce nabídek práce',
-                'data': charts.business_revenue_breakdown.pop('jobs'),
+                'data': charts.revenue_breakdown.pop('jobs'),
                 'backgroundColor': '#421bd4',
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts.business_revenue_breakdown.keys()|list|assert_empty }}
+    {{ charts.revenue_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
-        'plugins': {'annotation': charts.business_annotations},
+        'plugins': {'annotation': charts.revenue_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Proč tu není MRR
@@ -216,65 +216,65 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
     class="chart" width="400" height="230"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts.business_labels,
+        'labels': charts.cost_breakdown_labels,
         'datasets': [
             {
                 'label': 'daně a pojištění',
-                'data': charts.business_cost_breakdown.pop('tax'),
+                'data': charts.cost_breakdown.pop('tax'),
                 'backgroundColor': '#ddd',
             },
             {
                 'label': 'memberful.com',
-                'data': charts.business_cost_breakdown.pop('memberful'),
+                'data': charts.cost_breakdown.pop('memberful'),
                 'backgroundColor': '#df4b25',
             },
             {
                 'label': 'kancelář',
-                'data': charts.business_cost_breakdown.pop('office'),
+                'data': charts.cost_breakdown.pop('office'),
                 'backgroundColor': '#c8102e',
             },
             {
                 'label': 'různé',
-                'data': charts.business_cost_breakdown.pop('miscellaneous'),
+                'data': charts.cost_breakdown.pop('miscellaneous'),
                 'backgroundColor': '#aaa',
             },
             {
                 'label': 'produkce videa',
-                'data': charts.business_cost_breakdown.pop('video'),
+                'data': charts.cost_breakdown.pop('video'),
                 'backgroundColor': '#0c1633',
             },
             {
                 'label': 'produkce podcastu',
-                'data': charts.business_cost_breakdown.pop('podcast'),
+                'data': charts.cost_breakdown.pop('podcast'),
                 'backgroundColor': '#872ec4',
             },
             {
                 'label': 'právnička',
-                'data': charts.business_cost_breakdown.pop('lawyer'),
+                'data': charts.cost_breakdown.pop('lawyer'),
                 'backgroundColor': '#801515',
             },
             {
                 'label': 'účetnictví, fakturoid.cz',
-                'data': charts.business_cost_breakdown.pop('accounting'),
+                'data': charts.cost_breakdown.pop('accounting'),
                 'backgroundColor': '#108a00',
             },
             {
                 'label': 'marketing',
-                'data': charts.business_cost_breakdown.pop('marketing'),
+                'data': charts.cost_breakdown.pop('marketing'),
                 'backgroundColor': '#daa520',
             },
             {
                 'label': 'discord.com',
-                'data': charts.business_cost_breakdown.pop('discord'),
+                'data': charts.cost_breakdown.pop('discord'),
                 'backgroundColor': '#5865f2',
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts.business_cost_breakdown.keys()|list|assert_empty }}
+    {{ charts.cost_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
-        'plugins': {'annotation': charts.business_annotations},
+        'plugins': {'annotation': charts.cost_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Firemní partnerství
@@ -333,7 +333,7 @@ Pouze orientační metrika. Nechci sledovat a glorifikovat _engagement_, protož
         'datasets': [
             {
                 'label': 'počet znaků napsaných na Discordu',
-                'data': charts.club_content_size,
+                'data': charts.club_content,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
@@ -357,13 +357,13 @@ Chtěl bych mít v klubu v průměru aspoň dvě oficiální online akce měsí�
         'datasets': [
             {
                 'label': 'počet oficiálních akcí',
-                'data': charts.events_count,
+                'data': charts.events,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'počet oficiálních akcí TTM/12',
-                'data': charts.events_count_ttm,
+                'data': charts.events_ttm,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
@@ -399,7 +399,7 @@ Tenká modrá čára představuje počet členů, kteří si členství platí z
         'datasets': [
             {
                 'label': 'všechna členství',
-                'data': charts.members_all,
+                'data': charts.members,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
@@ -441,45 +441,45 @@ S některými vzdělávacími agenturami mám dohodu, že do klubu pošlou stude
     class="chart" width="400" height="230"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts.members_subscriptions_labels,
+        'labels': charts.subscriptions_breakdown_labels,
         'datasets': [
             {
                 'label': 'neplatí členství',
-                'data': charts.members_subscriptions_breakdown.pop('free'),
+                'data': charts.subscriptions_breakdown.pop('free'),
                 'backgroundColor': '#ddd',
             },
             {
                 'label': 'dva týdny zdarma',
-                'data': charts.members_subscriptions_breakdown.pop('trial'),
+                'data': charts.subscriptions_breakdown.pop('trial'),
                 'backgroundColor': '#a9a9a9',
             },
             {
                 'label': 'mají stipendium',
-                'data': charts.members_subscriptions_breakdown.pop('finaid'),
+                'data': charts.subscriptions_breakdown.pop('finaid'),
                 'backgroundColor': '#02cabb',
             },
             {
                 'label': 'členství si platí sami',
-                'data': charts.members_subscriptions_breakdown.pop('individual'),
+                'data': charts.subscriptions_breakdown.pop('individual'),
                 'backgroundColor': '#1755d1',
             },
             {
                 'label': 'členství platí firma',
-                'data': charts.members_subscriptions_breakdown.pop('partner'),
+                'data': charts.subscriptions_breakdown.pop('partner'),
                 'backgroundColor': '#638cdd',
             },
             {
                 'label': 'členství platí vzdělávací agentura',
-                'data': charts.members_subscriptions_breakdown.pop('student'),
+                'data': charts.subscriptions_breakdown.pop('student'),
                 'backgroundColor': '#083284',
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts.members_subscriptions_breakdown.keys()|list|assert_empty }}
+    {{ charts.subscriptions_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True}},
-        'plugins': {'annotation': charts.members_subscriptions_annotations},
+        'plugins': {'annotation': charts.subscriptions_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Příchody a odchody
@@ -496,29 +496,29 @@ Graf s **odchody** zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli 
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.members_trend_labels,
+        'labels': charts.signups_labels,
         'datasets': [
             {
                 'label': 'všechny nové registrace',
-                'data': charts.members_trend_signups,
+                'data': charts.signups,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'nová individuální členství',
-                'data': charts.members_trend_individuals_signups,
+                'data': charts.signups_individuals,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
             {
                 'label': 'všechny odchody',
-                'data': charts.members_trend_quits,
+                'data': charts.quits,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
             {
                 'label': 'odchody individuálních členů',
-                'data': charts.members_trend_individuals_quits,
+                'data': charts.quits_individuals,
                 'borderColor': '#dc3545',
                 'borderWidth': 1,
             },
@@ -527,7 +527,7 @@ Graf s **odchody** zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli 
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.members_trend_annotations},
+        'plugins': {'annotation': charts.signups_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Konverze dvou týdnů na zkoušku
@@ -545,11 +545,11 @@ Graf ukazuje konverzi _trialů_.
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.members_subscriptions_trial_labels,
+        'labels': charts.trials_conversion_labels,
         'datasets': [
             {
                 'label': '% konverze trialu',
-                'data': charts.members_subscriptions_trial_conversion,
+                'data': charts.trials_conversion,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
@@ -558,7 +558,7 @@ Graf ukazuje konverzi _trialů_.
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.members_subscriptions_trial_annotations},
+        'plugins': {'annotation': charts.trials_conversion_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Délka setrvání v klubu
@@ -574,17 +574,17 @@ Propady nastávají, pokud do klubu přijdou noví lidé, kteří tam ale nevydr
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.members_labels,
+        'labels': charts.subscriptions_duration_labels,
         'datasets': [
             {
                 'label': 'průměrný počet měsíců všech členství',
-                'data': charts.members_duration,
+                'data': charts.subscriptions_duration,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'průměrný počet měsíců individuálních členství',
-                'data': charts.members_individuals_duration,
+                'data': charts.subscriptions_duration_individuals,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
             },
@@ -593,7 +593,7 @@ Propady nastávají, pokud do klubu přijdou noví lidé, kteří tam ale nevydr
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.members_annotations},
+        'plugins': {'annotation': charts.subscriptions_duration_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Retence
@@ -608,17 +608,17 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_.
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.members_trend_labels,
+        'labels': charts.churn_labels,
         'datasets': [
             {
                 'label': '% úbytku členů',
-                'data': charts.members_trend_churn_ptc,
+                'data': charts.churn,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
             {
                 'label': '% úbytku individuálních členů',
-                'data': charts.members_trend_individuals_churn_ptc,
+                'data': charts.churn_individuals,
                 'borderColor': '#dc3545',
                 'borderWidth': 1,
             },
@@ -627,7 +627,7 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_.
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.members_trend_annotations},
+        'plugins': {'annotation': charts.churn_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Důvody odchodu
@@ -639,45 +639,45 @@ Procenta jsou podíl z těch, kdo odpověděli, ne ze všech odcházejících.
     class="chart" width="400" height="230"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts.members_surveys_labels,
+        'labels': charts.cancellations_breakdown_labels,
         'datasets': [
             {
                 'label': '% jiný důvod',
-                'data': charts.members_surveys_cancellations_breakdown.pop('other'),
+                'data': charts.cancellations_breakdown.pop('other'),
                 'backgroundColor': '#a9a9a9',
             },
             {
                 'label': '% klub už nepotřebuju',
-                'data': charts.members_surveys_cancellations_breakdown.pop('necessity'),
+                'data': charts.cancellations_breakdown.pop('necessity'),
                 'backgroundColor': '#1755d1',
             },
             {
                 'label': '% potřeboval(a) jsem klub na omezenou dobu',
-                'data': charts.members_surveys_cancellations_breakdown.pop('temporary_use'),
+                'data': charts.cancellations_breakdown.pop('temporary_use'),
                 'backgroundColor': '#02cabb',
             },
             {
                 'label': '% vybral(a) jsem jinou službu, která mi vyhovuje víc',
-                'data': charts.members_surveys_cancellations_breakdown.pop('competition'),
+                'data': charts.cancellations_breakdown.pop('competition'),
                 'backgroundColor': '#083284',
             },
             {
                 'label': '% klub nesplnil moje očekávání',
-                'data': charts.members_surveys_cancellations_breakdown.pop('misunderstood'),
+                'data': charts.cancellations_breakdown.pop('misunderstood'),
                 'backgroundColor': '#00b7eb',
             },
             {
                 'label': '% klub je moc drahý',
-                'data': charts.members_surveys_cancellations_breakdown.pop('affordability'),
+                'data': charts.cancellations_breakdown.pop('affordability'),
                 'backgroundColor': '#dc3545',
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts.members_surveys_cancellations_breakdown.keys()|list|assert_empty }}
+    {{ charts.cancellations_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true, 'max': 100}},
-        'plugins': {'annotation': charts.members_surveys_annotations},
+        'plugins': {'annotation': charts.cancellations_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Důvody odchodu za celou historii
@@ -695,10 +695,10 @@ Celkový poměr důvodů odchodu za celou historii, po kterou sbírám tento typ
             'competition': '% vybral(a) jsem jinou službu, která mi vyhovuje víc',
             'misunderstood': '% klub nesplnil moje očekávání',
             'affordability': '% klub je moc drahý',
-        }|mapping(charts.members_surveys_total_cancellations_breakdown.keys()),
+        }|mapping(charts.total_cancellations_breakdown.keys()),
         'datasets': [
             {
-                'data': charts.members_surveys_total_cancellations_breakdown.values()|list,
+                'data': charts.total_cancellations_breakdown.values()|list,
                 'backgroundColor': {
                     'other': '#a9a9a9',
                     'necessity': '#1755d1',
@@ -706,7 +706,7 @@ Celkový poměr důvodů odchodu za celou historii, po kterou sbírám tento typ
                     'competition': '#083284',
                     'misunderstood': '#00b7eb',
                     'affordability': '#dc3545',
-                }|mapping(charts.members_surveys_total_cancellations_breakdown.keys())
+                }|mapping(charts.total_cancellations_breakdown.keys())
             },
         ],
     }|tojson|forceescape }}"
@@ -725,65 +725,65 @@ Procenta jsou podíl z těch, kdo odpověděli, ne ze všech příchozích.
     class="chart" width="400" height="230"
     data-chart-type="bar"
     data-chart="{{ {
-        'labels': charts.members_surveys_labels,
+        'labels': charts.marketing_breakdown_labels,
         'datasets': [
             {
                 'label': '% ostatní',
-                'data': charts.members_surveys_marketing_breakdown.pop('other'),
+                'data': charts.marketing_breakdown.pop('other'),
                 'backgroundColor': '#a9a9a9',
             },
             {
                 'label': '% doporučení z kurzu',
-                'data': charts.members_surveys_marketing_breakdown.pop('courses'),
+                'data': charts.marketing_breakdown.pop('courses'),
                 'backgroundColor': '#083284',
             },
             {
                 'label': '% vyhledávání',
-                'data': charts.members_surveys_marketing_breakdown.pop('search'),
+                'data': charts.marketing_breakdown.pop('search'),
                 'backgroundColor': '#4285f4',
             },
             {
                 'label': '% doporučení známého',
-                'data': charts.members_surveys_marketing_breakdown.pop('friend'),
+                'data': charts.marketing_breakdown.pop('friend'),
                 'backgroundColor': '#02cabb',
             },
             {
                 'label': '% Facebook',
-                'data': charts.members_surveys_marketing_breakdown.pop('facebook'),
+                'data': charts.marketing_breakdown.pop('facebook'),
                 'backgroundColor': '#4267b2',
             },
             {
                 'label': '% podcasty',
-                'data': charts.members_surveys_marketing_breakdown.pop('podcasts'),
+                'data': charts.marketing_breakdown.pop('podcasts'),
                 'backgroundColor': '#872ec4',
             },
             {
                 'label': '% LinkedIn',
-                'data': charts.members_surveys_marketing_breakdown.pop('linkedin'),
+                'data': charts.marketing_breakdown.pop('linkedin'),
                 'backgroundColor': '#0072b1',
             },
             {
                 'label': '% YouTube',
-                'data': charts.members_surveys_marketing_breakdown.pop('youtube'),
+                'data': charts.marketing_breakdown.pop('youtube'),
                 'backgroundColor': '#ff0000',
             },
             {
                 'label': '% yablko',
-                'data': charts.members_surveys_marketing_breakdown.pop('yablko'),
+                'data': charts.marketing_breakdown.pop('yablko'),
                 'backgroundColor': '#e7cd49',
             },
             {
                 'label': '% vyhledávání recenzí kurzů',
-                'data': charts.members_surveys_marketing_breakdown.pop('courses_search'),
+                'data': charts.marketing_breakdown.pop('courses_search'),
                 'backgroundColor': '#00b7eb',
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts.members_surveys_marketing_breakdown.keys()|list|assert_empty }}
+    {{ charts.marketing_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true, 'max': 100}},
-        'plugins': {'annotation': charts.members_surveys_annotations},
+        'plugins': {'annotation': charts.marketing_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Výkonnost kanálů
@@ -806,21 +806,20 @@ Procenta jsou podíl z těch, kdo odpověděli na anketu, ne ze všech příchoz
             'youtube': 'YouTube',
             'yablko': 'yablko',
             'courses_search': 'vyhledávání recenzí kurzů',
-        }|mapping(charts.members_surveys_total_spend_marketing_breakdown.keys()),
+        }|mapping(charts.total_spend_marketing_breakdown.keys()),
         'datasets': [
             {
                 'label': '% členů',
-                'data': charts.members_surveys_total_marketing_breakdown.values()|list,
+                'data': charts.total_marketing_breakdown.values()|list,
                 'backgroundColor': '#1755d1',
             },
             {
                 'label': '% peněz',
-                'data': charts.members_surveys_total_spend_marketing_breakdown.values()|list,
+                'data': charts.total_spend_marketing_breakdown.values()|list,
                 'backgroundColor': '#638cdd',
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts.members_surveys_marketing_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
@@ -834,7 +833,7 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích.
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.followers_labels,
+        'labels': charts.followers_breakdown_labels,
         'datasets': [
             {
                 'label': 'osobní LinkedIn',
@@ -859,6 +858,7 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích.
     {{ charts.followers_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
+        'plugins': {'annotation': charts.followers_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Návštěvnost
@@ -873,7 +873,7 @@ Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.web_usage_labels,
+        'labels': charts.web_usage_breakdown_labels,
         'datasets': [
             {
                 'label': 'úvodní stránka',
@@ -917,7 +917,7 @@ Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.web_usage_annotations},
+        'plugins': {'annotation': charts.web_usage_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Celková návštěvnost
@@ -926,7 +926,7 @@ Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.web_usage_labels,
+        'labels': charts.web_usage_total_labels,
         'datasets': [
             {
                 'label': 'celková návštěvnost',
@@ -939,7 +939,7 @@ Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.web_usage_annotations},
+        'plugins': {'annotation': charts.web_usage_total_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Příručka
@@ -962,12 +962,12 @@ Ty se taky započítají do celkové velikosti, ale v grafu je jejich velikost z
         'datasets': [
             {
                 'label': 'znaků TODO',
-                'data': charts.handbook_notes_size,
+                'data': charts.handbook_notes,
                 'backgroundColor': '#a9a9a9',
             },
             {
                 'label': 'znaků obsahu',
-                'data': charts.handbook_size,
+                'data': charts.handbook,
                 'backgroundColor': '#1755d1',
             },
         ],
@@ -1004,11 +1004,11 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.members_labels,
+        'labels': charts.members_women_labels,
         'datasets': [
             {
                 'label': '% žen v klubu',
-                'data': charts.members_women_ptc,
+                'data': charts.members_women,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
@@ -1017,7 +1017,7 @@ Pro srovnání, podle [analýzy ČSÚ z roku 2020](https://www.czso.cz/csu/czso/
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'min': 0, 'suggestedMax': 50}},
-        'plugins': {'annotation': charts.members_annotations},
+        'plugins': {'annotation': charts.members_women_annotations},
     }|tojson|forceescape }}"
     data-chart-milestones-offset-ptc="0"></canvas></div></div>
 
@@ -1029,11 +1029,11 @@ Chtěl bych, aby v průměru polovina přednášejících na online akcích v kl
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.events_labels,
+        'labels': charts.events_women_labels,
         'datasets': [
             {
                 'label': '% přednášejících žen TTM',
-                'data': charts.events_women_ptc_ttm,
+                'data': charts.events_women,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
@@ -1042,7 +1042,6 @@ Chtěl bych, aby v průměru polovina přednášejících na online akcích v kl
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'min': 0, 'suggestedMax': 50}},
-        'plugins': {'annotation': charts.events_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Podíl žen mezi hosty podcastu
@@ -1053,11 +1052,11 @@ Sice do toho Pavlíně nekecám, ale za mě by bylo fajn, kdyby v průměru polo
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.podcast_labels,
+        'labels': charts.podcast_women_labels,
         'datasets': [
             {
                 'label': '% žen v podcastu TTM',
-                'data': charts.podcast_women_ptc_ttm,
+                'data': charts.podcast_women,
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
