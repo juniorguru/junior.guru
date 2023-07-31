@@ -248,6 +248,11 @@ def members_surveys_total_marketing_breakdown() -> dict[Number]:
     return SubscriptionMarketingSurvey.total_breakdown_ptc()
 
 
+@chart
+def members_surveys_total_spend_marketing_breakdown() -> dict[Number]:
+    return SubscriptionMarketingSurvey.total_spend_breakdown_ptc()
+
+
 @namespace
 def members_subscriptions(today: date) -> dict[str, Any]:
     months = charts.months(charts.next_month(LEGACY_PLANS_DELETED_ON), today)

@@ -156,11 +156,19 @@ def main(context, from_date, clear_cache, history_path, clear_history):
 
     logger.info("Fetching members data from Memberful CSV")
     memberful = MemberfulCSV(cache_dir=context.obj['cache_dir'], clear_cache=clear_cache)
+    seen_account_ids = set()
     for csv_row in memberful.download_csv(dict(type='MembersCsvExport', filter='all')):
+        account_id = int(csv_row['Memberful ID'])
+        if account_id in seen_account_ids:
+            # This CSV sometimes contains multiple rows for the same account if the account
+            # has different plans etc. We do not really care about those fields, so we treat
+            # the rows as duplicates to simplify further code.
+            continue
+        seen_account_ids.add(account_id)
+
         referrer = csv_row['Referrer'] or None
         if referrer:
             referrer_type = classify_referrer(referrer)
-            account_id = int(csv_row['Memberful ID'])
             SubscriptionReferrer.create(account_id=account_id,
                                         account_name=csv_row['Full Name'],
                                         account_email=csv_row['Email'],
@@ -169,10 +177,10 @@ def main(context, from_date, clear_cache, history_path, clear_history):
                                         value=referrer,
                                         type=referrer_type,
                                         is_internal=referrer_type.startswith('/'))
+
         marketing_survey_answer = csv_row['Jak ses dozvěděl(a) o junior.guru?'] or None
         if marketing_survey_answer:
             marketing_survey_answer_type = classify_marketing_survey_answer(marketing_survey_answer)
-            account_id = int(csv_row['Memberful ID'])
             SubscriptionMarketingSurvey.create(account_id=account_id,
                                                account_name=csv_row['Full Name'],
                                                account_email=csv_row['Email'],

@@ -397,7 +397,7 @@ class SubscriptionActivity(BaseModel):
 
 
 class SubscriptionCancellation(BaseModel):
-    account_id = IntegerField()
+    account_id = IntegerField(unique=True)
     account_name = CharField()
     account_email = CharField()
     account_total_spend = IntegerField()
@@ -426,7 +426,7 @@ class SubscriptionCancellation(BaseModel):
 
 
 class SubscriptionReferrer(BaseModel):
-    account_id = IntegerField()
+    account_id = IntegerField(unique=True)
     account_name = CharField()
     account_email = CharField()
     account_total_spend = IntegerField()
@@ -437,7 +437,7 @@ class SubscriptionReferrer(BaseModel):
 
 
 class SubscriptionMarketingSurvey(BaseModel):
-    account_id = IntegerField()
+    account_id = IntegerField(unique=True)
     account_name = CharField()
     account_email = CharField()
     account_total_spend = IntegerField()
@@ -451,15 +451,25 @@ class SubscriptionMarketingSurvey(BaseModel):
         query = cls.select() \
             .where(cls.created_on >= from_date,
                    cls.created_on <= to_date)
-        return cls._calc_breakdown_ptc(query)
+        counter = Counter([answer.type for answer in query])
+        return cls._calc_breakdown_ptc(counter)
 
     @classmethod
     def total_breakdown_ptc(cls) -> dict[str, float]:
-        return cls._calc_breakdown_ptc(cls.select())
+        query = cls.select()
+        counter = Counter([answer.type for answer in query])
+        return cls._calc_breakdown_ptc(counter)
 
     @classmethod
-    def _calc_breakdown_ptc(cls, query: Iterable[Self]) -> dict[str, Number]:
-        counter = Counter([answer.type for answer in query])
+    def total_spend_breakdown_ptc(cls) -> dict[str, float]:
+        query = cls.select(cls.type, cls.account_total_spend)
+        counter = Counter()
+        for type, account_total_spend in query.tuples():
+            counter[type] += account_total_spend
+        return cls._calc_breakdown_ptc(counter)
+
+    @classmethod
+    def _calc_breakdown_ptc(cls, counter: Counter) -> dict[str, Number]:
         total_count = sum(counter.values())
         return {type.value: (counter[type] / total_count) * 100
                 for type in SubscriptionMarketingSurveyAnswer}

@@ -317,6 +317,64 @@ Partnerství domlouvám osobně a je vždy na rok, potom s firmou jednáme o pro
 
 Ukončená partnerství: {% for partner in partners_expired %}{{ partner_link(partner.name, partner.url, 'open') }}{% if not loop.last %}, {% endif %}{% endfor %}.
 
+## Aktivita v klubu
+
+### Počet znaků napsaných na Discordu
+
+V grafu není celá historie, uchovávám data jen za rok zpětně. Některé kanály se nezapočítávají, např. „volná zábava“. Nejde o kompletní _engagement_, protože lidi se mohou v klubu projevovat různě, např. reagováním pomocí emoji.
+
+Pouze orientační metrika. Nechci sledovat a glorifikovat _engagement_, protože lidi mají z klubu úplně v pohodě hodnotu i pokud si jej pouze čtou. K tématu doporučuji [Stop Measuring Community Engagement](https://rosie.land/posts/stop-measuring-community-engagement/).
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.club_content_labels,
+        'datasets': [
+            {
+                'label': 'počet znaků napsaných na Discordu',
+                'data': charts.club_content_size,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.club_content_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
+### Počet online akcí v klubu
+
+Chtěl bych mít v klubu v průměru aspoň dvě oficiální online akce měsíčně.
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.events_labels,
+        'datasets': [
+            {
+                'label': 'počet oficiálních akcí',
+                'data': charts.events_count,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'počet oficiálních akcí TTM/12',
+                'data': charts.events_count_ttm,
+                'borderColor': '#1755d1',
+                'borderWidth': 1,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.events_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
 ## Členství v klubu
 
 [Placený klub](club.md) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Když nepočítám roboty, tak je teď na Discordu **{{ members_total_count }} členů**.
@@ -354,7 +412,7 @@ Tenká modrá čára představuje počet členů, kteří si členství platí z
             {
                 'label': 'roční individuální členství',
                 'data': charts.members_individuals_yearly,
-                'borderColor': '#02CABB',
+                'borderColor': '#02cabb',
                 'borderWidth': 1,
             },
         ],
@@ -472,122 +530,42 @@ Graf s **odchody** zahrnuje i ty, kteří klub na dva týdny zdarma vyzkoušeli 
         'plugins': {'annotation': charts.members_trend_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-### Zdroje příchodů
+### Délka setrvání v klubu
 
-Když se někdo registruje do klubu, může mi sdělit, kde na junior.guru narazil.
-Graf začíná v době, kdy jsem začal tato data sbírat.
-Procenta jsou podíl z těch, co odpověděli, ne ze všech příchozích.
+Pokud jde graf nahoru, znamená to, že velká část členů zůstává v klubu dlouho.
+Propady nastávají, pokud do klubu přijdou noví lidé, kteří tam ale nevydrží a brzy zase odejdou.
+
+{% call note() %}
+  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco začíná až v březnu 2023.
+{% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
-    data-chart-type="bar"
+    data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.members_surveys_labels,
+        'labels': charts.members_labels,
         'datasets': [
             {
-                'label': '% ostatní',
-                'data': charts.members_surveys_marketing_breakdown.pop('other'),
-                'backgroundColor': '#a9a9a9',
+                'label': 'průměrný počet měsíců všech členství',
+                'data': charts.members_duration,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
             },
             {
-                'label': '% doporučení z kurzu',
-                'data': charts.members_surveys_marketing_breakdown.pop('courses'),
-                'backgroundColor': '#083284',
+                'label': 'průměrný počet měsíců individuálních členství',
+                'data': charts.members_individuals_duration,
+                'borderColor': '#1755d1',
+                'borderWidth': 1,
             },
-            {
-                'label': '% vyhledávání',
-                'data': charts.members_surveys_marketing_breakdown.pop('search'),
-                'backgroundColor': '#4285f4',
-            },
-            {
-                'label': '% doporučení známého',
-                'data': charts.members_surveys_marketing_breakdown.pop('friend'),
-                'backgroundColor': '#02cabb',
-            },
-            {
-                'label': '% Facebook',
-                'data': charts.members_surveys_marketing_breakdown.pop('facebook'),
-                'backgroundColor': '#4267b2',
-            },
-            {
-                'label': '% podcasty',
-                'data': charts.members_surveys_marketing_breakdown.pop('podcasts'),
-                'backgroundColor': '#872ec4',
-            },
-            {
-                'label': '% LinkedIn',
-                'data': charts.members_surveys_marketing_breakdown.pop('linkedin'),
-                'backgroundColor': '#0072b1',
-            },
-            {
-                'label': '% YouTube',
-                'data': charts.members_surveys_marketing_breakdown.pop('youtube'),
-                'backgroundColor': '#ff0000',
-            },
-            {
-                'label': '% yablko',
-                'data': charts.members_surveys_marketing_breakdown.pop('yablko'),
-                'backgroundColor': '#e7cd49',
-            },
-            {
-                'label': '% vyhledávání recenzí kurzů',
-                'data': charts.members_surveys_marketing_breakdown.pop('courses_search'),
-                'backgroundColor': '#00b7eb',
-            },
-        ],
+        ]
     }|tojson|forceescape }}"
-    {{ charts.members_surveys_marketing_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
-        'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true, 'max': 100}},
-        'plugins': {'annotation': charts.members_surveys_annotations},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.members_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-### Zdroje příchodů za celou historii
-
-Celkový poměr zdrojů příchodů za celou historii, po kterou sbírám tento typ zpětné vazby.
-
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="230"
-    data-chart-type="pie"
-    data-chart="{{ {
-        'labels': {
-            'other': '% ostatní',
-            'courses': '% doporučení z kurzu',
-            'search': '% vyhledávání',
-            'friend': '% doporučení známého',
-            'facebook': '% Facebook',
-            'podcasts': '% podcasty',
-            'linkedin': '% LinkedIn',
-            'youtube': '% YouTube',
-            'yablko': '% yablko',
-            'courses_search': '% vyhledávání recenzí kurzů',
-        }|mapping(charts.members_surveys_total_marketing_breakdown.keys()),
-        'datasets': [
-            {
-                'data': charts.members_surveys_total_marketing_breakdown.values()|list,
-                'backgroundColor': {
-                    'other': '#a9a9a9',
-                    'courses': '#083284',
-                    'search': '#4285f4',
-                    'friend': '#02cabb',
-                    'facebook': '#4267b2',
-                    'podcasts': '#872ec4',
-                    'linkedin': '#0072b1',
-                    'youtube': '#ff0000',
-                    'yablko': '#e7cd49',
-                    'courses_search': '#00b7eb',
-                }|mapping(charts.members_surveys_total_marketing_breakdown.keys())
-            },
-        ],
-    }|tojson|forceescape }}"
-    data-chart-options="{{ {
-        'scales': None,
-        'aspectRatio': 2,
-    }|tojson|forceescape }}"
-    data-chart-milestones-offset-ptc="0"></canvas></div></div>
-
-### Retence
+## Retence
 
 Procento členů, kteří z klubu odcházejí, neboli _churn_.
 
@@ -624,8 +602,7 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_.
 ### Důvody odchodu
 
 Když někdo ukončuje členství v klubu, může mi sdělit důvod, proč tak činí.
-Graf začíná v době, kdy jsem začal tímto způsobem zpětnou vazbu sbírat.
-Procenta jsou podíl z těch, co odpověděli, ne ze všech odcházejících.
+Procenta jsou podíl z těch, kdo odpověděli, ne ze všech odcházejících.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -708,39 +685,311 @@ Celkový poměr důvodů odchodu za celou historii, po kterou sbírám tento typ
     }|tojson|forceescape }}"
     data-chart-milestones-offset-ptc="0"></canvas></div></div>
 
-### Délka setrvání v klubu
+## Marketing
 
-Pokud jde graf nahoru, znamená to, že velká část členů zůstává v klubu dlouho.
-Propady nastávají, pokud do klubu přijdou noví lidé, kteří tam ale nevydrží a brzy zase odejdou.
+Když se někdo registruje do klubu, může mi sdělit, kde na junior.guru narazil.
+Procenta jsou podíl z těch, kdo odpověděli, ne ze všech příchozích.
 
-{% call note() %}
-  {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco začíná až v březnu 2023.
-{% endcall %}
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': charts.members_surveys_labels,
+        'datasets': [
+            {
+                'label': '% ostatní',
+                'data': charts.members_surveys_marketing_breakdown.pop('other'),
+                'backgroundColor': '#a9a9a9',
+            },
+            {
+                'label': '% doporučení z kurzu',
+                'data': charts.members_surveys_marketing_breakdown.pop('courses'),
+                'backgroundColor': '#083284',
+            },
+            {
+                'label': '% vyhledávání',
+                'data': charts.members_surveys_marketing_breakdown.pop('search'),
+                'backgroundColor': '#4285f4',
+            },
+            {
+                'label': '% doporučení známého',
+                'data': charts.members_surveys_marketing_breakdown.pop('friend'),
+                'backgroundColor': '#02cabb',
+            },
+            {
+                'label': '% Facebook',
+                'data': charts.members_surveys_marketing_breakdown.pop('facebook'),
+                'backgroundColor': '#4267b2',
+            },
+            {
+                'label': '% podcasty',
+                'data': charts.members_surveys_marketing_breakdown.pop('podcasts'),
+                'backgroundColor': '#872ec4',
+            },
+            {
+                'label': '% LinkedIn',
+                'data': charts.members_surveys_marketing_breakdown.pop('linkedin'),
+                'backgroundColor': '#0072b1',
+            },
+            {
+                'label': '% YouTube',
+                'data': charts.members_surveys_marketing_breakdown.pop('youtube'),
+                'backgroundColor': '#ff0000',
+            },
+            {
+                'label': '% yablko',
+                'data': charts.members_surveys_marketing_breakdown.pop('yablko'),
+                'backgroundColor': '#e7cd49',
+            },
+            {
+                'label': '% vyhledávání recenzí kurzů',
+                'data': charts.members_surveys_marketing_breakdown.pop('courses_search'),
+                'backgroundColor': '#00b7eb',
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.members_surveys_marketing_breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true, 'max': 100}},
+        'plugins': {'annotation': charts.members_surveys_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
+### Které kanály přivedly v součtu nejvíc členů
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="pie"
+    data-chart="{{ {
+        'labels': {
+            'other': '% ostatní',
+            'courses': '% doporučení z kurzu',
+            'search': '% vyhledávání',
+            'friend': '% doporučení známého',
+            'facebook': '% Facebook',
+            'podcasts': '% podcasty',
+            'linkedin': '% LinkedIn',
+            'youtube': '% YouTube',
+            'yablko': '% yablko',
+            'courses_search': '% vyhledávání recenzí kurzů',
+        }|mapping(charts.members_surveys_total_marketing_breakdown.keys()),
+        'datasets': [
+            {
+                'data': charts.members_surveys_total_marketing_breakdown.values()|list,
+                'backgroundColor': {
+                    'other': '#a9a9a9',
+                    'courses': '#083284',
+                    'search': '#4285f4',
+                    'friend': '#02cabb',
+                    'facebook': '#4267b2',
+                    'podcasts': '#872ec4',
+                    'linkedin': '#0072b1',
+                    'youtube': '#ff0000',
+                    'yablko': '#e7cd49',
+                    'courses_search': '#00b7eb',
+                }|mapping(charts.members_surveys_total_marketing_breakdown.keys())
+            },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'scales': None,
+        'aspectRatio': 2,
+    }|tojson|forceescape }}"
+    data-chart-milestones-offset-ptc="0"></canvas></div></div>
+
+### Které kanály přivedly v součtu nejvíc peněz
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="pie"
+    data-chart="{{ {
+        'labels': {
+            'other': '% ostatní',
+            'courses': '% doporučení z kurzu',
+            'search': '% vyhledávání',
+            'friend': '% doporučení známého',
+            'facebook': '% Facebook',
+            'podcasts': '% podcasty',
+            'linkedin': '% LinkedIn',
+            'youtube': '% YouTube',
+            'yablko': '% yablko',
+            'courses_search': '% vyhledávání recenzí kurzů',
+        }|mapping(charts.members_surveys_total_spend_marketing_breakdown.keys()),
+        'datasets': [
+            {
+                'data': charts.members_surveys_total_spend_marketing_breakdown.values()|list,
+                'backgroundColor': {
+                    'other': '#a9a9a9',
+                    'courses': '#083284',
+                    'search': '#4285f4',
+                    'friend': '#02cabb',
+                    'facebook': '#4267b2',
+                    'podcasts': '#872ec4',
+                    'linkedin': '#0072b1',
+                    'youtube': '#ff0000',
+                    'yablko': '#e7cd49',
+                    'courses_search': '#00b7eb',
+                }|mapping(charts.members_surveys_total_spend_marketing_breakdown.keys())
+            },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'scales': None,
+        'aspectRatio': 2,
+    }|tojson|forceescape }}"
+    data-chart-milestones-offset-ptc="0"></canvas></div></div>
+
+### bla bla
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': {
+            'other': 'ostatní',
+            'courses': 'doporučení z kurzu',
+            'search': 'vyhledávání',
+            'friend': 'doporučení známého',
+            'facebook': 'Facebook',
+            'podcasts': 'podcasty',
+            'linkedin': 'LinkedIn',
+            'youtube': 'YouTube',
+            'yablko': 'yablko',
+            'courses_search': 'vyhledávání recenzí kurzů',
+        }|mapping(charts.members_surveys_total_spend_marketing_breakdown.keys()),
+        'datasets': [
+            {
+                'label': '% členů',
+                'data': charts.members_surveys_total_marketing_breakdown.values()|list,
+                'backgroundColor': '#1755d1',
+            },
+            {
+                'label': '% peněz',
+                'data': charts.members_surveys_total_spend_marketing_breakdown.values()|list,
+                'backgroundColor': '#638cdd',
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.members_surveys_marketing_breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+    }|tojson|forceescape }}"></canvas></div></div>
+
+### Sociální sítě
+
+Vývoj počtu sledujících na profilech na relevantních sociálních sítích.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.members_labels,
+        'labels': charts.followers_labels,
         'datasets': [
             {
-                'label': 'průměrný počet měsíců všech členství',
-                'data': charts.members_duration,
+                'label': 'osobní LinkedIn',
+                'data': charts.followers_breakdown.pop('linkedin_personal'),
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
-                'label': 'průměrný počet měsíců individuálních členství',
-                'data': charts.members_individuals_duration,
+                'label': 'LinkedIn',
+                'data': charts.followers_breakdown.pop('linkedin'),
+                'borderColor': '#638cdd',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'YouTube',
+                'data': charts.followers_breakdown.pop('youtube'),
+                'borderColor': '#dc3545',
+                'borderWidth': 2,
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.followers_breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+    }|tojson|forceescape }}"></canvas></div></div>
+
+## Návštěvnost
+
+Návštěvnost měří [Simple Analytics](https://www.simpleanalytics.com/?referral=honza-javorek) a veškerá čísla jsou [veřejná](https://simpleanalytics.com/junior.guru).
+Tady jen pár vybraných grafů, které se tam špatně naklikávají ručně.
+Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
+
+### Souhrnná návštěvnost podle produktů
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.web_usage_labels,
+        'datasets': [
+            {
+                'label': 'úvodní stránka',
+                'data': charts.web_usage_breakdown.pop('home'),
                 'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'prodejní stránka klubu',
+                'data': charts.web_usage_breakdown.pop('club'),
+                'borderColor': '#dc3545',
                 'borderWidth': 1,
+            },
+            {
+                'label': 'příručka',
+                'data': charts.web_usage_breakdown.pop('handbook'),
+                'borderColor': '#02cabb',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'katalog kurzů',
+                'data': charts.web_usage_breakdown.pop('courses'),
+                'borderColor': '#00b7eb',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'pracovní inzeráty',
+                'data': charts.web_usage_breakdown.pop('jobs'),
+                'borderColor': '#638cdd',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'stránka s podcastem',
+                'data': charts.web_usage_breakdown.pop('podcast'),
+                'borderColor': '#872ec4',
+                'borderWidth': 1,
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.web_usage_breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.web_usage_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
+### Celková návštěvnost
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.web_usage_labels,
+        'datasets': [
+            {
+                'label': 'celková návštěvnost',
+                'data': charts.web_usage_total,
+                'borderColor': '#638cdd',
+                'borderWidth': 2,
             },
         ]
     }|tojson|forceescape }}"
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.members_annotations},
+        'plugins': {'annotation': charts.web_usage_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Příručka
@@ -792,65 +1041,6 @@ Ty se taky započítají do celkové velikosti, ale v grafu je jejich velikost z
         },
     }|tojson|forceescape }}"
     data-chart-milestones-offset-ptc="0"></canvas></div></div>
-
-
-## Aktivita v klubu
-
-### Počet znaků napsaných na Discordu
-
-V grafu není celá historie, uchovávám data jen za rok zpětně. Některé kanály se nezapočítávají, např. „volná zábava“. Nejde o kompletní _engagement_, protože lidi se mohou v klubu projevovat různě, např. reagováním pomocí emoji.
-
-Pouze orientační metrika. Nechci sledovat a glorifikovat _engagement_, protože lidi mají z klubu úplně v pohodě hodnotu i pokud si jej pouze čtou. K tématu doporučuji [Stop Measuring Community Engagement](https://rosie.land/posts/stop-measuring-community-engagement/).
-
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="230"
-    data-chart-type="line"
-    data-chart="{{ {
-        'labels': charts.club_content_labels,
-        'datasets': [
-            {
-                'label': 'počet znaků napsaných na Discordu',
-                'data': charts.club_content_size,
-                'borderColor': '#1755d1',
-                'borderWidth': 2,
-            },
-        ]
-    }|tojson|forceescape }}"
-    data-chart-options="{{ {
-        'interaction': {'mode': 'index'},
-        'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.club_content_annotations},
-    }|tojson|forceescape }}"></canvas></div></div>
-
-### Počet online akcí v klubu
-
-Chtěl bych mít v klubu v průměru aspoň dvě oficiální online akce měsíčně.
-
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="230"
-    data-chart-type="line"
-    data-chart="{{ {
-        'labels': charts.events_labels,
-        'datasets': [
-            {
-                'label': 'počet oficiálních akcí',
-                'data': charts.events_count,
-                'borderColor': '#1755d1',
-                'borderWidth': 2,
-            },
-            {
-                'label': 'počet oficiálních akcí TTM/12',
-                'data': charts.events_count_ttm,
-                'borderColor': '#1755d1',
-                'borderWidth': 1,
-            },
-        ]
-    }|tojson|forceescape }}"
-    data-chart-options="{{ {
-        'interaction': {'mode': 'index'},
-        'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.events_annotations},
-    }|tojson|forceescape }}"></canvas></div></div>
 
 ## Ženy
 
@@ -926,122 +1116,6 @@ Sice do toho Pavlíně nekecám, ale za mě by bylo fajn, kdyby v průměru polo
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'min': 0, 'suggestedMax': 50}},
-    }|tojson|forceescape }}"></canvas></div></div>
-
-## Návštěvnost
-
-Návštěvnost měří [Simple Analytics](https://www.simpleanalytics.com/?referral=honza-javorek) a veškerá čísla jsou [veřejná](https://simpleanalytics.com/junior.guru).
-Tady jen pár vybraných grafů, které se tam špatně naklikávají ručně.
-Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
-
-### Souhrnná návštěvnost podle produktů
-
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="230"
-    data-chart-type="line"
-    data-chart="{{ {
-        'labels': charts.web_usage_labels,
-        'datasets': [
-            {
-                'label': 'úvodní stránka',
-                'data': charts.web_usage_breakdown.pop('home'),
-                'borderColor': '#1755d1',
-                'borderWidth': 2,
-            },
-            {
-                'label': 'prodejní stránka klubu',
-                'data': charts.web_usage_breakdown.pop('club'),
-                'borderColor': '#dc3545',
-                'borderWidth': 1,
-            },
-            {
-                'label': 'příručka',
-                'data': charts.web_usage_breakdown.pop('handbook'),
-                'borderColor': '#02CABB',
-                'borderWidth': 1,
-            },
-            {
-                'label': 'katalog kurzů',
-                'data': charts.web_usage_breakdown.pop('courses'),
-                'borderColor': '#00b7eb',
-                'borderWidth': 1,
-            },
-            {
-                'label': 'pracovní inzeráty',
-                'data': charts.web_usage_breakdown.pop('jobs'),
-                'borderColor': '#638CDD',
-                'borderWidth': 1,
-            },
-            {
-                'label': 'stránka s podcastem',
-                'data': charts.web_usage_breakdown.pop('podcast'),
-                'borderColor': '#872ec4',
-                'borderWidth': 1,
-            },
-        ],
-    }|tojson|forceescape }}"
-    {{ charts.web_usage_breakdown.keys()|list|assert_empty }}
-    data-chart-options="{{ {
-        'interaction': {'mode': 'index'},
-        'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.web_usage_annotations},
-    }|tojson|forceescape }}"></canvas></div></div>
-
-### Celková návštěvnost
-
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="230"
-    data-chart-type="line"
-    data-chart="{{ {
-        'labels': charts.web_usage_labels,
-        'datasets': [
-            {
-                'label': 'celková návštěvnost',
-                'data': charts.web_usage_total,
-                'borderColor': '#638CDD',
-                'borderWidth': 2,
-            },
-        ]
-    }|tojson|forceescape }}"
-    data-chart-options="{{ {
-        'interaction': {'mode': 'index'},
-        'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.web_usage_annotations},
-    }|tojson|forceescape }}"></canvas></div></div>
-
-## Sociální sítě
-
-Vývoj počtu sledujících na profilech na relevantních sociálních sítích.
-
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="230"
-    data-chart-type="line"
-    data-chart="{{ {
-        'labels': charts.followers_labels,
-        'datasets': [
-            {
-                'label': 'osobní LinkedIn',
-                'data': charts.followers_breakdown.pop('linkedin_personal'),
-                'borderColor': '#1755d1',
-                'borderWidth': 2,
-            },
-            {
-                'label': 'LinkedIn',
-                'data': charts.followers_breakdown.pop('linkedin'),
-                'borderColor': '#638CDD',
-                'borderWidth': 2,
-            },
-            {
-                'label': 'YouTube',
-                'data': charts.followers_breakdown.pop('youtube'),
-                'borderColor': '#dc3545',
-                'borderWidth': 2,
-            },
-        ],
-    }|tojson|forceescape }}"
-    {{ charts.followers_breakdown.keys()|list|assert_empty }}
-    data-chart-options="{{ {
-        'interaction': {'mode': 'index'},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Kód
