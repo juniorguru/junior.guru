@@ -462,15 +462,6 @@ class SubscriptionExternalReferrer(BaseModel):
     type = CharField(index=True, constraints=[check_enum('type', SubscriptionExternalReferrerType)])
 
     @classmethod
-    def breakdown_ptc(cls, date: date) -> dict[str, float]:
-        from_date, to_date = month_range(date)
-        query = cls.select() \
-            .where(cls.created_on >= from_date,
-                   cls.created_on <= to_date)
-        counter = Counter([referrer.type for referrer in query])
-        return get_breakdown_ptc(counter, SubscriptionExternalReferrerType)
-
-    @classmethod
     def total_breakdown_ptc(cls) -> dict[str, float]:
         query = cls.select()
         counter = Counter([referrer.type for referrer in query])
@@ -503,15 +494,6 @@ class SubscriptionMarketingSurvey(BaseModel):
     created_on = DateField()
     value = CharField()
     type = CharField(index=True, constraints=[check_enum('type', SubscriptionMarketingSurveyAnswer)])
-
-    @classmethod
-    def breakdown_ptc(cls, date: date) -> dict[str, float]:
-        from_date, to_date = month_range(date)
-        query = cls.select() \
-            .where(cls.created_on >= from_date,
-                   cls.created_on <= to_date)
-        counter = Counter([answer.type for answer in query])
-        return get_breakdown_ptc(counter, SubscriptionMarketingSurveyAnswer)
 
     @classmethod
     def total_breakdown_ptc(cls) -> dict[str, float]:

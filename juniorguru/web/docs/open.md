@@ -718,76 +718,6 @@ Celkový poměr důvodů odchodu za celou historii, po kterou sbírám tento typ
 
 ## Marketing
 
-### Kanály podle ankety
-
-Když se někdo registruje do klubu, může mi sdělit, kde na junior.guru narazil.
-Procenta jsou podíl z těch, kdo odpověděli, ne ze všech příchozích.
-
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="230"
-    data-chart-type="bar"
-    data-chart="{{ {
-        'labels': charts.marketing_breakdown_labels,
-        'datasets': [
-            {
-                'label': '% ostatní',
-                'data': charts.marketing_breakdown.pop('other'),
-                'backgroundColor': '#a9a9a9',
-            },
-            {
-                'label': '% doporučení z kurzu',
-                'data': charts.marketing_breakdown.pop('courses'),
-                'backgroundColor': '#083284',
-            },
-            {
-                'label': '% vyhledávání',
-                'data': charts.marketing_breakdown.pop('search'),
-                'backgroundColor': '#4285f4',
-            },
-            {
-                'label': '% doporučení známého',
-                'data': charts.marketing_breakdown.pop('friend'),
-                'backgroundColor': '#02cabb',
-            },
-            {
-                'label': '% Facebook',
-                'data': charts.marketing_breakdown.pop('facebook'),
-                'backgroundColor': '#4267b2',
-            },
-            {
-                'label': '% podcasty',
-                'data': charts.marketing_breakdown.pop('podcasts'),
-                'backgroundColor': '#872ec4',
-            },
-            {
-                'label': '% LinkedIn',
-                'data': charts.marketing_breakdown.pop('linkedin'),
-                'backgroundColor': '#0072b1',
-            },
-            {
-                'label': '% YouTube',
-                'data': charts.marketing_breakdown.pop('youtube'),
-                'backgroundColor': '#ff0000',
-            },
-            {
-                'label': '% yablko',
-                'data': charts.marketing_breakdown.pop('yablko'),
-                'backgroundColor': '#e7cd49',
-            },
-            {
-                'label': '% vyhledávání recenzí kurzů',
-                'data': charts.marketing_breakdown.pop('courses_search'),
-                'backgroundColor': '#00b7eb',
-            },
-        ],
-    }|tojson|forceescape }}"
-    {{ charts.marketing_breakdown.keys()|list|assert_empty }}
-    data-chart-options="{{ {
-        'interaction': {'mode': 'index'},
-        'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true, 'max': 100}},
-        'plugins': {'annotation': charts.marketing_breakdown_annotations},
-    }|tojson|forceescape }}"></canvas></div></div>
-
 ### Výkonnost kanálů podle ankety
 
 Když se někdo registruje do klubu, může mi sdělit, kde na junior.guru narazil.
@@ -826,61 +756,6 @@ Procenta jsou podíl z těch, kdo odpověděli na anketu, ne ze všech příchoz
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-    }|tojson|forceescape }}"></canvas></div></div>
-
-### Kanály podle referreru
-
-Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
-Procenta jsou podíl z těch, kdo měli referrer ze stránky mimo junior.guru, ne ze všech příchozích.
-
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="230"
-    data-chart-type="bar"
-    data-chart="{{ {
-        'labels': charts.referrer_breakdown_labels,
-        'datasets': [
-            {
-                'label': '% ostatní',
-                'data': charts.referrer_breakdown.pop('other'),
-                'backgroundColor': '#a9a9a9',
-            },
-            {
-                'label': '% Twitter',
-                'data': charts.referrer_breakdown.pop('twitter'),
-                'backgroundColor': '#1da1f2',
-            },
-            {
-                'label': '% honzajavorek.cz',
-                'data': charts.referrer_breakdown.pop('honzajavorek'),
-                'backgroundColor': '#457e31',
-            },
-            {
-                'label': '% Google',
-                'data': charts.referrer_breakdown.pop('google'),
-                'backgroundColor': '#4285f4',
-            },
-            {
-                'label': '% Facebook',
-                'data': charts.referrer_breakdown.pop('facebook'),
-                'backgroundColor': '#4267b2',
-            },
-            {
-                'label': '% LinkedIn',
-                'data': charts.referrer_breakdown.pop('linkedin'),
-                'backgroundColor': '#0072b1',
-            },
-            {
-                'label': '% YouTube',
-                'data': charts.referrer_breakdown.pop('youtube'),
-                'backgroundColor': '#ff0000',
-            },
-        ],
-    }|tojson|forceescape }}"
-    {{ charts.referrer_breakdown.keys()|list|assert_empty }}
-    data-chart-options="{{ {
-        'interaction': {'mode': 'index'},
-        'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true, 'max': 100}},
-        'plugins': {'annotation': charts.referrer_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ### Výkonnost kanálů podle referreru

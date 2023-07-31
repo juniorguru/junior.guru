@@ -203,13 +203,6 @@ def subscriptions_duration_individuals(today: date):
 
 
 @chart
-def marketing_breakdown(today: date):
-    months = charts.months(SURVEYS_BEGIN_ON, today)
-    data = charts.per_month_breakdown(SubscriptionMarketingSurvey.breakdown_ptc, months)
-    return dict(data=data, months=months)
-
-
-@chart
 def total_marketing_breakdown(today: date):
     return dict(data=SubscriptionMarketingSurvey.total_breakdown_ptc())
 
@@ -217,13 +210,6 @@ def total_marketing_breakdown(today: date):
 @chart
 def total_spend_marketing_breakdown(today: date):
     return dict(data=SubscriptionMarketingSurvey.total_spend_breakdown_ptc())
-
-
-@chart
-def referrer_breakdown(today: date):
-    months = charts.months(CLUB_BEGIN_ON, today)
-    data = charts.per_month_breakdown(SubscriptionExternalReferrer.breakdown_ptc, months)
-    return dict(data=data, months=months)
 
 
 @chart
