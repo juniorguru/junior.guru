@@ -66,6 +66,17 @@ class SubscriptionMarketingSurveyAnswer(StrEnum):
     OTHER = 'other'
 
 
+@unique
+class SubscriptionExternalReferrerType(StrEnum):
+    OTHER = 'other'
+    TWITTER = 'twitter'
+    HONZAJAVOREK = 'honzajavorek'
+    GOOGLE = 'google'
+    FACEBOOK = 'facebook'
+    LINKEDIN = 'linkedin'
+    YOUTUBE = 'youtube'
+
+
 def uses_data_from_subscriptions(default: Callable=None) -> Callable:
     def decorator(class_method: Callable) -> Callable:
         @wraps(class_method)
@@ -431,29 +442,57 @@ class SubscriptionCancellation(BaseModel):
         query = cls.select() \
             .where(cls.expires_on >= from_date,
                    cls.expires_on <= to_date)
-        return cls._calc_breakdown_ptc(query)
+        counter = Counter([cancellation.reason for cancellation in query])
+        return get_breakdown_ptc(counter, SubscriptionCancellationReason)
 
     @classmethod
     def total_breakdown_ptc(cls) -> dict[str, float]:
-        return cls._calc_breakdown_ptc(cls.select())
-
-    @classmethod
-    def _calc_breakdown_ptc(cls, query: Iterable[Self]) -> dict[str, Number]:
+        query = cls.select()
         counter = Counter([cancellation.reason for cancellation in query])
-        total_count = sum(counter.values())
-        return {reason.value: (counter[reason] / total_count) * 100
-                for reason in SubscriptionCancellationReason}
+        return get_breakdown_ptc(counter, SubscriptionCancellationReason)
 
 
-class SubscriptionReferrer(BaseModel):
+class SubscriptionExternalReferrer(BaseModel):
     account_id = IntegerField(unique=True)
     account_name = CharField()
     account_email = CharField()
     account_total_spend = IntegerField()
     created_on = DateField()
-    value = CharField()
+    url = CharField()
+    type = CharField(index=True, constraints=[check_enum('type', SubscriptionExternalReferrerType)])
+
+    @classmethod
+    def breakdown_ptc(cls, date: date) -> dict[str, float]:
+        from_date, to_date = month_range(date)
+        query = cls.select() \
+            .where(cls.created_on >= from_date,
+                   cls.created_on <= to_date)
+        counter = Counter([referrer.type for referrer in query])
+        return get_breakdown_ptc(counter, SubscriptionExternalReferrerType)
+
+    @classmethod
+    def total_breakdown_ptc(cls) -> dict[str, float]:
+        query = cls.select()
+        counter = Counter([referrer.type for referrer in query])
+        return get_breakdown_ptc(counter, SubscriptionExternalReferrerType)
+
+    @classmethod
+    def total_spend_breakdown_ptc(cls) -> dict[str, float]:
+        query = cls.select(cls.type, cls.account_total_spend)
+        counter = Counter()
+        for type, account_total_spend in query.tuples():
+            counter[type] += account_total_spend
+        return get_breakdown_ptc(counter, SubscriptionExternalReferrerType)
+
+
+class SubscriptionInternalReferrer(BaseModel):
+    account_id = IntegerField(unique=True)
+    account_name = CharField()
+    account_email = CharField()
+    account_total_spend = IntegerField()
+    created_on = DateField()
+    url = CharField()
     type = CharField(index=True)
-    is_internal = BooleanField(index=True)
 
 
 class SubscriptionMarketingSurvey(BaseModel):
@@ -472,13 +511,13 @@ class SubscriptionMarketingSurvey(BaseModel):
             .where(cls.created_on >= from_date,
                    cls.created_on <= to_date)
         counter = Counter([answer.type for answer in query])
-        return cls._calc_breakdown_ptc(counter)
+        return get_breakdown_ptc(counter, SubscriptionMarketingSurveyAnswer)
 
     @classmethod
     def total_breakdown_ptc(cls) -> dict[str, float]:
         query = cls.select()
         counter = Counter([answer.type for answer in query])
-        return cls._calc_breakdown_ptc(counter)
+        return get_breakdown_ptc(counter, SubscriptionMarketingSurveyAnswer)
 
     @classmethod
     def total_spend_breakdown_ptc(cls) -> dict[str, float]:
@@ -486,10 +525,10 @@ class SubscriptionMarketingSurvey(BaseModel):
         counter = Counter()
         for type, account_total_spend in query.tuples():
             counter[type] += account_total_spend
-        return cls._calc_breakdown_ptc(counter)
+        return get_breakdown_ptc(counter, SubscriptionMarketingSurveyAnswer)
 
-    @classmethod
-    def _calc_breakdown_ptc(cls, counter: Counter) -> dict[str, Number]:
-        total_count = sum(counter.values())
-        return {type.value: (counter[type] / total_count) * 100
-                for type in SubscriptionMarketingSurveyAnswer}
+
+def get_breakdown_ptc(counter: Counter, enum: StrEnum) -> dict[str, float]:
+    if total_count := sum(counter.values()):
+        return {type.value: (counter[type] / total_count) * 100 for type in enum}
+    return {type.value: 0 for type in enum}

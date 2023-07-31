@@ -13,7 +13,7 @@ from juniorguru.models.page import Page
 from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.subscription import (LEGACY_PLANS_DELETED_ON,
                                             SubscriptionActivity,
-                                            SubscriptionCancellation,
+                                            SubscriptionCancellation, SubscriptionExternalReferrer,
                                             SubscriptionMarketingSurvey)
 from juniorguru.models.transaction import Transaction
 from juniorguru.models.web_usage import WebUsage
@@ -203,22 +203,10 @@ def subscriptions_duration_individuals(today: date):
 
 
 @chart
-def cancellations_breakdown(today: date):
-    months = charts.months(SURVEYS_BEGIN_ON, today)
-    data = charts.per_month_breakdown(SubscriptionCancellation.breakdown_ptc, months)
-    return dict(data=data, months=months)
-
-
-@chart
 def marketing_breakdown(today: date):
     months = charts.months(SURVEYS_BEGIN_ON, today)
     data = charts.per_month_breakdown(SubscriptionMarketingSurvey.breakdown_ptc, months)
     return dict(data=data, months=months)
-
-
-@chart
-def total_cancellations_breakdown(today: date):
-    return dict(data=SubscriptionCancellation.total_breakdown_ptc())
 
 
 @chart
@@ -229,6 +217,35 @@ def total_marketing_breakdown(today: date):
 @chart
 def total_spend_marketing_breakdown(today: date):
     return dict(data=SubscriptionMarketingSurvey.total_spend_breakdown_ptc())
+
+
+@chart
+def referrer_breakdown(today: date):
+    months = charts.months(CLUB_BEGIN_ON, today)
+    data = charts.per_month_breakdown(SubscriptionExternalReferrer.breakdown_ptc, months)
+    return dict(data=data, months=months)
+
+
+@chart
+def total_referrer_breakdown(today: date):
+    return dict(data=SubscriptionExternalReferrer.total_breakdown_ptc())
+
+
+@chart
+def total_spend_referrer_breakdown(today: date):
+    return dict(data=SubscriptionExternalReferrer.total_spend_breakdown_ptc())
+
+
+@chart
+def cancellations_breakdown(today: date):
+    months = charts.months(SURVEYS_BEGIN_ON, today)
+    data = charts.per_month_breakdown(SubscriptionCancellation.breakdown_ptc, months)
+    return dict(data=data, months=months)
+
+
+@chart
+def total_cancellations_breakdown(today: date):
+    return dict(data=SubscriptionCancellation.total_breakdown_ptc())
 
 
 @chart

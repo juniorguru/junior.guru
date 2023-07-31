@@ -20,9 +20,9 @@ from juniorguru.models.feminine_name import FeminineName
 from juniorguru.models.partner import Partner
 from juniorguru.models.subscription import (SubscriptionActivity,
                                             SubscriptionActivityType,
-                                            SubscriptionCancellation,
+                                            SubscriptionCancellation, SubscriptionInternalReferrer,
                                             SubscriptionMarketingSurvey,
-                                            SubscriptionReferrer, SubscriptionType)
+                                            SubscriptionExternalReferrer, SubscriptionType)
 
 
 ACTIVITIES_GQL_PATH = Path(__file__).parent / 'activities.gql'
@@ -68,7 +68,11 @@ def main(context, from_date, clear_cache, history_path, clear_history):
                              clear_cache=clear_cache)
 
     logger.info('Preparing')
-    tables = [SubscriptionActivity, SubscriptionReferrer, SubscriptionMarketingSurvey, SubscriptionCancellation]
+    tables = [SubscriptionActivity,
+              SubscriptionExternalReferrer,
+              SubscriptionInternalReferrer,
+              SubscriptionMarketingSurvey,
+              SubscriptionCancellation]
     db.drop_tables(tables)
     db.create_tables(tables)
 
@@ -169,14 +173,17 @@ def main(context, from_date, clear_cache, history_path, clear_history):
         referrer = csv_row['Referrer'] or None
         if referrer:
             referrer_type = classify_referrer(referrer)
-            SubscriptionReferrer.create(account_id=account_id,
-                                        account_name=csv_row['Full Name'],
-                                        account_email=csv_row['Email'],
-                                        account_total_spend=total_spend[account_id],
-                                        created_on=date.fromisoformat(csv_row['Created at']),
-                                        value=referrer,
-                                        type=referrer_type,
-                                        is_internal=referrer_type.startswith('/'))
+            if referrer_type.startswith('/'):
+                referrer_cls = SubscriptionInternalReferrer
+            else:
+                referrer_cls = SubscriptionExternalReferrer
+            referrer_cls.create(account_id=account_id,
+                                account_name=csv_row['Full Name'],
+                                account_email=csv_row['Email'],
+                                account_total_spend=total_spend[account_id],
+                                created_on=date.fromisoformat(csv_row['Created at']),
+                                url=referrer,
+                                type=referrer_type)
 
         marketing_survey_answer = csv_row['Jak ses dozvěděl(a) o junior.guru?'] or None
         if marketing_survey_answer:
@@ -274,8 +281,6 @@ def classify_referrer(url: str) -> str:
     if parts.netloc == 't.co':
         return 'twitter'
     if parts.netloc == 'honzajavorek.cz':
-        if '/blog/' in url and 'poznamky' in url:
-            return 'weeknotes'
         return 'honzajavorek'
     domain = parts.netloc.split('.')[-2]
     if domain in ('google', 'facebook', 'linkedin', 'youtube'):
