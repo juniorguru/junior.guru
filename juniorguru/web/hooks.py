@@ -14,7 +14,6 @@ TEMPLATE_FILTERS = [
     'icon',
     'thousands',
     'sample',
-    'metric',
     'remove_p',
     'money_breakdown_ptc',
     'revenue_categories',
