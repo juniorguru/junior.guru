@@ -1,7 +1,6 @@
 import math
 import random
 import re
-from datetime import date, datetime
 from operator import itemgetter
 from typing import Iterable, Literal
 from urllib.parse import unquote, urljoin
@@ -57,55 +56,12 @@ def tag_label(tag):
     return TAGS_MAPPING[tag]
 
 
-def to_datetime(dt_str):
-    return datetime.fromisoformat(dt_str)
-
-
 def local_time(dt):
     return arrow.get(dt).to('Europe/Prague').format('H:mm')
 
 
 def weekday(dt):
     return ['neděle', 'pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota'][int(dt.strftime('%w'))]
-
-
-def ago(value, now=None):
-    today = now.date() if now else date.today()
-    try:
-        value = value.date()
-    except AttributeError:
-        pass
-    days = (today - value).days
-    try:
-        return ('dnes', 'včera', 'předevčírem')[days]
-    except IndexError:
-        return f'před {days} dny'
-
-
-def sections(sections):
-    def yaml_str(s):
-        return f'"{s}"' if ':' in s else s
-
-    yaml = ''
-    for section in sections:
-        if section.get('heading'):
-            yaml += ('\n'
-                    f"- heading: {yaml_str(section['heading'])}\n"
-                    f"  type: {section['type']}\n")
-        else:
-            yaml += f"\n- type: {section['type']}\n"
-        yaml += '  contents:\n'
-        for item in section['contents']:
-            yaml += f'    - {yaml_str(item)}\n'
-    return yaml.strip()
-
-
-def metric(value):
-    # https://realpython.com/python-rounding/
-    decimals = len(str(int(value))) - 2
-    multiplier = 10 ** decimals
-    number = int(math.floor((value / multiplier) + 0.5) * multiplier)
-    return thousands(str(number))
 
 
 def thousands(value):

@@ -20,7 +20,7 @@ def test_activities_from_subscription():
     ('http://m.facebook.com', 'facebook'),
     ('android-app://m.facebook.com/', 'facebook'),
     ('https://honzajavorek.cz/', 'honzajavorek'),
-    ('https://honzajavorek.cz/blog/tydenni-poznamky-37-prvni-klubovy-sraz/', 'weeknotes'),
+    ('https://honzajavorek.cz/blog/tydenni-poznamky-37-prvni-klubovy-sraz/', 'honzajavorek'),
     ('https://www.youtube.com/', 'youtube'),
     ('https://www.google.com', 'google'),
     ('https://www.patreon.com/', 'other'),
