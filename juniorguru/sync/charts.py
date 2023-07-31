@@ -204,34 +204,40 @@ def subscriptions_duration_individuals(today: date):
 
 @chart
 def total_marketing_breakdown(today: date):
-    return dict(data=SubscriptionMarketingSurvey.total_breakdown_ptc())
+    return dict(data=SubscriptionMarketingSurvey.total_breakdown_ptc(),
+                count=SubscriptionMarketingSurvey.count())
 
 
 @chart
 def total_spend_marketing_breakdown(today: date):
-    return dict(data=SubscriptionMarketingSurvey.total_spend_breakdown_ptc())
+    return dict(data=SubscriptionMarketingSurvey.total_spend_breakdown_ptc(),
+                count=SubscriptionMarketingSurvey.count())
 
 
 @chart
 def total_referrer_breakdown(today: date):
-    return dict(data=SubscriptionExternalReferrer.total_breakdown_ptc())
+    return dict(data=SubscriptionExternalReferrer.total_breakdown_ptc(),
+                count=SubscriptionExternalReferrer.count())
 
 
 @chart
 def total_spend_referrer_breakdown(today: date):
-    return dict(data=SubscriptionExternalReferrer.total_spend_breakdown_ptc())
+    return dict(data=SubscriptionExternalReferrer.total_spend_breakdown_ptc(),
+                count=SubscriptionExternalReferrer.count())
 
 
 @chart
 def cancellations_breakdown(today: date):
     months = charts.months(SURVEYS_BEGIN_ON, today)
     data = charts.per_month_breakdown(SubscriptionCancellation.breakdown_ptc, months)
-    return dict(data=data, months=months)
+    count = SubscriptionCancellation.count()
+    return dict(data=data, months=months, count=count)
 
 
 @chart
 def total_cancellations_breakdown(today: date):
-    return dict(data=SubscriptionCancellation.total_breakdown_ptc())
+    return dict(data=SubscriptionCancellation.total_breakdown_ptc(),
+                count=SubscriptionCancellation.count())
 
 
 @chart

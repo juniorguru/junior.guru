@@ -633,7 +633,7 @@ Procento členů, kteří z klubu odcházejí, neboli _churn_.
 ### Důvody odchodu
 
 Když někdo ukončuje členství v klubu, může mi sdělit důvod, proč tak činí.
-Procenta jsou podíl z těch, kdo odpověděli na anketu, ne ze všech odcházejících.
+Procenta nejsou podíl ze všech, kdo odešli, ale jen z **{{ charts.cancellations_breakdown_count }}** lidí, kteří odpověděli na anketu.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -683,6 +683,7 @@ Procenta jsou podíl z těch, kdo odpověděli na anketu, ne ze všech odcházej
 ### Důvody odchodu za celou historii
 
 Celkový poměr důvodů odchodu za celou historii, po kterou sbírám tento typ zpětné vazby.
+Procenta nejsou podíl ze všech, kdo odešli, ale jen z **{{ charts.total_cancellations_breakdown_count }}** lidí, kteří odpověděli na anketu.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -722,7 +723,7 @@ Celkový poměr důvodů odchodu za celou historii, po kterou sbírám tento typ
 
 Když se někdo registruje do klubu, může mi sdělit, kde na junior.guru narazil.
 Graf porovnává kolik lidí jednotlivé marketingové kanály přivedly do klubu, a kolik z toho doposud bylo peněz.
-Procenta jsou podíl z těch, kdo odpověděli na anketu, ne ze všech příchozích.
+Procenta nejsou podíl ze všech příchozích, ale jen z **{{ charts.total_spend_marketing_breakdown_count }}** lidí, kteří odpověděli na anketu.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -762,7 +763,7 @@ Procenta jsou podíl z těch, kdo odpověděli na anketu, ne ze všech příchoz
 
 Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
 Graf porovnává kolik lidí jednotlivé marketingové kanály přivedly do klubu, a kolik z toho doposud bylo peněz.
-Procenta jsou podíl z těch, kdo měli referrer ze stránky mimo junior.guru, ne ze všech příchozích.
+Procenta nejsou podíl ze všech příchozích, ale jen z **{{ charts.total_spend_referrer_breakdown_count }}** lidí, kteří měli referrer ze stránky mimo junior.guru.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"

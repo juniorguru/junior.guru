@@ -437,6 +437,10 @@ class SubscriptionCancellation(BaseModel):
     feedback = CharField(null=True)
 
     @classmethod
+    def count(cls) -> int:
+        return cls.select().count()
+
+    @classmethod
     def breakdown_ptc(cls, date: date) -> dict[str, float]:
         from_date, to_date = month_range(date)
         query = cls.select() \
@@ -460,6 +464,10 @@ class SubscriptionExternalReferrer(BaseModel):
     created_on = DateField()
     url = CharField()
     type = CharField(index=True, constraints=[check_enum('type', SubscriptionExternalReferrerType)])
+
+    @classmethod
+    def count(cls) -> int:
+        return cls.select().count()
 
     @classmethod
     def total_breakdown_ptc(cls) -> dict[str, float]:
@@ -494,6 +502,10 @@ class SubscriptionMarketingSurvey(BaseModel):
     created_on = DateField()
     value = CharField()
     type = CharField(index=True, constraints=[check_enum('type', SubscriptionMarketingSurveyAnswer)])
+
+    @classmethod
+    def count(cls) -> int:
+        return cls.select().count()
 
     @classmethod
     def total_breakdown_ptc(cls) -> dict[str, float]:
