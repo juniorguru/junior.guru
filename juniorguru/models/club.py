@@ -39,7 +39,7 @@ STATS_EXCLUDE_CHANNELS = [
 
 class ClubUser(BaseModel):
     id = IntegerField(primary_key=True)
-    account_id = IntegerField(null=True)
+    account_id = IntegerField(null=True, unique=True)
     subscription_id = CharField(null=True)
     joined_at = DateTimeField(null=True)
     subscribed_at = DateTimeField(null=True)
@@ -91,6 +91,10 @@ class ClubUser(BaseModel):
 
     def update_expires_at(self, expires_at):
         self.expires_at = non_empty_max([self.expires_at, expires_at])
+
+    def content_size(self, private=False) -> int:
+        list_messages = self.list_messages if private else self.list_public_messages
+        return sum(message.content_size for message in list_messages)
 
     def messages_count(self, private=False):
         list_messages = self.list_messages if private else self.list_public_messages
@@ -265,9 +269,12 @@ class ClubMessage(BaseModel):
             .order_by(cls.created_at)
 
     @classmethod
-    def channel_listing_bot(cls, channel_id):
-        return cls.channel_listing(channel_id) \
+    def channel_listing_bot(cls, channel_id, starting_emoji=None):
+        query = cls.channel_listing(channel_id) \
             .where(cls.author_is_bot == True)
+        if starting_emoji:
+            query = query.where(cls.content_starting_emoji == starting_emoji)
+        return query
 
     @classmethod
     def channel_listing_since(cls, channel_id, since_at):

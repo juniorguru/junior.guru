@@ -13,6 +13,7 @@ from playhouse.shortcuts import model_to_dict
 
 from juniorguru.lib.charts import month_range
 from juniorguru.models.base import BaseModel, check_enum
+from juniorguru.models.club import ClubUser
 
 
 LEGACY_PLANS_DELETED_ON = date(2023, 2, 24)
@@ -435,6 +436,19 @@ class SubscriptionCancellation(BaseModel):
     expires_on = DateField(null=True)
     reason = CharField(index=True, constraints=[check_enum('reason', SubscriptionCancellationReason)])
     feedback = CharField(null=True)
+
+    @property
+    def user(self) -> ClubUser:
+        return ClubUser.select() \
+            .where(ClubUser.account_id == self.account_id) \
+            .first()
+
+    @classmethod
+    def report_listing(cls, exclude_account_ids=None) -> Iterable[Self]:
+        exclude_account_ids = exclude_account_ids or []
+        return cls.select() \
+            .where(cls.account_id.not_in(exclude_account_ids)) \
+            .order_by(cls.expires_on)
 
     @classmethod
     def count(cls) -> int:
