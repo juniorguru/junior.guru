@@ -7,6 +7,7 @@ from discord import Embed, ui
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubChannelID, ClubClient
+from juniorguru.lib.memberful import memberful_url
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -52,7 +53,7 @@ async def report(client: ClubClient, channel_id: int):
                              f"**Utraceno:** {cancellation.account_total_spend} Kč\n")
         buttons = [ui.Button(emoji='💳',
                              label='Memberful',
-                             url=f'https://juniorguru.memberful.com/admin/members/{cancellation.account_id}/')]
+                             url=memberful_url(cancellation.account_id))]
 
         # data depending on whether the user is on Discord
         if user := cancellation.user:
@@ -74,7 +75,7 @@ async def report(client: ClubClient, channel_id: int):
             embed_description += f"**Zbývá dní:** {(cancellation.expires_on - today).days}\n"
 
         # reason and feedback
-        embed_description += f"**Důvod:** `{cancellation.reason}`\n"
+        embed_description += f"**Důvod:** `{cancellation.reason.upper()}`\n"
         if cancellation.feedback:
             embed_description += f"> {cancellation.feedback}\n"
 

@@ -11,7 +11,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.coupons import parse_coupon
 from juniorguru.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
-from juniorguru.lib.memberful import MemberfulAPI
+from juniorguru.lib.memberful import MemberfulAPI, memberful_url
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser
@@ -37,7 +37,7 @@ def main():
     members = memberful.get_nodes(MEMBERS_GQL_PATH.read_text())
     seen_discord_ids = set()
     for member in members:
-        member_admin_url = get_admin_url(member['id'])
+        member_admin_url = memberful_url(member['id'])
         logger.info(f"Processing member {member_admin_url}")
         try:
             discord_id = int(member['discordUserId'])  # raies TypeError if None
@@ -98,10 +98,6 @@ async def report_extra_users(client: ClubClient, extra_users_ids: list[int]):
                             f"{', '.join(user.mention for user in extra_users)}")
     else:
         logger.info('After all, there are no users to report')
-
-
-def get_admin_url(account_id):
-    return f"https://juniorguru.memberful.com/admin/members/{account_id}"
 
 
 def get_active_subscription(subscriptions: list[dict]) -> dict:

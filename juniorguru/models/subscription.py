@@ -545,6 +545,19 @@ class SubscriptionMarketingSurvey(BaseModel):
     value = CharField()
     type = CharField(index=True, constraints=[check_enum('type', SubscriptionMarketingSurveyAnswer)])
 
+    @property
+    def user(self) -> ClubUser:
+        return ClubUser.select() \
+            .where(ClubUser.account_id == self.account_id) \
+            .first()
+
+    @classmethod
+    def report_listing(cls, exclude_account_ids=None) -> Iterable[Self]:
+        exclude_account_ids = exclude_account_ids or []
+        return cls.select() \
+            .where(cls.account_id.not_in(exclude_account_ids)) \
+            .order_by(cls.created_on)
+
     @classmethod
     def count(cls) -> int:
         return cls.select().count()

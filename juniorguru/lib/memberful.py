@@ -231,3 +231,7 @@ class MemberfulCSV:
 
     def _parse_csv(self, content: str) -> csv.DictReader:
         return csv.DictReader(content.splitlines())
+
+
+def memberful_url(account_id: int | str) -> str:
+    return f'https://juniorguru.memberful.com/admin/members/{account_id}/'
