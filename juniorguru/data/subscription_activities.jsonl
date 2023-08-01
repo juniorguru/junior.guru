@@ -11659,3 +11659,18 @@
 {"account_id": 4721228, "f": true, "happened_at": "2023-06-30T17:07:12", "subscription_interval": "month", "type": "trial_end"}
 {"account_id": 4721228, "f": true, "happened_at": "2023-06-30T17:12:27", "type": "deactivation"}
 {"account_id": 4469004, "f": false, "happened_at": "2023-06-30T20:50:54", "type": "deactivation"}
+{"account_id": 2944106, "f": true, "happened_at": "2023-07-01T00:04:11", "type": "deactivation"}
+{"account_id": 4534826, "f": false, "happened_at": "2023-07-01T00:07:44", "order_coupon_slug": "mews", "subscription_interval": "year", "type": "order"}
+{"account_id": 4717791, "f": true, "happened_at": "2023-07-01T00:07:56", "order_coupon_slug": "mews", "subscription_interval": "year", "type": "order"}
+{"account_id": 2621991, "f": false, "happened_at": "2023-07-01T00:08:04", "type": "deactivation"}
+{"account_id": 2623707, "f": true, "happened_at": "2023-07-01T00:08:04", "type": "deactivation"}
+{"account_id": 2618188, "f": false, "happened_at": "2023-07-01T00:08:04", "type": "deactivation"}
+{"account_id": 2535977, "f": false, "happened_at": "2023-07-01T00:08:04", "type": "deactivation"}
+{"account_id": 2509048, "f": false, "happened_at": "2023-07-01T00:08:04", "type": "deactivation"}
+{"account_id": 2746360, "f": true, "happened_at": "2023-07-01T00:08:07", "type": "deactivation"}
+{"account_id": 4279147, "f": false, "happened_at": "2023-07-01T10:21:46", "subscription_interval": "month", "type": "order"}
+{"account_id": 4752894, "f": false, "happened_at": "2023-07-01T11:30:12", "subscription_interval": "month", "type": "order"}
+{"account_id": 4752894, "f": false, "happened_at": "2023-07-01T11:30:12", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 4288201, "f": false, "happened_at": "2023-07-01T19:41:52", "subscription_interval": "month", "type": "order"}
+{"account_id": 3370433, "f": false, "happened_at": "2023-07-01T22:03:29", "subscription_interval": "month", "type": "order"}
+{"account_id": 4210643, "f": false, "happened_at": "2023-07-01T22:21:44", "subscription_interval": "month", "type": "order"}
