@@ -7,7 +7,7 @@ from strictyaml import Int, Map, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import get_user_roles
+from juniorguru.lib.discord_club import ClubClient, get_user_roles
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubUser
@@ -44,7 +44,7 @@ def main():
 
 
 @db.connection_context()
-async def discord_task(client):
+async def discord_task(client: ClubClient):
     logger.info('Setting up db table for documented roles')
     ClubDocumentedRole.drop_table()
     ClubDocumentedRole.create_table()
@@ -170,7 +170,7 @@ async def discord_task(client):
 
 
 # TODO rewrite so it doesn't need any async/await and can be tested
-async def manage_partner_roles(client, discord_roles, partners):
+async def manage_partner_roles(client: ClubClient, discord_roles, partners):
     partner_roles_mapping = {PARTNER_ROLE_PREFIX + partner.name: partner
                              for partner in partners}
     student_roles_mapping = {STUDENT_ROLE_PREFIX + partner.name: partner
@@ -213,7 +213,7 @@ async def manage_partner_roles(client, discord_roles, partners):
                 partner.save()
 
 
-async def apply_changes(client, changes):
+async def apply_changes(client: ClubClient, changes):
     # Can't take discord_roles as an argument and use instead of fetching, because before
     # this function runs, manage_partner_roles makes changes to the list of roles. This
     # function applies all changes to members, including the partner/student ones.

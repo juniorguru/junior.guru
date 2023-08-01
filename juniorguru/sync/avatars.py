@@ -8,6 +8,7 @@ from PIL import Image
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.chunks import chunks
+from juniorguru.lib.discord_club import ClubClient
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser
 
@@ -32,7 +33,7 @@ def main():
 
 
 @db.connection_context()
-async def discord_task(client):
+async def discord_task(client: ClubClient):
     AVATARS_PATH.mkdir(exist_ok=True, parents=True)
     for path in AVATARS_PATH.glob('*.png'):
         path.unlink()
@@ -53,7 +54,7 @@ async def discord_task(client):
             break
 
 
-async def process_member(client, member):
+async def process_member(client: ClubClient, member):
     logger_m = logger[str(member.id)]
     logger_m.info(f'Checking avatar of #{member.id}')
     try:

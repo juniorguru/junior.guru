@@ -2,7 +2,7 @@ from datetime import date, timedelta
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (ClubMemberID, get_or_create_dm_channel,
+from juniorguru.lib.discord_club import (ClubClient, ClubMemberID, get_or_create_dm_channel,
                                          is_message_older_than)
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
@@ -21,7 +21,7 @@ def main():
 
 
 @db.connection_context()
-async def send_daily_report(client):
+async def send_daily_report(client: ClubClient):
     member = await client.club_guild.fetch_member(ClubMemberID.DANIEL)
     channel = await get_or_create_dm_channel(member)
 

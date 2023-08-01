@@ -5,7 +5,7 @@ from discord import Color, Embed
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import (ClubChannelID, ClubMemberID,
+from juniorguru.lib.discord_club import (ClubChannelID, ClubClient, ClubMemberID,
                                          is_message_over_period_ago)
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
@@ -25,7 +25,7 @@ def main():
 
 
 @db.connection_context()
-async def discord_task(client):
+async def discord_task(client: ClubClient):
     last_message = ClubMessage.last_bot_message(ClubChannelID.INTERVIEWS, INTERVIEWS_EMOJI)
     if is_message_over_period_ago(last_message, timedelta(days=30)):
         logger.info('Last message is more than one month old!')

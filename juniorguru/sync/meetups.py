@@ -12,7 +12,7 @@ import requests
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubMemberID
+from juniorguru.lib.discord_club import ClubClient, ClubMemberID
 from juniorguru.lib.locations import fetch_location
 from juniorguru.lib.mutations import mutating_discord
 
@@ -98,7 +98,7 @@ def main(context, clear_cache):
     discord_sync.run(sync_scheduled_events, events)
 
 
-async def sync_scheduled_events(client, events):
+async def sync_scheduled_events(client: ClubClient, events):
     discord_events = {re.search(r'https?://\S+', e.description).group(0): e
                       for e in client.club_guild.scheduled_events
                       if (int(e.creator_id) == ClubMemberID.BOT

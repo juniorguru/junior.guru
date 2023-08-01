@@ -10,7 +10,7 @@ from playhouse.shortcuts import model_to_dict
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.coupons import parse_coupon
-from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID
+from juniorguru.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
 from juniorguru.lib.memberful import MemberfulAPI
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
@@ -82,7 +82,7 @@ def main():
 
 
 @db.connection_context()
-async def report_extra_users(client, extra_users_ids: list[int]):
+async def report_extra_users(client: ClubClient, extra_users_ids: list[int]):
     logger.info('Prevent mistakes caused by out-of-sync data')
     extra_users = []
     for extra_user_id in extra_users_ids:

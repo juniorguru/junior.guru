@@ -12,7 +12,7 @@ from strictyaml import Int, Map, Optional, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID
+from juniorguru.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
 from juniorguru.lib.images import (PostersCache, is_image, render_image_file,
                                    validate_image)
 from juniorguru.lib.mutations import mutating_discord
@@ -181,7 +181,7 @@ def process_episode(yaml_record):
 
 
 @db.connection_context()
-async def discord_task(client):
+async def discord_task(client: ClubClient):
     last_episode = PodcastEpisode.last()
     last_message = ClubMessage.last_bot_message(ClubChannelID.ANNOUNCEMENTS, MESSAGE_EMOJI, f'**{last_episode.number}. epizodu**')
     if not last_message:

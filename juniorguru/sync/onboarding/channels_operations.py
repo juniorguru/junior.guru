@@ -4,7 +4,7 @@ import discord
 from slugify import slugify
 
 from juniorguru.lib import loggers
-from juniorguru.lib.discord_club import ClubMemberID
+from juniorguru.lib.discord_club import ClubClient, ClubMemberID
 from juniorguru.lib.mutations import MutationsNotAllowedError, mutating_discord
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.onboarding.categories import manage_category
@@ -29,7 +29,7 @@ def channels_operation(operation_name):
 
 
 @channels_operation('update')
-async def update_onboarding_channel(client, member, channel):
+async def update_onboarding_channel(client: ClubClient, member, channel):
     logger_c = logger[f'channels.{channel.id}']
     logger_c.info(f"Updating (member #{member.id})")
     channel_data = await prepare_onboarding_channel_data(client, member)
@@ -40,7 +40,7 @@ async def update_onboarding_channel(client, member, channel):
 
 
 @channels_operation('create')
-async def create_onboarding_channel(client, member):
+async def create_onboarding_channel(client: ClubClient, member):
     logger_c = logger['channels']
     logger_c.info(f"Creating (member #{member.id})")
     channel_data = await prepare_onboarding_channel_data(client, member)
@@ -57,7 +57,7 @@ async def create_onboarding_channel(client, member):
 
 
 @channels_operation('delete')
-async def delete_onboarding_channel(client, channel):
+async def delete_onboarding_channel(client: ClubClient, channel):
     logger_c = logger[f'channels.{channel.id}']
     logger_c.info("Deleting")
     with mutating_discord(channel) as proxy:
@@ -65,7 +65,7 @@ async def delete_onboarding_channel(client, channel):
 
 
 @channels_operation('close')
-async def close_onboarding_channel(client, channel):
+async def close_onboarding_channel(client: ClubClient, channel):
     logger_c = logger[f'channels.{channel.id}']
     logger_c.info("Closing")
     last_message_on = ClubMessage.last_message(channel.id).created_at.date()
@@ -77,7 +77,7 @@ async def close_onboarding_channel(client, channel):
             await proxy.delete()
 
 
-async def prepare_onboarding_channel_data(client, member):
+async def prepare_onboarding_channel_data(client: ClubClient, member):
     name = f'{slugify(member.display_name, allow_unicode=True)}-tipy'
     topic = f'Soukromý kanál s tipy jen pro tebe! 🦸 {member.display_name} #{member.id}'
     onboarding_role = [role for role in client.club_guild.roles if role.id == ONBOARDING_ROLE][0]

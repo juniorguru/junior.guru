@@ -7,7 +7,7 @@ from strictyaml import CommaSeparated, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID
+from juniorguru.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
 from juniorguru.lib.images import (PostersCache, is_image, render_image_file,
                                    validate_image)
 from juniorguru.lib.mutations import MutationsNotAllowedError, mutating_discord
@@ -125,7 +125,7 @@ def main(clear_posters):
 
 
 @db.connection_context()
-async def sync_scheduled_events(client):
+async def sync_scheduled_events(client: ClubClient):
     discord_events = {arrow.get(e.start_time).naive: e
                       for e in client.club_guild.scheduled_events
                       if (int(e.creator_id) == ClubMemberID.BOT
@@ -162,7 +162,7 @@ async def sync_scheduled_events(client):
 
 
 @db.connection_context()
-async def post_next_event_messages(client):
+async def post_next_event_messages(client: ClubClient):
     announcements_channel = await client.fetch_channel(ClubChannelID.ANNOUNCEMENTS)
     events_channel = await client.fetch_channel(ClubChannelID.EVENTS)
 

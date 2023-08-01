@@ -2,14 +2,14 @@ import asyncio
 from datetime import datetime, timedelta
 
 import discord
-from discord import Client, MessageType, TextChannel
+from discord import MessageType, TextChannel
 from juniorguru_chick.lib import intro
 from juniorguru_chick.lib.threads import (add_members_with_role, create_thread,
                                           ensure_thread_name, is_thread_created)
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
-from juniorguru.lib.discord_club import (ClubChannelID, ClubMemberID, add_reactions,
+from juniorguru.lib.discord_club import (ClubChannelID, ClubClient, ClubMemberID, add_reactions,
                                          get_missing_reactions)
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
@@ -36,7 +36,7 @@ def main():
 
 
 @db.connection_context()
-async def discord_task(client: Client):
+async def discord_task(client: ClubClient):
     discord_channel = await client.club_guild.fetch_channel(ClubChannelID.INTRO)
 
     logger.info('Processing messages')

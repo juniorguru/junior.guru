@@ -5,7 +5,7 @@ from strictyaml import Bool, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubChannelID
+from juniorguru.lib.discord_club import ClubChannelID, ClubClient
 from juniorguru.lib.mutations import MutationsNotAllowedError, mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
@@ -40,7 +40,7 @@ def main():
 
 
 @db.connection_context()
-async def discord_task(client):
+async def discord_task(client: ClubClient):
     logger.info('Setting up db table')
     Mentor.drop_table()
     Mentor.create_table()

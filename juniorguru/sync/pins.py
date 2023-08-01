@@ -4,7 +4,7 @@ from discord import Embed
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubEmoji, get_or_create_dm_channel
+from juniorguru.lib.discord_club import ClubClient, ClubEmoji, get_or_create_dm_channel
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPin
@@ -35,7 +35,7 @@ def main():
 
 
 @db.connection_context()
-async def send_outstanding_pins(client):
+async def send_outstanding_pins(client: ClubClient):
     for member_db, outstanding_pins in ClubPin.outstanding_by_member():
         logger.info(f'Sending outstanding pins to {member_db.display_name!r}')
         member = await client.club_guild.fetch_member(member_db.id)

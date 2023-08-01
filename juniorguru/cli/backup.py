@@ -6,6 +6,7 @@ import click
 from pycircleci.api import Api
 
 from juniorguru.lib import discord_sync, loggers, mutations
+from juniorguru.lib.discord_club import ClubClient
 
 
 logger = loggers.from_path(__file__)
@@ -115,7 +116,7 @@ def discord(template):
     discord_sync.run(backup_discord, template)
 
 
-async def backup_discord(client, template_name):
+async def backup_discord(client: ClubClient, template_name):
     try:
         logger.info(f'Looking for template {template_name}')
         template = [template for template in (await client.club_guild.templates())

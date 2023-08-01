@@ -4,7 +4,7 @@ from datetime import date
 
 from juniorguru.lib import loggers
 from juniorguru.lib.chunks import chunks
-from juniorguru.lib.discord_club import ClubChannelID
+from juniorguru.lib.discord_club import ClubChannelID, ClubClient
 from juniorguru.models.club import ClubUser
 from juniorguru.sync.onboarding.categories import (create_enough_categories,
                                                    delete_empty_categories,
@@ -28,7 +28,7 @@ MODERATORS_ROLE = 795609174385098762
 logger = loggers.from_path(__file__)
 
 
-async def manage_channels(client):
+async def manage_channels(client: ClubClient):
     beta_users_ids = await fetch_beta_users(client)
     logger.info(f'Found {len(beta_users_ids)} BETA volunteers')
 
@@ -50,7 +50,7 @@ async def manage_channels(client):
     await delete_empty_categories(client)
 
 
-async def fetch_beta_users(client):
+async def fetch_beta_users(client: ClubClient):
     announcements_channel = await client.club_guild.fetch_channel(ClubChannelID.ANNOUNCEMENTS)
     beta_users_message = await announcements_channel.fetch_message(BETA_USERS_MESSAGE)
     beta_users_reaction = [reaction for reaction
@@ -85,7 +85,7 @@ def prepare_channels_operations(channels, members):
     return operations
 
 
-async def execute_channels_operations(client, operations):
+async def execute_channels_operations(client: ClubClient, operations):
     channels_operations_chunks = chunks(operations,
                                         size=CHANNELS_OPERATIONS_CHUNK_SIZE)
     for n, channels_operations_chunk in enumerate(channels_operations_chunks, start=1):

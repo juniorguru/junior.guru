@@ -8,7 +8,7 @@ from discord import Embed, File, ui
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.chunks import chunks
-from juniorguru.lib.discord_club import ClubChannelID, fetch_threads, is_thread_after
+from juniorguru.lib.discord_club import ClubChannelID, ClubClient, fetch_threads, is_thread_after
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
@@ -30,7 +30,7 @@ def main():
 
 
 @db.connection_context()
-async def discord_task(client):
+async def discord_task(client: ClubClient):
     since_at = datetime.now(timezone.utc) - timedelta(days=JOBS_REPEATING_PERIOD_DAYS)
     logger.info(f'Figuring out which jobs are not yet in the channel since {since_at}')
     channel = await client.club_guild.fetch_channel(ClubChannelID.JOBS)

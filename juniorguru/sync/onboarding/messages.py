@@ -6,7 +6,7 @@ import discord
 
 from juniorguru.lib import loggers
 from juniorguru.lib.chunks import chunks
-from juniorguru.lib.discord_club import get_reaction
+from juniorguru.lib.discord_club import ClubClient, get_reaction
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.sync.onboarding.scheduled_messages import (ALLOWED_MENTIONS,
@@ -23,7 +23,7 @@ EMOJI_UNREAD = '✅'
 logger = loggers.from_path(__file__)
 
 
-async def send_messages(client):
+async def send_messages(client: ClubClient):
     members_chunks = chunks(ClubUser.onboarding_listing(),
                             size=MEMBERS_CHUNK_SIZE)
     for n, members_chunk in enumerate(members_chunks, start=1):
@@ -34,7 +34,7 @@ async def send_messages(client):
         ])
 
 
-async def send_messages_to_member(client, member):
+async def send_messages_to_member(client: ClubClient, member):
     logger_m = logger[f'members.{member.id}']
     logger_m.debug('Preparing messages')
     messages = prepare_messages(ClubMessage.channel_listing_bot(member.onboarding_channel_id),
@@ -64,7 +64,7 @@ async def send_messages_to_member(client, member):
                 await proxy.add_reaction(EMOJI_UNREAD)
 
 
-async def create_message_data(client, member, content):
+async def create_message_data(client: ClubClient, member, content):
     return dict(content=content,
                 embed=discord.Embed(color=discord.Color.from_rgb(120, 179, 84),
                                     description='Přečteno? Chceš další? Zaklikni zaškrtávátko pod touto zprávou a brzy ti pošlu další tip'),

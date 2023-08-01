@@ -12,8 +12,9 @@ import click
 from slugify import slugify
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import loggers
+from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.coupons import parse_coupon
+from juniorguru.lib.discord_club import ClubClient
 from juniorguru.lib.memberful import MemberfulAPI, MemberfulCSV
 from juniorguru.models.base import db
 from juniorguru.models.feminine_name import FeminineName
@@ -222,6 +223,13 @@ def main(context, from_date, clear_cache, history_path, clear_history):
                                             expires_on=expires_on,
                                             reason=reason,
                                             feedback=feedback)
+
+    logger.info("Reporting cancellations")
+    discord_sync.run(report_cancellations)
+
+
+def report_cancellations(client: ClubClient):
+    pass
 
 
 def activities_from_subscription(subscription: dict) -> Generator[dict, None, None]:

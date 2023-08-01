@@ -7,7 +7,7 @@ import click
 import discord
 
 from juniorguru.lib import discord_sync, loggers, mutations
-from juniorguru.lib.discord_club import (ClubMemberID, emoji_name,
+from juniorguru.lib.discord_club import (ClubClient, ClubMemberID, emoji_name,
                                          get_or_create_dm_channel,
                                          get_pinned_message_url, get_reaction,
                                          parse_message_url)
@@ -39,7 +39,7 @@ def main(context):
 
 
 @db.connection_context()
-async def process_pins(client):
+async def process_pins(client: ClubClient):
     emoji_mapping = {page.meta['emoji']: PAGES_PATH.absolute() / page.src_uri
                      for page in Page.handbook_listing()}
     notes_mapping = defaultdict(list)

@@ -4,6 +4,7 @@ from operator import attrgetter
 import discord
 
 from juniorguru.lib import loggers
+from juniorguru.lib.discord_club import ClubClient
 from juniorguru.lib.mutations import mutating_discord
 
 
@@ -42,7 +43,7 @@ def get_available_category(channels):
         raise NoOnboardingCategoriesAvailableError()
 
 
-async def create_enough_categories(client, max_channels_needed):
+async def create_enough_categories(client: ClubClient, max_channels_needed):
     categories = list(filter(is_onboarding_category,
                              await client.club_guild.fetch_channels()))
     logger.info(f"Found {len(categories)} existing categories, maximum {max_channels_needed} channels will be needed")
@@ -60,7 +61,7 @@ def calc_missing_categories_count(existing_categories_count, max_channels_needed
     return max(max_categories_needed - existing_categories_count, 0)
 
 
-async def delete_empty_categories(client):
+async def delete_empty_categories(client: ClubClient):
     categories = (channel for channel
                   in (await client.club_guild.fetch_channels())
                   if is_onboarding_category(channel) and has_no_channels(channel))
