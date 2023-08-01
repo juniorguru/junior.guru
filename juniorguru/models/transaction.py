@@ -55,7 +55,7 @@ class Transaction(BaseModel):
     @classmethod
     def incomes(cls, from_date, to_date):
         return cls.listing(from_date, to_date) \
-            .where(cls.amount >= 0, cls.category.not_in(['tax', 'sideline']))
+            .where(cls.amount >= 0, cls.category != 'tax')
 
     @classmethod
     def revenue(cls, date):
@@ -79,8 +79,7 @@ class Transaction(BaseModel):
     @classmethod
     def expenses(cls, from_date, to_date):
         return cls.listing(from_date, to_date) \
-            .where(((cls.amount < 0) & (cls.category != 'salary')) |
-                   (cls.category == 'tax'))
+            .where((cls.amount < 0) | (cls.category == 'tax'))
 
     @classmethod
     def cost(cls, date):

@@ -59,6 +59,11 @@ CATEGORIES_SPEC = [
     lambda t: 'donations' if t['amount'] > 0 else 'miscellaneous',
 ]
 
+IGNORE_CATEGORIES = [
+    'sideline',
+    'salary',
+]
+
 TOGGLE_TODOS_CATEGORIES = [
     'donations',
     'memberships',
@@ -148,17 +153,20 @@ def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_
                                             categories_spec)
         logger.debug(f"Category: {category!r}")
 
-        db_records.append(dict(id=transaction['transaction_id'],
-                               happened_on=transaction['date'],
-                               category=category,
-                               amount=transaction['amount']))
-        doc_records.append({
-            'Date': transaction['date'].strftime('%Y-%m-%d'),
-            'Category': category,
-            'Amount': transaction['amount'],
-            'Message': message,
-            'Variable Symbol': transaction['variable_symbol'],
-        })
+        if category in IGNORE_CATEGORIES:
+            logger.debug(f"Skipping: {category!r}")
+        else:
+            db_records.append(dict(id=transaction['transaction_id'],
+                                happened_on=transaction['date'],
+                                category=category,
+                                amount=transaction['amount']))
+            doc_records.append({
+                'Date': transaction['date'].strftime('%Y-%m-%d'),
+                'Category': category,
+                'Amount': transaction['amount'],
+                'Message': message,
+                'Variable Symbol': transaction['variable_symbol'],
+            })
 
         if (
             transaction['amount'] > 0

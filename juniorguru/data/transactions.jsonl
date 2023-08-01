@@ -47,7 +47,6 @@
 {"_id": "23555128628", "amount": -2352, "category": "tax", "happened_on": "2020-10-15"}
 {"_id": "23559660311", "amount": 500, "category": "donations", "happened_on": "2020-10-20"}
 {"_id": "23561371522", "amount": 17443, "category": "donations", "happened_on": "2020-10-22"}
-{"_id": "23572398687", "amount": 9600, "category": "sideline", "happened_on": "2020-11-03"}
 {"_id": "23578357540", "amount": 19, "category": "donations", "happened_on": "2020-11-10"}
 {"_id": "23579172661", "amount": 19, "category": "donations", "happened_on": "2020-11-11"}
 {"_id": "23579172869", "amount": 19, "category": "donations", "happened_on": "2020-11-11"}
@@ -74,14 +73,12 @@
 {"_id": "23667120919", "amount": 33000, "category": "partnerships", "happened_on": "2021-02-15"}
 {"_id": "23667341117", "amount": -7200, "category": "lawyer", "happened_on": "2021-02-15"}
 {"_id": "23669298754", "amount": 500, "category": "jobs", "happened_on": "2021-02-17"}
-{"_id": "23670187705", "amount": -36000, "category": "salary", "happened_on": "2021-02-17"}
 {"_id": "23672845823", "amount": 1595, "category": "memberships", "happened_on": "2021-02-22"}
 {"_id": "23673659960", "amount": 500, "category": "jobs", "happened_on": "2021-02-22"}
 {"_id": "23674361139", "amount": 6205, "category": "donations", "happened_on": "2021-02-23"}
 {"_id": "23674362136", "amount": 1147, "category": "memberships", "happened_on": "2021-02-23"}
 {"_id": "23675334044", "amount": 1403, "category": "memberships", "happened_on": "2021-02-24"}
 {"_id": "23676167307", "amount": 1403, "category": "memberships", "happened_on": "2021-02-25"}
-{"_id": "23679596501", "amount": -3000, "category": "salary", "happened_on": "2021-03-01"}
 {"_id": "23679778251", "amount": 95, "category": "memberships", "happened_on": "2021-03-01"}
 {"_id": "23679779679", "amount": 191, "category": "memberships", "happened_on": "2021-03-01"}
 {"_id": "23683203137", "amount": 95, "category": "memberships", "happened_on": "2021-03-02"}
@@ -98,12 +95,10 @@
 {"_id": "23704738005", "amount": -342, "category": "marketing", "happened_on": "2021-03-26"}
 {"_id": "23706908568", "amount": 500, "category": "jobs", "happened_on": "2021-03-29"}
 {"_id": "23707267112", "amount": 11512, "category": "memberships", "happened_on": "2021-03-30"}
-{"_id": "23709286688", "amount": -3000, "category": "salary", "happened_on": "2021-04-01"}
 {"_id": "23712480297", "amount": -570, "category": "memberful", "happened_on": "2021-04-02"}
 {"_id": "23712866420", "amount": 9900, "category": "partnerships", "happened_on": "2021-04-02"}
 {"_id": "23715264297", "amount": 3117, "category": "memberships", "happened_on": "2021-04-07"}
 {"_id": "23720776040", "amount": 1403, "category": "memberships", "happened_on": "2021-04-13"}
-{"_id": "23721426458", "amount": -10000, "category": "salary", "happened_on": "2021-04-13"}
 {"_id": "23723394841", "amount": -2588, "category": "tax", "happened_on": "2021-04-15"}
 {"_id": "23723394842", "amount": -2393, "category": "tax", "happened_on": "2021-04-15"}
 {"_id": "23728253045", "amount": 573, "category": "memberships", "happened_on": "2021-04-20"}
@@ -112,18 +107,15 @@
 {"_id": "23731856785", "amount": 1887, "category": "tax", "happened_on": "2021-04-23"}
 {"_id": "23733434673", "amount": -329, "category": "marketing", "happened_on": "2021-04-26"}
 {"_id": "23734562443", "amount": 2390, "category": "memberships", "happened_on": "2021-04-27"}
-{"_id": "23738117997", "amount": -3000, "category": "salary", "happened_on": "2021-05-01"}
 {"_id": "23741346138", "amount": -550, "category": "memberful", "happened_on": "2021-05-03"}
 {"_id": "23742396616", "amount": 2742, "category": "memberships", "happened_on": "2021-05-04"}
 {"_id": "23748689959", "amount": 1488, "category": "memberships", "happened_on": "2021-05-11"}
 {"_id": "23752692532", "amount": 9900, "category": "partnerships", "happened_on": "2021-05-14"}
 {"_id": "23753610620", "amount": -2588, "category": "tax", "happened_on": "2021-05-15"}
 {"_id": "23753610621", "amount": -2393, "category": "tax", "happened_on": "2021-05-15"}
-{"_id": "23755093800", "amount": -20000, "category": "salary", "happened_on": "2021-05-17"}
 {"_id": "23756289985", "amount": 478, "category": "memberships", "happened_on": "2021-05-18"}
 {"_id": "23761378307", "amount": 500, "category": "jobs", "happened_on": "2021-05-24"}
 {"_id": "23763759806", "amount": -319, "category": "marketing", "happened_on": "2021-05-26"}
-{"_id": "23768602917", "amount": -3000, "category": "salary", "happened_on": "2021-06-01"}
 {"_id": "23770886907", "amount": 9982, "category": "memberships", "happened_on": "2021-06-01"}
 {"_id": "23771183884", "amount": -770, "category": "miscellaneous", "happened_on": "2021-06-01"}
 {"_id": "23771942273", "amount": -532, "category": "memberful", "happened_on": "2021-06-02"}
@@ -135,14 +127,12 @@
 {"_id": "23783790118", "amount": -2393, "category": "tax", "happened_on": "2021-06-15"}
 {"_id": "23784292432", "amount": -2400, "category": "lawyer", "happened_on": "2021-06-15"}
 {"_id": "23785755384", "amount": 9900, "category": "partnerships", "happened_on": "2021-06-16"}
-{"_id": "23785915349", "amount": -20000, "category": "salary", "happened_on": "2021-06-16"}
 {"_id": "23787787501", "amount": -642, "category": "miscellaneous", "happened_on": "2021-06-18"}
 {"_id": "23791154416", "amount": 1243, "category": "memberships", "happened_on": "2021-06-22"}
 {"_id": "23791157796", "amount": 6613, "category": "donations", "happened_on": "2021-06-22"}
 {"_id": "23794945145", "amount": 10599, "category": "partnerships", "happened_on": "2021-06-25"}
 {"_id": "23794981069", "amount": -328, "category": "marketing", "happened_on": "2021-06-26"}
 {"_id": "23797029389", "amount": 3155, "category": "memberships", "happened_on": "2021-06-29"}
-{"_id": "23799161311", "amount": -3000, "category": "salary", "happened_on": "2021-07-01"}
 {"_id": "23802612575", "amount": -552, "category": "memberful", "happened_on": "2021-07-02"}
 {"_id": "23806676186", "amount": 6635, "category": "donations", "happened_on": "2021-07-08"}
 {"_id": "23806693532", "amount": 9900, "category": "partnerships", "happened_on": "2021-07-08"}
@@ -151,11 +141,9 @@
 {"_id": "23813969489", "amount": -2588, "category": "tax", "happened_on": "2021-07-15"}
 {"_id": "23813969491", "amount": -2393, "category": "tax", "happened_on": "2021-07-15"}
 {"_id": "23818824917", "amount": 1051, "category": "memberships", "happened_on": "2021-07-20"}
-{"_id": "23820740757", "amount": -10000, "category": "salary", "happened_on": "2021-07-21"}
 {"_id": "23821195934", "amount": 3391, "category": "donations", "happened_on": "2021-07-22"}
 {"_id": "23824211259", "amount": -336, "category": "marketing", "happened_on": "2021-07-26"}
 {"_id": "23825093003", "amount": 4463, "category": "memberships", "happened_on": "2021-07-27"}
-{"_id": "23829143154", "amount": -15000, "category": "salary", "happened_on": "2021-08-01"}
 {"_id": "23832306469", "amount": -551, "category": "memberful", "happened_on": "2021-08-02"}
 {"_id": "23832996189", "amount": 2294, "category": "memberships", "happened_on": "2021-08-03"}
 {"_id": "23837451178", "amount": 1371, "category": "donations", "happened_on": "2021-08-09"}
@@ -171,7 +159,6 @@
 {"_id": "23854244330", "amount": 500, "category": "jobs", "happened_on": "2021-08-25"}
 {"_id": "23854803009", "amount": -335, "category": "marketing", "happened_on": "2021-08-26"}
 {"_id": "23858762971", "amount": 2754, "category": "memberships", "happened_on": "2021-08-31"}
-{"_id": "23859612884", "amount": -15000, "category": "salary", "happened_on": "2021-09-01"}
 {"_id": "23862212047", "amount": 6, "category": "donations", "happened_on": "2021-09-01"}
 {"_id": "23863017904", "amount": -550, "category": "memberful", "happened_on": "2021-09-02"}
 {"_id": "23866962472", "amount": 2008, "category": "memberships", "happened_on": "2021-09-07"}
@@ -189,7 +176,6 @@
 {"_id": "23886960216", "amount": -2129, "category": "miscellaneous", "happened_on": "2021-09-27"}
 {"_id": "23888506649", "amount": 6, "category": "donations", "happened_on": "2021-09-29"}
 {"_id": "23889171221", "amount": 1199, "category": "jobs", "happened_on": "2021-09-30"}
-{"_id": "23890448169", "amount": -15000, "category": "salary", "happened_on": "2021-10-01"}
 {"_id": "23893908449", "amount": -560, "category": "memberful", "happened_on": "2021-10-02"}
 {"_id": "23894481429", "amount": 2008, "category": "memberships", "happened_on": "2021-10-04"}
 {"_id": "23895867864", "amount": 60, "category": "donations", "happened_on": "2021-10-04"}
@@ -207,7 +193,6 @@
 {"_id": "23917711223", "amount": -341, "category": "marketing", "happened_on": "2021-10-26"}
 {"_id": "23918985794", "amount": 6, "category": "donations", "happened_on": "2021-10-27"}
 {"_id": "23922152543", "amount": 2390, "category": "memberships", "happened_on": "2021-11-01"}
-{"_id": "23922410345", "amount": -15000, "category": "salary", "happened_on": "2021-11-01"}
 {"_id": "23925842907", "amount": -567, "category": "memberful", "happened_on": "2021-11-02"}
 {"_id": "23925874105", "amount": -250, "category": "miscellaneous", "happened_on": "2021-11-02"}
 {"_id": "23926309120", "amount": 1383, "category": "donations", "happened_on": "2021-11-02"}
@@ -225,7 +210,6 @@
 {"_id": "23949345305", "amount": 6, "category": "donations", "happened_on": "2021-11-24"}
 {"_id": "23951424713", "amount": -350, "category": "marketing", "happened_on": "2021-11-26"}
 {"_id": "23953373966", "amount": 4815, "category": "memberships", "happened_on": "2021-11-29"}
-{"_id": "23956084483", "amount": -15000, "category": "salary", "happened_on": "2021-12-01"}
 {"_id": "23956527756", "amount": 6, "category": "donations", "happened_on": "2021-12-01"}
 {"_id": "23959669622", "amount": -250, "category": "miscellaneous", "happened_on": "2021-12-02"}
 {"_id": "23959779365", "amount": -2307, "category": "discord", "happened_on": "2021-12-02"}
@@ -244,7 +228,6 @@
 {"_id": "23985018174", "amount": 42897, "category": "partnerships", "happened_on": "2021-12-23"}
 {"_id": "23986867195", "amount": 4272, "category": "memberships", "happened_on": "2021-12-27"}
 {"_id": "23989049995", "amount": 6, "category": "donations", "happened_on": "2021-12-29"}
-{"_id": "23991526954", "amount": -15000, "category": "salary", "happened_on": "2022-01-01"}
 {"_id": "23993373821", "amount": -561, "category": "memberful", "happened_on": "2022-01-02"}
 {"_id": "23993388676", "amount": -250, "category": "miscellaneous", "happened_on": "2022-01-02"}
 {"_id": "23993621638", "amount": 3794, "category": "memberships", "happened_on": "2022-01-03"}
@@ -263,8 +246,6 @@
 {"_id": "24014542374", "amount": 5115, "category": "memberships", "happened_on": "2022-01-24"}
 {"_id": "24017212743", "amount": 6, "category": "donations", "happened_on": "2022-01-26"}
 {"_id": "24020566876", "amount": 5574, "category": "memberships", "happened_on": "2022-01-31"}
-{"_id": "24022005476", "amount": -15000, "category": "salary", "happened_on": "2022-02-01"}
-{"_id": "24022005479", "amount": -15000, "category": "salary", "happened_on": "2022-02-01"}
 {"_id": "24025461307", "amount": -250, "category": "miscellaneous", "happened_on": "2022-02-02"}
 {"_id": "24025589241", "amount": -553, "category": "memberful", "happened_on": "2022-02-02"}
 {"_id": "24025854396", "amount": 6, "category": "donations", "happened_on": "2022-02-02"}
@@ -284,8 +265,6 @@
 {"_id": "24048214272", "amount": 2619, "category": "donations", "happened_on": "2022-02-23"}
 {"_id": "24048697038", "amount": 3597, "category": "jobs", "happened_on": "2022-02-23"}
 {"_id": "24052108582", "amount": 5484, "category": "memberships", "happened_on": "2022-02-28"}
-{"_id": "24055005492", "amount": -15000, "category": "salary", "happened_on": "2022-03-01"}
-{"_id": "24055005510", "amount": -15000, "category": "salary", "happened_on": "2022-03-01"}
 {"_id": "24056975058", "amount": -250, "category": "miscellaneous", "happened_on": "2022-03-02"}
 {"_id": "24057082650", "amount": -587, "category": "memberful", "happened_on": "2022-03-02"}
 {"_id": "24057389799", "amount": 6, "category": "donations", "happened_on": "2022-03-02"}
@@ -305,8 +284,6 @@
 {"_id": "24084655752", "amount": -125, "category": "tax", "happened_on": "2022-03-29"}
 {"_id": "24084658831", "amount": -3025, "category": "accounting", "happened_on": "2022-03-29"}
 {"_id": "24085520287", "amount": 6, "category": "donations", "happened_on": "2022-03-30"}
-{"_id": "24087562364", "amount": -15000, "category": "salary", "happened_on": "2022-04-01"}
-{"_id": "24087562365", "amount": -15000, "category": "salary", "happened_on": "2022-04-01"}
 {"_id": "24091054557", "amount": -250, "category": "miscellaneous", "happened_on": "2022-04-02"}
 {"_id": "24091186164", "amount": -567, "category": "memberful", "happened_on": "2022-04-02"}
 {"_id": "24092096568", "amount": 4559, "category": "memberships", "happened_on": "2022-04-04"}
@@ -325,8 +302,6 @@
 {"_id": "24116072382", "amount": 2398, "category": "jobs", "happened_on": "2022-04-26"}
 {"_id": "24117130090", "amount": 6, "category": "donations", "happened_on": "2022-04-27"}
 {"_id": "24117856447", "amount": 1199, "category": "partnerships", "happened_on": "2022-04-28"}
-{"_id": "24120728244", "amount": -15000, "category": "salary", "happened_on": "2022-05-01"}
-{"_id": "24120728245", "amount": -15000, "category": "salary", "happened_on": "2022-05-01"}
 {"_id": "24123837561", "amount": -250, "category": "miscellaneous", "happened_on": "2022-05-02"}
 {"_id": "24123909049", "amount": -599, "category": "memberful", "happened_on": "2022-05-02"}
 {"_id": "24123936713", "amount": 3729, "category": "memberships", "happened_on": "2022-05-02"}
@@ -345,8 +320,6 @@
 {"_id": "24150236602", "amount": 6, "category": "donations", "happened_on": "2022-05-25"}
 {"_id": "24154357838", "amount": 6154, "category": "memberships", "happened_on": "2022-05-30"}
 {"_id": "24155921594", "amount": -872, "category": "miscellaneous", "happened_on": "2022-05-31"}
-{"_id": "24156817089", "amount": -15000, "category": "salary", "happened_on": "2022-06-01"}
-{"_id": "24156817090", "amount": -15000, "category": "salary", "happened_on": "2022-06-01"}
 {"_id": "24157375076", "amount": 10599, "category": "partnerships", "happened_on": "2022-06-01"}
 {"_id": "24157423700", "amount": 6, "category": "donations", "happened_on": "2022-06-01"}
 {"_id": "24158589247", "amount": 15198, "category": "partnerships", "happened_on": "2022-06-01"}
@@ -365,8 +338,6 @@
 {"_id": "24183683867", "amount": 6, "category": "donations", "happened_on": "2022-06-22"}
 {"_id": "24188138131", "amount": 4494, "category": "memberships", "happened_on": "2022-06-27"}
 {"_id": "24190530051", "amount": 6, "category": "donations", "happened_on": "2022-06-29"}
-{"_id": "24192786686", "amount": -15000, "category": "salary", "happened_on": "2022-07-01"}
-{"_id": "24192786687", "amount": -15000, "category": "salary", "happened_on": "2022-07-01"}
 {"_id": "24196668656", "amount": -250, "category": "miscellaneous", "happened_on": "2022-07-02"}
 {"_id": "24196711088", "amount": -612, "category": "memberful", "happened_on": "2022-07-02"}
 {"_id": "24197254751", "amount": 1733, "category": "donations", "happened_on": "2022-07-03"}
@@ -385,8 +356,6 @@
 {"_id": "24221420928", "amount": 4672, "category": "memberships", "happened_on": "2022-07-25"}
 {"_id": "24223722994", "amount": 6, "category": "donations", "happened_on": "2022-07-27"}
 {"_id": "24227692753", "amount": 4589, "category": "memberships", "happened_on": "2022-08-01"}
-{"_id": "24227961300", "amount": -15000, "category": "salary", "happened_on": "2022-08-01"}
-{"_id": "24227961301", "amount": -15000, "category": "salary", "happened_on": "2022-08-01"}
 {"_id": "24231875771", "amount": -250, "category": "miscellaneous", "happened_on": "2022-08-02"}
 {"_id": "24232003307", "amount": -617, "category": "memberful", "happened_on": "2022-08-02"}
 {"_id": "24233342135", "amount": 6, "category": "donations", "happened_on": "2022-08-03"}
@@ -402,8 +371,6 @@
 {"_id": "25695265702", "amount": 6, "category": "donations", "happened_on": "2022-08-24"}
 {"_id": "25699314430", "amount": 5993, "category": "memberships", "happened_on": "2022-08-29"}
 {"_id": "25701784665", "amount": 6, "category": "donations", "happened_on": "2022-08-31"}
-{"_id": "25702879854", "amount": -15000, "category": "salary", "happened_on": "2022-09-01"}
-{"_id": "25702879855", "amount": -15000, "category": "salary", "happened_on": "2022-09-01"}
 {"_id": "25706900118", "amount": -250, "category": "miscellaneous", "happened_on": "2022-09-02"}
 {"_id": "25706900119", "amount": -90, "category": "miscellaneous", "happened_on": "2022-09-02"}
 {"_id": "25707023736", "amount": -632, "category": "memberful", "happened_on": "2022-09-02"}
@@ -416,7 +383,6 @@
 {"_id": "25721755113", "amount": -2841, "category": "tax", "happened_on": "2022-09-15"}
 {"_id": "25721755114", "amount": -2627, "category": "tax", "happened_on": "2022-09-15"}
 {"_id": "25722211678", "amount": 800, "category": "donations", "happened_on": "2022-09-15"}
-{"_id": "25724746576", "amount": -30000, "category": "salary", "happened_on": "2022-09-16"}
 {"_id": "25726076445", "amount": 5866, "category": "memberships", "happened_on": "2022-09-19"}
 {"_id": "25729409207", "amount": 6, "category": "donations", "happened_on": "2022-09-21"}
 {"_id": "25730306246", "amount": 2769, "category": "donations", "happened_on": "2022-09-22"}
@@ -424,8 +390,6 @@
 {"_id": "25735686770", "amount": -2129, "category": "miscellaneous", "happened_on": "2022-09-27"}
 {"_id": "25737432547", "amount": 6, "category": "donations", "happened_on": "2022-09-29"}
 {"_id": "25738887499", "amount": 1199, "category": "jobs", "happened_on": "2022-09-30"}
-{"_id": "25739595367", "amount": -30000, "category": "salary", "happened_on": "2022-10-01"}
-{"_id": "25739595368", "amount": -15000, "category": "salary", "happened_on": "2022-10-01"}
 {"_id": "25743066250", "amount": -250, "category": "miscellaneous", "happened_on": "2022-10-02"}
 {"_id": "25743066251", "amount": -90, "category": "miscellaneous", "happened_on": "2022-10-02"}
 {"_id": "25743162980", "amount": -644, "category": "memberful", "happened_on": "2022-10-02"}
@@ -443,8 +407,6 @@
 {"_id": "25769307632", "amount": 2746, "category": "donations", "happened_on": "2022-10-24"}
 {"_id": "25772254465", "amount": 6, "category": "donations", "happened_on": "2022-10-26"}
 {"_id": "25775930999", "amount": 5928, "category": "memberships", "happened_on": "2022-10-31"}
-{"_id": "25777658317", "amount": -30000, "category": "salary", "happened_on": "2022-11-01"}
-{"_id": "25777658318", "amount": -15000, "category": "salary", "happened_on": "2022-11-01"}
 {"_id": "25781824262", "amount": -635, "category": "memberful", "happened_on": "2022-11-02"}
 {"_id": "25781845554", "amount": -250, "category": "miscellaneous", "happened_on": "2022-11-02"}
 {"_id": "25781845555", "amount": -90, "category": "miscellaneous", "happened_on": "2022-11-02"}
@@ -462,8 +424,6 @@
 {"_id": "25808074298", "amount": 6, "category": "donations", "happened_on": "2022-11-23"}
 {"_id": "25813033780", "amount": 8449, "category": "memberships", "happened_on": "2022-11-28"}
 {"_id": "25816001403", "amount": 6, "category": "donations", "happened_on": "2022-11-30"}
-{"_id": "25817363427", "amount": -30000, "category": "salary", "happened_on": "2022-12-01"}
-{"_id": "25817363428", "amount": -15000, "category": "salary", "happened_on": "2022-12-01"}
 {"_id": "25821737413", "amount": -250, "category": "miscellaneous", "happened_on": "2022-12-02"}
 {"_id": "25821737414", "amount": -90, "category": "miscellaneous", "happened_on": "2022-12-02"}
 {"_id": "25821785560", "amount": -597, "category": "memberful", "happened_on": "2022-12-02"}
@@ -482,8 +442,6 @@
 {"_id": "25849269152", "amount": 2516, "category": "donations", "happened_on": "2022-12-22"}
 {"_id": "25853280861", "amount": 14228, "category": "memberships", "happened_on": "2022-12-27"}
 {"_id": "25854862502", "amount": 6, "category": "donations", "happened_on": "2022-12-28"}
-{"_id": "25858584050", "amount": -30000, "category": "salary", "happened_on": "2023-01-01"}
-{"_id": "25858584054", "amount": -15000, "category": "salary", "happened_on": "2023-01-01"}
 {"_id": "25860825800", "amount": 10966, "category": "memberships", "happened_on": "2023-01-02"}
 {"_id": "25860875700", "amount": -250, "category": "miscellaneous", "happened_on": "2023-01-02"}
 {"_id": "25860875701", "amount": -90, "category": "miscellaneous", "happened_on": "2023-01-02"}
@@ -505,8 +463,6 @@
 {"_id": "25888377910", "amount": 6, "category": "donations", "happened_on": "2023-01-25"}
 {"_id": "25891358279", "amount": -1000, "category": "podcast", "happened_on": "2023-01-27"}
 {"_id": "25892577025", "amount": 5405, "category": "memberships", "happened_on": "2023-01-30"}
-{"_id": "25895194505", "amount": -30000, "category": "salary", "happened_on": "2023-02-01"}
-{"_id": "25895194506", "amount": -15000, "category": "salary", "happened_on": "2023-02-01"}
 {"_id": "25897153484", "amount": 6, "category": "donations", "happened_on": "2023-02-01"}
 {"_id": "25899513040", "amount": -250, "category": "miscellaneous", "happened_on": "2023-02-02"}
 {"_id": "25899513041", "amount": -90, "category": "miscellaneous", "happened_on": "2023-02-02"}
@@ -530,8 +486,6 @@
 {"_id": "25925360039", "amount": 40000, "category": "partnerships", "happened_on": "2023-02-23"}
 {"_id": "25925625822", "amount": 2189, "category": "memberships", "happened_on": "2023-02-23"}
 {"_id": "25928588583", "amount": 14706, "category": "memberships", "happened_on": "2023-02-27"}
-{"_id": "25931631388", "amount": -30000, "category": "salary", "happened_on": "2023-03-01"}
-{"_id": "25931631389", "amount": -15000, "category": "salary", "happened_on": "2023-03-01"}
 {"_id": "25933510026", "amount": 6, "category": "donations", "happened_on": "2023-03-01"}
 {"_id": "25936024204", "amount": -250, "category": "miscellaneous", "happened_on": "2023-03-02"}
 {"_id": "25936024205", "amount": -90, "category": "miscellaneous", "happened_on": "2023-03-02"}
@@ -539,7 +493,6 @@
 {"_id": "25938497818", "amount": -179, "category": "miscellaneous", "happened_on": "2023-03-04"}
 {"_id": "25939735235", "amount": 10238, "category": "memberships", "happened_on": "2023-03-06"}
 {"_id": "25942694790", "amount": 6, "category": "donations", "happened_on": "2023-03-08"}
-{"_id": "25947169844", "amount": -30000, "category": "salary", "happened_on": "2023-03-11"}
 {"_id": "25948320003", "amount": 7198, "category": "memberships", "happened_on": "2023-03-13"}
 {"_id": "25951300452", "amount": -2841, "category": "tax", "happened_on": "2023-03-15"}
 {"_id": "25951300453", "amount": -2722, "category": "tax", "happened_on": "2023-03-15"}
@@ -556,10 +509,6 @@
 {"_id": "25966952794", "amount": -1000, "category": "podcast", "happened_on": "2023-03-28"}
 {"_id": "25967359078", "amount": 6, "category": "donations", "happened_on": "2023-03-29"}
 {"_id": "25969329287", "amount": -500, "category": "video", "happened_on": "2023-03-31"}
-{"_id": "25970617288", "amount": -30000, "category": "salary", "happened_on": "2023-04-01"}
-{"_id": "25970617289", "amount": -15000, "category": "salary", "happened_on": "2023-04-01"}
-{"_id": "25974486159", "amount": -390271, "category": "salary", "happened_on": "2023-04-01"}
-{"_id": "25974486407", "amount": -100, "category": "salary", "happened_on": "2023-04-01"}
 {"_id": "25974593515", "amount": -250, "category": "miscellaneous", "happened_on": "2023-04-02"}
 {"_id": "25974593516", "amount": -90, "category": "miscellaneous", "happened_on": "2023-04-02"}
 {"_id": "25974700227", "amount": -554, "category": "memberful", "happened_on": "2023-04-02"}
@@ -577,8 +526,6 @@
 {"_id": "26000382447", "amount": 8448, "category": "memberships", "happened_on": "2023-04-24"}
 {"_id": "26000409641", "amount": 2466, "category": "donations", "happened_on": "2023-04-24"}
 {"_id": "26003556571", "amount": 6, "category": "donations", "happened_on": "2023-04-26"}
-{"_id": "26008453542", "amount": -30000, "category": "salary", "happened_on": "2023-05-01"}
-{"_id": "26008453548", "amount": -35000, "category": "salary", "happened_on": "2023-05-01"}
 {"_id": "26012205124", "amount": -250, "category": "miscellaneous", "happened_on": "2023-05-02"}
 {"_id": "26012205125", "amount": -90, "category": "miscellaneous", "happened_on": "2023-05-02"}
 {"_id": "26012248445", "amount": 8806, "category": "memberships", "happened_on": "2023-05-02"}
@@ -598,8 +545,6 @@
 {"_id": "26045915748", "amount": -226, "category": "miscellaneous", "happened_on": "2023-05-30"}
 {"_id": "26047032571", "amount": 15000, "category": "partnerships", "happened_on": "2023-05-31"}
 {"_id": "26047326602", "amount": 6, "category": "donations", "happened_on": "2023-05-31"}
-{"_id": "26048545222", "amount": -30000, "category": "salary", "happened_on": "2023-06-01"}
-{"_id": "26048545223", "amount": -35000, "category": "salary", "happened_on": "2023-06-01"}
 {"_id": "26053110892", "amount": -250, "category": "miscellaneous", "happened_on": "2023-06-02"}
 {"_id": "26053110893", "amount": -90, "category": "miscellaneous", "happened_on": "2023-06-02"}
 {"_id": "26054670359", "amount": -564, "category": "memberful", "happened_on": "2023-06-03"}
@@ -620,8 +565,6 @@
 {"_id": "26084662027", "amount": 6, "category": "donations", "happened_on": "2023-06-28"}
 {"_id": "26085469684", "amount": 15000, "category": "partnerships", "happened_on": "2023-06-29"}
 {"_id": "26086809314", "amount": -223, "category": "miscellaneous", "happened_on": "2023-06-30"}
-{"_id": "26088286441", "amount": -30000, "category": "salary", "happened_on": "2023-07-01"}
-{"_id": "26088286442", "amount": -35000, "category": "salary", "happened_on": "2023-07-01"}
 {"_id": "26092241821", "amount": -250, "category": "miscellaneous", "happened_on": "2023-07-02"}
 {"_id": "26092241822", "amount": -90, "category": "miscellaneous", "happened_on": "2023-07-02"}
 {"_id": "26092475178", "amount": -558, "category": "memberful", "happened_on": "2023-07-02"}
@@ -644,5 +587,3 @@
 {"_id": "26124787729", "amount": -223, "category": "miscellaneous", "happened_on": "2023-07-30"}
 {"_id": "26125249986", "amount": 8448, "category": "memberships", "happened_on": "2023-07-31"}
 {"_id": "26126028567", "amount": -2000, "category": "office", "happened_on": "2023-07-31"}
-{"_id": "26126926301", "amount": -30000, "category": "salary", "happened_on": "2023-08-01"}
-{"_id": "26126926302", "amount": -35000, "category": "salary", "happened_on": "2023-08-01"}
