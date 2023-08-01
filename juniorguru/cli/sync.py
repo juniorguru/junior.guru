@@ -143,9 +143,9 @@ def main(context, id, deps, mutate, allow_mutations, debug, cache_dir, clear_ima
 @click.argument('job', type=click.Choice(['sync-1', 'sync-2']), envvar='CIRCLE_JOB')
 @click.argument('node_index', type=int, envvar='CIRCLE_NODE_INDEX')
 @click.option('--nodes', type=int, envvar='CIRCLE_NODE_TOTAL')
-@click.option('--dry-run', is_flag=True, default=False, show_default=True)
+@click.option('-p', '--print-only', is_flag=True, default=False, show_default=True)
 @click.pass_context
-def ci(context, job, node_index, nodes, dry_run):
+def ci(context, job, node_index, nodes, print_only):
     if job == 'sync-1':
         commands_with_deps = {name for name, deps in main.dependencies_map.items() if deps}
         chains = get_parallel_chains(main.dependencies_map, exclude=commands_with_deps)
@@ -159,7 +159,7 @@ def ci(context, job, node_index, nodes, dry_run):
         logger.error(f"The job {job} has parallelism {nodes}, but there are {len(chains)} command chains!")
         raise click.Abort()
 
-    if dry_run:
+    if print_only:
         for index, chain in enumerate(chains):
             for name in chain:
                 bold, color = (True, 'green') if index == node_index else (None, None)
@@ -171,12 +171,44 @@ def ci(context, job, node_index, nodes, dry_run):
 
 
 @main.command()
-@click.option('--dry-run', is_flag=True, default=False, show_default=True)
+@click.option('--config-path', default='.circleci/config.yml', type=click.Path(path_type=Path, exists=True))
+@click.option('-p', '--print-only', is_flag=True, default=False, show_default=True)
+def parallelism(config_path, print_only):
+    commands_with_deps = {name for name, deps in main.dependencies_map.items() if deps}
+    sync1_chains = get_parallel_chains(main.dependencies_map, exclude=commands_with_deps)
+    sync1_parallelism = len(sync1_chains)
+    click.echo(f"sync-1 {sync1_parallelism}")
+
+    commands_without_deps = {name for name, deps in main.dependencies_map.items() if not deps}
+    sync2_chains = get_parallel_chains(main.dependencies_map, exclude=commands_without_deps)
+    sync2_parallelism = len(sync2_chains)
+    click.echo(f"sync-2 {sync2_parallelism}")
+
+    if print_only:
+        return
+
+    lines = []
+    parallelism = None
+    with config_path.open() as config_file:
+        for line in config_file:
+            if line.strip() == 'sync-1:':
+                parallelism = sync1_parallelism
+            elif line.strip() == 'sync-2:':
+                parallelism = sync2_parallelism
+            elif line.lstrip().startswith('parallelism:'):
+                line, _ = line.split(':', 1)
+                line += f': {parallelism}\n'
+            lines.append(line)
+    config_path.write_text(''.join(lines))
+
+
+@main.command()
+@click.option('-p', '--print-only', is_flag=True, default=False, show_default=True)
 @click.pass_context
-def all(context, dry_run):
+def all(context, print_only):
     for name in main.dependencies_map:
         command = main.get_command(context, name)
-        if dry_run:
+        if print_only:
             click.echo(name)
         else:
             context.invoke(command)
