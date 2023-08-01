@@ -644,3 +644,5 @@
 {"_id": "26124787729", "amount": -223, "category": "miscellaneous", "happened_on": "2023-07-30"}
 {"_id": "26125249986", "amount": 8448, "category": "memberships", "happened_on": "2023-07-31"}
 {"_id": "26126028567", "amount": -2000, "category": "office", "happened_on": "2023-07-31"}
+{"_id": "26126926301", "amount": -30000, "category": "salary", "happened_on": "2023-08-01"}
+{"_id": "26126926302", "amount": -35000, "category": "salary", "happened_on": "2023-08-01"}
