@@ -20,7 +20,8 @@ from juniorguru.models.feminine_name import FeminineName
 from juniorguru.models.partner import Partner
 from juniorguru.models.subscription import (SubscriptionActivity,
                                             SubscriptionActivityType,
-                                            SubscriptionCancellation, SubscriptionInternalReferrer,
+                                            SubscriptionCancellation,
+                                            SubscriptionInternalReferrer,
                                             SubscriptionMarketingSurvey,
                                             SubscriptionReferrer, SubscriptionType)
 

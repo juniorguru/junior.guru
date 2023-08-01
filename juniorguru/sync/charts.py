@@ -13,8 +13,10 @@ from juniorguru.models.page import Page
 from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.subscription import (LEGACY_PLANS_DELETED_ON,
                                             SubscriptionActivity,
-                                            SubscriptionCancellation, SubscriptionReferrer, SubscriptionInternalReferrer,
-                                            SubscriptionMarketingSurvey)
+                                            SubscriptionCancellation,
+                                            SubscriptionInternalReferrer,
+                                            SubscriptionMarketingSurvey,
+                                            SubscriptionReferrer)
 from juniorguru.models.transaction import Transaction
 from juniorguru.models.web_usage import WebUsage
 
