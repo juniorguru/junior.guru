@@ -58,8 +58,10 @@ async def report(client: ClubClient, channel_id: int):
         # data depending on whether the user is on Discord
         if user := cancellation.user:
             message_content += f"{user.mention}"
-            embed_description += (f"**Písmenek v klubu**: {user.content_size()}\n"
-                                  f"**Měsíců v klubu**: {int((cancellation.expires_on - user.joined_at.date()).days / 30)}\n")
+            embed_description += f"**Písmenek v klubu**: {user.content_size()}\n"
+            if cancellation.expires_on:
+                months = int((cancellation.expires_on - user.joined_at.date()).days / 30)
+                embed_description += f"**Měsíců v klubu**: {months}\n"
             if intro_message := user.intro:
                 buttons.append(ui.Button(emoji='👋',
                                label='#ahoj',
@@ -70,8 +72,8 @@ async def report(client: ClubClient, channel_id: int):
         # id
         message_content += f" ruší členství! `#{cancellation.account_id}`"
 
-        # expiration date
-        if cancellation.expires_on > today:
+        # remaining days
+        if cancellation.expires_on and cancellation.expires_on > today:
             embed_description += f"**Zbývá dní:** {(cancellation.expires_on - today).days}\n"
 
         # reason and feedback
