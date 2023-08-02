@@ -1,6 +1,6 @@
 import re
-import click
 
+import click
 from discord import Embed, ui
 
 from juniorguru.cli.sync import main as cli

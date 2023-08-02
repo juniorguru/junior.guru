@@ -7,7 +7,8 @@ from discord import Color, Embed
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import CLUB_GUILD, ClubChannelID, ClubClient, is_message_older_than
+from juniorguru.lib.discord_club import (CLUB_GUILD, ClubChannelID, ClubClient,
+                                         is_message_older_than)
 from juniorguru.lib.md import md, neutralize_urls
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.lib.text import extract_text

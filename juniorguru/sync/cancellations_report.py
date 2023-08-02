@@ -1,7 +1,7 @@
-from datetime import date
 import re
-import click
+from datetime import date
 
+import click
 from discord import Embed, ui
 
 from juniorguru.cli.sync import main as cli
@@ -11,7 +11,8 @@ from juniorguru.lib.memberful import memberful_url
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
-from juniorguru.models.subscription import SubscriptionCancellation, SubscriptionCancellationReason
+from juniorguru.models.subscription import (SubscriptionCancellation,
+                                            SubscriptionCancellationReason)
 
 
 logger = loggers.from_path(__file__)

@@ -9,8 +9,8 @@ from juniorguru_chick.lib.threads import (add_members_with_role, create_thread,
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
-from juniorguru.lib.discord_club import (ClubChannelID, ClubClient, ClubMemberID, add_reactions,
-                                         get_missing_reactions)
+from juniorguru.lib.discord_club import (ClubChannelID, ClubClient, ClubMemberID,
+                                         add_reactions, get_missing_reactions)
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage

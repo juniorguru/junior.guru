@@ -15,8 +15,7 @@ from juniorguru.models.base import db
 from juniorguru.models.feminine_name import FeminineName
 from juniorguru.models.partner import Partner
 from juniorguru.models.subscription import (SubscriptionActivity,
-                                            SubscriptionActivityType,
-                                            SubscriptionType)
+                                            SubscriptionActivityType, SubscriptionType)
 
 
 ACTIVITIES_GQL_PATH = Path(__file__).parent / 'activities.gql'
