@@ -16,6 +16,7 @@ from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubUser
 from juniorguru.models.feminine_name import FeminineName
+from juniorguru.models.subscription import SubscriptionActivity
 
 
 logger = loggers.from_path(__file__)
@@ -28,7 +29,8 @@ MEMBERS_GQL_PATH = Path(__file__).parent / 'members.gql'
 
 @cli.sync_command(dependencies=['club-content',
                                 'partners',
-                                'feminine-names'])
+                                'feminine-names',
+                                'subscriptions'])
 @db.connection_context()
 def main():
     logger.info('Getting data from Memberful')
@@ -48,9 +50,11 @@ def main():
             logger.debug(f"Identified as club user #{user.id}")
             seen_discord_ids.add(user.id)
 
-            subscription = get_active_subscription(member['subscriptions'])
             name = member['fullName'].strip()
             has_feminine_name = FeminineName.is_feminine(name)
+            subscribed_at = SubscriptionActivity.account_subscribed_at(user.account_id)
+
+            subscription = get_active_subscription(member['subscriptions'])
             coupon = get_coupon(subscription)
             coupon_parts = parse_coupon(coupon) if coupon else {}
 
@@ -58,7 +62,7 @@ def main():
             user.account_id = int(member['id'])
             user.subscription_id = str(subscription['id'])
             user.coupon = coupon_parts.get('coupon')
-            user.update_subscribed_at(arrow.get(subscription['createdAt']).naive)
+            user.subscribed_at = subscribed_at
             user.update_expires_at(arrow.get(subscription['expiresAt']).naive)
             user.has_feminine_name = has_feminine_name
             user.total_spend = math.ceil(member['totalSpendCents'] / 100)

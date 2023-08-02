@@ -86,9 +86,6 @@ class ClubUser(BaseModel):
         intro = self.intro
         return intro.id if intro else None
 
-    def update_subscribed_at(self, subscribed_at):
-        self.subscribed_at = non_empty_min([self.subscribed_at, subscribed_at])
-
     def update_expires_at(self, expires_at):
         self.expires_at = non_empty_max([self.expires_at, expires_at])
 

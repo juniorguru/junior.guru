@@ -427,6 +427,13 @@ class SubscriptionActivity(BaseModel):
             duration_mo = (duration_sec / 60 / 60 / 24 / 30)
             yield duration_mo
 
+    @classmethod
+    def account_subscribed_at(cls, account_id: int) -> Iterable[Self]:
+        return cls.select(cls.happened_at) \
+            .where(cls.account_id == account_id) \
+            .order_by(cls.happened_at) \
+            .scalar()
+
 
 class SubscriptionCancellation(BaseModel):
     account_id = IntegerField(unique=True)
