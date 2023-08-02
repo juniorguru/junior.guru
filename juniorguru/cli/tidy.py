@@ -26,6 +26,7 @@ def main(context):
 @main.command()
 def format_python():
     try:
+        subprocess.run(['black', '.'], check=True)
         subprocess.run(['isort', '.'], check=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
