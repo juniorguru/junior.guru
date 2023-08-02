@@ -1,4 +1,5 @@
 from typing import Iterable, Self
+
 from peewee import CharField, DateField
 
 from juniorguru.models.base import BaseModel

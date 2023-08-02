@@ -1,9 +1,9 @@
 from datetime import date
 from operator import attrgetter
-import click
 
-import requests
+import click
 import feedparser
+import requests
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
