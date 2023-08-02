@@ -819,4 +819,13 @@ Nutno říct, že pro absenci elementárních pracovních soft skills jsme pusti
 ---
 
 
+---
+To se obávám, že takhle prostě funguje, a to i pro seniory. Akorát ti mají většinou celkem dost, tak to tolik možná neřeší, dlouho pracují na jednom místě za stejné peníze a pak se chytnou za čelo, když si povídají u piva s nějakými kámoši a vyjde najevo, že dělají za mzdu hodně pod aktuálním průměrem. Moderní firmy mají salary ranges apod., snaží se to trochu řešit, ale většina podle mě řeší růst mezd individuálně a holt kdo se necuká, ten zůstane na penězích, které mu „stačí“.
+
+A když to chce člověk cíleně řešit a teda tlačí na to, aby se spolu s posouváním znalostí a zkušeností posouval i mzdově, tak na to firma většinou není připravená, přesně jak píšeš. Zvlášť juniory často naberou i proto, že jsou levní, a vlastně paradoxně nevědí co s nimi, když jim vyrostou a měli by je začít ohodnocovat standardně. Je to boj. A mnohdy je prostě jednodušší odejít jinam, kde ti to dají rovnou. A firmy si za to můžou samy.
+
+Jediná cesta ven je dostat se na peníze, kdy už je ti jedno, jestli máš o 10.000 Kč víc nebo míň, a můžeš se zamýšlet víc nad tím, jestli tě to ve firmě baví, jaký tam je tým, apod. Pak třeba někde zůstaneš dlouho a na menších penězích, ale je ti to doopravdy jedno, protože peněz máš dost a víš, že si tam vážíš jiných výhod.
+---
+
+
 #} -->
