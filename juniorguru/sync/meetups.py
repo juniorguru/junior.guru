@@ -27,6 +27,11 @@ FEEDS = [
          poster_path='posters-meetups/pyvo.png',
          format='icalendar',
          source_url='https://pyvo.cz/api/pyvo.ics'),
+    dict(slug='pydata',
+         name=f'{NAME_PREFIX} na akci datařů (PyData)',
+         poster_path='posters-meetups/pydata.png',
+         format='json-dl',
+         source_url='https://www.meetup.com/pydata-prague/'),
     dict(slug='reactgirls',
          name=f'{NAME_PREFIX} na akci React Girls',
          poster_path='posters-meetups/reactgirls.png',
@@ -37,6 +42,11 @@ FEEDS = [
          poster_path='posters-meetups/frontendisti.png',
          format='json-dl',
          source_url='https://www.meetup.com/frontendisti/events/'),
+    dict(slug='pehapkari',
+         name=f'{NAME_PREFIX} na akci péhápkářů',
+         poster_path='posters-meetups/pehapkari.png',
+         format='json-dl',
+         source_url='https://www.meetup.com/pehapkari/'),
 ]
 
 USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
