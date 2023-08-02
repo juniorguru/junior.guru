@@ -63,29 +63,23 @@ def test_message_listing_sort_from_the_oldest(test_db):
     message1 = create_message(1, user, created_at=datetime(2021, 10, 1))
     message2 = create_message(2, user, created_at=datetime(2021, 10, 20))
     message3 = create_message(3, user, created_at=datetime(2021, 10, 5))
-    message4 = create_message(
-        4, user, created_at=datetime(2021, 10, 5), is_private=True
-    )  # noqa
+    create_message(4, user, created_at=datetime(2021, 10, 5), is_private=True)
 
     assert list(ClubMessage.listing()) == [message1, message3, message2]
 
 
 def test_message_digest_listing(test_db):
     user = create_user(1)
-    message1 = create_message(
-        1, user, created_at=datetime(2021, 4, 30), upvotes_count=30
-    )  # noqa
+    create_message(1, user, created_at=datetime(2021, 4, 30), upvotes_count=30)
     message2 = create_message(2, user, created_at=datetime(2021, 5, 3), upvotes_count=5)
     message3 = create_message(
         3, user, created_at=datetime(2021, 5, 4), upvotes_count=10
     )
     message4 = create_message(4, user, created_at=datetime(2021, 5, 5), upvotes_count=4)
-    message5 = create_message(
-        5, user, created_at=datetime(2021, 5, 5), upvotes_count=3
-    )  # noqa
-    message6 = create_message(
+    create_message(5, user, created_at=datetime(2021, 5, 5), upvotes_count=3)
+    create_message(
         6, user, created_at=datetime(2021, 5, 5), upvotes_count=30, is_private=True
-    )  # noqa
+    )
 
     assert list(ClubMessage.digest_listing(date(2021, 5, 1), limit=3)) == [
         message3,
@@ -98,9 +92,7 @@ def test_message_digest_listing_ignores_certain_channels(test_db):
     user = create_user(1)
     message1 = create_message(1, user, upvotes_count=5)
     message2 = create_message(2, user, upvotes_count=10)
-    message3 = create_message(
-        3, user, upvotes_count=20, channel_id=ClubChannelID.INTRO
-    )  # noqa
+    create_message(3, user, upvotes_count=20, channel_id=ClubChannelID.INTRO)
 
     assert set(ClubMessage.digest_listing(date(2021, 5, 1), limit=3)) == {
         message1,
@@ -274,10 +266,10 @@ def test_message_channel_listing(test_db):
 
 
 def test_user_members_listing(test_db):
-    user1 = create_user(1, is_member=True, is_bot=True)  # noqa
+    create_user(1, is_member=True, is_bot=True)
     user2 = create_user(2, is_member=True, is_bot=False)
-    user3 = create_user(3, is_member=False, is_bot=True)  # noqa
-    user4 = create_user(4, is_member=False, is_bot=False)  # noqa
+    create_user(3, is_member=False, is_bot=True)
+    create_user(4, is_member=False, is_bot=False)
 
     assert list(ClubUser.members_listing()) == [user2]
 
@@ -332,7 +324,7 @@ def test_user_top_members_limit_rounds_up(test_db):
 
 def test_avatars_listing(test_db):
     user1 = create_user(1, avatar_path="avatars/1.png")
-    user2 = create_user(2)  # noqa
+    create_user(2)
     user3 = create_user(3, avatar_path="avatars/2.png")
     user4 = create_user(4, avatar_path="avatars/3.png")
 
@@ -342,13 +334,11 @@ def test_avatars_listing(test_db):
 def test_user_list_recent_messages(test_db):
     user = create_user(1)
 
-    message1 = create_message(1, user, created_at=datetime(2021, 3, 15))  # noqa
-    message2 = create_message(2, user, created_at=datetime(2021, 3, 31))  # noqa
+    create_message(1, user, created_at=datetime(2021, 3, 15))
+    create_message(2, user, created_at=datetime(2021, 3, 31))
     message3 = create_message(3, user, created_at=datetime(2021, 4, 1))
     message4 = create_message(4, user, created_at=datetime(2021, 4, 15))
-    message5 = create_message(
-        5, user, created_at=datetime(2021, 4, 16), is_private=True
-    )  # noqa
+    create_message(5, user, created_at=datetime(2021, 4, 16), is_private=True)
 
     assert list(user.list_recent_messages(today=date(2021, 5, 1))) == [
         message4,
@@ -359,8 +349,8 @@ def test_user_list_recent_messages(test_db):
 def test_user_list_recent_messages_private(test_db):
     user = create_user(1)
 
-    message1 = create_message(1, user, created_at=datetime(2021, 3, 15))  # noqa
-    message2 = create_message(2, user, created_at=datetime(2021, 3, 31))  # noqa
+    create_message(1, user, created_at=datetime(2021, 3, 15))
+    create_message(2, user, created_at=datetime(2021, 3, 31))
     message3 = create_message(3, user, created_at=datetime(2021, 4, 1))
     message4 = create_message(4, user, created_at=datetime(2021, 4, 15))
     message5 = create_message(
@@ -377,12 +367,8 @@ def test_user_list_recent_messages_private(test_db):
 def test_user_list_public_messages(test_db):
     user = create_user(1)
 
-    message1 = create_message(
-        1, user, created_at=datetime(2021, 3, 15), is_private=True
-    )  # noqa
-    message2 = create_message(
-        2, user, created_at=datetime(2021, 3, 31), is_private=True
-    )  # noqa
+    create_message(1, user, created_at=datetime(2021, 3, 15), is_private=True)
+    create_message(2, user, created_at=datetime(2021, 3, 31), is_private=True)
     message3 = create_message(3, user, created_at=datetime(2021, 4, 1))
     message4 = create_message(4, user, created_at=datetime(2021, 4, 15))
 
@@ -649,29 +635,21 @@ def test_user_recent_upvotes_count_skips_some_channels(test_db):
 
 def test_last_bot_message_filters_by_channel_id(test_db, juniorguru_bot):
     message1 = create_message(1, juniorguru_bot, content="🔥 abc", channel_id=123)
-    message2 = create_message(
-        2, juniorguru_bot, content="🔥 abc", channel_id=456
-    )  # noqa
+    create_message(2, juniorguru_bot, content="🔥 abc", channel_id=456)
 
     assert ClubMessage.last_bot_message(123, "🔥") == message1
 
 
 def test_last_bot_message_chooses_bot_message(test_db, juniorguru_bot):
-    message1 = create_message(
-        1, create_user(1), content="🔥 abc", channel_id=123
-    )  # noqa
+    create_message(1, create_user(1), content="🔥 abc", channel_id=123)
     message2 = create_message(2, juniorguru_bot, content="🔥 def", channel_id=123)
-    message3 = create_message(
-        3, create_user(2), content="🔥 ghe", channel_id=123
-    )  # noqa
+    create_message(3, create_user(2), content="🔥 ghe", channel_id=123)
 
     assert ClubMessage.last_bot_message(123, "🔥") == message2
 
 
 def test_last_bot_message_chooses_last_message(test_db, juniorguru_bot):
-    message1 = create_message(
-        1, juniorguru_bot, content="🔥 abc", channel_id=123
-    )  # noqa
+    create_message(1, juniorguru_bot, content="🔥 abc", channel_id=123)
     message2 = create_message(2, juniorguru_bot, content="🔥 def", channel_id=123)
 
     assert ClubMessage.last_bot_message(123, "🔥") == message2
@@ -679,16 +657,14 @@ def test_last_bot_message_chooses_last_message(test_db, juniorguru_bot):
 
 def test_last_bot_message_filters_by_emoji(test_db, juniorguru_bot):
     message1 = create_message(1, juniorguru_bot, content="🔥 abc", channel_id=123)
-    message2 = create_message(2, juniorguru_bot, content="def", channel_id=123)  # noqa
+    create_message(2, juniorguru_bot, content="def", channel_id=123)
 
     assert ClubMessage.last_bot_message(123, "🔥") == message1
 
 
 def test_last_bot_message_filters_by_emoji_and_text(test_db, juniorguru_bot):
     message1 = create_message(1, juniorguru_bot, content="🔥 abc", channel_id=123)
-    message2 = create_message(2, juniorguru_bot, content="def", channel_id=123)  # noqa
-    message3 = create_message(
-        3, juniorguru_bot, content="🔥 ghi", channel_id=123
-    )  # noqa
+    create_message(2, juniorguru_bot, content="def", channel_id=123)
+    create_message(3, juniorguru_bot, content="🔥 ghi", channel_id=123)
 
     assert ClubMessage.last_bot_message(123, "🔥", "ab") == message1

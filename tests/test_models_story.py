@@ -32,7 +32,7 @@ def test_listing_sorts_by_date_desc(test_db):
 
 def test_tag_listing(test_db):
     story1 = create_story(tags=["science", "age"])
-    story2 = create_story(tags=["science", "careerswitch"])  # noqa
+    create_story(tags=["science", "careerswitch"])
     story3 = create_story(tags=["age", "careerswitch"])
 
     assert set(Story.tag_listing("age")) == {story1, story3}

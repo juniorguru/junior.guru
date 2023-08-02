@@ -36,7 +36,7 @@ def test_db():
 def test_archive_listing(test_db):
     event1 = create_event(1, start_at=datetime(2021, 4, 15))
     event2 = create_event(2, start_at=datetime(2021, 5, 1))
-    event3 = create_event(3, start_at=datetime(2021, 5, 3))  # noqa
+    create_event(3, start_at=datetime(2021, 5, 3))
     event4 = create_event(4, start_at=datetime(2021, 3, 15))
 
     assert list(Event.archive_listing(now=datetime(2021, 5, 2))) == [
@@ -48,47 +48,47 @@ def test_archive_listing(test_db):
 
 def test_archive_listing_time(test_db):
     event1 = create_event(1, start_at=datetime(2021, 5, 2, 11))
-    event2 = create_event(2, start_at=datetime(2021, 5, 2, 22))  # noqa
+    create_event(2, start_at=datetime(2021, 5, 2, 22))
 
     assert list(Event.archive_listing(now=datetime(2021, 5, 2, 18))) == [event1]
 
 
 def test_planned_listing(test_db):
-    event1 = create_event(1, start_at=datetime(2021, 4, 15))  # noqa
+    create_event(1, start_at=datetime(2021, 4, 15))
     event2 = create_event(2, start_at=datetime(2021, 6, 1))
     event3 = create_event(3, start_at=datetime(2021, 5, 3))
-    event4 = create_event(4, start_at=datetime(2021, 3, 15))  # noqa
+    create_event(4, start_at=datetime(2021, 3, 15))
 
     assert list(Event.planned_listing(now=datetime(2021, 5, 2))) == [event3, event2]
 
 
 def test_planned_listing_time(test_db):
-    event1 = create_event(1, start_at=datetime(2021, 5, 2, 11))  # noqa
+    create_event(1, start_at=datetime(2021, 5, 2, 11))
     event2 = create_event(2, start_at=datetime(2021, 5, 2, 22))
 
     assert list(Event.planned_listing(now=datetime(2021, 5, 2, 18))) == [event2]
 
 
 def test_club_listing(test_db):
-    event1 = create_event(1, start_at=datetime(2021, 4, 15))  # noqa
+    create_event(1, start_at=datetime(2021, 4, 15))
     event2 = create_event(2, start_at=datetime(2021, 5, 1), avatar_path="alice.jpg")
-    event3 = create_event(3, start_at=datetime(2021, 5, 3))  # noqa
+    create_event(3, start_at=datetime(2021, 5, 3))
     event4 = create_event(4, start_at=datetime(2021, 3, 15), avatar_path="bob.jpg")
 
     assert list(Event.club_listing(now=datetime(2021, 5, 2))) == [event2, event4]
 
 
 def test_next(test_db):
-    event1 = create_event(1, start_at=datetime(2021, 4, 15))  # noqa
-    event2 = create_event(2, start_at=datetime(2021, 5, 1))  # noqa
+    create_event(1, start_at=datetime(2021, 4, 15))
+    create_event(2, start_at=datetime(2021, 5, 1))
     event3 = create_event(3, start_at=datetime(2021, 5, 3))
-    event4 = create_event(4, start_at=datetime(2021, 3, 15))  # noqa
+    create_event(4, start_at=datetime(2021, 3, 15))
 
     assert Event.next(now=datetime(2021, 5, 2)) == event3
 
 
 def test_next_time_before(test_db):
-    event1 = create_event(1, start_at=datetime(2021, 5, 2, 11))  # noqa
+    create_event(1, start_at=datetime(2021, 5, 2, 11))
     event2 = create_event(2, start_at=datetime(2021, 5, 2, 22))
 
     assert Event.next(now=datetime(2021, 5, 2, 18)) == event2
@@ -102,10 +102,10 @@ def test_next_time_after(test_db):
 
 
 def test_next_many_planned(test_db):
-    event1 = create_event(1, start_at=datetime(2021, 4, 15))  # noqa
-    event2 = create_event(2, start_at=datetime(2021, 6, 1))  # noqa
+    create_event(1, start_at=datetime(2021, 4, 15))
+    create_event(2, start_at=datetime(2021, 6, 1))
     event3 = create_event(3, start_at=datetime(2021, 5, 3))
-    event4 = create_event(4, start_at=datetime(2021, 3, 15))  # noqa
+    create_event(4, start_at=datetime(2021, 3, 15))
 
     assert Event.next(now=datetime(2021, 5, 2)) == event3
 
@@ -129,7 +129,7 @@ def test_list_speaking_members(test_db):
     EventSpeaking.create(event=event2, speaker=member2)
     EventSpeaking.create(event=event2, speaker=member3)
 
-    member4 = create_member(4)  # noqa
+    create_member(4)
 
     assert set(Event.list_speaking_members()) == {member1, member2, member3}
 

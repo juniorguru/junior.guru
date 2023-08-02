@@ -95,9 +95,7 @@ def test_partner_name_markdown_bold(test_db):
 def test_partner_active_partnership(test_db):
     today = date(2021, 5, 2)
     partner = create_partner(1)
-    partnership1 = create_partnership(
-        partner, date(2020, 12, 1), date(2021, 1, 1)
-    )  # noqa
+    create_partnership(partner, date(2020, 12, 1), date(2021, 1, 1))
     partnership2 = create_partnership(partner, date(2021, 4, 1), None)
 
     assert partner.active_partnership(today=today) == partnership2
@@ -121,7 +119,7 @@ def test_partner_active_partnership_no_partnership(test_db):
 def test_partner_first_partnership(test_db):
     partner = create_partner(1)
     partnership1 = create_partnership(partner, date(2020, 12, 1), date(2021, 1, 1))
-    partnership2 = create_partnership(partner, date(2021, 4, 1), None)  # noqa
+    create_partnership(partner, date(2021, 4, 1), None)
 
     assert partner.first_partnership() == partnership1
 
@@ -225,9 +223,9 @@ def test_partner_list_members(test_db):
     member2 = ClubUser.create(
         display_name="Alice", mention="<@222>", coupon="XEROX", tag="abc#1234"
     )
-    member3 = ClubUser.create(
+    ClubUser.create(
         display_name="Celine", mention="<@333>", coupon="ZALANDO", tag="abc#1234"
-    )  # noqa
+    )
     partner = create_partner(1, coupon="XEROX")
 
     assert list(partner.list_members) == [member2, member1]
@@ -240,9 +238,9 @@ def test_partner_list_student_members(test_db):
     member2 = ClubUser.create(
         display_name="Alice", mention="<@222>", coupon="XEROXSTUDENT", tag="abc#1234"
     )
-    member3 = ClubUser.create(
+    ClubUser.create(
         display_name="Celine", mention="<@333>", coupon="ZALANDOSTUDENT", tag="abc#1234"
-    )  # noqa
+    )
     partner = create_partner(1, student_coupon="XEROXSTUDENT")
 
     assert list(partner.list_student_members) == [member2, member1]
@@ -266,9 +264,9 @@ def test_partner_list_jobs(test_db):
         return listed_job
 
     job1 = create_job("1", "Harley-Davidson", title="Job XYZ")
-    job2 = create_job("2", "Harley Davidson")  # noqa
+    create_job("2", "Harley Davidson")
     job3 = create_job("3", "Harley-Davidson", title="Job ABC")
-    job4 = create_job("4", "harley-davidson")  # noqa
+    create_job("4", "harley-davidson")
     partner = create_partner(1, name="Harley-Davidson")
 
     assert list(partner.list_jobs) == [job3, job1]
@@ -287,7 +285,7 @@ def test_partner_list_events(test_db):
         )
 
     partner = create_partner(1)
-    event1 = create_event("1")  # noqa
+    create_event("1")
     event2 = create_event("2", partner)
     event3 = create_event("3", partner)
     assert set(partner.list_events) == {event2, event3}
@@ -309,7 +307,7 @@ def test_partner_list_podcast_episodes(test_db):
         )
 
     partner = create_partner(1)
-    episode1 = create_episode("1")  # noqa
+    create_episode("1")
     episode2 = create_episode("2", partner)
     episode3 = create_episode("3", partner)
     assert set(partner.list_podcast_episodes) == {episode2, episode3}
@@ -469,12 +467,8 @@ def test_partnership_evaluate_benefits_registry_overrides_evaluators(test_db):
 
 def test_partnership_active_listing(test_db):
     today = date(2021, 5, 2)
-    partnership1 = create_partnership(
-        create_partner(1), today, date(2021, 4, 1)
-    )  # noqa
-    partnership2 = create_partnership(
-        create_partner(2), today, date(2021, 5, 1)
-    )  # noqa
+    create_partnership(create_partner(1), today, date(2021, 4, 1))
+    create_partnership(create_partner(2), today, date(2021, 5, 1))
     partnership3 = create_partnership(create_partner(3), today, date(2021, 5, 2))
     partnership4 = create_partnership(create_partner(4), today, date(2021, 5, 3))
 
@@ -492,7 +486,7 @@ def test_partnership_active_listing_with_barters(test_db):
 def test_partnership_active_listing_without_barters(test_db):
     today = date(2021, 5, 1)
     partnership1 = create_partnership(create_partner(1), today, date(2021, 5, 1))
-    partnership2 = create_partnership(create_partner(2), today, None)  # noqa
+    create_partnership(create_partner(2), today, None)
 
     assert set(Partnership.active_listing(today=today, include_barters=False)) == {
         partnership1
@@ -503,7 +497,7 @@ def test_partnership_active_listing_skips_planned(test_db):
     today = date(2021, 5, 2)
     partnership1 = create_partnership(create_partner(1), date(2021, 5, 1), None)
     partnership2 = create_partnership(create_partner(2), date(2021, 5, 2), None)
-    partnership3 = create_partnership(create_partner(3), date(2021, 5, 3), None)  # noqa
+    create_partnership(create_partner(3), date(2021, 5, 3), None)
 
     assert set(Partnership.active_listing(today=today)) == {partnership1, partnership2}
 
@@ -533,9 +527,7 @@ def test_partnership_active_listing_sorts_by_hierarchy_rank_then_by_name(
 def test_partnership_active_listing_multiple_partnerships(test_db):
     today = date(2023, 6, 1)
     partner1 = create_partner(1)
-    partnership_a = create_partnership(
-        partner1, date(2023, 2, 1), date(2023, 5, 1)
-    )  # noqa
+    create_partnership(partner1, date(2023, 2, 1), date(2023, 5, 1))
     partnership_b = create_partnership(partner1, date(2023, 5, 15), None)
 
     assert list(Partnership.active_listing(today=today)) == [partnership_b]
@@ -543,17 +535,13 @@ def test_partnership_active_listing_multiple_partnerships(test_db):
 
 def test_partnership_handbook_listing(test_db, plan_basic, plan_handbook):
     partner1 = create_partner(1)
-    partnership1 = create_partnership(
-        partner1, date(2023, 1, 1), None, plan=plan_basic
-    )  # noqa
+    create_partnership(partner1, date(2023, 1, 1), None, plan=plan_basic)
     partner2 = create_partner(2)
     partnership2 = create_partnership(
         partner2, date(2023, 1, 1), None, plan=plan_handbook
     )
     partner3 = create_partner(3)
-    partnership3 = create_partnership(
-        partner3, date(2023, 1, 1), None, plan=plan_basic
-    )  # noqa
+    create_partnership(partner3, date(2023, 1, 1), None, plan=plan_basic)
 
     assert list(Partnership.handbook_listing()) == [partnership2]
 
