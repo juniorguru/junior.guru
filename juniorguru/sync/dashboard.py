@@ -3,8 +3,6 @@ from datetime import date
 from operator import attrgetter
 from textwrap import dedent
 
-import feedparser
-import requests
 from discord import Color, Embed
 
 from juniorguru.cli.sync import main as cli
@@ -12,6 +10,7 @@ from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubChannelID, ClubClient
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
+from juniorguru.models.blog import BlogArticle
 from juniorguru.models.club import ClubDocumentedRole, ClubMessage, ClubUser
 from juniorguru.models.event import Event
 from juniorguru.models.partner import Partnership
@@ -19,10 +18,6 @@ from juniorguru.models.subscription import SubscriptionActivity
 
 
 TODAY = date.today()
-
-BLOG_RSS_URL = 'https://honzajavorek.cz/feed.xml'
-
-BLOG_WEEKNOTES_PREFIX = 'Týdenní poznámky'
 
 EVENTS_LIMIT = 10
 
@@ -34,7 +29,8 @@ logger = loggers.from_path(__file__)
                                 'partners',
                                 'events',
                                 'subscriptions',
-                                'roles'])
+                                'roles',
+                                'blog'])
 def main():
     discord_sync.run(discord_task)
 
@@ -134,17 +130,11 @@ def format_event(event):
 def render_open():
     members_total_count = ClubUser.members_count()
     members_women_ptc = SubscriptionActivity.active_women_ptc(TODAY)
-
-    response = requests.get(BLOG_RSS_URL)
-    response.raise_for_status()
-    blog_entries = [entry for entry in feedparser.parse(response.content).entries
-                    if entry.title.startswith(BLOG_WEEKNOTES_PREFIX)]
-    blog_entries = sorted(blog_entries, key=attrgetter('published'), reverse=True)
-    last_blog_entry = blog_entries[0]
+    blog_article = BlogArticle.latest()
 
     description = ', '.join([
         f'🙋 {members_total_count} členů v klubu, z toho asi {members_women_ptc} % žen',
-        f'📝 [{last_blog_entry.title}]({last_blog_entry.link})',
+        f'📝 [{blog_article.title}]({blog_article.url})',
         '📊 [Návštěvnost webu](https://simpleanalytics.com/junior.guru)',
         '<:github:842685206095724554> [Zdrojový kód](https://github.com/honzajavorek/junior.guru)',
         '📈 [Další čísla a grafy](https://junior.guru/open/)',

@@ -3,23 +3,39 @@ title: Jak se daří provozovat junior.guru
 description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior.guru?
 ---
 
-{% from 'macros.html' import note, partner_link with context %}
+{% from 'macros.html' import note, partner_link, lead with context %}
 
 # Čísla a grafy
 
-Stránku jsem vytvořil po vzoru [jiných otevřených projektů](https://openstartuplist.com/). Tyto grafy a čísla stejně potřebuji pro svou vlastní potřebu, takže proč je v rámci transparentnosti nemít rovnou na webu, že?
+{% call lead() %}
+Jmenuji se Honza Javorek a provozuji junior.guru. Tuto stránku jsem vytvořil po vzoru [jiných otevřených projektů](https://openstartuplist.com/). Čísla a grafy stejně potřebuji pro svou vlastní potřebu, takže proč je v rámci transparentnosti nemít rovnou na webu, že?
+{% endcall %}
 
 [TOC]
 
-{% call note() %}
-  {{ 'bar-chart-line'|icon }} Finanční data se každý den stahují přímo z mého podnikatelského účtu u Fio banky. Používám [svou vlastní Python knihovnu](https://pypi.org/project/fiobank/), kterou jsem kdysi vytvořil.
-{% endcall %}
+## Plány na rok 2023
+
+Plnění mých [plánů na rok 2023](https://honzajavorek.cz/blog/strategie-na-2023/) lze sledovat [na GitHubu](https://github.com/orgs/juniorguru/projects/1/).
+
+## Týdenní poznámky
+
+Od května 2020 píšu na svůj osobní blog týdenní poznámky, ve kterých popisuji, jak makám na junior.guru.
+Pomáhá mi to s páteční psychikou a zároveň si u toho uspořádám myšlenky.
+Tady je posledních pět článků:
+
+{% for blog_article in blog[:5] %}
+-   [{{ blog_article.title }}]({{ blog_article.url }}), {{ '{:%-d.%-m.%Y}'.format(blog_article.published_on) }}
+{% endfor %}
 
 ## Čistý zisk
 
 Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde z mého podnikání přímo do rodinného rozpočtu. Aktuální čistý zisk junior.guru je **{{ profit_ttm|thousands }} Kč měsíčně**. Spočítáno jako zisk za posledních 12 měsíců (TTM, _trailing twelve months_) vydělený 12.
 
 Občas si čtu o zahraničních podnikavcích, kteří taky otevřeně sdílí svoje výdělky. Mají to však v jiné měně, tak se mi to špatně srovnává. Proto jsem si to přepočítal. Podle pondělních kurzů ČNB mám zhruba **${{ profit_ttm_usd|thousands }}** nebo **{{ profit_ttm_eur|thousands }}€** čistého měsíčně.
+
+{% call note() %}
+  {{ 'bar-chart-line'|icon }} Finanční data se každý den stahují přímo z mého podnikatelského účtu u Fio banky.
+{% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -108,9 +124,13 @@ Na junior.guru pracuji na plný úvazek, mám malé dítě, ženu na rodičovsk�
 
 ## Výnosy a náklady
 
-Následující graf zobrazuje vývoj mých výnosů a nákladů v každém konkrétním měsíci. Tenké linky zobrazují totéž, ale vždy za posledních 12 měsíců (TTM, _trailing twelve months_), vyděleno 12. Výnosy ani náklady totiž nejsou vždy pravidelného, měsíčního charakteru, jeden měsíc vydělám víc, jiný méně, stejné je to s výdaji. Zároveň nemám s nikým delší kontrakt než roční, ať už jsou to jednotlivci nebo firmy. Číslo za rok tedy stírá tyto skoky nahoru a dolů, ale protože můj byznys roste rychleji než ročním tempem, tak zase ukazuje možná menší číslo, než je realitou za poslední půlrok, čtvrtrok.
+Silné čáry zobrazují vývoj mých výnosů a nákladů v každém konkrétním měsíci. Tenké linky zobrazují totéž, ale vždy za posledních 12 měsíců (TTM, _trailing twelve months_), vyděleno 12. Čistý zisk je rozdíl mezi modrou a červenou čárou.
 
-Čísla z konkrétních mesíců tedy pomáhají odtušit aktuální trendy. Čistý zisk je rozdíl mezi modrou a červenou čárou.
+Moje výnosy ani náklady nemají pravidelný, měsíční charakter. Jeden měsíc vydělám víc, jiný méně, stejné je to s výdaji. Zároveň nemám s nikým delší kontrakt než roční, ať už jsou to jednotlivci nebo firmy. TTM tedy stírá tyto skoky nahoru a dolů, ale protože můj byznys roste rychleji než ročním tempem, tak zase ukazuje možná menší číslo, než je realitou za poslední půlrok, čtvrtrok. Tu ukazují silné čáry.
+
+{% call note() %}
+  {{ 'bar-chart-line'|icon }} Finanční data se každý den stahují přímo z mého podnikatelského účtu u Fio banky.
+{% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -155,13 +175,14 @@ Původně jsem se snažil junior.guru živit z inzerce nabídek práce, ale byzn
 
 Ke konci roku 2020 jsem se rozhodl změnit byznys model a vytvořit kolem junior.guru placenou komunitu na Discordu. Toto detailně popisuji ve svém [článku na blogu](https://honzajavorek.cz/blog/spoustim-klub/). [Klub](club.md) se veřejnosti otevřel v únoru 2021.
 
-V ideálním případě by mě živilo individuální členství lidí v klubu, protože je to pravidelný, předvídatelný příjem, který mi navíc zajišťuje největší nezávislost.
+V ideálním případě by mě živilo individuální členství lidí v klubu, protože je to pravidelný, předvídatelný příjem, který mi navíc zajišťuje největší nezávislost. Individuální členství ale nevystačí, takže si domlouvám i [partnerství s firmami](#firemni-partnerstvi). Jsou z toho větší jednorázové příjmy, které lze obtížně předvídat a mohou ovlivňovat mou kritičnost k firmám, se kterými spolupracuji.
+Proto všechna partnerství [transparentně popisuji](#firemni-partnerstvi).
 
-Individuální členství ale nevystačí, takže si domlouvám i [partnerství s firmami](#firemni-partnerstvi). Jsou z toho větší jednorázové příjmy, které lze obtížně předvídat a mohou ovlivňovat mou kritičnost k firmám, se kterými spolupracuji.
+V počátcích mohlo junior.guru existovat z velké části jen díky dobrovolným příspěvkům. Když jsem našel funkční byznys model, možnost přispět jsem přestal propagovat a snažím se postavit na vlastní nohy.
 
-Inzerci nabídek práce nechci zrušit, ale aktuálně není na vrcholu mých priorit. Pokud, tak spíše v podobě dlouhodobého partnerství s firmou, než formou jednorázových inzerátů.
-
-Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velkou měrou právě díky nim junior.guru ve svých počátcích neskončilo. Teď je ale čas postavit se na vlastní nohy! Možnost přispět zřejmě nezruším, ale přestal jsem ji propagovat. Chtěl bych, aby dobrovolné příspěvky jednou plně nahradilo individuální členství v klubu.
+{% call note() %}
+  {{ 'bar-chart-line'|icon }} Finanční data se každý den stahují přímo z mého podnikatelského účtu u Fio banky.
+{% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -200,9 +221,9 @@ Dobrovolné příspěvky stále hrají významnou roli v mých příjmech a velk
 
 ### Proč tu není MRR
 
-MRR znamená _monthly recurring revenue_ a je základní metrikou většiny online byznysů, které jsou vedeny jako pravidelně placená služba. Je to součet výnosů, které mi pravidelně měsíčně chodí na účet skrze předplatné, tedy pravidelný příjem, na který se dá spolehnout. I když junior.guru je služba s členstvím na měsíční bázi a MRR by spočítat šlo, nakonec jsem se rozhodl jej zatím neřešit a dívám se spíš na ono TTM vydělené 12.
+MRR znamená _monthly recurring revenue_ a je základní metrikou většiny online byznysů, které jsou vedeny jako pravidelně placená služba. Je to součet výnosů, které mi pravidelně měsíčně chodí na účet skrze předplatné, tedy pravidelný příjem, na který se dá spolehnout. I když je junior.guru služba s členstvím na měsíční bázi a MRR by spočítat šlo, nakonec jsem se rozhodl jej zatím neřešit a dívám se spíš na ono TTM vydělené 12.
 
-Jedním důvodem je složitost výpočtu. Data beru z bankovního účtu, kam mi ale nechodí částky za jednotlivé lidi. Stripe mi vždy posílá úhrnné částky za několik týdnů zpětně. Musel bych brát data zvlášť z Memberful. Navíc prodávám i roční členství, které bych musel rozpočítávat.
+Jedním důvodem je složitost výpočtu. Data beru z bankovního účtu, kam mi ale nechodí částky za jednotlivé lidi. Platební brána mi vždy posílá úhrnné částky za několik týdnů zpětně. Musel bych sbírat data z více zdrojů. Navíc prodávám i roční členství, které bych musel rozpočítávat.
 
 Druhým důvodem je malá vypovídající hodnota. Velkou část výnosů tvoří kontrakty s firmami, jež jsou nárazovým, ale ve svém množství poměrně stabilním příjmem. Pravidelné příjmy mám zase i z dobrovolných příspěvků, jež bych do MRR započítával jen velice složitě. Aby bylo číslo přesné, musel bych mít data o tom, jak přesně kdo přispívá přes Patreon nebo GitHub Sponsors, což se mi nevyplatí řešit.
 
@@ -211,6 +232,10 @@ Druhým důvodem je malá vypovídající hodnota. Velkou část výnosů tvoř�
 Zahrnuji pouze náklady na byznys, ale zase i s daněmi a odvody na zdravotní a sociální pojištění. V roce 2020 je v nich díra, protože kvůli covidu-19 nebyla povinnost je platit. Občas jdou do mínusu (stává se z nich příjem), protože mi úřady něco vrátily.
 
 Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů jako Buffer nebo MailChimp, tisk samolepek, [konzultace](http://janadolejsova.cz/), apod.
+
+{% call note() %}
+  {{ 'bar-chart-line'|icon }} Finanční data se každý den stahují přímo z mého podnikatelského účtu u Fio banky.
+{% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -348,6 +373,7 @@ Pouze orientační metrika. Nechci sledovat a glorifikovat _engagement_, protož
 ### Počet online akcí v klubu
 
 Chtěl bych mít v klubu v průměru aspoň dvě oficiální online akce měsíčně.
+Přes léto je většinou pauza.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -377,8 +403,7 @@ Chtěl bych mít v klubu v průměru aspoň dvě oficiální online akce měsí�
 
 ## Členství v klubu
 
-[Placený klub](club.md) jsem [spustil](https://honzajavorek.cz/blog/spoustim-klub/) v únoru 2021. Když nepočítám roboty, tak je teď na Discordu **{{ members_total_count }} členů**.
-
+Když nepočítám roboty, je teď na Discordu **{{ members_total_count }} členů**.
 Historická data v grafech jsou z Memberful, služby, která se mi stará o registrace a placení.
 Čísla se mohou lišit, protože když někdo ukončí členství a smaže svůj účet, ze statistik zmizí.
 Také ne každý, kdo se zaregistroval, je i na Discordu.
@@ -596,9 +621,10 @@ Propady nastávají, pokud do klubu přijdou noví lidé, kteří tam ale nevydr
         'plugins': {'annotation': charts.subscriptions_duration_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-## Retence
+## Retence klubu
 
 Procento členů, kteří z klubu odcházejí, neboli _churn_.
+Opět platí, že silná čára je celkový _churn_, zatímco tenká se týká jen členů, kteří si klub platili za svoje.
 
 {% call note() %}
   {{ 'trash'|icon }} Po zdražení členství jsem si uklízel v administraci a smazal jsem staré tarify. Tím se mi povedlo omylem nenávratně smazat historická data, takže něco v grafu začíná až v březnu 2023.
@@ -717,7 +743,7 @@ Procenta nejsou podíl ze všech, kdo odešli, ale z **{{ charts.total_cancellat
     }|tojson|forceescape }}"
     data-chart-milestones-offset-ptc="0"></canvas></div></div>
 
-## Marketing
+## Marketingové kanály klubu
 
 ### Výkonnost kanálů podle ankety
 
@@ -832,13 +858,42 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích.
         'plugins': {'annotation': charts.followers_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-## Návštěvnost
+## Návštěvnost webu
 
 Návštěvnost měří [Simple Analytics](https://www.simpleanalytics.com/?referral=honza-javorek) a veškerá čísla jsou [veřejná](https://simpleanalytics.com/junior.guru).
 Tady jen pár vybraných grafů, které se tam špatně naklikávají ručně.
 Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
 
+### Celková návštěvnost
+
+Většinou je nejvyšší v lednu a nejnižší v létě.
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.web_usage_total_labels,
+        'datasets': [
+            {
+                'label': 'celková návštěvnost',
+                'data': charts.web_usage_total,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.web_usage_total_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
 ### Souhrnná návštěvnost podle produktů
+
+Nad jednotlivými částmi junior.guru přemýšlím jako nad produkty.
+Graf mi pomáhá zjistit, jak velkou návštěvnost přitahuje každý z nich.
+Při čtení grafu je ale dobré si uvědomit, že návštěvnost není vše.
+Například klub nebo podcast mají „to hlavní“ jinde než na webu.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -891,28 +946,6 @@ Grafy zobrazují trend pouze zpětně za jeden rok, protože mi to tak stačí.
         'plugins': {'annotation': charts.web_usage_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-### Celková návštěvnost
-
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="230"
-    data-chart-type="line"
-    data-chart="{{ {
-        'labels': charts.web_usage_total_labels,
-        'datasets': [
-            {
-                'label': 'celková návštěvnost',
-                'data': charts.web_usage_total,
-                'borderColor': '#638cdd',
-                'borderWidth': 2,
-            },
-        ]
-    }|tojson|forceescape }}"
-    data-chart-options="{{ {
-        'interaction': {'mode': 'index'},
-        'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.web_usage_total_annotations},
-    }|tojson|forceescape }}"></canvas></div></div>
-
 ### Registrace do klubu podle předchozí stránky
 
 Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
@@ -941,7 +974,7 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_internal
 ### Peníze za členství v klubu podle předchozí stránky
 
 Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
-Graf ukazuje, kolik takhle jednotlivé stránky na junior.guru přinesly peněz.
+Graf ukazuje, kolik takhle jednotlivé stránky skrze klub přinesly peněz.
 Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_spend_internal_referrer_breakdown_count }}** lidí, kteří měli za poslední půlrok _referrer_ z junior.guru.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -968,13 +1001,14 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_spend_in
 
 Orientační metriky co se týče stránek v [příručce](handbook/index.md).
 Všechny soubory spadající pod příručku mají aktuálně **{{ handbook_total_size|thousands }}** znaků.
-[Podle Wikipedie](https://cs.wikipedia.org/wiki/Diplomov%C3%A1_pr%C3%A1ce) je 180.000 znaků doporučovaná velikost disertační práce (titul Ph.D.).
-
 Počítání znaků v souborech, kde se míchají Markdown a Jinja2 značky, má spoustu vad, ale aspoň něco.
-Příliš velké stránky bych měl nejspíš zkrátit, nebo rozdělit do více menších.
+[Podle Wikipedie](https://cs.wikipedia.org/wiki/Diplomov%C3%A1_pr%C3%A1ce) je 180.000 znaků doporučovaná velikost disertační práce (titul Ph.D.).
 
 Když chci na nějaké stránce něco doplnit, dělám si na jejím konci HTML komentář a do něj si ukládám nepříliš strukturované poznámky.
 Ty se taky započítají do celkové velikosti, ale v grafu je jejich velikost zobrazena šedě, abych tušil, jaký je poměr a kde na mě ještě čeká kolik práce.
+
+Příliš velké stránky bych měl nejspíš zkrátit, nebo rozdělit do více menších.
+Ideální stránka příručky by měla pouze modrý sloupeček a ten by nesahal výše než k červené čáře.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -1092,7 +1126,3 @@ Sice do toho Pavlíně nekecám, ale za mě by bylo fajn, kdyby v průměru polo
 ## Kód
 
 Práci na kódu lze sledovat [na GitHubu](https://github.com/honzajavorek/junior.guru/graphs/contributors).
-
-## Plány na rok 2023
-
-Plnění mých [plánů na rok 2023](https://honzajavorek.cz/blog/strategie-na-2023/) lze sledovat [na GitHubu](https://github.com/orgs/juniorguru/projects/1/).

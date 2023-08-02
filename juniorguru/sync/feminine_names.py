@@ -17,7 +17,7 @@ WIKI_URL = 'https://cs.wikipedia.org/wiki/Seznam_nej%C4%8Dast%C4%9Bj%C5%A1%C3%AD
 EXTRA_NAMES = [
     'Kayla', 'Hannah', 'Alisa', 'Hany', 'Evgenia', 'Kate', 'Lindice',
     'Anastasija', 'Anastassiya', 'Nataliya', 'Dinara', 'Eleanor',
-    'Darja', 'Tina', 'Katarína', 'Lívia',
+    'Darja', 'Tina', 'Katarína', 'Lívia', 'Rozvita',
 ]
 
 

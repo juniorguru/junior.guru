@@ -5,6 +5,7 @@ import arrow
 
 from juniorguru.lib.benefits_evaluators import BENEFITS_EVALUATORS
 from juniorguru.models.base import db
+from juniorguru.models.blog import BlogArticle
 from juniorguru.models.chart import Chart
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.course_provider import CourseProvider
@@ -87,6 +88,7 @@ def on_docs_context(context):
     context['jobs_volunteering'] = ListedJob.volunteering_listing()
 
     # open.md
+    context['blog'] = BlogArticle.listing()
     context['partners_expired'] = Partner.expired_listing()
     context['handbook_total_size'] = Page.handbook_total_size()
     context['charts'] = Chart.as_dict()
