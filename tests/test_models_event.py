@@ -9,20 +9,23 @@ from testing_utils import prepare_test_db
 
 
 def create_member(id):
-    return ClubUser.create(id=id,
-                           display_name=f"Jane Doe {id}",
-                           mention=f"<#{id}>",
-                           tag='abc#1234')
+    return ClubUser.create(
+        id=id, display_name=f"Jane Doe {id}", mention=f"<#{id}>", tag="abc#1234"
+    )
 
 
 def create_event(id, **kwargs):
-    return Event.create(id=id, **{
-        'title': f"Event #{id}",
-        'description': 'Markdown **description** of the _event_.',
-        'bio_name': 'Jane Doe',
-        'bio': 'Jane Doe is so anonymous that we do not really know anything about her.',
-        'start_at': datetime.now(),
-    **kwargs})
+    return Event.create(
+        id=id,
+        **{
+            "title": f"Event #{id}",
+            "description": "Markdown **description** of the _event_.",
+            "bio_name": "Jane Doe",
+            "bio": "Jane Doe is so anonymous that we do not really know anything about her.",
+            "start_at": datetime.now(),
+            **kwargs,
+        },
+    )
 
 
 @pytest.fixture
@@ -36,7 +39,11 @@ def test_archive_listing(test_db):
     event3 = create_event(3, start_at=datetime(2021, 5, 3))  # noqa
     event4 = create_event(4, start_at=datetime(2021, 3, 15))
 
-    assert list(Event.archive_listing(now=datetime(2021, 5, 2))) == [event2, event1, event4]
+    assert list(Event.archive_listing(now=datetime(2021, 5, 2))) == [
+        event2,
+        event1,
+        event4,
+    ]
 
 
 def test_archive_listing_time(test_db):
@@ -64,9 +71,9 @@ def test_planned_listing_time(test_db):
 
 def test_club_listing(test_db):
     event1 = create_event(1, start_at=datetime(2021, 4, 15))  # noqa
-    event2 = create_event(2, start_at=datetime(2021, 5, 1), avatar_path='alice.jpg')
+    event2 = create_event(2, start_at=datetime(2021, 5, 1), avatar_path="alice.jpg")
     event3 = create_event(3, start_at=datetime(2021, 5, 3))  # noqa
-    event4 = create_event(4, start_at=datetime(2021, 3, 15), avatar_path='bob.jpg')
+    event4 = create_event(4, start_at=datetime(2021, 3, 15), avatar_path="bob.jpg")
 
     assert list(Event.club_listing(now=datetime(2021, 5, 2))) == [event2, event4]
 
@@ -130,10 +137,10 @@ def test_list_speaking_members(test_db):
 def test_url(test_db):
     event = create_event(1, start_at=datetime(2021, 5, 17, 16, 30, 00))
 
-    assert event.url == 'https://junior.guru/events/#2021-05-17T18-30-00'
+    assert event.url == "https://junior.guru/events/#2021-05-17T18-30-00"
 
 
 def test_slug(test_db):
     event = create_event(1, start_at=datetime(2021, 5, 17, 16, 30, 00))
 
-    assert event.slug == '2021-05-17T18-30-00'
+    assert event.slug == "2021-05-17T18-30-00"

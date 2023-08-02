@@ -15,18 +15,22 @@ def test_db():
 def create_transaction(id, **kwargs):
     return Transaction.create(
         id=id,
-        happened_on=kwargs.get('happened_on', date.today() - timedelta(days=3)),
-        category=kwargs.get('category', 'abcd'),
-        amount=kwargs.get('amount', 1038)
+        happened_on=kwargs.get("happened_on", date.today() - timedelta(days=3)),
+        category=kwargs.get("category", "abcd"),
+        amount=kwargs.get("amount", 1038),
     )
 
 
 def test_listing_sorts_from_newest_to_oldest(test_db):
-    t1 = create_transaction('1', happened_on=date(2021, 8, 31))
-    t2 = create_transaction('2', happened_on=date(2021, 8, 1))
-    t3 = create_transaction('3', happened_on=date(2021, 8, 15))
+    t1 = create_transaction("1", happened_on=date(2021, 8, 31))
+    t2 = create_transaction("2", happened_on=date(2021, 8, 1))
+    t3 = create_transaction("3", happened_on=date(2021, 8, 15))
 
-    assert list(Transaction.listing(date(2021, 1, 1), date(2021, 12, 31))) == [t1, t3, t2]
+    assert list(Transaction.listing(date(2021, 1, 1), date(2021, 12, 31))) == [
+        t1,
+        t3,
+        t2,
+    ]
 
 
 # def test_ttm_listing_uses_today_implicitly(test_db):

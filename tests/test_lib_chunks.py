@@ -30,5 +30,3 @@ def test_chunk_returns_last_chunk_incomplete():
     iterable = [1, 2, 3, 4, 5]
 
     assert list(chunks(iterable, size=2)) == [[1, 2], [3, 4], [5]]
-
-

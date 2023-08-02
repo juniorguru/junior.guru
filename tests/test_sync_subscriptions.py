@@ -2,7 +2,8 @@ from datetime import date, datetime
 
 import pytest
 
-from juniorguru.sync.subscriptions import activities_from_subscription, get_coupon_slug, get_timestamp
+from juniorguru.sync.subscriptions import (activities_from_subscription,
+                                           get_coupon_slug, get_timestamp)
 
 
 def test_activities_from_subscription():
@@ -74,11 +75,14 @@ def test_activities_from_subscription():
     ]
 
 
-@pytest.mark.parametrize('coupon_data, expected', [
-    ({'code': 'THANKYOU1234567890'}, 'thankyou'),
-    ({'code': None}, None),
-    (None, None),
-])
+@pytest.mark.parametrize(
+    "coupon_data, expected",
+    [
+        ({"code": "THANKYOU1234567890"}, "thankyou"),
+        ({"code": None}, None),
+        (None, None),
+    ],
+)
 def test_get_coupon_slug(coupon_data, expected):
     assert get_coupon_slug(coupon_data) == expected
 

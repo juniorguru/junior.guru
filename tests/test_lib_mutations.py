@@ -18,7 +18,7 @@ def global_state():
         save_global_state(dump)
 
 
-class Something():
+class Something:
     def __init__(self, property):
         self.property = property
 
@@ -31,16 +31,18 @@ class Something():
 
 
 def test_basic_usage(global_state):
-    allow('discord')
+    allow("discord")
 
-    @mutates('fakturoid')
+    @mutates("fakturoid")
     def fakturoid():
         return 1
+
     value_f = fakturoid()
 
-    @mutates('discord')
+    @mutates("discord")
     def discord():
         return 2
+
     value_d = discord()
 
     assert isinstance(value_f, MutationsNotAllowedError)
@@ -49,16 +51,18 @@ def test_basic_usage(global_state):
 
 @pytest.mark.asyncio
 async def test_basic_usage_async(global_state):
-    allow('discord')
+    allow("discord")
 
-    @mutates('fakturoid')
+    @mutates("fakturoid")
     async def fakturoid():
         return 1
+
     value_f = await fakturoid()
 
-    @mutates('discord')
+    @mutates("discord")
     async def discord():
         return 2
+
     value_d = await discord()
 
     assert isinstance(value_f, MutationsNotAllowedError)
@@ -66,16 +70,18 @@ async def test_basic_usage_async(global_state):
 
 
 def test_allow_multiple(global_state):
-    allow('fakturoid', 'discord')
+    allow("fakturoid", "discord")
 
-    @mutates('fakturoid')
+    @mutates("fakturoid")
     def fakturoid():
         return 1
+
     value_f = fakturoid()
 
-    @mutates('discord')
+    @mutates("discord")
     def discord():
         return 2
+
     value_d = discord()
 
     assert value_f == 1
@@ -85,14 +91,16 @@ def test_allow_multiple(global_state):
 def test_allow_all(global_state):
     allow_all()
 
-    @mutates('fakturoid')
+    @mutates("fakturoid")
     def fakturoid():
         return 1
+
     value_f = fakturoid()
 
-    @mutates('discord')
+    @mutates("discord")
     def discord():
         return 2
+
     value_d = discord()
 
     assert value_f == 1
@@ -100,19 +108,20 @@ def test_allow_all(global_state):
 
 
 def test_is_allowed(global_state):
-    allow('discord')
+    allow("discord")
 
-    assert is_allowed('fakturoid') is False
-    assert is_allowed('discord') is True
+    assert is_allowed("fakturoid") is False
+    assert is_allowed("discord") is True
 
 
 def test_mutates_evaluates_during_call_time_not_import_time(global_state):
-    @mutates('discord')
+    @mutates("discord")
     def discord():
         return 123
+
     value1 = discord()
 
-    allow('discord')
+    allow("discord")
     value2 = discord()
 
     assert isinstance(value1, MutationsNotAllowedError)
@@ -120,7 +129,7 @@ def test_mutates_evaluates_during_call_time_not_import_time(global_state):
 
 
 def test_mutates_raises(global_state):
-    @mutates('discord', raises=True)
+    @mutates("discord", raises=True)
     def func():
         return 123
 
@@ -129,10 +138,10 @@ def test_mutates_raises(global_state):
 
 
 def test_mutating_proxy_allowed(global_state):
-    allow('discord')
+    allow("discord")
     obj = Something(123)
 
-    with mutating('discord', obj) as proxy:
+    with mutating("discord", obj) as proxy:
         result1 = proxy.property
         result2 = proxy.method(4, 4)
 
@@ -143,7 +152,7 @@ def test_mutating_proxy_allowed(global_state):
 def test_mutating_proxy_not_allowed(global_state):
     obj = Something(123)
 
-    with mutating('discord', obj) as proxy:
+    with mutating("discord", obj) as proxy:
         result1 = proxy.property
         result2 = proxy.method(4, 4)
 
@@ -155,16 +164,16 @@ def test_mutating_proxy_not_allowed_raises(global_state):
     obj = Something(123)
 
     with pytest.raises(MutationsNotAllowedError):
-        with mutating('discord', obj, raises=True) as proxy:
+        with mutating("discord", obj, raises=True) as proxy:
             proxy.method(4, 4)
 
 
 @pytest.mark.asyncio
 async def test_mutating_proxy_allowed_async(global_state):
-    allow('discord')
+    allow("discord")
     obj = Something(123)
 
-    with mutating('discord', obj) as proxy:
+    with mutating("discord", obj) as proxy:
         result = await proxy.async_method(4, 4)
 
     assert result == 8
@@ -174,7 +183,7 @@ async def test_mutating_proxy_allowed_async(global_state):
 async def test_mutating_proxy_not_allowed_async(global_state):
     obj = Something(123)
 
-    with mutating('discord', obj) as proxy:
+    with mutating("discord", obj) as proxy:
         result = await proxy.async_method(4, 4)
 
     assert isinstance(result, MutationsNotAllowedError)
@@ -185,19 +194,19 @@ async def test_mutating_proxy_not_allowed_async_raises(global_state):
     obj = Something(123)
 
     with pytest.raises(MutationsNotAllowedError):
-        with mutating('discord', obj, raises=True) as proxy:
+        with mutating("discord", obj, raises=True) as proxy:
             await proxy.async_method(4, 4)
 
 
 def test_allowing(global_state):
-    allow('fakturoid')
+    allow("fakturoid")
 
-    assert is_allowed('discord') is False
-    assert is_allowed('fakturoid') is True
+    assert is_allowed("discord") is False
+    assert is_allowed("fakturoid") is True
 
-    with allowing('discord'):
-        assert is_allowed('discord') is True
-        assert is_allowed('fakturoid') is False
+    with allowing("discord"):
+        assert is_allowed("discord") is True
+        assert is_allowed("fakturoid") is False
 
-    assert is_allowed('discord') is False
-    assert is_allowed('fakturoid') is True
+    assert is_allowed("discord") is False
+    assert is_allowed("fakturoid") is True

@@ -9,55 +9,73 @@ from juniorguru.lib import template_filters
 
 
 def test_email_link():
-    markup = str(template_filters.email_link('xyz@example.com'))
-    assert markup == '<a href="mailto:xyz&#64;example.com">xyz&#64;<!---->example.com</a>'
+    markup = str(template_filters.email_link("xyz@example.com"))
+    assert (
+        markup == '<a href="mailto:xyz&#64;example.com">xyz&#64;<!---->example.com</a>'
+    )
 
 
 def test_remove_p():
-    markup = str(template_filters.remove_p('<p>call me <b>maybe</b></p>  \n<p class="hello">call me Honza</p>'))
-    assert markup == 'call me <b>maybe</b>  \ncall me Honza'
+    markup = str(
+        template_filters.remove_p(
+            '<p>call me <b>maybe</b></p>  \n<p class="hello">call me Honza</p>'
+        )
+    )
+    assert markup == "call me <b>maybe</b>  \ncall me Honza"
 
 
-@pytest.mark.parametrize('dt,expected', [
-    (datetime(2020, 4, 21, 12, 1, 48), '14:01'),
-    (arrow.get(datetime(2020, 4, 21, 20, 30, 00), 'UTC'), '22:30'),
-    (datetime(2020, 4, 21, 5, 0, 48), '7:00'),
-])
+@pytest.mark.parametrize(
+    "dt,expected",
+    [
+        (datetime(2020, 4, 21, 12, 1, 48), "14:01"),
+        (arrow.get(datetime(2020, 4, 21, 20, 30, 00), "UTC"), "22:30"),
+        (datetime(2020, 4, 21, 5, 0, 48), "7:00"),
+    ],
+)
 def test_local_time(dt, expected):
     assert template_filters.local_time(dt) == expected
 
 
-@pytest.mark.parametrize('dt,expected', [
-    (datetime(2020, 4, 21, 12, 1, 48), 'úterý'),
-    (date(2020, 4, 21), 'úterý'),
-])
+@pytest.mark.parametrize(
+    "dt,expected",
+    [
+        (datetime(2020, 4, 21, 12, 1, 48), "úterý"),
+        (date(2020, 4, 21), "úterý"),
+    ],
+)
 def test_weekday(dt, expected):
     assert template_filters.weekday(dt) == expected
 
 
-@pytest.mark.parametrize('value,expected', [
-    pytest.param(134, '134', id='hundreds'),
-    pytest.param(2179, '2.179', id='thousands'),
-    pytest.param(21790, '21.790', id='tens thousands'),
-])
+@pytest.mark.parametrize(
+    "value,expected",
+    [
+        pytest.param(134, "134", id="hundreds"),
+        pytest.param(2179, "2.179", id="thousands"),
+        pytest.param(21790, "21.790", id="tens thousands"),
+    ],
+)
 def test_thousands(value, expected):
     assert template_filters.thousands(value) == expected
 
 
-@pytest.mark.parametrize('items,n,expected', [
-    pytest.param(
-        ['x'],
-        4,
-        {'x'},
-        id='len(items) < n',
-    ),
-    pytest.param(
-        ['x', 'y'],
-        2,
-        {'x', 'y'},
-        id='len(items) == n',
-    ),
-])
+@pytest.mark.parametrize(
+    "items,n,expected",
+    [
+        pytest.param(
+            ["x"],
+            4,
+            {"x"},
+            id="len(items) < n",
+        ),
+        pytest.param(
+            ["x", "y"],
+            2,
+            {"x", "y"},
+            id="len(items) == n",
+        ),
+    ],
+)
 def test_sample(items, n, expected):
     assert set(template_filters.sample(items, n)) == expected
 
@@ -70,34 +88,42 @@ def test_sample_random():
         random_called = True
         return items[:n]
 
-    assert set(template_filters.sample(['x', 'y', 'z'], 2, sample_fn=random_sample)) == {'x', 'y'}
+    assert set(
+        template_filters.sample(["x", "y", "z"], 2, sample_fn=random_sample)
+    ) == {"x", "y"}
     assert random_called is True
 
 
+StubJob = namedtuple("Job", ["id", "is_submitted"])
 
-StubJob = namedtuple('Job', ['id', 'is_submitted'])
 
-
-@pytest.mark.parametrize('jobs,n,expected', [
-    pytest.param(
-        [StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=False)],
-        4,
-        {StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=False)},
-        id='len(jobs) < n',
-    ),
-    pytest.param(
-        [StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=False)],
-        2,
-        {StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=False)},
-        id='len(jobs) == n',
-    ),
-    pytest.param(
-        [StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=True), StubJob(id=3, is_submitted=True)],
-        2,
-        {StubJob(id=2, is_submitted=True), StubJob(id=3, is_submitted=True)},
-        id='preferred jobs have priority',
-    ),
-])
+@pytest.mark.parametrize(
+    "jobs,n,expected",
+    [
+        pytest.param(
+            [StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=False)],
+            4,
+            {StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=False)},
+            id="len(jobs) < n",
+        ),
+        pytest.param(
+            [StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=False)],
+            2,
+            {StubJob(id=1, is_submitted=False), StubJob(id=2, is_submitted=False)},
+            id="len(jobs) == n",
+        ),
+        pytest.param(
+            [
+                StubJob(id=1, is_submitted=False),
+                StubJob(id=2, is_submitted=True),
+                StubJob(id=3, is_submitted=True),
+            ],
+            2,
+            {StubJob(id=2, is_submitted=True), StubJob(id=3, is_submitted=True)},
+            id="preferred jobs have priority",
+        ),
+    ],
+)
 def test_sample_jobs(jobs, n, expected):
     assert set(template_filters.sample_jobs(jobs, n)) == expected
 
@@ -110,11 +136,17 @@ def test_sample_jobs_not_enough_preferred_jobs():
         random_called = True
         return jobs[:n]
 
-    assert set(template_filters.sample_jobs([
-        StubJob(id=1, is_submitted=False),
-        StubJob(id=2, is_submitted=True),
-        StubJob(id=3, is_submitted=False)
-    ], 2, sample_fn=random_sample)) == {
+    assert set(
+        template_filters.sample_jobs(
+            [
+                StubJob(id=1, is_submitted=False),
+                StubJob(id=2, is_submitted=True),
+                StubJob(id=3, is_submitted=False),
+            ],
+            2,
+            sample_fn=random_sample,
+        )
+    ) == {
         StubJob(id=1, is_submitted=False),
         StubJob(id=2, is_submitted=True),
     }
@@ -122,80 +154,109 @@ def test_sample_jobs_not_enough_preferred_jobs():
 
 
 def test_icon():
-    markup = template_filters.icon('check-square')
+    markup = template_filters.icon("check-square")
 
     assert str(markup) == '<i class="bi bi-check-square"></i>'
 
 
 def test_icon_with_alt():
-    markup = template_filters.icon('check-square', alt='Alt Text')
+    markup = template_filters.icon("check-square", alt="Alt Text")
 
-    assert str(markup) == '<i class="bi bi-check-square" role="img" aria-label="Alt Text"></i>'
+    assert (
+        str(markup)
+        == '<i class="bi bi-check-square" role="img" aria-label="Alt Text"></i>'
+    )
 
 
 def test_icon_with_classes():
-    markup = template_filters.icon('check-square', 'text-success bi')
+    markup = template_filters.icon("check-square", "text-success bi")
 
     assert str(markup) == '<i class="bi bi-check-square text-success"></i>'
 
 
 def test_docs_url():
-    assert template_filters.docs_url([
-        File('privacy.md', 'juniorguru/web/docs', 'public', True),
-        File('club.md', 'juniorguru/web/docs', 'public', True),
-        File('topics/csharp.md', 'juniorguru/web/docs', 'public', True),
-    ], 'club.md') == 'club/'
+    assert (
+        template_filters.docs_url(
+            [
+                File("privacy.md", "juniorguru/web/docs", "public", True),
+                File("club.md", "juniorguru/web/docs", "public", True),
+                File("topics/csharp.md", "juniorguru/web/docs", "public", True),
+            ],
+            "club.md",
+        )
+        == "club/"
+    )
 
 
 def test_revenue_categories():
-    assert template_filters.revenue_categories({
-        'donations': 10,
-        'jobs': 20,
-        'memberships': 1,
-        'partnerships': 4,
-    }) == [
-        ('inzerce nabídek práce', 20),
-        ('dobrovolné příspěvky', 10),
-        ('partnerství s firmami', 4),
-        ('individuální členství', 1),
+    assert template_filters.revenue_categories(
+        {
+            "donations": 10,
+            "jobs": 20,
+            "memberships": 1,
+            "partnerships": 4,
+        }
+    ) == [
+        ("inzerce nabídek práce", 20),
+        ("dobrovolné příspěvky", 10),
+        ("partnerství s firmami", 4),
+        ("individuální členství", 1),
     ]
 
 
 def test_revenue_categories_less():
-    assert template_filters.revenue_categories({
-        'partnerships': 4,
-        'jobs': 20,
-    }) == [
-        ('inzerce nabídek práce', 20),
-        ('partnerství s firmami', 4),
+    assert template_filters.revenue_categories(
+        {
+            "partnerships": 4,
+            "jobs": 20,
+        }
+    ) == [
+        ("inzerce nabídek práce", 20),
+        ("partnerství s firmami", 4),
     ]
 
 
 def test_revenue_categories_unknown():
     with pytest.raises(KeyError):
-        template_filters.revenue_categories({
-            '! doesnt exist !': 20,
-            'partnerships': 4,
-        })
+        template_filters.revenue_categories(
+            {
+                "! doesnt exist !": 20,
+                "partnerships": 4,
+            }
+        )
 
 
 def test_money_breakdown_ptc():
-    assert template_filters.money_breakdown_ptc({
-        'discord': 300,
-        'lawyer': 500,
-        'tax': 100,
-    }) == {
-        'discord': 34,
-        'lawyer': 56,
-        'tax': 12,
+    assert template_filters.money_breakdown_ptc(
+        {
+            "discord": 300,
+            "lawyer": 500,
+            "tax": 100,
+        }
+    ) == {
+        "discord": 34,
+        "lawyer": 56,
+        "tax": 12,
     }
 
 
-@pytest.mark.parametrize('url, expected', [
-    ('http://honzajavorek.cz', 'static/screenshots/honzajavorek-cz.webp'),
-    ('https://www.youtube.com/watch?v=123', 'static/screenshots/youtube-com-watch-v-123.webp'),
-    ('https://cs.wikipedia.org/wiki/Ildik%C3%B3_(jm%C3%A9no)', 'static/screenshots/cs-wikipedia-org-wiki-ildiko-jmeno.webp'),
-    ('https://coreskill.tech/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog', 'static/screenshots/coreskill-tech.webp'),
-])
+@pytest.mark.parametrize(
+    "url, expected",
+    [
+        ("http://honzajavorek.cz", "static/screenshots/honzajavorek-cz.webp"),
+        (
+            "https://www.youtube.com/watch?v=123",
+            "static/screenshots/youtube-com-watch-v-123.webp",
+        ),
+        (
+            "https://cs.wikipedia.org/wiki/Ildik%C3%B3_(jm%C3%A9no)",
+            "static/screenshots/cs-wikipedia-org-wiki-ildiko-jmeno.webp",
+        ),
+        (
+            "https://coreskill.tech/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog",
+            "static/screenshots/coreskill-tech.webp",
+        ),
+    ],
+)
 def test_screenshot_url(url, expected):
     assert template_filters.screenshot_url(url) == expected

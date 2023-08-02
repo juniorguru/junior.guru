@@ -5,7 +5,9 @@ from juniorguru.sync.scrape_jobs.pipelines.short_description_filter import (
 
 
 def test_short_description_filter(item, spider):
-    item['description_html'] = '''
+    item[
+        "description_html"
+    ] = """
         <div class="description__text description__text--rich">Požadavky<br>
         <br>Zkušenosti s programováním v Pythonu<br>Python 2x, Python 3x<br>
         PostgreSQL/SQL server<br><br>Preferujeme<br>Django framework<br>
@@ -22,14 +24,16 @@ def test_short_description_filter(item, spider):
         tarifem<br>nadstandardní příplatky navíc za support na telefonu pro
         zákazníky<br>systém kafeteria<br>a v neposlední řadě výborný pohodový
         tým, férové jednání</div>
-    '''
+    """
 
-    assert len(item['description_html']) > Pipeline.min_chars_count
+    assert len(item["description_html"]) > Pipeline.min_chars_count
     Pipeline().process_item(item, spider)
 
 
 def test_short_description_filter_drops(item, spider):
-    item['description_html'] = '''
+    item[
+        "description_html"
+    ] = """
         <div class="description__text description__text--rich">
         Nabízíme možnost vybrat si z variace projektů, na kterých využijete
         nejmodernější technologie pro vývoj aplikací v oblasti zdravotnictví
@@ -39,16 +43,17 @@ def test_short_description_filter_drops(item, spider):
         ředitelů vývoje.* 5 týdnů dovolené* firemní notebook a telefon*
         vzdělávací kurzy (odborné i...
         </div>
-    '''
+    """
 
-    assert len(item['description_html']) < Pipeline.min_chars_count
+    assert len(item["description_html"]) < Pipeline.min_chars_count
     with pytest.raises(ShortDescription):
         Pipeline().process_item(item, spider)
 
 
-
 def test_short_description_filter_drops_regardless_html(item, spider):
-    item['description_html'] = '''
+    item[
+        "description_html"
+    ] = """
         <div class="description__text description__text--rich">
         <strong>Nabízíme možnost vybrat</strong> si z variace projektů,
         na kterých <a href="https://www.example.com/example?q=1">využijete</a>
@@ -59,8 +64,8 @@ def test_short_description_filter_drops_regardless_html(item, spider):
         ředitelů vývoje.* 5 týdnů dovolené* firemní notebook a telefon*
         vzdělávací kurzy (odborné i...
         </div>
-    '''
+    """
 
-    assert len(item['description_html']) > Pipeline.min_chars_count
+    assert len(item["description_html"]) > Pipeline.min_chars_count
     with pytest.raises(ShortDescription):
         Pipeline().process_item(item, spider)

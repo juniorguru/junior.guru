@@ -13,12 +13,12 @@ class Something(Item):
 
 
 def test_required_fields_filter(spider):
-    item = Something(prop1='foo', prop2='moo', prop4='boo')
+    item = Something(prop1="foo", prop2="moo", prop4="boo")
     Pipeline().process_item(item, spider)
 
 
 def test_required_fields_drops(spider):
     item = Something()
 
-    with pytest.raises(MissingRequiredFields, match='prop2, prop4'):
+    with pytest.raises(MissingRequiredFields, match="prop2, prop4"):
         Pipeline().process_item(item, spider)

@@ -6,12 +6,10 @@ from juniorguru.lib.locations import fetch_locations, get_region, optimize_geoco
 
 
 def test_locations():
-    address = {'place': 'Řevnice',
-               'region': 'Středočeský kraj',
-               'country': 'Česko'}
-    results = fetch_locations(['252 30 Řevnice, Česko'], geocode=lambda l: address)
+    address = {"place": "Řevnice", "region": "Středočeský kraj", "country": "Česko"}
+    results = fetch_locations(["252 30 Řevnice, Česko"], geocode=lambda l: address)
 
-    assert results == [{'name': 'Řevnice', 'region': 'Praha'}]
+    assert results == [{"name": "Řevnice", "region": "Praha"}]
 
 
 def test_locations_remote():
@@ -21,89 +19,93 @@ def test_locations_remote():
 
 
 def test_locations_no_response():
-    results = fetch_locations(['???'], geocode=lambda l: None)
+    results = fetch_locations(["???"], geocode=lambda l: None)
 
     assert results == []
 
 
 def test_locations_multiple():
-    addresses = iter([
-        {'place': 'Řevnice',
-         'region': 'Středočeský kraj',
-         'country': 'Česko'},
-        {'place': 'Brno',
-         'region': 'Jihomoravský kraj',
-         'country': 'Česko'}
-    ])
-    results = fetch_locations(['252 30 Řevnice, Česko', 'Brno, Česko'], geocode=lambda l: next(addresses))
+    addresses = iter(
+        [
+            {"place": "Řevnice", "region": "Středočeský kraj", "country": "Česko"},
+            {"place": "Brno", "region": "Jihomoravský kraj", "country": "Česko"},
+        ]
+    )
+    results = fetch_locations(
+        ["252 30 Řevnice, Česko", "Brno, Česko"], geocode=lambda l: next(addresses)
+    )
 
-    assert sorted(results, key=itemgetter('name')) == [
-        {'name': 'Brno', 'region': 'Brno'},
-        {'name': 'Řevnice', 'region': 'Praha'},
+    assert sorted(results, key=itemgetter("name")) == [
+        {"name": "Brno", "region": "Brno"},
+        {"name": "Řevnice", "region": "Praha"},
     ]
 
 
 def test_locations_multiple_no_response():
-    addresses = iter([
-        None,
-        {'place': 'Brno',
-         'region': 'Jihomoravský kraj',
-         'country': 'Česko'}
-    ])
-    results = fetch_locations(['???', 'Brno, Česko'], geocode=lambda l: next(addresses))
+    addresses = iter(
+        [None, {"place": "Brno", "region": "Jihomoravský kraj", "country": "Česko"}]
+    )
+    results = fetch_locations(["???", "Brno, Česko"], geocode=lambda l: next(addresses))
 
-    assert results == [{'name': 'Brno', 'region': 'Brno'}]
+    assert results == [{"name": "Brno", "region": "Brno"}]
 
 
 def test_locations_multiple_unique():
-    addresses = iter([
-        {'place': 'Brno',
-         'region': 'Jihomoravský kraj',
-         'country': 'Česko'},
-        {'place': 'Brno',
-         'region': 'Jihomoravský kraj',
-         'country': 'Česko'}
-    ])
-    results = fetch_locations(['Plevova 1, Brno, Česko', 'Brno, Česko'], geocode=lambda l: next(addresses))
+    addresses = iter(
+        [
+            {"place": "Brno", "region": "Jihomoravský kraj", "country": "Česko"},
+            {"place": "Brno", "region": "Jihomoravský kraj", "country": "Česko"},
+        ]
+    )
+    results = fetch_locations(
+        ["Plevova 1, Brno, Česko", "Brno, Česko"], geocode=lambda l: next(addresses)
+    )
 
-    assert results == [{'name': 'Brno', 'region': 'Brno'}]
+    assert results == [{"name": "Brno", "region": "Brno"}]
 
 
 def test_get_region_from_country():
-    address = dict(region='Województwo Mazowieckie',
-                   country='Polska')
+    address = dict(region="Województwo Mazowieckie", country="Polska")
 
-    assert get_region(address) == 'Polsko'
+    assert get_region(address) == "Polsko"
 
 
-@pytest.mark.parametrize('country', [
-    'Česko',
-    'Česká republika',
-])
+@pytest.mark.parametrize(
+    "country",
+    [
+        "Česko",
+        "Česká republika",
+    ],
+)
 def test_get_region_from_region(country):
-    address = dict(region='Středočeský kraj',
-                   country=country)
+    address = dict(region="Středočeský kraj", country=country)
 
-    assert get_region(address) == 'Praha'
-
-
-GEOCODED_ADDRESS = {'place': '-- GEOCODED --',
-                    'region': '-- GEOCODED --',
-                    'country': '-- GEOCODED --'}
+    assert get_region(address) == "Praha"
 
 
-@pytest.mark.parametrize('location_raw,expected', [
-    ('252 30 Řevnice, Česko',
-     GEOCODED_ADDRESS),
-    ('130 00 Praha 3-Žižkov',
-     {'place': 'Praha', 'region': 'Praha', 'country' :'Česko'}),
-    ('Prague, Czechia',
-     {'place': 'Praha', 'region': 'Praha', 'country' :'Česko'}),
-    ('Brno-Žabovřesky',
-     {'place': 'Brno', 'region': 'Brno', 'country' :'Česko'}),
-    ('Michálkovická 1137/197, 710 00 Ostrava - Slezská Ostrava, Czechia',
-     {'place': 'Ostrava', 'region': 'Ostrava', 'country' :'Česko'}),
-])
+GEOCODED_ADDRESS = {
+    "place": "-- GEOCODED --",
+    "region": "-- GEOCODED --",
+    "country": "-- GEOCODED --",
+}
+
+
+@pytest.mark.parametrize(
+    "location_raw,expected",
+    [
+        ("252 30 Řevnice, Česko", GEOCODED_ADDRESS),
+        (
+            "130 00 Praha 3-Žižkov",
+            {"place": "Praha", "region": "Praha", "country": "Česko"},
+        ),
+        ("Prague, Czechia", {"place": "Praha", "region": "Praha", "country": "Česko"}),
+        ("Brno-Žabovřesky", {"place": "Brno", "region": "Brno", "country": "Česko"}),
+        (
+            "Michálkovická 1137/197, 710 00 Ostrava - Slezská Ostrava, Czechia",
+            {"place": "Ostrava", "region": "Ostrava", "country": "Česko"},
+        ),
+    ],
+)
 def test_optimize_geocoding(location_raw, expected):
     def geocode(location_raw):
         return GEOCODED_ADDRESS

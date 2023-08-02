@@ -6,7 +6,10 @@ from juniorguru.sync.pages import parse_meta, parse_notes
 
 
 def test_parse_meta():
-    assert parse_meta(dedent("""
+    assert (
+        parse_meta(
+            dedent(
+                """
         ---
         title: Jak na Git a GitHub
         description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?
@@ -15,15 +18,22 @@ def test_parse_meta():
 
         # Git a GitHub
 
-    """)) == dict(
-        title='Jak na Git a GitHub',
-        description='Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?',
-        template='main_handbook.html',
+    """
+            )
+        )
+        == dict(
+            title="Jak na Git a GitHub",
+            description="Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?",
+            template="main_handbook.html",
+        )
     )
 
 
 def test_parse_notes():
-    assert parse_notes(dedent("""
+    assert (
+        parse_notes(
+            dedent(
+                """
         ---
         title: Jak na Git a GitHub
         description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?
@@ -46,7 +56,11 @@ def test_parse_notes():
         {% endcall %}
 
         #} -->
-    """)) == dedent("""
+    """
+            )
+        )
+        == dedent(
+            """
         https://dariagrudzien.com/posts/the-one-about-your-github-account/
         https://dev.to/yuridevat/how-to-create-a-stunning-github-profile-2mh5
 
@@ -57,12 +71,16 @@ def test_parse_notes():
         ) %}
         Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
         {% endcall %}
-    """).strip()
+    """
+        ).strip()
+    )
 
 
 def test_parse_notes_multiple():
     with pytest.raises(ValueError):
-        parse_notes(dedent("""
+        parse_notes(
+            dedent(
+                """
             <!-- {#
             https://dariagrudzien.com/posts/the-one-about-your-github-account/
             #} -->
@@ -70,16 +88,23 @@ def test_parse_notes_multiple():
             <!-- {#
             https://dev.to/yuridevat/how-to-create-a-stunning-github-profile-2mh5
             #} -->
-        """))
+        """
+            )
+        )
 
 
 def test_parse_notes_none():
-    assert parse_notes('hello world') is None
+    assert parse_notes("hello world") is None
 
 
 def test_parse_notes_empty():
-    assert parse_notes("""
+    assert (
+        parse_notes(
+            """
         <!-- {#
 
         #} -->
-    """) is None
+    """
+        )
+        is None
+    )
