@@ -950,6 +950,7 @@ Například klub nebo podcast mají „to hlavní“ jinde než na webu.
 
 Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
 Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_internal_referrer_breakdown_count }}** lidí, kteří měli za poslední půlrok _referrer_ z junior.guru.
+Tzv. _long tail_ je z grafu uříznutý.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -976,6 +977,7 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_internal
 Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
 Graf ukazuje, kolik takhle jednotlivé stránky skrze klub přinesly peněz.
 Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_spend_internal_referrer_breakdown_count }}** lidí, kteří měli za poslední půlrok _referrer_ z junior.guru.
+Tzv. _long tail_ je z grafu uříznutý.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"

@@ -42,7 +42,7 @@ def test_breakdown_months(test_db):
     Followers.add(month='2023-07', name='facebook', count=200)
     Followers.add(month='2023-08', name='facebook', count=300)
 
-    assert Followers.breakdown(date(2023, 8, 2)) == {'twitter': 0, 'facebook': 300}
+    assert Followers.breakdown(date(2023, 8, 2)) == {'twitter': None, 'facebook': 300}
 
 
 def test_breakdown_max(test_db):
