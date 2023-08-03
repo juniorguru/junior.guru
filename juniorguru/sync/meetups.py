@@ -14,9 +14,9 @@ from juniorguru_chick.lib.threads import create_thread, ensure_thread_name
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import mutations
 from juniorguru.lib.discord_club import ClubClient, ClubMemberID, parse_channel
 from juniorguru.lib.locations import fetch_location
-from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.club import ClubMessage
 
 
@@ -67,7 +67,7 @@ EVENT_EMOJI = '📅'
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command()
+@cli.sync_command(dependencies=['club-content'])
 @click.option('--channel', 'channel_id', default='promo', type=parse_channel)
 @click.option('--clear-cache/--keep-cache', default=False)
 @click.pass_context
@@ -119,6 +119,7 @@ def main(context, channel_id, clear_cache):
     discord_sync.run(sync_events, events, channel_id)
 
 
+@mutations.mutates_discord()
 async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
     discord_events = {re.search(r'https?://\S+', e.description).group(0): e
                       for e in client.club_guild.scheduled_events
@@ -141,18 +142,16 @@ async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
             discord_event = discord_events.pop(event['url'])
         except KeyError:
             logger.info(f"Creating Discord event: {event['name']!r}, {event['url']}")
-            with mutating_discord(client.club_guild) as proxy:
-                await proxy.create_scheduled_event(
-                    image=(IMAGES_DIR / event['poster_path']).read_bytes(),
-                    **params,
-                )
+            await client.club_guild.create_scheduled_event(
+                image=(IMAGES_DIR / event['poster_path']).read_bytes(),
+                **params,
+            )
         else:
             logger.info(f"Updating Discord event: {event['name']!r}, {event['url']}")
-            with mutating_discord(discord_event) as proxy:
-                discord_event = await proxy.edit(
-                    cover=(IMAGES_DIR / event['poster_path']).read_bytes(),
-                    **params,
-                )
+            discord_event = await discord_event.edit(
+                cover=(IMAGES_DIR / event['poster_path']).read_bytes(),
+                **params,
+            )
 
         logger.info("Ensuring the channel message")
         if channel_message := ClubMessage.last_bot_message(channel_id,
@@ -213,8 +212,7 @@ async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
 
     for discord_event in discord_events.values():
         logger.info(f"Canceling Discord event: {discord_event.name!r}, {discord_event.url}")
-        with mutating_discord(discord_event) as proxy:
-            await proxy.cancel()
+        await discord_event.cancel()
 
 
 def parse_icalendar(text: str) -> list[dict[str, Any]]:
