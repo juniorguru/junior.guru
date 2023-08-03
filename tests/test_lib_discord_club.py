@@ -321,3 +321,15 @@ def test_get_channel_name_dm():
     channel = StubDMChannel(user)
 
     assert discord_club.get_channel_name(channel) == "Gargamel"
+
+
+@pytest.mark.parametrize(
+    "channel, expected",
+    [
+        ('789046675247333397', 789046675247333397),
+        ('ANNOUNCEMENTS', 789046675247333397),
+        ('announcements', 789046675247333397),
+    ]
+)
+def test_parse_channel(channel, expected):
+    assert discord_club.parse_channel(channel) == expected

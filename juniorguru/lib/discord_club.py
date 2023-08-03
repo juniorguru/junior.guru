@@ -272,3 +272,10 @@ def parse_message_url(url: str) -> int:
         return {name: int(value) if value else None
                 for name, value in match.groupdict().items()}
     raise ValueError(url)
+
+
+def parse_channel(channel: str) -> int:
+    try:
+        return int(channel)
+    except ValueError:
+        return int(getattr(ClubChannelID, channel.upper()))
