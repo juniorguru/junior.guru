@@ -435,7 +435,7 @@ class SubscriptionActivity(BaseModel):
             yield duration_mo
 
     @classmethod
-    def account_subscribed_at(cls, account_id: int) -> Iterable[Self]:
+    def account_subscribed_at(cls, account_id: int) -> datetime:
         return cls.select(cls.happened_at) \
             .where(cls.account_id == account_id) \
             .order_by(cls.happened_at) \

@@ -38,9 +38,10 @@ def main():
 
     members = memberful.get_nodes(MEMBERS_GQL_PATH.read_text())
     seen_discord_ids = set()
-    for member in members:
-        member_admin_url = memberful_url(member['id'])
-        logger.info(f"Processing member {member_admin_url}")
+    for member in logger.progress(members):
+        account_id = int(member['id'])
+        member_admin_url = memberful_url(account_id)
+        logger.debug(f"Processing member {member_admin_url}")
         try:
             discord_id = int(member['discordUserId'])  # raies TypeError if None
             user = ClubUser.get_by_id(discord_id)  # raises ClubUser.DoesNotExist
@@ -52,23 +53,26 @@ def main():
 
             name = member['fullName'].strip()
             has_feminine_name = FeminineName.is_feminine(name)
-            subscribed_at = SubscriptionActivity.account_subscribed_at(user.account_id)
+
+            subscribed_at = SubscriptionActivity.account_subscribed_at(account_id)
+            if not subscribed_at:
+                raise ValueError(f"Member {member_admin_url} has no subscription activities")
 
             subscription = get_active_subscription(member['subscriptions'])
             coupon = get_coupon(subscription)
             coupon_parts = parse_coupon(coupon) if coupon else {}
 
             logger.debug(f"Updating club user #{user.id} with data from {member_admin_url}")
-            user.account_id = int(member['id'])
+            user.account_id = account_id
             user.subscription_id = str(subscription['id'])
-            user.coupon = coupon_parts.get('coupon')
             user.subscribed_at = subscribed_at
+            user.coupon = coupon_parts.get('coupon')
             user.update_expires_at(arrow.get(subscription['expiresAt']).naive)
             user.has_feminine_name = has_feminine_name
             user.total_spend = math.ceil(member['totalSpendCents'] / 100)
             user.save()
 
-    logger.info('Processing remaining club users who are Discord members')
+    logger.info('Processing remaining club users who are on Discord, but not in Memberful')
     remaining_users = (user for user in ClubUser.members_listing()
                        if user.id not in seen_discord_ids)
     extra_users_ids = []
@@ -78,7 +82,7 @@ def main():
         elif user.is_bot:
             logger.debug(f"Skipping bot account #{user.id}")
         else:
-            logger.warning(f"Club user #{user.id} is a Discord member, but doesn't have a Memberful account!")
+            logger.warning(f"Club user #{user.id} is on Discord, but doesn't have a Memberful account!")
             logger.debug(f"User #{user.id}:\n{pformat(model_to_dict(user))}")
             extra_users_ids.append(user.id)
     if extra_users_ids:
