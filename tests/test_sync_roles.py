@@ -29,7 +29,17 @@ def test_repr_ids():
         DummyMember(3, "Ondřej"),
     ]
 
-    assert repr_ids(members, [1, 2]) == "['Zuzka', 'Honza']"
+    assert repr_ids(members, [1, 2]) == "['Honza', 'Zuzka']"
+
+
+def test_repr_ids_case_doesnt_matter():
+    members = [
+        DummyMember(1, "Zuzka"),
+        DummyMember(2, "honza"),
+        DummyMember(3, "ondřej"),
+    ]
+
+    assert repr_ids(members, [1, 2]) == "['honza', 'Zuzka']"
 
 
 def test_repr_stats():
