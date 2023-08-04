@@ -12,7 +12,7 @@ StubEmoji = namedtuple("Emoji", ["name"])
 
 StubUser = namedtuple("User", ["id"])
 
-StubMember = namedtuple("Member", ["id", "roles"], defaults=dict(roles=[]))
+StubMember = namedtuple("Member", ["id", "roles"], defaults=[[]])
 
 StubRole = namedtuple("Role", ["id"])
 

@@ -21,6 +21,14 @@ from juniorguru.models.club import ClubMessage
 
 NAME_PREFIX = 'Mini sraz juniorů'
 
+MEETUP_URL_RE = re.compile(r'https?://\S+', re.IGNORECASE)
+
+CALL_TO_ACTION_TEXT = (
+    'Chceš se poznat s lidmi z klubu i naživo? '
+    'Běžně se potkáváme na srazech vybraných komunit. '
+    'Utvořte skupinku, ničeho se nebojte, a vyražte!'
+)
+
 IMAGES_DIR = Path('juniorguru/images')
 
 FEEDS = [
@@ -120,93 +128,65 @@ def main(context, channel_id, clear_cache):
 
 @mutations.mutates_discord()
 async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
-    discord_events = {re.search(r'https?://\S+', e.description).group(0): e
-                      for e in client.club_guild.scheduled_events
-                      if (int(e.creator_id) == ClubMemberID.BOT
-                          and NAME_PREFIX in e.name)}
+    discord_events = {parse_meetup_url(scheduled_event.description): scheduled_event
+                      for scheduled_event in client.club_guild.scheduled_events
+                      if is_meetup_scheduled_event(scheduled_event)}
     discord_channel = await client.fetch_channel(channel_id)
 
     for event in events:
-        params = dict(
-            name=f"{event['location'][1]}: {event['name']}",
-            description=(f'**Akce:** {event["name_raw"]}\n**Více info:** {event["url"]}\n\n'
-                            'Chceš se poznat s lidmi z klubu i naživo? '
-                            'Běžně se potkáváme na srazech vybraných komunit. '
-                            'Utvořte skupinku, ničeho se nebojte, a vyražte!'),
-            start_time=event['starts_at'],
-            end_time=event['starts_at'] + timedelta(hours=3),
-            location=event['location_raw'],
-        )
         try:
             discord_event = discord_events.pop(event['url'])
         except KeyError:
             logger.info(f"Creating Discord event: {event['name']!r}, {event['url']}")
             await client.club_guild.create_scheduled_event(
                 image=(IMAGES_DIR / event['poster_path']).read_bytes(),
-                **params,
+                **generate_scheduled_event(event),
             )
         else:
             logger.info(f"Updating Discord event: {event['name']!r}, {event['url']}")
             discord_event = await discord_event.edit(
                 cover=(IMAGES_DIR / event['poster_path']).read_bytes(),
-                **params,
+                **generate_scheduled_event(event),
             )
 
-        logger.info("Ensuring the channel message")
+        logger.info("Ensuring channel message")
         if channel_message := ClubMessage.last_bot_message(channel_id,
                                                            starting_emoji=EVENT_EMOJI,
                                                            contains_text=event['url']):
             logger.debug(f'Channel message already exists: {channel_message.url}')
             discord_channel_message = await discord_channel.fetch_message(channel_message.id)
         else:
-            logger.debug('Could not find channel message, posting')
-            discord_channel_message = await discord_channel.send(
-                f"{EVENT_EMOJI} **{event['location'][1]}, {event['starts_at']:%-d.%-m.}**"
-                "\n\n"
-                f"{event['emoji']} Kdo se chystá na {event['name_raw']}? Zakládám vlákno!"
-                "\n\n"
-                f"{event['url']}"
-            )
+            logger.info('Could not find channel message, posting')
+            discord_channel_message = await discord_channel.send(generate_channel_message_content(event))
 
         logger.info("Ensuring thread exists")
-        thread_name = f"{event['location'][1]}, {event['starts_at']:%-d.%-m.} – {event['name_raw']}"
         if discord_channel_message.flags.has_thread:
             logger.debug("Thread already exists")
             thread = await discord_channel_message.guild.fetch_channel(discord_channel_message.id)
         else:
-            logger.debug("Creating thread")
-            thread = await create_thread(discord_channel_message, thread_name)
+            logger.info("Creating thread")
+            thread = await create_thread(discord_channel_message, thread_name(event))
 
         if thread.archived or thread.locked:
             logger.warning(f"Thread {discord_channel_message.jump_url} is archived or locked, skipping")
             continue
 
         logger.debug(f"Ensuring correct thread name for {discord_channel_message.author.display_name!r}")
-        await ensure_thread_name(thread, thread_name)
+        await ensure_thread_name(thread, thread_name(event))
 
-        logger.debug("Ensuring the thread message")
-        message_content = (
-            'Chceš se poznat s lidmi z klubu i naživo? '
-            'Běžně se potkáváme na srazech vybraných komunit. '
-            'Utvořte skupinku, ničeho se nebojte, a vyražte! '
-        )
-        mentions = sorted([user.mention async for user in discord_event.subscribers()])
-        if mentions:
-            message_content += (
-                "\n\nUž teď to vypadá, že na akci potkáš "
-                f"{' '.join(mentions)}\n\n"
-            )
-        message_content += discord_event.url
+        logger.info("Ensuring thread message")
+        mentions = [user.mention async for user in discord_event.subscribers()]
+        message_content = generate_thread_message_content(discord_event.url, mentions)
         if thread_message := ClubMessage.last_bot_message(thread.id, contains_text=discord_event.url):
             logger.debug(f'Thread message already exists: {thread_message.url}')
             discord_thread_message = await thread.fetch_message(thread_message.id)
             if discord_thread_message.content != message_content:
-                logger.debug('Updating thread message')
+                logger.info('Updating thread message')
                 await discord_thread_message.edit(content=message_content)
             else:
                 logger.debug('Thread message is up-to-date')
         else:
-            logger.debug('Could not find thread message, posting')
+            logger.info('Could not find thread message, posting')
             await thread.send(message_content)
 
     for discord_event in discord_events.values():
@@ -239,3 +219,49 @@ def parse_json_dl_location(location: dict[str, str]) -> str:
 
 def is_bot_message(discord_message: discord.Message) -> bool:
     return discord_message.type == discord.MessageType.default and discord_message.author.id == ClubMemberID.BOT
+
+
+def is_meetup_scheduled_event(scheduled_event: discord.ScheduledEvent) -> bool:
+    return int(scheduled_event.creator_id) == ClubMemberID.BOT and NAME_PREFIX in scheduled_event.name
+
+
+def parse_meetup_url(text: str) -> str:
+    return MEETUP_URL_RE.search(text).group(0)
+
+
+def generate_scheduled_event(event: dict) -> dict:
+    return dict(
+        name=f"{event['location'][1]}: {event['name']}",
+        description=(f'**Akce:** {event["name_raw"]}\n**Více info:** {event["url"]}\n\n{CALL_TO_ACTION_TEXT}'),
+        start_time=event['starts_at'],
+        end_time=event['starts_at'] + timedelta(hours=3),
+        location=event['location_raw'],
+    )
+
+
+def generate_channel_message_content(event: dict) -> str:
+    return (
+        f"{EVENT_EMOJI} **{event['location'][1]}, {event['starts_at']:%-d.%-m.}**"
+        "\n\n"
+        f"{event['emoji']} Kdo se chystá na {event['name_raw']}? Zakládám vlákno!"
+        "\n\n"
+        f"{event['url']}"
+    )
+
+
+def thread_name(event: dict) -> str:
+    return f"{event['location'][1]}, {event['starts_at']:%-d.%-m.} – {event['name_raw']}"
+
+
+def generate_thread_message_content(scheduled_event_url: str, mentions: list[str] = None) -> str:
+    text = CALL_TO_ACTION_TEXT
+    if mentions:
+        mentions = sorted(mentions or [])
+        text += (
+            "\n\n"
+            "Už teď to vypadá, že na akci potkáš "
+            f"{' '.join(mentions)}"
+            "\n\n"
+        )
+    text += scheduled_event_url
+    return text

@@ -8,7 +8,7 @@ from juniorguru.sync import interviews_tips
 
 StubMessage = namedtuple("Message", ["author", "content"])
 
-StubMember = namedtuple("Member", ["id", "roles"], defaults=dict(roles=[]))
+StubMember = namedtuple("Member", ["id", "roles"], defaults=[[]])
 
 
 @pytest.mark.parametrize(
