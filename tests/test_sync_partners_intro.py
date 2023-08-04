@@ -11,7 +11,7 @@ from testing_utils import prepare_partner_data, prepare_test_db
 
 
 def create_intro(partner, created_at):
-    author = ClubUser.create(id=ClubMemberID.BOT, display_name="", mention="", tag="")
+    author = ClubUser.create(id=ClubMemberID.BOT, display_name="", mention="")
     return ClubMessage.create(
         id=123,
         url="https://example.com",

@@ -263,7 +263,8 @@ def repr_stats(members, stats):
 
 def repr_ids(members, members_ids):
     display_names = {member.id: member.display_name for member in members}
-    return repr([display_names.get(member_id, "(doesn't exist)") for member_id in members_ids])
+    return repr(sorted([display_names.get(member_id, "(doesn't exist)") for member_id in members_ids],
+                       key=str.lower))
 
 
 def repr_roles(roles):

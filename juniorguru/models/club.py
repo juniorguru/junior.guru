@@ -58,7 +58,6 @@ class ClubUser(BaseModel):
     display_name = CharField()
     has_feminine_name = BooleanField(null=True)
     mention = CharField(unique=True)
-    tag = CharField()
     coupon = CharField(null=True, index=True)
     initial_roles = JSONField(default=list)
     updated_roles = JSONField(null=True)

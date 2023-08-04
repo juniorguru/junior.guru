@@ -225,13 +225,13 @@ def test_partner_has_students(test_db, student_coupon, expected):
 
 def test_partner_list_members(test_db):
     member1 = ClubUser.create(
-        display_name="Bob", mention="<@111>", coupon="XEROX", tag="abc#1234"
+        display_name="Bob", mention="<@111>", coupon="XEROX"
     )
     member2 = ClubUser.create(
-        display_name="Alice", mention="<@222>", coupon="XEROX", tag="abc#1234"
+        display_name="Alice", mention="<@222>", coupon="XEROX"
     )
     ClubUser.create(
-        display_name="Celine", mention="<@333>", coupon="ZALANDO", tag="abc#1234"
+        display_name="Celine", mention="<@333>", coupon="ZALANDO"
     )
     partner = create_partner(1, coupon="XEROX")
 
@@ -240,13 +240,13 @@ def test_partner_list_members(test_db):
 
 def test_partner_list_student_members(test_db):
     member1 = ClubUser.create(
-        display_name="Bob", mention="<@111>", coupon="XEROXSTUDENT", tag="abc#1234"
+        display_name="Bob", mention="<@111>", coupon="XEROXSTUDENT"
     )
     member2 = ClubUser.create(
-        display_name="Alice", mention="<@222>", coupon="XEROXSTUDENT", tag="abc#1234"
+        display_name="Alice", mention="<@222>", coupon="XEROXSTUDENT"
     )
     ClubUser.create(
-        display_name="Celine", mention="<@333>", coupon="ZALANDOSTUDENT", tag="abc#1234"
+        display_name="Celine", mention="<@333>", coupon="ZALANDOSTUDENT"
     )
     partner = create_partner(1, student_coupon="XEROXSTUDENT")
 

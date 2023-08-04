@@ -23,7 +23,7 @@ StubTextChannel = namedtuple("StubTextChannel", ["name", "topic"])
 
 
 def create_member(id):
-    return ClubUser(id=id, display_name="Alice Foo", mention="...", tag="...")
+    return ClubUser(id=id, display_name="Alice Foo", mention="...")
 
 
 def create_message(id, author_id, content, created_at=None, reactions=None):

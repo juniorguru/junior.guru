@@ -43,7 +43,6 @@ def store_member(member: Member) -> ClubUser:
                            has_avatar=bool(member.avatar),
                            display_name=member.display_name,
                            mention=member.mention,
-                           tag=f'{member.name}#{member.discriminator}',
                            joined_at=arrow.get(member.joined_at).naive,
                            initial_roles=get_user_roles(member))
 
@@ -66,7 +65,6 @@ def _store_user(user: User) -> ClubUser:
                               has_avatar=bool(user.avatar),
                               display_name=user.display_name,
                               mention=user.mention,
-                              tag=f'{user.name}#{user.discriminator}',
                               joined_at=(arrow.get(user.joined_at).naive if hasattr(user, 'joined_at') else None),
                               initial_roles=get_user_roles(user))
         logger['users'][user.id].debug(f'Saved {user.display_name!r} as {obj!r}')

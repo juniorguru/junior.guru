@@ -8,7 +8,7 @@ StubTextChannel = namedtuple("StubTextChannel", ["name", "topic"])
 
 
 def create_member(id):
-    return ClubUser(id=id, display_name="Alice Foo", mention="...", tag="...")
+    return ClubUser(id=id, display_name="Alice Foo", mention="...")
 
 
 def test_prepare_channels_operations_declutter():

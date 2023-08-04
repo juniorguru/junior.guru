@@ -30,7 +30,6 @@ def test_evaluate_members(test_db, members_count, expected):
             id=id,
             display_name=f"Jane{id}",
             mention=f"<@{id}>",
-            tag="...",
             coupon=partner.coupon,
         )
 
