@@ -80,7 +80,7 @@ filterwarnings = [
 [tool.black]
 target-versions = ["py311"]
 include = "\\.py$"
-exclude = "(juniorguru/sync|juniorguru/lib|juniorguru/models|juniorguru/cli|juniorguru/[^_]+_legacy|node_modules)"
+exclude = "(juniorguru/sync|juniorguru/lib|juniorguru/models|juniorguru/[^_]+_legacy|node_modules)"
 
 [tool.isort]
 profile = "black"

@@ -20,13 +20,13 @@ from juniorguru.lib import loggers
 logger = loggers.from_path(__file__)
 
 
-PUBLIC_DIR = Path('public')
+PUBLIC_DIR = Path("public")
 
-IMAGES_DIR = Path('juniorguru/images')
+IMAGES_DIR = Path("juniorguru/images")
 
-SCREENSHOTS_DIR = IMAGES_DIR / 'screenshots'
+SCREENSHOTS_DIR = IMAGES_DIR / "screenshots"
 
-SCREENSHOTS_OVERRIDES_DIR = IMAGES_DIR / 'screenshots-overrides'
+SCREENSHOTS_OVERRIDES_DIR = IMAGES_DIR / "screenshots-overrides"
 
 WIDTH = 640
 
@@ -34,9 +34,9 @@ HEIGHT = 360
 
 MIN_BYTES_THRESHOLD = 10000
 
-YOUTUBE_URL_RE = re.compile(r'(youtube\.com.+watch\?.*v=|youtu\.be/)([\w\-\_]+)')
+YOUTUBE_URL_RE = re.compile(r"(youtube\.com.+watch\?.*v=|youtu\.be/)([\w\-\_]+)")
 
-FACEBOOK_URL_RE = re.compile(r'facebook\.com/')
+FACEBOOK_URL_RE = re.compile(r"facebook\.com/")
 
 CACHE_PERIOD = timedelta(days=60)
 
@@ -60,7 +60,7 @@ HIDDEN_ELEMENTS = [
     '[aria-label*="Cookie"]',
     '[aria-label*="banner"]',
     '[aria-describedby*="cookie"]',
-    '[aria-modal]',
+    "[aria-modal]",
     '[role="dialog"]',
     '[id*="onetrust"]',
     '[class*="onetrust"]',
@@ -78,44 +78,43 @@ HIDDEN_ELEMENTS = [
     '[class*="consent-manager"]',
     '[data-section-name*="cookie"]',
     '[data-component-name*="cookie"]',
-    '.alert-dismissible',
-    '.intercom-app',
-    '[data-cookiebanner]',
-    '[data-cookie-path]',
-    '.chatbot-wrapper',
-    '.adsbygoogle',
-    '#credential_picker_container',
-    '.tawk-min-container',
-    '.fb_iframe_widget',
-    '.fb_dialog',
-
+    ".alert-dismissible",
+    ".intercom-app",
+    "[data-cookiebanner]",
+    "[data-cookie-path]",
+    ".chatbot-wrapper",
+    ".adsbygoogle",
+    "#credential_picker_container",
+    ".tawk-min-container",
+    ".fb_iframe_widget",
+    ".fb_dialog",
     # specific sites
-    '#cc--main',  # seduo.cz
-    '#cc_div',  # seduo.cz
+    "#cc--main",  # seduo.cz
+    "#cc_div",  # seduo.cz
     '[class*="frb-"]',  # wikipedia.org
     '[id*="drift-"]',  # pluralsight.com
-    'body > .announcement',  # junior.guru
-    'body > .notice',  # pyvo.cz
-    'body > .ch2',  # czechitas.cz
+    "body > .announcement",  # junior.guru
+    "body > .notice",  # pyvo.cz
+    "body > .ch2",  # czechitas.cz
     '[data-before-content*="advertisement"]',  # reddit.com
     '[class*="popupThin"]',  # codecademy.com
     '[id*="kz-modal"]',  # ulekare.cz
-    'ir-modal',  # udacity.com
-    'ir-cookie-consent',  # udacity.com
-    'ir-content .moustache',  # udacity.com
-    'ir-moustache',  # udacity.com
-    '.butterBar',  # medium.com
-    '#banners',  # trello.com
-    'body > #selectLanguage',  # code.org
+    "ir-modal",  # udacity.com
+    "ir-cookie-consent",  # udacity.com
+    "ir-content .moustache",  # udacity.com
+    "ir-moustache",  # udacity.com
+    ".butterBar",  # medium.com
+    "#banners",  # trello.com
+    "body > #selectLanguage",  # code.org
     '[style*="Toaster-indicatorColor"]',  # reddit.com
-    '#axeptio_overlay',  # welcometothejungle.com
+    "#axeptio_overlay",  # welcometothejungle.com
     '[class*="Modal_modalBackground__"]',  # make.com
-    '.hsbeacon-chat__button',  # fakturoid.cz
+    ".hsbeacon-chat__button",  # fakturoid.cz
 ]
 
 BLOCKED_ROUTES = [
-    re.compile(r'go\.eu\.bbelements\.com'),  # ulekare.cz
-    re.compile(r'googlesyndication\.com'),  # ulekare.cz
+    re.compile(r"go\.eu\.bbelements\.com"),  # ulekare.cz
+    re.compile(r"googlesyndication\.com"),  # ulekare.cz
 ]
 
 
@@ -125,64 +124,74 @@ def main(context):
     SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
     SCREENSHOTS_OVERRIDES_DIR.mkdir(parents=True, exist_ok=True)
 
-    overriding_paths = set(chain(SCREENSHOTS_OVERRIDES_DIR.glob('*.jpg'),
-                                 SCREENSHOTS_OVERRIDES_DIR.glob('*.png'),
-                                 SCREENSHOTS_OVERRIDES_DIR.glob('*.webp')))
-    logger.info(f'Found {len(overriding_paths)} manual screenshot overrides')
+    overriding_paths = set(
+        chain(
+            SCREENSHOTS_OVERRIDES_DIR.glob("*.jpg"),
+            SCREENSHOTS_OVERRIDES_DIR.glob("*.png"),
+            SCREENSHOTS_OVERRIDES_DIR.glob("*.webp"),
+        )
+    )
+    logger.info(f"Found {len(overriding_paths)} manual screenshot overrides")
     Pool().map(edit_screenshot_override, overriding_paths)
-    overriding_paths = set(SCREENSHOTS_OVERRIDES_DIR.glob('*.webp'))
+    overriding_paths = set(SCREENSHOTS_OVERRIDES_DIR.glob("*.webp"))
 
-    paths = set(chain(SCREENSHOTS_DIR.glob('*.webp')))
-    logger.info(f'Found {len(paths)} screenshots')
+    paths = set(chain(SCREENSHOTS_DIR.glob("*.webp")))
+    logger.info(f"Found {len(paths)} screenshots")
     expired_paths = set(filter(is_expired_path, paths))
-    logger.info(f'Expiring {len(expired_paths)} screenshot images')
+    logger.info(f"Expiring {len(expired_paths)} screenshot images")
     for path in expired_paths:
-        logger.warning(f'Expiring {path}')
+        logger.warning(f"Expiring {path}")
         path.unlink()
 
-    logger.info('Building HTML')
+    logger.info("Building HTML")
     context.invoke(build)
-    html_paths = set(Path(PUBLIC_DIR).glob('**/*.html'))
-    logger.info(f'Reading {len(html_paths)} HTML files')
+    html_paths = set(Path(PUBLIC_DIR).glob("**/*.html"))
+    logger.info(f"Reading {len(html_paths)} HTML files")
     screenshots = set(chain.from_iterable(map(parse_doc, html_paths)))
-    logger.info(f'Found {len(screenshots)} links to screenshots')
+    logger.info(f"Found {len(screenshots)} links to screenshots")
 
     existing_screenshots = set(filter(is_existing_screenshot, screenshots))
-    logger.info(f'Skipping {len(existing_screenshots)} existing screenshots')
+    logger.info(f"Skipping {len(existing_screenshots)} existing screenshots")
     screenshots = set(screenshots) - existing_screenshots
 
     overridden_screenshots = set(filter(is_overridden_screenshot, screenshots))
-    logger.info(f'Skipping {len(overridden_screenshots)} overridden screenshots')
+    logger.info(f"Skipping {len(overridden_screenshots)} overridden screenshots")
     screenshots = set(screenshots) - overridden_screenshots
 
     yt_screenshots = set(filter(is_yt_screenshot, screenshots))
-    logger.info(f'Downloading {len(yt_screenshots)} YouTube URLs')
+    logger.info(f"Downloading {len(yt_screenshots)} YouTube URLs")
     screenshots = set(screenshots) - yt_screenshots
     Pool().map(download_yt_cover_image, yt_screenshots)
 
     fb_screenshots = set(filter(is_fb_screenshot, screenshots))
-    logger.info(f'Downloading {len(fb_screenshots)} Facebook URLs')
+    logger.info(f"Downloading {len(fb_screenshots)} Facebook URLs")
     screenshots = set(screenshots) - fb_screenshots
     Pool(PLAYWRIGHT_WORKERS).map(download_fb_cover_image, fb_screenshots)
 
-    logger.info(f'Downloading {len(screenshots)} regular website URLs')
+    logger.info(f"Downloading {len(screenshots)} regular website URLs")
     screenshots_batches = generate_batches(screenshots, PLAYWRIGHT_BATCH_SIZE)
     Pool(PLAYWRIGHT_WORKERS).map(create_screenshots, screenshots_batches)
 
 
 def parse_doc(path):
-    logger.debug(f'Parsing {path.relative_to(PUBLIC_DIR)}')
+    logger.debug(f"Parsing {path.relative_to(PUBLIC_DIR)}")
     html_tree = html.fromstring(path.read_bytes())
-    for card in html_tree.cssselect('*[data-screenshot-source-url][data-screenshot-image-url]'):
-        screenshot_source_url = card.get('data-screenshot-source-url')
-        if screenshot_source_url.startswith('.'):
-            screenshot_source_url = f'https://junior.guru/{path.parent.relative_to(PUBLIC_DIR) / screenshot_source_url}'
-        screenshot_path = SCREENSHOTS_DIR / Path(card.get('data-screenshot-image-url')).name
+    for card in html_tree.cssselect(
+        "*[data-screenshot-source-url][data-screenshot-image-url]"
+    ):
+        screenshot_source_url = card.get("data-screenshot-source-url")
+        if screenshot_source_url.startswith("."):
+            screenshot_source_url = f"https://junior.guru/{path.parent.relative_to(PUBLIC_DIR) / screenshot_source_url}"
+        screenshot_path = (
+            SCREENSHOTS_DIR / Path(card.get("data-screenshot-image-url")).name
+        )
         yield (screenshot_source_url, screenshot_path)
 
 
 def is_expired_path(path):
-    return (datetime.now() - datetime.fromtimestamp(path.stat().st_ctime)) > CACHE_PERIOD
+    return (
+        datetime.now() - datetime.fromtimestamp(path.stat().st_ctime)
+    ) > CACHE_PERIOD
 
 
 def is_overridden_screenshot(screenshot):
@@ -216,7 +225,9 @@ def parse_yt_id(url):
 def download_yt_cover_image(screenshot):
     url, path = screenshot
     logger.info(f"Shooting {url}")
-    resp = requests.get(f"https://img.youtube.com/vi/{parse_yt_id(url)}/maxresdefault.jpg")
+    resp = requests.get(
+        f"https://img.youtube.com/vi/{parse_yt_id(url)}/maxresdefault.jpg"
+    )
     resp.raise_for_status()
     image_bytes = edit_image(resp.content)
     logger.info(f"Writing {path}")
@@ -229,10 +240,12 @@ def download_fb_cover_image(screenshot):
     with sync_playwright() as playwright:
         browser = playwright.firefox.launch()
         page = browser.new_page()
-        page.goto(url, wait_until='networkidle')
-        image_url = page.evaluate('''
+        page.goto(url, wait_until="networkidle")
+        image_url = page.evaluate(
+            """
             () => document.querySelector('img[data-imgperflogname="profileCoverPhoto"]').src
-        ''')
+        """
+        )
         browser.close()
     resp = requests.get(image_url)
     resp.raise_for_status()
@@ -244,7 +257,7 @@ def download_fb_cover_image(screenshot):
 def generate_batches(iterable, batch_size):
     iterable = list(iterable)
     for i in range(0, len(iterable), batch_size):
-        yield iterable[i:i + batch_size]
+        yield iterable[i : i + batch_size]
 
 
 def create_screenshots(screenshots):
@@ -267,16 +280,21 @@ def create_screenshot(page, url):
             for blocked_route in BLOCKED_ROUTES:
                 page.route(blocked_route, lambda route: route.abort())
             try:
-                page.goto(url, wait_until='networkidle')
+                page.goto(url, wait_until="networkidle")
             except PlaywrightTimeoutError:
                 pass
-            page.evaluate('''
+            page.evaluate(
+                """
                 selectors => Array.from(document.querySelectorAll(selectors.join(', ')))
                     .forEach(element => element.remove());
-            ''', list(HIDDEN_ELEMENTS))
+            """,
+                list(HIDDEN_ELEMENTS),
+            )
             screenshot_bytes = page.screenshot()
             if len(screenshot_bytes) < MIN_BYTES_THRESHOLD:
-                raise PlaywrightError(f'Suspiciously small image: {len(screenshot_bytes)} bytes')
+                raise PlaywrightError(
+                    f"Suspiciously small image: {len(screenshot_bytes)} bytes"
+                )
             return screenshot_bytes
         except PlaywrightError as e:
             if attempt_no < PLAYWRIGHT_RETRIES:
@@ -287,31 +305,31 @@ def create_screenshot(page, url):
 
 def edit_image(image_bytes):
     with Image.open(BytesIO(image_bytes)) as image:
-        if image.format in ('PNG', 'JPEG'):
-            image = image.convert('RGB')  # from RGBA
-        elif image.format != 'WEBP':
-            raise RuntimeError(f'Unexpected image format: {image.format}')
+        if image.format in ("PNG", "JPEG"):
+            image = image.convert("RGB")  # from RGBA
+        elif image.format != "WEBP":
+            raise RuntimeError(f"Unexpected image format: {image.format}")
 
         if image.width > WIDTH or image.height > HEIGHT:
             image.thumbnail((WIDTH, HEIGHT))
 
         stream = BytesIO()
-        image.save(stream, 'WEBP', quality=80, method=6, lossless=False)
+        image.save(stream, "WEBP", quality=80, method=6, lossless=False)
     return stream.getvalue()
 
 
 def edit_screenshot_override(path):
     path = Path(path)
-    logger.info(f'Editing {path.name}')
+    logger.info(f"Editing {path.name}")
 
     with Image.open(path) as image:
-        if image.format in ('PNG', 'JPEG'):
-            path_original, path = path, path.with_suffix('.webp')
-            image = image.convert('RGB')  # from RGBA
-            image.save(path, 'WEBP', quality=80, method=6, lossless=False)
+        if image.format in ("PNG", "JPEG"):
+            path_original, path = path, path.with_suffix(".webp")
+            image = image.convert("RGB")  # from RGBA
+            image.save(path, "WEBP", quality=80, method=6, lossless=False)
             path_original.unlink()
-        elif image.format != 'WEBP':
-            raise RuntimeError(f'Unexpected image format: {image.format}')
+        elif image.format != "WEBP":
+            raise RuntimeError(f"Unexpected image format: {image.format}")
 
         if image.width > WIDTH or image.height > HEIGHT:
             # We want to support converting drop-in images made as whole-page
@@ -320,4 +338,4 @@ def edit_screenshot_override(path):
             height_ar = (image.height * WIDTH) // image.width
             image = image.resize((WIDTH, height_ar), Image.Resampling.BICUBIC)
             image = image.crop((0, 0, WIDTH, HEIGHT))
-            image.save(path, 'WEBP', quality=80, method=6, lossless=False)
+            image.save(path, "WEBP", quality=80, method=6, lossless=False)

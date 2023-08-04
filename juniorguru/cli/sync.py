@@ -36,7 +36,9 @@ class Group(click.Group):
 
     @cached_property
     def dependencies_map(self):
-        return {name: command.dependencies for name, command in self.sync_commands.items()}
+        return {
+            name: command.dependencies for name, command in self.sync_commands.items()
+        }
 
     def sync_command(self, *args, **kwargs):
         def decorator(fn):
@@ -44,33 +46,43 @@ class Group(click.Group):
             @click.pass_context
             def wrapper(context, *fn_args, **fn_kwargs):
                 name = context.info_name
-                sync = context.obj['sync']
+                sync = context.obj["sync"]
 
                 if self._is_sync_command_seen(name, sync):
-                    logger[name].info('Skipping (already executed)')
+                    logger[name].info("Skipping (already executed)")
                     return
 
                 dependencies = self._get_sync_command_dependencies(name, sync)
-                skip_dependencies = context.obj['skip_dependencies']
+                skip_dependencies = context.obj["skip_dependencies"]
                 if dependencies and skip_dependencies:
-                    logger[name].warning(f"Skipping dependencies: {', '.join(dependencies)} (at your own risk)")
+                    logger[name].warning(
+                        f"Skipping dependencies: {', '.join(dependencies)} (at your own risk)"
+                    )
                 elif dependencies:
                     logger[name].info(f"Dependencies: {', '.join(dependencies)}")
-                    unkwnown_dependencies = set(dependencies) - set(self.list_commands(context))
+                    unkwnown_dependencies = set(dependencies) - set(
+                        self.list_commands(context)
+                    )
                     if unkwnown_dependencies:
-                        raise NotImplementedError(f"Unknown dependencies: {', '.join(unkwnown_dependencies)}")
+                        raise NotImplementedError(
+                            f"Unknown dependencies: {', '.join(unkwnown_dependencies)}"
+                        )
                     for dependency_name in dependencies:
                         logger[name].debug(f"Invoking dependency: {dependency_name}")
                         context.invoke(main.get_command(context, dependency_name))
 
-                logger[name].debug('Invoking self')
+                logger[name].debug("Invoking self")
                 self._start_sync_command(name, sync)
                 try:
                     context.invoke(fn, *fn_args, **fn_kwargs)
                 finally:
                     sync_command = self._end_sync_command(name, sync)
-                    logger[name].info(f"Finished in {sync_command.time_diff_min:.1f}min")
+                    logger[name].info(
+                        f"Finished in {sync_command.time_diff_min:.1f}min"
+                    )
+
             return self.command(*args, cls=Command, **kwargs)(wrapper)
+
         return decorator
 
     @db.connection_context()
@@ -104,21 +116,38 @@ class Command(click.Command):
 
 
 @click.group(chain=True, cls=Group)
-@click.option('--id', envvar='CIRCLE_WORKFLOW_WORKSPACE_ID', default=perf_counter_ns)
-@click.option('--dependencies/--skip-dependencies', '--deps/--skip-deps', '--deps/--no-deps', 'deps', default=True)
-@click.option('--mutate', multiple=True)
-@click.option('--allow-mutations/--disallow-mutations', default=False)
-@click.option('--debug/--no-debug', default=None)
-@click.option('--cache-dir', default='.sync_cache', type=click.Path(path_type=Path))
-@click.option('--clear-image-templates-cache/--keep-image-templates-cache', default=True)
+@click.option("--id", envvar="CIRCLE_WORKFLOW_WORKSPACE_ID", default=perf_counter_ns)
+@click.option(
+    "--dependencies/--skip-dependencies",
+    "--deps/--skip-deps",
+    "--deps/--no-deps",
+    "deps",
+    default=True,
+)
+@click.option("--mutate", multiple=True)
+@click.option("--allow-mutations/--disallow-mutations", default=False)
+@click.option("--debug/--no-debug", default=None)
+@click.option("--cache-dir", default=".sync_cache", type=click.Path(path_type=Path))
+@click.option(
+    "--clear-image-templates-cache/--keep-image-templates-cache", default=True
+)
 @click.pass_context
-def main(context, id, deps, mutate, allow_mutations, debug, cache_dir, clear_image_templates_cache):
+def main(
+    context,
+    id,
+    deps,
+    mutate,
+    allow_mutations,
+    debug,
+    cache_dir,
+    clear_image_templates_cache,
+):
     Path(cache_dir).mkdir(exist_ok=True)
-    logger.info(f'Sync cache directory set to {cache_dir.absolute()}')
+    logger.info(f"Sync cache directory set to {cache_dir.absolute()}")
 
     if debug:
-        loggers.reconfigure_level('DEBUG')
-        logger.info('Logging level set to DEBUG')
+        loggers.reconfigure_level("DEBUG")
+        logger.info("Logging level set to DEBUG")
 
     if allow_mutations:
         mutations.allow_all()
@@ -128,41 +157,49 @@ def main(context, id, deps, mutate, allow_mutations, debug, cache_dir, clear_ima
     if clear_image_templates_cache:
         images.init_templates_cache()
     else:
-        logger.info('Keeping image templates cache')
+        logger.info("Keeping image templates cache")
 
     with db.connection_context():
         sync = Sync.start(id)
-    context.obj = dict(sync=sync,
-                       cache_dir=cache_dir,
-                       skip_dependencies=not deps)
-    logger.debug(f"Sync #{id} starts with {sync.count_commands()} commands already recorded")
+    context.obj = dict(sync=sync, cache_dir=cache_dir, skip_dependencies=not deps)
+    logger.debug(
+        f"Sync #{id} starts with {sync.count_commands()} commands already recorded"
+    )
     context.call_on_close(close)
 
 
 @main.command()
-@click.argument('job', type=click.Choice(['sync-1', 'sync-2']), envvar='CIRCLE_JOB')
-@click.argument('node_index', type=int, envvar='CIRCLE_NODE_INDEX')
-@click.option('--nodes', type=int, envvar='CIRCLE_NODE_TOTAL')
-@click.option('-p', '--print-only', is_flag=True, default=False, show_default=True)
+@click.argument("job", type=click.Choice(["sync-1", "sync-2"]), envvar="CIRCLE_JOB")
+@click.argument("node_index", type=int, envvar="CIRCLE_NODE_INDEX")
+@click.option("--nodes", type=int, envvar="CIRCLE_NODE_TOTAL")
+@click.option("-p", "--print-only", is_flag=True, default=False, show_default=True)
 @click.pass_context
 def ci(context, job, node_index, nodes, print_only):
-    if job == 'sync-1':
-        commands_with_deps = {name for name, deps in main.dependencies_map.items() if deps}
+    if job == "sync-1":
+        commands_with_deps = {
+            name for name, deps in main.dependencies_map.items() if deps
+        }
         chains = get_parallel_chains(main.dependencies_map, exclude=commands_with_deps)
-    elif job == 'sync-2':
-        commands_without_deps = {name for name, deps in main.dependencies_map.items() if not deps}
-        chains = get_parallel_chains(main.dependencies_map, exclude=commands_without_deps)
+    elif job == "sync-2":
+        commands_without_deps = {
+            name for name, deps in main.dependencies_map.items() if not deps
+        }
+        chains = get_parallel_chains(
+            main.dependencies_map, exclude=commands_without_deps
+        )
     else:
         raise ValueError(job)
 
     if nodes and nodes != len(chains):
-        logger.error(f"The job {job} has parallelism {nodes}, but there are {len(chains)} command chains!")
+        logger.error(
+            f"The job {job} has parallelism {nodes}, but there are {len(chains)} command chains!"
+        )
         raise click.Abort()
 
     if print_only:
         for index, chain in enumerate(chains):
             for name in chain:
-                bold, color = (True, 'green') if index == node_index else (None, None)
+                bold, color = (True, "green") if index == node_index else (None, None)
                 click.secho(f"{index} {name}", bold=bold, fg=color)
     else:
         for name in chains[node_index]:
@@ -171,16 +208,26 @@ def ci(context, job, node_index, nodes, print_only):
 
 
 @main.command()
-@click.option('--config-path', default='.circleci/config.yml', type=click.Path(path_type=Path, exists=True))
-@click.option('-p', '--print-only', is_flag=True, default=False, show_default=True)
+@click.option(
+    "--config-path",
+    default=".circleci/config.yml",
+    type=click.Path(path_type=Path, exists=True),
+)
+@click.option("-p", "--print-only", is_flag=True, default=False, show_default=True)
 def parallelism(config_path, print_only):
     commands_with_deps = {name for name, deps in main.dependencies_map.items() if deps}
-    sync1_chains = get_parallel_chains(main.dependencies_map, exclude=commands_with_deps)
+    sync1_chains = get_parallel_chains(
+        main.dependencies_map, exclude=commands_with_deps
+    )
     sync1_parallelism = len(sync1_chains)
     click.echo(f"sync-1 {sync1_parallelism}")
 
-    commands_without_deps = {name for name, deps in main.dependencies_map.items() if not deps}
-    sync2_chains = get_parallel_chains(main.dependencies_map, exclude=commands_without_deps)
+    commands_without_deps = {
+        name for name, deps in main.dependencies_map.items() if not deps
+    }
+    sync2_chains = get_parallel_chains(
+        main.dependencies_map, exclude=commands_without_deps
+    )
     sync2_parallelism = len(sync2_chains)
     click.echo(f"sync-2 {sync2_parallelism}")
 
@@ -191,19 +238,19 @@ def parallelism(config_path, print_only):
     parallelism = None
     with config_path.open() as config_file:
         for line in config_file:
-            if line.strip() == 'sync-1:':
+            if line.strip() == "sync-1:":
                 parallelism = sync1_parallelism
-            elif line.strip() == 'sync-2:':
+            elif line.strip() == "sync-2:":
                 parallelism = sync2_parallelism
-            elif line.lstrip().startswith('parallelism:'):
-                line, _ = line.split(':', 1)
-                line += f': {parallelism}\n'
+            elif line.lstrip().startswith("parallelism:"):
+                line, _ = line.split(":", 1)
+                line += f": {parallelism}\n"
             lines.append(line)
-    config_path.write_text(''.join(lines))
+    config_path.write_text("".join(lines))
 
 
 @main.command()
-@click.option('-p', '--print-only', is_flag=True, default=False, show_default=True)
+@click.option("-p", "--print-only", is_flag=True, default=False, show_default=True)
 @click.pass_context
 def all(context, print_only):
     for name in main.dependencies_map:
@@ -216,30 +263,32 @@ def all(context, print_only):
 
 @click.pass_context
 def close(context):
-    sync = context.obj['sync']
+    sync = context.obj["sync"]
     logger.debug(f"Sync #{sync.id} done with {sync.count_commands()} commands recorded")
     times = sync.times_min()
     if times:
-        times_repr = ', '.join([f"{name} {time:.1f}min" for name, time in times.items()])
+        times_repr = ", ".join(
+            [f"{name} {time:.1f}min" for name, time in times.items()]
+        )
         logger.info(times_repr)
         total_time = sum(times.values())
         if total_time >= NOTIFY_AFTER_MIN:
-            notify('Finished!', f'{total_time:.1f}min')
+            notify("Finished!", f"{total_time:.1f}min")
 
 
 def notify(title, text):
-    print('\a', end='', flush=True)
+    print("\a", end="", flush=True)
     if pync:
         pync.Notifier.notify(text, title=title)
 
 
 def get_parallel_chains(dependencies_map, exclude=None):
     exclude = exclude or []
-    temp_chains = {name: set([name] +
-                             [c for c in deps if c not in exclude])
-                   for name, deps
-                   in dependencies_map.items()
-                   if name not in exclude}
+    temp_chains = {
+        name: set([name] + [c for c in deps if c not in exclude])
+        for name, deps in dependencies_map.items()
+        if name not in exclude
+    }
     chains = {}
     while True:
         seen_names = []
@@ -258,14 +307,12 @@ def get_parallel_chains(dependencies_map, exclude=None):
 
 
 def confirm(question, default=True):
-    print('\a', end='', flush=True)
-    return click.confirm(question,
-                         default=default,
-                         show_default=True,
-                         prompt_suffix='')
+    print("\a", end="", flush=True)
+    return click.confirm(question, default=default, show_default=True, prompt_suffix="")
 
 
-def default_from_env(name, default='', type=str):
+def default_from_env(name, default="", type=str):
     def env_reader():
         return type(os.environ.get(name) or default)
+
     return env_reader

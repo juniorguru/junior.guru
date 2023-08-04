@@ -14,8 +14,8 @@ logger = loggers.from_path(__file__)
 
 
 @click.command()
-@click.argument('message_url')
-@click.argument('winners_count', type=int)
+@click.argument("message_url")
+@click.argument("winners_count", type=int)
 def main(message_url, winners_count):
     discord_sync.run(discord_task, message_url, winners_count)
 
@@ -25,28 +25,34 @@ async def discord_task(client: ClubClient, message_url, winners_count):
     role = [role for role in roles if role.id == ROLE][0]
     logger.info(f"Limiting winners to only those with role '{role.name}'")
 
-    message_url_parts = message_url.split('/')
+    message_url_parts = message_url.split("/")
     channel_id = int(message_url_parts[-2])
     channel = await client.fetch_channel(channel_id)
-    logger.info(f'Message is in channel #{channel.name}')
+    logger.info(f"Message is in channel #{channel.name}")
 
     message_id = int(message_url_parts[-1])
     message = await channel.fetch_message(message_id)
-    logger.info(f'Message has been posted by {message.author.display_name} at {message.created_at.isoformat()}+00:00')
+    logger.info(
+        f"Message has been posted by {message.author.display_name} at {message.created_at.isoformat()}+00:00"
+    )
 
     reactions_count = sum([reaction.count for reaction in message.reactions])
-    logger.info(f'Message has {reactions_count} reactions in total')
+    logger.info(f"Message has {reactions_count} reactions in total")
     users = set()
     for reaction in message.reactions:
         async for user in reaction.users():
-            logger.info(f'User {user.display_name} reacted with: {emoji_name(reaction.emoji)}')
+            logger.info(
+                f"User {user.display_name} reacted with: {emoji_name(reaction.emoji)}"
+            )
             if role in user.roles:
                 users.add(user)
             else:
-                logger.warning(f"User {user.display_name} doesn't have role '{role.name}' and can't win!")
-    logger.info(f'{len(users)} users reacted')
+                logger.warning(
+                    f"User {user.display_name} doesn't have role '{role.name}' and can't win!"
+                )
+    logger.info(f"{len(users)} users reacted")
     for i in range(1, 6):
-        logger.info('The winners are…')
+        logger.info("The winners are…")
         time.sleep(1 * i)
     for user in random.sample(users, winners_count):
-        logger.info(f'🏆 {user.display_name} (id #{user.id})')
+        logger.info(f"🏆 {user.display_name} (id #{user.id})")

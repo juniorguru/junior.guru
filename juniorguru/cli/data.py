@@ -13,30 +13,30 @@ from sqlite_utils.db import NotFoundError
 from juniorguru.lib import loggers
 
 
-SNAPSHOT_FILE = '.persist-to-workspace-snapshot'
+SNAPSHOT_FILE = ".persist-to-workspace-snapshot"
 
-PERSIST_DIR = 'persist-to-workspace'
+PERSIST_DIR = "persist-to-workspace"
 
 SNAPSHOT_EXCLUDE = [
-    '.git',
-    'backups',
-    'node_modules',
-    'public',
-    '.image_templates_cache',
-    '.sync_cache',
-    '.pytest_cache',
-    '.vscode',
+    ".git",
+    "backups",
+    "node_modules",
+    "public",
+    ".image_templates_cache",
+    ".sync_cache",
+    ".pytest_cache",
+    ".vscode",
     SNAPSHOT_FILE,
     PERSIST_DIR,
 ]
 
-PERSIST_EXCLUDE = ['*.pyc', '*.db-shm', '*.db-wal', '.DS_Store']
+PERSIST_EXCLUDE = ["*.pyc", "*.db-shm", "*.db-wal", ".DS_Store"]
 
 LOAD_EXCLUDE = PERSIST_EXCLUDE
 
 SCHEMA_TRANSFORMATIONS = {
-    re.compile(r'^CREATE TABLE'): 'CREATE TABLE IF NOT EXISTS',
-    re.compile(r'^(CREATE( UNIQUE)? INDEX)'): r'\1 IF NOT EXISTS',
+    re.compile(r"^CREATE TABLE"): "CREATE TABLE IF NOT EXISTS",
+    re.compile(r"^(CREATE( UNIQUE)? INDEX)"): r"\1 IF NOT EXISTS",
 }
 
 DIR_NOT_EMPTY_ERRNO = 39
@@ -46,10 +46,10 @@ logger = loggers.from_path(__file__)
 
 
 class CommaSeparated(click.ParamType):
-    name = 'commaseparated'
-    def convert(self, value, param, context):
-        return [item.strip() for item in value.split(',')]
+    name = "commaseparated"
 
+    def convert(self, value, param, context):
+        return [item.strip() for item in value.split(",")]
 
 
 @click.group()
@@ -58,66 +58,74 @@ def main():
 
 
 @main.command()
-@click.option('--file', default=SNAPSHOT_FILE, type=click.File(mode='w'))
-@click.option('--exclude', default=','.join(SNAPSHOT_EXCLUDE), type=CommaSeparated())
+@click.option("--file", default=SNAPSHOT_FILE, type=click.File(mode="w"))
+@click.option("--exclude", default=",".join(SNAPSHOT_EXCLUDE), type=CommaSeparated())
 def snapshot(file, exclude):
-    for path, mtime in take_snapshot('.', exclude=exclude):
+    for path, mtime in take_snapshot(".", exclude=exclude):
         logger.debug(path)
-        assert ' = ' not in str(path)
+        assert " = " not in str(path)
         file.write(f"{path} = {mtime}\n")
 
 
 @main.command()
-@click.argument('namespace')
-@click.option('--persist-dir', default=PERSIST_DIR, type=click.Path(path_type=Path))
-@click.option('--persist-exclude', default=','.join(PERSIST_EXCLUDE), type=CommaSeparated())
-@click.option('--snapshot-file', default=SNAPSHOT_FILE, type=click.File())
-@click.option('--snapshot-exclude', default=','.join(SNAPSHOT_EXCLUDE), type=CommaSeparated())
-@click.option('--move/--no-move', default=False)
-def persist(persist_dir, namespace, snapshot_file, snapshot_exclude, persist_exclude, move):
+@click.argument("namespace")
+@click.option("--persist-dir", default=PERSIST_DIR, type=click.Path(path_type=Path))
+@click.option(
+    "--persist-exclude", default=",".join(PERSIST_EXCLUDE), type=CommaSeparated()
+)
+@click.option("--snapshot-file", default=SNAPSHOT_FILE, type=click.File())
+@click.option(
+    "--snapshot-exclude", default=",".join(SNAPSHOT_EXCLUDE), type=CommaSeparated()
+)
+@click.option("--move/--no-move", default=False)
+def persist(
+    persist_dir, namespace, snapshot_file, snapshot_exclude, persist_exclude, move
+):
     shutil.rmtree(persist_dir, ignore_errors=True)
     namespace_dir = persist_dir / namespace
     namespace_dir.mkdir(parents=True)
-    snapshot = {Path(path): float(mtime)
-                for path, mtime
-                in (line.split(' = ') for line in snapshot_file)}
-    for path, mtime in take_snapshot('.', exclude=snapshot_exclude):
+    snapshot = {
+        Path(path): float(mtime)
+        for path, mtime in (line.split(" = ") for line in snapshot_file)
+    }
+    for path, mtime in take_snapshot(".", exclude=snapshot_exclude):
         if any(fnmatch(path.name, pattern) for pattern in persist_exclude):
             logger.debug(f"Excluding {path}")
         elif path not in snapshot:
-            logger['new'].info(path)
-            persist_file('.', path, namespace_dir, move=move)
+            logger["new"].info(path)
+            persist_file(".", path, namespace_dir, move=move)
         elif mtime > snapshot[path]:
-            logger['mod'].info(path)
-            persist_file('.', path, namespace_dir, move=move)
-    for path in (path for path in persist_dir.glob('**/*')
-                 if path.is_file()):
+            logger["mod"].info(path)
+            persist_file(".", path, namespace_dir, move=move)
+    for path in (path for path in persist_dir.glob("**/*") if path.is_file()):
         logger.info(path)
 
 
 @main.command()
-@click.option('--persist-dir', default=PERSIST_DIR, type=click.Path(path_type=Path))
-@click.option('--move/--no-move', default=False)
-@click.option('--exclude', default=','.join(LOAD_EXCLUDE), type=CommaSeparated())
+@click.option("--persist-dir", default=PERSIST_DIR, type=click.Path(path_type=Path))
+@click.option("--move/--no-move", default=False)
+@click.option("--exclude", default=",".join(LOAD_EXCLUDE), type=CommaSeparated())
 def load(persist_dir, move, exclude):
     for namespace_dir in persist_dir.iterdir():
-        for path in (path for path in namespace_dir.glob('**/*')
-                    if path.is_file()):
+        for path in (path for path in namespace_dir.glob("**/*") if path.is_file()):
             if any(fnmatch(path.name, pattern) for pattern in exclude):
                 logger.debug(f"Excluding {path}")
             else:
                 logger.info(path)
-                load_file(namespace_dir, path, '.', move=move)
+                load_file(namespace_dir, path, ".", move=move)
     if move:
         shutil.rmtree(persist_dir)
 
 
 def take_snapshot(dir, exclude=None):
-    exclude = [(f"{pattern.rstrip('/')}/**/*" if Path(pattern).is_dir() else pattern)
-               for pattern in (exclude or [])]
-    excluded = itertools.chain.from_iterable(Path(dir).glob(pattern)
-                                             for pattern in exclude)
-    included = Path(dir).glob('**/*')
+    exclude = [
+        (f"{pattern.rstrip('/')}/**/*" if Path(pattern).is_dir() else pattern)
+        for pattern in (exclude or [])
+    ]
+    excluded = itertools.chain.from_iterable(
+        Path(dir).glob(pattern) for pattern in exclude
+    )
+    included = Path(dir).glob("**/*")
     for path in set(included) - set(excluded):
         if path.is_file():
             yield path.relative_to(dir), path.stat().st_mtime
@@ -126,7 +134,7 @@ def take_snapshot(dir, exclude=None):
 def persist_file(source_dir, source_path, persist_dir, move=False):
     persist_path = persist_dir / source_path.relative_to(source_dir)
     persist_path.parent.mkdir(parents=True, exist_ok=True)
-    if source_path.suffix == '.db':
+    if source_path.suffix == ".db":
         prepare_database_for_moving(source_path)
     (shutil.move if move else shutil.copy2)(source_path, persist_path)
 
@@ -134,16 +142,20 @@ def persist_file(source_dir, source_path, persist_dir, move=False):
 def load_file(persist_dir, persist_path, source_dir, move=False):
     source_path = source_dir / persist_path.relative_to(persist_dir)
     source_path.parent.mkdir(parents=True, exist_ok=True)
-    if source_path.exists() and not filecmp.cmp(persist_path, source_path, shallow=False):
-        if source_path.suffix == '.db':
+    if source_path.exists() and not filecmp.cmp(
+        persist_path, source_path, shallow=False
+    ):
+        if source_path.suffix == ".db":
             merge_databases(persist_path, source_path)
-        elif source_path.suffix == '.jsonl':
+        elif source_path.suffix == ".jsonl":
             merge_unique_lines(persist_path, source_path)
         elif is_cache(source_path):
             pass  # ignore, just a cache which gets regularly cleared anyway
         else:
-            raise RuntimeError(f"Conflict loading {persist_path} ({persist_path.stat().st_size}b)"
-                               f", file already exists: {source_path} ({source_path.stat().st_size}b)")
+            raise RuntimeError(
+                f"Conflict loading {persist_path} ({persist_path.stat().st_size}b)"
+                f", file already exists: {source_path} ({source_path.stat().st_size}b)"
+            )
         if move:
             persist_path.unlink()
     else:
@@ -157,7 +169,7 @@ def prepare_database_for_moving(path: Path):
 
 
 def merge_databases(path_from: Path, path_to: Path):
-    logger_db = logger['db']
+    logger_db = logger["db"]
     logger_db.info(f"Merging {path_from} to {path_to}")
     db_from, db_to = Database(path_from), Database(path_to)
 
@@ -171,7 +183,9 @@ def merge_databases(path_from: Path, path_to: Path):
 
         if not table_to.exists():
             raise RuntimeError(f"Table {name} should already exist!")
-        logger_t.info(f"Table has {table_to.count} rows, merging {table_from.count} rows")
+        logger_t.info(
+            f"Table has {table_to.count} rows, merging {table_from.count} rows"
+        )
 
         for row_from in table_from.rows:
             pks = [row_from[pk] for pk in table_from.pks]
@@ -184,7 +198,9 @@ def merge_databases(path_from: Path, path_to: Path):
                 try:
                     updates = get_row_updates(row_from, row_to)
                 except RuntimeError:
-                    logger_t.error("Conflicts found! This typically happens if two parallel scripts write values to the same column. Instead add a new column or a new 1:1 table")
+                    logger_t.error(
+                        "Conflicts found! This typically happens if two parallel scripts write values to the same column. Instead add a new column or a new 1:1 table"
+                    )
                     raise
                 if updates:
                     logger_t.debug(f"Updating {pks!r} with {pformat(updates)}")
@@ -195,7 +211,9 @@ def merge_databases(path_from: Path, path_to: Path):
 
 def get_row_updates(row_from, row_to):
     if frozenset(row_from.keys()) != frozenset(row_to.keys()):
-        raise ValueError(f"Rows don't match! {list(row_from.keys())!r} ≠ {list(row_to.keys())!r}")
+        raise ValueError(
+            f"Rows don't match! {list(row_from.keys())!r} ≠ {list(row_to.keys())!r}"
+        )
     updates = {}
     for column_name, value_from in row_from.items():
         if value_from is not None:
@@ -203,12 +221,16 @@ def get_row_updates(row_from, row_to):
             if value_to is None:
                 updates[column_name] = value_from
             elif value_from != value_to:
-                raise RuntimeError(f"Conflict in column {column_name}! Values would be overwritten")
+                raise RuntimeError(
+                    f"Conflict in column {column_name}! Values would be overwritten"
+                )
     return updates
 
 
 def make_schema_idempotent(schema):
-    return '\n'.join(map(make_schema_line_idempotent, filter(None, schema.splitlines())))
+    return "\n".join(
+        map(make_schema_line_idempotent, filter(None, schema.splitlines()))
+    )
 
 
 def make_schema_line_idempotent(schema_line):
@@ -219,16 +241,18 @@ def make_schema_line_idempotent(schema_line):
 
 
 def merge_unique_lines(path_from: Path, path_to: Path):
-    logger_lines = logger['unique_lines']
+    logger_lines = logger["unique_lines"]
     logger_lines.info(f"Merging {path_from} to {path_to}")
     lines = frozenset(path_to.read_text().splitlines(keepends=True))
-    with path_to.open(mode='+a') as f_to:
-        with path_from.open(mode='r') as f_from:
+    with path_to.open(mode="+a") as f_to:
+        with path_from.open(mode="r") as f_from:
             for line in f_from:
                 if line not in lines:
                     f_to.write(line)
 
 
 def is_cache(path: str | Path) -> bool:
-    return any(parent_path.name in ('.scrapy', '.sync_cache')
-               for parent_path in Path(path).parents)
+    return any(
+        parent_path.name in (".scrapy", ".sync_cache")
+        for parent_path in Path(path).parents
+    )
