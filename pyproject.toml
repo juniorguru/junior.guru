@@ -51,8 +51,7 @@ juniorguru-chick = { git = "https://github.com/juniorguru/juniorguru-chick.git" 
 pycircleci = "0.7.0"
 livereload = "2.6.3"
 beautifulsoup4 = "4.12.2"
-czech-sort = "^1.1.0"
-black = "^23.7.0"
+czech-sort = "1.1.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "7.4.0"
@@ -64,6 +63,7 @@ ghp-import = "2.1.0"
 pytest-asyncio = "0.21.1"
 scour = "0.38.2"
 datasette = "0.64.3"
+black = "23.7.0"
 
 [tool.pytest.ini_options]
 python_files = "test_*.py *_test.py test.py"
