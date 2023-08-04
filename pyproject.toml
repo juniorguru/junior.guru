@@ -86,8 +86,6 @@ exclude = "(juniorguru/sync|juniorguru/lib|juniorguru/models|juniorguru/[^_]+_le
 profile = "black"
 lines_after_imports = 2
 combine_as_imports = true
-multi_line_output = 0
-include_trailing_comma = false
 extend_skip = ["jobs_legacy"]
 known_local_folder = ["testing_utils"]
 

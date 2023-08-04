@@ -3,8 +3,13 @@ from pathlib import Path
 import pytest
 from PIL import Image
 
-from juniorguru.sync.jobs_logos import (SIZE_PX, choose_user_agent, convert_image,
-                                        sort_key, unique)
+from juniorguru.sync.jobs_logos import (
+    SIZE_PX,
+    choose_user_agent,
+    convert_image,
+    sort_key,
+    unique,
+)
 
 
 FIXTURES_DIR = Path(__file__).parent

@@ -1,7 +1,9 @@
 import pytest
 
 from juniorguru.sync.scrape_jobs.pipelines.short_description_filter import (
-    Pipeline, ShortDescription)
+    Pipeline,
+    ShortDescription,
+)
 
 
 def test_short_description_filter(item, spider):

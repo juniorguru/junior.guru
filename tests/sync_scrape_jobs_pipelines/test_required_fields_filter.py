@@ -2,7 +2,9 @@ import pytest
 from scrapy import Field, Item
 
 from juniorguru.sync.scrape_jobs.pipelines.required_fields_filter import (
-    MissingRequiredFields, Pipeline)
+    MissingRequiredFields,
+    Pipeline,
+)
 
 
 class Something(Item):

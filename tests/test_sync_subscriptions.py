@@ -2,8 +2,11 @@ from datetime import date, datetime
 
 import pytest
 
-from juniorguru.sync.subscriptions import (activities_from_subscription,
-                                           get_coupon_slug, get_timestamp)
+from juniorguru.sync.subscriptions import (
+    activities_from_subscription,
+    get_coupon_slug,
+    get_timestamp,
+)
 
 
 def test_activities_from_subscription():

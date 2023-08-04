@@ -1,7 +1,9 @@
 import pytest
 
-from juniorguru.sync.subscriptions_csv import (classify_marketing_survey_answer,
-                                               classify_referrer)
+from juniorguru.sync.subscriptions_csv import (
+    classify_marketing_survey_answer,
+    classify_referrer,
+)
 
 
 @pytest.mark.parametrize(

@@ -7,8 +7,15 @@ from functools import wraps
 from numbers import Number
 from typing import Callable, Generator, Iterable, Self
 
-from peewee import (BooleanField, Case, CharField, DateField, DateTimeField,
-                    IntegerField, fn)
+from peewee import (
+    BooleanField,
+    Case,
+    CharField,
+    DateField,
+    DateTimeField,
+    IntegerField,
+    fn,
+)
 from playhouse.shortcuts import model_to_dict
 
 from juniorguru.lib.charts import month_range

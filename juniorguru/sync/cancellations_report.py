@@ -11,8 +11,10 @@ from juniorguru.lib.memberful import memberful_url
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
-from juniorguru.models.subscription import (SubscriptionCancellation,
-                                            SubscriptionCancellationReason)
+from juniorguru.models.subscription import (
+    SubscriptionCancellation,
+    SubscriptionCancellationReason,
+)
 
 
 logger = loggers.from_path(__file__)

@@ -5,16 +5,25 @@ from urllib.parse import urlparse
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import google_sheets, loggers
-from juniorguru.lib.google_coerce import (coerce, parse_boolean, parse_boolean_words,
-                                          parse_date, parse_datetime, parse_set,
-                                          parse_text, parse_url)
+from juniorguru.lib.google_coerce import (
+    coerce,
+    parse_boolean,
+    parse_boolean_words,
+    parse_date,
+    parse_datetime,
+    parse_set,
+    parse_text,
+    parse_url,
+)
 from juniorguru.lib.md import md
 from juniorguru.models.base import db
 from juniorguru.models.job import SubmittedJob
 from juniorguru.sync.jobs_scraped.pipelines.boards_ids import (
-    parse_urls as parse_board_ids)
+    parse_urls as parse_board_ids,
+)
 from juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner import (
-    clean_employment_types)
+    clean_employment_types,
+)
 from juniorguru.sync.scrape_jobs.pipelines.language_parser import parse_language
 
 

@@ -2,8 +2,14 @@ import math
 from datetime import datetime, timedelta
 
 import arrow
-from peewee import (CharField, DateTimeField, ForeignKeyField, IntegerField, TextField,
-                    fn)
+from peewee import (
+    CharField,
+    DateTimeField,
+    ForeignKeyField,
+    IntegerField,
+    TextField,
+    fn,
+)
 
 from juniorguru.lib.charts import month_range, ttm_range
 from juniorguru.lib.md import strip_links

@@ -5,10 +5,20 @@ from itemloaders.processors import Compose, Identity, MapCompose, TakeFirst
 from scrapy import Request, Spider as BaseSpider
 from scrapy.loader import ItemLoader
 
-from juniorguru.lib.url_params import (get_param, increment_param, replace_in_params,
-                                       strip_params, strip_utm_params)
-from juniorguru.sync.scrape_jobs.items import (Job, first, last, parse_relative_date,
-                                               split)
+from juniorguru.lib.url_params import (
+    get_param,
+    increment_param,
+    replace_in_params,
+    strip_params,
+    strip_utm_params,
+)
+from juniorguru.sync.scrape_jobs.items import (
+    Job,
+    first,
+    last,
+    parse_relative_date,
+    split,
+)
 
 
 class Spider(BaseSpider):

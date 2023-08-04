@@ -6,13 +6,25 @@ from discord import DMChannel, Member, Message, Reaction, User
 from discord.abc import GuildChannel
 
 from juniorguru.lib import loggers
-from juniorguru.lib.discord_club import (DEFAULT_CHANNELS_HISTORY_SINCE, ClubChannelID,
-                                         ClubClient, ClubEmoji, emoji_name,
-                                         fetch_threads, get_channel_name,
-                                         get_or_create_dm_channel, get_parent_channel,
-                                         is_member, is_thread_after)
-from juniorguru.sync.club_content.store import (store_dm_channel, store_member,
-                                                store_message, store_pin)
+from juniorguru.lib.discord_club import (
+    DEFAULT_CHANNELS_HISTORY_SINCE,
+    ClubChannelID,
+    ClubClient,
+    ClubEmoji,
+    emoji_name,
+    fetch_threads,
+    get_channel_name,
+    get_or_create_dm_channel,
+    get_parent_channel,
+    is_member,
+    is_thread_after,
+)
+from juniorguru.sync.club_content.store import (
+    store_dm_channel,
+    store_member,
+    store_message,
+    store_pin,
+)
 
 
 logger = loggers.from_path(__file__)

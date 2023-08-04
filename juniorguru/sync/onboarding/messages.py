@@ -9,8 +9,10 @@ from juniorguru.lib.chunks import chunks
 from juniorguru.lib.discord_club import ClubClient, get_reaction
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.club import ClubMessage, ClubUser
-from juniorguru.sync.onboarding.scheduled_messages import (ALLOWED_MENTIONS,
-                                                           SCHEDULED_MESSAGES)
+from juniorguru.sync.onboarding.scheduled_messages import (
+    ALLOWED_MENTIONS,
+    SCHEDULED_MESSAGES,
+)
 
 
 TODAY = date.today()

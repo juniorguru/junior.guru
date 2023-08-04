@@ -6,9 +6,11 @@ from juniorguru.lib import loggers
 from juniorguru.lib.chunks import chunks
 from juniorguru.lib.discord_club import ClubChannelID, ClubClient
 from juniorguru.models.club import ClubUser
-from juniorguru.sync.onboarding.categories import (create_enough_categories,
-                                                   delete_empty_categories,
-                                                   is_onboarding_category)
+from juniorguru.sync.onboarding.categories import (
+    create_enough_categories,
+    delete_empty_categories,
+    is_onboarding_category,
+)
 from juniorguru.sync.onboarding.channels_operations import CHANNELS_OPERATIONS
 
 

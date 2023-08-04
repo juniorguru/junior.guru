@@ -2,8 +2,11 @@ from datetime import date
 
 import pytest
 
-from juniorguru.sync.transactions import (get_todo_key, normalize_variable_symbol,
-                                          parse_todo_text)
+from juniorguru.sync.transactions import (
+    get_todo_key,
+    normalize_variable_symbol,
+    parse_todo_text,
+)
 
 
 @pytest.mark.parametrize(

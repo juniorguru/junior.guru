@@ -3,8 +3,15 @@ from datetime import date, timedelta
 from itertools import groupby
 from operator import attrgetter
 
-from peewee import (BooleanField, CharField, DateTimeField, ForeignKeyField,
-                    IntegerField, TextField, fn)
+from peewee import (
+    BooleanField,
+    CharField,
+    DateTimeField,
+    ForeignKeyField,
+    IntegerField,
+    TextField,
+    fn,
+)
 
 from juniorguru.lib.coupons import parse_coupon
 from juniorguru.lib.discord_club import ClubChannelID, ClubMemberID, parse_message_url

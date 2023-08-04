@@ -7,12 +7,19 @@ from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.event import Event
 from juniorguru.models.job import ListedJob, SubmittedJob
-from juniorguru.models.partner import (Partner, Partnership, PartnershipBenefit,
-                                       PartnershipPlan)
+from juniorguru.models.partner import (
+    Partner,
+    Partnership,
+    PartnershipBenefit,
+    PartnershipPlan,
+)
 from juniorguru.models.podcast import PodcastEpisode
 
-from testing_utils import (prepare_course_provider_data, prepare_partner_data,
-                           prepare_test_db)
+from testing_utils import (
+    prepare_course_provider_data,
+    prepare_partner_data,
+    prepare_test_db,
+)
 
 
 def create_partner(id, **kwargs):

@@ -7,10 +7,15 @@ import click
 import discord
 
 from juniorguru.lib import discord_sync, loggers, mutations
-from juniorguru.lib.discord_club import (ClubClient, ClubMemberID, emoji_name,
-                                         get_or_create_dm_channel,
-                                         get_pinned_message_url, get_reaction,
-                                         parse_message_url)
+from juniorguru.lib.discord_club import (
+    ClubClient,
+    ClubMemberID,
+    emoji_name,
+    get_or_create_dm_channel,
+    get_pinned_message_url,
+    get_reaction,
+    parse_message_url,
+)
 from juniorguru.models.base import db
 from juniorguru.models.page import Page
 from juniorguru.models.sync import Sync

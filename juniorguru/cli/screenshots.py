@@ -9,9 +9,11 @@ import click
 import requests
 from lxml import html
 from PIL import Image
-from playwright.sync_api import (Error as PlaywrightError,
-                                 TimeoutError as PlaywrightTimeoutError,
-                                 sync_playwright)
+from playwright.sync_api import (
+    Error as PlaywrightError,
+    TimeoutError as PlaywrightTimeoutError,
+    sync_playwright,
+)
 
 from juniorguru.cli.web import build
 from juniorguru.lib import loggers

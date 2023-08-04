@@ -1,8 +1,13 @@
 from collections import namedtuple
 from operator import attrgetter
 
-from juniorguru.sync.roles import (calc_stats, evaluate_changes, repr_ids, repr_roles,
-                                   repr_stats)
+from juniorguru.sync.roles import (
+    calc_stats,
+    evaluate_changes,
+    repr_ids,
+    repr_roles,
+    repr_stats,
+)
 
 
 DummyRole = namedtuple("Role", ["name"])

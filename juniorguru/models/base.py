@@ -7,8 +7,12 @@ from pathlib import Path
 
 import scrapy
 from czech_sort import bytes_key as czech_sort_key
-from peewee import (Check, ConnectionContext as BaseConnectionContext, Model,
-                    SqliteDatabase as BaseSqliteDatabase)
+from peewee import (
+    Check,
+    ConnectionContext as BaseConnectionContext,
+    Model,
+    SqliteDatabase as BaseSqliteDatabase,
+)
 from playhouse.sqlite_ext import JSONField as BaseJSONField
 
 from juniorguru.lib import loggers

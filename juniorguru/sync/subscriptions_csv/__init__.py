@@ -12,10 +12,12 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.memberful import MemberfulAPI, MemberfulCSV
 from juniorguru.models.base import db
-from juniorguru.models.subscription import (SubscriptionCancellation,
-                                            SubscriptionInternalReferrer,
-                                            SubscriptionMarketingSurvey,
-                                            SubscriptionReferrer)
+from juniorguru.models.subscription import (
+    SubscriptionCancellation,
+    SubscriptionInternalReferrer,
+    SubscriptionMarketingSurvey,
+    SubscriptionReferrer,
+)
 
 
 MEMBERS_GQL_PATH = Path(__file__).parent / 'members.gql'

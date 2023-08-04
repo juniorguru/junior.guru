@@ -3,14 +3,16 @@ from collections import namedtuple
 import discord
 import pytest
 
-from juniorguru.sync.onboarding.categories import (CHANNELS_PER_CATEGORY_LIMIT,
-                                                   ONBOARDING_CATEGORY_NAME,
-                                                   NoOnboardingCategoriesAvailableError,
-                                                   calc_missing_categories_count,
-                                                   get_available_category,
-                                                   has_no_channels,
-                                                   is_available_category,
-                                                   is_onboarding_category)
+from juniorguru.sync.onboarding.categories import (
+    CHANNELS_PER_CATEGORY_LIMIT,
+    ONBOARDING_CATEGORY_NAME,
+    NoOnboardingCategoriesAvailableError,
+    calc_missing_categories_count,
+    get_available_category,
+    has_no_channels,
+    is_available_category,
+    is_onboarding_category,
+)
 
 
 StubChannel = namedtuple(

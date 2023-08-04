@@ -1,7 +1,9 @@
 import pytest
 
-from juniorguru.sync.scrape_jobs.pipelines.language_filter import (IrrelevantLanguage,
-                                                                   Pipeline)
+from juniorguru.sync.scrape_jobs.pipelines.language_filter import (
+    IrrelevantLanguage,
+    Pipeline,
+)
 
 
 @pytest.mark.parametrize("lang", ["cs", "en"])

@@ -4,8 +4,11 @@ from textwrap import dedent
 
 import pytest
 
-from juniorguru.sync.exchange_rates import (get_last_monday, parse_exchange_rate,
-                                            parse_lines)
+from juniorguru.sync.exchange_rates import (
+    get_last_monday,
+    parse_exchange_rate,
+    parse_lines,
+)
 
 
 @pytest.mark.parametrize(
