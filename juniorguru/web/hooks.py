@@ -9,20 +9,20 @@ from juniorguru.web import api, context as context_hooks
 
 
 TEMPLATE_FILTERS = [
-    'docs_url',
-    'email_link',
-    'icon',
-    'thousands',
-    'sample',
-    'remove_p',
-    'money_breakdown_ptc',
-    'revenue_categories',
-    'sample_jobs',
-    'assert_empty',
-    'relative_url',
-    'screenshot_url',
-    'absolute_url',
-    'mapping',
+    "docs_url",
+    "email_link",
+    "icon",
+    "thousands",
+    "sample",
+    "remove_p",
+    "money_breakdown_ptc",
+    "revenue_categories",
+    "sample_jobs",
+    "assert_empty",
+    "relative_url",
+    "screenshot_url",
+    "absolute_url",
+    "mapping",
 ]
 
 
@@ -31,15 +31,15 @@ class MarkdownTemplateError(Exception):
 
 
 def on_pre_build(config):
-    macros_dir = Path(config['docs_dir']).parent / 'macros'
-    config['theme'].dirs.append(macros_dir)
+    macros_dir = Path(config["docs_dir"]).parent / "macros"
+    config["theme"].dirs.append(macros_dir)
 
-    config['shared_context'] = {}
-    context_hooks.on_shared_context(config['shared_context'])
-    config['docs_context'] = {}
-    context_hooks.on_docs_context(config['docs_context'])
-    config['theme_context'] = {}
-    context_hooks.on_theme_context(config['theme_context'])
+    config["shared_context"] = {}
+    context_hooks.on_shared_context(config["shared_context"])
+    config["docs_context"] = {}
+    context_hooks.on_docs_context(config["docs_context"])
+    config["theme_context"] = {}
+    context_hooks.on_theme_context(config["theme_context"])
 
 
 def on_page_markdown(markdown, page, config, files):
@@ -47,21 +47,23 @@ def on_page_markdown(markdown, page, config, files):
 
     Inspired by https://github.com/fralau/mkdocs_macros_plugin
     """
-    macros_dir = Path(config['docs_dir']).parent / 'macros'
+    macros_dir = Path(config["docs_dir"]).parent / "macros"
     loader = jinja2.FileSystemLoader(macros_dir)
     env = jinja2.Environment(loader=loader, auto_reload=False)
 
     filters = {name: getattr(template_filters, name) for name in TEMPLATE_FILTERS}
-    filters['url'] = url_filter
-    filters['md'] = create_md_filter(page, config, files)
+    filters["url"] = url_filter
+    filters["md"] = create_md_filter(page, config, files)
     env.filters.update(filters)
 
-    context = dict(page=page,
-                   config=config,
-                   pages=files,
-                   base_url=get_relative_url('.', page.url),
-                   **config['shared_context'],
-                   **config['docs_context'])
+    context = dict(
+        page=page,
+        config=config,
+        pages=files,
+        base_url=get_relative_url(".", page.url),
+        **config["shared_context"],
+        **config["docs_context"]
+    )
     context_hooks.on_shared_page_context(context, page, config, files)
     context_hooks.on_docs_page_context(context, page, config, files)
 
@@ -74,21 +76,25 @@ def on_page_markdown(markdown, page, config, files):
 
 def on_env(env, config, files):
     filters = {name: getattr(template_filters, name) for name in TEMPLATE_FILTERS}
+
     def md(markdown):
-        raise NotImplementedError("Using Markdown inside theme templates isn't supported")
-    filters['md'] = md
+        raise NotImplementedError(
+            "Using Markdown inside theme templates isn't supported"
+        )
+
+    filters["md"] = md
     env.filters.update(filters)
 
 
 def on_page_context(context, page, config, nav):
-    context.update(config['shared_context'])
-    context.update(config['theme_context'])
-    context_hooks.on_shared_page_context(context, page, config, context['pages'])
-    context_hooks.on_theme_page_context(context, page, config, context['pages'])
+    context.update(config["shared_context"])
+    context.update(config["theme_context"])
+    context_hooks.on_shared_page_context(context, page, config, context["pages"])
+    context_hooks.on_theme_page_context(context, page, config, context["pages"])
 
 
 def on_post_build(config):
-    api_dir = Path(config['site_dir']) / 'api'
+    api_dir = Path(config["site_dir"]) / "api"
     api_dir.mkdir(parents=True, exist_ok=True)
 
     api.build_events_ics(api_dir, config)
@@ -117,12 +123,14 @@ def create_md_filter(page, config, files):
         #
         # This works, but is very prone to get broken if MkDocs changes something in their code.
         # In such case one needs to read the new MkDocs code and fix the solution accordingly.
-        class _Page():
+        class _Page:
             def __init__(self):
                 self.file = page.file
                 self.markdown = markdown
                 self.render = page.__class__.render.__get__(self)
+
         _page = _Page()
         _page.render(config, files)
         return _page.content
+
     return md
