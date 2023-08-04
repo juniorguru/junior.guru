@@ -3373,13 +3373,13 @@ test = ["flake8 (>=2.4.0)", "isort (>=4.2.2)", "pytest (>=2.2.3)"]
 
 [[package]]
 name = "w3lib"
-version = "2.1.1"
+version = "2.1.2"
 description = "Library of web-related functions"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "w3lib-2.1.1-py3-none-any.whl", hash = "sha256:7fd5bd7980a95d1a8185e867d05f68a591aa281a3ded4590d2641d7b09086ed4"},
-    {file = "w3lib-2.1.1.tar.gz", hash = "sha256:0e1198f1b745195b6b3dd1a4cd66011fbf82f30a4d9dabaee1f9e5c86f020274"},
+    {file = "w3lib-2.1.2-py3-none-any.whl", hash = "sha256:c4432926e739caa8e3f49f5de783f336df563d9490416aebd5d39fb896d264e7"},
+    {file = "w3lib-2.1.2.tar.gz", hash = "sha256:ed5b74e997eea2abe3c1321f916e344144ee8e9072a6f33463ee8e57f858a4b1"},
 ]
 
 [[package]]
@@ -3600,4 +3600,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "5589017137cc6fe7a8814648f5e90580dd486bb9a12e3f08026af27ea9cf9129"
+content-hash = "a4992a3dbfa3d4ac92acc5ec71a38a812df3b6549b928f913b2284eba9b72774"
