@@ -9,9 +9,7 @@ from testing_utils import prepare_test_db
 
 
 def create_member(id):
-    return ClubUser.create(
-        id=id, display_name=f"Jane Doe {id}", mention=f"<#{id}>"
-    )
+    return ClubUser.create(id=id, display_name=f"Jane Doe {id}", mention=f"<#{id}>")
 
 
 def create_event(id, **kwargs):
