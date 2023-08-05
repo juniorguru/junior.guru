@@ -63,26 +63,27 @@ class SubscriptionCancellationReason(StrEnum):
 @unique
 class SubscriptionMarketingSurveyAnswer(StrEnum):
     YABLKO = 'yablko'
+    FRIEND = 'friend'
     PODCASTS = 'podcasts'
-    COURSES_SEARCH = 'courses_search'
     COURSES = 'courses'
     YOUTUBE = 'youtube'
     FACEBOOK = 'facebook'
     LINKEDIN = 'linkedin'
+    COURSES_SEARCH = 'courses_search'
     SEARCH = 'search'
-    FRIEND = 'friend'
+    INTERNET = 'internet'
     OTHER = 'other'
 
 
 @unique
 class SubscriptionReferrerType(StrEnum):
-    OTHER = 'other'
-    TWITTER = 'twitter'
     HONZAJAVOREK = 'honzajavorek'
-    GOOGLE = 'google'
-    FACEBOOK = 'facebook'
-    LINKEDIN = 'linkedin'
     YOUTUBE = 'youtube'
+    LINKEDIN = 'linkedin'
+    FACEBOOK = 'facebook'
+    TWITTER = 'twitter'
+    GOOGLE = 'google'
+    OTHER = 'other'
 
 
 def uses_data_from_subscriptions(default: Callable=None) -> Callable:

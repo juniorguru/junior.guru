@@ -129,9 +129,10 @@ def classify_referrer(url: str) -> str:
 
 
 def classify_marketing_survey_answer(text: str) -> str:
+    text = text.strip()
     if re.search(r'\b(yablk\w+|rob\s*web)\b', text, re.I):
         return 'yablko'
-    if re.search(r'\b(pod[ck][aá]st\w*|spotify)\b', text, re.I):
+    if re.search(r'\b(pod[ck][aá]st\w*|spotify|rozbité prasátko|Street ?of ?Code)\b', text, re.I):
         return 'podcasts'
     if re.search(r'\brecenz\w+\b', text, re.I):
         return 'courses_search'
@@ -153,10 +154,16 @@ def classify_marketing_survey_answer(text: str) -> str:
         return 'linkedin'
     if re.search(r'\b(goo?gl\w*|vyhled[aá]v\w+)\b', text, re.I):
         return 'search'
-    if re.search(r'\b(komunit\w+|kamar[aá]d\w*|brat\w*|koleg\w*|br[aá]ch\w*|manžel\w*|partner\w*|p[řr][íi]a?tel\w*|přátelé|pratele|zn[áa]m[ée]\w*|doporu[čc]en\w+)\b', text, re.I):
+    if re.search(r'\b(komunit\w+|kamar[aá]d\w*|brat\w*|koleg\w*|br[aá]ch\w*|manžel\w*|partner\w*|p[řr][íi]a?tel\w*|přátelé|pratele|zn[áa]m[ée]\w*|doporu[čc]en\w+|Skládanka|Stan\w+ Prokop\w*|Tom\w* Hrn\w*)\b', text, re.I):
         return 'friend'
     if re.search(r'^od\s+\w{3,}', text.strip(), re.I):
         return 'friend'
-    if re.search(r'\b(\w*hled[aá]\w+|search)\b', text, re.I):
+    if re.search(r'\b(\w*hled[aá]\w+|h[ľl]ad[aá]\w+|search|na[šs]la|na[šs]i?el)\b', text, re.I):
         return 'search'
+    if re.search(r'\binternet\w?\b', text, re.I):
+        return 'internet'
+    if re.search(r'^(net\w?|web\w?|online)$', text, re.I):
+        return 'internet'
+    if re.search(r'^\b\w{1,2}\s+(internet|web|net)\w*$', text, re.I):
+        return 'internet'
     return 'other'

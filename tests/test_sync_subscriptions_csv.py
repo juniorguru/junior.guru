@@ -43,6 +43,18 @@ def test_classify_referrer(url, expected):
         ('Youtube videá od "Yablko"', "yablko"),
         ("Cez video od yablka.", "yablko"),
         ("bla bla", "other"),
+        ("pres internet a to delsi dobu", "internet"),
+        ("Na internetu", "internet"),
+        ("z webu", "internet"),
+        ("Web", "internet"),
+        ("Net", "internet"),
+        ("Na nete", 'internet'),
+        ("webtrh.cz", "other"),
+        ("Vyhodil mi ho webový prehliadač.", "other"),
+        ("Našla jsem příručku.", "search"),
+        ("Našel jsem si to sám", "search"),
+        ("Z webu redhatu", "other"),
+        ("z webu", "internet"),
     ],
 )
 def test_classify_marketing_survey_answer(text, expected):

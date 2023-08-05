@@ -759,6 +759,7 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_marketin
             'other': 'ostatní',
             'courses': 'doporučení z kurzu',
             'search': 'vyhledávání',
+            'internet': '„internet“',
             'friend': 'doporučení známého',
             'facebook': 'Facebook',
             'podcasts': 'podcasty',
