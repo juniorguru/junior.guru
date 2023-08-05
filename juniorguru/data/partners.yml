@@ -242,7 +242,7 @@
 
 - name: Rector
   slug: rector
-  url: https://getrector.org/
+  url: https://getrector.com/
   partnerships:
     - plan: gold
       starts_on: 2023-07-17
