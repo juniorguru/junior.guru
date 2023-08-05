@@ -5,6 +5,7 @@ from mkdocs.utils import get_relative_url
 from mkdocs.utils.filters import url_filter
 
 from juniorguru.lib import template_filters
+from juniorguru.lib.jinja_cache import BytecodeCache
 from juniorguru.web import api, context as context_hooks
 
 
@@ -49,7 +50,8 @@ def on_page_markdown(markdown, page, config, files):
     """
     macros_dir = Path(config["docs_dir"]).parent / "macros"
     loader = jinja2.FileSystemLoader(macros_dir)
-    env = jinja2.Environment(loader=loader, auto_reload=False)
+    cache = BytecodeCache('.web_cache/jinja2')
+    env = jinja2.Environment(loader=loader, auto_reload=False, bytecode_cache=cache)
 
     filters = {name: getattr(template_filters, name) for name in TEMPLATE_FILTERS}
     filters["url"] = url_filter
@@ -105,7 +107,7 @@ def on_post_build(config):
 
 def create_md_filter(page, config, files):
     def md(markdown):
-        # Sorcery ahead! So this is a jinja2 filter, which takes a Markdown string, e.g. from
+        # Sorcery ahead! So this is a Jinja2 filter, which takes a Markdown string, e.g. from
         # database, and turns it into HTML markup. One could just 'from markdown import markdown',
         # then call 'markdown(...)' and be done with it, but that wouldn't parse the input in the
         # context of MkDocs Markdown settings. Extensions wouldn't be set the same way. Relative
