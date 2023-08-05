@@ -138,7 +138,7 @@ async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
             discord_event = discord_events.pop(event['url'])
         except KeyError:
             logger.info(f"Creating Discord event: {event['name']!r}, {event['url']}")
-            await client.club_guild.create_scheduled_event(
+            discord_event = await client.club_guild.create_scheduled_event(
                 image=(IMAGES_DIR / event['poster_path']).read_bytes(),
                 **generate_scheduled_event(event),
             )
