@@ -50,7 +50,7 @@ def on_page_markdown(markdown, page, config, files):
     """
     macros_dir = Path(config["docs_dir"]).parent / "macros"
     loader = jinja2.FileSystemLoader(macros_dir)
-    cache = BytecodeCache('.web_cache/jinja2')
+    cache = BytecodeCache(".web_cache/jinja2")
     env = jinja2.Environment(loader=loader, auto_reload=False, bytecode_cache=cache)
 
     filters = {name: getattr(template_filters, name) for name in TEMPLATE_FILTERS}

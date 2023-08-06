@@ -48,7 +48,7 @@ def test_classify_referrer(url, expected):
         ("z webu", "internet"),
         ("Web", "internet"),
         ("Net", "internet"),
-        ("Na nete", 'internet'),
+        ("Na nete", "internet"),
         ("webtrh.cz", "other"),
         ("Vyhodil mi ho webový prehliadač.", "other"),
         ("Našla jsem příručku.", "search"),
