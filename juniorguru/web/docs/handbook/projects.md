@@ -328,4 +328,9 @@ Pro ilustraci, tady je screenshot z plánovací tabulky, jak probíhal vývoj to
 ---
 
 
+---
+https://neal.fun/space-elevator/ a dalsi na https://neal.fun/ jako inspirace
+---
+
+
 #} -->
