@@ -333,4 +333,19 @@ https://neal.fun/space-elevator/ a dalsi na https://neal.fun/ jako inspirace
 ---
 
 
+--- https://discord.com/channels/769966886598737931/811910782664704040/1136353788438007968
+Zajímavé věci se ženou do CSS. Líbí se mi, jak si s tím vším borec hraje ❤️ Prostě jen proto, že může. Možná je to inspirace i pro juniory - až budete pracovat, tak budete muset dělat na užitečných věcech. Ale ve svých projektech si můžete hrát 😄 https://slideslive.com/39000629/supercharge-your-skills-with-creative-coding
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910392786845737/1127897051741560883
+Přivedlo mě to i na projekt refurb, který umí „modernizovat“ kód: https://github.com/dosisod/refurb Umím si představit, že by to šlo pustit na kódu nováčka v Pythonu a že by to umělo doporučit, jak nějaké věci jde s novějšími verzemi Pythonu udělat jednodušeji nebo chytřeji.
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910392786845737/1127896694323949619
+Zajímavý článek o tom, jak použít GitHub API a najít zajímavé nové projekty v Pythonu za účelem toho, že by do nich mohl člověk třeba i přispět v rámci open source: https://mostlypython.substack.com/p/exploring-recent-python-repositories
+---
+
+
 #} -->

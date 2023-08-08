@@ -729,4 +729,10 @@ Sice pro tvůrce, ale jsou tam dobré tipy vlastně pro kohokoliv, kdo se učí 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/806621830383271937/1128573618541051904
+Zda se učit v angličtině nebo dát přednost češtině nechám na vás, ale objevila jsem rozšíření Chromu - duální titulky pro Youtube, ale třeba i pro Udemy, takže se  zobrazují anglické titulky, ale i české. Pro mě obrovské plus, obzvlášť u složitějších témat, kdy prostě už tu angličtinu nestíhám. 
+https://chrome.google.com/webstore/detail/youtube-dual-subtitles/hkbdddpiemdeibjoknnofflfgbgnebcm/related?hl=cs
+---
+
+
 #} -->

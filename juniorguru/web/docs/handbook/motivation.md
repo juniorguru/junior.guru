@@ -680,4 +680,9 @@ https://www.economist.com/finance-and-economics/2023/05/07/your-job-is-probably-
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1126052161776787556/1128728863724277781
+_Mám kolem sebe 3 programátory_ je vlastně docela nebezpečné. Srovnáváš se s nimi a jasně, proti nim budeš pozadu, ale vůbec to není důležité. Ještě horší je, že tě můžou hodnotit oni ze svého pohledu. Pokud nemají zkušenosti se začátečníky, tak můžou o věcech, které jsou reálně docela pokročilé říkat, že jsou to minimální základy a ty si budeš říkat, že to je hrozně složité a nedáš to. Obecně i seniorní vývojáři často nevědí, co to je začínat, pokud se tomu nevěnují. Možná si (špatně) vzpomenou jak začínali oni, ale to je většinou k ničemu.
+---
+
+
 #} -->

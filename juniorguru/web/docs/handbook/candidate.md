@@ -1286,4 +1286,14 @@ https://www.youtube.com/watch?v=uNL3yEzNsbQ
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/1134507945871286293
+Vyšla „příručka“ o tom, jak vyjednávat o mzdě nebo platu na pohovoru. Je tam toho strašně moc a pro programátory nebo testery nemusí být všechno relevantní, ale i tak to bude dobrý zdroj pro někoho, kdo by se chtěl do tématu ponořit 🙂 💰 https://www.careerdesigner.cz/penize
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1129510378649440359
+Super podcast od <@839123616665698354> a Šárky Kousalové o IČO vs HPP 👍 https://overcast.fm/+1O3llyR6c
+---
+
+
 #} -->

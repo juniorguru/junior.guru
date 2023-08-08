@@ -240,4 +240,20 @@ Mrkni třeba na https://github.com/hankaEsha jak to má udělané.
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1128394695563817021
+<@459053890877521920> Vím, proč tam každý vidí něco jiného.
+Závislé to je podle preference v browseru (nebo možná někde na <:linkedin:915267970752712734>)
+Máš profily ve dvou jazycích. (Osobně bych si udělal jen anglický).
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1128348049748545536
+třeba mrkni na můj profil (https://www.linkedin.com/in/mia-bajic/) a všimni si prvního odstavce: 
+> My primary area of focus is backend development, but I am also highly interested in exploring new technologies in the realm of infrastructure, particularly Kubernetes, and data science. 
+v celém profilu mám python zmíněný x-krát, takže mi ty nabídky na Python, backend a i Kubernetes chodí i když o ně nemám zájem. 
+
+disclaimer: nejsem HR, tak třeba někdo líp poradí
+---
+
+
 #} -->

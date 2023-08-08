@@ -505,4 +505,16 @@ Prostě v korporaci mají předsudek - částečný úvazek znamená matka na ma
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789087476072710174/1137689798589554688
+Tohle mi zrovna přistálo na timeline na Twitteru a když si vzpomenu na svoji první práci a cizí repo, může to tu podle mě někomu přijít vhod - jak se seznámit s existující / cizí codebase?
+---
+
+
+--- https://discord.com/channels/769966886598737931/991010207280807986/1128399966063300668
+Tak mám za sebou hodnotenie po “zkušobke”.  Pracujem v menšej firme, kde sa venujem hlavne frontendu (trochu špecificky spojeného aj s dizajnom - ale to je pre mňa benefit). Zo strany firmy bolo hodnotenie veľmi pozitívne, čo mám radosť.:) A zhrniem to trochu aj osobne: boli to zaujímavé mesiace, pre mňa obrovská zmena (po rokoch full time job a ešte v úplne novom odvetví). Som na seba s malou dušičkou hrdá, že som aj po 30tke a deťoch našla vôľu a odhodlanie x hodín sedieť nad učením (bolo tomu treba prispôsobiť naozaj celé rodinné fungovanie). Aj, že som si dokázala nájsť miesto v čisto mužskom kolektíve a chlapci ma zobrali medzi seba. V našej firme ma nečakal zaučovací bootcamp, cez menšie úlohy sa rovno pracuje na projekte - na druhej strane mi nikdy nebola odmietnutá pomoc, či žiadosť o dovysvetlenie. Veľkým benefitom je pre mňa aj otvorená komunikácia a že môžem aj normálne riešiť menežment ohľadne detí (nie je problém vziať si HO, ísť niečo vybaviť a pod.). 
+V každej firme sa nájdu pre aj proti, pre mňa je ale momentálne najdôležitejšia atmosféra v našom týme, dôvera v kolegov a možnosť sa posúvať. Časom prídu určite aj ďalšie veci, ale to budem riešiť potom.:) 
+Chcem podporiť všetkých aby sa nebáli a zkúšali to, zmena je ťažká, ale stojí za to mať prácu, ktorá vám dáva zmysel.<:meowsheart:1002448596572061746>
+---
+
+
 #} -->

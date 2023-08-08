@@ -245,4 +245,11 @@ Vykouklo na mě na <:facebook:976201141924802580>: https://www.elsa.cvut.cz/wp-c
 ---
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1128945673409134642
+Můj první podcast! 😅 Povídáme si (nečekaně) o juniorech, na cestě za první prací v IT a juniorech v novém zaměstnání. A Vojtěch Mádr a Šárka Kousalová ze mě mámí řadu tipů, "Co dělat když...". Dotkla jsem se tak i témat, které jsem zatím v přednáškách nepokryla. Příjemný poslech 😉
+
+https://bit.ly/43kQTxx
+---
+
+
 #} -->

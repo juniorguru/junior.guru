@@ -952,4 +952,33 @@ Bohužel mám příliš mnoho dobrovolnických aktivit, takže se nemůžu věno
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789087476072710174/1137689798589554688
+Tohle mi zrovna přistálo na timeline na Twitteru a když si vzpomenu na svoji první práci a cizí repo, může to tu podle mě někomu přijít vhod - jak se seznámit s existující / cizí codebase?
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910782664704040/1136264122506416148
+Nová stránka na procvičování kódění a programování! 🤩 
+Je to dost podobné jako FrontendMentor akorát jsou tam daily challenges jako na CodeWars. Plus může to člověk kódit přímo v prohlížeči (jako Scrimba 💜 ) a nemusí si nic stahovat. 
+https://icodethis.com/
+---
+
+
+--- https://discord.com/channels/769966886598737931/916346318048337960/1129327666290507827
+Na vejsce jsme procvičovali na tomhle : https://sqltutor.fsv.cvut.cz/cgi-bin/sqltutor je to absolutně super přesně na biflovani základních selectu - některý datasety jsou triviální (nobelisti a Přemyslovci, některé jako třeba vodočty a tramvaje už vyžadovali vnořené selecty a složitější  kombinování tabulek 😀, takže se dá vybrat co zrovna chceš procvičit. Nejsou to velká data, ale to je na selecty téměř jedno. 
+
+Btw měli jsme na vejsce jednu slečnu, co se zvládla na zapoctak naučit všechny ty úlohy zpaměti... 😅🤦
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910392786845737/1127896694323949619
+Zajímavý článek o tom, jak použít GitHub API a najít zajímavé nové projekty v Pythonu za účelem toho, že by do nich mohl člověk třeba i přispět v rámci open source: https://mostlypython.substack.com/p/exploring-recent-python-repositories
+---
+
+
+--- https://discord.com/channels/769966886598737931/789087476072710174/1127897372047986709
+„What if you could easily get a visual picture of how any Git command would impact your local repo, without interrupting your dev workflow?“ Nezkoušel jsem, ale vypadá to pěkně. Nástroj, který umí vizualizovat co se stane s vaším git repozitářem, když nad ním pustíte nějaký git příkaz https://initialcommit.com/blog/git-sim
+---
+
+
 #} -->

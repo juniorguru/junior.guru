@@ -90,4 +90,14 @@ https://www.edx.org/course/cs50s-introduction-to-programming-with-python
 
 
 
+--- https://discord.com/channels/769966886598737931/811910782664704040/1129328724257538131
+Přidám ještě Web Dev Simplified, Kevin Powell, Wes Bos, Scrimba, Tiff in Tech(spis o technologiích) a developedbyed
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910782664704040/1129311192079401061
+Theo.gg, Theo Rants, Matt Pocock, Google Chrome Developers, The Primeagen (není to většinou FE, ale je to zajímavé), Josh tried coding, Fireship, Beyond Fireship, Builder.io a Steve Sewell.
+---
+
+
 #} -->
