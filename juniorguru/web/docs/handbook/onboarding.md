@@ -517,4 +517,9 @@ Chcem podporiť všetkých aby sa nebáli a zkúšali to, zmena je ťažká, ale
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1137104667323678923
+Kdy - u těch z vás, kteří už máte nějaké zkušenosti - přišel ale pro vás ten moment, kdy jste si sami sobě řekli / si uvědomili / se nějak utvrdili v tom, že už nejste junior v tom, co jako vývojář děláte? Co byl ten "hint", moment, motivace k tomu si to uvědomit, jaká to byla doba, jak k tomu došlo? Myslím tím vaše interní vnímání sebe sama, ne to, co o vás tvrdí například organizace, ve které jste 🙂
+---
+
+
 #} -->

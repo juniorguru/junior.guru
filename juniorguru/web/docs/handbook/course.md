@@ -768,4 +768,20 @@ Začátkem roku jsem procházel menší krizičkou a hledal jsem nové výzvy, t
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1126353120151212083/1137754109680828536
+Taky je tu koncept https://en.wikipedia.org/wiki/42_(school), kde se vlastně učí jen ty lidi navzájem (a ano, mají k dispozici zadání a materiály) a taky to funguje. Ti trochu zkušenější pomáhají těm méně, navíc v jedné věci může být někdo pokročilejší v druhé naopak.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1126353120151212083/1137730591358451783
+**Netvrdím, že to je motivace GFA**, ale obecně bootcampy ve světě tohle dělají z několika důvodů:
+
+1. **zlepšení statistik**: lidi, kteří si ještě nenašli práci, by jim kazili statistiky, že 95 % absolventů si do 6 měsíců našlo práci v IT. Bootcamp je IT, takže 📈 
+2. **laciná a good enough pracovní síla**: IT lidi jsou drazí, ostatně i GFA mělo inzeráty až se 100.000 odměnou měsíčně pro lektory… To samozřejmě zvyšuje hodně náklady a zdražuje školné, takže pokud nějakou část práce zastanou dostatečně méně kvalifikovaní lidi, tak je to pro ně zajímavé.
+3. **zlepšení kvalifikace** a šancí na nalezení práce těch, co zatím jinou práci nenašli. Tím, že někomu mám pomáhat, tak to musím sám chápat, mám další motivaci to zkoumat, narážím na svoje limity atd. A navíc jsem třeba denně v kontaktu s tím prostředím, což může bejt motivující pro určitý typ lidí: těch kteří tu vnější motivaci potřebují a který bych řekl, že v bootcampech převažuje.
+
+Ten první důvod je prostě meh, ale ty další dva jsou v pohodě a myslím, že pod dostatečným dohledem seniorů to může být pozitivní věc pro všechny.
+---
+
+
 #} -->
