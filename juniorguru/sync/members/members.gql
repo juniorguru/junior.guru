@@ -20,6 +20,12 @@ query fetch($cursor: String!) {
                     coupon {
                         code
                     }
+                    orders {
+                        createdAt
+                        coupon {
+                            code
+                        }
+                    }
                 }
             }
         }
