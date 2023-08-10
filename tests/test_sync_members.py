@@ -1,3 +1,4 @@
+from datetime import date
 import pytest
 
 from juniorguru.sync.members import get_active_subscription, get_coupon
@@ -73,31 +74,45 @@ def test_get_coupon_looks_at_last_order_only():
 def test_get_active_subscription():
     assert get_active_subscription(
         [
-            dict(id=1, active=False),
-            dict(id=2, active=True),
-            dict(id=3, active=False),
+            dict(id=1, active=False, activatedAt=123),
+            dict(id=2, active=True, activatedAt=123),
+            dict(id=3, active=False, activatedAt=123),
         ]
-    ) == dict(id=2, active=True)
+    ) == dict(id=2, active=True, activatedAt=123)
 
 
 def test_get_active_subscription_multiple_active():
     with pytest.raises(ValueError):
         get_active_subscription(
             [
-                dict(id=1, active=True),
-                dict(id=2, active=True),
-                dict(id=3, active=False),
+                dict(id=1, active=True, activatedAt=123),
+                dict(id=2, active=True, activatedAt=123),
+                dict(id=3, active=False, activatedAt=123),
             ]
         )
+
+
+@pytest.mark.parametrize('today, active1, expected', [
+    (date(2023, 8, 10), True, dict(id=1, active=True, activatedAt=1663146115)),
+    (date(2023, 9, 14), True, dict(id=2, active=True, activatedAt=1694685504)),
+    (date(2023, 9, 14), False, dict(id=2, active=True, activatedAt=1694685504)),
+    (date(2023, 9, 15), False, dict(id=2, active=True, activatedAt=1694685504)),
+    (date(2023, 9, 16), False, dict(id=2, active=True, activatedAt=1694685504)),
+])
+def test_get_active_subscription_multiple_active_but_one_starts_in_the_future(today, active1, expected):
+    assert get_active_subscription([
+        dict(id=2, active=True, activatedAt=1694685504),
+        dict(id=1, active=active1, activatedAt=1663146115),
+    ], today=today) == expected
 
 
 def test_get_active_subscription_no_active():
     with pytest.raises(ValueError):
         get_active_subscription(
             [
-                dict(id=1, active=False),
-                dict(id=2, active=False),
-                dict(id=3, active=False),
+                dict(id=1, active=False, activatedAt=123),
+                dict(id=2, active=False, activatedAt=123),
+                dict(id=3, active=False, activatedAt=123),
             ]
         )
 

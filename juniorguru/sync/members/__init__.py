@@ -1,3 +1,4 @@
+from datetime import date, datetime
 import math
 from operator import itemgetter
 from pathlib import Path
@@ -108,10 +109,16 @@ async def report_extra_users(client: ClubClient, extra_users_ids: list[int]):
         logger.info('After all, there are no users to report')
 
 
-def get_active_subscription(subscriptions: list[dict]) -> dict:
-    subscriptions = [s for s in subscriptions if s['active']]
+def get_active_subscription(subscriptions: list[dict], today: date=None) -> dict:
+    today = today or date.today()
+    subscriptions = [s for s in subscriptions if s['active']
+                     and datetime.fromtimestamp(s['activatedAt']).date() <= today]
     if len(subscriptions) > 1:
-        raise ValueError("Multiple active subscriptions")
+        try:
+            return [s for s in subscriptions
+                    if datetime.fromtimestamp(s['activatedAt']).date() == today][0]
+        except IndexError:
+            raise ValueError("Multiple active subscriptions")
     try:
         return subscriptions[0]
     except IndexError:

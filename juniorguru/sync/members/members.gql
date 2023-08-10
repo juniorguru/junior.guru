@@ -15,21 +15,10 @@ query fetch($cursor: String!) {
               	subscriptions {
                     id
                     active
-                    createdAt
+                    activatedAt
                     expiresAt
-                    trialStartAt
-                    trialEndAt
                     coupon {
                         code
-                    }
-                    orders {
-                        createdAt
-                        coupon {
-                            code
-                        }
-                    }
-                    plan {
-                        intervalUnit
                     }
                 }
             }
