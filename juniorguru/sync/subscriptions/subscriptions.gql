@@ -9,6 +9,7 @@ query fetch($cursor: String!) {
             node {
                 id
                 active
+                activatedAt
                 createdAt
                 expiresAt
                 trialStartAt

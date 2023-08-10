@@ -14,6 +14,7 @@ def test_activities_from_subscription():
         "active": True,
         "coupon": {"code": "THANKYOU1234567890"},
         "createdAt": 1634013431,
+        "activatedAt": 1634013431,
         "expiresAt": 1701970564,
         "id": "123456",
         "member": {"fullName": "Keira Heart", "id": "2782496"},
@@ -27,6 +28,14 @@ def test_activities_from_subscription():
         "trialStartAt": 1634013431,
     }
     assert list(activities_from_subscription(subscription)) == [
+        {
+            "account_id": 2782496,
+            "type": "order",
+            "happened_on": date(2021, 10, 12),
+            "happened_at": datetime(2021, 10, 12, 4, 37, 11),
+            "subscription_interval": "year",
+            "order_coupon_slug": "thankyou",
+        },
         {
             "account_id": 2782496,
             "type": "order",

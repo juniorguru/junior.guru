@@ -4,7 +4,6 @@ from operator import itemgetter
 from pathlib import Path
 from typing import Generator
 
-import arrow
 import click
 
 from juniorguru.cli.sync import main as cli
@@ -102,7 +101,7 @@ def main(context, from_date, clear_cache, history_path, clear_history):
         except (KeyError, TypeError):
             logger.debug('Activity with no account ID, skipping')
         else:
-            happened_at = arrow.get(activity['createdAt']).naive
+            happened_at = datetime.utcfromtimestamp(activity['createdAt'])
             SubscriptionActivity.add(account_id=account_id,
                                      account_has_feminine_name=has_feminine_name(activity['member']['fullName']),
                                      happened_on=happened_at.date(),
@@ -147,15 +146,22 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
     subscription_interval = subscription['plan']['intervalUnit']
     subscription_coupon_slug = get_coupon_slug(subscription['coupon'])
 
-    created_at = arrow.get(subscription['createdAt']).naive
+    created_at = datetime.utcfromtimestamp(subscription['createdAt'])
     yield dict(account_id=account_id,
                type='order',
                happened_on=created_at.date(),
                happened_at=created_at,
                subscription_interval=subscription_interval,
                order_coupon_slug=subscription_coupon_slug)
+    activated_at = datetime.utcfromtimestamp(subscription['activatedAt'])
+    yield dict(account_id=account_id,
+               type='order',
+               happened_on=activated_at.date(),
+               happened_at=activated_at,
+               subscription_interval=subscription_interval,
+               order_coupon_slug=subscription_coupon_slug)
     if subscription['trialStartAt']:
-        trial_start_at = arrow.get(subscription['trialStartAt']).naive
+        trial_start_at = datetime.utcfromtimestamp(subscription['trialStartAt'])
         yield dict(account_id=account_id,
                    type='trial_start',
                    happened_on=trial_start_at.date(),
@@ -163,7 +169,7 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
                    subscription_interval=subscription_interval,
                    order_coupon_slug=subscription_coupon_slug)
     if subscription['trialEndAt']:
-        trial_end_at = arrow.get(subscription['trialEndAt']).naive
+        trial_end_at = datetime.utcfromtimestamp(subscription['trialEndAt'])
         yield dict(account_id=account_id,
                    type='trial_end',
                    happened_on=trial_end_at.date(),
@@ -178,7 +184,7 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
         else:
             order_coupon_slug = get_coupon_slug(order['coupon'])
 
-        order_created_at = arrow.get(order['createdAt']).naive
+        order_created_at = datetime.utcfromtimestamp(order['createdAt'])
         yield dict(account_id=account_id,
                    type='order',
                    happened_on=order_created_at.date(),

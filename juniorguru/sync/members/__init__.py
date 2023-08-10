@@ -112,11 +112,11 @@ async def report_extra_users(client: ClubClient, extra_users_ids: list[int]):
 def get_active_subscription(subscriptions: list[dict], today: date=None) -> dict:
     today = today or date.today()
     subscriptions = [s for s in subscriptions if s['active']
-                     and datetime.fromtimestamp(s['activatedAt']).date() <= today]
+                     and datetime.utcfromtimestamp(s['activatedAt']).date() <= today]
     if len(subscriptions) > 1:
         try:
             return [s for s in subscriptions
-                    if datetime.fromtimestamp(s['activatedAt']).date() == today][0]
+                    if datetime.utcfromtimestamp(s['activatedAt']).date() == today][0]
         except IndexError:
             raise ValueError("Multiple active subscriptions")
     try:
