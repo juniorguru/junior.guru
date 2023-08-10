@@ -153,13 +153,14 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
                happened_at=created_at,
                subscription_interval=subscription_interval,
                order_coupon_slug=subscription_coupon_slug)
-    activated_at = datetime.utcfromtimestamp(subscription['activatedAt'])
-    yield dict(account_id=account_id,
-               type='order',
-               happened_on=activated_at.date(),
-               happened_at=activated_at,
-               subscription_interval=subscription_interval,
-               order_coupon_slug=subscription_coupon_slug)
+    if subscription['activatedAt']:
+        activated_at = datetime.utcfromtimestamp(subscription['activatedAt'])
+        yield dict(account_id=account_id,
+                type='order',
+                happened_on=activated_at.date(),
+                happened_at=activated_at,
+                subscription_interval=subscription_interval,
+                order_coupon_slug=subscription_coupon_slug)
     if subscription['trialStartAt']:
         trial_start_at = datetime.utcfromtimestamp(subscription['trialStartAt'])
         yield dict(account_id=account_id,
