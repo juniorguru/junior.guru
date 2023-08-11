@@ -9,12 +9,12 @@ template: main.html
 # Pro přednášející
 
 {% call lead() %}
-  Plánuje s tebou Honza [přednášku](/events/) pro členy [klubu](club.md)? Na této stránce najdeš veškeré info. Je fakt supr, že chceš s juniory sdílet svá moudra a zkušenosti. Na přednášku se moc těšíme!
+  Plánuje s tebou Honza [přednášku](events.md) pro členy [klubu](club.md)? Na této stránce najdeš veškeré info. Je fakt supr, že chceš s juniory sdílet svá moudra a zkušenosti. Na přednášku se moc těšíme!
 {% endcall %}
 
 ## {{ 'person-circle'|icon }} Detaily o přednášce
 
-Aby šlo přednášku oznámit v klubu, v [seznamu na webu](/events/) a na sociálních sítích, potřebuje od tebe Honza pár základních informací. Je nutné je mít **nejpozději týden před datem konání**.
+Aby šlo přednášku oznámit v klubu, v [seznamu na webu](events.md) a na sociálních sítích, potřebuje od tebe Honza pár základních informací. Je nutné je mít **nejpozději týden před datem konání**.
 
 - Název přednášky
 - Krátký popis přednášky
@@ -24,7 +24,7 @@ Aby šlo přednášku oznámit v klubu, v [seznamu na webu](/events/) a na soci�
 - Tvá fotka nebo avatar (ideálně aspoň 500⨯500px)
 - Logo tvé firmy (ideálně SVG)
 
-Pokud jde o texty, Honza ti rád pomůže s jejich formulací. Inspirovat se můžeš v [seznamu přednášek, které už proběhly](/events/). Jestli umíš s GitHubem a nebojíš se upravovat YAML soubor, můžeš kouknout i na [events.yml](https://github.com/honzajavorek/junior.guru/blob/main/juniorguru/data/events.yml) nebo přímo poslat i Pull Request, ale nemusíš.
+Pokud jde o texty, Honza ti rád pomůže s jejich formulací. Inspirovat se můžeš v [seznamu přednášek, které už proběhly](events.md). Jestli umíš s GitHubem a nebojíš se upravovat YAML soubor, můžeš kouknout i na [events.yml](https://github.com/honzajavorek/junior.guru/blob/main/juniorguru/data/events.yml) nebo přímo poslat i Pull Request, ale nemusíš.
 
 ## {{ 'chat-dots'|icon }} Přednášení
 

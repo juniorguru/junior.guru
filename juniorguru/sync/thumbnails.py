@@ -79,8 +79,7 @@ def main(images_path, output_dir, width, height, clear):
             LegacyThumbnail.create(url=url, image_path=default_image_path.relative_to(images_path))
 
         args = [(url, width, height, 'thumbnail_legacy.html', dict(title=title), output_path)
-                for url, title in [('/events/', 'Klubové akce'),
-                                ('/membership/', 'Rozcestník pro členy klubu'),
+                for url, title in [('/membership/', 'Rozcestník pro členy klubu'),
                                 ('/jobs/', 'Práce v IT pro začátečníky'),
                                 ('/jobs/remote/', 'Práce v IT pro začátečníky — na dálku'),
                                 ('/jobs/region/praha/', 'Práce v IT pro začátečníky — Praha'),

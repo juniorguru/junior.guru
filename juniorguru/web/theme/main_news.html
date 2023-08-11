@@ -1,0 +1,16 @@
+{% extends 'main_sidebar.html' %}
+{% from 'macros.html' import logo with context %}
+
+
+{% block tocbar_link_text -%}
+{{ 'list'|icon }} Jiné novinky
+{%- endblock %}
+
+
+{% block toc_heading -%}
+{{ 'newspaper'|icon }} Novinky
+{%- endblock %}
+
+
+{% block toc_sublist scoped %}
+{% endblock %}

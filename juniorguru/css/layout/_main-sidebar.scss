@@ -1,10 +1,10 @@
-.main-handbook {
+.main-sidebar {
   @include media-breakpoint-up(lg) {
     background: linear-gradient(90deg, $jg-blue-light 50%, $white 50%);
   }
 }
 
-.main-handbook .content-container {
+.main-sidebar .content-container {
   @extend .container-lg;
   max-width: map-get($container-max-widths, lg);
   padding-right: 0;
@@ -17,7 +17,7 @@
   }
 }
 
-.main-handbook .toc {
+.main-sidebar .toc {
   padding: ($spacer * 2) $spacer;
   background: $jg-blue-light;
 
@@ -33,7 +33,7 @@
   }
 }
 
-.main-handbook .toc-container {
+.main-sidebar .toc-container {
   @include media-breakpoint-up(lg) {
     position: sticky;
     top: 0;
@@ -110,7 +110,7 @@
   padding-bottom: map-get($spacers, 3);
 }
 
-.main-handbook .content {
+.main-sidebar .content {
   @extend .container-md;
   padding-top: $main-spacer;
   padding-bottom: $main-spacer-double;

@@ -1,0 +1,53 @@
+{% extends 'main.html' %}
+
+
+{% block extra_header %}
+<nav class="tocbar">
+  <div class="tocbar-container">
+    <a class="tocbar-item tocbar-toc-link" href="#toc">
+      {% block tocbar_link_text required %}{% endblock %}
+    </a>
+    <span class="tocbar-item tocbar-current"></span>
+  </div>
+</nav>
+{% endblock %}
+
+
+{% block main %}
+<div class="main main-sidebar">
+  <div class="content-container">
+    <main class="content document">
+      {% block content %}{{ page.content }}{% endblock %}
+      {% block pagination %}{% endblock %}
+    </main>
+
+    <nav id="toc" class="toc">
+      <div class="toc-container">
+        <h3 class="toc-heading">
+          {% block toc_heading required %}{% endblock %}
+        </h3>
+        <ul class="toc-list">
+          {% for toc_sibling in page.parent.children %}
+            <li class="toc-item{% if toc_sibling == page %} active{% endif %}">
+              <a class="toc-link" href="{{ toc_sibling.url|url }}">
+                {{ toc_sibling.title }}
+              </a>
+              {% if toc_sibling == page %}
+                {% block toc_sublist scoped %}
+                <ul class="toc-sublist">
+                  {% for toc_heading in page.toc %}
+                    <li class="toc-subitem">
+                      <a class="toc-sublink" href="{{ toc_heading.url }}">{{ toc_heading.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+                {% endblock %}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+{% endblock %}

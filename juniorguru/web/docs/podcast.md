@@ -47,7 +47,7 @@ Poučky praví, že podcast se stává kvalitním a slavným, až když se auto�
 
 {% for episode in podcast_episodes %}
 <div id="{{ episode.slug }}" class="podcast-episode">
-  <h3>{{ episode.title_numbered }}</h3>
+  <h3>{{ episode.title_numbered }}<a class="headerlink" href="#{{ episode.slug }}" title="Odkaz na tuto epizodu">#</a></h3>
   {{ img('static/' + episode.avatar_path, episode.title, 100, 100, class='podcast-episode-image') }}
   {% if episode.partner %}
   <p>

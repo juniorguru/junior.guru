@@ -4,7 +4,6 @@ from flask_frozen import Freezer
 
 from juniorguru.lib import loggers, template_filters
 from juniorguru.models.base import db
-from juniorguru.models.event import Event
 from juniorguru.models.job import ListedJob
 from juniorguru.models.page import LegacyThumbnail
 from juniorguru.models.story import Story
@@ -18,7 +17,7 @@ NAV_TABS = [
     {'endpoint': 'handbook', 'name': 'Příručka'},
     {'endpoint': 'courses', 'name': 'Kurzy'},
     {'endpoint': 'jobs', 'name': 'Práce'},
-    {'endpoint': 'podcast', 'name': 'Podcast'},
+    {'endpoint': 'podcast', 'name': 'Novinky'},
 ]
 
 
@@ -69,7 +68,6 @@ for template_filter in [
     template_filters.tag_label,
     template_filters.sample,
     template_filters.sample_jobs,
-    template_filters.local_time,
     template_filters.relative_url,
 ]:
     app.template_filter()(template_filter)
@@ -83,18 +81,6 @@ def index():
                            nav_tabs=NAV_TABS,
                            stories=stories,
                            thumbnail=LegacyThumbnail.image_path_by_url('/'))
-
-
-@app.route('/events/')
-def events():
-    with db:
-        events_planned = Event.planned_listing()
-        events_archive = Event.archive_listing()
-    return render_template('events.html',
-                           nav_active='club',
-                           events_planned=events_planned,
-                           events_archive=events_archive,
-                           thumbnail=LegacyThumbnail.image_path_by_url('/events/'))
 
 
 @app.route('/membership/')
@@ -191,6 +177,10 @@ REFRESH_PAGE = '<html><head><meta http-equiv="refresh" content="5"></head><body>
 
 @app.route('/courses/')
 def courses():
+    return REFRESH_PAGE
+
+@app.route('/events/')
+def events():
     return REFRESH_PAGE
 
 @app.route('/club/')

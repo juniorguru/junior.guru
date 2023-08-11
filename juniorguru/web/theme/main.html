@@ -144,10 +144,12 @@
     </div>
     <div class="footer-nav-container">
       <nav class="footer-section footer-nav">
-        <h3 class="footer-heading">Dost bylo čtení!</h3>
+        <h3 class="footer-heading">Rozšiřuj si rozhled</h3>
         <p>
-          <a href="{{ 'events/'|url }}">Přednášky a další akce</a>,
-          <a href="{{ 'podcast/'|url }}">Podcast</a>
+          {% for nav_item in (nav|selectattr('title', 'equalto', 'Novinky')|list)[0].children %}
+            <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+            {%- if not loop.last %}, {% endif %}
+          {% endfor %}
         </p>
 
         <h3 class="footer-heading">Příručka</h3>

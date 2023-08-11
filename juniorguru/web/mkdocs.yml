@@ -18,10 +18,12 @@ nav:
       - LinkedIn: handbook/linkedin.md
       - Pohovor: handbook/interview.md
   - Kurzy:
-      - Přehled: courses.md
+      - Vše: courses.md
       - ... | flat | courses/*.md
   - Práce: jobs/
-  - Podcast: podcast.md
+  - Novinky:
+      - Podcast: podcast.md
+      - Klubové akce: events.md
 
   - Pravidla:
       - Otázky a odpovědi: faq.md

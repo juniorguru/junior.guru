@@ -26,7 +26,7 @@ Pět zásad, díky kterým můžeš svou cestu do IT zvládnout ve větší duš
   '40min',
   'https://www.youtube.com/watch?v=6G4TKGQICw0',
   'Pět zásad a ke každé z nich praktické tipy, díky kterým můžeš svou cestu do IT zvládnout udržitelně.',
-  note='Záznamy [klubových přednášek](/events/) bývají dostupné jen pro členy, ale tento jsme zveřejnili, ať pomáhá všem.',
+  note='Záznamy [klubových přednášek](events.md) bývají dostupné jen pro členy, ale tento jsme zveřejnili, ať pomáhá všem.',
 ) }}
 
 ## Když je krize

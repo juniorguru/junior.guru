@@ -24,6 +24,7 @@ TEMPLATE_FILTERS = [
     "screenshot_url",
     "absolute_url",
     "mapping",
+    "local_time",
 ]
 
 

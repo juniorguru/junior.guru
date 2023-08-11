@@ -65,7 +65,7 @@ def on_docs_context(context):
         partner for partner in Partner.active_listing() if partner.has_students
     ]
     context["events"] = Event.listing()
-    context["events_club"] = Event.club_listing()
+    context["events_promo"] = Event.promo_listing()
 
     # club.md, open.md
     context["partnerships"] = Partnership.active_listing()
@@ -102,6 +102,10 @@ def on_docs_context(context):
 
     # podcast.md, handbook/cv.md
     context["podcast_episodes"] = PodcastEpisode.listing()
+
+    # events.md
+    context['events_planned'] = Event.planned_listing()
+    context['events_archive'] = Event.archive_listing()
 
 
 @db.connection_context()

@@ -87,15 +87,15 @@ Jednou za čas máme na Discordu večerní akci. Je to **online a zhruba na hodi
 {% endcall %}
 
 <ul class="event-circles standout">
-{% for event in events_club|selectattr('public_recording_url')|sample(1) %}
+{% for event in events_promo|selectattr('public_recording_url')|sample(1) %}
   {{ event_circle(event) }}
 {% endfor %}
-{% for event in events_club|rejectattr('public_recording_url')|sample(5) %}
+{% for event in events_promo|rejectattr('public_recording_url')|sample(5) %}
   {{ event_circle(event) }}
 {% endfor %}
 </ul>
 <div class="standout text-center">
-  <a class="btn btn-lg btn-outline-primary" href="/events/">
+  <a class="btn btn-lg btn-outline-primary" href="{{ pages|docs_url('events.md')|url }}">
     Všechny akce
   </a>
 </div>

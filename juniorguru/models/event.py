@@ -99,7 +99,7 @@ class Event(BaseModel):
             .order_by(cls.start_at)
 
     @classmethod
-    def club_listing(cls, now=None):
+    def promo_listing(cls, now=None):
         return cls.archive_listing(now=now) \
             .where(cls.avatar_path != cls.avatar_path.default)
 
