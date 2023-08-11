@@ -56,6 +56,7 @@ def main(images_path, output_dir, width, height, clear):
 
         equivalents = {
             '/club/': 'club.md',
+            '/events/': 'events.md',
             '/courses/': 'courses.md',
             '/open/': 'open.md',
             '/podcast/': 'podcast.md',

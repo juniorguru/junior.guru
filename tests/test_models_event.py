@@ -73,7 +73,7 @@ def test_club_listing(test_db):
     create_event(3, start_at=datetime(2021, 5, 3))
     event4 = create_event(4, start_at=datetime(2021, 3, 15), avatar_path="bob.jpg")
 
-    assert list(Event.club_listing(now=datetime(2021, 5, 2))) == [event2, event4]
+    assert list(Event.promo_listing(now=datetime(2021, 5, 2))) == [event2, event4]
 
 
 def test_next(test_db):
