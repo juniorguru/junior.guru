@@ -104,8 +104,8 @@ def on_docs_context(context):
     context["podcast_episodes"] = PodcastEpisode.listing()
 
     # events.md
-    context['events_planned'] = Event.planned_listing()
-    context['events_archive'] = Event.archive_listing()
+    context["events_planned"] = Event.planned_listing()
+    context["events_archive"] = Event.archive_listing()
 
 
 @db.connection_context()
