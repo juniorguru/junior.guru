@@ -65,9 +65,9 @@ Pokud to není důležité pro příběh, je zbytečné to sdělovat.
 A možná to ten člověk ani nechce takto sdílet, je to osobní.
 
 Je to tedy na tobě.
-Stejně jako při scrollování na instáči, kde mají všichni nejlepší dovolené a nejlepší zadky.
+Stejně jako při scrollování na instáči, kde mají všichni nejlepší dovolenou a nejlepší zadek.
 Inspirovat se kam zajet na dovolenou? Jasně!
-Ale uvědomovat si, že možná měli v kuchyni šváby, možná se pohádali, možná mají jiné geny, možná bohaté rodiče, možná je to fotka z vhodného úhlu.
+Ale uvědomovat si, že možná měli v kuchyni šváby, možná se pohádali, možná mají jiné geny, možná bohaté rodiče, možná je to fotka z vhodně vybraného úhlu.
 
 Pokud víš, že se s druhými srovnávat nemáš, ale stejně si neumíš pomoci, projdi si kapitolu [Psychika na cestě do IT](../handbook/mental-health.md).
 
