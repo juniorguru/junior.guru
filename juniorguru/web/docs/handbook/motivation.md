@@ -378,12 +378,6 @@ CNC jsou programovatelné průmyslové stroje, které umí frézovat, vrtat, sou
 
 Tento web se zabývá vytvářením softwaru, tedy programů pro počítače nebo mobily. Pokud toužíš programovat CNC, budeš muset hledat informace jinde.
 
-## Všechny motivační příběhy    <span id="stories"></span>
-
-Pod některými kapitolami můžeš narazit na motivační příbehy lidí jako ty, kteří se bez předchozí znalosti naučili programovat, programování jim v něčem pomohlo, nebo si dokonce v IT našli i práci. Tady jsou všechny pohromadě. Pokud víš o dalších, které tu nejsou, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
-
-{{ stories_list(stories) }}
-
 
 <!-- {#
 
@@ -421,12 +415,6 @@ ageism https://www.newyorker.com/magazine/2017/11/20/why-ageism-never-gets-old
 - disclaimer u success stories https://discord.com/channels/769966886598737931/788826407412170752/823925224520155166 a ještě https://discord.com/channels/769966886598737931/864434067968360459/895988057419956224
 - https://www.csfd.cz/film/892942-nova-sichta/prehled/
 - Je daleko jednodušší začít v malém při aktuálním fungování, než se pokoušet o něco velkého, co pravděpodobně nevydrží.
-
-
-Poutavě odvyprávěné příběhy slavných lidí nebo třeba obětí zločinů a katastrof ovšem fungují přesně tak, jak to popisuje Cowen – vynechávají řadu informací a záměrně nebo mimoděk manipulují s publikem, což sice vede k větší atraktivitě a přístupnosti, ale také to snižuje důvěryhodnost sdělení.
-A ještě:
-Posedlost storytellingem v reklamě, politice, kultuře i médiích z nás všech tak trochu dělá podomní obchodníky s dekami a hrnci. Navzájem spolu manipulujeme a (byť někdy v dobré víře) si záměrně zamlčujeme řadu důležitých věcí. A možná ještě horším důsledkem je, že se kvůli důrazu na příběhy navzájem velmi podceňujeme a hovoříme spolu jako s malými dětmi.
-https://seznam-zpravy.u.mailkit.eu/mc/VVQIVPEI/IFFILXQQDLFARYLJIY/CQMCWMIUIPV
 
 
 Ebbinghaus observed that each time the newly-learned information was reviewed, the EFC was reset at the starting point, but with a *slower decay curve*.
@@ -511,12 +499,6 @@ Je velmi pravděpodobné, že první pohovory skončí neúspěchem. Ze začátk
 Firmy jsou různé. Často se ani vůbec neshodnou na tom, co znamená slovo junior. Jedna může být neseriózní, jiná má nereálná očekávání, třetí bude mít chaos v náborovém procesu a zapomene se vám ozvat, ve čtvrté si nemusíte sednout povahově. A je to, najednou jdete na pátý pohovor, ani nevíte jak. Nic si z toho nedělejte. Obrňte se trpělivostí a hlavně neberte hned první nabídku - nezapomeňte, že i vy si vybíráte firmu.
 
 
-
-SMYSL SUCCESS STORIES
-Všechny success stories jsou z definice cherry picking nebo survivor bias. Jejich úkolem není ukázat, že všichni to budou mít takto snadné, ale zafungovat jako vzor, že něco jde.
-Když Rom uvidí, že jiný Rom vystudoval psychologii a v pohodě, nevzdá svůj pokus jít za snem jen proto, že mu lidi řeknou „ty na to nemáš, žádný Rom to nedokázal“. Totéž děvče když uvidí prezidentku nebo horník když uvidí Tomáše Hisema.
-
-
 HURÁ VŠICHNI DO IT, ČLÁNKY V NOVINÁCH
 Tak jsem se trochu příspěvkem  https://m.facebook.com/groups/144621756262987/permalink/840504443341378/  zase dojmul a naprd a když už teda jsem v tom, tak se chci zeptat, jestli někdo nemáte známého v nějakém ,,bulvárním" plátku?
 Rád bych totiž uvedl na pravou míru ty vznostné články lákající do pasti nejednu zamilovanou geekovskou duši...
@@ -580,18 +562,6 @@ https://discord.com/channels/769966886598737931/769966887055392768/8080412282392
 
 I totally forgot to warn people to not quit their job before joining my course, but I also think I *really* need to make this some kind of digital signature requirement.  You agree to not quit your job and submit a photo with the date and your name on a piece of paper for proof.
 https://twitter.com/lzsthw/status/1362490493402304513
-
---- https://discord.com/channels/769966886598737931/864434067968360459/1021533571330093177
-To jsou ty ztracené kontexty. <@773601329095376906> se odkazuje na diskuzi, kterou jsme tu spolu vedli, ale kdo ví kdy to bylo, možná i před rokem 🙂 Napsala to zkratkovitě a mohlo to vyznít zvláštně, ale já přesně vím, na co se odkazuje.
-
-Pointa je zhruba to, že _success stories_ jsou fajn jako inspirace a motivace. Ukazují, že něco jde, že pro určitou skupinu lidí není vyloučeno něco dokázat (např. film Nová šichta), že existují různé způsoby jak něčeho dokázat, atd. To je super. Je super, když malá holka vidí prezidentku, hasičku, nebo astronautku a uvědomí si, že i ona může jednou prezidentkou, hasičkou, nebo astronautkou být.
-
-Jenže, a tady je souvislost s tím, čím tady diskuzi odstartovala <@1016967149371277323>, je fakt hodně lidí, kteří se nedokážou zastavit u inspirace a motivace, ale začnou se s protagonistou příběhu **srovnávat**. Až bych skoro řekl, že možná i většina, nebo že je to možná i nějaká úplně přirozená lidská reakce, ale nemám žádná data 🙂 To je za mě strašně nebezpečné pro vlastní psychiku a lidi by si na to měli dát pozor a neměli by to dělat. Tady se vrátím k <@773601329095376906>, která použila slovo toxické a já bych ho použil taky, ale ne v kontextu toho, že _success stories_ jsou samy o sobě toxické, ale že mnohým hrozí toxický způsob čtení těch příběhů.
-
-Většina těch příběhů totiž není kompletních. Chybí hromada informací o tom, co proběhlo v zákulisí. Příklad: Někdo se čtyřmi dětmi změní kariéru, ale nikde se už nedočteš, že má prarodiče v bytě naproti, atd. Každý má zcela jiné výchozí podmínky a i když jsou zdánlivě navenek podobné, většinou prostě stejné nejsou a opravdu nemá smysl se srovnávat a bičovat se za to, že někdo už má a já nemám.
-
-Je jasné, proč ten příběh není kompletní. Že někdo probrečel večery s hlavou v dlaních se v příběhu na stránkách agentury, která dělá kurzy, prostě nedočteš, stejně jako se James Bond ve filmu nikdy nepotřebuje jít vyčůrat. A možná ani ten člověk to takto nechce sdílet, je to osobní. Takže je pak ta tíha uvědomit si to na čtenáři a ten musí být holt odolný a nesrovnávat se, stejně jako když scrolluje Instáč, kde mají všichni nejlepší dovolené a nejlepší zadky. Inspirovat se kam zajet na dovolenou? Proč ne. Ale uvědomovat si, že ti lidé tam zažili i blbé chvíle, možná je okradli, možná měli v kuchyni šváby, možná se pohádali, ale tohle ven nesdílí. A nebičovat se, že nemám stejný zadek, protože je možná vyfocený z boku a možná má vlastník toho zadku jiné geny, možná má problémy se štítnou žlázou, možná  má bohaté rodiče a nemá na starost nic jiného, než si někde třikrát týdně dělat dřepy a hlídat si kalorické tabulky. Ale to tam taky nevyfotí.
----
 
 
 --- https://discord.com/channels/769966886598737931/797040163325870092/985220533044002877

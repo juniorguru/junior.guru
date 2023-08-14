@@ -1,7 +1,7 @@
 ---
 title: Online akce pro začátečníky v programování
-template: main_news.html
 description: Online akce pro členy klubu junior.guru. Seznam akcí proběhlých i budoucích. Přednášky, Q&A, AMA, webináře, a další.
+template: main_news.html
 ---
 
 {% from 'macros.html' import lead, markdown, img, partner_link with context %}

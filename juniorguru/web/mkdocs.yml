@@ -24,6 +24,7 @@ nav:
   - Novinky:
       - Podcast: podcast.md
       - Klubové akce: events.md
+      - Příběhy: news/stories.md
 
   - Pravidla:
       - Otázky a odpovědi: faq.md

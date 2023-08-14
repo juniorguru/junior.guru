@@ -82,7 +82,6 @@ def on_docs_context(context):
     ]
 
     # handbook/motivation.md
-    context["stories"] = Story.listing()
     context["stories_by_tags"] = Story.tags_mapping()
 
     # handbook/candidate.md
@@ -106,6 +105,9 @@ def on_docs_context(context):
     # events.md
     context["events_planned"] = Event.planned_listing()
     context["events_archive"] = Event.archive_listing()
+
+    # news/stories.md
+    context["stories"] = Story.listing()
 
 
 @db.connection_context()
