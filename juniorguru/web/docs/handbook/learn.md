@@ -72,7 +72,7 @@ Neočekávej, že se programování jednou naučíš a vystačíš si s tím. Ne
 
 ### Co nepotřebuješ    <span id="myths"></span>
 
-O programování [koluje řada mýtů](motivation.md#myty-o-programovani). Třeba že se o něj můžeš zajímat jen pokud jsi geniální na matematiku, že se to musí roky studovat na vysoké škole, že to není pro holky, že už je pro tebe pozdě začít. Jsou to pouze předsudky, nenech se jimi odradit! Raději si projdi [příběhy lidí, kteří se programovat naučili](../stories.md) a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
+O programování [koluje řada mýtů](motivation.md#myty-o-programovani). Třeba že se o něj můžeš zajímat jen pokud jsi geniální na matematiku, že se to musí roky studovat na vysoké škole, že to není pro holky, že už je pro tebe pozdě začít. Jsou to pouze předsudky, nenech se jimi odradit! Raději si projdi [příběhy lidí, kteří se programovat naučili](../news/stories.md) a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
 
 <small>Rady v této kapitole volně vychází i z [úvodní lekce týmového online kurzu Petra Viktorina](https://naucse.python.cz/2021/online-jaro/adm/intro/), se svolením autora. Díky!</small>
 
