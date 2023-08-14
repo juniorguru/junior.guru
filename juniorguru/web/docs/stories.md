@@ -69,7 +69,7 @@ Stejně jako při scrollování na instáči, kde mají všichni nejlepší dovo
 Inspirovat se kam zajet na dovolenou? Jasně!
 Ale uvědomovat si, že možná měli v kuchyni šváby, možná se pohádali, možná mají jiné geny, možná bohaté rodiče, možná je to fotka z vhodně vybraného úhlu.
 
-Pokud víš, že se s druhými srovnávat nemáš, ale stejně si neumíš pomoci, projdi si kapitolu [Psychika na cestě do IT](../handbook/mental-health.md).
+Pokud víš, že se s druhými srovnávat nemáš, ale stejně si neumíš pomoci, projdi si kapitolu [Psychika na cestě do IT](handbook/mental-health.md).
 
 ## Z horníka programátorem
 

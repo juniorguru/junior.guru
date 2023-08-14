@@ -106,7 +106,7 @@ def on_docs_context(context):
     context["events_planned"] = Event.planned_listing()
     context["events_archive"] = Event.archive_listing()
 
-    # news/stories.md
+    # stories.md
     context["stories"] = Story.listing()
 
 
