@@ -58,12 +58,13 @@ def test(pytest_args):
 
 
 @main.command()
+@click.argument("public_dir", default="public", type=click.Path(exists=True, path_type=Path))
 @click.argument("commit_hash", envvar="CIRCLE_SHA1")
 @click.argument("build_url", envvar="CIRCLE_BUILD_URL")
-def deploy(commit_hash, build_url):
+def deploy(public_dir: Path, commit_hash: str, build_url: str):
     message = f"deploy {commit_hash} 🐣 [skip ci]\n\n{build_url}"
     ghp_import(
-        "public",
+        str(public_dir),
         mesg=message,
         push=True,
         force=True,

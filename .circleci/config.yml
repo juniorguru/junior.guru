@@ -227,6 +227,9 @@ jobs:
       - run:
           name: Build web
           command: poetry run jg web build
+      - run:
+          name: Post-process web
+          command: poetry run jg web post-process
       - persist_to_workspace:
           root: "~"
           paths:
