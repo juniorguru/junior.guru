@@ -17,7 +17,7 @@
 <div class="main main-sidebar">
   <div class="content-container">
     <main class="content document">
-      {% block content %}{{ page.content }}{% endblock %}
+      {% block content %}{{ super() }}{% endblock %}
       {% block pagination %}{% endblock %}
     </main>
 

@@ -1,9 +1,6 @@
 .main-simple {
   @extend .container-lg;
   max-width: $main-document-width;
-}
-
-.main-simple .content {
   padding-top: $main-spacer;
   padding-bottom: $main-spacer-double;
 }

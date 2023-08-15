@@ -1,0 +1,9 @@
+.breadcrumb {
+  --bs-breadcrumb-divider: "›";
+}
+
+.breadcrumb,
+.breadcrumb a,
+.breadcrumb a:visited {
+  color: $text-muted;
+}

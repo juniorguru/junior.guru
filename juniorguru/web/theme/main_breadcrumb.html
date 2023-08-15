@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+
+{% block breadcrumb %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ parent_page.url|url }}">Kurzy</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ page.meta.breadcrumb_title|default(page.title) }}</li>
+  </ol>
+</nav>
+{% endblock %}

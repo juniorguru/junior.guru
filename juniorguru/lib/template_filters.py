@@ -109,7 +109,7 @@ def docs_url(files, src_path):
 REVENUE_CATEGORIES = {
     'donations': 'dobrovolné příspěvky',
     'jobs': 'inzerce nabídek práce',
-    'memberships': 'individuální členství',
+    'memberships': 'členství v klubu',
     'partnerships': 'partnerství s firmami',
 }
 

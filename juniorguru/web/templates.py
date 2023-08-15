@@ -30,10 +30,12 @@ def generate_course_provider_pages() -> Generator[dict[str, Any], None, None]:
             path=f"courses/{course_provider.slug}.md",
             meta=dict(
                 title=course_provider.page_title,
+                breadcrumb_title=course_provider.name,
                 description=course_provider.page_description,
                 course_provider_name=course_provider.name,
                 course_provider_slug=course_provider.slug,
                 topic_name=course_provider.slug,
+                template='main_breadcrumb.html',
             ),
             template="course_provider.md",
         )

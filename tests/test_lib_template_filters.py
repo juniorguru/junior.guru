@@ -200,7 +200,7 @@ def test_revenue_categories():
         ("inzerce nabídek práce", 20),
         ("dobrovolné příspěvky", 10),
         ("partnerství s firmami", 4),
-        ("individuální členství", 1),
+        ("členství v klubu", 1),
     ]
 
 

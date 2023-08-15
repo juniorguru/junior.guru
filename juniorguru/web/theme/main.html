@@ -48,6 +48,7 @@
 
   {% block main %}
   <div class="main main-simple">
+    {% block breadcrumb %}{% endblock %}
     <main class="content document">
       {% block content %}{{ page.content }}{% endblock %}
     </main>
@@ -136,7 +137,7 @@
           </ul>
           <p class="footer-finances-actions">
             <span class="footer-finances-button">
-              <a class="btn btn-lg btn-primary" href="{{ pages|docs_url('club.md')|url }}">Podpoř mě členstvím</a>
+              <a class="btn btn-lg btn-primary" href="{{ pages|docs_url('open.md')|url }}">Čísla a grafy</a>
             </span>
           </p>
         </div>
