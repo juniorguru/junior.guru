@@ -39,6 +39,7 @@
   margin-right: $container-padding-x * -.5;
   margin-left: $container-padding-x * -.5;
   border-top: 1px solid $jg-yellow-dark;
+  @include font-size($font-size-sm);
 
   @include media-breakpoint-up(md) {
     position: static;
@@ -47,11 +48,6 @@
     margin-right: auto;
     margin-left: 0;
     border-top: none;
-  }
-}
-
-@media (max-width: 350px) {
-  .nav-foldable {
-    @include font-size($font-size-sm);
+    @include font-size($font-size-base);
   }
 }
