@@ -2,6 +2,18 @@
 
 {% set active_partnership = course_provider.active_partnership() %}
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{{ parent_page.url|url }}">
+        {{ parent_page.title }}
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      {{ course_provider.name }}
+    </li>
+  </ol>
+</nav>
 
 # Kurzy od {{ course_provider.name }}
 
@@ -79,7 +91,7 @@ Neznamená to, že jsou dobré, ověřené, nebo že je junior.guru doporučuje.
 
 <div class="pagination">
   <div class="pagination-control">
-    <a href="{{ pages|docs_url('courses.md')|url }}" class="pagination-button">
+    <a href="{{ parent_page.url|url }}" class="pagination-button">
       {{ 'arrow-left'|icon }}
       Všechny kurzy
     </a>

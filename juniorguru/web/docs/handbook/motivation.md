@@ -59,7 +59,7 @@ S příchodem covidu-19 se navíc ocitáme ve světě, ve kterém bude široká 
   'danuse-nerudova.jpg',
   'Danuše Nerudová'
 ) %}
-  Danuše Nerudová, rektorka MENDELU a ekonomka, v [rozhovoru pro Český rozhlas](https://plus.rozhlas.cz/uz-nemusime-byt-pouhou-montovnou-cekam-velke-zmeny-i-v-globalnich-dodavatelskych-8180919)
+  Danuše Nerudová, ekonomka, v [rozhovoru pro Český rozhlas](https://plus.rozhlas.cz/uz-nemusime-byt-pouhou-montovnou-cekam-velke-zmeny-i-v-globalnich-dodavatelskych-8180919)
 {% endcall %}
 
 Při programování se také trénuješ v [informatickém myšlení](https://imysleni.cz/informaticke-mysleni/co-je-informaticke-mysleni), což je zcela obecná dovednost nesouvisející nutně přímo s počítačem. Informatické myšlení zlepšuje tvou schopnost řešit složité problémy, a to i v každodenních situacích. To je také důvod, proč se dnes toto myšlení začíná učit i na základních školách.

@@ -1,9 +1,17 @@
 .breadcrumb {
   --bs-breadcrumb-divider: "›";
+  --bs-breadcrumb-divider-color: $breadcrumb-divider-color;
 }
 
 .breadcrumb,
 .breadcrumb a,
-.breadcrumb a:visited {
-  color: $text-muted;
+.breadcrumb a:visited,
+.breadcrumb-item,
+.breadcrumb-item + .breadcrumb-item::before,
+.breadcrumb-item.active {
+  color: $breadcrumb-divider-color;
+}
+
+.breadcrumb-item {
+  font-size: $small-font-size;
 }

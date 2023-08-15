@@ -5,17 +5,17 @@
   and https://logo.junior.guru/
 */
 
-$jg-white: #fff;
 $jg-yellow: #fffa72;
 $jg-yellow-dark: #e5df67;
 $jg-yellow-light: lighten($jg-yellow, 22.2%);
 $jg-blue: #1755d1;
 $jg-blue-light: lighten($jg-blue, 52.2%);
-$jg-gray: #6c757d;  // equals to $gray-600, the most used gray in Bootstrap
+$jg-white: #fff;
+$jg-black: #000;
+$jg-dark: #343434;
+$jg-gray: lighten($jg-dark, 25%);
 $jg-gray-light: lighten($jg-gray, 45%);
 $jg-gray-white: lighten($jg-gray, 50%);
-$jg-dark: #343434;
-$jg-black: #000;
 
 $jg-yellow-light-legacy: #fffee3;  // equals to lighten($jg-yellow, 22.2%)
 $jg-gray-light-legacy: darken($jg-white, 20%);
@@ -28,13 +28,23 @@ $jg-gray-light-legacy: darken($jg-white, 20%);
 $font-family-sans-serif: "Inter", "Helvetica Neue", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 $white: $jg-white;
+$gray-100: $jg-gray-white;
+$gray-200: $jg-gray-light;
+$gray-600: $jg-gray;
+$gray-800: $jg-dark;
+$black: $jg-black;
 $blue: $jg-blue;
-$dark: $jg-dark;
+$yellow: $jg-yellow;
+
+$primary: $jg-blue;
+$secondary: $gray-600;
 $light: $jg-gray-light;
-$secondary: $jg-gray;
+$dark: $jg-dark;
+
 $text-muted: $jg-gray;
 $body-color: $jg-dark;
 $code-color: $jg-blue;
+$breadcrumb-divider-color: $jg-gray;
 
 $display-font-weight: 400;
 $lead-font-weight: 400;

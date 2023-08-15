@@ -30,7 +30,8 @@
 {%- endblock %}
 
 
-{% block pagination %}
+{% block content %}
+{{ super() }}
 <div class="pagination">
   <div class="pagination-control">
   {% if previous_page %}

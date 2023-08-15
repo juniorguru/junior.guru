@@ -28,7 +28,7 @@
     width: $main-toc-width;
     padding-top: $main-spacer;
     padding-right: $main-spacer;
-    padding-bottom: $main-spacer-double;
+    padding-bottom: $main-spacer;
     padding-left: $container-padding-x;
   }
 }
@@ -113,7 +113,7 @@
 .main-sidebar .content {
   @extend .container-md;
   padding-top: $main-spacer;
-  padding-bottom: $main-spacer-double;
+  padding-bottom: $main-spacer;
   background: $white;
 
   @include media-breakpoint-up(lg) {

@@ -1,12 +1,14 @@
 .pagination {
   display: flex;
   justify-content: space-between;
-  margin: (2 * $main-spacer) auto;
+  padding-top: map-get($spacers, 4);
+  padding-bottom: $spacer;
+  margin-top: $main-spacer;
+  border-top: map-get($border-widths, 2) solid $body-color;
 }
 
 .pagination-button {
   @extend .btn;
-  @extend .btn-outline-dark;
+  @extend .btn-dark;
   margin: 0;
-  background: $white;
 }
