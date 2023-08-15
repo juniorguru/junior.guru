@@ -22,7 +22,7 @@ def get_toc(page: Page) -> Generator[dict, None, None]:
 
         yield dict(title=item_page.title,
                    url=item_page.url,
-                   is_active=item_page == page,
+                   is_active=item_page.active,
                    headings=[dict(title=heading.title,
                                   url=heading.url)
                              for heading in item_page.toc])

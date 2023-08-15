@@ -7,6 +7,7 @@ from strictyaml import as_document
 
 from juniorguru.lib import loggers
 from juniorguru.models.course_provider import CourseProvider
+from juniorguru.models.event import Event
 from juniorguru.models.partner import Partnership
 
 
@@ -24,6 +25,20 @@ def template(generate_pages: Callable) -> Callable:
 
 
 @template
+def generate_event_pages() -> Generator[dict[str, Any], None, None]:
+    for event in Event.listing():
+        yield dict(
+            path=f"events/{event.id}.md",
+            meta=dict(
+                title=event.title,
+                # description=event.page_description,  # TODO
+                event_id=event.id,
+            ),
+            template="event.md",
+        )
+
+
+@template
 def generate_course_provider_pages() -> Generator[dict[str, Any], None, None]:
     for course_provider in CourseProvider.listing():
         yield dict(
@@ -31,7 +46,6 @@ def generate_course_provider_pages() -> Generator[dict[str, Any], None, None]:
             meta=dict(
                 title=course_provider.page_title,
                 description=course_provider.page_description,
-                course_provider_name=course_provider.name,
                 course_provider_slug=course_provider.slug,
                 topic_name=course_provider.slug,
             ),
