@@ -26,15 +26,15 @@
           {% block toc_heading required %}{% endblock %}
         </h3>
         <ul class="toc-list">
-          {% for toc_sibling in page.parent.children %}
-            <li class="toc-item{% if toc_sibling == page %} active{% endif %}">
-              <a class="toc-link" href="{{ toc_sibling.url|url }}">
-                {{ toc_sibling.title }}
+          {% for toc_item in toc %}
+            <li class="toc-item{% if toc_item.is_active %} active{% endif %}">
+              <a class="toc-link" href="{{ toc_item.url|url }}">
+                {{ toc_item.title }}
               </a>
-              {% if toc_sibling == page %}
+              {% if toc_item.is_active %}
                 {% block toc_sublist scoped %}
                 <ul class="toc-sublist">
-                  {% for toc_heading in page.toc %}
+                  {% for toc_heading in toc_item.headings %}
                     <li class="toc-subitem">
                       <a class="toc-sublink" href="{{ toc_heading.url }}">{{ toc_heading.title }}</a>
                     </li>

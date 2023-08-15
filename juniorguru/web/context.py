@@ -4,6 +4,7 @@ from urllib.parse import urljoin
 import arrow
 
 from juniorguru.lib.benefits_evaluators import BENEFITS_EVALUATORS
+from juniorguru.lib.mkdocs_nav import get_parent_page, get_sibling_page, get_toc
 from juniorguru.models.base import db
 from juniorguru.models.blog import BlogArticle
 from juniorguru.models.chart import Chart
@@ -46,6 +47,7 @@ def on_shared_context(context):
 
 
 def on_shared_page_context(context, page, config, files):
+    context['toc'] = get_toc(page)
     context["parent_page"] = get_parent_page(page)
     context["previous_page"] = get_sibling_page(page, -1)
     context["next_page"] = get_sibling_page(page, +1)
@@ -116,6 +118,7 @@ def on_docs_context(context):
 def on_docs_page_context(context, page, config, files):
     meta_model_getters = (
         ("topic_name", Topic.get_by_id, "topic"),
+        ("event_id", Event.get_by_id, "event"),
         ("partner_slug", Partner.get_by_slug, "partner"),
         ("course_provider_slug", CourseProvider.get_by_slug, "course_provider"),
     )
@@ -139,26 +142,3 @@ def on_theme_context(context):
 def on_theme_page_context(context, page, config, files):
     thumbnail_path = Page.get_by_src_uri(page.file.src_uri).thumbnail_path
     context["thumbnail_url"] = urljoin(config["site_url"], f"static/{thumbnail_path}")
-
-
-####################################################################
-# HELPER FUNCTIONS                                                 #
-####################################################################
-
-
-def get_parent_page(page):
-    try:
-        return page.parent.children[0]
-    except AttributeError:
-        return None
-
-
-def get_sibling_page(page, offset):
-    try:
-        index = page.parent.children.index(page)
-        sibling_index = max(index + offset, 0)
-        if index == sibling_index:
-            return None
-        return page.parent.children[sibling_index]
-    except (AttributeError, IndexError):
-        return None
