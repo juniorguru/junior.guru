@@ -42,7 +42,7 @@ ics = {version = "0.8.0.dev0", allow-prereleases = true}
 pod2gen = "1.0.3"
 scrapy = "2.10.0"
 python-slugify = "8.0.1"
-playwright = "1.36.0"
+playwright = "1.37.0"
 click = "8.1.6"
 extruct = "0.16.0"
 mkdocs-gen-files = "0.5.0"
