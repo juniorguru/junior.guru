@@ -58,7 +58,9 @@ def test(pytest_args):
 
 
 @main.command()
-@click.argument("public_dir", default="public", type=click.Path(exists=True, path_type=Path))
+@click.argument(
+    "public_dir", default="public", type=click.Path(exists=True, path_type=Path)
+)
 @click.argument("commit_hash", envvar="CIRCLE_SHA1")
 @click.argument("build_url", envvar="CIRCLE_BUILD_URL")
 def deploy(public_dir: Path, commit_hash: str, build_url: str):

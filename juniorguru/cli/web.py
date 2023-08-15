@@ -1,17 +1,16 @@
-from functools import cache
 import hashlib
 import shutil
 import subprocess
 import warnings
-from functools import wraps
+from functools import cache, wraps
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from time import perf_counter
 
 import click
 from livereload import Server
-from mkdocs.__main__ import build_command as mkdocs_build
 from lxml import html
+from mkdocs.__main__ import build_command as mkdocs_build
 
 from juniorguru.lib import loggers
 from juniorguru.web_legacy.__main__ import main as flask_freeze
@@ -153,46 +152,48 @@ def serve(context, output_path: Path, open: bool):
 
 
 @main.command()
-@click.argument("public_dir", default="public", type=click.Path(exists=True, path_type=Path))
+@click.argument(
+    "public_dir", default="public", type=click.Path(exists=True, path_type=Path)
+)
 def post_process(public_dir: Path):
     for html_path in public_dir.glob("**/*.html"):
-        logger['postprocess'].info(f"Post-processing {html_path}")
+        logger["postprocess"].info(f"Post-processing {html_path}")
         html_tree = html.fromstring(html_path.read_text())
 
         # Cache busting CSS
         # https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching#cache_busting
         for link in html_tree.cssselect('link[href$=".css"]'):
-            href = link.get('href')
+            href = link.get("href")
             try:
                 css_path = resolve_path(public_dir, html_path, href)
             except ValueError as e:
-                logger['postprocess'].debug(str(e))
+                logger["postprocess"].debug(str(e))
             else:
-                logger['postprocess'].debug(f"Cache busting {href} ({css_path})")
-                href = f'{href}?hash={hash_file(css_path)}'
-                link.set('href', href)
+                logger["postprocess"].debug(f"Cache busting {href} ({css_path})")
+                href = f"{href}?hash={hash_file(css_path)}"
+                link.set("href", href)
 
         # Cache busting JS
         # https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching#cache_busting
         for script in html_tree.cssselect('script[src$=".js"]'):
-            src = script.get('src')
+            src = script.get("src")
             try:
                 js_path = resolve_path(public_dir, html_path, src)
             except ValueError as e:
-                logger['postprocess'].debug(str(e))
+                logger["postprocess"].debug(str(e))
             else:
-                logger['postprocess'].debug(f"Cache busting {src} ({js_path})")
-                src = f'{src}?hash={hash_file(js_path)}'
-                script.set('src', src)
+                logger["postprocess"].debug(f"Cache busting {src} ({js_path})")
+                src = f"{src}?hash={hash_file(js_path)}"
+                script.set("src", src)
 
-        html_path.write_text(html.tostring(html_tree, encoding='unicode'))
+        html_path.write_text(html.tostring(html_tree, encoding="unicode"))
 
 
 def resolve_path(public_dir: Path, html_path: Path, url: str):
-    if url.startswith('http'):
+    if url.startswith("http"):
         raise ValueError(f"Cannot resolve external URL: {url}")
-    if url.startswith('/'):
-        return (public_dir / url.lstrip('/')).resolve()
+    if url.startswith("/"):
+        return (public_dir / url.lstrip("/")).resolve()
     return (html_path.parent / url).resolve()
 
 
