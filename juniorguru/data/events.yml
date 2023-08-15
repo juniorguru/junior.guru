@@ -11,7 +11,8 @@
 # níže nebo se inspiruj tím, jak jsou zdokumentovány už proběhlé akce.
 #
 #
-#- title: Jak se stát někým a dělat věci  # NÁZEV PŘEDNÁŠKY
+#- id: 0                                  # POŘADOVÉ ČÍSLO
+#  title: Jak se stát někým a dělat věci  # NÁZEV PŘEDNÁŠKY
 #  date: "0000-00-00"                     # DATUM PŘEDNÁŠKY
 #  time: "00:00"                          # VÝCHOZÍ JE 18:00, TAKŽE VE VĚTŠINĚ PŘÍPADŮ PROSTĚ JEN ODEBER CELÝ TENTO ŘÁDEK
 #  description: |                         # LÁKADLO NA PŘEDNÁŠKU, MŮŽEŠ POUŽÍT MARKDOWN
@@ -56,7 +57,8 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
-- title: "Jak se jako ajťák/čka zbavit pochyb a pocitu, že nejsem dost"
+- id: 36
+  title: "Jak se jako ajťák/čka zbavit pochyb a pocitu, že nejsem dost"
   date: "2023-06-20"
   description: |
     Co nejvíc narušuje psychickou pohodu juniorů? A co se s tím dá dělat? Z ankety mezi juniory vyplývá, že 70 % z těch, kdo hledají práci, má strach, zda si vůbec nějakou najdou. 55 % z těch, kdo už pracují, má pocit, že jsou neschopní. 44 % se bojí, že ostatní přijdou na to, že jsou k ničemu. Představím svůj pohled na příčiny nejistoty a pochybností a podělím se o několik nápadů, které ti pomohou zvládnout tyto pocity.
@@ -74,7 +76,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1120773553164402708
 
 
-- title: "Začínáme správně: klíčové faktory pro úspěšný frontend projekt"
+- id: 35
+  title: "Začínáme správně: klíčové faktory pro úspěšný frontend projekt"
   date: "2023-05-02"
   time: "18:00"
   description: |
@@ -92,7 +95,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1103007844732784691
 
 
-- title: "Dev Fiction: Junioři a realita vývojářského týmu"
+- id: 34
+  title: "Dev Fiction: Junioři a realita vývojářského týmu"
   date: "2023-04-25"
   time: "18:00"
   description: |
@@ -109,7 +113,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1100474817930612828
 
 
-- title: "Programování jako kariéra? Ptej se! (Q&A)"
+- id: 33
+  title: "Programování jako kariéra? Ptej se! (Q&A)"
   date: "2023-04-11"
   time: "18:00"
   description: |
@@ -127,7 +132,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1095399134313336942
 
 
-- title: "Práce a dítě: Jak být k sobě laskavější"
+- id: 32
+  title: "Práce a dítě: Jak být k sobě laskavější"
   date: "2023-03-21"
   time: "18:30"
   description: |
@@ -147,7 +153,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1088457105910026240
 
 
-- title: "Vývoj desktopových aplikací v C#: Nové trendy a možnosti"
+- id: 31
+  title: "Vývoj desktopových aplikací v C#: Nové trendy a možnosti"
   date: "2023-02-21"
   description: |
     Ukážu vám C# na desktopu. Minulost, současnost, budoucnost. Proletíme historii aplikací pro Windows, od WinForms až po nejnovější technologie, jako je .NET MAUI. Vysvětlíme si vzorové architektury (MVVM, dependency injection) a ukážeme si je na demo aplikaci v .NET MAUI.
@@ -163,7 +170,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1077657861397684396
 
 
-- title: "Základy bezpečnosti pro vývojáře"
+- id: 30
+  title: "Základy bezpečnosti pro vývojáře"
   date: "2023-02-07"
   description: |
     Jak chránit sebe, svoji práci a na co myslet, když chci psát bezpečný kód? Nepůjdeme do přílišného detailu, ale podíváme se na bezpečné používání vlastního počítače, ukládání nebo publikování svojí práce, a na pár zásad, které je dobré dodržovat u libovolného programovacího jazyka.
@@ -180,7 +188,8 @@
   speakers: 336111357495738368
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1072591921173774456
 
-- title: "Analýza geoprostorových dat, GIS a geospatial data science"
+- id: 29
+  title: "Analýza geoprostorových dat, GIS a geospatial data science"
   date: "2023-01-25"
   description: |
     Co jsou prostorová data, čím jsou speciální a jak je využít? Pomocí satelitů můžeme koukat nejen na současný stav Země, ale i predikovat, co teprve bude. Co se s tím dá dělat za super věci? Kde prostorová data najít a co umět, abychom s nimi mohli pracovat?
@@ -197,7 +206,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1067870620739711067
 
 
-- title: "Kdo je to IT analytik a jak se jím stát?"
+- id: 28
+  title: "Kdo je to IT analytik a jak se jím stát?"
   date: "2023-01-10"
   description: |
     Kdo je to vlastně IT analytik a jak vypadá jeho běžný den? Co, jak, kde analyzuje a s kým svou práci dělá? Co by měl junior umět a jak se dál zlepšovat?
@@ -212,7 +222,8 @@
   speakers: 1061399828552241204
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1062444547554152582
 
-- title: "Posuďme Javu podle obalu"
+- id: 27
+  title: "Posuďme Javu podle obalu"
   date: "2022-12-06"
   description: |
     Pohled na ekosystém Javy. Programovací jazyk jako takový dost možná důležitý vůbec není. Přehled pojmů, abyste se hned na začátku své cesty neztratili.
@@ -231,7 +242,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1049755762081140766
 
 
-- title: "Jak funguje mentoring a uvítání mentorů z Mews"
+- id: 26
+  title: "Jak funguje mentoring a uvítání mentorů z Mews"
   date: "2022-11-15"
   description: |
     Jak funguje mentoring v klubu a co přesně zahrnuje pravidelná nabídka, která vybízí ke kontaktování mentorů z firem? Uvítáme mentory z Mews, ať je máte v paměti jako reálné tváře a ne pouze jména na seznamu.
@@ -250,7 +262,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1042158897999392819
 
 
-- title: "Technologický dluh – zabiják inovace"
+- id: 25
+  title: "Technologický dluh – zabiják inovace"
   date: "2022-11-01"
   description: |
     Během přednášky si na praktických příkladech z praxe (CSS, JavaScript a Python) ukážeme, jak technologický dluh nepříznivě ovlivňuje vývoj z dlouhodobého hlediska a řekneme si, jak jeho dopady eliminovat za použití automatizace.
@@ -267,7 +280,8 @@
   speakers: 383551603678117888
 
 
-- title: "Jak se správně připravit na pohovor"
+- id: 24
+  title: "Jak se správně připravit na pohovor"
   date: "2022-10-18"
   description: |
     Druhá přednáška z cyklu „junioři vs trh práce“. Jak se správně připravit na pohovor? Jaký je běžně jeho průběh? Co je důležité po skončení pohovoru? Po přednášce bude prostor pro delší Q&A, takže si připrav dotazy!
@@ -286,7 +300,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1031996509694205953
 
 
-- title: "Jak se stát webovým analytikem"
+- id: 23
+  title: "Jak se stát webovým analytikem"
   date: "2022-10-12"
   description: |
     Data jsou klíčová. Všichni chtějí v investovat jen do věcí, které fungují. Každý chce dělat ta správná rozhodnutí. A nikdo nechce selhat. Ale jak toho dosáhnout v online prostředí? Řešení je webová analytika. Přijďte zjistit, kdo je webový analytik. Jaká data zpracovává. Jak vypadá jeho den. A jak v oboru začít, pokud by vás zaujal.
@@ -304,7 +319,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1029831740514115647
 
 
-- title: "Od C# k .NETu"
+- id: 22
+  title: "Od C# k .NETu"
   date: "2022-06-07"
   description: |
     Znáte programovací jazyk C#, ale nikdy jste si jej nezkusili? Kde všude ho můžete využit? Počítá se s ním do budoucna? Co to má společného s .NETem? Je to vhodný jazyk pro juniory? Právě odpovědi na tyto otázky se pokusím odpovědět na této přednášce.
@@ -323,7 +339,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/983788617107390474
 
 
-- title: "Jak funguje mentoring a uvítání mentorů z Pure Storage"
+- id: 21
+  title: "Jak funguje mentoring a uvítání mentorů z Pure Storage"
   date: "2022-05-11"
   time: "18:30"
   description: |
@@ -340,7 +357,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/974000560841842708
 
 
-- title: "Next.js úvod pre juniorov"
+- id: 20
+  title: "Next.js úvod pre juniorov"
   date: "2022-04-19"
   description: |
     Ako a prečo prejsť z Reactu na vývoj v Next.js? Čo je potrebné vedieť na začiatok? Vedeli ste, že Next.js je možné využívať aj ako backend? Ukážeme si hlavné featury, ktoré ponúka a aké rôzne spôsoby rendrovania je možné využívať, či navzájom kombinovať s príkladmi využitia z praxe na rôznych aplikáciách.
@@ -360,7 +378,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/966037882643034153
 
 
-- title: "Představení Jetveo"
+- id: 19
+  title: "Představení Jetveo"
   date: "2022-02-23"
   description: |
     Jetveo je low-code platforma se C#, na které by měl být i úplný začátečník s minimální znalostí kódu schopen poměrně rychle vytvořit funkční, produkční appku. Zakladatel Jetveo Dalibor a junior Jakub, který si díky Jetveo našel svou první práci v IT, v klubu udělali představení platformy a odpovídali na dotazy.
@@ -377,7 +396,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946376703691882497
 
 
-- title: "Jak přežít cestu juniora po psychické stránce"
+- id: 18
+  title: "Jak přežít cestu juniora po psychické stránce"
   date: "2022-02-22"
   description: |
     Říká se, že zdraví máme pouze jedno. Ale zatímco to fyzické zanedbává málokdo, péče o psychické zdraví zdaleka není takovou normou. Cesta do IT je náročná životní změna. Vysoké nároky na sebe sama, srovnávání se s ostatními, obavy zda jste dost dobří, zda se vám to podaří, nedostatek odpočinku… To vše může vést až k vyhoření. Na přednášce si představíme pět zásad, každou s praktickými tipy, které vám pomohou si na cestě do IT své psychické zdraví nepošlapat.
@@ -395,7 +415,8 @@
   public_recording_url: https://youtu.be/6G4TKGQICw0
 
 
-- title: "Chcem mobilnú aplikáciu. Ako a kde začať?"
+- id: 17
+  title: "Chcem mobilnú aplikáciu. Ako a kde začať?"
   date: "2022-02-08"
   description: |
     Mobilné aplikácie naberajú na čoraz väčšej popularite a my si ukážeme, ako sa zorientovať vo svete mobilného vývoja. Aplikácie je možné vyvíjať rôznymi technológiami na rôzne platformy (iOS/Android). Využívať pritom viaceré prístupy vývoja, preto spolu prejdeme hlavnými rozdielmi, či výhodami/nevýhodami, ktoré ich od seba odlišujú. V prednáške sa naučíte, čo je potrebné pred vývojom prvej aplikácie zvážiť a ako ju nasadiť do Google Play, či App Store obchodu.
@@ -416,7 +437,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/940697182439362580
 
 
-- title: "Dobrá mzda je jen začátkem"
+- id: 16
+  title: "Dobrá mzda je jen začátkem"
   date: "2022-01-11"
   description: |
     IT táhne. Vysoké (slibované) mzdy, flexibilní pracovní doba, práce z domova, zaměstnanecké benefity a velký potenciál kariérního růstu láká do IT čím dál tím víc lidí. A co je na tom nejlepší? Že stačí dodržovat pár pravidel a i vy můžete dosáhnout nejen na finančně bezstarostný život, ale i na nejvyšší příčky v podobě finanční nezávislosti.
@@ -433,7 +455,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/930537584386506852
 
 
-- title: "Tester jako ideální první práce, aneb čím začít kariéru v IT"
+- id: 15
+  title: "Tester jako ideální první práce, aneb čím začít kariéru v IT"
   date: "2021-12-07"
   description: |
     Možná jste už slyšeli tvrzení, že vhodnou pozicí do startu, na kterou byste se mohli zaměřit, je tester. Je to ale skutečně tak? Je pozice testera ideálním začátkem kariéry v IT zrovna pro tebe?
@@ -449,7 +472,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/917855271374700575
 
 
-- title: "10 klíčových otázek, na které by každý junior měl znát odpověď"
+- id: 14
+  title: "10 klíčových otázek, na které by každý junior měl znát odpověď"
   date: "2021-11-16"
   description: |
     Úvodní přednáška do tématu „junioři vs trh práce“, aneb 10 základních klíčových otázek, na které byste měli znát odpovědi, než se pustíte do vytváření CV, přihlašování na pracovní pozice a pohovory. Po přednášce bude prostor pro dotazy na způsob krátké AMA (_ask me anything_).
@@ -467,7 +491,8 @@
   speakers: 909742782254579763
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/910242514676645908
 
-- title: "Případová studie: Jak se staví rychlý, moderní prezentační web"
+- id: 13
+  title: "Případová studie: Jak se staví rychlý, moderní prezentační web"
   date: "2021-11-02"
   description: |
     Nedávno jsem vytvořil [web pro novináře Davida Klimeše](https://davidklimes.cz/) – offline-first Progressive Web App. A protože to byla důležitá práce, dal jsem si hodně záležet. Rád bych vám na jejím příkladu ukázal jak se staví moderní prezentační web – jak vybírat technologie, co optimalizovat, na co si dát pozor. Určitě zmíníme přístupnost a stihneme-li to, snad si i povíme k čemu jsou dobré service workery.
@@ -485,7 +510,8 @@
   speakers: 330085757211377679
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/905192447276122162
 
-- title: "AMA: Expert na škálování a architekturu"
+- id: 12
+  title: "AMA: Expert na škálování a architekturu"
   date: "2021-10-19"
   description: |
     AMA znamená _ask me anything_. Honza Král se dlouhá léta zabývá provozem a architekturou složitých systémů. Jak lze navrhovat kód, aby toho zvládl hodně v krátkém čase? Jaké triky má využít webová stránka, pokud chce obsloužit miliony uživatelů? Jak navrhnout a provozovat databáze, aby se popraly s náporem? Zeptej se na cokoliv, co tě zajímá!
@@ -503,7 +529,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/900105360038326342
 
 
-- title: "AMA: Mentoři na frontend"
+- id: 11
+  title: "AMA: Mentoři na frontend"
   date: "2021-09-29"
   description: |
     AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Dan a Kate pod značkou [CoreSkill](https://coreskill.tech/) pomáhají budoucím frontendistům a frontendistkám se vším, co potřebují k tomu, aby se jimi co nejdřív stali. Tématy určitě budou HTML, CSS i JavaScript, ale i to, co to frontend je a co frontendisti vlastně všechno dělají a co je minimum pro nalezení první práce.
@@ -524,7 +551,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/893578992853086218
 
 
-- title: Relační databáze efektivně
+- id: 10
+  title: Relační databáze efektivně
   date: "2021-08-31"
   description: |
     S relačními databázemi se setkává téměř každý vývojář, ale ne každý vývojář je dokáže efektivně využít. V přednášce si představíme, jak jsou data v relačních databázích uložena, jak databáze vykonávají naše dotazy a jak jim v jejich vykonávání pomoci. Ukážeme si i nástroje pro ladění dotazů v MySQL a PostgreSQL a celou řadu praktických tipů.
@@ -544,7 +572,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/882327482559246397
 
 
-- title: Od recruitingu cez Lambda School až do globálneho startupu
+- id: 9
+  title: Od recruitingu cez Lambda School až do globálneho startupu
   date: "2021-08-17"
   description: |
     Je mnoho ciest ako sa dostať k programovaniu. Vo svojej prednáške by som vám rada porozprávala o tej svojej, ktorá viedla od práce recruiterky v Bratislave cez Lambda School až do globálneho technologického startupu Grafana Labs, s posledným investičným kolom v hodnote 50 miliónov dolárov. Veľmi rada s vami zazdieľam to, čo sa mi podarilo a osvedčilo a naopak, čo som urobila zle a čo by som dnes urobila úplne inak.
@@ -564,7 +593,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/877260218650751056
 
 
-- title: Jak jsou datové struktury uloženy v paměti
+- id: 8
+  title: Jak jsou datové struktury uloženy v paměti
   date: "2021-08-10"
   description: |
     Jedna za věcí které se dozvíte spíše na škole než z praktických kurzů je to, jak jsou informace uloženy v paměti počítače. Kde jsou vlastně ty jedničky a nuly, o kterých celé IT je? A jak s pomocí nich zapsat číslo, text, seznam, slovník nebo třeba barvu?
@@ -587,7 +617,8 @@
   public_recording_url: https://youtu.be/1-Bwa7yp0C4
 
 
-- title: Proč a jak být technickým redaktorem?
+- id: 7
+  title: Proč a jak být technickým redaktorem?
   date: "2021-07-27"
   description: |
     Technical writer je zajímavá a žádaná práce, málo kdo ale ví o co v ní běží nebo že vůbec taková kariérní cesta existuje. Přijď si poslechnout, jak se z absolventky obecné lingvistiky stala tech writerka. Nora Kořánová ti poví, s čím se běžně v práci potýká, co ji na tom baví, nebaví a jaké dovednosti se jí hodí. Nebudou chybět ani tipy na to, jak se technical writerem stát.
@@ -605,7 +636,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/869642782355103814
 
 
-- title: Život HTTP požadavku
+- id: 6
+  title: Život HTTP požadavku
   date: "2021-05-18"
   description: |
     Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce, jelikož je to voda, ve které jejich výtvor přímo plave. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu. V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
@@ -624,7 +656,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/844488172364890123
 
 
-- title: "AMA: Recruiter se zaměřením na juniory"
+- id: 5
+  title: "AMA: Recruiter se zaměřením na juniory"
   date: "2021-05-05"
   description: |
     AMA znamená _ask me anything_. Příklady otázek, které jsme řešili:
@@ -659,7 +692,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/842104677943869440
 
 
-- title: Designování vysněné práce
+- id: 4
+  title: Designování vysněné práce
   date: "2021-04-13"
   description: |
     Jak se z lektorky angličtiny stane frontendistka? První část přednášky je o těžkých rozhodnutích, motivaci, překážkách a pomoci na cestě k vysněné práci. V druhé se podíváme na související obory s vývojem webů a aplikací, včetně user experience.
@@ -679,7 +713,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/836906198426320906
 
 
-- title: Jamstack
+- id: 3
+  title: Jamstack
   date: "2021-03-31"
   description: |
     Co jsou „staticky generované stránky“? Co je Jamstack a jak ti může pomoci tvořit webovky? Jak se orientovat v existujících řešeních a jak si můžeš na Jamstacku vytvořit třeba vlastní blog?
@@ -699,7 +734,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/826872579427794955
 
 
-- title: "#Junioring 101 - How Not To Go Bonkers At The Start"
+- id: 2
+  title: "#Junioring 101 - How Not To Go Bonkers At The Start"
   date: "2021-03-16"
   description: |
     Máš svou první práci v IT? Výborně! Ale co teď? Jak být užitečným členem týmu, jak se dál vzdělávat a jak se z toho všeho nezbláznit? Přednáška bude v angličtině.
@@ -719,7 +755,8 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/822066882298642462
 
 
-- title: První klubový sraz
+- id: 1
+  title: První klubový sraz
   date: "2021-02-11"
   time: "18:30"
   description: |

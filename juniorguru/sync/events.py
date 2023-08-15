@@ -45,6 +45,7 @@ DISCORD_THUMBNAIL_HEIGHT = 512
 
 schema = Seq(
     Map({
+        'id': Int(),
         'title': Str(),
         'date': Date(),
         Optional('time', default='18:00'): Str(),
