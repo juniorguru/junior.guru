@@ -595,3 +595,6 @@
 {"_id": "26141005650", "amount": -46, "category": "tax", "happened_on": "2023-08-10"}
 {"_id": "26142255540", "amount": -300, "category": "video", "happened_on": "2023-08-11"}
 {"_id": "26144790059", "amount": 7369, "category": "memberships", "happened_on": "2023-08-14"}
+{"_id": "26146683701", "amount": -2841, "category": "tax", "happened_on": "2023-08-15"}
+{"_id": "26146683702", "amount": -2722, "category": "tax", "happened_on": "2023-08-15"}
+{"_id": "26146990488", "amount": -300, "category": "video", "happened_on": "2023-08-15"}
