@@ -34,9 +34,7 @@ def building(title: str):
             time_end = perf_counter() - time_start
             logger.info(f"Done building {title} in {time_end:.2f}s")
             return return_value
-
         return wrapper
-
     return decorator
 
 
@@ -116,7 +114,7 @@ def build(context, output_path: Path):
 
 @main.command()
 @click.argument("output_path", default="public", type=click.Path(path_type=Path))
-@click.option("--open/--no-open", default=True)
+@click.option("--open/--no-open", default=False)
 @click.pass_context
 def serve(context, output_path: Path, open: bool):
     context.invoke(build, output_path=output_path)
@@ -153,10 +151,10 @@ def serve(context, output_path: Path, open: bool):
 
 @main.command()
 @click.argument(
-    "public_dir", default="public", type=click.Path(exists=True, path_type=Path)
+    "output_path", default="public", type=click.Path(exists=True, path_type=Path)
 )
-def post_process(public_dir: Path):
-    for html_path in public_dir.glob("**/*.html"):
+def post_process(output_path: Path):
+    for html_path in output_path.glob("**/*.html"):
         logger["postprocess"].info(f"Post-processing {html_path}")
         html_tree = html.fromstring(html_path.read_text())
 
@@ -165,7 +163,7 @@ def post_process(public_dir: Path):
         for link in html_tree.cssselect('link[href$=".css"]'):
             href = link.get("href")
             try:
-                css_path = resolve_path(public_dir, html_path, href)
+                css_path = resolve_path(output_path, html_path, href)
             except ValueError as e:
                 logger["postprocess"].debug(str(e))
             else:
@@ -178,7 +176,7 @@ def post_process(public_dir: Path):
         for script in html_tree.cssselect('script[src$=".js"]'):
             src = script.get("src")
             try:
-                js_path = resolve_path(public_dir, html_path, src)
+                js_path = resolve_path(output_path, html_path, src)
             except ValueError as e:
                 logger["postprocess"].debug(str(e))
             else:
@@ -189,11 +187,11 @@ def post_process(public_dir: Path):
         html_path.write_text(html.tostring(html_tree, encoding="unicode"))
 
 
-def resolve_path(public_dir: Path, html_path: Path, url: str):
+def resolve_path(output_path: Path, html_path: Path, url: str):
     if url.startswith("http"):
         raise ValueError(f"Cannot resolve external URL: {url}")
     if url.startswith("/"):
-        return (public_dir / url.lstrip("/")).resolve()
+        return (output_path / url.lstrip("/")).resolve()
     return (html_path.parent / url).resolve()
 
 
