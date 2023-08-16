@@ -8,16 +8,18 @@
       </a>
     </li>
     <li class="breadcrumb-item active" aria-current="page">
-      {{ event.title }}
+      {{ event.bio_name }}, {{ '{:%-d.%-m.%Y}'.format(event.start_at) }}
     </li>
   </ol>
 </nav>
 
 # {{ event.title }}
 
+{#
 {% call lead() %}
-  <!-- TODO Tady je aspoň základní info, které ti pomůže s rozhodováním. -->
+  ...
 {% endcall %}
+#}
 
 {% if event.partner %}
 <p>
