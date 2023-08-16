@@ -17,6 +17,7 @@ def create_story(**kwargs):
         url=kwargs.get("url", "https://blog.example.com/how-i-learned-to-code/"),
         date=kwargs.get("date", date(2019, 12, 19)),
         title=kwargs.get("title", "How I Learned to Code"),
+        name=kwargs.get("name", "Fernando Alonso"),
         image_path=kwargs.get("image", "avatars-stories/somebody-something.jpg"),
         tags=kwargs.get("tags", []),
     )
