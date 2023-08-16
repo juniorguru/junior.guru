@@ -4,7 +4,7 @@ description: Příběhy těch, kdo se rekvalifikovali do IT, nebo jim nějak pr
 template: main_news.html
 ---
 
-{% from 'macros.html' import lead, stories_list, link_card, blockquote_avatar with context %}
+{% from 'macros.html' import lead, link_card, blockquote_avatar, news_card with context %}
 
 
 # Příběhy
@@ -103,4 +103,9 @@ Film realisticky popisuje nejen úspěchy, ale i těžkosti celé Tomášovy ces
 
 ## Další příběhy
 
-{{ stories_list(stories) }}
+{% for story in stories %}
+  {% set small %}
+    {{ story.publisher }} &mdash; {{ '{:%-d.%-m.%Y}'.format(story.date) }}
+  {% endset %}
+  {{ news_card(story.title, story.url, story.image_path, 'Doprovodná fotka k příběhu', subtitle=story.name, small=small) }}
+{% endfor %}

@@ -1,6 +1,7 @@
 - url: https://robime.it/ako-zacat-programovat/
   date: 2018-03-17
   title: Číšník, učitel angličtiny, auditor, manažer… a nakonec programátor
+  name: Stanislav Kucharík
   image_path: avatars-stories/stano-kucharcik.jpg
   tags:
     - careerswitch
@@ -8,6 +9,7 @@
 - url: https://jetveo.io/en/blog/articles/jakub-interview
   date: 2021-11-12
   title: Z kulečníkového baru k tvorbě aplikací. Díky low-code mohl rychle začít bez zkušeností
+  name: Jakub Ráček
   image_path: avatars-stories/jakub-kulecnik.jpg
   tags:
     - careerswitch
@@ -15,6 +17,7 @@
 - url: https://medium.com/ataccama-life/unlimitedplayground-irenas-story-7fef75e8625
   date: 2021-02-25
   title: Začala jako asistentka, nyní vede tým expertek a expertů na bezpečnost informací
+  name: Irena Poncar
   image_path: avatars-stories/irena-bezpecnost.jpg
   tags:
     - careerswitch
@@ -23,6 +26,7 @@
 - url: https://medium.com/socialbakers-engineering/my-precarious-path-to-programming-in-prague-103929145233
   date: 2019-04-17
   title: Bývalý voják se přestěhoval z USA do ČR, živí se programováním
+  name: Tim Breeding
   image_path: avatars-stories/tim-usa.jpg
   tags:
     - careerswitch
@@ -31,6 +35,7 @@
 - url: https://cz.pycon.org/2018/programme/detail/talk/2/
   date: 2018-06-02
   title: Změnila kariéru ve 40, díky bootcampu a online kurzům
+  name: Magda Zawora
   image_path: avatars-stories/magda-bootcamp.jpg
   tags:
     - careerswitch
@@ -40,6 +45,7 @@
 - url: https://imysleni.cz/clanky/novinka/208-z-baletky-programatorkou-chatbot-sestnactilete-divky-z-havlickova-brodu-usetri-lekarum-praci
   date: 2019-05-15
   title: Baletka vytvořila robota, za lékaře odpovídá na dotazy
+  name: Maria Šimůnková
   image_path: avatars-stories/maria-baletka.jpg
   tags:
     - women
@@ -48,6 +54,7 @@
 - url: https://imysleni.cz/clanky/rozhovor/209-biolozka-radka-symonova-hi-my-native-language-is-python
   date: 2019-08-07
   title: Bioložka by se bez programování už neobešla
+  name: Radka Symonová
   image_path: avatars-stories/radka-biolozka.jpg
   tags:
     - synergy
@@ -56,6 +63,7 @@
 - url: https://youtu.be/d_SgNk52nBo?t=1032
   date: 2018-06-01
   title: Díky sto řádkům kódu udělá měsíce genetického výzkumu za 5 minut
+  name: David Žihala
   image_path: avatars-stories/david-genetika.jpg
   tags:
     - synergy
@@ -63,6 +71,7 @@
 - url: https://ivet1987.wz.cz/blog/
   date: 2020-02-24
   title: Účetní se na rodičovské začala učit programovat, dnes pracuje v IT
+  name: Iveta Česalová
   image_path: avatars-stories/iveta-ucetni.jpg
   tags:
     - careerswitch
@@ -72,6 +81,7 @@
 - url: https://www.zdrojak.cz/clanky/jak-jsem-se-nestal-front-end-vyvojarem/
   date: 2019-11-08
   title: Za dva roky (nejen) frontend vývojářem
+  name: Michal Havelka
   image_path: avatars-stories/michal-frontend.jpg
   tags:
     - careerswitch
@@ -79,6 +89,7 @@
 - url: https://www.tedxprague.cz/videa/z-hornika-programatorem
   date: 2018-08-14
   title: Z horníka programátorem
+  name: Tomáš Hisem
   image_path: avatars-stories/tomas-hornik.jpg
   tags:
     - careerswitch
@@ -87,6 +98,7 @@
 - url: https://medium.com/@misasebestova/m%C5%AFj-prvn%C3%AD-datov%C3%BD-hackathon-6f753a4730cf
   date: 2018-12-02
   title: Překonala strach a přihlásila se na datový hackathon
+  name: Michaela Šebestová
   image_path: avatars-stories/misa-hackathon.jpg
   tags:
     - women
@@ -94,6 +106,7 @@
 - url: https://www.flowee.cz/floweecity/smart-cities/7077-vyplati-se-z-vestibulu-bezet-na-metro-reknou-vam-to-tabule-i-stavajici-aplikace
   date: 2019-09-08
   title: Student práv vytvořil mobilní appku na dobíhání metra
+  name: Ondřej Korol
   image_path: avatars-stories/ondra-metro.jpg
   tags:
     - student
@@ -101,6 +114,7 @@
 - url: https://www.czechcrunch.cz/2019/10/z-nemocnice-do-globalniho-technologickeho-startupu-jak-se-z-mlade-zdravotni-sestry-stala-uspesna-vyvojarka
   date: 2019-10-30
   title: Zdravotní sestra z Děčína dnes pracuje jako vývojářka
+  name: Veronika Gabrielová
   image_path: avatars-stories/veronika-productboard.jpg
   tags:
     - careerswitch
@@ -109,6 +123,7 @@
 - url: https://artalk.cz/2019/04/30/andreas-gajdosik-casto-slychavam-otazku-co-je-na-tom-za-umeni/
   date: 2019-04-30
   title: Prestižní ocenění pro umělce, který programuje
+  name: Andreas Gajdošík
   image_path: avatars-stories/andreas-art.jpg
   tags:
     - synergy
@@ -116,6 +131,7 @@
 - url: https://www.imysleni.cz/clanky/rozhovor/220-ivana-brabcova-doktorka-ktera-porada-kurzy-v-pythonu
   date: 2019-10-23
   title: Doktorka díky programování lépe diagnostikuje rakovinu
+  name: Ivana Brabcová
   image_path: avatars-stories/ivca-doktorka.jpg
   tags:
     - synergy
@@ -124,6 +140,7 @@
 - url: https://blog.python.cz/ja-python-a-rosti
   date: 2017-01-22
   title: CNC mechanik, historik, truhlář, skladník. Nyní programuje webovky
+  name: Marek Dlabáček
   image_path: avatars-stories/marek-rosti.jpg
   tags:
     - careerswitch
@@ -131,6 +148,7 @@
 - url: http://www.romea.cz/cz/zpravodajstvi/student-marcel-horvath-chtel-bych-pracovat-pro-velkou-it-firmu-napriklad-microsoft
   date: 2019-07-29
   title: Gymnazista se sám naučil programovat, vydal mobilní hru
+  name: Marcel Horváth
   image_path: avatars-stories/marcel-romea.jpg
   tags:
     - student
@@ -138,6 +156,7 @@
 - url: https://medium.com/productboard-engineering/making-data-accessible-to-everyone-at-productboard-an-interview-with-p%C3%A1ja-fronkova-7940ecc6aa35
   date: 2020-10-09
   title: Naučila se programovat, pracuje s daty ve startupu
+  name: Pavlína Froňková
   image_path: avatars-stories/paja-productboard.jpg
   tags:
     - synergy
@@ -146,6 +165,7 @@
 - url: https://blog.python.cz/programatorem-za-365-dni-a-zadarmo-tak-urcite
   date: 2020-10-20
   title: Podnikatel do roka programátorem, sám si vytvořil e-shop
+  name: Honza Kovanda
   image_path: avatars-stories/honza-toptrika.jpg
   tags:
     - synergy
@@ -154,6 +174,7 @@
 - url: https://blog.python.cz/pyladies-to-zacalo-kanadou-to-neskoncilo
   date: 2020-10-26
   title: Studentka dostala prestižní stáž v Kanadě díky programování
+  name: Barbora Kacerovská
   image_path: avatars-stories/baru-kanada.jpg
   tags:
     - synergy
@@ -163,6 +184,7 @@
 - url: https://www.podnikatel.cz/clanky/na-kvetinove-farme-vsazeji-na-cerstvost-a-lokalnost-jak-jejich-byznys-funguje/
   date: 2018-10-08
   title: Opustil práci programátora a založil automatizovanou květinovou farmu
+  name: František Hába
   image_path: avatars-stories/loukykvet.jpg
   tags:
     - synergy
@@ -170,6 +192,7 @@
 - url: https://vysocina.rozhlas.cz/pocitacum-se-puvodne-venovat-nechtela-pak-ji-ale-doslova-pohltila-umela-8442435
   date: 2021-03-08
   title: Gymnazistka dělá s umělou inteligencí a tvoří appku na finanční gramotnost
+  name: Maria Šimůnková
   image_path: avatars-stories/maria-chatbot.jpg
   tags:
     - women
@@ -178,6 +201,7 @@
 - url: https://cybermagnolia.com/blog/lenka-segura-interview/
   date: 2021-03-05
   title: Studovala zemědělskou chemii, dnes programuje pro výzkum rakoviny
+  name: Lenka Segura
   image_path: avatars-stories/lenka-agrochemie.jpg
   tags:
     - women
@@ -187,6 +211,7 @@
 - url: https://www.czechcrunch.cz/2021/03/programovani-ji-okouzlilo-tereza-vankova-ted-v-reactgirls-pomaha-dalsim-zenam-v-it-a-sama-to-dotahla-az-do-avastu/
   date: 2021-03-16
   title: Z bioložky programátorkou, po práci dělá kurzy IT pro ženy
+  name: Tereza Vaňková
   image_path: avatars-stories/tereza-reactgirls.jpg
   tags:
     - women
@@ -196,6 +221,7 @@
 - url: https://itnoob.cz/vitejte-na-mem-blogu-itnoob-cz/
   date: 2021-03-26
   title: Opustil bankovnictví, po půl roce studia našel v Olomouci práci v IT
+  name: Pavel Polcr
   image_path: avatars-stories/pavel-bankovnictvi.jpg
   tags:
     - careerswitch
@@ -203,6 +229,7 @@
 - url: https://developers.mews.com/meet-the-mewsdevs-daria/
   date: 2019-11-27
   title: Ze Sibiře přijela do Prahy studovat chemii, místo toho je programátorkou
+  name: Daria Doronina
   image_path: avatars-stories/daria-sibir.jpg
   tags:
     - careerswitch
@@ -211,6 +238,7 @@
 - url: https://developers.mews.com/marketa-linguist-who-found-love-in-sql-and-portugal/
   date: 2020-05-05
   title: Lingvistka, lektorka angličtiny, vedoucí obchodu s oděvy. Dnes datová analytička
+  name: Markéta Lourenco
   image_path: avatars-stories/marketa-lingvistka.jpg
   tags:
     - careerswitch
@@ -219,6 +247,7 @@
 - url: https://developers.mews.com/a-different-kind-of-magic-mike/
   date: 2020-08-06
   title: Pracoval v hostelu, spal v pokoji pro 20 lidí. Testuje software, který tam používal
+  name: Michael Diaz
   image_path: avatars-stories/mike-hostel.jpg
   tags:
     - careerswitch
@@ -226,6 +255,7 @@
 - url: https://www.apitree.cz/blog/jak-jsem-se-stal-vyvojarem
   date: 2021-08-09
   title: Roky dělal IT servisáka, po měsících učení a hledání práce je React programátorem
+  name: Petr Novák
   image_path: avatars-stories/petr-servisak.jpg
   tags:
     - careerswitch
@@ -234,6 +264,7 @@
 - url: https://www.zvut.cz/napady-objevy/napady-a-objevy-f38103/hlasem-com-chce-umoznit-snadnou-tvorbu-audioknih-nebo-videopruvodcu-d213591
   date: 2021-07-09
   title: Studoval výtvarné umění, programoval jako samouk. Tvoří aplikaci pro syntézu hlasu
+  name: Šimon Bařák
   image_path: avatars-stories/simon-hlasem.jpg
   tags:
     - student
@@ -242,6 +273,7 @@
 - url: https://ivanahuckova.medium.com/my-first-month-at-grafana-b37c792a6d0a
   date: 2019-10-17
   title: Jako juniorka začala v globálním startupu, zaučení zvládla i na dálku
+  name: Ivana Hučková
   image_path: avatars-stories/ivana-grafana.jpg
   tags:
     - women
@@ -249,6 +281,7 @@
 - url: https://blog.cesko.digital/2021/06/zkuste-open-source
   date: 2021-06-28
   title: První zkušenosti v oboru našla díky dobrovolnictví a „open source“
+  name: Martina Hytychová
   image_path: avatars-stories/martina-cd.jpg
   tags:
     - women

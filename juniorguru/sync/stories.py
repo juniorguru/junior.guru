@@ -16,6 +16,7 @@ YAML_SCHEMA = Seq(
         'url': Url(),
         'date': Date(),
         'title': Str(),
+        'name': Str(),
         'image_path': Str(),
         'tags': Seq(Str()),
     })

@@ -4,7 +4,7 @@ description: Online akce pro členy klubu junior.guru. Seznam akcí proběhlých
 template: main_news.html
 ---
 
-{% from 'macros.html' import lead, markdown, img, partner_link with context %}
+{% from 'macros.html' import lead, news_card with context %}
 
 
 # Klubové akce
@@ -23,18 +23,16 @@ Nepořizujeme profesionální záznam, ale snažíme se alespoň nahrát obrazov
 
 {% if events_planned|length %}
   {% for event in events_planned %}
-  <div class="news-card" id="{{ event.slug }}">
-    <div class="news-card-media">
-      {{ img('static/' + event.avatar_path, event.bio_name, 100, 100, class='news-card-image') }}
+    <div id="{{ event.slug }}">
+      {{ news_card(
+        event.title,
+        pages|docs_url(event.page_url)|url,
+        event.avatar_path,
+        event.bio_name,
+        subtitle=event.bio_name,
+        small='{:%-d.%-m.%Y}'.format(event.start_at))
+      }}
     </div>
-    <div class="news-card-body">
-      <h4 class="news-card-title">
-        <a href="{{ pages|docs_url(event.page_url)|url }}" class="news-card-link">{{ event.title }}</a>
-      </h4>
-      <h5 class="news-card-subtitle">{{ event.bio_name }}</h5>
-      <p class="news-card-text"><small>{{ '{:%-d.%-m.%Y}'.format(event.start_at) }}</small></p>
-    </div>
-  </div>
   {% endfor %}
 {% else %}
 <p>Příští akce ještě nebyly oznámeny.</p>
@@ -43,16 +41,14 @@ Nepořizujeme profesionální záznam, ale snažíme se alespoň nahrát obrazov
 ## Archiv
 
 {% for event in events_archive %}
-<div class="news-card" id="{{ event.slug }}">
-  <div class="news-card-media">
-    {{ img('static/' + event.avatar_path, event.bio_name, 100, 100, class='news-card-image') }}
+  <div id="{{ event.slug }}">
+    {{ news_card(
+      event.title,
+      pages|docs_url(event.page_url)|url,
+      event.avatar_path,
+      event.bio_name,
+      subtitle=event.bio_name,
+      small='{:%-d.%-m.%Y}'.format(event.start_at))
+    }}
   </div>
-  <div class="news-card-body">
-    <h4 class="news-card-title">
-      <a href="{{ pages|docs_url(event.page_url)|url }}" class="news-card-link">{{ event.title }}</a>
-    </h4>
-    <h5 class="news-card-subtitle">{{ event.bio_name }}</h5>
-    <p class="news-card-text"><small>{{ '{:%-d.%-m.%Y}'.format(event.start_at) }}</small></p>
-  </div>
-</div>
 {% endfor %}

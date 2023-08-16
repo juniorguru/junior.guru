@@ -10,6 +10,7 @@ class Story(BaseModel):
     url = CharField()
     date = DateField(index=True)
     title = CharField()
+    name = CharField()
     image_path = CharField()
     tags = JSONField(default=list)
 

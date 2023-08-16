@@ -213,6 +213,22 @@
 {% endmacro %}
 
 
+{% macro news_card(title, url, image_path, image_alt, subtitle=None, small=None) %}
+<div class="news-card">
+  <div class="news-card-media">
+    {{ img('static/' + image_path, image_alt, 100, 100, class='news-card-image') }}
+  </div>
+  <div class="news-card-body">
+    <h4 class="news-card-title">
+      <a href="{{ url }}" class="news-card-link">{{ title }}</a>
+    </h4>
+    {% if subtitle %}<h5 class="news-card-subtitle">{{ subtitle }}</h5>{% endif %}
+    {% if small %}<p class="news-card-text"><small>{{ small }}</small></p>{% endif %}
+  </div>
+</div>
+{% endmacro %}
+
+
 {% macro video_card_engeto(title, duration, url, caption=None) %}
   {% if caller %}
     {% set caption = caller()|md|remove_p %}
