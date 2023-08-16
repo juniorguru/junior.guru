@@ -59,10 +59,6 @@ class Event(BaseModel):
         return strip_links(self.bio).strip()
 
     @property
-    def slug(self):
-        return self.start_at_prg.isoformat().replace(':', '-')
-
-    @property
     def url(self):
         return f"https://junior.guru/events/{self.id}/"
 

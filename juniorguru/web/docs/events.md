@@ -23,25 +23,6 @@ Nepořizujeme profesionální záznam, ale snažíme se alespoň nahrát obrazov
 
 {% if events_planned|length %}
   {% for event in events_planned %}
-    <div id="{{ event.slug }}">
-      {{ news_card(
-        event.title,
-        pages|docs_url(event.page_url)|url,
-        event.avatar_path,
-        event.bio_name,
-        subtitle=event.bio_name,
-        small='{:%-d.%-m.%Y}'.format(event.start_at))
-      }}
-    </div>
-  {% endfor %}
-{% else %}
-<p>Příští akce ještě nebyly oznámeny.</p>
-{% endif %}
-
-## Archiv
-
-{% for event in events_archive %}
-  <div id="{{ event.slug }}">
     {{ news_card(
       event.title,
       pages|docs_url(event.page_url)|url,
@@ -50,5 +31,20 @@ Nepořizujeme profesionální záznam, ale snažíme se alespoň nahrát obrazov
       subtitle=event.bio_name,
       small='{:%-d.%-m.%Y}'.format(event.start_at))
     }}
-  </div>
+  {% endfor %}
+{% else %}
+<p>Příští akce ještě nebyly oznámeny.</p>
+{% endif %}
+
+## Archiv
+
+{% for event in events_archive %}
+  {{ news_card(
+    event.title,
+    pages|docs_url(event.page_url)|url,
+    event.avatar_path,
+    event.bio_name,
+    subtitle=event.bio_name,
+    small='{:%-d.%-m.%Y}'.format(event.start_at))
+  }}
 {% endfor %}
