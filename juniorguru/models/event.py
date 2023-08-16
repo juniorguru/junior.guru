@@ -1,3 +1,4 @@
+from functools import cached_property
 import math
 from datetime import datetime, timedelta
 
@@ -38,6 +39,10 @@ class Event(BaseModel):
     discord_url = CharField(null=True)
 
     @property
+    def full_title(self) -> str:
+        return f"{self.bio_name}: {self.title}"
+
+    @property
     def start_at_prg(self):
         return arrow.get(self.start_at).to('Europe/Prague').naive
 
@@ -59,7 +64,11 @@ class Event(BaseModel):
 
     @property
     def url(self):
-        return f"https://junior.guru/events/#{self.slug}"
+        return f"https://junior.guru/events/{self.id}/"
+
+    @cached_property
+    def page_url(self) -> str:
+        return f'events/{self.id}.md'
 
     @classmethod
     def next(cls, now=None):

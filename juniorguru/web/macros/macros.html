@@ -4,25 +4,25 @@
 
 
 {% macro img(filename, alt, width, height, class=None, lazy=True) %}
-  <img
-    {% if filename.endswith('.svg') %}
-      src="{{ filename|url }}"
-    {% else %}
-      data-src="{{ filename|url }}"
-      src="https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_auto,q_auto,f_auto/https://junior.guru/{{ filename }}"
-      srcset="{{- '' -}}
-        https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_1,q_auto,f_auto/https://junior.guru/{{ filename }}, {{- '' -}}
-        https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_1.5,q_auto,f_auto/https://junior.guru/{{ filename }} 1.5x, {{- '' -}}
-        https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_2,q_auto,f_auto/https://junior.guru/{{ filename }} 2x, {{- '' -}}
-        https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_3,q_auto,f_auto/https://junior.guru/{{ filename }} 3x {{- '' -}}
-      "
-      onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;"
-    {% endif %}
-    alt="{{ alt }}" width="{{ width }}" height="{{ height }}"
-    {% if lazy %} loading="lazy"{% endif %}
-    {% if class %} class="{{ class }}"{% endif %}
-    {{- '' -}}
-  >
+<img
+  {% if filename.endswith('.svg') %}
+    src="{{ filename|url }}"
+  {% else %}
+    data-src="{{ filename|url }}"
+    src="https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_auto,q_auto,f_auto/https://junior.guru/{{ filename }}"
+    srcset="{{- '' -}}
+      https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_1,q_auto,f_auto/https://junior.guru/{{ filename }}, {{- '' -}}
+      https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_1.5,q_auto,f_auto/https://junior.guru/{{ filename }} 1.5x, {{- '' -}}
+      https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_2,q_auto,f_auto/https://junior.guru/{{ filename }} 2x, {{- '' -}}
+      https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_3,q_auto,f_auto/https://junior.guru/{{ filename }} 3x {{- '' -}}
+    "
+    onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;"
+  {% endif %}
+  alt="{{ alt }}" width="{{ width }}" height="{{ height }}"
+  {% if lazy %} loading="lazy"{% endif %}
+  {% if class %} class="{{ class }}"{% endif %}
+  {{- '' -}}
+>
 {% endmacro %}
 
 

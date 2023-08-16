@@ -6,9 +6,9 @@ $jg-white: #fff;
 $jg-yellow: #fffa72;
 $jg-yellow-light-legacy: #fffee3;
 $jg-blue: #1755d1;
-$jg-gray: #6c757d;
-$jg-gray-light-legacy: darken($jg-white, 20%);
 $jg-dark: #343434;
+$jg-gray: lighten($jg-dark, 25%);
+$jg-gray-light-legacy: darken($jg-white, 20%);
 $jg-black: #000;
 
 $font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;

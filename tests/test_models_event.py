@@ -133,9 +133,9 @@ def test_list_speaking_members(test_db):
 
 
 def test_url(test_db):
-    event = create_event(1, start_at=datetime(2021, 5, 17, 16, 30, 00))
+    event = create_event(1)
 
-    assert event.url == "https://junior.guru/events/#2021-05-17T18-30-00"
+    assert event.url == "https://junior.guru/events/1/"
 
 
 def test_slug(test_db):

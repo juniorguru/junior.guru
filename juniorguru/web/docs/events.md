@@ -22,34 +22,20 @@ Nepořizujeme profesionální záznam, ale snažíme se alespoň nahrát obrazov
 ## Plánované
 
 {% if events_planned|length %}
-  <h3>{{ event.title }}<a class="headerlink" href="#{{ event.slug }}" title="Odkaz na tuto akci">#</a></h3>
-  {% if event.partner %}
-  <p>
-    <span class="badge text-bg-primary">Spolupráce</span>
-    <small>
-    Akce vzniká v rámci
-    {% set active_partnership = event.partner.active_partnership() %}
-    {% if active_partnership %}
-      <a href="{{ pages|docs_url(active_partnership.page_url)|url }}">placeného partnerství</a>
-    {% else %}
-      placeného partnerství
-    {% endif %}
-    s firmou {{ partner_link(event.partner.name, event.partner.url, 'podcast') }}
-    </small>
-  </p>
-  {% endif %}
-  <p>
-    <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at) }}</strong>
-    —
-    {{ event.start_at|local_time }} online v klubovně</strong>{% if event.recording_url %},
-    <a href="{{ event.recording_url }}">záznam pro členy</a>{% endif %}{% if event.public_recording_url %},
-    <a href="{{ event.public_recording_url }}">veřejný záznam</a>{% endif %}
-  </p>
-  {{ event.description|md }}
-  {{ img('static/' + event.avatar_path, event.title, 100, 100, class='podcast-episode-image') }}
-  <p>
-    <strong>{{ event.bio_name }}:</strong> {{ event.bio|md|remove_p }}
-  </p>
+  {% for event in events_planned %}
+  <div class="news-card" id="{{ event.slug }}">
+    <div class="news-card-media">
+      {{ img('static/' + event.avatar_path, event.bio_name, 100, 100, class='news-card-image') }}
+    </div>
+    <div class="news-card-body">
+      <h4 class="news-card-title">
+        <a href="{{ pages|docs_url(event.page_url)|url }}" class="news-card-link">{{ event.title }}</a>
+      </h4>
+      <h5 class="news-card-subtitle">{{ event.bio_name }}</h5>
+      <p class="news-card-text"><small>{{ '{:%-d.%-m.%Y}'.format(event.start_at) }}</small></p>
+    </div>
+  </div>
+  {% endfor %}
 {% else %}
 <p>Příští akce ještě nebyly oznámeny.</p>
 {% endif %}
@@ -57,34 +43,16 @@ Nepořizujeme profesionální záznam, ale snažíme se alespoň nahrát obrazov
 ## Archiv
 
 {% for event in events_archive %}
-<div id="{{ event.slug }}" class="podcast-episode">
-  <h3>{{ event.title }}<a class="headerlink" href="#{{ event.slug }}" title="Odkaz na tuto akci">#</a></h3>
-  {% if event.partner %}
-  <p>
-    <span class="badge text-bg-primary">Spolupráce</span>
-    <small>
-    Akce vznikla v rámci
-    {% set active_partnership = event.partner.active_partnership() %}
-    {% if active_partnership %}
-      <a href="{{ pages|docs_url(active_partnership.page_url)|url }}">placeného partnerství</a>
-    {% else %}
-      placeného partnerství
-    {% endif %}
-    s firmou {{ partner_link(event.partner.name, event.partner.url, 'podcast') }}
-    </small>
-  </p>
-  {% endif %}
-  <p>
-    <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at) }}</strong>
-    —
-    {{ event.start_at|local_time }} online v klubovně</strong>{% if event.recording_url %},
-    <a href="{{ event.recording_url }}">záznam pro členy</a>{% endif %}{% if event.public_recording_url %},
-    <a href="{{ event.public_recording_url }}">veřejný záznam</a>{% endif %}
-  </p>
-  {{ event.description|md }}
-  {{ img('static/' + event.avatar_path, event.title, 100, 100, class='podcast-episode-image') }}
-  <p>
-    <strong>{{ event.bio_name }}:</strong> {{ event.bio|md|remove_p }}
-  </p>
+<div class="news-card" id="{{ event.slug }}">
+  <div class="news-card-media">
+    {{ img('static/' + event.avatar_path, event.bio_name, 100, 100, class='news-card-image') }}
+  </div>
+  <div class="news-card-body">
+    <h4 class="news-card-title">
+      <a href="{{ pages|docs_url(event.page_url)|url }}" class="news-card-link">{{ event.title }}</a>
+    </h4>
+    <h5 class="news-card-subtitle">{{ event.bio_name }}</h5>
+    <p class="news-card-text"><small>{{ '{:%-d.%-m.%Y}'.format(event.start_at) }}</small></p>
+  </div>
 </div>
 {% endfor %}

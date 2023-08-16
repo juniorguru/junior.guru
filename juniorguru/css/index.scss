@@ -27,37 +27,37 @@
   BOOTSTRAP: LAYOUT AND COMPONENTS
 */
 
-@import "../../node_modules/bootstrap/scss/root";
-@import "../../node_modules/bootstrap/scss/reboot";
-@import "../../node_modules/bootstrap/scss/type";
-@import "../../node_modules/bootstrap/scss/images";
-@import "../../node_modules/bootstrap/scss/containers";
-@import "../../node_modules/bootstrap/scss/grid";
-@import "../../node_modules/bootstrap/scss/tables";
-@import "../../node_modules/bootstrap/scss/forms";
-@import "../../node_modules/bootstrap/scss/buttons";
-@import "../../node_modules/bootstrap/scss/transitions";
-@import "../../node_modules/bootstrap/scss/dropdown";
+@import "../../node_modules/bootstrap/scss/accordion";
+@import "../../node_modules/bootstrap/scss/alert";
+@import "../../node_modules/bootstrap/scss/badge";
+@import "../../node_modules/bootstrap/scss/breadcrumb";
 @import "../../node_modules/bootstrap/scss/button-group";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/card";
+@import "../../node_modules/bootstrap/scss/carousel";
+@import "../../node_modules/bootstrap/scss/close";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/dropdown";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/list-group";
+@import "../../node_modules/bootstrap/scss/modal";
 @import "../../node_modules/bootstrap/scss/nav";
 @import "../../node_modules/bootstrap/scss/navbar";
-@import "../../node_modules/bootstrap/scss/card";
-@import "../../node_modules/bootstrap/scss/accordion";
-@import "../../node_modules/bootstrap/scss/breadcrumb";
-@import "../../node_modules/bootstrap/scss/pagination";
-@import "../../node_modules/bootstrap/scss/badge";
-@import "../../node_modules/bootstrap/scss/alert";
-@import "../../node_modules/bootstrap/scss/progress";
-@import "../../node_modules/bootstrap/scss/list-group";
-@import "../../node_modules/bootstrap/scss/close";
-@import "../../node_modules/bootstrap/scss/toasts";
-@import "../../node_modules/bootstrap/scss/modal";
-@import "../../node_modules/bootstrap/scss/tooltip";
-@import "../../node_modules/bootstrap/scss/popover";
-@import "../../node_modules/bootstrap/scss/carousel";
-@import "../../node_modules/bootstrap/scss/spinners";
 @import "../../node_modules/bootstrap/scss/offcanvas";
+@import "../../node_modules/bootstrap/scss/pagination";
 @import "../../node_modules/bootstrap/scss/placeholders";
+@import "../../node_modules/bootstrap/scss/popover";
+@import "../../node_modules/bootstrap/scss/progress";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/spinners";
+@import "../../node_modules/bootstrap/scss/tables";
+@import "../../node_modules/bootstrap/scss/toasts";
+@import "../../node_modules/bootstrap/scss/tooltip";
+@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/type";
 
 
 /*
@@ -97,28 +97,29 @@ $bootstrap-icons-font-dir: "../../node_modules/bootstrap-icons/font/fonts";
 @import "./content/audio";
 @import "./content/blockquote";
 @import "./content/breadcrumb";
+@import "./content/charts";
 @import "./content/comparison";
-@import "./content/pricing";
-@import "./content/logos";
-@import "./content/members";
-@import "./content/masthead";
-@import "./content/pulse";
-@import "./content/see-also";
 @import "./content/event-circles";
-@import "./content/link-cards";
-@import "./content/media-cards";
-@import "./content/stories";
-@import "./content/pagination";
-@import "./content/jobs-inline";
-@import "./content/podcast-button";
-@import "./content/podcast-author";
-@import "./content/podcast-episode";
-@import "./content/note";
 @import "./content/figure";
 @import "./content/guarantor";
-@import "./content/charts";
-@import "./content/topics";
+@import "./content/jobs-inline";
+@import "./content/link-cards";
+@import "./content/logos";
+@import "./content/masthead";
+@import "./content/media-cards";
+@import "./content/members";
+@import "./content/news-cards";
+@import "./content/note";
+@import "./content/pagination";
+@import "./content/podcast-author";
+@import "./content/podcast-button";
+@import "./content/podcast-episode";
+@import "./content/pricing";
+@import "./content/pulse";
+@import "./content/see-also";
+@import "./content/stories";
 @import "./content/table";
+@import "./content/topics";
 
 
 /*
@@ -126,13 +127,13 @@ $bootstrap-icons-font-dir: "../../node_modules/bootstrap-icons/font/fonts";
 */
 
 @import "./layout/announcement";
-@import "./layout/navbar";
-@import "./layout/logobar";
-@import "./layout/tocbar";
-@import "./layout/main-simple";
-@import "./layout/main-sidebar";
-@import "./layout/main-sections";
 @import "./layout/footer";
+@import "./layout/logobar";
+@import "./layout/main-sections";
+@import "./layout/main-sidebar";
+@import "./layout/main-simple";
+@import "./layout/navbar";
+@import "./layout/tocbar";
 
 
 /*
