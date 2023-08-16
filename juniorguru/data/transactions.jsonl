@@ -598,3 +598,5 @@
 {"_id": "26146683701", "amount": -2841, "category": "tax", "happened_on": "2023-08-15"}
 {"_id": "26146683702", "amount": -2722, "category": "tax", "happened_on": "2023-08-15"}
 {"_id": "26146990488", "amount": -300, "category": "video", "happened_on": "2023-08-15"}
+{"_id": "26148765713", "amount": 12753, "category": "partnerships", "happened_on": "2023-08-16"}
+{"_id": "26148933902", "amount": 6, "category": "donations", "happened_on": "2023-08-16"}
