@@ -291,12 +291,13 @@ def test_partner_list_events(test_db):
 
 
 def test_partner_list_podcast_episodes(test_db):
-    def create_episode(id, partner=None):
+    def create_episode(number, partner=None):
         return PodcastEpisode.create(
-            id=id,
+            number=number,
             partner=partner,
-            publish_on=date(2023, 1, int(id)),
+            publish_on=date(2023, 1, number),
             title="...",
+            media_slug=str(number),
             media_url="...",
             media_size=42,
             media_type="...",
@@ -306,9 +307,9 @@ def test_partner_list_podcast_episodes(test_db):
         )
 
     partner = create_partner(1)
-    create_episode("1")
-    episode2 = create_episode("2", partner)
-    episode3 = create_episode("3", partner)
+    create_episode(1)
+    episode2 = create_episode(2, partner)
+    episode3 = create_episode(3, partner)
     assert set(partner.list_podcast_episodes) == {episode2, episode3}
 
 
