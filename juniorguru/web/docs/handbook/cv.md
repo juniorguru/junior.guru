@@ -77,7 +77,7 @@ Nech si ale CV někým aspoň jednou přečíst, ať **odchytáš největší hr
 
 Části CV seřaď **od nejpodstatnějších po méně důležité, od nejnovějších po nejstarší**. Co přesně je důležité, se liší pro různé obory, profese, zkušenosti a dokonce i jednotlivé pozice. Pro juniory, kteří zatím nemají pracovní zkušenosti v oboru, je velmi důležitý **souhrn a projekty**, v druhé řadě pak vzdělání.
 
-{% call podcast_card(podcast_episodes|selectattr('id', 'equalto', '0001')|first) %}
+{% call podcast_card(podcast_episodes|selectattr('number', 'equalto', 1)|first) %}
   Poslechni si [podcast junior.guru](../podcast.md), kde spolu Pavlína a Jirka mluví o tom, jak vyrobit skvělé juniorní CV. Probírají také nejčastější chyby, které při své prezentaci junioři dělají.
 {% endcall %}
 
@@ -472,9 +472,9 @@ Obzvlášť, pokud ten kód/projekt není nikde veřejně.
 
 
 --- https://discord.com/channels/769966886598737931/788826407412170752/1128348049748545536
-třeba mrkni na můj profil (https://www.linkedin.com/in/mia-bajic/) a všimni si prvního odstavce: 
-> My primary area of focus is backend development, but I am also highly interested in exploring new technologies in the realm of infrastructure, particularly Kubernetes, and data science. 
-v celém profilu mám python zmíněný x-krát, takže mi ty nabídky na Python, backend a i Kubernetes chodí i když o ně nemám zájem. 
+třeba mrkni na můj profil (https://www.linkedin.com/in/mia-bajic/) a všimni si prvního odstavce:
+> My primary area of focus is backend development, but I am also highly interested in exploring new technologies in the realm of infrastructure, particularly Kubernetes, and data science.
+v celém profilu mám python zmíněný x-krát, takže mi ty nabídky na Python, backend a i Kubernetes chodí i když o ně nemám zájem.
 
 disclaimer: nejsem HR, tak třeba někdo líp poradí
 ---

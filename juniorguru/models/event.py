@@ -62,7 +62,7 @@ class Event(BaseModel):
     def url(self):
         return f"https://junior.guru/events/{self.id}/"
 
-    @cached_property
+    @property
     def page_url(self) -> str:
         return f'events/{self.id}.md'
 

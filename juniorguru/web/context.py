@@ -121,6 +121,7 @@ def on_docs_page_context(context, page, config, files):
         ("event_id", Event.get_by_id, "event"),
         ("partner_slug", Partner.get_by_slug, "partner"),
         ("course_provider_slug", CourseProvider.get_by_slug, "course_provider"),
+        ("podcast_episode_number", PodcastEpisode.get_by_number, "podcast_episode"),
     )
     for meta_key, model_getter, model_var in meta_model_getters:
         if meta_key in page.meta:

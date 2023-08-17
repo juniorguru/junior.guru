@@ -23,7 +23,7 @@ class CourseProvider(BaseModel):
     # nemít description, ale schválně USP, aby bylo jasné, co je účelem popisku
     # https://en.wikipedia.org/wiki/Unique_selling_proposition
 
-    @cached_property
+    @property
     def page_url(self) -> str:
         return f'courses/{self.slug}.md'
 

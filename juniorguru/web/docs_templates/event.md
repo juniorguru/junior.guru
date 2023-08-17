@@ -32,7 +32,7 @@
   {% else %}
     placeného partnerství
   {% endif %}
-  s firmou {{ partner_link(event.partner.name, event.partner.url, 'podcast') }}
+  s firmou {{ partner_link(event.partner.name, event.partner.url, 'event') }}
   </small>
 </p>
 {% endif %}

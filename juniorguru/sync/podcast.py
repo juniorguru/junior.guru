@@ -38,7 +38,7 @@ YAML_PATH = Path('juniorguru/data/podcast.yml')
 
 YAML_SCHEMA = Seq(
     Map({
-        'id': Str(),
+        'number': Int(),
         'title': Str(),
         'avatar_path': Str(),
         'publish_on': Date(),
@@ -89,7 +89,7 @@ def main(clear_posters):
     records = filter(None, Pool(WORKERS).imap_unordered(process_episode, yaml_records))
 
     for record in records:
-        logger.info(f'Saving {record["id"]}')
+        logger.info(f'Saving episode #{record["number"]}')
         PodcastEpisode.create(**record)
         posters.record(IMAGES_DIR / record['poster_path'])
     posters.cleanup()
@@ -99,11 +99,12 @@ def main(clear_posters):
 
 
 def process_episode(yaml_record):
-    id = yaml_record['id']
-    logger_ep = logger[id]
-    logger_ep.info(f'Processing episode #{id}')
+    number = yaml_record['number']
+    logger_ep = logger[number]
+    logger_ep.info(f'Processing episode #{number}')
 
-    media_url = f"https://podcast.junior.guru/episodes/{id}.mp3"
+    media_slug = f"{number:04d}"
+    media_url = f"https://podcast.junior.guru/episodes/{media_slug}.mp3"
     media_type = 'audio/mpeg'
 
     avatar_path = yaml_record['avatar_path']
@@ -154,7 +155,7 @@ def process_episode(yaml_record):
         companies = None
 
     logger_ep.debug('Preparing data')
-    data = dict(id=id,
+    data = dict(number=number,
                 publish_on=yaml_record['publish_on'],
                 title=title,
                 participant_name=participant_name,
@@ -162,6 +163,7 @@ def process_episode(yaml_record):
                 companies=companies,
                 avatar_path=avatar_path,
                 description=yaml_record['description'],
+                media_slug=media_slug,
                 media_url=media_url,
                 media_size=media_size,
                 media_type=media_type,
@@ -178,7 +180,7 @@ def process_episode(yaml_record):
     episode.clear_dirty_fields()
     tpl_context = dict(episode=episode)
     poster_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT, 'podcast.html', tpl_context,
-                                    POSTERS_DIR, prefix=id, filters=dict(icon=icon))
+                                    POSTERS_DIR, prefix=media_slug, filters=dict(icon=icon))
     data['poster_path'] = poster_path.relative_to(IMAGES_DIR)
 
     return data

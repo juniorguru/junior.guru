@@ -8,7 +8,7 @@
 # avatar_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
-- id: "0018"
+- number: 18
   title: Anastázie Sedláková (DNAnexus) nejen o mateřství a kariéře v IT
   avatar_path: avatars-participants/anastazie-sedlakova.jpg
   publish_on: "2023-08-01"
@@ -17,7 +17,7 @@
   media_size: 27467315
   media_duration_s: 1962
 
-- id: "0017"
+- number: 17
   title: Matěj Kotrba (Fuckupy v IT, Očima ajťáka) o tom, jak se recruiterům dostat do hledáčku
   avatar_path: avatars-participants/matej-kotrba.jpg
   publish_on: "2023-07-01"
@@ -26,7 +26,7 @@
   media_size: 22929167
   media_duration_s: 1638
 
-- id: "0016"
+- number: 16
   title: Kateřina Lesch (Deloitte) o umělé inteligenci
   avatar_path: avatars-participants/katerina-lesch.jpg
   publish_on: "2023-06-01"
@@ -35,7 +35,7 @@
   media_size: 20931270
   media_duration_s: 1495
 
-- id: "0015"
+- number: 15
   title: Marián Kameništák (kamenistak.com) o pohovorech a kariéře v IT
   avatar_path: avatars-participants/marian-kamenistak.jpg
   publish_on: "2023-04-15"
@@ -44,7 +44,7 @@
   media_size: 25215247
   media_duration_s: 1801
 
-- id: "0014"
+- number: 14
   title: Lukáš Kubec (Green Fox Academy) o cestě z KFC na software developera a mentora programování
   avatar_path: avatars-participants/lukas-kubec.jpg
   publish_on: "2023-03-16"
@@ -54,7 +54,7 @@
   media_size: 26681395
   media_duration_s: 1906
 
-- id: "0013"
+- number: 13
   title: Tomáš Ervín Dombrovský (LMC) nejen o IT sektoru v Česku
   avatar_path: avatars-participants/tomas-ervin-dombrovsky.jpg
   publish_on: "2023-02-16"
@@ -63,7 +63,7 @@
   media_size: 23300367
   media_duration_s: 1664
 
-- id: "0012"
+- number: 12
   title: Veronika Gabrielová (Aimful) o efektivním kariérním růstu
   avatar_path: avatars-participants/veronika-gabrielova.jpg
   publish_on: "2023-01-15"
@@ -72,7 +72,7 @@
   media_size: 30450081
   media_duration_s: 2175
 
-- id: "0011"
+- number: 11
   title: Lukáš Konarovský (Fakturoid) o podnikání, třeba i v IT
   avatar_path: avatars-participants/lukas-konarovsky.jpg
   publish_on: "2022-12-15"
@@ -82,7 +82,7 @@
   media_size: 23825167
   media_duration_s: 1702
 
-- id: "0010"
+- number: 10
   title: Klára Šťouračová (Productboard) o úspěšném startu kariéry v IT
   avatar_path: avatars-participants/klara-stouracova.jpg
   publish_on: "2022-11-15"
@@ -91,7 +91,7 @@
   media_size: 30451178
   media_duration_s: 2175
 
-- id: "0009"
+- number: 9
   title: Markéta Lourenco (Mews) o cestě od lingvistiky k datové analýze
   avatar_path: avatars-participants/marketa-lourenco.jpg
   publish_on: "2022-10-15"
@@ -100,7 +100,7 @@
   media_size: 26262287
   media_duration_s: 1876
 
-- id: "0008"
+- number: 8
   title: Michal Matuška (SUPERKODERS) o leadershipu a juniorech
   avatar_path: avatars-participants/michal-matuska.jpg
   publish_on: "2022-09-15"
@@ -109,7 +109,7 @@
   media_size: 26471110
   media_duration_s: 1891
 
-- id: "0007"
+- number: 7
   title: Mia Bajić (Seznam) o cestě z Bosny do českého Seznamu
   avatar_path: avatars-participants/mia-bajic.jpg
   publish_on: "2022-07-17"
@@ -118,7 +118,7 @@
   media_size: 21636733
   media_duration_s: 1545
 
-- id: "0006"
+- number: 6
   title: Markéta Willis (Applifting) o její cestě k IT a učení (se) programování
   avatar_path: avatars-participants/marketa-willis.jpg
   publish_on: "2022-06-15"
@@ -127,7 +127,7 @@
   media_size: 25206470
   media_duration_s: 1800
 
-- id: "0005"
+- number: 5
   title: "Petr Přibil (Tatanka) o změně kariéry od lesníka až k Python developerovi"
   avatar_path: avatars-participants/petr-pribil.jpg
   publish_on: "2022-05-16"
@@ -137,7 +137,7 @@
   media_duration_s: 1894
 
 
-- id: "0004"
+- number: 4
   title: "Tereza Vaňková (Deepnote) o její cestě k programování a komunitě ReactGirls"
   avatar_path: avatars-participants/tereza-vankova.jpg
   publish_on: "2022-04-15"
@@ -147,7 +147,7 @@
   media_duration_s: 2023
 
 
-- id: "0003"
+- number: 3
   title: "Filip Kirschner (Applifting) o firemním přístupu k juniorům a nejen tom"
   avatar_path: avatars-participants/filip-kirschner.jpg
   publish_on: "2022-03-15"
@@ -157,7 +157,7 @@
   media_duration_s: 3037
 
 
-- id: "0002"
+- number: 2
   title: "Roman Hraška (yablko) o kurzech webdevelopmentu"
   avatar_path: avatars-participants/roman-hraska.jpg
   publish_on: "2022-02-15"
@@ -167,7 +167,7 @@
   media_duration_s: 3186
 
 
-- id: "0001"
+- number: 1
   title: "Jiří Psotka (Red Hat) o hledání první práce v IT"
   avatar_path: avatars-participants/jiri-psotka.jpg
   publish_on: "2022-01-15"
@@ -177,7 +177,7 @@
   media_duration_s: 3326
 
 
-- id: "0000"
+- number: 0
   title: "Startujeme!"
   avatar_path: avatars-participants/honza-javorek.jpg
   publish_on: "2022-01-01"

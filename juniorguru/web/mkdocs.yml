@@ -22,7 +22,9 @@ nav:
       - ... | flat | courses/*.md
   - Práce: jobs/
   - Novinky:
-      - Podcast: podcast.md
+      - Podcast:
+          - Podcast: podcast.md
+          - ... | flat | podcast/*.md
       - Klubové akce:
           - Klubové akce: events.md
           - ... | flat | events/*.md

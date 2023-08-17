@@ -10,12 +10,13 @@ from juniorguru.models.partner import Partner
 
 
 class PodcastEpisode(BaseModel):
-    id = CharField(primary_key=True)
+    number = IntegerField(primary_key=True)
     publish_on = DateField(unique=True)
     title = CharField()
     participant_name = CharField(null=True)
     participant_has_feminine_name = BooleanField(null=True)
     companies = CharField(null=True)
+    media_slug = CharField(unique=True)
     media_url = CharField()
     media_size = IntegerField()
     media_type = CharField()
@@ -26,27 +27,23 @@ class PodcastEpisode(BaseModel):
     poster_path = CharField(null=True)
 
     @property
-    def global_id(self):
-        return f'podcast.junior.guru#{self.id}'
+    def global_id(self) -> str:
+        return f'podcast.junior.guru#{self.media_slug}'
 
     @property
-    def number(self):
-        return int(self.id)
-
-    @property
-    def title_numbered(self):
+    def title_numbered(self) -> str:
         return f"#{self.number} {self.title}"
 
     @property
-    def slug(self):
-        return f'episode{self.id}'
+    def url(self) -> str:
+        return f'https://junior.guru/podcast/{self.number}/'
 
     @property
-    def url(self):
-        return f'https://junior.guru/podcast/#{self.slug}'
+    def page_url(self) -> str:
+        return f'podcast/{self.number}.md'
 
     @property
-    def publish_at_prg(self):
+    def publish_at_prg(self) -> datetime:
         return datetime.combine(self.publish_on,
                                 time(hour=1, minute=42, second=42),
                                 tzinfo=ZoneInfo('Europe/Prague'))
@@ -54,6 +51,10 @@ class PodcastEpisode(BaseModel):
     @property
     def media_duration_m(self):
         return math.ceil(self.media_duration_s / 60)
+
+    @classmethod
+    def get_by_number(cls, number: int):
+        return cls.get_by_id(number)
 
     @classmethod
     def last(cls, today=None):
