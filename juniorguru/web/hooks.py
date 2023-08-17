@@ -4,7 +4,7 @@ import jinja2
 from mkdocs.utils import get_relative_url
 from mkdocs.utils.filters import url_filter
 
-from juniorguru.lib import template_filters
+from juniorguru.lib import template_filters, mkdocs_jinja
 from juniorguru.lib.jinja_cache import BytecodeCache
 from juniorguru.web import api, context as context_hooks
 
@@ -30,6 +30,9 @@ TEMPLATE_FILTERS = [
     "parent_page",
     "sibling_page",
 ]
+
+
+mkdocs_jinja.monkey_patch()
 
 
 class MarkdownTemplateError(Exception):
