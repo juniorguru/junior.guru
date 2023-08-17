@@ -34,9 +34,7 @@ def building(title: str):
             time_end = perf_counter() - time_start
             logger.info(f"Done building {title} in {time_end:.2f}s")
             return return_value
-
         return wrapper
-
     return decorator
 
 
@@ -69,12 +67,12 @@ def build_flask(output_path: Path):
 
 @main.command()
 @click.pass_context
+@click.argument("output_path", default="public", type=click.Path(path_type=Path))
 @click.argument(
     "config",
     default="juniorguru/web/mkdocs.yml",
     type=click.Path(exists=True, path_type=Path),
 )
-@click.argument("output_path", default="public", type=click.Path(path_type=Path))
 @click.option("-w", "--warnings/--no-warnings", "warn", default=False)
 @building("MkDocs files")
 def build_mkdocs(context, config: Path, output_path: Path, warn: bool):
@@ -121,18 +119,19 @@ def build(context, output_path: Path):
 def serve(context, output_path: Path, open: bool):
     context.invoke(build, output_path=output_path)
 
-    def ignore_data(path):
+    def ignore_data(path) -> bool:
         return Path(path).suffix in [".db-shm", ".db-wal", ".log"]
 
     def rebuild_static():
         context.invoke(build_static, output_path=output_path)
 
+    @building("Flask and MkDocs files")
     def rebuild_flask_and_mkdocs():
-        context.invoke(build_flask, output_path=output_path)
-        context.invoke(build_mkdocs, output_path=output_path)
+        subprocess.run(["jg", "web", 'build-flask', str(output_path)], check=True)
+        subprocess.run(["jg", "web", 'build-mkdocs', str(output_path)], check=True)
 
     def rebuild_mkdocs():
-        context.invoke(build_mkdocs, output_path=output_path)
+        subprocess.run(["jg", "web", 'build-mkdocs', str(output_path)], check=True)
 
     server = Server()
     server.setHeader("Access-Control-Allow-Origin", "*")
