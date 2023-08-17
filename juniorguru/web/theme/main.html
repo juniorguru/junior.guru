@@ -27,12 +27,11 @@
       </div>
       {% if nav %}
       <ul class="nav nav-foldable">
-        {% for nav_item in (nav|list)[:5] %}
+        {% for nav_item in nav|menu %}
         <li class="nav-item">
           <a
-            {% if nav_item.active %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %}
-            {% if nav_item.is_section %}href="{{ (nav_item.children|first).url|url }}"{% else %}href="{{ nav_item.url|url }}"{% endif %}
-          >
+            {% if nav_item.is_active %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %}
+            href="{{ nav_item.url|url }}">
             {{ nav_item.title }}
           </a>
         </li>

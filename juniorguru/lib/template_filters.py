@@ -4,7 +4,10 @@ import re
 from operator import itemgetter
 from typing import Iterable, Literal
 from urllib.parse import unquote, urljoin
+from typing import Generator
 
+from mkdocs.structure.pages import Page
+from mkdocs.structure import StructureItem
 import arrow
 from markupsafe import Markup
 from slugify import slugify
@@ -147,3 +150,60 @@ def screenshot_url(url: str) -> str:
 
 def mapping(mapping: dict, keys: Iterable) -> list:
     return [mapping[key] for key in keys]
+
+
+def menu(nav) -> Generator[dict, None, None]:
+    for item in list(nav)[:5]:
+        # for items without children, this should result in the same
+        # value as item.url, but for pages with a tree of descendants,
+        # this ensures we use the first child's URL, regardless
+        # of the depth where it resides
+        first_children = [item]
+        while first_children[0].children:
+            first_children.insert(0, first_children[0].children[0])
+        first_child = first_children[0]
+        yield dict(title=item.title,
+                   url=first_child.url,
+                   is_active=item.active)
+
+
+def toc(page: Page) -> Generator[dict, None, None]:
+    # for pages without children, this should result in the same
+    # value as page.parent, but for pages further down the tree,
+    # this ensures we display only the top-level items, regardless
+    # of the depth of the current page
+    parents = [page]
+    while parents[0].parent:
+        parents.insert(0, parents[0].parent)
+    parent = parents[0]
+
+    # iterate over items
+    for item in parent.children:
+        if item.children:
+            item_page = item.children[0]
+        else:
+            item_page = item
+        yield dict(title=item_page.title,
+                   url=item_page.url,
+                   is_active=item.active,
+                   headings=[dict(title=heading.title,
+                                  url=heading.url)
+                             for heading in item_page.toc])
+
+
+def parent_page(page: Page) -> StructureItem | None:
+    try:
+        return page.parent.children[0]
+    except AttributeError:
+        return None
+
+
+def sibling_page(page: Page, offset: int) -> StructureItem | None:
+    try:
+        index = page.parent.children.index(page)
+        sibling_index = max(index + offset, 0)
+        if index == sibling_index:
+            return None
+        return page.parent.children[sibling_index]
+    except (AttributeError, IndexError):
+        return None

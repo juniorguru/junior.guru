@@ -4,7 +4,6 @@ from urllib.parse import urljoin
 import arrow
 
 from juniorguru.lib.benefits_evaluators import BENEFITS_EVALUATORS
-from juniorguru.lib.mkdocs_nav import get_parent_page, get_sibling_page, get_toc
 from juniorguru.models.base import db
 from juniorguru.models.blog import BlogArticle
 from juniorguru.models.chart import Chart
@@ -47,10 +46,7 @@ def on_shared_context(context):
 
 
 def on_shared_page_context(context, page, config, files):
-    context["toc"] = get_toc(page)
-    context["parent_page"] = get_parent_page(page)
-    context["previous_page"] = get_sibling_page(page, -1)
-    context["next_page"] = get_sibling_page(page, +1)
+    pass
 
 
 ####################################################################

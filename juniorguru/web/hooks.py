@@ -25,6 +25,10 @@ TEMPLATE_FILTERS = [
     "absolute_url",
     "mapping",
     "local_time",
+    "menu",
+    "toc",
+    "parent_page",
+    "sibling_page",
 ]
 
 

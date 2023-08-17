@@ -34,6 +34,7 @@
 {{ super() }}
 <div class="pagination">
   <div class="pagination-control">
+  {% set previous_page = page|sibling_page(-1) %}
   {% if previous_page %}
     <a href="{{ previous_page.url|url }}" class="pagination-button" title="Předchozí téma">
       {{ 'arrow-left'|icon }}
@@ -42,6 +43,7 @@
   {% endif %}
   </div>
   <div class="pagination-control">
+  {% set next_page = page|sibling_page(+1) %}
   {% if next_page %}
     <a href="{{ next_page.url|url }}" class="pagination-button" title="Další téma">
       {{ next_page.title }}

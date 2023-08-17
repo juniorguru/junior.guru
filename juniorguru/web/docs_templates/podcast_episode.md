@@ -3,8 +3,8 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="{{ parent_page.url|url }}">
-        {{ parent_page.title }}
+      <a href="{{ (page|parent_page).url|url }}">
+        {{ (page|parent_page).title }}
       </a>
     </li>
     <li class="breadcrumb-item active" aria-current="page">
@@ -47,7 +47,7 @@
 
 <div class="pagination">
   <div class="pagination-control">
-    <a href="{{ parent_page.url|url }}" class="pagination-button">
+    <a href="{{ (page|parent_page).url|url }}" class="pagination-button">
       {{ 'arrow-left'|icon }}
       Všechny epizody
     </a>

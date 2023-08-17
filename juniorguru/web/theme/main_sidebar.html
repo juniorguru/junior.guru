@@ -26,7 +26,7 @@
           {% block toc_heading required %}{% endblock %}
         </h3>
         <ul class="toc-list">
-          {% for toc_item in toc %}
+          {% for toc_item in page|toc %}
             <li class="toc-item{% if toc_item.is_active %} active{% endif %}">
               <a class="toc-link" href="{{ toc_item.url|url }}">
                 {{ toc_item.title }}
