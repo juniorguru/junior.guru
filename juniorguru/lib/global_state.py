@@ -3,7 +3,7 @@ import os
 from typing import Any
 
 
-ENV_KEY = 'JG_GLOBAL_STATE'
+ENV_KEY = "JG_GLOBAL_STATE"
 
 
 def load(env_key=None) -> dict:

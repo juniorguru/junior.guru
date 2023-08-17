@@ -2,7 +2,7 @@ import emoji
 
 
 def remove_emoji(text: str):
-    return strip_whitespace(emoji.replace_emoji(strip_whitespace(text), replace=''))
+    return strip_whitespace(emoji.replace_emoji(strip_whitespace(text), replace=""))
 
 
 def strip_whitespace(text: str):
@@ -10,7 +10,7 @@ def strip_whitespace(text: str):
     while True:
         stripped = previous
         stripped = stripped.strip()
-        stripped = stripped.strip('\u200d')
+        stripped = stripped.strip("\u200d")
 
         if stripped == previous:
             return stripped

@@ -8,20 +8,20 @@ from juniorguru.lib.chunks import chunks
 
 
 MUTED_LOGGERS = [
-    'discord',
-    'peewee',
-    'urllib3',
-    'oauth2client',
-    'google',
-    'googleapiclient',
-    'PIL',
-    'asyncio',
-    'MARKDOWN',
-    'gql.transport.requests',
-    'protego',
-    'juniorguru.sync.club_content.store',
-    'juniorguru.lib.mutations.allowing',
-    'juniorguru.web.templates',
+    "discord",
+    "peewee",
+    "urllib3",
+    "oauth2client",
+    "google",
+    "googleapiclient",
+    "PIL",
+    "asyncio",
+    "MARKDOWN",
+    "gql.transport.requests",
+    "protego",
+    "juniorguru.sync.club_content.store",
+    "juniorguru.lib.mutations.allowing",
+    "juniorguru.web.templates",
 ]
 
 
@@ -29,19 +29,21 @@ class Logger(logging.Logger):
     def __getitem__(self, name) -> logging.Logger:
         return self.getChild(str(name))
 
-    def progress(self, iterable: Iterable, chunk_size=100) -> Generator[Any, None, None]:
+    def progress(
+        self, iterable: Iterable, chunk_size=100
+    ) -> Generator[Any, None, None]:
         total_count = 0
         for chunk in chunks(iterable, size=chunk_size):
             yield from chunk
             total_count += len(chunk)
-            self.info(f'Done {total_count} items')
+            self.info(f"Done {total_count} items")
 
 
 def _configure():
-    level = _infer_level(global_state.get('log_level'), os.environ)
-    timestamp = _infer_timestamp(global_state.get('log_timestamp'), os.environ)
-    format = '[%(asctime)s] ' if timestamp else ''
-    format += '[%(name)s%(processSuffix)s] %(levelname)s: %(message)s'
+    level = _infer_level(global_state.get("log_level"), os.environ)
+    timestamp = _infer_timestamp(global_state.get("log_timestamp"), os.environ)
+    format = "[%(asctime)s] " if timestamp else ""
+    format += "[%(name)s%(processSuffix)s] %(levelname)s: %(message)s"
 
     logging.setLogRecordFactory(_record_factory)
     logging.setLoggerClass(Logger)
@@ -57,14 +59,14 @@ def _configure():
 
     # In multiprocessing, the child processes won't automatically
     # inherit logger configuration and this function will run again.
-    global_state.set('log_level', level)
-    global_state.set('log_timestamp', 'true' if timestamp else 'false')
+    global_state.set("log_level", level)
+    global_state.set("log_timestamp", "true" if timestamp else "false")
 
 
 def reconfigure_level(level: str):
     for handler in logging.root.handlers:
         handler.setLevel(getattr(logging, level.upper()))
-    global_state.set('log_level', level)
+    global_state.set("log_level", level)
 
 
 _original_record_factory = logging.getLogRecordFactory()
@@ -77,29 +79,30 @@ def _record_factory(*args, **kwargs) -> logging.LogRecord:
 
 
 def _get_process_suffix(process_name: str) -> str:
-    return process_name \
-        .replace('MainProcess', '') \
-        .replace('SpawnPoolWorker-', '/worker') \
-        .replace('ForkPoolWorker-', '/worker') \
-        .replace('Process-', '/process')
+    return (
+        process_name.replace("MainProcess", "")
+        .replace("SpawnPoolWorker-", "/worker")
+        .replace("ForkPoolWorker-", "/worker")
+        .replace("Process-", "/process")
+    )
 
 
 def _infer_level(global_value: str, env: dict) -> str:
     value = global_value
     if value is None:
-        value = env.get('LOG_LEVEL')
+        value = env.get("LOG_LEVEL")
     if not value:
-        return 'INFO'
+        return "INFO"
     return value.upper()
 
 
 def _infer_timestamp(global_value: str, env: dict) -> bool:
     value = global_value
     if value is None:
-        value = env.get('LOG_TIMESTAMP')
+        value = env.get("LOG_TIMESTAMP")
     if value is None:
-        value = env.get('CI')
-    if not value or value.lower() in ['0', 'false']:
+        value = env.get("CI")
+    if not value or value.lower() in ["0", "false"]:
         return False
     return True
 
@@ -111,12 +114,11 @@ def get(name) -> Logger:
 def from_path(path, cwd=None) -> Logger:
     cwd = cwd or os.getcwd()
     relative_path = str(Path(path).relative_to(cwd))
-    name = '.'.join(
-        relative_path
-            .removesuffix('.py')
-            .removesuffix('__init__')
-            .rstrip('/')
-            .split('/')
+    name = ".".join(
+        relative_path.removesuffix(".py")
+        .removesuffix("__init__")
+        .rstrip("/")
+        .split("/")
     )
     return get(name)
 

@@ -3,7 +3,7 @@ from importlib import import_module
 
 
 def command_name(module_name):
-    return module_name.split('.')[-1].replace('_', '-')
+    return module_name.split(".")[-1].replace("_", "-")
 
 
 def load_command(module):

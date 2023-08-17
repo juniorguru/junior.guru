@@ -6,13 +6,13 @@ from typing import Any, Generator, Iterable
 from juniorguru.lib import global_state, loggers
 
 
-__all__ = ['allow', 'allow_all', 'is_allowed', 'mutates', 'mutating', 'allowing']
+__all__ = ["allow", "allow_all", "is_allowed", "mutates", "mutating", "allowing"]
 
 
 logger = loggers.from_path(__file__)
 
 
-KNOWN_SERVICES = ['discord', 'google_sheets', 'fakturoid', 'memberful']
+KNOWN_SERVICES = ["discord", "google_sheets", "fakturoid", "memberful"]
 
 
 class MutationsNotAllowedError(Exception):
@@ -20,21 +20,21 @@ class MutationsNotAllowedError(Exception):
 
 
 def _get_allowed() -> set:
-    return set(global_state.get('mutations.allowed') or [])
+    return set(global_state.get("mutations.allowed") or [])
 
 
 def _set_allowed(allowed: Iterable) -> None:
-    global_state.set('mutations.allowed', list(allowed))
+    global_state.set("mutations.allowed", list(allowed))
 
 
 def allow(*services: str) -> None:
     allowed = _get_allowed()
     for service in map(str.lower, services):
         if service not in KNOWN_SERVICES:
-            raise ValueError(f'Unknown service: {service!r} not in {KNOWN_SERVICES!r}')
+            raise ValueError(f"Unknown service: {service!r} not in {KNOWN_SERVICES!r}")
         allowed.add(service)
     _set_allowed(allowed)
-    logger.info(f'Allowed: {list(allowed)!r}')
+    logger.info(f"Allowed: {list(allowed)!r}")
 
 
 def allow_all() -> None:
@@ -50,7 +50,7 @@ def mutates(service, raises=False):
     assert service in KNOWN_SERVICES
 
     def create_error():
-        logger['mutates'].warning(f'Not allowed: {service}')
+        logger["mutates"].warning(f"Not allowed: {service}")
         error = MutationsNotAllowedError()
         if raises:
             raise error
@@ -58,11 +58,13 @@ def mutates(service, raises=False):
 
     def decorator(fn):
         if inspect.iscoroutinefunction(fn):
+
             @wraps(fn)
             async def wrapper(*args, **kwargs) -> Any | MutationsNotAllowedError:
                 if service in _get_allowed():
                     return await fn(*args, **kwargs)
                 return create_error()
+
             return wrapper
 
         @wraps(fn)
@@ -70,7 +72,9 @@ def mutates(service, raises=False):
             if service in _get_allowed():
                 return fn(*args, **kwargs)
             return create_error()
+
         return wrapper
+
     return decorator
 
 
@@ -80,7 +84,7 @@ for service in KNOWN_SERVICES:
 
 
 class MutatingProxy:
-    def __init__(self, service: str, object: Any, raises: bool=False):
+    def __init__(self, service: str, object: Any, raises: bool = False):
         self.service = service
         self.object = object
         self.raises = raises
@@ -110,12 +114,12 @@ def allowing(service) -> Generator[None, None, None]:
 
     dump = _get_allowed()
     try:
-        global_state.set('mutations.allowed', [service])
-        logger['allowing'].debug(f'Force-allowed: {service!r}')
+        global_state.set("mutations.allowed", [service])
+        logger["allowing"].debug(f"Force-allowed: {service!r}")
         yield
     finally:
         _set_allowed(dump)
-        logger['allowing'].debug(f'Back to: {dump!r}')
+        logger["allowing"].debug(f"Back to: {dump!r}")
 
 
 for service in KNOWN_SERVICES:

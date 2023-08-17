@@ -6,10 +6,12 @@ from juniorguru.lib.google import get_credentials
 
 
 def get(doc_key, sheet_name):
-    credentials = get_credentials([
-        'https://spreadsheets.google.com/feeds',
-        'https://www.googleapis.com/auth/drive',
-    ])
+    credentials = get_credentials(
+        [
+            "https://spreadsheets.google.com/feeds",
+            "https://www.googleapis.com/auth/drive",
+        ]
+    )
     doc = gspread.authorize(credentials).open_by_key(doc_key)
     return doc.worksheet(sheet_name)
 
@@ -26,7 +28,7 @@ def upload(sheet, records):
     current_rows = sheet.get_all_values()
     if current_rows:
         range = get_range_notation(current_rows)
-        sheet.update(range, [['' for cell in row] for row in current_rows])
+        sheet.update(range, [["" for cell in row] for row in current_rows])
 
     new_rows = records_to_rows(records)
     range = get_range_notation(new_rows)
@@ -36,11 +38,11 @@ def upload(sheet, records):
 def get_range_notation(rows):
     rows_count = len(rows)
     if not rows_count:
-        raise ValueError('No rows')
+        raise ValueError("No rows")
     cols_count = len(rows[0])
     if not cols_count:
-        raise ValueError('No columns')
-    return f'A1:{string.ascii_uppercase[cols_count - 1]}{rows_count}'
+        raise ValueError("No columns")
+    return f"A1:{string.ascii_uppercase[cols_count - 1]}{rows_count}"
 
 
 def records_to_rows(records):

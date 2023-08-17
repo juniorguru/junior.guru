@@ -33,19 +33,16 @@ def parse_int(value):
 
 def parse_boolean_words(value):
     if value is not None:
-        return dict(yes=True,
-                    no=False,
-                    ano=True,
-                    ne=False,
-                    true=True,
-                    false=False).get(value.strip().lower())
+        return dict(yes=True, no=False, ano=True, ne=False, true=True, false=False).get(
+            value.strip().lower()
+        )
 
 
 def parse_datetime(value):
     if value:
         value = value.strip()
         try:
-            return arrow.get(value, 'M/D/YYYY H:m:s').naive
+            return arrow.get(value, "M/D/YYYY H:m:s").naive
         except ValueError:
             return arrow.get(datetime.fromisoformat(value)).naive
 
@@ -54,10 +51,10 @@ def parse_date(value):
     if value:
         value = value.strip()
         try:
-            return arrow.get(value, 'M/D/YYYY H:m:s').date()
+            return arrow.get(value, "M/D/YYYY H:m:s").date()
         except ValueError:
             try:
-                return arrow.get(value, 'M/D/YYYY').date()
+                return arrow.get(value, "M/D/YYYY").date()
             except ValueError:
                 return datetime.fromisoformat(value).date()
 
@@ -68,7 +65,7 @@ def parse_boolean(value):
 
 def parse_set(value):
     if value:
-        items = (item.strip() for item in value.split(','))
+        items = (item.strip() for item in value.split(","))
         return frozenset(filter(None, items))
     return frozenset()
 
@@ -79,7 +76,7 @@ def parse_url(value):
         url_parts = urlparse(url)
         if not url_parts.scheme:
             raise ValueError(f"{url} doesn't look like a valid URL")
-        if url_parts.scheme.lower() not in ['http', 'https']:
+        if url_parts.scheme.lower() not in ["http", "https"]:
             raise ValueError(f"{url} doesn't look like a valid URL")
         if not url_parts.netloc:
             raise ValueError(f"{url} doesn't look like a valid URL")

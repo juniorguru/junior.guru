@@ -16,15 +16,15 @@ from lxml import html
 from juniorguru.lib import loggers
 
 
-USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
+USER_AGENT = "JuniorGuruBot (+https://junior.guru)"
 
-COLLECTION_NAME_RE = re.compile(r'(?P<collection_name>\w+)\(after:\s*\$cursor')
+COLLECTION_NAME_RE = re.compile(r"(?P<collection_name>\w+)\(after:\s*\$cursor")
 
-MEMBERFUL_API_KEY = os.environ.get('MEMBERFUL_API_KEY')
+MEMBERFUL_API_KEY = os.environ.get("MEMBERFUL_API_KEY")
 
-MEMBERFUL_EMAIL = os.environ.get('MEMBERFUL_EMAIL', 'kure@junior.guru')
+MEMBERFUL_EMAIL = os.environ.get("MEMBERFUL_EMAIL", "kure@junior.guru")
 
-MEMBERFUL_PASSWORD = os.environ.get('MEMBERFUL_PASSWORD')
+MEMBERFUL_PASSWORD = os.environ.get("MEMBERFUL_PASSWORD")
 
 DOWNLOAD_POLLING_WAIT_SEC = 5
 
@@ -32,11 +32,16 @@ DOWNLOAD_POLLING_WAIT_SEC = 5
 logger = loggers.from_path(__file__)
 
 
-class MemberfulAPI():
+class MemberfulAPI:
     # https://memberful.com/help/integrate/advanced/memberful-api/
     # https://juniorguru.memberful.com/api/graphql/explorer?api_user_id=52463
 
-    def __init__(self, api_key: str=None, cache_dir: str|Path=None, clear_cache: bool=False):
+    def __init__(
+        self,
+        api_key: str = None,
+        cache_dir: str | Path = None,
+        clear_cache: bool = False,
+    ):
         self.cache_dir = Path(cache_dir) if cache_dir else None
         self.clear_cache = clear_cache
         self.api_key = api_key or MEMBERFUL_API_KEY
@@ -45,90 +50,106 @@ class MemberfulAPI():
     @property
     def client(self) -> Client:
         if not self._client:
-            logger.debug('Connecting')
-            transport = RequestsHTTPTransport(url='https://juniorguru.memberful.com/api/graphql/',
-                                              headers={'Authorization': f'Bearer {self.api_key}',
-                                                       'User-Agent': USER_AGENT},
-                                              verify=True,
-                                              retries=3)
+            logger.debug("Connecting")
+            transport = RequestsHTTPTransport(
+                url="https://juniorguru.memberful.com/api/graphql/",
+                headers={
+                    "Authorization": f"Bearer {self.api_key}",
+                    "User-Agent": USER_AGENT,
+                },
+                verify=True,
+                retries=3,
+            )
             self._client = Client(transport=transport)
         return self._client
 
     def mutate(self, mutation: str, variable_values: dict) -> dict[str, Any]:
-        logger.debug('Sending a mutation')
+        logger.debug("Sending a mutation")
         return self.client.execute(gql(mutation), variable_values=variable_values)
 
-    def get_nodes(self, query: str, variable_values: dict=None) -> Generator[dict, None, None]:
+    def get_nodes(
+        self, query: str, variable_values: dict = None
+    ) -> Generator[dict, None, None]:
         if match := COLLECTION_NAME_RE.search(query):
-            collection_name = match.group('collection_name')
+            collection_name = match.group("collection_name")
         else:
-            raise ValueError('Could not parse collection name')
+            raise ValueError("Could not parse collection name")
         declared_count = None
         nodes_count = 0
         duplicates_count = 0
         seen_node_ids = set()
-        for result in self._query(query,
-                                  lambda result: result[collection_name]['pageInfo'],
-                                  variable_values=variable_values):
+        for result in self._query(
+            query,
+            lambda result: result[collection_name]["pageInfo"],
+            variable_values=variable_values,
+        ):
             # save total count so we can later check if we got all the nodes
-            count = result[collection_name]['totalCount']
+            count = result[collection_name]["totalCount"]
             if declared_count is None:
-                logger.debug(f'Expecting {count} nodes')
+                logger.debug(f"Expecting {count} nodes")
                 declared_count = count
-            assert declared_count == count, f'Memberful API suddenly declares different total count: {count} (≠ {declared_count})'
+            assert (
+                declared_count == count
+            ), f"Memberful API suddenly declares different total count: {count} (≠ {declared_count})"
 
             # iterate over nodes and drop duplicates, because, unfortunately, the API returns duplicates
-            for edge in result[collection_name]['edges']:
-                node = edge['node']
-                node_id = node.get('id') or hash_data(node)
+            for edge in result[collection_name]["edges"]:
+                node = edge["node"]
+                node_id = node.get("id") or hash_data(node)
                 if node_id in seen_node_ids:
-                    logger.debug(f'Dropping a duplicate node: {node_id!r}')
+                    logger.debug(f"Dropping a duplicate node: {node_id!r}")
                     duplicates_count += 1
                 else:
                     yield node
                     seen_node_ids.add(node_id)
                 nodes_count += 1
-        assert duplicates_count == 0, f'Memberful API returned {duplicates_count} duplicate nodes'
-        assert declared_count == nodes_count, f"Memberful API returned {nodes_count} nodes instead of {declared_count}"
+        assert (
+            duplicates_count == 0
+        ), f"Memberful API returned {duplicates_count} duplicate nodes"
+        assert (
+            declared_count == nodes_count
+        ), f"Memberful API returned {nodes_count} nodes instead of {declared_count}"
 
-    def _query(self, query: str, get_page_info: Callable, variable_values: dict=None):
+    def _query(self, query: str, get_page_info: Callable, variable_values: dict = None):
         variable_values = variable_values or {}
-        cursor = ''
+        cursor = ""
         n = 0
         while cursor is not None:
-            logger.debug(f'Sending a query with cursor {cursor!r}')
+            logger.debug(f"Sending a query with cursor {cursor!r}")
             result = self._execute_query(query, dict(cursor=cursor, **variable_values))
             yield result
             n += 1
             page_info = get_page_info(result)
-            if page_info['hasNextPage']:
-                cursor = page_info['endCursor']
+            if page_info["hasNextPage"]:
+                cursor = page_info["endCursor"]
             else:
                 cursor = None
 
     def _execute_query(self, query: str, variable_values: dict) -> dict:
         if self.cache_dir:
             if self.clear_cache:
-                logger.debug('Clearing cache')
-                for path in self.cache_dir.glob('memberful-*.json'):
+                logger.debug("Clearing cache")
+                for path in self.cache_dir.glob("memberful-*.json"):
                     path.unlink()
                 self.clear_cache = False
 
             cache_key = hash_data(dict(query=query, variable_values=variable_values))
-            cache_path = self.cache_dir / f'memberful-{cache_key}.json'
+            cache_path = self.cache_dir / f"memberful-{cache_key}.json"
             try:
                 with cache_path.open() as f:
-                    logger.debug(f'Loading from cache: {cache_path}')
+                    logger.debug(f"Loading from cache: {cache_path}")
                     return json.load(f)
             except FileNotFoundError:
                 pass
 
-        logger.debug(f'Querying Memberful API, variable values: {json.dumps(variable_values)}')
+        logger.debug(
+            f"Querying Memberful API, variable values: {json.dumps(variable_values)}"
+        )
         result = self.client.execute(gql(query), variable_values=variable_values)
 
         if self.cache_dir:
-            logger.debug(f'Saving to cache: {cache_path}')
-            with cache_path.open('w') as f:
+            logger.debug(f"Saving to cache: {cache_path}")
+            with cache_path.open("w") as f:
                 json.dump(result, f)
 
         return result
@@ -143,7 +164,13 @@ class DownloadError(Exception):
 
 
 class MemberfulCSV:
-    def __init__(self, email: str=None, password: str=None, cache_dir: str|Path=None, clear_cache: bool=False):
+    def __init__(
+        self,
+        email: str = None,
+        password: str = None,
+        cache_dir: str | Path = None,
+        clear_cache: bool = False,
+    ):
         self.cache_dir = Path(cache_dir) if cache_dir else None
         self.clear_cache = clear_cache
         self.email = email or MEMBERFUL_EMAIL
@@ -164,51 +191,54 @@ class MemberfulCSV:
         return self._csrf_token
 
     def _auth(self) -> tuple[requests.Session, Any]:
-        logger.debug('Logging into Memberful')
+        logger.debug("Logging into Memberful")
         session = requests.Session()
-        session.headers.update({'User-Agent': USER_AGENT})
-        response = session.get('https://juniorguru.memberful.com/admin/auth/sign_in')
+        session.headers.update({"User-Agent": USER_AGENT})
+        response = session.get("https://juniorguru.memberful.com/admin/auth/sign_in")
         response.raise_for_status()
         html_tree = html.fromstring(response.content)
         html_tree.make_links_absolute(response.url)
         form = html_tree.forms[0]
-        form.fields['email'] = self.email
-        form.fields['password'] = self.password
+        form.fields["email"] = self.email
+        form.fields["password"] = self.password
         response = session.post(form.action, data=form.form_values())
         response.raise_for_status()
         html_tree = html.fromstring(response.content)
-        csrf_token = html_tree.cssselect('meta[name="csrf-token"]')[0].get('content')
-        logger.debug('Success!')
+        csrf_token = html_tree.cssselect('meta[name="csrf-token"]')[0].get("content")
+        logger.debug("Success!")
         return session, csrf_token
 
     def download_csv(self, params: dict):
-        url = f'https://juniorguru.memberful.com/admin/csv_exports?{urlencode(params)}'
-        logger.debug(f'Looking CSV export: {url}')
+        url = f"https://juniorguru.memberful.com/admin/csv_exports?{urlencode(params)}"
+        logger.debug(f"Looking CSV export: {url}")
 
         if self.cache_dir:
             if self.clear_cache:
-                logger.debug('Clearing cache')
-                for path in self.cache_dir.glob('memberful-*.csv'):
+                logger.debug("Clearing cache")
+                for path in self.cache_dir.glob("memberful-*.csv"):
                     path.unlink()
                 self.clear_cache = False
 
             cache_key = hash_data(dict(url=url))
-            cache_path = self.cache_dir / f'memberful-{cache_key}.csv'
+            cache_path = self.cache_dir / f"memberful-{cache_key}.csv"
             try:
-                logger.debug(f'Loading from cache: {cache_path}')
+                logger.debug(f"Loading from cache: {cache_path}")
                 return self._parse_csv(cache_path.read_text())
             except FileNotFoundError:
                 pass
 
-        logger.debug('Downloading from Memberful website')
-        response = self.session.post(url, allow_redirects=False,
-                                     headers={'X-CSRF-Token': self.csrf_token})
+        logger.debug("Downloading from Memberful website")
+        response = self.session.post(
+            url, allow_redirects=False, headers={"X-CSRF-Token": self.csrf_token}
+        )
         response.raise_for_status()
         download_url = f"{response.headers['Location']}/download"
 
         success = False
         for attempt_no in range(1, 10):
-            logger.debug(f'Attempt #{attempt_no}, waiting {DOWNLOAD_POLLING_WAIT_SEC}s for {download_url}')
+            logger.debug(
+                f"Attempt #{attempt_no}, waiting {DOWNLOAD_POLLING_WAIT_SEC}s for {download_url}"
+            )
             time.sleep(DOWNLOAD_POLLING_WAIT_SEC)
             try:
                 response = self.session.get(download_url)
@@ -216,15 +246,15 @@ class MemberfulCSV:
             except requests.exceptions.HTTPError as e:
                 logger.debug(str(e))
             else:
-                logger.debug('Success!')
+                logger.debug("Success!")
                 success = True
                 break
         if not success:
-            raise DownloadError('Failed to download the CSV export')
-        data = response.content.decode('utf-8')
+            raise DownloadError("Failed to download the CSV export")
+        data = response.content.decode("utf-8")
 
         if self.cache_dir:
-            logger.debug(f'Saving to cache: {cache_path}')
+            logger.debug(f"Saving to cache: {cache_path}")
             cache_path.write_text(data)
 
         return self._parse_csv(data)
@@ -234,4 +264,4 @@ class MemberfulCSV:
 
 
 def memberful_url(account_id: int | str) -> str:
-    return f'https://juniorguru.memberful.com/admin/members/{account_id}/'
+    return f"https://juniorguru.memberful.com/admin/members/{account_id}/"

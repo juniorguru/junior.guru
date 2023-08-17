@@ -5,8 +5,8 @@ BENEFITS_EVALUATORS = {}
 
 
 def benefit(evaluate):
-    slug = evaluate.__name__.replace('evaluate_', '')
-    assert slug not in BENEFITS_EVALUATORS, 'Duplicate slug!'
+    slug = evaluate.__name__.replace("evaluate_", "")
+    assert slug not in BENEFITS_EVALUATORS, "Duplicate slug!"
     BENEFITS_EVALUATORS[slug] = evaluate
     return evaluate
 

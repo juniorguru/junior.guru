@@ -9,30 +9,30 @@ from slugify import slugify
 
 
 ANNOTATION_LABEL_OPTIONS = {
-    'type': 'label',
-    'color': '#aaa',
-    'backgroundColor': 'white',
-    'borderRadius': 3,
-    'padding': 3,
-    'position': {'x': 'start', 'y': 'start'},
-    'textAlign': 'left',
-    'xAdjust': 1,
-    'yAdjust': 5,
-    'z': 2,
+    "type": "label",
+    "color": "#aaa",
+    "backgroundColor": "white",
+    "borderRadius": 3,
+    "padding": 3,
+    "position": {"x": "start", "y": "start"},
+    "textAlign": "left",
+    "xAdjust": 1,
+    "yAdjust": 5,
+    "z": 2,
 }
 
 ANNOTATION_LINE_OPTIONS = {
-    'type': 'line',
-    'borderColor': '#bbb',
-    'borderWidth': 1,
+    "type": "line",
+    "borderColor": "#bbb",
+    "borderWidth": 1,
 }
 
 ANNOTATION_YEAR_OPTIONS = {
-    'type': 'line',
-    'borderColor': '#666',
-    'borderWidth': 1,
-    'borderDash': [3, 3],
-    'z': 1,
+    "type": "line",
+    "borderColor": "#666",
+    "borderWidth": 1,
+    "borderDash": [3, 3],
+    "z": 1,
 }
 
 
@@ -50,18 +50,24 @@ def generate_months(from_date: date, to_date: date) -> Generator[date, None, Non
 
 
 def labels(months: list[date]) -> list[str]:
-    return [f'{month:%Y-%m}' for month in months]
+    return [f"{month:%Y-%m}" for month in months]
 
 
 def per_month(fn_returning_numbers: Callable, months: Iterable[date]) -> list[Number]:
     return [fn_returning_numbers(month) for month in months]
 
 
-def per_month_breakdown(fn_returning_breakdowns: Callable, months: Iterable[date]) -> dict[str, list[Number]]:
+def per_month_breakdown(
+    fn_returning_breakdowns: Callable, months: Iterable[date]
+) -> dict[str, list[Number]]:
     breakdowns = [fn_returning_breakdowns(month) for month in months]
-    categories = set(itertools.chain.from_iterable(breakdown.keys() for breakdown in breakdowns))
-    return {category: [breakdown.get(category) for breakdown in breakdowns]
-            for category in categories}
+    categories = set(
+        itertools.chain.from_iterable(breakdown.keys() for breakdown in breakdowns)
+    )
+    return {
+        category: [breakdown.get(category) for breakdown in breakdowns]
+        for category in categories
+    }
 
 
 @cache
@@ -74,14 +80,17 @@ def ttm_range(date: date) -> tuple[date, date]:
 
 @cache
 def month_range(date: date) -> tuple[date, date]:
-    return (date.replace(day=1), date.replace(day=calendar.monthrange(date.year, date.month)[1]))
+    return (
+        date.replace(day=1),
+        date.replace(day=calendar.monthrange(date.year, date.month)[1]),
+    )
 
 
 def milestones(months: list[date], milestones: list[tuple[date, str]]) -> dict:
     annotations = {
-        f'{month.year}': {
-            'xMin': x,
-            'xMax': x,
+        f"{month.year}": {
+            "xMin": x,
+            "xMax": x,
             **ANNOTATION_YEAR_OPTIONS,
         }
         for x, month in enumerate(months)
@@ -90,25 +99,30 @@ def milestones(months: list[date], milestones: list[tuple[date, str]]) -> dict:
     for milestone_date, milestone_name in dict(milestones).items():
         name = slugify(milestone_name)
         try:
-            x = [index for index, month in enumerate(months)
-                if (month.year == milestone_date.year and
-                    month.month == milestone_date.month)][0]
+            x = [
+                index
+                for index, month in enumerate(months)
+                if (
+                    month.year == milestone_date.year
+                    and month.month == milestone_date.month
+                )
+            ][0]
         except IndexError:
             continue
         else:
-            annotations[f'{name}-label'] = {
-                'content': milestone_name.split(' '),
-                'xValue': x,
+            annotations[f"{name}-label"] = {
+                "content": milestone_name.split(" "),
+                "xValue": x,
                 **ANNOTATION_LABEL_OPTIONS,
             }
-            annotations[f'{name}-line'] = {
-                'xMin': x,
-                'xMax': x,
+            annotations[f"{name}-line"] = {
+                "xMin": x,
+                "xMax": x,
                 **ANNOTATION_LINE_OPTIONS,
             }
     return {
-        'common': {'drawTime': 'beforeDatasetsDraw'},
-        'annotations': annotations,
+        "common": {"drawTime": "beforeDatasetsDraw"},
+        "annotations": annotations,
     }
 
 
