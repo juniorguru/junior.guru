@@ -47,7 +47,7 @@ def on_shared_context(context):
 
 
 def on_shared_page_context(context, page, config, files):
-    context['toc'] = get_toc(page)
+    context["toc"] = get_toc(page)
     context["parent_page"] = get_parent_page(page)
     context["previous_page"] = get_sibling_page(page, -1)
     context["next_page"] = get_sibling_page(page, +1)

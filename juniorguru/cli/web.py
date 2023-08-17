@@ -34,7 +34,9 @@ def building(title: str):
             time_end = perf_counter() - time_start
             logger.info(f"Done building {title} in {time_end:.2f}s")
             return return_value
+
         return wrapper
+
     return decorator
 
 

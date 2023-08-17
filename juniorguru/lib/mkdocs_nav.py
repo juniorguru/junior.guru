@@ -1,6 +1,7 @@
 from typing import Generator
-from mkdocs.structure.pages import Page
+
 from mkdocs.structure import StructureItem
+from mkdocs.structure.pages import Page
 
 
 def get_toc(page: Page) -> Generator[dict, None, None]:
