@@ -47,6 +47,10 @@ nav:
       - ... | flat
 
 
+validation:
+  absolute_links: ignore
+
+
 markdown_extensions:
   - toc:
       toc_depth: '2-2'

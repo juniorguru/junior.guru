@@ -1,3 +1,4 @@
+from pprint import pformat
 from typing import Any
 
 from mkdocs.config import load_config
@@ -34,7 +35,11 @@ def main():
                     size=len(source),
                     meta=parse_meta(source),
                     notes=parse_notes(source))
-        Page.create(**data)
+        try:
+            Page.create(**data)
+        except:
+            logger.error(f"Unable to save:\n{pformat(data)}")
+            raise
 
     logger.info('Generating pages from templates')
     for _, generate_pages in TEMPLATES.items():
@@ -43,7 +48,11 @@ def main():
             data = dict(src_uri=page['path'],
                         dest_uri=page['path'].replace('.md', '/index.html'),
                         meta=page['meta'])
-            Page.create(**data)
+            try:
+                Page.create(**data)
+            except:
+                logger.error(f"Unable to save:\n{pformat(data)}")
+                raise
 
     logger.info(f'Created {Page.select().count()} pages')
 
