@@ -3,6 +3,7 @@ from urllib.parse import urljoin
 
 import arrow
 
+from juniorguru.lib import loggers
 from juniorguru.lib.benefits_evaluators import BENEFITS_EVALUATORS
 from juniorguru.models.base import db
 from juniorguru.models.blog import BlogArticle
@@ -21,6 +22,9 @@ from juniorguru.models.transaction import Transaction
 
 
 CLOUDINARY_HOST = os.getenv("CLOUDINARY_HOST", "res.cloudinary.com")
+
+
+logger = loggers.from_path(__file__)
 
 
 ####################################################################
@@ -137,5 +141,8 @@ def on_theme_context(context):
 
 @db.connection_context()
 def on_theme_page_context(context, page, config, files):
-    thumbnail_path = Page.get_by_src_uri(page.file.src_uri).thumbnail_path
-    context["thumbnail_url"] = urljoin(config["site_url"], f"static/{thumbnail_path}")
+    try:
+        thumbnail_path = Page.get_by_src_uri(page.file.src_uri).thumbnail_path
+        context["thumbnail_url"] = urljoin(config["site_url"], f"static/{thumbnail_path}")
+    except Page.DoesNotExist:
+        logger.warning(f'No thumbnail for {page.file.src_uri}!')
