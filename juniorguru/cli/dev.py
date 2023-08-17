@@ -19,10 +19,13 @@ def main():
 
 @main.command()
 @click.option("--pull/--no-pull", default=True)
-def update(pull):
+@click.option("--push/--no-push", default=True)
+def update(pull, push):
     try:
         if pull:
             subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
+        if push:
+            subprocess.run(["git", "push"], check=True)
         subprocess.run(["poetry", "install"], check=True)
         subprocess.run(["poetry", "update", "juniorguru-chick"], check=True)
         subprocess.run(["playwright", "install", "firefox"], check=True)
