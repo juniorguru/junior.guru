@@ -114,7 +114,8 @@ async def channel_worker(worker_no, queue) -> None:
             logger_c.debug(f"Crawling history after {history_after:%Y-%m-%d} ({history_since.days} days ago)")
 
         threads = [thread async for thread in fetch_threads(channel)
-                   if is_thread_after(thread, after=history_after)]
+                   if is_thread_after(thread, after=history_after)
+                   and not thread.is_private()]
         if threads:
             logger_c.info(f"Adding {len(threads)} threads")
         for thread in threads:
