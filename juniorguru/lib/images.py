@@ -94,7 +94,7 @@ def render_template(
         )
     t = time.perf_counter()
 
-    cache = BytecodeCache(CACHE_DIR / "jinja2")
+    cache = BytecodeCache(CACHE_DIR / "jinja")
     environment = Environment(
         loader=FileSystemLoader(str(TEMPLATES_DIR)),
         auto_reload=False,
@@ -103,7 +103,7 @@ def render_template(
     environment.filters.update(filters or {})
     template = environment.get_template(template_name)
 
-    logger.info("Jinja2 rendering")
+    logger.info("Jinja rendering")
     html = template.render(images_dir=IMAGES_DIR.absolute(), **context)
     html_path = (
         CACHE_DIR.absolute() / f"{os.getpid()}-{time.perf_counter_ns()}-{template_name}"

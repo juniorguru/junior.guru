@@ -1004,7 +1004,7 @@ Tzv. _long tail_ je z grafu uříznutý.
 
 Orientační metriky co se týče stránek v [příručce](handbook/index.md).
 Všechny soubory spadající pod příručku mají aktuálně **{{ handbook_total_size|thousands }}** znaků.
-Počítání znaků v souborech, kde se míchají Markdown a Jinja2 značky, má spoustu vad, ale aspoň něco.
+Počítání znaků v souborech, kde se míchají Markdown a Jinja značky, má spoustu vad, ale aspoň něco.
 [Podle Wikipedie](https://cs.wikipedia.org/wiki/Diplomov%C3%A1_pr%C3%A1ce) je 180.000 znaků doporučovaná velikost disertační práce (titul Ph.D.).
 
 Když chci na nějaké stránce něco doplnit, dělám si na jejím konci HTML komentář a do něj si ukládám nepříliš strukturované poznámky.

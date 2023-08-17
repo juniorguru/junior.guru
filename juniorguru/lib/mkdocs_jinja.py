@@ -1,8 +1,43 @@
+from pathlib import Path
 from typing import Callable
+from jinja2 import Environment, FileSystemLoader
+
 from mkdocs.structure.files import File, Files
 from mkdocs.config import Config
 from mkdocs.structure.pages import Page
 from mkdocs.structure.toc import get_toc
+from mkdocs.utils.filters import url_filter
+
+from juniorguru.lib.jinja_cache import BytecodeCache
+from juniorguru.lib import loggers, template_filters
+
+
+CACHE_DIR = Path(".web_cache/jinja")
+
+TEMPLATE_FILTERS = [
+    "docs_url",
+    "email_link",
+    "icon",
+    "thousands",
+    "sample",
+    "remove_p",
+    "money_breakdown_ptc",
+    "revenue_categories",
+    "sample_jobs",
+    "assert_empty",
+    "relative_url",
+    "screenshot_url",
+    "absolute_url",
+    "mapping",
+    "local_time",
+    "menu",
+    "toc",
+    "parent_page",
+    "sibling_page",
+]
+
+
+logger = loggers.from_path(__file__)
 
 
 def monkey_patch() -> None:
@@ -27,9 +62,27 @@ def monkey_patch() -> None:
     Page.render = render
 
 
+def get_macros_dir(config: Config) -> Path:
+    return Path(config["docs_dir"]).parent / "macros"
+
+
+def get_filters() -> dict[str, Callable]:
+    return {name: getattr(template_filters, name) for name in TEMPLATE_FILTERS}
+
+
+def get_env(page: Page, config: Config, files: Files) -> Environment:
+    loader = FileSystemLoader(get_macros_dir(config))
+    cache = BytecodeCache(CACHE_DIR)
+    env = Environment(loader=loader, auto_reload=False, bytecode_cache=cache)
+    env.filters.update(get_filters())
+    env.filters['url'] = url_filter
+    env.filters['md'] = create_md_filter(page, config, files)
+    return env
+
+
 def create_md_filter(page: Page, config: Config, files: Files) -> Callable:
     def md(markdown: str) -> str:
-        # Sorcery ahead! So this is a Jinja2 filter, which takes a Markdown string, e.g. from
+        # Sorcery ahead! So this is a Jinja filter, which takes a Markdown string, e.g. from
         # database, and turns it into HTML markup. One could just 'from markdown import markdown',
         # then call 'markdown(...)' and be done with it, but that wouldn't parse the input in the
         # context of MkDocs Markdown settings. Extensions wouldn't be set the same way. Relative
