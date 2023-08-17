@@ -41,8 +41,8 @@ logger = loggers.from_path(__file__)
 
 
 def monkey_patch() -> None:
-    # Monkey patch the File class so that it recognizes .jinja
-    # files as documentation pages
+    # Monkey patch the File class so that it recognizes both
+    # .jinja and .md.jinja files as documentation pages
     _file_is_documentation_page = File.is_documentation_page
 
     def is_documentation_page(self: File) -> bool:
@@ -50,21 +50,21 @@ def monkey_patch() -> None:
 
     File.is_documentation_page = is_documentation_page
 
-    # Monkey patch the Page class so that it allows skipping Markdown
-    # rendering in case the source is .jinja
+    # Monkey patch the Page class so that it renders Markdown
+    # for .md or .md.jinja files, but skips Markdown rendering
+    # for .jinja files
     _page_render = Page.render
 
     def render(self, config: Config, files: Files):
-        if self.file.src_uri.endswith(".jinja"):
+        if '.md' in Path(self.file.src_uri).suffixes:
+            _page_render(self, config, files)
+        else:
             if self.markdown is None:
                 raise RuntimeError(
                     "`markdown` field hasn't been set (via `read_source`)"
                 )
             self.content = self.markdown
             self.toc = get_toc([])
-        else:
-            _page_render(self, config, files)
-
     Page.render = render
 
 
