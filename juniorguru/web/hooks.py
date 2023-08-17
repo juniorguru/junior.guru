@@ -63,7 +63,7 @@ def on_page_markdown(markdown, page, config, files):
 
     filters = {name: getattr(template_filters, name) for name in TEMPLATE_FILTERS}
     filters["url"] = url_filter
-    filters["md"] = create_md_filter(page, config, files)
+    filters["md"] = mkdocs_jinja.create_md_filter(page, config, files)
     env.filters.update(filters)
 
     context = dict(
@@ -111,36 +111,3 @@ def on_post_build(config):
     api.build_events_honza_ics(api_dir, config)
     api.build_podcast_xml(api_dir, config)
     api.build_czechitas_csv(api_dir, config)
-
-
-def create_md_filter(page, config, files):
-    def md(markdown):
-        # Sorcery ahead! So this is a Jinja2 filter, which takes a Markdown string, e.g. from
-        # database, and turns it into HTML markup. One could just 'from markdown import markdown',
-        # then call 'markdown(...)' and be done with it, but that wouldn't parse the input in the
-        # context of MkDocs Markdown settings. Extensions wouldn't be set the same way. Relative
-        # links wouldn't work. For that reason, we want to use the MkDocs' own Markdown rendering.
-        #
-        # Unfortunately, the Page.render() method isn't really meant to be used anywhere else:
-        # https://github.com/mkdocs/mkdocs/blob/fd0e9dedd27e4cb628ab98ff2723165110b38ed2/mkdocs/structure/pages.py#L161
-        #
-        # The following sorcery works around that bit. It creates an artificial _Page object similar
-        # to the real MkDocs' own Page object, but only with the properties used by the Page.render()
-        # method. It sets all the configuration, passes the input as the 'markdown' property, and
-        # steals the Page.render() method to behave like if it always belonged to the _Page object.
-        # Then it calls this new _Page.render() method and returns the 'content' property, to which
-        # the method sets the result of the rendering.
-        #
-        # This works, but is very prone to get broken if MkDocs changes something in their code.
-        # In such case one needs to read the new MkDocs code and fix the solution accordingly.
-        class _Page:
-            def __init__(self):
-                self.file = page.file
-                self.markdown = markdown
-                self.render = page.__class__.render.__get__(self)
-
-        _page = _Page()
-        _page.render(config, files)
-        return _page.content
-
-    return md
