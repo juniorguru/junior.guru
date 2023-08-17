@@ -43,13 +43,13 @@ def generate_event_pages() -> Generator[dict[str, Any], None, None]:
 def generate_podcast_episode_pages() -> Generator[dict[str, Any], None, None]:
     for podcast_episode in PodcastEpisode.listing():
         yield dict(
-            path=f"podcast/{podcast_episode.number}.md",
+            path=f"podcast/{podcast_episode.number}.jinja",
             meta=dict(
                 title=podcast_episode.title,
                 # description=event.page_description,  # TODO
                 podcast_episode_number=podcast_episode.number,
             ),
-            template="podcast_episode.md",
+            template="podcast_episode.jinja",
         )
 
 

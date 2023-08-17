@@ -145,4 +145,4 @@ def on_theme_page_context(context, page, config, files):
         thumbnail_path = Page.get_by_src_uri(page.file.src_uri).thumbnail_path
         context["thumbnail_url"] = urljoin(config["site_url"], f"static/{thumbnail_path}")
     except Page.DoesNotExist:
-        logger.warning(f'No thumbnail for {page.file.src_uri}!')
+        logger.warning(f'No thumbnail for {page.file.src_uri}')

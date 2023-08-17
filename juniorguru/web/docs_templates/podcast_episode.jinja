@@ -13,7 +13,7 @@
   </ol>
 </nav>
 
-# {{ podcast_episode.title_numbered }}
+<h1>{{ podcast_episode.title_numbered }}</h1>
 
 {#
 {% call lead() %}
@@ -21,7 +21,6 @@
 {% endcall %}
 #}
 
-<div>
 {% if podcast_episode.partner %}
 <p>
   <span class="badge text-bg-primary">Spolupráce</span>
@@ -43,7 +42,6 @@
 — {{ podcast_episode.description }}
 </p>
 {{ podcast_player(podcast_episode, class='podcast-episode-player') }}
-</div>
 
 <div class="pagination">
   <div class="pagination-control">
