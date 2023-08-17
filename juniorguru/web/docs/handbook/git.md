@@ -418,4 +418,7 @@ https://dev.to/supritha/how-to-have-an-awesome-github-profile-1969
 ---
 
 
+https://www.linkedin.com/posts/ebandersen_programming-jobsearch-softwareengineering-activity-7097932834782289920-F2fx/
+
+
 #} -->
