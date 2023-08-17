@@ -1,6 +1,5 @@
 import math
 from datetime import datetime, timedelta
-from functools import cached_property
 
 import arrow
 from peewee import (
