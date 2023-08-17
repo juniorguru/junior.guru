@@ -26,6 +26,46 @@ def template(generate_pages: Callable) -> Callable:
 
 
 @template
+def generate_redirects() -> Generator[dict[str, Any], None, None]:
+    for path, redirect in [
+        ('motivation.md', 'handbook/motivation.md'),
+        ('learn.md', 'handbook/learn.md'),
+        ('practice.md', 'handbook/practice.md'),
+        ('candidate-handbook.md', 'handbook/candidate.md'),
+        ('topics/git.md', 'handbook/git.md'),
+        ('topics/github.md', 'handbook/git.md'),
+        ('topics/codingbootcamppraha.md', 'courses/codingbootcamppraha.md'),
+        ('topics/cs50.md', 'courses/cs50.md'),
+        ('topics/czechitas.md', 'courses/czechitas.md'),
+        ('topics/djangogirls.md', 'courses/djangogirls.md'),
+        ('topics/engeto.md', 'courses/engeto.md'),
+        ('topics/greenfox.md', 'courses/greenfox.md'),
+        ('topics/itnetwork.md', 'courses/itnetwork.md'),
+        ('topics/learn2code.md', 'courses/skillmea.md'),
+        ('topics/primakurzy.md', 'courses/primakurzy.md'),
+        ('topics/pyladies.md', 'courses/pyladies.md'),
+        ('topics/reactgirls.md', 'courses/reactgirls.md'),
+        ('topics/sdacademy.md', 'courses/sdacademy.md'),
+        ('topics/step.md', 'courses/step.md'),
+        ('topics/udemy.md', 'courses/udemy.md'),
+        ('topics/unicorn.md', 'courses/unicornhatchery.md'),
+        ('topics/vsb.md', 'courses/kurzyvsb.md'),
+        ('topics/skillmea.md', 'courses/skillmea.md'),
+        ('topics/step.md', 'courses/step.md'),
+        ('topics/udemy.md', 'courses/udemy.md'),
+    ]:
+        yield dict(
+            path=path,
+            meta=dict(
+                title='Přesměrování',
+                template='redirect.html',
+                redirect=redirect,
+            ),
+            template="redirect.jinja",
+        )
+
+
+@template
 def generate_event_pages() -> Generator[dict[str, Any], None, None]:
     for event in Event.listing():
         yield dict(
