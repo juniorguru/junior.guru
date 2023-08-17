@@ -10,7 +10,7 @@ from time import perf_counter
 import click
 from livereload import Server
 from lxml import html
-from mkdocs.__main__ import build_command as mkdocs_build
+from mkdocs.__main__ import build_command as _build_mkdocs
 
 from juniorguru.lib import loggers
 from juniorguru.web_legacy.__main__ import main as flask_freeze
@@ -90,7 +90,7 @@ def build_mkdocs(context, config: Path, output_path: Path, warn: bool):
     with TemporaryDirectory() as temp_dir:
         try:
             context.invoke(
-                mkdocs_build, config_file=str(config.absolute()), site_dir=temp_dir
+                _build_mkdocs, config_file=str(config.absolute()), site_dir=temp_dir
             )
             shutil.copytree(
                 temp_dir,

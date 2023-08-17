@@ -5,6 +5,8 @@ from subprocess import PIPE, Popen
 
 import click
 
+from juniorguru.cli.web import build as build_web
+
 
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) "
@@ -48,9 +50,14 @@ EXCLUDE_REASONS = [
 
 
 @click.command()
-@click.argument("dir", default="public", type=click.Path(exists=True, path_type=Path))
+@click.argument("output_path", default="public", type=click.Path(exists=True, path_type=Path))
+@click.option("--build/--no-build", default=True)
 @click.option("--retry/--no-retry", default=False)
-def main(dir, retry):
+@click.pass_context
+def main(context, output_path, build, retry):
+    if build:
+        context.invoke(build_web, output_path=output_path)
+
     command = ["npx", "blcl"]
     options = [
         "--verbose",
@@ -77,7 +84,7 @@ def main(dir, retry):
         broken = set()
 
         with Popen(
-            command + options + [dir], stdout=PIPE, bufsize=1, universal_newlines=True
+            command + options + [output_path], stdout=PIPE, bufsize=1, universal_newlines=True
         ) as proc:
             for line in proc.stdout:
                 print(line, end="")

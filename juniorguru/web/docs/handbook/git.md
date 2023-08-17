@@ -95,7 +95,7 @@ Ber to tak, že na GitHub ti nikdo nekouká, i když je to veřejné, dokud mu k
   'jiri-psotka.jpg',
   'Jiří Psotka'
 ) %}
-  Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
+  Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v [prvním dílu podcastu junior.guru](../podcast/1.md)
 {% endcall %}
 
 Repozitáře na GitHubu, které nepovažujete za reprezentativní, můžete archivovat. Budou jen pro čtení a žlutý proužek návštěvníkům řekne, že už na nich nepracujete. Projekty, kterými se chlubit chcete, můžete zviditelnit na svém profilu jako „pinned“.
@@ -413,7 +413,7 @@ Mrkni třeba na https://github.com/hankaEsha jak to má udělané.
 
 
 --- https://discord.com/channels/769966886598737931/806621830383271937/1121055030825472060
-[GitHub] Ani jsem netušila, že se dá GitHub takhle tunit. Hned jsem několik věcí vyzkoušela. 
+[GitHub] Ani jsem netušila, že se dá GitHub takhle tunit. Hned jsem několik věcí vyzkoušela.
 https://dev.to/supritha/how-to-have-an-awesome-github-profile-1969
 ---
 

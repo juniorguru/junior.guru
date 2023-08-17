@@ -283,14 +283,14 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - run: poetry run jg check-docs
+      - run: poetry run jg check-docs --no-build
 
   check-links:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: poetry run jg check-links --retry
+      - run: poetry run jg check-links --no-build --retry
 
   check-bot:
     executor: python-js

@@ -77,7 +77,7 @@ Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hac
   'jiri-psotka.jpg',
   'Jiří Psotka'
 ) %}
-  Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v [prvním dílu podcastu junior.guru](../podcast.md#episode0001)
+  Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v [prvním dílu podcastu junior.guru](../podcast/1.md)
 {% endcall %}
 
 
@@ -958,14 +958,14 @@ Tohle mi zrovna přistálo na timeline na Twitteru a když si vzpomenu na svoji 
 
 
 --- https://discord.com/channels/769966886598737931/811910782664704040/1136264122506416148
-Nová stránka na procvičování kódění a programování! 🤩 
-Je to dost podobné jako FrontendMentor akorát jsou tam daily challenges jako na CodeWars. Plus může to člověk kódit přímo v prohlížeči (jako Scrimba 💜 ) a nemusí si nic stahovat. 
+Nová stránka na procvičování kódění a programování! 🤩
+Je to dost podobné jako FrontendMentor akorát jsou tam daily challenges jako na CodeWars. Plus může to člověk kódit přímo v prohlížeči (jako Scrimba 💜 ) a nemusí si nic stahovat.
 https://icodethis.com/
 ---
 
 
 --- https://discord.com/channels/769966886598737931/916346318048337960/1129327666290507827
-Na vejsce jsme procvičovali na tomhle : https://sqltutor.fsv.cvut.cz/cgi-bin/sqltutor je to absolutně super přesně na biflovani základních selectu - některý datasety jsou triviální (nobelisti a Přemyslovci, některé jako třeba vodočty a tramvaje už vyžadovali vnořené selecty a složitější  kombinování tabulek 😀, takže se dá vybrat co zrovna chceš procvičit. Nejsou to velká data, ale to je na selecty téměř jedno. 
+Na vejsce jsme procvičovali na tomhle : https://sqltutor.fsv.cvut.cz/cgi-bin/sqltutor je to absolutně super přesně na biflovani základních selectu - některý datasety jsou triviální (nobelisti a Přemyslovci, některé jako třeba vodočty a tramvaje už vyžadovali vnořené selecty a složitější  kombinování tabulek 😀, takže se dá vybrat co zrovna chceš procvičit. Nejsou to velká data, ale to je na selecty téměř jedno.
 
 Btw měli jsme na vejsce jednu slečnu, co se zvládla na zapoctak naučit všechny ty úlohy zpaměti... 😅🤦
 ---
