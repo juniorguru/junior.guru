@@ -13,9 +13,8 @@ from juniorguru.lib.discord_club import (
     ClubClient,
     is_message_older_than,
 )
-from juniorguru.lib.md import md, neutralize_urls
+from juniorguru.lib.md import md_as_text, neutralize_urls
 from juniorguru.lib.mutations import mutating_discord
-from juniorguru.lib.text import extract_text
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
@@ -94,10 +93,9 @@ def format_channel_digest(channel_digest: dict) -> str:
 
 
 def format_content(content: str) -> str:
-    content_html = md(neutralize_urls((content)))
-    content_text = extract_text(content_html, newline=' ')
-    content_text_short = textwrap.shorten(content_text, 150, placeholder='…')
-    return f"> {content_text_short}"
+    text = md_as_text(neutralize_urls((content)), newline=' ')
+    text_short = textwrap.shorten(text, 150, placeholder='…')
+    return f"> {text_short}"
 
 
 def format_channel(message: ClubMessage) -> str:

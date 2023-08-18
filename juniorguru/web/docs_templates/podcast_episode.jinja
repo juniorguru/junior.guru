@@ -8,12 +8,12 @@
       </a>
     </li>
     <li class="breadcrumb-item active" aria-current="page">
-      Epizoda {{ podcast_episode.number }}
+      {{ podcast_episode.number }}. epizoda
     </li>
   </ol>
 </nav>
 
-<h1>{{ podcast_episode.title_numbered }}</h1>
+<h1>{{ podcast_episode.format_title(affiliation=false) }}</h1>
 
 {#
 {% call lead() %}
@@ -36,10 +36,9 @@
   </small>
 </p>
 {% endif %}
-{{ img('static/' + podcast_episode.avatar_path, podcast_episode.title, 100, 100, class='podcast-episode-image') }}
+{{ img('static/' + podcast_episode.image_path, podcast_episode.format_title(), 100, 100, class='podcast-episode-image') }}
 <p>
-<strong>{{ '{:%-d.%-m.%Y}'.format(podcast_episode.publish_on) }}</strong>
-— {{ podcast_episode.description }}
+  <strong>{{ '{:%-d.%-m.%Y}'.format(podcast_episode.publish_on) }}</strong> — {{ podcast_episode.description|md }}
 </p>
 {{ podcast_player(podcast_episode, class='podcast-episode-player') }}
 

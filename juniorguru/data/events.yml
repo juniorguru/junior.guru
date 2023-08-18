@@ -19,7 +19,7 @@
 #    Kdo by se nechtěl někým stát a dělat věci? Jana Nováková je
 #    na věci expertka a ukáže ti, jak se věci dělají a jak se stát
 #    tím, kým se stát chceš. Budeš žasnout, kolik věcí potom můžeš dělat!
-#  poster_description: |                  # TEXT LÁKADLA PRO PLAKÁTEK, POKUD JE POTŘEBA JINÉ (TŘEBA KRATŠÍ, VĚTŠINOU TO ALE POTŘEBA NENÍ)
+#  short_description: |                  # KRATŠÍ TEXT LÁKADLA (NAPŘ. PRO PLAKÁTEK), POKUD JE POTŘEBA
 #    Jana Nováková je expertka na věci a ukáže ti, jak se věci
 #    dělají a jak se stát tím, kým se stát chceš.
 #  partner: google                        # DOPLNÍ HONZA, POKUD JDE O PARTNERSKOU PŘEDNÁŠKU
@@ -600,7 +600,7 @@
     Jedna za věcí které se dozvíte spíše na škole než z praktických kurzů je to, jak jsou informace uloženy v paměti počítače. Kde jsou vlastně ty jedničky a nuly, o kterých celé IT je? A jak s pomocí nich zapsat číslo, text, seznam, slovník nebo třeba barvu?
 
     Začneme od začátku a postupně se zaměříme na datové typy Pythonu: seznamy a slovníky. Ale nebojte, v JavaScriptu, C# nebo třeba Ruby fungují základní principy odobně.
-  poster_description: |
+  short_description: |
     Jedna za věcí které se dozvíte spíše na škole než z praktických kurzů je to, jak jsou informace uloženy v paměti počítače. Kde jsou vlastně ty jedničky a nuly, o kterých celé IT je? A jak s pomocí nich zapsat číslo, text, seznam, slovník nebo třeba barvu? Začneme od začátku a postupně se zaměříme na datové typy Pythonu: seznamy a slovníky. Ale nebojte, v jiných jazycích fungují základní principy odobně.
   avatar_path: avatars-participants/petr-viktorin.jpg
   bio_name: Petr Viktorin
@@ -641,7 +641,7 @@
   date: "2021-05-18"
   description: |
     Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce, jelikož je to voda, ve které jejich výtvor přímo plave. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu. V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
-  poster_description: |
+  short_description: |
     Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu. V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
   avatar_path: avatars-participants/vilibald-wanca.jpg
   bio_name: Vilibald Wanča
@@ -675,7 +675,7 @@
     -   Jak bys popsal potřebnou úroveň angličtiny?
     -   O jakou mzdu si mám říct jako junior?
     -   Jaký je poměr v týmech mezi seniory a juniory, jakou pozornost může junior očekávat, když nastoupí?
-  poster_description: |
+  short_description: |
     AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Jirka je seniorní recruiter v Red Hatu, který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase spoluorganizuje brněnský sraz Python programátorů a věnuje se DJingu.
   partner: redhat
   avatar_path: avatars-participants/jiri-psotka.jpg

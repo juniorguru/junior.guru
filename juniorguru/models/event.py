@@ -22,7 +22,7 @@ class Event(BaseModel):
     title = CharField()
     start_at = DateTimeField(index=True)
     description = TextField()
-    poster_description = TextField(null=True)
+    short_description = TextField(null=True)
     bio = TextField()
     avatar_path = CharField(default='icon.svg')
     bio_name = TextField()
@@ -39,7 +39,7 @@ class Event(BaseModel):
 
     @property
     def full_title(self) -> str:
-        return f"{self.bio_name}: {self.title}"
+        return f"{self.bio_name} – {self.title}"
 
     @property
     def start_at_prg(self):
@@ -50,12 +50,12 @@ class Event(BaseModel):
         return self.start_at + timedelta(hours=1)
 
     @property
-    def description_plain(self):
-        return strip_links(self.description.strip())
-
-    @property
-    def bio_plain(self):
-        return strip_links(self.bio).strip()
+    def discord_description(self) -> str:
+        return '\n\n'.join([
+            strip_links(self.description).strip(),
+            strip_links(self.bio).strip(),
+            self.url,
+        ])
 
     @property
     def url(self):

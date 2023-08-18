@@ -8,7 +8,7 @@
       </a>
     </li>
     <li class="breadcrumb-item active" aria-current="page">
-      {{ event.bio_name }}, {{ '{:%-d.%-m.%Y}'.format(event.start_at) }}
+      {{ '{:%-d.%-m.%Y}'.format(event.start_at) }}
     </li>
   </ol>
 </nav>

@@ -24,7 +24,7 @@ nav:
   - Novinky:
       - Podcast:
           - Podcast: podcast.md
-          - ... | flat | podcast/*.md
+          - ... | flat | podcast/*.jinja
       - Klubové akce:
           - Klubové akce: events.md
           - ... | flat | events/*.md

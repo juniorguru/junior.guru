@@ -72,7 +72,7 @@ Pokud tady něco chybí, tak buď [nejde o placenou spolupráci](../faq.md#neozn
   {% for podcast_episode in partner.list_podcast_episodes %}
   <tr>
     <th>Epizoda podcastu {{ 'mic'|icon }}</th>
-    <td><a href="{{ podcast_episode.url }}">{{ podcast_episode.title }}</a></td>
+    <td><a href="{{ podcast_episode.url }}">{{ podcast_episode.format_title() }}</a></td>
   </tr>
   {% endfor %}
 

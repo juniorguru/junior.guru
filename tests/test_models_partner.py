@@ -303,7 +303,7 @@ def test_partner_list_podcast_episodes(test_db):
             media_type="...",
             media_duration_s=42,
             description="...",
-            avatar_path="...",
+            image_path="...",
         )
 
     partner = create_partner(1)

@@ -13,9 +13,10 @@ class PodcastEpisode(BaseModel):
     number = IntegerField(primary_key=True)
     publish_on = DateField(unique=True)
     title = CharField()
-    participant_name = CharField(null=True)
-    participant_has_feminine_name = BooleanField(null=True)
-    companies = CharField(null=True)
+    guest_name = CharField(null=True)
+    guest_has_feminine_name = BooleanField(null=True)
+    guest_affiliation = CharField(null=True)
+    image_path = CharField()
     media_slug = CharField(unique=True)
     media_url = CharField()
     media_size = IntegerField()
@@ -23,16 +24,22 @@ class PodcastEpisode(BaseModel):
     media_duration_s = IntegerField()
     description = CharField()
     partner = ForeignKeyField(Partner, backref='list_podcast_episodes', null=True)
-    avatar_path = CharField()
     poster_path = CharField(null=True)
 
     @property
     def global_id(self) -> str:
         return f'podcast.junior.guru#{self.media_slug}'
 
-    @property
-    def title_numbered(self) -> str:
-        return f"#{self.number} {self.title}"
+    def format_title(self, number: bool=False, affiliation: bool=True) -> str:
+        title = ""
+        if number:
+            title += f"#{self.number} "
+        if self.guest_name:
+            title += self.guest_name
+            if affiliation and self.guest_affiliation:
+                title += f" ({self.guest_affiliation})"
+            title += " "
+        return title + self.title
 
     @property
     def url(self) -> str:

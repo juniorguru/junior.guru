@@ -5,183 +5,217 @@
 # na sociální sítě.
 #
 # Pavlína sem přidává popisky k novým epizodám pomocí Pull Requestu. Nevyplňuje
-# avatar_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
+# image_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
 - number: 18
-  title: Anastázie Sedláková (DNAnexus) nejen o mateřství a kariéře v IT
-  avatar_path: avatars-participants/anastazie-sedlakova.jpg
+  guest_name: Anastázie Sedláková
+  guest_affiliation: DNAnexus
+  title: "nejen o mateřství a kariéře v IT"
   publish_on: "2023-08-01"
   description: |
     Nasťa Sedláková je bioinformatička, data analytička a lektorka programování. Mimo to je i maminkou třech malých dětí. Jak skloubit rodičovství a kariéru? Jak si říct o částečný úvazek? Co všechno se dá udělat, aby se vám žilo a pracovalo líp s vašimi dětmi? Proč se nemá začátečník bát udělat chybu? A do kterých IT komunit se vyplatí zapojit?
+  image_path: avatars-participants/anastazie-sedlakova.jpg
   media_size: 27467315
   media_duration_s: 1962
 
 - number: 17
-  title: Matěj Kotrba (Fuckupy v IT, Očima ajťáka) o tom, jak se recruiterům dostat do hledáčku
-  avatar_path: avatars-participants/matej-kotrba.jpg
+  guest_name: Matěj Kotrba
+  guest_affiliation: Fuckupy v IT, Očima ajťáka
+  title: "o tom, jak se recruiterům dostat do hledáčku"
   publish_on: "2023-07-01"
   description: |
     Matěj Kotrba je IT headhunter, tvůrce podcastu Fuckupy v IT a projektu Očima ajťáka. Jak se i jako junior dostat do hledáčku IT recruitera? Jak si najít první práci? Proč být nejen při hledání práce proaktivní? Jak se na pohovoru postavit k otázce peněz a o kolik je rozumné si říct?
+  image_path: avatars-participants/matej-kotrba.jpg
   media_size: 22929167
   media_duration_s: 1638
 
 - number: 16
-  title: Kateřina Lesch (Deloitte) o umělé inteligenci
-  avatar_path: avatars-participants/katerina-lesch.jpg
+  guest_name: Kateřina Lesch
+  guest_affiliation: Deloitte
+  title: "o umělé inteligenci"
   publish_on: "2023-06-01"
   description: |
     Trénovala NLP (natural language processing) modely, ještě než to bylo cool. Teď je Katka senior manager AI and Data v Deloitte. Jak se dívá na vývoj umělé inteligence? Do jaké míry je dobré rozumět principům AI modelů, pokud je chcete používat? A potřebujete formální vzdělání, abyste se na poli AI prosadili?
+  image_path: avatars-participants/katerina-lesch.jpg
   media_size: 20931270
   media_duration_s: 1495
 
 - number: 15
-  title: Marián Kameništák (kamenistak.com) o pohovorech a kariéře v IT
-  avatar_path: avatars-participants/marian-kamenistak.jpg
+  guest_name: Marián Kameništák
+  guest_affiliation: kamenistak.com
+  title: "o pohovorech a kariéře v IT"
   publish_on: "2023-04-15"
   description: |
     Poslechněte si Mariána, který byl možná u tisícovky pohovorů. Proč ho spíš zaujme uchazeč, který působí sebevědomě a stojí si za svým názorem? Co si myslí o perfekcionismu? Proč je důležité si v nové práci nejdříve vybudovat vztahy? A jaké další triky by do začátku doporučil?
+  image_path: avatars-participants/marian-kamenistak.jpg
   media_size: 25215247
   media_duration_s: 1801
 
 - number: 14
-  title: Lukáš Kubec (Green Fox Academy) o cestě z KFC na software developera a mentora programování
-  avatar_path: avatars-participants/lukas-kubec.jpg
+  guest_name: Lukáš Kubec
+  guest_affiliation: Green Fox Academy
+  title: "o cestě z KFC na software developera a mentora programování"
   publish_on: "2023-03-16"
   description: |
     Od Lukáše se v novém díle podcastu dozvíte, jaká byla jeho cesta od zaměstnance KFC až k pozici software developera ve společnosti MIBCON. Proč si pro svoji rekvalifikaci zvolil bootcamp od Green Fox Academy? Proč se později rozhodl pokračovat jako mentor? Co by v obecné rovině doporučil lidem, kteří uvažují o kariérní změně?
+  image_path: avatars-participants/lukas-kubec.jpg
   partner: greenfox
   media_size: 26681395
   media_duration_s: 1906
 
 - number: 13
-  title: Tomáš Ervín Dombrovský (LMC) nejen o IT sektoru v Česku
-  avatar_path: avatars-participants/tomas-ervin-dombrovsky.jpg
+  guest_name: Tomáš Ervín Dombrovský
+  guest_affiliation: LMC
+  title: "o IT sektoru v Česku"
   publish_on: "2023-02-16"
   description: |
     Pája si tentokrát pozvala Tomáše Ervína Dombrovského, hlavního analytika firmy LMC (jobs.cz, prace.cz, seduo.cz). Proč je u nás pořád problém sehnat dostatek programátorů? Jak si udržet přehled o své ceně na trhu práce? Sebere umělá inteligence programátorům práci?
+  image_path: avatars-participants/tomas-ervin-dombrovsky.jpg
   media_size: 23300367
   media_duration_s: 1664
 
 - number: 12
-  title: Veronika Gabrielová (Aimful) o efektivním kariérním růstu
-  avatar_path: avatars-participants/veronika-gabrielova.jpg
+  guest_name: Veronika Gabrielová
+  guest_affiliation: Aimful
+  title: "o efektivním kariérním růstu"
   publish_on: "2023-01-15"
   description: |
     Do prvního dílu v novém roce si Pája pozvala Verču Gabrielovou. Ačkoliv IT na škole nikdy nestudovala, má dnes za sebou už sedmiletou kariéru vývojářky. Jak se dostala k první práci v oboru? Jak by radila zpracovávat zpětnou vazbu? Jak na zákeřný impostor syndrom? Proč je dobré chodit na pohovory, i když práci zrovna nehledáte? Co by udělala jinak při vyjednávání o mzdě?
+  image_path: avatars-participants/veronika-gabrielova.jpg
   media_size: 30450081
   media_duration_s: 2175
 
 - number: 11
-  title: Lukáš Konarovský (Fakturoid) o podnikání, třeba i v IT
-  avatar_path: avatars-participants/lukas-konarovsky.jpg
+  guest_name: Lukáš Konarovský
+  guest_affiliation: Fakturoid
+  title: "o podnikání, třeba i v IT"
   publish_on: "2022-12-15"
   description: |
     V tomto díle si Pája povídá s Lukášem Konarovským, podnikatelem a spoluzakladatelem firmy Fakturoid. Jak se Lukáš dostal k IT a k podnikání? Co je podle něj na podnikání nejtěžší? Co naopak možná vnímáme jako větší problém, než ve skutečnosti je? Pokud přemýšlíš nad podnikáním (třeba zrovna v IT) je tento díl přesně pro tebe!
+  image_path: avatars-participants/lukas-konarovsky.jpg
   partner: fakturoid
   media_size: 23825167
   media_duration_s: 1702
 
 - number: 10
-  title: Klára Šťouračová (Productboard) o úspěšném startu kariéry v IT
-  avatar_path: avatars-participants/klara-stouracova.jpg
+  guest_name: Klára Šťouračová
+  guest_affiliation: Productboard
+  title: "o úspěšném startu kariéry v IT"
   publish_on: "2022-11-15"
   description: |
     V desátém díle si můžeš poslechnout Kláru Šťouračovou, která se už 7 let pohybuje na různých HR a People pozicích v technologických firmách. Kromě toho spoluzaložila makeITtoday, úspěšné kurzy programovaní pro děti. Jakých si za svoji kariéru všimla trendů v IT odvětví? Jak podle ní správně nastartovat kariéru? A proč si myslí, že je důležité děti vést k počítačové gramotnosti?
+  image_path: avatars-participants/klara-stouracova.jpg
   media_size: 30451178
   media_duration_s: 2175
 
 - number: 9
-  title: Markéta Lourenco (Mews) o cestě od lingvistiky k datové analýze
-  avatar_path: avatars-participants/marketa-lourenco.jpg
+  guest_name: Markéta Lourenco
+  guest_affiliation: Mews
+  title: "o cestě od lingvistiky k datové analýze"
   publish_on: "2022-10-15"
   description: |
     Do devátého dílu si Pája pozvala Markétu Lourenco, původně vystudovanou lingvistku a v současnosti datovou analytičku ve firmě Mews. Vypráví o tom, co ji přimělo vyzkoušet svět IT, jak hladce se jí podařilo získat první datovou pozici a co její práce obnáší.
+  image_path: avatars-participants/marketa-lourenco.jpg
   media_size: 26262287
   media_duration_s: 1876
 
 - number: 8
-  title: Michal Matuška (SUPERKODERS) o leadershipu a juniorech
-  avatar_path: avatars-participants/michal-matuska.jpg
+  guest_name: Michal Matuška
+  guest_affiliation: SUPERKODERS
+  title: "o leadershipu a juniorech"
   publish_on: "2022-09-15"
   description: |
     Osmý díl podcastu patří Michalu Matuškovi, frontend developerovi a spoluzakladateli firmy SUPERKODERS. S Pájou si povídá o tom, jak se on sám dostal k programování, co by poradil někomu, kdo začíná dnes, nebo o tom, co hledá na pohovorech u juniorů.
+  image_path: avatars-participants/michal-matuska.jpg
   media_size: 26471110
   media_duration_s: 1891
 
 - number: 7
-  title: Mia Bajić (Seznam) o cestě z Bosny do českého Seznamu
-  avatar_path: avatars-participants/mia-bajic.jpg
+  guest_name: Mia Bajić
+  guest_affiliation: Seznam
+  title: "o cestě z Bosny do českého Seznamu"
   publish_on: "2022-07-17"
   description: |
     V sedmém díle podcastu si Pája povídá s Miou Bajić, Python developerkou v Seznamu. Mia prozradí, jak se vůbec dostala z Bosny do České republiky a jakou cestu zvolila, aby získala práci v IT. Poslechni si, co říká na studium programování na vysoké škole a co jí pomohlo v její kariéře.
+  image_path: avatars-participants/mia-bajic.jpg
   media_size: 21636733
   media_duration_s: 1545
 
 - number: 6
-  title: Markéta Willis (Applifting) o její cestě k IT a učení (se) programování
-  avatar_path: avatars-participants/marketa-willis.jpg
+  guest_name: Markéta Willis
+  guest_affiliation: Applifting
+  title: "o její cestě k IT a učení (se) programování"
   publish_on: "2022-06-15"
   description: |
     Do šestého dílu si Pája pozvala Markétu Willis. Ačkoliv Markéta vystudovala pedagogickou fakultu, teď se živí jako frontend developerka ve společnosti Applifting. Kromě toho ještě stíhá lektorovat pro Czechitas. Dozvíš se, jaká byla její cesta k programování a uslyšíš i o jejích zkušenostech z lektorování.
+  image_path: avatars-participants/marketa-willis.jpg
   media_size: 25206470
   media_duration_s: 1800
 
 - number: 5
-  title: "Petr Přibil (Tatanka) o změně kariéry od lesníka až k Python developerovi"
-  avatar_path: avatars-participants/petr-pribil.jpg
+  guest_name: Petr Přibil (Tatanka)
+  title: "o změně kariéry od lesníka až k Python developerovi"
   publish_on: "2022-05-16"
   description: |
     V pátém díle se s Pájou podělil o svoji zkušenost Petr Přibil alias Tatanka. Pracuje čerstvě jako juniorní Python vývojář, přitom ještě nedávno byl obchodník a předtím dělal v lesnictví. Co mu na začátku nejvíce pomohlo a co by udělal jinak? Co by poradil těm, kdo chtějí odejít z rozjeté kariéry na juniorní místo v IT?
+  image_path: avatars-participants/petr-pribil.jpg
   media_size: 26516824
   media_duration_s: 1894
 
 
 - number: 4
-  title: "Tereza Vaňková (Deepnote) o její cestě k programování a komunitě ReactGirls"
-  avatar_path: avatars-participants/tereza-vankova.jpg
+  guest_name: Tereza Vaňková
+  guest_affiliation: Deepnote
+  title: "o její cestě k programování a komunitě ReactGirls"
   publish_on: "2022-04-15"
   description: |
     Ve čtvrtém díle si Pája povídá s Terkou Vaňkovou, software developerkou ve startupu Deepnote a zakladatelkou české komunity ReactGirls. Dozvíš se, jaké byly pro Terku začátky v IT, jakými kurzy prošla a jak získala nejen první práci jako software developerka. Dostane se také na české IT komunity a povídání o ReactGirls.
+  image_path: avatars-participants/tereza-vankova.jpg
   media_size: 28322005
   media_duration_s: 2023
 
 
 - number: 3
-  title: "Filip Kirschner (Applifting) o firemním přístupu k juniorům a nejen tom"
-  avatar_path: avatars-participants/filip-kirschner.jpg
+  guest_name: Filip Kirschner
+  guest_affiliation: Applifting
+  title: "o firemním přístupu k juniorům a nejen tom"
   publish_on: "2022-03-15"
   description: |
     Ve třetím díle si poslechneš Filipa Kirschnera, spoluzakladatele firmy Applifting. Pája si s ním povídá o jejich firemní kultuře a přístupu k juniorním developerům, ale ptá se ho i na to, jaký programovací jazyk by si vybral, kdyby se znovu učil programovat, nebo co by poradil těm, kteří se chtějí z nuly dostat na první placenou IT pozici.
+  image_path: avatars-participants/filip-kirschner.jpg
   media_size: 42512450
   media_duration_s: 3037
 
 
 - number: 2
-  title: "Roman Hraška (yablko) o kurzech webdevelopmentu"
-  avatar_path: avatars-participants/roman-hraska.jpg
+  guest_name: Roman Hraška (yablko)
+  title: "o kurzech webového vývoje"
   publish_on: "2022-02-15"
   description: |
     Ve druhém díle si Pája povídá s Romanem Hraškou, známým jako yablko, programátorem, youtuberem a tvůrcem kurzů programování. Jak by doporučil začít s programováním těm, kteří ještě tápou? V tomhle díle si přijdou na své hlavně ti, kteří se zajímají o web, ale Roman má spoustu tipů i pro ostatní!
+  image_path: avatars-participants/roman-hraska.jpg
   media_size: 44598119
   media_duration_s: 3186
 
 
 - number: 1
-  title: "Jiří Psotka (Red Hat) o hledání první práce v IT"
-  avatar_path: avatars-participants/jiri-psotka.jpg
+  guest_name: Jiří Psotka
+  guest_affiliation: Red Hat
+  title: "o hledání první práce v IT"
   publish_on: "2022-01-15"
   description: |
     V prvním díle uslyšíš Jirku Psotku, seniorního recruitera v Red Hatu. Dozvíš se, jak se jako junior připravit na výběrové řízení – od bezchybného CV, až po samotný pohovor. Hledáš první uplatnění v IT světě a hodilo by se ti pár tipů do začátku? Tak tohle je díl pro tebe!
+  image_path: avatars-participants/jiri-psotka.jpg
   media_size: 46558026
   media_duration_s: 3326
 
 
 - number: 0
   title: "Startujeme!"
-  avatar_path: avatars-participants/honza-javorek.jpg
   publish_on: "2022-01-01"
   description: |
     Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci. Pája Froňková uvádí podcast pro všechny juniory v IT. V krátkém úvodním dílu je spolu s Honzou Javorkem, autorem projektu junior.guru, kde tento podcast našel svůj domov.
+  image_path: avatars-participants/honza-javorek.jpg
   media_size: 2635792
   media_duration_s: 188

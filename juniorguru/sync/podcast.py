@@ -1,4 +1,3 @@
-import re
 from datetime import date
 from multiprocessing import Pool
 from pathlib import Path
@@ -32,17 +31,17 @@ from juniorguru.models.podcast import PodcastEpisode
 logger = loggers.from_path(__file__)
 
 
-TITLE_RE = re.compile(r'^(?P<participant_name>[^\(]+) \((?P<companies>[^\)]+)\)')
-
 YAML_PATH = Path('juniorguru/data/podcast.yml')
 
 YAML_SCHEMA = Seq(
     Map({
         'number': Int(),
         'title': Str(),
-        'avatar_path': Str(),
+        Optional('guest_name'): Str(),
+        Optional('guest_affiliation'): Str(),
         'publish_on': Date(),
         'description': Str(),
+        'image_path': Str(),
         Optional('media_size'): Int(),
         Optional('media_duration_s'): Int(),
         Optional('partner'): Str(),
@@ -107,11 +106,11 @@ def process_episode(yaml_record):
     media_url = f"https://podcast.junior.guru/episodes/{media_slug}.mp3"
     media_type = 'audio/mpeg'
 
-    avatar_path = yaml_record['avatar_path']
-    logger_ep.debug(f'Checking {avatar_path}')
-    image_path = IMAGES_DIR / avatar_path
-    if not image_path.exists():
-        raise ValueError(f"Episode references '{image_path}', but it doesn't exist")
+    image_path = yaml_record['image_path']
+    logger_ep.debug(f'Checking {image_path}')
+    full_image_path = IMAGES_DIR / image_path
+    if not full_image_path.exists():
+        raise ValueError(f"Episode references {image_path} ({full_image_path}), but it doesn't exist")
 
     logger_ep.info(f'Analyzing {media_url}')
     try:
@@ -143,25 +142,23 @@ def process_episode(yaml_record):
     else:
         partner = None
 
-    logger_ep.debug('Parsing title')
-    title = yaml_record['title']
-    if match := TITLE_RE.search(title):
-        participant_name = match.group('participant_name')
-        participant_has_feminine_name = FeminineName.is_feminine(participant_name)
-        companies = match.group('companies')
+    if guest_name := yaml_record.get('guest_name'):
+        guest_has_feminine_name = FeminineName.is_feminine(guest_name)
     else:
-        participant_name = None
-        participant_has_feminine_name = None
-        companies = None
+        guest_has_feminine_name = None
+
+    guest_affiliation = yaml_record.get('guest_affiliation')
+    if guest_affiliation and not guest_name:
+        raise ValueError(f"Episode #{number} is missing guest_name")
 
     logger_ep.debug('Preparing data')
     data = dict(number=number,
                 publish_on=yaml_record['publish_on'],
-                title=title,
-                participant_name=participant_name,
-                participant_has_feminine_name=participant_has_feminine_name,
-                companies=companies,
-                avatar_path=avatar_path,
+                title=yaml_record['title'],
+                guest_name=guest_name,
+                guest_has_feminine_name=guest_has_feminine_name,
+                guest_affiliation=guest_affiliation,
+                image_path=image_path,
                 description=yaml_record['description'],
                 media_slug=media_slug,
                 media_url=media_url,
@@ -171,15 +168,15 @@ def process_episode(yaml_record):
                 partner=partner)
 
     logger_ep.debug('Rendering poster')
-    episode = PodcastEpisode(**data)
+    podcast_episode = PodcastEpisode(**data)
     # The _dirty set causes image cache miss as every time the set gets
     # pickled and serialized to string in different ordering. We won't be
     # saving this object to database, the only purpose is to provide
     # the image renderer with a populated Peewee model object, so let's drop
     # the contents.
-    episode.clear_dirty_fields()
-    tpl_context = dict(episode=episode)
-    poster_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT, 'podcast.html', tpl_context,
+    podcast_episode.clear_dirty_fields()
+    tpl_context = dict(podcast_episode=podcast_episode)
+    poster_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT, 'podcast_episode.html', tpl_context,
                                     POSTERS_DIR, prefix=media_slug, filters=dict(icon=icon))
     data['poster_path'] = poster_path.relative_to(IMAGES_DIR)
 
@@ -198,9 +195,9 @@ async def discord_task(client: ClubClient):
             f" natočila **{last_episode.number}. epizodu** podcastu!"
         )
 
-        description_embed = Embed(title=last_episode.title_numbered,
-                                    description=last_episode.description.strip(),
-                                    color=Color.yellow())
+        description_embed = Embed(title=last_episode.format_title(number=True),
+                                  description=last_episode.description.strip(),
+                                  color=Color.yellow())
         description_embed.set_thumbnail(url=f"attachment://{Path(last_episode.poster_path).name}")
         poster_file = File(IMAGES_DIR / last_episode.poster_path)
 
@@ -222,7 +219,7 @@ async def discord_task(client: ClubClient):
 
         view = ui.View(ui.Button(emoji='<:juniorguru:841683119291760640>',
                                     label='web',
-                                    url='https://junior.guru/podcast/'),
+                                    url=last_episode.url),
                         ui.Button(emoji='<:youtube:976200175490060299>',
                                     label='YouTube',
                                     url='https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA'),

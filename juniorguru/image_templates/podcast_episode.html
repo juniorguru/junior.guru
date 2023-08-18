@@ -2,17 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./podcast.css">
+    <link rel="stylesheet" href="./podcast-episode.css">
   </head>
   <body>
     <main>
       <section class="podcast-photos">
         <img src="{{ images_dir }}/avatars-participants/pavlina-fronkova.jpg">
-        <img src="{{ images_dir }}/{{ episode.avatar_path }}">
+        <img src="{{ images_dir }}/{{ podcast_episode.image_path }}">
       </section>
-      <h1>{{ episode.title }}</h1>
+      <h1>{{ podcast_episode.format_title() }}</h1>
       <section class="podcast-url">
-        <button>junior.guru/podcast</button>
+        <button class="btn btn-primary btn-lg">junior.guru/podcast</button>
       </section>
     </main>
     <footer>

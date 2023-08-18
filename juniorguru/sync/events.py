@@ -50,7 +50,7 @@ schema = Seq(
         'date': Date(),
         Optional('time', default='18:00'): Str(),
         'description': Str(),
-        Optional('poster_description'): Str(),
+        Optional('short_description'): Str(),
         Optional('avatar_path'): Str(),
         'bio_name': Str(),
         Optional('bio_title'): Str(),
@@ -143,8 +143,8 @@ async def sync_scheduled_events(client: ClubClient):
                 logger.info(f"Discord event for '{event.title}' already exists, updating")
                 with mutating_discord(discord_event, raises=True) as proxy:
                     discord_event = await proxy.edit(
-                        name=f'{event.bio_name}: {event.title}',
-                        description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
+                        name=event.full_title,
+                        description=event.discord_description,
                         end_time=event.end_at,
                         cover=(IMAGES_DIR / event.poster_dc_path).read_bytes(),
                     )
@@ -152,8 +152,8 @@ async def sync_scheduled_events(client: ClubClient):
                 logger.info(f"Creating Discord event for '{event.title}'")
                 with mutating_discord(client.club_guild, raises=True) as proxy:
                     discord_event = await proxy.create_scheduled_event(
-                        name=f'{event.bio_name}: {event.title}',
-                        description=f'{event.description_plain}\n\n{event.bio_plain}\n\n{event.url}',
+                        name=event.full_title,
+                        description=event.discord_description,
                         start_time=event.start_at,
                         end_time=event.end_at,
                         location=channel,

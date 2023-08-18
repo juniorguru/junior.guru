@@ -23,7 +23,7 @@
       <div class="talk">
         <h1 class="talk-title">{{ event.title }}</h1>
         <div class="talk-description">
-          {{ event.poster_description|default(event.description, true)|md }}
+          {{ event.short_description|default(event.description, true)|md }}
         </div>
       </div>
       <div class="teaser">
