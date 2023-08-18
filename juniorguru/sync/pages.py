@@ -35,11 +35,8 @@ def main():
                     size=len(source),
                     meta=parse_meta(source),
                     notes=parse_notes(source))
-        try:
-            Page.create(**data)
-        except:
-            logger.error(f"Unable to save:\n{pformat(data)}")
-            raise
+        logger.debug(f"Saving:\n{pformat(data)}")
+        Page.create(**data)
 
     logger.info('Generating pages from templates')
     for _, generate_pages in TEMPLATES.items():
@@ -48,11 +45,8 @@ def main():
             data = dict(src_uri=page['path'],
                         dest_uri=page['path'].replace('.md', '/index.html'),
                         meta=page['meta'])
-            try:
-                Page.create(**data)
-            except:
-                logger.error(f"Unable to save:\n{pformat(data)}")
-                raise
+            logger.debug(f"Saving:\n{pformat(data)}")
+            Page.create(**data)
 
     logger.info(f'Created {Page.select().count()} pages')
 
