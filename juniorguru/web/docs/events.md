@@ -13,6 +13,12 @@ template: main_news.html
 Přednášky a další akce pro členy klubu junior.guru. Seznam akcí proběhlých i budoucích.
 {% endcall %}
 
+{#
+<div class="standout">
+  <a class="btn btn-primary" href="https://junior.guru/api/events.ics">{{ 'calendar-event'|icon }} iCalendar</a>
+</div>
+#}
+
 ## Jak to funguje?
 
 Večerní tematické přednášky jsou vždy předem oznámeny na konkrétní datum a čas. Pokud chceš přednášku slyšet, připoj se v ten čas do hlasové místnosti #přednášky. Po skončení přednášky není žádný další oficiální program. Cílem je, aby přednášky byly spíše rychlé a časté, než plánované do celovečerních bloků. Tak nezaberou příliš mnoho času a můžeš se připojit, i když máš nabitý den, nebo prostě jen nechceš trávit celý večer na nějakém srazu.
