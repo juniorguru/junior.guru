@@ -96,7 +96,7 @@ class PodcastEpisode(BaseModel):
         return cls.select() \
             .where(cls.publish_on >= from_date,
                    cls.publish_on <= to_date,
-                   cls.participant_name.is_null(False))
+                   cls.guest_name.is_null(False))
 
     @classmethod
     def guests_count_ttm(cls, date):
@@ -105,7 +105,7 @@ class PodcastEpisode(BaseModel):
     @classmethod
     def women_listing(cls, from_date, to_date):
         return cls.guests_listing(from_date, to_date) \
-            .where(cls.participant_has_feminine_name == True)
+            .where(cls.guest_has_feminine_name == True)
 
     @classmethod
     def women_count_ttm(cls, date):
