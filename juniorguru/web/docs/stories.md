@@ -107,5 +107,13 @@ Film realisticky popisuje nejen úspěchy, ale i těžkosti celé Tomášovy ces
   {% set small %}
     {{ story.publisher }} &mdash; {{ '{:%-d.%-m.%Y}'.format(story.date) }}
   {% endset %}
-  {{ news_card(story.title, story.url, story.image_path, 'Doprovodná fotka k příběhu', subtitle=story.name, small=small) }}
+  {{ news_card(
+    story.title,
+    story.url,
+    story.image_path,
+    'Doprovodná fotka k příběhu',
+    subtitle=story.name,
+    small=small,
+    external=true)
+  }}
 {% endfor %}
