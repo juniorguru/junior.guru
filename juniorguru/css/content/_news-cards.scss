@@ -9,6 +9,12 @@
   border-right-width: 1px;
 }
 
+.news-card:hover {
+  background: $jg-blue-light;
+  border-color: transparent;
+  transition: all .2s ease-out;
+}
+
 .news-card-media {
   flex-grow: 0;
   flex-shrink: 0;
@@ -20,6 +26,11 @@
   @extend .rounded-circle;
   width: 100%;
   height: auto;
+  filter: contrast(1.1);
+}
+
+.news-card:hover .news-card-image {
+  transition: all .2s ease-out;
 }
 
 .news-card-title {

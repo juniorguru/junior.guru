@@ -40,7 +40,7 @@ class PodcastEpisode(BaseModel):
 
     @property
     def page_url(self) -> str:
-        return f'podcast/{self.number}.md'
+        return f'podcast/{self.number}.jinja'
 
     @property
     def publish_at_prg(self) -> datetime:

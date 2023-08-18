@@ -4,7 +4,7 @@ description: Jak začít s programováním? Jak najít práci v IT? Přináš�
 template: main_podcast.html
 ---
 
-{% from 'macros.html' import lead, markdown, img, podcast_player, partner_link with context %}
+{% from 'macros.html' import lead, markdown, img, news_card with context %}
 
 
 # Podcast
@@ -45,29 +45,12 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
 
 Poučky praví, že podcast se stává kvalitním a slavným, až když se autoři zajedou a vymluví, což trvá přibližně 100 epizod. Chceme vydávat zhruba **jednu epizodu měsíčně**, takže špičkové kvality a věčné slávy plánujeme dosáhnout kolem roku 2030. Znělku nám na míru složil [Patrik Veltruský](https://veltrusky.net/), děkujeme!
 
-{% for episode in podcast_episodes %}
-<div id="{{ episode.slug }}" class="podcast-episode">
-  <h3>{{ episode.title_numbered }}<a class="headerlink" href="#{{ episode.slug }}" title="Odkaz na tuto epizodu">#</a></h3>
-  {{ img('static/' + episode.avatar_path, episode.title, 100, 100, class='podcast-episode-image') }}
-  {% if episode.partner %}
-  <p>
-    <span class="badge text-bg-primary">Spolupráce</span>
-    <small>
-    Epizoda vznikla v rámci
-    {% set active_partnership = episode.partner.active_partnership() %}
-    {% if active_partnership %}
-      <a href="{{ pages|docs_url(active_partnership.page_url)|url }}">placeného partnerství</a>
-    {% else %}
-      placeného partnerství
-    {% endif %}
-    s firmou {{ partner_link(episode.partner.name, episode.partner.url, 'podcast') }}
-    </small>
-  </p>
-  {% endif %}
-  <p>
-    <strong>{{ '{:%-d.%-m.%Y}'.format(episode.publish_on) }}</strong>
-    — {{ episode.description }}
-  </p>
-  {{ podcast_player(episode, class='podcast-episode-player') }}
-</div>
+{% for podcast_episode in podcast_episodes %}
+  {{ news_card(
+    podcast_episode.title_numbered,
+    pages|docs_url(podcast_episode.page_url)|url,
+    podcast_episode.avatar_path,
+    podcast_episode.title,
+    small='{:%-d.%-m.%Y}'.format(podcast_episode.publish_on))
+  }}
 {% endfor %}
