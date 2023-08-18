@@ -50,7 +50,9 @@ EXCLUDE_REASONS = [
 
 
 @click.command()
-@click.argument("output_path", default="public", type=click.Path(exists=True, path_type=Path))
+@click.argument(
+    "output_path", default="public", type=click.Path(exists=True, path_type=Path)
+)
 @click.option("--build/--no-build", default=True)
 @click.option("--retry/--no-retry", default=False)
 @click.pass_context
@@ -84,7 +86,10 @@ def main(context, output_path, build, retry):
         broken = set()
 
         with Popen(
-            command + options + [output_path], stdout=PIPE, bufsize=1, universal_newlines=True
+            command + options + [output_path],
+            stdout=PIPE,
+            bufsize=1,
+            universal_newlines=True,
         ) as proc:
             for line in proc.stdout:
                 print(line, end="")

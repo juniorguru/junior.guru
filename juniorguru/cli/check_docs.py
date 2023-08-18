@@ -3,8 +3,8 @@ from pathlib import Path
 import click
 from lxml import html
 
-from juniorguru.lib import loggers
 from juniorguru.cli.web import build as build_web
+from juniorguru.lib import loggers
 
 
 logger = loggers.from_path(__file__)
@@ -23,7 +23,9 @@ class StaticFileLinkError(ValueError):
 
 
 @click.command()
-@click.argument("output_path", default="public", type=click.Path(exists=True, path_type=Path))
+@click.argument(
+    "output_path", default="public", type=click.Path(exists=True, path_type=Path)
+)
 @click.option("--build/--no-build", default=True)
 @click.pass_context
 def main(context, output_path, build):
@@ -49,13 +51,17 @@ def main(context, output_path, build):
             try:
                 links.append((doc_name, normalize_link(output_path, doc_path, href)))
             except StaticFileLinkError:
-                static.add((doc_name, normalize_static_link(output_path, doc_path, href)))
+                static.add(
+                    (doc_name, normalize_static_link(output_path, doc_path, href))
+                )
             except ValueError:
                 pass  # logger.debug(f'Skipping: {href}')
         for element in html_tree.cssselect("img[src]"):
             src = element.get("data-src", element.get("src"))
             try:
-                static.add((doc_name, normalize_static_link(output_path, doc_path, src)))
+                static.add(
+                    (doc_name, normalize_static_link(output_path, doc_path, src))
+                )
             except ValueError:
                 pass  # logger.debug(f'Skipping: {src}')
 
@@ -96,9 +102,7 @@ def normalize_link(output_path, doc_path, link):
     if not link.startswith((".", "/")):
         link = f"./{link}"
     if link.startswith("."):
-        link = (
-            f"/{doc_path.parent.joinpath(link).resolve().relative_to(output_path.absolute())}"
-        )
+        link = f"/{doc_path.parent.joinpath(link).resolve().relative_to(output_path.absolute())}"
     if not link.endswith("/") and "#" not in link:
         link = f"{link}/"
     if link == "/./":

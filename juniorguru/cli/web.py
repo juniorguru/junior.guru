@@ -34,7 +34,9 @@ def building(title: str):
             time_end = perf_counter() - time_start
             logger.info(f"Done building {title} in {time_end:.2f}s")
             return return_value
+
         return wrapper
+
     return decorator
 
 
@@ -127,11 +129,11 @@ def serve(context, output_path: Path, open: bool):
 
     @building("Flask and MkDocs files")
     def rebuild_flask_and_mkdocs():
-        subprocess.run(["jg", "web", 'build-flask', str(output_path)], check=True)
-        subprocess.run(["jg", "web", 'build-mkdocs', str(output_path)], check=True)
+        subprocess.run(["jg", "web", "build-flask", str(output_path)], check=True)
+        subprocess.run(["jg", "web", "build-mkdocs", str(output_path)], check=True)
 
     def rebuild_mkdocs():
-        subprocess.run(["jg", "web", 'build-mkdocs', str(output_path)], check=True)
+        subprocess.run(["jg", "web", "build-mkdocs", str(output_path)], check=True)
 
     server = Server()
     server.setHeader("Access-Control-Allow-Origin", "*")

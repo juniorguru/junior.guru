@@ -1,15 +1,15 @@
 from pathlib import Path
 from typing import Callable
-from jinja2 import Environment, FileSystemLoader
 
-from mkdocs.structure.files import File, Files
+from jinja2 import Environment, FileSystemLoader
 from mkdocs.config import Config
+from mkdocs.structure.files import File, Files
 from mkdocs.structure.pages import Page
 from mkdocs.structure.toc import get_toc
 from mkdocs.utils.filters import url_filter
 
-from juniorguru.lib.jinja_cache import BytecodeCache
 from juniorguru.lib import loggers, template_filters
+from juniorguru.lib.jinja_cache import BytecodeCache
 
 
 CACHE_DIR = Path(".web_cache/jinja")
@@ -44,21 +44,27 @@ def monkey_patch() -> None:
     # Monkey patch the File class so that it recognizes .jinja
     # files as documentation pages
     _file_is_documentation_page = File.is_documentation_page
+
     def is_documentation_page(self: File) -> bool:
-        return self.src_uri.endswith('.jinja') or _file_is_documentation_page(self)
+        return self.src_uri.endswith(".jinja") or _file_is_documentation_page(self)
+
     File.is_documentation_page = is_documentation_page
 
     # Monkey patch the Page class so that it allows skipping Markdown
     # rendering in case the source is .jinja
     _page_render = Page.render
+
     def render(self, config: Config, files: Files):
-        if self.file.src_uri.endswith('.jinja'):
+        if self.file.src_uri.endswith(".jinja"):
             if self.markdown is None:
-                raise RuntimeError("`markdown` field hasn't been set (via `read_source`)")
+                raise RuntimeError(
+                    "`markdown` field hasn't been set (via `read_source`)"
+                )
             self.content = self.markdown
             self.toc = get_toc([])
         else:
             _page_render(self, config, files)
+
     Page.render = render
 
 
@@ -75,8 +81,8 @@ def get_env(page: Page, config: Config, files: Files) -> Environment:
     cache = BytecodeCache(CACHE_DIR)
     env = Environment(loader=loader, auto_reload=False, bytecode_cache=cache)
     env.filters.update(get_filters())
-    env.filters['url'] = url_filter
-    env.filters['md'] = create_md_filter(page, config, files)
+    env.filters["url"] = url_filter
+    env.filters["md"] = create_md_filter(page, config, files)
     return env
 
 
@@ -109,4 +115,5 @@ def create_md_filter(page: Page, config: Config, files: Files) -> Callable:
         _page = _Page()
         _page.render(config, files)
         return _page.content
+
     return md
