@@ -56,7 +56,7 @@ def monkey_patch() -> None:
     _page_render = Page.render
 
     def render(self, config: Config, files: Files):
-        if '.md' in Path(self.file.src_uri).suffixes:
+        if ".md" in Path(self.file.src_uri).suffixes:
             _page_render(self, config, files)
         else:
             if self.markdown is None:
@@ -65,6 +65,7 @@ def monkey_patch() -> None:
                 )
             self.content = self.markdown
             self.toc = get_toc([])
+
     Page.render = render
 
 

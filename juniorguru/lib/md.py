@@ -38,5 +38,5 @@ def neutralize_urls(markdown_text: str) -> str:
     return URL_RE.sub("", markdown_text)
 
 
-def md_as_text(markdown_text: str, newline: str='\n') -> str:
+def md_as_text(markdown_text: str, newline: str = "\n") -> str:
     return extract_text(md(markdown_text), newline=newline)
