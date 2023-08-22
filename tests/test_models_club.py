@@ -21,6 +21,7 @@ def create_user(id_, **kwargs):
         subscribed_at=kwargs.get("subscribed_at", None),
         subscribed_days=kwargs.get("subscribed_days", None),
         roles=kwargs.get("roles", []),
+        expires_at=kwargs.get("expires_at", datetime.now() + timedelta(days=100)),
     )
 
 
@@ -329,6 +330,38 @@ def test_avatars_listing(test_db):
     user4 = create_user(4, avatar_path="avatars/3.png")
 
     assert list(ClubUser.avatars_listing()) == [user1, user3, user4]
+
+
+def test_invite_core_members_listing_selects_only_members(test_db):
+    today = date(2023, 8, 22)
+    create_user(1, subscribed_days=500, is_member=True, coupon=None, expires_at=datetime(2023, 8, 25))
+    create_user(2, subscribed_days=500, is_member=False, coupon=None, expires_at=datetime(2023, 8, 25))
+
+    assert {user.id for user in ClubUser.invite_core_members_listing(today)} == {1}
+
+
+def test_invite_core_members_listing_selects_only_members_who_are_at_least_year_in_the_club(test_db):
+    today = date(2023, 8, 22)
+    create_user(1, subscribed_days=500, is_member=True, coupon=None, expires_at=datetime(2023, 8, 25))
+    create_user(2, subscribed_days=300, is_member=True, coupon=None, expires_at=datetime(2023, 8, 25))
+
+    assert {user.id for user in ClubUser.invite_core_members_listing(today)} == {1}
+
+
+def test_invite_core_members_listing_selects_only_members_without_coupon(test_db):
+    today = date(2023, 8, 22)
+    create_user(1, subscribed_days=500, is_member=True, coupon=None, expires_at=datetime(2023, 8, 25))
+    create_user(2, subscribed_days=500, is_member=True, coupon='ABCD12345', expires_at=datetime(2023, 8, 25))
+
+    assert {user.id for user in ClubUser.invite_core_members_listing(today)} == {1}
+
+
+def test_invite_core_members_listing_selects_only_members_whose_membership_expire_soon(test_db):
+    today = date(2023, 8, 22)
+    create_user(1, subscribed_days=500, is_member=True, coupon=None, expires_at=datetime(2023, 8, 25))
+    create_user(2, subscribed_days=500, is_member=True, coupon=None, expires_at=datetime(2023, 10, 25))
+
+    assert {user.id for user in ClubUser.invite_core_members_listing(today)} == {1}
 
 
 def test_user_list_recent_messages(test_db):

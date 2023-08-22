@@ -2,6 +2,7 @@ import math
 from datetime import date, timedelta
 from itertools import groupby
 from operator import attrgetter
+from typing import Iterable, Self
 
 from peewee import (
     BooleanField,
@@ -21,6 +22,8 @@ from juniorguru.models.base import BaseModel, JSONField
 TOP_MEMBERS_PERCENT = 0.05
 
 RECENT_PERIOD_DAYS = 30
+
+YEAR_PERIOD_DAYS = 365
 
 IS_NEW_PERIOD_DAYS = 15
 
@@ -145,7 +148,7 @@ class ClubUser(BaseModel):
         if self.subscribed_days is None:
             # can happen for users like ClubMemberID.HONZA, ClubMemberID.HONZA_TEST
             return False
-        return self.subscribed_days >= 365
+        return self.subscribed_days >= YEAR_PERIOD_DAYS
 
     def is_founder(self):
         return bool(self.coupon and parse_coupon(self.coupon)['slug'] in ('founders', 'founder'))
@@ -192,6 +195,15 @@ class ClubUser(BaseModel):
     @classmethod
     def avatars_listing(cls):
         return cls.members_listing().where(cls.avatar_path.is_null(False))
+
+    @classmethod
+    def invite_core_members_listing(cls, today: date = None, expiration_buffer_days: int = 10) -> Iterable[Self]:
+        today = today or date.today()
+        return cls.members_listing() \
+            .where(cls.subscribed_days >= YEAR_PERIOD_DAYS,
+                   cls.coupon.is_null(),
+                   cls.expires_at >= today,
+                   cls.expires_at <= today + timedelta(days=expiration_buffer_days))
 
 
 class ClubMessage(BaseModel):
