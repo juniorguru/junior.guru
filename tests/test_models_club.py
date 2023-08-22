@@ -564,26 +564,26 @@ def test_user_messages_count_private(test_db):
     assert user.messages_count(private=True) == 4
 
 
-def test_user_recent_messages_count(test_db):
+def test_user_recent_content_size(test_db):
     user = create_user(1)
 
-    create_message(1, user, created_at=datetime(2021, 2, 15))
-    create_message(2, user, created_at=datetime(2021, 3, 10))
-    create_message(3, user, created_at=datetime(2021, 3, 15))
-    create_message(4, user, created_at=datetime(2021, 3, 15), is_private=True)
+    create_message(1, user, created_at=datetime(2021, 2, 15), content='0123456789')
+    create_message(2, user, created_at=datetime(2021, 3, 10), content='0123456789')
+    create_message(3, user, created_at=datetime(2021, 3, 15), content='0123456789')
+    create_message(4, user, created_at=datetime(2021, 3, 15), content='0123456789', is_private=True)
 
-    assert user.recent_messages_count(today=date(2021, 4, 1)) == 2
+    assert user.recent_content_size(today=date(2021, 4, 1)) == 20
 
 
-def test_user_recent_messages_count_private(test_db):
+def test_user_recent_content_size_private(test_db):
     user = create_user(1)
 
-    create_message(1, user, created_at=datetime(2021, 2, 15))
-    create_message(2, user, created_at=datetime(2021, 3, 10))
-    create_message(3, user, created_at=datetime(2021, 3, 15))
-    create_message(4, user, created_at=datetime(2021, 3, 15), is_private=True)
+    create_message(1, user, created_at=datetime(2021, 2, 15), content='0123456789')
+    create_message(2, user, created_at=datetime(2021, 3, 10), content='0123456789')
+    create_message(3, user, created_at=datetime(2021, 3, 15), content='0123456789')
+    create_message(4, user, created_at=datetime(2021, 3, 15), content='0123456789', is_private=True)
 
-    assert user.recent_messages_count(today=date(2021, 4, 1), private=True) == 3
+    assert user.recent_content_size(today=date(2021, 4, 1), private=True) == 30
 
 
 def test_user_upvotes_count(test_db):
