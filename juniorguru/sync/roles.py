@@ -80,11 +80,11 @@ async def discord_task(client: ClubClient):
 
     logger.info('Computing how to re-assign role: most_discussing')
     role_id = ClubDocumentedRole.get_by_slug('most_discussing').id
-    messages_count_stats = calc_stats(members, lambda m: m.messages_count(), top_members_limit)
-    logger.debug(f"messages_count {repr_stats(members, messages_count_stats)}")
-    recent_messages_count_stats = calc_stats(members, lambda m: m.recent_messages_count(), top_members_limit)
-    logger.debug(f"recent_messages_count {repr_stats(members, recent_messages_count_stats)}")
-    most_discussing_members_ids = set(messages_count_stats.keys()) | set(recent_messages_count_stats.keys())
+    content_size_stats = calc_stats(members, lambda m: m.content_size(), top_members_limit)
+    logger.debug(f"content_size {repr_stats(members, content_size_stats)}")
+    recent_content_size_stats = calc_stats(members, lambda m: m.recent_content_size(), top_members_limit)
+    logger.debug(f"recent_content_size {repr_stats(members, recent_content_size_stats)}")
+    most_discussing_members_ids = set(content_size_stats.keys()) | set(recent_content_size_stats.keys())
     logger.debug(f"most_discussing_members: {repr_ids(members, most_discussing_members_ids)}")
     for member in members:
         changes.extend(evaluate_changes(member.id, member.initial_roles, most_discussing_members_ids, role_id))

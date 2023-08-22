@@ -103,12 +103,13 @@ class ClubUser(BaseModel):
         list_messages = self.list_messages if private else self.list_public_messages
         return sum(message.content_size for message in list_messages)
 
+    def recent_content_size(self, today=None, days=RECENT_PERIOD_DAYS, private=False) -> int:
+        messages = self.list_recent_messages(today, days=days, private=private)
+        return sum(message.content_size for message in messages)
+
     def messages_count(self, private=False):
         list_messages = self.list_messages if private else self.list_public_messages
         return list_messages.count()
-
-    def recent_messages_count(self, today=None, private=False):
-        return self.list_recent_messages(today, private).count()
 
     def upvotes_count(self, private=False):
         list_messages = self.list_messages if private else self.list_public_messages
@@ -117,7 +118,7 @@ class ClubUser(BaseModel):
         return sum([message.upvotes_count for message in messages])
 
     def recent_upvotes_count(self, today=None, private=False):
-        messages = self.list_recent_messages(today, private) \
+        messages = self.list_recent_messages(today, private=private) \
             .where(ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS))
         return sum([message.upvotes_count for message in messages])
 
@@ -133,9 +134,9 @@ class ClubUser(BaseModel):
             first_message = first_pin.pinned_message if first_pin else None
         return first_message.created_at.date() if first_message else self.joined_on
 
-    def list_recent_messages(self, today=None, private=False):
+    def list_recent_messages(self, today=None, days=RECENT_PERIOD_DAYS, private=False):
         list_messages = self.list_messages if private else self.list_public_messages
-        recent_period_start_at = (today or date.today()) - timedelta(days=RECENT_PERIOD_DAYS)
+        recent_period_start_at = (today or date.today()) - timedelta(days=days)
         return list_messages \
             .where(ClubMessage.created_at >= recent_period_start_at) \
             .order_by(ClubMessage.created_at.desc())
@@ -197,7 +198,7 @@ class ClubUser(BaseModel):
         return cls.members_listing().where(cls.avatar_path.is_null(False))
 
     @classmethod
-    def invite_core_members_listing(cls, today: date = None, expiration_buffer_days: int = 10) -> Iterable[Self]:
+    def core_discount_listing(cls, today: date = None, expiration_buffer_days: int = 10) -> Iterable[Self]:
         today = today or date.today()
         return cls.members_listing() \
             .where(cls.subscribed_days >= YEAR_PERIOD_DAYS,
