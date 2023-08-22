@@ -20,16 +20,30 @@ def main():
 @main.command()
 @click.option("--pull/--no-pull", default=True)
 @click.option("--push/--no-push", default=True)
-def update(pull, push):
+@click.option("--stash/--no-stash", default=False)
+def update(pull, push, stash):
     try:
+        if stash:
+            logger.info("Stashing work in progress")
+            subprocess.run(["git", "stash"], check=True)
         if pull:
+            logger.info("Pulling changes")
             subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
         if push:
+            logger.info("Pushing changes")
             subprocess.run(["git", "push"], check=True)
+        if stash:
+            logger.info("Getting work in progress back from stash")
+            subprocess.run(["git", "stash", "pop"], check=True)
+        logger.info("Installing Python packages")
         subprocess.run(["poetry", "install"], check=True)
+        logger.info("Updating juniorguru-chick")
         subprocess.run(["poetry", "update", "juniorguru-chick"], check=True)
+        logger.info("Installing Playwright browsers")
         subprocess.run(["playwright", "install", "firefox"], check=True)
+        logger.info("Installing Node packages")
         subprocess.run(["npm", "install"], check=True)
+        logger.info("Removing the 'public' directory")
         shutil.rmtree("public", ignore_errors=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
