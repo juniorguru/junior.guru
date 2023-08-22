@@ -56,6 +56,7 @@ def main():
             subscribed_at = SubscriptionActivity.account_subscribed_at(account_id)
             if not subscribed_at:
                 raise ValueError(f"Member {member_admin_url} has no subscription activities")
+            subscribed_days = SubscriptionActivity.account_subscribed_days(account_id)
 
             subscription = get_active_subscription(member['subscriptions'])
             coupon = get_coupon(subscription)
@@ -65,6 +66,7 @@ def main():
             user.account_id = account_id
             user.subscription_id = str(subscription['id'])
             user.subscribed_at = subscribed_at
+            user.subscribed_days = subscribed_days
             user.coupon = coupon_parts.get('coupon')
             user.update_expires_at(arrow.get(subscription['expiresAt']).naive)
             user.has_feminine_name = has_feminine_name

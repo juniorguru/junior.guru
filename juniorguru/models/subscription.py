@@ -436,11 +436,33 @@ class SubscriptionActivity(BaseModel):
             yield duration_mo
 
     @classmethod
-    def account_subscribed_at(cls, account_id: int) -> datetime:
-        return cls.select(cls.happened_at) \
+    def account_listing(cls, account_id: int) -> Iterable[Self]:
+        return cls.select() \
             .where(cls.account_id == account_id) \
-            .order_by(cls.happened_at) \
-            .scalar()
+            .order_by(cls.happened_at)
+
+    @classmethod
+    def account_subscribed_at(cls, account_id: int) -> datetime:
+        first_activity = cls.account_listing(account_id) \
+            .limit(1) \
+            .get()
+        return first_activity.happened_at
+
+    @classmethod
+    def account_subscribed_days(cls, account_id: int, today: date = None) -> int:
+        days = 0
+        today = today or date.today()
+        start = None
+        for activity in cls.account_listing(account_id):
+            if activity.type == SubscriptionActivityType.DEACTIVATION:
+                if start:
+                    days += (activity.happened_at.date() - start.happened_at.date()).days
+                    start = None
+            elif start is None:
+                start = activity
+        if start:
+            days += (today - start.happened_at.date()).days
+        return days
 
 
 class SubscriptionCancellation(BaseModel):

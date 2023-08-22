@@ -1,4 +1,5 @@
 from datetime import date, datetime, timedelta
+from graphql import subscribe
 
 import pytest
 
@@ -19,6 +20,7 @@ def create_user(id_, **kwargs):
         coupon=kwargs.get("coupon"),
         joined_at=kwargs.get("joined_at", datetime.now() - timedelta(days=3)),
         subscribed_at=kwargs.get("subscribed_at", None),
+        subscribed_days=kwargs.get("subscribed_days", None),
         roles=kwargs.get("roles", []),
     )
 
@@ -435,29 +437,22 @@ def test_user_is_new(test_db, today, expected):
 
 
 @pytest.mark.parametrize(
-    "today, expected",
+    "days, expected",
     [
-        (date(2019, 5, 1), False),
-        (date(2021, 12, 4), False),
-        (date(2022, 1, 1), False),
-        (date(2022, 1, 31), False),
-        (date(2022, 2, 1), True),
-        (date(2022, 2, 2), True),
-        (date(2022, 2, 15), True),
-        (date(2022, 5, 1), True),
-        (date(2023, 5, 1), True),
+        (None, False),
+        (0, False),
+        (10, False),
+        (300, False),
+        (364, False),
+        (365, True),
+        (366, True),
+        (1000, True),
     ],
 )
-def test_user_is_year_old(test_db, today, expected):
-    user = create_user(1, joined_at=datetime(2021, 2, 1))
+def test_user_is_year_old(test_db, days: int, expected: bool):
+    user = create_user(1, subscribed_days=days)
 
-    assert user.is_year_old(today=today) is expected
-
-
-def test_user_is_year_old_uses_subscribed_at(test_db):
-    user = create_user(1, joined_at=None, subscribed_at=datetime(2021, 2, 1))
-
-    assert user.is_year_old(today=date(2022, 2, 1)) is True
+    assert user.is_year_old is expected
 
 
 @pytest.mark.parametrize(

@@ -50,6 +50,7 @@ class ClubUser(BaseModel):
     subscription_id = CharField(null=True)
     joined_at = DateTimeField(null=True)
     subscribed_at = DateTimeField(null=True)
+    subscribed_days = IntegerField(null=True)
     expires_at = DateTimeField(null=True)
     is_bot = BooleanField(default=False)
     is_member = BooleanField(default=True)
@@ -139,9 +140,12 @@ class ClubUser(BaseModel):
     def is_new(self, today=None):
         return (self.first_seen_on() + timedelta(days=IS_NEW_PERIOD_DAYS)) >= (today or date.today())
 
-    def is_year_old(self, today=None):
-        joined_on = non_empty_min([self.joined_on, self.subscribed_on, self.first_seen_on()])
-        return joined_on.replace(year=joined_on.year + 1) <= (today or date.today())
+    @property
+    def is_year_old(self) -> bool:
+        if self.subscribed_days is None:
+            # can happen for users like ClubMemberID.HONZA, ClubMemberID.HONZA_TEST
+            return False
+        return self.subscribed_days >= 365
 
     def is_founder(self):
         return bool(self.coupon and parse_coupon(self.coupon)['slug'] == 'founders')
