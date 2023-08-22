@@ -38,6 +38,7 @@ CHANNELS_HISTORY_SINCE = {
 
     # take all history since ever
     ClubChannelID.INTRO: None,
+    ClubChannelID.BUSINESS: None,
 
     # skip channels
     ClubChannelID.MODERATION: timedelta(0),
