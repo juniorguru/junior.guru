@@ -26,8 +26,6 @@ logger = loggers.from_path(__file__)
 MEMBERS_GQL_PATH = Path(__file__).parent / 'members.gql'
 
 
-
-
 @cli.sync_command(dependencies=['club-content',
                                 'partners',
                                 'feminine-names',
