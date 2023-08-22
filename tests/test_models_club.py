@@ -1,5 +1,4 @@
 from datetime import date, datetime, timedelta
-from graphql import subscribe
 
 import pytest
 
