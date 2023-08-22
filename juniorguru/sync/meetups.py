@@ -26,7 +26,7 @@ MEETUP_URL_RE = re.compile(r'https?://\S+', re.IGNORECASE)
 CALL_TO_ACTION_TEXT = (
     'Chceš se poznat s lidmi z klubu i naživo? '
     'Běžně se potkáváme na srazech vybraných komunit. '
-    'Utvořte skupinku, ničeho se nebojte, a vyražte!'
+    'Utvořte skupinku, ničeho se nebojte, a vyrazte!'
 )
 
 IMAGES_DIR = Path('juniorguru/images')

@@ -126,7 +126,7 @@ def test_parse_meetup_url():
     text = (
         "**Akce:** ReactGirls & Applifting meetup\n"
         "**Více info:** https://www.meetup.com/reactgirls/events/292684010/\n\n"
-        "Chceš se poznat s lidmi z klubu i naživo? Běžně se potkáváme na srazech vybraných komunit. Utvořte skupinku, ničeho se nebojte, a vyražte!"
+        "Chceš se poznat s lidmi z klubu i naživo? Běžně se potkáváme na srazech vybraných komunit. Utvořte skupinku, ničeho se nebojte, a vyrazte!"
     )
     assert (
         parse_meetup_url(text) == "https://www.meetup.com/reactgirls/events/292684010/"
