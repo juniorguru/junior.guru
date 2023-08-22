@@ -4,7 +4,6 @@ from operator import itemgetter
 from pathlib import Path
 from pprint import pformat
 
-import arrow
 from discord import NotFound
 from playhouse.shortcuts import model_to_dict
 
@@ -61,6 +60,7 @@ def main():
             subscription = get_active_subscription(member['subscriptions'])
             coupon = get_coupon(subscription)
             coupon_parts = parse_coupon(coupon) if coupon else {}
+            expires_at = get_expires_at(member['subscriptions'])
 
             logger.debug(f"Updating club user #{user.id} with data from {member_admin_url}")
             user.account_id = account_id
@@ -68,7 +68,7 @@ def main():
             user.subscribed_at = subscribed_at
             user.subscribed_days = subscribed_days
             user.coupon = coupon_parts.get('coupon')
-            user.update_expires_at(arrow.get(subscription['expiresAt']).naive)
+            user.update_expires_at(expires_at)
             user.has_feminine_name = has_feminine_name
             user.total_spend = math.ceil(member['totalSpendCents'] / 100)
             user.save()
@@ -123,6 +123,15 @@ def get_active_subscription(subscriptions: list[dict], today: date=None) -> dict
         return subscriptions[0]
     except IndexError:
         raise ValueError("No active subscriptions")
+
+
+def get_expires_at(subscriptions: list[dict]) -> datetime:
+    return datetime.utcfromtimestamp(
+        max(
+            subscription['expiresAt'] for subscription in subscriptions
+            if subscription['active']
+        )
+    )
 
 
 def get_coupon(subscription):

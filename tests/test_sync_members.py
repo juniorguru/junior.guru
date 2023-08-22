@@ -1,8 +1,8 @@
-from datetime import date
+from datetime import date, datetime
 
 import pytest
 
-from juniorguru.sync.members import get_active_subscription, get_coupon
+from juniorguru.sync.members import get_active_subscription, get_coupon, get_expires_at
 
 
 def test_get_coupon():
@@ -132,3 +132,21 @@ def test_get_active_subscription_no_active():
 def test_get_active_subscription_no_items():
     with pytest.raises(ValueError):
         get_active_subscription([])
+
+
+def test_get_expires_at():
+    expires_at = get_expires_at([
+        dict(id=1, active=True, expiresAt=1663146115),
+        dict(id=2, active=False, expiresAt=1694685504),
+    ])
+
+    assert expires_at == datetime(2022, 9, 14, 9, 1, 55)
+
+
+def test_get_expires_at_multiple_active_and_one_expires_later():
+    expires_at = get_expires_at([
+        dict(id=1, active=True, expiresAt=1663146115),
+        dict(id=2, active=True, expiresAt=1694685504),
+    ])
+
+    assert expires_at == datetime(2023, 9, 14, 9, 58, 24)
