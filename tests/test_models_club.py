@@ -459,6 +459,7 @@ def test_user_is_year_old(test_db, days: int, expected: bool):
     [
         (None, False),
         ("FOUNDERS12345678", True),
+        ("FOUNDER12345678", True),
     ],
 )
 def test_user_is_founder(test_db, coupon, expected):

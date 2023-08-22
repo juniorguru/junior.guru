@@ -148,7 +148,7 @@ class ClubUser(BaseModel):
         return self.subscribed_days >= 365
 
     def is_founder(self):
-        return bool(self.coupon and parse_coupon(self.coupon)['slug'] == 'founders')
+        return bool(self.coupon and parse_coupon(self.coupon)['slug'] in ('founders', 'founder'))
 
     @classmethod
     def get_member_by_id(cls, id):
