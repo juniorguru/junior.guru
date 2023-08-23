@@ -1,0 +1,78 @@
+---
+title: Novinky pro začátečníky v programování
+description: Podcasty, přednášky, články a další zdroje pro začátečníky v programování, které tě posunou a namotivují.
+---
+
+{% from 'macros.html' import lead, news_card with context %}
+
+<h1>Novinky</h1>
+
+{% call lead() %}
+  Začínáš v IT?
+  Tady máš podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.
+{% endcall %}
+
+<h2>Podcast</h2>
+{% set podcast_episode = podcast_episodes|list|first %}
+{{ news_card(
+  podcast_episode.format_title(affiliation=False),
+  pages|docs_url(podcast_episode.page_url)|url,
+  podcast_episode.image_path,
+  podcast_episode.format_title(),
+  subtitle=podcast_episode.guest_affiliation,
+  small='{:%-d.%-m.%Y}'.format(podcast_episode.publish_on))
+}}
+<p class="text-center">
+  <a class="btn btn-outline-primary" href="{{ pages|docs_url('podcast.md')|url }}">
+    {{ 'list'|icon }}
+    Všechny epizody
+  </a>
+</p>
+
+<h2>Klubové akce</h2>
+{% set event = events_planned|list|first|default(events_archive|list|first, true) %}
+{{ news_card(
+  event.title,
+  pages|docs_url(event.page_url)|url,
+  event.avatar_path,
+  event.bio_name,
+  subtitle=event.bio_name,
+  small='{:%-d.%-m.%Y}'.format(event.start_at))
+}}
+<p class="text-center">
+  <a class="btn btn-outline-primary" href="{{ pages|docs_url('events.md')|url }}">
+    {{ 'list'|icon }}
+    Všechny akce
+  </a>
+</p>
+
+<h2>Příběhy</h2>
+{% set story = stories|list|first %}
+{% set small %}
+  {{ story.publisher }} &mdash; {{ '{:%-d.%-m.%Y}'.format(story.date) }}
+{% endset %}
+{{ news_card(
+  story.title,
+  story.url,
+  story.image_path,
+  'Doprovodná fotka k příběhu',
+  subtitle=story.name,
+  small=small,
+  external=true)
+}}
+<p class="text-center">
+  <a class="btn btn-outline-primary" href="{{ pages|docs_url('stories.md')|url }}">
+    {{ 'list'|icon }}
+    Všechny příběhy
+  </a>
+</p>
+
+{#
+    TODO top odkazy
+<h2>Klub doporučuje</h2>
+#}
+
+{#
+    TODO top temata
+<h2>Co se řeší v klubu</h2>
+#}

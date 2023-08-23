@@ -1,7 +1,6 @@
 ---
 title: Inspirativní příběhy
 description: Příběhy těch, kdo se rekvalifikovali do IT, nebo jim nějak programování pomáhá
-template: main_news.html
 ---
 
 {% from 'macros.html' import lead, link_card, blockquote_avatar, news_card with context %}

@@ -22,6 +22,7 @@ nav:
       - ... | flat | courses/*.md
   - Práce: jobs/
   - Novinky:
+      - Novinky: news.jinja
       - Podcast:
           - Podcast: podcast.md
           - ... | flat | podcast/*.jinja

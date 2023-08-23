@@ -3,6 +3,11 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
+      <a href="{{ (page|parent_page|parent_page).url|url }}">
+        {{ (page|parent_page|parent_page).title }}
+      </a>
+    </li>
+    <li class="breadcrumb-item">
       <a href="{{ (page|parent_page).url|url }}">
         {{ (page|parent_page).title }}
       </a>

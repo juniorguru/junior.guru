@@ -9,10 +9,6 @@ from juniorguru.web import api, context as context_hooks
 mkdocs_jinja.monkey_patch()
 
 
-class MarkdownTemplateError(Exception):
-    pass
-
-
 def on_pre_build(config):
     config["theme"].dirs.append(mkdocs_jinja.get_macros_dir(config))
     config["shared_context"] = {}
@@ -23,7 +19,7 @@ def on_pre_build(config):
     context_hooks.on_theme_context(config["theme_context"])
 
 
-def on_page_markdown(markdown, page, config, files):
+def on_page_markdown(markdown, page, config, files) -> str:
     """Renders Markdown as if it was a Jinja template.
 
     Inspired by https://github.com/fralau/mkdocs_macros_plugin
@@ -39,11 +35,8 @@ def on_page_markdown(markdown, page, config, files):
     )
     context_hooks.on_shared_page_context(context, page, config, files)
     context_hooks.on_docs_page_context(context, page, config, files)
-    try:
-        template = env.from_string(markdown)
-        return template.render(**context)
-    except Exception:
-        raise MarkdownTemplateError(page)
+    template = env.from_string(markdown)
+    return template.render(**context)
 
 
 def on_env(env, config, files):

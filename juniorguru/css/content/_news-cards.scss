@@ -4,14 +4,13 @@
   flex-direction: row;
   margin: 0 0 map-get($spacers, 4) 0;
   overflow: hidden;
-  border: 3px solid $jg-blue-light;
-  border-top-width: 1px;
-  border-right-width: 1px;
+  background: $jg-blue-light;
+  border: 1px solid transparent;
 }
 
 .news-card:hover {
-  background: $jg-blue-light;
-  border-color: transparent;
+  background: lighten($jg-blue-light, 1%);
+  border-color: $jg-blue-light;
   transition: all .2s ease-out;
 }
 

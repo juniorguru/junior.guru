@@ -200,7 +200,10 @@ def toc(page: Page) -> Generator[dict, None, None]:
 
 def parent_page(page: Page) -> StructureItem | None:
     try:
-        return page.parent.children[0]
+        parent_page = page.parent.children[0]
+        if parent_page == page:
+            return page.parent.parent.children[0]
+        return parent_page
     except AttributeError:
         return None
 

@@ -30,7 +30,7 @@ class Story(BaseModel):
             .where(tags.c.value == tag)
 
     @classmethod
-    def tags_mapping(cls):
+    def tags_mapping(cls) -> dict:
         mapping = {}
         for story in cls.listing():
             for tag in story.tags:

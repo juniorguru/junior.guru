@@ -165,7 +165,7 @@ class ClubUser(BaseModel):
         return cls.listing().count()
 
     @classmethod
-    def members_count(cls):
+    def members_count(cls) -> int:
         return cls.members_listing().count()
 
     @classmethod
@@ -258,7 +258,7 @@ class ClubMessage(BaseModel):
             raise ClubPin.DoesNotExist()
 
     @classmethod
-    def count(cls):
+    def count(cls) -> int:
         return cls.select().count()
 
     @classmethod

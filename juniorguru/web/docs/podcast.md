@@ -6,6 +6,18 @@ template: main_podcast.html
 
 {% from 'macros.html' import lead, markdown, img, news_card with context %}
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{{ (page|parent_page).url|url }}">
+        {{ (page|parent_page).title }}
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Podcast
+    </li>
+  </ol>
+</nav>
 
 # Podcast
 
@@ -47,7 +59,7 @@ Poučky praví, že podcast se stává kvalitním a slavným, až když se auto�
 
 {% for podcast_episode in podcast_episodes %}
   {{ news_card(
-    podcast_episode.format_title(affiliation=False),
+    podcast_episode.format_title(number=true, affiliation=False),
     pages|docs_url(podcast_episode.page_url)|url,
     podcast_episode.image_path,
     podcast_episode.format_title(),

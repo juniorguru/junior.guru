@@ -103,14 +103,14 @@ def on_docs_context(context):
     # open/*
     context["benefits_evaluators"] = BENEFITS_EVALUATORS
 
-    # podcast.md, handbook/cv.md
+    # podcast.md, handbook/cv.md, news.jinja
     context["podcast_episodes"] = PodcastEpisode.listing()
 
-    # events.md
+    # events.md, news.jinja
     context["events_planned"] = Event.planned_listing()
     context["events_archive"] = Event.archive_listing()
 
-    # stories.md
+    # stories.md, news.jinja
     context["stories"] = Story.listing()
 
 
