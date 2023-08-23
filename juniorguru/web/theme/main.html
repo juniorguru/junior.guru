@@ -146,7 +146,11 @@
         <h3 class="footer-heading">Rozšiřuj si rozhled</h3>
         <p>
           {% for nav_item in (nav|selectattr('title', 'equalto', 'Novinky')|list)[0].children %}
-            <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+            {%- if nav_item.children -%}
+              <a href="{{ (nav_item.children|first).url|url }}">{{ nav_item.title }}</a>
+            {%- else -%}
+              <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+            {%- endif -%}
             {%- if not loop.last %}, {% endif %}
           {% endfor %}
         </p>
