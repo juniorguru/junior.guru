@@ -1,11 +1,17 @@
 import asyncio
 from datetime import date, timedelta
+
 from discord import ui
-from juniorguru.lib.discord_club import ClubClient, ClubMemberID, get_or_create_dm_channel
-from juniorguru.lib.memberful import memberful_url, MemberfulAPI
-from juniorguru.models.base import db
+
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
+from juniorguru.lib.discord_club import (
+    ClubClient,
+    ClubMemberID,
+    get_or_create_dm_channel,
+)
+from juniorguru.lib.memberful import MemberfulAPI, memberful_url
+from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubUser
 
 

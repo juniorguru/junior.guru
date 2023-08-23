@@ -334,32 +334,84 @@ def test_avatars_listing(test_db):
 
 def test_core_discount_listing_selects_only_members(test_db):
     today = date(2023, 8, 22)
-    create_user(1, subscribed_days=500, is_member=True, coupon=None, expires_at=datetime(2023, 8, 25))
-    create_user(2, subscribed_days=500, is_member=False, coupon=None, expires_at=datetime(2023, 8, 25))
+    create_user(
+        1,
+        subscribed_days=500,
+        is_member=True,
+        coupon=None,
+        expires_at=datetime(2023, 8, 25),
+    )
+    create_user(
+        2,
+        subscribed_days=500,
+        is_member=False,
+        coupon=None,
+        expires_at=datetime(2023, 8, 25),
+    )
 
     assert {user.id for user in ClubUser.core_discount_listing(today)} == {1}
 
 
-def test_core_discount_listing_selects_only_members_who_are_at_least_year_in_the_club(test_db):
+def test_core_discount_listing_selects_only_members_who_are_at_least_year_in_the_club(
+    test_db,
+):
     today = date(2023, 8, 22)
-    create_user(1, subscribed_days=500, is_member=True, coupon=None, expires_at=datetime(2023, 8, 25))
-    create_user(2, subscribed_days=300, is_member=True, coupon=None, expires_at=datetime(2023, 8, 25))
+    create_user(
+        1,
+        subscribed_days=500,
+        is_member=True,
+        coupon=None,
+        expires_at=datetime(2023, 8, 25),
+    )
+    create_user(
+        2,
+        subscribed_days=300,
+        is_member=True,
+        coupon=None,
+        expires_at=datetime(2023, 8, 25),
+    )
 
     assert {user.id for user in ClubUser.core_discount_listing(today)} == {1}
 
 
 def test_core_discount_listing_selects_only_members_without_coupon(test_db):
     today = date(2023, 8, 22)
-    create_user(1, subscribed_days=500, is_member=True, coupon=None, expires_at=datetime(2023, 8, 25))
-    create_user(2, subscribed_days=500, is_member=True, coupon='ABCD12345', expires_at=datetime(2023, 8, 25))
+    create_user(
+        1,
+        subscribed_days=500,
+        is_member=True,
+        coupon=None,
+        expires_at=datetime(2023, 8, 25),
+    )
+    create_user(
+        2,
+        subscribed_days=500,
+        is_member=True,
+        coupon="ABCD12345",
+        expires_at=datetime(2023, 8, 25),
+    )
 
     assert {user.id for user in ClubUser.core_discount_listing(today)} == {1}
 
 
-def test_core_discount_listing_selects_only_members_whose_membership_expire_soon(test_db):
+def test_core_discount_listing_selects_only_members_whose_membership_expire_soon(
+    test_db,
+):
     today = date(2023, 8, 22)
-    create_user(1, subscribed_days=500, is_member=True, coupon=None, expires_at=datetime(2023, 8, 25))
-    create_user(2, subscribed_days=500, is_member=True, coupon=None, expires_at=datetime(2023, 10, 25))
+    create_user(
+        1,
+        subscribed_days=500,
+        is_member=True,
+        coupon=None,
+        expires_at=datetime(2023, 8, 25),
+    )
+    create_user(
+        2,
+        subscribed_days=500,
+        is_member=True,
+        coupon=None,
+        expires_at=datetime(2023, 10, 25),
+    )
 
     assert {user.id for user in ClubUser.core_discount_listing(today)} == {1}
 
@@ -567,10 +619,12 @@ def test_user_messages_count_private(test_db):
 def test_user_recent_content_size(test_db):
     user = create_user(1)
 
-    create_message(1, user, created_at=datetime(2021, 2, 15), content='0123456789')
-    create_message(2, user, created_at=datetime(2021, 3, 10), content='0123456789')
-    create_message(3, user, created_at=datetime(2021, 3, 15), content='0123456789')
-    create_message(4, user, created_at=datetime(2021, 3, 15), content='0123456789', is_private=True)
+    create_message(1, user, created_at=datetime(2021, 2, 15), content="0123456789")
+    create_message(2, user, created_at=datetime(2021, 3, 10), content="0123456789")
+    create_message(3, user, created_at=datetime(2021, 3, 15), content="0123456789")
+    create_message(
+        4, user, created_at=datetime(2021, 3, 15), content="0123456789", is_private=True
+    )
 
     assert user.recent_content_size(today=date(2021, 4, 1)) == 20
 
@@ -578,10 +632,12 @@ def test_user_recent_content_size(test_db):
 def test_user_recent_content_size_private(test_db):
     user = create_user(1)
 
-    create_message(1, user, created_at=datetime(2021, 2, 15), content='0123456789')
-    create_message(2, user, created_at=datetime(2021, 3, 10), content='0123456789')
-    create_message(3, user, created_at=datetime(2021, 3, 15), content='0123456789')
-    create_message(4, user, created_at=datetime(2021, 3, 15), content='0123456789', is_private=True)
+    create_message(1, user, created_at=datetime(2021, 2, 15), content="0123456789")
+    create_message(2, user, created_at=datetime(2021, 3, 10), content="0123456789")
+    create_message(3, user, created_at=datetime(2021, 3, 15), content="0123456789")
+    create_message(
+        4, user, created_at=datetime(2021, 3, 15), content="0123456789", is_private=True
+    )
 
     assert user.recent_content_size(today=date(2021, 4, 1), private=True) == 30
 
