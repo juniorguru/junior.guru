@@ -46,7 +46,7 @@ def main():
         logger.info(f"Members without offer: {len(members)}")
         logger.debug(f"Members without offer: {repr_members(members)}")
 
-    if members:
+    if True:
         logger.info(f"Fetching details about the {COUPON_SLUG!r} discount")
         memberful = MemberfulAPI()
         coupons = memberful.get_nodes("""
@@ -69,7 +69,7 @@ def main():
             }
         """)
         discount_info = get_discount_info(coupons, COUPON_SLUG)
-
+    if members:
         logger.info("Sending offers")
         member_ids = [member.id for member in members]
         discord_sync.run(offer_core_discounts, discount_info, member_ids)
@@ -84,7 +84,7 @@ def is_recent_reminder(message: ClubMessage, today=None, days=REMINDER_PERIOD_DA
 
 
 def repr_members(members) -> str:
-    return sorted([member.display_name for member in members], key=str.lower)
+    return ', '.join(sorted([member.display_name for member in members], key=str.lower))
 
 
 def get_discount_info(coupons, slug: str) -> dict:

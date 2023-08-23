@@ -442,11 +442,10 @@ class SubscriptionActivity(BaseModel):
             .order_by(cls.happened_at)
 
     @classmethod
-    def account_subscribed_at(cls, account_id: int) -> datetime:
-        first_activity = cls.account_listing(account_id) \
-            .limit(1) \
-            .get()
-        return first_activity.happened_at
+    def account_subscribed_at(cls, account_id: int) -> datetime | None:
+        first_activity = cls.account_listing(account_id).first()
+        if first_activity:
+            return first_activity.happened_at
 
     @classmethod
     def account_subscribed_days(cls, account_id: int, today: date = None) -> int:
