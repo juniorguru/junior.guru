@@ -109,11 +109,19 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
 </section>
 
 {#
-    TODO top odkazy
-<h2>Klub doporučuje</h2>
-#}
-
-{#
-    TODO top temata
-<h2>Co se řeší v klubu</h2>
+<section class="section">
+  <h2 class="section-heading">{{ 'chat'|icon }} Co se řeší v klubu</h2>
+  {% for channel_digest in channels_digest %}
+    <p><code>
+    {{ channel_digest|pprint }}
+    </code></p>
+    <p>
+      <a href="https://discord.com/channels/{{ club_guild_id }}/{{ channel_digest.channel_id }}/"
+        target="_blank"
+        rel="noopener">
+        {{- channel_digest.channel_name -}}
+      </a>
+    </p>
+  {% endfor %}
+</section>
 #}
