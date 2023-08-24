@@ -1,0 +1,25 @@
+.section {
+  position: relative;
+  padding-top: map-get($spacers, 5);
+  margin: map-get($spacers, 5) 0;
+  border-top: 2px solid $body-color;
+}
+
+.section-heading {
+  @extend .fs-4;
+  @extend .font-monospace;
+  @extend .text-uppercase;
+  @extend .m-0;
+  position: absolute;
+  top: 0;
+  // left: $spacer;
+  padding-right: map-get($spacers, 2);
+  font-weight: $font-weight-normal;
+  color: $body-color;
+  background: $jg-white;
+  transform: translate(0, -50%);
+}
+
+.section-heading .bi {
+  margin-right: -1 * map-get($spacers, 2);
+}

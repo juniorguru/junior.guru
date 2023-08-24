@@ -6,29 +6,29 @@
   100% { color: $body-color; }
 }
 
-.document h1 {
+.document > h1 {
   padding-bottom: map-get($spacers, 1);
   margin-bottom: $main-spacer;
   border-bottom: map-get($border-widths, 3) solid $body-color;
 }
 
-.document .lead {
+.document > .lead {
   margin-bottom: $main-spacer;
 }
 
-.document h2 {
+.document > h2 {
   margin-top: $main-spacer;
 }
 
-.document h3 {
+.document > h3 {
   margin-top: $document-spacer;
 }
 
-.document p a[role=""]:visited { // skips role="button"
+.document > p a[role=""]:visited { // skips role="button"
   color: $body-color;
 }
 
-.document h2 .bi {
+.document > h2 .bi {
   @extend .fs-3;
   margin-right: map-get($spacers, 1);
   line-height: $headings-line-height;
@@ -63,21 +63,21 @@
   color: $primary;
 }
 
-.document h1 .headerlink {
+.document > h1 .headerlink {
   @extend .visually-hidden;
 }
 
-.document h2:target,
-.document h3:target,
-.document h4:target {
+.document > h2:target,
+.document > h3:target,
+.document > h4:target {
   animation: headerlink-highlight 4s ease-out 1;
 }
 
-.document ul[class=""] { // skips components using ul/li markup
+.document > ul[class=""] { // skips components using ul/li markup
   padding-left: 0;
 }
 
-.document ul[class=""] li { // skips components using ul/li markup
+.document > ul[class=""] li { // skips components using ul/li markup
   padding-left: 2.5ch;
   list-style-type: none;
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-dot' viewBox='0 0 16 16'><path d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/></svg>");
