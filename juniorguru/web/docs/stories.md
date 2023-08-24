@@ -82,7 +82,7 @@ Film realisticky popisuje nejen úspěchy, ale i těžkosti celé Tomášovy ces
     'https://dafilms.cz/film/12793-nova-sichta',
     'Tady si můžeš film legálně pustit, nebo i stáhnout.',
     badge_icon='play-circle-fill',
-    badge_text='65 Kč',
+    badge_text='65 Kč',
   ) }}
 
   {{ link_card(
@@ -90,7 +90,7 @@ Film realisticky popisuje nejen úspěchy, ale i těžkosti celé Tomášovy ces
     'https://kviff.tv/katalog/nova-sichta',
     'Tady si můžeš film legálně pustit, nebo i stáhnout.',
     badge_icon='play-circle-fill',
-    badge_text='70 Kč',
+    badge_text='70 Kč',
   ) }}
 
   {{ link_card(
@@ -103,16 +103,17 @@ Film realisticky popisuje nejen úspěchy, ale i těžkosti celé Tomášovy ces
 ## Další příběhy
 
 {% for story in stories %}
-  {% set small %}
-    {{ story.publisher }} &mdash; {{ '{:%-d.%-m.%Y}'.format(story.date) }}
-  {% endset %}
+  {# {% set small %}
+    {{ story.publisher }} &mdash; {{ '{:%-d.%-m.%Y}'.format() }}
+  {% endset %} #}
   {{ news_card(
     story.title,
     story.url,
     story.image_path,
     'Doprovodná fotka k příběhu',
     subtitle=story.name,
-    small=small,
+    category=story.publisher,
+    date=story.date,
     external=true)
   }}
 {% endfor %}

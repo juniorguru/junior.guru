@@ -217,3 +217,7 @@ def sibling_page(page: Page, offset: int) -> StructureItem | None:
         return page.parent.children[sibling_index]
     except (AttributeError, IndexError):
         return None
+
+
+def skip(items: Iterable, n: int) -> list:
+    return list(items)[n:]

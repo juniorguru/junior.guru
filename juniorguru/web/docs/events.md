@@ -46,7 +46,7 @@ Nepořizujeme profesionální záznam, ale snažíme se alespoň nahrát obrazov
       event.avatar_path,
       event.bio_name,
       subtitle=event.bio_name,
-      small='{:%-d.%-m.%Y}'.format(event.start_at))
+      date=event.start_at)
     }}
   {% endfor %}
 {% else %}
@@ -62,6 +62,6 @@ Nepořizujeme profesionální záznam, ale snažíme se alespoň nahrát obrazov
     event.avatar_path,
     event.bio_name,
     subtitle=event.bio_name,
-    small='{:%-d.%-m.%Y}'.format(event.start_at))
+    date=event.start_at)
   }}
 {% endfor %}

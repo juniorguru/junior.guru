@@ -48,7 +48,7 @@
 .media-card:hover .media-card-image {
   filter: grayscale(0%);
   opacity: 1;
-  transition: all .2s ease-out;
+  transition: $transition-base;
 }
 
 .media-card-button {
@@ -80,7 +80,7 @@
   margin-left: .5rem;
 }
 
-.media-card-header {
+.media-card-link-section {
   position: relative;
 }
 
@@ -92,6 +92,10 @@
   margin: 0;
 }
 
+.media-card-title a { text-decoration: none; }
+.media-card-title a:hover,
+.media-card-title a:focus,
+.media-card-title a:active { text-decoration: underline; }
 .media-card-title a:visited { color: $link-color; }
 .media-card-title a:visited:hover { color: $link-hover-color; }
 

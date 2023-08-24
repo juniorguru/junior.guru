@@ -23,8 +23,7 @@
 {% endcall %}
 
 {% if active_partnership %}
-  {{ link_card(course_provider.name, course_provider.url, highlighted=True,
-               badge_icon='star', badge_text='Partner') }}
+  {{ link_card(course_provider.name, course_provider.url, highlighted=True) }}
 {% else %}
   {{ link_card(course_provider.name, course_provider.url, nofollow=True) }}
 {% endif %}

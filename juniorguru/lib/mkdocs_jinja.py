@@ -34,6 +34,7 @@ TEMPLATE_FILTERS = [
     "toc",
     "parent_page",
     "sibling_page",
+    "skip",
 ]
 
 

@@ -132,7 +132,7 @@
   <div class="link-card-header">
     {{ img(screenshot_image_url, title, 640, 360, class='link-card-image') }}
     {% if badge_icon and badge_text %}
-      <div class="link-card-icon">
+      <div class="link-card-badge">
         {{ badge_icon|icon }} {{ badge_text }}
       </div>
     {% endif %}
@@ -162,7 +162,7 @@
 <div class="media-card"
   data-screenshot-source-url="{{ screenshot_source_url }}"
   data-screenshot-image-url="{{ screenshot_image_url }}">
-  <div class="media-card-header">
+  <div class="media-card-link-section">
     <div class="media-card-image-cover">
       {{ img(screenshot_image_url, title, 640, 360, class='media-card-image') }}
       <div class="media-card-button">
@@ -194,7 +194,7 @@
 
 {% macro podcast_card(podcast_episode, caption=None) %}
 <div class="media-card">
-  <div class="media-card-header">
+  <div class="media-card-link-section">
     <h4 class="media-card-title">{{ podcast_episode.format_title() }}</h4>
   </div>
   <div class="media-card-body">
@@ -213,24 +213,32 @@
 {% endmacro %}
 
 
-{% macro news_card(title, url, image_path, image_alt, subtitle=None, small=None, external=False) %}
+{% macro news_card(title, url, image_path, image_alt, category=None, subtitle=None, date=None, external=False) %}
 <div class="news-card">
-  <div class="news-card-media">
-    {{ img('static/' + image_path, image_alt, 100, 100, class='news-card-image') }}
-  </div>
-  <div class="news-card-body">
-    <h4 class="news-card-title">
-      <a{% if external %}
-          target="_blank"
-          rel="noopener"
-          data-metrics-utm
-          data-metrics-utm-medium="successstory"
-        {% endif %}
-        href="{{ url }}"
-        class="news-card-link">{{ title }}</a>
-    </h4>
-    {% if subtitle %}<h5 class="news-card-subtitle">{{ subtitle }}</h5>{% endif %}
-    {% if small %}<p class="news-card-text"><small>{{ small }}</small></p>{% endif %}
+  <div class="news-card-row">
+    <div class="news-card-media">
+      {{ img('static/' + image_path, image_alt, 100, 100, class='news-card-image') }}
+    </div>
+    <div class="news-card-body">
+      <h4 class="news-card-title">
+        <a{% if external %}
+            target="_blank"
+            rel="noopener"
+            data-metrics-utm
+            data-metrics-utm-medium="successstory"
+          {% endif %}
+          href="{{ url }}"
+          class="news-card-link">{{ title }}</a>
+      </h4>
+      {% if subtitle %}<h5 class="news-card-subtitle">{{ subtitle }}</h5>{% endif %}
+      {% if category or date %}
+        <p class="news-card-details">
+          {% if category %}<strong>{{ category }}</strong>{% endif %}
+          {% if category and date %}<small>&ndash;</small>{% endif %}
+          {% if date %}<small>{{ '{:%-d.%-m.%Y}'.format(date) }}</small>{% endif %}
+        </p>
+      {% endif %}
+    </div>
   </div>
 </div>
 {% endmacro %}

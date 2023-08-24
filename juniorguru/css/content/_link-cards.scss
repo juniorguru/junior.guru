@@ -62,10 +62,10 @@
 .link-card:hover .link-card-image {
   filter: grayscale(0%);
   opacity: 1;
-  transition: all .2s ease-out;
+  transition: $transition-base;
 }
 
-.link-card-icon {
+.link-card-badge {
   @extend .badge;
   position: absolute;
   top: map-get($spacers, 2);
@@ -94,7 +94,12 @@
 
 .link-card-link {
   @extend .stretched-link;
+  text-decoration: none;
 }
+
+.link-card-link:hover,
+.link-card-link:focus,
+.link-card-link:active { text-decoration: underline; }
 
 .link-card-body {
   @extend .card-body;

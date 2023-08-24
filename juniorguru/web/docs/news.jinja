@@ -15,13 +15,26 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
 <h2>Podcast</h2>
 {% set podcast_episode = podcast_episodes|list|first %}
 {{ news_card(
-  podcast_episode.format_title(affiliation=False),
+  podcast_episode.format_title(affiliation=false),
   pages|docs_url(podcast_episode.page_url)|url,
   podcast_episode.image_path,
   podcast_episode.format_title(),
+  category='Nejnovější',
   subtitle=podcast_episode.guest_affiliation,
-  small='{:%-d.%-m.%Y}'.format(podcast_episode.publish_on))
+  date=podcast_episode.publish_on)
 }}
+
+{% set podcast_episode = podcast_episodes|list|skip(1)|sample(1)|first %}
+{{ news_card(
+  podcast_episode.format_title(affiliation=false),
+  pages|docs_url(podcast_episode.page_url)|url,
+  podcast_episode.image_path,
+  podcast_episode.format_title(),
+  category='Tip z archivu',
+  subtitle=podcast_episode.guest_affiliation,
+  date=podcast_episode.publish_on)
+}}
+
 <p class="text-center">
   <a class="btn btn-outline-primary" href="{{ pages|docs_url('podcast.md')|url }}">
     {{ 'list'|icon }}
@@ -36,9 +49,26 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
   pages|docs_url(event.page_url)|url,
   event.avatar_path,
   event.bio_name,
+  category='Nejnovější',
   subtitle=event.bio_name,
-  small='{:%-d.%-m.%Y}'.format(event.start_at))
+  date=event.start_at)
 }}
+
+{% if events_planned %}
+  {% set event = events_archive|sample(1)|first %}
+{% else %}
+  {% set event = events_archive|list|skip(1)|sample(1)|first %}
+{% endif %}
+{{ news_card(
+  event.title,
+  pages|docs_url(event.page_url)|url,
+  event.avatar_path,
+  event.bio_name,
+  category='Tip z archivu',
+  subtitle=event.bio_name,
+  date=event.start_at)
+}}
+
 <p class="text-center">
   <a class="btn btn-outline-primary" href="{{ pages|docs_url('events.md')|url }}">
     {{ 'list'|icon }}
@@ -48,18 +78,29 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
 
 <h2>Příběhy</h2>
 {% set story = stories|list|first %}
-{% set small %}
-  {{ story.publisher }} &mdash; {{ '{:%-d.%-m.%Y}'.format(story.date) }}
-{% endset %}
 {{ news_card(
   story.title,
   story.url,
   story.image_path,
   'Doprovodná fotka k příběhu',
+  category='Nejnovější',
   subtitle=story.name,
-  small=small,
+  date=story.date,
   external=true)
 }}
+
+{% set story = stories|list|skip(1)|sample(1)|first %}
+{{ news_card(
+  story.title,
+  story.url,
+  story.image_path,
+  'Doprovodná fotka k příběhu',
+  category='Tip z archivu',
+  subtitle=story.name,
+  date=story.date,
+  external=true)
+}}
+
 <p class="text-center">
   <a class="btn btn-outline-primary" href="{{ pages|docs_url('stories.md')|url }}">
     {{ 'list'|icon }}

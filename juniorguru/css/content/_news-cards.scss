@@ -1,7 +1,5 @@
 .news-card {
   @extend .card;
-  display: flex;
-  flex-direction: row;
   margin: 0 0 map-get($spacers, 4) 0;
   overflow: hidden;
   background: $jg-blue-light;
@@ -11,7 +9,21 @@
 .news-card:hover {
   background: lighten($jg-blue-light, 1%);
   border-color: $jg-blue-light;
-  transition: all .2s ease-out;
+  transition: $transition-base;
+}
+
+.news-card-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.news-card-header {
+  @extend .card-header;
+  font-family: $font-family-monospace;
+  color: $text-muted;
+  text-transform: uppercase;
+  background: $jg-white;
+  border-color: $jg-blue-light;
 }
 
 .news-card-media {
@@ -29,7 +41,7 @@
 }
 
 .news-card:hover .news-card-image {
-  transition: all .2s ease-out;
+  transition: $transition-base;
 }
 
 .news-card-title {
@@ -40,6 +52,7 @@
 
 .news-card-subtitle {
   @extend .fs-6;
+  font-weight: $font-weight-normal;
 }
 
 .news-card-title a:visited { color: $link-color; }
@@ -47,13 +60,24 @@
 
 .news-card-link {
   @extend .stretched-link;
+  text-decoration: none;
 }
+
+.news-card-link:hover,
+.news-card-link:focus,
+.news-card-link:active { text-decoration: underline; }
 
 .news-card-body {
   @extend .card-body;
   padding-top: $spacer;
 }
 
-.news-card-text {
+.news-card-details {
   @extend .card-text;
+  text-transform: uppercase;
+}
+
+.news-card-details strong {
+  font-size: $small-font-size;
+  font-weight: $font-weight-medium;
 }

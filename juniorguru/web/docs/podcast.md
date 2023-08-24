@@ -59,11 +59,12 @@ Poučky praví, že podcast se stává kvalitním a slavným, až když se auto�
 
 {% for podcast_episode in podcast_episodes %}
   {{ news_card(
-    podcast_episode.format_title(number=true, affiliation=False),
+    podcast_episode.format_title(number=false, affiliation=false),
     pages|docs_url(podcast_episode.page_url)|url,
     podcast_episode.image_path,
     podcast_episode.format_title(),
     subtitle=podcast_episode.guest_affiliation,
-    small='{:%-d.%-m.%Y}'.format(podcast_episode.publish_on))
+    category="Epizoda {}".format(podcast_episode.number),
+    date=podcast_episode.publish_on)
   }}
 {% endfor %}
