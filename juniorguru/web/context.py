@@ -1,5 +1,5 @@
-from datetime import date, timedelta
 import os
+from datetime import date, timedelta
 from urllib.parse import urljoin
 
 import arrow
@@ -116,8 +116,10 @@ def on_docs_context(context):
     context["stories"] = Story.listing()
 
     # news.jinja
-    context['club_guild_id'] = CLUB_GUILD
-    context["channels_digest"] = ClubMessage.digest_channels(date.today() - timedelta(days=7), limit=5)
+    context["club_guild_id"] = CLUB_GUILD
+    context["channels_digest"] = ClubMessage.digest_channels(
+        date.today() - timedelta(days=7), limit=5
+    )
 
 
 @db.connection_context()
