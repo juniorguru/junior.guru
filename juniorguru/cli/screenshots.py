@@ -49,7 +49,6 @@ PLAYWRIGHT_WORKERS = 3
 PLAYWRIGHT_RETRIES = 3
 
 HIDDEN_ELEMENTS = [
-    # generic annoyances
     '[class*="cookie"]:not(html,body)',
     '[id*="cookie"]:not(html,body)',
     '[class*="rc-anchor"]',
@@ -78,6 +77,8 @@ HIDDEN_ELEMENTS = [
     '[class*="consent-banner"]',
     '[id*="consent-manager"]',
     '[class*="consent-manager"]',
+    '[id*="cky-consent"]',
+    '[class*="cky-consent"]',
     '[data-section-name*="cookie"]',
     '[data-component-name*="cookie"]',
     ".alert-dismissible",
@@ -90,7 +91,6 @@ HIDDEN_ELEMENTS = [
     ".tawk-min-container",
     ".fb_iframe_widget",
     ".fb_dialog",
-    # specific sites
     "#cc--main",  # seduo.cz
     "#cc_div",  # seduo.cz
     '[class*="frb-"]',  # wikipedia.org
@@ -107,8 +107,10 @@ HIDDEN_ELEMENTS = [
     "ir-moustache",  # udacity.com
     ".butterBar",  # medium.com
     "#banners",  # trello.com
-    "body > #selectLanguage",  # code.org
+    "body.modal-open > #selectLanguage",  # code.org
+    "body.modal-open > .modal.fade",  # code.org
     '[style*="Toaster-indicatorColor"]',  # reddit.com
+    'reddit-cookie-banner',  # reddit.com
     "#axeptio_overlay",  # welcometothejungle.com
     '[class*="Modal_modalBackground__"]',  # make.com
     ".hsbeacon-chat__button",  # fakturoid.cz

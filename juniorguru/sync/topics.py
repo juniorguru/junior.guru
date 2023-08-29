@@ -62,7 +62,6 @@ KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value
     r'nau[čc][.\s]?m[ěe][.\s]?it': 'naucmeit',
     r'nau[čc][.\s]?se[.\s]?python': 'naucsepython',
     r'it\s*v\s*kurze': 'itvkurze',
-    r'gamedevhub': 'gamedevhub',
     r'pluralsight': 'pluralsight',
     r'praha\s*coding\s*school': 'prahacodingschool',
     r'hackni\s*svou\s*budoucnost': 'hacknisvoubudoucnost',
@@ -81,6 +80,8 @@ KEYWORDS = {re.compile(r'\b' + key + r'\b', re.IGNORECASE): value for key, value
     r'data\s*camp\w*': 'datacamp',
     r'(it\s*)?step(\.org)?': 'step',
     r'coders\s*lab': 'coderslab',
+    r'kitner\w*': 'radekkitner',
+    r'tvrd[íi]kov\w+': 'lucietvrdikova',
 }.items()}
 
 TOPIC_CHANNELS = {re.compile(key): value for key, value in {

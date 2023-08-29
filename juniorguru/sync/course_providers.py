@@ -59,9 +59,12 @@ def main():
     data = response.json()
     for page in data['pages']:
         slug = page['value'].replace('/courses/', '')
-        course_provider = CourseProvider.get_by_slug(slug)
-        course_provider.page_pageviews = page['pageviews']
-        course_provider.save()
+        try:
+            course_provider = CourseProvider.get_by_slug(slug)
+            course_provider.page_pageviews = page['pageviews']
+            course_provider.save()
+        except CourseProvider.DoesNotExist:
+            logger.warning(f'Course provider {slug!r} not found in the database')
 
 
 def raise_if_too_long(fn: Callable[..., str]) -> Callable[..., str]:
