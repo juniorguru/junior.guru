@@ -784,4 +784,20 @@ Ten první důvod je prostě meh, ale ty další dva jsou v pohodě a myslím, �
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1143484428270706689
+Jak vybrat kurz? <@1118626383183237200> jede! Pište, co si o tom myslíte 🙂 
+
+⚠️ <:linkedin:915267970752712734> **Bohužel je potřeba být přihlášený/á na LinkedIn, jinak se to nenačte**
+
+https://www.linkedin.com/pulse/nahl%2525C3%2525A9dn%2525C4%25259Bte-za-oponu-jak-si-vybrat-kurz-lucie-tvrd%2525C3%2525ADkov%2525C3%2525A1%3FtrackingId=9EGx%252FRo1ttWBtBvGWaspzQ%253D%253D/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1143156636941299712/1143156636941299712
+https://2learn.cz/kurzy 
+vhodné pro začátečníky, i ty kteří si už něco zkoušeli
+učí to můj známý, který to umí fakt dobře vysvětlit, mohu jen doporučit 🙂
+---
+
+
 #} -->

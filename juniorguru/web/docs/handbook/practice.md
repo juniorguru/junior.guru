@@ -981,4 +981,13 @@ Zajímavý článek o tom, jak použít GitHub API a najít zajímavé nové pro
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789087476072710174/1143045188885942314
+Taky jste v záčátku hledali kde ja jaký znak?
+https://klavesnice.czechitas-podklady.cz/
+
+A moje frontendová verze v PDF ke stažení https://discord.com/channels/769966886598737931/789087476072710174/1090957362438869092
+(založena na pythonní https://pyvec.github.io/cheatsheets/keyboard/keyboard-cs.pdf)
+---
+
+
 #} -->

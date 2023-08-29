@@ -241,4 +241,11 @@ zdroj: https://twitter.com/b0rk/status/1570060516839641092
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1144270855375958016/1144281111594291330
+Přidávám volný překlad [klasického článku](https://solhsa.com/dontask.html), kde je vysvětleno, proč není nejlepší se ptát tak, jak se ptáš.
+—————
+https://hackmd.io/@benabraham/ptej-se-rovnou
+---
+
+
 #} -->
