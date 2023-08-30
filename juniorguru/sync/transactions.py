@@ -3,7 +3,6 @@ import re
 from datetime import date, datetime
 from pathlib import Path
 from pprint import pformat
-import time
 
 import click
 import requests
