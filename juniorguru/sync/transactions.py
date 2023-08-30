@@ -3,6 +3,7 @@ import re
 from datetime import date, datetime
 from pathlib import Path
 from pprint import pformat
+import time
 
 import click
 import requests
@@ -137,7 +138,10 @@ def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_
         transactions = list(client.period(from_date=str(from_date), to_date=str(to_date)))
     except requests.HTTPError as e:
         logger.error(f"FioBank API error: {e.response.text}")
-        raise
+        raise e
+    except requests.ConnectionError:
+        logger.error("FioBank API connection error!")
+        transactions = []
 
     db_records = []
     doc_records = []
