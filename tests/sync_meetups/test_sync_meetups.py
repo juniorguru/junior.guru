@@ -76,7 +76,10 @@ def test_parse_meetup_com_location():
         "country": "cz",
     }
 
-    assert parse_meetup_com_location(venue) == 'Pipedrive, Pernerova 697/35, Karlín, Praha-Praha 8, CZ'
+    assert (
+        parse_meetup_com_location(venue)
+        == "Pipedrive, Pernerova 697/35, Karlín, Praha-Praha 8, CZ"
+    )
 
 
 @pytest.mark.parametrize(

@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 from functools import cached_property, wraps
 from pathlib import Path
 from time import perf_counter_ns
@@ -271,9 +271,13 @@ def close(context):
     exception = sys.exception()
     sync = context.obj["sync"]
     if exception:
-        logger.error(f"Sync #{sync.id} crashed after {sync.count_commands()} commands recorded")
+        logger.error(
+            f"Sync #{sync.id} crashed after {sync.count_commands()} commands recorded"
+        )
     else:
-        logger.debug(f"Sync #{sync.id} done with {sync.count_commands()} commands recorded")
+        logger.debug(
+            f"Sync #{sync.id} done with {sync.count_commands()} commands recorded"
+        )
     times = sync.times_min()
     if times:
         times_repr = ", ".join(

@@ -9,8 +9,8 @@ import click
 import discord
 import ics
 import requests
-from juniorguru_chick.lib.threads import create_thread, ensure_thread_name
 import teemup
+from juniorguru_chick.lib.threads import create_thread, ensure_thread_name
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
