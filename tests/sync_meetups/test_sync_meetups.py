@@ -13,9 +13,6 @@ from juniorguru.sync.meetups import (
     generate_thread_message_content,
     is_meetup_scheduled_event,
     parse_icalendar,
-    parse_json_dl,
-    parse_json_dl_location,
-    parse_meetup_com,
     parse_meetup_com_location,
     parse_meetup_url,
     thread_name,
@@ -35,16 +32,6 @@ def icalendar_content() -> str:
 @pytest.fixture
 def icalendar_tentative_content() -> str:
     return (Path(__file__).parent / "pyvo_tentative.ics").read_text()
-
-
-@pytest.fixture
-def meetup_com_content() -> str:
-    return (Path(__file__).parent / "meetup_com.html").read_text()
-
-
-@pytest.fixture
-def json_dl_content() -> str:
-    return (Path(__file__).parent / "json_dl.html").read_text()
 
 
 @pytest.fixture
@@ -80,55 +67,16 @@ def test_parse_icalendar_skips_tentative(icalendar_tentative_content: str):
     assert [event["url"] for event in events] == ["https://pyvo.cz/brno-pyvo/2011-04/"]
 
 
-def test_parse_meetup_com(meetup_com_content: str):
-    events = parse_meetup_com(meetup_com_content)
-    keys = set(itertools.chain.from_iterable(event.keys() for event in events))
-
-    assert keys == {"name_raw", "starts_at", "location_raw", "url"}
-
-
-def test_parse_meetup_com_provides_timezone_aware_datetime(meetup_com_content: str):
-    events = parse_meetup_com(meetup_com_content)
-    have_timezone = [event["starts_at"].tzinfo for event in events]
-
-    assert all(have_timezone)
-
-
 def test_parse_meetup_com_location():
-    apollo_state_venue = {
-        "__typename": "Venue",
-        "id": "27152599",
+    venue = {
         "name": "Pipedrive",
         "address": "Pernerova 697/35, Karlín",
         "city": "Praha-Praha 8",
-        "state": "",
+        "state": None,
         "country": "cz",
     }
 
-    assert parse_meetup_com_location(apollo_state_venue) == 'Pipedrive, Pernerova 697/35, Karlín, Praha-Praha 8, CZ'
-
-
-def test_parse_json_dl(json_dl_content: str):
-    events = parse_json_dl(json_dl_content, "https://www.meetup.com/reactgirls/events/")
-    keys = set(itertools.chain.from_iterable(event.keys() for event in events))
-
-    assert keys == {"name_raw", "starts_at", "location_raw", "url"}
-
-
-def test_parse_json_dl_provides_timezone_aware_datetime(json_dl_content: str):
-    events = parse_json_dl(json_dl_content, "https://www.meetup.com/reactgirls/events/")
-    have_timezone = [event["starts_at"].tzinfo for event in events]
-
-    assert all(have_timezone)
-
-
-def test_parse_json_dl_location():
-    json_dl_location = {'@type': 'Place', 'name': 'Mews', 'address': {'@type': 'PostalAddress', 'addressLocality': 'Praha-Praha 2', 'addressCountry': 'Czech Republic', 'streetAddress': 'nám. I. P. Pavlova 5, Vinohrady'}, 'geo': {'@type': 'GeoCoordinates', 'latitude': 50.07499694824219, 'longitude': 14.429851531982422}}
-
-    assert (
-        parse_json_dl_location(json_dl_location)
-        == "Mews, nám. I. P. Pavlova 5, Vinohrady, Praha-Praha 2, Czech Republic"
-    )
+    assert parse_meetup_com_location(venue) == 'Pipedrive, Pernerova 697/35, Karlín, Praha-Praha 8, CZ'
 
 
 @pytest.mark.parametrize(

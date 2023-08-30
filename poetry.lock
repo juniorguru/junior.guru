@@ -3146,6 +3146,21 @@ files = [
 widechars = ["wcwidth"]
 
 [[package]]
+name = "teemup"
+version = "1.0.0"
+description = "If Meetup didn't become a walled garden, the world wouldn't need Teemup"
+optional = false
+python-versions = "==3.11.*"
+files = [
+    {file = "teemup-1.0.0-py3-none-any.whl", hash = "sha256:10bc64b2ea8c23ead1cb23314f01b9d88532a4013d8d40a1059e7d01f679fe6d"},
+    {file = "teemup-1.0.0.tar.gz", hash = "sha256:fa378ecd1e3f1c0c6919d997116038b5c45fd1cc9c313c2ed1f4e4e98f1a566c"},
+]
+
+[package.dependencies]
+cssselect = "1.2.0"
+lxml = "4.9.3"
+
+[[package]]
 name = "text-unidecode"
 version = "1.3"
 description = "The most basic Text::Unidecode port"
@@ -3578,4 +3593,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "6f7f0a6deca08fb24f35784523c9fc8a9b18b677bf9cb89d1bb2aab472ca1afd"
+content-hash = "61f6faa3d8be8186c7abc6db327958155cdd544c98302a12d9cd519bfa931bbd"

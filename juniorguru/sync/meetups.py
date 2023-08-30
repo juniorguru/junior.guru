@@ -1,17 +1,16 @@
 import json
 import re
-from datetime import date, datetime, timedelta
+from datetime import date, timedelta
 from operator import itemgetter
 from pathlib import Path
 from typing import Any
 
 import click
 import discord
-import extruct
 import ics
 import requests
 from juniorguru_chick.lib.threads import create_thread, ensure_thread_name
-from lxml import html
+import teemup
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
@@ -208,44 +207,17 @@ def parse_icalendar(content: str) -> list[dict[str, Any]]:
             if 'tentative-date' not in event.categories]
 
 
-# currently not needed, remove in the future if unused
-def parse_json_dl(content: str, base_url: str) -> list[dict[str, Any]]:
-    data = extruct.extract(content, base_url, syntaxes=['json-ld'])
-    return [dict(name_raw=item['name'],
-                 starts_at=datetime.fromisoformat(item['startDate']),
-                 location_raw=parse_json_dl_location(item['location']),
-                 url=item['url'])
-            for item in data['json-ld']
-            if item['@type'] == 'Event' and base_url in item['url']]
-
-
-# currently not needed, remove in the future if unused
-def parse_json_dl_location(location: dict[str, str]) -> str:
-    return f"{location['name']}, {location['address']['streetAddress']}, {location['address']['addressLocality']}, {location['address']['addressCountry']}"
-
-
 def parse_meetup_com(content: str) -> list[dict[str, Any]]:
-    html_tree = html.fromstring(content)
-    next_data = json.loads(html_tree.cssselect('#__NEXT_DATA__')[0].text_content())
-    apollo_state = next_data['props']['pageProps']['__APOLLO_STATE__']
-    venues = {key: venue
-              for key, venue
-              in apollo_state.items()
-              if key.startswith('Venue:')}
     return [dict(name_raw=event['title'],
-                 starts_at=datetime.fromisoformat(event['dateTime']),
-                 location_raw=parse_meetup_com_location(venues[event['venue']['__ref']]),
-                 url=event['eventUrl'])
-            for key, event
-            in apollo_state.items()
-            if (key.startswith('Event:')
-                and event['isOnline'] == False
-                and event['eventType'] == 'PHYSICAL'
-                and event['status'] == 'ACTIVE')]
+                 starts_at=event['starts_at'],
+                 location_raw=parse_meetup_com_location(event['venue']),
+                 url=event['url'])
+            for event
+            in teemup.parse(content)]
 
 
-def parse_meetup_com_location(location: dict[str, Any]) -> str:
-    parts = [location['name'], location['address'], location['city'], location['state'], location['country'].upper()]
+def parse_meetup_com_location(venue: dict[str, Any]) -> str:
+    parts = [venue['name'], venue['address'], venue['city'], venue['state'], venue['country'].upper()]
     return ", ".join(filter(None, parts))
 
 

@@ -52,6 +52,7 @@ pycircleci = "0.7.0"
 livereload = "2.6.3"
 beautifulsoup4 = "4.12.2"
 czech-sort = "1.1.0"
+teemup = "1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "7.4.0"
