@@ -189,8 +189,9 @@ def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_
         for db_object in Transaction.history():
             f.write(db_object.serialize())
 
-    logger.info('Uploading verbose data to a private Google Sheet for manual audit of possible mistakes')
-    upload_to_google_sheet(doc_key, doc_records)
+    logger.info(f'Uploading {len(doc_records)} records to a private Google Sheet for manual audit of possible mistakes')
+    if doc_records:
+        upload_to_google_sheet(doc_key, doc_records)
 
     logger.info(f'Toggling {len(todos_to_toggle)} Fakturoid todos')
     for todo in todos_to_toggle.values():
