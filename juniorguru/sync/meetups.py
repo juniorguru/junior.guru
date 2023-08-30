@@ -108,9 +108,6 @@ def main(context, channel_id, clear_cache):
         elif feed['format'] == 'meetup_com':
             events.extend([dict(**feed, **event_data)
                            for event_data in parse_meetup_com(feed['data'])])
-        elif feed['format'] == 'json-dl':  # currently not needed, remove in the future if unused
-            events.extend([dict(**feed, **event_data)
-                           for event_data in parse_json_dl(feed['data'], feed['source_url'])])
         else:
             raise ValueError(f"Unknown feed format {feed['format']!r}")
 
