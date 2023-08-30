@@ -11,6 +11,7 @@ import extruct
 import ics
 import requests
 from juniorguru_chick.lib.threads import create_thread, ensure_thread_name
+from lxml import html
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
@@ -38,30 +39,30 @@ FEEDS = [
          poster_path='posters-meetups/pyvo.png',
          format='icalendar',
          source_url='https://pyvo.cz/api/pyvo.ics'),
-    # dict(slug='pydata',
-    #      emoji='<:pydata:1136778714521272350>',
-    #      name=f'{NAME_PREFIX} na akci datařů (PyData)',
-    #      poster_path='posters-meetups/pydata.png',
-    #      format='json-dl',
-    #      source_url='https://www.meetup.com/pydata-prague/'),
-    # dict(slug='reactgirls',
-    #      emoji='<:react:842332165822742539>',
-    #      name=f'{NAME_PREFIX} na akci React Girls',
-    #      poster_path='posters-meetups/reactgirls.png',
-    #      format='json-dl',
-    #      source_url='https://www.meetup.com/reactgirls/events/'),
-    # dict(slug='frontendisti',
-    #      emoji='<:frontendisti:900831766644944936>',
-    #      name=f'{NAME_PREFIX} na akci frontendistů',
-    #      poster_path='posters-meetups/frontendisti.png',
-    #      format='json-dl',
-    #      source_url='https://www.meetup.com/frontendisti/events/'),
-    # dict(slug='pehapkari',
-    #      emoji='<:php:842331754731274240>',
-    #      name=f'{NAME_PREFIX} na akci péhápkářů',
-    #      poster_path='posters-meetups/pehapkari.png',
-    #      format='json-dl',
-    #      source_url='https://www.meetup.com/pehapkari/'),
+    dict(slug='pydata',
+         emoji='<:pydata:1136778714521272350>',
+         name=f'{NAME_PREFIX} na akci datařů (PyData)',
+         poster_path='posters-meetups/pydata.png',
+         format='meetup_com',
+         source_url='https://www.meetup.com/pydata-prague/'),
+    dict(slug='reactgirls',
+         emoji='<:react:842332165822742539>',
+         name=f'{NAME_PREFIX} na akci React Girls',
+         poster_path='posters-meetups/reactgirls.png',
+         format='meetup_com',
+         source_url='https://www.meetup.com/reactgirls/events/'),
+    dict(slug='frontendisti',
+         emoji='<:frontendisti:900831766644944936>',
+         name=f'{NAME_PREFIX} na akci frontendistů',
+         poster_path='posters-meetups/frontendisti.png',
+         format='meetup_com',
+         source_url='https://www.meetup.com/frontendisti/events/'),
+    dict(slug='pehapkari',
+         emoji='<:php:842331754731274240>',
+         name=f'{NAME_PREFIX} na akci péhápkářů',
+         poster_path='posters-meetups/pehapkari.png',
+         format='meetup_com',
+         source_url='https://www.meetup.com/pehapkari/'),
 ]
 
 USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
@@ -105,7 +106,10 @@ def main(context, channel_id, clear_cache):
         if feed['format'] == 'icalendar':
             events.extend([dict(**feed, **event_data)
                            for event_data in parse_icalendar(feed['data'])])
-        elif feed['format'] == 'json-dl':
+        elif feed['format'] == 'meetup_com':
+            events.extend([dict(**feed, **event_data)
+                           for event_data in parse_meetup_com(feed['data'])])
+        elif feed['format'] == 'json-dl':  # currently not needed, remove in the future if unused
             events.extend([dict(**feed, **event_data)
                            for event_data in parse_json_dl(feed['data'], feed['source_url'])])
         else:
@@ -120,6 +124,7 @@ def main(context, channel_id, clear_cache):
 
     logger.info('Processing location')
     for event in events:
+        logger.debug(f"Locating: {event['name_raw']}")
         event['location'] = fetch_location(event['location_raw'])
 
     logger.info(f'Syncing {len(events)} with Discord, using channel #{channel_id}')
@@ -194,17 +199,18 @@ async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
         await discord_event.cancel()
 
 
-def parse_icalendar(text: str) -> list[dict[str, Any]]:
+def parse_icalendar(content: str) -> list[dict[str, Any]]:
     return [dict(name_raw=event.summary,
                  starts_at=event.begin,
                  location_raw=event.location,
                  url=event.url)
-            for event in ics.Calendar(text).events
+            for event in ics.Calendar(content).events
             if 'tentative-date' not in event.categories]
 
 
-def parse_json_dl(html: str, base_url: str) -> list[dict[str, Any]]:
-    data = extruct.extract(html, base_url, syntaxes=['json-ld'])
+# currently not needed, remove in the future if unused
+def parse_json_dl(content: str, base_url: str) -> list[dict[str, Any]]:
+    data = extruct.extract(content, base_url, syntaxes=['json-ld'])
     return [dict(name_raw=item['name'],
                  starts_at=datetime.fromisoformat(item['startDate']),
                  location_raw=parse_json_dl_location(item['location']),
@@ -213,8 +219,34 @@ def parse_json_dl(html: str, base_url: str) -> list[dict[str, Any]]:
             if item['@type'] == 'Event' and base_url in item['url']]
 
 
+# currently not needed, remove in the future if unused
 def parse_json_dl_location(location: dict[str, str]) -> str:
     return f"{location['name']}, {location['address']['streetAddress']}, {location['address']['addressLocality']}, {location['address']['addressCountry']}"
+
+
+def parse_meetup_com(content: str) -> list[dict[str, Any]]:
+    html_tree = html.fromstring(content)
+    next_data = json.loads(html_tree.cssselect('#__NEXT_DATA__')[0].text_content())
+    apollo_state = next_data['props']['pageProps']['__APOLLO_STATE__']
+    venues = {key: venue
+              for key, venue
+              in apollo_state.items()
+              if key.startswith('Venue:')}
+    return [dict(name_raw=event['title'],
+                 starts_at=datetime.fromisoformat(event['dateTime']),
+                 location_raw=parse_meetup_com_location(venues[event['venue']['__ref']]),
+                 url=event['eventUrl'])
+            for key, event
+            in apollo_state.items()
+            if (key.startswith('Event:')
+                and event['isOnline'] == False
+                and event['eventType'] == 'PHYSICAL'
+                and event['status'] == 'ACTIVE')]
+
+
+def parse_meetup_com_location(location: dict[str, Any]) -> str:
+    parts = [location['name'], location['address'], location['city'], location['state'], location['country'].upper()]
+    return ", ".join(filter(None, parts))
 
 
 def is_bot_message(discord_message: discord.Message) -> bool:
