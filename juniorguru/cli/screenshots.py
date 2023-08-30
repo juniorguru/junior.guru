@@ -110,7 +110,7 @@ HIDDEN_ELEMENTS = [
     "body.modal-open > #selectLanguage",  # code.org
     "body.modal-open > .modal.fade",  # code.org
     '[style*="Toaster-indicatorColor"]',  # reddit.com
-    'reddit-cookie-banner',  # reddit.com
+    "reddit-cookie-banner",  # reddit.com
     "#axeptio_overlay",  # welcometothejungle.com
     '[class*="Modal_modalBackground__"]',  # make.com
     ".hsbeacon-chat__button",  # fakturoid.cz
