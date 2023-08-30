@@ -1,3 +1,4 @@
+import sys
 import os
 from functools import cached_property, wraps
 from pathlib import Path
@@ -75,7 +76,11 @@ class Group(click.Group):
                 self._start_sync_command(name, sync)
                 try:
                     context.invoke(fn, *fn_args, **fn_kwargs)
-                finally:
+                except:
+                    sync_command = self._end_sync_command(name, sync)
+                    logger[name].error("Crashed!")
+                    raise
+                else:
                     sync_command = self._end_sync_command(name, sync)
                     logger[name].info(
                         f"Finished in {sync_command.time_diff_min:.1f}min"
@@ -263,14 +268,19 @@ def all(context, print_only):
 
 @click.pass_context
 def close(context):
+    exception = sys.exception()
     sync = context.obj["sync"]
-    logger.debug(f"Sync #{sync.id} done with {sync.count_commands()} commands recorded")
+    if exception:
+        logger.error(f"Sync #{sync.id} crashed after {sync.count_commands()} commands recorded")
+    else:
+        logger.debug(f"Sync #{sync.id} done with {sync.count_commands()} commands recorded")
     times = sync.times_min()
     if times:
         times_repr = ", ".join(
             [f"{name} {time:.1f}min" for name, time in times.items()]
         )
-        logger.info(times_repr)
+        if not exception:
+            logger.info(times_repr)
         total_time = sum(times.values())
         if total_time >= NOTIFY_AFTER_MIN:
             notify("Finished!", f"{total_time:.1f}min")
