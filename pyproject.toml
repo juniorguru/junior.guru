@@ -40,7 +40,7 @@ mkdocs = "1.5.2"
 markupsafe = "2.1.3"
 ics = {version = "0.8.0.dev0", allow-prereleases = true}
 pod2gen = "1.0.3"
-scrapy = "2.10.0"
+scrapy = "2.10.1"
 python-slugify = "8.0.1"
 playwright = "1.37.0"
 click = "8.1.6"
