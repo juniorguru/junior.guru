@@ -1,0 +1,42 @@
+.newsletter {
+  padding: $spacer;
+  background-color: $jg-yellow;
+  border-radius: $border-radius;
+}
+
+.newsletter-heading {
+  @extend .h3;
+  margin-bottom: $spacer;
+}
+
+.newsletter-fieldset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.newsletter-email {
+  flex-grow: 1;
+}
+
+.newsletter-email-control {
+  @extend .form-control;
+  @extend .form-control-lg;
+}
+
+.newsletter-button {
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-left: $spacer;
+}
+
+.newsletter-button-control {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+}
+
+.newsletter-privacy {
+  @extend .form-text;
+}

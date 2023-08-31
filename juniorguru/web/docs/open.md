@@ -231,7 +231,7 @@ Druhým důvodem je malá vypovídající hodnota. Velkou část výnosů tvoř�
 
 Zahrnuji pouze náklady na byznys, ale zase i s daněmi a odvody na zdravotní a sociální pojištění. V roce 2020 je v nich díra, protože kvůli covidu-19 nebyla povinnost je platit. Občas jdou do mínusu (stává se z nich příjem), protože mi úřady něco vrátily.
 
-Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů jako Buffer nebo MailChimp, tisk samolepek, [konzultace](http://janadolejsova.cz/), apod.
+Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů, tisk samolepek, [konzultace](http://janadolejsova.cz/), apod.
 
 {% call note() %}
   {{ 'bar-chart-line'|icon }} Finanční data se každý den stahují přímo z mého podnikatelského účtu u Fio banky.
