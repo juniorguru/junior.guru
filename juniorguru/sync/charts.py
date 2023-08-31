@@ -39,6 +39,7 @@ MILESTONES = [
     (date(2022, 9, 1), 'Zdražení firmám'),
     (date(2022, 12, 30), 'Zdražení členům'),
     (date(2023, 5, 1), 'Vznik katalogu kurzů'),
+    (date(2023, 8, 31), 'Restart newsletteru'),
 ]
 
 CHARTS = {}

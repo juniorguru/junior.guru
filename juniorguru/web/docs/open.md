@@ -823,9 +823,9 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_referrer
         'scales': {'y': {'beginAtZero': true}},
     }|tojson|forceescape }}"></canvas></div></div>
 
-### Sociální sítě
+### Sociální sítě a newsletter
 
-Vývoj počtu sledujících na profilech na relevantních sociálních sítích.
+Vývoj počtu sledujících na profilech na relevantních sociálních sítích a počtu odběratelů [newsletteru](news.md).
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -849,6 +849,12 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích.
                 'label': 'YouTube',
                 'data': charts.followers_breakdown.pop('youtube'),
                 'borderColor': '#dc3545',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'newsletter',
+                'data': charts.followers_breakdown.pop('newsletter'),
+                'borderColor': '#02cabb',
                 'borderWidth': 2,
             },
         ],
