@@ -210,7 +210,8 @@ def parse_meetup_com(content: str) -> list[dict[str, Any]]:
                  location_raw=parse_meetup_com_location(event['venue']),
                  url=event['url'])
             for event
-            in teemup.parse(content)]
+            in teemup.parse(content)
+            if event['venue']]
 
 
 def parse_meetup_com_location(venue: dict[str, Any]) -> str:

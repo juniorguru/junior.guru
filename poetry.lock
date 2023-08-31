@@ -3151,13 +3151,13 @@ widechars = ["wcwidth"]
 
 [[package]]
 name = "teemup"
-version = "1.0.0"
+version = "1.0.1"
 description = "If Meetup didn't become a walled garden, the world wouldn't need Teemup"
 optional = false
 python-versions = "==3.11.*"
 files = [
-    {file = "teemup-1.0.0-py3-none-any.whl", hash = "sha256:10bc64b2ea8c23ead1cb23314f01b9d88532a4013d8d40a1059e7d01f679fe6d"},
-    {file = "teemup-1.0.0.tar.gz", hash = "sha256:fa378ecd1e3f1c0c6919d997116038b5c45fd1cc9c313c2ed1f4e4e98f1a566c"},
+    {file = "teemup-1.0.1-py3-none-any.whl", hash = "sha256:f3ffad44685b7d4d88a2d378995d3745dd4d742414121a1b491311bdd5801ed5"},
+    {file = "teemup-1.0.1.tar.gz", hash = "sha256:755fa043c9ed43a60339b6e1a1e72daeef3e6c108578c36e7a5b3a72b4f4a412"},
 ]
 
 [package.dependencies]
@@ -3597,4 +3597,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "88dac39a6ae7f2fcd2907df400c1592304fb5b9b82bcb9d227b61bf10ab70533"
+content-hash = "edff3f6226847b15f8b5515f5c9bf3033853d9abb9e97145a208a9e60fd151f7"
