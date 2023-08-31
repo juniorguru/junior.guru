@@ -8,7 +8,7 @@ import requests
 from lxml import html
 from playwright.sync_api import TimeoutError, sync_playwright
 
-from juniorguru.cli.sync import main as cli
+from juniorguru.cli.sync import default_from_env, main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.text import extract_text
 from juniorguru.models.base import db
@@ -31,8 +31,10 @@ LINKEDIN_PERSONAL_URL = 'https://www.linkedin.com/posts/honzajavorek_courting-ha
 
 @cli.sync_command()
 @click.option('--history-path', default='juniorguru/data/followers.jsonl', type=click.Path(path_type=Path))
+@click.option('--ecomail-api-key', default=default_from_env('ECOMAIL_API_KEY'))
+@click.option('--ecomail-list', 'ecomail_list_id', default=1, type=int)
 @db.connection_context()
-def main(history_path: Path):
+def main(history_path: Path, ecomail_api_key: str, ecomail_list_id: int):
     logger.info("Preparing database")
     Followers.drop_table()
     Followers.create_table()
@@ -43,11 +45,19 @@ def main(history_path: Path):
         for line in f:
             Followers.deserialize(line)
 
+    month = f'{date.today():%Y-%m}'
+    logger.info(f"Current month: {month}")
+
+    logger.info('Getting newsletter subscribers from Ecomail')
+    response = requests.get(f'https://api2.ecomailapp.cz/lists/{ecomail_list_id}/subscribers',
+                            headers={'key': ecomail_api_key})
+    response.raise_for_status()
+    subscribers_count = response.json()['total']
+    Followers.add(month=month, name='newsletter', count=subscribers_count)
+
     scrapers = {'youtube': scrape_youtube,
                 'linkedin': scrape_linkedin,
                 'linkedin_personal': scrape_linkedin_personal}
-    month = f'{date.today():%Y-%m}'
-    logger.info(f"Scraping {month}: {', '.join(scrapers.keys())}")
     for name, scrape in scrapers.items():
         logger.info(f"Scraping {name!r}")
         if count := scrape():
