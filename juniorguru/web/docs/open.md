@@ -825,7 +825,7 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_referrer
 
 ### Sociální sítě a newsletter
 
-Vývoj počtu sledujících na profilech na relevantních sociálních sítích a počtu odběratelů [newsletteru](news.md).
+Vývoj počtu sledujících na profilech na relevantních sociálních sítích a počtu odběratelů [newsletteru](news.jinja).
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
