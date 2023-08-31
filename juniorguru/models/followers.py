@@ -47,6 +47,14 @@ class Followers(BaseModel):
         return cls.select().order_by(cls.month, cls.name)
 
     @classmethod
+    def get_latest(cls, name: str) -> Self | None:
+        return cls.select() \
+            .where(cls.name == name) \
+            .order_by(cls.month.desc()) \
+            .limit(1) \
+            .get()
+
+    @classmethod
     def breakdown(cls, date: date) -> dict[str, int]:
         breakdown = {name: None for name in cls.names()}
         for followers in cls.select().where(cls.month == f'{date:%Y-%m}'):

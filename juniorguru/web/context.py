@@ -14,6 +14,7 @@ from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.course_provider import CourseProvider
 from juniorguru.models.event import Event
 from juniorguru.models.exchange_rate import ExchangeRate
+from juniorguru.models.followers import Followers
 from juniorguru.models.job import ListedJob
 from juniorguru.models.page import Page
 from juniorguru.models.partner import Partner, Partnership
@@ -116,6 +117,7 @@ def on_docs_context(context):
     context["stories"] = Story.listing()
 
     # news.jinja
+    context['newsletter_subscribers_count'] = Followers.get_latest('newsletter').count
     context["club_guild_id"] = CLUB_GUILD
     context["channels_digest"] = ClubMessage.digest_channels(
         date.today() - timedelta(days=7), limit=5
