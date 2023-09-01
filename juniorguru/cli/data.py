@@ -239,21 +239,3 @@ def make_schema_line_idempotent(schema_line):
         if transformation_re.search(schema_line):
             return transformation_re.sub(replacement, schema_line)
     raise ValueError(f"Unexpected schema line: {schema_line!r}")
-
-
-def merge_unique_lines(path_from: Path, path_to: Path):
-    logger_lines = logger["unique_lines"]
-    logger_lines.info(f"Merging {path_from} to {path_to}")
-    lines = frozenset(path_to.read_text().splitlines(keepends=True))
-    with path_to.open(mode="+a") as f_to:
-        with path_from.open(mode="r") as f_from:
-            for line in f_from:
-                if line not in lines:
-                    f_to.write(line)
-
-
-def is_cache(path: str | Path) -> bool:
-    return any(
-        parent_path.name in (".scrapy", ".sync_cache")
-        for parent_path in Path(path).parents
-    )
