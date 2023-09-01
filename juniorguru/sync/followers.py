@@ -142,7 +142,9 @@ def scrape_linkedin_personal():
             return None
         response_text = str(page.content())
         browser.close()
-    match = re.search(r'([\d,]+)\s*(followers|sledujících)', response_text)
+    html_tree = html.fromstring(response_text)
+    followers_element = html_tree.cssselect('[class*="public-post-author-card__followers"]')[0]
+    match = re.search(r'([\d,]+)\s*(followers|sledujících)', followers_element.text_content())
     try:
         return int(match.group(1).replace(',', ''))
     except (AttributeError, ValueError):
