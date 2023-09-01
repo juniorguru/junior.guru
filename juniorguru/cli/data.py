@@ -111,7 +111,7 @@ def load(persist_dir, move, exclude):
             if any(fnmatch(path.name, pattern) for pattern in exclude):
                 logger.debug(f"Excluding {path}")
             else:
-                logger.info(path)
+                logger.info(f"Loading {path}")
                 load_file(namespace_dir, path, ".", move=move)
     if move:
         shutil.rmtree(persist_dir)
@@ -140,25 +140,26 @@ def persist_file(source_dir, source_path, persist_dir, move=False):
 
 
 def load_file(persist_dir, persist_path, source_dir, move=False):
+    persist_size = persist_path.stat().st_size
     source_path = source_dir / persist_path.relative_to(persist_dir)
     source_path.parent.mkdir(parents=True, exist_ok=True)
-    if source_path.exists() and not filecmp.cmp(
-        persist_path, source_path, shallow=False
-    ):
-        if source_path.suffix == ".db":
-            merge_databases(persist_path, source_path)
-        elif source_path.suffix == ".jsonl":
-            merge_unique_lines(persist_path, source_path)
-        elif is_cache(source_path):
-            pass  # ignore, just a cache which gets regularly cleared anyway
+    if source_path.exists():
+        source_size = source_path.stat().st_size
+        if filecmp.cmp(persist_path, source_path, shallow=False):
+            logger.info(f"Keeping {source_path} ({source_size}b), it's equal to {persist_path} ({persist_size}b)")
         else:
-            raise RuntimeError(
-                f"Conflict loading {persist_path} ({persist_path.stat().st_size}b)"
-                f", file already exists: {source_path} ({source_path.stat().st_size}b)"
-            )
-        if move:
-            persist_path.unlink()
+            if source_path.suffix == ".db":
+                logger.info(f"Merging {source_path} ({source_size}b)"
+                            f" with {persist_path} ({persist_size}b)")
+                merge_databases(persist_path, source_path)
+            else:
+                logger.warning(f"Overwriting {source_path} ({source_size}b)"
+                            f" with {persist_path} ({persist_size}b)")
+                (shutil.move if move else shutil.copy2)(persist_path, source_path)
+            if move:
+                persist_path.unlink()
     else:
+        logger.info(f"Adding {source_path} from {persist_path} ({persist_size}b)")
         (shutil.move if move else shutil.copy2)(persist_path, source_path)
 
 
