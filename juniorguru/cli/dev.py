@@ -1,6 +1,7 @@
 import shutil
 import subprocess
 from pathlib import Path
+import sys
 
 import click
 import pytest
@@ -23,6 +24,11 @@ def main():
 @click.option("--stash/--no-stash", default=False)
 def update(pull, push, stash):
     try:
+        logger.info("Terminating running processes")
+        python_path = sys.executable
+        jg_path = f"{python_path.removesuffix('/python')}/jg"
+        subprocess.run(["pgrep", "-fl", jg_path])  # prints what's getting terminated
+        subprocess.run(["pkill", "-SIGTERM", "-f", jg_path])
         if stash:
             logger.info("Stashing work in progress")
             subprocess.run(["git", "stash"], check=True)
