@@ -119,7 +119,7 @@ async def offer_core_discount_to_member(client: ClubClient, discount_info: dict,
         f"Patříš do jádra téhle komunity ❤️"
         f"\n\n"
         f"Chtěli bychom ti poděkovat za věrnost, ocenit tvé klubové zkušenosti "
-        f"a motivovat tě, aby jsi s námi zůstal{'a' if db_member.has_feminine_name else ''} co nejdéle 🎁"
+        f"a motivovat tě, abys s námi zůstal{'a' if db_member.has_feminine_name else ''} co nejdéle 🎁"
         f"\n\n"
         f"Předplatné ti bude **{db_member.expires_at:%-d.%-m.} končit** a Honza mě pověřil, "
         f"abych ti nabídlo slevu. Pokud chceš, klikni na tlačítko a použij kupón `{discount_info['coupon']}`. "
