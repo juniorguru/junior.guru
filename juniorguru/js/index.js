@@ -1,8 +1,9 @@
-import './toc';
 import './annotations';
+import './charts';
+import './email';
 import './membership';
 import './metrics';
-import './charts';
+import './toc';
 
 import 'instant.page';
 

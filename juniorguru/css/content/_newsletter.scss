@@ -4,6 +4,10 @@
   border-radius: $border-radius;
 }
 
+.newsletter-container *:last-child {
+  margin-bottom: 0;
+}
+
 .newsletter-heading {
   @extend .h3;
   margin-bottom: $spacer;
@@ -14,6 +18,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-bottom: $spacer;
 }
 
 .newsletter-email {
@@ -25,18 +30,33 @@
   @extend .form-control-lg;
 }
 
-.newsletter-button {
+.newsletter-submit {
   flex-grow: 0;
   flex-shrink: 0;
   padding-left: $spacer;
 }
 
-.newsletter-button-control {
+.newsletter-submit-control {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-lg;
 }
 
-.newsletter-privacy {
+.newsletter-note {
   @extend .form-text;
+  @extend .text-muted;
+}
+
+.newsletter-note a {
+  @extend .text-muted;
+}
+
+.newsletter-button {
+  @extend .btn;
+  @extend .btn-primary;
+  margin-bottom: $spacer;
+}
+
+.newsletter-message {
+  @extend .lead;
 }
