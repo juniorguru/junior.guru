@@ -156,7 +156,7 @@ def classify_marketing_survey_answer(text: str) -> str:
         return 'search'
     if re.search(r'\b(komunit\w+|kamar[aá]d\w*|brat\w*|koleg\w*|br[aá]ch\w*|manžel\w*|partner\w*|p[řr][íi]a?tel\w*|přátelé|pratele|zn[áa]m[ée]\w*|doporu[čc]en\w+|Skládanka|Stan\w+ Prokop\w*|Tom\w* Hrn\w*)\b', text, re.I):
         return 'friend'
-    if re.search(r'^od\s+\w{3,}', text.strip(), re.I):
+    if re.search(r'^(tip\s+)?od\s+\w{3,}', text.strip(), re.I):
         return 'friend'
     if re.search(r'\b(\w*hled[aá]\w+|h[ľl]ad[aá]\w+|search|na[šs]la|na[šs]i?el)\b', text, re.I):
         return 'search'
