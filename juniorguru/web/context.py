@@ -117,7 +117,7 @@ def on_docs_context(context):
     context["stories"] = Story.listing()
 
     # news.jinja
-    context['newsletter_subscribers_count'] = Followers.get_latest('newsletter').count
+    context["newsletter_subscribers_count"] = Followers.get_latest("newsletter").count
     context["club_guild_id"] = CLUB_GUILD
     context["channels_digest"] = ClubMessage.digest_channels(
         date.today() - timedelta(days=7), limit=5
