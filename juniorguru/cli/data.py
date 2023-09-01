@@ -154,10 +154,10 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
                 merge_databases(persist_path, source_path)
             else:
                 logger.warning(f"Overwriting {source_path} ({source_size}b)"
-                            f" with {persist_path} ({persist_size}b)")
-                (shutil.move if move else shutil.copy2)(persist_path, source_path)
-            if move:
-                persist_path.unlink()
+                               f" with {persist_path} ({persist_size}b)")
+                shutil.copy2(persist_path, source_path)
+        if move:
+            persist_path.unlink()
     else:
         logger.info(f"Adding {source_path} from {persist_path} ({persist_size}b)")
         (shutil.move if move else shutil.copy2)(persist_path, source_path)
