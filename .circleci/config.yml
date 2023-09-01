@@ -217,6 +217,7 @@ jobs:
                   poetry run jg save-changes juniorguru/data/followers.jsonl --message="record followers 📊🦸‍♂️"
                   poetry run jg save-changes juniorguru/data/transactions.jsonl --message="record transactions 📊💰"
                   poetry run jg save-changes juniorguru/data/subscription_activities.jsonl --message="record subscriptions 📊💳"
+                  poetry run jg save-changes juniorguru/data/exhange_rates.yml --message="record exchange rates 📊💹"
 
   web:
     executor: python-js
