@@ -68,6 +68,17 @@ jobs:
             - ~/.cache/pypoetry/virtualenvs
             - ~/.cache/ms-playwright
             - ./node_modules
+      - restore_cache:
+          key: sync-v1-{{ .Branch }}-{{ checksum ".today" }}
+      - restore_cache:
+          key: jobs-v2-{{ .Branch }}
+      - restore_cache:
+          key: jobs-emails-v2-{{ .Branch }}
+      - restore_cache:
+          key: images-v1-{{ .Branch }}
+      - run:
+          name: Snapshot files
+          command: poetry run jg data snapshot
       - persist_to_workspace:
           root: "~"
           paths:
@@ -103,17 +114,6 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - run:
-          name: Snapshot files
-          command: poetry run jg data snapshot
-      - restore_cache:
-          key: sync-v1-{{ .Branch }}-{{ checksum ".today" }}
-      - restore_cache:
-          key: jobs-v2-{{ .Branch }}
-      - restore_cache:
-          key: jobs-emails-v2-{{ .Branch }}
-      - restore_cache:
-          key: images-v1-{{ .Branch }}
       - run:
           name: Sync data
           command: |
