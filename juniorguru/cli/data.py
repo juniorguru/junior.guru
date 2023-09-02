@@ -146,15 +146,21 @@ def load_file(persist_dir, persist_path, source_dir, move=False):
     if source_path.exists():
         source_size = source_path.stat().st_size
         if filecmp.cmp(persist_path, source_path, shallow=False):
-            logger.info(f"Keeping {source_path} ({source_size}b), it's equal to {persist_path} ({persist_size}b)")
+            logger.info(
+                f"Keeping {source_path} ({source_size}b), it's equal to {persist_path} ({persist_size}b)"
+            )
         else:
             if source_path.suffix == ".db":
-                logger.info(f"Merging {source_path} ({source_size}b)"
-                            f" with {persist_path} ({persist_size}b)")
+                logger.info(
+                    f"Merging {source_path} ({source_size}b)"
+                    f" with {persist_path} ({persist_size}b)"
+                )
                 merge_databases(persist_path, source_path)
             else:
-                logger.warning(f"Overwriting {source_path} ({source_size}b)"
-                               f" with {persist_path} ({persist_size}b)")
+                logger.warning(
+                    f"Overwriting {source_path} ({source_size}b)"
+                    f" with {persist_path} ({persist_size}b)"
+                )
                 shutil.copy2(persist_path, source_path)
         if move:
             persist_path.unlink()

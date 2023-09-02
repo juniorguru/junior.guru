@@ -1,8 +1,8 @@
 from datetime import datetime
 
-from strictyaml.scalar import ScalarValidator
 from strictyaml import Decimal as BaseDecimal
 from strictyaml.ruamel.scalarstring import DoubleQuotedScalarString
+from strictyaml.scalar import ScalarValidator
 
 
 class Date(ScalarValidator):

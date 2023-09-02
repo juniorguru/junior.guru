@@ -1,7 +1,7 @@
 import shutil
 import subprocess
-from pathlib import Path
 import sys
+from pathlib import Path
 
 import click
 import pytest

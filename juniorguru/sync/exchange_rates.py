@@ -3,11 +3,11 @@ from decimal import Decimal
 from operator import itemgetter
 from pathlib import Path
 from typing import Tuple
-import click
 
-import strictyaml
-from strictyaml import Seq, Map, Str
+import click
 import requests
+import strictyaml
+from strictyaml import Map, Seq, Str
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
