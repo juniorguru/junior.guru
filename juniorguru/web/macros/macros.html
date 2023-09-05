@@ -28,7 +28,7 @@
 
 {% macro figure(path, alt, width, height, lazy=True, caption=None, class=None) %}
 <figure class="figure{% if class %} {{ class }}{% endif %}">
-  {{ img('static/' + path, alt, width, height, class='figure-img img-fluid', lazy=lazy) }}
+  {{ img('static/' + path, alt, width, height, class='figure-img', lazy=lazy) }}
   {% if caption %}
     <figcaption class="figure-caption">{{ caption|md|remove_p }}</figcaption>
   {% elif caller %}

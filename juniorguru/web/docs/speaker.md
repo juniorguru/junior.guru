@@ -12,96 +12,123 @@ template: main.html
   Plánuje s tebou Honza [přednášku](events.md) pro členy [klubu](club.md)? Na této stránce najdeš veškeré info. Je fakt supr, že chceš s juniory sdílet svá moudra a zkušenosti. Na přednášku se moc těšíme!
 {% endcall %}
 
-## {{ 'person-circle'|icon }} Detaily o přednášce
+## Promo před přednáškou
 
-Aby šlo přednášku oznámit v klubu, v [seznamu na webu](events.md) a na sociálních sítích, potřebuje od tebe Honza pár základních informací. Je nutné je mít **nejpozději týden před datem konání**.
+Aby mohl Honza udělat přednášce promo, je potřeba nejpozději týden před přednáškou (ale raději dřív) dodat následující info:
 
-- Název přednášky
-- Krátký popis přednášky
-- Krátké bio, pár vět o tobě
-- Tvoje firma a pozice v ní
-- Odkazy na tvoje profily (LinkedIn, GitHub, Twitter…) nebo webovky
-- Tvá fotka nebo avatar (ideálně aspoň 500⨯500px)
-- Logo tvé firmy (ideálně SVG)
+-    Název přednášky
+-    Krátký popis přednášky
+-    Krátké bio, pár vět o tobě
+-    Odkazy na tvoje profily (LinkedIn, GitHub, Mastodon…) nebo webovky
+-    Tvá fotka nebo avatar (ideálně aspoň 500⨯500px)
+-    Tvoje firma a pozice v ní
+-    Logo tvé firmy (ideálně SVG)
 
-Pokud jde o texty, Honza ti rád pomůže s jejich formulací. Inspirovat se můžeš v [seznamu přednášek, které už proběhly](events.md). Jestli umíš s GitHubem a nebojíš se upravovat YAML soubor, můžeš kouknout i na [events.yml](https://github.com/honzajavorek/junior.guru/blob/main/juniorguru/data/events.yml) nebo přímo poslat i Pull Request, ale nemusíš.
+Inspirovat se můžeš v [seznamu přednášek, které už proběhly](events.md). Jestli umíš s GitHubem a nebojíš se upravovat YAML soubor, můžeš kouknout i na [events.yml](https://github.com/honzajavorek/junior.guru/blob/main/juniorguru/data/events.yml).
 
-## {{ 'chat-dots'|icon }} Přednášení
+## Přednášení
 
-Týden před přednáškou ji začne Honza propagovat na sociálních sítích a v klubu. Den před přednáškou a přímo v den přednášky se potom upozornění v klubu stupňují.
+Příklad, jak to celé vypadá: [Záznam přednášky s Nelou Slezákovou](https://youtu.be/FIijszEVQHY)
+Tady ještě časová osa večera, zdokumentovaná v bodech:
 
-Na Discordu se s Honzou sejdeš **půl hodiny předem** a vyzkoušíte spolu, zda správně funguje technika. Následně Honza rozehřívá místnost a čeká, až se připojí lidé. Zhruba pět minut po začátku zapne nahrávání, uvede tě a dá ti slovo.
+1.  Přednáší se na Discordu.
+    Pokud Discord neznáš, projdi si tento návod do konce.
+2.  Sraz je 30 min před začátkem v kanálu <kbd>⭐️ přednášky</kbd>.
+    Buď tam bude Honza, nebo jeho pomocník na video záznamy.
+    Odladíme techniku.
+3.  Zhruba v čase začátku Honza svolá lidi do přednáškového kanálu a pár minut budete jen tak tlachat, než se přicourá obecenstvo.
+4.  Honza tě krátce uvítá, představí, a předá ti slovo.
+5.  Během samotné akce můžeš na Honzu kdykoliv houknout, je tam pro tebe.
+    Pomůže ti vyřešit technický problém, nebo třeba udělat anketu v chatu.
+    Honza je tvá prodloužená ruka.
+6.  Lidé píšou dotazy do chatu.
+    Mohou se přihlásit o slovo na mikrofon, ale nikdo to nedělá.
+    Buď v průběhu nebo na konci Honza dotazy přečte a ty odpovídáš.
+    Nebo odpovídáte spolu s Honzou.
+    Žádný stres.
+7.  Rozloučíme se.
+    Jsi jediná hvězda večera, takže je na tobě, jestli chceš mluvit 20, 30, nebo 40 minut.
+    V ideálním případě by ale přednáška neměla s následnými dotazy překročit hodinu, ale když přetáhnem…
+    žádný stres 🙂
+8.  Hned po ukončení bývá k dispozici záznam, který zůstane v archivu pro členy.
+    Odkaz na záznam můžeš ty nebo členové klidně poslat kamarádům, ale nemusel by se šířit úplně veřejně (pokud jsme se nedohodli jinak).
 
-Lidé mohou pokládat dotazy do chatu v kanálu #přednášky, což Honza sleduje a na konci přednášky je čte, případně moderuje diskuzi. Pokud máš k přednášce nějaké odkazy, je dobré je dát do chatu v #přednášky. Po přednášce Honza hodí nahrávku na YouTube a odkaz dá do kanálu #oznámení.
+## Přístup do klubu
 
-### Nainstaluj si aplikaci
+Přednáška se celá odehraje na Discordu. Je to něco jako Slack, akorát že je to i sociální síť pro kohokoliv, kdo chce mít nějakou online skupinu. Kromě psaní se tam dá i volat s kamerou, sdílet video, apod. Budeš potřebovat dva účty:
 
-Nainstaluj si prosím Discord jako aplikaci. Pro základní používání sice funguje i v prohlížeči, ale přednášení se sdílením obrazovky je náchylné k různým problémům, především pokud máš Linux. S aplikací problémy nebývají.
+1.  Pokud ještě nemáš, udělej si svůj soukromý účet na [Discordu](https://discord.com/).
+2.  Protože je klub placený, potřebuješ i registraci do systému, který se Honzovi stará o placení a přístupy.
+    Honza ti dá odkaz, kterým se tam dostaneš bez placení – jako poděkování za přednášku máš rok v klubu zdarma.
+    Jakmile se zaregistruješ, propojíš to se svým účtem na Discordu.
 
-### Vypni si zvuky
+Pokud po přihlášení na Discord vidíš v levém panelu žluté kolečko s kuřetem, tak máš hotovo.
+Když na něj klikneš, otevře se ti naše komunita.
 
-Vypni zvuky v **User Settings**, stránka **Notifications**, sekce **Sounds**. Většina jich souvisí s hovory, takže je potřeba povypínat skoro vše.
+## Přednášení na Discordu
 
-Ve výchozím nastavení totiž Discord dělá zvuk při každé aktivitě v hlasovém kanálu, např. při připojení nového účastníka, odpojení, vypnutí zvuku, zapnutí, apod., což by tě rušilo.
+Komunity na Discordu se dělí do různých „kanálů“.
+Ty mohou být různých typů, nejčastěji textové.
+Jsou tam ale i hlasové, do kterých když přijdeš, tak si můžeš volat s lidmi.
 
-### Discord a YouTube
+{% call figure('figures/discord-voice-channels.png', 1024, 590, 'Snímek obrazovky, Discord') %}
+  Hlasové kanály jsou v červeném kroužku.
+{% endcall %}
 
-Honza každou akci v klubu nahrává a publikuje na YouTube kanálu [Junior Guru](https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA). Záznamy jsou pouze pro členy, na neveřejných odkazech. Výjimečně se dá domluvit, že bude video na YouTube veřejně.
+Není to jako klasický jednorázový videohovor, je to spíš „místnost“, do které může kdokoliv kdykoliv přijít.
+V klubu tě zajímají především:
 
-Honza nepořizuje záznam, ale dělá neveřejný živý přenos přímo na YouTube. Discord má totiž technické omezení, které limituje videohovor na 25 lidí, pokud si kdokoliv z účastníků zapne kameru. Pokud by se chtělo na akci připojit více jak 25 lidí, pošle Honza do chatu v kanálu #přednášky odkaz na tento živý přenos.
+- <kbd>🎲 klubovna</kbd>, hlasový kanál, který je k dispozici na cokoliv. Můžeš si tam vyzkoušet techniku.
+- <kbd>⭐️ přednášky</kbd>, speciální hlasový kanál určený vyloženě na přednášky. Mohou v něm mluvit jen vybraní jedinci, typicky moderátor a speaker. Tam budeš přednášet.
+- <kbd>#ahoj</kbd>, textový kanál, kam se můžeš ostatním představit.
 
-## {{ 'info-circle'|icon }} Další info
+Když klikneš na nějaký hlasový kanál, uvidíš něco jako tohle:
 
-### Jak Honza vybírá přednášející?
+{% call figure('figures/discord-voice-call.png', 1024, 590, 'Snímek obrazovky, Discord') %}
+  V kanálu jsme zrovna dva, nemáme zapnuté kamery.
+  U názvu kanálu je malá ikonka, která umožňuje otevřít chat.
+  Dole je klasické ovládání: kamera, sdílení obrazovky, ukončení hovoru.
+  Vlevo dole je ukazatel, že jsem v hovoru.
+{% endcall %}
 
-Buď si někoho sám vytipuje, nebo tip od někoho dostane, nebo se přednášející sám přihlásí.
+Zvláštností Discordu je, že můžeš být v hovoru a zároveň dělat i jiné věci.
+Pokud klikneš např. na <kbd>#ahoj</kbd>, **odejdeš sice z obrazovky hovoru, ale neodpojíš se**.
+Vlevo dole zůstane ukazatel, že jsi stále v hovoru.
+Na ukazateli je i tlačítko na odpojení.
+Nebo se lze vrátit zpět do hlasového kanálu a ukončit hovor tam.
 
-### Kde se přednáší?
+Ve výchozím nastavení Discord dělá zvuk při každé aktivitě v hlasovém kanálu, např. při připojení nového účastníka, odpojení, vypnutí zvuku, zapnutí, apod., což by tě asi rušilo.
+Zvuky si můžeš vypnout v <kbd>Uživatelská nastavení</kbd> (ozubené kolečko vlevo dole), stránka <kbd>Oznámení</kbd>, sekce <kbd>Zvuky</kbd>. Většina jich souvisí s hovory, takže je potřeba povypínat skoro vše.
 
-[Klub](club.md) je virtuální prostor na platformě [Discord](https://discord.com/). Discord je **něco jako Slack**, skupinový chat, ale kromě textového chatu jsou v něm i kanály (místnosti), kde si mohou lidé na jeden klik i volat, včetně videa nebo sdílení obrazovky. Přesně tímto způsobem probíhají i večerní přednášky.
+Dej si pozor na to, že **když sdílíš obrazovku, Discord ti skryje vše ostatní**.
+Neuvidíš účastníky a může to být trochu jako mluvit do zdi, což tě může zaskočit.
+Raději si to předem vyzkoušej.
+Honza ti pomůže udržet kontakt s tím, co se děje v chatu.
 
-Budeš tedy pro účely přednášení potřebovat **účet na Discordu**. Ideálně si nainstaluj i **Discord aplikaci**, funguje to s ní lépe.
+## Otázky a odpovědi
 
-### Kdo má do klubu přístup?
+### Potřebuji Discord aplikaci?
 
-Honza tě v předstihu do klubu pozve, ať se můžeš rozkoukávat. Klub je placený, ale **přednášející mají roční vstup zdarma** jako poděkování.
-
-Kdokoliv může klub **zdarma vyzkoušet na dva týdny**. Pokud se tedy přidá těsně před přednáškou, může na ni jít, ačkoliv si klub neplatí. Má tedy smysl na přednášku zvát i veřejnost mimo klub.
-
-### Bude se přednáška nahrávat?
-
-Honza **dělá záznam z každé přednášky** a ten poté okamžitě nahrává na YouTube jako _unlisted_, tedy neveřejné video. Odkaz na toto video mají členové klubu k dispozici a mohou jej sdílet i dalším lidem mimo klub, pokud chtějí.
-
-### Kolik přijde lidí?
-
-Návštěvnost je různá a lze těžko předvídat. **Někdy se živě připojí 20 lidí, někdy jen 5.** Neříká to nic o popularitě přednášky. Mnoho členů počítá s tím, že si pustí záznam, protože v době živého vysílání nemají čas. **Záznamy mívají 50 až 100 zhlédnutí.**
-
-### Kdo je v publiku?
-
-Publikum jsou **především junioři**, začátečníci v programování. Občas studenti, častěji ale **lidé všeho věku a z různých koutů republiky, kteří se rekvalifikují do IT**. Členy klubu jsou i senioři a na přednášky mohou přijít. Projdi si na Discordu kanál #ahoj pro lepší obrázek.
-
-Cílem je podat úvod do problematiky a přiblížit ji začátečníkům. Používej slova, kterým porozumí téměř laik. Zkratky vysvětluj.
+Pro základní používání sice Discord funguje i v prohlížeči, ale přednášení se sdílením obrazovky je náchylné k různým problémům, především pokud máš Linux.
+S aplikací problémy nebývají.
 
 ### Mám si připravit slajdy?
 
-Pokud chceš, můžeš. Povinnost to není. Např. pokud spolu plánujeme Q&A, tak to ani nedává smysl. Formát slajdů je na tobě, **ukázat můžeš cokoliv ze své obrazovky**.
+To je na tobě.
+Discord umožňuje sdílet obrazovku, takže ukazovat můžeš cokoliv.
+A pokud chceš jen mluvit, nemusíš ukazovat nic 😎
+
+### Kdo je v publiku?
+
+Publikum jsou především junioři, začátečníci v programování. Občas studenti, častěji ale lidé všeho věku a z různých koutů republiky, kteří se rekvalifikují do IT. Členy klubu jsou i senioři a na přednášky mohou přijít, ale přednáška by neměla být pro ně. Cílem je podat úvod do problematiky a přiblížit ji začátečníkům. Používej slova, kterým porozumí téměř laik. Zkratky vysvětluj.
+
+Pro lepší obrázek si projdi kanál <kbd>#ahoj</kbd>.
+Kdokoliv může klub zdarma vyzkoušet na dva týdny. Pokud se někdo přidá těsně před přednáškou, může na ni jít, ačkoliv si klub neplatí. Má tedy smysl na přednášku zvát i veřejnost mimo klub.
+
+### Kolik přijde lidí?
+
+Návštěvnost je různá a lze těžko předvídat. Někdy se živě připojí 30 lidí, někdy jen 10. Neříká to nic o popularitě přednášky. Mnoho členů počítá s tím, že si pustí záznam, protože v době živého vysílání nemají čas. Záznamy mívají 50 až 100 zhlédnutí.
 
 ### Mohu promovat svoji firmu?
 
-Určitě! Pokud máte otevřené pozice pro juniory, nebo děláte něco, co by mohlo juniory zajímat, je to vyloženě žádoucí. I bez toho je ale vhodné říct něco o sobě, o svých úspěších, o firmě pro kterou dělám a co ta firma dělá.
-
-### Kdy to bývá?
-
-Přednášky jsou zpravidla v **úterky v 18:00**, ale pokud by ti to vyhovovalo jinak, není problém se domluvit. Mezi přednáškami bývá dvoutýdenní mezera.
-
-### Kolik mám času?
-
-Jsi **jediná hvězda večera**. Je na tobě, jestli ti dává smysl mluvit 20, 30, nebo 40 minut. V ideálním případě by ale přednáška neměla s následnými dotazy překročit hodinu času.
-
-### Co je Q&A, dříve AMA?
-
-Q&A znamená _questions and answers_. Pozveme si odborníka na určité téma a lidé z klubu mohou pokládat libovolné dotazy. Většinou je pokládají v předstihu a písemně do chatu v kanálu #přednášky, takže se na ně lze i připravit. Mohou ale přibývat i v průběhu.
-
-Když akce začne, Honza pomáhá číst dotazy a ty odpovídáš, jak nejlépe umíš. Je úplně v pohodě říct, že nevíš. To je celé, nevyžaduje to žádnou speciální přípravu.
-
-Dříve jsme tomu říkali AMA, což znamená _ask me anything_, ale tuto zkratku moc lidí nezná, tak teď používáme Q&A.
+Určitě! Pokud máte otevřené pozice pro juniory, nebo děláte něco, co by mohlo juniory zajímat, je to vyloženě žádoucí. I bez toho je ale vhodné říct něco o sobě, o svých úspěších, o firmě, pro kterou dělám, a co ta firma dělá.

@@ -4,6 +4,7 @@
 }
 
 .figure-img {
+  @extend .img-fluid;
+  @extend .img-thumbnail;
   width: 100%;
-  max-width: 60ch;
 }
