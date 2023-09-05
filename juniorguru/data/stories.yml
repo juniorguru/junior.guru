@@ -1,3 +1,33 @@
+# https://www.redhat.com/en/blog/new-ways-contribute-public-accountant-quality-engineer
+# https://www.gratiastibi.cz/cs/nominovane-projekty/vyuka-programovani-online
+# https://teskalabs.com/blog/asab-and-the-universe-can-be-fixed
+# https://connect.zive.cz/clanky/daniel-suchy-jak-jsem-se-stal-vyvojarem-v-paypalu/sc-320-a-167717/default.aspx
+# https://overreacted.io/my-decade-in-review/
+# https://www.strv.com/blog/from-lawyer-to-backend-engineer-an-unlikely-story-insidestrv-engineering
+# https://developers.mews.com/why-domain-knowledge-matters-in-the-tech-industry/
+# https://applifting.io/blog/a-pedagogue-turned-developer
+# https://boris-belica.sk/ako-som-sa-stal-freelancer/
+# https://umarku.cz/2023/moje-rocni-testerska-cesta-2022-2023/
+# https://www.lupa.cz/clanky/tomas-hisem-nova-sichta/
+# https://www.pracujprosiliconvalley.cz/pracovala-jsem-na-realnem-it-projektu/
+
+
+- url: https://ivet1987.wz.cz/2020/03/koucovani-na-pyladies-kurzech/
+  date: 2020-03-04
+  title: Programovat umí díky dobrovolnickým kurzům. Zapojila se a radí dalším začátečnicím
+  name: Iveta Česalová
+  image_path: avatars-stories/iveta-ucetni.jpg
+  tags:
+    - women
+
+- url: https://www.heroine.cz/zeny-it/kybernneticka-bezpecnost-cyber-attache-ceske-kyberneticke-diplomatky
+  date: 2023-08-16
+  title: Od společenských věd k národní kybernetické bezpečnosti
+  name: Berta Jarošová, Veronika Kolek Netolická
+  image_path: avatars-stories/diplomatky-bezpecnost.jpg
+  tags:
+    - women
+
 - url: https://robime.it/ako-zacat-programovat/
   date: 2018-03-17
   title: Číšník, učitel angličtiny, auditor, manažer… a nakonec programátor
