@@ -57,6 +57,38 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+- id: 37
+  title: "(Šifrovačky, bude upřesněno)"
+  date: "2023-12-05"
+  description: |
+    (bude upřesněno)
+  avatar_path: avatars-participants/mila-votradovec.jpg
+  bio_name: Míla Votradovec
+  bio_title: (bude upřesněno)
+  bio: |
+    (bude upřesněno)
+  bio_links:
+    - https://milavotradovec.cz/
+    - https://sifrovacky.cz/
+    - https://www.linkedin.com/in/m%C3%ADla-votradovec-2a659920/
+  speakers: 514847931040530433
+
+
+- id: 38
+  title: "(Spolupráce v týmu, bude upřesněno)"
+  date: "2023-09-26"
+  description: |
+    (Jira, Slack, 1-1, all hands - co to všechno je? bude upřesněno)
+  avatar_path: avatars-participants/dominika-prazakova.jpg
+  bio_name: Dominika Pražáková
+  bio_title: (bude upřesněno)
+  bio: |
+    (bude upřesněno)
+  bio_links:
+    - https://www.linkedin.com/in/prazakova/
+  speakers:
+
+
 - id: 36
   title: "Jak se jako ajťák/čka zbavit pochyb a pocitu, že nejsem dost"
   date: "2023-06-20"
