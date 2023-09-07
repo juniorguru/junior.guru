@@ -22,6 +22,7 @@ from juniorguru.models.podcast import PodcastEpisode
 from juniorguru.models.story import Story
 from juniorguru.models.topic import Topic
 from juniorguru.models.transaction import Transaction
+from juniorguru.models.wisdom import Wisdom
 
 
 CLOUDINARY_HOST = os.getenv("CLOUDINARY_HOST", "res.cloudinary.com")
@@ -115,6 +116,9 @@ def on_docs_context(context):
 
     # stories.md, news.jinja
     context["stories"] = Story.listing()
+
+    # wisdom.jinja, news.jinja
+    context["wisdoms"] = Wisdom.listing()
 
     # news.jinja
     context["newsletter_subscribers_count"] = Followers.get_latest("newsletter").count

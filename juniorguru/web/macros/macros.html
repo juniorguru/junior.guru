@@ -48,8 +48,8 @@
 {% endmacro %}
 
 
-{% macro blockquote(quote, caption=None) %}
-  <div class="blockquote-container">
+{% macro blockquote(quote, caption=None, class=None) %}
+  <div class="blockquote-container{% if class %} {{ class }}{% endif %}">
     <figure class="blockquote-content">
       <blockquote class="blockquote">
         <p>{{ quote }}</p>

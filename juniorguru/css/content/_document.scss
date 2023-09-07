@@ -85,14 +85,14 @@
   background-position: 0 .15rem;
 }
 
-.document .blockquote-container,
-.document .jobs-inline {
+.blockquote-container,
+.jobs-inline {
   margin-top: $document-spacer;
   margin-bottom: $document-spacer;
 }
 
-.document .link-cards,
-.document .stories {
+.link-cards,
+.stories {
   margin-top: $document-spacer;
   margin-bottom: $document-spacer - $spacer;
 }

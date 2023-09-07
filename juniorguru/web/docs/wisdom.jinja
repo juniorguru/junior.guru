@@ -1,0 +1,45 @@
+---
+title: Dobře míněné rady pro začátečníky v programování
+description: Sesbírané střípky moudrosti. Co by ti poradili pokročilí začátečníci a zkušení programátoři?
+---
+
+{% from 'macros.html' import lead, blockquote, figure with context %}
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{{ (page|parent_page).url|url }}">
+        {{ (page|parent_page).title }}
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Nástěnka mouder
+    </li>
+  </ol>
+</nav>
+
+<h1>Nástěnka mouder</h1>
+
+{% call lead() %}
+Otázka zní:
+„Co byste ve dvou až třech větách poradili začátečníkům?
+Jakou nejdůležitější radu by si měli vyslechnout?“
+Odpovídají pokročilí začátečníci i zkušení programátoři.
+{% endcall %}
+
+<div class="wisdom-list">
+{% for wisdom in wisdoms %}
+{{ blockquote(wisdom.text, wisdom.name, class="wisdom-item") }}
+{% endfor %}
+</div>
+
+<h2>Jak to vzniklo?</h2>
+<p>
+  Nástěnka začala vznikat v srpnu 2023 na základě spolupráce s <a href="https://cz.pycon.org/2023/">PyCon CZ 23</a>.
+  To je největší česká konference věnovaná jazyku Python a zároveň je to vůbec nejpřívětivější akce tohoto typu pro začínající programátory.
+  Nástěnka bude na konferenci v papírové podobě a účastníci budou moci přidávat své rady.
+</p>
+
+<a href="https://cz.pycon.org/2023/" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="wisdom">
+{{ figure('figures/pyconcz23.png', 1280, 512, 'PyCon CZ 23') }}
+</a>

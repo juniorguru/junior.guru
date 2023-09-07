@@ -30,6 +30,7 @@ nav:
           - Klubové akce: events.md
           - ... | flat | events/*.md
       - Příběhy: stories.md
+      - Moudra: wisdom.jinja
 
   - Pravidla:
       - Otázky a odpovědi: faq.md

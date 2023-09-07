@@ -3,7 +3,7 @@ title: Novinky pro začátečníky v programování
 description: Podcasty, přednášky, články a další zdroje pro začátečníky v programování, které tě posunou a namotivují.
 ---
 
-{% from 'macros.html' import lead, news_card, markdown with context %}
+{% from 'macros.html' import lead, news_card, blockquote with context %}
 
 <h1>Novinky</h1>
 
@@ -54,6 +54,19 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
     </p>
   </div>
 </div>
+
+<section class="section">
+  <h2 class="section-heading">{{ 'envelope-heart'|icon }} Moudro dne</h2>
+  {% for wisdom in wisdoms|sample(1) %}
+  {{ blockquote(wisdom.text, wisdom.name) }}
+  {% endfor %}
+  <p class="text-center">
+    <a class="btn btn-outline-primary" href="{{ pages|docs_url('wisdom.jinja')|url }}">
+      {{ 'list'|icon }}
+      Všechna moudra
+    </a>
+  </p>
+</section>
 
 <section class="section">
   <h2 class="section-heading">{{ 'mic'|icon }} Podcast</h2>
@@ -147,6 +160,40 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
     <a class="btn btn-outline-primary" href="{{ pages|docs_url('stories.md')|url }}">
       {{ 'list'|icon }}
       Všechny příběhy
+    </a>
+  </p>
+</section>
+
+<section class="section">
+  <h2 class="section-heading">{{ 'play-circle'|icon }} Klubové akce</h2>
+  {% set event = events_planned|list|first|default(events_archive|list|first, true) %}
+  {{ news_card(
+    event.title,
+    pages|docs_url(event.page_url)|url,
+    event.avatar_path,
+    event.bio_name,
+    category='Nejnovější',
+    subtitle=event.bio_name,
+    date=event.start_at)
+  }}
+  {% if events_planned %}
+    {% set event = events_archive|sample(1)|first %}
+  {% else %}
+    {% set event = events_archive|list|skip(1)|sample(1)|first %}
+  {% endif %}
+  {{ news_card(
+    event.title,
+    pages|docs_url(event.page_url)|url,
+    event.avatar_path,
+    event.bio_name,
+    category='Tip z archivu',
+    subtitle=event.bio_name,
+    date=event.start_at)
+  }}
+  <p class="text-center">
+    <a class="btn btn-outline-primary" href="{{ pages|docs_url('events.md')|url }}">
+      {{ 'list'|icon }}
+      Všechny akce
     </a>
   </p>
 </section>
