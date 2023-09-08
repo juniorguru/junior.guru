@@ -69,10 +69,10 @@ Pokud víš, že se s druhými srovnávat nemáš, ale stejně si neumíš pomoc
 Děláme rozhovory s členy zdejšího [klubu](club.md).
 Cílem je nejen ilustrovat hodnotu klubu pro juniory, ale taky snaha popsat cestu do IT co nejautentičtějším způsobem.
 
-Co pro tebe bylo těžké a nedařilo se to?
-Kdy jsi chtěla všeho vzdát a jen brečet v koutě?
-Jak jsi to nakonec překonala?
-Co bys poradila ostatním?
+Co pro ně bylo těžké a nedařilo se to?
+Kdy chtěli všeho vzdát a jen brečet v koutě?
+Jak to nakonec překonali?
+Co by poradili ostatním?
 Nejen že se nebojíme o nepříjemnostech psát, my se na ně přímo ptáme!
 
 {% call note(standout=True) %}
