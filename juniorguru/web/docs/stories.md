@@ -3,7 +3,7 @@ title: Inspirativní příběhy
 description: Příběhy těch, kdo se rekvalifikovali do IT, nebo jim nějak programování pomáhá
 ---
 
-{% from 'macros.html' import lead, link_card, blockquote_avatar, news_card with context %}
+{% from 'macros.html' import lead, link_card, blockquote_avatar, news_card, note with context %}
 
 
 # Příběhy
@@ -11,24 +11,6 @@ description: Příběhy těch, kdo se rekvalifikovali do IT, nebo jim nějak pr
 {% call lead() %}
 Inspirativní příbehy lidí jako ty, kteří se bez předchozí znalosti naučili programovat, programování jim v něčem pomohlo, nebo si v IT dokonce našli i práci.
 {% endcall %}
-
-## Jaké příběhy tu najdeš?
-
-Sbíráme je z různých koutů českého a slovenského internetu, stejně jako když v 19. století zapisovali Němcová s Erbenem lidovou slovesnost.
-
-Víš o dalších?
-Tipy můžeš poslat na {{ 'honza@junior.guru'|email_link }}.
-Jedinou podmínkou je, že musí být publikovány na „neutrální půdě“.
-Každá vzdělávací agentura si dává na web _success stories_, které ukazují, jak jsou jejich kurzy úžasné a absolventi úspěšní.
-Záměrem tohoto seznamu je vytvářet nezávislou protiváhu a ukazovat, že:
-
--   Programování se lze učit i jinde než v kurzu.
--   Ne vždy je vše sluníčkové.
-    Ne vždy to skončí tak, jak si člověk naplánuje.
-    Ne vždy to zvládne sám a levou zadní.
--   Cesta většiny lidí je spletitá.
-    Zkouší různé způsoby studia, různé kurzy, různé materiály.
--   Programování je obecná, užitečná dovednost, která se hodí i pokud se člověk neplánuje rekvalifikovat do IT.
 
 ## Nesrovnávej se!
 
@@ -45,8 +27,8 @@ Nedělej to, pro tvou psychiku je to strašně nezdravé.
 Úkolem příběhů není ukázat, že všichni to budou mít takto snadné, ale zafungovat jako vzor, že něco jde.
 Že pro určitou skupinu lidí není vyloučeno něco dokázat, a že existují různé cesty, jak k tomu dojít.
 
-Většině těch příběhů ale chybí informace o tom, co proběhlo v zákulisí.
-Někdo se čtyřmi dětmi změní kariéru, ale nikde se už nedočteš, že má prarodiče v bytě naproti a každý den jim hlídají.
+Většině příběhů ale chybí informace o tom, co proběhlo v zákulisí.
+Někdo se čtyřmi dětmi změní kariéru, jenže se už nikde nedočteš, že má prarodiče v bytě naproti a každý den jim hlídají.
 Každý má zcela jiné výchozí podmínky a i když jsou navenek zdánlivě podobné, většinou prostě stejné nejsou a fakt nemá smysl se srovnávat a bičovat se za to, že někdo něco dokázal a já (ještě) ne.
 
 {% call blockquote_avatar(
@@ -66,9 +48,24 @@ A možná to ten člověk ani nechce takto sdílet, je to osobní.
 Je to tedy na tobě.
 Stejně jako při scrollování na instáči, kde mají všichni nejlepší dovolenou a nejlepší zadek.
 Inspirovat se kam zajet na dovolenou? Jasně!
-Ale uvědomovat si, že možná měli v kuchyni šváby, možná se pohádali, možná mají jiné geny, možná bohaté rodiče, možná je to fotka z vhodně vybraného úhlu.
+Ale uvědomovat si, že možná měli v kuchyni šváby, možná se pohádali, možná mají jiné geny, bohaté rodiče, a možná je to fotka z vhodně vybraného úhlu.
 
 Pokud víš, že se s druhými srovnávat nemáš, ale stejně si neumíš pomoci, projdi si kapitolu [Psychika na cestě do IT](handbook/mental-health.md).
+
+## Příběhy z junior.guru
+
+Děláme rozhovory s členy zdejšího [klubu](club.md).
+Cílem je nejen ilustrovat hodnotu klubu pro juniory, ale taky snaha popsat cestu do IT co nejautentičtějším způsobem.
+
+Co pro tebe bylo těžké a nedařilo se to?
+Kdy jsi chtěla všeho vzdát a jen brečet v koutě?
+Jak jsi to nakonec překonala?
+Co bys poradila ostatním?
+Nejen že se nebojíme o nepříjemnostech psát, my se na ně přímo ptáme!
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tady něco bude.
+{% endcall %}
 
 ## Z horníka programátorem
 
@@ -100,7 +97,23 @@ Film realisticky popisuje nejen úspěchy, ale i těžkosti celé Tomášovy ces
   ) }}
 </div>
 
-## Další příběhy
+## Příběhy odjinud
+
+Sbíráme je z různých koutů českého a slovenského internetu, stejně jako když v 19. století zapisovali Němcová s Erbenem lidovou slovesnost.
+
+Víš o dalších?
+Tipy můžeš poslat na {{ 'honza@junior.guru'|email_link }}.
+Jedinou podmínkou je, že musí být publikovány na „neutrální půdě“.
+Každá vzdělávací agentura si dává na web _success stories_, které ukazují, jak jsou jejich kurzy úžasné a absolventi úspěšní.
+Záměrem tohoto seznamu je vytvářet nezávislou protiváhu a ukazovat, že:
+
+-   Programování se lze učit i jinde než v kurzu.
+-   Ne vždy je vše sluníčkové.
+    Ne vždy to skončí tak, jak si člověk naplánuje.
+    Ne vždy to zvládne sám a levou zadní.
+-   Cesta většiny lidí je spletitá.
+    Zkouší různé způsoby studia, různé kurzy, různé materiály.
+-   Programování je obecná, užitečná dovednost, která se hodí i pokud se člověk neplánuje rekvalifikovat do IT.
 
 {% for story in stories %}
   {# {% set small %}
