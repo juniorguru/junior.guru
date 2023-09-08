@@ -36,6 +36,8 @@ def main():
                     meta=parse_meta(source),
                     notes=parse_notes(source))
         logger.debug(f"Saving:\n{pformat(data)}")
+        if not data['meta'].get('title'):
+            raise ValueError(f"Page {file.src_uri} is missing a title")
         Page.create(**data)
 
     logger.info('Generating pages from templates')
