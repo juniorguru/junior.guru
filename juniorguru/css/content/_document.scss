@@ -6,6 +6,10 @@
   100% { color: $body-color; }
 }
 
+.document {
+  hyphens: auto;
+}
+
 .document > h1 {
   padding-bottom: map-get($spacers, 1);
   margin-bottom: $main-spacer;
