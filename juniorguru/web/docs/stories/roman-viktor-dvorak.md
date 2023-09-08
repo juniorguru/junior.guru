@@ -1,6 +1,7 @@
 ---
 title: Rozhovor s Romanem V. Dvořákem
 date: 2023-09-08
+image_path: avatars-participants/roman-viktor-dvorak.jpg
 author: Adéla Pavlun
 author_avatar_path: avatars-participants/adela-pavlun.jpg
 author_url: https://www.linkedin.com/in/adelapavlun/
@@ -38,9 +39,12 @@ author_url: https://www.linkedin.com/in/adelapavlun/
   <li class="article-details-item">{{ '{:%-d.%-m.%Y}'.format(page.meta.date) }}</li>
 </ul>
 
+<div class="article-lead">
+{{ img('static/' + page.meta.image_path, page.title + ', foto', 100, 100, lazy=False, class='article-image') }}
 {% call lead() %}
 Nebyl prominentem v matematice, ani nemá vysokou školu. Právě to sedmatřicetiletého Romana Viktora Dvořáka drželo zpět od IT oboru, kterým se dnes úspěšně živí. Pro rekvalifikaci z elektrikáře na programátora se rozhodl až v momentě, kdy vyhlásil osobní bankrot. Za pět let samostudia IT posbíral Roman nespočet střípků do své mozaiky. Ten poslední zacvakl díky Junior Guru a dnes se Roman živí jako Python vývojář.
 {% endcall %}
+</div>
 
 **Teto rozhovor bude hodně o profesních věcech, tak pojďme začít něčím jiným. Kdo je Roman, když zrovna nepracuje?**
 

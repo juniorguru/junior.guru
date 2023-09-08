@@ -52,3 +52,28 @@
   filter: grayscale(0);
   opacity: 100%;
 }
+
+.article-lead {
+  display: flow-root;
+  margin-bottom: $main-spacer;
+}
+
+.article-lead p {
+  margin-bottom: 0;
+}
+
+.article-image {
+  @extend .img-thumbnail;
+  float: right;
+  width: 10rem;
+  max-width: 40%;
+  height: auto;
+  margin-bottom: map-get($spacers, 1);
+  margin-left: $spacer;
+  filter: contrast(1.1);
+  border-radius: $border-radius;
+
+  @include media-breakpoint-up(md) {
+    width: 15rem;
+  }
+}
