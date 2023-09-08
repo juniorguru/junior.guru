@@ -29,7 +29,9 @@ nav:
       - Klubové akce:
           - Klubové akce: events.md
           - ... | flat | events/*.md
-      - Příběhy: stories.md
+      - Příběhy:
+          - Příběhy: stories.md
+          - ... | flat | stories/*.md
       - Moudra: wisdom.jinja
 
   - Pravidla:

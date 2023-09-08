@@ -5,6 +5,18 @@ description: Příběhy těch, kdo se rekvalifikovali do IT, nebo jim nějak pr
 
 {% from 'macros.html' import lead, link_card, blockquote_avatar, news_card, note with context %}
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{{ (page|parent_page).url|url }}">
+        {{ (page|parent_page).title }}
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Příběhy
+    </li>
+  </ol>
+</nav>
 
 # Příběhy
 
