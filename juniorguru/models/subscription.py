@@ -58,6 +58,7 @@ class SubscriptionCancellationReason(StrEnum):
     TEMPORARY_USE = 'temporary_use'
     MISUNDERSTOOD = 'misunderstood'
     COMPETITION = 'competition'
+    UNKNOWN = 'unknown'
 
 
 @unique
@@ -472,6 +473,29 @@ class SubscriptionCancellation(BaseModel):
     expires_on = DateField(null=True)
     reason = CharField(index=True, constraints=[check_enum('reason', SubscriptionCancellationReason)])
     feedback = CharField(null=True)
+
+    @classmethod
+    def add(cls, **kwargs) -> None:
+        if kwargs['expires_on'] is None:
+            cls.insert(**kwargs) \
+                .on_conflict_ignore() \
+                .execute()
+        else:
+            update = {
+                field: Case(None,
+                            [
+                                (cls.expires_on.is_null(True), value),
+                                (cls.expires_on.is_null(False) & (cls.expires_on < kwargs['expires_on']), value),
+                            ],
+                            getattr(cls, field))
+                for field, value
+                in kwargs.items()
+            }
+            cls.insert(**kwargs) \
+                .on_conflict(action='update',
+                             update=update,
+                             conflict_target=[cls.account_id]) \
+                .execute()
 
     @property
     def user(self) -> ClubUser:

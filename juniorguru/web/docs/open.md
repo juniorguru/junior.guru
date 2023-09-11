@@ -659,7 +659,7 @@ Opět platí, že silná čára je celkový _churn_, zatímco tenká se týká j
 ### Důvody odchodu
 
 Když někdo ukončuje členství v klubu, může mi sdělit důvod, proč tak činí.
-Procenta nejsou podíl ze všech, kdo odešli, ale z **{{ charts.cancellations_breakdown_count }}** lidí, kteří odpověděli na anketu.
+Data jsou celkem od **{{ charts.cancellations_breakdown_count }}** lidí.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -667,6 +667,11 @@ Procenta nejsou podíl ze všech, kdo odešli, ale z **{{ charts.cancellations_b
     data-chart="{{ {
         'labels': charts.cancellations_breakdown_labels,
         'datasets': [
+            {
+                'label': '% neudali důvod',
+                'data': charts.cancellations_breakdown.pop('unknown'),
+                'backgroundColor': '#ddd',
+            },
             {
                 'label': '% jiný důvod',
                 'data': charts.cancellations_breakdown.pop('other'),
@@ -709,7 +714,7 @@ Procenta nejsou podíl ze všech, kdo odešli, ale z **{{ charts.cancellations_b
 ### Důvody odchodu za celou historii
 
 Celkový poměr důvodů odchodu za celou historii, po kterou sbírám tento typ zpětné vazby.
-Procenta nejsou podíl ze všech, kdo odešli, ale z **{{ charts.total_cancellations_breakdown_count }}** lidí, kteří odpověděli na anketu.
+Data jsou celkem od **{{ charts.total_cancellations_breakdown_count }}** lidí.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -727,6 +732,7 @@ Procenta nejsou podíl ze všech, kdo odešli, ale z **{{ charts.total_cancellat
             {
                 'data': charts.total_cancellations_breakdown.values()|list,
                 'backgroundColor': {
+                    'unknown': '#ddd',
                     'other': '#a9a9a9',
                     'necessity': '#1755d1',
                     'temporary_use': '#02cabb',
