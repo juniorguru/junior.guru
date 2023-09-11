@@ -1,9 +1,10 @@
 import json
 import re
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from operator import itemgetter
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 import click
 import discord
@@ -62,6 +63,12 @@ FEEDS = [
          poster_path='posters-meetups/pehapkari.png',
          format='meetup_com',
          source_url='https://www.meetup.com/pehapkari/'),
+    dict(slug='ctvrtkon',
+         emoji='🍻',
+         name=f'{NAME_PREFIX} na akci jihočeské tech komunity',
+         poster_path='posters-meetups/ctvrtkon.png',
+         format='ctvrtkon',
+         source_url='https://ctvrtkon.cz/api/events/feed'),
 ]
 
 USER_AGENT = 'JuniorGuruBot (+https://junior.guru)'
@@ -108,6 +115,9 @@ def main(context, channel_id, clear_cache):
         elif feed['format'] == 'meetup_com':
             events.extend([dict(**feed, **event_data)
                            for event_data in parse_meetup_com(feed['data'])])
+        elif feed['format'] == 'ctvrtkon':
+            events.extend([dict(**feed, **event_data)
+                           for event_data in parse_ctvrtkon(feed['data'])])
         else:
             raise ValueError(f"Unknown feed format {feed['format']!r}")
 
@@ -121,9 +131,13 @@ def main(context, channel_id, clear_cache):
     logger.info('Processing location')
     for event in events:
         logger.debug(f"Locating: {event['name_raw']}")
-        event['location'] = fetch_location(event['location_raw'])
+        location = fetch_location(event['location_raw'])
+        if location:
+            event['location'] = location
+        else:
+            raise ValueError(f"Could not locate: {event['location_raw']!r}")
 
-    logger.info(f'Syncing {len(events)} with Discord, using channel #{channel_id}')
+    logger.info(f'Syncing {len(events)} events with Discord, using channel #{channel_id}')
     discord_sync.run(sync_events, events, channel_id)
 
 
@@ -217,6 +231,15 @@ def parse_meetup_com(content: str) -> list[dict[str, Any]]:
 def parse_meetup_com_location(venue: dict[str, Any]) -> str:
     parts = [venue['name'], venue['address'], venue['city'], venue['state'], venue['country'].upper()]
     return ", ".join(filter(None, parts))
+
+
+def parse_ctvrtkon(content: str) -> list[dict[str, Any]]:
+    return [dict(name_raw=event['name'],
+                 starts_at=datetime.fromisoformat(event['started_at']).replace(tzinfo=ZoneInfo('Europe/Prague')),
+                 location_raw=f"{event['venue']['name']}, {event['venue']['address']}",
+                 url=f"https://ctvrtkon.cz/public/udalost/{event['slug']}")
+            for event
+            in json.loads(content)['data']]
 
 
 def is_bot_message(discord_message: discord.Message) -> bool:
