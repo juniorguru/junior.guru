@@ -55,6 +55,7 @@ def main(images_path, output_dir, width, height, clear):
         LegacyThumbnail.create_table()
 
         equivalents = {
+            '/': 'index.jinja',
             '/club/': 'club.md',
             '/events/': 'events.md',
             '/courses/': 'courses.md',
@@ -71,8 +72,7 @@ def main(images_path, output_dir, width, height, clear):
             LegacyThumbnail.create(url=url, image_path=page.thumbnail_path)
 
         default_image_path = render_image_file(width, height, 'thumbnail_legacy.html', {}, output_path)
-        for url in ['/',
-                    '/404.html',
+        for url in ['/404.html',
                     '/donate/',
                     '/press/',
                     '/press/crisis/',

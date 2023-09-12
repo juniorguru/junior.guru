@@ -6,7 +6,6 @@ from juniorguru.lib import loggers, template_filters
 from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob
 from juniorguru.models.page import LegacyThumbnail
-from juniorguru.models.story import Story
 
 
 logger = loggers.from_path(__file__)
@@ -71,16 +70,6 @@ for template_filter in [
     template_filters.relative_url,
 ]:
     app.template_filter()(template_filter)
-
-
-@app.route('/')
-def index():
-    with db:
-        stories = Story.listing()
-    return render_template('index.html',
-                           nav_tabs=NAV_TABS,
-                           stories=stories,
-                           thumbnail=LegacyThumbnail.image_path_by_url('/'))
 
 
 @app.route('/membership/')
@@ -174,6 +163,10 @@ def inject_defaults():
 # the annoying need for manual refresh.
 
 REFRESH_PAGE = '<html><head><meta http-equiv="refresh" content="5"></head><body></body></html>'
+
+@app.route('/')
+def index():
+    return REFRESH_PAGE
 
 @app.route('/news/')
 def news():
