@@ -32,7 +32,14 @@ OPTIMIZATIONS = [
         (r"\bprague\b", {"place": "Praha", "region": "Praha", "country": "Česko"}),
         (r"\bbrno\b", {"place": "Brno", "region": "Brno", "country": "Česko"}),
         (r"\bostrava\b", {"place": "Ostrava", "region": "Ostrava", "country": "Česko"}),
-        (r"\b[čc]\S+\s+bud[ěe]jovice\b", {"place": "České Budějovice", "region": "České Budějovice", "country": "Česko"}),
+        (
+            r"\b[čc]\S+\s+bud[ěe]jovice\b",
+            {
+                "place": "České Budějovice",
+                "region": "České Budějovice",
+                "country": "Česko",
+            },
+        ),
         (r"^česko$", None),
         (r"^czechia$", None),
         (r"^česká rep[a-z\.]+$", None),
