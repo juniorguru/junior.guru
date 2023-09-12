@@ -54,11 +54,11 @@ def monkey_patch() -> None:
     # Monkey patch the Page class so that it renders Markdown
     # for .md or .md.jinja files, but skips Markdown rendering
     # for .jinja files
-    _page_render = Page.render
+    Page._original_render = Page.render
 
     def render(self, config: Config, files: Files):
         if ".md" in Path(self.file.src_uri).suffixes:
-            _page_render(self, config, files)
+            Page._original_render(self, config, files)
         else:
             if self.markdown is None:
                 raise RuntimeError(
@@ -112,10 +112,9 @@ def create_md_filter(page: Page, config: Config, files: Files) -> Callable:
             def __init__(self):
                 self.file = page.file
                 self.markdown = markdown
-                self.render = page.__class__.render.__get__(self)
 
         _page = _Page()
-        _page.render(config, files)
+        Page._original_render(_page, config, files)
         return _page.content
 
     return md

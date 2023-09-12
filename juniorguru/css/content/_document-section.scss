@@ -1,4 +1,4 @@
-.section {
+.document-section {
   position: relative;
   padding-top: map-get($spacers, 5);
   margin: map-get($spacers, 5) 0;
@@ -6,7 +6,7 @@
   border-top: 2px solid $body-color;
 }
 
-.section-heading {
+.document-section-heading {
   @extend .fs-4;
   @extend .font-monospace;
   @extend .text-uppercase;

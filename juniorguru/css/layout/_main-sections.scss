@@ -4,13 +4,19 @@
   padding-left: 0;
 }
 
-.main-sections .content section {
+.section {
   @extend .container-lg;
   padding-top: $main-spacer - $spacer;
   padding-bottom: $main-spacer - $spacer;
 }
 
-.main-sections .headerlink {
+.section.standout {
+  padding: $main-spacer 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.section .headerlink {
   @extend .visually-hidden;
 }
 

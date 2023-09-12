@@ -32,13 +32,13 @@ $masthead-eggshell-height: map-get($spacers, 5);
 
 .masthead-content {
   margin-top: map-get($spacers, 5);
+  margin-bottom: map-get($spacers, 5) + $spacer;
 
   @include media-breakpoint-up(md) {
     flex-basis: 50%;
     flex-grow: 0;
     flex-shrink: 1;
     margin-right: map-get($spacers, 5);
-    margin-bottom: map-get($spacers, 5);
   }
 }
 

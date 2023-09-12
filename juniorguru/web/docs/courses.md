@@ -23,7 +23,7 @@ thumbnail_title: Katalog kurzů programování
         course_provider.name,
         pages|docs_url(course_provider.page_url)|url,
         screenshot_source_url=course_provider.url,
-        highlighted=True,
+        class='highlighted',
       ) }}
     {% else %}
       {{ link_card(

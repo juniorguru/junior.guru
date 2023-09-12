@@ -94,12 +94,13 @@ $bootstrap-icons-font-dir: "../../node_modules/bootstrap-icons/font/fonts";
   CUSTOM: CONTENT COMPONENTS
 */
 
-@import "./content/audio";
 @import "./content/article";
+@import "./content/audio";
 @import "./content/blockquote";
 @import "./content/breadcrumb";
 @import "./content/charts";
 @import "./content/comparison";
+@import "./content/document-section";
 @import "./content/event-circles";
 @import "./content/figure";
 @import "./content/guarantor";
@@ -118,7 +119,6 @@ $bootstrap-icons-font-dir: "../../node_modules/bootstrap-icons/font/fonts";
 @import "./content/podcast-episode";
 @import "./content/pricing";
 @import "./content/pulse";
-@import "./content/section";
 @import "./content/see-also";
 @import "./content/stories";
 @import "./content/table";

@@ -23,7 +23,7 @@
 {% endcall %}
 
 {% if active_partnership %}
-  {{ link_card(course_provider.name, course_provider.url, highlighted=True) }}
+  {{ link_card(course_provider.name, course_provider.url, class='highlighted') }}
 {% else %}
   {{ link_card(course_provider.name, course_provider.url, nofollow=True) }}
 {% endif %}

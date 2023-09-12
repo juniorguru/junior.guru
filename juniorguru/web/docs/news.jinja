@@ -55,8 +55,8 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
   </div>
 </div>
 
-<section class="section">
-  <h2 class="section-heading">{{ 'envelope-heart'|icon }} Moudro dne</h2>
+<section class="document-section">
+  <h2 class="document-section-heading">{{ 'envelope-heart'|icon }} Moudro dne</h2>
   {% for wisdom in wisdoms|sample(1) %}
   {{ blockquote(wisdom.text, wisdom.name) }}
   {% endfor %}
@@ -68,8 +68,8 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
   </p>
 </section>
 
-<section class="section">
-  <h2 class="section-heading">{{ 'mic'|icon }} Podcast</h2>
+<section class="document-section">
+  <h2 class="document-section-heading">{{ 'mic'|icon }} Podcast</h2>
   {% set podcast_episode = podcast_episodes|list|first %}
   {{ news_card(
     podcast_episode.format_title(affiliation=false),
@@ -98,8 +98,8 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
   </p>
 </section>
 
-<section class="section">
-  <h2 class="section-heading">{{ 'play-circle'|icon }} Klubové akce</h2>
+<section class="document-section">
+  <h2 class="document-section-heading">{{ 'play-circle'|icon }} Klubové akce</h2>
   {% set event = events_planned|list|first|default(events_archive|list|first, true) %}
   {{ news_card(
     event.title,
@@ -132,8 +132,8 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
   </p>
 </section>
 
-<section class="section">
-  <h2 class="section-heading">{{ 'person-circle'|icon }} Příběhy</h2>
+<section class="document-section">
+  <h2 class="document-section-heading">{{ 'person-circle'|icon }} Příběhy</h2>
   {% set story = stories|list|first %}
   {{ news_card(
     story.title,
@@ -165,8 +165,8 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
 </section>
 
 {#
-<section class="section">
-  <h2 class="section-heading">{{ 'chat'|icon }} Co se řeší v klubu</h2>
+<section class="document-section">
+  <h2 class="document-section-heading">{{ 'chat'|icon }} Co se řeší v klubu</h2>
   {% for channel_digest in channels_digest %}
     <p><code>
     {{ channel_digest|pprint }}

@@ -16,7 +16,7 @@
   #}
   <header id="header" class="navbar navbar-light">
     <nav class="navbar-container">
-      <a class="navbar-brand " href="{{ '/'|url }}">
+      <a class="navbar-brand " href="{{ pages|docs_url('index.jinja')|url }}">
         {{ img('static/logo.svg', 'Logo junior.guru', 90, 40, lazy=False) }}
       </a>
       <div class="navbar-buttons">

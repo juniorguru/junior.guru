@@ -3,7 +3,7 @@
 {% endmacro %}
 
 
-{% macro img(filename, alt, width, height, class=None, lazy=True) %}
+{% macro img(filename, alt, width, height, class=none, lazy=True) %}
 <img
   {% if filename.endswith('.svg') %}
     src="{{ filename|url }}"
@@ -26,7 +26,7 @@
 {% endmacro %}
 
 
-{% macro figure(path, alt, width, height, lazy=True, caption=None, class=None) %}
+{% macro figure(path, alt, width, height, lazy=True, caption=none, class=none) %}
 <figure class="figure{% if class %} {{ class }}{% endif %}">
   {{ img('static/' + path, alt, width, height, class='figure-img', lazy=lazy) }}
   {% if caption %}
@@ -38,7 +38,7 @@
 {% endmacro %}
 
 
-{% macro podcast_player(episode, class=None) %}
+{% macro podcast_player(episode, class=none) %}
 <audio controls preload="metadata"{% if class %} class="{{ class }}"{% endif %}>
   <source src="{{ episode.media_url }}" type="audio/mpeg">
   <a class="btn btn-primary" href="{{ episode.media_url }}" role="button">
@@ -48,7 +48,7 @@
 {% endmacro %}
 
 
-{% macro blockquote(quote, caption=None, class=None) %}
+{% macro blockquote(quote, caption=none, class=none) %}
   <div class="blockquote-container{% if class %} {{ class }}{% endif %}">
     <figure class="blockquote-content">
       <blockquote class="blockquote">
@@ -66,7 +66,7 @@
 {% endmacro %}
 
 
-{% macro blockquote_avatar(quote, avatar_filename, avatar_alt, caption=None, lazy=True) %}
+{% macro blockquote_avatar(quote, avatar_filename, avatar_alt, caption=none, lazy=True) %}
   <div class="blockquote-container avatar">
     <figure class="blockquote-content">
       {{ img('static/avatars-quotes/' + avatar_filename, avatar_alt, 50, 50, class='blockquote-avatar', lazy=lazy) }}
@@ -85,7 +85,7 @@
 {% endmacro %}
 
 
-{% macro blockquote_toxic(quote, caption, url=None) %}
+{% macro blockquote_toxic(quote, caption, url=none) %}
   <div class="blockquote-container toxic icon">
     <figure class="blockquote-content">
       {{ 'x-circle'|icon(classes='blockquote-icon') }}
@@ -119,18 +119,28 @@
 {% endmacro %}
 
 
-{% macro link_card(title, url, caption=None,
-                   badge_icon=None, badge_text=None,
-                   screenshot_source_url=None,
-                   highlighted=False, nofollow=False)
+{% macro link_card(title,
+                   url,
+                   caption=none,
+                   badge_icon=none,
+                   badge_text=none,
+                   image=true,
+                   screenshot_source_url=none,
+                   class=none,
+                   nofollow=false)
 %}
 {% set screenshot_source_url = screenshot_source_url or url %}
 {% set screenshot_image_url = screenshot_source_url|screenshot_url %}
-<div class="link-card{% if highlighted %} highlighted{% endif %}"
+<div class="link-card{% if class %} {{ class }}{% endif %}"
+{% if image %}
   data-screenshot-source-url="{{ screenshot_source_url }}"
-  data-screenshot-image-url="{{ screenshot_image_url }}">
+  data-screenshot-image-url="{{ screenshot_image_url }}"
+{% endif %}
+>
   <div class="link-card-header">
-    {{ img(screenshot_image_url, title, 640, 360, class='link-card-image') }}
+    {% if image %}
+      {{ img(screenshot_image_url, title, 640, 360, class='link-card-image') }}
+    {% endif %}
     {% if badge_icon and badge_text %}
       <div class="link-card-badge">
         {{ badge_icon|icon }} {{ badge_text }}
@@ -156,7 +166,7 @@
 {% endmacro %}
 
 
-{% macro video_card(title, duration, url, caption=None, note=None) %}
+{% macro video_card(title, duration, url, caption=none, note=none) %}
 {% set screenshot_source_url = url %}
 {% set screenshot_image_url = screenshot_source_url|screenshot_url %}
 <div class="media-card"
@@ -192,7 +202,7 @@
 {% endmacro %}
 
 
-{% macro podcast_card(podcast_episode, caption=None) %}
+{% macro podcast_card(podcast_episode, caption=none) %}
 <div class="media-card">
   <div class="media-card-link-section">
     <h4 class="media-card-title">{{ podcast_episode.format_title() }}</h4>
@@ -213,7 +223,7 @@
 {% endmacro %}
 
 
-{% macro news_card(title, url, image_path, image_alt, category=None, subtitle=None, date=None, external=False) %}
+{% macro news_card(title, url, image_path, image_alt, category=none, subtitle=none, date=none, external=False) %}
 <div class="news-card">
   <div class="news-card-row">
     <div class="news-card-media">
@@ -244,7 +254,7 @@
 {% endmacro %}
 
 
-{% macro video_card_engeto(title, duration, url, caption=None) %}
+{% macro video_card_engeto(title, duration, url, caption=none) %}
   {% if caller %}
     {% set caption = caller()|md|remove_p %}
   {% endif %}
@@ -293,7 +303,7 @@
 {%- endmacro %}
 
 
-{% macro logo(name, path, url=None, lazy=False, class_prefix='logos') %}
+{% macro logo(name, path, url=none, lazy=False, class_prefix='logos') %}
   <li class="{{ class_prefix }}-item" title="{{ name }}">
     {% if url %}
     <a class="{{ class_prefix }}-link" href="{{ url }}" target="_blank" rel="noopener"
@@ -381,7 +391,7 @@
 {% endmacro %}
 
 
-{% macro guarantor(name, avatar_path, url=None, standout=False) %}
+{% macro guarantor(name, avatar_path, url=none, standout=False) %}
 <div class="guarantor{% if standout %} standout{% endif %}" role="alert">
   {{ img('static/' + avatar_path, name, 100, 100, class='guarantor-image') }}
   <div class="guarantor-body">

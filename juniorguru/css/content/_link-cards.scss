@@ -35,6 +35,11 @@
   border-color: $jg-yellow;
 }
 
+.link-card.inverted {
+  background: $jg-white;
+  border-color: $jg-white;
+}
+
 .link-card:nth-child(2n) {
   @include media-breakpoint-up(sm) {
     margin-right: 0;

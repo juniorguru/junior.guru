@@ -102,7 +102,7 @@ Hodina sezení tě zpravidla vyjde na 800-1200 Kč, ale mnozí poskytují **slev
     'Nabízí psychologickou podporu na cestě do IT.',
     badge_icon='star',
     badge_text='Autorka této kapitoly',
-    highlighted=True,
+    class='highlighted',
   ) }}
 </div>
 
@@ -161,7 +161,7 @@ Kouč je někdo, kdo absolvoval dlouhodobý a ideálně i akreditovaný koučova
     'Akreditovaná koučka, zaměřuje se na IT.',
     badge_icon='star',
     badge_text='Autorka této kapitoly',
-    highlighted=True,
+    class='highlighted',
   ) }}
 </div>
 

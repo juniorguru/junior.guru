@@ -59,6 +59,7 @@
   width: 100%;
   max-width: $main-document-width;
   padding: 0 $spacer;
+  margin-bottom: 0;
   background: $white;
 
   @include media-breakpoint-up(lg) {

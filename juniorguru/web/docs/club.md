@@ -39,7 +39,7 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 </div></header>
 
 
-<section>
+<section class="section">
 <h2>Získej parťáky, mentory, kamarády</h2>
 {% call lead() %}
 Začátečníci potřebují víc než [příručku](handbook/index.md). Nejvíc je posune, **když v tom všem nejsou sami**. Když jim někdo může pomoci se zapeklitou situací, dát zpětnou vazbu, dodat motivaci.
@@ -80,7 +80,7 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
 </section>
 
 
-<div class="section-background blue-light"><section>
+<div class="section-background blue-light"><section class="section">
 <h2>Užívej si přednášky pro začátečníky</h2>
 {% call lead() %}
 Jednou za čas máme na Discordu večerní akci. Je to **online a zhruba na hodinku**, takže můžeš zůstat v bačkorách a stihneš potom díl seriálu, uspat děti, nebo oboje. Můžeš pokládat dotazy, nebo si to jen pustit do uší při vaření večeře. **Záznamy minulých akcí** máš na YouTube. A to nejlepší nakonec: Téma i pojetí je vždy **vyloženě pro začátečníky**! Žádná záplava odborných termitů, které ti nikdo nevysvětlil.
@@ -102,7 +102,7 @@ Jednou za čas máme na Discordu večerní akci. Je to **online a zhruba na hodi
 </section></div>
 
 
-<section>
+<section class="section">
 <h2>Propoj se s lidmi z oboru</h2>
 {% call lead() %}
 O klub se stará **Honza Javorek, autor junior.guru**. Okolo se však „poflakuje“ i řada dalších **profíků s chutí pomáhat**. S **firmami**, které klub podporují, podnikáme různé aktivity, například mentoring nebo propojování juniorů s jejich recruitery. Partnerství s **programátorskými komunitami** ti zase rozšíří možnosti zapojit se i jinde, dovědět se o zajímavých akcích, případně na ně získat slevu. S lidmi ze všech těchto organizací se můžeš v klubu potkat a propojit.
@@ -138,7 +138,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
 </section>
 
 
-<div class="section-background blue-light"><section>
+<div class="section-background blue-light"><section class="section">
 <h2>Ptej se bez obav</h2>
 {% call lead() %}
 Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloupé otázky neexistují,** nemáme potřebu někoho stírat. **Uslintané vtipy nikoho nezajímají,** mezi členy jsou ženy, muži, staří, mladí.
@@ -175,7 +175,7 @@ Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloup
 </section></div>
 
 
-<section>
+<section class="section">
 <h2>Nech si radit od profíků</h2>
 {% call lead() %}
 Vycházíme z [postupu](handbook/index.md), který je založen na reálných zkušenostech a **osvědčil se mnohým začátečníkům**. Snažíme se však radit objektivně a brát ohled i na tvou konkrétní situaci. Než abychom tě utopili v možnostech, **pomůžeme ti s rozhodováním**. Poskytneme ti sice různé pohledy, ale taky **jasný směr**. Profíci, kteří šli do klubu, to udělali ze zájmu o juniory a **s chutí pomáhat**, nejsou to náhodní kolemjdoucí.
@@ -203,7 +203,7 @@ Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství,
 </section>
 
 
-<div id="cenik" class="section-background yellow"><section>
+<div id="cenik" class="section-background yellow"><section class="section">
 
 <h2>Prvních 14 dní zdarma</h2>
 {% call lead() %}
@@ -255,7 +255,7 @@ Nemusíš hned zadávat kartu. Vyber si roční nebo měsíční předplatné a 
 </section></div>
 
 
-<section>
+<section class="section">
 <h2>Otázky?</h2>
 {% call lead() %}
 Vrtá ti hlavou, jak přesně to celé funguje? Máš nějaké problémy s registrací nebo s Discordem? Zajímají tě veškeré detaily ohledně placení? Vypršela ti platnost karty? Prolétni si **otázky a odpovědi**.

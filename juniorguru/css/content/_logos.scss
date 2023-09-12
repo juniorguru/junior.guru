@@ -2,8 +2,8 @@
   @extend .list-unstyled;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-bottom: 0;
+  justify-content: center;
+  margin-bottom: -1 * $spacer;
 }
 
 .logos-item {
@@ -12,7 +12,7 @@
   margin: 0 map-get($spacers, 2) $spacer map-get($spacers, 2);
 
   @include media-breakpoint-up(sm) {
-    margin: 0 $spacer $spacer $spacer;
+    margin: 0 map-get($spacers, 4) $spacer map-get($spacers, 4);
   }
 }
 
@@ -46,8 +46,10 @@
 }
 
 .logos.grayscale .logos-image {
-  filter: grayscale(100%);
-  opacity: .5;
+  // comments here: https://stackoverflow.com/a/52936970/325365
+  filter: saturate(0) brightness(.7) contrast(3);
+  mix-blend-mode: multiply;
+  opacity: .7;
 }
 
 .logos.grayscale a:hover .logos-image,
