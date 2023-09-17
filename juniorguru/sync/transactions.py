@@ -49,6 +49,7 @@ CATEGORIES_SPEC = [
     lambda t: 'marketing' if 'BUFFER PUBLISH' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'marketing' if 'PrintAll' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'marketing' if 'samolep' in t['message'] and t['amount'] < 0 else None,
+    lambda t: 'marketing' if 'PyCon CZ' in t['message'] and t['amount'] < 0 else None,
     lambda t: 'donations' if 'GITHUB SPONSORS' in t['message'] and t['amount'] > 0 else None,
     lambda t: 'memberships' if 'STRIPE' in t['message'] and t['amount'] > 0 else None,
     lambda t: 'donations' if 'PAYPAL' in t['message'] and t['amount'] > 0 else None,
