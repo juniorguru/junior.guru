@@ -64,7 +64,7 @@ ghp-import = "2.1.0"
 pytest-asyncio = "0.21.1"
 scour = "0.38.2"
 datasette = "0.64.3"
-black = "23.7.0"
+black = "23.9.1"
 
 [tool.pytest.ini_options]
 python_files = "test_*.py *_test.py test.py"
