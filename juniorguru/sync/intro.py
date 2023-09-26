@@ -6,7 +6,7 @@ from discord import MessageType, TextChannel
 from juniorguru_chick.lib import intro
 from juniorguru_chick.lib.threads import (
     add_members_with_role,
-    create_thread,
+    name_thread,
     ensure_thread_name,
     is_thread_created,
 )
@@ -95,7 +95,7 @@ async def welcome(discord_channel: TextChannel, message: ClubMessage):
         thread = await discord_message.guild.fetch_channel(message.id)
     else:
         logger.debug(f"Creating thread for {message.author.display_name!r}")
-        thread = await create_thread(discord_message, intro.THREAD_NAME_TEMPLATE)
+        thread = await discord_message.create_thread(name=name_thread(intro.THREAD_NAME_TEMPLATE))
 
     if thread.archived or thread.locked:
         logger.debug(f"Thread for {message.author.display_name!r} is archived or locked, skipping")

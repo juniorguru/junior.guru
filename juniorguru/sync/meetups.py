@@ -11,7 +11,7 @@ import discord
 import ics
 import requests
 import teemup
-from juniorguru_chick.lib.threads import create_thread, ensure_thread_name
+from juniorguru_chick.lib.threads import ensure_thread_name
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
@@ -180,7 +180,7 @@ async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
             thread = await discord_channel_message.guild.fetch_channel(discord_channel_message.id)
         else:
             logger.info("Creating thread")
-            thread = await create_thread(discord_channel_message, thread_name(event))
+            thread = await discord_channel_message.create_thread(name=thread_name(event))
 
         if thread.archived or thread.locked:
             logger.warning(f"Thread {discord_channel_message.jump_url} is archived or locked, skipping")
