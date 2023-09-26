@@ -257,7 +257,7 @@
   partnerships:
     - plan: gold
       starts_on: 2020-09-01
-      expires_on: 2023-10-01
+      expires_on: 2023-11-01
 
 - name: OpenGeoLabs
   slug: opengeolabs
