@@ -6,9 +6,9 @@ from discord import MessageType, TextChannel
 from juniorguru_chick.lib import intro
 from juniorguru_chick.lib.threads import (
     add_members_with_role,
-    name_thread,
     ensure_thread_name,
     is_thread_created,
+    name_thread,
 )
 
 from juniorguru.cli.sync import main as cli
