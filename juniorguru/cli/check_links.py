@@ -10,7 +10,7 @@ from juniorguru.cli.web import build as build_web
 
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) "
-    "Gecko/20100101 Firefox/110.0"
+    "Gecko/20100101 Firefox/117.0"
 )
 
 EXCLUDE_URLS = [
@@ -33,6 +33,7 @@ EXCLUDE_URLS = [
     "startupjobs.cz/nabidka/",  # crawling protection?
     "datacamp.com",  # crawling protection?
     "meetup.com",  # crawling protection?
+    "navolnenoze.cz",  # crawling protection?
 ]
 
 EXCLUDE_REASONS = [
