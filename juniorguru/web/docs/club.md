@@ -130,9 +130,9 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
   {{ logo('#HolkyzMarketingu', 'logos/holkyzmarketingu.svg', 'https://www.holkyzmarketingu.cz/') }}
   {{ logo('PyLadies', 'logos/pyladies.svg', 'https://pyladies.cz/') }}
   {{ logo('Pyvec', 'logos/pyvec.svg', 'https://pyvec.org/') }}
-  {{ logo('CyberMagnolia', 'logos/cybermagnolia.svg', 'https://cybermagnolia.com/') }}
   {{ logo('ReactGirls', 'logos/reactgirls.svg', 'https://reactgirls.com/') }}
   {{ logo('TWguild.cz', 'logos/twguild.svg', 'https://www.twguild.cz/') }}
+  {{ logo('Týden pro Digitální Česko', 'logos/tdc.svg', 'https://www.budoucnostjedigitalni.cz') }}
   {{ logo('yablko', 'logos/yablko.svg', 'http://robweb.sk/') }}
 </ul>
 </section>
