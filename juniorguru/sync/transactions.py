@@ -9,7 +9,7 @@ import requests
 from fiobank import FioBank
 
 from juniorguru.cli.sync import confirm, default_from_env, main as cli
-from juniorguru.lib import google_sheets, loggers, mutations
+from juniorguru.lib import loggers, mutations
 from juniorguru.models.transaction import Transaction
 
 
@@ -190,18 +190,9 @@ def main(from_date, fio_api_key, fakturoid_api_base_url, fakturoid_api_key, doc_
         for db_object in Transaction.history():
             f.write(db_object.serialize())
 
-    logger.info(f'Uploading {len(doc_records)} records to a private Google Sheet for manual audit of possible mistakes')
-    if doc_records:
-        upload_to_google_sheet(doc_key, doc_records)
-
     logger.info(f'Toggling {len(todos_to_toggle)} Fakturoid todos')
     for todo in todos_to_toggle.values():
         toggle_fakturoid_todo(fakturoid_api_base_url, fakturoid_api_kwargs, todo)
-
-
-@mutations.mutates_google_sheets()
-def upload_to_google_sheet(doc_key, doc_records):
-    google_sheets.upload(google_sheets.get(doc_key, 'transactions'), doc_records)
 
 
 @mutations.mutates_fakturoid()
