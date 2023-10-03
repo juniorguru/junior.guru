@@ -57,7 +57,8 @@ def main(history_path: Path, ecomail_api_key: str, ecomail_list_id: int):
 
     scrapers = {'youtube': scrape_youtube,
                 'linkedin': scrape_linkedin,
-                'linkedin_personal': scrape_linkedin_personal}
+                'linkedin_personal': scrape_linkedin_personal,
+                'mastodon': scrape_mastodon}
     for name, scrape in scrapers.items():
         logger.info(f"Scraping {name!r}")
         if count := scrape():
@@ -149,4 +150,18 @@ def scrape_linkedin_personal():
         return int(match.group(1).replace(',', ''))
     except (AttributeError, ValueError):
         logger.error(f"Scraping failed!\n\n{response_text}")
+        return None
+
+
+def scrape_mastodon():
+    logger.info('Scraping Mastodon')
+    response = requests.get('https://mastodonczech.cz/@honzajavorek')
+    response.raise_for_status()
+    html_tree = html.fromstring(response.content)
+    try:
+        description = html_tree.cssselect('meta[name="description"]')[0].get('content')
+        match = re.search(r'(\d+)\s+(followers|sledujících)', description, re.IGNORECASE)
+        return int(match.group(1))
+    except (AttributeError, ValueError):
+        logger.error(f"Scraping failed!\n\n{response.text}")
         return None

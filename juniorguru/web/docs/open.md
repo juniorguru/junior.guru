@@ -859,6 +859,12 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích 
                 'borderWidth': 2,
             },
             {
+                'label': 'Mastodon',
+                'data': charts.followers_breakdown.pop('mastodon'),
+                'borderColor': '#563acc',
+                'borderWidth': 2,
+            },
+            {
                 'label': 'newsletter',
                 'data': charts.followers_breakdown.pop('newsletter'),
                 'borderColor': '#02cabb',
