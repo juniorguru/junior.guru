@@ -721,7 +721,7 @@ Data jsou celkem od **{{ charts.total_cancellations_breakdown_count }}** lidí.
     data-chart-type="pie"
     data-chart="{{ {
         'labels': {
-            'unknown': '% neznámý důvod',
+            'unknown': '% neudali důvod',
             'other': '% jiný důvod',
             'necessity': '% klub už nepotřebuju',
             'temporary_use': '% potřeboval(a) jsem klub na omezenou dobu',
