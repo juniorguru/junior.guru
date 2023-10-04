@@ -50,7 +50,8 @@ def main(history_path: Path, ecomail_api_key: str, ecomail_list_id: int):
 
     logger.info('Getting newsletter subscribers from Ecomail')
     response = requests.get(f'https://api2.ecomailapp.cz/lists/{ecomail_list_id}/subscribers',
-                            headers={'key': ecomail_api_key})
+                            headers={'key': ecomail_api_key,
+                                     'User-Agent': 'JuniorGuruBot (+https://junior.guru)'})
     response.raise_for_status()
     subscribers_count = response.json()['total']
     Followers.add(month=month, name='newsletter', count=subscribers_count)
