@@ -1,10 +1,17 @@
-from pathlib import Path
 import re
+from pathlib import Path
+
 import click
 from discord import AllowedMentions
+
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID, get_starting_emoji
+from juniorguru.lib.discord_club import (
+    ClubChannelID,
+    ClubClient,
+    ClubMemberID,
+    get_starting_emoji,
+)
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole
