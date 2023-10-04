@@ -57,6 +57,21 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+- id: 38
+  title: "(Spolupráce v týmu, bude upřesněno)"
+  date: "2023-12-19"
+  description: |
+    (Jira, Slack, 1-1, all hands - co to všechno je? bude upřesněno)
+  avatar_path: avatars-participants/dominika-prazakova.jpg
+  bio_name: Dominika Pražáková
+  bio_title: (bude upřesněno)
+  bio: |
+    (bude upřesněno)
+  bio_links:
+    - https://www.linkedin.com/in/prazakova/
+  speakers:
+
+
 - id: 37
   title: "(Šifrovačky, bude upřesněno)"
   date: "2023-12-05"
@@ -72,21 +87,6 @@
     - https://sifrovacky.cz/
     - https://www.linkedin.com/in/m%C3%ADla-votradovec-2a659920/
   speakers: 514847931040530433
-
-
-# - id: 38
-#   title: "(Spolupráce v týmu, bude upřesněno)"
-#   date: "2023-10-03"
-#   description: |
-#     (Jira, Slack, 1-1, all hands - co to všechno je? bude upřesněno)
-#   avatar_path: avatars-participants/dominika-prazakova.jpg
-#   bio_name: Dominika Pražáková
-#   bio_title: (bude upřesněno)
-#   bio: |
-#     (bude upřesněno)
-#   bio_links:
-#     - https://www.linkedin.com/in/prazakova/
-#   speakers:
 
 
 - id: 36
