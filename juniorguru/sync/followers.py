@@ -156,7 +156,8 @@ def scrape_linkedin_personal():
 
 def scrape_mastodon():
     logger.info('Scraping Mastodon')
-    response = requests.get('https://mastodonczech.cz/@honzajavorek')
+    response = requests.get('https://mastodonczech.cz/@honzajavorek',
+                            headers={'User-Agent': 'JuniorGuruBot (+https://junior.guru)'})
     response.raise_for_status()
     html_tree = html.fromstring(response.content)
     try:
