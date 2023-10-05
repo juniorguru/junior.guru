@@ -34,6 +34,7 @@ UPVOTES_EXCLUDE_CHANNELS = [
     ClubChannelID.DASHBOARD,
     ClubChannelID.FUN,
     ClubChannelID.FUN_TOPICS,
+    ClubChannelID.NEWCOMERS,
 ]
 
 STATS_EXCLUDE_CHANNELS = [
