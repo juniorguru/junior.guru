@@ -22,6 +22,8 @@ from juniorguru.models.club import ClubMessage
 
 NAME_PREFIX = 'Mini sraz juniorů'
 
+NAME_LENGTH_LIMIT = 100
+
 MEETUP_URL_RE = re.compile(r'https?://\S+', re.IGNORECASE)
 
 CALL_TO_ACTION_TEXT = (
@@ -274,8 +276,11 @@ def generate_channel_message_content(event: dict) -> str:
     )
 
 
-def thread_name(event: dict) -> str:
-    return f"{event['location'][1]}, {event['starts_at']:%-d.%-m.} – {event['name_raw']}"
+def thread_name(event: dict, limit=NAME_LENGTH_LIMIT) -> str:
+    name = f"{event['location'][1]}, {event['starts_at']:%-d.%-m.} – {event['name_raw']}"
+    if len(name) >= limit:
+        return name[:limit - 1] + '…'
+    return name
 
 
 def generate_thread_message_content(scheduled_event_url: str, mentions: list[str] = None) -> str:

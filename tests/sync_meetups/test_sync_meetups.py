@@ -146,6 +146,16 @@ def test_thread_name(event: dict):
     assert thread_name(event) == "Praha, 24.6. – ReactGirls & Applifting meetup"
 
 
+def test_thread_name_too_long(event: dict):
+    event['name_raw'] = (
+        'Pražské Pyvo #149 Engineering Of Structured, Semi-Structured And Unstructured Data & Language Models and the Non-English Languages'
+    )
+    name = thread_name(event, limit=40)
+
+    assert len(name) == 40
+    assert name == "Praha, 24.6. – Pražské Pyvo #149 Engine…"
+
+
 def test_generate_thread_message():
     text = generate_thread_message_content(
         "https://discord.com/events/769966886598737931/1132525354439946310",
