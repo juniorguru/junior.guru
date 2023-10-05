@@ -1,8 +1,9 @@
+import asyncio
 import re
 from pathlib import Path
 
 import click
-from discord import AllowedMentions
+from discord import AllowedMentions, ForumChannel, Thread
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
@@ -99,43 +100,48 @@ def parse_tip(markdown: str, roles=None) -> dict:
 async def sync_tips(client: ClubClient, tips: list[dict]):
     channel = await client.fetch_channel(ClubChannelID.TIPS)
     threads = {get_starting_emoji(thread.name): thread for thread in channel.threads}
-    allowed_mentions = AllowedMentions(
-        everyone=True, users=[], roles=False, replied_user=True
+    await asyncio.gather(*[
+        asyncio.create_task(
+            update_tip(threads[tip["emoji"]], tip) if tip["emoji"] in threads else create_tip(channel, tip)
+        )
+        for tip in tips
+    ])
+
+
+async def create_tip(channel: ForumChannel, tip: dict) -> Thread:
+    logger.info(f'Creating tip: {tip["title"]}')
+    thread = await channel.create_thread(name=tip["title"],
+                                         content=tip["content"],
+                                         allowed_mentions=AllowedMentions.none(),
+                                         auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION)
+    await thread.get_partial_message(thread.id).edit(suppress=True)
+    return thread
+
+
+async def update_tip(thread: Thread, tip: dict) -> None:
+    logger.info(f'Updating tip: {tip["title"]}')
+    message = (
+        thread.starting_message
+        if thread.starting_message
+        else (await thread.fetch_message(thread.id))
     )
 
-    for tip in tips:
-        if tip["emoji"] not in threads:
-            logger.info(f'Creating tip: {tip["title"]}')
-            thread = await channel.create_thread(name=tip["title"])
-            threads[tip["emoji"]] = thread
+    thread_params = {}
+    if thread.archived:
+        thread_params["archived"] = False
+    if thread.auto_archive_duration != DEFAULT_AUTO_ARCHIVE_DURATION:
+        thread_params["auto_archive_duration"] = DEFAULT_AUTO_ARCHIVE_DURATION
+    if thread.name != tip["title"]:
+        thread_params["name"] = tip["title"]
+    if thread_params:
+        logger.debug("Updating thread")
+        await thread.edit(**thread_params)
 
-    for tip in reversed(tips):
-        logger.info(f'Updating tip: {tip["title"]}')
-        thread = threads[tip["emoji"]]
-        message = (
-            thread.starting_message
-            if thread.starting_message
-            else (await thread.fetch_message(thread.id))
-        )
-
-        thread_params = {}
-        if thread.archived:
-            thread_params["archived"] = False
-        if thread.auto_archive_duration != DEFAULT_AUTO_ARCHIVE_DURATION:
-            thread_params["auto_archive_duration"] = DEFAULT_AUTO_ARCHIVE_DURATION
-        if thread.name != tip["title"]:
-            thread_params["name"] = tip["title"]
-        if thread_params:
-            logger.debug("Updating thread")
-            await thread.edit(**thread_params)
-
-        message_params = {}
-        if message.content != tip["content"]:
-            message_params["content"] = tip["content"]
-            message_params["suppress"] = True
-            message_params["allowed_mentions"] = allowed_mentions
-        if message_params:
-            logger.debug("Updating message")
-            await message.edit(
-                content=tip["content"], suppress=True, allowed_mentions=allowed_mentions
-            )
+    message_params = {}
+    if message.content != tip["content"]:
+        message_params["content"] = tip["content"]
+        message_params["suppress"] = True
+        message_params["allowed_mentions"] = AllowedMentions.none()
+    if message_params:
+        logger.debug("Updating message")
+        await message.edit(**message_params)
