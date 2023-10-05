@@ -6,15 +6,16 @@ from discord import AllowedMentions
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import mutations
 from juniorguru.lib.discord_club import (
     ClubChannelID,
     ClubClient,
     ClubMemberID,
     get_starting_emoji,
 )
-from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole
+from juniorguru.sync.club_threads import DEFAULT_AUTO_ARCHIVE_DURATION
 
 
 REFERENCE_RE = re.compile(r'''
@@ -85,28 +86,41 @@ def parse_tip(markdown: str, roles=None) -> dict:
 
 
 @db.connection_context()
+@mutations.mutates_discord()
 async def sync_tips(client: ClubClient, tips: list[dict]):
     channel = await client.fetch_channel(ClubChannelID.TIPS)
     threads = {get_starting_emoji(thread.name): thread for thread in channel.threads}
     allowed_mentions = AllowedMentions(everyone=True, users=[], roles=False, replied_user=True)
 
     for tip in tips:
-        if tip['emoji'] in threads:
-            thread = threads[tip['emoji']]
-            logger.info(f'Updating tip: {tip["title"]}')
-            if thread.name != tip['title']:
-                with mutating_discord(thread) as proxy:
-                    await proxy.edit(name=tip['title'])
-            message = await thread.fetch_message(thread.id)
-            if message.content != tip['content']:
-                with mutating_discord(message) as proxy:
-                    await proxy.edit(content=tip['content'],
-                                     suppress=True,
-                                     allowed_mentions=allowed_mentions)
-        else:
+        if tip['emoji'] not in threads:
             logger.info(f'Creating tip: {tip["title"]}')
-            with mutating_discord(channel) as proxy:
-                thread = await proxy.create_thread(name=tip['title'],
-                                                   content=tip['content'],
-                                                   allowed_mentions=allowed_mentions)
-                await thread.get_partial_message(thread.id).edit(suppress=True)
+            thread = await channel.create_thread(name=tip['title'])
+            threads[tip['emoji']] = thread
+
+    for tip in reversed(tips):
+        logger.info(f'Updating tip: {tip["title"]}')
+        thread = threads[tip['emoji']]
+        message = thread.starting_message if thread.starting_message else (await thread.fetch_message(thread.id))
+
+        thread_params = {}
+        if thread.archived:
+            thread_params['archived'] = False
+        if thread.auto_archive_duration != DEFAULT_AUTO_ARCHIVE_DURATION:
+            thread_params['auto_archive_duration'] = DEFAULT_AUTO_ARCHIVE_DURATION
+        if thread.name != tip['title']:
+            thread_params['name'] = tip['title']
+        if thread_params:
+            logger.debug('Updating thread')
+            await thread.edit(**thread_params)
+
+        message_params = {}
+        if message.content != tip['content']:
+            message_params['content'] = tip['content']
+            message_params['suppress'] = True
+            message_params['allowed_mentions'] = allowed_mentions
+        if message_params:
+            logger.debug('Updating message')
+            await message.edit(content=tip['content'],
+                                            suppress=True,
+                                            allowed_mentions=allowed_mentions)
