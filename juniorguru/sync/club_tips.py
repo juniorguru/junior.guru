@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 
 import click
-from discord import AllowedMentions, Embed, ForumChannel, Thread, ui
+from discord import AllowedMentions, ForumChannel, Thread, ui
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations

@@ -3,7 +3,6 @@ import pytest
 from juniorguru.lib.discord_club import CLUB_GUILD
 from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.sync.digest import (
-    calc_reading_time,
     format_channel,
     format_channel_digest,
     format_content,
@@ -90,16 +89,3 @@ def test_format_channel(
     )
 
     assert format_channel(message) == expected
-
-
-@pytest.mark.parametrize(
-    "content_size, expected",
-    [
-        (None, 1),
-        (0, 1),
-        (20, 1),
-        (5000, 4),
-    ],
-)
-def test_calc_reading_time(content_size, expected):
-    assert calc_reading_time(content_size) == expected
