@@ -107,8 +107,8 @@ async def discord_task(client: ClubClient):
     for member in members:
         changes.extend(evaluate_changes(member.id, member.initial_roles, intro_avatar_members_ids, role_id))
 
-    logger.info('Computing how to re-assign role: new')
-    role_id = ClubDocumentedRole.get_by_slug('new').id
+    logger.info('Computing how to re-assign role: newcomer')
+    role_id = ClubDocumentedRole.get_by_slug('newcomer').id
     new_members_ids = [member.id for member in members if member.is_new()]
     logger.debug(f"new_members_ids: {repr_ids(members, new_members_ids)}")
     for member in members:
