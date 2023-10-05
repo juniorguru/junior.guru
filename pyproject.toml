@@ -83,7 +83,32 @@ filterwarnings = [
 target-versions = ["py311"]
 include = "\\.py$"
 exclude = """(\
-juniorguru/sync|\
+juniorguru/sync/a*|\
+juniorguru/sync/b*|\
+juniorguru/sync/c*|\
+juniorguru/sync/d*|\
+juniorguru/sync/e*|\
+juniorguru/sync/f*|\
+juniorguru/sync/g*|\
+juniorguru/sync/h*|\
+juniorguru/sync/i*|\
+juniorguru/sync/j*|\
+juniorguru/sync/k*|\
+juniorguru/sync/l*|\
+juniorguru/sync/m*|\
+juniorguru/sync/n*|\
+juniorguru/sync/o*|\
+juniorguru/sync/p*|\
+juniorguru/sync/q*|\
+juniorguru/sync/r*|\
+juniorguru/sync/s*|\
+juniorguru/sync/t*|\
+juniorguru/sync/u*|\
+juniorguru/sync/v*|\
+juniorguru/sync/w*|\
+juniorguru/sync/x*|\
+juniorguru/sync/y*|\
+juniorguru/sync/z*|\
 juniorguru/models|\
 juniorguru/[^_]+_legacy|\
 node_modules\
