@@ -56,14 +56,16 @@ def load_tips(tips_path: Path, roles=None):
         if tip_path.name == "README.md":
             continue
         logger.info(f"Loading tip {tip_path}")
-        yield {'url': get_tip_url(tip_path),
-               **parse_tip(tip_path.read_text(), roles=roles)}
+        yield {
+            "url": get_tip_url(tip_path),
+            **parse_tip(tip_path.read_text(), roles=roles),
+        }
 
 
-def get_tip_url(path: Path, cwd: Path=None) -> str:
+def get_tip_url(path: Path, cwd: Path = None) -> str:
     cwd = cwd or Path.cwd()
     path = path.absolute().relative_to(cwd)
-    return f'https://github.com/honzajavorek/junior.guru/blob/main/{path}'
+    return f"https://github.com/honzajavorek/junior.guru/blob/main/{path}"
 
 
 def parse_tip(markdown: str, roles=None) -> dict:
@@ -107,24 +109,30 @@ def parse_tip(markdown: str, roles=None) -> dict:
 async def sync_tips(client: ClubClient, tips: list[dict]):
     channel = await client.fetch_channel(ClubChannelID.TIPS)
     threads = {get_starting_emoji(thread.name): thread for thread in channel.threads}
-    await asyncio.gather(*[
-        asyncio.create_task(
-            update_tip(threads[tip["emoji"]], tip) if tip["emoji"] in threads else create_tip(channel, tip)
-        )
-        for tip in tips
-    ])
+    await asyncio.gather(
+        *[
+            asyncio.create_task(
+                update_tip(threads[tip["emoji"]], tip)
+                if tip["emoji"] in threads
+                else create_tip(channel, tip)
+            )
+            for tip in tips
+        ]
+    )
 
 
 async def create_tip(channel: ForumChannel, tip: dict) -> Thread:
     logger.info(f'Creating tip: {tip["title"]}')
-    thread = await channel.create_thread(name=tip["title"],
-                                         content=tip["content"],
-                                         allowed_mentions=AllowedMentions.none(),
-                                         auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION,
-                                         view=(await create_view(tip['url'])))
+    thread = await channel.create_thread(
+        name=tip["title"],
+        content=tip["content"],
+        allowed_mentions=AllowedMentions.none(),
+        auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION,
+        view=(await create_view(tip["url"])),
+    )
     message = thread.get_partial_message(thread.id)
     await message.edit(suppress=True)
-    await message.add_reaction('✅')
+    await message.add_reaction("✅")
     return thread
 
 
@@ -135,7 +143,7 @@ async def update_tip(thread: Thread, tip: dict) -> None:
         if thread.starting_message
         else (await thread.fetch_message(thread.id))
     )
-    view = await create_view(tip['url'])
+    view = await create_view(tip["url"])
 
     thread_params = {}
     if thread.archived:
@@ -167,8 +175,10 @@ async def update_tip(thread: Thread, tip: dict) -> None:
 
 
 async def create_view(url: str) -> ui.View:  # View's __init__ touches the event loop
-    return ui.View(ui.Button(
+    return ui.View(
+        ui.Button(
             emoji="<:github:842685206095724554>",
             label="Navrhnout změny v textu",
             url=url,
-        ))
+        )
+    )

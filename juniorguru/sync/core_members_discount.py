@@ -1,5 +1,6 @@
 import asyncio
 from datetime import date, timedelta
+
 import click
 from discord import ui
 
@@ -31,7 +32,9 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command(dependencies=["members"])
-@click.option("--report-channel", "report_channel_id", default="business", type=parse_channel)
+@click.option(
+    "--report-channel", "report_channel_id", default="business", type=parse_channel
+)
 def main(report_channel_id: int):
     with db:
         members = ClubUser.core_discount_listing()
@@ -85,7 +88,9 @@ def main(report_channel_id: int):
 
         logger.info("Sending offers")
         member_ids = [member.id for member in members]
-        discord_sync.run(offer_core_discounts, discount_info, member_ids, report_channel_id)
+        discord_sync.run(
+            offer_core_discounts, discount_info, member_ids, report_channel_id
+        )
 
         logger.info("Reporting")
         discord_sync.run(report_discount_offering, member_ids, report_channel_id)
@@ -165,21 +170,20 @@ def get_member(member_id: int) -> ClubUser:
     return ClubUser.get_by_id(member_id)
 
 
-async def report_discount_offering(client: ClubClient, members_ids: list[int], report_channel_id: int):
+async def report_discount_offering(
+    client: ClubClient, members_ids: list[int], report_channel_id: int
+):
     channel = await client.fetch_channel(report_channel_id)
     db_members = await asyncio.gather(
-        *[
-            asyncio.to_thread(get_member, member_id)
-            for member_id in members_ids
-        ]
+        *[asyncio.to_thread(get_member, member_id) for member_id in members_ids]
     )
     names = [db_member.display_name for db_member in db_members]
-    content = (
-        f"{DISCOUNT_EMOJI} Dostávají slevu na předplatné: **{', '.join(names)}**"
-    )
+    content = f"{DISCOUNT_EMOJI} Dostávají slevu na předplatné: **{', '.join(names)}**"
     buttons = [
         ui.Button(
-            emoji="💳", label=db_member.display_name, url=memberful_url(db_member.account_id)
+            emoji="💳",
+            label=db_member.display_name,
+            url=memberful_url(db_member.account_id),
         )
         for db_member in db_members
     ]
