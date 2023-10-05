@@ -11,6 +11,7 @@ from juniorguru.lib.discord_club import (
     ClubClient,
     ClubMemberID,
     get_starting_emoji,
+    parse_channel,
 )
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole
@@ -77,7 +78,7 @@ def parse_tip(markdown: str, roles=None) -> dict:
     resolvers = {
         "@&": lambda value: roles[value],
         "@": lambda value: ClubMemberID[value],
-        "#": lambda value: ClubChannelID[value],
+        "#": parse_channel,
     }
 
     def resolve_reference(match: re.Match) -> str:
