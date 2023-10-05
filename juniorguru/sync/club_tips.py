@@ -1,6 +1,6 @@
 import asyncio
-from datetime import date
 import re
+from datetime import date
 from pathlib import Path
 
 import click
@@ -64,8 +64,9 @@ def load_tips(tips_path: Path, roles=None):
         if tip_path.name == "README.md":
             continue
         logger.info(f"Loading tip {tip_path}")
-        yield dict(url=get_tip_url(tip_path),
-                   **parse_tip(tip_path.read_text(), roles=roles))
+        yield dict(
+            url=get_tip_url(tip_path), **parse_tip(tip_path.read_text(), roles=roles)
+        )
 
 
 def get_tip_url(path: Path, cwd: Path = None) -> str:
@@ -95,6 +96,7 @@ def parse_tip(markdown: str, roles=None) -> dict:
         "@": lambda value: ClubMemberID[value],
         "#": parse_channel,
     }
+
     def resolve_reference(match: re.Match) -> str:
         prefix = match.group("prefix")
         value = match.group("value")
@@ -102,6 +104,7 @@ def parse_tip(markdown: str, roles=None) -> dict:
             return f"<{prefix}{resolvers[prefix](value)}>"
         except Exception as e:
             raise ValueError(f"Could not parse reference: {prefix}{value!r}") from e
+
     markdown = REFERENCE_RE.sub(resolve_reference, markdown)
 
     try:
@@ -197,7 +200,9 @@ async def dose_tips(client: ClubClient, tips: list[dict]):
     channel_tips = await client.fetch_channel(ClubChannelID.TIPS)
     threads = threads_by_emoji(channel_tips.threads)
 
-    last_dose_message = ClubMessage.last_bot_message(ClubChannelID.NEWCOMERS, DOSE_EMOJI)
+    last_dose_message = ClubMessage.last_bot_message(
+        ClubChannelID.NEWCOMERS, DOSE_EMOJI
+    )
     if last_dose_message:
         if last_dose_message.created_at.date() == date.today():
             logger.info("Already dosed today")
@@ -218,18 +223,20 @@ async def dose_tips(client: ClubClient, tips: list[dict]):
 
     logger.info(f"Dosing: {dose_tip['title']} - {dose_thread.jump_url}")
     channel = await client.fetch_channel(ClubChannelID.NEWCOMERS)
-    newcomers_mention = ClubDocumentedRole.get_by_slug('newcomer').mention
-    content = (
-        f"{DOSE_EMOJI} **Tip dne** pro {newcomers_mention} ({reading_time(len(dose_tip['content']))} min čtení)"
-    )
+    newcomers_mention = ClubDocumentedRole.get_by_slug("newcomer").mention
+    content = f"{DOSE_EMOJI} **Tip dne** pro {newcomers_mention} ({reading_time(len(dose_tip['content']))} min čtení)"
     with mutations.mutating_discord(channel) as proxy:
-        await proxy.send(content, allowed_mentions=AllowedMentions(users=False, roles=True), view=ui.View(
-            ui.Button(
-                emoji=dose_tip["emoji"],
-                label=remove_emoji(dose_tip["title"]),
-                url=dose_thread.jump_url,
-            )
-        ))
+        await proxy.send(
+            content,
+            allowed_mentions=AllowedMentions(users=False, roles=True),
+            view=ui.View(
+                ui.Button(
+                    emoji=dose_tip["emoji"],
+                    label=remove_emoji(dose_tip["title"]),
+                    url=dose_thread.jump_url,
+                )
+            ),
+        )
 
 
 def threads_by_emoji(threads: list[Thread]) -> dict[str, Thread]:

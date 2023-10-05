@@ -1,8 +1,6 @@
 import pytest
 
-from juniorguru.lib.reading_time import (
-    reading_time,
-)
+from juniorguru.lib.reading_time import reading_time
 
 
 @pytest.mark.parametrize(
