@@ -17,34 +17,43 @@ from juniorguru.models.club import ClubDocumentedRole
 from juniorguru.sync.club_threads import DEFAULT_AUTO_ARCHIVE_DURATION
 
 
-REFERENCE_RE = re.compile(r'''
+REFERENCE_RE = re.compile(
+    r"""
     <
         (?P<prefix>[#@&]+)
         (?P<value>[^>]+)
     >
-''', re.VERBOSE)
+""",
+    re.VERBOSE,
+)
 
 
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=['roles'])
-@click.option('--path', 'tips_path', default='juniorguru/data/tips', type=click.Path(exists=True, dir_okay=True, file_okay=False, path_type=Path))
+@cli.sync_command(dependencies=["roles"])
+@click.option(
+    "--path",
+    "tips_path",
+    default="juniorguru/data/tips",
+    type=click.Path(exists=True, dir_okay=True, file_okay=False, path_type=Path),
+)
 def main(tips_path):
     with db.connection_context():
-        roles = {documented_role.slug: documented_role.id
-                 for documented_role
-                 in ClubDocumentedRole.listing()}
+        roles = {
+            documented_role.slug: documented_role.id
+            for documented_role in ClubDocumentedRole.listing()
+        }
     tips = list(load_tips(tips_path, roles=roles))
-    logger.info(f'Loaded {len(tips)} tips')
+    logger.info(f"Loaded {len(tips)} tips")
     discord_sync.run(sync_tips, tips)
 
 
 def load_tips(tips_path: Path, roles=None):
-    for tip_path in tips_path.glob('*.md'):
-        if tip_path.name == 'README.md':
+    for tip_path in tips_path.glob("*.md"):
+        if tip_path.name == "README.md":
             continue
-        logger.info(f'Loading tip {tip_path}')
+        logger.info(f"Loading tip {tip_path}")
         yield parse_tip(tip_path.read_text(), roles=roles)
 
 
@@ -53,35 +62,35 @@ def parse_tip(markdown: str, roles=None) -> dict:
     roles = {slug.upper(): id for slug, id in (roles or {}).items()}
 
     try:
-        title_match = re.search(r'^# (.+)\n', markdown)
+        title_match = re.search(r"^# (.+)\n", markdown)
         title = title_match.group(1).strip()
-        markdown = markdown[title_match.end():].strip()
+        markdown = markdown[title_match.end() :].strip()
     except Exception as e:
-        raise ValueError('Could not parse title') from e
+        raise ValueError("Could not parse title") from e
 
     emoji = get_starting_emoji(title)
     if not emoji:
-        raise ValueError(f'Could not parse emoji: {title!r}')
+        raise ValueError(f"Could not parse emoji: {title!r}")
 
-    markdown = re.sub(r'\n+## ', '\n## ', markdown)
+    markdown = re.sub(r"\n+## ", "\n## ", markdown)
 
     resolvers = {
-        '@&': lambda value: roles[value],
-        '@': lambda value: ClubMemberID[value],
-        '#': lambda value: ClubChannelID[value],
+        "@&": lambda value: roles[value],
+        "@": lambda value: ClubMemberID[value],
+        "#": lambda value: ClubChannelID[value],
     }
+
     def resolve_reference(match: re.Match) -> str:
-        prefix = match.group('prefix')
-        value = match.group('value')
+        prefix = match.group("prefix")
+        value = match.group("value")
         try:
-            return f'<{prefix}{resolvers[prefix](value)}>'
+            return f"<{prefix}{resolvers[prefix](value)}>"
         except Exception as e:
-            raise ValueError(f'Could not parse reference: {prefix}{value!r}') from e
+            raise ValueError(f"Could not parse reference: {prefix}{value!r}") from e
+
     markdown = REFERENCE_RE.sub(resolve_reference, markdown)
 
-    return dict(emoji=emoji,
-                title=title,
-                content=markdown)
+    return dict(emoji=emoji, title=title, content=markdown)
 
 
 @db.connection_context()
@@ -89,37 +98,43 @@ def parse_tip(markdown: str, roles=None) -> dict:
 async def sync_tips(client: ClubClient, tips: list[dict]):
     channel = await client.fetch_channel(ClubChannelID.TIPS)
     threads = {get_starting_emoji(thread.name): thread for thread in channel.threads}
-    allowed_mentions = AllowedMentions(everyone=True, users=[], roles=False, replied_user=True)
+    allowed_mentions = AllowedMentions(
+        everyone=True, users=[], roles=False, replied_user=True
+    )
 
     for tip in tips:
-        if tip['emoji'] not in threads:
+        if tip["emoji"] not in threads:
             logger.info(f'Creating tip: {tip["title"]}')
-            thread = await channel.create_thread(name=tip['title'])
-            threads[tip['emoji']] = thread
+            thread = await channel.create_thread(name=tip["title"])
+            threads[tip["emoji"]] = thread
 
     for tip in reversed(tips):
         logger.info(f'Updating tip: {tip["title"]}')
-        thread = threads[tip['emoji']]
-        message = thread.starting_message if thread.starting_message else (await thread.fetch_message(thread.id))
+        thread = threads[tip["emoji"]]
+        message = (
+            thread.starting_message
+            if thread.starting_message
+            else (await thread.fetch_message(thread.id))
+        )
 
         thread_params = {}
         if thread.archived:
-            thread_params['archived'] = False
+            thread_params["archived"] = False
         if thread.auto_archive_duration != DEFAULT_AUTO_ARCHIVE_DURATION:
-            thread_params['auto_archive_duration'] = DEFAULT_AUTO_ARCHIVE_DURATION
-        if thread.name != tip['title']:
-            thread_params['name'] = tip['title']
+            thread_params["auto_archive_duration"] = DEFAULT_AUTO_ARCHIVE_DURATION
+        if thread.name != tip["title"]:
+            thread_params["name"] = tip["title"]
         if thread_params:
-            logger.debug('Updating thread')
+            logger.debug("Updating thread")
             await thread.edit(**thread_params)
 
         message_params = {}
-        if message.content != tip['content']:
-            message_params['content'] = tip['content']
-            message_params['suppress'] = True
-            message_params['allowed_mentions'] = allowed_mentions
+        if message.content != tip["content"]:
+            message_params["content"] = tip["content"]
+            message_params["suppress"] = True
+            message_params["allowed_mentions"] = allowed_mentions
         if message_params:
-            logger.debug('Updating message')
-            await message.edit(content=tip['content'],
-                                            suppress=True,
-                                            allowed_mentions=allowed_mentions)
+            logger.debug("Updating message")
+            await message.edit(
+                content=tip["content"], suppress=True, allowed_mentions=allowed_mentions
+            )

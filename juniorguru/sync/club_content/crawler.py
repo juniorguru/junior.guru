@@ -35,11 +35,9 @@ WORKERS_COUNT = 5
 CHANNELS_HISTORY_SINCE = {
     ClubChannelID.FUN: timedelta(days=30),  # volná-zábava
     ClubChannelID.FUN_TOPICS: timedelta(days=30),  # volná-témata
-
     # take all history since ever
     ClubChannelID.INTRO: None,
     ClubChannelID.BUSINESS: None,
-
     # skip channels
     ClubChannelID.MODERATION: timedelta(0),
     ClubChannelID.BOT: timedelta(0),
@@ -63,8 +61,10 @@ async def crawl(client: ClubClient) -> None:
         if channel.permissions_for(client.club_guild.me).read_messages:
             queue.put_nowait(channel)
 
-    workers = [asyncio.create_task(channel_worker(worker_no, queue))
-               for worker_no in range(WORKERS_COUNT)]
+    workers = [
+        asyncio.create_task(channel_worker(worker_no, queue))
+        for worker_no in range(WORKERS_COUNT)
+    ]
 
     logger.info("Adding DM channels")
     tasks = []
@@ -79,7 +79,9 @@ async def crawl(client: ClubClient) -> None:
     # if there's a worker which raised
     if not queue_completed.done():
         workers_done = [worker for worker in workers if worker.done()]
-        logger.warning(f'Some workers ({len(workers_done)} of {WORKERS_COUNT}) finished before the queue is done!')
+        logger.warning(
+            f"Some workers ({len(workers_done)} of {WORKERS_COUNT}) finished before the queue is done!"
+        )
         workers_done[0].result()  # raises
 
     # cancel workers which are still runnning
@@ -93,49 +95,63 @@ async def crawl(client: ClubClient) -> None:
 async def crawl_dm_channel(queue: asyncio.Queue, member: Member) -> None:
     channel = await get_or_create_dm_channel(member)
     if channel:
-        logger['channels'].debug(f"Adding DM channel #{channel.id} for member {channel.recipient.display_name!r}")
+        logger["channels"].debug(
+            f"Adding DM channel #{channel.id} for member {channel.recipient.display_name!r}"
+        )
         queue.put_nowait(channel)
         await store_dm_channel(channel)
 
 
 async def channel_worker(worker_no, queue) -> None:
-    logger_cw = logger[worker_no]['channels']
+    logger_cw = logger[worker_no]["channels"]
     while True:
         channel = await queue.get()
         logger_c = get_channel_logger(logger_cw, channel)
-        logger_c.info(f'Crawling {get_channel_name(channel)!r}')
+        logger_c.info(f"Crawling {get_channel_name(channel)!r}")
 
-        history_since = CHANNELS_HISTORY_SINCE.get(get_parent_channel(channel).id,
-                                                   DEFAULT_CHANNELS_HISTORY_SINCE)
+        history_since = CHANNELS_HISTORY_SINCE.get(
+            get_parent_channel(channel).id, DEFAULT_CHANNELS_HISTORY_SINCE
+        )
         if history_since is None:
             history_after = None
             logger_c.debug("Crawling all channel history")
         else:
             history_after = get_history_after(history_since)
-            logger_c.debug(f"Crawling history after {history_after:%Y-%m-%d} ({history_since.days} days ago)")
+            logger_c.debug(
+                f"Crawling history after {history_after:%Y-%m-%d} ({history_since.days} days ago)"
+            )
 
-        threads = [thread async for thread in fetch_threads(channel)
-                   if is_thread_after(thread, after=history_after)
-                   and not thread.is_private()]
+        threads = [
+            thread
+            async for thread in fetch_threads(channel)
+            if is_thread_after(thread, after=history_after) and not thread.is_private()
+        ]
         if threads:
             logger_c.info(f"Adding {len(threads)} threads")
         for thread in threads:
-            logger_c.debug(f"Adding thread '{thread.name}' #{thread.id} {thread.jump_url}")
+            logger_c.debug(
+                f"Adding thread '{thread.name}' #{thread.id} {thread.jump_url}"
+            )
             queue.put_nowait(thread)
 
         tasks = []
         async for message in fetch_messages(channel, after=history_after):
             db_message = await store_message(message)
-            async for reacting_member in fetch_members_reacting_by_pin(message.reactions):
-                tasks.append(asyncio.create_task(store_pin(db_message, reacting_member)))
+            async for reacting_member in fetch_members_reacting_by_pin(
+                message.reactions
+            ):
+                tasks.append(
+                    asyncio.create_task(store_pin(db_message, reacting_member))
+                )
         await asyncio.gather(*tasks)
 
-        logger_c.debug(f'Done crawling {get_channel_name(channel)!r}')
+        logger_c.debug(f"Done crawling {get_channel_name(channel)!r}")
         queue.task_done()
 
 
-def get_channel_logger(logger: loggers.Logger,
-                       channel: GuildChannel | DMChannel) -> loggers.Logger:
+def get_channel_logger(
+    logger: loggers.Logger, channel: GuildChannel | DMChannel
+) -> loggers.Logger:
     parent_channel_id = get_parent_channel(channel).id
     logger = logger[parent_channel_id]
     if parent_channel_id != channel.id:
@@ -143,7 +159,9 @@ def get_channel_logger(logger: loggers.Logger,
     return logger
 
 
-async def fetch_messages(channel: GuildChannel | DMChannel, after=None) -> Generator[Message, None, None]:
+async def fetch_messages(
+    channel: GuildChannel | DMChannel, after=None
+) -> Generator[Message, None, None]:
     try:
         channel_history = channel.history
     except AttributeError:
@@ -152,7 +170,9 @@ async def fetch_messages(channel: GuildChannel | DMChannel, after=None) -> Gener
         yield message
 
 
-async def fetch_members_reacting_by_pin(reactions: list[Reaction]) -> Generator[User | Member, None, None]:
+async def fetch_members_reacting_by_pin(
+    reactions: list[Reaction],
+) -> Generator[User | Member, None, None]:
     for reaction in reactions:
         if emoji_name(reaction.emoji) == ClubEmoji.PIN:
             async for user in reaction.users():
@@ -164,7 +184,7 @@ async def fetch_members_reacting_by_pin(reactions: list[Reaction]) -> Generator[
 def get_history_after(history_since, now=None):
     if now:
         if now.tzinfo is None:
-            raise ValueError('now must be timezone-aware')
+            raise ValueError("now must be timezone-aware")
     else:
         now = datetime.now(timezone.utc)
     return now - history_since

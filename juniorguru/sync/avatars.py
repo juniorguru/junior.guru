@@ -16,9 +16,9 @@ from juniorguru.models.club import ClubUser
 logger = loggers.from_path(__file__)
 
 
-IMAGES_PATH = Path('juniorguru/images')
+IMAGES_PATH = Path("juniorguru/images")
 
-AVATARS_PATH = IMAGES_PATH / 'avatars-club'
+AVATARS_PATH = IMAGES_PATH / "avatars-club"
 
 MEMBERS_CHUNK_SIZE = 10
 
@@ -27,7 +27,7 @@ AVATARS_LIMIT = 40
 AVATAR_SIZE_PX = 60
 
 
-@cli.sync_command(dependencies=['club-content'])
+@cli.sync_command(dependencies=["club-content"])
 def main():
     discord_sync.run(discord_task)
 
@@ -35,20 +35,22 @@ def main():
 @db.connection_context()
 async def discord_task(client: ClubClient):
     AVATARS_PATH.mkdir(exist_ok=True, parents=True)
-    for path in AVATARS_PATH.glob('*.png'):
+    for path in AVATARS_PATH.glob("*.png"):
         path.unlink()
 
-    members_chunks = chunks(ClubUser.members_listing(shuffle=True),
-                            size=MEMBERS_CHUNK_SIZE)
+    members_chunks = chunks(
+        ClubUser.members_listing(shuffle=True), size=MEMBERS_CHUNK_SIZE
+    )
     for n, members_chunk in enumerate(members_chunks, start=1):
-        logger.debug(f'Processing chunk #{n} of {len(members_chunk)} members')
-        await asyncio.gather(*[
-            process_member(client, member)
-            for member in members_chunk
-        ])
+        logger.debug(f"Processing chunk #{n} of {len(members_chunk)} members")
+        await asyncio.gather(
+            *[process_member(client, member) for member in members_chunk]
+        )
 
         avatars_count = ClubUser.avatars_count()
-        logger.debug(f'There are total {avatars_count} avatars after processing the chunk #{n}')
+        logger.debug(
+            f"There are total {avatars_count} avatars after processing the chunk #{n}"
+        )
         if avatars_count >= AVATARS_LIMIT:
             logger.debug(f"Done! Got {avatars_count} avatars, need {AVATARS_LIMIT}")
             break
@@ -56,7 +58,7 @@ async def discord_task(client: ClubClient):
 
 async def process_member(client: ClubClient, member):
     logger_m = logger[str(member.id)]
-    logger_m.info(f'Checking avatar of #{member.id}')
+    logger_m.info(f"Checking avatar of #{member.id}")
     try:
         discord_member = await client.club_guild.fetch_member(member.id)
         avatar = discord_member.display_avatar
@@ -77,10 +79,10 @@ async def download_avatar(avatar):
     await avatar.save(buffer)
     image = Image.open(buffer)
     image = image.resize((AVATAR_SIZE_PX, AVATAR_SIZE_PX))
-    image_path = AVATARS_PATH / f'{Path(urlparse(avatar.url).path).stem}.png'
-    image.save(image_path, 'PNG')
-    return f'avatars-club/{image_path.name}'
+    image_path = AVATARS_PATH / f"{Path(urlparse(avatar.url).path).stem}.png"
+    image.save(image_path, "PNG")
+    return f"avatars-club/{image_path.name}"
 
 
 def is_default_avatar(url: str) -> bool:
-    return '/embed/avatars/' in url
+    return "/embed/avatars/" in url

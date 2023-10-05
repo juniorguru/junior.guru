@@ -15,7 +15,7 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command()
-@click.option('--feed-url', default='https://honzajavorek.cz/tag/juniorguru.xml')
+@click.option("--feed-url", default="https://honzajavorek.cz/tag/juniorguru.xml")
 @db.connection_context()
 def main(feed_url: str):
     BlogArticle.drop_table()
@@ -25,7 +25,7 @@ def main(feed_url: str):
     response = requests.get(feed_url)
     response.raise_for_status()
     articles = feedparser.parse(response.content).entries
-    articles = sorted(articles, key=attrgetter('published'), reverse=True)
+    articles = sorted(articles, key=attrgetter("published"), reverse=True)
 
     for article in articles:
         logger.info(f"Saving blog article: {article.link}")

@@ -14,21 +14,27 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command()
-@click.option('--confirm/--no-confirm', 'do_confirm', default=default_from_env('CLUB_CONTENT_CONFIRM', type=bool))
+@click.option(
+    "--confirm/--no-confirm",
+    "do_confirm",
+    default=default_from_env("CLUB_CONTENT_CONFIRM", type=bool),
+)
 def main(do_confirm):
     total_messages_count = get_total_messages_count()
     logger.info(f"Found {total_messages_count} messages")
     if total_messages_count:
         try:
-            logger.info(f"Last message is from {get_last_message().created_at.isoformat()}")
-            if not do_confirm or confirm('Fetch the latest club content?'):
+            logger.info(
+                f"Last message is from {get_last_message().created_at.isoformat()}"
+            )
+            if not do_confirm or confirm("Fetch the latest club content?"):
                 fetch_club_content()
         except OperationalError as e:
             logger.error(e)
             fetch_club_content()
     else:
         fetch_club_content()
-    logger.info(f'Finished with {pformat(get_stats())}')
+    logger.info(f"Finished with {pformat(get_stats())}")
 
 
 @db.connection_context()
@@ -53,7 +59,9 @@ def fetch_club_content():
 
 @db.connection_context()
 def get_stats() -> dict[str, int]:
-    return dict(messages=ClubMessage.count(),
-                users=ClubUser.count(),
-                members=ClubUser.members_count(),
-                pins=ClubPin.count())
+    return dict(
+        messages=ClubMessage.count(),
+        users=ClubUser.count(),
+        members=ClubUser.members_count(),
+        pins=ClubPin.count(),
+    )

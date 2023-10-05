@@ -32,14 +32,14 @@ PODCAST_BEGIN_ON = date(2022, 1, 1)
 SURVEYS_BEGIN_ON = date(2023, 1, 1)
 
 MILESTONES = [
-    (BUSINESS_BEGIN_ON, 'Začátek podnikání'),
-    (date(2020, 9, 1), 'Vznik příručky'),
-    (CLUB_BEGIN_ON, 'Vznik klubu'),
-    (PODCAST_BEGIN_ON, 'Vznik podcastu'),
-    (date(2022, 9, 1), 'Zdražení firmám'),
-    (date(2022, 12, 30), 'Zdražení členům'),
-    (date(2023, 5, 1), 'Vznik katalogu kurzů'),
-    (date(2023, 8, 31), 'Restart newsletteru'),
+    (BUSINESS_BEGIN_ON, "Začátek podnikání"),
+    (date(2020, 9, 1), "Vznik příručky"),
+    (CLUB_BEGIN_ON, "Vznik klubu"),
+    (PODCAST_BEGIN_ON, "Vznik podcastu"),
+    (date(2022, 9, 1), "Zdražení firmám"),
+    (date(2022, 12, 30), "Zdražení členům"),
+    (date(2023, 5, 1), "Vznik katalogu kurzů"),
+    (date(2023, 8, 31), "Restart newsletteru"),
 ]
 
 CHARTS = {}
@@ -48,15 +48,19 @@ CHARTS = {}
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=['transactions',
-                                'subscriptions',
-                                'members',
-                                'pages',
-                                'events',
-                                'followers',
-                                'club-content',
-                                'podcast',
-                                'web-usage'])
+@cli.sync_command(
+    dependencies=[
+        "transactions",
+        "subscriptions",
+        "members",
+        "pages",
+        "events",
+        "followers",
+        "club-content",
+        "podcast",
+        "web-usage",
+    ]
+)
 @db.connection_context()
 def main():
     Chart.drop_table()
@@ -64,16 +68,16 @@ def main():
 
     today = date.today()
     for chart_slug, chart_fn in CHARTS.items():
-        logger.info(f'Generating: {chart_slug}')
+        logger.info(f"Generating: {chart_slug}")
         chart = chart_fn(today)
-        chart.setdefault('slug', chart_slug)
+        chart.setdefault("slug", chart_slug)
         try:
-            months = chart.pop('months')
+            months = chart.pop("months")
         except KeyError:
             pass
         else:
-            chart.setdefault('labels', charts.labels(months))
-            chart.setdefault('annotations', charts.milestones(months, MILESTONES))
+            chart.setdefault("labels", charts.labels(months))
+            chart.setdefault("annotations", charts.milestones(months, MILESTONES))
         Chart.create(**chart)
 
 
@@ -182,7 +186,9 @@ def members_individuals(today: date):
 @chart
 def members_individuals_yearly(today: date):
     months = charts.months(CLUB_BEGIN_ON, today)
-    data = charts.per_month(SubscriptionActivity.active_individuals_yearly_count, months)
+    data = charts.per_month(
+        SubscriptionActivity.active_individuals_yearly_count, months
+    )
     return dict(data=data, months=months)
 
 
@@ -203,46 +209,60 @@ def subscriptions_duration(today: date):
 @chart
 def subscriptions_duration_individuals(today: date):
     months = charts.months(CLUB_BEGIN_ON, today)
-    data = charts.per_month(SubscriptionActivity.active_individuals_duration_avg, months)
+    data = charts.per_month(
+        SubscriptionActivity.active_individuals_duration_avg, months
+    )
     return dict(data=data, months=months)
 
 
 @chart
 def total_marketing_breakdown(today: date):
-    return dict(data=SubscriptionMarketingSurvey.total_breakdown_ptc(),
-                count=SubscriptionMarketingSurvey.count())
+    return dict(
+        data=SubscriptionMarketingSurvey.total_breakdown_ptc(),
+        count=SubscriptionMarketingSurvey.count(),
+    )
 
 
 @chart
 def total_spend_marketing_breakdown(today: date):
-    return dict(data=SubscriptionMarketingSurvey.total_spend_breakdown_ptc(),
-                count=SubscriptionMarketingSurvey.count())
+    return dict(
+        data=SubscriptionMarketingSurvey.total_spend_breakdown_ptc(),
+        count=SubscriptionMarketingSurvey.count(),
+    )
 
 
 @chart
 def total_referrer_breakdown(today: date):
-    return dict(data=SubscriptionReferrer.total_breakdown_ptc(),
-                count=SubscriptionReferrer.count())
+    return dict(
+        data=SubscriptionReferrer.total_breakdown_ptc(),
+        count=SubscriptionReferrer.count(),
+    )
 
 
 @chart
 def total_spend_referrer_breakdown(today: date):
-    return dict(data=SubscriptionReferrer.total_spend_breakdown_ptc(),
-                count=SubscriptionReferrer.count())
+    return dict(
+        data=SubscriptionReferrer.total_spend_breakdown_ptc(),
+        count=SubscriptionReferrer.count(),
+    )
 
 
 @chart
 def total_internal_referrer_breakdown(today: date):
     period_days = 30 * 6
-    return dict(data=SubscriptionInternalReferrer.total_breakdown_ptc(period_days),
-                count=SubscriptionInternalReferrer.count(period_days))
+    return dict(
+        data=SubscriptionInternalReferrer.total_breakdown_ptc(period_days),
+        count=SubscriptionInternalReferrer.count(period_days),
+    )
 
 
 @chart
 def total_spend_internal_referrer_breakdown(today: date):
     period_days = 30 * 6
-    return dict(data=SubscriptionInternalReferrer.total_spend_breakdown_ptc(period_days),
-                count=SubscriptionInternalReferrer.count(period_days))
+    return dict(
+        data=SubscriptionInternalReferrer.total_spend_breakdown_ptc(period_days),
+        count=SubscriptionInternalReferrer.count(period_days),
+    )
 
 
 @chart
@@ -255,21 +275,26 @@ def cancellations_breakdown(today: date):
 
 @chart
 def total_cancellations_breakdown(today: date):
-    return dict(data=SubscriptionCancellation.total_breakdown_ptc(),
-                count=SubscriptionCancellation.count())
+    return dict(
+        data=SubscriptionCancellation.total_breakdown_ptc(),
+        count=SubscriptionCancellation.count(),
+    )
 
 
 @chart
 def subscriptions_breakdown(today: date):
     months = charts.months(charts.next_month(LEGACY_PLANS_DELETED_ON), today)
-    data = charts.per_month_breakdown(SubscriptionActivity.active_subscription_type_breakdown, months)
+    data = charts.per_month_breakdown(
+        SubscriptionActivity.active_subscription_type_breakdown, months
+    )
     return dict(data=data, months=months)
 
 
 @chart
 def trials_conversion(today: date):
-    months = charts.months(charts.next_month(LEGACY_PLANS_DELETED_ON),
-                           charts.previous_month(today))
+    months = charts.months(
+        charts.next_month(LEGACY_PLANS_DELETED_ON), charts.previous_month(today)
+    )
     data = charts.per_month(SubscriptionActivity.trial_conversion_ptc, months)
     return dict(data=data, months=months)
 
@@ -318,24 +343,30 @@ def churn_individuals(today: date):
 
 @chart
 def club_content(today: date):
-    months = charts.months(charts.next_month(today - DEFAULT_CHANNELS_HISTORY_SINCE),
-                           charts.previous_month(today))
+    months = charts.months(
+        charts.next_month(today - DEFAULT_CHANNELS_HISTORY_SINCE),
+        charts.previous_month(today),
+    )
     data = charts.per_month(ClubMessage.content_size_by_month, months)
     return dict(data=data, months=months)
 
 
 @chart
 def handbook(today: date):
-    labels = [f"{page.meta['emoji']} {page.src_uri.removeprefix('handbook/')}"
-              for page in Page.handbook_listing()]
+    labels = [
+        f"{page.meta['emoji']} {page.src_uri.removeprefix('handbook/')}"
+        for page in Page.handbook_listing()
+    ]
     data = [page.size for page in Page.handbook_listing()]
     return dict(data=data, labels=labels)
 
 
 @chart
 def handbook_notes(today: date):
-    labels = [f"{page.meta['emoji']} {page.src_uri.removeprefix('handbook/')}"
-              for page in Page.handbook_listing()]
+    labels = [
+        f"{page.meta['emoji']} {page.src_uri.removeprefix('handbook/')}"
+        for page in Page.handbook_listing()
+    ]
     data = [page.notes_size for page in Page.handbook_listing()]
     return dict(data=data, labels=labels)
 
@@ -351,12 +382,12 @@ def followers_breakdown(today: date):
 def web_usage_total(today: date):
     months = charts.months(*WebUsage.months_range())
     breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
-    return dict(data=breakdown.pop('total'), months=months)
+    return dict(data=breakdown.pop("total"), months=months)
 
 
 @chart
 def web_usage_breakdown(today: date):
     months = charts.months(*WebUsage.months_range())
     breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
-    del breakdown['total']
+    del breakdown["total"]
     return dict(data=breakdown, months=months)

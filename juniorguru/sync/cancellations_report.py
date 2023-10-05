@@ -20,13 +20,13 @@ from juniorguru.models.subscription import (
 logger = loggers.from_path(__file__)
 
 
-REPORT_EMOJI = '💔'
+REPORT_EMOJI = "💔"
 
-ID_RE = re.compile(r'`#(\d+)`')
+ID_RE = re.compile(r"`#(\d+)`")
 
 
-@cli.sync_command(dependencies=['club-content', 'subscriptions-csv'])
-@click.option('--channel', 'channel_id', default='business', type=parse_channel)
+@cli.sync_command(dependencies=["club-content", "subscriptions-csv"])
+@click.option("--channel", "channel_id", default="business", type=parse_channel)
 def main(channel_id):
     discord_sync.run(report, channel_id)
 
@@ -34,11 +34,17 @@ def main(channel_id):
 @db.connection_context()
 async def report(client: ClubClient, channel_id: int):
     today = date.today()
-    account_ids = [int(ID_RE.search(message.content).group(1)) for message
-                   in ClubMessage.channel_listing_bot(channel_id, starting_emoji=REPORT_EMOJI)]
+    account_ids = [
+        int(ID_RE.search(message.content).group(1))
+        for message in ClubMessage.channel_listing_bot(
+            channel_id, starting_emoji=REPORT_EMOJI
+        )
+    ]
     logger.debug(f"Found {len(account_ids)} reported cancellations")
 
-    cancellations = SubscriptionCancellation.report_listing(exclude_account_ids=account_ids)
+    cancellations = SubscriptionCancellation.report_listing(
+        exclude_account_ids=account_ids
+    )
     logger.debug(f"About to report {len(cancellations)} cancellations")
 
     for cancellation in cancellations:
@@ -50,23 +56,29 @@ async def report(client: ClubClient, channel_id: int):
             message_content = f"{REPORT_EMOJI} "
 
         # initial embed and buttons
-        embed_description = (f"**Kdo:** {cancellation.account_name}, {cancellation.account_email}\n"
-                             f"**Utraceno:** {cancellation.account_total_spend} Kč\n")
-        buttons = [ui.Button(emoji='💳',
-                             label='Memberful',
-                             url=memberful_url(cancellation.account_id))]
+        embed_description = (
+            f"**Kdo:** {cancellation.account_name}, {cancellation.account_email}\n"
+            f"**Utraceno:** {cancellation.account_total_spend} Kč\n"
+        )
+        buttons = [
+            ui.Button(
+                emoji="💳", label="Memberful", url=memberful_url(cancellation.account_id)
+            )
+        ]
 
         # data depending on whether the user is on Discord
         if user := cancellation.user:
             message_content += f"{user.mention}"
             embed_description += f"**Písmenek v klubu**: {user.content_size()}\n"
             if cancellation.expires_on:
-                months = int((cancellation.expires_on - user.joined_at.date()).days / 30)
+                months = int(
+                    (cancellation.expires_on - user.joined_at.date()).days / 30
+                )
                 embed_description += f"**Měsíců v klubu**: {months}\n"
             if intro_message := user.intro:
-                buttons.append(ui.Button(emoji='👋',
-                               label='#ahoj',
-                               url=intro_message.url))
+                buttons.append(
+                    ui.Button(emoji="👋", label="#ahoj", url=intro_message.url)
+                )
         else:
             message_content += f"**{cancellation.account_name}**"
 
@@ -75,7 +87,9 @@ async def report(client: ClubClient, channel_id: int):
 
         # remaining days
         if cancellation.expires_on and cancellation.expires_on > today:
-            embed_description += f"**Zbývá dní:** {(cancellation.expires_on - today).days}\n"
+            embed_description += (
+                f"**Zbývá dní:** {(cancellation.expires_on - today).days}\n"
+            )
 
         # reason and feedback
         embed_description += f"**Důvod:** `{cancellation.reason.upper()}`\n"
@@ -86,4 +100,6 @@ async def report(client: ClubClient, channel_id: int):
         channel = await client.fetch_channel(channel_id)
         with mutating_discord(channel) as proxy:
             embed = Embed(description=embed_description)
-            await proxy.send(content=message_content, embed=embed, view=ui.View(*buttons))
+            await proxy.send(
+                content=message_content, embed=embed, view=ui.View(*buttons)
+            )
