@@ -1,11 +1,11 @@
 import emoji
 
 
-def remove_emoji(text: str):
+def remove_emoji(text: str) -> str:
     return strip_whitespace(emoji.replace_emoji(strip_whitespace(text), replace=""))
 
 
-def strip_whitespace(text: str):
+def strip_whitespace(text: str) -> str:
     previous = text
     while True:
         stripped = previous

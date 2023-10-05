@@ -1,9 +1,10 @@
 import asyncio
+from datetime import date
 import re
 from pathlib import Path
 
 import click
-from discord import AllowedMentions, ForumChannel, Thread, ui
+from discord import AllowedMentions, Embed, ForumChannel, Thread, ui
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
@@ -14,8 +15,10 @@ from juniorguru.lib.discord_club import (
     get_starting_emoji,
     parse_channel,
 )
+from juniorguru.lib.reading_time import reading_time
+from juniorguru.lib.remove_emoji import remove_emoji
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubDocumentedRole
+from juniorguru.models.club import ClubDocumentedRole, ClubMessage
 from juniorguru.sync.club_threads import DEFAULT_AUTO_ARCHIVE_DURATION
 
 
@@ -29,11 +32,15 @@ REFERENCE_RE = re.compile(
     re.VERBOSE,
 )
 
+DOSE_EMOJI = "💡"
+
+DEFAULT_REACTION_EMOJI = "✅"
+
 
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["roles"])
+@cli.sync_command(dependencies=["roles", "club-content"])
 @click.option(
     "--path",
     "tips_path",
@@ -49,17 +56,16 @@ def main(tips_path):
     tips = list(load_tips(tips_path, roles=roles))
     logger.info(f"Loaded {len(tips)} tips")
     discord_sync.run(sync_tips, tips)
+    discord_sync.run(dose_tips, tips)
 
 
 def load_tips(tips_path: Path, roles=None):
-    for tip_path in tips_path.glob("*.md"):
+    for tip_path in sorted(tips_path.glob("*.md")):
         if tip_path.name == "README.md":
             continue
         logger.info(f"Loading tip {tip_path}")
-        yield {
-            "url": get_tip_url(tip_path),
-            **parse_tip(tip_path.read_text(), roles=roles),
-        }
+        yield dict(url=get_tip_url(tip_path),
+                   **parse_tip(tip_path.read_text(), roles=roles))
 
 
 def get_tip_url(path: Path, cwd: Path = None) -> str:
@@ -84,13 +90,11 @@ def parse_tip(markdown: str, roles=None) -> dict:
         raise ValueError(f"Could not parse emoji: {title!r}")
 
     markdown = re.sub(r"\n+## ", "\n## ", markdown)
-
     resolvers = {
         "@&": lambda value: roles[value],
         "@": lambda value: ClubMemberID[value],
         "#": parse_channel,
     }
-
     def resolve_reference(match: re.Match) -> str:
         prefix = match.group("prefix")
         value = match.group("value")
@@ -98,17 +102,21 @@ def parse_tip(markdown: str, roles=None) -> dict:
             return f"<{prefix}{resolvers[prefix](value)}>"
         except Exception as e:
             raise ValueError(f"Could not parse reference: {prefix}{value!r}") from e
-
     markdown = REFERENCE_RE.sub(resolve_reference, markdown)
 
-    return dict(emoji=emoji, title=title, content=markdown)
+    try:
+        lead = markdown.split("\n", 1)[0]
+    except Exception as e:
+        raise ValueError("Could not parse lead") from e
+
+    return dict(emoji=emoji, title=title, lead=lead, content=markdown)
 
 
 @db.connection_context()
 @mutations.mutates_discord()
 async def sync_tips(client: ClubClient, tips: list[dict]):
     channel = await client.fetch_channel(ClubChannelID.TIPS)
-    threads = {get_starting_emoji(thread.name): thread for thread in channel.threads}
+    threads = threads_by_emoji(channel.threads)
     await asyncio.gather(
         *[
             asyncio.create_task(
@@ -132,7 +140,7 @@ async def create_tip(channel: ForumChannel, tip: dict) -> Thread:
     )
     message = thread.get_partial_message(thread.id)
     await message.edit(suppress=True)
-    await message.add_reaction("✅")
+    await message.add_reaction(DEFAULT_REACTION_EMOJI)
     return thread
 
 
@@ -182,3 +190,47 @@ async def create_view(url: str) -> ui.View:  # View's __init__ touches the event
             url=url,
         )
     )
+
+
+@db.connection_context()
+async def dose_tips(client: ClubClient, tips: list[dict]):
+    channel_tips = await client.fetch_channel(ClubChannelID.TIPS)
+    threads = threads_by_emoji(channel_tips.threads)
+
+    last_dose_message = ClubMessage.last_bot_message(ClubChannelID.NEWCOMERS, DOSE_EMOJI)
+    if last_dose_message:
+        if last_dose_message.created_at.date() == date.today():
+            logger.info("Already dosed today")
+            return
+        logger.info("Figuring out what to dose")
+        dose_index = 0
+        for index, tip in enumerate(tips):
+            thread = threads[tip["emoji"]]
+            if thread.jump_url in last_dose_message.content:
+                logger.info(f"Previous dose: {tip['title']}, {thread.jump_url}")
+                dose_index = index + 1
+                break
+        dose_tip = (tips + tips)[dose_index]
+    else:
+        logger.info("No previous dose found")
+        dose_tip = tips[0]
+    dose_thread = threads[dose_tip["emoji"]]
+
+    logger.info(f"Dosing: {dose_tip['title']} - {dose_thread.jump_url}")
+    channel = await client.fetch_channel(ClubChannelID.NEWCOMERS)
+    newcomers_mention = ClubDocumentedRole.get_by_slug('newcomer').mention
+    content = (
+        f"{DOSE_EMOJI} **Tip dne** pro {newcomers_mention} ({reading_time(len(dose_tip['content']))} min čtení)"
+    )
+    with mutations.mutating_discord(channel) as proxy:
+        await proxy.send(content, allowed_mentions=AllowedMentions(users=False, roles=True), view=ui.View(
+            ui.Button(
+                emoji=dose_tip["emoji"],
+                label=remove_emoji(dose_tip["title"]),
+                url=dose_thread.jump_url,
+            )
+        ))
+
+
+def threads_by_emoji(threads: list[Thread]) -> dict[str, Thread]:
+    return {get_starting_emoji(thread.name): thread for thread in threads}

@@ -1,4 +1,3 @@
-import math
 import textwrap
 from datetime import date, timedelta
 
@@ -15,6 +14,7 @@ from juniorguru.lib.discord_club import (
 )
 from juniorguru.lib.md import md_as_text, neutralize_urls
 from juniorguru.lib.mutations import mutating_discord
+from juniorguru.lib.reading_time import reading_time
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 
@@ -86,7 +86,7 @@ def format_channel_digest(channel_digest: dict) -> str:
     else:
         text += f'**{channel_digest["channel_name"]}** v #{channel_digest["parent_channel_name"]}'
     text += ('\n'
-             f'{calc_reading_time(channel_digest["size"])} min čtení'
+             f'{reading_time(channel_digest["size"])} min čtení'
              ' – '
              f'[Číst diskuzi](https://discord.com/channels/{CLUB_GUILD}/{channel_digest["channel_id"]}/)')
     return text
@@ -103,11 +103,3 @@ def format_channel(message: ClubMessage) -> str:
     if message.channel_id != message.parent_channel_id:
         text += f', vlákno „{message.channel_name}”'
     return text
-
-
-def calc_reading_time(content_size: int) -> int:
-    if not content_size:
-        return 1
-    norm_pages = content_size / 1800  # see https://cs.wikipedia.org/wiki/Normostrana
-    words_count = norm_pages * 250  # estimate, see https://cs.wikipedia.org/wiki/Normostrana
-    return math.ceil(words_count / 200)  # 200 words per minute
