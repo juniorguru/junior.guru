@@ -122,7 +122,9 @@ async def create_tip(channel: ForumChannel, tip: dict) -> Thread:
                                          allowed_mentions=AllowedMentions.none(),
                                          auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION,
                                          view=(await create_view(tip)))
-    await thread.get_partial_message(thread.id).edit(suppress=True)
+    message = thread.get_partial_message(thread.id)
+    await message.edit(suppress=True)
+    await message.add_reaction('✅')
     return thread
 
 
