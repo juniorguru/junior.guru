@@ -3,7 +3,7 @@ import re
 from pathlib import Path
 
 import click
-from discord import AllowedMentions, ForumChannel, Thread
+from discord import AllowedMentions, ForumChannel, Thread, ui
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
@@ -56,7 +56,14 @@ def load_tips(tips_path: Path, roles=None):
         if tip_path.name == "README.md":
             continue
         logger.info(f"Loading tip {tip_path}")
-        yield parse_tip(tip_path.read_text(), roles=roles)
+        yield {'url': get_tip_url(tip_path),
+               **parse_tip(tip_path.read_text(), roles=roles)}
+
+
+def get_tip_url(path: Path, cwd: Path=None) -> str:
+    cwd = cwd or Path.cwd()
+    path = path.absolute().relative_to(cwd)
+    return f'https://github.com/honzajavorek/junior.guru/blob/main/{path}'
 
 
 def parse_tip(markdown: str, roles=None) -> dict:
@@ -113,7 +120,8 @@ async def create_tip(channel: ForumChannel, tip: dict) -> Thread:
     thread = await channel.create_thread(name=tip["title"],
                                          content=tip["content"],
                                          allowed_mentions=AllowedMentions.none(),
-                                         auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION)
+                                         auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION,
+                                         view=(await create_view(tip)))
     await thread.get_partial_message(thread.id).edit(suppress=True)
     return thread
 
@@ -125,6 +133,7 @@ async def update_tip(thread: Thread, tip: dict) -> None:
         if thread.starting_message
         else (await thread.fetch_message(thread.id))
     )
+    view = await create_view(tip['url'])
 
     thread_params = {}
     if thread.archived:
@@ -142,6 +151,22 @@ async def update_tip(thread: Thread, tip: dict) -> None:
         message_params["content"] = tip["content"]
         message_params["suppress"] = True
         message_params["allowed_mentions"] = AllowedMentions.none()
+    try:
+        button = message.components[0].children[0]
+        if button.url != view.children[0].url:
+            raise ValueError("URL mismatch")
+        if button.label != view.children[0].label:
+            raise ValueError("Label mismatch")
+    except (IndexError, AttributeError, ValueError):
+        message_params["view"] = view
     if message_params:
         logger.debug("Updating message")
         await message.edit(**message_params)
+
+
+async def create_view(url: str) -> ui.View:  # View's __init__ touches the event loop
+    return ui.View(ui.Button(
+            emoji="<:github:842685206095724554>",
+            label="Navrhnout změny v textu",
+            url=url,
+        ))
