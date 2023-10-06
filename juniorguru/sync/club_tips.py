@@ -47,7 +47,8 @@ logger = loggers.from_path(__file__)
     default="juniorguru/data/tips",
     type=click.Path(exists=True, dir_okay=True, file_okay=False, path_type=Path),
 )
-def main(tips_path):
+@click.option("--force-dose", is_flag=True)
+def main(tips_path: Path, force_dose: bool):
     with db.connection_context():
         roles = {
             documented_role.slug: documented_role.id
@@ -56,7 +57,7 @@ def main(tips_path):
     tips = list(load_tips(tips_path, roles=roles))
     logger.info(f"Loaded {len(tips)} tips")
     discord_sync.run(sync_tips, tips)
-    discord_sync.run(dose_tips, tips)
+    discord_sync.run(dose_tips, tips, force_dose)
 
 
 def load_tips(tips_path: Path, roles=None):
@@ -196,22 +197,27 @@ async def create_view(url: str) -> ui.View:  # View's __init__ touches the event
 
 
 @db.connection_context()
-async def dose_tips(client: ClubClient, tips: list[dict]):
+async def dose_tips(client: ClubClient, tips: list[dict], force_dose: bool):
     channel_tips = await client.fetch_channel(ClubChannelID.TIPS)
     threads = threads_by_emoji(channel_tips.threads)
 
-    last_dose_message = ClubMessage.last_bot_message(
-        ClubChannelID.NEWCOMERS, DOSE_EMOJI
-    )
-    if last_dose_message:
-        if last_dose_message.created_at.date() == date.today():
+    channel = await client.fetch_channel(ClubChannelID.NEWCOMERS)
+    last_dose_db_message = ClubMessage.last_bot_message(ClubChannelID.NEWCOMERS, DOSE_EMOJI)
+
+    if last_dose_db_message:
+        if last_dose_db_message.created_at.date() == date.today():
             logger.info("Already dosed today")
-            return
+            if force_dose:
+                logger.warning("Forcing dose!")
+            else:
+                return
         logger.info("Figuring out what to dose")
+        last_dose_message = await channel.fetch_message(last_dose_db_message.id)
+        last_dose_button = last_dose_message.components[0].children[0]
         dose_index = 0
         for index, tip in enumerate(tips):
             thread = threads[tip["emoji"]]
-            if thread.jump_url in last_dose_message.content:
+            if last_dose_button.url == thread.jump_url:
                 logger.info(f"Previous dose: {tip['title']}, {thread.jump_url}")
                 dose_index = index + 1
                 break
@@ -222,7 +228,6 @@ async def dose_tips(client: ClubClient, tips: list[dict]):
     dose_thread = threads[dose_tip["emoji"]]
 
     logger.info(f"Dosing: {dose_tip['title']} - {dose_thread.jump_url}")
-    channel = await client.fetch_channel(ClubChannelID.NEWCOMERS)
     newcomers_mention = ClubDocumentedRole.get_by_slug("newcomer").mention
     content = f"{DOSE_EMOJI} **Tip dne** pro {newcomers_mention} ({reading_time(len(dose_tip['content']))} min čtení)"
     with mutations.mutating_discord(channel) as proxy:
