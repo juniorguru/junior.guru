@@ -202,7 +202,9 @@ async def dose_tips(client: ClubClient, tips: list[dict], force_dose: bool):
     threads = threads_by_emoji(channel_tips.threads)
 
     channel = await client.fetch_channel(ClubChannelID.NEWCOMERS)
-    last_dose_db_message = ClubMessage.last_bot_message(ClubChannelID.NEWCOMERS, DOSE_EMOJI)
+    last_dose_db_message = ClubMessage.last_bot_message(
+        ClubChannelID.NEWCOMERS, DOSE_EMOJI
+    )
 
     if last_dose_db_message:
         if last_dose_db_message.created_at.date() == date.today():
