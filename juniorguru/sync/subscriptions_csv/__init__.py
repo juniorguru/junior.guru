@@ -148,7 +148,7 @@ def classify_marketing_survey_answer(text: str) -> str:
     if (re.search(r'\b(software\s+development\s+academy|sd\s*academy|sda\s+academy)\b', text, re.I) or
         re.search(r'\bSDA\b', text)):
         return 'courses'
-    if re.search(r'\b(kurz\w*|akademie|enget\w*|green\s*fox\w*|it\s*network\w*|webin[áa][řr]\w*)\b', text, re.I):
+    if re.search(r'\b(kurz\w*|akademie|enget\w*|green\s*fox\w*|it\s*network\w*|nau[čc]\s+m[ěe]\s+it|webin[áa][řr]\w*)\b', text, re.I):
         return 'courses'
     if re.search(r'\b(youtube|yt)\b', text, re.I):
         return 'youtube'
