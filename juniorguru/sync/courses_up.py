@@ -30,6 +30,9 @@ def main():
                     ]
                 },
             },
+            headers={
+                'User-Agent': 'JuniorGuruBot (+https://junior.guru)',
+            }
         )
         response.raise_for_status()
         response_list = response.json()["list"]

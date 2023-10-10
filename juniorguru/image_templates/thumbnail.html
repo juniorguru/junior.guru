@@ -12,7 +12,10 @@
       </h1>
     </main>
     <aside>
-      <img src="{{ images_dir }}/logo.svg">
+      {% if avatar_path %}
+        <img class="avatar" src="{{ images_dir }}/{{ avatar_path }}">
+      {% endif %}
+      <img class="logo" src="{{ images_dir }}/logo.svg">
     </aside>
   </body>
 </html>

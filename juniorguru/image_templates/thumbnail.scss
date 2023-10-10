@@ -57,6 +57,7 @@ body {
 }
 
 .thumbnail aside {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +67,17 @@ body {
   background: var(--color-yellow);
 }
 
-.thumbnail aside img {
+.thumbnail aside .avatar {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  display: block;
+  width: 80%;
+  border: .5rem solid var(--color-blue);
+  border-radius: 100%;
+}
+
+.thumbnail aside .logo {
   display: block;
   width: 100%;
 }
