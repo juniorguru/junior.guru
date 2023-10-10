@@ -52,16 +52,6 @@ Stejně jako u vrtání ale není vůbec od věci, pokud se naučí programovat 
 
 I když nakonec nebudeš vůbec programovat, hodí se rozumět tomu, jak tato práce funguje. Každá firma má dnes IT oddělení a to se mnohem raději baví s lidmi, kteří chápou jak vznikají programy. Můžeš se snadno uplatnit jako prostředník mezi nimi a ostatními. Otevře se ti cesta do dalších oborů, které s počítači souvisí — např. internetový marketing nebo psaní technických textů, které rovněž umožňují vydělat si dobré peníze a mít pružnou pracovní dobu. Občas se straší v novinách, že [přicházejí miliony zlých robotů, kteří jednou všem vezmou práci](https://denikn.cz/62624/komu-mohou-sebrat-praci-roboti-experti-vybrali-profese-ktere-jsou-nejvice-ohrozene-zmenami/). Místo robotů to asi budou spíš mobilní appky, ale jedno je jisté — technologie budou prostupovat naše životy stále více a bude tím pádem potřeba stále více těch, kteří technologiím rozumí.
 
-S příchodem covidu-19 se navíc ocitáme ve světě, ve kterém bude široká veřejnost [vědět co je 3D tiskárna](https://josefprusa.cz/od-navrhu-k-hromadnemu-3d-tisku-zdravotnickych-stitu-behem-tri-dnu/), jak navázat videohovor, sdílet dokumenty, hrát online hry, nebo že lze na dálku učit. **I pokud přestanou omezení, budou lidé tyto vymoženosti používat dál.** Mnohé firmy, školy, domácnosti, ale i části státu procházejí urychlenou „digitální transformací“. Společnosti, které budou potřebovat zefektivnit náklady, se obrátí k automatizaci, přechodu na technologická řešení nebo práci z domova. Stoupne hodnota lidí, kteří zvládnou s technologiemi pracovat. Může to být navíc východisko pro ty, kteří během opatření přicházejí o obživu.
-
-{% call blockquote_avatar(
-  'Čekají nás velké strukturální změny. Cestovní ruch bude zasažen na dlouho. Ukazuje se, že celá řada věcí jde dělat digitálně a online. Celá řada obchodních cest se dá řešit online.',
-  'danuse-nerudova.jpg',
-  'Danuše Nerudová'
-) %}
-  Danuše Nerudová, ekonomka, v [rozhovoru pro Český rozhlas](https://plus.rozhlas.cz/uz-nemusime-byt-pouhou-montovnou-cekam-velke-zmeny-i-v-globalnich-dodavatelskych-8180919)
-{% endcall %}
-
 Při programování se také trénuješ v [informatickém myšlení](https://imysleni.cz/informaticke-mysleni/co-je-informaticke-mysleni), což je zcela obecná dovednost nesouvisející nutně přímo s počítačem. Informatické myšlení zlepšuje tvou schopnost řešit složité problémy, a to i v každodenních situacích. To je také důvod, proč se dnes toto myšlení začíná učit i na základních školách.
 
 ### Programování jako pomocník    <span id="coding-tool"></span>
