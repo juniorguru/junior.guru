@@ -156,14 +156,20 @@ def scrape_linkedin_personal():
 
 def scrape_mastodon():
     logger.info('Scraping Mastodon')
-    response = requests.get('https://mastodonczech.cz/@honzajavorek',
-                            headers={'User-Agent': 'JuniorGuruBot (+https://junior.guru)'})
-    response.raise_for_status()
-    html_tree = html.fromstring(response.content)
-    try:
-        description = html_tree.cssselect('meta[name="description"]')[0].get('content')
-        match = re.search(r'(\d+)\s+(followers|sledujících)', description, re.IGNORECASE)
-        return int(match.group(1))
-    except (AttributeError, ValueError):
-        logger.error(f"Scraping failed!\n\n{response.text}")
-        return None
+    urls = [
+        'https://mastodonczech.cz/@honzajavorek',
+        'https://mastodon.social/@honzajavorek@mastodonczech.cz'
+        'https://witter.cz/@honzajavorek@mastodonczech.cz',
+    ]
+    for url in urls:
+        response = requests.get(url,
+                                headers={'User-Agent': 'JuniorGuruBot (+https://junior.guru)'})
+        response.raise_for_status()
+        html_tree = html.fromstring(response.content)
+        try:
+            description = html_tree.cssselect('meta[name="description"]')[0].get('content')
+            match = re.search(r'(\d+)\s+(followers|sledujících)', description, re.IGNORECASE)
+            return int(match.group(1))
+        except Exception:
+            logger.exception(f"Scraping failed!\n\n{response.text}")
+    return None
