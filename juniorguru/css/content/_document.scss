@@ -10,6 +10,13 @@
   hyphens: auto;
 }
 
+.document > h1,
+.document > h2,
+.document > h3,
+.document > h4 {
+  hyphens: none;
+}
+
 .document > h1 {
   padding-bottom: map-get($spacers, 1);
   margin-bottom: $main-spacer;

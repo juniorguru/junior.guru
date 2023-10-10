@@ -40,17 +40,25 @@ logger = loggers.from_path(__file__)
 def on_shared_context(context):
     now = arrow.utcnow()
     today = now.date()
-
     context["now"] = now
     context["today"] = today
 
-    context["cloudinary_host"] = CLOUDINARY_HOST
+    # main.html
+    context["revenue_ttm_breakdown"] = Transaction.revenue_ttm_breakdown(today)
 
+    # main.html, open.md
     profit_ttm = Transaction.profit_ttm(today)
     context["profit_ttm"] = profit_ttm
+
+    # open.md
     context["profit_ttm_usd"] = ExchangeRate.in_currency(profit_ttm, "USD")
     context["profit_ttm_eur"] = ExchangeRate.in_currency(profit_ttm, "EUR")
-    context["revenue_ttm_breakdown"] = Transaction.revenue_ttm_breakdown(today)
+
+    # club.md, courses/*.md, main_stories.html
+    context["members"] = ClubUser.avatars_listing()
+
+    # club.md, open.md, main_stories.html
+    context["members_total_count"] = ClubUser.members_count()
 
 
 def on_shared_page_context(context, page, config, files):
@@ -64,9 +72,6 @@ def on_shared_page_context(context, page, config, files):
 
 @db.connection_context()
 def on_docs_context(context):
-    # club.md, open.md
-    context["members_total_count"] = ClubUser.members_count()
-
     # club.md
     context["messages_count"] = ClubMessage.count()
     context["partners_having_students"] = [
@@ -77,9 +82,6 @@ def on_docs_context(context):
 
     # club.md, open.md
     context["partnerships"] = Partnership.active_listing()
-
-    # club.md, courses/*.md
-    context["members"] = ClubUser.avatars_listing()
 
     # courses.md
     context["course_providers"] = CourseProvider.listing()
@@ -149,6 +151,7 @@ def on_docs_page_context(context, page, config, files):
 
 @db.connection_context()
 def on_theme_context(context):
+    context["cloudinary_host"] = CLOUDINARY_HOST
     context["partnerships_handbook"] = Partnership.handbook_listing()
     context["course_providers"] = CourseProvider.listing()
 

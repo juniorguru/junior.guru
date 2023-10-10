@@ -1,0 +1,10 @@
+.comments {
+  background: $jg-blue-light;
+}
+
+.comments-container {
+  @extend .container-lg;
+  max-width: $main-document-width;
+  padding-top: $main-spacer;
+  padding-bottom: $main-spacer;
+}

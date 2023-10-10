@@ -2,30 +2,14 @@
 title: Rozhovor s Romanem V. Dvořákem
 date: 2023-09-08
 image_path: avatars-participants/roman-viktor-dvorak.jpg
+interviewee: Roman Viktor Dvořák
 author: Adéla Pavlun
 author_avatar_path: avatars-participants/adela-pavlun.jpg
 author_url: https://www.linkedin.com/in/adelapavlun/
+template: main_stories.html
 ---
 
 {% from 'macros.html' import img, lead with context %}
-
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a href="{{ (page|parent_page|parent_page).url|url }}">
-        {{ (page|parent_page|parent_page).title }}
-      </a>
-    </li>
-    <li class="breadcrumb-item">
-      <a href="{{ (page|parent_page).url|url }}">
-        {{ (page|parent_page).title }}
-      </a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">
-      {{ page.title }}
-    </li>
-  </ol>
-</nav>
 
 # Google vám dá odpovědi, někdy ale potřebujete spíš dobrou otázku, říká rekvalifikovaný Pythonista Dvořák
 
@@ -100,4 +84,4 @@ První firma mě oslovila na LinkedIn dřív, než jsem začal aktivně hledat. 
 
 **Tvůj vzkaz juniorům po prvních pohovorech zněl: „Dotáhněte do konce svůj ukázkový projekt a dejte si na něm záležet. Máš nějakou radu jako dnes již zkušený programátor?“**
 
-„Zkušený programátor“ mi zní trochu přehnaně. Vlastní ukázkový projekt je absolutní základ. Všechny důvody, proč ho nedělat, jsou výmluvy. Nikoho nezajímá, jaké jste dělali tutoriály. Musíte dokázat, že jste schopni řešit problémy a učit se nové věci za pochodu. Díky chatbotům a kopilotům to nikdy nebylo pohodlnější než dnes.
+„Zkušený programátor“ mi zní trochu přehnaně. Vlastní ukázkový projekt je absolutní základ. Všechny důvody, proč ho nedělat, jsou výmluvy. Nikoho nezajímá, jaké jste dělali tutoriály. Musíte dokázat, že jste schopni řešit problémy a učit se nové věci za pochodu. Díky chatbotům a kopilotům to nikdy nebylo pohodlnější než dnes. ◼️

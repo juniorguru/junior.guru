@@ -1,0 +1,57 @@
+{% extends 'main.html' %}
+
+
+{% block main %}
+  <div class="main main-simple">
+    <main class="content document">
+      {% block content %}
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{{ (page|parent_page|parent_page).url|url }}">
+              {{ (page|parent_page|parent_page).title }}
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="{{ (page|parent_page).url|url }}">
+              {{ (page|parent_page).title }}
+            </a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            {{ page.title }}
+          </li>
+        </ol>
+      </nav>
+
+      {{ page.content }}
+
+      {% endblock %}
+    </main>
+  </div>
+
+  <hr class="visually-hidden">
+
+  <div class="comments">
+    <div class="comments-container">
+      <h2>Chceš se taky na něco zeptat?</h2>
+      <p>
+        Můžeš!
+        Na našem klubovém Discordu je nejen {{ page.meta.interviewee }},
+        ale i {{ members_total_count - 1 }} dalších lidí, které tohle téma zajímá.
+      </p>
+      <div class="mt-4">
+        <a class="btn btn-lg btn-primary mb-4" href="{{ pages|docs_url('club.md')|url }}">
+          Přidej se do klubu
+        </a>
+        <div>
+          <span class="members mb-0">
+          {% for member in members|sample(10) %}
+            {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
+          {% endfor %}
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  {% endblock %}
