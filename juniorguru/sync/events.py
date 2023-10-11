@@ -157,7 +157,7 @@ async def sync_scheduled_events(client: ClubClient):
     discord_events = {
         arrow.get(scheduled_event.start_time).naive: scheduled_event
         for scheduled_event in client.club_guild.scheduled_events
-        if is_event(scheduled_event)
+        if is_event_scheduled_event(scheduled_event)
     }
     channel = await client.fetch_channel(ClubChannelID.EVENTS)
     for event in Event.planned_listing():
@@ -192,9 +192,11 @@ async def sync_scheduled_events(client: ClubClient):
             event.save()
 
 
-def is_event(scheduled_event: ScheduledEvent) -> bool:
+def is_event_scheduled_event(scheduled_event: ScheduledEvent) -> bool:
     # For some reason by October 2023 the creator_id is always None, probably bug on Discord's side.
     # Checking if it's created by the bot only if it's not None should be future proof.
+    #
+    # https://github.com/discord/discord-api-docs/issues/6481
     if scheduled_event.creator_id is not None and int(scheduled_event.creator_id) != ClubMemberID.BOT:
         return False
     location_id = getattr(scheduled_event.location.value, "id", None)
