@@ -170,6 +170,7 @@ def scrape_mastodon():
             description = html_tree.cssselect('meta[name="description"]')[0].get('content')
             match = re.search(r'(\d+)\s+(followers|sledujících)', description, re.IGNORECASE)
             return int(match.group(1))
-        except Exception:
-            logger.exception(f"Scraping failed!\n\n{response.text}")
+        except Exception as e:
+            details = f'\n\n{e.response.text}' if hasattr(e, 'response') else ''
+            logger.exception(f"Scraping failed!{details}")
     return None
