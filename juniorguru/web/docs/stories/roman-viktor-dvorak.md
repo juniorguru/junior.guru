@@ -12,7 +12,7 @@ template: main_stories.html
 
 {% from 'macros.html' import img, lead with context %}
 
-# Google vám dá odpovědi, někdy ale potřebujete spíš dobrou otázku, říká rekvalifikovaný Pythonista Dvořák
+# {{ page.meta.title }}
 
 <ul class="article-details">
   <li class="article-details-item">
