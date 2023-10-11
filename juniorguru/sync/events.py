@@ -192,11 +192,15 @@ async def sync_scheduled_events(client: ClubClient):
             event.save()
 
 
-def is_event(scheduled_event: ScheduledEvent):
-    return (
-        int(scheduled_event.creator_id) == ClubMemberID.BOT
-        and getattr(scheduled_event.location.value, "id", None) == ClubChannelID.EVENTS
-    )
+def is_event(scheduled_event: ScheduledEvent) -> bool:
+    # For some reason by October 2023 the creator_id is always None, probably bug on Discord's side.
+    # Checking if it's created by the bot only if it's not None should be future proof.
+    if scheduled_event.creator_id is not None and int(scheduled_event.creator_id) != ClubMemberID.BOT:
+        return False
+    location_id = getattr(scheduled_event.location.value, "id", None)
+    if location_id != ClubChannelID.EVENTS:
+        return False
+    return True
 
 
 @db.connection_context()
