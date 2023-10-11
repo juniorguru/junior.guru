@@ -48,7 +48,7 @@ def main(images_path, output_dir, width, height, clear):
             context = dict(
                 title=page.meta.get("thumbnail_title", page.meta["title"]),
                 badge=page.meta.get("thumbnail_badge"),
-                avatar_path=page.meta.get("thumbnail_avatar_path"),
+                image_path=page.meta.get("thumbnail_image_path"),
             )
             args.append((i, width, height, "thumbnail.html", context, output_path))
         for i, image_path in pool.imap_unordered(process_thumbnail, args):

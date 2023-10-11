@@ -75,6 +75,7 @@ def generate_event_pages() -> Generator[dict[str, Any], None, None]:
                     "kterou junior.guru pořádá na klubovém Discordu."
                 ),
                 event_id=event.id,
+                thumbnail_image_path=event.avatar_path,
             ),
             template="event.md",
         )
@@ -89,6 +90,7 @@ def generate_podcast_episode_pages() -> Generator[dict[str, Any], None, None]:
                 title=f"{podcast_episode.format_title()} (epizoda podcastu)",
                 description=f"Poslechni si {podcast_episode.number}. díl Junior Guru podcastu.",
                 podcast_episode_number=podcast_episode.number,
+                thumbnail_image_path=podcast_episode.image_path,
             ),
             template="podcast_episode.jinja",
         )

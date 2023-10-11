@@ -3,19 +3,24 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./thumbnail.css">
+    <script defer src="{{ js_dir }}/text-length.js"></script>
   </head>
   <body class="thumbnail">
-    <main>
-      <h1>
-        {{ title }}
-        {% if badge %}<strong>{{ badge }}</strong>{% endif %}
-      </h1>
-    </main>
-    <aside>
-      {% if avatar_path %}
-        <img class="avatar" src="{{ images_dir }}/{{ avatar_path }}">
+    <main class="thumbnail-main">
+      <h1 class="thumbnail-title" data-text-length>{{ title }}</h1>
+      <hr class="thumbnail-hr">
+      {% if image_path %}
+        <img class="thumbnail-image" src="{{ images_dir }}/{{ image_path }}">
       {% endif %}
-      <img class="logo" src="{{ images_dir }}/logo.svg">
-    </aside>
+      {% if badge %}
+        <strong class="thumbnail-badge">{{ badge }}</strong>
+      {% endif %}
+    </main>
+    <footer class="thumbnail-footer">
+      <img class="thumbnail-logo" src="{{ images_dir }}/logo.svg">
+      <p class="thumbnail-claim">
+        Jsou věci, se kterými ti kurz programování nepomůže
+      </p>
+    </footer>
   </body>
 </html>

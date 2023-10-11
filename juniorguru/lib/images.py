@@ -21,6 +21,8 @@ CACHE_DIR = Path(".image_templates_cache")
 
 IMAGES_DIR = Path("juniorguru/images")
 
+JS_DIR = Path("juniorguru/js")
+
 TEMPLATES_DIR = Path("juniorguru/image_templates")
 
 
@@ -104,7 +106,9 @@ def render_template(
     template = environment.get_template(template_name)
 
     logger.info("Jinja rendering")
-    html = template.render(images_dir=IMAGES_DIR.absolute(), **context)
+    html = template.render(images_dir=IMAGES_DIR.absolute(),
+                           js_dir=JS_DIR.absolute(),
+                           **context)
     html_path = (
         CACHE_DIR.absolute() / f"{os.getpid()}-{time.perf_counter_ns()}-{template_name}"
     )
@@ -121,7 +125,7 @@ def render_template(
             page.close()
         finally:
             browser.close()
-    html_path.unlink()
+    # html_path.unlink()
 
     logger.info("Editing screenshot")
     with Image.open(BytesIO(image_bytes)) as image:
