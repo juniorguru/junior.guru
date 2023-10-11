@@ -21,8 +21,6 @@ CACHE_DIR = Path(".image_templates_cache")
 
 IMAGES_DIR = Path("juniorguru/images")
 
-JS_DIR = Path("juniorguru/js")
-
 TEMPLATES_DIR = Path("juniorguru/image_templates")
 
 
@@ -107,7 +105,6 @@ def render_template(
 
     logger.info("Jinja rendering")
     html = template.render(images_dir=IMAGES_DIR.absolute(),
-                           js_dir=JS_DIR.absolute(),
                            **context)
     html_path = (
         CACHE_DIR.absolute() / f"{os.getpid()}-{time.perf_counter_ns()}-{template_name}"

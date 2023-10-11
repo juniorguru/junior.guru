@@ -3,11 +3,10 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./thumbnail.css">
-    <script defer src="{{ js_dir }}/text-length.js"></script>
   </head>
   <body class="thumbnail">
     <main class="thumbnail-main">
-      <h1 class="thumbnail-title" data-text-length>{{ title }}</h1>
+      <h1 class="thumbnail-title{% if title|length > 100 %} long{% elif title|length > 50 %} medium{% endif %}">{{ title }}</h1>
       <hr class="thumbnail-hr">
       {% if image_path %}
         <img class="thumbnail-image" src="{{ images_dir }}/{{ image_path }}">

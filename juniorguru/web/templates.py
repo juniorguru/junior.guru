@@ -69,7 +69,7 @@ def generate_event_pages() -> Generator[dict[str, Any], None, None]:
         yield dict(
             path=f"events/{event.id}.md",
             meta=dict(
-                title=f"{event.full_title} (online akce)",
+                title=f"Online akce – {event.full_title}",
                 description=(
                     "Vše o online akci (přednáška, stream, Q&A, AMA, webinář…), "
                     "kterou junior.guru pořádá na klubovém Discordu."
@@ -87,7 +87,7 @@ def generate_podcast_episode_pages() -> Generator[dict[str, Any], None, None]:
         yield dict(
             path=f"podcast/{podcast_episode.number}.jinja",
             meta=dict(
-                title=f"{podcast_episode.format_title()} (epizoda podcastu)",
+                title=f"Podcast – {podcast_episode.format_title()}",
                 description=f"Poslechni si {podcast_episode.number}. díl Junior Guru podcastu.",
                 podcast_episode_number=podcast_episode.number,
                 thumbnail_image_path=podcast_episode.image_path,
