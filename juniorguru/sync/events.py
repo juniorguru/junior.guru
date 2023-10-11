@@ -3,6 +3,7 @@ from pathlib import Path
 
 import arrow
 import click
+from discord import ScheduledEvent
 from strictyaml import CommaSeparated, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
@@ -131,10 +132,9 @@ def main(clear_posters):
 
 @db.connection_context()
 async def sync_scheduled_events(client: ClubClient):
-    discord_events = {arrow.get(e.start_time).naive: e
-                      for e in client.club_guild.scheduled_events
-                      if (int(e.creator_id) == ClubMemberID.BOT
-                          and getattr(e.location.value, 'id', None) == ClubChannelID.EVENTS)}
+    discord_events = {arrow.get(scheduled_event.start_time).naive: scheduled_event
+                      for scheduled_event in client.club_guild.scheduled_events
+                      if is_event(scheduled_event)}
     channel = await client.fetch_channel(ClubChannelID.EVENTS)
     for event in Event.planned_listing():
         discord_event = discord_events.get(event.start_at)
@@ -164,6 +164,11 @@ async def sync_scheduled_events(client: ClubClient):
             event.discord_id = discord_event.id
             event.discord_url = discord_event.url
             event.save()
+
+
+def is_event(scheduled_event: ScheduledEvent):
+    return (int(scheduled_event.creator_id) == ClubMemberID.BOT
+            and getattr(scheduled_event.location.value, 'id', None) == ClubChannelID.EVENTS)
 
 
 @db.connection_context()
