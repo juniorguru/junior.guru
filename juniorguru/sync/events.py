@@ -133,7 +133,7 @@ def main(clear_posters):
 async def sync_scheduled_events(client: ClubClient):
     discord_events = {arrow.get(e.start_time).naive: e
                       for e in client.club_guild.scheduled_events
-                      if (int(e.creator_id) == ClubMemberID.BOT
+                      if ((e.creator_id is not None) and int(e.creator_id) == ClubMemberID.BOT
                           and getattr(e.location.value, 'id', None) == ClubChannelID.EVENTS)}
     channel = await client.fetch_channel(ClubChannelID.EVENTS)
     for event in Event.planned_listing():
