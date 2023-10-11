@@ -84,7 +84,6 @@ target-versions = ["py311"]
 include = "\\.py$"
 exclude = """(\
 juniorguru/sync/d.*|\
-juniorguru/sync/e.*|\
 juniorguru/sync/f.*|\
 juniorguru/sync/i.*|\
 juniorguru/sync/j.*|\

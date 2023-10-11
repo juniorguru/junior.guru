@@ -104,8 +104,7 @@ def render_template(
     template = environment.get_template(template_name)
 
     logger.info("Jinja rendering")
-    html = template.render(images_dir=IMAGES_DIR.absolute(),
-                           **context)
+    html = template.render(images_dir=IMAGES_DIR.absolute(), **context)
     html_path = (
         CACHE_DIR.absolute() / f"{os.getpid()}-{time.perf_counter_ns()}-{template_name}"
     )
