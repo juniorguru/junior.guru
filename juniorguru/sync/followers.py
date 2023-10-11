@@ -162,11 +162,11 @@ def scrape_mastodon():
         'https://witter.cz/@honzajavorek@mastodonczech.cz',
     ]
     for url in urls:
-        response = requests.get(url,
-                                headers={'User-Agent': 'JuniorGuruBot (+https://junior.guru)'})
-        response.raise_for_status()
-        html_tree = html.fromstring(response.content)
         try:
+            response = requests.get(url,
+                                    headers={'User-Agent': 'JuniorGuruBot (+https://junior.guru)'})
+            response.raise_for_status()
+            html_tree = html.fromstring(response.content)
             description = html_tree.cssselect('meta[name="description"]')[0].get('content')
             match = re.search(r'(\d+)\s+(followers|sledujících)', description, re.IGNORECASE)
             return int(match.group(1))
