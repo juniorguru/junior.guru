@@ -1,5 +1,5 @@
 ---
-title: Rozhovor s Romanem V. Dvořákem
+title: Google vám dá odpovědi, někdy ale potřebujete spíš dobrou otázku, říká rekvalifikovaný Pythonista Dvořák
 date: 2023-09-08
 interviewee: Roman Viktor Dvořák
 interviewee_avatar_path: avatars-participants/roman-viktor-dvorak.jpg
