@@ -171,6 +171,6 @@ def scrape_mastodon():
             match = re.search(r'(\d+)\s+(followers|sledujících)', description, re.IGNORECASE)
             return int(match.group(1))
         except Exception as e:
-            details = f'\n\n{e.response.text}' if hasattr(e, 'response') else ''
+            details = f'\n\n{e.response.text}' if getattr(e, 'response') else ''
             logger.exception(f"Scraping failed!{details}")
     return None
