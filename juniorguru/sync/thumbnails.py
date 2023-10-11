@@ -50,7 +50,7 @@ def main(images_path, output_dir, width, height, clear):
                 badge=page.meta.get("thumbnail_badge"),
                 image_path=page.meta.get("thumbnail_image_path"),
             )
-            args.append((i, width, height, "thumbnail.html", context, output_path))
+            args.append((i, width, height, "thumbnail.jinja", context, output_path))
         for i, image_path in pool.imap_unordered(process_thumbnail, args):
             page = pages[i]
             page.thumbnail_path = image_path.relative_to(images_path)
@@ -81,7 +81,7 @@ def main(images_path, output_dir, width, height, clear):
             LegacyThumbnail.create(url=url, image_path=page.thumbnail_path)
 
         default_image_path = render_image_file(
-            width, height, "thumbnail_legacy.html", {}, output_path
+            width, height, "thumbnail_legacy.jinja", {}, output_path
         )
         for url in [
             "/404.html",

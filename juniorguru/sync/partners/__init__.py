@@ -119,7 +119,7 @@ def main(clear_posters):
         logger.info(f"Rendering poster for {partner.name}")
         tpl_context = dict(partner=partner)
         image_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT,
-                                       'partner.html', tpl_context, POSTERS_DIR,
+                                       'partner.jinja', tpl_context, POSTERS_DIR,
                                        prefix=partner.slug)
         partner.poster_path = image_path.relative_to(IMAGES_DIR)
         partner.save()

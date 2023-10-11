@@ -111,12 +111,12 @@ def main(clear_posters):
             tpl_filters = dict(md=md, local_time=local_time, weekday=weekday)
             prefix = event.start_at.date().isoformat().replace('-', '')
             image_path = render_image_file(DISCORD_THUMBNAIL_WIDTH, DISCORD_THUMBNAIL_HEIGHT,
-                                            'event.html', tpl_context, POSTERS_DIR,
+                                            'event.jinja', tpl_context, POSTERS_DIR,
                                             filters=tpl_filters, prefix=prefix, suffix='dc')
             event.poster_dc_path = image_path.relative_to(IMAGES_DIR)
             posters.record(IMAGES_DIR / event.poster_dc_path)
             image_path = render_image_file(YOUTUBE_THUMBNAIL_WIDTH, YOUTUBE_THUMBNAIL_HEIGHT,
-                                            'event.html', tpl_context, POSTERS_DIR,
+                                            'event.jinja', tpl_context, POSTERS_DIR,
                                             filters=tpl_filters, prefix=prefix, suffix='yt')
             event.poster_yt_path = image_path.relative_to(IMAGES_DIR)
             posters.record(IMAGES_DIR / event.poster_yt_path)

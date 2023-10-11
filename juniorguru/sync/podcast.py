@@ -176,7 +176,7 @@ def process_episode(yaml_record):
     # the contents.
     podcast_episode.clear_dirty_fields()
     tpl_context = dict(podcast_episode=podcast_episode)
-    poster_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT, 'podcast_episode.html', tpl_context,
+    poster_path = render_image_file(POSTER_WIDTH, POSTER_HEIGHT, 'podcast_episode.jinja', tpl_context,
                                     POSTERS_DIR, prefix=media_slug, filters=dict(icon=icon))
     data['poster_path'] = poster_path.relative_to(IMAGES_DIR)
 
