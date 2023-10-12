@@ -197,7 +197,10 @@ def is_event_scheduled_event(scheduled_event: ScheduledEvent) -> bool:
     # Checking if it's created by the bot only if it's not None should be future proof.
     #
     # https://github.com/discord/discord-api-docs/issues/6481
-    if scheduled_event.creator_id is not None and int(scheduled_event.creator_id) != ClubMemberID.BOT:
+    if (
+        scheduled_event.creator_id is not None
+        and int(scheduled_event.creator_id) != ClubMemberID.BOT
+    ):
         return False
     location_id = getattr(scheduled_event.location.value, "id", None)
     if location_id != ClubChannelID.EVENTS:
