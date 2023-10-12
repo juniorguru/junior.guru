@@ -75,9 +75,18 @@ Jak to nakonec překonali?
 Co by poradili ostatním?
 Nejen že se nebojíme o nepříjemnostech psát, my se na ně přímo ptáme!
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tady něco bude.
-{% endcall %}
+- [Google vám dá odpovědi, někdy ale potřebujete spíš dobrou otázku, říká rekvalifikovaný Pythonista Dvořák]({{ pages|docs_url('stories/roman-viktor-dvorak.md')|url }})
+
+{#
+{{ news_card(
+  "Google vám dá odpovědi, někdy ale potřebujete spíš dobrou otázku, říká rekvalifikovaný Pythonista Dvořák",
+  pages|docs_url('stories/roman-viktor-dvorak.md')|url,
+  "avatars-participants/roman-viktor-dvorak.jpg",
+  'Roman V. Dvořák',
+  subtitle='Roman V. Dvořák',
+  date=story.date)
+}}
+#}
 
 ## Z horníka programátorem
 
@@ -128,9 +137,6 @@ Záměrem tohoto seznamu je vytvářet nezávislou protiváhu a ukazovat, že:
 -   Programování je obecná, užitečná dovednost, která se hodí i pokud se člověk neplánuje rekvalifikovat do IT.
 
 {% for story in stories %}
-  {# {% set small %}
-    {{ story.publisher }} &mdash; {{ '{:%-d.%-m.%Y}'.format() }}
-  {% endset %} #}
   {{ news_card(
     story.title,
     story.url,
