@@ -523,4 +523,13 @@ Kdy - u těch z vás, kteří už máte nějaké zkušenosti - přišel ale pro 
 ---
 
 
+Jak poznam dobreho juniora?
+- co umi: projekty - jasne ze budou shit, ale aplikuje znalosti (vyhnu se tutorial hell juniorum), podivam se co musim doucit a zhodnotim, jestli na to mame zdroje
+- snaha: zapojeni v komunitach - jake znas, jak jsi v nich aktivni
+- snaha: jake IT knizky ctes, jake programovaci instagramy nebo tiktoky sledujes, jake kanaly na youtube odebiras, ktere se ti libi a ktere rad/a sledujes
+- snaha: co pro tebe bylo zpetne nejtezsi na ceste do oboru
+- snaha: co se planujes v nejblizsi dobe ucit
+- reseni problemu: co delas, kdyz se na necem zaseknes a neumis s tim pohnout, jaky je vetsinou tvuj postup?
+
+
 #} -->
