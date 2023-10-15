@@ -1,6 +1,6 @@
 import textwrap
 
-from discord import Embed
+from discord import Embed, Forbidden
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
@@ -51,6 +51,10 @@ async def send_outstanding_pins(client: ClubClient):
                 "",
             ]
             logger.info(f"Pinning {pin.pinned_message.url} for {member_db.display_name!r} #{member_db.id}")
-            with mutating_discord(dm_channel, raises=True) as proxy:
-                await proxy.send(content=content,
-                                 embed=Embed(description="\n".join(embed_description)))
+            try:
+                with mutating_discord(dm_channel, raises=True) as proxy:
+                    await proxy.send(content=content,
+                                    embed=Embed(description="\n".join(embed_description)))
+            except Forbidden:
+                # TODO discord.errors.Forbidden: 403 Forbidden (error code: 50007): Cannot send messages to this user
+                logger.exception(f"Could not pin {pin.pinned_message.url} for {member_db.display_name!r} #{member_db.id}")
