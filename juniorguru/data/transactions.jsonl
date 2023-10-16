@@ -639,3 +639,5 @@
 {"_id": "26217750772", "amount": 5572, "category": "memberships", "happened_on": "2023-10-09"}
 {"_id": "26218723844", "amount": -48, "category": "tax", "happened_on": "2023-10-09"}
 {"_id": "26221404347", "amount": 6, "category": "donations", "happened_on": "2023-10-11"}
+{"_id": "26226613115", "amount": -2841, "category": "tax", "happened_on": "2023-10-15"}
+{"_id": "26226613116", "amount": -2722, "category": "tax", "happened_on": "2023-10-15"}
