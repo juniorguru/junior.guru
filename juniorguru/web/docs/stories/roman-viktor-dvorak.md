@@ -31,7 +31,7 @@ Nebyl prominentem v matematice, ani nemá vysokou školu. Právě to sedmatřice
 {% endcall %}
 </div>
 
-**Teto rozhovor bude hodně o profesních věcech, tak pojďme začít něčím jiným. Kdo je Roman, když zrovna nepracuje?**
+**Tento rozhovor bude hodně o profesních věcech, tak pojďme začít něčím jiným. Kdo je Roman, když zrovna nepracuje?**
 
 Pracovní a nepracovní život se nesnažím oddělovat, ale spíš sjednotit. Nechci žít dvojí život. Programování má pro mě hluboký osobní, symbolický význam. Vedle toho tím nicméně vydělávám peníze, což je stejně důležité. Definovat bych se mohl třeba jako šachová figurka v procesu sebepoznání.
 
