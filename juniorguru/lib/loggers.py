@@ -8,20 +8,21 @@ from juniorguru.lib.chunks import chunks
 
 
 MUTED_LOGGERS = [
+    "asyncio",
     "discord",
-    "peewee",
-    "urllib3",
-    "oauth2client",
     "google",
     "googleapiclient",
-    "PIL",
-    "asyncio",
-    "MARKDOWN",
     "gql.transport.requests",
-    "protego",
-    "juniorguru.sync.club_content.store",
     "juniorguru.lib.mutations.allowing",
+    "juniorguru.sync.club_content.store",
     "juniorguru.web.templates",
+    "MARKDOWN",
+    "oauth2client",
+    "peewee",
+    "PIL",
+    "protego",
+    "tornado.access",
+    "urllib3",
 ]
 
 
