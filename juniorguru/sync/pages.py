@@ -1,3 +1,4 @@
+from datetime import date
 from pprint import pformat
 from typing import Any
 
@@ -30,11 +31,13 @@ def main():
         logger.debug(f"Reading: {file.src_uri}")
         with open(file.abs_src_path, encoding='utf-8-sig', errors='strict') as f:
             source = f.read()
+        meta_data = parse_meta(source)
         data = dict(src_uri=file.src_uri,
                     dest_uri=file.dest_uri,
                     size=len(source),
-                    meta=parse_meta(source),
-                    notes=parse_notes(source))
+                    meta=meta_data,
+                    notes=parse_notes(source),
+                    date=meta_data['date'] if 'date' in meta_data else None)
         logger.debug(f"Saving:\n{pformat(data)}")
         if not data['meta'].get('title'):
             raise ValueError(f"Page {file.src_uri} is missing a title")

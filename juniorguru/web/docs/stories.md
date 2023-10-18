@@ -75,18 +75,16 @@ Jak to nakonec překonali?
 Co by poradili ostatním?
 Nejen že se nebojíme o nepříjemnostech psát, my se na ně přímo ptáme!
 
-- [Google vám dá odpovědi, někdy ale potřebujete spíš dobrou otázku, říká rekvalifikovaný Pythonista Dvořák]({{ pages|docs_url('stories/roman-viktor-dvorak.md')|url }})
-
-{#
+{% for page in stories_pages %}
 {{ news_card(
-  "Google vám dá odpovědi, někdy ale potřebujete spíš dobrou otázku, říká rekvalifikovaný Pythonista Dvořák",
-  pages|docs_url('stories/roman-viktor-dvorak.md')|url,
-  "avatars-participants/roman-viktor-dvorak.jpg",
-  'Roman V. Dvořák',
-  subtitle='Roman V. Dvořák',
-  date=story.date)
+  page.meta.title,
+  pages|docs_url(page.src_uri)|url,
+  page.meta.interviewee_avatar_path,
+  page.meta.interviewee,
+  subtitle=page.meta.interviewee,
+  date=page.date)
 }}
-#}
+{% endfor %}
 
 ## Z horníka programátorem
 

@@ -118,6 +118,7 @@ def on_docs_context(context):
 
     # stories.md, news.jinja
     context["stories"] = Story.listing()
+    context["stories_pages"] = Page.stories_listing()
 
     # wisdom.jinja, news.jinja
     context["wisdoms"] = Wisdom.listing()
