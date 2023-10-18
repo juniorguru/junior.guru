@@ -52,9 +52,9 @@ async def send_outstanding_pins(client: ClubClient):
             ]
             logger.info(f"Pinning {pin.pinned_message.url} for {member_db.display_name!r} #{member_db.id}")
             try:
-                with mutating_discord(dm_channel, raises=True) as proxy:
+                with mutating_discord(dm_channel) as proxy:
                     await proxy.send(content=content,
-                                    embed=Embed(description="\n".join(embed_description)))
+                                     embed=Embed(description="\n".join(embed_description)))
             except Forbidden:
                 # TODO discord.errors.Forbidden: 403 Forbidden (error code: 50007): Cannot send messages to this user
                 logger.exception(f"Could not pin {pin.pinned_message.url} for {member_db.display_name!r} #{member_db.id}")
