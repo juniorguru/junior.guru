@@ -79,7 +79,7 @@ async def post_job(channel, job):
                                            view=ui.View(ui.Button(emoji='👉',
                                                                   label='Zjistit víc',
                                                                   url=job.effective_url)))
-    if job.company_logo_path:
+    if hasattr(thread, 'fetch_message') and job.company_logo_path:
         embed.set_thumbnail(url=f"attachment://{Path(job.company_logo_path).name}")
         message = await thread.fetch_message(thread.id)
         with mutating_discord(message) as proxy:

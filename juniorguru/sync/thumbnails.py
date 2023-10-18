@@ -100,7 +100,7 @@ def main(images_path, output_dir, width, height, clear):
                 url,
                 width,
                 height,
-                "thumbnail_legacy.html",
+                "thumbnail_legacy.jinja",
                 dict(title=title),
                 output_path,
             )
@@ -157,7 +157,7 @@ def main(images_path, output_dir, width, height, clear):
                     f"/jobs/{params['job_id']}/",
                     width,
                     height,
-                    "thumbnail_legacy.html",
+                    "thumbnail_legacy.jinja",
                     context,
                     output_path,
                 )
