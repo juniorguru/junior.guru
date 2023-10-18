@@ -62,8 +62,9 @@ async def send_messages_to_member(client: ClubClient, member):
             message_data = await create_message_data(client, member, message_content)
             with mutating_discord(channel) as proxy:
                 discord_message = await proxy.send(**message_data)
-            with mutating_discord(discord_message) as proxy:
-                await proxy.add_reaction(EMOJI_UNREAD)
+            if hasattr(discord_message, 'add_reaction'):
+                with mutating_discord(discord_message) as proxy:
+                    await proxy.add_reaction(EMOJI_UNREAD)
 
 
 async def create_message_data(client: ClubClient, member, content):
