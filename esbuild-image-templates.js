@@ -26,14 +26,7 @@ await esbuild.build({
   },
   assetNames: 'assets/[name]',
   plugins: [
-    sassPlugin({
-      precompile(source, pathname) {
-        if (pathname.endsWith('@fontsource/inter/index.css')) {
-          return source.replaceAll('./files/', '../../node_modules/@fontsource/inter/files/')
-        }
-        return source
-      },
-    }),
+    sassPlugin(),
   ],
   outdir,
 })
