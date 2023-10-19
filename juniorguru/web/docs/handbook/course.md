@@ -11,6 +11,7 @@ template: main_handbook.html
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  Mezitím si můžeš přečíst [Jak si vybrat IT kurz?](https://lucietvrdikova.cz/nahlednete-za-oponu-jak-si-vybrat-it-kurz/) od Lucie Tvrdíkové, což je zatím nejlepší popis téhle problematiky, ačkoliv ne 100% nezávislý.
 {% endcall %}
 
 ## Stačí kurz?
@@ -690,15 +691,15 @@ Přijímací scénář má dvě kola - začíná se dvouhodinovým blokem dvou o
 --- https://discord.com/channels/769966886598737931/1107639286486028321/1112000873967657020
 Jsou na to asi dva pohledy, jeden je co to znamená pro uchazeče a druhý co to znamená pro GFA.
 
-**Pro uchazeče** to znamená jen to, že se GFA rozhodla, že si nejsou dost jistí, že projde jejich programem. Nic víc. 
+**Pro uchazeče** to znamená jen to, že se GFA rozhodla, že si nejsou dost jistí, že projde jejich programem. Nic víc.
 
-**Pro GFA** je to cesta k eliminaci podnikatelského rizika daného tím, že GFA zaručuje pracovní umístění a jinak vrací školné a nedostává provizi od firemních partnerů. 
+**Pro GFA** je to cesta k eliminaci podnikatelského rizika daného tím, že GFA zaručuje pracovní umístění a jinak vrací školné a nedostává provizi od firemních partnerů.
 
-Problém je spolehlivost. Už počet lidí, kteří tím prošli, nemusel být zrovna statisticky průkazný, ale s léty to tam mohlo dospět. 🤷‍♂️ 
+Problém je spolehlivost. Už počet lidí, kteří tím prošli, nemusel být zrovna statisticky průkazný, ale s léty to tam mohlo dospět. 🤷‍♂️
 
 Druhý je to zpřesňování na základě podle toho, jestli se je povedlo udat. Působí to jako učebnicový *survivorship bias*. Neexistuje kontrolní skupina těch, kteří byli odmítnuti a procházeli by tím programem a viděla se i jejich (ne)úspěšnost. Dá se případně jen omezovat false positive, tedy zpětně zkoumat výsledky testů těch, kterým se to nepodařilo dotáhnout a hledat v tom nějaký vzorec.
 
-Ono je asi pro GFA přijatelnější někoho schopného odmítnout na základě nepřesného testu než riskovat ztrátu. I za cenu toho, že musí investovat víc do marketingu i času na těch testech, aby vhodné kandidáty našli. 
+Ono je asi pro GFA přijatelnější někoho schopného odmítnout na základě nepřesného testu než riskovat ztrátu. I za cenu toho, že musí investovat víc do marketingu i času na těch testech, aby vhodné kandidáty našli.
 
 I když zavedení možnosti ukončit za nějaké menší peníze program po nějaké úvodní fázi (která pokud vím, nebyla od začátku) naznačuje, že „průzkum bojem“ taky úplně nezatracují.
 ---
@@ -730,20 +731,20 @@ Já jsem se o tom dozvěděl před několika měsíci z cc.cz Bohužel nic pro m
 --- https://discord.com/channels/769966886598737931/1114563017443655831/1118956982657876099
 Samoštúdium...
 
-Keďže som mal nejaký coľný čas, pokiaľ kurz nezačne, tak som sa ho snažil a snažím venovať naplno na zbieranie nových informácií. Chcem sa niečo doučiť. Predsa mi teraz všetko pomôže. 
+Keďže som mal nejaký coľný čas, pokiaľ kurz nezačne, tak som sa ho snažil a snažím venovať naplno na zbieranie nových informácií. Chcem sa niečo doučiť. Predsa mi teraz všetko pomôže.
 
-Hoci si prejdeme aj v kurze záležitosti okolo html, git, github a pod, no chcel som sa, to už ako-tak naučiť... Vrátil som sa k yablkovi a prešiel si základ, kde vysvetľuje, čo a ako funguje vo VSC a zároveň som si prešiel jeho kurz git a github na skillmea stránke. 
+Hoci si prejdeme aj v kurze záležitosti okolo html, git, github a pod, no chcel som sa, to už ako-tak naučiť... Vrátil som sa k yablkovi a prešiel si základ, kde vysvetľuje, čo a ako funguje vo VSC a zároveň som si prešiel jeho kurz git a github na skillmea stránke.
 
-Potom som pokračoval na jeho YT kanáli, a prešiel si rôzne videá, možno skôr motivačné, prípadne niečo zo skúsenosti a poznatkov a pod... 
+Potom som pokračoval na jeho YT kanáli, a prešiel si rôzne videá, možno skôr motivačné, prípadne niečo zo skúsenosti a poznatkov a pod...
 
 Detailnejšie som začal používať a zároveň aj fungovať v junior.guru.klube (čiže tu). A pravdupovediac som sa dostal k nespočetnému množstvu ďalších informácií  a poznatkov. Junior návod je úžasný a nehovoriac o tom akú pridanú hodnotu dáva táto komunita aj vo forme discordu.
 
-Tak som si ešte prešiel Dávida Šetka na YT, kde ma celkom zaujímave tutoriály, podľa ktorých sa človek vie veľa naučit. Prešiel som si aj tam VSC a git+github. Popritom nejaké tie webináre na linkedin learning a taktiež musím povedať, že je tam mnoho materiálu... 
+Tak som si ešte prešiel Dávida Šetka na YT, kde ma celkom zaujímave tutoriály, podľa ktorých sa človek vie veľa naučit. Prešiel som si aj tam VSC a git+github. Popritom nejaké tie webináre na linkedin learning a taktiež musím povedať, že je tam mnoho materiálu...
 
-Momentálne sa sústredím na začiatok kurzu 19.6.2023- pondelok... 
+Momentálne sa sústredím na začiatok kurzu 19.6.2023- pondelok...
 
-A popritom ešte na angličtinu, ktorú mám zaradenú do každodenného rozvrhu... 
-Zároveň Vám tu pripájam detailnejší plán kurzu... Toto by ešte nemalo byť "prísne tajné", nedávam to z dôvodu, že chcem ukazvať ich know-how, ale skôr iba ako taký prehľad, veď z toho nieje ani nič jasné, len čo kedy a ako... 
+A popritom ešte na angličtinu, ktorú mám zaradenú do každodenného rozvrhu...
+Zároveň Vám tu pripájam detailnejší plán kurzu... Toto by ešte nemalo byť "prísne tajné", nedávam to z dôvodu, že chcem ukazvať ich know-how, ale skôr iba ako taký prehľad, veď z toho nieje ani nič jasné, len čo kedy a ako...
 
 Svoj postup budem naďalej zapisovať...
 ---
@@ -776,7 +777,7 @@ Taky je tu koncept https://en.wikipedia.org/wiki/42_(school), kde se vlastně u�
 --- https://discord.com/channels/769966886598737931/1126353120151212083/1137730591358451783
 **Netvrdím, že to je motivace GFA**, ale obecně bootcampy ve světě tohle dělají z několika důvodů:
 
-1. **zlepšení statistik**: lidi, kteří si ještě nenašli práci, by jim kazili statistiky, že 95 % absolventů si do 6 měsíců našlo práci v IT. Bootcamp je IT, takže 📈 
+1. **zlepšení statistik**: lidi, kteří si ještě nenašli práci, by jim kazili statistiky, že 95 % absolventů si do 6 měsíců našlo práci v IT. Bootcamp je IT, takže 📈
 2. **laciná a good enough pracovní síla**: IT lidi jsou drazí, ostatně i GFA mělo inzeráty až se 100.000 odměnou měsíčně pro lektory… To samozřejmě zvyšuje hodně náklady a zdražuje školné, takže pokud nějakou část práce zastanou dostatečně méně kvalifikovaní lidi, tak je to pro ně zajímavé.
 3. **zlepšení kvalifikace** a šancí na nalezení práce těch, co zatím jinou práci nenašli. Tím, že někomu mám pomáhat, tak to musím sám chápat, mám další motivaci to zkoumat, narážím na svoje limity atd. A navíc jsem třeba denně v kontaktu s tím prostředím, což může bejt motivující pro určitý typ lidí: těch kteří tu vnější motivaci potřebují a který bych řekl, že v bootcampech převažuje.
 
@@ -785,7 +786,7 @@ Ten první důvod je prostě meh, ale ty další dva jsou v pohodě a myslím, �
 
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1143484428270706689
-Jak vybrat kurz? <@1118626383183237200> jede! Pište, co si o tom myslíte 🙂 
+Jak vybrat kurz? <@1118626383183237200> jede! Pište, co si o tom myslíte 🙂
 
 ⚠️ <:linkedin:915267970752712734> **Bohužel je potřeba být přihlášený/á na LinkedIn, jinak se to nenačte**
 
@@ -794,7 +795,7 @@ https://www.linkedin.com/pulse/nahl%2525C3%2525A9dn%2525C4%25259Bte-za-oponu-jak
 
 
 --- https://discord.com/channels/769966886598737931/1143156636941299712/1143156636941299712
-https://2learn.cz/kurzy 
+https://2learn.cz/kurzy
 vhodné pro začátečníky, i ty kteří si už něco zkoušeli
 učí to můj známý, který to umí fakt dobře vysvětlit, mohu jen doporučit 🙂
 ---
