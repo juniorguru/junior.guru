@@ -1,6 +1,6 @@
 from typing import Iterable, Self
 
-from peewee import CharField, IntegerField, TextField, DateField
+from peewee import CharField, DateField, IntegerField, TextField
 
 from juniorguru.models.base import BaseModel, JSONField
 
