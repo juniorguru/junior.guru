@@ -4,7 +4,7 @@ template: main_sections.html
 description: Komunita pro začátečníky v programování, průvodce programováním pro samouky, kurzy programování, nabídky práce pro juniory
 ---
 
-{% from 'macros.html' import img, markdown, blockquote_avatar, blockquote_toxic, lead, logo, event_circle, link_card with context %}
+{% from 'macros.html' import img, markdown, blockquote_avatar, blockquote_toxic, lead, logo, event_circle, link_card, news_card with context %}
 
 
 <header class="masthead"><div class="masthead-container">
@@ -56,6 +56,7 @@ description: Komunita pro začátečníky v programování, průvodce programov�
   A dostaneš podporu, díky které to celé ustojíš.
 {% endcall %}
 #}
+<div class="standout">
 <div class="link-cards">
   {{ link_card(
     'Klub',
@@ -89,6 +90,36 @@ description: Komunita pro začátečníky v programování, průvodce programov�
     image=false,
   ) }}
 </div>
+</div>
+
+<div class="standout">
+<div class="news-cards">
+  {% set podcast_episode = podcast_episodes|list|first %}
+  {{
+    news_card(
+      category='Podcast',
+      class='muted',
+      **podcast_episode.to_card(),
+    )
+  }}
+  {% set story = stories_pages|list|first %}
+  {{
+    news_card(
+      category='Příběh',
+      class='muted',
+      **story.to_card(),
+    )
+  }}
+  {% set event = events_archive|list|first %}
+  {{
+    news_card(
+      category='Klubová akce',
+      class='muted',
+      **event.to_card(),
+    )
+  }}
+</div>
+</div>
 </section>
 
 
@@ -100,36 +131,6 @@ description: Komunita pro začátečníky v programování, průvodce programov�
     Provoz projektu financují členové klubu svým předplatným a firmy skrze různá partnerství.
   {%- endcall %}
 </section></div>
-
-
-{#
-<div class="section-background blue-light"><section class="section">
-<h2>Novinky</h2>
-<div class="link-cards">
-  {{ link_card(
-    'Podcast',
-    pages|docs_url('club.md')|url,
-    caption='Bla bla',
-    image=false,
-    class='inverted',
-  ) }}
-  {{ link_card(
-    'Klubové akce',
-    pages|docs_url('handbook/index.md')|url,
-    caption='Bla bla',
-    image=false,
-    class='inverted',
-  ) }}
-  {{ link_card(
-    'Příběhy',
-    pages|docs_url('courses.md')|url,
-    caption='Bla bla',
-    image=false,
-    class='inverted',
-  ) }}
-</div>
-</section></div>
-#}
 
 <div class="section-background yellow"><section class="section">
 <h2>Novinky pravidelně v mailu</h2>

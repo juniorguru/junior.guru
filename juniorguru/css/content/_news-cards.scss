@@ -1,3 +1,9 @@
+.news-cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -1 * $spacer;
+}
+
 .news-card {
   @extend .card;
   margin: 0 0 map-get($spacers, 4) 0;
@@ -6,10 +12,58 @@
   border: 1px solid transparent;
 }
 
+.news-card.muted {
+  background: transparent;
+}
+
+.news-cards .news-card {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 100%;
+  margin: 0 0 $spacer 0;
+
+  @include media-breakpoint-up(sm) {
+    $w: calc((100% - #{$spacer}) / 2);
+    width: $w;
+    min-width: $w;
+    max-width: $w;
+    margin-right: $spacer;
+  }
+
+  @include media-breakpoint-up(md) {
+    $w: calc((100% - (2 * #{$spacer})) / 3);
+    width: $w;
+    min-width: $w;
+    max-width: $w;
+    margin-right: $spacer;
+  }
+}
+
 .news-card:hover {
   background: lighten($jg-blue-light, 1%);
   border-color: $jg-blue-light;
   transition: $transition-base;
+}
+
+.news-card.muted:hover {
+  background: transparent;
+  border-color: transparent;
+}
+
+.news-card:nth-child(2n) {
+  @include media-breakpoint-up(sm) {
+    margin-right: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-right: $spacer;
+  }
+}
+
+.news-card:nth-child(3n) {
+  @include media-breakpoint-up(md) {
+    margin-right: 0;
+  }
 }
 
 .news-card-row {
@@ -30,6 +84,7 @@
   flex-grow: 0;
   flex-shrink: 0;
   width: 20%;
+  max-width: $spacer * 10;
   padding: $spacer 0 $spacer $spacer;
 }
 
@@ -79,5 +134,5 @@
 
 .news-card-details strong {
   font-size: $small-font-size;
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-bold;
 }

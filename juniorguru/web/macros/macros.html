@@ -223,8 +223,8 @@
 {% endmacro %}
 
 
-{% macro news_card(title, url, image_path, image_alt, category, subtitle=none, date=none, external=False) %}
-<div class="news-card">
+{% macro news_card(title, url, image_path, image_alt, category, subtitle=none, date=none, external=false, class=none) %}
+<div class="news-card{% if class %} {{ class }}{% endif %}">
   <div class="news-card-row">
     <div class="news-card-media">
       {{ img('static/' + image_path, image_alt, 100, 100, class='news-card-image') }}

@@ -25,6 +25,14 @@
 
       {{ page.content }}
 
+      <div class="pagination">
+        <div class="pagination-control">
+          <a href="{{ (page|parent_page).url|url }}" class="pagination-button">
+            {{ 'arrow-left'|icon }}
+            Všechny příběhy
+          </a>
+        </div>
+      </div>
       {% endblock %}
     </main>
   </div>
@@ -36,7 +44,7 @@
       <h2>Chceš se taky na něco zeptat?</h2>
       <p>
         Můžeš!
-        Na našem klubovém Discordu je nejen {{ page.meta.interviewee }},
+        Na našem klubovém Discordu je nejen <strong>{{ page.meta.interviewee }}</strong>,
         ale i {{ members_total_count - 1 }} dalších lidí, které tohle téma zajímá.
       </p>
       <div class="mt-4">

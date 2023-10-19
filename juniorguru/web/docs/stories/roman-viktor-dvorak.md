@@ -85,4 +85,4 @@ První firma mě oslovila na LinkedIn dřív, než jsem začal aktivně hledat. 
 
 **Tvůj vzkaz juniorům po prvních pohovorech zněl: „Dotáhněte do konce svůj ukázkový projekt a dejte si na něm záležet. Máš nějakou radu jako dnes již zkušený programátor?“**
 
-„Zkušený programátor“ mi zní trochu přehnaně. Vlastní ukázkový projekt je absolutní základ. Všechny důvody, proč ho nedělat, jsou výmluvy. Nikoho nezajímá, jaké jste dělali tutoriály. Musíte dokázat, že jste schopni řešit problémy a učit se nové věci za pochodu. Díky chatbotům a kopilotům to nikdy nebylo pohodlnější než dnes. ◼️
+„Zkušený programátor“ mi zní trochu přehnaně. Vlastní ukázkový projekt je absolutní základ. Všechny důvody, proč ho nedělat, jsou výmluvy. Nikoho nezajímá, jaké jste dělali tutoriály. Musíte dokázat, že jste schopni řešit problémy a učit se nové věci za pochodu. Díky chatbotům a kopilotům to nikdy nebylo pohodlnější než dnes.

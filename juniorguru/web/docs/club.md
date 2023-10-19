@@ -94,7 +94,7 @@ Jednou za čas máme na Discordu večerní akci. Je to **online a zhruba na hodi
   {{ event_circle(event) }}
 {% endfor %}
 </ul>
-<div class="standout text-center">
+<div class="text-center">
   <a class="btn btn-lg btn-outline-primary" href="{{ pages|docs_url('events.md')|url }}">
     Všechny akce
   </a>
@@ -118,7 +118,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
     {{ logo(partner.name, partner.logo_path, partner.url) }}
   {% endfor %}
 </ul>
-<ul class="logos standout">
+<ul class="logos standout-top">
   <li class="logos-item logos-caption">
     <a href="{{ pages|docs_url('faq.md')|url }}#komunity">Komunitní partneři</a>
   </li>
@@ -160,7 +160,7 @@ Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloup
 {% call lead() %}
 Šetři čas a energii. Posouvej se vpřed bez zakopávání o nezralé názory, hulváty, sexisty a přebujelá ega. Případné úlety se u nás řídí [pravidly chování](coc.md).
 {% endcall %}
-<div class="blockquotes-2 standout">
+<div class="blockquotes-2 standout-top">
 {{ blockquote_toxic(
   'Asistentky? Nene, my máme asistenty, na tuhle pozici se holka nemůže dostat. Neuměla by otvírat pivo a zahřívat playstation',
   'Vojtěch P., skupina Programátoři začátečníci na FB',
@@ -261,7 +261,7 @@ Nemusíš hned zadávat kartu. Vyber si roční nebo měsíční předplatné a 
 Vrtá ti hlavou, jak přesně to celé funguje? Máš nějaké problémy s registrací nebo s Discordem? Zajímají tě veškeré detaily ohledně placení? Vypršela ti platnost karty? Prolétni si **otázky a odpovědi**.
 {% endcall %}
 
-<div class="standout"><div class="topics topics-grid">
+<div class="standout-top"><div class="topics topics-grid">
 {% call markdown() %}
 - [{{ 'person-plus'|icon }} Členství v klubu](faq.md#clenstvi-v-klubu)
 - [{{ 'person-check'|icon }} Pro koho je klub](faq.md#pro-koho-je-klub)
