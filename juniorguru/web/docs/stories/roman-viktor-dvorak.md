@@ -6,6 +6,7 @@ interviewee_avatar_path: avatars-participants/roman-viktor-dvorak.jpg
 author: Adéla Pavlun
 author_avatar_path: avatars-participants/adela-pavlun.jpg
 author_url: https://www.linkedin.com/in/adelapavlun/
+thumbnail_title: Rozhovor s Romanem V. Dvořákem
 thumbnail_image_path: avatars-participants/roman-viktor-dvorak.jpg
 template: main_stories.html
 ---
