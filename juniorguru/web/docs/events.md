@@ -40,13 +40,11 @@ Nepořizujeme profesionální záznam, ale snažíme se alespoň nahrát obrazov
 
 {% if events_planned|length %}
   {% for event in events_planned %}
-    {{ news_card(
-      event.title,
-      pages|docs_url(event.page_url)|url,
-      event.avatar_path,
-      event.bio_name,
-      subtitle=event.bio_name,
-      date=event.start_at)
+    {{
+      news_card(
+        category='Plánujeme',
+        **event.to_card()
+      )
     }}
   {% endfor %}
 {% else %}
@@ -56,12 +54,15 @@ Nepořizujeme profesionální záznam, ale snažíme se alespoň nahrát obrazov
 ## Archiv
 
 {% for event in events_archive %}
-  {{ news_card(
-    event.title,
-    pages|docs_url(event.page_url)|url,
-    event.avatar_path,
-    event.bio_name,
-    subtitle=event.bio_name,
-    date=event.start_at)
+  {% if event.public_recording_url %}
+    {% set category = 'Veřejný záznam' %}
+  {% else %}
+    {% set category = none %}
+  {% endif %}
+  {{
+    news_card(
+      category=category,
+      **event.to_card()
+    )
   }}
 {% endfor %}

@@ -18,6 +18,17 @@ class Story(BaseModel):
     def publisher(self):
         return re.sub(r'^www\.', '', urlparse(self.url).netloc).lower()
 
+    def to_card(self) -> dict:
+        return dict(
+            title=self.title,
+            url=self.url,
+            image_path=self.image_path,
+            image_alt=self.name,
+            subtitle=self.name,
+            date=self.date,
+            external=True,
+        )
+
     @classmethod
     def listing(cls):
         return cls.select().order_by(cls.date.desc())

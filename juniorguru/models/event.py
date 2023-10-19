@@ -65,6 +65,16 @@ class Event(BaseModel):
     def page_url(self) -> str:
         return f'events/{self.id}.md'
 
+    def to_card(self) -> dict:
+        return dict(
+            title=self.title,
+            url=self.page_url,
+            image_path=self.avatar_path,
+            image_alt=self.bio_name,
+            subtitle=self.bio_name,
+            date=self.start_at,
+        )
+
     @classmethod
     def next(cls, now=None):
         now = now or datetime.utcnow()

@@ -59,6 +59,16 @@ class PodcastEpisode(BaseModel):
     def media_duration_m(self):
         return math.ceil(self.media_duration_s / 60)
 
+    def to_card(self) -> dict:
+        return dict(
+            title=self.format_title(number=False, affiliation=False),
+            url=self.page_url,
+            image_path=self.image_path,
+            image_alt=self.format_title(),
+            subtitle=self.guest_affiliation,
+            date=self.publish_on,
+        )
+
     @classmethod
     def get_by_number(cls, number: int):
         return cls.get_by_id(number)

@@ -223,7 +223,7 @@
 {% endmacro %}
 
 
-{% macro news_card(title, url, image_path, image_alt, category=none, subtitle=none, date=none, external=False) %}
+{% macro news_card(title, url, image_path, image_alt, category, subtitle=none, date=none, external=False) %}
 <div class="news-card">
   <div class="news-card-row">
     <div class="news-card-media">
@@ -236,8 +236,10 @@
             rel="noopener"
             data-metrics-utm
             data-metrics-utm-medium="news"
+            href="{{ url }}"
+          {% else %}
+            href="{{ pages|docs_url(url)|url }}"
           {% endif %}
-          href="{{ url }}"
           class="news-card-link">{{ title }}</a>
       </h4>
       {% if subtitle %}<h5 class="news-card-subtitle">{{ subtitle }}</h5>{% endif %}

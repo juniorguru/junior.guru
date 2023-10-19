@@ -75,15 +75,8 @@ Jak to nakonec překonali?
 Co by poradili ostatním?
 Nejen že se nebojíme o nepříjemnostech psát, my se na ně přímo ptáme!
 
-{% for page in stories_pages %}
-{{ news_card(
-  page.meta.title,
-  pages|docs_url(page.src_uri)|url,
-  page.meta.interviewee_avatar_path,
-  page.meta.interviewee,
-  subtitle=page.meta.interviewee,
-  date=page.date)
-}}
+{% for story_page in stories_pages %}
+  {{ news_card(**story_page.to_card()) }}
 {% endfor %}
 
 ## Z horníka programátorem
@@ -135,14 +128,10 @@ Záměrem tohoto seznamu je vytvářet nezávislou protiváhu a ukazovat, že:
 -   Programování je obecná, užitečná dovednost, která se hodí i pokud se člověk neplánuje rekvalifikovat do IT.
 
 {% for story in stories %}
-  {{ news_card(
-    story.title,
-    story.url,
-    story.image_path,
-    'Doprovodná fotka k příběhu',
-    subtitle=story.name,
-    category=story.publisher,
-    date=story.date,
-    external=true)
+  {{
+    news_card(
+      category=story.publisher,
+      **story.to_card(),
+    )
   }}
 {% endfor %}

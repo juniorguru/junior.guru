@@ -13,7 +13,7 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
 {% endcall %}
 
 <div class="newsletter">
-  <form class="newsletter-container" id="email-form" method="post" action="https://juniorguru.ecomailapp.cz/public/subscribe/1/43c2cd496486bcc27217c3e790fb4088">
+  <form class="newsletter-container" id="email-form" method="post" action="https://juniorguru.ecomailapp.cz/public/subscribe/1/43c2cd496486bcc27217c3e790fb4088?source={{ page.url|default('/', true)|urlencode }}">
     <h2 class="newsletter-heading">Novinky pravidelně v mailu</h2>
     <p>
       Zadej e-mail a přidej se k <strong>{{ newsletter_subscribers_count }} lidem</strong>, kteří rádi sledují novinky z junior.guru.
@@ -71,25 +71,21 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
 <section class="document-section">
   <h2 class="document-section-heading">{{ 'mic'|icon }} Podcast</h2>
   {% set podcast_episode = podcast_episodes|list|first %}
-  {{ news_card(
-    podcast_episode.format_title(affiliation=false),
-    pages|docs_url(podcast_episode.page_url)|url,
-    podcast_episode.image_path,
-    podcast_episode.format_title(),
-    category='Nejnovější',
-    subtitle=podcast_episode.guest_affiliation,
-    date=podcast_episode.publish_on)
+  {{
+    news_card(
+      category='Nejnovější',
+      **podcast_episode.to_card(),
+    )
   }}
+
   {% set podcast_episode = podcast_episodes|list|skip(1)|sample(1)|first %}
-  {{ news_card(
-    podcast_episode.format_title(affiliation=false),
-    pages|docs_url(podcast_episode.page_url)|url,
-    podcast_episode.image_path,
-    podcast_episode.format_title(),
-    category='Tip z archivu',
-    subtitle=podcast_episode.guest_affiliation,
-    date=podcast_episode.publish_on)
+  {{
+    news_card(
+      category='Tip z archivu',
+      **podcast_episode.to_card(),
+    )
   }}
+
   <p class="text-center">
     <a class="btn btn-outline-primary" href="{{ pages|docs_url('podcast.md')|url }}">
       {{ 'list'|icon }}
@@ -101,29 +97,25 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
 <section class="document-section">
   <h2 class="document-section-heading">{{ 'play-circle'|icon }} Klubové akce</h2>
   {% set event = events_planned|list|first|default(events_archive|list|first, true) %}
-  {{ news_card(
-    event.title,
-    pages|docs_url(event.page_url)|url,
-    event.avatar_path,
-    event.bio_name,
-    category='Nejnovější',
-    subtitle=event.bio_name,
-    date=event.start_at)
+  {{
+    news_card(
+      category='Nejnovější',
+      **event.to_card(),
+    )
   }}
+
   {% if events_planned %}
     {% set event = events_archive|sample(1)|first %}
   {% else %}
     {% set event = events_archive|list|skip(1)|sample(1)|first %}
   {% endif %}
-  {{ news_card(
-    event.title,
-    pages|docs_url(event.page_url)|url,
-    event.avatar_path,
-    event.bio_name,
-    category='Tip z archivu',
-    subtitle=event.bio_name,
-    date=event.start_at)
+  {{
+    news_card(
+      category='Tip z archivu',
+      **event.to_card(),
+    )
   }}
+
   <p class="text-center">
     <a class="btn btn-outline-primary" href="{{ pages|docs_url('events.md')|url }}">
       {{ 'list'|icon }}
@@ -135,27 +127,21 @@ description: Podcasty, přednášky, články a další zdroje pro začátečn�
 <section class="document-section">
   <h2 class="document-section-heading">{{ 'person-circle'|icon }} Příběhy</h2>
   {% set story = stories|list|first %}
-  {{ news_card(
-    story.title,
-    story.url,
-    story.image_path,
-    'Doprovodná fotka k příběhu',
-    category='Nejnovější',
-    subtitle=story.name,
-    date=story.date,
-    external=true)
+  {{
+    news_card(
+      category='Nejnovější',
+      **story.to_card(),
+    )
   }}
+
   {% set story = stories|list|skip(1)|sample(1)|first %}
-  {{ news_card(
-    story.title,
-    story.url,
-    story.image_path,
-    'Doprovodná fotka k příběhu',
-    category='Tip z archivu',
-    subtitle=story.name,
-    date=story.date,
-    external=true)
+  {{
+    news_card(
+      category='Tip z archivu',
+      **story.to_card(),
+    )
   }}
+
   <p class="text-center">
     <a class="btn btn-outline-primary" href="{{ pages|docs_url('stories.md')|url }}">
       {{ 'list'|icon }}
