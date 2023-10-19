@@ -21,6 +21,7 @@ EXCLUDE_URLS = [
     "economist.com",  # crawling protection?
     "udemy.com",  # crawling protection?
     "att.jobs",  # crawling protection?
+    "csob.cz",  # crawling protection?
     "fiverr.com",  # crawling protection?
     "twitter.com",  # crawling protection?
     "upwork.com",  # crawling protection?
@@ -34,6 +35,7 @@ EXCLUDE_URLS = [
     "datacamp.com",  # crawling protection?
     "meetup.com",  # crawling protection?
     "navolnenoze.cz",  # crawling protection?
+    "robime.it",  # crawling protection?
 ]
 
 EXCLUDE_REASONS = [
