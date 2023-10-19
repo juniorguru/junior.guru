@@ -1,3 +1,4 @@
+from operator import attrgetter
 import os
 from datetime import date, timedelta
 from urllib.parse import urljoin
@@ -117,8 +118,11 @@ def on_docs_context(context):
     context["events_archive"] = Event.archive_listing()
 
     # stories.md, news.jinja
-    context["stories"] = Story.listing()
-    context["stories_pages"] = Page.stories_listing()
+    stories_links = list(Story.listing())
+    stories_pages = list(Page.stories_listing())
+    context["stories_links"] = stories_links
+    context["stories_pages"] = stories_pages
+    context["stories"] = sorted(stories_links + stories_pages, key=attrgetter("date"), reverse=True)
 
     # wisdom.jinja, news.jinja
     context["wisdoms"] = Wisdom.listing()

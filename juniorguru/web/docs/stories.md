@@ -127,7 +127,7 @@ Záměrem tohoto seznamu je vytvářet nezávislou protiváhu a ukazovat, že:
     Zkouší různé způsoby studia, různé kurzy, různé materiály.
 -   Programování je obecná, užitečná dovednost, která se hodí i pokud se člověk neplánuje rekvalifikovat do IT.
 
-{% for story in stories %}
+{% for story in stories_links %}
   {{
     news_card(
       category=story.publisher,
