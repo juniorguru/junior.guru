@@ -36,7 +36,9 @@ CATEGORIES_SPEC = [
     else None,
     lambda t: "partnerships" if t["variable_symbol"] == "226" else None,
     lambda t: "salary" if "výplata" in t["message"] else None,
-    lambda t: "sideline" if t["variable_symbol"] == "15" else None,
+    lambda t: "other" if t["variable_symbol"] == "15" else None,  # vedlejsak
+    lambda t: "other" if (t["date"] == date(2023, 9, 7) and t['amount'] == 12753) else None,  # omylem zaplatili 2x - platba
+    lambda t: "other" if (t["date"] == date(2023, 10, 20) and t['amount'] == -12753) else None,  # omylem zaplatili 2x - moje vraceni
     lambda t: "podcast" if "PAVLINA FRONKOVA" in t["message"] else None,
     lambda t: "lawyer" if "ADVOKATKA" in t["message"] else None,
     lambda t: "marketing" if "JANA DOLEJSOVA" in t["message"] else None,
@@ -78,7 +80,7 @@ CATEGORIES_SPEC = [
 ]
 
 IGNORE_CATEGORIES = [
-    "sideline",
+    "other",
     "salary",
 ]
 
@@ -100,7 +102,6 @@ logger = loggers.from_path(__file__)
     default="https://app.fakturoid.cz/api/v2/accounts/honzajavorek",
 )
 @click.option("--fakturoid-api-key", default=default_from_env("FAKTUROID_API_KEY"))
-@click.option("--doc-key", default="1TO5Yzk0-4V_RzRK5Jr9I_pF5knZsEZrNn2HKTXrHgls")
 @click.option(
     "--video-outsourcing-token", default=default_from_env("VIDEO_OUTSOURCING_TOKEN")
 )
@@ -115,7 +116,6 @@ def main(
     fio_api_key,
     fakturoid_api_base_url,
     fakturoid_api_key,
-    doc_key,
     video_outsourcing_token,
     history_path,
     clear_history,
