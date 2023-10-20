@@ -532,4 +532,8 @@ Jak poznam dobreho juniora?
 - reseni problemu: co delas, kdyz se na necem zaseknes a neumis s tim pohnout, jaky je vetsinou tvuj postup?
 
 
+„Před nástupem jsem rok pracovala v jiné firmě, kde byli bohužel kolegové sami velice vytížení. Neměli čas mě dostatečně zaškolit, což vedlo k tomu, že jsem se všechno musela učit sama, tím pádem jsem dělala menší pokroky a mnoha věcem jsem nerozuměla.“
+https://www.pracujprosiliconvalley.cz/pracovala-jsem-na-realnem-it-projektu/
+
+
 #} -->

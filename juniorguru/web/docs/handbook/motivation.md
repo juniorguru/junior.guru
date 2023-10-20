@@ -645,4 +645,12 @@ _Mám kolem sebe 3 programátory_ je vlastně docela nebezpečné. Srovnáváš 
 ---
 
 
+https://vzdelanibudoucnosti.cz/
+https://www.czechcrunch.cz/2020/01/kurzy-programovani-makeittoday-proslo-jiz-650-deti-a-nove-budou-i-v-brne-vznikne-take-prvni-detsky-it-hub/
+https://www.heroine.cz/zeny-it/7677-u-budoucich-ajtaku-je-nejdulezitejsi-touha-nespokojit-se-s-prvnim-resenim-rika-lektor-programovani-pro-deti
+https://blog.zvestov.cz/software%20development/2021/11/22/vyuka-programovani-bez-pocitacu.html
+
+
+https://koderia.sk/blog/9-veci-ktore-by-ste-pri-programovani-rozhodne-nemali-robit
+
 #} -->

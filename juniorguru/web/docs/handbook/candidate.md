@@ -1296,4 +1296,7 @@ Super podcast od <@839123616665698354> a Šárky Kousalové o IČO vs HPP 👍 h
 ---
 
 
+Zdravim Honzo. Jsem z Czechitas a napadlo me, zda by pro vase sledujici nebyl relevantni nas Job Fair, veletrh pracovnich prilezitosti v IT? Mame letos dva, jeden v rijnu v Praze a v listopdu v Brne. Jobfair.czechitas.cz
+
+
 #} -->

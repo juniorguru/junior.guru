@@ -35,4 +35,7 @@ https://cybermagnolia.com/blog/the-money-talk-meetup/
 
 https://hbr.org/2014/06/why-women-dont-negotiate-their-job-offers
 
+Skvěle napsaný a velmi přínosný článek demýtizující tzv. confidence gap: Že mužům stačí splnit 60 % požadavků v pracovním inzerátu a už se hlásí, zatímco ženy se nepřihlásí, dokud nemají 100 %. Text poskytuje zdroj statistiky, podrobnější rozbor problému, návrhy toho, co mohou firmy dělat. Ženy „…jsou trochu soudnější a zdrženlivější než muži. Nechtějí trávit čas a energii někde, kde nevěří, že můžou uspět.” Budu muset opravit příručku! Mnoho z věcí zmíněných v článku navíc platí i pro juniory v IT. Například popsat jasně a jednoznačně věci, které firma vyžaduje, a které jsou bonus, to je problém většiny juniorních nabídek.
+https://medium.com/@lenka.stawarczyk/pro%C4%8D-si-%C5%BEeny-p%C5%99i-hled%C3%A1n%C3%AD-pr%C3%A1ce-nev%C4%9B%C5%99%C3%AD-a-nejsou-sp%C3%AD%C5%A1-jen-vyb%C3%ADrav%C3%A9-a50c936fb805
+
 #} -->

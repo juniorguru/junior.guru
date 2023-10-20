@@ -856,10 +856,10 @@ Slyšel jsem teď u vaření oběda tohle s <@839123616665698354> a <@9736492325
 
 
 --- https://discord.com/channels/769966886598737931/789107031939481641/1125433335699742842
-Dojmy z dnešního pohovoru (FE - React): 
-1) Senior programátor fajn a příjemný. (dost to pomůže proti úvodnímu stresu) 
-2) I když některé koncepty "tak nějak znám" (immutability) tak na přímou otázku nejsem schopen rychle a přímo odpovědět. I u jednodušších otázek jsem asi zněl dost nejistě. Zvlášť pro lidi co se učí na vlastní pěst jako já, je asi fajn v rámci přípravy "vysvětlovat koncepty gumové kachničce". 
-3) Otázky typu: srovnání let var const; co jsou hooks; proč použít react...  
+Dojmy z dnešního pohovoru (FE - React):
+1) Senior programátor fajn a příjemný. (dost to pomůže proti úvodnímu stresu)
+2) I když některé koncepty "tak nějak znám" (immutability) tak na přímou otázku nejsem schopen rychle a přímo odpovědět. I u jednodušších otázek jsem asi zněl dost nejistě. Zvlášť pro lidi co se učí na vlastní pěst jako já, je asi fajn v rámci přípravy "vysvětlovat koncepty gumové kachničce".
+3) Otázky typu: srovnání let var const; co jsou hooks; proč použít react...
 4) Jo a ještě otázky na git (základy: checkout, merge vs rebase).
 
 Možná mě ještě napadá: U otevřených otázek se doptávejte. Výhody Reaktu je otázka, která může znamenat ledacos. Výhody oproti čemu? Plain JS, nebo oproti Angular a Vue js? Můžete se pak nepotkat s očekávanou odpovědí...
@@ -867,14 +867,17 @@ Možná mě ještě napadá: U otevřených otázek se doptávejte. Výhody Reak
 
 
 --- https://discord.com/channels/769966886598737931/789107031939481641/1124759853559185471
-jasné chápu, samozřejmě každou situaci je potřeba řešit na míru. Mě se akorát vyplatilo si tu svojí "na míru" vytvořit. Třeba jsem se před časem s někým bavil že neví co by do takového inzerátu napsal. Ale po pár minutách rozhovoru jsem zjistil, že má kvalitní angličtinu, že má za sebou nějaké zkušenosti které se dají napsat rozhodně jako plus z pohledu zaměstnavatel/zaměstnanec a že by se to nějak vymyslet dalo. 
+jasné chápu, samozřejmě každou situaci je potřeba řešit na míru. Mě se akorát vyplatilo si tu svojí "na míru" vytvořit. Třeba jsem se před časem s někým bavil že neví co by do takového inzerátu napsal. Ale po pár minutách rozhovoru jsem zjistil, že má kvalitní angličtinu, že má za sebou nějaké zkušenosti které se dají napsat rozhodně jako plus z pohledu zaměstnavatel/zaměstnanec a že by se to nějak vymyslet dalo.
 
-Mě nepřijdou sociální sítě na slepo, pokud člověk vyloženě píše do vhodných skupin a míst. Já psal asi do pěti facebookových českých a slovenských programátorských skupin. Určitě je dobré zmínit i technické skilly. Mě se vyplatilo nic si nevymýšlet, ale zároveň podávat informace pozitivním způsobem - tohle umím (ne tamto všechno ještě neumím :)). 
+Mě nepřijdou sociální sítě na slepo, pokud člověk vyloženě píše do vhodných skupin a míst. Já psal asi do pěti facebookových českých a slovenských programátorských skupin. Určitě je dobré zmínit i technické skilly. Mě se vyplatilo nic si nevymýšlet, ale zároveň podávat informace pozitivním způsobem - tohle umím (ne tamto všechno ještě neumím :)).
 
 U mě teda bylo nejdůležitější že jsem měl celkem jasnou představu co hledám a věděl jsem že přes to nejede vlak. Tím se zůžil můj fokus a spoustu jsem toho filroval (nejen na sociálních sítích) ale zase tam kde to vypadalo nadějně jsem se fakt snažil :)).
 
 Nedokážu říct jestli ti to takhle dokáže pomoct. Můžu ti třeba poslat ten svůj inzerát do zprávy (nechce se mi ho teďka vyřezávat a dávat ho sem znova). Ale držím palce! :))
 ---
+
+
+https://twitter.com/EmilyKager/status/1315837993513492480
 
 
 #} -->

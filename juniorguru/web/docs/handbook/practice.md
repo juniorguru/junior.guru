@@ -990,4 +990,14 @@ A moje frontendová verze v PDF ke stažení https://discord.com/channels/769966
 ---
 
 
+Security challenges:
+- https://discord.com/channels/769966886598737931/769966887055392768/898300896868433931
+- https://www.thecatch.cz/
+- https://ctftime.org/
+- https://ecsc.eu/
+
+
+https://m.youtube.com/watch?v=LG-d_BOZE6k
+
+
 #} -->
