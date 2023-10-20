@@ -146,7 +146,7 @@ https://overcast.fm/+bb8HdUWAw
 suhr - komunita, onboarding, atd.
 https://suhr.cz/
 
-https://blog.freelo.cz/pruzkum-mezi-programatory-penize-nejsou-vse/
+https://www.freelo.io/cs/blog/pruzkum-mezi-programatory-penize-nejsou-vse
 
 Stáže
 https://overcast.fm/+xIxcqzDHU
