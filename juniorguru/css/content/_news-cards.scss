@@ -74,7 +74,7 @@
 .news-card-header {
   @extend .card-header;
   font-family: $font-family-monospace;
-  color: $text-muted;
+  color: $body-secondary-color;
   text-transform: uppercase;
   background: $jg-white;
   border-color: $jg-blue-light;

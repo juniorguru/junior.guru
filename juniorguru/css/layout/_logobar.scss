@@ -18,7 +18,7 @@
 }
 
 .logobar-heading {
-  @extend .text-muted;
+  @extend .text-body-secondary;
   @include font-size($sub-sup-font-size);
   display: flex;
   align-items: center;

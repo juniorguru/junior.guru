@@ -44,11 +44,11 @@
 
 .newsletter-note {
   @extend .form-text;
-  @extend .text-muted;
+  @extend .text-body-secondary;
 }
 
 .newsletter-note a {
-  @extend .text-muted;
+  @extend .text-body-secondary;
 }
 
 .newsletter-button {
