@@ -37,8 +37,12 @@ CATEGORIES_SPEC = [
     lambda t: "partnerships" if t["variable_symbol"] == "226" else None,
     lambda t: "salary" if "výplata" in t["message"] else None,
     lambda t: "other" if t["variable_symbol"] == "15" else None,  # vedlejsak
-    lambda t: "other" if (t["date"] == date(2023, 9, 7) and t['amount'] == 12753) else None,  # omylem zaplatili 2x - platba
-    lambda t: "other" if (t["date"] == date(2023, 10, 20) and t['amount'] == -12753) else None,  # omylem zaplatili 2x - moje vraceni
+    lambda t: "other"
+    if (t["date"] == date(2023, 9, 7) and t["amount"] == 12753)
+    else None,  # omylem zaplatili 2x - platba
+    lambda t: "other"
+    if (t["date"] == date(2023, 10, 20) and t["amount"] == -12753)
+    else None,  # omylem zaplatili 2x - moje vraceni
     lambda t: "podcast" if "PAVLINA FRONKOVA" in t["message"] else None,
     lambda t: "lawyer" if "ADVOKATKA" in t["message"] else None,
     lambda t: "marketing" if "JANA DOLEJSOVA" in t["message"] else None,
