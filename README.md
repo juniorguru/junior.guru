@@ -58,20 +58,6 @@ Sensitive information should always go to DEBUG. The CI is set to log only INFO.
 
 The service account's email address needs to be manually invited wherever it should have access. If it should be able to access Google Analytics, go there and invite it as if it was a user.
 
-## Setting up SMTP credentials
-
-1.  If using Gmail for sending e-mails, [create an app password](https://security.google.com/settings/security/apppasswords).
-1.  Set the following environment variables:
-
-    ```bash
-    export SMTP_HOST='smtp.example.com'
-    export SMTP_PORT='587'
-    export SMTP_USERNAME='example@example.com'
-    export SMTP_PASSWORD='abc...xyz'
-    ```
-
-By default, sending is not enabled. On production or when trying to send e-mails from localhost an environment variable `JOBS_EMAILS_SENDING_ENABLED` needs to be set to something truthy.
-
 ## Setting up logo.junior.guru and podcast.junior.guru
 
 The [logo.junior.guru](https://logo.junior.guru/) and [podcast.junior.guru](https://podcast.junior.guru/) have their own repos and run on GitHub Pages. Set it up in DNS:

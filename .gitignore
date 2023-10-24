@@ -89,7 +89,6 @@ google_service_account.json
 /juniorguru/images/posters-partners/*.png
 /juniorguru/images/posters-podcast/*.png
 /juniorguru/images/thumbnails/*.png
-/juniorguru/data/jobs-emails.txt
 
 # Data persisting and merging
 .persist-to-workspace-snapshot
