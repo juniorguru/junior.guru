@@ -17,7 +17,7 @@ logger = loggers.from_path(__file__)
 def main(circleci_branch, circleci_workflow_id, production, circleci_api_key):
     circleci = Api(token=circleci_api_key)
     pipelines = circleci.get_project_pipelines(
-        "honzajavorek", "junior.guru", branch=circleci_branch, paginate=True
+        "juniorguru", "junior.guru", branch=circleci_branch, paginate=True
     )
     recently = datetime.utcnow() - timedelta(days=3)
     pipelines = [
@@ -46,7 +46,7 @@ def main(circleci_branch, circleci_workflow_id, production, circleci_api_key):
     for workflow in workflows_to_cancel:
         url = (
             "https://app.circleci.com/pipelines/"
-            "github/honzajavorek/junior.guru"
+            "github/juniorguru/junior.guru"
             f"/{workflow['pipeline_number']}/workflows/{workflow['id']}"
         )
         if production:

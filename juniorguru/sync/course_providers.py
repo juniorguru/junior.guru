@@ -42,7 +42,7 @@ def main():
 
         record["slug"] = yaml_path.stem
         record["edit_url"] = (
-            "https://github.com/honzajavorek/junior.guru/"
+            "https://github.com/juniorguru/junior.guru/"
             f"blob/main/juniorguru/data/course_providers/{record['slug']}.yml"
         )
         record["page_title"] = compile_page_title(record["name"])

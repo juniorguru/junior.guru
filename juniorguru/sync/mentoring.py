@@ -109,7 +109,7 @@ async def discord_task(client: ClubClient):
                                'Nemusíš mít 10 let zkušeností v oboru. '
                                'Pusť si [přednášku o mentoringu](https://www.youtube.com/watch?v=8xeX7wfX_x4) od Anny Ossowski, ať víš, co od toho čekat. '
                                'Existuje i [přepis](https://github.com/honzajavorek/become-mentor/blob/master/README.md) a [český překlad](https://github.com/honzajavorek/become-mentor/blob/master/cs.md). '
-                               'Potom napiš Honzovi, přidá tě do [seznamu](https://github.com/honzajavorek/junior.guru/blob/main/juniorguru/data/mentors.yml).')
+                               'Potom napiš Honzovi, přidá tě do [seznamu](https://github.com/juniorguru/junior.guru/blob/main/juniorguru/data/mentors.yml).')
     info_params = dict(content=info_content,
                        embeds=[Embed(title='Mentoring', color=Color.orange(),
                                      description=info_mentee_description),

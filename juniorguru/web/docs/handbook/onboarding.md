@@ -86,7 +86,7 @@ Firma pošle kandidátovi PDF s popisem přijímacího procesu a očekávání
 https://markmcgranaghan.com/lessons-from-stripe
 
 companies page
-https://github.com/honzajavorek/junior.guru/issues/5
+https://github.com/juniorguru/junior.guru/issues/5
 
 https://lovec-hlav.cz/pracovni-inzerat/
 https://lovec-hlav.cz/prvni-pomoc-pro-pracovni-inzeraty/

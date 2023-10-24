@@ -24,7 +24,7 @@ Aby mohl Honza udělat přednášce promo, je potřeba nejpozději týden před 
 -    Tvoje firma a pozice v ní
 -    Logo tvé firmy (ideálně SVG)
 
-Inspirovat se můžeš v [seznamu přednášek, které už proběhly](events.md). Jestli umíš s GitHubem a nebojíš se upravovat YAML soubor, můžeš kouknout i na [events.yml](https://github.com/honzajavorek/junior.guru/blob/main/juniorguru/data/events.yml).
+Inspirovat se můžeš v [seznamu přednášek, které už proběhly](events.md). Jestli umíš s GitHubem a nebojíš se upravovat YAML soubor, můžeš kouknout i na [events.yml](https://github.com/juniorguru/junior.guru/blob/main/juniorguru/data/events.yml).
 
 ## Přednášení
 

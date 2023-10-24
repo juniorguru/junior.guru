@@ -97,7 +97,7 @@ def download(circleci_workflow, circleci_api_key):
         raise click.Abort()
 
     artifacts = circleci.get_artifacts(
-        "honzajavorek", "junior.guru", backup_job["job_number"]
+        "juniorguru", "junior.guru", backup_job["job_number"]
     )
     try:
         backup_artifact = next(

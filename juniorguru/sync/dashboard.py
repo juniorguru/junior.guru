@@ -136,7 +136,7 @@ def render_open():
         f'🙋 {members_total_count} členů v klubu, z toho asi {members_women_ptc} % žen',
         f'📝 [{blog_article.title}]({blog_article.url})',
         '📊 [Návštěvnost webu](https://simpleanalytics.com/junior.guru)',
-        '<:github:842685206095724554> [Zdrojový kód](https://github.com/honzajavorek/junior.guru)',
+        '<:github:842685206095724554> [Zdrojový kód](https://github.com/juniorguru/junior.guru)',
         '📈 [Další čísla a grafy](https://junior.guru/open/)',
     ])
     description += '\n\n💡 Napadá tě vylepšení? Máš dotaz k fungování klubu? Šup s tím do <#806215364379148348>!'

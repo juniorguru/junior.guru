@@ -537,10 +537,10 @@ https://play.google.com/store/apps/details?id=com.hackages.texidi&hl=en_US&gl=US
 Texidi appka pro HR a IT
 
 Skilly podle rolí, nápad od člověka
-https://github.com/honzajavorek/junior.guru/issues/3#issuecomment-734427076
+https://github.com/juniorguru/junior.guru/issues/3#issuecomment-734427076
 
 Specializations list
-https://github.com/honzajavorek/junior.guru/issues/19
+https://github.com/juniorguru/junior.guru/issues/19
 
 ageism a kam mizí staří programátoři
 https://abrarmasum.medium.com/when-do-programmers-retire-is-35-the-end-72d173760ee2

@@ -2,11 +2,11 @@
 name = "juniorguru"
 version = "0.0.0"
 description = "Learn to code and get your first job in tech 🐣"
-authors = ["Honza Javorek <mail@honzajavorek.cz>"]
+authors = ["Honza Javorek <honza@junior.guru>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://junior.guru/"
-repository = "https://github.com/honzajavorek/junior.guru/"
+repository = "https://github.com/juniorguru/junior.guru/"
 
 [tool.poetry.scripts]
 jg = "juniorguru.cli:main"

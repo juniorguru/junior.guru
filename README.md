@@ -63,8 +63,8 @@ The service account's email address needs to be manually invited wherever it sho
 The [logo.junior.guru](https://logo.junior.guru/) and [podcast.junior.guru](https://podcast.junior.guru/) have their own repos and run on GitHub Pages. Set it up in DNS:
 
 ```
-logo.junior.guru '@' CNAME 'honzajavorek.github.io'
-podcast.junior.guru '@' CNAME 'honzajavorek.github.io'
+logo.junior.guru '@' CNAME 'juniorguru.github.io'
+podcast.junior.guru '@' CNAME 'juniorguru.github.io'
 ```
 
 ## Verify Google Search Console

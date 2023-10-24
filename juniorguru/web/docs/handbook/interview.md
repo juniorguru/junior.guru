@@ -241,7 +241,7 @@ posli ukazku kodu na ktery jste pysni
 
 Tituly a role ve firmách
 Tituly podle množství zkušeností
-https://github.com/honzajavorek/junior.guru/issues/427
+https://github.com/juniorguru/junior.guru/issues/427
 
 kdo je senior medior junior
 https://discord.com/channels/769966886598737931/769966887055392768/821353834646601829

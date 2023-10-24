@@ -94,7 +94,7 @@ https://www.hash.cz/inferno/otazky.html
 
 Zajímavý článek o tom, jak se správně ptát https://hamatti.org/posts/how-to-ask-help-for-technical-problems/
 
-https://github.com/honzajavorek/junior.guru/issues/30
+https://github.com/juniorguru/junior.guru/issues/30
 
 Zdravím Honzo, z těch tutoriálů by se klidně ještě hodilo nějaké uvedení do Stack Overflow :smile: . Já se v něm už snad tak nějak "orientuji", ale potřeboval bych asi ujasnit, jak v tom lépe (čti přesněji) vyhledávat a ideálně nevytvářet duplikátní posty k již zodpovězeným issues :thumbsup:
 
@@ -236,7 +236,7 @@ Zkoušeli jste někdo? Používáte? https://www.phind.com/
 
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1117365521696948336
-**a debugging manifesto ** 🐛 
+**a debugging manifesto ** 🐛
 zdroj: https://twitter.com/b0rk/status/1570060516839641092
 ---
 

@@ -1147,4 +1147,4 @@ Sice do toho Pavlíně nekecám, ale za mě by bylo fajn, kdyby v průměru polo
 
 ## Kód
 
-Práci na kódu lze sledovat [na GitHubu](https://github.com/honzajavorek/junior.guru/graphs/contributors).
+Práci na kódu lze sledovat [na GitHubu](https://github.com/juniorguru/junior.guru/graphs/contributors).

@@ -20,7 +20,7 @@ def create_employment(**data):
     data.setdefault('source', 'exciting-job-board')
     data.setdefault('source_urls', [
         'https://api.example.com/jobs.xml',
-        'https://app.circleci.com/pipelines/github/honzajavorek/junior.guru/3528/workflows/7e41e9f4-23b1-44cb-8bc3-a5b8ce8b2694/jobs/21310',
+        'https://app.circleci.com/pipelines/github/juniorguru/junior.guru/3528/workflows/7e41e9f4-23b1-44cb-8bc3-a5b8ce8b2694/jobs/21310',
     ])
     return Employment.create(**data)
 

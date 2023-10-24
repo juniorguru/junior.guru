@@ -32,7 +32,7 @@ Jsou mezi námi nejen junioři na všech úrovních znalostí, ale i mnozí seni
 
 ### Co mám z členství v klubu jako senior(ka)?  {: #seniori }
 
-Zatímco čekáš na poště, můžeš někoho posunout o kousek blíž vysněné kariéře v IT. Stačí ti „poflakovat“ se na Discordu, pokud máš zrovna čas. Když vidíš příležitost někomu pomoci, zkusíš pomoci. Někdy to může být debugovací seance na hodinu, někdy dva krátké příspěvky, někdy jedno emoji s palcem nahoru. Nemusíš mít učitelské nadání, stačí [když ti ego nebrání v laskavosti a respektu k druhým](coc.md). Navíc finančně přispíváš na provoz a rozšiřování [otevřených](https://github.com/honzajavorek/junior.guru/) materiálů pro začátečníky, ve kterých nejde o senzační titulky, ale o upřímné a dobře míněné rady.
+Zatímco čekáš na poště, můžeš někoho posunout o kousek blíž vysněné kariéře v IT. Stačí ti „poflakovat“ se na Discordu, pokud máš zrovna čas. Když vidíš příležitost někomu pomoci, zkusíš pomoci. Někdy to může být debugovací seance na hodinu, někdy dva krátké příspěvky, někdy jedno emoji s palcem nahoru. Nemusíš mít učitelské nadání, stačí [když ti ego nebrání v laskavosti a respektu k druhým](coc.md). Navíc finančně přispíváš na provoz a rozšiřování [otevřených](https://github.com/juniorguru/junior.guru/) materiálů pro začátečníky, ve kterých nejde o senzační titulky, ale o upřímné a dobře míněné rady.
 
 ### Co mám z členství v klubu jako profesionál(ka) na volné noze?
 

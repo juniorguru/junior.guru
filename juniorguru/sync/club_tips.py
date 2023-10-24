@@ -73,7 +73,7 @@ def load_tips(tips_path: Path, roles=None):
 def get_tip_url(path: Path, cwd: Path = None) -> str:
     cwd = cwd or Path.cwd()
     path = path.absolute().relative_to(cwd)
-    return f"https://github.com/honzajavorek/junior.guru/blob/main/{path}"
+    return f"https://github.com/juniorguru/junior.guru/blob/main/{path}"
 
 
 def parse_tip(markdown: str, roles=None) -> dict:
