@@ -750,6 +750,46 @@ Data jsou celkem od **{{ charts.total_cancellations_breakdown_count }}** lidí.
     }|tojson|forceescape }}"
     data-chart-milestones-offset-ptc="0"></canvas></div></div>
 
+## Odkud jsou platící členové
+
+O členech neuchovávám prakticky žádné informace, ze kterých bych mohl zjistit, odkud jsou.
+Stripe mi ale umožňuje zjistit, v jaké zemi byla vydána jejich karta.
+Díky tomu mohu odhadnout, kolik lidí není z Česka.
+
+Potřebuju to sledovat, abych věděl, jestli jsem nepřesáhl limit pro [One Stop Shop](https://vat-one-stop-shop.ec.europa.eu/one-stop-shop/declare-and-pay-oss_en). Ten je {{ charts.countries.oss_limit_eur|thousands }}€/rok, což je {{ charts.countries.oss_limit_czk|thousands }} Kč/rok, což je {{ charts.countries.oss_limit_czk_monthly|thousands }}/měsíc.
+
+Z individuálních členství jsem minulý měsíc vydělal {{ charts.countries.revenue_memberships|thousands }} Kč celkem.
+Když použiju procenta z grafu níže, odhadem by mělo být {{ charts.countries.revenue_memberships_non_cz|thousands }} Kč odjinud než z Česka. {% if charts.countries.oss_limit_czk_monthly > charts.countries.revenue_memberships_non_cz %}**Takže asi dobrý.**{% endif %}
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': [
+            'Česko',
+            'Slovensko',
+            'jinde',
+        ],
+        'datasets': [
+            {
+                'axis': 'y',
+                'label': '% členů',
+                'data': [
+                    charts.countries.breakdown.pop('CZ'),
+                    charts.countries.breakdown.pop('SK'),
+                    charts.countries.breakdown.pop('other'),
+                ],
+                'backgroundColor': '#1755d1',
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.countries.breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'indexAxis': 'y',
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'min': 0, 'suggestedMax': 100}},
+    }|tojson|forceescape }}"></canvas></div></div>
+
 ## Marketingové kanály klubu
 
 ### Výkonnost kanálů podle ankety

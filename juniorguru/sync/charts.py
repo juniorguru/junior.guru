@@ -8,6 +8,7 @@ from juniorguru.models.base import db
 from juniorguru.models.chart import Chart
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.event import Event, EventSpeaking
+from juniorguru.models.exchange_rate import ExchangeRate
 from juniorguru.models.followers import Followers
 from juniorguru.models.page import Page
 from juniorguru.models.podcast import PodcastEpisode
@@ -51,14 +52,16 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(
     dependencies=[
-        "transactions",
-        "subscriptions",
+        "club-content",
+        "events",
+        "exchange-rates",
+        "followers",
         "members",
         "pages",
-        "events",
-        "followers",
-        "club-content",
         "podcast",
+        "subscriptions-country",
+        "subscriptions",
+        "transactions",
         "web-usage",
     ]
 )
@@ -394,9 +397,23 @@ def web_usage_breakdown(today: date):
     return dict(data=breakdown, months=months)
 
 
-# @chart
-# def total_countries_breakdown(today: date):
-#     return dict(
-#         data=SubscriptionCountry.total_breakdown_ptc(),
-#         count=SubscriptionCountry.count(),
-#     )
+@chart
+def countries(today: date):
+    breakdown = SubscriptionCountry.total_breakdown_ptc()
+
+    oss_limit_eur = 10000
+    oss_limit_czk = ExchangeRate.from_currency(oss_limit_eur, "EUR")
+
+    revenue_breakdown = Transaction.revenue_breakdown(charts.previous_month(today))
+    revenue_memberships = revenue_breakdown['memberships']
+
+    return dict(
+        data=dict(
+            breakdown=breakdown,
+            oss_limit_eur=oss_limit_eur,
+            oss_limit_czk=oss_limit_czk,
+            oss_limit_czk_monthly=int(oss_limit_czk / 12),
+            revenue_memberships=revenue_memberships,
+            revenue_memberships_non_cz=int(((100 - breakdown['CZ']) * revenue_memberships) / 100),
+        )
+    )

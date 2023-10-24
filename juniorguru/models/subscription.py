@@ -637,6 +637,20 @@ class SubscriptionMarketingSurvey(BaseModel):
         return get_breakdown_ptc(counter, SubscriptionMarketingSurveyAnswer)
 
 
+class SubscriptionCountry(BaseModel):
+    customer_id = CharField(unique=True)
+    country_code = CharField()
+
+    @classmethod
+    def total_breakdown_ptc(cls) -> dict[str, float]:
+        query = cls.select().order_by(cls.country_code)
+        counter = Counter([
+            (country.country_code if country.country_code in ['CZ', 'SK'] else 'other')
+            for country in query
+        ])
+        return get_breakdown_ptc(counter)
+
+
 def get_breakdown_ptc(counter: dict, enum: StrEnum | None=None) -> dict[str, float]:
     if enum is None:
         types = list(counter.keys())
@@ -645,8 +659,3 @@ def get_breakdown_ptc(counter: dict, enum: StrEnum | None=None) -> dict[str, flo
     if total_count := sum(counter.values()):
         return {type: (counter[type] / total_count) * 100 for type in types}
     return {type: 0 for type in types}
-
-
-class SubscriptionCountry(BaseModel):
-    customer_id = CharField(unique=True)
-    country_code = CharField()
