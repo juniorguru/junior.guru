@@ -12,6 +12,7 @@ query fetch($cursor: String!) {
                 email
                 fullName
                 totalSpendCents
+                stripeCustomerId
               	subscriptions {
                     id
                     active

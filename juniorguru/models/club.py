@@ -52,6 +52,7 @@ class ClubUser(BaseModel):
     id = IntegerField(primary_key=True)
     account_id = IntegerField(null=True, unique=True)
     subscription_id = CharField(null=True)
+    customer_id = CharField(null=True, unique=True)
     joined_at = DateTimeField(null=True)
     subscribed_at = DateTimeField(null=True)
     subscribed_days = IntegerField(null=True)

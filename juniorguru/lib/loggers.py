@@ -21,6 +21,7 @@ MUTED_LOGGERS = [
     "peewee",
     "PIL",
     "protego",
+    "stripe",
     "tornado.access",
     "urllib3",
 ]

@@ -645,3 +645,14 @@ def get_breakdown_ptc(counter: dict, enum: StrEnum | None=None) -> dict[str, flo
     if total_count := sum(counter.values()):
         return {type: (counter[type] / total_count) * 100 for type in types}
     return {type: 0 for type in types}
+
+
+class SubscriptionCountry(BaseModel):
+    customer_id = CharField(unique=True)
+    country_code = CharField()
+
+    @property
+    def user(self) -> ClubUser:
+        return ClubUser.select() \
+            .where(ClubUser.customer_id == self.customer_id) \
+            .first()

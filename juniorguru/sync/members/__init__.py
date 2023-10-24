@@ -65,6 +65,7 @@ def main():
             logger.debug(f"Updating club user #{user.id} with data from {member_admin_url}")
             user.account_id = account_id
             user.subscription_id = str(subscription['id'])
+            user.customer_id = member['stripeCustomerId']
             user.subscribed_at = subscribed_at
             user.subscribed_days = subscribed_days
             user.coupon = coupon_parts.get('coupon')

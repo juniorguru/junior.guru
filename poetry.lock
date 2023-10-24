@@ -3146,6 +3146,21 @@ files = [
 python-dateutil = ">=2.6.0"
 
 [[package]]
+name = "stripe"
+version = "7.0.0"
+description = "Python bindings for the Stripe API"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "stripe-7.0.0-py2.py3-none-any.whl", hash = "sha256:15ebdcb8271b4fd54ff861d85101a78a6f01ce7c1ae236bb0e2b8f76bf7ffad8"},
+    {file = "stripe-7.0.0.tar.gz", hash = "sha256:9a35f404c04eb80bff0bb618950e0548943f1ef47c14e8e8f4bbc6f5e751ba99"},
+]
+
+[package.dependencies]
+requests = {version = ">=2.20", markers = "python_version >= \"3.0\""}
+typing-extensions = {version = ">=4.0.0", markers = "python_version >= \"3.7\""}
+
+[[package]]
 name = "tabulate"
 version = "0.9.0"
 description = "Pretty-print tabular data"
@@ -3619,4 +3634,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "d1df136918cabc93b7b14918469fb6e281b245d4e2fc646e68ccffb445ab079c"
+content-hash = "38d8f474ec8b688adace466a47552c3567a0494cf01889f94f988a6d87a0da0a"
