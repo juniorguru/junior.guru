@@ -41,11 +41,11 @@
   </small>
 </p>
 {% endif %}
-{{ img('static/' + podcast_episode.image_path, podcast_episode.format_title(), 100, 100, class='podcast-episode-image') }}
+{{ img('static/' + podcast_episode.image_path, podcast_episode.format_title(), 100, 100, class='news-page-image') }}
 <p>
   <strong>{{ '{:%-d.%-m.%Y}'.format(podcast_episode.publish_on) }}</strong> — {{ podcast_episode.description|md }}
 </p>
-{{ podcast_player(podcast_episode, class='podcast-episode-player') }}
+{{ podcast_player(podcast_episode, class='news-page-player') }}
 
 <div class="pagination">
   <div class="pagination-control">

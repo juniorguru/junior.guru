@@ -53,7 +53,7 @@
 ## {{ event.bio_name }}
 
 <div>
-{{ img('static/' + event.avatar_path, event.title, 100, 100, class='podcast-episode-image') }}
+{{ img('static/' + event.avatar_path, event.title, 100, 100, class='news-page-image') }}
 {{ event.bio|md }}
 </div>
 
