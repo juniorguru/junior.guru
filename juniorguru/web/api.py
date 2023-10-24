@@ -78,7 +78,7 @@ def build_podcast_xml(api_dir, config):
 
     person_hj = Person("Honza Javorek", "honza@junior.guru")
     podcast = Podcast(
-        name="Junior Guru podcast",
+        name="Junior Guru: programování a kariéra v IT",
         description="Jsme tu pro všechny juniory v IT! Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.",
         language="cs",
         category=Category("Technology"),

@@ -1,5 +1,5 @@
 ---
-title: Podcast pro juniory v IT
+title: Podcast o programování a kariéře v IT
 description: Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.
 template: main_podcast.html
 ---
