@@ -15,6 +15,7 @@ from juniorguru.models.subscription import (
     LEGACY_PLANS_DELETED_ON,
     SubscriptionActivity,
     SubscriptionCancellation,
+    SubscriptionCountry,
     SubscriptionInternalReferrer,
     SubscriptionMarketingSurvey,
     SubscriptionReferrer,
@@ -391,3 +392,11 @@ def web_usage_breakdown(today: date):
     breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
     del breakdown["total"]
     return dict(data=breakdown, months=months)
+
+
+# @chart
+# def total_countries_breakdown(today: date):
+#     return dict(
+#         data=SubscriptionCountry.total_breakdown_ptc(),
+#         count=SubscriptionCountry.count(),
+#     )

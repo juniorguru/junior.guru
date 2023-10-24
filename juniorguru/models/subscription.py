@@ -650,9 +650,3 @@ def get_breakdown_ptc(counter: dict, enum: StrEnum | None=None) -> dict[str, flo
 class SubscriptionCountry(BaseModel):
     customer_id = CharField(unique=True)
     country_code = CharField()
-
-    @property
-    def user(self) -> ClubUser:
-        return ClubUser.select() \
-            .where(ClubUser.customer_id == self.customer_id) \
-            .first()

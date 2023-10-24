@@ -1,9 +1,14 @@
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 import click
 import stripe
 
 from juniorguru.cli.sync import default_from_env, main as cli
 from juniorguru.lib import loggers
 from juniorguru.models.subscription import SubscriptionCountry
+
+
+WORKERS = 10
 
 
 logger = loggers.from_path(__file__)
@@ -20,11 +25,25 @@ def main(stripe_api_key: str):
     SubscriptionCountry.create_table()
 
     customers = stripe.Customer.list(api_key=stripe_api_key)
-    for customer in logger.progress(customers.auto_paging_iter()):
-        payment_methods = customer.list_payment_methods(type="card", limit=1)
-        try:
-            country_code = payment_methods.data[0].card.country
-        except IndexError:
-            logger.debug(f"Customer {customer.id} ({customer.email}) has no card")
+    customers = logger.progress(customers.auto_paging_iter())
+
+    with ThreadPoolExecutor(max_workers=WORKERS) as executor:
+        threads = [
+            executor.submit(get_data, customer)
+            for customer in customers
+        ]
+    for task in as_completed(threads):
+        data = task.result()
+        if data['country_code']:
+            SubscriptionCountry.create(**data)
         else:
-            SubscriptionCountry.create(customer_id=customer.id, country_code=country_code)
+            logger.debug(f"Customer {data['customer_id']} ({data['customer_email']}) has no card")
+
+
+def get_data(customer: stripe.Customer) -> str:
+    payment_methods = customer.list_payment_methods(type="card", limit=1)
+    try:
+        country_code = payment_methods.data[0].card.country
+    except IndexError:
+        country_code = None
+    return dict(customer_id=customer.id, customer_email=customer.email, country_code=country_code)
