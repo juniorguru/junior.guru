@@ -405,7 +405,7 @@ def countries(today: date):
     oss_limit_czk = ExchangeRate.from_currency(oss_limit_eur, "EUR")
 
     revenue_breakdown = Transaction.revenue_breakdown(charts.previous_month(today))
-    revenue_memberships = revenue_breakdown['memberships']
+    revenue_memberships = revenue_breakdown["memberships"]
 
     return dict(
         data=dict(
@@ -414,6 +414,8 @@ def countries(today: date):
             oss_limit_czk=oss_limit_czk,
             oss_limit_czk_monthly=int(oss_limit_czk / 12),
             revenue_memberships=revenue_memberships,
-            revenue_memberships_non_cz=int(((100 - breakdown['CZ']) * revenue_memberships) / 100),
+            revenue_memberships_non_cz=int(
+                ((100 - breakdown["CZ"]) * revenue_memberships) / 100
+            ),
         )
     )
