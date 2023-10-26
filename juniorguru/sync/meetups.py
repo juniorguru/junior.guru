@@ -90,18 +90,17 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command(dependencies=['club-content'])
+@cli.pass_cache
 @click.option('--channel', 'channel_id', default='promo', type=parse_channel)
 @click.option('--clear-cache/--keep-cache', default=False)
-@click.pass_context
-def main(context, channel_id, clear_cache):
-    cache_path = context.obj['cache_dir'] / 'meetups.json'
+def main(cache, channel_id, clear_cache):
     if clear_cache:
-        cache_path.unlink(missing_ok=True)
+        cache.delete('meetups')
     try:
-        logger.info('Loading data from cache')
-        data = json.loads(cache_path.read_text())
-    except FileNotFoundError:
-        logger.debug('No cache found')
+        data = cache['meetups']
+        logger.info('Events loaded from cache')
+    except KeyError:
+        logger.info('Fetching events')
         data = []
         for feed in FEEDS:
             logger.info(f'Downloading {feed["format"]!r} feed from {feed["source_url"]}')
@@ -110,8 +109,7 @@ def main(context, channel_id, clear_cache):
             feed['source_url'] = response.url  # overwrite with the final URL
             feed['data'] = response.text
             data.append(feed)
-        logger.info('Caching data')
-        cache_path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
+        cache['meetups'] = data
 
     logger.info('Parsing events')
     today = date.today()

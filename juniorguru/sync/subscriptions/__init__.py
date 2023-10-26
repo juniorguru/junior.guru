@@ -50,15 +50,15 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command(dependencies=['partners', 'feminine-names'])
+@cli.pass_cache
 @click.option('--from-date', default='2021-01-01', type=date.fromisoformat)
 @click.option('--clear-cache/--keep-cache', default=False)
 @click.option('--history-path', default='juniorguru/data/subscription_activities.jsonl', type=click.Path(exists=True, path_type=Path))
 @click.option('--clear-history/--keep-history', default=False)
-@click.pass_context
 @db.connection_context()
-def main(context, from_date, clear_cache, history_path, clear_history):
+def main(cache, from_date, clear_cache, history_path, clear_history):
     logger.info('Preparing')
-    memberful = MemberfulAPI(cache_dir=context.obj['cache_dir'],
+    memberful = MemberfulAPI(cache=cache,
                              clear_cache=clear_cache)
 
     SubscriptionActivity.drop_table()

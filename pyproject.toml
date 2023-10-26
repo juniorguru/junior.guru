@@ -55,6 +55,7 @@ beautifulsoup4 = "4.12.2"
 czech-sort = "1.1.0"
 teemup = "1.0.1"
 stripe = "7.0.0"
+diskcache = "5.6.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "7.4.2"

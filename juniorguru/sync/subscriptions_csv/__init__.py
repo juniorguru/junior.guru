@@ -28,12 +28,12 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command()
+@cli.pass_cache
 @click.option('--clear-cache/--keep-cache', default=False)
-@click.pass_context
 @db.connection_context()
-def main(context, clear_cache):
+def main(cache, clear_cache):
     logger.info('Preparing')
-    memberful = MemberfulAPI(cache_dir=context.obj['cache_dir'],
+    memberful = MemberfulAPI(cache=cache,
                              clear_cache=clear_cache)
 
     tables = [SubscriptionReferrer,
@@ -50,7 +50,7 @@ def main(context, clear_cache):
     total_spend = {int(member['id']): math.ceil(member['totalSpendCents'] / 100) for member in members}
 
     logger.info("Fetching members data from Memberful CSV")
-    memberful = MemberfulCSV(cache_dir=context.obj['cache_dir'], clear_cache=clear_cache)
+    memberful = MemberfulCSV(cache=cache, clear_cache=clear_cache)
     seen_account_ids = set()
     for csv_row in memberful.download_csv(dict(type='MembersCsvExport', filter='all')):
         account_id = int(csv_row['Memberful ID'])

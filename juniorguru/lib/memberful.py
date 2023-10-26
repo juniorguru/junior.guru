@@ -4,9 +4,9 @@ import json
 import os
 import re
 import time
-from pathlib import Path
 from typing import Any, Callable, Generator
 from urllib.parse import urlencode
+from diskcache import Cache
 
 import requests
 from gql import Client, gql
@@ -39,10 +39,10 @@ class MemberfulAPI:
     def __init__(
         self,
         api_key: str = None,
-        cache_dir: str | Path = None,
+        cache: Cache = None,
         clear_cache: bool = False,
     ):
-        self.cache_dir = Path(cache_dir) if cache_dir else None
+        self.cache = cache
         self.clear_cache = clear_cache
         self.api_key = api_key or MEMBERFUL_API_KEY
         self._client = None
@@ -126,20 +126,20 @@ class MemberfulAPI:
                 cursor = None
 
     def _execute_query(self, query: str, variable_values: dict) -> dict:
-        if self.cache_dir:
+        cache_tag = self.__class__.__name__.lower()
+
+        if self.cache:
             if self.clear_cache:
                 logger.debug("Clearing cache")
-                for path in self.cache_dir.glob("memberful-*.json"):
-                    path.unlink()
+                self.cache.evict(cache_tag)
                 self.clear_cache = False
 
             cache_key = hash_data(dict(query=query, variable_values=variable_values))
-            cache_path = self.cache_dir / f"memberful-{cache_key}.json"
             try:
-                with cache_path.open() as f:
-                    logger.debug(f"Loading from cache: {cache_path}")
-                    return json.load(f)
-            except FileNotFoundError:
+                result = self.cache[cache_key]
+                logger.debug(f"Loading from cache: {cache_key}")
+                return result
+            except KeyError:
                 pass
 
         logger.debug(
@@ -147,10 +147,9 @@ class MemberfulAPI:
         )
         result = self.client.execute(gql(query), variable_values=variable_values)
 
-        if self.cache_dir:
-            logger.debug(f"Saving to cache: {cache_path}")
-            with cache_path.open("w") as f:
-                json.dump(result, f)
+        if self.cache:
+            logger.debug(f"Saving to cache: {cache_key}")
+            self.cache.set(cache_key, result, tag=cache_tag)
 
         return result
 
@@ -168,10 +167,10 @@ class MemberfulCSV:
         self,
         email: str = None,
         password: str = None,
-        cache_dir: str | Path = None,
+        cache: Cache = None,
         clear_cache: bool = False,
     ):
-        self.cache_dir = Path(cache_dir) if cache_dir else None
+        self.cache = cache
         self.clear_cache = clear_cache
         self.email = email or MEMBERFUL_EMAIL
         self.password = password or MEMBERFUL_PASSWORD
@@ -209,22 +208,23 @@ class MemberfulCSV:
         return session, csrf_token
 
     def download_csv(self, params: dict):
+        cache_tag = self.__class__.__name__.lower()
+
         url = f"https://juniorguru.memberful.com/admin/csv_exports?{urlencode(params)}"
         logger.debug(f"Looking CSV export: {url}")
 
-        if self.cache_dir:
+        if self.cache:
             if self.clear_cache:
                 logger.debug("Clearing cache")
-                for path in self.cache_dir.glob("memberful-*.csv"):
-                    path.unlink()
+                self.cache.evict(cache_tag)
                 self.clear_cache = False
 
             cache_key = hash_data(dict(url=url))
-            cache_path = self.cache_dir / f"memberful-{cache_key}.csv"
             try:
-                logger.debug(f"Loading from cache: {cache_path}")
-                return self._parse_csv(cache_path.read_text())
-            except FileNotFoundError:
+                data = self.cache[cache_key]
+                logger.debug(f"Loading from cache: {cache_key}")
+                return self._parse_csv(data)
+            except KeyError:
                 pass
 
         logger.debug("Downloading from Memberful website")
@@ -253,9 +253,9 @@ class MemberfulCSV:
             raise DownloadError("Failed to download the CSV export")
         data = response.content.decode("utf-8")
 
-        if self.cache_dir:
-            logger.debug(f"Saving to cache: {cache_path}")
-            cache_path.write_text(data)
+        if self.cache:
+            logger.debug(f"Saving to cache: {cache_key}")
+            self.cache.set(cache_key, data, tag=cache_tag)
 
         return self._parse_csv(data)
 

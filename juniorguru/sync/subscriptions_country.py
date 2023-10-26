@@ -3,7 +3,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import click
 import stripe
 
-from juniorguru.cli.sync import default_from_env, main as cli
+from juniorguru.cli.sync import Cache, default_from_env, main as cli
 from juniorguru.lib import loggers
 from juniorguru.models.subscription import SubscriptionCountry
 
@@ -19,25 +19,36 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command()
+@cli.pass_cache
+@click.option('--clear-cache/--keep-cache', default=False)
 @click.option("--stripe-api-key", default=default_from_env("STRIPE_API_KEY"))
-def main(stripe_api_key: str):
+def main(cache: Cache, clear_cache: bool, stripe_api_key: str):
+    if clear_cache:
+        cache.delete('subscriptions_country')
+
     SubscriptionCountry.drop_table()
     SubscriptionCountry.create_table()
 
-    customers = stripe.Customer.list(api_key=stripe_api_key)
-    customers = logger.progress(customers.auto_paging_iter())
+    try:
+        records = cache['subscriptions_country']
+        logger.info("Loading from cache")
+    except KeyError:
+        customers = stripe.Customer.list(api_key=stripe_api_key)
+        customers = logger.progress(customers.auto_paging_iter())
 
-    with ThreadPoolExecutor(max_workers=WORKERS) as executor:
-        threads = [
-            executor.submit(get_data, customer)
-            for customer in customers
-        ]
-    for task in as_completed(threads):
-        data = task.result()
-        if data['country_code']:
-            SubscriptionCountry.create(**data)
+        with ThreadPoolExecutor(max_workers=WORKERS) as executor:
+            threads = [
+                executor.submit(get_data, customer)
+                for customer in customers
+            ]
+        records = [thread.result() for thread in as_completed(threads)]
+        cache['subscriptions_country'] = records
+
+    for record in records:
+        if record['country_code']:
+            SubscriptionCountry.create(**record)
         else:
-            logger.debug(f"Customer {data['customer_id']} ({data['customer_email']}) has no card")
+            logger.debug(f"Customer {record['customer_id']} ({record['customer_email']}) has no card")
 
 
 def get_data(customer: stripe.Customer) -> str:

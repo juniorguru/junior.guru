@@ -5,6 +5,7 @@ from pathlib import Path
 from time import perf_counter_ns
 
 import click
+from diskcache import Cache as BaseCache
 
 from juniorguru import sync as sync_package
 from juniorguru.lib import images, loggers, mutations
@@ -90,6 +91,14 @@ class Group(click.Group):
 
         return decorator
 
+    def pass_cache(self, fn):
+        @click.pass_context
+        @wraps(fn)
+        def wrapper(context, *fn_args, **fn_kwargs):
+            cache = context.obj['cache']
+            return fn(cache=cache, *fn_args, **fn_kwargs)
+        return wrapper
+
     @db.connection_context()
     def _is_sync_command_seen(self, name, sync):
         return sync.is_command_seen(name)
@@ -120,6 +129,12 @@ class Command(click.Command):
         self.name = command_name(self.callback.__module__)
 
 
+class Cache(BaseCache):
+    def set(self, *args, **kwargs) -> bool:
+        kwargs.setdefault("expire", 60 * 60 * 24)
+        return super().set(*args, **kwargs)
+
+
 @click.group(chain=True, cls=Group)
 @click.option("--id", envvar="CIRCLE_WORKFLOW_WORKSPACE_ID", default=perf_counter_ns)
 @click.option(
@@ -147,8 +162,8 @@ def main(
     cache_dir,
     clear_image_templates_cache,
 ):
-    Path(cache_dir).mkdir(exist_ok=True)
     logger.info(f"Sync cache directory set to {cache_dir.absolute()}")
+    cache = Cache(cache_dir)
 
     if debug:
         loggers.reconfigure_level("DEBUG")
@@ -166,7 +181,7 @@ def main(
 
     with db.connection_context():
         sync = Sync.start(id)
-    context.obj = dict(sync=sync, cache_dir=cache_dir, skip_dependencies=not deps)
+    context.obj = dict(sync=sync, cache=cache, skip_dependencies=not deps)
     logger.debug(
         f"Sync #{id} starts with {sync.count_commands()} commands already recorded"
     )
@@ -268,9 +283,14 @@ def all(context, print_only):
 
 @click.pass_context
 def close(context):
+    logger.debug("Cleaning and closing cache")
+    cache = context.obj["cache"]
+    cache.expire()
+    cache.close()
+
     exception = sys.exception()
     sync = context.obj["sync"]
-    if exception:
+    if exception and getattr(exception, 'exit_code', 0) != 0:
         logger.error(
             f"Sync #{sync.id} crashed after {sync.count_commands()} commands recorded"
         )
