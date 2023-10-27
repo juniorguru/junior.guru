@@ -95,8 +95,9 @@ class Group(click.Group):
         @click.pass_context
         @wraps(fn)
         def wrapper(context, *fn_args, **fn_kwargs):
-            cache = context.obj['cache']
+            cache = context.obj["cache"]
             return fn(cache=cache, *fn_args, **fn_kwargs)
+
         return wrapper
 
     @db.connection_context()
@@ -290,7 +291,7 @@ def close(context):
 
     exception = sys.exception()
     sync = context.obj["sync"]
-    if exception and getattr(exception, 'exit_code', 0) != 0:
+    if exception and getattr(exception, "exit_code", 0) != 0:
         logger.error(
             f"Sync #{sync.id} crashed after {sync.count_commands()} commands recorded"
         )

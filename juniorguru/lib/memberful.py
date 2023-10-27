@@ -6,9 +6,9 @@ import re
 import time
 from typing import Any, Callable, Generator
 from urllib.parse import urlencode
-from diskcache import Cache
 
 import requests
+from diskcache import Cache
 from gql import Client, gql
 from gql.transport.requests import RequestsHTTPTransport
 from lxml import html
