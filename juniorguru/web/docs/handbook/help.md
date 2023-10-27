@@ -248,4 +248,27 @@ https://hackmd.io/@benabraham/ptej-se-rovnou
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1141758341408894996/1158419236952215613
+V tehle situaci (pocit, ze uz neco resim moc dlouho a nikam to nevede) mi vetsinou pomohla jedna nebo vice z techo tri veci: 
+- jit se projit,
+- popsat nekomu dany problem (rubberducking),
+- odlozit a chvili resit neco jineho.
+Tohle je moje zkusenost, ymmv.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1157406282786033717
+Jedna kamarádka mi říkala (pracuje v kanclu ajťáků, sama zatím na nevýv. pozici): *Já jsem tak nějak předpokládala, že když se na něco zeptám programátora, tak si vyslechne otázku, otevře pusu a vysloví odpověď. Ale ne. Otočí se a jde to googlit.*
+
+Podle mě jediný rozdíl je v efektivitě googlení a kvalitě interpretace výsledků (ke které přispívá dřívější znalost a pochopení oblasti), jinak je googlení základní lopatička. I proto, že ty dokumentace občas nejsou nic moc. A otázka pro mě je, jak vypadá kvalitní dokumentace a pro koho je (a pro koho ne). Ale to je asi deformace tím, že jsem byla líznutá vzděláváním, vstřebatelností dokumentů atd.
+
+V jiných oblastech je seniorní ten, kdo odpovědi má, tady ten, kdo je umí rychle nacházet. Pro lidi, co jsou odjinud, to je podle mě dost změna paradigmatu (pro mě určitě).
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1157365315185946725
+Viděno na LI.
+---
+
+
 #} -->

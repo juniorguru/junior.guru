@@ -735,4 +735,69 @@ https://chrome.google.com/webstore/detail/youtube-dual-subtitles/hkbdddpiemdeibj
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1154498105362878535/1154528728894947489
+Za sebe můžu říct, že jsem na angličtinu sral. Pro vstup do IT stačí základy, ale jak člověk roste, musí růst i jeho angličtina. A já si to uvědomil hrozně pozdě. Protože:
+
+a) když nevíš, googlíš. A když chceš plnohodnotný výsledek, musíš se zeptat anglicky
+b) musíš to umět přečíst. Jasně, i základy stačí, ale…
+c) že jsem v prdeli a svoji EN kariéru jsem posral jsem si uvědomil, když jsem došel do firmy a po pár seznámeních v češtině přišlo "Hi Kiril, this is our new frontend developer Martin" a já byl v p…, úplně, já nevěděl co říct. A od té doby… (FYI Kiril byl majitel…)
+d) platit si už skoro 5 let v kuse člověka, se kterým si každý týden hodinu povídám v angličtině, je to nejlepší, do čeho jsem se v růstu dokopal
+e) pak ti v životě odpadne spousta stresu. Poslechnout si prezentaci je jedna věc, ale hodit pak dotaz v angličtině, na to už má koule málokdo. A hlavně si začneš trošku věřit, nemáš problém, když potkáš cizince, si s ním povídat třeba 2 hodiny. Nemáš problém cestovat…
+f) spousta kvalitního obsahu je v angličtině. A na to už základy prostě nestačí.
+
+Já bych to uzavřel tím, že jak jsem psal, pro vstup do IT stačí základy. Ale jak rosteš, musíš růst i se svojí angličtinou. Jinak se angličtina stane tvojí slabinou a ani perfektní češtinou to nikdy nedoženeš.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1154498105362878535
+V tématu <#1149377645834948659> napsal <@995699985368752178> 
+> Ano angličtina je potřeba pro svět IT, ale myslím že není podmínkou, nebo pokud se pletu tak mi to dejte vědět a nezbývá mi nic jiného se rozloučit. 😭
+A myslím, že bude zajímavé to probrat v širší společnosti, poslechnout si více názorů.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1149377645834948659/1154504124948303902
+Oficiální jazyk špatná angličtina zní velmi roztomile. 😅
+---
+
+
+--- https://discord.com/channels/769966886598737931/1150824903000465564/1150824903000465564
+Ahoj, byl jsem požádán o recenzi... <:PauseChamp:1002659089664442401>
+
+Tak jsem se rozhodl, že ok dám to.
+Už tři roky mám PRO účet na SOLOLEARN.
+Ano platím si to.
+Myslel jsem, že se jedná o aplikaci na procvičování, ale reálně se jedná o výukovou platformu.
+
+Jazyky nejsou v celém rozsahu, ale je tam HTML, Python, C++, JavaScript, SQL...
+
+SOLOLEARN je teda jako appka a je to i na web.
+
+Jde trochu gamifikace ve formě sbírání achievmentu, ale za splnění kurzů je možno získat certifikát.
+
+Kurzy jsou rozděleny do úrovní a ty pak na kapitoly a kapitoly na jednotlivé funkce.
+
+Každý kurz má teoretickou část, pak kvízovou část a taky i testovou část a hlavně je super praktická část ta má dvě úrovně free a PRO.
+
+V každé praktické části a i každá otázka a kvíz má kolonku komentáře od lidí - najdete nápovědy a taky řešení, ale doporučuji se tomu vyhnout.
+
+Pak praktické části kurzu v PRO verzi od cca 6 měsíce tohoto roku nabízejí využití AI při řešení úkolu -> je možnost si nechat vysvětlit kód, nechat si poslat řadu, zkontrolovat kde mám chybu a nebo vymýšlet komplet řešení.
+
+Hodně cool funkce.
+Nicméně každý splněný úkol a kapitola dává expy které se pak počítají do leaderboardu - možnost soutěžit s ostatními dle země, skupiny, apod...
+
+Celé to prodražilo letos a stojí to na jeden rok 1700,- což ale v tom množství úkolů vychází slušně.
+
+Profil dovoluje ukládat své varianty kódu - každý kurz totiža svůj kompilátor a každý kód lze uložit pro pozdější prohlídnutí, je tam i možnost s ostatními sdílet nápady (trochu spam a bordel) a taky možnost fóra, ale to není tak záživné číst.
+
+Nevýhodou SOLOLEARN ke že na mobilu se to chová jinak než na webu v PC, ale to se dá čekat.
+
+No každopádně pro začátečníky a pro lidi co se chtějí i přiučit angličtině tak dávám doporučení.
+
+No pokud jsem na něco zapomněl tak napište a já zodpovím.
+
+Díky, co dočetli tu hrůzu až sem.
+---
+
+
 #} -->

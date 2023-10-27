@@ -73,4 +73,9 @@ Ahoj! Tady sdilime zaznam z prednasky <@289482229975875584> o tom jak byt dobry 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1148627951630430291
+**Tip!** Brzo se budou otvírat podzimní začátečnické kurzy PyLadies. Kdo jste úplně na začátku, pohlídejte si registrace. Kdo už máte něco za sebou (a nemusí to být mnoho!), zvažte koučování. Jak takové koučování vypadá a kolik toho na něj potřebujete umět? Sepsala <@615589948908765206> <:pyladies:842343420420947968> https://ivet1987.wz.cz/2020/03/koucovani-na-pyladies-kurzech/
+---
+
+
 #} -->

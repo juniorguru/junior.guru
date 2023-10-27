@@ -256,4 +256,12 @@ disclaimer: nejsem HR, tak třeba někdo líp poradí
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1154468833382371430/1154468833382371430
+Ahoj všem do klubu <:juniorguru:841683119291760640> 
+s životopisem jste mi již pomohli 💪  chci vás teď požádat o kontrolu mého profilu na LinkedIn.. něco jsem tam už upravovala, ale jelikož jsem tam úplný zelenáč, tak nevím, co by chtělo ještě vylepšit - jsem ve výsledcích vyhledávání, nějaká zobrazení mám taky, ale určitě se tam něco najde 😇  moc děkuji za váš čas ⌛ https://www.linkedin.com/in/sandra-heinzova/
+
+p.s.: Vím, že musím zapracovat na aktivitě 😇
+---
+
+
 #} -->

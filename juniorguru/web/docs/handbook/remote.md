@@ -84,4 +84,9 @@ Jako jo, je to o tom co chceš a co si může firma dovolit, jen jak se tu řeš
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1159604213773512775
+Něco o práci na dálku 🙂 https://seths.blog/2021/09/intentional-connection-in-the-digital-office/
+---
+
+
 #} -->

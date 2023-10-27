@@ -880,4 +880,35 @@ Nedokážu říct jestli ti to takhle dokáže pomoct. Můžu ti třeba poslat t
 https://twitter.com/EmilyKager/status/1315837993513492480
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1164528096851017841
+Od října do konce roku se nábor často zpomaluje, nebo úplně zastavuje, podle toho, jak je na tom firma s budgetem na daný rok. Pracoval jsem v IT náboru + teď jsem podobné věci řešil ve firmě. To tomu taky nepomáhá... Já si třeba minulý rok domluvil práci právě v této době, ale taky se začátkem až v únoru.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1162265111055048775
+vytahuju ven citát od <@852528987208024074> z <#1160119402369384498>
+> ideálne je sa už rovno na pohovore spýtať v akom stave u nich momentálne je ak je ponuka písaná ako hybrid
+
+Myslím, že tohle platí obecně. 
+
+Chcete hlavně programovat v Reactu, ale „zatím budete hlavně psát CSS a víc Reactu časem“? Zeptejte se kolik toho v Reactu aktuálně dělají nebo za poslední půl roku dělali, možná zjistíte, že je to „spíš jako v plánu“ a tedy vůbec není jisté, jestli to půjde. Jasně, třeba tu práci vezmete jako první zkušenost tak jako tak, ale nebudete za pár měsíců frustrovaní z toho, že jste se ještě k Reactu nedostali.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1147104452650741791
+Když bych si jako junior hledala novou práci, na co si dát pozor? Jak naznačoval <@652142810291765248>  v jednom komentáři "Jasně, určitě neber cokoli. Proklepáváš si firmu i ty. Junioři, zvlášť u první práce, na to často zapomínaj a pak je z toho mrzení." Máte nějaké negativní osobní zkušenosti?
+---
+
+
+--- https://discord.com/channels/769966886598737931/1085592788676120636/1143825015171723304
+Body pro sebe: pohovorování je extrémně náhodné. Pohovory, ze kterých mám dobrý pocit jsou často negativní a naopak. Nikdy nevím, co bude "ta správná" informace, co je zaujme. 
+
+Umím skvěle předstírat, že nejsem nervózní a když proti mne sedí lidi s ještě mizernějším sociálním skillem, vypadá to pro mne dobře.
+
+Naďšení a chuť se učit vypadají opravdu jako klíčové věci pro juniora.
+
+Přesvědčovací bod může být něco, co oni využijí, ale nikdo u nich nedělá/nechce dělat a já si to přináším z předchozích zkušeností.
+---
+
+
 #} -->

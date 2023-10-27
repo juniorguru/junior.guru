@@ -100,4 +100,9 @@ Theo.gg, Theo Rants, Matt Pocock, Google Chrome Developers, The Primeagen (není
 ---
 
 
+--- https://discord.com/channels/769966886598737931/797040163325870092/1159955473823440998
+Nevím, zda tady už Rita byla, ale já ji sleduji dlouho a těším se vlastně na každé její nové video 🙂 Nejpřehledněji asi na insta: https://www.instagram.com/rita_codes/, ale je třeba i na X https://twitter.com/rita_codes a asi i YT apod.
+---
+
+
 #} -->

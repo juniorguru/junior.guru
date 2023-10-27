@@ -1000,4 +1000,31 @@ Security challenges:
 https://m.youtube.com/watch?v=LG-d_BOZE6k
 
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/1163098667738218586
+Pro začátečníky možná až moc podrobnej článek o Unicode, ale zase pokud vás to zajímá, tak si počtete https://tonsky.me/blog/unicode/
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1159450058194948138
+Takové pozorování. I jako testeři budete potřebovat základy obsluhy linuxu. A když to budete umět předem, tak můžete zabodovat 😉 Typicky `ssh`, `cd`, `ls` a pak si přečíst logy třeba přes `less`.  Ne všechno a všude bude klikací v grafaně. https://www.thegeekstuff.com/2010/02/unix-less-command-10-tips-for-effective-navigation/
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1157220299658493963
+<@544187409026252800> dal na LI pěkný příspěvek o networkingu (jak na to) https://www.linkedin.com/posts/david-rajnoha-a62453168_pyconcz-velvetinnovation-edufestival-activity-7113409610085974016-phRH?utm_source=share&utm_medium=member_ios
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1153399676817653840
+Advice to beginners | Ned Batchelder
+
+https://nedbatchelder.com/blog/202309/advice_to_beginners.html
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1148913024577581148
+Menší sbírka videí o konceptech kolem programování, poměrně nezávislá na použitém jazyce. https://www.youtube.com/@CodeAesthetic
+---
+
+
 #} -->

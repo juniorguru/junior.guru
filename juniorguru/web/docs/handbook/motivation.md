@@ -653,4 +653,56 @@ https://blog.zvestov.cz/software%20development/2021/11/22/vyuka-programovani-bez
 
 https://koderia.sk/blog/9-veci-ktore-by-ste-pri-programovani-rozhodne-nemali-robit
 
+--- https://discord.com/channels/769966886598737931/1160119402369384498/1161896294541971556
+Takže podľa mňa veľmi záleží ako je ten testing postavený a ako ho vníma firma kam sa budeš hlásiť. Pokiaľ vieš že nechceš robiť testing a chceš ho mať ako vstupnú bránu k developerovi je fajn sa o tom z môjho pohľadu baviť rovno na začiatku na pohovore. Možno sa aj opýtať či mali už niekoho kto sa úspešne pretransformoval z testera na developera. Ja ako test leader som to síce moc rada nevidela lebo som chcela mať viac stabilný testerský tím a nehľadať každú chvíľu nového testera ale keď sa to komunikovalo na začiatku tak som aspoň vedela ako s daným človekom pracovať už od začiatku. 
+
+Čo sa týka pohovorov keď mám porovnať tak pohovor na developera a manuálneho testera vyžaduje iný skills set, pre niekoho sa môže zdať pohovor na testera jednoduchý ale popravde precíznosť a myslenie ako rozbiť appku a zároveň myslieť ako myslia užívatelia, vyradila aspoň na mojich pohovoroch veľa ľudí aj s IT vzdelaním
+---
+
+
+--- https://discord.com/channels/769966886598737931/1160119402369384498/1160857721629835364
+Zadruhé, nejčastější problém, na který lidi narazili u cesty „půjdu testovat a pak přejdu na programování” je právě ten, že když nastoupili do práce, učili se hodně nových věcí a vyšťavilo je to. To poslední, co chtěli zrovna dělat, bylo večer doma sednout a bušit ještě třeba frontend nebo dál Python, i když na to měli čas. A dává to smysl, člověk konečně má práci jakoby v oboru, konečně dostává peníze, učí se tam nové věci, prostě je velmi těžké se ještě motivovat dělat v tu chvíli něco navíc večer, místo zaslouženého odpočinku a dobíjení baterek po dlouhém učení a hledání práce předtím. No ale v práci tě pak učí jak testovat, takže se učíš věci mimo to, co chceš, neučíš se a zapomínáš ty programovací věci, které jsi uměla, a celkově tě to hlavně mrzí. Takže začneš tlačit na to, aby se tvá kariéra posouvala do vývoje, ale tam se často objeví buď neschopnost firmy, nebo střet s motivací firmy tohle dělat, a najednou máš sice práci, ale děláš to, co jsi tak úplně dělat nechtěla, zapomínáš co jsi dělat chtěla a učila ses to, a zároveň není cesta vpřed tam, kam chceš. Takže pak tam jsi třeba dva roky a odejdeš, ale nacházíš se v situaci, že testování teda umíš, ale dělat nechceš, ale programovat už skoro neumíš. A jako jo, máš zkušenosti z IT a máš víc _soft_ znalostí oboru, víš jak to chodí, ale máš nula _hard_ znalostí a v tom směru jsi zase na začátku.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1152342672430870640/1159860101847457812
+> Přijde mi, že interní přesun je trošku underrated způsob, jak se dostat na nějakou techničtější pozici, už se mi to takhle povedlo dvakrát (poprvé to nebylo přímo do IT, ale dostala jsem se tam k SQL a dalším věcem, což mi pak dost pomohlo) a taky je pak o dost větší pravděpodobnost, že člověk nepůjde s penězmi dolů, jako když nastupuje někam do nový firmy jako junior, ale třeba si rovnou i polepší :- )
+Hmm, to je zajímavá rada, to si zapíšu 🙂 Díky!
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1157423314134896770
+Trochu související 🙂 Podle mě hodně dobrý postřeh. Je potřeba to rozkliknout celé, je tam toho víc než tady v náhledu. (LLM = _large language model_, třeba GPT) https://mastodonczech.cz/@simon@simonwillison.net/111149498647106089
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1151172275119325224
+Odpověď pro <@1148591522019823616> na jeho Ahoj mě nakopla sepsat elaborát o tom, co všechno je u mě k dispozici za informace. Nazvala jsem to rozcestník career switchera, byť se občas soustředím na pozici tester, tak jsem se snažila být i obecnější, protože obě cesty do IT si jsou hodně podobné. K dispozici na LinkedInu, přihlášení pro zobrazení by nemělo být třeba. 
+https://www.linkedin.com/posts/lucietvrdikova_posledn%C3%AD-p%C5%AFl-rok-jsem-intenzivn%C4%9B-pracovala-activity-7107249006254112768-xi-R?utm_source=share&utm_medium=member_ios
+---
+
+
+--- https://discord.com/channels/769966886598737931/1148629000432922654/1148631853226528928
+Mrkni na můj web. Mám tam takový obecný rozcestník. 
+1) E-book: https://lucietvrdikova.cz/ebook-testerem-nanecisto/
+2) články na blogu https://lucietvrdikova.cz/blog/ o předpokladech a očekávání od IT. 
+
+Jinak souhlasím a taky mi přijde, že se trh rozjíždí a absolventi chodí na pohovory. Což je posun oproti pouhému zamítacímu emailu…
+---
+
+
+--- https://discord.com/channels/769966886598737931/1007330330149126274/1007575709029519400
+Díky za odpověď Verčo 😊  v první řadě k tobě budu upřímný. Jestli se chceš naučit Python jen proto, že je jednoduchý, tak to nedělej! Věř mi, já to měl úplně stejné. Myslel jsem si, že jen proto, že ten jazyk je jednoduchý tak se ho naučím a pak už to všechno půjde samo. Obrovská chyba! Taky jsem na to dost doplatil... nic hrozného, ale srážka s realitou přišla 😁
+☝ Jestli můžu, tak bych ti poradil následující: 
+Zkus se nejdřív zamyslet nad tím, co bys jako programátorka ráda dělala. Tzn. chtěla bys dělat webové stránky? Nebo třeba mobilní aplikace? Nebo by tě víc bavila práce s daty? Chtěla by ses spíš zaměřit na práci s vizuální stránkou programu(frontend) nebo na to jak to všechno pracuje "za oponou" (backend - tady je třeba právě Python)? Nebo klidně obojí (fullstack)? Je toho dost a dost. Zkus si nejdřív projít jednotlivé pozice a podívej se co je k nim potřeba umět. Podle toho i uvidíš co by se ti víc mohlo líbit a pak se na to i zaměříš. 😉  Pokud si nebudeš jistá, CodeAcademy má takový jednoduchý kvízek, který by ti mohl pomoci s nasměrováním (nebrat závazně) https://www.codecademy.com/explore/sorting-quiz
+Píšu to proto, že Python je rozhodně jednoduchý na naučení a za mě je to skvělý nástroj na pochopení základních principů programování, ale například na frontend, kterému se teď věnuji já, je ze začátku úplně k ničemu. 😁
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1146246225671225365
+Mám otázku pro vás, kteří už jste kariérní změnu zvládli:
+_Zpětně byste řekli, že to bylo těžší nebo lehčí než jste si na začátku mysleli?_
+---
+
+
 #} -->

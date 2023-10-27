@@ -1299,4 +1299,22 @@ Super podcast od <@839123616665698354> a Šárky Kousalové o IČO vs HPP 👍 h
 Zdravim Honzo. Jsem z Czechitas a napadlo me, zda by pro vase sledujici nebyl relevantni nas Job Fair, veletrh pracovnich prilezitosti v IT? Mame letos dva, jeden v rijnu v Praze a v listopdu v Brne. Jobfair.czechitas.cz
 
 
+--- https://discord.com/channels/769966886598737931/1165950098681892934/1166254719367401503
+Obecne se pry temto inzeratum rika 'fake jobs' , davaji se mimo jine i z techto duvodu:
+* firma potrebuje jenom ukazat akcionarum, ze roste: Chteji nabirat, ale 'proste nejde nikoho najit'
+* firma zkousi, kolik se hlasi lidi a postupne snizuje nabidku
+* chysta se nejaky novy projekt a tak se dela pruzkum trhu, jestli budou lokalne lidi
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1164528096851017841
+Od října do konce roku se nábor často zpomaluje, nebo úplně zastavuje, podle toho, jak je na tom firma s budgetem na daný rok. Pracoval jsem v IT náboru + teď jsem podobné věci řešil ve firmě. To tomu taky nepomáhá... Já si třeba minulý rok domluvil práci právě v této době, ale taky se začátkem až v únoru.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1161225273186992238
+Michael Lopp, druhé vydání knihy Being Geek, nové jméno The Software Developer’s Career Handbook. Ještě jsem nečetl, ale bude určitě pecka. Kdo neznáte jeho styl, projděte si alespoň blog https://randsinrepose.com/archives/the-software-developers-career-handbook/
+---
+
+
 #} -->

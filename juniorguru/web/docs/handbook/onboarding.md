@@ -536,4 +536,9 @@ Jak poznam dobreho juniora?
 https://www.pracujprosiliconvalley.cz/pracovala-jsem-na-realnem-it-projektu/
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1161945377239474196
+Zajímavá myšlenka. Diskutujme 😅 https://mastodon.social/@theincredibleholk/111219036030019594
+---
+
+
 #} -->
