@@ -25,7 +25,7 @@ def test_prepare_channels_operations_declutter():
     ]
 
 
-@pytest.skip('deprecated')
+@pytest.mark.skip('deprecated')
 def test_prepare_channels_operations_empty_category():
     member1 = create_member(1)
     member2 = create_member(2)
