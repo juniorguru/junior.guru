@@ -1,4 +1,4 @@
-# 💛 Jak bezpečné je přispívání do klubu?
+# 💛 Proč se nebát přispívat?
 Možná tě něco zajímá, ale bojíš se zeptat. Možná máš co napsat k tématu, ale nechceš riskovat nepříjemné reakce. Co když se ti někdo vysměje? Co když tě někdo nepochopí?
 
 ## Neboj! 🫶

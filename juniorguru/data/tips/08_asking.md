@@ -1,4 +1,4 @@
-# 💡 Proč je dobré v klubu diskutovat a ptát se?
+# 💡 Proč je dobré se ptát?
 Klub je přínosný, i pokud si tady jen čteš. Nejsi však na Wikipedii, tohle je komunita! Když se zapojíš, poslouží ti mnohem lépe. Žádný strach, nic jako hloupá otázka tady neexistuje.
 
 ## Ptej se i na „blbosti” 🙋
