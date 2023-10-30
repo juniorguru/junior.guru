@@ -84,6 +84,7 @@ KEYWORDS = {
         r"coders\s*lab": "coderslab",
         r"kitner\w*": "radekkitner",
         r"tvrd[íi]kov\w+": "lucietvrdikova",
+        r"umimpython": "umimpython",
     }.items()
 }
 
