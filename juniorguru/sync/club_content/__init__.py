@@ -3,7 +3,7 @@ from pprint import pformat
 import click
 from peewee import OperationalError
 
-from juniorguru.cli.sync import confirm, default_from_env, main as cli
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPin, ClubUser
@@ -14,40 +14,33 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command()
-@click.option(
-    "--confirm/--no-confirm",
-    "do_confirm",
-    default=default_from_env("CLUB_CONTENT_CONFIRM", type=bool),
-)
-def main(do_confirm):
-    total_messages_count = get_total_messages_count()
-    logger.info(f"Found {total_messages_count} messages")
-    if total_messages_count:
-        try:
-            logger.info(
-                f"Last message is from {get_last_message().created_at.isoformat()}"
-            )
-            if not do_confirm or confirm("Fetch the latest club content?"):
-                fetch_club_content()
-        except OperationalError as e:
-            logger.error(e)
-            fetch_club_content()
-    else:
-        fetch_club_content()
-    logger.info(f"Finished with {pformat(get_stats())}")
-
-
-@db.connection_context()
-def get_total_messages_count() -> int:
+@cli.pass_cache
+@click.option('--clear-stats-cache/--keep-stats-cache', default=False)
+def main(cache, clear_stats_cache):
+    if clear_stats_cache:
+        cache.delete('club_content_stats')
     try:
-        return ClubMessage.count()
-    except OperationalError:
-        return 0
+        stats = get_stats()
+        logger.info(f"Found {pformat(get_stats())}")
+    except OperationalError as e:
+        logger.error(e)
+        fetch_club_content()
+    else:
+        try:
+            cached_stats = cache['club_content_stats']
+        except KeyError:
+            logger.info('No cached stats, refetching')
+            fetch_club_content()
+        else:
+            if cached_stats != stats:
+                logger.info('Data changed, refetching')
+                fetch_club_content()
+            else:
+                logger.info('Re-using data')
 
-
-@db.connection_context()
-def get_last_message() -> ClubMessage:
-    return ClubMessage.last_message()
+    stats = get_stats()
+    cache['club_content_stats'] = stats
+    logger.info(f"Finished with {pformat(get_stats())}")
 
 
 def fetch_club_content():

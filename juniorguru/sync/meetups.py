@@ -93,7 +93,7 @@ logger = loggers.from_path(__file__)
 @cli.pass_cache
 @click.option('--channel', 'channel_id', default='promo', type=parse_channel)
 @click.option('--clear-cache/--keep-cache', default=False)
-def main(cache, channel_id, clear_cache):
+def main(cache, clear_cache, channel_id):
     if clear_cache:
         cache.delete('meetups')
     try:
