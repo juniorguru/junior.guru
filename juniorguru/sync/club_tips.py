@@ -190,7 +190,7 @@ async def create_view(url: str) -> ui.View:  # View's __init__ touches the event
     return ui.View(
         ui.Button(
             emoji="<:github:842685206095724554>",
-            label="Navrhnout změny v textu",
+            label="Upravit tip",
             url=url,
         )
     )

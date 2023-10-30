@@ -79,7 +79,8 @@ def prepare_channels_operations(channels, members):
             channel = members_channels_mapping.pop(member.id)
             operations.append(('update', (member, channel)))
         except KeyError:
-            operations.append(('create', (member,)))
+            #operations.append(('create', (member,)))
+            pass
 
     for channel in members_channels_mapping.values():
         operations.append(('close', (channel,)))

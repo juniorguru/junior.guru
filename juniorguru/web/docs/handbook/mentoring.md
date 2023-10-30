@@ -78,4 +78,8 @@ Ahoj! Tady sdilime zaznam z prednasky <@289482229975875584> o tom jak byt dobry 
 ---
 
 
+Mentoring guidelines
+https://pyvec.slack.com/archives/C1MAJMWTU/p1697534662660139
+
+
 #} -->
