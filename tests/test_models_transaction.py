@@ -16,7 +16,7 @@ def create_transaction(id, **kwargs):
     return Transaction.create(
         id=id,
         happened_on=kwargs.get("happened_on", date.today() - timedelta(days=3)),
-        category=kwargs.get("category", "abcd"),
+        category=kwargs.get("category", "memberships"),
         amount=kwargs.get("amount", 1038),
     )
 
