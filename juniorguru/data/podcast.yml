@@ -8,6 +8,14 @@
 # image_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
+- number: 19
+  guest_name: Vilibald Wanča
+  guest_affiliation: Oracle
+  title: "o tom, co se vám v IT kariéře může hodit kromě programování"
+  publish_on: "2023-11-01"
+  description: |
+    Vili Wanča je ostřílený IT profesionál, podcaster (YBYR podcast) a v současnosti software architect v Oracle. V tomto díle podcastu se dozvíte, jestli je podle něj důležité řešit jaký máte operační systém nebo výkonnost procesoru. Jestli můžete být dobří programátoři, i když vám třeba někdy nešla matika. Nebo jestli se vám může hodit stuodvat teoretickou informatiku a jak s tím třeba začít.
+    
 - number: 18
   guest_name: Anastázie Sedláková
   guest_affiliation: DNAnexus
