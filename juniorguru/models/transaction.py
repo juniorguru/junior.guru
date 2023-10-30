@@ -1,3 +1,4 @@
+from enum import StrEnum, unique
 import functools
 import json
 import math
@@ -8,13 +9,32 @@ from peewee import CharField, DateField, IntegerField
 from playhouse.shortcuts import model_to_dict
 
 from juniorguru.lib.charts import month_range, ttm_range
-from juniorguru.models.base import BaseModel
+from juniorguru.models.base import BaseModel, check_enum
+
+
+@unique
+class TransactionsCategory(StrEnum):
+    MEMBERSHIPS = 'memberships'
+    DONATIONS = 'donations'
+    PARTNERSHIPS = 'partnerships'
+    JOBS = 'jobs'
+    PRODUCTION = 'production'
+    LAWYER = 'lawyer'
+    MARKETING = 'marketing'
+    ACCOUNTING = 'accounting'
+    OFFICE = 'office'
+    FAKTUROID = 'fakturoid'
+    DISCORD = 'discord'
+    MEMBERFUL = 'memberful'
+    TAX = 'tax'
+    MISCELLANEOUS = 'miscellaneous'
+    IGNORE = 'ignore'
 
 
 class Transaction(BaseModel):
     id = CharField(primary_key=True)
     happened_on = DateField(index=True)
-    category = CharField()
+    category = CharField(constraints=[check_enum('category', TransactionsCategory)])
     amount = IntegerField()
 
     @classmethod

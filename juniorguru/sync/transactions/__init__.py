@@ -3,6 +3,7 @@ import re
 from datetime import date, datetime
 from pathlib import Path
 from pprint import pformat
+from typing import Callable
 
 import click
 import requests
@@ -10,7 +11,8 @@ from fiobank import FioBank
 
 from juniorguru.cli.sync import confirm, default_from_env, main as cli
 from juniorguru.lib import loggers, mutations
-from juniorguru.models.transaction import Transaction
+from juniorguru.models.transaction import Transaction, TransactionsCategory
+from juniorguru.sync.transactions.categories_spec import CATEGORIES_SPEC
 
 
 TODO_TEXT_RE = re.compile(
@@ -28,70 +30,11 @@ TODO_TEXT_RE = re.compile(
     re.VERBOSE,
 )
 
-CATEGORIES_SPEC = [
-    lambda t: "memberships" if t["variable_symbol"] in ["21", "243", "241"] else None,
-    lambda t: "memberships" if t["variable_symbol"] == "215" else None,
-    lambda t: "partnerships"
-    if "SKLIK" in t["message"] and "SEZNAM" in t["message"]
-    else None,
-    lambda t: "partnerships" if t["variable_symbol"] == "226" else None,
-    lambda t: "salary" if "výplata" in t["message"] else None,
-    lambda t: "other" if t["variable_symbol"] == "15" else None,  # vedlejsak
-    lambda t: "other"
-    if (t["date"] == date(2023, 9, 7) and t["amount"] == 12753)
-    else None,  # omylem zaplatili 2x - platba
-    lambda t: "other"
-    if (t["date"] == date(2023, 10, 20) and t["amount"] == -12753)
-    else None,  # omylem zaplatili 2x - moje vraceni
-    lambda t: "podcast" if "PAVLINA FRONKOVA" in t["message"] else None,
-    lambda t: "lawyer" if "ADVOKATKA" in t["message"] else None,
-    lambda t: "marketing" if "JANA DOLEJSOVA" in t["message"] else None,
-    lambda t: "accounting" if "Irein" in t["message"] else None,
-    lambda t: "office"
-    if "VITEZSLAV PLISKA" in t["message"] and t["amount"] < 0
-    else None,
-    lambda t: "accounting" if "účetnictví" in t["message"] else None,
-    lambda t: "fakturoid" if "účetnictví" in t["message"] and t["amount"] < 0 else None,
-    lambda t: "discord" if "DISCORD" in t["message"] and t["amount"] < 0 else None,
-    lambda t: "memberful" if "MEMBERFUL" in t["message"] and t["amount"] < 0 else None,
-    lambda t: "partnerships"
-    if "RED HAT" in t["message"] and t["amount"] >= 8000
-    else None,
-    lambda t: "tax"
-    if ("ČSSZ" in t["message"] or "PSSZ" in t["message"] or "MSSZ" in t["message"])
-    else None,
-    lambda t: "tax" if "VZP" in t["message"] else None,
-    lambda t: "tax" if "FÚ pro hl. m. Prahu" in t["message"] else None,
-    lambda t: "tax" if t["bank_code"] == "0710" and t["amount"] < 0 else None,
-    lambda t: "marketing"
-    if "BUFFER PUBLISH" in t["message"] and t["amount"] < 0
-    else None,
-    lambda t: "marketing" if "PrintAll" in t["message"] and t["amount"] < 0 else None,
-    lambda t: "marketing" if "samolep" in t["message"] and t["amount"] < 0 else None,
-    lambda t: "marketing" if "PyCon CZ" in t["message"] and t["amount"] < 0 else None,
-    lambda t: "donations"
-    if "GITHUB SPONSORS" in t["message"] and t["amount"] > 0
-    else None,
-    lambda t: "memberships" if "STRIPE" in t["message"] and t["amount"] > 0 else None,
-    lambda t: "donations" if "PAYPAL" in t["message"] and t["amount"] > 0 else None,
-    lambda t: "donations" if not t["variable_symbol"] and t["amount"] > 0 else None,
-    lambda t: "donations"
-    if t["variable_symbol"] == "444222" and t["amount"] > 0
-    else None,
-    lambda t: "partnerships" if t["variable_symbol"] and t["amount"] >= 8000 else None,
-    lambda t: "jobs" if t["variable_symbol"] and t["amount"] > 0 else None,
-    lambda t: "donations" if t["amount"] > 0 else "miscellaneous",
-]
-
-IGNORE_CATEGORIES = [
-    "other",
-    "salary",
-]
 
 TOGGLE_TODOS_CATEGORIES = [
-    "donations",
-    "memberships",
-    "tax",
+    TransactionsCategory.DONATIONS,
+    TransactionsCategory.MEMBERSHIPS,
+    TransactionsCategory.TAX,
 ]
 
 
@@ -132,18 +75,14 @@ def main(
     )
 
     logger.info("Preparing categories")
-    categories_spec = list(CATEGORIES_SPEC)
-    if video_outsourcing_token:
-        video_category_spec = (
-            lambda t: "video" if video_outsourcing_token in t["message"] else None
-        )
-        categories_spec.insert(0, video_category_spec)
-    else:
+    categories_spec = CATEGORIES_SPEC
+    if not video_outsourcing_token:
         logger.warning(
             "No --video-outsourcing-token! Transactions won't be categorized correctly"
         )
         if not confirm("Continue anyway?"):
             raise click.Abort()
+    secrets = dict(video_outsourcing_token=video_outsourcing_token)
 
     logger.info("Preparing database")
     Transaction.drop_table()
@@ -196,7 +135,6 @@ def main(
         transactions = []
 
     db_records = []
-    doc_records = []
     todos_to_toggle = {}
     for transaction in transactions:
         transaction_key = get_transaction_key(transaction)
@@ -206,13 +144,10 @@ def main(
         message = get_transaction_message(transaction)
         logger.debug(f"Message: {message!r}")
         category = get_transaction_category(
-            dict(message=message, **transaction), categories_spec
+            dict(message=message, **transaction), categories_spec, secrets
         )
         logger.debug(f"Category: {category!r}")
-
-        if category in IGNORE_CATEGORIES:
-            logger.debug(f"Skipping: {category!r}")
-        else:
+        if category != TransactionsCategory.IGNORE:
             db_records.append(
                 dict(
                     id=transaction["transaction_id"],
@@ -221,16 +156,6 @@ def main(
                     amount=transaction["amount"],
                 )
             )
-            doc_records.append(
-                {
-                    "Date": transaction["date"].strftime("%Y-%m-%d"),
-                    "Category": category,
-                    "Amount": transaction["amount"],
-                    "Message": message,
-                    "Variable Symbol": transaction["variable_symbol"],
-                }
-            )
-
         if (
             transaction["amount"] > 0
             and category in TOGGLE_TODOS_CATEGORIES
@@ -238,9 +163,10 @@ def main(
         ):
             logger.info(f"Found todo to toggle: ID {todo['id']}, {get_todo_key(todo)}")
             logger.debug(f"Todo: {pformat(todo)}")
+            # Using dict to prevent double toggle for todos matching more transactions
             todos_to_toggle[
                 todo["id"]
-            ] = todo  # using dict to prevent double toggle for todos matching more transactions
+            ] = todo
 
     logger.info("Saving essential data to the database")
     for db_record in db_records:
@@ -279,9 +205,9 @@ def get_transaction_message(transaction):
     )
 
 
-def get_transaction_category(transaction, categories_spec):
-    for category_fn in categories_spec:
-        category = category_fn(transaction)
+def get_transaction_category(transaction: dict, categories_spec: list[Callable], secrets: dict) -> TransactionsCategory:
+    for category_rule in categories_spec:
+        category = category_rule(transaction, secrets)
         if category:
             return category
     raise ValueError("Could not categorize transaction")

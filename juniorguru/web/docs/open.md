@@ -264,14 +264,9 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
                 'backgroundColor': '#aaa',
             },
             {
-                'label': 'produkce videa',
-                'data': charts.cost_breakdown.pop('video'),
+                'label': 'produkce videa, podcastu, články',
+                'data': charts.cost_breakdown.pop('production'),
                 'backgroundColor': '#0c1633',
-            },
-            {
-                'label': 'produkce podcastu',
-                'data': charts.cost_breakdown.pop('podcast'),
-                'backgroundColor': '#872ec4',
             },
             {
                 'label': 'právnička',
