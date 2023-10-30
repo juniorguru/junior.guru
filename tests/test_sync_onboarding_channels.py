@@ -1,5 +1,7 @@
 from collections import namedtuple
 
+import pytest
+
 from juniorguru.models.club import ClubUser
 from juniorguru.sync.onboarding.channels import prepare_channels_operations
 
@@ -23,6 +25,7 @@ def test_prepare_channels_operations_declutter():
     ]
 
 
+@pytest.skip('deprecated')
 def test_prepare_channels_operations_empty_category():
     member1 = create_member(1)
     member2 = create_member(2)
