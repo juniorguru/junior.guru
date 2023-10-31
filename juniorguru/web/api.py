@@ -96,8 +96,31 @@ def build_podcast_xml(api_dir, config):
         explicit=False,
     )
 
+    club_ad = (
+        "\n\n"
+        "<hr>\n"
+        "Jsou věci, se kterými ti kurz programování nepomůže. "
+        "A proto je tady junior.guru. "
+        "Průvodce na cestě do IT, který s tebou bude od začátku až do konce."
+        "\n\n"
+        "- **[Klub](https://junior.guru/club/):** "
+        "Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat"
+        "\n"
+        "- **[Příručka](https://junior.guru/handbook/):** "
+        "Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru"
+        "\n"
+        "- **[Kurzy](https://junior.guru/courses/):** "
+        "Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy"
+        "\n"
+        "- **[Práce](https://junior.guru/jobs/):** "
+        "Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde"
+        "\n"
+        "- **[Novinky](https://junior.guru/news/):** "
+        "Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují"
+    )
     for number, db_episode in enumerate(PodcastEpisode.api_listing(), start=1):
-        description = db_episode.description
+        description = db_episode.description + club_ad
+
         if db_episode.partner:
             description += "\n\nEpizoda vznikla v rámci"
             if db_episode.partner.active_partnership():
