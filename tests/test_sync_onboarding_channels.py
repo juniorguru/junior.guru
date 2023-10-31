@@ -13,6 +13,7 @@ def create_member(id):
     return ClubUser(id=id, display_name="Alice Foo", mention="...")
 
 
+@pytest.mark.skip('deprecated')
 def test_prepare_channels_operations_declutter():
     channel1 = StubTextChannel(
         "honza-tipy", "Tipy a soukromý kanál jen pro tebe! #abcd"
@@ -38,6 +39,7 @@ def test_prepare_channels_operations_empty_category():
     ]
 
 
+@pytest.mark.skip('deprecated')
 def test_prepare_channels_operations_close_channels_for_missing_members():
     channel1 = StubTextChannel(
         "alice-foo-tipy", "Tipy a soukromý kanál jen pro tebe! 🦸 Alice Foo #1"

