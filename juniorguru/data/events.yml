@@ -60,7 +60,6 @@
 - id: 39
   title: "Programování jako kariéra? Ptej se! (Q&A)"
   date: "2023-11-21"
-  time: "18:00"
   description: |
     Jak dlouho trvá rekvalifikace? Jsem na to stará? Jak vybrat jazyk, kurz? Mám se učit po vlastní ose? Jak hledat práci? Co dělat po kurzu? Co psát do CV? Jak funguje junior.guru? Jakou máš, Honzo, velikost ponožek? A co na to ChatGPT?
 
@@ -130,7 +129,6 @@
 - id: 35
   title: "Začínáme správně: klíčové faktory pro úspěšný frontend projekt"
   date: "2023-05-02"
-  time: "18:00"
   description: |
     Jaké jsou důležité faktory, které je třeba mít na paměti při vytváření nového projektu. Naučíte se, jak se vyvarovat častých chyb v této fázi a jak psát kód, který bude udržitelný a snadno rozšiřitelný. Povíme si také, proč je důležité uvažovat o rychlosti webu již od počátku a jak ji můžete optimalizovat pro lepší uživatelskou zkušenost.
   avatar_path: avatars-participants/martin-kolar.jpg
@@ -149,7 +147,6 @@
 - id: 34
   title: "Dev Fiction: Junioři a realita vývojářského týmu"
   date: "2023-04-25"
-  time: "18:00"
   description: |
     A je to doma! Máte podepsanou smlouvu na junior vývojáře. Dostali jste šanci! Podíváme se na to, jaké nástrahy vás od prvního dne čekají: Jak se dorozumět se seniory, kde číhají možné konflikty při práci v týmu, jak se přes všechen stres systematicky vzdělávat a proč vždycky zrovna vy budete muset měnit filtr v kávovaru? Zaměříme se na nejčastější situace, které vás po nástupu čekají a na příkladech a nezdarech z praxe probereme osvědčená řešení.
   avatar_path: avatars-participants/marta-kirchgessner.jpg
@@ -167,7 +164,6 @@
 - id: 33
   title: "Programování jako kariéra? Ptej se! (Q&A)"
   date: "2023-04-11"
-  time: "18:00"
   description: |
     Jak dlouho trvá rekvalifikace? Jsem na to stará? Jak vybrat jazyk, kurz? Mám se učit po vlastní ose? Jak hledat práci? Co dělat po kurzu? Co psát do CV? Jak funguje junior.guru? Jakou máš, Honzo, velikost ponožek? A co na to ChatGPT?
 
