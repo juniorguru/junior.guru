@@ -283,7 +283,10 @@ async def crawl(client: ClubClient) -> None:
     logger.info("Crawling club channels")
     queue = asyncio.Queue()
     for channel in client.club_guild.channels:
-        if channel.type != "category" and channel.permissions_for(client.club_guild.me).read_messages:
+        if (
+            channel.type != "category"
+            and channel.permissions_for(client.club_guild.me).read_messages
+        ):
             if channel.id not in CHANNELS_SKIP:
                 queue.put_nowait(channel)
             else:

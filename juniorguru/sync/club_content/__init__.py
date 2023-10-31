@@ -15,10 +15,10 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command()
 @cli.pass_cache
-@click.option('--clear-stats-cache/--keep-stats-cache', default=False)
+@click.option("--clear-stats-cache/--keep-stats-cache", default=False)
 def main(cache, clear_stats_cache):
     if clear_stats_cache:
-        cache.delete('club_content_stats')
+        cache.delete("club_content_stats")
     try:
         stats = get_stats()
         logger.info(f"Found {pformat(get_stats())}")
@@ -27,19 +27,19 @@ def main(cache, clear_stats_cache):
         fetch_club_content()
     else:
         try:
-            cached_stats = cache['club_content_stats']
+            cached_stats = cache["club_content_stats"]
         except KeyError:
-            logger.info('No cached stats, refetching')
+            logger.info("No cached stats, refetching")
             fetch_club_content()
         else:
             if cached_stats != stats:
-                logger.info('Data changed, refetching')
+                logger.info("Data changed, refetching")
                 fetch_club_content()
             else:
-                logger.info('Re-using data')
+                logger.info("Re-using data")
 
     stats = get_stats()
-    cache['club_content_stats'] = stats
+    cache["club_content_stats"] = stats
     logger.info(f"Finished with {pformat(get_stats())}")
 
 

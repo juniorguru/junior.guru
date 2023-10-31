@@ -50,9 +50,9 @@ def sideline(transaction: dict, secrets: dict) -> TransactionsCategory:
 
 @category_rule
 def double_payment_by_mistake(transaction: dict, secrets: dict) -> TransactionsCategory:
-    if (transaction["date"] == date(2023, 9, 7) and transaction["amount"] == 12753):
+    if transaction["date"] == date(2023, 9, 7) and transaction["amount"] == 12753:
         return TransactionsCategory.IGNORE
-    if (transaction["date"] == date(2023, 10, 20) and transaction["amount"] == -12753):
+    if transaction["date"] == date(2023, 10, 20) and transaction["amount"] == -12753:
         return TransactionsCategory.IGNORE
 
 
@@ -82,7 +82,9 @@ def marketing_consultation(transaction: dict, secrets: dict) -> TransactionsCate
 
 @category_rule
 def accounting(transaction: dict, secrets: dict) -> TransactionsCategory:
-    if ("Irein" in transaction["message"] or "účetnictví" in transaction["message"]) and transaction["amount"] < 0:
+    if (
+        "Irein" in transaction["message"] or "účetnictví" in transaction["message"]
+    ) and transaction["amount"] < 0:
         return TransactionsCategory.ACCOUNTING
 
 
@@ -112,7 +114,11 @@ def red_hat_partnerships(transaction: dict, secrets: dict) -> TransactionsCatego
 
 @category_rule
 def tax_social_care(transaction: dict, secrets: dict) -> TransactionsCategory:
-    if ("ČSSZ" in transaction["message"] or "PSSZ" in transaction["message"] or "MSSZ" in transaction["message"]):
+    if (
+        "ČSSZ" in transaction["message"]
+        or "PSSZ" in transaction["message"]
+        or "MSSZ" in transaction["message"]
+    ):
         return TransactionsCategory.TAX
 
 
@@ -129,7 +135,9 @@ def tax(transaction: dict, secrets: dict) -> TransactionsCategory:
 
 
 @category_rule
-def tax_prepayments_and_payments(transaction: dict, secrets: dict) -> TransactionsCategory:
+def tax_prepayments_and_payments(
+    transaction: dict, secrets: dict
+) -> TransactionsCategory:
     if transaction["bank_code"] == "0710" and transaction["amount"] < 0:
         return TransactionsCategory.TAX
 
@@ -153,7 +161,9 @@ def stickers(transaction: dict, secrets: dict) -> TransactionsCategory:
 
 
 @category_rule
-def pyconcz_2024_wisdom_board_stationery(transaction: dict, secrets: dict) -> TransactionsCategory:
+def pyconcz_2024_wisdom_board_stationery(
+    transaction: dict, secrets: dict
+) -> TransactionsCategory:
     if "PyCon CZ" in transaction["message"] and transaction["amount"] < 0:
         return TransactionsCategory.MARKETING
 

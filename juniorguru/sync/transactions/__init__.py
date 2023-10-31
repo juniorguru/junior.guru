@@ -164,9 +164,7 @@ def main(
             logger.info(f"Found todo to toggle: ID {todo['id']}, {get_todo_key(todo)}")
             logger.debug(f"Todo: {pformat(todo)}")
             # Using dict to prevent double toggle for todos matching more transactions
-            todos_to_toggle[
-                todo["id"]
-            ] = todo
+            todos_to_toggle[todo["id"]] = todo
 
     logger.info("Saving essential data to the database")
     for db_record in db_records:
@@ -205,7 +203,9 @@ def get_transaction_message(transaction):
     )
 
 
-def get_transaction_category(transaction: dict, categories_spec: list[Callable], secrets: dict) -> TransactionsCategory:
+def get_transaction_category(
+    transaction: dict, categories_spec: list[Callable], secrets: dict
+) -> TransactionsCategory:
     for category_rule in categories_spec:
         category = category_rule(transaction, secrets)
         if category:
