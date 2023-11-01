@@ -18,16 +18,16 @@ def main():
     Proxy.create_table()
 
     # docs at https://docs.proxyscrape.com/
-    logger.info('Scraping proxies')
-    response = requests.get('https://api.proxyscrape.com/v2/',
-                            params=dict(request='displayproxies',
-                                        protocol='http',
-                                        timeout=2000))
+    logger.info("Scraping proxies")
+    response = requests.get(
+        "https://api.proxyscrape.com/v2/",
+        params=dict(request="displayproxies", protocol="http", timeout=2000),
+    )
     response.raise_for_status()
     text = response.text
-    if not re.search(r'^[\d\.\:\s]+$', text):
-        raise Exception(f'{response.url} returned: {text}')
+    if not re.search(r"^[\d\.\:\s]+$", text):
+        raise Exception(f"{response.url} returned: {text}")
 
     for line in text.splitlines():
-        Proxy.create(url=f'http://{line}')
-    logger.info(f'Saved {len(Proxy.listing())} proxies')
+        Proxy.create(url=f"http://{line}")
+    logger.info(f"Saved {len(Proxy.listing())} proxies")

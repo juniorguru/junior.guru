@@ -5,9 +5,9 @@ from peewee import CharField
 from juniorguru.models.base import BaseModel
 
 
-NAME_SPLIT_RE = re.compile(r'[\s\-]+')
+NAME_SPLIT_RE = re.compile(r"[\s\-]+")
 
-FEMININE_SURNAME_RE = re.compile(r'\w{2,}(o[vw][aá]$)|(ská$)')
+FEMININE_SURNAME_RE = re.compile(r"\w{2,}(o[vw][aá]$)|(ská$)")
 
 
 class FeminineName(BaseModel):

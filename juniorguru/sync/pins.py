@@ -13,10 +13,10 @@ from juniorguru.models.club import ClubMessage, ClubPin
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=['club-content'])
+@cli.sync_command(dependencies=["club-content"])
 def main():
-    logger.info(f'Found {ClubPin.count()} pins in total')
-    logger.info('Pairing existing pins saved in DMs with the messages they pin')
+    logger.info(f"Found {ClubPin.count()} pins in total")
+    logger.info("Pairing existing pins saved in DMs with the messages they pin")
     with db.connection_context():
         for pinning_message in ClubMessage.pinning_listing():
             try:
@@ -37,24 +37,28 @@ def main():
 @db.connection_context()
 async def send_outstanding_pins(client: ClubClient):
     for member_db, outstanding_pins in ClubPin.outstanding_by_member():
-        logger.info(f'Sending outstanding pins to {member_db.display_name!r}')
+        logger.info(f"Sending outstanding pins to {member_db.display_name!r}")
         member = await client.club_guild.fetch_member(member_db.id)
         dm_channel = await get_or_create_dm_channel(member)
         for pin in outstanding_pins:
-            content = (
-                f'{ClubEmoji.PIN} Vidím špendlík! Ukládám ti příspěvek sem, do soukromé zprávy.'
-            )
+            content = f"{ClubEmoji.PIN} Vidím špendlík! Ukládám ti příspěvek sem, do soukromé zprávy."
             embed_description = [
                 f"**{pin.pinned_message.author.display_name}** v kanálu „{pin.pinned_message.channel_name}”:",
                 f"> {textwrap.shorten(pin.pinned_message.content, 500, placeholder='…')}",
                 f"[Celý příspěvek]({pin.pinned_message.url})",
                 "",
             ]
-            logger.info(f"Pinning {pin.pinned_message.url} for {member_db.display_name!r} #{member_db.id}")
+            logger.info(
+                f"Pinning {pin.pinned_message.url} for {member_db.display_name!r} #{member_db.id}"
+            )
             try:
                 with mutating_discord(dm_channel) as proxy:
-                    await proxy.send(content=content,
-                                     embed=Embed(description="\n".join(embed_description)))
+                    await proxy.send(
+                        content=content,
+                        embed=Embed(description="\n".join(embed_description)),
+                    )
             except Forbidden:
                 # TODO discord.errors.Forbidden: 403 Forbidden (error code: 50007): Cannot send messages to this user
-                logger.exception(f"Could not pin {pin.pinned_message.url} for {member_db.display_name!r} #{member_db.id}")
+                logger.exception(
+                    f"Could not pin {pin.pinned_message.url} for {member_db.display_name!r} #{member_db.id}"
+                )

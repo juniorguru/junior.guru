@@ -17,11 +17,12 @@ class Mentor(BaseModel):
 
     @classmethod
     def listing(cls):
-        return cls.select(cls, ClubUser) \
-            .join(ClubUser) \
+        return (
+            cls.select(cls, ClubUser)
+            .join(ClubUser)
             .order_by(fn.lower(ClubUser.display_name))
+        )
 
     @classmethod
     def interviews_listing(cls):
-        return cls.listing() \
-            .where(cls.topics.contains('pohovor'))
+        return cls.listing().where(cls.topics.contains("pohovor"))

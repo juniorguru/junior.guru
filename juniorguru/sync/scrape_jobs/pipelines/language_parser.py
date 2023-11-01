@@ -2,9 +2,9 @@ import langdetect
 from w3lib.html import remove_tags
 
 
-class Pipeline():
+class Pipeline:
     def process_item(self, item, spider):
-        item['lang'] = parse_language(item['description_html'])
+        item["lang"] = parse_language(item["description_html"])
         return item
 
 

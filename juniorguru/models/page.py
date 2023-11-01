@@ -19,13 +19,13 @@ class Page(BaseModel):
         return len(self.notes) if self.notes else 0
 
     def to_card(self) -> dict:
-        if self.src_uri.startswith('stories/'):
+        if self.src_uri.startswith("stories/"):
             return dict(
-                title=self.meta['title'],
+                title=self.meta["title"],
                 url=self.src_uri,
-                image_path=self.meta['interviewee_avatar_path'],
-                image_alt=self.meta['interviewee'],
-                subtitle=self.meta['interviewee'],
+                image_path=self.meta["interviewee_avatar_path"],
+                image_alt=self.meta["interviewee"],
+                subtitle=self.meta["interviewee"],
                 date=self.date,
             )
         raise ValueError(f"Unsupported page type: {self.src_uri}")
@@ -40,9 +40,11 @@ class Page(BaseModel):
 
     @classmethod
     def handbook_listing(cls) -> Iterable[Self]:
-        return cls.select() \
-            .where(cls.src_uri.startswith('handbook/')) \
+        return (
+            cls.select()
+            .where(cls.src_uri.startswith("handbook/"))
             .order_by(cls.src_uri)
+        )
 
     @classmethod
     def handbook_total_size(cls) -> int:
@@ -50,9 +52,11 @@ class Page(BaseModel):
 
     @classmethod
     def stories_listing(cls) -> Iterable[Self]:
-        return cls.select() \
-            .where(cls.src_uri.startswith('stories/')) \
+        return (
+            cls.select()
+            .where(cls.src_uri.startswith("stories/"))
             .order_by(cls.date.desc())
+        )
 
 
 class LegacyThumbnail(BaseModel):  # can be deleted once Flask is gone

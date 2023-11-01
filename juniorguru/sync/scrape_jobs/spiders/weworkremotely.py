@@ -15,27 +15,31 @@ from juniorguru.sync.scrape_jobs.items import Job, absolute_url
 
 
 class Spider(BaseSpider):
-    name = 'weworkremotely'
+    name = "weworkremotely"
     start_urls = [
-        'https://weworkremotely.com/categories/remote-devops-sysadmin-jobs.rss',
-        'https://weworkremotely.com/categories/remote-programming-jobs.rss',
+        "https://weworkremotely.com/categories/remote-devops-sysadmin-jobs.rss",
+        "https://weworkremotely.com/categories/remote-programming-jobs.rss",
     ]
 
     def parse(self, response):
         for entry in feedparser.parse(response.text).entries:
-            feed_data = dict(title=entry.title,
-                             first_seen_on=parse_struct_time(entry.published_parsed),
-                             company_logo_urls=[c['url'] for c in getattr(entry, 'media_content', [])],
-                             description_html=entry.summary,
-                             remote=True,
-                             source_urls=response.url)
-            yield response.follow(entry.link,
-                                  callback=self.parse_job,
-                                  cb_kwargs=dict(feed_data=feed_data))
+            feed_data = dict(
+                title=entry.title,
+                first_seen_on=parse_struct_time(entry.published_parsed),
+                company_logo_urls=[
+                    c["url"] for c in getattr(entry, "media_content", [])
+                ],
+                description_html=entry.summary,
+                remote=True,
+                source_urls=response.url,
+            )
+            yield response.follow(
+                entry.link, callback=self.parse_job, cb_kwargs=dict(feed_data=feed_data)
+            )
 
     def parse_job(self, response, feed_data):
         loader = Loader(item=Job(), response=response)
-        loader.add_value('url', response.url)
+        loader.add_value("url", response.url)
 
         for key, value in feed_data.items():
             loader.add_value(key, value)
@@ -45,16 +49,16 @@ class Spider(BaseSpider):
         except (ValueError, json.JSONDecodeError, etree.ParserError):
             pass
         else:
-            loader.add_value('source', self.name)
-            loader.add_value('source_urls', response.url)
-            loader.add_value('title', data['title'])
-            loader.add_value('first_seen_on', data['datePosted'])
-            loader.add_value('description_html', html.unescape(data['description']))
-            loader.add_value('company_logo_urls', data.get('image'))
-            loader.add_value('employment_types', [data['employmentType']])
-            loader.add_value('company_name', data['hiringOrganization']['name'])
-            loader.add_value('company_url', data['hiringOrganization']['sameAs'])
-            loader.add_value('locations_raw', data['hiringOrganization']['address'])
+            loader.add_value("source", self.name)
+            loader.add_value("source_urls", response.url)
+            loader.add_value("title", data["title"])
+            loader.add_value("first_seen_on", data["datePosted"])
+            loader.add_value("description_html", html.unescape(data["description"]))
+            loader.add_value("company_logo_urls", data.get("image"))
+            loader.add_value("employment_types", [data["employmentType"]])
+            loader.add_value("company_name", data["hiringOrganization"]["name"])
+            loader.add_value("company_url", data["hiringOrganization"]["sameAs"])
+            loader.add_value("locations_raw", data["hiringOrganization"]["address"])
             yield loader.load_item()
 
 
@@ -67,16 +71,19 @@ def parse_date(value):
     try:
         return arrow.get(value).date()
     except ValueError:
-        return arrow.get(value, 'YYYY-MM-DD HH:mm:ss ZZZ').date()
+        return arrow.get(value, "YYYY-MM-DD HH:mm:ss ZZZ").date()
 
 
 def extract_job_posting(html_string, base_url):
-    data = extruct.extract(html_string, base_url, syntaxes=['json-ld'])
+    data = extruct.extract(html_string, base_url, syntaxes=["json-ld"])
     try:
-        return [data_item for data_item in data['json-ld']
-                if data_item['@type'] == 'JobPosting'][0]
+        return [
+            data_item
+            for data_item in data["json-ld"]
+            if data_item["@type"] == "JobPosting"
+        ][0]
     except IndexError:
-        raise ValueError('json-ld provided no job postings')
+        raise ValueError("json-ld provided no job postings")
 
 
 class Loader(ItemLoader):

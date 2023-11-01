@@ -9,17 +9,19 @@ from juniorguru.models.base import db
 from juniorguru.models.story import Story
 
 
-YAML_PATH = Path('juniorguru/data/stories.yml')
+YAML_PATH = Path("juniorguru/data/stories.yml")
 
 YAML_SCHEMA = Seq(
-    Map({
-        'url': Url(),
-        'date': Date(),
-        'title': Str(),
-        'name': Str(),
-        'image_path': Str(),
-        'tags': Seq(Str()),
-    })
+    Map(
+        {
+            "url": Url(),
+            "date": Date(),
+            "title": Str(),
+            "name": Str(),
+            "image_path": Str(),
+            "tags": Seq(Str()),
+        }
+    )
 )
 
 
@@ -33,5 +35,5 @@ def main():
     Story.create_table()
     for yaml_record in load(YAML_PATH.read_text(), YAML_SCHEMA):
         record = yaml_record.data
-        logger.info(record['title'])
+        logger.info(record["title"])
         Story.create(**record)

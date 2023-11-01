@@ -9,36 +9,34 @@ from juniorguru.sync.scrape_jobs.items import Job, parse_iso_date
 
 
 class Spider(BaseSpider):
-    name = 'startupjobs'
+    name = "startupjobs"
     custom_settings = {
-        'ROBOTSTXT_OBEY': False,  # requesting API, so irrelevant, saving a few requests
+        "ROBOTSTXT_OBEY": False,  # requesting API, so irrelevant, saving a few requests
     }
-    start_urls = [
-        'https://feedback.startupjobs.cz/feed/juniorguru.php'
-    ]
+    start_urls = ["https://feedback.startupjobs.cz/feed/juniorguru.php"]
 
     def parse(self, response):
-        for n, offer in enumerate(response.xpath('//offer'), start=1):
+        for n, offer in enumerate(response.xpath("//offer"), start=1):
             loader = Loader(item=Job(), response=response)
-            offer_loader = loader.nested_xpath(f'//offer[{n}]')
-            offer_loader.add_value('source', self.name)
-            offer_loader.add_value('source_urls', response.url)
-            offer_loader.add_xpath('title', './/position/text()')
-            offer_loader.add_xpath('url', './/url/text()')
-            offer_loader.add_xpath('apply_url', './/url/text()')
-            offer_loader.add_xpath('company_name', './/startup/text()')
-            offer_loader.add_xpath('locations_raw', './/city/text()')
-            offer_loader.add_xpath('remote', ".//jobtype[contains(., 'Remote')]/text()")
-            offer_loader.add_value('remote', False)
-            offer_loader.add_xpath('employment_types', './/jobtype/text()')
-            offer_loader.add_xpath('first_seen_on', './/lastUpdate//text()')
-            offer_loader.add_xpath('description_html', './/description/text()')
-            offer_loader.add_xpath('company_logo_urls', './/startupLogo/text()')
+            offer_loader = loader.nested_xpath(f"//offer[{n}]")
+            offer_loader.add_value("source", self.name)
+            offer_loader.add_value("source_urls", response.url)
+            offer_loader.add_xpath("title", ".//position/text()")
+            offer_loader.add_xpath("url", ".//url/text()")
+            offer_loader.add_xpath("apply_url", ".//url/text()")
+            offer_loader.add_xpath("company_name", ".//startup/text()")
+            offer_loader.add_xpath("locations_raw", ".//city/text()")
+            offer_loader.add_xpath("remote", ".//jobtype[contains(., 'Remote')]/text()")
+            offer_loader.add_value("remote", False)
+            offer_loader.add_xpath("employment_types", ".//jobtype/text()")
+            offer_loader.add_xpath("first_seen_on", ".//lastUpdate//text()")
+            offer_loader.add_xpath("description_html", ".//description/text()")
+            offer_loader.add_xpath("company_logo_urls", ".//startupLogo/text()")
             yield loader.load_item()
 
 
 def drop_remote(types):
-    return [type_ for type_ in types if type_.lower() != 'remote']
+    return [type_ for type_ in types if type_.lower() != "remote"]
 
 
 class Loader(ItemLoader):

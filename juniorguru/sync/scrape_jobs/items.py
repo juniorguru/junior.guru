@@ -32,11 +32,11 @@ class Job(Item):
     source_urls = Field(required=True)
 
     def __repr__(self):
-        return repr_item(self, ['title', 'url', 'apply_url', 'source'])
+        return repr_item(self, ["title", "url", "apply_url", "source"])
 
 
 def absolute_url(url, loader_context):
-    return loader_context['response'].urljoin(url)
+    return loader_context["response"].urljoin(url)
 
 
 def parse_iso_date(value):
@@ -48,7 +48,7 @@ def parse_markdown(value):
         return md(value.strip())
 
 
-def split(string, by=','):
+def split(string, by=","):
     if string:
         return list(filter(None, map(str.strip, string.split(by))))
     return []
@@ -67,19 +67,19 @@ def last(iterable):
 
 def parse_relative_date(text, today=None):
     today = today or date.today()
-    if 'week' in text or 'týdn' in text:
-        weeks_ago = int(re.search(r'\d+', text).group(0))
+    if "week" in text or "týdn" in text:
+        weeks_ago = int(re.search(r"\d+", text).group(0))
         return today - timedelta(weeks=weeks_ago)
-    if 'minute' in text or 'hour' in text or 'minut' in text or 'hod' in text:
+    if "minute" in text or "hour" in text or "minut" in text or "hod" in text:
         return today
-    if 'today' in text or 'dnes' in text:
+    if "today" in text or "dnes" in text:
         return today
-    if 'yesterday' in text or 'včera' in text:
+    if "yesterday" in text or "včera" in text:
         return today - timedelta(days=1)
-    if 'day' in text or 'dny' in text or 'dnem' in text:
-        days_ago = int(re.search(r'\d+', text).group(0))
+    if "day" in text or "dny" in text or "dnem" in text:
+        days_ago = int(re.search(r"\d+", text).group(0))
         return today - timedelta(days=days_ago)
-    if 'month' in text or 'měs' in text:
-        months_ago = int(re.search(r'\d+', text).group(0))
+    if "month" in text or "měs" in text:
+        months_ago = int(re.search(r"\d+", text).group(0))
         return today - timedelta(days=months_ago * 30)
     raise ValueError(text)

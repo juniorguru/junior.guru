@@ -109,7 +109,9 @@ def process_paths(paths, pipelines, workers=None):
     # in a single process so that SQLite isn't overloaded by concurrent writes.
     readers = []
     for reader_id in range(workers):
-        proc = Process(target=_reader, args=(reader_id, path_queue, item_queue, pipelines))
+        proc = Process(
+            target=_reader, args=(reader_id, path_queue, item_queue, pipelines)
+        )
         readers.append(proc)
         proc.start()
 
@@ -123,7 +125,7 @@ def _reader(id, path_queue, item_queue, pipelines):
     preprocessing the items with given pipelines, and putting the items
     to a queue to be saved to the db.
     """
-    logger_r = logger[f'readers.{id}']
+    logger_r = logger[f"readers.{id}"]
     logger_r.debug(f"Starting, preprocessing pipelines: {pipelines!r}")
     pipelines = load_pipelines(pipelines)
     try:
@@ -155,14 +157,14 @@ def parse(path):
     job data.
     """
     try:
-        with gzip.open(path, 'rt') as f:
+        with gzip.open(path, "rt") as f:
             for line_no, line in enumerate(f, start=1):
                 yield parse_line(path, line_no, line)
     except EOFError:
-        logger['parse'].error(f'Unreadable file, probably empty: {path}')
+        logger["parse"].error(f"Unreadable file, probably empty: {path}")
         return
     except Exception:
-        logger['parse'].exception(f'Error parsing file: {path}')
+        logger["parse"].exception(f"Error parsing file: {path}")
         raise
 
 
@@ -173,12 +175,14 @@ def parse_line(path, line_no, line):
     """
     try:
         data = json.loads(line)
-        data['first_seen_on'] = date.fromisoformat(data['first_seen_on'])
-        data['last_seen_on'] = path_to_date(path)
+        data["first_seen_on"] = date.fromisoformat(data["first_seen_on"])
+        data["last_seen_on"] = path_to_date(path)
         return data
     except Exception:
-        logger['parse'].error(f'Error parsing the following data:\n\n{line}\n\n'
-                              f'Line number: {line_no}, file: {path}')
+        logger["parse"].error(
+            f"Error parsing the following data:\n\n{line}\n\n"
+            f"Line number: {line_no}, file: {path}"
+        )
         raise
 
 
@@ -188,7 +192,7 @@ def _writer(item_queue):
     A single process taking care of writing items to the db
     and merging them in case of duplicities.
     """
-    logger_w = logger['writer']
+    logger_w = logger["writer"]
     logger_w.debug("Starting")
     counter = 0
     try:
@@ -203,7 +207,7 @@ def _writer(item_queue):
                 job.merge_item(item)
                 job.save()
             except Exception:
-                logger_w.error(f'Error saving the following item:\n{pformat(item)}')
+                logger_w.error(f"Error saving the following item:\n{pformat(item)}")
                 raise
             else:
                 logger_w.debug(f"Saved {item['url']} as {job!r}")
@@ -249,7 +253,10 @@ def postprocess_jobs(pipelines, workers=None):
     # operation queue.
     postprocessors = []
     for postprocessor_id in range(workers):
-        proc = Process(target=_postprocessor, args=(postprocessor_id, op_queue, id_queue, pipelines))
+        proc = Process(
+            target=_postprocessor,
+            args=(postprocessor_id, op_queue, id_queue, pipelines),
+        )
         postprocessors.append(proc)
         proc.start()
 
@@ -258,6 +265,8 @@ def postprocess_jobs(pipelines, workers=None):
 
 
 db.connection_context()
+
+
 def _query(id_queue):
     """
     A single process taking care of listing all jobs in the db
@@ -268,12 +277,14 @@ def _query(id_queue):
 
 
 db.connection_context()
+
+
 def _postprocessor(id, op_queue, id_queue, pipelines):
     """
     Processes taking care of passing items through the postprocessing
     pipelines.
     """
-    logger_p = logger[f'postprocessors.{id}']
+    logger_p = logger[f"postprocessors.{id}"]
     logger_p.debug(f"Starting, preprocessing pipelines: {pipelines!r}")
     pipelines = load_pipelines(pipelines)
     counter = 0
@@ -284,13 +295,13 @@ def _postprocessor(id, op_queue, id_queue, pipelines):
             logger_p.debug(f"Executing pipelines for {job!r}")
             item = job.to_item()
             try:
-                op_queue.put(('save', execute_pipelines(item, pipelines)))
+                op_queue.put(("save", execute_pipelines(item, pipelines)))
             except DropItem:
                 logger_p.info(f"Dropping {job!r}")
-                op_queue.put(('delete', {'id': job_id}))
+                op_queue.put(("delete", {"id": job_id}))
             except Exception as e:
                 logger_p.exception(f"Executing pipelines for {job!r} failed: {e}")
-                op_queue.put(('delete', {'id': job_id}))
+                op_queue.put(("delete", {"id": job_id}))
             finally:
                 counter += 1
                 if counter % LOGGING_POSTPROCESSOR_BATCH_SIZE == 0:
@@ -307,7 +318,7 @@ def _persistor(op_queue):
     A single process taking care of persisting the changes made
     by postprocessing pipelines.
     """
-    logger_p = logger['persistor']
+    logger_p = logger["persistor"]
     logger_p.debug("Starting")
     counter = 0
     try:
@@ -315,16 +326,16 @@ def _persistor(op_queue):
             operation, item = op_queue.get()
             job = ScrapedJob.from_item(item)
             try:
-                if operation == 'delete':
+                if operation == "delete":
                     logger_p.debug(f"Deleting {job!r}")
                     job.delete_instance()
-                elif operation == 'save':
+                elif operation == "save":
                     logger_p.debug(f"Updating {job!r}")
                     job.save()
                 else:
-                    raise ValueError(f'Unknown operation: {operation}')
+                    raise ValueError(f"Unknown operation: {operation}")
             except Exception:
-                logger_p.error(f'Error saving the following item:\n{pformat(item)}')
+                logger_p.error(f"Error saving the following item:\n{pformat(item)}")
                 raise
             finally:
                 del job
@@ -343,8 +354,7 @@ def load_pipelines(pipelines):
     import them, and return the 'process' function from each
     of them.
     """
-    return [importlib.import_module(pipeline).process
-            for pipeline in pipelines]
+    return [importlib.import_module(pipeline).process for pipeline in pipelines]
 
 
 def execute_pipelines(item, pipelines):
@@ -378,6 +388,6 @@ def dir_to_date(dir):
     to a directory of .jsonl.gz files.
     """
     dir = Path(dir)
-    return date(year=int(dir.parent.parent.stem),
-                month=int(dir.parent.stem),
-                day=int(dir.stem))
+    return date(
+        year=int(dir.parent.parent.stem), month=int(dir.parent.stem), day=int(dir.stem)
+    )

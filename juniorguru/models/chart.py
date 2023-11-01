@@ -18,9 +18,9 @@ class Chart(BaseModel):
         for chart in cls.select():
             charts[chart.slug] = chart.data
             if chart.count is not None:
-                charts[f'{chart.slug}_count'] = chart.count
+                charts[f"{chart.slug}_count"] = chart.count
             if chart.labels is not None:
-                charts[f'{chart.slug}_labels'] = chart.labels
+                charts[f"{chart.slug}_labels"] = chart.labels
             if chart.annotations is not None:
-                charts[f'{chart.slug}_annotations'] = chart.annotations
+                charts[f"{chart.slug}_annotations"] = chart.annotations
         return charts

@@ -27,9 +27,7 @@ class Sync(BaseModel):
         return SyncCommand.create(name=name, sync=self, time_start=time)
 
     def command_end(self, name, time):
-        command = self.list_commands \
-            .where(SyncCommand.name == name) \
-            .get()
+        command = self.list_commands.where(SyncCommand.name == name).get()
         command.time_diff = time - command.time_start
         command.save()
         return command
@@ -38,22 +36,21 @@ class Sync(BaseModel):
         return self.list_commands.count()
 
     def is_command_seen(self, name):
-        return self.list_commands \
-            .where(SyncCommand.name == name) \
-            .exists()
+        return self.list_commands.where(SyncCommand.name == name).exists()
 
     def is_command_unseen(self, name):
         return not self.is_command_seen(name)
 
     def times_min(self):
-        return {command.name: command.time_diff_min
-                for command
-                in self.list_commands.order_by(SyncCommand.time_diff.desc())}
+        return {
+            command.name: command.time_diff_min
+            for command in self.list_commands.order_by(SyncCommand.time_diff.desc())
+        }
 
 
 class SyncCommand(BaseModel):
     name = CharField(primary_key=True)
-    sync = ForeignKeyField(Sync, backref='list_commands')
+    sync = ForeignKeyField(Sync, backref="list_commands")
     time_start = IntegerField()
     time_diff = IntegerField(null=True)
 

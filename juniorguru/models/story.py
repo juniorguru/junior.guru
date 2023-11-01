@@ -16,7 +16,7 @@ class Story(BaseModel):
 
     @property
     def publisher(self):
-        return re.sub(r'^www\.', '', urlparse(self.url).netloc).lower()
+        return re.sub(r"^www\.", "", urlparse(self.url).netloc).lower()
 
     def to_card(self) -> dict:
         return dict(
@@ -35,10 +35,8 @@ class Story(BaseModel):
 
     @classmethod
     def tag_listing(cls, tag):
-        tags = cls.tags.children().alias('tags')
-        return cls.listing() \
-            .from_(cls, tags) \
-            .where(tags.c.value == tag)
+        tags = cls.tags.children().alias("tags")
+        return cls.listing().from_(cls, tags).where(tags.c.value == tag)
 
     @classmethod
     def tags_mapping(cls) -> dict:

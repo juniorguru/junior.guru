@@ -7,7 +7,7 @@ class MissingRequiredFields(DropItem):
     pass
 
 
-class Pipeline():
+class Pipeline:
     def process_item(self, item, spider):
         required_fields = get_required_fields(item.__class__)
         missing_fields = required_fields - frozenset(item.keys())
@@ -19,5 +19,6 @@ class Pipeline():
 
 @lru_cache()
 def get_required_fields(cls):
-    return {name for name, kwargs in cls.fields.items()
-            if kwargs.get('required') is True}
+    return {
+        name for name, kwargs in cls.fields.items() if kwargs.get("required") is True
+    }
