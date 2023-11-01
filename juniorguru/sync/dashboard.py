@@ -25,12 +25,16 @@ EVENTS_LIMIT = 10
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=['club-content',
-                                'partners',
-                                'events',
-                                'subscriptions',
-                                'roles',
-                                'blog'])
+@cli.sync_command(
+    dependencies=[
+        "club-content",
+        "partners",
+        "events",
+        "subscriptions",
+        "roles",
+        "blog",
+    ]
+)
 def main():
     discord_sync.run(discord_task)
 
@@ -46,11 +50,15 @@ async def discord_task(client: ClubClient):
         render_events(),
         render_open(),
     ]
-    messages = sorted(ClubMessage.channel_listing_bot(ClubChannelID.DASHBOARD),
-                      key=attrgetter('created_at'))
+    messages = sorted(
+        ClubMessage.channel_listing_bot(ClubChannelID.DASHBOARD),
+        key=attrgetter("created_at"),
+    )
 
     if len(messages) != len(sections):
-        logger.warning('The scheme of sections seems to be different, purging the channel and creating new messages')
+        logger.warning(
+            "The scheme of sections seems to be different, purging the channel and creating new messages"
+        )
         with mutating_discord(discord_channel) as proxy:
             await proxy.purge()
             for section in sections:
@@ -65,65 +73,72 @@ async def discord_task(client: ClubClient):
 
 def render_basic_tips():
     return {
-        'title': 'Základní tipy',
-        'color': Color.yellow(),
-        'description': dedent('''
+        "title": "Základní tipy",
+        "color": Color.yellow(),
+        "description": dedent(
+            """
             Klub je místo, kde můžeš spolu s ostatními posunout svůj rozvoj v oblasti programování, nebo s tím pomoci ostatním.
 
             👋 Tykáme si, ⚠️ [Pravidla chování](https://junior.guru/coc/), 💳 [Nastavení placení](https://juniorguru.memberful.com/account), 🤔 [Časté dotazy](https://junior.guru/faq/)
-        ''').strip()
+        """
+        ).strip(),
     }
 
 
 def render_roles():
     return {
-        'title': 'Role',
-        'description': '\n'.join([
-            f'{format_role(role)}\n' for role
-            in ClubDocumentedRole.listing()
-
-        ])
+        "title": "Role",
+        "description": "\n".join(
+            [f"{format_role(role)}\n" for role in ClubDocumentedRole.listing()]
+        ),
     }
 
 
 def format_role(role):
-    text = f'**{role.mention}**'
+    text = f"**{role.mention}**"
     if role.emoji:
-        text += f' {role.emoji}'
-    text += f'\n{role.description}'
+        text += f" {role.emoji}"
+    text += f"\n{role.description}"
     return text
 
 
 def render_partners():
     return {
-        'title': 'Partneři',
-        'color': Color.dark_grey(),
-        'description': 'Následující firmy se podílejí na financování provozu junior.guru. Někdy sem pošlou své lidi. Ti pak mají roli <@&837316268142493736> a k tomu ještě i roli vždy pro konkrétní firmu, například <@&938306918097747968>.\n\n' + ', '.join([
-            f'✨ [{partnership.partner.name}]({partnership.partner.url})' for partnership
-            in Partnership.active_listing()
-        ])
+        "title": "Partneři",
+        "color": Color.dark_grey(),
+        "description": "Následující firmy se podílejí na financování provozu junior.guru. Někdy sem pošlou své lidi. Ti pak mají roli <@&837316268142493736> a k tomu ještě i roli vždy pro konkrétní firmu, například <@&938306918097747968>.\n\n"
+        + ", ".join(
+            [
+                f"✨ [{partnership.partner.name}]({partnership.partner.url})"
+                for partnership in Partnership.active_listing()
+            ]
+        ),
     }
 
 
 def render_events():
     events = Event.listing()
-    description = f'Odkazy na posledních {EVENTS_LIMIT} záznamů, ať je máš víc po ruce:\n\n'
-    description += '\n'.join([
-        format_event(event)
-        for event in itertools.islice(events, EVENTS_LIMIT)
-        if event.recording_url
-    ])
-    description += f'\nDalších {len(events) - EVENTS_LIMIT} akcí je [na webu](https://junior.guru/events/).'
+    description = (
+        f"Odkazy na posledních {EVENTS_LIMIT} záznamů, ať je máš víc po ruce:\n\n"
+    )
+    description += "\n".join(
+        [
+            format_event(event)
+            for event in itertools.islice(events, EVENTS_LIMIT)
+            if event.recording_url
+        ]
+    )
+    description += f"\nDalších {len(events) - EVENTS_LIMIT} akcí je [na webu](https://junior.guru/events/)."
     return {
-        'title': 'Záznamy klubových akcí',
-        'description': description,
+        "title": "Záznamy klubových akcí",
+        "description": description,
     }
 
 
 def format_event(event):
     return (
-        f'📺 [{event.title}]({event.recording_url})\n'
-        f'{event.start_at.date():%-d.%-m.%Y}, {event.bio_name}\n'
+        f"📺 [{event.title}]({event.recording_url})\n"
+        f"{event.start_at.date():%-d.%-m.%Y}, {event.bio_name}\n"
     )
 
 
@@ -132,17 +147,19 @@ def render_open():
     members_women_ptc = SubscriptionActivity.active_women_ptc(TODAY)
     blog_article = BlogArticle.latest()
 
-    description = ', '.join([
-        f'🙋 {members_total_count} členů v klubu, z toho asi {members_women_ptc} % žen',
-        f'📝 [{blog_article.title}]({blog_article.url})',
-        '📊 [Návštěvnost webu](https://simpleanalytics.com/junior.guru)',
-        '<:github:842685206095724554> [Zdrojový kód](https://github.com/juniorguru/junior.guru)',
-        '📈 [Další čísla a grafy](https://junior.guru/open/)',
-    ])
-    description += '\n\n💡 Napadá tě vylepšení? Máš dotaz k fungování klubu? Šup s tím do <#806215364379148348>!'
+    description = ", ".join(
+        [
+            f"🙋 {members_total_count} členů v klubu, z toho asi {members_women_ptc} % žen",
+            f"📝 [{blog_article.title}]({blog_article.url})",
+            "📊 [Návštěvnost webu](https://simpleanalytics.com/junior.guru)",
+            "<:github:842685206095724554> [Zdrojový kód](https://github.com/juniorguru/junior.guru)",
+            "📈 [Další čísla a grafy](https://junior.guru/open/)",
+        ]
+    )
+    description += "\n\n💡 Napadá tě vylepšení? Máš dotaz k fungování klubu? Šup s tím do <#806215364379148348>!"
 
     return {
-        'title': 'Zákulisí junior.guru',
-        'color': Color.greyple(),
-        'description': description
+        "title": "Zákulisí junior.guru",
+        "color": Color.greyple(),
+        "description": description,
     }

@@ -16,43 +16,52 @@ from juniorguru.models.subscription import SubscriptionMarketingSurvey
 logger = loggers.from_path(__file__)
 
 
-REPORT_EMOJI = '👋'
+REPORT_EMOJI = "👋"
 
-ID_RE = re.compile(r'`#(\d+)`')
+ID_RE = re.compile(r"`#(\d+)`")
 
 
-@cli.sync_command(dependencies=['club-content', 'subscriptions-csv'])
-@click.option('--channel', 'channel_id', default='business', type=parse_channel)
+@cli.sync_command(dependencies=["club-content", "subscriptions-csv"])
+@click.option("--channel", "channel_id", default="business", type=parse_channel)
 def main(channel_id):
     discord_sync.run(report, channel_id)
 
 
 @db.connection_context()
 async def report(client: ClubClient, channel_id: int):
-    account_ids = [int(ID_RE.search(message.content).group(1)) for message
-                   in ClubMessage.channel_listing_bot(channel_id, starting_emoji=REPORT_EMOJI)]
+    account_ids = [
+        int(ID_RE.search(message.content).group(1))
+        for message in ClubMessage.channel_listing_bot(
+            channel_id, starting_emoji=REPORT_EMOJI
+        )
+    ]
     logger.debug(f"Found {len(account_ids)} reported marketing survey answers")
 
-    answers = SubscriptionMarketingSurvey.report_listing(exclude_account_ids=account_ids)
+    answers = SubscriptionMarketingSurvey.report_listing(
+        exclude_account_ids=account_ids
+    )
     logger.debug(f"About to report {len(answers)} marketing survey answers")
 
     for answer in answers:
         logger.debug(f"Reporting marketing survey answer: {answer.account_name}")
         # initial data
         message_content = f"{REPORT_EMOJI} "
-        embed_description = (f"**Odkud:** `{answer.type.upper()}`\n"
-                             f"> {answer.value}\n")
-        buttons = [ui.Button(emoji='💳',
-                             label='Memberful',
-                             url=memberful_url(answer.account_id))]
+        embed_description = (
+            f"**Odkud:** `{answer.type.upper()}`\n" f"> {answer.value}\n"
+        )
+        buttons = [
+            ui.Button(
+                emoji="💳", label="Memberful", url=memberful_url(answer.account_id)
+            )
+        ]
 
         # data depending on whether the user is on Discord
         if user := answer.user:
             message_content += f"{user.mention}"
             if intro_message := user.intro:
-                buttons.append(ui.Button(emoji='👋',
-                               label='#ahoj',
-                               url=intro_message.url))
+                buttons.append(
+                    ui.Button(emoji="👋", label="#ahoj", url=intro_message.url)
+                )
         else:
             message_content += f"**{answer.account_name}**"
 
@@ -63,4 +72,6 @@ async def report(client: ClubClient, channel_id: int):
         channel = await client.fetch_channel(channel_id)
         with mutating_discord(channel) as proxy:
             embed = Embed(description=embed_description)
-            await proxy.send(content=message_content, embed=embed, view=ui.View(*buttons))
+            await proxy.send(
+                content=message_content, embed=embed, view=ui.View(*buttons)
+            )

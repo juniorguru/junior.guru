@@ -19,7 +19,7 @@ CZECH_WEEKDAYS = ["pondělí", "úterý", "středa", "čtvrtek", "pátek", "sobo
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=['club-content'])
+@cli.sync_command(dependencies=["club-content"])
 def main():
     discord_sync.run(send_daily_report)
 
@@ -35,28 +35,41 @@ async def send_daily_report(client: ClubClient):
         # If this raised click.Abort() the whole sync (i.e. production build) would fail.
         return
 
-    last_message = ClubMessage.last_bot_message(channel.id, '📊')
+    last_message = ClubMessage.last_bot_message(channel.id, "📊")
     yesterday = date.today() - timedelta(days=1)
 
     if is_message_older_than(last_message, yesterday):
         czech_weekday = CZECH_WEEKDAYS[yesterday.weekday()]
 
         daniel = ClubUser.get_by_id(ClubMemberID.DANIEL)
-        daniel_messages = [message for message in daniel.list_public_messages
-                           if message.created_at.date() == yesterday]
+        daniel_messages = [
+            message
+            for message in daniel.list_public_messages
+            if message.created_at.date() == yesterday
+        ]
         daniel_channels = set(message.parent_channel_id for message in daniel_messages)
         daniel_threads = set(message.channel_id for message in daniel_messages)
         daniel_content_size = sum(message.content_size for message in daniel_messages)
 
-        daniel_all_messages = [message for message in daniel.list_messages
-                               if message.created_at.date() == yesterday]
-        daniel_all_channels = set(message.parent_channel_id for message in daniel_all_messages)
+        daniel_all_messages = [
+            message
+            for message in daniel.list_messages
+            if message.created_at.date() == yesterday
+        ]
+        daniel_all_channels = set(
+            message.parent_channel_id for message in daniel_all_messages
+        )
         daniel_all_threads = set(message.channel_id for message in daniel_all_messages)
-        daniel_all_content_size = sum(message.content_size for message in daniel_all_messages)
+        daniel_all_content_size = sum(
+            message.content_size for message in daniel_all_messages
+        )
 
         honza = ClubUser.get_by_id(ClubMemberID.HONZA)
-        honza_messages = [message for message in honza.list_public_messages
-                          if message.created_at.date() == yesterday]
+        honza_messages = [
+            message
+            for message in honza.list_public_messages
+            if message.created_at.date() == yesterday
+        ]
         honza_content_size = sum(message.content_size for message in honza_messages)
 
         content = (
@@ -70,7 +83,7 @@ async def send_daily_report(client: ClubClient):
             f"\nHonza tentýž den veřejně napsal {honza_content_size} písmenek, ale nikdy se to nedoví, protože tyhle zprávy posílám jen tobě."
             f"\n\*\*{czech_weekday}\*\* :abc: {daniel_all_content_size} :speech_left: {len(daniel_all_messages)} <:discordthread:993580255287705681> {len(daniel_all_threads)}"
         )
-        logger.info(f'Sending:\n{content}')
+        logger.info(f"Sending:\n{content}")
         with mutating_discord(channel) as proxy:
             await proxy.send(content=content)
     else:

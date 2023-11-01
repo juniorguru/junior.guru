@@ -8,7 +8,7 @@ from juniorguru.sync.onboarding.channels import manage_channels
 # from juniorguru.sync.onboarding.messages import send_messages
 
 
-@cli.sync_command(dependencies=['club-content'])
+@cli.sync_command(dependencies=["club-content"])
 def main():
     discord_sync.run(discord_task)
 

@@ -85,11 +85,7 @@ filterwarnings = [
 target-versions = ["py311"]
 include = "\\.py$"
 exclude = """(\
-juniorguru/sync/d.*|\
-juniorguru/sync/f.*|\
 juniorguru/sync/j.*|\
-juniorguru/sync/m.*|\
-juniorguru/sync/o.*|\
 juniorguru/sync/p.*|\
 juniorguru/sync/r.*|\
 juniorguru/sync/s.*|\

@@ -22,26 +22,25 @@ from juniorguru.models.subscription import SubscriptionActivity
 logger = loggers.from_path(__file__)
 
 
-MEMBERS_GQL_PATH = Path(__file__).parent / 'members.gql'
+MEMBERS_GQL_PATH = Path(__file__).parent / "members.gql"
 
 
-@cli.sync_command(dependencies=['club-content',
-                                'partners',
-                                'feminine-names',
-                                'subscriptions'])
+@cli.sync_command(
+    dependencies=["club-content", "partners", "feminine-names", "subscriptions"]
+)
 @db.connection_context()
 def main():
-    logger.info('Getting data from Memberful')
+    logger.info("Getting data from Memberful")
     memberful = MemberfulAPI()
 
     members = memberful.get_nodes(MEMBERS_GQL_PATH.read_text())
     seen_discord_ids = set()
     for member in logger.progress(members):
-        account_id = int(member['id'])
+        account_id = int(member["id"])
         member_admin_url = memberful_url(account_id)
         logger.debug(f"Processing member {member_admin_url}")
         try:
-            discord_id = int(member['discordUserId'])  # raies TypeError if None
+            discord_id = int(member["discordUserId"])  # raies TypeError if None
             user = ClubUser.get_by_id(discord_id)  # raises ClubUser.DoesNotExist
         except (TypeError, ClubUser.DoesNotExist):
             logger.warning(f"Member {member_admin_url} isn't on Discord")
@@ -49,34 +48,41 @@ def main():
             logger.debug(f"Identified as club user #{user.id}")
             seen_discord_ids.add(user.id)
 
-            name = member['fullName'].strip()
+            name = member["fullName"].strip()
             has_feminine_name = FeminineName.is_feminine(name)
 
             subscribed_at = SubscriptionActivity.account_subscribed_at(account_id)
             if not subscribed_at:
-                raise ValueError(f"Member {member_admin_url} has no subscription activities")
+                raise ValueError(
+                    f"Member {member_admin_url} has no subscription activities"
+                )
             subscribed_days = SubscriptionActivity.account_subscribed_days(account_id)
 
-            subscription = get_active_subscription(member['subscriptions'])
+            subscription = get_active_subscription(member["subscriptions"])
             coupon = get_coupon(subscription)
             coupon_parts = parse_coupon(coupon) if coupon else {}
-            expires_at = get_expires_at(member['subscriptions'])
+            expires_at = get_expires_at(member["subscriptions"])
 
-            logger.debug(f"Updating club user #{user.id} with data from {member_admin_url}")
+            logger.debug(
+                f"Updating club user #{user.id} with data from {member_admin_url}"
+            )
             user.account_id = account_id
-            user.subscription_id = str(subscription['id'])
-            user.customer_id = member['stripeCustomerId']
+            user.subscription_id = str(subscription["id"])
+            user.customer_id = member["stripeCustomerId"]
             user.subscribed_at = subscribed_at
             user.subscribed_days = subscribed_days
-            user.coupon = coupon_parts.get('coupon')
+            user.coupon = coupon_parts.get("coupon")
             user.update_expires_at(expires_at)
             user.has_feminine_name = has_feminine_name
-            user.total_spend = math.ceil(member['totalSpendCents'] / 100)
+            user.total_spend = math.ceil(member["totalSpendCents"] / 100)
             user.save()
 
-    logger.info('Processing remaining club users who are on Discord, but not in Memberful')
-    remaining_users = (user for user in ClubUser.members_listing()
-                       if user.id not in seen_discord_ids)
+    logger.info(
+        "Processing remaining club users who are on Discord, but not in Memberful"
+    )
+    remaining_users = (
+        user for user in ClubUser.members_listing() if user.id not in seen_discord_ids
+    )
     extra_users_ids = []
     for user in remaining_users:
         if user.id in (ClubMemberID.HONZA, ClubMemberID.HONZA_TEST):
@@ -84,7 +90,9 @@ def main():
         elif user.is_bot:
             logger.debug(f"Skipping bot account #{user.id}")
         else:
-            logger.warning(f"Club user #{user.id} is on Discord, but doesn't have a Memberful account!")
+            logger.warning(
+                f"Club user #{user.id} is on Discord, but doesn't have a Memberful account!"
+            )
             logger.debug(f"User #{user.id}:\n{pformat(model_to_dict(user))}")
             extra_users_ids.append(user.id)
     if extra_users_ids:
@@ -93,7 +101,7 @@ def main():
 
 @db.connection_context()
 async def report_extra_users(client: ClubClient, extra_users_ids: list[int]):
-    logger.info('Prevent mistakes caused by out-of-sync data')
+    logger.info("Prevent mistakes caused by out-of-sync data")
     extra_users = []
     for extra_user_id in extra_users_ids:
         try:
@@ -104,20 +112,28 @@ async def report_extra_users(client: ClubClient, extra_users_ids: list[int]):
         logger.info(f"Verified {len(extra_users)} users, reporting them")
         channel = await client.fetch_channel(ClubChannelID.MODERATION)
         with mutating_discord(channel) as proxy:
-            await proxy.send("⚠️ Vypadá to, že tito členové nemají účet na Memberful: "
-                            f"{', '.join(user.mention for user in extra_users)}")
+            await proxy.send(
+                "⚠️ Vypadá to, že tito členové nemají účet na Memberful: "
+                f"{', '.join(user.mention for user in extra_users)}"
+            )
     else:
-        logger.info('After all, there are no users to report')
+        logger.info("After all, there are no users to report")
 
 
-def get_active_subscription(subscriptions: list[dict], today: date=None) -> dict:
+def get_active_subscription(subscriptions: list[dict], today: date = None) -> dict:
     today = today or date.today()
-    subscriptions = [s for s in subscriptions if s['active']
-                     and datetime.utcfromtimestamp(s['activatedAt']).date() <= today]
+    subscriptions = [
+        s
+        for s in subscriptions
+        if s["active"] and datetime.utcfromtimestamp(s["activatedAt"]).date() <= today
+    ]
     if len(subscriptions) > 1:
         try:
-            return [s for s in subscriptions
-                    if datetime.utcfromtimestamp(s['activatedAt']).date() == today][0]
+            return [
+                s
+                for s in subscriptions
+                if datetime.utcfromtimestamp(s["activatedAt"]).date() == today
+            ][0]
         except IndexError:
             raise ValueError("Multiple active subscriptions")
     try:
@@ -129,21 +145,24 @@ def get_active_subscription(subscriptions: list[dict], today: date=None) -> dict
 def get_expires_at(subscriptions: list[dict]) -> datetime:
     return datetime.utcfromtimestamp(
         max(
-            subscription['expiresAt'] for subscription in subscriptions
-            if subscription['active']
+            subscription["expiresAt"]
+            for subscription in subscriptions
+            if subscription["active"]
         )
     )
 
 
 def get_coupon(subscription):
-    if subscription['coupon']:
-        return subscription['coupon']['code']
+    if subscription["coupon"]:
+        return subscription["coupon"]["code"]
 
-    orders = list(sorted(subscription['orders'], key=itemgetter('createdAt'), reverse=True))
+    orders = list(
+        sorted(subscription["orders"], key=itemgetter("createdAt"), reverse=True)
+    )
     try:
         last_order = orders[0]
-        if not last_order['coupon']:
+        if not last_order["coupon"]:
             return None
-        return last_order['coupon']['code']
+        return last_order["coupon"]["code"]
     except IndexError:
         return None

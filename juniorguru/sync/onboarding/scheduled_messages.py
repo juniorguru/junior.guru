@@ -13,8 +13,9 @@ ALLOWED_MENTIONS = [
 
 def schedule_message(emoji):
     def decorator(render_content):
-        assert emoji not in SCHEDULED_MESSAGES, 'Duplicate emojis!'
+        assert emoji not in SCHEDULED_MESSAGES, "Duplicate emojis!"
         SCHEDULED_MESSAGES[emoji] = render_content
+
     return decorator
 
 
@@ -23,10 +24,11 @@ def schedule_message(emoji):
 ####################################################################
 
 
-@schedule_message('👋')  # Day 1
+@schedule_message("👋")  # Day 1
 def render_hello(context):
-    member = context['member']
-    text = dedent(f'''
+    member = context["member"]
+    text = dedent(
+        f"""
         Vítej v klubu, {member.mention}! Já jsem kuře, zdejší bot. Pomáhám se vším, co by nemusel <@{ClubMemberID.HONZA}> stíhat sám. Tento privátní kanál jsem vytvořilo jen pro tebe.
 
         **Jak funguje tento kanál?** 💬
@@ -37,27 +39,33 @@ def render_hello(context):
 
         **Neboj se chyb** 💁
         Různých rad a pravidel ti sem postupně dám dost, takže si je určitě všechny nezapamatuješ a rozhodně uděláš něco jinak. To vůbec nevadí! Moderátoři tě rádi opraví, nebo nasměrují. Neboj se jich a ber je spíš jako pomocníky, ne policajty.
-    ''')
+    """
+    )
     if member.intro:
-        text += dedent('''
+        text += dedent(
+            """
             **Představení ostatním** 👋
             Koukám, že už máš svoje představení v kanálu <#788823881024405544>. To je super! Pod tvou zprávou je teď vlákno (_thread_), kam mohou ostatní reagovat a kde můžeš případně něco doplnit. Krátké uvítání tam máš i ode mně.
-        ''')
+        """
+        )
     else:
-        text += dedent('''
+        text += dedent(
+            """
             **Představ se ostatním** 👋
             První, co se hodí v klubu udělat, je představit se v kanálu <#788823881024405544>. Ostatní členové klubu se tak doví, co už máš za sebou a co je tvým cílem. Zajímá nás všechno, díky čemu tě poznáme, ale piš jen to, co chceš, abychom o tobě věděli. Povinné není nic, ale těžko ti dobře poradíme s kariérou nebo kurzem, pokud nebudeme znát tvou situaci.
 
             Co tě přivedlo do klubu? Jaké máš vzdělání a čím se teď živíš? Máš za sebou nějaké IT školy nebo kurzy? Jaké věci už umíš? Jak dlouho se zajímáš o programování? Co tě láká: weby, hry, datová analýza, mobilní appky…? Máš nějaký svůj projekt? Plánuješ si hledat práci v oboru? Kolik na to máš času?
 
             Já vím, není to jednoduché. Překonat ostych, vymyslet co napsat a ještě nějak poskládat slova za sebe. Když to však zvládneš, klub ti bude umět posloužit mnohem líp.
-        ''')
+        """
+        )
     return text
 
 
-@schedule_message('🧭')  # Day 2
+@schedule_message("🧭")  # Day 2
 def render_orientation(context):
-    return dedent('''
+    return dedent(
+        """
         Kanálů je tady mnoho, ale neboj se toho. Po pár dnech si všimneš, že někde se toho děje víc, jinde je to klidnější a něco tě vůbec nezajímá, tak si to vypneš.
 
         **Co jsou kanály?** 💬
@@ -75,12 +83,14 @@ def render_orientation(context):
         Kanály, které víš, že tě nebudou zajímat, si můžeš povypínat. Jdi do kanálu a použij zvoneček. Na počítači je v horní liště, na mobilu se lišta zobrazí, až když zprava vysuneš seznam členů.
 
         Kategorii Archiv (úplně dole) si můžeš schovat kliknutím na její název. Jsou tam staré kanály, které už nepoužíváme, ale chceme, aby jejich historie zůstala ve vyhledávání.
-    ''')
+    """
+    )
 
 
-@schedule_message('💬')  # Day 3
+@schedule_message("💬")  # Day 3
 def render_discord(context):
-    return dedent('''
+    return dedent(
+        """
         Jak funguje Discord? Co to vlastně je? Jak tady správně komunikovat? K čemu jsou a jak fungují vlákna?
 
         **Co je Discord?** 👾
@@ -97,12 +107,14 @@ def render_discord(context):
         Do většiny kanálů můžeš psát volně a nemusíš nad tím moc přemýšlet, ale Rituály (<#788823881024405544>, <#806621830383271937>, <#815906954534191117>) mají speciální režim. Aby zůstaly přehledné, odpovídá se v nich pouze pomocí vláken.
 
         Vlákno zmizí ze seznamu kanálů po týdnu bez aktivity. Můžeš ho ale kdykoliv oživit novým příspěvkem.
-    ''')
+    """
+    )
 
 
-@schedule_message('🐣')  # Day 4
+@schedule_message("🐣")  # Day 4
 def render_juniorguru(context):
-    return dedent(f'''
+    return dedent(
+        f"""
         Na junior.guru není jen klub, ale i spousta motivace a užitečných rad, které by bylo škoda minout.
 
         **Příručka** 📖
@@ -110,12 +122,14 @@ def render_juniorguru(context):
 
         **Podcast** 🎙
         Nahoď sluchátka a pusť si do nich příběhy a rady lidí, kteří se motají kolem začátečníků v IT. <@{ClubMemberID.PAVLINA}> si zve na rozhovor juniory, lidi z firem, lektory kurzů. V podcastu se snaží přinášet odpovědi, inspiraci, motivaci. Všechny díly najdeš na https://junior.guru/podcast/, ale taky na Spotify, na YouTube a v dalších podcastových aplikacích. Epizody vychází jednou měsíčně a mívají půl hodiny. Máš nápad, koho dalšího pozvat? Napiš nám!
-    ''')
+    """
+    )
 
 
-@schedule_message('🙋')  # Day 5
+@schedule_message("🙋")  # Day 5
 def render_roles(context):
-    return dedent('''
+    return dedent(
+        """
         Proč je někdo zelený, nebo žlutý? Co znamená medaile vedle jména? A proč se hodí používat emoji reakce na příspěvky?
 
         **Role** 🏅
@@ -132,12 +146,14 @@ def render_roles(context):
         Já reakce počítám a dělám z toho týdenní souhrny v <#789046675247333397>, ale nejen ty. Členové, kteří mají za poslední rok nebo měsíc nejvíc pozitivně hodnocených příspěvků, ode mě dostávají nejprestižnější roli v klubu, <@&836960665578766396>.
 
         Nehrajeme si na seniory a juniory. Kdokoliv může být nápomocný, ať už dobrou myšlenkou, otázkou, odpovědí, nebo sdílením zajímavých tipů.
-    ''')
+    """
+    )
 
 
-@schedule_message('👀')  # Day 6
+@schedule_message("👀")  # Day 6
 def render_feedback(context):
-    return dedent(f'''
+    return dedent(
+        f"""
         Píp pípípíp! Pokaždé spousta písmenek ke čtení, že? Pro změnu zkusím zavřít zobáček a poslouchat. Zeptám se tě na tři věci:
 
         1️⃣ Díky čemu nebo komu víš, že junior.guru existuje? Google? Doporučení? Sociální síť? Podcasty?
@@ -147,12 +163,14 @@ def render_feedback(context):
         3️⃣ Co ti tu chybí? Co se ti tu nelíbí? Co by šlo vylepšit? Z čeho máš blbý pocit?
 
         Odpovědi pomůžou <@{ClubMemberID.HONZA}> ve vylepšování junior.guru.
-    ''')
+    """
+    )
 
 
-@schedule_message('💛')  # Day 7
+@schedule_message("💛")  # Day 7
 def render_coc(context):
-    return dedent(f'''
+    return dedent(
+        f"""
         Možná tě něco zajímá, ale bojíš se zeptat. Možná máš co napsat k tématu, ale nechceš riskovat nepříjemné reakce. Co když se ti někdo vysměje? Co když tě někdo nepochopí?
 
         **Neboj!** <:meowsheart:1002448596572061746>
@@ -171,12 +189,14 @@ def render_coc(context):
         Hlídat nevhodné chování je jako dávat pozor, aby zahrádka nezarostla plevelem. Placený zahradník <@{ClubMemberID.HONZA}> vše vyřeší za tebe, ale nemá oči všude a uvítá pomoc.
 
         Stačí nechat pár kopřiv a záhonem se už nikdo chtít procházet nebude. Takže pokud se ti něco nepozdává, sdílej svoje pocity s moderátory. Neboj, zůstane to jen mezi vámi.
-    ''')
+    """
+    )
 
 
-@schedule_message('💡')  # Day 8
+@schedule_message("💡")  # Day 8
 def render_asking(context):
-    return dedent('''
+    return dedent(
+        """
         Klub je přínosný, i pokud si tady jen čteš. Nejsi však na Wikipedii, tohle je komunita! Když se zapojíš, poslouží ti mnohem lépe. Žádný strach, nic jako hloupá otázka tady neexistuje.
 
         **Ptej se i na „blbosti”** 🙋
@@ -187,7 +207,8 @@ def render_asking(context):
 
         **Jak se ptát** 🤔
         Pokud existuje způsob, jak se zeptat lépe, nebo jak lze problém příště řešit i bez nás, tak ti to rádi a bez keců ukážeme. Nikoho neobtěžuješ. Není vůbec snadné položit programátorský dotaz správně a se vším, co k tomu patří. Je to dovednost jako každá jiná. Naučíš se ji jen tím, že se budeš často ptát. A taky přečtením návodu v příručce 😀 https://junior.guru/handbook/help/
-    ''')
+    """
+    )
 
 
 # ale říct že je to lepší pro klub a třeba "pokud chcete místní komunitu a klub podpořit, prosím napište svůj dotaz do kanálů tomu určených" nebo tak něco
@@ -230,9 +251,10 @@ def render_asking(context):
 # TBD faq - co mam z clenstvi v klubu jako...? co tady jde delat… otevri tema, atd. a dat priklady co se muzou zeptat
 
 
-@schedule_message('💸')  # Day 9
+@schedule_message("💸")  # Day 9
 def render_sth(context):
-    return dedent(f'''
+    return dedent(
+        f"""
         Klub je na první dva týdny zdarma, ale pak se za něj platí. Jak to přesně funguje?
 
         **Za Discord platit nemusíš** 🆓
@@ -252,7 +274,8 @@ def render_sth(context):
 
         **Stipendium** 🆘
         Pokud se ti klub líbí, ale na předplatné nemáš, zažádej si na https://junior.guru/finaid/ o stipendium
-    ''')
+    """
+    )
 
 
 ####################################################################
@@ -261,7 +284,7 @@ def render_sth(context):
 
 
 ### 🤔 PORADNA
-#jak funguje poradna, jak se spravne ptat, psani kodu barevně (na mobilu nefunguje), dej lidem aspon DK, ukol zkus zalozit dotaz a kdyz ti to nepujde dej vedet, nemusis to dokoncit
+# jak funguje poradna, jak se spravne ptat, psani kodu barevně (na mobilu nefunguje), dej lidem aspon DK, ukol zkus zalozit dotaz a kdyz ti to nepujde dej vedet, nemusis to dokoncit
 # vysvetlit markdown
 # **Formátování zpráv a kód**
 # Text zpráv může být **tučně** `**tučně**`, __kurzívou__ `__kurzívou__`, nebo může vypadat jako `kód`, když kolem něj napíšeš tenhle divný znak, kterému se říká __backtick__: \` Kód na víc řádků se hodí dát do trojice takových backticků na začátku a na konci: \`\`\`
