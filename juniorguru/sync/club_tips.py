@@ -36,7 +36,7 @@ REFERENCE_RE = re.compile(
 
 DOSE_EMOJI = "💡"
 
-INTRO_TIP_EMOJI = '👋'
+INTRO_TIP_EMOJI = "👋"
 
 INTRO_REMINDER_EMOJI = "💡"
 
@@ -255,24 +255,30 @@ async def dose_tips(client: ClubClient, tips: list[dict], force_dose: bool):
 
 @db.connection_context()
 async def ensure_intro_reminder(client: ClubClient):
-    last_message = ClubMessage.last_bot_message(ClubChannelID.INTRO, INTRO_REMINDER_EMOJI)
+    last_message = ClubMessage.last_bot_message(
+        ClubChannelID.INTRO, INTRO_REMINDER_EMOJI
+    )
     if is_message_over_period_ago(last_message, timedelta(days=30)):
-        logger.info('Last reminder is more than one month old!')
+        logger.info("Last reminder is more than one month old!")
 
         channel_tips = await client.fetch_channel(ClubChannelID.TIPS)
         threads = threads_by_emoji(channel_tips.threads)
         intro_tip_thread = threads[INTRO_TIP_EMOJI]
-        logger.info(f"Assuming the intro thread is #{intro_tip_thread.id}, {intro_tip_thread.jump_url}")
+        logger.info(
+            f"Assuming the intro thread is #{intro_tip_thread.id}, {intro_tip_thread.jump_url}"
+        )
 
-        logger.info('Sending new reminder')
+        logger.info("Sending new reminder")
         channel = await client.fetch_channel(ClubChannelID.INTRO)
         with mutating_discord(channel) as proxy:
-            await proxy.send(content=(
-                f"{INTRO_REMINDER_EMOJI} Proč je dobré se představit ostatním a co vůbec napsat? "
-                f"Přečti si klubový tip {intro_tip_thread.jump_url}"
-            ))
+            await proxy.send(
+                content=(
+                    f"{INTRO_REMINDER_EMOJI} Proč je dobré se představit ostatním a co vůbec napsat? "
+                    f"Přečti si klubový tip {intro_tip_thread.jump_url}"
+                )
+            )
 
-        logger.info('Deleting previous reminder')
+        logger.info("Deleting previous reminder")
         message = channel.fetch_message(last_message.id)
         with mutating_discord(message) as proxy:
             await proxy.delete()

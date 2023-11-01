@@ -87,7 +87,6 @@ include = "\\.py$"
 exclude = """(\
 juniorguru/sync/d.*|\
 juniorguru/sync/f.*|\
-juniorguru/sync/i.*|\
 juniorguru/sync/j.*|\
 juniorguru/sync/m.*|\
 juniorguru/sync/o.*|\
