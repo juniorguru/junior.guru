@@ -94,7 +94,6 @@ juniorguru/sync/o.*|\
 juniorguru/sync/p.*|\
 juniorguru/sync/r.*|\
 juniorguru/sync/s.*|\
-juniorguru/sync/w.*|\
 juniorguru/models|\
 juniorguru/[^_]+_legacy|\
 node_modules\
