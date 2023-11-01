@@ -95,7 +95,6 @@ juniorguru/models/j.*|\
 juniorguru/models/m.*|\
 juniorguru/models/p.*|\
 juniorguru/models/s.*|\
-juniorguru/models/t.*|\
 juniorguru/[^_]+_legacy|\
 node_modules\
 )"""
