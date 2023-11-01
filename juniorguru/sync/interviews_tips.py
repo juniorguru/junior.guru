@@ -1,6 +1,5 @@
 from datetime import timedelta
 
-import emoji
 from discord import Color, Embed
 
 from juniorguru.cli.sync import main as cli
@@ -8,7 +7,6 @@ from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import (
     ClubChannelID,
     ClubClient,
-    ClubMemberID,
     is_message_over_period_ago,
 )
 from juniorguru.lib.mutations import mutating_discord
@@ -32,7 +30,7 @@ def main():
 async def discord_task(client: ClubClient):
     last_message = ClubMessage.last_bot_message(ClubChannelID.INTERVIEWS, INTERVIEWS_EMOJI)
     if is_message_over_period_ago(last_message, timedelta(days=30)):
-        logger.info('Last message is more than one month old!')
+        logger.info('Last reminder is more than one month old!')
         channel = await client.fetch_channel(ClubChannelID.INTERVIEWS)
         embed_mentors_description = '\n'.join([
             f'[{mentor.user.display_name}]({mentor.message_url}) – {mentor.topics}'
@@ -45,8 +43,9 @@ async def discord_task(client: ClubClient):
             '[příručku na junior.guru](https://junior.guru/handbook/interview/) o tom, '
             'jak se na ně připravit.'
         ))
+
+        logger.info('Sending new reminder')
         with mutating_discord(channel) as proxy:
-            await proxy.purge(check=is_message_bot_reminder)
             await proxy.send(content=(
                                    f"{INTERVIEWS_EMOJI} Pomohla by ti soustavnější příprava na přijímací řízení? "
                                    "Chceš si jednorázově vyzkoušet pohovor nanečisto, česky nebo anglicky? "
@@ -54,8 +53,7 @@ async def discord_task(client: ClubClient):
                                ),
                                embeds=[embed_mentors, embed_handbook])
 
-
-def is_message_bot_reminder(message):
-    return (message.author.id == ClubMemberID.BOT and
-            message.content and
-            emoji.is_emoji(message.content[0]))
+        logger.info('Deleting previous reminder')
+        message = channel.fetch_message(last_message.id)
+        with mutating_discord(message) as proxy:
+            await proxy.delete()

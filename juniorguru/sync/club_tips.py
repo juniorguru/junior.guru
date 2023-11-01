@@ -1,6 +1,6 @@
 import asyncio
 import re
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 import click
@@ -13,8 +13,10 @@ from juniorguru.lib.discord_club import (
     ClubClient,
     ClubMemberID,
     get_starting_emoji,
+    is_message_over_period_ago,
     parse_channel,
 )
+from juniorguru.lib.mutations import mutating_discord
 from juniorguru.lib.reading_time import reading_time
 from juniorguru.lib.remove_emoji import remove_emoji
 from juniorguru.models.base import db
@@ -33,6 +35,10 @@ REFERENCE_RE = re.compile(
 )
 
 DOSE_EMOJI = "💡"
+
+INTRO_TIP_EMOJI = '👋'
+
+INTRO_REMINDER_EMOJI = "💡"
 
 DEFAULT_REACTION_EMOJI = "✅"
 
@@ -58,6 +64,7 @@ def main(tips_path: Path, force_dose: bool):
     logger.info(f"Loaded {len(tips)} tips")
     discord_sync.run(sync_tips, tips)
     discord_sync.run(dose_tips, tips, force_dose)
+    discord_sync.run(ensure_intro_reminder)
 
 
 def load_tips(tips_path: Path, roles=None):
@@ -244,6 +251,31 @@ async def dose_tips(client: ClubClient, tips: list[dict], force_dose: bool):
                 )
             ),
         )
+
+
+@db.connection_context()
+async def ensure_intro_reminder(client: ClubClient):
+    last_message = ClubMessage.last_bot_message(ClubChannelID.INTRO, INTRO_REMINDER_EMOJI)
+    if is_message_over_period_ago(last_message, timedelta(days=30)):
+        logger.info('Last reminder is more than one month old!')
+
+        channel_tips = await client.fetch_channel(ClubChannelID.TIPS)
+        threads = threads_by_emoji(channel_tips.threads)
+        intro_tip_thread = threads[INTRO_TIP_EMOJI]
+        logger.info(f"Assuming the intro thread is #{intro_tip_thread.id}, {intro_tip_thread.jump_url}")
+
+        logger.info('Sending new reminder')
+        channel = await client.fetch_channel(ClubChannelID.INTRO)
+        with mutating_discord(channel) as proxy:
+            await proxy.send(content=(
+                f"{INTRO_REMINDER_EMOJI} Proč je dobré se představit ostatním a co vůbec napsat? "
+                f"Přečti si klubový tip {intro_tip_thread.jump_url}"
+            ))
+
+        logger.info('Deleting previous reminder')
+        message = channel.fetch_message(last_message.id)
+        with mutating_discord(message) as proxy:
+            await proxy.delete()
 
 
 def threads_by_emoji(threads: list[Thread]) -> dict[str, Thread]:
