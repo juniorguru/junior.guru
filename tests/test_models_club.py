@@ -508,10 +508,10 @@ def test_user_first_seen_on_from_pins(test_db):
     "today, expected",
     [
         (date(2021, 4, 1), True),
-        (date(2021, 4, 15), True),
-        (date(2021, 4, 16), True),
-        (date(2021, 4, 17), False),
-        (date(2021, 4, 20), False),
+        (date(2021, 4, 20), True),
+        (date(2021, 4, 21), True),
+        (date(2021, 4, 22), False),
+        (date(2021, 4, 29), False),
     ],
 )
 def test_user_is_new(test_db, today, expected):
