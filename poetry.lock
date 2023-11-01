@@ -1663,7 +1663,7 @@ py-cord = {version = "2.4.1", extras = ["speed"]}
 
 [package.source]
 type = "git"
-url = "https://github.com/juniorguru/juniorguru-chick.git"
+url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
 resolved_reference = "74e4e73ee9732a0a2daa60638f7957e2cda8b812"
 
@@ -3645,4 +3645,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "883543ffd5428f9a6e42e6120e248bb4d4c0fbf20662a8755783a4726f3c2353"
+content-hash = "e4061ba408c359fd1f968b19157cfddb97a3010cdc921916c5e163a34ca19931"
