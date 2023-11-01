@@ -16,174 +16,275 @@ from juniorguru.models.mentor import Mentor
 from juniorguru.models.partner import Partnership
 
 
-logger = loggers.from_path(__file__)
-
-YAML_PATH = Path('juniorguru/data/roles.yml')
+YAML_PATH = Path("juniorguru/data/roles.yml")
 
 YAML_SCHEMA = Seq(
-    Map({
-        'id': Int(),
-        'slug': Str(),
-        'description': Str(),
-    })
+    Map(
+        {
+            "id": Int(),
+            "slug": Str(),
+            "description": Str(),
+        }
+    )
 )
 
-PARTNER_ROLE_PREFIX = 'Firma: '
+PARTNER_ROLE_PREFIX = "Firma: "
 
-STUDENT_ROLE_PREFIX = 'Student: '
+STUDENT_ROLE_PREFIX = "Student: "
 
 
-@cli.sync_command(dependencies=['club-content',
-                                'events',
-                                'avatars',
-                                'members',
-                                'partners',
-                                'mentoring'])
+logger = loggers.from_path(__file__)
+
+
+@cli.sync_command(
+    dependencies=[
+        "club-content",
+        "events",
+        "avatars",
+        "members",
+        "partners",
+        "mentoring",
+    ]
+)
 def main():
     discord_sync.run(discord_task)
 
 
 @db.connection_context()
 async def discord_task(client: ClubClient):
-    logger.info('Setting up db table for documented roles')
+    logger.info("Setting up db table for documented roles")
     ClubDocumentedRole.drop_table()
     ClubDocumentedRole.create_table()
 
-    logger.info('Fetching info about roles')
-    yaml_records = {record.data['id']: record.data
-                    for record in load(YAML_PATH.read_text(), YAML_SCHEMA)}
+    logger.info("Fetching info about roles")
+    yaml_records = {
+        record.data["id"]: record.data
+        for record in load(YAML_PATH.read_text(), YAML_SCHEMA)
+    }
 
     # Why sorting and enumeration? Citing docs: "The recommended and correct way
     # to compare for roles in the hierarchy is using the comparison operators on
     # the role objects themselves."
     discord_roles = await client.club_guild.fetch_roles()
-    documented_discord_roles = sorted([discord_role for discord_role
-                                       in discord_roles
-                                       if discord_role.id in yaml_records], reverse=True)
+    documented_discord_roles = sorted(
+        [
+            discord_role
+            for discord_role in discord_roles
+            if discord_role.id in yaml_records
+        ],
+        reverse=True,
+    )
 
     for position, discord_role in enumerate(documented_discord_roles, start=1):
         logger.debug(f"#{position} {discord_role.name}")
-        ClubDocumentedRole.create(id=discord_role.id,
-                                  position=position,
-                                  name=discord_role.name,
-                                  mention=discord_role.mention,
-                                  slug=yaml_records[discord_role.id]['slug'],
-                                  description=yaml_records[discord_role.id]['description'].strip(),
-                                  emoji=discord_role.unicode_emoji)
+        ClubDocumentedRole.create(
+            id=discord_role.id,
+            position=position,
+            name=discord_role.name,
+            mention=discord_role.mention,
+            slug=yaml_records[discord_role.id]["slug"],
+            description=yaml_records[discord_role.id]["description"].strip(),
+            emoji=discord_role.unicode_emoji,
+        )
 
-    logger.info('Preparing data for computing how to re-assign roles')
+    logger.info("Preparing data for computing how to re-assign roles")
     members = ClubUser.members_listing()
     partners = [partnership.partner for partnership in Partnership.active_listing()]
     changes = []
     top_members_limit = ClubUser.top_members_limit()
-    logger.info(f'members_count={len(members)}, top_members_limit={top_members_limit}')
+    logger.info(f"members_count={len(members)}, top_members_limit={top_members_limit}")
 
-    logger.info('Computing how to re-assign role: most_discussing')
-    role_id = ClubDocumentedRole.get_by_slug('most_discussing').id
-    content_size_stats = calc_stats(members, lambda m: m.content_size(), top_members_limit)
+    logger.info("Computing how to re-assign role: most_discussing")
+    role_id = ClubDocumentedRole.get_by_slug("most_discussing").id
+    content_size_stats = calc_stats(
+        members, lambda m: m.content_size(), top_members_limit
+    )
     logger.debug(f"content_size {repr_stats(members, content_size_stats)}")
-    recent_content_size_stats = calc_stats(members, lambda m: m.recent_content_size(), top_members_limit)
-    logger.debug(f"recent_content_size {repr_stats(members, recent_content_size_stats)}")
-    most_discussing_members_ids = set(content_size_stats.keys()) | set(recent_content_size_stats.keys())
-    logger.debug(f"most_discussing_members: {repr_ids(members, most_discussing_members_ids)}")
+    recent_content_size_stats = calc_stats(
+        members, lambda m: m.recent_content_size(), top_members_limit
+    )
+    logger.debug(
+        f"recent_content_size {repr_stats(members, recent_content_size_stats)}"
+    )
+    most_discussing_members_ids = set(content_size_stats.keys()) | set(
+        recent_content_size_stats.keys()
+    )
+    logger.debug(
+        f"most_discussing_members: {repr_ids(members, most_discussing_members_ids)}"
+    )
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.initial_roles, most_discussing_members_ids, role_id))
+        changes.extend(
+            evaluate_changes(
+                member.id, member.initial_roles, most_discussing_members_ids, role_id
+            )
+        )
 
-    logger.info('Computing how to re-assign role: most_helpful')
-    role_id = ClubDocumentedRole.get_by_slug('most_helpful').id
-    upvotes_count_stats = calc_stats(members, lambda m: m.upvotes_count(), top_members_limit)
+    logger.info("Computing how to re-assign role: most_helpful")
+    role_id = ClubDocumentedRole.get_by_slug("most_helpful").id
+    upvotes_count_stats = calc_stats(
+        members, lambda m: m.upvotes_count(), top_members_limit
+    )
     logger.debug(f"upvotes_count {repr_stats(members, upvotes_count_stats)}")
-    recent_upvotes_count_stats = calc_stats(members, lambda m: m.recent_upvotes_count(), top_members_limit)
-    logger.debug(f"recent_upvotes_count {repr_stats(members, recent_upvotes_count_stats)}")
-    most_helpful_members_ids = set(upvotes_count_stats.keys()) | set(recent_upvotes_count_stats.keys())
+    recent_upvotes_count_stats = calc_stats(
+        members, lambda m: m.recent_upvotes_count(), top_members_limit
+    )
+    logger.debug(
+        f"recent_upvotes_count {repr_stats(members, recent_upvotes_count_stats)}"
+    )
+    most_helpful_members_ids = set(upvotes_count_stats.keys()) | set(
+        recent_upvotes_count_stats.keys()
+    )
     logger.debug(f"most_helpful_members: {repr_ids(members, most_helpful_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.initial_roles, most_helpful_members_ids, role_id))
+        changes.extend(
+            evaluate_changes(
+                member.id, member.initial_roles, most_helpful_members_ids, role_id
+            )
+        )
 
-    logger.info('Computing how to re-assign role: has_intro_and_avatar')
-    role_id = ClubDocumentedRole.get_by_slug('has_intro_and_avatar').id
-    intro_avatar_members_ids = [member.id for member in members if member.has_avatar and member.intro]
+    logger.info("Computing how to re-assign role: has_intro_and_avatar")
+    role_id = ClubDocumentedRole.get_by_slug("has_intro_and_avatar").id
+    intro_avatar_members_ids = [
+        member.id for member in members if member.has_avatar and member.intro
+    ]
     logger.debug(f"intro_avatar_members: {repr_ids(members, intro_avatar_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.initial_roles, intro_avatar_members_ids, role_id))
+        changes.extend(
+            evaluate_changes(
+                member.id, member.initial_roles, intro_avatar_members_ids, role_id
+            )
+        )
 
-    logger.info('Computing how to re-assign role: newcomer')
-    role_id = ClubDocumentedRole.get_by_slug('newcomer').id
+    logger.info("Computing how to re-assign role: newcomer")
+    role_id = ClubDocumentedRole.get_by_slug("newcomer").id
     new_members_ids = [member.id for member in members if member.is_new()]
     logger.debug(f"new_members_ids: {repr_ids(members, new_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.initial_roles, new_members_ids, role_id))
+        changes.extend(
+            evaluate_changes(member.id, member.initial_roles, new_members_ids, role_id)
+        )
 
-    logger.info('Computing how to re-assign role: year_old')
-    role_id = ClubDocumentedRole.get_by_slug('year_old').id
+    logger.info("Computing how to re-assign role: year_old")
+    role_id = ClubDocumentedRole.get_by_slug("year_old").id
     year_old_members_ids = [member.id for member in members if member.is_year_old]
     logger.debug(f"year_old_members_ids: {repr_ids(members, year_old_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.initial_roles, year_old_members_ids, role_id))
+        changes.extend(
+            evaluate_changes(
+                member.id, member.initial_roles, year_old_members_ids, role_id
+            )
+        )
 
-    logger.info('Computing how to re-assign role: speaker')
-    role_id = ClubDocumentedRole.get_by_slug('speaker').id
+    logger.info("Computing how to re-assign role: speaker")
+    role_id = ClubDocumentedRole.get_by_slug("speaker").id
     speaking_members_ids = [member.id for member in Event.list_speaking_members()]
     logger.debug(f"speaking_members_ids: {repr_ids(members, speaking_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.initial_roles, speaking_members_ids, role_id))
+        changes.extend(
+            evaluate_changes(
+                member.id, member.initial_roles, speaking_members_ids, role_id
+            )
+        )
 
-    logger.info('Computing how to re-assign role: mentor')
-    role_id = ClubDocumentedRole.get_by_slug('mentor').id
+    logger.info("Computing how to re-assign role: mentor")
+    role_id = ClubDocumentedRole.get_by_slug("mentor").id
     mentors_members_ids = [mentor.user.id for mentor in Mentor.listing()]
     logger.debug(f"mentors_ids: {repr_ids(members, mentors_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.initial_roles, mentors_members_ids, role_id))
+        changes.extend(
+            evaluate_changes(
+                member.id, member.initial_roles, mentors_members_ids, role_id
+            )
+        )
 
-    logger.info('Computing how to re-assign role: founder')
-    role_id = ClubDocumentedRole.get_by_slug('founder').id
+    logger.info("Computing how to re-assign role: founder")
+    role_id = ClubDocumentedRole.get_by_slug("founder").id
     founders_members_ids = [member.id for member in members if member.is_founder()]
     logger.debug(f"founders_members_ids: {repr_ids(members, founders_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.initial_roles, founders_members_ids, role_id))
+        changes.extend(
+            evaluate_changes(
+                member.id, member.initial_roles, founders_members_ids, role_id
+            )
+        )
 
-    logger.info('Computing how to re-assign role: partner')
-    role_id = ClubDocumentedRole.get_by_slug('partner').id
+    logger.info("Computing how to re-assign role: partner")
+    role_id = ClubDocumentedRole.get_by_slug("partner").id
     coupons = list(filter(None, (partner.coupon for partner in partners)))
     partners_members_ids = [member.id for member in members if member.coupon in coupons]
     logger.debug(f"partners_members_ids: {repr_ids(members, partners_members_ids)}")
     for member in members:
-        changes.extend(evaluate_changes(member.id, member.initial_roles, partners_members_ids, role_id))
+        changes.extend(
+            evaluate_changes(
+                member.id, member.initial_roles, partners_members_ids, role_id
+            )
+        )
 
     # syncing with Discord
-    logger.info(f'Managing roles for {len(partners)} partners')
+    logger.info(f"Managing roles for {len(partners)} partners")
     await manage_partner_roles(client, discord_roles, partners)
 
     for partner in partners:
         partner_members_ids = [member.id for member in partner.list_members]
-        logger.debug(f"partner_members_ids({partner!r}): {repr_ids(members, partner_members_ids)}")
+        logger.debug(
+            f"partner_members_ids({partner!r}): {repr_ids(members, partner_members_ids)}"
+        )
         for member in members:
-            changes.extend(evaluate_changes(member.id, member.initial_roles, partner_members_ids, partner.role_id))
+            changes.extend(
+                evaluate_changes(
+                    member.id,
+                    member.initial_roles,
+                    partner_members_ids,
+                    partner.role_id,
+                )
+            )
 
         student_members_ids = [member.id for member in partner.list_student_members]
-        logger.debug(f"student_members_ids({partner!r}): {repr_ids(members, student_members_ids)}")
+        logger.debug(
+            f"student_members_ids({partner!r}): {repr_ids(members, student_members_ids)}"
+        )
         for member in members:
-            changes.extend(evaluate_changes(member.id, member.initial_roles, student_members_ids, partner.student_role_id))
+            changes.extend(
+                evaluate_changes(
+                    member.id,
+                    member.initial_roles,
+                    student_members_ids,
+                    partner.student_role_id,
+                )
+            )
 
-    logger.info(f'Applying {len(changes)} changes to roles:\n{pformat(changes)}')
+    logger.info(f"Applying {len(changes)} changes to roles:\n{pformat(changes)}")
     await apply_changes(client, changes)
 
 
 # TODO rewrite so it doesn't need any async/await and can be tested
 async def manage_partner_roles(client: ClubClient, discord_roles, partners):
-    partner_roles_mapping = {PARTNER_ROLE_PREFIX + partner.name: partner
-                             for partner in partners}
-    student_roles_mapping = {STUDENT_ROLE_PREFIX + partner.name: partner
-                             for partner in partners if partner.student_coupon}
-    roles_names = list(partner_roles_mapping.keys()) + list(student_roles_mapping.keys())
-    logger.info(f"There should be {len(roles_names)} roles with partner or student prefixes")
+    partner_roles_mapping = {
+        PARTNER_ROLE_PREFIX + partner.name: partner for partner in partners
+    }
+    student_roles_mapping = {
+        STUDENT_ROLE_PREFIX + partner.name: partner
+        for partner in partners
+        if partner.student_coupon
+    }
+    roles_names = list(partner_roles_mapping.keys()) + list(
+        student_roles_mapping.keys()
+    )
+    logger.info(
+        f"There should be {len(roles_names)} roles with partner or student prefixes"
+    )
 
-    existing_roles = [role for role in discord_roles
-                      if role.name.startswith((PARTNER_ROLE_PREFIX, STUDENT_ROLE_PREFIX))]
+    existing_roles = [
+        role
+        for role in discord_roles
+        if role.name.startswith((PARTNER_ROLE_PREFIX, STUDENT_ROLE_PREFIX))
+    ]
     logger.info(f"Found {len(existing_roles)} roles with partner or student prefixes")
 
     roles_to_remove = [role for role in existing_roles if role.name not in roles_names]
-    logger.info(f"Roles [{', '.join([role.name for role in roles_to_remove])}] will be removed")
+    logger.info(
+        f"Roles [{', '.join([role.name for role in roles_to_remove])}] will be removed"
+    )
     for role in roles_to_remove:
         logger.info(f"Removing role '{role.name}'")
         with mutating_discord(role) as proxy:
@@ -193,12 +294,19 @@ async def manage_partner_roles(client: ClubClient, discord_roles, partners):
     logger.info(f"Roles [{', '.join(roles_names_to_add)}] will be added")
     for role_name in roles_names_to_add:
         logger.info(f"Adding role '{role_name}'")
-        color = Color.dark_grey() if role_name.startswith(PARTNER_ROLE_PREFIX) else Color.default()
+        color = (
+            Color.dark_grey()
+            if role_name.startswith(PARTNER_ROLE_PREFIX)
+            else Color.default()
+        )
         with mutating_discord(client.club_guild) as proxy:
             await proxy.create_role(name=role_name, color=color, mentionable=True)
 
-    existing_roles = [role for role in discord_roles
-                      if role.name.startswith((PARTNER_ROLE_PREFIX, STUDENT_ROLE_PREFIX))]
+    existing_roles = [
+        role
+        for role in discord_roles
+        if role.name.startswith((PARTNER_ROLE_PREFIX, STUDENT_ROLE_PREFIX))
+    ]
     for role in existing_roles:
         partner = partner_roles_mapping.get(role.name)
         if partner:
@@ -217,8 +325,10 @@ async def apply_changes(client: ClubClient, changes):
     # Can't take discord_roles as an argument and use instead of fetching, because before
     # this function runs, manage_partner_roles makes changes to the list of roles. This
     # function applies all changes to members, including the partner/student ones.
-    all_discord_roles = {discord_role.id: discord_role
-                         for discord_role in await client.club_guild.fetch_roles()}
+    all_discord_roles = {
+        discord_role.id: discord_role
+        for discord_role in await client.club_guild.fetch_roles()
+    }
 
     changes_by_members = {}
     for member_id, op, role_id in changes:
@@ -227,14 +337,20 @@ async def apply_changes(client: ClubClient, changes):
 
     for member_id, changes in changes_by_members.items():
         discord_member = await client.club_guild.fetch_member(member_id)
-        if changes['add']:
-            discord_roles = [all_discord_roles[role_id] for role_id in changes['add']]
-            logger.debug(f'{discord_member.display_name}: adding {repr_roles(discord_roles)}')
+        if changes["add"]:
+            discord_roles = [all_discord_roles[role_id] for role_id in changes["add"]]
+            logger.debug(
+                f"{discord_member.display_name}: adding {repr_roles(discord_roles)}"
+            )
             with mutating_discord(discord_member) as proxy:
                 await proxy.add_roles(*discord_roles)
-        if changes['remove']:
-            discord_roles = [all_discord_roles[role_id] for role_id in changes['remove']]
-            logger.debug(f'{discord_member.display_name}: removing {repr_roles(discord_roles)}')
+        if changes["remove"]:
+            discord_roles = [
+                all_discord_roles[role_id] for role_id in changes["remove"]
+            ]
+            logger.debug(
+                f"{discord_member.display_name}: removing {repr_roles(discord_roles)}"
+            )
             with mutating_discord(discord_member) as proxy:
                 await proxy.remove_roles(*discord_roles)
 
@@ -250,9 +366,9 @@ def calc_stats(members, calc_member_fn, top_members_limit):
 
 def evaluate_changes(member_id, initial_roles_ids, role_members_ids, role_id):
     if member_id in role_members_ids and role_id not in initial_roles_ids:
-        return [(member_id, 'add', role_id)]
+        return [(member_id, "add", role_id)]
     if member_id not in role_members_ids and role_id in initial_roles_ids:
-        return [(member_id, 'remove', role_id)]
+        return [(member_id, "remove", role_id)]
     return []
 
 
@@ -263,8 +379,15 @@ def repr_stats(members, stats):
 
 def repr_ids(members, members_ids):
     display_names = {member.id: member.display_name for member in members}
-    return repr(sorted([display_names.get(member_id, "(doesn't exist)") for member_id in members_ids],
-                       key=str.lower))
+    return repr(
+        sorted(
+            [
+                display_names.get(member_id, "(doesn't exist)")
+                for member_id in members_ids
+            ],
+            key=str.lower,
+        )
+    )
 
 
 def repr_roles(roles):

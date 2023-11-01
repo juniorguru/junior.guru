@@ -27,9 +27,7 @@ async def manage_category(guild, async_fn):
             if e.code != CHANNELS_PER_CATEGORY_EXCEPTION_CODE:
                 raise
             logger.info(f"Category #{category.id} is full")  # fresh fetch
-            category = get_available_category(
-                await guild.fetch_channels()
-            )
+            category = get_available_category(await guild.fetch_channels())
 
 
 class NoOnboardingCategoriesAvailableError(Exception):
