@@ -264,9 +264,7 @@ def postprocess_jobs(pipelines, workers=None):
         joinable.join()
 
 
-db.connection_context()
-
-
+@db.connection_context()
 def _query(id_queue):
     """
     A single process taking care of listing all jobs in the db
@@ -276,9 +274,7 @@ def _query(id_queue):
         id_queue.put(job.id)
 
 
-db.connection_context()
-
-
+@db.connection_context()
 def _postprocessor(id, op_queue, id_queue, pipelines):
     """
     Processes taking care of passing items through the postprocessing
