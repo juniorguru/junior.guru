@@ -9,12 +9,31 @@ from juniorguru.models.web_usage import WebUsage
 
 
 PRODUCTS = {
-    "total": ["*"],
-    "home": ["/"],
-    "club": ["/club", "/club/"],
-    "handbook": ["/handbook", "/handbook/", "/handbook/*"],
-    "courses": ["/courses", "/courses/", "/courses/*"],
-    "jobs": ["/jobs", "/jobs/", "/jobs/*"],
+    "total": [
+        "*",
+    ],
+    "home": [
+        "/",
+    ],
+    "club": [
+        "/club",
+        "/club/",
+    ],
+    "handbook": [
+        "/handbook",
+        "/handbook/",
+        "/handbook/*",
+    ],
+    "courses": [
+        "/courses",
+        "/courses/",
+        "/courses/*",
+    ],
+    "jobs": [
+        "/jobs",
+        "/jobs/",
+        "/jobs/*",
+    ],
     "podcast": [
         "/podcast",
         "/podcast/",
