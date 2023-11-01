@@ -17,16 +17,16 @@ from juniorguru.sync.transactions.categories_spec import CATEGORIES_SPEC
 
 TODO_TEXT_RE = re.compile(
     r"""
-    ^
-        Nespárovaná\s+
-        příchozí\s+
-        platba[\s\-]+
-        VS:\s+
-        (?P<variable_symbol>\w+)?,\s+
-        částka:\s+
-        (?P<amount>[\d\xa0,]+)\s+
-    Kč
-""",
+        ^
+            Nespárovaná\s+
+            příchozí\s+
+            platba[\s\-]+
+            VS:\s+
+            (?P<variable_symbol>\w+)?,\s+
+            částka:\s+
+            (?P<amount>[\d\xa0,]+)\s+
+        Kč
+    """,
     re.VERBOSE,
 )
 

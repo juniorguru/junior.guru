@@ -3,15 +3,15 @@ import re
 
 COUPON_RE = re.compile(
     r"""
-    ^
-        (?P<slug>
-            (?P<student_prefix>STUDENT)?
-            [A-Z0-9]+
-            [A-Z]+
-        )
-        (?P<suffix>[0-9]{5,})
-    $
-""",
+        ^
+            (?P<slug>
+                (?P<student_prefix>STUDENT)?
+                [A-Z0-9]+
+                [A-Z]+
+            )
+            (?P<suffix>[0-9]{5,})
+        $
+    """,
     re.VERBOSE,
 )
 

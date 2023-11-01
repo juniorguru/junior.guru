@@ -26,11 +26,11 @@ from juniorguru.sync.club_threads import DEFAULT_AUTO_ARCHIVE_DURATION
 
 REFERENCE_RE = re.compile(
     r"""
-    <
-        (?P<prefix>[#@&]+)
-        (?P<value>[^>]+)
-    >
-""",
+        <
+            (?P<prefix>[#@&]+)
+            (?P<value>[^>]+)
+        >
+    """,
     re.VERBOSE,
 )
 

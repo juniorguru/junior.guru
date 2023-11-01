@@ -25,30 +25,30 @@ DEFAULT_CHANNELS_HISTORY_SINCE = timedelta(days=380)
 
 MESSAGE_URL_RE = re.compile(
     r"""
-    https://discord.com/channels/
-    (
-        (?P<guild_id>\d+)
-        |
-        (@\w+)
-    )/
-    (?P<channel_id>\d+)/
-    (?P<message_id>\d+)/?
-""",
+        https://discord.com/channels/
+        (
+            (?P<guild_id>\d+)
+            |
+            (@\w+)
+        )/
+        (?P<channel_id>\d+)/
+        (?P<message_id>\d+)/?
+    """,
     re.VERBOSE,
 )
 
 PINNED_MESSAGE_URL_RE = re.compile(
     r"""
-    \[
-        (Hop\s+na|Celý)\s+příspěvek
-    \]
-    \(
-        (?P<url>
-            https://discord.com/
-            ([^\)]+)
-        )
-    \)
-""",
+        \[
+            (Hop\s+na|Celý)\s+příspěvek
+        \]
+        \(
+            (?P<url>
+                https://discord.com/
+                ([^\)]+)
+            )
+        \)
+    """,
     re.VERBOSE,
 )
 

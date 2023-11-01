@@ -8,15 +8,15 @@ from juniorguru.lib.text import extract_text, split_blocks
 # TODO add support for more abbreviations
 SENTENCE_END_RE = re.compile(
     r"""
-    (?<!\b(                 # must not be preceeded by the following abbreviations
-        min
-    ))
-    (
-        [\?\.\!\:\;…]+\ |   # common "end of sentence" chars followed by a space
-        \.\.\.\ |           # literal form of … followed by a space
-        \n                  # new line
-    )
-""",
+        (?<!\b(                 # must not be preceeded by the following abbreviations
+            min
+        ))
+        (
+            [\?\.\!\:\;…]+\ |   # common "end of sentence" chars followed by a space
+            \.\.\.\ |           # literal form of … followed by a space
+            \n                  # new line
+        )
+    """,
     re.VERBOSE,
 )
 
