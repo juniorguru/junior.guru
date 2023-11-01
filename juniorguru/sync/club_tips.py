@@ -278,10 +278,11 @@ async def ensure_intro_reminder(client: ClubClient):
                 )
             )
 
-        logger.info("Deleting previous reminder")
-        message = channel.fetch_message(last_message.id)
-        with mutating_discord(message) as proxy:
-            await proxy.delete()
+        if last_message:
+            logger.info("Deleting previous reminder")
+            message = channel.fetch_message(last_message.id)
+            with mutating_discord(message) as proxy:
+                await proxy.delete()
 
 
 def threads_by_emoji(threads: list[Thread]) -> dict[str, Thread]:
