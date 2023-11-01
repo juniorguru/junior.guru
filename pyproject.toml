@@ -88,7 +88,16 @@ exclude = """(\
 juniorguru/sync/j.*|\
 juniorguru/sync/p.*|\
 juniorguru/sync/s.*|\
-juniorguru/models|\
+juniorguru/models/bl.*|\
+juniorguru/models/c.*|\
+juniorguru/models/e.*|\
+juniorguru/models/f.*|\
+juniorguru/models/j.*|\
+juniorguru/models/m.*|\
+juniorguru/models/p.*|\
+juniorguru/models/s.*|\
+juniorguru/models/t.*|\
+juniorguru/models/w.*|\
 juniorguru/[^_]+_legacy|\
 node_modules\
 )"""
