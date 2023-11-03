@@ -57,13 +57,31 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+- id: 40
+  title: "Úvod do Advent of Code a „přátelský pokec u kakaa“"
+  date: "2023-11-28"
+  description: |
+    Advent of Code každý rok přináší 50 programátorských hádanek. Mají různé úrovně složitosti, od docela jednoduchých po ty, které zaberou několik dní (nebo týdnů…). Než začne prosinec, Karolina udělá v klubu variaci na svou [přednášku z letošního PyCon CZ](https://cz.pycon.org/2023/program/talks/71/). Jak Advent of Code probíhá? Co se bude při řešení hodit? Co procvičit navíc? Po úvodu bude s Karolinou „pokec u kakaa“, kde se můžete na cokoliv ptát.
+  avatar_path: avatars-participants/karolina-surma.jpg
+  bio_name: Karolina Surma
+  bio_title: Software Engineer, Red Hat
+  bio: |
+    Od roku 2017 je aktivní v české Python komunitě, kde dlouhé roky učila, koučovala, a organizovala brněnské začátečnické kurzy pořádané PyLadies. Pomohlo jí to upevnit si základy Pythonu, seznámit se s Linuxem a s open source. Díky tomu pak našla práci nejdříve v QA, poté jako vývojářka. Na balkoně vášnivě pěstuje bylinky a rajčata, čte beletrii a s přáteli hraje deskovky.
+  bio_links:
+    - https://www.linkedin.com/in/karolina-surma-950452b7/
+  logo_path: logos/redhat.svg
+  speakers: 797088930758524959
+
+
 - id: 39
   title: "Programování jako kariéra? Ptej se! (Q&A v rámci Týdne pro Digitální Česko)"
   date: "2023-11-21"
   description: |
-    Jak dlouho trvá rekvalifikace? Jsem na to stará? Jak vybrat jazyk, kurz? Mám se učit po vlastní ose? Jak hledat práci? Co dělat po kurzu? Co psát do CV? Jak funguje junior.guru? Jakou máš, Honzo, velikost ponožek? A co na to ChatGPT?
+    Jak dlouho trvá rekvalifikace? Jsem na to starý? Jak vybrat jazyk, kurz? Mám se učit po vlastní ose? Jak hledat práci? Co dělat po kurzu? Co psát do CV? Jak funguje junior.guru? Jakou máš, Honzo, velikost ponožek? A co na to ChatGPT?
 
-    Akce je online pro širokou veřejnost a pořádáme ji v rámci [Týdne pro Digitální Česko](https://www.budoucnostjedigitalni.cz/) pořádaného vládou ČR. Akce je zároveň pro členy junior.guru/club na Discordu i [veřejně na YouTube](https://youtube.com/live/9mpIl8kFulA). V obou případech můžeš psát otázky do chatu a Honza se na ně snaží odpovídat. Z akce je veřejný záznam.
+    Online akce pro širokou veřejnost v rámci [Týdne pro Digitální Česko](https://www.budoucnostjedigitalni.cz/) pořádaného vládou ČR. Je zároveň pro členy junior.guru/club na Discordu i [veřejně na YouTube](https://youtube.com/live/9mpIl8kFulA). V obou případech můžeš psát otázky do chatu a Honza se na ně snaží odpovídat.
+  short_description: |
+    Jak dlouho trvá rekvalifikace? Jsem na to stará? Jak vybrat jazyk, kurz? Mám se učit po vlastní ose? Jak hledat práci? Co dělat po kurzu? Co psát do CV? A co na to ChatGPT? Online akce pro širokou veřejnost v rámci [Týdne pro Digitální Česko](https://www.budoucnostjedigitalni.cz/) pořádaného vládou ČR. Je zároveň pro členy junior.guru/club na Discordu i [veřejně na YouTube](https://youtube.com/live/9mpIl8kFulA). V obou případech můžeš psát otázky do chatu a Honza se na ně snaží odpovídat.
   avatar_path: avatars-participants/honza-javorek.jpg
   bio_name: Honza Javorek
   bio_title: "Provozovatel junior.guru"
