@@ -58,12 +58,12 @@
 
 
 - id: 39
-  title: "Programování jako kariéra? Ptej se! (Q&A)"
+  title: "Programování jako kariéra? Ptej se! (Q&A v rámci Týdne pro Digitální Česko)"
   date: "2023-11-21"
   description: |
     Jak dlouho trvá rekvalifikace? Jsem na to stará? Jak vybrat jazyk, kurz? Mám se učit po vlastní ose? Jak hledat práci? Co dělat po kurzu? Co psát do CV? Jak funguje junior.guru? Jakou máš, Honzo, velikost ponožek? A co na to ChatGPT?
 
-    Akce je online, zároveň pro členy junior.guru/club na Discordu i [veřejně na YouTube](https://www.youtube.com/@juniordotguru). V obou případech můžeš psát otázky do chatu a Honza se na ně snaží odpovídat. Z akce je veřejný záznam.
+    Akce je online pro širokou veřejnost a pořádáme ji v rámci [Týdne pro Digitální Česko](https://www.budoucnostjedigitalni.cz/) pořádaného vládou ČR. Akce je zároveň pro členy junior.guru/club na Discordu i [veřejně na YouTube](https://youtube.com/live/9mpIl8kFulA). V obou případech můžeš psát otázky do chatu a Honza se na ně snaží odpovídat. Z akce je veřejný záznam.
   avatar_path: avatars-participants/honza-javorek.jpg
   bio_name: Honza Javorek
   bio_title: "Provozovatel junior.guru"
@@ -71,7 +71,7 @@
     Původně programátor, dnes už spíš kariérový poradce a podnikatel. Od roku 2016 pomáhá začátečníkům naučit se programovat a najít si svou první práci v oboru. Provozuje junior.guru a je dlouholetým dobrovolníkem v české Python komunitě.
   logo_path: logo.svg
   speakers: 668226181769986078
-  public_recording_url: https://www.youtube.com/@juniordotguru
+  public_recording_url: https://youtube.com/live/9mpIl8kFulA
 
 
 - id: 38
