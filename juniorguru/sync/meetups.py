@@ -383,7 +383,9 @@ def generate_thread_message_content(
     if mentions:
         mentions = sorted(mentions or [])
         text += (
-            "\n\n" "Už teď to vypadá, že na akci potkáš " f"{' '.join(mentions)}" "\n\n"
+            f"\n\nUž teď to vypadá, že na akci potkáš {' '.join(mentions)}\n\n"
         )
+    else:
+        text += " "
     text += scheduled_event_url
     return text
