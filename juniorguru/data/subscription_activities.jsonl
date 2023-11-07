@@ -12871,3 +12871,12 @@
 {"account_id": 2934179, "f": false, "happened_at": "2023-10-06T15:22:43", "subscription_interval": "month", "type": "order"}
 {"account_id": 4735937, "f": true, "happened_at": "2023-10-06T22:22:47", "subscription_interval": "month", "type": "order"}
 {"account_id": 2285440, "f": true, "happened_at": "2023-10-06T23:52:39", "subscription_interval": "month", "type": "order"}
+{"account_id": 4561629, "f": false, "happened_at": "2023-10-07T05:11:58", "subscription_interval": "month", "type": "order"}
+{"account_id": 4891171, "f": false, "happened_at": "2023-10-07T07:54:04", "subscription_interval": "month", "type": "order"}
+{"account_id": 3643109, "f": true, "happened_at": "2023-10-07T08:26:16", "subscription_interval": "month", "type": "order"}
+{"account_id": 3643109, "f": true, "happened_at": "2023-10-07T08:26:16", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 3645914, "f": false, "happened_at": "2023-10-07T08:32:02", "subscription_interval": "month", "type": "order"}
+{"account_id": 3645914, "f": false, "happened_at": "2023-10-07T08:32:02", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 3374030, "f": true, "happened_at": "2023-10-07T09:09:01", "subscription_interval": "month", "type": "order"}
+{"account_id": 4656305, "f": false, "happened_at": "2023-10-07T18:32:59", "subscription_interval": "month", "type": "order"}
+{"account_id": 3716865, "f": true, "happened_at": "2023-10-07T19:41:23", "type": "deactivation"}
