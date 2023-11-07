@@ -809,7 +809,7 @@ Tohle jsem neznal. Vím jen, že Microsoft má myslím tohle https://itjede.cz/
 --- https://discord.com/channels/769966886598737931/1155851184901455903/1162431059699445760
 principielně jako samostudent junior, jsem nikdy nepočítal s tím že mě kurzy nebo školy naučí programovat. A vyplatilo se mi to, takže když jsem šel na kurz (prezenční) snažil jsem se z toho vytáhnout maximum, ale většinou jsem čekal že to za moc nebude stát. Jedinej rozdíl je když jsem šel do GFA že tam to působilo spíš jako že si už něco zaplatíš, ale bylo to hrozně drahý. Nicméně to bylo super, ale zase už jsem měl přehled co tak nějak čekat. A už jsem toho dost uměl před tím.
 
-V minulosti prezenčních programátorských kurzů bylo hrozně málo a bylo takové očekávání, že jako dobrý, ale že se stejně musíš naučit programovat sám. Podle mě pokud jde člověk s tímhle očekáváním rovnou do jakéhokoliv kurzu má lepší šanci na úspěch, že to nebude považovat za úplnou trash experience. 
+V minulosti prezenčních programátorských kurzů bylo hrozně málo a bylo takové očekávání, že jako dobrý, ale že se stejně musíš naučit programovat sám. Podle mě pokud jde člověk s tímhle očekáváním rovnou do jakéhokoliv kurzu má lepší šanci na úspěch, že to nebude považovat za úplnou trash experience.
 
 Např. IT Network podle mě ani nemá ambici tě dostat do zaměstnání, je to takový první setkání s IT, ale že by někdo před tím měl nula zkušeností a po IT Network, byť zdárně dokončené což taky nejsou všichni, rovnou šel pracovat, mi přijde spíš jako pohádka
 ---
@@ -826,10 +826,10 @@ Following programming tutorials
 
 
 --- https://discord.com/channels/769966886598737931/1159090291664494622/1159828387385327758
-DA jsem absolvovala letos na jaře a na exkurzích žádná z firem momentálně neměla otevřené pozice pro juniory. Možností na mock interviews byla pomálu, na polovinu lidí se nedostalo. Nevím o nikom, kdo by už v rámci akademie získal práci celkově, natož ve firmě, která na dané DA spolupracovala. 
+DA jsem absolvovala letos na jaře a na exkurzích žádná z firem momentálně neměla otevřené pozice pro juniory. Možností na mock interviews byla pomálu, na polovinu lidí se nedostalo. Nevím o nikom, kdo by už v rámci akademie získal práci celkově, natož ve firmě, která na dané DA spolupracovala.
 V rámci DA studentky pracují na projektu, který už asi v půlce kurzu máš mít promyšlený. Jedna z podmínek je, aby projekt měl mimo jiné přesah a byl udržitelný. Což není úplně jednoduché zadání.
 U projektu jsem vycházela z toho, co účastnice považují za problém a jak uvažují. Obvykle mají pocit, že nemají ještě dostatek znalostí, mají potřebu absolvovat další kurzy, jsou si nejisté a prodlužují dobu, než se na pohovor vůbec přihlásí. Chtěla jsem ten proces obrátit a urychlit 🙂
-Mě osobně nic nechybělo, spíše jsem uvažovala co by mohlo pomoci ostatním. Já jsem si stanovila cíl, včetně nějakého časového rozsahu, ujasnila si jaké pozice v IT mě zajímají a v listopadu nastupuji do IT firmy. Absolvovala jsem nejen kurzy s Czechitas, nějakou dobu jsem se změně kariéry věnovala. 
+Mě osobně nic nechybělo, spíše jsem uvažovala co by mohlo pomoci ostatním. Já jsem si stanovila cíl, včetně nějakého časového rozsahu, ujasnila si jaké pozice v IT mě zajímají a v listopadu nastupuji do IT firmy. Absolvovala jsem nejen kurzy s Czechitas, nějakou dobu jsem se změně kariéry věnovala.
 Rozhodně doporučuji všem na nic nečekat a zkoušet to, obrnit se trpělivostí a nevzdávat to!
 ---
 
@@ -840,9 +840,9 @@ jo a samozřejmě pokud máte takovou disciplínu že to dáte 20 hodin týdně 
 
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1158618690019930113
-zdravím! Zrovna jsem si s někým psal o GFA (green fox academy) a nikdy jsem nevěděl jak přesně vysvětlit v čem je zakopaný pes. A asi se ten kurz hodně vyvynul za ty roky atp, ale napadl mě takový zjednodušují lakmusový papírek :)) 
+zdravím! Zrovna jsem si s někým psal o GFA (green fox academy) a nikdy jsem nevěděl jak přesně vysvětlit v čem je zakopaný pes. A asi se ten kurz hodně vyvynul za ty roky atp, ale napadl mě takový zjednodušují lakmusový papírek :))
 
-Pokud už jste samouci a uvažujete o part-time GFA kurzu (za mě byl cca na rok) tak doporučuju si zkusit že  za současného běhu (nebo toho co by jste měli během kurzu) si zkusíte alespoň jeden nebo více týdnů věnovat programování 20 hodin týdně. Normálně si stáhněte nějakou apku, nebo použijte stopky a zkuste to. Pokud už po prvním týdnu zjistíte že 20 hodin kdy opravdu u toho sedíte je úplné scifi, tak bych to nedoporučil protože alespoň za mě byl na takový čas týdně ten kurz koncipovaný. A opravdu to dává v té jeho intenzitě smysl. 
+Pokud už jste samouci a uvažujete o part-time GFA kurzu (za mě byl cca na rok) tak doporučuju si zkusit že  za současného běhu (nebo toho co by jste měli během kurzu) si zkusíte alespoň jeden nebo více týdnů věnovat programování 20 hodin týdně. Normálně si stáhněte nějakou apku, nebo použijte stopky a zkuste to. Pokud už po prvním týdnu zjistíte že 20 hodin kdy opravdu u toho sedíte je úplné scifi, tak bych to nedoporučil protože alespoň za mě byl na takový čas týdně ten kurz koncipovaný. A opravdu to dává v té jeho intenzitě smysl.
 
 Pokud vůbec nevite jestli je to dobré pro vás tak tohle můžu doporučit jako test a představte si že takhle pojedete skoro celý rok :)) .
 
@@ -854,6 +854,9 @@ Možná mě nějací novější absolventi poopraví, ale myslím že neudělát
 Nevím o tom nic, potkal sem někde reklamu.
 https://skvt.cz/course/122-game-design-pro-zacatecniky
 ---
+
+
+https://www.linkedin.com/pulse/nahl%2525C3%2525A9dn%2525C4%25259Bte-za-oponu-jsemvkurzucz-alias-podoj-st%2525C3%2525A1t-na-max-tvrd%2525C3%2525ADkov%2525C3%2525A1-rlatf%3FtrackingId=i1UkOe9ZcyGlIQRwCcoDwA%253D%253D/
 
 
 #} -->
