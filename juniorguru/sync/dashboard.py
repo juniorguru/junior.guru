@@ -51,7 +51,7 @@ async def discord_task(client: ClubClient):
         render_open(),
     ]
     messages = sorted(
-        ClubMessage.channel_listing_bot(ClubChannelID.DASHBOARD),
+        ClubMessage.channel_listing(ClubChannelID.DASHBOARD, by_bot=True),
         key=attrgetter("created_at"),
     )
 

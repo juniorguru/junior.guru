@@ -1,10 +1,11 @@
 import asyncio
+from operator import attrgetter
 import re
 from datetime import date, timedelta
 from pathlib import Path
 
 import click
-from discord import AllowedMentions, ForumChannel, Thread, ui
+from discord import AllowedMentions, ForumChannel, NotFound, Thread, ui
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
@@ -12,6 +13,7 @@ from juniorguru.lib.discord_club import (
     ClubChannelID,
     ClubClient,
     ClubMemberID,
+    fetch_threads,
     get_starting_emoji,
     is_message_over_period_ago,
     parse_channel,
@@ -124,22 +126,36 @@ def parse_tip(markdown: str, roles=None) -> dict:
 
 
 @db.connection_context()
-@mutations.mutates_discord()
 async def sync_tips(client: ClubClient, tips: list[dict]):
+    tips_by_emoji = {tip["emoji"]: tip for tip in tips}
+    tasks = []
+    seen_emojis = set()
     channel = await client.fetch_channel(ClubChannelID.TIPS)
-    threads = threads_by_emoji(channel.threads)
-    await asyncio.gather(
-        *[
-            asyncio.create_task(
-                update_tip(threads[tip["emoji"]], tip)
-                if tip["emoji"] in threads
-                else create_tip(channel, tip)
-            )
-            for tip in tips
-        ]
-    )
+    threads = sorted([thread async for thread in fetch_threads(channel)
+                     if thread.owner.id == ClubMemberID.BOT], key=attrgetter('created_at'))
+    for thread in threads:
+        emoji = get_starting_emoji(thread.name)
+        if emoji in seen_emojis:  # duplicate
+            tasks.append(asyncio.create_task(delete_thread(thread)))
+        elif emoji in tips_by_emoji:  # update
+            tip = tips_by_emoji[emoji]
+            tasks.append(asyncio.create_task(update_tip(thread, tip)))
+            seen_emojis.add(emoji)
+        else:  # unknown, possibly old
+            tasks.append(asyncio.create_task(delete_thread(thread)))
+    for tip in tips:
+        if tip["emoji"] not in seen_emojis:
+            tasks.append(asyncio.create_task(create_tip(channel, tip)))
+    await asyncio.gather(*tasks)
 
 
+@mutations.mutates_discord()
+async def delete_thread(thread: Thread) -> None:
+    logger.info(f'Deleting tip from {thread.created_at.date()}: {thread.name}')
+    await thread.delete()
+
+
+@mutations.mutates_discord()
 async def create_tip(channel: ForumChannel, tip: dict) -> Thread:
     logger.info(f'Creating tip: {tip["title"]}')
     thread = await channel.create_thread(
@@ -152,9 +168,9 @@ async def create_tip(channel: ForumChannel, tip: dict) -> Thread:
     message = thread.get_partial_message(thread.id)
     await message.edit(suppress=True)
     await message.add_reaction(DEFAULT_REACTION_EMOJI)
-    return thread
 
 
+@mutations.mutates_discord()
 async def update_tip(thread: Thread, tip: dict) -> None:
     logger.info(f'Updating tip: {tip["title"]}')
     message = (

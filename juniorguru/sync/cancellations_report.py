@@ -36,8 +36,8 @@ async def report(client: ClubClient, channel_id: int):
     today = date.today()
     account_ids = [
         int(ID_RE.search(message.content).group(1))
-        for message in ClubMessage.channel_listing_bot(
-            channel_id, starting_emoji=REPORT_EMOJI
+        for message in ClubMessage.channel_listing(
+            channel_id, starting_emoji=REPORT_EMOJI, by_bot=True
         )
     ]
     logger.debug(f"Found {len(account_ids)} reported cancellations")

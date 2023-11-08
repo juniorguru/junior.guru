@@ -301,15 +301,17 @@ class ClubMessage(BaseModel):
         )
 
     @classmethod
-    def channel_listing(cls, channel_id):
-        return cls.select().where(cls.channel_id == channel_id).order_by(cls.created_at)
-
-    @classmethod
-    def channel_listing_bot(cls, channel_id, starting_emoji=None):
-        query = cls.channel_listing(channel_id).where(cls.author_is_bot == True)
+    def channel_listing(cls, channel_id, parent=False, by_bot=False, starting_emoji=None):
+        query = cls.select()
+        if parent:
+            query = query.where(cls.parent_channel_id == channel_id)
+        else:
+            query = query.where(cls.channel_id == channel_id)
+        if by_bot:
+            query = query.where(cls.author_is_bot == True)
         if starting_emoji:
             query = query.where(cls.content_starting_emoji == starting_emoji)
-        return query
+        return query.order_by(cls.created_at)
 
     @classmethod
     def channel_listing_since(cls, channel_id, since_at):
