@@ -5,7 +5,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 import click
-from discord import AllowedMentions, ForumChannel, NotFound, Thread, ui
+from discord import AllowedMentions, ForumChannel, Thread, ui
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
