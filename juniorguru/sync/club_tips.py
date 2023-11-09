@@ -1,7 +1,7 @@
 import asyncio
-from operator import attrgetter
 import re
 from datetime import date, timedelta
+from operator import attrgetter
 from pathlib import Path
 
 import click
@@ -131,8 +131,14 @@ async def sync_tips(client: ClubClient, tips: list[dict]):
     tasks = []
     seen_emojis = set()
     channel = await client.fetch_channel(ClubChannelID.TIPS)
-    threads = sorted([thread async for thread in fetch_threads(channel)
-                     if thread.owner.id == ClubMemberID.BOT], key=attrgetter('created_at'))
+    threads = sorted(
+        [
+            thread
+            async for thread in fetch_threads(channel)
+            if thread.owner.id == ClubMemberID.BOT
+        ],
+        key=attrgetter("created_at"),
+    )
     for thread in threads:
         emoji = get_starting_emoji(thread.name)
         if emoji in seen_emojis:  # duplicate
@@ -151,7 +157,7 @@ async def sync_tips(client: ClubClient, tips: list[dict]):
 
 @mutations.mutates_discord()
 async def delete_thread(thread: Thread) -> None:
-    logger.info(f'Deleting tip from {thread.created_at.date()}: {thread.name}')
+    logger.info(f"Deleting tip from {thread.created_at.date()}: {thread.name}")
     await thread.delete()
 
 

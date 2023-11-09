@@ -382,9 +382,7 @@ def generate_thread_message_content(
     text = CALL_TO_ACTION_TEXT
     if mentions:
         mentions = sorted(mentions or [])
-        text += (
-            f"\n\nUž teď to vypadá, že na akci potkáš {' '.join(mentions)}\n\n"
-        )
+        text += f"\n\nUž teď to vypadá, že na akci potkáš {' '.join(mentions)}\n\n"
     else:
         text += " "
     text += scheduled_event_url

@@ -301,7 +301,9 @@ class ClubMessage(BaseModel):
         )
 
     @classmethod
-    def channel_listing(cls, channel_id, parent=False, by_bot=False, starting_emoji=None):
+    def channel_listing(
+        cls, channel_id, parent=False, by_bot=False, starting_emoji=None
+    ):
         query = cls.select()
         if parent:
             query = query.where(cls.parent_channel_id == channel_id)
