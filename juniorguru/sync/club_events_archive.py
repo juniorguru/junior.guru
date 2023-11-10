@@ -1,12 +1,13 @@
 from pathlib import Path
+
 from discord import Embed, File, ui
-from juniorguru.lib import loggers
+
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
 from juniorguru.lib.discord_club import ClubChannelID, ClubClient
 from juniorguru.lib.mutations import mutating_discord
-from juniorguru.models.event import Event
 from juniorguru.models.base import db
+from juniorguru.models.event import Event
 
 
 IMAGES_DIR = Path("juniorguru/images")
@@ -30,8 +31,9 @@ async def recreate_archive(client: ClubClient):
         await proxy.send(
             "# Záznamy klubových akcí\n\n"
             "Tady najdeš všechny přednášky, které se konaly v klubu. "
-            "Videa nejsou „veřejná”, ale pokud chceš odkaz poslat kamarádovi mimo klub, můžeš. "
-        , suppress=True)
+            "Videa nejsou „veřejná”, ale pokud chceš odkaz poslat kamarádovi mimo klub, můžeš. ",
+            suppress=True,
+        )
     for event in logger.progress(events, chunk_size=10):
         logger.info(f"Posting {event.title!r}")
         embed = Embed(
@@ -42,9 +44,7 @@ async def recreate_archive(client: ClubClient):
         embed.set_author(
             name=event.bio_name,
         )
-        embed.set_thumbnail(
-            url=f"attachment://{Path(event.avatar_path).name}"
-        )
+        embed.set_thumbnail(url=f"attachment://{Path(event.avatar_path).name}")
         file = File(IMAGES_DIR / event.avatar_path)
         view = await create_view(event)
 
@@ -52,7 +52,9 @@ async def recreate_archive(client: ClubClient):
             await proxy.send(embed=embed, file=file, view=view)
 
 
-async def create_view(event: Event) -> ui.View:  # View's __init__ touches the event loop
+async def create_view(
+    event: Event,
+) -> ui.View:  # View's __init__ touches the event loop
     return ui.View(
         ui.Button(
             emoji="<:youtube:976200175490060299>",

@@ -1,7 +1,7 @@
-from datetime import date, timedelta
 import textwrap
-import click
+from datetime import date, timedelta
 
+import click
 from discord import Embed, Forbidden
 
 from juniorguru.cli.sync import main as cli
@@ -16,7 +16,9 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command(dependencies=["club-content"])
-@click.option("--since", type=date.fromisoformat, default=f"{date.today() - timedelta(days=150)}")
+@click.option(
+    "--since", type=date.fromisoformat, default=f"{date.today() - timedelta(days=150)}"
+)
 def main(since: date):
     logger.info(f"Found {ClubPin.count()} pins in total")
     logger.info("Pairing existing pins saved in DMs with the messages they pin")
