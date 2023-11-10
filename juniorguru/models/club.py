@@ -391,13 +391,14 @@ class ClubPin(BaseModel):
         return cls.select().count()
 
     @classmethod
-    def outstanding_by_member(cls):
+    def outstanding_by_member(cls, since: date):
         pins = (
             cls.select()
+            .where(cls.pinning_message.is_null(True))
+            .join(ClubMessage, on=(ClubPin.pinned_message == ClubMessage.id))
+            .where(cls.pinned_message.created_at >= since)
             .join(ClubUser)
-            .where(
-                cls.pinning_message.is_null(True), ClubUser.dm_channel_id.is_null(False)
-            )
+            .where(ClubUser.dm_channel_id.is_null(False))
             .order_by(ClubUser.id)
         )
         return groupby(pins, attrgetter("member"))

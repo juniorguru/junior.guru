@@ -1,4 +1,6 @@
+from datetime import date, timedelta
 import textwrap
+import click
 
 from discord import Embed, Forbidden
 
@@ -14,7 +16,8 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command(dependencies=["club-content"])
-def main():
+@click.option("--since", type=date.fromisoformat, default=f"{date.today() - timedelta(days=150)}")
+def main(since: date):
     logger.info(f"Found {ClubPin.count()} pins in total")
     logger.info("Pairing existing pins saved in DMs with the messages they pin")
     with db.connection_context():
@@ -31,12 +34,13 @@ def main():
                 message_url = pinning_message.pinned_message_url
                 member_name = pinning_message.dm_member.display_name
                 logger.debug(f"Could not find {message_url} pinned by {member_name!r}")
-    discord_sync.run(send_outstanding_pins)
+    discord_sync.run(send_outstanding_pins, since)
 
 
 @db.connection_context()
-async def send_outstanding_pins(client: ClubClient):
-    for member_db, outstanding_pins in ClubPin.outstanding_by_member():
+async def send_outstanding_pins(client: ClubClient, since):
+    logger.info(f"Getting outstanding pins since {since}")
+    for member_db, outstanding_pins in ClubPin.outstanding_by_member(since):
         logger.info(f"Sending outstanding pins to {member_db.display_name!r}")
         member = await client.club_guild.fetch_member(member_db.id)
         dm_channel = await get_or_create_dm_channel(member)
