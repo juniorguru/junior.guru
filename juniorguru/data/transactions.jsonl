@@ -659,3 +659,7 @@
 {"_id": "26261744225", "amount": 80000, "category": "partnerships", "happened_on": "2023-11-10"}
 {"_id": "26264746896", "amount": 6291, "category": "memberships", "happened_on": "2023-11-13"}
 {"_id": "26267522813", "amount": -49, "category": "tax", "happened_on": "2023-11-14"}
+{"_id": "26267649756", "amount": 1199, "category": "jobs", "happened_on": "2023-11-14"}
+{"_id": "26268418825", "amount": -2841, "category": "tax", "happened_on": "2023-11-15"}
+{"_id": "26268418826", "amount": -2722, "category": "tax", "happened_on": "2023-11-15"}
+{"_id": "26268848129", "amount": 6, "category": "donations", "happened_on": "2023-11-15"}
