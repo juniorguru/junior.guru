@@ -232,6 +232,20 @@ files = [
 ]
 
 [[package]]
+name = "asyncinject"
+version = "0.6"
+description = "Run async workflows using pytest-fixtures-style dependency injection"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "asyncinject-0.6-py3-none-any.whl", hash = "sha256:2f1c9d03e50a51877bdc1b5907a206c47ed9bd1ddca25aee4d62ed2297b2e90a"},
+    {file = "asyncinject-0.6.tar.gz", hash = "sha256:ee8e879e3c18eaa5fd0b6962ac447ee80f21b201f5d12986f59fa6e0638ba774"},
+]
+
+[package.extras]
+test = ["pytest", "pytest-asyncio"]
+
+[[package]]
 name = "attrs"
 version = "23.1.0"
 description = "Classes Without Boilerplate"
@@ -764,19 +778,20 @@ test = ["hypothesis", "pytest"]
 
 [[package]]
 name = "datasette"
-version = "0.64.5"
+version = "1.0a7"
 description = "An open source multi-tool for exploring and publishing data"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "datasette-0.64.5-py3-none-any.whl", hash = "sha256:a7370d832a656ff0804e262d79fe16080c2bcba56be5e2873a0b64f465542404"},
-    {file = "datasette-0.64.5.tar.gz", hash = "sha256:df917896f181ce57e26c6b3b78ff7fdfdc46c322c46673b2276fae1d8e7f19e2"},
+    {file = "datasette-1.0a7-py3-none-any.whl", hash = "sha256:2c9c981a4d9a817cb5bf519146f9843f86e2895ce2e632f06e7f6dc55cc090f5"},
+    {file = "datasette-1.0a7.tar.gz", hash = "sha256:664c9591575428b4689131fd89db93f0fb841826315131dbe3f96485ba37f8a9"},
 ]
 
 [package.dependencies]
 aiofiles = ">=0.4"
 asgi-csrf = ">=0.9"
 asgiref = ">=3.2.10"
+asyncinject = ">=0.5"
 click = ">=7.1.1"
 click-default-group = ">=1.2.3"
 httpx = ">=0.20"
@@ -790,12 +805,13 @@ pip = "*"
 pluggy = ">=1.0"
 PyYAML = ">=5.3"
 setuptools = "*"
+sqlite-utils = ">=3.30"
 uvicorn = ">=0.11"
 
 [package.extras]
-docs = ["blacken-docs", "codespell", "furo (==2022.9.29)", "sphinx-autobuild", "sphinx-copybutton"]
+docs = ["Sphinx (==7.2.5)", "blacken-docs", "codespell (>=2.2.5)", "furo (==2023.8.19)", "ruamel.yaml", "sphinx-autobuild", "sphinx-copybutton", "sphinx-inline-tabs"]
 rich = ["rich"]
-test = ["beautifulsoup4 (>=4.8.1)", "black (==22.10.0)", "blacken-docs (==1.12.1)", "cogapp (>=3.3.0)", "pytest (>=5.2.2)", "pytest-asyncio (>=0.17)", "pytest-timeout (>=1.4.2)", "pytest-xdist (>=2.2.1)", "trustme (>=0.7)"]
+test = ["beautifulsoup4 (>=4.8.1)", "black (==23.7.0)", "blacken-docs (==1.16.0)", "cogapp (>=3.3.0)", "pytest (>=5.2.2)", "pytest-asyncio (>=0.17)", "pytest-timeout (>=1.4.2)", "pytest-xdist (>=2.2.1)", "trustme (>=0.7)"]
 
 [[package]]
 name = "dateutils"
@@ -3643,4 +3659,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "3b5bb5dda324fde4d7be07b420b97b80d12245c897115656df35e744d12fc3fc"
+content-hash = "95f68565356ba973059683415af710c5f4c580844d5445d7c7f966b518615b15"

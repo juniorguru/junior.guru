@@ -11,7 +11,7 @@
 - id: 915967369661251624
   slug: psychologist
   description: |
-    Pouze pro info, aby bylo ve <#864434067968360459> vidět, kdo je a není laik. Role je vysoko jen proto, aby barva a ikonka přebily ostatní.
+    Pro info, aby bylo ve <#864434067968360459> vidět, kdo je a není laik. Role je vysoko jen aby barva a ikonka přebily ostatní.
 
 - id: 927544920292601906
   slug: multimedia
@@ -81,7 +81,7 @@
 - id: 1075044541796716604
   slug: cv_commenter
   description: |
-    Kdo má chuť komentovat CV v <#1123527619716055040>. Roli si dáš vlastnoručně v _Channels & Roles_.
+    Kdo má chuť komentovat v <#1123527619716055040>. Roli si dáš vlastnoručně v _Channels & Roles_.
 
 - id: 1055919988222992418
   slug: has_github
