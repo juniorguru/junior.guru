@@ -12988,3 +12988,26 @@
 {"account_id": 4927814, "f": true, "happened_at": "2023-10-15T19:33:03", "subscription_interval": "month", "type": "order"}
 {"account_id": 2183366, "f": false, "happened_at": "2023-10-15T19:51:23", "type": "deactivation"}
 {"account_id": 3376498, "f": false, "happened_at": "2023-10-15T20:20:43", "subscription_interval": "month", "type": "order"}
+{"account_id": 3671116, "f": false, "happened_at": "2023-10-16T08:09:32", "subscription_interval": "month", "type": "order"}
+{"account_id": 3309959, "f": true, "happened_at": "2023-10-16T09:22:22", "subscription_interval": "month", "type": "order"}
+{"account_id": 5015005, "f": true, "happened_at": "2023-10-16T11:10:42", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 5015005, "f": true, "happened_at": "2023-10-16T11:11:59", "type": "deactivation"}
+{"account_id": 2182138, "f": false, "happened_at": "2023-10-16T11:32:42", "subscription_interval": "month", "type": "order"}
+{"account_id": 2182197, "f": false, "happened_at": "2023-10-16T12:04:02", "subscription_interval": "month", "type": "order"}
+{"account_id": 4805260, "f": false, "happened_at": "2023-10-16T13:22:41", "subscription_interval": "month", "type": "order"}
+{"account_id": 2873950, "f": false, "happened_at": "2023-10-16T17:42:09", "subscription_interval": "month", "type": "order"}
+{"account_id": 4171972, "f": true, "happened_at": "2023-10-16T17:52:18", "subscription_interval": "month", "type": "order"}
+{"account_id": 2183409, "f": false, "happened_at": "2023-10-16T19:03:27", "subscription_interval": "month", "type": "order"}
+{"account_id": 4930585, "f": false, "happened_at": "2023-10-16T22:42:32", "subscription_interval": "month", "type": "order"}
+{"account_id": 3114364, "f": false, "happened_at": "2023-10-17T03:42:42", "subscription_interval": "month", "type": "order"}
+{"account_id": 5053473, "f": false, "happened_at": "2023-10-17T06:34:09", "subscription_interval": "month", "type": "order"}
+{"account_id": 5053473, "f": false, "happened_at": "2023-10-17T06:34:09", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 4302688, "f": false, "happened_at": "2023-10-17T07:22:41", "subscription_interval": "month", "type": "order"}
+{"account_id": 5018234, "f": false, "happened_at": "2023-10-17T08:33:22", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 5018234, "f": false, "happened_at": "2023-10-17T08:42:19", "type": "deactivation"}
+{"account_id": 5018373, "f": true, "happened_at": "2023-10-17T10:34:10", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 5018373, "f": true, "happened_at": "2023-10-17T10:42:45", "type": "deactivation"}
+{"account_id": 4140716, "f": true, "happened_at": "2023-10-17T10:52:15", "subscription_interval": "month", "type": "order"}
+{"account_id": 2856806, "f": false, "happened_at": "2023-10-17T13:32:38", "order_coupon_slug": "thankyou", "subscription_interval": "year", "type": "order"}
+{"account_id": 4717607, "f": true, "happened_at": "2023-10-17T15:42:45", "subscription_interval": "month", "type": "order"}
+{"account_id": 3696507, "f": false, "happened_at": "2023-10-17T16:32:13", "type": "deactivation"}
