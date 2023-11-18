@@ -2,12 +2,12 @@ from collections import Counter
 from pathlib import Path
 from pprint import pformat
 
-from discord import Color
 import emoji
 import requests
+from discord import Color
+from lxml import html
 from slugify import slugify
 from strictyaml import Int, Map, Seq, Str, load
-from lxml import html
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
@@ -73,10 +73,15 @@ async def discord_task(client: ClubClient):
     ]
 
     # Getting PNG images for unicode emojis (not really efficient, but for now it's ok)
-    unicode_emojis = {discord_role.unicode_emoji
-                      for discord_role in documented_discord_roles
-                      if discord_role.unicode_emoji}
-    unicode_emojis = {unicode_emoji: fetch_emoji_png_url(unicode_emoji) for unicode_emoji in unicode_emojis}
+    unicode_emojis = {
+        discord_role.unicode_emoji
+        for discord_role in documented_discord_roles
+        if discord_role.unicode_emoji
+    }
+    unicode_emojis = {
+        unicode_emoji: fetch_emoji_png_url(unicode_emoji)
+        for unicode_emoji in unicode_emojis
+    }
 
     # Why sorting and enumeration? Citing docs: "The recommended and correct way
     # to compare for roles in the hierarchy is using the comparison operators on
