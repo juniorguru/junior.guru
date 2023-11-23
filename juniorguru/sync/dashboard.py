@@ -1,4 +1,3 @@
-import itertools
 from datetime import date
 from operator import attrgetter
 from textwrap import dedent
@@ -11,9 +10,7 @@ from juniorguru.lib.discord_club import ClubChannelID, ClubClient
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.blog import BlogArticle
-from juniorguru.models.club import ClubDocumentedRole, ClubMessage, ClubUser
-from juniorguru.models.event import Event
-from juniorguru.models.partner import Partnership
+from juniorguru.models.club import ClubMessage, ClubUser
 from juniorguru.models.subscription import SubscriptionActivity
 
 
@@ -28,7 +25,6 @@ logger = loggers.from_path(__file__)
 @cli.sync_command(
     dependencies=[
         "club-content",
-        "partners",
         "subscriptions",
         "blog",
     ]
@@ -94,13 +90,7 @@ def render_partners():
     return {
         "title": "Partneři",
         "color": Color.dark_grey(),
-        "description": "Následující firmy se podílejí na financování provozu junior.guru. Někdy sem pošlou své lidi. Ti pak mají roli <@&837316268142493736> a k tomu ještě i roli vždy pro konkrétní firmu, například <@&938306918097747968>.\n\n"
-        + ", ".join(
-            [
-                f"✨ [{partnership.partner.name}]({partnership.partner.url})"
-                for partnership in Partnership.active_listing()
-            ]
-        ),
+        "description": "Přesunuto do <#1177200287107264554>."
     }
 
 

@@ -16,7 +16,6 @@ from juniorguru.lib.discord_club import (
     fetch_threads,
     get_starting_emoji,
     is_message_over_period_ago,
-    parse_channel,
     resolve_references,
 )
 from juniorguru.lib.mutations import mutating_discord

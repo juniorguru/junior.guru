@@ -2,16 +2,22 @@ from datetime import timedelta
 from pathlib import Path
 import click
 
-from discord import AllowedMentions, Colour, Embed, File, ui
+from discord import AllowedMentions, Color, Embed, File
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubClient, is_message_over_period_ago, parse_channel
+from juniorguru.lib.discord_club import (
+    ClubClient,
+    is_message_over_period_ago,
+    parse_channel,
+)
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubDocumentedRole, ClubMessage
-from juniorguru.models.event import Event
-from juniorguru.models.partner import Partner, Partnership
+from juniorguru.models.club import ClubMessage
+from juniorguru.models.partner import Partnership
+
+
+IMAGES_DIR = Path("juniorguru/images")
 
 
 logger = loggers.from_path(__file__)
@@ -19,13 +25,21 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=["club-content", "partners"])
 @click.option("--channel", "channel_id", default="partners_list", type=parse_channel)
-@click.option("--recreate-interval", 'recreate_interval_days', default=30, type=int, help='In days.')
+@click.option(
+    "--recreate-interval",
+    "recreate_interval_days",
+    default=30,
+    type=int,
+    help="In days.",
+)
 def main(channel_id: int, recreate_interval_days: int):
     discord_sync.run(recreate_archive, channel_id, recreate_interval_days)
 
 
 @db.connection_context()
-async def recreate_archive(client: ClubClient, channel_id: int, recreate_interval_days: int):
+async def recreate_archive(
+    client: ClubClient, channel_id: int, recreate_interval_days: int
+):
     partnerships = list(Partnership.active_listing())
     messages = ClubMessage.channel_listing(channel_id, by_bot=True)
     try:
@@ -33,7 +47,9 @@ async def recreate_archive(client: ClubClient, channel_id: int, recreate_interva
     except IndexError:
         logger.info("No messages in the channel")
     else:
-        if is_message_over_period_ago(last_message, timedelta(days=recreate_interval_days)):
+        if is_message_over_period_ago(
+            last_message, timedelta(days=recreate_interval_days)
+        ):
             logger.info("Channel content is too old")
         else:
             logger.info("Channel content is recent, skipping")
@@ -44,41 +60,37 @@ async def recreate_archive(client: ClubClient, channel_id: int, recreate_interva
         await proxy.purge(limit=None)
     with mutating_discord(channel) as proxy:
         await proxy.send(
-            "# Seznam partnerských firem\n\n"
-            "Tyto firmy se podílejí na financování provozu junior.guru. "
-            "Někdy sem pošlou své lidi. "
-            "Ti pak mají roli <@&837316268142493736> a k tomu ještě i roli vždy pro konkrétní firmu, například <@&938306918097747968>. ",
+            (
+                "# Seznam partnerských firem\n\n"
+                "Tyto firmy se podílejí na financování junior.guru. "
+                "Můžeš se tady prokliknout na jejich stránky. "
+                "Partnerství neznamená, že junior.guru doporučuje konkrétní kurzy, nebo že na ně nemáš psát recenze v klubu. "
+                "\n\n"
+                "Když sem partnerské firmy pošlou lidi, tak ti dostanou roli <@&837316268142493736> a k tomu ještě i roli pro konkrétní firmu, například <@&938306918097747968>. "
+                "Role využívej a firmu označ, pokud po ní něco potřebuješ. "
+                "Seznam firem je tady seřazený podle počtu lidí v klubu. "
+            ),
             suppress=True,
-            allowed_mentions=AllowedMentions.none()
+            allowed_mentions=AllowedMentions.none(),
         )
-    for partnership in partnerships:
-        logger.info(f"Posting {partnership.partner.name!r}")
-        # embed = Embed(
-        #     title=role.name,
-        #     color=Colour(role.color),
-        #     description=role.description,
-        # )
-        # # embed.set_author(
-        # #     name=event.bio_name,
-        # # )
-        # if role.icon_url:
-        #     embed.set_thumbnail(url=role.icon_url)
-        # # embed.set_thumbnail(url=f"attachment://{Path(event.avatar_path).name}")
-        # # file = File(IMAGES_DIR / event.avatar_path)
-        # # view = await create_view(event)
-
-        # with mutating_discord(channel) as proxy:
-        #     await proxy.send(embed=embed)  # file=file, view=view
-
-
-async def create_view(
-    event: Event,
-) -> ui.View:  # View's __init__ touches the event loop
-    return ui.View(
-        ui.Button(
-            emoji="<:youtube:976200175490060299>",
-            label="Záznam",
-            url=event.recording_url if event.recording_url else None,
-            disabled=not event.recording_url,
-        )
+    partners = sorted(
+        [partnership.partner for partnership in partnerships],
+        key=lambda partner: (len(partner.list_members), partner.name),
+        reverse=True,
     )
+    for partner in partners:
+        logger.info(f"Posting {partner.name!r}")
+        embed = Embed(
+            title=partner.name,
+            url=partner.url,
+            color=Color.dark_grey(),
+            description=f"Role: <@&{partner.role_id}>\nČlenů: {len(partner.list_members)}",
+        )
+        embed.set_thumbnail(url=f"attachment://{Path(partner.poster_path).name}")
+        file = File(IMAGES_DIR / partner.poster_path)
+        with mutating_discord(channel) as proxy:
+            await proxy.send(
+                embed=embed,
+                file=file,
+                allowed_mentions=AllowedMentions.none(),
+            )
