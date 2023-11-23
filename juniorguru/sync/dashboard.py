@@ -29,9 +29,7 @@ logger = loggers.from_path(__file__)
     dependencies=[
         "club-content",
         "partners",
-        "events",
         "subscriptions",
-        "roles",
         "blog",
     ]
 )
@@ -88,18 +86,8 @@ def render_basic_tips():
 def render_roles():
     return {
         "title": "Role",
-        "description": "\n".join(
-            [f"{format_role(role)}\n" for role in ClubDocumentedRole.listing()]
-        ),
+        "description": "Přesunuto do <#1174338887406075954>.",
     }
-
-
-def format_role(role):
-    text = f"**{role.mention}**"
-    if role.emoji:
-        text += f" {role.emoji}"
-    text += f"\n{role.description}"
-    return text
 
 
 def render_partners():
@@ -117,29 +105,10 @@ def render_partners():
 
 
 def render_events():
-    events = Event.listing()
-    description = (
-        f"Odkazy na posledních {EVENTS_LIMIT} záznamů, ať je máš víc po ruce:\n\n"
-    )
-    description += "\n".join(
-        [
-            format_event(event)
-            for event in itertools.islice(events, EVENTS_LIMIT)
-            if event.recording_url
-        ]
-    )
-    description += f"\nDalších {len(events) - EVENTS_LIMIT} akcí je [na webu](https://junior.guru/events/)."
     return {
         "title": "Záznamy klubových akcí",
-        "description": description,
+        "description": "Přesunuto do <#1169636415387205632>.",
     }
-
-
-def format_event(event):
-    return (
-        f"📺 [{event.title}]({event.recording_url})\n"
-        f"{event.start_at.date():%-d.%-m.%Y}, {event.bio_name}\n"
-    )
 
 
 def render_open():
