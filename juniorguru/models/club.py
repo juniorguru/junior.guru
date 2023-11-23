@@ -424,7 +424,7 @@ class ClubDocumentedRole(BaseModel):
     position = IntegerField(unique=True)
     emoji = CharField(null=True)
     color = IntegerField(null=True)
-    icon_url = IntegerField(null=True)
+    icon_path = CharField(null=True)
 
     @classmethod
     def get_by_slug(cls, slug):

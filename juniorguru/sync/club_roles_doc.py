@@ -1,7 +1,8 @@
 from datetime import timedelta
+from pathlib import Path
 import click
 
-from discord import Colour, Embed
+from discord import Colour, Embed, File
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
@@ -13,6 +14,9 @@ from juniorguru.lib.discord_club import (
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubMessage
+
+
+IMAGES_DIR = Path("juniorguru/images")
 
 
 logger = loggers.from_path(__file__)
@@ -67,7 +71,8 @@ async def recreate_archive(
             description=role.description,
         )
         if role.icon_url:
-            embed.set_thumbnail(url=role.icon_url)
+            embed.set_thumbnail(url=f"attachment://{Path(role.icon_path).name}")
+            file = File(IMAGES_DIR / role.icon_path)
 
         with mutating_discord(channel) as proxy:
-            await proxy.send(embed=embed)
+            await proxy.send(embed=embed, file=file)

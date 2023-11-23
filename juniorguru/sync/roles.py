@@ -3,9 +3,7 @@ from pathlib import Path
 from pprint import pformat
 
 import emoji
-import requests
 from discord import Color
-from lxml import html
 from slugify import slugify
 from strictyaml import Int, Map, Seq, Str, load
 
@@ -19,6 +17,8 @@ from juniorguru.models.event import Event
 from juniorguru.models.mentor import Mentor
 from juniorguru.models.partner import Partnership
 
+
+IMAGES_DIR = Path("juniorguru/images")
 
 YAML_PATH = Path("juniorguru/data/roles.yml")
 
@@ -72,17 +72,6 @@ async def discord_task(client: ClubClient):
         if discord_role.id in yaml_records
     ]
 
-    # Getting PNG images for unicode emojis (not really efficient, but for now it's ok)
-    unicode_emojis = {
-        discord_role.unicode_emoji
-        for discord_role in documented_discord_roles
-        if discord_role.unicode_emoji
-    }
-    unicode_emojis = {
-        unicode_emoji: fetch_emoji_png_url(unicode_emoji)
-        for unicode_emoji in unicode_emojis
-    }
-
     # Why sorting and enumeration? Citing docs: "The recommended and correct way
     # to compare for roles in the hierarchy is using the comparison operators on
     # the role objects themselves."
@@ -92,12 +81,18 @@ async def discord_task(client: ClubClient):
     )
     for position, discord_role in enumerate(documented_discord_roles, start=1):
         logger.debug(f"#{position} {discord_role.name}")
+
         if discord_role.icon:
-            icon_url = discord_role.icon.url
+            icon_path = IMAGES_DIR / 'emoji' / f"club-role-{discord_role.id}.png"
+            if not icon_path.exists():
+                raise ValueError(f"Missing icon file: {icon_path} (download at {discord_role.icon.url})")
         elif discord_role.unicode_emoji:
-            icon_url = unicode_emojis.get(discord_role.unicode_emoji)
+            icon_path = IMAGES_DIR / "emoji" / f"{emoji_slug(discord_role.unicode_emoji)}.png"
+            if not icon_path.exists():
+                raise ValueError(f"Missing icon file: {icon_path} (download at https://emojipedia.org/twitter/twemoji-15.0.1/{emoji_slug(discord_role.unicode_emoji)})")
         else:
-            icon_url = None
+            icon_path = None
+
         ClubDocumentedRole.create(
             id=discord_role.id,
             position=position,
@@ -107,7 +102,7 @@ async def discord_task(client: ClubClient):
             description=resolve_references(yaml_records[discord_role.id]["description"].strip()),
             emoji=discord_role.unicode_emoji,
             color=discord_role.color.value,
-            icon_url=icon_url,
+            icon_path=icon_path.relative_to(IMAGES_DIR) if icon_path else None,
         )
 
     logger.info("Preparing data for computing how to re-assign roles")
@@ -417,11 +412,5 @@ def repr_roles(roles):
     return repr([role.name for role in roles])
 
 
-def fetch_emoji_png_url(unicode_emoji: str) -> str:
-    slug = slugify(emoji.demojize(unicode_emoji))
-    url = f"https://emojipedia.org/twitter/twemoji-15.0.1/{slug}"
-    response = requests.get(url)
-    response.raise_for_status()
-    html_tree = html.fromstring(response.content)
-    img = html_tree.cssselect('[class*="main"] img[alt^="Twemoji"]')[0]
-    return img.get("src")
+def emoji_slug(unicode_emoji: str) -> str:
+    return slugify(emoji.demojize(unicode_emoji))
