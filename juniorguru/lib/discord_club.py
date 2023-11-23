@@ -37,6 +37,16 @@ MESSAGE_URL_RE = re.compile(
     re.VERBOSE,
 )
 
+REFERENCE_RE = re.compile(
+    r"""
+        <
+            (?P<prefix>[#@&]+)
+            (?P<value>[^>]+)
+        >
+    """,
+    re.VERBOSE,
+)
+
 PINNED_MESSAGE_URL_RE = re.compile(
     r"""
         \[
@@ -88,6 +98,11 @@ class ClubChannelID(IntEnum):
     VENTING = 815906954534191117
     EVENTS_ARCHIVE = 1169636415387205632
     ROLES_DOC = 1174338887406075954
+    MENTAL_HEALTH = 864434067968360459
+    ADVENTOFCODE = 1168858202415304724
+    CLUBHOUSE = 769966887055392769
+    CV_GITHUB_LINKEDIN = 1123527619716055040
+    WEEKLY_PLANS = 1123554774147670046
 
 
 class ClubEmoji(StrEnum):
@@ -317,3 +332,24 @@ def parse_channel(channel: str) -> int:
         return int(channel)
     except ValueError:
         return int(getattr(ClubChannelID, channel.upper()))
+
+
+def resolve_references(markdown: str, roles: dict[str, int] | None=None) -> str:
+    markdown = re.sub(r"\n+## ", "\n## ", markdown)
+    roles = {slug.upper(): id for slug, id in (roles or {}).items()}
+
+    resolvers = {
+        "@&": lambda value: roles[value],
+        "@": lambda value: ClubMemberID[value],
+        "#": parse_channel,
+    }
+
+    def resolve_reference(match: re.Match) -> str:
+        prefix = match.group("prefix")
+        value = match.group("value")
+        try:
+            return f"<{prefix}{resolvers[prefix](value)}>"
+        except Exception as e:
+            raise ValueError(f"Could not parse reference: {prefix}{value!r}") from e
+
+    return REFERENCE_RE.sub(resolve_reference, markdown)

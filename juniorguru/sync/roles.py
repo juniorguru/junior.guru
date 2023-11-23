@@ -11,7 +11,7 @@ from strictyaml import Int, Map, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
-from juniorguru.lib.discord_club import ClubClient, get_user_roles
+from juniorguru.lib.discord_club import ClubClient, get_user_roles, resolve_references
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubUser
@@ -104,7 +104,7 @@ async def discord_task(client: ClubClient):
             name=discord_role.name,
             mention=discord_role.mention,
             slug=yaml_records[discord_role.id]["slug"],
-            description=yaml_records[discord_role.id]["description"].strip(),
+            description=resolve_references(yaml_records[discord_role.id]["description"].strip()),
             emoji=discord_role.unicode_emoji,
             color=discord_role.color.value,
             icon_url=icon_url,

@@ -11,7 +11,7 @@
 - id: 915967369661251624
   slug: psychologist
   description: |
-    Pro info, aby bylo ve <#864434067968360459> vidět, kdo je a není laik. Role je vysoko jen aby barva a ikonka přebily ostatní.
+    Pro info, aby bylo ve <#MENTAL_HEALTH> vidět, kdo je a není laik. Role je vysoko jen aby barva a ikonka přebily ostatní.
 
 - id: 927544920292601906
   slug: multimedia
@@ -21,7 +21,7 @@
 - id: 974297387935866910
   slug: mentor
   description: |
-    Kdo se nabízí v <#976054742117658634>. Roli automaticky spravuje bot.
+    Kdo se nabízí v <#MENTORING>. Roli automaticky spravuje bot.
 
 - id: 836928169092710441
   slug: speaker
@@ -46,7 +46,7 @@
 - id: 1062002864039415858
   slug: adventofcode
   description: |
-    Kdo chce řešit letošní <#819935312272424982>. V prosinci bývá role vysoko, ale jen proto, aby stromeček přebil ostatní ikonky. Roli si dáš vlastnoručně v _Channels & Roles_.
+    Kdo chce řešit letošní <#ADVENTOFCODE>. V prosinci bývá role vysoko, ale jen proto, aby stromeček přebil ostatní ikonky. Roli si dáš vlastnoručně v _Kanály a role_.
 
 - id: 836929320706113567
   slug: most_discussing
@@ -61,27 +61,27 @@
 - id: 917430017993093140
   slug: year_old
   description: |
-    Kdo se poprvé v klubu objevil před více než rokem. Roli automaticky spravuje bot.
+    Kdo už je tady s námi více než rok. Roli automaticky spravuje bot.
 
 - id: 836959652100702248
   slug: has_intro_and_avatar
   description: |
-    Kdo má představení v <#788823881024405544> a nastavený profilový obrázek. Roli automaticky spravuje bot a může trvat i den, než se změny projeví.
+    Kdo má představení v <#INTRO> a nastavený profilový obrázek. Roli automaticky spravuje bot. Může trvat i den, než se změny projeví.
 
 - id: 1078667139881377913
   slug: events_organizer
   description: |
-    Kdo má chuť organizovat vlastní akce, např. v <#769966887055392769>. Roli si dáš vlastnoručně v _Channels & Roles_.
+    Kdo má chuť organizovat vlastní akce, např. v <#CLUBHOUSE>. Roli si dáš vlastnoručně v _Kanály a role_.
 
 - id: 1062755787153358879
   slug: greeter
   description: |
-    Kdo má chuť vítat nově příchozí v <#788823881024405544>. Bot je přidává do vítacích vláken. Roli si dáš vlastnoručně v _Channels & Roles_.
+    Kdo má chuť vítat nově příchozí v <#INTRO>. Bot je přidává do vítacích vláken. Roli si dáš vlastnoručně v _Kanály a role_.
 
 - id: 1075044541796716604
   slug: cv_commenter
   description: |
-    Kdo má chuť komentovat v <#1123527619716055040>. Roli si dáš vlastnoručně v _Channels & Roles_.
+    Kdo má chuť komentovat v <#CV_GITHUB_LINKEDIN>. Roli si dáš vlastnoručně v _Kanály a role_.
 
 - id: 1055919988222992418
   slug: has_github
@@ -91,4 +91,9 @@
 - id: 1123557007874596976
   slug: week_planner
   description: |
-    Kdo chce být aktivní v <#1123554774147670046>. Přidáváme je do vláken pro jednotlivé týdny. Roli si dáš vlastnoručně v _Channels & Roles_.
+    Kdo chce být aktivní v <#WEEKLY_PLANS>. Přidáváme je do vláken pro jednotlivé týdny. Roli si dáš vlastnoručně v _Kanály a role_.
+
+- id: 1134476995229663374
+  slug: candidate
+  description: |
+    Kdo posílá CVčka a shání práci. Roli si dáš vlastnoručně v _Kanály a role_.

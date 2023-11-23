@@ -17,6 +17,7 @@ from juniorguru.lib.discord_club import (
     get_starting_emoji,
     is_message_over_period_ago,
     parse_channel,
+    resolve_references,
 )
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.lib.reading_time import reading_time
@@ -25,16 +26,6 @@ from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubMessage
 from juniorguru.sync.club_threads import DEFAULT_AUTO_ARCHIVE_DURATION
 
-
-REFERENCE_RE = re.compile(
-    r"""
-        <
-            (?P<prefix>[#@&]+)
-            (?P<value>[^>]+)
-        >
-    """,
-    re.VERBOSE,
-)
 
 DOSE_EMOJI = "💡"
 
@@ -69,7 +60,7 @@ def main(tips_path: Path, force_dose: bool):
     discord_sync.run(ensure_intro_reminder)
 
 
-def load_tips(tips_path: Path, roles=None):
+def load_tips(tips_path: Path, roles: dict[str, int] | None=None):
     for tip_path in sorted(tips_path.glob("*.md")):
         if tip_path.name == "README.md":
             continue
@@ -85,9 +76,8 @@ def get_tip_url(path: Path, cwd: Path = None) -> str:
     return f"https://github.com/juniorguru/junior.guru/blob/main/{path}"
 
 
-def parse_tip(markdown: str, roles=None) -> dict:
+def parse_tip(markdown: str, roles: dict[str, int] | None=None) -> dict:
     markdown = markdown.strip()
-    roles = {slug.upper(): id for slug, id in (roles or {}).items()}
 
     try:
         title_match = re.search(r"^# (.+)\n", markdown)
@@ -100,22 +90,7 @@ def parse_tip(markdown: str, roles=None) -> dict:
     if not emoji:
         raise ValueError(f"Could not parse emoji: {title!r}")
 
-    markdown = re.sub(r"\n+## ", "\n## ", markdown)
-    resolvers = {
-        "@&": lambda value: roles[value],
-        "@": lambda value: ClubMemberID[value],
-        "#": parse_channel,
-    }
-
-    def resolve_reference(match: re.Match) -> str:
-        prefix = match.group("prefix")
-        value = match.group("value")
-        try:
-            return f"<{prefix}{resolvers[prefix](value)}>"
-        except Exception as e:
-            raise ValueError(f"Could not parse reference: {prefix}{value!r}") from e
-
-    markdown = REFERENCE_RE.sub(resolve_reference, markdown)
+    markdown = resolve_references(markdown, roles=roles)
 
     try:
         lead = markdown.split("\n", 1)[0]

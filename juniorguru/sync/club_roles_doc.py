@@ -1,8 +1,7 @@
 from datetime import timedelta
-from pathlib import Path
-
 import click
-from discord import Colour, Embed, File, ui
+
+from discord import Colour, Embed
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers
@@ -14,7 +13,6 @@ from juniorguru.lib.discord_club import (
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubMessage
-from juniorguru.models.event import Event
 
 
 logger = loggers.from_path(__file__)
@@ -57,7 +55,7 @@ async def recreate_archive(
         await proxy.purge(limit=None)
     with mutating_discord(channel) as proxy:
         await proxy.send(
-            "# Seznam klubových rolí\n\n"
+            "# Popis klubových rolí\n\n"
             "Tady najdeš většinu rolí, které mohou lidi v klubu mít. ",
             suppress=True,
         )
@@ -68,27 +66,8 @@ async def recreate_archive(
             color=Colour(role.color),
             description=role.description,
         )
-        # embed.set_author(
-        #     name=event.bio_name,
-        # )
         if role.icon_url:
             embed.set_thumbnail(url=role.icon_url)
-        # embed.set_thumbnail(url=f"attachment://{Path(event.avatar_path).name}")
-        # file = File(IMAGES_DIR / event.avatar_path)
-        # view = await create_view(event)
 
         with mutating_discord(channel) as proxy:
-            await proxy.send(embed=embed)  # file=file, view=view
-
-
-async def create_view(
-    event: Event,
-) -> ui.View:  # View's __init__ touches the event loop
-    return ui.View(
-        ui.Button(
-            emoji="<:youtube:976200175490060299>",
-            label="Záznam",
-            url=event.recording_url if event.recording_url else None,
-            disabled=not event.recording_url,
-        )
-    )
+            await proxy.send(embed=embed)
