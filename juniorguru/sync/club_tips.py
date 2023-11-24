@@ -59,7 +59,7 @@ def main(tips_path: Path, force_dose: bool):
     discord_sync.run(ensure_intro_reminder)
 
 
-def load_tips(tips_path: Path, roles: dict[str, int] | None=None):
+def load_tips(tips_path: Path, roles: dict[str, int] | None = None):
     for tip_path in sorted(tips_path.glob("*.md")):
         if tip_path.name == "README.md":
             continue
@@ -75,7 +75,7 @@ def get_tip_url(path: Path, cwd: Path = None) -> str:
     return f"https://github.com/juniorguru/junior.guru/blob/main/{path}"
 
 
-def parse_tip(markdown: str, roles: dict[str, int] | None=None) -> dict:
+def parse_tip(markdown: str, roles: dict[str, int] | None = None) -> dict:
     markdown = markdown.strip()
 
     try:

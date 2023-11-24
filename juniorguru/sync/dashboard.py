@@ -90,7 +90,7 @@ def render_partners():
     return {
         "title": "Partneři",
         "color": Color.dark_grey(),
-        "description": "Přesunuto do <#1177200287107264554>."
+        "description": "Přesunuto do <#1177200287107264554>.",
     }
 
 

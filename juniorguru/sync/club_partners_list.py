@@ -1,7 +1,7 @@
 from datetime import timedelta
 from pathlib import Path
-import click
 
+import click
 from discord import AllowedMentions, Color, Embed, File
 
 from juniorguru.cli.sync import main as cli

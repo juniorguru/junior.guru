@@ -83,13 +83,19 @@ async def discord_task(client: ClubClient):
         logger.debug(f"#{position} {discord_role.name}")
 
         if discord_role.icon:
-            icon_path = IMAGES_DIR / 'emoji' / f"club-role-{discord_role.id}.png"
+            icon_path = IMAGES_DIR / "emoji" / f"club-role-{discord_role.id}.png"
             if not icon_path.exists():
-                raise ValueError(f"Missing icon file: {icon_path} (download at {discord_role.icon.url})")
+                raise ValueError(
+                    f"Missing icon file: {icon_path} (download at {discord_role.icon.url})"
+                )
         elif discord_role.unicode_emoji:
-            icon_path = IMAGES_DIR / "emoji" / f"{emoji_slug(discord_role.unicode_emoji)}.png"
+            icon_path = (
+                IMAGES_DIR / "emoji" / f"{emoji_slug(discord_role.unicode_emoji)}.png"
+            )
             if not icon_path.exists():
-                raise ValueError(f"Missing icon file: {icon_path} (download at https://emojipedia.org/twitter/twemoji-15.0.1/{emoji_slug(discord_role.unicode_emoji)})")
+                raise ValueError(
+                    f"Missing icon file: {icon_path} (download at https://emojipedia.org/twitter/twemoji-15.0.1/{emoji_slug(discord_role.unicode_emoji)})"
+                )
         else:
             icon_path = None
 
@@ -99,7 +105,9 @@ async def discord_task(client: ClubClient):
             name=discord_role.name,
             mention=discord_role.mention,
             slug=yaml_records[discord_role.id]["slug"],
-            description=resolve_references(yaml_records[discord_role.id]["description"].strip()),
+            description=resolve_references(
+                yaml_records[discord_role.id]["description"].strip()
+            ),
             emoji=discord_role.unicode_emoji,
             color=discord_role.color.value,
             icon_path=icon_path.relative_to(IMAGES_DIR) if icon_path else None,

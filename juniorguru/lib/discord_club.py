@@ -335,7 +335,7 @@ def parse_channel(channel: str) -> int:
         return int(getattr(ClubChannelID, channel.upper()))
 
 
-def resolve_references(markdown: str, roles: dict[str, int] | None=None) -> str:
+def resolve_references(markdown: str, roles: dict[str, int] | None = None) -> str:
     markdown = re.sub(r"\n+## ", "\n## ", markdown)
     roles = {slug.upper(): id for slug, id in (roles or {}).items()}
 
