@@ -14,17 +14,6 @@
   );
 }
 
-.podcast-button.google {
-  @include button-variant(
-    #4285f4,
-    #4285f4,
-    $jg-white,
-    $hover-color: $jg-white,
-    $active-color: $jg-white,
-    $disabled-color: $jg-white
-  );
-}
-
 .podcast-button.apple {
   @include button-variant(
     #872ec4,
