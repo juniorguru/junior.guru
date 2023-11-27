@@ -255,4 +255,12 @@ https://bit.ly/43kQTxx
 https://overcast.fm/+sSMxujIAI
 
 
+https://www.czap.cz/
+
+
+https://www.facebook.com/groups/karieroviporadci/posts/1313279362724110/?comment_id=1313335772718469&reply_comment_id=1314594812592565&__cft__[0]=AZWMcRq7AQKxLajYQRUHc8KUh12uhBk86ogWa5bGWQ1G6owkzUnl2Y0mXj1vTgE04JaFMruyABkKAJuJO9Yzmnmm0VmInArKa9GB-uHnlb-o1V3HdvfPjPHQoLgUW6bzgMoNBUMhCuoes3nXwBJFemEK&__tn__=R]-R
+Řešíme téma zvládání změn, zpracované je v jedné z kapitol knize "Cesta za horizont kariérového poradenství" (je ke stažení na našem webu: https://ekskurzy.cz/cs/nase-publikace) a k ní jsou navázané dvě prezentace, které máme na youtube kanálu:[ https://youtu.be/wihsODx3TqY?si=5UiMKge0YqbvnRK](https://youtu.be/wihsODx3TqY?si=5UiMKge0YqbvnRK "‌") a https://youtu.be/L18b9qJeS6A?si=-MAoJX8JtipvZQVv Kurz jsme měli jen v rámci projektu, aktuálně je možnost téma podrobněji řešit v rámci individuální konzultace.
+Případně ještě kniha k posilování odolnosti "Životem s lehkostí", také zdarma na našem webu
+
+
 #} -->

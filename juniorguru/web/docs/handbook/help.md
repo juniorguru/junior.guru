@@ -249,7 +249,7 @@ https://hackmd.io/@benabraham/ptej-se-rovnou
 
 
 --- https://discord.com/channels/769966886598737931/1141758341408894996/1158419236952215613
-V tehle situaci (pocit, ze uz neco resim moc dlouho a nikam to nevede) mi vetsinou pomohla jedna nebo vice z techo tri veci: 
+V tehle situaci (pocit, ze uz neco resim moc dlouho a nikam to nevede) mi vetsinou pomohla jedna nebo vice z techo tri veci:
 - jit se projit,
 - popsat nekomu dany problem (rubberducking),
 - odlozit a chvili resit neco jineho.
@@ -269,6 +269,11 @@ V jiných oblastech je seniorní ten, kdo odpovědi má, tady ten, kdo je umí r
 --- https://discord.com/channels/769966886598737931/769966887055392768/1157365315185946725
 Viděno na LI.
 ---
+
+
+https://dontasktoask.com/
+https://xyproblem.info/
+https://nohello.net/
 
 
 #} -->
