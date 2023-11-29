@@ -3,7 +3,7 @@ import re
 from datetime import date, datetime, timedelta
 from operator import itemgetter
 from pathlib import Path
-from typing import Any
+from typing import Any, Generator
 from zoneinfo import ZoneInfo
 
 import click
@@ -49,15 +49,16 @@ FEEDS = [
         name=f"{NAME_PREFIX} na akci datařů (PyData)",
         poster_path="posters-meetups/pydata.png",
         format="meetup_com",
-        source_url="https://www.meetup.com/pydata-prague/",
+        source_url="https://www.meetup.com/pydata-prague/events/",
     ),
     dict(
         slug="reactgirls",
         emoji="<:react:842332165822742539>",
-        name=f"{NAME_PREFIX} na akci React Girls",
+        name=f"{NAME_PREFIX} na akci reakťaček (ReactGirls)",
         poster_path="posters-meetups/reactgirls.png",
         format="meetup_com",
         source_url="https://www.meetup.com/reactgirls/events/",
+        skip=['workshop'],
     ),
     dict(
         slug="frontendisti",
@@ -66,14 +67,15 @@ FEEDS = [
         poster_path="posters-meetups/frontendisti.png",
         format="meetup_com",
         source_url="https://www.meetup.com/frontendisti/events/",
+        skip=['konference'],
     ),
     dict(
         slug="pehapkari",
         emoji="<:php:842331754731274240>",
-        name=f"{NAME_PREFIX} na akci péhápkářů",
+        name=f"{NAME_PREFIX} na akci péhápkářů (Poslední sobota)",
         poster_path="posters-meetups/pehapkari.png",
         format="meetup_com",
-        source_url="https://www.meetup.com/pehapkari/",
+        source_url="https://www.meetup.com/pehapkari/events/",
     ),
     dict(
         slug="pehapkari-brno",
@@ -81,15 +83,48 @@ FEEDS = [
         name=f"{NAME_PREFIX} na akci péhápkářů",
         poster_path="posters-meetups/pehapkari.png",
         format="meetup_com",
-        source_url="https://www.meetup.com/pehapkari-brno/",
+        source_url="https://www.meetup.com/pehapkari-brno/events/",
     ),
     dict(
         slug="ctvrtkon",
         emoji="🍻",
-        name=f"{NAME_PREFIX} na akci jihočeské tech komunity",
+        name=f"{NAME_PREFIX} na akci jihočeské tech komunity (Čtvrtkon)",
         poster_path="posters-meetups/ctvrtkon.png",
         format="ctvrtkon",
         source_url="https://ctvrtkon.cz/api/events/feed",
+    ),
+    dict(
+        slug="czechtesters",
+        emoji="🍻",
+        name=f"{NAME_PREFIX} na akci testerů (Czech Testers Group)",
+        poster_path="posters-meetups/czechtesters.png",
+        format="meetup_com",
+        source_url="https://www.meetup.com/professionaltesting/events/",
+    ),
+    dict(
+        slug="protest",
+        emoji="🍻",
+        name=f"{NAME_PREFIX} na akci testerů ([pro:]TEST!)",
+        poster_path="posters-meetups/protest.png",
+        format="meetup_com",
+        source_url="https://www.meetup.com/protest_cz/events/",
+    ),
+    dict(
+        slug="praguejs",
+        emoji="<:javascript:842329110293381142>",
+        name=f"{NAME_PREFIX} na akci javascripťáků (PragueJS)",
+        poster_path="posters-meetups/praguejs.png",
+        format="meetup_com",
+        source_url="https://www.meetup.com/praguejs/events/",
+    ),
+    dict(
+        slug="techmeetup",
+        emoji="🍻",
+        name=f"{NAME_PREFIX} na akci ostravské tech komunity (TechMeetup)",
+        poster_path="posters-meetups/techmeetup.png",
+        format="meetup_com",
+        source_url="https://www.meetup.com/techmeetupostrava/events/",
+        skip=['conference', 'konference'],
     ),
 ]
 
@@ -138,6 +173,7 @@ def main(cache, clear_cache, channel_id):
                 [
                     dict(**feed, **event_data)
                     for event_data in parse_icalendar(feed["data"])
+                    if isnt_skipped(event_data, feed.get('skip'))
                 ]
             )
         elif feed["format"] == "meetup_com":
@@ -145,6 +181,7 @@ def main(cache, clear_cache, channel_id):
                 [
                     dict(**feed, **event_data)
                     for event_data in parse_meetup_com(feed["data"])
+                    if isnt_skipped(event_data, feed.get('skip'))
                 ]
             )
         elif feed["format"] == "ctvrtkon":
@@ -152,6 +189,7 @@ def main(cache, clear_cache, channel_id):
                 [
                     dict(**feed, **event_data)
                     for event_data in parse_ctvrtkon(feed["data"])
+                    if isnt_skipped(event_data, feed.get('skip'))
                 ]
             )
         else:
@@ -270,6 +308,12 @@ async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
         await discord_event.cancel()
 
 
+def isnt_skipped(event: dict[str, Any], skip: None | list[str] = None) -> bool:
+    if not skip:
+        return True
+    return not any(skip in event["name_raw"].lower() for skip in skip)
+
+
 def parse_icalendar(content: str) -> list[dict[str, Any]]:
     return [
         dict(
@@ -283,20 +327,25 @@ def parse_icalendar(content: str) -> list[dict[str, Any]]:
     ]
 
 
-def parse_meetup_com(content: str) -> list[dict[str, Any]]:
-    return [
-        dict(
-            name_raw=event["title"],
-            starts_at=event["starts_at"],
-            location_raw=parse_meetup_com_location(event["venue"]),
-            url=event["url"],
-        )
-        for event in teemup.parse(content)
-        if event["venue"]
-    ]
+def parse_meetup_com(content: str) -> Generator[dict[str, Any], None, None]:
+    for event in teemup.parse(content):
+        if event["venue"]:
+            try:
+                location_raw = parse_meetup_com_location(event["venue"])
+            except ValueError:
+                pass  # skipping online events without location
+            else:
+                yield dict(
+                    name_raw=event["title"],
+                    starts_at=event["starts_at"],
+                    location_raw=location_raw,
+                    url=event["url"],
+                )
 
 
 def parse_meetup_com_location(venue: dict[str, Any]) -> str:
+    if venue['name'] == 'Online event':
+        raise ValueError('Online event')
     parts = [
         venue["name"],
         venue["address"],

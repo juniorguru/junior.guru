@@ -16,6 +16,7 @@ from juniorguru.sync.meetups import (
     parse_meetup_com_location,
     parse_meetup_url,
     thread_name,
+    isnt_skipped,
 )
 
 
@@ -80,6 +81,33 @@ def test_parse_meetup_com_location():
         parse_meetup_com_location(venue)
         == "Pipedrive, Pernerova 697/35, Karlín, Praha-Praha 8, CZ"
     )
+
+
+def test_parse_meetup_com_location_online_event():
+    venue = {'address': None,
+ 'city': None,
+ 'country': None,
+ 'name': 'Online event',
+ 'state': None}
+
+    with pytest.raises(ValueError):
+        assert parse_meetup_com_location(venue)
+
+
+@pytest.mark.parametrize(
+    "event, skipped, expected",
+    [
+        ({"name_raw": "Pyvo Meetup"}, None, True),
+        ({"name_raw": "Pyvo Meetup"}, [], True),
+        ({"name_raw": "Pyvo Meetup"}, ['konference'], True),
+        ({"name_raw": "konference"}, ['konference'], False),
+        ({"name_raw": "Konference"}, ['konference'], False),
+        ({"name_raw": "VYPRODÁNO FrontKon 2023 - konference komunity Frontendisti.cz"}, ['konference'], False),
+        ({"name_raw": "Celodenní Workshop: Aplikace na správu seznamu studentů"}, ['workshop'], False),
+    ]
+)
+def test_isnt_skipped(event: dict[str, Any], skipped: list[str], expected: bool):
+    assert isnt_skipped(event, skipped) is expected
 
 
 @pytest.mark.parametrize(
