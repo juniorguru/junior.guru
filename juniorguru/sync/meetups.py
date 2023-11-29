@@ -38,7 +38,7 @@ FEEDS = [
     dict(
         slug="pyvo",
         emoji="<:python:842331892091322389>",
-        name=f"{NAME_PREFIX} na akci pythonistů (Pyvo)",
+        name=f"{NAME_PREFIX} na akci pythonistů",
         poster_path="posters-meetups/pyvo.png",
         format="icalendar",
         source_url="https://pyvo.cz/api/pyvo.ics",
@@ -46,7 +46,7 @@ FEEDS = [
     dict(
         slug="pydata",
         emoji="<:pydata:1136778714521272350>",
-        name=f"{NAME_PREFIX} na akci datařů (PyData)",
+        name=f"{NAME_PREFIX} na akci datařů",
         poster_path="posters-meetups/pydata.png",
         format="meetup_com",
         source_url="https://www.meetup.com/pydata-prague/events/",
@@ -54,7 +54,7 @@ FEEDS = [
     dict(
         slug="reactgirls",
         emoji="<:react:842332165822742539>",
-        name=f"{NAME_PREFIX} na akci reakťaček (ReactGirls)",
+        name=f"{NAME_PREFIX} na akci reakťaček",
         poster_path="posters-meetups/reactgirls.png",
         format="meetup_com",
         source_url="https://www.meetup.com/reactgirls/events/",
@@ -72,7 +72,7 @@ FEEDS = [
     dict(
         slug="pehapkari",
         emoji="<:php:842331754731274240>",
-        name=f"{NAME_PREFIX} na akci péhápkářů (Poslední sobota)",
+        name=f"{NAME_PREFIX} na akci péhápkářů",
         poster_path="posters-meetups/pehapkari.png",
         format="meetup_com",
         source_url="https://www.meetup.com/pehapkari/events/",
@@ -88,7 +88,7 @@ FEEDS = [
     dict(
         slug="ctvrtkon",
         emoji="🍻",
-        name=f"{NAME_PREFIX} na akci jihočeské tech komunity (Čtvrtkon)",
+        name=f"{NAME_PREFIX} na akci jihočeské tech komunity",
         poster_path="posters-meetups/ctvrtkon.png",
         format="ctvrtkon",
         source_url="https://ctvrtkon.cz/api/events/feed",
@@ -96,7 +96,7 @@ FEEDS = [
     dict(
         slug="czechtesters",
         emoji="🍻",
-        name=f"{NAME_PREFIX} na akci testerů (Czech Testers Group)",
+        name=f"{NAME_PREFIX} na akci testerů",
         poster_path="posters-meetups/czechtesters.png",
         format="meetup_com",
         source_url="https://www.meetup.com/professionaltesting/events/",
@@ -104,7 +104,7 @@ FEEDS = [
     dict(
         slug="protest",
         emoji="🍻",
-        name=f"{NAME_PREFIX} na akci testerů ([pro:]TEST!)",
+        name=f"{NAME_PREFIX} na akci testerů",
         poster_path="posters-meetups/protest.png",
         format="meetup_com",
         source_url="https://www.meetup.com/protest_cz/events/",
@@ -112,7 +112,7 @@ FEEDS = [
     dict(
         slug="praguejs",
         emoji="<:javascript:842329110293381142>",
-        name=f"{NAME_PREFIX} na akci javascripťáků (PragueJS)",
+        name=f"{NAME_PREFIX} na akci javascripťáků",
         poster_path="posters-meetups/praguejs.png",
         format="meetup_com",
         source_url="https://www.meetup.com/praguejs/events/",
@@ -120,7 +120,7 @@ FEEDS = [
     dict(
         slug="techmeetup",
         emoji="🍻",
-        name=f"{NAME_PREFIX} na akci ostravské tech komunity (TechMeetup)",
+        name=f"{NAME_PREFIX} na akci ostravské tech komunity",
         poster_path="posters-meetups/techmeetup.png",
         format="meetup_com",
         source_url="https://www.meetup.com/techmeetupostrava/events/",
