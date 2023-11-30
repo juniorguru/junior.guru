@@ -58,7 +58,7 @@ FEEDS = [
         poster_path="posters-meetups/reactgirls.png",
         format="meetup_com",
         source_url="https://www.meetup.com/reactgirls/events/",
-        skip=['workshop'],
+        skip=["workshop"],
     ),
     dict(
         slug="frontendisti",
@@ -67,7 +67,7 @@ FEEDS = [
         poster_path="posters-meetups/frontendisti.png",
         format="meetup_com",
         source_url="https://www.meetup.com/frontendisti/events/",
-        skip=['konference'],
+        skip=["konference"],
     ),
     dict(
         slug="pehapkari",
@@ -124,7 +124,7 @@ FEEDS = [
         poster_path="posters-meetups/techmeetup.png",
         format="meetup_com",
         source_url="https://www.meetup.com/techmeetupostrava/events/",
-        skip=['conference', 'konference'],
+        skip=["conference", "konference"],
     ),
 ]
 
@@ -173,7 +173,7 @@ def main(cache, clear_cache, channel_id):
                 [
                     dict(**feed, **event_data)
                     for event_data in parse_icalendar(feed["data"])
-                    if isnt_skipped(event_data, feed.get('skip'))
+                    if isnt_skipped(event_data, feed.get("skip"))
                 ]
             )
         elif feed["format"] == "meetup_com":
@@ -181,7 +181,7 @@ def main(cache, clear_cache, channel_id):
                 [
                     dict(**feed, **event_data)
                     for event_data in parse_meetup_com(feed["data"])
-                    if isnt_skipped(event_data, feed.get('skip'))
+                    if isnt_skipped(event_data, feed.get("skip"))
                 ]
             )
         elif feed["format"] == "ctvrtkon":
@@ -189,7 +189,7 @@ def main(cache, clear_cache, channel_id):
                 [
                     dict(**feed, **event_data)
                     for event_data in parse_ctvrtkon(feed["data"])
-                    if isnt_skipped(event_data, feed.get('skip'))
+                    if isnt_skipped(event_data, feed.get("skip"))
                 ]
             )
         else:
@@ -344,8 +344,8 @@ def parse_meetup_com(content: str) -> Generator[dict[str, Any], None, None]:
 
 
 def parse_meetup_com_location(venue: dict[str, Any]) -> str:
-    if venue['name'] == 'Online event':
-        raise ValueError('Online event')
+    if venue["name"] == "Online event":
+        raise ValueError("Online event")
     parts = [
         venue["name"],
         venue["address"],
