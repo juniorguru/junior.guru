@@ -673,3 +673,7 @@
 {"_id": "26285127768", "amount": -2000, "category": "office", "happened_on": "2023-11-28"}
 {"_id": "26286093356", "amount": 6, "category": "donations", "happened_on": "2023-11-29"}
 {"_id": "26293070702", "amount": -230, "category": "miscellaneous", "happened_on": "2023-12-02"}
+{"_id": "26294478463", "amount": -575, "category": "memberful", "happened_on": "2023-12-04"}
+{"_id": "26294478859", "amount": -4685, "category": "discord", "happened_on": "2023-12-04"}
+{"_id": "26294564633", "amount": 13856, "category": "memberships", "happened_on": "2023-12-04"}
+{"_id": "26294771658", "amount": 602, "category": "donations", "happened_on": "2023-12-04"}
