@@ -3,6 +3,7 @@ import re
 from datetime import date, datetime, timedelta
 from operator import itemgetter
 from pathlib import Path
+import textwrap
 from typing import Any, Generator
 from zoneinfo import ZoneInfo
 
@@ -23,6 +24,8 @@ from juniorguru.models.club import ClubMessage
 NAME_PREFIX = "Mini sraz juniorů"
 
 NAME_LENGTH_LIMIT = 100
+
+LOCATION_LENGTH_LIMIT = 100
 
 MEETUP_URL_RE = re.compile(r"https?://\S+", re.IGNORECASE)
 
@@ -402,7 +405,7 @@ def generate_scheduled_event(event: dict) -> dict:
         ),
         start_time=event["starts_at"],
         end_time=event["starts_at"] + timedelta(hours=3),
-        location=event["location_raw"],
+        location=textwrap.shorten(event["location_raw"], width=LOCATION_LENGTH_LIMIT, placeholder="…"),
     )
 
 
