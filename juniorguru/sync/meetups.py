@@ -1,9 +1,9 @@
 import json
 import re
+import textwrap
 from datetime import date, datetime, timedelta
 from operator import itemgetter
 from pathlib import Path
-import textwrap
 from typing import Any, Generator
 from zoneinfo import ZoneInfo
 
@@ -405,7 +405,9 @@ def generate_scheduled_event(event: dict) -> dict:
         ),
         start_time=event["starts_at"],
         end_time=event["starts_at"] + timedelta(hours=3),
-        location=textwrap.shorten(event["location_raw"], width=LOCATION_LENGTH_LIMIT, placeholder="…"),
+        location=textwrap.shorten(
+            event["location_raw"], width=LOCATION_LENGTH_LIMIT, placeholder="…"
+        ),
     )
 
 

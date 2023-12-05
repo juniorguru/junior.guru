@@ -36,7 +36,12 @@ def main(cache, clear_cache):
                     "pagination": {"start": start, "count": step, "order": ["-id"]},
                     "query": {
                         "must": [
-                            {"match": {"field": "kategorie.kategorieId", "query": 10115}},
+                            {
+                                "match": {
+                                    "field": "kategorie.kategorieId",
+                                    "query": 10115,
+                                }
+                            },
                         ]
                     },
                 },
