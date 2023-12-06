@@ -61,7 +61,7 @@ FEEDS = [
         poster_path="posters-meetups/reactgirls.png",
         format="meetup_com",
         source_url="https://www.meetup.com/reactgirls/events/",
-        skip=["workshop"],
+        skip=["workshop", "canvas:"],
     ),
     dict(
         slug="frontendisti",
