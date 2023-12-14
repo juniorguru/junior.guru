@@ -654,7 +654,7 @@ https://blog.zvestov.cz/software%20development/2021/11/22/vyuka-programovani-bez
 https://koderia.sk/blog/9-veci-ktore-by-ste-pri-programovani-rozhodne-nemali-robit
 
 --- https://discord.com/channels/769966886598737931/1160119402369384498/1161896294541971556
-Takže podľa mňa veľmi záleží ako je ten testing postavený a ako ho vníma firma kam sa budeš hlásiť. Pokiaľ vieš že nechceš robiť testing a chceš ho mať ako vstupnú bránu k developerovi je fajn sa o tom z môjho pohľadu baviť rovno na začiatku na pohovore. Možno sa aj opýtať či mali už niekoho kto sa úspešne pretransformoval z testera na developera. Ja ako test leader som to síce moc rada nevidela lebo som chcela mať viac stabilný testerský tím a nehľadať každú chvíľu nového testera ale keď sa to komunikovalo na začiatku tak som aspoň vedela ako s daným človekom pracovať už od začiatku. 
+Takže podľa mňa veľmi záleží ako je ten testing postavený a ako ho vníma firma kam sa budeš hlásiť. Pokiaľ vieš že nechceš robiť testing a chceš ho mať ako vstupnú bránu k developerovi je fajn sa o tom z môjho pohľadu baviť rovno na začiatku na pohovore. Možno sa aj opýtať či mali už niekoho kto sa úspešne pretransformoval z testera na developera. Ja ako test leader som to síce moc rada nevidela lebo som chcela mať viac stabilný testerský tím a nehľadať každú chvíľu nového testera ale keď sa to komunikovalo na začiatku tak som aspoň vedela ako s daným človekom pracovať už od začiatku.
 
 Čo sa týka pohovorov keď mám porovnať tak pohovor na developera a manuálneho testera vyžaduje iný skills set, pre niekoho sa môže zdať pohovor na testera jednoduchý ale popravde precíznosť a myslenie ako rozbiť appku a zároveň myslieť ako myslia užívatelia, vyradila aspoň na mojich pohovoroch veľa ľudí aj s IT vzdelaním
 ---
@@ -677,15 +677,15 @@ Trochu související 🙂 Podle mě hodně dobrý postřeh. Je potřeba to rozkl
 
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1151172275119325224
-Odpověď pro <@1148591522019823616> na jeho Ahoj mě nakopla sepsat elaborát o tom, co všechno je u mě k dispozici za informace. Nazvala jsem to rozcestník career switchera, byť se občas soustředím na pozici tester, tak jsem se snažila být i obecnější, protože obě cesty do IT si jsou hodně podobné. K dispozici na LinkedInu, přihlášení pro zobrazení by nemělo být třeba. 
+Odpověď pro <@1148591522019823616> na jeho Ahoj mě nakopla sepsat elaborát o tom, co všechno je u mě k dispozici za informace. Nazvala jsem to rozcestník career switchera, byť se občas soustředím na pozici tester, tak jsem se snažila být i obecnější, protože obě cesty do IT si jsou hodně podobné. K dispozici na LinkedInu, přihlášení pro zobrazení by nemělo být třeba.
 https://www.linkedin.com/posts/lucietvrdikova_posledn%C3%AD-p%C5%AFl-rok-jsem-intenzivn%C4%9B-pracovala-activity-7107249006254112768-xi-R?utm_source=share&utm_medium=member_ios
 ---
 
 
 --- https://discord.com/channels/769966886598737931/1148629000432922654/1148631853226528928
-Mrkni na můj web. Mám tam takový obecný rozcestník. 
+Mrkni na můj web. Mám tam takový obecný rozcestník.
 1) E-book: https://lucietvrdikova.cz/ebook-testerem-nanecisto/
-2) články na blogu https://lucietvrdikova.cz/blog/ o předpokladech a očekávání od IT. 
+2) články na blogu https://lucietvrdikova.cz/blog/ o předpokladech a očekávání od IT.
 
 Jinak souhlasím a taky mi přijde, že se trh rozjíždí a absolventi chodí na pohovory. Což je posun oproti pouhému zamítacímu emailu…
 ---
@@ -693,7 +693,7 @@ Jinak souhlasím a taky mi přijde, že se trh rozjíždí a absolventi chodí n
 
 --- https://discord.com/channels/769966886598737931/1007330330149126274/1007575709029519400
 Díky za odpověď Verčo 😊  v první řadě k tobě budu upřímný. Jestli se chceš naučit Python jen proto, že je jednoduchý, tak to nedělej! Věř mi, já to měl úplně stejné. Myslel jsem si, že jen proto, že ten jazyk je jednoduchý tak se ho naučím a pak už to všechno půjde samo. Obrovská chyba! Taky jsem na to dost doplatil... nic hrozného, ale srážka s realitou přišla 😁
-☝ Jestli můžu, tak bych ti poradil následující: 
+☝ Jestli můžu, tak bych ti poradil následující:
 Zkus se nejdřív zamyslet nad tím, co bys jako programátorka ráda dělala. Tzn. chtěla bys dělat webové stránky? Nebo třeba mobilní aplikace? Nebo by tě víc bavila práce s daty? Chtěla by ses spíš zaměřit na práci s vizuální stránkou programu(frontend) nebo na to jak to všechno pracuje "za oponou" (backend - tady je třeba právě Python)? Nebo klidně obojí (fullstack)? Je toho dost a dost. Zkus si nejdřív projít jednotlivé pozice a podívej se co je k nim potřeba umět. Podle toho i uvidíš co by se ti víc mohlo líbit a pak se na to i zaměříš. 😉  Pokud si nebudeš jistá, CodeAcademy má takový jednoduchý kvízek, který by ti mohl pomoci s nasměrováním (nebrat závazně) https://www.codecademy.com/explore/sorting-quiz
 Píšu to proto, že Python je rozhodně jednoduchý na naučení a za mě je to skvělý nástroj na pochopení základních principů programování, ale například na frontend, kterému se teď věnuji já, je ze začátku úplně k ničemu. 😁
 ---
@@ -703,6 +703,8 @@ Píšu to proto, že Python je rozhodně jednoduchý na naučení a za mě je to
 Mám otázku pro vás, kteří už jste kariérní změnu zvládli:
 _Zpětně byste řekli, že to bylo těžší nebo lehčí než jste si na začátku mysleli?_
 ---
+
+https://www.youtube.com/watch?v=H01nrHnqUfI
 
 
 #} -->
