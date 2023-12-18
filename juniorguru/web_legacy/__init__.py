@@ -72,13 +72,6 @@ for template_filter in [
     app.template_filter()(template_filter)
 
 
-@app.route('/membership/')
-def membership():
-    return render_template('membership.html',
-                           nav_active='club',
-                           thumbnail=LegacyThumbnail.image_path_by_url('/membership/'))
-
-
 @app.route('/jobs/')
 @db.connection_context()
 def jobs():
@@ -227,3 +220,7 @@ def press_release_crisis():
 @app.route('/donate/')
 def donate():
     return redirect(url_for('open', _external=True))
+
+@app.route('/membership/')
+def membership():
+    return REFRESH_PAGE

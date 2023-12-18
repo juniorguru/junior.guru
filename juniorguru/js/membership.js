@@ -1,6 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const engage = document.querySelector('.content__section--hidden');
-  if (engage && window.location.search.includes('state=success')) {
-    engage.style.display = 'block';
+function setupMembershipSuccess() {
+  if (window.location.search.includes('state=success')) {
+    const elements = document.querySelectorAll('.membership-success');
+    Array.from(elements).forEach(function (element) {
+      element.removeAttribute('hidden');
+    });
   }
-});
+}
+
+document.addEventListener('DOMContentLoaded', setupMembershipSuccess);

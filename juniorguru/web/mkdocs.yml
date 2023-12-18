@@ -3,7 +3,9 @@ site_url: https://junior.guru/
 
 
 nav:
-  - Klub: club.md
+  - Klub:
+      - Klub: club.md
+      - Rozcestník pro členy: membership.jinja
   - Příručka:
       - Úvod: handbook/index.md
       - Motivace: handbook/motivation.md
