@@ -2,6 +2,7 @@ import itertools
 from datetime import date, datetime, time, timezone
 from operator import itemgetter
 from pathlib import Path
+from pprint import pformat
 from typing import Generator
 
 import click
@@ -16,7 +17,6 @@ from juniorguru.models.partner import Partner
 from juniorguru.models.subscription import (
     SubscriptionActivity,
     SubscriptionActivityType,
-    SubscriptionProduct,
     SubscriptionType,
 )
 
@@ -53,6 +53,7 @@ logger = loggers.from_path(__file__)
 @cli.sync_command(dependencies=["partners", "feminine-names"])
 @cli.pass_cache
 @click.option("--from-date", default="2021-01-01", type=date.fromisoformat)
+@click.option("--multiple-products-date", default="2023-12-01", type=date.fromisoformat)
 @click.option("--clear-cache/--keep-cache", default=False)
 @click.option(
     "--history-path",
@@ -61,7 +62,7 @@ logger = loggers.from_path(__file__)
 )
 @click.option("--clear-history/--keep-history", default=False)
 @db.connection_context()
-def main(cache, from_date, clear_cache, history_path, clear_history):
+def main(cache, from_date, multiple_products_date, clear_cache, history_path, clear_history):
     logger.info("Preparing")
     memberful = MemberfulAPI(cache=cache, clear_cache=clear_cache)
 
@@ -103,7 +104,8 @@ def main(cache, from_date, clear_cache, history_path, clear_history):
     queries = (
         memberful.get_nodes(
             ACTIVITIES_GQL_PATH.read_text(),
-            dict(type=type, createdAt=dict(gte=get_timestamp(from_date))),
+            dict(type=type, createdAt=dict(gte=get_timestamp(from_date),
+                                           lt=get_timestamp(multiple_products_date))),
         )
         for type in ACTIVITY_TYPES_MAPPING
     )
@@ -111,7 +113,7 @@ def main(cache, from_date, clear_cache, history_path, clear_history):
         try:
             account_id = int(activity["member"]["id"])
         except (KeyError, TypeError):
-            logger.debug("Activity with no account ID, skipping")
+            logger.debug(f"Activity with no account ID, skipping:\n{pformat(activity)}")
         else:
             happened_at = datetime.utcfromtimestamp(activity["createdAt"])
             SubscriptionActivity.add(
@@ -132,6 +134,10 @@ def main(cache, from_date, clear_cache, history_path, clear_history):
     # messing with the data again.
     subscriptions = memberful.get_nodes(SUBSCRIPTIONS_GQL_PATH.read_text())
     for subscription in logger.progress(subscriptions):
+        if (subscription['createdAt'] >= get_timestamp(multiple_products_date)
+            and not subscription['plan']['planGroup']):
+            logger.debug(f"Not a club subscription, skipping:\n{pformat(subscription)}")
+            continue
         for activity in activities_from_subscription(subscription):
             activity["account_has_feminine_name"] = has_feminine_name(
                 subscription["member"]["fullName"]
@@ -165,49 +171,54 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
     account_id = int(subscription["member"]["id"])
     subscription_interval = subscription["plan"]["intervalUnit"]
     subscription_coupon_slug = get_coupon_slug(subscription["coupon"])
-    subscription_product = SubscriptionProduct.CLUB if subscription["plan"]["planGroup"] else SubscriptionProduct.OTHER
 
     created_at = datetime.utcfromtimestamp(subscription["createdAt"])
     yield dict(
         account_id=account_id,
-        type="order",
+        type=SubscriptionActivityType.ORDER,
         happened_on=created_at.date(),
         happened_at=created_at,
         subscription_interval=subscription_interval,
-        subscription_product=subscription_product,
         order_coupon_slug=subscription_coupon_slug,
     )
+    expires_at = datetime.utcfromtimestamp(subscription["expiresAt"])
+    yield dict(
+        account_id=account_id,
+        type=SubscriptionActivityType.DEACTIVATION,
+        happened_on=expires_at.date(),
+        happened_at=expires_at,
+        subscription_interval=subscription_interval,
+        order_coupon_slug=subscription_coupon_slug,
+    )
+
     if subscription["activatedAt"]:
         activated_at = datetime.utcfromtimestamp(subscription["activatedAt"])
         yield dict(
             account_id=account_id,
-            type="order",
+            type=SubscriptionActivityType.ORDER,
             happened_on=activated_at.date(),
             happened_at=activated_at,
             subscription_interval=subscription_interval,
-            subscription_product=subscription_product,
             order_coupon_slug=subscription_coupon_slug,
         )
     if subscription["trialStartAt"]:
         trial_start_at = datetime.utcfromtimestamp(subscription["trialStartAt"])
         yield dict(
             account_id=account_id,
-            type="trial_start",
+            type=SubscriptionActivityType.TRIAL_START,
             happened_on=trial_start_at.date(),
             happened_at=trial_start_at,
             subscription_interval=subscription_interval,
-            subscription_product=subscription_product,
             order_coupon_slug=subscription_coupon_slug,
         )
     if subscription["trialEndAt"]:
         trial_end_at = datetime.utcfromtimestamp(subscription["trialEndAt"])
         yield dict(
             account_id=account_id,
-            type="trial_end",
+            type=SubscriptionActivityType.TRIAL_END,
             happened_on=trial_end_at.date(),
             happened_at=trial_end_at,
             subscription_interval=subscription_interval,
-            subscription_product=subscription_product,
             order_coupon_slug=subscription_coupon_slug,
         )
 
@@ -221,11 +232,10 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
         order_created_at = datetime.utcfromtimestamp(order["createdAt"])
         yield dict(
             account_id=account_id,
-            type="order",
+            type=SubscriptionActivityType.ORDER,
             happened_on=order_created_at.date(),
             happened_at=order_created_at,
             subscription_interval=subscription["plan"]["intervalUnit"],
-            subscription_product=subscription_product,
             order_coupon_slug=order_coupon_slug,
         )
 

@@ -41,12 +41,6 @@ class SubscriptionInterval(StrEnum):
 
 
 @unique
-class SubscriptionProduct(StrEnum):
-    CLUB = "club"
-    OTHER = "other"
-
-
-@unique
 class SubscriptionType(StrEnum):
     FREE = "free"
     FINAID = "finaid"
@@ -131,9 +125,6 @@ class SubscriptionActivity(BaseModel):
     subscription_type = CharField(
         null=True, constraints=[check_enum("subscription_type", SubscriptionType)]
     )
-    subscription_product = CharField(
-        null=True, constraints=[check_enum("subscription_product", SubscriptionProduct)]
-    )
 
     @classmethod
     def deserialize(cls, line: str) -> Self:
@@ -182,11 +173,11 @@ class SubscriptionActivity(BaseModel):
 
     @classmethod
     def history_end_on(cls, buffer_days=30) -> date:
-        # The 'trial_end' activities are sometimes in the future,
+        # The 'trial_end' and 'deactivation' activities are sometimes in the future,
         # so let's not consider them as the end of the known history
         end_on = (
             cls.select(cls.happened_at)
-            .where(cls.type != SubscriptionActivityType.TRIAL_END)
+            .where(cls.type.not_in([SubscriptionActivityType.TRIAL_END, SubscriptionActivityType.DEACTIVATION]))
             .order_by(cls.happened_at.desc())
             .limit(1)
             .scalar()
@@ -206,10 +197,6 @@ class SubscriptionActivity(BaseModel):
 
     @classmethod
     def cleanse_data(cls) -> None:
-        # As of now we do not process subscriptions of products other than club
-        # in any way, so let's drop them.
-        cls.delete().where(cls.subscription_product != SubscriptionProduct.CLUB).execute()
-
         # The 'order' activity happening on the same day as 'trial_end' activity
         # marks subscription type of the whole trial.
         #
@@ -257,7 +244,7 @@ class SubscriptionActivity(BaseModel):
             trial_order.subscription_type = subscription_type
             trial_order.save()
 
-        # By default 'deactivation' activities are without details, so let's
+        # Some 'deactivation' activities are without details, so let's
         # give it the details of the latest activity before it.
         deactivations = cls.select().where(
             cls.type == SubscriptionActivityType.DEACTIVATION,
@@ -434,7 +421,7 @@ class SubscriptionActivity(BaseModel):
             .alias("latest_order_at")
         )
 
-        # The row_num column will allow us to filter out duplicit deactivations
+        # The row_num column will allow us to filter out duplicate deactivations
         # and must be ordered ascendingly so that the first occurance
         # of deactivation is row number one
         row_num = (
@@ -460,7 +447,7 @@ class SubscriptionActivity(BaseModel):
         )
 
         # Now selecting only the first row for each account_id, effectively
-        # getting rid of later duplicit deactivations
+        # getting rid of later duplicate deactivations
         return (
             cls.select(cls)
             .join(deactivations, on=(cls.id == deactivations.c.id))

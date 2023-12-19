@@ -1,8 +1,8 @@
 from datetime import date, datetime
 
 import pytest
-from juniorguru.models.subscription import SubscriptionProduct
 
+from juniorguru.models.subscription import SubscriptionActivityType
 from juniorguru.sync.subscriptions import (
     activities_from_subscription,
     get_coupon_slug,
@@ -34,89 +34,69 @@ def test_activities_from_subscription():
     assert list(activities_from_subscription(subscription)) == [
         {
             "account_id": 2782496,
-            "type": "order",
+            "type": SubscriptionActivityType.ORDER,
             "happened_on": date(2021, 10, 12),
             "happened_at": datetime(2021, 10, 12, 4, 37, 11),
             "subscription_interval": "year",
-            "subscription_product": "club",
             "order_coupon_slug": "thankyou",
         },
         {
             "account_id": 2782496,
-            "type": "order",
-            "happened_on": date(2021, 10, 12),
-            "happened_at": datetime(2021, 10, 12, 4, 37, 11),
+            "type": SubscriptionActivityType.DEACTIVATION,
+            "happened_on": date(2023, 12, 7),
+            "happened_at": datetime(2023, 12, 7, 17, 36, 4),
             "subscription_interval": "year",
-            "subscription_product": "club",
             "order_coupon_slug": "thankyou",
         },
         {
             "account_id": 2782496,
-            "type": "trial_start",
+            "type": SubscriptionActivityType.ORDER,
             "happened_on": date(2021, 10, 12),
             "happened_at": datetime(2021, 10, 12, 4, 37, 11),
             "subscription_interval": "year",
-            "subscription_product": "club",
             "order_coupon_slug": "thankyou",
         },
         {
             "account_id": 2782496,
-            "type": "trial_end",
+            "type": SubscriptionActivityType.TRIAL_START,
+            "happened_on": date(2021, 10, 12),
+            "happened_at": datetime(2021, 10, 12, 4, 37, 11),
+            "subscription_interval": "year",
+            "order_coupon_slug": "thankyou",
+        },
+        {
+            "account_id": 2782496,
+            "type": SubscriptionActivityType.TRIAL_END,
             "happened_on": date(2021, 10, 26),
             "happened_at": datetime(2021, 10, 26, 4, 37, 11),
             "subscription_interval": "year",
-            "subscription_product": "club",
             "order_coupon_slug": "thankyou",
         },
         {
             "account_id": 2782496,
-            "type": "order",
+            "type": SubscriptionActivityType.ORDER,
             "happened_on": date(2022, 12, 6),
             "happened_at": datetime(2022, 12, 6, 21, 0, 25),
             "subscription_interval": "year",
-            "subscription_product": "club",
             "order_coupon_slug": "thankyou",
         },
         {
             "account_id": 2782496,
-            "type": "order",
+            "type": SubscriptionActivityType.ORDER,
             "happened_on": date(2021, 10, 26),
             "happened_at": datetime(2021, 10, 26, 4, 37, 44),
             "subscription_interval": "year",
-            "subscription_product": "club",
             "order_coupon_slug": "thankyou",
         },
         {
             "account_id": 2782496,
-            "type": "order",
+            "type": SubscriptionActivityType.ORDER,
             "happened_on": date(2021, 10, 12),
             "happened_at": datetime(2021, 10, 12, 4, 37, 11),
             "subscription_interval": "year",
-            "subscription_product": "club",
             "order_coupon_slug": None,
         },
     ]
-
-
-def test_activities_from_subscription_skip_without_plan_group():
-    subscription = {'activatedAt': 1702910749,
- 'active': True,
- 'coupon': None,
- 'createdAt': 1702910749,
- 'expiresAt': 1705589149,
- 'id': '3382030',
- 'member': {'fullName': 'Zlatko Prdić', 'id': '3523739'},
- 'orders': [{'coupon': None, 'createdAt': 1702910749}],
- 'plan': {'intervalUnit': 'month', 'planGroup': None},
- 'trialEndAt': None,
- 'trialStartAt': None}
-    subscription_products = [
-        activity['subscription_product']
-        for activity in
-        activities_from_subscription(subscription)
-    ]
-
-    assert subscription_products == [SubscriptionProduct.OTHER, SubscriptionProduct.OTHER, SubscriptionProduct.OTHER]
 
 
 @pytest.mark.parametrize(
