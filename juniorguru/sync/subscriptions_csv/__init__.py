@@ -114,31 +114,34 @@ def main(cache, clear_cache):
     )
     for csv_row in csv_rows:
         account_email = csv_row["Email"]
-        logger.debug(f"Processing cancellation of {account_email}")
-        if csv_row["Reason"]:
-            reason = slugify(csv_row["Reason"], separator="_")
+        if "členství v klubu" not in csv_row["Plan"].lower():
+            logger.debug(f"Skipping cancellation of {account_email}, not a club subscription: {csv_row['Plan']!r}")
         else:
-            reason = SubscriptionCancellationReason.UNKNOWN
-        feedback = csv_row["Feedback"] or None
-        try:
-            date_field_value = csv_row.get("Date") or csv_row.get("Expiration Date")
-            expires_on = date.fromisoformat(date_field_value)
-        except ValueError:
-            logger.warning(f"Invalid date format: {date_field_value!r}")
-            expires_on = None
-        account_id = emails[account_email]
-        logger.debug(
-            f"Adding cancellation of {memberful_url(account_id)} ({account_email})"
-        )
-        SubscriptionCancellation.add(
-            account_id=account_id,
-            account_name=csv_row["Name"],
-            account_email=account_email,
-            account_total_spend=total_spend[account_id],
-            expires_on=expires_on,
-            reason=reason,
-            feedback=feedback,
-        )
+            logger.debug(f"Processing cancellation of {account_email}")
+            if csv_row["Reason"]:
+                reason = slugify(csv_row["Reason"], separator="_")
+            else:
+                reason = SubscriptionCancellationReason.UNKNOWN
+            feedback = csv_row["Feedback"] or None
+            try:
+                date_field_value = csv_row.get("Date") or csv_row.get("Expiration Date")
+                expires_on = date.fromisoformat(date_field_value)
+            except ValueError:
+                logger.warning(f"Invalid date format: {date_field_value!r}")
+                expires_on = None
+            account_id = emails[account_email]
+            logger.debug(
+                f"Adding cancellation of {memberful_url(account_id)} ({account_email})"
+            )
+            SubscriptionCancellation.add(
+                account_id=account_id,
+                account_name=csv_row["Name"],
+                account_email=account_email,
+                account_total_spend=total_spend[account_id],
+                expires_on=expires_on,
+                reason=reason,
+                feedback=feedback,
+            )
 
 
 def classify_referrer(url: str) -> str:
