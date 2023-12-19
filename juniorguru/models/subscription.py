@@ -41,6 +41,12 @@ class SubscriptionInterval(StrEnum):
 
 
 @unique
+class SubscriptionProduct(StrEnum):
+    CLUB = "club"
+    OTHER = "other"
+
+
+@unique
 class SubscriptionType(StrEnum):
     FREE = "free"
     FINAID = "finaid"
@@ -125,6 +131,9 @@ class SubscriptionActivity(BaseModel):
     subscription_type = CharField(
         null=True, constraints=[check_enum("subscription_type", SubscriptionType)]
     )
+    subscription_product = CharField(
+        null=True, constraints=[check_enum("subscription_product", SubscriptionProduct)]
+    )
 
     @classmethod
     def deserialize(cls, line: str) -> Self:
@@ -197,6 +206,10 @@ class SubscriptionActivity(BaseModel):
 
     @classmethod
     def cleanse_data(cls) -> None:
+        # As of now we do not process subscriptions of products other than club
+        # in any way, so let's drop them.
+        cls.delete().where(cls.subscription_product != SubscriptionProduct.CLUB).execute()
+
         # The 'order' activity happening on the same day as 'trial_end' activity
         # marks subscription type of the whole trial.
         #

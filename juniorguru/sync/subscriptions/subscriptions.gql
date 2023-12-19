@@ -29,6 +29,9 @@ query fetch($cursor: String!) {
                 }
                 plan {
                     intervalUnit
+                    planGroup {
+                        name
+                    }
                 }
             }
         }

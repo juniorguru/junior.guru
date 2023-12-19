@@ -16,6 +16,7 @@ from juniorguru.models.partner import Partner
 from juniorguru.models.subscription import (
     SubscriptionActivity,
     SubscriptionActivityType,
+    SubscriptionProduct,
     SubscriptionType,
 )
 
@@ -164,6 +165,7 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
     account_id = int(subscription["member"]["id"])
     subscription_interval = subscription["plan"]["intervalUnit"]
     subscription_coupon_slug = get_coupon_slug(subscription["coupon"])
+    subscription_product = SubscriptionProduct.CLUB if subscription["plan"]["planGroup"] else SubscriptionProduct.OTHER
 
     created_at = datetime.utcfromtimestamp(subscription["createdAt"])
     yield dict(
@@ -172,6 +174,7 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
         happened_on=created_at.date(),
         happened_at=created_at,
         subscription_interval=subscription_interval,
+        subscription_product=subscription_product,
         order_coupon_slug=subscription_coupon_slug,
     )
     if subscription["activatedAt"]:
@@ -182,6 +185,7 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
             happened_on=activated_at.date(),
             happened_at=activated_at,
             subscription_interval=subscription_interval,
+            subscription_product=subscription_product,
             order_coupon_slug=subscription_coupon_slug,
         )
     if subscription["trialStartAt"]:
@@ -192,6 +196,7 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
             happened_on=trial_start_at.date(),
             happened_at=trial_start_at,
             subscription_interval=subscription_interval,
+            subscription_product=subscription_product,
             order_coupon_slug=subscription_coupon_slug,
         )
     if subscription["trialEndAt"]:
@@ -202,6 +207,7 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
             happened_on=trial_end_at.date(),
             happened_at=trial_end_at,
             subscription_interval=subscription_interval,
+            subscription_product=subscription_product,
             order_coupon_slug=subscription_coupon_slug,
         )
 
@@ -219,6 +225,7 @@ def activities_from_subscription(subscription: dict) -> Generator[dict, None, No
             happened_on=order_created_at.date(),
             happened_at=order_created_at,
             subscription_interval=subscription["plan"]["intervalUnit"],
+            subscription_product=subscription_product,
             order_coupon_slug=order_coupon_slug,
         )
 
