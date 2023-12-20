@@ -62,7 +62,9 @@ logger = loggers.from_path(__file__)
 )
 @click.option("--clear-history/--keep-history", default=False)
 @db.connection_context()
-def main(cache, from_date, multiple_products_date, clear_cache, history_path, clear_history):
+def main(
+    cache, from_date, multiple_products_date, clear_cache, history_path, clear_history
+):
     logger.info("Preparing")
     memberful = MemberfulAPI(cache=cache, clear_cache=clear_cache)
 
@@ -104,8 +106,13 @@ def main(cache, from_date, multiple_products_date, clear_cache, history_path, cl
     queries = (
         memberful.get_nodes(
             ACTIVITIES_GQL_PATH.read_text(),
-            dict(type=type, createdAt=dict(gte=get_timestamp(from_date),
-                                           lt=get_timestamp(multiple_products_date))),
+            dict(
+                type=type,
+                createdAt=dict(
+                    gte=get_timestamp(from_date),
+                    lt=get_timestamp(multiple_products_date),
+                ),
+            ),
         )
         for type in ACTIVITY_TYPES_MAPPING
     )
@@ -134,8 +141,10 @@ def main(cache, from_date, multiple_products_date, clear_cache, history_path, cl
     # messing with the data again.
     subscriptions = memberful.get_nodes(SUBSCRIPTIONS_GQL_PATH.read_text())
     for subscription in logger.progress(subscriptions):
-        if (subscription['createdAt'] >= get_timestamp(multiple_products_date)
-            and not subscription['plan']['planGroup']):
+        if (
+            subscription["createdAt"] >= get_timestamp(multiple_products_date)
+            and not subscription["plan"]["planGroup"]
+        ):
             logger.debug(f"Not a club subscription, skipping:\n{pformat(subscription)}")
             continue
         for activity in activities_from_subscription(subscription):

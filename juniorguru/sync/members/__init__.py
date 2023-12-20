@@ -125,7 +125,9 @@ def get_active_subscription(subscriptions: list[dict], today: date = None) -> di
     subscriptions = [
         s
         for s in subscriptions
-        if s["active"] and datetime.utcfromtimestamp(s["activatedAt"]).date() <= today and s["plan"]["planGroup"]
+        if s["active"]
+        and datetime.utcfromtimestamp(s["activatedAt"]).date() <= today
+        and s["plan"]["planGroup"]
     ]
     if len(subscriptions) > 1:
         try:

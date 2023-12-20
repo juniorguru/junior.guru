@@ -115,7 +115,9 @@ def main(cache, clear_cache):
     for csv_row in csv_rows:
         account_email = csv_row["Email"]
         if "členství v klubu" not in csv_row["Plan"].lower():
-            logger.debug(f"Skipping cancellation of {account_email}, not a club subscription: {csv_row['Plan']!r}")
+            logger.debug(
+                f"Skipping cancellation of {account_email}, not a club subscription: {csv_row['Plan']!r}"
+            )
         else:
             logger.debug(f"Processing cancellation of {account_email}")
             if csv_row["Reason"]:

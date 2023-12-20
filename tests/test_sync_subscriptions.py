@@ -10,7 +10,7 @@ from juniorguru.sync.subscriptions import (
 )
 
 
-PLAN_GROUP = dict(planGroup=dict(name='abc'))
+PLAN_GROUP = dict(planGroup=dict(name="abc"))
 
 
 def test_activities_from_subscription():
@@ -27,7 +27,7 @@ def test_activities_from_subscription():
             {"coupon": {"code": "THANKYOU1234567890"}, "createdAt": 1635223064},
             {"coupon": None, "createdAt": 1634013431},
         ],
-        "plan": {"intervalUnit": "year", 'planGroup': PLAN_GROUP},
+        "plan": {"intervalUnit": "year", "planGroup": PLAN_GROUP},
         "trialEndAt": 1635223031,
         "trialStartAt": 1634013431,
     }

@@ -5,7 +5,7 @@ import pytest
 from juniorguru.sync.members import get_active_subscription, get_coupon, get_expires_at
 
 
-PLAN_CLUB = dict(planGroup=dict(name='abc'))
+PLAN_CLUB = dict(planGroup=dict(name="abc"))
 
 PLAN_OTHER = dict(planGroup=None)
 
@@ -111,11 +111,31 @@ def test_get_active_subscription_multiple_active():
 @pytest.mark.parametrize(
     "today, active1, expected",
     [
-        (date(2023, 8, 10), True, dict(id=1, active=True, activatedAt=1663146115, plan=PLAN_CLUB)),
-        (date(2023, 9, 14), True, dict(id=2, active=True, activatedAt=1694685504, plan=PLAN_CLUB)),
-        (date(2023, 9, 14), False, dict(id=2, active=True, activatedAt=1694685504, plan=PLAN_CLUB)),
-        (date(2023, 9, 15), False, dict(id=2, active=True, activatedAt=1694685504, plan=PLAN_CLUB)),
-        (date(2023, 9, 16), False, dict(id=2, active=True, activatedAt=1694685504, plan=PLAN_CLUB)),
+        (
+            date(2023, 8, 10),
+            True,
+            dict(id=1, active=True, activatedAt=1663146115, plan=PLAN_CLUB),
+        ),
+        (
+            date(2023, 9, 14),
+            True,
+            dict(id=2, active=True, activatedAt=1694685504, plan=PLAN_CLUB),
+        ),
+        (
+            date(2023, 9, 14),
+            False,
+            dict(id=2, active=True, activatedAt=1694685504, plan=PLAN_CLUB),
+        ),
+        (
+            date(2023, 9, 15),
+            False,
+            dict(id=2, active=True, activatedAt=1694685504, plan=PLAN_CLUB),
+        ),
+        (
+            date(2023, 9, 16),
+            False,
+            dict(id=2, active=True, activatedAt=1694685504, plan=PLAN_CLUB),
+        ),
     ],
 )
 def test_get_active_subscription_multiple_active_but_one_starts_in_the_future(

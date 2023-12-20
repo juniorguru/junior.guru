@@ -177,7 +177,14 @@ class SubscriptionActivity(BaseModel):
         # so let's not consider them as the end of the known history
         end_on = (
             cls.select(cls.happened_at)
-            .where(cls.type.not_in([SubscriptionActivityType.TRIAL_END, SubscriptionActivityType.DEACTIVATION]))
+            .where(
+                cls.type.not_in(
+                    [
+                        SubscriptionActivityType.TRIAL_END,
+                        SubscriptionActivityType.DEACTIVATION,
+                    ]
+                )
+            )
             .order_by(cls.happened_at.desc())
             .limit(1)
             .scalar()
