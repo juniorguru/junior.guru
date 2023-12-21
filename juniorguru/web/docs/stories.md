@@ -84,6 +84,7 @@ Nejen že se nebojíme o nepříjemnostech psát, my se na ně přímo ptáme!
 V roce 2020 vznikl o rekvalifikaci do IT český film [Nová šichta](https://www.csfd.cz/film/892942-nova-sichta/).
 Dokument sleduje Tomáše, který se rozhodl stát se programátorem po tom, co strávil 25 let pod zemí jako horník na Ostravsku.
 Film realisticky popisuje nejen úspěchy, ale i těžkosti celé Tomášovy cesty.
+Jak přesně rekfalifikační program probíhal a kolik horníků se dostalo do IT [zjišťovali v listopadu 2023 datoví novináři z ČRo](https://www.irozhlas.cz/zpravy-domov/okd-rekvalifikace-horniku-programatori-ridici-data_2311030620_fil).
 
 <div class="link-cards">
   {{ link_card(
