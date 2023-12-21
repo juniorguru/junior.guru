@@ -19,7 +19,7 @@ from juniorguru.lib.discord_club import (
 from juniorguru.models.base import db
 from juniorguru.models.page import Page
 from juniorguru.models.sync import Sync
-from juniorguru.cli.sync import Cache, main as sync
+from juniorguru.cli.sync import Cache
 from juniorguru.sync.pages import main as sync_pages
 
 
