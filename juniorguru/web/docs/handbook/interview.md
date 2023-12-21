@@ -911,4 +911,11 @@ Přesvědčovací bod může být něco, co oni využijí, ale nikdo u nich ned�
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1172808574221701180
+Nicméně junior.guru vydal několik příruček, jak na první práce. A tento e-book je sice z jiného zdroje, ale speciálně o financích a je skvěle zpracovaný 💸
+
+https://www.careerdesigner.cz/penize
+---
+
+
 #} -->

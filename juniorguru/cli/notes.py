@@ -19,6 +19,7 @@ from juniorguru.lib.discord_club import (
 from juniorguru.models.base import db
 from juniorguru.models.page import Page
 from juniorguru.models.sync import Sync
+from juniorguru.cli.sync import Cache, main as sync
 from juniorguru.sync.pages import main as sync_pages
 
 
@@ -33,11 +34,12 @@ logger = loggers.from_path(__file__)
 
 
 @click.command()
+@click.option("--cache-dir", default=".sync_cache", type=click.Path(path_type=Path))
 @click.pass_context
-def main(context):
+def main(context, cache_dir):
     with db.connection_context():
         sync = Sync.start(perf_counter_ns())
-    context.obj = dict(sync=sync, skip_dependencies=False)
+    context.obj = dict(sync=sync, cache=Cache(cache_dir), skip_dependencies=False)
     context.invoke(sync_pages)
     mutations.allow("discord")
     discord_sync.run(process_pins)

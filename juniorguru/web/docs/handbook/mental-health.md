@@ -263,4 +263,9 @@ https://www.facebook.com/groups/karieroviporadci/posts/1313279362724110/?comment
 Případně ještě kniha k posilování odolnosti "Životem s lehkostí", také zdarma na našem webu
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1182021718919872522
+Impostor syndrom. Je to vlákno, po rozkliknutí byste měli vidět navazující příspěvky. https://jawns.club/@skyfaller/111531328646480058
+---
+
+
 #} -->

@@ -1027,4 +1027,63 @@ Menší sbírka videí o konceptech kolem programování, poměrně nezávislá 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1184491871637078077/1184812245281165363
+Ahoj, datová věda je pomerne široká oblasť. Z toho čo píšeš mi to znie že sa aktuálne formuješ ako datový analytik. Možno by som do tvojho rozhodovacieho stromu pridal ešte zamyslenie nad tým, do akej oblasti by si chcela ísť pracovať. 
+
+V tradičných korporátoch napríklad typu banka, kde pracujem aj ja, je dnes datová analýza postavená hlavne na SQL a PowerBI. Pokiaľ by si sa ale rada venovala aj nqpr. datařine v pythone tak si postráž na pohovore aby v tejto firme vôbec existovala podpora pre tento jazyk. Zároveň sa ti môže stať, že ťahúňom v rozvoji python riešení budeš práve ty - to nemusí vyhovovať ľuďom, ktorý vyžadujú silné seniorné vedenie. 
+
+V technickejšie zameraných firmách už dnes často datový analytik znamená aj SQL a python - tu ale často býva väčši presah do ďalších oblastí - modelovanie, machine learning atď. a často menší dôraz na tvorbu reportov a vizualizácií.
+
+Jeden spoločný menovateľ je zjavný - vedieť dobre SQL je obrovské plus, nejde ani tak o fancy príkazy ako o schopnosť zorientovať sa v rôznych dátových zdrojoch, tieto dáta pospájať a získať požadovaný výsledok.
+
+Ak by ti PowerBI nevyhovovalo, pretože máš radšej programátorskejší ako klikací prístup, python obsahuje veľké množstvo knižníc kde sa môžeš realizovať. Ja pracujem s knižcou Plotly Dash a naviazanými vizualizáciami v Plotly - u nás v banke ho používame ako alternatívu k PowerBI. Ak by si si chcela spraviť základný prehľad tak k workshopu na pycone som napísal aj rozsiahly návod pre datařov, ktorý by s dashom radi začali: https://github.com/martin2097/pycon-prague-2023-dash-workshop
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1184824550324719616
+Já se tady zjevím vždycky jen jednou za čas (hlavně v prosinci, náhoda?), tak aspoň (nejspíš opět) přidám tip na jeden z nejlepších malinko pokročilejších kurzů, který vám pomůže pochopit, jak vlastně počítač funguje a co se v něm děje. A je to zábava 🙂 
+
+https://www.nand2tetris.org/, resp. https://www.coursera.org/learn/build-a-computer
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1182391116629286923
+Do nedávna byla při programování klíčová schopnost efektivně googlit. Může to vypadat banálně ale umět efektivně googlit se člověk učil roky. Teď bude při programování klíčová schopnost efektivně využívat AI.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1180500106303242322
+Ahoj, nedoporučili byste někdo nějaké kvalitní výukové materiály pro regulární výrazy?
+Když tak vidím letošní Advent of Code, které mě tentokrát dokázalo demotivovat v jakýchkoli dalších snahách, asi bych se s nimi měla konečně začít kamarádit. 🙃
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1179302149537140836
+<:python:842331892091322389> Mnozí se už přesvědčili, že AI může být extrémně nápomocné, ale zároveň je to občas boj, aby dělalo to, co chceme. Tady je nejen skvěle popsáno, jak toto konkrétní GPTs tvořili, ale hlavně je to zaměřené na pomoc a vysvětlování Pythonu. <:python:842331892091322389> 
+
+https://www.linkedin.com/posts/nancyebain_meet-pypilot-a-customgpt-case-study-activity-7134904613622706176-eZ_W
+---
+
+
+--- https://discord.com/channels/769966886598737931/1170648798532489226/1170850238823661678
+Angličtina.
+
+
+Vidím asi 3 možné výjimky:
+1. začátečníci na úplném začátku, pokud jim to pomáhá s pochopením toho, co dělají
+2. lidi v týmu mají tak špatnou angličtinu, že jejich pojmenování brání chápání kódu těm, kteří ji mají lepší
+3. to co už tu padlo, zvážil bych to tam, kde jde o termíny, které jdou blbě přeložit a stejně nikdo nebude vědět, co to znamená
+---
+
+
+--- https://discord.com/channels/769966886598737931/864434067968360459/1169910594497953812
+Jaký je podel vás smysl či podstat komunikace a dobré komunikace obzvlášť?
+---
+
+
+--- https://discord.com/channels/769966886598737931/797040163325870092/1170063959508926565
+Tady nějaký seznam, který jsem náhodně vygooglil https://github.com/kdeldycke/awesome-falsehood
+---
+
+
 #} -->

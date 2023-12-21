@@ -541,4 +541,35 @@ Zajímavá myšlenka. Diskutujme 😅 https://mastodon.social/@theincredibleholk
 ---
 
 
+--- https://discord.com/channels/769966886598737931/991010207280807986/1176896116063731712
+- Relativně častým nešvarem (aspoň v mé bublině 🙂 ) je bobtnání PR, dělání víc věcí najednou, přidávání "přílepků" (když už jsem měl ten soubor otevřený, tak jsem holt udělal ještě to a to). Někdy to vypadá tak, že je tlak na dokončení nějaké featury, ale protože v tom PR se udělalo i něco dalšího, co na začátku vypadalo jako triviální úprava, ale nakonec se to dotklo nějakých dlouhodobých plánů nebo technických dluhů, tak je najednou potřeba zasedání architektonické komise, místo toho, aby se dokončila jenom ta jedna původní věc. Nebát se dělat víc PR. A naučit se git, umět např. rebasnout větev (i kdyby to mělo být přes cherry picking). Pokud se celé PR squashují do jednoho commitu (někde se to tak dělá, někde ne 🤷‍♂️), tak i ten commit, co z toho PR vznikne, pak dává větší smysl sám o sobě a obsahuje jen jednu pokud možno atomickou změnu.
+- Občas někdo provede úpravy, které vytvoří zbytečné merge konflikty, zhatí výstupy git blame atd. Nejlepší je, když lidi sami od sebe jdou a seřadí něco v kódu, aby to bylo podle abecedy 🙂
+- Někde hrotím každý detail (např. sdílené knihovny), někde mi stačí, když to aspoň nějak funguje 🙂 (např. jednorázové skripty a migrace). Také záleží na tom, jak moc náročná bude případná úprava, když se rozhodneme to udělat jinak - pokud bude stačit opravit ten kus kódu, tak ok, pokud bude potřeba oprava na dvaceti místech ve zbytku projektu, nebo dokonce v jiných projektech, nebo upravovat strukturu databáze, tak holt dává smysl strávit desítky minut i nad názvem db sloupce/api klíče.
+- Jsou věci, které prostě vidí až někdo další (nebo původní autor je uvidí až s větším časovým odstupem). Např. potřeba komentářů a dokumentace 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/991010207280807986/1176893807900499988
+K tomu, co se tu nedávno psalo o code review, resp. pull requestům a jejich review (nebo se v praxi dělá code review i nějak jinak?), mě napadá pár poznámek:
+- Není to sranda ani pro protistranu (toho, kdo dělá review). Musím si k tomu sednout, naladit se na projekt, pochopit kontext, co se vůbec má dělat. Pokud se mi implementace "nelíbí", tak se musím zamyslet, jestli je to jenom proto, že sám bych to dělal jinak a i takhle je to vlastně ok, nebo je tam fakt nějaký objektivní problém. Blbé je, že to, že se mi to "nelíbí", cítím hned, ale ten objektivní důvod můžu dávat dohromady hodiny. 
+- Pokud to review má proběhnout do hloubky, zvlášť pokud se nelze spolehnout na senioritu a zkušenosti autora, tak to může trvat nakonec déle, než to samotné naprogramování. Takové to jestli komunikace komponent dává smysl, jestli někde nevznikne race condition, co kde bude úzkým hrdlem při zatížení, co všechno se může pokazit a rozbít, kdo to kde může jak hacknout...
+- Takže sorry, pokud na review nechceš čekat dva týdny, než na to budu mít celé odpoledne čas, tak se může stát, že se ten feedback bude dávkovat postupně 🙂 Taky když vidím issues na první pohled, tak řešíme nejdřív ty, a až je to nějaká "skutečně" finální verze, tak to projdu víc do hloubky.
+- Občas pozoruji, že někdo jde, neporadí se a rovnou to naprogramuje a první "komunikací" z jeho strany je až ten pull request. A já na to koukám a říkám si, že to není ono, že by to chtělo se nejdřív poradit, jak vůbec na to. Někdy jsem se u juniorů setkal s tím, že vidí jen tu hlavní cestu bez odboček/alternativ (a ještě k tomu ji vidí jen na jeden krok dopředu) a tedy vlastně nevědí, kde a o čem se mohou poradit. Nebo může vyvstat námitka, že to mělo být zohledněno už v zadání, ale to bych pak to zadání psal tak dlouho a podrobně, že jsem si to mohl naprogramovat sám 😇 
+Holt i review je týmová záležitost, není to odevzdávání písemky ve škole nebo úřední žádost o vyplacení mzdy.
+---
+
+
+--- https://discord.com/channels/769966886598737931/991010207280807986/1174335399406092338
+Co se často děje je, ze někdo má ke kódu objektivní výhrady a navrhne jiná řešení, napíše 40 komentářů, a napíše je stručně.
+
+Třeba “tahle funkce je sice hezká, ale koukej, tady to je ve standardní knihovně, těchto 50 radku prosím smaž”
+
+A kdo to čte má pak chuť jít brečet do rohu, protože to může vlastně celé přepsat a má pocit ze není a nikdy nebude programátor a že všechny jen zdržuje nebo něco.
+
+Je dobry si ujasnit nebo předpokládat, ze ten kdo to review dělal, nemá nic proti nám osobně. Ze chápe, ze nezname celou stdlib nazpaměť, a ze to bere proste tak, ze jsme se něco naučili, a hotovo. A ze tech 50 radku bylo holt dobry cvičení ale teď se to smaze a na produkci to nepujde. Atd.
+
+Tyhle věci mají pro člověka, který je nedělá už 10 let a nemá je zažité, potenciál emočně vybouchnout. Přitom jde hlavně jen o to, aby ta změna udělala co má udělat, aby se dostala na produkci a ukol byl hotov, a aby to někdo po nás ještě někdy přečetl. Pokud se u toho všichni něco naucime, je to super.
+---
+
+
 #} -->

@@ -1317,4 +1317,21 @@ Michael Lopp, druhé vydání knihy Being Geek, nové jméno The Software Develo
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1178734115441356850/1178816328694517850
+Jestli potřebují někoho nabrat ale nemají čas dělat nábor, tak mě to upřímně nezajímá. To je jejich problém. Já mám vlastní starosti 😄
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1172808574221701180
+Nicméně junior.guru vydal několik příruček, jak na první práce. A tento e-book je sice z jiného zdroje, ale speciálně o financích a je skvěle zpracovaný 💸
+
+https://www.careerdesigner.cz/penize
+---
+
+
+--- https://discord.com/channels/769966886598737931/1150481852516290641/1169670818926706860
+Tak jsem ráda, že jsem napsala o relevantnější zpětnou vazbu a dostal se mi zajímavý vhled. Frontendistů je teda asi opravdu jak máků 😦 Asi se budu muset přece jen učit ten backend (Node.js)
+---
+
+
 #} -->

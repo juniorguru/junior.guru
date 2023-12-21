@@ -480,4 +480,20 @@ disclaimer: nejsem HR, tak třeba někdo líp poradí
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1183365205078589501
+Má smysl předělávat CV do ČJ, když ho mám defaultně v AJ, ale firma má v inzerátu "zašli životopis v ČJ", i když požaduje angličtinu?
+
+Upravuju si každé CV podle požadavků konkrétní firmy, kam ho posílám. Je to vždy docela pracné vymyslet co vypustit a co naopak dopsat. Má smysl ztrácet čas tímhle, když bych se hlásila na pozici, která by pro mě byla jen doplňková a měla mi zajistit třeba i minimální příjem v době dalšího studia programování?
+---
+
+
+--- https://discord.com/channels/769966886598737931/1170645820748599328/1171924140136083496
+CV je ustálený útvar s určitou funkcí, rolí a historií a pravidly, podobně jako slohové útvary  nebo jakékoli komunikáty (úvaha, složenka, objednání si v restauraci). Není mi moc jasné, odkud se vzal pojem autentičnosti jako související a určující, pokud se pod autenticitu zařazují překlepy, neaktuální fotka nebo fotka nekvalitní. Jako u každého formátu jsou i u CV místa, kde lze být (a je záhodno být) kreativní a osobitý, a místa, kde takové chování vyústí pouze v nižší kvalitu výsledku. **Právě proto, že drtivá většina lidí přistupuje k CV jiným způsobem, což určuje pravidla hry**: překlepy v náhodné zprávě v chatu neznamenají nic, překlepy v CV jsou příznakové; jsou mínus a mohou být čteny jako lenost, zbrklost, nezájem, nepéče...
+
+Nadto je CV vysoce neimprovizovaný útvar; druhá strana ho oprávněně čte jako připravovaný (a už jen tím mimochodem stylizovaný) a servírovaný pro ni. Počítat s nějakou korekcí a shovívavostí u druhé strany je z mého hlediska nerozumné a naivní. Minimálně přicházíš o část čtenářů a zájmu, a tedy i o část možností/nabídek. Ale to zřejmě víš a jsi tomu naopak rád.
+
+V takovém případě používáš svou možnost chovat se příznakově (a psát CV špatně) správně a vhodně, akorát jsme pak trochu zbytečně vypisovali feedback ve snaze CV narovnat k obrazu obecně přijímanému. Ať je to jakkoli, přeju Ti, ať CV splní Tvá očekávání.
+---
+
+
 #} -->

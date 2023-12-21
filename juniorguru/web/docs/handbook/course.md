@@ -859,4 +859,70 @@ https://skvt.cz/course/122-game-design-pro-zacatecniky
 https://www.linkedin.com/pulse/nahl%2525C3%2525A9dn%2525C4%25259Bte-za-oponu-jsemvkurzucz-alias-podoj-st%2525C3%2525A1t-na-max-tvrd%2525C3%2525ADkov%2525C3%2525A1-rlatf%3FtrackingId=i1UkOe9ZcyGlIQRwCcoDwA%253D%253D/
 
 
+--- https://discord.com/channels/769966886598737931/1174035488273866782/1174301078280478760
+A ještě odpovím. Fakt strašně záleží:
+
+- Každý kurz je jiný. Dokonce každý kurz od stejné firmy je jiný. Každý lektor stejného kurzu je jiný. A zda je dobrý nezjistíš jinak, než že najdeš někoho, kdo už tím prošel.
+- Zda tě kurz posune záleží na tom, co už umíš a co tě hodlají v tom kurzu učit. Pokus se sehnat obsah kurzu, osnovu. Pokud polovinu z toho už umíš, asi ti moc nedá.
+- Málokterý kurz ti zaručí zaměstnatelnost, takže nějaká příprava po vlastní ose tam bude prakticky vždy. Mnoho lidí zkouší různé kurzy. Např. jeden větší, pak pár menších online z internetu, něco se doučí sami, apod. Každý strůjcem svého koktejlu, který mu (snad) bude vyhovovat a nejvíc se hodí do jeho cesty. Každý má čas jindy, každému vyhovuje jiné tempo nebo intenzita učení.
+- 7 měsíců je dost. Co jsi už prošel? Co jsi už naprogramoval? Možná ti nepomůže kurz, ale vytvořit projekt.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1172478526134431808/1178449987114385568
+Ke garanci práce bych se nebála je více navést k tomu, že často jsou ty podmínky jednostranné - aby z nich firma měla další zisk, drží je třeba 3 měsíce, žádné nabídky jim reálně nechodí nebo jsou domluvené (s partnery) za směšné nízké peníze a oni tak 3 měsíce sedí a čekají, resp. si v mezičase najdou práci sami, ale nesmí nastoupit dříve. To mám ověřené z několika zdrojů. Klidně obšlehni co chceš ode mě 😉
+---
+
+
+--- https://discord.com/channels/769966886598737931/1172478526134431808/1178444434396942497
+Já jsem pro účastníky mého webináře "Je IT pro mě?" připravila dokument Jak si vybrat rekvalifikační kurz. Řekla bych, že jsem určitě byla ovlivně materiálem od Lucky T. (to myslím v dobrém). Tak klidně můžete napsat co si o tom myslíte. 
+A ještě mě napadá jedna věc ohledně kvality. Zkušební lhuta. Když jsem připravovala svůj kurz, tak jsem procházela spoustu kurzů. A téměř nikdo ji nenabízí. Přece pokud jste si jistí, že je váš produkt dobrý, můžete nabídnout studentovi, že jej může vrátit, pokud nebude spokojen ...  co myslíte?
+Ve svých obchodních podmínkách to mám. Mám dva týdny (přemýšlím, že to prodloužím na tři). Teda ještě nevím, jak to udělám pokud to bude chtít někdo z "Jsem v kurzu". Ale předpokládám, že to nebude problém (přece jen nebudou muset dávat peníze za studenta). Já jsem totiž když jsem sepisovala ty OP nepočítala s tím, že kurz bude v Jsem v kurzu....
+---
+
+
+--- https://discord.com/channels/769966886598737931/1172478526134431808/1178495193696190574
+Rozhodně jsou garance práce problematické a nebál bych se to v tom dokumentu zmínit.
+
+My ji nedáváme: považuju to spíš za marketingový trik. Práci si nakonec každý musí najít sám a je v tom i tolik jiných faktorů, než jen to, co se ten člověk měl přiležitost naučit, že to nemá smysl. Radši věnujeme energii a čas tomu, abychom jim s tím hledáním pomohli.
+
+Ostatně když si je u těch bootcampů přečteš, tak přesně se snaží pokrýt tyhle faktory. [Viz CBP: mít třeba 5 commitů na GitHubu týdně](https://www.codingbootcamp.cz/terms-and-conditions#:~:text=6.%20THE%20JOB,for%20the%20programme) <a:awkward:985064290044223488> atd. 
+Jsem si snažil představit situaci, že to někdo opravdu splní a nenajde práci. Na trhu jaký byl před víc než rokem mi to nepřišlo moc reálné. 
+
+Teď už je trh jinde a když se koukám na aktuální podmínky garance u GFA, Coding Bootcamp Praha a SDA, tak došlo tedy k dost změnám. SDA ji už nemá vůbec, přestože jsem přesvědčen, že ji u té nejdražší verze měli. CBP to mají asi stejné a GFA ji sice má, ale dost to změnili.
+
+Zjevně už nedostávají provizi od firemních partnerů, kteří nemají důvod platit extra za juniory (i když dobře trénované) na současném trhu, takže už je tam svoboda výběru pořád a nejen když si připlatíš. Ostatně slyšel jsem od několika absolventů, kteří končili někdy letos na jaře, že ty nabídky nebyly vůbec žádné.
+Dřív taky garantovali i nějakou minimální mzdu, která byla spíš nadprůměr pro switchera, ale už jen píšou, kolik jejich absolventi v průměru mají nástup.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1172809602715353128/1172826245340340274
+<@1118626383183237200> jinde napsala (v kontextu nabídek _Jsem v kurzu_)
+> Omylem jsem zabloudila a zastourala i do kurzu na programovani a celkem me sokovalo, ze se jede hodne na prakticke veci a hlavne at ma student pocit, ze uz umi neco vytvorit, ale totalne tam chybi teoreticka cast a poradny vysvetleni co vlastne delaji a proc. Zajimave.
+
+To mi přijde zajímavé téma a samo o sobě by mi to vůbec nepřišlo problematické, ale samozřejmě záleží na míře a cílech.
+Pro mě je ve zdejším kontextu cíl vždy switch. Tedy z 0 na 6, [„klubové“ cesty](https://junior.guru/handbook/#cesta-juniora).
+
+0️⃣ Ob­čas mě na­pad­ne, že by ne­mu­se­la být úpl­ná bl­bost učit se pro­gra­mo­vat.
+1️⃣ Ne­zá­vazně zkou­ším všech­no mož­né, nebo za­čí­nám s jed­nou věcí, o kte­ré si mys­lím, že ji chci dě­lat
+2️⃣ Učím se to, co si mys­lím, že chci dě­lat. Sa­mo­stat­ně, ve ško­le, v kur­zu.
+3️⃣ Pra­cu­ju na pro­jek­tech.
+4️⃣ Při­pra­vu­ji se na hle­dá­ní práce, la­dím CV apod.
+5️⃣ Hle­dám práci
+6️⃣ Mám na­le­ze­nou nebo do­mlu­ve­nou práci a na­stu­pu­ji v bu­douc­nu.
+7️⃣ Zku­šeb­ní doba v prv­ní práci v obo­ru.
+8️⃣ Pra­cu­ji po zku­šeb­ní době.
+9️⃣ Mám 1 až 2 roky ko­merč­ní pra­xe.
+🔟 Už nej­sem ju­ni­or.
+
+Mnoho kurzů ale ten switch vlastně nenabízí. 
+Je to kurz, který probírá některé znalosti, které jsou k tomu potřeba.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1169352582918062140/1169385940465242112
+Přijímací proces na bootcamp (Web Development) je následovný - zaregistrujes se jako uchazeč, pak mas cca 30 minutovej hovor v AJ a na základě toho jsi buď přijat nebo ne! Důležité je mít nějaké uz nějaké zkušenosti, budes popisovat co umíš atd. Pak si stačí zvolit platební plán, kterej se muže měnit podle situace (jako například, zda dostaneš od ÚP dotaci nebo ne). Dále pokud jsi přijatej musíš zaplatit naráz 39K a oni ti pošlou materiály na studování, takže asi tak ve zkratce.
+---
+
+
 #} -->

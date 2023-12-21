@@ -105,4 +105,39 @@ Nevím, zda tady už Rita byla, ale já ji sleduji dlouho a těším se vlastně
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1187039309996503052
+České i slovenské, některé už možná nevydávají nové díly, nestíhám poslouchat všechno 😄
+
+- Moderná firma
+- ProgramHRování
+- Fuckupy v IT
+- SoftCraft
+- IT a tak
+- (re)štarty v IT
+- CZPodcast
+- Vzhůru dolů podcast
+- Smitio talk
+- Shark talk
+- IT svět podle Jury
+- Street of Code
+- Studio Skoumal
+- Qcast
+- Pod vocasem
+- samozřejmě Junior.guru
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1187068624591130654
+Doplním další podcasty, o kterých vím 🙂 
+
+- BlueGhost Update
+- Czechitas Podcast
+- Na Mojom Kompe To Ide
+- poslouchat.digital
+- SCRIPTease
+- The Real Python Podcast
+- Websupport
+---
+
+
 #} -->

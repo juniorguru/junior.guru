@@ -707,4 +707,9 @@ _Zpětně byste řekli, že to bylo těžší nebo lehčí než jste si na zač�
 https://www.youtube.com/watch?v=H01nrHnqUfI
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1182391116629286923
+Do nedávna byla při programování klíčová schopnost efektivně googlit. Může to vypadat banálně ale umět efektivně googlit se člověk učil roky. Teď bude při programování klíčová schopnost efektivně využívat AI.
+---
+
+
 #} -->
