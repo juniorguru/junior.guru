@@ -25,6 +25,18 @@ def membership_by_invoice(transaction: dict, secrets: dict) -> TransactionsCateg
 
 
 @category_rule
+def frontendisti_honorarium(transaction: dict, secrets: dict) -> TransactionsCategory:
+    if "FRONTENDISTICZ" in transaction["message"] and transaction["amount"] > 0:
+        return TransactionsCategory.DONATIONS
+
+
+@category_rule
+def tdc_conference_booth(transaction: dict, secrets: dict) -> TransactionsCategory:
+    if "Dan Srb, stánek" in transaction["message"] and transaction["amount"] < 0:
+        return TransactionsCategory.MARKETING
+
+
+@category_rule
 def podcasty_cz_commission(transaction: dict, secrets: dict) -> TransactionsCategory:
     if "SKLIK" in transaction["message"] and "SEZNAM" in transaction["message"]:
         return TransactionsCategory.PARTNERSHIPS
