@@ -1,7 +1,7 @@
 import json
 import re
 import textwrap
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, timedelta
 from operator import itemgetter
 from pathlib import Path
 from typing import Any, Generator
@@ -12,11 +12,10 @@ import discord
 import ics
 import requests
 import teemup
-from juniorguru_chick.lib.threads import ensure_thread_name
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
-from juniorguru.lib.discord_club import ClubClient, ClubMemberID, fetch_threads, is_thread_after, parse_channel
+from juniorguru.lib.discord_club import ClubClient, ClubMemberID, fetch_threads, parse_channel
 from juniorguru.lib.locations import fetch_location
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.club_threads import DEFAULT_AUTO_ARCHIVE_DURATION
@@ -383,13 +382,6 @@ def parse_ctvrtkon(content: str) -> list[dict[str, Any]]:
         )
         for event in json.loads(content)["data"]
     ]
-
-
-def is_bot_message(discord_message: discord.Message) -> bool:
-    return (
-        discord_message.type == discord.MessageType.default
-        and discord_message.author.id == ClubMemberID.BOT
-    )
 
 
 def is_meetup_scheduled_event(scheduled_event: discord.ScheduledEvent) -> bool:
