@@ -260,12 +260,7 @@ async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
             )
 
         post_name = thread_name(event)
-        post_content = (
-            f"Kdo se chystá na {event['name_raw']}? {event['emoji']} "
-            "Zakládám vlákno! "
-            "Všechny podrobnosti najdeš tady: "
-            f"{event['url']}"
-        )
+        post_content = generate_starting_message_content(event)
         try:
             post = posts.pop(event["url"])
         except KeyError:
@@ -435,3 +430,13 @@ def generate_thread_message_content(
         text += " "
     text += scheduled_event_url
     return text
+
+
+def generate_starting_message_content(event: dict) -> str:
+    return (
+        f"Kdo se chystá na {event['name_raw']}? "
+        f"{event['emoji']} "
+        "Zakládám vlákno! "
+        "Podrobnosti najdeš tady: "
+        f"{event['url']}"
+    )

@@ -8,7 +8,7 @@ import pytest
 
 from juniorguru.lib.discord_club import ClubMemberID
 from juniorguru.sync.meetups import (
-    generate_channel_message_content,
+    generate_starting_message_content,
     generate_scheduled_event,
     generate_thread_message_content,
     is_meetup_scheduled_event,
@@ -172,13 +172,11 @@ def test_generate_scheduled_event(event: dict):
     assert params["location"] == "Applifting, Rohanské nábř. 19, Praha"
 
 
-def test_generate_channel_message(event: dict):
-    text = generate_channel_message_content(event)
+def test_generate_starting_message_content(event: dict):
+    text = generate_starting_message_content(event)
 
-    assert "Praha" in text
-    assert "24.6." in text
-    assert "⚛️" in text
     assert "ReactGirls & Applifting meetup" in text
+    assert "⚛️" in text
     assert "https://www.meetup.com/reactgirls/events/292684010/" in text
 
 
