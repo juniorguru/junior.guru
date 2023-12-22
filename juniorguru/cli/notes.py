@@ -6,6 +6,7 @@ from time import perf_counter_ns
 import click
 import discord
 
+from juniorguru.cli.sync import Cache
 from juniorguru.lib import discord_sync, loggers, mutations
 from juniorguru.lib.discord_club import (
     ClubClient,
@@ -19,7 +20,6 @@ from juniorguru.lib.discord_club import (
 from juniorguru.models.base import db
 from juniorguru.models.page import Page
 from juniorguru.models.sync import Sync
-from juniorguru.cli.sync import Cache
 from juniorguru.sync.pages import main as sync_pages
 
 
