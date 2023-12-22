@@ -251,6 +251,10 @@ class ClubMessage(BaseModel):
         return self.author.intro.id == self.id
 
     @property
+    def is_starting_message(self):
+        return self.id == self.channel_id
+
+    @property
     def dm_member(self):
         return ClubUser.get(dm_channel_id=self.channel_id)
 

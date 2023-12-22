@@ -1,7 +1,7 @@
 import json
 import re
 import textwrap
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from operator import itemgetter
 from pathlib import Path
 from typing import Any, Generator
@@ -16,9 +16,10 @@ from juniorguru_chick.lib.threads import ensure_thread_name
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
-from juniorguru.lib.discord_club import ClubClient, ClubMemberID, parse_channel
+from juniorguru.lib.discord_club import ClubClient, ClubMemberID, fetch_threads, is_thread_after, parse_channel
 from juniorguru.lib.locations import fetch_location
 from juniorguru.models.club import ClubMessage
+from juniorguru.sync.club_threads import DEFAULT_AUTO_ARCHIVE_DURATION
 
 
 NAME_PREFIX = "Mini sraz juniorů"
@@ -127,7 +128,7 @@ FEEDS = [
         poster_path="posters-meetups/techmeetup.png",
         format="meetup_com",
         source_url="https://www.meetup.com/techmeetupostrava/events/",
-        skip=["conference", "konference"],
+        skip=["conference", "konference", "agile circle"],
     ),
 ]
 
@@ -135,7 +136,7 @@ USER_AGENT = "JuniorGuruBot (+https://junior.guru)"
 
 TIMELINE_LIMIT_DAYS = 60
 
-EVENT_EMOJI = "📅"
+TAG_NAME = "sraz"
 
 
 logger = loggers.from_path(__file__)
@@ -232,7 +233,16 @@ async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
         for scheduled_event in client.club_guild.scheduled_events
         if is_meetup_scheduled_event(scheduled_event)
     }
-    discord_channel = await client.fetch_channel(channel_id)
+    logger.info(f"Found {len(discord_events)} relevant scheduled events")
+
+    discord_channel = await client.club_guild.fetch_channel(channel_id)
+    discord_tag = [tag for tag in discord_channel.available_tags if tag.name == TAG_NAME][0]
+    posts = {
+        parse_meetup_url(message.content): message
+        for message in ClubMessage.channel_listing(channel_id, parent=True, by_bot=True)
+        if message.is_starting_message
+    }
+    logger.info(f"Found {len(posts)} relevant forum posts")
 
     for event in events:
         try:
@@ -250,59 +260,61 @@ async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
                 **generate_scheduled_event(event),
             )
 
-        logger.info("Ensuring channel message")
-        if channel_message := ClubMessage.last_bot_message(
-            channel_id, starting_emoji=EVENT_EMOJI, contains_text=event["url"]
-        ):
-            logger.debug(f"Channel message already exists: {channel_message.url}")
-            discord_channel_message = await discord_channel.fetch_message(
-                channel_message.id
-            )
-        else:
-            logger.info("Could not find channel message, posting")
-            discord_channel_message = await discord_channel.send(
-                generate_channel_message_content(event)
-            )
-
-        logger.info("Ensuring thread exists")
-        if discord_channel_message.flags.has_thread:
-            logger.debug("Thread already exists")
-            thread = await discord_channel_message.guild.fetch_channel(
-                discord_channel_message.id
-            )
-        else:
-            logger.info("Creating thread")
-            thread = await discord_channel_message.create_thread(
-                name=thread_name(event)
-            )
-
-        if thread.archived or thread.locked:
-            logger.warning(
-                f"Thread {discord_channel_message.jump_url} is archived or locked, skipping"
-            )
-            continue
-
-        logger.debug(
-            f"Ensuring correct thread name for {discord_channel_message.author.display_name!r}"
+        post_name = thread_name(event)
+        post_content = (
+            f"Kdo se chystá na {event['name_raw']}? {event['emoji']} "
+            "Zakládám vlákno! "
+            "Všechny podrobnosti najdeš tady: "
+            f"{event['url']}"
         )
-        await ensure_thread_name(thread, thread_name(event))
+        try:
+            post = posts.pop(event["url"])
+        except KeyError:
+            logger.info(f"Creating thread for {event['url']}")
+            discord_thread = await discord_channel.create_thread(
+                name=post_name,
+                content=post_content,
+                auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION,
+                applied_tags=[discord_tag],
+            )
+        else:
+            logger.info(f"Found thread for {event['url']}")
+            discord_thread = discord_channel.get_thread(post.id)
+            if not discord_thread:
+                logger.warning(f"Thread {post.url} not available, iterating over all threads to get its object")
+                async for thread in fetch_threads(discord_channel):
+                    if thread.id == post.id:
+                        discord_thread = thread
+                        break
+            if not discord_thread:
+                raise ValueError(f"Could not find thread {post.url}")
 
-        logger.info("Ensuring thread message")
+            logger.info(f"Updating thread for {event['url']}")
+            discord_thread = await discord_thread.edit(
+                archived=False,
+                name=post_name,
+                auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION,
+                applied_tags=[discord_tag],
+            )
+            discord_message = discord_thread.get_partial_message(discord_thread.id)
+            await discord_message.edit(content=post_content)
+
+        logger.info(f"Ensuring thread message for {event['url']}")
         mentions = [user.mention async for user in discord_event.subscribers()]
-        message_content = generate_thread_message_content(discord_event.url, mentions)
+        thread_message_content = generate_thread_message_content(discord_event.url, mentions)
         if thread_message := ClubMessage.last_bot_message(
-            thread.id, contains_text=discord_event.url
+            discord_thread.id, contains_text=discord_event.url
         ):
             logger.debug(f"Thread message already exists: {thread_message.url}")
-            discord_thread_message = await thread.fetch_message(thread_message.id)
-            if discord_thread_message.content != message_content:
+            discord_thread_message = await discord_thread.fetch_message(thread_message.id)
+            if discord_thread_message.content != thread_message_content:
                 logger.info("Updating thread message")
-                await discord_thread_message.edit(content=message_content)
+                await discord_thread_message.edit(content=thread_message_content)
             else:
                 logger.debug("Thread message is up-to-date")
         else:
             logger.info("Could not find thread message, posting")
-            await thread.send(message_content)
+            await discord_thread.send(thread_message_content)
 
     for discord_event in discord_events.values():
         logger.info(
@@ -408,16 +420,6 @@ def generate_scheduled_event(event: dict) -> dict:
         location=textwrap.shorten(
             event["location_raw"], width=LOCATION_LENGTH_LIMIT, placeholder="…"
         ),
-    )
-
-
-def generate_channel_message_content(event: dict) -> str:
-    return (
-        f"{EVENT_EMOJI} **{event['location'][1]}, {event['starts_at']:%-d.%-m.}**"
-        "\n\n"
-        f"{event['emoji']} Kdo se chystá na {event['name_raw']}? Zakládám vlákno!"
-        "\n\n"
-        f"{event['url']}"
     )
 
 
