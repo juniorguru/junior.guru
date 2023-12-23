@@ -15,7 +15,12 @@ import teemup
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_sync, loggers, mutations
-from juniorguru.lib.discord_club import ClubClient, ClubMemberID, fetch_threads, parse_channel
+from juniorguru.lib.discord_club import (
+    ClubClient,
+    ClubMemberID,
+    fetch_threads,
+    parse_channel,
+)
 from juniorguru.lib.locations import fetch_location
 from juniorguru.models.club import ClubMessage
 from juniorguru.sync.club_threads import DEFAULT_AUTO_ARCHIVE_DURATION
@@ -235,7 +240,9 @@ async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
     logger.info(f"Found {len(discord_events)} relevant scheduled events")
 
     discord_channel = await client.club_guild.fetch_channel(channel_id)
-    discord_tag = [tag for tag in discord_channel.available_tags if tag.name == TAG_NAME][0]
+    discord_tag = [
+        tag for tag in discord_channel.available_tags if tag.name == TAG_NAME
+    ][0]
     posts = {
         parse_meetup_url(message.content): message
         for message in ClubMessage.channel_listing(channel_id, parent=True, by_bot=True)
@@ -275,7 +282,9 @@ async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
             logger.info(f"Found thread for {event['url']}")
             discord_thread = discord_channel.get_thread(post.id)
             if not discord_thread:
-                logger.warning(f"Thread {post.url} not available, iterating over all threads to get its object")
+                logger.warning(
+                    f"Thread {post.url} not available, iterating over all threads to get its object"
+                )
                 async for thread in fetch_threads(discord_channel):
                     if thread.id == post.id:
                         discord_thread = thread
@@ -295,12 +304,16 @@ async def sync_events(client: ClubClient, events: list[dict], channel_id: int):
 
         logger.info(f"Ensuring thread message for {event['url']}")
         mentions = [user.mention async for user in discord_event.subscribers()]
-        thread_message_content = generate_thread_message_content(discord_event.url, mentions)
+        thread_message_content = generate_thread_message_content(
+            discord_event.url, mentions
+        )
         if thread_message := ClubMessage.last_bot_message(
             discord_thread.id, contains_text=discord_event.url
         ):
             logger.debug(f"Thread message already exists: {thread_message.url}")
-            discord_thread_message = await discord_thread.fetch_message(thread_message.id)
+            discord_thread_message = await discord_thread.fetch_message(
+                thread_message.id
+            )
             if discord_thread_message.content != thread_message_content:
                 logger.info("Updating thread message")
                 await discord_thread_message.edit(content=thread_message_content)

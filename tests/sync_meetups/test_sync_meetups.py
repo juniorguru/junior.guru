@@ -8,8 +8,8 @@ import pytest
 
 from juniorguru.lib.discord_club import ClubMemberID
 from juniorguru.sync.meetups import (
-    generate_starting_message_content,
     generate_scheduled_event,
+    generate_starting_message_content,
     generate_thread_message_content,
     is_meetup_scheduled_event,
     isnt_skipped,
