@@ -96,4 +96,20 @@ Takže třeba u nás bys na pohovor nešla, protože podle HR není full remote 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1075541542669922424/1188112919553126510
+**100 % remote práce**
+Velikánská nevýhoda. **Je to non-stop velké informační a sociální vakuum. **Je to nehostinné prostředí a musí se na spoustě věcí dřít (z obou stran, firma i junior) a stejně se to plnohodnotně nedožene. Člověk se nic nedozví mimochodem, nevidí typické pořádky a komunikaci ve firmě, přijde o spoustu podnětů, povzbuzení, tipů i náhodné zpětné vazby, nadto si lze furt klást otázky jako: Nevyhodili by mě, kdyby viděli, jak pracuju? Jak si zprostředkovat někoho, kdo by poradil, jak zlepšit/zefektivnit práci? Co jsem dneska udělala, mám pocit, že nic, co s tím? Na koho se obracet, kdy, s čím a jak?
+
+Cítím, že o hodně přicházím tím, že nevidím, jak kolegové pracují (co dělají, jak to řeší, jak ventilují emoce, co nastává), co se řeší v jiných projektech/u jiných klientů a podobně. Další věc je, že **všechno je zpráva nebo schůzka. Všechno, co není zpráva nebo schůzka, neexistuje, přestože to existuje.**
+
+Říct si o pomoc kolegovi, co sedí půl metru vedle, a napsat zprávu v nějakém chatu na Teamsech není stejně snadné ani to nevede ke stejnému výsledku. (A to říkám jako zástupce generace Z, u kterého by se dalo čekat, že bude chtít zprávovat neustále.) V chatu dostanu hlavně odpověď na to, na co se bezprostředně ptám (přičemž je nutné vše rovnou víc popsat, aby bylo jasné, o čem mluvím, žádné *hele, jak mám vyřešit tohle?*), člověk nedostane "zdarma" nic navíc, což se mi při komunikaci osobní stává téměř neustále. Je taky mnohem těžší být zvídavější a doptávat se.
+
+Je těžší si sehnat mentora, pomoc, průvodce. Je těžší se zorientovat i v základních strukturách.
+
+Tím, že je člověk sám, také jinak zpracovává emoce a situace (!), takže se mi stává, že jde do ztracena něco, co bych jinak normálně ihned řešila. 
+
+HO obecně znamená v krátkodobém horizontu to, že řešení nalézám trochu jiným způsobem, v dlouhodobém ale i to, že přicházím o růst soft skills (!).
+---
+
+
 #} -->
