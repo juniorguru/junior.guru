@@ -70,7 +70,7 @@ async def recreate_archive(
             color=Colour(role.color),
             description=role.description,
         )
-        if role.icon_url:
+        if role.icon_path:
             embed.set_thumbnail(url=f"attachment://{Path(role.icon_path).name}")
             file = File(IMAGES_DIR / role.icon_path)
 
