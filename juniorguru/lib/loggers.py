@@ -24,6 +24,8 @@ MUTED_LOGGERS = [
     "stripe",
     "tornado.access",
     "urllib3",
+    "httpx",
+    "httpcore",
 ]
 
 
