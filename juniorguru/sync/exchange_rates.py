@@ -1,9 +1,9 @@
 from operator import itemgetter
+
 from strictyaml import Map, Seq, Str
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import loggers
-from juniorguru.lib import apify
+from juniorguru.lib import apify, loggers
 from juniorguru.lib.yaml import Decimal as Dec
 from juniorguru.models.base import db
 from juniorguru.models.exchange_rate import ExchangeRate
@@ -27,12 +27,13 @@ YAML_SCHEMA = Seq(
 @cli.sync_command()
 @db.connection_context()
 def main():
-    exchange_rates = sorted((
-        item
-        for item in apify.iter_data('honzajavorek/exchange-rates')
-        if item['code'] in CURRENCIES
-    ),
-        key=itemgetter('code')
+    exchange_rates = sorted(
+        (
+            item
+            for item in apify.iter_data("honzajavorek/exchange-rates")
+            if item["code"] in CURRENCIES
+        ),
+        key=itemgetter("code"),
     )
 
     ExchangeRate.drop_table()

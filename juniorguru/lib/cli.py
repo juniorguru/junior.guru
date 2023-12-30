@@ -1,6 +1,6 @@
 import asyncio
-from functools import wraps
 import pkgutil
+from functools import wraps
 from importlib import import_module
 from types import ModuleType
 from typing import Awaitable, Callable, Generator
