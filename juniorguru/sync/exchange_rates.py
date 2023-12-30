@@ -1,5 +1,3 @@
-from operator import itemgetter
-
 from strictyaml import Map, Seq, Str
 
 from juniorguru.cli.sync import main as cli
@@ -27,19 +25,14 @@ YAML_SCHEMA = Seq(
 @cli.sync_command()
 @db.connection_context()
 def main():
-    exchange_rates = sorted(
-        (
-            item
-            for item in apify.iter_data("honzajavorek/exchange-rates")
-            if item["code"] in CURRENCIES
-        ),
-        key=itemgetter("code"),
-    )
-
     ExchangeRate.drop_table()
     ExchangeRate.create_table()
 
-    for exchange_rate in exchange_rates:
+    for exchange_rate in (
+        item
+        for item in apify.iter_data("honzajavorek/exchange-rates")
+        if item["code"] in CURRENCIES
+    ):
         logger.info(
             f"Saving exchange rate for {exchange_rate['code']}: {exchange_rate['rate']}"
         )
