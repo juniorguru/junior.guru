@@ -279,21 +279,22 @@ test = ["pytest", "pytest-asyncio"]
 
 [[package]]
 name = "attrs"
-version = "23.1.0"
+version = "23.2.0"
 description = "Classes Without Boilerplate"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "attrs-23.1.0-py3-none-any.whl", hash = "sha256:1f28b4522cdc2fb4256ac1a020c78acf9cba2c6b461ccd2c126f3aa8e8335d04"},
-    {file = "attrs-23.1.0.tar.gz", hash = "sha256:6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"},
+    {file = "attrs-23.2.0-py3-none-any.whl", hash = "sha256:99b87a485a5820b23b879f04c2305b44b951b502fd64be915879d77a7e8fc6f1"},
+    {file = "attrs-23.2.0.tar.gz", hash = "sha256:935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"},
 ]
 
 [package.extras]
 cov = ["attrs[tests]", "coverage[toml] (>=5.3)"]
-dev = ["attrs[docs,tests]", "pre-commit"]
+dev = ["attrs[tests]", "pre-commit"]
 docs = ["furo", "myst-parser", "sphinx", "sphinx-notfound-page", "sphinxcontrib-towncrier", "towncrier", "zope-interface"]
 tests = ["attrs[tests-no-zope]", "zope-interface"]
-tests-no-zope = ["cloudpickle", "hypothesis", "mypy (>=1.1.1)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "pytest-xdist[psutil]"]
+tests-mypy = ["mypy (>=1.6)", "pytest-mypy-plugins"]
+tests-no-zope = ["attrs[tests-mypy]", "cloudpickle", "hypothesis", "pympler", "pytest (>=4.3.0)", "pytest-xdist[psutil]"]
 
 [[package]]
 name = "automat"
@@ -1527,20 +1528,20 @@ test = ["freezegun (>=1.2.1)", "hypothesis (>=6)", "importlib-resources (>=1.4)"
 
 [[package]]
 name = "ics-vtimezones"
-version = "2020.1"
+version = "2020.2"
 description = "iCalendar vTimezone Data"
 optional = false
-python-versions = ">=3.6,<4.0"
+python-versions = ">=3.7,<4.0"
 files = [
-    {file = "ics_vtimezones-2020.1-py3-none-any.whl", hash = "sha256:775f0c3a9a417a9466e511bc1068e239036f4ea405a55d0cec0ba95e551717c4"},
-    {file = "ics_vtimezones-2020.1.tar.gz", hash = "sha256:04ab770ceb68a304de65be12257340c74e811cc925e771c10aab166de05768c6"},
+    {file = "ics_vtimezones-2020.2-py3-none-any.whl", hash = "sha256:e26de1a7e732b53f23bce88431ce6b2db59d03aad72f47d5785bfa3f56cdf118"},
+    {file = "ics_vtimezones-2020.2.tar.gz", hash = "sha256:ee02fb3bb7df7e2e60ea11ad07ca30d3fee4d40929ae496651f76b76dc1cac73"},
 ]
 
 [package.dependencies]
-importlib_resources = ">=1.4,<2.0"
+importlib_resources = ">=1.4"
 
 [package.extras]
-update = ["ics (>=0.8.0,<0.9.0)"]
+update = ["ics (==0.8.*)"]
 
 [[package]]
 name = "idna"
@@ -1555,17 +1556,18 @@ files = [
 
 [[package]]
 name = "importlib-resources"
-version = "1.5.0"
+version = "6.1.1"
 description = "Read resources from Python packages"
 optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
+python-versions = ">=3.8"
 files = [
-    {file = "importlib_resources-1.5.0-py2.py3-none-any.whl", hash = "sha256:85dc0b9b325ff78c8bef2e4ff42616094e16b98ebd5e3b50fe7e2f0bbcdcde49"},
-    {file = "importlib_resources-1.5.0.tar.gz", hash = "sha256:6f87df66833e1942667108628ec48900e02a4ab4ad850e25fbf07cb17cf734ca"},
+    {file = "importlib_resources-6.1.1-py3-none-any.whl", hash = "sha256:e8bf90d8213b486f428c9c39714b920041cb02c184686a3dee24905aaa8105d6"},
+    {file = "importlib_resources-6.1.1.tar.gz", hash = "sha256:3893a00122eafde6894c59914446a512f728a0c1a45f9bb9b63721b6bacf0b4a"},
 ]
 
 [package.extras]
-docs = ["jaraco.packaging", "rst.linker", "sphinx"]
+docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx (<7.2.5)", "sphinx (>=3.5)", "sphinx-lint"]
+testing = ["pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-mypy (>=0.9.1)", "pytest-ruff", "zipp (>=3.17)"]
 
 [[package]]
 name = "incremental"
