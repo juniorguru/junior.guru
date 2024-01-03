@@ -17,7 +17,7 @@
     "bootstrap": "5.3.2",
     "broken-link-checker-local": "0.2.1",
     "esbuild": "0.19.5",
-    "esbuild-sass-plugin": "2.16.0",
+    "esbuild-sass-plugin": "2.16.1",
     "hyphen": "1.9.1",
     "stylelint": "15.11.0"
   }
