@@ -20,7 +20,6 @@ def create_user(id_, **kwargs):
         joined_at=kwargs.get("joined_at", datetime.now() - timedelta(days=3)),
         subscribed_at=kwargs.get("subscribed_at", None),
         subscribed_days=kwargs.get("subscribed_days", None),
-        roles=kwargs.get("roles", []),
         expires_at=kwargs.get("expires_at", datetime.now() + timedelta(days=100)),
     )
 
