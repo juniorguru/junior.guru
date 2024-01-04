@@ -71,8 +71,13 @@ async def recreate_archive(
             description=role.description,
         )
         if role.icon_path:
-            embed.set_thumbnail(url=f"attachment://{Path(role.icon_path).name}")
-            file = File(IMAGES_DIR / role.icon_path)
+            path = IMAGES_DIR / role.icon_path
+            logger.debug(f"Setting thumbnail: {path}")
+            embed.set_thumbnail(url=f"attachment://{path.name}")
+            file = File(path)
+        else:
+            logger.debug(f"Setting no thumbnail, role.icon_path is {role.icon_path!r}")
+            file = None
 
         with mutating_discord(channel) as proxy:
             await proxy.send(embed=embed, file=file)
