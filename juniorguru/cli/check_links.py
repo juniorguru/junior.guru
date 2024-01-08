@@ -36,6 +36,7 @@ EXCLUDE_URLS = [
     "meetup.com",  # crawling protection?
     "navolnenoze.cz",  # crawling protection?
     "robime.it",  # crawling protection?
+    "reddit.com",  # crawling protection?
 ]
 
 EXCLUDE_REASONS = [
